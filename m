@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BEB2B0FC
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Apr 2019 00:50:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C421BB104
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Apr 2019 00:52:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tuVspSM/6D++jcU4Gp6g9yIEnE9WYwHcEskP/e9Qtu4=; b=nmxS6m9VAI0cs+
-	KpN4iQGv8O9yroxBjGGff2tolHqggjsvIu61Byy82oi4Paxe5tCJ0EmIq61P3I/QpCDqa8uWXVH+2
-	04MreB5urtHNrkhT73TcsgSVj0u1bxcRM1pbWQ9oHWtJ3XpBbq/auJanz6lgXVh1nPteXYU8i0Blw
-	ffDlaaHEovLZIjZY3yuLqPNxjPWq6f9CjhlzYFE+vum+WN5cLolKJRiquyX9ztjJGnp7JOe9stIr6
-	OAot2vydIfAYy4qCAS35arOMhRhQpBQ9zYONwnGuDIlqxzZ9zc4BP2G76FFhI7gMVjcN7QDHtQSXO
-	5TklDfsTtcyNxVdYDMNw==;
+	List-Owner; bh=0gDfsfaQC4QxgAXjoDU9YS/YjhDTa/Nx6iJGNbGCXj0=; b=sueYskwPvrrkif
+	h0eFtSx1jU2T/PEyobcgRy/ATdhKbcCs2UUfd7vODajfvWAt3Z14PVdS511i8QAEb8aMOtiHo4bf6
+	VyukKaPVgBXQZAy77RJV2OMrv342Jsm3V2CYW2nLQeKR5CFzKXaSQc7jGbH5ljThSs2BHAbQ5vXI5
+	FIk7rPfwNHvijrS1Cy5Hzl9z8DaZZWbG3MTy4rQd7Bdi1cbbf55tk8fz79/IN+LCQOKk3WX7BDetE
+	0IpSNF8RU7TWv1TZE6z1H8UlVWCu8VIlRyHEyCFp3IcWgQAAL04aAJnCCcySQ5qU5psoYgdeMizgM
+	9ElwiZ261j9C3DXbCaEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hK9fE-00009W-1G; Fri, 26 Apr 2019 22:49:52 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
+	id 1hK9hT-0001gw-Mw; Fri, 26 Apr 2019 22:52:11 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hK9f5-000078-W6; Fri, 26 Apr 2019 22:49:45 +0000
-Received: by mail-oi1-f193.google.com with SMTP id l203so4224447oia.3;
- Fri, 26 Apr 2019 15:49:43 -0700 (PDT)
+ id 1hK9hM-0001gX-LM
+ for linux-arm-kernel@lists.infradead.org; Fri, 26 Apr 2019 22:52:05 +0000
+Received: by mail-ot1-f67.google.com with SMTP id m10so4047424otp.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 26 Apr 2019 15:52:04 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=kN+VciKgZd6jcxQb4UY3f5HrIMHWadQkiOAB3ugqPf8=;
- b=pWiA91EzeuzVtWOUOz+5j58v+4RBGE2cmfeH21fX6bpDnZEiSBCbRL0TFqcyLzWOX1
- NfGOsGSLxDtv9OE5I60yJztxeb2ryEGetCGcz3qn06pbegd4zzh9AHvMDqiUb2L8ITSJ
- EkazVGTPFZWNpHidkWaVbna2ouRLJeevW9ZPKqayIkRtAP+QqKSs640ZvGqW3fyg+to2
- JUjjcDUOOjnQf4mWSSU5lPgG7IYxtbLsE93l9ZS67repsQSIwUv/AnhDDr9g97hrp3GI
- Ar4QW3X16wp2ln2+sZ/8t0U2sChtlEa3Yrp0e9xSOZ3hzJ1isahcsK9k4DfXuKj+zkZd
- 3YiA==
-X-Gm-Message-State: APjAAAUe5cNnMQI8DNsv4zHliKt0I32BwxlKRhYOoYRwAvW7KQZxXVak
- wrkmVv8KOHgHWy2hx9blWw==
-X-Google-Smtp-Source: APXvYqyR2gdrPPCjZwkgEy9aa4OtfVlOhM2lFz/CC8cStAQgMxfgUEUjKHviBX9jgk5i+31p758EUw==
-X-Received: by 2002:aca:3e05:: with SMTP id l5mr8018709oia.22.1556318982975;
- Fri, 26 Apr 2019 15:49:42 -0700 (PDT)
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=mtYtwFIbx8S3depflq3BptssYAP1IFscU7Wb7r0n4tk=;
+ b=BjKQhmnti7IXc5+xUbP4KES0/uTQIxaZh5yHlyvjdED8FSGnZEf5UpsnQa+3OtHvWm
+ LC73oN+US/7Ll6bYfVLhMByrVdGjBjykLBbXiD4humLYR/+ph8TCcZFQjwrOXgaGKBIH
+ R1uFURDYZAxeYANwoJz00gdv71dYI7MqGi06dUfCbvyfNlYUmV0uLFcVOwKd0A5WTWpx
+ nk+vVhIqli7z2JSYXey8kmamZjjBclfDvmYPuf4T89g4somECZkl6ZYgJRNMfyhJNj9R
+ WAJRXsMzSmmxo9zbGjhKYzto+DUCZyTBGZq+H0kFo4H1GxkSJ5CBuP7v651/3OY8TH9k
+ AGLw==
+X-Gm-Message-State: APjAAAX99SuKv3ccDRl7nS7pXN9Q0aMuZa9+oRrMWe7Aw8wb7RFuUhFG
+ ux1DvfrCYFVsWrWswlWqsQ==
+X-Google-Smtp-Source: APXvYqxlU8W7bOcJUhv1rMYWYXbGCZnZJIdC5N5ocIAfY0pycnVzzdsv9Ds6gtmAx4J/iPDOsrnciw==
+X-Received: by 2002:a9d:6014:: with SMTP id h20mr1605379otj.8.1556319123645;
+ Fri, 26 Apr 2019 15:52:03 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id i136sm4599760oib.42.2019.04.26.15.49.42
+ by smtp.gmail.com with ESMTPSA id h8sm10796866oti.64.2019.04.26.15.52.02
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 26 Apr 2019 15:49:42 -0700 (PDT)
-Date: Fri, 26 Apr 2019 17:49:41 -0500
+ Fri, 26 Apr 2019 15:52:02 -0700 (PDT)
+Date: Fri, 26 Apr 2019 17:52:02 -0500
 From: Rob Herring <robh@kernel.org>
-To: Jitao Shi <jitao.shi@mediatek.com>
-Subject: Re: [v3 1/3] dt-bindings: display: mediatek: update dpi  supported
- chips
-Message-ID: <20190426224941.GA12234@bogus>
-References: <20190416055242.75764-1-jitao.shi@mediatek.com>
- <20190416055242.75764-2-jitao.shi@mediatek.com>
+To: =?iso-8859-1?Q?Cl=E9ment_P=E9ron?= <peron.clem@gmail.com>
+Subject: Re: [PATCH v3 2/8] dt-bindings: gpu: mali-midgard: Add bus clock
+ bindings
+Message-ID: <20190426225202.GA12379@bogus>
+References: <20190417173031.9920-1-peron.clem@gmail.com>
+ <20190417173031.9920-3-peron.clem@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190416055242.75764-2-jitao.shi@mediatek.com>
+In-Reply-To: <20190417173031.9920-3-peron.clem@gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190426_154944_045191_32C3C6CE 
-X-CRM114-Status: UNSURE (   9.21  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190426_155204_701006_BFF840E0 
+X-CRM114-Status: GOOD (  10.43  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
- -0.2 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
  0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -90,36 +90,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>, stonea168@163.com,
- dri-devel@lists.freedesktop.org, Ajay Kumar <ajaykumar.rs@samsung.com>,
- Vincent Palatin <vpalatin@chromium.org>, cawa.cheng@mediatek.com,
- bibby.hsieh@mediatek.com, ck.hu@mediatek.com,
- Russell King <rmk+kernel@arm.linux.org.uk>,
- Thierry Reding <treding@nvidia.com>, Sean Paul <seanpaul@chromium.org>,
- linux-pwm@vger.kernel.org, Jitao Shi <jitao.shi@mediatek.com>,
- Sascha Hauer <kernel@pengutronix.de>, Pawel Moll <pawel.moll@arm.com>,
- Ian Campbell <ijc+devicetree@hellion.org.uk>, Inki Dae <inki.dae@samsung.com>,
- linux-mediatek@lists.infradead.org, yingjoe.chen@mediatek.com,
- Matthias Brugger <matthias.bgg@gmail.com>, eddie.huang@mediatek.com,
- linux-arm-kernel@lists.infradead.org, Rahul Sharma <rahul.sharma@samsung.com>,
- srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org,
- Philipp Zabel <p.zabel@pengutronix.de>, Kumar Gala <galak@codeaurora.org>,
- Andy Yan <andy.yan@rock-chips.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Maxime Ripard <maxime.ripard@bootlin.com>,
+ linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com,
+ linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 16 Apr 2019 13:52:40 +0800, Jitao Shi wrote:
-> Add decriptions about supported chips, including MT2701 & MT8173 &
-> mt8183
-> 
-> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+On Wed, Apr 17, 2019 at 07:30:25PM +0200, Cl=E9ment P=E9ron wrote:
+> From: Icenowy Zheng <icenowy@aosc.io>
+> =
+
+> Some SoCs adds a bus clock gate to the Mali Midgard GPU.
+> =
+
+> Add the binding for the bus clock.
+> =
+
+> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+> Signed-off-by: Cl=E9ment P=E9ron <peron.clem@gmail.com>
 > ---
->  .../devicetree/bindings/display/mediatek/mediatek,dpi.txt        | 1 +
->  1 file changed, 1 insertion(+)
-> 
+>  Documentation/devicetree/bindings/gpu/arm,mali-midgard.txt | 6 ++++++
+>  1 file changed, 6 insertions(+)
+
+The panfrost driver is merged now (to drm-misc) if you want to add =
+
+support for the 2nd clock.
 
 Reviewed-by: Rob Herring <robh@kernel.org>
 
