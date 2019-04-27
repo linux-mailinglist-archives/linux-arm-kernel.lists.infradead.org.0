@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9637B387
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Apr 2019 15:09:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 564DEB38A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Apr 2019 15:10:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0eJnm1BwH0pQppG6r0Y5cA8Xw7DpE9/Av8+m0erQ40A=; b=nmYVeBobTu1QJi
-	SOQMN998ZaJu3x6rlxDack3ijUY5VEI+ocYj0bRcP0IIWl2A+J8dtOipZrDNoW188i6BFw4/4ekC7
-	2Cx1TUOeizntqemHvv+rcA2SySibxZi2Q1eBgPiKUKLdSRTE7FsPoDSuXQAz30szX+DHEMfZAHlIY
-	paIRwm9nhRYOo9+9KRVGxhGf/62GAGZZw/LlPGSC1Gqfj27mgMs15hrhBRRErcRFnFRajLEjmcxns
-	gKdJMwR+a30+f858eLiVZoUm8z0ab8A0eulbPTc555AavMdptekI2fs4pkyaGbfM7DU+ejiMfi+6s
-	1nWV7xaJvE8Rbb6Ve3MA==;
+	List-Owner; bh=9hsaaSz1U2bNDrff3FuWrrwmatobc4hnzVaDHjsnQgE=; b=UjoS36/EgfhHkE
+	mOc5JtI7CcNqbAVxzyDrm/d52bVHfBxW5BgUV3vXopvtM6KLHUSCoCeFcCLI/6il9+7JCAyhUYnln
+	x2Q7sfkiRq//MeZzyehMLXOBtzYmVgLeKlQxMojxmtqCaPZDJtGiMsM468UJjhsfttR3bYB3IgtB7
+	BM1yCITXSNNNKAL6q2B4VZIhTMXpTrXWUZGqTiOH3KCs7YAA4zXOksG3Gs73hQmUxdr9PvWb4IvIJ
+	dkoF3nAsoU/LpaqegOj1qJanxxoxrQ1eiyu18htGEQXUDjiAGxKc8VIBNWBdXsofR3ArIWNEJ0OOP
+	jLLLPSJXzyVzFI3pDOIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKN4X-0008BW-9y; Sat, 27 Apr 2019 13:08:53 +0000
+	id 1hKN69-0001K0-G5; Sat, 27 Apr 2019 13:10:33 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKN4R-0008As-Et
- for linux-arm-kernel@lists.infradead.org; Sat, 27 Apr 2019 13:08:48 +0000
+ id 1hKN61-0001JJ-T1
+ for linux-arm-kernel@lists.infradead.org; Sat, 27 Apr 2019 13:10:27 +0000
 Received: from archlinux (cpc91196-cmbg18-2-0-cust659.5-4.cable.virginm.net
  [81.96.234.148])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4745E208C2;
- Sat, 27 Apr 2019 13:08:44 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B332B2146E;
+ Sat, 27 Apr 2019 13:10:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1556370526;
- bh=jnM29zihc11tw81fyprayFzfy6HR3G1+ASCKRlaGmIs=;
+ s=default; t=1556370625;
+ bh=I/ov1ipXmDgyoqQOOE8Pk2e0WRg6v9my9N08LLlUspw=;
  h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=qJiuiipfOPiLp/ykpz8Fkv25u4WxlQUI9m3oqzrpZOVw9/xJY+M68FkZ/daQHCsh+
- M/4nS3olJgIYBPhut20Pt3e7pQWLp7v3VN++Xu6gRPiew2j0dPZPj4LlEF/4tEDZ3c
- WXMDbv3W8UR4UGwg+LT6nuREnmGOHthrT00jETj8=
-Date: Sat, 27 Apr 2019 14:08:40 +0100
+ b=eqHrhqGcBidnV6RnOoR7ql0WlGs9ij1yHdOzqhNIgCr2hhKcYJgrpgJ7Grz87fR9t
+ iekpGVg+xHBgbCmoqBtR1LGlyqeqlYJZG9GUNTQr101u8a2xYDFvTcSDUOhiwCe1sg
+ iYFVxvN8bIIgZBAKasDFkBkcLruRrbX96XpvJjmo=
+Date: Sat, 27 Apr 2019 14:10:19 +0100
 From: Jonathan Cameron <jic23@kernel.org>
 To: Fabrice Gasnier <fabrice.gasnier@st.com>
-Subject: Re: [PATCH 1/2] iio: adc: stm32-dfsdm: manage the get_irq error case
-Message-ID: <20190427140840.38acb922@archlinux>
-In-Reply-To: <b53b8078-e5ef-1b38-771f-3e34d387c790@st.com>
+Subject: Re: [PATCH 2/2] iio: adc: stm32-dfsdm: missing error case during probe
+Message-ID: <20190427141019.1a526679@archlinux>
+In-Reply-To: <b46f9525-53c0-d874-c88f-c6e351736b04@st.com>
 References: <1556110286-1526-1-git-send-email-fabien.dessenne@st.com>
- <1556110286-1526-2-git-send-email-fabien.dessenne@st.com>
- <b53b8078-e5ef-1b38-771f-3e34d387c790@st.com>
+ <1556110286-1526-3-git-send-email-fabien.dessenne@st.com>
+ <b46f9525-53c0-d874-c88f-c6e351736b04@st.com>
 X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190427_060847_521685_D736CB3E 
-X-CRM114-Status: GOOD (  14.65  )
+X-CRM114-CacheID: sfid-20190427_061025_956397_48996B08 
+X-CRM114-Status: GOOD (  15.07  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,14 +88,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 24 Apr 2019 14:55:09 +0200
+On Wed, 24 Apr 2019 14:55:28 +0200
 Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
 
 > On 4/24/19 2:51 PM, Fabien Dessenne wrote:
-> > During probe, check the "get_irq" error value.
+> > During probe, check the devm_ioremap_resource() error value.
+> > Also return the devm_clk_get() error value instead of -EINVAL.
 > > 
 > > Signed-off-by: Fabien Dessenne <fabien.dessenne@st.com>
 > > ---  
+> 
 > 
 > Hi Fabien,
 > 
@@ -111,26 +113,35 @@ Jonathan
 > Thanks,
 > Fabrice
 > 
-> >  drivers/iio/adc/stm32-dfsdm-adc.c | 6 ++++++
-> >  1 file changed, 6 insertions(+)
+> >  drivers/iio/adc/stm32-dfsdm-core.c | 8 ++++++--
+> >  1 file changed, 6 insertions(+), 2 deletions(-)
 > > 
-> > diff --git a/drivers/iio/adc/stm32-dfsdm-adc.c b/drivers/iio/adc/stm32-dfsdm-adc.c
-> > index 19adc2b..588907c 100644
-> > --- a/drivers/iio/adc/stm32-dfsdm-adc.c
-> > +++ b/drivers/iio/adc/stm32-dfsdm-adc.c
-> > @@ -1456,6 +1456,12 @@ static int stm32_dfsdm_adc_probe(struct platform_device *pdev)
-> >  	 * So IRQ associated to filter instance 0 is dedicated to the Filter 0.
+> > diff --git a/drivers/iio/adc/stm32-dfsdm-core.c b/drivers/iio/adc/stm32-dfsdm-core.c
+> > index 0a4d374..26e2011 100644
+> > --- a/drivers/iio/adc/stm32-dfsdm-core.c
+> > +++ b/drivers/iio/adc/stm32-dfsdm-core.c
+> > @@ -233,6 +233,8 @@ static int stm32_dfsdm_parse_of(struct platform_device *pdev,
+> >  	}
+> >  	priv->dfsdm.phys_base = res->start;
+> >  	priv->dfsdm.base = devm_ioremap_resource(&pdev->dev, res);
+> > +	if (IS_ERR(priv->dfsdm.base))
+> > +		return PTR_ERR(priv->dfsdm.base);
+> >  
+> >  	/*
+> >  	 * "dfsdm" clock is mandatory for DFSDM peripheral clocking.
+> > @@ -242,8 +244,10 @@ static int stm32_dfsdm_parse_of(struct platform_device *pdev,
 > >  	 */
-> >  	irq = platform_get_irq(pdev, 0);
-> > +	if (irq < 0) {
-> > +		if (irq != -EPROBE_DEFER)
-> > +			dev_err(dev, "Failed to get IRQ: %d\n", irq);
-> > +		return irq;
-> > +	}
-> > +
-> >  	ret = devm_request_irq(dev, irq, stm32_dfsdm_irq,
-> >  			       0, pdev->name, adc);
-> >  	if (ret < 0) {
+> >  	priv->clk = devm_clk_get(&pdev->dev, "dfsdm");
+> >  	if (IS_ERR(priv->clk)) {
+> > -		dev_err(&pdev->dev, "No stm32_dfsdm_clk clock found\n");
+> > -		return -EINVAL;
+> > +		ret = PTR_ERR(priv->clk);
+> > +		if (ret != -EPROBE_DEFER)
+> > +			dev_err(&pdev->dev, "Failed to get clock (%d)\n", ret);
+> > +		return ret;
+> >  	}
+> >  
+> >  	priv->aclk = devm_clk_get(&pdev->dev, "audio");
 > >   
 
 
