@@ -2,58 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2EF5B2FD
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Apr 2019 09:10:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78149B300
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Apr 2019 09:11:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=HQNTBSPOSXCuPkdJfb9J0hsBmOvYMwC4lg8ETXyPp04=; b=Ia2
-	XS6Yu6ICsJjy5Igfdrj8hPPiyifHrMtS7fvbjQjmzuki/zMoEjepNwSpOl7BATBEPePz+fa/SGi/S
-	F00JTRYVbWZKfIBnbXaC2WkfWauOxsnm4aSaK+K9uSv+68aU5lENpv8+BhHDSXABA1lPBeA4gvJqJ
-	Be3uARXTzg1EoZ3h3g6EvgQMweOHQuvI5xQlADo9bfAqdEuC+x8VGnEE1HTXGAfuqygR7UAIBuwua
-	GATx4rxd7uZeXnxwxSWlTou+5Ipbc5z62mb3LL9JBkJdT48dit7IXIkruMthWkEa1+UXNDu2X2Nxe
-	xR5Cv7xuthUaSbin4fOFsZtMQN4wNfg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Td8U5zYLG3zXx5RlqfdsncmLfHObq95rEKyGennnt7w=; b=VaX/qTMqxgK3Gdj5YCmeCa0loZ
+	W0HaZbx/eIu5+/CJvFVMG589osh1k2EvUFVpPSLuvSL7El3klmRbppxwqisAP9yOODfzs7YfS3L4j
+	seeNAOLI3birFZywsJ8I+pUbInmlfnNwAvxAEbgRSQf+bvr7UPCBZymxK4+0KU46uPplg+uDQeLIH
+	8o41PMho3uOdwDNijXu3GCA9DG+IIjBZa7sQs/YU2+5BlJXR4yFCaKg4ngkrJUnkJsDHeHZVezO/X
+	L8WtlS84oSDEcdijGcpytQMiFOw42L9ktDgsul+dMxCq6DzCKsCABkuN0bNPyvwkVtoZ56cCI/5bs
+	ne6pvINg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKHU5-0002Tw-1q; Sat, 27 Apr 2019 07:10:53 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1hKHUi-00036A-0s; Sat, 27 Apr 2019 07:11:32 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKHTr-0002R7-Ua
- for linux-arm-kernel@lists.infradead.org; Sat, 27 Apr 2019 07:10:45 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 4FBB8200081;
+ id 1hKHTs-0002RF-Aj
+ for linux-arm-kernel@lists.infradead.org; Sat, 27 Apr 2019 07:10:50 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id DFA2A1A002F;
  Sat, 27 Apr 2019 09:10:35 +0200 (CEST)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 41E36200055;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id D20831A000B;
  Sat, 27 Apr 2019 09:10:35 +0200 (CEST)
 Received: from fsr-ub1864-101.ea.freescale.net
  (fsr-ub1864-101.ea.freescale.net [10.171.82.13])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id B5345205ED;
- Sat, 27 Apr 2019 09:10:34 +0200 (CEST)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 51C2C205ED;
+ Sat, 27 Apr 2019 09:10:35 +0200 (CEST)
 From: laurentiu.tudor@nxp.com
 To: netdev@vger.kernel.org, madalin.bucur@nxp.com, roy.pledge@nxp.com,
  camelia.groza@nxp.com, leoyang.li@nxp.com
-Subject: [PATCH v2 0/9] Prerequisites for NXP LS104xA SMMU enablement
-Date: Sat, 27 Apr 2019 10:10:22 +0300
-Message-Id: <20190427071031.6563-1-laurentiu.tudor@nxp.com>
+Subject: [PATCH v2 1/9] soc/fsl/qman: fixup liodns only on ppc targets
+Date: Sat, 27 Apr 2019 10:10:23 +0300
+Message-Id: <20190427071031.6563-2-laurentiu.tudor@nxp.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190427071031.6563-1-laurentiu.tudor@nxp.com>
+References: <20190427071031.6563-1-laurentiu.tudor@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190427_001040_125309_ADE19590 
-X-CRM114-Status: UNSURE (   6.07  )
+X-CRM114-CacheID: sfid-20190427_001041_118272_7589E2E9 
+X-CRM114-Status: UNSURE (   7.96  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -77,46 +80,49 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
 
-This patch series contains several fixes in preparation for SMMU
-support on NXP LS1043A and LS1046A chips. Once these get picked up,
-I'll submit the actual SMMU enablement patches consisting in the
-required device tree changes.
+ARM SoCs use SMMU so the liodn fixup done in the qman driver is no
+longer making sense and it also breaks the ICID settings inherited
+from u-boot. Do the fixups only for PPC targets.
 
-This patch series contains only part of the previously submitted one,
-(including also the device tree changes) available here:
+Signed-off-by: Laurentiu Tudor <laurentiu.tudor@nxp.com>
+---
+ drivers/soc/fsl/qbman/qman_ccsr.c | 2 +-
+ drivers/soc/fsl/qbman/qman_priv.h | 9 ++++++++-
+ 2 files changed, 9 insertions(+), 2 deletions(-)
 
-    https://patchwork.kernel.org/cover/10634443/
-
-Changes in v2:
- - dropped patches dealing with mapping reserved memory in iommu
- - changed logic for qman portal probe status (Leo)
- - moved "#ifdef CONFIG_PAMU" in header file (Leo)
- - rebased on v5.1.0-rc5
-
-Laurentiu Tudor (9):
-  soc/fsl/qman: fixup liodns only on ppc targets
-  soc/fsl/qbman_portals: add APIs to retrieve the probing status
-  fsl/fman: backup and restore ICID registers
-  fsl/fman: add API to get the device behind a fman port
-  dpaa_eth: defer probing after qbman
-  dpaa_eth: base dma mappings on the fman rx port
-  dpaa_eth: fix iova handling for contiguous frames
-  dpaa_eth: fix iova handling for sg frames
-  dpaa_eth: fix SG frame cleanup
-
- .../net/ethernet/freescale/dpaa/dpaa_eth.c    | 136 ++++++++++++------
- drivers/net/ethernet/freescale/fman/fman.c    |  35 ++++-
- drivers/net/ethernet/freescale/fman/fman.h    |   4 +
- .../net/ethernet/freescale/fman/fman_port.c   |  14 ++
- .../net/ethernet/freescale/fman/fman_port.h   |   2 +
- drivers/soc/fsl/qbman/bman_portal.c           |  20 ++-
- drivers/soc/fsl/qbman/qman_ccsr.c             |   2 +-
- drivers/soc/fsl/qbman/qman_portal.c           |  21 ++-
- drivers/soc/fsl/qbman/qman_priv.h             |   9 +-
- include/soc/fsl/bman.h                        |   8 ++
- include/soc/fsl/qman.h                        |   9 ++
- 11 files changed, 202 insertions(+), 58 deletions(-)
-
+diff --git a/drivers/soc/fsl/qbman/qman_ccsr.c b/drivers/soc/fsl/qbman/qman_ccsr.c
+index 109b38de3176..a6bb43007d03 100644
+--- a/drivers/soc/fsl/qbman/qman_ccsr.c
++++ b/drivers/soc/fsl/qbman/qman_ccsr.c
+@@ -596,7 +596,7 @@ static int qman_init_ccsr(struct device *dev)
+ }
+ 
+ #define LIO_CFG_LIODN_MASK 0x0fff0000
+-void qman_liodn_fixup(u16 channel)
++void __qman_liodn_fixup(u16 channel)
+ {
+ 	static int done;
+ 	static u32 liodn_offset;
+diff --git a/drivers/soc/fsl/qbman/qman_priv.h b/drivers/soc/fsl/qbman/qman_priv.h
+index 75a8f905f8f7..04515718cfd9 100644
+--- a/drivers/soc/fsl/qbman/qman_priv.h
++++ b/drivers/soc/fsl/qbman/qman_priv.h
+@@ -193,7 +193,14 @@ extern struct gen_pool *qm_cgralloc; /* CGR ID allocator */
+ u32 qm_get_pools_sdqcr(void);
+ 
+ int qman_wq_alloc(void);
+-void qman_liodn_fixup(u16 channel);
++#ifdef CONFIG_FSL_PAMU
++#define qman_liodn_fixup __qman_liodn_fixup
++#else
++static inline void qman_liodn_fixup(u16 channel)
++{
++}
++#endif
++void __qman_liodn_fixup(u16 channel);
+ void qman_set_sdest(u16 channel, unsigned int cpu_idx);
+ 
+ struct qman_portal *qman_create_affine_portal(
 -- 
 2.17.1
 
