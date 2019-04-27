@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7273CB257
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Apr 2019 03:40:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 319E2B267
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Apr 2019 03:42:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mmFdq36wEEHOYr+pPRgdi0+FGOG5XjGzAEz5L/CcJvY=; b=KhQHnqdnNzwPLw
-	YU9wfGpmUP/NXwTrHxXQqp/2nnYyjG+JrXCi+nSOqbZXc9eICVKiUU/ilV/0uc9A83H6iFqWHeQKQ
-	ehoGAUOxMGCztie4AKxJjbSC5sHIEClXSPexPREkbzKTY8d0FhHjWaapa0HZH2sbLEBNHMRgSDhfb
-	LWIap09o20KSLTRSymlcxFjyGbI07OHxRZRkZJyOwNNfzsJuxK9s+h6UNLoUxKhgDT/j6opIHNrfW
-	FtN95Oz017ZyCqmpOsejEMBZJLoZLZl8sB4wqRpbCbt7vkvdPoY0i7pMIoRdfH3g8FgLjMCYisWGL
-	VDkXn3bA59DQdGL6Hycg==;
+	List-Owner; bh=FKaPW9w2fLBbx9ItX+QA8M84XaLJl3hlkVuMnRHiKaM=; b=Mx1NVSp6qLtOuW
+	0vmTlJzaTTSS9fm2o6wFv8w56hx2e5KIoOkssbBMLsn9PfiEWXR6C9uXKqKfzBCVMrj0ge8O4nVYf
+	3RDDx3bCpR8NxhuIvqlrXq369Fj2ftkh42YasegC66elmwSqczYf0JRYlkHvUv5Ez0mIBzUlyhKB9
+	CwPYvIraDrOvbURGifRi5zfiiYQHZdQ/LBkI4Jd1ncld7nIS5bVHwXkVpghacKCGkOGoKJlMKujxe
+	LxInx7eAor0r1JwcO+UcYxaTsE68ZF0jGR7sipHv3+4GUYkhIAnajIgPS2hwjVDHKs4Q1I2E9qL2S
+	WwGVT+We9kvVgtAP+TeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKCK4-0007zw-LU; Sat, 27 Apr 2019 01:40:12 +0000
+	id 1hKCLx-0000sA-9h; Sat, 27 Apr 2019 01:42:09 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKCJu-00070g-Va; Sat, 27 Apr 2019 01:40:06 +0000
+ id 1hKCLo-0000r4-2C; Sat, 27 Apr 2019 01:42:03 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5BAAA208CB;
- Sat, 27 Apr 2019 01:40:01 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 790672146E;
+ Sat, 27 Apr 2019 01:41:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1556329202;
- bh=UFLB5YQ4Ea19I7/ltBTlkhya7x1oupHQFnMKqp3lDsY=;
+ s=default; t=1556329319;
+ bh=Ta34+lRfbxYq0JQE7rMVAMw94fUpxm73YVPlhFH4Zjs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=i08w9Q+O+PC7XmQnOZSD+flAW3Bz8Y24cyvWSbqPRwt+YyH3SHi/9jMDgGPTKmyjp
- 5u8y4pbhfF4Mdg+BvHOFlmF7gqVg/qld1QvBjB64Meo8L/2NrpnudfjWXJWoO2F5yl
- NaOdrYW/3z9YW77+YgZZOGjLw2LFriHR6Wp23H04=
+ b=QbqwddZkepvEFJspXRdCnY+w0OK0vdbSpbuH+CO9xafNgOscTFFJAj+evNSL8G4/M
+ TV6zXiNb8vxKglxvEgBoy2OlSj+gj4bRl89GLtoWqAib8Y+bWPJ3fr5W1nOzVC4zte
+ j/9sZcq4YvG0Sxh1WOwI4WstiO9fFlK1DC+R7y/o=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.0 54/79] drm/mediatek: fix possible object reference
- leak
-Date: Fri, 26 Apr 2019 21:38:13 -0400
-Message-Id: <20190427013838.6596-54-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 41/53] drm/mediatek: fix possible object
+ reference leak
+Date: Fri, 26 Apr 2019 21:40:38 -0400
+Message-Id: <20190427014051.7522-41-sashal@kernel.org>
 X-Mailer: git-send-email 2.19.1
-In-Reply-To: <20190427013838.6596-1-sashal@kernel.org>
-References: <20190427013838.6596-1-sashal@kernel.org>
+In-Reply-To: <20190427014051.7522-1-sashal@kernel.org>
+References: <20190427014051.7522-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190426_184003_040091_1E7DCB3F 
+X-CRM114-CacheID: sfid-20190426_184200_118251_CABB4580 
 X-CRM114-Status: GOOD (  10.73  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -117,10 +117,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 1 insertion(+)
 
 diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi.c b/drivers/gpu/drm/mediatek/mtk_hdmi.c
-index c910850d2077..a687fe3e1d6c 100644
+index c7a77d6f612b..62444a3a5742 100644
 --- a/drivers/gpu/drm/mediatek/mtk_hdmi.c
 +++ b/drivers/gpu/drm/mediatek/mtk_hdmi.c
-@@ -1514,6 +1514,7 @@ static int mtk_hdmi_dt_parse_pdata(struct mtk_hdmi *hdmi,
+@@ -1508,6 +1508,7 @@ static int mtk_hdmi_dt_parse_pdata(struct mtk_hdmi *hdmi,
  	of_node_put(remote);
  
  	hdmi->ddc_adpt = of_find_i2c_adapter_by_node(i2c_np);
