@@ -2,104 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 095A2B40C
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Apr 2019 19:11:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7109B41A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Apr 2019 19:26:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jf7Y+yO38/U1HyzVT25M4GlZ4W9kuMQUZlzOJJ5uOgk=; b=DDYx5JI0lQ/lgV
-	VPTlXg1lOSSWuNI51Wi5AX6dPBVkS+/JP1W4tNjf/t2ZYxiY5YGDcIEP036wGIVXJtrRe17TPRNtp
-	qGoEqu7bFlIT0qCeKkA9TvSw0NkLmRgzlbn3m0RLX+lCsfCT45ajhjzIvoC//zeA3JqbM9VrY1+NT
-	69kidBNLMNutbtzFGhLaSDBEmaeRe4x9VyFBRuwVWJeWljPXwts07OKrLVmsr5w0DixZngLUJ6DcS
-	R2ThEcvMSaK1W6DMMBJXMBopXav4BV1IwiB3VgnXQt22MwYJHvDWkxCRZABsP9KUyujjEJ3XRJCaV
-	h8UAaR0VROOiJK+/7P+A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=KZtVfoCeJo3AsLimwdNFrBlakgI43hAxxS8xqPAEiPI=; b=RxSaPyVlcrvmY5XMBgkTpVh3X
+	H15Ldwu8ANBXr0UdUNN59xC3z2pbJxEKVmcmqGUmZxrRwn32IKvA1faKcz4HRmo+jLDz0GSvdMxuI
+	gDIE4RBcuiwpKXY3SbZfQE54G9EsFbjvB1BvedtTHZ1ZWrKfXX6zuS/i22hdVeY90gzutynubTs7Y
+	KnuRE1gUlY+8YcOSxzUivFujQtCG2fjryLaCcSP9Ul1JkGf33csShugaGd3NYFDLzIzXPvx8GcI4B
+	3/yF6hPyIr8qc4DjDAgPYUodN/8bPwuwi6L/jRiViRWJ8lcjawqhs77POEWFIffN4j47kteEB4Wv6
+	/rtf+8aig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKQqx-0003an-96; Sat, 27 Apr 2019 17:11:07 +0000
-Received: from mail-dm3nam03on0610.outbound.protection.outlook.com
- ([2a01:111:f400:fe49::610]
- helo=NAM03-DM3-obe.outbound.protection.outlook.com)
+	id 1hKR69-00088R-Pf; Sat, 27 Apr 2019 17:26:49 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKQqp-0003a2-Kk
- for linux-arm-kernel@lists.infradead.org; Sat, 27 Apr 2019 17:11:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=infinera.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=FQtJl4bY1DuoaHrUkMBL7N6xDJZq7S7FIB5cMjqNewg=;
- b=TCzeSQ/vHhbIDdZwDmat/CNk2Nks6JGOkm4QXPM87FOppZvRCHQjbYBMhIoga/95SmoZZe3o+XIWSWjHb2csURwpMV7Ophuzvy0KG8330XDsPJfORWGB2YXkfHEz0uGGb+ydgnHuCdarrxrH6YORUBT3MNQ9VUxdSlkxVZBpATA=
-Received: from BN8PR10MB3540.namprd10.prod.outlook.com (20.179.78.205) by
- BN8PR10MB3490.namprd10.prod.outlook.com (20.179.78.20) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1835.13; Sat, 27 Apr 2019 17:10:53 +0000
-Received: from BN8PR10MB3540.namprd10.prod.outlook.com
- ([fe80::51e7:a757:afa8:f4cf]) by BN8PR10MB3540.namprd10.prod.outlook.com
- ([fe80::51e7:a757:afa8:f4cf%7]) with mapi id 15.20.1835.010; Sat, 27 Apr 2019
- 17:10:53 +0000
-From: Joakim Tjernlund <Joakim.Tjernlund@infinera.com>
-To: "netdev@vger.kernel.org" <netdev@vger.kernel.org>, "madalin.bucur@nxp.com"
- <madalin.bucur@nxp.com>, "leoyang.li@nxp.com" <leoyang.li@nxp.com>,
- "laurentiu.tudor@nxp.com" <laurentiu.tudor@nxp.com>, "roy.pledge@nxp.com"
- <roy.pledge@nxp.com>, "camelia.groza@nxp.com" <camelia.groza@nxp.com>
-Subject: Re: [PATCH v2 9/9] dpaa_eth: fix SG frame cleanup
-Thread-Topic: [PATCH v2 9/9] dpaa_eth: fix SG frame cleanup
-Thread-Index: AQHU/MpTw42IuR0fykCaI1+07jqDiqZQPr+A
-Date: Sat, 27 Apr 2019 17:10:53 +0000
-Message-ID: <2c6f5d170edab346e0a87b1dfeb12e2f65801685.camel@infinera.com>
-References: <20190427071031.6563-1-laurentiu.tudor@nxp.com>
- <20190427071031.6563-10-laurentiu.tudor@nxp.com>
-In-Reply-To: <20190427071031.6563-10-laurentiu.tudor@nxp.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Joakim.Tjernlund@infinera.com; 
-x-originating-ip: [88.131.87.201]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 9a2bf90b-4bf3-4692-cb14-08d6cb334df7
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(2017052603328)(7193020);
- SRVR:BN8PR10MB3490; 
-x-ms-traffictypediagnostic: BN8PR10MB3490:
-x-microsoft-antispam-prvs: <BN8PR10MB34905036363513E5A4F02C68F43F0@BN8PR10MB3490.namprd10.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:5236;
-x-forefront-prvs: 0020414413
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(39860400002)(136003)(396003)(346002)(376002)(366004)(189003)(199004)(3846002)(6116002)(2201001)(68736007)(256004)(81166006)(6512007)(54906003)(8676002)(2906002)(8936002)(110136005)(81156014)(36756003)(6246003)(66476007)(64756008)(66556008)(66446008)(316002)(86362001)(229853002)(102836004)(66066001)(53936002)(6486002)(2501003)(14444005)(91956017)(66946007)(73956011)(76116006)(6436002)(2616005)(305945005)(486006)(6506007)(97736004)(71190400001)(478600001)(4326008)(7736002)(5660300002)(476003)(76176011)(14454004)(118296001)(72206003)(99286004)(7416002)(186003)(26005)(25786009)(446003)(11346002)(71200400001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BN8PR10MB3490;
- H:BN8PR10MB3540.namprd10.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: infinera.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: h1A6YhzC8ddJWf79OUo4YI/37lwKzz8kkCAzI+Wvbmn5Qx4PsFp4nPg9K3eOvMV+EDsPamR4VQJR1EOLDeiY9zZhWvyGuaFoosGt3gwvF6z+mrcgvbEAv7j2fhNpdEAzxvlACB47/r5G3aLx5Tmd2ojN4flnheSHbj6XMYpfXs0X30YArUPatOeeApeZ/ubrqp1Z2tFm/eXA6VEHTKq0mBvGV/M2fzdrUK3D0FFK3GG/fPoflzEEM3j2KR/C1zlboXh33rBFaBbUtYurndgwBd8/0ALu2EkTZUve+x7T05sYy0WXkBqzoMX0aKm/0jXsuXcyJhucTTKg3CdzN0718JJb0p8zuVJ3mfIi/Q4wg2VON6ws+1QgQ/nUBeIYRChn8NNw2h3pZtKqS8lcTv7Hb7M/6Z4FmqcBqMFuYkwNRnE=
-Content-ID: <4A981E3F453F6540BDBD9A24364D128E@namprd10.prod.outlook.com>
+ id 1hKR61-00087R-Qe
+ for linux-arm-kernel@lists.infradead.org; Sat, 27 Apr 2019 17:26:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=a3tmI0KUyLppW1kwBwL7lvA+SJm0kVYzuouVBoWkDwk=; b=tJcvGeRygaFThXfFvSb4czEha
+ Q5l0BBPMyQjbuhkvhGj+D9qIDc+mqjrUmNh/2f1KkzZeznjETqI6tRGFOuLYdbX4u0UmWO5/aM/bL
+ QKfDzTQ4ngEZdrqg0jSElj1AgoBqipYR5vhUgvD49iINDsZgUcMSjJzurhnVuy25KuTl0=;
+Received: from [211.55.52.15] (helo=finisterre.ee.mobilebroadband)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hKR5G-0004ci-TI; Sat, 27 Apr 2019 17:25:55 +0000
+Received: by finisterre.ee.mobilebroadband (Postfix, from userid 1000)
+ id 48FE5441D3B; Sat, 27 Apr 2019 18:25:51 +0100 (BST)
+Date: Sun, 28 Apr 2019 02:25:51 +0900
+From: Mark Brown <broonie@kernel.org>
+To: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
+Subject: Re: [PATCH v2 25/79] docs: convert docs to ReST and rename to *.rst
+Message-ID: <20190427172551.GI14916@sirena.org.uk>
+Mail-Followup-To: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ Mauro Carvalho Chehab <mchehab@infradead.org>,
+ linux-kernel@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
+ Sebastian Reichel <sre@kernel.org>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Len Brown <len.brown@intel.com>, Pavel Machek <pavel@ucw.cz>,
+ Nishanth Menon <nm@ti.com>, Stephen Boyd <sboyd@kernel.org>,
+ Liam Girdwood <lgirdwood@gmail.com>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Harry Wei <harryxiyou@gmail.com>,
+ Alex Shi <alex.shi@linux.alibaba.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ "H. Peter Anvin" <hpa@zytor.com>, x86@kernel.org,
+ Jani Nikula <jani.nikula@linux.intel.com>,
+ Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
+ Rodrigo Vivi <rodrigo.vivi@intel.com>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Johannes Berg <johannes@sipsolutions.net>,
+ "David S. Miller" <davem@davemloft.net>, linux-pm@vger.kernel.org,
+ linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ intel-gfx@lists.freedesktop.org, dri-devel@lists.freedesktop.org,
+ linux-wireless@vger.kernel.org, netdev@vger.kernel.org
+References: <cover.1555938375.git.mchehab+samsung@kernel.org>
+ <7adf9035ae06ecc6c7e46b51cb677f0a8f61d19a.1555938376.git.mchehab+samsung@kernel.org>
+ <20190425180758.GC23183@sirena.org.uk>
+ <20190426064609.7f00e013@coco.lan>
 MIME-Version: 1.0
-X-OriginatorOrg: infinera.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9a2bf90b-4bf3-4692-cb14-08d6cb334df7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Apr 2019 17:10:53.0418 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 285643de-5f5b-4b03-a153-0ae2dc8aaf77
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN8PR10MB3490
+In-Reply-To: <20190426064609.7f00e013@coco.lan>
+X-Cookie: -- I have seen the FUN --
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190427_101059_876447_06FF1660 
-X-CRM114-Status: GOOD (  15.65  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190427_102642_015692_5CCF25B4 
+X-CRM114-Status: GOOD (  11.33  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe49:0:0:0:610 listed in]
- [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -116,50 +105,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "davem@davemloft.net" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Nishanth Menon <nm@ti.com>, linux-wireless@vger.kernel.org,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ David Airlie <airlied@linux.ie>, Viresh Kumar <viresh.kumar@linaro.org>,
+ Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ Harry Wei <harryxiyou@gmail.com>, Pavel Machek <pavel@ucw.cz>,
+ "H. Peter Anvin" <hpa@zytor.com>, Alex Shi <alex.shi@linux.alibaba.com>,
+ Jonathan Corbet <corbet@lwn.net>, x86@kernel.org,
+ Ingo Molnar <mingo@redhat.com>, linux-pci@vger.kernel.org,
+ Len Brown <len.brown@intel.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ intel-gfx@lists.freedesktop.org, Jani Nikula <jani.nikula@linux.intel.com>,
+ Mauro Carvalho Chehab <mchehab@infradead.org>, Borislav Petkov <bp@alien8.de>,
+ Rodrigo Vivi <rodrigo.vivi@intel.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Mathieu Poirier <mathieu.poirier@linaro.org>, Stephen Boyd <sboyd@kernel.org>,
+ netdev@vger.kernel.org, linux-pm@vger.kernel.org,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, Liam Girdwood <lgirdwood@gmail.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Sebastian Reichel <sre@kernel.org>,
+ Johannes Berg <johannes@sipsolutions.net>,
+ "David S. Miller" <davem@davemloft.net>
+Content-Type: multipart/mixed; boundary="===============6780451426936811931=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 2019-04-27 at 10:10 +0300, laurentiu.tudor@nxp.com wrote:
-> From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
-> 
-> Fix issue with the entry indexing in the sg frame cleanup code being
-> off-by-1. This problem showed up when doing some basic iperf tests and
-> manifested in traffic coming to a halt.
-> 
-> Signed-off-by: Laurentiu Tudor <laurentiu.tudor@nxp.com>
-> Acked-by: Madalin Bucur <madalin.bucur@nxp.com>
 
-Wasn't this a stable candidate too?
+--===============6780451426936811931==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="WR+jf/RUebEcofwt"
+Content-Disposition: inline
 
-> ---
->  drivers/net/ethernet/freescale/dpaa/dpaa_eth.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/net/ethernet/freescale/dpaa/dpaa_eth.c b/drivers/net/ethernet/freescale/dpaa/dpaa_eth.c
-> index daede7272768..40420edc9ce6 100644
-> --- a/drivers/net/ethernet/freescale/dpaa/dpaa_eth.c
-> +++ b/drivers/net/ethernet/freescale/dpaa/dpaa_eth.c
-> @@ -1663,7 +1663,7 @@ static struct sk_buff *dpaa_cleanup_tx_fd(const struct dpaa_priv *priv,
->                                  qm_sg_entry_get_len(&sgt[0]), dma_dir);
-> 
->                 /* remaining pages were mapped with skb_frag_dma_map() */
-> -               for (i = 1; i < nr_frags; i++) {
-> +               for (i = 1; i <= nr_frags; i++) {
->                         WARN_ON(qm_sg_entry_is_ext(&sgt[i]));
-> 
->                         dma_unmap_page(dev, qm_sg_addr(&sgt[i]),
-> --
-> 2.17.1
-> 
+
+--WR+jf/RUebEcofwt
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Fri, Apr 26, 2019 at 06:46:09AM -0300, Mauro Carvalho Chehab wrote:
+> Mark Brown <broonie@kernel.org> escreveu:
+
+> > This is massively CCed covering a large range of subsystems and is patch
+> > 25 of a 79 patch series so I've no context for what's going on here or
+> > why... =20
+
+> You can see more details at patch 00/79:
+> 	https://lore.kernel.org/lkml/20190422115110.26443b44@coco.lan/
+
+OK, it would've helped to CC people on that.  Anyway
+
+Acked-by: Mark Brown <broonie@kernel.org>
+
+--WR+jf/RUebEcofwt
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAlzEkJ4ACgkQJNaLcl1U
+h9CLPQf/egnMPfy5Djt33xwT726spS5SVTG7kuJqe4sKQ3OXBoMa44iGLw9gz/+M
+FmO/XFmO150AIxC3d1OJKSoimebzY1IPIiJFOOQC7SJDtKoOMVm4MTP5w+B8jdvC
+o51B7dkua7q/hKAbj78Q023V/jvpOU+353/om9x82lB7jvoxnN+pGEcEDqQEBtk6
+dSbAla2qU+BoMPdyoOGiCu9mjLpTSGWbU+lz4IKiIQHK5zWx9xFrBCgB1zyjoDEm
+H69kzCVDwYkkiaGriSEV5ksQThpov8Ka2zvrJPZ8HOTaX4GSW3W2Ailr6FJ8cLbo
+mPFwHR0sNRuPgcZtXvdaivvevBYKMw==
+=wBS3
+-----END PGP SIGNATURE-----
+
+--WR+jf/RUebEcofwt--
+
+
+--===============6780451426936811931==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6780451426936811931==--
+
