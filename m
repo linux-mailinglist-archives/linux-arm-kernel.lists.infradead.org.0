@@ -2,67 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 730D6B483
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Apr 2019 22:29:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B3DFB485
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 27 Apr 2019 22:29:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0JPXvflYkKvS/Z14XSUxTWOSw1Ks187Tlg5yeW8c+4Y=; b=g1UHLj4yIC+4ft
-	9N1tKAzIAWJx55FpEQ9fGAiyrcv3QD4HMw9zNPnlTGfHhAKHjmw3/mYk3qlyJ0V6vIjoSRVWxHFLA
-	VYqUX9X3PYOpKgfNmMOvR/RK2YtX1LBtjHDS3Qhk9eYx3AeWpyFPq3Br19+E1/Bl6UQ8uS76OkWje
-	PvdRIOuqPTow4sUs+wkR4k8dtWjHRQp4dzYdjZfOUZRyCqNjmbfVal64l/y76wd9dPYuyqR8nlsup
-	7ujK7895TkzY1UGP0kD/fNPfMxF5qF0K+JGTAnzIvcISq+bWR3VEarljZiKNjaLUAzfD6h0p3ESfN
-	k720MKC0CaKm8nnp9xoA==;
+	List-Owner; bh=08UtR9hNjHBKq4xeWsL8H6rdZWbFJasixmgXG7TW048=; b=NajcCmYW9KNNYJ
+	zFHe7H0BNmphQ5pzm2cZ+dG0EiT1ywGqUOnFZrPan/Aj3tvJeGsEFBGvZvBeMRAtfy112Blp1qG1s
+	wM+ToT5YYRqsX50CAJhua5qWJ98BDL65UgcnLuBL+I8hM991ZCG5NG5BKAJstaZCBrx5ycswuqaNF
+	EhyveoelVrg/1MDyOBhV2dHtEjTifqw0lcK45KkNGJ9PN1jOTavo7hwaZA1BhV1PtJtYYkqd3O0d4
+	J7xyAt0iys77VJ+ZP4Gnyxq/bot2R3FCPs3wLNgdhVbx7YSys7/OOxkpwEiSqHOd5MF9FVKMWO5jv
+	1mUeLFJdUDm7xdeiTmvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKTwb-0004af-ES; Sat, 27 Apr 2019 20:29:09 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1hKTx8-0004t0-Je; Sat, 27 Apr 2019 20:29:42 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKTwR-0004ZL-TX; Sat, 27 Apr 2019 20:29:01 +0000
-Received: by mail-ot1-x341.google.com with SMTP id g24so928763otq.2;
- Sat, 27 Apr 2019 13:28:59 -0700 (PDT)
+ id 1hKTwz-0004rl-Bv; Sat, 27 Apr 2019 20:29:34 +0000
+Received: by mail-ot1-x343.google.com with SMTP id y22so5546671oto.3;
+ Sat, 27 Apr 2019 13:29:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=1I/Om5aYGl76EBPQH6xJKuHTrTxYjP1lSZQ1eei4PnQ=;
- b=oZt/Gnkc+JToAFtKFJv1xZmlYzkiWRGIOyqmO8G+34CGuYKdi4NWz8fdSSkNVEEb+c
- PfyUjCXRBE34YNs5xgGNjJvWCgpvGJcr3hckspV9eKrbxGLtovbs8yX7BKZ6cIcCSB/F
- Gf0z2NeqiV3UoH5896Pa1Tz+EMgMMV0hM6rcQkb993GVp9LdNcspdjkzcXpSxAKwSpmB
- mCwxPEpDxJ6cfb7j2eBlrXpuwSftsW885V0vkz4rWZhz+44QoNoFKIV6c871cFdgP/tx
- sTRWZF1GCKCSvJ9plNIPU3VKh3FReJ8jmXx2u3YaGGaYIuXVdTCLcnxoCYofiXm+iS5T
- 81dw==
+ :cc; bh=r+u1Uc4MpTFdNT8VK8aH808CBTf1BtkCYQRBGkAzTTY=;
+ b=sb8gi04uP2A7Hfb/6So0ySjafBDIIFKDXroacQDp23Vn5PiHFtIn2MMEMF6GHONT9j
+ jt/rYD/pDq+ZMecfDFF+b6wsfC4DAZ+zgTSAPxgmU099C5QKWaBb3NqMGdor2l9KApDa
+ oboT/QVqH0Ey/vLTm90zd3LYU/HCe4eQMlM9761oFZUC4M2BZHEtldjbMcKpTs5PL8fG
+ 9uvPKqnwvYbUc7D569vKwBfxA+9LFqkeLI0iVsY2VyAMhyAtOoiibJvnNCljBFMY3ljc
+ H2EQvrN/N2UEWqO4U0XMqPVcNNtxzeodImbEfaQ8QSoPo3babvW1KcsI0teX289hstzE
+ 96qg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=1I/Om5aYGl76EBPQH6xJKuHTrTxYjP1lSZQ1eei4PnQ=;
- b=HnmqLNUiPAfhm9AGljrt/Q9GSYoxGhaEQPYKMD7LFq7Thn6SDGQ7BLHHerumRxp3zl
- G0x6Soi+XLlJ7ZAomkxetMy376U6ymZtaN0yMfTUugdHRgWEWYoUvu0mqTZFgIEyzd0T
- /G5w5idE+mdK+X3lrsxPryvrIK8P/FdljSG8FRxIegj0SudlUqDO3Kk0Wkfw8hdr21Ot
- eWhDJsX+qB6a3/0Qsofe3Ltzv4+87gFFkLuLTc3F6WCrSabBM459I+/MIJ7RZDVW5YDY
- jrZFXFJ84IAXRyQhnWWGxDXIzphQ9J6q1MJkXyxTwmv3Df0tKg69/lu6lGuxaXXfGDZ9
- 6+rw==
-X-Gm-Message-State: APjAAAVl3CgLJLIo6/l7OT9A+zm77XqmVavVaQ9VmjuMhFcYIY0URBxJ
- PvJQsF3xbtXKb3yoxCmG74jNqBmKfI2hyQUa0PE=
-X-Google-Smtp-Source: APXvYqy9mase1ZnVcKmBnICOyv3t+KT6WikFCXT/0YPXUrGRlfZICYalsHFMC6sfA6xprYjrwUMx37FrmRKsqaItP8E=
-X-Received: by 2002:a9d:7443:: with SMTP id p3mr11906227otk.148.1556396938787; 
- Sat, 27 Apr 2019 13:28:58 -0700 (PDT)
+ bh=r+u1Uc4MpTFdNT8VK8aH808CBTf1BtkCYQRBGkAzTTY=;
+ b=mPdRNl3DqA3XqNqs5hFyg+9EM8VhLkfdAq0gUnkEF1CtR9TS02Ia6L7JXQzEgP2BFT
+ h+We0i57U48TA3Bgs8EWKgW9iDkw9QvuR8Mt7CorRAnnrfeREC3Rq3ZybOjyufxULPA9
+ CFLEhIDBSQ7qyAAaQN6lt/19t4ETzX95+mh4Kma9TkE4HOXfVl0ryrBqR6lPH6EIZ7IN
+ M518qIX28I5zHdl1B0SWILYaSVZ0ZctWPlaSO8eGPe0TtmrGB0BPE7L3NfTkHfA1Lj3+
+ 4wzJkl3R3QB91ktWPwEzM4cD5KyszvqvuscVM/W8dARrcilOmgDXnbwb3HHoa5G1UVa4
+ bIvw==
+X-Gm-Message-State: APjAAAUjO9hCNkHda3ps8rW0WYLio1d/lg9RlRlegBDXSePhVqKM4slu
+ xpdz0FkfGXw4rxKLjto1sonLO2bEVvNyANO3NI0=
+X-Google-Smtp-Source: APXvYqw5UxrFzLXn58WC+X6RPPz/t2StYMN+4m/MLVUAkSj0fMjagguxFrik34N/KANpNKFzVvAQAdQJ/qKByAyRehk=
+X-Received: by 2002:a9d:5e90:: with SMTP id f16mr31089817otl.86.1556396972638; 
+ Sat, 27 Apr 2019 13:29:32 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190423133646.5705-1-narmstrong@baylibre.com>
- <20190423133646.5705-2-narmstrong@baylibre.com>
-In-Reply-To: <20190423133646.5705-2-narmstrong@baylibre.com>
+ <20190423133646.5705-3-narmstrong@baylibre.com>
+In-Reply-To: <20190423133646.5705-3-narmstrong@baylibre.com>
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Sat, 27 Apr 2019 22:28:47 +0200
-Message-ID: <CAFBinCC2XpRab2Hqb+begpMYFuo5KhWfwemQ6C_1LqxJbBjYxg@mail.gmail.com>
-Subject: Re: [PATCH v2 1/3] dt-bindings: pwm: Update bindings for the Meson
- G12A Family
+Date: Sat, 27 Apr 2019 22:29:21 +0200
+Message-ID: <CAFBinCB9WS650JpuyGyjjOE=LNbChOdhAyb+qJMYWGosyMUa=w@mail.gmail.com>
+Subject: Re: [PATCH v2 2/3] pwm: meson: Add clock source configuration for
+ Meson G12A
 To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190427_132859_954920_131F309A 
-X-CRM114-Status: UNSURE (   7.17  )
+X-CRM114-CacheID: sfid-20190427_132933_409093_98841EEA 
+X-CRM114-Status: UNSURE (   7.95  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -70,7 +70,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -93,10 +93,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-pwm@vger.kernel.org,
- baylibre-upstreaming@groups.io, linux-kernel@vger.kernel.org,
- thierry.reding@gmail.com, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-pwm@vger.kernel.org, baylibre-upstreaming@groups.io,
+ linux-kernel@vger.kernel.org, thierry.reding@gmail.com,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -104,9 +103,10 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Tue, Apr 23, 2019 at 3:37 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
 >
-> Update the doc to explicitly support Meson G12A Family.
-> The 2 first (A & B) AO PWM uses different clock source than the last 2
-> (C & D) AO PWM modules, thus we need to differentiate them.
+> For the PWM controller in the Meson G12A SoC, the EE domain and AO domain
+> have different clock sources. This patch tries to describe them in the
+> DT compatible data. The two AO PWM controller has different clock source,
+> but the first AO controller (A & B) can reuse the AXG parents name.
 >
 > Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
