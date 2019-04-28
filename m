@@ -2,56 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E3E9B564
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 08:31:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A5C1B56C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 08:32:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3KxSGp2m7bdWuzMuIG+tMPVPFr0iU4bi5I4cQtjfgfE=; b=RR3PT2ptYNhiEf
-	6LR6xE9454u4nLOYuGuhaiQEWqwz5URztomDUd18IEaokmtT2jhzAAO+eRt4EXtBQpteT2MKa8yQU
-	cx3O3Nr9hL5vdOFrYDD+rGEQd3aAsfVZcD6U3cRBRvLcD/qN/M3cVPQWWhrG2kxFVeCk4SWZXS76O
-	Yz/UCt1z1/f99DaYmUGUHwyggmQ2trRAeFzaW/6Fyv9tGsbGr+AH/aVZb9vs9D2v7VORXeawd3oq2
-	uQcKBejQYV6LMymIaonrsaK+lYSPMRQAMd0S5ATUDx8qj/oQf/FE/xIvZfapu7GK5OFHE4690Tubu
-	agg2cWYzzJ0Ym/t6+7IA==;
+	List-Owner; bh=42N69/WRp0LxpUNd09djGUtSZ/bAiJD9IhJudlobPz4=; b=d0RM37EsKQqlZh
+	JWM3G7lxljyw7CENnAL8Hq78HgeQEejOP9sIbLdUX//c4HDEJR2FJHblmF5wmS23oU94W+lxAOi/e
+	LiUJBWZy8mWVxLUZj2UjnN4vrQzpFGhNyyJGMjrgAIzRL0sjDLlunZUP6TCu2fedyJFr8iQNaV7Cl
+	FEIza0+Oa1e5jaSfY7VKJG2Z/nfm1LoxpS6HheOE6aR+w5SOLMXQ9Vi2niVREYM1JUG8kFKxguuJI
+	9wLiAa2FKq9pN9/mXbcnkuQGBfr/qL848rHqRzUnP+Wh4EPKFIBC+pF4xpZsABL62hScCELrVWC7y
+	DoNE+h6ogn1sFal0eQsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKdLF-0002bw-Iv; Sun, 28 Apr 2019 06:31:13 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hKdMF-0003fh-5s; Sun, 28 Apr 2019 06:32:15 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKdKv-0002Nb-IO; Sun, 28 Apr 2019 06:30:54 +0000
-X-UUID: ffe9ede56da24542a5b7cd2672625945-20190427
-X-UUID: ffe9ede56da24542a5b7cd2672625945-20190427
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ id 1hKdL3-0002Nx-Ea; Sun, 28 Apr 2019 06:31:05 +0000
+X-UUID: 9c7744c494c84237971d66603c4823bc-20190427
+X-UUID: 9c7744c494c84237971d66603c4823bc-20190427
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
  (envelope-from <biao.huang@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1170503741; Sat, 27 Apr 2019 22:30:43 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sat, 27 Apr 2019 23:30:42 -0700
+ with ESMTP id 345226214; Sat, 27 Apr 2019 22:30:44 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sat, 27 Apr 2019 23:30:43 -0700
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Sun, 28 Apr 2019 14:30:28 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Sun, 28 Apr 2019 14:30:27 +0800
+ Transport; Sun, 28 Apr 2019 14:30:28 +0800
 From: Biao Huang <biao.huang@mediatek.com>
 To: Jose Abreu <joabreu@synopsys.com>, <davem@davemloft.net>
-Subject: [PATCH 1/6] net: stmmac: update rx tail pointer register to fix rx
- dma hang issue.
-Date: Sun, 28 Apr 2019 14:30:04 +0800
-Message-ID: <1556433009-25759-2-git-send-email-biao.huang@mediatek.com>
+Subject: [PATCH 2/6] net: stmmac: fix csr_clk can't be zero issue
+Date: Sun, 28 Apr 2019 14:30:05 +0800
+Message-ID: <1556433009-25759-3-git-send-email-biao.huang@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
 In-Reply-To: <1556433009-25759-1-git-send-email-biao.huang@mediatek.com>
 References: <1556433009-25759-1-git-send-email-biao.huang@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: B89D04866DABA2B380F3EAB84A9027551F442BDD6543E5EB1D77974104B358922000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190427_233053_608903_4E121342 
-X-CRM114-Status: UNSURE (   8.33  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190427_233102_063317_FEC8C639 
+X-CRM114-Status: GOOD (  10.19  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -83,32 +82,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently we will not update the receive descriptor tail pointer in
-stmmac_rx_refill. Rx dma will think no available descriptors and stop
-once received packets exceed DMA_RX_SIZE, so that the rx only test will fail.
-
-Update the receive tail pointer in stmmac_rx_refill to add more descriptors
-to the rx channel, so packets can be received continually
+The specific clk_csr value can be zero, and
+stmmac_clk is necessary for MDC clock which can be set dynamically.
+So, change the condition from plat->clk_csr to plat->stmmac_clk to
+fix clk_csr can't be zero issue.
 
 Signed-off-by: Biao Huang <biao.huang@mediatek.com>
 ---
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c |    3 +++
- 1 file changed, 3 insertions(+)
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index 97c5e1a..818ad88 100644
+index 818ad88..9e89b94 100644
 --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
 +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -3336,6 +3336,9 @@ static inline void stmmac_rx_refill(struct stmmac_priv *priv, u32 queue)
- 		entry = STMMAC_GET_ENTRY(entry, DMA_RX_SIZE);
- 	}
- 	rx_q->dirty_rx = entry;
-+	stmmac_set_rx_tail_ptr(priv, priv->ioaddr,
-+			       rx_q->dma_rx_phy + (entry * sizeof(struct dma_desc)),
-+			       queue);
- }
- 
- /**
+@@ -4376,7 +4376,7 @@ int stmmac_dvr_probe(struct device *device,
+ 	 * set the MDC clock dynamically according to the csr actual
+ 	 * clock input.
+ 	 */
+-	if (!priv->plat->clk_csr)
++	if (priv->plat->stmmac_clk)
+ 		stmmac_clk_csr_set(priv);
+ 	else
+ 		priv->clk_csr = priv->plat->clk_csr;
 -- 
 1.7.9.5
 
