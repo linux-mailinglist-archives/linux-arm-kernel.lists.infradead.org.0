@@ -2,72 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0224B60C
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 16:28:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16DDBB610
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 16:43:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=elDvzYFP5FoPJiH6PxQkSC/0PczhQ5rDn6Q0n327YSQ=; b=MCBEOJDlz2GR6V978qVpYOOQ/
-	Tl38yC2Zg1GAeFXhS/foFlwyyXKaDmG5Jy8lpksmfSgWE/VErYtURYGOBmlQDjiKcTXA0d8iW/BIN
-	31JMCbqQ6ZkVH+/9NLbzFkhtU/tQQj/WwFrFXUI0eRTlMpqtuW4tcVYmsb8PrBPmM3ojOnEk7Dofc
-	XnGauX0QWaZvmg4WjV/Ge9dZuXTjgts/GVFcDTUTV7ky7tXVdoqsteKbBGgUumd0zOOqmuMGb0cdb
-	GkoppvGyuQ+bCj4rCQaS8vfDPC5TpW7eOIzQZJzEAE57FTSu1gFugqnuckFYy4Ukj5f+IBsNIWIYo
-	c4oLx66nQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=HTmf46lUYV+Npmc3zl0CRgVP2JivEjDSUl1dIOIqkRY=; b=QnD
+	FYBae/FMDSLBfNsND4Na3rEPVs0xHXFlZMlQyQ2PUMdjnu1DgQPM53loB9Svp+gSc/cTRLqmRqhyO
+	L9j7HHQweWAdmS5NYJUX0u7o1yUaOyaTr2a0qrQ7R6XWu3LmdvyO+vdZOTa7hl4Zq9TIaaSb3+QrN
+	g+9M5z0IcZPLSpsnQUcxCtrXx/hk1WC7QRPK6+bYhocczLFExnlBvJpMl9UtppnGC/4sB2B69IfqO
+	RdABDFLny9TQf4aV861d2I0Fvn9vO+KR/qJMcXVzzSsyZoi+75VtKDfGltx9CUvmBm8/4i3mObuWG
+	Qu9qcjWBsBegZBJUSEm7sqtL91JAiKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKknK-0005xm-4T; Sun, 28 Apr 2019 14:28:42 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1hKl15-00029W-6f; Sun, 28 Apr 2019 14:42:55 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKknE-0005xN-7i; Sun, 28 Apr 2019 14:28:36 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
- In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=U4gvHYtR3cZMhjl2n48U193qZV7aNj8fYuONBGQ/OiY=; b=CNPJ/jm3F9PVisGwh+ab6/RR+e
- vM15L02RkhRpQjVlL/X7ImI0sKfCM5JELBDEfOGWSoGlpMNDGLyt37p/pvSNR132KIVcBYzOYipIe
- sabgSjvZWUbmiKRQevCpQ+KY8JIoIg4Bf+Ux7IQ2RHq15kcKXVAwu6mB8ynvFtN2IQJw4xQl6XA49
- 8vu2ShKxYa87xy9IYjKryL7xBQG/FVTMx9ZuVOSICpQlWbyzDip6We0ilGk/qKXMXnEtE2eUayTcx
- LddbvRInDhLJCQhpj4gEYfvoTqxHnmXo9gO2+KMiLOMd8IeegMZVufh6huQCnLCC/dtom+z19A7tg
- I+o1utDA==;
-Received: from relay5-d.mail.gandi.net ([217.70.183.197])
- by casper.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKknA-0007FQ-SD; Sun, 28 Apr 2019 14:28:34 +0000
-X-Originating-IP: 79.86.19.127
-Received: from [192.168.0.12] (127.19.86.79.rev.sfr.net [79.86.19.127])
- (Authenticated sender: alex@ghiti.fr)
- by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 381E61C0005;
- Sun, 28 Apr 2019 14:27:53 +0000 (UTC)
-Subject: Re: [PATCH v3 04/11] arm64, mm: Move generic mmap layout functions to
- mm
-To: Kees Cook <keescook@chromium.org>
-References: <20190417052247.17809-1-alex@ghiti.fr>
- <20190417052247.17809-5-alex@ghiti.fr>
- <CAGXu5j+NV7nfQ044kvsqqSrWpuXH5J6aZEbvg7YpxyBFjdAHyw@mail.gmail.com>
- <fd2b02b3-5872-ccf6-9f52-53f692fba02d@ghiti.fr>
- <CAGXu5j+NkQ+nwRShuKeHMwuy6++3x0QMS9djE=wUzUUtAkVf3g@mail.gmail.com>
-From: Alex Ghiti <alex@ghiti.fr>
-Message-ID: <cf4073ed-098f-779e-32e1-f3273622b115@ghiti.fr>
-Date: Sun, 28 Apr 2019 10:27:52 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
-MIME-Version: 1.0
-In-Reply-To: <CAGXu5j+NkQ+nwRShuKeHMwuy6++3x0QMS9djE=wUzUUtAkVf3g@mail.gmail.com>
-Content-Language: sv-FI
+ id 1hKl0k-00028L-C3
+ for linux-arm-kernel@lists.infradead.org; Sun, 28 Apr 2019 14:42:35 +0000
+Received: from localhost.localdomain (unknown [194.230.155.114])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id BB3EB20644;
+ Sun, 28 Apr 2019 14:42:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1556462551;
+ bh=w/rU7LVgIYiKJvGCsk3PphaPgE7GMKwBPLNwd/xvtTE=;
+ h=From:To:Cc:Subject:Date:From;
+ b=1rvgk865ANImqrhNp3jACRVPQx74Aum+dL3iba7aK2fMxZ2ilYJh4uTvw4qQISDWc
+ CeSNnvm3wtHhR+ZfbbC2+jFmochLdS+Tb9go966wPZLZl/8QOYCDk5/Y8fcQoCa6kZ
+ D3R2kefMcTDqmRdJhE9MTJALh5XtqMTh8l0AnpaY=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
+ arm@kernel.org
+Subject: [GIT PULL 1/2] ARM: dts: exynos: Second round for v5.2
+Date: Sun, 28 Apr 2019 16:42:20 +0200
+Message-Id: <20190428144221.11187-1-krzk@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190428_152832_949871_773E4A6D 
-X-CRM114-Status: GOOD (  27.56  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.7 points, 5.0 required)
+X-CRM114-CacheID: sfid-20190428_074234_436882_D5D542E7 
+X-CRM114-Status: GOOD (  11.15  )
+X-Spam-Score: -5.3 (-----)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-5.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.197 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -79,88 +72,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Albert Ou <aou@eecs.berkeley.edu>,
- Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
- Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
- Ralf Baechle <ralf@linux-mips.org>, LKML <linux-kernel@vger.kernel.org>,
- Christoph Hellwig <hch@infradead.org>, Linux-MM <linux-mm@kvack.org>,
- Paul Burton <paul.burton@mips.com>, Alexander Viro <viro@zeniv.linux.org.uk>,
- James Hogan <jhogan@kernel.org>,
- "linux-fsdevel@vger.kernel.org" <linux-fsdevel@vger.kernel.org>,
- linux-riscv@lists.infradead.org, linux-mips@vger.kernel.org,
- Christoph Hellwig <hch@lst.de>, Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Luis Chamberlain <mcgrof@kernel.org>
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset="windows-1252"; Format="flowed"
+Cc: linux-samsung-soc@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ linux-kernel@vger.kernel.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 4/18/19 10:19 AM, Kees Cook wrote:
-> On Thu, Apr 18, 2019 at 12:55 AM Alex Ghiti <alex@ghiti.fr> wrote:
->> Regarding the help text, I agree that it does not seem to be frequent to
->> place
->> comment above config like that, I'll let Christoph and you decide what's
->> best. And I'll
->> add the possibility for the arch to define its own STACK_RND_MASK.
-> Yeah, I think it's very helpful to spell out the requirements for new
-> architectures with these kinds of features in the help text (see
-> SECCOMP_FILTER for example).
->
->>> I think CONFIG_ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT should select
->>> CONFIG_ARCH_HAS_ELF_RANDOMIZE. It would mean moving
->>
->> I don't think we should link those 2 features together: an architecture
->> may want
->> topdown mmap and don't care about randomization right ?
-> Given that the mmap randomization and stack randomization are already
-> coming along for the ride, it seems weird to make brk randomization an
-> optional feature (especially since all the of the architectures you're
-> converting include it). I'd also like these kinds of security features
-> to be available by default. So, I think one patch to adjust the MIPS
-> brk randomization entropy and then you can just include it in this
-> move.
->
->> Actually, I had to add those ifdefs for mmap_rnd_compat_bits, not
->> is_compat_task.
-> Oh! In that case, use CONFIG_HAVE_ARCH_MMAP_RND_BITS. :) Actually,
-> what would be maybe cleaner would be to add mmap_rnd_bits_min/max
-> consts set to 0 for the non-CONFIG_HAVE_ARCH_MMAP_RND_BITS case at the
-> top of mm/mmap.c.
->
-> I really like this clean-up! I think we can move x86 to it too without
-> too much pain. :)
->
 Hi,
 
-Just a short note to indicate that while working on v4, I realized this =
+On top of previous pull request.
 
-series had a some issues:
+Best regards,
+Krzysztof
 
-- I broke the case ARCH_HAS_ELF_RANDOMIZE selected but not
- =A0 ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT (which can happen on arm =
 
-without MMU for example)
-- I use mmap_rnd_bits unconditionnally whereas it might not be defined =
+The following changes since commit 8cc76b1c75722196fb3d7ffe67cbfeb721a7b0e3:
 
-(it works for all arches I moved though)
+  ARM: dts: exynos: Remove console argument from bootargs (2019-04-10 18:13:31 +0200)
 
-The only clean solution I found for the first problem is to propose a =
+are available in the Git repository at:
 
-common implementation for arch_randomize_brk
-and arch_mmap_rnd, which is another series on its own and another good =
+  https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-dt-5.2-2
 
-cleanup since every architecture uses
-the same functions (except ppc, but that can be workarounded easily).
-Just like moving x86 deserves its own series since it adds up 8/9 commits.
-I am on vacations for 2 weeks, so I won't have time to submit another =
+for you to fetch changes up to b4bcbdee137833aab04942671b48a9a3beb0801b:
 
-patchset before, sorry about that.
+  ARM: dts: s5pv210: Fix camera clock provider on Goni board (2019-04-24 19:55:14 +0200)
 
-Thanks,
+----------------------------------------------------------------
+Samsung DTS ARM changes for v5.2, second round
 
-Alex
+1. DTC warning fixes: move timer and pmu nodes outside of soc node,
+2. Properly override MDMA0 on Universal C210,
+3. Fix camera clock provider (to match bindings and driver) on Goni.
 
+----------------------------------------------------------------
+Krzysztof Kozlowski (5):
+      ARM: dts: exynos: Move pmu and timer nodes out of soc
+      ARM: dts: exynos: Remove unneeded address/size cells from fixed-clock on Exynos3250
+      ARM: dts: exynos: Move fixed-clocks out of soc on Exynos3250
+      ARM: dts: exynos: Properly override node to use MDMA0 on Universal C210
+      ARM: dts: s5pv210: Fix camera clock provider on Goni board
+
+ arch/arm/boot/dts/exynos3250.dtsi               | 72 ++++++++++++-------------
+ arch/arm/boot/dts/exynos4.dtsi                  | 14 ++---
+ arch/arm/boot/dts/exynos4210-universal_c210.dts | 17 +++++-
+ arch/arm/boot/dts/exynos5250.dtsi               | 40 +++++++-------
+ arch/arm/boot/dts/exynos54xx.dtsi               | 38 ++++++-------
+ arch/arm/boot/dts/s5pv210-goni.dts              |  2 +-
+ arch/arm/boot/dts/s5pv210.dtsi                  |  6 +--
+ 7 files changed, 100 insertions(+), 89 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
