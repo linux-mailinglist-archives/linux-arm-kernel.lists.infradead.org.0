@@ -2,33 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAA78B4D1
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 04:52:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65899B4D2
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 04:53:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=phi/CNApUfyHIn4Q8xae/Mg9bptY4xr81zlQuDd8NYw=; b=hrmNd1Ygdu5JQf
-	IqsHqGAKNu/B8u5KdJokRr5IKS0mRUACUSac+/OV3mEP0kaJcBPCwtDv+72KdCURK71fVlzvIp+A3
-	zBO/8+Jld8BX+TiYEnxSTnywIW04wCqrXQsXuOTYvWPBWPAdgto2Yt8zPUDMcqQVVDaBetMFekEaJ
-	i3pSOwHbvb+nDuU3WBqMHeT40KpamnOJtIaOM2+Gm2ySPblkuPfxSpAgR4Xn1lP1sgFFMTDTaEPN2
-	oT1XhPyt+l/vvnUd9M73gu8NAUnjENtmPiE6u/2HrYZBRhzBTenxLXc41mUXqA8/qGDvrFVDb8MJj
-	2Vl7JCaRfkT2C6bYY3YQ==;
+	List-Owner; bh=Lda6/tFCgrkVvHz0v7zi2tU4B67iT21f6xg36GIogm4=; b=clla4WvjPFHnqL
+	yFIVK/Bdz1Ca5mgFOhE7FJH4RWgjNZCaWXdGVkiHBnWj5H2yCg9i2rbTNkAr9k5WUPRZG+n41tGi7
+	bcB0c3FEw7KpGXHn53y5Dj2byKgf3ErBjqCeP/r7jVJa5rWetKMVBmKbaSAuyw97X4BkrYFJ+M2bu
+	I8vekQ2lPGUFEVVYb8I9JDDFgTGcehaKq5O7dTJR8b6B6t1o3BzvQIqpC6fepxsKnogvrlfpO6tVx
+	/YJfj7xCr6UhsuimeQ/AVweAJl8f46bnYkiYHg5fptKh5BtofKd8cHsKMR2SWyC6FVNwDd0D7ehs2
+	YsFQBBmhGz0+B05HYzyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKZvx-0003Yj-A0; Sun, 28 Apr 2019 02:52:53 +0000
+	id 1hKZw7-0003nH-Gk; Sun, 28 Apr 2019 02:53:03 +0000
 Received: from mail-ve1eur01on0624.outbound.protection.outlook.com
  ([2a01:111:f400:fe1f::624]
  helo=EUR01-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKZuv-0002Oy-EN
- for linux-arm-kernel@lists.infradead.org; Sun, 28 Apr 2019 02:51:59 +0000
+ id 1hKZv5-0002Oy-Td
+ for linux-arm-kernel@lists.infradead.org; Sun, 28 Apr 2019 02:52:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=4YBqfCsjoL6wR1l2lsj0O0OvFYc8c7GsY65CrM3bgos=;
- b=V9621semGw8bv2wIsiTOC8ROCRQDdEk5557BrKnXDMrGfdePoRMUGdv8knofH6Xu3VeUEt4gT1CM3kz8g+a+j9JCe3F454/sB21K1FTt2CdctDsxKzXiFw71N80YudSesVta8IgyolGZUj+OlHeU1d4FNwT9Q6JqGxMyhZMWdnY=
+ bh=c6obrrsZ3MZjOxH5eUE6YoGJ6t4sgXDau2XwbkCnODg=;
+ b=j0UoMD5IBBq7Bw+vBLyoPGR9WfmDMJMOyOPV7lk1h8cHYBje6f+Z+ZhcD351DGBt39+yEY56FPIEkb4noyB+w3c0u0I/rKuWyIb9mVwXfRMdzBsRRQUJ0dQHwhCTnSPoelLoni4IqzycuEpflQW86DhuAsXOGN/I7x9Bp2mTt08=
 Received: from VI1PR04MB5327.eurprd04.prod.outlook.com (20.177.52.16) by
  VI1PR04MB3184.eurprd04.prod.outlook.com (10.170.229.139) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
@@ -40,11 +40,11 @@ Received: from VI1PR04MB5327.eurprd04.prod.outlook.com
 From: Peter Chen <peter.chen@nxp.com>
 To: "shawnguo@kernel.org" <shawnguo@kernel.org>, "balbi@kernel.org"
  <balbi@kernel.org>
-Subject: [PATCH 6/7] ARM: dts: imx7ulp: add imx7ulp USBOTG1 support
-Thread-Topic: [PATCH 6/7] ARM: dts: imx7ulp: add imx7ulp USBOTG1 support
-Thread-Index: AQHU/W1IxN9UeWE440ehfCRd3nlpng==
-Date: Sun, 28 Apr 2019 02:51:30 +0000
-Message-ID: <20190428024847.5046-7-peter.chen@nxp.com>
+Subject: [PATCH 7/7] ARM: dts: imx7ulp-evk: enable USBOTG1 support
+Thread-Topic: [PATCH 7/7] ARM: dts: imx7ulp-evk: enable USBOTG1 support
+Thread-Index: AQHU/W1KDse2wTopTEeZG0ORLjRYqw==
+Date: Sun, 28 Apr 2019 02:51:34 +0000
+Message-ID: <20190428024847.5046-8-peter.chen@nxp.com>
 References: <20190428024847.5046-1-peter.chen@nxp.com>
 In-Reply-To: <20190428024847.5046-1-peter.chen@nxp.com>
 Accept-Language: en-US
@@ -60,35 +60,35 @@ authentication-results: spf=none (sender IP is )
 x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [119.31.174.66]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 1b1fc417-22b4-4f70-76ce-08d6cb846a96
+x-ms-office365-filtering-correlation-id: 311e4d6e-eefd-40f6-899a-08d6cb846ca0
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
  SRVR:VI1PR04MB3184; 
 x-ms-traffictypediagnostic: VI1PR04MB3184:
-x-microsoft-antispam-prvs: <VI1PR04MB3184E6F8FA165E18B918E5E98B380@VI1PR04MB3184.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:296;
+x-microsoft-antispam-prvs: <VI1PR04MB318472E1A51E700C2582C9038B380@VI1PR04MB3184.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2043;
 x-forefront-prvs: 0021920B5A
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(396003)(376002)(39860400002)(346002)(366004)(189003)(199004)(6436002)(5660300002)(8936002)(36756003)(6486002)(26005)(52116002)(14454004)(71200400001)(99286004)(71190400001)(6116002)(76176011)(186003)(2906002)(110136005)(1076003)(54906003)(316002)(102836004)(6506007)(386003)(81156014)(25786009)(2501003)(3846002)(6666004)(73956011)(66946007)(4326008)(66446008)(66556008)(66476007)(64756008)(8676002)(81166006)(305945005)(97736004)(68736007)(53936002)(6512007)(486006)(7736002)(66066001)(478600001)(50226002)(446003)(11346002)(14444005)(256004)(2616005)(476003)(86362001)(44832011);
+ SFS:(10009020)(136003)(396003)(376002)(39860400002)(346002)(366004)(189003)(199004)(6436002)(5660300002)(8936002)(36756003)(6486002)(26005)(52116002)(14454004)(71200400001)(99286004)(71190400001)(6116002)(76176011)(186003)(2906002)(110136005)(1076003)(54906003)(316002)(102836004)(6506007)(386003)(81156014)(25786009)(2501003)(3846002)(73956011)(66946007)(4326008)(66446008)(66556008)(66476007)(64756008)(8676002)(81166006)(305945005)(97736004)(68736007)(53936002)(6512007)(486006)(7736002)(66066001)(478600001)(50226002)(446003)(11346002)(256004)(2616005)(476003)(86362001)(44832011)(473944003)(414714003);
  DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB3184;
  H:VI1PR04MB5327.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: KLTQ9SpAwnWlUVYa7SFS/q50nW+Ee/4hDw68Vu6uUzQOO3wc4jVnWLpAWoojqS2RM/GCv8tT6Uxfv7VabnFQCzIL4B/e7DeMuBeCHkh7O0GNMNnBVjaalJ6zR6vYsGeOZaOZB08McEpmqxunVj5N6w9rS+WIHQhxzti1uqgfnMxBRDPg3++yAFzBHwyGLNNMTGQ90URvYUxN8JutiNZP/qT+Dqk8W0BVLqfmECRNz+FudLovriX52ONb/L3PY9AGiYM/Alsw4zPhoR304863qqsDxvZ5UUbFhlIQQGtzaiUSlnMuJlbQ9LrEp2tIiQ674r9DN/w0X4LQn2F9D3Ocopk2lYTC1tDkl2D9b7MC9gvsH4zH6yQVsQxECUGwBJ7b0KuIhp5Aclzkw76cGk8YE42pONR7Qidi9ab/GA0jdBw=
+x-microsoft-antispam-message-info: ypdYbzetxt8FqEGFFQmayP9vrydhRw0hz3tdFaAPDGpBTU7ghIW116RWWUMXNZljYb4R9U8VR5yxVAb394eIFK4Qbwidd3CZYnudh55U3+ZUApSQRkvAC9dosWc6WqKz+OA3hR2YuQiVICoYXLhl33Fg+VlXtK1a2CVBlHEr0CJpWUO3Fl8pyW773UPUaZBTvjuRXnQGglgjearh8N6acUkrkCIYdxqrFykt08Y+Ojg2fFUH8G2qoCeVbtb1w1A2Eh8Nqp7Nr+u+KuSbj+jAeJJMN4I5TRSOHkQ8BSJsR1RkKnX0iTOokNdLsqSRKtE1+o2kU4dniGYcchy2XIKmfOHyfUobxSdcg+pGxA3bg5zW9OmH6sFbF5AulJtc1mNBfHE6v05kUbrFB0NiNVBhCG+sdTc0KHMZ73877A8Qsac=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1b1fc417-22b4-4f70-76ce-08d6cb846a96
-X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Apr 2019 02:51:30.7303 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 311e4d6e-eefd-40f6-899a-08d6cb846ca0
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Apr 2019 02:51:34.0597 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB3184
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190427_195150_308722_9CD9E320 
-X-CRM114-Status: GOOD (  10.88  )
+X-CRM114-CacheID: sfid-20190427_195200_547534_4923AD9A 
+X-CRM114-Status: GOOD (  12.49  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -129,61 +129,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add imx7ulp USBOTG1 support.
+Enable USBOTG1 support for evk board, it is dual-role function
+port.
 
 Signed-off-by: Peter Chen <peter.chen@nxp.com>
 ---
- arch/arm/boot/dts/imx7ulp.dtsi | 30 ++++++++++++++++++++++++++++++
- 1 file changed, 30 insertions(+)
+ arch/arm/boot/dts/imx7ulp-evk.dts | 35 +++++++++++++++++++++++++++++++++++
+ 1 file changed, 35 insertions(+)
 
-diff --git a/arch/arm/boot/dts/imx7ulp.dtsi b/arch/arm/boot/dts/imx7ulp.dtsi
-index fca6e50f37c8..e2944f98eac6 100644
---- a/arch/arm/boot/dts/imx7ulp.dtsi
-+++ b/arch/arm/boot/dts/imx7ulp.dtsi
-@@ -30,6 +30,7 @@
- 		serial1 = &lpuart5;
- 		serial2 = &lpuart6;
- 		serial3 = &lpuart7;
-+		usbphy0 = &usbphy1;
+diff --git a/arch/arm/boot/dts/imx7ulp-evk.dts b/arch/arm/boot/dts/imx7ulp-evk.dts
+index a09026a6d22e..c8a56a2ae9a5 100644
+--- a/arch/arm/boot/dts/imx7ulp-evk.dts
++++ b/arch/arm/boot/dts/imx7ulp-evk.dts
+@@ -22,6 +22,17 @@
+ 		reg = <0x60000000 0x40000000>;
  	};
  
- 	cpus {
-@@ -133,6 +134,35 @@
- 			clock-names = "ipg", "per";
- 		};
++	reg_usb_otg1_vbus: regulator-usb-otg1-vbus {
++		compatible = "regulator-fixed";
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_usbotg1_vbus>;
++		regulator-name = "usb_otg1_vbus";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++		gpio = <&gpio_ptc 0 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++	};
++
+ 	reg_vsd_3v3: regulator-vsd-3v3 {
+ 		compatible = "regulator-fixed";
+ 		regulator-name = "VSD_3V3";
+@@ -40,6 +51,17 @@
+ 	status = "okay";
+ };
  
-+		usbotg1: usb@40330000 {
-+			compatible = "fsl,imx7ulp-usb", "fsl,imx6ul-usb",
-+				"fsl,imx27-usb";
-+			reg = <0x40330000 0x200>;
-+			interrupts = <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&pcc2 IMX7ULP_CLK_USB0>;
-+			fsl,usbphy = <&usbphy1>;
-+			fsl,usbmisc = <&usbmisc1 0>;
-+			ahb-burst-config = <0x0>;
-+			tx-burst-size-dword = <0x8>;
-+			rx-burst-size-dword = <0x8>;
-+			status = "disabled";
-+		};
++&usbotg1 {
++	vbus-supply = <&reg_usb_otg1_vbus>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_usbotg1_id>;
++	srp-disable;
++	hnp-disable;
++	adp-disable;
++	over-current-active-low;
++	status = "okay";
++};
 +
-+		usbmisc1: usbmisc@40330200 {
-+			#index-cells = <1>;
-+			compatible = "fsl,imx7ulp-usbmisc", "fsl,imx7d-usbmisc",
-+				"fsl,imx6q-usbmisc";
-+			reg = <0x40330200 0x200>;
-+		};
+ &usdhc0 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_usdhc0>;
+@@ -57,6 +79,19 @@
+ 		bias-pull-up;
+ 	};
+ 
++	pinctrl_usbotg1_vbus: otg1vbusgrp {
++		fsl,pins = <
++			IMX7ULP_PAD_PTC0__PTC0		0x20000
++		>;
++	};
 +
-+		usbphy1: usbphy@0x40350000 {
-+			compatible = "fsl,imx7ulp-usbphy",
-+				"fsl,imx6ul-usbphy", "fsl,imx23-usbphy";
-+			reg = <0x40350000 0x1000>;
-+			interrupts = <GIC_SPI 39 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&pcc2 IMX7ULP_CLK_USB_PHY>;
-+		};
++	pinctrl_usbotg1_id: otg1idgrp {
++		fsl,pins = <
++			IMX7ULP_PAD_PTC13__USB0_ID	0x10003
++			IMX7ULP_PAD_PTC16__USB1_OC2	0x10003
++		>;
++	};
 +
- 		usdhc0: mmc@40370000 {
- 			compatible = "fsl,imx7ulp-usdhc", "fsl,imx6sx-usdhc";
- 			reg = <0x40370000 0x10000>;
+ 	pinctrl_usdhc0: usdhc0grp {
+ 		fsl,pins = <
+ 			IMX7ULP_PAD_PTD1__SDHC0_CMD	0x43
 -- 
 2.14.1
 
