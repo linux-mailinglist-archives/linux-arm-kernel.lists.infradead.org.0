@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE6DFB693
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 22:24:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EAD88B694
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 22:24:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qu+czIZBYIpYO5rR2P3aa5iWGlc84kXCBhrsfE7M8TY=; b=EambS8LnJvu4fL
-	ix5zdQgiQpIFR1o2SZo73DSDQCV/oMqDg4P1O43kOmWjya0v4vfRS7wZJKJCc2FyK3hacUNPYjbKE
-	y2i1n6CSoiAkakU9QRzh2NOyHbYrfKyScPr2YRUWy3M2io2sXWTwDUQnGs4dGeQW6+yfQqvYtqyYF
-	l5tTFG0/a6Z/nPAPNFn6jgU9gMFyyBO/S9oSU6GMPhVbOy6CIbPvDw2RGCAqFsRO4R8bYG2NtvUHX
-	XfeAh5KQoA4pDjCMdPUKqC5Om9L/+3kYYnbA6DtxjHJb1gXgPlfTgblWALnFwkbsn0i4qY16Qnygc
-	9e394t960jkn4Brz6DZA==;
+	List-Owner; bh=XIgHkXqbsJlHo6EiUsLMwPFzm3yzPQU6UdajCsbty/c=; b=ZYxNZkCks83Zxm
+	6bQE8gnphLGdNwz1/F+pqArcoOmXadfB8g/Euu1IySGKTz4W1WLx1B1tvV0OjzUg/lIBJKs9A6Qna
+	LCjYklocP0xk+9P5uBmOhu5RwDK0TR2HtqDT0qd0VJFQcHmHSCrM0S7QQGBLAl0sZwsf+mrQD8apQ
+	2kTMpghO18CWToFTLXpPNQJlfS4tnnta/GRpjuxrHU+KweoGNem6IhcJ2PCZj4DrVmKCTBVFfpIs7
+	aBoN6cP7WLns40X9UICahcWSZUFywdWfaJRAiqRWn+ki7YDunj9ef7PottJp/wKuER6IiIiGWsaN1
+	pe9uohf6LfNDb/uLS1Ng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKqLZ-0005wc-Ce; Sun, 28 Apr 2019 20:24:25 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1hKqLj-0006AM-ES; Sun, 28 Apr 2019 20:24:35 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKqHB-00083I-7l
- for linux-arm-kernel@lists.infradead.org; Sun, 28 Apr 2019 20:19:54 +0000
-Received: by mail-lf1-x142.google.com with SMTP id i68so6201015lfi.10
+ id 1hKqHD-000844-Da
+ for linux-arm-kernel@lists.infradead.org; Sun, 28 Apr 2019 20:19:56 +0000
+Received: by mail-lj1-x244.google.com with SMTP id c6so956236lji.11
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 28 Apr 2019 13:19:53 -0700 (PDT)
+ Sun, 28 Apr 2019 13:19:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=wXlwvh7xlArwJplOsmjDl9OYr7vTwvsSMvreHuXNHdE=;
- b=01n8TZWWih0zik14cqmmKIixqlZIX8isrULDLXZWIsceYmHjpyzEYCSF0REGgW8xkA
- yXgaUeOoMgg1YDIGF+FelvQC14QUsmsjTGI5TzeZMQbxigX54LWEMHusGICJd5yUtNZX
- ScugRgH9TGPH7x5e083TYLkan7WWaFYSbepFexADrdtSlG5imY94UCtm5v7DnNCaEbMF
- c/FhC6KznKtRCRbRbfLStvVlrZczHCcdLQ3sxxBLP4JGv3R6JLsr6TspKi+V8F8DpBi+
- Qt55axY4ylfYMJ/E0ODR0fZyKzxbqBhZ/17BlO3bWGWkGWP6rxLNlLPvYOXPINH7QmMO
- ySrQ==
+ bh=L5e3wbWqS8WkszlaMFT/steJzf55OCNLo5odjAjwYFs=;
+ b=BLVkzEB2++GEgSwcTi/ldXdAinUKQgf1Hh/G2sKU3n05u+fqDSrT6ln2FXNVk4V6PS
+ tCTqZg5crLxGjvOoB5pU9MThZ8TtD0fhsxAg5RCh3N9eSL0g+o7dvMsOK2uPS7O6udtC
+ ahEgxhvv4FvryQFLU68kds8Ebp8LRCDSk5Kjv4cVrrJNaohU88/cvfHB/KBdJaDgyrES
+ 9CnNNRt91Ow2DDP1Npgm5ZjzGh707/2UQsfn9XKewIMiXtkczPeACB7rQDiy9GOQHz6q
+ NQ8r1nMWqvaGW4dx3OBG8pKZw+REQmvktO3UW6Z8T4oSg8pvbg5MjwRf5WJMBJJlYRJY
+ H6Hg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=wXlwvh7xlArwJplOsmjDl9OYr7vTwvsSMvreHuXNHdE=;
- b=gg4+J01rCxyopd2qqI2Ox9JsYGQo9+MYTA9TyzsCuJ8DXwntt6Mcp+AFbR2I70Ax+5
- +7KTEgpmixuiENSIqIgnIAYYIgMrqC9BZOa8ek1RkW+Drg+KKVwlbHHMwxZh6TTP87hK
- s1q15Svwj5/pK49aEMslkpJac4o3NbFDXpOKnymFPGRo3lqkAPENnDHufc/9DLLKjbAo
- pwTeNmWyYZ4FSnenSTHrxdC+e7hnB4u0Zq6qoMx+RP+aK6XW0OrveSjTPOOC1S8cjWZJ
- 7JKmoDbD2rXqcLxWOfK6zX61ygRfiKkbp+pYpu4RsMqiq1gWY12lRtO02qNe7ad9jTfv
- cmPg==
-X-Gm-Message-State: APjAAAU6bYbdEI2PGudqiK96iGcpeuQfTZhpPBsguI/2IESbhakcSyyM
- G0cdwrvaFIR9fhRguyLgeD+C2H/fMjnsuQ==
-X-Google-Smtp-Source: APXvYqwUYm7sW6yKQWYZhYANKQVY9mny5ptZyvpA2mExl8zaL6xVYp5Vci05KxPsGQaVj2VyKQWQjg==
-X-Received: by 2002:ac2:5107:: with SMTP id q7mr30167963lfb.162.1556482791718; 
- Sun, 28 Apr 2019 13:19:51 -0700 (PDT)
+ bh=L5e3wbWqS8WkszlaMFT/steJzf55OCNLo5odjAjwYFs=;
+ b=tOutCZtqm81x84oPyxLnxNgd9JaIpRBbvtswB8qq3uT8qDr8Fnd+0KUORK2RkCSBNW
+ ti92z2DTIZ1TKxRxDSLe455nSuMrTxjDnKd3X9LADt7R9Tdu7KSJ4Leq2RfMWsbDyzbn
+ 9XEuHFzXYAonizcKrzZ5dgVTfTlYGkRDsQNV7jbampYgDwyOyb0bs6fmIcrwMzmotPWK
+ FSqBWgqt4gKzM/eOjq5ccwx1IEmSLTRBguwiDBiJQoLO1FagWINuHBIq53OZif1e0IfD
+ OCiO747L/e8WRvwSkA7xu4HT1FIPBosh664NdV2WKbHPBz1ToCxurfKR6lvyJ+spX9bA
+ OnLQ==
+X-Gm-Message-State: APjAAAWEFTC6MngVfYzLGC00omHMmYEZe8hR4tNkxyp+rrR52tcrQ8UZ
+ PBYWjV/dWMbi2HkdOfJxqhJpOhm6JQCsxA==
+X-Google-Smtp-Source: APXvYqyQ98SuD0+DHFp8gSvtm5cheQtB/6rS2yNZfdaaeixQ1j1a61mwwLSp0wY4wZwPxi5vn2rK1Q==
+X-Received: by 2002:a2e:9bc7:: with SMTP id w7mr26168853ljj.58.1556482793912; 
+ Sun, 28 Apr 2019 13:19:53 -0700 (PDT)
 Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id l3sm1052140ljj.2.2019.04.28.13.19.50
+ by smtp.gmail.com with ESMTPSA id r21sm3907678ljg.51.2019.04.28.13.19.52
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 28 Apr 2019 13:19:50 -0700 (PDT)
-Date: Sun, 28 Apr 2019 12:42:40 -0700
+ Sun, 28 Apr 2019 13:19:52 -0700 (PDT)
+Date: Sun, 28 Apr 2019 12:45:49 -0700
 From: Olof Johansson <olof@lixom.net>
-To: Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: Re: [GIT PULL] Allwinner H3/H5 DT changes for 5.2
-Message-ID: <20190428194240.hj6grx3gdhwk55lx@localhost>
-References: <20190419115342.gghklvpdnwutfx5n@flea>
+To: Simon Horman <horms+renesas@verge.net.au>
+Subject: Re: [GIT PULL] Second Round of Renesas ARM64 Based SoC DT Updates
+ for v5.2
+Message-ID: <20190428194549.vqisfqzwzkttqxwh@localhost>
+References: <cover.1555683861.git.horms+renesas@verge.net.au>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190419115342.gghklvpdnwutfx5n@flea>
+In-Reply-To: <cover.1555683861.git.horms+renesas@verge.net.au>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190428_131953_328976_47E914C5 
-X-CRM114-Status: GOOD (  15.02  )
+X-CRM114-CacheID: sfid-20190428_131955_454420_0217A193 
+X-CRM114-Status: GOOD (  16.16  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -92,41 +93,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chen-Yu Tsai <wens@csie.org>, arm@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Arnd Bergmann <arnd@arndb.de>, Kevin Hilman <khilman@kernel.org>,
+ Magnus Damm <magnus.damm@gmail.com>, linux-renesas-soc@vger.kernel.org,
+ arm@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 19, 2019 at 01:53:42PM +0200, Maxime Ripard wrote:
-> Hi Arnd, Olof,
+On Fri, Apr 19, 2019 at 04:33:55PM +0200, Simon Horman wrote:
+> Hi Olof, Hi Kevin, Hi Arnd,
 > 
-> Please pull the following changes for the next merge window.
+> Please consider these second round of Renesas ARM64 based SoC DT updates
+> for v5.2.
 > 
-> Thanks!
-> Maxime
+> This pull request is based on the previous round of
+> such requests, tagged as renesas-arm64-dt-for-v5.2,
+> which I have already sent a pull-request for.
 > 
-> The following changes since commit 9e98c678c2d6ae3a17cb2de55d17f69dddaa231b:
 > 
->   Linux 5.1-rc1 (2019-03-17 14:22:26 -0700)
+> The following changes since commit e3414b8c45afa5cdfb1ffd10f5334da3458c4aa5:
 > 
-> are available in the Git repository at:
+>   arm64: dts: renesas: salvator-common: Add GPIO keys support (2019-03-27 13:02:12 +0100)
 > 
->   https://git.kernel.org/pub/scm/linux/kernel/git/sunxi/linux.git tags/sunxi-h3-h5-for-5.2
+> are available in the git repository at:
 > 
-> for you to fetch changes up to 7aaee3d11689aee0f23f7bf4f6d7b4015bcdb467:
+>   https://git.kernel.org/pub/scm/linux/kernel/git/horms/renesas.git tags/renesas-arm64-dt2-for-v5.2
 > 
->   ARM: dts: sun8i: mapleboard: Remove cd-inverted (2019-04-17 16:57:48 +0200)
+> for you to fetch changes up to b7f5a8e435ecc7198407f44a2a5a6cdae1056b0d:
 > 
-> ----------------------------------------------------------------
-> Allwinner H3/H5 changes for 5.2
-> 
-> Our usual bunch of changes shared between arm and arm64, the most notable
-> one being:
->   - Fix of improper usage of DT bindings, thanks to the DT validation
->   - Add the SID for the H3 and H5
->   - New board: RerVision H3-DVK
+>   arm64: dts: renesas: r8a77980: Add "renesas,id" to VIN (2019-04-15 10:43:26 +0200)
 
 Merged, thanks!
 
