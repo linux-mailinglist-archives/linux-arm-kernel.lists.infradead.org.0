@@ -2,60 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BD3DB5B1
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 10:32:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79933B5B2
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 10:33:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=PpYhZXUpvJLI61Rv53XrG0ok4VVSYIcFUulNGpQTgUc=; b=c4Y
-	pejBy6zA/g/lubHY5PjtzSuiK3ThiVgy+lLNRLk5M+YXk3+gWlTp+8mhDjUoA+m3xoe+yU6akUMNs
-	6TwezqZ/ZIMlnOWJaGlBlVIoxVVlXYa6TtKj5x5NVn4WJbvStZ+3jWygXPkx6dkHsJl3nqFNgNF8y
-	arzngLi454lOzHXXoDJrWoFZd9oHnpIvVhJ/QlMCMVTHQNmZnQUeg65rRtSPBfDX1DA3EXqOiNSJN
-	txtCs9119DFl6gme0AVhmz0DATE2Lgyx7LL3xqMCNgou7BFQfCrvAqQHuI9cQndqyRil8C8tHD+Gr
-	qt3q7DkcamDE1hTfdl5/avxv7vJsibw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=3NmSjwcEX8oUzcZ5XmFKRsWr3G+6AVTJbkI+uUhRlnQ=; b=uadrwCBVK5zkztoKPNiZMH8oLl
+	zlTNkMnp5En9hEqSPvaolqrPubUcbwMo9doGCHTi0sVJyqmoCqe67ree/nDff6dkneTMZs1LWLcKF
+	S9LfGOjuvumDkZyhiBOGy04+vI4cnL1QoOKLNj46b4eImvuR10dCwKgI7D8LN4DDrQT8VZpeEmsES
+	+xkwjmTv78PY5xBxL35vqT/+VI8Dxv1oujVjDuZup0daKOLkLMLndFXeXqg3tKzxKu55xkJmj96Fx
+	VPxJohdLWdBLXnXgR+eVI7ua2GMweF5nkGdtVWtgjZ+DsDE93q9663mjueXSw9BirW0kSOOhgZDbV
+	NaO2lR8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKfF0-000742-6a; Sun, 28 Apr 2019 08:32:54 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hKfFE-0007GC-0A; Sun, 28 Apr 2019 08:33:08 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKfEt-00073h-O2
- for linux-arm-kernel@lists.infradead.org; Sun, 28 Apr 2019 08:32:49 +0000
-Received: by mail-pg1-x541.google.com with SMTP id d31so3675800pgl.7
+ id 1hKfEz-00074R-5p
+ for linux-arm-kernel@lists.infradead.org; Sun, 28 Apr 2019 08:32:56 +0000
+Received: by mail-pl1-x642.google.com with SMTP id d9so3611283pls.8
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 28 Apr 2019 01:32:46 -0700 (PDT)
+ Sun, 28 Apr 2019 01:32:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=BZzKmMo+qjjyommvsHqCKRlBwkTvNOIM1AtqhVGSBu8=;
- b=wu5QE43+AeRJsCx5EsAFQ2WNN/6Pa5OHvDpSZUE3LqXCoegpmt5xwl2xMcIjZK1a8f
- JN1e575Y97uYNyL/D011tx6b8xfVBhZ1AE24pACltyswm1WgB1S6WztEKBL7XqoBiyER
- Fvhnt93SyMNVKo7wFuP8flLqfsi0O7HvOlyCBz5MxU7YoqWszzaVlNDYo1wWaSl9VECs
- mkj8mQZnB0Jy89/+wy8e6XXq2eeRmk2nIKe0Uu/xVMO4/q9o8tdGC5x+s9sSKCv7Bh2n
- ofJSPaSUV4jcfr2NyGPC/Gp8LGRwRljm3XrvOTPW5Y1+OTXNF1ptQkkubjadVG3vhCak
- Gk5w==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=za5L9TH7RfVFEUEVo+b+Xe+/+fVMc7D24YekrWmKylM=;
+ b=aJgC+ktE44qrl5zRP84bJJagrrWxh9plDl7AkXkHZjy0goL6aE1PC0dJYg8ZIvnA3A
+ +SeyCgowcSpuVPm2b9an/EFpBwk1uP/QHaXT5n52kcAGYzziXy0YkvRcsDyz8H+CfFbr
+ ARKRvaIPlHZRQfSy8uk9CSGNt7SLbRYo7XvYq0VivFYyPJhV25nxCS00wim2Y7zX9gmf
+ gXf2OFzrhB2a4KBUJM4+rvcyd0pR12w9B2PGqTlVn6cCE4sm2milmo2T4qD2MJ0iL8Es
+ gdxhlXGn+yM+Lp1h4XB/anMSlFNO+o/GyoIfF7BfHta7+AQ0OEEtOeTsLF9xVvd3oMUB
+ RByQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=BZzKmMo+qjjyommvsHqCKRlBwkTvNOIM1AtqhVGSBu8=;
- b=bbllGGtiXQpRpax16lAV7NlA13i+Sz1wN4gCKo88EIoWJ/SnjVptV+MCC4LG583aEx
- NxHM/PFIs+w9Jz+CylrLR+qs/g8qHsbSlTb0lzNwgi25AzbX/d+esxmQquHGmusgnFn+
- nZVwawVnyMDequ1cV5Bxkt1StxFf5Gc8j7Zxnt4N0P5Rau+a+VBf/w/1ABq46+FpDTZo
- hwQNgSMO7fzHIECq7p/Nj/qm/Ihu1a2UCioaZ6EsZKal00mDBLOa2gmzRP9YgeNpTX0N
- 7UIGsL0TAt9g04k/F161v1p1F2p3WaKyWGCZvVtLbwGvbkIeX8HROUq5YwQIi4BfOHtU
- tIKQ==
-X-Gm-Message-State: APjAAAXiKsefhVY2beOS5wL1Ch5nQ7SfqAMS4ZpIM8Uc4eHLTmx3WfM6
- 2WKA27x9Tsp+kjO5QDT/ceo4LiKFM8g=
-X-Google-Smtp-Source: APXvYqw9/PtlzImn0mMJdOmeCob3wa+YqMT3LUMcbfuojD6RxMuQAk2fFD4ejtL3SH0T8BkJ7wmGkw==
-X-Received: by 2002:a62:2fc1:: with SMTP id
- v184mr24439025pfv.258.1556440365813; 
- Sun, 28 Apr 2019 01:32:45 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=za5L9TH7RfVFEUEVo+b+Xe+/+fVMc7D24YekrWmKylM=;
+ b=OWhzxembnDOilUuLU/sRKTRrs0tmxfkfbgCl0pRSUMSJy3D6Tb4DW9y3AjKWsU+XLx
+ sfooyZZ6WVwOT74SqIre4eh0NvdBHhl2QSBBkUPI+CnKcAvtgYGZlyQf0rprbpL2qe3s
+ PKG7V8SwOq+XiFby/KAhCkHuPY8/Do6BAbhpSt9OFVwgoQa0Tk5B8AGmVqASlNMPnriJ
+ iSVdnTCpXJVH0YZs52jJkbcYwjEZiTT6k5xJ/gkkzZKgNbyqzoOmOhkj5+67iBfigxeG
+ wv+2FCJ6WRy52GQNnddMvYgFKBWEiSyFB1qsMGwJE75IjmwsRG6aGl4Y57CROnEp3NUu
+ DaWw==
+X-Gm-Message-State: APjAAAWYqZeoLVbnqn1svQeAHqgWRQnU6yDxcz0sWxhcW06ogrPZvapG
+ NdKE5/VygpMHrbPkKHieB9gTOw==
+X-Google-Smtp-Source: APXvYqx8RGU+BbxHTEkhKwnbWli0aNRX8OVkO9X2sD8pXe5tI9nrbVtkzkIzCU3DqyO2yjTvtrKPig==
+X-Received: by 2002:a17:902:1103:: with SMTP id
+ d3mr17956465pla.247.1556440370534; 
+ Sun, 28 Apr 2019 01:32:50 -0700 (PDT)
 Received: from localhost.localdomain (li990-117.members.linode.com.
  [45.33.40.117])
- by smtp.gmail.com with ESMTPSA id a12sm31960518pgq.21.2019.04.28.01.32.40
+ by smtp.gmail.com with ESMTPSA id a12sm31960518pgq.21.2019.04.28.01.32.46
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 28 Apr 2019 01:32:43 -0700 (PDT)
+ Sun, 28 Apr 2019 01:32:49 -0700 (PDT)
 From: Leo Yan <leo.yan@linaro.org>
 To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Mathieu Poirier <mathieu.poirier@linaro.org>,
@@ -65,21 +67,23 @@ To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Alexander Shishkin <alexander.shishkin@linux.intel.com>,
  Jiri Olsa <jolsa@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v1 1/2] perf cs-etm: Always allocate memory for
- cs_etm_queue::prev_packet
-Date: Sun, 28 Apr 2019 16:32:27 +0800
-Message-Id: <20190428083228.20246-1-leo.yan@linaro.org>
+Subject: [PATCH v1 2/2] perf cs-etm: Don't check cs_etm_queue::prev_packet
+ validity
+Date: Sun, 28 Apr 2019 16:32:28 +0800
+Message-Id: <20190428083228.20246-2-leo.yan@linaro.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190428083228.20246-1-leo.yan@linaro.org>
+References: <20190428083228.20246-1-leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190428_013247_814243_CD1A93DD 
-X-CRM114-Status: GOOD (  14.22  )
+X-CRM114-CacheID: sfid-20190428_013253_491358_77CEEB50 
+X-CRM114-Status: GOOD (  13.36  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -107,51 +111,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Robert Walker reported a segmentation fault is observed when process
-CoreSight trace data; this issue can be easily reproduced by the
-command 'perf report --itrace=i1000i' for decoding tracing data.
+Since cs_etm_queue::prev_packet is allocated for all cases, it will
+never be NULL pointer; now validity checking prev_packet is pointless,
+remove all of them.
 
-If neither the 'b' flag (synthesize branches events) nor 'l' flag
-(synthesize last branch entries) are specified to option '--itrace',
-cs_etm_queue::prev_packet will not been initialised.  After merging
-the code to support exception packets and sample flags, there
-introduced a number of uses of cs_etm_queue::prev_packet without
-checking whether it is valid, for these cases any accessing to
-uninitialised prev_packet will cause crash.
-
-As cs_etm_queue::prev_packet is used more widely now and it's already
-hard to follow which functions have been called in a context where the
-validity of cs_etm_queue::prev_packet has been checked, this patch
-always allocates memory for cs_etm_queue::prev_packet.
-
-Reported-by: Robert Walker <robert.walker@arm.com>
-Suggested-by: Robert Walker <robert.walker@arm.com>
-Fixes: 7100b12cf474 ("perf cs-etm: Generate branch sample for exception packet")
-Fixes: 24fff5eb2b93 ("perf cs-etm: Avoid stale branch samples when flush packet")
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 ---
- tools/perf/util/cs-etm.c | 8 +++-----
- 1 file changed, 3 insertions(+), 5 deletions(-)
+ tools/perf/util/cs-etm.c | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
 
 diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-index 110804936fc3..054b480aab04 100644
+index 054b480aab04..de488b43f440 100644
 --- a/tools/perf/util/cs-etm.c
 +++ b/tools/perf/util/cs-etm.c
-@@ -422,11 +422,9 @@ static struct cs_etm_queue *cs_etm__alloc_queue(struct cs_etm_auxtrace *etm)
- 	if (!etmq->packet)
- 		goto out_free;
+@@ -979,7 +979,6 @@ static int cs_etm__sample(struct cs_etm_queue *etmq)
+ 	 * PREV_PACKET is a branch.
+ 	 */
+ 	if (etm->synth_opts.last_branch &&
+-	    etmq->prev_packet &&
+ 	    etmq->prev_packet->sample_type == CS_ETM_RANGE &&
+ 	    etmq->prev_packet->last_instr_taken_branch)
+ 		cs_etm__update_last_branch_rb(etmq);
+@@ -1012,7 +1011,7 @@ static int cs_etm__sample(struct cs_etm_queue *etmq)
+ 		etmq->period_instructions = instrs_over;
+ 	}
  
--	if (etm->synth_opts.last_branch || etm->sample_branches) {
--		etmq->prev_packet = zalloc(szp);
--		if (!etmq->prev_packet)
--			goto out_free;
--	}
-+	etmq->prev_packet = zalloc(szp);
-+	if (!etmq->prev_packet)
-+		goto out_free;
+-	if (etm->sample_branches && etmq->prev_packet) {
++	if (etm->sample_branches) {
+ 		bool generate_sample = false;
  
- 	if (etm->synth_opts.last_branch) {
- 		size_t sz = sizeof(struct branch_stack);
+ 		/* Generate sample for tracing on packet */
+@@ -1069,9 +1068,6 @@ static int cs_etm__flush(struct cs_etm_queue *etmq)
+ 	struct cs_etm_auxtrace *etm = etmq->etm;
+ 	struct cs_etm_packet *tmp;
+ 
+-	if (!etmq->prev_packet)
+-		return 0;
+-
+ 	/* Handle start tracing packet */
+ 	if (etmq->prev_packet->sample_type == CS_ETM_EMPTY)
+ 		goto swap_packet;
 -- 
 2.17.1
 
