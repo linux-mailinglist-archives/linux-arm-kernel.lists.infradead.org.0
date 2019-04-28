@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A02ADB69C
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 22:25:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DCFDB69D
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 22:26:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GdnLz2bgampASikJshRD712/P8NyTN/0gyV+U6WPKY0=; b=MhPIrQ9kqWP0nv
-	/4czhBQelN+zMBRMua05PM6N6bNC8knqq2n0LdscWgiX3mJf1ULl6dTQVxYFbzPEvEouHgGR7Cbg4
-	/QZl+s7qDkLzMvl8D80juGOIlQETYWUqJe4TtjlCy6SbIMTLlx1dgOuQ/1Hr9iZeRO9RKMXaVjgNv
-	5jbCGoAvqt4wCReVduE0K/DMiSPElG8XikRxhWObWcJQtq1YpymJzQ8MpGXqYtb3ml4wxY6mdYP4g
-	ctVUPtzYMTf+M/K/rOBsMMeqEzP82rK6MtpHSFTabDH+zpbA/Q3O5Sv9lf8AXRpv6fiWr9WAYgvja
-	dnEnulbLKzbAvN68WK8Q==;
+	List-Owner; bh=Qxv/dOvoajN56SccigtpVhNHUlSEvLkkTHvM/hDzBAQ=; b=TUucm4772XYiqK
+	BJ2kNu+mReORyNNX7JwYsLY+Fk9+IoblewroCf5oe2BbLjOP8Tnt8UrG6oftvSY4gkPurU2GcwFzo
+	jVj6OPXZm7EDFHUtyRA/FKXnkfDENBb+Y7nBeXpw5FEjKB2NtnzZgRACZKBJqkPIaaIT+ziBO1nPk
+	D9Fg0THT+S7j5lJ1ZbR+99gPVrxCUjgjUEbOfGUnFzjJY7lU0VhGrO4GhBVwc8IWXAeCyxbufsFQ8
+	BCn3HunC4pWpqfekiNLjhQ/CCEXOBq0aI3M3G30tRloBzYSNe3OQY025sDrQ3sUVwFGubCbtsUmOq
+	nFCwzoi9GVVPJAJ2aZMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKqMs-0000LO-VO; Sun, 28 Apr 2019 20:25:47 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1hKqN3-0000Zl-8z; Sun, 28 Apr 2019 20:25:57 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKqHR-0008H8-AD
- for linux-arm-kernel@lists.infradead.org; Sun, 28 Apr 2019 20:20:12 +0000
-Received: by mail-lj1-x242.google.com with SMTP id k2so7440483lje.10
+ id 1hKqHT-0008Ij-Lw
+ for linux-arm-kernel@lists.infradead.org; Sun, 28 Apr 2019 20:20:14 +0000
+Received: by mail-lj1-x241.google.com with SMTP id t10so6425215ljg.7
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 28 Apr 2019 13:20:09 -0700 (PDT)
+ Sun, 28 Apr 2019 13:20:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=dlCRCq5XOZvNqvkkykFE4VT5vfjkB2k3hFRnHbz5xho=;
- b=nQBYKV6Qdm0j77d3/7F76yPGwT4lYoJMUExIC4YFU8cu2xu6PnII1dNJMJw4FHftiA
- SG/qeMhyAPhap8sOeI+kHeP5kJG21IInlJe1ww9u2kWmdiYD5kJof+OA5QsDQmjxTYbq
- UHrLBVvDJiPBAsxALD6WA5SL1iNToT8e/r+1GMKg+LjErfGX1fIfwzUY/OZ3ngMWPHf8
- WLrJvVVdzL2x3Q6Uit8NAOeJfF4ulF48BzDoNUGcKXOgYbSlQXADhkhKk9IS90015cWJ
- yhWPSk17jTcSWbsxkB8+PaAKJwJ2BEIJaGmV7IZqbRRGwcTe/4hEZRTLmomNa8S0Al37
- Gixw==
+ bh=lT2S7Q41J31sCP6SmAFYi7XGfcEABBt2Q6xlbRzlZc4=;
+ b=EEKQt53CYGXBcLut0a2ED4LcVB9CYnhVG/7NVsNjR44BP3PQbY3BJ3keL9dAAgkYDB
+ xIhEraQJ0uhzrBbW/YJ/rpDC71teDFJTbivtzyKGs9V8WIIIAnwLbpM2HT2y1IwGw+a1
+ QCIBNskL6DahP5cMdUc1s6MbJxmJy0nwJf8QFAPAn5lywklfBB+Te4zfDaN7vLu/YjUi
+ 1iWBRgy/3v1xCLWT9OIv/ESBPJSGB3IKsXV+j/2dA+xS2rnc3Y1DZ6mKAGsBcYhg3d24
+ b34WnX1PoiwWw09nKhp+W69r+dx98x+UWyyXI65VghHBe840c5p+Zd9oS4ED0gwmi4fS
+ T2pg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=dlCRCq5XOZvNqvkkykFE4VT5vfjkB2k3hFRnHbz5xho=;
- b=ZjfUikN0H1qrq6XN/vFvEyz8Wy9VWontjKaFzYsyCJBCMxV63LYjA9CwFuktZyR05B
- siH1iX05oJYrRtOrKKHobH/y+q7y3BD90r60IS14L26fYTi04oPbJUNlPg5ue9sEAyVM
- J3Pf5LvoO5AiJIDVB9Wb+gWOWk0MM20iOZIo6A4I1CS1SgD30P2ZQQy0zY21t9Ew8zx7
- RXzxeFeWQBqliDJuPAI6wpcrbLHdZLhXqrm22Sz0DrISPNKoFADyKgTkVn4Vo5JKR7tB
- MEdV4QwyhmJc/ugQCA1dwKTn86CIM3akCwANTMTlw+lsYm/k6m97+m1iS20CGnLg63V3
- wgFg==
-X-Gm-Message-State: APjAAAVtbDqYHpSkvh4NMDxeTp5SPwgCbQivaoicvgr4Mhs64y1VeRm7
- 7iqW+zS1Yxn+v41wyc5vv551Og==
-X-Google-Smtp-Source: APXvYqxVH0bUH1Y52+Td7POxnwMzvi5nml2jAv7taWLdb+ChV3v66SFjbOafYBuO7/VdP4zQou/9vA==
-X-Received: by 2002:a2e:858f:: with SMTP id b15mr16683176lji.144.1556482807724; 
- Sun, 28 Apr 2019 13:20:07 -0700 (PDT)
+ bh=lT2S7Q41J31sCP6SmAFYi7XGfcEABBt2Q6xlbRzlZc4=;
+ b=oFA5aWTObKRkp1WGiJxwXWk7QZJ1lGBD5z7poeDrq3kHUA7WJZdMK3kTT0VYkn50Xa
+ 3x19Aj9zdSTlfa8tAr5/ncgQ4ND7j+VHcmbv2RdjX2Gd50tB5jMg+FaqPv9nKcJkFQjH
+ WT5qPNwrT8XGagkW3pasPNVBboE5N8G+B4oT0GEV+inhuB4zhohpXl0ZB1Si4vc56B0s
+ QjWQACPJZKzDZVDyl4tNekwlMSlbKDpnOObjWIbpkFGMlzUymF3fISRkodyKfXW248+Y
+ ivZHjg7NWsAR19e8dNpMtA5TiAzMtNoUzEI+iWIM3fnWf4RSe1k77pW/4P16lqzEopak
+ oOzw==
+X-Gm-Message-State: APjAAAXreJ3BluMMSVf3pSXF2AR6Lup/JwHGhKSvxIw9HTgfHSVBCDcS
+ RVJOXktofagUWo+9LNv9FWvvAw==
+X-Google-Smtp-Source: APXvYqzXZw97OoyMZ6YmrJECIkBXKS0jT2PaBPy5mL3n8PicqFGtllwzaJwx1QL0DiMMvbCSKa8mXw==
+X-Received: by 2002:a2e:9d12:: with SMTP id t18mr30964853lji.163.1556482810062; 
+ Sun, 28 Apr 2019 13:20:10 -0700 (PDT)
 Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id x2sm1701998ljx.13.2019.04.28.13.20.06
+ by smtp.gmail.com with ESMTPSA id y7sm6518981ljy.65.2019.04.28.13.20.08
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 28 Apr 2019 13:20:06 -0700 (PDT)
-Date: Sun, 28 Apr 2019 12:51:35 -0700
+ Sun, 28 Apr 2019 13:20:08 -0700 (PDT)
+Date: Sun, 28 Apr 2019 12:52:14 -0700
 From: Olof Johansson <olof@lixom.net>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: Re: [GIT PULL 4/6] i.MX arm device tree update for 5.2
-Message-ID: <20190428195135.dbbwxqivmno3bg6d@localhost>
-References: <20190422082836.3734-1-shawnguo@kernel.org>
- <20190422082836.3734-4-shawnguo@kernel.org>
- <20190423020804.GD16166@dragon>
+To: Andy Gross <andygro@gmail.com>
+Subject: Re: [GIT PULL] Qualcomm ARM64 DT updates for 5.2
+Message-ID: <20190428195214.e5fqygkxvsgjtlny@localhost>
+References: <1555997248-11513-1-git-send-email-agross@kernel.org>
+ <1555997248-11513-2-git-send-email-agross@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190423020804.GD16166@dragon>
+In-Reply-To: <1555997248-11513-2-git-send-email-agross@kernel.org>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190428_132010_658905_EB7E8008 
-X-CRM114-Status: GOOD (  13.84  )
+X-CRM114-CacheID: sfid-20190428_132011_831995_D2DDF370 
+X-CRM114-Status: GOOD (  13.95  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -94,52 +93,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Agner <stefan@agner.ch>, Li Yang <leoyang.li@nxp.com>,
- arm@kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: Arnd Bergmann <arnd@arndb.de>, linux-arm-msm@vger.kernel.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, arm@kernel.org,
+ Kevin Hilman <khilman@baylibre.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 23, 2019 at 10:08:06AM +0800, Shawn Guo wrote:
-> On Mon, Apr 22, 2019 at 04:28:34PM +0800, Shawn Guo wrote:
-> > The following changes since commit 9e98c678c2d6ae3a17cb2de55d17f69dddaa231b:
-> > 
-> >   Linux 5.1-rc1 (2019-03-17 14:22:26 -0700)
-> > 
-> > are available in the Git repository at:
-> > 
-> >   git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/imx-dt-5.2
-> > 
-> > for you to fetch changes up to 2ea5c9b28fab2f34a0ac5d9b3d17216dd35d3162:
-> > 
-> >   ARM: dts: vf610-zii-dev-rev-b: Specify CS as GPIO_ACTIVE_LOW in spi0 (2019-04-22 09:16:15 +0800)
-> 
-> Hi Arnd, Olof,
-> 
-> I updated the tag to include the missing patch that adds #io-channel-cells
-> in ADC nodes.  Otherwise, we have DTC warning below from ZII i.MX7 RPU2
-> board support.
-> 
->   arch/arm/boot/dts/imx7d-zii-rpu2.dts:46.12-50.4: Warning (io_channels_property): /iio-hwmon: Missing property '#io-channel-cells' in node /soc/aips-bus@30400000/adc@30610000 or bad phandle (referred from io-channels[0]) 
-> 
-> Shawn
-> 
-> 
+On Tue, Apr 23, 2019 at 12:27:25AM -0500, Andy Gross wrote:
 > The following changes since commit 9e98c678c2d6ae3a17cb2de55d17f69dddaa231b:
 > 
 >   Linux 5.1-rc1 (2019-03-17 14:22:26 -0700)
 > 
-> are available in the Git repository at:
+> are available in the git repository at:
 > 
->   git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/imx-dt-5.2
+>   git://git.kernel.org/pub/scm/linux/kernel/git/agross/linux.git tags/qcom-arm64-for-5.2
 > 
-> for you to fetch changes up to 4171797ff78fa1f351b890e18411b7959b506149:
+> for you to fetch changes up to 6ef7c11b31a57e43062da15a36fac54fcb97b533:
 > 
->   ARM: dts: imx7s: Specify #io-channel-cells in ADC nodes (2019-04-23 09:48:26 +0800)
+>   arm64: dts: sdm845: Introduce ADSP and CDSP PAS nodes (2019-04-23 00:10:35 -0500)
+> 
+> ----------------------------------------------------------------
+> Qualcomm ARM64 Updates for v5.2
+> 
+> * Add gpio ranges for Qualcomm platforms
+> * Fix MSM8998 BLSP2 I2C5 address
+> * Add MSM8998 UFS nodes and associated information
+> * Add SDM845 interconnect header and usage
+> * Add ADSP and CDSP PAS, RMTFS memory, and UFS phy reset on SDM845
+> * Update reserved memory map on SDM845
+> * Add QCS404 spmi regulators, ethernet, bluetooth, and uart3
+> * Remove remotely-controlled property as default for BAM on QCS404
+> * Add spmi regulators on PMS405
+> * Fixup QCS404 l3 voltages and regulator supply names
+> * Fixup thermal trip names on Qualcomm platforms
+> * Add thermal sensors on Qualcomm platforms
+> * Remove invalid efficiency property on MSM8998
+> * Change QCS404-evb compatible to help distinguish platforms
+> * Add rpmhd header file and convert to use definitions on SDM845
+> * Add interconnect header file on SDM845
+> * Add PMS405 ADC binding
 
-Merged, thanks!
+Merged, thanks.
 
 
 -Olof
