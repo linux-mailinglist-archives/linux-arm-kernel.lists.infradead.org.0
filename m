@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACA6CB6A9
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 22:31:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2E0FB6AA
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 22:31:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CEBm+U2NAepPftGjDWdsvB9GzICwBEQoh2EA9vD/JsM=; b=LvnA8j3MQnc+1B
-	M6EXJZZJeIVmBmFP7826jSUEXWvUPq3jv75u0WS8vX0YTRP7OcTqctJ/90/HmidBh8kW4NKdb9HP1
-	oCjGfGP6FpTUezFPY2bY4g7jEV4EyVy6IPYxOtNh3O5waYJGhaxN7CCtXMTiCYs+vUh7oSsQbZg4b
-	HSNe2YtIteOPD/TH8cGHS0PPqj55BlUK560CCjFbP2kEujnF6KAuQEBh1MK8wNLiPPMAqDIosR8e6
-	XstDCyjzz88yfQclu7/BW44pz8m+C/utSg22Hy+64RjaKadC/+w3XtI1iItx3vnZQDF1jnWVYThDp
-	y07lgu4uAmEGsoWQEmBA==;
+	List-Owner; bh=TJO3sl+VwDAGbPAVc1yZGJ94Ig/JCmOZKBsdtDBWA3g=; b=BzpaFQLIbP6qYv
+	GI6XFavti3jIAvBZaXHS5dJigWA8lfRkYHfGy3V5MzDSmhqyb0bK5kgyVPZGGn8C8V6cGUAtwNpF7
+	W9G1fODbRMsxwIR7T0q8TsEyJzoBJ/DliBVBMFaR+nO0zl+C9aTpmsurztFV4PZ7yjFxz5fnqzOEJ
+	2jMSJ2smN4k41Lh8D4SKuq+k7ARRFvbn/gWUZ/GiXPNtJYzbrQspLIWI0XrP6ntixwHbCFAMEpGVt
+	38EBj0gn+6+FVPv+JTk4mHa4ER1XKJrKrqgFX6fV4ECSRZYFiEcBuE/XMlWYUAs38wzabsz5W9IN6
+	QexHDEK7Tnco+73U3EmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKqSb-0004NA-FA; Sun, 28 Apr 2019 20:31:41 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1hKqSl-0004au-Mg; Sun, 28 Apr 2019 20:31:51 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKqIw-0002Or-ID
- for linux-arm-kernel@lists.infradead.org; Sun, 28 Apr 2019 20:22:00 +0000
-Received: by mail-lf1-x142.google.com with SMTP id u17so6363977lfi.3
+ id 1hKqIy-0002RJ-A1
+ for linux-arm-kernel@lists.infradead.org; Sun, 28 Apr 2019 20:22:03 +0000
+Received: by mail-lj1-x244.google.com with SMTP id t10so6426706ljg.7
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 28 Apr 2019 13:21:42 -0700 (PDT)
+ Sun, 28 Apr 2019 13:21:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=1RMmN8Y3ry5e3+uRd+v8T6sP4ZvK8Q6n5eXBmv0zFUE=;
- b=Dz/yhrcF0xmHCpk4NPQZbLGDADEoCKV8xHcmH2YSjWMk+T2nHqYxrx4WGAQdh+r9aZ
- 58E6HoXG8Z7+4jydAPpA87K3IjjuxOI/urgTMYfopm1tIhh8spOeh59cIXHAbe/JYR+G
- dbn8gzrTTWwh6Iu9wf9J40P/EvbHAlH7YNLtQW/B0paZxru0mmqXQWJT/Fb95Bk6t6E/
- 002VApExigCbUEASIFP8wMozt38gp9HRhlsxzPHZ7rw9zt8pEWfLf4DhPe1aPqRWd1Pb
- WBGm4B8tdmeB5b89LtylvKvcTckJ+tULF7wiDYOMxcUOUBhAHgbqSn+USoqS1b0+A4u+
- 8UZQ==
+ bh=HJe7LnGkDC9Wt4+gx21M26mW6URvKsQTzWzRQYmarxs=;
+ b=tl3XS1cciKbpHJoJTJgwp6w+lz9EbF5CnOrcJrxxcmiyuJoJQ9aIFUndPEXZf5uLSx
+ CjKTWKjKHeLMN7g964H+ThEN6kzdYm9EWr44B8DVQNYfLw5Ibhs8L/a0AKfksBxZtjyw
+ gu4ji+6vn6GTvz0LVQ1jTY8aulOdWBEuRWNZmEmPpYggc/+I93KsCNyhXb1XjldtD0T8
+ lL8zEvFiFM1UKcAOJLGHHDF2/JoRod866uV6+Z7G25i7twIZE0OooqTCJcHl+EDlWT6a
+ qTJHlfgOdDx3ocUW4opZYpYcHWz0OHwE0upW5WDjsvvbjWhIwPDRW8iJBxjDE/SvxIZ+
+ 8kHQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=1RMmN8Y3ry5e3+uRd+v8T6sP4ZvK8Q6n5eXBmv0zFUE=;
- b=uU12coer1ySePjlQEAyCljMz67tEITUq8/MWu6LXZjb2OIQRWgnMt+ySwfOYa0RECF
- TbvhX6H5pfXoTewMODsXs6zjW6SB7fRzbrZVQZv8Heec3Pmi6nPtNU8rttgTLfwkvWS/
- km/VzstcEOL+Vxn54L9jZsoJCir3Zo1OPWX+mR4zkHj/RqDfVl4TCp2D8JhHLPvt5pn2
- EYC2gbyA/4ELu8YPNsyuNpGZzUfM7xBie8wWOngxu7+O9LE0vUP5WnnOy9HydRBUMCqg
- 4gqVjlFtIN3roxGeNjIQ9TPvb8Nr8paRZnigfprA9N2MPzvBUZDipf6htPAjk+Es682P
- eM2w==
-X-Gm-Message-State: APjAAAV2EpZcqVPwuCLhqDQyNZV+raiwUFQhrfwGofjVUNq/2aXEEfi4
- awd2NILth17vwz+I8kuQlgPGGA==
-X-Google-Smtp-Source: APXvYqxYi/RG8uhH2nZfU1IlGKyKemJEiczvROU8a7HSe7ukspcmyiyzkNdf5fT2qiuZAUULsPuU7w==
-X-Received: by 2002:a19:ec01:: with SMTP id b1mr9975862lfa.128.1556482900944; 
- Sun, 28 Apr 2019 13:21:40 -0700 (PDT)
+ bh=HJe7LnGkDC9Wt4+gx21M26mW6URvKsQTzWzRQYmarxs=;
+ b=bCAUExEJDX9v6Cff7/VE9fLX51iobUTx4H19rSy7OI3/5U2Fh0ZEBfcFKdO6mZVPRc
+ X1SW0iAET5G+aPrusl5ffNjjVcD/Ok1ygBQL6p5IhRmdBUp2qWl9jCpmiG4YY8x6kWZd
+ AZyK2HXAx/whj/5IR33eNAkC3UyRZPIb+0B5ADypr2ds9/CoHevzPjbXbAlb3pGQ2wvo
+ o7znlnVNMP0Msn7a1msISRCKRx2dqRccdrgSgX2Iz25C0yhAcVkJitTH5EXUSMx08asw
+ n7MflxbtoDlS3VnwgW87JeRbTZarYg4Sii2Fw+HxmPJtIeP5JjfNnXvzK14lU/MhghMn
+ rMdw==
+X-Gm-Message-State: APjAAAVDDYlkMVMGIlJ1RlSQGI4Qb4ljlN9uWIvBCu/Sz6U3vy2vbVl/
+ TDStHEHUEMTzPR3oiZiMzcBQPw==
+X-Google-Smtp-Source: APXvYqzTtf9fxA+g/YyPjy3mhlWMEWcq0od7Wc1KbBGsAJDSWoPrhtfnpYYUSM+nCjjamdkH9RBP9Q==
+X-Received: by 2002:a2e:894e:: with SMTP id b14mr26702804ljk.158.1556482902696; 
+ Sun, 28 Apr 2019 13:21:42 -0700 (PDT)
 Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id a17sm6967240lfg.88.2019.04.28.13.21.39
+ by smtp.gmail.com with ESMTPSA id r10sm455212ljb.81.2019.04.28.13.21.41
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 28 Apr 2019 13:21:39 -0700 (PDT)
-Date: Sun, 28 Apr 2019 13:00:18 -0700
+ Sun, 28 Apr 2019 13:21:41 -0700 (PDT)
+Date: Sun, 28 Apr 2019 13:00:44 -0700
 From: Olof Johansson <olof@lixom.net>
 To: Heiko Stuebner <heiko@sntech.de>
-Subject: Re: [GIT PULL 1/5] Rockchip dts32 updates for 5.2 - round 2
-Message-ID: <20190428200018.yi3k6lqz7xbpcte3@localhost>
+Subject: Re: [GIT PULL 2/5] Rockchip dts64 updates for 5.2 - round 2
+Message-ID: <20190428200044.4midr65z7cvwle7b@localhost>
 References: <3379363.gjmLGbHmEH@phil>
+ <1566191.x5jUQ05xmK@phil>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <3379363.gjmLGbHmEH@phil>
+In-Reply-To: <1566191.x5jUQ05xmK@phil>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190428_132143_000104_B867B754 
-X-CRM114-Status: GOOD (  15.03  )
+X-CRM114-CacheID: sfid-20190428_132144_857183_B1B9386C 
+X-CRM114-Status: GOOD (  12.40  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -99,36 +100,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 24, 2019 at 07:57:03PM +0200, Heiko Stuebner wrote:
-> Hi Arnd, Kevin Olof,
+On Wed, Apr 24, 2019 at 07:57:56PM +0200, Heiko Stuebner wrote:
+> The following changes since commit b4e1728232d64b8040dae9b5405cf2db7ebd4e8b:
 > 
-> please find below and in the replies round2 of Rockchip devicetree updates
-> targetted at 5.2. Again nothing major but a lot of attention for the rk3288
-> and a lot of general updates - Please pull.
-> 
-> The devicetree updates (32+64 bit) go on top of the previous tags from
-> round 1, while the other just go on top of 5.1-rc1 (or later of course).
-> 
-> Thanks
-> Heiko
-> 
-> The following changes since commit 4b028ebd4e3d86c61161b3a937b746043006dcbe:
-> 
->   ARM: dts: rockchip: enable vop0 and hdmi nodes to rk3066a-mk808 (2019-03-31 17:28:05 +0200)
+>   arm64: dts: rockchip: Decrease emmc-phy's drive impedance on rk3399-puma (2019-03-27 13:45:27 +0100)
 > 
 > are available in the Git repository at:
 > 
->   git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.2-rockchip-dts32-2
+>   git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.2-rockchip-dts64-2
 > 
-> for you to fetch changes up to 356150e86d75653d1f679c6ef583144b26d0a686:
+> for you to fetch changes up to 798689e45190756c2eca6656ee4c624370a5012a:
 > 
->   ARM: dts: rockchip: vdd_gpu off in suspend for rk3288-veyron (2019-04-12 22:28:38 +0200)
+>   arm64: dts: rockchip: fix IO domain voltage setting of APIO5 on rockpro64 (2019-04-23 23:29:08 +0200)
 > 
 > ----------------------------------------------------------------
-> Much love for rk3288 in general (power coefficients for the scheduler)
-> and veyron chromeos devices in particular (regulators, suspend, cleanups)
-> and bulk conversion of the remaining gpios to the helper constants denoting
-> the iomux.
+> Bulk conversion of remaining gpios to the helper constants, new peripherals
+> for the rk3328-roc-cc and some minor fixes for rk3399 and rockpro64.
+
 
 Merged, thanks!
 
