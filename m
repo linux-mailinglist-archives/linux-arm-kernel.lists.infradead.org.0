@@ -2,64 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 976F8B5B4
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 10:37:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12DD0B5C6
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 11:27:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dxJtIOHoqbK7xOyZzgbI/uY9MNJkbDMAMHU+37fMiFU=; b=BbEQbZFM/WONnU
-	OeVi0vyjetlhy+Esi6NwP4gzpo0dkY04/+YTA7aokYjwvYZuZE3F3ia1IeleX1Lp2KS7nWyuOGXO7
-	zTCSa0DHK9N2OnvNsg44WeYIJotzBgPXWa4XEkEKMznsNe65MdOeEInAgcYOTN2V7O61MlCHFHFx2
-	3tbCqmzM6Jhv4P9rbNk7H+UbWW9d8bqPEGXDsMJU4y6t0y3vpXsX+imbTJvYd+idRWU2/qPkGmn+x
-	4fA1GgRXOwrPWef8pgklT9gxLcIoM1ZQunx0aHMjDqIDQaP/PIYjWOleDTSpI7VHI9O3f8JEmh6ef
-	Cm9CJxfOXNq0H4MluPmg==;
+	List-Owner; bh=pErAUNTcExt0A8rPot9ciLcrMbcfJ34CX+L8l/JSV2M=; b=NQcpuiy9VYsOWG
+	8EEJgSoVDfnpVXY0R/oAUEWyM8RhsgE5a3sRWZnfPeqieghYUFnOt0KajlfYnAvo7h9CsbqCMgfib
+	Ct4nX9xXEd3A+t9DZR1PkwGycnyYNqhOAroyWuz7ArsLR7/RwQgyK6ipE7DMS9AvXuLvG8cxz5z10
+	jhYJKBRjpCxjZRO+LQ1DaB7WWRH35QAcfPbFqyj6YoHL3jWU2i0oPS66e2wVGwHe6LFQH52uU1HXn
+	/wtKb8zRXZeYQ1TogIRiTMWH5+5wrGew4eLn4mK9QVXb2/g9ASQnrb3oD62IAse/FERK1Cm+kyK8H
+	IsgmTZqsSknma19ajoSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKfJi-0000Vo-PO; Sun, 28 Apr 2019 08:37:46 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hKg5Q-0006WM-BC; Sun, 28 Apr 2019 09:27:04 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKfJb-0000Ue-4z; Sun, 28 Apr 2019 08:37:40 +0000
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id BEE19308425B;
- Sun, 28 Apr 2019 08:37:36 +0000 (UTC)
-Received: from dhcp-128-65.nay.redhat.com (ovpn-12-104.pek2.redhat.com
- [10.72.12.104])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id EF1721001DCE;
- Sun, 28 Apr 2019 08:37:14 +0000 (UTC)
-Date: Sun, 28 Apr 2019 16:37:10 +0800
-From: Dave Young <dyoung@redhat.com>
-To: Pingfan Liu <kernelfans@gmail.com>
-Subject: Re: [PATCHv2] kernel/crash: make parse_crashkernel()'s return value
- more indicant
-Message-ID: <20190428083710.GA11981@dhcp-128-65.nay.redhat.com>
-References: <1556087581-14513-1-git-send-email-kernelfans@gmail.com>
- <10dc5468-6cd9-85c7-ba66-1dfa5aa922b7@suse.com>
- <CAFgQCTstd667wP6g+maxYekz4u3iBR2R=FHUiS1V=XxTs6MKUw@mail.gmail.com>
+ id 1hKg5H-0006Vt-W9; Sun, 28 Apr 2019 09:26:58 +0000
+X-UUID: 6ae502d6ac174e7a9eabaeafe977d1e5-20190428
+X-UUID: 6ae502d6ac174e7a9eabaeafe977d1e5-20190428
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 435730896; Sun, 28 Apr 2019 01:26:41 -0800
+Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 28 Apr 2019 02:26:39 -0700
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N2.mediatek.inc
+ (172.27.4.87) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Sun, 28 Apr 2019 17:26:37 +0800
+Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Sun, 28 Apr 2019 17:26:37 +0800
+Message-ID: <1556443596.10179.212.camel@mhfsdcap03>
+Subject: RE: [PATCH v4 5/6] usb: roles: add USB Type-B GPIO connector driver
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Biju Das <biju.das@bp.renesas.com>
+Date: Sun, 28 Apr 2019 17:26:36 +0800
+In-Reply-To: <OSBPR01MB210367FCF0BCDF4D9BB7B32CB83E0@OSBPR01MB2103.jpnprd01.prod.outlook.com>
+References: <1556261237-13823-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1556261237-13823-6-git-send-email-chunfeng.yun@mediatek.com>
+ <OSBPR01MB210367FCF0BCDF4D9BB7B32CB83E0@OSBPR01MB2103.jpnprd01.prod.outlook.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAFgQCTstd667wP6g+maxYekz4u3iBR2R=FHUiS1V=XxTs6MKUw@mail.gmail.com>
-User-Agent: Mutt/1.11.3 (2019-02-01)
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.40]); Sun, 28 Apr 2019 08:37:38 +0000 (UTC)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190428_013739_233060_AB94E949 
-X-CRM114-Status: GOOD (  19.70  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190428_022656_043207_72A0B9A6 
+X-CRM114-Status: GOOD (  29.23  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -71,79 +71,419 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
- Julien Thierry <julien.thierry@arm.com>, Yangtao Li <tiny.windzz@gmail.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Palmer Dabbelt <palmer@sifive.com>, Heiko Carstens <heiko.carstens@de.ibm.com>,
- Stefan Agner <stefan@agner.ch>, linux-mips@vger.kernel.org,
- Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
- Thomas Gleixner <tglx@linutronix.de>, Logan Gunthorpe <logang@deltatee.com>,
- linux-s390@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
- Yoshinori Sato <ysato@users.sourceforge.jp>, linux-sh@vger.kernel.org,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- Russell King <linux@armlinux.org.uk>, Ingo Molnar <mingo@redhat.com>,
- Hari Bathini <hbathini@linux.ibm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, James Hogan <jhogan@kernel.org>,
- Fenghua Yu <fenghua.yu@intel.com>, Tony Luck <tony.luck@intel.com>,
- Will Deacon <will.deacon@arm.com>, Johannes Weiner <hannes@cmpxchg.org>,
- Ananth N Mavinakayanahalli <ananth@linux.vnet.ibm.com>,
- Borislav Petkov <bp@alien8.de>, David Hildenbrand <david@redhat.com>,
- linux-arm-kernel@lists.infradead.org, Jens Axboe <axboe@kernel.dk>,
- Matthias Brugger <mbrugger@suse.com>, Baoquan He <bhe@redhat.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Robin Murphy <robin.murphy@arm.com>, kexec@lists.infradead.org,
- LKML <linux-kernel@vger.kernel.org>, Ralf Baechle <ralf@linux-mips.org>,
- Thomas Bogendoerfer <tbogendoerfer@suse.de>,
- Paul Burton <paul.burton@mips.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Hans de Goede <hdegoede@redhat.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- Greg Hackmann <ghackmann@android.com>
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, Badhri Jagan
+ Sridharan <badhri@google.com>, Andy
+ Shevchenko <andy.shevchenko@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ Min Guo <min.guo@mediatek.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Li Jun <jun.li@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 04/25/19 at 04:20pm, Pingfan Liu wrote:
-> On Wed, Apr 24, 2019 at 4:31 PM Matthias Brugger <mbrugger@suse.com> wrote:
-> >
-> >
-> [...]
-> > > @@ -139,6 +141,8 @@ static int __init parse_crashkernel_simple(char *cmdline,
-> > >               pr_warn("crashkernel: unrecognized char: %c\n", *cur);
-> > >               return -EINVAL;
-> > >       }
-> > > +     if (*crash_size == 0)
-> > > +             return -EINVAL;
-> >
-> > This covers the case where I pass an argument like "crashkernel=0M" ?
-> > Can't we fix that by using kstrtoull() in memparse and check if the return value
-> > is < 0? In that case we could return without updating the retptr and we will be
-> > fine.
-> >
-> It seems that kstrtoull() treats 0M as invalid parameter, while
-> simple_strtoull() does not.
+Hi Biju,
+On Fri, 2019-04-26 at 09:22 +0000, Biju Das wrote:
+> Hi Chunfeng Yun,
 > 
-> If changed like your suggestion, then all the callers of memparse()
-> will treats 0M as invalid parameter. This affects many components
-> besides kexec.  Not sure this can be done or not.
-
-simple_strtoull is obsolete, move to kstrtoull is the right way.
-
-$ git grep memparse|wc
-    158     950   10479
-
-Except some documentation/tools etc there are still a log of callers
-which directly use the return value as the ull number without error
-checking.
-
-So it would be good to mark memparse as obsolete as well in
-lib/cmdline.c, and introduce a new function eg. kmemparse() to use
-kstrtoull,  and return a real error code, and save the size in an
-argument like &size.  Then update X86 crashkernel code to use it.
+> Thanks for the patch.
+> 
+> > Subject: [PATCH v4 5/6] usb: roles: add USB Type-B GPIO connector driver
+> > 
+> > Due to the requirement of usb-connector.txt binding, the old way using
+> > extcon to support USB Dual-Role switch is now deprecated when use Type-B
+> > connector.
+> > This patch introduces a driver of Type-B connector which typically uses an
+> > input GPIO to detect USB ID pin, and try to replace the function provided by
+> > extcon-usb-gpio driver
+> > 
+> > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> > ---
+> > v4 changes:
+> >   1. remove linux/gpio.h suggested by Linus
+> >   2. put node when error happens
+> > 
+> > v3 changes:
+> >   1. treat bype-B connector as a virtual device;
+> >   2. change file name again
+> > 
+> > v2 changes:
+> >   1. file name is changed
+> >   2. use new compatible
+> > ---
+> >  drivers/usb/roles/Kconfig           |  11 +
+> >  drivers/usb/roles/Makefile          |   1 +
+> >  drivers/usb/roles/typeb-conn-gpio.c | 305
+> > ++++++++++++++++++++++++++++
+> >  3 files changed, 317 insertions(+)
+> >  create mode 100644 drivers/usb/roles/typeb-conn-gpio.c
+> > 
+> > diff --git a/drivers/usb/roles/Kconfig b/drivers/usb/roles/Kconfig index
+> > f8b31aa67526..d1156e18a81a 100644
+> > --- a/drivers/usb/roles/Kconfig
+> > +++ b/drivers/usb/roles/Kconfig
+> > @@ -26,4 +26,15 @@ config USB_ROLES_INTEL_XHCI
+> >  	  To compile the driver as a module, choose M here: the module will
+> >  	  be called intel-xhci-usb-role-switch.
+> > 
+> > +config TYPEB_CONN_GPIO
+> > +	tristate "USB Type-B GPIO Connector"
+> > +	depends on GPIOLIB
+> > +	help
+> > +	  The driver supports USB role switch between host and device via
+> > GPIO
+> > +	  based USB cable detection, used typically if an input GPIO is used
+> > +	  to detect USB ID pin.
+> > +
+> > +	  To compile the driver as a module, choose M here: the module will
+> > +	  be called typeb-conn-gpio.ko
+> > +
+> >  endif # USB_ROLE_SWITCH
+> > diff --git a/drivers/usb/roles/Makefile b/drivers/usb/roles/Makefile index
+> > 757a7d2797eb..5d5620d9d113 100644
+> > --- a/drivers/usb/roles/Makefile
+> > +++ b/drivers/usb/roles/Makefile
+> > @@ -3,3 +3,4 @@
+> >  obj-$(CONFIG_USB_ROLE_SWITCH)		+= roles.o
+> >  roles-y					:= class.o
+> >  obj-$(CONFIG_USB_ROLES_INTEL_XHCI)	+= intel-xhci-usb-role-
+> > switch.o
+> > +obj-$(CONFIG_TYPEB_CONN_GPIO)		+= typeb-conn-gpio.o
+> > diff --git a/drivers/usb/roles/typeb-conn-gpio.c b/drivers/usb/roles/typeb-
+> > conn-gpio.c
+> > new file mode 100644
+> > index 000000000000..097d2ca12a12
+> > --- /dev/null
+> > +++ b/drivers/usb/roles/typeb-conn-gpio.c
+> > @@ -0,0 +1,305 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +/*
+> > + * USB Type-B GPIO Connector Driver
+> > + *
+> > + * Copyright (C) 2019 MediaTek Inc.
+> > + *
+> > + * Author: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> > + *
+> > + * Some code borrowed from drivers/extcon/extcon-usb-gpio.c  */
+> > +
+> > +#include <linux/device.h>
+> > +#include <linux/gpio/consumer.h>
+> > +#include <linux/interrupt.h>
+> > +#include <linux/irq.h>
+> > +#include <linux/module.h>
+> > +#include <linux/of.h>
+> > +#include <linux/of_graph.h>
+> > +#include <linux/pinctrl/consumer.h>
+> > +#include <linux/platform_device.h>
+> > +#include <linux/regulator/consumer.h>
+> > +#include <linux/usb/role.h>
+> > +
+> > +#define USB_GPIO_DEB_MS		20	/* ms */
+> > +#define USB_GPIO_DEB_US		((USB_GPIO_DEB_MS) * 1000)	/* us
+> > */
+> > +
+> > +#define USB_CONN_IRQF	\
+> > +	(IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING |
+> > IRQF_ONESHOT)
+> > +
+> > +struct usb_conn_info {
+> > +	struct device *dev;
+> > +	struct usb_role_switch *role_sw;
+> > +	enum usb_role last_role;
+> > +	struct regulator *vbus;
+> > +	struct delayed_work dw_det;
+> > +	unsigned long debounce_jiffies;
+> > +
+> > +	struct gpio_desc *id_gpiod;
+> > +	struct gpio_desc *vbus_gpiod;
+> > +	int id_irq;
+> > +	int vbus_irq;
+> > +};
+> > +
+> > +/**
+> > + * "DEVICE" = VBUS and "HOST" = !ID, so we have:
+> > + * Both "DEVICE" and "HOST" can't be set as active at the same time
+> > + * so if "HOST" is active (i.e. ID is 0)  we keep "DEVICE" inactive
+> > + * even if VBUS is on.
+> > + *
+> > + *  Role          |   ID  |  VBUS
+> > + * ------------------------------------
+> > + *  [1] DEVICE    |   H   |   H
+> > + *  [2] NONE      |   H   |   L
+> > + *  [3] HOST      |   L   |   H
+> > + *  [4] HOST      |   L   |   L
+> > + *
+> > + * In case we have only one of these signals:
+> > + * - VBUS only - we want to distinguish between [1] and [2], so ID is
+> > +always 1
+> > + * - ID only - we want to distinguish between [1] and [4], so VBUS = ID
+> > +*/ static void usb_conn_detect_cable(struct work_struct *work) {
+> > +	struct usb_conn_info *info;
+> > +	enum usb_role role;
+> > +	int id, vbus, ret;
+> > +
+> > +	info = container_of(to_delayed_work(work),
+> > +			    struct usb_conn_info, dw_det);
+> > +
+> > +	/* check ID and VBUS */
+> > +	id = info->id_gpiod ?
+> > +		gpiod_get_value_cansleep(info->id_gpiod) : 1;
+> > +	vbus = info->vbus_gpiod ?
+> > +		gpiod_get_value_cansleep(info->vbus_gpiod) : id;
+> > +
+> > +	if (!id)
+> > +		role = USB_ROLE_HOST;
+> > +	else if (vbus)
+> > +		role = USB_ROLE_DEVICE;
+> > +	else
+> > +		role = USB_ROLE_NONE;
+> > +
+> > +	dev_dbg(info->dev, "role %d/%d, gpios: id %d, vbus %d\n",
+> > +		info->last_role, role, id, vbus);
+> > +
+> > +	if (info->last_role == role) {
+> > +		dev_warn(info->dev, "repeated role: %d\n", role);
+> > +		return;
+> > +	}
+> > +
+> > +	if (info->last_role == USB_ROLE_HOST)
+> > +		regulator_disable(info->vbus);
+> > +
+> > +	ret = usb_role_switch_set_role(info->role_sw, role);
+> > +	if (ret)
+> > +		dev_err(info->dev, "failed to set role: %d\n", ret);
+> > +
+> > +	if (role == USB_ROLE_HOST) {
+> > +		ret = regulator_enable(info->vbus);
+> > +		if (ret)
+> > +			dev_err(info->dev, "enable vbus regulator failed\n");
+> > +	}
+> > +
+> > +	info->last_role = role;
+> > +
+> > +	dev_dbg(info->dev, "vbus regulator is %s\n",
+> > +		regulator_is_enabled(info->vbus) ? "enabled" : "disabled"); }
+> > +
+> > +static void usb_conn_queue_dwork(struct usb_conn_info *info,
+> > +				 unsigned long delay)
+> > +{
+> > +	queue_delayed_work(system_power_efficient_wq, &info-
+> > >dw_det, delay); }
+> > +
+> > +static irqreturn_t usb_conn_isr(int irq, void *dev_id) {
+> > +	struct usb_conn_info *info = dev_id;
+> > +
+> > +	usb_conn_queue_dwork(info, info->debounce_jiffies);
+> > +
+> > +	return IRQ_HANDLED;
+> > +}
+> > +
+> > +static int usb_conn_probe(struct platform_device *pdev) {
+> > +	struct device *dev = &pdev->dev;
+> > +	struct device_node *np = dev->of_node;
+> > +	struct device_node *parent;
+> > +	struct device_node *child;
+> > +	struct usb_conn_info *info;
+> > +	int ret = 0;
+> > +
+> > +	if (!np)
+> > +		return -EINVAL;
+> > +
+> > +	info = devm_kzalloc(dev, sizeof(*info), GFP_KERNEL);
+> > +	if (!info)
+> > +		return -ENOMEM;
+> > +
+> > +	info->dev = dev;
+> > +
+> > +	child = of_get_child_by_name(np, "connector");
+> > +	if (!child) {
+> > +		dev_err(dev, "failed to find connector node\n");
+> > +		return -ENODEV;
+> > +	}
+> > +
+> > +	info->id_gpiod = devm_gpiod_get_from_of_node(
+> > +				dev, child, "id-gpios", 0, GPIOD_IN, "idpin");
+> > +	if (IS_ERR(info->id_gpiod)) {
+> > +		of_node_put(child);
+> > +		return PTR_ERR(info->id_gpiod);
+> > +	}
+> > +
+> > +	info->vbus_gpiod = devm_gpiod_get_from_of_node(
+> > +				dev, child, "vbus-gpios", 0, GPIOD_IN,
+> > +				"vbuspin");
+> > +	if (IS_ERR(info->vbus_gpiod)) {
+> > +		of_node_put(child);
+> > +		return PTR_ERR(info->vbus_gpiod);
+> > +	}
+> > +
+> > +	if (!info->id_gpiod && !info->vbus_gpiod) {
+> > +		dev_err(dev, "failed to get gpios\n");
+> > +		return -ENODEV;
+> > +	}
+> > +
+> > +	of_node_put(child);
+> > +
+> > +	if (info->id_gpiod)
+> > +		ret = gpiod_set_debounce(info->id_gpiod,
+> > USB_GPIO_DEB_US);
+> > +	if (!ret && info->vbus_gpiod)
+> > +		ret = gpiod_set_debounce(info->vbus_gpiod,
+> > USB_GPIO_DEB_US);
+> > +	if (ret < 0)
+> > +		info->debounce_jiffies =
+> > msecs_to_jiffies(USB_GPIO_DEB_MS);
+> > +
+> > +	INIT_DELAYED_WORK(&info->dw_det, usb_conn_detect_cable);
+> > +
+> > +	info->vbus = devm_regulator_get(dev, "vbus");
+> > +	if (IS_ERR(info->vbus)) {
+> > +		dev_err(dev, "failed to get vbus\n");
+> > +		return PTR_ERR(info->vbus);
+> > +	}
+> > +
+> > +	child = of_graph_get_endpoint_by_regs(np, -1, 0);
+> > +	parent = of_graph_get_remote_port_parent(child);
+> > +	info->role_sw =
+> > fwnode_usb_role_switch_get(of_fwnode_handle(parent));
+> > +	of_node_put(child);
+> > +	of_node_put(parent);
+> > +	if (IS_ERR(info->role_sw)) {
+> > +		dev_err(dev, "failed to get role switch\n");
+> > +		return PTR_ERR(info->role_sw);
+> > +	}
+> > +
+> > +	if (info->id_gpiod) {
+> > +		info->id_irq = gpiod_to_irq(info->id_gpiod);
+> > +		if (info->id_irq < 0) {
+> > +			dev_err(dev, "failed to get ID IRQ\n");
+> May be usb_role_switch_put(info->role_sw); ??
+Good catch, will fix it.
 
 Thanks
-Dave
+> > +			return info->id_irq;
+> > +		}
+> > +
+> > +		ret = devm_request_threaded_irq(dev, info->id_irq, NULL,
+> > +						usb_conn_isr,
+> > USB_CONN_IRQF,
+> > +						pdev->name, info);
+> > +		if (ret < 0) {
+> > +			dev_err(dev, "failed to request ID IRQ\n");
+> May be usb_role_switch_put(info->role_sw); ??
+> > +			return ret;
+> > +		}
+> > +	}
+> > +
+> > +	if (info->vbus_gpiod) {
+> > +		info->vbus_irq = gpiod_to_irq(info->vbus_gpiod);
+> > +		if (info->vbus_irq < 0) {
+> > +			dev_err(dev, "failed to get VBUS IRQ\n");
+> May be usb_role_switch_put(info->role_sw);
+> > +			return info->vbus_irq;
+> > +		}
+> > +
+> > +		ret = devm_request_threaded_irq(dev, info->vbus_irq,
+> > NULL,
+> > +						usb_conn_isr,
+> > USB_CONN_IRQF,
+> > +						pdev->name, info);
+> > +		if (ret < 0) {
+> > +			dev_err(dev, "failed to request VBUS IRQ\n");
+> May be usb_role_switch_put(info->role_sw); ??
+> > +			return ret;
+> > +		}
+> > +	}
+> > +
+> > +	platform_set_drvdata(pdev, info);
+> > +
+> > +	/* Perform initial detection */
+> > +	usb_conn_queue_dwork(info, 0);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int usb_conn_remove(struct platform_device *pdev) {
+> > +	struct usb_conn_info *info = platform_get_drvdata(pdev);
+> > +
+> > +	cancel_delayed_work_sync(&info->dw_det);
+> > +
+> > +	if (info->last_role == USB_ROLE_HOST)
+> > +		regulator_disable(info->vbus);
+> > +
+> > +	usb_role_switch_put(info->role_sw);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int __maybe_unused usb_conn_suspend(struct device *dev) {
+> > +	struct usb_conn_info *info = dev_get_drvdata(dev);
+> > +
+> > +	if (info->id_gpiod)
+> > +		disable_irq(info->id_irq);
+> > +	if (info->vbus_gpiod)
+> > +		disable_irq(info->vbus_irq);
+> > +
+> > +	pinctrl_pm_select_sleep_state(dev);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int __maybe_unused usb_conn_resume(struct device *dev) {
+> > +	struct usb_conn_info *info = dev_get_drvdata(dev);
+> > +
+> > +	pinctrl_pm_select_default_state(dev);
+> > +
+> > +	if (info->id_gpiod)
+> > +		enable_irq(info->id_irq);
+> > +	if (info->vbus_gpiod)
+> > +		enable_irq(info->vbus_irq);
+> > +
+> > +	usb_conn_queue_dwork(info, 0);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static SIMPLE_DEV_PM_OPS(usb_conn_pm_ops,
+> > +			 usb_conn_suspend, usb_conn_resume);
+> > +
+> > +#define DEV_PMS_OPS (IS_ENABLED(CONFIG_PM_SLEEP) ?
+> > &usb_conn_pm_ops :
+> > +NULL)
+> > +
+> > +static const struct of_device_id usb_conn_dt_match[] = {
+> > +	{ .compatible = "linux,typeb-conn-gpio", },
+> > +	{ }
+> > +};
+> > +MODULE_DEVICE_TABLE(of, usb_conn_dt_match);
+> > +
+> > +static struct platform_driver usb_conn_driver = {
+> > +	.probe		= usb_conn_probe,
+> > +	.remove		= usb_conn_remove,
+> > +	.driver		= {
+> > +		.name	= "typeb-conn-gpio",
+> > +		.pm	= DEV_PMS_OPS,
+> > +		.of_match_table = usb_conn_dt_match,
+> > +	},
+> > +};
+> > +
+> > +module_platform_driver(usb_conn_driver);
+> > +
+> > +MODULE_AUTHOR("Chunfeng Yun <chunfeng.yun@mediatek.com>");
+> > +MODULE_DESCRIPTION("USB Type-B GPIO connector driver");
+> > +MODULE_LICENSE("GPL v2");
+> > --
+> > 2.21.0
+> 
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
