@@ -2,49 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16DDBB610
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 16:43:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A59E2B611
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 16:43:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=HTmf46lUYV+Npmc3zl0CRgVP2JivEjDSUl1dIOIqkRY=; b=QnD
-	FYBae/FMDSLBfNsND4Na3rEPVs0xHXFlZMlQyQ2PUMdjnu1DgQPM53loB9Svp+gSc/cTRLqmRqhyO
-	L9j7HHQweWAdmS5NYJUX0u7o1yUaOyaTr2a0qrQ7R6XWu3LmdvyO+vdZOTa7hl4Zq9TIaaSb3+QrN
-	g+9M5z0IcZPLSpsnQUcxCtrXx/hk1WC7QRPK6+bYhocczLFExnlBvJpMl9UtppnGC/4sB2B69IfqO
-	RdABDFLny9TQf4aV861d2I0Fvn9vO+KR/qJMcXVzzSsyZoi+75VtKDfGltx9CUvmBm8/4i3mObuWG
-	Qu9qcjWBsBegZBJUSEm7sqtL91JAiKg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=TypTPPZMPAxsoDVm1Qcw6Sauv9r4pB35OaRXsY2YU4k=; b=AsMaJv5ZwikejkPt6T0eiKH2R3
+	qTotij0mSca3FysWh7qxc7RS7NWFnqgkZW2K1Ksi/h0L4GHd9FRe2RoWM1jmAjYbIZErvk+guVuH2
+	F86Mb61X0HRJLYlmz6BHRsIRUrO2qm5+xlYxmJbGc8x6vuEYFYIAvUWRQQJOP6LUT9+UHRMA+HBSq
+	LPX67xXzgk+PcVcVDZBpnmIohhpn5pLbnnGWMQLcEwYE16MSkBhBEWAstj1DeBPuirdJA0CpmbQTg
+	MvpuHk11WmvufXtQypQRRpB2GSQRTca4rHTe1gIfUMHaUaw4Jd60/zmS748fn6bJ+pAHx6ZvlJRUO
+	U1RdNEeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKl15-00029W-6f; Sun, 28 Apr 2019 14:42:55 +0000
+	id 1hKl1E-0002JY-Ss; Sun, 28 Apr 2019 14:43:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKl0k-00028L-C3
- for linux-arm-kernel@lists.infradead.org; Sun, 28 Apr 2019 14:42:35 +0000
+ id 1hKl0k-000297-On
+ for linux-arm-kernel@lists.infradead.org; Sun, 28 Apr 2019 14:42:36 +0000
 Received: from localhost.localdomain (unknown [194.230.155.114])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BB3EB20644;
- Sun, 28 Apr 2019 14:42:29 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 63E932075D;
+ Sun, 28 Apr 2019 14:42:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1556462551;
- bh=w/rU7LVgIYiKJvGCsk3PphaPgE7GMKwBPLNwd/xvtTE=;
- h=From:To:Cc:Subject:Date:From;
- b=1rvgk865ANImqrhNp3jACRVPQx74Aum+dL3iba7aK2fMxZ2ilYJh4uTvw4qQISDWc
- CeSNnvm3wtHhR+ZfbbC2+jFmochLdS+Tb9go966wPZLZl/8QOYCDk5/Y8fcQoCa6kZ
- D3R2kefMcTDqmRdJhE9MTJALh5XtqMTh8l0AnpaY=
+ s=default; t=1556462554;
+ bh=2nlDegaPHckDGqoHmsfpGv9MEmyJ160PcbaY/t9ACE0=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=RWy/XlAYlvhVZ/Us2vVCsBS0TxZ4Z9k54C0yk37jbQPhrXueCV1dSndf80v6WnBwl
+ Cs0+ktFug4eb01KLicjW1dDvJmHJAartz7PEHxB2EOpmaF0ruM0nHQdj9YfxzLOFYH
+ OS7jzUXNabq/7BDJ6LWb7P95vEqahew3rEN/OLfM=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
  arm@kernel.org
-Subject: [GIT PULL 1/2] ARM: dts: exynos: Second round for v5.2
-Date: Sun, 28 Apr 2019 16:42:20 +0200
-Message-Id: <20190428144221.11187-1-krzk@kernel.org>
+Subject: [GIT PULL 2/2] arm64: dts: exynos: Second round for v5.2
+Date: Sun, 28 Apr 2019 16:42:21 +0200
+Message-Id: <20190428144221.11187-2-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190428144221.11187-1-krzk@kernel.org>
+References: <20190428144221.11187-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190428_074234_436882_D5D542E7 
-X-CRM114-Status: GOOD (  11.15  )
+X-CRM114-CacheID: sfid-20190428_074234_819240_AFCCC433 
+X-CRM114-Status: GOOD (  10.18  )
 X-Spam-Score: -5.3 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.3 points)
@@ -89,41 +92,32 @@ Best regards,
 Krzysztof
 
 
-The following changes since commit 8cc76b1c75722196fb3d7ffe67cbfeb721a7b0e3:
+The following changes since commit 77fc46976e0bfcd78d30fb4c9f0169752b4339c9:
 
-  ARM: dts: exynos: Remove console argument from bootargs (2019-04-10 18:13:31 +0200)
+  arm64: dts: exynos: Add SlimSSS to Exynos5433 (2019-03-20 19:29:57 +0100)
 
 are available in the Git repository at:
 
-  https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-dt-5.2-2
+  https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-dt64-5.2-2
 
-for you to fetch changes up to b4bcbdee137833aab04942671b48a9a3beb0801b:
+for you to fetch changes up to f36afdd0f53583759562cef3a8453919e3b86a7c:
 
-  ARM: dts: s5pv210: Fix camera clock provider on Goni board (2019-04-24 19:55:14 +0200)
-
-----------------------------------------------------------------
-Samsung DTS ARM changes for v5.2, second round
-
-1. DTC warning fixes: move timer and pmu nodes outside of soc node,
-2. Properly override MDMA0 on Universal C210,
-3. Fix camera clock provider (to match bindings and driver) on Goni.
+  arm64: dts: exynos: Move fixed-clocks out of soc (2019-04-24 19:57:59 +0200)
 
 ----------------------------------------------------------------
-Krzysztof Kozlowski (5):
-      ARM: dts: exynos: Move pmu and timer nodes out of soc
-      ARM: dts: exynos: Remove unneeded address/size cells from fixed-clock on Exynos3250
-      ARM: dts: exynos: Move fixed-clocks out of soc on Exynos3250
-      ARM: dts: exynos: Properly override node to use MDMA0 on Universal C210
-      ARM: dts: s5pv210: Fix camera clock provider on Goni board
+Samsung DTS ARM64 changes for v5.2, second round
 
- arch/arm/boot/dts/exynos3250.dtsi               | 72 ++++++++++++-------------
- arch/arm/boot/dts/exynos4.dtsi                  | 14 ++---
- arch/arm/boot/dts/exynos4210-universal_c210.dts | 17 +++++-
- arch/arm/boot/dts/exynos5250.dtsi               | 40 +++++++-------
- arch/arm/boot/dts/exynos54xx.dtsi               | 38 ++++++-------
- arch/arm/boot/dts/s5pv210-goni.dts              |  2 +-
- arch/arm/boot/dts/s5pv210.dtsi                  |  6 +--
- 7 files changed, 100 insertions(+), 89 deletions(-)
+DTC warning fixes: move fixed-clocks, timer and pmu nodes outside of soc
+node.
+
+----------------------------------------------------------------
+Krzysztof Kozlowski (2):
+      arm64: dts: exynos: Move pmu and timer nodes out of soc
+      arm64: dts: exynos: Move fixed-clocks out of soc
+
+ arch/arm64/boot/dts/exynos/exynos5433.dtsi | 49 ++++++++++++-------------
+ arch/arm64/boot/dts/exynos/exynos7.dtsi    | 57 +++++++++++++++---------------
+ 2 files changed, 54 insertions(+), 52 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
