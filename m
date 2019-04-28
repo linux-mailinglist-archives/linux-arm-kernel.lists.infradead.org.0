@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D817B699
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 22:25:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 395D4B69A
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 22:25:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TQVqFPpSpQrtbokk040PBGwRp7cIfSy/sSlR5BsQaJ8=; b=daotX7z40Vct25
-	UEWDxBUdjjbOHyVZTa0/5gm/Gl5jpRfxivQrVqT3rm378wd39JhZasUtrCo+jVpwR2OVE2/EhQpNF
-	ddAuEoocn5/RLwmFl2Kbg6rX/21InIjY/Ivx3I8VanPT4/+cjAeDLu6grfm3vGv2rf2VBCcNg8pVU
-	iRqT+DDTe/+WKoiGIVvCskdpy6fMb4ZGKYxwrEyHIh1T+Zz/MeaGO2N21gymHixkJbxRpT6TT7zQ8
-	hViY8fe3MxqsXIKgNgo8DTuzQLooeAlIU4Z1LKOak8I/eu+ceJewo/ZUqRVtlDxjhQfQKqOyAAxKX
-	/ajUviFfRV0yFOfuwfVg==;
+	List-Owner; bh=lflblAdUBr7SvYoXlMkkEjyf1RzIsscYDlfcIotyYaI=; b=ZLKYmx7n72A48H
+	+1DeA16gU+cg9KLeOPya95IQYB+52AC/tfsCkE9Op4j0UII0y0m5wE0DA3CdyAvYPldwAsvS6ZxpC
+	f8O9FcfzZmGVEmSajmr2o3u2v2OTuiaVepQPXsACReZQ5aB834n6WRZAVblkyUWOkH+gddTSmH/xz
+	DjpdQ0lAKLky5cU2x8G/8SjO9hXab7h7eygqrX+T6+qAcDZF12AWUcbonESQcFo/yfRFNdSEYHaBA
+	2Tw/IT0BR8O7sGAf7BBR+i+xMRaMUGC1aNvTyCFo+Rp3yNCTJ6rLIVeXPyOKAzB9idD/Gz5rhYBj6
+	U20f0y7k1rxFs/R4Elyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKqMN-0006tv-Ip; Sun, 28 Apr 2019 20:25:15 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1hKqMY-0008NX-Hb; Sun, 28 Apr 2019 20:25:26 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKqHJ-00087t-Mb
- for linux-arm-kernel@lists.infradead.org; Sun, 28 Apr 2019 20:20:04 +0000
-Received: by mail-lj1-x242.google.com with SMTP id s7so4759324ljh.1
+ id 1hKqHM-0008Bd-9c
+ for linux-arm-kernel@lists.infradead.org; Sun, 28 Apr 2019 20:20:07 +0000
+Received: by mail-lf1-x143.google.com with SMTP id i68so6201156lfi.10
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 28 Apr 2019 13:20:01 -0700 (PDT)
+ Sun, 28 Apr 2019 13:20:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=/TiM3QOq77UXU8UuXIC/MnuQwwJP3i4j4CNdcOAI12s=;
- b=X3Ofe1hYSMQSenw8HmrvaGNib/O1BW5N8GDVCcG/JWjjOelt8VFaubgjr5nEPRnZOE
- VjYGbkeaG7+uAERZjoZeDqufpifYXF+Wf2dzEZLx4dM2iFIFTrGX2YD2zAVZZZ2m3SOT
- V7oZsrK+YXthgaknOX5dCFtGBNhy3+zGJ1Lw5Sqh1/amypHQQdUrOBBKfEY4c963WiHU
- Ba/pq0DwWTNqNnRLpzZwkg6dK7squhltJ7ItEu/6HvOn773mAi0rEzOoId3BI00+qr5C
- wWNSZoVZwsaievSB+kfKnAy9hWvndYYq6EyG7zmo8ISWQ+7hJHjntPswxhSEFwKE0ENg
- jX/w==
+ bh=3dIVvC+MR+L0wsGCt/+00eAggIxbLnOsQ0t6cOQQvPM=;
+ b=Xf0ngrkkqsbOgDazYS3iEaq416sGquHH/DhSQ/G3z+PRF/F7+vzSWMgYn62pgNU6Jt
+ A1l227ntcOQFLLfrbg3oslHCwS0h87y6b1V8VPKDO5q3uTHr2QI5xGVXORkI5Q+0Wbc5
+ irerdKY7aOIAIrnhAcILalbrLmGnnRqs/L+TtonPSfCsR/pxzQ9QIK8BH9LR7sJenmrt
+ TaC90khKIvcwPX31v8HEm6ZT6eshdwzCsSkxaKqTaWLIQ3ayBv/Hvp3R8kCJPDK0otGl
+ PHWntFWVnCWEDwJEKIhtI+srU8XIIi/HZMetm/MqoQe7qZWJKD1Q+cOmfhrPLbDmq5yI
+ Gz0Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=/TiM3QOq77UXU8UuXIC/MnuQwwJP3i4j4CNdcOAI12s=;
- b=QoBysveX95GpvaCP1u45VqI3iT16VoP3kdk4Jhcvkz135wgratg0f08UtpARYVLYow
- 39cJFt69iZz8rvf9ADMQlu/WyiT7gnedeRqkxudat6sO3SJAJUBJyl8SLAm++zrN0v3U
- WaFSQU9l6WrTPUvTCcdHWNoCXPb4mt5hn09YPpWvIDlmiXTm7B8TjxqocsOh03ZV5xZv
- +/NpsshBDJ1x95uZqa9DmPMH4YR89PNNCbgPcI+sUwDKaXyqnG1k77PsKlCcIpCfBoMv
- 7/NvvylTUl64GNjQRtm3Wy+fsofmMxmckOBhXXryX9I7V7N/XJ4/YKd0jrMlMiVXGvK7
- yEzg==
-X-Gm-Message-State: APjAAAXc7fo5bxlIvhDYBqA3arBVdJwNsYWdV4ppaNGHSNe7DRS5VCYZ
- pVY96oSkGZMAQPdTTIL2xkkCnA==
-X-Google-Smtp-Source: APXvYqxs0RlnZwBqMoqWOA3dUb+Uwo7tXqrODP2Xk7hSYs6nV2ihqiL/aDkAvEnopHAJ8G7+C+Kk8w==
-X-Received: by 2002:a2e:9241:: with SMTP id v1mr8232057ljg.6.1556482800181;
- Sun, 28 Apr 2019 13:20:00 -0700 (PDT)
+ bh=3dIVvC+MR+L0wsGCt/+00eAggIxbLnOsQ0t6cOQQvPM=;
+ b=Jfy6fq3vEnD5hTQBhurO0c+Y86Ro/WmTUdwz7LfmN7SgQ12YB9ycpvClA3CB240Wlq
+ wTT04oL4q+u4Jns85KoZgcLIx+KE/JrTc/aR1QFARIixQRKD4bBvSJCdW6P7BbuUXKYs
+ DZIiPpSu9reMZySXg8BEotnJY2LbplWvFu8PfjH1rNSQSEUanszY0Ma4J9FLBmYEBwct
+ EgK8ct+ly6m+cswUoQtvUk9y9w2+Rr/XWqrgEW7nPa/fp1qOQfOvowAVskWoGc441+Vl
+ PEIHNMGYac/Dg8vFgSpFnlheEsZivRbr9ZCLuINMHHmEC7n+ZsjYy3uK77fzm43mvRGH
+ yHpw==
+X-Gm-Message-State: APjAAAWloNEbQZAkAzVgQkQakkP2x9EbwUS0GGplvJwZp2piYOGj3zzZ
+ 8cXGNgwwnhNG8FbOqqqPUC9+lQ==
+X-Google-Smtp-Source: APXvYqy4lzUtWieq0ZEpbdsrDR3oT5/do6l+w43pSGxubsDMKjiR7Xr0rZiizXiYc2//BsXYuAc1Ow==
+X-Received: by 2002:a19:cb09:: with SMTP id b9mr30862688lfg.55.1556482802553; 
+ Sun, 28 Apr 2019 13:20:02 -0700 (PDT)
 Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id n20sm1357734lji.53.2019.04.28.13.19.58
+ by smtp.gmail.com with ESMTPSA id t9sm4108531lfk.20.2019.04.28.13.20.00
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 28 Apr 2019 13:19:59 -0700 (PDT)
-Date: Sun, 28 Apr 2019 12:49:49 -0700
+ Sun, 28 Apr 2019 13:20:01 -0700 (PDT)
+Date: Sun, 28 Apr 2019 12:50:22 -0700
 From: Olof Johansson <olof@lixom.net>
 To: Kevin Hilman <khilman@baylibre.com>
-Subject: Re: [GIT PULL] ARM: dts: Amlogic updates for v5.2, round 2
-Message-ID: <20190428194949.75s7yp2shknbdbcg@localhost>
-References: <7htvera073.fsf@baylibre.com>
+Subject: Re: [GIT PULL] arm64: dts: Amlogic updates for v5.2, round 2
+Message-ID: <20190428195022.z2ig4vb23rgv4ryd@localhost>
+References: <7hmukj9zsw.fsf@baylibre.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <7htvera073.fsf@baylibre.com>
+In-Reply-To: <7hmukj9zsw.fsf@baylibre.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190428_132002_321237_7C940AED 
-X-CRM114-Status: GOOD (  12.49  )
+X-CRM114-CacheID: sfid-20190428_132004_499886_EA28FD63 
+X-CRM114-Status: GOOD (  14.13  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -99,23 +99,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Apr 21, 2019 at 07:43:12AM -0700, Kevin Hilman wrote:
-> The following changes since commit 07f9da2900674e8e7b15b090b878d8defe223277:
+On Sun, Apr 21, 2019 at 07:51:43AM -0700, Kevin Hilman wrote:
+> Olof, Arnd,
 > 
->   ARM: dts: meson8b: odroidc1: add the GPIO line names (2019-03-29 13:59:02 -0700)
+> Here's a 2nd round of changes for the 64-bit SoCs from Amlogic.
+> 
+> Note that in order to support display/gfx and USb on these, there's a
+> dependency on new clocks and resets also added this cycle.  Those
+> dependencies are already queued in the respecitive maintainer trees for
+> v5.2, and I've merged those tags into this branch as well to avoid any
+> build breakage.
+> 
+> Please pull,
+> 
+> Thanks,
+> 
+> Kevin
+> 
+> 
+> The following changes since commit e2cffeb398f4830b004774444809ee256b9bc653:
+> 
+>   arm64: dts: meson-g12a: Add CMA reserved memory (2019-03-29 14:19:42 -0700)
 > 
 > are available in the Git repository at:
 > 
->   https://git.kernel.org/pub/scm/linux/kernel/git/khilman/linux-amlogic.git tags/amlogic-dt-2
+>   https://git.kernel.org/pub/scm/linux/kernel/git/khilman/linux-amlogic.git tags/amlogic-dt64-2
 > 
-> for you to fetch changes up to 09ee951617d9af8a86d228b2ed34035076ab6001:
+> for you to fetch changes up to 659f2563d323b09ca12b0e70bb6a50c1b25af3ee:
 > 
->   ARM: dts: meson8b: odroid-c1: prepare support for the RTC (2019-04-16 11:58:00 -0700)
-> 
-> ----------------------------------------------------------------
-> ARM: dts: Amlogic updates for v5.2, round 2
-> - enable RTC on odroid-c1, ec100
-> - meson8: add internal clock measurer
+>   arm64: dts: meson-g12a-u200: Add support for Video Display (2019-04-16 11:21:46 -0700)
+
 
 Merged, thanks!
 
