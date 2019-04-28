@@ -2,129 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B01EDB55D
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 08:27:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08A73B55C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 08:27:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:To:Subject:References:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4RZM7RphDaS+mJvyM8YAXX4HQYdJZOQo2gqQctJE+Ls=; b=lxTcuVkX5ch3Hb
-	A+vG3reKvRCr8yuoIEv8TIlrm3omy2GlK/+49mmzEnpwcJM5iJrAeN2EJfIUtizSWc8J9Mpke0M2J
-	1LLtDv1mx8uqjig3r7fU1M3SLfRASg9mTv/v648bhLBlFytNo174P6IpfK4ZbjYoo9YAChCGtJrmM
-	RNR7gHCLb8iaLfRCpx055bozhUEvPLxnjx8so3df+r+jkImjfIDA21C8cU+VjkwuKLnbBNgV+zBEg
-	/dTCOVo8UjbFOrSJJcfFPGXP9wFR+UXuAUNylEESlo1nVZEj4O+Tzphy4AF/OfKfPXQVZm4L81eRE
-	soOJ1Ne+08dFzuWMF/JQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9IOpB7QBr9Mqt6/aVcTE6L+6yDTUZlpZjgXEhp2Xf7k=; b=Db0icF8+ldR0cE
+	d4tanfWDGoxpxvGmd2fnBmmcKbuXE9zqAVoCW5fvso+digArIQXj5fth1AV7/vj++VUAoqUlfN8o3
+	OlbEzvHhukcLXsyaKC7t4MpPj9gyiyA6ynQ6voup0Dkzo4fHDX+VawOa6gQOjGeiaSRBFFa84KWny
+	z+oGaEV1JaDHG8BkB7iFw6MGtCalkOIHoVQ0U3aSW8yF9+7XM7Y9a0YDRrdXrRea7Pbb1yilzP4nN
+	/TYSArgTBwcPJNZEZlzXTTjwEocsoNDyjktTjZIPL+voLA+m28ebBBHbX2+JI+UtBa8X4bUyIr/RB
+	w+eByJLTFdnOL2L9QGrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKdHq-0007xi-2Y; Sun, 28 Apr 2019 06:27:42 +0000
-Received: from mout.web.de ([212.227.17.11])
+	id 1hKdHg-0007sR-QW; Sun, 28 Apr 2019 06:27:32 +0000
+Received: from mail-eopbgr10044.outbound.protection.outlook.com ([40.107.1.44]
+ helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKdHZ-0007rA-4a; Sun, 28 Apr 2019 06:27:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1556432828;
- bh=sD5gEcmYxZ/75jTKmmZJV0RYz14HSWlKqY4cgh2Bg5Y=;
- h=X-UI-Sender-Class:Cc:References:Subject:To:From:Date:In-Reply-To;
- b=Th8ulTgqoAjBl4UcWzSk7t2JS3q84IxlFogJUMEku1BHMA6AEVEjTG4ph8LU8doGU
- aROCRagGC4SMfK2R9VQ8LWucnETmKpLn+vn7t3NMJe/KNcmAmr6PGsN3bW9rhgqZo8
- oOSahC+oxGhXIEyfaqUbr1zIYJ0N3Q3PD3TR8NeQ=
-X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
-Received: from [192.168.1.3] ([2.244.181.137]) by smtp.web.de (mrweb102
- [213.165.67.124]) with ESMTPSA (Nemesis) id 0MNtPr-1hRWtT1Cax-007U5d; Sun, 28
- Apr 2019 08:27:08 +0200
-References: <1556262488-21072-1-git-send-email-wen.yang99@zte.com.cn>
-Subject: Re: [v3] ARM: rockchip: Fix a leaked reference by adding
- of_node_put() in two functions
-To: Wen Yang <wen.yang99@zte.com.cn>, =?UTF-8?Q?Heiko_St=c3=bcbner?=
- <heiko@sntech.de>, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, Florian Fainelli <f.fainelli@gmail.com>
-From: Markus Elfring <Markus.Elfring@web.de>
-Openpgp: preference=signencrypt
-Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
- 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 FEE=
-Message-ID: <cee2ab03-d0b7-c9c6-acc3-d5aa28979e2b@web.de>
-Date: Sun, 28 Apr 2019 08:27:05 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <1556262488-21072-1-git-send-email-wen.yang99@zte.com.cn>
+ id 1hKdHY-0007r9-BI
+ for linux-arm-kernel@lists.infradead.org; Sun, 28 Apr 2019 06:27:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=aSXfUGclX286F/FD9eW26ISMrEAeFDAVts1D/2i82GE=;
+ b=cDZAlHipxzDyb4m6ppn1p+k+e7CZQH9Ye08aA7lC3zQt1d4dftHvZsVSArxNUuo2WY07kuK9xnfPxvDALz8E9rdTUmdBYhnhKYqjalTpHuS3dmMNxnZyIVQ15CFNYhu6x8knwf125i1BDSrWHun+PuWlHZbt0iplUFIHjE5agnE=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3898.eurprd04.prod.outlook.com (52.134.65.139) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1835.12; Sun, 28 Apr 2019 06:27:17 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::e8ca:4f6b:e43:c170]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::e8ca:4f6b:e43:c170%3]) with mapi id 15.20.1835.016; Sun, 28 Apr 2019
+ 06:27:17 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
+ <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
+Subject: RE: [PATCH] mailbox: imx: use devm_platform_ioremap_resource() to
+ simplify code
+Thread-Topic: [PATCH] mailbox: imx: use devm_platform_ioremap_resource() to
+ simplify code
+Thread-Index: AQHU6Enp8Rg1WsmI0EedzzVUaGgENqZRRjxg
+Date: Sun, 28 Apr 2019 06:27:17 +0000
+Message-ID: <DB3PR0402MB39164C6D8A02B53E1F224232F5380@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1554095441-15220-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1554095441-15220-1-git-send-email-Anson.Huang@nxp.com>
+Accept-Language: en-US
 Content-Language: en-US
-X-Provags-ID: V03:K1:cXPgu9h9riG1szFqYJYJUzbwWu7f1J+EEoid/wNuXCnPEuukZRp
- bykAUJdyGVOTnpACAMTlzOFYyJFBI4IzC0ZMkDfSJVg59JWvxBSTc9eYAHmuZVjZAWv81Lb
- UPxvnrgv38LtU8ELCZwA36ynSBhFeT/+7b3yNObeCuXt7bPoY05CEj3fy74TNDz70WXYqDe
- plUPDxZhD/0o6yRSaG/jg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:3dDv1N3DuI0=:49c6jgeYSEDIR0Pmcm90a9
- 1d/FkMMD0+Tr2ALwpl/yMAAXuaZsRTSRJjilvli19Sb7hmpo+/zsgDthflEJDWfRiqKfzTpS9
- rXVpWLfRBYBfmkJ5gSNBdojR7qtYqZ9ZQRQmfQxdsSH0R95WBsPXCQt5puwEo6fGFWy0IM1LM
- OR75EJlb8Nxx0j84lJ475cgG7mu7Rlh5oV3YFGrBZ6KWuCReLggeNXCWZ6D6kH5TcZ+gt64fC
- sbcZkGrgiwaZ5J8Y24cDmpnsEOMqwme7t0fJeeNV9TWEkF+nyOKCjJfUqMCp8XRF9QjDa20mG
- /M7oZEAhRKBtPmHgJCMgXycnFxF3QGF2Dg1NKHwVVBq1056TQKlac+oG3CXcSMx2yF3cA/tiB
- +tUTt1XmCEWFCUntzq/y7YxOMwOo7wRlEuh3jOl96rkZiVnKx8j26K+N07Pe6HIvewUCsA3gp
- FzHeI/Dey8y9NMVEx2vnBjC/EtPcBiA2Cfjq7JFEl7OSCWkVXHR4z6eGVJdHbCok3jo+Acv/m
- dHUcSlMITlUgkDCq1o2cFBnYdz+INZO/POpYH27oZxYo01zuzx4k8UgF17wdsVha9BHw3Nv00
- jDy5Zs9+AZP0qOejFnhFfwVNIcs98lW2N2YLW7qy1acv/aAHFBxgiNy3GR0lDvaIBn1Npn6W7
- bk+zTDXailTzji48dLV3Ut9B2sb1A/cGdI+/8pW0aig1MMAJmQLLU3LgWp/zY8BlU15+I5fr/
- ZS/hP6D+eYSsWpN7EK/bLSV1zsgVnmbkdIxefbUhVvXI6j4yBJzCeiwhoX8zSsA1eR4yYgXHt
- O6eYNC9PJT/xAJYTSlnAAHCUya9HILO64qBlnp7M5i20XnUkVL+ppSqDEguZfpHFZSQM6H1zc
- AdPzqaTP6DsMVwGW0pkbw95WeebG2bzXKRiPSn551iF8RsAnghMIk9niOc4WiQWuxMisMx3AN
- 3eZ0++mX6pg==
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 436fc123-6230-40e1-8db6-08d6cba28f98
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:DB3PR0402MB3898; 
+x-ms-traffictypediagnostic: DB3PR0402MB3898:
+x-microsoft-antispam-prvs: <DB3PR0402MB38987931F71558CF6C0935F5F5380@DB3PR0402MB3898.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:644;
+x-forefront-prvs: 0021920B5A
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(39860400002)(366004)(396003)(346002)(136003)(376002)(189003)(13464003)(199004)(71190400001)(102836004)(6246003)(256004)(110136005)(2201001)(97736004)(2906002)(15650500001)(64756008)(66476007)(66556008)(476003)(5660300002)(71200400001)(478600001)(11346002)(86362001)(446003)(73956011)(76116006)(66066001)(66446008)(66946007)(186003)(7696005)(6436002)(26005)(76176011)(33656002)(55016002)(486006)(7736002)(14454004)(52536014)(8936002)(68736007)(74316002)(99286004)(305945005)(44832011)(6116002)(81156014)(229853002)(3846002)(8676002)(53546011)(53936002)(4326008)(81166006)(2501003)(9686003)(316002)(25786009)(6506007);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3898;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: cVK7SjVPc+73c5jtCA6Dgcuu0bDiXEJzE3hipTJBKYUSTdRbtLBgL/oKzKQ1aTtlF44/GT+tgLepC/C8lU4Wqeq/Mcgjq5aUPh2JTo8+kHl6e1QnExsOuT3NSwjPmkvI3WwmULyTPg/uore5JKa1ffQtoa88sQbt6tUJhhcWxwoFSTuYAasBucTDeffZwuasT84UWBi+x7lZbOcKM1SX4mHp36me6CSL+zcOSaUidWr15ZtZbUYN7Fe1Symq+Z1IilppF62BhTyiVjw1Up0KM6BDoQ3Phnj+hDY+YHvwq6MkdE042AzBOJfSPJ1QQycJzHl2nD8zeBb7+Dfp7sJaauL2OZBRo5PrkpU5XMEZN74kR7zZ3vPfjpGgPpu34UfQBZxrFYq2NNY7CB69rHYUvuzVYhD3MP+GYTox05azalE=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 436fc123-6230-40e1-8db6-08d6cba28f98
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Apr 2019 06:27:17.2783 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3898
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190427_232725_514067_D751492E 
-X-CRM114-Status: UNSURE (   8.75  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190427_232724_460873_3C9E78F9 
+X-CRM114-Status: GOOD (  15.00  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.11 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.1.44 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (markus.elfring[at]web.de)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -143,25 +116,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yi Wang <wang.yi59@zte.com.cn>, linux-kernel@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
->  arch/arm/mach-rockchip/platsmp.c | 12 ++++++++++--
->  arch/arm/mach-rockchip/pm.c      |  2 ++
+Ping...
 
-* Would a commit subject variant be nicer?
+> -----Original Message-----
+> From: Anson Huang
+> Sent: Monday, April 1, 2019 1:15 PM
+> To: jassisinghbrar@gmail.com; shawnguo@kernel.org;
+> s.hauer@pengutronix.de; kernel@pengutronix.de; festevam@gmail.com;
+> linux-kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org
+> Cc: dl-linux-imx <linux-imx@nxp.com>
+> Subject: [PATCH] mailbox: imx: use devm_platform_ioremap_resource() to
+> simplify code
+> 
+> Use the new helper devm_platform_ioremap_resource() which wraps the
+> platform_get_resource() and devm_ioremap_resource() together, to simplify
+> the code.
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+>  drivers/mailbox/imx-mailbox.c | 4 +---
+>  1 file changed, 1 insertion(+), 3 deletions(-)
+> 
+> diff --git a/drivers/mailbox/imx-mailbox.c b/drivers/mailbox/imx-mailbox.c
+> index 85fc5b5..25be8bb 100644
+> --- a/drivers/mailbox/imx-mailbox.c
+> +++ b/drivers/mailbox/imx-mailbox.c
+> @@ -264,7 +264,6 @@ static int imx_mu_probe(struct platform_device
+> *pdev)  {
+>  	struct device *dev = &pdev->dev;
+>  	struct device_node *np = dev->of_node;
+> -	struct resource *iomem;
+>  	struct imx_mu_priv *priv;
+>  	unsigned int i;
+>  	int ret;
+> @@ -275,8 +274,7 @@ static int imx_mu_probe(struct platform_device
+> *pdev)
+> 
+>  	priv->dev = dev;
+> 
+> -	iomem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> -	priv->base = devm_ioremap_resource(&pdev->dev, iomem);
+> +	priv->base = devm_platform_ioremap_resource(pdev, 0);
+>  	if (IS_ERR(priv->base))
+>  		return PTR_ERR(priv->base);
+> 
+> --
+> 2.7.4
 
-* I dare to present a reminder for a recurring development topic.
-  How do you think about to adjust the exception handling in these function
-  implementations a bit more according to the Linux coding style
-  (so that the addition of duplicate function calls would be avoided)?
-
-Regards,
-Markus
 
 _______________________________________________
 linux-arm-kernel mailing list
