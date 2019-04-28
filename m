@@ -2,117 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 772A9B49F
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 00:07:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B540BB4A9
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 02:26:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0JuJAbItLK3W6H6axF9FtKZZsiYrVMWzRdjtaSPq7lw=; b=PwpMrHP3bGXBhx
-	Z7WR15UHD8JPhUGyMSptBMgVLXZdTqgLMHKR1IpLgBHuoOsJhvb9D2InlG4THLkiZNcf1lFU/+myH
-	AoOVjpWDcRmyN/6LKZ61G17y+sAx/WxNBr2bDf9a/4GrbAgonlEEy3hikE65KEhzuUws+RkvFuvyR
-	qQzd7+vyXcpiGPM/qiZEnVLUUNuWfH6llAqx7c/7+pu/U4crS5tEg2xQtRZsy+KL+XMWlqZCEJwF6
-	89KGpEp3wje3EHOb+xwpwPOiEDo4p1YJXrVKEXiNF3X/8EFzrtRZjBfK4QEUcbTWkRPdTHOHbrQbS
-	odMBmhgRvU4Jn0MXuBiA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=e8T5Hga70AqNh2NPvAQd3W4taE9HuvGOArnlmsWYjk4=; b=hJvllVf/HcX7pO
+	R1tmc6+KgU9CNzTD/D34nb+Ve6dPzpcniAm+GvJgn3n5G0svMMHNnQ1HBLYvlzhTW3k3KgRGyh9wz
+	tL1TRJkckKEU/jypHdMwYEqtQhmA9KWXWCQgXuB9AtykElJjHrVhFZgup5WLk7uK7BoU6ul4wRzSH
+	9WERa7AmBkmRBV/yKioxN4yWrNiO4EkWukPZTucoo4bCU7O46ZiJJ9fgdSUsJMGsIrgm62lboN8dk
+	IMbMrwO4yHxjWY1r3Xoh91+qXn1kCVkiymY/br0ZehLitvhdw69GwcYnyYNGvyyPg0jQW7kImlr5E
+	JPuhRsYp5flfJSXEILJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKVTv-0003Aa-CS; Sat, 27 Apr 2019 22:07:39 +0000
-Received: from mail-eopbgr750059.outbound.protection.outlook.com
- ([40.107.75.59] helo=NAM02-BL2-obe.outbound.protection.outlook.com)
+	id 1hKXe3-0008Sj-Oo; Sun, 28 Apr 2019 00:26:15 +0000
+Received: from esa6.hgst.iphmx.com ([216.71.154.45])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKVRs-0000bY-3Z
- for linux-arm-kernel@lists.infradead.org; Sat, 27 Apr 2019 22:05:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector1-xilinx-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=tMJRIynxqQf5thN4/TWKI3rE21V6IP0fJI8MvgSh6wo=;
- b=JSAu+tSSjSvrKmh2hDNr3BCYsiBVb4kzd/xkWRAoUfj5LMhV2VwDtxqbxn1yWQ4mHGXdyos3tkQkNDhnF8IElTuVycBjoav00FqkcSByGjr7jCbN6kI+U2hVf0SwWkPaIUr/9tkN9I3tXC0gqPUGJCJYB2R6NxcDXU2gl8JobuQ=
-Received: from SN4PR0201CA0031.namprd02.prod.outlook.com
- (2603:10b6:803:2e::17) by CY1PR02MB2012.namprd02.prod.outlook.com
- (2a01:111:e400:c5ab::8) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1835.12; Sat, 27 Apr
- 2019 22:05:27 +0000
-Received: from CY1NAM02FT061.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e45::200) by SN4PR0201CA0031.outlook.office365.com
- (2603:10b6:803:2e::17) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1835.12 via Frontend
- Transport; Sat, 27 Apr 2019 22:05:27 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.80.198)
- smtp.mailfrom=xilinx.com; arndb.de; dkim=none (message not signed)
- header.d=none;arndb.de; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.80.198 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.80.198; helo=xir-pvapexch02.xlnx.xilinx.com;
-Received: from xir-pvapexch02.xlnx.xilinx.com (149.199.80.198) by
- CY1NAM02FT061.mail.protection.outlook.com (10.152.75.30) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.1835.13 via Frontend Transport; Sat, 27 Apr 2019 22:05:26 +0000
-Received: from xir-pvapexch01.xlnx.xilinx.com (172.21.17.15) by
- xir-pvapexch02.xlnx.xilinx.com (172.21.17.17) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1531.3; Sat, 27 Apr 2019 23:05:12 +0100
-Received: from smtp.xilinx.com (172.21.105.197) by
- xir-pvapexch01.xlnx.xilinx.com (172.21.17.15) with Microsoft SMTP Server id
- 15.1.1531.3 via Frontend Transport; Sat, 27 Apr 2019 23:05:12 +0100
-Received: from [149.199.110.15] (port=52636 helo=xirdraganc40.xilinx.com)
- by smtp.xilinx.com with esmtp (Exim 4.90)
- (envelope-from <dragan.cvetic@xilinx.com>)
- id 1hKVRY-0002Gu-9c; Sat, 27 Apr 2019 23:05:12 +0100
-From: Dragan Cvetic <dragan.cvetic@xilinx.com>
-To: <arnd@arndb.de>, <gregkh@linuxfoundation.org>, <michal.simek@xilinx.com>, 
- <linux-arm-kernel@lists.infradead.org>, <robh+dt@kernel.org>,
- <mark.rutland@arm.com>, <devicetree@vger.kernel.org>
-Subject: [PATCH V3 12/12] MAINTAINERS: add maintainer for SD-FEC
-Date: Sat, 27 Apr 2019 23:05:06 +0100
-Message-ID: <1556402706-176271-13-git-send-email-dragan.cvetic@xilinx.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1556402706-176271-1-git-send-email-dragan.cvetic@xilinx.com>
-References: <1556402706-176271-1-git-send-email-dragan.cvetic@xilinx.com>
+ id 1hKXdt-0008Qe-Pk; Sun, 28 Apr 2019 00:26:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
+ t=1556411166; x=1587947166;
+ h=from:to:cc:subject:date:message-id:mime-version:
+ content-transfer-encoding;
+ bh=+oUGHgJqcWHwoouX7Rm0bcEfYEaHBmJ/F/1Xg9NeC+A=;
+ b=lJVWxWqDQbAX7igtstoq/kLFFWmaFtafWpTZpc/TRQXAY8jc4o9pQHBW
+ iBsfLG/F0PqARPVnon8vYeY6mEbIXLOiwGy6SyfGBzKWEnMNBwE1ORXIE
+ UK8fWpqWazO9xab8gHsUpSC+EIE+x/nywHMVI2f3i7dl+VOcaczoqKylV
+ Jz5OZ5W/pPmX2X989H0PwC+B55oRlUQO1sxhoh/4hK1irtlmUFiiq+FQP
+ usN2qc8aZe0o7tkIOMzZY+5KqjbpKPgx5Z1GCgzA/p4+qp0UmuUWIEqTM
+ /+935Hw3B3HvK4AAP1wLbPCTqS9pLzNbWt0uBtEP8kMAbHifB+VLpjaKI A==;
+X-IronPort-AV: E=Sophos;i="5.60,403,1549900800"; d="scan'208";a="108718382"
+Received: from uls-op-cesaip01.wdc.com (HELO uls-op-cesaep01.wdc.com)
+ ([199.255.45.14])
+ by ob1.hgst.iphmx.com with ESMTP; 28 Apr 2019 08:26:01 +0800
+IronPort-SDR: u1YtmyUK4ErostpjSq4khyZhTSQTp077m6sIrachlmR4iCEiDIt0pIVAifOcNeV50bsmawOAiT
+ G18bgCDi9wtAfQRHFzLnvdAHTZtPRWFvzVQu7lwoD+bBdH/IkrFw1J3p7OZvmKV3yKo3C7573R
+ 7OuD6FcICqKiy4QflI80BzdeKOfapV8sGT8SiJCNBHaASH6X6oFe7ZzaQCXtTJoI20yVd1EfKK
+ NzWd4uX5J4wRaINCjIgigm0u7ogbF09LEYrbF4FIymJVq/Lfj4tvUKUFqPcxwlEssnvmMMxmGt
+ crxNOM/99SJIaxs68OmhXqWy
+Received: from uls-op-cesaip02.wdc.com ([10.248.3.37])
+ by uls-op-cesaep01.wdc.com with ESMTP; 27 Apr 2019 17:02:27 -0700
+IronPort-SDR: zKuZNCVXHVbSjmeYi7nZxcRThDHf0m26GzMjdNXhfgSLUb30lnMLtQz0/xWF+1BO5mIZ04MPOc
+ uUCtIamZ7WrU5vykrnuS634CxUzyJlEt0qNwDNZNGwsJ5mKmnE0u40uhGsBz4ozIccpZx0ANC0
+ Z9U8Tq7pVLGKTvz6jjhQFCIwC1go4pk9jctwlc9LmuovOv93riPIy1mp7X2oSCk+z7u70eJ7Ij
+ Du31JaKTwgSIkIJpv9jbOoSmpdmmTe2BpFa4Cy3QvuA64TlAB3QgGMWkXPfmDahsMEVBYcyR4m
+ Gz0=
+Received: from jedi-01.sdcorp.global.sandisk.com (HELO
+ jedi-01.int.fusionio.com) ([10.11.143.218])
+ by uls-op-cesaip02.wdc.com with ESMTP; 27 Apr 2019 17:26:02 -0700
+From: Atish Patra <atish.patra@wdc.com>
+To: linux-kernel@vger.kernel.org
+Subject: [RFT PATCH v4 0/5] Unify CPU topology across ARM & RISC-V 
+Date: Sat, 27 Apr 2019 17:25:24 -0700
+Message-Id: <20190428002529.14229-1-atish.patra@wdc.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.80.198; IPV:CAL; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(39860400002)(396003)(376002)(136003)(346002)(2980300002)(189003)(199004)(60926002)(47776003)(186003)(16586007)(956004)(4744005)(106002)(246002)(26005)(336012)(2201001)(70206006)(36906005)(356004)(6666004)(316002)(126002)(71366001)(11346002)(4326008)(70586007)(50466002)(2616005)(36756003)(446003)(426003)(5660300002)(476003)(28376004)(76130400001)(48376002)(93146003)(486006)(44832011)(107886003)(26826003)(9786002)(478600001)(110136005)(305945005)(51416003)(54906003)(7696005)(2906002)(76176011)(8676002)(8936002)(50226002)(7636002)(102446001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:CY1PR02MB2012; H:xir-pvapexch02.xlnx.xilinx.com;
- FPR:; SPF:Pass; LANG:en; PTR:unknown-80-198.xilinx.com; MX:1; A:1; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: e20cd607-37e8-41b5-f30a-08d6cb5c74b9
-X-Microsoft-Antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4709054)(2017052603328);
- SRVR:CY1PR02MB2012; 
-X-MS-TrafficTypeDiagnostic: CY1PR02MB2012:
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-Microsoft-Antispam-PRVS: <CY1PR02MB201243442047103C90CF09ACCB3F0@CY1PR02MB2012.namprd02.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:1079;
-X-Forefront-PRVS: 0020414413
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info: DVPzSicVVO6iyumx9Zx1Ii6y+STx3o27ZSspBBi7VM62wJMELm7al32M5fKLlNt7gPjggnGMAD3lI2ixqGzjxST5mnNgyhxa5zLyDzrD4Yj/0RhgHwMJEykggBS9ip+vb5F/P4nryMC95ZkA/w91QTWcih/aBf6bmW4nY+N/bBgPXPysxj+qDnBw93cUOj43rex1hqfqWj+sXQPEfiS1cD+B3gA02wOFLaVTJSTIrJ+3ZJ26yr6OikFi4xxra0ezCbyvVr0b4xhlZrFplOcsIkqL/8v3Juxz59RYWUBdgKdlCLFA1DCoIc0+U9eux9oWRk20KmaOhCqZi+kpDN+ATvh0lmUjQiVdxXrNJzLF+eQvCDzzk2svKJd0t8BhZBl7Q46Vi9wA0dwN/10l9nznuIYZSMktSuHspoyXJunYMcQ=
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Apr 2019 22:05:26.9222 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: e20cd607-37e8-41b5-f30a-08d6cb5c74b9
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.80.198];
- Helo=[xir-pvapexch02.xlnx.xilinx.com]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY1PR02MB2012
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190427_150532_290884_B9CA7672 
-X-CRM114-Status: UNSURE (   5.29  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190427_172605_902856_4A66B28A 
+X-CRM114-Status: GOOD (  15.15  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.75.59 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.154.45 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -126,48 +89,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dragan Cvetic <dragan.cvetic@xilinx.com>,
- Derek Kiernan <derek.kiernan@xilinx.com>, linux-kernel@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
+ Will Deacon <will.deacon@arm.com>, Atish Patra <atish.patra@wdc.com>,
+ linux-riscv@lists.infradead.org, Morten Rasmussen <morten.rasmussen@arm.com>,
+ Anup Patel <anup@brainfault.org>, Ingo Molnar <mingo@kernel.org>,
+ devicetree@vger.kernel.org, Albert Ou <aou@eecs.berkeley.edu>,
+ Sudeep Holla <sudeep.holla@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ Paul Walmsley <paul.walmsley@sifive.com>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Jeremy Linton <jeremy.linton@arm.com>, Otto Sabart <ottosabart@seberm.com>,
+ Andreas Schwab <schwab@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-support
+The cpu-map DT entry in ARM can describe the CPU topology in much better
+way compared to other existing approaches. RISC-V can easily adopt this
+binding to represent its own CPU topology. Thus, both cpu-map DT
+binding and topology parsing code can be moved to a common location so
+that RISC-V or any other architecture can leverage that.
 
-Add maintainer entry for Xilinx SD-FEC driver support.
+The relevant discussion regarding unifying cpu topology can be found in
+[1].
 
-Signed-off-by: Derek Kiernan <derek.kiernan@xilinx.com>
-Signed-off-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
----
- MAINTAINERS | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
+arch_topology seems to be a perfect place to move the common code. I
+have not introduced any significant functional changes in the moved code.
+The only downside in this approach is that the capacity code will be
+executed for RISC-V as well. But, it will exit immediately after not
+able to find the appropriate DT node. If the overhead is considered too
+much, we can always compile out capacity related functions under a
+different config for the architectures that do not support them.
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index b8d72ee..14e9335 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -17116,6 +17116,18 @@ S:	Supported
- F:	Documentation/filesystems/xfs.txt
- F:	fs/xfs/
- 
-+XILINX SD-FEC IP CORES
-+M:	Derek Kiernan <derek.kiernan@xilinx.com>
-+M:	Dragan Cvetic <dragan.cvetic@xilinx.com>
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/misc/xlnx,sd-fec.txt
-+F:	Documentation/misc-devices/xilinx_sdfec.rst
-+F:	Documentation/misc-devices/index.rst
-+F:	drivers/misc/xilinx_sdfec.c
-+F:	drivers/misc/Kconfig
-+F:	drivers/misc/Makefile
-+F:	include/uapi/misc/xilinx_sdfec.h
-+
- XILINX AXI ETHERNET DRIVER
- M:	Anirudha Sarangi <anirudh@xilinx.com>
- M:	John Linn <John.Linn@xilinx.com>
--- 
-2.7.4
+There was an opportunity to unify topology data structure for ARM32 done
+by patch 3/4. But, I refrained from making any other changes as I am not
+very well versed with original intention for some functions that
+are present in arch_topology.c. I hope this patch series can be served
+as a baseline for such changes in the future.
+
+The patches have been tested for RISC-V and compile tested for ARM64,
+ARM32 & x86.
+
+The socket change[2] is also now part of this series.
+
+[1] https://lkml.org/lkml/2018/11/6/19
+[2] https://lkml.org/lkml/2018/11/7/918
+
+QEMU changes for RISC-V topology are available at
+
+https://github.com/atishp04/qemu/tree/riscv_topology_dt
+
+HiFive Unleashed DT with topology node is available here.
+https://github.com/atishp04/opensbi/tree/HiFive_unleashed_topology
+
+It can be verified with OpenSBI with following additional compile time
+option.
+
+FW_PAYLOAD_FDT="unleashed_topology.dtb"
+
+Changes from v3->v4
+1. Get rid of ARM32 specific information in topology strucuture.
+2. Remove redundant functions from ARM32 and use common code instead. 
+
+Changes from v2->v3
+1. Cover letter update with experiment DT for topology changes.
+2. Added the patch for [2].
+
+Changes from v1->v2
+1. ARM32 can now use the common code as well.
+
+Atish Patra (4):
+dt-binding: cpu-topology: Move cpu-map to a common binding.
+cpu-topology: Move cpu topology code to common code.
+arm: Use common cpu_topology structure and functions.
+RISC-V: Parse cpu topology during boot.
+
+Sudeep Holla (1):
+Documentation: DT: arm: add support for sockets defining package
+boundaries
+
+.../topology.txt => cpu/cpu-topology.txt}     | 134 ++++++--
+arch/arm/include/asm/topology.h               |  20 --
+arch/arm/kernel/topology.c                    |  60 +---
+arch/arm64/include/asm/topology.h             |  23 --
+arch/arm64/kernel/topology.c                  | 303 +-----------------
+arch/riscv/Kconfig                            |   1 +
+arch/riscv/kernel/smpboot.c                   |   3 +
+drivers/base/arch_topology.c                  | 300 ++++++++++++++++-
+drivers/base/topology.c                       |   1 +
+include/linux/arch_topology.h                 |  26 ++
+10 files changed, 445 insertions(+), 426 deletions(-)
+rename Documentation/devicetree/bindings/{arm/topology.txt => cpu/cpu-topology.txt} (66%)
+
+--
+2.21.0
 
 
 _______________________________________________
