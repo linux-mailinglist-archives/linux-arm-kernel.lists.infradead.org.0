@@ -2,85 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51304B6AE
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 22:32:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72217B673
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 22:14:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tjYZ1BR9kCRkJ0hoB/SGsZwhkLxji5APAlDdeak/aN4=; b=RVKZQB5zQI5ZKy
-	79cysDoNMj7mbFclf7JXp7ATAjpbLtBWHcyKjbhvKIunlLbUIe+ox38/Pxi3nahWyUqtshpMv/lsG
-	KDl7vynsL5LzGQBICbUYh14SGuBvOQP5Ye3d3X/srvo8UidgAJEghrSOePaOoEPdUR+K9kgedlW4A
-	ea0dMpdhB5P4keHP8aOYYqBUa0O+JtmSa6awfMqqIMNBwVvMdVG4Fzr+t5vIt5cWsjK6vQH6uMQ5X
-	zuE87k5t5YXUUlakS/znlfUuz6f7NO1U4cEf1sOah+KoqyxW5/8Pa39jEOQVuNT3PvaqS/UrXafGV
-	Ag2YIcYF9rUbaDfIFcnQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=br+/dbF/zcpk7G3cYjCBUrdCoLk5+N9FoTfwIB3JyVA=; b=UpvbGdiNkkVPNk
+	muV/RuwhQtTt3ACGQeWsHPLLTjzR7PPjG6CH/Gn127plTHNh0PUUF9Xf0p0wvJaRw10+u1WPy5jDC
+	2SVe2YMdSRKi+0Z16KwtKKka2vJw7sEqRzkz23/kyczBCLzaPBbiHCxWl6gAidEnSsc+w2f/bPPnp
+	3IA3t/AIUrM8VHcgmkEv7qW8HRdxBrIZ23qMOlL/lsOHpFqSHQB4HtScWb9DNRMaVGtmQgyHO1v1Z
+	j3npSGKPeoKkKk+nJwfYNXwHpILOHegg5+0i66LKjazYcBD8OsNP4vUkuIuM6vXjWp2/MueIQwv8j
+	7fkXaREE+uTuIHYt+alQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKqTR-0005TA-Ls; Sun, 28 Apr 2019 20:32:33 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1hKqBQ-0005Nx-4R; Sun, 28 Apr 2019 20:13:56 +0000
+Received: from mailoutvs37.siol.net ([185.57.226.228] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKqJ8-0002fe-Dj
- for linux-arm-kernel@lists.infradead.org; Sun, 28 Apr 2019 20:22:16 +0000
-Received: by mail-lf1-x141.google.com with SMTP id d12so6337900lfk.6
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 28 Apr 2019 13:21:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=WBNRW6rEKvmiV1EHP4AivSlXBQuClRHj0jEwZDFl4eA=;
- b=Ja7HFyIijNv8Osr2VMzaYAAjG9ae2SKwgYHE9E44Qt38mP9ynZXTGq2293v1JqNov5
- LkLgnykgeuwpte+ko5TDsBadpwBWdwXQybhuUQqZGbrrPV9XPKjcxJQ41D5Wczx3pgXc
- UEJamKGc4fZKWWPwRLbTdVH4HwynYkyiCSM5sLdS1swMNm6jtjAVy/r4nYAkMEArug1C
- +evKBRH1Eu2XywmmdukWgjD0mU6PQVBG8g7HCDokd74GJ+kzLZlT1M561p1SL8waxH26
- 6zKJy5m12j4Yu+0r9rtucyFyk300GYNCss+vj192jKwqcssltompoo/mclwdo0JOFlSW
- EqhA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=WBNRW6rEKvmiV1EHP4AivSlXBQuClRHj0jEwZDFl4eA=;
- b=TTrRvBnZ1iRFe4u4Mt2UVcmG1DOVjl7CdgSq0yErKcYkBc4oN2KvN+RVWnQNl8uDo4
- myl65elaMarl9qz40DJ/GfOL8w8ojCIKDF4atzm9ohkF89gDEn7qCJ1Y/k6Fb1Pxszqo
- oXz1HuVrmEnW3LdRvzGHwQfkMqNZaKli0VjE1BQKsM3CqIMjQ1DupmBgOJ9Jx7v9eA7W
- IDjPNQW6QtpWn1jI8F9afwRLINRn4XUBgZFxmt4SoI8p2F1bSb7qcN1I3P/a2TaXqRCO
- McJj8mBKazeKhPOw5gHAw4q5MbW9EXoyN1v8IcilsQa68QEeS46mVjHscCWQ0RkWuoEj
- TxOQ==
-X-Gm-Message-State: APjAAAUFVr/b+NNAMQ8vodh58nP67Ywz9NOsa6mAkQCawXY2g4BZhyJR
- UP0B0I54YmkJ8mfBkhIQFr7WRQ==
-X-Google-Smtp-Source: APXvYqyJ9GDMPKcRLAnKxSeLPKKbHKPCyvVyPSW2tv7nVDqGJfWBJf6roA2CztD8j9U53sSpJ1/IVA==
-X-Received: by 2002:a19:5218:: with SMTP id m24mr27816790lfb.113.1556482912794; 
- Sun, 28 Apr 2019 13:21:52 -0700 (PDT)
-Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id x71sm6881484lff.82.2019.04.28.13.21.51
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 28 Apr 2019 13:21:51 -0700 (PDT)
-Date: Sun, 28 Apr 2019 13:03:07 -0700
-From: Olof Johansson <olof@lixom.net>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [GIT PULL 1/2] ARM: dts: exynos: Second round for v5.2
-Message-ID: <20190428200307.hmjavmlbxwlfvfdl@localhost>
-References: <20190428144221.11187-1-krzk@kernel.org>
+ id 1hKqBI-0005N7-9N
+ for linux-arm-kernel@lists.infradead.org; Sun, 28 Apr 2019 20:13:50 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTP id 97A98520C22;
+ Sun, 28 Apr 2019 22:13:35 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at psrvmta09.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta09.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id 6vuNExv9i3Mx; Sun, 28 Apr 2019 22:13:35 +0200 (CEST)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTPS id 4221B520C36;
+ Sun, 28 Apr 2019 22:13:35 +0200 (CEST)
+Received: from localhost.localdomain (89-212-178-211.dynamic.t-2.net
+ [89.212.178.211]) (Authenticated sender: 031275009)
+ by mail.siol.net (Postfix) with ESMTPSA id 810DD520C22;
+ Sun, 28 Apr 2019 22:13:34 +0200 (CEST)
+From: Jernej Skrabec <jernej.skrabec@siol.net>
+To: maxime.ripard@bootlin.com,
+	wens@csie.org
+Subject: [PATCH] arm64: dts: allwinner: a64: orangepi-win: Add wifi and
+ bluetooth nodes
+Date: Sun, 28 Apr 2019 22:13:26 +0200
+Message-Id: <20190428201326.27767-1-jernej.skrabec@siol.net>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190428144221.11187-1-krzk@kernel.org>
-User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190428_132154_910823_651F1A54 
-X-CRM114-Status: GOOD (  13.13  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190428_131348_479650_46C23D93 
+X-CRM114-Status: GOOD (  10.24  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.228 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -92,39 +69,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- linux-kernel@vger.kernel.org, arm@kernel.org, Kukjin Kim <kgene@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Apr 28, 2019 at 04:42:20PM +0200, Krzysztof Kozlowski wrote:
-> Hi,
-> 
-> On top of previous pull request.
-> 
-> Best regards,
-> Krzysztof
-> 
-> 
-> The following changes since commit 8cc76b1c75722196fb3d7ffe67cbfeb721a7b0e3:
-> 
->   ARM: dts: exynos: Remove console argument from bootargs (2019-04-10 18:13:31 +0200)
-> 
-> are available in the Git repository at:
-> 
->   https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-dt-5.2-2
-> 
-> for you to fetch changes up to b4bcbdee137833aab04942671b48a9a3beb0801b:
-> 
->   ARM: dts: s5pv210: Fix camera clock provider on Goni board (2019-04-24 19:55:14 +0200)
+The AP6212 is based on the Broadcom BCM43430 or BCM43438. The WiFi side
+identifies as BCM43430, while the Bluetooth side identifies as BCM43438.
 
-Merged, thanks!
+WiFi is connected to mmc1 and the Bluetooth side is connected to UART1
+in a 4 wire configuration. Same as the WiFi side, due to being the same
+chip and package, DLDO2 provides overall power via VBAT, and DLDO4
+provides I/O power via VDDIO. The RTC clock output provides the LPO low
+power clock at 32.768 kHz.
 
+This patch enables WiFi and Bluetooth on OrangePi Win boards and adds
+missing LPO clock on the WiFi side. PCM connection also exists for
+Bluetooth audio, but it's not used here.
 
--Olof
+Bluetooth UART speed is set to 1.5 MBaud in order to be able transmit
+audio. While module supports even higher speeds, currently sunxi UART
+driver doesn't support higher speed.
+
+Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+---
+ .../dts/allwinner/sun50i-a64-orangepi-win.dts | 23 +++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-orangepi-win.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-orangepi-win.dts
+index 510f661229dc..5ef3c62c765e 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64-orangepi-win.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-orangepi-win.dts
+@@ -109,6 +109,8 @@
+ 	wifi_pwrseq: wifi_pwrseq {
+ 		compatible = "mmc-pwrseq-simple";
+ 		reset-gpios = <&r_pio 0 8 GPIO_ACTIVE_LOW>; /* PL8 */
++		clocks = <&rtc 1>;
++		clock-names = "ext_clock";
+ 	};
+ };
+ 
+@@ -170,6 +172,14 @@
+ 	bus-width = <4>;
+ 	non-removable;
+ 	status = "okay";
++
++	brcmf: wifi@1 {
++		reg = <1>;
++		compatible = "brcm,bcm4329-fmac";
++		interrupt-parent = <&r_pio>;
++		interrupts = <0 7 IRQ_TYPE_LEVEL_LOW>; /* PL7 */
++		interrupt-names = "host-wake";
++	};
+ };
+ 
+ &ohci0 {
+@@ -342,7 +352,20 @@
+ &uart1 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&uart1_pins>, <&uart1_rts_cts_pins>;
++	uart-has-rtscts;
+ 	status = "okay";
++
++	bluetooth {
++		compatible = "brcm,bcm43438-bt";
++		max-speed = <1500000>;
++		clocks = <&rtc 1>;
++		clock-names = "lpo";
++		vbat-supply = <&reg_dldo2>;
++		vddio-supply = <&reg_dldo4>;
++		device-wakeup-gpios = <&r_pio 0 6 GPIO_ACTIVE_HIGH>; /* PL6 */
++		host-wakeup-gpios = <&r_pio 0 5 GPIO_ACTIVE_HIGH>; /* PL5 */
++		shutdown-gpios = <&r_pio 0 4 GPIO_ACTIVE_HIGH>; /* PL4 */
++	};
+ };
+ 
+ /* On Pi-2 connector, RTS/CTS optional */
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
