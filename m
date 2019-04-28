@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 686EBB68B
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 22:23:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D91D3B68C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 28 Apr 2019 22:23:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TM7yxqnx1y0J/2uuJN+5LQmmJAKX50IueI/ErRdZmdc=; b=jN4gpoA57jNA2C
-	5vvhl1jh0YL7WYmZuQAJimajgOFm5E06wy50NjmKyZX8qtMK4D+57l4TtDL7lbF6pau49ANiSMSSK
-	FCoTRpbHCtT38mzIxwZ2KRISWF+anY1RDiJSmhzy2PIitCs9gYaNaxtjRNx2F9GkHANIwdggZIENd
-	hvIY/WMqS49g5+8kDqywQzW8SD8dAIpX6Deg95SH0suCKwjEpYp44PCMjXOB9KtKq375cZOjV7p9R
-	T3PgMGn4gn+wlKl2RiNV6cFyFbOShP4wfoLF4A1eRPQGlir3MkJOaojO+ukQzOpHUe09ulklQqnnp
-	7tH1p7EK/0tQ23U7mOOQ==;
+	List-Owner; bh=Pap03SiwSYQm8PcSoeIqpvS8paKm9o4zKzeCHnxZ09Y=; b=l0LNKmlLYXH8MV
+	iaWkC2ADSyHRf8cbcDnc6TdMjLOscBYVttZAFcfOfBmbMs1mF3LuTrYDBBvja3c/8PD/1BWq9YzLI
+	QzwBq8J8HxIdB2rIExj88EY6bolmDwSVI8+RhbbeCbypo29nV2nt/lPUAuCl0vpCdl5oOFWkd1Tn6
+	hwg4C799IDwvmSWi9h0c+hRvyEUMV3wx0xgnwIYEqBF26g3yu+TEd6MXQjw0pqjlJy3U1XmE5LN6J
+	hyvLatN0fQF9R1/gof+ERmtdYyAgoQ6eKezngXQ8mMjDv4X0ZLfOAM010phIvMwHOtKnuwlt5OYy/
+	KtlrhaatBvH4QD05icvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKqKC-0003zp-AE; Sun, 28 Apr 2019 20:23:00 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1hKqKM-0004Gs-5J; Sun, 28 Apr 2019 20:23:10 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKqGt-0007jo-Hu
- for linux-arm-kernel@lists.infradead.org; Sun, 28 Apr 2019 20:19:46 +0000
-Received: by mail-lf1-x141.google.com with SMTP id j20so6375672lfh.2
+ id 1hKqGv-0007mu-Ux
+ for linux-arm-kernel@lists.infradead.org; Sun, 28 Apr 2019 20:19:47 +0000
+Received: by mail-lj1-x244.google.com with SMTP id f23so7518468ljc.0
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 28 Apr 2019 13:19:35 -0700 (PDT)
+ Sun, 28 Apr 2019 13:19:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=GDyqHHG6mSf8mW4mAzhodjnMRViqRdGwjO9AqVKt+ck=;
- b=HNzF6jYd1HRs8heauPBUiglVBIg/wQPBPJd2h1kUXuQntk/x+R/fufmp//920zTZxl
- xWuOkoEdAu9iSiOnlLJvL1TRsTFegAmg07W9wZz8pTzcgmdu9xhzsQWSatdQJZR1AjPm
- C9RsTbxpEZr+znX9uwWshuBtol3akO1H74mkLln8+rn4IkH40PFeyYoZJzclpWMyZJHt
- F98d8fuEvJnmv4UuLmQ1nCxmCUZr7xOjPFBEnoUuNJCwETm3/DoeyfTXNKKKAYvWHD+Z
- lHLIV75+99f8hI3SYlKBO6bgPlv0+YvIpv21b+TD3Lbz0GFF+WS2evPTXYFBV2FtztOu
- ydmQ==
+ bh=kq2xjEbQ1pYHiLR/ruZJt9qeXnv7/W0rNTiT+/HUPmY=;
+ b=QZ06p5rTCtmFHdlZr5MYULlBc9DM531lIylBYds9ngsItalb9TU+8gtCVKQaobCOCh
+ aGWBsC/4UuZIoUAzWQxd8psYF1UhODtHFpR7tHIbxy7Sk+y9r1KFqjcEqBQWAkNBpYpU
+ GUPtI4zhLSZ504hZ/BPWzW8E7rf2e0zv8P9SfUasKBumghF8oC8UaT6vPHQq8TlnkXQh
+ vJd2gWSR+BDNZjts30INq/iw70QTyu8yppv1JH6MDpIyY7Hm0mmMljNb60AAEJzyijid
+ 2Sxb8OKQb9/a/CmSnYM3LM1zJ8gq8EWsgVbQEKfc1CiN45p0ggHyytROnZHZoovOdeaM
+ Vgsw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=GDyqHHG6mSf8mW4mAzhodjnMRViqRdGwjO9AqVKt+ck=;
- b=ErIb5Tz3zFEYxOVK6xGydN/09F87CvMQOpPrnMIl7rGjNMDi1xhm0HEfnDeKk9sjTS
- qtSAtd38jtAgcL7KrcPlWUsJHupTO3a43OkArJ2xatEgARfpw+6MVr6mgqufG2ts+1vq
- xScgR4i1QteZHusR5I3nxJuDdh3lSYrYBY8FoHiGWgOH78rOmFbSrKKlAttbqo1btbpc
- Lm02oWbF55rSqUn9eUKtH/iJjxeQeUw378k5r5TMCaA1syJ6KpamV6JZW1YtWtbvGcY7
- W8TzfKBg4pxgOgy0kiBsaOhveQrctw6nk/PlolOztmyupbV9Al7A04hLzyM8JHUH2XfU
- WolA==
-X-Gm-Message-State: APjAAAUzRcoo/vFtT53XIuvutVNCFjs3ZUYXXDhjQlfNl8y+xojaP7FH
- FbNqg4WoFZss5CD51FbooUynmw==
-X-Google-Smtp-Source: APXvYqwJKMGBuAf59uOX9PQa3KnaIlw6kRdij0ZP/IXXBMk0j7iKVfhWSHojSSl2ZdgcwHFYACm8GQ==
-X-Received: by 2002:a19:b83:: with SMTP id 125mr15038363lfl.84.1556482773997; 
- Sun, 28 Apr 2019 13:19:33 -0700 (PDT)
+ bh=kq2xjEbQ1pYHiLR/ruZJt9qeXnv7/W0rNTiT+/HUPmY=;
+ b=PYUkgmOKJYBBoiHfxqpMYEBgsjk6l2L0Vv+QKnQKa2mqnPOYNrUnDpxVFCbsXowQRa
+ LmNU2M3j7twHUeXYzoTvfaSuRmpVLdi9Ir81C2IXlgWAZUXWnzbHo+AbJP3zvNtpge3A
+ WJroV/KOJsLggXVqvjCpD6trP5FnLja/Kge8iTWdT1JF60SRrpq6vMfBfrAQNYhrmblq
+ f/0/yy5/1imOoDYK8iEU2L2SH8E+Dd/GMoAb3fo2KAGPrxhwl79lx05Go7IBWBCwHFfN
+ dkcL/5fm97kpMATaDdYP+GCAWPvSdtWWgqJYhhnYkfuz744I42wLoJY6SxQP8uNwIu8P
+ 4QEw==
+X-Gm-Message-State: APjAAAU4J7Uypm+IXXFjL4u70akN8e946YFHrIYTmGJHqfb+dWkU0tyE
+ jJDa9I2iTMjFY7ZiXLwkxyVcdQ==
+X-Google-Smtp-Source: APXvYqyxXbrTVPAR3WJSdl+sUMC9IalmmNsmLSUgFzI6FiDgT/MpKWUCaQ2FXMYdGdGoBthH9EruAw==
+X-Received: by 2002:a2e:91c2:: with SMTP id u2mr4717053ljg.50.1556482776371;
+ Sun, 28 Apr 2019 13:19:36 -0700 (PDT)
 Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id i64sm7486836lfe.18.2019.04.28.13.19.32
+ by smtp.gmail.com with ESMTPSA id k21sm6531016ljk.21.2019.04.28.13.19.34
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 28 Apr 2019 13:19:32 -0700 (PDT)
-Date: Sun, 28 Apr 2019 12:34:25 -0700
+ Sun, 28 Apr 2019 13:19:35 -0700 (PDT)
+Date: Sun, 28 Apr 2019 12:35:18 -0700
 From: Olof Johansson <olof@lixom.net>
-To: Tony Lindgren <tony@atomide.com>
-Subject: Re: [GIT PULL 2/2] dts changes for ti-sysc driver for v5.2
-Message-ID: <20190428193425.v2ee2qeq5kjp4pfk@localhost>
-References: <pull-1555343712-332506@atomide.com>
- <pull-1555343712-332506@atomide.com-2>
+To: Linus Walleij <linus.walleij@linaro.org>
+Subject: Re: [GIT PULL] Ux500 DTS changes for v5.2
+Message-ID: <20190428193518.sleicykp4qgtuft6@localhost>
+References: <CACRpkdaoHZ8NxDkz4QDK0h68y+3xrXaYxK6FcDLbsqREYfb7nA@mail.gmail.com>
+ <CACRpkdYR9dy3KgUHL5mLfs6RfAyETJ3U3_FVZWOEdGzS6Z=ovg@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <pull-1555343712-332506@atomide.com-2>
+In-Reply-To: <CACRpkdYR9dy3KgUHL5mLfs6RfAyETJ3U3_FVZWOEdGzS6Z=ovg@mail.gmail.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190428_131936_009582_EEAF5672 
-X-CRM114-Status: GOOD (  15.36  )
+X-CRM114-CacheID: sfid-20190428_131938_464826_D94B730A 
+X-CRM114-Status: GOOD (  14.37  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -93,44 +93,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-omap@vger.kernel.org, arm@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: arm-soc <arm@kernel.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 15, 2019 at 10:00:54AM -0700, Tony Lindgren wrote:
-> From: "Tony Lindgren" <tony@atomide.com>
+On Wed, Apr 17, 2019 at 11:35:54PM +0200, Linus Walleij wrote:
+> Hi ARM SoC folks,
 > 
-> The following changes since commit d59b60564cbfe77d85c2f51b29941d8ed14984d1:
+> since yesterday the main graphics bindings were approved and merged into
+> the drm-misc-next branch, so I rebuilt this tag and included these changes
+> as well, so we have 3D and graphics defined in the device tree for these
+> platforms.
 > 
->   bus: ti-sysc: Add generic enable/disable functions (2019-04-09 08:58:48 -0700)
+> Please pull it in for v5.2!
+> 
+> Yours,
+> Linus Walleij
+> 
+> 
+> The following changes since commit 9e98c678c2d6ae3a17cb2de55d17f69dddaa231b:
+> 
+>   Linux 5.1-rc1 (2019-03-17 14:22:26 -0700)
 > 
 > are available in the Git repository at:
 > 
->   git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.2/dt-ti-sysc-signed
+>   git://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-stericsson.git
+> tags/ux500-dts-v5.2-armsoc
 > 
-> for you to fetch changes up to b2770b2d6f1b4d33e919fc2a9ccf536efedc1e40:
+> for you to fetch changes up to f4bdfcc29a8bf96fc385a8221348781dd5594128:
 > 
->   ARM: dts: Add l4 abe interconnect hierarchy and ti-sysc data for omap5 (2019-04-09 09:00:54 -0700)
-> 
-> ----------------------------------------------------------------
-> Devicetree changes for omap4 and 5 l4 abe interconnect
-> 
-> This series of devicetree changes adds the l4 abe interconnect devices
-> and moves the devices to their right places in the hierarchy similar
-> to what we've already done for most l4 devices earlier. We first add
-> a shared omap4-mcpdm.dtsi to make adding omap4-l4-abe.dtsi easier for
-> the mcpdm changes. And as earlier, in case of unexpected trouble,
-> devices can be probed the old way by moving one device at a time to the
-> old place.
-> 
-> This series of changes depends on the ti-sysc driver changes for handling
-> the external optional clocks that the mcpdm relies on, and is based on
-> the related ti-sysc driver changes. Note that this series does not depend
-> on dropping of the leagcy platform data, but I already had those committed
-> along with the ti-sysc driver changes and noticed too late.
+>   ARM: dts: Ux500: Add MCDE and Samsung display (2019-04-17 23:18:47 +0200)
 
 Merged, thanks!
 
