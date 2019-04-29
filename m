@@ -2,83 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E5EEDDBE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 10:28:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 996C0DDC2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 10:29:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jp02de+XsPRJLiQxnMvgV0dHuFu9TohY+g5lsfL+lPM=; b=Q7VfUjLYN+p2my
-	IXbcI5VrQY4EJPVyC+igXtbGGUt55APmlIVvRwAJ45RXwSH5x2O5aKCkEuivZF2P1cgzmK+uOZDfa
-	jpjvM/+TtMGqF+PXM08cBPVN5sWfCwKRbVOe3B0AI2PQMW03/fuajN4z/oWbSsxJuSBTlagXsc5Aj
-	pWM2IZjR3718hS0w1uCNEJFEY+Jz9NmKjCBbNj0rb/SHS9rUm5YK9DMtYe1UDro5Uzum2vyIEVsoc
-	P6N/wXZv6Z1tDyvx2q9n5qNx/f6jZfRZOloenWpszJHVM8Py3cTMdjXU4crlfnQkTRYbLCtRAh2aR
-	Iy5TM1C15k5W2D75B9uw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GlMfNPQql+uCe4SHTiZYFWA7A8rAnGWNDgnVumvs3lA=; b=L2bm/o7CVg7BsM
+	TyY6TZYAcpbgz7o0DRDfIC6vP4V1D6uJd7fQvmaMw0qTuuO+ydW/S8VoCmIemOcF8UaEmLEUe4R2k
+	PqAQzh2HJz3TVaYiDMKBFaRa5RmZc2BkORMfpEm9inZzlhWKpulY3accQtZduYskMhcSYIq35Jat5
+	vyH8h/PZuo1d9+Uxc1gwM2MTYA1fY0tww6eF8DlKzBPMc0xvlb3oH8PY+xhYSULot6KCmAxImo2Sx
+	DyqkG/AnGLj1y68q1X/pnpBmaJwBCMKb0DtGn4heagFjBCWTOQQeQdFv9D8CJbf3KjJ6KIqjyBv4a
+	JSMsVIh93cNOZpYVPuNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL1eE-0005nn-Py; Mon, 29 Apr 2019 08:28:26 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL1dq-0005XB-6e
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 08:28:05 +0000
-Received: by mail-qt1-x844.google.com with SMTP id i31so2205818qti.13
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Apr 2019 01:28:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=pIjwi9Pdwq2tpQOmRVLR8AJ+RfItycNgwKBPS/FfFwQ=;
- b=KCepw7VGzHhTmEryB3hPHprLKpgV2QymJ2RW0SjTSFDdpK0ktwAMBDSJ1ITy+XDh60
- DoPTY09BntxLpOu+kCo5BVMGZNy/qjM3Zj6aUXL1PUv1mNwY/Viwx9hmyBnY3bpuaeNI
- XKNVhhBOR2MP/AIpyjpQxeKiRYyJ8JIVSDDJA=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=pIjwi9Pdwq2tpQOmRVLR8AJ+RfItycNgwKBPS/FfFwQ=;
- b=s4ON7zerqyDWHcgLM2k3XU8GtSgtNXpW9d4n+BtY5zYe+qFnvgp77mFNx2QL/76v92
- V8U53hRB7OYWIma5nCYdsBlDmtKAGSXiymM5RLVUcwE104SYU7ZIbbvzcknx5gcxEFW1
- UX3eVf9t/Z4uFpAW91T4nnDkNECr3NaJCqTGMsbQ3b9gx+3pmGYvUIz3thyNFMRVJFZ6
- CY9/g38rjpsGX1bV4vbnilbLwfnMWxgqMfm7KrVS8ul4MsEchGmwBHutHD/FgtGedawL
- 8l5cqBwsJ4XfE568Jti1gzusTFjCgpEqacnLehnI/v11zz49qVNbhG5mhhqZ4+CCb2/v
- bkew==
-X-Gm-Message-State: APjAAAWKxdtDHo6edYHxTdN27yIb4zrspmsmYEy0G6vuRkVuzDX5RQoV
- tPyfW5jpMIcV3vdeaiip40ECH6f/ydqlQZN8esY=
-X-Google-Smtp-Source: APXvYqyIzM18/pZaeSSVKfrsxmgXogVAee5aa7XHdKeT4Kr5aRXtgQ89YiVr3LiG7FMcDqt23jMOQnz29AtcwPe8azo=
-X-Received: by 2002:a0c:ac83:: with SMTP id m3mr47431723qvc.85.1556526481157; 
- Mon, 29 Apr 2019 01:28:01 -0700 (PDT)
+	id 1hL1ew-00069Q-My; Mon, 29 Apr 2019 08:29:10 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hL1eq-000694-9O
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 08:29:05 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B8F0280D;
+ Mon, 29 Apr 2019 01:29:03 -0700 (PDT)
+Received: from [10.1.196.92] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ D7ECD3F71A; Mon, 29 Apr 2019 01:29:01 -0700 (PDT)
+Subject: Re: [PATCH] irqchip/bcm: Restore registration print with %pOF
+To: Florian Fainelli <f.fainelli@gmail.com>, linux-kernel@vger.kernel.org
+References: <20190320193920.13164-1-f.fainelli@gmail.com>
+ <bebfeb44-cfc0-78e7-77d9-431441c80edc@gmail.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+Organization: ARM Ltd
+Message-ID: <4050a32c-c0dd-32d5-04f0-243e70e929af@arm.com>
+Date: Mon, 29 Apr 2019 09:29:00 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-References: <20190416162150.150154-1-venture@google.com>
-In-Reply-To: <20190416162150.150154-1-venture@google.com>
-From: Joel Stanley <joel@jms.id.au>
-Date: Mon, 29 Apr 2019 08:27:49 +0000
-Message-ID: <CACPK8XeTOhcdKPsKgsBJXAYeMDeHRLOSLRF5XO0oT-5XUhghMQ@mail.gmail.com>
-Subject: Re: [PATCH 0/3] update aspeed-bmc-opp-zaius device-tree
-To: Patrick Venture <venture@google.com>
+In-Reply-To: <bebfeb44-cfc0-78e7-77d9-431441c80edc@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_012802_502029_888556BA 
-X-CRM114-Status: GOOD (  13.20  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190429_012904_336172_06D6711B 
+X-CRM114-Status: GOOD (  14.09  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
- [list.dnswl.org]
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (joel.stan[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -90,46 +108,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, linux-aspeed@lists.ozlabs.org,
- Andrew Jeffery <andrew@aj.id.au>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Jason Cooper <jason@lakedaemon.net>, Kevin Cernekee <cernekee@gmail.com>,
+ jaedon.shin@gmail.com,
+ "open list:BROADCOM BMIPS MIPS ARCHITECTURE" <linux-mips@vger.kernel.org>,
+ "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
+ <bcm-kernel-feedback-list@broadcom.com>, Gregory Fong <gregory.0xf0@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Brian Norris <computersforpeace@gmail.com>,
+ "moderated list:BROADCOM BCM7XXX ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 16 Apr 2019 at 16:22, Patrick Venture <venture@google.com> wrote:
->
-> Hi,
->
-> This series contains three updates to the Zaius ASPEED device-tree to
-> add voltrage regulators, and update addresses and aliases.  The Infineon
-> and Intersil drivers are staged on hwmon-next, and the trivial device
-> dt-bindings changed are up for review.
+On 26/04/2019 18:33, Florian Fainelli wrote:
+> On 3/20/19 12:39 PM, Florian Fainelli wrote:
+>> It is useful to print which interrupt controllers are registered in the
+>> system and which parent IRQ they use, especially given that L2 interrupt
+>> controllers do not call request_irq() on their parent interrupt and do
+>> not appear under /proc/interrupts for that reason.
+>>
+>> We used to print the base register address virtual address which had
+>> little value, use %pOF to print the path to the Device Tree node which
+>> maps to the physical address more easily and is what people need to
+>> troubleshoot systems.
+>>
+>> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+> 
+> Marc, are you okay with taking that patch?
 
-Applied to the aspeed SoC tree, thanks Patrick.
+I find it slightly pointless, but if you find it useful in the field,
+fair enough. I've queued it for 5.2.
 
-Cheers,
+Thanks,
 
-Joel
-
->
-> Maxim Sloyko (1):
->   ARM: dts: aspeed: zaius: add Infineon and Intersil regulators
->
-> Robert Lippert (2):
->   ARM: dts: aspeed: zaius: update 12V brick I2C address
->   ARM: dts: aspeed: zaius: fixed I2C bus numbers for pcie slots
->
->  arch/arm/boot/dts/aspeed-bmc-opp-zaius.dts | 121 +++++++++++++++++++--
->  1 file changed, 113 insertions(+), 8 deletions(-)
->
-> --
-> 2.21.0.392.gf8f6787159e-goog
->
+	M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
