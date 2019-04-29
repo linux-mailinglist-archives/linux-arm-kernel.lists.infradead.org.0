@@ -2,91 +2,111 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9FD0DF82
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 11:34:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6CA6ADF86
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 11:35:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=lZ4mOqhJbKiH9rShJMCqbG+e2p7aSsWlgzx4fx3nN4Q=; b=Wdkw1kYAv+DI03
-	ScAKoNRJ0JWFf1BMKoeCbarT6RyWU11uyLEfhPpe+gQINLjmLLuohAVvgV7xx17ldT2hA1vB6JcQm
-	Ksne6i651cvLVyh3s9un3/YyOKggGeXRhXXDeSDn3+Bz05C9ultBQz5CuPFLukeNeh9UTroLJBDSj
-	fN5aPRXyqXw8DHtFxzOpwSmuhE9iyKGXFcMiqJixbB3zmmPXduoKAGk40eSw4SJ/LmtE98mNBryOX
-	qpcrdx7LmFSU4ezso9JrZKda7AVqHKBg0LKRqw/XDeyMefuQc+msI4bQvHfEy/+gVCFy4BA7JNmDC
-	DohYU/tXJHPP5hzWucoA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pRnv6Bd3kUfvHRpoEUj0xW40mcyVFpQ1nzZy4EEEpCg=; b=iSrQ5Bv7Bdyun0
+	Q13ELknNyO0Ox8kRF44hSoUDeZEuzWyCi1O9UhhvT8iKumE5ffweVSoa95Tapqq4mERgJZB32bepE
+	nIS7NG75n7ntK2xCrLC3Hf1HHwQmc47zRqS1BD1jbbLwadSiRpL3QGExiKdaHw1g+qCUzV39Q3KgO
+	lhhCa+kgOARLRCqqK4DoM12V/zoHPPaz1zeJIA1+Oedc7kAALa34QefUlcWqlfMkyLdQTebDtaNKP
+	wMxWNIyt4w+QQl930DObm/rfsrXxVK4th4rdN7jeAkPC1e/FZO/Ec3emq7q9fZJZgdISm+s4PS6A8
+	Up/zwhQ/rhziNc9sGpqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL2g6-0006mZ-D0; Mon, 29 Apr 2019 09:34:26 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL2fx-0006lL-RG
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 09:34:19 +0000
-Received: by mail-pf1-x441.google.com with SMTP id j11so5015719pff.13
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Apr 2019 02:34:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=eYcOsUbRZWz5sU6xzQObts//2dBEC/Tc8+Qe10ZiGxg=;
- b=jJlcZrSsdE8jooaRlLjJ/JfZqlnxdyxy4mciBwm1jeTY7xmyDvUgAPagdABY4jNoTx
- FWjnqID97xQdFyFbaR0zk3QLnhOH5FYadf3E9/Ju5ZOl7LRqIrfSC9se5nSy+g4Z+geG
- Q1y9acZRUlTe6H24FPYcuNy3lOCaWi46drEh5/kEG1xK6wYT3j3ihYsrFJji/P92agT/
- ZiVMH+al6JM1nxKVJPgamVWeuglZ9zwlwPlcrH/Qb08O70oCaxjecKnryuQpRabarfEN
- YItKOBbQMG42hS2MR5MXE1JaZWWtdSYTHpC4ynN8Y6pGHTpw6yEZeB6rLlvw5pYtQ4RX
- +Ziw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=eYcOsUbRZWz5sU6xzQObts//2dBEC/Tc8+Qe10ZiGxg=;
- b=PppQGTOSHszjrTdwgXK0fqhHGqg/iuML3jN3VyGMT+/+aB12YuaPHKLdhB8x4mTwq8
- iE6GRvodE565OJn+CTuXhnOuoNxc+K1uRBX3sZ74Tv2BdfO5YkWw4wHgFfcFsYa4Heu4
- stZp3C1WnCF0afZcJZtRy7dzRAv0hW2sZNhPYSIJ37bjWok6Ovtqr1dl5MmH7i+i44d0
- vq9dExf8thjjozEBi8GeR8RhCJu2GKN0tBAxaPXBkR4Zd9ringjnlFt6IDOMelcsxNz0
- XxPsRihmd/T0U8MpAHGa4CVCIjLJuws296AXXflo117QUYwGX694FN3nIzU3GNVpKzQi
- YoVg==
-X-Gm-Message-State: APjAAAVBHA+1iiQhOiwrrSsn5sRzZzDZZAJ5WQ2fOOZom0/UAcaEj/9w
- 3Ssh3wPPmHLHTjgmEJ/AhcJDaA==
-X-Google-Smtp-Source: APXvYqyD3WCuJozq9AqakZ0AUbiQXkuiz/l0D3xvwzCX2klWQf9+r0U5X+5dhjoYjlIdFbPE5qgQxw==
-X-Received: by 2002:a62:d286:: with SMTP id c128mr4877178pfg.159.1556530455708; 
- Mon, 29 Apr 2019 02:34:15 -0700 (PDT)
-Received: from localhost ([122.166.139.136])
- by smtp.gmail.com with ESMTPSA id f71sm65787930pfc.109.2019.04.29.02.34.14
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 29 Apr 2019 02:34:14 -0700 (PDT)
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Rafael Wysocki <rjw@rjwysocki.net>, Russell King <linux@armlinux.org.uk>,
- "David S. Miller" <davem@davemloft.net>,
- Thomas Gleixner <tglx@linutronix.de>, Ingo Molnar <mingo@redhat.com>,
- Borislav Petkov <bp@alien8.de>, "H. Peter Anvin" <hpa@zytor.com>,
- x86@kernel.org, Paolo Bonzini <pbonzini@redhat.com>,
- =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH V4] cpufreq: Call transition notifier only once for each policy
-Date: Mon, 29 Apr 2019 15:03:58 +0530
-Message-Id: <dffefa5bee3d0a751dcf2d12c1d4cd6f166c23af.1556529864.git.viresh.kumar@linaro.org>
-X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
+	id 1hL2hC-0000Rh-UE; Mon, 29 Apr 2019 09:35:34 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hL2h2-0000RD-Vi
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 09:35:29 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 773B880D;
+ Mon, 29 Apr 2019 02:35:22 -0700 (PDT)
+Received: from [10.1.196.92] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 10AE03F5AF; Mon, 29 Apr 2019 02:35:20 -0700 (PDT)
+Subject: Re: [RFC PATCH 2/3] irqchip/exiu: implement ACPI gpiolib/irqchip
+ support
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Mika Westerberg <mika.westerberg@linux.intel.com>
+References: <20190425102020.21533-1-ard.biesheuvel@linaro.org>
+ <20190425102020.21533-3-ard.biesheuvel@linaro.org>
+ <1fbbfc30-7389-5618-a046-ab8872882494@arm.com>
+ <CAKv+Gu99JXhNnUPpfN274qN7+TJXvFTAatn_31yDDAcrU7LpaQ@mail.gmail.com>
+ <eedc61f7-5c71-46eb-0f06-18daa9c5b5df@arm.com>
+ <CAKv+Gu-RnR5=RqW7=GTaUYSpQUSTLpCfaUQfASxha-KhcxY4_g@mail.gmail.com>
+ <CAKv+Gu_7tprJ7UOowQ+3fhoO2Sq2yJ8SKzcM5OiZE3eWm=o_Tw@mail.gmail.com>
+ <CAKv+Gu-7BNe9Zk-zPe1_SZmGH=5P+PubUc2G+03+ZWt=eD==Bg@mail.gmail.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+Organization: ARM Ltd
+Message-ID: <74beef02-64fe-5ca4-5f9e-daf230384446@arm.com>
+Date: Mon, 29 Apr 2019 10:35:19 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <CAKv+Gu-7BNe9Zk-zPe1_SZmGH=5P+PubUc2G+03+ZWt=eD==Bg@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_023417_918575_E3BD4B8C 
-X-CRM114-Status: GOOD (  21.14  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190429_023528_058769_A86FA831 
+X-CRM114-Status: GOOD (  28.30  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
+ information
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -98,294 +118,244 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Vincent Guittot <vincent.guittot@linaro.org>, kvm@vger.kernel.org,
- linux-pm@vger.kernel.org, Viresh Kumar <viresh.kumar@linaro.org>,
- linux-kernel@vger.kernel.org, sparclinux@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Graeme Gregory <graeme.gregory@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Masahisa Kojima <masahisa.kojima@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently the notifiers are called once for each CPU of the policy->cpus
-cpumask. It would be more optimal if the notifier can be called only
-once and all the relevant information be provided to it. Out of the 23
-drivers that register for the transition notifiers today, only 4 of them
-do per-cpu updates and the callback for the rest can be called only once
-for the policy without any impact.
+On 29/04/2019 10:09, Ard Biesheuvel wrote:
+> On Sat, 27 Apr 2019 at 00:27, Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
+>>
+>> On Fri, 26 Apr 2019 at 13:45, Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
+>>>
+>>> On Fri, 26 Apr 2019 at 10:44, Marc Zyngier <marc.zyngier@arm.com> wrote:
+>>>>
+>>>> On 26/04/2019 09:24, Ard Biesheuvel wrote:
+>>>>> On Thu, 25 Apr 2019 at 17:33, Marc Zyngier <marc.zyngier@arm.com> wrote:
+>>>>>>
+>>>>>> Hi Ard,
+>>>>>>
+>>>>>> On 25/04/2019 11:20, Ard Biesheuvel wrote:
+>>>>>>> Expose the existing EXIU hierarchical irqchip domain code to permit
+>>>>>>> the interrupt controller to be used as the irqchip component of a
+>>>>>>> GPIO controller on ACPI systems.
+>>>>>>>
+>>>>>>> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+>>>>>>> ---
+>>>>>>>  drivers/irqchip/irq-sni-exiu.c | 82 +++++++++++++++++---
+>>>>>>>  1 file changed, 73 insertions(+), 9 deletions(-)
+>>>>>>>
+>>>>>>
+>>>>>> [...]
+>>>>>>
+>>>>>>> +int exiu_acpi_init(struct platform_device *pdev, struct gpio_chip *gc)
+>>>>>>> +{
+>>>>>>> +     struct irq_domain *parent_domain = NULL, *domain;
+>>>>>>> +     struct resource *res;
+>>>>>>> +     int irq;
+>>>>>>> +
+>>>>>>> +     irq = platform_get_irq(pdev, 0);
+>>>>>>> +     if (irq > 0)
+>>>>>>> +             parent_domain = irq_get_irq_data(irq)->domain;
+>>>>>>> +
+>>>>>>> +     if (!parent_domain) {
+>>>>>>> +             dev_err(&pdev->dev, "unable to obtain parent domain\n");
+>>>>>>> +             return -ENODEV;
+>>>>>>> +     }
+>>>>>>> +
+>>>>>>> +     res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
+>>>>>>> +     if (!res) {
+>>>>>>> +             dev_err(&pdev->dev, "failed to parse memory resource\n");
+>>>>>>> +             return -ENXIO;
+>>>>>>> +     }
+>>>>>>> +
+>>>>>>> +     domain = exiu_init(parent_domain, dev_fwnode(&pdev->dev), res);
+>>>>>>> +     if (IS_ERR(domain)) {
+>>>>>>> +             dev_err(&pdev->dev, "failed to create IRQ domain (%ld)\n",
+>>>>>>> +                     PTR_ERR(domain));
+>>>>>>> +             return PTR_ERR(domain);
+>>>>>>> +     }
+>>>>>>> +
+>>>>>>> +     gc->irq.domain = domain;
+>>>>>>> +     gc->to_irq = exiu_acpi_gpio_to_irq;
+>>>>>>> +
+>>>>>>> +     dev_info(&pdev->dev, "%d interrupts forwarded\n", NUM_IRQS);
+>>>>>>> +
+>>>>>>> +     return 0;
+>>>>>>> +}
+>>>>>>> +EXPORT_SYMBOL(exiu_acpi_init);
+>>>>>>> +#endif
+>>>>>>>
+>>>>>>
+>>>>>> I must say I'm not overly keen on this function. Why can't this be
+>>>>>> probed as an ACPI device, creating the corresponding domain, and leaving
+>>>>>> to the GPIO driver the task of doing the GPIO stuff?
+>>>>>>
+>>>>>
+>>>>> Because ACPI only permits 'system' interrupts or GPIO interrupts, it
+>>>>> does not allow arbitrary device objects in the ACPI namespace to be
+>>>>> targeted as interrupt controllers.
+>>>>
+>>>> Hmmm. We already have at least one driver (irq-mbigen.c) that does
+>>>> exactly that. It uses interrupts from the GIC (it is notionally behind
+>>>> the ITS), and offers a bunch of interrupt lines itself. Why is it different?
+>>>>
+>>>
+>>> You are right, it isn't. It turns out that there is another way to
+>>> signal ACPI events based on interrupts, and it involves the ACPI0013
+>>> GED device. I will try to model it that way instead.
+>>>
+>>
+>> Unfortunately, this doesn't work either. The GED device can respond to
+>> GSIVs only, and so going via the EXIU doesn't work.
+>>
+>> I have attempted to hack it up via AML, but the GED driver uses a
+>> threaded interrupt, and so the interrupt is re-enabled at the GIC
+>> before the AML handler is executed (which clears it in the EXIU)
+>>
+>> For the RAS case, I guess we could let the firmware pick an arbitrary
+>> unused SPI and signal that directly into the GIC, but for the power
+>> button (which is physically wired to the EXIU), we have to model the
+>> EXIU either has a separate pseudo-GPIO controller, or as part of the
+>> real GPIO block.
+> 
+> (+ Mika)
+> 
+> I made some progress describing the EXIU and GPIO controllers as follow.
+> 
+>     Device (EXIU) {
+>       Name (_HID, "SCX0008")
+>       Name (_UID, Zero)
+>       Name (_CRS, ResourceTemplate () {
+>         Memory32Fixed (ReadWrite, SYNQUACER_EXIU_BASE, SYNQUACER_EXIU_SIZE)
+>         Interrupt (ResourceConsumer, Level, ActiveHigh, ExclusiveAndWake) {
+>           144, 145, 146, 147, 148, 149, 150, 151,
+>           152, 153, 154, 155, 156, 157, 158, 159,
+>           160, 161, 162, 163, 164, 165, 166, 167,
+>           168, 169, 170, 171, 172, 173, 174, 175,
+>         }
+>       })
+>       Name (_DSD, Package () {
+>         ToUUID ("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
+>         Package () {
+>           Package () { "socionext,spi-base", 112 },
+>         }
+>       })
+>     }
+> 
+> and
+> 
+>     Device (GPIO) {
+>       Name (_HID, "SCX0007")
+>       Name (_UID, Zero)
+>       Name (_CRS, ResourceTemplate () {
+>         Memory32Fixed (ReadWrite, SYNQUACER_GPIO_BASE, SYNQUACER_GPIO_SIZE)
+>         Interrupt (ResourceConsumer, Edge, ActiveLow,
+> ExclusiveAndWake, 0, "\\_SB.EXIU") {
+>           7,
+>         }
+>       })
+>       Name (_AEI, ResourceTemplate () {
+>         GpioInt (Edge, ActiveHigh, ExclusiveAndWake, PullDefault, 0,
+> "\\_SB.GPIO")
+>         {
+>           7
+>         }
+>       })
+>       Method (_E07) {
+>         Notify (\_SB.PWRB, 0x80)
+>       }
+>     }
+> 
+> This is actually a fairly accurate depiction of reality: the EXIU is a
+> separate unit, and only some of the GPIOs are routed through it.
+> 
+> In the GPIO controller's to_irq() callback, I return the Linux IRQ
+> number based on the platform IRQ resources claimed by the GPIO device,
+> and I end up with something like
+> 
+>  46:          0 ... 0      EXIU   7 Edge      ACPI:Event
+> 
+> which looks correct to me. debugfs tells me it is mapped as
+> 
+> handler:  handle_fasteoi_irq
+> device:   (null)
+> status:   0x00000001
+> istate:   0x00000020
+>             IRQS_ONESHOT
+> ddepth:   0
+> wdepth:   1
+> dstate:   0x03404201
+>             IRQ_TYPE_EDGE_RISING
+>             IRQD_ACTIVATED
+>             IRQD_IRQ_STARTED
+>             IRQD_SINGLE_TARGET
+>             IRQD_WAKEUP_STATE
+> node:     0
+> affinity: 0-23
+> effectiv: 0
+> domain:  \_SB_.EXIU
+>  hwirq:   0x7
+>  chip:    EXIU
+>   flags:   0x55
+>              IRQCHIP_SET_TYPE_MASKED
+>              IRQCHIP_MASK_ON_SUSPEND
+>              IRQCHIP_SKIP_SET_WAKE
+>              IRQCHIP_EOI_THREADED
+>  parent:
+>     domain:  irqchip@(____ptrval____)-1
+>      hwirq:   0x97
+>      chip:    GICv3
+>       flags:   0x15
+>                  IRQCHIP_SET_TYPE_MASKED
+>                  IRQCHIP_MASK_ON_SUSPEND
+>                  IRQCHIP_SKIP_SET_WAKE
+> 
+> The EXIU domain is described as
+> 
+> name:   \_SB_.EXIU
+>  size:   32
+>  mapped: 1
+>  flags:  0x00000041
+>  parent: irqchip@(____ptrval____)-1
+>     name:   irqchip@(____ptrval____)-1
+>      size:   0
+>      mapped: 55
+>      flags:  0x00000041
+> 
+> Unfortunately, the system locks up entirely as soon as the interrupt
+> is triggered (I use a DIP switch in this case). So while the
+> description is accurate and the correct interrupt does get mapped,
+> something is still not working entirely as expected.
+> 
+> Any thoughts?
 
-This would also avoid multiple function calls to the notifier callbacks
-and reduce multiple iterations of notifier core's code (which does
-locking as well).
+It feels like an interrupt storm with an edge vs level misconfiguration.
+Can you check that the IRQ_TYPE_EDGE_RISING is correctly propagated
+across the hierarchy?
 
-This patch adds pointer to the cpufreq policy to the struct
-cpufreq_freqs, so the notifier callback has all the information
-available to it with a single call. The five drivers which perform
-per-cpu updates are updated to use the cpufreq policy. The freqs->cpu
-field is redundant now and is removed.
+The EXIU block has:
 
-Acked-by: David S. Miller <davem@davemloft.net> (sparc)
-Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
----
-V3->V4:
-- rebased over pm/linux-next
-- tsc.c's diff has changed due to rafael's patch present in
-  pm/linux-next.
-- Minor update in commit-log.
+Interrupt (ResourceConsumer, Level, ActiveHigh, ExclusiveAndWake) {
 
- arch/arm/kernel/smp.c       | 24 +++++++++++++++---------
- arch/sparc/kernel/time_64.c | 28 ++++++++++++++++------------
- arch/x86/kernel/tsc.c       |  2 +-
- arch/x86/kvm/x86.c          | 31 ++++++++++++++++++++-----------
- drivers/cpufreq/cpufreq.c   | 19 ++++++++++---------
- include/linux/cpufreq.h     | 14 +++++++-------
- 6 files changed, 69 insertions(+), 49 deletions(-)
+while the GPIO block has:
 
-diff --git a/arch/arm/kernel/smp.c b/arch/arm/kernel/smp.c
-index facd4240ca02..c6d37563610a 100644
---- a/arch/arm/kernel/smp.c
-+++ b/arch/arm/kernel/smp.c
-@@ -754,15 +754,20 @@ static int cpufreq_callback(struct notifier_block *nb,
- 					unsigned long val, void *data)
- {
- 	struct cpufreq_freqs *freq = data;
--	int cpu = freq->cpu;
-+	struct cpumask *cpus = freq->policy->cpus;
-+	int cpu, first = cpumask_first(cpus);
-+	unsigned int lpj;
- 
- 	if (freq->flags & CPUFREQ_CONST_LOOPS)
- 		return NOTIFY_OK;
- 
--	if (!per_cpu(l_p_j_ref, cpu)) {
--		per_cpu(l_p_j_ref, cpu) =
--			per_cpu(cpu_data, cpu).loops_per_jiffy;
--		per_cpu(l_p_j_ref_freq, cpu) = freq->old;
-+	if (!per_cpu(l_p_j_ref, first)) {
-+		for_each_cpu(cpu, cpus) {
-+			per_cpu(l_p_j_ref, cpu) =
-+				per_cpu(cpu_data, cpu).loops_per_jiffy;
-+			per_cpu(l_p_j_ref_freq, cpu) = freq->old;
-+		}
-+
- 		if (!global_l_p_j_ref) {
- 			global_l_p_j_ref = loops_per_jiffy;
- 			global_l_p_j_ref_freq = freq->old;
-@@ -774,10 +779,11 @@ static int cpufreq_callback(struct notifier_block *nb,
- 		loops_per_jiffy = cpufreq_scale(global_l_p_j_ref,
- 						global_l_p_j_ref_freq,
- 						freq->new);
--		per_cpu(cpu_data, cpu).loops_per_jiffy =
--			cpufreq_scale(per_cpu(l_p_j_ref, cpu),
--					per_cpu(l_p_j_ref_freq, cpu),
--					freq->new);
-+
-+		lpj = cpufreq_scale(per_cpu(l_p_j_ref, first),
-+				    per_cpu(l_p_j_ref_freq, first), freq->new);
-+		for_each_cpu(cpu, cpus)
-+			per_cpu(cpu_data, cpu).loops_per_jiffy = lpj;
- 	}
- 	return NOTIFY_OK;
- }
-diff --git a/arch/sparc/kernel/time_64.c b/arch/sparc/kernel/time_64.c
-index 3eb77943ce12..89fb05f90609 100644
---- a/arch/sparc/kernel/time_64.c
-+++ b/arch/sparc/kernel/time_64.c
-@@ -653,19 +653,23 @@ static int sparc64_cpufreq_notifier(struct notifier_block *nb, unsigned long val
- 				    void *data)
- {
- 	struct cpufreq_freqs *freq = data;
--	unsigned int cpu = freq->cpu;
--	struct freq_table *ft = &per_cpu(sparc64_freq_table, cpu);
-+	unsigned int cpu;
-+	struct freq_table *ft;
- 
--	if (!ft->ref_freq) {
--		ft->ref_freq = freq->old;
--		ft->clock_tick_ref = cpu_data(cpu).clock_tick;
--	}
--	if ((val == CPUFREQ_PRECHANGE  && freq->old < freq->new) ||
--	    (val == CPUFREQ_POSTCHANGE && freq->old > freq->new)) {
--		cpu_data(cpu).clock_tick =
--			cpufreq_scale(ft->clock_tick_ref,
--				      ft->ref_freq,
--				      freq->new);
-+	for_each_cpu(cpu, freq->policy->cpus) {
-+		ft = &per_cpu(sparc64_freq_table, cpu);
-+
-+		if (!ft->ref_freq) {
-+			ft->ref_freq = freq->old;
-+			ft->clock_tick_ref = cpu_data(cpu).clock_tick;
-+		}
-+
-+		if ((val == CPUFREQ_PRECHANGE  && freq->old < freq->new) ||
-+		    (val == CPUFREQ_POSTCHANGE && freq->old > freq->new)) {
-+			cpu_data(cpu).clock_tick =
-+				cpufreq_scale(ft->clock_tick_ref, ft->ref_freq,
-+					      freq->new);
-+		}
- 	}
- 
- 	return 0;
-diff --git a/arch/x86/kernel/tsc.c b/arch/x86/kernel/tsc.c
-index cc6df5c6d7b3..650fafa6a4d0 100644
---- a/arch/x86/kernel/tsc.c
-+++ b/arch/x86/kernel/tsc.c
-@@ -976,7 +976,7 @@ static int time_cpufreq_notifier(struct notifier_block *nb, unsigned long val,
- 		if (!(freq->flags & CPUFREQ_CONST_LOOPS))
- 			mark_tsc_unstable("cpufreq changes");
- 
--		set_cyc2ns_scale(tsc_khz, freq->cpu, rdtsc());
-+		set_cyc2ns_scale(tsc_khz, freq->policy->cpu, rdtsc());
- 	}
- 
- 	return 0;
-diff --git a/arch/x86/kvm/x86.c b/arch/x86/kvm/x86.c
-index a0d1fc80ac5a..55efbc1b0a56 100644
---- a/arch/x86/kvm/x86.c
-+++ b/arch/x86/kvm/x86.c
-@@ -6677,10 +6677,8 @@ static void kvm_hyperv_tsc_notifier(void)
- }
- #endif
- 
--static int kvmclock_cpufreq_notifier(struct notifier_block *nb, unsigned long val,
--				     void *data)
-+static void __kvmclock_cpufreq_notifier(struct cpufreq_freqs *freq, int cpu)
- {
--	struct cpufreq_freqs *freq = data;
- 	struct kvm *kvm;
- 	struct kvm_vcpu *vcpu;
- 	int i, send_ipi = 0;
-@@ -6724,17 +6722,12 @@ static int kvmclock_cpufreq_notifier(struct notifier_block *nb, unsigned long va
- 	 *
- 	 */
- 
--	if (val == CPUFREQ_PRECHANGE && freq->old > freq->new)
--		return 0;
--	if (val == CPUFREQ_POSTCHANGE && freq->old < freq->new)
--		return 0;
--
--	smp_call_function_single(freq->cpu, tsc_khz_changed, freq, 1);
-+	smp_call_function_single(cpu, tsc_khz_changed, freq, 1);
- 
- 	spin_lock(&kvm_lock);
- 	list_for_each_entry(kvm, &vm_list, vm_list) {
- 		kvm_for_each_vcpu(i, vcpu, kvm) {
--			if (vcpu->cpu != freq->cpu)
-+			if (vcpu->cpu != cpu)
- 				continue;
- 			kvm_make_request(KVM_REQ_CLOCK_UPDATE, vcpu);
- 			if (vcpu->cpu != smp_processor_id())
-@@ -6756,8 +6749,24 @@ static int kvmclock_cpufreq_notifier(struct notifier_block *nb, unsigned long va
- 		 * guest context is entered kvmclock will be updated,
- 		 * so the guest will not see stale values.
- 		 */
--		smp_call_function_single(freq->cpu, tsc_khz_changed, freq, 1);
-+		smp_call_function_single(cpu, tsc_khz_changed, freq, 1);
- 	}
-+}
-+
-+static int kvmclock_cpufreq_notifier(struct notifier_block *nb, unsigned long val,
-+				     void *data)
-+{
-+	struct cpufreq_freqs *freq = data;
-+	int cpu;
-+
-+	if (val == CPUFREQ_PRECHANGE && freq->old > freq->new)
-+		return 0;
-+	if (val == CPUFREQ_POSTCHANGE && freq->old < freq->new)
-+		return 0;
-+
-+	for_each_cpu(cpu, freq->policy->cpus)
-+		__kvmclock_cpufreq_notifier(freq, cpu);
-+
- 	return 0;
- }
- 
-diff --git a/drivers/cpufreq/cpufreq.c b/drivers/cpufreq/cpufreq.c
-index 92604afdeec4..3681ec8d19f2 100644
---- a/drivers/cpufreq/cpufreq.c
-+++ b/drivers/cpufreq/cpufreq.c
-@@ -340,11 +340,14 @@ static void cpufreq_notify_transition(struct cpufreq_policy *policy,
- 				      struct cpufreq_freqs *freqs,
- 				      unsigned int state)
- {
-+	int cpu;
-+
- 	BUG_ON(irqs_disabled());
- 
- 	if (cpufreq_disabled())
- 		return;
- 
-+	freqs->policy = policy;
- 	freqs->flags = cpufreq_driver->flags;
- 	pr_debug("notification %u of frequency transition to %u kHz\n",
- 		 state, freqs->new);
-@@ -364,10 +367,8 @@ static void cpufreq_notify_transition(struct cpufreq_policy *policy,
- 			}
- 		}
- 
--		for_each_cpu(freqs->cpu, policy->cpus) {
--			srcu_notifier_call_chain(&cpufreq_transition_notifier_list,
--						 CPUFREQ_PRECHANGE, freqs);
--		}
-+		srcu_notifier_call_chain(&cpufreq_transition_notifier_list,
-+					 CPUFREQ_PRECHANGE, freqs);
- 
- 		adjust_jiffies(CPUFREQ_PRECHANGE, freqs);
- 		break;
-@@ -377,11 +378,11 @@ static void cpufreq_notify_transition(struct cpufreq_policy *policy,
- 		pr_debug("FREQ: %u - CPUs: %*pbl\n", freqs->new,
- 			 cpumask_pr_args(policy->cpus));
- 
--		for_each_cpu(freqs->cpu, policy->cpus) {
--			trace_cpu_frequency(freqs->new, freqs->cpu);
--			srcu_notifier_call_chain(&cpufreq_transition_notifier_list,
--						 CPUFREQ_POSTCHANGE, freqs);
--		}
-+		for_each_cpu(cpu, policy->cpus)
-+			trace_cpu_frequency(freqs->new, cpu);
-+
-+		srcu_notifier_call_chain(&cpufreq_transition_notifier_list,
-+					 CPUFREQ_POSTCHANGE, freqs);
- 
- 		cpufreq_stats_record_transition(policy, freqs->new);
- 		policy->cur = freqs->new;
-diff --git a/include/linux/cpufreq.h b/include/linux/cpufreq.h
-index 684caf067003..d01a74fbc4db 100644
---- a/include/linux/cpufreq.h
-+++ b/include/linux/cpufreq.h
-@@ -42,13 +42,6 @@ enum cpufreq_table_sorting {
- 	CPUFREQ_TABLE_SORTED_DESCENDING
- };
- 
--struct cpufreq_freqs {
--	unsigned int cpu;	/* cpu nr */
--	unsigned int old;
--	unsigned int new;
--	u8 flags;		/* flags of cpufreq_driver, see below. */
--};
--
- struct cpufreq_cpuinfo {
- 	unsigned int		max_freq;
- 	unsigned int		min_freq;
-@@ -156,6 +149,13 @@ struct cpufreq_policy {
- 	struct thermal_cooling_device *cdev;
- };
- 
-+struct cpufreq_freqs {
-+	struct cpufreq_policy *policy;
-+	unsigned int old;
-+	unsigned int new;
-+	u8 flags;		/* flags of cpufreq_driver, see below. */
-+};
-+
- /* Only for ACPI */
- #define CPUFREQ_SHARED_TYPE_NONE (0) /* None */
- #define CPUFREQ_SHARED_TYPE_HW	 (1) /* HW does needed coordination */
+Interrupt (ResourceConsumer, Edge, ActiveLow, ExclusiveAndWake, 0,
+"\\_SB.EXIU")
+
+and the interrupt is configured for yet another trigger
+(IRQ_TYPE_EDGE_RISING).
+
+Hope this helps,
+
+	M.
 -- 
-2.21.0.rc0.269.g1a574e7a288b
-
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
