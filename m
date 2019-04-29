@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D586BE7AA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 18:23:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24B04E7A9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 18:23:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CKhQ3hgEIHq04pGepDgsdd4bsaRPgeaqVemHQhuC684=; b=foe+HluB+c6Nv+
-	mC94FTlhzcQf1cetGS5oL2KMW5Zo4zg6fbyL+gPMIsTkzX4foaWzzfbDIzDeI5iDSvrg+bpFSk+N7
-	8W8Y4RrMBKh4c1BM6h22i/1v1sjk1hSnttw1NeR/3OH7gI3V5Gf2eR/NSaH/03WmzEatdkzs1C3oV
-	5kfyss7SepaRv6MaibLcAAxc8GR5qfToAx/x43+oSS8zEIFEf8Re+6QbrsF1UlWvhcZD+XnuCVE2e
-	hwgF6jeU1gywlOTXXbb+1lqo9nut4KTH36fCfEI6ECEsEX0ccooqEEV68UuVOPTjVn7kKAcwq3aEY
-	cPx02g7pBPyAC8syE0Kg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=WBPxLIgJA06PHAhl0ShHFwTNejzvfBm0V/bzukQlelI=; b=F8HK1YPpwXQj644yX6pnTZ8K0+
+	0RSZ3Qnzx+cVakir1eRbetuXnEcSdJQwVTCNUxgBTpQOgI7zHT1zc+QsAdI0sO5qJM9hNfhM4m3WH
+	Gi0KUP9mqgldX4z6j4Ke3SKQQvakNC8RfXlqc6p0xOGy2FH7bI9OPJRoxpZYiy3gThscWlvaZjIjE
+	JA4TaARm9mt4CMKE7sq51wHr6zGyn5DpikLqdCdNqbLsooKrxP1Mf7vWCWS1e0138bBQ0Hjq8fSA7
+	gCH6HEPNPVRRHmfuMfdmFhZH2q2omsYxYnftbYZXBxflsLMwBcafrznszTJkbzj9jOKNYomcP6Ol1
+	0m7s1PQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL93r-0002kc-HF; Mon, 29 Apr 2019 16:23:23 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1hL93Y-0002Vl-5V; Mon, 29 Apr 2019 16:23:04 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL93h-0002jA-0D
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 16:23:14 +0000
-Received: by mail-lf1-x143.google.com with SMTP id k18so8331406lfj.13
+ id 1hL93R-0002VK-4e
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 16:22:58 +0000
+Received: by mail-pl1-x643.google.com with SMTP id f36so5307862plb.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Apr 2019 09:23:12 -0700 (PDT)
+ Mon, 29 Apr 2019 09:22:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=AwvW2Sw1jJOmOQddvwLSFW4cG8dGJ1Do6II3a9O1zoI=;
- b=iFEXaFObvY189R9O6l3iWMTRWtFKPY0zWdzK/fxBjlpv6D3QdYLwLY+tr+zJwgXsqz
- zUe6W/7I48Zzbb2pecCf15QScGxIQCQSwFpMABilpWYZDX55LjGq/dz/2MWBpWROf91e
- 39ZS0Xa4njzHBYhxDJmT1InexIN2b1rzYTLRBZO3zjFuYj6x/a//iMTOJaF4w073oR6l
- /8eDpjPYOoB2mkx9uGeWL/RWoXCLwwLVKebN0QB13NGyn6W7N/0UHAz7Wq3NoQPDyen3
- iGbGP8AqRDGpKnjtXxLXdhuU7I1BqsOdVBjrLqBKp6yl7TcFQA3M5BfEjU67fGlv8JaN
- oElQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=4f6WrzyzuO2F1bDTPxHcLE3z/+pAjPfe9qLmvK4A6as=;
+ b=vPpCrKUW2ez99jzndfqZtu6JNvWNanlUzH3AuveO0GSSRCCQl72+NIdUPDxp4e1j2D
+ oR+KD27SMnporP7BtqsmFOHrHH48hM80JhZBbvQFxbgs9ZmuljJwGNsbO97maHqcUfjg
+ 8wSXcpfVKMB8tCe4gXP+HgKsW0HJtYjx0dBSpNwC87IzbXqY3gwaTJ7c+snUOwGxdTSd
+ 2zD9P9f8ZXZjyRLibwYBPF9JXLqNVcGKoIVvLYRLSDdEH/zokklEz+pbZ4uhjxbg/sSw
+ 527JDJwiLrfS+2iiWXbdKDp8JItn+dGur5RpDU6TA35z23hVVY64OqVnxcZtB9i0suTd
+ njtQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=AwvW2Sw1jJOmOQddvwLSFW4cG8dGJ1Do6II3a9O1zoI=;
- b=QZXeu74GFPjomdYu9MEEgKy/qAaBHsHN7vZEmXaz8yYA4oaM6Qlr8H22xtBlbGfh2O
- m1edElK6BSeNk2bYoCjtD81Hse22z4rJpo6EGx5AulTtZQr/+NSElhtfC+s+9ydqeuQH
- 4GgOJ1TDqVV7YFyxOXA63INJm0Q/lVKXQt1/4P0UFw6GPmctxHnJ7xlA9QrzyNbwwYjY
- TfHrZ89hVlaUVwMYXFHervLueCW7X3JjJN/OmMxrECcUpzJtSQsijtYjJCOCz6d1Ns8B
- f5oeDlJMpVVFJkr4BAPMup6fe1dn3qR9VSR56QtMxO8PQKnaAG1qYW1KVI+YQKzsstj7
- z9VA==
-X-Gm-Message-State: APjAAAUG50zIKafq7X1Ge+m6pH6ZFP05ScZGJhdMIHsOVsn0XMRMWjxq
- eLO1eQLO+SRjVik0/kEO1/biKA==
-X-Google-Smtp-Source: APXvYqx1IW8psVF22hlNploxE9rUHpgiVb7MpkUoeBu2BcCSTaydaClqyLV6oVYUIminTqj23i52QA==
-X-Received: by 2002:a19:f50f:: with SMTP id j15mr34123230lfb.135.1556554990909; 
- Mon, 29 Apr 2019 09:23:10 -0700 (PDT)
-Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id d5sm1984015lfn.36.2019.04.29.09.23.09
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 29 Apr 2019 09:23:09 -0700 (PDT)
-Date: Mon, 29 Apr 2019 09:20:41 -0700
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=4f6WrzyzuO2F1bDTPxHcLE3z/+pAjPfe9qLmvK4A6as=;
+ b=EjfnBznfzHM25lA3eZPoMHnFSxIbw6RTLwxvOWw7QHXbc8vQ9O1J3fxpp9Iwm9Iiem
+ LHsg1WhhOu2y2/TmXb11W13O1xpqw0mxW4thr9FH9JfvNo45lBboAq0of76KG6e51q4M
+ g7em3r4991jDk9sgLGhUAVBrHCQcn8V+evvB9H+0UjFQHfxSZT0h+kP1AtwKXaul+Tfo
+ 6QPOj6FAEhW00VD3SUhdIJ49Ac5cFgb/xzxPsz1ssZjqaEm0VMzT1sVoAjY2lLHF9z5L
+ u5VfYihiLusD8TAMynGksuaDEz/ELO5WA/E/GsCt3W9crTOv41Tw13faj9aLZGF20qvx
+ WSvQ==
+X-Gm-Message-State: APjAAAV58ar6LYMeTfhf0kwSIxlkesWAGfvo6N9YoxapoYFRtNM6Wzhc
+ eEPfB0W5zKDtp9kq0a7S54DKqf9CWZtGOBMM
+X-Google-Smtp-Source: APXvYqzYEA3pbS2iE2gKVdOlfQIPiAhmrRB708Vt+S0UrPEJo1az+L1keMZHjy1L2zZAifx1wHJpAQ==
+X-Received: by 2002:a17:902:b605:: with SMTP id
+ b5mr24397547pls.206.1556554975840; 
+ Mon, 29 Apr 2019 09:22:55 -0700 (PDT)
+Received: from localhost.localdomain
+ (99-152-116-91.lightspeed.sntcca.sbcglobal.net. [99.152.116.91])
+ by smtp.gmail.com with ESMTPSA id g10sm39691003pgq.54.2019.04.29.09.22.54
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 29 Apr 2019 09:22:54 -0700 (PDT)
 From: Olof Johansson <olof@lixom.net>
-To: Michal Simek <monstr@monstr.eu>
-Subject: Re: [GIT PULL] arm64: dts: Xilinx ZynqMP SoC changes for v5.2
-Message-ID: <20190429162041.jd5fkkutlxgo55qq@localhost>
-References: <2bb66114-c976-9c44-6db3-33a5dd12edde@monstr.eu>
-MIME-Version: 1.0
-Content-Disposition: inline
+To: linux-spi@vger.kernel.org
+Subject: [PATCH] spi: zynqmp: Fix build break
+Date: Mon, 29 Apr 2019 09:22:46 -0700
+Message-Id: <20190429162246.6061-1-olof@lixom.net>
+X-Mailer: git-send-email 2.11.0
 In-Reply-To: <2bb66114-c976-9c44-6db3-33a5dd12edde@monstr.eu>
-User-Agent: NeoMutt/20170113 (1.7.2)
+References: <2bb66114-c976-9c44-6db3-33a5dd12edde@monstr.eu>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_092313_046586_5E6D86F6 
-X-CRM114-Status: GOOD (  18.20  )
+X-CRM114-CacheID: sfid-20190429_092257_230840_EC79C3A8 
+X-CRM114-Status: GOOD (  12.23  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -92,65 +92,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Moritz Fischer <moritz.fischer@ettus.com>, arm-soc <arm@kernel.org>,
- linux-arm <linux-arm-kernel@lists.infradead.org>, Alan Tull <atull@kernel.org>
+Cc: Rajan Vaja <rajan.vaja@xilinx.com>, Michal Simek <michal.simek@xilinx.com>,
+ linux-kernel@vger.kernel.org, Jolly Shah <jollys@xilinx.com>,
+ Olof Johansson <olof@lixom.net>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 15, 2019 at 10:39:04AM +0200, Michal Simek wrote:
-> Hi,
-> 
-> please pull these patches to your tree. I have also taken fpga series
-> based on agreement with Moritz and Alan because it requires changes in
-> firmware interface. It is the same what we have done last time with
-> reset and nvmem.
-> 
-> Thanks,
-> Michal
-> 
-> 
-> The following changes since commit 9e98c678c2d6ae3a17cb2de55d17f69dddaa231b:
-> 
->   Linux 5.1-rc1 (2019-03-17 14:22:26 -0700)
-> 
-> are available in the git repository at:
-> 
->   https://github.com/Xilinx/linux-xlnx.git tags/zynqmp-soc-for-v5.2
-> 
-> for you to fetch changes up to c09f7471127e9debf3e814ffef4f4012c31a5a3d:
-> 
->   fpga manager: Adding FPGA Manager support for Xilinx zynqmp
-> (2019-04-15 10:23:18 +0200)
-> 
-> ----------------------------------------------------------------
-> arm64: zynqmp: SoC changes for v5.2
-> 
-> - Add support for ZynqMP fpga manager
-> - Defer some probes which depends on firmware driver to be ready
-> - Debugfs fix
-> 
-> ----------------------------------------------------------------
-> Jann Horn (1):
->       firmware: xilinx: fix debugfs write handler
-> 
-> Nava kishore Manne (3):
->       firmware: xilinx: Add fpga API's
->       dt-bindings: fpga: Add bindings for ZynqMP fpga driver
->       fpga manager: Adding FPGA Manager support for Xilinx zynqmp
-> 
-> Rajan Vaja (1):
->       drivers: Defer probe if firmware is not ready
+Missing include:
+drivers/spi/spi-zynqmp-gqspi.c:1025:13: error: implicit declaration of
+  function 'zynqmp_pm_get_eemi_ops'; did you mean
+  'zynqmp_process_dma_irq'? [-Werror=implicit-function-declaration]
 
-So, this branch has not been in -next, since it introduced previously
-not seen build errors. :(
+Fixes: 3d0313786470a ('drivers: Defer probe if firmware is not ready')
+Cc: Rajan Vaja <rajan.vaja@xilinx.com>
+Cc: Jolly Shah <jollys@xilinx.com>
+Cc: Michal Simek <michal.simek@xilinx.com>
+Signed-off-by: Olof Johansson <olof@lixom.net>
+---
+ drivers/spi/spi-zynqmp-gqspi.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-Patched up locally, following up with patch here for visibility (already
-applied).
+diff --git a/drivers/spi/spi-zynqmp-gqspi.c b/drivers/spi/spi-zynqmp-gqspi.c
+index d07b6f940f9f..9850a0efe85a 100644
+--- a/drivers/spi/spi-zynqmp-gqspi.c
++++ b/drivers/spi/spi-zynqmp-gqspi.c
+@@ -14,6 +14,7 @@
+ #include <linux/delay.h>
+ #include <linux/dma-mapping.h>
+ #include <linux/dmaengine.h>
++#include <linux/firmware/xlnx-zynqmp.h>
+ #include <linux/interrupt.h>
+ #include <linux/io.h>
+ #include <linux/module.h>
+-- 
+2.11.0
 
-
--Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
