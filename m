@@ -2,95 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18EE5E8B7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 19:23:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50C92E8BC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 19:23:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i5QvFoypy5wzFhJSQEdWP7sXB1N/0bCNm0nlQ4JbHuY=; b=YSWA0WGVszHwGj
-	aUAC3fB7L3SjbTyCByQRrM4GRK0dahlcxVmtDjw2mUMqqYXRAfsn8vzuVV/kmWECvtmo++0CqATWX
-	zzjm5JAbn/FrLpLXZk5zBZWNR62fwCRtMMOqmnWNe9DKDJWcWuecPS8OdsgNKucxxJX6frfWr9pxe
-	qfNbN44GlcjukQNv+Pj5gHMFIRhSqBSFiZ41HvhB/rXvwXyvEd2Aj3KPWlXq7uqG1J0YgVuKO0+UC
-	A3l3/SAXQIm17+bE7TWb4iB+v3hT4gCiJGTJPiVnViu04OTNXSVSJ/QSh/R9J2B5glZ8ntY1OEWMV
-	K9T/DN8MRmQrZgtNp7Cw==;
+	List-Owner; bh=NGEsPtiSnVyVfxsgrhY63s9lPJeFMkQGntWP7J58364=; b=VUTO/50/A8kr4v
+	o9zDJsUACCZkjSCZZIHoHCiwpQYRpdUPPK1DGygJFqHNhE1Cdt/5kUVSC/kyMoLn/rF6o8OvyGL7g
+	Kn9Ygg8mBYQpVh8BH1M6guPBkpU/x5t+nfkVde6tNzBLIgH5+QgPV9HwNh/Zv1QLWAZtllt9nTe/z
+	GJQxEIzKYEnnAF7bR+vhthRcBNyXYNBYrglweR1xIA47HOwozBigEAivQuJOH+1Rk5CMQbVhLYXqY
+	+elzc8HF5Z7f5zBbM+3KiU9ZZXz6k/WR5q8n14g1Gv1gGC+mtOkQmDbnUYXyLqYcbW3XaITUTu1vV
+	ORFbErz6fAXDTz/FTfPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL9zl-0005Da-1C; Mon, 29 Apr 2019 17:23:13 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hLA0K-0005UO-0r; Mon, 29 Apr 2019 17:23:48 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL9ze-0005Cr-6W
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 17:23:07 +0000
-Received: by mail-pl1-x643.google.com with SMTP id ck18so1091529plb.1
+ id 1hLA0C-0005Tu-4A
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 17:23:41 +0000
+Received: by mail-oi1-f195.google.com with SMTP id n187so8947756oih.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Apr 2019 10:23:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=rsw8UPykdorsw4sPVzHVYzdipOf63m0Li/lJqRlHJ28=;
- b=PCPGwWsH2zeGDnz68osLQlxPJg3Mq3ZZ3rJnVkG96kpebaebQeHBm6Fk21rGKM3Iu1
- y5AjtKyIzxFb/lo+UhU4zgbnf1mIQ125i478+JYkFgTyfWa0760MVb5SuDjwIzpEXcYw
- hsuIIjql21Co4qkj8ZGbsKYloGjQna0HcrYVspTiNXKqXDCW+s0aFPBdUg9eTF6+yswM
- /BsGsVhdNvuhHPteCh6HvAaJhM30O7s3iZMC95XQFv/L2lDxLjTMuA3MugRnY75nJgxS
- 8WmicA925irBdJLs/VSS2PjmLpw/N5IaDkzrcGu0d1Aa5uivPxMCHlTGFB6rhqzTX0aM
- aydA==
+ Mon, 29 Apr 2019 10:23:39 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=rsw8UPykdorsw4sPVzHVYzdipOf63m0Li/lJqRlHJ28=;
- b=mxZOCV/DOnveVNsLFmpF9Heeb4JEMTb8V+PAOAQ0/0svBSZXBAANGf9U+yvqPS0LdE
- ZAm+csDI307WYYNfDttokyk6vO0DK34ILKBrApjqsVqe5mluyaS0pcyux+SuhL1WGi98
- 1ovsHC2LDCU6QE84+pJ9kCSnCmAiHFDylvqXpsRFFvyHhMdJH+UnPYcBJhwGLexFX4ta
- QGKze4HkEPpZ3VceggNTgykxGe3s7KZajnOs/vbvaPSlFxaOpnb1QEyr8jG6Be0NJY0i
- km9ByXo+sreH8b6iMqthUyxIHwStigfZekHKT0B1l02TtS54dngnKQXUFLFEh9lkEKiq
- vd+A==
-X-Gm-Message-State: APjAAAV9lKbBrrJAxG2aWlZIb4Zhm/5sq7sC2YyMwX2yJ6UiXepoy+PY
- X345Q4xYY/F7tSNkV2eY6dPIhwZFKGW1jJXXTRbLag==
-X-Google-Smtp-Source: APXvYqwSBXLgxbHxoEnDonqbACyGnvV1ZNezhTU6Vgc6F6Hq4BY3bKyqvj3eDuPWzZi/lzcpQtZLdjpJWlI4n7e056M=
-X-Received: by 2002:a17:902:e183:: with SMTP id
- cd3mr23298888plb.233.1556558583289; 
- Mon, 29 Apr 2019 10:23:03 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=A0I+WeeWwMxjNXSYH+7ynj45eY9o+5Gg1/EFwuWtM7U=;
+ b=s1RUi+a5OuTMt1RTakk4MUOImIPW3vasQADVLEFejClDkhHfo61DTyng5wJ0XrKw0h
+ bL4Icnb/ZU5GXpeR7BMS3TWx8+lnxSre4Ey8csQgME2yyHl71uKVDsaJBJa4C8Jki1cb
+ DcacToJIENDqERiec85mddWM2gUdHNJBSYS4m4EiJ2H0j29VuV/ZI+MMWvuexU4QkXid
+ f3/MiSlQw58vmSMFI2MyE9gte4SnNQTMYZ+DsA+Wq2ey3+Efu5CgGvvNS42erhbMpdg1
+ zM3q23FUkR2GRUvh+s7p+rSneheeGyTjWil3irnXpGTWhk87goiiK+Zcf1HudEDltwzo
+ sYfg==
+X-Gm-Message-State: APjAAAUpUTY10oqvwtkzfdGNFFw3kdu0XCuuXzQrqP/xLm3JC0neNyrp
+ BuKO9J3EkkOKuD+Bo6SDow==
+X-Google-Smtp-Source: APXvYqwJbkFnAP9SY9gK21fN7QNbYRGokvHTqwXkjjG2EwAueI58HKRICiwEd5IDm2D8dlODxUiijw==
+X-Received: by 2002:aca:cdc9:: with SMTP id d192mr124199oig.134.1556558619041; 
+ Mon, 29 Apr 2019 10:23:39 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id q26sm672522ota.35.2019.04.29.10.23.37
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 29 Apr 2019 10:23:38 -0700 (PDT)
+Date: Mon, 29 Apr 2019 12:23:37 -0500
+From: Rob Herring <robh@kernel.org>
+To: Sylwester Nawrocki <s.nawrocki@samsung.com>
+Subject: Re: [PATCH RFC 3/8] dt-bindings: exynos: Add ASV tables binding
+ documentation
+Message-ID: <20190429172337.GA30032@bogus>
+References: <20190404171735.12815-1-s.nawrocki@samsung.com>
+ <CGME20190404172234epcas1p37667ec0996000aff9297f13639908dfc@epcas1p3.samsung.com>
+ <20190404171735.12815-4-s.nawrocki@samsung.com>
 MIME-Version: 1.0
-References: <20190423142629.120717-1-venture@google.com>
- <CAO=notzjzpt0WHfJEWXMGgkoJU8UiLnqZnrGrPs-dRH5GNdJyQ@mail.gmail.com>
- <CAO=notz9QVoqKLrhJ3kx9FHja5+Mh68f36O36+1ewLG+SanmOA@mail.gmail.com>
- <20190425172549.GA12376@kroah.com> <20190429165137.mwj4ehhwerunbef4@localhost>
- <CAOesGMg49z4Gip-bLK-h7+LSLa4Fu68r11gT2EV8E8xMCPGDxg@mail.gmail.com>
- <CAO=notwVyTqvxfYRU1XJTwzSNCUAMgYCVpXVvqaN62uSiWyYCQ@mail.gmail.com>
- <CAOesGMjShorZmVeLL1nJNPVOP+vNTVzcA=arU3qW8ZUDYCtjaQ@mail.gmail.com>
-In-Reply-To: <CAOesGMjShorZmVeLL1nJNPVOP+vNTVzcA=arU3qW8ZUDYCtjaQ@mail.gmail.com>
-From: Patrick Venture <venture@google.com>
-Date: Mon, 29 Apr 2019 10:22:51 -0700
-Message-ID: <CAO=notw5wcC4ybPhAuwq9n5HCY18Yewt-Wp7nJWP0kaRnOxtwA@mail.gmail.com>
-Subject: Re: [PATCH v2] soc: add aspeed folder and misc drivers
-To: Olof Johansson <olof@lixom.net>
+Content-Disposition: inline
+In-Reply-To: <20190404171735.12815-4-s.nawrocki@samsung.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_102306_262853_9EE006D7 
-X-CRM114-Status: GOOD (  30.01  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190429_102340_160614_6C8BDEB6 
+X-CRM114-Status: GOOD (  15.35  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ no trust [209.85.167.195 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -102,106 +92,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-aspeed@lists.ozlabs.org, Arnd Bergmann <arnd@arndb.de>,
- Andrew Jeffery <andrew@aj.id.au>, Greg KH <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, soc@kernel.org,
- arm-soc <arm@kernel.org>, Joel Stanley <joel@jms.id.au>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-samsung-soc@vger.kernel.org, b.zolnierkie@samsung.com,
+ pankaj.dubey@samsung.com, linux-kernel@vger.kernel.org, krzk@kernel.org,
+ cw00.choi@samsung.com, kgene@kernel.org, myungjoo.ham@samsung.com,
+ linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 29, 2019 at 10:19 AM Olof Johansson <olof@lixom.net> wrote:
->
-> On Mon, Apr 29, 2019 at 10:16 AM Patrick Venture <venture@google.com> wrote:
-> >
-> > On Mon, Apr 29, 2019 at 10:13 AM Olof Johansson <olof@lixom.net> wrote:
-> > >
-> > > On Mon, Apr 29, 2019 at 10:08 AM Olof Johansson <olof@lixom.net> wrote:
-> > > >
-> > > > On Thu, Apr 25, 2019 at 07:25:49PM +0200, Greg KH wrote:
-> > > > > On Tue, Apr 23, 2019 at 08:28:14AM -0700, Patrick Venture wrote:
-> > > > > > On Tue, Apr 23, 2019 at 8:22 AM Patrick Venture <venture@google.com> wrote:
-> > > > > > >
-> > > > > > > On Tue, Apr 23, 2019 at 7:26 AM Patrick Venture <venture@google.com> wrote:
-> > > > > > > >
-> > > > > > > > Create a SoC folder for the ASPEED parts and place the misc drivers
-> > > > > > > > currently present into this folder.  These drivers are not generic part
-> > > > > > > > drivers, but rather only apply to the ASPEED SoCs.
-> > > > > > > >
-> > > > > > > > Signed-off-by: Patrick Venture <venture@google.com>
-> > > > > > >
-> > > > > > > Accidentally lost the Acked-by when re-sending this patchset as I
-> > > > > > > didn't see it on v1 before re-sending v2 to the larger audience.
-> > > > > >
-> > > > > > Since there was a change between v1 and v2, Arnd, I'd appreciate you
-> > > > > > Ack this version of the patchset since it changes when the soc/aspeed
-> > > > > > Makefile is followed.
-> > > > >
-> > > > > I have no objection for moving stuff out of drivers/misc/ so the SOC
-> > > > > maintainers are free to take this.
-> > > > >
-> > > > > Acked-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> > > >
-> > > > I'm totally confused. This is the second "PATCH v2" of this patch that I came
-> > > > across, I already applied the first.
-> > > >
-> > > > Patrick: Follow up with incremental patch in case there's any difference.
-> > > > Meanwhile, please keep in mind that you're adding a lot of work for people when
-> > > > you respin patches without following up on the previous version. Thanks!
-> > >
-> > > Not only that, but subthreads were cc:d to arm@kernel.org and some
-> > > were not, so I missed the overnight conversation on the topic.
-> > >
-> > > If this email thread is any indication of how the code will be
-> > > flowing, there's definitely need for more structure. Joel, I'm hoping
-> > > you'll coordinate.
-> >
-> > To be honest, this patchset thread was a bit less clear than anyone
-> > prefers.  I use get_maintainers to get the initial list, and so adding
-> > arm@ or soc@ per a request tells me that perhaps those should be
-> > output via that script.
->
-> The tools are working as expected, we normally don't take patches
-> directly to arm@kernel.org, we let them go in through platform
-> maintainers who then send it on to us.
+On Thu, Apr 04, 2019 at 07:17:30PM +0200, Sylwester Nawrocki wrote:
+> This patch adds documentation of the Exynos ASV (Adaptive Voltage Supply)
+> tables DT binding.
+> 
+> Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
+> ---
+>  .../devicetree/bindings/arm/samsung/asv.txt   | 76 +++++++++++++++++++
+>  1 file changed, 76 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/arm/samsung/asv.txt
+> 
+> diff --git a/Documentation/devicetree/bindings/arm/samsung/asv.txt b/Documentation/devicetree/bindings/arm/samsung/asv.txt
+> new file mode 100644
+> index 000000000000..0db907263a91
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/arm/samsung/asv.txt
+> @@ -0,0 +1,76 @@
+> +Exynos Adaptive Supply Voltage (ASV) tables
+> +-------------------------------------------
+> +
+> +The Adaptive Supply Voltage (ASV) on Exynos SoCs is a technique of adjusting
+> +operating points, i.e. the power supply voltage for given clock frequency,
+> +in order to better match actual capabilities of the hardware and optimize power
+> +consumption.  This applies to subsystem of the SoC like: CPU clusters, GPU,
+> +the memory controller or camera ISP.  During production process the SoC chip
+> +is assigned to one of several bins (ASV groups) and the group information
+> +is encoded in the SoC CHIPID block registers and/or OTP memory. This information
+> +is then used by the OS to select more finely matching operating points for
+> +devices.
 
-Thanks for clarifying.
+We already have OPP tables defined for QCom CPUs to do speed bining, and 
+I just reviewed something from Allwinner for similar purposes. We can't 
+have each vendor doing their own thing here.
 
->
-> > >
-> > > I'm with Arnd on whether the code should be in drivers/soc or not --
-> > > most of it likely should not.
-> >
-> > I think the misc drivers for a SoC that are a single user interface
-> > that is focused on the use-case that belongs to that SoC only belong
-> > in soc/, while if there is something we can do in common -- different
-> > story.  If it makes sense to just have misc/aspeed/ instead of
-> > soc/aspeed -- would that align more?
->
-> Those views are how the "board file hell" started on 32-bit ARM too,
-> so we're definitely hesitant to jump to that conclusion without
-> knowing more about what's actually anticipated.
->
->
-> Do you happen to have an estimate on what kind of drivers are
-> needed/anticipated?
-
-There is a UART routing control driver for ASPEED that spawned my push
-to soc/aspeed.  The advice on that thread was to put such drivers
-there.  There's likely to be a few more control-focused aspeed
-drivers.
-
-For Nuvoton, we definitely expect some similar LPC control drivers.
-Possibly an LPC snoop driver, similar to aspeed-lpc-snoop.  This
-supports the idea of creating some form of bmc subsystem as suggested
-above (or in a different thread).
-
->
->
-> -Olof
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
