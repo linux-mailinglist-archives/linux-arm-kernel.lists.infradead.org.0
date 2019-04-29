@@ -2,63 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0D11E5BB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 17:04:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77625E5B9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 17:04:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:
-	In-Reply-To:References:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UC/wSOpq+CKfy1aONa3LJU5SBuEuU+IhRLleNV6NLsU=; b=aFokKFPwBoSAmz
-	O27PKDH5pOJd2I/iDaokcuScei99q34s1QQO8KGKgu+WG78WxdcH+JXgISKdNLq3VHVvLq7I/BZyt
-	CjZbUuftutk8fllm/0CUKeHlDXn0W91VCqABbVrTxRt4Mis7rcPRWPlAUTqVEtcYGKfdp2fG6dsdV
-	LsxmlMJrJqHwaLw5Sk8p/mU3GqvEwjYHR2+iFBpMuILCrD8P444nJu6PGTSWKi0Cz4w5kHqlF82iD
-	jTbaom9OZbSzexgpOaBT8x0t4QoPb7yO8bm3FaQ98ecXbZsE5vB0LlqDZm6H6ANkCZ3rqFYOe4fu7
-	p9O8Zp1k3YCxkYB1o0VA==;
+	List-Owner; bh=MrUtrVvUbdj3OmWQaIycaiBOOUMKp01WUbVeJ15fGL4=; b=LsqN6E5GCuTuM7
+	ikTGorURGq5pMMm+zdrUps2zr/85GZHHDrHg3p62GsykAgsZd8rlWbHjXF01mChTVTWsFcWdzeaYX
+	p7DKZ72E1h7B0twYFzWI0g3dQfHEeo1ovAQrtprcrEiafb6m9YEFodLAiA+M+pU3DBvCFU/ei5G27
+	R/rLHh7mWRbSkLFLzyfzxnHQzMWAHm1doPK7zj3ytI45TsF2f3PtP/OpbZFFw/eWd4ojMUIznW6XA
+	dJjU/ukAAAGSXM8+KDMVViKxeYej7ErVaHiSTt9K8p24xTNELsG3l6sEM/MJaH36rETDMJzOpTKS/
+	/2ws30v2x22pc1o0DUFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL7pU-0006D8-Ot; Mon, 29 Apr 2019 15:04:28 +0000
-Received: from p3plmtsmtp01.prod.phx3.secureserver.net ([184.168.131.12])
+	id 1hL7pF-0005wL-UM; Mon, 29 Apr 2019 15:04:13 +0000
+Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL7pK-00066x-5Z
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 15:04:20 +0000
-Received: from n16.mail01.mtsvc.net ([216.70.64.51]) by :MT-SMTP: with ESMTP
- id L7omhRTvD43EUL7omhpIFr; Mon, 29 Apr 2019 08:03:44 -0700
-X-SID: L7omhRTvD43EU
-Received: from cpe-71-75-202-74.carolina.res.rr.com ([71.75.202.74]:55879
- helo=SBGCLTOFFICE)
- by n16.mail01.mtsvc.net with esmtpsa (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
- (Exim 4.90_1) (envelope-from <tkrantz@stahurabrenner.com>)
- id 1hL7oc-0001vo-Pf; Mon, 29 Apr 2019 11:03:44 -0400
-From: "Timothy Krantz" <tkrantz@stahurabrenner.com>
-To: "'Miquel Raynal'" <miquel.raynal@bootlin.com>,
- <linux-arm-kernel@lists.infradead.org>
-References: <!&!AAAAAAAAAAAuAAAAAAAAAOBWTR25SONAuESb5loyl/sBAMO2jhD3dRHOtM0AqgC7tuYAAAAAAA4AABAAAABB6J1kxOR7T73eMrM92Eq+AQAAAAA=@stahurabrenner.com>
- <20190429095727.48de0b7c@xps13>
-In-Reply-To: <20190429095727.48de0b7c@xps13>
-Subject: RE: espressobin device tree with kernel 5.1 RC
-Date: Mon, 29 Apr 2019 11:03:33 -0400
-Message-ID: <!&!AAAAAAAAAAAuAAAAAAAAAOBWTR25SONAuESb5loyl/sBAMO2jhD3dRHOtM0AqgC7tuYAAAAAAA4AABAAAABFrsjXmIg1Q6VJqGysUaK8AQAAAAA=@stahurabrenner.com>
+ id 1hL7p7-0005vE-Kg; Mon, 29 Apr 2019 15:04:07 +0000
+Received: from mailhost.synopsys.com (dc2-mailhost2.synopsys.com
+ [10.12.135.162])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 98CE4C002F;
+ Mon, 29 Apr 2019 15:04:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1556550245; bh=EP0l9O+XUelRrIR09obEO6YxvbV7t+C4HdJOJBUa3uI=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=CE28/wGVwxEHboixUzXvBZ7W0piorfaFhmjtBZRhP4xYW+cXCsLqM9ARST+iO2GB1
+ 2lmPyX06uBcZ32qFp054wZojyhLd/027tG3kH2nsHICGO+Nz3BVKw9vxHmj2uLhv2m
+ LquYPNX+IDbVZN9WeMFkIRlaqEptiXCg7U64vya21NE/y4j+mN83Juf+EM/pKOllWc
+ ylXLrpNe5cvhyhoYTJCHDF6E09DIbEUQmkgDtYnWQ3womAmskL0pzdFAuhajVFV2cX
+ OI4hPVl+aw0bRpWstwOhobMyeGW1eomffJIM22vstnJyp+4SD+STwP2NhlCIoTIL0i
+ bs+w9Mp89a9wg==
+Received: from US01WXQAHTC1.internal.synopsys.com
+ (us01wxqahtc1.internal.synopsys.com [10.12.238.230])
+ (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 94C3FA0096;
+ Mon, 29 Apr 2019 15:04:02 +0000 (UTC)
+Received: from DE02WEHTCA.internal.synopsys.com (10.225.19.92) by
+ US01WXQAHTC1.internal.synopsys.com (10.12.238.230) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Mon, 29 Apr 2019 08:04:02 -0700
+Received: from DE02WEMBXB.internal.synopsys.com ([fe80::95ce:118a:8321:a099])
+ by DE02WEHTCA.internal.synopsys.com ([::1]) with mapi id
+ 14.03.0415.000; Mon, 29 Apr 2019 17:04:00 +0200
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: Biao Huang <biao.huang@mediatek.com>, "davem@davemloft.net"
+ <davem@davemloft.net>
+Subject: RE: [PATCH 2/2] net-next: stmmac: add mdio clause 45 access from
+ mac device for dwmac4
+Thread-Topic: [PATCH 2/2] net-next: stmmac: add mdio clause 45 access from
+ mac device for dwmac4
+Thread-Index: AQHU/lXExFDw5bAlc0G9MPOfQZ0kMKZTPDhg
+Date: Mon, 29 Apr 2019 15:03:59 +0000
+Message-ID: <78EB27739596EE489E55E81C33FEC33A0B46E586@DE02WEMBXB.internal.synopsys.com>
+References: <1556519724-1576-1-git-send-email-biao.huang@mediatek.com>
+ <1556519724-1576-3-git-send-email-biao.huang@mediatek.com>
+In-Reply-To: <1556519724-1576-3-git-send-email-biao.huang@mediatek.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [10.107.19.176]
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 15.0
-Thread-Index: AQHHHNahTQSMuKl1SiqoWXgyzEZ1/QHhLXjKpl/1MnA=
-Content-Language: en-us
-X-Authenticated-User: 902853 tkrantz@stahurabrenner.com
-X-MT-ID: C1A731F58FEDE20B47E8EFF5D29156B2BFE18A53
-X-CMAE-Envelope: MS4wfMXNw4NOxMMzBVG+bw4aumBGFwRPecQqjLGLc5S0+8BQmRjPKVFKIYowg+OlQ9POQzdtLzkJQpW4ehm1aEiLg5ngs+OBzyJLbpHk1gyLJesT8r0piscY
- /4uUWfsvc51ORTCL05DOPLT6cb4+wmlRAmhfiE1Csw1tTSICRXSMgxhol/ThHCpy3eyLO9naDwLIpKCMbCJIVPqpNAmb75CyOKvVJ2lY35VhedoFXGWDYd7E
- sLno47oU+10u+/3BKbYazg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_080418_290186_21E39CE5 
-X-CRM114-Status: GOOD (  14.34  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190429_080405_682623_422EFFB4 
+X-CRM114-Status: UNSURE (   8.51  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [184.168.131.12 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -70,60 +97,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: "jianguo.zhang@mediatek.com" <jianguo.zhang@mediatek.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "yt.shen@mediatek.com" <yt.shen@mediatek.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Miquel thanks for the response.
+From: Biao Huang <biao.huang@mediatek.com>
+Date: Mon, Apr 29, 2019 at 07:35:24
 
-> -----Original Message-----
-> From: Miquel Raynal [mailto:miquel.raynal@bootlin.com]
-> Sent: Monday, April 29, 2019 3:57 AM
-> To: Timothy Krantz <tkrantz@stahurabrenner.com>; linux-arm-
-> kernel@lists.infradead.org
-> Subject: Re: espressobin device tree with kernel 5.1 RC
-> 
-> Hi Timothy,
-> 
-> "Timothy Krantz" <tkrantz@stahurabrenner.com> wrote on Mon, 22 Apr
-> 2019
-> 15:07:12 -0400:
-> 
-> > Hi,
-> > Please excuse my emailing you directly.  I do not know the proper
-> > channels to report my problem.
-> >
-> 
-> For this kind of question I think adding the Linux ARM Kernel Mailing List
-> (LAKML) is the right thing to do.
+> +		value |= priv->hw->mii.cl45_en;
 
-Got it, thanks for the information.
-
-> 
-> > I build my own kernels for my 3 espressobins.  Up through kernel 5.0
-> > things work fine.
-> >
-> > In the 5.1 RC kernels I have been unable to boot using the 5.1 RC
-> > device tree.  I get :
-> >
-> > ahci-mvebu d00e0000.sata: couldn't get PHY in node sata: -517
-> >
-> > then the boot fails waiting for the rootfs on my sata device.
-> >
-> > If I use a kernel 5.0 device tree with a 5.1 RC kernel it boots fine.
-> >
-> > I am glad to test anything if that would help.
-> 
-> Do you have PHY_MVEBU_A3700_COMPHY enabled?
-
-I had it compiled as a modules but am not using an initrd, so I compiled it into the kernel itself (i.e.  not as a modules)
-But I still fail to boot.  I do not get the trace above but I just hang at "Waiting for root device /dev/sda2...".
-Replacing the 5.1-rc7 device tree with a 5.0 device tree boots fine.
+This tells the MAC that a C45 Capable PHY is connected so it should be 
+written before anything else. Maybe that explains the need for the 
+mdelay() that you have in the code ?
 
 Thanks,
-Tim Krantz
-
+Jose Miguel Abreu
 
 _______________________________________________
 linux-arm-kernel mailing list
