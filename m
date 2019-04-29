@@ -2,87 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D02ADB3C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 06:48:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1FF89DB62
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 07:04:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Iu13Sc5n2DKRkMcOJj3YhL9mb/1Kz+I2fZDClfRMDf8=; b=LdPpXc34huuumf
-	fygY8N2QvtMAHWxIOioWDxea5g1pfWT9pnyy1vG/fROaGEP8Yxn6ZcO4gIxCY498dN1Zs8vANcgw7
-	fgVhzrFxR/woDkp4kWbenB/rav4K+m/gJmUU9e2aF8fq1UEYoaNYsZ96W442AgNtPcdFTwv3/ntKe
-	SEtzEvcv+Ql4XoR/Nx1znQnUlNyfM/J7UrnQtKKss4uy8XXCQNA1yoQlFl4x77OhfnCiSQmS6SpUT
-	myqqQ085ObSlo0XzcWVIpHoz1hqjw3DAKcfE8UHEQunI+L3Y4/rA7I1VAUGVeBJ380yWuAenZmY/p
-	d4/pmIIiIWwkNyvEs71Q==;
+	List-Owner; bh=OKiNBBlKdzjD+hnGKt+51KGOU0iPolpzGrPhZp+oPuo=; b=iAOdBXzhcF37XI
+	0nds7rQIx6knGqr37vJ43oJis/wlohimExviE8k4bnF2Kjp9Q/hENLUmiI43CZ61B1Y92bMCtv9Pr
+	vg5cLj0SfB1aAi/4FPHPJJ3qhx4l92Jqhm4IfMKcWo5FP17WTezD4pDUMHD7XGfBV3EnoMz02LGlC
+	sMcK89aKJ5RdqXmG2Ri5m+FUxNxhM9kJ73YiCOC4p57YestTlFFgG2CmgGM3RtMfPSLPLvqFaCV/n
+	ixIhcvL7Mr5X8zBczfODGTXSVLAczwUv4aIrBA9uSJ0uZWKTImll4UQ2AZKnysshUnz0Pbh3jlTTl
+	ceytgBjpJEGdzZGLcIOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKyDd-0003Sp-SU; Mon, 29 Apr 2019 04:48:45 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1hKyT7-00009r-OO; Mon, 29 Apr 2019 05:04:45 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKyDW-0003SO-Tu; Mon, 29 Apr 2019 04:48:40 +0000
-Received: by mail-io1-xd42.google.com with SMTP id m188so7820139ioa.9;
- Sun, 28 Apr 2019 21:48:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=CobcNFcnItV1Fwxra/QSyVNCgIAThoo3aC2sCuN9HA8=;
- b=pqKkSoBe+RPQkwYeXmonMZ6J5GKAgxBM+dBipqllBf4tORdH8yrCh2/gWNSBtQtOhK
- NAcI0cym0+07yNrGwVXlnw4744MbdMz8N1k1tMC0HvlKh/R5fWBxWhTKMxl8iyr7O8iR
- Myt/usC017uXm+Au0xau06xUhMS0dp0MdtnaMvMyDExTfi77ypqs+QXyZMup18XLEocU
- wYRhpQ2PHYYrJpBZjIOLgTRPLtLjC3Q/vbEI66QK8eypLFYcIkK0XZjNYozQWQPRbWpe
- g/MgMvmpVPa3drOwtuqsufShNXe1eD5C5CwpBWLFm5oTJNUO4WN8UoUmrM0hksF/ttMD
- OfIw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=CobcNFcnItV1Fwxra/QSyVNCgIAThoo3aC2sCuN9HA8=;
- b=lxkSam9XtEsAkPmhGnFTiqvTKPaihtdg/Hgw/mlF1sk8VlwKGkkN30GN9mwFvNuNCM
- Pq9rCasjYFCT0jNUCHLAePLBlXlxUGo935+l9TQ0AdrgQep1P89Z5VU7icd/U2CczLoY
- AXppboUgbE7VBlq1eyiw1PD5t6CdcfQU77wQxYo4ETBOQ9rAMTKhQaZlw+/12ZK2NCf1
- OfFiUtbfOGyAwnRbdxdrWS7Rgn83ZVI/q+nvqjDHsDcRc1bGsLpBb2wIg0u6NUJRK/5d
- 1HrwE38MRxkX8JRhcOC3mgrf2PWBXT1PtpL6LTliDK7NCPVOftnw4phGUCP74xUoGMZF
- jb6w==
-X-Gm-Message-State: APjAAAXxw+8H78pCpbv8L8IsEBWWJpANF+iGz3wMVxTimUq2IICz0AQ0
- 0E3F1upYs3Yokr3x3mNhmXuw2wBT5P1dUsmqeg==
-X-Google-Smtp-Source: APXvYqw2FeNsPMhV5IEOMRwTyxZfZxZOFNEF0Wjt5ScivSjEZPH3rCOROvQdLIHKWZSPo7LRseWzFm4cKsBEU6/GIJo=
-X-Received: by 2002:a6b:b54b:: with SMTP id e72mr15178094iof.106.1556513317684; 
- Sun, 28 Apr 2019 21:48:37 -0700 (PDT)
-MIME-Version: 1.0
+ id 1hKySy-00008w-Ot; Mon, 29 Apr 2019 05:04:38 +0000
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 77A4D81F0F;
+ Mon, 29 Apr 2019 05:04:34 +0000 (UTC)
+Received: from dhcp-128-65.nay.redhat.com (ovpn-12-135.pek2.redhat.com
+ [10.72.12.135])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 3A98F1001DF6;
+ Mon, 29 Apr 2019 05:04:14 +0000 (UTC)
+Date: Mon, 29 Apr 2019 13:04:10 +0800
+From: Dave Young <dyoung@redhat.com>
+To: Pingfan Liu <kernelfans@gmail.com>
+Subject: Re: [PATCHv2] kernel/crash: make parse_crashkernel()'s return value
+ more indicant
+Message-ID: <20190429050410.GA7982@dhcp-128-65.nay.redhat.com>
 References: <1556087581-14513-1-git-send-email-kernelfans@gmail.com>
  <10dc5468-6cd9-85c7-ba66-1dfa5aa922b7@suse.com>
  <CAFgQCTstd667wP6g+maxYekz4u3iBR2R=FHUiS1V=XxTs6MKUw@mail.gmail.com>
  <20190428083710.GA11981@dhcp-128-65.nay.redhat.com>
  <CAFgQCTvQezGM7xgY2Q1RSUiQ7wLdxtUAeztrO3AqDfjx8f2kdg@mail.gmail.com>
-In-Reply-To: <CAFgQCTvQezGM7xgY2Q1RSUiQ7wLdxtUAeztrO3AqDfjx8f2kdg@mail.gmail.com>
-From: Pingfan Liu <kernelfans@gmail.com>
-Date: Mon, 29 Apr 2019 12:48:26 +0800
-Message-ID: <CAFgQCTszGixzH5ZrwOzjbp7W91Wxo3XvA+EeEx0ErVVcYMr0FA@mail.gmail.com>
-Subject: Re: [PATCHv2] kernel/crash: make parse_crashkernel()'s return value
- more indicant
-To: Dave Young <dyoung@redhat.com>
+ <CAFgQCTszGixzH5ZrwOzjbp7W91Wxo3XvA+EeEx0ErVVcYMr0FA@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAFgQCTszGixzH5ZrwOzjbp7W91Wxo3XvA+EeEx0ErVVcYMr0FA@mail.gmail.com>
+User-Agent: Mutt/1.11.3 (2019-02-01)
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.27]); Mon, 29 Apr 2019 05:04:35 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190428_214838_984268_F6271F96 
-X-CRM114-Status: GOOD (  24.18  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190428_220436_852125_DE3F8EC3 
+X-CRM114-Status: GOOD (  29.78  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (kernelfans[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -127,81 +107,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 29, 2019 at 11:04 AM Pingfan Liu <kernelfans@gmail.com> wrote:
->
-> On Sun, Apr 28, 2019 at 4:37 PM Dave Young <dyoung@redhat.com> wrote:
+On 04/29/19 at 12:48pm, Pingfan Liu wrote:
+> On Mon, Apr 29, 2019 at 11:04 AM Pingfan Liu <kernelfans@gmail.com> wrote:
 > >
-> > On 04/25/19 at 04:20pm, Pingfan Liu wrote:
-> > > On Wed, Apr 24, 2019 at 4:31 PM Matthias Brugger <mbrugger@suse.com> wrote:
-> > > >
-> > > >
-> > > [...]
-> > > > > @@ -139,6 +141,8 @@ static int __init parse_crashkernel_simple(char *cmdline,
-> > > > >               pr_warn("crashkernel: unrecognized char: %c\n", *cur);
-> > > > >               return -EINVAL;
-> > > > >       }
-> > > > > +     if (*crash_size == 0)
-> > > > > +             return -EINVAL;
-> > > >
-> > > > This covers the case where I pass an argument like "crashkernel=0M" ?
-> > > > Can't we fix that by using kstrtoull() in memparse and check if the return value
-> > > > is < 0? In that case we could return without updating the retptr and we will be
-> > > > fine.
-> > > >
-> > > It seems that kstrtoull() treats 0M as invalid parameter, while
-> > > simple_strtoull() does not.
+> > On Sun, Apr 28, 2019 at 4:37 PM Dave Young <dyoung@redhat.com> wrote:
 > > >
-> > > If changed like your suggestion, then all the callers of memparse()
-> > > will treats 0M as invalid parameter. This affects many components
-> > > besides kexec.  Not sure this can be done or not.
+> > > On 04/25/19 at 04:20pm, Pingfan Liu wrote:
+> > > > On Wed, Apr 24, 2019 at 4:31 PM Matthias Brugger <mbrugger@suse.com> wrote:
+> > > > >
+> > > > >
+> > > > [...]
+> > > > > > @@ -139,6 +141,8 @@ static int __init parse_crashkernel_simple(char *cmdline,
+> > > > > >               pr_warn("crashkernel: unrecognized char: %c\n", *cur);
+> > > > > >               return -EINVAL;
+> > > > > >       }
+> > > > > > +     if (*crash_size == 0)
+> > > > > > +             return -EINVAL;
+> > > > >
+> > > > > This covers the case where I pass an argument like "crashkernel=0M" ?
+> > > > > Can't we fix that by using kstrtoull() in memparse and check if the return value
+> > > > > is < 0? In that case we could return without updating the retptr and we will be
+> > > > > fine.
+> > > > >
+> > > > It seems that kstrtoull() treats 0M as invalid parameter, while
+> > > > simple_strtoull() does not.
+> > > >
+> > > > If changed like your suggestion, then all the callers of memparse()
+> > > > will treats 0M as invalid parameter. This affects many components
+> > > > besides kexec.  Not sure this can be done or not.
+> > >
+> > > simple_strtoull is obsolete, move to kstrtoull is the right way.
+> > >
+> > > $ git grep memparse|wc
+> > >     158     950   10479
+> > >
+> > > Except some documentation/tools etc there are still a log of callers
+> > > which directly use the return value as the ull number without error
+> > > checking.
+> > >
+> > > So it would be good to mark memparse as obsolete as well in
+> > > lib/cmdline.c, and introduce a new function eg. kmemparse() to use
+> > > kstrtoull,  and return a real error code, and save the size in an
+> > > argument like &size.  Then update X86 crashkernel code to use it.
+> > >
+> > Thank for your good suggestion.
 > >
-> > simple_strtoull is obsolete, move to kstrtoull is the right way.
-> >
-> > $ git grep memparse|wc
-> >     158     950   10479
-> >
-> > Except some documentation/tools etc there are still a log of callers
-> > which directly use the return value as the ull number without error
-> > checking.
-> >
-> > So it would be good to mark memparse as obsolete as well in
-> > lib/cmdline.c, and introduce a new function eg. kmemparse() to use
-> > kstrtoull,  and return a real error code, and save the size in an
-> > argument like &size.  Then update X86 crashkernel code to use it.
-> >
-> Thank for your good suggestion.
->
-Go through the v5.0 kernel code, I think it will be a huge job.
+> Go through the v5.0 kernel code, I think it will be a huge job.
+> 
+> The difference between unsigned long long simple_strtoull(const char
+> *cp, char **endp, unsigned int base) and int _kstrtoull(const char *s,
+> unsigned int base, unsigned long long *res) is bigger than expected,
+> especially the output parameter @res. Many references to
+> memparse(const char *ptr, char **retptr) rely on @retptr to work. A
+> typical example from arch/x86/kernel/e820.c
+>         mem_size = memparse(p, &p);
+>         if (p == oldp)
+>                 return -EINVAL;
+> 
+>         userdef = 1;
+>         if (*p == '@') {  <----------- here
+>                 start_at = memparse(p+1, &p);
+>                 e820__range_add(start_at, mem_size, E820_TYPE_RAM);
+>         } else if (*p == '#') {
+>                 start_at = memparse(p+1, &p);
+>                 e820__range_add(start_at, mem_size, E820_TYPE_ACPI);
+>         } else if (*p == '$') {
+>                 start_at = memparse(p+1, &p);
+>                 e820__range_add(start_at, mem_size, E820_TYPE_RESERVED);
+>         }
+> 
+> So we need to resolve the prototype of kstrtoull() firstly, and maybe
+> kstrtouint() etc too. All of them have lots of references in kernel.
+> 
+> Any idea about this?
 
-The difference between unsigned long long simple_strtoull(const char
-*cp, char **endp, unsigned int base) and int _kstrtoull(const char *s,
-unsigned int base, unsigned long long *res) is bigger than expected,
-especially the output parameter @res. Many references to
-memparse(const char *ptr, char **retptr) rely on @retptr to work. A
-typical example from arch/x86/kernel/e820.c
-        mem_size = memparse(p, &p);
-        if (p == oldp)
-                return -EINVAL;
 
-        userdef = 1;
-        if (*p == '@') {  <----------- here
-                start_at = memparse(p+1, &p);
-                e820__range_add(start_at, mem_size, E820_TYPE_RAM);
-        } else if (*p == '#') {
-                start_at = memparse(p+1, &p);
-                e820__range_add(start_at, mem_size, E820_TYPE_ACPI);
-        } else if (*p == '$') {
-                start_at = memparse(p+1, &p);
-                e820__range_add(start_at, mem_size, E820_TYPE_RESERVED);
-        }
+Not only this place, a lot of other places, I think no hurry to fix them
+all at one time.
 
-So we need to resolve the prototype of kstrtoull() firstly, and maybe
-kstrtouint() etc too. All of them have lots of references in kernel.
+As we talked just do it according to previous reply,  mark memparse as
+obsolete, and create a new function to use kstrtoull, and make it used
+in crashkernel code first.
 
-Any idea about this?
-
-Thanks,
-Pingfan
+Thanks
+Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
