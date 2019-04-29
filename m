@@ -2,102 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E5436DDB0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 10:27:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E5EEDDBE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 10:28:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=x2p/Ok+BEsqSLI0cOE4oNAlTI7j4H6Q/WboMbbYVOS4=; b=iZCgk6hBFLxuBSlQr5ye3d8nyc
-	XcDKS1WeEF3nC2zsW6p3AIPPAabgFitJN40pr41j5BSlmrWG3e5n74qSOSZaxYCkLSVu95+fGPHTr
-	177TjyOlLweBxBrMiLyqcZYl4fNerP/7sEbuShc77wM5UO8xeMBn2eQ0voI3w1iT632o2bAy8iS1V
-	Swu95VwmIz3r3MC3pJTmncfgXv1myuAsQp3vQyYSuCby+D2VvSVMvvEjivB/vB6oTLv/3HJzkJ6xo
-	nqOLmW9VNp2lqxnOlEwCQQYD5sKVcktXJS2SIyNCe1RsRaYzLgpt5Xuur3FeyzwYlNHq9fKjpjo2F
-	utyZeyIw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jp02de+XsPRJLiQxnMvgV0dHuFu9TohY+g5lsfL+lPM=; b=Q7VfUjLYN+p2my
+	IXbcI5VrQY4EJPVyC+igXtbGGUt55APmlIVvRwAJ45RXwSH5x2O5aKCkEuivZF2P1cgzmK+uOZDfa
+	jpjvM/+TtMGqF+PXM08cBPVN5sWfCwKRbVOe3B0AI2PQMW03/fuajN4z/oWbSsxJuSBTlagXsc5Aj
+	pWM2IZjR3718hS0w1uCNEJFEY+Jz9NmKjCBbNj0rb/SHS9rUm5YK9DMtYe1UDro5Uzum2vyIEVsoc
+	P6N/wXZv6Z1tDyvx2q9n5qNx/f6jZfRZOloenWpszJHVM8Py3cTMdjXU4crlfnQkTRYbLCtRAh2aR
+	Iy5TM1C15k5W2D75B9uw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL1dD-00055m-TG; Mon, 29 Apr 2019 08:27:23 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL1d0-0004zr-TW
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 08:27:12 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 80FB980D;
- Mon, 29 Apr 2019 01:27:10 -0700 (PDT)
-Received: from [10.1.196.92] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 47E5D3F71A; Mon, 29 Apr 2019 01:27:09 -0700 (PDT)
-Subject: Re: [PATCH 0/7] irqchip: Use devm_platform_ioremap_resource()
-To: Mukesh Ojha <mojha@codeaurora.org>, tglx@linutronix.de,
- jason@lakedaemon.net, yamada.masahiro@socionext.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <1554362413-3305-1-git-send-email-mojha@codeaurora.org>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
-Organization: ARM Ltd
-Message-ID: <5574b406-9ef2-bde3-6270-6fbe5d4ad893@arm.com>
-Date: Mon, 29 Apr 2019 09:27:07 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hL1eE-0005nn-Py; Mon, 29 Apr 2019 08:28:26 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hL1dq-0005XB-6e
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 08:28:05 +0000
+Received: by mail-qt1-x844.google.com with SMTP id i31so2205818qti.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 29 Apr 2019 01:28:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=pIjwi9Pdwq2tpQOmRVLR8AJ+RfItycNgwKBPS/FfFwQ=;
+ b=KCepw7VGzHhTmEryB3hPHprLKpgV2QymJ2RW0SjTSFDdpK0ktwAMBDSJ1ITy+XDh60
+ DoPTY09BntxLpOu+kCo5BVMGZNy/qjM3Zj6aUXL1PUv1mNwY/Viwx9hmyBnY3bpuaeNI
+ XKNVhhBOR2MP/AIpyjpQxeKiRYyJ8JIVSDDJA=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=pIjwi9Pdwq2tpQOmRVLR8AJ+RfItycNgwKBPS/FfFwQ=;
+ b=s4ON7zerqyDWHcgLM2k3XU8GtSgtNXpW9d4n+BtY5zYe+qFnvgp77mFNx2QL/76v92
+ V8U53hRB7OYWIma5nCYdsBlDmtKAGSXiymM5RLVUcwE104SYU7ZIbbvzcknx5gcxEFW1
+ UX3eVf9t/Z4uFpAW91T4nnDkNECr3NaJCqTGMsbQ3b9gx+3pmGYvUIz3thyNFMRVJFZ6
+ CY9/g38rjpsGX1bV4vbnilbLwfnMWxgqMfm7KrVS8ul4MsEchGmwBHutHD/FgtGedawL
+ 8l5cqBwsJ4XfE568Jti1gzusTFjCgpEqacnLehnI/v11zz49qVNbhG5mhhqZ4+CCb2/v
+ bkew==
+X-Gm-Message-State: APjAAAWKxdtDHo6edYHxTdN27yIb4zrspmsmYEy0G6vuRkVuzDX5RQoV
+ tPyfW5jpMIcV3vdeaiip40ECH6f/ydqlQZN8esY=
+X-Google-Smtp-Source: APXvYqyIzM18/pZaeSSVKfrsxmgXogVAee5aa7XHdKeT4Kr5aRXtgQ89YiVr3LiG7FMcDqt23jMOQnz29AtcwPe8azo=
+X-Received: by 2002:a0c:ac83:: with SMTP id m3mr47431723qvc.85.1556526481157; 
+ Mon, 29 Apr 2019 01:28:01 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <1554362413-3305-1-git-send-email-mojha@codeaurora.org>
-Content-Language: en-US
+References: <20190416162150.150154-1-venture@google.com>
+In-Reply-To: <20190416162150.150154-1-venture@google.com>
+From: Joel Stanley <joel@jms.id.au>
+Date: Mon, 29 Apr 2019 08:27:49 +0000
+Message-ID: <CACPK8XeTOhcdKPsKgsBJXAYeMDeHRLOSLRF5XO0oT-5XUhghMQ@mail.gmail.com>
+Subject: Re: [PATCH 0/3] update aspeed-bmc-opp-zaius device-tree
+To: Patrick Venture <venture@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_012711_019075_21CC2ECD 
-X-CRM114-Status: GOOD (  15.17  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190429_012802_502029_888556BA 
+X-CRM114-Status: GOOD (  13.20  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ [list.dnswl.org]
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (joel.stan[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -109,38 +90,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, linux-aspeed@lists.ozlabs.org,
+ Andrew Jeffery <andrew@aj.id.au>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 04/04/2019 08:20, Mukesh Ojha wrote:
-> Hi All,
-> 
-> This is just a minor change to promote using of this api
-> devm_platform_ioremap_resource() and nothing else functional
-> change it does.
-> 
-> Also, there are patches where only ioremap is used without requesting
-> the mem region so this devm_platform_ioremap_resource() take cares all
-> of that in single call.
+On Tue, 16 Apr 2019 at 16:22, Patrick Venture <venture@google.com> wrote:
+>
+> Hi,
+>
+> This series contains three updates to the Zaius ASPEED device-tree to
+> add voltrage regulators, and update addresses and aliases.  The Infineon
+> and Intersil drivers are staged on hwmon-next, and the trivial device
+> dt-bindings changed are up for review.
 
-This series has a number of problems:
+Applied to the aspeed SoC tree, thanks Patrick.
 
-- It seems to introduce bugs rather than fixing anything
-- It doesn't do a complete job of cleaning up the drivers
-- Patch 4 does more than it is advertises doing
-- You haven't cc'd the authors of these drivers, which would be common
-courtesy
+Cheers,
 
-For a series that is a "minor change", that's a bit much. Please do not
-send such blanket changes without understanding what you are doing.
+Joel
 
-Thanks,
-
-	M.
--- 
-Jazz is not dead. It just smells funny...
+>
+> Maxim Sloyko (1):
+>   ARM: dts: aspeed: zaius: add Infineon and Intersil regulators
+>
+> Robert Lippert (2):
+>   ARM: dts: aspeed: zaius: update 12V brick I2C address
+>   ARM: dts: aspeed: zaius: fixed I2C bus numbers for pcie slots
+>
+>  arch/arm/boot/dts/aspeed-bmc-opp-zaius.dts | 121 +++++++++++++++++++--
+>  1 file changed, 113 insertions(+), 8 deletions(-)
+>
+> --
+> 2.21.0.392.gf8f6787159e-goog
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
