@@ -2,100 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08434E2C9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 14:37:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F70AE306
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 14:48:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Q253l/VH4t97mywuUumGVj64wF9kQhGU/iobk5kmohA=; b=dGRihAO3IUze4HWk4hnruB0kY
-	uTQ4sScAfe8ZGwZ1dk7XNuK1xvQbd2yHoI/+QZVe7C4BXVTz2Yx6H1Y4gkGe19qCf+ofNlPX/rlOF
-	j/OpeIedQnzjP00g/qr16CQN98m93DEwCK8NrpTOFzGgsg8yhKAaSq9zLOyKZhcYI4knj6pTQQ/Vk
-	1mjvTF3g+VPaNFB3Q7um2BMt6nJi8Vrsoh2bsPwwVwJKbFlkPGvrnQnwqieJtBGUhLuK+S0yEWE30
-	v0JEmxlpmnwaQZX2zDCFom7eTnfXu83/+pYWDB3s3emDgiH83CQDyCXPF0NfkaG1jewvz8T3bGVE2
-	wosJVXM5w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IuYkSr8WQzeqmF78O5MW1VXFvHIRMNoPFVSU87hvKM0=; b=Op0WCl8HXoHNuH
+	DOlxFVnQcPTlVOlZQlHO8WBgRPNU18pwZgk36ZGC0U0A8SupIrdYonMbM5agaIkTQ47iyRjd5QjN+
+	NqXQRMQEjI2+D+cMIjqqF5kFiTTcYpViYzm/Wus0EIJgT62mv+Wy/gNRDXlYTLnFsTEnXxQ/wCPoI
+	+U1LSCkbhmckg4qv84MfSpAp3CX+8ILAQ+K3L5axwCrJdZjEP7/J5oz5BqI7Yl7+cRjL3axBa4pCL
+	3AwztDHd5yab4YYNoj3o0+plf5xhN9YCpP/uwFv7OaGE9PqP2FJInf2h1JFh78Dve2+lP2voiWrJ2
+	oERMODDD5+tlU+DKFbeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL5XA-000867-GJ; Mon, 29 Apr 2019 12:37:24 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hL5i1-00034L-JB; Mon, 29 Apr 2019 12:48:37 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL5X2-00085d-NX
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 12:37:18 +0000
-Received: by mail-pf1-x442.google.com with SMTP id v80so660637pfa.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Apr 2019 05:37:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=IFFzNMvg4aerENLfoVLpjXioHRtFuVQGNKde3eyKf2o=;
- b=kUzvsZgiT/vZOoQBDblCuDWc2xBq3/p/XLRYif4EdTRu7LHjaDHXFHZNHH4/WiyL49
- BFUATnWaUZUmmOML1cQDU3umMAgvywNPupBwmxJLiyaaGY/egWRe54BAx8NuORGVJV2h
- fUDYyQ0ugCVbo5DgO6ceY1VCOCNqGlx7yVArpylBWsVFAKyq1m13v2ZBMSRsFH+LfiZS
- pt43nKjYoYRAhcFJh0jX7FaGCwBu5kMopD/LI0SIW44J0aE2g2rL8T7PIDCrHfaT8Mmt
- hV4E2MRIz3DlQrVTfI3uWwNtlCuZumLIyF1yD4iwmBQ8uh+/44DIDdl5G7JmOnre55Jp
- D6KA==
+ id 1hL5hu-00033o-FY; Mon, 29 Apr 2019 12:48:31 +0000
+Received: by mail-oi1-f196.google.com with SMTP id k9so5120162oig.9;
+ Mon, 29 Apr 2019 05:48:29 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=IFFzNMvg4aerENLfoVLpjXioHRtFuVQGNKde3eyKf2o=;
- b=cnBUcNlKWoH59TwFlZCEUBVnGbRMCoA5N146uZ6HH4JP19tkpKz/CYreq0Fh50jpY0
- UiQ3HK5rSpACv+crLWP1hHqNkWV85hPhqSqgkqTlrWBGDrKDBOYEXfSqNvkXna0YoEQq
- 4ET6lr+GTRVmRRgS96Rz6kfMT1fRnvsvNjGsIXb5hMla/Cz/c1tJsQjUW8E7adGMYZWS
- SqD/ZMBd6Io2l0FcS5Ci1FuW6W9XGBn2UTlSzEtVqVHoosUOZTyusrIIKVhENJSMO2TI
- R4iumvFbdeNXKnHJqb/9S2SFSF9hu86LoHb5YWm3KMn88pV22sCY9J8448iad7PrmsR/
- Z9iQ==
-X-Gm-Message-State: APjAAAVMgjlHq0+KJ/YCQULEfAAUI533BBH/RvpBzzZudfOS3aDI4k6n
- E1QUqh4JAB5WbUUwd3LiL9A=
-X-Google-Smtp-Source: APXvYqz8WBIp2QXPGhZOJ8h2HONqwn9VJsro+NHjmts6JEem1OPzitZz3lO4ksu72pUB8WSIztA16Q==
-X-Received: by 2002:aa7:8392:: with SMTP id u18mr64414760pfm.217.1556541435352; 
- Mon, 29 Apr 2019 05:37:15 -0700 (PDT)
-Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id
- j16sm43555013pfi.58.2019.04.29.05.37.13
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 29 Apr 2019 05:37:14 -0700 (PDT)
-Subject: Re: [PATCH v3 08/16] watchdog: imx_sc_wdt: drop warning after calling
- watchdog_init_timeout
-To: =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?= <u.kleine-koenig@pengutronix.de>,
- Wolfram Sang <wsa+renesas@sang-engineering.com>
-References: <20190419181601.7412-1-wsa+renesas@sang-engineering.com>
- <20190419181601.7412-9-wsa+renesas@sang-engineering.com>
- <20190429101558.6vyiospb6oqsstt7@pengutronix.de>
-From: Guenter Roeck <linux@roeck-us.net>
-Message-ID: <616a9d4e-7050-a6c2-727d-f62e08d3d98c@roeck-us.net>
-Date: Mon, 29 Apr 2019 05:37:12 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=og27ttBtjgJ9jOWpsX9tE4/VFPoPVEaauxxZKhLh4wA=;
+ b=j6wJiQ3rAM4ClVTzfu6I9YaLhthDcB6MRlV/C8t57/CQA+cg2ci6CHoXhvkxr3J4Cz
+ flzVc6rJ5RmXIjEwIdQMob/0p/WTGpAESK4l5sAtf1xcof07ZW1xe2aKZPbFGVceyuq6
+ KbzwwDsqLex90/86VexG6+OBY4dHhjHdcNLyf7kTGbHm9GuQvSOgxTh4xp4t5pGL1FT3
+ EMcv63JXZo+1eM3UAhqIX4Z44yMqjW5fxgNywwBBfBMTgA+AjDseIYz3881scn+Wmtqk
+ FL48eamNidT0DC+c1lnzOqmqw/cG+WKnVUVBF5yIBcoyVOALvh6kCJeoEDIy6J1m/A+7
+ mskA==
+X-Gm-Message-State: APjAAAVCVOsl2hLSqnndD7+XTtnOU/t9IVSP5qaB2tHzm3W2RjsLRAGZ
+ i8iQbbpfF4gaS90hUOgW0A==
+X-Google-Smtp-Source: APXvYqwKkbM8iUDWYjwi3FrVr9CbooaBbkgXDxXE3TLfLAeQGcrA39ywmAR8rFYO2DOBT72rVzWKCg==
+X-Received: by 2002:aca:be89:: with SMTP id
+ o131mr15557106oif.138.1556542108407; 
+ Mon, 29 Apr 2019 05:48:28 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id c3sm7872781otr.57.2019.04.29.05.48.27
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 29 Apr 2019 05:48:27 -0700 (PDT)
+Date: Mon, 29 Apr 2019 07:48:27 -0500
+From: Rob Herring <robh@kernel.org>
+To: Long Cheng <long.cheng@mediatek.com>
+Subject: Re: [PATCH 3/4] dt-bindings: dma: uart: rename binding
+Message-ID: <20190429124827.GA13816@bogus>
+References: <1556336193-15198-1-git-send-email-long.cheng@mediatek.com>
+ <1556336193-15198-4-git-send-email-long.cheng@mediatek.com>
 MIME-Version: 1.0
-In-Reply-To: <20190429101558.6vyiospb6oqsstt7@pengutronix.de>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <1556336193-15198-4-git-send-email-long.cheng@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_053716_767827_FB4FA437 
-X-CRM114-Status: GOOD (  19.45  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190429_054830_522545_E62BD3A1 
+X-CRM114-Status: GOOD (  11.96  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ no trust [209.85.167.196 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
+ in digit (robherring2[at]gmail.com)
  0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ provider (robherring2[at]gmail.com)
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -109,43 +89,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-watchdog@vger.kernel.org, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- linux-renesas-soc@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Wim Van Sebroeck <wim@linux-watchdog.org>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>, Sean Wang <sean.wang@kernel.org>,
+ Zhenbao Liu <zhenbao.liu@mediatek.com>,
+ Nicolas Boichat <drinkcat@chromium.org>, Long Cheng <long.cheng@mediatek.com>,
+ linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
+ YT Shen <yt.shen@mediatek.com>, Yingjoe Chen <yingjoe.chen@mediatek.com>,
+ devicetree@vger.kernel.org, Sean Wang <sean.wang@mediatek.com>,
+ Ryder Lee <ryder.lee@mediatek.com>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
+ srv_heupstream@mediatek.com, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Randy Dunlap <rdunlap@infradead.org>, linux-kernel@vger.kernel.org,
+ Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ dmaengine@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gNC8yOS8xOSAzOjE1IEFNLCBVd2UgS2xlaW5lLUvDtm5pZyB3cm90ZToKPiBPbiBGcmksIEFw
-ciAxOSwgMjAxOSBhdCAwODoxNTo1M1BNICswMjAwLCBXb2xmcmFtIFNhbmcgd3JvdGU6Cj4+IFRo
-ZSBjb3JlIHdpbGwgcHJpbnQgb3V0IGRldGFpbHMgbm93Lgo+Pgo+PiBSZXZpZXdlZC1ieTogR3Vl
-bnRlciBSb2VjayA8bGludXhAcm9lY2stdXMubmV0Pgo+PiBTaWduZWQtb2ZmLWJ5OiBXb2xmcmFt
-IFNhbmcgPHdzYStyZW5lc2FzQHNhbmctZW5naW5lZXJpbmcuY29tPgo+PiAtLS0KPj4gICBkcml2
-ZXJzL3dhdGNoZG9nL2lteF9zY193ZHQuYyB8IDUgKy0tLS0KPj4gICAxIGZpbGUgY2hhbmdlZCwg
-MSBpbnNlcnRpb24oKyksIDQgZGVsZXRpb25zKC0pCj4+Cj4+IGRpZmYgLS1naXQgYS9kcml2ZXJz
-L3dhdGNoZG9nL2lteF9zY193ZHQuYyBiL2RyaXZlcnMvd2F0Y2hkb2cvaW14X3NjX3dkdC5jCj4+
-IGluZGV4IDg2YzI3MjJmMmEwOS4uNmRjMjRjZWIxYjJjIDEwMDY0NAo+PiAtLS0gYS9kcml2ZXJz
-L3dhdGNoZG9nL2lteF9zY193ZHQuYwo+PiArKysgYi9kcml2ZXJzL3dhdGNoZG9nL2lteF9zY193
-ZHQuYwo+IAo+IFRoaXMgZHJpdmVyIGlzbid0IGluIG5leHQsIGFuZCBJIGRvbid0IGtub3cgd2hl
-cmUgdG8gbG9vayBmb3IgaXQuCj4gCgpCcmFuY2ggd2F0Y2hkb2ctbmV4dCBvZgpnaXQ6Ly9naXQu
-a2VybmVsLm9yZy9wdWIvc2NtL2xpbnV4L2tlcm5lbC9naXQvZ3JvZWNrL2xpbnV4LXN0YWdpbmcu
-Z2l0Cgo+PiBAQCAtMTE3LDEwICsxMTcsNyBAQCBzdGF0aWMgaW50IGlteF9zY193ZHRfcHJvYmUo
-c3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPj4gICAJaW14X3NjX3dkZC0+cGFyZW50ID0g
-JnBkZXYtPmRldjsKPj4gICAJaW14X3NjX3dkZC0+dGltZW91dCA9IERFRkFVTFRfVElNRU9VVDsK
-Pj4gICAKPj4gLQlyZXQgPSB3YXRjaGRvZ19pbml0X3RpbWVvdXQoaW14X3NjX3dkZCwgMCwgJnBk
-ZXYtPmRldik7Cj4+IC0JaWYgKHJldCkKPj4gLQkJZGV2X3dhcm4oJnBkZXYtPmRldiwgIkZhaWxl
-ZCB0byBzZXQgdGltZW91dCB2YWx1ZSwgdXNpbmcgZGVmYXVsdFxuIik7Cj4+IC0KPj4gKwl3YXRj
-aGRvZ19pbml0X3RpbWVvdXQoaW14X3NjX3dkZCwgMCwgJnBkZXYtPmRldik7Cj4gCj4gT25lIHNp
-ZGUgZWZmZWN0IGlzIGhvd2V2ZXIgdGhhdCByZXQgaXNuJ3Qgc2V0IGFueSBtb3JlLiBTbyBJIHdv
-bmRlciBpZiBhCj4gZmFpbHVyZSBpbiB3YXRjaGRvZ19pbml0X3RpbWVvdXQoKSByZWFsbHkgbWFr
-ZXMgdGhlIGNvcmUgcHJpbnQgdGhlCj4gZGV0YWlscyBhcyBleHBlY3RlZC4KPiAKClNvcnJ5LCBJ
-IGRvbid0IHVuZGVyc3RhbmQuIFRoZSB3YXJuaW5nIGlzIHByaW50ZWQgaW4gd2F0Y2hkb2dfaW5p
-dF90aW1lb3V0KCkuCldoYXQgZG9lcyB0aGF0IGhhdmUgdG8gZG8gd2l0aCBzZXR0aW5nIHJldCBo
-ZXJlIG9yIG5vdCA/CgpUaGFua3MsCkd1ZW50ZXIKCl9fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4
-LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9y
-Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Sat, 27 Apr 2019 11:36:32 +0800, Long Cheng wrote:
+> The filename matches mtk-uart-apdma.c.
+> So using "mtk-uart-apdma.txt" should be better.
+> And add some property.
+> 
+> Signed-off-by: Long Cheng <long.cheng@mediatek.com>
+> ---
+>  .../devicetree/bindings/dma/8250_mtk_dma.txt       |   33 ------------
+>  .../devicetree/bindings/dma/mtk-uart-apdma.txt     |   55 ++++++++++++++++++++
+>  2 files changed, 55 insertions(+), 33 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/dma/8250_mtk_dma.txt
+>  create mode 100644 Documentation/devicetree/bindings/dma/mtk-uart-apdma.txt
+> 
+
+Please add Acked-by/Reviewed-by tags when posting new versions. However,
+there's no need to repost patches *only* to add the tags. The upstream
+maintainer will do that for acks received on the version they apply.
+
+If a tag was not added on purpose, please state why and what changed.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
