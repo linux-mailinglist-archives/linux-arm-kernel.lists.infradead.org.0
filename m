@@ -2,111 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CA6ADF86
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 11:35:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39DF7DFCB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 11:51:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pRnv6Bd3kUfvHRpoEUj0xW40mcyVFpQ1nzZy4EEEpCg=; b=iSrQ5Bv7Bdyun0
-	Q13ELknNyO0Ox8kRF44hSoUDeZEuzWyCi1O9UhhvT8iKumE5ffweVSoa95Tapqq4mERgJZB32bepE
-	nIS7NG75n7ntK2xCrLC3Hf1HHwQmc47zRqS1BD1jbbLwadSiRpL3QGExiKdaHw1g+qCUzV39Q3KgO
-	lhhCa+kgOARLRCqqK4DoM12V/zoHPPaz1zeJIA1+Oedc7kAALa34QefUlcWqlfMkyLdQTebDtaNKP
-	wMxWNIyt4w+QQl930DObm/rfsrXxVK4th4rdN7jeAkPC1e/FZO/Ec3emq7q9fZJZgdISm+s4PS6A8
-	Up/zwhQ/rhziNc9sGpqQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=wkJc/A1nERl1AVWGuthsXeDDg/a4nD2pBFkKPvxrsb0=; b=qE7gvGC9l0upoAnutLNKqOyiT
+	nKjQSYHLoRvTQMZxVxBzMauH7qj4Qgd2d1yeTTm1xPeZBSjXMm9iHA86z3+KMkzpXWN7jo6AtPz6q
+	JVyMJdz4o3n79BHm882jkwVIssdRlf9XuCRnnTEFImQtUuDV/iFr7U0zHZDdAmiUjtI+Q8qJJeRO7
+	VEVGMGEhTiiwvZ4k1VkIRU6/eglKlf/E0bYdmzNuwor1uTr5h1xNbjHpL9NAuc7/whxXScdYhleeN
+	qe/YnLzkl3Oeq0j3kWRAsvFmrWhSp1O9yetr6tnEMLl5YFoahRbrLSqZ5iqyAXRc+GdO5Z1+CxyfW
+	DCaYxzCEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL2hC-0000Rh-UE; Mon, 29 Apr 2019 09:35:34 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL2h2-0000RD-Vi
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 09:35:29 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 773B880D;
- Mon, 29 Apr 2019 02:35:22 -0700 (PDT)
-Received: from [10.1.196.92] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 10AE03F5AF; Mon, 29 Apr 2019 02:35:20 -0700 (PDT)
-Subject: Re: [RFC PATCH 2/3] irqchip/exiu: implement ACPI gpiolib/irqchip
- support
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Mika Westerberg <mika.westerberg@linux.intel.com>
-References: <20190425102020.21533-1-ard.biesheuvel@linaro.org>
- <20190425102020.21533-3-ard.biesheuvel@linaro.org>
- <1fbbfc30-7389-5618-a046-ab8872882494@arm.com>
- <CAKv+Gu99JXhNnUPpfN274qN7+TJXvFTAatn_31yDDAcrU7LpaQ@mail.gmail.com>
- <eedc61f7-5c71-46eb-0f06-18daa9c5b5df@arm.com>
- <CAKv+Gu-RnR5=RqW7=GTaUYSpQUSTLpCfaUQfASxha-KhcxY4_g@mail.gmail.com>
- <CAKv+Gu_7tprJ7UOowQ+3fhoO2Sq2yJ8SKzcM5OiZE3eWm=o_Tw@mail.gmail.com>
- <CAKv+Gu-7BNe9Zk-zPe1_SZmGH=5P+PubUc2G+03+ZWt=eD==Bg@mail.gmail.com>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- mQINBE6Jf0UBEADLCxpix34Ch3kQKA9SNlVQroj9aHAEzzl0+V8jrvT9a9GkK+FjBOIQz4KE
- g+3p+lqgJH4NfwPm9H5I5e3wa+Scz9wAqWLTT772Rqb6hf6kx0kKd0P2jGv79qXSmwru28vJ
- t9NNsmIhEYwS5eTfCbsZZDCnR31J6qxozsDHpCGLHlYym/VbC199Uq/pN5gH+5JHZyhyZiNW
- ozUCjMqC4eNW42nYVKZQfbj/k4W9xFfudFaFEhAf/Vb1r6F05eBP1uopuzNkAN7vqS8XcgQH
- qXI357YC4ToCbmqLue4HK9+2mtf7MTdHZYGZ939OfTlOGuxFW+bhtPQzsHiW7eNe0ew0+LaL
- 3wdNzT5abPBscqXWVGsZWCAzBmrZato+Pd2bSCDPLInZV0j+rjt7MWiSxEAEowue3IcZA++7
- ifTDIscQdpeKT8hcL+9eHLgoSDH62SlubO/y8bB1hV8JjLW/jQpLnae0oz25h39ij4ijcp8N
- t5slf5DNRi1NLz5+iaaLg4gaM3ywVK2VEKdBTg+JTg3dfrb3DH7ctTQquyKun9IVY8AsxMc6
- lxl4HxrpLX7HgF10685GG5fFla7R1RUnW5svgQhz6YVU33yJjk5lIIrrxKI/wLlhn066mtu1
- DoD9TEAjwOmpa6ofV6rHeBPehUwMZEsLqlKfLsl0PpsJwov8TQARAQABtCNNYXJjIFp5bmdp
- ZXIgPG1hcmMuenluZ2llckBhcm0uY29tPokCOwQTAQIAJQIbAwYLCQgHAwIGFQgCCQoLBBYC
- AwECHgECF4AFAk6NvYYCGQEACgkQI9DQutE9ekObww/+NcUATWXOcnoPflpYG43GZ0XjQLng
- LQFjBZL+CJV5+1XMDfz4ATH37cR+8gMO1UwmWPv5tOMKLHhw6uLxGG4upPAm0qxjRA/SE3LC
- 22kBjWiSMrkQgv5FDcwdhAcj8A+gKgcXBeyXsGBXLjo5UQOGvPTQXcqNXB9A3ZZN9vS6QUYN
- TXFjnUnzCJd+PVI/4jORz9EUVw1q/+kZgmA8/GhfPH3xNetTGLyJCJcQ86acom2liLZZX4+1
- 6Hda2x3hxpoQo7pTu+XA2YC4XyUstNDYIsE4F4NVHGi88a3N8yWE+Z7cBI2HjGvpfNxZnmKX
- 6bws6RQ4LHDPhy0yzWFowJXGTqM/e79c1UeqOVxKGFF3VhJJu1nMlh+5hnW4glXOoy/WmDEM
- UMbl9KbJUfo+GgIQGMp8mwgW0vK4HrSmevlDeMcrLdfbbFbcZLNeFFBn6KqxFZaTd+LpylIH
- bOPN6fy1Dxf7UZscogYw5Pt0JscgpciuO3DAZo3eXz6ffj2NrWchnbj+SpPBiH4srfFmHY+Y
- LBemIIOmSqIsjoSRjNEZeEObkshDVG5NncJzbAQY+V3Q3yo9og/8ZiaulVWDbcpKyUpzt7pv
- cdnY3baDE8ate/cymFP5jGJK++QCeA6u6JzBp7HnKbngqWa6g8qDSjPXBPCLmmRWbc5j0lvA
- 6ilrF8m5Ag0ETol/RQEQAM/2pdLYCWmf3rtIiP8Wj5NwyjSL6/UrChXtoX9wlY8a4h3EX6E3
- 64snIJVMLbyr4bwdmPKULlny7T/R8dx/mCOWu/DztrVNQiXWOTKJnd/2iQblBT+W5W8ep/nS
- w3qUIckKwKdplQtzSKeE+PJ+GMS+DoNDDkcrVjUnsoCEr0aK3cO6g5hLGu8IBbC1CJYSpple
- VVb/sADnWF3SfUvJ/l4K8Uk4B4+X90KpA7U9MhvDTCy5mJGaTsFqDLpnqp/yqaT2P7kyMG2E
- w+eqtVIqwwweZA0S+tuqput5xdNAcsj2PugVx9tlw/LJo39nh8NrMxAhv5aQ+JJ2I8UTiHLX
- QvoC0Yc/jZX/JRB5r4x4IhK34Mv5TiH/gFfZbwxd287Y1jOaD9lhnke1SX5MXF7eCT3cgyB+
- hgSu42w+2xYl3+rzIhQqxXhaP232t/b3ilJO00ZZ19d4KICGcakeiL6ZBtD8TrtkRiewI3v0
- o8rUBWtjcDRgg3tWx/PcJvZnw1twbmRdaNvsvnlapD2Y9Js3woRLIjSAGOijwzFXSJyC2HU1
- AAuR9uo4/QkeIrQVHIxP7TJZdJ9sGEWdeGPzzPlKLHwIX2HzfbdtPejPSXm5LJ026qdtJHgz
- BAb3NygZG6BH6EC1NPDQ6O53EXorXS1tsSAgp5ZDSFEBklpRVT3E0NrDABEBAAGJAh8EGAEC
- AAkFAk6Jf0UCGwwACgkQI9DQutE9ekMLBQ//U+Mt9DtFpzMCIHFPE9nNlsCm75j22lNiw6mX
- mx3cUA3pl+uRGQr/zQC5inQNtjFUmwGkHqrAw+SmG5gsgnM4pSdYvraWaCWOZCQCx1lpaCOl
- MotrNcwMJTJLQGc4BjJyOeSH59HQDitKfKMu/yjRhzT8CXhys6R0kYMrEN0tbe1cFOJkxSbV
- 0GgRTDF4PKyLT+RncoKxQe8lGxuk5614aRpBQa0LPafkirwqkUtxsPnarkPUEfkBlnIhAR8L
- kmneYLu0AvbWjfJCUH7qfpyS/FRrQCoBq9QIEcf2v1f0AIpA27f9KCEv5MZSHXGCdNcbjKw1
- 39YxYZhmXaHFKDSZIC29YhQJeXWlfDEDq6nIhvurZy3mSh2OMQgaIoFexPCsBBOclH8QUtMk
- a3jW/qYyrV+qUq9Wf3SKPrXf7B3xB332jFCETbyZQXqmowV+2b3rJFRWn5hK5B+xwvuxKyGq
- qDOGjof2dKl2zBIxbFgOclV7wqCVkhxSJi/QaOj2zBqSNPXga5DWtX3ekRnJLa1+ijXxmdjz
- hApihi08gwvP5G9fNGKQyRETePEtEAWt0b7dOqMzYBYGRVr7uS4uT6WP7fzOwAJC4lU7ZYWZ
- yVshCa0IvTtp1085RtT3qhh9mobkcZ+7cQOY+Tx2RGXS9WeOh2jZjdoWUv6CevXNQyOUXMM=
-Organization: ARM Ltd
-Message-ID: <74beef02-64fe-5ca4-5f9e-daf230384446@arm.com>
-Date: Mon, 29 Apr 2019 10:35:19 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+	id 1hL2wz-0006bi-77; Mon, 29 Apr 2019 09:51:53 +0000
+Received: from regular1.263xmail.com ([211.150.70.205])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hL2wr-0006bC-7o; Mon, 29 Apr 2019 09:51:47 +0000
+Received: from zhangqing?rock-chips.com (unknown [192.168.167.236])
+ by regular1.263xmail.com (Postfix) with ESMTP id 3281A4A6;
+ Mon, 29 Apr 2019 17:51:35 +0800 (CST)
+X-263anti-spam: KSV:0;BIG:0;
+X-MAIL-GRAY: 0
+X-MAIL-DELIVERY: 1
+X-KSVirus-check: 0
+X-ADDR-CHECKED4: 1
+X-ABS-CHECKED: 1
+X-SKE-CHECKED: 1
+X-ANTISPAM-LEVEL: 2
+Received: from [172.16.12.236] (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P420T140005497153280S1556531492608937_; 
+ Mon, 29 Apr 2019 17:51:34 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <7e1d8f2b177a105ff24d92cf140eb7b4>
+X-RL-SENDER: zhangqing@rock-chips.com
+X-SENDER: zhangqing@rock-chips.com
+X-LOGIN-NAME: zhangqing@rock-chips.com
+X-FST-TO: huangtao@rock-chips.com
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+Subject: Re: [PATCH v2 1/3] thermal: rockchip: fix up the tsadc pinctrl
+ setting error
+To: Daniel Lezcano <daniel.lezcano@linaro.org>, heiko@sntech.de
+References: <1556187154-22632-1-git-send-email-zhangqing@rock-chips.com>
+ <1556187154-22632-2-git-send-email-zhangqing@rock-chips.com>
+ <be0170d7-64dc-896d-b847-5be192304791@linaro.org>
+From: "elaine.zhang" <zhangqing@rock-chips.com>
+Organization: rockchip
+Message-ID: <8d41ea98-e0e8-60c8-3237-ade5d0d169bf@rock-chips.com>
+Date: Mon, 29 Apr 2019 17:51:32 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <CAKv+Gu-7BNe9Zk-zPe1_SZmGH=5P+PubUc2G+03+ZWt=eD==Bg@mail.gmail.com>
+In-Reply-To: <be0170d7-64dc-896d-b847-5be192304791@linaro.org>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_023528_058769_A86FA831 
-X-CRM114-Status: GOOD (  28.30  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190429_025145_678468_0CB0C365 
+X-CRM114-Status: GOOD (  24.27  )
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
- information
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -118,246 +83,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Graeme Gregory <graeme.gregory@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Masahisa Kojima <masahisa.kojima@linaro.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, huangtao@rock-chips.com,
+ linux-pm@vger.kernel.org, xxx@rock-chips.com, xf@rock-chips.com,
+ linux-kernel@vger.kernel.org, edubezval@gmail.com,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, rui.zhang@intel.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 29/04/2019 10:09, Ard Biesheuvel wrote:
-> On Sat, 27 Apr 2019 at 00:27, Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
->>
->> On Fri, 26 Apr 2019 at 13:45, Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
->>>
->>> On Fri, 26 Apr 2019 at 10:44, Marc Zyngier <marc.zyngier@arm.com> wrote:
->>>>
->>>> On 26/04/2019 09:24, Ard Biesheuvel wrote:
->>>>> On Thu, 25 Apr 2019 at 17:33, Marc Zyngier <marc.zyngier@arm.com> wrote:
->>>>>>
->>>>>> Hi Ard,
->>>>>>
->>>>>> On 25/04/2019 11:20, Ard Biesheuvel wrote:
->>>>>>> Expose the existing EXIU hierarchical irqchip domain code to permit
->>>>>>> the interrupt controller to be used as the irqchip component of a
->>>>>>> GPIO controller on ACPI systems.
->>>>>>>
->>>>>>> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
->>>>>>> ---
->>>>>>>  drivers/irqchip/irq-sni-exiu.c | 82 +++++++++++++++++---
->>>>>>>  1 file changed, 73 insertions(+), 9 deletions(-)
->>>>>>>
->>>>>>
->>>>>> [...]
->>>>>>
->>>>>>> +int exiu_acpi_init(struct platform_device *pdev, struct gpio_chip *gc)
->>>>>>> +{
->>>>>>> +     struct irq_domain *parent_domain = NULL, *domain;
->>>>>>> +     struct resource *res;
->>>>>>> +     int irq;
->>>>>>> +
->>>>>>> +     irq = platform_get_irq(pdev, 0);
->>>>>>> +     if (irq > 0)
->>>>>>> +             parent_domain = irq_get_irq_data(irq)->domain;
->>>>>>> +
->>>>>>> +     if (!parent_domain) {
->>>>>>> +             dev_err(&pdev->dev, "unable to obtain parent domain\n");
->>>>>>> +             return -ENODEV;
->>>>>>> +     }
->>>>>>> +
->>>>>>> +     res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
->>>>>>> +     if (!res) {
->>>>>>> +             dev_err(&pdev->dev, "failed to parse memory resource\n");
->>>>>>> +             return -ENXIO;
->>>>>>> +     }
->>>>>>> +
->>>>>>> +     domain = exiu_init(parent_domain, dev_fwnode(&pdev->dev), res);
->>>>>>> +     if (IS_ERR(domain)) {
->>>>>>> +             dev_err(&pdev->dev, "failed to create IRQ domain (%ld)\n",
->>>>>>> +                     PTR_ERR(domain));
->>>>>>> +             return PTR_ERR(domain);
->>>>>>> +     }
->>>>>>> +
->>>>>>> +     gc->irq.domain = domain;
->>>>>>> +     gc->to_irq = exiu_acpi_gpio_to_irq;
->>>>>>> +
->>>>>>> +     dev_info(&pdev->dev, "%d interrupts forwarded\n", NUM_IRQS);
->>>>>>> +
->>>>>>> +     return 0;
->>>>>>> +}
->>>>>>> +EXPORT_SYMBOL(exiu_acpi_init);
->>>>>>> +#endif
->>>>>>>
->>>>>>
->>>>>> I must say I'm not overly keen on this function. Why can't this be
->>>>>> probed as an ACPI device, creating the corresponding domain, and leaving
->>>>>> to the GPIO driver the task of doing the GPIO stuff?
->>>>>>
->>>>>
->>>>> Because ACPI only permits 'system' interrupts or GPIO interrupts, it
->>>>> does not allow arbitrary device objects in the ACPI namespace to be
->>>>> targeted as interrupt controllers.
->>>>
->>>> Hmmm. We already have at least one driver (irq-mbigen.c) that does
->>>> exactly that. It uses interrupts from the GIC (it is notionally behind
->>>> the ITS), and offers a bunch of interrupt lines itself. Why is it different?
->>>>
->>>
->>> You are right, it isn't. It turns out that there is another way to
->>> signal ACPI events based on interrupts, and it involves the ACPI0013
->>> GED device. I will try to model it that way instead.
->>>
->>
->> Unfortunately, this doesn't work either. The GED device can respond to
->> GSIVs only, and so going via the EXIU doesn't work.
->>
->> I have attempted to hack it up via AML, but the GED driver uses a
->> threaded interrupt, and so the interrupt is re-enabled at the GIC
->> before the AML handler is executed (which clears it in the EXIU)
->>
->> For the RAS case, I guess we could let the firmware pick an arbitrary
->> unused SPI and signal that directly into the GIC, but for the power
->> button (which is physically wired to the EXIU), we have to model the
->> EXIU either has a separate pseudo-GPIO controller, or as part of the
->> real GPIO block.
-> 
-> (+ Mika)
-> 
-> I made some progress describing the EXIU and GPIO controllers as follow.
-> 
->     Device (EXIU) {
->       Name (_HID, "SCX0008")
->       Name (_UID, Zero)
->       Name (_CRS, ResourceTemplate () {
->         Memory32Fixed (ReadWrite, SYNQUACER_EXIU_BASE, SYNQUACER_EXIU_SIZE)
->         Interrupt (ResourceConsumer, Level, ActiveHigh, ExclusiveAndWake) {
->           144, 145, 146, 147, 148, 149, 150, 151,
->           152, 153, 154, 155, 156, 157, 158, 159,
->           160, 161, 162, 163, 164, 165, 166, 167,
->           168, 169, 170, 171, 172, 173, 174, 175,
->         }
->       })
->       Name (_DSD, Package () {
->         ToUUID ("daffd814-6eba-4d8c-8a91-bc9bbf4aa301"),
->         Package () {
->           Package () { "socionext,spi-base", 112 },
->         }
->       })
->     }
-> 
-> and
-> 
->     Device (GPIO) {
->       Name (_HID, "SCX0007")
->       Name (_UID, Zero)
->       Name (_CRS, ResourceTemplate () {
->         Memory32Fixed (ReadWrite, SYNQUACER_GPIO_BASE, SYNQUACER_GPIO_SIZE)
->         Interrupt (ResourceConsumer, Edge, ActiveLow,
-> ExclusiveAndWake, 0, "\\_SB.EXIU") {
->           7,
->         }
->       })
->       Name (_AEI, ResourceTemplate () {
->         GpioInt (Edge, ActiveHigh, ExclusiveAndWake, PullDefault, 0,
-> "\\_SB.GPIO")
->         {
->           7
->         }
->       })
->       Method (_E07) {
->         Notify (\_SB.PWRB, 0x80)
->       }
->     }
-> 
-> This is actually a fairly accurate depiction of reality: the EXIU is a
-> separate unit, and only some of the GPIOs are routed through it.
-> 
-> In the GPIO controller's to_irq() callback, I return the Linux IRQ
-> number based on the platform IRQ resources claimed by the GPIO device,
-> and I end up with something like
-> 
->  46:          0 ... 0      EXIU   7 Edge      ACPI:Event
-> 
-> which looks correct to me. debugfs tells me it is mapped as
-> 
-> handler:  handle_fasteoi_irq
-> device:   (null)
-> status:   0x00000001
-> istate:   0x00000020
->             IRQS_ONESHOT
-> ddepth:   0
-> wdepth:   1
-> dstate:   0x03404201
->             IRQ_TYPE_EDGE_RISING
->             IRQD_ACTIVATED
->             IRQD_IRQ_STARTED
->             IRQD_SINGLE_TARGET
->             IRQD_WAKEUP_STATE
-> node:     0
-> affinity: 0-23
-> effectiv: 0
-> domain:  \_SB_.EXIU
->  hwirq:   0x7
->  chip:    EXIU
->   flags:   0x55
->              IRQCHIP_SET_TYPE_MASKED
->              IRQCHIP_MASK_ON_SUSPEND
->              IRQCHIP_SKIP_SET_WAKE
->              IRQCHIP_EOI_THREADED
->  parent:
->     domain:  irqchip@(____ptrval____)-1
->      hwirq:   0x97
->      chip:    GICv3
->       flags:   0x15
->                  IRQCHIP_SET_TYPE_MASKED
->                  IRQCHIP_MASK_ON_SUSPEND
->                  IRQCHIP_SKIP_SET_WAKE
-> 
-> The EXIU domain is described as
-> 
-> name:   \_SB_.EXIU
->  size:   32
->  mapped: 1
->  flags:  0x00000041
->  parent: irqchip@(____ptrval____)-1
->     name:   irqchip@(____ptrval____)-1
->      size:   0
->      mapped: 55
->      flags:  0x00000041
-> 
-> Unfortunately, the system locks up entirely as soon as the interrupt
-> is triggered (I use a DIP switch in this case). So while the
-> description is accurate and the correct interrupt does get mapped,
-> something is still not working entirely as expected.
-> 
-> Any thoughts?
-
-It feels like an interrupt storm with an edge vs level misconfiguration.
-Can you check that the IRQ_TYPE_EDGE_RISING is correctly propagated
-across the hierarchy?
-
-The EXIU block has:
-
-Interrupt (ResourceConsumer, Level, ActiveHigh, ExclusiveAndWake) {
-
-while the GPIO block has:
-
-Interrupt (ResourceConsumer, Edge, ActiveLow, ExclusiveAndWake, 0,
-"\\_SB.EXIU")
-
-and the interrupt is configured for yet another trigger
-(IRQ_TYPE_EDGE_RISING).
-
-Hope this helps,
-
-	M.
--- 
-Jazz is not dead. It just smells funny...
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+aGksCgrlnKggMjAxOS80LzI4IOS4i+WNiDg6NDUsIERhbmllbCBMZXpjYW5vIOWGmemBkzoKPiBP
+biAyNS8wNC8yMDE5IDEyOjEyLCBFbGFpbmUgWmhhbmcgd3JvdGU6Cj4+IEV4cGxpY2l0bHkgdXNl
+IHRoZSBwaW5jdHJsIHRvIHNldC91bnNldCB0aGUgcmlnaHQgbW9kZQo+PiBpbnN0ZWFkIG9mIHJl
+bHlpbmcgb24gdGhlIHBpbmN0cmwgaW5pdCBtb2RlLgo+PiBBbmQgaXQgcmVxdWlyZXMgc2V0dGlu
+ZyB0aGUgdHNodXQgcG9sYXJpdHkgYmVmb3JlIHNlbGVjdCBwaW5jdHJsLgo+Pgo+PiBXaGVuIHRo
+ZSB0ZW1wZXJhdHVyZSBzZW5zb3IgbW9kZSBpcyBzZXQgdG8gMCwgaXQgd2lsbCBhdXRvbWF0aWNh
+bGx5Cj4+IHJlc2V0IHRoZSBib2FyZCB2aWEgdGhlIENsb2NrLVJlc2V0LVVuaXQgKENSVSkgaWYg
+dGhlIG92ZXIgdGVtcGVyYXR1cmUKPj4gdGhyZXNob2xkIGlzIHJlYWNoZWQuIEhvd2V2ZXIsIHdo
+ZW4gdGhlIHBpbmN0cmwgaW5pdGlhbGl6ZXMsIGl0IGRvZXMgYQo+PiB0cmFuc2l0aW9uIHRvICJv
+dHBfb3V0IiB3aGljaCBtYXkgbGVhZCB0aGUgU29DIHJlc3RhcnQgYWxsIHRoZSB0aW1lLgo+Pgo+
+PiAib3RwX291dCIgSU8gbWF5IGJlIGNvbm5lY3RlZCB0byB0aGUgUkVTRVQgY2lyY3VpdCBvbiB0
+aGUgaGFyZHdhcmUuCj4+IElmIHRoZSBJTyBpcyBpbiB0aGUgd3Jvbmcgc3RhdGUsIGl0IHdpbGwg
+dHJpZ2dlciBSRVNFVC4KPj4gKHNpbWlsYXIgdG8gdGhlIGVmZmVjdCBvZiBwcmVzc2luZyB0aGUg
+UkVTRVQgYnV0dG9uKQo+PiB3aGljaCB3aWxsIGNhdXNlIHRoZSBzb2MgdG8gcmVzdGFydCBhbGwg
+dGhlIHRpbWUuCj4+Cj4+IFNpZ25lZC1vZmYtYnk6IEVsYWluZSBaaGFuZyA8emhhbmdxaW5nQHJv
+Y2stY2hpcHMuY29tPgo+PiAtLS0KPj4gICBkcml2ZXJzL3RoZXJtYWwvcm9ja2NoaXBfdGhlcm1h
+bC5jIHwgMzcgKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKy0tLQo+PiAgIDEgZmls
+ZSBjaGFuZ2VkLCAzNCBpbnNlcnRpb25zKCspLCAzIGRlbGV0aW9ucygtKQo+Pgo+PiBkaWZmIC0t
+Z2l0IGEvZHJpdmVycy90aGVybWFsL3JvY2tjaGlwX3RoZXJtYWwuYyBiL2RyaXZlcnMvdGhlcm1h
+bC9yb2NrY2hpcF90aGVybWFsLmMKPj4gaW5kZXggOWM3NjQzZDYyZWQ3Li4wM2ZmNDk0ZjI4NjQg
+MTAwNjQ0Cj4+IC0tLSBhL2RyaXZlcnMvdGhlcm1hbC9yb2NrY2hpcF90aGVybWFsLmMKPj4gKysr
+IGIvZHJpdmVycy90aGVybWFsL3JvY2tjaGlwX3RoZXJtYWwuYwo+PiBAQCAtMTcyLDYgKzE3Miw5
+IEBAIHN0cnVjdCByb2NrY2hpcF90aGVybWFsX2RhdGEgewo+PiAgIAlpbnQgdHNodXRfdGVtcDsK
+Pj4gICAJZW51bSB0c2h1dF9tb2RlIHRzaHV0X21vZGU7Cj4+ICAgCWVudW0gdHNodXRfcG9sYXJp
+dHkgdHNodXRfcG9sYXJpdHk7Cj4+ICsJc3RydWN0IHBpbmN0cmwgKnBpbmN0cmw7Cj4+ICsJc3Ry
+dWN0IHBpbmN0cmxfc3RhdGUgKmdwaW9fc3RhdGU7Cj4+ICsJc3RydWN0IHBpbmN0cmxfc3RhdGUg
+Km90cF9zdGF0ZTsKPj4gICB9Owo+PiAgIAo+PiAgIC8qKgo+PiBAQCAtMTI0Miw2ICsxMjQ1LDgg
+QEAgc3RhdGljIGludCByb2NrY2hpcF90aGVybWFsX3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZp
+Y2UgKnBkZXYpCj4+ICAgCQlyZXR1cm4gZXJyb3I7Cj4+ICAgCX0KPj4gICAKPj4gKwl0aGVybWFs
+LT5jaGlwLT5jb250cm9sKHRoZXJtYWwtPnJlZ3MsIGZhbHNlKTsKPj4gKwo+PiAgIAllcnJvciA9
+IGNsa19wcmVwYXJlX2VuYWJsZSh0aGVybWFsLT5jbGspOwo+PiAgIAlpZiAoZXJyb3IpIHsKPj4g
+ICAJCWRldl9lcnIoJnBkZXYtPmRldiwgImZhaWxlZCB0byBlbmFibGUgY29udmVydGVyIGNsb2Nr
+OiAlZFxuIiwKPj4gQEAgLTEyNjcsNiArMTI3MiwzMSBAQCBzdGF0aWMgaW50IHJvY2tjaGlwX3Ro
+ZXJtYWxfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPj4gICAJdGhlcm1hbC0+
+Y2hpcC0+aW5pdGlhbGl6ZSh0aGVybWFsLT5ncmYsIHRoZXJtYWwtPnJlZ3MsCj4+ICAgCQkJCSAg
+dGhlcm1hbC0+dHNodXRfcG9sYXJpdHkpOwo+PiAgIAo+PiArCWlmICh0aGVybWFsLT50c2h1dF9t
+b2RlID09IFRTSFVUX01PREVfR1BJTykgewo+PiArCQl0aGVybWFsLT5waW5jdHJsID0gZGV2bV9w
+aW5jdHJsX2dldCgmcGRldi0+ZGV2KTsKPj4gKwkJaWYgKElTX0VSUih0aGVybWFsLT5waW5jdHJs
+KSkgewo+PiArCQkJZGV2X2VycigmcGRldi0+ZGV2LCAiZmFpbGVkIHRvIGZpbmQgdGhlcm1hbCBw
+aW5jdHJsXG4iKTsKPj4gKwkJCXBhbmljKCJwYW5pY19vbl9maW5kIHRoZXJtYWwgcGluY3RybC4u
+LlxuIik7Cj4gSSByZWFsaXplIG15IGNvbW1lbnQgd2FzIGNvbmZ1c2luZy4gSSB3YXMgbm90IHNh
+eWluZyB0byBhZGQgYSBwYW5pYygpCj4gY2FsbCBoZXJlIGJ1dCB0aGF0IHRoZSBjb2RlIHdhcyBh
+Y2Nlc3NpbmcgYSBOVUxMIHBvaW50ZXIuIFBsZWFzZSByZW1vdmUKPiB0aGUgcGFuaWMuCk9LLCBJ
+J2xsIGZpeGVkIGl0Lgo+Cj4+ICsJCQlyZXR1cm4gUFRSX0VSUih0aGVybWFsLT5waW5jdHJsKTsK
+Pj4gKwkJfQo+PiArCj4+ICsJCXRoZXJtYWwtPmdwaW9fc3RhdGUgPSBwaW5jdHJsX2xvb2t1cF9z
+dGF0ZSh0aGVybWFsLT5waW5jdHJsLAo+PiArCQkJCQkJCSAgICJncGlvIik7Cj4+ICsJCWlmIChJ
+U19FUlJfT1JfTlVMTCh0aGVybWFsLT5ncGlvX3N0YXRlKSkgewo+PiArCQkJZGV2X2VycigmcGRl
+di0+ZGV2LCAiZmFpbGVkIHRvIGZpbmQgdGhlcm1hbCBncGlvIHN0YXRlXG4iKTsKPj4gKwkJCXJl
+dHVybiAtRUlOVkFMOwo+PiArCQl9Cj4+ICsKPj4gKwkJdGhlcm1hbC0+b3RwX3N0YXRlID0gcGlu
+Y3RybF9sb29rdXBfc3RhdGUodGhlcm1hbC0+cGluY3RybCwKPj4gKwkJCQkJCQkgICJvdHBvdXQi
+KTsKPj4gKwkJaWYgKElTX0VSUl9PUl9OVUxMKHRoZXJtYWwtPm90cF9zdGF0ZSkpIHsKPj4gKwkJ
+CWRldl9lcnIoJnBkZXYtPmRldiwgImZhaWxlZCB0byBmaW5kIHRoZXJtYWwgb3Rwb3V0IHN0YXRl
+XG4iKTsKPj4gKwkJCXJldHVybiAtRUlOVkFMOwo+PiArCQl9Cj4+ICsKPj4gKwkJcGluY3RybF9z
+ZWxlY3Rfc3RhdGUodGhlcm1hbC0+cGluY3RybCwgdGhlcm1hbC0+b3RwX3N0YXRlKTsKPiBJIGRv
+bid0IHVuZGVyc3RhbmQgdGhpcyBwb3J0aW9uIG9mIGNvZGUuIFRoZSB0ZXN0IGFib3ZlIHNheXMg
+dHNodXRfbW9kZQo+IGlzIFRTSFVUX01PREVfR1BJTy4gV2h5IGFjdGluZyBvbiB0aGVybWFsLT5v
+dHBfc3RhdGUgdGhlbiA/Cj4KPgo+IEluIG15IHByZXZpb3VzIGNvbW1lbnQsIEkgd2FzIHN1Z2dl
+c3RpbmcgdGhlIGZvbGxvd2luZzoKPgo+IFR3byBtb3JlIGZpZWxkcyBpbnN0ZWFkIG9mIHRocmVl
+Ogo+Cj4gCXN0cnVjdCByb2NrY2hpcF90aGVybWFsX2RhdGEgewo+ICAgIAkJaW50IHRzaHV0X3Rl
+bXA7Cj4gCSAgCWVudW0gdHNodXRfbW9kZSB0c2h1dF9tb2RlOwo+ICAgIAkJZW51bSB0c2h1dF9w
+b2xhcml0eSB0c2h1dF9wb2xhcml0eTsKPiAJIAlzdHJ1Y3QgcGluY3RybCAqcGluY3RybDsKPiAJ
+CXN0cnVjdCBwaW5jdHJsX3N0YXRlICpwaW5jdHJsX3N0YXRlOwo+IAl9Owo+Cj4gCVsgLi4uIF0K
+Pgo+IAl0aGVybWFsLT5waW5jdHJsID0gZGV2bV9waW5jdHJsX2dldCgmcGRldi0+ZGV2KTsKPiAJ
+aWYgKElTX0VSUih0aGVybWFsLT5waW5jdHJsKSkgewo+IAkJZGV2X2VycigiLi4uIik7Cj4gCQly
+ZXR1cm4gUFRSX0VSUih0aGVybWFsLT5waW5jdHJsKTsKPiAJfQo+Cj4gCXRoZXJtYWwtPnBpbmN0
+cmxfc3RhdGUgPSBwaW5jdHJsX2xvb2t1cF9zdGF0ZSh0aGVybWFsLT5waW5jdHJsLAo+IAkJdGhl
+cm1hbC0+dHNodXRfbW9kZSA9PSBUU0hVVF9NT0RFX0dQSU8gPyAiZ3BpbyIgOgo+IAkJCQkJCQki
+b3Rwb3V0IjsKPgo+IAlpZiAoSVNfRVJSX09SX05VTEwodGhlcm1hbC0+cGluY3RybF9zdGF0ZSkg
+ewo+IAkJZGV2X2VycigiLi4uIik7Cj4gCQlyZXR1cm4gUFRSX0VSUih0aGVybWFsLT5waW5jdHJs
+X3N0YXRlKTsKPiAJfQo+Cj4gICAJcGluY3RybF9zZWxlY3Rfc3RhdGUodGhlcm1hbC0+cGluY3Ry
+bCwgdGhlcm1hbC0+cGluY3RybF9zdGF0ZSk7Cj4KPgo+IAlbIC4uLiBdCj4KPiBJcyBpdCB3cm9u
+ZyA/Cj4KPgo+PiArCX0KPj4gKwo+PiAgIAlmb3IgKGkgPSAwOyBpIDwgdGhlcm1hbC0+Y2hpcC0+
+Y2huX251bTsgaSsrKSB7Cj4+ICAgCQllcnJvciA9IHJvY2tjaGlwX3RoZXJtYWxfcmVnaXN0ZXJf
+c2Vuc29yKHBkZXYsIHRoZXJtYWwsCj4+ICAgCQkJCQkJJnRoZXJtYWwtPnNlbnNvcnNbaV0sCj4+
+IEBAIC0xMzM3LDggKzEzNjcsOCBAQCBzdGF0aWMgaW50IF9fbWF5YmVfdW51c2VkIHJvY2tjaGlw
+X3RoZXJtYWxfc3VzcGVuZChzdHJ1Y3QgZGV2aWNlICpkZXYpCj4+ICAgCj4+ICAgCWNsa19kaXNh
+YmxlKHRoZXJtYWwtPnBjbGspOwo+PiAgIAljbGtfZGlzYWJsZSh0aGVybWFsLT5jbGspOwo+PiAt
+Cj4+IC0JcGluY3RybF9wbV9zZWxlY3Rfc2xlZXBfc3RhdGUoZGV2KTsKPj4gKwlpZiAodGhlcm1h
+bC0+dHNodXRfbW9kZSA9PSBUU0hVVF9NT0RFX0dQSU8pCj4+ICsJCXBpbmN0cmxfc2VsZWN0X3N0
+YXRlKHRoZXJtYWwtPnBpbmN0cmwsIHRoZXJtYWwtPmdwaW9fc3RhdGUpOwo+IEFuZCB0aGVuOgo+
+IAkgcGluY3RybF9zZWxlY3Rfc3RhdGUodGhlcm1hbC0+cGluY3RybCwgdGhlcm1hbC0+cGluY3Ry
+bF9zdGF0ZSk7CgpwaW5jdHJsIHNlbGVjdCB0byBncGlvIG1vZGUgd2hlbiB0c2FkYyBzdXNwZW5k
+IGFuZCBzaHV0ZG93bi4KCldoZW4gc3VzcGVuZCwgdHNhZGMgaXMgZGlzYWJsZWQsIHRoZSBvdHBf
+cGluIHNob3VsZCByZXZlcnQgdG8gdGhlIApkZWZhdWx0IGdwaW8gc3RhdGUuCgo+Cj4+ICAgCj4+
+ICAgCXJldHVybiAwOwo+PiAgIH0KPj4gQEAgLTEzODMsNyArMTQxMyw4IEBAIHN0YXRpYyBpbnQg
+X19tYXliZV91bnVzZWQgcm9ja2NoaXBfdGhlcm1hbF9yZXN1bWUoc3RydWN0IGRldmljZSAqZGV2
+KQo+PiAgIAlmb3IgKGkgPSAwOyBpIDwgdGhlcm1hbC0+Y2hpcC0+Y2huX251bTsgaSsrKQo+PiAg
+IAkJcm9ja2NoaXBfdGhlcm1hbF90b2dnbGVfc2Vuc29yKCZ0aGVybWFsLT5zZW5zb3JzW2ldLCB0
+cnVlKTsKPj4gICAKPj4gLQlwaW5jdHJsX3BtX3NlbGVjdF9kZWZhdWx0X3N0YXRlKGRldik7Cj4+
+ICsJaWYgKHRoZXJtYWwtPnRzaHV0X21vZGUgPT0gVFNIVVRfTU9ERV9HUElPKQo+PiArCQlwaW5j
+dHJsX3NlbGVjdF9zdGF0ZSh0aGVybWFsLT5waW5jdHJsLCB0aGVybWFsLT5vdHBfc3RhdGUpOwo+
+IEFuZCB0aGVuCj4gCXBpbmN0cmxfc2VsZWN0X3N0YXRlKHRoZXJtYWwtPnBpbmN0cmwsIHRoZXJt
+YWwtPnBpbmN0cmxfc3RhdGUpOwoKcGluY3RybCBzZWxlY3QgdG8gb3RwIG1vZGUgd2hlbiB0c2Fk
+YyByZXN1bWUuCgo+Cj4+ICAgCXJldHVybiAwOwo+PiAgIH0KPj4KPgoKCgpfX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
+bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
