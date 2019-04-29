@@ -2,88 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C622E370
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 15:13:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A53BFE388
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 15:18:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fvtQlLmjIYZfMKlkn23TEUGRKNF2bpvR84aGJlhWhaI=; b=gyvxYEDR76hTr3
-	Q35wF8YXgePhecpsw8PGPEZtCgGTuWKtKXj0MAwf+uJFm2eavUi9EIp8F8LgREl2abTfPtgnusib+
-	d1jnUYEKrpg6XCmViTFfqW8QwuMOZjf+L9fLtEoT4kEkojhgMT0n/0xrCioK2gPdBroamhNmi3s8f
-	k1YxIb8BvYVRAaKhcne9T3Tg5je7Jha1XNz2mOPugFQPfGQu5v2uDQqdYS6ZwVRDVT4mnb0WOKuc7
-	411KAVfYNfVbZTdnNqxXac+GkiI7sxEzZmPvBYxLJW5ri8AB7wCrrhOwDpfKTiu1PuH/SK+5kyZ+v
-	Gl5TuI2arAOyIry/qF0w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=zf+LHwQzyXs9CjFLp6jQ29WM7LLB3BIbWmcr7V0Ywvg=; b=OxnsdhacahJB9pnrUD+ejy0Oa
+	64M0ydWU5132NB4cO8W/G1DEs5B5AI4LuQbk5fZ2J4BqLO9y4TE4eqjJGW814cJkowPAKT8kwGTiQ
+	ab9Milk1YjQXURQVCsyp2I1uEK+Mk4Q6alLYZ2p2MQZ3TkxYUdAVUo1xZ9F6uQLnR39qfjLqvx89W
+	nD0EdLAbOFB3xXVmnLcC8LlhDAqhC8Ck9mIkq/6yFxHtDyn02A+VncbCdEfsgPxDiN+1ubPJj2Fhb
+	bitCJydyzQL60r8qNfBEEvBh1dpxH/jwEODojxtLAElyaxXWyg/uEyFLkFmSzxvd6E8Ib61sKvnh1
+	9bBsRwr4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL65l-00059M-LP; Mon, 29 Apr 2019 13:13:09 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL64y-0004Jy-T9
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 13:12:26 +0000
-Received: by mail-wm1-x343.google.com with SMTP id b10so672661wmj.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Apr 2019 06:12:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=EWtkEswA/ppJKsau0ucZOXQ0FjybdP/7oMBp2mQhOUw=;
- b=avQNkrkDuUX/SIDLB2Sk61f/7WpPyXBxDA6gZqFxCDXCdzxT6U+W+gX9DxRmUClSwO
- sFUfh3j/XDAXHED0K0TkLdlz5zpmUr+MQtD4d73Q7NmxxUGAGPzu6wmYbItwxaELDhGI
- OChUm+KddPrwSKDBRDn2jP9Cmz8sMGNiRrM7TwxiRFa698s7flVazpEeC+9soz5p6eQZ
- VPyCTtMGWyHurppOIuI6fVfW5s3dN63XNlBUbJ+CBR2eLVlMDI8qaGUBJDPICuQyb9xf
- fwqFaWw4548vRi704SVGxALKRQtt5TRkeXVzVc98B2g7s3MjZ9Cm3eMWQ8nlT+5+uYil
- TRcg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=EWtkEswA/ppJKsau0ucZOXQ0FjybdP/7oMBp2mQhOUw=;
- b=aWtvPTvzij6KZSg50HvcT8+oUb2RhmIXf4KrrEwpaz45UdPnT6DJ8Buov/XL+ZvULu
- gsvvDRBJFupxtIes8l0rBYxDOj/Qp645CDhTEf8EtK32g3PlEuhRDE3i+G7zZIKN/JzH
- 2+d6mHbdWp5fO5r4azXw9EDQuOgLuWmxGmxMlvlCTIHon0JOS4zaCBHOTJrXxsIEgzJy
- Fe8OFmqCsOJ9oqUvFZzSFrjbgsGJC+V75sbV7PIcKaJo12JnSoKiXtAJ+xYdtCf3/bTV
- b9tvvRkXu50gfQnAIu9ivH7CnKrcKF4NB7aZIRsXcrE54E8p091dhJFQT5nWptDXzwcx
- KPkg==
-X-Gm-Message-State: APjAAAVky65zQWdpijngK1pS7iAoywNJWftw9jPMIQBTxJzhuHWpEjUB
- su3KlU2zbFbCjzacWjPuzkvW0Q==
-X-Google-Smtp-Source: APXvYqxXPvbmkZ/JeMcYsFo0xhtMoTpufPAZlIYKJ5y98iS14sch/g7gCjShBgCuduCIqa37iD48fQ==
-X-Received: by 2002:a1c:2d0e:: with SMTP id t14mr17354279wmt.33.1556543539028; 
- Mon, 29 Apr 2019 06:12:19 -0700 (PDT)
-Received: from sudo.home ([2a01:cb1d:112:6f00:f9fc:88:6502:8fa7])
- by smtp.gmail.com with ESMTPSA id s16sm5410282wrg.71.2019.04.29.06.12.17
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 29 Apr 2019 06:12:18 -0700 (PDT)
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-To: linux-gpio@vger.kernel.org
-Subject: [PATCH v2 4/4] gpio: mb86s7x: enable ACPI support
-Date: Mon, 29 Apr 2019 15:12:08 +0200
-Message-Id: <20190429131208.3620-5-ard.biesheuvel@linaro.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190429131208.3620-1-ard.biesheuvel@linaro.org>
-References: <20190429131208.3620-1-ard.biesheuvel@linaro.org>
+	id 1hL6Ae-00078g-Nt; Mon, 29 Apr 2019 13:18:12 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hL6AX-00078K-Tf
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 13:18:07 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4441AA78;
+ Mon, 29 Apr 2019 06:18:05 -0700 (PDT)
+Received: from [10.1.196.75] (e110467-lin.cambridge.arm.com [10.1.196.75])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CCF433F71A;
+ Mon, 29 Apr 2019 06:18:03 -0700 (PDT)
+Subject: Re: [PATCH 13/26] iommu/dma: Remove __iommu_dma_free
+To: Christoph Hellwig <hch@lst.de>
+References: <20190422175942.18788-1-hch@lst.de>
+ <20190422175942.18788-14-hch@lst.de>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <9c53d0e6-3692-e151-c64b-0070a89ca725@arm.com>
+Date: Mon, 29 Apr 2019 14:18:02 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <20190422175942.18788-14-hch@lst.de>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_061221_544294_90F09DB5 
-X-CRM114-Status: GOOD (  16.27  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190429_061805_964326_BC56418F 
+X-CRM114-Status: GOOD (  22.99  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,151 +63,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Graeme Gregory <graeme.gregory@linaro.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Marc Zyngier <marc.zyngier@arm.com>, Linus Walleij <linus.walleij@linaro.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-acpi@vger.kernel.org,
- Masahisa Kojima <masahisa.kojima@linaro.org>,
- Mika Westerberg <mika.westerberg@linux.intel.com>,
- linux-arm-kernel@lists.infradead.org, Len Brown <lenb@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Tom Lendacky <thomas.lendacky@amd.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Joerg Roedel <joro@8bytes.org>,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Make the mb86s7x GPIO block discoverable via ACPI. In addition, add
-support for ACPI GPIO interrupts routed via platform interrupts, by
-wiring the two together via the to_irq() gpiochip callback.
+On 22/04/2019 18:59, Christoph Hellwig wrote:
+> We only have a single caller of this function left, so open code it there.
 
-Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
----
- drivers/gpio/gpio-mb86s7x.c | 57 ++++++++++++++++----
- 1 file changed, 48 insertions(+), 9 deletions(-)
+Heh, I even caught myself out for a moment thinking this looked 
+redundant with #18 now, but no :)
 
-diff --git a/drivers/gpio/gpio-mb86s7x.c b/drivers/gpio/gpio-mb86s7x.c
-index 3134c0d2bfe4..61ad95c3e3d2 100644
---- a/drivers/gpio/gpio-mb86s7x.c
-+++ b/drivers/gpio/gpio-mb86s7x.c
-@@ -14,6 +14,7 @@
-  *  GNU General Public License for more details.
-  */
- 
-+#include <linux/acpi.h>
- #include <linux/io.h>
- #include <linux/init.h>
- #include <linux/clk.h>
-@@ -27,6 +28,8 @@
- #include <linux/spinlock.h>
- #include <linux/slab.h>
- 
-+#include "gpiolib.h"
-+
- /*
-  * Only first 8bits of a register correspond to each pin,
-  * so there are 4 registers for 32 pins.
-@@ -143,6 +146,20 @@ static void mb86s70_gpio_set(struct gpio_chip *gc, unsigned gpio, int value)
- 	spin_unlock_irqrestore(&gchip->lock, flags);
- }
- 
-+static int mb86s70_gpio_to_irq(struct gpio_chip *gc, unsigned int offset)
-+{
-+	int irq, index;
-+
-+	for (index = 0;; index++) {
-+		irq = platform_get_irq(to_platform_device(gc->parent), index);
-+		if (irq <= 0)
-+			break;
-+		if (irq_get_irq_data(irq)->hwirq == offset)
-+			return irq;
-+	}
-+	return -EINVAL;
-+}
-+
- static int mb86s70_gpio_probe(struct platform_device *pdev)
- {
- 	struct mb86s70_gpio_chip *gchip;
-@@ -160,13 +177,15 @@ static int mb86s70_gpio_probe(struct platform_device *pdev)
- 	if (IS_ERR(gchip->base))
- 		return PTR_ERR(gchip->base);
- 
--	gchip->clk = devm_clk_get(&pdev->dev, NULL);
--	if (IS_ERR(gchip->clk))
--		return PTR_ERR(gchip->clk);
-+	if (!ACPI_COMPANION(&pdev->dev)) {
-+		gchip->clk = devm_clk_get(&pdev->dev, NULL);
-+		if (IS_ERR(gchip->clk))
-+			return PTR_ERR(gchip->clk);
- 
--	ret = clk_prepare_enable(gchip->clk);
--	if (ret)
--		return ret;
-+		ret = clk_prepare_enable(gchip->clk);
-+		if (ret)
-+			return ret;
-+	}
- 
- 	spin_lock_init(&gchip->lock);
- 
-@@ -182,21 +201,32 @@ static int mb86s70_gpio_probe(struct platform_device *pdev)
- 	gchip->gc.parent = &pdev->dev;
- 	gchip->gc.base = -1;
- 
-+	if (ACPI_COMPANION(&pdev->dev))
-+		gchip->gc.to_irq = mb86s70_gpio_to_irq;
-+
- 	ret = gpiochip_add_data(&gchip->gc, gchip);
- 	if (ret) {
- 		dev_err(&pdev->dev, "couldn't register gpio driver\n");
--		clk_disable_unprepare(gchip->clk);
-+		if (gchip->clk)
-+			clk_disable_unprepare(gchip->clk);
-+		return ret;
- 	}
- 
--	return ret;
-+	if (ACPI_COMPANION(&pdev->dev))
-+		acpi_gpiochip_request_interrupts(&gchip->gc);
-+
-+	return 0;
- }
- 
- static int mb86s70_gpio_remove(struct platform_device *pdev)
- {
- 	struct mb86s70_gpio_chip *gchip = platform_get_drvdata(pdev);
- 
-+	if (ACPI_COMPANION(&pdev->dev))
-+		acpi_gpiochip_free_interrupts(&gchip->gc);
- 	gpiochip_remove(&gchip->gc);
--	clk_disable_unprepare(gchip->clk);
-+	if (gchip->clk)
-+		clk_disable_unprepare(gchip->clk);
- 
- 	return 0;
- }
-@@ -207,10 +237,19 @@ static const struct of_device_id mb86s70_gpio_dt_ids[] = {
- };
- MODULE_DEVICE_TABLE(of, mb86s70_gpio_dt_ids);
- 
-+#ifdef CONFIG_ACPI
-+static const struct acpi_device_id mb86s70_gpio_acpi_ids[] = {
-+	{ "SCX0007" },
-+	{ /* sentinel */ }
-+};
-+MODULE_DEVICE_TABLE(acpi, mb86s70_gpio_acpi_ids);
-+#endif
-+
- static struct platform_driver mb86s70_gpio_driver = {
- 	.driver = {
- 		.name = "mb86s70-gpio",
- 		.of_match_table = mb86s70_gpio_dt_ids,
-+		.acpi_match_table = ACPI_PTR(mb86s70_gpio_acpi_ids),
- 	},
- 	.probe = mb86s70_gpio_probe,
- 	.remove = mb86s70_gpio_remove,
--- 
-2.20.1
+Reviewed-by: Robin Murphy <robin.murphy@arm.com>
 
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+>   drivers/iommu/dma-iommu.c | 21 ++-------------------
+>   1 file changed, 2 insertions(+), 19 deletions(-)
+> 
+> diff --git a/drivers/iommu/dma-iommu.c b/drivers/iommu/dma-iommu.c
+> index b8e46e89a60a..4632b9d301a1 100644
+> --- a/drivers/iommu/dma-iommu.c
+> +++ b/drivers/iommu/dma-iommu.c
+> @@ -534,24 +534,6 @@ static struct page **__iommu_dma_get_pages(void *cpu_addr)
+>   	return area->pages;
+>   }
+>   
+> -/**
+> - * iommu_dma_free - Free a buffer allocated by iommu_dma_alloc_remap()
+> - * @dev: Device which owns this buffer
+> - * @pages: Array of buffer pages as returned by __iommu_dma_alloc_remap()
+> - * @size: Size of buffer in bytes
+> - * @handle: DMA address of buffer
+> - *
+> - * Frees both the pages associated with the buffer, and the array
+> - * describing them
+> - */
+> -static void __iommu_dma_free(struct device *dev, struct page **pages,
+> -		size_t size, dma_addr_t *handle)
+> -{
+> -	__iommu_dma_unmap(dev, *handle, size);
+> -	__iommu_dma_free_pages(pages, PAGE_ALIGN(size) >> PAGE_SHIFT);
+> -	*handle = DMA_MAPPING_ERROR;
+> -}
+> -
+>   /**
+>    * iommu_dma_alloc_remap - Allocate and map a buffer contiguous in IOVA space
+>    * @dev: Device to allocate memory for. Must be a real device
+> @@ -1034,7 +1016,8 @@ static void iommu_dma_free(struct device *dev, size_t size, void *cpu_addr,
+>   
+>   		if (WARN_ON(!pages))
+>   			return;
+> -		__iommu_dma_free(dev, pages, iosize, &handle);
+> +		__iommu_dma_unmap(dev, handle, iosize);
+> +		__iommu_dma_free_pages(pages, size >> PAGE_SHIFT);
+>   		dma_common_free_remap(cpu_addr, size, VM_USERMAP);
+>   	} else {
+>   		__iommu_dma_unmap(dev, handle, iosize);
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
