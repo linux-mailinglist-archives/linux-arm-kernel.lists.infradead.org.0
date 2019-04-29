@@ -2,75 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7055BE86F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 19:10:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6306FE871
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 19:10:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lZQXny4ofBKtVO2qsTtz0WQK2VMOz4Poz9w6BaliK2U=; b=CN6SXM28B5UaUo
-	9rFgx1//ZGgKY54xYuIj+HeLZIEohbCmuXhkhj/tVBGnz7wnktLNtHrTevvJvCfBwgvrqEN38382/
-	oX+aYIjGk96V78BUFPp5SyuSW4Yb+pxaKnYlBC7ijRBwnr1RUcE3CividkL6cDrCT83WLBWz+ESsv
-	VZ+wTJnrNpJs4fmxSI3Tm+Ukz0oXe38KHbq5u83uYF0mISYp6aSXQwOG6tYDVMjKlOaH5uoK1cjKs
-	SVmhUVL5ehUo8vR1HZcjNbQPdujhC0jyiNpF87Jq2DVyOv0RGuubdUXNuUjIkT8PDsDI67DjxYaZT
-	FCVfqL2w7xjV3ntbnl0g==;
+	List-Owner; bh=+UPADULH2P8iSGtVN2DRsoGln/6i07mRUwj0R916pJc=; b=gq7P3oD0FpDEVF
+	yLXmPRCRS4ZmEih7PPSKfZN4eQ0i+O//8b4Md5gxb60LvatXnvuV4rIVt0w7Eqg6nMF06e3LQcz9x
+	194QcnvljWl/q3o2UX2uNnUdHfNk4LdXIBcsNdabAgG9Y+Sc0xTTmv+BYKE8PkGXT/IqlScWHOkzq
+	kUV4e4NFgyCniQv3rkd4Uf7rgEAXG74MOtV55cw5ioPwwHs99yLV/1Qt2Y9FmfKnPUKDFGFonUJ6f
+	4yGjtyIfrA3+XTErBqPI9qaESPIalLGrfXTymDrBqP43mIh9nWDh/QrXBobITv0peyr3YOF/Z2+OA
+	10cigkwrUPYWh3hASGrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL9nN-0006C9-9Q; Mon, 29 Apr 2019 17:10:25 +0000
+	id 1hL9nY-0006Px-AL; Mon, 29 Apr 2019 17:10:36 +0000
 Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL9kz-0002vV-MK
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 17:08:04 +0000
-Received: by mail-lj1-x241.google.com with SMTP id z26so10097870ljj.2
+ id 1hL9l1-0002yT-QI
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 17:08:05 +0000
+Received: by mail-lj1-x241.google.com with SMTP id c6so3563568lji.11
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Apr 2019 10:07:57 -0700 (PDT)
+ Mon, 29 Apr 2019 10:07:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=PdCYTkykEbqNyJUv1QhMsSVMEq6usPhaqqUWwuxAvtk=;
- b=VDhrs3Nfh4iuNIDLF1qiTWsjAPiReNTNGFsNLTNvNrrVEDbNQLgJhxYYDAFHOKJeKV
- He21gd1pMsKWqLM9cUgNXLQZBIaBGEKp45I3QfzJqnadyk+qfCTuxI3/PwkmgWQEqe+Z
- 5BU4K/dLm1l1+PwIEjZDZFUnK42Knd1LvZeQ32KdIozO+yDqDaIJ/rw/apsn8gb3psfK
- ASt7x51wH0aF7rXWm/83Pdfp3QQqQ6wk9PYC4mqmlT9PFx5WtFVTfys/xPWiiL//tTL7
- zxrzdQCjz6TFiEgDTRSpOmqrrkL6OsAEDPLU4jI5SyoYn+HWZYFFhe4ewdix9fjVu3NX
- p0xA==
+ bh=2EDG9k5xBQAGPzW9mILcB9aaLrz/g8zmiYqG801xB04=;
+ b=chBQj3LqwpyRfrDGZZUK/NhBlvLES/7qXRe0aVFfWbvXa3HyWXxkyJdCuQTDZWCoW2
+ jPo711Kpt31bEepvNEvNwiCBYrt2mRAD5YlyZ7bfyqchK399ztsMPj7ZBLIgORfGa004
+ wT+W6hGcvd/5CdFUTxR/xmyRkEB1XVsjhKSmnMTibK7mfUvb/G6ANACb6Gp+aq0Q4w6s
+ NGBXcXkcXLa6q4m3wB9Tk9pn61PzAOSE94jOR+NwwMcj/vCxWoveheLsCjDgBAb6xfTm
+ VAIlL7LD+tkBkaTd26We/uEJZbg7WCZMlzhXK+4Uc5GxHOLTBUy9Pxd2Hfmmqr7RmQqR
+ 3hzA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=PdCYTkykEbqNyJUv1QhMsSVMEq6usPhaqqUWwuxAvtk=;
- b=YzuHN046bzE+Pg+vXnXLT2haptBqfxDaduBf4pqoMK9+zWydqfktUUNQ2j2dyZMEFC
- G2hVlAihBM0ARztCSql9MSEl3LQYSpWEuG11P9un8+q74Cieyanv22sVH0Jrh2SzD4H6
- 27gpcoQET1xowNyVe1x7K+eKqxK2a+FvFE3Yh1TivsHEmYgJ+MNx539545RQNfmey4t4
- Q6ZJsr4pe+jTTUYo6V++zI6AFSYjW61Wv1y/+II/Mt5wU9xWjq/g7y/GjC7CVRaXntZ8
- cKNy1bRQVziukh9IS1LoD2u/8PRzTGvMfpek+24Js6cyVohzlPN2blIijkB7yGBrXghJ
- KUOg==
-X-Gm-Message-State: APjAAAWXUGMpHNQWUv/wfb1yqR35H5VGQkcLQbW8/pTUoxa17l9RTrla
- Ft+IQYml1cgasF0UvLk9SrxisA==
-X-Google-Smtp-Source: APXvYqyF+pfhsIvgx5JUYt0POFgwIJ+EfQKp7BSeq5gszV06NSv1t4yY4ty+LhSovVi6jTTJo3fbDA==
-X-Received: by 2002:a2e:884a:: with SMTP id z10mr23642105ljj.21.1556557676125; 
- Mon, 29 Apr 2019 10:07:56 -0700 (PDT)
+ bh=2EDG9k5xBQAGPzW9mILcB9aaLrz/g8zmiYqG801xB04=;
+ b=Ep7u69UZqwk4Gr2tl4o9TuNm111aZp9X+XXbXGdE61Ps6oVb0/cNE+ecyW8iuPqM6U
+ HU1nRd4SPCdTIxJHt2ahNchhUG9hM74IBU3cFsOWg3/UCtQhXdE/gAfBkGWBVO8EZnku
+ iwv5HnuAXVc6ycwOp0OIaZ4atUW+Vh3/HvMvVvu8Lamku6efpGJ3QvaUqT8wIYaYxe9O
+ orZVTM+Fbwt6wcLOl++UXj2eRIF8/8acpE8AN36KMezLnJvHzNFFZJloag2/8nqDZr9V
+ TCrY7QmTIKuViP03FVPogMQCDr3jba7fhXHfT4JnQNiKYr0w5QhxC32K7UV0kLPn2l+E
+ zm6g==
+X-Gm-Message-State: APjAAAWFF3miMA/qzQ/+qq3pN9yx19ZJ0sBCFAg137P9ysj5xBO+qz67
+ 6AXiALsuxR17vdBKmh+GkESe0g==
+X-Google-Smtp-Source: APXvYqwUiXD9zCibVIqba58oL91cYaoY0R9OWiUUA9jlop4hK7X5i9mDSoSvs7S/S/rHIClFsnHUVQ==
+X-Received: by 2002:a05:651c:d0:: with SMTP id
+ 16mr33036533ljr.150.1556557678221; 
+ Mon, 29 Apr 2019 10:07:58 -0700 (PDT)
 Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id b78sm7433376lfg.38.2019.04.29.10.07.54
+ by smtp.gmail.com with ESMTPSA id v24sm741007lje.31.2019.04.29.10.07.56
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 29 Apr 2019 10:07:54 -0700 (PDT)
-Date: Mon, 29 Apr 2019 09:40:14 -0700
+ Mon, 29 Apr 2019 10:07:57 -0700 (PDT)
+Date: Mon, 29 Apr 2019 09:41:13 -0700
 From: Olof Johansson <olof@lixom.net>
 To: Andy Gross <andygro@gmail.com>
-Subject: Re: [GIT PULL] Qualcomm Defconfig updates for 5.2
-Message-ID: <20190429164014.5fbrpws6o2k4xvpn@localhost>
+Subject: Re: [GIT PULL] Qualcomm Driver updates for 5.2
+Message-ID: <20190429164113.ndyyomqy44hpjjzy@localhost>
 References: <1555997248-11513-1-git-send-email-agross@kernel.org>
- <1555997248-11513-3-git-send-email-agross@kernel.org>
+ <1555997248-11513-4-git-send-email-agross@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1555997248-11513-3-git-send-email-agross@kernel.org>
+In-Reply-To: <1555997248-11513-4-git-send-email-agross@kernel.org>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_100758_271505_7EACC1A7 
-X-CRM114-Status: GOOD (  12.66  )
+X-CRM114-CacheID: sfid-20190429_100800_260118_62E57CC9 
+X-CRM114-Status: GOOD (  13.59  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -101,23 +102,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 23, 2019 at 12:27:26AM -0500, Andy Gross wrote:
+On Tue, Apr 23, 2019 at 12:27:27AM -0500, Andy Gross wrote:
 > The following changes since commit 9e98c678c2d6ae3a17cb2de55d17f69dddaa231b:
 > 
 >   Linux 5.1-rc1 (2019-03-17 14:22:26 -0700)
 > 
 > are available in the git repository at:
 > 
->   git://git.kernel.org/pub/scm/linux/kernel/git/agross/linux.git tags/qcom-defconfig-for-5.2
+>   git://git.kernel.org/pub/scm/linux/kernel/git/agross/linux.git tags/qcom-drivers-for-5.2
 > 
-> for you to fetch changes up to acd92c5a11493bdf137aba6e21e865331d7d90d7:
+> for you to fetch changes up to 2616b3deaf9c5db18f78689968d4c998bda8a983:
 > 
->   ARM: qcom_defconfig: add options for LG Nexus 5 phone (2019-04-09 22:37:39 -0500)
+>   MAINTAINERS: Update email for Qualcomm SoC maintainer (2019-04-18 23:27:29 -0500)
 > 
 > ----------------------------------------------------------------
-> Qualcomm ARM Based defconfig Updates for v5.2
+> Qualcomm ARM Based Driver Updates for v5.2
 > 
-> * Enable options for LG Nexus 5 phone
+> * Update MAINTAINERS for Andy Gross's new email address
+> * Add support for mmap in RMTFS
+> * Fixup for QMI to change txn wait to non-interruptible
+> * Fixup for error code in probe of cmd-db
+> * Fixup for slot number check in RMPH-RSC
 
 Merged, thanks.
 
