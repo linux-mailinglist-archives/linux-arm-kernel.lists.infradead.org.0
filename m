@@ -2,58 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A35A3DE72
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 10:54:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23B7BDE8D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 11:00:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=HQl9C+fdl3mSLbEuirDVOLwtKmTkXQb15kH7gPuwN7A=; b=qpcO0tISHjagQ47VbBxN+TNzT
-	4W0TktSakPAFBa0VlBQRSYyVnqIqkjpzesDjnhiMaZoSWZK67knooRjXP0CUu7t10b2S3+0wbK9Zw
-	XD9W8Dfl+ADdO8eOzIiKsqULJF1kPF0D4Clp/sglorBtiC7LWCB4FIbtNo92srfILXJLFBwfpP7rp
-	XbulaMjvmtyeOulGixlhBtgi/4sSmdRb0Qe0ccui8ZpocVPSrbG7sOUJdK0n00qMXFZgPzxJBf2X/
-	VXwH/57S9JawSAz5aB7nXKrOn+O8u76+/ezso6fslh8kAwBpaXOvIE76SuZlEN6DsPkCMnaqb6Kbd
-	qouKADdJg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fLD/Nl7tN1Va+6GokDNbmUAPIk/nm/1SfQwJBFIBqwQ=; b=Vx6JsEwhIAfyCA
+	5K3ua1wzDpsh9lPcXaqOnFC4OOGwitkUOFN+dj3Yahb56lh75+84bXqguqMIkERlPf+Z8fAPKH/sZ
+	FNDBf5bRjZiWGTkEmGQ/GjVFsdjLnJpdqYu8aSXNJl0ghw0Qv37RtLZcwd9F7N7VdG0NJCbnQUh3e
+	15HcE0gJt12VKcuRlSw9aWwdF0SjIm6Mq5hZ2Cekn+CcRGSWhk+vkOTUqtWu4kbcii8j5p1VF/TGe
+	Km1o+gkuY0PztUJUFTH0pYKJ1F7GipuwAui7bE2rMG4HYpxKKhmJ4it+R8fBVlupcEIpp53Q0R4jN
+	TunMt/dKeajbvtTaUzuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL23R-0007c1-QH; Mon, 29 Apr 2019 08:54:29 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL23L-0007ba-9G
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 08:54:24 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5561B80D;
- Mon, 29 Apr 2019 01:54:21 -0700 (PDT)
-Received: from [10.1.196.93] (en101.cambridge.arm.com [10.1.196.93])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 734CF3F71A;
- Mon, 29 Apr 2019 01:54:19 -0700 (PDT)
-Subject: Re: [PATCH v2 33/36] coresight: acpi: Support for components
-To: rjw@rjwysocki.net
-References: <1555344260-12375-1-git-send-email-suzuki.poulose@arm.com>
- <1555344260-12375-34-git-send-email-suzuki.poulose@arm.com>
- <20190425174553.GB4080@xps15>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <876c6e2c-0a6a-1814-c9ad-1e81d16b0cb0@arm.com>
-Date: Mon, 29 Apr 2019 09:54:17 +0100
+	id 1hL29N-0002JJ-No; Mon, 29 Apr 2019 09:00:37 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hL299-0002Co-PK
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 09:00:25 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x3T903GW088945;
+ Mon, 29 Apr 2019 04:00:03 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1556528404;
+ bh=6AoMSEP6k0dB31rGEgSMYkvxlMJV2xJSnrQQRDzjTkg=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=QHusFS31q57Y1idKXPWuRPB3aAlPnoJ6+bqdgRkwp9l0rv6O9c4jqBlV85q7HRDyj
+ vLWYrI7/yaTELtP7ZOi2HzAuXGXfn1Ki5cNYEvDS7aRbtXPMR4w8Y6R1Sxx1ntWnGV
+ kGZzxdL54oGX44+iLcSQnOh0+5qIeqd8Cqz4t8/k=
+Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x3T903xl065793
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 29 Apr 2019 04:00:03 -0500
+Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 29
+ Apr 2019 04:00:03 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE109.ent.ti.com
+ (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Mon, 29 Apr 2019 04:00:03 -0500
+Received: from [172.24.190.117] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x3T8xwEq020597;
+ Mon, 29 Apr 2019 03:59:59 -0500
+Subject: Re: [PATCH v7 11/14] irqchip: ti-sci-inta: Add support for Interrupt
+ Aggregator driver
+To: Marc Zyngier <marc.zyngier@arm.com>, Santosh Shilimkar
+ <ssantosh@kernel.org>, Rob Herring <robh+dt@kernel.org>, Nishanth Menon
+ <nm@ti.com>, <tglx@linutronix.de>, <jason@lakedaemon.net>
+References: <20190420100950.7997-1-lokeshvutla@ti.com>
+ <20190420100950.7997-12-lokeshvutla@ti.com>
+ <bb768bc0-e18b-3794-8083-1612da10b0c1@ti.com>
+ <79b34c45-023b-2df4-26f4-e151e74a46ac@arm.com>
+From: Lokesh Vutla <lokeshvutla@ti.com>
+Message-ID: <7d012633-e540-df8f-7c21-07702447cb8a@ti.com>
+Date: Mon, 29 Apr 2019 14:29:33 +0530
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ Thunderbird/60.2.1
 MIME-Version: 1.0
-In-Reply-To: <20190425174553.GB4080@xps15>
+In-Reply-To: <79b34c45-023b-2df4-26f4-e151e74a46ac@arm.com>
 Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_015423_336794_75E1A0FD 
-X-CRM114-Status: GOOD (  22.30  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190429_020023_916435_3F383AC8 
+X-CRM114-Status: GOOD (  18.19  )
+X-Spam-Score: -2.6 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -65,102 +96,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mathieu.poirier@linaro.org, coresight@lists.linaro.org,
- linux-kernel@vger.kernel.org, robert.walker@arm.com,
- linux-arm-kernel@lists.infradead.org, mike.leach@linaro.org
+Cc: Peter Ujfalusi <peter.ujfalusi@ti.com>,
+ Grygorii Strashko <grygorii.strashko@ti.com>,
+ Device Tree Mailing List <devicetree@vger.kernel.org>,
+ Tony Lindgren <tony@atomide.com>, linus.walleij@linaro.org,
+ Sekhar Nori <nsekhar@ti.com>, linux-kernel@vger.kernel.org,
+ Tero Kristo <t-kristo@ti.com>,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Rafael,
 
-On 25/04/2019 18:45, Mathieu Poirier wrote:
-> On Mon, Apr 15, 2019 at 05:04:16PM +0100, Suzuki K Poulose wrote:
->> All AMBA devices are handled via ACPI AMBA scan notifier
->> infrastructure. The platform devices get the ACPI id
->> added to their driver.
+
+On 29/04/19 2:17 PM, Marc Zyngier wrote:
+> On 23/04/2019 11:00, Lokesh Vutla wrote:
+>> Hi Marc,
+> 
+> [...]
+> 
+>>> +/**
+>>> + * ti_sci_inta_set_type() - Update the trigger type of the irq.
+>>> + * @data:	Pointer to corresponding irq_data
+>>> + * @type:	Trigger type as specified by user
+>>> + *
+>>> + * Note: This updates the handle_irq callback for level msi.
+>>> + *
+>>> + * Return 0 if all went well else appropriate error.
+>>> + */
+>>> +static int ti_sci_inta_set_type(struct irq_data *data, unsigned int type)
+>>> +{
+>>> +	struct irq_desc *desc = irq_to_desc(data->irq);
+>>> +
+>>> +	/*
+>>> +	 * .alloc default sets handle_edge_irq. But if the user specifies
+>>> +	 * that IRQ is level MSI, then update the handle to handle_level_irq
+>>> +	 */
+>>> +	if (type & IRQF_TRIGGER_HIGH)
+>>> +		desc->handle_irq = handle_level_irq;
+>>> +
+>>> +	return 0;
 >>
->> Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>
->> Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
->> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
->> ---
->>   drivers/acpi/acpi_amba.c                           | 9 +++++++++
->>   drivers/hwtracing/coresight/coresight-replicator.c | 9 ++++++++-
->>   2 files changed, 17 insertions(+), 1 deletion(-)
 >>
->> diff --git a/drivers/acpi/acpi_amba.c b/drivers/acpi/acpi_amba.c
->> index 7f77c07..eef5a69 100644
->> --- a/drivers/acpi/acpi_amba.c
->> +++ b/drivers/acpi/acpi_amba.c
->> @@ -24,6 +24,15 @@
->>   
->>   static const struct acpi_device_id amba_id_list[] = {
->>   	{"ARMH0061", 0}, /* PL061 GPIO Device */
->> +	{"ARMHC500", 0}, /* ARM CoreSight ETM4x */
->> +	{"ARMHC501", 0}, /* ARM CoreSight ETR */
->> +	{"ARMHC502", 0}, /* ARM CoreSight STM */
->> +	{"ARMHC503", 0}, /* ARM CoreSight Debug */
->> +	{"ARMHC979", 0}, /* ARM CoreSight TPIU */
->> +	{"ARMHC97C", 0}, /* ARM CoreSight SoC-400 TMC, SoC-600 ETF/ETB */
->> +	{"ARMHC98D", 0}, /* ARM CoreSight Dynamic Replicator */
->> +	{"ARMHC9CA", 0}, /* ARM CoreSight CATU */
->> +	{"ARMHC9FF", 0}, /* ARM CoreSight Funnel */
->>   	{"", 0},
->>   };
->>   
->> diff --git a/drivers/hwtracing/coresight/coresight-replicator.c b/drivers/hwtracing/coresight/coresight-replicator.c
->> index 2eb489c..a8f42df 100644
->> --- a/drivers/hwtracing/coresight/coresight-replicator.c
->> +++ b/drivers/hwtracing/coresight/coresight-replicator.c
->> @@ -5,6 +5,7 @@
->>    * Description: CoreSight Replicator driver
->>    */
->>   
->> +#include <linux/acpi.h>
->>   #include <linux/amba/bus.h>
->>   #include <linux/kernel.h>
->>   #include <linux/device.h>
->> @@ -290,11 +291,17 @@ static const struct of_device_id static_replicator_match[] = {
->>   	{}
->>   };
->>   
->> +#ifdef CONFIG_ACPI
->> +static const struct acpi_device_id static_replicator_acpi_ids[] = {
->> +	{"ARMHC985", 0}, /* ARM CoreSight Static Replicator */
->> +};
->> +#endif
->>   static struct platform_driver static_replicator_driver = {
->>   	.probe          = static_replicator_probe,
->>   	.driver         = {
->>   		.name   = "coresight-replicator",
->> -		.of_match_table = static_replicator_match,
->> +		.of_match_table = of_match_ptr(static_replicator_match),
->> +		.acpi_match_table = ACPI_PTR(static_replicator_acpi_ids),
->>   		.pm	= &replicator_dev_pm_ops,
->>   		.suppress_bind_attrs = true,
->>   	},
+>> Returning error value is causing request_irq to fail, so still returning 0. Do
+>> you suggest any other method to handle this?
 > 
-> For the coresight part: Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> But that is the very point, isn't it? If you pass the wrong triggering
+> type to request_irq, it *must* fail. What you should have is something like:
 > 
-> You probably want to split this patch in half so that Rafael can pick up the
-> the first part of it in his tree.
+> switch (type & IRQ_TYPE_SENSE_MASK) {
+> case IRQF_TRIGGER_HIGH:
+> 	desc->handle_irq = handle_level_irq;
+> 	return 0;
+> case IRQ_TYPE_EDGE_RISING:
+> 	return 0;
+> default:
+> 	return -EINVAL;
+> }
 > 
+> (adjust as necessary).
+> 
+> What's wrong with this?
 
+I get it. Will fix it in next version. I also got the firmware update as well.
+If you are okay with rest of the series, I want to post the next version with
+the firmware update.
 
-We have the CoreSight components span over AMBA and platform devices. This
-series is almost getting ready, so for the next revision I would like to
-get your view on how to split this particular patch.
-
-We have components in AMBA and Platform devices. Would you prefer to split
-the patch and pull the ACPI_AMBA changes above in to your tree ? Or are
-you happy with Mathieu pushing this change together with the other ACPI
-bindings support in the CoreSight drivers ?
-
-FWIW, we should still be fine if we split and the patches reach at different
-times. Please let me know your thoughts.
-
-Suzuki
+Thanks and regards,
+Lokesh
 
 _______________________________________________
 linux-arm-kernel mailing list
