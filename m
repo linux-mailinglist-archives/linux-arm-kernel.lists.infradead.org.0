@@ -2,52 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A176E843
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 18:59:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA577E917
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 19:31:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=sqRNIECsTfrlIIQNmU2FbirZLF+U13C7O7GldoJxB7A=; b=Ax/
-	Az6VZmNjSFwtB7uMn0ASrwl390IpxK7nc4nXfgDiNOo2iMYthbvCWnUQ1kZ6/7/e0qtVkSLhd5OUa
-	XHxOFlgLzwUX4cxUt8cYgvWJUq0/UhTT3vR4JMAZDJxripuPfdcCcbcbF1aVJhV6M1ywxIcuIeZna
-	S/VsHKcdYys7dduXxYiORCvY+pR/CDWzNmbfNvCy0dBa99oJoTgFQpL/DpnK/A9e0w/wgqugKYj/E
-	Qfyt0vvw8rINEroe249KN4ojlVMq96kTHgvLLzWgcxheVLONO7y5Kxc0vHzmISMlxczkJ1aOcRHB0
-	dmhgIsp9SSECjDPXidtGhgcco6tD0ng==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wf6qXA/xhEWjo4Vv+iLhPO8GTfyQ72QMk543Vjoqd6s=; b=kK9L9eBqHAhruh
+	ntdkY0rNSn7TFSPOPIfr02wDcwVYr8M9bgjSlHFHH3aAEwK9DOkdvdE4HjyOtma+pEGE7wlyIousG
+	2mRkGxt7WvtLPYsU7US6FHwwhsx+dIcCIesDOHpw3fd0DRDqQkzcCmvOXte+wXToc3DTcBlhl4dxK
+	Hc9/HnuFF5y44RuC0eZHRyPgei+dRd7lL6l8NhWUd7uKluvm5eiHhrzcrPr77a1TpnNSO5YyN25Y/
+	x7UKL2sz5WUYCg8qV5ZygoHeoLpNFPzmuxDbJqCbfB812WavGz51b4CgRBK6t4OOPpGEaU+uhtlGn
+	aHw/wtiI2JXqbLMq/ywQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL9cm-0007TM-I6; Mon, 29 Apr 2019 16:59:28 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL9ce-0007Su-54
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 16:59:21 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BD91980D;
- Mon, 29 Apr 2019 09:59:18 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 7C0F03F5AF;
- Mon, 29 Apr 2019 09:59:17 -0700 (PDT)
-From: Will Deacon <will.deacon@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: arch_timer: Ensure counter register reads occur with
- seqlock held
-Date: Mon, 29 Apr 2019 17:59:12 +0100
-Message-Id: <20190429165912.9497-1-will.deacon@arm.com>
-X-Mailer: git-send-email 2.11.0
+	id 1hLA7f-0001PK-RQ; Mon, 29 Apr 2019 17:31:23 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hLA7I-00017k-NB
+ for linux-arm-kernel@bombadil.infradead.org; Mon, 29 Apr 2019 17:31:00 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=hLy/N5IIDU5S17Aiea9w/yKdhqHcRyIx5lZCj1/EzYo=; b=v3cXi/lmewwK5SjIaAaobkeH3
+ 5vATH7Typ6rXMuyNrrTz6+epDCgNNz18oHbVowpIwayr4T9P8MBKE+4tbM5l2Tl6uOfW0D01A84zr
+ XSZV2MCSIXDJo6B8gmtKZAt1vxfjbW/7IAT5Sxw2xbrDRK2njuqxHi2ZeGfzBvo0ICIVzThsPfIo8
+ xsg9Q4IPP/gcYA1XcJw13dO9cA0RZqRr2CgO6zy2/LHootfGJSCfj+4jAmtRwrSlk2j+4a7QBWQgF
+ +6YNMA0dY/WtvmcK+Nb4AaGMveAsludCMoWo3afPShX2JGrAmB9Nz096xtnOAddzi2rndRRa6as58
+ nu9TEAfSQ==;
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+ by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hL9lQ-0001TO-K3
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 17:08:26 +0000
+Received: by mail-lj1-x243.google.com with SMTP id f23so10116982ljc.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 29 Apr 2019 10:08:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=hLy/N5IIDU5S17Aiea9w/yKdhqHcRyIx5lZCj1/EzYo=;
+ b=xNOyBR9tm/L1PFDzPEPPpBt81NrtPjOtAaY+TztDpLOW1hnU1y9Qss0zqIrPgWLu7p
+ i1NXOVD7BMNqm4CPqx55LcldmDjz2HvstzaIbEEmVDmvRNDp2nvFRp33YlJRC8yvGLui
+ 4V4KIxvt0SloN/qaiiJycOhwb9PkWpTsD9ek5nosxmzptDYdYz9kp9ZcQ6QNaW3QIPzW
+ E8/i7Bse71rxq/XP6NEO0rUL8QC1G37TXW39/Z20yzXKV3bG8gR/LTfGhmJqoEkivuAZ
+ wdSeifmwy0FKBupzYov3+IjP878fbc0lJyyMR1rtrPhoZqjv+lVPIYOdfPr49QiUe0eF
+ LwxA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=hLy/N5IIDU5S17Aiea9w/yKdhqHcRyIx5lZCj1/EzYo=;
+ b=owLLsyVgWyWWHAZXHi7ZHP023+t9C0zz1jtboGDSIbfKjQB9+t8SCn5hoWK8oFYaqj
+ 6hM8dqqzRH5SM7xe7Bb2x8kIn0DHhV5HJC2gc3H/7wQ7qsPCGqksEy0Iwj1XNMK6qp8E
+ qZiEYNr9068DawNnUW4DDWl8H3eJKIOvwM+55tB/797kGuZk04+WI5gUTvuTtwUmuhqI
+ HqneoG2pvs5MtV6oFQiAZjgRDyJa9K+RW7Z4sVf43oIxg4txqv5R48w4Qb1CF0jNKOWi
+ Xv49w0M7l8mbMh0QgsUQYHS8YrxxH/qG4/X7wFz88LZzvkL4X5w3xDvEGWh/9mKSGkWl
+ mr/Q==
+X-Gm-Message-State: APjAAAXl5BqZxo7uIxkuaLw4pP6lrGR4AwcrSn0Pao4MLX1hbcXkkbjG
+ CKOh7NW2/gBgPHYGcQNJMfZiqg==
+X-Google-Smtp-Source: APXvYqx1UyC6K4jBnPvzwH/GS8GycAaY+bpNnIMrHPnz6Gy67DBivsbRsgqaoPPMMPtdouU+4iwAQA==
+X-Received: by 2002:a2e:8905:: with SMTP id d5mr30147170lji.59.1556557702067; 
+ Mon, 29 Apr 2019 10:08:22 -0700 (PDT)
+Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
+ by smtp.gmail.com with ESMTPSA id h26sm5374847lfm.11.2019.04.29.10.08.20
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 29 Apr 2019 10:08:20 -0700 (PDT)
+Date: Mon, 29 Apr 2019 10:03:18 -0700
+From: Olof Johansson <olof@lixom.net>
+To: Heiko Stuebner <heiko@sntech.de>
+Subject: Re: [GIT PULL 5/5] Rockchip defconfig32 updates for 5.2
+Message-ID: <20190429170318.63wwgxov2lbyrvvk@localhost>
+References: <3379363.gjmLGbHmEH@phil>
+ <3043127.yMmPYKTTFR@phil>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <3043127.yMmPYKTTFR@phil>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_095920_210241_30B22F8B 
-X-CRM114-Status: GOOD (  15.61  )
-X-Spam-Score: -5.0 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+X-CRM114-CacheID: sfid-20190429_130824_739898_68DEDD8D 
+X-CRM114-Status: GOOD (  15.43  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -59,175 +109,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <marc.zyngier@arm.com>, tglx@linutronix.de,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Will Deacon <will.deacon@arm.com>, stable@vger.kernel.org
-MIME-Version: 1.0
+Cc: linux-rockchip@lists.infradead.org, arm@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When executing clock_gettime(), either in the vDSO or via a system call,
-we need to ensure that the read of the counter register occurs within
-the seqlock reader critical section. This ensures that updates to the
-clocksource parameters (e.g. the multiplier) are consistent with the
-counter value and therefore avoids the situation where time appears to
-go backwards across multiple reads.
+On Wed, Apr 24, 2019 at 08:00:07PM +0200, Heiko Stuebner wrote:
+> The following changes since commit 9e98c678c2d6ae3a17cb2de55d17f69dddaa231b:
+> 
+>   Linux 5.1-rc1 (2019-03-17 14:22:26 -0700)
+> 
+> are available in the Git repository at:
+> 
+>   git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.2-rockchip-defconfig32-1
+> 
+> for you to fetch changes up to 366391f04177355320a3dbc5705daa017de5a373:
+> 
+>   ARM: multi_v7_defconfig: Enable missing drivers for supported Chromebooks (2019-04-23 19:53:29 +0200)
+> 
+> ----------------------------------------------------------------
+> Enable more options needed by Veyron Chromebooks.
+> 
+> ----------------------------------------------------------------
+> Enric Balletbo i Serra (1):
+>       ARM: multi_v7_defconfig: Enable missing drivers for supported Chromebooks
+> 
+>  arch/arm/configs/multi_v7_defconfig | 11 +++++++++++
+>  1 file changed, 11 insertions(+)
+> 
 
-Extend the vDSO logic so that the seqlock critical section covers the
-read of the counter register as well as accesses to the data page. Since
-reads of the counter system registers are not ordered by memory barrier
-instructions, introduce dependency ordering from the counter read to a
-subsequent memory access so that the seqlock memory barriers apply to
-the counter access in both the vDSO and the system call paths.
+Merged with some fixups due to churn in the file.
 
-Cc: <stable@vger.kernel.org>
-Cc: Marc Zyngier <marc.zyngier@arm.com>
-Cc: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Link: https://lore.kernel.org/linux-arm-kernel/alpine.DEB.2.21.1902081950260.1662@nanos.tec.linutronix.de/
-Reported-by: Thomas Gleixner <tglx@linutronix.de>
-Signed-off-by: Will Deacon <will.deacon@arm.com>
----
- arch/arm64/include/asm/arch_timer.h   | 33 +++++++++++++++++++++++++++++++--
- arch/arm64/kernel/vdso/gettimeofday.S | 15 +++++++++++----
- 2 files changed, 42 insertions(+), 6 deletions(-)
 
-diff --git a/arch/arm64/include/asm/arch_timer.h b/arch/arm64/include/asm/arch_timer.h
-index f2a234d6516c..93e07512b4b6 100644
---- a/arch/arm64/include/asm/arch_timer.h
-+++ b/arch/arm64/include/asm/arch_timer.h
-@@ -148,18 +148,47 @@ static inline void arch_timer_set_cntkctl(u32 cntkctl)
- 	isb();
- }
- 
-+/*
-+ * Ensure that reads of the counter are treated the same as memory reads
-+ * for the purposes of ordering by subsequent memory barriers.
-+ *
-+ * This insanity brought to you by speculative system register reads,
-+ * out-of-order memory accesses, sequence locks and Thomas Gleixner.
-+ *
-+ * http://lists.infradead.org/pipermail/linux-arm-kernel/2019-February/631195.html
-+ */
-+#define arch_counter_enforce_ordering(val) do {				\
-+	u64 tmp, _val = (val);						\
-+									\
-+	asm volatile(							\
-+	"	eor	%0, %1, %1\n"					\
-+	"	add	%0, sp, %0\n"					\
-+	"	ldr	xzr, [%0]"					\
-+	: "=r" (tmp) : "r" (_val));					\
-+} while (0)
-+
- static inline u64 arch_counter_get_cntpct(void)
- {
-+	u64 cnt;
-+
- 	isb();
--	return arch_timer_reg_read_stable(cntpct_el0);
-+	cnt = arch_timer_reg_read_stable(cntpct_el0);
-+	arch_counter_enforce_ordering(cnt);
-+	return cnt;
- }
- 
- static inline u64 arch_counter_get_cntvct(void)
- {
-+	u64 cnt;
-+
- 	isb();
--	return arch_timer_reg_read_stable(cntvct_el0);
-+	cnt = arch_timer_reg_read_stable(cntvct_el0);
-+	arch_counter_enforce_ordering(cnt);
-+	return cnt;
- }
- 
-+#undef arch_counter_enforce_ordering
-+
- static inline int arch_timer_arch_init(void)
- {
- 	return 0;
-diff --git a/arch/arm64/kernel/vdso/gettimeofday.S b/arch/arm64/kernel/vdso/gettimeofday.S
-index 21805e416483..856fee6d3512 100644
---- a/arch/arm64/kernel/vdso/gettimeofday.S
-+++ b/arch/arm64/kernel/vdso/gettimeofday.S
-@@ -73,6 +73,13 @@ x_tmp		.req	x8
- 	movn	x_tmp, #0xff00, lsl #48
- 	and	\res, x_tmp, \res
- 	mul	\res, \res, \mult
-+	/*
-+	 * Fake address dependency from the value computed from the counter
-+	 * register to subsequent data page accesses so that the sequence
-+	 * locking also orders the read of the counter.
-+	 */
-+	and	x_tmp, \res, xzr
-+	add	vdso_data, vdso_data, x_tmp
- 	.endm
- 
- 	/*
-@@ -147,12 +154,12 @@ ENTRY(__kernel_gettimeofday)
- 	/* w11 = cs_mono_mult, w12 = cs_shift */
- 	ldp	w11, w12, [vdso_data, #VDSO_CS_MONO_MULT]
- 	ldp	x13, x14, [vdso_data, #VDSO_XTIME_CLK_SEC]
--	seqcnt_check fail=1b
- 
- 	get_nsec_per_sec res=x9
- 	lsl	x9, x9, x12
- 
- 	get_clock_shifted_nsec res=x15, cycle_last=x10, mult=x11
-+	seqcnt_check fail=1b
- 	get_ts_realtime res_sec=x10, res_nsec=x11, \
- 		clock_nsec=x15, xtime_sec=x13, xtime_nsec=x14, nsec_to_sec=x9
- 
-@@ -211,13 +218,13 @@ realtime:
- 	/* w11 = cs_mono_mult, w12 = cs_shift */
- 	ldp	w11, w12, [vdso_data, #VDSO_CS_MONO_MULT]
- 	ldp	x13, x14, [vdso_data, #VDSO_XTIME_CLK_SEC]
--	seqcnt_check fail=realtime
- 
- 	/* All computations are done with left-shifted nsecs. */
- 	get_nsec_per_sec res=x9
- 	lsl	x9, x9, x12
- 
- 	get_clock_shifted_nsec res=x15, cycle_last=x10, mult=x11
-+	seqcnt_check fail=realtime
- 	get_ts_realtime res_sec=x10, res_nsec=x11, \
- 		clock_nsec=x15, xtime_sec=x13, xtime_nsec=x14, nsec_to_sec=x9
- 	clock_gettime_return, shift=1
-@@ -231,7 +238,6 @@ monotonic:
- 	ldp	w11, w12, [vdso_data, #VDSO_CS_MONO_MULT]
- 	ldp	x13, x14, [vdso_data, #VDSO_XTIME_CLK_SEC]
- 	ldp	x3, x4, [vdso_data, #VDSO_WTM_CLK_SEC]
--	seqcnt_check fail=monotonic
- 
- 	/* All computations are done with left-shifted nsecs. */
- 	lsl	x4, x4, x12
-@@ -239,6 +245,7 @@ monotonic:
- 	lsl	x9, x9, x12
- 
- 	get_clock_shifted_nsec res=x15, cycle_last=x10, mult=x11
-+	seqcnt_check fail=monotonic
- 	get_ts_realtime res_sec=x10, res_nsec=x11, \
- 		clock_nsec=x15, xtime_sec=x13, xtime_nsec=x14, nsec_to_sec=x9
- 
-@@ -253,13 +260,13 @@ monotonic_raw:
- 	/* w11 = cs_raw_mult, w12 = cs_shift */
- 	ldp	w12, w11, [vdso_data, #VDSO_CS_SHIFT]
- 	ldp	x13, x14, [vdso_data, #VDSO_RAW_TIME_SEC]
--	seqcnt_check fail=monotonic_raw
- 
- 	/* All computations are done with left-shifted nsecs. */
- 	get_nsec_per_sec res=x9
- 	lsl	x9, x9, x12
- 
- 	get_clock_shifted_nsec res=x15, cycle_last=x10, mult=x11
-+	seqcnt_check fail=monotonic_raw
- 	get_ts_clock_raw res_sec=x10, res_nsec=x11, \
- 		clock_nsec=x15, nsec_to_sec=x9
- 
--- 
-2.11.0
-
+-Olof
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
