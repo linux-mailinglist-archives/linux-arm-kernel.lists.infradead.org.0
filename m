@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C727CDD82
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 10:16:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A95DDD92
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 10:19:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,33 +11,32 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=DdZLxENiX+4PBJzloZzIzcaez2fMyEn1Mzg9oz+jOR8=; b=PSslp5RQ7wTHi1fCruRMCnumJ9
-	fgg4YlxdH8E0HhBNYVCFc0Wa+7b6TqeKYmMyEvrdSeuYIowsUe3p0yi6m8huDGo61GJWLWfnLfEbQ
-	u1iJKzZX0XXvCHtWCtSx5vDFQDIZt8/ZrN2/WnYgBGAjvlC7oVAC3n16Yk0v8NdoO+hCzR4G+ocHZ
-	l2ZqrMtS5g8gFxIHvR/HjWu0xw5mC4WlIvThrAjQZXFPHHhfDjkPvXmNsHAJZyBiHL5n/EWC04x5c
-	Xf9hUyQGk03Fk074JXS7Ex098oUno0/ul69J9f87hzxc3dXZ1/pjJ0/u306Y8dWRCj/ZFKNwPotTd
-	PJ3bk6Dw==;
+	bh=7npZ1zGRd/BOgHb49x48Sv0dtuGY/P+kYdBOrCfDK5k=; b=HcwM/Mknr+2goBFqjpt2a08+7G
+	MKTc8djKCspa5IQlsutDj4rkw21O8Ohu3sxlHiRBOA9FifwX9tmpFF+KuAi/1+XQaKt6V9byAEwxG
+	B3MrlfRVLAdj0yLr5nNFknIZDCXmtnZ/tnjn51fbIj3yhYvl82VEQcPkKjdyVCEnAiZxtiI17vGJr
+	Do43IS1xM7OohMgk23YGyZBzEtPcEVRu6gIi+Kin10lPt4KLlOMObBCNDR7l6xYwaS72LmGzXP14T
+	M7ACe5gLhsHJ3vPCAfP6G03XzpkcnJrnG9WOBvJ63xcD4PQvsG+FXagPMIOXDQ/m/WxrzWS6QnNMk
+	IaKOHeyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL1T1-0008Gm-JW; Mon, 29 Apr 2019 08:16:51 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
+	id 1hL1VU-0000j2-2U; Mon, 29 Apr 2019 08:19:24 +0000
+Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL1Su-0008GN-VX
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 08:16:46 +0000
+ id 1hL1VN-0000ii-R8
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 08:19:19 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EDA5A80D;
- Mon, 29 Apr 2019 01:16:43 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AD1F180D;
+ Mon, 29 Apr 2019 01:19:16 -0700 (PDT)
 Received: from [10.1.196.92] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
  by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- D23013F71A; Mon, 29 Apr 2019 01:16:42 -0700 (PDT)
-Subject: Re: [PATCH 4/7] irqchip/irq-mbigen.c: Use
+ 902003F71A; Mon, 29 Apr 2019 01:19:15 -0700 (PDT)
+Subject: Re: [PATCH 7/7] irqchip/irq-mvebu-sei: Use
  devm_platform_ioremap_resource()
 To: Mukesh Ojha <mojha@codeaurora.org>, tglx@linutronix.de,
  jason@lakedaemon.net, yamada.masahiro@socionext.com,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 References: <1554362413-3305-1-git-send-email-mojha@codeaurora.org>
- <1554362413-3305-5-git-send-email-mojha@codeaurora.org>
+ <1554362413-3305-8-git-send-email-mojha@codeaurora.org>
 From: Marc Zyngier <marc.zyngier@arm.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
@@ -83,16 +82,16 @@ Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
  hApihi08gwvP5G9fNGKQyRETePEtEAWt0b7dOqMzYBYGRVr7uS4uT6WP7fzOwAJC4lU7ZYWZ
  yVshCa0IvTtp1085RtT3qhh9mobkcZ+7cQOY+Tx2RGXS9WeOh2jZjdoWUv6CevXNQyOUXMM=
 Organization: ARM Ltd
-Message-ID: <03de06b4-9814-81bf-f0c0-6bdb179b6c70@arm.com>
-Date: Mon, 29 Apr 2019 09:16:41 +0100
+Message-ID: <8dcac5eb-9ff6-1472-9aa1-6878ac5cb172@arm.com>
+Date: Mon, 29 Apr 2019 09:19:14 +0100
 User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <1554362413-3305-5-git-send-email-mojha@codeaurora.org>
+In-Reply-To: <1554362413-3305-8-git-send-email-mojha@codeaurora.org>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_011645_022630_5044809C 
-X-CRM114-Status: GOOD (  18.69  )
+X-CRM114-CacheID: sfid-20190429_011917_888921_B23C73CB 
+X-CRM114-Status: GOOD (  15.60  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -124,69 +123,26 @@ On 04/04/2019 08:20, Mukesh Ojha wrote:
 > 
 > Signed-off-by: Mukesh Ojha <mojha@codeaurora.org>
 > ---
->  drivers/irqchip/irq-ls-scfg-msi.c | 4 +---
->  drivers/irqchip/irq-mbigen.c      | 9 +--------
->  2 files changed, 2 insertions(+), 11 deletions(-)
-
-You're changing two drivers, and yet only mention one. Bad.
-
+>  drivers/irqchip/irq-mvebu-sei.c | 3 +--
+>  1 file changed, 1 insertion(+), 2 deletions(-)
 > 
-> diff --git a/drivers/irqchip/irq-ls-scfg-msi.c b/drivers/irqchip/irq-ls-scfg-msi.c
-> index c671b32..aec5a2f 100644
-> --- a/drivers/irqchip/irq-ls-scfg-msi.c
-> +++ b/drivers/irqchip/irq-ls-scfg-msi.c
-> @@ -336,7 +336,6 @@ static int ls_scfg_msi_probe(struct platform_device *pdev)
->  {
->  	const struct of_device_id *match;
->  	struct ls_scfg_msi *msi_data;
-> -	struct resource *res;
->  	int i, ret;
+> diff --git a/drivers/irqchip/irq-mvebu-sei.c b/drivers/irqchip/irq-mvebu-sei.c
+> index 18832cc..0a09dcc 100644
+> --- a/drivers/irqchip/irq-mvebu-sei.c
+> +++ b/drivers/irqchip/irq-mvebu-sei.c
+> @@ -382,8 +382,7 @@ static int mvebu_sei_probe(struct platform_device *pdev)
+>  	mutex_init(&sei->cp_msi_lock);
+>  	raw_spin_lock_init(&sei->mask_lock);
 >  
->  	match = of_match_device(ls_scfg_msi_id, &pdev->dev);
-> @@ -349,8 +348,7 @@ static int ls_scfg_msi_probe(struct platform_device *pdev)
->  
->  	msi_data->cfg = (struct ls_scfg_msi_cfg *) match->data;
->  
-> -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> -	msi_data->regs = devm_ioremap_resource(&pdev->dev, res);
-> +	msi_data->regs = devm_platform_ioremap_resource(pdev, 0);
->  	if (IS_ERR(msi_data->regs)) {
->  		dev_err(&pdev->dev, "failed to initialize 'regs'\n");
->  		return PTR_ERR(msi_data->regs);
-> diff --git a/drivers/irqchip/irq-mbigen.c b/drivers/irqchip/irq-mbigen.c
-> index 98b6e1d..c9aedfb 100644
-> --- a/drivers/irqchip/irq-mbigen.c
-> +++ b/drivers/irqchip/irq-mbigen.c
-> @@ -327,7 +327,6 @@ static inline int mbigen_acpi_create_domain(struct platform_device *pdev,
->  static int mbigen_device_probe(struct platform_device *pdev)
->  {
->  	struct mbigen_device *mgn_chip;
-> -	struct resource *res;
->  	int err;
->  
->  	mgn_chip = devm_kzalloc(&pdev->dev, sizeof(*mgn_chip), GFP_KERNEL);
-> @@ -335,13 +334,7 @@ static int mbigen_device_probe(struct platform_device *pdev)
->  		return -ENOMEM;
->  
->  	mgn_chip->pdev = pdev;
-> -
-> -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> -	if (!res)
-> -		return -EINVAL;
-> -
-> -	mgn_chip->base = devm_ioremap(&pdev->dev, res->start,
-> -				      resource_size(res));
-> +	mgn_chip->base = devm_platform_ioremap_resource(pdev, 0);
->  	if (!mgn_chip->base) {
-
-Now you are introducing a bug, as devm_ioremap and
-devm_platform_ioremap_resource do not return the same thing.
-
->  		dev_err(&pdev->dev, "failed to ioremap %pR\n", res);
->  		return -ENOMEM;
+> -	sei->res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> -	sei->base = devm_ioremap_resource(sei->dev, sei->res);
+> +	sei->base = devm_platform_ioremap_resource(pdev, 0);
+>  	if (IS_ERR(sei->base)) {
+>  		dev_err(sei->dev, "Failed to remap SEI resource\n");
+>  		return PTR_ERR(sei->base);
 > 
 
-Thanks,
+Again, what about sei->res?
 
 	M.
 -- 
