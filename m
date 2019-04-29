@@ -2,71 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1709DD31
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 09:53:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 646EEDD35
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 09:54:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RkE0V9rtQxD5JtsyaqzxgoR/0WqrTs6+zW8c539w0FY=; b=RHedXrSyw5ETG1
-	5sca6Heh/GJNEA47IdKCJs7atsDK9jtdLUm1+VxaSe/4HpT4DaNv4G2O9M5FPl79P+4l+cL4TyJgh
-	jJf79poRbAmkvrisbzRN99nfzQcFKk3H+zJXCNE/dU8VnEqCrt6cXXApF8rlOLN1amrsGgB3LKAQC
-	6v8Eti3PolmeojRSVzkRV73rY0Lw/AAKUDACwG6CFp+Yu7EenOPIIZbiGF23n9HAVdaJx1FfuL7ny
-	6wMn2lTEHz6Rt51/2BqBU9iHV4X5sQlAzWI9ZmrsWWUSb6vCPHzh4f0S5JkoU9sClah01fQ64z2jW
-	mVRGr5wRieGSX4/V9gkw==;
+	List-Owner; bh=LcO4Qu7SGEMlprOwf1Lt1DmSqcxgWHYLaZnpXD9uU1A=; b=Bsv/oqhwMcJALI
+	4WfJ+31R78vI+bbK8m/biYAeZubbEbrJkl+na38kt2BHeOntKrjRye1xvEabcrhv5LhxztZ6TtqGy
+	O3ohXJmFhc/EKwUp570+7f3raj0dxRYQGLO8edpgqupHq+FQLIb+7z0bgvvTa3xmZEz12NLVWDplC
+	Du0OleKOssHJhSN4uctKpm1IyHJVwnijzk93Uq2IAGjDVhVF2QMwDO7nyHtoiFdM0EyUJTHSXpXHm
+	F1B9HuglV1ykwWpFHrXkGSBIqRFisAI3BimUFBHSj5h/rOmf5pJmzBj70rLpNi2C3nxIqn9+8MYmd
+	NwNIuIyVHHmHhhcjXAPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL16n-0006pi-9U; Mon, 29 Apr 2019 07:53:53 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1hL177-000759-QO; Mon, 29 Apr 2019 07:54:13 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL16f-0006pG-Qn
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 07:53:47 +0000
-Received: by mail-qt1-x844.google.com with SMTP id g7so10941785qtc.0
+ id 1hL170-00074e-EZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 07:54:07 +0000
+Received: by mail-qt1-x842.google.com with SMTP id h16so5200327qtk.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Apr 2019 00:53:45 -0700 (PDT)
+ Mon, 29 Apr 2019 00:54:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=5t3ha+L/fYSXvu7o0ySbyVykauyPN6EAUxnPIHb4CJ0=;
- b=bCja6QsaoKBuddwyLN7Ymwyx1swIpERjorOwhUMNvQjppCPYWWn45unKFCXWw6v8NV
- tLMMy49XYA18pN+j2THaZlgHJgmRrmkZtLeKXFb2yDOhxo0pzsV/rC6ZTN5nUPEmrvxw
- H8Inbo6e5paggfmsXww73Z3oLs2/WZaWoI3H4=
+ :cc; bh=KWgCkKPfgLe0gODXDRVabcCo8RdveLj5EodL4BepQwo=;
+ b=QBxjZ6/oxpq6tExNEmdlt5qqmHZSVRrvHDTc+7z7QFME9MlAxao2y0Mf3fgL3QOvUn
+ 3ojdnuE2FRclx7G+rgsgtX3VxxZKTU8/OUyHqQ7s87OLiGU3feI17TVpZJSZHtNF6M/Y
+ OPlvuHIJCVasxqLTvKkkAhRm+bN9gyfTk/0hk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=5t3ha+L/fYSXvu7o0ySbyVykauyPN6EAUxnPIHb4CJ0=;
- b=ABG0F3VIV2TTP/v0x7pp49Vq5gpxOWSozGpEZaJ7NSq7fhuJDIFR+4zFpt6Lr7F7nU
- PRmoyndTQkZa55tKRsIOQJoOQ040fTAvhGUueavcGw1F1FyqwP6d7rv3xK2Uq8yzLjzh
- E37NGeqSDDjvMXc5nrFxcyADsJD3efLxS5c1yj0CdhxVU2dK1JrFik2lY1F1oLdLuBld
- flsoGfo8jFcLy9wHsr9zVsBoHxQitJ4xoSkYrAqkJUM8fvF/VUnw8gyoDPTS5QZwOhTb
- hHdpta+P0yW+s/hWxUTTi+CuHlvHvalPaT3T4VJdjP0DV/ynXSrPlIGSRbw6GlRsd2XD
- AfOg==
-X-Gm-Message-State: APjAAAWyJn5lz0tKhOlZqbsPu39PSORE4iyVNfFMcfub2jaiO0CVYmkp
- s98rPgU5MC7IBhXA8yOy/7e/JUxgSGS0VaMybIE=
-X-Google-Smtp-Source: APXvYqx48H9AYPZuMFrqfPObYS55llABgvbLwiFiYW98pm7xlm9uxMeurzruoh/LKxJaOVfxTRXM1+nMdxblh/TRCwg=
-X-Received: by 2002:ac8:169b:: with SMTP id r27mr33552179qtj.235.1556524424431; 
- Mon, 29 Apr 2019 00:53:44 -0700 (PDT)
+ bh=KWgCkKPfgLe0gODXDRVabcCo8RdveLj5EodL4BepQwo=;
+ b=KXGrxno62m5pF6ALRNdSHwkl3QvWw2B5R1fe2P2Ypm7vMRiqWFl1fOzUIwevMwy2rA
+ M74F8p7Q0OhcTxGmc0MvKcaSrtv7uY1xtrspMMzAm75dfi5ENBnHK274EiTvAW/Xor3D
+ fSYpA1QHMYk5j7dYrx9gkTbxNNKlb+Wfh2A442OKHobWEuQyyyvaZucN0DzuL9R6tDNx
+ /kuNatz/gfC5qAJEefQPxwq3936PryOF3ZG73Q+fgS6V1yLzs9nPweA74OmbDg52I8Vp
+ UNN1Uis5vGmo4C/4WpTPYF+Vv54DS5D7xoKISxa3MR2tODeMD18bfTgEfNCzXHar9efI
+ P+oQ==
+X-Gm-Message-State: APjAAAVmHgtaFP1PPiZwj04qTEXyzp5mFsEOF8zMu5sZqBwGSHdwiiiI
+ CEzykPB8U4Bs/e5TryjeGGBG0vElBdrKoKMaoe0=
+X-Google-Smtp-Source: APXvYqzuweVqEIbGAUxpYzmfY5Jlihfnu2PP5Rq/2cEC87hGr9WIb/S7SiEJVR+p6CHs6sv5l0jiC6+WCcgT8ud376E=
+X-Received: by 2002:ac8:2565:: with SMTP id 34mr49117430qtn.37.1556524445302; 
+ Mon, 29 Apr 2019 00:54:05 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190425194903.144569-1-venture@google.com>
-In-Reply-To: <20190425194903.144569-1-venture@google.com>
+References: <20190425194853.140617-1-venture@google.com>
+In-Reply-To: <20190425194853.140617-1-venture@google.com>
 From: Joel Stanley <joel@jms.id.au>
-Date: Mon, 29 Apr 2019 07:53:31 +0000
-Message-ID: <CACPK8XeDS0RfF1SSTuFbSoO9a7N6qDZShovj5yF56Pc9PA6nDQ@mail.gmail.com>
-Subject: Re: [PATCH 2/2] ARM: dts: aspeed: quanta-q71: Enable p2a node
+Date: Mon, 29 Apr 2019 07:53:53 +0000
+Message-ID: <CACPK8XchRsfJkB_p07g6LOyakaq8XH9yM3ve9annfNTTkGY4rg@mail.gmail.com>
+Subject: Re: [PATCH 1/2] ARM: dts: aspeed: Add aspeed-p2a-ctrl node
 To: Patrick Venture <venture@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_005345_868510_7FB26515 
-X-CRM114-Status: UNSURE (   8.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190429_005406_485659_01D54E7F 
+X-CRM114-Status: GOOD (  10.38  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
  [list.dnswl.org]
  0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -102,10 +101,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 25 Apr 2019 at 19:49, Patrick Venture <venture@google.com> wrote:
+On Thu, 25 Apr 2019 at 19:48, Patrick Venture <venture@google.com> wrote:
 >
-> Enable the aspeed-p2a-ctrl node and configure with memory-region to
-> enable mmap access.
+> Add a node for the aspeed-p2a-ctrl module.  This node, when enabled will
+> disable the PCI-to-AHB bridge and then allow control of this bridge via
+> ioctls, and access via mmap.
 >
 > Signed-off-by: Patrick Venture <venture@google.com>
 
