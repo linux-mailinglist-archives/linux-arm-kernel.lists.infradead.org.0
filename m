@@ -2,48 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39F77E342
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 15:06:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 961FBE351
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 15:11:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=HRWVaU5Ag95zl5Cxe7WIUb9cwE2JXB8igEI8e3RD5is=; b=cLIIxP4mpB7MHHOQ2x1Az+RtC
-	VeqC0slZkso9vlfiGB3fYdXz6xO54yotz6raCeNl5rtShbEiqZFQcLAkQJOhObLiDGz5RhvM5vaFV
-	hwk5S4aUnFQ2tCumSz5g2gWjKEdX5y7VsBUTchB24lXvVzi6C/ehGHLStKU0WbH/KSQdEoYGkDwJ9
-	5oBM9C3BRnmT1aT+NKRb1V51y2Y2hqngQf16tJ/2tVn6T3SvaTHj29xS+zDJU0PQ0RYoBBxgb4HWG
-	6L+xley2yT9mTAe5AA5fKmZWsnbDjSdBysDXqAXL0vgUFi8/gkbuVfgqSRdMjC0HVxtJ5JyCGZfvL
-	aSYc+KS5Q==;
+	 bh=93uokUwzFgb+7NciCacS1PXXQyzxhv0djWpUWJJ7QP0=; b=MmlrwQzQzquq3LWF7ATk7mP60
+	9r69kvLYpm9Jb9OtLkB2MAjXAzKdxVNnUMjDXPIEe+5zpthZzBHukilsjN3mb9PGsuDXzsKk734CW
+	Ca/6hRcnjrWPWMIeqtm+Nq0TBOmcJ9Jc0J8bx50b8sU3R4IHeNDC2l37ovxc2VZP2YbTiTK+hYLaQ
+	HiBKenUX5q1hjXIfmWPgEgSiWtIUeVaK+0WtZt28cr+irl/9qpgzjoCvOvFGf+WdxZVqZlv+yQW+U
+	VgyRMI/NnqOW53UszvpGP0a4gjQ28vzISvn/O/Oo5/4P441IlIBjo/LFuO2jXye2p9WMq9377qVyv
+	4jTx4nYyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL5yn-0001ZZ-Q3; Mon, 29 Apr 2019 13:05:57 +0000
-Received: from foss.arm.com ([217.140.101.70])
+	id 1hL63Z-0003Gl-92; Mon, 29 Apr 2019 13:10:53 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL5yg-0001Yy-Px
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 13:05:52 +0000
+ id 1hL63R-0003GK-ED
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 13:10:46 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 81232A78;
- Mon, 29 Apr 2019 06:05:49 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8C948A78;
+ Mon, 29 Apr 2019 06:10:44 -0700 (PDT)
 Received: from [10.1.196.75] (e110467-lin.cambridge.arm.com [10.1.196.75])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 15DF73F71A;
- Mon, 29 Apr 2019 06:05:47 -0700 (PDT)
-Subject: Re: [PATCH 11/26] iommu/dma: Factor out remapped pages lookup
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2716E3F71A;
+ Mon, 29 Apr 2019 06:10:43 -0700 (PDT)
+Subject: Re: [PATCH 12/26] iommu/dma: Refactor the page array remapping
+ allocator
 To: Christoph Hellwig <hch@lst.de>
 References: <20190422175942.18788-1-hch@lst.de>
- <20190422175942.18788-12-hch@lst.de>
+ <20190422175942.18788-13-hch@lst.de>
 From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <f8c04947-0ddb-17c5-8918-5859aabc220c@arm.com>
-Date: Mon, 29 Apr 2019 14:05:46 +0100
+Message-ID: <847e0d85-36c6-01d1-6547-5ca9d3f0931a@arm.com>
+Date: Mon, 29 Apr 2019 14:10:41 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190422175942.18788-12-hch@lst.de>
+In-Reply-To: <20190422175942.18788-13-hch@lst.de>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_060550_853164_7078FED2 
-X-CRM114-Status: GOOD (  24.43  )
+X-CRM114-CacheID: sfid-20190429_061045_494145_BBAD0842 
+X-CRM114-Status: GOOD (  30.16  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -73,110 +75,141 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 22/04/2019 18:59, Christoph Hellwig wrote:
-> From: Robin Murphy <robin.murphy@arm.com>
-> 
-> Since we duplicate the find_vm_area() logic a few times in places where
-> we only care aboute the pages, factor out a helper to abstract it.
-> 
-> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-> [hch: don't warn when not finding a region, as we'll rely on that later]
+> Move the call to dma_common_pages_remap into __iommu_dma_alloc and
+> rename it to iommu_dma_alloc_remap.  This creates a self-contained
+> helper for remapped pages allocation and mapping.
 
-Yeah, I did think about that and the things which it might make a little 
-easier, but preserved it as-is for the sake of keeping my modifications 
-quick and simple. TBH I'm now feeling more inclined to drop the WARNs 
-entirely at this point, since it's not like there's ever been any 
-general guarantee that freeing the wrong thing shouldn't just crash, but 
-that's something we can easily come back to later if need be.
-
-Robin.
+Reviewed-by: Robin Murphy <robin.murphy@arm.com>
 
 > Signed-off-by: Christoph Hellwig <hch@lst.de>
 > ---
->   drivers/iommu/dma-iommu.c | 32 ++++++++++++++++++++------------
->   1 file changed, 20 insertions(+), 12 deletions(-)
+>   drivers/iommu/dma-iommu.c | 54 +++++++++++++++++++--------------------
+>   1 file changed, 26 insertions(+), 28 deletions(-)
 > 
 > diff --git a/drivers/iommu/dma-iommu.c b/drivers/iommu/dma-iommu.c
-> index b52c5d6be7b4..8e2d9733113e 100644
+> index 8e2d9733113e..b8e46e89a60a 100644
 > --- a/drivers/iommu/dma-iommu.c
 > +++ b/drivers/iommu/dma-iommu.c
-> @@ -525,6 +525,15 @@ static struct page **__iommu_dma_alloc_pages(struct device *dev,
->   	return pages;
+> @@ -535,9 +535,9 @@ static struct page **__iommu_dma_get_pages(void *cpu_addr)
 >   }
 >   
-> +static struct page **__iommu_dma_get_pages(void *cpu_addr)
-> +{
-> +	struct vm_struct *area = find_vm_area(cpu_addr);
-> +
-> +	if (!area || !area->pages)
-> +		return NULL;
-> +	return area->pages;
-> +}
-> +
 >   /**
->    * iommu_dma_free - Free a buffer allocated by __iommu_dma_alloc()
+> - * iommu_dma_free - Free a buffer allocated by __iommu_dma_alloc()
+> + * iommu_dma_free - Free a buffer allocated by iommu_dma_alloc_remap()
 >    * @dev: Device which owns this buffer
-> @@ -1023,11 +1032,11 @@ static void iommu_dma_free(struct device *dev, size_t size, void *cpu_addr,
->   		dma_release_from_contiguous(dev, page, size >> PAGE_SHIFT);
->   		dma_common_free_remap(cpu_addr, size, VM_USERMAP);
->   	} else if (is_vmalloc_addr(cpu_addr)){
-> -		struct vm_struct *area = find_vm_area(cpu_addr);
-> +		struct page **pages = __iommu_dma_get_pages(cpu_addr);
+> - * @pages: Array of buffer pages as returned by __iommu_dma_alloc()
+> + * @pages: Array of buffer pages as returned by __iommu_dma_alloc_remap()
+>    * @size: Size of buffer in bytes
+>    * @handle: DMA address of buffer
+>    *
+> @@ -553,33 +553,35 @@ static void __iommu_dma_free(struct device *dev, struct page **pages,
+>   }
 >   
-> -		if (WARN_ON(!area || !area->pages))
-> +		if (WARN_ON(!pages))
->   			return;
-> -		__iommu_dma_free(dev, area->pages, iosize, &handle);
-> +		__iommu_dma_free(dev, pages, iosize, &handle);
->   		dma_common_free_remap(cpu_addr, size, VM_USERMAP);
+>   /**
+> - * __iommu_dma_alloc - Allocate and map a buffer contiguous in IOVA space
+> + * iommu_dma_alloc_remap - Allocate and map a buffer contiguous in IOVA space
+>    * @dev: Device to allocate memory for. Must be a real device
+>    *	 attached to an iommu_dma_domain
+>    * @size: Size of buffer in bytes
+> + * @dma_handle: Out argument for allocated DMA handle
+>    * @gfp: Allocation flags
+>    * @attrs: DMA attributes for this allocation
+> - * @prot: IOMMU mapping flags
+> - * @handle: Out argument for allocated DMA handle
+>    *
+>    * If @size is less than PAGE_SIZE, then a full CPU page will be allocated,
+>    * but an IOMMU which supports smaller pages might not map the whole thing.
+>    *
+> - * Return: Array of struct page pointers describing the buffer,
+> - *	   or NULL on failure.
+> + * Return: Mapped virtual address, or NULL on failure.
+>    */
+> -static struct page **__iommu_dma_alloc(struct device *dev, size_t size,
+> -		gfp_t gfp, unsigned long attrs, int prot, dma_addr_t *handle)
+> +static void *iommu_dma_alloc_remap(struct device *dev, size_t size,
+> +		dma_addr_t *dma_handle, gfp_t gfp, unsigned long attrs)
+>   {
+>   	struct iommu_domain *domain = iommu_get_dma_domain(dev);
+>   	struct iommu_dma_cookie *cookie = domain->iova_cookie;
+>   	struct iova_domain *iovad = &cookie->iovad;
+> +	bool coherent = dev_is_dma_coherent(dev);
+> +	int ioprot = dma_info_to_prot(DMA_BIDIRECTIONAL, coherent, attrs);
+> +	pgprot_t prot = arch_dma_mmap_pgprot(dev, PAGE_KERNEL, attrs);
+> +	unsigned int count, min_size, alloc_sizes = domain->pgsize_bitmap;
+>   	struct page **pages;
+>   	struct sg_table sgt;
+>   	dma_addr_t iova;
+> -	unsigned int count, min_size, alloc_sizes = domain->pgsize_bitmap;
+> +	void *vaddr;
+>   
+> -	*handle = DMA_MAPPING_ERROR;
+> +	*dma_handle = DMA_MAPPING_ERROR;
+>   
+>   	min_size = alloc_sizes & -alloc_sizes;
+>   	if (min_size < PAGE_SIZE) {
+> @@ -605,7 +607,7 @@ static struct page **__iommu_dma_alloc(struct device *dev, size_t size,
+>   	if (sg_alloc_table_from_pages(&sgt, pages, count, 0, size, GFP_KERNEL))
+>   		goto out_free_iova;
+>   
+> -	if (!(prot & IOMMU_CACHE)) {
+> +	if (!(ioprot & IOMMU_CACHE)) {
+>   		struct scatterlist *sg;
+>   		int i;
+>   
+> @@ -613,14 +615,21 @@ static struct page **__iommu_dma_alloc(struct device *dev, size_t size,
+>   			arch_dma_prep_coherent(sg_page(sg), sg->length);
+>   	}
+>   
+> -	if (iommu_map_sg(domain, iova, sgt.sgl, sgt.orig_nents, prot)
+> +	if (iommu_map_sg(domain, iova, sgt.sgl, sgt.orig_nents, ioprot)
+>   			< size)
+>   		goto out_free_sg;
+>   
+> -	*handle = iova;
+> +	vaddr = dma_common_pages_remap(pages, size, VM_USERMAP, prot,
+> +			__builtin_return_address(0));
+> +	if (!vaddr)
+> +		goto out_unmap;
+> +
+> +	*dma_handle = iova;
+>   	sg_free_table(&sgt);
+> -	return pages;
+> +	return vaddr;
+>   
+> +out_unmap:
+> +	__iommu_dma_unmap(dev, iova, size);
+>   out_free_sg:
+>   	sg_free_table(&sgt);
+>   out_free_iova:
+> @@ -989,18 +998,7 @@ static void *iommu_dma_alloc(struct device *dev, size_t size,
+>   						    size >> PAGE_SHIFT);
+>   		}
 >   	} else {
->   		__iommu_dma_unmap(dev, handle, iosize);
-> @@ -1049,7 +1058,7 @@ static int iommu_dma_mmap(struct device *dev, struct vm_area_struct *vma,
->   {
->   	unsigned long nr_pages = PAGE_ALIGN(size) >> PAGE_SHIFT;
->   	unsigned long off = vma->vm_pgoff;
-> -	struct vm_struct *area;
-> +	struct page **pages;
->   	int ret;
->   
->   	vma->vm_page_prot = arch_dma_mmap_pgprot(dev, vma->vm_page_prot, attrs);
-> @@ -1074,11 +1083,10 @@ static int iommu_dma_mmap(struct device *dev, struct vm_area_struct *vma,
->   		return __iommu_dma_mmap_pfn(vma, pfn, size);
->   	}
->   
-> -	area = find_vm_area(cpu_addr);
-> -	if (WARN_ON(!area || !area->pages))
-> +	pages = __iommu_dma_get_pages(cpu_addr);
-> +	if (WARN_ON_ONCE(!pages))
->   		return -ENXIO;
+> -		pgprot_t prot = arch_dma_mmap_pgprot(dev, PAGE_KERNEL, attrs);
+> -		struct page **pages;
 > -
-> -	return __iommu_dma_mmap(area->pages, size, vma);
-> +	return __iommu_dma_mmap(pages, size, vma);
->   }
->   
->   static int __iommu_dma_get_sgtable_page(struct sg_table *sgt, struct page *page,
-> @@ -1096,7 +1104,7 @@ static int iommu_dma_get_sgtable(struct device *dev, struct sg_table *sgt,
->   		unsigned long attrs)
->   {
->   	unsigned int count = PAGE_ALIGN(size) >> PAGE_SHIFT;
-> -	struct vm_struct *area = find_vm_area(cpu_addr);
-> +	struct page **pages;
->   
->   	if (!is_vmalloc_addr(cpu_addr)) {
->   		struct page *page = virt_to_page(cpu_addr);
-> @@ -1112,10 +1120,10 @@ static int iommu_dma_get_sgtable(struct device *dev, struct sg_table *sgt,
->   		return __iommu_dma_get_sgtable_page(sgt, page, size);
->   	}
->   
-> -	if (WARN_ON(!area || !area->pages))
-> +	pages = __iommu_dma_get_pages(cpu_addr);
-> +	if (WARN_ON_ONCE(!pages))
->   		return -ENXIO;
+> -		pages = __iommu_dma_alloc(dev, iosize, gfp, attrs, ioprot,
+> -					handle);
+> -		if (!pages)
+> -			return NULL;
 > -
-> -	return sg_alloc_table_from_pages(sgt, area->pages, count, 0, size,
-> +	return sg_alloc_table_from_pages(sgt, pages, count, 0, size,
->   					 GFP_KERNEL);
+> -		addr = dma_common_pages_remap(pages, size, VM_USERMAP, prot,
+> -					      __builtin_return_address(0));
+> -		if (!addr)
+> -			__iommu_dma_free(dev, pages, iosize, handle);
+> +		addr = iommu_dma_alloc_remap(dev, iosize, handle, gfp, attrs);
+>   	}
+>   	return addr;
 >   }
->   
+> @@ -1014,7 +1012,7 @@ static void iommu_dma_free(struct device *dev, size_t size, void *cpu_addr,
+>   	/*
+>   	 * @cpu_addr will be one of 4 things depending on how it was allocated:
+>   	 * - A remapped array of pages for contiguous allocations.
+> -	 * - A remapped array of pages from __iommu_dma_alloc(), for all
+> +	 * - A remapped array of pages from iommu_dma_alloc_remap(), for all
+>   	 *   non-atomic allocations.
+>   	 * - A non-cacheable alias from the atomic pool, for atomic
+>   	 *   allocations by non-coherent devices.
 > 
 
 _______________________________________________
