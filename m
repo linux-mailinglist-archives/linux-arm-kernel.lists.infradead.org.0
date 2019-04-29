@@ -2,79 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAF9AE926
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 19:33:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64F1EE93A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 19:35:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zRKGAO8jiaoEw7rpkd4vFuw9lkVQTh6OxahZOcfDuF0=; b=Gb0dEoBJAQ8O/W
-	RgdG5mDYI1n28jsKAFNJXqhfYaA3VL+8PvJ4jdoSv05bbRD0aEnCQPuMNHQPIzSIPuLwxSHNUFLpM
-	ooIgXME8xihFUDuI6ZKB1wejRpf/6vYHTfMA2mkyNhwcNn+l5YCgOYlpON7iH7DoHVHmvV0lYOoqi
-	iQp5wuilD4C/xVCDYFwTgTY16vdfDinBie4hT8B0tgQeDWSKSH2Qf7QHdTMgKAwRytNwvti1fp+Da
-	3YHd5Oy9xUnDfjENUeTydI9ZD9dM/JBRPpymA/Eqs2OxyX2Ghdh6e4MC/nmiJzdgNwbkrRxtgR16H
-	6jC+Rc264xVQ36iowtSg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=aF+/LexfmCTsbRgr0qk/8gQ8VXqbXor7IX/1j8sOHz4=; b=NDM47YO5tKJsAA
+	NWqjBuPz5mY/UbYt/BjTg3beeFzE2jYa5fmNPmsiuxNSzabKqqM0Xutd8dp6x+5GC0Ga4sxqiZi06
+	nRuo3l74lfnwmvQVxJLKlqsMoY4E/hLrsckcYf1t913I+VVkW1okFMDec8hSMUEjasOvJ/rnGwZa2
+	euuDvKB/jdcgP7ejZ9mkGnqo0OXFMhslwdfqPSz4NL6HZwaI8dTHD6+XRpKdiW1lZnmxo3oJykyoE
+	Z1Vjkqw/HLdhplFUR54JWmlI2Psio36IFEp8OL65A1VdVkj/YB379dKVukTw2OSVIX6gln+ggPx56
+	+R5X5C14b0efxR902h/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLA9a-0001oH-4y; Mon, 29 Apr 2019 17:33:22 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hLABp-0003Or-Lh; Mon, 29 Apr 2019 17:35:41 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLA9S-0001nS-GC
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 17:33:15 +0000
-Received: by mail-pf1-x444.google.com with SMTP id y13so5646815pfm.11
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Apr 2019 10:33:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=zpbyIVAlhMbRdeAB1M3cn6Wkwo9TF52AlNw1cUUTqHY=;
- b=vch2kdmhm3l/dYckKUYwTvyy6uXkMyZ9o3lJstXxJLuYnD3TbLEy3yWlSDh0vKuwif
- Kf3mGYGdG2QKV02tpYo0oG0vO8JNt2F9ZFLumLfRWLRu21hlnPQe9ewIidI/KUGZfDH8
- chQPhoRQgf7tS+IC+9XCrZ81Me0OjI762s90xxvqBvoi1g/GTsKSdHa2JyVk0JvbAUKx
- kr2ArBxjThj4+xSh8X/91M+uhfjGs1fAPcvHBex1n8hYIz9Ck9xbIyFCTWKa57hw0ZYW
- nU0iHKd57k3x2C8Z0I5rRs4gFqm1k0c8tfNQX+FbjDAFH0hA/y+0iJzwzY5RKb2CXuKs
- FpVg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=zpbyIVAlhMbRdeAB1M3cn6Wkwo9TF52AlNw1cUUTqHY=;
- b=TocqP7hyetB2+y4CzhT1KnD2XoZcKcYU45xhO5IxH5sqUymJFquQ1VfiG0g1pL5Qfp
- 0ok625y7mBgFAxSHin+2vjczDQFNKG+nRuKMrF7u8xvWThmerHymTR0VkJsRO1rIAc/T
- sH+rrEblxN05gqarOslVhtIwZQ3xvEOPO/CQwUVrlslNRWSS5/fUAov+LnSE7kVrCfEa
- MtoCjC6Dgddb/ImNILVPwfoDk5gpnNgKDJYia7NAdGUj4hKkkMvmP7OZgw6OebtPYOOf
- AT6K8kjF2qEFB7BHUll0KiLt1/8VZfDLORyoU4k23VK0ImpUh2w0m4Ny/KRe4VVmAXNt
- LZ8A==
-X-Gm-Message-State: APjAAAVkw/q5CPSXlRqXxKs1PsFJi0WeikFEYmxoAoZqVxNp85iPrNl3
- Fo90zQWgZHbk+BiKhkiPHYRLRtf33SoJFL49zfjmDw==
-X-Google-Smtp-Source: APXvYqyhzVkgB0sNyP0pJLGAsn93Af3fptKn4jl6xD7tGPX4gYaGIpx/DliKHjfrKnMpDxgiLG5/DVCAaTylqLuA5Wo=
-X-Received: by 2002:a63:c702:: with SMTP id n2mr21510100pgg.255.1556559190626; 
- Mon, 29 Apr 2019 10:33:10 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190426130015.GA12483@archlinux-i9>
- <20190426190603.5982-1-linux@rasmusvillemoes.dk>
-In-Reply-To: <20190426190603.5982-1-linux@rasmusvillemoes.dk>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Mon, 29 Apr 2019 10:32:59 -0700
-Message-ID: <CAKwvOd=Qzs8gAenS6-GkiSmrwxwJA7wChJ6FUE5+=LPAj4XSfQ@mail.gmail.com>
-Subject: Re: [PATCH 11/10] arm64: unbreak DYNAMIC_DEBUG=y build with clang
-To: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+ id 1hLABg-0003Ni-O7
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 17:35:35 +0000
+Received: from localhost.localdomain (unknown [194.230.155.114])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 59E182087B;
+ Mon, 29 Apr 2019 17:35:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1556559332;
+ bh=W/GoX7yGvh8bG51wr9bb4gUdm7k34g84QPI9aUcc8+Q=;
+ h=From:To:Subject:Date:From;
+ b=azmhrkYJy7BbsRwpc1miEtNVhrmHJzqfJtmD2TrJwXpla9dQTAtMBYppjuaRHMUaG
+ 02T75tJ6yk1HU6h+7TsXKcLMykYIqBxLCeKq57A+H4t6yAWdID/JPJlHboJ+zu54Oj
+ Gl+E34Y5hQRQdC+5f7Qa/H8Li6UBs3UAzvuo/owA=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] ARM: dts: exynos: Move CPU OPP tables out of SoC node on
+ Exynos5420
+Date: Mon, 29 Apr 2019 19:35:24 +0200
+Message-Id: <20190429173524.4870-1-krzk@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_103314_564657_531255D7 
-X-CRM114-Status: GOOD (  16.81  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190429_103532_812861_4E5FA16E 
+X-CRM114-Status: GOOD (  11.88  )
+X-Spam-Score: -5.3 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-5.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -83,8 +63,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.1 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,62 +75,259 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Will Deacon <will.deacon@arm.com>,
- LKML <linux-kernel@vger.kernel.org>, Jason Baron <jbaron@akamai.com>,
- Nathan Chancellor <natechancellor@gmail.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 26, 2019 at 12:06 PM Rasmus Villemoes
-<linux@rasmusvillemoes.dk> wrote:
->
-> Current versions of clang does not like the %c modifier in inline
-> assembly for targets other than x86, so any DYNAMIC_DEBUG=y build
-> fails on arm64. A fix is likely to land in 9.0 (see
-> https://github.com/ClangBuiltLinux/linux/issues/456), but unbreak the
-> build for older versions.
->
-> Fixes: arm64: select DYNAMIC_DEBUG_RELATIVE_POINTERS
-> Reported-by: Nathan Chancellor <natechancellor@gmail.com>
-> Reported-by: Arnd Bergmann <arnd@arndb.de>
-> Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
-> ---
-> Andrew, please apply and/or fold into 9/10.
->
->  arch/arm64/Kconfig | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> index d0871d523d5d..315992e33b17 100644
-> --- a/arch/arm64/Kconfig
-> +++ b/arch/arm64/Kconfig
-> @@ -83,7 +83,7 @@ config ARM64
->         select CRC32
->         select DCACHE_WORD_ACCESS
->         select DMA_DIRECT_REMAP
-> -       select DYNAMIC_DEBUG_RELATIVE_POINTERS
-> +       select DYNAMIC_DEBUG_RELATIVE_POINTERS if CC_IS_GCC || CLANG_VERSION >= 90000
+The cpus node is a top-level node, not inside the soc.  Therefore its
+OPP tables should be there as well.
 
-I just landed the fix for this in Clang, I think around the time you
-sent the patch.  Should ship in Clang 9.  Thanks for unbreaking our
-build.
-Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
+This also fixes the DTC warnings like:
 
->         select EDAC_SUPPORT
->         select FRAME_POINTER
->         select GENERIC_ALLOCATOR
-> --
-> 2.20.1
->
+    arch/arm/boot/dts/exynos5420.dtsi:46.37-109.5:
+        Warning simple_bus_reg): /soc/opp_table0: missing or empty reg/ranges property
 
+Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+---
+ arch/arm/boot/dts/exynos5420.dtsi | 216 +++++++++++++++---------------
+ 1 file changed, 109 insertions(+), 107 deletions(-)
 
+diff --git a/arch/arm/boot/dts/exynos5420.dtsi b/arch/arm/boot/dts/exynos5420.dtsi
+index 5fb2326875dc..16088186a33a 100644
+--- a/arch/arm/boot/dts/exynos5420.dtsi
++++ b/arch/arm/boot/dts/exynos5420.dtsi
+@@ -42,117 +42,119 @@
+ 	 * by exynos5420-cpus.dtsi or exynos5422-cpus.dtsi.
+ 	 */
+ 
+-	soc: soc {
+-		cluster_a15_opp_table: opp_table0 {
+-			compatible = "operating-points-v2";
+-			opp-shared;
+-			opp-1800000000 {
+-				opp-hz = /bits/ 64 <1800000000>;
+-				opp-microvolt = <1250000>;
+-				clock-latency-ns = <140000>;
+-			};
+-			opp-1700000000 {
+-				opp-hz = /bits/ 64 <1700000000>;
+-				opp-microvolt = <1212500>;
+-				clock-latency-ns = <140000>;
+-			};
+-			opp-1600000000 {
+-				opp-hz = /bits/ 64 <1600000000>;
+-				opp-microvolt = <1175000>;
+-				clock-latency-ns = <140000>;
+-			};
+-			opp-1500000000 {
+-				opp-hz = /bits/ 64 <1500000000>;
+-				opp-microvolt = <1137500>;
+-				clock-latency-ns = <140000>;
+-			};
+-			opp-1400000000 {
+-				opp-hz = /bits/ 64 <1400000000>;
+-				opp-microvolt = <1112500>;
+-				clock-latency-ns = <140000>;
+-			};
+-			opp-1300000000 {
+-				opp-hz = /bits/ 64 <1300000000>;
+-				opp-microvolt = <1062500>;
+-				clock-latency-ns = <140000>;
+-			};
+-			opp-1200000000 {
+-				opp-hz = /bits/ 64 <1200000000>;
+-				opp-microvolt = <1037500>;
+-				clock-latency-ns = <140000>;
+-			};
+-			opp-1100000000 {
+-				opp-hz = /bits/ 64 <1100000000>;
+-				opp-microvolt = <1012500>;
+-				clock-latency-ns = <140000>;
+-			};
+-			opp-1000000000 {
+-				opp-hz = /bits/ 64 <1000000000>;
+-				opp-microvolt = < 987500>;
+-				clock-latency-ns = <140000>;
+-			};
+-			opp-900000000 {
+-				opp-hz = /bits/ 64 <900000000>;
+-				opp-microvolt = < 962500>;
+-				clock-latency-ns = <140000>;
+-			};
+-			opp-800000000 {
+-				opp-hz = /bits/ 64 <800000000>;
+-				opp-microvolt = < 937500>;
+-				clock-latency-ns = <140000>;
+-			};
+-			opp-700000000 {
+-				opp-hz = /bits/ 64 <700000000>;
+-				opp-microvolt = < 912500>;
+-				clock-latency-ns = <140000>;
+-			};
++	cluster_a15_opp_table: opp_table0 {
++		compatible = "operating-points-v2";
++		opp-shared;
++
++		opp-1800000000 {
++			opp-hz = /bits/ 64 <1800000000>;
++			opp-microvolt = <1250000>;
++			clock-latency-ns = <140000>;
++		};
++		opp-1700000000 {
++			opp-hz = /bits/ 64 <1700000000>;
++			opp-microvolt = <1212500>;
++			clock-latency-ns = <140000>;
++		};
++		opp-1600000000 {
++			opp-hz = /bits/ 64 <1600000000>;
++			opp-microvolt = <1175000>;
++			clock-latency-ns = <140000>;
++		};
++		opp-1500000000 {
++			opp-hz = /bits/ 64 <1500000000>;
++			opp-microvolt = <1137500>;
++			clock-latency-ns = <140000>;
++		};
++		opp-1400000000 {
++			opp-hz = /bits/ 64 <1400000000>;
++			opp-microvolt = <1112500>;
++			clock-latency-ns = <140000>;
++		};
++		opp-1300000000 {
++			opp-hz = /bits/ 64 <1300000000>;
++			opp-microvolt = <1062500>;
++			clock-latency-ns = <140000>;
++		};
++		opp-1200000000 {
++			opp-hz = /bits/ 64 <1200000000>;
++			opp-microvolt = <1037500>;
++			clock-latency-ns = <140000>;
++		};
++		opp-1100000000 {
++			opp-hz = /bits/ 64 <1100000000>;
++			opp-microvolt = <1012500>;
++			clock-latency-ns = <140000>;
++		};
++		opp-1000000000 {
++			opp-hz = /bits/ 64 <1000000000>;
++			opp-microvolt = < 987500>;
++			clock-latency-ns = <140000>;
++		};
++		opp-900000000 {
++			opp-hz = /bits/ 64 <900000000>;
++			opp-microvolt = < 962500>;
++			clock-latency-ns = <140000>;
++		};
++		opp-800000000 {
++			opp-hz = /bits/ 64 <800000000>;
++			opp-microvolt = < 937500>;
++			clock-latency-ns = <140000>;
++		};
++		opp-700000000 {
++			opp-hz = /bits/ 64 <700000000>;
++			opp-microvolt = < 912500>;
++			clock-latency-ns = <140000>;
+ 		};
++	};
+ 
+-		cluster_a7_opp_table: opp_table1 {
+-			compatible = "operating-points-v2";
+-			opp-shared;
+-			opp-1300000000 {
+-				opp-hz = /bits/ 64 <1300000000>;
+-				opp-microvolt = <1275000>;
+-				clock-latency-ns = <140000>;
+-			};
+-			opp-1200000000 {
+-				opp-hz = /bits/ 64 <1200000000>;
+-				opp-microvolt = <1212500>;
+-				clock-latency-ns = <140000>;
+-			};
+-			opp-1100000000 {
+-				opp-hz = /bits/ 64 <1100000000>;
+-				opp-microvolt = <1162500>;
+-				clock-latency-ns = <140000>;
+-			};
+-			opp-1000000000 {
+-				opp-hz = /bits/ 64 <1000000000>;
+-				opp-microvolt = <1112500>;
+-				clock-latency-ns = <140000>;
+-			};
+-			opp-900000000 {
+-				opp-hz = /bits/ 64 <900000000>;
+-				opp-microvolt = <1062500>;
+-				clock-latency-ns = <140000>;
+-			};
+-			opp-800000000 {
+-				opp-hz = /bits/ 64 <800000000>;
+-				opp-microvolt = <1025000>;
+-				clock-latency-ns = <140000>;
+-			};
+-			opp-700000000 {
+-				opp-hz = /bits/ 64 <700000000>;
+-				opp-microvolt = <975000>;
+-				clock-latency-ns = <140000>;
+-			};
+-			opp-600000000 {
+-				opp-hz = /bits/ 64 <600000000>;
+-				opp-microvolt = <937500>;
+-				clock-latency-ns = <140000>;
+-			};
++	cluster_a7_opp_table: opp_table1 {
++		compatible = "operating-points-v2";
++		opp-shared;
++
++		opp-1300000000 {
++			opp-hz = /bits/ 64 <1300000000>;
++			opp-microvolt = <1275000>;
++			clock-latency-ns = <140000>;
++		};
++		opp-1200000000 {
++			opp-hz = /bits/ 64 <1200000000>;
++			opp-microvolt = <1212500>;
++			clock-latency-ns = <140000>;
++		};
++		opp-1100000000 {
++			opp-hz = /bits/ 64 <1100000000>;
++			opp-microvolt = <1162500>;
++			clock-latency-ns = <140000>;
++		};
++		opp-1000000000 {
++			opp-hz = /bits/ 64 <1000000000>;
++			opp-microvolt = <1112500>;
++			clock-latency-ns = <140000>;
++		};
++		opp-900000000 {
++			opp-hz = /bits/ 64 <900000000>;
++			opp-microvolt = <1062500>;
++			clock-latency-ns = <140000>;
++		};
++		opp-800000000 {
++			opp-hz = /bits/ 64 <800000000>;
++			opp-microvolt = <1025000>;
++			clock-latency-ns = <140000>;
++		};
++		opp-700000000 {
++			opp-hz = /bits/ 64 <700000000>;
++			opp-microvolt = <975000>;
++			clock-latency-ns = <140000>;
++		};
++		opp-600000000 {
++			opp-hz = /bits/ 64 <600000000>;
++			opp-microvolt = <937500>;
++			clock-latency-ns = <140000>;
+ 		};
++	};
+ 
++	soc: soc {
+ 		cci: cci@10d20000 {
+ 			compatible = "arm,cci-400";
+ 			#address-cells = <1>;
 -- 
-Thanks,
-~Nick Desaulniers
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
