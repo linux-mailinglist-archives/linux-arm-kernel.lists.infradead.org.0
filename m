@@ -2,102 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91967E029
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 12:04:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3FD8E05B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 12:13:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u7SpirrsfP4rMZwulcM9sS5RGrKBLjThmY3i0POfNaQ=; b=SeHRzr7UWShf+5
-	rrPkw6WSfBfNYxye21izBb2domR1bfo3DSRu3FWdA1euZSvHhE99cr8121VnsXYvlhJ2lIpSLTnX3
-	GtqO1iSEIWnzx+liKPJpYpT4WVYaJyjFjInw7QJr3QYU07YrQcVFl1X18fgMr5QGqd0FtN3XQhF6A
-	f0blnzdoa/CccsRd5pKST+CWqxnHvbmuZ0aPWQGFshk5QYKXjDz6QlToZCGJBqyYBkVi51ITWXeTi
-	Le+jeoTMlcTn3+ewIrS6TfMT4QHdi5HG54RNk1rEXTnDPdZTJlFVb/ypCXwkuBQzATp225MMIcywX
-	pD7ohGDR5DgOO/sGz7zA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Np7VULp64Yr4mjMZJ5yFcN+oOGAQ0m4qNs76lOOp93M=; b=aUYqePQfkchsl3
+	k8WdHGhBWjBuNdHVRqIbwRUd1ZrpVUZrw5YzobfdK9Xlmn+O6jLqsr3Hax4ZbW/eSMYOF6M8gzbuo
+	tWUDGqK5eteQOPPYEjM8EJ3A3A1pDb+T/doYO5hx239AOab+oC2Bc0U1uD7V94JeWazlqZG76g4cU
+	zS3xXax+mkStXHBo7bNQgqqGDCIXZzQe1yjqRnBs4xwf/NMr5lxSq2pqCJmr9Nl6fg7yXbU2VSgPN
+	udzOgLKnW2v6A+2FkImYz79scuDVO+4a7A0FwXs0NC0kRRvSbmVxRQUM6zfJhDXciZSjXvhSsq/Av
+	x+lmZuu67noon7PXhz8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL39L-000438-7E; Mon, 29 Apr 2019 10:04:39 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL38b-0003Kg-I9
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 10:03:55 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x3TA2515025587; Mon, 29 Apr 2019 12:03:40 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type :
- content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=22Q4dOcM7XTrNOZYvE/T6BS+Fnv79Cx7eiAXNJdGtiE=;
- b=DpgqOeuIhrPeVUaaTeQ5B/opN5QNgu37ecK7ILXP9oj98s/mFxE0Z1ViwyRsYqtE/rnp
- FoskmRuzx+VOwwTUoHJMQicAehT5/TK39XrB6HsVUyvjiklvOPlKXUaBSInucT2g7lE0
- tXt+ygKoOve/8gMNVsf4nA91CnaI3UMF/n0l6+Ks7eGtiB/j6RGUQTX+uBAtALewHZgE
- tlx1/gbS617gS1bF5oV3nm0P3csptmm6+5CrCt+ndF0SLNwKzoF7nSHwrNjscbxNOXmq
- SjGmANpvhEpOlkLG93Ar+4DWFvRDXnIq4z1CtKmQRPU7Cer4zCfMgYPCRnjQ72fLa3SA ew== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2s5u5d1cpk-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Mon, 29 Apr 2019 12:03:40 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 079FD31;
- Mon, 29 Apr 2019 10:03:40 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag5node1.st.com [10.75.127.13])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D195F1516;
- Mon, 29 Apr 2019 10:03:39 +0000 (GMT)
-Received: from SFHDAG5NODE1.st.com (10.75.127.13) by SFHDAG5NODE1.st.com
- (10.75.127.13) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 29 Apr
- 2019 12:03:39 +0200
-Received: from SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6]) by
- SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6%20]) with mapi id
- 15.00.1347.000; Mon, 29 Apr 2019 12:03:39 +0200
-From: Gerald BAEZA <gerald.baeza@st.com>
-To: "will.deacon@arm.com" <will.deacon@arm.com>, "mark.rutland@arm.com"
- <mark.rutland@arm.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>, Alexandre TORGUE
- <alexandre.torgue@st.com>, "corbet@lwn.net" <corbet@lwn.net>,
- "linux@armlinux.org.uk" <linux@armlinux.org.uk>, "olof@lixom.net"
- <olof@lixom.net>,
- "horms+renesas@verge.net.au" <horms+renesas@verge.net.au>,
- "arnd@arndb.de" <arnd@arndb.de>
-Subject: [PATCH 5/5] ARM: dts: stm32: add ddrperfm on stm32mp157c
-Thread-Topic: [PATCH 5/5] ARM: dts: stm32: add ddrperfm on stm32mp157c
-Thread-Index: AQHU/nLRxwgji6v2RkORmNtCUuK6Ow==
-Date: Mon, 29 Apr 2019 10:03:39 +0000
-Message-ID: <1556532194-27904-6-git-send-email-gerald.baeza@st.com>
-References: <1556532194-27904-1-git-send-email-gerald.baeza@st.com>
-In-Reply-To: <1556532194-27904-1-git-send-email-gerald.baeza@st.com>
-Accept-Language: fr-FR, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.51]
+	id 1hL3Hg-0007zQ-NA; Mon, 29 Apr 2019 10:13:16 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hL3HY-0007xu-Fs
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 10:13:09 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 652D680D;
+ Mon, 29 Apr 2019 03:13:07 -0700 (PDT)
+Received: from [10.1.196.92] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ E13DA3F5AF; Mon, 29 Apr 2019 03:13:04 -0700 (PDT)
+Subject: Re: [PATCH v7 11/14] irqchip: ti-sci-inta: Add support for Interrupt
+ Aggregator driver
+To: Lokesh Vutla <lokeshvutla@ti.com>, Santosh Shilimkar
+ <ssantosh@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Nishanth Menon <nm@ti.com>, tglx@linutronix.de, jason@lakedaemon.net
+References: <20190420100950.7997-1-lokeshvutla@ti.com>
+ <20190420100950.7997-12-lokeshvutla@ti.com>
+ <bb768bc0-e18b-3794-8083-1612da10b0c1@ti.com>
+ <79b34c45-023b-2df4-26f4-e151e74a46ac@arm.com>
+ <7d012633-e540-df8f-7c21-07702447cb8a@ti.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+Organization: ARM Ltd
+Message-ID: <3723e553-4e04-4ce4-080b-01f1a9843ea8@arm.com>
+Date: Mon, 29 Apr 2019 11:13:02 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-04-29_05:, , signatures=0
+In-Reply-To: <7d012633-e540-df8f-7c21-07702447cb8a@ti.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_030353_927263_E4C46561 
-X-CRM114-Status: GOOD (  12.81  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190429_031308_537035_4C038992 
+X-CRM114-Status: GOOD (  18.53  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.8 KHOP_DYNAMIC           Relay looks like a dynamic address
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -109,48 +114,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Gerald BAEZA <gerald.baeza@st.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Peter Ujfalusi <peter.ujfalusi@ti.com>,
+ Grygorii Strashko <grygorii.strashko@ti.com>,
+ Device Tree Mailing List <devicetree@vger.kernel.org>,
+ Tony Lindgren <tony@atomide.com>, linus.walleij@linaro.org,
+ Sekhar Nori <nsekhar@ti.com>, linux-kernel@vger.kernel.org,
+ Tero Kristo <t-kristo@ti.com>,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The DDRPERFM is the DDR Performance Monitor embedded
-in STM32MP1 SOC.
+On 29/04/2019 09:59, Lokesh Vutla wrote:
+> 
+> 
+> On 29/04/19 2:17 PM, Marc Zyngier wrote:
+>> On 23/04/2019 11:00, Lokesh Vutla wrote:
+>>> Hi Marc,
+>>
+>> [...]
+>>
+>>>> +/**
+>>>> + * ti_sci_inta_set_type() - Update the trigger type of the irq.
+>>>> + * @data:	Pointer to corresponding irq_data
+>>>> + * @type:	Trigger type as specified by user
+>>>> + *
+>>>> + * Note: This updates the handle_irq callback for level msi.
+>>>> + *
+>>>> + * Return 0 if all went well else appropriate error.
+>>>> + */
+>>>> +static int ti_sci_inta_set_type(struct irq_data *data, unsigned int type)
+>>>> +{
+>>>> +	struct irq_desc *desc = irq_to_desc(data->irq);
+>>>> +
+>>>> +	/*
+>>>> +	 * .alloc default sets handle_edge_irq. But if the user specifies
+>>>> +	 * that IRQ is level MSI, then update the handle to handle_level_irq
+>>>> +	 */
+>>>> +	if (type & IRQF_TRIGGER_HIGH)
+>>>> +		desc->handle_irq = handle_level_irq;
+>>>> +
+>>>> +	return 0;
+>>>
+>>>
+>>> Returning error value is causing request_irq to fail, so still returning 0. Do
+>>> you suggest any other method to handle this?
+>>
+>> But that is the very point, isn't it? If you pass the wrong triggering
+>> type to request_irq, it *must* fail. What you should have is something like:
+>>
+>> switch (type & IRQ_TYPE_SENSE_MASK) {
+>> case IRQF_TRIGGER_HIGH:
+>> 	desc->handle_irq = handle_level_irq;
+>> 	return 0;
+>> case IRQ_TYPE_EDGE_RISING:
+>> 	return 0;
+>> default:
+>> 	return -EINVAL;
+>> }
+>>
+>> (adjust as necessary).
+>>
+>> What's wrong with this?
+> 
+> I get it. Will fix it in next version. I also got the firmware update as well.
+> If you are okay with rest of the series, I want to post the next version with
+> the firmware update.
+Then post it now, and I'll review that. I'd rather look at the latest
+than providing feedback on something that has already changed.
 
-Signed-off-by: Gerald Baeza <gerald.baeza@st.com>
----
- arch/arm/boot/dts/stm32mp157c.dtsi | 9 +++++++++
- 1 file changed, 9 insertions(+)
+Thanks,
 
-diff --git a/arch/arm/boot/dts/stm32mp157c.dtsi b/arch/arm/boot/dts/stm32mp157c.dtsi
-index f8bbfff..6883762 100644
---- a/arch/arm/boot/dts/stm32mp157c.dtsi
-+++ b/arch/arm/boot/dts/stm32mp157c.dtsi
-@@ -1155,6 +1155,15 @@
- 			};
- 		};
- 
-+		ddrperfm: perf@5a007000 {
-+			compatible = "st,stm32-ddr-pmu";
-+			reg = <0x5a007000 0x400>;
-+			clocks = <&rcc DDRPERFM>, <&rcc PLL2_R>;
-+			clock-names = "bus", "ddr";
-+			resets = <&rcc DDRPERFM_R>;
-+			status = "okay";
-+		};
-+
- 		usart1: serial@5c000000 {
- 			compatible = "st,stm32h7-uart";
- 			reg = <0x5c000000 0x400>;
+	M.
 -- 
-2.7.4
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
