@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57AE8EA9F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 21:04:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3A42EAA9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 21:11:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=audl183yj9oLT5VewTFJ1BR8Iwq+z8o+7L87GzQfjSs=; b=W0gkLAXyS9OK8z
-	ui5ZGupKXh4UqQXpVP3ut+C+fq2utUJksD2v4K2tmgvHtL9G4Jva4Ofb9hIIZqXclkeqv9s+Xj2Pq
-	OrhZwUFbrcr96c0atVWM4ap6pwUCifjGtKmSrteerlYgQUa00sDfLSF+xNvzatzX80rhmUWw9iK/Y
-	SQ6ZcYyOpB33im3/AyT/Ulupvt2fYcMX3w8O2I+gUI6/IGHuzSZw2dnGH1YZ9J2lBuvJf6qF0eCvk
-	reZLlARBzsd6WjQHRCSnN6qyzpHup0WpdxKHHgCgd3vGdvpV0aezgf0V9TPyy/EdKRBqzPHoSAL5Y
-	lTIAi1txKap8Bxic3RmQ==;
+	List-Owner; bh=GIzw7rMXwJo+pWODTfi9PHiQ2IOZ4Cz6zCIB2mD72g0=; b=EaDY9CCaMX6Rve
+	O1gSWWfzeBhiP4qWrsG9jvF7QRYzmqXk6QnJGVWT3LKi75FG88G2/wObI2ubr3GptPMJiZCgXsZnL
+	X3kygwLj4AJrmybOk/UK1zqPvPzyMrmRiKXtgQ6jsGUgt+uWSCJSyarKzzowSIesakJmrMf9m2qQ+
+	Yko5cNXAV//6we4pj5R3yZD9RrqjOHmbJ7idUyNN03xDPUG07dQI3cCVBEb+BnUkQx4Y1lcUHD/GC
+	xrH92miYKcXeAVepf+57Nl32/IwloR2f5Pl/+ijh8GUrRxXGxpa68PphaZoS0nkiJOE8lf/GPNOUd
+	QnQMjlvTESTWmTineBkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLBZT-00023H-F8; Mon, 29 Apr 2019 19:04:11 +0000
+	id 1hLBg9-00050K-0l; Mon, 29 Apr 2019 19:11:05 +0000
 Received: from verein.lst.de ([213.95.11.211] helo=newverein.lst.de)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLBZN-00022c-FP
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 19:04:06 +0000
+ id 1hLBg2-0004za-Ge
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 19:10:59 +0000
 Received: by newverein.lst.de (Postfix, from userid 2407)
- id 6398268AFE; Mon, 29 Apr 2019 21:03:48 +0200 (CEST)
-Date: Mon, 29 Apr 2019 21:03:48 +0200
+ id 9DC0668AFE; Mon, 29 Apr 2019 21:10:40 +0200 (CEST)
+Date: Mon, 29 Apr 2019 21:10:40 +0200
 From: Christoph Hellwig <hch@lst.de>
 To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 14/26] iommu/dma: Refactor iommu_dma_free
-Message-ID: <20190429190348.GB5637@lst.de>
+Subject: Re: [PATCH 11/26] iommu/dma: Factor out remapped pages lookup
+Message-ID: <20190429191040.GC5637@lst.de>
 References: <20190422175942.18788-1-hch@lst.de>
- <20190422175942.18788-15-hch@lst.de>
- <8321a363-f448-3e48-48f6-58d2b44a2900@arm.com>
+ <20190422175942.18788-12-hch@lst.de>
+ <f8c04947-0ddb-17c5-8918-5859aabc220c@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <8321a363-f448-3e48-48f6-58d2b44a2900@arm.com>
+In-Reply-To: <f8c04947-0ddb-17c5-8918-5859aabc220c@arm.com>
 User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_120405_664603_0FF2C98B 
-X-CRM114-Status: GOOD (  12.17  )
+X-CRM114-CacheID: sfid-20190429_121058_702412_578DA04E 
+X-CRM114-Status: GOOD (  12.82  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,17 +68,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 29, 2019 at 02:59:43PM +0100, Robin Murphy wrote:
-> Hmm, I do still prefer my original flow with the dma_common_free_remap() 
-> call right out of the way at the end rather than being a special case in 
-> the middle of all the page-freeing (which is the kind of existing 
-> complexity I was trying to eliminate). I guess you've done this to avoid 
-> having "if (!dma_release_from_contiguous(...))..." twice like I ended up 
-> with, which is fair enough I suppose - once we manage to solve the new 
-> dma_{alloc,free}_contiguous() interface that may tip the balance so I can 
-> always revisit this then.
+On Mon, Apr 29, 2019 at 02:05:46PM +0100, Robin Murphy wrote:
+> On 22/04/2019 18:59, Christoph Hellwig wrote:
+>> From: Robin Murphy <robin.murphy@arm.com>
+>>
+>> Since we duplicate the find_vm_area() logic a few times in places where
+>> we only care aboute the pages, factor out a helper to abstract it.
+>>
+>> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+>> [hch: don't warn when not finding a region, as we'll rely on that later]
+>
+> Yeah, I did think about that and the things which it might make a little 
+> easier, but preserved it as-is for the sake of keeping my modifications 
+> quick and simple. TBH I'm now feeling more inclined to drop the WARNs 
+> entirely at this point, since it's not like there's ever been any general 
+> guarantee that freeing the wrong thing shouldn't just crash, but that's 
+> something we can easily come back to later if need be.
 
-Ok, I'll try to accomodate that with a minor rework.
+Ok, I've dropped the warnings.
 
 _______________________________________________
 linux-arm-kernel mailing list
