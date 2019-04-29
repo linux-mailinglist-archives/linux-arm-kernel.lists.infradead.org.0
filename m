@@ -2,106 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4457DDA9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 10:24:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5190DDAD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 10:27:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=+oZ+NA3+EOosLVPlvbOzdv3xl77fAksRnD5kmeAAR18=; b=Jvkv/byzSgbp6JbSX9IxX/ZoMc
-	4nMqJaUJa4grWseUHAWr6XP7thltUjaiasv+nvADIarg3TysVD9f36BBJGIlkCdecC7jTcjaDLXiF
-	JaKCzaaoLf6b6KETdbWRLpJ44/fiGoUbzAq0Gaha7r88YVQn1zSk5KCIvlZx9enRixZZxWgYHlEsr
-	5f4Tc4LgkYXcTJnuIvTAi+mDoKlIFyaMQ7ZVe/yghv4plD/NkBx9m8e1syQGy5bXTI64sLNI3EXL1
-	ZJL+LfQozgSTAccF+hR7vl7Dq4JJQsE0WcjAWQxI3iVDmyNEWjK1cb1uL3MeXJKrkcEOzYBrvO8lA
-	JQfOKSpQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=vcsvkQv00uObSKnPK/QAffcd0Ggs7u369XwDg/Bmmag=; b=G2z68G47fE1+s6pOosQ7jHyBN
+	tZKD0KKgTP3LVl+zvmBn6PQgaOhPToD1fzHsUq0pr4uTO4gxgYJJCfnghcDFYpxyHuTdsggyX3E+F
+	T4eqNMxl5XErQHXCQgjF88S2bVZRkjO5QM37/iNBROF+3oPh6KJi7GRYI23pBOXkMql6oUK2ra+iF
+	U08S6UCZP2efa/dtwoLw1we1lPHLijpxh6XnqokJK7rEfASuvb+PTZa5E9wa65deXgvjWV4uEcVsw
+	k5SOreOyxuXLI8EHlswGMVlJZ8M+qfenuDGsrus6uwjNei86sK/L/hTe3qo/8lSc2m2AM5XDe0Lxy
+	aYa8O5KsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL1aj-0003Fi-5Q; Mon, 29 Apr 2019 08:24:49 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL1ab-0003F8-Vf
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 08:24:43 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F05E880D;
- Mon, 29 Apr 2019 01:24:40 -0700 (PDT)
-Received: from [10.1.196.92] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- D3FD93F71A; Mon, 29 Apr 2019 01:24:39 -0700 (PDT)
-Subject: Re: [PATCH 2/7] irqchip/irq-imgpdc.c: Use
- devm_platform_ioremap_resource()
-From: Marc Zyngier <marc.zyngier@arm.com>
-To: Mukesh Ojha <mojha@codeaurora.org>, tglx@linutronix.de,
- jason@lakedaemon.net, yamada.masahiro@socionext.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <1554362413-3305-1-git-send-email-mojha@codeaurora.org>
- <1554362413-3305-3-git-send-email-mojha@codeaurora.org>
- <c576ec64-9f07-b867-73c3-53df83b11b04@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
-Organization: ARM Ltd
-Message-ID: <9650cf73-e592-c672-1951-10c137f1a3db@arm.com>
-Date: Mon, 29 Apr 2019 09:24:38 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+	id 1hL1cy-0004pV-Rj; Mon, 29 Apr 2019 08:27:08 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hL1cq-0004oG-2v; Mon, 29 Apr 2019 08:27:01 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x3T8HDBq003668; Mon, 29 Apr 2019 10:26:55 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=/F7blK1EGqFXY58nMXu21tmRUNkOeht4WEwQ9K/sVWM=;
+ b=kAt21Ma5POzlMvXF7jSN3A+IgXFFbjItqckL+IoSRkkL+5pKFfcmmnQAArWDqZVQMJRy
+ MZXiQCpId5XgCTYgJGTIKs8+ltltvU7TrvAcBLj5f579Lhxe5++zY9nvJW3A5jmagWFl
+ WPtgLDArp/1SIX3Jy1LdmG/VhobLRsAlL/QuNwiTkFyyfKbaHwuOZ3nglvS+vUWzeEqG
+ ULHARVjRbsWdw/ptFAlt4OxO/81xx0to4eukTxGJ/aOZNwTWb73u9o2N7mL413ELU1T6
+ 9HlGccZH9pB3kZ84y22Yl0WfLiiXCQDsR71/c/n0J40A6d3Pyb6KxybuhCbJUasZEtUW 7A== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2s4c743r13-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Mon, 29 Apr 2019 10:26:55 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6EFAA43;
+ Mon, 29 Apr 2019 08:26:54 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D88E11340;
+ Mon, 29 Apr 2019 08:26:53 +0000 (GMT)
+Received: from [10.48.0.204] (10.75.127.51) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 29 Apr
+ 2019 10:26:53 +0200
+Subject: Re: [PATCH 2/6] net: stmmac: fix csr_clk can't be zero issue
+To: biao huang <biao.huang@mediatek.com>
+References: <1556433009-25759-1-git-send-email-biao.huang@mediatek.com>
+ <1556433009-25759-3-git-send-email-biao.huang@mediatek.com>
+ <24f4b268-aa7f-e1f7-59fc-2bc163eb8277@st.com>
+ <1556525353.24897.30.camel@mhfsdcap03>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <738b37cd-4719-9257-18fc-aab1dc7424f4@st.com>
+Date: Mon, 29 Apr 2019 10:26:52 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <c576ec64-9f07-b867-73c3-53df83b11b04@arm.com>
+In-Reply-To: <1556525353.24897.30.camel@mhfsdcap03>
 Content-Language: en-US
+X-Originating-IP: [10.75.127.51]
+X-ClientProxiedBy: SFHDAG2NODE1.st.com (10.75.127.4) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-04-29_04:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_012442_026722_C377A6C8 
-X-CRM114-Status: GOOD (  17.41  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190429_012700_472258_6533CDDC 
+X-CRM114-Status: GOOD (  20.78  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.8 KHOP_DYNAMIC           Relay looks like a dynamic address
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -113,63 +98,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Cc: jianguo.zhang@mediatek.com, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ yt.shen@mediatek.com, Jose Abreu <joabreu@synopsys.com>,
+ linux-mediatek@lists.infradead.org,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 29/04/2019 09:13, Marc Zyngier wrote:
-> On 04/04/2019 08:20, Mukesh Ojha wrote:
->> devm_platform_ioremap_resource() internally have platform_get_resource()
->> and devm_ioremap_resource() in it. So instead of calling them separately
->> use devm_platform_ioremap_resource() directly.
->>
->> Signed-off-by: Mukesh Ojha <mojha@codeaurora.org>
->> ---
->>  drivers/irqchip/irq-imgpdc.c | 10 +---------
->>  1 file changed, 1 insertion(+), 9 deletions(-)
->>
->> diff --git a/drivers/irqchip/irq-imgpdc.c b/drivers/irqchip/irq-imgpdc.c
->> index d00489a..8904a5f 100644
->> --- a/drivers/irqchip/irq-imgpdc.c
->> +++ b/drivers/irqchip/irq-imgpdc.c
->> @@ -307,13 +307,6 @@ static int pdc_intc_probe(struct platform_device *pdev)
->>  	if (!node)
->>  		return -ENOENT;
->>  
->> -	/* Get registers */
->> -	res_regs = platform_get_resource(pdev, IORESOURCE_MEM, 0);
->> -	if (res_regs == NULL) {
->> -		dev_err(&pdev->dev, "cannot find registers resource\n");
->> -		return -ENOENT;
->> -	}
->> -
->>  	/* Allocate driver data */
->>  	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
->>  	if (!priv) {
->> @@ -324,8 +317,7 @@ static int pdc_intc_probe(struct platform_device *pdev)
->>  	platform_set_drvdata(pdev, priv);
->>  
->>  	/* Ioremap the registers */
->> -	priv->pdc_base = devm_ioremap(&pdev->dev, res_regs->start,
->> -				      resource_size(res_regs));
->> +	priv->pdc_base = devm_platform_ioremap_resource(pdev, 0);
->>  	if (!priv->pdc_base)
->>  		return -EIO;
->>  
->>
-> 
-> What happens to the res_regs variable then?
-> 
-> Also, and more importantly, devm_platform_ioremap_resource doesn't
-> return NULL on error, but an ERR_PTR. Yes, the bug was already there,
-> but since you're changing it, you might as well fix the thing.
 
-Actually, the current code is right, and you're actively breaking it. Boo.
 
-	M.
--- 
-Jazz is not dead. It just smells funny...
+On 4/29/19 10:09 AM, biao huang wrote:
+> Hi,
+> 
+> On Mon, 2019-04-29 at 09:18 +0200, Alexandre Torgue wrote:
+>> Hi
+>>
+>> On 4/28/19 8:30 AM, Biao Huang wrote:
+>>> The specific clk_csr value can be zero, and
+>>> stmmac_clk is necessary for MDC clock which can be set dynamically.
+>>> So, change the condition from plat->clk_csr to plat->stmmac_clk to
+>>> fix clk_csr can't be zero issue.
+>>>
+>>> Signed-off-by: Biao Huang <biao.huang@mediatek.com>
+>>> ---
+>>>    drivers/net/ethernet/stmicro/stmmac/stmmac_main.c |    2 +-
+>>>    1 file changed, 1 insertion(+), 1 deletion(-)
+>>>
+>>> diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+>>> index 818ad88..9e89b94 100644
+>>> --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+>>> +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+>>> @@ -4376,7 +4376,7 @@ int stmmac_dvr_probe(struct device *device,
+>>>    	 * set the MDC clock dynamically according to the csr actual
+>>>    	 * clock input.
+>>>    	 */
+>>> -	if (!priv->plat->clk_csr)
+>>> +	if (priv->plat->stmmac_clk)
+>>>    		stmmac_clk_csr_set(priv);
+>>>    	else
+>>>    		priv->clk_csr = priv->plat->clk_csr;
+>>>
+>>
+>> So, as soon as stmmac_clk will be declared, it is no longer possible to
+>> fix a CSR through the device tree ?
+> 
+> let's focus on the condition:
+> 1. clk_csr may be zero, it should not be the condition. or the clk_csr =
+> 0 will jump to the wrong block.
+> 2. Since stmmac_clk_csr_set will get_clk_rate from stmmac_clk,
+> the plat->stmmac_clk is a more proper condition.
+> 
+
+Ok, but here you remove one possibility: stmmac_clk and clk_csr defined. 
+no ?
+
+Other way could be the following code + initialize priv->plat->clk_csr 
+with a non null value before read it in device tree (in stmmac_platform).
+
+if (priv->plat->clk_csr >= 0)
+	priv->clk_csr = priv->plat->clk_csr;
+else
+	stmmac_clk_csr_set(priv);
+
+
+
+> In some case, it's impossible to get the clk rate of stmmac_clk,
+> so it's better to remain the clk_csr flow.
+> 
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
