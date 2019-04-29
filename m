@@ -2,57 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3B67E637
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 17:24:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9327DE6A6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 17:36:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=55ZX66Zfte9qoppeAEZCyQdRoquPeMWuqXEFTpF45tU=; b=mj8Al2BsNlrpJh
-	ZD8Gq8xj6RGej+1PtN2b+7QDeCC79SKtLA8elANy5MR+nIpXmycttdti74jPNkt4wW1W+C7A51jiQ
-	q99h0K5a/Aquaid8oSWVwf5R9BCLrM7repdzCz6uTRVrP3mj6H0PxEMbMrKWehHs+hHvic4gEZGRe
-	CUe1RiQqxTOMRc+x6YsDUBpDapD2sBmj3B3t0xpSlhKlcDI4WrPso6lqwH0T7FjiLTJqHcXgVEb6d
-	j93VE5xfy+tTfGO3cC4f+wQq2w4tB0X9iskpdr1nwbrOO84yKwbwHruk3lrANwS73x0IgWBwiNvOA
-	y4CPPOMkVzOxiXQ10wrA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=2rnNf5kLFZlFUL7ZSX3RfquACI/UgETP/jy+aLbV+wk=; b=csllK3NTdQB7Dh/vlgEE/d7HO
+	a1RiZZVaa5gdVZIRTsBnNV67Hm1obWcZK7RE6lpGo0j0USjHwC5Lg63DJquuIplBkUAXqJae6Y3gz
+	IUJJ5ApkKF05tdV8Y0eJhjwL7ryeWYvdLiBTlljH+1PpHgJZkmSuiD5pFtfx1uD+grb58YZQR9UKs
+	/x1K9jvKbQGI4bki5M+ynqYfOOEIWEKhMdXp/Ix2gXFSFb6cRyrK4TuH/zfrBJTnFR9QBi/WTNme3
+	2QC9oMNWqcLRCPMK4tFxmg7Dv7z8J6ZUBodhhI5BAG42/Z9M1MrfSQHZ7K/AI82tvtOWx2u56cJs6
+	pTXRTJIJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL88X-0004yd-42; Mon, 29 Apr 2019 15:24:09 +0000
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+	id 1hL8KB-00027F-Vv; Mon, 29 Apr 2019 15:36:12 +0000
+Received: from pegase1.c-s.fr ([93.17.236.30])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL88P-0004y5-FI
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 15:24:03 +0000
-X-Originating-IP: 88.190.179.123
-Received: from localhost (unknown [88.190.179.123])
- (Authenticated sender: repk@triplefau.lt)
- by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id E33971BF208;
- Mon, 29 Apr 2019 15:23:45 +0000 (UTC)
-Date: Mon, 29 Apr 2019 17:32:35 +0200
-From: Remi Pommarel <repk@triplefau.lt>
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: Re: [PATCH v2] PCI: aardvark: Use LTSSM state to build link training
- flag
-Message-ID: <20190429153234.GS2754@voidbox.localdomain>
-References: <20190316161243.29517-1-repk@triplefau.lt>
- <20190425110830.GC10833@e121166-lin.cambridge.arm.com>
- <20190425142353.GO2754@voidbox.localdomain>
- <20190425150640.GA20770@e121166-lin.cambridge.arm.com>
+ id 1hL8K4-00025a-1F; Mon, 29 Apr 2019 15:36:05 +0000
+Received: from localhost (mailhub1-int [192.168.12.234])
+ by localhost (Postfix) with ESMTP id 44t7z96kGcz9vD31;
+ Mon, 29 Apr 2019 17:35:49 +0200 (CEST)
+Authentication-Results: localhost; dkim=pass
+ reason="1024-bit key; insecure key"
+ header.d=c-s.fr header.i=@c-s.fr header.b=Q5o3w0VV; dkim-adsp=pass;
+ dkim-atps=neutral
+X-Virus-Scanned: Debian amavisd-new at c-s.fr
+Received: from pegase1.c-s.fr ([192.168.12.234])
+ by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
+ with ESMTP id kbO7e4z3Oado; Mon, 29 Apr 2019 17:35:49 +0200 (CEST)
+Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
+ by pegase1.c-s.fr (Postfix) with ESMTP id 44t7z95Zr4z9vD30;
+ Mon, 29 Apr 2019 17:35:49 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
+ t=1556552149; bh=XXe83/pZb9AFMZAVXoUoxnryoMR8eaO+qKHpnqnFOB8=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=Q5o3w0VVtDkuaQJ720CrXVg1D1EEff1tyfslomh/gdc4+yk1/Dkug0ZmjOpliak9E
+ SNq24Cb/75QU4Vbo8GkPeMa5ZqrlcCuuxHVxWzptG/UbSIeVfGgHzF9GoK962b/vuv
+ 2GQOk16RVxWf7DSmpu538h1my8dNOApiD0oga2ow=
+Received: from localhost (localhost [127.0.0.1])
+ by messagerie.si.c-s.fr (Postfix) with ESMTP id EDA2C8B8B4;
+ Mon, 29 Apr 2019 17:35:54 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at c-s.fr
+Received: from messagerie.si.c-s.fr ([127.0.0.1])
+ by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
+ with ESMTP id P3bLUxeO-Wfq; Mon, 29 Apr 2019 17:35:54 +0200 (CEST)
+Received: from PO15451 (po15451.idsi0.si.c-s.fr [172.25.231.6])
+ by messagerie.si.c-s.fr (Postfix) with ESMTP id AEE718B8B3;
+ Mon, 29 Apr 2019 17:35:54 +0200 (CEST)
+Subject: Re: [RESEND PATCH v3 09/11] powerpc/mm/radix: mark
+ __radix__flush_tlb_range_psize() as __always_inline
+To: Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linux-arch <linux-arch@vger.kernel.org>
+References: <20190423034959.13525-1-yamada.masahiro@socionext.com>
+ <20190423034959.13525-10-yamada.masahiro@socionext.com>
+From: Christophe Leroy <christophe.leroy@c-s.fr>
+Message-ID: <40b48947-b80e-7971-376d-52b594e26d17@c-s.fr>
+Date: Mon, 29 Apr 2019 17:35:53 +0200
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190425150640.GA20770@e121166-lin.cambridge.arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190423034959.13525-10-yamada.masahiro@socionext.com>
+Content-Language: fr
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_082401_813549_91619844 
-X-CRM114-Status: GOOD (  43.21  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190429_083604_368539_ADBF7C0C 
+X-CRM114-Status: GOOD (  15.70  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.201 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [93.17.236.30 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -64,247 +96,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ellie Reeves <ellierevves@gmail.com>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Bjorn Helgaas <bhelgaas@google.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-s390@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
+ Mathieu Malaterre <malat@debian.org>, x86@kernel.org,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mips@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Ingo Molnar <mingo@redhat.com>,
+ linux-mtd@lists.infradead.org, linuxppc-dev@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Lorenzo,
-
-Sorry for duplicates I forgot to include everyone.
-
-On Thu, Apr 25, 2019 at 04:06:40PM +0100, Lorenzo Pieralisi wrote:
-> On Thu, Apr 25, 2019 at 04:23:53PM +0200, Remi Pommarel wrote:
-> > Hi Lorenzo,
-> > 
-> > On Thu, Apr 25, 2019 at 12:08:30PM +0100, Lorenzo Pieralisi wrote:
-> > > On Sat, Mar 16, 2019 at 05:12:43PM +0100, Remi Pommarel wrote:
-> > > > The PCI_EXP_LNKSTA_LT flag in the emulated root device's PCI_EXP_LNKSTA
-> > > > config register does not reflect the actual link training state and is
-> > > > always cleared. The Link Training and Status State Machine (LTSSM) flag
-> > > > in LMI config register could be used as a link training indicator.
-> > > > Indeed if the LTSSM is in L0 or upper state then link training has
-> > > > completed (see [1]).
-> > > > 
-> > > > Unfortunately because setting the PCI_EXP_LINCTL_RL flag does not
-> > > > instantly imply a LTSSM state change (e.g. L0s to recovery state
-> > > > transition takes some time), LTSSM can be in L0 but link training has
-> > > > not finished yet. Thus a lower L0 LTSSM state followed by a L0 or upper
-> > > > state sequence has to be seen to be sure that link training has been
-> > > > done.
-> > > 
-> > > Hi Remi,
-> > > 
-> > > I am a bit confused, so you are saying that the LTSSM flag in the
-> > > LMI config register can't be used to detect when training is completed ?
-> > 
-> > Not exactly, I am saying that PCI_EXP_LNKSTA_LT from PCI_EXP_LNKSTA
-> > register can't be used with this hardware, but can be emulated with
-> > LTSSM flag.
-> > 
-> > > 
-> > > Certainly it can't be used by ASPM core that relies on:
-> > > 
-> > > PCI_EXP_LNKSTA_LT flag
-> > > 
-> > > in the PCI_EXP_LNKSTA register, and that's what you are setting through
-> > > this timeout mechanism IIUC.
-> > > 
-> > > Please elaborate on that.
-> > 
-> > The problem here is that the hardware does not change PCI_EXP_LNKSTA_LT
-> > at all. So in order to support link re-training feature we need to
-> > emulate this flag. To do so LTSSM flag can be used.
-> 
-> Understood.
-> 
-> > Indeed we can set the emulated PCI_EXP_LNKSTA_LT as soon as re-training
-> > is asked and wait for LTSSM flag to be back to a configured state
-> > (e.g. L0, L0s) before clearing it.
-> 
-> The check for the LTSSM is carried out through advk_pcie_link_up()
-> (ie register CFG_REG), correct ?
-> 
-
-Yes that is correct.
-
-> > The problem with that is that LTSSM flag does not change instantly after
-> > link re-training has been asked, and will stay in configured state for a
-> > small amount of time. So the idea is to poll the LTSSM flag and wait for
-> > it to enter a recovery state then waiting for it to be back in
-> > configured state.
-> 
-> When you say "poll" you mean checking advk_pcie_link_up() ?
-> 
-
-I mean checking advk_pcie_link_up() in a loop. This loop is done by the
-user (e.g. ASPM core). ASPM core waits for PCI_EXP_LNKSTA_LT to be
-cleared in pcie_aspm_configure_common_clock() just after it has set
-PCI_EXP_LNKCTL_RL.
-
-So the idea was to check advk_pcie_link_up() each time ASPM core checks
-the PCI_EXP_LNKSTA_LT flag. Please see below patch for an alternative
-to that.
-
-> More below on the code.
-> 
-> > The timeout is only here as a fallback in the unlikely event that we
-> > missed the LTSSM flag entering recovery state.
-> > 
-> > > 
-> > > I am picking Bjorn's brain on this patch since what you are doing
-> > > seems quite arbitrary and honestly it is a bit of a hack.
-> > 
-> > Yes, sorry, it is a bit of a hack because I try to workaround a
-> > hardware issue.
-> 
-> No problems, it is not your fault.
-> > 
-> > Please note that vendor has been contacted about this in the meantime
-> > and answered the following:
-> > 
-> > "FW can poll LTSSM state equals any of the following values: 0xB or 0xD
-> > or 0xC or 0xE. After that, polls for LTSSM equals 0x10. For your
-> > information, LTSSM will transit from 0x10 -> 0xB -> 0xD -> 0xC or 0xE
-> > ........... -> 0x10".
-> > 
-> > It is basically what this patch does, I've just added a timeout fallback
-> > to not poll LTSSM state forever if its transition to 0xB, 0xD, 0xC or
-> > 0xE has been missed.
-> 
-> When you say "missed" you mean advk_pcie_link_up() returning true, right ?
-> 
-
-Not exactly, I mean that LTSSM had the time to go down and back up
-between advk_pcie_link_up() because, for example, ASPM core loop took
-too much time between two PCI_EXP_LNKSTA_LT flag checks.
-
-> [...]
-> 
-> > > > +static int advk_pcie_link_retraining(struct advk_pcie *pcie)
-> > > > +{
-> > > > +	if (!advk_pcie_link_up(pcie)) {
-> 
-> That's the bit I find confusing. Is this check here to detect if the
-> link went through the sequence below ? Should not it be carried
-> out only if (pcie->rl_asked == 1) ?
-> 
-> "... LTSSM will transit from 0x10 -> 0xB -> 0xD -> 0xC or 0xE
->  ........... -> 0x10".
-
-Yes it is the check to detect the sequence. advk_pcie_link_up() returns
-false if LTSSM <= 0x10.
-
-This cannot be done only if (pcie->rl_asked == 1) because I still
-want this function to return 1 if link is still down.
-
-> 
-> > > > +		pcie->rl_asked = 0;
-> 
-> Why ?
-> 
-
-rl_asked is not a good name, I could have called it
-pcie->wait_for_link_down instead. So if advk_pcie_link_up() returns
-false that means that we don't need to wait for link being down any more
-and just wait for (LTSSM >= 0x10). In this case the delay is not needed.
-
-> > > > +		return 1;
-> > > > +	}
-> > > > +
-> > > > +	if (pcie->rl_asked && time_before(jiffies, pcie->rl_deadline))
-> > > > +		return 1;
-> 
-> This ensures that if the LTSSM >= 0x10 we still wait for a delay before
-> considering the link up (because I suppose, after asking a retraining
-> it takes a while for the LTSSM state to become < 0x10), correct ?
-
-Yes it takes a while to become < 0x10 after retraining hence the delay.
-But here we don't need to always wait for a delay. Indeed if we've
-already seen the link being < 0x10 (i.e if "pcie->rl_asked == 0") and
-if after that link is >= 0x10 then we know that retraining process has
-finished.
-
-Anyway I did it this way because I wanted to keep
-advk_pci_bridge_emul_pcie_conf_write() from polling. But this is
-obviously a bad reason as it makes the code way too complex and relies
-on user (ASPM core) to do the poll instead.
-
-So if you find the following better I'll send a v3 with that:
-
----
-diff --git a/drivers/pci/controller/pci-aardvark.c b/drivers/pci/controller/pci-aardvark.c
-index eb58dfdaba1b..67e8ae4e313e 100644
---- a/drivers/pci/controller/pci-aardvark.c
-+++ b/drivers/pci/controller/pci-aardvark.c
-@@ -180,6 +180,9 @@
- #define LINK_WAIT_MAX_RETRIES		10
- #define LINK_WAIT_USLEEP_MIN		90000
- #define LINK_WAIT_USLEEP_MAX		100000
-+#define RETRAIN_WAIT_MAX_RETRIES	20
-+#define RETRAIN_WAIT_USLEEP_MIN		2000
-+#define RETRAIN_WAIT_USLEEP_MAX		5000
- 
- #define MSI_IRQ_NUM			32
- 
-@@ -239,6 +242,17 @@ static int advk_pcie_wait_for_link(struct advk_pcie *pcie)
- 	return -ETIMEDOUT;
- }
- 
-+static void advk_pcie_wait_for_retrain(struct advk_pcie *pcie)
-+{
-+	size_t retries;
-+
-+	for (retries = 0; retries < RETRAIN_WAIT_MAX_RETRIES; ++retries) {
-+		if (!advk_pcie_link_up(pcie))
-+			break;
-+		usleep_range(RETRAIN_WAIT_USLEEP_MIN, RETRAIN_WAIT_USLEEP_MAX);
-+	}
-+}
-+
- static void advk_pcie_setup_hw(struct advk_pcie *pcie)
- {
- 	u32 reg;
-@@ -426,11 +440,19 @@ advk_pci_bridge_emul_pcie_conf_read(struct pci_bridge_emul *bridge,
- 		return PCI_BRIDGE_EMUL_HANDLED;
- 	}
- 
-+	case PCI_EXP_LNKCTL: {
-+		u32 val = advk_readl(pcie, PCIE_CORE_PCIEXP_CAP + reg) &
-+			~(PCI_EXP_LNKSTA_LT << 16);
-+		if (!advk_pcie_link_up(pcie))
-+			val |= (PCI_EXP_LNKSTA_LT << 16);
-+		*value = val;
-+		return PCI_BRIDGE_EMUL_HANDLED;
-+	}
-+
- 	case PCI_CAP_LIST_ID:
- 	case PCI_EXP_DEVCAP:
- 	case PCI_EXP_DEVCTL:
- 	case PCI_EXP_LNKCAP:
--	case PCI_EXP_LNKCTL:
- 		*value = advk_readl(pcie, PCIE_CORE_PCIEXP_CAP + reg);
- 		return PCI_BRIDGE_EMUL_HANDLED;
- 	default:
-@@ -447,8 +469,13 @@ advk_pci_bridge_emul_pcie_conf_write(struct pci_bridge_emul *bridge,
- 
- 	switch (reg) {
- 	case PCI_EXP_DEVCTL:
-+		advk_writel(pcie, new, PCIE_CORE_PCIEXP_CAP + reg);
-+		break;
-+
- 	case PCI_EXP_LNKCTL:
- 		advk_writel(pcie, new, PCIE_CORE_PCIEXP_CAP + reg);
-+		if (new & PCI_EXP_LNKCTL_RL)
-+			advk_pcie_wait_for_retrain(pcie);
- 		break;
- 
- 	case PCI_EXP_RTCTL:
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpMZSAyMy8wNC8yMDE5IMOgIDA1OjQ5LCBNYXNhaGlybyBZYW1hZGEgYSDDqWNyaXTCoDoKPiBU
+aGlzIHByZXBhcmVzIHRvIG1vdmUgQ09ORklHX09QVElNSVpFX0lOTElOSU5HIGZyb20geDg2IHRv
+IGEgY29tbW9uCj4gcGxhY2UuIFdlIG5lZWQgdG8gZWxpbWluYXRlIHBvdGVudGlhbCBpc3N1ZXMg
+YmVmb3JlaGFuZC4KCkhvdyBkaWQgeW91IGlkZW50aWZ5IHRoZSBmdW5jdGlvbnMgcmVxdWlyaW5n
+IF9fYWx3YXlzX2lubGluZSBhcyB0aGlzIG9uZSAKPyBKdXN0IGJ5ICd0ZXN0IGFuZCBzZWUgaWYg
+aXQgZmFpbHMnLCBvciBkaWQgeW91IGhhdmUgc29tZSBzY3JpcHQgb3Igc28gPwoKSGVyZSB0aGUg
+cHJvYmxlbSBpcyB0aGF0IG9uZSBvZiB0aGUgcGFyYW1ldGVycyBvZiB0aGUgZnVuY3Rpb24gYXJl
+IHVzZWQgCmFzICJpbW1lZGlhdGUiIGNvbnN0cmFpbnQgZm9yIHRoZSBpbmxpbmUgYXNzZW1ibHks
+IHRoZXJlZm9yZSByZXF1aXJpbmcgCnRoZSBmdW5jdGlvbiB0byBhbHdheXMgYmUgaW5saW5lLgoK
+SSBndWVzcyB0aGlzIHNob3VsZCBiZSBleHBsYWluZWQgaW4gdGhlIGNvbW1pdCBsb2cgYW5kIEkn
+bSB3b25kZXJpbmcgaG93IAp5b3UgZW5zdXJlIHRoYXQgeW91IGRpZCBpZGVudGlmeSBhbGwgZnVu
+Y3Rpb25zIGxpa2UgdGhpcy4KCkNocmlzdG9waGUKCj4gCj4gSWYgaXQgaXMgZW5hYmxlZCBmb3Ig
+cG93ZXJwYywgdGhlIGZvbGxvd2luZyBlcnJvciBpcyByZXBvcnRlZDoKPiAKPiBhcmNoL3Bvd2Vy
+cGMvbW0vdGxiLXJhZGl4LmM6IEluIGZ1bmN0aW9uICdfX3JhZGl4X19mbHVzaF90bGJfcmFuZ2Vf
+cHNpemUnOgo+IGFyY2gvcG93ZXJwYy9tbS90bGItcmFkaXguYzoxMDQ6MjogZXJyb3I6IGFzbSBv
+cGVyYW5kIDMgcHJvYmFibHkgZG9lc24ndCBtYXRjaCBjb25zdHJhaW50cyBbLVdlcnJvcl0KPiAg
+ICBhc20gdm9sYXRpbGUoUFBDX1RMQklFTCglMCwgJTQsICUzLCAlMiwgJTEpCj4gICAgXn5+Cj4g
+YXJjaC9wb3dlcnBjL21tL3RsYi1yYWRpeC5jOjEwNDoyOiBlcnJvcjogaW1wb3NzaWJsZSBjb25z
+dHJhaW50IGluICdhc20nCj4gCj4gU2lnbmVkLW9mZi1ieTogTWFzYWhpcm8gWWFtYWRhIDx5YW1h
+ZGEubWFzYWhpcm9Ac29jaW9uZXh0LmNvbT4KPiAtLS0KPiAKPiBDaGFuZ2VzIGluIHYzOiBOb25l
+Cj4gQ2hhbmdlcyBpbiB2MjoKPiAgICAtIHNwbGl0IGludG8gYSBzZXBhcmF0ZSBwYXRjaAo+IAo+
+ICAgYXJjaC9wb3dlcnBjL21tL3RsYi1yYWRpeC5jIHwgMiArLQo+ICAgMSBmaWxlIGNoYW5nZWQs
+IDEgaW5zZXJ0aW9uKCspLCAxIGRlbGV0aW9uKC0pCj4gCj4gZGlmZiAtLWdpdCBhL2FyY2gvcG93
+ZXJwYy9tbS90bGItcmFkaXguYyBiL2FyY2gvcG93ZXJwYy9tbS90bGItcmFkaXguYwo+IGluZGV4
+IDZhMjNiOWViZDJhMS4uYTJiMjg0OGYwYWUzIDEwMDY0NAo+IC0tLSBhL2FyY2gvcG93ZXJwYy9t
+bS90bGItcmFkaXguYwo+ICsrKyBiL2FyY2gvcG93ZXJwYy9tbS90bGItcmFkaXguYwo+IEBAIC05
+MjgsNyArOTI4LDcgQEAgdm9pZCByYWRpeF9fdGxiX2ZsdXNoKHN0cnVjdCBtbXVfZ2F0aGVyICp0
+bGIpCj4gICAJdGxiLT5uZWVkX2ZsdXNoX2FsbCA9IDA7Cj4gICB9Cj4gICAKPiAtc3RhdGljIGlu
+bGluZSB2b2lkIF9fcmFkaXhfX2ZsdXNoX3RsYl9yYW5nZV9wc2l6ZShzdHJ1Y3QgbW1fc3RydWN0
+ICptbSwKPiArc3RhdGljIF9fYWx3YXlzX2lubGluZSB2b2lkIF9fcmFkaXhfX2ZsdXNoX3RsYl9y
+YW5nZV9wc2l6ZShzdHJ1Y3QgbW1fc3RydWN0ICptbSwKPiAgIAkJCQl1bnNpZ25lZCBsb25nIHN0
+YXJ0LCB1bnNpZ25lZCBsb25nIGVuZCwKPiAgIAkJCQlpbnQgcHNpemUsIGJvb2wgYWxzb19wd2Mp
+Cj4gICB7Cj4gCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
+ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
+aW51eC1hcm0ta2VybmVsCg==
