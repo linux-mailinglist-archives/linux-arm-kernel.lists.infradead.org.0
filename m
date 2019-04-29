@@ -2,55 +2,109 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0852EE140
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 13:27:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86D71E144
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 13:28:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VWa89Q/qCMwOjQxhmx7Dtbhhb9s6YjU4/XbaPZHRfJ4=; b=OFtnIJPX7J9bEo
-	KmUJwKy79sUE+9r9eKe7F49XJovnHZqrJwutmFYJ+IRshsuI3x1iHn1kn7xP7Ry0Wox9+U4bkg/Qb
-	Qd9TtkoFXh+Q4/UPx5Nm8ofb9Y9Gcb6mwYWO96rsFh5A24h01v5h2mSlvJeUwTlQG7uOVAY1RkZax
-	8LxiP1MQo4zbBW0vmEFr00yg/qnAJB7W0PQC/QJh50DxcImLDBNnLxFw65oQR1/OFFp5bsNbVVESu
-	Rpm+CzqBMckbPXII37RofmEXIj/I0xtH/XgWlGxOJLy0yV1dP4SoEIfShiY5aYBmYvy4ACIAWNrko
-	VPsr/MldAPxyI1WF0IhA==;
+	List-Owner; bh=0EAzJO9hsVZeZIY6jq4L4izE7Merd81J8w0r2r8tiV4=; b=KJq7aCKjXuqMIn
+	V1uPG+bdN3gVxfMbhK8CA9ctC/rdVD6hhPhz1LQOg3jEGMLqEGMtcBuz4TSbeFvMWgqvwlquEsL8o
+	VR8aMvcAvGY8FlDHlfost1IPrKKRfht2syJkE5Wzb3GGlGCNpy0i5HIWhCGrOisJIIhpgrrEMrNX0
+	Y5NqVbd9VWuq/gQucR86qtx2XhyPCM4Mvscmp91j7Gnna8+r0sAibbND5AAtsiduVr4YEQXpyPkMB
+	+GWqBmfw/go1AkBkYKx7zEzaHz7mKmzlVAVzqjsjppxv2DYyVjGQeV/sCgnX6ERyP5GQCDfYPaxFp
+	HBaxhZUnqGr2/g5lqrTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL4R1-0007rM-W2; Mon, 29 Apr 2019 11:27:00 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL4Qt-0007qs-Nm
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 11:26:53 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4DDE980D;
- Mon, 29 Apr 2019 04:26:50 -0700 (PDT)
-Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6F61E3F5AF;
- Mon, 29 Apr 2019 04:26:48 -0700 (PDT)
-Date: Mon, 29 Apr 2019 12:26:45 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Jeremy Linton <jeremy.linton@arm.com>
-Subject: Re: [PATCH 1/2] ACPI/PPTT: Add variable to record max cache line size
-Message-ID: <20190429112645.GC23929@e107155-lin>
-References: <1556242821-5080-1-git-send-email-zhangshaokun@hisilicon.com>
- <ec06edc0-f1ec-ef8e-78ad-7bef7ae79931@arm.com>
+	id 1hL4SX-00088b-D1; Mon, 29 Apr 2019 11:28:33 +0000
+Received: from mail-eopbgr10088.outbound.protection.outlook.com ([40.107.1.88]
+ helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hL4SP-000889-E2
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 11:28:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=SuAPYH8onV8p+o4fwQ4cbwM57P+pq8KZDTReELUQ8xg=;
+ b=T4b7i5aFZLq8+ZRqWZrE1zs/UF85GAhdgXzFxofxE0+oFUY+Yt9ebGf9HxWvNl7altWwxEGJL+eI3gf15lsGIu6W3J33UEB/wASo4y876YK1RV3DVkC/ruAMjJi0KR9tFj/mr3n0ZoUvPNDZVG03qrKmiJSbtTYyIOU5OvfCkZM=
+Received: from AM0PR04MB4211.eurprd04.prod.outlook.com (52.134.92.158) by
+ AM0PR04MB5955.eurprd04.prod.outlook.com (20.178.112.75) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1835.13; Mon, 29 Apr 2019 11:28:21 +0000
+Received: from AM0PR04MB4211.eurprd04.prod.outlook.com
+ ([fe80::8cda:4e52:8e87:8f0e]) by AM0PR04MB4211.eurprd04.prod.outlook.com
+ ([fe80::8cda:4e52:8e87:8f0e%2]) with mapi id 15.20.1835.018; Mon, 29 Apr 2019
+ 11:28:21 +0000
+From: Aisheng Dong <aisheng.dong@nxp.com>
+To: Anson Huang <anson.huang@nxp.com>, "mturquette@baylibre.com"
+ <mturquette@baylibre.com>, "sboyd@kernel.org" <sboyd@kernel.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
+ <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>, "linux-clk@vger.kernel.org"
+ <linux-clk@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: RE: [PATCH] clk: imx: add fractional-N pll support to pllv4
+Thread-Topic: [PATCH] clk: imx: add fractional-N pll support to pllv4
+Thread-Index: AQHU/jo/D2ZwDi5WREOeVbOKgmEXYaZS+19A
+Date: Mon, 29 Apr 2019 11:28:21 +0000
+Message-ID: <AM0PR04MB4211D3F29BCA3727E799005F80390@AM0PR04MB4211.eurprd04.prod.outlook.com>
+References: <1556507637-22847-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1556507637-22847-1-git-send-email-Anson.Huang@nxp.com>
+Accept-Language: zh-CN, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=aisheng.dong@nxp.com; 
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: f3be9bbf-0288-458a-83a6-08d6cc95c934
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB5955; 
+x-ms-traffictypediagnostic: AM0PR04MB5955:
+x-microsoft-antispam-prvs: <AM0PR04MB595598056691505BEF31D68C80390@AM0PR04MB5955.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4714;
+x-forefront-prvs: 0022134A87
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(39860400002)(396003)(376002)(136003)(346002)(366004)(189003)(199004)(26005)(86362001)(6436002)(186003)(476003)(7696005)(11346002)(99286004)(229853002)(486006)(74316002)(71200400001)(6506007)(316002)(33656002)(55016002)(97736004)(256004)(9686003)(8936002)(44832011)(71190400001)(305945005)(68736007)(102836004)(7736002)(2201001)(2501003)(73956011)(66476007)(6116002)(76116006)(66066001)(446003)(25786009)(66446008)(3846002)(64756008)(66556008)(81166006)(4326008)(2906002)(66946007)(110136005)(81156014)(6246003)(52536014)(14454004)(76176011)(53936002)(478600001)(8676002)(5660300002)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5955;
+ H:AM0PR04MB4211.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 0bG7w104ECuOkT4DOz574ISk7hnNW1HpyKlAcDbt9Q9klsuSrcL8K8aytoRD3cyNs6Ua03AsixWg67J2wQ4xRK5rveocUP7Qmb2CUHMsWyLXaEzKvHSP2fZ8B5uGoubIy415l1kQGXW+WeWdSw6Nft6QeAlRWcFEmV529JIFoC+erkn1eAIlH7idcApvoa/a41zVJaaCYeuSuMnHuZb3ozhsIK7wzYAPn8QwDQzays93NrCmD+94mahpYO81k7tFGioyVFyOH2/QESkCie7btn70VfCPzV3w7LlgHRk4FSY12irohN3KNipVnFeQM3eN9EkVcq4m+/V/W9bYHaL0UtTIuGSbyugT9g3V/CuYdlgLzcDgaKnnp52NFl9a5cPBCcZqUaD0Yjo+Ib3+Q8hwynkVD8quLUU8TyVEBNB/D8U=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ec06edc0-f1ec-ef8e-78ad-7bef7ae79931@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: f3be9bbf-0288-458a-83a6-08d6cc95c934
+X-MS-Exchange-CrossTenant-originalarrivaltime: 29 Apr 2019 11:28:21.6418 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5955
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_042651_794294_898FE4CC 
-X-CRM114-Status: GOOD (  26.64  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190429_042825_566825_C983984E 
+X-CRM114-Status: GOOD (  22.48  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.1.88 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -62,105 +116,200 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sudeep Holla <sudeep.holla@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, john.garry@huawei.com,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Shaokun Zhang <zhangshaokun@hisilicon.com>, qiuzhenfa@hisilicon.com,
- guohanjun@huawei.com, linux-arm-kernel@lists.infradead.org,
- Len Brown <lenb@kernel.org>
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 26, 2019 at 12:02:45PM -0500, Jeremy Linton wrote:
-> Hi,
->
->
-> On 4/25/19 8:40 PM, Shaokun Zhang wrote:
-> > Add coherency_max_size variable to record the maximum cache line size
-> > detected from PPTT information for different cache levels. We will
-> > synchronize it with CTR_EL0.CWG reporting in cache_line_size() for arm64.
->
-> Is the expectation that the largest cache line size will differ from the LLC
-> line size?
->
+> From: Anson Huang
+> Sent: Monday, April 29, 2019 11:19 AM
+> 
 
-It's always better to assume so. If we are sure that LLC has max cache line
-size, then we can simplify, but I don't think we can assure that :)
+clk: imx: pllv4: add fractional-N pll support
 
-> Also, will it remain consistent across all PE's? I believe this is required,
-> Yes?
->
+> The pllv4 supports fractional-N function, the formula is:
+> 
+> PLL output freq = input * (mult + num/denom),
+> 
+> This patch adds fractional-N function support, including clock round rate,
+> calculate rate and set rate, with this patch, the clock rate of APLL in clock tree
+> is more accurate than before:
+> 
+> Without fraction:
+> apll_pre_sel                      1        1        1    24000000
+> 0     0  50000
+>    apll_pre_div                   1        1        2    24000000
+> 0     0  50000
+>       apll                        1        1        2   528000000
+> 0     0  50000
+>          apll_pfd3                0        0        0   792000000
+> 0     0  50000
+>          apll_pfd2                0        0        0   339428571
+> 0     0  50000
+>          apll_pfd1                0        0        0   352000000
+> 0     0  50000
+>             usdhc0                0        0        0   352000000
+> 0     0  50000
+>          apll_pfd0                1        1        1   352000000
+> 0     0  50000
+> 
+> With fraction:
+> apll_pre_sel                      1        1        1    24000000
+> 0     0  50000
+>    apll_pre_div                   1        1        2    24000000
+> 0     0  50000
+>       apll                        1        1        2   529200000
+> 0     0  50000
+>          apll_pfd3                0        0        0   793800000
+> 0     0  50000
+>          apll_pfd2                0        0        0   340200000
+> 0     0  50000
+>          apll_pfd1                0        0        0   352800000
+> 0     0  50000
+>             usdhc0                0        0        0   352800000
+> 0     0  50000
+>          apll_pfd0                1        1        1   352800000
+> 0     0  50000
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+>  drivers/clk/imx/clk-pllv4.c | 68
+> +++++++++++++++++++++++++++++++++++++++------
+>  1 file changed, 60 insertions(+), 8 deletions(-)
+> 
+> diff --git a/drivers/clk/imx/clk-pllv4.c b/drivers/clk/imx/clk-pllv4.c index
+> d38bc9f..4ced5ca 100644
+> --- a/drivers/clk/imx/clk-pllv4.c
+> +++ b/drivers/clk/imx/clk-pllv4.c
+> @@ -64,13 +64,18 @@ static unsigned long clk_pllv4_recalc_rate(struct
+> clk_hw *hw,
+>  					   unsigned long parent_rate)
+>  {
+>  	struct clk_pllv4 *pll = to_clk_pllv4(hw);
+> -	u32 div;
+> +	u32 mult = readl_relaxed(pll->base + PLL_CFG_OFFSET);
+> +	u32 mfn = readl_relaxed(pll->base + PLL_NUM_OFFSET);
+> +	u32 mfd = readl_relaxed(pll->base + PLL_DENOM_OFFSET);
 
-It would be same as heterogeneous systems, we just choose max value for
-the system.
+Nitpick:
+We usually don't write code like this.
+How about separate the assignment from declaration?
 
->
-> >
-> > Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>
-> > Cc: Len Brown <lenb@kernel.org>
-> > Cc: Jeremy Linton <jeremy.linton@arm.com>
-> > Cc: Catalin Marinas <catalin.marinas@arm.com>
-> > To: linux-acpi@vger.kernel.org
-> > Signed-off-by: Shaokun Zhang <zhangshaokun@hisilicon.com>
-> > ---
-> >   drivers/acpi/pptt.c  | 7 ++++++-
-> >   include/linux/acpi.h | 1 +
-> >   2 files changed, 7 insertions(+), 1 deletion(-)
-> >
-> > diff --git a/drivers/acpi/pptt.c b/drivers/acpi/pptt.c
-> > index 065c4fc245d1..3998621e00ce 100644
-> > --- a/drivers/acpi/pptt.c
-> > +++ b/drivers/acpi/pptt.c
-> > @@ -341,6 +341,8 @@ static struct acpi_pptt_cache *acpi_find_cache_node(struct acpi_table_header *ta
-> >   	return found;
-> >   }
-> > +unsigned int coherency_max_size;
-> > +
-> >   /**
-> >    * update_cache_properties() - Update cacheinfo for the given processor
-> >    * @this_leaf: Kernel cache info structure being updated
-> > @@ -360,8 +362,11 @@ static void update_cache_properties(struct cacheinfo *this_leaf,
-> >   	this_leaf->fw_token = cpu_node;
-> >   	if (found_cache->flags & ACPI_PPTT_SIZE_PROPERTY_VALID)
-> >   		this_leaf->size = found_cache->size;
-> > -	if (found_cache->flags & ACPI_PPTT_LINE_SIZE_VALID)
-> > +	if (found_cache->flags & ACPI_PPTT_LINE_SIZE_VALID) {
-> >   		this_leaf->coherency_line_size = found_cache->line_size;
-> > +		coherency_max_size = this_leaf->coherency_line_size > coherency_max_size ?
-> > +			this_leaf->coherency_line_size : coherency_max_size;
-> > +	}
-> >   	if (found_cache->flags & ACPI_PPTT_NUMBER_OF_SETS_VALID)
-> >   		this_leaf->number_of_sets = found_cache->number_of_sets;
-> >   	if (found_cache->flags & ACPI_PPTT_ASSOCIATIVITY_VALID)
-> > diff --git a/include/linux/acpi.h b/include/linux/acpi.h
-> > index d5dcebd7aad3..199cde875d5b 100644
-> > --- a/include/linux/acpi.h
-> > +++ b/include/linux/acpi.h
-> > @@ -315,6 +315,7 @@ static inline bool acpi_sci_irq_valid(void)
-> >   extern int sbf_port;
-> >   extern unsigned long acpi_realmode_flags;
-> > +extern unsigned int coherency_max_size;
->
-> Assuming that the LLC doesn't reflect the max cache line size, and it can't
-> be pulled directly from the cpu_cacheinfo, I don't think this is the ideal
-> place for this code. Given that DT has a cache line property as well, I
-> suspect cache_shared_cpu_map_setup() may be a better place. Although, that
-> isn't ideal either, as both these pieces of code have the pretense of being
-> architecture neutral. Maybe a new call into arch/arm64/cacheinfo.c?
->
+> +	u64 temp64 = parent_rate;
+> 
+> -	div = readl_relaxed(pll->base + PLL_CFG_OFFSET);
+> -	div &= BM_PLL_MULT;
+> -	div >>= BP_PLL_MULT;
+> +	mult &= BM_PLL_MULT;
+> +	mult >>= BP_PLL_MULT;
+> 
+> -	return parent_rate * div;
+> +	temp64 *= mfn;
+> +	do_div(temp64, mfd);
+> +
+> +	return (parent_rate * mult) + (u32)temp64;
+>  }
+> 
+>  static long clk_pllv4_round_rate(struct clk_hw *hw, unsigned long rate, @@
+> -78,14 +83,47 @@ static long clk_pllv4_round_rate(struct clk_hw *hw,
+> unsigned long rate,  {
+>  	unsigned long parent_rate = *prate;
+>  	unsigned long round_rate, i;
+> +	bool found = false;
+> +	u32 mfn, mfd = 1000000;
+> +	u32 max_mfd = 0x3FFFFFFF;
 
-Indeed, we need to consider DT systems too. We can just solve the issue
-for ACPI based systems.
+Please keep sort from long to short.
+And the multi Max_mfd definitions could be move out the function and
+Defined use macro.
 
-Or drivers/base/cacheinfo.c if other architectures are also interested or
-doesn't affect them if we add one :), but I don't count too much on this
-though as it may end up breaking some other archs.
+> +	u64 temp64;
+> 
+>  	for (i = 0; i < ARRAY_SIZE(pllv4_mult_table); i++) {
+>  		round_rate = parent_rate * pllv4_mult_table[i];
+> -		if (rate >= round_rate)
+> -			return round_rate;
+> +		if (rate >= round_rate) {
+> +			found = true;
+> +			break;
+> +		}
+> +	}
+> +
+> +	if (!found) {
+> +		pr_warn("%s: unable to round rate %lu, parent rate %lu\n",
+> +			clk_hw_get_name(hw), rate, parent_rate);
+> +		return 0;
+>  	}
+> 
+> -	return round_rate;
+> +	if (parent_rate <= max_mfd)
+> +		mfd = parent_rate;
+> +
+> +	temp64 = (u64)(rate - round_rate);
+> +	temp64 *= mfd;
+> +	do_div(temp64, parent_rate);
+> +	mfn = temp64;
+> +
+> +	/*
+> +	 * NOTE: The value of numerator must always be configured to be
+> +	 * less than the value of the denominator. If we can't get a proper
+> +	 * pair of mfn/mfd, we simply return the round_rate without using
+> +	 * the frac part.
+> +	 */
+> +	if (mfn >= mfd)
+> +		return round_rate;
+> +
+> +	temp64 = (u64)parent_rate;
+> +	temp64 *= mfn;
+> +	do_div(temp64, mfd);
+> +
+> +	return round_rate + (u32)temp64;
+>  }
+> 
+>  static bool clk_pllv4_is_valid_mult(unsigned int mult) @@ -106,17 +144,31
+> @@ static int clk_pllv4_set_rate(struct clk_hw *hw, unsigned long rate,  {
+>  	struct clk_pllv4 *pll = to_clk_pllv4(hw);
+>  	u32 val, mult;
+> +	u32 mfn, mfd = 1000000;
+> +	u32 max_mfd = 0x3FFFFFFF;
 
---
-Regards,
-Sudeep
+Ditto
+
+Otherwise:
+Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
+
+Regards
+Dong Aisheng
+
+> +	u64 temp64;
+> 
+>  	mult = rate / parent_rate;
+> 
+>  	if (!clk_pllv4_is_valid_mult(mult))
+>  		return -EINVAL;
+> 
+> +	if (parent_rate <= max_mfd)
+> +		mfd = parent_rate;
+> +
+> +	temp64 = (u64)(rate - mult * parent_rate);
+> +	temp64 *= mfd;
+> +	do_div(temp64, parent_rate);
+> +	mfn = temp64;
+> +
+>  	val = readl_relaxed(pll->base + PLL_CFG_OFFSET);
+>  	val &= ~BM_PLL_MULT;
+>  	val |= mult << BP_PLL_MULT;
+>  	writel_relaxed(val, pll->base + PLL_CFG_OFFSET);
+> 
+> +	writel_relaxed(mfn, pll->base + PLL_NUM_OFFSET);
+> +	writel_relaxed(mfd, pll->base + PLL_DENOM_OFFSET);
+> +
+>  	return 0;
+>  }
+> 
+> --
+> 2.7.4
 
 _______________________________________________
 linux-arm-kernel mailing list
