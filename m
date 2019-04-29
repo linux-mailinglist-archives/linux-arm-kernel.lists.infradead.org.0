@@ -2,104 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C0BADE42
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 10:48:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4793FDE4E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 10:50:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Iu7rTk6RRfjxhAA1bEYoQksSbfYPZsn/F+FmUXJs/Es=; b=dFLhUWnrdikeOA
-	fNhewh1fNDzz2AON/mBjqzOwHgWikqh2QhvP4vi2uCO2agwhblayPGP4+HtwI46KM8EqKUaqLquUt
-	OSP7P2RAMgFSkYt0R4nMuP8gOkD08AvACVLNtKcLmxE8tfwkZD68p5q6Zujtcflg9QA+Jv/PrmRhe
-	dDZC3u24L4VNCvBKdsSgr6WXVPAknjLijhQbvYkq+Vf8Xtw+rRwG8Ag6WmOnw/HvUA+iIVvSfoI1s
-	stQe5WY/tAwQFZ5g4V+fLEfjnrz1apyrDKJ50TpyXti4CgAyrfmMDHlbw5ShSXVPdSVaq1qhA7gvm
-	z2y/aBq1Vs+MQuUfpZLg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IJdD9ToGsSwPK0IEYI4bMmW2rIYh+1gaetiHYyfAxpw=; b=imFVCnggkYul+h
+	I6vp8wvE1ftDmBnSSo1/KukLnGdKhsAOGfnu2qP538OqhWS4F5BWFdkBMb76u5vAoTz/NHDmSVshJ
+	zCBXpTCjvGCWAKigI5C0tSGZSC/VcLVundznce9lwJ0WUiuKRuXOEB0Zi2cv0mwJ8y4ApD+J5SnWF
+	ny3D0NVg3fhJ4+db67LSLljW8+O0BEUavLW70lzu/H17iabqThO4iud3yDtLHgFBwBliuIWUCXet1
+	w0XDAAz6q/OeAYBrsxg5S/nskdrcWrQSGZubCMedOvWoHf9q7zBTi9OLNWvJydsGiPjgzwt0aUDyR
+	vg313SpETVQU8kBVwang==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL1xJ-0004Wr-1p; Mon, 29 Apr 2019 08:48:09 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL1xB-0004WE-00
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 08:48:02 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AF52F80D;
- Mon, 29 Apr 2019 01:48:00 -0700 (PDT)
-Received: from [10.1.196.92] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 10A243F71A; Mon, 29 Apr 2019 01:47:57 -0700 (PDT)
-Subject: Re: [PATCH v7 11/14] irqchip: ti-sci-inta: Add support for Interrupt
- Aggregator driver
-To: Lokesh Vutla <lokeshvutla@ti.com>, Santosh Shilimkar
- <ssantosh@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Nishanth Menon <nm@ti.com>, tglx@linutronix.de, jason@lakedaemon.net
-References: <20190420100950.7997-1-lokeshvutla@ti.com>
- <20190420100950.7997-12-lokeshvutla@ti.com>
- <bb768bc0-e18b-3794-8083-1612da10b0c1@ti.com>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
-Organization: ARM Ltd
-Message-ID: <79b34c45-023b-2df4-26f4-e151e74a46ac@arm.com>
-Date: Mon, 29 Apr 2019 09:47:55 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <bb768bc0-e18b-3794-8083-1612da10b0c1@ti.com>
+	id 1hL1zR-00067n-OS; Mon, 29 Apr 2019 08:50:21 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hL1zJ-0004tv-Db
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 08:50:15 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x3T8fTMS007712; Mon, 29 Apr 2019 10:49:51 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=i2CLqYU4GwrLxCYnOOSir1J49uaIFg3QwOiHNqW/DMI=;
+ b=mLocYcDosabWj+1ZZh/jun41Uyto0EFSNoSUHIPb23+2+As++SIBKc1XCDhALb+zqDa2
+ cSP9Zxa4+v5fc8mUkzRKGjdnDvPHpVnxPU/s7Hj14MIRVO9bYppDfLj3SLKjZMYQOzSl
+ YyaN9e2ThRYO7mVt/9QXKLbKvUY/006FNSdAIXnDZUWjUeyGACIgFUfyJ/GcxjKAWirl
+ M1TV7To33skxQtCTC5PF1Ftj0RTyQ6jISnjkjRm26PtDW51mHngz79hKp4I2V2mIenE4
+ RVQ/pazP9N7xWy8eAuw6v9m6ut6bbWAa5S8kU8lZKFxs096AINP87EeQ4+rznfyu08s6 Fg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2s4cutu1mb-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Mon, 29 Apr 2019 10:49:51 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 69BB946;
+ Mon, 29 Apr 2019 08:49:40 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag7node2.st.com [10.75.127.20])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 30A82139B;
+ Mon, 29 Apr 2019 08:49:40 +0000 (GMT)
+Received: from SFHDAG3NODE3.st.com (10.75.127.9) by SFHDAG7NODE2.st.com
+ (10.75.127.20) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 29 Apr
+ 2019 10:49:39 +0200
+Received: from SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476]) by
+ SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476%20]) with mapi id
+ 15.00.1347.000; Mon, 29 Apr 2019 10:49:39 +0200
+From: Benjamin GAIGNARD <benjamin.gaignard@st.com>
+To: "broonie@kernel.org" <broonie@kernel.org>, "robh@kernel.org"
+ <robh@kernel.org>, "arnd@arndb.de" <arnd@arndb.de>, "shawnguo@kernel.org"
+ <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "fabio.estevam@nxp.com" <fabio.estevam@nxp.com>
+Subject: Re: [RESEND PATCH 1/7] devicetree: bindings: Document domains
+ controller bindings
+Thread-Topic: [RESEND PATCH 1/7] devicetree: bindings: Document domains
+ controller bindings
+Thread-Index: AQHU3XI+crMGE3C/8EqSA6+xEWAscaZS9IgA
+Date: Mon, 29 Apr 2019 08:49:39 +0000
+Message-ID: <dbb7440f-f055-6ff3-d367-3435c3c34d89@st.com>
+References: <20190318100605.29120-1-benjamin.gaignard@st.com>
+ <20190318100605.29120-2-benjamin.gaignard@st.com>
+In-Reply-To: <20190318100605.29120-2-benjamin.gaignard@st.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.44]
+Content-ID: <06E79A3F4E1BA74194AF26EC2207345D@st.com>
+MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-04-29_04:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_014801_054275_A28EDDC6 
-X-CRM114-Status: GOOD (  15.26  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190429_015014_014504_49B98879 
+X-CRM114-Status: GOOD (  24.79  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.8 KHOP_DYNAMIC           Relay looks like a dynamic address
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -111,72 +110,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Ujfalusi <peter.ujfalusi@ti.com>,
- Grygorii Strashko <grygorii.strashko@ti.com>,
- Device Tree Mailing List <devicetree@vger.kernel.org>,
- Tony Lindgren <tony@atomide.com>, linus.walleij@linaro.org,
- Sekhar Nori <nsekhar@ti.com>, linux-kernel@vger.kernel.org,
- Tero Kristo <t-kristo@ti.com>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: "benjamin.gaignard@linaro.org" <benjamin.gaignard@linaro.org>, Loic
+ PALLARDY <loic.pallardy@st.com>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-imx@nxp.com" <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 23/04/2019 11:00, Lokesh Vutla wrote:
-> Hi Marc,
 
-[...]
+On 3/18/19 11:05 AM, Benjamin Gaignard wrote:
+> Document commons domains controller bindings for controller
+> and client devices.
+>
+> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
 
->> +/**
->> + * ti_sci_inta_set_type() - Update the trigger type of the irq.
->> + * @data:	Pointer to corresponding irq_data
->> + * @type:	Trigger type as specified by user
->> + *
->> + * Note: This updates the handle_irq callback for level msi.
->> + *
->> + * Return 0 if all went well else appropriate error.
->> + */
->> +static int ti_sci_inta_set_type(struct irq_data *data, unsigned int type)
->> +{
->> +	struct irq_desc *desc = irq_to_desc(data->irq);
->> +
->> +	/*
->> +	 * .alloc default sets handle_edge_irq. But if the user specifies
->> +	 * that IRQ is level MSI, then update the handle to handle_level_irq
->> +	 */
->> +	if (type & IRQF_TRIGGER_HIGH)
->> +		desc->handle_irq = handle_level_irq;
->> +
->> +	return 0;
-> 
-> 
-> Returning error value is causing request_irq to fail, so still returning 0. Do
-> you suggest any other method to handle this?
+Hi Rob,
 
-But that is the very point, isn't it? If you pass the wrong triggering
-type to request_irq, it *must* fail. What you should have is something like:
+In the first version of this series you have asked me to rework the 
+framework description.
+Does this v2 feel better for you ?
 
-switch (type & IRQ_TYPE_SENSE_MASK) {
-case IRQF_TRIGGER_HIGH:
-	desc->handle_irq = handle_level_irq;
-	return 0;
-case IRQ_TYPE_EDGE_RISING:
-	return 0;
-default:
-	return -EINVAL;
-}
+Benjamin
 
-(adjust as necessary).
-
-What's wrong with this?
-
-Thanks,
-
-	M.
--- 
-Jazz is not dead. It just smells funny...
-
+> ---
+>   .../bindings/bus/domains/domainsctrl.txt           | 55 ++++++++++++++++++++++
+>   1 file changed, 55 insertions(+)
+>   create mode 100644 Documentation/devicetree/bindings/bus/domains/domainsctrl.txt
+>
+> diff --git a/Documentation/devicetree/bindings/bus/domains/domainsctrl.txt b/Documentation/devicetree/bindings/bus/domains/domainsctrl.txt
+> new file mode 100644
+> index 000000000000..f82e5e11ea64
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/bus/domains/domainsctrl.txt
+> @@ -0,0 +1,55 @@
+> +Common Domains Controller bindings properties
+> +
+> +Bus domains controllers allow to divided system on chip into multiple domains
+> +that can be used to select by who hardware blocks could be accessed.
+> +A domain could be a cluster of CPUs (or coprocessors), a range of addresses or
+> +a group of hardware blocks.
+> +
+> +This device tree bindings can be used to bind bus domain consumer devices with
+> +their bus domains provided by bus domains controllers. A bus domain provider
+> +can be represented by any node in the device tree and can provide one or more
+> +bus domains. A consumer node can refer to the provider by a phandle and a set
+> +of phandle arguments of length specified by the #domainctrl-cells property in
+> +the bus domain provider node.
+> +
+> +==Bus domain provider==
+> +
+> +Required properties:
+> +- #domainctrl-cells	: Number of cells in a bus domain specifier;
+> +			  Can be any value as specified by device tree binding
+> +			  documentation of a particular provider.
+> +
+> +==Bus domain consumer==
+> +
+> +Required properties:
+> +- domainsctrl-X		: A list of bus domain specifiers, as defined by
+> +			  bindings of the bus domain controller that is the
+> +			  bus domain provider.
+> +
+> +Optional properties:
+> +- domainsctrl-names	: A list of bus domain name string sorted in the same
+> +			  order as the domainsctrl-X proprerties. Consumer
+> +			  drivers will use domainsctrl-names to match bus
+> +			  domains with bus domains specifiers.
+> +			  Note that "default" and "unbind" are reserved names
+> +			  used by the framework.
+> +
+> +Example of usage with:
+> +- a domains controller with a 2 parameters cell
+> +- a domains controller with a 3 parameters cell
+> +- a client device node using the both controllers and 2 configurations
+> +  named "default" and "unbind"
+> +
+> +ctrl0: ctrl@0 {
+> +	#domainctrl-cells = <2>;
+> +};
+> +
+> +ctrl1: ctrl@1 {
+> +	#domainctrl-cells = <3>;
+> +};
+> +
+> +foo@0 {
+> +	domains-names = "default", "unbind";
+> +	domainctrl-0 = <&ctrl0 1 2>, <&ctrl1 3 4 5>;
+> +	domainctrl-1 = <&ctrl0 6 7>, <&ctrl1 8 9 0>;
+> +};
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
