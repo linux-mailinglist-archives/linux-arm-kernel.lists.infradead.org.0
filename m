@@ -2,63 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6197FE390
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 15:19:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7B7EE3AA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 15:23:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wKege/kmdjKgeLl2tDUlt5EemP3sMCcjVuxzgMJjpKk=; b=u0MIilc070xTKe
-	BWoX+YPqdFQsTWyOZf+R3rSTGk0OZyPlEeD68y90AyqQgJSQIwTfDCMTr6LDPEbP4NL84XnTmR4bl
-	H0MlqhkcWKKOSYY93REx0R1qckkS/0ngxrW259X6sxZyX1IgoFcOzkyXOa8BC65gV9EYuHqSRX3mB
-	vYjqv6dngVWPP9GdFObU0QKFKXGRH0MfIZVWwtfkpsgXE5vNF2cwyzYVMKg3ngTeVfKylZLklfR4b
-	gYZ04+JrfWK8XBYq2jNbmLiVhcmtbxRKudibIOdAycI9x8UquB98hZ68KeAJXtOMKhaeJpljX5vAO
-	he3AwA2DaV20qkh2PgpA==;
+	List-Owner; bh=V1HqiGlPWrFKyR4YcxkERAfbztl8dXYcQt2GYMV3fzI=; b=ry5cK7Y0D1GV0U
+	79GKhvkh3dFLpZY+w15LgRENPBxWWhBrY1Voxwf9/e0Zw9wSdxHiEeRqxFSxXZn33nQqRLY9LKJJx
+	HkK9s2XkrZFkmbLWBcKWbmsgXioKJrqt2+Uh3jsLNodvQJaffOT4Yb5X21w6+FgzSn9bFAoS3BCsG
+	uFEl8Db67TpdjbppDjWB/cbxJmbpF5o4Sh8pguUnuZMe7pWf4+MVTWMlZiDLWnrMWrLjg9Iv5mBVM
+	aPit4Rgvlh+hVQ5h1rF1BFvoAkInD2QKvrM945bk795ilAfxVtbP/J/LASUpnXjzuREneNGm2906Y
+	G1lyQ/YKlKgEzQxFBwiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL6Bl-0007Px-Ry; Mon, 29 Apr 2019 13:19:21 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1hL6G2-0000el-Lj; Mon, 29 Apr 2019 13:23:46 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL6Bd-0007PY-Ul
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 13:19:15 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1hL6BZ-0008Nm-Kv; Mon, 29 Apr 2019 15:19:09 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1hL6BX-0008Ne-87; Mon, 29 Apr 2019 15:19:07 +0200
-Date: Mon, 29 Apr 2019 15:19:07 +0200
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Guenter Roeck <linux@roeck-us.net>
-Subject: Re: [PATCH v3 08/16] watchdog: imx_sc_wdt: drop warning after
- calling watchdog_init_timeout
-Message-ID: <20190429131907.xpl6duf4cvtwbmud@pengutronix.de>
-References: <20190419181601.7412-1-wsa+renesas@sang-engineering.com>
- <20190419181601.7412-9-wsa+renesas@sang-engineering.com>
- <20190429101558.6vyiospb6oqsstt7@pengutronix.de>
- <616a9d4e-7050-a6c2-727d-f62e08d3d98c@roeck-us.net>
+ id 1hL6Fv-0000da-M8; Mon, 29 Apr 2019 13:23:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=G9+UVkmUelZPc/fq6yyI9wbOx04gDxUNqmqWJk98Nkg=; b=UJxTcsu3QVfNUjU0YZtQzi6U3y
+ wqS5EGC5LSO/GkxW9xCydVDvbZ1fs37BBldYsyRB4/OLeWLrobP38ZeMf/gS1JrYsru+wKb40eq3m
+ ceOmhYYufSpplKctvC8LKsMTHYMWy3AnrSfh9BAbBMXdDsP07MKex5LVfvQ4FhluvDmg=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
+ (envelope-from <andrew@lunn.ch>)
+ id 1hL6Fj-00010z-OB; Mon, 29 Apr 2019 15:23:27 +0200
+Date: Mon, 29 Apr 2019 15:23:27 +0200
+From: Andrew Lunn <andrew@lunn.ch>
+To: biao huang <biao.huang@mediatek.com>
+Subject: Re: [PATCH 5/6] net: stmmac: add mdio clause 45 access from mac
+ device for dwmac4
+Message-ID: <20190429132327.GF10772@lunn.ch>
+References: <1556433009-25759-1-git-send-email-biao.huang@mediatek.com>
+ <1556433009-25759-6-git-send-email-biao.huang@mediatek.com>
+ <20190428163705.GH23059@lunn.ch>
+ <1556517925.24897.17.camel@mhfsdcap03>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <616a9d4e-7050-a6c2-727d-f62e08d3d98c@roeck-us.net>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <1556517925.24897.17.camel@mhfsdcap03>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_061914_177252_ECD8D475 
-X-CRM114-Status: GOOD (  21.39  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190429_062339_873357_C5CF1D40 
+X-CRM114-Status: GOOD (  16.29  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [185.16.172.187 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -70,92 +78,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-watchdog@vger.kernel.org, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- linux-renesas-soc@vger.kernel.org,
- Wolfram Sang <wsa+renesas@sang-engineering.com>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Wim Van Sebroeck <wim@linux-watchdog.org>, Fabio Estevam <festevam@gmail.com>,
+Cc: jianguo.zhang@mediatek.com, Alexandre Torgue <alexandre.torgue@st.com>,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, yt.shen@mediatek.com,
+ Jose Abreu <joabreu@synopsys.com>, linux-mediatek@lists.infradead.org,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>, davem@davemloft.net,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+> > Hi Biao
+> > 
+> > readl_poll_timeout() returns an error code. It is better to return
+> > that, than make up some other error code. Yes, i know the C22 read
+> > returns EBUSY, but we don't need to copy that behaviour into C45.
+> > 
+> OK, will return error code here.
+> > > +
+> > > +	value = 0;
+> > > +	value |= (prtad << priv->hw->mii.cl45_reg_shift)
+> > > +			& priv->hw->mii.cl45_reg_mask;
+> > > +	writel(value, priv->ioaddr + mii_data);
+> > > +
+> > > +	/* delay 2ms to avoid error value of get_phy_c45_devs_in_pkg */
+> > > +	mdelay(2);
+> > 
+> > Please could you explain this a bit more?
+> when of_mdiobus_register is invoked,
+> the C22 PHY addr information will be obtained in device tree(reg = xx,
+> no need through mdiobus),
+> but C45 PHY addr should be got through mdiobus->read according to
+> current flow.
+>     of_mdiobus_register -->
+>     of_mdiobus_register_phy -->
+>     get_phy_device -->
+>     get_phy_id -->
+>     get_phy_c45_ids -->
+>     get_phy_c45_devs_in_pkg
+> 
+> In my platform, mdio bus read will return 0xffff or 0x0000 for C45 in
+> of_mdiobus_register callstack, and that's not the expected value. 
+> So that the mdiobus register fails.
+> 
+> We took some time to find that only after adding 2ms delay here,
+> the read action will be stable and return the expected value.
+> 
+> did you try C45 support in your platform? I can't tell whether it's a
+> common or specified issue.
 
-On Mon, Apr 29, 2019 at 05:37:12AM -0700, Guenter Roeck wrote:
-> On 4/29/19 3:15 AM, Uwe Kleine-K=F6nig wrote:
-> > On Fri, Apr 19, 2019 at 08:15:53PM +0200, Wolfram Sang wrote:
-> > > The core will print out details now.
-> > > =
+It sounds like you need to put a logic analyser on the bus and see if
+it performs a C22 transaction, or an invalid transaction, without the
+2ms pause.
 
-> > > Reviewed-by: Guenter Roeck <linux@roeck-us.net>
-> > > Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
-> > > ---
-> > >   drivers/watchdog/imx_sc_wdt.c | 5 +----
-> > >   1 file changed, 1 insertion(+), 4 deletions(-)
-> > > =
+This sounds like a 'silicon' bug. There should not be a need to pause
+here. And the comment should talk about this silicon bug, not
+get_phy_c45_devs_in_pkg(). It will fail for all accesses, not just
+those for get_phy_c45_devs_in_pkg().
 
-> > > diff --git a/drivers/watchdog/imx_sc_wdt.c b/drivers/watchdog/imx_sc_=
-wdt.c
-> > > index 86c2722f2a09..6dc24ceb1b2c 100644
-> > > --- a/drivers/watchdog/imx_sc_wdt.c
-> > > +++ b/drivers/watchdog/imx_sc_wdt.c
-> > =
-
-> > This driver isn't in next, and I don't know where to look for it.
-> > =
-
-> =
-
-> Branch watchdog-next of
-> git://git.kernel.org/pub/scm/linux/kernel/git/groeck/linux-staging.git
-
-Thanks, found it now.
- =
-
-> > > @@ -117,10 +117,7 @@ static int imx_sc_wdt_probe(struct platform_devi=
-ce *pdev)
-> > >   	imx_sc_wdd->parent =3D &pdev->dev;
-> > >   	imx_sc_wdd->timeout =3D DEFAULT_TIMEOUT;
-> > > -	ret =3D watchdog_init_timeout(imx_sc_wdd, 0, &pdev->dev);
-> > > -	if (ret)
-> > > -		dev_warn(&pdev->dev, "Failed to set timeout value, using default\n=
-");
-> > > -
-> > > +	watchdog_init_timeout(imx_sc_wdd, 0, &pdev->dev);
-> > =
-
-> > One side effect is however that ret isn't set any more. So I wonder if a
-> > failure in watchdog_init_timeout() really makes the core print the
-> > details as expected.
-> > =
-
-> =
-
-> Sorry, I don't understand. The warning is printed in watchdog_init_timeou=
-t().
-> What does that have to do with setting ret here or not ?
-
-Ah, I thought the warning is done in the caller of the modified
-function. Maybe this means the commit log can be improved to for
-example:
-
-	The function watchdog_init_timeout() itself already emits a
-	more informative warning on failure. So drop the driver specific
-	one.
-
-Otherwise my concerns are eliminated.
-
-Thanks
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+	Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
