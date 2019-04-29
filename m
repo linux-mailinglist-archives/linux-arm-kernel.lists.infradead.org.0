@@ -2,99 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52C96EB59
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 22:07:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 520E0EBC6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 22:43:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ape0yui+1jZ50+kNoMcAR6dHRhSS86ZnWd/FiQ/oehc=; b=XYeH6+vOajTpBl
-	TfAQohTdZmsK4Jb0xyuOF1o2rxJLRsfZckLxi++S15ehDvX1klFTyI9ocAydX/UL6YcazFf7B3MJc
-	vxyLeCHemwIe3RMAUDM6t2PUiTrIXZvRs+Npr3RL+kQhx1Iye/lIm8wwFxWdpLGXfigXP3hkYI7nb
-	Yg/vFsCTd5eIhyd2ztgpVs9p8VdHxspSugK9iciamwqaIt0SzEhIJkNODvuPuH0Qzm2gLNgaJZ3Ym
-	YeiHXojfg7KvO1/YiKvdSS7hRPJZ//wlZvUbh9ES+3lkilMkl9AMH636wt4DjEG4hcJx9wLIy5gJa
-	Qojwzs3OsgTRuA+EcUQg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4vCdMR+PdmFydqkyQ41bNiDhQ8SkYjog5E44HPJ3k9M=; b=CblS6qPVgIhHzO
+	JbZ6W7WWMBWW9hvcqWOwPYo+9izbxsrPJWrEk+21y2dKaWU9ulrORdU4iWsqpoUiCkZF3PYOvJU/J
+	jmBq0pKzEd0MdpTn4KbuM5vV+W6NjIYsKRr2YUwk8naTy1lxIqyqCGIU/2vt5m7CZfVQHNmbYmeyY
+	o23iWqUZcLqxaOjOFRywNzLgoCfLWxq71IZu5eeAGMcRVDWLK7wMxy4z0MJxfFTVqSFF8kzkjnypO
+	A6L7a6L85GdZenDo3sqGgwvWBYZd1ii91vEjXr7bl4LfuQal/ttm4pV7nf7FIe87Bj+LLtlsobU/1
+	aj8kOcjhAm0Key3vjqMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLCYv-0007Bt-Hv; Mon, 29 Apr 2019 20:07:41 +0000
+	id 1hLD7c-0001Ye-CQ; Mon, 29 Apr 2019 20:43:32 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLCYo-0007BW-Kp
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 20:07:35 +0000
-Received: from [192.168.1.28] (cpe-70-114-128-244.austin.res.rr.com
+ id 1hLD7V-0001Y7-C3
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 20:43:26 +0000
+Received: from localhost.localdomain (cpe-70-114-128-244.austin.res.rr.com
  [70.114.128.244])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id ADA222067D;
- Mon, 29 Apr 2019 20:07:33 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 399A02075E;
+ Mon, 29 Apr 2019 20:43:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1556568454;
- bh=HUgvQgKhxgIQ5UGbEWgR33YqsoAwZuVd9mUMp4cL1sM=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=h4GxGj9+KZEj6GXHIISqej3jusY/DFhJq+rBRtHwvZ7PsTFxPHoyCjZzFW/8Zbuk2
- F+O0ZX3+gxsBXVHlJT1Uhs1YyrNqLty8ltgQf6Gq3tU1IgSi9xuvOqY8EKtUwZkN7M
- 8MDA7T7352YviTlOlEGhjrhZVjX3cNCtmGItuOgI=
-Subject: Re: [GIT PULL 2/3] arm64: defconfig update for v5.2
-To: Olof Johansson <olof@lixom.net>
-References: <20190416151140.2598-1-dinguyen@kernel.org>
- <20190416151140.2598-2-dinguyen@kernel.org>
- <20190429061430.ngtjv7udurlx4pwl@localhost>
+ s=default; t=1556570604;
+ bh=MJVXxdcOSTv5ZMbStCvi8fOK8k6kWrfC4eC2Nm/Mpd4=;
+ h=From:To:Cc:Subject:Date:From;
+ b=R0cyTOzvxYAKag91T/W+q2PfQCK+FLaNZgq2CiyQQnvCwPG2l1JIsFrNWD5LT/hcG
+ vb8yB69sYarnQ4aGm1BHBHQY63nYeLSeE9eauCmnbwbSwnWs6Gh3ZfFgKI0w2Kfvsa
+ bplkdeMhF8j+JnU28JAG9eCD1G+bR5OBKCB9Togw=
 From: Dinh Nguyen <dinguyen@kernel.org>
-Openpgp: preference=signencrypt
-Autocrypt: addr=dinguyen@kernel.org; prefer-encrypt=mutual; keydata=
- mQINBFEnvWwBEAC44OQqJjuetSRuOpBMIk3HojL8dY1krl8T8GJjfgc/Gh97CfVbrqhV5yQ3
- Sk/MW9mxO9KNvQCbZtthfn62YHmroNwipjZ6wKOMfKdtJR4+8JW/ShIJYnrMfwN8Wki6O+5a
- yPNNCeENHleV0FLVXw3aACxOcjEzGJHYmg4UC+56rfoxPEhKF6aGBTV5aGKMtQy77ywuqt12
- c+hlRXHODmXdIeT2V4/u/AsFNAq6UFUEvHrVj+dMIyv2VhjRvkcESIGnG12ifPdU7v/+wom/
- smtfOAGojgTCqpwd0Ay2xFzgGnSCIFRHp0I/OJqhUcwAYEAdgHSBVwiyTQx2jP+eDu3Q0jI3
- K/x5qrhZ7lj8MmJPJWQOSYC4fYSse2oVO+2msoMTvMi3+Jy8k+QNH8LhB6agq7wTgF2jodwO
- yij5BRRIKttp4U62yUgfwbQtEUvatkaBQlG3qSerOzcdjSb4nhRPxasRqNbgkBfs7kqH02qU
- LOAXJf+y9Y1o6Nk9YCqb5EprDcKCqg2c8hUya8BYqo7y+0NkBU30mpzhaJXncbCMz3CQZYgV
- 1TR0qEzMv/QtoVuuPtWH9RCC83J5IYw1uFUG4RaoL7Z03fJhxGiXx3/r5Kr/hC9eMl2he6vH
- 8rrEpGGDm/mwZOEoG5D758WQHLGH4dTAATg0+ZzFHWBbSnNaSQARAQABtCFEaW5oIE5ndXll
- biA8ZGluZ3V5ZW5Aa2VybmVsLm9yZz6JAjgEEwECACIFAlbG5oQCGwMGCwkIBwMCBhUIAgkK
- CwQWAgMBAh4BAheAAAoJEBmUBAuBoyj0fIgQAICrZ2ceRWpkZv1UPM/6hBkWwOo3YkzSQwL+
- AH15hf9xx0D5mvzEtZ97ZoD0sAuB+aVIFwolet+nw49Q8HA3E/3j0DT7sIAqJpcPx3za+kKT
- twuQ4NkQTTi4q5WCpA5b6e2qzIynB50b3FA6bCjJinN06PxhdOixJGv1qDDmJ01fq2lA7/PL
- cny/1PIo6PVMWo9nf77L6iXVy8sK/d30pa1pjhMivfenIleIPYhWN1ZdRAkH39ReDxdqjQXN
- NHanNtsnoCPFsqeCLmuUwcG+XSTo/gEM6l2sdoMF4qSkD4DdrVf5rsOyN4KJAY9Uqytn4781
- n6l1NAQSRr0LPT5r6xdQ3YXIbwUfrBWh2nDPm0tihuHoH0CfyJMrFupSmjrKXF84F3cq0DzC
- yasTWUKyW/YURbWeGMpQH3ioDLvBn0H3AlVoSloaRzPudQ6mP4O8mY0DZQASGf6leM82V3t0
- Gw8MxY9tIiowY7Yl2bHqXCorPlcEYXjzBP32UOxIK7y7AQ1JQkcv6pZ0/6lX6hMshzi9Ydw0
- m8USfFRZb48gsp039gODbSMCQ2NfxBEyUPw1O9nertCMbIO/0bHKkP9aiHwg3BPwm3YL1UvM
- ngbze/8cyjg9pW3Eu1QAzMQHYkT1iiEjJ8fTssqDLjgJyp/I3YHYUuAf3i8SlcZTusIwSqnD
- uQINBFEnvWwBEADZqma4LI+vMqJYe15fxnX8ANw+ZuDeYHy17VXqQ7dA7n8E827ndnoXoBKB
- 0n7smz1C0I9StarHQPYTUciMLsaUpedEfpYgqLa7eRLFPvk/cVXxmY8Pk+aO8zHafr8yrFB1
- cYHO3Ld8d/DvF2DuC3iqzmgXzaRQhvQZvJ513nveCa2zTPPCj5w4f/Qkq8OgCz9fOrf/CseM
- xcP3Jssyf8qTZ4CTt1L6McRZPA/oFNTTgS/KA22PMMP9i8E6dF0Nsj0MN0R7261161PqfA9h
- 5c+BBzKZ6IHvmfwY+Fb0AgbqegOV8H/wQYCltPJHeA5y1kc/rqplw5I5d8Q6B29p0xxXSfaP
- UQ/qmXUkNQPNhsMnlL3wRoCol60IADiEyDJHVZRIl6U2K54LyYE1vkf14JM670FsUH608Hmk
- 30FG8bxax9i+8Muda9ok/KR4Z/QPQukmHIN9jVP1r1C/aAEvjQ2PK9aqrlXCKKenQzZ8qbeC
- rOTXSuJgWmWnPWzDrMxyEyy+e84bm+3/uPhZjjrNiaTzHHSRnF2ffJigu9fDKAwSof6SwbeH
- eZcIM4a9Dy+Ue0REaAqFacktlfELeu1LVzMRvpIfPua8izTUmACTgz2kltTaeSxAXZwIziwY
- prPU3cfnAjqxFHO2TwEpaQOMf8SH9BSAaCXArjfurOF+Pi3lKwARAQABiQIfBBgBAgAJBQJR
- J71sAhsMAAoJEBmUBAuBoyj0MnIQAI+bcNsfTNltf5AbMJptDgzISZJrYCXuzOgv4+d1CubD
- 83s0k6VJgsiCIEpvELQJsr58xB6l+o3yTBZRo/LViNLk0jF4CmCdXWjTyaQAIceEdlaeeTGH
- d5GqAud9rv9q1ERHTcvmoEX6pwv3m66ANK/dHdBV97vXacl+BjQ71aRiAiAFySbJXnqj+hZQ
- K8TCI/6TOtWJ9aicgiKpmh/sGmdeJCwZ90nxISvkxDXLEmJ1prvbGc74FGNVNTW4mmuNqj/p
- oNr0iHan8hjPNXwoyLNCtj3I5tBmiHZcOiHDUufHDyKQcsKsKI8kqW3pJlDSACeNpKkrjrib
- 3KLQHSEhTQCt3ZUDf5xNPnFHOnBjQuGkumlmhkgD5RVguki39AP2BQYp/mdk1NCRQxz5PR1B
- 2w0QaTgPY24chY9PICcMw+VeEgHZJAhuARKglxiYj9szirPd2kv4CFu2w6a5HNMdVT+i5Hov
- cJEJNezizexE0dVclt9OS2U9Xwb3VOjs1ITMEYUf8T1j83iiCCFuXqH4U3Eji0nDEiEN5Ac0
- Jn/EGOBG2qGyKZ4uOec9j5ABF7J6hyO7H6LJaX5bLtp0Z7wUbyVaR4UIGdIOchNgNQk4stfm
- JiyuXyoFl/1ihREfvUG/e7+VAAoOBnMjitE5/qUERDoEkkuQkMcAHyEyd+XZMyXY
-Message-ID: <0d8b7c80-6f55-10d5-f26a-6aa518a46ddc@kernel.org>
-Date: Mon, 29 Apr 2019 15:07:32 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+To: robh+dt@kernel.org,
+	mark.rutland@arm.com
+Subject: [PATCH] ARM: dts: arria10: Add EMAC OCP reset property
+Date: Mon, 29 Apr 2019 15:43:14 -0500
+Message-Id: <20190429204314.21220-1-dinguyen@kernel.org>
+X-Mailer: git-send-email 2.20.0
 MIME-Version: 1.0
-In-Reply-To: <20190429061430.ngtjv7udurlx4pwl@localhost>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_130734_723991_8512F574 
-X-CRM114-Status: GOOD (  14.02  )
+X-CRM114-CacheID: sfid-20190429_134325_429781_F29EE288 
+X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.3 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.3 points)
@@ -122,53 +75,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: dinguyen@kernel.org, stable@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Add the EMAC's OCP reset property on Arria10. The OCP reset bits are
+also needed to correctly bring the EMACs out of reset correctly.
 
+Cc: stable@vger.kernel.org
+Signed-off-by: Dinh Nguyen <dinguyen@kernel.org>
+---
+ arch/arm/boot/dts/socfpga_arria10.dtsi | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
-On 4/29/19 1:14 AM, Olof Johansson wrote:
-> On Tue, Apr 16, 2019 at 10:11:39AM -0500, Dinh Nguyen wrote:
->> Hi Arnd, Kevin, and Olof:
->>
->> Please pull in these updates to the arm64 defconfig for v5.2.
->>
->> Thanks,
->> Dinh
->>
->>
->> The following changes since commit 9e98c678c2d6ae3a17cb2de55d17f69dddaa231b:
->>
->>   Linux 5.1-rc1 (2019-03-17 14:22:26 -0700)
->>
->> are available in the Git repository at:
->>
->>   git://git.kernel.org/pub/scm/linux/kernel/git/dinguyen/linux.git tags/arm64_defconfig_for_v5.2
->>
->> for you to fetch changes up to 09d7d3e5291b3a531e36a5b6ef6d6088bb541aad:
->>
->>   arm64: defconfig: include the Agilex platform to the arm64 defconfig (2019-04-05 17:45:42 -0500)
->>
->> ----------------------------------------------------------------
->> ARM64 defconfig updates for v5.1
->> - 'make savedefconfig' cleanup
->> - Enable PCIE_ALTERA and PCIE_ALTERA_MSI
->> - Enable the Intel Stratix10 Service layer driver, FPGA manager and
->>   Altera Freeze Bridge driver.
->> - Adds the Intel Agilex platform to the arm64 defconfig
-> 
-> Merged, thanks.
-> 
-> In general we don't like it when platforms do a 'savedefconfig' and reorder the
-> file though, since chaos ensues when more than one does it.
-> 
-
-Thanks and noted!
-
-Dinh
+diff --git a/arch/arm/boot/dts/socfpga_arria10.dtsi b/arch/arm/boot/dts/socfpga_arria10.dtsi
+index ae24599d5829..a6206a0d5763 100644
+--- a/arch/arm/boot/dts/socfpga_arria10.dtsi
++++ b/arch/arm/boot/dts/socfpga_arria10.dtsi
+@@ -431,8 +431,8 @@
+ 			rx-fifo-depth = <16384>;
+ 			clocks = <&l4_mp_clk>;
+ 			clock-names = "stmmaceth";
+-			resets = <&rst EMAC0_RESET>;
+-			reset-names = "stmmaceth";
++			resets = <&rst EMAC0_RESET>, <&rst EMAC0_OCP_RESET>;
++			reset-names = "stmmaceth", "stmmaceth-ocp";
+ 			snps,axi-config = <&socfpga_axi_setup>;
+ 			status = "disabled";
+ 		};
+@@ -451,8 +451,8 @@
+ 			rx-fifo-depth = <16384>;
+ 			clocks = <&l4_mp_clk>;
+ 			clock-names = "stmmaceth";
+-			resets = <&rst EMAC1_RESET>;
+-			reset-names = "stmmaceth";
++			resets = <&rst EMAC1_RESET>, <&rst EMAC1_OCP_RESET>;
++			reset-names = "stmmaceth", "stmmaceth-ocp";
+ 			snps,axi-config = <&socfpga_axi_setup>;
+ 			status = "disabled";
+ 		};
+@@ -470,8 +470,8 @@
+ 			tx-fifo-depth = <4096>;
+ 			rx-fifo-depth = <16384>;
+ 			clocks = <&l4_mp_clk>;
+-			resets = <&rst EMAC2_RESET>;
+-			clock-names = "stmmaceth";
++			resets = <&rst EMAC2_RESET>, <&rst EMAC2_OCP_RESET>;
++			clock-names = "stmmaceth", "stmmaceth-ocp";
+ 			snps,axi-config = <&socfpga_axi_setup>;
+ 			status = "disabled";
+ 		};
+-- 
+2.20.0
 
 
 _______________________________________________
