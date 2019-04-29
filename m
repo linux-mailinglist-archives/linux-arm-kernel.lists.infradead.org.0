@@ -2,83 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D58CDFE3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 11:53:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51841DFE8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 11:55:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GhJZE4G1cE4woeE2AxAWzQ37qZ1ohOcokTGUbco75z4=; b=X2Ry8Tmoq+fgTI
-	B4VO9WFcC5QgtQs7WPHlwmWNYjF8/nqseE1NaiksgI9KHD0OuABF8CIWs9SWCtZolXv8svaeJEGkb
-	KdndCBVMFw/E4nKYNfIzy3zs7kAWUX4KkQhIGH2arSCbiwyRxQd+K+EqnvCEvVsKCoAH06yiPJNke
-	1mq7UIBO/2R/sgYYrZwLzTtjLxougyP9ltc1AJzwKvMp89775ZYasy7cJqOBR3airkIV6jXfrUfWk
-	X9z3ed7MwEvVBJeUX1bZTrgBi7aL/MFnH1/ruWC2pKlfVplb4visSBuuHUahfgknZazaTgtvHtqyv
-	4BlAaEDlZfYIqY0wCLXw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dIsZaA9iOPIV/IGDRwcW5Y53bPmBsR0BH/HQUwiscDw=; b=ZF06brHvNL9UXG
+	164se5lnCwlKX9RtI13ltnSR83XjX1Jmtelp2XcV3yJR2DvaQ2/oxEhi8F1WCVgeZcmar1k6Fo5x3
+	LMTb9NClzcLLVvA+pV8YaSq2Z/SDYKZiv+5k8klzy79ur+bJq32cqHd26Bc21JghG1VNV3UYeItIp
+	sUgF8KJ7xg/QLEOe6jT+ZwGx9ltgArrS5ujZy3nn1Vw0rhsDYcT2BI7wWEV63mU6RXkS673Ya3cwi
+	Z4LjOql4QyCCt6inwkz3J2QjfwTJn6vkA5iscvAQEw4h558FVUEOixL+B6ypgyv4mTlagcR2AFIel
+	xKlqVx/7zWSs+opC0U2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL2yb-0007Do-L7; Mon, 29 Apr 2019 09:53:33 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hL309-0007WQ-1U; Mon, 29 Apr 2019 09:55:09 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL2yT-0007DH-6g
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 09:53:27 +0000
-Received: by mail-pg1-x541.google.com with SMTP id 85so4911294pgc.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Apr 2019 02:53:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=c+0MXpZEek4P+VCfEH1xx9Ru4uabXwTDh/y+GUG7DhQ=;
- b=jtSNtzktrkH7xfB30YOoP4C+YhI+nR0BqlrWf1DAPXsYgcDHgsyx1CBmT5s2AaiyIc
- yCATqRCaak+MtuRfbNxbXiip4l/aHxh69nizYBndpaW4ggbIA46mGFkhJ83bfa9p2w0I
- JwQwHr7+RzbVg7ZLAKJ70bfAvNXcyKZYjHqbEw5kmP/anEDdl2X4w57N9o+SfQ7eIQAz
- xrJkUJH12bI7y+SelMwJ37P4qaTDbA+YZ0X2KX/NwKUtapF+TIWr+VpcZd7gtxrg2HS2
- x5Bdw76XQrR/5RnQau1jD3YvMCGBYe41L5A+08fur9LN/TQvt4xHCejoOu+98RUVe1/j
- eyQA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=c+0MXpZEek4P+VCfEH1xx9Ru4uabXwTDh/y+GUG7DhQ=;
- b=Na5z7wMXkSbDDowIyjLzT5xjEn2mSJgU7P5UebAonjWIYcpOQMuEec6+zNEE76Z4vy
- fKIQMWFZbXZJYIFUkeLxK8dddCGngyXB1shd6ySfSJtnB/k3vgwjhW0ojiqefRcsz18h
- cAOuyjFiO/Sz7Vp9JdJAM2J1W64tpS5OOJCazuSjQklzj8zN4Q8J88JYQ6Kaywhm9iby
- +KxgYDKksPrQydVh0wnsnyTHyddAYAA4+tQTcL1Qs+vJfecZqGM230BWqOOLc2RA2HyM
- USlffZaA85gt0o+trC/O9QoA3T2soTRqBikZ6mDq5Fi6PK4Ca1ZddRp80dZk+uD+Ec/t
- uGTw==
-X-Gm-Message-State: APjAAAUKxORVEUD7WaskSwL6l97An+ltuLWEAHOYI3N3JXzNUxhNxRWR
- 2Q/qdYpKTzmx+Z+M/tLx+3Lj7g==
-X-Google-Smtp-Source: APXvYqxDqNTUAsQbPtgk+kVimoeL8h4ytSY5Oyrs0qJiWDcUQKBAF1tB6BP0WKarza1ht/h+HbJHlA==
-X-Received: by 2002:a63:da51:: with SMTP id l17mr16291377pgj.115.1556531604046; 
- Mon, 29 Apr 2019 02:53:24 -0700 (PDT)
-Received: from localhost ([122.166.139.136])
- by smtp.gmail.com with ESMTPSA id z127sm8195540pfb.53.2019.04.29.02.53.22
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 29 Apr 2019 02:53:22 -0700 (PDT)
-Date: Mon, 29 Apr 2019 15:23:21 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Gregory CLEMENT <gregory.clement@bootlin.com>
-Subject: Re: [PATCH 2/2] cpufreq: armada-37xx: fix frequency calculation for
- opp
-Message-ID: <20190429095321.ah5taomlznghsxu5@vireshk-i7>
-References: <20190308164710.10597-1-gregory.clement@bootlin.com>
- <20190308164710.10597-3-gregory.clement@bootlin.com>
+ id 1hL2zv-0007VX-Bm
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 09:54:57 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x3T9kxuR031685; Mon, 29 Apr 2019 11:54:45 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : content-type : content-transfer-encoding :
+ mime-version; s=STMicroelectronics;
+ bh=NpKHSHilJ8VtsKy2Eh73u7f/s16+/jfGkYS573A6cho=;
+ b=URwv2GxebEgOjfAMFTa3Ak+GpQVsVLlauhQc8u9c9crOUnXwEZdquDHQZCqdgi0Fq21g
+ JuLUOKDh6yr4vOBZEChwo+VxCcrJAS6zg5ioRLZOHBiwm/Ya8AncCG+daoGZXE3gnBE4
+ vR+3S7vKPACustyWcxoEaIhBU1HczcXvlllGv8mU5fcaPHseINPyNPDYHrfyGL/plqsw
+ /RzY/hZwgqmErWxYLzeCwDK4ZBA76U+M4yGgQdt3lXK6+rWVHEYkgij3tuv/ne43W9A7
+ PsnfsPjOqa3VF/ylyhU8yMxKP+hlrJKEKTm2u2Bo3UaonDSE7p1Wi+Q3HOwGh19ORzbC Rg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2s4cj0be9r-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Mon, 29 Apr 2019 11:54:45 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 0FD7C34;
+ Mon, 29 Apr 2019 09:54:45 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag4node3.st.com [10.75.127.12])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D7D7E14F5;
+ Mon, 29 Apr 2019 09:54:44 +0000 (GMT)
+Received: from SFHDAG5NODE1.st.com (10.75.127.13) by SFHDAG4NODE3.st.com
+ (10.75.127.12) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 29 Apr
+ 2019 11:54:44 +0200
+Received: from SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6]) by
+ SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6%20]) with mapi id
+ 15.00.1347.000; Mon, 29 Apr 2019 11:54:44 +0200
+From: Gerald BAEZA <gerald.baeza@st.com>
+To: "mturquette@baylibre.com" <mturquette@baylibre.com>, "sboyd@kernel.org"
+ <sboyd@kernel.org>,
+ "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
+ Alexandre TORGUE <alexandre.torgue@st.com>
+Subject: [PATCH 1/1] clk: stm32mp1: Add ddrperfm clock
+Thread-Topic: [PATCH 1/1] clk: stm32mp1: Add ddrperfm clock
+Thread-Index: AQHU/nGSI1KYPhvKvEC7x41++h176w==
+Date: Mon, 29 Apr 2019 09:54:44 +0000
+Message-ID: <1556531652-27740-1-git-send-email-gerald.baeza@st.com>
+Accept-Language: fr-FR, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.47]
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190308164710.10597-3-gregory.clement@bootlin.com>
-User-Agent: NeoMutt/20180323-120-3dd1ac
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-04-29_05:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_025326_612462_EFBF8EDB 
-X-CRM114-Status: GOOD (  12.64  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190429_025455_947171_FA1E6D30 
+X-CRM114-Status: GOOD (  12.89  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -87,6 +90,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.8 KHOP_DYNAMIC           Relay looks like a dynamic address
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -98,42 +102,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Vincent Guittot <vincent.guittot@linaro.org>,
- Jason Cooper <jason@lakedaemon.net>,
- Christian Neubert <christian.neubert.86@gmail.com>,
- Antoine Tenart <antoine.tenart@bootlin.com>, linux-pm@vger.kernel.org,
- Ilias Apalodimas <ilias.apalodimas@linaro.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, stable@vger.kernel.org,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- =?utf-8?Q?Miqu=C3=A8l?= Raynal <miquel.raynal@bootlin.com>,
- linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ Gerald BAEZA <gerald.baeza@st.com>,
+ Gabriel FERNANDEZ <gabriel.fernandez@st.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 08-03-19, 17:47, Gregory CLEMENT wrote:
-> The frequency calculation was based on the current(max) frequency of the
-> CPU. However for low frequency, the value used was already the parent
-> frequency divided by a factor of 2.
-> 
-> Instead of using this frequency, this fix directly get the frequency from
-> the parent clock.
-> 
-> Fixes: 92ce45fb875d ("cpufreq: Add DVFS support for Armada 37xx")
-> Cc: <stable@vger.kernel.org>
-> Reported-by: Christian Neubert <christian.neubert.86@gmail.com>
-> Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
-> ---
->  drivers/cpufreq/armada-37xx-cpufreq.c | 22 +++++++++++++++++++---
->  1 file changed, 19 insertions(+), 3 deletions(-)
+From: Gabriel Fernandez <gabriel.fernandez@st.com>
 
-Applied this one.
+Add ddrperfm clock for DDR Performance Monitor driver
 
+Signed-off-by: Gabriel Fernandez <gabriel.fernandez@st.com>
+Signed-off-by: Gerald Baeza <gerald.baeza@st.com>
+---
+ drivers/clk/clk-stm32mp1.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/drivers/clk/clk-stm32mp1.c b/drivers/clk/clk-stm32mp1.c
+index a0ae8dc..a875649 100644
+--- a/drivers/clk/clk-stm32mp1.c
++++ b/drivers/clk/clk-stm32mp1.c
+@@ -1402,6 +1402,7 @@ enum {
+ 	G_CRYP1,
+ 	G_HASH1,
+ 	G_BKPSRAM,
++	G_DDRPERFM,
+ 
+ 	G_LAST
+ };
+@@ -1488,6 +1489,7 @@ static struct stm32_gate_cfg per_gate_cfg[G_LAST] = {
+ 	K_GATE(G_STGENRO,	RCC_APB4ENSETR, 20, 0),
+ 	K_MGATE(G_USBPHY,	RCC_APB4ENSETR, 16, 0),
+ 	K_GATE(G_IWDG2,		RCC_APB4ENSETR, 15, 0),
++	K_GATE(G_DDRPERFM,	RCC_APB4ENSETR, 8, 0),
+ 	K_MGATE(G_DSI,		RCC_APB4ENSETR, 4, 0),
+ 	K_MGATE(G_LTDC,		RCC_APB4ENSETR, 0, 0),
+ 
+@@ -1899,6 +1901,7 @@ static const struct clock_config stm32mp1_clock_cfg[] = {
+ 	PCLK(CRC1, "crc1", "ck_axi", 0, G_CRC1),
+ 	PCLK(USBH, "usbh", "ck_axi", 0, G_USBH),
+ 	PCLK(ETHSTP, "ethstp", "ck_axi", 0, G_ETHSTP),
++	PCLK(DDRPERFM, "ddrperfm", "pclk4", 0, G_DDRPERFM),
+ 
+ 	/* Kernel clocks */
+ 	KCLK(SDMMC1_K, "sdmmc1_k", sdmmc12_src, 0, G_SDMMC1, M_SDMMC12),
 -- 
-viresh
+2.7.4
 
 _______________________________________________
 linux-arm-kernel mailing list
