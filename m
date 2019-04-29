@@ -2,79 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51841DFE8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 11:55:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B668E00E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 12:03:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=dIsZaA9iOPIV/IGDRwcW5Y53bPmBsR0BH/HQUwiscDw=; b=ZF06brHvNL9UXG
-	164se5lnCwlKX9RtI13ltnSR83XjX1Jmtelp2XcV3yJR2DvaQ2/oxEhi8F1WCVgeZcmar1k6Fo5x3
-	LMTb9NClzcLLVvA+pV8YaSq2Z/SDYKZiv+5k8klzy79ur+bJq32cqHd26Bc21JghG1VNV3UYeItIp
-	sUgF8KJ7xg/QLEOe6jT+ZwGx9ltgArrS5ujZy3nn1Vw0rhsDYcT2BI7wWEV63mU6RXkS673Ya3cwi
-	Z4LjOql4QyCCt6inwkz3J2QjfwTJn6vkA5iscvAQEw4h558FVUEOixL+B6ypgyv4mTlagcR2AFIel
-	xKlqVx/7zWSs+opC0U2Q==;
+	List-Owner; bh=fusO0dxNxrqco91WEx9uHXvyXpeLQSPzhSujzNgkCbk=; b=KHdbGokG6+o9lZ
+	n3yLO8vrqGeUuf/tNHMuGxeEPlj1iJe5MG8Mkcd830KghO9cV0jjeoZyrmIA3ttenHRET5vV4uFpD
+	jaeTcEjwE0Nlbz9rFxERHwdTwsm6CRK04B/lXDRgEOCHwo97sHjAq5TbmIb33Ze2t8hMtowZdPMoA
+	Uck3VKtVLKYO690zmh8JNLn4KqlIhNy4KuYbmBvNAaXbpgMqh5oJCEEzZJdKWZTtuGrRGiZchZi+U
+	B8QJYlKcJUmsVbe35tHkqumyOOOPLg+jmU5TcJ+rhP1CGelfCHr4Tp+aI7BzyFcDIAvDxKEpSt4PE
+	oBxv4qNx8zRF7zT/jD/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL309-0007WQ-1U; Mon, 29 Apr 2019 09:55:09 +0000
+	id 1hL38X-0003BN-KH; Mon, 29 Apr 2019 10:03:49 +0000
 Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL2zv-0007VX-Bm
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 09:54:57 +0000
+ id 1hL38P-0003Al-Uu
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 10:03:43 +0000
 Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x3T9kxuR031685; Mon, 29 Apr 2019 11:54:45 +0200
+ x3TA1rtx011137; Mon, 29 Apr 2019 12:03:29 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : content-type : content-transfer-encoding :
  mime-version; s=STMicroelectronics;
- bh=NpKHSHilJ8VtsKy2Eh73u7f/s16+/jfGkYS573A6cho=;
- b=URwv2GxebEgOjfAMFTa3Ak+GpQVsVLlauhQc8u9c9crOUnXwEZdquDHQZCqdgi0Fq21g
- JuLUOKDh6yr4vOBZEChwo+VxCcrJAS6zg5ioRLZOHBiwm/Ya8AncCG+daoGZXE3gnBE4
- vR+3S7vKPACustyWcxoEaIhBU1HczcXvlllGv8mU5fcaPHseINPyNPDYHrfyGL/plqsw
- /RzY/hZwgqmErWxYLzeCwDK4ZBA76U+M4yGgQdt3lXK6+rWVHEYkgij3tuv/ne43W9A7
- PsnfsPjOqa3VF/ylyhU8yMxKP+hlrJKEKTm2u2Bo3UaonDSE7p1Wi+Q3HOwGh19ORzbC Rg== 
+ bh=DpoTfHz7/K/KSDDjaslQS/haOcbJqcn4nklrvjzyMCE=;
+ b=XKdesF5tx4cpKu6iU1fsZTX2rUos7yD0vbnx5yWoKHBav1DrBlLZq85/XIDwezqJ5N9H
+ 1GOjiC91KbxA0plkTaypZLWBolijKDGKClmo4UrqybHRXviHFSszTbpQ4yrTb+eGwLwz
+ j+KEDkiY4ICEQVGODJ6nz3xOZxWg8e86MpS5kwV48QAatpj2BWp0EZfhmvWYDys7mbHg
+ 5KKk1k+MVO3weR3zAK39VK4Ur+Ii/4TaqwgfLnLW+ucLuQOkZK4vrcnK0l+yqgZcxUQS
+ u3VBBU47L3hu+N234byZvN1uOqz4k/wUPi1nIIfCN+w6YFbnx8nrjvTgRYWmPPWgIlYP xg== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2s4cj0be9r-1
+ by mx07-00178001.pphosted.com with ESMTP id 2s4cj0bfpw-1
  (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Mon, 29 Apr 2019 11:54:45 +0200
+ Mon, 29 Apr 2019 12:03:29 +0200
 Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 0FD7C34;
- Mon, 29 Apr 2019 09:54:45 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag4node3.st.com [10.75.127.12])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D7D7E14F5;
- Mon, 29 Apr 2019 09:54:44 +0000 (GMT)
-Received: from SFHDAG5NODE1.st.com (10.75.127.13) by SFHDAG4NODE3.st.com
- (10.75.127.12) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 29 Apr
- 2019 11:54:44 +0200
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id BFB2A31;
+ Mon, 29 Apr 2019 10:03:27 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 803A51516;
+ Mon, 29 Apr 2019 10:03:27 +0000 (GMT)
+Received: from SFHDAG5NODE1.st.com (10.75.127.13) by SFHDAG3NODE3.st.com
+ (10.75.127.9) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 29 Apr
+ 2019 12:03:27 +0200
 Received: from SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6]) by
  SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6%20]) with mapi id
- 15.00.1347.000; Mon, 29 Apr 2019 11:54:44 +0200
+ 15.00.1347.000; Mon, 29 Apr 2019 12:03:27 +0200
 From: Gerald BAEZA <gerald.baeza@st.com>
-To: "mturquette@baylibre.com" <mturquette@baylibre.com>, "sboyd@kernel.org"
- <sboyd@kernel.org>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- Alexandre TORGUE <alexandre.torgue@st.com>
-Subject: [PATCH 1/1] clk: stm32mp1: Add ddrperfm clock
-Thread-Topic: [PATCH 1/1] clk: stm32mp1: Add ddrperfm clock
-Thread-Index: AQHU/nGSI1KYPhvKvEC7x41++h176w==
-Date: Mon, 29 Apr 2019 09:54:44 +0000
-Message-ID: <1556531652-27740-1-git-send-email-gerald.baeza@st.com>
+To: "will.deacon@arm.com" <will.deacon@arm.com>, "mark.rutland@arm.com"
+ <mark.rutland@arm.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>, Alexandre TORGUE
+ <alexandre.torgue@st.com>, "corbet@lwn.net" <corbet@lwn.net>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>, "olof@lixom.net"
+ <olof@lixom.net>,
+ "horms+renesas@verge.net.au" <horms+renesas@verge.net.au>,
+ "arnd@arndb.de" <arnd@arndb.de>
+Subject: [PATCH 0/5] stm32-ddr-pmu driver creation
+Thread-Topic: [PATCH 0/5] stm32-ddr-pmu driver creation
+Thread-Index: AQHU/nLKF7OhsIWL502SfbL6GLT5iw==
+Date: Mon, 29 Apr 2019 10:03:27 +0000
+Message-ID: <1556532194-27904-1-git-send-email-gerald.baeza@st.com>
 Accept-Language: fr-FR, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 x-ms-exchange-messagesentrepresentingtype: 1
 x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.47]
+x-originating-ip: [10.75.127.51]
 MIME-Version: 1.0
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2019-04-29_05:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_025455_947171_FA1E6D30 
-X-CRM114-Status: GOOD (  12.89  )
+X-CRM114-CacheID: sfid-20190429_030342_291939_9EA43725 
+X-CRM114-Status: GOOD (  13.55  )
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.1 points)
@@ -102,56 +106,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
  Gerald BAEZA <gerald.baeza@st.com>,
- Gabriel FERNANDEZ <gabriel.fernandez@st.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Gabriel Fernandez <gabriel.fernandez@st.com>
+The DDRPERFM is the DDR Performance Monitor embedded in STM32MP1 SOC.
 
-Add ddrperfm clock for DDR Performance Monitor driver
+This series adds support for the DDRPERFM via a new stm32-ddr-pmu driver,
+registered into the perf framework.
 
-Signed-off-by: Gabriel Fernandez <gabriel.fernandez@st.com>
-Signed-off-by: Gerald Baeza <gerald.baeza@st.com>
----
- drivers/clk/clk-stm32mp1.c | 3 +++
- 1 file changed, 3 insertions(+)
+This driver is inspired from arch/arm/mm/cache-l2x0-pmu.c
 
-diff --git a/drivers/clk/clk-stm32mp1.c b/drivers/clk/clk-stm32mp1.c
-index a0ae8dc..a875649 100644
---- a/drivers/clk/clk-stm32mp1.c
-+++ b/drivers/clk/clk-stm32mp1.c
-@@ -1402,6 +1402,7 @@ enum {
- 	G_CRYP1,
- 	G_HASH1,
- 	G_BKPSRAM,
-+	G_DDRPERFM,
- 
- 	G_LAST
- };
-@@ -1488,6 +1489,7 @@ static struct stm32_gate_cfg per_gate_cfg[G_LAST] = {
- 	K_GATE(G_STGENRO,	RCC_APB4ENSETR, 20, 0),
- 	K_MGATE(G_USBPHY,	RCC_APB4ENSETR, 16, 0),
- 	K_GATE(G_IWDG2,		RCC_APB4ENSETR, 15, 0),
-+	K_GATE(G_DDRPERFM,	RCC_APB4ENSETR, 8, 0),
- 	K_MGATE(G_DSI,		RCC_APB4ENSETR, 4, 0),
- 	K_MGATE(G_LTDC,		RCC_APB4ENSETR, 0, 0),
- 
-@@ -1899,6 +1901,7 @@ static const struct clock_config stm32mp1_clock_cfg[] = {
- 	PCLK(CRC1, "crc1", "ck_axi", 0, G_CRC1),
- 	PCLK(USBH, "usbh", "ck_axi", 0, G_USBH),
- 	PCLK(ETHSTP, "ethstp", "ck_axi", 0, G_ETHSTP),
-+	PCLK(DDRPERFM, "ddrperfm", "pclk4", 0, G_DDRPERFM),
- 
- 	/* Kernel clocks */
- 	KCLK(SDMMC1_K, "sdmmc1_k", sdmmc12_src, 0, G_SDMMC1, M_SDMMC12),
+This series depends on the "clk: stm32mp1: Add ddrperfm clock" patch,
+sent separately.
+
+Gerald Baeza (5):
+  Documentation: perf: stm32: ddrperfm support
+  dt-bindings: perf: stm32: ddrperfm support
+  perf: stm32: ddrperfm driver creation
+  ARM: configs: enable STM32_DDR_PMU
+  ARM: dts: stm32: add ddrperfm on stm32mp157c
+
+ .../devicetree/bindings/perf/stm32-ddr-pmu.txt     |  18 +
+ Documentation/perf/stm32-ddr-pmu.txt               |  41 ++
+ arch/arm/boot/dts/stm32mp157c.dtsi                 |   9 +
+ arch/arm/configs/multi_v7_defconfig                |   1 +
+ drivers/perf/Kconfig                               |   6 +
+ drivers/perf/Makefile                              |   1 +
+ drivers/perf/stm32_ddr_pmu.c                       | 502 +++++++++++++++++++++
+ 7 files changed, 578 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/perf/stm32-ddr-pmu.txt
+ create mode 100644 Documentation/perf/stm32-ddr-pmu.txt
+ create mode 100644 drivers/perf/stm32_ddr_pmu.c
+
 -- 
 2.7.4
 
