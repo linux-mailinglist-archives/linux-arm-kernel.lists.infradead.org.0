@@ -2,50 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 961FBE351
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 15:11:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC904E35B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 15:12:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=93uokUwzFgb+7NciCacS1PXXQyzxhv0djWpUWJJ7QP0=; b=MmlrwQzQzquq3LWF7ATk7mP60
-	9r69kvLYpm9Jb9OtLkB2MAjXAzKdxVNnUMjDXPIEe+5zpthZzBHukilsjN3mb9PGsuDXzsKk734CW
-	Ca/6hRcnjrWPWMIeqtm+Nq0TBOmcJ9Jc0J8bx50b8sU3R4IHeNDC2l37ovxc2VZP2YbTiTK+hYLaQ
-	HiBKenUX5q1hjXIfmWPgEgSiWtIUeVaK+0WtZt28cr+irl/9qpgzjoCvOvFGf+WdxZVqZlv+yQW+U
-	VgyRMI/NnqOW53UszvpGP0a4gjQ28vzISvn/O/Oo5/4P441IlIBjo/LFuO2jXye2p9WMq9377qVyv
-	4jTx4nYyQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=52FbmW368dPJIHU6GEW/AkdY1TI+e8f+wmB8pz6J+AY=; b=u6XBaojpPYKbOk
+	78WOA23oDCSzkWf98pqdkfcLnVNevhIClk/i1KYFFabyOMt/ebQ5Ykz0iWMWbtPmW+0q9+KmmiFd5
+	i1z7p9xLKHpIQw4aicszg3MNVyQJBPtpDBve9ucJr+La/Ja6M0nHuEYCp9JCzmsn9xs93UDjJ1sOZ
+	tNoj7fg6PnP6HtCrrAEdte47xwgYJPsio09Zmxo/oGfs8KK8gp/CgCbnRLqk//aYtfT8Fde6vOQm7
+	3ukvwTIog/rKK7BKSKoS403SnJK0hvP06Ssca5186WWhl+4dsDJerSQXCzpLyd8sOJkZUH6OqGBfm
+	Y8ojZ3ZFEewqxCaXFM9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL63Z-0003Gl-92; Mon, 29 Apr 2019 13:10:53 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
+	id 1hL64V-0003lH-Sy; Mon, 29 Apr 2019 13:11:51 +0000
+Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL63R-0003GK-ED
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 13:10:46 +0000
+ id 1hL64O-0003ko-Jb
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 13:11:45 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8C948A78;
- Mon, 29 Apr 2019 06:10:44 -0700 (PDT)
-Received: from [10.1.196.75] (e110467-lin.cambridge.arm.com [10.1.196.75])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2716E3F71A;
- Mon, 29 Apr 2019 06:10:43 -0700 (PDT)
-Subject: Re: [PATCH 12/26] iommu/dma: Refactor the page array remapping
- allocator
-To: Christoph Hellwig <hch@lst.de>
-References: <20190422175942.18788-1-hch@lst.de>
- <20190422175942.18788-13-hch@lst.de>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <847e0d85-36c6-01d1-6547-5ca9d3f0931a@arm.com>
-Date: Mon, 29 Apr 2019 14:10:41 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D313EA78;
+ Mon, 29 Apr 2019 06:11:43 -0700 (PDT)
+Received: from [10.1.196.92] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 5E1063F71A; Mon, 29 Apr 2019 06:11:41 -0700 (PDT)
+Subject: Re: [PATCH v7 11/14] irqchip: ti-sci-inta: Add support for Interrupt
+ Aggregator driver
+To: Lokesh Vutla <lokeshvutla@ti.com>, Santosh Shilimkar
+ <ssantosh@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Nishanth Menon <nm@ti.com>, tglx@linutronix.de, jason@lakedaemon.net
+References: <20190420100950.7997-1-lokeshvutla@ti.com>
+ <20190420100950.7997-12-lokeshvutla@ti.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+Organization: ARM Ltd
+Message-ID: <36b8bc62-fff2-c015-8140-cda625efdabc@arm.com>
+Date: Mon, 29 Apr 2019 14:11:39 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190422175942.18788-13-hch@lst.de>
-Content-Language: en-GB
+In-Reply-To: <20190420100950.7997-12-lokeshvutla@ti.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_061045_494145_BBAD0842 
-X-CRM114-Status: GOOD (  30.16  )
+X-CRM114-CacheID: sfid-20190429_061144_655661_95B65861 
+X-CRM114-Status: GOOD (  24.95  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -65,152 +110,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tom Lendacky <thomas.lendacky@amd.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Joerg Roedel <joro@8bytes.org>,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org
+Cc: Peter Ujfalusi <peter.ujfalusi@ti.com>,
+ Grygorii Strashko <grygorii.strashko@ti.com>,
+ Device Tree Mailing List <devicetree@vger.kernel.org>,
+ Tony Lindgren <tony@atomide.com>, linus.walleij@linaro.org,
+ Sekhar Nori <nsekhar@ti.com>, linux-kernel@vger.kernel.org,
+ Tero Kristo <t-kristo@ti.com>,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 22/04/2019 18:59, Christoph Hellwig wrote:
-> Move the call to dma_common_pages_remap into __iommu_dma_alloc and
-> rename it to iommu_dma_alloc_remap.  This creates a self-contained
-> helper for remapped pages allocation and mapping.
-
-Reviewed-by: Robin Murphy <robin.murphy@arm.com>
-
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
+On 20/04/2019 11:09, Lokesh Vutla wrote:
+> Texas Instruments' K3 generation SoCs has an IP Interrupt Aggregator
+> which is an interrupt controller that does the following:
+> - Converts events to interrupts that can be understood by
+>   an interrupt router.
+> - Allows for multiplexing of events to interrupts.
+> 
+> Configuration of the interrupt aggregator registers can only be done by
+> a system co-processor and the driver needs to send a message to this
+> co processor over TISCI protocol. This patch adds support for Interrupt
+> Aggregator irqdomain.
+> 
+> Signed-off-by: Lokesh Vutla <lokeshvutla@ti.com>
 > ---
->   drivers/iommu/dma-iommu.c | 54 +++++++++++++++++++--------------------
->   1 file changed, 26 insertions(+), 28 deletions(-)
+> Changes since v6:
+> - Updated commit message.
+> - Arranged header files in alphabetical order
+> - Included vint_bit in struct ti_sci_inta_event_desc
+> - With the above change now the chip_data is event_desc instead of vint_desc
+> - No loops are used in atomic contexts.
+> - Fixed locking issue while freeing parent virq
+> - Fixed few other cosmetic changes.
 > 
-> diff --git a/drivers/iommu/dma-iommu.c b/drivers/iommu/dma-iommu.c
-> index 8e2d9733113e..b8e46e89a60a 100644
-> --- a/drivers/iommu/dma-iommu.c
-> +++ b/drivers/iommu/dma-iommu.c
-> @@ -535,9 +535,9 @@ static struct page **__iommu_dma_get_pages(void *cpu_addr)
->   }
->   
->   /**
-> - * iommu_dma_free - Free a buffer allocated by __iommu_dma_alloc()
-> + * iommu_dma_free - Free a buffer allocated by iommu_dma_alloc_remap()
->    * @dev: Device which owns this buffer
-> - * @pages: Array of buffer pages as returned by __iommu_dma_alloc()
-> + * @pages: Array of buffer pages as returned by __iommu_dma_alloc_remap()
->    * @size: Size of buffer in bytes
->    * @handle: DMA address of buffer
->    *
-> @@ -553,33 +553,35 @@ static void __iommu_dma_free(struct device *dev, struct page **pages,
->   }
->   
->   /**
-> - * __iommu_dma_alloc - Allocate and map a buffer contiguous in IOVA space
-> + * iommu_dma_alloc_remap - Allocate and map a buffer contiguous in IOVA space
->    * @dev: Device to allocate memory for. Must be a real device
->    *	 attached to an iommu_dma_domain
->    * @size: Size of buffer in bytes
-> + * @dma_handle: Out argument for allocated DMA handle
->    * @gfp: Allocation flags
->    * @attrs: DMA attributes for this allocation
-> - * @prot: IOMMU mapping flags
-> - * @handle: Out argument for allocated DMA handle
->    *
->    * If @size is less than PAGE_SIZE, then a full CPU page will be allocated,
->    * but an IOMMU which supports smaller pages might not map the whole thing.
->    *
-> - * Return: Array of struct page pointers describing the buffer,
-> - *	   or NULL on failure.
-> + * Return: Mapped virtual address, or NULL on failure.
->    */
-> -static struct page **__iommu_dma_alloc(struct device *dev, size_t size,
-> -		gfp_t gfp, unsigned long attrs, int prot, dma_addr_t *handle)
-> +static void *iommu_dma_alloc_remap(struct device *dev, size_t size,
-> +		dma_addr_t *dma_handle, gfp_t gfp, unsigned long attrs)
->   {
->   	struct iommu_domain *domain = iommu_get_dma_domain(dev);
->   	struct iommu_dma_cookie *cookie = domain->iova_cookie;
->   	struct iova_domain *iovad = &cookie->iovad;
-> +	bool coherent = dev_is_dma_coherent(dev);
-> +	int ioprot = dma_info_to_prot(DMA_BIDIRECTIONAL, coherent, attrs);
-> +	pgprot_t prot = arch_dma_mmap_pgprot(dev, PAGE_KERNEL, attrs);
-> +	unsigned int count, min_size, alloc_sizes = domain->pgsize_bitmap;
->   	struct page **pages;
->   	struct sg_table sgt;
->   	dma_addr_t iova;
-> -	unsigned int count, min_size, alloc_sizes = domain->pgsize_bitmap;
-> +	void *vaddr;
->   
-> -	*handle = DMA_MAPPING_ERROR;
-> +	*dma_handle = DMA_MAPPING_ERROR;
->   
->   	min_size = alloc_sizes & -alloc_sizes;
->   	if (min_size < PAGE_SIZE) {
-> @@ -605,7 +607,7 @@ static struct page **__iommu_dma_alloc(struct device *dev, size_t size,
->   	if (sg_alloc_table_from_pages(&sgt, pages, count, 0, size, GFP_KERNEL))
->   		goto out_free_iova;
->   
-> -	if (!(prot & IOMMU_CACHE)) {
-> +	if (!(ioprot & IOMMU_CACHE)) {
->   		struct scatterlist *sg;
->   		int i;
->   
-> @@ -613,14 +615,21 @@ static struct page **__iommu_dma_alloc(struct device *dev, size_t size,
->   			arch_dma_prep_coherent(sg_page(sg), sg->length);
->   	}
->   
-> -	if (iommu_map_sg(domain, iova, sgt.sgl, sgt.orig_nents, prot)
-> +	if (iommu_map_sg(domain, iova, sgt.sgl, sgt.orig_nents, ioprot)
->   			< size)
->   		goto out_free_sg;
->   
-> -	*handle = iova;
-> +	vaddr = dma_common_pages_remap(pages, size, VM_USERMAP, prot,
-> +			__builtin_return_address(0));
-> +	if (!vaddr)
-> +		goto out_unmap;
+>  MAINTAINERS                       |   1 +
+>  drivers/irqchip/Kconfig           |  11 +
+>  drivers/irqchip/Makefile          |   1 +
+>  drivers/irqchip/irq-ti-sci-inta.c | 589 ++++++++++++++++++++++++++++++
+>  4 files changed, 602 insertions(+)
+>  create mode 100644 drivers/irqchip/irq-ti-sci-inta.c
+> 
+
+[...]
+
+> +/**
+> + * ti_sci_inta_alloc_irq() -  Allocate an irq within INTA domain
+> + * @domain:	irq_domain pointer corresponding to INTA
+> + * @hwirq:	hwirq of the input event
+> + *
+> + * Note: Allocation happens in the following manner:
+> + *	- Find a free bit available in any of the vints available in the list.
+> + *	- If not found, allocate a vint from the vint pool
+> + *	- Attach the free bit to input hwirq.
+> + * Return event_desc if all went ok else appropriate error value.
+> + */
+> +static struct ti_sci_inta_event_desc *ti_sci_inta_alloc_irq(struct irq_domain *domain,
+> +							    u32 hwirq)
+> +{
+> +	struct ti_sci_inta_irq_domain *inta = domain->host_data;
+> +	struct ti_sci_inta_vint_desc *vint_desc = NULL;
+> +	u16 free_bit;
 > +
-> +	*dma_handle = iova;
->   	sg_free_table(&sgt);
-> -	return pages;
-> +	return vaddr;
->   
-> +out_unmap:
-> +	__iommu_dma_unmap(dev, iova, size);
->   out_free_sg:
->   	sg_free_table(&sgt);
->   out_free_iova:
-> @@ -989,18 +998,7 @@ static void *iommu_dma_alloc(struct device *dev, size_t size,
->   						    size >> PAGE_SHIFT);
->   		}
->   	} else {
-> -		pgprot_t prot = arch_dma_mmap_pgprot(dev, PAGE_KERNEL, attrs);
-> -		struct page **pages;
-> -
-> -		pages = __iommu_dma_alloc(dev, iosize, gfp, attrs, ioprot,
-> -					handle);
-> -		if (!pages)
-> -			return NULL;
-> -
-> -		addr = dma_common_pages_remap(pages, size, VM_USERMAP, prot,
-> -					      __builtin_return_address(0));
-> -		if (!addr)
-> -			__iommu_dma_free(dev, pages, iosize, handle);
-> +		addr = iommu_dma_alloc_remap(dev, iosize, handle, gfp, attrs);
->   	}
->   	return addr;
->   }
-> @@ -1014,7 +1012,7 @@ static void iommu_dma_free(struct device *dev, size_t size, void *cpu_addr,
->   	/*
->   	 * @cpu_addr will be one of 4 things depending on how it was allocated:
->   	 * - A remapped array of pages for contiguous allocations.
-> -	 * - A remapped array of pages from __iommu_dma_alloc(), for all
-> +	 * - A remapped array of pages from iommu_dma_alloc_remap(), for all
->   	 *   non-atomic allocations.
->   	 * - A non-cacheable alias from the atomic pool, for atomic
->   	 *   allocations by non-coherent devices.
-> 
+> +	mutex_lock(&inta->vint_mutex);
+> +	list_for_each_entry(vint_desc, &inta->vint_list, list) {
+> +		mutex_lock(&vint_desc->event_mutex);
+> +		free_bit = find_first_zero_bit(vint_desc->event_map,
+> +					       MAX_EVENTS_PER_VINT);
+> +		if (free_bit != MAX_EVENTS_PER_VINT) {
+> +			set_bit(free_bit, vint_desc->event_map);
+> +			mutex_unlock(&vint_desc->event_mutex);
+> +			mutex_unlock(&inta->vint_mutex);
+> +			goto alloc_event;
+> +		}
+> +		mutex_unlock(&vint_desc->event_mutex);
+> +	}
+> +	mutex_unlock(&inta->vint_mutex);
+> +
+> +	/* No free bits available. Allocate a new vint */
+> +	vint_desc = ti_sci_inta_alloc_parent_irq(domain);
+> +	if (IS_ERR(vint_desc))
+> +		return ERR_PTR(PTR_ERR(vint_desc));
+> +
+> +	mutex_lock(&vint_desc->event_mutex);
+> +	free_bit = find_first_zero_bit(vint_desc->event_map,
+> +				       MAX_EVENTS_PER_VINT);
+> +	set_bit(free_bit, vint_desc->event_map);
+> +	mutex_unlock(&vint_desc->event_mutex);
+
+This code is still quite racy: you can have two parallel allocations
+failing to get a free bit in any of the already allocated vint_desc, and
+then both allocating a new vint_desc. If there was only one left, one of
+the allocation will fail despite having at least 63 free interrupts.
+
+	M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
