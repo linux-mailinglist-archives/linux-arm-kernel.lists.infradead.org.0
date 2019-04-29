@@ -2,103 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC904E35B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 15:12:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76B8EE368
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 15:12:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=52FbmW368dPJIHU6GEW/AkdY1TI+e8f+wmB8pz6J+AY=; b=u6XBaojpPYKbOk
-	78WOA23oDCSzkWf98pqdkfcLnVNevhIClk/i1KYFFabyOMt/ebQ5Ykz0iWMWbtPmW+0q9+KmmiFd5
-	i1z7p9xLKHpIQw4aicszg3MNVyQJBPtpDBve9ucJr+La/Ja6M0nHuEYCp9JCzmsn9xs93UDjJ1sOZ
-	tNoj7fg6PnP6HtCrrAEdte47xwgYJPsio09Zmxo/oGfs8KK8gp/CgCbnRLqk//aYtfT8Fde6vOQm7
-	3ukvwTIog/rKK7BKSKoS403SnJK0hvP06Ssca5186WWhl+4dsDJerSQXCzpLyd8sOJkZUH6OqGBfm
-	Y8ojZ3ZFEewqxCaXFM9w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7PaCwD9HcuCxFgKzkO7hJOCyO8nDPxjDpdZDrdIXsQI=; b=EqAil4tl3XTQQT
+	NtbdMIskHL7prrTdmlmGjnjau6LSD3qpZa7kDUhiBBqYY4rEOG6+MCaL5niASIG2mxqX/tf4Dwmy1
+	6C/kGpOpjZjQclENrMQer1jvr/sLTpnWWAzM0qtbLQ0DiSWB9wceNoY0TFx1jKThnpRRg5cS07Fa7
+	P7Xc92M8eYN42q1O+T2Z1J9uDi3V3Bm82AoJbBbepCo63CL/KCJ4TyY8fWqNi3rdq961lTivLonsx
+	NqGO/Y9ulE8aWU6bbYFfNA/HtiWNIcFmvbLNX+reexxW+vrZMU8J6Do49S/Td4HEW9YVFWUKnhPXs
+	/TA1yNsSvmg7HNTExIOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL64V-0003lH-Sy; Mon, 29 Apr 2019 13:11:51 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL64O-0003ko-Jb
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 13:11:45 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D313EA78;
- Mon, 29 Apr 2019 06:11:43 -0700 (PDT)
-Received: from [10.1.196.92] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 5E1063F71A; Mon, 29 Apr 2019 06:11:41 -0700 (PDT)
-Subject: Re: [PATCH v7 11/14] irqchip: ti-sci-inta: Add support for Interrupt
- Aggregator driver
-To: Lokesh Vutla <lokeshvutla@ti.com>, Santosh Shilimkar
- <ssantosh@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Nishanth Menon <nm@ti.com>, tglx@linutronix.de, jason@lakedaemon.net
-References: <20190420100950.7997-1-lokeshvutla@ti.com>
- <20190420100950.7997-12-lokeshvutla@ti.com>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
-Organization: ARM Ltd
-Message-ID: <36b8bc62-fff2-c015-8140-cda625efdabc@arm.com>
-Date: Mon, 29 Apr 2019 14:11:39 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hL64z-0004Fh-4V; Mon, 29 Apr 2019 13:12:21 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hL64r-0004Ew-MT
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 13:12:15 +0000
+Received: by mail-wr1-x444.google.com with SMTP id c12so15954787wrt.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 29 Apr 2019 06:12:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=4FdyeOJZ2ex4Zc6ZUlDkL19h7wiPhcsY/XH7KMsWAxQ=;
+ b=HgNtv9S47DA4Fn0yj6/I2EWI/tgw5TVQmj2ZvENRrg2Q6D5I22lEwiJ+nvfE15WAHX
+ BKzEHpCrIygb9USpVb4rR6tOhdcVkmUrPCtKfk06/JxFdlzOVZp0b2aDnaKp0EUSsQ2q
+ o3t9vbzy9vllw96TCcZBrsAYMYPgzp5bxWqhROtLh0PzsJ74+zEAVdF4uawzeViM65Af
+ C6VLivUFXfwqFVhGFisRqiWzUqtn3tQMA11lBtQjvGUX2RUMWwYniJ6A7iCTTvm00UNg
+ HppRgTsgLxzJZdTIGVna3AYMeFd8TWV6Oh3PCkCnbnZcgnvD+11A4FF1NRkY478Zb3/1
+ c7ng==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=4FdyeOJZ2ex4Zc6ZUlDkL19h7wiPhcsY/XH7KMsWAxQ=;
+ b=N+7gl5mUo9pKgD6ixnaHWgo/CPNTno32cucrBmHbNWPYdYUE1QAJqkZitqsxaZPkn7
+ 0XerUYgFo6WyEh5KdAfKHO9U0lL2iBqHpqPH16U8LgzjSqr+Dd/KPweyV4SL/1YYQzKh
+ XAB0zyZiAzqDsTzbICnCeXP6NqdGsgm9jtX+7oUmcRShnZVKoxfgEYcSn5kLGvK15+uG
+ kB5yyoKcCK+NqQ+xJKNm/6tM/h8UK8ud1baOinIm+azdCEg3B4KncizRdPVpWo6ySVUI
+ bzwyO3vx7j+iqqmus2ACNi7rg7yITsSCAB9r1eoOB4GaO5CVwvsXJ6lKdilBnYfG12+B
+ cQkA==
+X-Gm-Message-State: APjAAAW3/H2NliXQzw01S9MGIU2qCIS0AOPJ6NYlji2mOiOnhtsAYWwV
+ Dwbv487xF9qRQJUG/lGRVJnifg==
+X-Google-Smtp-Source: APXvYqyNyKPUk3RMZvucVYLDyIAejSOjYUUI55d5btNbFVE5w9HCcH1t4jUqsOLBUsU+oE8U7O6zcQ==
+X-Received: by 2002:a5d:4fc3:: with SMTP id h3mr29334wrw.54.1556543531886;
+ Mon, 29 Apr 2019 06:12:11 -0700 (PDT)
+Received: from sudo.home ([2a01:cb1d:112:6f00:f9fc:88:6502:8fa7])
+ by smtp.gmail.com with ESMTPSA id s16sm5410282wrg.71.2019.04.29.06.12.09
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 29 Apr 2019 06:12:10 -0700 (PDT)
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+To: linux-gpio@vger.kernel.org
+Subject: [PATCH v2 0/4] synquacer: implement ACPI gpio/interrupt support
+Date: Mon, 29 Apr 2019 15:12:04 +0200
+Message-Id: <20190429131208.3620-1-ard.biesheuvel@linaro.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <20190420100950.7997-12-lokeshvutla@ti.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_061144_655661_95B65861 
-X-CRM114-Status: GOOD (  24.95  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190429_061213_734689_16BE5D65 
+X-CRM114-Status: GOOD (  12.16  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -110,103 +93,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Ujfalusi <peter.ujfalusi@ti.com>,
- Grygorii Strashko <grygorii.strashko@ti.com>,
- Device Tree Mailing List <devicetree@vger.kernel.org>,
- Tony Lindgren <tony@atomide.com>, linus.walleij@linaro.org,
- Sekhar Nori <nsekhar@ti.com>, linux-kernel@vger.kernel.org,
- Tero Kristo <t-kristo@ti.com>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Graeme Gregory <graeme.gregory@linaro.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Marc Zyngier <marc.zyngier@arm.com>, Linus Walleij <linus.walleij@linaro.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-acpi@vger.kernel.org,
+ Masahisa Kojima <masahisa.kojima@linaro.org>,
+ Mika Westerberg <mika.westerberg@linux.intel.com>,
+ linux-arm-kernel@lists.infradead.org, Len Brown <lenb@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 20/04/2019 11:09, Lokesh Vutla wrote:
-> Texas Instruments' K3 generation SoCs has an IP Interrupt Aggregator
-> which is an interrupt controller that does the following:
-> - Converts events to interrupts that can be understood by
->   an interrupt router.
-> - Allows for multiplexing of events to interrupts.
-> 
-> Configuration of the interrupt aggregator registers can only be done by
-> a system co-processor and the driver needs to send a message to this
-> co processor over TISCI protocol. This patch adds support for Interrupt
-> Aggregator irqdomain.
-> 
-> Signed-off-by: Lokesh Vutla <lokeshvutla@ti.com>
-> ---
-> Changes since v6:
-> - Updated commit message.
-> - Arranged header files in alphabetical order
-> - Included vint_bit in struct ti_sci_inta_event_desc
-> - With the above change now the chip_data is event_desc instead of vint_desc
-> - No loops are used in atomic contexts.
-> - Fixed locking issue while freeing parent virq
-> - Fixed few other cosmetic changes.
-> 
->  MAINTAINERS                       |   1 +
->  drivers/irqchip/Kconfig           |  11 +
->  drivers/irqchip/Makefile          |   1 +
->  drivers/irqchip/irq-ti-sci-inta.c | 589 ++++++++++++++++++++++++++++++
->  4 files changed, 602 insertions(+)
->  create mode 100644 drivers/irqchip/irq-ti-sci-inta.c
-> 
+Wire up the existing GPIO and interrupt controller drivers to the ACPI
+subsystem so they can be used on ACPI systems for ACPI event (power
+button, hardware error notification etc)
 
-[...]
+Changes since v1:
+- Describe the EXIU controller as a separate device, which is a more accurate
+  depiction of reality, and untangles the code a bit as well. Note that this
+  requires the GPIO AML device to describe the EXIU interrupts explicitly.
+- Add a patch to obtain the ACPI GSI irqdomain. The EXIU driver needs this
+  to obtain the default parent domain, since the GIC is not modeled as an
+  ACPI object in the namespace, and so the parent<->child link cannot be
+  expressed in AML.
+- Drop the Kconfig symbol for the GPIO controller. Just include the ACPI part
+  when CONFIG_ACPI is defined.
 
-> +/**
-> + * ti_sci_inta_alloc_irq() -  Allocate an irq within INTA domain
-> + * @domain:	irq_domain pointer corresponding to INTA
-> + * @hwirq:	hwirq of the input event
-> + *
-> + * Note: Allocation happens in the following manner:
-> + *	- Find a free bit available in any of the vints available in the list.
-> + *	- If not found, allocate a vint from the vint pool
-> + *	- Attach the free bit to input hwirq.
-> + * Return event_desc if all went ok else appropriate error value.
-> + */
-> +static struct ti_sci_inta_event_desc *ti_sci_inta_alloc_irq(struct irq_domain *domain,
-> +							    u32 hwirq)
-> +{
-> +	struct ti_sci_inta_irq_domain *inta = domain->host_data;
-> +	struct ti_sci_inta_vint_desc *vint_desc = NULL;
-> +	u16 free_bit;
-> +
-> +	mutex_lock(&inta->vint_mutex);
-> +	list_for_each_entry(vint_desc, &inta->vint_list, list) {
-> +		mutex_lock(&vint_desc->event_mutex);
-> +		free_bit = find_first_zero_bit(vint_desc->event_map,
-> +					       MAX_EVENTS_PER_VINT);
-> +		if (free_bit != MAX_EVENTS_PER_VINT) {
-> +			set_bit(free_bit, vint_desc->event_map);
-> +			mutex_unlock(&vint_desc->event_mutex);
-> +			mutex_unlock(&inta->vint_mutex);
-> +			goto alloc_event;
-> +		}
-> +		mutex_unlock(&vint_desc->event_mutex);
-> +	}
-> +	mutex_unlock(&inta->vint_mutex);
-> +
-> +	/* No free bits available. Allocate a new vint */
-> +	vint_desc = ti_sci_inta_alloc_parent_irq(domain);
-> +	if (IS_ERR(vint_desc))
-> +		return ERR_PTR(PTR_ERR(vint_desc));
-> +
-> +	mutex_lock(&vint_desc->event_mutex);
-> +	free_bit = find_first_zero_bit(vint_desc->event_map,
-> +				       MAX_EVENTS_PER_VINT);
-> +	set_bit(free_bit, vint_desc->event_map);
-> +	mutex_unlock(&vint_desc->event_mutex);
+Cc: Masahisa Kojima <masahisa.kojima@linaro.org>
+Cc: Linus Walleij <linus.walleij@linaro.org>
+Cc: Marc Zyngier <marc.zyngier@arm.com>
+Cc: Graeme Gregory <graeme.gregory@linaro.org>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Cc: Mika Westerberg <mika.westerberg@linux.intel.com>
+Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>
+Cc: Len Brown <lenb@kernel.org>
 
-This code is still quite racy: you can have two parallel allocations
-failing to get a free bit in any of the already allocated vint_desc, and
-then both allocating a new vint_desc. If there was only one left, one of
-the allocation will fail despite having at least 63 free interrupts.
+Ard Biesheuvel (4):
+  acpi/irq: implement getter for GSI irqdomain
+  irqchip/exiu: preparatory refactor for ACPI support
+  irqchip/exiu: implement ACPI support
+  gpio: mb86s7x: enable ACPI support
 
-	M.
+ drivers/acpi/irq.c             |  14 +-
+ drivers/gpio/gpio-mb86s7x.c    |  57 ++++++--
+ drivers/irqchip/irq-sni-exiu.c | 147 +++++++++++++++-----
+ include/linux/acpi.h           |   1 +
+ 4 files changed, 170 insertions(+), 49 deletions(-)
+
 -- 
-Jazz is not dead. It just smells funny...
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
