@@ -2,81 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8EB3AE799
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 18:18:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D586BE7AA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 18:23:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IHEE//+Kx/MMFoRxsYAxONUSU7R4efmnumBG5P1o34g=; b=VRGO9HAoHoCWP6
-	D5lY9ZDSfRYRxXq5I9gOjkhVySYV+SgcafUz5KYiE0NiM8IFAjAnd7VfRo7VM29qI9Cn40Oqt8nGj
-	jZA6KEaiGU6utuWvjHxAiear0PcW334VuxzudgiZwZtOhVmAAkoD7zH/NKfJdW8lEvxV/Jc3hh/cR
-	MY0qzoWPYjbxR1PUObjSkeQI5dozXe1gA4xulHq6hUpYMpqAbO/yEZWrTbiHM+eZi5GlkJkTeydIT
-	QslYo66c3/2FZMHwMkDIkO4i+xQ2ckJaQ92BXfYkrLchRQ6Ko5hlbiry37reZrZvvyNIZkzaCtNZq
-	6CHZM8iMd987TjP//bbg==;
+	List-Owner; bh=CKhQ3hgEIHq04pGepDgsdd4bsaRPgeaqVemHQhuC684=; b=foe+HluB+c6Nv+
+	mC94FTlhzcQf1cetGS5oL2KMW5Zo4zg6fbyL+gPMIsTkzX4foaWzzfbDIzDeI5iDSvrg+bpFSk+N7
+	8W8Y4RrMBKh4c1BM6h22i/1v1sjk1hSnttw1NeR/3OH7gI3V5Gf2eR/NSaH/03WmzEatdkzs1C3oV
+	5kfyss7SepaRv6MaibLcAAxc8GR5qfToAx/x43+oSS8zEIFEf8Re+6QbrsF1UlWvhcZD+XnuCVE2e
+	hwgF6jeU1gywlOTXXbb+1lqo9nut4KTH36fCfEI6ECEsEX0ccooqEEV68UuVOPTjVn7kKAcwq3aEY
+	cPx02g7pBPyAC8syE0Kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL8zS-0000lg-Pl; Mon, 29 Apr 2019 16:18:50 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hL93r-0002kc-HF; Mon, 29 Apr 2019 16:23:23 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL8zL-0000kj-1O
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 16:18:44 +0000
-Received: from mail-qt1-f178.google.com (mail-qt1-f178.google.com
- [209.85.160.178])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F1B10216FD
+ id 1hL93h-0002jA-0D
+ for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 16:23:14 +0000
+Received: by mail-lf1-x143.google.com with SMTP id k18so8331406lfj.13
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Apr 2019 16:18:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1556554722;
- bh=y+8rKTlzq61ygqpRLwRIKyd+HPW/HceVYVOZlw5ZooE=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=cAszN/xU6nogM20gyC6HXrHhU4HZtFzFs8Xz0vUh77Fokj1XAWwp3bh6DryIw11R2
- GfkPiX1NXpGSJRFIE3vm9LCIMdVrj/joj7rl/EAukRhXXAznX1W9Qc/OJnAMAWxlXb
- DgCdG4gX1SWabm5LQSftTtV9D2WcIlTKq/+YNsE8=
-Received: by mail-qt1-f178.google.com with SMTP id s10so12553888qtc.11
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Apr 2019 09:18:41 -0700 (PDT)
-X-Gm-Message-State: APjAAAV67iMXadkRfh9hrp7o6XHU7b/HGBwy84bzwtjhMZDqwDpksqqm
- xL1mBV8oc+SdlLOJKUaDto+speeAqTQiaEzkkw==
-X-Google-Smtp-Source: APXvYqyzqs09hNBiab7wqw3JOVfJ9CFkM2ZcAO05H+2Yc6TdhfKWUtxNLYtavldF7yNklJkdWImkkMHYR0Y3l+v22yw=
-X-Received: by 2002:aed:306c:: with SMTP id 99mr2856198qte.38.1556554721170;
- Mon, 29 Apr 2019 09:18:41 -0700 (PDT)
+ Mon, 29 Apr 2019 09:23:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=AwvW2Sw1jJOmOQddvwLSFW4cG8dGJ1Do6II3a9O1zoI=;
+ b=iFEXaFObvY189R9O6l3iWMTRWtFKPY0zWdzK/fxBjlpv6D3QdYLwLY+tr+zJwgXsqz
+ zUe6W/7I48Zzbb2pecCf15QScGxIQCQSwFpMABilpWYZDX55LjGq/dz/2MWBpWROf91e
+ 39ZS0Xa4njzHBYhxDJmT1InexIN2b1rzYTLRBZO3zjFuYj6x/a//iMTOJaF4w073oR6l
+ /8eDpjPYOoB2mkx9uGeWL/RWoXCLwwLVKebN0QB13NGyn6W7N/0UHAz7Wq3NoQPDyen3
+ iGbGP8AqRDGpKnjtXxLXdhuU7I1BqsOdVBjrLqBKp6yl7TcFQA3M5BfEjU67fGlv8JaN
+ oElQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=AwvW2Sw1jJOmOQddvwLSFW4cG8dGJ1Do6II3a9O1zoI=;
+ b=QZXeu74GFPjomdYu9MEEgKy/qAaBHsHN7vZEmXaz8yYA4oaM6Qlr8H22xtBlbGfh2O
+ m1edElK6BSeNk2bYoCjtD81Hse22z4rJpo6EGx5AulTtZQr/+NSElhtfC+s+9ydqeuQH
+ 4GgOJ1TDqVV7YFyxOXA63INJm0Q/lVKXQt1/4P0UFw6GPmctxHnJ7xlA9QrzyNbwwYjY
+ TfHrZ89hVlaUVwMYXFHervLueCW7X3JjJN/OmMxrECcUpzJtSQsijtYjJCOCz6d1Ns8B
+ f5oeDlJMpVVFJkr4BAPMup6fe1dn3qR9VSR56QtMxO8PQKnaAG1qYW1KVI+YQKzsstj7
+ z9VA==
+X-Gm-Message-State: APjAAAUG50zIKafq7X1Ge+m6pH6ZFP05ScZGJhdMIHsOVsn0XMRMWjxq
+ eLO1eQLO+SRjVik0/kEO1/biKA==
+X-Google-Smtp-Source: APXvYqx1IW8psVF22hlNploxE9rUHpgiVb7MpkUoeBu2BcCSTaydaClqyLV6oVYUIminTqj23i52QA==
+X-Received: by 2002:a19:f50f:: with SMTP id j15mr34123230lfb.135.1556554990909; 
+ Mon, 29 Apr 2019 09:23:10 -0700 (PDT)
+Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
+ by smtp.gmail.com with ESMTPSA id d5sm1984015lfn.36.2019.04.29.09.23.09
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 29 Apr 2019 09:23:09 -0700 (PDT)
+Date: Mon, 29 Apr 2019 09:20:41 -0700
+From: Olof Johansson <olof@lixom.net>
+To: Michal Simek <monstr@monstr.eu>
+Subject: Re: [GIT PULL] arm64: dts: Xilinx ZynqMP SoC changes for v5.2
+Message-ID: <20190429162041.jd5fkkutlxgo55qq@localhost>
+References: <2bb66114-c976-9c44-6db3-33a5dd12edde@monstr.eu>
 MIME-Version: 1.0
-References: <20190410174139.20012-1-tiny.windzz@gmail.com>
- <20190410174139.20012-3-tiny.windzz@gmail.com>
- <20190426211540.GA890@bogus>
- <CAEExFWs2UwPLzgyO0apMOZf56um5isdZmf+7-wj_TqMozxZJQg@mail.gmail.com>
-In-Reply-To: <CAEExFWs2UwPLzgyO0apMOZf56um5isdZmf+7-wj_TqMozxZJQg@mail.gmail.com>
-From: Rob Herring <robh@kernel.org>
-Date: Mon, 29 Apr 2019 11:18:29 -0500
-X-Gmail-Original-Message-ID: <CAL_Jsq+0mQYyAqfY3nmF-oFx2X4qHU567chQ1s8p-rgD2GEFnw@mail.gmail.com>
-Message-ID: <CAL_Jsq+0mQYyAqfY3nmF-oFx2X4qHU567chQ1s8p-rgD2GEFnw@mail.gmail.com>
-Subject: Re: [PATCH v3 2/2] dt-bindings: cpufreq: Document allwinner,
- cpu-operating-points-v2
-To: Frank Lee <tiny.windzz@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <2bb66114-c976-9c44-6db3-33a5dd12edde@monstr.eu>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_091843_241640_B245B85F 
-X-CRM114-Status: GOOD (  21.47  )
-X-Spam-Score: -5.3 (-----)
+X-CRM114-CacheID: sfid-20190429_092313_046586_5E6D86F6 
+X-CRM114-Status: GOOD (  18.20  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -88,61 +92,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Mark Rutland <mark.rutland@arm.com>,
- Linux PM <linux-pm@vger.kernel.org>, Maxime Ripard <maxime.ripard@bootlin.com>,
- Viresh Kumar <vireshk@kernel.org>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- David Miller <davem@davemloft.net>, devicetree@vger.kernel.org
+Cc: Moritz Fischer <moritz.fischer@ettus.com>, arm-soc <arm@kernel.org>,
+ linux-arm <linux-arm-kernel@lists.infradead.org>, Alan Tull <atull@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Apr 28, 2019 at 4:53 AM Frank Lee <tiny.windzz@gmail.com> wrote:
->
-> On Sat, Apr 27, 2019 at 5:15 AM Rob Herring <robh@kernel.org> wrote:
-> >
-> > On Wed, Apr 10, 2019 at 01:41:39PM -0400, Yangtao Li wrote:
-> > > Allwinner Process Voltage Scaling Tables defines the voltage and
-> > > frequency value based on the speedbin blown in the efuse combination.
-> > > The sunxi-cpufreq-nvmem driver reads the efuse value from the SoC to
-> > > provide the OPP framework with required information.
-> > > This is used to determine the voltage and frequency value for each
-> > > OPP of operating-points-v2 table when it is parsed by the OPP framework.
-> > >
-> > > The "allwinner,cpu-operating-points-v2" DT extends the "operating-points-v2"
-> > > with following parameters:
-> > > - nvmem-cells (NVMEM area containig the speedbin information)
-> > > - opp-microvolt-<name>: voltage in micro Volts.
-> > >   At runtime, the platform can pick a <name> and matching
-> > >   opp-microvolt-<name> property.
-> > >                       HW:             <name>:
-> > >                       sun50iw-h6      speed0 speed1 speed2
-> >
-> > We already have at least one way to support speed bins with QC kryo
-> > binding. Why do we need a different way?
->
-> For some SOCs, for some reason (making the CPU have approximate performance),
-> they use the same frequency but different voltage. In the case where
-> this speed bin
-> is not a lot and opp uses the same frequency, too many repeated opp
-> nodes are a bit
-> redundant and not intuitive enough.
->
-> So, I think it's worth the new method.
+On Mon, Apr 15, 2019 at 10:39:04AM +0200, Michal Simek wrote:
+> Hi,
+> 
+> please pull these patches to your tree. I have also taken fpga series
+> based on agreement with Moritz and Alan because it requires changes in
+> firmware interface. It is the same what we have done last time with
+> reset and nvmem.
+> 
+> Thanks,
+> Michal
+> 
+> 
+> The following changes since commit 9e98c678c2d6ae3a17cb2de55d17f69dddaa231b:
+> 
+>   Linux 5.1-rc1 (2019-03-17 14:22:26 -0700)
+> 
+> are available in the git repository at:
+> 
+>   https://github.com/Xilinx/linux-xlnx.git tags/zynqmp-soc-for-v5.2
+> 
+> for you to fetch changes up to c09f7471127e9debf3e814ffef4f4012c31a5a3d:
+> 
+>   fpga manager: Adding FPGA Manager support for Xilinx zynqmp
+> (2019-04-15 10:23:18 +0200)
+> 
+> ----------------------------------------------------------------
+> arm64: zynqmp: SoC changes for v5.2
+> 
+> - Add support for ZynqMP fpga manager
+> - Defer some probes which depends on firmware driver to be ready
+> - Debugfs fix
+> 
+> ----------------------------------------------------------------
+> Jann Horn (1):
+>       firmware: xilinx: fix debugfs write handler
+> 
+> Nava kishore Manne (3):
+>       firmware: xilinx: Add fpga API's
+>       dt-bindings: fpga: Add bindings for ZynqMP fpga driver
+>       fpga manager: Adding FPGA Manager support for Xilinx zynqmp
+> 
+> Rajan Vaja (1):
+>       drivers: Defer probe if firmware is not ready
 
-Well, I don't.
+So, this branch has not been in -next, since it introduced previously
+not seen build errors. :(
 
-We can't have every SoC vendor doing their own thing just because they
-want to. If there are technical reasons why existing bindings don't
-work, then maybe we need to do something different. But I haven't
-heard any reasons.
+Patched up locally, following up with patch here for visibility (already
+applied).
 
-Rob
+
+-Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
