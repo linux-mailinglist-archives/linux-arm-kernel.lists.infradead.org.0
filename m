@@ -2,73 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29419E5E4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 17:16:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D0C1E5FC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 17:19:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OtPcFN7wR659+4TgCrN+riAQdBjsuSqqibFoXLJ6bGI=; b=uqz6mEtlmK+hry
-	2UVF6QoSB8cIBqH2rpww0KtPkQAPH9yE+becUnFgTIY2ElADpiXlDVnVbsnN52FJN/bP8CpLEuaqR
-	I3CKKUx22NTCT/8qq6JMUFCqnZ83U3d+oKQdtymbnyPOSlWbyWApDO5265GcFHrzuHMabzpqvNymN
-	gT9bnVzJpKeGRNpMpFcNhXOcwbrrLkNqOjjOfHBoa0i9hKHxTgyg0DRAtPwZpIQbTEjLyzzK57MI8
-	OePzJZF1s5w8NpTNaf6ffrfau9vwpgA4X2dtoORP4lAVNi924mAt2Jn6R6g5/799H/0jqBy4mBQQa
-	XzcCEl9Fb7qBCsXa6JoA==;
+	List-Owner; bh=Ejt6ihtJmxOc41uNDy1qW2mziqLDG+kpjC+21hso14Y=; b=VqZilVJbcqHTbC
+	e9tFcXAot8GDRxwLPQWmXY4BOMQ0j1YQ22EgrI7OUt1mOZkgCaHO4rzPrSkJ5JCMlTsRDWqQe3P2u
+	WHykH6tssiF5UwUs0abiekHtV93tGt1O+2nZrQBh7oSrJ4EXxwphmbIHyGM8jJF4iHuppsAHZBuRc
+	Jlc+858tWueIYo8d8i/hxcnpH2/fWetFJAHJMyiPWc+z8+Ti5J+GeE/DK2mmw8vSqVWz4O4Iv1t7v
+	W4kb769wKGHco4upMkKNqJ4bquvz8MLhkS+DsScGFyIVSpTHhRh08e7mLLlLUVlh2bxNucxito8hI
+	qtidRdnRSrJRCKVtW5qQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL80f-0002IK-7i; Mon, 29 Apr 2019 15:16:01 +0000
-Received: from mga05.intel.com ([192.55.52.43])
+	id 1hL84E-0002o0-KK; Mon, 29 Apr 2019 15:19:42 +0000
+Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL80W-0002HR-QQ; Mon, 29 Apr 2019 15:15:54 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga008.fm.intel.com ([10.253.24.58])
- by fmsmga105.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 29 Apr 2019 08:15:47 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.60,409,1549958400"; d="scan'208";a="144581521"
-Received: from pgsmsx101.gar.corp.intel.com ([10.221.44.78])
- by fmsmga008.fm.intel.com with ESMTP; 29 Apr 2019 08:15:44 -0700
-Received: from pgsmsx114.gar.corp.intel.com ([169.254.4.194]) by
- PGSMSX101.gar.corp.intel.com ([169.254.1.108]) with mapi id 14.03.0415.000;
- Mon, 29 Apr 2019 23:15:43 +0800
-From: "Ong, Boon Leong" <boon.leong.ong@intel.com>
-To: Biao Huang <biao.huang@mediatek.com>, Jose Abreu <joabreu@synopsys.com>,
- "davem@davemloft.net" <davem@davemloft.net>, Andrew Lunn <andrew@lunn.ch>
+ id 1hL847-0002nP-Go; Mon, 29 Apr 2019 15:19:36 +0000
+Received: from mailhost.synopsys.com (dc8-mailhost1.synopsys.com
+ [10.13.135.209])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id B1458C0081;
+ Mon, 29 Apr 2019 15:19:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1556551176; bh=6ca6mfO960XBEcOh39ZiDJip0nWB/IKPMIyykJ70WEY=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=ej/ASn9kUF6DpwOz0Kaanp+8KeLtu2R8lijifgir3NVbN079ob8qsK6blxowQ7DM1
+ jlTL16Trt+O2a0j9p1gAPt0/UPGwh6ysnVdhDsXVzjJ/2MDXQvuX5eO3bB85vuEpAR
+ pQZfpuNveagwTo277SN+Db2E/OBh2g8kpo6N4jZLGWB9VABNt6LMTU++awUyEcrDlY
+ w+mD1mrVhSOCKCv/q0xclu+HdiQGokZrQw8jEs4cQuBnDpAXzKB8kSHITx2s1tTpp7
+ fXqICT3VEPMb101AeXIQo6OmPO9tCvPC1c7IYG8JEQF1KsaYaZ+oS58ETuUpUsAnpy
+ sZmMoA24vKGpQ==
+Received: from US01WXQAHTC1.internal.synopsys.com
+ (us01wxqahtc1.internal.synopsys.com [10.12.238.230])
+ (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 7CED8A006A;
+ Mon, 29 Apr 2019 15:19:29 +0000 (UTC)
+Received: from DE02WEHTCA.internal.synopsys.com (10.225.19.92) by
+ US01WXQAHTC1.internal.synopsys.com (10.12.238.230) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Mon, 29 Apr 2019 08:19:28 -0700
+Received: from DE02WEMBXB.internal.synopsys.com ([fe80::95ce:118a:8321:a099])
+ by DE02WEHTCA.internal.synopsys.com ([::1]) with mapi id
+ 14.03.0415.000; Mon, 29 Apr 2019 17:19:17 +0200
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: "Ong, Boon Leong" <boon.leong.ong@intel.com>, Biao Huang
+ <biao.huang@mediatek.com>, "davem@davemloft.net" <davem@davemloft.net>,
+ Andrew Lunn <andrew@lunn.ch>
 Subject: RE: [PATCH 2/2] net-next: stmmac: add mdio clause 45 access from
  mac device for dwmac4
 Thread-Topic: [PATCH 2/2] net-next: stmmac: add mdio clause 45 access from
  mac device for dwmac4
-Thread-Index: AQHU/lXS6cVDj4S/ZU28LSGbOEZpuqZTPxvA
-Date: Mon, 29 Apr 2019 15:15:42 +0000
-Message-ID: <AF233D1473C1364ABD51D28909A1B1B75C0C27ED@pgsmsx114.gar.corp.intel.com>
+Thread-Index: AQHU/lXExFDw5bAlc0G9MPOfQZ0kMKZTHp8AgAAh5QA=
+Date: Mon, 29 Apr 2019 15:19:16 +0000
+Message-ID: <78EB27739596EE489E55E81C33FEC33A0B46E5B4@DE02WEMBXB.internal.synopsys.com>
 References: <1556519724-1576-1-git-send-email-biao.huang@mediatek.com>
  <1556519724-1576-3-git-send-email-biao.huang@mediatek.com>
-In-Reply-To: <1556519724-1576-3-git-send-email-biao.huang@mediatek.com>
-Accept-Language: en-GB, en-US
+ <AF233D1473C1364ABD51D28909A1B1B75C0C27ED@pgsmsx114.gar.corp.intel.com>
+In-Reply-To: <AF233D1473C1364ABD51D28909A1B1B75C0C27ED@pgsmsx114.gar.corp.intel.com>
+Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-ctpclassification: CTP_NT
-x-titus-metadata-40: eyJDYXRlZ29yeUxhYmVscyI6IiIsIk1ldGFkYXRhIjp7Im5zIjoiaHR0cDpcL1wvd3d3LnRpdHVzLmNvbVwvbnNcL0ludGVsMyIsImlkIjoiNGRjNjhhMGEtMzNiNS00NWY5LWE3YmYtYmRlODJiMjZkNTI2IiwicHJvcHMiOlt7Im4iOiJDVFBDbGFzc2lmaWNhdGlvbiIsInZhbHMiOlt7InZhbHVlIjoiQ1RQX05UIn1dfV19LCJTdWJqZWN0TGFiZWxzIjpbXSwiVE1DVmVyc2lvbiI6IjE3LjEwLjE4MDQuNDkiLCJUcnVzdGVkTGFiZWxIYXNoIjoiQVBHT2FQM1gzc1k1YmZhQmVlRU01VzFtSCthVGFKbVwveW5HenJWdWdBUGVWblo5VndIRFYzK2VCekVGbW9IM1cifQ==
-dlp-product: dlpe-windows
-dlp-version: 11.0.600.7
-dlp-reaction: no-action
-x-originating-ip: [172.30.20.206]
+x-originating-ip: [10.107.19.176]
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_081552_869674_5AF8255C 
-X-CRM114-Status: GOOD (  17.94  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190429_081935_562323_59C296E5 
+X-CRM114-Status: UNSURE (   7.93  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.43 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -99,278 +118,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
->Subject: [PATCH 2/2] net-next: stmmac: add mdio clause 45 access from mac
->device for dwmac4
->
->add clause 45 mdio read and write from mac device for dwmac4.
->
->Signed-off-by: Biao Huang <biao.huang@mediatek.com>
+From: Ong, Boon Leong <boon.leong.ong@intel.com>
+Date: Mon, Apr 29, 2019 at 16:15:42
 
-Hi,
+> What is the preference of the driver maintainer here?  
 
-I would like to point out that there is another C45 implementation
-proposed here "net: stmmac: enable clause 45 mdio support" at
-https://marc.info/?l=linux-netdev&m=155609745200339&w=2 
+Your implementation doesn't need the mdelay() so I think we should follow 
+your way once you also address the review comments from Andrew and me.
 
-What is the preference of the driver maintainer here?  
+Maybe you can coordinate with Biao and submit a C45 implementation that 
+can be tested by both ?
 
-Thanks
-Boon Leong
->---
-> drivers/net/ethernet/stmicro/stmmac/common.h      |   11 +-
-> drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c |    3 +
-> drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c |  167
->+++++++++++++++++++--
-> 3 files changed, 165 insertions(+), 16 deletions(-)
->
->diff --git a/drivers/net/ethernet/stmicro/stmmac/common.h
->b/drivers/net/ethernet/stmicro/stmmac/common.h
->index 709dcec..06573b3 100644
->--- a/drivers/net/ethernet/stmicro/stmmac/common.h
->+++ b/drivers/net/ethernet/stmicro/stmmac/common.h
->@@ -410,12 +410,15 @@ struct mac_link {
-> struct mii_regs {
-> 	unsigned int addr;	/* MII Address */
-> 	unsigned int data;	/* MII Data */
->-	unsigned int addr_shift;	/* MII address shift */
->-	unsigned int reg_shift;		/* MII reg shift */
->-	unsigned int addr_mask;		/* MII address mask */
->-	unsigned int reg_mask;		/* MII reg mask */
->+	unsigned int addr_shift;	/* PHY address shift */
->+	unsigned int cl45_reg_shift;	/* CL45 reg address shift */
->+	unsigned int reg_shift;		/* CL22 reg/CL45 dev shift */
->+	unsigned int addr_mask;		/* PHY address mask */
->+	unsigned int cl45_reg_mask;	/* CL45 reg mask */
->+	unsigned int reg_mask;		/* CL22 reg/CL45 dev mask */
-> 	unsigned int clk_csr_shift;
-> 	unsigned int clk_csr_mask;
->+	unsigned int cl45_en;	/* CL45 Enable*/
-> };
->
-> struct mac_device_info {
->diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
->b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
->index 2a41c64..1ca03f9 100644
->--- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
->+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
->@@ -835,6 +835,9 @@ int dwmac4_setup(struct stmmac_priv *priv)
-> 	mac->mii.reg_mask = GENMASK(20, 16);
-> 	mac->mii.clk_csr_shift = 8;
-> 	mac->mii.clk_csr_mask = GENMASK(11, 8);
->+	mac->mii.cl45_reg_shift = 16;
->+	mac->mii.cl45_reg_mask = GENMASK(31, 16);
->+	mac->mii.cl45_en = BIT(1);
->
-> 	return 0;
-> }
->diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
->b/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
->index bdd3515..a70c967 100644
->--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
->+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
->@@ -150,16 +150,16 @@ static int stmmac_xgmac2_mdio_write(struct
->mii_bus *bus, int phyaddr,
-> }
->
-> /**
->- * stmmac_mdio_read
->+ * stmmac_c22_read
->  * @bus: points to the mii_bus structure
->- * @phyaddr: MII addr
->- * @phyreg: MII reg
->- * Description: it reads data from the MII register from within the phy device.
->+ * @phyaddr: clause 22 phy address
->+ * @phyreg: clause 22 phy register
->+ * Description: it reads data from the MII register follow clause 22.
->  * For the 7111 GMAC, we must set the bit 0 in the MII address register while
->  * accessing the PHY registers.
->  * Fortunately, it seems this has no drawback for the 7109 MAC.
->  */
->-static int stmmac_mdio_read(struct mii_bus *bus, int phyaddr, int phyreg)
->+static int stmmac_c22_read(struct mii_bus *bus, int phyaddr, int phyreg)
-> {
-> 	struct net_device *ndev = bus->priv;
-> 	struct stmmac_priv *priv = netdev_priv(ndev);
->@@ -194,15 +194,15 @@ static int stmmac_mdio_read(struct mii_bus *bus,
->int phyaddr, int phyreg)
-> }
->
-> /**
->- * stmmac_mdio_write
->+ * stmmac_c22_write
->  * @bus: points to the mii_bus structure
->- * @phyaddr: MII addr
->- * @phyreg: MII reg
->- * @phydata: phy data
->- * Description: it writes the data into the MII register from within the device.
->+ * @phyaddr: clause-22 phy address
->+ * @phyreg: clause-22 phy register
->+ * @phydata: clause-22 phy data
->+ * Description: it writes the data into the MII register follow clause 22.
->  */
->-static int stmmac_mdio_write(struct mii_bus *bus, int phyaddr, int phyreg,
->-			     u16 phydata)
->+static int stmmac_c22_write(struct mii_bus *bus, int phyaddr, int phyreg,
->+			    u16 phydata)
-> {
-> 	struct net_device *ndev = bus->priv;
-> 	struct stmmac_priv *priv = netdev_priv(ndev);
->@@ -237,6 +237,149 @@ static int stmmac_mdio_write(struct mii_bus *bus,
->int phyaddr, int phyreg,
-> }
->
-> /**
->+ * stmmac_c45_read
->+ * @bus: points to the mii_bus structure
->+ * @phyaddr: clause-45 phy address
->+ * @devad: clause-45 device address
->+ * @prtad: clause-45 register address
->+ * @phydata: phy data
->+ * Description: it reads the data from the  MII register follow clause 45.
->+ */
->+static int stmmac_c45_read(struct mii_bus *bus, int phyaddr,
->+			   int devad, int prtad)
->+{
->+	struct net_device *ndev = bus->priv;
->+	struct stmmac_priv *priv = netdev_priv(ndev);
->+	unsigned int mii_address = priv->hw->mii.addr;
->+	unsigned int mii_data = priv->hw->mii.data;
->+	u32 v, value;
->+	int data;
->+
->+	if (readl_poll_timeout(priv->ioaddr + mii_address, v, !(v & MII_BUSY),
->+			       100, 10000))
->+		return -EIO;
->+
->+	value = 0;
->+	value |= (prtad << priv->hw->mii.cl45_reg_shift)
->+			& priv->hw->mii.cl45_reg_mask;
->+	writel(value, priv->ioaddr + mii_data);
->+
->+	/* delay 2ms to avoid error value of get_phy_c45_devs_in_pkg */
->+	mdelay(2);
->+
->+	value = MII_BUSY;
->+	value |= (phyaddr << priv->hw->mii.addr_shift)
->+		& priv->hw->mii.addr_mask;
->+	value |= (devad << priv->hw->mii.reg_shift) & priv->hw->mii.reg_mask;
->+	value |= (priv->clk_csr << priv->hw->mii.clk_csr_shift)
->+		& priv->hw->mii.clk_csr_mask;
->+	if (priv->plat->has_gmac4) {
->+		value |= MII_GMAC4_READ;
->+		value |= priv->hw->mii.cl45_en;
->+	}
->+	writel(value, priv->ioaddr + mii_address);
->+
->+	if (readl_poll_timeout(priv->ioaddr + mii_address, v, !(v & MII_BUSY),
->+			       100, 10000))
->+		return -EIO;
->+
->+	/* Read the data from the MII data register */
->+	data = (int)(readl(priv->ioaddr + mii_data) & 0xffff);
->+
->+	return data;
->+}
->+
->+/**
->+ * stmmac_c45_write
->+ * @bus: points to the mii_bus structure
->+ * @phyaddr: clause-45 phy address
->+ * @devad: clause-45 device address
->+ * @prtad: clause-45 register address
->+ * @phydata: phy data
->+ * Description: it writes the data into the MII register follow clause 45.
->+ */
->+static int stmmac_c45_write(struct mii_bus *bus, int phyaddr, int devad,
->+			    int prtad, u16 phydata)
->+{
->+	struct net_device *ndev = bus->priv;
->+	struct stmmac_priv *priv = netdev_priv(ndev);
->+	unsigned int mii_address = priv->hw->mii.addr;
->+	unsigned int mii_data = priv->hw->mii.data;
->+	u32 v, value;
->+
->+	/* Wait until any existing MII operation is complete */
->+	if (readl_poll_timeout(priv->ioaddr + mii_address, v, !(v & MII_BUSY),
->+			       100, 10000))
->+		return -EIO;
->+
->+	value = phydata;
->+	value |= (prtad << priv->hw->mii.cl45_reg_shift) &
->+		 priv->hw->mii.cl45_reg_mask;
->+	writel(value, priv->ioaddr + mii_data);
->+
->+	mdelay(2);
->+
->+	value = MII_BUSY;
->+	value |= (phyaddr << priv->hw->mii.addr_shift) &
->+		 priv->hw->mii.addr_mask;
->+	value |= (devad << priv->hw->mii.reg_shift) & priv->hw->mii.reg_mask;
->+	value |= (priv->clk_csr << priv->hw->mii.clk_csr_shift) &
->+		 priv->hw->mii.clk_csr_mask;
->+
->+	if (priv->plat->has_gmac4) {
->+		value |= MII_GMAC4_WRITE;
->+		value |= priv->hw->mii.cl45_en;
->+	}
->+	writel(value, priv->ioaddr + mii_address);
->+
->+	/* Wait until any existing MII operation is complete */
->+	return readl_poll_timeout(priv->ioaddr + mii_address, v, !(v &
->MII_BUSY),
->+				  100, 10000);
->+}
->+
->+/**
->+ * stmmac_mdio_read
->+ * @bus: points to the mii_bus structure
->+ * @phyaddr: MII addr
->+ * @phyreg: MII reg
->+ * Description: it reads data from the MII register from within the phy device.
->+ */
->+static int stmmac_mdio_read(struct mii_bus *bus, int phyaddr, int phyreg)
->+{
->+	if (phyreg & MII_ADDR_C45) {
->+		int devad, prtad;
->+
->+		devad = (phyreg >> 16) & 0x1f;
->+		prtad = phyreg & 0xffff;
->+		return stmmac_c45_read(bus, phyaddr, devad, prtad);
->+	} else {
->+		return stmmac_c22_read(bus, phyaddr, phyreg);
->+	}
->+}
->+
->+/**
->+ * stmmac_mdio_write
->+ * @bus: points to the mii_bus structure
->+ * @phyaddr: MII addr
->+ * @phyreg: MII reg
->+ * @phydata: phy data
->+ * Description: it writes the data into the MII register from within the device.
->+ */
->+static int stmmac_mdio_write(struct mii_bus *bus, int phyaddr, int phyreg,
->+			     u16 phydata)
->+{
->+	if (phyreg & MII_ADDR_C45) {
->+		int devad, prtad;
->+
->+		devad = (phyreg >> 16) & 0x1f;
->+		prtad = phyreg & 0xffff;
->+		return stmmac_c45_write(bus, phyaddr, devad, prtad,
->phydata);
->+	} else {
->+		return stmmac_c22_write(bus, phyaddr, phyreg, phydata);
->+	}
->+}
->+
->+/**
->  * stmmac_mdio_reset
->  * @bus: points to the mii_bus structure
->  * Description: reset the MII bus
->--
->1.7.9.5
-
+Thanks,
+Jose Miguel Abreu
 
 _______________________________________________
 linux-arm-kernel mailing list
