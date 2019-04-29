@@ -2,55 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A2832DCF3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 09:36:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF2F3DCF8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 29 Apr 2019 09:37:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:To:From:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=g/kcBLxp+BbvHrTo4QDd9QQEi6yPNtRt5wCi6xIgZTg=; b=kZnW/sublTEdeQ
-	rYAfu4V00ckziaPnJBAbW8oWP47I+XTI/XKtfW/4dxMgTGsl2Lq+tZGx4o+6aaFTWBMZAM/GMyTcf
-	g/6PHxmgApN55GRE5MKH6QDDLW3nQxmwtSOizzw1mHBDbPHoXnxjZ3iWjxhy90uX59cq3tBxiV8of
-	opH8NSwRYDI4ghIb7x+YCdS+0YO/m/jwvX043ymokzhBR0qDBs/vgzTKxpS1t6GzIjEjjhPvXoBxF
-	k7FUjmXjzOr5KO14NDlMBcykTMOA8zesVuNEhoqbvyjnEKC+8yUDL0PSItGUzJTe8pYu8qk3bg44V
-	B0yD9VMwbNz3/jpdR1GA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=tgJYMQRKlNGwz9PgtVqvvVTi18Q/Ors3f5rpqFDFn74=; b=A/T
+	2eXZAT1TcJ9Q2AVGnGOQzAvRBJtJQeUaoMchEEjZLCCYM59XQvIhGi4fualZ1tBWTH+uHON595yeB
+	uyDhObnCi1Jjq7L1F/rUntflg2vMCW+u7IM5aKZm+k0l/NEP/DSH+8FpJbhwXipACDw7SsU9zW9sD
+	ya90/m0POKOgOs12ieJknZ1I2EblFyOIUbahyj7QtQ6fLLkoMFXjNi1oNxN3CpZhU3Y3iPJd/ppjS
+	YmcYKWPEgiDq0zDuYPPOf7KNzSFs26FGh/+a9tk2GSkAL8ariNdly/Qo6j3EkYawD45vHteRUztrW
+	2EdAFRbLreXMKQZQV2fFvvSUmkrp1fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL0pL-0000XG-Mg; Mon, 29 Apr 2019 07:35:51 +0000
-Received: from mail.eat-dinner.eu ([80.211.38.224] helo=eat-dinner.eu)
+	id 1hL0qz-0000ul-3F; Mon, 29 Apr 2019 07:37:33 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL0pD-0000Wn-Po
- for linux-arm-kernel@lists.infradead.org; Mon, 29 Apr 2019 07:35:45 +0000
-Received: by eat-dinner.eu (Postfix, from userid 1001)
- id D98DDA3CA6; Mon, 29 Apr 2019 09:32:45 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=eat-dinner.eu;
- s=mail; t=1556523310;
- bh=1wXsRnVQKyR5953v1mK5+VSjATpkqCFjMxx9a9NW6X4=;
- h=Date:From:To:Subject:From;
- b=F8MAdcA/nQcdNraULdbSIWMB5HYUUDM99MYEtvvlnZiHDvnEfTcGNxtkEFF/sk228
- hst5bMOG/BI6iNYGSPGADA2aoVr7uj+xwsCH/OIB72T2kwR6W5l9+bExKZFbHlXVPi
- kCIVfr9FOPNDBU6Qol25xoTMQjJgbnVNJ89jSxKw=
-Received: by mail.eat-dinner.eu for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Apr 2019 07:32:33 GMT
-Message-ID: <20190429084500-0.1.19.q68.0.uc0lvma4s2@eat-dinner.eu>
-Date: Mon, 29 Apr 2019 07:32:33 GMT
-From: =?UTF-8?Q?"Kapolcs_M=C3=A1ty=C3=A1s"?= <kapolcs.matyas@eat-dinner.eu>
-To: <linux-arm-kernel@lists.infradead.org>
-Subject: =?UTF-8?Q?Dolgoz=C3=B3i_juttat=C3=A1sok?=
-X-Mailer: mail.eat-dinner.eu
-MIME-Version: 1.0
+ id 1hL0qs-0000uM-5Z; Mon, 29 Apr 2019 07:37:27 +0000
+Received: by mail-pl1-x641.google.com with SMTP id w20so4055132plq.3;
+ Mon, 29 Apr 2019 00:37:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=JVE5mmezCRxz6WW+z9H8b28By3jF0TFZuCkFOKjspBU=;
+ b=niwBPwvEkClbDRK9YJuSfR/YAnw/h5dMpYBXnWsjBRo9UdkYLnka/aYR5Q7xahnsIb
+ as+f30ARN/KtCMGevNIB0IFhdEVlRioN0ls7/DgVufSsEhcD3pPvCOkX+kR7wurJgDQ0
+ AfpgLTNON+AQhxtN2jqk62c+TBCuNXyFrjduyVWOcpFE9NWYjqpJ0QLhiOGOFgry51RF
+ xKXS/VhlJkxeMb+81VBqOogBaQZjisJZMKVJ2CTFOY464h+3H9sNR06XsK3URQxdDtgB
+ CzRm8dgt5mRLInnpfk2i29EgagbmkXCDUfrlSQFnhEhyouzfrwunzNGSvkchDUFV406W
+ kdGw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=JVE5mmezCRxz6WW+z9H8b28By3jF0TFZuCkFOKjspBU=;
+ b=Sn0QEkQj0YbSfqUnj2zX97rfD9/vX068MLCahUlXPdQICqx7OxPC+rlE56liCnQ5fT
+ vGg+DY9rH9alFgibtnRvoRo8Fr5q7jqhrHIUYY/jxioG+8a2bQo2StqNS95A5SZj4qSI
+ 6E6SV8Csyke1rADivsniilQt4Gtpto0mhiMEA7sYDbyACQVnn7GK/hLtYVjFuEzk9EZF
+ UsIP3xeD1GlxP+nTwQe2ALzSf6Scsd63CazUJy1yvXox0tbwSSUadjrqa2Ozg50oZAfy
+ K8P4BWerI5s/K6RvXcuZ5SWTvcaoml3sO6Mj3NS9ek5CLWPJ4WP/uRpJIY9SnOOHeZjJ
+ vsug==
+X-Gm-Message-State: APjAAAUVz/3w9PWA+q5vODhfDlioDc+E0wwjHn0V05dJLsWfIXdcISTm
+ ME4Rk5c/vexORlBX8rQ51Yc=
+X-Google-Smtp-Source: APXvYqwZzhRLIoaP5LpqWQUbjpD0Ir8YyzDeEPPahuxhn3iNg6BmuHDKJjh9YnJwHCLE1BExK5KxAg==
+X-Received: by 2002:a17:902:8545:: with SMTP id
+ d5mr24800187plo.198.1556523444886; 
+ Mon, 29 Apr 2019 00:37:24 -0700 (PDT)
+Received: from localhost.localdomain ([2405:204:12a5:ab58:559f:ec82:1c85:ce7])
+ by smtp.gmail.com with ESMTPSA id
+ t24sm43485198pfe.110.2019.04.29.00.37.17
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 29 Apr 2019 00:37:24 -0700 (PDT)
+From: Vatsala Narang <vatsalanarang@gmail.com>
+To: gregkh@linuxfoundation.org
+Subject: [PATCH] staging: vc04_services: bcm2835-camera: Modify return
+ statement.
+Date: Mon, 29 Apr 2019 13:06:58 +0530
+Message-Id: <20190429073658.32009-1-vatsalanarang@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_003543_998782_8B615A74 
-X-CRM114-Status: UNSURE (   2.04  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190429_003726_232786_5AF8EB9B 
+X-CRM114-Status: GOOD (  11.13  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (vatsalanarang[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -70,23 +93,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: stefan.wahren@i2se.com, devel@driverdev.osuosl.org, f.fainelli@gmail.com,
+ sbranden@broadcom.com, julia.lawall@lip6.fr, rjui@broadcom.com,
+ linux-kernel@vger.kernel.org, eric@anholt.net,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ Vatsala Narang <vatsalanarang@gmail.com>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-w5xkdsO2emzDtm0hCiAKMjAxOSBqYW51w6FydMOzbCB2w6FsdG96aWsgYSBuZW0gYsOpciBqZWxs
-ZWfFsSBqdXR0YXTDoXNvayByZW5kamUuCiAKRWd5IGtpdsOhbMOzIGxlaGV0xZFzw6lnZ2VsIMOp
-bGVoZXQsIGFtZW5ueWliZW4gYSBtaSBrw6FydHnDoW5rYXQgdsOhbGFzenRqYSEKIApFeiBhIGvD
-oXJ0eWE6CiAKS29ybMOhdGxhbnVsIGZlbGhhc3puw6FsaGF0w7M6CiAKa8Opc3pww6luemZlbHbD
-qXRlbArDqWxlbG1pc3plciB2w6Fzw6FybMOhcwplZ8Opc3pzw6lnw7xneWkgZWxsw6F0w6FzCmVs
-ZWt0cm9uaWthaSB0ZXJtw6lrZWsgdsOhc8OhcmzDoXNhCm9rdGF0w6FzCnN6w6FsbMOhcwogCkvD
-oXJ0ecOhbmsgYXogZWd5ZXRsZW4gb2x5YW4gdmFsw7NiYW4gc3phYmFkZmVsaGFzem7DoWzDoXPD
-uiBrw6FydHlhLCBtZWx5ZXQgbWluZGVuIFBPUyB0ZXJtaW7DoWwgZWxmb2dhZCEKIApBbWVubnlp
-YmVuIGvDoXJ0ecOhbmsgZmVsa2VsdGV0dGUgw6lyZGVrbMWRZMOpc8OpdCwgbWludCBkb2xnb3rD
-s2kganV0dGF0w6FzLCBrw6lyZW0ga2VyZXNzZW4gZmVsIGEgdG92w6FiYmkgdMOhasOpa296dGF0
-w6FzIMOpcmRla8OpYmVuIQogCsOWcsO2bW1lbCDDoWxsdW5rIHJlbmRlbGtlesOpc8OpcmUgbWlu
-ZGVuYmVuIQoKCkthcG9sY3MgTcOhdHnDoXMKSHVuZ2FyeSBUZWFtIExlYWRlcgoKX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBt
-YWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Modify return statement and remove the respective assignment.
+
+Issue found by coccinelle.
+
+Signed-off-by: Vatsala Narang <vatsalanarang@gmail.com>
+---
+ drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
+index c9b6346111a5..cef6d5b758e8 100644
+--- a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
++++ b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
+@@ -1507,10 +1507,9 @@ static int set_camera_parameters(struct vchiq_mmal_instance *instance,
+ 		.use_stc_timestamp = MMAL_PARAM_TIMESTAMP_MODE_RAW_STC
+ 	};
+ 
+-	ret = vchiq_mmal_port_parameter_set(instance, &camera->control,
++	return vchiq_mmal_port_parameter_set(instance, &camera->control,
+ 					    MMAL_PARAMETER_CAMERA_CONFIG,
+ 					    &cam_config, sizeof(cam_config));
+-	return ret;
+ }
+ 
+ #define MAX_SUPPORTED_ENCODINGS 20
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
