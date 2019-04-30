@@ -2,65 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E043EF9F3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 15:26:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86C43F9F5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 15:26:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ubEaMVWSkZ8NhQYLE3idt+IrPrNScaoGZ5wxrbiGctY=; b=kd/XJGuldSpPr7
-	WXL8fndpY0YfkfxJq2Dr8/so8MHjhjQBuqrZVimdME2L+vVvQgrgV63HBtOKkLYrmQ8iDQitdlWet
-	xWMP9pqvyGqpZFTVKuU+ZzoG9iYH0006vKh5JQZLCdn58OzLkOIGl4wbIDPDLR5o7X8AhodlqGm60
-	ds7/FC5k/A9qz9Pf/lS1hmVI+GcRn8g/Bu967wgheBbwyRDSwiDCg3VljSylCGPt9b70Z2WA9gUxM
-	hcFhrzyNJpYZS8OQJ00d2VYIl052LsO+n5KL589HcGMnnQXyfL7DsR+ZOC5zUNvx3ZsvE1y2YGBx4
-	104JCeD2NI6fXQT6fV/Q==;
+	List-Owner; bh=vq23UBq6pBq1LN1Nzxqi8AfrKEJ4y2/h0d32goGH6ho=; b=HjNagp0VL/4511
+	M6XqQZE+c3mJha0G/kL/32KJVYq2TwLa8z3cY+zE6dkwD7M4ElFI1HOTCwRGTv2vNO9rLllLGsR26
+	+RoMURC5Ck7/hk7sJvsu5h1bzRtL9f48BZ/ioHS/+oXpcczkloqEpwZpIF6veR6OCrabJH/R6EEtN
+	eUM5wHB2P4U35wRw9jrDkcOMMTq3zWsgk3Y0uiHePKF4LXYeet5IA4I1w4usoBh0PtHQr6WnIQvAT
+	D7XZEhM8Bkth21ObMOQvF5xCpVtVhAHoJbrA4QlaNnEysabutmrwm3ep52cS2VJ/uDcYf0ck1qG4D
+	uajO6hIoGnr27Afna9ZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLSlk-0001yl-Tg; Tue, 30 Apr 2019 13:26:00 +0000
-Received: from mail-pf1-x44a.google.com ([2607:f8b0:4864:20::44a])
+	id 1hLSly-0002It-1P; Tue, 30 Apr 2019 13:26:14 +0000
+Received: from mail-ua1-x949.google.com ([2607:f8b0:4864:20::949])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLSlB-0001UI-Rk
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 13:25:28 +0000
-Received: by mail-pf1-x44a.google.com with SMTP id c15so4542410pfc.14
+ id 1hLSlF-0001Wx-3M
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 13:25:32 +0000
+Received: by mail-ua1-x949.google.com with SMTP id o64so1621087uao.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Apr 2019 06:25:24 -0700 (PDT)
+ Tue, 30 Apr 2019 06:25:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=IkuD9zPPDPrNqKOg+1EuZo5HlTMskU88lY/hO73XGBQ=;
- b=cjAZo1bevEgDG9f0Gp0lCqBUDVGf7WH9HfahHvPYK3yXKOMpkTJl6c0Qs/+BaViS4F
- SVbEHv0pbmF0M0fXn45Xz+XZ5NA51A6Q84gce81tqYq+4vQ4fSd4Vfr74XM9VMTqpEUn
- hpbIVHi0Y6E4lGzikQQHuG5LSWrNkshsuGLGjPRywGWJWT4PFmQUF2llhQi6ncC/Vlfh
- XyXZ2xzPVmh+mASSDoCOMBPHpUNh2v+x16jbihEdr4DI6v1V/jUL7ilAE/v54hqYIVN8
- AFB4b6bLnE3ptsM0NTOpxh1giv5Af/8Vei/jZ/b9XgJhABJa8DnBXyZnippbFF98erxD
- 64TA==
+ :cc; bh=BvUTfQkQM7uCDeEtImKKI/2Hme2ZprNLcMmbkGV4djo=;
+ b=dpVTwFKbchbVkkb84ng8BnoHNS2SM91wquNJtuly6Sbp7lXj1bPrbJBiP3SyhTU0xP
+ LuA/DNrbjhKI/dHi3IXFK1lS8O09Sk1+qA/R7rjDLupO2W7Szy3T1dELXK4hEpZqkwPw
+ qD0yKLxb8ZjzpYALNjI1z0dDf4TB8V0IRIOptCx1gDVu9+jOblt+XzKkwvlPuV63pqHj
+ wnFsYt5mNXo/Rj6N9Lo9JMQODsljOWPF/MJrAcRLfdznXkGZCgNmaSrk7MrXtOUREZGb
+ X2QTJ1/W011vEIe5OofpK81AMWPuQy4lXPQltspauNse0OruElYuf2mJ90h6FolZJ8lL
+ VpnA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=IkuD9zPPDPrNqKOg+1EuZo5HlTMskU88lY/hO73XGBQ=;
- b=Cxqy3B+zh5EVMpdKKt4kUhM4D527FSX3BnzQ7phhU8Ttyhlcc/q7kuehxaaix1TLcv
- cA1B2kk8y6uKDrbeq30/oDkt8AGbiVfZZOrh2bjO3zWfvvg7V2sJMJyWOBfksv0zPWkU
- 3lAWcduQNWXl6onvjRBLM6Cxz3y3UYtUmU7yEPmJoPFRrZrQxq0xdO00HC55Mo7hkKfr
- FlByezj7XGpH2WGEDyaLM7VhrSBuGDe60nTY1ui4puORMmBxyj0lmK1dXqDlvF/i0md1
- 9dX8KSdYk8HS0Z5fw5Vi6Rd3+7v6czzf5kaZGy4mOWC5qByp9DGl+MlGRbkK62IPYu2x
- PQWw==
-X-Gm-Message-State: APjAAAVVErmO1xTLitBU0YaD6M3m5curskdVZ8OnEkfnda/t9M/7w5lL
- nQAyOu9Uvz1c7qUof/2yVl+OwxVrdhK9H7eUOvyDzCr/wSYDC6+bNLxf5Zxk1a97e3MH+29JmF2
- ND0uW3ZCzuBYSOT6eC1NimSryEl8E8vz5/AL4xAMCCNi94StFRLcsP3Fhu1Kyyt5zw2SgrC7Npt
- EJYMcNpeiBFYj50Vs=
-X-Google-Smtp-Source: APXvYqxwzeO4aaEq5t7dlXsyLEMZLxNA1xUAM/PWlhFhSshLHzTvKlXrQBr9Il+4R5AJQuOw/QR46XMvR3q8fhhC
-X-Received: by 2002:a65:534b:: with SMTP id w11mr7522791pgr.210.1556630723459; 
- Tue, 30 Apr 2019 06:25:23 -0700 (PDT)
-Date: Tue, 30 Apr 2019 15:24:58 +0200
+ bh=BvUTfQkQM7uCDeEtImKKI/2Hme2ZprNLcMmbkGV4djo=;
+ b=rS3x9QCRD/tAsAMHn13cSGZCdk9p8KORvvkT3Qn+s341MoCbs6LNW23hj41WCELMso
+ Ij9BtAcSINwaGHepQzkNh2agi09eaKHRvRBUov+1n7Tu7oSd0fLu6rmAdSWGSjx7B3Mk
+ fd4te4To39yYFFZ0a2ZTcGho+37dbAJxMJQEWK7r/MAgNzdBbQqvtuv52JLpTtvkKQED
+ F9cbfmLmNP0RkdlXTKO0UXHTVErBVOK3ClXlTj/9SFJEYjYhAgKgY3uuiJzTdTM92g24
+ t6AOTkrzEexzmeVewKo0G5zgj9xkY7csoYa8KzCASe5xkI6INhM0FyIVomeDOCv7/7Dv
+ BV9g==
+X-Gm-Message-State: APjAAAWOZ0PIcj9I7hvJG2jWQnl2NtGEYsoUR2k29AA/T2ReshXB2Yhz
+ 50idEa74n8DKcyjcyDsWVTMi36eeicjmpC/KcdHheB2Yql61POhl6TpdheOylh1SqTv/1A4o0P+
+ uw6KctDqWbdpxSoXXILhfqlcfeLYjGTM0oZ3fvIu8YqWzlhqZG9MrMpfTslw6oGcEQPlCBIc4zg
+ MktxEOVTaM4XbN6rg=
+X-Google-Smtp-Source: APXvYqyRA/Qu4LKAWcvJoaQQlsyyIllouYjqkXgAFh5vrZ+95OMG6R4QdBb3NSzDXJSn7wdUrbj4M88LAp+D5Hqp
+X-Received: by 2002:a67:ea83:: with SMTP id f3mr2107513vso.59.1556630726654;
+ Tue, 30 Apr 2019 06:25:26 -0700 (PDT)
+Date: Tue, 30 Apr 2019 15:24:59 +0200
 In-Reply-To: <cover.1556630205.git.andreyknvl@google.com>
-Message-Id: <29b7234f48a282037bdfc23e07ff167756fca0df.1556630205.git.andreyknvl@google.com>
+Message-Id: <6f38f610cc22dca9aef05d53a5a94b24763cc628.1556630205.git.andreyknvl@google.com>
 Mime-Version: 1.0
 References: <cover.1556630205.git.andreyknvl@google.com>
 X-Mailer: git-send-email 2.21.0.593.g511ec345e18-goog
-Subject: [PATCH v14 02/17] arm64: untag user pointers in access_ok and
- __uaccess_mask_ptr
+Subject: [PATCH v14 03/17] lib, arm64: untag user pointers in strn*_user
 From: Andrey Konovalov <andreyknvl@google.com>
 To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org, 
  linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org, 
@@ -68,15 +67,15 @@ To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
  linux-media@vger.kernel.org, kvm@vger.kernel.org, 
  linux-kselftest@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_062526_057432_C02D0FB2 
-X-CRM114-Status: GOOD (  13.60  )
+X-CRM114-CacheID: sfid-20190430_062529_819390_0D5B0F18 
+X-CRM114-Status: GOOD (  13.47  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:44a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:949 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
@@ -128,60 +127,63 @@ This patch is a part of a series that extends arm64 kernel ABI to allow to
 pass tagged user pointers (with the top byte set to something else other
 than 0x00) as syscall arguments.
 
-copy_from_user (and a few other similar functions) are used to copy data
-from user memory into the kernel memory or vice versa. Since a user can
-provided a tagged pointer to one of the syscalls that use copy_from_user,
-we need to correctly handle such pointers.
+strncpy_from_user and strnlen_user accept user addresses as arguments, and
+do not go through the same path as copy_from_user and others, so here we
+need to handle the case of tagged user addresses separately.
 
-Do this by untagging user pointers in access_ok and in __uaccess_mask_ptr,
-before performing access validity checks.
+Untag user pointers passed to these functions.
 
-Note, that this patch only temporarily untags the pointers to perform the
-checks, but then passes them as is into the kernel internals.
+Note, that this patch only temporarily untags the pointers to perform
+validity checks, but then uses them as is to perform user memory accesses.
 
-Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
 ---
- arch/arm64/include/asm/uaccess.h | 10 ++++++----
- 1 file changed, 6 insertions(+), 4 deletions(-)
+ lib/strncpy_from_user.c | 3 ++-
+ lib/strnlen_user.c      | 3 ++-
+ 2 files changed, 4 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
-index e5d5f31c6d36..9164ecb5feca 100644
---- a/arch/arm64/include/asm/uaccess.h
-+++ b/arch/arm64/include/asm/uaccess.h
-@@ -94,7 +94,7 @@ static inline unsigned long __range_ok(const void __user *addr, unsigned long si
- 	return ret;
- }
+diff --git a/lib/strncpy_from_user.c b/lib/strncpy_from_user.c
+index 58eacd41526c..6209bb9507c7 100644
+--- a/lib/strncpy_from_user.c
++++ b/lib/strncpy_from_user.c
+@@ -6,6 +6,7 @@
+ #include <linux/uaccess.h>
+ #include <linux/kernel.h>
+ #include <linux/errno.h>
++#include <linux/mm.h>
  
--#define access_ok(addr, size)	__range_ok(addr, size)
-+#define access_ok(addr, size)	__range_ok(untagged_addr(addr), size)
- #define user_addr_max			get_fs
+ #include <asm/byteorder.h>
+ #include <asm/word-at-a-time.h>
+@@ -107,7 +108,7 @@ long strncpy_from_user(char *dst, const char __user *src, long count)
+ 		return 0;
  
- #define _ASM_EXTABLE(from, to)						\
-@@ -226,7 +226,8 @@ static inline void uaccess_enable_not_uao(void)
+ 	max_addr = user_addr_max();
+-	src_addr = (unsigned long)src;
++	src_addr = (unsigned long)untagged_addr(src);
+ 	if (likely(src_addr < max_addr)) {
+ 		unsigned long max = max_addr - src_addr;
+ 		long retval;
+diff --git a/lib/strnlen_user.c b/lib/strnlen_user.c
+index 1c1a1b0e38a5..8ca3d2ac32ec 100644
+--- a/lib/strnlen_user.c
++++ b/lib/strnlen_user.c
+@@ -2,6 +2,7 @@
+ #include <linux/kernel.h>
+ #include <linux/export.h>
+ #include <linux/uaccess.h>
++#include <linux/mm.h>
  
- /*
-  * Sanitise a uaccess pointer such that it becomes NULL if above the
-- * current addr_limit.
-+ * current addr_limit. In case the pointer is tagged (has the top byte set),
-+ * untag the pointer before checking.
-  */
- #define uaccess_mask_ptr(ptr) (__typeof__(ptr))__uaccess_mask_ptr(ptr)
- static inline void __user *__uaccess_mask_ptr(const void __user *ptr)
-@@ -234,10 +235,11 @@ static inline void __user *__uaccess_mask_ptr(const void __user *ptr)
- 	void __user *safe_ptr;
+ #include <asm/word-at-a-time.h>
  
- 	asm volatile(
--	"	bics	xzr, %1, %2\n"
-+	"	bics	xzr, %3, %2\n"
- 	"	csel	%0, %1, xzr, eq\n"
- 	: "=&r" (safe_ptr)
--	: "r" (ptr), "r" (current_thread_info()->addr_limit)
-+	: "r" (ptr), "r" (current_thread_info()->addr_limit),
-+	  "r" (untagged_addr(ptr))
- 	: "cc");
+@@ -109,7 +110,7 @@ long strnlen_user(const char __user *str, long count)
+ 		return 0;
  
- 	csdb();
+ 	max_addr = user_addr_max();
+-	src_addr = (unsigned long)str;
++	src_addr = (unsigned long)untagged_addr(str);
+ 	if (likely(src_addr < max_addr)) {
+ 		unsigned long max = max_addr - src_addr;
+ 		long retval;
 -- 
 2.21.0.593.g511ec345e18-goog
 
