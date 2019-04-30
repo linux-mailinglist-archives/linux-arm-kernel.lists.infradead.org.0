@@ -2,104 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAD43FCDD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 17:28:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD190FCFE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 17:35:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L4gwcachYalsVUmUB1nsIB7AAcETTNhsjmTs1OCgS68=; b=bI0ChqUVKOQ2KL
-	GraNwWDiE0BlTjF4yxEPZ2wiqAYiLnY99zJ+PvsVMtl+QTl87X9qLWXhOIxpm8L7gZ8X8ZgLKFQ85
-	ZK4AXta/ggppsqB3sEYqUQhXkZUXkd2creZSuzUMkuntGFx7ZxEDGIElFo8rtftCWEJWrw5dgt37+
-	xWHEeIsKJ1c/kB1Lt0jN90EJJQUNZ5zFdgcfMEDPRZ9z6Zq8wPtNjpvBUAMJtMTEYWbr6+m8vBp0l
-	rfqdMkoc4p/D6cHtYveW7CJHaauS74/3Scc7VQR7n+MiM0Xb6HQd9sItIditGcBVa3qh36pCgrJ+d
-	2juKAz+PXlS7jVpYNmVg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=w6K8RL7mZKJU26BeqSj4N/epMgSKOQE5k21ScQZ6v60=; b=XIyAx+s5wIbBvr
+	KZQ4V0PFL/J7cWWbjyCcfE1/YwBViI1JgODv+LuVp7dzvE44vik8xhfdAG/Sv3i8/2lzDpO4xAYR4
+	SHZlPvXBISQwDbKVVxma6WrHNUuXe1qu6133kQzGt0pirKpDP4LBJNfS9CnQsqcoooa0D9Vkc9BiV
+	g3NhwbC9wIa5t8PRnjYaPaTh3qAS4rZFtsOMEpzlpJW4YBxNPinC2/RdMK32EdSthepIzMcrvemc0
+	+VsEqHTqVYDjChVt6je6PyOx+ymrdl0n4ReemfEYQgLjut5QwwxDY4Xh6+fr2uCmZb6/OqthzsLlj
+	4+43hub2NsMPj24Y7Raw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLUfm-0005PZ-Ki; Tue, 30 Apr 2019 15:27:58 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLUff-0005OU-KB
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 15:27:53 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E0BE6374;
- Tue, 30 Apr 2019 08:27:48 -0700 (PDT)
-Received: from [10.1.196.92] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- ECEC73F719; Tue, 30 Apr 2019 08:27:46 -0700 (PDT)
-Subject: Re: [PATCH 7/7] clocksource/arm_arch_timer: Use
- arch_timer_read_counter to access stable counters
-To: Daniel Lezcano <daniel.lezcano@linaro.org>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20190408154907.223536-1-marc.zyngier@arm.com>
- <20190408154907.223536-8-marc.zyngier@arm.com>
- <2a60a031-1eab-2d5e-89ff-b5d516545eeb@linaro.org>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
-Organization: ARM Ltd
-Message-ID: <bbe9b8c1-132f-bbfa-e3d0-ad10c4165ad7@arm.com>
-Date: Tue, 30 Apr 2019 16:27:43 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hLUnD-0000yO-DQ; Tue, 30 Apr 2019 15:35:39 +0000
+Received: from mail-lj1-x230.google.com ([2a00:1450:4864:20::230])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hLUn6-0000xN-3B
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 15:35:33 +0000
+Received: by mail-lj1-x230.google.com with SMTP id b12so12041553lji.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 30 Apr 2019 08:35:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=dbHSEqNDiOxiHzZiYNZUUpwTRk0HKkvunAYxy9ES2/8=;
+ b=rseMb/TMnUkjY/Q1nBBHmXfBRzen2JNFiVyu7sAXB7R7vj4iaHt6pQ+2mgJnacTZiL
+ YeWYW6d7Ljw/fsDRz6vN0WECs6Z09eIpm3XY8u3otZz72BVIDCdvcIZl0NCiO5LmWcVz
+ P0IW97FTbdE7o0QXblhwygTtnZ7/3ADIwx3RnHZEq9A1CEPbGQ6crn8qzoZSZ8+36Crt
+ k7VBVljrq7PkGaYO6t8rHXiS+JHKPwqaKAt8FaljDfQCSf3RZqGvle/jSwe8oU0iEmt7
+ 3dfPOLHyu8gQpgNQ+HCwnpIlwsRUzkuZ9pBwUlUUuMekcDoAhQBszS5j4yu/JNA7GG80
+ pJag==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=dbHSEqNDiOxiHzZiYNZUUpwTRk0HKkvunAYxy9ES2/8=;
+ b=lyGik63leDx+SRZkG3COoeFdqHQddRtTA6y7yja3kLunUbv4mWDA+gcGAZfsd3fvau
+ OOY7B3z1V75rl2SBtxdZraDCHa5i2PSn6yX91dM+9cNXXA5tirxndvJtNBD3KIPBKRJV
+ l4/ykKO1WpOZBPgjB8rgWM/T6mC/i8txHj+FOz71Uuf5r87xg3fWRyZvCTVxr+pwHkKx
+ V3/+EUv13EDLSTg6H5X9f/mvQ6WJt9v2jUl8gqLRtQNThfmvul4GbEsmnTUb+9uEuM8i
+ 8GuATmjU9/wqQTj762+8ND4lhYLqwB7/V4bi59fbwuYY1yZ/5spE6iM8biCnR+wLRb9e
+ Wr8Q==
+X-Gm-Message-State: APjAAAU8Kd1cYP/x3y/pwUoHtnR1/KEsE8bh07xD51n917qHJyhUkTH0
+ JPYPt9Frly9Qeymt+fosO3ylLzq6Bh5LiSlY/Brj7iNZI4Q=
+X-Google-Smtp-Source: APXvYqy70rrpqiD3zNRcskZueJKPlnS7E1HY0wIxZYJ3X0k88dn9bOeW8SVy801mQKldub9s61qt4ukXhfh956Wk7ik=
+X-Received: by 2002:a2e:9753:: with SMTP id f19mr38837420ljj.54.1556638530065; 
+ Tue, 30 Apr 2019 08:35:30 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <2a60a031-1eab-2d5e-89ff-b5d516545eeb@linaro.org>
-Content-Language: en-US
+References: <kcis.E7DDD7DFA27C49D7987A7EAB797CB891@DHPLMX01>
+In-Reply-To: <kcis.E7DDD7DFA27C49D7987A7EAB797CB891@DHPLMX01>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Tue, 30 Apr 2019 12:35:21 -0300
+Message-ID: <CAOMZO5C=E461yvHJ1PS7JE_ivS1cn82SKT2vvFDOjHqUnZUqaQ@mail.gmail.com>
+Subject: Re: cpu power up timing changes causes UART rx character loss on
+ imx6ull
+To: Christoph Niedermaier <cniedermaier@dh-electronics.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_082751_674460_D759F0EA 
-X-CRM114-Status: GOOD (  17.77  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190430_083532_148575_1A764147 
+X-CRM114-Status: GOOD (  12.55  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:230 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -111,60 +92,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Russell King <linux@arm.linux.org.uk>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- Valentin Schneider <valentin.schneider@arm.com>,
- Guenter Roeck <linux@roeck-us.net>
+Cc: "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
+ Anson Huang <anson.huang@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-imx@nxp.com" <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 15/04/2019 13:16, Daniel Lezcano wrote:
-> On 08/04/2019 17:49, Marc Zyngier wrote:
->> Instead of always going via arch_counter_get_cntvct_stable to
->> access the counter workaround, let's have arch_timer_read_counter
->> to point to the right method.
->>
->> For that, we need to track whether any CPU in the system has a
->> workaround for the counter. This is done by having an atomic
->> variable tracking this.
->>
->> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
->> ---
-> 
-> [ ... ]
-> 
->> +
->>  /*
->>   * Default to cp15 based access because arm64 uses this function for
->>   * sched_clock() before DT is probed and the cp15 method is guaranteed
->> @@ -372,6 +392,7 @@ static u32 notrace sun50i_a64_read_cntv_tval_el0(void)
->>  DEFINE_PER_CPU(const struct arch_timer_erratum_workaround *, timer_unstable_counter_workaround);
->>  EXPORT_SYMBOL_GPL(timer_unstable_counter_workaround);
->>  
->> +static atomic_t timer_unstable_counter_workaround_in_use = ATOMIC_INIT(0);
-> 
-> Wouldn't make sense to READ_ONCE / WRITE_ONCE instead of using an atomic?
+Hi Christoph,
 
-I don't think *_ONCE says anything about the atomicity of the access. It
-only instruct the compiler that this should only be accessed once, and
-not reloaded/rewritten. In this case, WRITE_ONCE() would work just as
-well, but I feel that setting the expectations do matter.
+On Tue, Apr 30, 2019 at 11:10 AM Christoph Niedermaier
+<cniedermaier@dh-electronics.com> wrote:
+>
+> Hello,
+>
+> I have found out that the commit 1e434b703248 ("ARM: imx: update the cpu power up timing setting on i.mx6sx") causes UART rx character loss on imx6ull.
+> The commit is designed for imx6sx, but it also changes the cpu power up timing of the imx6ull, because function imx6sx_cpuidle_init() is also used for imx6ull.
+>
+> After receiving of 32 characters correctly, the following characters 33-36 gets lost if there is no delay in the transmission.
+> I connect the imx6ull with a native PC COM port.
+>
+> If I revert the commit I will receive all characters correctly.
 
-I also had a vague idea to use this as a refcount to drop the
-workarounds as CPUs get hotplugged off, in which case we'd need the RMW
-operations to be atomic.
+Thanks for the report.
 
-Anyway, I'm not hell bent on this. If you fundamentally disagree with me
-I'll change it.
+It seems we need to change sw2iso only for mx6sx and not for imx6ul.
 
-Thanks,
+Could you please test the following patch?
+http://code.bulix.org/crpbf9-684699
 
-	M.
--- 
-Jazz is not dead. It just smells funny...
+Thanks
 
 _______________________________________________
 linux-arm-kernel mailing list
