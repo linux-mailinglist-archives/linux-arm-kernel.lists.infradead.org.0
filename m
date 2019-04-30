@@ -2,73 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93883EE35
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 03:15:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A46FAEE3D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 03:16:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PkPickNSKIW3XVv7I5n8917YZgox0xvSLWMSiMHpQoo=; b=RlNNXDx/cz8qX6
-	F07hQTPmX2Qo7TX12XmIjh/6q4v5w9PDE0cBGASkHd4ZLKP1lhHcie9UNeescps8CbTRn3+CIvSi5
-	1ao/190hKU2e0Emwi5/SG+CmqU/2PNOO7Fgi2bCziEtElqt/RdGiuHb1fNzXa7a6uoo7SrveGw03L
-	FwEvxAs+qHsK6QnmPcS+VQrskxG8yuPAvrSr/8OT1CFgkecT95vi81N6YICJUfzFr4rgk8wPfk4xY
-	fUR6OQs8FWrZDwFzIaf0ubq43jOyDJ85xCVoGj6c0b3gtvRq16I/j1D0Q8aVwzCIX5cV1Ukt4Mi5w
-	W0+wpzZeZ8BbbBewJS1w==;
+	List-Owner; bh=PvE7dA65zpfLOaAgqFdeJtTfakQKKfndJLR+E2Nqs9A=; b=Ac96V1/OyT7rAk
+	0EBN02XF63ojx99OJDmohpCo9nuU7ojrGz7nkSRUMCwq2r5VkX+lVR6yvJCRwhfPXEB7MAjh5f5kW
+	hDKCQIHCe2mXQuqu8KIdASTtIOFstSoG9nxM94xpTwps1veGHrNZu162rWMtyVFTTRAn+Wso0yK/k
+	6zGtLvlKvpK1vM96KoXfN8XzOBrno4OkNiM54Zhcd++fLN24nakLSqZpjuR+5UxHQa6RLsK87egy3
+	ttxeZYTlDUW8oaONNwz7NzZ70gouZM/APSroFRO4FW2IB2bFCJxQmASmGgQ42TMnCH0E+KnaSwEI2
+	TjQ/BOuMdRBI/h8W2Rxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLHMc-0000SE-3P; Tue, 30 Apr 2019 01:15:18 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1hLHNm-0000mF-CF; Tue, 30 Apr 2019 01:16:30 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLHMT-0000Qt-5A; Tue, 30 Apr 2019 01:15:10 +0000
-Received: by mail-ot1-f66.google.com with SMTP id r20so9319632otg.4;
- Mon, 29 Apr 2019 18:15:08 -0700 (PDT)
+ id 1hLHNd-0000l3-Sx; Tue, 30 Apr 2019 01:16:23 +0000
+Received: by mail-ot1-f65.google.com with SMTP id b18so1454126otq.3;
+ Mon, 29 Apr 2019 18:16:21 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=NeVwMYlomqJ0FeYvQcVMOgeUQOrj8gToq74sIwHDDfs=;
- b=EkHznH3TqHa+32ALWfHHCN4+6Isd7DwVBzizDORMw+3WNL6H5EgLI78VB6ksKPx9EO
- zY0LdbsVy/3pLHiuq+fZWf8gfkkZdz+OpIHvsZpk5HxQ+yjyEeZscUYRzScOfrUVpWMb
- dts+JNhCMKa05GmDetnvDYDYZaRU7Uop1ohU4T0L3Dvbk4bHm0cCPROOO450S1jwsYu5
- x8KZXjuhfQslEIdT2t0yYQ5zOAQvHD9kqmJleizev9l62Egrf7HyZv+B429t086xLU1B
- Jm1bVUZ6Urm6PzLMsNPEvWMrL17B/mTtON1BSv1qbqmAzoBPfxgC0TH4I/lcgJwLq0/t
- u1sA==
-X-Gm-Message-State: APjAAAXSCBdQR3TC6z0Fup0DEv6ly3gzypMdhCl4WgKfhg1gEipQ5SMc
- MfWDo+jkir+e1CeQwIk6UA==
-X-Google-Smtp-Source: APXvYqze9aYwnpsa/3SpoyY5RkNLINJC4nPMtI/5aHOuoiOQeBQWrG1+vcVxyqtcshxblezJVf+InA==
-X-Received: by 2002:a9d:2237:: with SMTP id o52mr1406933ota.272.1556586908019; 
- Mon, 29 Apr 2019 18:15:08 -0700 (PDT)
+ bh=SQZxWQDZW8/QOAQDuwFNwl//qikn1cHVqQ6ue/TM68k=;
+ b=VBpl2fHja+h8rQyU1EGbXKNtkncqWRXDbLH43k7OGqT0lEEDC2PNCwGXZ8rhsOtxnQ
+ IlE1teOdja1n7YbBbkoillMR9SsST749CTv8zALVVXBDsNZo/Ux2VrctL3LzivkJDR3z
+ raqgE/XG0/HPhx1biyL0IKjR2ton2yQr1KLgnIzHL/kiYZ2BWgWAFDc7nzb0lw+iZ/uU
+ SoCTu/K7aW/TrOITG9oVuR00o4ThK9j6QPhW1qYK1NkOmEhiXZzFAiluGuy66OvowIP5
+ 5ADP1Gr3L6aXwF5zBgfUqAAufUtGDCX+e+VddQYoNmydTbDa5qnUy6Po6jbySt3StE7F
+ WWvQ==
+X-Gm-Message-State: APjAAAVdeE/pdgF89CRA0xoeix4ZW7AaM3fwpwQxHavvzbB76WbilOIz
+ 6PeFuSIlS4ji09RFv01zYA==
+X-Google-Smtp-Source: APXvYqxSqUjuRyMgW1bUn+uBZ/b9Nz+CnOlelgEI3LlYald3OCQLZm1tFowOlbDv5zDh0+v4cWxXUg==
+X-Received: by 2002:a05:6830:1248:: with SMTP id
+ s8mr89131otp.234.1556586980916; 
+ Mon, 29 Apr 2019 18:16:20 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id z2sm17168652ota.56.2019.04.29.18.15.06
+ by smtp.gmail.com with ESMTPSA id h23sm16727340oic.10.2019.04.29.18.16.20
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 29 Apr 2019 18:15:06 -0700 (PDT)
-Date: Mon, 29 Apr 2019 20:15:06 -0500
+ Mon, 29 Apr 2019 18:16:20 -0700 (PDT)
+Date: Mon, 29 Apr 2019 20:16:19 -0500
 From: Rob Herring <robh@kernel.org>
 To: Frederic Chen <frederic.chen@mediatek.com>
-Subject: Re: [RFC PATCH V1 1/6] dt-bindings: mt8183: Add binding for DIP
- shared memory
-Message-ID: <20190430011506.GA8514@bogus>
+Subject: Re: [RFC PATCH V1 3/6] dt-bindings: mt8183: Added DIP dt-bindings
+Message-ID: <20190430011619.GA22170@bogus>
 References: <20190417104511.21514-1-frederic.chen@mediatek.com>
- <20190417104511.21514-2-frederic.chen@mediatek.com>
+ <20190417104511.21514-4-frederic.chen@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190417104511.21514-2-frederic.chen@mediatek.com>
+In-Reply-To: <20190417104511.21514-4-frederic.chen@mediatek.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_181509_213731_2460BE18 
-X-CRM114-Status: GOOD (  20.99  )
+X-CRM114-CacheID: sfid-20190429_181621_931278_454C18EB 
+X-CRM114-Status: GOOD (  16.94  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
+ no trust [209.85.210.65 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
  0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -76,7 +74,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -103,78 +100,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 17, 2019 at 06:45:06PM +0800, Frederic Chen wrote:
-> This patch adds the binding for describing the shared memory
-> used to exchange configuration and tuning data between the
-> co-processor and Digital Image Processing (DIP) unit of the
-> camera ISP system on Mediatek SoCs.
+On Wed, Apr 17, 2019 at 06:45:08PM +0800, Frederic Chen wrote:
+> This patch adds DT binding documentation for the Digital Image
+> Processing (DIP) unit of camera ISP system on Mediatek's SoCs.
 > 
 > Signed-off-by: Frederic Chen <frederic.chen@mediatek.com>
 > ---
->  .../mediatek,reserve-memory-dip_smem.txt      | 45 +++++++++++++++++++
->  1 file changed, 45 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/reserved-memory/mediatek,reserve-memory-dip_smem.txt
+>  .../bindings/media/mediatek,mt8183-dip.txt    | 35 +++++++++++++++++++
+>  1 file changed, 35 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/media/mediatek,mt8183-dip.txt
 > 
-> diff --git a/Documentation/devicetree/bindings/reserved-memory/mediatek,reserve-memory-dip_smem.txt b/Documentation/devicetree/bindings/reserved-memory/mediatek,reserve-memory-dip_smem.txt
+> diff --git a/Documentation/devicetree/bindings/media/mediatek,mt8183-dip.txt b/Documentation/devicetree/bindings/media/mediatek,mt8183-dip.txt
 > new file mode 100644
-> index 000000000000..64c001b476b9
+> index 000000000000..0e1994bf82f0
 > --- /dev/null
-> +++ b/Documentation/devicetree/bindings/reserved-memory/mediatek,reserve-memory-dip_smem.txt
-> @@ -0,0 +1,45 @@
-> +Mediatek DIP Shared Memory binding
+> +++ b/Documentation/devicetree/bindings/media/mediatek,mt8183-dip.txt
+> @@ -0,0 +1,35 @@
+> +* Mediatek Digital Image Processor (DIP)
 > +
-> +This binding describes the shared memory, which serves the purpose of
-> +describing the shared memory region used to exchange data between Digital
-> +Image Processing (DIP) and co-processor in Mediatek SoCs.
-> +
-> +The co-processor doesn't have the iommu so we need to use the physical
-> +address to access the shared buffer in the firmware.
-> +
-> +The Digital Image Processing (DIP) can access memory through mt8183 IOMMU so
-> +it can use dma address to access the memory region.
-> +(See iommu/mediatek,iommu.txt for the detailed description of Mediatek IOMMU)
-> +
+> +Digital Image Processor (DIP) unit in Mediatek ISP system is responsible for
+> +image content adjustment according to the tuning parameters. DIP can process
+> +the image form memory buffer and output the processed image to multiple output
+> +buffers. Furthermore, it can support demosaicing and noise reduction on the
+> +images.
 > +
 > +Required properties:
-> +
-> +- compatible: must be "mediatek,reserve-memory-dip_smem"
-
-Don't use '_'.
-
-> +
-> +- reg: required for static allocation (see reserved-memory.txt for
-> +  the detailed usage)
-> +
-> +- alloc-range: required for dynamic allocation. The range must
-> +  between 0x00000400 and 0x100000000 due to the co-processer's
-> +  addressing limitation
-
-Generally, you should pick either static or dynamic allocation for a 
-given binding. Static if there's some address restriction or sharing, 
-dynamic if not.
-
-Sounds like static in this case.
-
-> +
-> +- size: required for dynamic allocation. The unit is bytes.
-> +  If you want to enable the full feature of Digital Processing Unit,
-> +  you need 20 MB at least.
-> +
+> +- compatible: "mediatek,mt8183-dip"
+> +- reg: Physical base address and length of the function block register space
+> +- interrupts: interrupt number to the cpu
+> +- iommus: should point to the respective IOMMU block with master port as
+> +  argument, see Documentation/devicetree/bindings/iommu/mediatek,iommu.txt
+> +  for details.
+> +- mediatek,larb: must contain the local arbiters in the current Socs, see
+> +  Documentation/devicetree/bindings/memory-controllers/mediatek,smi-larb.txt
+> +  for details.
+> +- clocks: must contain the local arbiters 5 (LARB5) and DIP clock
+> +- clock-names: must contain DIP_CG_IMG_LARB5 and DIP_CG_IMG_DIP
 > +
 > +Example:
-> +
-> +The following example shows the DIP shared memory setup for MT8183.
-> +
-> +	reserved-memory {
-> +		#address-cells = <2>;
-> +		#size-cells = <2>;
-> +		ranges;
-> +		reserve-memory-dip_smem {
-> +			compatible = "mediatek,reserve-memory-dip_smem";
-> +			size = <0 0x1400000>;
-> +			alignment = <0 0x1000>;
-> +			alloc-ranges = <0 0x40000000 0 0x50000000>;
-> +		};
+> +	dip: dip@15022000 {
+> +		compatible = "mediatek,mt8183-dip";
+> +		mediatek,larb = <&larb5>;
+
+> +		mediatek,mdp3 = <&mdp_rdma0>;
+> +		mediatek,vpu = <&vpu>;
+
+Not documented.
+
+> +		iommus = <&iommu M4U_PORT_CAM_IMGI>;
+> +		reg = <0 0x15022000 0 0x6000>;
+> +		interrupts = <GIC_SPI 268 IRQ_TYPE_LEVEL_LOW>;
+> +		clocks = <&imgsys CLK_IMG_LARB5>,
+> +			 <&imgsys CLK_IMG_DIP>;
+> +		clock-names = "DIP_CG_IMG_LARB5",
+> +			      "DIP_CG_IMG_DIP";
 > +	};
 > -- 
 > 2.18.0
