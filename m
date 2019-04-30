@@ -2,35 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 287B8F4DC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 12:57:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 785A6F4E4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 12:58:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bPDHj8wkGQrQdZ0Q2XgEccgr8wgm9/zbl0JYUFfi5NE=; b=OhteOZ0UMycD31
-	PyljBSk/065DulHmclbOaf81SqEzEPwoS0qFe78UP4qz4lNPE+PfqmOdsQUf9oRklCxbaSVFW49Vx
-	2I5YtYAE6992YBhza8ViXQCaCyQvqKWhsWMp3ZfpN+9U3aV/tKRnt3PjCacwM3LGzreaw8tjKZCjO
-	YkKHLnoOAlH4/Y494LoWm9bXmR69qbhFFMquwEoBBOH93cI6tfS8xNOdBNEgjUVcHpojWDFgSvFRv
-	0DJPYwYVsxl2HtJK97V0tIg+gAUL0h2i8Rsqrj9NhH26WaU7zTiAy3mGltg3Zv7XZ92Knqi9TjPwF
-	+TOTl9krmnEvMRSAo7UA==;
+	List-Owner; bh=YlHMWmrYnkKnqF8J6cYk6X5d4BHZO3A3jfelnZg6kgU=; b=tp+Spq16QABoFD
+	DBi0TV+88U6t7sFTqVrnH6DTBJTvWRsidOj/WxdlA/CqEdJc0EBacrS4gvySrXcv0aXB5wPMFRmAv
+	foyfjHIz9St5gQF9WbNVvacDddQdvfZWlBvvPqtdjm4tgr2co7iOXCJDYajVtfv7MmLSTTt138ypn
+	+AoZRz8xlD7Z5K+c2sOsUrq1SJFKn7KqX4nOUOl4FI5PEuFp9VjvcHg4nYbQbhXBqxfhxQoGYODzg
+	KbSrJFFOFTR7LWhLDasT0G5zzuicW1mqiJkXvGW8Z9u3PTmtWf4Kou451DdqaaLJLHh6SdIz9LxLS
+	79w4hFqJgHjHpK2Ratuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLQRd-0005XK-69; Tue, 30 Apr 2019 10:57:05 +0000
-Received: from adsl-173-228-226-134.prtc.net ([173.228.226.134] helo=localhost)
- by bombadil.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLQOA-0008Ft-PN; Tue, 30 Apr 2019 10:53:31 +0000
+	id 1hLQTC-00072j-TJ; Tue, 30 Apr 2019 10:58:42 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hLQRf-0005mJ-Ok
+ for linux-arm-kernel@bombadil.infradead.org; Tue, 30 Apr 2019 10:57:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=ra2kVibUVn9/VQ0SNXVhYqTlrrhSqFlW+gpyazu5fno=; b=j31sqtMPWq78gM6GoaDwfINA/
+ ho72r37XZbFCvSIW6IRin6euc2DTtQlk28/Oh2b8dx37AO/uDHnnz8cedVLdph37j9Ajio4uOF5qS
+ MpL+oWDYGhbPBNQssT9/1Mn2hG7BVUXL36eA48+0/eTL0AYTo0ar0W8JpLXT0hYeeghxHlsLOvEdm
+ 0me+maBH9ZmpLAmpfGFcH87HVHk9C1Akhr2qVcRPRtCdrqFf2SzGmmhnKhtHv4Z93O12DhK36rnK7
+ 80xOZ3kjZzuZS7z9X1tvcU7D+UJ1JIMylp8CkPbM8IlYsM2aZmVfS6j0cYadovvvOvVsoxFSvBEGC
+ EQjTDKENQ==;
+Received: from verein.lst.de ([213.95.11.211] helo=newverein.lst.de)
+ by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hLQRc-0008Ld-PP
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 10:57:05 +0000
+Received: by newverein.lst.de (Postfix, from userid 2407)
+ id B83E068B20; Tue, 30 Apr 2019 12:56:40 +0200 (CEST)
+Date: Tue, 30 Apr 2019 12:56:40 +0200
 From: Christoph Hellwig <hch@lst.de>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: [PATCH 25/25] arm64: trim includes in dma-mapping.c
-Date: Tue, 30 Apr 2019 06:52:14 -0400
-Message-Id: <20190430105214.24628-26-hch@lst.de>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190430105214.24628-1-hch@lst.de>
-References: <20190430105214.24628-1-hch@lst.de>
+To: Nicolin Chen <nicoleotsuka@gmail.com>
+Subject: Re: [RFC/RFT PATCH 1/2] dma-contiguous: Simplify
+ dma_*_from_contiguous() function calls
+Message-ID: <20190430105640.GA20021@lst.de>
+References: <20190430015521.27734-1-nicoleotsuka@gmail.com>
+ <20190430015521.27734-2-nicoleotsuka@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190430015521.27734-2-nicoleotsuka@gmail.com>
+User-Agent: Mutt/1.5.17 (2007-11-01)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190430_065704_938051_77199C83 
+X-CRM114-Status: UNSURE (   6.05  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [213.95.11.211 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -42,50 +75,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tom Lendacky <thomas.lendacky@amd.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Joerg Roedel <joro@8bytes.org>,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org
+Cc: tony@atomide.com, catalin.marinas@arm.com, will.deacon@arm.com,
+ jcmvbkbc@gmail.com, hch@lst.de, m.szyprowski@samsung.com, sfr@canb.auug.org.au,
+ joro@8bytes.org, linux@armlinux.org.uk, treding@nvidia.com,
+ linux-xtensa@linux-xtensa.org, keescook@chromium.org,
+ akpm@linux-foundation.org, linux-arm-kernel@lists.infradead.org,
+ chris@zankel.net, wsa+renesas@sang-engineering.com, robin.murphy@arm.com,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ iamjoonsoo.kim@lge.com, dwmw2@infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-With most of the previous functionality now elsewhere a lot of the
-headers included in this file are not needed.
+So while I really, really like this cleanup it turns out it isn't
+actually safe for arm :(  arm remaps the CMA allocation in place
+instead of using a new mapping, which can be done because they don't
+share PMDs with the kernel.
 
-Signed-off-by: Christoph Hellwig <hch@lst.de>
----
- arch/arm64/mm/dma-mapping.c | 10 ----------
- 1 file changed, 10 deletions(-)
+So we'll probably need a __dma_alloc_from_contiguous version with
+an additional bool fallback argument - everyone but arms uses
+dma_alloc_from_contiguous as in your patch, just arm will get the
+non-fallback one.
 
-diff --git a/arch/arm64/mm/dma-mapping.c b/arch/arm64/mm/dma-mapping.c
-index 184ef9ccd69d..1669618db08a 100644
---- a/arch/arm64/mm/dma-mapping.c
-+++ b/arch/arm64/mm/dma-mapping.c
-@@ -5,19 +5,9 @@
-  */
- 
- #include <linux/gfp.h>
--#include <linux/acpi.h>
--#include <linux/memblock.h>
- #include <linux/cache.h>
--#include <linux/export.h>
--#include <linux/slab.h>
--#include <linux/genalloc.h>
--#include <linux/dma-direct.h>
- #include <linux/dma-noncoherent.h>
--#include <linux/dma-contiguous.h>
- #include <linux/dma-iommu.h>
--#include <linux/vmalloc.h>
--#include <linux/swiotlb.h>
--#include <linux/pci.h>
- 
- #include <asm/cacheflush.h>
- 
--- 
-2.20.1
-
+Sorry for not sorting this our earlier.
 
 _______________________________________________
 linux-arm-kernel mailing list
