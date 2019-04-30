@@ -2,58 +2,36 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C52B8F51B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 13:10:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CE1DF52E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 13:12:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iqreCwcYEpDUWpheYT2FjY4NcBcDXvu20awwC27ejpU=; b=nAGQP4Rsig8XPR
-	t2IscmVoRfH6tz6ffLfHcICMcZbIFmTs9sRb5qBH2B72FkylZkN48hOb6rEIy1sgK9zKcN62B47gS
-	Uaxoq4XWYOKDqluwkx+0G83P6Nn5dBvrJ0+lrOIHrXRE9m6+64G+mUmq5yH3nqPkrNs+JsqRxV0kc
-	wmFupsgKej+HMo0+SS2771VPrbicvlqdC+B7bYdd5d2Yn2+MHnRGjXdNhlSQZbaP5hmVnu5KPeL4i
-	dylwdEEKIL+/YO5gCXvTXBSU9iPMMZGIQSbfDH3ePAIrIoFsw+SRByaCJHLsk0hqk3kxrbKaKXv+F
-	6HLWsyL0qPzEdUELcREg==;
+	List-Owner; bh=9ag7ok18NsLGJgQdvnAqH9oRu/fD7UJ9inBuSeNpW0s=; b=gLb1UyU0fR5rKS
+	Z4tMLGljQP+783rKbeDaBSj3JCyMyaMAuvDRU3T4uiQqzGRK/QGR42B4c0WYTXpQy/E957opaM/oR
+	txH79GB6UKDVZEdjzXu6DFodbfK2XG4cNSywLNIKJytvaSOv4sDv5Ox9/WBprCJ9OHFYz4gvS7D+T
+	LbsrChXNErctpfGgUi8VkgdLdoGt4hsufy5vN14ao7NoYZO6L1lYCIgA/AeE33C13tQWdFsJ0lCNr
+	hQWadY3yzOQfQh+jdgTeIAmh3JXadodUwxiHiZVnFhDexqf8MTyJ+2ad9CY+8eIg8/IXmTqMBTUG+
+	vtivNbv6w0M0iDVayilw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLQeM-000408-Mi; Tue, 30 Apr 2019 11:10:14 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLQe9-0003Ro-M1
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 11:10:03 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5DC7680D;
- Tue, 30 Apr 2019 04:10:00 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E7F8A3F5C1;
- Tue, 30 Apr 2019 04:09:59 -0700 (PDT)
-Date: Tue, 30 Apr 2019 12:09:58 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Dave Martin <Dave.Martin@arm.com>
-Subject: Re: [PATCH v5 1/6] arm64: HWCAP: add support for AT_HWCAP2
-Message-ID: <20190430110957.GA33049@e119886-lin.cambridge.arm.com>
-References: <20190409095245.42524-1-andrew.murray@arm.com>
- <20190409095245.42524-2-andrew.murray@arm.com>
- <20190416135157.GH3313@fuggles.cambridge.arm.com>
- <20190416163041.GU3567@e103592.cambridge.arm.com>
+	id 1hLQgb-0005FG-9S; Tue, 30 Apr 2019 11:12:33 +0000
+Received: from hch by bombadil.infradead.org with local (Exim 4.90_1 #2 (Red
+ Hat Linux)) id 1hLQgR-0005Dn-0q; Tue, 30 Apr 2019 11:12:23 +0000
+Date: Tue, 30 Apr 2019 04:12:22 -0700
+From: Christoph Hellwig <hch@infradead.org>
+To: Tom Murphy <tmurphy@arista.com>
+Subject: Re: [PATCH v2 3/4] iommu/dma-iommu: Use the dev->coherent_dma_mask
+Message-ID: <20190430111222.GA3191@infradead.org>
+References: <20190430002952.18909-1-tmurphy@arista.com>
+ <20190430002952.18909-4-tmurphy@arista.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190416163041.GU3567@e103592.cambridge.arm.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_041001_992122_D432A831 
-X-CRM114-Status: GOOD (  33.63  )
-X-Spam-Score: -5.0 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+In-Reply-To: <20190430002952.18909-4-tmurphy@arista.com>
+User-Agent: Mutt/1.9.2 (2017-12-15)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -65,148 +43,135 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, libc-alpha@sourceware.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Phil Blundell <pb@pbcl.net>, linux-api@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Heiko Stuebner <heiko@sntech.de>, Will Deacon <will.deacon@arm.com>,
+ David Brown <david.brown@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>, linux-s390@vger.kernel.org,
+ linux-samsung-soc@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>, linux-rockchip@lists.infradead.org,
+ Kukjin Kim <kgene@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ Andy Gross <andy.gross@linaro.org>, linux-arm-msm@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-tegra@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, David Woodhouse <dwmw2@infradead.org>,
+ linux-kernel@vger.kernel.org, murphyt7@tcd.ie,
+ iommu@lists.linux-foundation.org, Robin Murphy <robin.murphy@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 16, 2019 at 05:30:41PM +0100, Dave Martin wrote:
-> On Tue, Apr 16, 2019 at 02:51:57PM +0100, Will Deacon wrote:
-> > On Tue, Apr 09, 2019 at 10:52:40AM +0100, Andrew Murray wrote:
-> > > As we will exhaust the first 32 bits of AT_HWCAP let's start
-> > > exposing AT_HWCAP2 to userspace to give us up to 64 caps.
-> > > 
-> > > Whilst it's possible to use the remaining 32 bits of AT_HWCAP, we
-> > > prefer to expand into AT_HWCAP2 in order to provide a consistent
-> > > view to userspace between ILP32 and LP64. However internal to the
-> > > kernel we prefer to continue to use the full space of elf_hwcap.
-> > > 
-> > > To reduce complexity and allow for future expansion, we now
-> > > represent hwcaps in the kernel as ordinals and use a
-> > > KERNEL_HWCAP_ prefix. This allows us to support automatic feature
-> > > based module loading for all our hwcaps.
-> > > 
-> > > We introduce cpu_set_feature to set hwcaps which complements the
-> > > existing cpu_have_feature helper. These helpers allow us to clean
-> > > up existing direct uses of elf_hwcap and reduce any future effort
-> > > required to move beyond 64 caps.
-> > > 
-> > > For convenience we also introduce cpu_{have,set}_named_feature which
-> > > makes use of the cpu_feature macro to allow providing a hwcap name
-> > > without a {KERNEL_}HWCAP_ prefix.
-> > > 
-> > > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
-> > > ---
-> > >  Documentation/arm64/elf_hwcaps.txt       | 14 +++--
-> > >  arch/arm64/crypto/aes-ce-ccm-glue.c      |  2 +-
-> > >  arch/arm64/crypto/aes-neonbs-glue.c      |  2 +-
-> > >  arch/arm64/crypto/chacha-neon-glue.c     |  2 +-
-> > >  arch/arm64/crypto/crct10dif-ce-glue.c    |  4 +-
-> > >  arch/arm64/crypto/ghash-ce-glue.c        |  8 +--
-> > >  arch/arm64/crypto/nhpoly1305-neon-glue.c |  2 +-
-> > >  arch/arm64/crypto/sha256-glue.c          |  4 +-
-> > >  arch/arm64/include/asm/cpufeature.h      | 22 ++++----
-> > >  arch/arm64/include/asm/hwcap.h           | 52 ++++++++++++++++++-
-> > >  arch/arm64/include/uapi/asm/hwcap.h      |  2 +-
-> > >  arch/arm64/kernel/cpufeature.c           | 66 ++++++++++++------------
-> > >  arch/arm64/kernel/cpuinfo.c              |  2 +-
-> > >  arch/arm64/kernel/fpsimd.c               |  4 +-
-> > >  drivers/clocksource/arm_arch_timer.c     |  8 +++
-> > >  15 files changed, 131 insertions(+), 63 deletions(-)
-> > > 
-> > > diff --git a/Documentation/arm64/elf_hwcaps.txt b/Documentation/arm64/elf_hwcaps.txt
-> > > index 13d6691b37be..c04f8e87bab8 100644
-> > > --- a/Documentation/arm64/elf_hwcaps.txt
-> > > +++ b/Documentation/arm64/elf_hwcaps.txt
-> > > @@ -13,9 +13,9 @@ architected discovery mechanism available to userspace code at EL0. The
-> > >  kernel exposes the presence of these features to userspace through a set
-> > >  of flags called hwcaps, exposed in the auxilliary vector.
-> > >  
-> > > -Userspace software can test for features by acquiring the AT_HWCAP entry
-> > > -of the auxilliary vector, and testing whether the relevant flags are
-> > > -set, e.g.
-> > > +Userspace software can test for features by acquiring the AT_HWCAP or
-> > > +AT_HWCAP2 entry of the auxiliary vector, and testing whether the relevant
-> > > +flags are set, e.g.
-> > >  
-> > >  bool floating_point_is_present(void)
-> > >  {
-> > > @@ -194,3 +194,11 @@ HWCAP_PACG
-> > >      Functionality implied by ID_AA64ISAR1_EL1.GPA == 0b0001 or
-> > >      ID_AA64ISAR1_EL1.GPI == 0b0001, as described by
-> > >      Documentation/arm64/pointer-authentication.txt.
-> > > +
-> > > +
-> > > +4. Unused AT_HWCAP bits
-> > > +-----------------------
-> > > +
-> > > +Each AT_HWCAP and AT_HWCAP2 entry provides for up to 32 hwcaps contained
-> > > +in bits [31:0]. For interoperation with userspace we guarantee that bits
-> > > +62 and 63 of AT_HWCAP will always be returned as 0.
-> > 
-> > I'm a little nervous about the first sentence here, since it could be
-> > taken to mean that we will never allocate 61:32. Mind if I drop it?
-> 
-> Ack: I don't think we want to say explicitly that we will never use
-> those bits, apart from AT_HWCAP[63:62] for which there are specific
-> reasons.
+>  static dma_addr_t __iommu_dma_map(struct device *dev, phys_addr_t phys,
+> -		size_t size, int prot, struct iommu_domain *domain)
+> +		size_t size, int prot, struct iommu_domain *domain,
+> +		dma_addr_t dma_limit)
 
-No problem with me. Thanks for making this change (and const_ilog2).
+Can we just call this dma_mask?
 
-> 
-> (For now of course, we won't use them.)
-> 
-> > > diff --git a/drivers/clocksource/arm_arch_timer.c b/drivers/clocksource/arm_arch_timer.c
-> > > index aa4ec53281ce..6cc8aff83805 100644
-> > > --- a/drivers/clocksource/arm_arch_timer.c
-> > > +++ b/drivers/clocksource/arm_arch_timer.c
-> > > @@ -833,7 +833,11 @@ static void arch_timer_evtstrm_enable(int divider)
-> > >  	cntkctl |= (divider << ARCH_TIMER_EVT_TRIGGER_SHIFT)
-> > >  			| ARCH_TIMER_VIRT_EVT_EN;
-> > >  	arch_timer_set_cntkctl(cntkctl);
-> > > +#ifdef CONFIG_ARM64
-> > > +	cpu_set_named_feature(EVTSTRM);
-> > > +#else
-> > >  	elf_hwcap |= HWCAP_EVTSTRM;
-> > > +#endif
-> > >  #ifdef CONFIG_COMPAT
-> > >  	compat_elf_hwcap |= COMPAT_HWCAP_EVTSTRM;
-> > >  #endif
-> > > @@ -1055,7 +1059,11 @@ static int arch_timer_cpu_pm_notify(struct notifier_block *self,
-> > >  	} else if (action == CPU_PM_ENTER_FAILED || action == CPU_PM_EXIT) {
-> > >  		arch_timer_set_cntkctl(__this_cpu_read(saved_cntkctl));
-> > >  
-> > > +#ifdef CONFIG_ARM64
-> > > +		if (cpu_have_named_feature(EVTSTRM))
-> > > +#else
-> > >  		if (elf_hwcap & HWCAP_EVTSTRM)
-> > > +#endif
-> > 
-> > I think this is an indication that the abstraction isn't quite right and
-> > should probably be done in an arch-helped via asm/arch_timer.h. However,
-> > that can be done as a separate patch later on.
-> 
-> It probably does make sense to add an arch-specific helper for that.
-> 
-> Given that we don't want to encourage this kind of poking about in
-> elf_hwcap.  It might make sense to have a single-purpose helper just for
-> checking this flag.
+>  static void iommu_dma_unmap_resource(struct device *dev, dma_addr_t handle,
+> @@ -1250,7 +1251,8 @@ static struct iommu_dma_msi_page *iommu_dma_get_msi_page(struct device *dev,
+>  	if (!msi_page)
+>  		return NULL;
+>  
+> -	iova = __iommu_dma_map(dev, msi_addr, size, prot, domain);
+> +	iova = __iommu_dma_map(dev, msi_addr, size, prot, domain,
+> +			dma_get_mask(dev));
 
-I'll propose something in a separate patch.
+Hmm, I don't think we need the DMA mask for the MSI mapping, this
+should probably always use a 64-bit mask.  Or we could just untangle
+it from the DMA mapping fast path entire, something like:
 
-Thanks,
+---
+From 0debafc85174ca830f2e371ff8e8f7465bde3ad8 Mon Sep 17 00:00:00 2001
+From: Christoph Hellwig <hch@lst.de>
+Date: Tue, 30 Apr 2019 07:06:23 -0400
+Subject: iommu/dma: opencode __iommu_dma_map in iommu_dma_get_msi_page
 
-Andrew Murray
+The MSI page mapping really is a little different from the normal DMA
+mappings and doesn't need to look at the DMA mask.  Just open code
+it instead of trying to squeeze the behavior into the DMA path helpers.
 
-> 
-> Cheers
-> ---Dave
+Signed-off-by: Christoph Hellwig <hch@lst.de>
+---
+ drivers/iommu/dma-iommu.c | 27 +++++++--------------------
+ 1 file changed, 7 insertions(+), 20 deletions(-)
+
+diff --git a/drivers/iommu/dma-iommu.c b/drivers/iommu/dma-iommu.c
+index 58c35bab7626..2ac0df0879d7 100644
+--- a/drivers/iommu/dma-iommu.c
++++ b/drivers/iommu/dma-iommu.c
+@@ -358,11 +358,6 @@ static dma_addr_t iommu_dma_alloc_iova(struct iommu_domain *domain,
+ 	struct iova_domain *iovad = &cookie->iovad;
+ 	unsigned long shift, iova_len, iova = 0;
+ 
+-	if (cookie->type == IOMMU_DMA_MSI_COOKIE) {
+-		cookie->msi_iova += size;
+-		return cookie->msi_iova - size;
+-	}
+-
+ 	shift = iova_shift(iovad);
+ 	iova_len = size >> shift;
+ 	/*
+@@ -397,10 +392,7 @@ static void iommu_dma_free_iova(struct iommu_dma_cookie *cookie,
+ {
+ 	struct iova_domain *iovad = &cookie->iovad;
+ 
+-	/* The MSI case is only ever cleaning up its most recent allocation */
+-	if (cookie->type == IOMMU_DMA_MSI_COOKIE)
+-		cookie->msi_iova -= size;
+-	else if (cookie->fq_domain)	/* non-strict mode */
++	if (cookie->fq_domain)	/* non-strict mode */
+ 		queue_iova(iovad, iova_pfn(iovad, iova),
+ 				size >> iova_shift(iovad), 0);
+ 	else
+@@ -430,14 +422,10 @@ static dma_addr_t __iommu_dma_map(struct device *dev, phys_addr_t phys,
+ {
+ 	struct iommu_domain *domain = iommu_get_dma_domain(dev);
+ 	struct iommu_dma_cookie *cookie = domain->iova_cookie;
+-	size_t iova_off = 0;
++	size_t iova_off = iova_offset(&cookie->iovad, phys);
+ 	dma_addr_t iova;
+ 
+-	if (cookie->type == IOMMU_DMA_IOVA_COOKIE) {
+-		iova_off = iova_offset(&cookie->iovad, phys);
+-		size = iova_align(&cookie->iovad, size + iova_off);
+-	}
+-
++	size = iova_align(&cookie->iovad, size + iova_off);
+ 	iova = iommu_dma_alloc_iova(domain, size, dma_get_mask(dev), dev);
+ 	if (!iova)
+ 		return DMA_MAPPING_ERROR;
+@@ -1121,7 +1109,6 @@ static struct iommu_dma_msi_page *iommu_dma_get_msi_page(struct device *dev,
+ {
+ 	struct iommu_dma_cookie *cookie = domain->iova_cookie;
+ 	struct iommu_dma_msi_page *msi_page;
+-	dma_addr_t iova;
+ 	int prot = IOMMU_WRITE | IOMMU_NOEXEC | IOMMU_MMIO;
+ 	size_t size = cookie_msi_granule(cookie);
+ 
+@@ -1134,16 +1121,16 @@ static struct iommu_dma_msi_page *iommu_dma_get_msi_page(struct device *dev,
+ 	if (!msi_page)
+ 		return NULL;
+ 
+-	iova = __iommu_dma_map(dev, msi_addr, size, prot);
+-	if (iova == DMA_MAPPING_ERROR)
++	if (iommu_map(domain, cookie->msi_iova, msi_addr, size, prot))
+ 		goto out_free_page;
+ 
+ 	INIT_LIST_HEAD(&msi_page->list);
+ 	msi_page->phys = msi_addr;
+-	msi_page->iova = iova;
++	msi_page->iova = cookie->msi_iova;
+ 	list_add(&msi_page->list, &cookie->msi_page_list);
+-	return msi_page;
+ 
++	cookie->msi_iova += size;
++	return msi_page;
+ out_free_page:
+ 	kfree(msi_page);
+ 	return NULL;
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
