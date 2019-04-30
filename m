@@ -2,93 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4774EEEA2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 03:57:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39EFAEEBE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 04:21:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=pK9g/tKPkagaC676qNfu08cL180JRKp74+mkp11LkBA=; b=Qvja3Z1r4vxM16Px5GhAzdzJPG
-	x/hMm+GB8Ddc4IG/EPXSs0KZb2tfd7iNHwZnrnx5g4gunfr5C2MU8KfK9DM6kVqweDjFxOrFNAn9W
-	xUHNp/rtetLUk3N+avuWtuFx7d2pbW+rGxZRE/Y7geA+876GoanZuDH7o1eYXQoIc9PoU1P76NStG
-	33cXa6/sr28QW3Bx3Hjzy0rJU2x8H97UIUeQnC3AV2Grjw5sen1iKrunhKn6n6akNlW5yxEafnLpA
-	5j5tSkHYws4564w54WBJoUKeIJZjf7frlToQMr6W98BBzlYtCp8JV+H9Gkxaxk6yuyU5rZM8xmMgz
-	KcGmYV3w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ALeQS9DFhId13bfXXFFl92ro4aIlwml2LS83RSBpo6k=; b=OGqNpFD5rRjVhe
+	koimAb4sP+I7bKXPhHPMOYaE/FHwUqDYayanfDOa1uPmSx3wKNg6tvBSX0hvOQIyfHzF9AEejLWcL
+	/m9Qt6PRwn7qLKXI+nGAeXfcT9NRyoksGTvzyPo55dTZ1242cf6e5Nm/6PVwvwvTzjWFqdReR5vFw
+	oFIVTMKRKK8nlVkGv1vFa304Je964fwS+wKPEWaR3SYTETW5ev1Nn+j8lIMdY4gibWHf9T8IYX388
+	q3Vsz6oIsrbXnzZPxO6di/T91IVawo9KSCgKX3/Z6DF+nHbyiavpyUn2PFmYmg2aprVIwLuSu8kLd
+	BpDBNcG2YUJt9FQHwAmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLI1Y-0006ii-9Q; Tue, 30 Apr 2019 01:57:36 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hLIP1-0005fa-Si; Tue, 30 Apr 2019 02:21:51 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLI12-0006IT-Jr
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 01:57:05 +0000
-Received: by mail-pf1-x441.google.com with SMTP id v80so1667070pfa.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 29 Apr 2019 18:57:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=s8UYDA0A35ZvIDjqUXHlnj64LOZDrFMTPlT84kyIZ/A=;
- b=M87On/OVQyBg+MT1fVPE7dKNwirCzXjLqib8e9Rziw1Ivr/4fR4X+fNYh7Z6Q7F582
- 9l6GJBGPMqJqDugoryFUtON6Rziuv8o26pwNLS1Gkeqe4XaanoSK/EuQcmYltcUFjj1j
- rApDbk9/KkrxFqAqefRKrCatfUmoW/xFrSBF5Zl6ZaCffNYX4fuHXBSllNEcbp1fyXSy
- XY//ob5MYUHZZ6zVoCf+wezYjw9eeQNrLgq0Y+YMCYYbPnrh9scxIyGMB0cp+3R1f6nV
- r+mw+cUCZj0+/w5ylx8X+5oXwyKyvtA87jgmz5NmzWWzw7bGJL94m5dvcxkkFAjNucsm
- gHuA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=s8UYDA0A35ZvIDjqUXHlnj64LOZDrFMTPlT84kyIZ/A=;
- b=n/VpYF6p+WHaekPmUfOxK7ALrlhCvtYKGAzv0yS/btN6+14M7N7em9EibLtt8tL6Tm
- RYDx8ANXkPgKZtiajhfhbGaOKZiciFvg+5TCRDA/55+QWZz5ZDCVlFuHc1sitCC34tkE
- 1yLhfzWPidREkl4JASzovPOWSl2rZsktY7l4kgD5E/iEFF2wEUIPuoBDsrRO5ITm9j2o
- Nm/qgEmo40xb6lcLuogl3G7WBvITrPlqARw2SJwTbswNdq4NJ/9ZtwS3FDa1iyHjb0ij
- C/1nqakGkKukH7d+fTRcv7l29FAacaxTT0Pesvurj3ew6RsFN66lRkgVYXJk8GFs7TYh
- 1yyw==
-X-Gm-Message-State: APjAAAWD5asSlh56pZBTJCFP5EV93yJm7ndM5cJodacxSdTYS/ufsq4D
- 4E2S0cayattLlDn5+sDqo5w=
-X-Google-Smtp-Source: APXvYqzD4hPvjqmWE2q801NZMH8qACSDt5uAhDTlNqVfP4C95RfP3OVEnzocGAEnXIXXblyEUKqGYg==
-X-Received: by 2002:a63:8741:: with SMTP id i62mr12431618pge.313.1556589423757; 
- Mon, 29 Apr 2019 18:57:03 -0700 (PDT)
-Received: from Asurada-Nvidia.nvidia.com (thunderhill.nvidia.com.
- [216.228.112.22])
- by smtp.gmail.com with ESMTPSA id a12sm36918995pgq.21.2019.04.29.18.57.02
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 29 Apr 2019 18:57:03 -0700 (PDT)
-From: Nicolin Chen <nicoleotsuka@gmail.com>
-To: hch@lst.de,
-	robin.murphy@arm.com,
-	m.szyprowski@samsung.com
-Subject: [RFC/RFT PATCH 2/2] dma-contiguous: Use fallback alloc_pages for
- single pages
-Date: Mon, 29 Apr 2019 18:55:21 -0700
-Message-Id: <20190430015521.27734-3-nicoleotsuka@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190430015521.27734-1-nicoleotsuka@gmail.com>
-References: <20190430015521.27734-1-nicoleotsuka@gmail.com>
+ id 1hLIOu-0005eq-RQ
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 02:21:47 +0000
+Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 34F61FA155B72835F7EC;
+ Tue, 30 Apr 2019 10:13:56 +0800 (CST)
+Received: from [127.0.0.1] (10.74.221.148) by DGGEMS401-HUB.china.huawei.com
+ (10.3.19.201) with Microsoft SMTP Server id 14.3.439.0; Tue, 30 Apr 2019
+ 10:13:48 +0800
+Subject: Re: [PATCH 1/2] ACPI/PPTT: Add variable to record max cache line size
+To: Jeremy Linton <jeremy.linton@arm.com>,
+ <linux-arm-kernel@lists.infradead.org>
+References: <1556242821-5080-1-git-send-email-zhangshaokun@hisilicon.com>
+ <ec06edc0-f1ec-ef8e-78ad-7bef7ae79931@arm.com>
+From: Zhangshaokun <zhangshaokun@hisilicon.com>
+Message-ID: <53035a0e-afaf-8784-b494-9f003a7dea9d@hisilicon.com>
+Date: Tue, 30 Apr 2019 10:13:47 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.1.1
+MIME-Version: 1.0
+In-Reply-To: <ec06edc0-f1ec-ef8e-78ad-7bef7ae79931@arm.com>
+X-Originating-IP: [10.74.221.148]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_185704_648868_AF2B0EB6 
-X-CRM114-Status: GOOD (  16.60  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190429_192145_061879_4D46665C 
+X-CRM114-Status: GOOD (  18.35  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (nicoleotsuka[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -100,71 +66,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: chris@zankel.net, linux-xtensa@linux-xtensa.org, keescook@chromium.org,
- sfr@canb.auug.org.au, tony@atomide.com, catalin.marinas@arm.com,
- joro@8bytes.org, will.deacon@arm.com, linux@armlinux.org.uk,
- iommu@lists.linux-foundation.org, linux-kernel@vger.kernel.org,
- jcmvbkbc@gmail.com, wsa+renesas@sang-engineering.com,
- akpm@linux-foundation.org, treding@nvidia.com, dwmw2@infradead.org,
- iamjoonsoo.kim@lge.com, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Catalin Marinas <catalin.marinas@arm.com>, john.garry@huawei.com,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, qiuzhenfa@hisilicon.com,
+ guohanjun@huawei.com, Len Brown <lenb@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The addresses within a single page are always contiguous, so it's
-not so necessary to always allocate one single page from CMA area.
-Since the CMA area has a limited predefined size of space, it may
-run out of space in heavy use cases, where there might be quite a
-lot CMA pages being allocated for single pages.
+Hi Jeremy,
 
-However, there is also a concern that a device might care where a
-page comes from -- it might expect the page from CMA area and act
-differently if the page doesn't.
+On 2019/4/27 1:02, Jeremy Linton wrote:
+> Hi,
+> 
+> 
+> On 4/25/19 8:40 PM, Shaokun Zhang wrote:
+>> Add coherency_max_size variable to record the maximum cache line size
+>> detected from PPTT information for different cache levels. We will
+>> synchronize it with CTR_EL0.CWG reporting in cache_line_size() for arm64.
+> 
+> Is the expectation that the largest cache line size will differ from the LLC line size?
+> 
 
-This patch tries to use the fallback alloc_pages path, instead of
-one-page size allocations from the global CMA area in case that a
-device does not have its own CMA area. This'd save resources from
-the CMA global area for more CMA allocations, and also reduce CMA
-fragmentations resulted from trivial allocations.
+Not sure, on HiSilicon this platform, it is so. For some platform,they may be
+the same value. So I want to choose the maximum one.
 
-Signed-off-by: Nicolin Chen <nicoleotsuka@gmail.com>
----
- kernel/dma/contiguous.c | 11 ++++++++++-
- 1 file changed, 10 insertions(+), 1 deletion(-)
+> Also, will it remain consistent across all PE's? I believe this is required, Yes?
+> 
 
-diff --git a/kernel/dma/contiguous.c b/kernel/dma/contiguous.c
-index afe5a673668e..71aba1551275 100644
---- a/kernel/dma/contiguous.c
-+++ b/kernel/dma/contiguous.c
-@@ -186,14 +186,23 @@ int __init dma_contiguous_reserve_area(phys_addr_t size, phys_addr_t base,
-  * This function allocates contiguous memory buffer for specified device. It
-  * first tries to use device specific contiguous memory area if available or
-  * the default global one, then tries a fallback allocation of normal pages.
-+ *
-+ * Note that it byapss one-page size of allocations from the global area as
-+ * the addresses within one page are always contiguous, so there is no need
-+ * to waste CMA pages for that kind; it also helps reduce fragmentations.
-  */
- struct page *dma_alloc_contiguous(struct device *dev, size_t size, gfp_t gfp)
- {
- 	int node = dev ? dev_to_node(dev) : NUMA_NO_NODE;
- 	size_t count = PAGE_ALIGN(size) >> PAGE_SHIFT;
- 	size_t align = get_order(PAGE_ALIGN(size));
--	struct cma *cma = dev_get_cma_area(dev);
- 	struct page *page = NULL;
-+	struct cma *cma = NULL;
-+
-+	if (dev && dev->cma_area)
-+		cma = dev->cma_area;
-+	else if (count > 1)
-+		cma = dma_contiguous_default_area;
- 
- 	/* CMA can be used only in the context which permits sleeping */
- 	if (cma && gfpflags_allow_blocking(gfp)) {
--- 
-2.17.1
+Right.
+
+> 
+>>
+>> Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>
+>> Cc: Len Brown <lenb@kernel.org>
+>> Cc: Jeremy Linton <jeremy.linton@arm.com>
+>> Cc: Catalin Marinas <catalin.marinas@arm.com>
+>> To: linux-acpi@vger.kernel.org
+>> Signed-off-by: Shaokun Zhang <zhangshaokun@hisilicon.com>
+>> ---
+>>   drivers/acpi/pptt.c  | 7 ++++++-
+>>   include/linux/acpi.h | 1 +
+>>   2 files changed, 7 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/drivers/acpi/pptt.c b/drivers/acpi/pptt.c
+>> index 065c4fc245d1..3998621e00ce 100644
+>> --- a/drivers/acpi/pptt.c
+>> +++ b/drivers/acpi/pptt.c
+>> @@ -341,6 +341,8 @@ static struct acpi_pptt_cache *acpi_find_cache_node(struct acpi_table_header *ta
+>>       return found;
+>>   }
+>>   +unsigned int coherency_max_size;
+>> +
+>>   /**
+>>    * update_cache_properties() - Update cacheinfo for the given processor
+>>    * @this_leaf: Kernel cache info structure being updated
+>> @@ -360,8 +362,11 @@ static void update_cache_properties(struct cacheinfo *this_leaf,
+>>       this_leaf->fw_token = cpu_node;
+>>       if (found_cache->flags & ACPI_PPTT_SIZE_PROPERTY_VALID)
+>>           this_leaf->size = found_cache->size;
+>> -    if (found_cache->flags & ACPI_PPTT_LINE_SIZE_VALID)
+>> +    if (found_cache->flags & ACPI_PPTT_LINE_SIZE_VALID) {
+>>           this_leaf->coherency_line_size = found_cache->line_size;
+>> +        coherency_max_size = this_leaf->coherency_line_size > coherency_max_size ?
+>> +            this_leaf->coherency_line_size : coherency_max_size;
+>> +    }
+>>       if (found_cache->flags & ACPI_PPTT_NUMBER_OF_SETS_VALID)
+>>           this_leaf->number_of_sets = found_cache->number_of_sets;
+>>       if (found_cache->flags & ACPI_PPTT_ASSOCIATIVITY_VALID)
+>> diff --git a/include/linux/acpi.h b/include/linux/acpi.h
+>> index d5dcebd7aad3..199cde875d5b 100644
+>> --- a/include/linux/acpi.h
+>> +++ b/include/linux/acpi.h
+>> @@ -315,6 +315,7 @@ static inline bool acpi_sci_irq_valid(void)
+>>     extern int sbf_port;
+>>   extern unsigned long acpi_realmode_flags;
+>> +extern unsigned int coherency_max_size;
+> 
+> Assuming that the LLC doesn't reflect the max cache line size, and it can't be pulled directly from the cpu_cacheinfo, I don't think this is the ideal place for this code. Given that DT has a cache line property as well, I suspect cache_shared_cpu_map_setup() may be a better place. Although, that isn't ideal either, as both these pieces of code have the pretense of being architecture neutral. Maybe a new call into arch/arm64/cacheinfo.c?
+> 
+
+Oh, you are right that I missed DT mode and only parsed this from PPTT information.
+I will try and consider to do it in arch/arm64/kernel/cacheinfo.c
+
+Thanks,
+Shaokun
+
+> 
+>>     int acpi_register_gsi (struct device *dev, u32 gsi, int triggering, int polarity);
+>>   int acpi_gsi_to_irq (u32 gsi, unsigned int *irq);
+>>
+> 
+> 
+> .
+> 
 
 
 _______________________________________________
