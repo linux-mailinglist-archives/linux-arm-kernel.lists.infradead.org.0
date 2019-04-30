@@ -2,88 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0EE2BFDF7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 18:31:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75161FE13
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 18:44:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WsPm/3mqgfHiiG8TIor4fpPW+SVVnMtMzq8xg4dxnPw=; b=Ec1lazTJ+hdw3f
-	duSS+HmptBgWA3jMeSsB0hFxwxsMTnMzIvn4dBljf7spcVyUbbMpLiWvN7tVRLRcHwvGpm3uWzEjg
-	HM/KcQMJBfR2kfh2ZTaRU7O15Qpm4Sbx3Q9+CM0q2fzpnB7y/+H5sdyP+6bdbwJXqjWVgPamA1NbA
-	wRkxW4XQ4EgmY2V9KJdNFigDilbbRbokZ2j7p754Ygd89u0ZKSfmqRkmQSAXocjf2OtaTm00BWHHT
-	HH1oAzCroaaleDSHdJK4D1+JDnberaynGrI2tS2xQDeRhqxPE6ufwdqHoQBzaMT5IJKfNVqBr44Np
-	e2hCVm9PFaDx1DTdxJvg==;
+	List-Owner; bh=KNJfp5SROKktwqDx+LBmhmSVjWCYih1w/L2Np3FjIvk=; b=mgrpc2HfzB3DBj
+	mrwSfCwhoO6KryTazasMpsmyhCbxpsochluuu5mJv8rBSmWgqb2WJsQzTqD+Rf31u+/zStJYfcuGi
+	kmaXiRNH6MegwrSSpF8TJOlYqvW02Y4Ag+01IPEaOE07lp5GAGnuTkZ87h9x7yyFsH2Ef2fUKD087
+	wirl6FLKo94d59a7SORp2WTdOfq/J70hCGobcHQUbp0K+FuUA2hcana3jKuJ/SzRzqiCflI+w6PdV
+	IBSfT1ap6Mj2mHqhBuNNhees1CyEp4bFj6nuxQCUVI053yiQGFbK5498DreXbUh5JH7jZd4GLAYeD
+	XaRIpyMvTi/U42jczS5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLVf5-0006Bw-Iv; Tue, 30 Apr 2019 16:31:19 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLVeH-0005PU-Li
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 16:30:48 +0000
-Received: by mail-pl1-x643.google.com with SMTP id bi2so2186395plb.13
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Apr 2019 09:30:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=42TxqEwaxIKdbqbYpo6K4IuBy7auUCN8dCTPz6kwS3Y=;
- b=cjIsh610oGurHp9tgtxwXC0QhmZDrQMZOXT7/Uft9jFisFaTR0aaD5TBLp6+Zp3g20
- iprnt0tglOn2koUfsoDu5ihRT76g5lK+SXafGq4YJEAUc+gSwNUrp45Fs1AyOxV1M3l3
- U6BVlNx4Tq/vbH/0VDDO7IvYWvBKWBMt2jCQlM6cHUC7oAg03Uq9a6b41HSeg6HbhNiy
- bPbpwiC2/d5fuD8ba+KJVF060/e4Ar9p4tqggImpoo9UE9cg38+di2str93Bc+9hDa13
- RWfH6yQNc+Mbz/TQb3qgpYJfCzE3B1JNPLS7Yw/XFj6Nx46P350s1Q/pQwd95+WqZHIr
- pipw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=42TxqEwaxIKdbqbYpo6K4IuBy7auUCN8dCTPz6kwS3Y=;
- b=kyYyq1cIzeJHVsW755tUmA3ySsirUkTTiuNe/5DIxR8c/VbqUsomQFyBeoRidP/agj
- rOn5JjTkDchgF2EDENPZ0bB7ujzUEd7g83Ntb0Lb4UqQC+4hlfhigOKV30tpcLNn55dC
- HAVPqVa2zY28Gcbc0I0GuCs27+TmvaJmrBSphRjmR1t+hZdhGb5OCs3mt3GihXfHsAME
- NFwR1j4Y48FY6RACnT9r3AUjVYhV+cNfUckzHDgs4Zvct5izqsy9HbAfQBjnIyX3pGpt
- iBR/m4O2hb6ZEr3MwsoSarzuuEnzLuxhHSNXYa9/r/NDLy1HyCTTh41awyL4aSiowPhK
- gYmQ==
-X-Gm-Message-State: APjAAAUXutUb3pkE2uL4C0knByZFvwi9HDrJZm9oW7lBXM6UbgRk1soH
- LjEeOspiwHmr2nvl30KWCM6BKPOCrsZafc+tLnU=
-X-Google-Smtp-Source: APXvYqyXab738Odf5A0Sa3zKpysPLC8zk+iApwq2bjCFdw+6+z6x3W1u0YIcG8FPQ0PqkekbJi5ueSxa+seExEzMRaM=
-X-Received: by 2002:a17:902:3064:: with SMTP id
- u91mr26845533plb.181.1556641828432; 
- Tue, 30 Apr 2019 09:30:28 -0700 (PDT)
+	id 1hLVru-0003GD-UQ; Tue, 30 Apr 2019 16:44:34 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hLVro-0003FL-NU
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 16:44:30 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4FF03374;
+ Tue, 30 Apr 2019 09:44:23 -0700 (PDT)
+Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 170F93F5C1;
+ Tue, 30 Apr 2019 09:44:19 -0700 (PDT)
+Date: Tue, 30 Apr 2019 17:44:13 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Oleg Nesterov <oleg@redhat.com>
+Subject: Re: [PATCH v2 3/6] x86: clean up _TIF_SYSCALL_EMU handling using
+ ptrace_syscall_enter hook
+Message-ID: <20190430164413.GA18913@e107155-lin>
+References: <20190318104925.16600-1-sudeep.holla@arm.com>
+ <20190318104925.16600-4-sudeep.holla@arm.com>
+ <20190318153321.GA23521@redhat.com>
 MIME-Version: 1.0
-References: <1556556252-22868-1-git-send-email-Frank.Li@nxp.com>
- <1556556252-22868-2-git-send-email-Frank.Li@nxp.com>
- <20190430105124.GA16204@fuggles.cambridge.arm.com>
-In-Reply-To: <20190430105124.GA16204@fuggles.cambridge.arm.com>
-From: Zhi Li <lznuaa@gmail.com>
-Date: Tue, 30 Apr 2019 11:30:17 -0500
-Message-ID: <CAHrpEqTqf2TFjrgdbu8RpYY6RKeJdX2Sz7yj+0-k5hE1gUCJ8w@mail.gmail.com>
-Subject: Re: [PATCH V9 2/4] drivers/perf: imx_ddr: Add ddr performance counter
- support
-To: Will Deacon <will.deacon@arm.com>
+Content-Disposition: inline
+In-Reply-To: <20190318153321.GA23521@redhat.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_093030_394543_05EBDE9D 
-X-CRM114-Status: GOOD (  20.54  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190430_094428_774363_3F5D4EDB 
+X-CRM114-Status: GOOD (  17.51  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (lznuaa[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,146 +65,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Aisheng Dong <aisheng.dong@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, Frank Li <frank.li@nxp.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Sudeep Holla <sudeep.holla@arm.com>, Haibo Xu <haibo.xu@arm.com>,
+ Steve Capper <Steve.Capper@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ jdike@addtoit.com, x86@kernel.org, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Bin Lu <bin.lu@arm.com>,
+ Richard Weinberger <richard@nod.at>, Ingo Molnar <mingo@redhat.com>,
+ Paul Mackerras <paulus@samba.org>, Andy Lutomirski <luto@kernel.org>,
+ Michael Ellerman <mpe@ellerman.id.au>, Borislav Petkov <bp@alien8.de>,
+ Thomas Gleixner <tglx@linutronix.de>, linuxppc-dev@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 30, 2019 at 5:51 AM Will Deacon <will.deacon@arm.com> wrote:
+On Mon, Mar 18, 2019 at 04:33:22PM +0100, Oleg Nesterov wrote:
+> On 03/18, Sudeep Holla wrote:
+> >
+> > --- a/arch/x86/entry/common.c
+> > +++ b/arch/x86/entry/common.c
+> > @@ -70,22 +70,16 @@ static long syscall_trace_enter(struct pt_regs *regs)
+> >
+> >  	struct thread_info *ti = current_thread_info();
+> >  	unsigned long ret = 0;
+> > -	bool emulated = false;
+> >  	u32 work;
+> >
+> >  	if (IS_ENABLED(CONFIG_DEBUG_ENTRY))
+> >  		BUG_ON(regs != task_pt_regs(current));
+> >
+> > -	work = READ_ONCE(ti->flags) & _TIF_WORK_SYSCALL_ENTRY;
+> > -
+> > -	if (unlikely(work & _TIF_SYSCALL_EMU))
+> > -		emulated = true;
+> > -
+> > -	if ((emulated || (work & _TIF_SYSCALL_TRACE)) &&
+> > -	    tracehook_report_syscall_entry(regs))
+> > +	if (unlikely(ptrace_syscall_enter(regs)))
+> >  		return -1L;
+> >
+> > -	if (emulated)
+> > +	work = READ_ONCE(ti->flags) & _TIF_WORK_SYSCALL_ENTRY;
+> > +	if ((work & _TIF_SYSCALL_TRACE) && tracehook_report_syscall_entry(regs))
+> >  		return -1L;
 >
-> On Mon, Apr 29, 2019 at 04:44:32PM +0000, Frank Li wrote:
-> > diff --git a/drivers/perf/fsl_imx8_ddr_perf.c b/drivers/perf/fsl_imx8_ddr_perf.c
-> > new file mode 100644
-> > index 0000000..087d75a
-> > --- /dev/null
-> > +++ b/drivers/perf/fsl_imx8_ddr_perf.c
-> > @@ -0,0 +1,589 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Copyright 2017 NXP
-> > + * Copyright 2016 Freescale Semiconductor, Inc.
-> > + */
-> > +
-> > +#include <linux/init.h>
-> > +#include <linux/interrupt.h>
-> > +#include <linux/io.h>
-> > +#include <linux/module.h>
-> > +#include <linux/of.h>
-> > +#include <linux/of_address.h>
-> > +#include <linux/of_device.h>
-> > +#include <linux/of_irq.h>
-> > +#include <linux/perf_event.h>
-> > +#include <linux/slab.h>
-> > +
-> > +#define COUNTER_CNTL         0x0
-> > +#define COUNTER_READ         0x20
-> > +
-> > +#define COUNTER_DPCR1                0x30
-> > +
-> > +#define CNTL_OVER            0x1
-> > +#define CNTL_CLEAR           0x2
-> > +#define CNTL_EN                      0x4
-> > +#define CNTL_EN_MASK         0xFFFFFFFB
-> > +#define CNTL_CLEAR_MASK              0xFFFFFFFD
-> > +#define CNTL_OVER_MASK               0xFFFFFFFE
-> > +
-> > +#define CNTL_CSV_SHIFT               24
-> > +#define CNTL_CSV_MASK                (0xFF << CNTL_CSV_SHIFT)
-> > +
-> > +#define EVENT_CYCLES_ID              0
-> > +#define EVENT_CYCLES_COUNTER 0
-> > +#define NUM_COUNTERS         4
-> > +
-> > +#define to_ddr_pmu(p)                container_of(p, struct ddr_pmu, pmu)
-> > +
-> > +#define DDR_PERF_DEV_NAME    "ddr_perf"
->
-> This is far too generic. Please make it something like "imx8_ddr_perf_pmu".
->
-> > +static int ddr_perf_probe(struct platform_device *pdev)
-> > +{
-> > +     struct ddr_pmu *pmu;
-> > +     struct device_node *np;
-> > +     void __iomem *base;
-> > +     struct resource *iomem;
-> > +     char *name;
-> > +     char *hpname;
-> > +     int num;
-> > +     int ret;
-> > +     int irq;
-> > +
-> > +     iomem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> > +     base = devm_ioremap_resource(&pdev->dev, iomem);
-> > +     if (IS_ERR(base))
-> > +             return PTR_ERR(base);
-> > +
-> > +     np = pdev->dev.of_node;
-> > +
-> > +     pmu = devm_kzalloc(&pdev->dev, sizeof(*pmu), GFP_KERNEL);
-> > +     if (!pmu)
-> > +             return -ENOMEM;
-> > +
-> > +     num = ddr_perf_init(pmu, base, &pdev->dev);
-> > +
-> > +     platform_set_drvdata(pdev, pmu);
-> > +
-> > +     name = devm_kasprintf(&pdev->dev, GFP_KERNEL, "ddr%d", num);
-> > +     if (!name)
-> > +             return -ENOMEM;
-> > +
-> > +     hpname = devm_kasprintf(&pdev->dev, GFP_KERNEL,
-> > +                             "perf/imx/ddr%d:online", num);
-> > +     if (!hpname)
-> > +             return -ENOMEM;
-> > +
-> > +     pmu->cpu = raw_smp_processor_id();
-> > +     ret = cpuhp_setup_state_multi(CPUHP_AP_ONLINE_DYN, hpname, NULL,
-> > +                                      ddr_perf_offline_cpu);
->
-> This doesn't seem right to me. My understanding of the cpuhp mechanism
-> is that you register a single multi-instance state as part of driver
-> initialisation, and then add an instance for each device you probe.
-> That means you don't need to kasprintf the callback name as you are above --
-> you can just use DDR_PERF_DEV_NAME instead.
->
-> Please see how other perf drivers manage this on my for-next/perf branch.
->
-> > +
-> > +     if (ret < 0) {
-> > +             dev_err(&pdev->dev, "cpuhp_setup_state_multi failed\n");
-> > +             goto ddr_perf_err;
-> > +     }
-> > +
-> > +     pmu->cpuhp_state = ret;
-> > +
-> > +     /* Register the pmu instance for cpu hotplug */
-> > +     cpuhp_state_add_instance_nocalls(pmu->cpuhp_state, &pmu->node);
-> > +
-> > +     ret = perf_pmu_register(&pmu->pmu, name, -1);
->
-> Again, the string you're passing in here is too generic. I suggest taking
-> DDR_PERF_DEV_NAME and adding "_%d" to the end to paste in your 'num'
-> identifier.
->
-> Sorry if this feels like pedantry, but this gets exposed to userspace
-> via sysfs, so we need to be careful with the namespace.
-
-imx8_ddr_perf_pmu is too long to use.  how about imx_ddr%d?
-
-best regards
-Frank Li
+[...]
 
 >
-> Will
+> And it seems that _TIF_WORK_SYSCALL_ENTRY needs some cleanups too... We don't need
+> "& _TIF_WORK_SYSCALL_ENTRY" in syscall_trace_enter, and _TIF_WORK_SYSCALL_ENTRY
+> should not include _TIF_NOHZ?
+>
+
+I was about to post the updated version and checked this to make sure I have
+covered everything or not. I had missed the above comment. All architectures
+have _TIF_NOHZ in their mask that they check to do work. And from x86, I read
+"...syscall_trace_enter(). Also includes TIF_NOHZ for enter_from_user_mode()"
+So I don't understand why _TIF_NOHZ needs to be dropped.
+
+Also if we need to drop, we can address that separately examining all archs.
+I will post the cleanup as you suggested for now.
+
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
