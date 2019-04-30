@@ -2,65 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 244D6FFA6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 20:17:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 120F9FFAA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 20:23:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:To:Subject:From:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7o4pFmRd+2NaPGzq82zi65Rj09w/2i+xAixcTKnVvoQ=; b=trGxFBeriOVCDn
-	262FmuGi6IR8k8Icc1bxyjll48bSjBUIrfZsB0iAXiz9h+m3XP3GBe8PAvhITJzGqCfejIWAUNko5
-	AgKCfcrKQ7sYbtZLzZGB8m5MFYIgpyzV7NJfks8ONwR4IgRi5t4rEwsdgJjtzcio+/NW/0NDL6Pyb
-	zCEzPITj6qJIYtpy8sMg0isShXVUutAvOUa0wvif5oezojP6HqF/ohSijw3GTbBCbCEHg68aPwa0b
-	17RA7EYi8chfLA1peM7VjtTdvGuQMHAUtNDCyPu018A+5NFglyY0aEGP7toNvQ6/clyUGpapt6Xv7
-	UUk5R/OgAsVwrBbv7/kw==;
+	List-Owner; bh=Pe2UZtTRV7sJDpstaIYJ5ueloXLrgnVVqxu2zUmikyE=; b=Irp21VfEA/DcqD
+	F3qAQlU1nEVu3P8N3DaN0jL8m36KfTr7P5gHsGnt2G+kApDqBL61UBbIpfuzr3unw9XB5dxNw4vkP
+	6DuyNfQ2YcKFYbEI7zqkNwMVqVFyxrfytQjuALNn1CuGn4v1PCmnbj4vIIEi5ZpHZp01ohVMA7aHO
+	Ml9OEoJK2P35OBVyUgbOQe4C73L4K5ZxTUQWW30k1IIEh0ed8rC7wgY1BRQXsJ4X6w265h1SFCsRL
+	baFdHm7GxYPF5g9RNDOWJ4yHKA0BkIw8AgB8zPbuNywmt+7SwbZtxfPciseJZQauGuQldcYQyocHc
+	CdfoDiYnoqJLbjOVf+xw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLXJk-0000Uq-4m; Tue, 30 Apr 2019 18:17:24 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hLXP8-0002FF-EF; Tue, 30 Apr 2019 18:22:58 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLXJb-0000UC-Pl
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 18:17:16 +0000
-Received: from localhost (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 395DA20854;
- Tue, 30 Apr 2019 18:17:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1556648235;
- bh=RWMVFlZoo1dWgyPx3jxS9nsFQLj+1+W4WSOKZtiVOgU=;
- h=In-Reply-To:References:From:Subject:To:Cc:Date:From;
- b=Vrvoc0gjT8TOfrAfASm4xAX5FqcV5zw+G4oijozFOjmnnkSyIwRL4K8gEknb7CgVn
- bGWIeAVOvQQx++4EgtAyk8HENVyGWAAtPo4i/uzXkoZr5qsTZkNIHtjk1tiPU++3Cb
- R8XnyE4Yanjn7Sbin0p2IfE8GwAqQ9axVve5gR04=
+ id 1hLXP0-0002EK-Eg
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 18:22:51 +0000
+Received: by mail-pg1-x543.google.com with SMTP id k19so7236065pgh.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 30 Apr 2019 11:22:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=gh+NJvTsghWDsJJd+KP5aQAqiQ/BIEZcAYj6W4VprQI=;
+ b=RCYP50pmtnK2vIKT9YIdEJ1LQlSTEIZA674chw7eV/BFW7oEN9ceMrVTyHwyyYdIVL
+ eBiRdidlLXaqDm+3BDlBGDTJUwmtIMSeYzNbniW9CkMal12siiQrId6hSc1qpXiLbNt3
+ zjNUwiXMBBa8dt+enbzp/1zREVJ0iknI2ZHICzpOj4DSN2zZroYveJ9mGsiZbVkWAedo
+ 75RPjhD1i6p5D86+My+jQygzq85/wpamrIQVGuKRKfF63IY5bqEGhBegKCoRBHqqkUga
+ Fn/q7tyEMWu3i2Hq5TTz2ic/ow0PVmrkimF6m0HemT4V2u45+qL/J03rxicCN+Bt6hhY
+ lmqw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=gh+NJvTsghWDsJJd+KP5aQAqiQ/BIEZcAYj6W4VprQI=;
+ b=gyuZRM31K8ge4gOFhCsWwyzfTg5Tj70dE68gb8IFKr0lwzFOWXoGby90aIskZFsQIO
+ tMLBcbAW5sFZqLuAE0DIJJ0KPmTIig5MSZafGMb7WmcxDrzetA9hSzteIAMNgaX7XoRL
+ y/yymZULt4g6bFEK1tHHazQ9YeXPg4/Tgg52J1H56t+aU3cdl/EVUgVRcf6vbto+2poT
+ QpxMVNdx6a8O3yOGlMM9jHnttXSB4UIaLichXZ7+EPLve2DvdWuWto+ILfWb+r9fW19a
+ CRdhXI6Fn9fAtVDEkbgPAlyPuvWd9AWzAiNHJynfS/0Xc23WHUxTnmDqZdZwoJkvIeQS
+ ZASA==
+X-Gm-Message-State: APjAAAXszSxTt51c3h0HPmUsolj18Its2qS4wxO3uyG/C2rXe/lHKTZb
+ 9/brhtuMihfrqANv4S4HMK89YAvszsD3yY425jLphw==
+X-Google-Smtp-Source: APXvYqwYJ6eM52XsMZDC7jBMvQu3AJAj2ucSapdyiDxTsHaIu2jVgdxiKCAoV5btcg3+Zu5s9FTQLHarko4Yg47qjG0=
+X-Received: by 2002:a63:4558:: with SMTP id u24mr65263866pgk.225.1556648566822; 
+ Tue, 30 Apr 2019 11:22:46 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <8d0d12ae-ce67-5480-49be-893fbdbb6998@embeddedor.com>
-References: <20190430143206.GA4035@embeddedor>
- <155664492283.168659.5604495418413396919@swboyd.mtv.corp.google.com>
- <8d0d12ae-ce67-5480-49be-893fbdbb6998@embeddedor.com>
-From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH] clk: imx: clk-pllv3: mark expected switch fall-throughs
-To: "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
- Fabio Estevam <festevam@gmail.com>,
- Michael Turquette <mturquette@baylibre.com>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Sascha Hauer <s.hauer@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>
-Message-ID: <155664823446.168659.9382397723332081174@swboyd.mtv.corp.google.com>
-User-Agent: alot/0.8
-Date: Tue, 30 Apr 2019 11:17:14 -0700
+References: <20190426130015.GA12483@archlinux-i9>
+ <20190426190603.5982-1-linux@rasmusvillemoes.dk>
+ <CAKwvOd=Qzs8gAenS6-GkiSmrwxwJA7wChJ6FUE5+=LPAj4XSfQ@mail.gmail.com>
+In-Reply-To: <CAKwvOd=Qzs8gAenS6-GkiSmrwxwJA7wChJ6FUE5+=LPAj4XSfQ@mail.gmail.com>
+From: Nick Desaulniers <ndesaulniers@google.com>
+Date: Tue, 30 Apr 2019 11:22:35 -0700
+Message-ID: <CAKwvOdkg=Xo_C_hQrnHt-t-RfcDrBYsrBZUwsKjfXSPhkynOHQ@mail.gmail.com>
+Subject: Re: [PATCH 11/10] arm64: unbreak DYNAMIC_DEBUG=y build with clang
+To: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_111715_848829_00B25D6E 
-X-CRM114-Status: GOOD (  11.02  )
-X-Spam-Score: -5.3 (-----)
+X-CRM114-CacheID: sfid-20190430_112250_513820_5F7EDE47 
+X-CRM114-Status: GOOD (  17.60  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.3 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -69,7 +84,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -81,36 +97,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Dan Rue <dan.rue@linaro.org>, Arnd Bergmann <arnd@arndb.de>,
+ Will Deacon <will.deacon@arm.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jason Baron <jbaron@akamai.com>, Nathan Chancellor <natechancellor@gmail.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-UXVvdGluZyBHdXN0YXZvIEEuIFIuIFNpbHZhICgyMDE5LTA0LTMwIDEwOjI4OjMyKQo+IAo+IAo+
-IE9uIDQvMzAvMTkgMTI6MjIgUE0sIFN0ZXBoZW4gQm95ZCB3cm90ZToKPiA+IFF1b3RpbmcgR3Vz
-dGF2byBBLiBSLiBTaWx2YSAoMjAxOS0wNC0zMCAwNzozMjowNikKPiA+PiBJbiBwcmVwYXJhdGlv
-biB0byBlbmFibGluZyAtV2ltcGxpY2l0LWZhbGx0aHJvdWdoLCBtYXJrIHN3aXRjaAo+ID4+IGNh
-c2VzIHdoZXJlIHdlIGFyZSBleHBlY3RpbmcgdG8gZmFsbCB0aHJvdWdoLgo+ID4+Cj4gPj4gVGhp
-cyBwYXRjaCBmaXhlcyB0aGUgZm9sbG93aW5nIHdhcm5pbmdzOgo+ID4+Cj4gPj4gZHJpdmVycy9j
-bGsvaW14L2Nsay1wbGx2My5jOiBJbiBmdW5jdGlvbiDigJhpbXhfY2xrX3BsbHYz4oCZOgo+ID4+
-IGRyaXZlcnMvY2xrL2lteC9jbGstcGxsdjMuYzo0NDY6MTg6IHdhcm5pbmc6IHRoaXMgc3RhdGVt
-ZW50IG1heSBmYWxsIHRocm91Z2ggWy1XaW1wbGljaXQtZmFsbHRocm91Z2g9XQo+ID4+ICAgIHBs
-bC0+ZGl2X3NoaWZ0ID0gMTsKPiA+PiAgICB+fn5+fn5+fn5+fn5+fn5efn4KPiA+PiBkcml2ZXJz
-L2Nsay9pbXgvY2xrLXBsbHYzLmM6NDQ3OjI6IG5vdGU6IGhlcmUKPiA+PiAgIGNhc2UgSU1YX1BM
-TFYzX1VTQjoKPiA+PiAgIF5+fn4KPiA+PiBkcml2ZXJzL2Nsay9pbXgvY2xrLXBsbHYzLmM6NDUz
-OjIxOiB3YXJuaW5nOiB0aGlzIHN0YXRlbWVudCBtYXkgZmFsbCB0aHJvdWdoIFstV2ltcGxpY2l0
-LWZhbGx0aHJvdWdoPV0KPiA+PiAgICBwbGwtPmRlbm9tX29mZnNldCA9IFBMTF9JTVg3X0RFTk9N
-X09GRlNFVDsKPiA+PiAgICAgICAgICAgICAgICAgICAgICBeCj4gPj4gZHJpdmVycy9jbGsvaW14
-L2Nsay1wbGx2My5jOjQ1NDoyOiBub3RlOiBoZXJlCj4gPj4gICBjYXNlIElNWF9QTExWM19BVjoK
-PiA+PiAgIF5+fn4KPiA+Pgo+ID4+IFdhcm5pbmcgbGV2ZWwgMyB3YXMgdXNlZDogLVdpbXBsaWNp
-dC1mYWxsdGhyb3VnaD0zCj4gPj4KPiA+PiBUaGlzIHBhdGNoIGlzIHBhcnQgb2YgdGhlIG9uZ29p
-bmcgZWZmb3J0cyB0byBlbmFibGUKPiA+PiAtV2ltcGxpY2l0LWZhbGx0aHJvdWdoLgo+ID4+Cj4g
-Pj4gU2lnbmVkLW9mZi1ieTogR3VzdGF2byBBLiBSLiBTaWx2YSA8Z3VzdGF2b0BlbWJlZGRlZG9y
-LmNvbT4KPiA+IAo+ID4gSXQgd2FzIHNlbnQgYnkgQW5zb24gYWxyZWFkeS4KPiA+IAo+IAo+IERp
-ZCBoZSBhZGRyZXNzIGJvdGggd2FybmluZ3M/Cj4gCgpOby4gSSBhZGRlZCB5b3UgdG8gdGhlIHRo
-cmVhZC4KCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
-aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
-ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
-eC1hcm0ta2VybmVsCg==
+On Mon, Apr 29, 2019 at 10:32 AM Nick Desaulniers
+<ndesaulniers@google.com> wrote:
+>
+> On Fri, Apr 26, 2019 at 12:06 PM Rasmus Villemoes
+> <linux@rasmusvillemoes.dk> wrote:
+> >
+> > Current versions of clang does not like the %c modifier in inline
+> > assembly for targets other than x86, so any DYNAMIC_DEBUG=y build
+> > fails on arm64. A fix is likely to land in 9.0 (see
+> > https://github.com/ClangBuiltLinux/linux/issues/456), but unbreak the
+> > build for older versions.
+> >
+> > Fixes: arm64: select DYNAMIC_DEBUG_RELATIVE_POINTERS
+> > Reported-by: Nathan Chancellor <natechancellor@gmail.com>
+> > Reported-by: Arnd Bergmann <arnd@arndb.de>
+> > Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+> > ---
+> > Andrew, please apply and/or fold into 9/10.
+> >
+> >  arch/arm64/Kconfig | 2 +-
+> >  1 file changed, 1 insertion(+), 1 deletion(-)
+> >
+> > diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> > index d0871d523d5d..315992e33b17 100644
+> > --- a/arch/arm64/Kconfig
+> > +++ b/arch/arm64/Kconfig
+> > @@ -83,7 +83,7 @@ config ARM64
+> >         select CRC32
+> >         select DCACHE_WORD_ACCESS
+> >         select DMA_DIRECT_REMAP
+> > -       select DYNAMIC_DEBUG_RELATIVE_POINTERS
+> > +       select DYNAMIC_DEBUG_RELATIVE_POINTERS if CC_IS_GCC || CLANG_VERSION >= 90000
+>
+> I just landed the fix for this in Clang, I think around the time you
+> sent the patch.  Should ship in Clang 9.  Thanks for unbreaking our
+> build.
+> Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
+
++ Dan
+who's looking for this to get picked up to unbreak KernelCI arm64+clang builds
+https://staging.kernelci.org/build/id/5cc6e080cf3a0f9d66257f6d/
+-- 
+Thanks,
+~Nick Desaulniers
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
