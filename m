@@ -2,66 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03062FA51
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 15:29:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C32FFA56
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 15:29:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EVZrHD0NRtB+O1Bld+emMhZ99L1lnfNYxeiJ81Du9/c=; b=Gau7bhrucpKDB/
-	z4jZv0BtDetWj+Y59OwK9QDGm0xYTNUJxjxHwet5egPY6A2x4Li56cE18GRqS7OIKaIbDyEmu+9k3
-	hG6ewmiFxPSAGilWliG0mu6lS4jhKoU/f+X8le25l6u8lW4VqyfqrBqA+UxVCDvsPZizQ+k5/z6f2
-	ULKHfVsKx+wMMv5cVrgHzkKC3ZobU+e7a6uu42I7rvZ76gCRQMFKai3pIES4RQ1MBSRZ8uLrGggZN
-	RIhFlfso9BydHKmXKYCjiXffPy829+Prcwiu9sJUk1WVn7CJDWY0p0bo0xrBiSJggV6SFZLPVkZyB
-	59zrV/i3RHAijmmBio5Q==;
+	List-Owner; bh=rqVjU27WmtxQxqAFWovo41Z1ftkZC21+PVSVFDVU+2c=; b=beYOHif876VB4o
+	dKSt4IN7ZkEUb4loCZTPQXiBI6YsLdZUdE3kwdXvbR05o37Y3FjCMdxd6Yn/8yzVg+/T7g1gdPCU+
+	SErQ0z2Up04lsmKGqrr43o80QmvYugFMnRgy/O6VtPtW1cBz0CKEySJTGqum3NVY8IoEvX/RmOVKN
+	9fz2ZYl/JaHUDvyJAXKbNhGtNbpPjeS7gmKbRhmkgjrz/0t6Ox4sYxSgKPNrEQOepHNGIWRMhO/1s
+	rKRjwc/eceG013EQrbwlbIGLdaiWqIFY7HC2LKYa466h+42eWb0K7Zd4dEkjHj605vAqYegDJS1dj
+	402mR8v7RcOvAe/ihNiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLSob-0005Od-Lr; Tue, 30 Apr 2019 13:28:57 +0000
-Received: from mail-oi1-x249.google.com ([2607:f8b0:4864:20::249])
+	id 1hLSom-0005ci-Ic; Tue, 30 Apr 2019 13:29:08 +0000
+Received: from mail-yw1-xc49.google.com ([2607:f8b0:4864:20::c49])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLSlm-0002Hg-Ch
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 13:26:24 +0000
-Received: by mail-oi1-x249.google.com with SMTP id a29so5414305oiy.18
+ id 1hLSlp-0002MI-MQ
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 13:26:29 +0000
+Received: by mail-yw1-xc49.google.com with SMTP id 11so12848486ywt.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Apr 2019 06:26:01 -0700 (PDT)
+ Tue, 30 Apr 2019 06:26:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=xNbRPHb0QaxGlTA7s33PjaJCVzzZC2iohEMIfDhjOnw=;
- b=G3VBJNj1Efd82TURXBcG2ETfYyZa4nNQbw5XcSPgrFNgGTDcrjKi2K3Iqxh9GCJaVT
- q4ybexiR1zpb+d5J4+ktYX//GzTjjx7hvSHawuAMH2628bR7wRgw71HvGhNfTflHW/zs
- Atp0zpFkZrhjqB1YK2fIhTRq2d162F4gSLgDXmj1SWW0QKaRzutUGTNf9j2DzCy8DQXs
- 6qis1IjWlpcydKHrLlqfebzxPQ65WrUm0DNZpeC309u8+WueXbRuj/bbSEKVwswOSRBh
- 9Q1k1UxCvXqArWAzlxVP1yBw+FzmFzBJan3FvrRViSuycjCJ8f4ZVoJHTVS0bktu9b7r
- znhA==
+ :cc; bh=5vVbThWFeNTYFxwbQq67jdT1oZny+xOKBFoxX+2Uk7M=;
+ b=FRME1COezh5b+xsqn4P+Wuk9kST7usWvir2xQhAmIzYbqhd+Dle1XM/PaJl5NwGBwF
+ z7/SMrTqJtHy/gO4CF7xbqlFAwpIk8PwR9mnXkXEY1b5HFuyeguAZJRX9uVnCx/+N6Cg
+ GdXjue/eQFQ6wfKzJUzNubo15IJ6ki/RwkeGwPRaQhUCcsmSJMlmZ6DdqtqFu3fOL0bX
+ 01e0qP9aKT8hITIugatecY8TuWXLv4w13ho7n2rx3qvyQwxwSmnnV+ESWDP6rPMjBLm6
+ 9em8VBa1zwsikfNNQo9I2iNQIYFHDIjY+xXevJ0y76Ma6MtOAyKoTjWTXLT8lERzPHTd
+ 0Kew==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=xNbRPHb0QaxGlTA7s33PjaJCVzzZC2iohEMIfDhjOnw=;
- b=B9mlgz2cSLsEcPfJ2wP+AB8BMkrSBX2rRXVsQLKM7RrqUqYokCVvb4NvYdZJnqMeml
- NK5jfW/rfwZddz0aZMjpnVtqVuPOvdRRq+gZS8i6eipkNQmWVX9wxWoxwGvbtAi1hq/2
- 6VTmYucb4zhxOC42Uu367+HpB07RHE69MmkS6fUzUrsaJ8HzfmIrJNibrKIKDgy9LdMG
- FdrymVyNMSwVcJ3BYkdkjiEKMorsI0Y546igb/T7HzDyuU1SXZwyyjujE5oEAuEqQepF
- PyL7xvuCWGyAgC6G8PFXXOss5jU6X+PlV/3sVZmlsWiMcmsJsEmsJuNm1yl11CntxRCI
- 4y5Q==
-X-Gm-Message-State: APjAAAURcGnM/m5svBzJNb38yuVnW682Yx3E7nXavHIjv9/oyfZX+Mn9
- TyMYsR6M5HTcCY6kxT0tGWQj2NEkf67+0mtIbaiaQV/oFLdGlHGDkbdOhwS/oZx5XQKdc3WwQiU
- LX+BR0TSL/QsYjJoO4YUdnyM0z3n63VJRRbkVo0nsLO45JFxLeHp3NdxlFoFBZ4v+hAkcQXq7o0
- bseZT8NNc40sW2zJg=
-X-Google-Smtp-Source: APXvYqzqz0hM8566mMMykEcEDE15qguKaKv3Gnp85A2T0WJw46tHTZ3v4v+uUTcgMqiUvlhCC6+9Qaw/183DYgvX
-X-Received: by 2002:a05:6808:4ca:: with SMTP id
- a10mr3005375oie.35.1556630760913; 
- Tue, 30 Apr 2019 06:26:00 -0700 (PDT)
-Date: Tue, 30 Apr 2019 15:25:10 +0200
+ bh=5vVbThWFeNTYFxwbQq67jdT1oZny+xOKBFoxX+2Uk7M=;
+ b=ikaCNb7gk+S3rXWxSR1htOY6R8IEjclbn0jA9cG1s7QOzlc92IAJQWalekNnJAbFjR
+ sINQPW/ERp77pNCVgFIP0+O8zrUR7MpPDMf+7IsORTKqFbXdVYUPSL6D4Y5p5Bx5VBP1
+ Rsib8JpPhJJIjJz2g+iTBVeRRMhR11TmoGAN9j3e7pOJtZG3e9Qasn/p2a8YviYw9FGP
+ 6IKtZLnfCSoi31wvn9Q50eWlzC6tp8gLEMOy4ETy9BGz0mHVULwO1JrzvuHQOIcVkplV
+ 4ZWVzmDlsFqGG7uvr9Lb3vP1xVeKbNzdTzkVTlYtH5/xT+W2+VM9M68Iqrt6pgfp8Hyd
+ szhQ==
+X-Gm-Message-State: APjAAAUWxYH0ZgAv6jwZHj3FtbDz7D2nudb+KTPBGOvhH82dhaEqV3iM
+ HFdzClKjvi+WwXwsL+oYS1mq143nQWOXc6uIpp1ODCI+KmBmcPjfkUCOk/qqFEFbxKexDPJ8OgQ
+ wpE+Q5yJ5LfTLouANVO8nE4pZeJbUuackL9WOPtup6W3/HB7DdavmjunYBpAH7ed6EYSup4Y+Vb
+ GYAhWV4237AaewHHo=
+X-Google-Smtp-Source: APXvYqyv8kHiq9IuRt8k8uxL630nsRVEEuszbAKJggJOMl5SWFBjzMAnW0IWxRwAYYoqlPXLLWZ5sEsVnC5FF0Vx
+X-Received: by 2002:a81:3c89:: with SMTP id
+ j131mr56890450ywa.183.1556630764032; 
+ Tue, 30 Apr 2019 06:26:04 -0700 (PDT)
+Date: Tue, 30 Apr 2019 15:25:11 +0200
 In-Reply-To: <cover.1556630205.git.andreyknvl@google.com>
-Message-Id: <66262e91c1768bf61e78456608a8a5190ea4e1d8.1556630205.git.andreyknvl@google.com>
+Message-Id: <1b2a46dbfa24bde41f11cff6f53683a5ea5915c7.1556630205.git.andreyknvl@google.com>
 Mime-Version: 1.0
 References: <cover.1556630205.git.andreyknvl@google.com>
 X-Mailer: git-send-email 2.21.0.593.g511ec345e18-goog
-Subject: [PATCH v14 14/17] media/v4l2-core,
- arm64: untag user pointers in videobuf_dma_contig_user_get
+Subject: [PATCH v14 15/17] tee, arm64: untag user pointers in tee_shm_register
 From: Andrey Konovalov <andreyknvl@google.com>
 To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org, 
  linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org, 
@@ -69,15 +68,15 @@ To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
  linux-media@vger.kernel.org, kvm@vger.kernel.org, 
  linux-kselftest@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_062603_145822_83D3FE69 
-X-CRM114-Status: GOOD (  13.85  )
+X-CRM114-CacheID: sfid-20190430_062606_468340_D20A7E4C 
+X-CRM114-Status: GOOD (  11.33  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:249 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c49 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
@@ -129,55 +128,29 @@ This patch is a part of a series that extends arm64 kernel ABI to allow to
 pass tagged user pointers (with the top byte set to something else other
 than 0x00) as syscall arguments.
 
-videobuf_dma_contig_user_get() uses provided user pointers for vma
-lookups, which can only by done with untagged pointers.
+tee_shm_register()->optee_shm_unregister()->check_mem_type() uses provided
+user pointers for vma lookups (via __check_mem_type()), which can only by
+done with untagged pointers.
 
-Untag the pointers in this function.
+Untag user pointers in this function.
 
 Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
 ---
- drivers/media/v4l2-core/videobuf-dma-contig.c | 9 +++++----
- 1 file changed, 5 insertions(+), 4 deletions(-)
+ drivers/tee/tee_shm.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/media/v4l2-core/videobuf-dma-contig.c b/drivers/media/v4l2-core/videobuf-dma-contig.c
-index e1bf50df4c70..8a1ddd146b17 100644
---- a/drivers/media/v4l2-core/videobuf-dma-contig.c
-+++ b/drivers/media/v4l2-core/videobuf-dma-contig.c
-@@ -160,6 +160,7 @@ static void videobuf_dma_contig_user_put(struct videobuf_dma_contig_memory *mem)
- static int videobuf_dma_contig_user_get(struct videobuf_dma_contig_memory *mem,
- 					struct videobuf_buffer *vb)
- {
-+	unsigned long untagged_baddr = untagged_addr(vb->baddr);
- 	struct mm_struct *mm = current->mm;
- 	struct vm_area_struct *vma;
- 	unsigned long prev_pfn, this_pfn;
-@@ -167,22 +168,22 @@ static int videobuf_dma_contig_user_get(struct videobuf_dma_contig_memory *mem,
- 	unsigned int offset;
- 	int ret;
- 
--	offset = vb->baddr & ~PAGE_MASK;
-+	offset = untagged_baddr & ~PAGE_MASK;
- 	mem->size = PAGE_ALIGN(vb->size + offset);
- 	ret = -EINVAL;
- 
- 	down_read(&mm->mmap_sem);
- 
--	vma = find_vma(mm, vb->baddr);
-+	vma = find_vma(mm, untagged_baddr);
- 	if (!vma)
- 		goto out_up;
- 
--	if ((vb->baddr + mem->size) > vma->vm_end)
-+	if ((untagged_baddr + mem->size) > vma->vm_end)
- 		goto out_up;
- 
- 	pages_done = 0;
- 	prev_pfn = 0; /* kill warning */
--	user_address = vb->baddr;
-+	user_address = untagged_baddr;
- 
- 	while (pages_done < (mem->size >> PAGE_SHIFT)) {
- 		ret = follow_pfn(vma, user_address, &this_pfn);
+diff --git a/drivers/tee/tee_shm.c b/drivers/tee/tee_shm.c
+index 0b9ab1d0dd45..8e7b52ab6c63 100644
+--- a/drivers/tee/tee_shm.c
++++ b/drivers/tee/tee_shm.c
+@@ -263,6 +263,7 @@ struct tee_shm *tee_shm_register(struct tee_context *ctx, unsigned long addr,
+ 	shm->teedev = teedev;
+ 	shm->ctx = ctx;
+ 	shm->id = -1;
++	addr = untagged_addr(addr);
+ 	start = rounddown(addr, PAGE_SIZE);
+ 	shm->offset = addr - start;
+ 	shm->size = length;
 -- 
 2.21.0.593.g511ec345e18-goog
 
