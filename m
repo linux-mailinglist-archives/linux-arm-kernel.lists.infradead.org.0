@@ -2,58 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC797F980
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 15:06:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9CC9F99F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 15:14:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=voHQxGs0/QtzA1oRmcwVOfWstOSaTDEmSw3mIwkBvr8=; b=nY2G/oH2QAvLlZ
-	ZTSKiHb78G6/uWSqstI3eCC7GeD5XSzr5TrnMRDPxk1pnVG2sIPo0FVRbaeiEpuJ1DhrXa4YoG0jH
-	XowrtV0cWRhek43DMouhk6TQPTqaD/ocYxe6adOOHoK8W9vKLXATppUZHYzT9ZDOuablNazfgo5ES
-	LVdM203TS2LBRuj0CeZORWUyMP8W5X0x0AAs1BzkPQpJFs/RDBORv1Z2NiTFJDrrS40gVJvG/Qwi0
-	QdnKRtvlcMt1opUFz02Dku6PhXap64g7048Jip512JMoel4zgmlPNWGTBhMg2QlRxSWRU90kvfhAr
-	B+6PQMN2Fh6QCkoGdiHQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=i2LWZGl90hn6KL++LGxy/1AG/fMm7QOWrwpn8Tzhw/s=; b=cbrt6kUTQ8p9vN
+	Ddcd6lhIZpVC7LPpTCb2KBVO2KyJpBD2Kz9Q3n7v+Bv1ZA4O4RTtCvJg31Jp98SKxQ49CJlMqeMr9
+	2ku5LfW+1LhhlOaXqfDFVDgW8VjFielmrKHhZjpmUw566V07tbLfY4UIZaDNUi0ZWV2pltl9gl82p
+	fh0GvelNSTaRjFMHjtGCke9cpjKv602WS51490CCn+czOwFuC88/PLEaCH91tcCulA3w09IUvFckN
+	sI7qghRdghnuhWa4stHHFtUUHIgOghBftkexG0unOtsEq4rIBx3JSYJi8I5RzhLXvJMQphRGIhKX/
+	2zyk+ZqBUIvbO/E53Mng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLSSU-0001Lf-9M; Tue, 30 Apr 2019 13:06:06 +0000
-Received: from relay3-d.mail.gandi.net ([217.70.183.195])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLSSI-0001KX-Vr
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 13:06:01 +0000
-X-Originating-IP: 109.213.14.175
-Received: from localhost (alyon-652-1-31-175.w109-213.abo.wanadoo.fr
- [109.213.14.175])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id 97BEC60006;
- Tue, 30 Apr 2019 13:05:44 +0000 (UTC)
-Date: Tue, 30 Apr 2019 15:05:44 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Baruch Siach <baruch@tkos.co.il>
-Subject: Re: [PATCH 2/4] rtc: digicolor: set range
-Message-ID: <20190430130544.GF11339@piout.net>
-References: <20190430093212.28425-1-alexandre.belloni@bootlin.com>
- <20190430093212.28425-2-alexandre.belloni@bootlin.com>
- <877ebbu3lz.fsf@tarshish> <20190430114702.GD11339@piout.net>
- <875zqvu1l3.fsf@tarshish>
+	id 1hLSab-0003UZ-4Q; Tue, 30 Apr 2019 13:14:29 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hLSaT-0003Tz-D4
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 13:14:22 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1A11D80D;
+ Tue, 30 Apr 2019 06:14:20 -0700 (PDT)
+Received: from e119886-lin.cambridge.arm.com (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A73E03F5AF;
+ Tue, 30 Apr 2019 06:14:18 -0700 (PDT)
+From: Andrew Murray <andrew.murray@arm.com>
+To: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>
+Subject: [PATCH] clocksource/arm_arch_timer: extract elf_hwcap use to
+ arch-helper
+Date: Tue, 30 Apr 2019 14:14:13 +0100
+Message-Id: <20190430131413.10017-1-andrew.murray@arm.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <875zqvu1l3.fsf@tarshish>
-User-Agent: Mutt/1.11.3 (2019-02-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_060557_110277_AA0BC471 
-X-CRM114-Status: GOOD (  24.46  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190430_061421_456429_004A83A3 
+X-CRM114-Status: GOOD (  12.94  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.195 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.195 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -66,72 +61,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 30/04/2019 15:20:08+0300, Baruch Siach wrote:
-> Hi Alexandre,
-> 
-> On Tue, Apr 30 2019, Alexandre Belloni wrote:
-> > On 30/04/2019 14:36:24+0300, Baruch Siach wrote:
-> >> Hi Alexandre,
-> >>
-> >> On Tue, Apr 30 2019, Alexandre Belloni wrote:
-> >>
-> >> > While the range of REFERENCE + TIME is actually 33 bits, the counter
-> >> > itself (TIME) is a 32-bits seconds counter.
-> >> >
-> >> > Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> >> > ---
-> >> >  drivers/rtc/rtc-digicolor.c | 1 +
-> >> >  1 file changed, 1 insertion(+)
-> >> >
-> >> > diff --git a/drivers/rtc/rtc-digicolor.c b/drivers/rtc/rtc-digicolor.c
-> >> > index 5bb14c56bc9a..e6e16aaac254 100644
-> >> > --- a/drivers/rtc/rtc-digicolor.c
-> >> > +++ b/drivers/rtc/rtc-digicolor.c
-> >> > @@ -206,6 +206,7 @@ static int __init dc_rtc_probe(struct platform_device *pdev)
-> >> >  	platform_set_drvdata(pdev, rtc);
-> >> >
-> >> >  	rtc->rtc_dev->ops = &dc_rtc_ops;
-> >> > +	rtc->rtc_dev->range_max = U32_MAX;
-> >>
-> >> Where can I find documentation on the meaning and usage of the range_max
-> >> value? I could not find anything in the kernel source.
-> >
-> > It should be set to the maximum UNIX timestamp the RTC can be set to
-> > while keeping range_min to range_max contiguous.
-> >
-> > In the digicolor case, you could go up to 8589934590 (Wed Mar 16
-> > 12:56:30 UTC 2242) but the driver only writes DC_RTC_REFERENCE and I'm
-> > not sure it can also update DC_RTC_TIME safely.
-> 
-> DC_RTC_TIME resets to zero whenever dc_rtc_write writes CMD_RESET to the
-> DC_RTC_CONTROL register. DC_RTC_REFERENCE keeps the value that
-> dc_rtc_write stores there. So the driver will return values larger than
-> U32_MAX if you happen to cross this point in time between dc_rtc_write
-> and dc_rtc_read. But you can't store a value larger than U32_MAX in
-> DC_RTC_REFERENCE.
-> 
-> Will the core RTC code handle the U32_MAX cross correctly?
-> 
+Different mechanisms are used to test and set elf_hwcaps between ARM
+and ARM64, this results in the use of #ifdef's in this file when
+setting/testing for the EVTSTRM hwcap.
 
-Yes, this is ok to return a valid value that is higher than range_max.
-However, at that time, you will not be able to set any alarms anymore as
-the core doesn't allow to set alarms after range_max.
+Let's improve readability by extracting this to an arch helper.
 
-I would think that this is fine because this will happen in 2106 and we
-have a way to offset the time (the whole goal of setting the range)
-using device tree.
+Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+---
+ arch/arm/include/asm/arch_timer.h    | 13 +++++++++++++
+ arch/arm64/include/asm/arch_timer.h  | 13 +++++++++++++
+ drivers/clocksource/arm_arch_timer.c | 15 ++-------------
+ 3 files changed, 28 insertions(+), 13 deletions(-)
 
+diff --git a/arch/arm/include/asm/arch_timer.h b/arch/arm/include/asm/arch_timer.h
+index 0a8d7bba2cb0..f21e038dc9f3 100644
+--- a/arch/arm/include/asm/arch_timer.h
++++ b/arch/arm/include/asm/arch_timer.h
+@@ -4,6 +4,7 @@
+ 
+ #include <asm/barrier.h>
+ #include <asm/errno.h>
++#include <asm/hwcap.h>
+ #include <linux/clocksource.h>
+ #include <linux/init.h>
+ #include <linux/types.h>
+@@ -110,6 +111,18 @@ static inline void arch_timer_set_cntkctl(u32 cntkctl)
+ 	isb();
+ }
+ 
++static inline bool arch_timer_set_evtstrm_feature(void)
++{
++	elf_hwcap |= HWCAP_EVTSTRM;
++#ifdef CONFIG_COMPAT
++	compat_elf_hwcap |= COMPAT_HWCAP_EVTSTRM;
++#endif
++}
++
++static inline bool arch_timer_have_evtstrm_feature(void)
++{
++	return elf_hwcap & HWCAP_EVTSTRM;
++}
+ #endif
+ 
+ #endif
+diff --git a/arch/arm64/include/asm/arch_timer.h b/arch/arm64/include/asm/arch_timer.h
+index f2a234d6516c..f371d4a94f06 100644
+--- a/arch/arm64/include/asm/arch_timer.h
++++ b/arch/arm64/include/asm/arch_timer.h
+@@ -20,6 +20,7 @@
+ #define __ASM_ARCH_TIMER_H
+ 
+ #include <asm/barrier.h>
++#include <asm/hwcap.h>
+ #include <asm/sysreg.h>
+ 
+ #include <linux/bug.h>
+@@ -165,4 +166,16 @@ static inline int arch_timer_arch_init(void)
+ 	return 0;
+ }
+ 
++static inline void arch_timer_set_evtstrm_feature(void)
++{
++	cpu_set_named_feature(EVTSTRM);
++#ifdef CONFIG_COMPAT
++	compat_elf_hwcap |= COMPAT_HWCAP_EVTSTRM;
++#endif
++}
++
++static inline bool arch_timer_have_evtstrm_feature(void)
++{
++	return cpu_have_named_feature(EVTSTRM);
++}
+ #endif
+diff --git a/drivers/clocksource/arm_arch_timer.c b/drivers/clocksource/arm_arch_timer.c
+index 6cc8aff83805..5e507e81515f 100644
+--- a/drivers/clocksource/arm_arch_timer.c
++++ b/drivers/clocksource/arm_arch_timer.c
+@@ -833,14 +833,7 @@ static void arch_timer_evtstrm_enable(int divider)
+ 	cntkctl |= (divider << ARCH_TIMER_EVT_TRIGGER_SHIFT)
+ 			| ARCH_TIMER_VIRT_EVT_EN;
+ 	arch_timer_set_cntkctl(cntkctl);
+-#ifdef CONFIG_ARM64
+-	cpu_set_named_feature(EVTSTRM);
+-#else
+-	elf_hwcap |= HWCAP_EVTSTRM;
+-#endif
+-#ifdef CONFIG_COMPAT
+-	compat_elf_hwcap |= COMPAT_HWCAP_EVTSTRM;
+-#endif
++	arch_timer_set_evtstrm_feature();
+ 	cpumask_set_cpu(smp_processor_id(), &evtstrm_available);
+ }
+ 
+@@ -1059,11 +1052,7 @@ static int arch_timer_cpu_pm_notify(struct notifier_block *self,
+ 	} else if (action == CPU_PM_ENTER_FAILED || action == CPU_PM_EXIT) {
+ 		arch_timer_set_cntkctl(__this_cpu_read(saved_cntkctl));
+ 
+-#ifdef CONFIG_ARM64
+-		if (cpu_have_named_feature(EVTSTRM))
+-#else
+-		if (elf_hwcap & HWCAP_EVTSTRM)
+-#endif
++		if (arch_timer_have_evtstrm_feature())
+ 			cpumask_set_cpu(smp_processor_id(), &evtstrm_available);
+ 	}
+ 	return NOTIFY_OK;
 -- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
