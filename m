@@ -2,66 +2,113 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8EB2BF0C6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 08:58:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D6C9F0D0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 09:00:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lSXMjAvkVtuhcijJ6YtTknFwkyqGis0D0GZABsFuf8k=; b=Hje9aNTG/GXPnv
-	x9ONUSMPsRhArUcd7JYGS2k+823NL3dXdhgMJ1PZh5lhk5sSgYAb+Fu/KiChQTmDDKbaMQ8HbeLvx
-	MzZiBvolwmOYUVAvtgyGKEer1mdoeGwrrjhZngDa/VDx0O0O6t3jD2GQc8slDtd57onJufGbT6xKW
-	dWXvc6ClkFfdhh3gMtXEB16rZ5RiPEkl4IyKS7Y5320kg2XtSzhHwq+/vJxCggqfV4glji3iDcpAf
-	Fwk8yhcaLPM8WVwx+VoE7d0xfw3FQzOUtboa/EfBSCZuCzcFfxc0Csyl6b/8qVJbsT3sB4hUZKw/M
-	zvzvuZjz4G6Y9rebK0mg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=HY458Kltw/V+QjCKeZaljmfBBEMM8eSM4+xfcCzhuxE=; b=Kb1eOziNRh4LHE
+	dXaoqCmop0h7AuTOzDw7cdxZWmPNM6LQz+TkaxU3OnS3xokG1UOgwCgvNtys4y92b9q5z2v7VDUid
+	1M7SXjn31O45OT9chwJWTUeYPDkOn6cEM8QyRZUxBa+tvJAUKoPm8pxZAgM+mXorp8gjx3QXwlB5B
+	eK49UWKRx7ur3w+wl2wZlCQJiwsTo6Cyiq/3mp5o7rBhHzGP8bjDGdckNXgp7vA0ui0tK5JRrKYvP
+	lL1rfMWvocXuZxYPmhI46vjqdZBbc+8kK68dgZBUSRdk+VaclXF0cuWDfGrpYwJTHLkXnhziF5hHw
+	H60umW+VJKFMznS/LDAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLMiM-0002Ip-Oe; Tue, 30 Apr 2019 06:58:06 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hLMkR-0003qu-Vh; Tue, 30 Apr 2019 07:00:16 +0000
+Received: from mail-eopbgr80058.outbound.protection.outlook.com ([40.107.8.58]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLMiE-00027G-4r; Tue, 30 Apr 2019 06:57:59 +0000
-X-UUID: 14cd0f28373947288a750138d8c8e8bb-20190429
-X-UUID: 14cd0f28373947288a750138d8c8e8bb-20190429
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <chunfeng.yun@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 27651175; Mon, 29 Apr 2019 22:57:41 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 29 Apr 2019 23:57:40 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N2.mediatek.inc
- (172.27.4.87) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Tue, 30 Apr 2019 14:57:37 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 30 Apr 2019 14:57:37 +0800
-Message-ID: <1556607457.10179.259.camel@mhfsdcap03>
-Subject: Re: [PATCH v4 3/6] dt-bindings: usb: mtu3: add properties about USB
- Role Switch
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Rob Herring <robh@kernel.org>
-Date: Tue, 30 Apr 2019 14:57:37 +0800
-In-Reply-To: <CAL_JsqKXKRetoy4u_yAMgS+RA0vaRhzjR0zpLjKMtgRvFHXn7A@mail.gmail.com>
-References: <1556261237-13823-1-git-send-email-chunfeng.yun@mediatek.com>
- <1556261237-13823-4-git-send-email-chunfeng.yun@mediatek.com>
- <20190426204906.GB15074@bogus> <1556453788.10179.224.camel@mhfsdcap03>
- <CAL_JsqKXKRetoy4u_yAMgS+RA0vaRhzjR0zpLjKMtgRvFHXn7A@mail.gmail.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1hLMkK-000300-Tv
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 07:00:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=sWodjOc56GxoRXJ7b11rcRr8UAVFM0lQ1Ry7eKPeeLM=;
+ b=eZMoWDLFzYyks9u5PeskXeGo0vSL2+rM75BGqOh3YBE5DDUJOXP1tSk0zXESe6lRLH7WF/PTwtJXUj02U6IFoUTgyyfyLTLKCsxSQZanr0nrumi3dnRFXMhKzSE5JhmvPVKNp7YifKIVxUyRbqvDuGKP1Q7lLynNUNQLUl/zPIk=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3913.eurprd04.prod.outlook.com (52.134.65.143) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1856.10; Tue, 30 Apr 2019 07:00:02 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::e8ca:4f6b:e43:c170]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::e8ca:4f6b:e43:c170%3]) with mapi id 15.20.1856.008; Tue, 30 Apr 2019
+ 07:00:02 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Aisheng Dong <aisheng.dong@nxp.com>, "shawnguo@kernel.org"
+ <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>, "festevam@gmail.com"
+ <festevam@gmail.com>, "linux-i2c@vger.kernel.org"
+ <linux-i2c@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: [PATCH] i2c: imx-lpi2c: Use __maybe_unused instead of #if
+ CONFIG_PM_SLEEP
+Thread-Topic: [PATCH] i2c: imx-lpi2c: Use __maybe_unused instead of #if
+ CONFIG_PM_SLEEP
+Thread-Index: AQHU/yJVTGic+X2v4ESo316NmJN4TA==
+Date: Tue, 30 Apr 2019 07:00:02 +0000
+Message-ID: <1556607314-32401-1-git-send-email-Anson.Huang@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.7.4
+x-clientproxiedby: HK0PR03CA0049.apcprd03.prod.outlook.com
+ (2603:1096:203:52::13) To DB3PR0402MB3916.eurprd04.prod.outlook.com
+ (2603:10a6:8:10::18)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 4c36baed-b0ed-4d30-20f7-08d6cd39779b
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:DB3PR0402MB3913; 
+x-ms-traffictypediagnostic: DB3PR0402MB3913:
+x-microsoft-antispam-prvs: <DB3PR0402MB3913FCFB62D55930AB342259F53A0@DB3PR0402MB3913.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4714;
+x-forefront-prvs: 00235A1EEF
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(396003)(346002)(376002)(136003)(39850400004)(366004)(189003)(199004)(81166006)(305945005)(25786009)(52116002)(14454004)(316002)(64756008)(110136005)(99286004)(14444005)(8676002)(256004)(66476007)(66556008)(66446008)(8936002)(73956011)(81156014)(66946007)(7736002)(50226002)(68736007)(97736004)(478600001)(53936002)(71200400001)(2201001)(86362001)(6436002)(4326008)(2616005)(476003)(486006)(6486002)(71190400001)(186003)(66066001)(2906002)(26005)(6512007)(6116002)(3846002)(5660300002)(386003)(2501003)(6506007)(36756003)(102836004);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3913;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: cQZ/y2g4Ao7edhl43KTfUF/Z2+id2uSMNeSz3OYjNyfxvezUsFYIs7Fx0HGfg7iKoF5ClgIox2Fy4HvkGF/zSlCqDfAlhOKtyu4VYt3Z3whbuWJ+UzwhaKxR0nV3DqADyk4C6F6XYGHSQubKWMfacUugfEoxkbbM3ivBcC/F2HeUvikeZ+OOEKv877zV0EmFWrRC2L/N1z0tIlOttrWXMZyJ9FJtip3W6lwFr9dPeuGLWlT/EfhjmiaCFcF23wrgZDUa7Qce0O4yR3q/DrTdOy2Z7PinSX02GF0TCM73ECxfiB4F3XVInTFB2TOoAmR106oJVHvDDBduclfC6yutUr4WcHC4DWCcHxPtM7IkBoGRWs6FNA9uLch2UbZXU1/rCQroh+AjnfGVaPlw5dgvmuVY01v1cfy/tpONv/al6bw=
 MIME-Version: 1.0
-X-MTK: N
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4c36baed-b0ed-4d30-20f7-08d6cd39779b
+X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Apr 2019 07:00:02.7402 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3913
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_235758_231556_6053E98A 
-X-CRM114-Status: GOOD (  27.53  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190430_000008_972602_D8A54B6C 
+X-CRM114-Status: GOOD (  12.96  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.8.58 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -73,112 +120,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Hans de Goede <hdegoede@redhat.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Linux USB List <linux-usb@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Biju Das <biju.das@bp.renesas.com>, Badhri Jagan
- Sridharan <badhri@google.com>, Andy
- Shevchenko <andy.shevchenko@gmail.com>, "moderated list:ARM/Mediatek SoC
- support" <linux-mediatek@lists.infradead.org>, Min Guo <min.guo@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Li Jun <jun.li@nxp.com>
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2019-04-29 at 11:25 -0500, Rob Herring wrote:
-> On Sun, Apr 28, 2019 at 7:16 AM Chunfeng Yun <chunfeng.yun@mediatek.com> wrote:
-> >
-> > On Fri, 2019-04-26 at 15:49 -0500, Rob Herring wrote:
-> > > On Fri, Apr 26, 2019 at 02:47:14PM +0800, Chunfeng Yun wrote:
-> > > > Now the USB Role Switch is supported, so add properties about it
-> > > >
-> > > > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> > > > ---
-> > > > v4: no changes
-> > > > v3: no changes
-> > > >
-> > > > v2 changes:
-> > > >   1. fix typo
-> > > >   2. refer new binding about connector property
-> > > > ---
-> > > >  .../devicetree/bindings/usb/mediatek,mtu3.txt          | 10 ++++++++--
-> > > >  1 file changed, 8 insertions(+), 2 deletions(-)
-> > > >
-> > > > diff --git a/Documentation/devicetree/bindings/usb/mediatek,mtu3.txt b/Documentation/devicetree/bindings/usb/mediatek,mtu3.txt
-> > > > index 3382b5cb471d..6e004c4a89af 100644
-> > > > --- a/Documentation/devicetree/bindings/usb/mediatek,mtu3.txt
-> > > > +++ b/Documentation/devicetree/bindings/usb/mediatek,mtu3.txt
-> > > > @@ -27,7 +27,9 @@ Optional properties:
-> > > >   - ranges : allows valid 1:1 translation between child's address space and
-> > > >     parent's address space
-> > > >   - extcon : external connector for vbus and idpin changes detection, needed
-> > > > -   when supports dual-role mode.
-> > > > +   when supports dual-role mode; it's consiedered valid for compatibility
-> > > > +   reasons, and not allowed for new bindings, use the property
-> > > > +   usb-role-switch instead.
-> > > >   - vbus-supply : reference to the VBUS regulator, needed when supports
-> > > >     dual-role mode.
-> > > >   - pinctrl-names : a pinctrl state named "default" is optional, and need be
-> > > > @@ -36,7 +38,8 @@ Optional properties:
-> > > >     is not set.
-> > > >   - pinctrl-0 : pin control group
-> > > >     See: Documentation/devicetree/bindings/pinctrl/pinctrl-bindings.txt
-> > > > -
-> > > > + - usb-role-switch : use USB Role Switch to support dual-role switch, but
-> > > > +   not extcon
-> > >
-> > > Coordinate with the Renesas and HiSilicon folks implementing the same
-> > > thing and put this in a common spot.
-> > I'll prepare a patch for it, and CC Biju and Yu
-> >
-> > > However, I think this should not
-> > > even be needed as knowing the controller capabilities (based on the
-> > > compatible) and knowing the type of connector should be enough
-> > > information to tell you if dual role is supported or not.
-> > Some Dual-Role controller drivers already used extcon framework to
-> > handle role switch, if try to support the new USB Role Switch framework,
-> > the driver may want to know which way will be used.
-> 
-> Wouldn't it know by presence of 'extcon' property or not?
+Use __maybe_unused for power management related functions
+instead of #if CONFIG_PM_SLEEP to simply the code.
 
-non-presence of 'extcon' doesn't mean the driver need USB Role Switch,
-e.g. support manual role switch decided by user, of course, we can check
-some cases and then decide whether need USB Role Switch or not, maybe
-provide a property will make it easier.
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+ drivers/i2c/busses/i2c-imx-lpi2c.c | 11 +++--------
+ 1 file changed, 3 insertions(+), 8 deletions(-)
 
-> 
-> > Sometimes users also want to use dual-role even use the type-A, such as
-> > use sys interface to handle role switch, so only knowing the connector
-> > type can't tell driver which way to use
-> 
-> That use case doesn't sound like something that should be in DT
-> though. That would be possible for any controller that supports
-> dual-role. 
-I give manual role switch by sysfs interface a higher priority than
-other ways, if manual switch is enabled, e.g. 'extcon' will be ignored.
-this may be different from other USB dual-role controller drivers.
-
-> Though perhaps that requires some specific Vbus wiring? Or
-> a cable with Vbus disconnected. 
-Yes, some projects use PMIC or Charger to detect Vbus, but some don't
-have Vbus detection circuit, and some even don't provide vbus pin
-
-> Either way, doesn't sound USB compliant.
-Yes, it's more related with customer usage, or cost down, anyway, it's
-better to support cases as many as possible.
-
-> 
-> Rob
-
-
+diff --git a/drivers/i2c/busses/i2c-imx-lpi2c.c b/drivers/i2c/busses/i2c-imx-lpi2c.c
+index 06c4c76..dc00fab 100644
+--- a/drivers/i2c/busses/i2c-imx-lpi2c.c
++++ b/drivers/i2c/busses/i2c-imx-lpi2c.c
+@@ -639,8 +639,7 @@ static int lpi2c_imx_remove(struct platform_device *pdev)
+ 	return 0;
+ }
+ 
+-#ifdef CONFIG_PM_SLEEP
+-static int lpi2c_runtime_suspend(struct device *dev)
++static int __maybe_unused lpi2c_runtime_suspend(struct device *dev)
+ {
+ 	struct lpi2c_imx_struct *lpi2c_imx = dev_get_drvdata(dev);
+ 
+@@ -650,7 +649,7 @@ static int lpi2c_runtime_suspend(struct device *dev)
+ 	return 0;
+ }
+ 
+-static int lpi2c_runtime_resume(struct device *dev)
++static int __maybe_unused lpi2c_runtime_resume(struct device *dev)
+ {
+ 	struct lpi2c_imx_struct *lpi2c_imx = dev_get_drvdata(dev);
+ 	int ret;
+@@ -671,10 +670,6 @@ static const struct dev_pm_ops lpi2c_pm_ops = {
+ 	SET_RUNTIME_PM_OPS(lpi2c_runtime_suspend,
+ 			   lpi2c_runtime_resume, NULL)
+ };
+-#define IMX_LPI2C_PM      (&lpi2c_pm_ops)
+-#else
+-#define IMX_LPI2C_PM      NULL
+-#endif
+ 
+ static struct platform_driver lpi2c_imx_driver = {
+ 	.probe = lpi2c_imx_probe,
+@@ -682,7 +677,7 @@ static struct platform_driver lpi2c_imx_driver = {
+ 	.driver = {
+ 		.name = DRIVER_NAME,
+ 		.of_match_table = lpi2c_imx_of_match,
+-		.pm = IMX_LPI2C_PM,
++		.pm = &lpi2c_pm_ops,
+ 	},
+ };
+ 
+-- 
+2.7.4
 
 _______________________________________________
 linux-arm-kernel mailing list
