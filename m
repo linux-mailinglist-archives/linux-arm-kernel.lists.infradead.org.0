@@ -2,65 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C32FFA56
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 15:29:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 801A7FA66
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 15:29:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rqVjU27WmtxQxqAFWovo41Z1ftkZC21+PVSVFDVU+2c=; b=beYOHif876VB4o
-	dKSt4IN7ZkEUb4loCZTPQXiBI6YsLdZUdE3kwdXvbR05o37Y3FjCMdxd6Yn/8yzVg+/T7g1gdPCU+
-	SErQ0z2Up04lsmKGqrr43o80QmvYugFMnRgy/O6VtPtW1cBz0CKEySJTGqum3NVY8IoEvX/RmOVKN
-	9fz2ZYl/JaHUDvyJAXKbNhGtNbpPjeS7gmKbRhmkgjrz/0t6Ox4sYxSgKPNrEQOepHNGIWRMhO/1s
-	rKRjwc/eceG013EQrbwlbIGLdaiWqIFY7HC2LKYa466h+42eWb0K7Zd4dEkjHj605vAqYegDJS1dj
-	402mR8v7RcOvAe/ihNiA==;
+	List-Owner; bh=5frZ0tz42jjsldrrrTOA8VVGW1RPY7HB8A+r2ZIqziI=; b=utwU+FdoAr80CY
+	3nLUqaPCXUVTPZFETw+mDDRvwgmRAwd0bVWPnGEg4LqS72rFJpPAm8EXWm2xAhzw/hhc6SISTudrn
+	3A5ZzP+NdKKGNOAslEx+84MoT7uuYCEwYfL3u2J6UttrUbasS+OLYo4TRT4/DNXL9B3MzyLttSQnE
+	cz/yATVSoP5SQnBhUd5kRvUAzeEDBOq+XrXm1O6YaCI+UXuLAlAnpHfrUj/9TQhzjWeOMZVAywzFm
+	L7OBJNIV3oOuN7AlezE0cfLJBlx4FWLD8XX0MP88jqZKfBliJ5oXAXy1ApHpAIyP5BQP6rdzjZK0p
+	mKFUwKVOw8h0HB5m+HcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLSom-0005ci-Ic; Tue, 30 Apr 2019 13:29:08 +0000
-Received: from mail-yw1-xc49.google.com ([2607:f8b0:4864:20::c49])
+	id 1hLSox-0005qi-UA; Tue, 30 Apr 2019 13:29:19 +0000
+Received: from mail-pl1-x649.google.com ([2607:f8b0:4864:20::649])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLSlp-0002MI-MQ
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 13:26:29 +0000
-Received: by mail-yw1-xc49.google.com with SMTP id 11so12848486ywt.12
+ id 1hLSlt-0002SM-Hz
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 13:26:39 +0000
+Received: by mail-pl1-x649.google.com with SMTP id g6so7059611plp.18
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Apr 2019 06:26:04 -0700 (PDT)
+ Tue, 30 Apr 2019 06:26:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=5vVbThWFeNTYFxwbQq67jdT1oZny+xOKBFoxX+2Uk7M=;
- b=FRME1COezh5b+xsqn4P+Wuk9kST7usWvir2xQhAmIzYbqhd+Dle1XM/PaJl5NwGBwF
- z7/SMrTqJtHy/gO4CF7xbqlFAwpIk8PwR9mnXkXEY1b5HFuyeguAZJRX9uVnCx/+N6Cg
- GdXjue/eQFQ6wfKzJUzNubo15IJ6ki/RwkeGwPRaQhUCcsmSJMlmZ6DdqtqFu3fOL0bX
- 01e0qP9aKT8hITIugatecY8TuWXLv4w13ho7n2rx3qvyQwxwSmnnV+ESWDP6rPMjBLm6
- 9em8VBa1zwsikfNNQo9I2iNQIYFHDIjY+xXevJ0y76Ma6MtOAyKoTjWTXLT8lERzPHTd
- 0Kew==
+ :cc; bh=Qo5FEqXeJKdpmXvqV1aNmsvS1qf4QOcuAEvGRZnbU+I=;
+ b=WJvgA7FhPH4nnlwUD7/cK+UGsQvztnpEwl/EwgwpETKSn2jcm2n8vXAJ5vmz+updJQ
+ hv5vQG7S1TSnGIvsNFWmNlDJOuMgBbHPDTDqE1/Q7BSkSWZGsQSxWFmbI9EyZ11RD35O
+ PoWicUER0x2L/roTgi03inDjhawM/RefWqQ0HU9dp3Bfb6piRBIYbrmvMjy86XgTN3si
+ Ctsvudz1bGthwFBvr6qlHQElPSiMTUZTlDJzHWjXIK5Av3TkDr+6XQPdcLfX/oczYas3
+ y01MzwmNMMd59RGZLYJMIFoZY0gr9B1FAyRfwBPJvm7Zd8dDqsp5xcnwSnBCo7S+GHIh
+ eAtA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=5vVbThWFeNTYFxwbQq67jdT1oZny+xOKBFoxX+2Uk7M=;
- b=ikaCNb7gk+S3rXWxSR1htOY6R8IEjclbn0jA9cG1s7QOzlc92IAJQWalekNnJAbFjR
- sINQPW/ERp77pNCVgFIP0+O8zrUR7MpPDMf+7IsORTKqFbXdVYUPSL6D4Y5p5Bx5VBP1
- Rsib8JpPhJJIjJz2g+iTBVeRRMhR11TmoGAN9j3e7pOJtZG3e9Qasn/p2a8YviYw9FGP
- 6IKtZLnfCSoi31wvn9Q50eWlzC6tp8gLEMOy4ETy9BGz0mHVULwO1JrzvuHQOIcVkplV
- 4ZWVzmDlsFqGG7uvr9Lb3vP1xVeKbNzdTzkVTlYtH5/xT+W2+VM9M68Iqrt6pgfp8Hyd
- szhQ==
-X-Gm-Message-State: APjAAAUWxYH0ZgAv6jwZHj3FtbDz7D2nudb+KTPBGOvhH82dhaEqV3iM
- HFdzClKjvi+WwXwsL+oYS1mq143nQWOXc6uIpp1ODCI+KmBmcPjfkUCOk/qqFEFbxKexDPJ8OgQ
- wpE+Q5yJ5LfTLouANVO8nE4pZeJbUuackL9WOPtup6W3/HB7DdavmjunYBpAH7ed6EYSup4Y+Vb
- GYAhWV4237AaewHHo=
-X-Google-Smtp-Source: APXvYqyv8kHiq9IuRt8k8uxL630nsRVEEuszbAKJggJOMl5SWFBjzMAnW0IWxRwAYYoqlPXLLWZ5sEsVnC5FF0Vx
-X-Received: by 2002:a81:3c89:: with SMTP id
- j131mr56890450ywa.183.1556630764032; 
- Tue, 30 Apr 2019 06:26:04 -0700 (PDT)
-Date: Tue, 30 Apr 2019 15:25:11 +0200
+ bh=Qo5FEqXeJKdpmXvqV1aNmsvS1qf4QOcuAEvGRZnbU+I=;
+ b=r/HKP/IOwjmEP50KF773S72yODhB8EtlQOcdfTRzb0PWSjs+fLPj59HRvFdk7LBwih
+ d9o6klel8IK3UYckSDtVSQOHQz8K4457Cb+YjCF1oaQX85AmJ/O65G5dYK7MFAG7hNBM
+ x3Eeuth0UFwZw1MJCC4odrKzgfJPnGZd/yRTvT02/6/BSjHaFNTxs19So5N9oIgXbhOA
+ qlGSl6GV3RJM4Q3Q5ZKmGwA0Zd1+1zmTvszViFXZ0kS2WWbbjjeRkxszED3zDIZmHDDK
+ VIBcxVsRiL6jwgKHBGNfYVa+VqZXzdZslqGOEodRCEedsn2CnUb66mI6/I7a+dHpT8J5
+ mmEg==
+X-Gm-Message-State: APjAAAVhVH44e2B8xXwXKxMKwDmCZcvNLT2HyuijlWps52VNCMPLnCpq
+ JbB4YD81fJ6IfoYiXi8Ctsp2pBCwtRD6CVrq1Cg7zw6yCSzuG5PyZi9EkBPPINZPP4cN8CZBGlT
+ MOT+UNqXCcdqJd49o4WQRDsJsA+evG0/L6xK1UqkXUqCSle0EUz6xnoGuGSmwWnizJAkbCKsSmf
+ pPfWz8JxtJrDKgiSk=
+X-Google-Smtp-Source: APXvYqzC1lVWU3xOxPIpeGY1IySKfn9D9N99TINTSZcSwcwIPCbrd75tIMQec4oX3DSqqzuBnQc6miaAqMAhwGUH
+X-Received: by 2002:a63:1d4f:: with SMTP id d15mr64183239pgm.347.1556630767405; 
+ Tue, 30 Apr 2019 06:26:07 -0700 (PDT)
+Date: Tue, 30 Apr 2019 15:25:12 +0200
 In-Reply-To: <cover.1556630205.git.andreyknvl@google.com>
-Message-Id: <1b2a46dbfa24bde41f11cff6f53683a5ea5915c7.1556630205.git.andreyknvl@google.com>
+Message-Id: <c9ef2282b1860e3ca6da28a4d599c24ff7147bb7.1556630205.git.andreyknvl@google.com>
 Mime-Version: 1.0
 References: <cover.1556630205.git.andreyknvl@google.com>
 X-Mailer: git-send-email 2.21.0.593.g511ec345e18-goog
-Subject: [PATCH v14 15/17] tee, arm64: untag user pointers in tee_shm_register
+Subject: [PATCH v14 16/17] vfio/type1,
+ arm64: untag user pointers in vaddr_get_pfn
 From: Andrey Konovalov <andreyknvl@google.com>
 To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org, 
  linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org, 
@@ -68,15 +68,15 @@ To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
  linux-media@vger.kernel.org, kvm@vger.kernel.org, 
  linux-kselftest@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_062606_468340_D20A7E4C 
-X-CRM114-Status: GOOD (  11.33  )
+X-CRM114-CacheID: sfid-20190430_062610_309657_A1DA4122 
+X-CRM114-Status: GOOD (  11.12  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c49 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:649 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
@@ -128,29 +128,29 @@ This patch is a part of a series that extends arm64 kernel ABI to allow to
 pass tagged user pointers (with the top byte set to something else other
 than 0x00) as syscall arguments.
 
-tee_shm_register()->optee_shm_unregister()->check_mem_type() uses provided
-user pointers for vma lookups (via __check_mem_type()), which can only by
-done with untagged pointers.
+vaddr_get_pfn() uses provided user pointers for vma lookups, which can
+only by done with untagged pointers.
 
 Untag user pointers in this function.
 
 Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
 ---
- drivers/tee/tee_shm.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/vfio/vfio_iommu_type1.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/tee/tee_shm.c b/drivers/tee/tee_shm.c
-index 0b9ab1d0dd45..8e7b52ab6c63 100644
---- a/drivers/tee/tee_shm.c
-+++ b/drivers/tee/tee_shm.c
-@@ -263,6 +263,7 @@ struct tee_shm *tee_shm_register(struct tee_context *ctx, unsigned long addr,
- 	shm->teedev = teedev;
- 	shm->ctx = ctx;
- 	shm->id = -1;
-+	addr = untagged_addr(addr);
- 	start = rounddown(addr, PAGE_SIZE);
- 	shm->offset = addr - start;
- 	shm->size = length;
+diff --git a/drivers/vfio/vfio_iommu_type1.c b/drivers/vfio/vfio_iommu_type1.c
+index d0f731c9920a..5daa966d799e 100644
+--- a/drivers/vfio/vfio_iommu_type1.c
++++ b/drivers/vfio/vfio_iommu_type1.c
+@@ -382,6 +382,8 @@ static int vaddr_get_pfn(struct mm_struct *mm, unsigned long vaddr,
+ 
+ 	down_read(&mm->mmap_sem);
+ 
++	vaddr = untagged_addr(vaddr);
++
+ 	vma = find_vma_intersection(mm, vaddr, vaddr + 1);
+ 
+ 	if (vma && vma->vm_flags & VM_PFNMAP) {
 -- 
 2.21.0.593.g511ec345e18-goog
 
