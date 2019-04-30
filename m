@@ -2,57 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6FB9FF20D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 10:31:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D15C9F369
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 11:46:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=heWFnptLfDMHSnmg9OW+rD1A87T6X09Ctk9+N2YgL1w=; b=Qc5uVOTIBMrs1Y
-	4YnHwUbsCJDH7mBji4AuGFiNveXt+CKRWcojtvNYgdq95CyQM7OSvZI8LLK2sHbYuIDdmuPNd93jr
-	uFjs9x5SiOkSWBE8EH53OQPOg8vIBPWyRO9ugCVHO1AwLRq5H8jECPnqZw7ICP6opZjxWg5k92H/H
-	3WFo8XNLRfNW1hToTnjPG93drPNbyNjiYQSLqTfvdsxS1kVFfzlYOLXNK/3kPV5nxFH2/8mMsTUyY
-	M/F7m8ye6oBeps3IhWfl7h7frN3cjDn5HFX7DZbfBgmHTnrBsqOMdHokmfZZD3/Hrr7CVoxHbNPyV
-	MJI2OhmeIGKDTpzI3Ulw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=NF2BWfDuZDXDzyezD3AyW5KYLIVP+/oBMugExZnriQU=; b=aCADexr4B2v2X2
+	Xd2v9KFw59zvR6vTj5YmW60zw8vph8wTRbWjGe7ET07M53FXvcXNCWRBaAb2OIRDvvbsOwCCoCirc
+	WGfdSaaSwrBm5Yj4YxQevgo/3k0V+Zu8fUEuiPj6jdRSQriOt65T3wNGTW9wiQ02UkffZyfqpRtNq
+	jcXL13VfF/4m4H5+y801llyJoNFtKgMfJv+gO08KxC1IRLkKiAeFQzXctTtxT0/rbNEqVlR2kCkrA
+	xiufnRYTcSzWbxWVDf8je1f+u18bkYeKtHvLO1yD8hEwar+8u05jRGapWbo0NUWgOJG6DegNGC3C3
+	uhSsVX4d3Yo6gJY2VEaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLOAo-0002T2-Tr; Tue, 30 Apr 2019 08:31:34 +0000
-Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+	id 1hLPLf-0001VN-GQ; Tue, 30 Apr 2019 09:46:51 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLOAg-0002SP-2o
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 08:31:28 +0000
-X-Originating-IP: 88.190.179.123
-Received: from localhost (unknown [88.190.179.123])
- (Authenticated sender: repk@triplefau.lt)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id EF872FF80F;
- Tue, 30 Apr 2019 08:31:12 +0000 (UTC)
-Date: Tue, 30 Apr 2019 10:40:01 +0200
-From: Remi Pommarel <repk@triplefau.lt>
-To: Bjorn Helgaas <helgaas@kernel.org>
-Subject: Re: [PATCH v2] PCI: aardvark: Use LTSSM state to build link training
- flag
-Message-ID: <20190430084000.GT2754@voidbox.localdomain>
-References: <20190316161243.29517-1-repk@triplefau.lt>
- <20190425210439.GG11428@google.com>
- <20190425222756.GR2754@voidbox.localdomain>
- <20190429194532.GA119268@google.com>
+ id 1hLPKN-000055-GG; Tue, 30 Apr 2019 09:45:35 +0000
+X-UUID: fb722f6563464a2d8d0bb9995f0a35ac-20190430
+X-UUID: fb722f6563464a2d8d0bb9995f0a35ac-20190430
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <henryc.chen@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1080485394; Tue, 30 Apr 2019 01:45:28 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 30 Apr 2019 02:45:26 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 30 Apr 2019 17:45:18 +0800
+Received: from mtkslt205.mediatek.inc (10.21.15.75) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 30 Apr 2019 17:45:18 +0800
+From: Henry Chen <henryc.chen@mediatek.com>
+To: Georgi Djakov <georgi.djakov@linaro.org>, Rob Herring
+ <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, Viresh Kumar
+ <vireshk@kernel.org>, Stephen Boyd <swboyd@chromium.org>
+Subject: [PATCH RFC V2] Add driver for dvfsrc,
+ support for active state of scpsys
+Date: Tue, 30 Apr 2019 16:50:54 +0800
+Message-ID: <1556614265-12745-1-git-send-email-henryc.chen@mediatek.com>
+X-Mailer: git-send-email 1.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190429194532.GA119268@google.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_013126_276761_10CD9A89 
-X-CRM114-Status: GOOD (  23.85  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190430_024531_785290_C0F5AD21 
+X-CRM114-Status: GOOD (  14.01  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.199 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -64,82 +70,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ellie Reeves <ellierevves@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: James Liao <jamesjj.liao@mediatek.com>, Weiyi Lu <weiyi.lu@mediatek.com>,
+ Nicolas Boichat <drinkcat@google.com>, linux-kernel@vger.kernel.org,
+ Fan Chen <fan.chen@mediatek.com>, devicetree@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 29, 2019 at 02:45:32PM -0500, Bjorn Helgaas wrote:
-> On Fri, Apr 26, 2019 at 12:27:57AM +0200, Remi Pommarel wrote:
-> > On Thu, Apr 25, 2019 at 04:04:39PM -0500, Bjorn Helgaas wrote:
-> > > On Sat, Mar 16, 2019 at 05:12:43PM +0100, Remi Pommarel wrote:
-> 
-> > > It sounds like reading and/or writing some registers during a retrain
-> > > causes some sort of EL1 error?  Is this a separate erratum?  Is there
-> > > a list of the registers and operations (read/write) that are affected?
-> > > The backtrace below suggests that it's actually a read of LNKCAP or
-> > > LNKCTL (not LNKSTA) that caused the error.
-> > 
-> > IIUC, the backtrace below produces an EL1 error when doing a PIO
-> > transfer while the link is still retraining. See my comment below for
-> > more about that. But accessing any root complex's register seems fine.
-> > > 
-> > > It sounds like there are really two problems:
-> > > 
-> > >   1) Reading PCI_EXP_LNKSTA (or the Aardvark equivalent) doesn't give
-> > >      valid data for PCI_EXP_LNKSTA_LT.
-> > 
-> > The 1) is correct.
-> > 
-> > >   2) Sometimes config reads cause EL1 errors.
-> > 
-> > Actually EL1 error happens when we try to access device's register with
-> > a PIO transfer, which is when we try to use the link while it is being
-> > retrained.
-> > 
-> > IMHO, 1) and 2) are linked. ASPM core tries to use the link too early
-> > because it has read invalid data for PCI_EXP_LNKSTA_LT.
-> 
-> From the software point of view, there is no such thing as "using the
-> link too early".  The pattern of:
-> 
->   - Verify that link is up
->   - Access device on other end of link
-> 
-> is always racy because the link can go down at any time due to hotplug
-> or other issues.  In particular, the link can go down after we verify
-> that the link is up, but before we access the device.
-> 
-> Software must be able to deal with that gracefully.  I don't know
-> whether that means catching and recovering from that EL1 error, or
-> masking it, or what.  This is architecture-specific stuff that's
-> outside the scope of PCIe itself.
-> 
-> But a link going down should never directly cause a kernel panic.
+The patchsets add support for MediaTek hardware module named DVFSRC
+(dynamic voltage and frequency scaling resource collector). The DVFSRC is
+a HW module which is used to collect all the requests from both software
+and hardware and turn into the decision of minimum operating voltage and
+minimum DRAM frequency to fulfill those requests.
 
-Ah, yes, you are right. There is "worse" than the EL1 error though, boot
-can also hang while accessing those registers when link is not in a
-ready state.
+So, This series is to implement the dvfsrc driver to collect all the
+requests of operating voltage or DRAM bandwidth from other device drivers
+likes GPU/Camera through 2 frameworks basically:
 
-So, yes, I do agree that there are two issues here. The
-PCI_EXP_LNKSTA_LT register one and the EL1 error or hang one. On the
-other hand I don't think I can split it in two because this patch only
-fixes the former which happens to not trigger the latter (ASPM core is
-kind enough to wait for the link to be ready after retraining).
+1. interconnect framework: to aggregate the bandwidth
+   requirements from different clients
 
-Thus the second issue remains and hot plugging for example would
-likely trigger it. I'll try to see with Thomas if we could reach the
-vendor about that.
+[1] https://patchwork.kernel.org/cover/10766329/
 
-By the way, I have replied to Lorenzo with, what I think, is a more
-legible patch. I could send a v3 with it if you prefer this one.
+Below is the emi bandwidth map of mt8183. There has a hw module "DRAM scheduler"
+which used to control the throughput. The DVFSRC will collect forecast data
+of dram bandwidth from SW consumers(camera/gpu...), and according the forecast
+to change the DRAM frequency
+
+           ICC provider         ICC Nodes
+                            ----          ----
+           ---------       |CPU |   |--->|VPU |
+  -----   |         |-----> ----    |     ----
+ |DRAM |--|DRAM     |       ----    |     ----
+ |     |--|scheduler|----->|GPU |   |--->|DISP|
+ |     |--|(EMI)    |       ----    |     ----
+ |     |--|         |       -----   |     ----
+  -----   |         |----->|MMSYS|--|--->|VDEC|
+           ---------        -----   |     ----
+             /|\                    |     ----
+              |change DRAM freq     |--->|VENC|
+           ----------               |     ----
+          |  DVFSR   |              |
+          |          |              |     ----
+           ----------               |--->|IMG |
+                                    |     ----
+                                    |     ----
+                                    |--->|CAM |
+                                          ----
+
+2. Active state management of power domains[1]: to handle the operating
+   voltage opp requirement from different power domains
+
+[2] https://lwn.net/Articles/744047/
+
+Changes in RFC V2:
+* Remove the DT property dram_type. (Rob)
+* Used generic dts property 'opp-level' to get the performace state. (Stephen)
+* Remove unecessary dependency config on Kconfig. (Stephen)
+* Remove unused header file, fixed some coding style issue, typo,
+error handling on dvfsrc driver. (Nicolas/Stephen)
+* Remove irq handler on dvfsrc driver. (Stephen)
+* Remove init table on dvfsrc driver, combine hw init on trustzone.
+* Add interconnect support of mt8183 to aggregate the emi bandwidth.
+(Georgi)
+
+RFC V1: https://lore.kernel.org/patchwork/cover/1028535/
+
+Henry Chen (11):
+  dt-bindings: soc: Add dvfsrc driver bindings
+  dt-bindings: soc: Add opp table on scpsys bindings
+  soc: mediatek: add support for the performance state
+  arm64: dts: mt8183: add performance state support of scpsys
+  soc: mediatek: add header for mediatek SIP interface
+  soc: mediatek: add MT8183 dvfsrc support
+  arm64: dts: mt8183: add dvfsrc related nodes
+  dt-bindings: interconnect: add MT8183 interconnect dt-bindings
+  dt-bindings: interconnect: Add header for interconnect node
+  interconnect: mediatek: Add mt8183 interconnect provider driver
+  arm64: dts: mt8183: Add interconnect provider DT nodes
+
+ .../bindings/interconnect/mtk,mt8183.txt           |  24 ++
+ .../devicetree/bindings/soc/mediatek/dvfsrc.txt    |  23 ++
+ .../devicetree/bindings/soc/mediatek/scpsys.txt    |  42 +++
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi           |  33 ++
+ drivers/interconnect/Kconfig                       |   1 +
+ drivers/interconnect/Makefile                      |   1 +
+ drivers/interconnect/mediatek/Kconfig              |  13 +
+ drivers/interconnect/mediatek/Makefile             |   5 +
+ drivers/interconnect/mediatek/mt8183.c             | 223 +++++++++++++
+ drivers/soc/mediatek/Kconfig                       |  15 +
+ drivers/soc/mediatek/Makefile                      |   1 +
+ drivers/soc/mediatek/mtk-dvfsrc.c                  | 347 +++++++++++++++++++++
+ drivers/soc/mediatek/mtk-scpsys.c                  |  53 ++++
+ drivers/soc/mediatek/mtk-scpsys.h                  |  22 ++
+ include/dt-bindings/interconnect/mtk,mt8183.h      |  18 ++
+ include/dt-bindings/soc/mtk,dvfsrc.h               |  14 +
+ include/soc/mediatek/mtk_dvfsrc.h                  |  22 ++
+ include/soc/mediatek/mtk_sip.h                     |  17 +
+ 18 files changed, 874 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/interconnect/mtk,mt8183.txt
+ create mode 100644 Documentation/devicetree/bindings/soc/mediatek/dvfsrc.txt
+ create mode 100644 drivers/interconnect/mediatek/Kconfig
+ create mode 100644 drivers/interconnect/mediatek/Makefile
+ create mode 100644 drivers/interconnect/mediatek/mt8183.c
+ create mode 100644 drivers/soc/mediatek/mtk-dvfsrc.c
+ create mode 100644 drivers/soc/mediatek/mtk-scpsys.h
+ create mode 100644 include/dt-bindings/interconnect/mtk,mt8183.h
+ create mode 100644 include/dt-bindings/soc/mtk,dvfsrc.h
+ create mode 100644 include/soc/mediatek/mtk_dvfsrc.h
+ create mode 100644 include/soc/mediatek/mtk_sip.h
 
 -- 
-Remi
+1.9.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
