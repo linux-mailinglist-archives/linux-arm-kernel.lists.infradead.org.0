@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB6C1FB18
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 16:10:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D9B1FACF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 15:50:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Mime-Version:Date:To:From:
-	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=iXdOzE00VYSPjxB7mi3Mx9kY30d8QuWsfr0pHgXQThE=; b=WUxVEXpOg8hOec
-	DBWvvShyBagUY4PYUMRh4HhqTxb3IHr1vAoW1k/EoNE+Uu3vvix/LEz8VdldY1J7kROiGEOdtQ0xc
-	ymwVE0ibeLB4gS6/v95scy1xrFm8Vvcn4VgGYZ5xkedrbMhmtsGFPNbann5+xaFVGrjRWUjEgDgto
-	T6bfO52NRSeytYVyUiwwN2RL7eDKrF6hbSOXrQxROr2X7SkAya1JwHg3L7HzDw2a9X2MHWkI2EIjR
-	sjwkbYogDyaX9d1h/18NDfRGHME75m/afzPYmmrJlfXP3Tk3Pj/KxNP/2W1l5E26kN+SidtKXwrco
-	clQlLTmheaRxPsDN37Rw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/MQtELXiKKT8nyfNxpp7N8Krv4z6yJgjD21XNn1loDU=; b=qLWrs3rKmYva4w
+	8BlgNpv2kiO/Y9vDToL9d9DiwfNrUaQUGnROnvaRpz5C53npGWw//lqwaMe5NC1mfpBowjP2SUsev
+	8JSIzoJYzItK9wX6+emIa2t6vTlnWQsmgAd796BtaZwg3XaNW5bYVkarFkxsIRxxUqXiC19RtGPgD
+	fwC9+RAI4KUX6zwF+DfMUMBQC0t4WDWoB+8ipFakP+zLPG3HylARRoHtY7xd1pkBK3TL8Bn0t4HuR
+	asG01zeDHpfcg40uuuDM+cRdCWomwZSoRnKb567Zji11wM5ZK1qEIEYlaJLB/UteyZDIjWOpBOC4e
+	ALxvDtY7MCg//VCDDHhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLTSp-00024X-Fn; Tue, 30 Apr 2019 14:10:31 +0000
-Received: from securetransport.cubewerk.de ([188.68.39.254])
+	id 1hLT9O-0003Ap-BL; Tue, 30 Apr 2019 13:50:26 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLTSi-00024B-D7
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 14:10:25 +0000
-Received: from DHPLMX01.DH-ELECTRONICS.ORG (unknown [188.193.158.174])
- (using TLSv1.2 with cipher DHE-RSA-CAMELLIA128-SHA256 (128/128 bits))
- (No client certificate requested)
- by securetransport.cubewerk.de (Postfix) with ESMTPSA id 1AF6B5E974;
- Tue, 30 Apr 2019 15:45:20 +0200 (CEST)
-Received: from DHPLMX01 (localhost [127.0.0.1])
- by DHPLMX01.DH-ELECTRONICS.ORG (Postfix) with ESMTP id CF4E22103FAB;
- Tue, 30 Apr 2019 15:45:19 +0200 (CEST)
-Received: by DHPLMX01 (kopano-spooler) with MAPI; Tue, 30 Apr 2019 15:45:19
- +0200
-Subject: cpu power up timing changes causes UART rx character loss on imx6ull
-X-secureTransport-forwarded: yes
-From: =?utf-8?Q?Christoph_Niedermaier?= <cniedermaier@dh-electronics.com>
-To: =?utf-8?Q?linux-arm-kernel=40lists=2Einfradead=2Eorg?=
- <linux-arm-kernel@lists.infradead.org>, =?utf-8?Q?linux-imx=40nxp=2Eco?=
- =?utf-8?Q?m?= <linux-imx@nxp.com>, =?utf-8?Q?linux-serial=40vger=2Ekernel?=
- =?utf-8?Q?=2Eorg?= <linux-serial@vger.kernel.org>
-Date: Tue, 30 Apr 2019 13:45:19 +0000
+ id 1hLT9G-00039z-Hl
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 13:50:19 +0000
+Received: from kresse.hi.pengutronix.de ([2001:67c:670:100:1d::2a])
+ by metis.ext.pengutronix.de with esmtp (Exim 4.89)
+ (envelope-from <l.stach@pengutronix.de>)
+ id 1hLT94-0001F1-TV; Tue, 30 Apr 2019 15:50:06 +0200
+Message-ID: <1556632204.2560.20.camel@pengutronix.de>
+Subject: Re: [PATCH] arm64: dts: imx8mq: Add a node for irqsteer
+From: Lucas Stach <l.stach@pengutronix.de>
+To: Guido =?ISO-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>, Rob Herring
+ <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>, Shawn Guo
+ <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>, Pengutronix
+ Kernel Team <kernel@pengutronix.de>, Fabio Estevam <festevam@gmail.com>,
+ NXP Linux Team <linux-imx@nxp.com>,  Abel Vesa <abel.vesa@nxp.com>, Carlo
+ Caione <ccaione@baylibre.com>, Daniel Baluta <daniel.baluta@nxp.com>,
+ "Angus Ainslie (Purism)" <angus@akkea.ca>,  devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,  linux-kernel@vger.kernel.org
+Date: Tue, 30 Apr 2019 15:50:04 +0200
+In-Reply-To: <a08a0a2fdd2090f4f42fe50d8ed70ee08b2fbcaf.1556631673.git.agx@sigxcpu.org>
+References: <a08a0a2fdd2090f4f42fe50d8ed70ee08b2fbcaf.1556631673.git.agx@sigxcpu.org>
+X-Mailer: Evolution 3.22.6-1+deb9u1 
 Mime-Version: 1.0
-X-Priority: 3 (Normal)
-X-Mailer: Kopano 8.6.8
-Message-Id: <kcis.E7DDD7DFA27C49D7987A7EAB797CB891@DHPLMX01>
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::2a
+X-SA-Exim-Mail-From: l.stach@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_071024_650588_5A4642E5 
-X-CRM114-Status: UNSURE (   4.70  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190430_065018_747401_D8FC3DA6 
+X-CRM114-Status: GOOD (  15.30  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_QP_LONG_LINE      RAW: Quoted-printable line longer than 76
- chars
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -68,31 +68,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?utf-8?Q?Sascha_Hauer?= <s.hauer@pengutronix.de>,
- =?utf-8?Q?Anson_Huang?= <anson.huang@nxp.com>,
- =?utf-8?Q?kernel=40pengutronix=2Ede?= <kernel@pengutronix.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
-
-I have found out that the commit 1e434b703248 ("ARM: imx: update the cpu power up timing setting on i.mx6sx") causes UART rx character loss on imx6ull.
-The commit is designed for imx6sx, but it also changes the cpu power up timing of the imx6ull, because function imx6sx_cpuidle_init() is also used for imx6ull.
-
-After receiving of 32 characters correctly, the following characters 33-36 gets lost if there is no delay in the transmission.
-I connect the imx6ull with a native PC COM port.
-
-If I revert the commit I will receive all characters correctly.
-
-Has anyone discovered this behavior as well?
-
-Thank you,
-Christoph
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QW0gRGllbnN0YWcsIGRlbiAzMC4wNC4yMDE5LCAxNTo0MSArMDIwMCBzY2hyaWViIEd1aWRvIEfD
+vG50aGVyOgo+IEFkZCBhIG5vZGUgZm9yIHRoZSBpcnFzdGVlciBpbnRlcnJ1cHQgY29udHJvbGxl
+ciBmb3VuZCBvbiB0aGUgaU1YOE1RCj4gU29DLgo+IAo+IFNpZ25lZC1vZmYtYnk6IEd1aWRvIEfD
+vG50aGVyIDxhZ3hAc2lneGNwdS5vcmc+Cj4gLS0tCj4gwqBhcmNoL2FybTY0L2Jvb3QvZHRzL2Zy
+ZWVzY2FsZS9pbXg4bXEuZHRzaSB8IDIxICsrKysrKysrKysrKysrKysrKysrKwo+IMKgMSBmaWxl
+IGNoYW5nZWQsIDIxIGluc2VydGlvbnMoKykKPiAKPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9i
+b290L2R0cy9mcmVlc2NhbGUvaW14OG1xLmR0c2kgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL2ZyZWVz
+Y2FsZS9pbXg4bXEuZHRzaQo+IGluZGV4IDJjYzkzOWNmYmQ3NS4uY2UwZTEzN2VjOGVlIDEwMDY0
+NAo+IC0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvZnJlZXNjYWxlL2lteDhtcS5kdHNpCj4gKysr
+IGIvYXJjaC9hcm02NC9ib290L2R0cy9mcmVlc2NhbGUvaW14OG1xLmR0c2kKPiBAQCAtNzk4LDYg
+Kzc5OCwyNyBAQAo+IMKgCQkJfTsKPiDCoAkJfTsKPiDCoAo+ICsJCWJ1c0AzMmMwMDAwMCB7IC8q
+IEFJUFM0ICovCj4gKwkJCWNvbXBhdGlibGUgPSAiZnNsLGlteDhtcS1haXBzLWJ1cyIsICJzaW1w
+bGUtYnVzIjsKPiArCQkJI2FkZHJlc3MtY2VsbHMgPSA8MT47Cj4gKwkJCSNzaXplLWNlbGxzID0g
+PDE+Owo+ICsJCQlyYW5nZXMgPSA8MHgzMmMwMDAwMCAweDMyYzAwMDAwIDB4NDAwMDAwPjsKPiAr
+Cj4gKwkJCWlycXN0ZWVyOiBpbnRlcnJ1cHQtY29udHJvbGxlckAzMmUyZDAwMCB7Cj4gKwkJCQlj
+b21wYXRpYmxlID0gImZzbCxpbXg4bS1pcnFzdGVlciIsCj4gKwkJCQkJwqDCoMKgwqDCoCJmc2ws
+aW14LWlycXN0ZWVyIjsKClRoaXMgZml0cyBvbiBhIHNpbmdsZSBsaW5lLCByaWdodD8KCj4gKwkJ
+CQlyZWcgPSA8MHgzMmUyZDAwMCAweDEwMDA+Owo+ICsJCQkJaW50ZXJydXB0cyA9IDxHSUNfU1BJ
+IDE4IElSUV9UWVBFX0xFVkVMX0hJR0g+Owo+ICsJCQkJY2xvY2tzID0gPCZjbGsgSU1YOE1RX0NM
+S19ESVNQX0FQQl9ST09UPjsKPiArCQkJCWNsb2NrLW5hbWVzID0gImlwZyI7Cj4gKwkJCQlmc2ws
+Y2hhbm5lbCA9IDwwPjsKPiArCQkJCWZzbCxudW0taXJxcyA9IDw2ND47Cj4gKwkJCQlpbnRlcnJ1
+cHQtY29udHJvbGxlcjsKPiArCQkJCWludGVycnVwdC1wYXJlbnQgPSA8JmdpYz47CgpUaGlzIGlz
+IHdyb25nLCB0aGUgaXJxc3RlZXIgdXBzdHJlYW0gSVJRIGlzIHJvdXRlZCB0aHJvdWdoIHRoZSBH
+UEMgbGlrZQphbGwgdGhlIG90aGVyIHBlcmlwaGVyYWwgaW50ZXJydXB0cy4gWW91IGNhbiBqdXN0
+IGRyb3AgdGhpcyBwcm9wZXJ0eS4KCldpdGggdGhpcyBmaXhlZDoKUmV2aWV3ZWQtYnk6IEx1Y2Fz
+IFN0YWNoIDxsLnN0YWNoQHBlbmd1dHJvbml4LmRlPgoKUmVnYXJkcywKTHVjYXMKCj4gKwkJCQkj
+aW50ZXJydXB0LWNlbGxzID0gPDE+Owo+ICsJCQl9Owo+ICsJCX07Cj4gKwo+IMKgCQlncHU6IGdw
+dUAzODAwMDAwMCB7Cj4gwqAJCQljb21wYXRpYmxlID0gInZpdmFudGUsZ2MiOwo+IMKgCQkJcmVn
+ID0gPDB4MzgwMDAwMDAgMHg0MDAwMD47CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0t
+a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
+bG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
