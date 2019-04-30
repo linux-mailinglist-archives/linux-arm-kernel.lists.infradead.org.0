@@ -2,53 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B00EFCCF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 17:26:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAD43FCDD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 17:28:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=OPqGIF/sDnQ52mWqFaNYxPmJ3uorV7cYMEs7tZl9biY=; b=Zxl47kHU6oTZ20m56WYtpI82vv
-	h+WtQIPgBOgdo1jaklbvpjjW0kUYi7GjDvQmXThUvGFL0DT8t7x4QcwV32J7vZgcRkIZ7XKu8htEw
-	z2oGpYLNFf3qEr1sGjrpHP5aZ71vc/2kktfFEOWr/rsx2tr8RAmXwCfDrXogZfP15dbkoIf1vJTcc
-	4wfjPV1KtP09eFy5yhMQQhC7pkpVn/YcQ5qSEmZi82e0ViU6pB090Uo0fDx+i0Vx/4+eXDt234PiY
-	vGW6sA8fHeIQufyYNTp6HwYNF9CFswbNDV6UbgkMDpfnD6txz8bVJinNKnnZjtxwTNLyTzXaB/lVF
-	ZvYf5/Cw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=L4gwcachYalsVUmUB1nsIB7AAcETTNhsjmTs1OCgS68=; b=bI0ChqUVKOQ2KL
+	GraNwWDiE0BlTjF4yxEPZ2wiqAYiLnY99zJ+PvsVMtl+QTl87X9qLWXhOIxpm8L7gZ8X8ZgLKFQ85
+	ZK4AXta/ggppsqB3sEYqUQhXkZUXkd2creZSuzUMkuntGFx7ZxEDGIElFo8rtftCWEJWrw5dgt37+
+	xWHEeIsKJ1c/kB1Lt0jN90EJJQUNZ5zFdgcfMEDPRZ9z6Zq8wPtNjpvBUAMJtMTEYWbr6+m8vBp0l
+	rfqdMkoc4p/D6cHtYveW7CJHaauS74/3Scc7VQR7n+MiM0Xb6HQd9sItIditGcBVa3qh36pCgrJ+d
+	2juKAz+PXlS7jVpYNmVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLUdx-00053b-Ah; Tue, 30 Apr 2019 15:26:05 +0000
-Received: from guitar.tcltek.co.il ([192.115.133.116] helo=mx.tkos.co.il)
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLUdp-00052h-Gt
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 15:25:59 +0000
-Received: from tarshish (unknown [10.0.8.2])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mx.tkos.co.il (Postfix) with ESMTPS id 9C46B44005B;
- Tue, 30 Apr 2019 18:25:52 +0300 (IDT)
-References: <20190430093212.28425-1-alexandre.belloni@bootlin.com>
- <20190430093212.28425-2-alexandre.belloni@bootlin.com>
- <877ebbu3lz.fsf@tarshish> <20190430114702.GD11339@piout.net>
- <875zqvu1l3.fsf@tarshish> <20190430130544.GF11339@piout.net>
-User-agent: mu4e 1.0; emacs 26.1
-From: Baruch Siach <baruch@tkos.co.il>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: Re: [PATCH 2/4] rtc: digicolor: set range
-In-reply-to: <20190430130544.GF11339@piout.net>
-Date: Tue, 30 Apr 2019 18:25:52 +0300
-Message-ID: <87y33rsef3.fsf@tarshish>
+	id 1hLUfm-0005PZ-Ki; Tue, 30 Apr 2019 15:27:58 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hLUff-0005OU-KB
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 15:27:53 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E0BE6374;
+ Tue, 30 Apr 2019 08:27:48 -0700 (PDT)
+Received: from [10.1.196.92] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ ECEC73F719; Tue, 30 Apr 2019 08:27:46 -0700 (PDT)
+Subject: Re: [PATCH 7/7] clocksource/arm_arch_timer: Use
+ arch_timer_read_counter to access stable counters
+To: Daniel Lezcano <daniel.lezcano@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20190408154907.223536-1-marc.zyngier@arm.com>
+ <20190408154907.223536-8-marc.zyngier@arm.com>
+ <2a60a031-1eab-2d5e-89ff-b5d516545eeb@linaro.org>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+Organization: ARM Ltd
+Message-ID: <bbe9b8c1-132f-bbfa-e3d0-ad10c4165ad7@arm.com>
+Date: Tue, 30 Apr 2019 16:27:43 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <2a60a031-1eab-2d5e-89ff-b5d516545eeb@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_082557_800592_AD826941 
-X-CRM114-Status: GOOD (  23.86  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190430_082751_674460_D759F0EA 
+X-CRM114-Status: GOOD (  17.77  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -60,83 +111,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Russell King <linux@arm.linux.org.uk>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ Valentin Schneider <valentin.schneider@arm.com>,
+ Guenter Roeck <linux@roeck-us.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Alexandre,
+On 15/04/2019 13:16, Daniel Lezcano wrote:
+> On 08/04/2019 17:49, Marc Zyngier wrote:
+>> Instead of always going via arch_counter_get_cntvct_stable to
+>> access the counter workaround, let's have arch_timer_read_counter
+>> to point to the right method.
+>>
+>> For that, we need to track whether any CPU in the system has a
+>> workaround for the counter. This is done by having an atomic
+>> variable tracking this.
+>>
+>> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+>> ---
+> 
+> [ ... ]
+> 
+>> +
+>>  /*
+>>   * Default to cp15 based access because arm64 uses this function for
+>>   * sched_clock() before DT is probed and the cp15 method is guaranteed
+>> @@ -372,6 +392,7 @@ static u32 notrace sun50i_a64_read_cntv_tval_el0(void)
+>>  DEFINE_PER_CPU(const struct arch_timer_erratum_workaround *, timer_unstable_counter_workaround);
+>>  EXPORT_SYMBOL_GPL(timer_unstable_counter_workaround);
+>>  
+>> +static atomic_t timer_unstable_counter_workaround_in_use = ATOMIC_INIT(0);
+> 
+> Wouldn't make sense to READ_ONCE / WRITE_ONCE instead of using an atomic?
 
-On Tue, Apr 30 2019, Alexandre Belloni wrote:
-> On 30/04/2019 15:20:08+0300, Baruch Siach wrote:
->> On Tue, Apr 30 2019, Alexandre Belloni wrote:
->> > On 30/04/2019 14:36:24+0300, Baruch Siach wrote:
->> >> Hi Alexandre,
->> >>
->> >> On Tue, Apr 30 2019, Alexandre Belloni wrote:
->> >>
->> >> > While the range of REFERENCE + TIME is actually 33 bits, the counter
->> >> > itself (TIME) is a 32-bits seconds counter.
->> >> >
->> >> > Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
->> >> > ---
->> >> >  drivers/rtc/rtc-digicolor.c | 1 +
->> >> >  1 file changed, 1 insertion(+)
->> >> >
->> >> > diff --git a/drivers/rtc/rtc-digicolor.c b/drivers/rtc/rtc-digicolor.c
->> >> > index 5bb14c56bc9a..e6e16aaac254 100644
->> >> > --- a/drivers/rtc/rtc-digicolor.c
->> >> > +++ b/drivers/rtc/rtc-digicolor.c
->> >> > @@ -206,6 +206,7 @@ static int __init dc_rtc_probe(struct platform_device *pdev)
->> >> >  	platform_set_drvdata(pdev, rtc);
->> >> >
->> >> >  	rtc->rtc_dev->ops = &dc_rtc_ops;
->> >> > +	rtc->rtc_dev->range_max = U32_MAX;
->> >>
->> >> Where can I find documentation on the meaning and usage of the range_max
->> >> value? I could not find anything in the kernel source.
->> >
->> > It should be set to the maximum UNIX timestamp the RTC can be set to
->> > while keeping range_min to range_max contiguous.
->> >
->> > In the digicolor case, you could go up to 8589934590 (Wed Mar 16
->> > 12:56:30 UTC 2242) but the driver only writes DC_RTC_REFERENCE and I'm
->> > not sure it can also update DC_RTC_TIME safely.
->> 
->> DC_RTC_TIME resets to zero whenever dc_rtc_write writes CMD_RESET to the
->> DC_RTC_CONTROL register. DC_RTC_REFERENCE keeps the value that
->> dc_rtc_write stores there. So the driver will return values larger than
->> U32_MAX if you happen to cross this point in time between dc_rtc_write
->> and dc_rtc_read. But you can't store a value larger than U32_MAX in
->> DC_RTC_REFERENCE.
->> 
->> Will the core RTC code handle the U32_MAX cross correctly?
->
-> Yes, this is ok to return a valid value that is higher than range_max.
-> However, at that time, you will not be able to set any alarms anymore as
-> the core doesn't allow to set alarms after range_max.
->
-> I would think that this is fine because this will happen in 2106 and we
-> have a way to offset the time (the whole goal of setting the range)
-> using device tree.
+I don't think *_ONCE says anything about the atomicity of the access. It
+only instruct the compiler that this should only be accessed once, and
+not reloaded/rewritten. In this case, WRITE_ONCE() would work just as
+well, but I feel that setting the expectations do matter.
 
-That's the sort of documentation that I'm missing. The 'start-year'
-property is mentioned in the DT binding documentation. But I don't see
-where range_max is documented as a facility for the time offset feature.
+I also had a vague idea to use this as a refcount to drop the
+workarounds as CPUs get hotplugged off, in which case we'd need the RMW
+operations to be atomic.
 
-Anyway,
-
-Acked-by: Baruch Siach <baruch@tkos.co.il>
+Anyway, I'm not hell bent on this. If you fundamentally disagree with me
+I'll change it.
 
 Thanks,
-baruch
 
+	M.
 -- 
-     http://baruch.siach.name/blog/                  ~. .~   Tk Open Systems
-=}------------------------------------------------ooO--U--Ooo------------{=
-   - baruch@tkos.co.il - tel: +972.52.368.4656, http://www.tkos.co.il -
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
