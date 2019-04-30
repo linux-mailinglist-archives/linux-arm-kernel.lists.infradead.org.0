@@ -2,79 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDD78FE1B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 18:47:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9EC1AFE42
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 18:58:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=He/ykw7gvOHblTwf7D9p+u/pQBxSIjtGipqqX2Nvgt8=; b=CNtK7okoW49HdU
-	CW+/yXgV9xz1fT3KUTBf2iX5Vj1uG1c0HMzIPHv2ei/Ux10rT1nThrsE8K8lj7sKxwQufCbaCVtC6
-	ZhOyNkHwFGYw98oskVOOKXn0E7DaMGcthguNXbYAaInPXR4gGatO1NvGbFwiq1dNBoZujoy1mi8A2
-	j1gRDLtBC+gBpUcq+2a8YZCYWWB10Emi7KIKk99trP6M2OHxfiZdQQelECGUPPxLIAjYTOPhy19C6
-	s8vljKgpsGlwEa6Rh2mv9GZwHZqzJa/eXC5UsmjG9r7JETdpX2HZU2L8i7a4mY1705Y+8a5tPfifV
-	/t8uUM4HUgxV2AGswfWg==;
+	List-Owner; bh=9RflkgELMxCYbiP1NCc08f8D85r6ACZM7+F+byIebF8=; b=JZV2YXlzeU1N1b
+	E/rhgucvLcYMv4OGOq4pNKNuDK2AXpngah6CcBVJDuD7QjxF0yQc+tU4ZF2r9Ems14TCWdt2dB0UI
+	zW71YaHgBEimJXkJaeL1p0cHK5OgffU68xam4/KDF9IxpHRnAputrrzt8AfyRT6L3LzinyliLJFWQ
+	zMdLuLghKilhTLn3PSRFhtBYfRvqadTMIL0xqy9sbm50/X6Qc0Jkj0nXdHcRYGhDq1LcYinXZgDIt
+	VY9YxQLh4y9VqugNlTrux1PL9enDkMm23YT272iolEwrapJ4gZJqV2E6zfkEhPZ2LaDRsVkcPRGKs
+	l4INpVAkhXxKteeN9JJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLVuW-0004uu-7h; Tue, 30 Apr 2019 16:47:16 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hLW5M-0000pG-My; Tue, 30 Apr 2019 16:58:28 +0000
+Received: from honk.sigxcpu.org ([24.134.29.49])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLVuP-0004uO-DM
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 16:47:10 +0000
-Received: from mail-wr1-f53.google.com (mail-wr1-f53.google.com
- [209.85.221.53])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 45D67217F5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Apr 2019 16:47:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1556642828;
- bh=S48pNAsTw7BEZ36AW1e1TSyWImwtIKer4k1K+rKGgdc=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=OfHCGrtUbiFJqLJB8TSFf7ldICXZA8iqik5XHx+uu4ZsE2UzlSk2VQWW6WYUsnUZr
- hB6najoPJUOCFObaMzBNFOEjtzUHebohanEO9HfhAwUAKuM2Lq8Up3CVLv213XzgBu
- yfoLpbcuVy3Wm2yY972dudRHvVjBb4hHzg0rXing=
-Received: by mail-wr1-f53.google.com with SMTP id r7so2088044wrr.13
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Apr 2019 09:47:08 -0700 (PDT)
-X-Gm-Message-State: APjAAAU0i+4ou6sCOPGtalMYu7ASIizXFveXaZHoG0IwljiOOkiVXGov
- XoXylQGSiLtczBKbNkychu1k2nsU3UNq0KDvHmPoFg==
-X-Google-Smtp-Source: APXvYqzHEqvh6x3xmyRtRqKnO98xcUmDJgjMNHD1klJcb2L6wbWRNt5Tm23i28W+RKElRE+GeRwRbM4AmqFkXIl8JL4=
-X-Received: by 2002:a5d:4e82:: with SMTP id e2mr2206324wru.199.1556642826765; 
- Tue, 30 Apr 2019 09:47:06 -0700 (PDT)
+ id 1hLW5F-0000oc-Bz
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 16:58:23 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by honk.sigxcpu.org (Postfix) with ESMTP id D1245FB03;
+ Tue, 30 Apr 2019 18:58:18 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
+Received: from honk.sigxcpu.org ([127.0.0.1])
+ by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id m4ARVJI0QoKf; Tue, 30 Apr 2019 18:58:17 +0200 (CEST)
+Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
+ id 15AA24027E; Tue, 30 Apr 2019 18:58:17 +0200 (CEST)
+Date: Tue, 30 Apr 2019 18:58:17 +0200
+From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
+To: Fabio Estevam <festevam@gmail.com>
+Subject: Re: [PATCH v9 2/2] phy: Add driver for mixel mipi dphy found on
+ NXP's i.MX8 SoCs
+Message-ID: <20190430165817.GB29626@bogon.m.sigxcpu.org>
+References: <cover.1556633413.git.agx@sigxcpu.org>
+ <b999b07673e59c676d2e43a786b635beb056e9bf.1556633413.git.agx@sigxcpu.org>
+ <CAOMZO5BerzB94YvJgZoOVYaA3fCsHQiuC5FyVVVRV+ttEg92uQ@mail.gmail.com>
 MIME-Version: 1.0
-References: <20190318104925.16600-1-sudeep.holla@arm.com>
- <20190318104925.16600-4-sudeep.holla@arm.com>
-In-Reply-To: <20190318104925.16600-4-sudeep.holla@arm.com>
-From: Andy Lutomirski <luto@kernel.org>
-Date: Tue, 30 Apr 2019 09:46:54 -0700
-X-Gmail-Original-Message-ID: <CALCETrXEebRqX0W8MuS0SeaMDpEO5KdS3k7id279hZgHrmc8yA@mail.gmail.com>
-Message-ID: <CALCETrXEebRqX0W8MuS0SeaMDpEO5KdS3k7id279hZgHrmc8yA@mail.gmail.com>
-Subject: Re: [PATCH v2 3/6] x86: clean up _TIF_SYSCALL_EMU handling using
- ptrace_syscall_enter hook
-To: Sudeep Holla <sudeep.holla@arm.com>
+Content-Disposition: inline
+In-Reply-To: <CAOMZO5BerzB94YvJgZoOVYaA3fCsHQiuC5FyVVVRV+ttEg92uQ@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_094709_470260_293FA01F 
-X-CRM114-Status: GOOD (  14.31  )
-X-Spam-Score: -5.3 (-----)
+X-CRM114-CacheID: sfid-20190430_095821_563763_D88FBA18 
+X-CRM114-Status: GOOD (  25.89  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [24.134.29.49 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -86,39 +66,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Haibo Xu <haibo.xu@arm.com>, Steve Capper <Steve.Capper@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Jeff Dike <jdike@addtoit.com>,
- X86 ML <x86@kernel.org>, Will Deacon <will.deacon@arm.com>,
- LKML <linux-kernel@vger.kernel.org>, Oleg Nesterov <oleg@redhat.com>,
- Richard Weinberger <richard@nod.at>, Ingo Molnar <mingo@redhat.com>,
- Paul Mackerras <paulus@samba.org>, Andy Lutomirski <luto@kernel.org>,
- Michael Ellerman <mpe@ellerman.id.au>, Borislav Petkov <bp@alien8.de>,
- Thomas Gleixner <tglx@linutronix.de>, Bin Lu <bin.lu@arm.com>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ DRI mailing list <dri-devel@lists.freedesktop.org>,
+ Sam Ravnborg <sam@ravnborg.org>, Abel Vesa <abel.vesa@nxp.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Robert Chiras <robert.chiras@nxp.com>, Thierry Reding <treding@nvidia.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Johan Hovold <johan@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Lucas Stach <l.stach@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>,
+ Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>, Li Jun <jun.li@nxp.com>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 18, 2019 at 3:49 AM Sudeep Holla <sudeep.holla@arm.com> wrote:
->
-> Now that we have a new hook ptrace_syscall_enter that can be called from
-> syscall entry code and it handles PTRACE_SYSEMU in generic code, we
-> can do some cleanup using the same in syscall_trace_enter.
->
-> Further the extra logic to find single stepping PTRACE_SYSEMU_SINGLESTEP
-> in syscall_slow_exit_work seems unnecessary. Let's remove the same.
->
+Hi Fabio,
+On Tue, Apr 30, 2019 at 01:24:45PM -0300, Fabio Estevam wrote:
+> Hi Guido,
+> =
 
-Unless the patch set contains a selftest that exercises all the
-interesting cases here, NAK.  To be clear, there needs to be a test
-that passes on an unmodified kernel and still passes on a patched
-kernel.  And that test case needs to *fail* if, for example, you force
-"emulated" to either true or false rather than reading out the actual
-value.
+> On Tue, Apr 30, 2019 at 11:40 AM Guido G=FCnther <agx@sigxcpu.org> wrote:
+> >
+> > This adds support for the Mixel DPHY as found on i.MX8 CPUs but since
+> > this is an IP core it will likely be found on others in the future. So
+> > instead of adding this to the nwl host driver make it a generic PHY
+> > driver.
+> >
+> > The driver supports the i.MX8MQ. Support for i.MX8QM and i.MX8QXP can be
+> > added once the necessary system controller bits are in via
+> > mixel_dphy_devdata.
+> >
+> > Co-authored-by: Robert Chiras <robert.chiras@nxp.com>
+> > Signed-off-by: Guido G=FCnther <agx@sigxcpu.org>
+> =
 
---Andy
+> I wish I could test it on a imx8m-evk , but there are some other
+> pieces needed such as Northwest Logic driver, mxsfb changes for
+> supporting mx8m, OLED panel driver, etc
+> =
+
+> Anyway, it looks good to me and I have only a few minor comments:
+> =
+
+> > ---
+> >  drivers/phy/freescale/Kconfig                 |  11 +
+> >  drivers/phy/freescale/Makefile                |   1 +
+> >  .../phy/freescale/phy-fsl-imx8-mipi-dphy.c    | 506 ++++++++++++++++++
+> >  3 files changed, 518 insertions(+)
+> >  create mode 100644 drivers/phy/freescale/phy-fsl-imx8-mipi-dphy.c
+> >
+> > diff --git a/drivers/phy/freescale/Kconfig b/drivers/phy/freescale/Kcon=
+fig
+> > index 832670b4952b..a111b130f9d2 100644
+> > --- a/drivers/phy/freescale/Kconfig
+> > +++ b/drivers/phy/freescale/Kconfig
+> > @@ -3,3 +3,14 @@ config PHY_FSL_IMX8MQ_USB
+> >         depends on OF && HAS_IOMEM
+> >         select GENERIC_PHY
+> >         default ARCH_MXC && ARM64
+> > +
+> > +config PHY_MIXEL_MIPI_DPHY
+> > +       tristate "Mixel MIPI DSI PHY support"
+> > +       depends on OF && HAS_IOMEM
+> > +       select GENERIC_PHY
+> > +       select GENERIC_PHY_MIPI_DPHY
+> > +       select REGMAP_MMIO
+> > +       default ARCH_MXC && ARM64
+> =
+
+> I don't think that this default is a good idea.
+> =
+
+> There are imx8m systems that do not have display, so in this case it
+> does not make sense to always force the build of this driver.
+
+O.k. - we can enable this based on imx-nwl later on. I've also addressed
+your other comments. Will wait for a v10 for a couple of days in case
+there's more feedback.
+Thanks,
+ -- Guido
 
 _______________________________________________
 linux-arm-kernel mailing list
