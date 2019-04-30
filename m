@@ -2,54 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D19F8F9B7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 15:16:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC8EAF9EC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 15:25:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EVbdzPY8s3Bt3ftagcekwbdA7n2naa6uLAU0eMdnmmA=; b=gug53N/hlw/g++
-	8TI4rRW0ZbKIorE1hLM1oC2cKpVlrNjvxaeLg8wXwdT5eqgdQOxLTfD8yM5VZFtmCu3e4lbfqzwUn
-	ZbVXRnx1xhrxen33xXTRSSWPOhnzDKHvG281fASKye56pXIAdkUNHqFEBH6E98CvnIW7bDicQQnqL
-	Ux8a2aLk2rd1zdqlVeZ3YbPvYoePVUMXyK8UWou2W/Z0nBx1KHFUk1ZAwTow4dO6+MNQ90zxFXjHw
-	sykGTZ6rPUvljF86WDtrNHJ2jAtnNoIFD2ENjruuwBdTHz13XdBOmcSN0NF+jhXlC3yseMylZ/ODJ
-	R3rH0G+6D4q0DZJ+cHqA==;
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=IeURSpQcF9hiAb77HfOhg/+53Q73YF0GGH8h2vTE1Wo=; b=jMFUlKfLNUcQBi
+	WeS/16BBithUbpVLk5Iij1IusO/8Iy3h3bMgyVWAObHL1Auio6bOSSms/GzUKW403Di0oDktO6iL2
+	psKojpdu6uezruE+3iO0gIZK4MYMilF0WzQ+V9Q4QqTRa6Md8R11Vgex1C/pDGQbExTlRCVS//c3z
+	3b/GxftvHeX4s8It/7rWc6DivWQU5j0jvHwgExpACr7PJcbE7ziDir+PNBsBz3uamtO7zO2NlDdt1
+	APjqrTg6QP/lspesjor43TEJEXNZADD6SA7Dzglt+bHkwceuKfldIg9Y/JA2ddKZV52AQN0M1PlX8
+	q7TMc56RwGJOdi6fJ3pg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLSbd-0005ew-WD; Tue, 30 Apr 2019 13:15:34 +0000
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+	id 1hLSlX-0001mK-NM; Tue, 30 Apr 2019 13:25:47 +0000
+Received: from mail-vk1-xa49.google.com ([2607:f8b0:4864:20::a49])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLSav-0003lT-4c
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 13:14:50 +0000
-X-Originating-IP: 90.88.149.145
-Received: from mc-bl-xps13.lan
- (aaubervilliers-681-1-29-145.w90-88.abo.wanadoo.fr [90.88.149.145])
- (Authenticated sender: maxime.chevallier@bootlin.com)
- by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id 94D311BF209;
- Tue, 30 Apr 2019 13:14:45 +0000 (UTC)
-From: Maxime Chevallier <maxime.chevallier@bootlin.com>
-To: davem@davemloft.net
-Subject: [PATCH net-next 4/4] net: mvpp2: cls: Allow dropping packets with
- classification offload
-Date: Tue, 30 Apr 2019 15:14:29 +0200
-Message-Id: <20190430131429.19361-5-maxime.chevallier@bootlin.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190430131429.19361-1-maxime.chevallier@bootlin.com>
-References: <20190430131429.19361-1-maxime.chevallier@bootlin.com>
-MIME-Version: 1.0
+ id 1hLSl8-0001Sx-3V
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 13:25:24 +0000
+Received: by mail-vk1-xa49.google.com with SMTP id u20so6360741vku.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 30 Apr 2019 06:25:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:message-id:mime-version:subject:from:to:cc;
+ bh=UkvcQR44s0K+X/Jr3Zaeq3MZKuHg/qEMr5Ui4t9NDYw=;
+ b=G2qg1Kl3sLAZB3loJ9pUPAiAmC1ary5Doy/w5PD+Zmuenzwp1y7qLbl9eQyEqg4i2e
+ IH96c3nkDpmAUbvaXr8xgF6JGDKu9BxDsc6RRP3qmn1+raV9+2Eu0R1eIZJn5Tc4gymp
+ zcdgdd9RsMnFfNqQr1FGf/ydu/D0Bb8ku9GUT6o95HgkAElp2R3mKcPuuCaYDBwgy3TV
+ 8UibpBwH++mRm6OMCEqU6q1ecKRzXrBb+8UzHqX8eKfJwIzHJ2u8OT6/7m1tktKAzn9T
+ akWaa7z3/sYn6iBJtYp3U4nYj/r67ZsZV50oWRy2GlbB356ubCVdDkZ/e0ehF/7kUNt7
+ MNng==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
+ bh=UkvcQR44s0K+X/Jr3Zaeq3MZKuHg/qEMr5Ui4t9NDYw=;
+ b=ClqSHBqay7Ze9Y3hcAFaNZLInFRpIiTU+miX9uIfU9A/iTTg5Mpm4FbwsNVmjWm38o
+ sU//88be+eov1A2XYhBp9hNtkyK4HFYSPtDD7mv/Qw0kOJjYVU3J2H5ZDwP+020BzutX
+ 281g510YGc5yQjGIzGz9rYsFrS0Q1MU/IvXVQ1gmXR44NWP91LT1MDkEL7hAje5Xm51k
+ cRQ02HT0xUgz6o483E06mkA6c6coSVYI3MrW1Jy4QtTM5aqsU0vkq116nFTCqiq2JCU3
+ d/nJk+ETsTT/2h8D9rKcrQaVmPsCyfbUY+8K4i8Qbkxj1+imkTEY03KvozJBh+ZdjT+C
+ P+Yw==
+X-Gm-Message-State: APjAAAUmxIJWocm7coWQVgs49n3R9YKw2ZJGGdpYegJ0v8cLl7G7yVtc
+ Ll717uXwtrdGdmvSMmDpvbK2ZbVvTlHubOguC7vmpStZLklldO4U8Guu2IuOMFJklhrlYohkjeT
+ 0xhrIQ5728AiUbxnfHW6WHm+s7lXNxBxnG9Xnt/cR6AITnvUDDYZp5/WL3huHl4zl3tVLrXvSAQ
+ XEGbc9wlI5NHN9Ew0=
+X-Google-Smtp-Source: APXvYqy2s4q/NAuxHa5mXOAkO1LFtyotOktrYSKtCMyKjB+T66xUOQKMsI+6Xz1tA3j9vH5U3IzM1vjvjobmi1sD
+X-Received: by 2002:a67:14c6:: with SMTP id 189mr11443553vsu.203.1556630717016; 
+ Tue, 30 Apr 2019 06:25:17 -0700 (PDT)
+Date: Tue, 30 Apr 2019 15:24:56 +0200
+Message-Id: <cover.1556630205.git.andreyknvl@google.com>
+Mime-Version: 1.0
+X-Mailer: git-send-email 2.21.0.593.g511ec345e18-goog
+Subject: [PATCH v14 00/17] arm64: untag user pointers passed to the kernel
+From: Andrey Konovalov <andreyknvl@google.com>
+To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org, 
+ linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org, 
+ dri-devel@lists.freedesktop.org, linux-rdma@vger.kernel.org, 
+ linux-media@vger.kernel.org, kvm@vger.kernel.org, 
+ linux-kselftest@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_061449_476363_B49C9DDD 
-X-CRM114-Status: GOOD (  14.90  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190430_062522_221814_D36E5377 
+X-CRM114-Status: GOOD (  23.87  )
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.201 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:a49 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -61,126 +95,308 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jakub Kicinski <jakub.kicinski@netronome.com>,
- Antoine Tenart <antoine.tenart@bootlin.com>, netdev@vger.kernel.org,
- gregory.clement@bootlin.com, linux-kernel@vger.kernel.org,
- Maxime Chevallier <maxime.chevallier@bootlin.com>, nadavh@marvell.com,
- Saeed Mahameed <saeedm@mellanox.com>, linux-arm-kernel@lists.infradead.org,
- thomas.petazzoni@bootlin.com, miquel.raynal@bootlin.com, stefanc@marvell.com,
- mw@semihalf.com, Russell King <linux@armlinux.org.uk>
+Cc: Mark Rutland <mark.rutland@arm.com>, Koenig@google.com,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Kostya Serebryany <kcc@google.com>, Chintan Pandya <cpandya@codeaurora.org>,
+ Felix <Felix.Kuehling@amd.com>, Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ Kuehling@google.com, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, Kevin Brodsky <kevin.brodsky@arm.com>,
+ Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>, Deucher@google.com,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
+ Christian <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This commit introduces support for the "Drop" action in classification
-offload. This corresponds to the "-1" action with ethtool -N.
+=== Overview
 
-This is achieved using the color marking actions available in the C2
-engine, which associate a color to a packet. These colors can be either
-Green, Yellow or Red, Red meaning that the packet should be dropped.
+arm64 has a feature called Top Byte Ignore, which allows to embed pointer
+tags into the top byte of each pointer. Userspace programs (such as
+HWASan, a memory debugging tool [1]) might use this feature and pass
+tagged user pointers to the kernel through syscalls or other interfaces.
 
-Green and Yellow colors are interpreted by the Policer, which isn't
-supported yet.
+Right now the kernel is already able to handle user faults with tagged
+pointers, due to these patches:
 
-This method of dropping using the Classifier is different than the
-already existing early-drop features, such as VLAN filtering and MAC
-UC/MC filtering, which are performed during the Parsing step, and
-therefore take precedence over classification actions.
+1. 81cddd65 ("arm64: traps: fix userspace cache maintenance emulation on a
+             tagged pointer")
+2. 7dcd9dd8 ("arm64: hw_breakpoint: fix watchpoint matching for tagged
+	      pointers")
+3. 276e9327 ("arm64: entry: improve data abort handling of tagged
+	      pointers")
 
-Signed-off-by: Maxime Chevallier <maxime.chevallier@bootlin.com>
----
- drivers/net/ethernet/marvell/mvpp2/mvpp2.h    |  1 +
- .../net/ethernet/marvell/mvpp2/mvpp2_cls.c    | 29 +++++++++++++------
- .../net/ethernet/marvell/mvpp2/mvpp2_cls.h    | 11 +++++++
- 3 files changed, 32 insertions(+), 9 deletions(-)
+This patchset extends tagged pointer support to syscall arguments.
 
-diff --git a/drivers/net/ethernet/marvell/mvpp2/mvpp2.h b/drivers/net/ethernet/marvell/mvpp2/mvpp2.h
-index 9d2222ab60ae..6171270a016c 100644
---- a/drivers/net/ethernet/marvell/mvpp2/mvpp2.h
-+++ b/drivers/net/ethernet/marvell/mvpp2/mvpp2.h
-@@ -136,6 +136,7 @@
- #define     MVPP22_CLS_C2_ACT_FWD(act)		(((act) & 0x7) << 13)
- #define     MVPP22_CLS_C2_ACT_QHIGH(act)	(((act) & 0x3) << 11)
- #define     MVPP22_CLS_C2_ACT_QLOW(act)		(((act) & 0x3) << 9)
-+#define     MVPP22_CLS_C2_ACT_COLOR(act)	((act) & 0x7)
- #define MVPP22_CLS_C2_ATTR0			0x1b64
- #define     MVPP22_CLS_C2_ATTR0_QHIGH(qh)	(((qh) & 0x1f) << 24)
- #define     MVPP22_CLS_C2_ATTR0_QHIGH_MASK	0x1f
-diff --git a/drivers/net/ethernet/marvell/mvpp2/mvpp2_cls.c b/drivers/net/ethernet/marvell/mvpp2/mvpp2_cls.c
-index f4dd59c00d80..4989fb13244f 100644
---- a/drivers/net/ethernet/marvell/mvpp2/mvpp2_cls.c
-+++ b/drivers/net/ethernet/marvell/mvpp2/mvpp2_cls.c
-@@ -1057,17 +1057,28 @@ static int mvpp2_port_c2_tcam_rule_add(struct mvpp2_port *port,
- 	c2.tcam[4] |= MVPP22_CLS_C2_TCAM_EN(MVPP22_CLS_C2_LU_TYPE(MVPP2_CLS_LU_TYPE_MASK));
- 	c2.tcam[4] |= MVPP22_CLS_C2_LU_TYPE(rule->loc);
- 
--	/* Mark packet as "forwarded to software", needed for RSS */
--	c2.act |= MVPP22_CLS_C2_ACT_FWD(MVPP22_C2_FWD_SW_LOCK);
-+	if (act->id == FLOW_ACTION_DROP) {
-+		c2.act = MVPP22_CLS_C2_ACT_COLOR(MVPP22_C2_COL_RED_LOCK);
-+	} else {
-+		/* We want to keep the default color derived from the Header
-+		 * Parser drop entries, for VLAN and MAC filtering. This will
-+		 * assign a default color of Green or Red, and we want matches
-+		 * with a non-drop action to keep that color.
-+		 */
-+		c2.act = MVPP22_CLS_C2_ACT_COLOR(MVPP22_C2_COL_NO_UPD_LOCK);
- 
--	c2.act |= MVPP22_CLS_C2_ACT_QHIGH(MVPP22_C2_UPD_LOCK) |
--		   MVPP22_CLS_C2_ACT_QLOW(MVPP22_C2_UPD_LOCK);
-+		/* Mark packet as "forwarded to software", needed for RSS */
-+		c2.act |= MVPP22_CLS_C2_ACT_FWD(MVPP22_C2_FWD_SW_LOCK);
- 
--	qh = ((act->queue.index + port->first_rxq) >> 3) & MVPP22_CLS_C2_ATTR0_QHIGH_MASK;
--	ql = (act->queue.index + port->first_rxq) & MVPP22_CLS_C2_ATTR0_QLOW_MASK;
-+		c2.act |= MVPP22_CLS_C2_ACT_QHIGH(MVPP22_C2_UPD_LOCK) |
-+			   MVPP22_CLS_C2_ACT_QLOW(MVPP22_C2_UPD_LOCK);
- 
--	c2.attr[0] = MVPP22_CLS_C2_ATTR0_QHIGH(qh) |
--		      MVPP22_CLS_C2_ATTR0_QLOW(ql);
-+		qh = ((act->queue.index + port->first_rxq) >> 3) & MVPP22_CLS_C2_ATTR0_QHIGH_MASK;
-+		ql = (act->queue.index + port->first_rxq) & MVPP22_CLS_C2_ATTR0_QLOW_MASK;
-+
-+		c2.attr[0] = MVPP22_CLS_C2_ATTR0_QHIGH(qh) |
-+			      MVPP22_CLS_C2_ATTR0_QLOW(ql);
-+	}
- 
- 	c2.valid = true;
- 
-@@ -1183,7 +1194,7 @@ static int mvpp2_cls_rfs_parse_rule(struct mvpp2_rfs_rule *rule)
- 	struct flow_action_entry *act;
- 
- 	act = &flow->action.entries[0];
--	if (act->id != FLOW_ACTION_QUEUE)
-+	if (act->id != FLOW_ACTION_QUEUE && act->id != FLOW_ACTION_DROP)
- 		return -EOPNOTSUPP;
- 
- 	/* For now, only use the C2 engine which has a HEK size limited to 64
-diff --git a/drivers/net/ethernet/marvell/mvpp2/mvpp2_cls.h b/drivers/net/ethernet/marvell/mvpp2/mvpp2_cls.h
-index 431563a13524..56b617375a65 100644
---- a/drivers/net/ethernet/marvell/mvpp2/mvpp2_cls.h
-+++ b/drivers/net/ethernet/marvell/mvpp2/mvpp2_cls.h
-@@ -92,6 +92,17 @@ enum mvpp22_cls_c2_fwd_action {
- 	MVPP22_C2_FWD_HW_LOW_LAT_LOCK,
- };
- 
-+enum mvpp22_cls_c2_color_action {
-+	MVPP22_C2_COL_NO_UPD = 0,
-+	MVPP22_C2_COL_NO_UPD_LOCK,
-+	MVPP22_C2_COL_GREEN,
-+	MVPP22_C2_COL_GREEN_LOCK,
-+	MVPP22_C2_COL_YELLOW,
-+	MVPP22_C2_COL_YELLOW_LOCK,
-+	MVPP22_C2_COL_RED,		/* Drop */
-+	MVPP22_C2_COL_RED_LOCK,		/* Drop */
-+};
-+
- #define MVPP2_CLS_C2_TCAM_WORDS			5
- #define MVPP2_CLS_C2_ATTR_WORDS			5
- 
+As per the proposed ABI change [3], tagged pointers are only allowed to be
+passed to syscalls when they point to memory ranges obtained by anonymous
+mmap() or sbrk() (see the patchset [3] for more details).
+
+For non-memory syscalls this is done by untaging user pointers when the
+kernel performs pointer checking to find out whether the pointer comes
+from userspace (most notably in access_ok). The untagging is done only
+when the pointer is being checked, the tag is preserved as the pointer
+makes its way through the kernel and stays tagged when the kernel
+dereferences the pointer when perfoming user memory accesses.
+
+Memory syscalls (mmap, mprotect, etc.) don't do user memory accesses but
+rather deal with memory ranges, and untagged pointers are better suited to
+describe memory ranges internally. Thus for memory syscalls we untag
+pointers completely when they enter the kernel.
+
+=== Other approaches
+
+One of the alternative approaches to untagging that was considered is to
+completely strip the pointer tag as the pointer enters the kernel with
+some kind of a syscall wrapper, but that won't work with the countless
+number of different ioctl calls. With this approach we would need a custom
+wrapper for each ioctl variation, which doesn't seem practical.
+
+An alternative approach to untagging pointers in memory syscalls prologues
+is to inspead allow tagged pointers to be passed to find_vma() (and other
+vma related functions) and untag them there. Unfortunately, a lot of
+find_vma() callers then compare or subtract the returned vma start and end
+fields against the pointer that was being searched. Thus this approach
+would still require changing all find_vma() callers.
+
+=== Testing
+
+The following testing approaches has been taken to find potential issues
+with user pointer untagging:
+
+1. Static testing (with sparse [2] and separately with a custom static
+   analyzer based on Clang) to track casts of __user pointers to integer
+   types to find places where untagging needs to be done.
+
+2. Static testing with grep to find parts of the kernel that call
+   find_vma() (and other similar functions) or directly compare against
+   vm_start/vm_end fields of vma.
+
+3. Static testing with grep to find parts of the kernel that compare
+   user pointers with TASK_SIZE or other similar consts and macros.
+
+4. Dynamic testing: adding BUG_ON(has_tag(addr)) to find_vma() and running
+   a modified syzkaller version that passes tagged pointers to the kernel.
+
+Based on the results of the testing the requried patches have been added
+to the patchset.
+
+=== Notes
+
+This patchset is meant to be merged together with "arm64 relaxed ABI" [3].
+
+This patchset is a prerequisite for ARM's memory tagging hardware feature
+support [4].
+
+This patchset has been merged into the Pixel 2 & 3 kernel trees and is
+now being used to enable testing of Pixel phones with HWASan.
+
+Thanks!
+
+[1] http://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html
+
+[2] https://github.com/lucvoo/sparse-dev/commit/5f960cb10f56ec2017c128ef9d16060e0145f292
+
+[3] https://lkml.org/lkml/2019/3/18/819
+
+[4] https://community.arm.com/processors/b/blog/posts/arm-a-profile-architecture-2018-developments-armv85a
+
+Changes in v14:
+- Moved untagging for most memory syscalls to an arm64 specific
+  implementation, instead of doing that in the common code.
+- Dropped "net, arm64: untag user pointers in tcp_zerocopy_receive", since
+  the provided user pointers don't come from an anonymous map and thus are
+  not covered by this ABI relaxation.
+- Dropped "kernel, arm64: untag user pointers in prctl_set_mm*".
+- Moved untagging from __check_mem_type() to tee_shm_register().
+- Updated untagging for the amdgpu and radeon drivers to cover the MMU
+  notifier, as suggested by Felix.
+- Since this ABI relaxation doesn't actually allow tagged instruction
+  pointers, dropped the following patches:
+- Dropped "tracing, arm64: untag user pointers in seq_print_user_ip".
+- Dropped "uprobes, arm64: untag user pointers in find_active_uprobe".
+- Dropped "bpf, arm64: untag user pointers in stack_map_get_build_id_offset".
+- Rebased onto 5.1-rc7 (37624b58).
+
+Changes in v13:
+- Simplified untagging in tcp_zerocopy_receive().
+- Looked at find_vma() callers in drivers/, which allowed to identify a
+  few other places where untagging is needed.
+- Added patch "mm, arm64: untag user pointers in get_vaddr_frames".
+- Added patch "drm/amdgpu, arm64: untag user pointers in
+  amdgpu_ttm_tt_get_user_pages".
+- Added patch "drm/radeon, arm64: untag user pointers in
+  radeon_ttm_tt_pin_userptr".
+- Added patch "IB/mlx4, arm64: untag user pointers in mlx4_get_umem_mr".
+- Added patch "media/v4l2-core, arm64: untag user pointers in
+  videobuf_dma_contig_user_get".
+- Added patch "tee/optee, arm64: untag user pointers in check_mem_type".
+- Added patch "vfio/type1, arm64: untag user pointers".
+
+Changes in v12:
+- Changed untagging in tcp_zerocopy_receive() to also untag zc->address.
+- Fixed untagging in prctl_set_mm* to only untag pointers for vma lookups
+  and validity checks, but leave them as is for actual user space accesses.
+- Updated the link to the v2 of the "arm64 relaxed ABI" patchset [3].
+- Dropped the documentation patch, as the "arm64 relaxed ABI" patchset [3]
+  handles that.
+
+Changes in v11:
+- Added "uprobes, arm64: untag user pointers in find_active_uprobe" patch.
+- Added "bpf, arm64: untag user pointers in stack_map_get_build_id_offset"
+  patch.
+- Fixed "tracing, arm64: untag user pointers in seq_print_user_ip" to
+  correctly perform subtration with a tagged addr.
+- Moved untagged_addr() from SYSCALL_DEFINE3(mprotect) and
+  SYSCALL_DEFINE4(pkey_mprotect) to do_mprotect_pkey().
+- Moved untagged_addr() definition for other arches from
+  include/linux/memory.h to include/linux/mm.h.
+- Changed untagging in strn*_user() to perform userspace accesses through
+  tagged pointers.
+- Updated the documentation to mention that passing tagged pointers to
+  memory syscalls is allowed.
+- Updated the test to use malloc'ed memory instead of stack memory.
+
+Changes in v10:
+- Added "mm, arm64: untag user pointers passed to memory syscalls" back.
+- New patch "fs, arm64: untag user pointers in fs/userfaultfd.c".
+- New patch "net, arm64: untag user pointers in tcp_zerocopy_receive".
+- New patch "kernel, arm64: untag user pointers in prctl_set_mm*".
+- New patch "tracing, arm64: untag user pointers in seq_print_user_ip".
+
+Changes in v9:
+- Rebased onto 4.20-rc6.
+- Used u64 instead of __u64 in type casts in the untagged_addr macro for
+  arm64.
+- Added braces around (addr) in the untagged_addr macro for other arches.
+
+Changes in v8:
+- Rebased onto 65102238 (4.20-rc1).
+- Added a note to the cover letter on why syscall wrappers/shims that untag
+  user pointers won't work.
+- Added a note to the cover letter that this patchset has been merged into
+  the Pixel 2 kernel tree.
+- Documentation fixes, in particular added a list of syscalls that don't
+  support tagged user pointers.
+
+Changes in v7:
+- Rebased onto 17b57b18 (4.19-rc6).
+- Dropped the "arm64: untag user address in __do_user_fault" patch, since
+  the existing patches already handle user faults properly.
+- Dropped the "usb, arm64: untag user addresses in devio" patch, since the
+  passed pointer must come from a vma and therefore be untagged.
+- Dropped the "arm64: annotate user pointers casts detected by sparse"
+  patch (see the discussion to the replies of the v6 of this patchset).
+- Added more context to the cover letter.
+- Updated Documentation/arm64/tagged-pointers.txt.
+
+Changes in v6:
+- Added annotations for user pointer casts found by sparse.
+- Rebased onto 050cdc6c (4.19-rc1+).
+
+Changes in v5:
+- Added 3 new patches that add untagging to places found with static
+  analysis.
+- Rebased onto 44c929e1 (4.18-rc8).
+
+Changes in v4:
+- Added a selftest for checking that passing tagged pointers to the
+  kernel succeeds.
+- Rebased onto 81e97f013 (4.18-rc1+).
+
+Changes in v3:
+- Rebased onto e5c51f30 (4.17-rc6+).
+- Added linux-arch@ to the list of recipients.
+
+Changes in v2:
+- Rebased onto 2d618bdf (4.17-rc3+).
+- Removed excessive untagging in gup.c.
+- Removed untagging pointers returned from __uaccess_mask_ptr.
+
+Changes in v1:
+- Rebased onto 4.17-rc1.
+
+Changes in RFC v2:
+- Added "#ifndef untagged_addr..." fallback in linux/uaccess.h instead of
+  defining it for each arch individually.
+- Updated Documentation/arm64/tagged-pointers.txt.
+- Dropped "mm, arm64: untag user addresses in memory syscalls".
+- Rebased onto 3eb2ce82 (4.16-rc7).
+
+Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+
+Andrey Konovalov (17):
+  uaccess: add untagged_addr definition for other arches
+  arm64: untag user pointers in access_ok and __uaccess_mask_ptr
+  lib, arm64: untag user pointers in strn*_user
+  mm: add ksys_ wrappers to memory syscalls
+  arms64: untag user pointers passed to memory syscalls
+  mm: untag user pointers in do_pages_move
+  mm, arm64: untag user pointers in mm/gup.c
+  mm, arm64: untag user pointers in get_vaddr_frames
+  fs, arm64: untag user pointers in copy_mount_options
+  fs, arm64: untag user pointers in fs/userfaultfd.c
+  drm/amdgpu, arm64: untag user pointers
+  drm/radeon, arm64: untag user pointers
+  IB/mlx4, arm64: untag user pointers in mlx4_get_umem_mr
+  media/v4l2-core, arm64: untag user pointers in
+    videobuf_dma_contig_user_get
+  tee, arm64: untag user pointers in tee_shm_register
+  vfio/type1, arm64: untag user pointers in vaddr_get_pfn
+  selftests, arm64: add a selftest for passing tagged pointers to kernel
+
+ arch/arm64/include/asm/uaccess.h              |  10 +-
+ arch/arm64/kernel/sys.c                       | 128 ++++++++++++++++-
+ .../gpu/drm/amd/amdgpu/amdgpu_amdkfd_gpuvm.c  |   2 +-
+ drivers/gpu/drm/amd/amdgpu/amdgpu_gem.c       |   2 +
+ drivers/gpu/drm/amd/amdgpu/amdgpu_ttm.c       |   2 +-
+ drivers/gpu/drm/radeon/radeon_gem.c           |   2 +
+ drivers/gpu/drm/radeon/radeon_ttm.c           |   2 +-
+ drivers/infiniband/hw/mlx4/mr.c               |   7 +-
+ drivers/media/v4l2-core/videobuf-dma-contig.c |   9 +-
+ drivers/tee/tee_shm.c                         |   1 +
+ drivers/vfio/vfio_iommu_type1.c               |   2 +
+ fs/namespace.c                                |   2 +-
+ fs/userfaultfd.c                              |   5 +
+ include/linux/mm.h                            |   4 +
+ include/linux/syscalls.h                      |  22 +++
+ ipc/shm.c                                     |   7 +-
+ lib/strncpy_from_user.c                       |   3 +-
+ lib/strnlen_user.c                            |   3 +-
+ mm/frame_vector.c                             |   2 +
+ mm/gup.c                                      |   4 +
+ mm/madvise.c                                  | 129 +++++++++---------
+ mm/mempolicy.c                                |  21 ++-
+ mm/migrate.c                                  |   1 +
+ mm/mincore.c                                  |  57 ++++----
+ mm/mlock.c                                    |  20 ++-
+ mm/mmap.c                                     |  30 +++-
+ mm/mprotect.c                                 |   6 +-
+ mm/mremap.c                                   |  27 ++--
+ mm/msync.c                                    |  35 +++--
+ tools/testing/selftests/arm64/.gitignore      |   1 +
+ tools/testing/selftests/arm64/Makefile        |  11 ++
+ .../testing/selftests/arm64/run_tags_test.sh  |  12 ++
+ tools/testing/selftests/arm64/tags_test.c     |  21 +++
+ 33 files changed, 431 insertions(+), 159 deletions(-)
+ create mode 100644 tools/testing/selftests/arm64/.gitignore
+ create mode 100644 tools/testing/selftests/arm64/Makefile
+ create mode 100755 tools/testing/selftests/arm64/run_tags_test.sh
+ create mode 100644 tools/testing/selftests/arm64/tags_test.c
+
 -- 
-2.20.1
+2.21.0.593.g511ec345e18-goog
 
 
 _______________________________________________
