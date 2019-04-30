@@ -2,102 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8378CF1D2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 10:10:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58098F1E1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 10:14:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y62ItmpLeXzFgQGoEM6ZTddGn2tslw6jiRcbUm3hI3s=; b=pjb03RtjfiJ3Zw
-	KSCmJnvfzz13vtZsx0dDsWouZQx+hhCV4av9gxtlnelcHVuybv0HywOnhBeS0yPNRglkjFAHXN6yp
-	dMiegpztdgs1NKhUXQGneaSa94sk6vpRejdQyGRsH82BxJ9hAd+4QXeswKfDK9ufduZtDnKjNRC1z
-	HBBF0zLbIHJiARiGcLa0IdeQph9I/1MjWM3sfXVk13qQ/cdZ0RMMRjJhbnMhEXjGzfkxu6fRYwLRb
-	BIwfcDo4CAQDx9g+EbX1FM0fQ5eCHQFc7BKW1FvZH1ztI12OkKbB9KhBIjSYvMMliFR3YzHDK9/w5
-	UFy2ryiLrVTNAtK7tGVQ==;
+	List-Owner; bh=WmCYqB+fQW0q/vmeUmpfSEbRcVaH3cRIiybwFla/TDg=; b=k4mep4qGbDkqau
+	T9ysH+NTKZRgBWoEP6LbxVlk473NenrZaJG1YyllRq6A6mVb/VDEprvMggUDke0zHnEf1sURRk+N+
+	O+5bV/GdbwCGIZ0R7PEEu8vLevVVx+t+N5GmyVDCATIap24cxlE8EjoI3+VRsGox4wJsK2KAYUHPR
+	RzCL8WHQRF5kDNl04sM79pkI0rjkY57RB3wbTzHzmujwXA7DG/8qCZntGAZN0imm8AOKFAIV3UWm9
+	7qtgab34QOSGdkzY57g/M/505sIB+FtBStBushojIz50npQmJCtw26pRYqV4p3eQPXv1t1sKKb0G3
+	xk4X2J8cePqHLAw5yfgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLNqS-0004S5-2G; Tue, 30 Apr 2019 08:10:32 +0000
-Received: from mail-eopbgr70077.outbound.protection.outlook.com ([40.107.7.77]
- helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+	id 1hLNuK-0004qz-PU; Tue, 30 Apr 2019 08:14:32 +0000
+Received: from wout5-smtp.messagingengine.com ([64.147.123.21])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLNqL-0004RX-22
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 08:10:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=AQJcd1V092CHp5ZYUf0tzBNQVT8V4YjiRfdDANKslUY=;
- b=Gw4OwmuDgkqtYmRAFeQCEGCPoDkdH5gc6lC6ZM/0+FBioI7lgELe3iOzqgy/c26QtcF73Hfl9msLGFMsmCk7liwLieTWvp4cIZ5H6viotjfdZ8GqJuEVkWaVDqES0aL6Xm3Q1Q81OdJrjMOHpdth04mFqZ3ODEC3z3V6wsKUXHE=
-Received: from AM0PR04MB4211.eurprd04.prod.outlook.com (52.134.92.158) by
- AM0PR04MB6354.eurprd04.prod.outlook.com (10.255.182.79) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1835.13; Tue, 30 Apr 2019 08:10:21 +0000
-Received: from AM0PR04MB4211.eurprd04.prod.outlook.com
- ([fe80::8cda:4e52:8e87:8f0e]) by AM0PR04MB4211.eurprd04.prod.outlook.com
- ([fe80::8cda:4e52:8e87:8f0e%2]) with mapi id 15.20.1835.018; Tue, 30 Apr 2019
- 08:10:21 +0000
-From: Aisheng Dong <aisheng.dong@nxp.com>
-To: Anson Huang <anson.huang@nxp.com>, "shawnguo@kernel.org"
- <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>, "festevam@gmail.com"
- <festevam@gmail.com>, "linux-i2c@vger.kernel.org"
- <linux-i2c@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH] i2c: imx-lpi2c: Use __maybe_unused instead of #if
- CONFIG_PM_SLEEP
-Thread-Topic: [PATCH] i2c: imx-lpi2c: Use __maybe_unused instead of #if
- CONFIG_PM_SLEEP
-Thread-Index: AQHU/yJVTGic+X2v4ESo316NmJN4TKZUWBXw
-Date: Tue, 30 Apr 2019 08:10:21 +0000
-Message-ID: <AM0PR04MB42114EDECD01526E128A323E803A0@AM0PR04MB4211.eurprd04.prod.outlook.com>
-References: <1556607314-32401-1-git-send-email-Anson.Huang@nxp.com>
-In-Reply-To: <1556607314-32401-1-git-send-email-Anson.Huang@nxp.com>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=aisheng.dong@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 2cc87847-e464-47dd-8801-08d6cd434a48
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB6354; 
-x-ms-traffictypediagnostic: AM0PR04MB6354:
-x-microsoft-antispam-prvs: <AM0PR04MB6354723F0293EF858A80BC63803A0@AM0PR04MB6354.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4303;
-x-forefront-prvs: 00235A1EEF
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(346002)(396003)(376002)(39860400002)(366004)(136003)(199004)(189003)(52536014)(64756008)(2201001)(6436002)(99286004)(8676002)(71190400001)(7696005)(86362001)(486006)(229853002)(44832011)(71200400001)(8936002)(2906002)(26005)(9686003)(186003)(7736002)(68736007)(5660300002)(25786009)(74316002)(305945005)(66066001)(110136005)(66556008)(53546011)(256004)(55016002)(73956011)(6246003)(316002)(478600001)(66476007)(53936002)(102836004)(76176011)(4744005)(3846002)(4326008)(97736004)(6116002)(33656002)(2501003)(6506007)(11346002)(81166006)(14454004)(446003)(476003)(81156014)(66446008)(76116006)(66946007);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6354;
- H:AM0PR04MB4211.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: W0aCUfl0nWOamvaZJW8tWNNbLYPfyq54qqmBYgDQDt4hS/ursHVrQd4fMI2M9vEpBdtME6BOcZduD5oWiZvyeW+aj/JzKn3c6iOw6n2oC5WDCPGgJmO+AY7nhJrS3YYHEPSM0xIm3/8005x+wQ1EqmPockqETHEl04xbGSnEYT8CBND+xNJtuFzk+bCxEQMO2BXzdTmSuymqKmoK+cCwEk13kkEB1LvCoy29iUEKlVzJw9iwwtBglG0sVV83tD7aR0PIbFuxcCmfQ26yTesdNGYFpyOSl8D3nh9xnL4J/IOp9X39ypa6gJfhhfupLUmJcMiUFmW5KmJl4lYSs2GLM8nzoD0avC/czIxfMVP5s0122wQGmer4yioiX15tjmLHw3G163Jet+HXAm3hda7IfuFET7pONTppVzq2k8zROUk=
+ id 1hLNuD-0004qG-Rb
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 08:14:27 +0000
+Received: from compute6.internal (compute6.nyi.internal [10.202.2.46])
+ by mailout.west.internal (Postfix) with ESMTP id C052C71E;
+ Tue, 30 Apr 2019 04:14:14 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute6.internal (MEProxy); Tue, 30 Apr 2019 04:14:15 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kroah.com; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm3; bh=QaMnlBFGPZs+DEMS0nyUumPQ3/f
+ Otf0Ip12DCFXxfKM=; b=ettHd6osx2iW0UtF6UIP15gDoVrZSwKKvXyyWManic5
+ c4fbeX/H5u96nd1CPeTvHaK7wqIFAzEVX9/n0JbmduAvEC8yp5v5wd2c9bS4eaBi
+ yG8gXiTI7ZqZxOkF52dkRP/EjBD6MmUZ25FBaBUcLXxLAwOxCZ8UjFuhKQvNsmp6
+ K+hmDKtxkzZmLHDbL9Ez6KzB/mp8nXdqOsHR4AF9yHS5Od+aXKLsQCx6UxI45jck
+ DVxpNpjSR/rj795NgUCeXpJsYRMlYjF2/Q3Xrr1kzw83RvTA4eaVOomVHy12xl/c
+ 43h2/3O0PjxqB4dluDKnin8mPT/dWgdzVYzMjxcuDQw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=QaMnlB
+ FGPZs+DEMS0nyUumPQ3/fOtf0Ip12DCFXxfKM=; b=hAw+WC/2lxijMbOmK0FzBz
+ 9zU4JGzeYtYiUbrEpBsOuUXx77j2x8vPv6GpC0EnBizC1LvwGRI78/0iWkW0CaQW
+ 0Z0hWvtAE3LXxL0l+SyoI/bRR6Uoocym42wmRCMe0hxak/I23AModNPr1aBQfK+R
+ RVxeUhm4PBnkuMLe5QK3+OmJiNM7cHiSIuvW8kqgX/yhF1f50AKUy69p1dBdJKJQ
+ 6ShMj9zems5cwR52oJxvvJzDKxg0M9grpksiyR6g3HRablgHIv+3UR/FlW2fs31Z
+ lykGPomgVueI0EamLgp8r6GnJ52LJ+Q+ZqDE6ArGfkUk0c0cD/p9lqD6sSimOZFw
+ ==
+X-ME-Sender: <xms:0wPIXDRZ49IfAdk99l-irItgHMakpbd3T1b-2qg0ujtK8U1PXLXG9w>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduuddrieeggddtvdcutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujggfsehttdertddtredvnecuhfhrohhmpefirhgvghcu
+ mffjuceoghhrvghgsehkrhhorghhrdgtohhmqeenucfkphepkeefrdekiedrkeelrddutd
+ ejnecurfgrrhgrmhepmhgrihhlfhhrohhmpehgrhgvgheskhhrohgrhhdrtghomhenucev
+ lhhushhtvghrufhiiigvpedu
+X-ME-Proxy: <xmx:0wPIXHvR4nC5ai6CDHmXQJrfkFr3kX8ANvoImXYwxiIRaxPWGjxMRQ>
+ <xmx:0wPIXBAI9PxnJaCj0eEZmp6jDyQ2L_G5Ky4qxOBMw_03bHwBkVlYrQ>
+ <xmx:0wPIXB1z397X-cmBS4dtg4bIP_8g_IiOYEc5bn3YJMZUAZRgkSzgJA>
+ <xmx:1gPIXNF5dDQuAaGY28NzFR9jjaGCQOlybbvnl0RgvXbvl_JqTZ18Fw>
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ by mail.messagingengine.com (Postfix) with ESMTPA id C5A6EE454A;
+ Tue, 30 Apr 2019 04:14:10 -0400 (EDT)
+Date: Tue, 30 Apr 2019 10:14:08 +0200
+From: Greg KH <greg@kroah.com>
+To: Stephen Rothwell <sfr@canb.auug.org.au>
+Subject: Re: linux-next: manual merge of the char-misc tree with the arm-soc
+ tree
+Message-ID: <20190430081408.GB8245@kroah.com>
+References: <20190430174051.038c77c8@canb.auug.org.au>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2cc87847-e464-47dd-8801-08d6cd434a48
-X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Apr 2019 08:10:21.1283 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6354
+Content-Disposition: inline
+In-Reply-To: <20190430174051.038c77c8@canb.auug.org.au>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_011025_131748_6BD54105 
-X-CRM114-Status: UNSURE (   8.16  )
+X-CRM114-CacheID: sfid-20190430_011425_918520_4645544C 
+X-CRM114-Status: UNSURE (   9.39  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.7.77 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [64.147.123.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -118,26 +106,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: Arnd Bergmann <arnd@arndb.de>, Patrick Venture <venture@google.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux Next Mailing List <linux-next@vger.kernel.org>,
+ Olof Johansson <olof@lixom.net>, ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> From: Anson Huang
-> Sent: Tuesday, April 30, 2019 3:00 PM
-> Subject: [PATCH] i2c: imx-lpi2c: Use __maybe_unused instead of #if
-> CONFIG_PM_SLEEP
+On Tue, Apr 30, 2019 at 05:40:51PM +1000, Stephen Rothwell wrote:
+> Hi all,
 > 
-> Use __maybe_unused for power management related functions instead of #if
-> CONFIG_PM_SLEEP to simply the code.
+> Today's linux-next merge of the char-misc tree got conflicts in:
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+>   drivers/misc/Kconfig
+>   drivers/misc/Makefile
+> 
+> between commit:
+> 
+>   524feb799408 ("soc: add aspeed folder and misc drivers")
+> 
+> from the arm-soc tree and commit:
+> 
+>   01c60dcea9f7 ("drivers/misc: Add Aspeed P2A control driver")
+> 
+> from the char-misc tree.
+> 
+> I fixed it up (see below - though the additions probably want to be
+> moved as in the arm-soc commit)
 
-Acked-by: Dong Aisheng <aisheng.dong@nxp.com>
+People are still arguing about this, so let's leave this as-is for now
+:)
 
-Regards
-Dong Aisheng
+Thanks for the merge resolution,
+
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
