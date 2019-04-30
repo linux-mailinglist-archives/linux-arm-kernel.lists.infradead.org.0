@@ -2,73 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 595EA100F9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 22:37:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A83DA101AE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 23:18:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hyoq285S+3cTiqYDU1JmPxqCWU4s7xjnYPtgaP2itLQ=; b=btcwJJzd1H5RC3
-	5AiAs2Q23rk45JapmGnaTaycqaffbFR1QqOaqAoQ2gaqF8blovFB7b81XCdquODPXUIZV7s3ZZyJs
-	Qju+gy5OY8gE9046/2kJylBNMcXAywu2nRcq06oYSLT75wRdtM+9EKDMntJnmoDf/GboR3LtOZvlZ
-	YCoLkzu0lAPPVUda2GAaw0UL2MTKUZ8wijN0l9fETQnFlxoBoTt+RX0RN0/xKZ8QAEGwgeW+J7mSy
-	S1en6mLUMd2WmK4sdjKGb2IzsDUkh8nNzGE+FYfj0AC80+ZGJQoNOqbehdNnzLlgBBogWatBGfDTj
-	8z4LFzyqL7RlBtiBwBTw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=arjIoK7+XV62nB8LqsgkWr2TB8Dn0xqR7YePWlwjyF8=; b=pe9f8cIr4M57Nn
+	2GqXCL/GenHCIOh3ZeOeCcaC7rVUWG9B6dAxj7QGyCJGrQQxwchOyjgPa7spT2bLJ3IFaksrEtU4M
+	yDj8v+JBJ4Tys20L9+E+uO68XfF8BsAv1CLXz4k07R2fVXc16xIhz6U1A5jqNYc0rgdhUf5lW33wo
+	KJdhio7e8+GFyn8KZigM+NZuPkXtlyeEMfMKi5jiGJHWgAyrnnpaVbhsVbzlCnGgIouKRV17jCVUq
+	MxZxNV57D+yBYG02iC/y59gBKswrYcMUkJ7GMiZ+JJFAufXlSJNFqHon3seBbdb3iq8Sv8U5fq6Q3
+	vqfewpoXX8Qbw9uCYPJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLZVZ-0006hb-FB; Tue, 30 Apr 2019 20:37:45 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hLa94-0002cl-Iy; Tue, 30 Apr 2019 21:18:34 +0000
+Received: from mail-eopbgr10067.outbound.protection.outlook.com ([40.107.1.67]
+ helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLZVS-0006h8-1Z
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 20:37:39 +0000
-Received: from mail-qt1-f178.google.com (mail-qt1-f178.google.com
- [209.85.160.178])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4AF4A2080C
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Apr 2019 20:37:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1556656657;
- bh=ZEkaWl3bqlpN5zzBHSyjdUuA6td/ImB+VcUu5ceXrrg=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=D0l93wFAe+/YN05cfhvTTgYM2RMcBCdm1owCHx5HUWwwPu3jqbGwSdgpwwQg/sRS2
- bigpXK1w2fl6yGiGYF6RN3GzyJhfpfNjJVx2I32Fz06iXjnzMgKLm6V/Og61HScmDf
- g7Za+xaTyAU2Tcrxm1vsdglqnMepM1F9Las23Yqs=
-Received: by mail-qt1-f178.google.com with SMTP id y49so12219054qta.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Apr 2019 13:37:37 -0700 (PDT)
-X-Gm-Message-State: APjAAAUh1TqBKuJ82+rnY4qc3S4RjnoV/eukD1oRRY6abKyZHGfLgAa5
- W223KwbrfWtr3Uuopxz3XvvZebhT/uFVsRn4FA==
-X-Google-Smtp-Source: APXvYqwhJElVj2x60tjUvvUMfvJRbF5otvzYyJ38emJ6ljN0SKbxGhiYJUKEaTnMuzrXbrepMqwwQHnR0axvr0viC3c=
-X-Received: by 2002:ac8:610f:: with SMTP id a15mr47505444qtm.257.1556656656572; 
- Tue, 30 Apr 2019 13:37:36 -0700 (PDT)
+ id 1hLa8w-0002cN-Tb
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 21:18:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=iXrbYF8ZCU2w/WXnxnvt5e2ZKItGMNbl3lXm6z+Vmz0=;
+ b=HJbmgtUxIXMJQre0ZjMZzekrNvn5gPc1P4P7tTituc8iuQNaIQbuLRs62RO9/mZh8SVCIwgigwt430O0eaDYb77Dy2kQDZQKId2FASQq0YaSoXe+D6dSNZksZ8UIZ99f3fXCXoaGMaNgClmbhbJOm9n5pTSgz68RkkNkSmFFonE=
+Received: from AM0PR04MB6434.eurprd04.prod.outlook.com (20.179.252.215) by
+ AM0PR04MB4899.eurprd04.prod.outlook.com (20.176.215.208) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1835.15; Tue, 30 Apr 2019 21:18:18 +0000
+Received: from AM0PR04MB6434.eurprd04.prod.outlook.com
+ ([fe80::19be:75a:9fe:7cec]) by AM0PR04MB6434.eurprd04.prod.outlook.com
+ ([fe80::19be:75a:9fe:7cec%7]) with mapi id 15.20.1856.008; Tue, 30 Apr 2019
+ 21:18:18 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Shawn Guo <shawnguo@kernel.org>, Olof Johansson <olof@lixom.net>
+Subject: Re: [GIT PULL 6/6] i.MX defconfig update for 5.2
+Thread-Topic: [GIT PULL 6/6] i.MX defconfig update for 5.2
+Thread-Index: AQHU+OWBT0ux8MB+H0yoUPF9unnDpQ==
+Date: Tue, 30 Apr 2019 21:18:18 +0000
+Message-ID: <AM0PR04MB64345FA41350834C7552E81FEE3A0@AM0PR04MB6434.eurprd04.prod.outlook.com>
+References: <20190422082836.3734-1-shawnguo@kernel.org>
+ <20190422082836.3734-6-shawnguo@kernel.org>
+ <20190429162910.l27ewbfvvestb474@localhost> <20190430022636.GA25377@dragon>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [192.88.166.1]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 13eeb871-b555-4a8d-1980-08d6cdb15dcd
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB4899; 
+x-ms-traffictypediagnostic: AM0PR04MB4899:
+x-microsoft-antispam-prvs: <AM0PR04MB489949C9C1707A4C0F3A0481EE3A0@AM0PR04MB4899.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 00235A1EEF
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(136003)(366004)(396003)(376002)(346002)(39860400002)(199004)(189003)(71190400001)(71200400001)(86362001)(6116002)(476003)(3846002)(478600001)(15650500001)(229853002)(66066001)(74316002)(66946007)(256004)(66446008)(73956011)(66476007)(76116006)(64756008)(66556008)(44832011)(305945005)(52536014)(68736007)(91956017)(14454004)(14444005)(486006)(54906003)(110136005)(316002)(33656002)(7736002)(99286004)(25786009)(53546011)(26005)(7696005)(76176011)(446003)(55016002)(6246003)(53936002)(6506007)(102836004)(5660300002)(9686003)(8936002)(186003)(8676002)(81156014)(2906002)(6436002)(4326008)(81166006);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4899;
+ H:AM0PR04MB6434.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: D3qCCTHiN8XP64rMvU8HfqKCDTHU/82idrpgZvsuiZDMUNsT864WvBUQdO4r05ojSpIXwX2Jm7zgPg7G1jS4RlNosxbrm4am7+5Y6IXzZfrpkUNlMa1WVW3Q9Mmz0We+vQ/ctL11cerLlAxA36xOAwTd/K9HNSDyrpm3sH0GONZLnex/m3du9p5EzYetVLlbQAQ9PfxuxfQhOk2QSTZaYMXp/JN+nz7ElxOhvjv9GmMHRQABfReol7lsEd9lIW3Mp7vubMSJrt99wQygniqoeWjP8fpR8ZBjYNKbe0Mn+rK2ULje7IIclPBowUc/e2SgVOyxZrsNQOEDayB32EQjnoVkcaFNfDbxMkGUOzjSOPjqjddIOBx0Jz4BKPoFCoqlAUBJC7gRtihDK55vgra3fZz80Bmt5iAzcrsQIHHYTbg=
 MIME-Version: 1.0
-References: <1555426699-5340-1-git-send-email-fabien.dessenne@st.com>
- <1555426699-5340-3-git-send-email-fabien.dessenne@st.com>
- <20190430004051.GA7391@bogus>
- <ff424530-6e7b-cec9-910f-1897d60de2a1@st.com>
-In-Reply-To: <ff424530-6e7b-cec9-910f-1897d60de2a1@st.com>
-From: Rob Herring <robh@kernel.org>
-Date: Tue, 30 Apr 2019 15:37:25 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqJjMy43Juhse_PwRqjwjG2swkiJsQgagZWAb53an9B-6Q@mail.gmail.com>
-Message-ID: <CAL_JsqJjMy43Juhse_PwRqjwjG2swkiJsQgagZWAb53an9B-6Q@mail.gmail.com>
-Subject: Re: [PATCH v2 2/8] dt-bindings: remoteproc: add bindings for stm32
- remote processor driver
-To: Fabien DESSENNE <fabien.dessenne@st.com>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 13eeb871-b555-4a8d-1980-08d6cdb15dcd
+X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Apr 2019 21:18:18.5352 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4899
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_133738_123176_BC69C4F4 
-X-CRM114-Status: GOOD (  26.97  )
-X-Spam-Score: -5.3 (-----)
+X-CRM114-CacheID: sfid-20190430_141827_025536_4BEA8299 
+X-CRM114-Status: GOOD (  15.62  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.1.67 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -76,7 +99,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -88,102 +110,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ohad Ben-Cohen <ohad@wizery.com>,
- Alexandre TORGUE <alexandre.torgue@st.com>,
- Loic PALLARDY <loic.pallardy@st.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Arnaud POULIQUEN <arnaud.pouliquen@st.com>,
- "linux-remoteproc@vger.kernel.org" <linux-remoteproc@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Ludovic BARRE <ludovic.barre@st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Benjamin GAIGNARD <benjamin.gaignard@st.com>
+Cc: Abel Vesa <abel.vesa@nxp.com>, Stefan Agner <stefan@agner.ch>,
+ Leo Li <leoyang.li@nxp.com>, "arm@kernel.org" <arm@kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 30, 2019 at 9:15 AM Fabien DESSENNE <fabien.dessenne@st.com> wrote:
->
-> Hi Rob,
->
->
-> On 30/04/2019 2:40 AM, Rob Herring wrote:
-> > On Tue, Apr 16, 2019 at 04:58:13PM +0200, Fabien Dessenne wrote:
-> >> Add the device tree bindings document for the stm32 remoteproc devices.
-> >>
-> >> Signed-off-by: Fabien Dessenne <fabien.dessenne@st.com>
-> >> ---
-> >>   .../devicetree/bindings/remoteproc/stm32-rproc.txt | 64 ++++++++++++++++++++++
-> >>   1 file changed, 64 insertions(+)
-> >>   create mode 100644 Documentation/devicetree/bindings/remoteproc/stm32-rproc.txt
-> >>
-> >> diff --git a/Documentation/devicetree/bindings/remoteproc/stm32-rproc.txt b/Documentation/devicetree/bindings/remoteproc/stm32-rproc.txt
-> >> new file mode 100644
-> >> index 0000000..430132c
-> >> --- /dev/null
-> >> +++ b/Documentation/devicetree/bindings/remoteproc/stm32-rproc.txt
-> >> @@ -0,0 +1,64 @@
-> >> +STMicroelectronics STM32 Remoteproc
-> >> +-----------------------------------
-> >> +This document defines the binding for the remoteproc component that loads and
-> >> +boots firmwares on the ST32MP family chipset.
-> >> +
-> >> +Required properties:
-> >> +- compatible:       Must be "st,stm32mp1-m4"
-> >> +- reg:              Address ranges of the remote processor dedicated memories.
-> >> +            The parent node should provide an appropriate ranges property
-> >> +            for properly translating these into bus addresses.
-> > dma-ranges, but that's independent of 'reg'.
-> >
-> > It needs to list how many reg regions and what they are.
->
-> The "reg" property needs to be removed since it is not used by the
-> driver : the "memory-region" property (defined below) provides with all
-> the needed memory information.
+On 4/30/2019 5:27 AM, Shawn Guo wrote:
+> On Mon, Apr 29, 2019 at 09:29:10AM -0700, Olof Johansson wrote:
+>> On Mon, Apr 22, 2019 at 04:28:36PM +0800, Shawn Guo wrote:
+>>> The following changes since commit 9e98c678c2d6ae3a17cb2de55d17f69dddaa231b:
+>>>
+>>>    Linux 5.1-rc1 (2019-03-17 14:22:26 -0700)
+>>>
+>>> are available in the Git repository at:
+>>>
+>>>    git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/imx-defconfig-5.2
+>>>
+>>> for you to fetch changes up to a3f12aac21848796f5b5c6e9ce2f04e411ec2129:
+>>>
+>>>    arm64: defconfig: NVMEM_IMX_OCOTP=y for imx8m (2019-04-22 10:33:53 +0800)
+>>>
+>>> ----------------------------------------------------------------
+>>> i.MX defconfig update for 5.2:
+>>>   - Enable PCF857X GPIO expander and SIOX bus driver support for
+>>>     imx_v6_v7_defconfig.
+>>>   - Enable more drivers for i.MX8 platform support in arm64 defconfig:
+>>>     SNVS RTC, SCU Watchdog, SPI, i.MX8MM pinctrl and clock, LPI2C,
+>>>     ROHM_BD718XX PMIC and OCOTP NVMEM.
+>>
+>> All of these are enabled as =y. I don't think all of them are critical for
+>> booting the system up to a rootfs. Can you please switch over any non-critical
+>> drivers to =m?
 
-I'm not sure that's the right direction. reserved-memory nodes
-generally should be in the range of system memory (i.e. what /memory
-nodes define).
+> - CONFIG_MFD_ROHM_BD718XX=y, CONFIG_REGULATOR_BD718XX=y
+> 
+>    @Leonard, are they critical for booting imx8mm-evk board up? Or can
+>    they be installed as module after system is up?
 
-> Unfortunately, when I remove this "reg" property from the DeviceTree, I
-> have this warning when building (W=123) the DTB:
->
->   "Warning (avoid_unnecessary_addr_size): /mlahb: unnecessary
-> #address-cells/#size-cells without "ranges" or child "reg" property"
->
-> IMHO, there is something wrong in the dtc script which seems to ignore
-> the "dma-ranges" property that needs to have #address-cells/#size-cells
-> defined. Just like "ranges".
+This is the PMIC used on imx8mm-evk and also the purism devkit. Since 
+it's used for main chip power "y" makes sense but boards can boot 
+without it and I can't think of a corner case where we could fail to 
+reach rootfs because of no PMIC driver.
 
-Perhaps.
+Looking through arm64 defconfig other PMIC regulators seem to be "y"
 
->
-> The quick patch below (add check for "dma-ranges" ) in
-> scripts/dtc/checks.c solves this issue.
->
-> static void check_avoid_unnecessary_addr_size(struct check *c, struct
-> dt_info *dti,
->                            struct node *node)
-> {
-> ...
->      if (get_property(node, "ranges") || get_property(node,
-> "dma-ranges") || !node->children)
->          return;
-> ...
->
-> Can you confirm that I can remove the "reg" property and ignore the warning?
+ > - CONFIG_GPIO_MAX732X=y
+ > - CONFIG_I2C_IMX_LPI2C=y
 
-That should cause another warning because the 'simple-bus' checks
-expect to have nodes with addresses as 'simple-bus' means MMIO bus.
-That may have been the check which was broken for a while and I just
-fixed not too long ago.
+Other I2C/GPIO drivers are "y" but again can't point to anything 
+specific that would fail.
 
-Rob
+> - CONFIG_NVMEM_IMX_OCOTP=y
+> 
+>    @Olof, this is the driver for fuse access on i.MX platform.  Drivers
+>    like cpufreq will need to access fuse for cpu grade data.  So we would
+>    take this driver as fundamental infrastructural.
+
+Other than thermal and speed grading fuses also contain MAC address on 
+imx chips. Since FEC (imx ethernet controller) is "y" for easy netboots 
+it makes a lot of sense to keep this "y" as well.
+
+These are all relatively small drivers. I don't think that RTC drivers 
+are worth excluding either.
+
+--
+Regards,
+Leonard
 
 _______________________________________________
 linux-arm-kernel mailing list
