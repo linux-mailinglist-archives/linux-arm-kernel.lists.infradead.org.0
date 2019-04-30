@@ -2,105 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5657EE98
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 03:55:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E8D4EE99
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 03:57:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vbwr0Vc6jqjKiR3bWaFwRBkIt9/hG58jy9zCC/STSco=; b=qmCigkvbwXLhXk
-	47RDx2CKiqxb52pfT5JEEp00lKclfKkMGOYWSgg0jSWId3MSfKJLlXQRz0ifq/roND9nvrAN4z83A
-	ED4zI0ae6/J+UaAoAjb0SObBOvR3LNx+ruPY9jHY7g3ytKEqYi83KqItcF7GCxvmYeuwLGGsLtOmJ
-	BmTF50L8xS463+CVDGSbNmcqB5qbB5U2sCBRDBQJGeA5mQLIOkq4FlyKm1EyIISISLPOyY5wt+Xr8
-	wawzpSDva7w1hOW8J5M64zTwUC1uDyvshYJsuuaLA227YRWGSPzgk2Jc7BVpAY8y66X2jK+Vhyha3
-	d9a/cCiiNIcSi/b3fKJQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=+neiqa80fI8Ctj7dIE+stPW3PVqU8D+UQMPNMBa6vk8=; b=phh
+	WzEV6ULNtMWr2U8Lxc/+vSALXbtIyJX6QPpECRxM+lPssY/2lkLaxVzY66Z2/dnMPyGKWnWGbcd2a
+	ovGAWEdjRcn1PpmdKv3do2AjiLqVvfdCiz+i8Bw6I2Z6INM2eMW4L2G7jPCDl2LEapSdsNTiRvqJK
+	M8LqAS/ciE4O9xUEOL/OpYN46ETWWyEdfjWRoclb9RqdIpFrFEQBEJPp6mZQeY6acIfbciIvTepXC
+	leYQ8sMENJoIyLQwYq7a82ULaSgKZN+80uT83JedSz4khZkCTkVthkk+IGnyxu2FhWC6h1wsBMUyK
+	9NO5igeBi3rtuRVa2VP8ZODQnFKPH6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLHzX-00062C-3F; Tue, 30 Apr 2019 01:55:31 +0000
-Received: from mail-eopbgr20042.outbound.protection.outlook.com ([40.107.2.42]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+	id 1hLI17-0006Ii-Ha; Tue, 30 Apr 2019 01:57:09 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLHzO-00061k-Uo
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 01:55:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Yfff3VUuI7FcOhQjulztNG48leP+fI44AuIkflJgl58=;
- b=m8zNQMgmesbA5Qvqbu73itjk8fopxZ2wxo/NZp5eUir5WEd7SnUlPnJAucEl3j09Xnyde8W0/lYs1khktAFJ+oS/Wl2JR6Ly9V/vnT0JYy6tL9tqsdo/SM5CmbGtf3AQoHGHy0qrIFuoYOMVf8o0mjk1CobjmnoP9NE78TjDH4o=
-Received: from AM6PR0402MB3911.eurprd04.prod.outlook.com (52.133.30.10) by
- AM6PR0402MB3829.eurprd04.prod.outlook.com (52.133.29.140) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1856.10; Tue, 30 Apr 2019 01:55:18 +0000
-Received: from AM6PR0402MB3911.eurprd04.prod.outlook.com
- ([fe80::55cc:4406:327:9259]) by AM6PR0402MB3911.eurprd04.prod.outlook.com
- ([fe80::55cc:4406:327:9259%3]) with mapi id 15.20.1835.018; Tue, 30 Apr 2019
- 01:55:18 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: "mturquette@baylibre.com" <mturquette@baylibre.com>, "sboyd@kernel.org"
- <sboyd@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
- <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: [PATCH] clk: imx: pllv3: Fix fall through build warning
-Thread-Topic: [PATCH] clk: imx: pllv3: Fix fall through build warning
-Thread-Index: AQHU/vfDJ+hnJuSvCk6GSL1CreUf2Q==
-Date: Tue, 30 Apr 2019 01:55:18 +0000
-Message-ID: <1556589033-6080-1-git-send-email-Anson.Huang@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.7.4
-x-clientproxiedby: HK0PR01CA0063.apcprd01.prod.exchangelabs.com
- (2603:1096:203:a6::27) To AM6PR0402MB3911.eurprd04.prod.outlook.com
- (2603:10a6:209:1c::10)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 68c6c806-fef6-46d2-40f5-08d6cd0ee578
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:AM6PR0402MB3829; 
-x-ms-traffictypediagnostic: AM6PR0402MB3829:
-x-microsoft-antispam-prvs: <AM6PR0402MB382940A6A3A42D3A816F67AAF53A0@AM6PR0402MB3829.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:331;
-x-forefront-prvs: 00235A1EEF
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(346002)(39860400002)(366004)(396003)(376002)(136003)(189003)(199004)(86362001)(4326008)(2501003)(2201001)(6436002)(81166006)(8936002)(6486002)(66066001)(52116002)(7736002)(66446008)(81156014)(110136005)(64756008)(73956011)(66476007)(66556008)(305945005)(99286004)(50226002)(316002)(25786009)(8676002)(6512007)(53936002)(256004)(14454004)(4744005)(66946007)(186003)(3846002)(6116002)(14444005)(26005)(2906002)(386003)(68736007)(71190400001)(97736004)(478600001)(476003)(486006)(5660300002)(6506007)(2616005)(71200400001)(36756003)(102836004);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR0402MB3829;
- H:AM6PR0402MB3911.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: um4Cp4BkeckDFY5Y5DLx3bezGZvre+JlN93QVKB+XsfrzCraQGIqgnMK4mLAqpassiMGSuJpW+AvZA9DXftPvH71t+bQ9JhPbeZMobX2yJ0SUi+GYVLS5jdapUU5ZSbBFLCHJHIsHS0JupB8dcdVf/vR5GCNffOC9NXjpDJ8iGj4cqKRXOja3XURtnPX+RDCpYpABNFT+j+j89n6WAPS585vpYqWd5W6N3JZgjeFMBUN7ctOk07Lsluoo1GF6QSWivOEW7W+iWjKosPelKohnz2PgjNhCn1VcNu0dCzhRuQMezYQ3smQIvcZ2nh43z8HBJXTcmb53N9ETZLUPtjugnkyZKQgiEtpXNRhvodt781BMQyUBluGkFYIeYLMROpkGN7C7RIjJ4Qb0YTAFFVZtnEgKj05V5nDx0Aybu9UVJA=
-MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 68c6c806-fef6-46d2-40f5-08d6cd0ee578
-X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Apr 2019 01:55:18.7396 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR0402MB3829
+ id 1hLI10-0006Hw-BK
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 01:57:03 +0000
+Received: by mail-pf1-x444.google.com with SMTP id y13so6243116pfm.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 29 Apr 2019 18:57:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=B3NugZ9TINdI1OI3FrmhQJTknBH3QXdWgtcaMz1fRrE=;
+ b=XqwSqFIMy+BpZ4efc1taHt162C2WW2p4uw8J3gjvFeVMRGG0jSzSMC5xmLrNbcacwb
+ kSZK6xHoUI8DOw1Rn0IJi7pOnOguOGYDs8nJd3/pYhhpJJwIX6AAhvP7U4ZCk5HucW0r
+ wEtLypFJNVjRAy0V9h8rcEzU+AlOskOxc5qdwH4IyW+8UGKIB9ngyPx+R4jnN5B8bab9
+ XlN+auwr8kV1zdzjaoNJyFMm3Xx9Q+BC1M2cEeEGlsJvt8oBRNxj3ngpNGKtqvXP2k/E
+ geSlyyKH2M3Bblfe4P/DuWJYKIY4xHFOGq6pauv+9acGM3EgEuE6IMCqxFKdOvSxs2pL
+ Y4Mg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=B3NugZ9TINdI1OI3FrmhQJTknBH3QXdWgtcaMz1fRrE=;
+ b=dtCakwkZX+f6ClAmTVUELJQdoBiKZM+QYWanQMYPXL1kgcf61+/xf+nSk+Ut1PFEJy
+ e+SbG+u5kB0i0FsUEj0/74knrsAZc8x9UOwoKFWVILEGmRmrzwbso96VwvvmUXFDvF5o
+ lLaZhxdHdw0BKGInC6aFex6z5p3Mx6WQ3MMwXTCEUT7OJmw9g4ImH46JiDNWPxwuw54L
+ i1/vqdtsFCKywc/i/p/PHltvnGaF+ddoJZtJ8fsfwa7YXgwFLkvCCPq1/WzltqaMbmo0
+ D8QFeYEbKOQgwM3GN7pKw5ysTyNKBKmNMkXObwUM8ukTh/puR35ymENXPu+uKm5gH7rw
+ e4RQ==
+X-Gm-Message-State: APjAAAVlzX13cnYfHLXESYvF2504FP5KYbBOaYa9wV7pkEPoH9KavMlF
+ uqHoSBskcmw376g4ma27zZk=
+X-Google-Smtp-Source: APXvYqyq/ePAJdQfrFoIyaNhBIEKmUwzsYwFbKt20m93i9o3xKFFhfZk/XcMS+4PRI8PvCEezew/dA==
+X-Received: by 2002:a65:4247:: with SMTP id d7mr18565472pgq.114.1556589421204; 
+ Mon, 29 Apr 2019 18:57:01 -0700 (PDT)
+Received: from Asurada-Nvidia.nvidia.com (thunderhill.nvidia.com.
+ [216.228.112.22])
+ by smtp.gmail.com with ESMTPSA id a12sm36918995pgq.21.2019.04.29.18.56.59
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 29 Apr 2019 18:57:00 -0700 (PDT)
+From: Nicolin Chen <nicoleotsuka@gmail.com>
+To: hch@lst.de,
+	robin.murphy@arm.com,
+	m.szyprowski@samsung.com
+Subject: [RFC/RFT PATCH 0/2] Optimize dma_*_from_contiguous calls
+Date: Mon, 29 Apr 2019 18:55:19 -0700
+Message-Id: <20190430015521.27734-1-nicoleotsuka@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_185522_992519_A195B38B 
-X-CRM114-Status: GOOD (  10.25  )
+X-CRM114-CacheID: sfid-20190429_185702_408985_B7637892 
+X-CRM114-Status: UNSURE (   8.62  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.2.42 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (nicoleotsuka[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -119,42 +96,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: chris@zankel.net, linux-xtensa@linux-xtensa.org, keescook@chromium.org,
+ sfr@canb.auug.org.au, tony@atomide.com, catalin.marinas@arm.com,
+ joro@8bytes.org, will.deacon@arm.com, linux@armlinux.org.uk,
+ iommu@lists.linux-foundation.org, linux-kernel@vger.kernel.org,
+ jcmvbkbc@gmail.com, wsa+renesas@sang-engineering.com,
+ akpm@linux-foundation.org, treding@nvidia.com, dwmw2@infradead.org,
+ iamjoonsoo.kim@lge.com, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix below fall through build warning:
+This series of patches try to optimize dma_*_from_contiguous calls:
+PATCH-1 does some abstraction and cleanup.
+PATCH-2 saves single pages and reduce fragmentations from CMA area.
 
-drivers/clk/imx/clk-pllv3.c:453:21: warning:
-this statement may fall through [-Wimplicit-fallthrough=]
+Both two patches may impact the source of pages (CMA or normal)
+depending on the use cases, so are being tagged with "RFC/RFT".
 
-   pll->denom_offset = PLL_IMX7_DENOM_OFFSET;
-                     ^
-drivers/clk/imx/clk-pllv3.c:454:2: note: here
-  case IMX_PLLV3_AV:
-  ^~~~
+Please check their commit messages for detail.
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
- drivers/clk/imx/clk-pllv3.c | 1 +
- 1 file changed, 1 insertion(+)
+Nicolin Chen (2):
+  dma-contiguous: Simplify dma_*_from_contiguous() function calls
+  dma-contiguous: Use fallback alloc_pages for single pages
 
-diff --git a/drivers/clk/imx/clk-pllv3.c b/drivers/clk/imx/clk-pllv3.c
-index e892b9a..fbe4fe0 100644
---- a/drivers/clk/imx/clk-pllv3.c
-+++ b/drivers/clk/imx/clk-pllv3.c
-@@ -451,6 +451,7 @@ struct clk *imx_clk_pllv3(enum imx_pllv3_type type, const char *name,
- 	case IMX_PLLV3_AV_IMX7:
- 		pll->num_offset = PLL_IMX7_NUM_OFFSET;
- 		pll->denom_offset = PLL_IMX7_DENOM_OFFSET;
-+		/* fall through */
- 	case IMX_PLLV3_AV:
- 		ops = &clk_pllv3_av_ops;
- 		break;
+ arch/arm/mm/dma-mapping.c      | 14 +++-----
+ arch/arm64/mm/dma-mapping.c    | 11 +++---
+ arch/xtensa/kernel/pci-dma.c   | 19 +++-------
+ drivers/iommu/amd_iommu.c      | 20 +++--------
+ drivers/iommu/intel-iommu.c    | 20 ++---------
+ include/linux/dma-contiguous.h | 15 +++-----
+ kernel/dma/contiguous.c        | 64 ++++++++++++++++++++++------------
+ kernel/dma/direct.c            | 24 +++----------
+ kernel/dma/remap.c             | 11 ++----
+ 9 files changed, 73 insertions(+), 125 deletions(-)
+
 -- 
-2.7.4
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
