@@ -2,60 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E488FFF64
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 20:06:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC103FFA2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 20:17:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:To:Subject:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+dSQsnalJfMzXx90WMrNy2JeJmSATw9OQmCKEHuxueQ=; b=E2aqZw+k7Qh/AT
-	D61dRri4oBvQvEeYYsCFeMJnItXam8q8h6lf+XjQNyxG/iKEVFVuixC4A6cOTT027/DNZAWggqn85
-	G5A1YJ2ohlgeoKewJdHTOZMjvKhgQblxVwtk1xuOdWsmvCAcqaAy29Ec9MtInF2NLWDnRp8GYqk0a
-	B8fe9KczAAOXCojh74wXLn5+8wd50riuUJAjQcRcz2zBx6/+xmzxOy3f5n/4HCRvAR+CnnsiprC4i
-	jEUnG1E6u09TldW2LmQ5ItIq5aw/G+Ije3k6fFRaGXRNk0swC9JvhOk6vhsVKK0TcyTDB+d9ZePaP
-	jaPW0XdoiPGDIrE02h7g==;
+	List-Owner; bh=4nSdSba4Jj85hAHB7uQcWkHPxf2QdOD30Ravnwx5ojg=; b=c8Iv7tA0AeTC4u
+	ve46EOV+cxomgqNRi5+TQOVokk3QhsFVRmT8RA4KxGBr7xRplDqBJa59+7I2iIX7gjmPoPdVSPQRg
+	GzBmDrk8MVOQS9a2xP6RhMOOwbOeQRLRQIbWxLXXaDp23AhsBkUtnIUHrtmINDP3RTruViowWySJa
+	AMnFAjUMNUG1zclHGPBupb5bAxrfuqvqYR+KdvAb1SdSC8KfwQ+4jenfaOuQJwoUGTBXucZZ5nKPe
+	0eQjm/NzciAtT4Ww5nbtSrgYQItYxWTlnwCRGoiFEwKPxgS94EINfgCCEObIL3c6Uu3vsCGdJXey0
+	qs1lMyOQF7OaWaJuiwbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLX9A-0004Sp-Ou; Tue, 30 Apr 2019 18:06:28 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1hLXJK-0000FA-6l; Tue, 30 Apr 2019 18:16:58 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLX8Y-0003nf-08; Tue, 30 Apr 2019 18:05:54 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: gportay) with ESMTPSA id 67D3F282FE4
-From: =?UTF-8?q?Ga=C3=ABl=20PORTAY?= <gael.portay@collabora.com>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Heiko Stuebner <heiko@sntech.de>,
- Michael Turquette <mturquette@baylibre.com>,
- Stephen Boyd <sboyd@kernel.org>, MyungJoo Ham <myungjoo.ham@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- Chanwoo Choi <cw00.choi@samsung.com>, Sandy Huang <hjc@rock-chips.com>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- =?UTF-8?q?Ga=C3=ABl=20PORTAY?= <gael.portay@collabora.com>,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-pm@vger.kernel.org,
- dri-devel@lists.freedesktop.org
-Subject: [RFC 4/4] arm64: dts: rockchip: Set the display-subsystem devfreq
-Date: Tue, 30 Apr 2019 14:05:24 -0400
-Message-Id: <20190430180524.22710-5-gael.portay@collabora.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190430180524.22710-1-gael.portay@collabora.com>
-References: <20190430180524.22710-1-gael.portay@collabora.com>
+ id 1hLXJB-0000Ej-S9
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 18:16:51 +0000
+Received: from localhost (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DAC4020854;
+ Tue, 30 Apr 2019 18:16:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1556648209;
+ bh=KUP9To48LBrL/wSVFz97QuNsX4v6nv2LPPjDnJTFTzs=;
+ h=In-Reply-To:References:From:Subject:To:Cc:Date:From;
+ b=RfQo/QhbXFzOkMCGW4mgeoJJ9DWbf6F9XwqhCTWMsjWOf8pNLcXWWgD4iJwX7UGsU
+ 9zZ88Iiz+XS/r2ZYMvemxxajdMosAmc40YHvq6AEnpoCRpN3lxYzUgo1BfrT/c5u40
+ 6Sz3plrXV89dJ/2NRKfMCWBbeuDZPORX7av8ZeEU=
 MIME-Version: 1.0
+In-Reply-To: <1556589033-6080-1-git-send-email-Anson.Huang@nxp.com>
+References: <1556589033-6080-1-git-send-email-Anson.Huang@nxp.com>
+From: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH] clk: imx: pllv3: Fix fall through build warning
+To: "festevam@gmail.com" <festevam@gmail.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "mturquette@baylibre.com" <mturquette@baylibre.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>, Anson Huang <anson.huang@nxp.com>,
+ "Gustavo A. R. Silva" <gustavo@embeddedor.com>
+Message-ID: <155664820799.168659.12393223246835475198@swboyd.mtv.corp.google.com>
+User-Agent: alot/0.8
+Date: Tue, 30 Apr 2019 11:16:47 -0700
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_110550_625158_ADC8EFFD 
-X-CRM114-Status: GOOD (  10.27  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190430_111649_923407_16E80613 
+X-CRM114-Status: GOOD (  12.60  )
+X-Spam-Score: -5.3 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -67,35 +82,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lin Huang <hl@rock-chips.com>, Derek Basehore <dbasehore@chromium.org>,
- Douglas Anderson <dianders@chromium.org>, Matthias Kaehlcke <mka@chromium.org>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>, kernel@collabora.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: dl-linux-imx <linux-imx@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VXNlIHRoZSBEeW5hbWljIE1lbW9yeSBDb250cm9sbGVyIGFzIHRoZSBkaXNwbGF5LXN1YnN5c3Rl
-bSdzIGRldmZyZXEKZGV2aWNlLgoKU2lnbmVkLW9mZi1ieTogR2HDq2wgUE9SVEFZIDxnYWVsLnBv
-cnRheUBjb2xsYWJvcmEuY29tPgotLS0KIGFyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAvcmsz
-Mzk5LWdydS5kdHNpIHwgNCArKysrCiBhcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlwL3JrMzM5
-OS5kdHNpICAgICB8IDIgKy0KIDIgZmlsZXMgY2hhbmdlZCwgNSBpbnNlcnRpb25zKCspLCAxIGRl
-bGV0aW9uKC0pCgpkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazMz
-OTktZ3J1LmR0c2kgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlwL3JrMzM5OS1ncnUuZHRz
-aQppbmRleCA0MGU3ODE4NjU2MGIuLmE1Y2JiYzA4ZjdlMSAxMDA2NDQKLS0tIGEvYXJjaC9hcm02
-NC9ib290L2R0cy9yb2NrY2hpcC9yazMzOTktZ3J1LmR0c2kKKysrIGIvYXJjaC9hcm02NC9ib290
-L2R0cy9yb2NrY2hpcC9yazMzOTktZ3J1LmR0c2kKQEAgLTM3NSw2ICszNzUsMTAgQEAKIAkJPDIw
-MDAwMDAwMD47CiB9OwogCismZGlzcGxheV9zdWJzeXN0ZW0geworCWRldmZyZXEgPSA8JmRtYz47
-Cit9OworCiAmZW1tY19waHkgewogCXN0YXR1cyA9ICJva2F5IjsKIH07CmRpZmYgLS1naXQgYS9h
-cmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlwL3JrMzM5OS5kdHNpIGIvYXJjaC9hcm02NC9ib290
-L2R0cy9yb2NrY2hpcC9yazMzOTkuZHRzaQppbmRleCA4N2VlMDg0ZmFjODkuLjI1M2I0NzYxNjNm
-ZCAxMDA2NDQKLS0tIGEvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazMzOTkuZHRzaQor
-KysgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlwL3JrMzM5OS5kdHNpCkBAIC0xNTUsNyAr
-MTU1LDcgQEAKIAkJfTsKIAl9OwogCi0JZGlzcGxheS1zdWJzeXN0ZW0geworCWRpc3BsYXlfc3Vi
-c3lzdGVtOiBkaXNwbGF5LXN1YnN5c3RlbSB7CiAJCWNvbXBhdGlibGUgPSAicm9ja2NoaXAsZGlz
-cGxheS1zdWJzeXN0ZW0iOwogCQlwb3J0cyA9IDwmdm9wbF9vdXQ+LCA8JnZvcGJfb3V0PjsKIAl9
-OwotLSAKMi4yMS4wCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0
-cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
-Zm8vbGludXgtYXJtLWtlcm5lbAo=
+Quoting Anson Huang (2019-04-29 18:55:18)
+> Fix below fall through build warning:
+> 
+> drivers/clk/imx/clk-pllv3.c:453:21: warning:
+> this statement may fall through [-Wimplicit-fallthrough=]
+> 
+>    pll->denom_offset = PLL_IMX7_DENOM_OFFSET;
+>                      ^
+> drivers/clk/imx/clk-pllv3.c:454:2: note: here
+>   case IMX_PLLV3_AV:
+>   ^~~~
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+
+Gustavo says there are two warnings. Please compile test with the right
+options, add Reported-by tags when you get bug reports from someone, and
+add a Fixes tag and then resend.
+
+>  drivers/clk/imx/clk-pllv3.c | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/drivers/clk/imx/clk-pllv3.c b/drivers/clk/imx/clk-pllv3.c
+> index e892b9a..fbe4fe0 100644
+> --- a/drivers/clk/imx/clk-pllv3.c
+> +++ b/drivers/clk/imx/clk-pllv3.c
+> @@ -451,6 +451,7 @@ struct clk *imx_clk_pllv3(enum imx_pllv3_type type, const char *name,
+>         case IMX_PLLV3_AV_IMX7:
+>                 pll->num_offset = PLL_IMX7_NUM_OFFSET;
+>                 pll->denom_offset = PLL_IMX7_DENOM_OFFSET;
+> +               /* fall through */
+>         case IMX_PLLV3_AV:
+>                 ops = &clk_pllv3_av_ops;
+>                 break;
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
