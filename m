@@ -2,51 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40869F8B7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 14:23:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71196F8FD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 14:38:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=JIe1n8Pot1R9Yjc+OktdhSk3QAPVgpESM50w8Di7/hU=; b=TWdxjgXQIQHfFnGdwDHNAjtCT7
-	CEBAcbKt0o0qDLGrl1PkLENGCrEchGIBpa3bePEbKR8OpKjhnZF0oflBqL3zOyIgUXxqrJcNSw8av
-	j4JnT5dk36MgsudL1KFiFovovvyuBbSJfuuZaZl9TCPLowPjkG9ON9A/9Kbv1jUhudisIY0NVNjmQ
-	LO9OGh2ZCKMr0swuG6BBGci9LUrCibHYmD2ZP5PVULPMEp07wPx5lDbgWAG1AHmNjS1UucEC4ZCuJ
-	WaLgvWA+6L37COvfcDo12Kz19lLZ+1oe3weKYd6BrrDnD4mp7Rb3tcZ3hG7tTfPDoDjw9ZdF3azom
-	8HlSUdCA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Z/c/Hm5AcmocSNOBOdOiKHaPufu+J3kFQQY8LIt0Y38=; b=E4G4bBPhxVJmONd50eQsnSYQf
+	WDcZaOC4fU0FtCupr6geJTg71FckVdNms7Eo6WdsxcuxLezL/bcA/fLjsPlMjQysltnDeFztdESNu
+	2rQ8erXijzdcf9No2y547lYm2OnxqIBm3ouP3Tvs1yEXiMWa+OCT2+tewJWCGyEkNb41pjpgZPwLJ
+	3AMZw5xKKBkWuAki12k3QQ9c2jbbBiISFS2HXJM67I16mAMAM/63jKkbPnOFQd0rufQVUtpGa7IBB
+	nYU9QJOpk4XCNAbAjdlVyx+xIYYFltpd+ArMko085X+ldrSwtoFSjjKbflnIvkikj0ETXbTYMN6dX
+	cxvdPFgUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLRmq-0003Pu-Jv; Tue, 30 Apr 2019 12:23:04 +0000
-Received: from guitar.tcltek.co.il ([192.115.133.116] helo=mx.tkos.co.il)
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLRmi-0003PS-Ou
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 12:22:58 +0000
-Received: from tarshish (unknown [10.0.8.2])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mx.tkos.co.il (Postfix) with ESMTPS id F3A4444028D;
- Tue, 30 Apr 2019 15:22:54 +0300 (IDT)
-References: <20190430093212.28425-1-alexandre.belloni@bootlin.com>
- <20190430093212.28425-4-alexandre.belloni@bootlin.com>
-User-agent: mu4e 1.0; emacs 26.1
-From: Baruch Siach <baruch@tkos.co.il>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: Re: [PATCH 4/4] rtc: digicolor: convert to SPDX identifier
-In-reply-to: <20190430093212.28425-4-alexandre.belloni@bootlin.com>
-Date: Tue, 30 Apr 2019 15:22:54 +0300
-Message-ID: <8736lzu1gh.fsf@tarshish>
+	id 1hLS1Q-00087f-P2; Tue, 30 Apr 2019 12:38:08 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hLS1J-00087E-BI
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 12:38:02 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7007B15A2;
+ Tue, 30 Apr 2019 05:38:00 -0700 (PDT)
+Received: from [10.1.196.75] (e110467-lin.cambridge.arm.com [10.1.196.75])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DE0783F5AF;
+ Tue, 30 Apr 2019 05:37:56 -0700 (PDT)
+Subject: Re: [RFC/RFT PATCH 1/2] dma-contiguous: Simplify
+ dma_*_from_contiguous() function calls
+To: Christoph Hellwig <hch@lst.de>, Nicolin Chen <nicoleotsuka@gmail.com>
+References: <20190430015521.27734-1-nicoleotsuka@gmail.com>
+ <20190430015521.27734-2-nicoleotsuka@gmail.com>
+ <20190430105640.GA20021@lst.de>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <0e3e6d8b-de44-d23e-a039-8d11b578ec5c@arm.com>
+Date: Tue, 30 Apr 2019 13:37:54 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <20190430105640.GA20021@lst.de>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_052257_028034_EA2223CE 
-X-CRM114-Status: GOOD (  12.69  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190430_053801_395412_B9D6F8D2 
+X-CRM114-Status: GOOD (  13.02  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -58,54 +65,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: chris@zankel.net, linux-xtensa@linux-xtensa.org, keescook@chromium.org,
+ sfr@canb.auug.org.au, tony@atomide.com, catalin.marinas@arm.com,
+ joro@8bytes.org, will.deacon@arm.com, linux@armlinux.org.uk,
+ iommu@lists.linux-foundation.org, linux-kernel@vger.kernel.org,
+ jcmvbkbc@gmail.com, wsa+renesas@sang-engineering.com,
+ akpm@linux-foundation.org, treding@nvidia.com, dwmw2@infradead.org,
+ iamjoonsoo.kim@lge.com, linux-arm-kernel@lists.infradead.org,
+ m.szyprowski@samsung.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Alexandre,
+On 30/04/2019 11:56, Christoph Hellwig wrote:
+> So while I really, really like this cleanup it turns out it isn't
+> actually safe for arm :(  arm remaps the CMA allocation in place
+> instead of using a new mapping, which can be done because they don't
+> share PMDs with the kernel.
+> 
+> So we'll probably need a __dma_alloc_from_contiguous version with
+> an additional bool fallback argument - everyone but arms uses
+> dma_alloc_from_contiguous as in your patch, just arm will get the
+> non-fallback one.
 
-On Tue, Apr 30 2019, Alexandre Belloni wrote:
-> Use SPDX-License-Identifier instead of a verbose license text.
->
-> Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Or we even just implement dma_{alloc,free}_contiguous() as a wrapper 
+around the existing APIs so that users can be thoroughly checked and 
+converted one-by-one.
 
-Acked-by: Baruch Siach <baruch@tkos.co.il>
-
-baruch
-
-> ---
->  drivers/rtc/rtc-digicolor.c | 6 +-----
->  1 file changed, 1 insertion(+), 5 deletions(-)
->
-> diff --git a/drivers/rtc/rtc-digicolor.c b/drivers/rtc/rtc-digicolor.c
-> index ed2fc1adafd5..0aecc3f8e721 100644
-> --- a/drivers/rtc/rtc-digicolor.c
-> +++ b/drivers/rtc/rtc-digicolor.c
-> @@ -1,14 +1,10 @@
-> +// SPDX-License-Identifier: GPL-2.0+
->  /*
->   * Real Time Clock driver for Conexant Digicolor
->   *
->   * Copyright (C) 2015 Paradox Innovation Ltd.
->   *
->   * Author: Baruch Siach <baruch@tkos.co.il>
-> - *
-> - * This program is free software; you can redistribute it and/or modify it
-> - * under the terms of the GNU General Public License as published by the
-> - * Free Software Foundation; either version 2 of the License, or (at your
-> - * option) any later version.
->   */
->  
->  #include <linux/io.h>
-
-
--- 
-     http://baruch.siach.name/blog/                  ~. .~   Tk Open Systems
-=}------------------------------------------------ooO--U--Ooo------------{=
-   - baruch@tkos.co.il - tel: +972.52.368.4656, http://www.tkos.co.il -
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
