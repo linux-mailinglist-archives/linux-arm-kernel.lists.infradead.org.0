@@ -2,79 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C580FDE6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 18:29:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 623A0FDE8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 18:30:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=c71LcWI950CmsYXAJnNgF898MhL1w0dz3V2XP88thtY=; b=JyQlKob+IILEHf
-	t2yPBVvx6RgslkjSU+GojZ5fhanGptdoe0fdjX0jHtAp6b9WO/CMCVR295Pt5tjPgklJgwxmXNElC
-	uf2avOkr7qCKj5IzI/ne3gFBjWoyS4voHw3i7mrlDqFAtMVAVNfdYxQLQxFKWJdPkukQfWYJHdAFE
-	Sa48IrpnNzws/GNA9zbj34sydA3lbOnGUyxRWBI5vj75utpxCis6N9OK1DvsMOw22FYkkx1rNDAlr
-	nSeC7faK/oQVPHt4edOakobL+aWGaObAXn67yaNqF7I54Tdq8Z6HAF7V3K1nkAnXMVx+umEN0RpFD
-	7sNJeMTtFNVlScJmZcuA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6z2quMzHWjbO1PqnKsinQLrXM/4jqT64EoSr0QPl01Q=; b=e6Bvdu8C11enCd
+	ipcza03Heocu2a7kmp9FBDNbdDvfnwker2W2aWydwLdafPFYz16eORIt+nh7L6GgVRih25rU9XN4x
+	8GGyo5oElsRE4eEFyy1YkG+YWBHg+HHzO8/Oi3+Dx3lybNJvhZUw0BTk/XZLgJ9YC6+9HLhlGzOVi
+	Ft7Up0svFHPlg3Ii73uaVNv+GmU1kuomAW9J/5nK4ZVijqcGcsyOMFTR5fzl8kxXUs8S7SijFcWbb
+	7fTxRYrtiS+i7hYhaGHqzcAwSlRhN3VtCvR+mDsXwS/m1dyl/mesIH5Ecj7rAUX0JEXskFvYcc+MB
+	l/67mhfp/L27ZRTSGq/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLVdh-0003TI-WA; Tue, 30 Apr 2019 16:29:54 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hLVe3-0003zW-0s; Tue, 30 Apr 2019 16:30:15 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLVda-0003SM-0T
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 16:29:47 +0000
-Received: by mail-wr1-x444.google.com with SMTP id v16so19347806wrp.1
+ id 1hLVda-0003SO-Tl
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 16:29:48 +0000
+Received: by mail-wr1-x442.google.com with SMTP id c12so21740777wrt.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Apr 2019 09:29:45 -0700 (PDT)
+ Tue, 30 Apr 2019 09:29:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=pJcnizSX09s8fd54NDpfsOEpZWqIjJb4KGon6CoHIdE=;
- b=kAt6DfvsoMEHFhgdnVzV+s9YIgmyxSKYpBh6b+I2H9eu/PEnBAoh+w/TypaG5YDPUp
- QJghPybgsEgarbZMdnKUYaQszvNm9YfL6CT/sl4vYcCLSomRGRtOvzL76Wthc3URDenE
- kq602HzH60sURQqKmhZFfLvKUfMjmcEqZJl14K8JPoBiJtW8FfvzhhSd/rRyaVY5k4D2
- V0rPDJE5XWxwTCsX7u0fzq70bvCPbxqHb3LM0cDe9SSfYvLK0pz++qIFqdClZl2TKKIN
- 8BhXdozQndFP1q7WSc/caAVc1yP3paxyB+UuvJD0UFUuxjrofnpGsp6uTstCsj8GG932
- ZKng==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=XAG/7MBNQKcnyRwTABVR+nnLiDuF8S7/Ttp9kLBqJQA=;
+ b=X4pJCHvvH1jl7YriWnYI3P6pm05wYYAwtB5o4CMqVQbMFjXTWi0UDOYoj945mXUEhT
+ d/Qzk8ICzQbu/2WivlhGUtzSuhULo5NGEHAGmdgBIsGxXt0SUmIMxLmcTX7/e4/ZRXNr
+ qyyO+Yt35VNI0JYwsDQJB0vrIJN/T3pLTy6DlbXBs4p1oSAO0of5HKj4ds5ZvRw9Rqmz
+ aX2G/zIyFb1FQAPPvWv4JsYrgr2qtVLn2XuGFduwBcJvcRC/Yp/2Pz1ssb++QZAM9cRd
+ zwBWsYWbyiIkk5pPMPjGxJPpVphCHmRawZeUToVWC0BMG3epM5yYyPyEp0uFGAsmoWed
+ nxCg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=pJcnizSX09s8fd54NDpfsOEpZWqIjJb4KGon6CoHIdE=;
- b=TWMDgelMBdSJ4P2hlxK0Siws4idJIqLSS2wjFjvJz/jFdJwUOIX2VFSlNVRNbmCJ51
- 8Wt1b3gxOJ6uXhg1H4xf2M6oyGkrp6aBM23B9E5Kd+9UOpaJoZlFBB1yzHcIMDMXLu9k
- lxSlwRjpMDzuNqs9yZffy9NttN/WWGhjXpMxPiAWQKEBIxcAhitGzBLFwTLoQuLNXQQ1
- R3NBed7dX65LYZhwNsTKO0ZG49fDRsqgDxS7dFGZjVMqRkSd1r69gJqISUtLdBhf9toR
- CRh8BqGksj5asWYD0yRSTCUvAIqK/XBAF16KugpQpkz+uW2yKvcVSbus3suP8TL5OXdt
- 4kbQ==
-X-Gm-Message-State: APjAAAWOziJAZ5exZ5b6NGIYoylCWNuR1CEGDmuPdOxjEkZglhnXc7sO
- JttUCBldDLq/fTJ7cuGoC76nwA==
-X-Google-Smtp-Source: APXvYqz5wZra/C9A30s60jxmqc5nStLHxnlqkLWQ+B1O25gRbpQOXIuGcHg5wrlsF8QZ5T4qlXp61Q==
-X-Received: by 2002:a5d:6347:: with SMTP id b7mr754362wrw.1.1556641783915;
- Tue, 30 Apr 2019 09:29:43 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=XAG/7MBNQKcnyRwTABVR+nnLiDuF8S7/Ttp9kLBqJQA=;
+ b=T/X9O1d9J+RGjjFfpU9t1Fr/srP1gLU8V4csaNqX24t52glWX6/4GZ7wt9M28Xw3QF
+ 17RfsEsYO28lMtvmUvlVSZn2oNyPsspSVAGvTcJm8jcPOMNMqf6wU+nRdK9y7Sw/FbEf
+ pyVfKsjib/O3inL1R02q4VjeAriXcXzz5cW+XlRWivb+PsOgykgdgkMwrlL/92ypQipe
+ V9N8KuKVwJocNBP3HXMGsD85hzSfvzqHZf7Txh5YZknvoQQ4EMkuezMra6f9x3HWQWc7
+ saCSU/PwzS0atEbC9+dKDw7KpTSYwElDAg9gZK5nKMaRf0NG1YESsdphpETrqkIDQlpT
+ b7uA==
+X-Gm-Message-State: APjAAAVnKQ/qcFCJA+eNYFp3E0HyZB4gEzK4HieW8pRVrDba5q5fS8BC
+ +W3gfDXOioNO3+5A/EYCg8biTg==
+X-Google-Smtp-Source: APXvYqwwUKVo8dN+hu0W322cYGbaZaoO+o1yIqu5vND3Xr90ukmMX12QXn38I8REPelGYGocceQSzQ==
+X-Received: by 2002:adf:ebd0:: with SMTP id v16mr18190336wrn.175.1556641785176; 
+ Tue, 30 Apr 2019 09:29:45 -0700 (PDT)
 Received: from sudo.home ([2a01:cb1d:112:6f00:1ca3:6afc:30c:1068])
- by smtp.gmail.com with ESMTPSA id t67sm5848890wmg.0.2019.04.30.09.29.42
+ by smtp.gmail.com with ESMTPSA id t67sm5848890wmg.0.2019.04.30.09.29.43
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 30 Apr 2019 09:29:42 -0700 (PDT)
+ Tue, 30 Apr 2019 09:29:44 -0700 (PDT)
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 To: linux-crypto@vger.kernel.org
-Subject: [PATCH 0/5] synquacer - wire up Atmel SHA204A as RNG in DT and ACPI
- mode
-Date: Tue, 30 Apr 2019 18:29:04 +0200
-Message-Id: <20190430162910.16771-1-ard.biesheuvel@linaro.org>
+Subject: [PATCH 1/5] i2c: acpi: permit bus speed to be discovered after
+ enumeration
+Date: Tue, 30 Apr 2019 18:29:05 +0200
+Message-Id: <20190430162910.16771-2-ard.biesheuvel@linaro.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190430162910.16771-1-ard.biesheuvel@linaro.org>
+References: <20190430162910.16771-1-ard.biesheuvel@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_092946_062605_5ED5E4DD 
-X-CRM114-Status: GOOD (  10.66  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190430_092946_955138_B62DD79A 
+X-CRM114-Status: GOOD (  12.79  )
+X-Spam-Score: 2.3 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
+ 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -94,50 +97,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Herbert Xu <herbert@gondor.apana.org.au>,
- Tudor Ambarus <tudor.ambarus@microchip.com>, linus.walleij@linaro.org,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, joakim.bech@linaro.org,
- linux-arm-kernel@lists.infradead.org
+Cc: linus.walleij@linaro.org, Mika Westerberg <mika.westerberg@linux.intel.com>,
+ joakim.bech@linaro.org, linux-arm-kernel@lists.infradead.org,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Socionext SynQuacer based 96boards DeveloperBox platform does not
-incorporate a random number generator, but it does have a 96boards low
-speed connector which supports extension boards such as the Secure96,
-which has a TPM and some crypto accelerators, one of which incorporates
-a random number generator.
+Currently, the I2C ACPI enumeration code only permits the max bus rate
+to be discovered before enumerating the slaves on the bus. In some
+cases, drivers for slave devices may require this information, e.g.,
+some ATmel crypto drivers need to generate a so-called wake token
+of a fixed duration, regardless of the bus rate.
 
-This series implements support for the RNG part, which is one of several
-functions of the Atmel SHA204A I2C crypto accelerator, and wires it up so
-both DT and ACPI based boot methods can use the device.
+So tweak the code so i2c_acpi_lookup_speed() is able to obtain this
+information after enumeration as well.
 
-Cc: Herbert Xu <herbert@gondor.apana.org.au>
-Cc: Tudor Ambarus <tudor.ambarus@microchip.com>
+Cc: Mika Westerberg <mika.westerberg@linux.intel.com>
+Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+---
+ drivers/i2c/i2c-core-acpi.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
-Ard Biesheuvel (5):
-  i2c: acpi: permit bus speed to be discovered after enumeration
-  crypto: atmel-ecc: add support for ACPI probing on non-AT91 platforms
-  crypto: atmel-ecc: factor out code that can be shared
-  crypto: atmel-i2c: add support for SHA204A random number generator
-  dt-bindings: add Atmel SHA204A I2C crypto processor
-
- Documentation/devicetree/bindings/crypto/atmel-crypto.txt |  13 +
- drivers/crypto/Kconfig                                    |  19 +-
- drivers/crypto/Makefile                                   |   2 +
- drivers/crypto/atmel-ecc.c                                | 403 ++------------------
- drivers/crypto/atmel-ecc.h                                | 116 ------
- drivers/crypto/atmel-i2c.c                                | 364 ++++++++++++++++++
- drivers/crypto/atmel-i2c.h                                | 196 ++++++++++
- drivers/crypto/atmel-sha204a.c                            | 171 +++++++++
- drivers/i2c/i2c-core-acpi.c                               |   6 +-
- 9 files changed, 790 insertions(+), 500 deletions(-)
- delete mode 100644 drivers/crypto/atmel-ecc.h
- create mode 100644 drivers/crypto/atmel-i2c.c
- create mode 100644 drivers/crypto/atmel-i2c.h
- create mode 100644 drivers/crypto/atmel-sha204a.c
-
+diff --git a/drivers/i2c/i2c-core-acpi.c b/drivers/i2c/i2c-core-acpi.c
+index 272800692088..7240cc07abb4 100644
+--- a/drivers/i2c/i2c-core-acpi.c
++++ b/drivers/i2c/i2c-core-acpi.c
+@@ -115,8 +115,7 @@ static int i2c_acpi_do_lookup(struct acpi_device *adev,
+ 	struct list_head resource_list;
+ 	int ret;
+ 
+-	if (acpi_bus_get_status(adev) || !adev->status.present ||
+-	    acpi_device_enumerated(adev))
++	if (acpi_bus_get_status(adev) || !adev->status.present)
+ 		return -EINVAL;
+ 
+ 	if (acpi_match_device_ids(adev, i2c_acpi_ignored_device_ids) == 0)
+@@ -151,6 +150,9 @@ static int i2c_acpi_get_info(struct acpi_device *adev,
+ 	lookup.info = info;
+ 	lookup.index = -1;
+ 
++	if (acpi_device_enumerated(adev))
++		return -EINVAL;
++
+ 	ret = i2c_acpi_do_lookup(adev, &lookup);
+ 	if (ret)
+ 		return ret;
 -- 
 2.20.1
 
