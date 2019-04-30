@@ -2,100 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46D44F299
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 11:15:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F1CEF29F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 11:16:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=txXJ8/+FW4ni16+kBBoYB0eEoK4Pf7MisdQLwCx4CrI=; b=CynNunhLivLiQy
-	CQbwazkrBtzTMonPPPGbZyqVk6uoy8pNEnLytpHTNvfTbjK9Gho0wj776yuor14Hic2p3BDDy4r0G
-	bcjjM05+l+TWQ/oTiVLXpBUzCxhLQKEflVfvEiblQU031Y+vB/8O8wEtWzQVVBmdHDuw06X+xAFVx
-	ZSy4MX9MecKQMxKqQbQerSxZJ76Hc/1wLSJpDrflTQ3hINrDOPcrL8hHGK9NSDUU0AVlnNa3MKln5
-	CoE+XSJFG4HqEo6I8UXJwdN4eakbAqRb67ieEG5JOOjBKzUPFp2op1bko1vKfS3S+T/6SNIh0RA+P
-	g80NWlu0K5BwU5YqCA2Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1Pc5TPKdN1ugEYjafCD37F/Q+WoLjkin1onfzJbT+ak=; b=JvMD2ab2s373IL
+	Ryme7sQAeNV/NINX+WLRXM2zBn3o9+ADSNxn6usnI/wk83SpmeX5/ikO4D6fVivOwbJB1LwNl9WeQ
+	VqSJRfKf6YosymnEQOllqezgzPvmPskWEW6QEPcrx1xBUjzZfQmQirDF7mrvHxe8JfaaRhe4uAZ8W
+	LN5WltNR9OPTEXtLFGsKAqy9HQ2NvwLrtwSV0fWvoBruvFfWPeSScsJLBF/rvMxKyS/4NPFC1nE3X
+	SlV2chMFbeFZA7SvWRbQCJAPpebs1BzWk80yEmEyQ5nC2l9JRyWBi+j832hItFibV/H80SZEGUCEU
+	I/pewuz657KJZXMBXQkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLOr6-0001o3-Du; Tue, 30 Apr 2019 09:15:16 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLOqt-0001Iz-EA
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 09:15:07 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 20076374;
- Tue, 30 Apr 2019 02:15:02 -0700 (PDT)
-Received: from [10.1.196.92] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 5E4213F5C1; Tue, 30 Apr 2019 02:15:00 -0700 (PDT)
-Subject: Re: [PATCH] arm64: KVM: fix perf cycle counter support for VHE
-To: Andrew Murray <andrew.murray@arm.com>
-References: <20190429191305.21000-1-andrew.murray@arm.com>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
-Organization: ARM Ltd
-Message-ID: <8022b69e-f4aa-cc06-0d5a-5ef980cf0d4a@arm.com>
-Date: Tue, 30 Apr 2019 10:14:58 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hLOsC-0002ie-3K; Tue, 30 Apr 2019 09:16:24 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hLOs3-0002iE-Po; Tue, 30 Apr 2019 09:16:17 +0000
+X-UUID: fcd7b7e31dbc4ff1afa618b85b7f5f8a-20190430
+X-UUID: fcd7b7e31dbc4ff1afa618b85b7f5f8a-20190430
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <biao.huang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 582019299; Tue, 30 Apr 2019 01:15:50 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 30 Apr 2019 02:15:48 -0700
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N1.mediatek.inc
+ (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Tue, 30 Apr 2019 17:15:45 +0800
+Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 30 Apr 2019 17:15:45 +0800
+Message-ID: <1556615745.24897.40.camel@mhfsdcap03>
+Subject: Re: [PATCH 2/6] net: stmmac: fix csr_clk can't be zero issue
+From: biao huang <biao.huang@mediatek.com>
+To: Alexandre Torgue <alexandre.torgue@st.com>
+Date: Tue, 30 Apr 2019 17:15:45 +0800
+In-Reply-To: <738b37cd-4719-9257-18fc-aab1dc7424f4@st.com>
+References: <1556433009-25759-1-git-send-email-biao.huang@mediatek.com>
+ <1556433009-25759-3-git-send-email-biao.huang@mediatek.com>
+ <24f4b268-aa7f-e1f7-59fc-2bc163eb8277@st.com>
+ <1556525353.24897.30.camel@mhfsdcap03>
+ <738b37cd-4719-9257-18fc-aab1dc7424f4@st.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-In-Reply-To: <20190429191305.21000-1-andrew.murray@arm.com>
-Content-Language: en-US
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_021503_686781_A3388EBD 
-X-CRM114-Status: GOOD (  12.59  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190430_021615_844109_B02CF164 
+X-CRM114-Status: GOOD (  19.59  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -107,42 +73,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Julien Thierry <julien.thierry@arm.com>, Will Deacon <will.deacon@arm.com>,
- Christoffer Dall <Christoffer.Dall@arm.com>, James Morse <James.Morse@arm.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: jianguo.zhang@mediatek.com, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ yt.shen@mediatek.com, Jose Abreu <joabreu@synopsys.com>,
+ linux-mediatek@lists.infradead.org,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Giuseppe
+ Cavallaro <peppe.cavallaro@st.com>, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[+ Christoffer, James, Julien]
-
-Hi Andrew,
-
-On 29/04/2019 20:13, Andrew Murray wrote:
-> The kvm_vcpu_pmu_{read,write}_evtype_direct functions do not handle
-> the cycle counter use-case, this leads to inaccurate counts and a
-> WARN message when using perf with the cycle counter (-e cycle).
+On Mon, 2019-04-29 at 10:26 +0200, Alexandre Torgue wrote:
 > 
-> Let's fix this by adding a use case for pmccfiltr_el0.
+> On 4/29/19 10:09 AM, biao huang wrote:
+> > Hi,
+> > 
+> > On Mon, 2019-04-29 at 09:18 +0200, Alexandre Torgue wrote:
+> >> Hi
+> >>
+> >> On 4/28/19 8:30 AM, Biao Huang wrote:
+> >>> The specific clk_csr value can be zero, and
+> >>> stmmac_clk is necessary for MDC clock which can be set dynamically.
+> >>> So, change the condition from plat->clk_csr to plat->stmmac_clk to
+> >>> fix clk_csr can't be zero issue.
+> >>>
+> >>> Signed-off-by: Biao Huang <biao.huang@mediatek.com>
+> >>> ---
+> >>>    drivers/net/ethernet/stmicro/stmmac/stmmac_main.c |    2 +-
+> >>>    1 file changed, 1 insertion(+), 1 deletion(-)
+> >>>
+> >>> diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+> >>> index 818ad88..9e89b94 100644
+> >>> --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+> >>> +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+> >>> @@ -4376,7 +4376,7 @@ int stmmac_dvr_probe(struct device *device,
+> >>>    	 * set the MDC clock dynamically according to the csr actual
+> >>>    	 * clock input.
+> >>>    	 */
+> >>> -	if (!priv->plat->clk_csr)
+> >>> +	if (priv->plat->stmmac_clk)
+> >>>    		stmmac_clk_csr_set(priv);
+> >>>    	else
+> >>>    		priv->clk_csr = priv->plat->clk_csr;
+> >>>
+> >>
+> >> So, as soon as stmmac_clk will be declared, it is no longer possible to
+> >> fix a CSR through the device tree ?
+> > 
+> > let's focus on the condition:
+> > 1. clk_csr may be zero, it should not be the condition. or the clk_csr =
+> > 0 will jump to the wrong block.
+> > 2. Since stmmac_clk_csr_set will get_clk_rate from stmmac_clk,
+> > the plat->stmmac_clk is a more proper condition.
+> > 
 > 
-> Reported-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+> Ok, but here you remove one possibility: stmmac_clk and clk_csr defined. 
+> no ?
+> 
+> Other way could be the following code + initialize priv->plat->clk_csr 
+> with a non null value before read it in device tree (in stmmac_platform).
+> 
+> if (priv->plat->clk_csr >= 0)
+> 	priv->clk_csr = priv->plat->clk_csr;
+> else
+> 	stmmac_clk_csr_set(priv);
+> 
+> 
+> 
+> > In some case, it's impossible to get the clk rate of stmmac_clk,
+> > so it's better to remain the clk_csr flow.
+> > 
+Agree.
 
-Queued, with
-Fixes: 39e3406a090a ("arm64: KVM: Avoid isb's by using direct pmxevtyper
-sysreg")
+Maybe we should initialize plat->clk_csr to -1
+in stmmac_probe_config_dt:
 
-In the future, please cc all the KVM/arm maintainers/reviewers so that
-we do not risk overseeing an important patch.
+plat->clk_csr = -1;
+/* Get clk_csr from device tree */                                      
+of_property_read_u32(np, "clk_csr", &plat->clk_csr); 
 
-Thanks,
+Then the condition can write as you proposed:
+if (priv->plat->clk_csr >= 0)
+ 	priv->clk_csr = priv->plat->clk_csr;
+else
+ 	stmmac_clk_csr_set(priv);
 
-	M.
--- 
-Jazz is not dead. It just smells funny...
+> > 
+> > 
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
