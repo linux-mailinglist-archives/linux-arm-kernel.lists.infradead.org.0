@@ -2,99 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58098F1E1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 10:14:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6FB9FF20D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 10:31:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WmCYqB+fQW0q/vmeUmpfSEbRcVaH3cRIiybwFla/TDg=; b=k4mep4qGbDkqau
-	T9ysH+NTKZRgBWoEP6LbxVlk473NenrZaJG1YyllRq6A6mVb/VDEprvMggUDke0zHnEf1sURRk+N+
-	O+5bV/GdbwCGIZ0R7PEEu8vLevVVx+t+N5GmyVDCATIap24cxlE8EjoI3+VRsGox4wJsK2KAYUHPR
-	RzCL8WHQRF5kDNl04sM79pkI0rjkY57RB3wbTzHzmujwXA7DG/8qCZntGAZN0imm8AOKFAIV3UWm9
-	7qtgab34QOSGdkzY57g/M/505sIB+FtBStBushojIz50npQmJCtw26pRYqV4p3eQPXv1t1sKKb0G3
-	xk4X2J8cePqHLAw5yfgQ==;
+	List-Owner; bh=heWFnptLfDMHSnmg9OW+rD1A87T6X09Ctk9+N2YgL1w=; b=Qc5uVOTIBMrs1Y
+	4YnHwUbsCJDH7mBji4AuGFiNveXt+CKRWcojtvNYgdq95CyQM7OSvZI8LLK2sHbYuIDdmuPNd93jr
+	uFjs9x5SiOkSWBE8EH53OQPOg8vIBPWyRO9ugCVHO1AwLRq5H8jECPnqZw7ICP6opZjxWg5k92H/H
+	3WFo8XNLRfNW1hToTnjPG93drPNbyNjiYQSLqTfvdsxS1kVFfzlYOLXNK/3kPV5nxFH2/8mMsTUyY
+	M/F7m8ye6oBeps3IhWfl7h7frN3cjDn5HFX7DZbfBgmHTnrBsqOMdHokmfZZD3/Hrr7CVoxHbNPyV
+	MJI2OhmeIGKDTpzI3Ulw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLNuK-0004qz-PU; Tue, 30 Apr 2019 08:14:32 +0000
-Received: from wout5-smtp.messagingengine.com ([64.147.123.21])
+	id 1hLOAo-0002T2-Tr; Tue, 30 Apr 2019 08:31:34 +0000
+Received: from relay9-d.mail.gandi.net ([217.70.183.199])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLNuD-0004qG-Rb
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 08:14:27 +0000
-Received: from compute6.internal (compute6.nyi.internal [10.202.2.46])
- by mailout.west.internal (Postfix) with ESMTP id C052C71E;
- Tue, 30 Apr 2019 04:14:14 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute6.internal (MEProxy); Tue, 30 Apr 2019 04:14:15 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kroah.com; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm3; bh=QaMnlBFGPZs+DEMS0nyUumPQ3/f
- Otf0Ip12DCFXxfKM=; b=ettHd6osx2iW0UtF6UIP15gDoVrZSwKKvXyyWManic5
- c4fbeX/H5u96nd1CPeTvHaK7wqIFAzEVX9/n0JbmduAvEC8yp5v5wd2c9bS4eaBi
- yG8gXiTI7ZqZxOkF52dkRP/EjBD6MmUZ25FBaBUcLXxLAwOxCZ8UjFuhKQvNsmp6
- K+hmDKtxkzZmLHDbL9Ez6KzB/mp8nXdqOsHR4AF9yHS5Od+aXKLsQCx6UxI45jck
- DVxpNpjSR/rj795NgUCeXpJsYRMlYjF2/Q3Xrr1kzw83RvTA4eaVOomVHy12xl/c
- 43h2/3O0PjxqB4dluDKnin8mPT/dWgdzVYzMjxcuDQw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=QaMnlB
- FGPZs+DEMS0nyUumPQ3/fOtf0Ip12DCFXxfKM=; b=hAw+WC/2lxijMbOmK0FzBz
- 9zU4JGzeYtYiUbrEpBsOuUXx77j2x8vPv6GpC0EnBizC1LvwGRI78/0iWkW0CaQW
- 0Z0hWvtAE3LXxL0l+SyoI/bRR6Uoocym42wmRCMe0hxak/I23AModNPr1aBQfK+R
- RVxeUhm4PBnkuMLe5QK3+OmJiNM7cHiSIuvW8kqgX/yhF1f50AKUy69p1dBdJKJQ
- 6ShMj9zems5cwR52oJxvvJzDKxg0M9grpksiyR6g3HRablgHIv+3UR/FlW2fs31Z
- lykGPomgVueI0EamLgp8r6GnJ52LJ+Q+ZqDE6ArGfkUk0c0cD/p9lqD6sSimOZFw
- ==
-X-ME-Sender: <xms:0wPIXDRZ49IfAdk99l-irItgHMakpbd3T1b-2qg0ujtK8U1PXLXG9w>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduuddrieeggddtvdcutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujggfsehttdertddtredvnecuhfhrohhmpefirhgvghcu
- mffjuceoghhrvghgsehkrhhorghhrdgtohhmqeenucfkphepkeefrdekiedrkeelrddutd
- ejnecurfgrrhgrmhepmhgrihhlfhhrohhmpehgrhgvgheskhhrohgrhhdrtghomhenucev
- lhhushhtvghrufhiiigvpedu
-X-ME-Proxy: <xmx:0wPIXHvR4nC5ai6CDHmXQJrfkFr3kX8ANvoImXYwxiIRaxPWGjxMRQ>
- <xmx:0wPIXBAI9PxnJaCj0eEZmp6jDyQ2L_G5Ky4qxOBMw_03bHwBkVlYrQ>
- <xmx:0wPIXB1z397X-cmBS4dtg4bIP_8g_IiOYEc5bn3YJMZUAZRgkSzgJA>
- <xmx:1gPIXNF5dDQuAaGY28NzFR9jjaGCQOlybbvnl0RgvXbvl_JqTZ18Fw>
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- by mail.messagingengine.com (Postfix) with ESMTPA id C5A6EE454A;
- Tue, 30 Apr 2019 04:14:10 -0400 (EDT)
-Date: Tue, 30 Apr 2019 10:14:08 +0200
-From: Greg KH <greg@kroah.com>
-To: Stephen Rothwell <sfr@canb.auug.org.au>
-Subject: Re: linux-next: manual merge of the char-misc tree with the arm-soc
- tree
-Message-ID: <20190430081408.GB8245@kroah.com>
-References: <20190430174051.038c77c8@canb.auug.org.au>
+ id 1hLOAg-0002SP-2o
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 08:31:28 +0000
+X-Originating-IP: 88.190.179.123
+Received: from localhost (unknown [88.190.179.123])
+ (Authenticated sender: repk@triplefau.lt)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id EF872FF80F;
+ Tue, 30 Apr 2019 08:31:12 +0000 (UTC)
+Date: Tue, 30 Apr 2019 10:40:01 +0200
+From: Remi Pommarel <repk@triplefau.lt>
+To: Bjorn Helgaas <helgaas@kernel.org>
+Subject: Re: [PATCH v2] PCI: aardvark: Use LTSSM state to build link training
+ flag
+Message-ID: <20190430084000.GT2754@voidbox.localdomain>
+References: <20190316161243.29517-1-repk@triplefau.lt>
+ <20190425210439.GG11428@google.com>
+ <20190425222756.GR2754@voidbox.localdomain>
+ <20190429194532.GA119268@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190430174051.038c77c8@canb.auug.org.au>
-User-Agent: Mutt/1.11.4 (2019-03-13)
+In-Reply-To: <20190429194532.GA119268@google.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_011425_918520_4645544C 
-X-CRM114-Status: UNSURE (   9.39  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190430_013126_276761_10CD9A89 
+X-CRM114-Status: GOOD (  23.85  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.21 listed in list.dnswl.org]
+ low trust [217.70.183.199 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -106,42 +64,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Patrick Venture <venture@google.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux Next Mailing List <linux-next@vger.kernel.org>,
- Olof Johansson <olof@lixom.net>, ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Ellie Reeves <ellierevves@gmail.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 30, 2019 at 05:40:51PM +1000, Stephen Rothwell wrote:
-> Hi all,
+On Mon, Apr 29, 2019 at 02:45:32PM -0500, Bjorn Helgaas wrote:
+> On Fri, Apr 26, 2019 at 12:27:57AM +0200, Remi Pommarel wrote:
+> > On Thu, Apr 25, 2019 at 04:04:39PM -0500, Bjorn Helgaas wrote:
+> > > On Sat, Mar 16, 2019 at 05:12:43PM +0100, Remi Pommarel wrote:
 > 
-> Today's linux-next merge of the char-misc tree got conflicts in:
+> > > It sounds like reading and/or writing some registers during a retrain
+> > > causes some sort of EL1 error?  Is this a separate erratum?  Is there
+> > > a list of the registers and operations (read/write) that are affected?
+> > > The backtrace below suggests that it's actually a read of LNKCAP or
+> > > LNKCTL (not LNKSTA) that caused the error.
+> > 
+> > IIUC, the backtrace below produces an EL1 error when doing a PIO
+> > transfer while the link is still retraining. See my comment below for
+> > more about that. But accessing any root complex's register seems fine.
+> > > 
+> > > It sounds like there are really two problems:
+> > > 
+> > >   1) Reading PCI_EXP_LNKSTA (or the Aardvark equivalent) doesn't give
+> > >      valid data for PCI_EXP_LNKSTA_LT.
+> > 
+> > The 1) is correct.
+> > 
+> > >   2) Sometimes config reads cause EL1 errors.
+> > 
+> > Actually EL1 error happens when we try to access device's register with
+> > a PIO transfer, which is when we try to use the link while it is being
+> > retrained.
+> > 
+> > IMHO, 1) and 2) are linked. ASPM core tries to use the link too early
+> > because it has read invalid data for PCI_EXP_LNKSTA_LT.
 > 
->   drivers/misc/Kconfig
->   drivers/misc/Makefile
+> From the software point of view, there is no such thing as "using the
+> link too early".  The pattern of:
 > 
-> between commit:
+>   - Verify that link is up
+>   - Access device on other end of link
 > 
->   524feb799408 ("soc: add aspeed folder and misc drivers")
+> is always racy because the link can go down at any time due to hotplug
+> or other issues.  In particular, the link can go down after we verify
+> that the link is up, but before we access the device.
 > 
-> from the arm-soc tree and commit:
+> Software must be able to deal with that gracefully.  I don't know
+> whether that means catching and recovering from that EL1 error, or
+> masking it, or what.  This is architecture-specific stuff that's
+> outside the scope of PCIe itself.
 > 
->   01c60dcea9f7 ("drivers/misc: Add Aspeed P2A control driver")
-> 
-> from the char-misc tree.
-> 
-> I fixed it up (see below - though the additions probably want to be
-> moved as in the arm-soc commit)
+> But a link going down should never directly cause a kernel panic.
 
-People are still arguing about this, so let's leave this as-is for now
-:)
+Ah, yes, you are right. There is "worse" than the EL1 error though, boot
+can also hang while accessing those registers when link is not in a
+ready state.
 
-Thanks for the merge resolution,
+So, yes, I do agree that there are two issues here. The
+PCI_EXP_LNKSTA_LT register one and the EL1 error or hang one. On the
+other hand I don't think I can split it in two because this patch only
+fixes the former which happens to not trigger the latter (ASPM core is
+kind enough to wait for the link to be ready after retraining).
 
-greg k-h
+Thus the second issue remains and hot plugging for example would
+likely trigger it. I'll try to see with Thomas if we could reach the
+vendor about that.
+
+By the way, I have replied to Lorenzo with, what I think, is a more
+legible patch. I could send a v3 with it if you prefer this one.
+
+-- 
+Remi
 
 _______________________________________________
 linux-arm-kernel mailing list
