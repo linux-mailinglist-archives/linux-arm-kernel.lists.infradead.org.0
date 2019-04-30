@@ -2,59 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B45E100DB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 22:31:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BC7E100DE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 22:31:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:To:Subject:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+u2AvQjKRsndEQL7C8RpCt+c0VFwaRXlTwo+BuYCiSk=; b=u8lQ5raSL9UFdw
-	Q2jpyoQnvjha3oRKbBdhq5685NsnL/GN3iSkwNV6NiDKwRz/kGiEoCWk/g0ecSXZNs+K0uQ/L74Xe
-	s9jIkhRgtud35Iod0Jsq2yGaUKtKyzbj9dCWbmENhLsQZGfFv3ibACT4E3lqkHr+bu4K/Mh5hjF6e
-	BQLDixdQDRnDSoCd1hJgOcYpwCUb7m8EQrgBqZeIBIMZmqJq1U9uIZFT004zJU3jVyHc4weZx7JMc
-	s7gbq/Mx7CHpC64ujkZJxIxlV+ZBwJNW2z2vuaJ5V4OWE6OyZuiRc4D/Wq4glBgCIAl05BkqB86vS
-	8zQfZmJVMBslfvruumUQ==;
+	List-Owner; bh=2SHUUyK8TMBs4Pby8wd9VPIC0euVJJg13A0iue7o6og=; b=Q2fohUq6qi0Mer
+	XN6C8eFPQj0saP9UYkGeHc74QTQbJnG7YHfKQCCipYmWsFKm4ZkYRiJFnXLnVVjIruZLE9HsYGfKI
+	xz2hgdwMk2P20I14qKUP3tOaVDnrIHP1jpgYggUH2vYzbqKKCZoMWhhwF0F6sLJIK8Z2eW9AGJwWI
+	A/wXZ6UrTjZuL7of6cjNiKCPq2V4XxlOYzJHnOwQ9uAmkMfcgX29sVecd0pDd9SfSYWpl2SYLo6z7
+	lhqfgZWQP2nsnXjRkZDvl8LPMx21b7WnUmIefaEI7O01JFbRQK9e7AbJEjy426GywoZjbq2lrx4YV
+	wQGRe3sGhk4IkFFGfmKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLZPd-0003xk-OG; Tue, 30 Apr 2019 20:31:37 +0000
-Received: from asavdk3.altibox.net ([109.247.116.14])
+	id 1hLZPq-0004Ff-Th; Tue, 30 Apr 2019 20:31:50 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLZPU-0003m3-FD
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 20:31:31 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
+ id 1hLZPZ-0003xo-Eg; Tue, 30 Apr 2019 20:31:35 +0000
+Received: from localhost (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by asavdk3.altibox.net (Postfix) with ESMTPS id 1589620047;
- Tue, 30 Apr 2019 22:31:10 +0200 (CEST)
-Date: Tue, 30 Apr 2019 22:31:08 +0200
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-Subject: Re: [PATCH v9 2/2] phy: Add driver for mixel mipi dphy found on
- NXP's i.MX8 SoCs
-Message-ID: <20190430203108.GA20545@ravnborg.org>
-References: <cover.1556633413.git.agx@sigxcpu.org>
- <b999b07673e59c676d2e43a786b635beb056e9bf.1556633413.git.agx@sigxcpu.org>
+ by mail.kernel.org (Postfix) with ESMTPSA id 068C92087B;
+ Tue, 30 Apr 2019 20:31:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1556656293;
+ bh=Rl6KR3mE/J4TovWktTnPEk6bL3lFfupWJ2cXE8RKcsA=;
+ h=In-Reply-To:References:From:Subject:To:Cc:Date:From;
+ b=wHvQCF48Origsh+9ks+KYh/bRuAs6K6xp778iJA1nRTZzsT36/reutO1Up4TzrAds
+ WiRpljJ4fDtsI1kUoNe0YkY9axaShkcYuXsQCaYQqivN7wRDjcek1H8cymh1H4V+Mr
+ /CdVuiy/7arCFuCtZOhpv5dw5dpt+lmN6NiHND5k=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <b999b07673e59c676d2e43a786b635beb056e9bf.1556633413.git.agx@sigxcpu.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=dqr19Wo4 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=IkcTkHD0fZMA:10
- a=PLGMnwU6pitjcMjhYOwA:9 a=QEXdDO2ut3YA:10
+In-Reply-To: <20190430112012.4514-2-roger.lu@mediatek.com>
+References: <20190430112012.4514-1-roger.lu@mediatek.com>
+ <20190430112012.4514-2-roger.lu@mediatek.com>
+From: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [RFC v1 1/3] dt-bindings: soc: add mtk svs dt-bindings
+To: "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ Roger Lu <roger.lu@mediatek.com>, Viresh Kumar <vireshk@kernel.org>
+Message-ID: <155665629219.168659.8221738507474891604@swboyd.mtv.corp.google.com>
+User-Agent: alot/0.8
+Date: Tue, 30 Apr 2019 13:31:32 -0700
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_133128_880233_B36B4CCB 
-X-CRM114-Status: GOOD (  22.21  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190430_133133_596119_9D8D7295 
+X-CRM114-Status: GOOD (  15.78  )
+X-Spam-Score: -5.3 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [109.247.116.14 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -66,134 +76,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- Maxime Ripard <maxime.ripard@bootlin.com>, dri-devel@lists.freedesktop.org,
- Fabio Estevam <festevam@gmail.com>, Abel Vesa <abel.vesa@nxp.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, NXP Linux Team <linux-imx@nxp.com>,
- Robert Chiras <robert.chiras@nxp.com>, Thierry Reding <treding@nvidia.com>,
- devicetree@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Johan Hovold <johan@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, Pengutronix Kernel Team <kernel@pengutronix.de>,
- Lucas Stach <l.stach@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>,
- Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>, Li Jun <jun.li@nxp.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
+ devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
+ Kevin Hilman <khilman@kernel.org>, Roger Lu <roger.lu@mediatek.com>,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgR3VpZG8uCgpUb29rIGEgbG9vayBhdCB0aGlzLCBidXQgZmVlZGJhY2sgaXMgdHJpdmlhbCBh
-cwpJIGhhdmUgbm8gZXhwZXJpZW5jZSB3aXRoIFBIWXMgc28gdXNlIG9ubHkKdGhlIGZlZWRiYWNr
-IHlvdSBjb25zaWRlciByZWxldmFudC4KCglTYW0KCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5
-L2ZyZWVzY2FsZS9waHktZnNsLWlteDgtbWlwaS1kcGh5LmMgYi9kcml2ZXJzL3BoeS9mcmVlc2Nh
-bGUvcGh5LWZzbC1pbXg4LW1pcGktZHBoeS5jCj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPiBpbmRl
-eCAwMDAwMDAwMDAwMDAuLmQ2YjVhZjBiMzM4MAo+IC0tLSAvZGV2L251bGwKPiArKysgYi9kcml2
-ZXJzL3BoeS9mcmVlc2NhbGUvcGh5LWZzbC1pbXg4LW1pcGktZHBoeS5jCj4gQEAgLTAsMCArMSw1
-MDYgQEAKPiArLy8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjArCj4gKy8qCj4gKyAq
-IENvcHlyaWdodCAyMDE3LDIwMTggTlhQCj4gKyAqIENvcHlyaWdodCAyMDE5IFB1cmlzbSBTUEMK
-PiArICovCj4gKwo+ICsKPiArLyogRFBIWSByZWdpc3RlcnMgKi8KPiArI2RlZmluZSBEUEhZX1BE
-X0RQSFkJCQkweDAwCj4gKyNkZWZpbmUgRFBIWV9NX1BSR19IU19QUkVQQVJFCQkweDA0Cj4gKyNk
-ZWZpbmUgRFBIWV9NQ19QUkdfSFNfUFJFUEFSRQkJMHgwOAo+ICsjZGVmaW5lIERQSFlfTV9QUkdf
-SFNfWkVSTwkJMHgwYwo+ICsjZGVmaW5lIERQSFlfTUNfUFJHX0hTX1pFUk8JCTB4MTAKPiArI2Rl
-ZmluZSBEUEhZX01fUFJHX0hTX1RSQUlMCQkweDE0Cj4gKyNkZWZpbmUgRFBIWV9NQ19QUkdfSFNf
-VFJBSUwJCTB4MTgKPiArI2RlZmluZSBEUEhZX1BEX1BMTAkJCTB4MWMKPiArI2RlZmluZSBEUEhZ
-X1RTVAkJCTB4MjAKPiArI2RlZmluZSBEUEhZX0NOCQkJCTB4MjQKPiArI2RlZmluZSBEUEhZX0NN
-CQkJCTB4MjgKPiArI2RlZmluZSBEUEhZX0NPCQkJCTB4MmMKPiArI2RlZmluZSBEUEhZX0xPQ0sJ
-CQkweDMwCj4gKyNkZWZpbmUgRFBIWV9MT0NLX0JZUAkJCTB4MzQKPiArI2RlZmluZSBEUEhZX1JF
-R19CWVBBU1NfUExMCQkweDRDCj4gKwo+ICsjZGVmaW5lIE1CUFMoeCkgKCh4KSAqIDEwMDAwMDAp
-Cj4gKwo+ICsjZGVmaW5lIERBVEFfUkFURV9NQVhfU1BFRUQgTUJQUygxNTAwKQo+ICsjZGVmaW5l
-IERBVEFfUkFURV9NSU5fU1BFRUQgTUJQUyg4MCkKPiArCj4gKyNkZWZpbmUgUExMX0xPQ0tfU0xF
-RVAgMTAKPiArI2RlZmluZSBQTExfTE9DS19USU1FT1VUIDEwMDAKPiArCj4gKyNkZWZpbmUgQ05f
-QlVGCTB4Y2I3YTg5YzAKPiArI2RlZmluZSBDT19CVUYJMHg2Mwo+ICsjZGVmaW5lIENNKHgpCSgJ
-CQkJXAo+ICsJCSgoeCkgPAkzMik/MHhlMHwoKHgpLTE2KSA6CVwKPiArCQkoKHgpIDwJNjQpPzB4
-YzB8KCh4KS0zMikgOglcCj4gKwkJKCh4KSA8IDEyOCk/MHg4MHwoKHgpLTY0KSA6CVwKPiArCQko
-KHgpIC0gMTI4KSkKPiArI2RlZmluZSBDTih4KQkoKCh4KSA9PSAxKT8weDFmIDogKCgoQ05fQlVG
-KT4+KCh4KS0xKSkmMHgxZikpCj4gKyNkZWZpbmUgQ08oeCkJKChDT19CVUYpPj4oOC0oeCkpJjB4
-MykKPiArCj4gKy8qIFBIWSBwb3dlciBvbiBpcyBhY3RpdmUgbG93ICovCj4gKyNkZWZpbmUgUFdS
-X09OCTAKPiArI2RlZmluZSBQV1JfT0ZGCTEKPiArCj4gK2VudW0gbWl4ZWxfZHBoeV9kZXZ0eXBl
-IHsKPiArCU1JWEVMX0lNWDhNUSwKPiArfTsKPiArCj4gK3N0cnVjdCBtaXhlbF9kcGh5X2RldmRh
-dGEgewo+ICsJdTggcmVnX3R4X3JjYWw7Cj4gKwl1OCByZWdfYXV0b19wZF9lbjsKPiArCXU4IHJl
-Z19yeGxwcnA7Cj4gKwl1OCByZWdfcnhjZHJwOwo+ICsJdTggcmVnX3J4aHNfc2V0dGxlOwo+ICt9
-Owo+ICsKPiArc3RhdGljIGNvbnN0IHN0cnVjdCBtaXhlbF9kcGh5X2RldmRhdGEgbWl4ZWxfZHBo
-eV9kZXZkYXRhW10gPSB7Cj4gKwlbTUlYRUxfSU1YOE1RXSA9IHsKPiArCQkucmVnX3R4X3JjYWwg
-PSAweDM4LAo+ICsJCS5yZWdfYXV0b19wZF9lbiA9IDB4M2MsCj4gKwkJLnJlZ19yeGxwcnAgPSAw
-eDQwLAo+ICsJCS5yZWdfcnhjZHJwID0gMHg0NCwKPiArCQkucmVnX3J4aHNfc2V0dGxlID0gMHg0
-OCwKPiArCX0sCj4gK307Cj4gKwo+ICtzdHJ1Y3QgbWl4ZWxfZHBoeV9jZmcgewo+ICsJLyogRFBI
-WSBQTEwgcGFyYW1ldGVycyAqLwo+ICsJdTMyIGNtOwo+ICsJdTMyIGNuOwo+ICsJdTMyIGNvOwo+
-ICsJLyogRFBIWSByZWdpc3RlciB2YWx1ZXMgKi8KPiArCXU4IG1jX3ByZ19oc19wcmVwYXJlOwo+
-ICsJdTggbV9wcmdfaHNfcHJlcGFyZTsKPiArCXU4IG1jX3ByZ19oc196ZXJvOwo+ICsJdTggbV9w
-cmdfaHNfemVybzsKPiArCXU4IG1jX3ByZ19oc190cmFpbDsKPiArCXU4IG1fcHJnX2hzX3RyYWls
-Owo+ICsJdTggcnhoc19zZXR0bGU7Cj4gK307Cj4gKwo+ICtzdHJ1Y3QgbWl4ZWxfZHBoeV9wcml2
-IHsKPiArCXN0cnVjdCBtaXhlbF9kcGh5X2NmZyBjZmc7Cj4gKwlzdHJ1Y3QgcmVnbWFwICpyZWdz
-OwpJdCBpcyBhIGxpdHRsZSBjb25mdXNpbmcgdGhhdCB0aGUgcmVnbWFwIGlzIG5hbWVkIHJlZ3Mu
-CkFzIHJlZ3MgaW4gbWFueSBvdGhlciBjYXNlcyBpcyB1c2VkIGFzIG5hbWUgZm9yIHRoZSB2YXJp
-YWJsZQp3aXRoIHBvaW50ZXIgdG8gcmVnaXN0ZXJzLgpTZWUgZm9yIGV4YW1wbGUgY2FsbCB0byBk
-ZXZtX3JlZ21hcF9pbml0X21taW8oKQoKPiArCXN0cnVjdCBjbGsgKnBoeV9yZWZfY2xrOwo+ICsJ
-Y29uc3Qgc3RydWN0IG1peGVsX2RwaHlfZGV2ZGF0YSAqZGV2ZGF0YTsKPiArfTsKPiArCj4gK3N0
-YXRpYyBjb25zdCBzdHJ1Y3QgcmVnbWFwX2NvbmZpZyBtaXhlbF9kcGh5X3JlZ21hcF9jb25maWcg
-PSB7Cj4gKwkucmVnX2JpdHMgPSA4LAo+ICsJLnZhbF9iaXRzID0gMzIsCj4gKwkucmVnX3N0cmlk
-ZSA9IDQsCj4gKwkubWF4X3JlZ2lzdGVyID0gRFBIWV9SRUdfQllQQVNTX1BMTCwKPiArCS5uYW1l
-ID0gIm1pcGktZHBoeSIsCj4gK307Cj4gKwo+ICtzdGF0aWMgaW50IHBoeV93cml0ZShzdHJ1Y3Qg
-cGh5ICpwaHksIHUzMiB2YWx1ZSwgdW5zaWduZWQgaW50IHJlZykKPiArewo+ICsJc3RydWN0IG1p
-eGVsX2RwaHlfcHJpdiAqcHJpdiA9IHBoeV9nZXRfZHJ2ZGF0YShwaHkpOwo+ICsJaW50IHJldDsK
-PiArCj4gKwlyZXQgPSByZWdtYXBfd3JpdGUocHJpdi0+cmVncywgcmVnLCB2YWx1ZSk7Cj4gKwlp
-ZiAocmV0IDwgMCkKPiArCQlkZXZfZXJyKCZwaHktPmRldiwgIkZhaWxlZCB0byB3cml0ZSBEUEhZ
-IHJlZyAlZDogJWQiLCByZWcsIHJldCk7Cj4gKwlyZXR1cm4gcmV0Owo+ICt9Cj4gKwo+ICsvKgo+
-ICsgKiBGaW5kIGEgcmF0aW8gY2xvc2UgdG8gdGhlIGRlc2lyZWQgb25lIHVzaW5nIGNvbnRpbnVl
-ZCBmcmFjdGlvbgo+ICsgKiBhcHByb3hpbWF0aW9uIGVuZGluZyBlaXRoZXIgYXQgZXhhY3QgbWF0
-Y2ggb3IgbWF4aW11bSBhbGxvd2VkCj4gKyAqIG5vbWluYXRvciwgZGVub21pbmF0b3IuCj4gKyAq
-Lwo+ICtzdGF0aWMgdm9pZCBnZXRfYmVzdF9yYXRpbyh1MzIgKnBudW0sIHUzMiAqcGRlbm9tLCB1
-bnNpZ25lZCBpbnQgbWF4X24sCj4gKwkJCSAgIHVuc2lnbmVkIGludCBtYXhfZCkKPiArewpNYXli
-ZSB1c2UgdTMyIGZvciBhbGwgcGFyYW1ldGVycz8KVGhhdCB3b3VsZCBhbHNvIG1hdGNoIHVzYWdl
-IGJlbG93LgoKPiArCXUzMiBhID0gKnBudW07Cj4gKwl1MzIgYiA9ICpwZGVub207Cj4gKwl1MzIg
-YzsKPiArCXUzMiBuW10gPSB7MCwgMX07Cj4gKwl1MzIgZFtdID0gezEsIDB9Owo+ICsJdTMyIHdo
-b2xlOwo+ICsJdW5zaWduZWQgaW50IGkgPSAxOwo+ICsKPiArCXdoaWxlIChiKSB7Cj4gKwkJaSBe
-PSAxOwo+ICsJCXdob2xlID0gYSAvIGI7Cj4gKwkJbltpXSArPSAobltpIF4gMV0gKiB3aG9sZSk7
-Cj4gKwkJZFtpXSArPSAoZFtpIF4gMV0gKiB3aG9sZSk7Cj4gKwkJaWYgKChuW2ldID4gbWF4X24p
-IHx8IChkW2ldID4gbWF4X2QpKSB7Cj4gKwkJCWkgXj0gMTsKPiArCQkJYnJlYWs7Cj4gKwkJfQo+
-ICsJCWMgPSBhIC0gKGIgKiB3aG9sZSk7Cj4gKwkJYSA9IGI7Cj4gKwkJYiA9IGM7Cj4gKwl9Cj4g
-KwkqcG51bSA9IG5baV07Cj4gKwkqcGRlbm9tID0gZFtpXTsKPiArfQo+ICsKPiArc3RhdGljIGlu
-dCBtaXhlbF9kcGh5X2NvbmZpZ19mcm9tX29wdHMoc3RydWN0IHBoeSAqcGh5LAo+ICsJICAgICAg
-IHN0cnVjdCBwaHlfY29uZmlndXJlX29wdHNfbWlwaV9kcGh5ICpkcGh5X29wdHMsCj4gKwkgICAg
-ICAgc3RydWN0IG1peGVsX2RwaHlfY2ZnICpjZmcpCj4gK3sKPiArCXN0cnVjdCBtaXhlbF9kcGh5
-X3ByaXYgKnByaXYgPSBkZXZfZ2V0X2RydmRhdGEocGh5LT5kZXYucGFyZW50KTsKPiArCXVuc2ln
-bmVkIGxvbmcgcmVmX2NsayA9IGNsa19nZXRfcmF0ZShwcml2LT5waHlfcmVmX2Nsayk7Cj4gKwl1
-MzIgbHBfdCwgbnVtZXJhdG9yLCBkZW5vbWluYXRvcjsKPiArCXVuc2lnbmVkIGxvbmcgbG9uZyB0
-bXA7Cj4gKwl1MzIgbjsKPiArCWludCBpOwo+ICsKPiArCWlmIChkcGh5X29wdHMtPmhzX2Nsa19y
-YXRlID4gREFUQV9SQVRFX01BWF9TUEVFRCB8fAo+ICsJICAgIGRwaHlfb3B0cy0+aHNfY2xrX3Jh
-dGUgPCBEQVRBX1JBVEVfTUlOX1NQRUVEKQo+ICsJCXJldHVybiAtRUlOVkFMOwo+ICsKPiArCW51
-bWVyYXRvciA9IGRwaHlfb3B0cy0+aHNfY2xrX3JhdGU7Cj4gKwlkZW5vbWluYXRvciA9IHJlZl9j
-bGs7Cj4gKwlnZXRfYmVzdF9yYXRpbygmbnVtZXJhdG9yLCAmZGVub21pbmF0b3IsIDI1NSwgMjU2
-KTsKPiArCWlmICghbnVtZXJhdG9yIHx8ICFkZW5vbWluYXRvcikgewo+ICsJCWRldl9lcnIoJnBo
-eS0+ZGV2LCAiSW52YWxpZCAlZC8lZCBmb3IgJWxkLyVsZFxuIiwKPiArCQkJbnVtZXJhdG9yLCBk
-ZW5vbWluYXRvciwKPiArCQkJZHBoeV9vcHRzLT5oc19jbGtfcmF0ZSwgcmVmX2Nsayk7Cj4gKwkJ
-cmV0dXJuIC1FSU5WQUw7Cj4gKwl9Cj4gKwo+ICsJd2hpbGUgKChudW1lcmF0b3IgPCAxNikgJiYg
-KGRlbm9taW5hdG9yIDw9IDEyOCkpIHsKPiArCQludW1lcmF0b3IgPDw9IDE7Cj4gKwkJZGVub21p
-bmF0b3IgPDw9IDE7Cj4gKwl9Cj4gKwkvKgo+ICsJICogQ00gcmFuZ2VzIGJldHdlZW4gMTYgYW5k
-IDI1NQo+ICsJICogQ04gcmFuZ2VzIGJldHdlZW4gMSBhbmQgMzIKPiArCSAqIENPIGlzIHBvd2Vy
-IG9mIDI6IDEsIDIsIDQsIDgKPiArCSAqLwo+ICsJaSA9IF9fZmZzKGRlbm9taW5hdG9yKTsKPiAr
-CWlmIChpID4gMykKPiArCQlpID0gMzsKPiArCWNmZy0+Y24gPSBkZW5vbWluYXRvciA+PiBpOwo+
-ICsJY2ZnLT5jbyA9IDEgPDwgaTsKPiArCWNmZy0+Y20gPSBudW1lcmF0b3I7Cj4gKwo+ICsJaWYg
-KGNmZy0+Y20gPCAxNiB8fCBjZmctPmNtID4gMjU1IHx8Cj4gKwkgICAgY2ZnLT5jbiA8IDEgfHwg
-Y2ZnLT5jbiA+IDMyIHx8Cj4gKwkgICAgY2ZnLT5jbyA8IDEgfHwgY2ZnLT5jbyA+IDgpIHsKPiAr
-CQlkZXZfZXJyKCZwaHktPmRldiwgIkludmFsaWQgQ00vQ04vQ08gdmFsdWVzOiAldS8ldS8ldVxu
-IiwKPiArCQkJY2ZnLT5jbSwgY2ZnLT5jbiwgY2ZnLT5jbyk7Cj4gKwkJZGV2X2VycigmcGh5LT5k
-ZXYsICJmb3IgaHNfY2xrL3JlZl9jbGs9JWxkLyVsZCDiqbAgJWQvJWRcbiIsCkhtbSwgbXkgbXV0
-dCBkb2VzIG5vdCBsaWtlIHRoaXMgc3ltYm9sPyAg4qmwIAoKPiArCj4gKwlwaHlfd3JpdGUocGh5
-LCBQV1JfT04sIERQSFlfUERfUExMKTsKPiArCXJldCA9IHJlZ21hcF9yZWFkX3BvbGxfdGltZW91
-dChwcml2LT5yZWdzLCBEUEhZX0xPQ0ssIGxvY2tlZCwKPiArCQkJCSAgICAgICBsb2NrZWQsIFBM
-TF9MT0NLX1NMRUVQLAo+ICsJCQkJICAgICAgIFBMTF9MT0NLX1RJTUVPVVQpOwo+ICsJaWYgKHJl
-dCA8IDApIHsKPiArCQlkZXZfZXJyKCZwaHktPmRldiwgIkNvdWxkIG5vdCBnZXQgRFBIWSBsb2Nr
-ICglZCkhXG4iLCByZXQpOwo+ICsJCWdvdG8gY2xvY2tfZGlzYWJsZTsKPiArCX0KPiArCXBoeV93
-cml0ZShwaHksIFBXUl9PTiwgRFBIWV9QRF9EUEhZKTsKCkFyZSB0aGVuIG5vIG90aGVyIHRpbWlu
-ZyBjb25zdHJhaW5zIHRoYW4gdGhlIHBvbGwgb2YgRFBIWV9MT0NLPwpTb21lIHBhbmVsIChJIGtu
-b3cgdGhpcyBpcyBub3QgYSBwYW5lbCwgYnV0IGFteXdheSkgaGF2ZSBzb21lCnJpZGdpZCB0aW1p
-bmcgY29uc3RyYWlucyBhcm91bmQgcG93ZXIgT04vT0ZGLgoKPiArCj4gK01PRFVMRV9BVVRIT1Io
-Ik5YUCBTZW1pY29uZHVjdG9yIik7Cj4gK01PRFVMRV9ERVNDUklQVElPTigiTWl4ZWwgTUlQSS1E
-U0kgUEhZIGRyaXZlciIpOwoKPiArTU9EVUxFX0xJQ0VOU0UoIkdQTCB2MiIpOwpEb2VzIHRoaXMg
-bWF0Y2ggdGhlIFNQRFggdGFnPwoKIgo+ICsvLyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogR1BM
-LTIuMCsKIgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
-bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
-YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
-dXgtYXJtLWtlcm5lbAo=
+Quoting Roger Lu (2019-04-30 04:20:10)
+> Document the binding for enabling mtk svs on MediaTek SoC.
+> 
+> Signed-off-by: Roger Lu <roger.lu@mediatek.com>
+> ---
+>  .../devicetree/bindings/power/mtk-svs.txt     | 70 +++++++++++++++++++
+>  1 file changed, 70 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/power/mtk-svs.txt
+> 
+> diff --git a/Documentation/devicetree/bindings/power/mtk-svs.txt b/Documentation/devicetree/bindings/power/mtk-svs.txt
+> new file mode 100644
+> index 000000000000..355329db74ba
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/power/mtk-svs.txt
+> @@ -0,0 +1,70 @@
+> +* Mediatek Smart Voltage Scaling (MTK SVS)
+> +
+> +This describes the device tree binding for the MTK SVS controller
+> +which helps provide the optimized CPU/GPU/CCI voltages. This device also
+> +needs thermal data to calculate thermal slope for accurately compensate
+> +the voltages when temperature change.
+> +
+> +Required properties:
+> +- compatible:
+> +  - "mediatek,mt8183-svs" : For MT8183 family of SoCs
+> +- reg: Address range of the MTK SVS controller.
+> +- interrupts: IRQ for the MTK SVS controller.
+> +- clocks, clock-names: Clocks needed for the svs controller. required
+> +                       clocks are:
+> +                      "main_clk": Main clock needed for register access
+> +- nvmem-cells: Phandle to the calibration data provided by a nvmem device.
+> +- nvmem-cell-names: Should be "svs-calibration-data" and "calibration-data"
+> +- svs_xxx: Phandle of svs_bank device for controlling corresponding opp
+
+Properties shouldn't have underscores in them. Use dashes?
+
+> +           table and power-domains.
+> +- vxxx-supply: Phandle to each regulator. vxxx can be "vcpu_little",
+> +              "vcpu_big", "vcci" and "vgpu".
+> +
+> +Example:
+> +
+> +       svs: svs@1100b000 {
+> +               compatible = "mediatek,mt8183-svs";
+> +               reg = <0 0x1100b000 0 0x1000>;
+> +               interrupts = <GIC_SPI 127 IRQ_TYPE_LEVEL_LOW 0>;
+> +               clocks = <&infracfg CLK_INFRA_THERM>;
+> +               clock-names = "main_clk";
+> +               nvmem-cells = <&svs_calibration>, <&thermal_calibration>;
+> +               nvmem-cell-names = "svs-calibration-data", "calibration-data";
+> +
+> +               svs_cpu_little: svs_cpu_little {
+> +                       compatible = "mediatek,mt8183-svs-cpu-little";
+> +                       operating-points-v2 = <&cluster0_opp>;
+> +               };
+> +
+> +               svs_cpu_big: svs_cpu_big {
+> +                       compatible = "mediatek,mt8183-svs-cpu-big";
+> +                       operating-points-v2 = <&cluster1_opp>;
+> +               };
+> +
+> +               svs_cci: svs_cci {
+> +                       compatible = "mediatek,mt8183-svs-cci";
+> +                       operating-points-v2 = <&cluster2_opp>;
+> +               };
+> +
+> +               svs_gpu: svs_gpu {
+> +                       compatible = "mediatek,mt8183-svs-gpu";
+> +                       power-domains = <&scpsys MT8183_POWER_DOMAIN_MFG_2D>;
+> +                       operating-points-v2 = <&gpu_opp_table>;
+> +               };
+
+It looks like you need multiple OPPs for a single device, because it has
+different independent power supplies it wants to associate the OPP
+tables with? Why can't these OPP tables be attached to the devices that
+use them, i.e. CPU, GPU, CCI, etc.? Seems odd that those devices don't
+have OPP tables that this hardware block can look up somehow. Similarly,
+the power domains should probably be part of the devices that are using
+them and not these sub-nodes that are mirroring the other hardware
+blocks in the system?
+
+> +       };
+> +
+> +       &svs_cpu_little {
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
