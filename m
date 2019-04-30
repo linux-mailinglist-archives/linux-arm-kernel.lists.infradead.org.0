@@ -2,65 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 801A7FA66
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 15:29:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76062FA67
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 15:29:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5frZ0tz42jjsldrrrTOA8VVGW1RPY7HB8A+r2ZIqziI=; b=utwU+FdoAr80CY
-	3nLUqaPCXUVTPZFETw+mDDRvwgmRAwd0bVWPnGEg4LqS72rFJpPAm8EXWm2xAhzw/hhc6SISTudrn
-	3A5ZzP+NdKKGNOAslEx+84MoT7uuYCEwYfL3u2J6UttrUbasS+OLYo4TRT4/DNXL9B3MzyLttSQnE
-	cz/yATVSoP5SQnBhUd5kRvUAzeEDBOq+XrXm1O6YaCI+UXuLAlAnpHfrUj/9TQhzjWeOMZVAywzFm
-	L7OBJNIV3oOuN7AlezE0cfLJBlx4FWLD8XX0MP88jqZKfBliJ5oXAXy1ApHpAIyP5BQP6rdzjZK0p
-	mKFUwKVOw8h0HB5m+HcQ==;
+	List-Owner; bh=+VX7fFmYd3zNL+x04s9hg1B99aapWuXecLpO+qc+YaE=; b=iUqPzxl7j3zITG
+	eVC/l+rZkN31v1kX3ddf2QcjQCaWr8dTQBa/BW6Z7RF7hSgIffmw8aFmwhUReogrTtc5DkocXJqxm
+	2upDUiMDMl6cpUrmLlL3tr9fzLPmOPIoPk1yFxXjsw9bp/HnqZM70Dea2b5+cvDnBcscIhzULjJDj
+	6L+BeU5+YeNhVu9gMoaS8s7ZUCrFmaICXy0R8wg/YD7WWQdZfK4iopt2gOXP4oltzQEIS7CMS9+xB
+	UiukJQuHCWaE25GF+nIjQsgc3/NnCGn0VYJmJBd4RbUKk4n+KfrU25KgB+4qNGUHQMpB5V0HbvKd+
+	tOyNauS+vkNmPhiuiK3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLSox-0005qi-UA; Tue, 30 Apr 2019 13:29:19 +0000
-Received: from mail-pl1-x649.google.com ([2607:f8b0:4864:20::649])
+	id 1hLSp8-00064r-KW; Tue, 30 Apr 2019 13:29:30 +0000
+Received: from mail-qk1-x749.google.com ([2607:f8b0:4864:20::749])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLSlt-0002SM-Hz
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 13:26:39 +0000
-Received: by mail-pl1-x649.google.com with SMTP id g6so7059611plp.18
+ id 1hLSlw-0002WL-TY
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 13:26:42 +0000
+Received: by mail-qk1-x749.google.com with SMTP id q79so11718334qke.18
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Apr 2019 06:26:08 -0700 (PDT)
+ Tue, 30 Apr 2019 06:26:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=Qo5FEqXeJKdpmXvqV1aNmsvS1qf4QOcuAEvGRZnbU+I=;
- b=WJvgA7FhPH4nnlwUD7/cK+UGsQvztnpEwl/EwgwpETKSn2jcm2n8vXAJ5vmz+updJQ
- hv5vQG7S1TSnGIvsNFWmNlDJOuMgBbHPDTDqE1/Q7BSkSWZGsQSxWFmbI9EyZ11RD35O
- PoWicUER0x2L/roTgi03inDjhawM/RefWqQ0HU9dp3Bfb6piRBIYbrmvMjy86XgTN3si
- Ctsvudz1bGthwFBvr6qlHQElPSiMTUZTlDJzHWjXIK5Av3TkDr+6XQPdcLfX/oczYas3
- y01MzwmNMMd59RGZLYJMIFoZY0gr9B1FAyRfwBPJvm7Zd8dDqsp5xcnwSnBCo7S+GHIh
- eAtA==
+ :cc; bh=CUfyrLNe/T3EcKv5qduPdE7e3xDRgpU9AlrvCv3qwqI=;
+ b=ACzTueebTGZuzKKoCgKBIgO56T+v/kmKwHjurWtS7UbHoL/8XDJlDb5ck/BSEBSEkL
+ L/cpQLHEpHyLmFxTqXzMv0MYxpPJ/tdSuF6iSO5LSNmbylvOUvYffcEQgPGf+AHIVemF
+ X7c/hUL69n/uOjY+uNJSNPAVfbcNbVaSMzD0uei9BaIXpxtVKCRwsIlHAcYOHL9EFavB
+ iCJAtq03WGCgnaX+tP7fN2qD5Hnfneud42YH1gQK4xFPHVYPeqPOAqGnfhU4Bvx5JZ4h
+ WVQJpJkjflxIoXEbOmqcqlW6kZy64vV5a1g9LW1u4aQq8hQq2UTluPLfVENOwe2MSfHQ
+ GaaA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=Qo5FEqXeJKdpmXvqV1aNmsvS1qf4QOcuAEvGRZnbU+I=;
- b=r/HKP/IOwjmEP50KF773S72yODhB8EtlQOcdfTRzb0PWSjs+fLPj59HRvFdk7LBwih
- d9o6klel8IK3UYckSDtVSQOHQz8K4457Cb+YjCF1oaQX85AmJ/O65G5dYK7MFAG7hNBM
- x3Eeuth0UFwZw1MJCC4odrKzgfJPnGZd/yRTvT02/6/BSjHaFNTxs19So5N9oIgXbhOA
- qlGSl6GV3RJM4Q3Q5ZKmGwA0Zd1+1zmTvszViFXZ0kS2WWbbjjeRkxszED3zDIZmHDDK
- VIBcxVsRiL6jwgKHBGNfYVa+VqZXzdZslqGOEodRCEedsn2CnUb66mI6/I7a+dHpT8J5
- mmEg==
-X-Gm-Message-State: APjAAAVhVH44e2B8xXwXKxMKwDmCZcvNLT2HyuijlWps52VNCMPLnCpq
- JbB4YD81fJ6IfoYiXi8Ctsp2pBCwtRD6CVrq1Cg7zw6yCSzuG5PyZi9EkBPPINZPP4cN8CZBGlT
- MOT+UNqXCcdqJd49o4WQRDsJsA+evG0/L6xK1UqkXUqCSle0EUz6xnoGuGSmwWnizJAkbCKsSmf
- pPfWz8JxtJrDKgiSk=
-X-Google-Smtp-Source: APXvYqzC1lVWU3xOxPIpeGY1IySKfn9D9N99TINTSZcSwcwIPCbrd75tIMQec4oX3DSqqzuBnQc6miaAqMAhwGUH
-X-Received: by 2002:a63:1d4f:: with SMTP id d15mr64183239pgm.347.1556630767405; 
- Tue, 30 Apr 2019 06:26:07 -0700 (PDT)
-Date: Tue, 30 Apr 2019 15:25:12 +0200
+ bh=CUfyrLNe/T3EcKv5qduPdE7e3xDRgpU9AlrvCv3qwqI=;
+ b=ZwRPiUhemh15yTqCci5uwokD8CyUxNoJ9/gUbDvFUvfK+kpyodOm5lmt5k8hW6Kg0a
+ iOjeFpe2tsJfT812fH+iOPbsKLLm71YLBMu6DS2CuPpAfwW52q8+TpYTV+2IRDVTlE6A
+ AVBQclIhS7E9qil9giM8i+DQzFS9XqQLVn0WD9NcFplseYLyL4P1i0uW1nS0eqe3jfeP
+ udHiv580/buRbYs14aPYNJIuw5omPwNnOFF+N9hDwvTQsjRacUFH1/AHmVpveGQJaepA
+ 3LltBjvUvbj1myTEnehzKh+WVSLZabDUp/JAHXcoZ83UPo9OP/uwylrr9i26W7F0utQh
+ I7Ag==
+X-Gm-Message-State: APjAAAUQDQSf4mPerY/7rG8Gs/oago7y2DyVF9hBBwv88GJpPLW5Ty8a
+ aj4aloWVjK6GtSWtXbh+gd7F9oaBbO+w7UsxA0WfXxQamPphn5IgfzzSYQuJY1eU0EINy+1t+e0
+ HESIMxVHGk8NYMrc/NhoII0ZeyW8xu8Ujxo7O82S8EhD5Sb/HF8gIfVjJllU8NEoM0iCPIOuK2+
+ EWTwhBE6u4M4MYnzc=
+X-Google-Smtp-Source: APXvYqysB3GTYMj0WGj5xIZkllIRnPABiLNbQUXAXOCL1Y4t6SI5ksxcGzuX1TZYAhDJVUrbxfYKc2E7kTYKjt+4
+X-Received: by 2002:a05:620a:482:: with SMTP id
+ 2mr43219855qkr.323.1556630770597; 
+ Tue, 30 Apr 2019 06:26:10 -0700 (PDT)
+Date: Tue, 30 Apr 2019 15:25:13 +0200
 In-Reply-To: <cover.1556630205.git.andreyknvl@google.com>
-Message-Id: <c9ef2282b1860e3ca6da28a4d599c24ff7147bb7.1556630205.git.andreyknvl@google.com>
+Message-Id: <d8f017e7ab36f698d05e6cc775115730c917ca77.1556630205.git.andreyknvl@google.com>
 Mime-Version: 1.0
 References: <cover.1556630205.git.andreyknvl@google.com>
 X-Mailer: git-send-email 2.21.0.593.g511ec345e18-goog
-Subject: [PATCH v14 16/17] vfio/type1,
- arm64: untag user pointers in vaddr_get_pfn
+Subject: [PATCH v14 17/17] selftests, arm64: add a selftest for passing tagged
+ pointers to kernel
 From: Andrey Konovalov <andreyknvl@google.com>
 To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org, 
  linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org, 
@@ -68,15 +69,15 @@ To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
  linux-media@vger.kernel.org, kvm@vger.kernel.org, 
  linux-kselftest@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_062610_309657_A1DA4122 
-X-CRM114-Status: GOOD (  11.12  )
+X-CRM114-CacheID: sfid-20190430_062613_429311_5E1AFAE3 
+X-CRM114-Status: GOOD (  15.08  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:649 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:749 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
@@ -128,29 +129,91 @@ This patch is a part of a series that extends arm64 kernel ABI to allow to
 pass tagged user pointers (with the top byte set to something else other
 than 0x00) as syscall arguments.
 
-vaddr_get_pfn() uses provided user pointers for vma lookups, which can
-only by done with untagged pointers.
-
-Untag user pointers in this function.
+This patch adds a simple test, that calls the uname syscall with a
+tagged user pointer as an argument. Without the kernel accepting tagged
+user pointers the test fails with EFAULT.
 
 Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
 ---
- drivers/vfio/vfio_iommu_type1.c | 2 ++
- 1 file changed, 2 insertions(+)
+ tools/testing/selftests/arm64/.gitignore      |  1 +
+ tools/testing/selftests/arm64/Makefile        | 11 ++++++++++
+ .../testing/selftests/arm64/run_tags_test.sh  | 12 +++++++++++
+ tools/testing/selftests/arm64/tags_test.c     | 21 +++++++++++++++++++
+ 4 files changed, 45 insertions(+)
+ create mode 100644 tools/testing/selftests/arm64/.gitignore
+ create mode 100644 tools/testing/selftests/arm64/Makefile
+ create mode 100755 tools/testing/selftests/arm64/run_tags_test.sh
+ create mode 100644 tools/testing/selftests/arm64/tags_test.c
 
-diff --git a/drivers/vfio/vfio_iommu_type1.c b/drivers/vfio/vfio_iommu_type1.c
-index d0f731c9920a..5daa966d799e 100644
---- a/drivers/vfio/vfio_iommu_type1.c
-+++ b/drivers/vfio/vfio_iommu_type1.c
-@@ -382,6 +382,8 @@ static int vaddr_get_pfn(struct mm_struct *mm, unsigned long vaddr,
- 
- 	down_read(&mm->mmap_sem);
- 
-+	vaddr = untagged_addr(vaddr);
+diff --git a/tools/testing/selftests/arm64/.gitignore b/tools/testing/selftests/arm64/.gitignore
+new file mode 100644
+index 000000000000..e8fae8d61ed6
+--- /dev/null
++++ b/tools/testing/selftests/arm64/.gitignore
+@@ -0,0 +1 @@
++tags_test
+diff --git a/tools/testing/selftests/arm64/Makefile b/tools/testing/selftests/arm64/Makefile
+new file mode 100644
+index 000000000000..a61b2e743e99
+--- /dev/null
++++ b/tools/testing/selftests/arm64/Makefile
+@@ -0,0 +1,11 @@
++# SPDX-License-Identifier: GPL-2.0
 +
- 	vma = find_vma_intersection(mm, vaddr, vaddr + 1);
- 
- 	if (vma && vma->vm_flags & VM_PFNMAP) {
++# ARCH can be overridden by the user for cross compiling
++ARCH ?= $(shell uname -m 2>/dev/null || echo not)
++
++ifneq (,$(filter $(ARCH),aarch64 arm64))
++TEST_GEN_PROGS := tags_test
++TEST_PROGS := run_tags_test.sh
++endif
++
++include ../lib.mk
+diff --git a/tools/testing/selftests/arm64/run_tags_test.sh b/tools/testing/selftests/arm64/run_tags_test.sh
+new file mode 100755
+index 000000000000..745f11379930
+--- /dev/null
++++ b/tools/testing/selftests/arm64/run_tags_test.sh
+@@ -0,0 +1,12 @@
++#!/bin/sh
++# SPDX-License-Identifier: GPL-2.0
++
++echo "--------------------"
++echo "running tags test"
++echo "--------------------"
++./tags_test
++if [ $? -ne 0 ]; then
++	echo "[FAIL]"
++else
++	echo "[PASS]"
++fi
+diff --git a/tools/testing/selftests/arm64/tags_test.c b/tools/testing/selftests/arm64/tags_test.c
+new file mode 100644
+index 000000000000..2bd1830a7ebe
+--- /dev/null
++++ b/tools/testing/selftests/arm64/tags_test.c
+@@ -0,0 +1,21 @@
++// SPDX-License-Identifier: GPL-2.0
++
++#include <stdio.h>
++#include <stdlib.h>
++#include <unistd.h>
++#include <stdint.h>
++#include <sys/utsname.h>
++
++#define SHIFT_TAG(tag)		((uint64_t)(tag) << 56)
++#define SET_TAG(ptr, tag)	(((uint64_t)(ptr) & ~SHIFT_TAG(0xff)) | \
++					SHIFT_TAG(tag))
++
++int main(void)
++{
++	struct utsname *ptr = (struct utsname *)malloc(sizeof(*ptr));
++	void *tagged_ptr = (void *)SET_TAG(ptr, 0x42);
++	int err = uname(tagged_ptr);
++
++	free(ptr);
++	return err;
++}
 -- 
 2.21.0.593.g511ec345e18-goog
 
