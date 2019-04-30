@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9DC59FDA5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 18:18:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2925AFDA6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 18:18:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nuC8yaQOI0FwO0HBKGI1RS/asGDfbT7h8RrAl0ald1w=; b=oJFcyyAbxYWbs3
-	li6ZSAuN43HGoxDA/gLilB7limCno+Z/AQtCMsyXuQgjgCQnkp2twLcn/HnCeZBYP/gH0Qh3Pwix/
-	xdRz6zW5WCdh0kaMDB/Oyqft5nzflig0DXfI/fsIq19Vf+4ZAnmRzSAZPObEbZeG/I2tY3dNkBrGI
-	7bB6BOl2sM/Yv0jQX2RP41FwqeBuYuNPz0AOMSPkxGiHjgE+3w8y8H9b3IkqAK9LJXN+g/Jp41AsA
-	9+L6JF0++0PIM4BqT6zuOSYZxAOxAZDrYmIZuLrAs6ZiPPPbQWdRcykkaotx5oT7LPHq57br9FKQq
-	7cRZ0R0hlPsa5WBw4SOg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=s8XPd+8Tb1Q2LTW+cs0jIap8bdQ+ppnrRlqvNMPIrvk=; b=SdMAsDub/Ur0Hu
+	2Ka+Hr97ISKMhWLdHNwIq2N8d49fFFeP0gvpGyYAa+uOfGJRo/d4m7pLEUS9oyve7qythkPOibQnP
+	X+xt7ZAtiKCQqkKlA5huTRFGFUTS3s7+qXFwOiDNM6gG6r04gXAxTIb415DIfmz3ghqpOXXGvWHai
+	+H0/5xTYTV2PfrtE5Rpx/miylrKvv62FWAwgvyRN7VJqf4+IuLS6jaUtWSaPFlv3kxaBUe1pF+xGI
+	W/RxIMEaoL/Hh6xkpBMX6PDEwlO1phNFoPxDdXVZ2CULLvjNj+I9ZEmc8XPDT2YgxVDLtJHdYKHMI
+	wKan4tRP5TcmUG6o40/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLVSM-0007OS-Ec; Tue, 30 Apr 2019 16:18:10 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLVSF-0007O6-Md
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 16:18:04 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 28BA0374;
- Tue, 30 Apr 2019 09:18:03 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 2FF4D3F5C1; Tue, 30 Apr 2019 09:18:02 -0700 (PDT)
-Date: Tue, 30 Apr 2019 17:17:59 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH V2] arm64/mm: Fix pgtable page offset address in
- [pud|pmd]_free_[pmd|pte]_page
-Message-ID: <20190430161759.GI29799@arrakis.emea.arm.com>
-References: <1556595839-9282-1-git-send-email-anshuman.khandual@arm.com>
+	id 1hLVSa-0007am-Tg; Tue, 30 Apr 2019 16:18:24 +0000
+Received: from honk.sigxcpu.org ([24.134.29.49])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hLVSI-0007O3-Cd
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 16:18:09 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by honk.sigxcpu.org (Postfix) with ESMTP id 3CBEFFB03;
+ Tue, 30 Apr 2019 18:18:01 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
+Received: from honk.sigxcpu.org ([127.0.0.1])
+ by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id yvo4w9v-Tb9h; Tue, 30 Apr 2019 18:18:00 +0200 (CEST)
+Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
+ id 111EA4027E; Tue, 30 Apr 2019 18:18:00 +0200 (CEST)
+From: =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>
+To: Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] amd64: mxc: select CONFIG_SOC_BUS
+Date: Tue, 30 Apr 2019 18:17:59 +0200
+Message-Id: <a45b70bae964b15317167304a89ba1094a769916.1556640947.git.agx@sigxcpu.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1556595839-9282-1-git-send-email-anshuman.khandual@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_091803_741285_585D2954 
-X-CRM114-Status: UNSURE (   9.33  )
+X-CRM114-CacheID: sfid-20190430_091806_705391_6A18FC29 
+X-CRM114-Status: UNSURE (   8.51  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.0 (-----)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [24.134.29.49 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,32 +63,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, will.deacon@arm.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 30, 2019 at 09:13:59AM +0530, Anshuman Khandual wrote:
-> @@ -1026,8 +1028,10 @@ int pud_free_pmd_page(pud_t *pudp, unsigned long addr)
->  		return 1;
->  	}
->  
-> -	table = pmd_offset(pudp, addr);
-> -	pmdp = table;
-> +	VM_WARN_ONCE(!IS_ALIGNED(addr, PUD_SIZE),
-> +		"%s: unaligned address 0x%016llx\n", __func__, addr);
-> +	table = pmd_offset(pudp, 0UL);
-> +	pmdp = pmd_offset(pudp, addr);
-
-Why does pmdp need to use addr? We are freeing the whole pmd page, so I
-don't think pmdp should be different from table here.
-
--- 
-Catalin
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+aS5NWDggbmVlZHMgc29jX2RldmljZV9yZWdpc3Rlciwgb3RoZXJ3aXNlIHRoZSBidWlsZCBmYWls
+cyBsaWtlOgoKICBhYXJjaDY0LWxpbnV4LWdudS1sZDogZHJpdmVycy9zb2MvaW14L3NvYy1pbXg4
+Lm86IGluIGZ1bmN0aW9uIGBpbXg4X3NvY19pbml0JzoKICBzb2MtaW14OC5jOiguaW5pdC50ZXh0
+KzB4MTMwKTogdW5kZWZpbmVkIHJlZmVyZW5jZSB0byBgc29jX2RldmljZV9yZWdpc3RlcicKICBh
+YXJjaDY0LWxpbnV4LWdudS1sZDogc29jLWlteDguYzooLmluaXQudGV4dCsweDEzMCk6IHJlbG9j
+YXRpb24gdHJ1bmNhdGVkIHRvIGZpdDogUl9BQVJDSDY0X0NBTEwyNiBhZ2FpbnN0IHVuZGVmaW5l
+ZCBzeW1ib2wgYHNvY19kZXZpY2VfcmVnaXN0ZXInCiAgbWFrZTogKioqIFtNYWtlZmlsZToxMDUx
+OiB2bWxpbnV4XSBFcnJvciAxCgpTaWduZWQtb2ZmLWJ5OiBHdWlkbyBHw7xudGhlciA8YWd4QHNp
+Z3hjcHUub3JnPgoKLS0tClRoaXMgd2FzIHNlZW4gb24gbmV4dC0yMDE5MDQzMC4KCiBhcmNoL2Fy
+bTY0L0tjb25maWcucGxhdGZvcm1zIHwgMSArCiAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24o
+KykKCmRpZmYgLS1naXQgYS9hcmNoL2FybTY0L0tjb25maWcucGxhdGZvcm1zIGIvYXJjaC9hcm02
+NC9LY29uZmlnLnBsYXRmb3JtcwppbmRleCAwZjRkOTE4MjRlNGIuLmM4NmJjY2JiMTE4YSAxMDA2
+NDQKLS0tIGEvYXJjaC9hcm02NC9LY29uZmlnLnBsYXRmb3JtcworKysgYi9hcmNoL2FybTY0L0tj
+b25maWcucGxhdGZvcm1zCkBAIC0xNjIsNiArMTYyLDcgQEAgY29uZmlnIEFSQ0hfTVhDCiAJc2Vs
+ZWN0IElNWF9HUENWMl9QTV9ET01BSU5TCiAJc2VsZWN0IFBNCiAJc2VsZWN0IFBNX0dFTkVSSUNf
+RE9NQUlOUworCXNlbGVjdCBTT0NfQlVTCiAJaGVscAogCSAgVGhpcyBlbmFibGVzIHN1cHBvcnQg
+Zm9yIHRoZSBBUk12OCBiYXNlZCBTb0NzIGluIHRoZQogCSAgTlhQIGkuTVggZmFtaWx5LgotLSAK
+Mi4yMC4xCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
+bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
+YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
+dXgtYXJtLWtlcm5lbAo=
