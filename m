@@ -2,57 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65B4DF251
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 10:56:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9E1BF25A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 10:59:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4DdZSud95Ivg+mf1lAEn9ZbMqqz6cnlZkt6pEGFWIek=; b=aVYZ/vN5ffLmZi
-	tOGAxrr6L0mQGB68Qn8DdY4bCrlZhhF/AWppFuNzOSjno5g5GQTLa9hHN0bwx982yxrsoQ0oAv3v/
-	gzDV5gC6LrhTM3OwUU3ohqce0966larD39Hi5hZJ2iURhr7JUy+aj1jk5gBgyvJm+5LK0UiYALwXD
-	S2evkJ1tUGWouy6kkUqwL/2Z5w2Ei+ZqxTGBAlcd0acUR+y1/wPfAnEvrCjCKABQB6QvRlA3Sn+S0
-	ySfzzdjfsE/J+28hM7s9cVpHHH73+TJLvdMvMEOCc0QlTLL3Nm1jPvctrP9f/qhZmPuBtmzUcJzR3
-	zH/cB4Kdua5QRsYfiwAA==;
+	List-Owner; bh=g05r0nEpO+lS7g1my3W5ZRdSOcXxrDnvnVT2np144yM=; b=M7JFGVPqZKTK5M
+	4+zGx+jIMYBIbIiFUHhxx97SRFtkDPYOkz809nBQfhK7eqUKZ9cInW1k5Kba0FsVpMVThoHTc2mQ9
+	WVQqBz0tF2In74UcR0/lfkbXOSBST0UHevFqiGePRS0gtUu4DAPye+lHKAxMQXq6gjeAQ5UufCcot
+	ErMWdTcfkJvIMNmYlNIZcw/+7T2beo+FJVEkgR9BuiIv9hzdI3/BdVOUxCiFEyrkjiBda4zvmxiqD
+	lhZmo+Ii3TAq1k8pzfFqLYNuzuRdsJWp1qhbsjN0l6PhW5ZRdBlW7Of3fdmSCYsSxzZsv47XIqC0v
+	bEUGiaq9j1+9HGRo4Vrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLOYo-0003cn-SV; Tue, 30 Apr 2019 08:56:22 +0000
+	id 1hLObP-0003zk-8c; Tue, 30 Apr 2019 08:59:03 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLOYh-0003c9-F7; Tue, 30 Apr 2019 08:56:17 +0000
-X-UUID: 37987c49105a4eae88fa8c40c78230bf-20190430
-X-UUID: 37987c49105a4eae88fa8c40c78230bf-20190430
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ id 1hLObH-0003zI-Ek; Tue, 30 Apr 2019 08:58:56 +0000
+X-UUID: b286d404a1204637964ee27d7feb3a9b-20190430
+X-UUID: b286d404a1204637964ee27d7feb3a9b-20190430
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
  (envelope-from <biao.huang@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 417864237; Tue, 30 Apr 2019 00:56:04 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 30 Apr 2019 01:56:03 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N1.mediatek.inc
- (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Tue, 30 Apr 2019 16:56:01 +0800
+ with ESMTP id 879678979; Tue, 30 Apr 2019 00:58:47 -0800
+Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 30 Apr 2019 01:58:46 -0700
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N2.mediatek.inc
+ (172.27.4.87) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Tue, 30 Apr 2019 16:58:44 +0800
 Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
  (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 30 Apr 2019 16:56:00 +0800
-Message-ID: <1556614560.24897.31.camel@mhfsdcap03>
-Subject: RE: [PATCH 1/4] net: stmmac: update rx tail pointer register to fix
- rx dma hang issue.
+ Transport; Tue, 30 Apr 2019 16:58:43 +0800
+Message-ID: <1556614723.24897.33.camel@mhfsdcap03>
+Subject: RE: [PATCH 2/2] net-next: stmmac: add mdio clause 45 access from
+ mac device for dwmac4
 From: biao huang <biao.huang@mediatek.com>
-To: Jose Abreu <Jose.Abreu@synopsys.com>
-Date: Tue, 30 Apr 2019 16:56:00 +0800
-In-Reply-To: <78EB27739596EE489E55E81C33FEC33A0B46DDF0@DE02WEMBXB.internal.synopsys.com>
-References: <1556518556-32464-1-git-send-email-biao.huang@mediatek.com>
- <1556518556-32464-2-git-send-email-biao.huang@mediatek.com>
- <78EB27739596EE489E55E81C33FEC33A0B46DDF0@DE02WEMBXB.internal.synopsys.com>
+To: "Ong, Boon Leong" <boon.leong.ong@intel.com>
+Date: Tue, 30 Apr 2019 16:58:43 +0800
+In-Reply-To: <AF233D1473C1364ABD51D28909A1B1B75C0C2849@pgsmsx114.gar.corp.intel.com>
+References: <1556519724-1576-1-git-send-email-biao.huang@mediatek.com>
+ <1556519724-1576-3-git-send-email-biao.huang@mediatek.com>
+ <AF233D1473C1364ABD51D28909A1B1B75C0C27ED@pgsmsx114.gar.corp.intel.com>
+ <78EB27739596EE489E55E81C33FEC33A0B46E5B4@DE02WEMBXB.internal.synopsys.com>
+ <AF233D1473C1364ABD51D28909A1B1B75C0C2849@pgsmsx114.gar.corp.intel.com>
 X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_015615_511172_168D40E8 
-X-CRM114-Status: GOOD (  14.97  )
+X-CRM114-CacheID: sfid-20190430_015855_498473_F5AE464B 
+X-CRM114-Status: GOOD (  10.93  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,8 +74,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "jianguo.zhang@mediatek.com" <jianguo.zhang@mediatek.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
+Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Andrew Lunn <andrew@lunn.ch>,
+ "jianguo.zhang@mediatek.com" <jianguo.zhang@mediatek.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, "Voon,
+ Weifeng" <weifeng.voon@intel.com>, "Kweh,
+ Hock Leong" <hock.leong.kweh@intel.com>,
  "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  "linux-stm32@st-md-mailman.stormreply.com"
@@ -90,39 +95,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2019-04-29 at 08:51 +0000, Jose Abreu wrote:
-> From: Biao Huang <biao.huang@mediatek.com>
-> Date: Mon, Apr 29, 2019 at 07:15:53
+On Mon, 2019-04-29 at 15:23 +0000, Ong, Boon Leong wrote:
+> >> What is the preference of the driver maintainer here?
+> >
+> >Your implementation doesn't need the mdelay() so I think we should follow
+> >your way once you also address the review comments from Andrew and me.
+> >
+> >Maybe you can coordinate with Biao and submit a C45 implementation that
+> >can be tested by both ?
 > 
-> > Currently we will not update the receive descriptor tail pointer in
-> > stmmac_rx_refill. Rx dma will think no available descriptors and stop
-> > once received packets exceed DMA_RX_SIZE, so that the rx only test will fail.
-> > 
-> > Update the receive tail pointer in stmmac_rx_refill to add more descriptors
-> > to the rx channel, so packets can be received continually
-> > 
-> > Signed-off-by: Biao Huang <biao.huang@mediatek.com>
-> > ---
-> >  drivers/net/ethernet/stmicro/stmmac/stmmac_main.c |    3 +++
-> >  1 file changed, 3 insertions(+)
-> > 
-> > diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-> > index 97c5e1a..818ad88 100644
-> > --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-> > +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-> > @@ -3336,6 +3336,9 @@ static inline void stmmac_rx_refill(struct stmmac_priv *priv, u32 queue)
-> >  		entry = STMMAC_GET_ENTRY(entry, DMA_RX_SIZE);
-> >  	}
-> >  	rx_q->dirty_rx = entry;
-> > +	stmmac_set_rx_tail_ptr(priv, priv->ioaddr,
-> > +			       rx_q->dma_rx_phy + (entry * sizeof(struct dma_desc)),
-> 
-> I think you can just use the "rx_q->rx_tail_addr" here. It'll always 
-> trigger a poll demand for the channel.
-Yes, will use rx_q->rx_tail_addr here.
-> 
-> Thanks,
-> Jose Miguel Abreu
+> Ok. We will address the review comments for that patch-series and resend the
+> v3 patch-series soonest and for Biao to test. 
+>  
+I'll test it when your patch is ready. Please cc me, thanks.
+> Thanks
 
 
 
