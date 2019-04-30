@@ -2,53 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA049FD0D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 17:39:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DC59FDA5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 18:18:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k9xyb8SZOkAEfj1xy5RKPKmMACsmGABsoYNErERfEy4=; b=ZJ4AnT0NyEdCSd
-	80+K4GSJEBB8Omq39q8pcizld1pltCUVo44wxjPi/Kt7Wci7XowNkO2ht2TwaOhMhks8UEDdHEDgY
-	xVszhgCpe0phVyhaZ6TaQomU2D2050LxDN2O4WXcjmOcr1ytPU+0UMLqFsG5G/nypvomj7TBUItcH
-	fiPnvjAHg0oySMVjOD1AGt3wfSN64vXzDUG4kBVyHEiMYWWYxBL/DoWWmnMyLBGrH2ix/uHrje5o1
-	0A55Fmk7RHDM6/YbZf2B+4Y5dZW7CAyZdDI069Ad14TqMR1TW4sYCo5LPSZbPTi0UzQtuJlbuGUzi
-	3qVR78xDjAQsKqEwcuSQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nuC8yaQOI0FwO0HBKGI1RS/asGDfbT7h8RrAl0ald1w=; b=oJFcyyAbxYWbs3
+	li6ZSAuN43HGoxDA/gLilB7limCno+Z/AQtCMsyXuQgjgCQnkp2twLcn/HnCeZBYP/gH0Qh3Pwix/
+	xdRz6zW5WCdh0kaMDB/Oyqft5nzflig0DXfI/fsIq19Vf+4ZAnmRzSAZPObEbZeG/I2tY3dNkBrGI
+	7bB6BOl2sM/Yv0jQX2RP41FwqeBuYuNPz0AOMSPkxGiHjgE+3w8y8H9b3IkqAK9LJXN+g/Jp41AsA
+	9+L6JF0++0PIM4BqT6zuOSYZxAOxAZDrYmIZuLrAs6ZiPPPbQWdRcykkaotx5oT7LPHq57br9FKQq
+	7cRZ0R0hlPsa5WBw4SOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLUr4-0001kP-CM; Tue, 30 Apr 2019 15:39:38 +0000
+	id 1hLVSM-0007OS-Ec; Tue, 30 Apr 2019 16:18:10 +0000
 Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLUqw-0001hH-Bv
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 15:39:31 +0000
+ id 1hLVSF-0007O6-Md
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 16:18:04 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A4DA4374;
- Tue, 30 Apr 2019 08:39:27 -0700 (PDT)
-Received: from [10.1.194.37] (e113632-lin.cambridge.arm.com [10.1.194.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E89353F719;
- Tue, 30 Apr 2019 08:39:25 -0700 (PDT)
-Subject: Re: [PATCH 7/7] clocksource/arm_arch_timer: Use
- arch_timer_read_counter to access stable counters
-To: Marc Zyngier <marc.zyngier@arm.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20190408154907.223536-1-marc.zyngier@arm.com>
- <20190408154907.223536-8-marc.zyngier@arm.com>
- <2a60a031-1eab-2d5e-89ff-b5d516545eeb@linaro.org>
- <bbe9b8c1-132f-bbfa-e3d0-ad10c4165ad7@arm.com>
-From: Valentin Schneider <valentin.schneider@arm.com>
-Message-ID: <cef220b8-f46d-0653-8249-a9d48b2efc48@arm.com>
-Date: Tue, 30 Apr 2019 16:39:24 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 28BA0374;
+ Tue, 30 Apr 2019 09:18:03 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 2FF4D3F5C1; Tue, 30 Apr 2019 09:18:02 -0700 (PDT)
+Date: Tue, 30 Apr 2019 17:17:59 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH V2] arm64/mm: Fix pgtable page offset address in
+ [pud|pmd]_free_[pmd|pte]_page
+Message-ID: <20190430161759.GI29799@arrakis.emea.arm.com>
+References: <1556595839-9282-1-git-send-email-anshuman.khandual@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <bbe9b8c1-132f-bbfa-e3d0-ad10c4165ad7@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <1556595839-9282-1-git-send-email-anshuman.khandual@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_083930_460885_1B68549F 
-X-CRM114-Status: GOOD (  13.20  )
+X-CRM114-CacheID: sfid-20190430_091803_741285_585D2954 
+X-CRM114-Status: UNSURE (   9.33  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -68,34 +63,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Russell King <linux@arm.linux.org.uk>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Wim Van Sebroeck <wim@linux-watchdog.org>, Guenter Roeck <linux@roeck-us.net>
+Cc: mark.rutland@arm.com, will.deacon@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Tue, Apr 30, 2019 at 09:13:59AM +0530, Anshuman Khandual wrote:
+> @@ -1026,8 +1028,10 @@ int pud_free_pmd_page(pud_t *pudp, unsigned long addr)
+>  		return 1;
+>  	}
+>  
+> -	table = pmd_offset(pudp, addr);
+> -	pmdp = table;
+> +	VM_WARN_ONCE(!IS_ALIGNED(addr, PUD_SIZE),
+> +		"%s: unaligned address 0x%016llx\n", __func__, addr);
+> +	table = pmd_offset(pudp, 0UL);
+> +	pmdp = pmd_offset(pudp, addr);
 
-On 30/04/2019 16:27, Marc Zyngier wrote:
-[...]
->>> @@ -372,6 +392,7 @@ static u32 notrace sun50i_a64_read_cntv_tval_el0(void)
->>>  DEFINE_PER_CPU(const struct arch_timer_erratum_workaround *, timer_unstable_counter_workaround);
->>>  EXPORT_SYMBOL_GPL(timer_unstable_counter_workaround);
->>>  
->>> +static atomic_t timer_unstable_counter_workaround_in_use = ATOMIC_INIT(0);
->>
->> Wouldn't make sense to READ_ONCE / WRITE_ONCE instead of using an atomic?
-> 
-> I don't think *_ONCE says anything about the atomicity of the access. It
-> only instruct the compiler that this should only be accessed once, and
-> not reloaded/rewritten.
+Why does pmdp need to use addr? We are freeing the whole pmd page, so I
+don't think pmdp should be different from table here.
 
-FWIW 7bd3e239d6c6 ("locking: Remove atomicy checks from {READ,WRITE}_ONCE")
-points this out.
-
-[...]
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
