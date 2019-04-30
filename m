@@ -2,66 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E06AF538
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 13:14:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F676F53B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 13:16:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=siwRpLsOd3YCciQxzQbhw+TV+eKtXBd7MXnO4ee3oTE=; b=ctcqBqMxMoQHsv
-	ZfBq27OugijsSQQqqEIGcj3TZoNUfAXteYGIRQYEVa/ZB8fNruvHJxLPPUm/wLjmnMZMh593AoFxh
-	VYHSQF5CfUiqhqL2IWJifqmnD94Ag1vCkRvX5dte6JM2nqgnTdkLh30yv7dD/07dN8AN9f4dhB+X6
-	hnHa738xVh/wYoR3gLO3VWCYG6xm9U/1qukQa8dWInDv6nf3hFfb+5lvkMueCtoxfDItryj4Oh6O0
-	o9xknFZqHDGP6j0903JmH91ClzOkt/WKi2RK2x6Yl+Z6CDXIKBU7kZkvi5OGxwtqo8qz554OJ+miA
-	vJ1ovQ1gKuaMmFddKV3Q==;
+	List-Owner; bh=XPaOydf54MSdjG/NeGpgtOmUF+fFnhUqjzm9Qi5d2fU=; b=H2JetqDSnnweJQ
+	kMX4is3Q7h54lTvf7h/Avq6QOSHaK3aDy4MiIZ3bmLE6fQ/l5htkPqd4+D5N9RYcjD3/DVmO/IZzX
+	q+qCLs1nU7ip1S25G5dcaIIKkJ/+pQWvMxaIMoETOaTGpfe3ipGrL1akfhYad/HhVCZ5CkWHreX7b
+	Ea6j9gcdTme9o1jIyXp/72GEjeIRnBkMcA/pW1d6iAmmTMnfMcnkfeDV09SAe+FUYqGgXrBHH2sFZ
+	ZoI/2EIdVku1USC5YwKuhkj1eh0hEt3W0MmmoHJuXck5rvO3oWbHhUihpZzXv/YWDOPZ8a8ctjvOn
+	oUuv3mcorGYG7tS/a9rA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLQii-0005yY-IF; Tue, 30 Apr 2019 11:14:44 +0000
+	id 1hLQjn-0007QU-Qc; Tue, 30 Apr 2019 11:15:51 +0000
 Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLQiZ-0005xs-J5
- for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 11:14:36 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id o10so7700844vsp.12
+ id 1hLQjg-0007Q5-DE
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 11:15:45 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id y196so1621269vsc.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 30 Apr 2019 04:14:34 -0700 (PDT)
+ Tue, 30 Apr 2019 04:15:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=+apvPOK9hOKuyGFcfXqjcVJRX/KMiOheouDto7GSYrU=;
- b=OlG3x6DSEKoTSrHDdX3ybp6fgR+JxEYnOW6sgWdoouyfjOMZfIZE834Z0i1m4d147e
- yh01OWpa7Edvr5/DLSw4qqB8LMCNiX6xfb3u9ldeB5liaei3o+eamVJpoz15S4Di9YII
- N6OoTOfeYCULR2C/P3lYgfImFJYDCIrkgWUkZczpN1A48fy5NIuyoJS3kmm+qXRQDaW7
- fQTR+sko1QYp8Y9xuuWEQmS/WEufRgOb11yfjRtsiozp+zLSS624cIH40INcfhqvWQzF
- 5/ZF1BLNue1OMHom1HohEH3No7Eg1JyIyx+xodFErGChH//VZmOfMLRkNZCuTkzjv/Ks
- d+VA==
+ :cc; bh=wSBbwzwwF7jNGcnQ7AVNOQW/kFea/OR3OycjgcD+M5c=;
+ b=rqr36y92aNmQTYvCTP0FbjlLcgvOVgOIBDQwTiV31lnCFvvEh8wCoUcO64jDLLDEVY
+ erRc/duAARlv2giV0RtYCNNtSSCmqITwLtB+L4/D0ucYfJzTeOIB89fcC/J2ZOZAffia
+ JrkKLpnlC9Wp/ICfZhlxo3jAJq+YRQRtDZQ/0aafaMj3L3tH3gTwA8JMsEShNcWpEvbU
+ AF/x1vC/l7cxkkQSdkJlKbiNVILNcykOjHmE2vL8rr2FlwozHnQquuhJRRpBH0lh71t+
+ 6oQhOCuBTEy9fGKd3IkepvbwFpy3ufl0kWCdkGv4N7yE8fF1UMT07z7o1d6//HstvPZ0
+ CCsw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=+apvPOK9hOKuyGFcfXqjcVJRX/KMiOheouDto7GSYrU=;
- b=YUVlMReVGSKsFpU2F0MFqhLDj4Qje3b4W2bgGWgaoQGpOwhLagRY4o7I1ohHNhJqQM
- cGVA6jv+3cRNoyuAM7TEEVgcqr8LpkyxoGlBh5VJ9C4geNc+kQhFItXmvwMKoVgPZXcn
- mu8Bz4KsloQ3MJSie0NKOuVLd80yJ/Rs0P6OeYJyTE50c2Af6pqiMyfAYWGB87PGqbJj
- 26VZQ13Nqn+b+Il92cxhCx3NpHh949TH+B58QSXjKAKH3ESU4uKxV5K07Q8LwRxcJ+73
- Vj+T3zWpW9OKT+HaAzYv8b1GHvbfOu1ntapxpk3BivMclX0ZiB6GKgVDfjiff7hLzMTx
- fnAg==
-X-Gm-Message-State: APjAAAWpMO5od/TeOKWhLZohTkoVtSvCX9kZ/rgdtjf5jQ1F8+toF/md
- 3No5ggBpeko3c97ew7p3zbsECYqEqZqBP7DrMcq09A==
-X-Google-Smtp-Source: APXvYqyAUnACtUpQ/7yb1Sl1GxiGdH/gfNEqoAuzPz1Lm3B7D3UA4Nrusr1PmU9LKsLBG5dbHrkeoO4MOXsyUmN5ypY=
-X-Received: by 2002:a67:c987:: with SMTP id y7mr310439vsk.35.1556622874058;
- Tue, 30 Apr 2019 04:14:34 -0700 (PDT)
+ bh=wSBbwzwwF7jNGcnQ7AVNOQW/kFea/OR3OycjgcD+M5c=;
+ b=k/AeaS+kfU9j4jQBwYNvd6CucCznqsv0V5giwrtLfmLWrwWesiXeFBSHlLOP2/mhd5
+ hbx56DQ9u73J17d8DVy6jSeDkBK9nJJDcWxL/9e2I271m/jX8nnVjQW/MLOOFCaY5sby
+ AD22U7YPwceWdDF8qo1kTEUvhfE4vHmuwVNATl25uZDyn7/HSRurWHuwFgi1LW3EuJCm
+ L/1Ns9g9u4KnkHGXIQXoGyG1J5JXyh/Br0eHvUux/GJ8iWyRWWdlQHl0bk8Q+uhl/5gE
+ H09DDq3jVR2me6zijSlhI9HWUSonh1baN6ivd8VAp54H8tey53RSjJO1Yf0axBq40tbl
+ 0VQQ==
+X-Gm-Message-State: APjAAAW6Y1ZhvkG4aAHdXyoXEu5D4iY1OC38oC2g71uPFH+10csb8hAE
+ CxLZB6bykmO5G0ECZ3FANM8ao+Z3WAt4G7luFuj9Pg==
+X-Google-Smtp-Source: APXvYqwIlfZlHtUketaXOMujjHfd/qGbL3oe7HXJ7joLacYaYzlaaHb9SIRBw0nNzNuiizbcbBYifZAmFXX0o+LqXyk=
+X-Received: by 2002:a67:8155:: with SMTP id c82mr5940813vsd.200.1556622943522; 
+ Tue, 30 Apr 2019 04:15:43 -0700 (PDT)
 MIME-Version: 1.0
-References: <1556264798-18540-1-git-send-email-ludovic.Barre@st.com>
-In-Reply-To: <1556264798-18540-1-git-send-email-ludovic.Barre@st.com>
+References: <cover.1556313614.git.leonard.crestez@nxp.com>
+ <68ccb5a90d1d2a596e7ed94ba3245171f013c781.1556313614.git.leonard.crestez@nxp.com>
+ <CAPDyKFpCCapBfNbsR1Q+nyg8aenVJWxj9qmTCCCfmONZR3t1sg@mail.gmail.com>
+ <AM0PR04MB6434B2BBECCA6B2644CDF044EE390@AM0PR04MB6434.eurprd04.prod.outlook.com>
+In-Reply-To: <AM0PR04MB6434B2BBECCA6B2644CDF044EE390@AM0PR04MB6434.eurprd04.prod.outlook.com>
 From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Tue, 30 Apr 2019 13:13:57 +0200
-Message-ID: <CAPDyKFqbn=UcbwoH_z+yjrjvHQZaMtmsD=n0yrBV7DAK5VRJEQ@mail.gmail.com>
-Subject: Re: [PATCH V2 0/5] mmc: mmci: add busy detect for stm32 sdmmc variant
-To: Ludovic Barre <ludovic.Barre@st.com>
+Date: Tue, 30 Apr 2019 13:15:07 +0200
+Message-ID: <CAPDyKFr_CsHBTjAXC+g7Oxnz9WhhyhyW3BGJkr=dqkJECvsyRw@mail.gmail.com>
+Subject: Re: [PATCH v4 1/2] PM / Domains: Add GENPD_FLAG_NO_RUNTIME_OFF flag
+To: Leonard Crestez <leonard.crestez@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_041435_635436_96EBE2F6 
-X-CRM114-Status: GOOD (  13.52  )
+X-CRM114-CacheID: sfid-20190430_041544_453899_F13688A9 
+X-CRM114-Status: GOOD (  11.21  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -89,60 +92,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, dl-linux-imx <linux-imx@nxp.com>,
+ Arulpandiyan Vadivel <Arulpandiyan_Vadivel@mentor.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>, Robin Gong <yibin.gong@nxp.com>,
+ Shawn Guo <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 26 Apr 2019 at 09:46, Ludovic Barre <ludovic.Barre@st.com> wrote:
+On Mon, 29 Apr 2019 at 16:39, Leonard Crestez <leonard.crestez@nxp.com> wrote:
 >
-> From: Ludovic Barre <ludovic.barre@st.com>
+> On 4/29/2019 12:11 PM, Ulf Hansson wrote:
+> > On Fri, 26 Apr 2019 at 23:38, Leonard Crestez <leonard.crestez@nxp.com> wrote:
+> >>
+> >> This is for power domains which can only be powered off for suspend but
+> >> not as part of runtime PM.
+> >>
+> >> @@ -126,10 +126,11 @@ static const struct genpd_lock_ops genpd_spin_ops = {
+> >>   #define genpd_status_on(genpd)         (genpd->status == GPD_STATE_ACTIVE)
+> >>   #define genpd_is_irq_safe(genpd)       (genpd->flags & GENPD_FLAG_IRQ_SAFE)
+> >>   #define genpd_is_always_on(genpd)      (genpd->flags & GENPD_FLAG_ALWAYS_ON)
+> >>   #define genpd_is_active_wakeup(genpd)  (genpd->flags & GENPD_FLAG_ACTIVE_WAKEUP)
+> >>   #define genpd_is_cpu_domain(genpd)     (genpd->flags & GENPD_FLAG_CPU_DOMAIN)
+> >> +#define genpd_is_no_runtime_off(genpd) (genpd->flags & GENPD_FLAG_NO_RUNTIME_OFF) >
+> > May I suggest to switch the name to, GENPD_FLAG_RUNTIME_ON.
+> >
+> > Other than that, this looks good to me!
 >
-> This patch series adds busy detect for stm32 sdmmc variant.
-> Some adaptations are required:
-> -Avoid to check and poll busy status when is not expected.
-> -Clear busy status bit if busy_detect_flag and busy_detect_mask are
->  different.
-> -Add hardware busy timeout with MMCIDATATIMER register.
->
-> V2:
-> -mmci_cmd_irq cleanup in separate patch.
-> -simplify the busy_detect_flag exclude
-> -replace sdmmc specific comment in
-> "mmc: mmci: avoid fake busy polling in mmci_irq"
-> to focus on common behavior
->
-> Ludovic Barre (5):
->   mmc: mmci: cleanup mmci_cmd_irq for busy detect feature
->   mmc: mmci: avoid fake busy polling in mmci_irq
->   mmc: mmci: fix clear of busy detect status
->   mmc: mmci: add hardware busy timeout feature
->   mmc: mmci: add busy detect for stm32 sdmmc variant
->
->  drivers/mmc/host/mmci.c | 61 ++++++++++++++++++++++++++++++++++++++-----------
->  drivers/mmc/host/mmci.h |  3 +++
->  2 files changed, 51 insertions(+), 13 deletions(-)
->
-> --
-> 2.7.4
->
+> Then it's easy to confuse genpd_status_on with genpd_is_runtime_on. How
+> about genpd_is_rpm_always_on?
 
-Ludovic, just wanted to let you know that I am reviewing and testing
-this series.
-
-However, while running some tests on Ux500 for validating the busy
-detection code, even without your series applied, I encounter some odd
-behaviors. I am looking into the problem to understand better and will
-let you know as soon as I have some more data to share.
+Even better, let's take that.
 
 Kind regards
 Uffe
