@@ -2,36 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CE1DF52E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 13:12:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E06AF538
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 13:14:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9ag7ok18NsLGJgQdvnAqH9oRu/fD7UJ9inBuSeNpW0s=; b=gLb1UyU0fR5rKS
-	Z4tMLGljQP+783rKbeDaBSj3JCyMyaMAuvDRU3T4uiQqzGRK/QGR42B4c0WYTXpQy/E957opaM/oR
-	txH79GB6UKDVZEdjzXu6DFodbfK2XG4cNSywLNIKJytvaSOv4sDv5Ox9/WBprCJ9OHFYz4gvS7D+T
-	LbsrChXNErctpfGgUi8VkgdLdoGt4hsufy5vN14ao7NoYZO6L1lYCIgA/AeE33C13tQWdFsJ0lCNr
-	hQWadY3yzOQfQh+jdgTeIAmh3JXadodUwxiHiZVnFhDexqf8MTyJ+2ad9CY+8eIg8/IXmTqMBTUG+
-	vtivNbv6w0M0iDVayilw==;
+	List-Owner; bh=siwRpLsOd3YCciQxzQbhw+TV+eKtXBd7MXnO4ee3oTE=; b=ctcqBqMxMoQHsv
+	ZfBq27OugijsSQQqqEIGcj3TZoNUfAXteYGIRQYEVa/ZB8fNruvHJxLPPUm/wLjmnMZMh593AoFxh
+	VYHSQF5CfUiqhqL2IWJifqmnD94Ag1vCkRvX5dte6JM2nqgnTdkLh30yv7dD/07dN8AN9f4dhB+X6
+	hnHa738xVh/wYoR3gLO3VWCYG6xm9U/1qukQa8dWInDv6nf3hFfb+5lvkMueCtoxfDItryj4Oh6O0
+	o9xknFZqHDGP6j0903JmH91ClzOkt/WKi2RK2x6Yl+Z6CDXIKBU7kZkvi5OGxwtqo8qz554OJ+miA
+	vJ1ovQ1gKuaMmFddKV3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLQgb-0005FG-9S; Tue, 30 Apr 2019 11:12:33 +0000
-Received: from hch by bombadil.infradead.org with local (Exim 4.90_1 #2 (Red
- Hat Linux)) id 1hLQgR-0005Dn-0q; Tue, 30 Apr 2019 11:12:23 +0000
-Date: Tue, 30 Apr 2019 04:12:22 -0700
-From: Christoph Hellwig <hch@infradead.org>
-To: Tom Murphy <tmurphy@arista.com>
-Subject: Re: [PATCH v2 3/4] iommu/dma-iommu: Use the dev->coherent_dma_mask
-Message-ID: <20190430111222.GA3191@infradead.org>
-References: <20190430002952.18909-1-tmurphy@arista.com>
- <20190430002952.18909-4-tmurphy@arista.com>
+	id 1hLQii-0005yY-IF; Tue, 30 Apr 2019 11:14:44 +0000
+Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hLQiZ-0005xs-J5
+ for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 11:14:36 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id o10so7700844vsp.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 30 Apr 2019 04:14:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=+apvPOK9hOKuyGFcfXqjcVJRX/KMiOheouDto7GSYrU=;
+ b=OlG3x6DSEKoTSrHDdX3ybp6fgR+JxEYnOW6sgWdoouyfjOMZfIZE834Z0i1m4d147e
+ yh01OWpa7Edvr5/DLSw4qqB8LMCNiX6xfb3u9ldeB5liaei3o+eamVJpoz15S4Di9YII
+ N6OoTOfeYCULR2C/P3lYgfImFJYDCIrkgWUkZczpN1A48fy5NIuyoJS3kmm+qXRQDaW7
+ fQTR+sko1QYp8Y9xuuWEQmS/WEufRgOb11yfjRtsiozp+zLSS624cIH40INcfhqvWQzF
+ 5/ZF1BLNue1OMHom1HohEH3No7Eg1JyIyx+xodFErGChH//VZmOfMLRkNZCuTkzjv/Ks
+ d+VA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=+apvPOK9hOKuyGFcfXqjcVJRX/KMiOheouDto7GSYrU=;
+ b=YUVlMReVGSKsFpU2F0MFqhLDj4Qje3b4W2bgGWgaoQGpOwhLagRY4o7I1ohHNhJqQM
+ cGVA6jv+3cRNoyuAM7TEEVgcqr8LpkyxoGlBh5VJ9C4geNc+kQhFItXmvwMKoVgPZXcn
+ mu8Bz4KsloQ3MJSie0NKOuVLd80yJ/Rs0P6OeYJyTE50c2Af6pqiMyfAYWGB87PGqbJj
+ 26VZQ13Nqn+b+Il92cxhCx3NpHh949TH+B58QSXjKAKH3ESU4uKxV5K07Q8LwRxcJ+73
+ Vj+T3zWpW9OKT+HaAzYv8b1GHvbfOu1ntapxpk3BivMclX0ZiB6GKgVDfjiff7hLzMTx
+ fnAg==
+X-Gm-Message-State: APjAAAWpMO5od/TeOKWhLZohTkoVtSvCX9kZ/rgdtjf5jQ1F8+toF/md
+ 3No5ggBpeko3c97ew7p3zbsECYqEqZqBP7DrMcq09A==
+X-Google-Smtp-Source: APXvYqyAUnACtUpQ/7yb1Sl1GxiGdH/gfNEqoAuzPz1Lm3B7D3UA4Nrusr1PmU9LKsLBG5dbHrkeoO4MOXsyUmN5ypY=
+X-Received: by 2002:a67:c987:: with SMTP id y7mr310439vsk.35.1556622874058;
+ Tue, 30 Apr 2019 04:14:34 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190430002952.18909-4-tmurphy@arista.com>
-User-Agent: Mutt/1.9.2 (2017-12-15)
+References: <1556264798-18540-1-git-send-email-ludovic.Barre@st.com>
+In-Reply-To: <1556264798-18540-1-git-send-email-ludovic.Barre@st.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Tue, 30 Apr 2019 13:13:57 +0200
+Message-ID: <CAPDyKFqbn=UcbwoH_z+yjrjvHQZaMtmsD=n0yrBV7DAK5VRJEQ@mail.gmail.com>
+Subject: Re: [PATCH V2 0/5] mmc: mmci: add busy detect for stm32 sdmmc variant
+To: Ludovic Barre <ludovic.Barre@st.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190430_041435_635436_96EBE2F6 
+X-CRM114-Status: GOOD (  13.52  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -43,135 +89,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, Will Deacon <will.deacon@arm.com>,
- David Brown <david.brown@linaro.org>,
- Thierry Reding <thierry.reding@gmail.com>, linux-s390@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>, linux-rockchip@lists.infradead.org,
- Kukjin Kim <kgene@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- Andy Gross <andy.gross@linaro.org>, linux-arm-msm@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-tegra@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, David Woodhouse <dwmw2@infradead.org>,
- linux-kernel@vger.kernel.org, murphyt7@tcd.ie,
- iommu@lists.linux-foundation.org, Robin Murphy <robin.murphy@arm.com>
+Cc: DTML <devicetree@vger.kernel.org>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
->  static dma_addr_t __iommu_dma_map(struct device *dev, phys_addr_t phys,
-> -		size_t size, int prot, struct iommu_domain *domain)
-> +		size_t size, int prot, struct iommu_domain *domain,
-> +		dma_addr_t dma_limit)
+On Fri, 26 Apr 2019 at 09:46, Ludovic Barre <ludovic.Barre@st.com> wrote:
+>
+> From: Ludovic Barre <ludovic.barre@st.com>
+>
+> This patch series adds busy detect for stm32 sdmmc variant.
+> Some adaptations are required:
+> -Avoid to check and poll busy status when is not expected.
+> -Clear busy status bit if busy_detect_flag and busy_detect_mask are
+>  different.
+> -Add hardware busy timeout with MMCIDATATIMER register.
+>
+> V2:
+> -mmci_cmd_irq cleanup in separate patch.
+> -simplify the busy_detect_flag exclude
+> -replace sdmmc specific comment in
+> "mmc: mmci: avoid fake busy polling in mmci_irq"
+> to focus on common behavior
+>
+> Ludovic Barre (5):
+>   mmc: mmci: cleanup mmci_cmd_irq for busy detect feature
+>   mmc: mmci: avoid fake busy polling in mmci_irq
+>   mmc: mmci: fix clear of busy detect status
+>   mmc: mmci: add hardware busy timeout feature
+>   mmc: mmci: add busy detect for stm32 sdmmc variant
+>
+>  drivers/mmc/host/mmci.c | 61 ++++++++++++++++++++++++++++++++++++++-----------
+>  drivers/mmc/host/mmci.h |  3 +++
+>  2 files changed, 51 insertions(+), 13 deletions(-)
+>
+> --
+> 2.7.4
+>
 
-Can we just call this dma_mask?
+Ludovic, just wanted to let you know that I am reviewing and testing
+this series.
 
->  static void iommu_dma_unmap_resource(struct device *dev, dma_addr_t handle,
-> @@ -1250,7 +1251,8 @@ static struct iommu_dma_msi_page *iommu_dma_get_msi_page(struct device *dev,
->  	if (!msi_page)
->  		return NULL;
->  
-> -	iova = __iommu_dma_map(dev, msi_addr, size, prot, domain);
-> +	iova = __iommu_dma_map(dev, msi_addr, size, prot, domain,
-> +			dma_get_mask(dev));
+However, while running some tests on Ux500 for validating the busy
+detection code, even without your series applied, I encounter some odd
+behaviors. I am looking into the problem to understand better and will
+let you know as soon as I have some more data to share.
 
-Hmm, I don't think we need the DMA mask for the MSI mapping, this
-should probably always use a 64-bit mask.  Or we could just untangle
-it from the DMA mapping fast path entire, something like:
-
----
-From 0debafc85174ca830f2e371ff8e8f7465bde3ad8 Mon Sep 17 00:00:00 2001
-From: Christoph Hellwig <hch@lst.de>
-Date: Tue, 30 Apr 2019 07:06:23 -0400
-Subject: iommu/dma: opencode __iommu_dma_map in iommu_dma_get_msi_page
-
-The MSI page mapping really is a little different from the normal DMA
-mappings and doesn't need to look at the DMA mask.  Just open code
-it instead of trying to squeeze the behavior into the DMA path helpers.
-
-Signed-off-by: Christoph Hellwig <hch@lst.de>
----
- drivers/iommu/dma-iommu.c | 27 +++++++--------------------
- 1 file changed, 7 insertions(+), 20 deletions(-)
-
-diff --git a/drivers/iommu/dma-iommu.c b/drivers/iommu/dma-iommu.c
-index 58c35bab7626..2ac0df0879d7 100644
---- a/drivers/iommu/dma-iommu.c
-+++ b/drivers/iommu/dma-iommu.c
-@@ -358,11 +358,6 @@ static dma_addr_t iommu_dma_alloc_iova(struct iommu_domain *domain,
- 	struct iova_domain *iovad = &cookie->iovad;
- 	unsigned long shift, iova_len, iova = 0;
- 
--	if (cookie->type == IOMMU_DMA_MSI_COOKIE) {
--		cookie->msi_iova += size;
--		return cookie->msi_iova - size;
--	}
--
- 	shift = iova_shift(iovad);
- 	iova_len = size >> shift;
- 	/*
-@@ -397,10 +392,7 @@ static void iommu_dma_free_iova(struct iommu_dma_cookie *cookie,
- {
- 	struct iova_domain *iovad = &cookie->iovad;
- 
--	/* The MSI case is only ever cleaning up its most recent allocation */
--	if (cookie->type == IOMMU_DMA_MSI_COOKIE)
--		cookie->msi_iova -= size;
--	else if (cookie->fq_domain)	/* non-strict mode */
-+	if (cookie->fq_domain)	/* non-strict mode */
- 		queue_iova(iovad, iova_pfn(iovad, iova),
- 				size >> iova_shift(iovad), 0);
- 	else
-@@ -430,14 +422,10 @@ static dma_addr_t __iommu_dma_map(struct device *dev, phys_addr_t phys,
- {
- 	struct iommu_domain *domain = iommu_get_dma_domain(dev);
- 	struct iommu_dma_cookie *cookie = domain->iova_cookie;
--	size_t iova_off = 0;
-+	size_t iova_off = iova_offset(&cookie->iovad, phys);
- 	dma_addr_t iova;
- 
--	if (cookie->type == IOMMU_DMA_IOVA_COOKIE) {
--		iova_off = iova_offset(&cookie->iovad, phys);
--		size = iova_align(&cookie->iovad, size + iova_off);
--	}
--
-+	size = iova_align(&cookie->iovad, size + iova_off);
- 	iova = iommu_dma_alloc_iova(domain, size, dma_get_mask(dev), dev);
- 	if (!iova)
- 		return DMA_MAPPING_ERROR;
-@@ -1121,7 +1109,6 @@ static struct iommu_dma_msi_page *iommu_dma_get_msi_page(struct device *dev,
- {
- 	struct iommu_dma_cookie *cookie = domain->iova_cookie;
- 	struct iommu_dma_msi_page *msi_page;
--	dma_addr_t iova;
- 	int prot = IOMMU_WRITE | IOMMU_NOEXEC | IOMMU_MMIO;
- 	size_t size = cookie_msi_granule(cookie);
- 
-@@ -1134,16 +1121,16 @@ static struct iommu_dma_msi_page *iommu_dma_get_msi_page(struct device *dev,
- 	if (!msi_page)
- 		return NULL;
- 
--	iova = __iommu_dma_map(dev, msi_addr, size, prot);
--	if (iova == DMA_MAPPING_ERROR)
-+	if (iommu_map(domain, cookie->msi_iova, msi_addr, size, prot))
- 		goto out_free_page;
- 
- 	INIT_LIST_HEAD(&msi_page->list);
- 	msi_page->phys = msi_addr;
--	msi_page->iova = iova;
-+	msi_page->iova = cookie->msi_iova;
- 	list_add(&msi_page->list, &cookie->msi_page_list);
--	return msi_page;
- 
-+	cookie->msi_iova += size;
-+	return msi_page;
- out_free_page:
- 	kfree(msi_page);
- 	return NULL;
--- 
-2.20.1
-
+Kind regards
+Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
