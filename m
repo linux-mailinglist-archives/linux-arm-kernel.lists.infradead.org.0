@@ -2,32 +2,31 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5089EF4DA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 12:56:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 287B8F4DC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 12:57:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Eh18SB/BR+Dda/ltegsDjCUR+JNBMlV/OKsbUcoJjuY=; b=l94uoUGp2/rTlf
-	ddZ7qwv6tu2C1uvufXB3NPQNoI87X8GtSa6SFRnqY2NZrenDWOQgDt5apES+Z8XZX+qF72xRKr3sc
-	FSDt7hLCEK39zk8rnteaKLMX51PPXuUvNnUv2PJNjiKuaQcqE1n72UbOdjHc4oW8vTMsRBjg48LTX
-	a4NLERnRNNy+rUa6mfsL3uNBe3jLvx3/pzey9DD65ixPoHMDkib5UkPHSOXC/+Qz842baAf7Nc25F
-	aDJiQ02zUdI9ZfK5PbYaJY6OHIKnJvuG2d1KkGhqbs717aoZRrleOX2tkUznNExV3twxgQN0qp302
-	aHz5X9G2KxyqKkKKthZg==;
+	List-Owner; bh=bPDHj8wkGQrQdZ0Q2XgEccgr8wgm9/zbl0JYUFfi5NE=; b=OhteOZ0UMycD31
+	PyljBSk/065DulHmclbOaf81SqEzEPwoS0qFe78UP4qz4lNPE+PfqmOdsQUf9oRklCxbaSVFW49Vx
+	2I5YtYAE6992YBhza8ViXQCaCyQvqKWhsWMp3ZfpN+9U3aV/tKRnt3PjCacwM3LGzreaw8tjKZCjO
+	YkKHLnoOAlH4/Y494LoWm9bXmR69qbhFFMquwEoBBOH93cI6tfS8xNOdBNEgjUVcHpojWDFgSvFRv
+	0DJPYwYVsxl2HtJK97V0tIg+gAUL0h2i8Rsqrj9NhH26WaU7zTiAy3mGltg3Zv7XZ92Knqi9TjPwF
+	+TOTl9krmnEvMRSAo7UA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLQRS-0005Pg-PE; Tue, 30 Apr 2019 10:56:54 +0000
+	id 1hLQRd-0005XK-69; Tue, 30 Apr 2019 10:57:05 +0000
 Received: from adsl-173-228-226-134.prtc.net ([173.228.226.134] helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLQO9-0008Dn-6m; Tue, 30 Apr 2019 10:53:29 +0000
+ id 1hLQOA-0008Ft-PN; Tue, 30 Apr 2019 10:53:31 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Robin Murphy <robin.murphy@arm.com>
-Subject: [PATCH 24/25] arm64: switch copyright boilerplace to SPDX in
- dma-mapping.c
-Date: Tue, 30 Apr 2019 06:52:13 -0400
-Message-Id: <20190430105214.24628-25-hch@lst.de>
+Subject: [PATCH 25/25] arm64: trim includes in dma-mapping.c
+Date: Tue, 30 Apr 2019 06:52:14 -0400
+Message-Id: <20190430105214.24628-26-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190430105214.24628-1-hch@lst.de>
 References: <20190430105214.24628-1-hch@lst.de>
@@ -46,46 +45,44 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Tom Lendacky <thomas.lendacky@amd.com>,
  Catalin Marinas <catalin.marinas@arm.com>, Joerg Roedel <joro@8bytes.org>,
  Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, Mukesh Ojha <mojha@codeaurora.org>,
- linux-arm-kernel@lists.infradead.org
+ iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+With most of the previous functionality now elsewhere a lot of the
+headers included in this file are not needed.
+
 Signed-off-by: Christoph Hellwig <hch@lst.de>
-Acked-by: Robin Murphy <robin.murphy@arm.com>
-Reviewed-by: Mukesh Ojha <mojha@codeaurora.org>
 ---
- arch/arm64/mm/dma-mapping.c | 15 +--------------
- 1 file changed, 1 insertion(+), 14 deletions(-)
+ arch/arm64/mm/dma-mapping.c | 10 ----------
+ 1 file changed, 10 deletions(-)
 
 diff --git a/arch/arm64/mm/dma-mapping.c b/arch/arm64/mm/dma-mapping.c
-index d1661f78eb4d..184ef9ccd69d 100644
+index 184ef9ccd69d..1669618db08a 100644
 --- a/arch/arm64/mm/dma-mapping.c
 +++ b/arch/arm64/mm/dma-mapping.c
-@@ -1,20 +1,7 @@
-+// SPDX-License-Identifier: GPL-2.0
- /*
-- * SWIOTLB-based DMA API implementation
-- *
-  * Copyright (C) 2012 ARM Ltd.
-  * Author: Catalin Marinas <catalin.marinas@arm.com>
-- *
-- * This program is free software; you can redistribute it and/or modify
-- * it under the terms of the GNU General Public License version 2 as
-- * published by the Free Software Foundation.
-- *
-- * This program is distributed in the hope that it will be useful,
-- * but WITHOUT ANY WARRANTY; without even the implied warranty of
-- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- * GNU General Public License for more details.
-- *
-- * You should have received a copy of the GNU General Public License
-- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+@@ -5,19 +5,9 @@
   */
  
  #include <linux/gfp.h>
+-#include <linux/acpi.h>
+-#include <linux/memblock.h>
+ #include <linux/cache.h>
+-#include <linux/export.h>
+-#include <linux/slab.h>
+-#include <linux/genalloc.h>
+-#include <linux/dma-direct.h>
+ #include <linux/dma-noncoherent.h>
+-#include <linux/dma-contiguous.h>
+ #include <linux/dma-iommu.h>
+-#include <linux/vmalloc.h>
+-#include <linux/swiotlb.h>
+-#include <linux/pci.h>
+ 
+ #include <asm/cacheflush.h>
+ 
 -- 
 2.20.1
 
