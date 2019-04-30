@@ -2,48 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 984BDFC2E
+	by mail.lfdr.de (Postfix) with ESMTPS id 07FBAFC2D
 	for <lists+linux-arm-kernel@lfdr.de>; Tue, 30 Apr 2019 17:06:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=L+Y8WfIM+epq1dvrVEUlKbX+GQ3YrB3yqJesgIH8Sp0=; b=auipF5xbtzt18A
-	+fmlXgPd4kKazEyv3liwxSlJLtTiBUXJHzdA70SolAaj8bMScTFW6okaDJSlxFiWfnGLtNzpr4SqQ
-	1SNH7QQaTJ9IYOQqBaQ52/v6QhNQXxh1lBb3dgLjtgxCa45jqgre47FKT3C7p64XtKkoOuhIcPSvt
-	bLAIZ3JKyEGoGkEBtBeovek6IiUSH43W5QH+gNVIJknja7xgmK1SuSkaRpZRcvtYFZHLKqoEGFhgu
-	wb5AoPEahj3AgmCnOyTikxf+2IGAlwoNjatCaK1s41XmCw7P6J8ewX6zTwHm/rhFFgC6RzDQnoJNs
-	afvzZFnDSau96XYsCPJA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FggH+ZMgMFCdWA/ymWecynSM6QwO+/MZ5KVaQk0uSp4=; b=l5xbyfKXPMMJ8e
+	6RNKTLMyxI1OxmxdaBHji/JyfFESGi8ta5iKyXho837PGjOHitPUedUs8zAAj/lXVM8TXQ/yseV03
+	WspRvp+zQmo8PF4tdTIZNfyw5faNPO+kf0hnYCOJUTY/iyOodTQdu8xZSnYHyLJ7JFqJxT54YhhPu
+	pbhGbBm27O0ROUssRyBOsjU7n8WCpIULEMUH6j/vV5lHfS/+ese9kqW2SlPQsEaQt0BHIyy5lDOOq
+	QopFcTctpGfq4S+JEqfFinbdmn5FtrOUmRuMjOXOYVRzXngq9xrOYj5gQTrsg6JIXEkHPwZTqNTLc
+	Za9DYvs1F0KbukOS9ilg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLUL4-0005Qz-7d; Tue, 30 Apr 2019 15:06:34 +0000
-Received: from mail-eopbgr150045.outbound.protection.outlook.com
- ([40.107.15.45] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+	id 1hLUKu-0005LO-Qw; Tue, 30 Apr 2019 15:06:24 +0000
+Received: from mail-eopbgr50072.outbound.protection.outlook.com ([40.107.5.72]
+ helo=EUR03-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLUKn-0005Ju-5I
+ id 1hLUKm-0005Jv-KG
  for linux-arm-kernel@lists.infradead.org; Tue, 30 Apr 2019 15:06:18 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=CdabgUnKvTa3nd+Dd0OtMspEFZUnnaVQQtE1Cnid22Q=;
- b=LsiELIrsMfPSShEokb5nXtY36ZnGDqnRodM5fSLkvtX0rDiVDlrCem43V8M1vYnQVCScA1F5rifjG4n5nPgpZYn5BGZORntEJAyoxyCb6hDWM0czr8WYy8ryOp0W5xtiKkb0A/LFG6Hw5g3Tsykn/K9R7IP0Gd20ODW/Z5dCFyU=
+ bh=ig1Wrbhoin6EXNLkp5xNBfhV8s78xH9gLtnPEZMutrQ=;
+ b=EsAuthXkizoIxqPHR5nj58R417bZ10F6nTSeNHjVU6ypx9iHnwsynoeuQY3kPhowIyb7gYpTQTC0vKAEk0BhVayL53M3RaPxOo2QM8re2cJC/C9KLXtnj5LMEpLxFTPPtST/5eZSQGLyikGaptHq+X7UK0x6y7YGdBJA67VYd1I=
 Received: from AM6PR04MB6440.eurprd04.prod.outlook.com (20.179.244.217) by
- AM6PR04MB5255.eurprd04.prod.outlook.com (20.177.33.91) with Microsoft SMTP
+ AM6PR04MB5895.eurprd04.prod.outlook.com (20.179.3.216) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1835.13; Tue, 30 Apr 2019 15:06:10 +0000
+ 15.20.1856.10; Tue, 30 Apr 2019 15:06:11 +0000
 Received: from AM6PR04MB6440.eurprd04.prod.outlook.com
  ([fe80::14c2:1e08:524c:6ff4]) by AM6PR04MB6440.eurprd04.prod.outlook.com
  ([fe80::14c2:1e08:524c:6ff4%2]) with mapi id 15.20.1856.008; Tue, 30 Apr 2019
- 15:06:10 +0000
+ 15:06:11 +0000
 From: Leonard Crestez <leonard.crestez@nxp.com>
 To: Ulf Hansson <ulf.hansson@linaro.org>, Lucas Stach
  <l.stach@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH v5 0/2] Allow imx6qp PU domain off in suspend
-Thread-Topic: [PATCH v5 0/2] Allow imx6qp PU domain off in suspend
-Thread-Index: AQHU/2Y+EE51fOgT1EWmJzyqb/2vLQ==
-Date: Tue, 30 Apr 2019 15:06:10 +0000
-Message-ID: <cover.1556636234.git.leonard.crestez@nxp.com>
+Subject: [PATCH v5 1/2] PM / Domains: Add GENPD_FLAG_RPM_ALWAYS_ON flag
+Thread-Topic: [PATCH v5 1/2] PM / Domains: Add GENPD_FLAG_RPM_ALWAYS_ON flag
+Thread-Index: AQHU/2Y/h66odknpyEW0dAeBUTxZEg==
+Date: Tue, 30 Apr 2019 15:06:11 +0000
+Message-ID: <30247a52be55c3cb31d16b8ac0710d3ad51eea09.1556636234.git.leonard.crestez@nxp.com>
+References: <cover.1556636234.git.leonard.crestez@nxp.com>
+In-Reply-To: <cover.1556636234.git.leonard.crestez@nxp.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -57,44 +59,42 @@ authentication-results: spf=none (sender IP is )
  smtp.mailfrom=leonard.crestez@nxp.com; 
 x-ms-exchange-messagesentrepresentingtype: 1
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 53c66ed2-5aea-4763-59fc-08d6cd7d611f
+x-ms-office365-filtering-correlation-id: c57fd939-aadd-4ef0-70ed-08d6cd7d61ac
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:AM6PR04MB5255; 
-x-ms-traffictypediagnostic: AM6PR04MB5255:
-x-ms-exchange-purlcount: 4
-x-microsoft-antispam-prvs: <AM6PR04MB5255BE93AF061ED0B545CA9EEE3A0@AM6PR04MB5255.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1824;
+ SRVR:AM6PR04MB5895; 
+x-ms-traffictypediagnostic: AM6PR04MB5895:
+x-microsoft-antispam-prvs: <AM6PR04MB5895E710A9B63C31332F46FCEE3A0@AM6PR04MB5895.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:5516;
 x-forefront-prvs: 00235A1EEF
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(136003)(39860400002)(346002)(366004)(376002)(189003)(199004)(2906002)(71190400001)(71200400001)(2616005)(25786009)(5660300002)(6436002)(8676002)(7736002)(15650500001)(52116002)(4744005)(110136005)(99286004)(53936002)(26005)(97736004)(305945005)(316002)(102836004)(476003)(256004)(6486002)(478600001)(66066001)(966005)(386003)(6506007)(186003)(81156014)(81166006)(73956011)(66946007)(64756008)(66476007)(8936002)(14454004)(54906003)(66556008)(68736007)(66446008)(44832011)(86362001)(50226002)(36756003)(486006)(6306002)(6512007)(4326008)(6116002)(14444005)(3846002)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR04MB5255;
+ SFS:(10009020)(396003)(136003)(376002)(366004)(346002)(39860400002)(199004)(189003)(8936002)(81156014)(25786009)(81166006)(8676002)(6486002)(36756003)(478600001)(52116002)(6116002)(68736007)(3846002)(4326008)(2906002)(186003)(305945005)(102836004)(53936002)(26005)(386003)(476003)(7736002)(2616005)(486006)(11346002)(44832011)(73956011)(76176011)(6512007)(6436002)(50226002)(6506007)(64756008)(66556008)(66446008)(66476007)(66946007)(71190400001)(14444005)(256004)(446003)(71200400001)(110136005)(54906003)(97736004)(99286004)(5660300002)(118296001)(14454004)(66066001)(316002)(86362001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR04MB5895;
  H:AM6PR04MB6440.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
+ PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: s98/metyf7DZSzLE9Dm9a9AnI9rF4OIb8YH/268Ik255nG8pVSwAV/6wVaBv91S8KBzuRH1XWxIspZYexkDTOVtwhwu8IHE2+veEHLo9cVg7zDxaHyOA5Ojp03zh9ZGX87qpFS77pZ1RimZC5juFAPpB7Dvd0PEf0L/IU/8xDgrl+J5x3B/b/U0dsXhahzQ60FEO9nOdm8BZR5UDYhJarYAhBHKy7RTvmwFDaj64m1RNrb/jQI4Ts96Ez+PsxJ6mhZsmzP/FGc+QZI7r+MWEjqUCIo38UnjSQfX9Dgdl9xIaOFSMB9EKUXKzlO4f6yNE5nb7mrqGVqMlIImZwjf1DA2IPO9Fhvi7LA/5MH5WF8VpR4zMjLCeI3PmSY13VUEyKWMTV8UexmwfE+Ot8rS0ucCbZXAOa9lhN945dtOdIo8=
+x-microsoft-antispam-message-info: +KgWLs9wjNSvj3YeU79N8EjI9BcArJgCBSyS/65m/JZ7afHF+OYsWBYXCH0AkseGzq7b64AToMGocxGllIWOSe8djPWX1zogtjrWP7ozmJX6gmNMCTlAeJCdOdjTC2T033hxzkYC4YKMeo8Bu2ADKUGGwzCqgDjBlEPJIxOTxDLbetA7WVs3sZxk6JiPzOD+dgp0WyIAxCAiFPwePk/lCNXnkcuX8FWApFeMbSjQj9oT/uxrIFJCXE/0UqYXyURRBXFP+tbLc1CH7bDmKR9Ea2jG0/q0+lO8XB9Lbm5VNqS4K8aGts7enetn0stfvJRTwfXAV6glZnr0B2nvW4i7/zWO+FUD0qw/FUNuSF3jv7oLhp/R629rGIods1811lco/IvSvFDfxdl4+qqTiE+rYpzQVe3v3zJkLLJy7kOvS50=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 53c66ed2-5aea-4763-59fc-08d6cd7d611f
-X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Apr 2019 15:06:10.5946 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: c57fd939-aadd-4ef0-70ed-08d6cd7d61ac
+X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Apr 2019 15:06:11.5252 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB5255
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB5895
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_080617_209739_3A342776 
-X-CRM114-Status: UNSURE (   9.11  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190430_080616_766567_0CF0C62C 
+X-CRM114-Status: GOOD (  15.21  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.15.45 listed in list.dnswl.org]
+ no trust [40.107.5.72 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -127,31 +127,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On imx6qp power gating on the PU domain is disabled because of errata
-ERR009619. However power gating during suspend/resume can still be
-performed.
+This is for power domains which can only be powered off for suspend but
+not as part of runtime PM.
 
-Changes since V4:
- * Rename GENPD_FLAG_NO_RUNTIME_OFF to GENPD_FLAG_RPM_ALWAYS_ON
-Link to v4: https://patchwork.kernel.org/project/linux-arm-kernel/list/?series=110829
+Suggested-by: Ulf Hansson <ulf.hansson@linaro.org>
+Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+---
+ drivers/base/power/domain.c | 8 ++++++--
+ include/linux/pm_domain.h   | 4 ++++
+ 2 files changed, 10 insertions(+), 2 deletions(-)
 
-Implemented with a new core flag because otherwise distinguishing
-between "runtime off" and "suspend off" is very complicated. Link to
-previous much older attempts:
-
-v3: https://lkml.org/lkml/2018/7/6/698
-v2: https://lkml.org/lkml/2018/7/5/564
-v1: https://lkml.org/lkml/2018/7/2/357
-
-Leonard Crestez (2):
-  PM / Domains: Add GENPD_FLAG_RPM_ALWAYS_ON flag
-  soc: imx: gpc: Use GENPD_FLAG_RPM_ALWAYS_ON for ERR009619
-
- drivers/base/power/domain.c |  8 ++++++--
- drivers/soc/imx/gpc.c       | 13 +++++++++++--
- include/linux/pm_domain.h   |  4 ++++
- 3 files changed, 21 insertions(+), 4 deletions(-)
-
+diff --git a/drivers/base/power/domain.c b/drivers/base/power/domain.c
+index 7a6aa2318915..33c30c1e6a30 100644
+--- a/drivers/base/power/domain.c
++++ b/drivers/base/power/domain.c
+@@ -126,10 +126,11 @@ static const struct genpd_lock_ops genpd_spin_ops = {
+ #define genpd_status_on(genpd)		(genpd->status == GPD_STATE_ACTIVE)
+ #define genpd_is_irq_safe(genpd)	(genpd->flags & GENPD_FLAG_IRQ_SAFE)
+ #define genpd_is_always_on(genpd)	(genpd->flags & GENPD_FLAG_ALWAYS_ON)
+ #define genpd_is_active_wakeup(genpd)	(genpd->flags & GENPD_FLAG_ACTIVE_WAKEUP)
+ #define genpd_is_cpu_domain(genpd)	(genpd->flags & GENPD_FLAG_CPU_DOMAIN)
++#define genpd_is_rpm_always_on(genpd)	(genpd->flags & GENPD_FLAG_RPM_ALWAYS_ON)
+ 
+ static inline bool irq_safe_dev_in_no_sleep_domain(struct device *dev,
+ 		const struct generic_pm_domain *genpd)
+ {
+ 	bool ret;
+@@ -513,11 +514,13 @@ static int genpd_power_off(struct generic_pm_domain *genpd, bool one_dev_on,
+ 	/*
+ 	 * Abort power off for the PM domain in the following situations:
+ 	 * (1) The domain is configured as always on.
+ 	 * (2) When the domain has a subdomain being powered on.
+ 	 */
+-	if (genpd_is_always_on(genpd) || atomic_read(&genpd->sd_count) > 0)
++	if (genpd_is_always_on(genpd) ||
++			genpd_is_rpm_always_on(genpd) ||
++			atomic_read(&genpd->sd_count) > 0)
+ 		return -EBUSY;
+ 
+ 	list_for_each_entry(pdd, &genpd->dev_list, list_node) {
+ 		enum pm_qos_flags_status stat;
+ 
+@@ -1810,11 +1813,12 @@ int pm_genpd_init(struct generic_pm_domain *genpd,
+ 		genpd->dev_ops.stop = pm_clk_suspend;
+ 		genpd->dev_ops.start = pm_clk_resume;
+ 	}
+ 
+ 	/* Always-on domains must be powered on at initialization. */
+-	if (genpd_is_always_on(genpd) && !genpd_status_on(genpd))
++	if ((genpd_is_always_on(genpd) || genpd_is_rpm_always_on(genpd)) &&
++			!genpd_status_on(genpd))
+ 		return -EINVAL;
+ 
+ 	if (genpd_is_cpu_domain(genpd) &&
+ 	    !zalloc_cpumask_var(&genpd->cpus, GFP_KERNEL))
+ 		return -ENOMEM;
+diff --git a/include/linux/pm_domain.h b/include/linux/pm_domain.h
+index 0e8e356bed6a..b21f35f0ee2e 100644
+--- a/include/linux/pm_domain.h
++++ b/include/linux/pm_domain.h
+@@ -51,16 +51,20 @@
+  *				deploy idle power management support for CPUs
+  *				and groups of CPUs. Note that, the backend
+  *				driver must then comply with the so called,
+  *				last-man-standing algorithm, for the CPUs in the
+  *				PM domain.
++ *
++ * GENPD_FLAG_RPM_ALWAYS_ON:	Instructs genpd to always keep the PM domain
++ *				powered on except for system suspend.
+  */
+ #define GENPD_FLAG_PM_CLK	 (1U << 0)
+ #define GENPD_FLAG_IRQ_SAFE	 (1U << 1)
+ #define GENPD_FLAG_ALWAYS_ON	 (1U << 2)
+ #define GENPD_FLAG_ACTIVE_WAKEUP (1U << 3)
+ #define GENPD_FLAG_CPU_DOMAIN	 (1U << 4)
++#define GENPD_FLAG_RPM_ALWAYS_ON (1U << 5)
+ 
+ enum gpd_status {
+ 	GPD_STATE_ACTIVE = 0,	/* PM domain is active */
+ 	GPD_STATE_POWER_OFF,	/* PM domain is off */
+ };
 -- 
 2.17.1
 
