@@ -2,84 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2CCF10CF2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 20:59:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B596610CF7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 21:00:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O02uQmL5p1ueYCF2oxMOpGXBBD/HJI+tLE3eZRocjJE=; b=eUR4BS/SDG2pdv
-	JFw7fJWa6NEIeNBCEBYCva757I5eB7JFjx2aNlC849xNC9gQLGYrOCxg8wq/bccGxNXRjqwA837Ia
-	TznTmnepvYonJ0r/RQNtK/fR60zI4ugtWf8LO/UvLTGPNil4BnB23VFmHQSDXdhjnlcFqAI1T4DAh
-	QtLZ2diZGEGXJdjdkLwnrBObiy50zUh6X4yboHg4u4Dl8758iiifoBZPRpzi6CpXdJDNkkiQh1/y6
-	wf7snLTMeh6dC+cDFJn8puoXAr9TgVicGIbeRs1oKFtzRLjpI7cYySu02fqvG1bG6oSBrC2V+cN2g
-	8OyTbBYbyfSPof86G+7Q==;
+	List-Owner; bh=QSfiVGhZDoV2Nrxtfo6QJCacd4RtAQfwDAVC4MXjvX0=; b=SRVkhiqBYbMktf
+	qpMGfb7d7Au0EWg+XcjDYf4PPYUO1WTyhZjOCOoMtTU/3KGjZcmYvji4p8tLldfGihi1x6ceYVXpD
+	6xFIfzwYsR9fb3uib6rcx/CcOvBPJ6VpTEGJjNEWrbzc+s7gyDcvSsC5hj8Af2jXrXZhcxrau3eui
+	h8IyTejSzvoTttoymH6GGqSiDr4KuhcU2viDfaMtWtK9ZSPjHlpagTxU/LpZcHlrQz0ASt7MNH+Rd
+	zjKJK97JxtA+Obe78+bKynddVKnHvOqHR0s0No4T/xafThlD3E7Ywzs1pqcL/7xwBB0jG/cuzZh0c
+	pi2KQv241nykPws1Sg3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLuSB-000198-84; Wed, 01 May 2019 18:59:39 +0000
+	id 1hLuTL-0003a3-KN; Wed, 01 May 2019 19:00:51 +0000
 Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLuS4-00014C-PU
- for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 18:59:34 +0000
-Received: by mail-ot1-f68.google.com with SMTP id w6so15559641otl.7
+ id 1hLuTF-0003WG-E8
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 19:00:46 +0000
+Received: by mail-ot1-f68.google.com with SMTP id o39so4303139ota.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 01 May 2019 11:59:32 -0700 (PDT)
+ Wed, 01 May 2019 12:00:45 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=z+2ax8ZyIZztFylyBB7zkL9d45BwY6plRBtZFuq3Y0w=;
- b=bMnO0uNrNYPZ/jM7SQYRxPyQak1yKiscaWNVXoaQnTS+HbsSEmagiuuofPhuxyxO8N
- Xg7s4rypKNUU9KUKJ7ptKRZD4hXsk0VpWX0yEp7khOy9l7u/VpvPq1wtuhTylz1Oi5Fp
- br4+cJHvMf5F7Lv8ctnCasggzJZy+CfAZbF5lDHlrGark0XlttGup5iHWzC/f9yvoOtO
- hduJ5tCSZmB/Zm6jvKVhIrWFRhzr0GU/9+nDT1h5P+AyhKe5cEDXngy7clSlUnhv+dKp
- YW1Hs2evMXF1EWZHTXZ5E933s+4iZc+x7z4CJuuwY59kjKdjjJ5m1f10N8qUOmKYal6h
- lnNQ==
-X-Gm-Message-State: APjAAAVAn0vbxTxi2/XtQiZt1aEoFquF1C8vPwWLge+fiEQ/jy+BXnOy
- 3KtUcMmjzw2sZSFljazXxwFIHLErcx8=
-X-Google-Smtp-Source: APXvYqzbHOnCaZ0GXzK+wjQT/uIdrjr8oe3PK+47no/V45oOWBYCBCM0plambR1leoQYY+FcWGPtEQ==
-X-Received: by 2002:a9d:19af:: with SMTP id k44mr16692468otk.300.1556737171072; 
- Wed, 01 May 2019 11:59:31 -0700 (PDT)
-Received: from mail-oi1-f179.google.com (mail-oi1-f179.google.com.
- [209.85.167.179])
- by smtp.gmail.com with ESMTPSA id r25sm15846780otk.37.2019.05.01.11.59.30
+ bh=i9+tfL6fSxYsK1rZcVSRQNqUCLp68RFEdLLJQMKSpDU=;
+ b=iFmjMVi7SZyx+3oR5JDn/ttOFQPDCeLSobFr3EypKIqqQE6eHN5ALrbuiWHN0vl09t
+ 8kEvtpqP+66SDs62yjR+GTF1MxPrFvUG0CNwxFe+hzAf7yBr73JzSZpUEiVrTrFfaPwJ
+ G///MESnEmuVIxX6o4Hznzl7i5CrWqB06z+LOmSPz9kEE16QeGSmxYPmM2BKN+rTPnwe
+ Vnp1lXJGFAs9iJv6mMVNpI4MjvoVglg9YMP7Sf9qurkbGq6pRQRiX3BEsfbZEXt5wiSc
+ bWCWLQBHx47ak4wlPUyuTGNuzSb+RUk0OB+bw+8xJ9CmsU/Rb4KnEec7R8fAGkwc3oXH
+ gI3A==
+X-Gm-Message-State: APjAAAWJFWfiEc66N4uc2+P47TWPbsj1Z+6bnM5KZCX6uudlbfhud2ua
+ XbZg6mQ3ZaCC3nEescWWezzdrodTb+k=
+X-Google-Smtp-Source: APXvYqztLawFs/uTLv78/nNMkAud8ZM2DxkpOmO4xK7lpz5Hzh9G9nlcPAm3dgmweGsSv2PpTKFp4w==
+X-Received: by 2002:a9d:6543:: with SMTP id q3mr22864910otl.370.1556737244663; 
+ Wed, 01 May 2019 12:00:44 -0700 (PDT)
+Received: from mail-ot1-f47.google.com (mail-ot1-f47.google.com.
+ [209.85.210.47])
+ by smtp.gmail.com with ESMTPSA id p205sm16542681oia.49.2019.05.01.12.00.43
  for <linux-arm-kernel@lists.infradead.org>
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 01 May 2019 11:59:30 -0700 (PDT)
-Received: by mail-oi1-f179.google.com with SMTP id y64so8991493oia.7
+ Wed, 01 May 2019 12:00:44 -0700 (PDT)
+Received: by mail-ot1-f47.google.com with SMTP id g8so14567513otl.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 01 May 2019 11:59:30 -0700 (PDT)
-X-Received: by 2002:aca:d984:: with SMTP id q126mr7776664oig.108.1556737169867; 
- Wed, 01 May 2019 11:59:29 -0700 (PDT)
+ Wed, 01 May 2019 12:00:43 -0700 (PDT)
+X-Received: by 2002:a9d:6409:: with SMTP id h9mr18431913otl.68.1556737243506; 
+ Wed, 01 May 2019 12:00:43 -0700 (PDT)
 MIME-Version: 1.0
-References: <1554475256-4805-1-git-send-email-roy.pledge@nxp.com>
-In-Reply-To: <1554475256-4805-1-git-send-email-roy.pledge@nxp.com>
+References: <1552325436-8907-1-git-send-email-roy.pledge@nxp.com>
+In-Reply-To: <1552325436-8907-1-git-send-email-roy.pledge@nxp.com>
 From: Li Yang <leoyang.li@nxp.com>
-Date: Wed, 1 May 2019 13:59:18 -0500
-X-Gmail-Original-Message-ID: <CADRPPNSLGYDGnhVfJAYk66=bP2oZVtJiynwwgLiKiAKeSseR7w@mail.gmail.com>
-Message-ID: <CADRPPNSLGYDGnhVfJAYk66=bP2oZVtJiynwwgLiKiAKeSseR7w@mail.gmail.com>
-Subject: Re: [PATCH v2 0/2] soc: fsl: dpio: Add support for memory backed
- QBMan portals
+Date: Wed, 1 May 2019 14:00:32 -0500
+X-Gmail-Original-Message-ID: <CADRPPNRgDN9O2GGd2XyVdByQ8_00MF83ZJ+P8tf13to=-FuN7g@mail.gmail.com>
+Message-ID: <CADRPPNRgDN9O2GGd2XyVdByQ8_00MF83ZJ+P8tf13to=-FuN7g@mail.gmail.com>
+Subject: Re: [PATCH] soc: fsl: dpio: Increase timeout for QBMan Management
+ Commands
 To: Roy Pledge <roy.pledge@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_115932_834372_3747F49F 
-X-CRM114-Status: GOOD (  16.09  )
+X-CRM114-CacheID: sfid-20190501_120045_473491_D3376C76 
+X-CRM114-Status: GOOD (  17.13  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pku.leo[at]gmail.com)
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [209.85.210.68 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (pku.leo[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
  0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
@@ -94,50 +94,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "stuyoder@gmail.com" <stuyoder@gmail.com>,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>
+Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, Youri Querry <youri.querry_1@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 5, 2019 at 9:42 AM Roy Pledge <roy.pledge@nxp.com> wrote:
+On Mon, Mar 11, 2019 at 12:32 PM Roy Pledge <roy.pledge@nxp.com> wrote:
 >
-> This patch series adds support for QBMan memory backed portals which is
-> avaialble in devices containing QBMan verion 5.0 and above (for example
-> NXP's LX2160A SoC).
+> From: Youri Querry <youri.querry_1@nxp.com>
 >
-> Memory backed portals can be mapped as normal cacheable/shareable memory
-> which allows the portals to migrate between cores without needing manual
-> cache manipulations by the CPU.
+> The timeout for QBMan Management Commands can falsely trigger on a
+> busy system. This patch doubles the timeout to avoid the
+> false error reports
 >
-> The patches add support for the new portal attributes in the fsl-mc bus
-> drivers as well as modifying the QBMan driver to use the new portal read
-> trigger mechanism.
->
-> Changes since v1:
->  * Support older DPRC command in case of older MC firmware
->  * Fix issue with padding in command
->
->
-> Roy Pledge (2):
->   bus: mc-bus: Add support for mapping shareable portals
->   soc: fsl: dpio: Add support for memory backed QBMan portals
+> Signed-off-by: Youri Querry <youri.querry_1@nxp.com>
+> Signed-off-by: Roy Pledge <roy.pledge@nxp.com>
 
-Both applied for next.  Thanks.
+Applied for next.  Thanks.
 
+> ---
+>  drivers/soc/fsl/dpio/qbman-portal.h | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
 >
->  drivers/bus/fsl-mc/dprc.c           |  30 +++++++-
->  drivers/bus/fsl-mc/fsl-mc-bus.c     |  15 +++-
->  drivers/bus/fsl-mc/fsl-mc-private.h |  17 ++++-
->  drivers/soc/fsl/dpio/dpio-driver.c  |  23 ++++--
->  drivers/soc/fsl/dpio/qbman-portal.c | 148 ++++++++++++++++++++++++++++++------
->  drivers/soc/fsl/dpio/qbman-portal.h |   5 ++
->  6 files changed, 199 insertions(+), 39 deletions(-)
+> diff --git a/drivers/soc/fsl/dpio/qbman-portal.h b/drivers/soc/fsl/dpio/qbman-portal.h
+> index 78c700e..f3ec5d2 100644
+> --- a/drivers/soc/fsl/dpio/qbman-portal.h
+> +++ b/drivers/soc/fsl/dpio/qbman-portal.h
+> @@ -1,7 +1,7 @@
+>  /* SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause) */
+>  /*
+>   * Copyright (C) 2014-2016 Freescale Semiconductor, Inc.
+> - * Copyright 2016 NXP
+> + * Copyright 2016-2019 NXP
+>   *
+>   */
+>  #ifndef __FSL_QBMAN_PORTAL_H
+> @@ -433,7 +433,7 @@ static inline int qbman_swp_CDAN_set_context_enable(struct qbman_swp *s,
+>  static inline void *qbman_swp_mc_complete(struct qbman_swp *swp, void *cmd,
+>                                           u8 cmd_verb)
+>  {
+> -       int loopvar = 1000;
+> +       int loopvar = 2000;
+>
+>         qbman_swp_mc_submit(swp, cmd, cmd_verb);
 >
 > --
 > 2.7.4
