@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C78EA10D99
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 21:57:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8862210D9A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 21:57:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,85 +11,84 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:In-Reply-To:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Yu30cNYdAv1e2+f3gmr/3XVhXbjpbMrl+ffEHeFouds=; b=clfZSflReZmS963pBKAV0wKeNZ
-	jIhh+se1N/XfDE6vNBZ8Hq7HcaskSIDJ/Xuc2dl1lmvniO4kqdHKQzO1VfaBXyR4YRTE7b0vMCtj/
-	vuKpEZHsgIOCA2+YXcvG//tnor1ucyJz8++H9+JtKNLxbSNsc3iOexVBBqZhijfSKoaS6+fgE6j1i
-	VJFqmcz5rkI8bqLPzdnDW1BPDWgMBt/Ifgkssf53UTNbQf+0U+tfWWiw70co+O3i0rWbWXJTFdh2l
-	p0uhy2G37HPtdFLLE6zsnW5im97aBPqtpEIV0aQrfznrydZjGayy6r2soGB1894TllB0fndv2BrlY
-	jieeYmKg==;
+	bh=ph63BMcnfO/saDkIi5BpRNDz9NCHMkmHxv9vmw7sDxQ=; b=pE4foK3/FvvEDOtNUYkN/Bebgd
+	60Fqt1oHAJjs7zdn1fI/oNQ14IGm7QardYTNHDevewnHGQ7qa7QyBfIUH6EjrSCtxujZSPcDOhViT
+	bUdIaqG6NFmnANng612gSeToODdh+HfoEXu5na2SLtM+EyDkiCDc4VRUtERlnUHNzMlmSay4NnIQR
+	LUcS3clPqmS1JJhNL8iKO7GpC1RBhiLBArJor8aIrSoO9/JaJ6LzPGRPGBSIEMsZsmSjka/oEWF1/
+	9UIDPE0TKxGrF0pwqDEDqNMZF2whH0yM3jhyzSo31NcizghLkoxz/yy/2iVn7HnAa7I6TO7okgYqD
+	mbngiPDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLvLd-0007FU-Nq; Wed, 01 May 2019 19:56:57 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1hLvLn-0007UD-0K; Wed, 01 May 2019 19:57:07 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLvLL-0006zv-FH
- for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 19:56:40 +0000
-Received: from pps.filterd (m0098414.ppops.net [127.0.0.1])
- by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x41JqFOc141231
- for <linux-arm-kernel@lists.infradead.org>; Wed, 1 May 2019 15:56:38 -0400
-Received: from e06smtp02.uk.ibm.com (e06smtp02.uk.ibm.com [195.75.94.98])
- by mx0b-001b2d01.pphosted.com with ESMTP id 2s7hq7rp78-1
+ id 1hLvLS-0007AA-3t
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 19:56:50 +0000
+Received: from pps.filterd (m0098410.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x41Jqn4G120138
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 1 May 2019 15:56:44 -0400
+Received: from e06smtp07.uk.ibm.com (e06smtp07.uk.ibm.com [195.75.94.103])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2s7eeh1fm4-1
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Wed, 01 May 2019 15:56:38 -0400
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 01 May 2019 15:56:44 -0400
 Received: from localhost
- by e06smtp02.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ by e06smtp07.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
  Violators will be prosecuted
  for <linux-arm-kernel@lists.infradead.org> from <rppt@linux.ibm.com>;
- Wed, 1 May 2019 20:56:36 +0100
-Received: from b06cxnps4076.portsmouth.uk.ibm.com (9.149.109.198)
- by e06smtp02.uk.ibm.com (192.168.101.132) with IBM ESMTP SMTP Gateway:
+ Wed, 1 May 2019 20:56:41 +0100
+Received: from b06cxnps4075.portsmouth.uk.ibm.com (9.149.109.197)
+ by e06smtp07.uk.ibm.com (192.168.101.137) with IBM ESMTP SMTP Gateway:
  Authorized Use Only! Violators will be prosecuted; 
  (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Wed, 1 May 2019 20:56:33 +0100
-Received: from b06wcsmtp001.portsmouth.uk.ibm.com
- (b06wcsmtp001.portsmouth.uk.ibm.com [9.149.105.160])
- by b06cxnps4076.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x41JuXfo48889916
+ Wed, 1 May 2019 20:56:38 +0100
+Received: from d06av24.portsmouth.uk.ibm.com (d06av24.portsmouth.uk.ibm.com
+ [9.149.105.60])
+ by b06cxnps4075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x41Jubuk48365568
  (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 1 May 2019 19:56:33 GMT
-Received: from b06wcsmtp001.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id EC7F8A4054;
- Wed,  1 May 2019 19:56:32 +0000 (GMT)
-Received: from b06wcsmtp001.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id BF155A405C;
- Wed,  1 May 2019 19:56:29 +0000 (GMT)
+ Wed, 1 May 2019 19:56:37 GMT
+Received: from d06av24.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 9BE3842049;
+ Wed,  1 May 2019 19:56:37 +0000 (GMT)
+Received: from d06av24.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 7CAD542047;
+ Wed,  1 May 2019 19:56:34 +0000 (GMT)
 Received: from rapoport-lnx (unknown [9.148.205.12])
- by b06wcsmtp001.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
- Wed,  1 May 2019 19:56:29 +0000 (GMT)
+ by d06av24.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
+ Wed,  1 May 2019 19:56:34 +0000 (GMT)
 Received: by rapoport-lnx (sSMTP sendmail emulation);
- Wed, 01 May 2019 22:56:28 +0300
+ Wed, 01 May 2019 22:56:33 +0300
 From: Mike Rapoport <rppt@linux.ibm.com>
 To: Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH 2/3] s390: remove ARCH_SELECT_MEMORY_MODEL
-Date: Wed,  1 May 2019 22:56:16 +0300
+Subject: [PATCH 3/3] sparc: remove ARCH_SELECT_MEMORY_MODEL
+Date: Wed,  1 May 2019 22:56:17 +0300
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1556740577-4140-1-git-send-email-rppt@linux.ibm.com>
 References: <1556740577-4140-1-git-send-email-rppt@linux.ibm.com>
 X-TM-AS-GCONF: 00
-x-cbid: 19050119-0008-0000-0000-000002E24BDE
+x-cbid: 19050119-0028-0000-0000-00000369516B
 X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19050119-0009-0000-0000-0000224EB7A8
-Message-Id: <1556740577-4140-3-git-send-email-rppt@linux.ibm.com>
+x-cbparentid: 19050119-0029-0000-0000-00002428BA52
+Message-Id: <1556740577-4140-4-git-send-email-rppt@linux.ibm.com>
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2019-05-01_09:, , signatures=0
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
  priorityscore=1501
  malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
  clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=971 adultscore=0 classifier=spam adjust=0 reason=mlx
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
  scancount=1 engine=8.0.1-1810050000 definitions=main-1905010124
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_125639_633362_92D4E94D 
-X-CRM114-Status: GOOD (  20.33  )
+X-CRM114-CacheID: sfid-20190501_125646_631315_22606BBB 
+X-CRM114-Status: GOOD (  19.80  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
+ low trust [148.163.156.1 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.7 KHOP_DYNAMIC           Relay looks like a dynamic address
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -117,33 +116,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The only reason s390 has ARCH_SELECT_MEMORY_MODEL option in
-arch/s390/Kconfig is an ancient compile error with allnoconfig which was
-fixed by commit 97195d6b411f ("[S390] fix sparsemem related compile error
-with allnoconfig on s390") by adding the ARCH_SELECT_MEMORY_MODEL option.
+The ARCH_SELECT_MEMORY_MODEL option is enabled only for 64-bit. However,
+64-bit configuration also enables ARCH_SPARSEMEM_DEFAULT and there is no
+ARCH_FLATMEM_ENABLE in arch/sparc/Kconfig.
 
-Since then a lot have changed and now allnoconfig builds just fine without
-ARCH_SELECT_MEMORY_MODEL, so it can be removed.
+With such settings, the dependencies in mm/Kconfig are always evaluated to
+SPARSEMEM=y for 64-bit and to FLATMEM=y for 32-bit.
+
+The ARCH_SELECT_MEMORY_MODEL option in arch/sparc/Kconfig does not affect
+anything and can be removed.
 
 Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
 ---
- arch/s390/Kconfig | 3 ---
+ arch/sparc/Kconfig | 3 ---
  1 file changed, 3 deletions(-)
 
-diff --git a/arch/s390/Kconfig b/arch/s390/Kconfig
-index b6e3d06..69d3956 100644
---- a/arch/s390/Kconfig
-+++ b/arch/s390/Kconfig
-@@ -621,9 +621,6 @@ config ARCH_SPARSEMEM_ENABLE
- config ARCH_SPARSEMEM_DEFAULT
+diff --git a/arch/sparc/Kconfig b/arch/sparc/Kconfig
+index 40f8f4f..9137dbe 100644
+--- a/arch/sparc/Kconfig
++++ b/arch/sparc/Kconfig
+@@ -305,9 +305,6 @@ config NODES_SPAN_OTHER_NODES
  	def_bool y
+ 	depends on NEED_MULTIPLE_NODES
  
 -config ARCH_SELECT_MEMORY_MODEL
--	def_bool y
+-	def_bool y if SPARC64
 -
- config ARCH_ENABLE_MEMORY_HOTPLUG
- 	def_bool y if SPARSEMEM
- 
+ config ARCH_SPARSEMEM_ENABLE
+ 	def_bool y if SPARC64
+ 	select SPARSEMEM_VMEMMAP_ENABLE
 -- 
 2.7.4
 
