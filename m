@@ -2,57 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 461F310697
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 11:49:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C98F51069B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 11:50:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mc2dNs4YoGZ42fATh1sXssDn3JXV9o5ZIno/g5T1BTw=; b=TdLaNDbI+Co5cF
-	t6eTfcjOmt/3ljybyyiTpyAYQwmdq8n6grgMntfwfhUzJ8Cmo8pvJBAO4hIWjqcT1qe+gjV5vDEJW
-	SPH/fmzJ0IJozLdR4/vT3ZZ4HuiVlIs/IAXkT8o17TJfTrpfCH6hWbe/9bLj3GRhQ/vyV2Ha1mlG5
-	r2nSlSvOayI+o4nHAnU6kJ+kUjzKEZniXCz/rH8nKxKC+xhmLt/1iI3YN1QcWgF3nHW1pV5I1szEy
-	SISttZby7ZrVMtdjIMl0oVUucG7Iv3l46oe8VbZS9BOxNl//HdHgBLRZ3gpVvD7TGpvHj1lMAxari
-	V8izmKsKzNfCavB8w/fQ==;
+	List-Owner; bh=oZMXftuFPkxmHvbLysSCugcQiHBa8wYWxOOfJvYDcnk=; b=Wb/tx7O2AQc0T/
+	5hHXtv2v5HdyM2fmFPCFYdu3QnQBVETrvGAItvaow/HACiMVP6p14cIKEFJSOSTooBQjL6ikoUO08
+	LOfE3/NzTNVEAmyoAtRJQx983AfHNatr3Z9/vHZvY9FBz/kY5udpDxqDNKM0Mxrs+4h4rb+XNYuzQ
+	X2tBnUJAgADcaUg2RVeatU+TkbFEYWDKpoYQxyTGhjixOl+G/T8PKjjEWyQyCh0z+aWMbSGRNE3vd
+	QoXsPSnVQ7+hE8qoAxRv02G4HfRQ5GWq2pXdy5eMD/+vHO3th35cSjN36+QfLmM4JaGrdSwxh0tet
+	SdeMSVSzi0N7RHEL08NQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLlrm-0006TO-Nc; Wed, 01 May 2019 09:49:30 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLlqt-0005XC-Sn
- for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 09:48:42 +0000
-Received: from DGGEMS412-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id C6025F73C997A760BED0;
- Wed,  1 May 2019 17:48:19 +0800 (CST)
-Received: from HGHY2Y004646261.china.huawei.com (10.184.12.158) by
- DGGEMS412-HUB.china.huawei.com (10.3.19.212) with Microsoft SMTP Server id
- 14.3.439.0; Wed, 1 May 2019 17:48:10 +0800
-From: Zenghui Yu <yuzenghui@huawei.com>
-To: <linux-arm-kernel@lists.infradead.org>, <kvmarm@lists.cs.columbia.edu>,
- <linux-kernel@vger.kernel.org>, <kvm@vger.kernel.org>
-Subject: [PATCH 5/5] KVM: arm/arm64: Add support for creating PMD contiguous
- hugepages at stage2
-Date: Wed, 1 May 2019 09:44:27 +0000
-Message-ID: <1556703867-22396-6-git-send-email-yuzenghui@huawei.com>
-X-Mailer: git-send-email 2.6.4.windows.1
-In-Reply-To: <1556703867-22396-1-git-send-email-yuzenghui@huawei.com>
-References: <1556703867-22396-1-git-send-email-yuzenghui@huawei.com>
+	id 1hLlsU-0007K4-9I; Wed, 01 May 2019 09:50:14 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hLlsI-00072n-Fe
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 09:50:04 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8BDAFA78;
+ Wed,  1 May 2019 02:50:01 -0700 (PDT)
+Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CE70D3F719;
+ Wed,  1 May 2019 02:49:59 -0700 (PDT)
+Date: Wed, 1 May 2019 10:49:53 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Sodagudi Prasad <psodagud@codeaurora.org>
+Subject: Re: PSCI version 1.1 and SYSTEM_RESET2
+Message-ID: <20190501094953.GA21851@e107155-lin>
+References: <24970f7101952f347bd4046c9a980473@codeaurora.org>
+ <efee74624f986a358b8986ae3085fba2@codeaurora.org>
 MIME-Version: 1.0
-X-Originating-IP: [10.184.12.158]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <efee74624f986a358b8986ae3085fba2@codeaurora.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_024837_121855_2E636FF6 
-X-CRM114-Status: GOOD (  12.01  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190501_025002_727199_B1BEFA22 
+X-CRM114-Status: GOOD (  18.20  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -65,124 +62,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: julien.thierry@arm.com, marc.zyngier@arm.com, catalin.marinas@arm.com,
- suzuki.poulose@arm.com, will.deacon@arm.com, christoffer.dall@arm.com,
- linux@armlinux.org.uk, james.morse@arm.com, Zenghui Yu <yuzenghui@huawei.com>,
- wanghaibin.wang@huawei.com, steve.capper@arm.com
+Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, julien.thierry@arm.com,
+ catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-With this patch, we now support PMD contiguous hugepages at stage2, with
-following additional page size at stage2:
+On Tue, Apr 30, 2019 at 05:07:31PM -0700, Sodagudi Prasad wrote:
+> On 2019-04-30 14:44, Sodagudi Prasad wrote:
+> +Sudeep
+>
+> > Hi Mark/Will,
+> >
+> > I would like to understand whether ARM linux community have plans to
+> > support PSCI version 1.1 or not.
+> > PSCI_1_1 specification introduced support for SYSTEM_RESET2 command
+> > and this new command helps mobile devices to SYSTEM_WARM_RESET
+> > support. Rebooting devices with warm reboot helps to capture the
+> > snapshot of the ram contents for post-mortem analysis.
+>
+> I think, there is a recent discussion from Sudeep for the SYSTEM_RESET2
+> support.
+> https://patchwork.kernel.org/patch/10884345/
+>
 
-                CONT PMD
-                --------
- 4K granule:      32M
-16K granule:       1G
-64K granule:      16G
+This has landed in -next, and hopefully must appear in v5.2
 
-Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
----
- virt/kvm/arm/mmu.c | 66 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 66 insertions(+)
+>
+> Hi Sudeep,
+>
+> I was going through your discussion in the below list -
+> https://lore.kernel.org/lkml/d73d3580-4ec1-a281-4585-5c776fc08c79@xilinx.com/
+>
+> There is no provision to set up reboot mode dynamically instead kernel
+> command line parameter.
+> Looking for options to reboot device with warm reboot option when kernel
+> crashed.
+>
+> panic() --> emergency_restart() --> machine_emergency_restart() -->
+> machine_restart(NULL);
+>
+> It would nice if there is a config option to reboot the device either in
+> warm or cold in the case of kernel panic.
 
-diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
-index fdd6314..7173589 100644
---- a/virt/kvm/arm/mmu.c
-+++ b/virt/kvm/arm/mmu.c
-@@ -1125,6 +1125,66 @@ static pte_t *stage2_get_pte(struct kvm *kvm, struct kvm_mmu_memory_cache *cache
- 	return pte_offset_kernel(pmd, addr);
- }
- 
-+static inline pgprot_t pmd_pgprot(pmd_t pmd)
-+{
-+	unsigned long pfn = pmd_pfn(pmd);
-+
-+	return __pgprot(pmd_val(pfn_pmd(pfn, __pgprot(0))) ^ pmd_val(pmd));
-+}
-+
-+static int stage2_set_cont_pmds(struct kvm *kvm, struct kvm_mmu_memory_cache
-+				*cache, phys_addr_t addr, const pmd_t *new_pmd)
-+{
-+	pmd_t *pmd, old_pmd;
-+	unsigned long pfn, dpfn;
-+	int i;
-+	pgprot_t hugeprot;
-+	phys_addr_t baddr;
-+
-+	/* Start with the first pmd. */
-+	addr &= CONT_PMD_MASK;
-+	pfn = pmd_pfn(*new_pmd);
-+	dpfn = PMD_SIZE >> PAGE_SHIFT;
-+	hugeprot = pmd_pgprot(*new_pmd);
-+
-+retry:
-+	pmd = stage2_get_pmd(kvm, cache, addr);
-+	VM_BUG_ON(!pmd);
-+
-+	old_pmd = *pmd;
-+
-+	/* Skip page table update if there is no change */
-+	if (pmd_val(old_pmd) == pmd_val(*new_pmd))
-+		return 0;
-+
-+	/*
-+	 * baddr and the following loop is for only one scenario:
-+	 * logging cancel ... Can we do it better?
-+	 */
-+	baddr = addr;
-+	for (i = 0; i < CONT_PMDS; i++, pmd++, baddr += PMD_SIZE) {
-+		if (pmd_present(*pmd) && !pmd_thp_or_huge(*pmd)) {
-+			unmap_stage2_range(kvm, baddr, S2_PMD_SIZE);
-+			goto retry;
-+		}
-+	}
-+
-+	pmd = stage2_get_pmd(kvm, cache, addr);
-+
-+	for (i = 0; i < CONT_PMDS; i++, pmd++, addr += PMD_SIZE, pfn += dpfn) {
-+		if (pmd_present(old_pmd)) {
-+			pmd_clear(pmd);
-+			kvm_tlb_flush_vmid_ipa(kvm, addr);
-+		} else {
-+			get_page(virt_to_page(pmd));
-+		}
-+
-+		kvm_set_pmd(pmd, pfn_pmd(pfn, hugeprot));
-+	}
-+
-+	return 0;
-+}
-+
- static int stage2_set_pmd_huge(struct kvm *kvm, struct kvm_mmu_memory_cache
- 			       *cache, phys_addr_t addr, const pmd_t *new_pmd)
- {
-@@ -1894,6 +1954,7 @@ static int user_mem_abort(struct kvm_vcpu *vcpu, phys_addr_t fault_ipa,
- 	 * 3 levels, i.e, PMD is not folded.
- 	 */
- 	if (vma_pagesize == CONT_PTE_SIZE || vma_pagesize == PMD_SIZE ||
-+	    vma_pagesize == CONT_PMD_SIZE ||
- 	    (vma_pagesize == PUD_SIZE && kvm_stage2_has_pmd(kvm)))
- 		gfn = (fault_ipa & huge_page_mask(hstate_vma(vma))) >> PAGE_SHIFT;
- 	up_read(&current->mm->mmap_sem);
-@@ -1982,6 +2043,11 @@ static int user_mem_abort(struct kvm_vcpu *vcpu, phys_addr_t fault_ipa,
- 						 needs_exec);
- 
- 		ret = stage2_set_pud_huge(kvm, memcache, fault_ipa, &new_pud);
-+	} else if (vma_pagesize == CONT_PMD_SIZE) {
-+		pmd_t new_pmd = stage2_build_pmd(pfn, mem_type, writable,
-+						 needs_exec, true);
-+
-+		ret = stage2_set_cont_pmds(kvm, memcache, fault_ipa, &new_pmd);
- 	} else if (vma_pagesize == PMD_SIZE) {
- 		pmd_t new_pmd = stage2_build_pmd(pfn, mem_type, writable,
- 						 needs_exec, false);
--- 
-1.8.3.1
+I presume you prefer to do warm boot in case of panic to get a dump of
+the memory to inspect ? If so, is kexec/kdump not the mechanism to
+achieve that ?
 
+I am just trying to understand the use case. Xilinx asked for the same
+but never got to understand their use case.
 
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
