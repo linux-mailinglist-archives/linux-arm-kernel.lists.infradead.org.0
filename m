@@ -2,76 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1596B10A28
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 17:35:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7200D10A38
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 17:41:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gte/rE2c9Pwfdup8jmUvDSlABLhslBnfO52SCrIIB10=; b=Fwuo+KGDon9vdg
-	OEs6jsAzzdBLO1auinah8VCqbEzPfKH2ZCQ2AKIQUUIlMdBHb/RtgEHDd8OdJN8EVKfdv3QCvpBSy
-	6iJLfa3EflNaq62TAqq5q+s9X8nEDMlStW3HFWlmOgE57MJyyw/oTfRZIjLSjzLqBo5roon6PIjYy
-	owfb1ycQEi52QXWjjhmhF8VCbUlfYYXWyjefZtHiEjCpnxi5aXoAMr3L18ypDm6APHP9Hmer34bZk
-	k1RZFbuYJ831OTSVFSqhaV1t8r4xmoaTYKOYbPA/hsQbfacaNh1FZ734zm6WlFuqq/6HTHyVw1Fie
-	M3FLIGSCQitCKZeRCT9w==;
+	List-Owner; bh=Yew5JjAzNa8jZ36MOSekCcjLUqdQunCGvsPCk3lQf1U=; b=KzkDIbXj7fTs1l
+	IwOabyix22PssQOBeQbhRvWoAF4trRZYkP5OIzJOyx47dZ06h8COZG84Weqxo7KNvQUTgt4gu8JnE
+	hEWcvzxllCtR+c8LRjyKTI6LalT8DIKq7yGYwgvq/31KYBDF7NgdM1Dp1gTBJpMDF1uGUkk8nYg6N
+	G39yLlpvNV3//ih/oHO1gp0ZFLIjuzqcuB6Ca6gIT7fFIzN6t2gqynE0ryTJ2ycMJDDxYjYxpS5F7
+	kwIe8aLMwfJLSjwqVHduwQfvaUp0OCPuYXhtoHsUh60r90/IPKXBXSVcSTwXXtRE2IQ8cGMaZmCUM
+	QZA2wdPbWFRxebsEBTbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLrGT-0005W1-0K; Wed, 01 May 2019 15:35:21 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hLrMR-0007Ja-S8; Wed, 01 May 2019 15:41:31 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLrGM-0005Va-8b
- for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 15:35:15 +0000
-Received: by mail-pg1-x543.google.com with SMTP id i21so4997998pgi.12
+ id 1hLrML-0007JF-7O
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 15:41:26 +0000
+Received: by mail-pg1-x542.google.com with SMTP id j26so8461200pgl.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 01 May 2019 08:35:13 -0700 (PDT)
+ Wed, 01 May 2019 08:41:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kgmmbX11duKut5f1yf/akLjshjYvHQVrE54CwkSmvqs=;
- b=polivYvSvbIKLB3JVQUPsaiqqenkFleCf8AHLLIyPYMeKU2ZMncFTvzayCGMFIYYHG
- xJ6GqUmT8zTAyZlfKu8ZWhqjwyOCMoHYnxe79kV9NGwZkuhpGQYeQ7poU5FiH2fI+ItV
- lwM6zw1VfJAJT77/sZad4CY72mywRyA1zOOz4xu6FxqnppGA8KpJly+2rihORfLeoZLt
- 7gF3le104L9SFwiygI7YG3qbEHLHPPkWb7TUyo16IRF0lmirB/a/eJgGoDbpS7wOGs6u
- FXIg7adWM1XbD89jWA+aI01oTwP0IITvflH4NcQu6+/eC3ZwHIhqNuo9UqXxsKoLts3o
- ta0A==
+ :cc; bh=Z9Jk9f5GRyVp8LwJQr63Ueksfq6d8UWo5ZdkS2e4C5Q=;
+ b=pUGtFJa+YB3mWZM+HAUSk09dKbR7DFVrhScOIWdcA5l6TBTa2wRlPXW9Jk6SUnAfFC
+ WgszkMgkRhYZ5REx8i3n/BFJUqlSjO3VQCoxmE9IGD2RT4iyCHvenKGE6dLXnENR8k9k
+ x6mVHku40atbRzdKP24xZVggr6BbJiDDh7P/iWTWEWRpYleYP/EutRJ6Jz4vsjJCfV73
+ gE5Ra8+d2aTvDJiFxg3YCSvrhnRJGwgZ61CiaL/gQaAUQG43gXpNW/sisqUgJmk9bTTp
+ xzwYvbmjh3k28DOi4P52NNGArzpAArt79bkc4NpH2RparU6YBSbk/pRVmkn2TB2eXkWV
+ fidQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=kgmmbX11duKut5f1yf/akLjshjYvHQVrE54CwkSmvqs=;
- b=QpiA9jbFLZsAqjpkVbta9EF4FKYU06y1Au9HGxRhvfp5+bBHNesxU6lMDXMEqO0xEb
- EpcENud893HexJUu38RsgHc67lDvAfuZo5vZ9kWtcfzxwV++tka0jdlt9pXbuTMosaOS
- MRG6L305BU6Q9KjL2T8SUL7tPqNr9uXxrzG0b4a48VxxF/l2VDn70anR6RL+QTMCQzTM
- JWqXcdAzbdiSEoq2Wmn2I4lUxPLi12sDeNlfm731QctD/gph4xvMPrdciDmozBZx17s/
- AkfKBsRyIMWtMSJRROuuD6viSn+fdBJrgkebZw+4DB8YSMx4t1UxXsCfomhk1CoiHe/S
- IHAw==
-X-Gm-Message-State: APjAAAUQvHQ2V3hRu7DRek8ABwLBMUWZgP7bC55rzWfkfwBw9tszCoR+
- D32/yL+U0QWAR0/0cVN8pqEG8B3TPV8Dx+QRG2o=
-X-Google-Smtp-Source: APXvYqzy43+x8L9pDbTCt0Zr3sBdD7BiqN5VG8r/buWa1KkQmflmjUsdR7Zg8m5fiMZyQ2qnaTJ5MWVa0XZSmoPiwiM=
-X-Received: by 2002:a63:f212:: with SMTP id v18mr69367043pgh.231.1556724913015; 
- Wed, 01 May 2019 08:35:13 -0700 (PDT)
+ bh=Z9Jk9f5GRyVp8LwJQr63Ueksfq6d8UWo5ZdkS2e4C5Q=;
+ b=e5xqhMcvF4vwh7482Wwa986+KWJmH5+/nuwi2WTm6caLtYEzf0gRFT4qOHDuh5M2f8
+ CMvm4/c2rwfQBokqdTZvQrNxG2pubnM27h4TZo4RcFDQJQgKM8+69Lr921sp7wfZSOC0
+ VktPmxE+MxVikBYKLEq3YYWdLjvUuj6kNM0+GcqS3mDOuSophALNCVeVOIJcWHSWD8mD
+ EG3LJ/YxFd/eJvkXCkLFb56PrNFidu5F2Ij3Q6lzXJc8WtbVjOhxlt2l1zi35pyQS4C/
+ 9sz0lOa2kjBHL5meoWFrkTbJuTbypJJRA/Z7qak6z1RaG1d68sLX3Tn2tOUNHxJutrkJ
+ YsqA==
+X-Gm-Message-State: APjAAAUVCo4ypmec3rHEeTNYpt+bgwh1+hmIncy8GGgKfEdCuVC9Hy7X
+ WQRGXRxs0j/WOL1oPb6fTksSgQ+zeJV05qcu6Z8=
+X-Google-Smtp-Source: APXvYqwTzicPPLPet3+UmO2HcborhdtkQ4PO7SRbsVyx3T3dAQWyJ1xvVtmZt/hOK7v/k9gEIMPAjmbD75fREeTsRAM=
+X-Received: by 2002:a62:a513:: with SMTP id v19mr78245243pfm.212.1556725284311; 
+ Wed, 01 May 2019 08:41:24 -0700 (PDT)
 MIME-Version: 1.0
 References: <1556724043-3961-1-git-send-email-Frank.Li@nxp.com>
  <1556724043-3961-2-git-send-email-Frank.Li@nxp.com>
  <20190501152437.GA28109@fuggles.cambridge.arm.com>
-In-Reply-To: <20190501152437.GA28109@fuggles.cambridge.arm.com>
+ <CAHrpEqQYhg_aRt7qukkTzT3pEzLqg-B0YJL1Z7T06iZV1JAxmQ@mail.gmail.com>
+In-Reply-To: <CAHrpEqQYhg_aRt7qukkTzT3pEzLqg-B0YJL1Z7T06iZV1JAxmQ@mail.gmail.com>
 From: Zhi Li <lznuaa@gmail.com>
-Date: Wed, 1 May 2019 10:35:01 -0500
-Message-ID: <CAHrpEqQYhg_aRt7qukkTzT3pEzLqg-B0YJL1Z7T06iZV1JAxmQ@mail.gmail.com>
+Date: Wed, 1 May 2019 10:41:13 -0500
+Message-ID: <CAHrpEqQON_M3LC6KtZCaRt4ShhREyY-ZA=-_cRpHxAaz46bvQA@mail.gmail.com>
 Subject: Re: [PATCH V11 2/4] drivers/perf: imx_ddr: Add ddr performance
  counter support
 To: Will Deacon <will.deacon@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_083514_308590_D5E16F6D 
-X-CRM114-Status: GOOD (  10.32  )
+X-CRM114-CacheID: sfid-20190501_084125_268252_28D4187E 
+X-CRM114-Status: GOOD (  11.04  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (lznuaa[at]gmail.com)
@@ -109,41 +110,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 1, 2019 at 10:24 AM Will Deacon <will.deacon@arm.com> wrote:
+On Wed, May 1, 2019 at 10:35 AM Zhi Li <lznuaa@gmail.com> wrote:
 >
-> On Wed, May 01, 2019 at 03:21:00PM +0000, Frank Li wrote:
-> > +static int ddr_perf_probe(struct platform_device *pdev)
-> > +{
-> > +     struct ddr_pmu *pmu;
-> > +     struct device_node *np;
-> > +     void __iomem *base;
-> > +     char *name;
-> > +     int num;
-> > +     int ret;
-> > +     int irq;
-> > +
-> > +     base = devm_platform_ioremap_resource(pdev, 0);
-> > +     if (IS_ERR(base))
-> > +             return PTR_ERR(base);
-> > +
-> > +     np = pdev->dev.of_node;
-> > +
-> > +     pmu = devm_kzalloc(&pdev->dev, sizeof(*pmu), GFP_KERNEL);
-> > +     if (!pmu)
-> > +             return -ENOMEM;
-> > +
-> > +     num = ddr_perf_init(pmu, base, &pdev->dev);
-> > +
-> > +     platform_set_drvdata(pdev, pmu);
-> > +
-> > +     name = devm_kasprintf(&pdev->dev, GFP_KERNEL, "imx_ddr%d", num);
+> On Wed, May 1, 2019 at 10:24 AM Will Deacon <will.deacon@arm.com> wrote:
+> >
+> > On Wed, May 01, 2019 at 03:21:00PM +0000, Frank Li wrote:
+> > > +static int ddr_perf_probe(struct platform_device *pdev)
+> > > +{
+> > > +     struct ddr_pmu *pmu;
+> > > +     struct device_node *np;
+> > > +     void __iomem *base;
+> > > +     char *name;
+> > > +     int num;
+> > > +     int ret;
+> > > +     int irq;
+> > > +
+> > > +     base = devm_platform_ioremap_resource(pdev, 0);
+> > > +     if (IS_ERR(base))
+> > > +             return PTR_ERR(base);
+> > > +
+> > > +     np = pdev->dev.of_node;
+> > > +
+> > > +     pmu = devm_kzalloc(&pdev->dev, sizeof(*pmu), GFP_KERNEL);
+> > > +     if (!pmu)
+> > > +             return -ENOMEM;
+> > > +
+> > > +     num = ddr_perf_init(pmu, base, &pdev->dev);
+> > > +
+> > > +     platform_set_drvdata(pdev, pmu);
+> > > +
+> > > +     name = devm_kasprintf(&pdev->dev, GFP_KERNEL, "imx_ddr%d", num);
+> >
+> > Still not happy with this.
 >
-> Still not happy with this.
+> is imx_ddr_pmu%d  okay?
 
-is imx_ddr_pmu%d  okay?
+imx_ddr%d_pmu look like more reasonable.
+
+best regards
+Frank Li
 
 >
-> Will
+> >
+> > Will
 
 _______________________________________________
 linux-arm-kernel mailing list
