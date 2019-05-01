@@ -2,73 +2,109 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD0E210CCE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 20:43:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BA0D10CD1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 20:43:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=l1JLYhF3R51QewqEfOiUXpeld3yCH3H5jRMlq0iJBXo=; b=eDkPZzA2PCyYmPJ1uPaU6MNrV
-	C+MYJmk/hlYsSpaq6YtHr9V4WAs3qe7PN73VNCKh/ti6sJaLWWq4lOWJrTYyGrA9T6J1sgvMR5zqK
-	pMhXdiFFm/07DSNVa6bTTvMeifYbZKX2tYn//bowA95EF/LgP8SXZBATQsdQ6tq5CHtNejStgS1Nn
-	LY/gixWqodVlh3GIV5quzzj/vtg/z/ahlhftfaHD7TP+nyaMl96sIPHgktT1CakScdCkPdiDr7UqJ
-	7RKTShWWAYb0Tym9PDP86OjtBlZlMFuoADsd/laV6XJAvu/o3CbWitSqYbr05tW5CR+3i8z/E0bP8
-	H+ehRHqig==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Bu5Ahnw6pE7V6iX8cjKvv9i5EbhJ9CmAJ7FIjXLXoCo=; b=ml0SZhnNbUoDXh
+	NNOe1aZrVffWX+aoqDguhTfm+RE/Lmnrr8BNm/sRT94w1HRbHDwR9kRl2uHbpOW+3+tDhwqDbO9C+
+	I+iHhcII20SVjTg1V2DARJcuEVCs4oyvGvsVxS1s+eqaBnjMaqInj5niTp/O8Cr4dBAdznXBMyXJU
+	PfZfHb92MTFoqplXUueHU6aRtmeO296fMMTeeAhd9YqIPFQkY5rfSZ9nfjZAvP/FmzIdffQuEgCC2
+	Fd/+cgiF9uCPhECJj3j8fmFz5mnqgHf/F7VPJnjR1cPZ6/u2n4WezNFjuPgt+7/uInkNLUDFfmdNC
+	6dgi4VeWoZ6W75fmroKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLuCC-0004qo-8L; Wed, 01 May 2019 18:43:08 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
+	id 1hLuCg-00054g-So; Wed, 01 May 2019 18:43:38 +0000
+Received: from mail-eopbgr10084.outbound.protection.outlook.com ([40.107.1.84]
+ helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLuC5-0004qT-Cf
- for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 18:43:02 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id D4E226044E; Wed,  1 May 2019 18:43:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1556736180;
- bh=yzlxHbc9Bvt+Q3uG2Hf7NalbgMIKbFyBV0j0pUBHNKg=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=oVjexLeT41ojgDbZQP8x+mW2fEauvKXJBmzcIAHBKRjREx9UQQgjJ3KJ313cyshJq
- 7pkOD+k0F2KIgqIqCz487i2CJQPlnFz0nV6vYMP14X2oSuCd5WEM8/MF//AYu+ORYY
- 1/t8sG5gisvBe5dv2pqUz+HScCIlMwj2V+jcx0/M=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED autolearn=no autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- by smtp.codeaurora.org (Postfix) with ESMTP id 44CA56013C;
- Wed,  1 May 2019 18:43:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1556736180;
- bh=yzlxHbc9Bvt+Q3uG2Hf7NalbgMIKbFyBV0j0pUBHNKg=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=oVjexLeT41ojgDbZQP8x+mW2fEauvKXJBmzcIAHBKRjREx9UQQgjJ3KJ313cyshJq
- 7pkOD+k0F2KIgqIqCz487i2CJQPlnFz0nV6vYMP14X2oSuCd5WEM8/MF//AYu+ORYY
- 1/t8sG5gisvBe5dv2pqUz+HScCIlMwj2V+jcx0/M=
+ id 1hLuCZ-00053y-18
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 18:43:32 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=X4zT6JvRGcN/GuzhAFDHvWVWhNaMsUOaqRgvB+eGlh0=;
+ b=jWMgFvykJkYYshZeZrG+KE5PNF+mgs9MqIIiskGq4RvissCnaIxSLvhQifg153kfH9Ty5M1M3B2CpUKg2JC+U2mecVPWbZLHLQhFAr7tlst2L4j6Ux3Q5NqvWPRRQX3rvsrpSqvIP9b/hdeEh0H4WBhu9kjistk0g0sPQvBn8RQ=
+Received: from VI1PR04MB4910.eurprd04.prod.outlook.com (20.177.49.159) by
+ VI1PR04MB4093.eurprd04.prod.outlook.com (52.133.12.33) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1835.13; Wed, 1 May 2019 18:43:27 +0000
+Received: from VI1PR04MB4910.eurprd04.prod.outlook.com
+ ([fe80::d973:1a7d:2eb6:281c]) by VI1PR04MB4910.eurprd04.prod.outlook.com
+ ([fe80::d973:1a7d:2eb6:281c%7]) with mapi id 15.20.1856.008; Wed, 1 May 2019
+ 18:43:26 +0000
+From: Frank Li <frank.li@nxp.com>
+To: "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
+ "mark.rutland@arm.com" <mark.rutland@arm.com>, "will.deacon@arm.com"
+ <will.deacon@arm.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
+ <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
+ dl-linux-imx <linux-imx@nxp.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ Aisheng Dong <aisheng.dong@nxp.com>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>, "lznuaa@gmail.com" <lznuaa@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Subject: [PATCH V12 1/4] dt-bindings: perf: imx8-ddr: add imx8qxp ddr
+ performance monitor
+Thread-Topic: [PATCH V12 1/4] dt-bindings: perf: imx8-ddr: add imx8qxp ddr
+ performance monitor
+Thread-Index: AQHVAE3DIW7FncE2QkmQlW9ARMporA==
+Date: Wed, 1 May 2019 18:43:26 +0000
+Message-ID: <1556736193-29411-1-git-send-email-Frank.Li@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: SN4PR0501CA0013.namprd05.prod.outlook.com
+ (2603:10b6:803:40::26) To VI1PR04MB4910.eurprd04.prod.outlook.com
+ (2603:10a6:803:56::31)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=frank.li@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-mailer: git-send-email 2.5.2
+x-originating-ip: [64.157.242.222]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 320be896-9935-463e-db0b-08d6ce64e5b0
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:VI1PR04MB4093; 
+x-ms-traffictypediagnostic: VI1PR04MB4093:
+x-microsoft-antispam-prvs: <VI1PR04MB40936961CD10433B41FD371E883B0@VI1PR04MB4093.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3968;
+x-forefront-prvs: 00246AB517
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(39860400002)(136003)(366004)(396003)(346002)(376002)(199004)(189003)(52116002)(305945005)(7736002)(316002)(66066001)(110136005)(99286004)(386003)(66946007)(66446008)(66476007)(2201001)(66556008)(64756008)(81156014)(50226002)(8936002)(73956011)(36756003)(81166006)(8676002)(71190400001)(6436002)(476003)(4326008)(2616005)(7416002)(26005)(102836004)(256004)(486006)(14454004)(478600001)(25786009)(86362001)(68736007)(6506007)(6116002)(6486002)(2501003)(186003)(5660300002)(3846002)(2906002)(6512007)(71200400001)(53936002)(32563001)(921003)(21314003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB4093;
+ H:VI1PR04MB4910.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: LRH9STg/ZrhYglb/I6Tu+b12heFSEJRLuCl+UVq+lZDIoRTzvNzeNmrYtav4gIufBSMq+HSN3WtKY6NVOwyWW8U/xbYb4umN6Eld+1gbhMyvJMCfBwSLkuyVPa6+YlJKHsIXHSQ8N/ZVUEpPhuQ2qasYpa6hrHFczHJAsoY3qYIeUjglh/TsE37dSCUB/ZDr/GUAquwtyrVEdGA/9879pNLou5H2tziZyCCvV/yppKr/PNT2c/9nZG2d/C0ylnyp7LvqSTkZ9aQHz1j7jKw1oTkDrpk9jG6Xh1rQ//p70VVbNESgKEqMiJxE5QzW5h3/sdFX3FheFNufe8O7weY5Ga37J5JK+5hDjQHsWsm5qCJjF4WB3kJbrLmO3xBy9dJrshoRG4XMbt6Bn+e4wxIBBcDRqZA1BAV7/Kg8z+En+0I=
 MIME-Version: 1.0
-Date: Wed, 01 May 2019 11:43:00 -0700
-From: Sodagudi Prasad <psodagud@codeaurora.org>
-To: Sudeep Holla <sudeep.holla@arm.com>
-Subject: Re: PSCI version 1.1 and SYSTEM_RESET2
-In-Reply-To: <20190501094953.GA21851@e107155-lin>
-References: <24970f7101952f347bd4046c9a980473@codeaurora.org>
- <efee74624f986a358b8986ae3085fba2@codeaurora.org>
- <20190501094953.GA21851@e107155-lin>
-Message-ID: <3ceb06c36ecb745e2befaeaefe49be19@codeaurora.org>
-X-Sender: psodagud@codeaurora.org
-User-Agent: Roundcube Webmail/1.2.5
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 320be896-9935-463e-db0b-08d6ce64e5b0
+X-MS-Exchange-CrossTenant-originalarrivaltime: 01 May 2019 18:43:26.8900 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB4093
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_114301_463373_602DE4E5 
-X-CRM114-Status: GOOD (  22.71  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190501_114331_181688_8633BE15 
+X-CRM114-Status: GOOD (  10.35  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.1.84 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.1.84 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -88,114 +124,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, julien.thierry@arm.com,
- catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Frank Li <frank.li@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-05-01 02:49, Sudeep Holla wrote:
-> On Tue, Apr 30, 2019 at 05:07:31PM -0700, Sodagudi Prasad wrote:
->> On 2019-04-30 14:44, Sodagudi Prasad wrote:
->> +Sudeep
->> 
->> > Hi Mark/Will,
->> >
->> > I would like to understand whether ARM linux community have plans to
->> > support PSCI version 1.1 or not.
->> > PSCI_1_1 specification introduced support for SYSTEM_RESET2 command
->> > and this new command helps mobile devices to SYSTEM_WARM_RESET
->> > support. Rebooting devices with warm reboot helps to capture the
->> > snapshot of the ram contents for post-mortem analysis.
->> 
->> I think, there is a recent discussion from Sudeep for the 
->> SYSTEM_RESET2
->> support.
->> https://patchwork.kernel.org/patch/10884345/
->> 
-> 
-> This has landed in -next, and hopefully must appear in v5.2
-> 
->> 
->> Hi Sudeep,
->> 
->> I was going through your discussion in the below list -
->> https://lore.kernel.org/lkml/d73d3580-4ec1-a281-4585-5c776fc08c79@xilinx.com/
->> 
->> There is no provision to set up reboot mode dynamically instead kernel
->> command line parameter.
->> Looking for options to reboot device with warm reboot option when 
->> kernel
->> crashed.
->> 
->> panic() --> emergency_restart() --> machine_emergency_restart() -->
->> machine_restart(NULL);
->> 
->> It would nice if there is a config option to reboot the device either 
->> in
->> warm or cold in the case of kernel panic.
-> 
-> I presume you prefer to do warm boot in case of panic to get a dump of
-> the memory to inspect ? If so, is kexec/kdump not the mechanism to
-> achieve that ?
+Added binding doc for imx8qxp ddr performance monitor
 
-Hi Sudeep,
+Signed-off-by: Frank Li <Frank.Li@nxp.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
+---
 
-Thanks for your response and sharing details about your patch.
-<Sudeep>  If so, is kexec/kdump not the mechanism to achieve that?
-Qualcomm is having vendor specific solution to capture ram contents and 
-for offline analysis.
+Notes:
+    No change from v10 to v12
+    
+    Change from v8 to v9
+    * use 32bit address width
+    
+    No change from v4 to v8
+    
+    Change from v4 to v4
+    * remove "standard xxx"
+    
+    Change from v2 to v3
+    * ddr_pmu0 -> ddr-pmu
 
-> 
-> I am just trying to understand the use case. Xilinx asked for the same
-> but never got to understand their use case.
+ .../devicetree/bindings/perf/fsl-imx-ddr.txt       | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/perf/fsl-imx-ddr.txt
 
-Here is the background -
-Usually, power off drivers are overriding arm_pm_restart and 
-pm_power_off callbacks and registering with reboot notifier with  some 
-priority for the reboot operations.  Here is the Qualcomm poweroff 
-driver for reference.
-https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/power/reset/msm-poweroff.c
-
-Before vendor chip set specific power off driver is probed, 
-arm_pm_restart functions pointer holds the psci_sys_reset function. Once 
-vendor power off driver is probed,  vendor drivers can override the 
-arm_pm_restart function pointer.
-https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/firmware/psci.c#n562
-
-Once vendor driver is probed, drivers can take care of devices warm or 
-hard reset configuration part properly.  But there is a window from 
-start_kernel() to vendor specific driver probed, devices are getting 
-cold resets even if kernel crashed.  This is due to arm_pm_restart 
-points to psci_sys_reset function by default.  Is this problem clear 
-now?
-
-Qualcomm downstream kernel has a lot of use cases with respect device 
-reset sequence and the downstream driver is much different from upstream 
-drivers. I think, the above-mentioned problem is common for all the 
-chipset vendors and it is not specific Qualcomm use cases.  I have one 
-downstream solution to this problem but thought to bring up this problem 
-to the upstream community for a common solution, so that all the vendors 
-can use it.
-
-I have modified below flow to avoid cold restart in the case of early 
-kernel panic.
-panic() --> emergency_restart() --> machine_emergency_restart() --> 
-machine_restart(NULL);
-
--Thanks, Prasad
-
-> 
-> --
-> Regards,
-> Sudeep
-
+diff --git a/Documentation/devicetree/bindings/perf/fsl-imx-ddr.txt b/Documentation/devicetree/bindings/perf/fsl-imx-ddr.txt
+new file mode 100644
+index 0000000..9b9cda6a
+--- /dev/null
++++ b/Documentation/devicetree/bindings/perf/fsl-imx-ddr.txt
+@@ -0,0 +1,22 @@
++* Freescale(NXP) IMX8 DDR performance monitor
++
++Required properties:
++
++- compatible: should be one of:
++	"fsl,imx8-ddr-pmu"
++	"fsl,imx8m-ddr-pmu"
++
++- reg: physical address and size
++
++- interrupts: single interrupt
++	generated by the control block
++
++Example:
++
++	ddr-pmu@5c020000 {
++		compatible = "fsl,imx8-ddr-pmu";
++		reg = <0x5c020000 0x10000>;
++		interrupt-parent = <&gic>;
++		interrupts = <GIC_SPI 131 IRQ_TYPE_LEVEL_HIGH>;
++	};
++
 -- 
-The Qualcomm Innovation Center, Inc. is a member of the Code Aurora 
-Forum,
-Linux Foundation Collaborative Project
+2.5.2
 
 _______________________________________________
 linux-arm-kernel mailing list
