@@ -2,66 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16C1010A58
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 17:57:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8EEA010A81
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 18:01:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3S3fPKIf5IjVQJRgJ+m9KmmYWzGA/Zobv3CdKzaAk20=; b=fQjiLzv/05Wey9
-	vE5EuGEnfq31rutSvTW94A0UQX7kmc5yBFcGbnKAHv6hy53RJ7oQztjLb/1BegqqVL91igc98ignh
-	sKnGIxiJQDzZ8B3/i239m2Lr2KTS/Gz71uQ5m3wnbYPnRjV2iSyDk5yVAJLAnJLLC7tajoqKRsCK+
-	kLDtU48O1wZnbL2+AIkXRzDZHglr+Vwrr8TbXP1soCB8+fpMLKyaS4mTpwAkUArjI0j9zBuJ/1pXv
-	FpSeqvNCnaet27g+vWZYq/UMxjB6JbUkynIUkOMpp4V6IaSleVfwWLLPi34tFRNFqa1p4qNd0GxzO
-	Id84j8lsWiIFfqG4HVZg==;
+	List-Owner; bh=w5y5MNn23SiVP2pTbaSVF6L4KPoVEMtpFhcPkNoQWAI=; b=aHwBzg0+BlbRV+
+	mzQ4ec+7TVtQqPYLIRwhU56Gw/biG85vFtER5Pmw1toQfYHV3XltFVPziOSybYO1RFsb7dA0yclKp
+	J4fgTJf23q4GXOH03Q9Wo6mfv3ojJ7STd0nzmGJrTIJ/Lgnlzyk6R9SSMEaFgFOESNXtgWWiwWL1V
+	buIHFj5fYNNzhJtIXcBhP2py8/OzP2nk6jHleexUjWlGdV/pAIy4BGCbUy6k1ak+H/CsEW1LcxTqz
+	hxOWuvEyABqJW6EDSWMNiY2nEwljB2qbFp6xpq1/ytBR5qnUoD/EZEBIVeKLzEvD4ERyiCFAYP6dP
+	nA+KHBzvfGSi+6y8RhEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLrbr-0004SK-Om; Wed, 01 May 2019 15:57:27 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLrbk-0004QT-46
- for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 15:57:21 +0000
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 86BC8C053B34;
- Wed,  1 May 2019 15:57:18 +0000 (UTC)
-Received: from dhcp-27-174.brq.redhat.com (unknown [10.43.17.159])
- by smtp.corp.redhat.com (Postfix) with SMTP id 83E2A1001E95;
- Wed,  1 May 2019 15:57:14 +0000 (UTC)
-Received: by dhcp-27-174.brq.redhat.com (nbSMTP-1.00) for uid 1000
- oleg@redhat.com; Wed,  1 May 2019 17:57:16 +0200 (CEST)
-Date: Wed, 1 May 2019 17:57:11 +0200
-From: Oleg Nesterov <oleg@redhat.com>
-To: Sudeep Holla <sudeep.holla@arm.com>
-Subject: Re: [PATCH v2 3/6] x86: clean up _TIF_SYSCALL_EMU handling using
- ptrace_syscall_enter hook
-Message-ID: <20190501155711.GB30235@redhat.com>
-References: <20190318104925.16600-1-sudeep.holla@arm.com>
- <20190318104925.16600-4-sudeep.holla@arm.com>
- <20190318153321.GA23521@redhat.com>
- <20190430164413.GA18913@e107155-lin>
+	id 1hLrg9-0006Jg-6s; Wed, 01 May 2019 16:01:53 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hLrg2-0006JE-6M
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 16:01:47 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D73FBA78;
+ Wed,  1 May 2019 09:01:44 -0700 (PDT)
+Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 719143F719;
+ Wed,  1 May 2019 09:01:43 -0700 (PDT)
+Date: Wed, 1 May 2019 17:01:40 +0100
+From: Will Deacon <will.deacon@arm.com>
+To: Jan Glauber <jglauber@marvell.com>
+Subject: Re: [RFC] Disable lockref on arm64
+Message-ID: <20190501160140.GC28109@fuggles.cambridge.arm.com>
+References: <20190429145159.GA29076@hc>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190430164413.GA18913@e107155-lin>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.31]); Wed, 01 May 2019 15:57:18 +0000 (UTC)
+In-Reply-To: <20190429145159.GA29076@hc>
+User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_085720_190256_21962A14 
-X-CRM114-Status: GOOD (  17.65  )
+X-CRM114-CacheID: sfid-20190501_090146_273444_58D8E725 
+X-CRM114-Status: GOOD (  15.98  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -74,49 +62,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Haibo Xu <haibo.xu@arm.com>, Steve Capper <Steve.Capper@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, jdike@addtoit.com, x86@kernel.org,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- Bin Lu <bin.lu@arm.com>, Richard Weinberger <richard@nod.at>,
- Ingo Molnar <mingo@redhat.com>, Paul Mackerras <paulus@samba.org>,
- Andy Lutomirski <luto@kernel.org>, Michael Ellerman <mpe@ellerman.id.au>,
- Borislav Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
- linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
+Cc: peterz@infradead.org, "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
+ torvalds@linux-foundation.org,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 04/30, Sudeep Holla wrote:
->
-> On Mon, Mar 18, 2019 at 04:33:22PM +0100, Oleg Nesterov wrote:
-> >
-> > And it seems that _TIF_WORK_SYSCALL_ENTRY needs some cleanups too... We don't need
-> > "& _TIF_WORK_SYSCALL_ENTRY" in syscall_trace_enter, and _TIF_WORK_SYSCALL_ENTRY
-> > should not include _TIF_NOHZ?
-> >
->
-> I was about to post the updated version and checked this to make sure I have
-> covered everything or not. I had missed the above comment. All architectures
-> have _TIF_NOHZ in their mask that they check to do work. And from x86, I read
-> "...syscall_trace_enter(). Also includes TIF_NOHZ for enter_from_user_mode()"
-> So I don't understand why _TIF_NOHZ needs to be dropped.
+Hi Jan,
 
-I have already forgot this discussion... But after I glanced at this code again
-I still think the same, and I don't understand why do you disagree.
+[+Peter and Linus, since they enjoy this stuff]
 
-> Also if we need to drop, we can address that separately examining all archs.
+On Mon, Apr 29, 2019 at 02:52:11PM +0000, Jan Glauber wrote:
+> I've been looking into performance issues that were reported for several
+> test-cases, for instance an nginx benchmark.
 
-Sure, and I was only talking about x86. We can keep TIF_NOHZ and even
-set_tsk_thread_flag(TIF_NOHZ) in context_tracking_cpu_set() if some arch needs
-this but remove TIF_NOHZ from TIF_WORK_SYSCALL_ENTRY in arch/x86/include/asm/thread_info.h,
-afaics this shouldn't make any difference.
+Could you share enough specifics here so that we can reproduce the issue
+locally, please? That would help us in our attempts to develop a fix without
+simply disabling the option for everybody else.
 
-And I see no reason why x86 needs to use TIF_WORK_SYSCALL_ENTRY in
-syscall_trace_enter().
+> It turned out the issue we have on ThunderX2 is the file open-close sequence
+> with small read sizes. If the used files are opened read-only the
+> lockref code (enabled by ARCH_USE_CMPXCHG_LOCKREF) is used.
+> 
+> The lockref CMPXCHG_LOOP uses an unbound (as long as the associated
+> spinlock isn't taken) while loop to change the lock count. This behaves
+> badly under heavy contention (~25x retries for one cmpxchg to succeed
+> with 28 threads operating on the same file). In case of a NUMA system
+> it also behaves badly as the access from the other socket is much slower.
 
-Oleg.
+It's surprising that this hasn't been reported on x86. I suspect their
+implementation of cmpxchg is a little more forgiving under contention.
 
+> The fact that on ThunderX2 cpu_relax() turns only into one NOP
+> instruction doesn't help either. On Intel pause seems to block the thread
+> much longer, avoiding the heavy contention thereby.
+
+NOPing out the yield instruction seems like a poor choice for an SMT CPU
+such as TX2. That said, the yield was originally added to cpu_relax() as
+a scheduling hint for QEMU.
+
+> With the queued spinlocks implementation I can see a major improvement
+> when I disable lockref. A trivial open-close test-case improves by
+> factor 2 while system time is decreasing also 2x. Looking at kernel compile
+> and dbench numbers didn't show any regression with lockref disabled.
+> 
+> Can we simply disable lockref? Is anyone else seeing this issue? Is there
+> an arm64 platform that actually implements yield?
+
+There are two issues with disabling lockref like this:
+
+  1. It's a compile-time thing, so systems that would benefit from the code
+     are unfairly penalised.
+
+  2. You're optimising for the contended case at the cost of the
+     uncontended case, which should actually be the common case as well.
+
+Now, nobody expects contended CAS to scale well, so the middle ground
+probably involves backing off to the lock under contention, a bit like
+an optimistic trylock(). Unfortunately, that will need some tuning, hence
+my initial request for a reproducer.
+
+Cheers,
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
