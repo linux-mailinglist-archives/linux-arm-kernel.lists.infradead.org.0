@@ -2,49 +2,112 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF9D2109D5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 17:10:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72EA4109D9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 17:13:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WJeGojtNVzFBZbJGigPuroPY3z26RHuif8aUCq/Ylsw=; b=EPbeXNt51KlHRC
-	1JutbIW45IHSTJmVmO+zriVX4jy6alKq1MB+25M73mu2zJIrO6Ipa2m+t8ip5KeFFb+sJqnwVtu9A
-	K+oTisWTV/wiLtG/Czc2H8yYuIuaBV3fLYYVzK4Hw/97Jzm0ju3ArWIr5nwiWTtD+iCh/XAkChlh9
-	iwZP4rmP6JT2oVYY3bOUOpXlJ3Lf/e5YOynY02VNd+svu/YzYw2d3LMaS4z8tvdCOjMpc3QLPfNPG
-	HyfMSUtYca2CHuONiLeR9y+Ho9hIFYL5KtKcT9k6F0J7DQtcidxZ9TLKYKlgAt40IaH0139FOps4O
-	KCVNYa3zXX+dhxFMigYQ==;
+	List-Owner; bh=VXO12LlOa7FAAuS8QIYaH7qoyY1OK0AWXKhGuFnjlzg=; b=peU1Lc/RONywh/
+	et8/XhiY0eNP9Rdb209BIgjvj+WLk+zvldRdX0Xrv6wM4QDe8pghsA8MzGvTDv2uEC8XWw96XA0cd
+	wtTc8XxQ/2yl0OqLBrTA8+HXv9kvdH0aMrrOPCedHZtuZtc9ZT4nqrbJfjM9kJ5C2WmxzP+yV/QO5
+	Sj032fs4dSM1GiCEGPdq1v+GY9HAySSUe+P4GWQV9h3xFctvqNeXaC7u0/EdjMq8neyVJY0tV3UAn
+	gzH+ZRZ4iilSNymydtve3J8TCwzPH/vv8LUOvbchmfA6cI/l5s+VblqQYtbCmwex/OYOq2199E0dX
+	tNCShk89FRspXUpO29BA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLqs7-0003s8-E9; Wed, 01 May 2019 15:10:11 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1hLquu-0005DD-IH; Wed, 01 May 2019 15:13:04 +0000
+Received: from mail-eopbgr740089.outbound.protection.outlook.com
+ ([40.107.74.89] helo=NAM01-BN3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLqru-0003c3-01; Wed, 01 May 2019 15:10:00 +0000
-Received: from [195.37.15.138] (helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hLqrj-000435-PA; Wed, 01 May 2019 17:09:47 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Jagan Teki <jagan@amarulasolutions.com>
-Subject: Re: [DO NOT MERGE] [PATCH 2/2] arm64: rockchip: rk3399: nanopc-t4:
- Enable FriendlyELEC HD702E eDP panel
-Date: Wed, 01 May 2019 17:09:46 +0200
-Message-ID: <59905981.qcSMt8CUfq@phil>
-In-Reply-To: <CAMty3ZBdko3+p6SoKYH-Mwism-Qnp3F5u7JV8YQTHzNP8A5kEg@mail.gmail.com>
-References: <20190501121448.3812-1-jagan@amarulasolutions.com>
- <cc16498b-71f8-04ce-44d1-25417fd64757@arm.com>
- <CAMty3ZBdko3+p6SoKYH-Mwism-Qnp3F5u7JV8YQTHzNP8A5kEg@mail.gmail.com>
+ id 1hLqum-0005Cj-O8
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 15:12:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=infinera.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=rwoLqd3A2pffZHiTQr1ps4Ogxnn8s7CWEpwht+QlX34=;
+ b=VPD3sRuUomxuPcWhSqUQnEQuolasjwi5bS1NW/VynHpj5OWyhzp/14ah60B/n3ba41dXaBeuIZWHeHstlFOQY8wfVu7aH8gsPSRQCFY10Gig9EVRWZ5bl4y7GBbSK8u7QVoByqzCFaPExUhlrwcJfMr/sNrOCMotF/MGQeKAHHc=
+Received: from BN8PR10MB3540.namprd10.prod.outlook.com (20.179.78.205) by
+ BN8PR10MB3217.namprd10.prod.outlook.com (20.179.138.15) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1856.10; Wed, 1 May 2019 15:12:52 +0000
+Received: from BN8PR10MB3540.namprd10.prod.outlook.com
+ ([fe80::24c5:ea68:cff3:4a16]) by BN8PR10MB3540.namprd10.prod.outlook.com
+ ([fe80::24c5:ea68:cff3:4a16%7]) with mapi id 15.20.1856.008; Wed, 1 May 2019
+ 15:12:52 +0000
+From: Joakim Tjernlund <Joakim.Tjernlund@infinera.com>
+To: "rasmus.villemoes@prevas.dk" <rasmus.villemoes@prevas.dk>,
+ "leoyang.li@nxp.com" <leoyang.li@nxp.com>, "qiang.zhao@nxp.com"
+ <qiang.zhao@nxp.com>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>
+Subject: Re: [PATCH v2 4/6] dt-bindings: soc/fsl: qe: document new
+ fsl,qe-snums binding
+Thread-Topic: [PATCH v2 4/6] dt-bindings: soc/fsl: qe: document new
+ fsl,qe-snums binding
+Thread-Index: AQHVAAEbcR+EIbNgq0q8q5zRwMqM06ZWYK2A
+Date: Wed, 1 May 2019 15:12:52 +0000
+Message-ID: <4c3aef881393398ca18efac99b1f76e7dbd19acf.camel@infinera.com>
+References: <20190430133615.25721-1-rasmus.villemoes@prevas.dk>
+ <20190501092841.9026-1-rasmus.villemoes@prevas.dk>
+ <20190501092841.9026-5-rasmus.villemoes@prevas.dk>
+In-Reply-To: <20190501092841.9026-5-rasmus.villemoes@prevas.dk>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Joakim.Tjernlund@infinera.com; 
+x-originating-ip: [88.131.87.201]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 24f776e0-b661-4e67-7b9f-08d6ce477b7b
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(2017052603328)(7193020);
+ SRVR:BN8PR10MB3217; 
+x-ms-traffictypediagnostic: BN8PR10MB3217:
+x-microsoft-antispam-prvs: <BN8PR10MB32175B4C5538F43C485C14C3F43B0@BN8PR10MB3217.namprd10.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 00246AB517
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(396003)(39860400002)(346002)(366004)(136003)(376002)(40224003)(199004)(189003)(66066001)(53936002)(36756003)(25786009)(6512007)(5660300002)(99286004)(76176011)(316002)(8676002)(86362001)(54906003)(110136005)(2201001)(7416002)(102836004)(476003)(2616005)(11346002)(486006)(256004)(14444005)(14454004)(26005)(6506007)(446003)(118296001)(66556008)(73956011)(66446008)(64756008)(66476007)(72206003)(66946007)(81156014)(81166006)(305945005)(186003)(7736002)(5024004)(91956017)(76116006)(2501003)(68736007)(71190400001)(71200400001)(4326008)(2906002)(6486002)(8936002)(229853002)(478600001)(6116002)(3846002)(6246003)(6436002)(142933001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BN8PR10MB3217;
+ H:BN8PR10MB3540.namprd10.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: infinera.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: xeALA3hdN25/YrneNVKQ9E5TcKKXwTTBiLExr7cJmLM5VqPsPdcu+PKEA0nd+L0cGajrsHcLnmxUoEGnRyw/n4HgHTV57VlPGaPbW0+N5yEJIHBeMcny02gHXEvRoYvjIlAeCIyAFxdEpdsv521IQEbuj4oKEiFKoE49BkWyoV8SZQd385kKG7K+2tk9v24XhQTRLiJVK0voVuZZUIUwXr75XDukM+tnF9NY8yk06GCqZnykoLIifyG62kA8K9LLGRP9AUhBQiaSZeDxDGrXzaTaHQQ7sg6B7ctwlbUmkssQSlUQeRkO8oHBO+rPN38/LdaASlQpkgnM6wWdh46cFAXCjNJ4vRFOOrbbv9qdu78Ae/j3W7Y/LfUTcKs2nDCS1lnXW6DqOMUgp2whdfxf+iu6tYjoMDL2MvhojJQC+G0=
+Content-ID: <D0283986214D8D409C19E11E53FCFC81@namprd10.prod.outlook.com>
 MIME-Version: 1.0
+X-OriginatorOrg: infinera.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 24f776e0-b661-4e67-7b9f-08d6ce477b7b
+X-MS-Exchange-CrossTenant-originalarrivaltime: 01 May 2019 15:12:52.8714 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 285643de-5f5b-4b03-a153-0ae2dc8aaf77
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN8PR10MB3217
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_080958_181705_86E9ACF3 
-X-CRM114-Status: GOOD (  19.10  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190501_081257_009568_37E95337 
+X-CRM114-Status: GOOD (  21.72  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.74.89 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.74.89 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -56,88 +119,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "Rasmus.Villemoes@prevas.se" <Rasmus.Villemoes@prevas.se>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "oss@buserror.net" <oss@buserror.net>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am Mittwoch, 1. Mai 2019, 16:09:46 CEST schrieb Jagan Teki:
-> On Wed, May 1, 2019 at 6:17 PM Robin Murphy <robin.murphy@arm.com> wrote:
-> >
-> > On 01/05/2019 13:14, Jagan Teki wrote:
-> > > FriendlyELEC HD702E is one of optional LCD panel for
-> > > NanoPC T4 eDP interface.
-> > >
-> > > It features 800x1280 resolutions, with built in GT9271 captive
-> > > touchscreen and adjustable backlight via PWM.
-> > >
-> > > eDP panel connections are:
-> > > - VCC3V3_SYS: 3.3V panel power supply
-> > > - GPIO4_C2: PWM0_BL pin
-> > > - GPIO4_D5_LCD_BL_EN: Backlight enable pin
-> > > - VCC12V0_SYS: 12V backlight power supply
-> > > - Touchscreen connected via I2C4
-> > > - GPIO1_C4_TP_INT: touchscreen interrupt pin
-> > > - GPIO1_B5_TP_RST: touchscreen reset pin
-> > >
-> > > Add support for it.
-> > >
-> > > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> > > ---
-> > > Note: we need to disable hdmi-cec pinctrl to work with
-> > > edp-hpd since both share same pin, otherwise we can
-> > > encounter below error during bootup
-> > > [    1.047726] rockchip-pinctrl pinctrl: pin gpio4-23 already requested by ff940000.hdmi; cannot claim for ff970000.edp
-> > > [    1.048655] rockchip-pinctrl pinctrl: pin-151 (ff970000.edp) status -22
-> > > [    1.049235] rockchip-pinctrl pinctrl: could not request pin 151 (gpio4-23) from group edp-hpd  on device rockchip-pinctrl
-> > > [    1.050191] rockchip-dp ff970000.edp: Error applying setting, reverse things back
-> > > [    1.050867] rockchip-dp: probe of ff970000.edp failed with error -22
-> >
-> > Hmm, AFAICS that pin is exclusively wired to the HDMI connector and not
-> > used for the eDP interface, so really it's the fault of rk3399.dtsi for
-> > trying to claim it unconditionally. Ideally we'd pull those pinctrl
-> > properties out into the board DTs which do actually need them, but the
-> > quick and easy approach would be to add some "/delete-property/ ..."
-> > workarounds to the &edp node here.
+On Wed, 2019-05-01 at 09:29 +0000, Rasmus Villemoes wrote:
+> CAUTION: This email originated from outside of the organization. Do not click links or open attachments unless you recognize the sender and know the content is safe.
 > 
-> Thought that initially, but the same pin shared between HDMI CEC and
-> eDP hotplug with different bit function to enable.
 > 
-> gpio4c7_sel
-> GPIO4C[7] iomux select
-> 2'b00: gpio
-> 2'b01: hdmi_cecinout
-> 2'b10: edp_hotplug
-> 2'b11: reserved
+> Reading table 4-30, and its footnotes, of the QUICC Engine Block
+> Reference Manual shows that the set of snum _values_ is not
+> necessarily just a function of the _number_ of snums, as given in the
+> fsl,qe-num-snums property.
 > 
-> GPIO4_C7/HDMI_CECINOUT/EDP_HOTPLUG is the shared pin, which is
-> available in any nanopc-t4 as well in rk3399 datasheet, look like it's
-> an SoC pin that driver hotplug to eDP and ie same reason is pinmux in
-> rk3399.dtsi.
+> As an alternative, to make it easier to add support for other variants
+> of the QUICC engine IP, this introduces a new binding fsl,qe-snums,
+> which automatically encodes both the number of snums and the actual
+> values to use.
+> 
+> For example, for the MPC8309, one would specify the property as
+> 
+>                fsl,qe-snums = /bits/ 8 <
+>                        0x88 0x89 0x98 0x99 0xa8 0xa9 0xb8 0xb9
+>                        0xc8 0xc9 0xd8 0xd9 0xe8 0xe9>;
 
-Yes the pin of the soc is shared between those functions, so you'll
-have to check the schematics of your board where this pin is going
-to.
-
-If you check the schematics [0] page 11, GPIO4_C7's signal is named HDMI_CEC
-and on page 18 you can see that it goes as expected to the cec-pin of the
-hdmi connector. 
-
-So the Nanopc-T4 should only select the cec signal.
-
-
-Heiko
-[0] http://wiki.friendlyarm.com/wiki/images/f/f4/NanoPC-T4-1802-Schematic.pdf
-
-
-
+I think you need add this example to the qe.txt doc itselft. BTW, what is /bits/ ?
+> 
+> Signed-off-by: Rasmus Villemoes <rasmus.villemoes@prevas.dk>
+> ---
+>  Documentation/devicetree/bindings/soc/fsl/cpm_qe/qe.txt | 8 +++++++-
+>  1 file changed, 7 insertions(+), 1 deletion(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/soc/fsl/cpm_qe/qe.txt b/Documentation/devicetree/bindings/soc/fsl/cpm_qe/qe.txt
+> index d7afaff5faff..05f5f485562a 100644
+> --- a/Documentation/devicetree/bindings/soc/fsl/cpm_qe/qe.txt
+> +++ b/Documentation/devicetree/bindings/soc/fsl/cpm_qe/qe.txt
+> @@ -18,7 +18,8 @@ Required properties:
+>  - reg : offset and length of the device registers.
+>  - bus-frequency : the clock frequency for QUICC Engine.
+>  - fsl,qe-num-riscs: define how many RISC engines the QE has.
+> -- fsl,qe-num-snums: define how many serial number(SNUM) the QE can use for the
+> +- fsl,qe-snums: This property has to be specified as '/bits/ 8' value,
+> +  defining the array of serial number (SNUM) values for the virtual
+>    threads.
+> 
+>  Optional properties:
+> @@ -34,6 +35,11 @@ Recommended properties
+>  - brg-frequency : the internal clock source frequency for baud-rate
+>    generators in Hz.
+> 
+> +Deprecated properties
+> +- fsl,qe-num-snums: define how many serial number(SNUM) the QE can use
+> +  for the threads. Use fsl,qe-snums instead to not only specify the
+> +  number of snums, but also their values.
+> +
+>  Example:
+>       qe@e0100000 {
+>         #address-cells = <1>;
+> --
+> 2.20.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
