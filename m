@@ -2,73 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CE4310DB3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 22:05:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1699C10DB5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 22:05:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=X4aw01o4mkMeFpIg3GMMo0LdEvAikDYjk8lwxBAw1C8=; b=LghPSbmVG7Illt
-	wNMQ6t0RU518NyqcEcUHo2YjdcuF2Ta7ANR2oy+YQ+BrqCEklgf7V+i3RuVkOTmfRRsaAaLx32zdr
-	toe9n1FKU5X61tdfMfvpkUeIqf5cfJmZUexbSIp7rf196pMM2EKY1B+hGrFCI3NYPKrymiaxd/G/P
-	VNVwwJztCiT8Rvjr9xK1pwIBVRZyInSd4u1ZAghXcxo95z/+EsqUl5zCCsmYrsjkMLb1eavxIxh1U
-	IHrUC19hIj1+HE/0EZNE+iuZjv67BDH/9yrPYiU+PmTQuyWPkD+Q3Ri3AQpjugftsBQNGo1ZAUd80
-	8BvQqZrKlufd3xTCnjGQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
+	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NsyOvUtCc6zd9mI5Zoay9HVgDr/Gtz1AE2fzlppWtEA=; b=gawGVZ3trjwvQf
+	N03ZFrnuVAtGeGxNp0K5lISinYrnMP2ASgrN0YP7LEevCWuzZ8AJtAJuACHZtwr5K3/KKW2pUVmkH
+	2h0XqyhnPfxieI9vFM5JTAkJMiF8vadyFoxuV6/Sj9kgO7YQbyQDq7uGbHazg7CaTdxCcLfnLDAKi
+	FIJVjCJNlM5FpU/G93c8Z6NNbSELuUPp8x9bkSpLc2yQAzeDRkRJpFkHXpRO5Av8rzu2PR33fyP2w
+	GBc3olL9VjpbF/JzIPel3OixE+Exjg6/JYrMuYxD3Ga3GYRX7LH8lsygRRIfn8DSa8tapImTUEsOi
+	HUPJCz2E4KZwZQbfnRmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLvTi-0003Cj-Bf; Wed, 01 May 2019 20:05:18 +0000
-Received: from mail-qk1-x74a.google.com ([2607:f8b0:4864:20::74a])
+	id 1hLvTu-0003MB-7C; Wed, 01 May 2019 20:05:30 +0000
+Received: from mail-ot1-x349.google.com ([2607:f8b0:4864:20::349])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLvTW-0002Qq-AB
- for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 20:05:07 +0000
-Received: by mail-qk1-x74a.google.com with SMTP id 207so234596qkn.5
+ id 1hLvTX-0002pl-Gu
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 20:05:08 +0000
+Received: by mail-ot1-x349.google.com with SMTP id w33so58927otb.23
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 01 May 2019 13:05:04 -0700 (PDT)
+ Wed, 01 May 2019 13:05:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:message-id:mime-version:subject:from:to:cc;
- bh=j1UWHDT4a3S43XmXoocO/8/QcdoleiLleSM+fFU5j3U=;
- b=mtpE+O46RBE22iwEhucexJJgTrsWylAuSBqpI5XhAI2/MeOj7YRLypQhc67Y+v3/5L
- q80eU0MCTyAnnU7g51a1M+L88zcMYhjx4P8giwZ7qTvDeO8YeKRoKJEeAMmZ3181NlzP
- mSHNS9cnwDT/g7HBzdYXNphlRoy6lq5icoPfSiF8p1gelb1vx4vK7rHCLzrvM9LK9jYO
- JMFwXyN1F5T28Y0cA837E9SuXW9smPtVeGTLGyf1iYj+nOzV/mFcKi0DlJb+saUyvU1b
- IikDOanxDREBARGqKRsOs5FHl1AQSCDEGd1UdFeUvzMzV1CysMm0eN4ulhoKzeyEa3dF
- yLHg==
+ h=date:in-reply-to:message-id:mime-version:references:subject:from:to
+ :cc; bh=pgwmPCltNlT2qJblASiCpctnwqNtjlaYefBmlV3joCA=;
+ b=AMFmjeknKhEaJ/eh9jtp+QJfhvY+QPJUVoke8a327Koi6aQNO6J+ln7j6aJIvHIwYE
+ 8IaY5sY50qyQX7VW6CSR6VKL2/C/yiEv1tEMiYnkWXzxI3tTx7dzZRy24C3bkXZrOaZH
+ v/6HKXlBiUnlx5g7RvwIWd47qfARkNLLJnu58vsP28Lf1xLzun0VrCJFZRKTjcBj0CQZ
+ kxCjc+1RHyqrjlKu5XlAbLWMaP23VslEyGRa0EylGu9Rj7xob49sFengp78TMf1739MD
+ inCxLoW1GbMipIAKe2nmPiN2XN2Kz2sB3z1MEjJhaomm/uvvldW+EC4afPJwobojLOTN
+ IgOg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
- bh=j1UWHDT4a3S43XmXoocO/8/QcdoleiLleSM+fFU5j3U=;
- b=Zi8jHlqIrBFPci4c/dyVa05ON1GJ5wucR8yb5qwt1cdZUiJJk0SPBrDv0roe0MUUUd
- L679T4qmL0rG3Y8wtW4Tusouicah6dHzDE+Ykg+d5eGmdbS0W4dprJxSbrNMI4DeonrN
- 9tGQeJX7XOYHfIz5IARBDuUwgf2Z/xvdr+bdBccaNW15A5SKbWTZVUZXFZLEdvEeiI3w
- vel9gX+YPWUMwE/4COPUoMOzvTS33SuTU/P8N2QoxJKIqvIXhkGELQz7SS2aSoIUvdMf
- ipMWzPgOLV/04hONFgvCLmQ4WpdqOcu+Rpgfd+SgdgzYO7KspxYSt+t1qG9m/ghA15vZ
- 5yPA==
-X-Gm-Message-State: APjAAAWTFoPPJES6IzMWmylNJtKtLpyuDkkfMD1rRUTZcK/EraHp1KSv
- oPh2WrBf/iWknWUHBA/D+PnbG7cpMDnr/IoBvIY=
-X-Google-Smtp-Source: APXvYqwcmhUFSe0z7HnkFa2sbWE1j+IB2dn0B0YnDnOj177FZGCi3JFg2JIbv4Tt1UYGkEqVWbyRaVUYx0Dd0E4fsH4=
-X-Received: by 2002:a0c:8183:: with SMTP id 3mr71929qvd.206.1556741103412;
- Wed, 01 May 2019 13:05:03 -0700 (PDT)
-Date: Wed,  1 May 2019 13:04:49 -0700
-Message-Id: <20190501200451.255615-1-samitolvanen@google.com>
+ h=x-gm-message-state:date:in-reply-to:message-id:mime-version
+ :references:subject:from:to:cc;
+ bh=pgwmPCltNlT2qJblASiCpctnwqNtjlaYefBmlV3joCA=;
+ b=slnG7q81oYtawyS2+F2B+2mTUOQkOKS08fD8kBDcw46c8EVRqFi+r9ttcflz621f0n
+ 8zU97KjWpmfWzC4d4Rhs6xM1LbPpIUR/SS0iBrhDaUfrOmGE1NosxLrZ0Ky3aYJOywLn
+ sYbrGSnkYAqfHhCCs55Wx/Tiw4n6DckEltGG1FQ4ABiewONYjJCshmKr9GcwdK2AWkbc
+ vjPSFJDyIUpEz0Yy8vq/O71o08QxfZZQYEL5/SN+rXE3lCNnz2o4ePyagTlTJ9TZ3MOY
+ KjcwcvH/U+7FMvn0R9zZkJSeWCUFGKX3Od5XYeLnO7WFikFvU6tmnO7RgP6LkIYW+Zb5
+ CpOg==
+X-Gm-Message-State: APjAAAUGt/pEq3cA6Ka/fxS/kPqaWYpulS2z5aJjFNm08FEOLQZucEfS
+ 7LHzjtjFTEbSIaZWW5rkxuvlt9p3XLxUZU/lXnA=
+X-Google-Smtp-Source: APXvYqy0WApsbwDI8BfA3Z5wQECjBctYDbr5V6gFmoYub0j5ti+nozhzvzn4wnXwl6X5IMNDwLQwrHjL3uHCJNYqsPM=
+X-Received: by 2002:a9d:6153:: with SMTP id c19mr6049632otk.110.1556741105717; 
+ Wed, 01 May 2019 13:05:05 -0700 (PDT)
+Date: Wed,  1 May 2019 13:04:50 -0700
+In-Reply-To: <20190501200451.255615-1-samitolvanen@google.com>
+Message-Id: <20190501200451.255615-2-samitolvanen@google.com>
 Mime-Version: 1.0
+References: <20190501200451.255615-1-samitolvanen@google.com>
 X-Mailer: git-send-email 2.21.0.593.g511ec345e18-goog
-Subject: [PATCH 0/2] fix function type mismatches in syscall wrappers
+Subject: [PATCH 1/2] arm64: fix syscall_fn_t type
 From: Sami Tolvanen <samitolvanen@google.com>
 To: Catalin Marinas <catalin.marinas@arm.com>,
  Will Deacon <will.deacon@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_130506_383267_2FA6E747 
-X-CRM114-Status: UNSURE (   8.32  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190501_130507_591259_F6683493 
+X-CRM114-Status: GOOD (  11.63  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:74a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:349 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
@@ -100,18 +102,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-These patches fix type mismatches in arm64 syscall wrapper
-definitions, which trip indirect call checks with Control-Flow
-Integrity.
+Use const struct pt_regs * instead of struct pt_regs * as
+the argument type to fix indirect call type mismatches with
+Control-Flow Integrity checking.
 
-Sami Tolvanen (2):
-  arm64: fix syscall_fn_t type
-  arm64: use the correct function type in SYSCALL_DEFINE0
+Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
+---
+ arch/arm64/include/asm/syscall.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
- arch/arm64/include/asm/syscall.h         |  2 +-
- arch/arm64/include/asm/syscall_wrapper.h | 18 +++++++++---------
- 2 files changed, 10 insertions(+), 10 deletions(-)
-
+diff --git a/arch/arm64/include/asm/syscall.h b/arch/arm64/include/asm/syscall.h
+index a179df3674a1a..6206ab9bfcfc5 100644
+--- a/arch/arm64/include/asm/syscall.h
++++ b/arch/arm64/include/asm/syscall.h
+@@ -20,7 +20,7 @@
+ #include <linux/compat.h>
+ #include <linux/err.h>
+ 
+-typedef long (*syscall_fn_t)(struct pt_regs *regs);
++typedef long (*syscall_fn_t)(const struct pt_regs *regs);
+ 
+ extern const syscall_fn_t sys_call_table[];
+ 
 -- 
 2.21.0.593.g511ec345e18-goog
 
