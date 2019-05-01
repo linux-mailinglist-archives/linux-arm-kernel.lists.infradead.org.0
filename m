@@ -2,86 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C0F810F0D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 00:38:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B54D010F18
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 00:45:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=yk9QhBUuDsV+f+sAqsyE7kILg5rH4rfSVN4HhzCk5pc=; b=S9kOVRMbC2pEzw
-	Yw26TO5EK0TKo7ekocFmEpcO9wx2G56jNVNLP0nu27ft+N5ol8V801CmRLowVMoskfwiYBbomnxN5
-	TB3xmkRjYRIDdsHusHw2U+EXwNoWXVOXIV6KsTygWQ5Dq0DJikk2tR8+kaBAlbe0ymZEdiUy3paDS
-	q87gK/m+7pq1g/5nORXikKAC6j1B/JbrZp7lJsNXCaG8qHAL2M/kf+GOJOEpZsGs5b8Nu62n6yMz1
-	M72WE4185iEQe1eWQ97AnKskm8OqTTpjfXjn01IkM9H14uTtBhtk+p2ND1p0MdvQbj7FK68f3tPRA
-	ZXuLa8LvDxRxv5ZIJAzg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kA6Ygrda2u0S//5b/xiefmEkw+oSLNu8Nctrxi6ULAA=; b=rBNTeTV1UhBWQ3
+	upbPi9gIoF4cEEW0Wer+kgsyWu74/mPv6jgSW5bNtrfoJNkhBSaIDu5Sz7C/8LRAewMLuPgtfLWUe
+	V3zQeex/svWkRkfFONE5FKK/b5FH0hvI/W/43Zqw5okPGaiUfgdlwnqZS0MnPxe821L0hr5mC2+l1
+	T6ds/MC1O/ceLD/vE6PuOKJzoOSx5EsIbLX4EjGqC/TqEqw+LqebCKJGZe9GHFyes+JHBJ0IQ1iV9
+	93l6GjtCy14pVCzB6nnsZZSI+rv20dS1eRVR//8nwX37VjJe3Wyb89GoLl3I2nI5XMyAiLzK2LBCt
+	UedvGbMAGdLa8TGwg0jQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLxsF-0002p6-QK; Wed, 01 May 2019 22:38:47 +0000
-Received: from mx0b-00082601.pphosted.com ([67.231.153.30]
- helo=mx0a-00082601.pphosted.com)
+	id 1hLxye-0005pC-78; Wed, 01 May 2019 22:45:24 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLxs9-0002oj-4U
- for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 22:38:42 +0000
-Received: from pps.filterd (m0089730.ppops.net [127.0.0.1])
- by m0089730.ppops.net (8.16.0.27/8.16.0.27) with SMTP id x41MYheA004397
- for <linux-arm-kernel@lists.infradead.org>; Wed, 1 May 2019 15:38:40 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fb.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=facebook;
- bh=iIazPrlt7tOWnA4QOJ1iZhFr3bvbXxhMyXLj+/1AyVo=;
- b=j8s/grND7dbtTkbGg4Oidn9G/lEmLB02oSc61IkhyEn3fGtswvwxqTDQrbR3yMYO++fH
- GKRJBJ8SlfhOrFRRYkZFht5+pf4oQOPYmsukdQOAxG3SW26cY5DXPhTBf76pX0bYx/3A
- 0JmjbboaRFUQr6QNa+Ecx4SUhq2FKPjo+cA= 
-Received: from mail.thefacebook.com (mailout.thefacebook.com [199.201.64.23])
- by m0089730.ppops.net with ESMTP id 2s7d0q1mhm-2
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Wed, 01 May 2019 15:38:40 -0700
-Received: from mx-out.facebook.com (2620:10d:c081:10::13) by
- mail.thefacebook.com (2620:10d:c081:35::126) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA) id 15.1.1713.5;
- Wed, 1 May 2019 15:38:38 -0700
-Received: by devvm4117.prn2.facebook.com (Postfix, from userid 167582)
- id 8A7AAD5ED26F; Wed,  1 May 2019 15:38:38 -0700 (PDT)
-Smtp-Origin-Hostprefix: devvm
-From: Vijay Khemka <vijaykhemka@fb.com>
-Smtp-Origin-Hostname: devvm4117.prn2.facebook.com
-To: Arnd Bergmann <arnd@arndb.de>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Joel Stanley <joel@jms.id.au>, Andrew Jeffery
- <andrew@aj.id.au>, <linux-arm-kernel@lists.infradead.org>,
- <linux-aspeed@lists.ozlabs.org>, <linux-kernel@vger.kernel.org>
-Smtp-Origin-Cluster: prn2c23
-Subject: [PATCH] misc: aspeed-lpc-ctrl: Correct return values
-Date: Wed, 1 May 2019 15:38:36 -0700
-Message-ID: <20190501223836.1670096-1-vijaykhemka@fb.com>
-X-Mailer: git-send-email 2.17.1
-X-FB-Internal: Safe
+ id 1hLxyV-0005o5-OE; Wed, 01 May 2019 22:45:17 +0000
+Received: by mail-ot1-f67.google.com with SMTP id a10so350904otl.12;
+ Wed, 01 May 2019 15:45:15 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=b4eTdXWrNh3DXxF20Y/xFu+EwX4anaVGTC9t/+J/+Ag=;
+ b=YrQBRrKsWW/vcISiMBmaESE00nWZ6qx3+ADXUKRxTfu21CYczLDyJRfe1OA+bg3L+6
+ r1Y+qflFK2l2lqsEtALGWGqYsl261ulmu094OS9oi4E6TVJFNCvwa84KP/M0+DigNtOP
+ d/wmBnxzrfkYjkyXr36oEfB4g9c+3Vp+ndtDVaYUwiBArwNMpnXqdnMkW7Iezibg0THz
+ DL7VnqdEFLJsFxtHBRztCDlAuPaL5OVVi9QI8aAzIIjF4IDe1kwEUrk9noYCqjJjuIAC
+ jLSPD6DQuDxczpRbXav511LEvgpNXJ/YCFYKHvYzkuop9UeLGIcrtDOl6M16JkyJTrsz
+ N2PA==
+X-Gm-Message-State: APjAAAUyHnIrsuIVplvvxMl7kdYd7CtLK+h0UXWN21/GRG35e0sgkBuS
+ P+3SyC9c3Ou0WJo+gAgifg==
+X-Google-Smtp-Source: APXvYqx5w+AQiMs8ivRbF7xmZwHoV0ksJWr+KP9nlrArRn0R40gUkAg8crBaRaZ0pNk6tcRrvUCV1A==
+X-Received: by 2002:a9d:7401:: with SMTP id n1mr329353otk.226.1556750714180;
+ Wed, 01 May 2019 15:45:14 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id w5sm10599530oib.6.2019.05.01.15.45.12
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 01 May 2019 15:45:13 -0700 (PDT)
+Date: Wed, 1 May 2019 17:45:12 -0500
+From: Rob Herring <robh@kernel.org>
+To: Jerry-ch Chen <Jerry-Ch.chen@mediatek.com>
+Subject: Re: [RFC PATCH V1 1/6] dt-bindings: mt8183: Add binding for FD
+ shared memory
+Message-ID: <20190501224512.GA4287@bogus>
+References: <20190423104505.38778-1-Jerry-Ch.chen@mediatek.com>
+ <20190423104505.38778-2-Jerry-Ch.chen@mediatek.com>
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-01_10:, , signatures=0
-X-Proofpoint-Spam-Reason: safe
-X-FB-Internal: Safe
+Content-Disposition: inline
+In-Reply-To: <20190423104505.38778-2-Jerry-Ch.chen@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_153841_297106_3A2F42C3 
-X-CRM114-Status: GOOD (  14.02  )
-X-Spam-Score: -0.3 (/)
+X-CRM114-CacheID: sfid-20190501_154515_818239_E4CA7B36 
+X-CRM114-Status: GOOD (  19.80  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.3 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [67.231.153.30 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.7 KHOP_DYNAMIC           Relay looks like a dynamic address
- -0.1 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,75 +87,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sdasari@fb.com, vijaykhemka@fb.com
+Cc: devicetree@vger.kernel.org, Sean.Cheng@mediatek.com,
+ laurent.pinchart+renesas@ideasonboard.com, Rynn.Wu@mediatek.com,
+ christie.yu@mediatek.com, srv_heupstream@mediatek.com,
+ holmes.chiou@mediatek.com, suleiman@chromium.org, shik@chromium.org,
+ tfiga@chromium.org, jungo.lin@mediatek.com, sj.huang@mediatek.com,
+ yuzhao@chromium.org, hans.verkuil@cisco.com, zwisler@chromium.org,
+ frederic.chen@mediatek.com, matthias.bgg@gmail.com,
+ linux-mediatek@lists.infradead.org, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Corrected some of return values with appropriate meanings.
+On Tue, Apr 23, 2019 at 06:45:00PM +0800, Jerry-ch Chen wrote:
+> From: Jerry-ch Chen <jerry-ch.chen@mediatek.com>
+> 
+> This patch adds the binding for describing the shared memory
+> used to exchange meta data between the co-processor and Face
+> Detection (FD) unit of the camera system on Mediatek SoCs.
+> 
+> Signed-off-by: Jerry-ch Chen <jerry-ch.chen@mediatek.com>
+> ---
+>  .../mediatek,reserve-memory-fd_smem.txt       | 44 +++++++++++++++++++
+>  1 file changed, 44 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/reserved-memory/mediatek,reserve-memory-fd_smem.txt
+> 
+> diff --git a/Documentation/devicetree/bindings/reserved-memory/mediatek,reserve-memory-fd_smem.txt b/Documentation/devicetree/bindings/reserved-memory/mediatek,reserve-memory-fd_smem.txt
+> new file mode 100644
+> index 000000000000..52ae5071e238
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/reserved-memory/mediatek,reserve-memory-fd_smem.txt
+> @@ -0,0 +1,44 @@
+> +Mediatek FD Shared Memory binding
+> +
+> +This binding describes the shared memory, which serves the purpose of
+> +describing the shared memory region used to exchange data between Face
+> +Detection hardware (FD) and co-processor in Mediatek SoCs.
+> +
+> +The co-processor doesn't have the iommu so we need to use the physical
+> +address to access the shared buffer in the firmware.
+> +
+> +The Face Detection hardware (FD) can access memory through mt8183 IOMMU so
+> +it can use dma address to access the memory region.
+> +(See iommu/mediatek,iommu.txt for the detailed description of Mediatek IOMMU)
+> +
+> +
+> +Required properties:
+> +
+> +- compatible: must be "mediatek,reserve-memory-fd_smem"
+> +
+> +- reg: required for static allocation (see reserved-memory.txt for
+> +  the detailed usage)
+> +
+> +- alloc-range: required for dynamic allocation. The range must
+> +  between 0x00000400 and 0x100000000 due to the co-processer's
+> +  addressing limitation
+> +
+> +- size: required for dynamic allocation. The unit is bytes.
+> +  for Face Detection Unit, you need 1 MB at least.
 
-Signed-off-by: Vijay Khemka <vijaykhemka@fb.com>
----
- drivers/misc/aspeed-lpc-ctrl.c | 15 +++++++--------
- 1 file changed, 7 insertions(+), 8 deletions(-)
+What's the most?
 
-diff --git a/drivers/misc/aspeed-lpc-ctrl.c b/drivers/misc/aspeed-lpc-ctrl.c
-index 332210e06e98..97ae341109d5 100644
---- a/drivers/misc/aspeed-lpc-ctrl.c
-+++ b/drivers/misc/aspeed-lpc-ctrl.c
-@@ -68,7 +68,6 @@ static long aspeed_lpc_ctrl_ioctl(struct file *file, unsigned int cmd,
- 		unsigned long param)
- {
- 	struct aspeed_lpc_ctrl *lpc_ctrl = file_aspeed_lpc_ctrl(file);
--	struct device *dev = file->private_data;
- 	void __user *p = (void __user *)param;
- 	struct aspeed_lpc_ctrl_mapping map;
- 	u32 addr;
-@@ -93,8 +92,8 @@ static long aspeed_lpc_ctrl_ioctl(struct file *file, unsigned int cmd,
- 
- 		/* If memory-region is not described in device tree */
- 		if (!lpc_ctrl->mem_size) {
--			dev_err(dev, "Didn't find reserved memory\n");
--			return -EINVAL;
-+			pr_err("aspeed_lpc_ctrl: ioctl: Didn't find reserved memory\n");
-+			return -ENXIO;
- 		}
- 
- 		map.size = lpc_ctrl->mem_size;
-@@ -134,16 +133,16 @@ static long aspeed_lpc_ctrl_ioctl(struct file *file, unsigned int cmd,
- 
- 		if (map.window_type == ASPEED_LPC_CTRL_WINDOW_FLASH) {
- 			if (!lpc_ctrl->pnor_size) {
--				dev_err(dev, "Didn't find host pnor flash\n");
--				return -EINVAL;
-+				pr_err("aspeed_lpc_ctrl: ioctl: Didn't find host pnor flash\n");
-+				return -ENXIO;
- 			}
- 			addr = lpc_ctrl->pnor_base;
- 			size = lpc_ctrl->pnor_size;
- 		} else if (map.window_type == ASPEED_LPC_CTRL_WINDOW_MEMORY) {
- 			/* If memory-region is not described in device tree */
- 			if (!lpc_ctrl->mem_size) {
--				dev_err(dev, "Didn't find reserved memory\n");
--				return -EINVAL;
-+				pr_err("aspeed_lpc_ctrl: ioctl: Didn't find reserved memory\n");
-+				return -ENXIO;
- 			}
- 			addr = lpc_ctrl->mem_base;
- 			size = lpc_ctrl->mem_size;
-@@ -239,7 +238,7 @@ static int aspeed_lpc_ctrl_probe(struct platform_device *pdev)
- 		of_node_put(node);
- 		if (rc) {
- 			dev_err(dev, "Couldn't address to resource for reserved memory\n");
--			return -ENOMEM;
-+			return -ENXIO;
- 		}
- 
- 		lpc_ctrl->mem_size = resource_size(&resm);
--- 
-2.17.1
+I don't think you really need reserved memory here if you don't need a 
+fixed address. The size is not that big that a contiguous allocation 
+shouldn't be a problem (though with IOMMU you don't even need that). 
+'dma-ranges' can be used to set the kernel's dma mask and ensure a 
+range below 0x10000000.
 
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
