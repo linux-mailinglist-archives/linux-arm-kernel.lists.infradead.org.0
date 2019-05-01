@@ -2,84 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92CB010D78
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 21:49:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 496DF10D6D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 21:47:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=KsVYA6bgD9Jn3pwOvq1nnIOqWJ+bP9hlNuHnAHYkw64=; b=su9
-	4F7fFrZSRZAks8XVmhK8MDCdacxsyIRs5RqoWqAQnQg1pdrRUzcKhyOzNcmwz6lGkhRHxvmYB/kGD
-	JQJ4nbuEt3BSLkxO87dHfVW5Dh1Q3Lyf1vf+cXcOAOMG9qnLPL7u0ope42rGL0nHVtYaXoI2gQ5Oc
-	zm+okYRxLvzYs+Y/PJuG1c8vdVpFcTwMjcgCwmeJBX9T6Nb2p13iwf+Ehwf0A/AyMJpLUk0zc/bKz
-	85FLUzxWAfABq0UXd+nDHS/6XSOkPIyW2lxL5AfMTlmThlf08PyPpbgGEOpxTmlYEPNp38V6e4iYT
-	SPgbjln17TBpu7XF5tHhjLgYGFmJcXQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=L7hyR3u5+/CDf5JIAXlvEayRqhG/zupksoSs1M1k8nM=; b=F7Y3OQb6mvIKCM
+	gzbXDCSVIPKqGAh2hRBeHOV0QL4PAi2wIiSz9GVzt2TKn/l2JlDfZhvOHeNtW0QjHa0PnpjQ1kOkE
+	jC9pQvTkdfJVUV+M9GpmUx//ToeV+APAOKtR4t3UmdtfbkG6Ad6oLYEXvfwZ2SFF8SdLV543KiLAR
+	kNwjPyy8bYjCVlFAJhC9CFc0cepjXxLAE2QFH7l1/cyK3/DhFIB+iP7kasI/dsoTw4MiidEP54/hc
+	7B/e9oxw8/z74MoHLNXfeSjmHBJHJhzC4rhKmt1La/w21BbR1EkvUjCUXgP/2+VxfpY/81heJAiLg
+	tRI7wLPeQBqnx2Cyy/Mg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLvE3-0003es-7X; Wed, 01 May 2019 19:49:07 +0000
-Received: from mout.gmx.net ([212.227.15.18])
+	id 1hLvCr-0003Dd-Pl; Wed, 01 May 2019 19:47:53 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLvDw-0003eA-9j
- for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 19:49:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1556740137;
- bh=21zQ6hHqrFQ3g2iUdFoiowCPHS6/TQd1VUg3wwhis9o=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
- b=SZaUrBqtcwq1X7pXBzbBrTtBS+Jr9vgtIzZi7foz9VwTlN6p9xEvnOkNUakE6pga2
- gvL/8RHzmTz0K+pqPxi+DArA5pcgrfjoQeE8TVyxwp7kXEGIoSjt8pv5pT0eCayv7K
- gEdZZW1fOC5PWaQRy1WiOWwY2W+IbEykUOolMwRo=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from localhost.localdomain ([37.4.249.111]) by mail.gmx.com
- (mrgmx001 [212.227.17.190]) with ESMTPSA (Nemesis) id
- 0MAxyW-1hVn6z3AP6-009zm4; Wed, 01 May 2019 21:48:57 +0200
-From: Stefan Wahren <wahrenst@gmx.net>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH] MAINTAINERS: Update Stefan Wahren email address
-Date: Wed,  1 May 2019 21:47:35 +0200
-Message-Id: <1556740055-4962-1-git-send-email-wahrenst@gmx.net>
-X-Mailer: git-send-email 2.7.4
-X-Provags-ID: V03:K1:f+rwKC3ASZA5zARUzjT+aTKfFX/7Q7fJ1bIFmoxL+HAxUDFYoR8
- 4H4+NgGEvqIJ/4u7ig7sA6sT5KK/jox8bEbj7z6wQ5F3eTUnmxJLGnFKI0HQrdIR7o9LNu6
- gQz5mL+4ON8Z5UyQuk84AUQJ0PMI4Un2uQoy3NYCFnqLKtV5ZziRb84WTbvsvV655CzTAdV
- zzbxJOjVu2Q/fhqBgy+BA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:0w6+BajR9i8=:fTwrj/p6wwBuGwdA0a7fn+
- 7U5HXEnj4BKaQMGwJxDP65dFWTkEA6TMKvg2cN7PO251fO0wrbzxmRv+xf+fqKvY2J3NqyRmL
- wu3IDdHB4g0o2plLCZYfOA9a4fQOxBtpySZ78FuzrxlFc7bZumiUsrOesom/OvtL+i7d+xP95
- CcgUkpoHo0eE94jNZ9rqiJygMlP4VV+m57oDumsLtKQw4Kri67XQ7JLMD4xXFvBVz6ubmNJJY
- qwAuK7pBXrgEq3VlrRCSrX2wLRSrpuXdsjkNgciHpuZ5tqGVfYWGR7H79swIs+hdi3mMUEb9w
- o/whKNyf7dwy/bainOeIFUM+7vtGwEXrleZr/xPHt+p8z8KC1eYyU6aMmmGPj32V/6cPzFjw7
- 8khAXeKRRC37jJ8wS2wsI59EDZ6zftf9FOGYYdyMUKbzNFFMZgaRi+NTD3C47CwjfxwxeSzrs
- Z1bitLLQ0ulMIZagL7rhdi937FGcQrtmiVrFeR7rUSs8p3FUxmNEHdaPMRdjltkKQRzhx8tc7
- QnotSf8//75DB+Zfc5f2enqoG+CjngoV6MkgFzLXazIU5+/sDJfEDgdHgvMbQ6Uj2h08uuiTY
- VmcXP87OA5TNoj6bAT88oUkuusdUkqJ41km9v2O7OObJLnz/25Ih0bTOksC67/ezaMkWezA6P
- 62DpzbT8UbAAmPAzIcrxJS6LU7ThkDZSg31LR3qoPI0a/jprOTAaFzuDcdQ4ECCHPFXLsZBjt
- jFfonXyAaf+CgBBHQIaRc6NG3hgYPJa9sW7p1vrEAfnJP8V82Yf4VT27F1pphvXUuuV0BQVgX
- bjpeSe4t42laKfhNylpWIf0zWhFjPv0bDDobIMaJ+e4MXZVlqQHY2CC9RMjbfcpbY3F1nfkpQ
- kj4FWeFT0CAd3Kx2yndB3Ph1wCjjcdeFMsglO5oylyYFMxvsJs9OiAMS5g+lpi
+ id 1hLvCf-000364-DC
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 19:47:44 +0000
+Received: by mail-oi1-f196.google.com with SMTP id t70so9067918oif.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 01 May 2019 12:47:41 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=/rP/lNM5/74azub9ypQhSMTgulpgACEtFJzuhj9hr+M=;
+ b=cz7ONPdd69tHd+E5Lw/2YcaeLtsGgM5xUwL7V+bVf7cRrzqcV1seS9O75HiffzbYTj
+ CnPbz+c061t0g/9/r/U9gLRilLYLocSBqiy7JqyDqAHAT6msYbVbbJrALys7GxGeJQ9R
+ 0+TFCdkK7ivMmU9dxDcNH9VFwuws9/e20Ml62KPgk4DmcABUdUblN3RfWzff7Be37Eww
+ mM5G1ZObNRnTuFPe4Le94cECZgGthmfBylM9tqFItIsgSZUclzmIh7oePbptwAc1U8iN
+ GAhkgSyfOBWYeN2fIAivIZJwTM33+FMpUeLESjiu3Qoi1VTuh52gC6lxPKkDszuCJaBj
+ +5EA==
+X-Gm-Message-State: APjAAAXER0mC/dLVcjRhRR9C/7GTfIS4WgZHb81xlH1NPMBSGDW4F67E
+ gqCf92C7n1x+CzriE2ocjA==
+X-Google-Smtp-Source: APXvYqzKu2OdM8V4p7AhuWx35gRXw+/3vWvjzzWmgsp3fZyd5zjaR7rA2ALyP2DVqY8d/wCbpqyDOA==
+X-Received: by 2002:a05:6808:cd:: with SMTP id t13mr22306oic.66.1556740060253; 
+ Wed, 01 May 2019 12:47:40 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id s124sm16982906oia.24.2019.05.01.12.47.39
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 01 May 2019 12:47:39 -0700 (PDT)
+Date: Wed, 1 May 2019 14:47:38 -0500
+From: Rob Herring <robh@kernel.org>
+To: Dragan Cvetic <dragan.cvetic@xilinx.com>
+Subject: Re: [PATCH V3 01/12] dt-bindings: xilinx-sdfec: Add SDFEC binding
+Message-ID: <20190501194738.GA1441@bogus>
+References: <1556402706-176271-1-git-send-email-dragan.cvetic@xilinx.com>
+ <1556402706-176271-2-git-send-email-dragan.cvetic@xilinx.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1556402706-176271-2-git-send-email-dragan.cvetic@xilinx.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_124900_679270_FA6110BC 
-X-CRM114-Status: UNSURE (   9.09  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190501_124741_662622_53A5B93C 
+X-CRM114-Status: GOOD (  19.70  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.15.18 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.196 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
+ provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -91,36 +90,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Wahren <wahrenst@gmx.net>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, arnd@arndb.de,
+ gregkh@linuxfoundation.org, michal.simek@xilinx.com,
+ linux-kernel@vger.kernel.org, Derek Kiernan <derek.kiernan@xilinx.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-I2SE has been acquired, so i decided to use my private address now.
+On Sat, Apr 27, 2019 at 11:04:55PM +0100, Dragan Cvetic wrote:
+> Add the Soft Decision Forward Error Correction (SDFEC) Engine
+> bindings which is available for the Zynq UltraScale+ RFSoC
+> FPGA's.
+> 
+> Signed-off-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
+> Signed-off-by: Derek Kiernan <derek.kiernan@xilinx.com>
+> ---
+>  .../devicetree/bindings/misc/xlnx,sd-fec.txt       | 58 ++++++++++++++++++++++
+>  1 file changed, 58 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/misc/xlnx,sd-fec.txt
+> 
+> diff --git a/Documentation/devicetree/bindings/misc/xlnx,sd-fec.txt b/Documentation/devicetree/bindings/misc/xlnx,sd-fec.txt
+> new file mode 100644
+> index 0000000..425b6a6
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/misc/xlnx,sd-fec.txt
+> @@ -0,0 +1,58 @@
+> +* Xilinx SDFEC(16nm) IP *
+> +
+> +The Soft Decision Forward Error Correction (SDFEC) Engine is a Hard IP block
+> +which provides high-throughput LDPC and Turbo Code implementations.
+> +The LDPC decode & encode functionality is capable of covering a range of
+> +customer specified Quasi-cyclic (QC) codes. The Turbo decode functionality
+> +principally covers codes used by LTE. The FEC Engine offers significant
+> +power and area savings versus implementations done in the FPGA fabric.
+> +
+> +
+> +Required properties:
+> +- compatible: Must be "xlnx,sd-fec-1.1"
+> +- clock-names : List of input clock names from the following:
+> +    - "core_clk", Main processing clock for processing core (required)
+> +    - "s_axi_aclk", AXI4-Lite memory-mapped slave interface clock (required)
+> +    - "s_axis_din_aclk", DIN AXI4-Stream Slave interface clock (optional)
+> +    - "s_axis_din_words-aclk", DIN_WORDS AXI4-Stream Slave interface clock (optional)
+> +    - "s_axis_ctrl_aclk",  Control input AXI4-Stream Slave interface clock (optional)
+> +    - "m_axis_dout_aclk", DOUT AXI4-Stream Master interface clock (optional)
+> +    - "m_axis_dout_words_aclk", DOUT_WORDS AXI4-Stream Master interface clock (optional)
+> +    - "m_axis_status_aclk", Status output AXI4-Stream Master interface clock (optional)
+> +- clocks : Clock phandles (see clock_bindings.txt for details).
+> +- reg: Should contain Xilinx SDFEC 16nm Hardened IP block registers
+> +  location and length.
+> +- xlnx,sdfec-code : Should contain "ldpc" or "turbo" to describe the codes
+> +  being used.
+> +- xlnx,sdfec-din-words : A value 0 indicates that the DIN_WORDS interface is
+> +  driven with a fixed value and is not present on the device, a value of 1
+> +  configures the DIN_WORDS to be block based, while a value of 2 configures the
+> +  DIN_WORDS input to be supplied for each AXI transaction.
+> +- xlnx,sdfec-din-width : Configures the DIN AXI stream where a value of 1
+> +  configures a width of "1x128b", 2 a width of "2x128b" and 4 configures a width
+> +  of "4x128b".
 
-Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
----
- MAINTAINERS | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Perhaps append with '-bits' and make the values 0, 128, 256, 512.
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 2c7d4e1..75a7876 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -3068,7 +3068,7 @@ F:	arch/arm/mach-bcm/
+> +- xlnx,sdfec-dout-words : A value 0 indicates that the DOUT_WORDS interface is
+> +  driven with a fixed value and is not present on the device, a value of 1
+> +  configures the DOUT_WORDS to be block based, while a value of 2 configures the
+> +  DOUT_WORDS input to be supplied for each AXI transaction.
+> +- xlnx,sdfec-dout-width : Configures the DOUT AXI stream where a value of 1
+> +  configures a width of "1x128b", 2 a width of "2x128b" and 4 configures a width
+> +  of "4x128b".
 
- BROADCOM BCM2835 ARM ARCHITECTURE
- M:	Eric Anholt <eric@anholt.net>
--M:	Stefan Wahren <stefan.wahren@i2se.com>
-+M:	Stefan Wahren <wahrenst@gmx.net>
- L:	linux-rpi-kernel@lists.infradead.org (moderated for non-subscribers)
- L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
- T:	git git://github.com/anholt/linux
---
-2.7.4
+Same here.
 
+> +Optional properties:
+> +- interrupts: should contain SDFEC interrupt number
+
+The interrupt may not be wired?
+
+> +
+> +Example
+> +---------------------------------------
+> +	sd_fec_0: sd-fec@a0040000 {
+> +		compatible = "xlnx,sd-fec-1.1";
+> +		clock-names = "core_clk","s_axi_aclk","s_axis_ctrl_aclk","s_axis_din_aclk","m_axis_status_aclk","m_axis_dout_aclk";
+> +		clocks = <&misc_clk_2>,<&misc_clk_0>,<&misc_clk_1>,<&misc_clk_1>,<&misc_clk_1>, <&misc_clk_1>;
+> +		reg = <0x0 0xa0040000 0x0 0x40000>;
+> +		interrupt-parent = <&gic>;
+> +		interrupts = <0 89 4>;
+> +		xlnx,sdfec-code = "ldpc";
+> +		xlnx,sdfec-din-words = <0>;
+> +		xlnx,sdfec-din-width = <2>;
+> +		xlnx,sdfec-dout-words = <0>;
+> +		xlnx,sdfec-dout-width = <1>;
+> +	};
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
