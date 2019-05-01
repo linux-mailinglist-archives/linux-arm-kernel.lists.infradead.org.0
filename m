@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1699C10DB5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 22:05:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D2F2610DB6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 22:05:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NsyOvUtCc6zd9mI5Zoay9HVgDr/Gtz1AE2fzlppWtEA=; b=gawGVZ3trjwvQf
-	N03ZFrnuVAtGeGxNp0K5lISinYrnMP2ASgrN0YP7LEevCWuzZ8AJtAJuACHZtwr5K3/KKW2pUVmkH
-	2h0XqyhnPfxieI9vFM5JTAkJMiF8vadyFoxuV6/Sj9kgO7YQbyQDq7uGbHazg7CaTdxCcLfnLDAKi
-	FIJVjCJNlM5FpU/G93c8Z6NNbSELuUPp8x9bkSpLc2yQAzeDRkRJpFkHXpRO5Av8rzu2PR33fyP2w
-	GBc3olL9VjpbF/JzIPel3OixE+Exjg6/JYrMuYxD3Ga3GYRX7LH8lsygRRIfn8DSa8tapImTUEsOi
-	HUPJCz2E4KZwZQbfnRmw==;
+	List-Owner; bh=qgFVR92I+z7uIqcfaXfipV+fz7Ztgp+uIJct7+sqD3I=; b=FJ1GouRV31aP2o
+	K7ZGUfeWIpZQE3Qy3TAYkpTkXX5Ug4R8h7ge8Y0KMQ4UjjwoTyU8ZgwgN3xV6gsEXgd5aCRY5sCGG
+	PTWCVgT5w/23SCHlreioaTvBIC72AR8oaTJDIv3niaRDKYNEX72XJinSokOQtPGWiR9oZ5Z06nTbV
+	UwyxaLLuS1MOsF0MIDN/LKJ7+6k36NsrAZtGWDFHV7kOVX7F7oyyDo4l1C7/hbXIPeDF6x5StF5up
+	yspVK4jwvSlx5ujrC5nvHTHLlZvr1867YKR/SZJusaWHkABBJlFabpJ3zd63RwaY+dV4vfJe6AHzp
+	dbsl3UqLocuk0r9GpVCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLvTu-0003MB-7C; Wed, 01 May 2019 20:05:30 +0000
-Received: from mail-ot1-x349.google.com ([2607:f8b0:4864:20::349])
+	id 1hLvU8-0003aa-01; Wed, 01 May 2019 20:05:44 +0000
+Received: from mail-pf1-x449.google.com ([2607:f8b0:4864:20::449])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLvTX-0002pl-Gu
- for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 20:05:08 +0000
-Received: by mail-ot1-x349.google.com with SMTP id w33so58927otb.23
+ id 1hLvTa-0003CI-0b
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 20:05:11 +0000
+Received: by mail-pf1-x449.google.com with SMTP id a141so9928945pfa.13
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 01 May 2019 13:05:06 -0700 (PDT)
+ Wed, 01 May 2019 13:05:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=pgwmPCltNlT2qJblASiCpctnwqNtjlaYefBmlV3joCA=;
- b=AMFmjeknKhEaJ/eh9jtp+QJfhvY+QPJUVoke8a327Koi6aQNO6J+ln7j6aJIvHIwYE
- 8IaY5sY50qyQX7VW6CSR6VKL2/C/yiEv1tEMiYnkWXzxI3tTx7dzZRy24C3bkXZrOaZH
- v/6HKXlBiUnlx5g7RvwIWd47qfARkNLLJnu58vsP28Lf1xLzun0VrCJFZRKTjcBj0CQZ
- kxCjc+1RHyqrjlKu5XlAbLWMaP23VslEyGRa0EylGu9Rj7xob49sFengp78TMf1739MD
- inCxLoW1GbMipIAKe2nmPiN2XN2Kz2sB3z1MEjJhaomm/uvvldW+EC4afPJwobojLOTN
- IgOg==
+ :cc; bh=MlQndH9JHFu7S8ddgNAyiZUD6B/g+xVzIb+RnIGAaWs=;
+ b=fnHCAaSHp7jm7BX0qFctNdwaGrY7oLfabmSkvoB4dtQBJxSdCKtEx2jxC7FIC3GCxO
+ YlgBkWApyHsNLL6q2+7r2CJg2KnpX2OwDbqGgxNeA53OCgvKuTcxuVB48/S3RpXYbdDY
+ xQI022cfV27rAtSh9fzNB5ly9uYCGubQ/ylCHl9zpyxnc+YN2gOllzLs4Xjgd9TiL++l
+ kMDg+NtQ5Q8uH53COQDUocIYQW0e30MTDPCh60KDEcJ33zjTNRHn9njPDqkCGujG/mVs
+ xQ7iK4l6ssYko9wzto0NLq97Khegf/K37bxoKrlRFtekyZwm6Khlvp/QHuQOSfA9pGKn
+ uedg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=pgwmPCltNlT2qJblASiCpctnwqNtjlaYefBmlV3joCA=;
- b=slnG7q81oYtawyS2+F2B+2mTUOQkOKS08fD8kBDcw46c8EVRqFi+r9ttcflz621f0n
- 8zU97KjWpmfWzC4d4Rhs6xM1LbPpIUR/SS0iBrhDaUfrOmGE1NosxLrZ0Ky3aYJOywLn
- sYbrGSnkYAqfHhCCs55Wx/Tiw4n6DckEltGG1FQ4ABiewONYjJCshmKr9GcwdK2AWkbc
- vjPSFJDyIUpEz0Yy8vq/O71o08QxfZZQYEL5/SN+rXE3lCNnz2o4ePyagTlTJ9TZ3MOY
- KjcwcvH/U+7FMvn0R9zZkJSeWCUFGKX3Od5XYeLnO7WFikFvU6tmnO7RgP6LkIYW+Zb5
- CpOg==
-X-Gm-Message-State: APjAAAUGt/pEq3cA6Ka/fxS/kPqaWYpulS2z5aJjFNm08FEOLQZucEfS
- 7LHzjtjFTEbSIaZWW5rkxuvlt9p3XLxUZU/lXnA=
-X-Google-Smtp-Source: APXvYqy0WApsbwDI8BfA3Z5wQECjBctYDbr5V6gFmoYub0j5ti+nozhzvzn4wnXwl6X5IMNDwLQwrHjL3uHCJNYqsPM=
-X-Received: by 2002:a9d:6153:: with SMTP id c19mr6049632otk.110.1556741105717; 
- Wed, 01 May 2019 13:05:05 -0700 (PDT)
-Date: Wed,  1 May 2019 13:04:50 -0700
+ bh=MlQndH9JHFu7S8ddgNAyiZUD6B/g+xVzIb+RnIGAaWs=;
+ b=jmu+W1oM2ZC9ntMuO/izq8QlX8MOozhSNPSmkRXwgtiev/EDXYi1dVqo/IvixMT50L
+ PRqcn/ZTJxjz+JANUNc4gS3oPbG6WEdeLwg97Of9ei5Y/bHiAOjNrLCe86YO2zBEp7dJ
+ Brxj/UYfTGBCvnrH8gaVY4iSYQuC9T3k8ejGTsVHe32oCXOmk91Ph6xvXlGVOBMFfO2s
+ P3u0xVhZCww3PYpScR6/5lkkY1gkYDQrg01soXJD0DwZ6aqpIZ7kXz45RhN3eht3lhYK
+ JpolKD8nkftdMKTPYAEHuqUG+VJ8ESxs8KJay6rvDfz9DmgeGh6xJ94xAHL9RPMLdBzg
+ lUWQ==
+X-Gm-Message-State: APjAAAWeaz0CpMzafGruspIAg+e5lfY6m33pSKuNsWwjwyWzg5o50uwx
+ aFneERWymYwkcgwmVwk1TDxmH+acefd44eiwRgU=
+X-Google-Smtp-Source: APXvYqwBclqb9p4MTO0VP/jDbcmcoD0wl/ivARDRHYgzxLNfoOJhYoTrwu/lUR7tBPdfO3m6nARfIKPs1tbACW0AiWU=
+X-Received: by 2002:a63:da51:: with SMTP id l17mr34321605pgj.115.1556741107820; 
+ Wed, 01 May 2019 13:05:07 -0700 (PDT)
+Date: Wed,  1 May 2019 13:04:51 -0700
 In-Reply-To: <20190501200451.255615-1-samitolvanen@google.com>
-Message-Id: <20190501200451.255615-2-samitolvanen@google.com>
+Message-Id: <20190501200451.255615-3-samitolvanen@google.com>
 Mime-Version: 1.0
 References: <20190501200451.255615-1-samitolvanen@google.com>
 X-Mailer: git-send-email 2.21.0.593.g511ec345e18-goog
-Subject: [PATCH 1/2] arm64: fix syscall_fn_t type
+Subject: [PATCH 2/2] arm64: use the correct function type in SYSCALL_DEFINE0
 From: Sami Tolvanen <samitolvanen@google.com>
 To: Catalin Marinas <catalin.marinas@arm.com>,
  Will Deacon <will.deacon@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_130507_591259_F6683493 
-X-CRM114-Status: GOOD (  11.63  )
+X-CRM114-CacheID: sfid-20190501_130510_091948_B5246609 
+X-CRM114-Status: GOOD (  10.37  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:349 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:449 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
@@ -102,28 +102,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use const struct pt_regs * instead of struct pt_regs * as
-the argument type to fix indirect call type mismatches with
-Control-Flow Integrity checking.
+Although a syscall defined using SYSCALL_DEFINE0 doesn't accept
+parameters, use the correct function type to avoid indirect call
+type mismatches with Control-Flow Integrity checking.
 
 Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
 ---
- arch/arm64/include/asm/syscall.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/include/asm/syscall_wrapper.h | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
 
-diff --git a/arch/arm64/include/asm/syscall.h b/arch/arm64/include/asm/syscall.h
-index a179df3674a1a..6206ab9bfcfc5 100644
---- a/arch/arm64/include/asm/syscall.h
-+++ b/arch/arm64/include/asm/syscall.h
-@@ -20,7 +20,7 @@
- #include <linux/compat.h>
- #include <linux/err.h>
+diff --git a/arch/arm64/include/asm/syscall_wrapper.h b/arch/arm64/include/asm/syscall_wrapper.h
+index a4477e515b798..507d0ee6bc690 100644
+--- a/arch/arm64/include/asm/syscall_wrapper.h
++++ b/arch/arm64/include/asm/syscall_wrapper.h
+@@ -30,10 +30,10 @@
+ 	}										\
+ 	static inline long __do_compat_sys##name(__MAP(x,__SC_DECL,__VA_ARGS__))
  
--typedef long (*syscall_fn_t)(struct pt_regs *regs);
-+typedef long (*syscall_fn_t)(const struct pt_regs *regs);
+-#define COMPAT_SYSCALL_DEFINE0(sname)					\
+-	asmlinkage long __arm64_compat_sys_##sname(void);		\
+-	ALLOW_ERROR_INJECTION(__arm64_compat_sys_##sname, ERRNO);	\
+-	asmlinkage long __arm64_compat_sys_##sname(void)
++#define COMPAT_SYSCALL_DEFINE0(sname)							\
++	asmlinkage long __arm64_compat_sys_##sname(const struct pt_regs *__unused);	\
++	ALLOW_ERROR_INJECTION(__arm64_compat_sys_##sname, ERRNO);			\
++	asmlinkage long __arm64_compat_sys_##sname(const struct pt_regs *__unused)
  
- extern const syscall_fn_t sys_call_table[];
+ #define COND_SYSCALL_COMPAT(name) \
+ 	cond_syscall(__arm64_compat_sys_##name);
+@@ -62,11 +62,11 @@
+ 	static inline long __do_sys##name(__MAP(x,__SC_DECL,__VA_ARGS__))
  
+ #ifndef SYSCALL_DEFINE0
+-#define SYSCALL_DEFINE0(sname)					\
+-	SYSCALL_METADATA(_##sname, 0);				\
+-	asmlinkage long __arm64_sys_##sname(void);		\
+-	ALLOW_ERROR_INJECTION(__arm64_sys_##sname, ERRNO);	\
+-	asmlinkage long __arm64_sys_##sname(void)
++#define SYSCALL_DEFINE0(sname)							\
++	SYSCALL_METADATA(_##sname, 0);						\
++	asmlinkage long __arm64_sys_##sname(const struct pt_regs *__unused);	\
++	ALLOW_ERROR_INJECTION(__arm64_sys_##sname, ERRNO);			\
++	asmlinkage long __arm64_sys_##sname(const struct pt_regs *__unused)
+ #endif
+ 
+ #ifndef COND_SYSCALL
 -- 
 2.21.0.593.g511ec345e18-goog
 
