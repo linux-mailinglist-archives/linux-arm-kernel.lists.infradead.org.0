@@ -2,100 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7649D10B90
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 18:48:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E5E610B9A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 18:52:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w6ZuGyuJD9Ii8P4jPqSioShZmCI9VLB3noWSV5P/ZtE=; b=WVe10sxQ1QtpO1
-	1bKlSC/FWXJzECIRgE7DkglYOwhuZUUGD2Aq3mjVjhxCu50WCURSvEshLsNWqTytfpxeOQJR683Of
-	ws6lwlBQvqyp6vPXRN3jxnSYFJ4vQw8WZQ0tVzBvJwskob1yG0XlZgB1lUyc5vyejvZwfk9Or+Wub
-	OFKYxRktcN1QFUsoO0DFVPfjxS8t+MjF+99+cd9dH24xQNXk6k9R0daNiypSReMfFC+UQv9u8LJOv
-	JX01hMDEPHl+47IVgoZGTT1gYOvwAdXwmiT7CTA3O9msfIFNlQbTz1/FASsExRN/fOla+fyKQ8Y6A
-	qw2WsYA42EfgSBD4LakA==;
+	List-Owner; bh=CvPpbcM6Bwk+rcGoe1DskjCTA4OAZANYIRGaLyCq1pI=; b=pftBTKAJxJZVg3
+	C7wkqKeLKEW/z07kfBAL32xioH0mrLgnWvxXGVm+HTcfctcdKOmbOsb3ckuI8z51rpm/vdel8S5cn
+	7UJSzLGzcPW3WjXmdETwFw+RcYBrDn5lBe62/wnTogHn8cfKP13tuIqN427jcCnwRKsFwulJmQpoc
+	abkma8TFcV2v6ENPWJm2gk3wrbx5A/RX6H5WlhuQ5ODQpNvncx97LhhONl4qdRu2WCR4OB+wVCbEB
+	DcwmgCHUmF/oUOhIWrHVZbQF8Mh55OjNHrMS4PSMutjr1fbWjBddjtBTi8K2g3hgFXI5SsA0Tc6Gb
+	/hX29KOs9AP67E8u7+iA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLsPe-0004H5-92; Wed, 01 May 2019 16:48:54 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLsPW-000495-DT
- for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 16:48:47 +0000
-Received: by mail-pl1-x642.google.com with SMTP id x15so8421952pln.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 01 May 2019 09:48:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=a82ckZo73SGxA8ey3aK0omtfrwDTACIRQAmbz4zxBz8=;
- b=DZAZlVyv2Zj8QW2ZVaA4F2WxBgm+TYZTAM4t/5EOeChgCJ7BD4Ft2Dzmnf3x6+ydz1
- XakRftqblAOckP3MeN3ccDznp09ppAFe871YQDxI1Qj+FuNPuoY1ouHhz5kI+3ZQ3PV3
- /L68VP9/OZfwUxqTI2ADGPFduqoKJR0cQ/ilRG4LirfK9AWJ1nlO4sVAtoc4jAZjVELX
- dwxVevKkDwYvFLwv52/XqZAeyBzWSZ5CO4uvi+nyaZGWjFQjY/27kRLDK4iQOVPv1bS3
- pYU7oLCM3TjBP/5voYoXBOCWgkWx+/gNSfwEsWL5ioDvofaSRT3AzcJ5BrlWCeZEJ+vp
- 9TMw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=a82ckZo73SGxA8ey3aK0omtfrwDTACIRQAmbz4zxBz8=;
- b=PFrFqjTh6rVNWxqsKbL+hSewW/xHgO2EqqbssD1u0L7uky4irj7irokUOYbUD0B0Mr
- OvkFH09Fs4bcGfcyd549Xfiy24W1xeD8i5hW0M+fkjtMBF5u+lZHht5mOWbE4HVHi+hT
- wN6OAVmQGPk8fV9V0E3EgMRs2V1xNfmq+5tdc7p8yIO4Zg0bjXNTrZQ0M2c4Ep911DRG
- SPsKS+f+s8RqRwKi5/WE5LYBT+OHIb6ZrLOED3ekbXM6c7CeuHhl40PNerkLJmIHrgX9
- WlpVlmypDHjuEXfUc94CBx1/TPHl+qkdWjGKgR0/CPeBKtLJDOikPCsoW32kbi8KWvI9
- 9oYw==
-X-Gm-Message-State: APjAAAX7vz/mxWJR2u4rsqdytqNCHfgomZWgUw2AUf6Yrya9QkOtR4FF
- xBXUQtQX/QKCuCqVR9WDxNA=
-X-Google-Smtp-Source: APXvYqxW8qIcb4HhSImxk+i+ozqc55UYdRTl9MHwDSKvhigyPhTtplKP1yE1tqeQ0DpYt8I1Y+S+aA==
-X-Received: by 2002:a17:902:163:: with SMTP id
- 90mr79079707plb.34.1556729325186; 
- Wed, 01 May 2019 09:48:45 -0700 (PDT)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id r76sm62426017pfa.39.2019.05.01.09.48.44
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 01 May 2019 09:48:44 -0700 (PDT)
-Date: Wed, 1 May 2019 09:48:43 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: linux-hwmon@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-aspeed@lists.ozlabs.org, linux-kernel@vger.kernel.org,
- openbmc@lists.ozlabs.org, linux-pm@vger.kernel.org
-Subject: Re: [PATCH 1/6] thermal: Introduce
- devm_thermal_of_cooling_device_register
-Message-ID: <20190501164843.GA16333@roeck-us.net>
-References: <1555617500-10862-1-git-send-email-linux@roeck-us.net>
- <1555617500-10862-2-git-send-email-linux@roeck-us.net>
+	id 1hLsSj-0005yx-Om; Wed, 01 May 2019 16:52:05 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hLsSd-0005xz-IW
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 16:52:00 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 48B2880D;
+ Wed,  1 May 2019 09:51:57 -0700 (PDT)
+Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 35DD13F719;
+ Wed,  1 May 2019 09:51:54 -0700 (PDT)
+Date: Wed, 1 May 2019 17:51:51 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Oleg Nesterov <oleg@redhat.com>
+Subject: Re: [PATCH v2 3/6] x86: clean up _TIF_SYSCALL_EMU handling using
+ ptrace_syscall_enter hook
+Message-ID: <20190501165151.GB12498@e107155-lin>
+References: <20190318104925.16600-1-sudeep.holla@arm.com>
+ <20190318104925.16600-4-sudeep.holla@arm.com>
+ <20190318153321.GA23521@redhat.com>
+ <20190430164413.GA18913@e107155-lin>
+ <20190501155711.GB30235@redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1555617500-10862-2-git-send-email-linux@roeck-us.net>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <20190501155711.GB30235@redhat.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_094846_458857_E8C27BAE 
-X-CRM114-Status: GOOD (  11.68  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190501_095159_617020_06AD0854 
+X-CRM114-Status: GOOD (  22.08  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -107,39 +67,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jean Delvare <jdelvare@suse.com>, Tomer Maimon <tmaimon77@gmail.com>,
- Nancy Yuen <yuenn@google.com>, Andrew Jeffery <andrew@aj.id.au>,
- Patrick Venture <venture@google.com>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Kamil Debski <kamil@wypas.org>, Tali Perry <tali.perry1@gmail.com>,
- Eduardo Valentin <edubezval@gmail.com>, Avi Fishman <avifishman70@gmail.com>,
- Joel Stanley <joel@jms.id.au>, Daniel Lezcano <daniel.lezcano@linaro.org>,
- Zhang Rui <rui.zhang@intel.com>, Benjamin Fair <benjaminfair@google.com>
+Cc: Haibo Xu <haibo.xu@arm.com>, Steve Capper <Steve.Capper@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, jdike@addtoit.com, x86@kernel.org,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ Bin Lu <bin.lu@arm.com>, Richard Weinberger <richard@nod.at>,
+ Ingo Molnar <mingo@redhat.com>, Paul Mackerras <paulus@samba.org>,
+ Andy Lutomirski <luto@kernel.org>, Michael Ellerman <mpe@ellerman.id.au>,
+ Borislav Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 18, 2019 at 12:58:15PM -0700, Guenter Roeck wrote:
-> thermal_of_cooling_device_register() and thermal_cooling_device_register()
-> are typically called from driver probe functions, and
-> thermal_cooling_device_unregister() is called from remove functions. This
-> makes both a perfect candidate for device managed functions.
-> 
-> Introduce devm_thermal_of_cooling_device_register(). This function can
-> also be used to replace thermal_cooling_device_register() by passing a NULL
-> pointer as device node. The new function requires both struct device *
-> and struct device_node * as parameters since the struct device_node *
-> parameter is not always identical to dev->of_node.
-> 
-> Don't introduce a device managed remove function since it is not needed
-> at this point.
-> 
+On Wed, May 01, 2019 at 05:57:11PM +0200, Oleg Nesterov wrote:
+> On 04/30, Sudeep Holla wrote:
+> >
+> > On Mon, Mar 18, 2019 at 04:33:22PM +0100, Oleg Nesterov wrote:
+> > >
+> > > And it seems that _TIF_WORK_SYSCALL_ENTRY needs some cleanups too... We don't need
+> > > "& _TIF_WORK_SYSCALL_ENTRY" in syscall_trace_enter, and _TIF_WORK_SYSCALL_ENTRY
+> > > should not include _TIF_NOHZ?
+> > >
+> >
+> > I was about to post the updated version and checked this to make sure I have
+> > covered everything or not. I had missed the above comment. All architectures
+> > have _TIF_NOHZ in their mask that they check to do work. And from x86, I read
+> > "...syscall_trace_enter(). Also includes TIF_NOHZ for enter_from_user_mode()"
+> > So I don't understand why _TIF_NOHZ needs to be dropped.
+>
+> I have already forgot this discussion... But after I glanced at this code again
+> I still think the same, and I don't understand why do you disagree.
+>
 
-Any feedback / thoughts / comments ?
+Sorry, but I didn't have any disagreement, I just said I don't understand
+the usage on all architectures at that moment.
 
-Thanks,
-Guenter
+> > Also if we need to drop, we can address that separately examining all archs.
+>
+> Sure, and I was only talking about x86. We can keep TIF_NOHZ and even
+> set_tsk_thread_flag(TIF_NOHZ) in context_tracking_cpu_set() if some arch needs
+> this but remove TIF_NOHZ from TIF_WORK_SYSCALL_ENTRY in arch/x86/include/asm/thread_info.h,
+> afaics this shouldn't make any difference.
+>
+
+OK, it's just x86, then I understand your point. I was looking at all
+the architectures, sorry for the confusion.
+
+> And I see no reason why x86 needs to use TIF_WORK_SYSCALL_ENTRY in
+> syscall_trace_enter().
+>
+
+Agreed
+
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
