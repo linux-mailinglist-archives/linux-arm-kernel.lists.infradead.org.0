@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE44C10C2A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 19:40:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 362DA10C2B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 19:40:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jlsafOiSOjsN3TaTv4Tq9WouA9bDGBAman7yq0o8f1o=; b=qxO0UynrFyjmNX
-	v6oWHLPfMTJVyiNGFg4HTbF8Blc5fLrfM14kR1ABy3128aoi004SbcneGfLGFbAOmApgJwi3gwU8n
-	ub5ZX6evolF1WHs3s9DKeXSSR9l0jbL5Oj+qbmlM/vVS7BBF6YXqHiFvlp5x+/Pm8JS4itTJhnaZn
-	GiNGonmVdUAwGdXZhL7kRV+rR36kWx+Tat86NgbA6LNnBusow3ca0KqHJHkFXE0FiD/StpP0qL+zL
-	kkU03Sl7j5V3klhQ+QR5GWiN24BH9j8ycEorFEDMB2Dg4rUdH+lvmpHBJJzuxXAOd2ahvRajpEp6B
-	qcqOjY/QbrNSIpTjBMEA==;
+	List-Owner; bh=JZerYx7fdkYBoOBFPuZ10f4nOGsk2AuZTozeMMwBQVY=; b=s0HMLnh+lOUt9Q
+	lX2kSGitJcc/umca5PqKGtXdXk4FL0fo4d0ncs7C4g+8K4afwCnd5ON9KUR1MXKeymFF29DlH088I
+	+TSrF63mcx2HMRtr9pFaPyZKUafS0sjQZ7vti6hYs9kRSMm3JxvneiHFu2jepu/LYze/cSlg680N2
+	vk+O/bbA91aNInqcqExH+e52/zezZ/m94O8CJZdlwXC315m2ryQcYWiOmB5fhyiy1n46DNv1lLE1N
+	5Y0P827+xby7omOz00vA6O6jvZQregVNbQJVZQj7Egs50waxES+1RRSqTjNilTLaHKDt/SSyGbUq5
+	HuSmH0NklpLICFpT8HMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLtDf-0005zB-Fy; Wed, 01 May 2019 17:40:35 +0000
+	id 1hLtDo-0006EI-NK; Wed, 01 May 2019 17:40:44 +0000
 Received: from adsl-173-228-226-134.prtc.net ([173.228.226.134] helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLtDS-0005tm-QA; Wed, 01 May 2019 17:40:23 +0000
+ id 1hLtDU-0005uM-Hp; Wed, 01 May 2019 17:40:24 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Oleg Nesterov <oleg@redhat.com>,
 	Arnd Bergmann <arnd@arndb.de>
-Subject: [PATCH 1/5] arm64: don't use asm-generic/ptrace.h
-Date: Wed,  1 May 2019 13:39:39 -0400
-Message-Id: <20190501173943.5688-2-hch@lst.de>
+Subject: [PATCH 2/5] powerpc: don't use asm-generic/ptrace.h
+Date: Wed,  1 May 2019 13:39:40 -0400
+Message-Id: <20190501173943.5688-3-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190501173943.5688-1-hch@lst.de>
 References: <20190501173943.5688-1-hch@lst.de>
@@ -58,66 +58,54 @@ Note that only the helpers actually used are implemented now.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- arch/arm64/include/asm/ptrace.h | 31 +++++++++++++++++++------------
- 1 file changed, 19 insertions(+), 12 deletions(-)
+ arch/powerpc/include/asm/ptrace.h | 29 ++++++++++++++++++++++-------
+ 1 file changed, 22 insertions(+), 7 deletions(-)
 
-diff --git a/arch/arm64/include/asm/ptrace.h b/arch/arm64/include/asm/ptrace.h
-index ec60174c8c18..55c1fb25cf32 100644
---- a/arch/arm64/include/asm/ptrace.h
-+++ b/arch/arm64/include/asm/ptrace.h
-@@ -228,11 +228,12 @@ static inline void forget_syscall(struct pt_regs *regs)
- #define fast_interrupts_enabled(regs) \
- 	(!((regs)->pstate & PSR_F_BIT))
+diff --git a/arch/powerpc/include/asm/ptrace.h b/arch/powerpc/include/asm/ptrace.h
+index 64271e562fed..5d30944f1f6b 100644
+--- a/arch/powerpc/include/asm/ptrace.h
++++ b/arch/powerpc/include/asm/ptrace.h
+@@ -108,18 +108,33 @@ struct pt_regs
  
--#define GET_USP(regs) \
--	(!compat_user_mode(regs) ? (regs)->sp : (regs)->compat_sp)
--
--#define SET_USP(ptregs, value) \
--	(!compat_user_mode(regs) ? ((regs)->sp = value) : ((regs)->compat_sp = value))
-+static inline unsigned long user_stack_pointer(struct pt_regs *regs)
-+{
-+	if (compat_user_mode(regs))
-+		return regs->compat_sp;
-+	return regs->sp;
-+}
+ #ifndef __ASSEMBLY__
  
- extern int regs_query_register_offset(const char *name);
- extern unsigned long regs_get_kernel_stack_nth(struct pt_regs *regs,
-@@ -309,13 +310,20 @@ static inline unsigned long regs_return_value(struct pt_regs *regs)
- struct task_struct;
- int valid_user_regs(struct user_pt_regs *regs, struct task_struct *task);
- 
--#define GET_IP(regs)		((unsigned long)(regs)->pc)
--#define SET_IP(regs, value)	((regs)->pc = ((u64) (value)))
--
--#define GET_FP(ptregs)		((unsigned long)(ptregs)->regs[29])
--#define SET_FP(ptregs, value)	((ptregs)->regs[29] = ((u64) (value)))
+-#define GET_IP(regs)		((regs)->nip)
+-#define GET_USP(regs)		((regs)->gpr[1])
+-#define GET_FP(regs)		(0)
+-#define SET_FP(regs, val)
 +static inline unsigned long instruction_pointer(struct pt_regs *regs)
 +{
-+	return regs->pc;
++	return regs->nip;
 +}
++
 +static inline void instruction_pointer_set(struct pt_regs *regs,
 +		unsigned long val)
 +{
-+	regs->pc = val;
++	regs->nip = val;
 +}
- 
--#include <asm-generic/ptrace.h>
++
++static inline unsigned long user_stack_pointer(struct pt_regs *regs)
++{
++	return regs->gpr[1];
++}
++
 +static inline unsigned long frame_pointer(struct pt_regs *regs)
 +{
-+	return regs->regs[29];
++	return 0;
 +}
  
- #define procedure_link_pointer(regs)	((regs)->regs[30])
- 
-@@ -325,7 +333,6 @@ static inline void procedure_link_pointer_set(struct pt_regs *regs,
- 	procedure_link_pointer(regs) = val;
- }
- 
--#undef profile_pc
+ #ifdef CONFIG_SMP
  extern unsigned long profile_pc(struct pt_regs *regs);
+-#define profile_pc profile_pc
++#else
++#define profile_pc(regs) instruction_pointer(regs)
+ #endif
  
- #endif /* __ASSEMBLY__ */
+-#include <asm-generic/ptrace.h>
+-
+ #define kernel_stack_pointer(regs) ((regs)->gpr[1])
+ static inline int is_syscall_success(struct pt_regs *regs)
+ {
 -- 
 2.20.1
 
