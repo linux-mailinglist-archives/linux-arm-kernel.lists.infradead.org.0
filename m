@@ -2,94 +2,106 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7834B105B1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 09:07:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B320610650
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 11:29:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=FtBXYSYhYgPcgRPHUCdCPla+pd9D2Ck+3ILCY6Eh37o=; b=cf9vZmGwBq+3BI
-	iu34051uyycwOF0bkiNMF7KNlwC7iOEmLdPxNCsLwyGGmMDWqW3UmVpvNrSfnA3aLS82ri0pUZg19
-	0+8th79QcgamMwoq728tqDl6xQCZgLk5oWWwhRHH8Qh+i7iVM1Bh5ThNxJzNOUuUzqW2K/lcsEWey
-	sk1jR+8ZJMkKhJDREYVX+mJ1U6dmO1HoW9xOSH40c/REGG4NtZ4FzRjAodU8IE2agd8AXPtz3FkL5
-	I7O2z/N341LnFWCK9Ua2XdDzg/KCjE57W803zuA3NXie5ozW5uEhFlTwkkyGWIAyxo3t4NjFo6M9d
-	FusQEhiqhiqyZUL+FzWg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Y6uZzed986YHapWj/ouuI88oRwDLc4jEiWyQeRs0X+U=; b=Y2ZO+JtXXib6OI
+	TAJM3I4xGcfTUtW5BCnRAPi8k7XUhkYVbNtn6205a6VLgDd2Tfc1jr9yXuY32lONnOC4fAPh4o7+d
+	2q6RkV4WWoM/BvRnYMlVet9LStTa05gYk/3DCD1tZO4I3SR4bA6G1XhO6rrwSnCv62/E9InNeE9DS
+	RSBxzdl0PGzQo1130wYmtAYPExDegPrs18H7x/vKll7CykoVYksh6ERlK4QPocHkVafH3j5c1GZNM
+	1Edqwict4jVEyDO71oS9KNQvzw0si5ncCChn/ZtJVtv7U59hNyvi8YwG3IC2e03XYSrl5whdNp9TL
+	q9pZmB4MW60q18Bnz3Rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLjKw-0000mx-47; Wed, 01 May 2019 07:07:26 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hLlYB-0006Mj-UY; Wed, 01 May 2019 09:29:15 +0000
+Received: from mail-eopbgr20094.outbound.protection.outlook.com ([40.107.2.94]
+ helo=EUR02-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLjKp-0000mU-Sl
- for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 07:07:21 +0000
-Received: by mail-pf1-x443.google.com with SMTP id 188so8250089pfd.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 01 May 2019 00:07:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=cS7rJIaL8pwN44UnD0NGYAHiEv3VfG6a3NVrHHK0S7g=;
- b=h9aGZO9cksXANDPwTh7uZA1Ut4uD/u65eBW2yV1+jUaE1Sxf5hhwgTQWtUK7wmOEoj
- 21/27g/I9OyridO3OCyAGaC0uu/vL/ZGPrPbtkEKhbfjX++WloCfMeVUH2Rlp35BZqty
- eTMxWu2ck8N2EaTEdIM5wYCdRvs/4YV7pphgDXqLgt0JnDqCth7en3UOSteQM9arEgj8
- /nPSIlcu1XeFdHY07F8XGAGHrJvCXTHBEA7FGEmJtu+HBMzX2BonAqITR5YoUDwBAu1C
- 7gsLtnWq+lOZSSEf5cOFaGOArKFVA+/cD6FggSh3Ukq81WtrCUzKcFWj8nyg1kOP6NIu
- kCWQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=cS7rJIaL8pwN44UnD0NGYAHiEv3VfG6a3NVrHHK0S7g=;
- b=pqBQBTEtXMd2VdvlfO02JNprqqqtDB0RxOjGiSX1C1Pf0Pkc8iT+d9hnWN9ca5CUVx
- eE6FyVlxbj38/pDSewJymNUM09wYQU5olJZyJUPYZRQk2MqlJ2s2Y0px9tCWsSeZ3Nec
- KrvIcL0J9axtr4lpGlLnvtXNlOxfRQ+8UpoECAxRm6ujM/AbWYbqLoz2rGxw7VF0ngRm
- UWoNMuMTA0nJT7kTL8uZqFLC2VhiURF/7DRXnOVWz2dflW4993w/mzK9Z4RvOSZTVAXh
- OJKdSrTbHoz3E5yFsLD+4K0CU6yK4gBdL0ychS5XsHIr3OZLqq7xCn16BADU+dS7mlRu
- 0VDQ==
-X-Gm-Message-State: APjAAAXuJWjb6S3RqCTU4D66BOIppfpgFV12mI2yCqC2z3dwxuyvyhvx
- 6aezs8bx2Jkb8gUlNA0jZsc=
-X-Google-Smtp-Source: APXvYqwoUoswg+N0X7irtWbmVi8CGt3FJayjhGPhZnWvuH9T6Cbp6yIPc9tC0ZaglL48dyX3rxlj/w==
-X-Received: by 2002:a62:5795:: with SMTP id i21mr49146617pfj.194.1556694438381; 
- Wed, 01 May 2019 00:07:18 -0700 (PDT)
-Received: from nishad ([106.51.235.3])
- by smtp.gmail.com with ESMTPSA id q80sm71273674pfa.66.2019.05.01.00.07.14
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 01 May 2019 00:07:17 -0700 (PDT)
-Date: Wed, 1 May 2019 12:37:11 +0530
-From: Nishad Kamdar <nishadkamdar@gmail.com>
-To: Andreas =?utf-8?Q?F=C3=A4rber?= <afaerber@suse.de>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Stephen Boyd <sboyd@kernel.org>
-Subject: [PATCH] clk: actions: Use the correct style for SPDX License
- Identifier
-Message-ID: <20190501070707.GA5619@nishad>
+ id 1hLlY4-0006LZ-D0
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 09:29:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=prevas.se; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=oEHOss+tChlyXXqJGO0y71EE80c9sJqiMhQ3L42wg/E=;
+ b=ICMnzefBkqPEe1WQ1oDKxGJLNa49EFVdRve5P9kLhJJKgKtOoIRP/BjgLY+dxtkmne0OS5mvcI0hxUUJeOLLqtzxOnKEwHjbGEXoAgdPTE6N/3qB77b7+x3nVaNQuWWrxkq88APcOPLNZAyeJ4f+tnUf+Kywm8W/+1XmPjXbeH0=
+Received: from VI1PR10MB2672.EURPRD10.PROD.OUTLOOK.COM (20.178.126.212) by
+ VI1PR10MB2143.EURPRD10.PROD.OUTLOOK.COM (20.177.60.21) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1835.14; Wed, 1 May 2019 09:29:02 +0000
+Received: from VI1PR10MB2672.EURPRD10.PROD.OUTLOOK.COM
+ ([fe80::48b8:9cff:182:f3d8]) by VI1PR10MB2672.EURPRD10.PROD.OUTLOOK.COM
+ ([fe80::48b8:9cff:182:f3d8%2]) with mapi id 15.20.1856.008; Wed, 1 May 2019
+ 09:29:02 +0000
+From: Rasmus Villemoes <rasmus.villemoes@prevas.dk>
+To: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, Qiang Zhao
+ <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>
+Subject: [PATCH v2 0/6] soc/fsl/qe: cleanups and new DT binding
+Thread-Topic: [PATCH v2 0/6] soc/fsl/qe: cleanups and new DT binding
+Thread-Index: AQHVAABPKUiIhooNmUW5rKx1Bivkwg==
+Date: Wed, 1 May 2019 09:29:01 +0000
+Message-ID: <20190501092841.9026-1-rasmus.villemoes@prevas.dk>
+References: <20190430133615.25721-1-rasmus.villemoes@prevas.dk>
+In-Reply-To: <20190430133615.25721-1-rasmus.villemoes@prevas.dk>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: HE1PR0102CA0052.eurprd01.prod.exchangelabs.com
+ (2603:10a6:7:7d::29) To VI1PR10MB2672.EURPRD10.PROD.OUTLOOK.COM
+ (2603:10a6:803:e3::20)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Rasmus.Villemoes@prevas.se; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-mailer: git-send-email 2.20.1
+x-originating-ip: [81.216.59.226]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: f816a075-9126-4083-d6bc-08d6ce1771db
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(2017052603328)(7193020);
+ SRVR:VI1PR10MB2143; 
+x-ms-traffictypediagnostic: VI1PR10MB2143:
+x-microsoft-antispam-prvs: <VI1PR10MB214388D2EA8446B203679CF18A3B0@VI1PR10MB2143.EURPRD10.PROD.OUTLOOK.COM>
+x-ms-oob-tlc-oobclassifiers: OLM:6790;
+x-forefront-prvs: 00246AB517
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(979002)(376002)(136003)(39850400004)(346002)(396003)(366004)(189003)(199004)(14454004)(81166006)(110136005)(54906003)(26005)(68736007)(8676002)(6512007)(4326008)(8976002)(486006)(74482002)(71200400001)(2906002)(7416002)(6486002)(72206003)(186003)(316002)(478600001)(2501003)(36756003)(6436002)(71190400001)(25786009)(1076003)(6506007)(2616005)(305945005)(3846002)(44832011)(256004)(11346002)(6116002)(5660300002)(8936002)(14444005)(446003)(476003)(50226002)(76176011)(42882007)(7736002)(99286004)(66446008)(64756008)(53936002)(52116002)(107886003)(386003)(66066001)(66946007)(66476007)(102836004)(66556008)(81156014)(73956011)(969003)(989001)(999001)(1009001)(1019001);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR10MB2143;
+ H:VI1PR10MB2672.EURPRD10.PROD.OUTLOOK.COM; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: prevas.se does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: YQmxWf/qj7b+Ws9BfLs0RRpmC1F41s5yP5TXw9h2GKXqYXM/DIbb3RHgmoXyx3dC/luIAGLQQg6hgV/NorahWeKQxI8Dzs2zy9/u7mWlvu9d6dUEhNHzVEUj31lRHDc1UPaBTA/P+K7N6DJ+SBMXPlDY2VMecEIHaKe9dYBfYcN+kA88rF58z7L+snjE9gv8stfgFsocGu/IJl9Cr9eWHWjEl5pvGF9g+bUZum82Ru//ITSOCcA21b7RkszLUBVAuZZSsci1EFw+bwL2zRMyXqARHVmkHR7QNpZRjNbI2DaSLFKnUi/rXFUfSjo6ApaXfMgdtiTjGKBbvsBJgYJFP9kML3RSiuxvzXugsYp+HDywKDR2cGcTjMmdQsHIIKONNRbn3krvUp4TYP6Ct1NKqJAFQgruyEHPaRTm6r0H80I=
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-OriginatorOrg: prevas.dk
+X-MS-Exchange-CrossTenant-Network-Message-Id: f816a075-9126-4083-d6bc-08d6ce1771db
+X-MS-Exchange-CrossTenant-originalarrivaltime: 01 May 2019 09:29:01.9393 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: d350cf71-778d-4780-88f5-071a4cb1ed61
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR10MB2143
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_000719_955915_8DFEF92D 
-X-CRM114-Status: GOOD (  12.02  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20190501_022908_532607_F276ADE4 
+X-CRM114-Status: GOOD (  10.14  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [106.51.235.3 listed in dnsbl.sorbs.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (nishadkamdar[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [40.107.2.94 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -101,132 +113,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-kernel@vger.kernel.org,
- Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Joe Perches <joe@perches.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Christophe Leroy <christophe.leroy@c-s.fr>,
+ Mark Rutland <mark.rutland@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Scott Wood <oss@buserror.net>, Rasmus Villemoes <Rasmus.Villemoes@prevas.se>,
+ Rob Herring <robh+dt@kernel.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch corrects the SPDX License Identifier style
-in header files related to Clock Drivers for Actions Semi Socs.
-For C header files Documentation/process/license-rules.rst
-mandates C-like comments (opposed to C source files where
-C++ style should be used)
+This small series consists of some small cleanups and simplifications
+of the QUICC engine driver, and introduces a new DT binding that makes
+it much easier to support other variants of the QUICC engine IP block
+that appears in the wild: There's no reason to expect in general that
+the number of valid SNUMs uniquely determines the set of such, so it's
+better to simply let the device tree specify the values (and,
+implicitly via the array length, also the count).
 
-Changes made by using a script provided by Joe Perches here:
-https://lkml.org/lkml/2019/2/7/46
+v2:
+- Address comments from Christophe Leroy
+- Add his Reviewed-by to 1/6 and 3/6
+- Split DT binding update to separate patch as per
+  Documentation/devicetree/bindings/submitting-patches.txt
 
-Suggested-by: Joe Perches <joe@perches.com>
-Signed-off-by: Nishad Kamdar <nishadkamdar@gmail.com>
----
- drivers/clk/actions/owl-common.h       | 2 +-
- drivers/clk/actions/owl-composite.h    | 2 +-
- drivers/clk/actions/owl-divider.h      | 2 +-
- drivers/clk/actions/owl-factor.h       | 2 +-
- drivers/clk/actions/owl-fixed-factor.h | 2 +-
- drivers/clk/actions/owl-gate.h         | 2 +-
- drivers/clk/actions/owl-mux.h          | 2 +-
- drivers/clk/actions/owl-pll.h          | 2 +-
- drivers/clk/actions/owl-reset.h        | 2 +-
- 9 files changed, 9 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/clk/actions/owl-common.h b/drivers/clk/actions/owl-common.h
-index 5a866a8b913d..c000a431471e 100644
---- a/drivers/clk/actions/owl-common.h
-+++ b/drivers/clk/actions/owl-common.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- //
- // OWL common clock driver
- //
-diff --git a/drivers/clk/actions/owl-composite.h b/drivers/clk/actions/owl-composite.h
-index b410ed5bf308..bca38bf8f218 100644
---- a/drivers/clk/actions/owl-composite.h
-+++ b/drivers/clk/actions/owl-composite.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- //
- // OWL composite clock driver
- //
-diff --git a/drivers/clk/actions/owl-divider.h b/drivers/clk/actions/owl-divider.h
-index 92d3e3d23967..083be6d80954 100644
---- a/drivers/clk/actions/owl-divider.h
-+++ b/drivers/clk/actions/owl-divider.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- //
- // OWL divider clock driver
- //
-diff --git a/drivers/clk/actions/owl-factor.h b/drivers/clk/actions/owl-factor.h
-index f1a7ffe896e1..04b89cbfdccb 100644
---- a/drivers/clk/actions/owl-factor.h
-+++ b/drivers/clk/actions/owl-factor.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- //
- // OWL factor clock driver
- //
-diff --git a/drivers/clk/actions/owl-fixed-factor.h b/drivers/clk/actions/owl-fixed-factor.h
-index cc9fe36c0964..3dfd7fd7d292 100644
---- a/drivers/clk/actions/owl-fixed-factor.h
-+++ b/drivers/clk/actions/owl-fixed-factor.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- //
- // OWL fixed factor clock driver
- //
-diff --git a/drivers/clk/actions/owl-gate.h b/drivers/clk/actions/owl-gate.h
-index c2d61ceebce2..c2f161c93fda 100644
---- a/drivers/clk/actions/owl-gate.h
-+++ b/drivers/clk/actions/owl-gate.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- //
- // OWL gate clock driver
- //
-diff --git a/drivers/clk/actions/owl-mux.h b/drivers/clk/actions/owl-mux.h
-index 834284c8c3ae..53b9ab665294 100644
---- a/drivers/clk/actions/owl-mux.h
-+++ b/drivers/clk/actions/owl-mux.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- //
- // OWL mux clock driver
- //
-diff --git a/drivers/clk/actions/owl-pll.h b/drivers/clk/actions/owl-pll.h
-index 6fb0d45bb088..78e5fc360b03 100644
---- a/drivers/clk/actions/owl-pll.h
-+++ b/drivers/clk/actions/owl-pll.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
- //
- // OWL pll clock driver
- //
-diff --git a/drivers/clk/actions/owl-reset.h b/drivers/clk/actions/owl-reset.h
-index 10f5774979a6..a947ffcb5a02 100644
---- a/drivers/clk/actions/owl-reset.h
-+++ b/drivers/clk/actions/owl-reset.h
-@@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0-or-later
-+/* SPDX-License-Identifier: GPL-2.0-or-later */
- //
- // Actions Semi Owl SoCs Reset Management Unit driver
- //
+Rasmus Villemoes (6):
+  soc/fsl/qe: qe.c: drop useless static qualifier
+  soc/fsl/qe: qe.c: reduce static memory footprint by 1.7K
+  soc/fsl/qe: qe.c: introduce qe_get_device_node helper
+  dt-bindings: soc/fsl: qe: document new fsl,qe-snums binding
+  soc/fsl/qe: qe.c: support fsl,qe-snums property
+  soc/fsl/qe: qe.c: fold qe_get_num_of_snums into qe_snums_init
+
+ .../devicetree/bindings/soc/fsl/cpm_qe/qe.txt |   8 +-
+ drivers/soc/fsl/qe/qe.c                       | 164 +++++++-----------
+ 2 files changed, 72 insertions(+), 100 deletions(-)
+
 -- 
-2.17.1
-
+2.20.1
 
 _______________________________________________
 linux-arm-kernel mailing list
