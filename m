@@ -2,76 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0C5010C70
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 19:51:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC4A910C71
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 19:51:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=x/2tX/lWEp4ig2fs7Bsujuxe81VkFiWwQPNxG9X0S6I=; b=YT3
-	9S0jGlLSTGo6VfoD/HRmsV9jvhBPMz5DSprfxkYFea7FZ4UvE5Ec4m9dN1VAtJB1E4DkqFNki2sDv
-	ldSJzuGTSVWTzAUTFQT2O4tuf5P0Ek17oAEU5WH2nIG8zfV7LfUaiQUdhbdzix4vXaJaaIUV6lacG
-	itE7paALjfgcOA4QpqVq+AdMq/xag2JcXzJhECxgoAgBLyHxpNOalDZj7x5HoidA0Cc4claD/xaUt
-	f1haYs+3Jnsi2t4teQ8S6g0zmYjL1u1MvXkEICdcZseG9JdIbXYddCsK7rt6I7F6CJkRDnZkj4msP
-	EcqzHdNQPyo4KJCMfgZSyIX+23rB0PQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=p7MEl4KdoPB8QPYXZUck+5uCRxXnHNoF7x/kg6ucybA=; b=b3JA+qLxMNnACz8hjuIJIWb4Go
+	uDMA/V0AeTyXze+8KogXIR6kzSJ7q9J3qh0BK5APou8KGOLJd3YsBlAqsdhr3AsD+QV1kt0ueYGxZ
+	i+iPn+VKqSrWKqpG8/zDIRFrXjAo8oO+6YggmJKdCFnorMsw7GI71IW+kbq4n8WBYcWbn0aq3bRDp
+	A5Ys/FBFyQ4Tqq54Hb84YbH+OJx2WXuxyqIwkJUm5fWkGV+BSQud6F56WnqOtHxB9l8qeMCsrrNCz
+	kQ5I2qcdTrfK40NShhAjwrn5Bcd2lVzI4dk1fblZNC/OrTk7t/nG95r9ar6eQe5duc0hH3mbqzm2d
+	8xuT2i8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLtNo-0004em-67; Wed, 01 May 2019 17:51:04 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hLtNy-0004mX-Eg; Wed, 01 May 2019 17:51:14 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLtNf-0004cd-RB
- for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 17:50:57 +0000
-Received: by mail-pf1-x443.google.com with SMTP id e24so8911227pfi.12
+ id 1hLtNg-0004dM-VC
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 17:50:59 +0000
+Received: by mail-pf1-x442.google.com with SMTP id e24so8911249pfi.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 01 May 2019 10:50:55 -0700 (PDT)
+ Wed, 01 May 2019 10:50:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=qxCs6FzODNh2fGCpGOSAA0wwTC7Uax+EQxS+DcDljiE=;
- b=SQbeXgjOUNTrqGOoNPHRDOT7e0lQ9hNalXbzMtA4T1HTDqN6L+Pryhu0zRqc/YO1EJ
- U2A61sgPGFWNg5XvsRjF14jzF304vPJnz9u+XqJ+ZrdclaN0fm0ClbLIAp5EO960hkrM
- wqhtvxLXhm7LjN5iD0p0g9hblcCIlpg6E6lFEWCQ+J3JhQf3BiFLglerh/40M7C3DMal
- kBygTnRdNXk3WgS8gBWL6NGf1XfEMF206oJ6iA0Ze34dtSwnHyEPO76ITYDmCo+tSC/q
- VRgZPqm+tf36Na0gtNUPtqHvOWvbiHoB9QTI2WvmPNeyvh4SU1i3o6xfBcGuhFzOYsJu
- OZzQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=LY62M99zAzqSXCRirzpPXw/lRdNFS0ct7uspQVWkTaA=;
+ b=h7+OifeNwrUAelMopBO38az9mLQTlTmyZOo9lRphQ3uHEgS2vAPRP7QT3u+9V/yn8Q
+ svUGUzZD7ztBHoox25Z1PGErEuyzPNnC/GjprnxyRB8A/kGJpoEhAnoaQpJUV3uEoUrB
+ fZhVK1V+OGTKTcQMvomjugDMY8maLUbog2cPRzcCyLiXq5EMTLhs4uIe4i6TOPxi5Wsy
+ aUsPj1brdIiTmp/QngxOx20azueHZt9qtJKSYPpIGYkkixWXcWcs7UYNN8gH3d+MXeLR
+ TmExHbhCW0PTY5Nisrg1o24pXNy351UFd07KsbS56mp/nqgTiEl38Xqpw+cLWQBhgJbe
+ iprQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=qxCs6FzODNh2fGCpGOSAA0wwTC7Uax+EQxS+DcDljiE=;
- b=LCy1QcbHrvGPQr+GvBQUXmqVhbBaPihCk4wjkhe9Ml87RJm8aggswCKR35CLS30VrZ
- R5k2JiW/lIyjJYqyvNkSMetQ/eNSxfAGyDhqj/ik+Grz4mPO6w0DsVkG92a7aetHArsb
- mDJkNcpzDqaXltmIbUZdV+KkQH7wpx2AdYRBxy0YuST/pnFW+qtZ3G4imTz09ykwo4xH
- YKZfDEgcqnA4L0KQMI99pFfaXRMwU71EXDs9lHcPkRiR0gDaITQCfLgV+6syxRphxnor
- EIY0KSR0LQYnWLGKt/cQ1wesmYr/2p9fAI5eGl8WBM3vRoj3efye9Y2WHO1+YeYP+YKy
- wU4Q==
-X-Gm-Message-State: APjAAAVQj8dMIntSI7ZsnlS30FZgnYYHlrcOhqkXAz9CSX6bx1xbxPGn
- dbqYugDKw3OPqvfHKXLE/knFt7mkOxw=
-X-Google-Smtp-Source: APXvYqyOlq05s8FvVEVWIVmJja6sJvqEu8FvhWhHUP+LwZhszURI+PE5FKVIxIwDtgY7Yr5sB4iCzQ==
-X-Received: by 2002:aa7:980e:: with SMTP id e14mr17205578pfl.142.1556733054655; 
- Wed, 01 May 2019 10:50:54 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=LY62M99zAzqSXCRirzpPXw/lRdNFS0ct7uspQVWkTaA=;
+ b=qHXjnwDAagv+eNDpNdulVVK9UlD+2QM8ymjteyV0WGHRZKQ8nmL+Wx5kjoKSq6tY9+
+ nvwS6OyWSHX9vxu37Ld/XIcnzSk+z73/0scL2nJXPQeJ/XKNTKZsBLE21D7k1geqc2af
+ K+L8/rhy8YeEKyOeBDF/BZfemBSqVOfVveQHueCNgaQKHnaaZ3L54++3hxW1e7JWRe1i
+ viDOVWV455GdYLmg6ffthkO9BgbVddqQVIxDmijIH6R4BEVUive+JmhED7+eFZPsaoQ3
+ Xeqj8KR20qhg9USp1AYKdTLkoqMqg4sjyIbY6Ew/0Ty2mg/vok/J8BdvrlicvWemPT2b
+ o48g==
+X-Gm-Message-State: APjAAAVFcncbWKoAX807QrA56RCol67cgOjJotrCWjJ+7lTogKegqhNY
+ 3utKMwLsh16ls8sPBGbteexYyJFq2UM=
+X-Google-Smtp-Source: APXvYqxLE4fYvGCctomIFSpKPbeKr7s3AvEJ9rY2FbqpZw6VG8yO92Bp2wAbJ6e3LZUPx0vNUsYnZQ==
+X-Received: by 2002:a63:6b08:: with SMTP id g8mr75049037pgc.211.1556733056177; 
+ Wed, 01 May 2019 10:50:56 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id h189sm84126158pfc.125.2019.05.01.10.50.53
+ by smtp.gmail.com with ESMTPSA id h189sm84126158pfc.125.2019.05.01.10.50.54
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 01 May 2019 10:50:53 -0700 (PDT)
+ Wed, 01 May 2019 10:50:55 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 0/5] coresight: Fix snapshot mode 
-Date: Wed,  1 May 2019 11:50:47 -0600
-Message-Id: <20190501175052.29667-1-mathieu.poirier@linaro.org>
+Subject: [PATCH 1/5] coresight: Fix buffer size in snapshot mode
+Date: Wed,  1 May 2019 11:50:48 -0600
+Message-Id: <20190501175052.29667-2-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190501175052.29667-1-mathieu.poirier@linaro.org>
+References: <20190501175052.29667-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_105055_906929_0C675020 
-X-CRM114-Status: UNSURE (   8.35  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190501_105057_000585_80A41AB1 
+X-CRM114-Status: GOOD (  16.99  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -101,33 +104,103 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This set fix miscellaneous problems that prevented perf's snapshot
-mode from working properly when CoreSight events are used.
+In snapshot mode the buffer used by the sink devices need to be
+equal to the ring buffer size in order for the user space mechanic
+to work properly.
 
-Given the late state in the cycle, it is sent out for reviewing
-purposes and is not intended for the coming merge window.
+Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+---
+ drivers/hwtracing/coresight/coresight-etb10.c | 23 +++++++++++++++++++
+ .../hwtracing/coresight/coresight-tmc-etf.c   | 20 ++++++++++++++++
+ .../hwtracing/coresight/coresight-tmc-etr.c   |  8 +++++--
+ 3 files changed, 49 insertions(+), 2 deletions(-)
 
-Applies cleanly to coresight next[1].
-
-Regards,
-Mathieu
-
-[1]. https://git.linaro.org/kernel/coresight.git/log/?h=next
-
-Mathieu Poirier (5):
-  coresight: Fix buffer size in snapshot mode
-  coresight: tmc-etf: Fix snapshot mode update function
-  coresight: perf: Don't set the truncated flag in snapshot mode
-  perf tools: Properly set the value of 'old' in snapshot mode
-  docs: coresight: Document snapshot mode
-
- Documentation/trace/coresight.txt             | 41 ++++++++++++++++++-
- drivers/hwtracing/coresight/coresight-etb10.c | 31 +++++++++++++-
- .../hwtracing/coresight/coresight-tmc-etf.c   | 34 +++++++++++++--
- .../hwtracing/coresight/coresight-tmc-etr.c   | 16 ++++++--
- tools/perf/arch/arm/util/cs-etm.c             | 12 +++++-
- 5 files changed, 124 insertions(+), 10 deletions(-)
-
+diff --git a/drivers/hwtracing/coresight/coresight-etb10.c b/drivers/hwtracing/coresight/coresight-etb10.c
+index 4ee4c80a4354..0764647b92bc 100644
+--- a/drivers/hwtracing/coresight/coresight-etb10.c
++++ b/drivers/hwtracing/coresight/coresight-etb10.c
+@@ -374,7 +374,30 @@ static void *etb_alloc_buffer(struct coresight_device *csdev,
+ 			      int nr_pages, bool overwrite)
+ {
+ 	int node, cpu = event->cpu;
++	u32 capacity;
+ 	struct cs_buffers *buf;
++	struct etb_drvdata *drvdata;
++
++	/*
++	 * In snapsot mode the size of the perf ring buffer needs to be equal
++	 * to the size of the device's internal memory if we want to reuse the
++	 * generic AUX buffer management mechanic.
++	 *
++	 * For example (assuming 4096 byte page size):
++	 *
++	 *    # cat /sys/bus/coresight/devices/20010000.etb/mgmt/rdp
++	 *    0x2000
++	 *    # perf record -e cs_etm/@20010000.etf/ -S -m,8 --per-thread $APP
++	 *
++	 */
++	drvdata = dev_get_drvdata(csdev->dev.parent);
++	capacity = drvdata->buffer_depth * ETB_FRAME_SIZE_WORDS;
++
++	if (overwrite &&
++	    ((nr_pages << PAGE_SHIFT) != capacity)) {
++		dev_err(&csdev->dev, "Ring buffer not equal to device buffer");
++		return NULL;
++	}
+ 
+ 	if (cpu == -1)
+ 		cpu = smp_processor_id();
+diff --git a/drivers/hwtracing/coresight/coresight-tmc-etf.c b/drivers/hwtracing/coresight/coresight-tmc-etf.c
+index 2527b5d3b65e..7694833b13cb 100644
+--- a/drivers/hwtracing/coresight/coresight-tmc-etf.c
++++ b/drivers/hwtracing/coresight/coresight-tmc-etf.c
+@@ -380,6 +380,26 @@ static void *tmc_alloc_etf_buffer(struct coresight_device *csdev,
+ {
+ 	int node, cpu = event->cpu;
+ 	struct cs_buffers *buf;
++	struct tmc_drvdata *drvdata;
++
++	/*
++	 * In snapsot mode the size of the perf ring buffer needs to be equal
++	 * to the size of the device's internal memory if we want to reuse the
++	 * generic AUX buffer management mechanic.
++	 *
++	 * For example (assuming 4096 byte page size):
++	 *
++	 *    # cat /sys/bus/coresight/devices/20010000.etf/buffer_size
++	 *    0x10000
++	 *    # perf record -e cs_etm/@20010000.etf/ -S -m,16 --per-thread $APP
++	 *
++	 */
++	drvdata = dev_get_drvdata(csdev->dev.parent);
++	if (overwrite &&
++	    ((nr_pages << PAGE_SHIFT) != drvdata->size)) {
++		dev_err(&csdev->dev, "Ring buffer not equal to device buffer");
++		return NULL;
++	}
+ 
+ 	if (cpu == -1)
+ 		cpu = smp_processor_id();
+diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
+index df6e4b0b84e9..b9881d6d41ba 100644
+--- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
++++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
+@@ -1188,9 +1188,13 @@ alloc_etr_buf(struct tmc_drvdata *drvdata, struct perf_event *event,
+ 
+ 	/*
+ 	 * Try to match the perf ring buffer size if it is larger
+-	 * than the size requested via sysfs.
++	 * than the size requested via sysfs.  In snapsot mode the size
++	 * of the perf ring buffer needs to be equal to the allocated
++	 * size if we want to reuse the generic AUX buffer management
++	 * mechanic.
+ 	 */
+-	if ((nr_pages << PAGE_SHIFT) > drvdata->size) {
++	if (snapshot ||
++	    (nr_pages << PAGE_SHIFT) > drvdata->size) {
+ 		etr_buf = tmc_alloc_etr_buf(drvdata, (nr_pages << PAGE_SHIFT),
+ 					    0, node, NULL);
+ 		if (!IS_ERR(etr_buf))
 -- 
 2.17.1
 
