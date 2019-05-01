@@ -2,90 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0275710A56
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 17:57:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16C1010A58
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  1 May 2019 17:57:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P7mnGa9P2vvV7V8dg2O2mTL4rVqeKRq+Er1BOGd08LM=; b=NpGKv8mGZWwwH7
-	4pe18Zc8akH7Vb2hyBElPfChjn0hOVSWtWkGuVD2pQkZkzmp9bDLSzgc+XWGfbKu7V2Vm4eHp61DH
-	gzAsZDtRj2Ml3tIToqfPOfbzDqywaLfdiUgitkPnrhbyKYYD41974A/Eo7jIOYDGyVQVFkezd6EKr
-	Rn14L6xML2ILv/WZLwqO15/Gy2g/YV8JoCMOTATpZTN2aV2z67R7E9SzV8s7VhQYTR2kRPBd2AP24
-	XyYjnpS98gYBtl5j9AzZJjysQjyzXK1C8Nb32LaROno7+812b2K3WOLkdJKTBMjR8RXyP3roBkbG+
-	dM2TT8Be7GU2yZrVDhNw==;
+	List-Owner; bh=3S3fPKIf5IjVQJRgJ+m9KmmYWzGA/Zobv3CdKzaAk20=; b=fQjiLzv/05Wey9
+	vE5EuGEnfq31rutSvTW94A0UQX7kmc5yBFcGbnKAHv6hy53RJ7oQztjLb/1BegqqVL91igc98ignh
+	sKnGIxiJQDzZ8B3/i239m2Lr2KTS/Gz71uQ5m3wnbYPnRjV2iSyDk5yVAJLAnJLLC7tajoqKRsCK+
+	kLDtU48O1wZnbL2+AIkXRzDZHglr+Vwrr8TbXP1soCB8+fpMLKyaS4mTpwAkUArjI0j9zBuJ/1pXv
+	FpSeqvNCnaet27g+vWZYq/UMxjB6JbUkynIUkOMpp4V6IaSleVfwWLLPi34tFRNFqa1p4qNd0GxzO
+	Id84j8lsWiIFfqG4HVZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLrbb-0004E3-44; Wed, 01 May 2019 15:57:11 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hLrbr-0004SK-Om; Wed, 01 May 2019 15:57:27 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLrbU-0004Dc-Jq
- for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 15:57:05 +0000
-Received: by mail-pg1-x541.google.com with SMTP id c13so7506616pgt.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 01 May 2019 08:57:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=zougnS9BHWtiV86/fjUGFfiNYsjc2IiPUeZ1wHycv54=;
- b=pssZ8J+WWQRbOyrlcdWLjXFhkeJz2mZCR4QsTOuYI7FI22sBKiSlhvb3wBF22qLnkU
- 5asc9y57ArgeAzDip7evbLaIGK6GwEJNYE+6j0X3kAlD6qVHt1nZy1H9mFpXxgKGImil
- /mfigmNKy1wPw0zdNXHuSmpzij9hHt9KqzOmuMMGE51opboEK/wVBjvVPxHRvepkbnAP
- iLtg/L9YCPrlkInULrqI1GOzKJjVi+ws+nwkOFj6ud3xxTkMIjASD0OMo+QRV60pTIJQ
- 9dqOoRoqBQbM+oqSkKPY+5ryAm5YT6FjRbxgMwWTd1yo8EvGTHQRQfy/NOCTMFZXghcE
- t4zQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=zougnS9BHWtiV86/fjUGFfiNYsjc2IiPUeZ1wHycv54=;
- b=A2viDJz65e1qKSbqfx1UfDShxeupS/tihIKnhpa45yQ13OjlsbME3MCIyYwSz7vS8i
- 7RSziP2fsOtNQwgjTSifHRj4fw4039WN2rfKw2U4Y+ne8P/kzODJ48kiVGaiRYZiWqni
- WZIpnMOka4zmPTkkcdmhq/YJ2UWNbjo7VRnzwp5wwGlnyQYiMt10APwKCru9sP1oU52q
- +Y4yBj6u5KIrVsYOiqMjh441rftTvJV7msZsDx4jp4TgBbQtCcVuNsTiUjkOROFheuEq
- TPvygcCKoO1rpU2E43xl/UMm3sGsA8LJZNHQD0BMTncOy9FyY9CbyzvF0agRjCmkXiMX
- Yvvw==
-X-Gm-Message-State: APjAAAUSeFN/fOHdzNuUcjSfkLYd8G/EbNtk6AUVTMrbCG3l/06Wq763
- uIzWzh1BwmqqHegsyihvqvx8VqXRZ5i9CmsqekI=
-X-Google-Smtp-Source: APXvYqyVbB3PJlkYHkPrKxoEyC7Gmz2Tf4KUKj7+CETz3ajcYu09AZMjTbwENOvvHZUcd/CAt+vXIOTz1sm68Mek+eM=
-X-Received: by 2002:a62:a513:: with SMTP id v19mr78314336pfm.212.1556726223921; 
- Wed, 01 May 2019 08:57:03 -0700 (PDT)
+ id 1hLrbk-0004QT-46
+ for linux-arm-kernel@lists.infradead.org; Wed, 01 May 2019 15:57:21 +0000
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 86BC8C053B34;
+ Wed,  1 May 2019 15:57:18 +0000 (UTC)
+Received: from dhcp-27-174.brq.redhat.com (unknown [10.43.17.159])
+ by smtp.corp.redhat.com (Postfix) with SMTP id 83E2A1001E95;
+ Wed,  1 May 2019 15:57:14 +0000 (UTC)
+Received: by dhcp-27-174.brq.redhat.com (nbSMTP-1.00) for uid 1000
+ oleg@redhat.com; Wed,  1 May 2019 17:57:16 +0200 (CEST)
+Date: Wed, 1 May 2019 17:57:11 +0200
+From: Oleg Nesterov <oleg@redhat.com>
+To: Sudeep Holla <sudeep.holla@arm.com>
+Subject: Re: [PATCH v2 3/6] x86: clean up _TIF_SYSCALL_EMU handling using
+ ptrace_syscall_enter hook
+Message-ID: <20190501155711.GB30235@redhat.com>
+References: <20190318104925.16600-1-sudeep.holla@arm.com>
+ <20190318104925.16600-4-sudeep.holla@arm.com>
+ <20190318153321.GA23521@redhat.com>
+ <20190430164413.GA18913@e107155-lin>
 MIME-Version: 1.0
-References: <1556724043-3961-1-git-send-email-Frank.Li@nxp.com>
- <1556724043-3961-2-git-send-email-Frank.Li@nxp.com>
- <20190501152437.GA28109@fuggles.cambridge.arm.com>
- <CAHrpEqQYhg_aRt7qukkTzT3pEzLqg-B0YJL1Z7T06iZV1JAxmQ@mail.gmail.com>
- <CAHrpEqQON_M3LC6KtZCaRt4ShhREyY-ZA=-_cRpHxAaz46bvQA@mail.gmail.com>
- <20190501154852.GB28109@fuggles.cambridge.arm.com>
-In-Reply-To: <20190501154852.GB28109@fuggles.cambridge.arm.com>
-From: Zhi Li <lznuaa@gmail.com>
-Date: Wed, 1 May 2019 10:56:52 -0500
-Message-ID: <CAHrpEqR9n=RnwttxP3x8UW3OZg7vYML3WRhwDmFkJmmDd9Ld8A@mail.gmail.com>
-Subject: Re: [PATCH V11 2/4] drivers/perf: imx_ddr: Add ddr performance
- counter support
-To: Will Deacon <will.deacon@arm.com>
+Content-Disposition: inline
+In-Reply-To: <20190430164413.GA18913@e107155-lin>
+User-Agent: Mutt/1.5.24 (2015-08-30)
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.31]); Wed, 01 May 2019 15:57:18 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_085704_659066_6E546328 
-X-CRM114-Status: GOOD (  15.88  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190501_085720_190256_21962A14 
+X-CRM114-Status: GOOD (  17.65  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (lznuaa[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -97,74 +74,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Aisheng Dong <aisheng.dong@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, Frank Li <frank.li@nxp.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Haibo Xu <haibo.xu@arm.com>, Steve Capper <Steve.Capper@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, jdike@addtoit.com, x86@kernel.org,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ Bin Lu <bin.lu@arm.com>, Richard Weinberger <richard@nod.at>,
+ Ingo Molnar <mingo@redhat.com>, Paul Mackerras <paulus@samba.org>,
+ Andy Lutomirski <luto@kernel.org>, Michael Ellerman <mpe@ellerman.id.au>,
+ Borislav Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 1, 2019 at 10:48 AM Will Deacon <will.deacon@arm.com> wrote:
+On 04/30, Sudeep Holla wrote:
 >
-> On Wed, May 01, 2019 at 10:41:13AM -0500, Zhi Li wrote:
-> > On Wed, May 1, 2019 at 10:35 AM Zhi Li <lznuaa@gmail.com> wrote:
-> > >
-> > > On Wed, May 1, 2019 at 10:24 AM Will Deacon <will.deacon@arm.com> wrote:
-> > > >
-> > > > On Wed, May 01, 2019 at 03:21:00PM +0000, Frank Li wrote:
-> > > > > +static int ddr_perf_probe(struct platform_device *pdev)
-> > > > > +{
-> > > > > +     struct ddr_pmu *pmu;
-> > > > > +     struct device_node *np;
-> > > > > +     void __iomem *base;
-> > > > > +     char *name;
-> > > > > +     int num;
-> > > > > +     int ret;
-> > > > > +     int irq;
-> > > > > +
-> > > > > +     base = devm_platform_ioremap_resource(pdev, 0);
-> > > > > +     if (IS_ERR(base))
-> > > > > +             return PTR_ERR(base);
-> > > > > +
-> > > > > +     np = pdev->dev.of_node;
-> > > > > +
-> > > > > +     pmu = devm_kzalloc(&pdev->dev, sizeof(*pmu), GFP_KERNEL);
-> > > > > +     if (!pmu)
-> > > > > +             return -ENOMEM;
-> > > > > +
-> > > > > +     num = ddr_perf_init(pmu, base, &pdev->dev);
-> > > > > +
-> > > > > +     platform_set_drvdata(pdev, pmu);
-> > > > > +
-> > > > > +     name = devm_kasprintf(&pdev->dev, GFP_KERNEL, "imx_ddr%d", num);
-> > > >
-> > > > Still not happy with this.
-> > >
-> > > is imx_ddr_pmu%d  okay?
+> On Mon, Mar 18, 2019 at 04:33:22PM +0100, Oleg Nesterov wrote:
 > >
-> > imx_ddr%d_pmu look like more reasonable.
+> > And it seems that _TIF_WORK_SYSCALL_ENTRY needs some cleanups too... We don't need
+> > "& _TIF_WORK_SYSCALL_ENTRY" in syscall_trace_enter, and _TIF_WORK_SYSCALL_ENTRY
+> > should not include _TIF_NOHZ?
+> >
 >
-> Sorry, it's a bit subtle, but please use "imx8" instead of "imx" since
-> they may change the thing completely in a future revision of the SoC. That's
-> why I suggested "imx8_ddr" in my reply on the previous version of the patch
-> (although it appears I somehow managed to drop the CC line in my reply, so
-> it only went to your gmail address).
+> I was about to post the updated version and checked this to make sure I have
+> covered everything or not. I had missed the above comment. All architectures
+> have _TIF_NOHZ in their mask that they check to do work. And from x86, I read
+> "...syscall_trace_enter(). Also includes TIF_NOHZ for enter_from_user_mode()"
+> So I don't understand why _TIF_NOHZ needs to be dropped.
 
-I see.  I will update it.
+I have already forgot this discussion... But after I glanced at this code again
+I still think the same, and I don't understand why do you disagree.
 
-best regards
-Frank Li
+> Also if we need to drop, we can address that separately examining all archs.
 
->
-> Will
+Sure, and I was only talking about x86. We can keep TIF_NOHZ and even
+set_tsk_thread_flag(TIF_NOHZ) in context_tracking_cpu_set() if some arch needs
+this but remove TIF_NOHZ from TIF_WORK_SYSCALL_ENTRY in arch/x86/include/asm/thread_info.h,
+afaics this shouldn't make any difference.
+
+And I see no reason why x86 needs to use TIF_WORK_SYSCALL_ENTRY in
+syscall_trace_enter().
+
+Oleg.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
