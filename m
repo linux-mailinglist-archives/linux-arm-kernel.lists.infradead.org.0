@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A07611D39
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 17:31:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BDD111C93
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 17:22:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5farTwBxgXefor3Y+e6XiVl68awIf7bx461fukYLNrk=; b=dRINc7HeDGSVk+
-	tvQ+/yDfJMrJZ8GjSzJdN8zoSzS2cRI343VLfBh1BdxgHaykzovrGjgo6Xced82uchILhZqTNHQxt
-	lo/x8Xt2cg1l1kN3f+rVbazKZdsICgxvWFLq6TDWoA2QIb2KKpIsKudbbX+3QatP7qKI1AX9A60B8
-	KsUjrgYdvMjkoTlMN/B1pOKpupEJ9a/CjHC+PIPZp2zAWW18FdMIEEdNXs62+AUDZvScEVYE3i12m
-	xScvt8q/iU4WPRiL64l7rvYB7T3T8XX8adGtG2awUIJ6Q0Qn3Q49KJW6oDLgqqg2wGl0z5lkLCuZP
-	MBaPYTFhnV/GI0aCjFHA==;
+	List-Owner; bh=AZDNI0VYBODZL/mHqll/+3KmBPdyzX1N5nf/DySQNmM=; b=aWjb3d4QQRammG
+	ptfHnoVNUYcUIQTSDnf6VWY31HwLryUEOWu3TapHS8mHCJbsbc7KleJkWlm97wqjlpkOoXUV97zCW
+	fatFxBr57MdJ8cslXA8SkGKX5RDl8hSq1Lsn6bYxhmlK59RIaM4E2z40DCZnMpG05GLLEdLbMKrrP
+	e83vACbKujVNZ8sNkuO1NddC7FDZ6cTaQbI0DfK7J2JIEnWzm87O2uOPrFTYsHza2fpMdt+JkO/NJ
+	pehUm8q35DM6dv2niXsqaAXbJvnXJJS3Lv9ddaxnXQUJLpMJl+3TU83C7NYcD63tTJbv+aq2vAtZM
+	dROwAI/0HHzlGQkvb7KA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMDfu-0005lG-Ec; Thu, 02 May 2019 15:31:06 +0000
+	id 1hMDXe-000358-2A; Thu, 02 May 2019 15:22:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMDfh-0005cb-Pz
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 15:30:59 +0000
+ id 1hMDXX-00033z-Uy
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 15:22:29 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E06492081C;
- Thu,  2 May 2019 15:30:52 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3609220449;
+ Thu,  2 May 2019 15:22:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1556811053;
- bh=IdYfBAf9kVErGJENq0rn63Vkl12PCHwRv+6MEgLtK6I=;
+ s=default; t=1556810545;
+ bh=E2poy0g6Sl804u5T0jy1Z8irUeLl7FlDnO9jlBiUKJw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=E1kxO5XtmGZm3qvYxF/8cRw3PMBZ+KknzWjVulbbG6jRXGmyEBo55Fy0Ps6iqRXPH
- Azhv+SxFMP5/IupwnNj51uwcRKZz8rT6JwZnMCg3DpeI31Bz9BYnYT8oUXH/Uwfrok
- 7q29pBObkpVNLe+TaSAbP3rr9qdr7Fzl3WRnkx0Q=
+ b=j7ost97R0OQwAWTRjziH0EUzcDvTePhfK8mHwfqp7W/QkZAjs4BZbgXk0nex6WKAN
+ Ez1zBJigE4+9s0C+VW+TO1toKkPASkKEfR+IuCgW09JeLp63PySAlAnid9U8xY+NnN
+ kNJp2WEAsiQs+E0DY9536RZLvib7D0TexgPurTys=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 5.0 056/101] net: xilinx: fix possible object reference leak
-Date: Thu,  2 May 2019 17:20:58 +0200
-Message-Id: <20190502143343.413795985@linuxfoundation.org>
+Subject: [PATCH 4.9 21/32] net: xilinx: fix possible object reference leak
+Date: Thu,  2 May 2019 17:21:07 +0200
+Message-Id: <20190502143320.771687142@linuxfoundation.org>
 X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190502143339.434882399@linuxfoundation.org>
-References: <20190502143339.434882399@linuxfoundation.org>
+In-Reply-To: <20190502143314.649935114@linuxfoundation.org>
+References: <20190502143314.649935114@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_083054_464215_488D0448 
-X-CRM114-Status: GOOD (  10.39  )
+X-CRM114-CacheID: sfid-20190502_082228_016335_FD952A04 
+X-CRM114-Status: GOOD (  10.19  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -107,10 +107,10 @@ Signed-off-by: Sasha Levin (Microsoft) <sashal@kernel.org>
  1 file changed, 2 insertions(+)
 
 diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-index 0789d8af7d72..1ef56edb3918 100644
+index c688d68c39aa..a8afc92cbfca 100644
 --- a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
 +++ b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-@@ -1575,12 +1575,14 @@ static int axienet_probe(struct platform_device *pdev)
+@@ -1548,12 +1548,14 @@ static int axienet_probe(struct platform_device *pdev)
  	ret = of_address_to_resource(np, 0, &dmares);
  	if (ret) {
  		dev_err(&pdev->dev, "unable to get DMA resource\n");
