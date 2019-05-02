@@ -2,52 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E275C11466
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 09:43:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B250B11470
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 09:44:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=KlbBjFJ3JGiDBkfgJY/U5BM8uYg4jmXVCx2hUf96ufw=; b=R/Dc242xXSqKdWm3IVT1vQZl/
-	qis5MASTJH7wjleStcadnc849+JYGKgPFyxFOttOSV7ABlvL438ieL4zSC8FwVUE5wnZ4ZGXhShMN
-	cK7x6ThfGgDyUY2VAIp2BDs5sAMlqBp8jeHMNZ23lN+BWDF7JuZtI2Wr0HdGGzV2FMDjYm1pK1mVa
-	qWDbH3Xq2LGk/1zzTXJhOCFP1Avh3R4waRMvOa2L+wLp+EarfJYsJJ/vXyI4K95191AvlRrK+fxYp
-	KMBwsFmkxKbAEIIWsZ+ie++jhoRlQB+hDzAXQ+v8/j9SCMIuqsCxSsIz5RM0K1LQZw8ztP4z6gzwq
-	C0pIVc13A==;
+	 bh=xS82oNkJLfbcoPl/S0VcToneMgPMK6UaTtOLIKOvh3Y=; b=iGX58sPbYu9R73ro/AyhWuBWf
+	v7Zd9k3SEQD90u3U/ubdUCrcquq/dgvAMlob4zvM1zpX5xl7sRjE+IFA5uUlkTPSuG5lohdD6NqSq
+	k671SPpqoTMDW3u71M5WiBoB6NhapPNRphgHL5K8jerFkpZfnaYkDHOUGDEArsaUbSOR7Yfq3tfC0
+	PjXr4Mhw31+QYetUvY88U0PQmlgxsnnhjZiNRgabui3yxvYr+RwQdBK9VlAUnsqkWr+p4R1pecuYS
+	Bc9fpSChui2P9MGqyfIx33gbv9yYPLcPIgQmEfKA9bc9oq7SWNLfMcdAfota3BoBvTff9eM36F0iw
+	Wa+4X3JNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hM6N9-0005hE-VX; Thu, 02 May 2019 07:43:15 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1hM6O0-0005w8-Rs; Thu, 02 May 2019 07:44:08 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hM6N2-0005gS-LY
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 07:43:10 +0000
+ id 1hM6Nu-0005w2-Tb
+ for linux-arm-kernel@bombadil.infradead.org; Thu, 02 May 2019 07:44:02 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=1iDV2tZdAAgM8a/uGeFhpc4iqXIiipWUmOKL4Yc49LU=; b=dTENim/dqvxP2tzC6YMXJXSVz
+ wrRV4WBwBv5bsx2goRBTpwJFbwTKDXEgsgYB4XfHR9mctMqiP9t47tMf5wpRC2+QhFAhYphqKfQcw
+ Fo0NarmBQ11qK+qVuLYvcNN3HwEAfLKptVxgr3+JNgeeRKHRhj7XqZ7DoOJwJeDqk0RuumXttYERv
+ UZc0sRir65vnjLHK+7aRrP3S9bQOg2dZyQGRh5AVQHeY3bwjWCAn6G0IzJiJ5pMT+7nzgYa3Q0Ky3
+ qKhhZNeuI9Z0pC8noMc12Sl8g+Bj8PNpEidUGsQZEkeEzgl+SQvzke24CWUTOkZg0aqnqfugMn6A5
+ 1zu/o/AGg==;
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
+ by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hM6Nr-0005Ol-9G
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 07:44:00 +0000
 X-Originating-IP: 90.88.149.145
 Received: from localhost (aaubervilliers-681-1-29-145.w90-88.abo.wanadoo.fr
  [90.88.149.145]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id B41D020011;
- Thu,  2 May 2019 07:43:04 +0000 (UTC)
-Date: Thu, 2 May 2019 09:43:03 +0200
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id A683E1C0016;
+ Thu,  2 May 2019 07:43:21 +0000 (UTC)
+Date: Thu, 2 May 2019 09:43:21 +0200
 From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Icenowy Zheng <icenowy@aosc.io>
-Subject: Re: [PATCH] arm64: dts: allwinner: h6: add PIO VCC bank supplies for
- Pine H64
-Message-ID: <20190502074303.g3px63n4v4o7xade@flea>
-References: <20190424062543.61852-1-icenowy@aosc.io>
+To: Claudiu.Beznea@microchip.com
+Subject: Re: [RESEND][PATCH v3 6/6] drm/atmel-hclcdc: revert shift by 8
+Message-ID: <20190502074321.6g26negwuqdjswrx@flea>
+References: <1556195748-11106-1-git-send-email-claudiu.beznea@microchip.com>
+ <1556195748-11106-7-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
-In-Reply-To: <20190424062543.61852-1-icenowy@aosc.io>
+In-Reply-To: <1556195748-11106-7-git-send-email-claudiu.beznea@microchip.com>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_004308_852223_18180CAA 
-X-CRM114-Status: GOOD (  12.51  )
+X-CRM114-CacheID: sfid-20190502_034359_421519_EC4F7869 
+X-CRM114-Status: UNSURE (   9.41  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
+ low trust [217.70.183.197 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -60,41 +77,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
+Cc: linux-pwm@vger.kernel.org, alexandre.belloni@bootlin.com,
+ bbrezillon@kernel.org, airlied@linux.ie, dri-devel@lists.freedesktop.org,
+ linux-kernel@vger.kernel.org, Ludovic.Desroches@microchip.com,
+ thierry.reding@gmail.com, daniel@ffwll.ch, lee.jones@linaro.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8812664339474519029=="
+Content-Type: multipart/mixed; boundary="===============5995178792837602860=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============8812664339474519029==
+--===============5995178792837602860==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="f3jn7gc357berrvh"
+	protocol="application/pgp-signature"; boundary="6uagg5yh6vlrxpcb"
 Content-Disposition: inline
 
 
---f3jn7gc357berrvh
+--6uagg5yh6vlrxpcb
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-Hi,
-
-On Wed, Apr 24, 2019 at 02:25:43PM +0800, Icenowy Zheng wrote:
-> The Allwinner H6 SoC features tweakable VCC for PC, PD, PG, PL and PM
-> banks.
+On Thu, Apr 25, 2019 at 12:36:39PM +0000, Claudiu.Beznea@microchip.com wrote:
+> From: Claudiu Beznea <claudiu.beznea@microchip.com>
 >
-> This patch adds supplies for PC and PD banks on Pine H64 board. PG and
-> PM banks are used for Wi-Fi and should be added when Wi-Fi is added
+> Revert shift by 8 of state->base.alpha. This introduced regresion
+> on planes.
+>
+> Fixes: 7f73c10b256b ("drm/atmel-hclcdc: Convert to the new generic alpha property")
+> Cc: Maxime Ripard <maxime.ripard@bootlin.com>
+> Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 
-Not really. The regulator is still there, whether we use it or not. If
-it's not used, then it will be left disabled so it doesn't really
-change anything.
-
-> PL bank is where PMIC is attached, and currently if a PMIC regulator
-> is added for it a dependency loop will happen.
-
-I guess we should fix that somehow
+Acked-by: Maxime Ripard <maxime.ripard@bootlin.com>
 
 Maxime
 
@@ -103,21 +116,21 @@ Maxime Ripard, Bootlin
 Embedded Linux and Kernel engineering
 https://bootlin.com
 
---f3jn7gc357berrvh
+--6uagg5yh6vlrxpcb
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXMqfhwAKCRDj7w1vZxhR
-xWucAQClyRc5w0vqs/DJtid7PAu+23gMPpEUsQQSF8S+8ic9HAEAgLsd09rNNQMB
-pW4cdag9Xgoxi+5JqmFgud0nZzfNMgA=
-=5qv5
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXMqfmQAKCRDj7w1vZxhR
+xcseAP4vdJgH1hul/wM47RFdoRnyzZFVdLXER2Iuq1hWJ+PK0gEAtTag2QpyiY56
+rGojbjlWkUYDM93h+BP6r0Fj5J5+4Q0=
+=yTPE
 -----END PGP SIGNATURE-----
 
---f3jn7gc357berrvh--
+--6uagg5yh6vlrxpcb--
 
 
---===============8812664339474519029==
+--===============5995178792837602860==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -128,5 +141,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============8812664339474519029==--
+--===============5995178792837602860==--
 
