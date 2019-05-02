@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEAC0116A6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 11:42:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 983CD116A7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 11:42:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=uj1qGjiNpbAGh8TmB1KLE8rS5dcSLzezOcGk7lXqKVE=; b=FIOfTYMrh+onJX
-	iEoUswaHFsWrd81LId9gtgC5tBqlzA4wVfmNIC/XQbjlbljfvMa1pkQQIHVPxa6LTKtCl7Vok1bns
-	m1xIK5c4+MFdRkTUf/iUZrbK5v6oNgGFox/WZGuzgxkohQCAAPLb50Fv4J7MV5pb5VrkjdMAPen/i
-	6tyo5/0/rALE0uZaEITbLlqbuQHn8PYiEr23QPTRkJuPlEwq5627GcIwraP6w0NBCE3e7xHbG7R3e
-	GGOlrncjykZCL4f0digILV3oinTRHQvnTSLTLmqG429HXcu1Gz1ZmfTZYFj81ar0NwbN2RzXEWCmh
-	kkmNuUzZmpsGyVYp1+1w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Yyviju39RIhqsoJhXVCcK4BKQ1SlJAQwdY4er7kKg4Q=; b=K3C8yBs0A7dAOn
+	mh6s1ORKPrHCGjpovphKn08KAY1NUYR1TvvsOqPcGPR1SdahfCmHefqh3Z5ZdBYcEnA9EXGnR4g5h
+	/fyal86K1zLHDfBJpDdHpc4HsrGo9z7e6r1Q8Qc3S2XeY5ZcG7vwRWHGRzFMaD00foYl8+XNZaK9X
+	IYCx3brn/r1hg/gVGkPvnTzAJeSERu30gC0xAiz+Lg+xzIWQx9pNrexAhC3eTTemV+qesknAkgu/i
+	phVEr2hLDZKX4uE+mbzWunRoygoLB8Hp4raAtK7LqzPj/xz5JAx/2TVvo/Y01R5Flc/IcaxLWdrUv
+	xL6O3Pce1JVuYI4R9RYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hM8E2-0003kK-56; Thu, 02 May 2019 09:41:58 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1hM8EB-0003uO-TE; Thu, 02 May 2019 09:42:07 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hM8Dv-0003jh-1B
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 09:41:52 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x429fnsH001416;
- Thu, 2 May 2019 04:41:49 -0500
+ id 1hM8Dz-0003k1-0v
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 09:41:57 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x429fqs4002366;
+ Thu, 2 May 2019 04:41:52 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1556790109;
- bh=y1mmQXyRP8VGnuf9to6cDSUzyoOXLeylvR/kRGn346k=;
- h=From:To:CC:Subject:Date;
- b=IgOBRUGimtrcOti4rNkrjc4i+m1dWpRZAQ0lIK9YQMUZHTZpUzwyejaDW2HAibR1x
- xU/mpAbgR35BfhbKOVquXa2uBide02q64zIrAjBjYAIRnQfZgB0LXNpvDF8mV7kqGH
- iL1T+mHE8g6zY+IuOrvzmmRK/01g8EmfKYo+oyJE=
+ s=ti-com-17Q1; t=1556790112;
+ bh=baKkdztIBJAcqzVYBMwzqyJnlftV72906oj1N8WLkW4=;
+ h=From:To:CC:Subject:Date:In-Reply-To:References;
+ b=bOYfOZWnNwDPCmDbaXHBnbEFjyjBH4idRuTnUn42VZo07SoXA4jNL//MYeXS9CHyt
+ RxOlHXN6mifzWfKODZSTMq/hXeav2d7zP2tbr4Bc6KVjUM086htOzfETYdMFPO2yeb
+ lOGaebVTFADuX+UAIvNlCmgRtdyYrsF517divWCA=
 Received: from DLEE107.ent.ti.com (dlee107.ent.ti.com [157.170.170.37])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x429fnBw070513
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x429fqCq048692
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 2 May 2019 04:41:49 -0500
-Received: from DLEE104.ent.ti.com (157.170.170.34) by DLEE107.ent.ti.com
+ Thu, 2 May 2019 04:41:52 -0500
+Received: from DLEE110.ent.ti.com (157.170.170.21) by DLEE107.ent.ti.com
  (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 2 May
- 2019 04:41:49 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE104.ent.ti.com
- (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
+ 2019 04:41:51 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE110.ent.ti.com
+ (157.170.170.21) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 2 May 2019 04:41:49 -0500
+ Frontend Transport; Thu, 2 May 2019 04:41:51 -0500
 Received: from uda0131933.india.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x429fkRx038664;
- Thu, 2 May 2019 04:41:46 -0500
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x429fkS0038664;
+ Thu, 2 May 2019 04:41:49 -0500
 From: Lokesh Vutla <lokeshvutla@ti.com>
 To: Tero Kristo <t-kristo@ti.com>, Nishanth Menon <nm@ti.com>, Rob Herring
  <robh+dt@kernel.org>
-Subject: [PATCH 0/3] arm64: dts: ti: k3-am654: Add interrupt controller nodes
-Date: Thu, 2 May 2019 15:11:16 +0530
-Message-ID: <20190502094119.16350-1-lokeshvutla@ti.com>
+Subject: [PATCH 1/3] arm64: dts: ti: k3-am654: Update compatible for dmsc
+Date: Thu, 2 May 2019 15:11:17 +0530
+Message-ID: <20190502094119.16350-2-lokeshvutla@ti.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190502094119.16350-1-lokeshvutla@ti.com>
+References: <20190502094119.16350-1-lokeshvutla@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_024151_153782_5AC5AE60 
-X-CRM114-Status: UNSURE (   8.97  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190502_024155_308972_6F753D6A 
+X-CRM114-Status: GOOD (  11.95  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -98,18 +99,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series adds dt nodes for interrupt controllers available in
-AM654 SoC.
+Use the am654 specific compatible for dmsc. This allows to use
+the am654 specific RM mapping table.
 
-Lokesh Vutla (3):
-  arm64: dts: ti: k3-am654: Update compatible for dmsc
-  arm64: dts: ti: k3-am654: Add interrupt controllers in main domain
-  arm64: dts: ti: k3-am654: Add interrupt controllers in wakeup domain
+Signed-off-by: Lokesh Vutla <lokeshvutla@ti.com>
+---
+ arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
- arch/arm64/boot/dts/ti/k3-am65-main.dtsi   | 41 ++++++++++++++++++++++
- arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi | 13 ++++++-
- 2 files changed, 53 insertions(+), 1 deletion(-)
-
+diff --git a/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi b/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi
+index 7cbdc0912ab7..75310bcfb94b 100644
+--- a/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi
++++ b/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi
+@@ -7,7 +7,7 @@
+ 
+ &cbass_wakeup {
+ 	dmsc: dmsc {
+-		compatible = "ti,k2g-sci";
++		compatible = "ti,am654-sci";
+ 		ti,host-id = <12>;
+ 		#address-cells = <1>;
+ 		#size-cells = <1>;
 -- 
 2.21.0
 
