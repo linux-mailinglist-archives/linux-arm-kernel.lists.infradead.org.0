@@ -2,130 +2,131 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4FFCC1158C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 10:39:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 135FC115C8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 10:52:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2AzEhU9OloPfrmWT3GmU/stnmEhNgc+Rdf51+NltJtQ=; b=W7E9thBlpWsx0F
-	15Sami6FGUTD7q3pt+6EoMJ+C95bnYDEijcbymCgxq84Jj8leuCxl5M6QTwWLCC2mjBKhr958clZj
-	EPS6aScfcMENVRj2KT9au64UT8szjlpXNnXXf465UFwCQDINQCLK4mHNoaFMLz/c24t5WM/py+hMs
-	YxceMaeoLV6DN+9BLPe/4TXneqJyxXSVTTF1Md4x9fn9BIc3BgnIAdsPkbcXlDW+GBsJA7n/u7iEs
-	0JIT+TAIpqzpVDa1BYUcGi/iXqriUjpF1lRkr4CVcvbBn3Vi8KY7uKkjdjw4y5/POwFurfwWaNOdh
-	bpnFg421K+UinDeqWJRQ==;
+	List-Owner; bh=IxSx3WIbX8G+l7NlAqhFOvQbOQpsPSuTjDNfoGtuVUE=; b=kvFCSBud1QHWZ1
+	REYkSgAb3H9Hi7YiL3F9HFc0zrSRZ8YJdsCxls+FK/gZsbm+znrKfy93SvTFXJE9fht+dPaLtq9KH
+	H11C77rxYx1APGO9PhnyoSn0gh7o/nr1mEqL8UqQZEDfK6TJEeHmuUav+DWqvbvvoGsbct0BIpbHu
+	q6zX4MQjj22kxwk+qGvjgReMHgB/HhJWOUVoI85XYFsW+MpgPcUByZGZVfb/q79VoswdK/c1v6cBA
+	wRzkNKRjimH7cb3U8r8jEgYrBWGnsYFZHorwxm6h/o7Iui3XJi4CAiy4WIpS9vXeg31/6BhRQjrKv
+	2kNtAZWW75dmsgxsuorQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hM7F9-0005Tv-9U; Thu, 02 May 2019 08:39:03 +0000
-Received: from mx0b-0016f401.pphosted.com ([67.231.156.173])
+	id 1hM7SN-0001sc-0z; Thu, 02 May 2019 08:52:43 +0000
+Received: from mailout1.w1.samsung.com ([210.118.77.11])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hM7F3-0005Tc-1r
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 08:38:58 +0000
-Received: from pps.filterd (m0045851.ppops.net [127.0.0.1])
- by mx0b-0016f401.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x428b6mZ025655; Thu, 2 May 2019 01:38:45 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
- h=from : to : cc :
- subject : date : message-id : references : in-reply-to : content-type :
- content-id : content-transfer-encoding : mime-version; s=pfpt0818;
- bh=v9ur+npx6FMF0rJCLY8QFry516fHZkwqI1ShYjmdl4w=;
- b=aGzLo+3vPzj1M0utXaLd5FhVy6pwaTg4d42ivSXu3DLkUPMNGRRZOtmI3rJH3TDSH0G6
- ZiKEnmRkQfD4AyFKBceoNIHkoY9TBfpUBjENQ7iqfJ64x+973LhfwcF28FII9PH9TnJc
- 8O28/ZzjSkqkFaQcKKluKjRPBrSbgyDA3vkl5nCJpASqZ8zZz4m0ECndCLjOugUgelJb
- BvR4+s9tUfM/gSIAGt1Wh+Ub3RyklkIYanwSfgtdL8ErS0CCOH7av7cs/bBv7BE2jyOE
- VCof0rSpSi56N4vFL6hBPjuz7uc0pmHEdmf/sUo98Blu79VSS3JeluPgWqGyiA7zilLj 3A== 
-Received: from sc-exch02.marvell.com ([199.233.58.182])
- by mx0b-0016f401.pphosted.com with ESMTP id 2s7k3b9v1r-2
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
- Thu, 02 May 2019 01:38:44 -0700
-Received: from SC-EXCH04.marvell.com (10.93.176.84) by SC-EXCH02.marvell.com
- (10.93.176.82) with Microsoft SMTP Server (TLS) id 15.0.1367.3; Thu, 2 May
- 2019 01:38:43 -0700
-Received: from NAM04-SN1-obe.outbound.protection.outlook.com (104.47.44.56) by
- SC-EXCH04.marvell.com (10.93.176.84) with Microsoft SMTP Server
- (TLS) id
- 15.0.1367.3 via Frontend Transport; Thu, 2 May 2019 01:38:43 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=marvell.onmicrosoft.com; s=selector1-marvell-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=v9ur+npx6FMF0rJCLY8QFry516fHZkwqI1ShYjmdl4w=;
- b=gOnhXDMn3WCQ+VgS9gCqyJ2o5UYSHEk8XWxDA9KBTeQ2x2J0p5Y0I7VM5w4rQUr6/5pveMRURO9CLf0fkQQgSa6CVZx19uHrLWL47D/oP69ZHK5HHC6ugoWXdGL9zlbBtUn87j9DiV9VDQFiMATP17bUfQpaPKxo6nzcOwH9KlA=
-Received: from DM5PR18MB1578.namprd18.prod.outlook.com (10.175.224.136) by
- DM5PR18MB2325.namprd18.prod.outlook.com (52.132.208.18) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1856.10; Thu, 2 May 2019 08:38:42 +0000
-Received: from DM5PR18MB1578.namprd18.prod.outlook.com
- ([fe80::28da:f8bb:4901:b0aa]) by DM5PR18MB1578.namprd18.prod.outlook.com
- ([fe80::28da:f8bb:4901:b0aa%10]) with mapi id 15.20.1835.018; Thu, 2 May 2019
- 08:38:41 +0000
-From: Jan Glauber <jglauber@marvell.com>
-To: Will Deacon <will.deacon@arm.com>
-Subject: Re: [RFC] Disable lockref on arm64
-Thread-Topic: [RFC] Disable lockref on arm64
-Thread-Index: AQHVAMJyX/jERFJO0EaZn9HXlo62yQ==
-Date: Thu, 2 May 2019 08:38:41 +0000
-Message-ID: <20190502083834.GG13955@hc>
-References: <20190429145159.GA29076@hc>
- <20190501160140.GC28109@fuggles.cambridge.arm.com>
-In-Reply-To: <20190501160140.GC28109@fuggles.cambridge.arm.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: AM5PR0701CA0014.eurprd07.prod.outlook.com
- (2603:10a6:203:51::24) To DM5PR18MB1578.namprd18.prod.outlook.com
- (2603:10b6:3:14d::8)
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [78.43.208.63]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: e65ca083-92bb-4e52-7292-08d6ced994a5
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(2017052603328)(7193020);
- SRVR:DM5PR18MB2325; 
-x-ms-traffictypediagnostic: DM5PR18MB2325:
-x-microsoft-antispam-prvs: <DM5PR18MB2325D03E71804B7797FEDD16D8340@DM5PR18MB2325.namprd18.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0025434D2D
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(7916004)(396003)(136003)(346002)(376002)(366004)(39860400002)(199004)(189003)(7736002)(66066001)(316002)(486006)(446003)(8676002)(305945005)(6486002)(2906002)(102836004)(6512007)(6916009)(99286004)(9686003)(71190400001)(53936002)(186003)(14444005)(256004)(1076003)(68736007)(6246003)(33716001)(26005)(76176011)(4326008)(54906003)(229853002)(81166006)(81156014)(71200400001)(8936002)(478600001)(86362001)(11346002)(6436002)(66556008)(66946007)(73956011)(66476007)(476003)(64756008)(66446008)(6116002)(3846002)(52116002)(25786009)(6506007)(386003)(33656002)(14454004)(5660300002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR18MB2325;
- H:DM5PR18MB1578.namprd18.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: marvell.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: eAaFqx7iwTp3eMJFpAOCKRjzoqyOwbePAT7GxgPSZ50uRC1M6M+mIaGV/N03EGocGlcoZQNSob0bTcGytup4qmNs/q7yWneDNpZbGEO1c2s9WoprkRrJxwdQ13nqkOyp/nxWYabDAdOiFVdObWRnIryBngz78OoVhl+lvjM/uVrayKOArPtNWMyldTCQwmwiNNpKmvF54RoBL59usQ7XDfc8djyfmmOl6+wZp0ENoW9pUxzV9iYLpA08/o60Rad96bPaksJqIRSu7FnDKe69+ixxaqu/a6QF3UB6QafuqTljjR12W1+DoifiqQIxAWKLeGZCC3qFxpjIuq+NzevRQ6YYY13jJLEfLaObNrEzfCCW0Ua0C0SmPB39OYC0HIzcNIB8cQZIo9n41Zr4kr9S4ZR8G/HBLEIEFXPpsK8rpqo=
-Content-ID: <3D280D6F2517CD4F98E2699985E02545@namprd18.prod.outlook.com>
+ id 1hM7SE-0001rb-Vx
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 08:52:37 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+ by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20190502085229euoutp01d97248da469a053f1b9db5681a94c9ba~a0aoaLrOC3239232392euoutp01C
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu,  2 May 2019 08:52:29 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
+ 20190502085229euoutp01d97248da469a053f1b9db5681a94c9ba~a0aoaLrOC3239232392euoutp01C
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1556787149;
+ bh=lFZDW3E3ayqcJSAalyBTTOe/fZ1BCr54JCSlHjCWdj8=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=cmLhzJ4nIY1NVn7d7DgWw1Bp1vRlR6JPV+wzLxa+Tsq6l2RxQGRGR0ATy/dPxuppS
+ Im+fk+ekc9BnyXmAxdb8HuQP98Ax4iPrMMSUH8ecsIb90+Ln9XnhvLRL6eVXws3225
+ i7wIdCdb79wh76LXjJhwM+JAKu0bDwQQWXnsW7SE=
+Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20190502085228eucas1p17468f14bc390916f1c1740504c3a0133~a0ansGywv0593305933eucas1p1x;
+ Thu,  2 May 2019 08:52:28 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id B6.A8.04377.CCFAACC5; Thu,  2
+ May 2019 09:52:28 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190502085228eucas1p24db71e2f68116f7bc60c52b091a50c2d~a0am8PadQ0692006920eucas1p2z;
+ Thu,  2 May 2019 08:52:28 +0000 (GMT)
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20190502085228eusmtrp13cc070693199d3965826a6946fff9477~a0am7m8mq1339313393eusmtrp1c;
+ Thu,  2 May 2019 08:52:28 +0000 (GMT)
+X-AuditID: cbfec7f4-5632c9c000001119-d8-5ccaafcca87e
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id 53.FB.04140.CCFAACC5; Thu,  2
+ May 2019 09:52:28 +0100 (BST)
+Received: from [106.120.51.20] (unknown [106.120.51.20]) by
+ eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190502085227eusmtip1095ecfd096b008e43aa9a021fe37961a~a0amFN1cm2188121881eusmtip1O;
+ Thu,  2 May 2019 08:52:27 +0000 (GMT)
+Subject: Re: [PATCH v3 3/4] Documentation: devicetree: add PPMU events
+ description
+To: Rob Herring <robh@kernel.org>
+From: Lukasz Luba <l.luba@partner.samsung.com>
+Message-ID: <1fd44623-4a59-f014-1ae9-a7cc605ad30f@partner.samsung.com>
+Date: Thu, 2 May 2019 10:52:25 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: e65ca083-92bb-4e52-7292-08d6ced994a5
-X-MS-Exchange-CrossTenant-originalarrivaltime: 02 May 2019 08:38:41.9121 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 70e1fb47-1155-421d-87fc-2e58f638b6e0
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR18MB2325
-X-OriginatorOrg: marvell.com
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-02_03:, , signatures=0
+In-Reply-To: <20190430223629.GA22317@bogus>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA02Se0hTYRTA+3Z3d6/L6ed6eFBRmhW2yPWCbiRiJbH+ECT8I8qwVRet3LLd
+ rDRJMzPzTY9pU1taodhM003XKBEzzUdbI6wweypEqRHOpNHT7Rr53++c73e+c87HRxPSl2QA
+ fVBzjNVqVMkykVjY2u2yrRpo7ItfXWOQM3fLG0nmxdRHkjF02UimZGSMYOz2Jop5kj1OMc0j
+ z0nmmbVSxDiLuhBTbm8XMA1drynm1guHgHl1pk7E/LlvoZiH4+dJZvrxBxSFlcZrRqS8p39N
+ KZvrL4iULTczlcWmeqR0NgfHinaJIw6wyQePs1pF5F5xUn/7JyKlJPTk7VGDKAt1BOUjmga8
+ HnL+pOQjMS3FdQiaTDUkH0wheFY7SeUjr5nAicBgBDe7C1wVdoKXahHYOh6IeGkCgdMhd/MC
+ HAd33jz3FC/ES+BHrs5zK4HLCLCfGyPcrUU4HCz1R92OBG+D74ZCjy/ES2HyvdVz5yK8E952
+ N5G84we9V0eFbvbCK6HY6BS4mcD+MDRqmOUQaJuo9AwH2EXBPX0Z4qeOBp2theR5AXzuMVE8
+ B0H/pUIhzxxkFVXP+hkwUlI162yChz0O0j0zgVdAo1XBpzdDS90vxL+iD7yc8ONH8IGLrWUE
+ n5ZAXq6Ut8PAVPhUwPNiqDXqqFIk089ZTD9nGf2cZfT/+15Hwnrkz6Zy6kSWW6thT4RzKjWX
+ qkkM339E3Yxm/lv/754pC7L+3NeJMI1k3pLvV3rjpaTqOJem7kRAE7KFkqH7MynJAVVaOqs9
+ kqBNTWa5ThRIC2X+klPz3u2W4kTVMfYwy6aw2n+nAtorIAttfENlFlgi+2ibf9qjHdKSm98c
+ GeKBG1UdOkvU/O0VXwTmq2ZFY2xv2+WwqNPWTdF7DkX8Hl4+gNcVDE8sCUmPDT66tXy8uiB0
+ usEYJwjcELItbLgyp8p8K3RyTLElIWDlq6/BZ7xdn8yDMQXyyge+g5d9jct0ipjs6tK8BtPZ
+ 0niZkEtSrZETWk71F0K7RK1rAwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrPIsWRmVeSWpSXmKPExsVy+t/xu7pn1p+KMbj3i8Vi44z1rBbXvzxn
+ tZh/5ByrRf/j18wW589vYLc42/SG3WLT42usFpd3zWGz+Nx7hNFixvl9TBZrj9xlt1h6/SKT
+ xe3GFWwW//fsYLc4/Kad1eLbiUeMDgIea+atYfTYOesuu8emVZ1sHpuX1Hv0bVnF6PF5k1wA
+ W5SeTVF+aUmqQkZ+cYmtUrShhZGeoaWFnpGJpZ6hsXmslZGpkr6dTUpqTmZZapG+XYJexul9
+ L5kL+pUrVj+Zz9bAeECmi5GTQ0LAROLn7PPMXYxcHEICSxklbpzewgiREJOYtG87O4QtLPHn
+ WhcbRNFrRol1976BJYQFQoDsa2C2iICixO+2aawgRcwC05kljlz5BNXRwCRx98cBoCoODjYB
+ PYkdqwpBGngF3CR+zO8Ba2YRUJH49HAXG4gtKhAhceb9ChaIGkGJkzOfgNmcAtoSfWs+M4HY
+ zAJmEvM2P2SGsMUlbj2ZDxWXl9j+dg7zBEahWUjaZyFpmYWkZRaSlgWMLKsYRVJLi3PTc4uN
+ 9IoTc4tL89L1kvNzNzECI3vbsZ9bdjB2vQs+xCjAwajEw/tj6skYIdbEsuLK3EOMEhzMSiK8
+ t/YAhXhTEiurUovy44tKc1KLDzGaAj03kVlKNDkfmHTySuINTQ3NLSwNzY3Njc0slMR5OwQO
+ xggJpCeWpGanphakFsH0MXFwSjUwyl2dWru5fA/D4rObqqzZL5zdO6u99ktKXVhE+eKmE2U6
+ q+L3VG5LeXdt/4zpnQHfTAue+nV5cSXcfMyi+fvp3HXzXCvtPfKu/umf2rG1Zp+d/ZFsRV6h
+ f7u2nitcpx4iJfvx02F+hS+m+jkHcmrunen7Fv8+6sHn3K1+nq+sN52ZstAjW/hTphJLcUai
+ oRZzUXEiAKs5k48CAwAA
+X-CMS-MailID: 20190502085228eucas1p24db71e2f68116f7bc60c52b091a50c2d
+X-Msg-Generator: CA
+X-RootMTR: 20190419134822eucas1p29c6eff0f500311749b33c4f556123cf0
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20190419134822eucas1p29c6eff0f500311749b33c4f556123cf0
+References: <1555681688-19643-1-git-send-email-l.luba@partner.samsung.com>
+ <CGME20190419134822eucas1p29c6eff0f500311749b33c4f556123cf0@eucas1p2.samsung.com>
+ <1555681688-19643-4-git-send-email-l.luba@partner.samsung.com>
+ <20190430223629.GA22317@bogus>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_013857_217926_B15CD23A 
-X-CRM114-Status: GOOD (  22.78  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190502_015235_221222_5EC43B3A 
+X-CRM114-Status: GOOD (  16.83  )
+X-Spam-Score: -5.1 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [67.231.156.173 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.11 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -137,86 +138,123 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "peterz@infradead.org" <peterz@infradead.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
- "torvalds@linux-foundation.org" <torvalds@linux-foundation.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ willy.mh.wolff.ml@gmail.com, linux-samsung-soc@vger.kernel.org,
+ b.zolnierkie@samsung.com, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, krzk@kernel.org, cw00.choi@samsung.com,
+ kyungmin.park@samsung.com, myungjoo.ham@samsung.com, kgene@kernel.org,
+ s.nawrocki@samsung.com, linux-arm-kernel@lists.infradead.org,
+ m.szyprowski@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 01, 2019 at 05:01:40PM +0100, Will Deacon wrote:
-> Hi Jan,
-> 
-> [+Peter and Linus, since they enjoy this stuff]
-> 
-> On Mon, Apr 29, 2019 at 02:52:11PM +0000, Jan Glauber wrote:
-> > I've been looking into performance issues that were reported for several
-> > test-cases, for instance an nginx benchmark.
-> 
-> Could you share enough specifics here so that we can reproduce the issue
-> locally, please? That would help us in our attempts to develop a fix without
-> simply disabling the option for everybody else.
+Hi Rob,
 
-I can send my test-case which is a trivial open-read-close loop with one
-thread per CPU and increasing read sizes.
+On 5/1/19 12:36 AM, Rob Herring wrote:
+> On Fri, Apr 19, 2019 at 03:48:07PM +0200, Lukasz Luba wrote:
+>> Extend the documenation by events description with new 'event-data-type'
+>> field. Add example how the event might be defined in DT.
+> 
+> Why do we need event types in DT? We don't do this for other h/w such as
+> ARM PMU.
+In ARM PMU all the events are hard-coded into the driver code i.e. in v7
+arch/arm/kernel/perf_event_v7.c
+and are seen from perf. They are different type and for different
+purpose. The Ecynos PPMU events are not seen in perf, they are
+for internal monitoring and must not be reset by other actors like perf.
+They are used by the 'bus drivers' to made some heuristics and tune the
+internal settings, like frequency.
 
-> > It turned out the issue we have on ThunderX2 is the file open-close sequence
-> > with small read sizes. If the used files are opened read-only the
-> > lockref code (enabled by ARCH_USE_CMPXCHG_LOCKREF) is used.
-> > 
-> > The lockref CMPXCHG_LOOP uses an unbound (as long as the associated
-> > spinlock isn't taken) while loop to change the lock count. This behaves
-> > badly under heavy contention (~25x retries for one cmpxchg to succeed
-> > with 28 threads operating on the same file). In case of a NUMA system
-> > it also behaves badly as the access from the other socket is much slower.
-> 
-> It's surprising that this hasn't been reported on x86. I suspect their
-> implementation of cmpxchg is a little more forgiving under contention.
-> 
-> > The fact that on ThunderX2 cpu_relax() turns only into one NOP
-> > instruction doesn't help either. On Intel pause seems to block the thread
-> > much longer, avoiding the heavy contention thereby.
-> 
-> NOPing out the yield instruction seems like a poor choice for an SMT CPU
-> such as TX2. That said, the yield was originally added to cpu_relax() as
-> a scheduling hint for QEMU.
+Chanwoo has written PPMU driver which relies on DT definition.
+The DT events are used by other DT devices by phandle.
+In Exynos 5x SoCs we have many 'bus devices' which use events to
+monitor their usage and react accordingly.
+---------------8<------------------------
+[    4.140923] exynos-bus: new bus device registered: soc:bus_wcore ( 
+84000 KHz ~ 400000 KHz)
+[    4.149179] exynos-bus: new bus device registered: soc:bus_noc ( 
+67000 KHz ~ 100000 KHz)
+[    4.156825] exynos-bus: new bus device registered: soc:bus_fsys_apb 
+(100000 KHz ~ 200000 KHz)
+[    4.165071] exynos-bus: new bus device registered: soc:bus_fsys 
+(100000 KHz ~ 200000 KHz)
+[    4.173577] exynos-bus: new bus device registered: soc:bus_fsys2 ( 
+75000 KHz ~ 150000 KHz)
+[    4.182141] exynos-bus: new bus device registered: soc:bus_mfc ( 
+96000 KHz ~ 333000 KHz)
+[    4.190099] exynos-bus: new bus device registered: soc:bus_gen ( 
+89000 KHz ~ 267000 KHz)
+[    4.197953] exynos-bus: new bus device registered: soc:bus_peri ( 
+67000 KHz ~  67000 KHz)
+[    4.206523] exynos-bus: new bus device registered: soc:bus_g2d ( 
+84000 KHz ~ 333000 KHz)
+[    4.214516] exynos-bus: new bus device registered: soc:bus_g2d_acp ( 
+67000 KHz ~ 267000 KHz)
+[    4.222850] exynos-bus: new bus device registered: soc:bus_jpeg ( 
+75000 KHz ~ 300000 KHz)
+[    4.231052] exynos-bus: new bus device registered: soc:bus_jpeg_apb ( 
+84000 KHz ~ 167000 KHz)
+[    4.239202] exynos-bus: new bus device registered: soc:bus_disp1_fimd 
+(120000 KHz ~ 200000 KHz)
+[    4.248033] exynos-bus: new bus device registered: soc:bus_disp1 
+(120000 KHz ~ 300000 KHz)
+[    4.256304] exynos-bus: new bus device registered: 
+soc:bus_gscl_scaler (150000 KHz ~ 300000 KHz)
+[    4.265397] exynos-bus: new bus device registered: soc:bus_mscl ( 
+84000 KHz ~ 400000 KHz)
+-------------------------->8----------------------------------------
+The PPMU driver made some assumption, though. It always monitors only
+'read+write data bytes' as an event data type.
+Thus, it is not possible to monitor other stuff and maybe improve the
+heuristics.
 
-The issue is not limited to SMT, it also shows without SMT.
+This simple modification allows to define different data type, which is
+acquired by the counter, still being compatible with all the Exynos
+drivers in the existing implementation.
 
-> > With the queued spinlocks implementation I can see a major improvement
-> > when I disable lockref. A trivial open-close test-case improves by
-> > factor 2 while system time is decreasing also 2x. Looking at kernel compile
-> > and dbench numbers didn't show any regression with lockref disabled.
-> > 
-> > Can we simply disable lockref? Is anyone else seeing this issue? Is there
-> > an arm64 platform that actually implements yield?
-> 
-> There are two issues with disabling lockref like this:
-> 
->   1. It's a compile-time thing, so systems that would benefit from the code
->      are unfairly penalised.
-> 
->   2. You're optimising for the contended case at the cost of the
->      uncontended case, which should actually be the common case as well.
+Regards,
+Lukasz
 
-I completely agree with 2). Nevertheless limiting the retry attempts
-like Linus suggested looks like a fair change that should not penalize
-anyone and would still help the contented case.
-
---Jan
-
-> Now, nobody expects contended CAS to scale well, so the middle ground
-> probably involves backing off to the lock under contention, a bit like
-> an optimistic trylock(). Unfortunately, that will need some tuning, hence
-> my initial request for a reproducer.
 > 
-> Cheers,
+>>
+>> Signed-off-by: Lukasz Luba <l.luba@partner.samsung.com>
+>> ---
+>>   .../devicetree/bindings/devfreq/event/exynos-ppmu.txt  | 18 ++++++++++++++++++
+>>   1 file changed, 18 insertions(+)
+>>
+>> diff --git a/Documentation/devicetree/bindings/devfreq/event/exynos-ppmu.txt b/Documentation/devicetree/bindings/devfreq/event/exynos-ppmu.txt
+>> index 3e36c1d..47feb5f 100644
+>> --- a/Documentation/devicetree/bindings/devfreq/event/exynos-ppmu.txt
+>> +++ b/Documentation/devicetree/bindings/devfreq/event/exynos-ppmu.txt
+>> @@ -145,3 +145,21 @@ Example3 : PPMUv2 nodes in exynos5433.dtsi are listed below.
+>>   			reg = <0x104d0000 0x2000>;
+>>   			status = "disabled";
+>>   		};
+>> +
+>> +The 'event' type specified in the PPMU node defines 'event-name'
+>> +which also contains 'id' number and optionally 'event-data-type'.
+>> +
+>> +Example:
+>> +
+>> +		events {
+>> +			ppmu_leftbus_0: ppmu-event0-leftbus {
+>> +				event-name = "ppmu-event0-leftbus";
+>> +				event-data-type = <PPMU_RO_DATA_CNT>;
+>> +			};
+>> +		};
+>> +
+>> +The 'event-data-type' defines the type of data which shell be counted
+>> +by the counter. You can check include/dt-bindings/pmu/exynos_ppmu.h for
+>> +all possible type, i.e. count read requests, count write data in bytes,
+>> +etc. This field is optional and when it is missing, the driver code will
+>> +use default data type.
+>> -- 
+>> 2.7.4
+>>
 > 
-> Will
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
