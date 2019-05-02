@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 225F4114D0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 10:08:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BED6F114C2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 10:07:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M5WtStFt7XzgU2y71CZgU404J0EyJ3jUHFPpGN5bjws=; b=A59Lv+GwqW0Mpz
-	S9Vhu3nMxXa9RClHcFYAQdmifQWKAIXvgPD7wVH7IOlISd/lilf087V9RytTfXZHI86LPJZWxhk7P
-	eek976BnVJOPRvDdSrWf4TkXgDDAS1w7TKzpNvY9VJL4G/KknMOzjhROuX4gIG3J2iAZv1LRFy/c/
-	mGgaGJapaDObPGgizNiIvrPPVNSenTYHVgVrmcy1HiaYJmeaXeYEw/GHQVHAqwYGKT7YUXC+LQSzy
-	kggw/ZS6u8BmO5BnC2agqqP54TtemNvR8SAf25IwfFYyC90CCkMJ85s0r361WoqMbRBy960CSbc7n
-	e2fSqRxofA8EhDDt+Gow==;
+	List-Owner; bh=l0Rmtl3hvjCLnaluXhaFYarG01NrWb/Qh+AUnssIRR4=; b=tA0ULQVGiXJCBO
+	GQlUabpvTSPF5PToztEXjP2GQfHFgbX9bK8wOhlE4ZgGMpK3GI+6/1R6/tNq0Y3SBu53PHxmq99jW
+	SZvz9Dv+KSUp3uRapVArRakgenpDbP5FtEs8ad/BsXORcYQKI/5mb/IoppySGKt/bx2lU9Qhxs2X2
+	hgbTBQ/geb+Eab0tSObDas1tbbTZY3R+W9kTB7q0Gg0fdzFB9MytbJG1AV1c8HHkbr/KsvEYpzAiV
+	GrbpIrSHBq+mjIteSZSaAVMsuXmNmH801kzu0i8iJc+ZRwyX94ZlPx0dYODhR0PU5WgZjz8ByU40o
+	gpba5c7FZ6S7iBytEnmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hM6lN-000772-KE; Thu, 02 May 2019 08:08:17 +0000
-Received: from mail-eopbgr140089.outbound.protection.outlook.com
- ([40.107.14.89] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1hM6kh-0006ES-Dn; Thu, 02 May 2019 08:07:35 +0000
+Received: from mail-eopbgr10041.outbound.protection.outlook.com ([40.107.1.41]
+ helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hM6k5-0005KE-Iu
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 08:07:03 +0000
+ id 1hM6jy-0005Kv-FF
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 08:06:53 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=u8Zd1hiv1LPfTMDOycuMddd4tHyWtWHZ25l35F1azSI=;
- b=SVyAFJ4VTDYncVbEopl2ssreS+nHOp1x8924XNh1g3OwzXpy3IltJ6++JlNEpZ7W71oZiKCXh0aCvhKmPGNEhryb4ryiGtUj9Y6UwZpEdw2E+ak1ah81nWiXcP9/rFtu7wm9RYyJYj9TWrfPQH9IYQymeno2BWELMwVDP+XNBQA=
+ bh=oCDjQmedB9SYM0/pZVMYtm6la6ohlKYezfSybV55Flw=;
+ b=koDk9LAbkEd9n5w+hM72BOWpAE9DApG74zwdNvNat6rTBZ3WlQ4VyuOUp+fRHLi1YFc+6qplObPC3zsq0yxjdmRUFIa0N+0ovK+pPisSfddniAwdS8UwS0d7PcBFibEKxd2q1Dj93Qt6hdbST6LhE+cN4oa570Kf3+ph8jSnGCE=
 Received: from AM0PR04MB5779.eurprd04.prod.outlook.com (20.178.202.151) by
- AM0PR04MB4563.eurprd04.prod.outlook.com (52.135.144.146) with Microsoft SMTP
+ AM0PR04MB4948.eurprd04.prod.outlook.com (20.177.40.224) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1835.15; Thu, 2 May 2019 08:06:45 +0000
+ 15.20.1835.16; Thu, 2 May 2019 08:06:46 +0000
 Received: from AM0PR04MB5779.eurprd04.prod.outlook.com
  ([fe80::c19b:5964:bfcb:96a8]) by AM0PR04MB5779.eurprd04.prod.outlook.com
  ([fe80::c19b:5964:bfcb:96a8%7]) with mapi id 15.20.1856.008; Thu, 2 May 2019
- 08:06:45 +0000
+ 08:06:46 +0000
 From: Abel Vesa <abel.vesa@nxp.com>
 To: Mike Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, 
  Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <fabio.estevam@nxp.com>,
  Sascha Hauer <kernel@pengutronix.de>
-Subject: [PATCH v2 06/18] clk: imx: clk-gate2: Switch to clk_hw based API
-Thread-Topic: [PATCH v2 06/18] clk: imx: clk-gate2: Switch to clk_hw based API
-Thread-Index: AQHVAL37v0rQ3S2aIkuHpd73wmKkow==
-Date: Thu, 2 May 2019 08:06:45 +0000
-Message-ID: <1556784376-7191-7-git-send-email-abel.vesa@nxp.com>
+Subject: [PATCH v2 07/18] clk: imx: clk-pllv3: Switch to clk_hw based API
+Thread-Topic: [PATCH v2 07/18] clk: imx: clk-pllv3: Switch to clk_hw based API
+Thread-Index: AQHVAL38ZgBpbRDYiE+oHrJi/4JGcw==
+Date: Thu, 2 May 2019 08:06:46 +0000
+Message-ID: <1556784376-7191-8-git-send-email-abel.vesa@nxp.com>
 References: <1556784376-7191-1-git-send-email-abel.vesa@nxp.com>
 In-Reply-To: <1556784376-7191-1-git-send-email-abel.vesa@nxp.com>
 Accept-Language: en-US
@@ -60,42 +60,42 @@ authentication-results: spf=none (sender IP is )
 x-ms-exchange-messagesentrepresentingtype: 1
 x-mailer: git-send-email 2.7.4
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: dcc9db4e-760a-4cd2-1f73-08d6ced51e53
+x-ms-office365-filtering-correlation-id: 65c470aa-df7a-4641-4110-08d6ced51ed8
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB4563; 
-x-ms-traffictypediagnostic: AM0PR04MB4563:
-x-microsoft-antispam-prvs: <AM0PR04MB456362CAB8411766D95114D8F6340@AM0PR04MB4563.eurprd04.prod.outlook.com>
+ SRVR:AM0PR04MB4948; 
+x-ms-traffictypediagnostic: AM0PR04MB4948:
+x-microsoft-antispam-prvs: <AM0PR04MB49487846F79E94D869A8427BF6340@AM0PR04MB4948.eurprd04.prod.outlook.com>
 x-ms-oob-tlc-oobclassifiers: OLM:2657;
 x-forefront-prvs: 0025434D2D
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(136003)(39860400002)(376002)(346002)(366004)(199004)(189003)(53936002)(66476007)(66556008)(64756008)(66946007)(73956011)(66446008)(66066001)(6116002)(36756003)(3846002)(305945005)(86362001)(6486002)(81156014)(6512007)(81166006)(25786009)(8676002)(4326008)(71200400001)(71190400001)(99286004)(8936002)(14454004)(76176011)(50226002)(11346002)(446003)(2616005)(68736007)(478600001)(386003)(2906002)(6506007)(52116002)(316002)(44832011)(54906003)(110136005)(26005)(7736002)(5660300002)(256004)(102836004)(186003)(14444005)(486006)(476003)(6436002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4563;
+ SFS:(10009020)(376002)(39860400002)(366004)(396003)(346002)(136003)(189003)(199004)(86362001)(3846002)(8676002)(478600001)(25786009)(186003)(6436002)(81156014)(26005)(71190400001)(71200400001)(102836004)(14454004)(6116002)(4326008)(53936002)(305945005)(7736002)(66066001)(36756003)(81166006)(50226002)(8936002)(6512007)(66556008)(64756008)(44832011)(316002)(54906003)(110136005)(99286004)(14444005)(476003)(2616005)(66946007)(73956011)(486006)(68736007)(66476007)(66446008)(256004)(2906002)(6486002)(11346002)(446003)(5660300002)(52116002)(76176011)(386003)(6506007);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4948;
  H:AM0PR04MB5779.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
+ PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 0FZiW8EG3IL1CjWJkITmeChqQbxkbuO/8s7bts7M4DL2AFRsOi4EXg4qh3Kbo9YzO9KsnAQMUoFWzlgei/QE3zUEJCYFX/1IgkmfHlh+wnlubGIzQfCNqvJ+5h8lSz0NUMHC9xFW4rT6xTza+NzDud9QvmEhoqmcZ6r//zXplHR5bqZFU0EiNBo2W+kikdQm3E/EHp6lKiw1bgLcWR2Bz7EB61ClRmZIEMCNY/45ltbjcapJesZKaTqbLsYOx/j3ALlSnEFQJanI95zdZWr13Vov8R3c7fAMuJwUPy5n4rM2euiETMgMpmP21Ogpz2NnX5VA+0bUnKb3/mYyK1vJii1l/0M/OyAOhFTA9P34vwfY1paGrNO8mosBrUFPYVCHCw5x5E6yL0N8E1k5w/DOPsSLLkohK3P27TTE6xekVE4=
+x-microsoft-antispam-message-info: z3UWTx24xnWkFdt8o4dJzLCSRMyzhS3xeP2jFsu7UTF7rLRlcUPgHi82bgvHNQDA/vBi8rEwJr8Ucv8Fs3C1qsXBWHbR/sPdQKWLw2xMAYi11r8+5nOvskNkFu6C08BgGD2zkIIzbl7sBuMR1cmDqUhP6lnAWrGrxY9hF0O9Nv0jTcKZDeZgJ7j1maN0JEob6yB5+S9oiaofii9oSVE1uh1787cktV1yqHLGu8xJO+Nzin5QGvsurBDdv+3vig0vHQrZJEJd2bbrdYR73aHBxhgUsamTHcfgMESgNtheWSZjuc0Szhwc5/HgOHBdTxlXqsVsTvkGTqnKdMc/uL2oJuePuMX9RlAdiQRGoGOCu3lipkS6YdFbnJPPmUj2d5mOnjAg5v8KyRu4V37jZTvnnT/iJAh7GSMn5h3YzBmZf24=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: dcc9db4e-760a-4cd2-1f73-08d6ced51e53
-X-MS-Exchange-CrossTenant-originalarrivaltime: 02 May 2019 08:06:45.3612 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 65c470aa-df7a-4641-4110-08d6ced51ed8
+X-MS-Exchange-CrossTenant-originalarrivaltime: 02 May 2019 08:06:46.2327 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4563
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4948
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_010658_029259_F2A43492 
-X-CRM114-Status: GOOD (  15.44  )
+X-CRM114-CacheID: sfid-20190502_010650_748235_A5673E17 
+X-CRM114-Status: GOOD (  15.62  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.14.89 listed in list.dnswl.org]
+ no trust [40.107.1.41 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -126,50 +126,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Switch the clk_register_gate2 function to clk_hw based API, rename
-accordingly and add a macro for clk based legacy. This allows us to
-move closer to a clear split between consumer and provider clk APIs.
+Switch the imx_clk_hw_pllv3 function to clk_hw based API, rename
+accordingly and add a macro for clk based legacy. This allows us
+to move closer to a clear split between consumer and provider clk
+APIs.
 
 Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
 ---
- drivers/clk/imx/clk-gate2.c | 14 +++++++++-----
- drivers/clk/imx/clk.h       |  7 ++++++-
- 2 files changed, 15 insertions(+), 6 deletions(-)
+ drivers/clk/imx/clk-pllv3.c | 14 +++++++++-----
+ drivers/clk/imx/clk.h       |  5 ++++-
+ 2 files changed, 13 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/clk/imx/clk-gate2.c b/drivers/clk/imx/clk-gate2.c
-index 60fc9d7..14551fd3 100644
---- a/drivers/clk/imx/clk-gate2.c
-+++ b/drivers/clk/imx/clk-gate2.c
-@@ -125,15 +125,16 @@ static const struct clk_ops clk_gate2_ops = {
- 	.is_enabled = clk_gate2_is_enabled,
+diff --git a/drivers/clk/imx/clk-pllv3.c b/drivers/clk/imx/clk-pllv3.c
+index e892b9a..029205b 100644
+--- a/drivers/clk/imx/clk-pllv3.c
++++ b/drivers/clk/imx/clk-pllv3.c
+@@ -416,14 +416,15 @@ static const struct clk_ops clk_pllv3_enet_ops = {
+ 	.recalc_rate	= clk_pllv3_enet_recalc_rate,
  };
  
--struct clk *clk_register_gate2(struct device *dev, const char *name,
-+struct clk_hw *clk_hw_register_gate2(struct device *dev, const char *name,
- 		const char *parent_name, unsigned long flags,
- 		void __iomem *reg, u8 bit_idx, u8 cgr_val,
- 		u8 clk_gate2_flags, spinlock_t *lock,
- 		unsigned int *share_count)
+-struct clk *imx_clk_pllv3(enum imx_pllv3_type type, const char *name,
++struct clk_hw *imx_clk_hw_pllv3(enum imx_pllv3_type type, const char *name,
+ 			  const char *parent_name, void __iomem *base,
+ 			  u32 div_mask)
  {
- 	struct clk_gate2 *gate;
+ 	struct clk_pllv3 *pll;
+ 	const struct clk_ops *ops;
 -	struct clk *clk;
 +	struct clk_hw *hw;
  	struct clk_init_data init;
 +	int ret;
  
- 	gate = kzalloc(sizeof(struct clk_gate2), GFP_KERNEL);
- 	if (!gate)
-@@ -154,10 +155,13 @@ struct clk *clk_register_gate2(struct device *dev, const char *name,
- 	init.num_parents = parent_name ? 1 : 0;
+ 	pll = kzalloc(sizeof(*pll), GFP_KERNEL);
+ 	if (!pll)
+@@ -482,10 +483,13 @@ struct clk *imx_clk_pllv3(enum imx_pllv3_type type, const char *name,
+ 	init.num_parents = 1;
  
- 	gate->hw.init = &init;
-+	hw = &gate->hw;
+ 	pll->hw.init = &init;
++	hw = &pll->hw;
  
--	clk = clk_register(dev, &gate->hw);
+-	clk = clk_register(NULL, &pll->hw);
 -	if (IS_ERR(clk))
 +	ret = clk_hw_register(NULL, hw);
 +	if (ret) {
- 		kfree(gate);
+ 		kfree(pll);
 +		return ERR_PTR(ret);
 +	}
  
@@ -177,30 +177,28 @@ index 60fc9d7..14551fd3 100644
 +	return hw;
  }
 diff --git a/drivers/clk/imx/clk.h b/drivers/clk/imx/clk.h
-index 996dcc6..c819ce15 100644
+index c819ce15..a079c78 100644
 --- a/drivers/clk/imx/clk.h
 +++ b/drivers/clk/imx/clk.h
-@@ -58,6 +58,11 @@ struct imx_pll14xx_clk {
- #define imx_clk_cpu(name, parent_name, div, mux, pll, step) \
- 	imx_clk_hw_cpu(name, parent_name, div, mux, pll, step)->clk
+@@ -63,6 +63,9 @@ struct imx_pll14xx_clk {
+ 	clk_hw_register_gate2(dev, name, parent_name, flags, reg, bit_idx, \
+ 				cgr_val, clk_gate_flags, lock, share_count)->clk
  
-+#define clk_register_gate2(dev, name, parent_name, flags, reg, bit_idx, \
-+				cgr_val, clk_gate_flags, lock, share_count) \
-+	clk_hw_register_gate2(dev, name, parent_name, flags, reg, bit_idx, \
-+				cgr_val, clk_gate_flags, lock, share_count)->clk
++#define imx_clk_pllv3(type, name, parent_name, base, div_mask) \
++	imx_clk_hw_pllv3(type, name, parent_name, base, div_mask)->clk
 +
  struct clk *imx_clk_pll14xx(const char *name, const char *parent_name,
  		 void __iomem *base, const struct imx_pll14xx_clk *pll_clk);
  
-@@ -96,7 +101,7 @@ struct clk *imx_clk_pllv3(enum imx_pllv3_type type, const char *name,
- struct clk_hw *imx_clk_pllv4(const char *name, const char *parent_name,
- 			     void __iomem *base);
+@@ -95,7 +98,7 @@ enum imx_pllv3_type {
+ 	IMX_PLLV3_AV_IMX7,
+ };
  
--struct clk *clk_register_gate2(struct device *dev, const char *name,
-+struct clk_hw *clk_hw_register_gate2(struct device *dev, const char *name,
- 		const char *parent_name, unsigned long flags,
- 		void __iomem *reg, u8 bit_idx, u8 cgr_val,
- 		u8 clk_gate_flags, spinlock_t *lock,
+-struct clk *imx_clk_pllv3(enum imx_pllv3_type type, const char *name,
++struct clk_hw *imx_clk_hw_pllv3(enum imx_pllv3_type type, const char *name,
+ 		const char *parent_name, void __iomem *base, u32 div_mask);
+ 
+ struct clk_hw *imx_clk_pllv4(const char *name, const char *parent_name,
 -- 
 2.7.4
 
