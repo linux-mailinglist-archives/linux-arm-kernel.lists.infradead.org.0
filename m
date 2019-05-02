@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80EC0120EE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 19:20:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C216120F2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 19:23:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vMqNiJiuJ/t/h0YX/PobEznubMzPZCVezD16MMA6cFY=; b=PcD+ijP19w+pL6
-	+IOR4BKQrWxk09bPZvUw3hKEaUUy0k/1F11qhLOX+XVOpghHVvzGj5GBx1OfSLG8jQl1nI5zwm0qX
-	7W9Tt2b288IjOSWicZgbFs7yLmJ7jrbwRUrCi8MOQvNGCER1nrUntkrKVXIF4ckw7fvc8qWT8FKgl
-	OHVNTCuTitrMV1SiJ7XdvCfj2xqxZv6H2fLo47N/ObyKuUUyjZ0JFYDMSwHhUFtN8v55J3rXQzGam
-	xWvz0m5dO0iuLfTqDNDUD5zf/Xn6Tf43eVSnxR/NeAJZsIrVt/9Vm5xe6V42qlHNvLxppe7xPPCvo
-	igiG2YTJFXI1DRBmWyKQ==;
+	List-Owner; bh=DgWW/A67ijKbtaGVjRSQBKCYfjWo+4XwAbDL4j3KfNQ=; b=Tr6rfStNRDndmq
+	HF2NePxIoRLp7sVGlWROUBMoLD8CnB3R+4b4O1t5kLf0FW+ypN0ZFbGoV4hJTKVgiaAsFL/wGMyuG
+	TgzmBJFrclwSxsYaGduoDZEzlZb4aTEX9pew55/sjeB77pP4nSVQtTjnFXUoJdxhvauRhyFuOiM63
+	VQQ677e55CfetcSD007yedJH806oouMhCFjScDhTRobpkfyFG8/wZaG8GQZFlIW+xO3zPMf0Uyebz
+	2sbdz2fO3ccjHplmPK18zz4Ixi5FU5Q2/iKdh0i+tnHLAZK3o1/kGXpN63ZhJTcQDJEeltnd4m2+E
+	uf5SC0Qne5lFRpmlw8GQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMFNj-0005mR-GT; Thu, 02 May 2019 17:20:27 +0000
+	id 1hMFQQ-0007B0-Ci; Thu, 02 May 2019 17:23:14 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMFNc-0005eo-KQ
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 17:20:22 +0000
+ id 1hMFQJ-0007AZ-IM
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 17:23:08 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6A27620652;
- Thu,  2 May 2019 17:20:09 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3D7AF20651;
+ Thu,  2 May 2019 17:23:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1556817612;
- bh=DNZEf28z285Xq5SbA4zrCjNHhVWVAuEwgjHxbQTOb+g=;
+ s=default; t=1556817786;
+ bh=t2QvyURycKIiTirpOYn/f0cP4QvJwYDjk22RYCF4a+w=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Iian5KzlS2pBwfqDAikYfYBebvSvWKxBKu8BJubTVMZLohGeorJoJD9VUpwCSrZ9D
- Nx0Mf5EhWuNsAAal7Rauj7ASlRTzo/vNxYB0OS2eSFsUePaTK6HcItGZ8pcduauqAj
- fViH4iah220qpQmoh5q8iWy7/5cVYk37cnVz4CLk=
-Date: Thu, 2 May 2019 19:20:07 +0200
+ b=0lNIcEHEVT9rbk92gU+FW0N3Qz5n3G1kCyITcS1sJnzAGBVSQuP5hWVsC1PfATO32
+ Heunaeq15bx7iceyRMN+Lt13IeCgeNjZbcTF0HwBaRq6MLYek0Vo3tDTx25aDESnlP
+ z3FGoKjHRArhzb8Ir2amvCJJBoxSNgA63ocOiPYs=
+Date: Thu, 2 May 2019 19:23:04 +0200
 From: Greg KH <gregkh@linuxfoundation.org>
 To: Dragan Cvetic <dragan.cvetic@xilinx.com>
-Subject: Re: [PATCH V3 02/12] misc: xilinx-sdfec: add core driver
-Message-ID: <20190502172007.GA1874@kroah.com>
+Subject: Re: [PATCH V3 04/12] misc: xilinx_sdfec: Add open, close and ioctl
+Message-ID: <20190502172304.GB1874@kroah.com>
 References: <1556402706-176271-1-git-send-email-dragan.cvetic@xilinx.com>
- <1556402706-176271-3-git-send-email-dragan.cvetic@xilinx.com>
+ <1556402706-176271-5-git-send-email-dragan.cvetic@xilinx.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1556402706-176271-3-git-send-email-dragan.cvetic@xilinx.com>
+In-Reply-To: <1556402706-176271-5-git-send-email-dragan.cvetic@xilinx.com>
 User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_102020_688865_16AE41DE 
-X-CRM114-Status: GOOD (  14.43  )
+X-CRM114-CacheID: sfid-20190502_102307_624756_81DA9C72 
+X-CRM114-Status: GOOD (  14.69  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -81,65 +81,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Apr 27, 2019 at 11:04:56PM +0100, Dragan Cvetic wrote:
-> +#define DRIVER_NAME "xilinx_sdfec"
-> +#define DRIVER_VERSION "0.3"
-
-Version means nothing with the driver in the kernel tree, please remove
-it.
-
-> +#define DRIVER_MAX_DEV BIT(MINORBITS)
-
-Why this number?  Why limit yourself to any number?
-
+On Sat, Apr 27, 2019 at 11:04:58PM +0100, Dragan Cvetic wrote:
+> +static int xsdfec_dev_open(struct inode *iptr, struct file *fptr)
+> +{
+> +	struct xsdfec_dev *xsdfec;
 > +
-> +static struct class *xsdfec_class;
-
-Do you really need your own class?
-
-> +static atomic_t xsdfec_ndevs = ATOMIC_INIT(0);
-
-Why?
-
-> +static dev_t xsdfec_devt;
-
-Why?
-
-Why not use misc_device for this?  Why do you need your own major with a
-bunch of minor devices reserved ahead of time?  Why not just create a
-new misc device for every individual device that happens to be found in
-the system?  That will make the code a lot simpler and smaller and
-easier.
-
-
-
+> +	xsdfec = container_of(iptr->i_cdev, struct xsdfec_dev, xsdfec_cdev);
 > +
-> +/**
-> + * struct xsdfec_dev - Driver data for SDFEC
-> + * @regs: device physical base address
-> + * @dev: pointer to device struct
-> + * @config: Configuration of the SDFEC device
-> + * @open_count: Count of char device being opened
-> + * @xsdfec_cdev: Character device handle
-> + * @irq_lock: Driver spinlock
-> + *
-> + * This structure contains necessary state for SDFEC driver to operate
-> + */
-> +struct xsdfec_dev {
-> +	void __iomem *regs;
-> +	struct device *dev;
-> +	struct xsdfec_config config;
-> +	atomic_t open_count;
-> +	struct cdev xsdfec_cdev;
-> +	/* Spinlock to protect state_updated and stats_updated */
-> +	spinlock_t irq_lock;
-> +};
-> +
-> +static const struct file_operations xsdfec_fops = {
-> +	.owner = THIS_MODULE,
-> +};
+> +	if (!atomic_dec_and_test(&xsdfec->open_count)) {
 
-No operations at all?  That's an easy driver :)
+Why do you care about this?
+
+And do you really think it matters?  What are you trying to protect from
+here?
+
+> +		atomic_inc(&xsdfec->open_count);
+> +		return -EBUSY;
+> +	}
+> +
+> +	fptr->private_data = xsdfec;
+> +	return 0;
+> +}
+> +
+> +static int xsdfec_dev_release(struct inode *iptr, struct file *fptr)
+> +{
+> +	struct xsdfec_dev *xsdfec;
+> +
+> +	xsdfec = container_of(iptr->i_cdev, struct xsdfec_dev, xsdfec_cdev);
+> +
+> +	atomic_inc(&xsdfec->open_count);
+
+You increment a number when the device is closed?
+
+You are trying to make it hard to maintain this code over time :)
+
+
+> +	return 0;
+> +}
+> +
+> +static long xsdfec_dev_ioctl(struct file *fptr, unsigned int cmd,
+> +			     unsigned long data)
+> +{
+> +	struct xsdfec_dev *xsdfec = fptr->private_data;
+> +	void __user *arg = NULL;
+> +	int rval = -EINVAL;
+> +	int err = 0;
+> +
+> +	if (!xsdfec)
+> +		return rval;
+> +
+> +	if (_IOC_TYPE(cmd) != XSDFEC_MAGIC)
+> +		return -ENOTTY;
+> +
+> +	/* check if ioctl argument is present and valid */
+> +	if (_IOC_DIR(cmd) != _IOC_NONE) {
+> +		arg = (void __user *)data;
+> +		if (!arg) {
+> +			dev_err(xsdfec->dev,
+> +				"xilinx sdfec ioctl argument is NULL Pointer");
+
+You just created a way for userspace to spam the kernel log, please do
+not do that :(
+
+
+
+> +			return rval;
+> +		}
+> +	}
+> +
+> +	if (err) {
+> +		dev_err(xsdfec->dev, "Invalid xilinx sdfec ioctl argument");
+> +		return -EFAULT;
+
+Wrong error, you did not have a memory fault.
+
+Again, you just created a way to spam the kernel log by a user :(
 
 thanks,
 
