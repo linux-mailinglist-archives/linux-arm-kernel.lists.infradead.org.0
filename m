@@ -2,77 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46B4711686
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 11:24:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF16B11696
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 11:39:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=xpx+y+dQCE+f5iKEG7VbkFv2UDakINOg3ke3Sj99ywA=; b=AOCJjGsRYTI48JUfYL3qTPoWg
-	Gd3jUIGRsaHOKYsxPIgNA7HdiziHOk/xkAKam/YvSfqL3ZVQ4YfrE2594CfCX/RuuJEN4PIwLCNga
-	IwqcyOTdrLUeIRCCil5T+cL1D78c/Yh6KGNMc5VQI9dMSO9qxQ8n/bIvlUqqD5k15137b1fn4rGjt
-	9JgD2CRxCy/RbdkBhvqnn4YArn5/Xi6Hfrq+TNuOo7Lwgklknfw4lrHGQhMK5a91npNCFJUP/wvEy
-	1oJtDE4TzS/jBXnnJ3apcPHVmbFN0A7e6c/n9lYuOY2OPtiT7fJQbnqpru8+LvMqZR9LhrVlL52KB
-	3FrfQhP9g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=C/eoTp0jHwShNfM9Oj1SfwUFjAlLwCC9H6Z6wljtBnY=; b=QbXJBCwThMpx3A
+	gn9I9ryKk51Jjh8cScrFWyVAHRbDYrPpajHCsY3wIKeRzzUmcgGkW9bgYsFKS7c0jW8Luzs28Uo3l
+	OkXF5x/bH/vnlCaoxi3nCKaM4KQQKmhDu/bvU7466b44fBbMxyrSf/sIFk0ZsxBu92nXgS6HkJu26
+	BCu1B+boKgh+ZZT21JDaoHeUGypog+HF0ETSDHWA7Uv7mjpEh5OB9u7vhkcSAmuOux67fmos5nmiU
+	H3MMLLhfLqJq1ubkohYGbVWg1CcTcTTsuZ+61ZbXBLIHWdeAgyS2Fr4P6GJHASy//uA9R3oepsUiY
+	Z01NKKXKShc/uoQJxSDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hM7xG-00066O-D9; Thu, 02 May 2019 09:24:38 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1hM8Br-0002F6-Vo; Thu, 02 May 2019 09:39:43 +0000
+Received: from mail-yw1-xc41.google.com ([2607:f8b0:4864:20::c41])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hM7x9-00065X-P5
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 09:24:33 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x429OSxR127950;
- Thu, 2 May 2019 04:24:28 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1556789068;
- bh=F9A3bt1zkLhhGJ9fZudisufgABQtzH8ITMMH99OzyGU=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=KuFHVQtLUDzz+GLUqIs6FP+Mnv6oMzxhACFs4xIGsVMKO8ZpUDGgAR/hcamvjRUw7
- 6j3FAtsc7aGk3+sFXhCGxIhRdJvu1318hbmwKEJrqaRUFsmBaQuyeA/cPU+61bGVxn
- oECKEzn3PjdqBcA6qUS3CIezmXf0bcqmJ2tg57W8=
-Received: from DLEE103.ent.ti.com (dlee103.ent.ti.com [157.170.170.33])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x429OSjE013461
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 2 May 2019 04:24:28 -0500
-Received: from DLEE105.ent.ti.com (157.170.170.35) by DLEE103.ent.ti.com
- (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 2 May
- 2019 04:24:27 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 2 May 2019 04:24:27 -0500
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x429OOsZ068403;
- Thu, 2 May 2019 04:24:25 -0500
-Subject: Re: [PATCH v3 2/5] dt-bindings: ti_sci_pm_domains: Add support for
- exclusive and shared access
-To: Lokesh Vutla <lokeshvutla@ti.com>, Nishanth Menon <nm@ti.com>, Santosh
- Shilimkar <ssantosh@kernel.org>, Rob Herring <robh+dt@kernel.org>
-References: <20190410053728.17374-1-lokeshvutla@ti.com>
- <20190410053728.17374-3-lokeshvutla@ti.com>
-From: Tero Kristo <t-kristo@ti.com>
-Message-ID: <9fe962b7-0500-6916-1dc3-04db0e11cd4d@ti.com>
-Date: Thu, 2 May 2019 12:24:00 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hM8Bl-0002Ek-7g
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 09:39:39 +0000
+Received: by mail-yw1-xc41.google.com with SMTP id j4so1059395ywk.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 02 May 2019 02:39:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=xdth6z7sqKu/asM4+DC73vTGpHLCXQAmob0Qaa/8YnM=;
+ b=o/QvTJIE8PitYxkh4yvYEP7Tlz9YaO+C3yH6EjG0InghIxds93jyqsBTvd52ICXN9/
+ GrsEFXSoSFhBiKoP4lgs43Hyd+cApUzno5wzvBlSlVRc17HFgBdUeUCqkiFKLM3zryEM
+ 3ww+v/AQN2i8rwinnsnyvLywB9TAc6JhEuP1XTMaFp397P1A/y1eS8hqZJz/9eCGek1j
+ xGi0wf/jWQRIu1krKaeL3h6+yi/bDCwuMYNCXkvjnn8yJhuqN8P/5se0UN+kynzp+7qW
+ xSpBXd9xbPfFTxWtze6TWkl/13g0pLSVUZQTskfULsKHeXUWmtlqcbPWB+Dtd0mydcb7
+ k9KA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=xdth6z7sqKu/asM4+DC73vTGpHLCXQAmob0Qaa/8YnM=;
+ b=VPibkLIibbOTFcpvpTDmvokIOkMvwmc/DSiNr1Gd5dz1DKWawaezbzx7t/lvhv6i4Z
+ gNdDhUGiD7o2PTdFn4wt6Z7CKz9ZPmZwTBd1wql55qJSiZi84C3y2yCxsEwD1G1Y+MQl
+ qY4KcOKSl+zV83KmazIc8Q4oWvqCmVm0/U+dPSXnB1Eqg3OA88t6lJjX57+QFstYses+
+ /8iEr/CCZ2xWPwS1IwA21nBueF5aD6k++axM2SvkaX5FYNqJ/oKORcO9FGmU+j7gKxyp
+ JkcJDYwRPvIYgLHkaRtjgNv6r5HOdW/elgVDNHge61+oMGMt/mdiWi+sTRr7MMwDco8y
+ siOA==
+X-Gm-Message-State: APjAAAWTnG7ylft+NSkH3i+BtN68qpkxfv1ETg3Y1ALwBoYRj3JQpoUK
+ 1LbibBmFIr2w0Y39/sVnxW6kmfIFhi8eVvy9dVk=
+X-Google-Smtp-Source: APXvYqy9UVNsnJk0s5cEO6VZ63moEbd8k1NJDxozXOq8MMQz8L/1qN9gkjVoDMSbQ5Zo2h1ORNtu8+kTCWPcECUeFqY=
+X-Received: by 2002:a81:b653:: with SMTP id h19mr2129914ywk.253.1556789975500; 
+ Thu, 02 May 2019 02:39:35 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190410053728.17374-3-lokeshvutla@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+References: <20190419191730.9437-1-peron.clem@gmail.com>
+ <20190419191730.9437-3-peron.clem@gmail.com>
+ <20190502082526.c5zo4uzceqzizbxo@flea>
+In-Reply-To: <20190502082526.c5zo4uzceqzizbxo@flea>
+From: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Date: Thu, 2 May 2019 11:39:24 +0200
+Message-ID: <CAJiuCcdFUPBsXfKtDLt-p6Edx-7JrST9d0C=ofCU4CL8ZxwcsA@mail.gmail.com>
+Subject: Re: [PATCH v2 2/5] ASoC: sun4i-spdif: Add support for H6 SoC
+To: Maxime Ripard <maxime.ripard@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_022431_894175_0DE62EC5 
-X-CRM114-Status: GOOD (  21.32  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190502_023937_333366_4B5024A8 
+X-CRM114-Status: GOOD (  26.36  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (peron.clem[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -81,7 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
+ 0.1 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,95 +95,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Device Tree Mailing List <devicetree@vger.kernel.org>,
- Sekhar Nori <nsekhar@ti.com>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Linux-ALSA <alsa-devel@alsa-project.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ Liam Girdwood <lgirdwood@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ Takashi Iwai <tiwai@suse.com>, Chen-Yu Tsai <wens@csie.org>,
+ Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/04/2019 08:37, Lokesh Vutla wrote:
-> TISCI protocol supports for enabling the device either with exclusive
-> permissions for the requesting host or with sharing across the hosts.
-> There are certain devices which are exclusive to Linux context and
-> there are certain devices that are shared across different host contexts.
-> So add support for getting this information from DT by increasing
-> the power-domain cells to 2.
-> 
-> Signed-off-by: Lokesh Vutla <lokeshvutla@ti.com>
-
-Based on some offline discussions with Rob, I am withdrawing my concerns 
-on this patch, thus:
-
-Acked-by: Tero Kristo <t-kristo@ti.com>
-
-We would still need ack from Rob though.
-
--Tero
-
-> ---
->   .../devicetree/bindings/soc/ti/sci-pm-domain.txt      | 11 +++++++++--
->   MAINTAINERS                                           |  1 +
->   include/dt-bindings/soc/ti,sci_pm_domain.h            |  9 +++++++++
->   3 files changed, 19 insertions(+), 2 deletions(-)
->   create mode 100644 include/dt-bindings/soc/ti,sci_pm_domain.h
-> 
-> diff --git a/Documentation/devicetree/bindings/soc/ti/sci-pm-domain.txt b/Documentation/devicetree/bindings/soc/ti/sci-pm-domain.txt
-> index f7b00a7c0f68..f541d1f776a2 100644
-> --- a/Documentation/devicetree/bindings/soc/ti/sci-pm-domain.txt
-> +++ b/Documentation/devicetree/bindings/soc/ti/sci-pm-domain.txt
-> @@ -19,8 +19,15 @@ child of the pmmc node.
->   Required Properties:
->   --------------------
->   - compatible: should be "ti,sci-pm-domain"
-> -- #power-domain-cells: Must be 1 so that an id can be provided in each
-> -		       device node.
-> +- #power-domain-cells: Can be one of the following:
-> +			1: Containing the device id of each node
-> +			2: First entry should be device id
-> +			   Second entry should be one of the floowing:
-> +			   TI_SCI_PD_EXCLUSIVE: To allow device to be
-> +						exclusively controlled by
-> +						the requesting hosts.
-> +			   TI_SCI_PD_SHARED: To allow device to be shared
-> +					     by multiple hosts.
->   
->   Example (K2G):
->   -------------
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 2359e12e4c41..dc7a19cc1831 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -15345,6 +15345,7 @@ F:	drivers/firmware/ti_sci*
->   F:	include/linux/soc/ti/ti_sci_protocol.h
->   F:	Documentation/devicetree/bindings/soc/ti/sci-pm-domain.txt
->   F:	drivers/soc/ti/ti_sci_pm_domains.c
-> +F:	include/dt-bindings/soc/ti,sci_pm_domain.h
->   F:	Documentation/devicetree/bindings/reset/ti,sci-reset.txt
->   F:	Documentation/devicetree/bindings/clock/ti,sci-clk.txt
->   F:	drivers/clk/keystone/sci-clk.c
-> diff --git a/include/dt-bindings/soc/ti,sci_pm_domain.h b/include/dt-bindings/soc/ti,sci_pm_domain.h
-> new file mode 100644
-> index 000000000000..8f2a7360b65e
-> --- /dev/null
-> +++ b/include/dt-bindings/soc/ti,sci_pm_domain.h
-> @@ -0,0 +1,9 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +
-> +#ifndef __DT_BINDINGS_TI_SCI_PM_DOMAIN_H
-> +#define __DT_BINDINGS_TI_SCI_PM_DOMAIN_H
-> +
-> +#define TI_SCI_PD_EXCLUSIVE	1
-> +#define TI_SCI_PD_SHARED	0
-> +
-> +#endif /* __DT_BINDINGS_TI_SCI_PM_DOMAIN_H */
-> 
-
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgTWF4aW1lLAoKT24gVGh1LCAyIE1heSAyMDE5IGF0IDEwOjI1LCBNYXhpbWUgUmlwYXJkIDxt
+YXhpbWUucmlwYXJkQGJvb3RsaW4uY29tPiB3cm90ZToKPgo+IE9uIEZyaSwgQXByIDE5LCAyMDE5
+IGF0IDA5OjE3OjI3UE0gKzAyMDAsIENsw6ltZW50IFDDqXJvbiB3cm90ZToKPiA+IEFsbHdpbm5l
+ciBINiBoYXMgYSBkaWZmZXJlbnQgbWFwcGluZyBmb3IgdGhlIGZpZm8gcmVnaXN0ZXIgY29udHJv
+bGxlci4KPiA+Cj4gPiBBY3R1YWxseSBvbmx5IHRoZSBmaWZvIHR4IGZsdXNoIGJpdCBpcyB1c2Vk
+Lgo+ID4KPiA+IEFkZCBhIG5ldyBxdWlyayB0byBrbm93IHRoZSBjb3JyZWN0IGZpZm8gdHggZmx1
+c2ggYml0Lgo+ID4KPiA+IFNpZ25lZC1vZmYtYnk6IENsw6ltZW50IFDDqXJvbiA8cGVyb24uY2xl
+bUBnbWFpbC5jb20+Cj4gPiAtLS0KPiA+ICBzb3VuZC9zb2Mvc3VueGkvc3VuNGktc3BkaWYuYyB8
+IDQyICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKy0tLS0tCj4gPiAgMSBmaWxlIGNoYW5n
+ZWQsIDM2IGluc2VydGlvbnMoKyksIDYgZGVsZXRpb25zKC0pCj4gPgo+ID4gZGlmZiAtLWdpdCBh
+L3NvdW5kL3NvYy9zdW54aS9zdW40aS1zcGRpZi5jIGIvc291bmQvc29jL3N1bnhpL3N1bjRpLXNw
+ZGlmLmMKPiA+IGluZGV4IGI0YWY0YWFiZWFkMS4uMTllNGJmOWNhYTI0IDEwMDY0NAo+ID4gLS0t
+IGEvc291bmQvc29jL3N1bnhpL3N1bjRpLXNwZGlmLmMKPiA+ICsrKyBiL3NvdW5kL3NvYy9zdW54
+aS9zdW40aS1zcGRpZi5jCj4gPiBAQCAtNzUsNiArNzUsMTggQEAKPiA+ICAgICAgICNkZWZpbmUg
+U1VONElfU1BESUZfRkNUTF9SWE9NKHYpICAgICAgICAgICAgICAgICgodikgPDwgMCkKPiA+ICAg
+ICAgICNkZWZpbmUgU1VONElfU1BESUZfRkNUTF9SWE9NX01BU0sgICAgICAgICAgICAgIEdFTk1B
+U0soMSwgMCkKPiA+Cj4gPiArI2RlZmluZSBTVU41MElfSDZfU1BESUZfRkNUTCAoMHgxNCkKPiA+
+ICsgICAgICNkZWZpbmUgU1VONTBJX0g2X1NQRElGX0ZDVExfSFVCX0VOICAgICAgICAgICAgIEJJ
+VCgzMSkKPiA+ICsgICAgICNkZWZpbmUgU1VONTBJX0g2X1NQRElGX0ZDVExfRlRYICAgICAgICAg
+ICAgICAgIEJJVCgzMCkKPiA+ICsgICAgICNkZWZpbmUgU1VONTBJX0g2X1NQRElGX0ZDVExfRlJY
+ICAgICAgICAgICAgICAgIEJJVCgyOSkKPiA+ICsgICAgICNkZWZpbmUgU1VONTBJX0g2X1NQRElG
+X0ZDVExfVFhUTCh2KSAgICAgICAgICAgICgodikgPDwgMTIpCj4gPiArICAgICAjZGVmaW5lIFNV
+TjUwSV9INl9TUERJRl9GQ1RMX1RYVExfTUFTSyAgICAgICAgICBHRU5NQVNLKDE5LCAxMikKPiA+
+ICsgICAgICNkZWZpbmUgU1VONTBJX0g2X1NQRElGX0ZDVExfUlhUTCh2KSAgICAgICAgICAgICgo
+dikgPDwgNCkKPiA+ICsgICAgICNkZWZpbmUgU1VONTBJX0g2X1NQRElGX0ZDVExfUlhUTF9NQVNL
+ICAgICAgICAgIEdFTk1BU0soMTAsIDQpCj4gPiArICAgICAjZGVmaW5lIFNVTjUwSV9INl9TUERJ
+Rl9GQ1RMX1RYSU0gICAgICAgICAgICAgICBCSVQoMikKPiA+ICsgICAgICNkZWZpbmUgU1VONTBJ
+X0g2X1NQRElGX0ZDVExfUlhPTSh2KSAgICAgICAgICAgICgodikgPDwgMCkKPiA+ICsgICAgICNk
+ZWZpbmUgU1VONTBJX0g2X1NQRElGX0ZDVExfUlhPTV9NQVNLICAgICAgICAgIEdFTk1BU0soMSwg
+MCkKPiA+ICsKPiA+ICAjZGVmaW5lIFNVTjRJX1NQRElGX0ZTVEEgICAgICgweDE4KQo+ID4gICAg
+ICAgI2RlZmluZSBTVU40SV9TUERJRl9GU1RBX1RYRSAgICAgICAgICAgICAgICAgICAgQklUKDE0
+KQo+ID4gICAgICAgI2RlZmluZSBTVU40SV9TUERJRl9GU1RBX1RYRUNOVFNIVCAgICAgICAgICAg
+ICAgKDgpCj4gPiBAQCAtMTY5LDE2ICsxODEsMjUgQEAgc3RydWN0IHN1bjRpX3NwZGlmX2RldiB7
+Cj4gPiAgICAgICBzdHJ1Y3Qgc25kX3NvY19kYWlfZHJpdmVyIGNwdV9kYWlfZHJ2Owo+ID4gICAg
+ICAgc3RydWN0IHJlZ21hcCAqcmVnbWFwOwo+ID4gICAgICAgc3RydWN0IHNuZF9kbWFlbmdpbmVf
+ZGFpX2RtYV9kYXRhIGRtYV9wYXJhbXNfdHg7Cj4gPiArICAgICBjb25zdCBzdHJ1Y3Qgc3VuNGlf
+c3BkaWZfcXVpcmtzICpxdWlya3M7Cj4KPiBJIGd1ZXNzIHRoaXMgd2lsbCBnZW5lcmF0ZSBhIHdh
+cm5pbmcgc2luY2UgdGhlIHN0cnVjdHVyZSBoYXNuJ3QgYmVlbgo+IGRlZmluZWQgeWV0PwoKSXQn
+cyBhIHBvaW50ZXIgdG8gYSBzdHJ1Y3R1cmUgc28gbm8gd2FybmluZyBmcm9tIHRoZSBjb21waWxl
+ci4KCj4KPiA+ICt9Owo+ID4gKwo+ID4gK3N0cnVjdCBzdW40aV9zcGRpZl9xdWlya3Mgewo+ID4g
+KyAgICAgdW5zaWduZWQgaW50IHJlZ19kYWNfdHhkYXRhOyAgICAvKiBUWCBGSUZPIG9mZnNldCBm
+b3IgRE1BIGNvbmZpZyAqLwo+ID4gKyAgICAgdW5zaWduZWQgaW50IHJlZ19mY3RsX2Z0eDsgICAg
+ICAvKiBUWCBGSUZPIGZsdXNoIGJpdG1hc2sgKi8KPiA+ICsgICAgIGJvb2wgaGFzX3Jlc2V0Owo+
+Cj4gWW91IGRvbid0IHJlYWxseSBuZWVkIHRvIG1vdmUgaXQgYXJvdW5kLCB5b3UgY2FuIGp1c3Qg
+YWRkIHRoZQo+IHN0cnVjdHVyZSBwcm90b3R5cGUuCj4KPiBJZiB5b3UgZG8gd2FudCB0byBtb3Zl
+IGl0IGFyb3VuZCwgdGhlbiBwbGVhc2UgZG8gc28gaW4gYSBzZXBhcmF0ZSBwYXRjaAoKSSBoYXZl
+IGNob29zZSB0byBtb3ZlIGl0IHRvIGZvbGxvdyB3aGF0IGlzIGRvbmUgaW4gdGhlIHN1bjRpLWky
+cy4KSSB3aWxsIHB1dCBpdCBpbiBhIHNlcGFyYXRlIHBhdGNoIGFuZCBtYWtlIHRoZSBjb21tZW50
+IGEgYml0IG1vcmUgcHJvcGVyLgoKPgo+ID4gIH07Cj4gPgo+ID4gIHN0YXRpYyB2b2lkIHN1bjRp
+X3NwZGlmX2NvbmZpZ3VyZShzdHJ1Y3Qgc3VuNGlfc3BkaWZfZGV2ICpob3N0KQo+ID4gIHsKPiA+
+ICsgICAgIGNvbnN0IHN0cnVjdCBzdW40aV9zcGRpZl9xdWlya3MgKnF1aXJrcyA9IGhvc3QtPnF1
+aXJrczsKPiA+ICsKPiA+ICAgICAgIC8qIHNvZnQgcmVzZXQgU1BESUYgKi8KPiA+ICAgICAgIHJl
+Z21hcF93cml0ZShob3N0LT5yZWdtYXAsIFNVTjRJX1NQRElGX0NUTCwgU1VONElfU1BESUZfQ1RM
+X1JFU0VUKTsKPiA+Cj4gPiAgICAgICAvKiBmbHVzaCBUWCBGSUZPICovCj4gPiAgICAgICByZWdt
+YXBfdXBkYXRlX2JpdHMoaG9zdC0+cmVnbWFwLCBTVU40SV9TUERJRl9GQ1RMLAo+ID4gLSAgICAg
+ICAgICAgICAgICAgICAgICAgIFNVTjRJX1NQRElGX0ZDVExfRlRYLCBTVU40SV9TUERJRl9GQ1RM
+X0ZUWCk7Cj4gPiArICAgICAgICAgICAgICAgICAgICAgICAgcXVpcmtzLT5yZWdfZmN0bF9mdHgs
+IHF1aXJrcy0+cmVnX2ZjdGxfZnR4KTsKPiA+Cj4gPiAgICAgICAvKiBjbGVhciBUWCBjb3VudGVy
+ICovCj4gPiAgICAgICByZWdtYXBfd3JpdGUoaG9zdC0+cmVnbWFwLCBTVU40SV9TUERJRl9UWENO
+VCwgMCk7Cj4gPiBAQCAtNDA1LDIyICs0MjYsMjYgQEAgc3RhdGljIHN0cnVjdCBzbmRfc29jX2Rh
+aV9kcml2ZXIgc3VuNGlfc3BkaWZfZGFpID0gewo+ID4gICAgICAgLm5hbWUgPSAic3BkaWYiLAo+
+ID4gIH07Cj4gPgo+ID4gLXN0cnVjdCBzdW40aV9zcGRpZl9xdWlya3Mgewo+ID4gLSAgICAgdW5z
+aWduZWQgaW50IHJlZ19kYWNfdHhkYXRhOyAgICAvKiBUWCBGSUZPIG9mZnNldCBmb3IgRE1BIGNv
+bmZpZyAqLwo+ID4gLSAgICAgYm9vbCBoYXNfcmVzZXQ7Cj4gPiAtfTsKPiA+IC0KPiA+ICBzdGF0
+aWMgY29uc3Qgc3RydWN0IHN1bjRpX3NwZGlmX3F1aXJrcyBzdW40aV9hMTBfc3BkaWZfcXVpcmtz
+ID0gewo+ID4gICAgICAgLnJlZ19kYWNfdHhkYXRhID0gU1VONElfU1BESUZfVFhGSUZPLAo+ID4g
+KyAgICAgLnJlZ19mY3RsX2Z0eCAgID0gU1VONElfU1BESUZfRkNUTF9GVFgsCj4gPiAgfTsKPiA+
+Cj4gPiAgc3RhdGljIGNvbnN0IHN0cnVjdCBzdW40aV9zcGRpZl9xdWlya3Mgc3VuNmlfYTMxX3Nw
+ZGlmX3F1aXJrcyA9IHsKPiA+ICAgICAgIC5yZWdfZGFjX3R4ZGF0YSA9IFNVTjRJX1NQRElGX1RY
+RklGTywKPiA+ICsgICAgIC5yZWdfZmN0bF9mdHggICA9IFNVTjRJX1NQRElGX0ZDVExfRlRYLAo+
+ID4gICAgICAgLmhhc19yZXNldCAgICAgID0gdHJ1ZSwKPiA+ICB9Owo+ID4KPiA+ICBzdGF0aWMg
+Y29uc3Qgc3RydWN0IHN1bjRpX3NwZGlmX3F1aXJrcyBzdW44aV9oM19zcGRpZl9xdWlya3MgPSB7
+Cj4gPiAgICAgICAucmVnX2RhY190eGRhdGEgPSBTVU44SV9TUERJRl9UWEZJRk8sCj4gPiArICAg
+ICAucmVnX2ZjdGxfZnR4ICAgPSBTVU40SV9TUERJRl9GQ1RMX0ZUWCwKPiA+ICsgICAgIC5oYXNf
+cmVzZXQgICAgICA9IHRydWUsCj4gPiArfTsKPiA+Cj4gPiArc3RhdGljIGNvbnN0IHN0cnVjdCBz
+dW40aV9zcGRpZl9xdWlya3Mgc3VuNTBpX2g2X3NwZGlmX3F1aXJrcyA9IHsKPiA+ICsgICAgIC5y
+ZWdfZGFjX3R4ZGF0YSA9IFNVTjhJX1NQRElGX1RYRklGTywKPiA+ICsgICAgIC5yZWdfZmN0bF9m
+dHggICA9IFNVTjUwSV9INl9TUERJRl9GQ1RMX0ZUWCwKPiA+ICAgICAgIC5oYXNfcmVzZXQgICAg
+ICA9IHRydWUsCj4KPiBUaGUgcmVnX2RhY190eGRhdGEgYW5kIHJlZ19mY3RsX2Z0eCBjaGFuZ2Vz
+IGhlcmUgc2hvdWxkIGFsc28gYmUgcGFydAo+IG9mIGEgc2VwYXJhdGUgcGF0Y2guCgpZb3UgbWVh
+biB0aGUgcmVnX2ZjdGxfZnR4IHF1aXJrIGFuZCB0aGUgSDYgaW50cm9kdWN0aW9uIHNob3VsZCBi
+ZSBzcGxpdCA/CgpUaGFua3MgZm9yIHRoZSByZXZpZXcsCkNsZW1lbnQKCj4KPiBNYXhpbWUKPgo+
+IC0tCj4gTWF4aW1lIFJpcGFyZCwgQm9vdGxpbgo+IEVtYmVkZGVkIExpbnV4IGFuZCBLZXJuZWwg
+ZW5naW5lZXJpbmcKPiBodHRwczovL2Jvb3RsaW4uY29tCgpfX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAps
+aW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
+ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
