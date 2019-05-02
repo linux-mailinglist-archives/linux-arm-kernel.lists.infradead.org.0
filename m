@@ -2,80 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE347120AF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 18:56:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14F17120BF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 19:02:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ulIjljuYSKDed25ApfhO/NnaLF78x0XZD1h5Ysdfw1w=; b=rJPsXNtgbOf+LTIwxWgWGN0Dr
-	vbgpTIquCh25FhbdJdbmY67FPLHSfuXADmS9Z1C2LZpOX9TtGiiAG6nMttA+Nsp4+U6IYOtZDNQpy
-	7o7msNVzoo/nTjatprq/iWfaxlYV+R+7BnZMoT2Vi+UyBiu5AMdNW9D6h+GwnXi8IR8Sa75S92mw0
-	yhQ6LJfbd3UEio9wrzH/gusP6fa7U4/lg1tUafsyTBDzNRU0dHKpy5oKux2X2d8wzmE5xbiJEUMeZ
-	EUU1+w7qG45rldEhcYhk0UvgA/ZAE13h9n+v9w0IEbs4RlM7S5lyfWps3d9k+1uleEZjVrBTyd/h7
-	Hh0Bf2Syg==;
+	 bh=wt1zOqFCcm4//5cqNxciYRBfQ+bEBAYkr/x7kscvc9s=; b=WUThpMy8CaZ719ewqfBbmqCt4
+	NTC93ue8WQidF4aqEKWlRqyY0AztpFloYsz0jydpL/ZC0vbqRf9x1ONKOPyybD3dr0mUyY/ym41Wm
+	4QtLSIsDGukHY+K2LkKXITrP7oMgAlIgxddShGjkuJMX1ug+KSCNLQueu5cDUiYbuY1HZ0ox/GCEa
+	I++Fej4e46WiOfpKI12gvrG/0GegE9ExB91MSI+TwIiPpbvrABQJ/L17aAYiWXCcCbN/xT3O/sggo
+	Lf4fYHGnFA965tuJg9M/26THy5r5CKTdiLTv7ZZcSt7y2ntHh3WW6LHSbqkZeCYe2NSTboHAzAUFQ
+	TcCGAmcKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMF0T-0005tq-Hj; Thu, 02 May 2019 16:56:25 +0000
-Received: from pegase1.c-s.fr ([93.17.236.30])
+	id 1hMF6S-0007Zb-2n; Thu, 02 May 2019 17:02:36 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMF0G-0005sl-L5; Thu, 02 May 2019 16:56:19 +0000
-Received: from localhost (mailhub1-int [192.168.12.234])
- by localhost (Postfix) with ESMTP id 44w1cS5Fwsz9v0Sx;
- Thu,  2 May 2019 18:56:08 +0200 (CEST)
-Authentication-Results: localhost; dkim=pass
- reason="1024-bit key; insecure key"
- header.d=c-s.fr header.i=@c-s.fr header.b=b8I7W1X+; dkim-adsp=pass;
- dkim-atps=neutral
-X-Virus-Scanned: Debian amavisd-new at c-s.fr
-Received: from pegase1.c-s.fr ([192.168.12.234])
- by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
- with ESMTP id 4wFI9OSqYAkB; Thu,  2 May 2019 18:56:08 +0200 (CEST)
-Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
- by pegase1.c-s.fr (Postfix) with ESMTP id 44w1cS3z29z9v0Sy;
- Thu,  2 May 2019 18:56:08 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
- t=1556816168; bh=Q15LZ3d9bdq9dEoD9BccUn9mlT4iR41PhF1gwPGTDdo=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=b8I7W1X+eD9E6f4QICHVyiGb2O+HBaJpc4Gwg6pUFtlpNKygpjn8VED8m8xg+JkOB
- IY+qSAZGLB4WFz+ZuAhNE6IOZlIPudaswik9x6vnbwMIKU3+fxYh/fSD0okZc5lnaA
- cdvwJC11zLQtHCiz8Kggoo4ZlThkHqB1Sg9CxUag=
-Received: from localhost (localhost [127.0.0.1])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id 3A25B8B8FE;
- Thu,  2 May 2019 18:56:10 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at c-s.fr
-Received: from messagerie.si.c-s.fr ([127.0.0.1])
- by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
- with ESMTP id RamEpSyy5iYB; Thu,  2 May 2019 18:56:10 +0200 (CEST)
-Received: from PO15451 (unknown [192.168.4.90])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id CE4878B899;
- Thu,  2 May 2019 18:56:08 +0200 (CEST)
-Subject: Re: [PATCH 12/15] powerpc/nohash/64: switch to generic version of pte
- allocation
-To: Mike Rapoport <rppt@linux.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>
-References: <1556810922-20248-1-git-send-email-rppt@linux.ibm.com>
- <1556810922-20248-13-git-send-email-rppt@linux.ibm.com>
-From: Christophe Leroy <christophe.leroy@c-s.fr>
-Message-ID: <adcb6ae6-48d9-5ba9-2732-a0ab1d96667c@c-s.fr>
-Date: Thu, 2 May 2019 18:56:07 +0200
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
+ id 1hMF6L-0007Z7-3w
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 17:02:30 +0000
+Received: by mail-wr1-x441.google.com with SMTP id c5so4362951wrs.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 02 May 2019 10:02:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding:content-language;
+ bh=kx4DgfAQpc1SkOs3S3ljaCHijCCDKn9O/YxhA6nUVhk=;
+ b=qmfT+QWJzHxk05z3zEnxOg/KbVk+/3ngefd0O1NEe56b/sjVBx1qQIoG1obC8lO5HC
+ MylzmtZIgn6TqMPi0gggqnYk5BfAVimTqSpG/VbMSmLwNelw1IVB/C9mQkyxMhiy4nRj
+ PVVlH5DHO3Gxr4FZLP1srSTM1b73EPytEOCJKfCu8pv81a3CdpKxRVQSnOttb+3tE44k
+ VGrEdfP6vkeJ+v/dPYxq3HfcqbUEaY+DPCT8SMLaH1vEQeZKp7y7yhB04CNIRwuWvHbC
+ n4MwSWlmLaDL9Hg5CyaTsT0bQWp7hGI1Mw76S85maMVLxhdjxld5HPflMGciaMbSvokX
+ 8KXA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=kx4DgfAQpc1SkOs3S3ljaCHijCCDKn9O/YxhA6nUVhk=;
+ b=uhO256FoHOSx+jWJWKolDIT3uUYjh58vz1sEYWxIegG8+QSNmEGi0hFCs/8Aq2YuTh
+ /atEHcc3YDVrnFEv3+8bXRzbT5I5GatUjq9pDzFZmXkgfoos9HdHZM7+l/Vkk2XlupKy
+ mFhQ5/aI6sSXbdtz917BC5shyyCzCYDm7CKwyAc5lqudYXuU3qGqb2q7IlCpTMTM5OLv
+ ReDGl8C8re7F3N645mdDfo7LMJwwG9RzAeZz0P1M4W/sFTkVja16b4zhxqYIeQxb9S1N
+ HKQU5hMvmmTPwq+WkplBQuPi0MTILJ8HFzLAfsSq/h7CcrMQ83+Dei/dAqDLQoHj58H/
+ IEMw==
+X-Gm-Message-State: APjAAAVz7Gq8jCzGxwl3d8L9O9ymuyFwH0vBSYNtL7QAg6v+SNl4jlfS
+ 5m5gzgb0lztFBuTzTuuA3RE=
+X-Google-Smtp-Source: APXvYqzPtVchwo3LhZgz8kSZesp2hkpUql+aoNTA48IvDgMiN2rFCnB96ag25aOZb8t9N4KyxD2DxQ==
+X-Received: by 2002:a5d:6a04:: with SMTP id m4mr2662262wru.84.1556816546075;
+ Thu, 02 May 2019 10:02:26 -0700 (PDT)
+Received: from [172.30.88.227] (sjewanfw1-nat.mentorg.com. [139.181.7.34])
+ by smtp.gmail.com with ESMTPSA id z7sm12869468wme.26.2019.05.02.10.02.22
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 02 May 2019 10:02:25 -0700 (PDT)
+Subject: Re: [PATCH v3 5/8] media: staging/imx: Remove
+ capture_device_set_format
+To: Rui Miguel Silva <rmfrfs@gmail.com>
+References: <20190430225018.30252-1-slongerbeam@gmail.com>
+ <20190430225018.30252-6-slongerbeam@gmail.com> <m3lfzp5g58.fsf@gmail.com>
+From: Steve Longerbeam <slongerbeam@gmail.com>
+Message-ID: <edcf9f4f-d798-ce03-a59b-6bdcd77557a3@gmail.com>
+Date: Thu, 2 May 2019 10:02:20 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <1556810922-20248-13-git-send-email-rppt@linux.ibm.com>
-Content-Language: fr
+In-Reply-To: <m3lfzp5g58.fsf@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_095618_108248_8137A965 
-X-CRM114-Status: GOOD (  15.27  )
+X-CRM114-CacheID: sfid-20190502_100229_164132_F6885CC1 
+X-CRM114-Status: GOOD (  23.42  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [93.17.236.30 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (slongerbeam[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -95,64 +102,218 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Michal Hocko <mhocko@suse.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Palmer Dabbelt <palmer@sifive.com>, linux-kernel@vger.kernel.org,
- Guo Ren <guoren@kernel.org>, linux-riscv@lists.infradead.org,
- linux-arch@vger.kernel.org, Richard Weinberger <richard@nod.at>,
- Helge Deller <deller@gmx.de>, x86@kernel.org,
- Russell King <linux@armlinux.org.uk>, Matthew Wilcox <willy@infradead.org>,
- Geert Uytterhoeven <geert@linux-m68k.org>, Matt Turner <mattst88@gmail.com>,
- Sam Creasey <sammy@sammy.net>, Arnd Bergmann <arnd@arndb.de>,
- linux-alpha@vger.kernel.org, linux-um@lists.infradead.org,
- linux-m68k@lists.linux-m68k.org, Greentime Hu <green.hu@gmail.com>,
- Ley Foon Tan <lftan@altera.com>, Guan Xuetao <gxt@pku.edu.cn>,
- linux-arm-kernel@lists.infradead.org, linux-parisc@vger.kernel.org,
- linux-mips@vger.kernel.org, Richard Kuo <rkuo@codeaurora.org>,
- Paul Burton <paul.burton@mips.com>, linux-hexagon@vger.kernel.org,
- nios2-dev@lists.rocketboards.org, linuxppc-dev@lists.ozlabs.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: "open list:STAGING SUBSYSTEM" <devel@driverdev.osuosl.org>,
+ Fabio Estevam <festevam@gmail.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ open list <linux-kernel@vger.kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, linux-media@vger.kernel.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpMZSAwMi8wNS8yMDE5IMOgIDE3OjI4LCBNaWtlIFJhcG9wb3J0IGEgw6ljcml0wqA6Cj4gVGhl
-IDY0LWJpdCBib29rLUUgcG93ZXJwYyBpbXBsZW1lbnRzIHB0ZV9hbGxvY19vbmUoKSwKPiBwdGVf
-YWxsb2Nfb25lX2tlcm5lbCgpLCBwdGVfZnJlZV9rZXJuZWwoKSBhbmQgcHRlX2ZyZWUoKSB0aGUg
-c2FtZSB3YXkgYXMKPiB0aGUgZ2VuZXJpYyB2ZXJzaW9uLgoKV2lsbCBzb29uIGJlIGNvbnZlcnRl
-ZCB0byB0aGUgc2FtZSBhcyB0aGUgMyBvdGhlciBQUEMgc3ViYXJjaGVzLCBzZWUKaHR0cHM6Ly9w
-YXRjaHdvcmsub3psYWJzLm9yZy9wYXRjaC8xMDkxNTkwLwoKQ2hyaXN0b3BoZQoKPiAKPiBTd2l0
-Y2ggaXQgdG8gdGhlIGdlbmVyaWMgdmVyc2lvbiB0aGF0IGRvZXMgZXhhY3RseSB0aGUgc2FtZSB0
-aGluZy4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBNaWtlIFJhcG9wb3J0IDxycHB0QGxpbnV4LmlibS5j
-b20+Cj4gLS0tCj4gICBhcmNoL3Bvd2VycGMvaW5jbHVkZS9hc20vbm9oYXNoLzY0L3BnYWxsb2Mu
-aCB8IDM1ICsrLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KPiAgIDEgZmlsZSBjaGFuZ2VkLCAy
-IGluc2VydGlvbnMoKyksIDMzIGRlbGV0aW9ucygtKQo+IAo+IGRpZmYgLS1naXQgYS9hcmNoL3Bv
-d2VycGMvaW5jbHVkZS9hc20vbm9oYXNoLzY0L3BnYWxsb2MuaCBiL2FyY2gvcG93ZXJwYy9pbmNs
-dWRlL2FzbS9ub2hhc2gvNjQvcGdhbGxvYy5oCj4gaW5kZXggNjZkMDg2Zi4uYmZiNTNhMCAxMDA2
-NDQKPiAtLS0gYS9hcmNoL3Bvd2VycGMvaW5jbHVkZS9hc20vbm9oYXNoLzY0L3BnYWxsb2MuaAo+
-ICsrKyBiL2FyY2gvcG93ZXJwYy9pbmNsdWRlL2FzbS9ub2hhc2gvNjQvcGdhbGxvYy5oCj4gQEAg
-LTExLDYgKzExLDggQEAKPiAgICNpbmNsdWRlIDxsaW51eC9jcHVtYXNrLmg+Cj4gICAjaW5jbHVk
-ZSA8bGludXgvcGVyY3B1Lmg+Cj4gICAKPiArI2luY2x1ZGUgPGFzbS1nZW5lcmljL3BnYWxsb2Mu
-aD4JLyogZm9yIHB0ZV97YWxsb2MsZnJlZX1fb25lICovCj4gKwo+ICAgc3RydWN0IHZtZW1tYXBf
-YmFja2luZyB7Cj4gICAJc3RydWN0IHZtZW1tYXBfYmFja2luZyAqbGlzdDsKPiAgIAl1bnNpZ25l
-ZCBsb25nIHBoeXM7Cj4gQEAgLTkyLDM5ICs5NCw2IEBAIHN0YXRpYyBpbmxpbmUgdm9pZCBwbWRf
-ZnJlZShzdHJ1Y3QgbW1fc3RydWN0ICptbSwgcG1kX3QgKnBtZCkKPiAgIAlrbWVtX2NhY2hlX2Zy
-ZWUoUEdUX0NBQ0hFKFBNRF9DQUNIRV9JTkRFWCksIHBtZCk7Cj4gICB9Cj4gICAKPiAtCj4gLXN0
-YXRpYyBpbmxpbmUgcHRlX3QgKnB0ZV9hbGxvY19vbmVfa2VybmVsKHN0cnVjdCBtbV9zdHJ1Y3Qg
-Km1tKQo+IC17Cj4gLQlyZXR1cm4gKHB0ZV90ICopX19nZXRfZnJlZV9wYWdlKEdGUF9LRVJORUwg
-fCBfX0dGUF9aRVJPKTsKPiAtfQo+IC0KPiAtc3RhdGljIGlubGluZSBwZ3RhYmxlX3QgcHRlX2Fs
-bG9jX29uZShzdHJ1Y3QgbW1fc3RydWN0ICptbSkKPiAtewo+IC0Jc3RydWN0IHBhZ2UgKnBhZ2U7
-Cj4gLQlwdGVfdCAqcHRlOwo+IC0KPiAtCXB0ZSA9IChwdGVfdCAqKV9fZ2V0X2ZyZWVfcGFnZShH
-RlBfS0VSTkVMIHwgX19HRlBfWkVSTyB8IF9fR0ZQX0FDQ09VTlQpOwo+IC0JaWYgKCFwdGUpCj4g
-LQkJcmV0dXJuIE5VTEw7Cj4gLQlwYWdlID0gdmlydF90b19wYWdlKHB0ZSk7Cj4gLQlpZiAoIXBn
-dGFibGVfcGFnZV9jdG9yKHBhZ2UpKSB7Cj4gLQkJX19mcmVlX3BhZ2UocGFnZSk7Cj4gLQkJcmV0
-dXJuIE5VTEw7Cj4gLQl9Cj4gLQlyZXR1cm4gcGFnZTsKPiAtfQo+IC0KPiAtc3RhdGljIGlubGlu
-ZSB2b2lkIHB0ZV9mcmVlX2tlcm5lbChzdHJ1Y3QgbW1fc3RydWN0ICptbSwgcHRlX3QgKnB0ZSkK
-PiAtewo+IC0JZnJlZV9wYWdlKCh1bnNpZ25lZCBsb25nKXB0ZSk7Cj4gLX0KPiAtCj4gLXN0YXRp
-YyBpbmxpbmUgdm9pZCBwdGVfZnJlZShzdHJ1Y3QgbW1fc3RydWN0ICptbSwgcGd0YWJsZV90IHB0
-ZXBhZ2UpCj4gLXsKPiAtCXBndGFibGVfcGFnZV9kdG9yKHB0ZXBhZ2UpOwo+IC0JX19mcmVlX3Bh
-Z2UocHRlcGFnZSk7Cj4gLX0KPiAtCj4gICBzdGF0aWMgaW5saW5lIHZvaWQgcGd0YWJsZV9mcmVl
-KHZvaWQgKnRhYmxlLCBpbnQgc2hpZnQpCj4gICB7Cj4gICAJaWYgKCFzaGlmdCkgewo+IAoKX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtl
-cm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
-dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5l
-bAo=
+
+
+On 5/2/19 3:01 AM, Rui Miguel Silva wrote:
+> Hi Steve,
+> Thanks for v3 with bisect fixed.
+>
+> On Tue 30 Apr 2019 at 23:50, Steve Longerbeam wrote:
+>> Don't propagate the source pad format to the connected capture device.
+>> It's now the responsibility of userspace to call VIDIOC_S_FMT on the
+>> capture device to ensure the capture format and compose rectangle
+>> are compatible with the connected source. To check this, validate
+>> the capture format with the source before streaming starts.
+>>
+>> Signed-off-by: Steve Longerbeam <slongerbeam@gmail.com>
+>> ---
+>>   drivers/staging/media/imx/imx-ic-prpencvf.c   | 16 +----
+>>   drivers/staging/media/imx/imx-media-capture.c | 64 +++++++++++++------
+>>   drivers/staging/media/imx/imx-media-csi.c     | 16 +----
+>>   drivers/staging/media/imx/imx-media.h         |  2 -
+>>   drivers/staging/media/imx/imx7-media-csi.c    | 17 +----
+>>   5 files changed, 50 insertions(+), 65 deletions(-)
+>>
+>> diff --git a/drivers/staging/media/imx/imx-ic-prpencvf.c b/drivers/staging/media/imx/imx-ic-prpencvf.c
+>> index afaa3a8b15e9..63334fd61492 100644
+>> --- a/drivers/staging/media/imx/imx-ic-prpencvf.c
+>> +++ b/drivers/staging/media/imx/imx-ic-prpencvf.c
+>> @@ -906,9 +906,7 @@ static int prp_set_fmt(struct v4l2_subdev *sd,
+>>   		       struct v4l2_subdev_format *sdformat)
+>>   {
+>>   	struct prp_priv *priv = sd_to_priv(sd);
+>> -	struct imx_media_video_dev *vdev = priv->vdev;
+>>   	const struct imx_media_pixfmt *cc;
+>> -	struct v4l2_pix_format vdev_fmt;
+>>   	struct v4l2_mbus_framefmt *fmt;
+>>   	int ret = 0;
+>>   
+>> @@ -945,19 +943,9 @@ static int prp_set_fmt(struct v4l2_subdev *sd,
+>>   			priv->cc[PRPENCVF_SRC_PAD] = outcc;
+>>   	}
+>>   
+>> -	if (sdformat->which == V4L2_SUBDEV_FORMAT_TRY)
+>> -		goto out;
+>> -
+>> -	priv->cc[sdformat->pad] = cc;
+>> +	if (sdformat->which == V4L2_SUBDEV_FORMAT_ACTIVE)
+>> +		priv->cc[sdformat->pad] = cc;
+>>   
+>> -	/* propagate output pad format to capture device */
+>> -	imx_media_mbus_fmt_to_pix_fmt(&vdev_fmt,
+>> -				      &priv->format_mbus[PRPENCVF_SRC_PAD],
+>> -				      priv->cc[PRPENCVF_SRC_PAD]);
+>> -	mutex_unlock(&priv->lock);
+>> -	imx_media_capture_device_set_format(vdev, &vdev_fmt);
+>> -
+>> -	return 0;
+>>   out:
+>>   	mutex_unlock(&priv->lock);
+>>   	return ret;
+>> diff --git a/drivers/staging/media/imx/imx-media-capture.c b/drivers/staging/media/imx/imx-media-capture.c
+>> index 555f6204660b..b77a67bda47c 100644
+>> --- a/drivers/staging/media/imx/imx-media-capture.c
+>> +++ b/drivers/staging/media/imx/imx-media-capture.c
+>> @@ -205,7 +205,8 @@ static int capture_g_fmt_vid_cap(struct file *file, void *fh,
+>>   
+>>   static int __capture_try_fmt_vid_cap(struct capture_priv *priv,
+>>   				     struct v4l2_subdev_format *fmt_src,
+>> -				     struct v4l2_format *f)
+>> +				     struct v4l2_format *f,
+>> +				     struct v4l2_rect *compose)
+>>   {
+>>   	const struct imx_media_pixfmt *cc, *cc_src;
+>>   
+>> @@ -247,6 +248,13 @@ static int __capture_try_fmt_vid_cap(struct capture_priv *priv,
+>>   
+>>   	imx_media_mbus_fmt_to_pix_fmt(&f->fmt.pix, &fmt_src->format, cc);
+>>   
+>> +	if (compose) {
+>> +		compose->left = 0;
+>> +		compose->top = 0;
+>> +		compose->width = fmt_src->format.width;
+>> +		compose->height = fmt_src->format.height;
+>> +	}
+>> +
+>>   	return 0;
+>>   }
+>>   
+>> @@ -263,7 +271,7 @@ static int capture_try_fmt_vid_cap(struct file *file, void *fh,
+>>   	if (ret)
+>>   		return ret;
+>>   
+>> -	return __capture_try_fmt_vid_cap(priv, &fmt_src, f);
+>> +	return __capture_try_fmt_vid_cap(priv, &fmt_src, f, NULL);
+>>   }
+>>   
+>>   static int capture_s_fmt_vid_cap(struct file *file, void *fh,
+>> @@ -271,6 +279,7 @@ static int capture_s_fmt_vid_cap(struct file *file, void *fh,
+>>   {
+>>   	struct capture_priv *priv = video_drvdata(file);
+>>   	struct v4l2_subdev_format fmt_src;
+>> +	struct v4l2_rect compose;
+>>   	int ret;
+>>   
+>>   	if (vb2_is_busy(&priv->q)) {
+>> @@ -284,17 +293,14 @@ static int capture_s_fmt_vid_cap(struct file *file, void *fh,
+>>   	if (ret)
+>>   		return ret;
+>>   
+>> -	ret = __capture_try_fmt_vid_cap(priv, &fmt_src, f);
+>> +	ret = __capture_try_fmt_vid_cap(priv, &fmt_src, f, &compose);
+>>   	if (ret)
+>>   		return ret;
+>>   
+>>   	priv->vdev.fmt.fmt.pix = f->fmt.pix;
+>>   	priv->vdev.cc = imx_media_find_format(f->fmt.pix.pixelformat,
+>>   					      CS_SEL_ANY, true);
+>> -	priv->vdev.compose.left = 0;
+>> -	priv->vdev.compose.top = 0;
+>> -	priv->vdev.compose.width = fmt_src.format.width;
+>> -	priv->vdev.compose.height = fmt_src.format.height;
+>> +	priv->vdev.compose = compose;
+>>   
+>>   	return 0;
+>>   }
+>> @@ -524,6 +530,33 @@ static void capture_buf_queue(struct vb2_buffer *vb)
+>>   	spin_unlock_irqrestore(&priv->q_lock, flags);
+>>   }
+>>   
+>> +static int capture_validate_fmt(struct capture_priv *priv)
+>> +{
+>> +	struct v4l2_subdev_format fmt_src;
+>> +	struct v4l2_rect compose;
+>> +	struct v4l2_format f;
+>> +	int ret;
+>> +
+>> +	fmt_src.pad = priv->src_sd_pad;
+>> +	fmt_src.which = V4L2_SUBDEV_FORMAT_ACTIVE;
+>> +	ret = v4l2_subdev_call(priv->src_sd, pad, get_fmt, NULL, &fmt_src);
+>> +	if (ret)
+>> +		return ret;
+>> +
+>> +	v4l2_fill_pix_format(&f.fmt.pix, &fmt_src.format);
+>> +
+>> +	ret = __capture_try_fmt_vid_cap(priv, &fmt_src, &f, &compose);
+>> +	if (ret)
+>> +		return ret;
+>> +
+>> +	return (priv->vdev.fmt.fmt.pix.width != f.fmt.pix.width ||
+>> +		priv->vdev.fmt.fmt.pix.height != f.fmt.pix.height ||
+>> +		priv->vdev.cc->cs !=
+>> +		ipu_pixelformat_to_colorspace(f.fmt.pix.pixelformat) ||
+> This fails on imx7, no ipu, it returns unknown colorspace.
+
+Oops, thanks for catching.
+
+> Removing this check everything works ok on my setup with this
+> series.
+> Do not know the best way to fix this but you may have? :)
+
+Maybe the best fix is simply to remove the check for same colorspace, 
+verifying the rectangles is probably good enough.
+
+
+>
+>> +		priv->vdev.compose.width != compose.width ||
+>> +		priv->vdev.compose.height != compose.height) ? -EINVAL : 0;
+>> +}
+>> +
+>>   static int capture_start_streaming(struct vb2_queue *vq, unsigned int count)
+>>   {
+>>   	struct capture_priv *priv = vb2_get_drv_priv(vq);
+>> @@ -531,6 +564,10 @@ static int capture_start_streaming(struct vb2_queue *vq, unsigned int count)
+>>   	unsigned long flags;
+>>   	int ret;
+>>   
+>> +	ret = capture_validate_fmt(priv);
+>> +	if (ret)
+> Maybe some verbose output here to let know userland what failed.
+
+Ok.
+
+Steve
+
+>> +		goto return_bufs;
+>> +
+>>   	ret = imx_media_pipeline_set_stream(priv->md, &priv->src_sd->entity,
+>>   					    true);
+>>   	if (ret) {
+>> @@ -654,19 +691,6 @@ static struct video_device capture_videodev = {
+>>   	.device_caps	= V4L2_CAP_VIDEO_CAPTURE | V4L2_CAP_STREAMING,
+>>   };
+> ---
+> Cheers,
+> 	Rui
+>
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
