@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F4B211506
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 10:11:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79ADE11509
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 10:11:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dT3IlTOQ2s/tUgpE4/tFbIRtDvbj4GgFvOdNhdLAwBI=; b=MnsIfC9s/g/ro4
-	4+ZRC0i6HQIvA+nUb7h+nKAbzILuZxJsOsx8IKqN96b7vrMRxu66APUG9HA6yi1FTdcbGJkWi7mIb
-	4QuyAW+WTrBbKfLmUSt3agUItrMEAYcRns5R4yQTtdfm8MDe6r9GTIPoRvxorUpjvq72E6HqIF2PL
-	lZFD2BDUyFGiVC8g+u/6Fb1Y3ZFGCAceKYZBGeasOExmCSsefOWuMZCptHunkKxAR3SysYo1PpCw1
-	BIrLmOCU1kcbLQL+zWronTSK/C5CKKDhL2hgulO0Zx0PpdjweRtmwQbPGJLXFFwqugZv4hCVZAAke
-	iJIAvXVT6FWBSd/DCruw==;
+	List-Owner; bh=zBy4rQ/4g/YEeXsbG199Ez5+Oon5ql9p9bY726m5f8w=; b=BXgQp0b3IxCZrQ
+	SOlE3CPwRrAWKeTnnpTvf4E8BKmT5wcwFN0Ib/2bOfPoCbmJ2WHDCcuBmDEz5TMgal1NR1ti1BHAf
+	CqZ4j758K3BbgSmUxSThcLoGAN+Q4I1RmixP8zEtym0g/hCJy6Jr5ZlN9MlrSbW3e3LYIcv1qW16F
+	6nWMGQSqkqbgQ3fG09kk5aciu8YTq7nn/GtHOrFb/TNtdsuLGoY08XGNVbDiGmXoFms8tqX3xJPxe
+	jROVZ2D7bHSuwX/C/yNc/l6Jp5tCsaAI0fv79hxqMQwSxe4C2XRlrvzQDhUe+FA7FWNJhb97si/0J
+	uWy0VHd6c3vT7uemMrbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hM6oK-0003H2-5f; Thu, 02 May 2019 08:11:20 +0000
+	id 1hM6om-0003uX-TM; Thu, 02 May 2019 08:11:48 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hM6nV-0002Sj-Fz
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 08:10:38 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ id 1hM6nV-0002Sk-Ry
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 08:10:42 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
  by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x42860se006127; Thu, 2 May 2019 10:10:23 +0200
+ x42829RK023665; Thu, 2 May 2019 10:10:25 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=d6E9IXGLFgoY3c/GRqylXXvGDNAabRYzqsWi4VZvanE=;
- b=jcTkc4IqNIr0RJVyrs1tMoLu24HNwWmjmblF3YXBu2xFxEQQ2WRQLyuO0bNzr9gBuH8O
- wqoNYdf6YLKy7WPE1Q3ILDOyL/LMKvGNuCyMk0nfvKIRS/cLZ0xcYZiwGIf4g4YLYGBR
- 49LLvZgfdr3aCjHgIbe7X0o6GbWIlCzCK7IVDqTD/Tv2TIbelbQVLxvcB/kwiv+eJijc
- Z6gi/lFLtzC41rwubmpWbtkJ5zl+2wqgKzUS3TgO+rd+1EnPzJR0Wwzby+6l7BEY+Rxt
- dJfv0U0YxX3E/aBwdKdRK8RaqxNqPG/8rK3QfDiw8+AngooBLWeUvsCNrzccq/vrYuYc bQ== 
+ bh=mSy4siWAizfgGjB9diApebndiE8iTckODadKgfNYPpM=;
+ b=yw5Sg+f29yQ+a4sxZXN1ZAYYLZhGJdsHXpSNR0+MjPtmlxjhd51hgODxqWix27sj8vvT
+ jrGentYJ6w/sMDf5c1veNLFsuV5VdH+Q3qp9UOr5JacHLHBwqAXsE7qsICJhh27/tV76
+ j0Ayz5hn/xHQqEF7uEs8iJFJV6QL/SAOST7D8w1aynVNEF1CRaI7H9tmzUghpqX7uGqr
+ qH9x6gwLFP14nBU7Odiz6DJJl/8HHmi6HZpmAoQBRjte3XtbDAC86wUhrmX+ayIx7jRZ
+ SHTR2wcRGxndweEDvPv8i6AIT42zFitxv+gE3aLUuXLT/fHAuhg/nioJKusIndb5slez QA== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2s6xgcq4a8-1
+ by mx08-00178001.pphosted.com with ESMTP id 2s6xhbf3r9-1
  (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Thu, 02 May 2019 10:10:23 +0200
+ Thu, 02 May 2019 10:10:25 +0200
 Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 1F60538;
- Thu,  2 May 2019 08:10:23 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id ECAE3EDE;
- Thu,  2 May 2019 08:10:22 +0000 (GMT)
-Received: from SAFEX1HUBCAS21.st.com (10.75.90.45) by Safex1hubcas22.st.com
- (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.361.1; Thu, 2 May 2019
- 10:10:22 +0200
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 54E6931;
+ Thu,  2 May 2019 08:10:24 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas24.st.com [10.75.90.94])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 37C51EDE;
+ Thu,  2 May 2019 08:10:24 +0000 (GMT)
+Received: from SAFEX1HUBCAS21.st.com (10.75.90.45) by Safex1hubcas24.st.com
+ (10.75.90.94) with Microsoft SMTP Server (TLS) id 14.3.439.0; Thu, 2 May 2019
+ 10:10:24 +0200
 Received: from localhost (10.129.4.86) by Webmail-ga.st.com (10.75.90.48) with
  Microsoft SMTP Server (TLS) id 14.3.361.1;
- Thu, 2 May 2019 10:10:22 +0200
+ Thu, 2 May 2019 10:10:23 +0200
 From: Fabien Dessenne <fabien.dessenne@st.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Maxime Coquelin <mcoquelin.stm32@gmail.com>, Alexandre Torgue
@@ -61,10 +61,10 @@ To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  <linux-stm32@st-md-mailman.stormreply.com>,
  <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
  <linux-remoteproc@vger.kernel.org>
-Subject: [PATCH v3 5/8] ARM: dts: stm32: declare copro reserved memories on
+Subject: [PATCH v3 6/8] ARM: dts: stm32: enable m4 coprocessor support on
  STM32MP157c-ed1
-Date: Thu, 2 May 2019 10:10:03 +0200
-Message-ID: <1556784606-3016-6-git-send-email-fabien.dessenne@st.com>
+Date: Thu, 2 May 2019 10:10:04 +0200
+Message-ID: <1556784606-3016-7-git-send-email-fabien.dessenne@st.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1556784606-3016-1-git-send-email-fabien.dessenne@st.com>
 References: <1556784606-3016-1-git-send-email-fabien.dessenne@st.com>
@@ -73,8 +73,8 @@ X-Originating-IP: [10.129.4.86]
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2019-05-02_03:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_011029_932107_517A1CD3 
-X-CRM114-Status: GOOD (  12.56  )
+X-CRM114-CacheID: sfid-20190502_011030_262929_32C8EF5A 
+X-CRM114-Status: GOOD (  14.10  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -110,67 +110,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Declare reserved memories shared by the processors for STM32MP157c-ed1
-board.
+Enable m4 coprocessor for STM32MP157c-ed1 board.
 
 Signed-off-by: Fabien Dessenne <fabien.dessenne@st.com>
 ---
- arch/arm/boot/dts/stm32mp157c-ed1.dts | 42 +++++++++++++++++++++++++++++++++++
- 1 file changed, 42 insertions(+)
+ arch/arm/boot/dts/stm32mp157c-ed1.dts | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
 diff --git a/arch/arm/boot/dts/stm32mp157c-ed1.dts b/arch/arm/boot/dts/stm32mp157c-ed1.dts
-index 626ceb3..acfc5cd 100644
+index acfc5cd..e5a6f40 100644
 --- a/arch/arm/boot/dts/stm32mp157c-ed1.dts
 +++ b/arch/arm/boot/dts/stm32mp157c-ed1.dts
-@@ -21,6 +21,48 @@
- 		reg = <0xC0000000 0x40000000>;
- 	};
+@@ -134,6 +134,16 @@
+ 	status = "okay";
+ };
  
-+	reserved-memory {
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		ranges;
++&m4_rproc {
++	memory-region = <&retram>, <&mcuram>, <&mcuram2>, <&vdev0vring0>,
++			<&vdev0vring1>, <&vdev0buffer>;
++	mboxes = <&ipcc 0>, <&ipcc 1>, <&ipcc 2>;
++	mbox-names = "vq0", "vq1", "shutdown";
++	interrupt-parent = <&exti>;
++	interrupts = <68 1>;
++	status = "okay";
++};
 +
-+		mcuram2: mcuram2@10000000 {
-+			compatible = "shared-dma-pool";
-+			reg = <0x10000000 0x40000>;
-+			no-map;
-+		};
-+
-+		vdev0vring0: vdev0vring0@10040000 {
-+			compatible = "shared-dma-pool";
-+			reg = <0x10040000 0x1000>;
-+			no-map;
-+		};
-+
-+		vdev0vring1: vdev0vring1@10041000 {
-+			compatible = "shared-dma-pool";
-+			reg = <0x10041000 0x1000>;
-+			no-map;
-+		};
-+
-+		vdev0buffer: vdev0buffer@10042000 {
-+			compatible = "shared-dma-pool";
-+			reg = <0x10042000 0x4000>;
-+			no-map;
-+		};
-+
-+		mcuram: mcuram@30000000 {
-+			compatible = "shared-dma-pool";
-+			reg = <0x30000000 0x40000>;
-+			no-map;
-+		};
-+
-+		retram: retram@38000000 {
-+			compatible = "shared-dma-pool";
-+			reg = <0x38000000 0x10000>;
-+			no-map;
-+		};
-+	};
-+
- 	aliases {
- 		serial0 = &uart4;
- 	};
+ &rng1 {
+ 	status = "okay";
+ };
 -- 
 2.7.4
 
