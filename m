@@ -2,60 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01EF8111DD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 05:29:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09BBB111E2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 05:30:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fP0FANoEduaqe24+W4LaBQcEEHt5lmPjGvl4cUlSTb4=; b=XCn9Adsr2lnM7D
-	S1uR5NY1FMvHf4sM6hPzkJalKYPEraZNZNiStsUj/+uDbPhgaXIq79rXiFVza5sayiY828v8qdOoX
-	WIAtaAs3R1H3JE6egFN+d+UTgcEeUtUwAVAvXe0rGHiDYGgH1kbwfEHKt4VPnIvW8ZTmOy4SlMGN2
-	wreOg5M3BTn3B5RmosFyTdc/CCAkckiYZfpteIrlYKMEhLqRynFw4z9dlp3pw8Ooquyi6UmU+i9wR
-	ZmkfESN59UjBO+LiA7difUYSdFFSxosixCDd8tSkpHDlM1WD+krVRKGlr4KiAbwchwdjTdhoVnyRD
-	XEzCKZdzzIjWc8b3saWQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QJrmb9H9iU6XOTasJl9cPkGiRv2aoD1FIYUESQYl714=; b=oNjqsGkMd9BpjS
+	dwLDTH07GlThgIRN48cJxLOp8gKg12Cl200L3eTgZBchMjhixraaVUKwEsOQmgNAlh2YjyMeC79pg
+	gm72UqCl6imOeGwyU7sBrSsLYZMTg9/sHg4koDZczTKkTBcBVtb+IbkpIlnM0LDyReDSoSWdWRyFF
+	XR13YB8m5ukJRwXozs5+g6omHnhAHFbqusLXIdYzthYMyqKEdDne8HbhwewRJHlVY/XmKechLASx/
+	MsUbYdYpssuz+fXaW3+Jt1xUqQMX/goePXu6/v8zU7kOR9Uraf+lQf0PObroesQ57bm9FXPOVnV7P
+	BlBkW5oyOFho/t2sY0HQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hM2PI-0003Wc-CL; Thu, 02 May 2019 03:29:12 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hM2PB-0003Vs-MS
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 03:29:07 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6474F374;
- Wed,  1 May 2019 20:29:02 -0700 (PDT)
-Received: from [10.163.1.85] (unknown [10.163.1.85])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D50263F557;
- Wed,  1 May 2019 20:29:00 -0700 (PDT)
-Subject: Re: [PATCH V2] arm64/mm: Fix pgtable page offset address in
- [pud|pmd]_free_[pmd|pte]_page
-To: Catalin Marinas <catalin.marinas@arm.com>
-References: <1556595839-9282-1-git-send-email-anshuman.khandual@arm.com>
- <20190430161759.GI29799@arrakis.emea.arm.com>
- <4f2d0ad4-7453-1851-4e12-f83a9226a6ef@arm.com>
- <20190501111416.GD58847@arrakis.emea.arm.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <8ea03724-5939-9c0e-5adb-a588069e5e2a@arm.com>
-Date: Thu, 2 May 2019 08:59:06 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1hM2Qi-00055B-8X; Thu, 02 May 2019 03:30:40 +0000
+Received: from ozlabs.org ([2401:3900:2:1::2])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hM2Qb-00054C-7h
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 03:30:34 +0000
+Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by mail.ozlabs.org (Postfix) with ESMTPSA id 44vgkq24r6z9s5c;
+ Thu,  2 May 2019 13:30:27 +1000 (AEST)
+From: Michael Ellerman <mpe@ellerman.id.au>
+To: Christoph Hellwig <hch@lst.de>, Oleg Nesterov <oleg@redhat.com>,
+ Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH 2/5] powerpc: don't use asm-generic/ptrace.h
+In-Reply-To: <20190501173943.5688-3-hch@lst.de>
+References: <20190501173943.5688-1-hch@lst.de>
+ <20190501173943.5688-3-hch@lst.de>
+Date: Thu, 02 May 2019 13:30:26 +1000
+Message-ID: <87ftpxa5yl.fsf@concordia.ellerman.id.au>
 MIME-Version: 1.0
-In-Reply-To: <20190501111416.GD58847@arrakis.emea.arm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_202905_741870_2948C194 
-X-CRM114-Status: GOOD (  25.42  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190501_203033_513919_CD4F6F7D 
+X-CRM114-Status: GOOD (  11.66  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -67,78 +61,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, will.deacon@arm.com,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-arch@vger.kernel.org, linux-sh@vger.kernel.org, x86@kernel.org,
+ linux-mips@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Christoph Hellwig <hch@lst.de> writes:
 
+> Doing the indirection through macros for the regs accessors just
+> makes them harder to read, so implement the helpers directly.
+>
+> Note that only the helpers actually used are implemented now.
+>
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+>  arch/powerpc/include/asm/ptrace.h | 29 ++++++++++++++++++++++-------
+>  1 file changed, 22 insertions(+), 7 deletions(-)
 
-On 05/01/2019 04:44 PM, Catalin Marinas wrote:
-> On Wed, May 01, 2019 at 10:15:49AM +0530, Anshuman Khandual wrote:
->> On 04/30/2019 09:47 PM, Catalin Marinas wrote:
->>> On Tue, Apr 30, 2019 at 09:13:59AM +0530, Anshuman Khandual wrote:
->>>> @@ -1026,8 +1028,10 @@ int pud_free_pmd_page(pud_t *pudp, unsigned long addr)
->>>>  		return 1;
->>>>  	}
->>>>  
->>>> -	table = pmd_offset(pudp, addr);
->>>> -	pmdp = table;
->>>> +	VM_WARN_ONCE(!IS_ALIGNED(addr, PUD_SIZE),
->>>> +		"%s: unaligned address 0x%016llx\n", __func__, addr);
->>>> +	table = pmd_offset(pudp, 0UL);
->>>> +	pmdp = pmd_offset(pudp, addr);
->>>
->>> Why does pmdp need to use addr? We are freeing the whole pmd page, so I
->>> don't think pmdp should be different from table here.
->>
->> pmd_offset(pudp, addr) and pmd_offset(pudp, 0UL) would evaluate the same if
->> the input addr is PMD_SIZE aligned. The problem just arises when it is not.
->>
->> The Idea is that the wrong input should be allowed to have adverse affect
->> all the way without any corrections. Now because intermediate 'next' and
->> 'end' are derived from wrong input 'addr' in the first place, all 'pmdp'
->> start and intermediate values should just follow without any corrections
->> starting at pmd_offset(pudp, addr).
->>
->> The new warning here just informs about the fact that the iteration range is
->> going to be wrong (as well as everything else probably) because the input
->> address is not aligned. 'table = pmd_offset(pudp, 0UL)' will prevent it from
->> hitting unaligned BUG_ON() in pmd_free(). 
->>
->> Using 'pmdp = pmd_offset(pudp, 0UL)' for iterations will be sort of fixing
->> or aligning the wrong input 'addr' which we always wanted to avoid.
-> 
-> So you want to hide the BUG_ON in pmd_free() by changing this to a
-> warning in the caller (pud_free_pmd_page()) and sanitising the value
-> passed to pmd_free(). I don't see how this is different from just
-> turning the BUG_ON into a warning in pmd_free() directly (which I don't
-> think we should, see below).
-> 
-> It looks to me like we should either fix the callers in ioremap.c (e.g.
-> ioremap_try_huge_pud() returning 0 if addr is not PUD_SIZE aligned, not
-> just phys_addr) or return 0 in pud_free_pmd_page() with a similar check.
-> I'd go for changing ioremap.c since x86 doesn't have such check either.
+Looks fine, thanks.
 
-Sounds good. Will change ioremap_try_huge_[pud|pmd] to include alignment
-checks for 'addr' along with existing 'phys_addr'. But still bit inclined
-towards having XXX_offset(XXX, 0UL) for fetching the pgtable page address
-which is different than XXX_offset(XXX, addr) for iteration purpose unless
-if you have concerns.
+Acked-by: Michael Ellerman <mpe@ellerman.id.au>
 
-> 
-> IIUC currently if we pass a PUD_SIZE range to ioremap_page_range() where
-> phys_addr is PUD_SIZE aligned but the virtual addr is not, we'd end up
-> randomly freeing the pmd page that potentially still contains valid
-> mappings. Your patch just hides the problem by turning the BUG_ON into a
-> warning but doesn't solve it.
+cheers
 
-Right. This patch tried to use XXX_offset(XXX, 0UL) which is a better way
-fetching the pgtable page address but that does not solve the problem related
-to unaligned input virtual address. VM_WARN_ONCE() just shifts the problem
-bit earlier without solving it as you have pointed out.
+> diff --git a/arch/powerpc/include/asm/ptrace.h b/arch/powerpc/include/asm/ptrace.h
+> index 64271e562fed..5d30944f1f6b 100644
+> --- a/arch/powerpc/include/asm/ptrace.h
+> +++ b/arch/powerpc/include/asm/ptrace.h
+> @@ -108,18 +108,33 @@ struct pt_regs
+>  
+>  #ifndef __ASSEMBLY__
+>  
+> -#define GET_IP(regs)		((regs)->nip)
+> -#define GET_USP(regs)		((regs)->gpr[1])
+> -#define GET_FP(regs)		(0)
+> -#define SET_FP(regs, val)
+> +static inline unsigned long instruction_pointer(struct pt_regs *regs)
+> +{
+> +	return regs->nip;
+> +}
+> +
+> +static inline void instruction_pointer_set(struct pt_regs *regs,
+> +		unsigned long val)
+> +{
+> +	regs->nip = val;
+> +}
+> +
+> +static inline unsigned long user_stack_pointer(struct pt_regs *regs)
+> +{
+> +	return regs->gpr[1];
+> +}
+> +
+> +static inline unsigned long frame_pointer(struct pt_regs *regs)
+> +{
+> +	return 0;
+> +}
+>  
+>  #ifdef CONFIG_SMP
+>  extern unsigned long profile_pc(struct pt_regs *regs);
+> -#define profile_pc profile_pc
+> +#else
+> +#define profile_pc(regs) instruction_pointer(regs)
+>  #endif
+>  
+> -#include <asm-generic/ptrace.h>
+> -
+>  #define kernel_stack_pointer(regs) ((regs)->gpr[1])
+>  static inline int is_syscall_success(struct pt_regs *regs)
+>  {
+> -- 
+> 2.20.1
 
 _______________________________________________
 linux-arm-kernel mailing list
