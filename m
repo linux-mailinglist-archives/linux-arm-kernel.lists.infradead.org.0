@@ -2,81 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84392118B4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 14:11:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 827CE118B1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 14:11:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=fetazISUwmr7KDWuj4ucnLH4zLmv7W8J4H+JBs9F2lU=; b=HJO4BMiNbeP+q/
-	Y4jmtkNmZWx0jXhbTZXM7y5ogymz1vjIhYMVjstVB5PPu85zbeFHPox8fSOYwhi69QSZOct5HCeis
-	UWIPaFgUgOtM1n6VWFSqpI7YFdaJIp67frDTsLtDJdSgmzZ3gv0r1cDrltk0Dlk1l03fgSBH8EPlX
-	mJq6b6YAiwOqKyJLN1RZiOEKnX1+nHc5k8o/vEtzmxEmnUHJ6xH1LUInJFuD6VOghniq79s0TUNej
-	eod6toIxmVUIKoFlL/NB54VCTge6exhYMIJROcb2mLFegXcGI6R156qaPQi2I+D8HqNTI9KaP1iMb
-	bITDH3SiY4fQEEJl9PHQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WquBdSoq6Wnj4LTEsgubsWVbzVgL7IoOgGKky5unidM=; b=kihuR12AKDGYnn
+	9ArNHuLGg0xIzmkDoFsqCe0RwWgYGeV2ZiXRW0dwDi7XCxqwrZXoeJqxsngmiqbxXS6iRxzVIdPEw
+	r9JERRGBH1+pQwTGeIz5lAc81idY5MZHDXF6CXTy+80j8/x/84GJw5thxXBC5zh11VtnyDWuRbEom
+	5OC8rQ/1aXEFXasj7soOVx63T2dpWA0Lx/owC97wGooGbuNp/8StJNhbenccKipguhDvIkg76i+Hd
+	+gN8I/oJnI3kdF6AXWbH0wIrDqUzIOCP2Q3l5RGpVBW9LxAWKvSj9N50eMvUqwrBpi4bnwvSH29ip
+	FGco4mVdZxjR8Pz+uFkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMAYd-00024b-Dm; Thu, 02 May 2019 12:11:23 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hMAYO-0001qO-It; Thu, 02 May 2019 12:11:08 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMAYD-0001ly-7r
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 12:11:01 +0000
-Received: by mail-wm1-x344.google.com with SMTP id j13so2487415wmh.2
+ id 1hMAYD-0001m2-BN
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 12:10:59 +0000
+Received: by mail-wm1-x341.google.com with SMTP id b10so2465679wmj.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 02 May 2019 05:10:54 -0700 (PDT)
+ Thu, 02 May 2019 05:10:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=+VXnkCeQD9CSagUVthpKhe513V9cyFde6oB8Eo2RI2s=;
- b=Zsm0Hc1NNbj1/+fIZ/BsybgMhuG/oOzaKqUFCEk8LgEfDc9hJT7dxy7GpIFI4JNnhr
- PGXOVN0dZ2kiiDCJr85WYiICSRRDNKkpe9/jAqTZ0mlOf4j9RPB5r8PVl56U8lkocgJt
- KVdNAV3h/Q4NNidtPUvEOB5GFV63HNMfuVMbxEYXAw8YMLy6Bo9teYIc13Np49yXKlwq
- LQCqrOMBFHnxdcMlWFEn+Qdo9/UEjBCRLz1uBbVaYkoOK6RT4sZIoQrWpp47OZmXVBAM
- gMtQ6gLO+p739fPYzxm6NGDSulCjzNZ3MzKZcsUl38RoxfjTeBjxesm9h78AeVzhytaX
- ID/w==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=QoGRmL9hNOPY+eFMV8Hy2PltfqYDajcTCyiSgjQt9SQ=;
+ b=xHqWaiJWsWUcZhoNbhOVBcJzfg9qdsYw5E2q3LjZu9iNGHbzEyPhLzBGVHZA6jT6KV
+ 6Rtgs1XdKNUB6RCaHd11VIf1KnAUz5OPdkXzXacvy50eQe18yccKyj01+YzaridlzwTR
+ j7yeJj/hnwUDO0jx0ea4gdQcYrJ/KAoQO2Pjnva1wD9MOKFXhuutHa5Uu3hzUkodrTdz
+ a9HxFjfRBg7jiXHRRJbabYEkCNeAHDm5+AsVkCyLloIF6V/QRsR00pUUqrvbtFiYGAmS
+ i4i+68mRlvdS3nrxG4lfLl72/v6dL1ev8BRaeVLfeeNqIkXwtORNEzNtNF0Gh2UQobnY
+ +lGA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=+VXnkCeQD9CSagUVthpKhe513V9cyFde6oB8Eo2RI2s=;
- b=OfeOxPHn/BwfqUkaNdJ6Bi4C6aMbQnfsgZhR45A5Mv6k4VCQHnnaJYCbUDXK+p8m5H
- /TYyI56ZdH043H5RHa7imYWAqCjPOQUtGB7P6ha1eJOH7nPMUKSOSOx2t6nFtkOaMpni
- Cu9WD3W7CH+JW53I9iFD2meIEf3FZM4pRdmglggjo/Z+zYLyoMHL+98l8KCzdJXrJBRg
- xbuIVH+UUm5KVPfvktOCJTV8j6NgAqR8oFVwpoPe7/NMk0I2uTHZAp4KnRQ3HaiJdIR/
- 3S7ncF4VEHwRl4o/Z/k5fKfHC9j+yH0CEFUqan4HHalcSUSiUVgip0WSelxT6Rrii2Hu
- 49vw==
-X-Gm-Message-State: APjAAAVj9raBDB6gJ+QMUxfcEA0dWf8KqlIVe3qFVU6fBmTtHKpoYvgA
- 7taNfGnb9xro8PHNlexQy5WA3w==
-X-Google-Smtp-Source: APXvYqzRKOlOevXDDSWksfUTYabZbVoMJ/6J96gC1hBjVY9RvSugrai1mEmZuwx2m1GH4e4XuKgfFw==
-X-Received: by 2002:a1c:eb18:: with SMTP id j24mr2265512wmh.32.1556799052888; 
- Thu, 02 May 2019 05:10:52 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=QoGRmL9hNOPY+eFMV8Hy2PltfqYDajcTCyiSgjQt9SQ=;
+ b=IzKcSymERymfbSnjgwqHeOXW82EwF5tba+aiPdXX8Eg9m3LTwH8QktWQPuBTntyhDb
+ mb8ifEVV+SdbvJfzHO8GB6Lm0OJFVS3mdpF8TRqG/zirxX8dRKHjM9tqpe0xp3BGdryN
+ bd5R8HcEwaMHKngv2wwJYa7cn5Rt7gHm0FAFCvkYYiXaOjzkRvvbRGkd6sKgoDF1KLcx
+ ltNPyktninXhBu0uOnhhZF/eJ4H7LsMPtB424ShKJ2nPffY8+ziJOO/ohjtI9ERzRLoo
+ Ubsg+2vDhZcYt7Dm63WDl7Zyykrn+KbCEYWnaJG8m+OM5lijJgwcUHnTbpWbDLGbTr6T
+ 0LIQ==
+X-Gm-Message-State: APjAAAXMYNXjRtkbgq1t8PyZ/mg6bQvoWefQY3w8X/dMwZbzX5jiwnXB
+ Y1q/sERUamvgr7AJddYRfC//MQ==
+X-Google-Smtp-Source: APXvYqzfD7lY9qYA6s3UXeqowSYnQbSJRYuX0+C/KKMF9ab6t31N4mkff3S6Ouo/4i4XI4ETpGxpDA==
+X-Received: by 2002:a7b:c010:: with SMTP id c16mr2137167wmb.82.1556799054205; 
+ Thu, 02 May 2019 05:10:54 -0700 (PDT)
 Received: from localhost.localdomain
  (aputeaux-684-1-8-187.w90-86.abo.wanadoo.fr. [90.86.125.187])
- by smtp.gmail.com with ESMTPSA id u9sm3648348wmd.14.2019.05.02.05.10.51
+ by smtp.gmail.com with ESMTPSA id u9sm3648348wmd.14.2019.05.02.05.10.52
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 02 May 2019 05:10:51 -0700 (PDT)
+ Thu, 02 May 2019 05:10:53 -0700 (PDT)
 From: Fabien Parent <fparent@baylibre.com>
 To: lgirdwood@gmail.com, broonie@kernel.org, robh+dt@kernel.org,
  mark.rutland@arm.com, matthias.bgg@gmail.com, perex@perex.cz,
  tiwai@suse.com, kaichieh.chuang@mediatek.com, shunli.wang@mediatek.com
-Subject: [PATCH 0/5] ASoC: mediatek: Add basic PCM driver for MT8516
-Date: Thu,  2 May 2019 14:10:36 +0200
-Message-Id: <20190502121041.8045-1-fparent@baylibre.com>
+Subject: [PATCH 1/5] ASoC: mediatek: make agent_disable,
+ msb & hd fields optional
+Date: Thu,  2 May 2019 14:10:37 +0200
+Message-Id: <20190502121041.8045-2-fparent@baylibre.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190502121041.8045-1-fparent@baylibre.com>
+References: <20190502121041.8045-1-fparent@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_051057_481053_F4E8806B 
-X-CRM114-Status: GOOD (  11.07  )
+X-CRM114-CacheID: sfid-20190502_051057_478799_4BDADEAE 
+X-CRM114-Status: GOOD (  12.28  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -101,33 +104,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch series add a basic PCM driver for MediaTek MT8516 with only
-support for ADDA Playback & Recording for now.
+Not every SoC have the following registers: agent_disable_reg,
+msg_reg, and hd_reg. Make them optional in order to allow more
+SoC to use the common DAI FE code.
 
-Fabien Parent (5):
-  ASoC: mediatek: make agent_disable, msb & hd fields optional
-  dt-bindings: sound: Add MT8516 AFE PCM bindings
-  ASoC: mediatek: Add MT8516 PCM driver
-  ASoC: mediatek: mt8516: Add ADDA DAI driver
-  ASoC: mediatek: mt8516: register ADDA DAI
+Signed-off-by: Fabien Parent <fparent@baylibre.com>
+---
+ sound/soc/mediatek/common/mtk-afe-fe-dai.c | 23 +++++++++++++---------
+ 1 file changed, 14 insertions(+), 9 deletions(-)
 
- .../bindings/sound/mt8516-afe-pcm.txt         |  28 +
- sound/soc/mediatek/Kconfig                    |  10 +
- sound/soc/mediatek/Makefile                   |   1 +
- sound/soc/mediatek/common/mtk-afe-fe-dai.c    |  23 +-
- sound/soc/mediatek/mt8516/Makefile            |   7 +
- sound/soc/mediatek/mt8516/mt8516-afe-common.h |  18 +
- sound/soc/mediatek/mt8516/mt8516-afe-pcm.c    | 794 ++++++++++++++++++
- sound/soc/mediatek/mt8516/mt8516-afe-regs.h   | 218 +++++
- sound/soc/mediatek/mt8516/mt8516-dai-adda.c   | 316 +++++++
- 9 files changed, 1406 insertions(+), 9 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/sound/mt8516-afe-pcm.txt
- create mode 100644 sound/soc/mediatek/mt8516/Makefile
- create mode 100644 sound/soc/mediatek/mt8516/mt8516-afe-common.h
- create mode 100644 sound/soc/mediatek/mt8516/mt8516-afe-pcm.c
- create mode 100644 sound/soc/mediatek/mt8516/mt8516-afe-regs.h
- create mode 100644 sound/soc/mediatek/mt8516/mt8516-dai-adda.c
-
+diff --git a/sound/soc/mediatek/common/mtk-afe-fe-dai.c b/sound/soc/mediatek/common/mtk-afe-fe-dai.c
+index cf4978be062f..f39f5d8c4244 100644
+--- a/sound/soc/mediatek/common/mtk-afe-fe-dai.c
++++ b/sound/soc/mediatek/common/mtk-afe-fe-dai.c
+@@ -47,10 +47,13 @@ int mtk_afe_fe_startup(struct snd_pcm_substream *substream,
+ 
+ 	snd_pcm_hw_constraint_step(substream->runtime, 0,
+ 				   SNDRV_PCM_HW_PARAM_BUFFER_BYTES, 16);
++
+ 	/* enable agent */
+-	mtk_regmap_update_bits(afe->regmap, memif->data->agent_disable_reg,
+-			       1 << memif->data->agent_disable_shift,
+-			       0 << memif->data->agent_disable_shift);
++	if (memif->data->agent_disable_shift >= 0)
++		mtk_regmap_update_bits(afe->regmap,
++				       memif->data->agent_disable_reg,
++				       1 << memif->data->agent_disable_shift,
++				       0 << memif->data->agent_disable_shift);
+ 
+ 	snd_soc_set_runtime_hwparams(substream, mtk_afe_hardware);
+ 
+@@ -143,9 +146,10 @@ int mtk_afe_fe_hw_params(struct snd_pcm_substream *substream,
+ 			 memif->phys_buf_addr + memif->buffer_size - 1);
+ 
+ 	/* set MSB to 33-bit */
+-	mtk_regmap_update_bits(afe->regmap, memif->data->msb_reg,
+-			       1 << memif->data->msb_shift,
+-			       msb_at_bit33 << memif->data->msb_shift);
++	if (memif->data->msb_shift >= 0)
++		mtk_regmap_update_bits(afe->regmap, memif->data->msb_reg,
++				       1 << memif->data->msb_shift,
++				       msb_at_bit33 << memif->data->msb_shift);
+ 
+ 	/* set channel */
+ 	if (memif->data->mono_shift >= 0) {
+@@ -269,9 +273,10 @@ int mtk_afe_fe_prepare(struct snd_pcm_substream *substream,
+ 		break;
+ 	}
+ 
+-	mtk_regmap_update_bits(afe->regmap, memif->data->hd_reg,
+-			       1 << memif->data->hd_shift,
+-			       hd_audio << memif->data->hd_shift);
++	if (memif->data->hd_shift >= 0)
++		mtk_regmap_update_bits(afe->regmap, memif->data->hd_reg,
++				       1 << memif->data->hd_shift,
++				       hd_audio << memif->data->hd_shift);
+ 
+ 	return 0;
+ }
 -- 
 2.20.1
 
