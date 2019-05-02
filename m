@@ -2,86 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B01D11D1D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 17:29:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAF8811D3A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 17:31:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GNJP2JA96uMsShXe6sLjrR5sq4fXai9BBQtAFm5mJ1A=; b=TevrXZIhkERw1X
-	fu/0ozxltyM82JSHxOrOHB7y/Q0e88tUSZ/PQ5u6A/TxLA2KcpjoWmY1OJcobzHEgvDDtN3Myavkt
-	KI0bHtr25KQLl8nkfjpkff3k0Jdo6tNmiU3bvxv/7mhwl/W2ALI32OPFu4UE8WgTgHS/BhcJopWb8
-	CiY0kTtN+WxoI0fddW4pj8OZYpseTQWWFLUdxBdFu6e8101O7awbyPVNVpzJVLxUgDk/Z7dVXylgN
-	1h3aQOJR9GFULVtceq/AOCfGk3ocCQvHMSK8ixoTRcSzUCSeUyWViDxSmaSp/3I62qjQ7I83fmYJ/
-	N4bn6RuYlGtHzN5ysvew==;
+	List-Owner; bh=C+unocW6TJ7H2sYdgUIg60LMzfVcm7IwB5Hr88I+dGU=; b=J6NlEufdOX23xi
+	vyMLeKC3ayBF2rUEMjDBKbV32PAkji7fQyhGIhd7Vf23q450Edk4burU7iJdnY+trSzue9a72lg61
+	3Bg4OoS5DeRv1bASjPz80z//Fq5rty/LEyBAZawWE72Y86JowPvmZKRREtngIRO4VbTyTEvYPr/XQ
+	GJnWwgDdJnNAZburPxmfPqK+QDIpgtPhNz1UALGVD5hfuY0o0AkvBnzR4BoWT6j+dAsEZgnLZ6jYd
+	2x74WAypK9q1S9gCAge/NAOOzN0iYgJZP2bsBJH71kjXyHOYzBB6o4jkIvs3Zt38LiAk2eGhiwsvb
+	DFrG6EHhj5ti+iyD+8Bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMDdt-0001yC-Io; Thu, 02 May 2019 15:29:01 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1hMDgI-000605-U5; Thu, 02 May 2019 15:31:30 +0000
+Received: from bilbo.ozlabs.org ([203.11.71.1] helo=ozlabs.org)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMDdm-0001wU-92
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 15:28:55 +0000
-Received: by mail-lf1-x143.google.com with SMTP id j11so2231469lfm.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 02 May 2019 08:28:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=prm1fyhXs0jWTAHPn6CLV/HtaSlxTqydNTX71G2xSCs=;
- b=r0Ah6TDQTHwK7cH76U0v6wgZe6avx5iEHW7ZyZtQeMWJ0BM96xdA5Cl0z7TybVCWq2
- GdJs4hBIjaMk2+bN1HDaTf6zOqe5hO2sgp6ZtwfTS5/fgwSJDtrNJWjCDsbNjpl3/Sa4
- pymiyFG6nYLpfuMR0Z6lMg2u0eUJ4y2Q7N2OfhBsIvVvaOFxPAvTamFXL7Nc7D/v6Wfu
- IAjQPZdRp88rdrNlYeCMsQUlqoccabRM797x4zAWUFICHLLBwyerZdw7uU9+/LxV2+Cf
- JPDpJOTOT9fun6uCI1IgogwQHc91rbibBlm3/21cJycV86XiKrFcKaWknQV1nMlUbn7F
- S9lg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=prm1fyhXs0jWTAHPn6CLV/HtaSlxTqydNTX71G2xSCs=;
- b=GsuQ/Zju/LlzHD994ZW8ddIxfCyPnqkEQkE/sHNuHUiqK1z9rMNYbCiKuPoAgHXMCu
- XnLV7ZnqqRAEa7RfFfCUR5P/IxwSjEWeJDQuZM6mkz1noQCW77uVrIaqXAe8n0J6MEwa
- UAZ8HbkhOBDN5AXGdhaBFqxS3j1SEVj26lO8aomRipP55pt80pB4UjZnlf1PBDpxTl1s
- eCZyxrWSl7Qh5SOrQuQRQTJUfqrP4tuSlDad6iUVd3AmLysQgMWpYVn/wqmBjxV9MBA1
- 1U1ORCeIsfNvC0eROtP5q8bNWFtWenQfeipU+SQYda+GbMBV7aQCyYayaI5Aa3z1/LVz
- MbYg==
-X-Gm-Message-State: APjAAAWutVKNVrH2ysH1lqtwRfMET7/y3mAQVibpXXiWqMd5I6Lozbfl
- gkbChbxI0jIynoy1gZ0i9PbpqbyRyEoYqCE9Vbo=
-X-Google-Smtp-Source: APXvYqzMcVGIejleD+/wKh8TcnzqGnJxMNAmrH86SrHVOreuURuClXNb7c4WEX+3sFRf5peisBBVvSR/1IhjXSA4LuM=
-X-Received: by 2002:a19:f001:: with SMTP id p1mr2498539lfc.27.1556810932481;
- Thu, 02 May 2019 08:28:52 -0700 (PDT)
+ id 1hMDg8-0005z0-Q4; Thu, 02 May 2019 15:31:22 +0000
+Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by mail.ozlabs.org (Postfix) with ESMTPSA id 44vzkR0Xvsz9sPk;
+ Fri,  3 May 2019 01:31:11 +1000 (AEST)
+From: Michael Ellerman <mpe@ellerman.id.au>
+To: Mike Rapoport <rppt@linux.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>
+Subject: Re: [PATCH] memblock: make keeping memblock memory opt-in rather than
+ opt-out
+In-Reply-To: <1556102150-32517-1-git-send-email-rppt@linux.ibm.com>
+References: <1556102150-32517-1-git-send-email-rppt@linux.ibm.com>
+Date: Fri, 03 May 2019 01:31:10 +1000
+Message-ID: <87h8acyitd.fsf@concordia.ellerman.id.au>
 MIME-Version: 1.0
-References: <20190430074730.8236-1-sebastien.szymanski@armadeus.com>
-In-Reply-To: <20190430074730.8236-1-sebastien.szymanski@armadeus.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Thu, 2 May 2019 12:28:46 -0300
-Message-ID: <CAOMZO5D=BHWgOieLfz4bxL8v4bDmNOutUUnYSzW89KNtYn=Z9g@mail.gmail.com>
-Subject: Re: [PATCH 1/2] ARM: dts: imx6ul: Add csi node
-To: =?UTF-8?Q?S=C3=A9bastien_Szymanski?= <sebastien.szymanski@armadeus.com>, 
- Rui Miguel Silva <rui.silva@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_082854_341319_754F52B5 
-X-CRM114-Status: GOOD (  15.66  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190502_083121_030862_722B7F9E 
+X-CRM114-Status: UNSURE (   7.56  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ no trust [203.11.71.1 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,49 +61,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mips@vger.kernel.org,
+ linux-mm@kvack.org, Paul Mackerras <paulus@samba.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, linux-s390@vger.kernel.org,
+ Yoshinori Sato <ysato@users.sourceforge.jp>, linux-hexagon@vger.kernel.org,
+ x86@kernel.org, Russell King <linux@armlinux.org.uk>,
+ Mike Rapoport <rppt@linux.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, James Hogan <jhogan@kernel.org>,
+ Fenghua Yu <fenghua.yu@intel.com>, Will Deacon <will.deacon@arm.com>,
+ linux-m68k@lists.linux-m68k.org, Borislav Petkov <bp@alien8.de>,
+ nios2-dev@lists.rocketboards.org, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Tony Luck <tony.luck@intel.com>,
+ kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, Richard Kuo <rkuo@codeaurora.org>,
+ Paul Burton <paul.burton@mips.com>, Eric Biederman <ebiederm@xmission.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>, Ley Foon Tan <lftan@altera.com>,
+ linuxppc-dev@lists.ozlabs.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-W0FkZGluZyBSdWldCgpPbiBUdWUsIEFwciAzMCwgMjAxOSBhdCA0OjQ3IEFNIFPDqWJhc3RpZW4g
-U3p5bWFuc2tpCjxzZWJhc3RpZW4uc3p5bWFuc2tpQGFybWFkZXVzLmNvbT4gd3JvdGU6Cj4KPiBB
-ZGQgY3NpIG5vZGUgZm9yIGkuTVg2VUwgU29DLgo+Cj4gU2lnbmVkLW9mZi1ieTogU8OpYmFzdGll
-biBTenltYW5za2kgPHNlYmFzdGllbi5zenltYW5za2lAYXJtYWRldXMuY29tPgo+IC0tLQo+ICBh
-cmNoL2FybS9ib290L2R0cy9pbXg2dWwuZHRzaSB8IDExICsrKysrKysrKysrCj4gIDEgZmlsZSBj
-aGFuZ2VkLCAxMSBpbnNlcnRpb25zKCspCj4KPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9k
-dHMvaW14NnVsLmR0c2kgYi9hcmNoL2FybS9ib290L2R0cy9pbXg2dWwuZHRzaQo+IGluZGV4IDYy
-ZWQzMGM3ODFlZC4uYWYzMjJiYzU4MzMzIDEwMDY0NAo+IC0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRz
-L2lteDZ1bC5kdHNpCj4gKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvaW14NnVsLmR0c2kKPiBAQCAt
-OTUxLDYgKzk1MSwxNyBAQAo+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfTsKPiAg
-ICAgICAgICAgICAgICAgICAgICAgICB9Owo+Cj4gKyAgICAgICAgICAgICAgICAgICAgICAgY3Np
-OiBjc2lAMjFjNDAwMCB7Cj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb21wYXRp
-YmxlID0gImZzbCxpbXg2dWwtY3NpIiwgImZzbCxpbXg3LWNzaSI7Cj4gKyAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICByZWcgPSA8MHgwMjFjNDAwMCAweDQwMDA+Owo+ICsgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgaW50ZXJydXB0cyA9IDxHSUNfU1BJIDcgSVJRX1RZUEVfTEVW
-RUxfSElHSD47Cj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjbG9ja3MgPSA8JmNs
-a3MgSU1YNlVMX0NMS19EVU1NWT4sCj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICA8JmNsa3MgSU1YNlVMX0NMS19DU0k+LAo+ICsgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgPCZjbGtzIElNWDZVTF9DTEtfRFVNTVk+Owo+ICsgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgY2xvY2stbmFtZXMgPSAiYXhpIiwgIm1jbGsiLCAiZGNpYyI7
-CgpBbHNvLCBJIHVuZGVyc3RhbmQgeW91IGZvbGxvd2VkCkRvY3VtZW50YXRpb24vZGV2aWNldHJl
-ZS9iaW5kaW5ncy9tZWRpYS9pbXg3LWNzaS50eHQgYW5kIHBhc3NlZCB0aGVzZQp0aHJlZSBjbG9j
-a3MsIGJ1dCBsb29raW5nIGF0IHRoZSBpLk1YN0QgYW5kIGkuTVg2VUwvVUxMIFJlZmVyZW5jZQpN
-YW51YWxzLCBJIGRvbid0IGZpbmQgdGhlICB0aGUgZGVzY3JpcHRpb25zIGZvciB0aGUgImF4aSIg
-YW5kICJkY2ljIgpDU0kgY2xvY2tzLgoKSXQgbG9va3MgbGlrZSB0aGF0IG9ubHkgIm1jbGsiIGlz
-IHdoYXQgd2UgcmVhbGx5IG5lZWQgaGVyZS4KClNob3VsZCB3ZSBjaGFuZ2UgdGhlIGJpbmRpbmdz
-IGFuZCB0aGUgaW14Ny1jc2kgZHJpdmVyIHRvIG5vdCByZXF1ZXN0CiJheGkiIGFuZCAiZGNpYyIg
-Y2xvY2tzPwoKUnVpLCB3aGF0IGRvIHlvdSB0aGluaz8gSWYgeW91IGFncmVlIEkgY2FuIHNlbmQg
-YSBmaXggZm9yIHRoaXMuCgpUaGFua3MKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1r
-ZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
-bWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Mike Rapoport <rppt@linux.ibm.com> writes:
+> diff --git a/arch/powerpc/Kconfig b/arch/powerpc/Kconfig
+> index 2d0be82..39877b9 100644
+> --- a/arch/powerpc/Kconfig
+> +++ b/arch/powerpc/Kconfig
+> @@ -143,6 +143,7 @@ config PPC
+>  	select ARCH_HAS_UBSAN_SANITIZE_ALL
+>  	select ARCH_HAS_ZONE_DEVICE		if PPC_BOOK3S_64
+>  	select ARCH_HAVE_NMI_SAFE_CMPXCHG
+> +	select ARCH_KEEP_MEMBLOCK
+
+Acked-by: Michael Ellerman <mpe@ellerman.id.au> (powerpc)
+
+cheers
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
