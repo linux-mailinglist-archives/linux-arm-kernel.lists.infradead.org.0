@@ -2,62 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F94C1147B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 09:46:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E2531147E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 09:47:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:From:To:Subject:MIME-Version
-	:References:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8WgEmX6aNhUxlud+l3UNncNfGWleq9A0mfv+IvEGpGQ=; b=UxhzOL7MRvGN/a
-	vhI8UQBfREQXu/bhMydIkOQ6FRO2RbTsSh76yRdHch0ax6hizb8gx6CvW+LTAPLBBgF/DkCV2pXWl
-	SpkGDJkUyHAhpyjFr361sUL7yd9GHvbruUWyZ7HNSgnB/tiymJLNBbz/MR30dctkd752WGLxVTtWj
-	0EvKiARg439odxBAHmMxW/6ury0PQ8ROSe4b4JWRMGq3TBarMg4p6Fm9cHDGiLkN1ZOUeTgU1d4fg
-	eddPhvdF9RGf57Qzzf42DrKhcilpHvD973b9z0xWgtX1JwnO1G7YX/01cuVqWZG9TEKWWl5ON2BlY
-	GoDGEvgLO+atF/SMN6KQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=OEIYWRVvGk6ioMz+/qunKplqeOdiLRQGAa/J/R4xRmo=; b=olmrvHcEGZCOs1U5jCDr4RfFy
+	vDrtTnbu96c54GesKGCswgtasWK83Bkg4eENm2nsahxnVhWTg85Jwvwii4avMZz+hEB/rDYa7VIij
+	YPFfIVdd+lgCQhDvxfAvmbMt2fDHBiT7oiLmnuzRLx4fq68BzFQZOB4tuWGDqLh6ShyFm8AV0xugs
+	HWOVnmL+W3L+zKW3/qPZlnDHiPgSG2TiTEm+1a0LICl4eKwrUHAS69o7vPUCXvT0TX/QQIxON/CwT
+	wdQPg2lD+roaIv20wXCK4Scm6OVAtkDM+17WRBsn9+3+P1Sas63D9CHtWHXObLwhdn3e51kPpANbT
+	qGW2nZExg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hM6Qb-0007Vm-Hy; Thu, 02 May 2019 07:46:49 +0000
-Received: from balrog.mythic-beasts.com ([2a00:1098:0:82:1000:0:2:1])
+	id 1hM6Qt-0007jX-2D; Thu, 02 May 2019 07:47:07 +0000
+Received: from relay11.mail.gandi.net ([217.70.178.231])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hM6QV-0007VK-7x
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 07:46:44 +0000
-Received: from [199.195.250.187] (port=59952 helo=hermes.aosc.io)
- by balrog.mythic-beasts.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.90_1)
- (envelope-from <icenowy@aosc.io>)
- id 1hM6QO-0004Xs-IK; Thu, 02 May 2019 08:46:41 +0100
-Received: from localhost (localhost [127.0.0.1]) (Authenticated sender:
- icenowy@aosc.io)
- by hermes.aosc.io (Postfix) with ESMTPSA id 8DC4721C48E;
- Thu,  2 May 2019 07:46:24 +0000 (UTC)
-Date: Thu, 02 May 2019 15:46:17 +0800
-In-Reply-To: <20190502074303.g3px63n4v4o7xade@flea>
-References: <20190424062543.61852-1-icenowy@aosc.io>
- <20190502074303.g3px63n4v4o7xade@flea>
+ id 1hM6Qm-0007iQ-Ae
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 07:47:01 +0000
+Received: from localhost (aaubervilliers-681-1-29-145.w90-88.abo.wanadoo.fr
+ [90.88.149.145]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay11.mail.gandi.net (Postfix) with ESMTPSA id E68E810000D;
+ Thu,  2 May 2019 07:46:56 +0000 (UTC)
+Date: Thu, 2 May 2019 09:46:56 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Torsten Duwe <duwe@lst.de>
+Subject: Re: [PATCH RFC] arm64: dts: allwinner: a64: teres-i: Enable audio
+Message-ID: <20190502074656.5tw62ngvjxabrw4o@flea>
+References: <20190212100929.iqsxu443qrkl6myf@flea>
+ <E1gtds8-0000NB-Re@stardust.g4.wien.funkfeuer.at>
+ <20190213094442.da2dy6d5bb527nft@flea>
+ <E1gtsx9-0000RP-08@stardust.g4.wien.funkfeuer.at>
+ <20190213155311.ovkpim3lxwyvuhhj@flea>
+ <E1gu4dx-0000Sy-2B@stardust.g4.wien.funkfeuer.at>
+ <20190215142029.GB32618@lst.de>
+ <E1gv6rh-0000Km-U8@stardust.g4.wien.funkfeuer.at>
+ <20190218102442.l3br2h3oqfe2atdv@flea>
+ <20190430133232.GA18808@lst.de>
 MIME-Version: 1.0
-Subject: Re: [PATCH] arm64: dts: allwinner: h6: add PIO VCC bank supplies for
- Pine H64
-To: linux-arm-kernel@lists.infradead.org,
- Maxime Ripard <maxime.ripard@bootlin.com>
-From: Icenowy Zheng <icenowy@aosc.io>
-Message-ID: <8CB1EDA4-E4B7-486D-8BCD-884E0025C6EA@aosc.io>
-X-BlackCat-Spam-Score: 0
-X-Spam-Status: No, score=-0.1
+In-Reply-To: <20190430133232.GA18808@lst.de>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_004643_283981_520C1699 
-X-CRM114-Status: GOOD (  13.99  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190502_004700_510231_76CC4B5C 
+X-CRM114-Status: GOOD (  20.95  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a00:1098:0:82:1000:0:2:1 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.231 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -69,32 +67,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ info@olimex.com, Mark Brown <broonie@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Harald Geyer <harald@ccbib.org>,
+ ibu@radempa.de, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============1550223904987698635=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Cgrkuo4gMjAxOeW5tDXmnIgy5pelIEdNVCswODowMCDkuIvljYgzOjQzOjAzLCBNYXhpbWUgUmlw
-YXJkIDxtYXhpbWUucmlwYXJkQGJvb3RsaW4uY29tPiDlhpnliLA6Cj5IaSwKPgo+T24gV2VkLCBB
-cHIgMjQsIDIwMTkgYXQgMDI6MjU6NDNQTSArMDgwMCwgSWNlbm93eSBaaGVuZyB3cm90ZToKPj4g
-VGhlIEFsbHdpbm5lciBINiBTb0MgZmVhdHVyZXMgdHdlYWthYmxlIFZDQyBmb3IgUEMsIFBELCBQ
-RywgUEwgYW5kIFBNCj4+IGJhbmtzLgo+Pgo+PiBUaGlzIHBhdGNoIGFkZHMgc3VwcGxpZXMgZm9y
-IFBDIGFuZCBQRCBiYW5rcyBvbiBQaW5lIEg2NCBib2FyZC4gUEcKPmFuZAo+PiBQTSBiYW5rcyBh
-cmUgdXNlZCBmb3IgV2ktRmkgYW5kIHNob3VsZCBiZSBhZGRlZCB3aGVuIFdpLUZpIGlzIGFkZGVk
-Cj4KPk5vdCByZWFsbHkuIFRoZSByZWd1bGF0b3IgaXMgc3RpbGwgdGhlcmUsIHdoZXRoZXIgd2Ug
-dXNlIGl0IG9yIG5vdC4gSWYKPml0J3Mgbm90IHVzZWQsIHRoZW4gaXQgd2lsbCBiZSBsZWZ0IGRp
-c2FibGVkIHNvIGl0IGRvZXNuJ3QgcmVhbGx5Cj5jaGFuZ2UgYW55dGhpbmcuCgpPa2F5LCBJIHdp
-bGwgaW5jbHVkZSB0aGVtIGluIHRoZSBuZXh0IHJldmlzaW9uLgoKPgo+PiBQTCBiYW5rIGlzIHdo
-ZXJlIFBNSUMgaXMgYXR0YWNoZWQsIGFuZCBjdXJyZW50bHkgaWYgYSBQTUlDIHJlZ3VsYXRvcgo+
-PiBpcyBhZGRlZCBmb3IgaXQgYSBkZXBlbmRlbmN5IGxvb3Agd2lsbCBoYXBwZW4uCj4KPkkgZ3Vl
-c3Mgd2Ugc2hvdWxkIGZpeCB0aGF0IHNvbWVob3cKCkJ1dCB0aGlzIHBhdGNoIGlzIG5lZWRlZCBm
-b3IgZU1NQyB0byBiZSBmdW5jdGlvbmFsIGFnYWluIGluIEhTMjAwIG1vZGUsIHNvIEkgaG9wZQpp
-dCBjYW4gZ2V0IGFwcGxpZWQgYmVmb3JlIHRoaXMgZ2V0IGZpeGVkLgoKPgo+TWF4aW1lCj4KPi0t
-Cj5NYXhpbWUgUmlwYXJkLCBCb290bGluCj5FbWJlZGRlZCBMaW51eCBhbmQgS2VybmVsIGVuZ2lu
-ZWVyaW5nCj5odHRwczovL2Jvb3RsaW4uY29tCgotLSAK5L2/55SoIEstOSBNYWlsIOWPkemAgeiH
-quaIkeeahEFuZHJvaWTorr7lpIfjgIIKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1r
-ZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
-bWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+
+--===============1550223904987698635==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="ogjf4ravo7ykhs3c"
+Content-Disposition: inline
+
+
+--ogjf4ravo7ykhs3c
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Tue, Apr 30, 2019 at 03:32:32PM +0200, Torsten Duwe wrote:
+> On Mon, Feb 18, 2019 at 11:24:42AM +0100, Maxime Ripard wrote:
+> > On Sat, Feb 16, 2019 at 09:47:13PM +0100, Harald Geyer wrote:
+> > >
+> > > > Would you care to submit a patch version without that GPIO handled?
+> > > > I think it's very useful and has the potential to be agreed upon.
+> > >
+> > > That would enable audio from the internal speakers but select debug
+> > > output on the HP jack by default. I would be okay with that, despite
+> > > still thinking that audio on the head phones should be the default.
+> > >
+> > > Maxime and Wens are the maintainers, so it's their call in the end.
+> >
+> > At this point, I'm not really convinced by the solution in that patch,
+> > but I don't have really good ideas either. I think it would be good to
+> > discuss this with Mark and Linus Walleij, they will probably have way
+> > better solutions than what I can come up with.
+>
+> Once more my plead to *please* apply the unchallenged parts of this patch!
+>
+> For reference:
+> https://patchwork.kernel.org/patch/10792589/
+>
+>
+> Just leave out the line
+>
+> +	hpvcc-supply = <&reg_eldo1>; /* TODO: Use only one of these */
+> (as clarified by ChenYu)
+>
+> and the
+>
+> @@ -131,6 +151,14 @@
+>  	status = "okay";
+>  };
+>
+> +&r_pio {
+> +	r_debug_select_pin: debug-select {
+> [...]
+>
+> hunk, which the discussion was about. The patch is of good value
+> even without it.
+>
+> IMHO it's a shame this didn't make it into 5.1
+>
+> Acked-by: Torsten Duwe <duwe@suse.de>
+
+Please resend that patch
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--ogjf4ravo7ykhs3c
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXMqgcAAKCRDj7w1vZxhR
+xUkWAP432UpRG05M57jNudXsgptVGodfkKNSF8GCePGGa381ugD+I4nvdzZdYqOA
+sTKkTdR+ULGdkJncmivGKljgsi9Y7AA=
+=6Eua
+-----END PGP SIGNATURE-----
+
+--ogjf4ravo7ykhs3c--
+
+
+--===============1550223904987698635==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1550223904987698635==--
+
