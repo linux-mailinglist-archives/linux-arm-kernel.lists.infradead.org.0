@@ -2,60 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E2531147E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 09:47:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C246114AD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 10:03:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=OEIYWRVvGk6ioMz+/qunKplqeOdiLRQGAa/J/R4xRmo=; b=olmrvHcEGZCOs1U5jCDr4RfFy
-	vDrtTnbu96c54GesKGCswgtasWK83Bkg4eENm2nsahxnVhWTg85Jwvwii4avMZz+hEB/rDYa7VIij
-	YPFfIVdd+lgCQhDvxfAvmbMt2fDHBiT7oiLmnuzRLx4fq68BzFQZOB4tuWGDqLh6ShyFm8AV0xugs
-	HWOVnmL+W3L+zKW3/qPZlnDHiPgSG2TiTEm+1a0LICl4eKwrUHAS69o7vPUCXvT0TX/QQIxON/CwT
-	wdQPg2lD+roaIv20wXCK4Scm6OVAtkDM+17WRBsn9+3+P1Sas63D9CHtWHXObLwhdn3e51kPpANbT
-	qGW2nZExg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=G8v0PlpzdhS5L6VzaS7PKaWtmW8yi4jpeAQ7C1T5BL8=; b=kJWeFPEmzbXDqH
+	HFWfp6vX67xUuhA2l/htuySrWYX4dYEFplgqy88TA75ROurDZGWENP9zH5sHaLVtz8nxfb4vyFEW2
+	U7A4kpOgIQqSLea2CuPMie3MA8A+gCqeUPCsuvx4+4rKzab53JCsUk/uMOg3rPvYmvZBHF7uOGZu+
+	L+ivz4ggWB2nv/zqDx6nlI2rWcGf7vjT6Tu7sEE8ob+RsL5MGFuYIzxkoE2d56QEnHly7FECnsGV2
+	uBQ0laL9mh/N0/1nA+EkLijAKGhp0aMwejx4HVTj9vl4h5eme2/qXQRLy+nxQ6Y9ORTmH9OwxdEqs
+	hg1fQSJNdYnKXPe5m/Kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hM6Qt-0007jX-2D; Thu, 02 May 2019 07:47:07 +0000
-Received: from relay11.mail.gandi.net ([217.70.178.231])
+	id 1hM6gP-0003lp-Ch; Thu, 02 May 2019 08:03:09 +0000
+Received: from mga18.intel.com ([134.134.136.126])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hM6Qm-0007iQ-Ae
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 07:47:01 +0000
-Received: from localhost (aaubervilliers-681-1-29-145.w90-88.abo.wanadoo.fr
- [90.88.149.145]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay11.mail.gandi.net (Postfix) with ESMTPSA id E68E810000D;
- Thu,  2 May 2019 07:46:56 +0000 (UTC)
-Date: Thu, 2 May 2019 09:46:56 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Torsten Duwe <duwe@lst.de>
-Subject: Re: [PATCH RFC] arm64: dts: allwinner: a64: teres-i: Enable audio
-Message-ID: <20190502074656.5tw62ngvjxabrw4o@flea>
-References: <20190212100929.iqsxu443qrkl6myf@flea>
- <E1gtds8-0000NB-Re@stardust.g4.wien.funkfeuer.at>
- <20190213094442.da2dy6d5bb527nft@flea>
- <E1gtsx9-0000RP-08@stardust.g4.wien.funkfeuer.at>
- <20190213155311.ovkpim3lxwyvuhhj@flea>
- <E1gu4dx-0000Sy-2B@stardust.g4.wien.funkfeuer.at>
- <20190215142029.GB32618@lst.de>
- <E1gv6rh-0000Km-U8@stardust.g4.wien.funkfeuer.at>
- <20190218102442.l3br2h3oqfe2atdv@flea>
- <20190430133232.GA18808@lst.de>
+ id 1hM6gI-0003lK-PI
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 08:03:03 +0000
+X-Amp-Result: UNSCANNABLE
+X-Amp-File-Uploaded: False
+Received: from fmsmga001.fm.intel.com ([10.253.24.23])
+ by orsmga106.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 02 May 2019 01:03:01 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.60,421,1549958400"; d="scan'208";a="169840867"
+Received: from lahna.fi.intel.com (HELO lahna) ([10.237.72.157])
+ by fmsmga001.fm.intel.com with SMTP; 02 May 2019 01:02:55 -0700
+Received: by lahna (sSMTP sendmail emulation); Thu, 02 May 2019 11:02:55 +0300
+Date: Thu, 2 May 2019 11:02:55 +0300
+From: Mika Westerberg <mika.westerberg@linux.intel.com>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Re: [PATCH v2 4/4] gpio: mb86s7x: enable ACPI support
+Message-ID: <20190502080255.GS26516@lahna.fi.intel.com>
+References: <20190429131208.3620-1-ard.biesheuvel@linaro.org>
+ <20190429131208.3620-5-ard.biesheuvel@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <20190430133232.GA18808@lst.de>
-User-Agent: NeoMutt/20180716
+Content-Disposition: inline
+In-Reply-To: <20190429131208.3620-5-ard.biesheuvel@linaro.org>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+User-Agent: Mutt/1.11.3 (2019-02-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_004700_510231_76CC4B5C 
-X-CRM114-Status: GOOD (  20.95  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190502_010302_872309_1BEA0133 
+X-CRM114-Status: GOOD (  11.65  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.231 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.126 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -67,104 +66,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- info@olimex.com, Mark Brown <broonie@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Harald Geyer <harald@ccbib.org>,
- ibu@radempa.de, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1550223904987698635=="
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Graeme Gregory <graeme.gregory@linaro.org>, linux-acpi@vger.kernel.org,
+ Marc Zyngier <marc.zyngier@arm.com>, Linus Walleij <linus.walleij@linaro.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-gpio@vger.kernel.org,
+ Masahisa Kojima <masahisa.kojima@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, Len Brown <lenb@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, Apr 29, 2019 at 03:12:08PM +0200, Ard Biesheuvel wrote:
+> @@ -160,13 +177,15 @@ static int mb86s70_gpio_probe(struct platform_device *pdev)
+>  	if (IS_ERR(gchip->base))
+>  		return PTR_ERR(gchip->base);
+>  
+> -	gchip->clk = devm_clk_get(&pdev->dev, NULL);
+> -	if (IS_ERR(gchip->clk))
+> -		return PTR_ERR(gchip->clk);
+> +	if (!ACPI_COMPANION(&pdev->dev)) {
 
---===============1550223904987698635==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ogjf4ravo7ykhs3c"
-Content-Disposition: inline
+Since you don't use the returned ACPI object, you can also use
+has_acpi_companion(&pdev->dev) here and other similar places.
 
+Regardless of that,
 
---ogjf4ravo7ykhs3c
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Tue, Apr 30, 2019 at 03:32:32PM +0200, Torsten Duwe wrote:
-> On Mon, Feb 18, 2019 at 11:24:42AM +0100, Maxime Ripard wrote:
-> > On Sat, Feb 16, 2019 at 09:47:13PM +0100, Harald Geyer wrote:
-> > >
-> > > > Would you care to submit a patch version without that GPIO handled?
-> > > > I think it's very useful and has the potential to be agreed upon.
-> > >
-> > > That would enable audio from the internal speakers but select debug
-> > > output on the HP jack by default. I would be okay with that, despite
-> > > still thinking that audio on the head phones should be the default.
-> > >
-> > > Maxime and Wens are the maintainers, so it's their call in the end.
-> >
-> > At this point, I'm not really convinced by the solution in that patch,
-> > but I don't have really good ideas either. I think it would be good to
-> > discuss this with Mark and Linus Walleij, they will probably have way
-> > better solutions than what I can come up with.
->
-> Once more my plead to *please* apply the unchallenged parts of this patch!
->
-> For reference:
-> https://patchwork.kernel.org/patch/10792589/
->
->
-> Just leave out the line
->
-> +	hpvcc-supply = <&reg_eldo1>; /* TODO: Use only one of these */
-> (as clarified by ChenYu)
->
-> and the
->
-> @@ -131,6 +151,14 @@
->  	status = "okay";
->  };
->
-> +&r_pio {
-> +	r_debug_select_pin: debug-select {
-> [...]
->
-> hunk, which the discussion was about. The patch is of good value
-> even without it.
->
-> IMHO it's a shame this didn't make it into 5.1
->
-> Acked-by: Torsten Duwe <duwe@suse.de>
-
-Please resend that patch
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---ogjf4ravo7ykhs3c
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXMqgcAAKCRDj7w1vZxhR
-xUkWAP432UpRG05M57jNudXsgptVGodfkKNSF8GCePGGa381ugD+I4nvdzZdYqOA
-sTKkTdR+ULGdkJncmivGKljgsi9Y7AA=
-=6Eua
------END PGP SIGNATURE-----
-
---ogjf4ravo7ykhs3c--
-
-
---===============1550223904987698635==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Reviewed-by: Mika Westerberg <mika.westerberg@linux.intel.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1550223904987698635==--
-
