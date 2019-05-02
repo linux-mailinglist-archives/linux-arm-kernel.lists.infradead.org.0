@@ -2,83 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3C1B1125F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 06:54:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F03C11264
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 06:56:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=w9bI/Gg/zHUeG/wcB4PAM+0htiIuGTIkTuABzu9wZzI=; b=YRV5aTqZNYOJ1HNSvKgYZCkOT
-	MXJpofq/B+bcinur9Q2YEecjzWzoXm3moeLoR6LfFmXbRZ/WQ7g6MJUIu3TFoNQTuamDh1DqdAXdr
-	/w1+Bm6Z5dQ24Czn83ybNPeVZjN4DS+28MTX0xJrdWQzmFAEiubJZ2ZF1ma7hFgZTfjh8o0Z9wxRO
-	e7L6T16aMHbWL4Xo+NP52EMbH/q0oeucp3/l5AtvL7M6+I8NXlQiIdKhx6s97o51fWKp6bdLGY22t
-	aOcCi/9YqouP9U24MPXTM1uAZ2kzu/cZg0FhkrLr19QkqAIz2gLJyGYqXSfBaw3Wx4ILUlRaB5yjE
-	edRD+H2uw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=TojraQId/wJiWWiL2GrStSEzWz04Pb5pifNAuz8cyyw=; b=gQrgfvWk3m6uTR
+	WktbPOS9ucC/soVvEsKz8kaOtVGjD2xitkMYGnZRLwd5VcF+Bu2MNKt/d5eiu2koeSHxAPRVF48xZ
+	N1e+T/l2JBSoxQVPKHGdzUXrO5tqZyLlbgJ2fjXiQj520B+ZEIzq6FARSL10I6SNVm1AQeJpv85wH
+	b9WE2qpvf7Z4TeM46cgflYgmzYb32e1uwOFwyu26pSFdkWt7j71zvH3xnmKdbycT82qJIoum5ysP0
+	qU7bzbeWTJRq1cXSN02IU5zscRq6QH7XqxLn8CHHyFawn5S3VF3hPdQ48UzYI1b27vP9gTwZyaoHH
+	JY9ACgQbpNOUGm6bIMVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hM3jc-0005Bi-8q; Thu, 02 May 2019 04:54:16 +0000
-Received: from pegase1.c-s.fr ([93.17.236.30])
+	id 1hM3m1-0006hm-He; Thu, 02 May 2019 04:56:45 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hM3jV-0005BG-SQ
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 04:54:11 +0000
-Received: from localhost (mailhub1-int [192.168.12.234])
- by localhost (Postfix) with ESMTP id 44vjbM5M91z9v0BV;
- Thu,  2 May 2019 06:54:07 +0200 (CEST)
-Authentication-Results: localhost; dkim=pass
- reason="1024-bit key; insecure key"
- header.d=c-s.fr header.i=@c-s.fr header.b=i34RksDU; dkim-adsp=pass;
- dkim-atps=neutral
-X-Virus-Scanned: Debian amavisd-new at c-s.fr
-Received: from pegase1.c-s.fr ([192.168.12.234])
- by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
- with ESMTP id fsoG583XIQdN; Thu,  2 May 2019 06:54:07 +0200 (CEST)
-Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
- by pegase1.c-s.fr (Postfix) with ESMTP id 44vjbM41xVz9v0BC;
- Thu,  2 May 2019 06:54:07 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
- t=1556772847; bh=I0FeEl/w+6bt1GR2o7dyQEdLVhu5vJLVUHB5TTIyQLM=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=i34RksDU0m+1D9lH5cGRWzmbilcKtHDaRv5ToGo9d6faaqXA3nnFcxEChzcW4WNRj
- r5bQzwZP3VUqOInhA8yiITExOyffCWXBQ5nPmvz8u6fxSEPbYd9u3ZQFU2jhDEH24i
- N+I8zab8zf7Uaxq0qv8xBEQdzhpCBkMjYPdAdDOM=
-Received: from localhost (localhost [127.0.0.1])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id 583318B852;
- Thu,  2 May 2019 06:54:08 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at c-s.fr
-Received: from messagerie.si.c-s.fr ([127.0.0.1])
- by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
- with ESMTP id fI6na7e6-yyE; Thu,  2 May 2019 06:54:08 +0200 (CEST)
-Received: from PO15451 (unknown [192.168.4.90])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id A81188B74C;
- Thu,  2 May 2019 06:54:07 +0200 (CEST)
-Subject: Re: [PATCH v2 6/6] soc/fsl/qe: qe.c: fold qe_get_num_of_snums into
- qe_snums_init
-To: Rasmus Villemoes <rasmus.villemoes@prevas.dk>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>
-References: <20190430133615.25721-1-rasmus.villemoes@prevas.dk>
- <20190501092841.9026-1-rasmus.villemoes@prevas.dk>
- <20190501092841.9026-7-rasmus.villemoes@prevas.dk>
-From: Christophe Leroy <christophe.leroy@c-s.fr>
-Message-ID: <5457d33f-b691-6406-138d-0fc633c1d24c@c-s.fr>
-Date: Thu, 2 May 2019 06:54:07 +0200
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hM3lt-0006gT-LJ
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 04:56:39 +0000
+Received: by mail-pg1-x542.google.com with SMTP id c13so506916pgt.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 01 May 2019 21:56:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=IkrMCqEn9oBcjz0/CtfAqnhPX22uydzYRgGmzuCpAEU=;
+ b=ijpGbk6l9KiByD4XFUJqq6IgByHkJAUD7Ag93JRuA50qIy0MK1NCQ5ppXmY5UBmBTf
+ MWbNrREJQi7ySq4aHqLTApAXTjP5OJaK4AoWHSzmW09GxwJ4N/fTuXH//QGN1C+vwv+m
+ MmX8RhXDGST3fCcYjYXjf6r3RNY4rfTMozMEc=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=IkrMCqEn9oBcjz0/CtfAqnhPX22uydzYRgGmzuCpAEU=;
+ b=Jpqto8uhE4Jgp+rBLCexoHcAPRn6CvcUGTVUrlzF0B7MZSzhbJb5I1VSdnyq3K2gPl
+ kyJ+fJrkFA2r5Q7kx7P960AvQgiXyrFAR9HMkXiJHH17zGcrY1eYciYQOfdaV5G6eKeD
+ MWMe+GC0aR55Rg4/2/zaMeBuShgV4wPV6tlsm0SoSL544UKM1RhThb2s25jbq+Tt9zaE
+ 4YW0zqrCn1rTm6OwU0kRjYcDbzQfPC5HuO/pTzfZ90EFlV3YPV6l7j/TbX59qXp/C+8q
+ +ZnRw4plQsr7dNeMgvtzJBdXITSMDXY6+9NwzjljzO0+k5JGWQwupAy6/PUxo+Iit0id
+ IBvQ==
+X-Gm-Message-State: APjAAAXgExPJeuMcLuwvFTSs5WnVMDj2razikOYWgc2aE/P01H0Jo9Ko
+ Nts/+BXgNbwfhDGdgY84kIH8iQ==
+X-Google-Smtp-Source: APXvYqw1sDUyzzDiU3Vy5sYFPwzI+iVL9D0QGXxIHbzqHHaXqc3ZpHKtv4ApVsNNmAUr61R578y0sw==
+X-Received: by 2002:a62:6842:: with SMTP id d63mr1875558pfc.9.1556772996219;
+ Wed, 01 May 2019 21:56:36 -0700 (PDT)
+Received: from drinkcat2.tpe.corp.google.com
+ ([2401:fa00:1:b:d8b7:33af:adcb:b648])
+ by smtp.gmail.com with ESMTPSA id a6sm64239470pfn.181.2019.05.01.21.56.33
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 01 May 2019 21:56:35 -0700 (PDT)
+From: Nicolas Boichat <drinkcat@chromium.org>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Subject: [PATCH 1/2] usb: xhci: Make it possible to not have a secondary HCD
+ (3.0)
+Date: Thu,  2 May 2019 12:56:29 +0800
+Message-Id: <20190502045631.229386-1-drinkcat@chromium.org>
+X-Mailer: git-send-email 2.21.0.593.g511ec345e18-goog
 MIME-Version: 1.0
-In-Reply-To: <20190501092841.9026-7-rasmus.villemoes@prevas.dk>
-Content-Language: fr
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_215410_217454_172BC073 
-X-CRM114-Status: GOOD (  21.35  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190501_215637_715193_B9C8F915 
+X-CRM114-Status: GOOD (  18.80  )
+X-Spam-Score: -0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [93.17.236.30 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -87,6 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -98,71 +93,194 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Rasmus Villemoes <Rasmus.Villemoes@prevas.se>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Scott Wood <oss@buserror.net>, Rob Herring <robh+dt@kernel.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Khuong Dinh <khuong@os.amperecomputing.com>,
+ Mathias Nyman <mathias.nyman@intel.com>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ Hoan Tran <hoan@os.amperecomputing.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpMZSAwMS8wNS8yMDE5IMOgIDExOjI5LCBSYXNtdXMgVmlsbGVtb2VzIGEgw6ljcml0wqA6Cj4g
-VGhlIGNvbW1lbnQgIk5vIFFFIGV2ZXIgaGFzIGZld2VyIHRoYW4gMjggU05VTXMiIGlzIGZhbHNl
-OyBlLmcuIHRoZQo+IE1QQzgzMDkgaGFzIDE0LiBUaGUgY29kZSBwYXRoIHJldHVybmluZyAtRUlO
-VkFMIGlzIGFsc28gYSByZWNpcGUgZm9yCj4gaW5zdGFudCBkaXNhc3Rlciwgc2luY2UgdGhlIGNh
-bGxlciAocWVfc251bXNfaW5pdCkgdW5jcml0aWNhbGx5Cj4gYXNzaWducyB0aGUgcmV0dXJuIHZh
-bHVlIHRvIHRoZSB1bnNpZ25lZCBxZV9udW1fb2Zfc251bSwgYW5kIHdvdWxkCj4gdGh1cyBwcm9j
-ZWVkIHRvIGF0dGVtcHQgdG8gY29weSA0R0IgZnJvbSBzbnVtX2luaXRfNDZbXSB0byB0aGUgc251
-bVtdCj4gYXJyYXkuCj4gCj4gU28gZm9sZCB0aGUgaGFuZGxpbmcgb2YgdGhlIGxlZ2FjeSBmc2ws
-cWUtbnVtLXNudW1zIGludG8KPiBxZV9zbnVtc19pbml0LCBhbmQgbWFrZSBzdXJlIHdlIGRvIG5v
-dCBlbmQgdXAgdXNpbmcgdGhlIHNudW1faW5pdF80Ngo+IGFycmF5IGluIGNhc2VzIG90aGVyIHRo
-YW4gdGhlIHR3byB3aGVyZSB3ZSBrbm93IGl0IG1ha2VzIHNlbnNlLgo+IAo+IFNpZ25lZC1vZmYt
-Ynk6IFJhc211cyBWaWxsZW1vZXMgPHJhc211cy52aWxsZW1vZXNAcHJldmFzLmRrPgoKUmV2aWV3
-ZWQtYnk6IENocmlzdG9waGUgTGVyb3kgPGNocmlzdG9waGUubGVyb3lAYy1zLmZyPgoKPiAtLS0K
-PiAgIGRyaXZlcnMvc29jL2ZzbC9xZS9xZS5jIHwgNDYgKysrKysrKysrKysrKystLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0KPiAgIDEgZmlsZSBjaGFuZ2VkLCAxNiBpbnNlcnRpb25zKCspLCAz
-MCBkZWxldGlvbnMoLSkKPiAKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9zb2MvZnNsL3FlL3FlLmMg
-Yi9kcml2ZXJzL3NvYy9mc2wvcWUvcWUuYwo+IGluZGV4IDMyNWQ2ODljYmY1Yy4uMjc2ZDdkNzhl
-YmZjIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvc29jL2ZzbC9xZS9xZS5jCj4gKysrIGIvZHJpdmVy
-cy9zb2MvZnNsL3FlL3FlLmMKPiBAQCAtMzA4LDI0ICszMDgsMzMgQEAgc3RhdGljIHZvaWQgcWVf
-c251bXNfaW5pdCh2b2lkKQo+ICAgCWludCBpOwo+ICAgCj4gICAJYml0bWFwX3plcm8oc251bV9z
-dGF0ZSwgUUVfTlVNX09GX1NOVU0pOwo+ICsJcWVfbnVtX29mX3NudW0gPSAyODsgLyogVGhlIGRl
-ZmF1bHQgbnVtYmVyIG9mIHNudW0gZm9yIHRocmVhZHMgaXMgMjggKi8KPiAgIAlxZSA9IHFlX2dl
-dF9kZXZpY2Vfbm9kZSgpOwo+ICAgCWlmIChxZSkgewo+ICAgCQlpID0gb2ZfcHJvcGVydHlfcmVh
-ZF92YXJpYWJsZV91OF9hcnJheShxZSwgImZzbCxxZS1zbnVtcyIsCj4gICAJCQkJCQkgICAgICAg
-c251bXMsIDEsIFFFX05VTV9PRl9TTlVNKTsKPiAtCQlvZl9ub2RlX3B1dChxZSk7Cj4gICAJCWlm
-IChpID4gMCkgewo+ICsJCQlvZl9ub2RlX3B1dChxZSk7Cj4gICAJCQlxZV9udW1fb2Zfc251bSA9
-IGk7Cj4gICAJCQlyZXR1cm47Cj4gICAJCX0KPiArCQkvKgo+ICsJCSAqIEZhbGwgYmFjayB0byBs
-ZWdhY3kgYmluZGluZyBvZiB1c2luZyB0aGUgdmFsdWUgb2YKPiArCQkgKiBmc2wscWUtbnVtLXNu
-dW1zIHRvIGNob29zZSBvbmUgb2YgdGhlIHN0YXRpYyBhcnJheXMKPiArCQkgKiBhYm92ZS4KPiAr
-CQkgKi8KPiArCQlvZl9wcm9wZXJ0eV9yZWFkX3UzMihxZSwgImZzbCxxZS1udW0tc251bXMiLCAm
-cWVfbnVtX29mX3NudW0pOwo+ICsJCW9mX25vZGVfcHV0KHFlKTsKPiAgIAl9Cj4gICAKPiAtCXFl
-X251bV9vZl9zbnVtID0gcWVfZ2V0X251bV9vZl9zbnVtcygpOwo+IC0KPiAtCWlmIChxZV9udW1f
-b2Zfc251bSA9PSA3NikKPiArCWlmIChxZV9udW1fb2Zfc251bSA9PSA3Nikgewo+ICAgCQlzbnVt
-X2luaXQgPSBzbnVtX2luaXRfNzY7Cj4gLQllbHNlCj4gKwl9IGVsc2UgaWYgKHFlX251bV9vZl9z
-bnVtID09IDI4IHx8IHFlX251bV9vZl9zbnVtID09IDQ2KSB7Cj4gICAJCXNudW1faW5pdCA9IHNu
-dW1faW5pdF80NjsKPiAtCj4gKwl9IGVsc2Ugewo+ICsJCXByX2VycigiUUU6IHVuc3VwcG9ydGVk
-IHZhbHVlIG9mIGZzbCxxZS1udW0tc251bXM6ICV1XG4iLCBxZV9udW1fb2Zfc251bSk7Cj4gKwkJ
-cmV0dXJuOwo+ICsJfQo+ICAgCW1lbWNweShzbnVtcywgc251bV9pbml0LCBxZV9udW1fb2Zfc251
-bSk7Cj4gICB9Cj4gICAKPiBAQCAtNjQxLDMwICs2NTAsNyBAQCBFWFBPUlRfU1lNQk9MKHFlX2dl
-dF9udW1fb2ZfcmlzYyk7Cj4gICAKPiAgIHVuc2lnbmVkIGludCBxZV9nZXRfbnVtX29mX3NudW1z
-KHZvaWQpCj4gICB7Cj4gLQlzdHJ1Y3QgZGV2aWNlX25vZGUgKnFlOwo+IC0JaW50IHNpemU7Cj4g
-LQl1bnNpZ25lZCBpbnQgbnVtX29mX3NudW1zOwo+IC0JY29uc3QgdTMyICpwcm9wOwo+IC0KPiAt
-CW51bV9vZl9zbnVtcyA9IDI4OyAvKiBUaGUgZGVmYXVsdCBudW1iZXIgb2Ygc251bSBmb3IgdGhy
-ZWFkcyBpcyAyOCAqLwo+IC0JcWUgPSBxZV9nZXRfZGV2aWNlX25vZGUoKTsKPiAtCWlmICghcWUp
-Cj4gLQkJcmV0dXJuIG51bV9vZl9zbnVtczsKPiAtCj4gLQlwcm9wID0gb2ZfZ2V0X3Byb3BlcnR5
-KHFlLCAiZnNsLHFlLW51bS1zbnVtcyIsICZzaXplKTsKPiAtCWlmIChwcm9wICYmIHNpemUgPT0g
-c2l6ZW9mKCpwcm9wKSkgewo+IC0JCW51bV9vZl9zbnVtcyA9ICpwcm9wOwo+IC0JCWlmICgobnVt
-X29mX3NudW1zIDwgMjgpIHx8IChudW1fb2Zfc251bXMgPiBRRV9OVU1fT0ZfU05VTSkpIHsKPiAt
-CQkJLyogTm8gUUUgZXZlciBoYXMgZmV3ZXIgdGhhbiAyOCBTTlVNcyAqLwo+IC0JCQlwcl9lcnIo
-IlFFOiBudW1iZXIgb2Ygc251bSBpcyBpbnZhbGlkXG4iKTsKPiAtCQkJb2Zfbm9kZV9wdXQocWUp
-Owo+IC0JCQlyZXR1cm4gLUVJTlZBTDsKPiAtCQl9Cj4gLQl9Cj4gLQo+IC0Jb2Zfbm9kZV9wdXQo
-cWUpOwo+IC0KPiAtCXJldHVybiBudW1fb2Zfc251bXM7Cj4gKwlyZXR1cm4gcWVfbnVtX29mX3Nu
-dW07Cj4gICB9Cj4gICBFWFBPUlRfU1lNQk9MKHFlX2dldF9udW1fb2Zfc251bXMpOwo+ICAgCj4g
-CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
-cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
-cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
-a2VybmVsCg==
+Some XHCI controllers may not have any USB 3.0 port, in this case, it
+is not useful to create add hcd->shared_hcd, which has 2 main
+downsides:
+ - A useless USB 3.0 root hub is created.
+ - A warning is thrown on boot:
+hub 2-0:1.0: config failed, hub doesn't have any ports! (err -19)
+
+The change is mostly about checking if hcd->shared_hcd is NULL before
+accessing it. The one special case is in xhci_run, where we need to
+call xhci_run_finished immediately, if there is no secondary hcd.
+
+Signed-off-by: Nicolas Boichat <drinkcat@chromium.org>
+---
+
+This is a respin of https://lore.kernel.org/patchwork/patch/863993/,
+hopefully addressing the comments there. Note that I dropped the change
+in xhci-plat.c, as I do not have a device to test it, but made a
+similar change in xhci-mtk.c, in the next patch.
+
+(the @apm.com addresses seem to bounce, so I added some
+@amperecomputing.com instead, if somebody there can track back the
+original issue, I'm happy to provide a patch for xhci-plat.c as well)
+
+drivers/usb/host/xhci-hub.c |  7 ++++--
+ drivers/usb/host/xhci.c     | 45 +++++++++++++++++++++++++++----------
+ 2 files changed, 38 insertions(+), 14 deletions(-)
+
+diff --git a/drivers/usb/host/xhci-hub.c b/drivers/usb/host/xhci-hub.c
+index 3abe70ff1b1e2af..9a9c5a63ae57c6d 100644
+--- a/drivers/usb/host/xhci-hub.c
++++ b/drivers/usb/host/xhci-hub.c
+@@ -627,8 +627,11 @@ static int xhci_enter_test_mode(struct xhci_hcd *xhci,
+ 	/* Put all ports to the Disable state by clear PP */
+ 	xhci_dbg(xhci, "Disable all port (PP = 0)\n");
+ 	/* Power off USB3 ports*/
+-	for (i = 0; i < xhci->usb3_rhub.num_ports; i++)
+-		xhci_set_port_power(xhci, xhci->shared_hcd, i, false, flags);
++	if (xhci->shared_hcd) {
++		for (i = 0; i < xhci->usb3_rhub.num_ports; i++)
++			xhci_set_port_power(xhci, xhci->shared_hcd, i, false,
++					flags);
++	}
+ 	/* Power off USB2 ports*/
+ 	for (i = 0; i < xhci->usb2_rhub.num_ports; i++)
+ 		xhci_set_port_power(xhci, xhci->main_hcd, i, false, flags);
+diff --git a/drivers/usb/host/xhci.c b/drivers/usb/host/xhci.c
+index a9bb796794e3937..a2cf715c53f2164 100644
+--- a/drivers/usb/host/xhci.c
++++ b/drivers/usb/host/xhci.c
+@@ -523,6 +523,10 @@ static void compliance_mode_recovery(struct timer_list *t)
+  */
+ static void compliance_mode_recovery_timer_init(struct xhci_hcd *xhci)
+ {
++	/* No compliance mode recovery needed if there is no USB 3.0 hcd. */
++	if (!xhci->shared_hcd)
++		return;
++
+ 	xhci->port_status_u0 = 0;
+ 	timer_setup(&xhci->comp_mode_recovery_timer, compliance_mode_recovery,
+ 		    0);
+@@ -610,7 +614,8 @@ static int xhci_run_finished(struct xhci_hcd *xhci)
+ 		xhci_halt(xhci);
+ 		return -ENODEV;
+ 	}
+-	xhci->shared_hcd->state = HC_STATE_RUNNING;
++	if (xhci->shared_hcd)
++		xhci->shared_hcd->state = HC_STATE_RUNNING;
+ 	xhci->cmd_ring_state = CMD_RING_STATE_RUNNING;
+ 
+ 	if (xhci->quirks & XHCI_NEC_HOST)
+@@ -698,6 +703,10 @@ int xhci_run(struct usb_hcd *hcd)
+ 
+ 	xhci_debugfs_init(xhci);
+ 
++	/* There is no secondary HCD, start the host controller immediately. */
++	if (!xhci->shared_hcd)
++		return xhci_run_finished(xhci);
++
+ 	return 0;
+ }
+ EXPORT_SYMBOL_GPL(xhci_run);
+@@ -984,7 +993,8 @@ int xhci_suspend(struct xhci_hcd *xhci, bool do_wakeup)
+ 		return 0;
+ 
+ 	if (hcd->state != HC_STATE_SUSPENDED ||
+-			xhci->shared_hcd->state != HC_STATE_SUSPENDED)
++			(xhci->shared_hcd &&
++				xhci->shared_hcd->state != HC_STATE_SUSPENDED))
+ 		return -EINVAL;
+ 
+ 	xhci_dbc_suspend(xhci);
+@@ -997,15 +1007,18 @@ int xhci_suspend(struct xhci_hcd *xhci, bool do_wakeup)
+ 	xhci_dbg(xhci, "%s: stopping port polling.\n", __func__);
+ 	clear_bit(HCD_FLAG_POLL_RH, &hcd->flags);
+ 	del_timer_sync(&hcd->rh_timer);
+-	clear_bit(HCD_FLAG_POLL_RH, &xhci->shared_hcd->flags);
+-	del_timer_sync(&xhci->shared_hcd->rh_timer);
++	if (xhci->shared_hcd) {
++		clear_bit(HCD_FLAG_POLL_RH, &xhci->shared_hcd->flags);
++		del_timer_sync(&xhci->shared_hcd->rh_timer);
++	}
+ 
+ 	if (xhci->quirks & XHCI_SUSPEND_DELAY)
+ 		usleep_range(1000, 1500);
+ 
+ 	spin_lock_irq(&xhci->lock);
+ 	clear_bit(HCD_FLAG_HW_ACCESSIBLE, &hcd->flags);
+-	clear_bit(HCD_FLAG_HW_ACCESSIBLE, &xhci->shared_hcd->flags);
++	if (xhci->shared_hcd)
++		clear_bit(HCD_FLAG_HW_ACCESSIBLE, &xhci->shared_hcd->flags);
+ 	/* step 1: stop endpoint */
+ 	/* skipped assuming that port suspend has done */
+ 
+@@ -1103,7 +1116,8 @@ int xhci_resume(struct xhci_hcd *xhci, bool hibernated)
+ 		msleep(100);
+ 
+ 	set_bit(HCD_FLAG_HW_ACCESSIBLE, &hcd->flags);
+-	set_bit(HCD_FLAG_HW_ACCESSIBLE, &xhci->shared_hcd->flags);
++	if (xhci->shared_hcd)
++		set_bit(HCD_FLAG_HW_ACCESSIBLE, &xhci->shared_hcd->flags);
+ 
+ 	spin_lock_irq(&xhci->lock);
+ 	if ((xhci->quirks & XHCI_RESET_ON_RESUME) || xhci->broken_suspend)
+@@ -1145,7 +1159,9 @@ int xhci_resume(struct xhci_hcd *xhci, bool hibernated)
+ 
+ 		/* Let the USB core know _both_ roothubs lost power. */
+ 		usb_root_hub_lost_power(xhci->main_hcd->self.root_hub);
+-		usb_root_hub_lost_power(xhci->shared_hcd->self.root_hub);
++		if (xhci->shared_hcd)
++			usb_root_hub_lost_power(
++					xhci->shared_hcd->self.root_hub);
+ 
+ 		xhci_dbg(xhci, "Stop HCD\n");
+ 		xhci_halt(xhci);
+@@ -1185,10 +1201,12 @@ int xhci_resume(struct xhci_hcd *xhci, bool hibernated)
+ 		retval = xhci_run(hcd->primary_hcd);
+ 		if (!retval) {
+ 			xhci_dbg(xhci, "Start the secondary HCD\n");
+-			retval = xhci_run(secondary_hcd);
++			if (secondary_hcd)
++				retval = xhci_run(secondary_hcd);
+ 		}
+ 		hcd->state = HC_STATE_SUSPENDED;
+-		xhci->shared_hcd->state = HC_STATE_SUSPENDED;
++		if (xhci->shared_hcd)
++			xhci->shared_hcd->state = HC_STATE_SUSPENDED;
+ 		goto done;
+ 	}
+ 
+@@ -1216,7 +1234,8 @@ int xhci_resume(struct xhci_hcd *xhci, bool hibernated)
+ 	if (retval == 0) {
+ 		/* Resume root hubs only when have pending events. */
+ 		if (xhci_pending_portevent(xhci)) {
+-			usb_hcd_resume_root_hub(xhci->shared_hcd);
++			if (xhci->shared_hcd)
++				usb_hcd_resume_root_hub(xhci->shared_hcd);
+ 			usb_hcd_resume_root_hub(hcd);
+ 		}
+ 	}
+@@ -1235,8 +1254,10 @@ int xhci_resume(struct xhci_hcd *xhci, bool hibernated)
+ 
+ 	/* Re-enable port polling. */
+ 	xhci_dbg(xhci, "%s: starting port polling.\n", __func__);
+-	set_bit(HCD_FLAG_POLL_RH, &xhci->shared_hcd->flags);
+-	usb_hcd_poll_rh_status(xhci->shared_hcd);
++	if (xhci->shared_hcd) {
++		set_bit(HCD_FLAG_POLL_RH, &xhci->shared_hcd->flags);
++		usb_hcd_poll_rh_status(xhci->shared_hcd);
++	}
+ 	set_bit(HCD_FLAG_POLL_RH, &hcd->flags);
+ 	usb_hcd_poll_rh_status(hcd);
+ 
+-- 
+2.21.0.593.g511ec345e18-goog
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
