@@ -2,81 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF5D8122C1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 21:49:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78C13122D5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 21:50:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3iodBLju2w/GERasgMysafQqASKBnq1b11jGaL0lUS0=; b=i79q29KnI2k+Z6
-	h6CFnE8VPBjV7JqtbHhsEp8FhzlM1K36ylmrDSNHaa7x++BJXYdWaG1by/+9SDgoO4FR9jksRa6K7
-	lGdR5UQDi+ZtgNmMLK62pLIBWPCLAFdJe82AkLbheLH17PyNVStGOrHu9cee92gcCAgqVue8sXjr6
-	r5Un2FWGbMBAR9h6VaDeLSp4Ytb0zxpz5SaMJINF7eIrcIU6lqXxiHpccIauOhfmKFjswV7j+mq88
-	dEhdp/Rt4tdN0xEBc1CaYvDDn8O02rSIi2Sr1kApHp2xZz5O6JJ7pZZW4Sl3xC3xUdwG0+n9M2lvx
-	uqxMP4PfE5pu909Ukeew==;
+	List-Owner; bh=q3ITFmarixtRgLYlf7hna7ikwI9cSpo2IGVeEf5gew0=; b=THyJBFYkBNDCqG
+	S5ZFiUrHTFqB3BhLAIaMUjmcE9FkISNHqeQy2+PdwOOsVyBwHgnTN4+gMmWXgR2LEV0qMtwtLvoaj
+	WofM9mfN8ThDtj5XSyfEzgBIAL7jTjvNZzi+tpYvzlDDxK/CjyNpjn5yAwU7l3n38Fpxr9yrVpgrG
+	qe7I/G3o+YTQiJKXMxA9nw8O0wiw7wwPE8zYrmKvsB0WXZBZkjwX0dbMzNxrRmQELbBI0au1zO6w/
+	b0EWK1NaHFMdfUN849UhMCntTiKHvwhQpYz2i3t36Bn2rSpBC6TJjfs/bhcp9tQleQ3DoI3AM9wIi
+	8KSUoQcXyKqoLbu4/wLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMHhk-00085e-HH; Thu, 02 May 2019 19:49:16 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1hMHj4-0001B9-GR; Thu, 02 May 2019 19:50:38 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMHhc-00084n-8I; Thu, 02 May 2019 19:49:11 +0000
-Received: by mail-ot1-f66.google.com with SMTP id s11so3265292otp.0;
- Thu, 02 May 2019 12:49:07 -0700 (PDT)
+ id 1hMHiw-00019i-1N
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 19:50:31 +0000
+Received: by mail-qk1-x743.google.com with SMTP id g141so2278041qke.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 02 May 2019 12:50:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=oFVSuZJraJRY8lf7zLGr4Icu987vmHl/cFcB0vPbwTo=;
+ b=T4x6TwEZL9VIqTV12O2BFwvKSIPNN7BS9WFC88TrYAEmDjgKlJUnAIv9A8+/WllSG+
+ UEKM5WL87d4xq6HgqE3QULfTmN3wFg+WXSaGzcEjqq6uQdn6pexuw5YUxuP5q3MRdpP0
+ k3Yla/PYmhA6I8boHirx6ETAqZNcMr0GFIBYTthqChrZ6WnGBeKxuLWO9gDaXat+vsyU
+ Js1Q05cJ8VnDT9G7OdqrMODWsVG0DnZXZHIwQlVCV8LvYPk4rP4n+NCw/Sde4IGdPeGU
+ uPj25y1BH/NZO8Tv8SuVdgaYxeLGgs9MTgqCN5oTiQBBzshAYGSd2uIJNLvR5KNez/+j
+ a3sg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=FGfxNsDw3M/Z12wiu2wAdnzAwwHu4M4I58DLCLbAH48=;
- b=T3ST1KSeU3PwEx6kUPE3alNs/ChfJWCqUS7ik7ljP9kSY5f+Qcp77djEmiytpuXKp2
- Dwqj8pHrqYt9ejsdtAca45JyyBXjIeNOgDlNjMKF190rd3FtzvkXNG6Im4+7YrF1ncYz
- p/eXB7Y+tQNgC9MKmaoeOE4iPWLscfuNLZWxaIZoPi4GSmbkPllx/pXU7ln3+Lod1Bn/
- gYoNJTKg9bkVSKHuJpiXFpXVcf9FjYq9KwpKSTtvGssE+vyUp9Whq/J09HF5aDbMyoSZ
- 0EBH5AqfN59TeCe5w3nUlyblLkJ8MrazD1F3IXUBnRVOWKLW9zSxa9Go6/PoA/GBP466
- Ozzg==
-X-Gm-Message-State: APjAAAXOswDlWp8bgF6oZVNZyiKu6giNOxEtCyl/LzxFisYX7UzIeZYB
- 0ZU3rJ96WJHRvR+uRJG1RQ==
-X-Google-Smtp-Source: APXvYqzYJ9AupEd9Umw0x6xgTlB7dtQUdfi0f3hYSCZGFwwsr29XCXUyJ7qIx36e0LDiOwYhqSkwBQ==
-X-Received: by 2002:a9d:73d9:: with SMTP id m25mr3984524otk.356.1556826546929; 
- Thu, 02 May 2019 12:49:06 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id 189sm89076oid.35.2019.05.02.12.49.05
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 02 May 2019 12:49:05 -0700 (PDT)
-Date: Thu, 2 May 2019 14:49:05 -0500
-From: Rob Herring <robh@kernel.org>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>
-Subject: Re: [PATCH] dt-binding: usb: add usb-role-switch property
-Message-ID: <20190502194905.GA22144@bogus>
-References: <5756e05930f5e6a3940ad9d019399c8e63d24f18.1556454324.git.chunfeng.yun@mediatek.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=oFVSuZJraJRY8lf7zLGr4Icu987vmHl/cFcB0vPbwTo=;
+ b=gHk8wJxjFr1X4EQTfZEk798mQniSDgVkF1zk6bVycfkAfjLlQinJHlLPT6UvPNBtx/
+ X1KxKNGgnSQANKe5WwCMQEl9ytt+hbHT4AGfF4ZH0VGwR+aPhh3O4ehdlR0Oz06vUs1P
+ yy+Oy51YqN35e16iX8IU1XVBP1mJHxItNRScmVSMSQOFOkPk0PAEMjF0qHp86xzn55D+
+ YSalgU0c+EHUOoZvAyjFW4PC9hj8nhNB/LTWLhWMnsYFbES6QjRe1ROs6LbqZ1AjKSm1
+ OWn2ko6ttTfZknf4GeFDdn8U5WvfIc5yn+P5Ub0IdmjJXCVtEj8y3UG2sLQDIFfB9OAI
+ R+DA==
+X-Gm-Message-State: APjAAAU+U2vOc2ZhaLf2nfM2MKxqU2OZGxcxLhiYjSwMK9msb/bsdON9
+ 5nW7ysvakED7BAyR17ZcGPQ9UQ==
+X-Google-Smtp-Source: APXvYqxxFG9zgR3WVcDfPdsGy4UEJe7Y+styDVNNm4qQfqbwO4kMeleh9vCf98fyvnm6StgEl1J4Hw==
+X-Received: by 2002:a37:4948:: with SMTP id w69mr4703738qka.122.1556826628609; 
+ Thu, 02 May 2019 12:50:28 -0700 (PDT)
+Received: from rosewood.cam.corp.google.com
+ ([2620:0:1013:11:89c6:2139:5435:371d])
+ by smtp.gmail.com with ESMTPSA id k36sm34366qtc.52.2019.05.02.12.50.27
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 02 May 2019 12:50:28 -0700 (PDT)
+From: Sean Paul <sean@poorly.run>
+To: dri-devel@lists.freedesktop.org
+Subject: [PATCH v3 06/10] drm/rockchip: Use dirtyfb helper
+Date: Thu,  2 May 2019 15:49:48 -0400
+Message-Id: <20190502194956.218441-7-sean@poorly.run>
+X-Mailer: git-send-email 2.21.0.593.g511ec345e18-goog
+In-Reply-To: <20190502194956.218441-1-sean@poorly.run>
+References: <20190502194956.218441-1-sean@poorly.run>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <5756e05930f5e6a3940ad9d019399c8e63d24f18.1556454324.git.chunfeng.yun@mediatek.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_124908_299167_72643764 
-X-CRM114-Status: GOOD (  15.98  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20190502_125030_091802_CCBEE551 
+X-CRM114-Status: GOOD (  12.94  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -88,62 +96,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Felipe Balbi <felipe.balbi@linux.intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
- Yu Chen <chenyu56@huawei.com>, linux-kernel@vger.kernel.org,
- Biju Das <biju.das@bp.renesas.com>, linux-mediatek@lists.infradead.org,
- Min Guo <min.guo@mediatek.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
+ David Airlie <airlied@linux.ie>, Sandy Huang <hjc@rock-chips.com>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Sean Paul <seanpaul@chromium.org>, Daniel Vetter <daniel@ffwll.ch>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Apr 28, 2019 at 08:27:46PM +0800, Chunfeng Yun wrote:
-> Add a property usb-role-switch to tell Dual-Role controller driver
-> that use USB Role Switch framework to handle the role switch between
-> host mode and device mode, it's useful when the driver has already
-> supported other ways, such as extcon framework etc.
-> 
-> Cc: Biju Das <biju.das@bp.renesas.com>
-> Cc: Yu Chen <chenyu56@huawei.com>
-> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> ---
-> v1:
-> the property is discussed in:
-> [v2,2/7] dt-bindings: usb: renesas_usb3: add usb-role-switch property
-> https://patchwork.kernel.org/patch/10852497/
-> 
-> Mediatek and Hisilicon also try to use it:
-> [v4,3/6] dt-bindings: usb: mtu3: add properties about USB Role Switch
-> https://patchwork.kernel.org/patch/10918385/
-> [v4,6/6] usb: mtu3: register a USB Role Switch for dual role mode
-> https://patchwork.kernel.org/patch/10918367/
-> 
-> [v6,10/13] usb: dwc3: Registering a role switch in the DRD code
-> https://patchwork.kernel.org/patch/10909981/
-> ---
->  Documentation/devicetree/bindings/usb/generic.txt | 3 +++
->  1 file changed, 3 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/usb/generic.txt b/Documentation/devicetree/bindings/usb/generic.txt
-> index 0a74ab8dfdc2..c73950b72513 100644
-> --- a/Documentation/devicetree/bindings/usb/generic.txt
-> +++ b/Documentation/devicetree/bindings/usb/generic.txt
-> @@ -30,6 +30,9 @@ Optional properties:
->  			optional for OTG device.
->   - adp-disable: tells OTG controllers we want to disable OTG ADP, ADP is
->  			optional for OTG device.
-> + - usb-role-switch: tells Dual-Role USB controller driver that we want to use
-> +			USB Role Switch framework to handle the role switch
-> +			between host mode and device mode.
+From: Sean Paul <seanpaul@chromium.org>
 
-Please describe this in terms of h/w functionality, not drivers and 
-Linux things.
+Instead of flushing all vops every time we get a dirtyfb call, use the
+damage helper to kick off an atomic commit. Even though we don't use
+damage clips, the helper commit will force us through the normal
+psr_inhibit_get/put sequence.
 
-Rob
+Changes in v3:
+- Added to the set
+
+Suggested-by: Daniel Vetter <daniel@ffwll.ch>
+Signed-off-by: Sean Paul <seanpaul@chromium.org>
+---
+ drivers/gpu/drm/rockchip/rockchip_drm_fb.c | 13 ++-----------
+ 1 file changed, 2 insertions(+), 11 deletions(-)
+
+diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c b/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
+index 97438bbbe389..02e81ca2d933 100644
+--- a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
++++ b/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
+@@ -16,6 +16,7 @@
+ #include <drm/drm.h>
+ #include <drm/drmP.h>
+ #include <drm/drm_atomic.h>
++#include <drm/drm_damage_helper.h>
+ #include <drm/drm_fb_helper.h>
+ #include <drm/drm_gem_framebuffer_helper.h>
+ #include <drm/drm_probe_helper.h>
+@@ -25,20 +26,10 @@
+ #include "rockchip_drm_gem.h"
+ #include "rockchip_drm_psr.h"
+ 
+-static int rockchip_drm_fb_dirty(struct drm_framebuffer *fb,
+-				 struct drm_file *file,
+-				 unsigned int flags, unsigned int color,
+-				 struct drm_clip_rect *clips,
+-				 unsigned int num_clips)
+-{
+-	rockchip_drm_psr_flush_all(fb->dev);
+-	return 0;
+-}
+-
+ static const struct drm_framebuffer_funcs rockchip_drm_fb_funcs = {
+ 	.destroy       = drm_gem_fb_destroy,
+ 	.create_handle = drm_gem_fb_create_handle,
+-	.dirty	       = rockchip_drm_fb_dirty,
++	.dirty	       = drm_atomic_helper_dirtyfb,
+ };
+ 
+ static struct drm_framebuffer *
+-- 
+Sean Paul, Software Engineer, Google / Chromium OS
+
 
 _______________________________________________
 linux-arm-kernel mailing list
