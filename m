@@ -2,104 +2,131 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53F8011623
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 11:10:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D61811682
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 11:23:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FO1B09x4lWPOdlGdjnHX8EAhuONPBqv94GKW/Cq/1lE=; b=ohX2HkuApL0vpr
-	e9hN8xfNDAYk1elGL6M9IqfOWOTzFcysW51S/rGrR5TIi/o5GeQCeBPIgw4yEDpP1mZChFuujIPCn
-	1uRi3suLMAIwQ2xkIpioQb95gaOWCT/dghv2QY9ZyqwlhNYQOPvmICRpnuJFWlxMxRF3JsEHBliuK
-	EjiZbSSy6/2bIJGDQQV69vJKtrL4UCONBmZy6hzmqgw02NrMPvOdtQML3stjFUTiNkWjfGdWjzTuk
-	PRZhCBfSEYa/BowoT8FbJDatmjPuLVXiBx/oa7y7zrLPzl0ooLdJupTFehM+b8nY3XsEqqnwGob6Q
-	s0PDu3dlXOiRxZhp6BEA==;
+	List-Owner; bh=NLFy4wIErWjGIa3AUTwETkGM3icH5/xsWPtCtXRx98M=; b=EuSc3ZjhQqDf8S
+	zeaivtg3gkWRAbZNaS89sPc0+Xo0NSvuGFEyYMurU3ZAPD/PzjuKvH9tFT3rKvuSMMA/uudK3iRs4
+	abBpr0wb8haqRL5MXJJkFhgTqA/ypAtK+Uwp/cWCz5MeLPycs5ZKHQ86SKJ6gcgfVkL4lJpkrav42
+	kHVTs6MekJyyebx6vZcJaXFVr2LBQ1BVOXXdkLy/igdAfmgHnqhBzANP2vn8QvHB8uZ69fZyGU1p2
+	BqXF3bl+7nMQfjF/9Pjl3LzK5aAlmo1ggkpsDFGaCCSBaeOnZzX6aURc9+FLTLxuNXWD5jY4+K+SV
+	0qvOX6eANXjfmBfGtYVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hM7ju-0001fZ-2W; Thu, 02 May 2019 09:10:50 +0000
-Received: from mail-eopbgr30052.outbound.protection.outlook.com ([40.107.3.52]
- helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+	id 1hM7vt-0005iJ-Qn; Thu, 02 May 2019 09:23:13 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hM7jm-0001el-Hg
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 09:10:44 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=mLoDalNMvJO2k9ZH9S2I3msqVINEPnwBYV3c1d4FHYc=;
- b=Eo3yE/UyUAi83xZd+52e4TW9y4zCx9h7Xanj7yGVMID4O5+fZ0Xz3lyEroJnD1c4XANKJow4Ism6K0ZnNAv3SYpSth7muXmym/8ITQi78+TIHxQ6L4GPTd2CO4beLiMX/uo1uVvbuNXwyHBJ5m/yC5OkHNwDt/8Zjc4/kbyuhgo=
-Received: from VI1PR04MB5134.eurprd04.prod.outlook.com (20.177.50.159) by
- VI1PR04MB4221.eurprd04.prod.outlook.com (52.134.31.20) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1856.11; Thu, 2 May 2019 09:10:39 +0000
-Received: from VI1PR04MB5134.eurprd04.prod.outlook.com
- ([fe80::81d8:f74b:f91e:f071]) by VI1PR04MB5134.eurprd04.prod.outlook.com
- ([fe80::81d8:f74b:f91e:f071%7]) with mapi id 15.20.1835.018; Thu, 2 May 2019
- 09:10:39 +0000
-From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
-To: Christoph Hellwig <hch@infradead.org>
-Subject: RE: [PATCH v2 7/9] dpaa_eth: fix iova handling for contiguous frames
-Thread-Topic: [PATCH v2 7/9] dpaa_eth: fix iova handling for contiguous frames
-Thread-Index: AQHU/MhTJGEcyHulVEGnKf6u21efK6ZQN+AAgAdbO3A=
-Date: Thu, 2 May 2019 09:10:38 +0000
-Message-ID: <VI1PR04MB513490961A52D86E46C02B49EC340@VI1PR04MB5134.eurprd04.prod.outlook.com>
-References: <20190427071031.6563-1-laurentiu.tudor@nxp.com>
- <20190427071031.6563-8-laurentiu.tudor@nxp.com>
- <20190427164612.GA12450@infradead.org>
-In-Reply-To: <20190427164612.GA12450@infradead.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=laurentiu.tudor@nxp.com; 
-x-originating-ip: [192.88.166.1]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 949729a3-b344-4971-ab0e-08d6cede0b7c
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR04MB4221; 
-x-ms-traffictypediagnostic: VI1PR04MB4221:
-x-microsoft-antispam-prvs: <VI1PR04MB42210DAD43AADA76D8A8ACE7EC340@VI1PR04MB4221.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6108;
-x-forefront-prvs: 0025434D2D
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(346002)(366004)(39860400002)(136003)(376002)(396003)(13464003)(51444003)(199004)(189003)(66066001)(33656002)(44832011)(476003)(14444005)(71190400001)(486006)(71200400001)(186003)(2906002)(55016002)(52536014)(53936002)(9686003)(6246003)(229853002)(6116002)(3846002)(11346002)(256004)(446003)(81156014)(8936002)(8676002)(6916009)(5660300002)(81166006)(54906003)(14454004)(99286004)(25786009)(76176011)(478600001)(6506007)(26005)(102836004)(7696005)(6436002)(68736007)(305945005)(74316002)(66446008)(64756008)(73956011)(86362001)(316002)(66946007)(66556008)(4326008)(76116006)(66476007)(7736002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB4221;
- H:VI1PR04MB5134.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: sBJMuIh7ZVYNoZaRTfgNPy7W7P809zWGFM7EdbsDCmnSHzLgZlornyv/IW//mcN2XIS2kJjfm9i9DhL66lMFSVpk4FWkVORjMuOGhDfnE1oN2kB9LH/bMbsy+Rq7KQSNY+LZCc/ZPMltm9u69EnlvTLZLs5wMVA1YVIhgo0r+7RkycaJs8L/uA6tAU8IS6sauefu7JrQQ18JMPqT2RtCPWbebKWv80Th8YZPBXMuT2IACjl6UQmr1YMla/T2W7nNf5pXLPDV6YcxAynNPZF9CandBotx9sEGUNSPVJKYJTF/aA589lwKYJlUcprD71tGZFAVVqt+piXg8RgPBMb9alv93I6usw/08pmjDFol4ZZimGFb01fq4g7EBlZJlyAXyxFUBPXPhH4EvUH2hhi6AjL3rtmua/7UabMVKiA2eAI=
+ id 1hM7vl-0005ht-2u
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 09:23:08 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20190502091627euoutp02bccc0b197b2728c869219a70de85f099~a0vj3jOHr2205322053euoutp02a
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu,  2 May 2019 09:16:27 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20190502091627euoutp02bccc0b197b2728c869219a70de85f099~a0vj3jOHr2205322053euoutp02a
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1556788587;
+ bh=B3tN+K7lE2MQpgRT2CZWdfYL2aEGtKrilC8xr415AdA=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=Kz2giV5Ak2DiL6P0NYPsiSqWt51/ACPw71NbEH0Ggy3iP0emuBKDMY/6q7lz9tKNj
+ 6qxqrn2765mmz0xN+WIUQ69rvQ5hcBYIWp8ZEK6sQ399Vs5vcub9DnsTu8T9QAimHA
+ GEhQ3IuOsZUXnFGMRvHGB/KZQAM/RNDWQSD2slxA=
+Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20190502091627eucas1p12bb661f6e576e143f4075012aa2358fc~a0vjIC8ns0110001100eucas1p1j;
+ Thu,  2 May 2019 09:16:27 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id 25.0C.04377.A65BACC5; Thu,  2
+ May 2019 10:16:26 +0100 (BST)
+Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190502091626eucas1p266773ad4e83e48578a80dbd5bd3a49b9~a0viW56T42997629976eucas1p2z;
+ Thu,  2 May 2019 09:16:26 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20190502091626eusmtrp2b756b2912a580528586be9d526a50263~a0viIxPg52363723637eusmtrp2g;
+ Thu,  2 May 2019 09:16:26 +0000 (GMT)
+X-AuditID: cbfec7f4-12dff70000001119-83-5ccab56a2494
+Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id 17.50.04146.A65BACC5; Thu,  2
+ May 2019 10:16:26 +0100 (BST)
+Received: from [106.120.51.20] (unknown [106.120.51.20]) by
+ eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190502091625eusmtip275ca303fdaad4ea1436741f1168956a5~a0vhJqNJa0616106161eusmtip2e;
+ Thu,  2 May 2019 09:16:25 +0000 (GMT)
+Subject: Re: [PATCH v3 1/4] include: dt-bindings: add Performance Monitoring
+ Unit for Exynos
+To: Rob Herring <robh@kernel.org>
+From: Lukasz Luba <l.luba@partner.samsung.com>
+Message-ID: <e29648bb-9e94-1b02-5c6e-03b099ad807e@partner.samsung.com>
+Date: Thu, 2 May 2019 11:16:24 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 949729a3-b344-4971-ab0e-08d6cede0b7c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 02 May 2019 09:10:38.8633 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB4221
+In-Reply-To: <20190430223358.GA22052@bogus>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA02Sf0yMcRzHfZ/nnnuemmvfLvQZJm6YH1O08DW0MuP4y482v244eVZRV+4p
+ Sn6UzamUWs3J+XEylFOqc7ga1eoqP9IVhiKsTjYVo2Z+9EN3T03/vT7v9/u7z/uzfTla3sZM
+ 5iI0sbxWo45USN0l9+p+Ny7Yd/eJamHRucWkNLeYIa/7PjPEaGtkSGZHF03s9hKWPDvRzRJz
+ xyuGvCi/KCW9GTZEcu0VFCmytbHk+utmirxNLpCSkw9tLBl6YGVJTfcphvx81I6CPJWFlwuR
+ sszQxirNplSp8s6148ozFhNS9pqnbZBud1+xl4+MOMhr/QJ3u4fnlw7QMZ3S+AF9CZ2EbjJp
+ yI0DHABVnTY2DblzclyA4H1OldRpyHEfgryvIaLRi0CX/IcefdHQOcSIRj4CR1cTLQ49CNo/
+ 5SBnygvvhNuW86yTJ+AZ8Fend72gcRENKQOm4YHjpNgXrKYDaYjlZHgNGDc40xI8E3KzKygn
+ T8Rb4UNdiaupDHvC4/MOiZPd8HywV+pdm2jsDa0OIyWyD9zvueiqAziVg9ridkosvRpuNegk
+ InvBl3oLK/JUGCozjmQESMrIQyIfgY7MSyOZ5VBT3+xqTOO5UFzuJ8rB8M5opZwyYA940+Mp
+ VvCA7HvnaFGWQYpOLqbngCW9aWTRJMgv1LNZSGEYc5hhzDGGMccY/u+9giQm5M3HCVFhvOCv
+ 4Q/5CuooIU4T5hsaHWVGw5/u6WB9nxWV9++pRphDivGyX2cfq+SM+qCQEFWNgKMVE2StD4Yl
+ 2V51wmFeG71LGxfJC9VoCidReMsSx33cIcdh6lh+P8/H8NpRl+LcJich/Y+WH6HrPKY6Aur8
+ j14uWB/DPuprSzvWsPm4Uu5gg+3f114ISuxedajFJ70o60Zgs+a0Y9u3pbHbmSnmRnr91lbr
+ vgDVptJ09bInstotgbNm94cNUVez3g9oai1LBs2BG5M1x6iagKojK3V3VSHP41u8XqqmL75Q
+ m5miY2c27YyoVEiEcPWiebRWUP8DENpKoHADAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrEIsWRmVeSWpSXmKPExsVy+t/xe7pZW0/FGDw+x2KxccZ6VovrX56z
+ Wsw/co7Vov/xa2aL8+c3sFucbXrDbrHp8TVWi8u75rBZfO49wmgx4/w+Jou1R+6yWyy9fpHJ
+ 4nbjCjaL1r1H2C3+79nBbnH4TTurxbcTjxgdBD3WzFvD6LFz1l12j02rOtk8Ni+p9+jbsorR
+ 4/MmuQC2KD2bovzSklSFjPziElulaEMLIz1DSws9IxNLPUNj81grI1MlfTublNSczLLUIn27
+ BL2M5Rv/Mhc8Y6v4O20DcwPjStYuRk4OCQETiTPP/gPZXBxCAksZJU60HGODSIhJTNq3nR3C
+ Fpb4c62LDaLoNaPEh+f/mUASwgJxEuu2zAQrEhFQlPjdNg1sErPAWmaJmWvuskN0NDBJvP66
+ n6WLkYODTUBPYseqwi5Gdg5eATeJ+QEgrSwCKhIzJu0DGykqECFx5v0KFhCbV0BQ4uTMJ2A2
+ p4C2xPn90xhBbGYBM4l5mx8yQ9jiEreezGeCsOUltr+dwzyBUWgWkvZZSFpmIWmZhaRlASPL
+ KkaR1NLi3PTcYkO94sTc4tK8dL3k/NxNjMD43nbs5+YdjJc2Bh9iFOBgVOLh/TH1ZIwQa2JZ
+ cWXuIUYJDmYlEd5be4BCvCmJlVWpRfnxRaU5qcWHGE2BnpvILCWanA9MPXkl8YamhuYWlobm
+ xubGZhZK4rwdAgdjhATSE0tSs1NTC1KLYPqYODilGhjNas/U2ITfbOViLHH3vyP+VirCP8zs
+ y8GgEkabFM8b3Ef4AkPCtI5ruy3wM75zabXV5LDmP/t/aT7xecD0oU0i7Adb7q5Dx76tW1cr
+ Y3Qn2ZBzW0Sw/8ulMq8ar2/O8325ztmjdeXjqtthXp8abvHw/Dh6otrX6OVpoad5/pXSW9w8
+ 585XkFRiKc5INNRiLipOBABD6H4rBQMAAA==
+X-CMS-MailID: 20190502091626eucas1p266773ad4e83e48578a80dbd5bd3a49b9
+X-Msg-Generator: CA
+X-RootMTR: 20190419134820eucas1p154e839769af0e1b8bae17ce3efa0ba93
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20190419134820eucas1p154e839769af0e1b8bae17ce3efa0ba93
+References: <1555681688-19643-1-git-send-email-l.luba@partner.samsung.com>
+ <CGME20190419134820eucas1p154e839769af0e1b8bae17ce3efa0ba93@eucas1p1.samsung.com>
+ <1555681688-19643-2-git-send-email-l.luba@partner.samsung.com>
+ <20190430223358.GA22052@bogus>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_021042_587239_C0894D0B 
-X-CRM114-Status: GOOD (  18.03  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190502_022306_694936_E2D8ED9F 
+X-CRM114-Status: GOOD (  16.78  )
+X-Spam-Score: -5.1 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.52 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.12 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -111,16 +138,13 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Madalin-cristian Bucur <madalin.bucur@nxp.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- Roy Pledge <roy.pledge@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>,
- "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
- Camelia Alexandra Groza <camelia.groza@nxp.com>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "davem@davemloft.net" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ willy.mh.wolff.ml@gmail.com, linux-samsung-soc@vger.kernel.org,
+ kgene@kernel.org, b.zolnierkie@samsung.com, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, krzk@kernel.org, cw00.choi@samsung.com,
+ kyungmin.park@samsung.com, robh+dt@kernel.org, myungjoo.ham@samsung.com,
+ s.nawrocki@samsung.com, linux-arm-kernel@lists.infradead.org,
+ m.szyprowski@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -128,34 +152,29 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-> -----Original Message-----
-> From: Christoph Hellwig <hch@infradead.org>
-> Sent: Saturday, April 27, 2019 7:46 PM
+On 5/1/19 12:33 AM, Rob Herring wrote:
+> On Fri, 19 Apr 2019 15:48:05 +0200, Lukasz Luba wrote:
+>> This patch add support of a new feature which can be used in DT:
+>> Performance Monitoring Unit with defined event data type.
+>> In this patch the event data types are defined for Exynos PPMU.
+>> The patch also updates the MAINTAINERS file accordingly and
+>> adds the header file to devfreq event subsystem.
+>>
+>> Signed-off-by: Lukasz Luba <l.luba@partner.samsung.com>
+>> ---
+>>   MAINTAINERS                           |  1 +
+>>   include/dt-bindings/pmu/exynos_ppmu.h | 26 ++++++++++++++++++++++++++
+>>   2 files changed, 27 insertions(+)
+>>   create mode 100644 include/dt-bindings/pmu/exynos_ppmu.h
+>>
 > 
-> On Sat, Apr 27, 2019 at 10:10:29AM +0300, laurentiu.tudor@nxp.com wrote:
-> > From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
-> >
-> > The driver relies on the no longer valid assumption that dma addresses
-> > (iovas) are identical to physical addressees and uses phys_to_virt() to
-> > make iova -> vaddr conversions. Fix this by adding a function that does
-> > proper iova -> phys conversions using the iommu api and update the code
-> > to use it.
-> > Also, a dma_unmap_single() call had to be moved further down the code
-> > because iova -> vaddr conversions were required before the unmap.
-> > For now only the contiguous frame case is handled and the SG case is
-> > split in a following patch.
-> > While at it, clean-up a redundant dpaa_bpid2pool() and pass the bp
-> > as parameter.
+> Reviewed-by: Rob Herring <robh@kernel.org>
 > 
-> Err, this is broken.  A driver using the DMA API has no business
-> call IOMMU APIs.  Just save the _virtual_ address used for the mapping
-> away and use that again.  We should not go through crazy gymnastics
-> like this.
+> 
+Thank you, added to the commit message for the next patch set version.
 
-I think that due to the particularity of this hardware we don't have a way of saving the VA, but I'd let my colleagues maintaining this driver to comment more on why we need to do this.
-
----
-Best Regards, Laurentiu
+Regards,
+Lukasz
 
 _______________________________________________
 linux-arm-kernel mailing list
