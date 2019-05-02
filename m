@@ -2,57 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4B281204D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 18:33:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 584B912074
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 18:43:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=3sS4zYXSRhyl2pw6AHKE4GcncFpm7r2z6EFQuScm1Fc=; b=SukrfqfJKt2yckzQV25PpW5E9
-	qEQ+C+H5hi5i/N+KIQvcIzkat+74CIvBSOEZQiPztmOnNcWdrHV0VCvbNKxXdmcmquMTAmwMafEpB
-	oaLB5A+9elk6u5DtouqjbDb0RSXXykfb1PiTvjhck+wQup56K+VBKoOx/qjUPAIzswYIxGc6Z1IGq
-	wtPV4S+9ZMVvVxbDGqkspCQ+xuCVDcgDOwc1ikAKI3P42vrj/csIS8f0ymLAbJz9SwkyqAbLv4iEb
-	uF74rZ/4IYt8YEbsdBfodu8d3h2T8e+h79eg7eeDakVH3jWu9yrQ14AjutoBKqZV0y3BptATEiZii
-	d2uCVw/SA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XvEIhmo8Sztvz/Wrm8YZzpg6Xh0uuOm5iTwQlyRYyQ8=; b=Qy++Lqwb5kjle4
+	skXY0aL1RAUZiWfP1Ff10a3XKj77vWpuw0tLtoLhzR/LNRjOeZflHmuXZWkOy3Qj+FP164QvyFhNB
+	oBc0Qc2shOZcZ7m1lgo5ao8RFVcnrNnqxOKMy0cOksL1AOyXfuopTU9AcgrDrsoN/DyLddFKkSJYn
+	FahNlgq7QkobpnGrgzZQklRp3YgeWoFZMm1IL78hXwjbN2Bp8jAK6SxkLLZXIZ49q47VCwpaYwsdI
+	mUTRBa5hoOWFMx519aQhzEtM2dh4VOkyi+oeJmu4JETCWHtzHt3dRiTqR5yey52S0VY83Qa+V/tLu
+	VboHSxu4ThLEZAlH2JHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMEe6-0004MO-5Z; Thu, 02 May 2019 16:33:18 +0000
-Received: from foss.arm.com ([217.140.101.70])
+	id 1hMEoH-0007fb-SH; Thu, 02 May 2019 16:43:49 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMEdz-0004Lm-JN
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 16:33:13 +0000
+ id 1hMEoB-0007ey-Oz; Thu, 02 May 2019 16:43:45 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A5177A78;
- Thu,  2 May 2019 09:33:10 -0700 (PDT)
-Received: from [10.1.196.75] (e110467-lin.cambridge.arm.com [10.1.196.75])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DA3603F5AF;
- Thu,  2 May 2019 09:33:08 -0700 (PDT)
-Subject: Re: [PATCH] arm64/io: Don't use WZR in writel
-To: Marc Gonzalez <marc.w.gonzalez@free.fr>,
- Bjorn Andersson <bjorn.andersson@linaro.org>
-References: <68b71c15f32341468a868f6418e4fcb375bc49ba.camel@gmail.com>
- <20190211105755.GB30880@fuggles.cambridge.arm.com>
- <38d8965a-cd41-17cf-1b95-8dd58c079be4@arm.com>
- <874c702b8af760aa8fae38d478c79e3ecba00515.camel@gmail.com>
- <235d20ef-3054-69d9-975d-25aebf32aad3@arm.com>
- <20190223181254.GC572@tuxbook-pro> <86zhqm8i6d.wl-marc.zyngier@arm.com>
- <20190224035356.GD572@tuxbook-pro>
- <33d765b5-1807-fa6c-1ceb-99f09f7c8d5a@free.fr>
- <8eb4f446-6152-ffb6-9529-77fb0bcc307f@arm.com>
- <7b5e8bb1-d339-07f7-66f6-7f09df2107c4@free.fr>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <3757fc2d-0587-be46-8f75-6d79906be8bd@arm.com>
-Date: Thu, 2 May 2019 17:33:07 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7CACFA78;
+ Thu,  2 May 2019 09:43:41 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
+ [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 787543F738;
+ Thu,  2 May 2019 09:43:39 -0700 (PDT)
+Date: Thu, 2 May 2019 17:43:33 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Jianjun Wang <jianjun.wang@mediatek.com>
+Subject: Re: [v1] PCI: mediatek: Remove MSI inner domain
+Message-ID: <20190502164333.GA26454@e121166-lin.cambridge.arm.com>
+References: <1548149855-3225-1-git-send-email-jianjun.wang@mediatek.com>
+ <1548926367.4980.14.camel@mhfsdcap03>
+ <10e8e731-5749-f6fb-eb33-ab67aa0e2c3f@arm.com>
+ <1548938997.6292.52.camel@mhfsdcap03>
 MIME-Version: 1.0
-In-Reply-To: <7b5e8bb1-d339-07f7-66f6-7f09df2107c4@free.fr>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <1548938997.6292.52.camel@mhfsdcap03>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_093311_646404_85095440 
-X-CRM114-Status: GOOD (  26.14  )
+X-CRM114-CacheID: sfid-20190502_094343_823116_8EF5BAC3 
+X-CRM114-Status: GOOD (  37.07  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -72,212 +65,289 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Jeffrey Hugo <jhugo@codeaurora.org>, MSM <linux-arm-msm@vger.kernel.org>,
- AngeloGioacchino Del Regno <kholk11@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: youlin.pei@mediatek.com, ryder.lee@mediatek.com,
+ Marc Zyngier <marc.zyngier@arm.com>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, matthias.bgg@gmail.com,
+ linux-mediatek@lists.infradead.org, Honghui Zhang <honghui.zhang@mediatek.com>,
+ bhelgaas@google.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 02/05/2019 17:05, Marc Gonzalez wrote:
-> On 18/03/2019 17:04, Robin Murphy wrote:
+On Thu, Jan 31, 2019 at 08:49:57PM +0800, Jianjun Wang wrote:
+> On Thu, 2019-01-31 at 09:44 +0000, Marc Zyngier wrote:
+> > On 31/01/2019 09:19, Honghui Zhang wrote:
+> > > On Tue, 2019-01-22 at 17:37 +0800, Jianjun Wang wrote:
+> > >> There is no need to create the inner domain as a parent for MSI domian,
+> > >> some feature has been implemented by MSI framework.
+> > >>
+> > >> Remove the inner domain and its irq chip, it will be more closer to
+> > >> hardware implementation.
+> > 
+> > This is not about being closer to any HW implementation. This is about
+> > having a uniform way to deal with MSI controllers, no matter how they
+> > are implemented by the HW.
+> > 
+> > So maybe you could start by explaining what this is trying to achieve.
+> > 
+> > >>
+> > > Hi, jianjun, I'm not quite familiar with the irq_chip framework, It was
+> > > under Marc's great help with the first version of irq_chip solution
+> > > code. I would like you to add him for the review.
+> > > 
+> > > Thanks.
+> > > 
+> > >> Signed-off-by: Jianjun Wang <jianjun.wang@mediatek.com>
+> > >> ---
+> > >>  drivers/pci/controller/pcie-mediatek.c | 86 +++++++++++---------------
+> > >>  1 file changed, 37 insertions(+), 49 deletions(-)
+> > >>
+> > >> diff --git a/drivers/pci/controller/pcie-mediatek.c b/drivers/pci/controller/pcie-mediatek.c
+> > >> index 8d05df56158b..f996a9a6331f 100644
+> > >> --- a/drivers/pci/controller/pcie-mediatek.c
+> > >> +++ b/drivers/pci/controller/pcie-mediatek.c
+> > >> @@ -169,7 +169,6 @@ struct mtk_pcie_soc {
+> > >>   * @slot: port slot
+> > >>   * @irq: GIC irq
+> > >>   * @irq_domain: legacy INTx IRQ domain
+> > >> - * @inner_domain: inner IRQ domain
+> > >>   * @msi_domain: MSI IRQ domain
+> > >>   * @lock: protect the msi_irq_in_use bitmap
+> > >>   * @msi_irq_in_use: bit map for assigned MSI IRQ
+> > >> @@ -190,7 +189,6 @@ struct mtk_pcie_port {
+> > >>  	u32 slot;
+> > >>  	int irq;
+> > >>  	struct irq_domain *irq_domain;
+> > >> -	struct irq_domain *inner_domain;
+> > >>  	struct irq_domain *msi_domain;
+> > >>  	struct mutex lock;
+> > >>  	DECLARE_BITMAP(msi_irq_in_use, MTK_MSI_IRQS_NUM);
+> > >> @@ -418,22 +416,15 @@ static void mtk_msi_ack_irq(struct irq_data *data)
+> > >>  	u32 hwirq = data->hwirq;
+> > >>  
+> > >>  	writel(1 << hwirq, port->base + PCIE_IMSI_STATUS);
+> > >> +	writel(MSI_STATUS, port->base + PCIE_INT_STATUS);
+> > >>  }
+> > >>  
+> > >> -static struct irq_chip mtk_msi_bottom_irq_chip = {
+> > >> -	.name			= "MTK MSI",
+> > >> -	.irq_compose_msi_msg	= mtk_compose_msi_msg,
+> > >> -	.irq_set_affinity	= mtk_msi_set_affinity,
+> > >> -	.irq_ack		= mtk_msi_ack_irq,
+> > >> -};
+> > >> -
+> > >> -static int mtk_pcie_irq_domain_alloc(struct irq_domain *domain, unsigned int virq,
+> > >> -				     unsigned int nr_irqs, void *args)
+> > >> +static irq_hw_number_t mtk_pcie_msi_get_hwirq(struct msi_domain_info *info,
+> > >> +					      msi_alloc_info_t *arg)
+> > >>  {
+> > >> -	struct mtk_pcie_port *port = domain->host_data;
+> > >> -	unsigned long bit;
+> > >> +	struct mtk_pcie_port *port = info->chip_data;
+> > >> +	irq_hw_number_t bit;
+> > >>  
+> > >> -	WARN_ON(nr_irqs != 1);
+> > >>  	mutex_lock(&port->lock);
+> > >>  
+> > >>  	bit = find_first_zero_bit(port->msi_irq_in_use, MTK_MSI_IRQS_NUM);
+> > >> @@ -446,18 +437,14 @@ static int mtk_pcie_irq_domain_alloc(struct irq_domain *domain, unsigned int vir
+> > >>  
+> > >>  	mutex_unlock(&port->lock);
+> > >>  
+> > >> -	irq_domain_set_info(domain, virq, bit, &mtk_msi_bottom_irq_chip,
+> > >> -			    domain->host_data, handle_edge_irq,
+> > >> -			    NULL, NULL);
+> > >> -
+> > >> -	return 0;
+> > >> +	return bit;
+> > 
+> > Why do you need to override the get_hwirq method? Using the generic
+> > PCI/MSI version has the advantage of giving you a universal encoding
+> > which makes debugging much easier.
 > 
->> On 12/03/2019 12:36, Marc Gonzalez wrote:
->>
->>> On 24/02/2019 04:53, Bjorn Andersson wrote:
->>>
->>>> On Sat 23 Feb 10:37 PST 2019, Marc Zyngier wrote:
->>>>
->>>>> On Sat, 23 Feb 2019 18:12:54 +0000, Bjorn Andersson wrote:
->>>>>>
->>>>>> On Mon 11 Feb 06:59 PST 2019, Marc Zyngier wrote:
->>>>>>
->>>>>>> On 11/02/2019 14:29, AngeloGioacchino Del Regno wrote:
->>>>>>>
->>>>>>>> Also, just one more thing: yes this thing is going ARM64-wide and
->>>>>>>> - from my findings - it's targeting certain Qualcomm SoCs, but...
->>>>>>>> I'm not sure that only QC is affected by that, others may as well
->>>>>>>> have the same stupid bug.
->>>>>>>
->>>>>>> At the moment, only QC SoCs seem to be affected, probably because
->>>>>>> everyone else has debugged their hypervisor (or most likely doesn't
->>>>>>> bother with shipping one).
->>>>>>>
->>>>>>> In all honesty, we need some information from QC here: which SoCs are
->>>>>>> affected, what is the exact nature of the bug, can it be triggered from
->>>>>>> EL0. Randomly papering over symptoms is not something I really like
->>>>>>> doing, and is likely to generate problems on unaffected systems.
->>>>>>
->>>>>> The bug at hand is that the XZR is not deemed a valid source in the
->>>>>> virtualization of the SMMU registers. It was identified and fixed for
->>>>>> all platforms that are shipping kernels based on v4.9 or later.
->>>>>
->>>>> When you say "fixed": Do you mean fixed in the firmware? Or by adding
->>>>> a workaround in the shipped kernel?
->>>>
->>>> I mean that it's fixed in the firmware.
->>>>
->>>>> If the former, is this part of an official QC statement, with an
->>>>> associated erratum number?
->>>>
->>>> I don't know, will get back to you on this one.
->>>>
->>>>> Is this really limited to the SMMU accesses?
->>>>
->>>> Yes.
->>>>
->>>>>> As such Angelo's list of affected platforms covers the high-profile
->>>>>> ones. In particular MSM8996 and MSM8998 is getting pretty good support
->>>>>> upstream, if we can figure out a way around this issue.
->>>>>
->>>>> We'd need an exhaustive list of the affected SoCs, and work out if we
->>>>> can limit the hack to the SMMU driver (cc'ing Robin, who's the one
->>>>> who'd know about it).
->>>>
->>>> I will try to compose a list.
->>>
->>> FWIW, I have just been bitten by this issue. I needed to enable an SMMU to
->>> filter PCIe EP accesses to system RAM (or something). I'm using an APQ8098
->>> MEDIABOX dev board. My system hangs in arm_smmu_device_reset() doing:
->>>
->>> 	/* Invalidate the TLB, just in case */
->>> 	writel_relaxed(0, gr0_base + ARM_SMMU_GR0_TLBIALLH);
->>> 	writel_relaxed(0, gr0_base + ARM_SMMU_GR0_TLBIALLNSNH);
->>>
->>>
->>> With the 'Z' constraint, gcc generates:
->>>
->>> 	str wzr, [x0]
->>>
->>> without the 'Z' constraint, gcc generates:
->>>
->>> 	mov	w1, 0
->>> 	str w1, [x0]
->>>
->>>
->>> I can work around the problem using the following patch:
->>>
->>> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
->>> index 045d93884164..93117519aed8 100644
->>> --- a/drivers/iommu/arm-smmu.c
->>> +++ b/drivers/iommu/arm-smmu.c
->>> @@ -59,6 +59,11 @@
->>>    
->>>    #include "arm-smmu-regs.h"
->>>    
->>> +static inline void qcom_writel(u32 val, volatile void __iomem *addr)
->>> +{
->>> +	asm volatile("str %w0, [%1]" : : "r" (val), "r" (addr));
->>> +}
->>> +
->>>    #define ARM_MMU500_ACTLR_CPRE		(1 << 1)
->>>    
->>>    #define ARM_MMU500_ACR_CACHE_LOCK	(1 << 26)
->>> @@ -422,7 +427,7 @@ static void __arm_smmu_tlb_sync(struct arm_smmu_device *smmu,
->>>    {
->>>    	unsigned int spin_cnt, delay;
->>>    
->>> -	writel_relaxed(0, sync);
->>> +	qcom_writel(0, sync);
->>>    	for (delay = 1; delay < TLB_LOOP_TIMEOUT; delay *= 2) {
->>>    		for (spin_cnt = TLB_SPIN_COUNT; spin_cnt > 0; spin_cnt--) {
->>>    			if (!(readl_relaxed(status) & sTLBGSTATUS_GSACTIVE))
->>> @@ -1760,8 +1765,8 @@ static void arm_smmu_device_reset(struct arm_smmu_device *smmu)
->>>    	}
->>>    
->>>    	/* Invalidate the TLB, just in case */
->>> -	writel_relaxed(0, gr0_base + ARM_SMMU_GR0_TLBIALLH);
->>> -	writel_relaxed(0, gr0_base + ARM_SMMU_GR0_TLBIALLNSNH);
->>> +	qcom_writel(0, gr0_base + ARM_SMMU_GR0_TLBIALLH);
->>> +	qcom_writel(0, gr0_base + ARM_SMMU_GR0_TLBIALLNSNH);
->>>    
->>>    	reg = readl_relaxed(ARM_SMMU_GR0_NS(smmu) + ARM_SMMU_GR0_sCR0);
->>>    
->>>
->>>
->>>
->>> Can a quirk be used to work around the issue?
->>> Or can we just "pessimize" the 3 writes for everybody?
->>> (Might be cheaper than a test anyway)
->>
->> If it really is just the SMMU driver which is affected, we can work
->> around it for free (not counting the 'cost' of slightly-weird-looking
->> code, of course). If the diff below works as expected, I'll write it up
->> properly.
+> Hi Marc,
 > 
-> Here's another take on the subject. I find it minimally intrusive.
-> (But I might have overlooked better options.)
-
-Both Angelo's and your reports strongly imply that the previous 
-constant-folding debate was a red herring and the trivial fix[1] should 
-still be sufficient, but nobody's given me actual confirmation of 
-whether it is or isn't :(
-
-Robin.
-
-[1] 
-http://linux-arm.org/git?p=linux-rm.git;a=commitdiff;h=a13e3239f0c543f1f61ce5f7f5c06320e521701c
-
+> In previous patch, we create a inner_domain as a parent for msi_domain,
+> when we allocate a irq for MSI, the work flow of each domain will be the
+> following:
 > 
-> diff --git a/arch/arm64/include/asm/io.h b/arch/arm64/include/asm/io.h
-> index b807cb9b517d..f37149ab1ebf 100644
-> --- a/arch/arm64/include/asm/io.h
-> +++ b/arch/arm64/include/asm/io.h
-> @@ -31,31 +31,37 @@
->   #include <asm/alternative.h>
->   #include <asm/cpufeature.h>
->   
-> +#ifdef DO_NOT_USE_ZERO_REGISTER
-> +#define VAL_CONSTRAINT "r"
-> +#else
-> +#define VAL_CONSTRAINT "rZ"
-> +#endif
-> +
->   /*
->    * Generic IO read/write.  These perform native-endian accesses.
->    */
->   #define __raw_writeb __raw_writeb
->   static inline void __raw_writeb(u8 val, volatile void __iomem *addr)
->   {
-> -	asm volatile("strb %w0, [%1]" : : "rZ" (val), "r" (addr));
-> +	asm volatile("strb %w0, [%1]" : : VAL_CONSTRAINT (val), "r" (addr));
->   }
->   
->   #define __raw_writew __raw_writew
->   static inline void __raw_writew(u16 val, volatile void __iomem *addr)
->   {
-> -	asm volatile("strh %w0, [%1]" : : "rZ" (val), "r" (addr));
-> +	asm volatile("strh %w0, [%1]" : : VAL_CONSTRAINT (val), "r" (addr));
->   }
->   
->   #define __raw_writel __raw_writel
->   static inline void __raw_writel(u32 val, volatile void __iomem *addr)
->   {
-> -	asm volatile("str %w0, [%1]" : : "rZ" (val), "r" (addr));
-> +	asm volatile("str %w0, [%1]" : : VAL_CONSTRAINT (val), "r" (addr));
->   }
->   
->   #define __raw_writeq __raw_writeq
->   static inline void __raw_writeq(u64 val, volatile void __iomem *addr)
->   {
-> -	asm volatile("str %x0, [%1]" : : "rZ" (val), "r" (addr));
-> +	asm volatile("str %x0, [%1]" : : VAL_CONSTRAINT (val), "r" (addr));
->   }
->   
->   #define __raw_readb __raw_readb
-> diff --git a/drivers/iommu/Makefile b/drivers/iommu/Makefile
-> index f13f36ae1af6..0ce565285603 100644
-> --- a/drivers/iommu/Makefile
-> +++ b/drivers/iommu/Makefile
-> @@ -34,3 +34,5 @@ obj-$(CONFIG_S390_IOMMU) += s390-iommu.o
->   obj-$(CONFIG_QCOM_IOMMU) += qcom_iommu.o
->   obj-$(CONFIG_HYPERV_IOMMU) += hyperv-iommu.o
->   obj-$(CONFIG_VIRTIO_IOMMU) += virtio-iommu.o
-> +
-> +CFLAGS_arm-smmu.o := -D DO_NOT_USE_ZERO_REGISTER
+> inner_domain:
+> 1. Allocated a irq bit from bitmap as this domain's hwirq;
+> 2. Mapping with system virtual irq number;
+> 3. Set irq chip and irq handler;
+> 4. Send MSI message to EP.
+> 
+> msi_domain:
+> 1. Calculate a hwirq;
+> 2. Mapping with system virtual irq number;
+> 3. Set irq chip which from info->chip and irq handler if defined in
+> info.
+> 4. Send MSI message to EP or trigger parent domain to send the message.
+> 
+> The last three steps looks similar, if we override the get_hwirq method
+> and set irq chip and handler to info structure, MSI framework will do
+> the rest of thing. I think it will be more simple and easy to understand
+> the driver's work flow.
+> 
+> Further more, if we try to enhance the interrupt performance, such as
+> connect the MSI interrupt line to GIC directly in hardware, we will need
+> to set gic domain as the parent, in that case, there will be a lot of
+> work to do to replace the inner domain.
+
+I do not understand what you mean, I am sorry. I won't review v2 until
+we have an understanding of what this patch should achieve and we
+have a clear reason why we need it, more specifically I do not
+understand what it has to do with performance (keeping in mind what
+Marc said about the IRQ controllers representation, which has a
+reason to be there on its own).
+
+Thanks,
+Lorenzo
+
+> Thanks.
+> > 
+> > >>  }
+> > >>  
+> > >> -static void mtk_pcie_irq_domain_free(struct irq_domain *domain,
+> > >> -				     unsigned int virq, unsigned int nr_irqs)
+> > >> +static void mtk_pcie_msi_free(struct irq_domain *domain,
+> > >> +			      struct msi_domain_info *info, unsigned int virq)
+> > >>  {
+> > >>  	struct irq_data *d = irq_domain_get_irq_data(domain, virq);
+> > >> -	struct mtk_pcie_port *port = irq_data_get_irq_chip_data(d);
+> > >> +	struct mtk_pcie_port *port = info->chip_data;
+> > >>  
+> > >>  	mutex_lock(&port->lock);
+> > >>  
+> > >> @@ -468,46 +455,50 @@ static void mtk_pcie_irq_domain_free(struct irq_domain *domain,
+> > >>  		__clear_bit(d->hwirq, port->msi_irq_in_use);
+> > >>  
+> > >>  	mutex_unlock(&port->lock);
+> > >> -
+> > >> -	irq_domain_free_irqs_parent(domain, virq, nr_irqs);
+> > >>  }
+> > >>  
+> > >> -static const struct irq_domain_ops msi_domain_ops = {
+> > >> -	.alloc	= mtk_pcie_irq_domain_alloc,
+> > >> -	.free	= mtk_pcie_irq_domain_free,
+> > >> +static struct msi_domain_ops mtk_msi_domain_ops = {
+> > >> +	.get_hwirq	= mtk_pcie_msi_get_hwirq,
+> > >> +	.msi_free	= mtk_pcie_msi_free,
+> > >>  };
+> > >>  
+> > >>  static struct irq_chip mtk_msi_irq_chip = {
+> > >> -	.name		= "MTK PCIe MSI",
+> > >> -	.irq_ack	= irq_chip_ack_parent,
+> > >> -	.irq_mask	= pci_msi_mask_irq,
+> > >> -	.irq_unmask	= pci_msi_unmask_irq,
+> > >> +	.name			= "MTK PCIe",
+> > >> +	.irq_compose_msi_msg	= mtk_compose_msi_msg,
+> > >> +	.irq_write_msi_msg	= pci_msi_domain_write_msg,
+> > >> +	.irq_set_affinity	= mtk_msi_set_affinity,
+> > >> +	.irq_ack		= mtk_msi_ack_irq,
+> > >> +	.irq_mask		= pci_msi_mask_irq,
+> > >> +	.irq_unmask		= pci_msi_unmask_irq,
+> > >>  };
+> > >>  
+> > >>  static struct msi_domain_info mtk_msi_domain_info = {
+> > >> -	.flags	= (MSI_FLAG_USE_DEF_DOM_OPS | MSI_FLAG_USE_DEF_CHIP_OPS |
+> > >> -		   MSI_FLAG_PCI_MSIX),
+> > >> -	.chip	= &mtk_msi_irq_chip,
+> > >> +	.flags		= (MSI_FLAG_USE_DEF_DOM_OPS |
+> > >> +			   MSI_FLAG_USE_DEF_CHIP_OPS | MSI_FLAG_PCI_MSIX),
+> > >> +	.ops		= &mtk_msi_domain_ops,
+> > >> +	.chip		= &mtk_msi_irq_chip,
+> > >> +	.handler	= handle_edge_irq,
+> > >> +	.handler_name	= "MSI",
+> > >>  };
+> > >>  
+> > >>  static int mtk_pcie_allocate_msi_domains(struct mtk_pcie_port *port)
+> > >>  {
+> > >> -	struct fwnode_handle *fwnode = of_node_to_fwnode(port->pcie->dev->of_node);
+> > >> +	struct device *dev = port->pcie->dev;
+> > >> +	struct fwnode_handle *fwnode = of_node_to_fwnode(dev->of_node);
+> > >> +	struct msi_domain_info *info;
+> > >>  
+> > >>  	mutex_init(&port->lock);
+> > >>  
+> > >> -	port->inner_domain = irq_domain_create_linear(fwnode, MTK_MSI_IRQS_NUM,
+> > >> -						      &msi_domain_ops, port);
+> > >> -	if (!port->inner_domain) {
+> > >> -		dev_err(port->pcie->dev, "failed to create IRQ domain\n");
+> > >> +	info = devm_kzalloc(dev, sizeof(*info), GFP_KERNEL);
+> > >> +	if (!info)
+> > >>  		return -ENOMEM;
+> > >> -	}
+> > >>  
+> > >> -	port->msi_domain = pci_msi_create_irq_domain(fwnode, &mtk_msi_domain_info,
+> > >> -						     port->inner_domain);
+> > >> +	memcpy(info, &mtk_msi_domain_info, sizeof(*info));
+> > >> +	info->chip_data = port;
+> > >> +
+> > > 
+> > > I'm not really like this memcpy of msi_domain_info, but I do not have a
+> > > better idea to prevent the mixed of mtk_pcie_port data.
+> > 
+> > So we're basically trading an indirection for another. What's the gain?
+> 
+> There is usually more than one PCIe port in each SoC, we use
+> mtk_pcie_port data to describe it, in previous version, we pass the port
+> data as inner domain's host_data. When remove the inner domain, we also
+> need to pass the port data and should prevent to mix with another port,
+> so I thank maybe we can make a copy for each port and set port data as
+> it's chip_data.
+> > 
+> > > 
+> > >> +	port->msi_domain = pci_msi_create_irq_domain(fwnode, info, NULL);
+> > >>  	if (!port->msi_domain) {
+> > >> -		dev_err(port->pcie->dev, "failed to create MSI domain\n");
+> > >> -		irq_domain_remove(port->inner_domain);
+> > >> +		dev_err(dev, "failed to create MSI domain\n");
+> > >>  		return -ENOMEM;
+> > >>  	}
+> > >>  
+> > >> @@ -541,8 +532,6 @@ static void mtk_pcie_irq_teardown(struct mtk_pcie *pcie)
+> > >>  		if (IS_ENABLED(CONFIG_PCI_MSI)) {
+> > >>  			if (port->msi_domain)
+> > >>  				irq_domain_remove(port->msi_domain);
+> > >> -			if (port->inner_domain)
+> > >> -				irq_domain_remove(port->inner_domain);
+> > >>  		}
+> > >>  
+> > >>  		irq_dispose_mapping(port->irq);
+> > >> @@ -619,12 +608,11 @@ static void mtk_pcie_intr_handler(struct irq_desc *desc)
+> > >>  
+> > >>  			while ((imsi_status = readl(port->base + PCIE_IMSI_STATUS))) {
+> > >>  				for_each_set_bit(bit, &imsi_status, MTK_MSI_IRQS_NUM) {
+> > >> -					virq = irq_find_mapping(port->inner_domain, bit);
+> > >> +					virq = irq_find_mapping(
+> > >> +							port->msi_domain, bit);
+> > >>  					generic_handle_irq(virq);
+> > >>  				}
+> > >>  			}
+> > >> -			/* Clear MSI interrupt status */
+> > >> -			writel(MSI_STATUS, port->base + PCIE_INT_STATUS);
+> > >>  		}
+> > > 
+> > > why change this irq status clear flow?
+> > 
+> > I think this is trying move everything to the irq_ack callback. But
+> > that's a change of semantics, and I'd like it explained. It certainly
+> > feels wrong.
+> Yes, I confused with each irq's ack callback, it doesn't need to be
+> changed.
+> 
+> Thanks.
+> > 
+> > Overall, this patch as it stands (without any real explanation) doesn't
+> > feel me with confidence. It introduces significant differences in the
+> > way we build PCI/MSI domains, and I'd like to understand why.
+> > 
+> > Thanks,
+> > 
+> > 	M.
+> 
 > 
 
 _______________________________________________
