@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 654801115A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 04:20:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1EB2A11168
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 04:20:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=5bRbhWHbGJd3gOWLCmcMf65kBV0jUf8SMV7rXczquls=; b=gpQ
-	noWJBqboD4ewBwAt5Zb3sbTeJKZQhy6I5/ZNR5g7D+9mS9ANmQyM0HG2Lo5xaaNPo4cHtPmdqkxVz
-	nrWLXOvb+Nx2LokzOuxTY5byuSRKXomrlx+OU8EjxpICQ+NJzTRuJLdHnP5zgQZNoYPbsgjUh6KK7
-	d32EhVMBjExi+n2Bk1O05Y+Xr3GqQiS79kQB6opVTcSTymuslhlykpFR9/463Pk/mogm14/nKdC4B
-	tpfcGsEzmEd/oITR9ZdZ82cRz5axc4+0AefPhTjSq8w/bzZCH2zVFtXUYp7WSMXW3UARqx+7xvLrj
-	bES21PUx1fqxdr/gazHiMdNH1DNpSbA==;
+	References:List-Owner; bh=ufl7qCgZMT8/oC6knGDItJJ8jAuu/H8GGwNTkX/oEMg=; b=Q00
+	txGcqy6NMoc8NQtoLBVtXD6EonNaQZLgyDlryOo6f4kwRtbPGPswrUR8Ed2kKlEH3RstB5dIXp6UT
+	Q8SYKicfS3S4ZIDgCK+r2ynMBpJfPCTabCAZD0/wI6Vh+NP8k7USBcnKdTClfOyauCCxHjyzh63Hr
+	ivAlFEGtCXBfOI8Fy8Cp/mvsosQyz9iEIOocI45bb1DORIOH+bQGdqLHZ9aju9W8ekK38PmPYuzUW
+	G3YuL2A91ORvW0JWQ7yiTEg9YmUYEQHbd8Etws3fWbC0VWb44G4XnMkte8dFwYAtwPl/8Vm47vILu
+	BXzG4jmJlWUQuTaHBEDhHwE9oFD3jsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hM1Ko-0007NO-3V; Thu, 02 May 2019 02:20:30 +0000
+	id 1hM1L8-0007pG-QT; Thu, 02 May 2019 02:20:50 +0000
 Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hM1Jd-0004te-Q1
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 02:19:48 +0000
+ id 1hM1Jq-0005Ao-I7
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 02:20:10 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=kwVSEmX+7xvH0oZqkLgASzSDaFzaBNv6TP0vPiT1Y8g=; b=Wb5CNEaEpR9v
- lLpyZa1vpc4V8fMaqpjEintFLvcfrJ3nymkDSv8qcxvd3FPj2LO6EDH3OuwYeSlq4Y7JKJFcm+k6n
- C6hKaLiiFnfY+gXSJkQHfkBbXfbg0doMbSyKlcc/ViFh/GmvRYOJJzJris2UmMSQmmeF+nF6n2jvk
- XZQgw=;
+ List-Archive; bh=1PItEW2u0htZ2Dr52BH6AmRKT6du/eMXVYsUd1FUuoY=; b=Fsv0WVHf7s/A
+ UkdR6WQPriRoSo64X227WZJIgjdSOIQ97Hk9Gye1hO+CA2qGfRoL6Zi//TUD3i965lLy/UnO+vMcl
+ ks5BonoAnHqwt5fohxQFaHTEUjpuwDAinDDqhG5SezskWvWwT70QZ3BgGmXnDgh4i4gx7D9+9dVNR
+ tE7Yg=;
 Received: from [211.55.52.15] (helo=finisterre.ee.mobilebroadband)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
  (envelope-from <broonie@sirena.org.uk>)
- id 1hM1JY-0005wf-RC; Thu, 02 May 2019 02:19:13 +0000
+ id 1hM1Jl-0005xV-R3; Thu, 02 May 2019 02:19:26 +0000
 Received: by finisterre.ee.mobilebroadband (Postfix, from userid 1000)
- id B70A2441D3E; Thu,  2 May 2019 03:19:09 +0100 (BST)
+ id 725C7441D3C; Thu,  2 May 2019 03:19:22 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
-To: Evan Green <evgreen@chromium.org>
-Subject: Applied "spi: pxa2xx: Add support for Intel Comet Lake" to the spi
+To: Flavio Suligoi <f.suligoi@asem.it>
+Subject: Applied "spi: pxa2xx: use a module softdep for dw_dmac" to the spi
  tree
-In-Reply-To: <20190416032743.180517-1-evgreen@chromium.org>
+In-Reply-To: <1554900696-28858-2-git-send-email-f.suligoi@asem.it>
 X-Patchwork-Hint: ignore
-Message-Id: <20190502021909.B70A2441D3E@finisterre.ee.mobilebroadband>
-Date: Thu,  2 May 2019 03:19:09 +0100 (BST)
+Message-Id: <20190502021922.725C7441D3C@finisterre.ee.mobilebroadband>
+Date: Thu,  2 May 2019 03:19:22 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_191918_615737_E4FD4F56 
-X-CRM114-Status: GOOD (  13.97  )
+X-CRM114-CacheID: sfid-20190501_191931_215098_E590BFD6 
+X-CRM114-Status: GOOD (  14.22  )
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.1 points)
@@ -75,12 +75,10 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rajat Jain <rajatja@chromium.org>, linux-kernel@vger.kernel.org,
- Haojian Zhuang <haojian.zhuang@gmail.com>, linux-spi@vger.kernel.org,
- Andy Shevchenko <andy.shevchenko@gmail.com>, Mark Brown <broonie@kernel.org>,
- Daniel Mack <daniel@zonque.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Robert Jarzmik <robert.jarzmik@free.fr>, linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org, Haojian Zhuang <haojian.zhuang@gmail.com>,
+ linux-spi@vger.kernel.org, Mark Brown <broonie@kernel.org>,
+ Daniel Mack <daniel@zonque.org>, Robert Jarzmik <robert.jarzmik@free.fr>,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -89,7 +87,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: pxa2xx: Add support for Intel Comet Lake
+   spi: pxa2xx: use a module softdep for dw_dmac
 
 has been applied to the spi tree at
 
@@ -114,36 +112,31 @@ to this mail.
 Thanks,
 Mark
 
-From 41a918026407be4ca2727cd0d6243fe6cdbfc4ed Mon Sep 17 00:00:00 2001
-From: Evan Green <evgreen@chromium.org>
-Date: Mon, 15 Apr 2019 20:27:43 -0700
-Subject: [PATCH] spi: pxa2xx: Add support for Intel Comet Lake
+From 51ebf6acb00fa6f965e600f848bee5bddddd2054 Mon Sep 17 00:00:00 2001
+From: Flavio Suligoi <f.suligoi@asem.it>
+Date: Wed, 10 Apr 2019 14:51:36 +0200
+Subject: [PATCH] spi: pxa2xx: use a module softdep for dw_dmac
 
-Add PCI IDs for SPI on Comet Lake.
+With dw_dmac, sometimes the request of a DMA channel fails because
+the DMA driver is not ready, so an explicit dependency request
+is necessary.
 
-Signed-off-by: Evan Green <evgreen@chromium.org>
-Acked-by: Andy Shevchenko <andy.shevchenko@gmail.com>
-Reviewed-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
+Signed-off-by: Flavio Suligoi <f.suligoi@asem.it>
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/spi-pxa2xx.c | 4 ++++
- 1 file changed, 4 insertions(+)
+ drivers/spi/spi-pxa2xx.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/drivers/spi/spi-pxa2xx.c b/drivers/spi/spi-pxa2xx.c
-index 3e6811ef37e8..f5546eeaebe4 100644
+index f7068ccfe7d2..3e6811ef37e8 100644
 --- a/drivers/spi/spi-pxa2xx.c
 +++ b/drivers/spi/spi-pxa2xx.c
-@@ -1454,6 +1454,10 @@ static const struct pci_device_id pxa2xx_spi_pci_compound_match[] = {
- 	{ PCI_VDEVICE(INTEL, 0xa32a), LPSS_CNL_SSP },
- 	{ PCI_VDEVICE(INTEL, 0xa32b), LPSS_CNL_SSP },
- 	{ PCI_VDEVICE(INTEL, 0xa37b), LPSS_CNL_SSP },
-+	/* CML-LP */
-+	{ PCI_VDEVICE(INTEL, 0x02aa), LPSS_CNL_SSP },
-+	{ PCI_VDEVICE(INTEL, 0x02ab), LPSS_CNL_SSP },
-+	{ PCI_VDEVICE(INTEL, 0x02fb), LPSS_CNL_SSP },
- 	{ },
- };
- 
+@@ -1957,3 +1957,5 @@ static void __exit pxa2xx_spi_exit(void)
+ 	platform_driver_unregister(&driver);
+ }
+ module_exit(pxa2xx_spi_exit);
++
++MODULE_SOFTDEP("pre: dw_dmac");
 -- 
 2.20.1
 
