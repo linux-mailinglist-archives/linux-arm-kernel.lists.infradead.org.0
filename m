@@ -2,88 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCC5611AD9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 16:09:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB08311ADF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 16:09:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H4+GzK2Mc8Prs3wJqvClWaulgX/OCFEjPGDsfpPjhtU=; b=tm1dXErQbasKqu
-	jWiV6/hlnnMuink5vIzJMJ+YGB+J6ElOr3isipGR+q3SW8+2JoNLmnYPcXZsoujJynxMGmyBh2itW
-	eXidbB+cmhjJiH2wT5d265f4FdLcl3Ch9Ozr6xklBiKfsF/tOuagYN8SbtFbmiipZUNJ92jVig4hm
-	ANa/GTrBxj9SXNCat1nmsPjWHH+bJyYkl+qGzMzsi/z8TXJbEHZ3XHERgYlUR7GezDot3AUi4fuGt
-	qqb/g+e51XkZF6l8oMXWINAueLGuVNRVD6Cn2kEKsH2eWzi3PAlTGc9owXHBoBCl3d9EMEcJ/DXnq
-	a+XwrTLeNfITh3S+622w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=pKwYyzaJHHUxn1Xg9EUhrUHTbjHls+7svMrSTJRdvHI=; b=gFSSq3ZBQQyhBg
+	0WM2Boqo6FeNv3ZLcbmKkmPcI3qziKr3U8A3dIWV+MpRcN80ldNjOTRiv4hoUoUOr7IoMXRkYLvXO
+	3FAh70RSnvHdWuQDwRJshcJ8UNTre7oRprTOpYZo//hEHvF895SRKcp5EqdHxwYharpuhG9dS83NV
+	eqFW6VFxyJ/6yUU2fwwYh1B8GjVPvhtu5178pfAAIaKXpd2BrRoN4uaIE+NRK1/N8mN5KfwfV5WLh
+	ylv+H8Niip36o0gGQMp/J0k/rIHjz1eqLgQdF1ZtP0TOA6+sfsOc94ie7w17IAHDXy1KCfas2oh13
+	wwJFdKD/D2PN5SNpvtgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMCOW-0007RZ-MA; Thu, 02 May 2019 14:09:04 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hMCOq-0007n9-JI; Thu, 02 May 2019 14:09:24 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMCOP-0007Qt-8q
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 14:08:58 +0000
-Received: by mail-wr1-x444.google.com with SMTP id o4so3596640wra.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 02 May 2019 07:08:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=kygBrnbyyUIh06s/hyc0OhhB1Y6TkH3Yrp9X9NpJCW4=;
- b=b7WOqPHHITgk/LEMlqnA8E9YrsHCJOmgZ+bsAwZgNGbQwwnzFpfWOfWzb6fYGwFwz6
- ANSPvVz5X9C3ofDYbAhPofd1jRxllj+9jLbsOJpKXMdisvQia0fP8aeNLf1HR1YLh9kj
- wECKNy1oMRnot/P+KKRnTYxKCVwdN9DJftxlurba3no7w2nAcBJsNVM9Y1FaEm4OImj0
- 7N+/98ptMPw9pxFdzPFvKSYc1wPk7V/DVo7dKn/dQGmv5AysjwOpQ1n5b925CL0BJ74m
- 4uooqhaEbU2FB0U8+AzFkMrKO0R71Y5Z+CXrN9beLwmxmjABopEzfFLC8oxIp9DB3bZi
- qO5w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=kygBrnbyyUIh06s/hyc0OhhB1Y6TkH3Yrp9X9NpJCW4=;
- b=DSqDngdhZfd3hhy/9PwnuC4w5ulQlQJ/u1n7ollYJu2yMIL2EXfyyFjRMG21mJpsv0
- baQjuPuimlSP9uI1oXhRfHqrF0nSVdp9WzvCGof2tFYiC55sGbguRuTMbSy9khHS8ETA
- DpyIQnQV+fwVuLFlQ4tCo/evCzxyzL8Is3xw2Xz/T6ZcKYVpM7aRh5W4qL4Lni8XjVN7
- AIaDSV3LoPaAus35zwT3QuX3IYraObB46Er4Cr/E/ZkbXMgws0TjvYz/vXeZ2OVNxKcx
- 0mkifvLvNlQBiSYVPtfFL+irQ99DuKv8YfB1e1JVeO+BGwbk2Fqm3kaCi0edRo1yyfbw
- jShw==
-X-Gm-Message-State: APjAAAXYBLQQ+dM3lJoITrWfSC0LXmhb8sT8tNfwFJsD3INI+SgNRwq2
- rHuejAfoNUISY2XmRqE8YO8=
-X-Google-Smtp-Source: APXvYqwyGwkkGawbX2FelP9+u3J6EFtdwnuGMnfCrSFayOUrbY46hGOSr5ZE3x1bWHN6HfAkyzFnuQ==
-X-Received: by 2002:adf:e309:: with SMTP id b9mr2977875wrj.165.1556806134209; 
- Thu, 02 May 2019 07:08:54 -0700 (PDT)
-Received: from [192.168.42.184] (cst-prg-80-10.cust.vodafone.cz.
- [46.135.80.10])
- by smtp.gmail.com with ESMTPSA id m22sm4711438wrb.15.2019.05.02.07.08.52
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Thu, 02 May 2019 07:08:53 -0700 (PDT)
-Subject: Re: [PATCH] ARM: dts: r8a7792: blanche: Add IIC3 and DA9063 PMIC node
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-References: <20190304195958.8383-1-marek.vasut@gmail.com>
- <CAMuHMdV1K+0yCbdDD37oeOCQRs7n2-06SQi=6pX_NY0cVcPcWw@mail.gmail.com>
-From: Marek Vasut <marek.vasut@gmail.com>
-Openpgp: preference=signencrypt
-Message-ID: <d7455e6c-f2b7-3bfc-29a1-78ee632c050e@gmail.com>
-Date: Thu, 2 May 2019 16:07:00 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hMCOR-0007Qs-ML
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 14:09:02 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x42Dwv1S002402; Thu, 2 May 2019 16:08:50 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=FVkWMnd5QCZrrAZpQ6NJ9/fjWM/X82CadAEL49V6JPA=;
+ b=wZBkWjE5k8IvrxC1KUp/YkYcWWIIqHvhFnML8yz3oiWf3SBqTXDTiNcd9Jcbzqdl7009
+ HCH1HYj1BtH8/JvK9PnUvWcH8L8/0SXlHAQJ1yM2OE+6mTrTxk2h+m3HJVrCQRUZywJT
+ gFEli0QAc0QiwD17pDBLZV03ai98fMj/GC7kzG1wObEusnqNqN1/l/xhawdW49SBZmOc
+ UILLM31en0Vm8iMhHQdr4wRhoQEsmNkTT4FHsk2V1Y05Awc+JQbBKwLszqvsTXU/Qam0
+ z82vZYyqjB0rbye3La8XPRQR7C9LzUukDUX/5qD+014i9ZtXx34w+QdphgOUUM6cD75x lg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2s6xgcry0q-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Thu, 02 May 2019 16:08:50 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id AEDE641;
+ Thu,  2 May 2019 14:08:48 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas23.st.com [10.75.90.46])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 787462730;
+ Thu,  2 May 2019 14:08:48 +0000 (GMT)
+Received: from SAFEX1HUBCAS24.st.com (10.75.90.95) by SAFEX1HUBCAS23.st.com
+ (10.75.90.46) with Microsoft SMTP Server (TLS) id 14.3.439.0; Thu, 2 May 2019
+ 16:08:48 +0200
+Received: from lmecxl0923.lme.st.com (10.48.0.237) by webmail-ga.st.com
+ (10.75.90.48) with Microsoft SMTP Server (TLS) id 14.3.439.0; Thu, 2 May 2019
+ 16:08:47 +0200
+From: Ludovic Barre <ludovic.Barre@st.com>
+To: Wim Van Sebroeck <wim@linux-watchdog.org>, Guenter Roeck
+ <linux@roeck-us.net>, Rob Herring <robh+dt@kernel.org>
+Subject: [PATCH V2 0/3] watchdog: stm32: add dynamic prescaler support
+Date: Thu, 2 May 2019 16:08:43 +0200
+Message-ID: <1556806126-15890-1-git-send-email-ludovic.Barre@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-In-Reply-To: <CAMuHMdV1K+0yCbdDD37oeOCQRs7n2-06SQi=6pX_NY0cVcPcWw@mail.gmail.com>
-Content-Language: en-US
+X-Originating-IP: [10.48.0.237]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-05-02_08:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_070857_313571_7C68F296 
-X-CRM114-Status: GOOD (  16.74  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190502_070900_451954_E3B8B0C6 
+X-CRM114-Status: GOOD (  10.15  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marek.vasut[at]gmail.com)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -103,52 +92,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Simon Horman <horms+renesas@verge.net.au>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Marek Vasut <marek.vasut+renesas@gmail.com>
+Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
+ linux-kernel@vger.kernel.org, Ludovic Barre <ludovic.barre@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ linux-watchdog@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 3/19/19 11:26 AM, Geert Uytterhoeven wrote:
-> Hi Marek,
-> 
-> On Mon, Mar 4, 2019 at 9:00 PM <marek.vasut@gmail.com> wrote:
->> From: Marek Vasut <marek.vasut+renesas@gmail.com>
->>
->> Add IIC3 node to R8A7792 SoC device tree and a DA9063 PMIC node
->> to V2H Blanche board device tree.
->>
->> Signed-off-by: Marek Vasut <marek.vasut+renesas@gmail.com>
-> 
-> Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> 
->> --- a/arch/arm/boot/dts/r8a7792-blanche.dts
->> +++ b/arch/arm/boot/dts/r8a7792-blanche.dts
->> @@ -308,6 +308,26 @@
->>         };
->>  };
->>
->> +&iic3 {
->> +       status = "okay";
->> +
->> +       pmic@58 {
->> +               compatible = "dlg,da9063";
->> +               reg = <0x58>;
->> +               interrupt-parent = <&irqc>;
->> +               interrupts = <2 IRQ_TYPE_LEVEL_LOW>;
-> 
-> I've just realized none of the R-Car Gen2 boards configure pinctrl for the
-> IRQC2 line (intc_irq2/intc), so they all rely on the boot loader doing that.
+From: Ludovic Barre <ludovic.barre@st.com>
 
-I just sent out a patch
+This patch series updates stm32 watchdog driver on:
+-use devm_watchdog_register_device
+-Guenter's recommendation about return value:
+set_timeout return 0 on succes, -EINVAL for "parameter out of range"
+and -EIO for "could not write value to the watchdog".
+Set of reload and prescaler registers are stay in start function,
+because the stm32 watchdog must be enabled to write these registers.
+-adds dynamic prescaler support
+
+Ludovic Barre (3):
+  watchdog: stm32: update to devm_watchdog_register_device
+  watchdog: stm32: update return values recommended by watchdog kernel
+    api
+  watchdog: stm32: add dynamic prescaler support
+
+ drivers/watchdog/stm32_iwdg.c | 96 ++++++++++++++++++++++++-------------------
+ 1 file changed, 54 insertions(+), 42 deletions(-)
 
 -- 
-Best regards,
-Marek Vasut
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
