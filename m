@@ -2,65 +2,109 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC62A11D42
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 17:32:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1658312045
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 18:32:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ViSH6afNjFv1Ms/FEpleOiyH1Sm4ZFpCy6TCBq24iSM=; b=dialKfVAUKIYyf
-	H5pQG+KOdx96PGKQvGHBorhF6bfm/HTxwLflFG1yLQQy0OvVWzQ6z+W6Laq7qsPJyM2u6L1yvyLr9
-	3nyxi0PLd5Sd/rCktLNUpv1MuNx1a3K3R1Xf3gukDfzEbcfReYmRTuaIxPDx/CKtg23GnCW4/yOXS
-	p/OkXzC+bqKkfZRivXca6Ha1UAWQFHiFUA6mDNhgv1Sh5xPMsdRmOoV/6kTr8gqr+kr0IEm7anMUM
-	nNisFZ0I0kOu16moyioV8Wfl2030VW9N1Lc7tLNErbM3SLTK/voV1/qLL/aS3oSNFTgP4akqgM6/r
-	c5NBUfA1b3G2um2rRiqA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=FI2z6e8yoGGsQ5lHANO7JFh7cIhKOmjJpglBE3qEAf8=; b=r4y
+	QlqhTMjyqEa5oGKgWBebmh1ljpTg8gaeK1ZxGXkrU7RCrx64NzCClhu4+6qOlAcN1Axl8plV8qmCG
+	C0fkhGAzzyjMbhtvDS0GRR6bSW14998zLGn8XSJ6fGMbtgc8dOP5Jg9QaOGTMxlczVGvE/IThVZOd
+	UfgZX0cVctVSTzms1nWBmN2EojKSsb2nuD58slaE0kAobQDM4LHc6f5piULrP7S3fsP79h9gcZIW7
+	jzTfapWsX5Ago08zCLPKV7BIgggVPI+ga1TyftNOy6T2N3aP2gRLzFbmpOTZN4B0QDqQKBrONBw54
+	c10zreII7hXC+fIyNHxmaL8pR3TPP5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMDhT-0006VQ-Ek; Thu, 02 May 2019 15:32:43 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hMEcw-0003bN-U1; Thu, 02 May 2019 16:32:06 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMDhI-0006UV-Nr
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 15:32:38 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C812520675;
- Thu,  2 May 2019 15:32:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1556811152;
- bh=aFnUXFlRaYzH6NCPbxdKrZuk1ZJSOgHvyS+LtCDVygc=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=XexrajBfztBxSi5wvfePgWpoQy01q7PUiC4OrMfA+PPVXJnhiSUq5i98D1EzgSnQx
- +3kNbhR5c8AB9M1/u/Md1fWvIBC6/49QeIEK7SArDonzA+RelJ4tSSJ6j1mZrDjSfl
- lRbtUSkRsXOsMZc2QjskuLI9CE16X80u0XXK51aE=
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 5.0 094/101] perf cs-etm: Add missing case value
-Date: Thu,  2 May 2019 17:21:36 +0200
-Message-Id: <20190502143346.174914362@linuxfoundation.org>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190502143339.434882399@linuxfoundation.org>
-References: <20190502143339.434882399@linuxfoundation.org>
-User-Agent: quilt/0.66
-MIME-Version: 1.0
+ id 1hMEc8-0002PU-IS
+ for linux-arm-kernel@bombadil.infradead.org; Thu, 02 May 2019 16:31:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Message-Id:Date:Subject:Cc:To:From:
+ Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=t+IPLYZcXXRjpW7mZzEwC5UWDJDXximLY+G0RzeC42o=; b=hLtsozlyO4wDiJvwwcOF1FUIh
+ UntEgN/EXZRNcKm53ALYCXVJUUefh/Bhax9E2wFyS/e1isxLAuu3/V+VNVuDmFJcYSwfinTIaubZg
+ veoNjfYnw4kkPoaf2Y21JLBR/TMVBSPHbcWYsMtmOQTqzVggb94g8tN0FusOrK/4aQe5TD4TWSgu8
+ Fb3GyUwGTmi0naTNuH/G+vzJBt8ZpsO8TrIkpn9twvItklAz82r1/+hIPw8gVOQP9E60IMOjZ25xf
+ 3gOgXPosRX17o+CCaNzJ3MdfKMjy6135GmdCCDQP00dJoGH4012mcG1Ww6PpSiCh5UGNatJc1Zd0S
+ qVFwdShSQ==;
+Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
+ helo=mx0a-001b2d01.pphosted.com)
+ by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hMDen-0000EM-87
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 15:29:58 +0000
+Received: from pps.filterd (m0098420.ppops.net [127.0.0.1])
+ by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x42FTrQp022693
+ for <linux-arm-kernel@lists.infradead.org>; Thu, 2 May 2019 11:29:56 -0400
+Received: from e06smtp02.uk.ibm.com (e06smtp02.uk.ibm.com [195.75.94.98])
+ by mx0b-001b2d01.pphosted.com with ESMTP id 2s82n3hq90-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-arm-kernel@lists.infradead.org>; Thu, 02 May 2019 11:29:55 -0400
+Received: from localhost
+ by e06smtp02.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-arm-kernel@lists.infradead.org> from <rppt@linux.ibm.com>;
+ Thu, 2 May 2019 16:28:58 +0100
+Received: from b06cxnps4076.portsmouth.uk.ibm.com (9.149.109.198)
+ by e06smtp02.uk.ibm.com (192.168.101.132) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Thu, 2 May 2019 16:28:50 +0100
+Received: from d06av23.portsmouth.uk.ibm.com (d06av23.portsmouth.uk.ibm.com
+ [9.149.105.59])
+ by b06cxnps4076.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x42FSnXd45023486
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 2 May 2019 15:28:49 GMT
+Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 830D5A4051;
+ Thu,  2 May 2019 15:28:49 +0000 (GMT)
+Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 12855A404D;
+ Thu,  2 May 2019 15:28:45 +0000 (GMT)
+Received: from rapoport-lnx (unknown [9.148.205.209])
+ by d06av23.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
+ Thu,  2 May 2019 15:28:44 +0000 (GMT)
+Received: by rapoport-lnx (sSMTP sendmail emulation);
+ Thu, 02 May 2019 18:28:43 +0300
+From: Mike Rapoport <rppt@linux.ibm.com>
+To: Andrew Morton <akpm@linux-foundation.org>
+Subject: [PATCH 00/15] introduce generic pte_{alloc,free}_one[_kernel]
+Date: Thu,  2 May 2019 18:28:27 +0300
+X-Mailer: git-send-email 2.7.4
+X-TM-AS-GCONF: 00
+x-cbid: 19050215-0008-0000-0000-000002E29914
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 19050215-0009-0000-0000-0000224F082B
+Message-Id: <1556810922-20248-1-git-send-email-rppt@linux.ibm.com>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-05-02_08:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=1
+ priorityscore=1501
+ malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=1
+ clxscore=1015 lowpriorityscore=0 mlxscore=1 impostorscore=0
+ mlxlogscore=199 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1810050000 definitions=main-1905020103
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_083236_673381_E375DB6A 
-X-CRM114-Status: GOOD (  11.39  )
-X-Spam-Score: -5.0 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+X-CRM114-CacheID: sfid-20190502_112957_349650_4AC1FC39 
+X-CRM114-Status: GOOD (  24.21  )
+X-Spam-Score: -0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.158.5 listed in list.dnswl.org]
+ 0.7 KHOP_DYNAMIC           Relay looks like a dynamic address
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -72,68 +116,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Sasha Levin \(Microsoft\)" <sashal@kernel.org>,
- Arnaldo Carvalho de Melo <acme@redhat.com>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulouse <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, stable@vger.kernel.org,
- Solomon Tan <solomonbobstoner@gmail.com>,
- Peter Zijlstra <peterz@infradead.org>, Namhyung Kim <namhyung@kernel.org>,
- Robert Walker <robert.walker@arm.com>, Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Michal Hocko <mhocko@suse.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Palmer Dabbelt <palmer@sifive.com>, linux-mips@vger.kernel.org,
+ Guo Ren <guoren@kernel.org>, linux-hexagon@vger.kernel.org,
+ linux-riscv@lists.infradead.org, linux-arch@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, Helge Deller <deller@gmx.de>,
+ x86@kernel.org, Russell King <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>, Mike Rapoport <rppt@linux.ibm.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>, Matt Turner <mattst88@gmail.com>,
+ Sam Creasey <sammy@sammy.net>, Arnd Bergmann <arnd@arndb.de>,
+ linux-um@lists.infradead.org, Richard Weinberger <richard@nod.at>,
+ linux-m68k@lists.linux-m68k.org, Greentime Hu <green.hu@gmail.com>,
+ nios2-dev@lists.rocketboards.org, Guan Xuetao <gxt@pku.edu.cn>,
+ linux-arm-kernel@lists.infradead.org, linux-parisc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Richard Kuo <rkuo@codeaurora.org>,
+ Paul Burton <paul.burton@mips.com>, linux-alpha@vger.kernel.org,
+ Ley Foon Tan <lftan@altera.com>, linuxppc-dev@lists.ozlabs.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-WyBVcHN0cmVhbSBjb21taXQgYzhmYTdhODA3ZjNjNWY5NDZiZDkyMDc2ZmJhZjc4MjZlZGI2NTBk
-YyBdCgpUaGUgZm9sbG93aW5nIGVycm9yIHdhcyB0aHJvd24gd2hlbiBjb21waWxpbmcgYHRvb2xz
-L3BlcmZgIHVzaW5nIE9wZW5DU0QKdjAuMTEuMS4gVGhpcyBwYXRjaCBmaXhlcyBzYWlkIGVycm9y
-LgoKICAgIENDICAgICAgIHV0aWwvaW50ZWwtcHQtZGVjb2Rlci9pbnRlbC1wdC1sb2cubwogICAg
-Q0MgICAgICAgdXRpbC9jcy1ldG0tZGVjb2Rlci9jcy1ldG0tZGVjb2Rlci5vCiAgdXRpbC9jcy1l
-dG0tZGVjb2Rlci9jcy1ldG0tZGVjb2Rlci5jOiBJbiBmdW5jdGlvbgogIOKAmGNzX2V0bV9kZWNv
-ZGVyX19idWZmZXJfcmFuZ2XigJk6CiAgdXRpbC9jcy1ldG0tZGVjb2Rlci9jcy1ldG0tZGVjb2Rl
-ci5jOjM3MDoyOiBlcnJvcjogZW51bWVyYXRpb24gdmFsdWUKICDigJhPQ1NEX0lOU1RSX1dGSV9X
-RkXigJkgbm90IGhhbmRsZWQgaW4gc3dpdGNoIFstV2Vycm9yPXN3aXRjaC1lbnVtXQogICAgc3dp
-dGNoIChlbGVtLT5sYXN0X2lfdHlwZSkgewogICAgXn5+fn5+CiAgICBDQyAgICAgICB1dGlsL2lu
-dGVsLXB0LWRlY29kZXIvaW50ZWwtcHQtZGVjb2Rlci5vCiAgY2MxOiBhbGwgd2FybmluZ3MgYmVp
-bmcgdHJlYXRlZCBhcyBlcnJvcnMKCkJlY2F1c2UgYE9DU0RfSU5TVFJfV0ZJX1dGRWAgY2FzZSB3
-YXMgYWRkZWQgb25seSBpbiB2MC4xMS4wLCB0aGUgbWluaW11bQpyZXF1aXJlZCBPcGVuQ1NEIGxp
-YnJhcnkgdmVyc2lvbiBmb3IgdGhpcyBwYXRjaCBpcyBubyBsb25nZXIgdjAuMTAuMC4KClNpZ25l
-ZC1vZmYtYnk6IFNvbG9tb24gVGFuIDxzb2xvbW9uYm9ic3RvbmVyQGdtYWlsLmNvbT4KQ2M6IEFs
-ZXhhbmRlciBTaGlzaGtpbiA8YWxleGFuZGVyLnNoaXNoa2luQGxpbnV4LmludGVsLmNvbT4KQ2M6
-IEppcmkgT2xzYSA8am9sc2FAcmVkaGF0LmNvbT4KQ2M6IE1hdGhpZXUgUG9pcmllciA8bWF0aGll
-dS5wb2lyaWVyQGxpbmFyby5vcmc+CkNjOiBOYW1oeXVuZyBLaW0gPG5hbWh5dW5nQGtlcm5lbC5v
-cmc+CkNjOiBQZXRlciBaaWpsc3RyYSA8cGV0ZXJ6QGluZnJhZGVhZC5vcmc+CkNjOiBSb2JlcnQg
-V2Fsa2VyIDxyb2JlcnQud2Fsa2VyQGFybS5jb20+CkNjOiBTdXp1a2kgSyBQb3Vsb3VzZSA8c3V6
-dWtpLnBvdWxvc2VAYXJtLmNvbT4KQ2M6IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwpMaW5rOiBodHRwOi8vbGttbC5rZXJuZWwub3JnL3IvMjAxOTAzMjIwNTIyNTUuR0E0ODA5
-QHctT3B0aVBsZXgtNzA1MApTaWduZWQtb2ZmLWJ5OiBBcm5hbGRvIENhcnZhbGhvIGRlIE1lbG8g
-PGFjbWVAcmVkaGF0LmNvbT4KU2lnbmVkLW9mZi1ieTogU2FzaGEgTGV2aW4gKE1pY3Jvc29mdCkg
-PHNhc2hhbEBrZXJuZWwub3JnPgotLS0KIHRvb2xzL2J1aWxkL2ZlYXR1cmUvdGVzdC1saWJvcGVu
-Y3NkLmMgICAgICAgICAgIHwgNCArKy0tCiB0b29scy9wZXJmL3V0aWwvY3MtZXRtLWRlY29kZXIv
-Y3MtZXRtLWRlY29kZXIuYyB8IDEgKwogMiBmaWxlcyBjaGFuZ2VkLCAzIGluc2VydGlvbnMoKyks
-IDIgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvdG9vbHMvYnVpbGQvZmVhdHVyZS90ZXN0LWxp
-Ym9wZW5jc2QuYyBiL3Rvb2xzL2J1aWxkL2ZlYXR1cmUvdGVzdC1saWJvcGVuY3NkLmMKaW5kZXgg
-ZDY4ZWI0ZmI0MGNjLi4yYjBlMDJjMzg4NzAgMTAwNjQ0Ci0tLSBhL3Rvb2xzL2J1aWxkL2ZlYXR1
-cmUvdGVzdC1saWJvcGVuY3NkLmMKKysrIGIvdG9vbHMvYnVpbGQvZmVhdHVyZS90ZXN0LWxpYm9w
-ZW5jc2QuYwpAQCAtNCw5ICs0LDkgQEAKIC8qCiAgKiBDaGVjayBPcGVuQ1NEIGxpYnJhcnkgdmVy
-c2lvbiBpcyBzdWZmaWNpZW50IHRvIHByb3ZpZGUgcmVxdWlyZWQgZmVhdHVyZXMKICAqLwotI2Rl
-ZmluZSBPQ1NEX01JTl9WRVIgKCgwIDw8IDE2KSB8ICgxMCA8PCA4KSB8ICgwKSkKKyNkZWZpbmUg
-T0NTRF9NSU5fVkVSICgoMCA8PCAxNikgfCAoMTEgPDwgOCkgfCAoMCkpCiAjaWYgIWRlZmluZWQo
-T0NTRF9WRVJfTlVNKSB8fCAoT0NTRF9WRVJfTlVNIDwgT0NTRF9NSU5fVkVSKQotI2Vycm9yICJP
-cGVuQ1NEID49IDAuMTAuMCBpcyByZXF1aXJlZCIKKyNlcnJvciAiT3BlbkNTRCA+PSAwLjExLjAg
-aXMgcmVxdWlyZWQiCiAjZW5kaWYKIAogaW50IG1haW4odm9pZCkKZGlmZiAtLWdpdCBhL3Rvb2xz
-L3BlcmYvdXRpbC9jcy1ldG0tZGVjb2Rlci9jcy1ldG0tZGVjb2Rlci5jIGIvdG9vbHMvcGVyZi91
-dGlsL2NzLWV0bS1kZWNvZGVyL2NzLWV0bS1kZWNvZGVyLmMKaW5kZXggOGMxNTU1NzVjNmM1Li4y
-YThiZjZiNDVhMzAgMTAwNjQ0Ci0tLSBhL3Rvb2xzL3BlcmYvdXRpbC9jcy1ldG0tZGVjb2Rlci9j
-cy1ldG0tZGVjb2Rlci5jCisrKyBiL3Rvb2xzL3BlcmYvdXRpbC9jcy1ldG0tZGVjb2Rlci9jcy1l
-dG0tZGVjb2Rlci5jCkBAIC0zNzQsNiArMzc0LDcgQEAgY3NfZXRtX2RlY29kZXJfX2J1ZmZlcl9y
-YW5nZShzdHJ1Y3QgY3NfZXRtX2RlY29kZXIgKmRlY29kZXIsCiAJCWJyZWFrOwogCWNhc2UgT0NT
-RF9JTlNUUl9JU0I6CiAJY2FzZSBPQ1NEX0lOU1RSX0RTQl9ETUI6CisJY2FzZSBPQ1NEX0lOU1RS
-X1dGSV9XRkU6CiAJY2FzZSBPQ1NEX0lOU1RSX09USEVSOgogCWRlZmF1bHQ6CiAJCXBhY2tldC0+
-bGFzdF9pbnN0cl90YWtlbl9icmFuY2ggPSBmYWxzZTsKLS0gCjIuMTkuMQoKCgoKX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBt
-YWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi,
+
+I've tried to trim down the recipients list, but it's still quite long, so
+sorry for the spam.
+
+Many architectures have similar, if not identical implementation of
+pte_alloc_one_kernel(), pte_alloc_one(), pte_free_kernel() and pte_free().
+
+A while ago Anshuman suggested to introduce a common definition of
+GFP_PGTABLE and during the discussion it was suggested to rather
+consolidate the allocators.
+
+These patches introduce generic version of PTE allocation and free and
+enable their use on several architectures.
+
+The conversion introduces some changes for some of the architectures.
+Here's the executive summary and the details are described at each patch.
+
+* Most architectures do not set __GFP_ACCOUNT for the user page tables.
+Switch to the generic functions is "spreading that goodness to all other
+architectures"
+* arm, arm64 and unicore32 used to check if the pte is not NULL before
+freeing its memory in pte_free_kernel(). It's dropped during the
+conversion as it seems superfluous.
+* x86 used to BUG_ON() is pte was not page aligned duirng
+pte_free_kernel(), the generic version simply frees the memory without any
+checks.
+
+This set only performs the straightforward conversion, the architectures
+with different logic in pte_alloc_one() and pte_alloc_one_kernel() are not
+touched, as well as architectures that have custom page table allocators.
+
+[1] https://lore.kernel.org/lkml/1547619692-7946-1-git-send-email-anshuman.khandual@arm.com
+
+ asm-generic, x86: introduce generic pte_{alloc,free}_one[_kernel]
+
+Mike Rapoport (15):
+  asm-generic, x86: introduce generic pte_{alloc,free}_one[_kernel]
+  alpha: switch to generic version of pte allocation
+  arm: switch to generic version of pte allocation
+  arm64: switch to generic version of pte allocation
+  csky: switch to generic version of pte allocation
+  hexagon: switch to generic version of pte allocation
+  m68k: sun3: switch to generic version of pte allocation
+  mips: switch to generic version of pte allocation
+  nds32: switch to generic version of pte allocation
+  nios2: switch to generic version of pte allocation
+  parisc: switch to generic version of pte allocation
+  powerpc/nohash/64: switch to generic version of pte allocation
+  riscv: switch to generic version of pte allocation
+  um: switch to generic version of pte allocation
+  unicore32: switch to generic version of pte allocation
+
+ arch/alpha/include/asm/pgalloc.h             |  40 +---------
+ arch/arm/include/asm/pgalloc.h               |  41 ++++------
+ arch/arm/mm/mmu.c                            |   2 +-
+ arch/arm64/include/asm/pgalloc.h             |  43 +----------
+ arch/arm64/mm/mmu.c                          |   2 +-
+ arch/arm64/mm/pgd.c                          |   4 +-
+ arch/csky/include/asm/pgalloc.h              |  30 +-------
+ arch/hexagon/include/asm/pgalloc.h           |  34 +--------
+ arch/m68k/include/asm/sun3_pgalloc.h         |  41 +---------
+ arch/mips/include/asm/pgalloc.h              |  33 +--------
+ arch/nds32/include/asm/pgalloc.h             |  31 +-------
+ arch/nios2/include/asm/pgalloc.h             |  37 +--------
+ arch/parisc/include/asm/pgalloc.h            |  33 +--------
+ arch/powerpc/include/asm/nohash/64/pgalloc.h |  35 +--------
+ arch/riscv/include/asm/pgalloc.h             |  29 +-------
+ arch/um/include/asm/pgalloc.h                |  16 +---
+ arch/um/kernel/mem.c                         |  22 ------
+ arch/unicore32/include/asm/pgalloc.h         |  36 ++-------
+ arch/x86/include/asm/pgalloc.h               |  19 +----
+ arch/x86/mm/pgtable.c                        |  33 +++------
+ include/asm-generic/pgalloc.h                | 107 ++++++++++++++++++++++++++-
+ virt/kvm/arm/mmu.c                           |   2 +-
+ 22 files changed, 171 insertions(+), 499 deletions(-)
+
+-- 
+2.7.4
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
