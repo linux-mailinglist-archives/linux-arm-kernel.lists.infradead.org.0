@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 788641112E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 04:19:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA78011138
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 04:19:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=L9Ndp0isgvieL5aS2M/hoUp6JJVTG16JdNj43Vy2Wfc=; b=o/I
-	z4mxO/0RUFq1pSGm2XPL4L9ITetUh96NgPQk/WyU2WOlnEKwiD783X31u+TYFiVaYzvjfoNtBwJJs
-	37n/x9Uj5odZ3PKDQnrBhvHpm/kOX4WCq/gVeOG7CWjZ0HVHmSAhJObapi540bBcTfTZ21ELrIGuS
-	5EU5r5Nj1Q4gWtmeTyYRV6ansV6jNFa50bXXCaEfRvmNM2DpKEHeRheVEfjM1IapaUx5Aw3s9unGb
-	pZiyDokOoZBf0hNunR8tn88qNZpjlyoaNKNmWm7dRLaXR4oKPhtRGKmZP3heT6Y62kND9Iiof6GXp
-	sPQTXyFH47ElP4rcpiTGEUjxV//1pSA==;
+	References:List-Owner; bh=rwyTH8580CfJZICnHpH2z0HyssHajPkieg9vv2x+Kuo=; b=DKl
+	PY9biwsPJ3y5u2YUu+jAoxgpjSQwthNxZ6jDzVUh2m79SCoAhSIMqDGTkfoy3EsJgghNX7+pfZJji
+	V+kJ/8VHw2baX+Rf3he9vw8rPnAB8drO4UNUqHnGNBCPiUzPiqcscLdytJdSLsZHMBFg8+OlZ2BOd
+	se0ikfjoiVTMj8qroKAW2AVI9chpJMW6O9unFwzzY7HD7nt/YmRq7MSWOJCiCc2KbDZT4d0QKH+VT
+	LyUfhv3zkFDwaghqvBqmIkt/kdiisPaVJLrMXtYy/6iFv60vTU0ILdrJl4GoJVs8Q2knrk2tkDHaC
+	V/4qBKCLz4zNgJomhFF/88gBznYoczA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hM1JX-0004YZ-2V; Thu, 02 May 2019 02:19:11 +0000
+	id 1hM1Js-00050v-0g; Thu, 02 May 2019 02:19:32 +0000
 Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hM1J6-00049i-Uz
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 02:18:46 +0000
+ id 1hM1JK-0004SS-Up
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 02:19:12 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=0yDQ8mpJU01WNjUag4mEZvrS2eyoOFnSJkZ+fvTaTrg=; b=Ks9gDZ1vx9BH
- GbMROOxW7vHVAStgwwSZZ2FuGChyLsoHMuiazpw8hAWgEfab9jfufpBL8aVECnJEJHx1p/M6fMzOk
- jipUepVcKekmC2DPz6+Wkos2jcpsKwUtCEl0Gg1y0d7FSFHkFPO1YuHpnqdyL+usY4oR/hxp/XhA9
- 1jWBw=;
+ List-Archive; bh=oL192bTqvDNtO9/zE8dKxXdEjuXQ5GVJqZjrNkHIiv0=; b=ejSnNLhmGS24
+ sls3P/G7RzMkZS565WSQhaU5mCwz0fX0bYJqSOL3FuzXHUGOvvXd3gB8S+6FJPfmPGljZXyQijMZi
+ 0fSH9svyRKZwmwOUqcDAgR3LJiLxwX4nXnvigGl2IRba5ZF8xBUTAbiNblCX5ZOlRwmSfbSn/XTdv
+ tMC38=;
 Received: from [211.55.52.15] (helo=finisterre.ee.mobilebroadband)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
  (envelope-from <broonie@sirena.org.uk>)
- id 1hM1Iz-0005sb-FU; Thu, 02 May 2019 02:18:37 +0000
+ id 1hM1JE-0005u2-9f; Thu, 02 May 2019 02:18:52 +0000
 Received: by finisterre.ee.mobilebroadband (Postfix, from userid 1000)
- id 90851441D3B; Thu,  2 May 2019 03:18:34 +0100 (BST)
+ id 6798B441D3E; Thu,  2 May 2019 03:18:49 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
 To: YueHaibing <yuehaibing@huawei.com>
-Subject: Applied "ASoC: atmel: tse850: Make some functions static" to the asoc
- tree
-In-Reply-To: <20190416144718.25576-1-yuehaibing@huawei.com>
+Subject: Applied "ASoC: Mediatek: MT8183: Fix build err while CONFIG_I2C set
+ to module" to the asoc tree
+In-Reply-To: <20190417152932.36436-1-yuehaibing@huawei.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20190502021834.90851441D3B@finisterre.ee.mobilebroadband>
-Date: Thu,  2 May 2019 03:18:34 +0100 (BST)
+Message-Id: <20190502021849.6798B441D3E@finisterre.ee.mobilebroadband>
+Date: Thu,  2 May 2019 03:18:49 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_191845_149328_045D3708 
-X-CRM114-Status: GOOD (  12.84  )
+X-CRM114-CacheID: sfid-20190501_191900_059072_00FAC80D 
+X-CRM114-Status: GOOD (  13.89  )
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.1 points)
@@ -75,12 +75,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, alsa-devel@alsa-project.org,
- lgirdwood@gmail.com, linux-kernel@vger.kernel.org,
- Hulk Robot <hulkci@huawei.com>, ludovic.desroches@microchip.com,
- Mark Brown <broonie@kernel.org>, tiwai@suse.com,
- codrin.ciubotariu@microchip.com, perex@perex.cz, peda@axentia.se,
- linux-arm-kernel@lists.infradead.org
+Cc: alsa-devel@alsa-project.org, tiwai@suse.com, lgirdwood@gmail.com,
+ linux-kernel@vger.kernel.org, Hulk Robot <hulkci@huawei.com>,
+ Mark Brown <broonie@kernel.org>, shunli.wang@mediatek.com,
+ matthias.bgg@gmail.com, perex@perex.cz, linux-arm-kernel@lists.infradead.org,
+ kaichieh.chuang@mediatek.com
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -89,7 +88,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: atmel: tse850: Make some functions static
+   ASoC: Mediatek: MT8183: Fix build err while CONFIG_I2C set to module
 
 has been applied to the asoc tree at
 
@@ -114,73 +113,48 @@ to this mail.
 Thanks,
 Mark
 
-From 6f547c96b45de0d42de91ef56c7d291aa6d3c88f Mon Sep 17 00:00:00 2001
+From f2a1fdb50d3187266a91bcf99b504e99695772a6 Mon Sep 17 00:00:00 2001
 From: YueHaibing <yuehaibing@huawei.com>
-Date: Tue, 16 Apr 2019 22:47:18 +0800
-Subject: [PATCH] ASoC: atmel: tse850: Make some functions static
+Date: Wed, 17 Apr 2019 23:29:32 +0800
+Subject: [PATCH] ASoC: Mediatek: MT8183: Fix build err while CONFIG_I2C set to
+ module
 
-Fix sparse warnings:
+During randconfig builds, I occasionally run into an invalid configuration
 
-sound/soc/atmel/tse850-pcm5142.c:120:5: warning: symbol 'tse850_get_mix' was not declared. Should it be static?
-sound/soc/atmel/tse850-pcm5142.c:132:5: warning: symbol 'tse850_put_mix' was not declared. Should it be static?
-sound/soc/atmel/tse850-pcm5142.c:154:5: warning: symbol 'tse850_get_ana' was not declared. Should it be static?
-sound/soc/atmel/tse850-pcm5142.c:187:5: warning: symbol 'tse850_put_ana' was not declared. Should it be static?
+WARNING: unmet direct dependencies detected for SND_SOC_TS3A227E
+  Depends on [m]: SOUND [=y] && !UML && SND [=y] && SND_SOC [=y] && I2C [=m]
+  Selected by [y]:
+  - SND_SOC_MT8183_MT6358_TS3A227E_MAX98357A [=y] && SOUND [=y] && !UML && SND [=y] && SND_SOC [=y] && SND_SOC_MT8183 [=y]
+
+sound/soc/codecs/ts3a227e.o: In function `ts3a227e_i2c_probe':
+ts3a227e.c:(.text+0x684): undefined reference to `__devm_regmap_init_i2c'
+sound/soc/codecs/ts3a227e.o: In function `ts3a227e_driver_init':
+ts3a227e.c:(.init.text+0x18): undefined reference to `i2c_register_driver'
+sound/soc/codecs/ts3a227e.o: In function `ts3a227e_driver_exit':
+ts3a227e.c:(.exit.text+0x14): undefined reference to `i2c_del_driver'
+
+This patch add I2C dependency to fix this.
 
 Reported-by: Hulk Robot <hulkci@huawei.com>
+Fixes: ebbddc75bbe8 ("ASoC: Mediatek: MT8183: Add machine driver with DA7219")
 Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- sound/soc/atmel/tse850-pcm5142.c | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
+ sound/soc/mediatek/Kconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/sound/soc/atmel/tse850-pcm5142.c b/sound/soc/atmel/tse850-pcm5142.c
-index 214adcad5419..ae445184614a 100644
---- a/sound/soc/atmel/tse850-pcm5142.c
-+++ b/sound/soc/atmel/tse850-pcm5142.c
-@@ -117,8 +117,8 @@ static int tse850_put_mux2(struct snd_kcontrol *kctrl,
- 	return snd_soc_dapm_put_enum_double(kctrl, ucontrol);
- }
+diff --git a/sound/soc/mediatek/Kconfig b/sound/soc/mediatek/Kconfig
+index 874404bcccfd..f70b7109f2b6 100644
+--- a/sound/soc/mediatek/Kconfig
++++ b/sound/soc/mediatek/Kconfig
+@@ -118,6 +118,7 @@ config SND_SOC_MT8183
  
--int tse850_get_mix(struct snd_kcontrol *kctrl,
--		   struct snd_ctl_elem_value *ucontrol)
-+static int tse850_get_mix(struct snd_kcontrol *kctrl,
-+			  struct snd_ctl_elem_value *ucontrol)
- {
- 	struct snd_soc_dapm_context *dapm = snd_soc_dapm_kcontrol_dapm(kctrl);
- 	struct snd_soc_card *card = dapm->card;
-@@ -129,8 +129,8 @@ int tse850_get_mix(struct snd_kcontrol *kctrl,
- 	return 0;
- }
- 
--int tse850_put_mix(struct snd_kcontrol *kctrl,
--		   struct snd_ctl_elem_value *ucontrol)
-+static int tse850_put_mix(struct snd_kcontrol *kctrl,
-+			  struct snd_ctl_elem_value *ucontrol)
- {
- 	struct snd_soc_dapm_context *dapm = snd_soc_dapm_kcontrol_dapm(kctrl);
- 	struct snd_soc_card *card = dapm->card;
-@@ -151,8 +151,8 @@ int tse850_put_mix(struct snd_kcontrol *kctrl,
- 	return 1;
- }
- 
--int tse850_get_ana(struct snd_kcontrol *kctrl,
--		   struct snd_ctl_elem_value *ucontrol)
-+static int tse850_get_ana(struct snd_kcontrol *kctrl,
-+			  struct snd_ctl_elem_value *ucontrol)
- {
- 	struct snd_soc_dapm_context *dapm = snd_soc_dapm_kcontrol_dapm(kctrl);
- 	struct snd_soc_card *card = dapm->card;
-@@ -184,8 +184,8 @@ int tse850_get_ana(struct snd_kcontrol *kctrl,
- 	return 0;
- }
- 
--int tse850_put_ana(struct snd_kcontrol *kctrl,
--		   struct snd_ctl_elem_value *ucontrol)
-+static int tse850_put_ana(struct snd_kcontrol *kctrl,
-+			  struct snd_ctl_elem_value *ucontrol)
- {
- 	struct snd_soc_dapm_context *dapm = snd_soc_dapm_kcontrol_dapm(kctrl);
- 	struct snd_soc_card *card = dapm->card;
+ config SND_SOC_MT8183_MT6358_TS3A227E_MAX98357A
+ 	tristate "ASoC Audio driver for MT8183 with MT6358 TS3A227E MAX98357A codec"
++	depends on I2C
+ 	depends on SND_SOC_MT8183
+ 	select SND_SOC_MT6358
+ 	select SND_SOC_MAX98357A
 -- 
 2.20.1
 
