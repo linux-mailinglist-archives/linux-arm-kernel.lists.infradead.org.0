@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B234F1113D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 04:19:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C890611155
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 04:20:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=NG0iG1/9t2HKxnpmvLTqhc1m+YYnGAenJ/sQvbqsSsE=; b=NJC
-	shP/ZB+QXC2Fmj+Al0oKtdU5PwZdxLjlT7WRcAmIEhfXH1YFVbDlLa7vh9xIULl09brw4uwEq6KtP
-	Js7edhj3vRc7YNdxJr29rOQKA5dxeqLl6Qwoz62bBEJs7uatwTd9tH1mXqGvFarSdV+DYMWOxC0/W
-	kIl0LiAJAUEl8DiBvt3HE2Lc5jR1Z7knaLx+vX1XzFlqFttRt/Ih+Rfbw8Q3VQheEzRVJr2vml0+P
-	j/t3l9LkAagItTenJHn4hYyOgZDTeZB3Co944CFEdnGv+j+E7ttfqLRZrVbCQi1LG271XDOQVcjM5
-	Eyk1mZFn3hDR+qj/M9a9G+wJbgmv2fQ==;
+	References:List-Owner; bh=7uG2afmBH6Uvrc+WtWnAa1A2pMf3pIXvGlW4MdVz9BA=; b=RO5
+	LOpFi2LOFecgLmbj4eeMx53N36z83OE42xhZykrD/ce56BZqD+A0xf096EmCCaV1FbJvsZolboWGS
+	Yp0VZd7UJVIYr+2myHGmoUUpb0vYdpyXX/xSHnQm/aLcrHub6XCNSUXSClm5JcPufcOLvTIullAHV
+	bZyiZLLDiVemEgu8iGhjhZQFrekyo1O2SEMLwIoDtmid8fKE1Gn2TA68fhA0eYhroNTxHjJNkSYao
+	mIqdeWN7XlT6afq1Qtud1hxziuMLydzikLSYpeSQWsgpYv2/fVTufE5N+HZqtqYpvbvJB0nglZhD7
+	G7s9YYlXoj8wC7BhhXZQQ8FibzsXKoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hM1K4-0005Iu-0N; Thu, 02 May 2019 02:19:44 +0000
+	id 1hM1Kd-0006js-TG; Thu, 02 May 2019 02:20:19 +0000
 Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hM1JT-0004f7-BT
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 02:19:19 +0000
+ id 1hM1JV-0004iD-7E
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 02:19:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=EVE8bSshKnItl0eubjnAOH03ySne216GQtby64RJnLw=; b=o/KTDwk9QvFN
- JbyIwDUjCkoApEnDiMcp9eGEfksDBNbbkmixJ9q/eSkc5uf5H6M0obEMaeddqAgL8hk/PRnu4e9Te
- 5mKxR1TIbJaifkAs6AjbZ1aGIhQliBJMt8vkmthjnB1bHjAT38RgLDP9jzaUe7RLx+kCGXaUb4K+M
- JYbLE=;
+ List-Archive; bh=feyKP1du32lu5/MyQZS18HeItBqnrlQxBxyoBKEM4vw=; b=o7XMYTMHWz1G
+ l6VKr+6EowJPK/aYtjvkDbM65ihBQyrnNUmzovRNCY2KGX7GWYpHTIrmzK+Nlcl/OYBbDjqw2S4AH
+ l8g1p48G9daOvC/GS9efKGtTMFaRn/JKFhdMs9Ps1ba8Js/lLrXtr6fOxXCAQX1ZpxO1946QzYuOv
+ TqNGQ=;
 Received: from [211.55.52.15] (helo=finisterre.ee.mobilebroadband)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
  (envelope-from <broonie@sirena.org.uk>)
- id 1hM1JJ-0005ul-Lx; Thu, 02 May 2019 02:18:58 +0000
+ id 1hM1JN-0005vL-Rg; Thu, 02 May 2019 02:19:02 +0000
 Received: by finisterre.ee.mobilebroadband (Postfix, from userid 1000)
- id C9DFB441D3C; Thu,  2 May 2019 03:18:54 +0100 (BST)
+ id B4B5E441D3C; Thu,  2 May 2019 03:18:58 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
-To: Fabien Dessenne <fabien.dessenne@st.com>
-Subject: Applied "spi: stm32: return the get_irq error" to the spi tree
-In-Reply-To: <1556109524-21874-1-git-send-email-fabien.dessenne@st.com>
+To: Flavio Suligoi <f.suligoi@asem.it>
+Subject: Applied "spi: pxa2xx: fix SCR (divisor) calculation" to the spi tree
+In-Reply-To: <1555054339-17096-1-git-send-email-f.suligoi@asem.it>
 X-Patchwork-Hint: ignore
-Message-Id: <20190502021854.C9DFB441D3C@finisterre.ee.mobilebroadband>
-Date: Thu,  2 May 2019 03:18:54 +0100 (BST)
+Message-Id: <20190502021858.B4B5E441D3C@finisterre.ee.mobilebroadband>
+Date: Thu,  2 May 2019 03:18:58 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_191908_129047_DC3F8CBE 
-X-CRM114-Status: GOOD (  14.41  )
+X-CRM114-CacheID: sfid-20190501_191909_758382_47E79DEC 
+X-CRM114-Status: GOOD (  17.17  )
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.1 points)
@@ -74,11 +74,10 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Amelie Delaunay <amelie.delaunay@st.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+Cc: linux-kernel@vger.kernel.org, Haojian Zhuang <haojian.zhuang@gmail.com>,
  linux-spi@vger.kernel.org, Mark Brown <broonie@kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+ Jarkko Nikula <jarkko.nikula@linux.intel.com>, Daniel Mack <daniel@zonque.org>,
+ Robert Jarzmik <robert.jarzmik@free.fr>, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -87,11 +86,11 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: stm32: return the get_irq error
+   spi: pxa2xx: fix SCR (divisor) calculation
 
 has been applied to the spi tree at
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.1
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git 
 
 All being well this means that it will be integrated into the linux-next
 tree (usually sometime in the next 24 hours) and sent to Linus during
@@ -112,37 +111,61 @@ to this mail.
 Thanks,
 Mark
 
-From 8d1467a68426c61807c97163459b481ecb714523 Mon Sep 17 00:00:00 2001
-From: Fabien Dessenne <fabien.dessenne@st.com>
-Date: Wed, 24 Apr 2019 14:38:44 +0200
-Subject: [PATCH] spi: stm32: return the get_irq error
+From 29f2133717c527f492933b0622a4aafe0b3cbe9e Mon Sep 17 00:00:00 2001
+From: Flavio Suligoi <f.suligoi@asem.it>
+Date: Fri, 12 Apr 2019 09:32:19 +0200
+Subject: [PATCH] spi: pxa2xx: fix SCR (divisor) calculation
 
-During probe, return the "get_irq" error value instead of -ENOENT. This
-allows the driver to be defer probed if needed.
+Calculate the divisor for the SCR (Serial Clock Rate), avoiding
+that the SSP transmission rate can be greater than the device rate.
 
-Signed-off-by: Fabien Dessenne <fabien.dessenne@st.com>
-Acked-by: Amelie Delaunay <amelie.delaunay@st.com>
+When the division between the SSP clock and the device rate generates
+a reminder, we have to increment by one the divisor.
+In this way the resulting SSP clock will never be greater than the
+device SPI max frequency.
+
+For example, with:
+
+ - ssp_clk  = 50 MHz
+ - dev freq = 15 MHz
+
+without this patch the SSP clock will be greater than 15 MHz:
+
+ - 25 MHz for PXA25x_SSP and CE4100_SSP
+ - 16,56 MHz for the others
+
+Instead, with this patch, we have in both case an SSP clock of 12.5MHz,
+so the max rate of the SPI device clock is respected.
+
+Signed-off-by: Flavio Suligoi <f.suligoi@asem.it>
+Reviewed-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
+Reviewed-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/spi-stm32.c | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+ drivers/spi/spi-pxa2xx.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/spi/spi-stm32.c b/drivers/spi/spi-stm32.c
-index 4186ed20d796..b222ce8d083e 100644
---- a/drivers/spi/spi-stm32.c
-+++ b/drivers/spi/spi-stm32.c
-@@ -1839,8 +1839,9 @@ static int stm32_spi_probe(struct platform_device *pdev)
+diff --git a/drivers/spi/spi-pxa2xx.c b/drivers/spi/spi-pxa2xx.c
+index b6ddba833d02..d2076f2f468f 100644
+--- a/drivers/spi/spi-pxa2xx.c
++++ b/drivers/spi/spi-pxa2xx.c
+@@ -884,10 +884,14 @@ static unsigned int ssp_get_clk_div(struct driver_data *drv_data, int rate)
  
- 	spi->irq = platform_get_irq(pdev, 0);
- 	if (spi->irq <= 0) {
--		dev_err(&pdev->dev, "no irq: %d\n", spi->irq);
--		ret = -ENOENT;
-+		ret = spi->irq;
-+		if (ret != -EPROBE_DEFER)
-+			dev_err(&pdev->dev, "failed to get irq: %d\n", ret);
- 		goto err_master_put;
- 	}
- 	ret = devm_request_threaded_irq(&pdev->dev, spi->irq,
+ 	rate = min_t(int, ssp_clk, rate);
+ 
++	/*
++	 * Calculate the divisor for the SCR (Serial Clock Rate), avoiding
++	 * that the SSP transmission rate can be greater than the device rate
++	 */
+ 	if (ssp->type == PXA25x_SSP || ssp->type == CE4100_SSP)
+-		return (ssp_clk / (2 * rate) - 1) & 0xff;
++		return (DIV_ROUND_UP(ssp_clk, 2 * rate) - 1) & 0xff;
+ 	else
+-		return (ssp_clk / rate - 1) & 0xfff;
++		return (DIV_ROUND_UP(ssp_clk, rate) - 1)  & 0xfff;
+ }
+ 
+ static unsigned int pxa2xx_ssp_get_clk_div(struct driver_data *drv_data,
 -- 
 2.20.1
 
