@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09D0311A47
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 15:34:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6D7B11A48
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 15:34:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,34 +11,33 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=J4RmjqL9UgyTZHdVU83obRlKxCXj6vN8nmHES4RxHkU=; b=exGbLf0FqxykLb0mb0qla9VG/u
-	zScurJczuwoUNVv4dBQc6KkAsYYYqAhO19XVzbqaMMZ/cIw3wlrq2YOlhO5BblFmfR9Zkc8v2Bh9V
-	1ex58Fw8hon803OooO8jv26Xytxby/B4YsfaB4AuSDOUXRroBg27WzhxdDTGkQ0+p9Jo7lYD12poI
-	EkVj6aD6ywBXGJLA4vTwyhuOlc6DZnN3/SPEsowKznHO1y8OKjYZTX+bC/5eS/Twb8U8aBFMq1dw1
-	nyFGFjQtlDC/AMdWKZr20XBuALuRgXZI8FoBIBGyw2SasxhKSVuPCV+1gpyuTXAdy7i0Ojj8A3hos
-	/UiYiq+w==;
+	bh=sUQqPqkV4M260pkhiEqRAy/aQvkuvoqXyBrHBVy94tI=; b=uUIGPNkwmD34gTSGSsydslaHAc
+	7wNyuJnL2GB7PMsainjsBFed4HXo6ZJaDEHM0/0HSIGTXPLLBg2Yp+JuJciTSKb/EXvceJROMj1+F
+	h9GplBXxaB5epRSA7UT3Dt17CE1aF386VGqeRP/56xmSWx7KE42f+yxrUaNijD2l0P/fq0lDsLD66
+	6BODuA1cB1pUbeNf1DYafgruU98ySYnFBuPwJWj0Dl852GTIqi8z3aDHmzRPcgh1JSJUqRBB+VeCM
+	EjxknErw4g+sm0shYtgbdFlLwwISBRv2VR9Wvc2n0wGxtUzTBNdaLJxkmrQEFWphYph7EfQrVCgOB
+	r4lfBrbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMBrI-0001z3-FY; Thu, 02 May 2019 13:34:44 +0000
+	id 1hMBrS-0002Cc-74; Thu, 02 May 2019 13:34:54 +0000
 Received: from mail2.sp2max.com.br ([138.185.4.9])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMBqf-0001Jx-LD
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 13:34:07 +0000
+ id 1hMBqh-0001KQ-2F
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 13:34:08 +0000
 Received: from pgsop.sopnet.com.ar (unknown [179.40.38.12])
  (Authenticated sender: pablo@fliagreco.com.ar)
- by mail2.sp2max.com.br (Postfix) with ESMTPA id 4E0727B05A2;
- Thu,  2 May 2019 10:34:02 -0300 (-03)
+ by mail2.sp2max.com.br (Postfix) with ESMTPA id 2D8957B2FF1;
+ Thu,  2 May 2019 10:34:03 -0300 (-03)
 From: Pablo Greco <pgreco@centosproject.org>
 To: linux-sunxi@googlegroups.com
-Subject: [PATCH v6 3/5] ARM: dts: sun8i: v40: bananapi-m2-berry: Enable HDMI
- output
-Date: Thu,  2 May 2019 10:33:47 -0300
-Message-Id: <1556804030-25291-4-git-send-email-pgreco@centosproject.org>
+Subject: [PATCH v6 4/5] ARM: dts: sun8i: v40: bananapi-m2-berry: Enable AHCI
+Date: Thu,  2 May 2019 10:33:48 -0300
+Message-Id: <1556804030-25291-5-git-send-email-pgreco@centosproject.org>
 X-Mailer: git-send-email 1.8.3.1
 In-Reply-To: <1556804030-25291-1-git-send-email-pgreco@centosproject.org>
 References: <1556804030-25291-1-git-send-email-pgreco@centosproject.org>
 X-SP2Max-MailScanner-Information: Please contact the ISP for more information
-X-SP2Max-MailScanner-ID: 4E0727B05A2.A06A0
+X-SP2Max-MailScanner-ID: 2D8957B2FF1.A2285
 X-SP2Max-MailScanner: Sem Virus encontrado
 X-SP2Max-MailScanner-SpamCheck: nao spam, SpamAssassin (not cached,
  escore=-2.9, requerido 6, autolearn=not spam, ALL_TRUSTED -1.00,
@@ -46,8 +45,8 @@ X-SP2Max-MailScanner-SpamCheck: nao spam, SpamAssassin (not cached,
 X-SP2Max-MailScanner-From: pgreco@centosproject.org
 X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_063405_868669_AA6A55E6 
-X-CRM114-Status: UNSURE (   9.46  )
+X-CRM114-CacheID: sfid-20190502_063407_281449_2C0ABC6A 
+X-CRM114-Status: UNSURE (   7.00  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -76,75 +75,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds the hdmi nodes to the Bananapi M2 Berry, the same way it
-was done to the Bananapi M2 Ultra
+Just like the Bananapi M2 Ultra, enable the ahci controller and
+the two regulators needed to activate it.
 
+Reviewed-by: Jagan Teki <jagan@amarulasolutions.com>
 Signed-off-by: Pablo Greco <pgreco@centosproject.org>
 ---
- arch/arm/boot/dts/sun8i-v40-bananapi-m2-berry.dts | 29 +++++++++++++++++++++++
- 1 file changed, 29 insertions(+)
+ arch/arm/boot/dts/sun8i-v40-bananapi-m2-berry.dts | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
 
 diff --git a/arch/arm/boot/dts/sun8i-v40-bananapi-m2-berry.dts b/arch/arm/boot/dts/sun8i-v40-bananapi-m2-berry.dts
-index 0dfde58..1f4f51f9 100644
+index 1f4f51f9..461683c 100644
 --- a/arch/arm/boot/dts/sun8i-v40-bananapi-m2-berry.dts
 +++ b/arch/arm/boot/dts/sun8i-v40-bananapi-m2-berry.dts
-@@ -58,6 +58,17 @@
- 		stdout-path = "serial0:115200n8";
- 	};
- 
-+	connector {
-+		compatible = "hdmi-connector";
-+		type = "a";
-+
-+		port {
-+			hdmi_con_in: endpoint {
-+				remote-endpoint = <&hdmi_out_con>;
-+			};
-+		};
-+	};
-+
- 	leds {
- 		compatible = "gpio-leds";
- 
-@@ -88,6 +99,10 @@
+@@ -99,6 +99,12 @@
  	};
  };
  
-+&de {
++&ahci {
++	ahci-supply = <&reg_dldo4>;
++	phy-supply = <&reg_eldo3>;
 +	status = "okay";
 +};
 +
- &ehci1 {
- 	/* Terminus Tech FE 1.1s 4-port USB 2.0 hub here */
+ &de {
  	status = "okay";
-@@ -109,6 +124,16 @@
- 	};
  };
- 
-+&hdmi {
-+	status = "okay";
-+};
-+
-+&hdmi_out {
-+	hdmi_out_con: endpoint {
-+		remote-endpoint = <&hdmi_con_in>;
-+	};
-+};
-+
- &i2c0 {
- 	status = "okay";
- 
-@@ -208,6 +233,10 @@
+@@ -233,6 +239,18 @@
  	regulator-name = "vcc-wifi";
  };
  
-+&tcon_tv0 {
-+	status = "okay";
++&reg_dldo4 {
++	regulator-min-microvolt = <2500000>;
++	regulator-max-microvolt = <2500000>;
++	regulator-name = "vdd2v5-sata";
 +};
 +
- &uart0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&uart0_pb_pins>;
++&reg_eldo3 {
++	regulator-min-microvolt = <1200000>;
++	regulator-max-microvolt = <1200000>;
++	regulator-name = "vdd1v2-sata";
++};
++
+ &tcon_tv0 {
+ 	status = "okay";
+ };
 -- 
 1.8.3.1
 
