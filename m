@@ -2,58 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 584B912074
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 18:43:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99F6312077
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 18:44:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XvEIhmo8Sztvz/Wrm8YZzpg6Xh0uuOm5iTwQlyRYyQ8=; b=Qy++Lqwb5kjle4
-	skXY0aL1RAUZiWfP1Ff10a3XKj77vWpuw0tLtoLhzR/LNRjOeZflHmuXZWkOy3Qj+FP164QvyFhNB
-	oBc0Qc2shOZcZ7m1lgo5ao8RFVcnrNnqxOKMy0cOksL1AOyXfuopTU9AcgrDrsoN/DyLddFKkSJYn
-	FahNlgq7QkobpnGrgzZQklRp3YgeWoFZMm1IL78hXwjbN2Bp8jAK6SxkLLZXIZ49q47VCwpaYwsdI
-	mUTRBa5hoOWFMx519aQhzEtM2dh4VOkyi+oeJmu4JETCWHtzHt3dRiTqR5yey52S0VY83Qa+V/tLu
-	VboHSxu4ThLEZAlH2JHA==;
+	List-Owner; bh=oHM2d1vJNe8rBPSzpysKgxZCyPTPRh2scZ7q5sOIwRM=; b=guyFqdGV8eIVUM
+	u+myKqu4DDzB6r25fivubKb+bpoBIdGtnjB/ZUHDXN5/BRS8GcD6aYaPsL744ryvtM2lh0UN559lt
+	wEuHUIa5JpCtSDm528r5wvtkKDXOl6W0llmdUBYufo+HE9dhGPiupbEAaKMbOYSu7ngqR8KldLQD0
+	2449cDZ/Mh4ZtmWsxEHzfZEso3vpmeC0w3J+z/9O5pM72Pc+P7w86a+W6wHVRLIMgi6aMp6DbYmVd
+	7Zh/YqWYu/0huEXBSKzyLMOXy2kr/R+5SwOM7OW/u9IHY5s3z9KX6hN08pTjQS7BnAfaJiuu/Ll/e
+	PLtfxAw06/SjMrReGxTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMEoH-0007fb-SH; Thu, 02 May 2019 16:43:49 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMEoB-0007ey-Oz; Thu, 02 May 2019 16:43:45 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7CACFA78;
- Thu,  2 May 2019 09:43:41 -0700 (PDT)
-Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
- [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 787543F738;
- Thu,  2 May 2019 09:43:39 -0700 (PDT)
-Date: Thu, 2 May 2019 17:43:33 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Jianjun Wang <jianjun.wang@mediatek.com>
-Subject: Re: [v1] PCI: mediatek: Remove MSI inner domain
-Message-ID: <20190502164333.GA26454@e121166-lin.cambridge.arm.com>
-References: <1548149855-3225-1-git-send-email-jianjun.wang@mediatek.com>
- <1548926367.4980.14.camel@mhfsdcap03>
- <10e8e731-5749-f6fb-eb33-ab67aa0e2c3f@arm.com>
- <1548938997.6292.52.camel@mhfsdcap03>
+	id 1hMEog-0007vs-L6; Thu, 02 May 2019 16:44:14 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hMEoa-0007vU-4I
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 16:44:09 +0000
+Received: by mail-qk1-x743.google.com with SMTP id b7so1861793qkl.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 02 May 2019 09:44:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=f4ibFJXvRn07AkRB9EEIU1REKuJjQVK60zzVIafbvUE=;
+ b=JRr0iAoI+MM91RQu5rsmPJAedIzsKoYF4oA8RlnAKMvuuZ/R7kd7D6jWop+wCSo/IH
+ sjZx/RTzm7bEAImU5BPlvdZbDYOxetIu5lUNjH5SUzMUueOLgxdNIsotblxkSYsuH8ei
+ 4yHzKCAOujHbiE3xq6PVq6FXLockojf1RGomAuLlXggsW53AGTifnYmEtSoW8KmW7JdL
+ LLsjuiCApF6aWjynaZsPnWsROBXNZ+qRnDz5+PC9NqiBLGHLoKhOqQrnPeuKY1HCRv7h
+ CnH3bK+ums2L6nLw1ajGrG0FjkZTT0C4HhS4ulTaF76wO/tyj+pBabQ0TdHsK9mP+VLq
+ jFHg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=f4ibFJXvRn07AkRB9EEIU1REKuJjQVK60zzVIafbvUE=;
+ b=Q5Rql0R+spMSX+xpl3DcPRpeML5esguU0R+joU4fUnnUs/jBxFgAYzuIaSaz39UcKi
+ fRFmHcd7VRIbXYltyatyJl6rVwS9f14TSBZmFPf6n25kQJ3W2qJVmZIiBcWFRrEAC3cs
+ wNyE12K9biqfeNVDjfdtKFtLUiSWQSqhcXBtmSRoHPRHLDgTuzBGMQePHUSdllnDH0k6
+ tBn9pQ6Xjw/jzTMOxQnjszJ0cvnbg/sUfzpX4+r0ya61QP4XF9SuvfsLPPKeT2smC2on
+ 6We4BfwZmxpVn/vEsxMxOBUmS6cPdJdpbJTEE/Q7+fb53AOM9mZlMGV4ZLR02Th0H3gS
+ zrww==
+X-Gm-Message-State: APjAAAXkCkytxp2+0BTK7gf784BUUvo2R1nQqRDRQ+VKhNtZ7adxwQA9
+ PUF4SbDNHyIhN4NxxW55ZhCX4HeKqZytRNNcyCdX2w==
+X-Google-Smtp-Source: APXvYqxYG/ata7SfkJHe93kUfj6sEEF1lUSMwcEiOOO+swPuj+74SX/aaBFPAxBXFOQaVg003EcEY/DtPNywIAO+hBk=
+X-Received: by 2002:a37:508a:: with SMTP id e132mr3689247qkb.281.1556815446374; 
+ Thu, 02 May 2019 09:44:06 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1548938997.6292.52.camel@mhfsdcap03>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20190502110247.681-1-manivannan.sadhasivam@linaro.org>
+In-Reply-To: <20190502110247.681-1-manivannan.sadhasivam@linaro.org>
+From: Amit Kucheria <amit.kucheria@linaro.org>
+Date: Thu, 2 May 2019 22:13:55 +0530
+Message-ID: <CAP245DUZ9PWoCWvcB8zP_zTEANqo++FCmmJhKESVW=LrBdfyGQ@mail.gmail.com>
+Subject: Re: [PATCH] ARM: multi_v7_defconfig: Enable panic and disk LED
+ triggers
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_094343_823116_8EF5BAC3 
-X-CRM114-Status: GOOD (  37.07  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190502_094408_195150_53F07C80 
+X-CRM114-Status: GOOD (  14.64  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -65,290 +90,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: youlin.pei@mediatek.com, ryder.lee@mediatek.com,
- Marc Zyngier <marc.zyngier@arm.com>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, matthias.bgg@gmail.com,
- linux-mediatek@lists.infradead.org, Honghui Zhang <honghui.zhang@mediatek.com>,
- bhelgaas@google.com, linux-arm-kernel@lists.infradead.org
+Cc: Arnd Bergmann <arnd@arndb.de>, linux@armlinux.org.uk,
+ Lists LAKML <linux-arm-kernel@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 31, 2019 at 08:49:57PM +0800, Jianjun Wang wrote:
-> On Thu, 2019-01-31 at 09:44 +0000, Marc Zyngier wrote:
-> > On 31/01/2019 09:19, Honghui Zhang wrote:
-> > > On Tue, 2019-01-22 at 17:37 +0800, Jianjun Wang wrote:
-> > >> There is no need to create the inner domain as a parent for MSI domian,
-> > >> some feature has been implemented by MSI framework.
-> > >>
-> > >> Remove the inner domain and its irq chip, it will be more closer to
-> > >> hardware implementation.
-> > 
-> > This is not about being closer to any HW implementation. This is about
-> > having a uniform way to deal with MSI controllers, no matter how they
-> > are implemented by the HW.
-> > 
-> > So maybe you could start by explaining what this is trying to achieve.
-> > 
-> > >>
-> > > Hi, jianjun, I'm not quite familiar with the irq_chip framework, It was
-> > > under Marc's great help with the first version of irq_chip solution
-> > > code. I would like you to add him for the review.
-> > > 
-> > > Thanks.
-> > > 
-> > >> Signed-off-by: Jianjun Wang <jianjun.wang@mediatek.com>
-> > >> ---
-> > >>  drivers/pci/controller/pcie-mediatek.c | 86 +++++++++++---------------
-> > >>  1 file changed, 37 insertions(+), 49 deletions(-)
-> > >>
-> > >> diff --git a/drivers/pci/controller/pcie-mediatek.c b/drivers/pci/controller/pcie-mediatek.c
-> > >> index 8d05df56158b..f996a9a6331f 100644
-> > >> --- a/drivers/pci/controller/pcie-mediatek.c
-> > >> +++ b/drivers/pci/controller/pcie-mediatek.c
-> > >> @@ -169,7 +169,6 @@ struct mtk_pcie_soc {
-> > >>   * @slot: port slot
-> > >>   * @irq: GIC irq
-> > >>   * @irq_domain: legacy INTx IRQ domain
-> > >> - * @inner_domain: inner IRQ domain
-> > >>   * @msi_domain: MSI IRQ domain
-> > >>   * @lock: protect the msi_irq_in_use bitmap
-> > >>   * @msi_irq_in_use: bit map for assigned MSI IRQ
-> > >> @@ -190,7 +189,6 @@ struct mtk_pcie_port {
-> > >>  	u32 slot;
-> > >>  	int irq;
-> > >>  	struct irq_domain *irq_domain;
-> > >> -	struct irq_domain *inner_domain;
-> > >>  	struct irq_domain *msi_domain;
-> > >>  	struct mutex lock;
-> > >>  	DECLARE_BITMAP(msi_irq_in_use, MTK_MSI_IRQS_NUM);
-> > >> @@ -418,22 +416,15 @@ static void mtk_msi_ack_irq(struct irq_data *data)
-> > >>  	u32 hwirq = data->hwirq;
-> > >>  
-> > >>  	writel(1 << hwirq, port->base + PCIE_IMSI_STATUS);
-> > >> +	writel(MSI_STATUS, port->base + PCIE_INT_STATUS);
-> > >>  }
-> > >>  
-> > >> -static struct irq_chip mtk_msi_bottom_irq_chip = {
-> > >> -	.name			= "MTK MSI",
-> > >> -	.irq_compose_msi_msg	= mtk_compose_msi_msg,
-> > >> -	.irq_set_affinity	= mtk_msi_set_affinity,
-> > >> -	.irq_ack		= mtk_msi_ack_irq,
-> > >> -};
-> > >> -
-> > >> -static int mtk_pcie_irq_domain_alloc(struct irq_domain *domain, unsigned int virq,
-> > >> -				     unsigned int nr_irqs, void *args)
-> > >> +static irq_hw_number_t mtk_pcie_msi_get_hwirq(struct msi_domain_info *info,
-> > >> +					      msi_alloc_info_t *arg)
-> > >>  {
-> > >> -	struct mtk_pcie_port *port = domain->host_data;
-> > >> -	unsigned long bit;
-> > >> +	struct mtk_pcie_port *port = info->chip_data;
-> > >> +	irq_hw_number_t bit;
-> > >>  
-> > >> -	WARN_ON(nr_irqs != 1);
-> > >>  	mutex_lock(&port->lock);
-> > >>  
-> > >>  	bit = find_first_zero_bit(port->msi_irq_in_use, MTK_MSI_IRQS_NUM);
-> > >> @@ -446,18 +437,14 @@ static int mtk_pcie_irq_domain_alloc(struct irq_domain *domain, unsigned int vir
-> > >>  
-> > >>  	mutex_unlock(&port->lock);
-> > >>  
-> > >> -	irq_domain_set_info(domain, virq, bit, &mtk_msi_bottom_irq_chip,
-> > >> -			    domain->host_data, handle_edge_irq,
-> > >> -			    NULL, NULL);
-> > >> -
-> > >> -	return 0;
-> > >> +	return bit;
-> > 
-> > Why do you need to override the get_hwirq method? Using the generic
-> > PCI/MSI version has the advantage of giving you a universal encoding
-> > which makes debugging much easier.
-> 
-> Hi Marc,
-> 
-> In previous patch, we create a inner_domain as a parent for msi_domain,
-> when we allocate a irq for MSI, the work flow of each domain will be the
-> following:
-> 
-> inner_domain:
-> 1. Allocated a irq bit from bitmap as this domain's hwirq;
-> 2. Mapping with system virtual irq number;
-> 3. Set irq chip and irq handler;
-> 4. Send MSI message to EP.
-> 
-> msi_domain:
-> 1. Calculate a hwirq;
-> 2. Mapping with system virtual irq number;
-> 3. Set irq chip which from info->chip and irq handler if defined in
-> info.
-> 4. Send MSI message to EP or trigger parent domain to send the message.
-> 
-> The last three steps looks similar, if we override the get_hwirq method
-> and set irq chip and handler to info structure, MSI framework will do
-> the rest of thing. I think it will be more simple and easy to understand
-> the driver's work flow.
-> 
-> Further more, if we try to enhance the interrupt performance, such as
-> connect the MSI interrupt line to GIC directly in hardware, we will need
-> to set gic domain as the parent, in that case, there will be a lot of
-> work to do to replace the inner domain.
+On Thu, May 2, 2019 at 4:33 PM Manivannan Sadhasivam
+<manivannan.sadhasivam@linaro.org> wrote:
+>
+> Most development boards and devices have one or more LEDs. It is
+> useful during debugging if they can be wired to show different
+> behaviours such as disk or cpu activity or a load-average dependent
+> heartbeat. Enable panic and disk activity triggers so they can be tied
+> to LED activity during debugging as well.
+>
+> There was a similar patch which added these triggers for ARM64 as well:
+> https://patchwork.kernel.org/patch/10042681/
+>
+> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Reviewed-by: Amit Kucheria <amit.kucheria@linaro.org>
 
-I do not understand what you mean, I am sorry. I won't review v2 until
-we have an understanding of what this patch should achieve and we
-have a clear reason why we need it, more specifically I do not
-understand what it has to do with performance (keeping in mind what
-Marc said about the IRQ controllers representation, which has a
-reason to be there on its own).
-
-Thanks,
-Lorenzo
-
-> Thanks.
-> > 
-> > >>  }
-> > >>  
-> > >> -static void mtk_pcie_irq_domain_free(struct irq_domain *domain,
-> > >> -				     unsigned int virq, unsigned int nr_irqs)
-> > >> +static void mtk_pcie_msi_free(struct irq_domain *domain,
-> > >> +			      struct msi_domain_info *info, unsigned int virq)
-> > >>  {
-> > >>  	struct irq_data *d = irq_domain_get_irq_data(domain, virq);
-> > >> -	struct mtk_pcie_port *port = irq_data_get_irq_chip_data(d);
-> > >> +	struct mtk_pcie_port *port = info->chip_data;
-> > >>  
-> > >>  	mutex_lock(&port->lock);
-> > >>  
-> > >> @@ -468,46 +455,50 @@ static void mtk_pcie_irq_domain_free(struct irq_domain *domain,
-> > >>  		__clear_bit(d->hwirq, port->msi_irq_in_use);
-> > >>  
-> > >>  	mutex_unlock(&port->lock);
-> > >> -
-> > >> -	irq_domain_free_irqs_parent(domain, virq, nr_irqs);
-> > >>  }
-> > >>  
-> > >> -static const struct irq_domain_ops msi_domain_ops = {
-> > >> -	.alloc	= mtk_pcie_irq_domain_alloc,
-> > >> -	.free	= mtk_pcie_irq_domain_free,
-> > >> +static struct msi_domain_ops mtk_msi_domain_ops = {
-> > >> +	.get_hwirq	= mtk_pcie_msi_get_hwirq,
-> > >> +	.msi_free	= mtk_pcie_msi_free,
-> > >>  };
-> > >>  
-> > >>  static struct irq_chip mtk_msi_irq_chip = {
-> > >> -	.name		= "MTK PCIe MSI",
-> > >> -	.irq_ack	= irq_chip_ack_parent,
-> > >> -	.irq_mask	= pci_msi_mask_irq,
-> > >> -	.irq_unmask	= pci_msi_unmask_irq,
-> > >> +	.name			= "MTK PCIe",
-> > >> +	.irq_compose_msi_msg	= mtk_compose_msi_msg,
-> > >> +	.irq_write_msi_msg	= pci_msi_domain_write_msg,
-> > >> +	.irq_set_affinity	= mtk_msi_set_affinity,
-> > >> +	.irq_ack		= mtk_msi_ack_irq,
-> > >> +	.irq_mask		= pci_msi_mask_irq,
-> > >> +	.irq_unmask		= pci_msi_unmask_irq,
-> > >>  };
-> > >>  
-> > >>  static struct msi_domain_info mtk_msi_domain_info = {
-> > >> -	.flags	= (MSI_FLAG_USE_DEF_DOM_OPS | MSI_FLAG_USE_DEF_CHIP_OPS |
-> > >> -		   MSI_FLAG_PCI_MSIX),
-> > >> -	.chip	= &mtk_msi_irq_chip,
-> > >> +	.flags		= (MSI_FLAG_USE_DEF_DOM_OPS |
-> > >> +			   MSI_FLAG_USE_DEF_CHIP_OPS | MSI_FLAG_PCI_MSIX),
-> > >> +	.ops		= &mtk_msi_domain_ops,
-> > >> +	.chip		= &mtk_msi_irq_chip,
-> > >> +	.handler	= handle_edge_irq,
-> > >> +	.handler_name	= "MSI",
-> > >>  };
-> > >>  
-> > >>  static int mtk_pcie_allocate_msi_domains(struct mtk_pcie_port *port)
-> > >>  {
-> > >> -	struct fwnode_handle *fwnode = of_node_to_fwnode(port->pcie->dev->of_node);
-> > >> +	struct device *dev = port->pcie->dev;
-> > >> +	struct fwnode_handle *fwnode = of_node_to_fwnode(dev->of_node);
-> > >> +	struct msi_domain_info *info;
-> > >>  
-> > >>  	mutex_init(&port->lock);
-> > >>  
-> > >> -	port->inner_domain = irq_domain_create_linear(fwnode, MTK_MSI_IRQS_NUM,
-> > >> -						      &msi_domain_ops, port);
-> > >> -	if (!port->inner_domain) {
-> > >> -		dev_err(port->pcie->dev, "failed to create IRQ domain\n");
-> > >> +	info = devm_kzalloc(dev, sizeof(*info), GFP_KERNEL);
-> > >> +	if (!info)
-> > >>  		return -ENOMEM;
-> > >> -	}
-> > >>  
-> > >> -	port->msi_domain = pci_msi_create_irq_domain(fwnode, &mtk_msi_domain_info,
-> > >> -						     port->inner_domain);
-> > >> +	memcpy(info, &mtk_msi_domain_info, sizeof(*info));
-> > >> +	info->chip_data = port;
-> > >> +
-> > > 
-> > > I'm not really like this memcpy of msi_domain_info, but I do not have a
-> > > better idea to prevent the mixed of mtk_pcie_port data.
-> > 
-> > So we're basically trading an indirection for another. What's the gain?
-> 
-> There is usually more than one PCIe port in each SoC, we use
-> mtk_pcie_port data to describe it, in previous version, we pass the port
-> data as inner domain's host_data. When remove the inner domain, we also
-> need to pass the port data and should prevent to mix with another port,
-> so I thank maybe we can make a copy for each port and set port data as
-> it's chip_data.
-> > 
-> > > 
-> > >> +	port->msi_domain = pci_msi_create_irq_domain(fwnode, info, NULL);
-> > >>  	if (!port->msi_domain) {
-> > >> -		dev_err(port->pcie->dev, "failed to create MSI domain\n");
-> > >> -		irq_domain_remove(port->inner_domain);
-> > >> +		dev_err(dev, "failed to create MSI domain\n");
-> > >>  		return -ENOMEM;
-> > >>  	}
-> > >>  
-> > >> @@ -541,8 +532,6 @@ static void mtk_pcie_irq_teardown(struct mtk_pcie *pcie)
-> > >>  		if (IS_ENABLED(CONFIG_PCI_MSI)) {
-> > >>  			if (port->msi_domain)
-> > >>  				irq_domain_remove(port->msi_domain);
-> > >> -			if (port->inner_domain)
-> > >> -				irq_domain_remove(port->inner_domain);
-> > >>  		}
-> > >>  
-> > >>  		irq_dispose_mapping(port->irq);
-> > >> @@ -619,12 +608,11 @@ static void mtk_pcie_intr_handler(struct irq_desc *desc)
-> > >>  
-> > >>  			while ((imsi_status = readl(port->base + PCIE_IMSI_STATUS))) {
-> > >>  				for_each_set_bit(bit, &imsi_status, MTK_MSI_IRQS_NUM) {
-> > >> -					virq = irq_find_mapping(port->inner_domain, bit);
-> > >> +					virq = irq_find_mapping(
-> > >> +							port->msi_domain, bit);
-> > >>  					generic_handle_irq(virq);
-> > >>  				}
-> > >>  			}
-> > >> -			/* Clear MSI interrupt status */
-> > >> -			writel(MSI_STATUS, port->base + PCIE_INT_STATUS);
-> > >>  		}
-> > > 
-> > > why change this irq status clear flow?
-> > 
-> > I think this is trying move everything to the irq_ack callback. But
-> > that's a change of semantics, and I'd like it explained. It certainly
-> > feels wrong.
-> Yes, I confused with each irq's ack callback, it doesn't need to be
-> changed.
-> 
-> Thanks.
-> > 
-> > Overall, this patch as it stands (without any real explanation) doesn't
-> > feel me with confidence. It introduces significant differences in the
-> > way we build PCI/MSI domains, and I'd like to understand why.
-> > 
-> > Thanks,
-> > 
-> > 	M.
-> 
-> 
+> ---
+>  arch/arm/configs/multi_v7_defconfig | 2 ++
+>  1 file changed, 2 insertions(+)
+>
+> diff --git a/arch/arm/configs/multi_v7_defconfig b/arch/arm/configs/multi_v7_defconfig
+> index 2e9fa5312616..466ccc305a05 100644
+> --- a/arch/arm/configs/multi_v7_defconfig
+> +++ b/arch/arm/configs/multi_v7_defconfig
+> @@ -821,6 +821,8 @@ CONFIG_LEDS_TRIGGER_GPIO=y
+>  CONFIG_LEDS_TRIGGER_DEFAULT_ON=y
+>  CONFIG_LEDS_TRIGGER_TRANSIENT=y
+>  CONFIG_LEDS_TRIGGER_CAMERA=y
+> +CONFIG_LEDS_TRIGGER_PANIC=y
+> +CONFIG_LEDS_TRIGGER_DISK=y
+>  CONFIG_EDAC=y
+>  CONFIG_EDAC_HIGHBANK_MC=y
+>  CONFIG_EDAC_HIGHBANK_L2=y
+> --
+> 2.17.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
