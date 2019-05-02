@@ -2,84 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 615A311187
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 04:33:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01EF8111DD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 05:29:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=wkPMM6OpfIUmh1pcbFAehWC8Sn3u0iru7IQQYhqdXdg=; b=em2yq2I8JiHb2pvJWuxQOaETV
-	UtrLwn4RgjWJitK5uAJCgX6AxZQPNN2MxZ21L44V0bim/F2MY4PSTvlstmMgZpkT3n/vt+i20n6Du
-	TZHel/Ih4NbY8/qfa7xZd+PPMMlErsnO6d2KsqdwQH16/Rb53OWMHkbQWjFZEBwGiY8cC8rcUscmx
-	UYgJNtPbVcVzVI1NhJn8xhF2bfwfmyX/JuIVoQecDN+OckWUoPLnaTjeJ5qd+YJOZB+rm8wz2wixf
-	jaPU2P+QLU0ZJPVzxAZXl5q9nCWD2HOz57IDe1TalP4odyCoXW0njj5yhXmABatMk+qxCCl4+KfpQ
-	fnu5qtegw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fP0FANoEduaqe24+W4LaBQcEEHt5lmPjGvl4cUlSTb4=; b=XCn9Adsr2lnM7D
+	S1uR5NY1FMvHf4sM6hPzkJalKYPEraZNZNiStsUj/+uDbPhgaXIq79rXiFVza5sayiY828v8qdOoX
+	WIAtaAs3R1H3JE6egFN+d+UTgcEeUtUwAVAvXe0rGHiDYGgH1kbwfEHKt4VPnIvW8ZTmOy4SlMGN2
+	wreOg5M3BTn3B5RmosFyTdc/CCAkckiYZfpteIrlYKMEhLqRynFw4z9dlp3pw8Ooquyi6UmU+i9wR
+	ZmkfESN59UjBO+LiA7difUYSdFFSxosixCDd8tSkpHDlM1WD+krVRKGlr4KiAbwchwdjTdhoVnyRD
+	XEzCKZdzzIjWc8b3saWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hM1XQ-0002tR-HE; Thu, 02 May 2019 02:33:32 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hM1XL-0002tJ-7R
- for linux-arm-kernel@bombadil.infradead.org; Thu, 02 May 2019 02:33:27 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=FFKovFdQTg5OJY5i063qAtTB6erYm+spnUt2RsGxwCU=; b=dABzTZn1ZXgchFjOzkdBUGUIO
- feUtNFaRnzhvIIbrW+EfIXMVQ+SB75UZ9qkiEZVroOekZQlXnmJdrJsc8BT76RvPE/jo+2RAhc2bg
- PWesvSK+UyHMaYaLbkZ9FjVpBV7x5TbtVvnYHaNNIqqfVDA/zmhzS9KJEtfJD3RJvyL2dap8n4rl+
- 7IQpIGo88Pt9QrHMjdLg/KkKOkWiwiCj0s14Yfh1fnCYMKEtZ01pYL544p1t715NX9yfBjWo9dtf/
- pa/Bl/zcRrRtNZ6k+vlLSaZXWKdYrB+NjT1RcV+nzExps9rCyejrW2SKQ4dUD6BGm+0BUnDta7ivE
- oeTI4r/aQ==;
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
- by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hM1XI-0004SV-Hv
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 02:33:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=FFKovFdQTg5OJY5i063qAtTB6erYm+spnUt2RsGxwCU=; b=JTkOOzkpa2AgLB/H1z7i9Ta29
- nwuy3p6YYaIv61JcB04usEfZ2SvkIkfhKVp0gLyrbdUN01vpGILYrgak3mgt4utJWdlNibX/lIbUz
- Pkml9MzPnZQ82WH7285KddG+ZKYuTLlVS3A0LNMDBzEYLkKZQmYQr5o2ZPWC8qus5iExc=;
-Received: from [211.55.52.15] (helo=finisterre.ee.mobilebroadband)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hM1XE-0005zR-0e; Thu, 02 May 2019 02:33:20 +0000
-Received: by finisterre.ee.mobilebroadband (Postfix, from userid 1000)
- id DD91A441D3C; Thu,  2 May 2019 03:33:16 +0100 (BST)
-Date: Thu, 2 May 2019 11:33:16 +0900
-From: Mark Brown <broonie@kernel.org>
-To: Jorge Ramirez <jorge.ramirez-ortiz@linaro.org>
-Subject: Re: [PATCH 2/3] drivers: regulator: qcom: add PMS405 SPMI regulator
-Message-ID: <20190502023316.GS14916@sirena.org.uk>
-References: <a3c281d5-d30e-294f-71ab-957decde2ba0@linaro.org>
+	id 1hM2PI-0003Wc-CL; Thu, 02 May 2019 03:29:12 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hM2PB-0003Vs-MS
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 03:29:07 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6474F374;
+ Wed,  1 May 2019 20:29:02 -0700 (PDT)
+Received: from [10.163.1.85] (unknown [10.163.1.85])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D50263F557;
+ Wed,  1 May 2019 20:29:00 -0700 (PDT)
+Subject: Re: [PATCH V2] arm64/mm: Fix pgtable page offset address in
+ [pud|pmd]_free_[pmd|pte]_page
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <1556595839-9282-1-git-send-email-anshuman.khandual@arm.com>
+ <20190430161759.GI29799@arrakis.emea.arm.com>
+ <4f2d0ad4-7453-1851-4e12-f83a9226a6ef@arm.com>
+ <20190501111416.GD58847@arrakis.emea.arm.com>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <8ea03724-5939-9c0e-5adb-a588069e5e2a@arm.com>
+Date: Thu, 2 May 2019 08:59:06 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-In-Reply-To: <a3c281d5-d30e-294f-71ab-957decde2ba0@linaro.org>
-X-Cookie: -- I have seen the FUN --
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190501111416.GD58847@arrakis.emea.arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_223324_728036_0EB0ADA3 
-X-CRM114-Status: GOOD (  28.64  )
-X-Spam-Score: -0.1 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.1 points)
+X-CRM114-CacheID: sfid-20190501_202905_741870_2948C194 
+X-CRM114-Status: GOOD (  25.42  )
+X-Spam-Score: -5.0 (-----)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -91,114 +67,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, vinod.koul@linaro.org,
- linux-kernel@vger.kernel.org, khasim.mohammed@linaro.org, lgirdwood@gmail.com,
- bjorn.andersson@linaro.org, robh+dt@kernel.org, linux-arm-msm@vger.kernel.org,
- niklas.cassel@linaro.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1378718309559284204=="
+Cc: mark.rutland@arm.com, will.deacon@arm.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============1378718309559284204==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="7WENQHN97/U9vH7R"
-Content-Disposition: inline
 
+On 05/01/2019 04:44 PM, Catalin Marinas wrote:
+> On Wed, May 01, 2019 at 10:15:49AM +0530, Anshuman Khandual wrote:
+>> On 04/30/2019 09:47 PM, Catalin Marinas wrote:
+>>> On Tue, Apr 30, 2019 at 09:13:59AM +0530, Anshuman Khandual wrote:
+>>>> @@ -1026,8 +1028,10 @@ int pud_free_pmd_page(pud_t *pudp, unsigned long addr)
+>>>>  		return 1;
+>>>>  	}
+>>>>  
+>>>> -	table = pmd_offset(pudp, addr);
+>>>> -	pmdp = table;
+>>>> +	VM_WARN_ONCE(!IS_ALIGNED(addr, PUD_SIZE),
+>>>> +		"%s: unaligned address 0x%016llx\n", __func__, addr);
+>>>> +	table = pmd_offset(pudp, 0UL);
+>>>> +	pmdp = pmd_offset(pudp, addr);
+>>>
+>>> Why does pmdp need to use addr? We are freeing the whole pmd page, so I
+>>> don't think pmdp should be different from table here.
+>>
+>> pmd_offset(pudp, addr) and pmd_offset(pudp, 0UL) would evaluate the same if
+>> the input addr is PMD_SIZE aligned. The problem just arises when it is not.
+>>
+>> The Idea is that the wrong input should be allowed to have adverse affect
+>> all the way without any corrections. Now because intermediate 'next' and
+>> 'end' are derived from wrong input 'addr' in the first place, all 'pmdp'
+>> start and intermediate values should just follow without any corrections
+>> starting at pmd_offset(pudp, addr).
+>>
+>> The new warning here just informs about the fact that the iteration range is
+>> going to be wrong (as well as everything else probably) because the input
+>> address is not aligned. 'table = pmd_offset(pudp, 0UL)' will prevent it from
+>> hitting unaligned BUG_ON() in pmd_free(). 
+>>
+>> Using 'pmdp = pmd_offset(pudp, 0UL)' for iterations will be sort of fixing
+>> or aligning the wrong input 'addr' which we always wanted to avoid.
+> 
+> So you want to hide the BUG_ON in pmd_free() by changing this to a
+> warning in the caller (pud_free_pmd_page()) and sanitising the value
+> passed to pmd_free(). I don't see how this is different from just
+> turning the BUG_ON into a warning in pmd_free() directly (which I don't
+> think we should, see below).
+> 
+> It looks to me like we should either fix the callers in ioremap.c (e.g.
+> ioremap_try_huge_pud() returning 0 if addr is not PUD_SIZE aligned, not
+> just phys_addr) or return 0 in pud_free_pmd_page() with a similar check.
+> I'd go for changing ioremap.c since x86 doesn't have such check either.
 
---7WENQHN97/U9vH7R
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Sounds good. Will change ioremap_try_huge_[pud|pmd] to include alignment
+checks for 'addr' along with existing 'phys_addr'. But still bit inclined
+towards having XXX_offset(XXX, 0UL) for fetching the pgtable page address
+which is different than XXX_offset(XXX, addr) for iteration purpose unless
+if you have concerns.
 
-On Mon, Apr 29, 2019 at 02:31:55PM +0200, Jorge Ramirez wrote:
-> On 4/27/19 20:21, Mark Brown wrote:
+> 
+> IIUC currently if we pass a PUD_SIZE range to ioremap_page_range() where
+> phys_addr is PUD_SIZE aligned but the virtual addr is not, we'd end up
+> randomly freeing the pmd page that potentially still contains valid
+> mappings. Your patch just hides the problem by turning the BUG_ON into a
+> warning but doesn't solve it.
 
-> > Since the point of this change is AFAICT that this regulator only has a
-> > single linear range it seems like it should just be able to use the
-> > existing generic functions shouldn't it? =20
-
-> yes that would have been ideal but it does not seem to be the case for
-> this hardware.
-
-> The register that stores the voltage range for all other SPMI regulators
-> (SPMI_COMMON_REG_VOLTAGE_RANGE 0x40) is used by something else in the
-> HFS430: SPMI_HFS430_REG_VOLTAGE_LB 0x40 stores the voltage level in two
-> bytes 0x40 and 0x41;
-
-> This overlap really what is creating the pain: HFS430 cant use 0x40 to
-> store the range (even if it is only one)
-
-> so yeah, most of the changes in the patch are working around this fact.
-
-I'm not sure I follow here, sorry - I can see that the driver needs a
-custom get/set selector operation but shouldn't it be able to use the
-standard list and map operations for linear ranges?
-
->=20
-> enum spmi_common_regulator_registers {
-> 	SPMI_COMMON_REG_DIG_MAJOR_REV		=3D 0x01,
-> 	SPMI_COMMON_REG_TYPE			=3D 0x04,
-> 	SPMI_COMMON_REG_SUBTYPE			=3D 0x05,
-> 	SPMI_COMMON_REG_VOLTAGE_RANGE		=3D 0x40, ******
-> 	SPMI_COMMON_REG_VOLTAGE_SET		=3D 0x41,
-> 	SPMI_COMMON_REG_MODE			=3D 0x45,
-> 	SPMI_COMMON_REG_ENABLE			=3D 0x46,
-> 	SPMI_COMMON_REG_PULL_DOWN		=3D 0x48,
-> 	SPMI_COMMON_REG_SOFT_START		=3D 0x4c,
-> 	SPMI_COMMON_REG_STEP_CTRL		=3D 0x61,
-> };
->=20
-> enum spmi_hfs430_registers {
-> 	SPMI_HFS430_REG_VOLTAGE_LB		=3D 0x40, *******
-> 	SPMI_HFS430_REG_VOLTAGE_VALID_LB	=3D 0x42,
-> 	SPMI_HFS430_REG_MODE			=3D 0x45,
-> };
->=20
-> It just needs it's own
-> > set/get_voltage_sel() operations.  As far as I can see the main thing
-> > the driver is doing with the custom stuff is handling the fact that
-> > there's multiple ranges but that's not an issue for this regulator.
-> > It's possible I'm missing something there but that was the main thing
-> > (and we do have some generic support for multiple linear ranges in the
-> > helper code already, can't remember why this driver isn't using that -
-> > the ranges overlap IIRC?).
-> >=20
-> > TBH looking at the uses of find_range() I'm not sure they're 100%
-> > sensible as they are - the existing _time_sel() is assuming we only need
-> > to work out the ramp time between voltages in the same range which is
-> > going to have trouble.
-> >=20
->=20
-
---7WENQHN97/U9vH7R
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAlzKVuwACgkQJNaLcl1U
-h9DtBAf/fJs9R87cXNcFsxrNNksszOWu5ND0JxSJzxsn6F/SqOtvQqIWwvNkZFnn
-xAnvKxojILHRP1HP1bAZTpeH0tQumGjDYWgXWOiexYkar6+TZbQjftk+WEOvuXnE
-H/Z8H6ZU+7dNneX7vyyM2cWjjngayoM2GWHdEE531uMUnRGhyvjPbiBTP9109Pnx
-nN6FG8+ENYurZpOKSJS+0AvzdoEz22WMYo+fKENqtRP/yi0ERtabto5NOWkN7qub
-OVcNIA3zR+5YxFGoXlA/0v3Y4ado+0sC+9kRpmE9eZ/oIQ/uKSXX0UzN1+WmDGIy
-qv/iLyyNvpa1F18cw9aNNCfQSUL5QA==
-=1c2Q
------END PGP SIGNATURE-----
-
---7WENQHN97/U9vH7R--
-
-
---===============1378718309559284204==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Right. This patch tried to use XXX_offset(XXX, 0UL) which is a better way
+fetching the pgtable page address but that does not solve the problem related
+to unaligned input virtual address. VM_WARN_ONCE() just shifts the problem
+bit earlier without solving it as you have pointed out.
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1378718309559284204==--
-
