@@ -2,97 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77D5812327
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 22:24:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C24291232E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 22:24:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EajYHCQQvHSr9DmC3+oFvm2aUn5jh3lB3iHgEZgU3W4=; b=UF5eogH++miUGD
-	qYY15DDTegMxuEX/U8TI9IP30wkXs4akV8oTbRURhJ1VVj3rpq7olefDiP0+IFOwRh20zHowtgamF
-	pBD56hGY8BK9a+3GUESKIC/IdWvr0gq+7aP3QXFx0U+gWBTJLd9w/5IELNQTX4obIs/zTVMPN5Ffz
-	ziXxnA/I7msYuu7LugjQ3FKl8EViuOhuQJJZR6yJK8wewpMxbhY6RzdyxnQOIi9Yw0NHOIAxip3MH
-	C9WY3OpHGx0UqtXA21/8NGa+Mdsdp1fyvCOWQ27fq4+88QL8QYBfm1CoZWyLsvkQ7m+/IpiuL3LcT
-	E2sq85n4HNwqBc/caMgg==;
+	List-Owner; bh=3Gu8lIP9N7SvKYrn9mb2DzbT6T7hGLIfzqOE9/Rtk8A=; b=lSL2mkXJfdWUva
+	jMoCwbAupkxTI184oOelxo5bnpYmz8Y0MoBohjygury6uRA7PdRXOp2oSTt7VINCloqhLE2aqLLGF
+	SaaZBYmD9q0nzr2LdL8NGc+3vk6QFRJtt4lc8E1PPQ2cvKsjClFazNYUjI0Rd8nApqjM4/zV+ydv0
+	5Xg0xPVwEjGGjuOEYfPkVqospq8App7jvFRnnis0J+qk3T9HbacGFdc8+mS6Rv7s60Mlsbjm23pnI
+	smEX2ZIuDsBI7K3SaobDsKEeYhn62/d6BfwRk46MbaoxaNuw0U7MNX1YCtPtfUQEV1Jru6Y9sOHw0
+	4RL0ydohM+HblqHl9pIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMIFO-0003fW-8Y; Thu, 02 May 2019 20:24:02 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hMIG3-00040T-I0; Thu, 02 May 2019 20:24:43 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMIFG-0003f6-Ge
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 20:23:55 +0000
-Received: by mail-pg1-x542.google.com with SMTP id 85so1573754pgc.3
+ id 1hMIFs-0003zL-Df
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 20:24:37 +0000
+Received: from mail-qt1-f171.google.com (mail-qt1-f171.google.com
+ [209.85.160.171])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E724C2087F
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 02 May 2019 13:23:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=1kO1Q8xyPeInFEuVa9YrVjPZKrqRQhoH5hWqL6piNVQ=;
- b=kY9LQyUGqZ0FVr/++HvUx4Y7nQFfpaOv8Q7FRLpg2RY0aG5pNS01losjKp9fpNP90Z
- VgTVYGgsKsoaTcpQ/e4d5paVJ30k0qLBxIs0xZbbCm1zVwVvBMHvziwUl17b6rZBkVRf
- p526iPe00uoy3h30NHZUkqJ4LbvdULvtN+gFmBIiw63aSiTpVoqlWFRz4wyIGqGV6CwP
- mBQ2DLGmY00I6xkuj3qxlMgPF/Au6ThLvqDR6R8EhSe9OAlEe1v4WRHHWxMpuUCmYJwn
- MzXNdUJ0+ZWuXBrXm77sDeeIGFXUY1Ds85h2pvB96SnlvL38Nyb8iMHX5gooQwLCLb3s
- OaWA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=1kO1Q8xyPeInFEuVa9YrVjPZKrqRQhoH5hWqL6piNVQ=;
- b=OoLDvpYVzNd0JAB+H4EFLge9sGkN/RBNVkWMVeZVlSGNCfjx3pPs0JlJh+jKmVsGXv
- KzbArVR4lDm9mtedjl0XJ5TMZ3d4a38JoGeJ6bfsuVFcAPXuJpfD7b7JRGKc2BJQ0k9T
- QVjCB5d45p4lvQmqkNpGZm/Rm6sINLShsvXJpGgcAz+SRa0A8z/hKFtYvL2WguTFakSW
- M/inoTN2UuDUACrzQTBqq4le6yj9IREQdDbf+6xlVoIV08pXOiVQPNYqqAjEhcfl9tzd
- 2qZVwkmdMqvvYJ//obZSEZXTUSkaFrJc3GLBf6y++1hzwVmG54e6ufZkNW7kUDBcccca
- eCFg==
-X-Gm-Message-State: APjAAAV4rttpU/GYgBmCkUpDELy2uDEc52pP6AQCLU0XDdtZWOyysRRX
- KNrrpj3Go9kyLP6x720jkg0=
-X-Google-Smtp-Source: APXvYqz6iymo/ALT6GvocSEczAk4ZxeBc7r9+eHosppkdeZ8l7kIrZ2jQzAKGJzr1yX23EYcVZm0PQ==
-X-Received: by 2002:a63:5014:: with SMTP id e20mr6075785pgb.2.1556828633822;
- Thu, 02 May 2019 13:23:53 -0700 (PDT)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id u5sm17161pfm.121.2019.05.02.13.23.52
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 02 May 2019 13:23:53 -0700 (PDT)
-Date: Thu, 2 May 2019 13:23:52 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: Ludovic Barre <ludovic.Barre@st.com>
-Subject: Re: [PATCH V2 2/3] watchdog: stm32: update return values recommended
- by watchdog kernel api
-Message-ID: <20190502202352.GB27894@roeck-us.net>
-References: <1556806126-15890-1-git-send-email-ludovic.Barre@st.com>
- <1556806126-15890-3-git-send-email-ludovic.Barre@st.com>
+ Thu,  2 May 2019 20:24:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1556828672;
+ bh=fPysuS9QGjjgbk9tLRamHIsNsWi799oVziR6RsQ3XTc=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=B5FzbdvYNHyOzaACD9WnyFZMcLJAtiwUAT7VXwkycVlj1ywQdTL8YZQmE38MoGiZS
+ eJl9nziJNk5N7ip2vO/yzjxNUdRPQz4y0Mii5QzP4X0RhwXQVDrY9oxBMciQcU9kKp
+ w/z33u8QovQFpjrHmcUgbqjbLfH4vs1hkIiA4Cz4=
+Received: by mail-qt1-f171.google.com with SMTP id c13so4211420qtn.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 02 May 2019 13:24:31 -0700 (PDT)
+X-Gm-Message-State: APjAAAUS2u9u/ZkBtQXeFaPAU5Q/UuT/RdDeEc2wWQDdZ5tHZc2sdp5O
+ lYLBZ4Wg+/Doh0rdmArfKKILnVYBL7TT4wiI4g==
+X-Google-Smtp-Source: APXvYqx6C25RjdbTQS+SWLt4/8jx2DcPpy0kcWoZHeaatbwZmHH6mbkpB3Fk9JShMpb/mxi8G6d9PZk2zE2bZTukxKg=
+X-Received: by 2002:a0c:9066:: with SMTP id o93mr4888171qvo.246.1556828671176; 
+ Thu, 02 May 2019 13:24:31 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1556806126-15890-3-git-send-email-ludovic.Barre@st.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+References: <1555681688-19643-1-git-send-email-l.luba@partner.samsung.com>
+ <CGME20190419134822eucas1p29c6eff0f500311749b33c4f556123cf0@eucas1p2.samsung.com>
+ <1555681688-19643-4-git-send-email-l.luba@partner.samsung.com>
+ <20190430223629.GA22317@bogus>
+ <1fd44623-4a59-f014-1ae9-a7cc605ad30f@partner.samsung.com>
+In-Reply-To: <1fd44623-4a59-f014-1ae9-a7cc605ad30f@partner.samsung.com>
+From: Rob Herring <robh@kernel.org>
+Date: Thu, 2 May 2019 15:24:20 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqJcm9Z6vYFHGyAZ+h3-kmSv6e=3NtO-fjJn3-QT0JoX+w@mail.gmail.com>
+Message-ID: <CAL_JsqJcm9Z6vYFHGyAZ+h3-kmSv6e=3NtO-fjJn3-QT0JoX+w@mail.gmail.com>
+Subject: Re: [PATCH v3 3/4] Documentation: devicetree: add PPMU events
+ description
+To: Lukasz Luba <l.luba@partner.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_132354_579775_E1D4F4F0 
-X-CRM114-Status: GOOD (  21.53  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190502_132432_487192_AFC593BB 
+X-CRM114-Status: GOOD (  16.57  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -104,90 +89,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-watchdog@vger.kernel.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- Alexandre Torgue <alexandre.torgue@st.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ willy.mh.wolff.ml@gmail.com,
+ linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ "open list:THERMAL" <linux-pm@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 02, 2019 at 04:08:45PM +0200, Ludovic Barre wrote:
-> From: Ludovic Barre <ludovic.barre@st.com>
-> 
-> This patch updates return values on watchdog-kernel-api.txt:
-> return 0 on succes, -EINVAL for "parameter out of range"
-> and -EIO for "could not write value to the watchdog".
-> 
-> Signed-off-by: Ludovic Barre <ludovic.barre@st.com>
-> ---
->  drivers/watchdog/stm32_iwdg.c | 21 +++++++++++++--------
->  1 file changed, 13 insertions(+), 8 deletions(-)
-> 
-> diff --git a/drivers/watchdog/stm32_iwdg.c b/drivers/watchdog/stm32_iwdg.c
-> index e191bd8..f19a6d4 100644
-> --- a/drivers/watchdog/stm32_iwdg.c
-> +++ b/drivers/watchdog/stm32_iwdg.c
-> @@ -81,7 +81,6 @@ static int stm32_iwdg_start(struct watchdog_device *wdd)
->  	struct stm32_iwdg *wdt = watchdog_get_drvdata(wdd);
->  	u32 val = FLAG_PVU | FLAG_RVU;
->  	u32 reload;
-> -	int ret;
->  
->  	dev_dbg(wdd->parent, "%s\n", __func__);
->  
-> @@ -98,13 +97,11 @@ static int stm32_iwdg_start(struct watchdog_device *wdd)
->  	reg_write(wdt->regs, IWDG_KR, KR_KEY_ENABLE);
->  
->  	/* wait for the registers to be updated (max 100ms) */
-> -	ret = readl_relaxed_poll_timeout(wdt->regs + IWDG_SR, val,
-> -					 !(val & (FLAG_PVU | FLAG_RVU)),
-> -					 SLEEP_US, TIMEOUT_US);
-> -	if (ret) {
-> -		dev_err(wdd->parent,
-> -			"Fail to set prescaler or reload registers\n");
-> -		return ret;
-> +	if (readl_relaxed_poll_timeout(wdt->regs + IWDG_SR, val,
-> +				       !(val & (FLAG_PVU | FLAG_RVU)),
-> +				       SLEEP_US, TIMEOUT_US)) {
-> +		dev_err(wdd->parent, "Fail to set prescaler, reload regs\n");
-> +		return -EIO;
+On Thu, May 2, 2019 at 3:52 AM Lukasz Luba <l.luba@partner.samsung.com> wrote:
+>
+> Hi Rob,
+>
+> On 5/1/19 12:36 AM, Rob Herring wrote:
+> > On Fri, Apr 19, 2019 at 03:48:07PM +0200, Lukasz Luba wrote:
+> >> Extend the documenation by events description with new 'event-data-type'
+> >> field. Add example how the event might be defined in DT.
+> >
+> > Why do we need event types in DT? We don't do this for other h/w such as
+> > ARM PMU.
+> In ARM PMU all the events are hard-coded into the driver code i.e. in v7
+> arch/arm/kernel/perf_event_v7.c
+> and are seen from perf. They are different type and for different
+> purpose. The Ecynos PPMU events are not seen in perf, they are
+> for internal monitoring and must not be reset by other actors like perf.
+> They are used by the 'bus drivers' to made some heuristics and tune the
+> internal settings, like frequency.
+>
+> Chanwoo has written PPMU driver which relies on DT definition.
+> The DT events are used by other DT devices by phandle.
 
-Please don't. Overriding error values tends to result in complaints by
-static analyzers, and we don't want to have to deal with those.
+How is that done? I don't see anything in the binding for that.
 
->  	}
->  
->  	/* reload watchdog */
-> @@ -128,8 +125,16 @@ static int stm32_iwdg_ping(struct watchdog_device *wdd)
->  static int stm32_iwdg_set_timeout(struct watchdog_device *wdd,
->  				  unsigned int timeout)
->  {
-> +	unsigned int tout = clamp(timeout, wdd->min_timeout,
-> +				  wdd->max_hw_heartbeat_ms / 1000);
-> +
->  	dev_dbg(wdd->parent, "%s timeout: %d sec\n", __func__, timeout);
->  
-> +	if (tout != timeout) {
-> +		dev_err(wdd->parent, "parameter out of range\n");
-> +		return -EINVAL;
-> +	}
-
-This is simply wrong. The whole point of max_hw_heartbeat_ms is to
-enable situations where the selected timeout is larger than the
-timeout supported by the hardware. In that situation, the kernel
-pings the hardware until the next ping from userspace is due.
-
-> +
->  	wdd->timeout = timeout;
->  
->  	if (watchdog_active(wdd))
-> -- 
-> 2.7.4
-> 
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
