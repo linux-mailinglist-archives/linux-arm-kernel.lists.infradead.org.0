@@ -2,61 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 296B5113A3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 09:00:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C0A91113AF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 09:07:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MBRO/XDWBfb+CKJLl5hrBiv9AoX1faXe3XzBJ6W7+xA=; b=CI0wm/5sIUmr4m
-	0TIu0lIGCJw8ugpO0lFKd7RpaoCiXcggchvloAFhd6f70+a34OMUtaGPsCLo5CR5X0ch0sTpltWWu
-	wsvfZlDiXMmOi+XxjpNRBB008Zc6vgAqSC+zq8GRz9OSgXKtWu9chXh0Ctwp+MCbxE6yRSOaTBQg/
-	5LMo5EGMLdhD7+tXqJXK2O1Zl+P9he1nvs1TFK5xNysebN0y/aUhZBTqfRMyveioUPwaaG3DgGAS4
-	xGQoKYeUq7z+x0ihKUUy9uVuqHcPtsVmNPdOvzWx8M9MksI2Q2F3JlKcEI+nm80xcZ2B+daJ/9A3x
-	cqKdrJ1/Vl+v38Mw/cZw==;
+	List-Owner; bh=kwfv9E6CCaOZNfu0d6PNSOv5dPA0bEg0GfDjrBpYVls=; b=Pn86oyakIPP8eA
+	Qi7f/rbpGAfpjTYrsaeBM1YLQM64UEMBdqsx3phebOUyEypQxTvx8FDfVpvGSV3DgGYkejPb5P6UQ
+	Ttfh+4XD+Uob4goSyQQSMxTZ9dVhguug0d3MEbvTPYHnGUpmeeds2ZNAAGOGPTr0Gprw9VSLrt9xE
+	29/s/jN6aNKIU1+7N/lXi9IXyC6qj4niuaV/Y+elR006tAVNpcfLODb7VElhln1qFisrVVywbM7Z2
+	DNSGHHEvqJ3USqWy96rq+SPXZTRw3IkjpPgtpviQh8VOfv+5luAucRomfxMDN8kom9L4ijvlFsWM8
+	D/esS0lY3cZD0QCGCc3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hM5hG-00075A-Uv; Thu, 02 May 2019 06:59:58 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1hM5oy-0001On-Ff; Thu, 02 May 2019 07:07:56 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hM5hA-00074T-9F
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 06:59:53 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1hM5gz-0008TR-Au; Thu, 02 May 2019 08:59:41 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1hM5gx-0007lH-EQ; Thu, 02 May 2019 08:59:39 +0200
-Date: Thu, 2 May 2019 08:59:39 +0200
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Robin Gong <yibin.gong@nxp.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>
-Subject: Re: [PATCH v2 08/15] dt-bindings: spi: imx: add i.mx6ul to state
- errata fixed
-Message-ID: <20190502065939.nyejomrsowhy6xox@pengutronix.de>
-References: <1556265512-9130-1-git-send-email-yibin.gong@nxp.com>
- <1556265512-9130-9-git-send-email-yibin.gong@nxp.com>
+ id 1hM5or-0001OH-9z; Thu, 02 May 2019 07:07:50 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B9159208C4;
+ Thu,  2 May 2019 07:07:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1556780868;
+ bh=R58soqJU4/GFbmzVt6nBZnewIAmHT909NOZ409AkhRM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=BO285Ep1LVasDMxvVq5Od9DRgRNO6bDWc1jYgn8yTtbgsFfHfewSjEVStJsT8NoOX
+ JE3DiwPqAY24RWeqhUvVu5iPxDvrgLOBCG2FKR+EKtD88UumZ50usRkb0kDkqcvlR3
+ fDbgLrJVG5TsOSfcOW6M3RP1qdznJtq2VvCZYhO4=
+Date: Thu, 2 May 2019 09:07:46 +0200
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>
+Subject: Re: [PATCH] clk: actions: Use the correct style for SPDX License
+ Identifier
+Message-ID: <20190502070746.GA16247@kroah.com>
+References: <20190501070707.GA5619@nishad>
+ <057d9b37-7475-1902-bce7-6d519c2e0fdf@suse.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1556265512-9130-9-git-send-email-yibin.gong@nxp.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <057d9b37-7475-1902-bce7-6d519c2e0fdf@suse.de>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_235952_480914_A9650319 
-X-CRM114-Status: GOOD (  15.13  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190502_000749_359654_6AC498EA 
+X-CRM114-Status: GOOD (  10.22  )
+X-Spam-Score: -5.1 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -68,68 +73,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "plyatov@gmail.com" <plyatov@gmail.com>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
- "broonie@kernel.org" <broonie@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
- "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Nishad Kamdar <nishadkamdar@gmail.com>, Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ linux-actions@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
+ Joe Perches <joe@perches.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="iso-8859-1"
 Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 26, 2019 at 08:05:51AM +0000, Robin Gong wrote:
-> ERR009165 fixed from i.mx6ul, add it to show the errata fixed.
+On Wed, May 01, 2019 at 10:20:44PM +0200, Andreas F=E4rber wrote:
+> + linux-actions
 > =
 
-> Signed-off-by: Robin Gong <yibin.gong@nxp.com>
-> ---
->  Documentation/devicetree/bindings/spi/fsl-imx-cspi.txt | 2 ++
->  1 file changed, 2 insertions(+)
+> Am 01.05.19 um 09:07 schrieb Nishad Kamdar:
+> > This patch corrects the SPDX License Identifier style
+> > in header files related to Clock Drivers for Actions Semi Socs.
+> > For C header files Documentation/process/license-rules.rst
+> > mandates C-like comments (opposed to C source files where
+> > C++ style should be used)
+> [...]
+> >  drivers/clk/actions/owl-common.h       | 2 +-
+> >  drivers/clk/actions/owl-composite.h    | 2 +-
+> >  drivers/clk/actions/owl-divider.h      | 2 +-
+> >  drivers/clk/actions/owl-factor.h       | 2 +-
+> >  drivers/clk/actions/owl-fixed-factor.h | 2 +-
+> >  drivers/clk/actions/owl-gate.h         | 2 +-
+> >  drivers/clk/actions/owl-mux.h          | 2 +-
+> >  drivers/clk/actions/owl-pll.h          | 2 +-
+> >  drivers/clk/actions/owl-reset.h        | 2 +-
+> >  9 files changed, 9 insertions(+), 9 deletions(-)
 > =
 
-> diff --git a/Documentation/devicetree/bindings/spi/fsl-imx-cspi.txt b/Doc=
-umentation/devicetree/bindings/spi/fsl-imx-cspi.txt
-> index 2d32641..32c4263d 100644
-> --- a/Documentation/devicetree/bindings/spi/fsl-imx-cspi.txt
-> +++ b/Documentation/devicetree/bindings/spi/fsl-imx-cspi.txt
-> @@ -10,6 +10,8 @@ Required properties:
->    - "fsl,imx35-cspi" for SPI compatible with the one integrated on i.MX35
->    - "fsl,imx51-ecspi" for SPI compatible with the one integrated on i.MX=
-51
->    - "fsl,imx53-ecspi" for SPI compatible with the one integrated on i.MX=
-53 and later Soc
-> +  - "fsl,imx6ul-ecspi" ERR009165 fixed on i.MX6UL and later Soc
-> +    (https://www.nxp.com/docs/en/errata/IMX6DQCE.pdf)
+> Where's the practical benefit of this patch? These are all private
+> headers used from C files, so they can handle C++ comments just fine,
+> otherwise we would've seen build failures.
 
-I wouldn't mention this errata in the binding documentation. Just state
-that fsl,imx6ul-ecspi is designed to be used on i.MX6UL. And that it
-might also be used on later SoCs as a "fallback compatible" is a detail
-that is so common that I would expect it not being worth mentioning. So
-for me it would also be OK to drop "fsl,imx53-ecspi" from the list as
-this is only used like:
+Please read Documentation/process/license-rules.rst, the section
+entitled "Style", for what the documented formats are for SPDX lines,
+depending on the file type.
 
-	compatible =3D "fsl,imx53-ecspi", "fsl,imx51-ecspi";
+thanks,
 
-(But note that I have no authority here.)
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
