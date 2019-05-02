@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D483120A0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 18:54:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A87C120A1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 18:54:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Ziu4ACFGusA7Fr5rSK6ZRUlTFvfgxTslMrgrubDEg4o=; b=LXS9X3YMTMASdIRtgaikZmKQbP
-	snJrSb/1tq2eZnVPwOBehmbF3Usy10LeMj528hetJuWtJ15+bkvh+niPU29ZVHxSifyoQOwqECUFc
-	44zljXbNX6Bg+bhWHMLB2QgMfoDj9houZ6Tf6rEP5U0j+RpiYCsrbD4/ApA2UIMoNLnQo1dQrWq0e
-	HELap5H4fVV0sptkLxjKEI6JkKafb0P1R7Qb+TO5jJsFKljOTRSWSL7vX3c4clt2WF+l8/CUJUZSq
-	aWuxRt0Z/MebbRgxRbEIEpZ8DTJPOzOrtzxFO63qbx6vBjsqcb46QikX5IRWWFCOmQ6roYGhNy3Am
-	vHwMwgUw==;
+	bh=Jr84hYMI1MYBElFxr2FS7DPA18MWR8JmCMK/7S5o7VI=; b=uSuPnhemG944bCMGLusLycRe2y
+	V1QAfBYub/BUOPrH+29hgNezlQqj3+1R1P2GdpP6/+0HOnnOk8l0v97LD9UV8++8ITGc85l/s8u/w
+	Ao+r56W6aFaQhPg8LsRjHHI1P6jCYY+ziB69ohBnDOyfqqEY4bX+b0AewoM/8as1o2NHJrwD1VTZj
+	T+B3QRam8L78zeOVFZKwP6BNMvGll0TSXzyoZANxnqJ3Vj/QVf/jqRU+ttHhoSX4cZ4Uvk0RtM/kT
+	IewthH/snnuBkwYeRpszhTfqfZ/NM+DJhbVATWEG9HR6CS4q/QfgsHViD9GgI37dZj9zQErhas3B3
+	7D/N+gHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMEyi-0003f5-Bp; Thu, 02 May 2019 16:54:36 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hMEys-0003tF-Ok; Thu, 02 May 2019 16:54:46 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMEyI-0003I5-D2
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 16:54:11 +0000
-Received: by mail-pf1-x444.google.com with SMTP id e24so1399379pfi.12
+ id 1hMEyJ-0003Ir-UL
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 16:54:13 +0000
+Received: by mail-pf1-x443.google.com with SMTP id 13so1104295pfw.9
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 02 May 2019 09:54:10 -0700 (PDT)
+ Thu, 02 May 2019 09:54:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=vRavtCuEgDmIK+L0LjCzpchEvsYFUuSGMHsKbPl1OXo=;
- b=p1iuQ8jp93efREIh6tYMi7eudLPjh6BqGeUJEt+25legIa8wXytBuW36/RYS3b9GRD
- zhPlnLD9gMJp4+rT1NG5f9R7MUbqdBxDKnkIXc/nYmYox4ISoh9TrNuLHPtoH+9CwvYT
- ysz8ess489SK5iVoYQViyDaSkP5qFfOkTqolR+qOUit3Z2XakRcEFTJPGT6FPJFOC0Rc
- g2eDFre6sXVSAvBL7dFH1aesDippUpYcqi6PBM4umc8pEHTI82Zxm8O0TO9JCwPK3n4u
- wP8GJzCCarOZWhrzPbwBTNcgjqM8b+bQs8q8EHs9nvrQPOG2VmRiqru+PsGr7vYrNVeR
- Aw3Q==
+ bh=tTIyE5NXuHrlOq5gllPk+Q5yU0dC0cT6YPpzWkGZKrk=;
+ b=DfJSJp1E5/kYZAponh3b9l8qSiRbPxtIfigHy3nbt5ALTcLcgaq3O7Mf70m0HnH6gv
+ dwMR/dRP5XZEE8vludrAZSeMdmUESQGZof734kmI3kTI+ZAFc+GRoVBos6FcRPjbAXRa
+ HGTkFPehBpHI2uZJcRITrTaLsrG6K5BUlWGlSaTTKXYFUjnIoaqw2CBHJ4H7k8oO27C6
+ c7A+t/XB616J4l4XUFHcCJr5ufa6AHFXYto320cCRRTP8CpcdCsL4qQgymWg9Ksfi9Ap
+ TavCrit12Yk8ETY8NTwpFfFkgI8zX+K6NGQlhTxDigh75NS1ZvxrPaZ9Nd16SQlkHjX+
+ BA0g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=vRavtCuEgDmIK+L0LjCzpchEvsYFUuSGMHsKbPl1OXo=;
- b=JwW2lbgm/wdu2yx/7kjRF65n0Ks74ftWD6hCfwXFWUGYzA7lzDHPgzE9oH4302MbzZ
- X77urZShDPbjVJi0TEch/1KC3dVfL5qogi2WlZTiq5KVMTg63H9ZWGMoh+vv5seFtZu4
- nI71rzpfARddXnL4BbLwla+USrjSHT8LMieR1wQIzSuPgvLTlYXT6Fr2L2Y4TaefJiKv
- ux/B8kEPH+TLdkswa7GN1EKWpT+hCjAz8ofGO2yHJpuWR97h0zIhK7dC18OsjtqjQV+1
- xfNv3azVPpWcvkAHaqWkY4HuVzA7wvl6IwRH0YOszNg3x6zxTMO1MX9SSC+48sswx+lD
- W92A==
-X-Gm-Message-State: APjAAAXej7bVYCY07aj91+0pkuUUtjaNv5cAE8rzhYeIdj/M0icX12I6
- 453bn8k5EbmfIS7O4EeT0ebE6w==
-X-Google-Smtp-Source: APXvYqzuEa4AvvzUuF+vRnu4cN2uHh5br+nlbOPlgO29fCu9f+FQqF4a72vx9pr8GZSfiJCLoTg6ag==
-X-Received: by 2002:a63:ef46:: with SMTP id c6mr5003771pgk.392.1556816049674; 
- Thu, 02 May 2019 09:54:09 -0700 (PDT)
+ bh=tTIyE5NXuHrlOq5gllPk+Q5yU0dC0cT6YPpzWkGZKrk=;
+ b=Pwr0p4NWO1LLy9dTSJnFXozUXYXVmA6/IUOvrzBKNRvoXhtQjo4Z6hhCwQkAWiSOMu
+ I1lI/iC+R+UZm77shMuHfLwEIL84JRD9fs6pru1kN9Z0G67sbHVORrSCizyTCI0EM428
+ G4xIKqEC4fDqm4s+0yJzWEqhKpIaxc7fNJGzMWUq4YRgh5CvfC5QX/nqvCXxE68Apk1B
+ i3nJ8GVS0Dz/kA57/AsLtoLOBEF0Sr2d6Id1SPyRiBn6xvWkSv3gNd2LgTAxR45+ZRt4
+ 6308yx9ShMQNNNV9uOvOs2HZjkbeNDJzkYp4eRIRQLKVI4ccKQoGkM187RdMSnOzRVgy
+ 4pIQ==
+X-Gm-Message-State: APjAAAVq7kM3X3NjeDTgz54WLfPD3O83JHZ2lw3joSX2cdX1tW1H7vNv
+ BLCTV5Fd7Srsbha4NDRU/JwhvA==
+X-Google-Smtp-Source: APXvYqwWOAmvj3YvTHUYoK36fRkMS9w20Ys3abUSfLJL1Z2FxxvgL5txroZfV32U5+5B+afupPCPBA==
+X-Received: by 2002:a63:20f:: with SMTP id 15mr4899953pgc.90.1556816051299;
+ Thu, 02 May 2019 09:54:11 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id j2sm69949pff.77.2019.05.02.09.54.08
+ by smtp.gmail.com with ESMTPSA id j2sm69949pff.77.2019.05.02.09.54.09
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 02 May 2019 09:54:08 -0700 (PDT)
+ Thu, 02 May 2019 09:54:10 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 2/4] coresight: replicator: Add new device id for static
- replicator
-Date: Thu,  2 May 2019 10:54:03 -0600
-Message-Id: <20190502165405.31573-3-mathieu.poirier@linaro.org>
+Subject: [PATCH 3/4] dt-bindings: arm: coresight: Unify funnel DT binding
+Date: Thu,  2 May 2019 10:54:04 -0600
+Message-Id: <20190502165405.31573-4-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190502165405.31573-1-mathieu.poirier@linaro.org>
 References: <20190502165405.31573-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_095410_502111_010C9376 
-X-CRM114-Status: GOOD (  15.24  )
+X-CRM114-CacheID: sfid-20190502_095411_984255_6A05D365 
+X-CRM114-Status: GOOD (  16.26  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -105,50 +104,134 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Leo Yan <leo.yan@linaro.org>
 
-This patch adds a device id for the new static replicator compatible
-string; it changes the driver name from "coresight-replicator" to
-"coresight-static-replicator" as well.
+Following the same fashion with replicator DT binding, this patch is to
+unify the DT binding for funnel to support static and dynamic modes;
+finally we get the funnel DT binding as below:
 
-This patch also gives warning when use the replicator obsolete DT
-binding.
+Before patch:
 
+  Static funnel, aka. non-configurable funnel:
+    Not supported;
+
+  Dynamic funnel, aka. configurable funnel:
+    "arm,coresight-funnel", "arm,primecell";
+
+After patch:
+
+  Static funnel:
+    "arm,coresight-static-funnel";
+
+  Dynamic funnel:
+    "arm,coresight-dynamic-funnel", "arm,primecell";
+    "arm,coresight-funnel", "arm,primecell"; (obsolete)
+
+At the end of this patch, it gives an example for static funnel DT
+binding, and updates the dynamic funnel example.
+
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+Cc: Wanglai Shi <shiwanglai@hisilicon.com>
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-replicator.c | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+ .../devicetree/bindings/arm/coresight.txt     | 53 +++++++++++++++++--
+ 1 file changed, 48 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-replicator.c b/drivers/hwtracing/coresight/coresight-replicator.c
-index 4e0da85efd2d..8c9ce74498e1 100644
---- a/drivers/hwtracing/coresight/coresight-replicator.c
-+++ b/drivers/hwtracing/coresight/coresight-replicator.c
-@@ -189,6 +189,9 @@ static int replicator_probe(struct device *dev, struct resource *res)
- 		dev->platform_data = pdata;
- 	}
+diff --git a/Documentation/devicetree/bindings/arm/coresight.txt b/Documentation/devicetree/bindings/arm/coresight.txt
+index d02d160fa8ac..8a88ddebc1a2 100644
+--- a/Documentation/devicetree/bindings/arm/coresight.txt
++++ b/Documentation/devicetree/bindings/arm/coresight.txt
+@@ -8,7 +8,8 @@ through the intermediate links connecting the source to the currently selected
+ sink. Each CoreSight component device should use these properties to describe
+ its hardware characteristcs.
  
-+	if (of_device_is_compatible(np, "arm,coresight-replicator"))
-+		pr_warn_once("Uses OBSOLETE CoreSight replicator binding\n");
+-* Required properties for all components *except* non-configurable replicators:
++* Required properties for all components *except* non-configurable replicators
++  and non-configurable funnels:
+ 
+ 	* compatible: These have to be supplemented with "arm,primecell" as
+ 	  drivers are using the AMBA bus interface.  Possible values include:
+@@ -24,8 +25,10 @@ its hardware characteristcs.
+ 		  discovered at boot time when the device is probed.
+ 			"arm,coresight-tmc", "arm,primecell";
+ 
+-		- Trace Funnel:
+-			"arm,coresight-funnel", "arm,primecell";
++		- Trace Programmable Funnel:
++			"arm,coresight-dynamic-funnel", "arm,primecell";
++			"arm,coresight-funnel", "arm,primecell"; (OBSOLETE. For
++				backward compatibility and will be removed)
+ 
+ 		- Embedded Trace Macrocell (version 3.x) and
+ 					Program Flow Trace Macrocell:
+@@ -65,7 +68,7 @@ its hardware characteristcs.
+ 	  "stm-stimulus-base", each corresponding to the areas defined in "reg".
+ 
+ * Required properties for devices that don't show up on the AMBA bus, such as
+-  non-configurable replicators:
++  non-configurable replicators and non-configurable funnels:
+ 
+ 	* compatible: Currently supported value is (note the absence of the
+ 	  AMBA markee):
+@@ -74,6 +77,9 @@ its hardware characteristcs.
+ 			"arm,coresight-replicator"; (OBSOLETE. For backward
+ 				compatibility and will be removed)
+ 
++		- Coresight Non-configurable Funnel:
++			"arm,coresight-static-funnel";
 +
- 	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
- 	if (!drvdata)
- 		return -ENOMEM;
-@@ -285,13 +288,14 @@ static const struct dev_pm_ops replicator_dev_pm_ops = {
+ 	* port or ports: see "Graph bindings for Coresight" below.
  
- static const struct of_device_id static_replicator_match[] = {
- 	{.compatible = "arm,coresight-replicator"},
-+	{.compatible = "arm,coresight-static-replicator"},
- 	{}
- };
+ * Optional properties for ETM/PTMs:
+@@ -203,8 +209,45 @@ Example:
+ 		};
+ 	};
  
- static struct platform_driver static_replicator_driver = {
- 	.probe          = static_replicator_probe,
- 	.driver         = {
--		.name   = "coresight-replicator",
-+		.name   = "coresight-static-replicator",
- 		.of_match_table = static_replicator_match,
- 		.pm	= &replicator_dev_pm_ops,
- 		.suppress_bind_attrs = true,
++	funnel {
++		/*
++		 * non-configurable funnel don't show up on the AMBA
++		 * bus.  As such no need to add "arm,primecell".
++		 */
++		compatible = "arm,coresight-static-funnel";
++		clocks = <&crg_ctrl HI3660_PCLK>;
++		clock-names = "apb_pclk";
++
++		out-ports {
++			port {
++				combo_funnel_out: endpoint {
++					remote-endpoint = <&top_funnel_in>;
++				};
++			};
++		};
++
++		in-ports {
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			port@0 {
++				reg = <0>;
++				combo_funnel_in0: endpoint {
++					remote-endpoint = <&cluster0_etf_out>;
++				};
++			};
++
++			port@1 {
++				reg = <1>;
++				combo_funnel_in1: endpoint {
++					remote-endpoint = <&cluster1_etf_out>;
++				};
++			};
++		};
++	};
++
+ 	funnel@20040000 {
+-		compatible = "arm,coresight-funnel", "arm,primecell";
++		compatible = "arm,coresight-dynamic-funnel", "arm,primecell";
+ 		reg = <0 0x20040000 0 0x1000>;
+ 
+ 		clocks = <&oscclk6a>;
 -- 
 2.17.1
 
