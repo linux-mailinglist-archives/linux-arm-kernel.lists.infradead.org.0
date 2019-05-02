@@ -2,61 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B645E11ADA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 16:09:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C9FF11B04
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 16:14:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lveOoVZPE3i4Bwszlyucl+Sk3IxgZ6licmKDwrS5liM=; b=UnsraJn0G0a81+
-	q/G9zFC2HE7I9TudhkKVblNxYka5qdgmSxd7lcB9kf/86RcXhXkCkDrf2R053hPyZyC5UDXf39CHe
-	ZmdDs2qKO/UU8DhAnut2L+l1eQ38bhdgwLMozuloULCXUgXZIs01pwJKYixOhk0aYQ+0erMVQxoev
-	dgM9tdF41NsySGwOLRuY76dsIhh3cjMYjCQsHRM92aOFXarMg0CuV5ORpE3IBjUN2MC4naFeMK5/t
-	Jsm/bKa7P8vyHiESTtWfzYLauORK/qDtUhwx8sKc78f38g/RJddVxiYV7ttdyprzvyCw/c0rLppX8
-	Y5nt3tTGMr/imSrfpMmw==;
+	List-Owner; bh=YYEPzVSetRg+F0AoIDdTZUrez8Adf4cxZEwObbmdNMs=; b=fsJbKi/t7uxMkc
+	yLe465BC7QouOgTuc/FX40c4So/pbp9rrSEvUmK9f39rqhkh1U5hmLb746W8vK1cUHfeN+EHAReqj
+	xc4w8VD7rIWsRjdHgucvDV2eKT+1GSOJCjDGNl4uF5KsKd64f90/MnFTKdqTIFn7sQasGJR01LESM
+	q8sE8W0rITLNNV0DFGEhcmzsaAjdrdMxdfvZH3psvH110Kl17NftW1eQY6MhvZh0MEeZ2Xs/2kzNb
+	vFznAsjqJxiipbcKO1QTVupmJeA+OPi7+AHcBD4hwQEo1b38ZyffOf/VPEzMYuwdsJ85rJXoQyEBC
+	apFug9V3a20jcIwcbdmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMCOf-0007ZZ-UV; Thu, 02 May 2019 14:09:14 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMCOR-0007RG-Qy
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 14:09:01 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6D2F3374;
- Thu,  2 May 2019 07:08:57 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 07E833F220;
- Thu,  2 May 2019 07:08:55 -0700 (PDT)
-Date: Thu, 2 May 2019 15:08:50 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: Thierry Reding <thierry.reding@gmail.com>
-Subject: Re: [PATCH v2] iommu/arm-smmu: Break insecure users by disabling
- bypass by default
-Message-ID: <20190502140850.GA9500@fuggles.cambridge.arm.com>
-References: <20190301192017.39770-1-dianders@chromium.org>
- <20190404145957.GA25912@fuggles.cambridge.arm.com>
- <4754bcf1-6423-f1fe-64d4-da4a35b164ad@free.fr>
- <20190424115231.GA14829@fuggles.cambridge.arm.com>
- <20190502105912.GA943@ulmo>
- <20190502110821.GD30966@fuggles.cambridge.arm.com>
- <20190502124525.GA3579@ulmo>
+	id 1hMCTM-000237-4U; Thu, 02 May 2019 14:14:04 +0000
+Received: from relay3-d.mail.gandi.net ([217.70.183.195])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hMCTF-00022d-Q0; Thu, 02 May 2019 14:13:59 +0000
+X-Originating-IP: 90.88.149.145
+Received: from xps13 (aaubervilliers-681-1-29-145.w90-88.abo.wanadoo.fr
+ [90.88.149.145]) (Authenticated sender: miquel.raynal@bootlin.com)
+ by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id BC10960015;
+ Thu,  2 May 2019 14:13:47 +0000 (UTC)
+Date: Thu, 2 May 2019 16:13:46 +0200
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Masahiro Yamada <yamada.masahiro@socionext.com>
+Subject: Re: [RESEND PATCH v3 05/11] mtd: rawnand: vf610_nfc: add
+ initializer to avoid -Wmaybe-uninitialized
+Message-ID: <20190502161346.07c15187@xps13>
+In-Reply-To: <20190423034959.13525-6-yamada.masahiro@socionext.com>
+References: <20190423034959.13525-1-yamada.masahiro@socionext.com>
+ <20190423034959.13525-6-yamada.masahiro@socionext.com>
+Organization: Bootlin
+X-Mailer: Claws Mail 3.17.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190502124525.GA3579@ulmo>
-User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_070859_886928_C069F086 
-X-CRM114-Status: GOOD (  27.40  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190502_071357_996768_C6B261A0 
+X-CRM114-Status: GOOD (  17.39  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.195 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -69,91 +63,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Gonzalez <marc.w.gonzalez@free.fr>, Joerg Roedel <joro@8bytes.org>,
- Douglas Anderson <dianders@chromium.org>, Jon Hunter <jonathanh@nvidia.com>,
- linux-tegra@vger.kernel.org, Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arch <linux-arch@vger.kernel.org>,
+ Christophe Leroy <christophe.leroy@c-s.fr>, Arnd Bergmann <arnd@arndb.de>,
+ linux-s390@vger.kernel.org, Mathieu Malaterre <malat@debian.org>,
+ x86@kernel.org, Heiko Carstens <heiko.carstens@de.ibm.com>,
+ linux-mips@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Ingo Molnar <mingo@redhat.com>, linux-mtd@lists.infradead.org,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 02, 2019 at 02:45:25PM +0200, Thierry Reding wrote:
-> On Thu, May 02, 2019 at 12:08:21PM +0100, Will Deacon wrote:
-> > On Thu, May 02, 2019 at 12:59:12PM +0200, Thierry Reding wrote:
-> > > This made it to linux-next yesterday (less than a week before the merge
-> > > window opens) and deliberately breaks existing configurations. That's a
-> > > little rude.
-> > > 
-> > > At least give people a fair heads-up and a chance to fix things before
-> > > you start break things.
-> > 
-> > Sorry about the inconvenience here.
-> > 
-> > This patch has been floating around for a while (albeit not in -next, since
-> > I send my stuff via Joerg)
-> 
-> You can't expect people to test random patches from the list if they're
-> not on Cc. I don't think it's safe to claim that patches have been well
-> tested until they've been in linux-next for at least a couple of days.
-
-I didn't claim it had been well tested. I also don't think being in
-linux-next implies a patch has been well tested, to be honest with you.
-What I can say is that this has been discussed on the public mailing list
-for some time, and the outcome of that discussion is this patch.
-
-> >                            and is heading for 5.3, so you have ages to fix
-> > up your config!
-> 
-> Last I checked, Joerg applied this for 5.2 because you sent it as part
-> of your "Updates for 5.2" pull request.
-
-Sorry, I meant 5.2: the kernel that will be released in ~2 months time,
-during which you'll be able to fix issues like this one. If we're having
-unresolvable issues late in the cycle, then we can clearly revert this
-patch.
-
-> >                 It would, of course, be better to configure the IOMMU to
-> > provide mappings for your DMA peripherals, but the trivial config change
-> > will be enough to keep things working. We won't remove that as long as
-> > people are relying on it.
-> 
-> I don't think the Kconfig option is really useful. People nowadays want
-> to run standard distribution kernels on their devices, and distribution
-> maintainers will often rely on kernel developers' guidance on what good
-> defaults are. This patch suggests that the default should be to disable
-> bypass, so if this hits 5.2 final and distributions create their kernel
-> packages, they're likely going to go with this default and potentially
-> break things for many of their users.
-
-I'd say that people nowadays also want security by default, so it's a tough
-crowd to please. You can still fix your .dts (I see there's a patch from Jon
-doing that), or pass "arm-smmu.disable_bypass=0" on the cmdline to fix
-things if you're not in a position to change the .config for your kernel
-image.
-
-> Luckily this seems like it's fairly easy to fix, but given that we're
-> past v5.1-rc6, fixes for this now need to get special treatment. That
-> would've been okay if this was a pressing issues, but this is changing
-> something that's worked this way for ages, so it's hardly urgent.
-
-Why the special treatment? You can continue to merge fixes after the merge
-window, no? I feel like I'm missing something in your workflow here.
-
-> > I don't expect most people to run into problems with this change (the new
-> > behaviour matches what SMMUv3 does already).
-> 
-> I see the ARM SMMU v2 used in quite a few DTS files. Not all of these
-> may be problematic, but I'd be somewhat surprised if Tegra was the only
-> one impacted.
-
-I didn't say this was specific to Tegra, only that I don't expect most
-people to see any issue. I'm sure there will be others, and we can fix
-them up as they appear. I can't think of a better way of toggling the
-default behaviour.
-
-Will
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgTWFzYWhpcm8sCgpNYXNhaGlybyBZYW1hZGEgPHlhbWFkYS5tYXNhaGlyb0Bzb2Npb25leHQu
+Y29tPiB3cm90ZSBvbiBUdWUsIDIzIEFwcgoyMDE5IDEyOjQ5OjUzICswOTAwOgoKPiBUaGlzIHBy
+ZXBhcmVzIHRvIG1vdmUgQ09ORklHX09QVElNSVpFX0lOTElOSU5HIGZyb20geDg2IHRvIGEgY29t
+bW9uCj4gcGxhY2UuIFdlIG5lZWQgdG8gZWxpbWluYXRlIHBvdGVudGlhbCBpc3N1ZXMgYmVmb3Jl
+aGFuZC4KPiAKPiBLYnVpbGQgdGVzdCByb2JvdCBoYXMgbmV2ZXIgcmVwb3J0ZWQgLVdtYXliZS11
+bmluaXRpYWxpemVkIHdhcm5pbmcKPiBmb3IgdGhpcyBwcm9iYWJseSBiZWNhdXNlIHZmNjEwX25m
+Y19ydW4oKSBpcyBpbmxpbmVkIGJ5IHRoZSB4ODYKPiBjb21waWxlcidzIGlubGluaW5nIGhldXJp
+c3RpYy4KPiAKPiBJZiBDT05GSUdfT1BUSU1JWkVfSU5MSU5JTkcgaXMgZW5hYmxlZCBmb3IgYSBk
+aWZmZXJlbnQgYXJjaGl0ZWN0dXJlCj4gYW5kIHZmNjEwX25mY19ydW4oKSBpcyBub3QgaW5saW5l
+ZCwgdGhlIGZvbGxvd2luZyB3YXJuaW5nIGlzIHJlcG9ydGVkOgo+IAo+IGRyaXZlcnMvbXRkL25h
+bmQvcmF3L3ZmNjEwX25mYy5jOiBJbiBmdW5jdGlvbiDigJh2ZjYxMF9uZmNfY21k4oCZOgo+IGRy
+aXZlcnMvbXRkL25hbmQvcmF3L3ZmNjEwX25mYy5jOjQ1NTozOiB3YXJuaW5nOiDigJhvZmZzZXTi
+gJkgbWF5IGJlIHVzZWQgdW5pbml0aWFsaXplZCBpbiB0aGlzIGZ1bmN0aW9uIFstV21heWJlLXVu
+aW5pdGlhbGl6ZWRdCj4gICAgdmY2MTBfbmZjX3JkX2Zyb21fc3JhbShpbnN0ci0+Y3R4LmRhdGEu
+YnVmLmluICsgb2Zmc2V0LAo+ICAgIF5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+
+fn5+fn5+fn5+fn5+fn5+fn5+fn4KPiAgICAgICAgICAgICBuZmMtPnJlZ3MgKyBORkNfTUFJTl9B
+UkVBKDApICsgb2Zmc2V0LAo+ICAgICAgICAgICAgIH5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+
+fn5+fn5+fn5+fn5+Cj4gICAgICAgICAgICAgdHJmcl9zeiwgIW5mYy0+ZGF0YV9hY2Nlc3MpOwo+
+ICAgICAgICAgICAgIH5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fgoKSU1ITyB0aGlzIHBhdGNo
+IGhhcyBubyBkZXBlbmRlbmNpZXMgd2l0aCB0aGlzIHNlcmllcy4KV291bGQgeW91IG1pbmQgc2Vu
+ZGluZyBpdCBhbG9uZSB3aXRoIHRoZSBwcm9wZXIgRml4ZXMgdGFnPwoKPiAKPiBTaWduZWQtb2Zm
+LWJ5OiBNYXNhaGlybyBZYW1hZGEgPHlhbWFkYS5tYXNhaGlyb0Bzb2Npb25leHQuY29tPgo+IC0t
+LQo+IAo+IENoYW5nZXMgaW4gdjM6IE5vbmUKPiBDaGFuZ2VzIGluIHYyOgo+ICAgLSBzcGxpdCBp
+bnRvIGEgc2VwYXJhdGUgcGF0Y2gKPiAKPiAgZHJpdmVycy9tdGQvbmFuZC9yYXcvdmY2MTBfbmZj
+LmMgfCAyICstCj4gIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigt
+KQo+IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL210ZC9uYW5kL3Jhdy92ZjYxMF9uZmMuYyBiL2Ry
+aXZlcnMvbXRkL25hbmQvcmF3L3ZmNjEwX25mYy5jCj4gaW5kZXggYTY2MmNhMTk3MGU1Li4xOTc5
+MmQ3MjVlYzIgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9tdGQvbmFuZC9yYXcvdmY2MTBfbmZjLmMK
+PiArKysgYi9kcml2ZXJzL210ZC9uYW5kL3Jhdy92ZjYxMF9uZmMuYwo+IEBAIC0zNjQsNyArMzY0
+LDcgQEAgc3RhdGljIGludCB2ZjYxMF9uZmNfY21kKHN0cnVjdCBuYW5kX2NoaXAgKmNoaXAsCj4g
+IHsKPiAgCWNvbnN0IHN0cnVjdCBuYW5kX29wX2luc3RyICppbnN0cjsKPiAgCXN0cnVjdCB2ZjYx
+MF9uZmMgKm5mYyA9IGNoaXBfdG9fbmZjKGNoaXApOwo+IC0JaW50IG9wX2lkID0gLTEsIHRyZnJf
+c3ogPSAwLCBvZmZzZXQ7Cj4gKwlpbnQgb3BfaWQgPSAtMSwgdHJmcl9zeiA9IDAsIG9mZnNldCA9
+IDA7Cj4gIAl1MzIgY29sID0gMCwgcm93ID0gMCwgY21kMSA9IDAsIGNtZDIgPSAwLCBjb2RlID0g
+MDsKPiAgCWJvb2wgZm9yY2U4Yml0ID0gZmFsc2U7Cj4gIAoKVGhhbmtzLApNaXF1w6hsCgpfX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
+bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
+cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
+Cg==
