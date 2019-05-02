@@ -2,63 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09A7311AA7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 16:01:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C1C811AB4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 16:02:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=53uqcsVLz0Q84gqOAbcdauVVx2sZzIehkF4Oeuhfl2A=; b=XMfr7MYaxnr8QX
-	/dDd/6UTEZN64g+OB5Pi2iomhMHSQ22omRtW7K4pOn7UgvyrV4U9VgKZPrB9Ac7bbW9A9XLXg/P6A
-	P0D1uOK2+xHoEbjB0th4D+MMacl3vkpfl7xDBMWxKSfvqiWTrpthkD6p1lSdlpULEAdTYUP9APmTL
-	vywai13BYy5daEPt0Tf0Aqen4Mo8t/LxaCOFzPsZ2UTEXeh/x2Iz4/+l1fwT7aQ/M/stI33F7w/fH
-	Vqfm/TGIamHxf9RYJ5hobUrsc9IqIVzeLtCWsW+ltyqeKIdbgqn5e+hkyfb9TxMwvV1s32GvUT6UR
-	XPKymXJuZ1crpW8juyEQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8ipOXBpP+EiK9a36Ix2c+ngdMCIH3FUkm+g6EKg5YkA=; b=EQS7SDjxy/GPHh
+	mbRgztjA15aI0ay/7sYGRPZq4YtmqoeoZKG6CW+FtAj7WygfFgzwvm6PTUhFza83Er7x54CGG43lt
+	2TNKdonPER+H1R5jCsiXUOeYIiTMAMuk9XZErJ5LBqrlkG8uCCzwVBJ8yr6kpssjpWhmVT3a3DxYR
+	odAbIoM5GhrgLcGF3hWN4JGJ/agKTRSMZRYWAjJT/kGCB75RsP0yCRzaFsoPyuyrX41MNlg8Of9xX
+	EOAhin1mtY7DqOe9SxIl37rXoXPbl8hLRXNRnoSCNiOYPpMDrxVNrgGlwhIs/SPLVT4e/F6b2+2xx
+	xxVaNN6idvdbFTkmo8ig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMCHW-0004OZ-QC; Thu, 02 May 2019 14:01:50 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMCHM-0004Nk-Oj
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 14:01:45 +0000
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id CC2A9307EA9F;
- Thu,  2 May 2019 14:01:28 +0000 (UTC)
-Received: from dhcp-27-174.brq.redhat.com (unknown [10.43.17.159])
- by smtp.corp.redhat.com (Postfix) with SMTP id DE7E57D3E6;
- Thu,  2 May 2019 14:01:24 +0000 (UTC)
-Received: by dhcp-27-174.brq.redhat.com (nbSMTP-1.00) for uid 1000
- oleg@redhat.com; Thu,  2 May 2019 16:01:27 +0200 (CEST)
-Date: Thu, 2 May 2019 16:01:22 +0200
-From: Oleg Nesterov <oleg@redhat.com>
-To: Christoph Hellwig <hch@lst.de>
-Subject: Re: remove asm-generic/ptrace.h
-Message-ID: <20190502140122.GC7323@redhat.com>
-References: <20190501173943.5688-1-hch@lst.de>
+	id 1hMCIZ-00055x-OA; Thu, 02 May 2019 14:02:55 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hMCIQ-000551-LP
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 14:02:50 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1B9DC374;
+ Thu,  2 May 2019 07:02:46 -0700 (PDT)
+Received: from [10.163.1.85] (unknown [10.163.1.85])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 600E63F220;
+ Thu,  2 May 2019 07:02:37 -0700 (PDT)
+Subject: Re: [PATCH] mm/pgtable: Drop pgtable_t variable from pte_fn_t
+ functions
+To: Matthew Wilcox <willy@infradead.org>
+References: <1556803126-26596-1-git-send-email-anshuman.khandual@arm.com>
+ <20190502134623.GA18948@bombadil.infradead.org>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <03be69c4-9a63-041c-49fc-249b2bf1d58a@arm.com>
+Date: Thu, 2 May 2019 19:32:42 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190501173943.5688-1-hch@lst.de>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.44]); Thu, 02 May 2019 14:01:34 +0000 (UTC)
+In-Reply-To: <20190502134623.GA18948@bombadil.infradead.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_070140_829211_4C5EE548 
-X-CRM114-Status: GOOD (  11.78  )
+X-CRM114-CacheID: sfid-20190502_070246_700756_801DC68E 
+X-CRM114-Status: GOOD (  14.09  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -70,29 +65,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- linux-sh@vger.kernel.org, x86@kernel.org, linux-mips@vger.kernel.org,
- linux-kernel@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Michal Hocko <mhocko@suse.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>, dri-devel@lists.freedesktop.org,
+ linux-mm@kvack.org, linux-efi@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, Ingo Molnar <mingo@redhat.com>,
+ xen-devel@lists.xenproject.org, intel-gfx@lists.freedesktop.org,
+ jglisse@redhat.com, Mike Rapoport <rppt@linux.vnet.ibm.com>,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-kernel@vger.kernel.org,
+ schwidefsky@de.ibm.com, akpm@linux-foundation.org,
+ Logan Gunthorpe <logang@deltatee.com>,
+ "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 05/01, Christoph Hellwig wrote:
->
-> Hi all,
->
-> asm-generic/ptrace.h is a little weird in that it doesn't actually
-> implement any functionality, but it provided multiple layers of macros
-> that just implement trivial inline functions.  We implement those
-> directly in the few architectures and be off with a much simpler
-> design.
 
-Oh, thanks, I was always confused by these macros ;)
 
-Oleg.
+On 05/02/2019 07:16 PM, Matthew Wilcox wrote:
+> On Thu, May 02, 2019 at 06:48:46PM +0530, Anshuman Khandual wrote:
+>> Drop the pgtable_t variable from all implementation for pte_fn_t as none of
+>> them use it. apply_to_pte_range() should stop computing it as well. Should
+>> help us save some cycles.
+> You didn't add Martin Schwidefsky for some reason.  He introduced
 
+scripts/get_maintainer.pl did not list the email but anyways I should have
+added it from git blame. Thanks for adding his email to the thread.
+ 
 
 _______________________________________________
 linux-arm-kernel mailing list
