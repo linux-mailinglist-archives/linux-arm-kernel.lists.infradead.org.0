@@ -2,67 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E26011FB3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 18:05:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A68511FD1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 18:12:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mE5A9/gKjBYkCQ13umSUQ0ZCQ72xc3dHGhcLXEqZk30=; b=UtYojK1XewPPOl
-	F7vRzldfHVy5lUPWrRUnfvhkX3TdC5dFbm8MY9kgKFK28hJnD9QynxNwP5u2dn0kTIzaSAq6WDGwf
-	gSDr1+BYIX4TWhtPRGT7Uz0avWbXEUkPrPNvdfWuw7RGPpkiSOLlQ640gL0BsQrqEiDKLL8Z7keC0
-	Ph9DrxCPmyIXi1S4ALCqat1R5jy6gpqFWLsZbQXb731xi5zflztOiGgx8F2lSOm+qYPZNjWBFsd8v
-	eYtWS6AOPf2Xa9/xw49N4ZAOFUUyBIuKhZfYZ6pXJSTTgbp1jIW6vvB69VX4krnvJSAZghk9yJHcD
-	Vh50Qu9/B/BHA8M1fv7w==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KKETn9BwdHUWyfGzZhUQ53Mc3wTqPd2mEtbYNAEVoCQ=; b=ny/PLjzsLtOzmL
+	v0M0af7InuZZ0FC0xXTLOST5z/fYZAWoFgRsNAbIjMBnvRSkmp7+UbYa4JqMlp3V3rWqum3mu6nWW
+	X/zARwDNhf182LluDfcStjflHSlGi3e2aKAp4QgJ6fhYmsKTZvT9UZMTdM1m8aXhyrAGo1n4i0hoR
+	napqGAmvwCiNFiCap3t1ei2ZPSfseumF0oNBATRAUKTCXaJfQfe5avHXwL8ph1aeFRuRNfrh+JHo3
+	wVz/FndvAHqTucMn1/+KweoTmES+14aHyZPB5YtoPQ1NwzUCwUv/yOppuabYRlxdxcaAKNEkIcNH0
+	WUEJ1/stunHRO0ItqrQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMEDW-0002TJ-Bl; Thu, 02 May 2019 16:05:50 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	id 1hMEKE-0004aw-4U; Thu, 02 May 2019 16:12:46 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMEDP-0002Sx-5k
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 16:05:45 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id 4FE87202EC;
- Thu,  2 May 2019 18:05:37 +0200 (CEST)
-Received: from [192.168.108.49] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id 2EECD1FF15;
- Thu,  2 May 2019 18:05:37 +0200 (CEST)
-Subject: Re: [PATCH] arm64/io: Don't use WZR in writel
-To: Robin Murphy <robin.murphy@arm.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>
-References: <68b71c15f32341468a868f6418e4fcb375bc49ba.camel@gmail.com>
- <20190211105755.GB30880@fuggles.cambridge.arm.com>
- <38d8965a-cd41-17cf-1b95-8dd58c079be4@arm.com>
- <874c702b8af760aa8fae38d478c79e3ecba00515.camel@gmail.com>
- <235d20ef-3054-69d9-975d-25aebf32aad3@arm.com>
- <20190223181254.GC572@tuxbook-pro> <86zhqm8i6d.wl-marc.zyngier@arm.com>
- <20190224035356.GD572@tuxbook-pro>
- <33d765b5-1807-fa6c-1ceb-99f09f7c8d5a@free.fr>
- <8eb4f446-6152-ffb6-9529-77fb0bcc307f@arm.com>
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Message-ID: <7b5e8bb1-d339-07f7-66f6-7f09df2107c4@free.fr>
-Date: Thu, 2 May 2019 18:05:37 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hMEK6-0004Zi-Ie
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 16:12:40 +0000
+Received: by mail-lj1-x243.google.com with SMTP id z26so2726986ljj.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 02 May 2019 09:12:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=linux-foundation.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=tVCR90ukM60h/XwpKx8sUt1qsA8XF27L7aKaa1sc/2M=;
+ b=g/64gIbp0B3X/vq/gXDgYMqciwD30QVCfUNcG9oypva2F607a/I6OwS5fBvheT4m1n
+ 2/2xkABKa/gsJeT/yaimePKHCCfdJVXcV/J2byJDcIenUWxBF0MxVk+tFCaPa2dwxj6G
+ SWbYe5z0YlYLlNnnR4zFJW7iELpg6nRdbXb2Q=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=tVCR90ukM60h/XwpKx8sUt1qsA8XF27L7aKaa1sc/2M=;
+ b=V6mNmCQktYFsGfjvE1R+UyT8z1hR83TR1goQIhb+EcZ2qFPrqA9zMA7ygtvqxUQEuj
+ abpw9XMpyc9WHoVDRik+O+bTxmOS8BHkP8WKgN8kL/Lm3zyvayj4TIaM0RB4GHX3JKdk
+ w39FvJpBsm99MD2r2qyhWo2rKUG2VshrYd6P0KaM5QDrhtvIElOiUYydGcFejYN1j+lw
+ lwfo+RZx4lPelRLDF5XhjqMI7onFoitdgQN0o5K0lgQCXSBf12HHXHYi/bekCxXUe/bN
+ /na/+3/T/szVscZnpF8RayRS+m3Rt2QOA8ohfdv2dpUDQgjXTtBuLDA52kHDSO+j14Vx
+ mhKw==
+X-Gm-Message-State: APjAAAVuqKF5Sld/ZnevNYPJW2DsNSkPFIxm6yMnfRpHKJ9sXghn+Hmo
+ xrKncJex4Y4Ts5OIjBqDTgEVz5ld35o=
+X-Google-Smtp-Source: APXvYqyHorCzCJtQt5ib8wvC3SH6q/InbZ5fDsO3/jfkWsrh2/42y7vYZBYyBkGf54eRI07aIgQm1w==
+X-Received: by 2002:a2e:9c0a:: with SMTP id s10mr2409059lji.162.1556813556384; 
+ Thu, 02 May 2019 09:12:36 -0700 (PDT)
+Received: from mail-lj1-f177.google.com (mail-lj1-f177.google.com.
+ [209.85.208.177])
+ by smtp.gmail.com with ESMTPSA id p19sm9412907lfc.48.2019.05.02.09.12.35
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 02 May 2019 09:12:35 -0700 (PDT)
+Received: by mail-lj1-f177.google.com with SMTP id z26so2726897ljj.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 02 May 2019 09:12:35 -0700 (PDT)
+X-Received: by 2002:a2e:9a84:: with SMTP id p4mr1899422lji.22.1556813555043;
+ Thu, 02 May 2019 09:12:35 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <8eb4f446-6152-ffb6-9529-77fb0bcc307f@arm.com>
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Thu May  2 18:05:37 2019 +0200 (CEST)
+References: <20190429145159.GA29076@hc>
+ <CAHk-=wjPqcPYkiWKFc=R3+18DXqEhV+Nfbo=JWa32Xp8Nze67g@mail.gmail.com>
+ <20190502082741.GE13955@hc>
+In-Reply-To: <20190502082741.GE13955@hc>
+From: Linus Torvalds <torvalds@linux-foundation.org>
+Date: Thu, 2 May 2019 09:12:18 -0700
+X-Gmail-Original-Message-ID: <CAHk-=wjmtMrxC1nSEHarBn8bW+hNXGv=2YeAWmTw1o54V8GKWA@mail.gmail.com>
+Message-ID: <CAHk-=wjmtMrxC1nSEHarBn8bW+hNXGv=2YeAWmTw1o54V8GKWA@mail.gmail.com>
+Subject: Re: [RFC] Disable lockref on arm64
+To: Jan Glauber <jglauber@marvell.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_090543_508367_73524C77 
-X-CRM114-Status: GOOD (  21.28  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190502_091238_619887_A8FDA472 
+X-CRM114-Status: GOOD (  12.16  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marc.w.gonzalez[at]free.fr)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -74,200 +101,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Jeffrey Hugo <jhugo@codeaurora.org>, MSM <linux-arm-msm@vger.kernel.org>,
- AngeloGioacchino Del Regno <kholk11@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 18/03/2019 17:04, Robin Murphy wrote:
-
-> On 12/03/2019 12:36, Marc Gonzalez wrote:
+On Thu, May 2, 2019 at 1:27 AM Jan Glauber <jglauber@marvell.com> wrote:
 >
->> On 24/02/2019 04:53, Bjorn Andersson wrote:
->>
->>> On Sat 23 Feb 10:37 PST 2019, Marc Zyngier wrote:
->>>
->>>> On Sat, 23 Feb 2019 18:12:54 +0000, Bjorn Andersson wrote:
->>>>>
->>>>> On Mon 11 Feb 06:59 PST 2019, Marc Zyngier wrote:
->>>>>
->>>>>> On 11/02/2019 14:29, AngeloGioacchino Del Regno wrote:
->>>>>>
->>>>>>> Also, just one more thing: yes this thing is going ARM64-wide and
->>>>>>> - from my findings - it's targeting certain Qualcomm SoCs, but...
->>>>>>> I'm not sure that only QC is affected by that, others may as well
->>>>>>> have the same stupid bug.
->>>>>>
->>>>>> At the moment, only QC SoCs seem to be affected, probably because
->>>>>> everyone else has debugged their hypervisor (or most likely doesn't
->>>>>> bother with shipping one).
->>>>>>
->>>>>> In all honesty, we need some information from QC here: which SoCs are
->>>>>> affected, what is the exact nature of the bug, can it be triggered from
->>>>>> EL0. Randomly papering over symptoms is not something I really like
->>>>>> doing, and is likely to generate problems on unaffected systems.
->>>>>
->>>>> The bug at hand is that the XZR is not deemed a valid source in the
->>>>> virtualization of the SMMU registers. It was identified and fixed for
->>>>> all platforms that are shipping kernels based on v4.9 or later.
->>>>
->>>> When you say "fixed": Do you mean fixed in the firmware? Or by adding
->>>> a workaround in the shipped kernel?
->>>
->>> I mean that it's fixed in the firmware.
->>>
->>>> If the former, is this part of an official QC statement, with an
->>>> associated erratum number?
->>>
->>> I don't know, will get back to you on this one.
->>>
->>>> Is this really limited to the SMMU accesses?
->>>
->>> Yes.
->>>
->>>>> As such Angelo's list of affected platforms covers the high-profile
->>>>> ones. In particular MSM8996 and MSM8998 is getting pretty good support
->>>>> upstream, if we can figure out a way around this issue.
->>>>
->>>> We'd need an exhaustive list of the affected SoCs, and work out if we
->>>> can limit the hack to the SMMU driver (cc'ing Robin, who's the one
->>>> who'd know about it).
->>>
->>> I will try to compose a list.
->>
->> FWIW, I have just been bitten by this issue. I needed to enable an SMMU to
->> filter PCIe EP accesses to system RAM (or something). I'm using an APQ8098
->> MEDIABOX dev board. My system hangs in arm_smmu_device_reset() doing:
->>
->> 	/* Invalidate the TLB, just in case */
->> 	writel_relaxed(0, gr0_base + ARM_SMMU_GR0_TLBIALLH);
->> 	writel_relaxed(0, gr0_base + ARM_SMMU_GR0_TLBIALLNSNH);
->>
->>
->> With the 'Z' constraint, gcc generates:
->>
->> 	str wzr, [x0]
->>
->> without the 'Z' constraint, gcc generates:
->>
->> 	mov	w1, 0
->> 	str w1, [x0]
->>
->>
->> I can work around the problem using the following patch:
->>
->> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
->> index 045d93884164..93117519aed8 100644
->> --- a/drivers/iommu/arm-smmu.c
->> +++ b/drivers/iommu/arm-smmu.c
->> @@ -59,6 +59,11 @@
->>   
->>   #include "arm-smmu-regs.h"
->>   
->> +static inline void qcom_writel(u32 val, volatile void __iomem *addr)
->> +{
->> +	asm volatile("str %w0, [%1]" : : "r" (val), "r" (addr));
->> +}
->> +
->>   #define ARM_MMU500_ACTLR_CPRE		(1 << 1)
->>   
->>   #define ARM_MMU500_ACR_CACHE_LOCK	(1 << 26)
->> @@ -422,7 +427,7 @@ static void __arm_smmu_tlb_sync(struct arm_smmu_device *smmu,
->>   {
->>   	unsigned int spin_cnt, delay;
->>   
->> -	writel_relaxed(0, sync);
->> +	qcom_writel(0, sync);
->>   	for (delay = 1; delay < TLB_LOOP_TIMEOUT; delay *= 2) {
->>   		for (spin_cnt = TLB_SPIN_COUNT; spin_cnt > 0; spin_cnt--) {
->>   			if (!(readl_relaxed(status) & sTLBGSTATUS_GSACTIVE))
->> @@ -1760,8 +1765,8 @@ static void arm_smmu_device_reset(struct arm_smmu_device *smmu)
->>   	}
->>   
->>   	/* Invalidate the TLB, just in case */
->> -	writel_relaxed(0, gr0_base + ARM_SMMU_GR0_TLBIALLH);
->> -	writel_relaxed(0, gr0_base + ARM_SMMU_GR0_TLBIALLNSNH);
->> +	qcom_writel(0, gr0_base + ARM_SMMU_GR0_TLBIALLH);
->> +	qcom_writel(0, gr0_base + ARM_SMMU_GR0_TLBIALLNSNH);
->>   
->>   	reg = readl_relaxed(ARM_SMMU_GR0_NS(smmu) + ARM_SMMU_GR0_sCR0);
->>   
->>
->>
->>
->> Can a quirk be used to work around the issue?
->> Or can we just "pessimize" the 3 writes for everybody?
->> (Might be cheaper than a test anyway)
-> 
-> If it really is just the SMMU driver which is affected, we can work 
-> around it for free (not counting the 'cost' of slightly-weird-looking 
-> code, of course). If the diff below works as expected, I'll write it up 
-> properly.
+> I'll see how x86 runs the same testcase, I thought that playing
+> cacheline ping-pong is not the optimal use case for any CPU.
 
-Here's another take on the subject. I find it minimally intrusive.
-(But I might have overlooked better options.)
+Oh, ping-pong is always bad.
 
-diff --git a/arch/arm64/include/asm/io.h b/arch/arm64/include/asm/io.h
-index b807cb9b517d..f37149ab1ebf 100644
---- a/arch/arm64/include/asm/io.h
-+++ b/arch/arm64/include/asm/io.h
-@@ -31,31 +31,37 @@
- #include <asm/alternative.h>
- #include <asm/cpufeature.h>
- 
-+#ifdef DO_NOT_USE_ZERO_REGISTER
-+#define VAL_CONSTRAINT "r"
-+#else
-+#define VAL_CONSTRAINT "rZ"
-+#endif
-+
- /*
-  * Generic IO read/write.  These perform native-endian accesses.
-  */
- #define __raw_writeb __raw_writeb
- static inline void __raw_writeb(u8 val, volatile void __iomem *addr)
- {
--	asm volatile("strb %w0, [%1]" : : "rZ" (val), "r" (addr));
-+	asm volatile("strb %w0, [%1]" : : VAL_CONSTRAINT (val), "r" (addr));
- }
- 
- #define __raw_writew __raw_writew
- static inline void __raw_writew(u16 val, volatile void __iomem *addr)
- {
--	asm volatile("strh %w0, [%1]" : : "rZ" (val), "r" (addr));
-+	asm volatile("strh %w0, [%1]" : : VAL_CONSTRAINT (val), "r" (addr));
- }
- 
- #define __raw_writel __raw_writel
- static inline void __raw_writel(u32 val, volatile void __iomem *addr)
- {
--	asm volatile("str %w0, [%1]" : : "rZ" (val), "r" (addr));
-+	asm volatile("str %w0, [%1]" : : VAL_CONSTRAINT (val), "r" (addr));
- }
- 
- #define __raw_writeq __raw_writeq
- static inline void __raw_writeq(u64 val, volatile void __iomem *addr)
- {
--	asm volatile("str %x0, [%1]" : : "rZ" (val), "r" (addr));
-+	asm volatile("str %x0, [%1]" : : VAL_CONSTRAINT (val), "r" (addr));
- }
- 
- #define __raw_readb __raw_readb
-diff --git a/drivers/iommu/Makefile b/drivers/iommu/Makefile
-index f13f36ae1af6..0ce565285603 100644
---- a/drivers/iommu/Makefile
-+++ b/drivers/iommu/Makefile
-@@ -34,3 +34,5 @@ obj-$(CONFIG_S390_IOMMU) += s390-iommu.o
- obj-$(CONFIG_QCOM_IOMMU) += qcom_iommu.o
- obj-$(CONFIG_HYPERV_IOMMU) += hyperv-iommu.o
- obj-$(CONFIG_VIRTIO_IOMMU) += virtio-iommu.o
-+
-+CFLAGS_arm-smmu.o := -D DO_NOT_USE_ZERO_REGISTER
+But from past experience, x86 tends to be able to always do tight a
+cmpxchg loop without failing more than a once or twice, which is all
+you need for things like this.
+
+And it's "easy" to do in hardware on a CPU: all you need to do is
+guarantee that when you have a cmpxchg loop, the cacheline is sticky
+enough that it stays around at the local CPU for the duration of one
+loop entry (ie from one cmpxchg to the next).
+
+Obviously you can do that wrong too, and make cachelines *too* sticky,
+and then you get fairness issues.
+
+But it really sounds like what happens for your ThunderX2 case, the
+different CPU's steal each others cachelines so quickly that even when
+you get the cacheline, you don't then get to update it.
+
+Does ThunderX2 do LSE atomics? Are the acquire/release versions really
+slow, perhaps, and more or less serializing (maybe it does the
+"release" logic even when the store _fails_?), so that doing two
+back-to-back cmpxchg ends up taking the core a "long" time, so that
+the cache subsystem then steals it easily in between cmpxchg's in a
+loop? Does the L1 cache maybe have no way to keep a line around from
+one cmpxchg to the next?
+
+This is (one example) where having a CPU and an interconnect that
+works together matters.  And yes, it probably needs a few generations
+of hardware tuning where people see problems and fix them.
+
+                 Linus
 
 _______________________________________________
 linux-arm-kernel mailing list
