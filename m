@@ -2,79 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0ED311825
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 13:30:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF92B11828
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  2 May 2019 13:31:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=85HmpQaUEZ9MsigVnL0E0Ca2Ej+dR8a9eBdB7xZXbwc=; b=Z5y
-	wg/zw0eL9Z+XIieWGAcwvxl2+sHy7jyiF8sL1H0gXHO63tWwjIZNSwdADeOXTu5DARrYedOVYccWT
-	Y33atmR718oXS6n30tB/7gxHLuD5knzRcNGAO9obPbHZxv7D78nemu7LI/BK9gs8WvcGj+Sp//bpt
-	ftLCWF+q+LC9ti43CrZT/3cxcI6DIeNK9s7O29hir96NjffJCmO6m6Muy6QHOIjrWb8QDMfdEnkNR
-	yCi8X5CATo2OWqoX+nsmrCxRAXQ+B84puwKhGvm4DpicEZAvTsERGD1hH+Xcvw6cHGfEN4RY7QY2N
-	uIAZgpR5JmYD2tDuviRncIzcFvX4ktA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dI+y6bpAwaloBNZ80gdQNF6NuGD0nzNdvbgFQn/NKDA=; b=LQYNrjJMMG8P2z
+	ZqaN8ykBhPDtt5nXXdQzIu9eGOHC0EVPf5vc77B+ErNB9hDYD5/fRu0uvrXocmR1fHW9cwy+EFNZn
+	LiaWgVs89S4VDul8qfOrowtgC9M594Ooomk6FVLfZREudUHDozE4T5+S6OgqDWqBxS/bllU1mO6dp
+	OW9FkGzL8iBMANsfNnTzqmsh3NnvRvpb6q39zNB5N8ALU6f/FHsTVqHieHYoerpMMdurJBrs72VIK
+	BPw1Trq5W/NwA54zGTmE8eJARBjP+KsGwx08hi9KjSGgAhY5ukbXAC7VFSGAH2s4H7tziKl8owWUj
+	+IY+fGuwZhJEIEwRd/2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hM9v9-0002Oo-Df; Thu, 02 May 2019 11:30:35 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1hM9vW-0002cY-Fr; Thu, 02 May 2019 11:30:58 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hM9v2-0002OS-SG
- for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 11:30:30 +0000
-Received: by mail-qt1-x841.google.com with SMTP id e2so333473qtb.4
+ id 1hM9vQ-0002cB-60
+ for linux-arm-kernel@lists.infradead.org; Thu, 02 May 2019 11:30:53 +0000
+Received: by mail-wr1-x442.google.com with SMTP id h4so2832069wre.7
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 02 May 2019 04:30:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=Hg7TtsEFadnOjSgx3jp2tA+2HgpI1482WNMkndbFrzE=;
- b=acmlV9Nz3/KjYXscXwD/N8XxRhL7nlxpeSY1f8A3VPR3pvYN5HXkdNdXqSPupEUCM1
- wCwe9fzF87JG5D//SAGHAH2Dv7OfkhEzTWdi5hRp5r5lm+6203/YbFaFrtB6p9ZPnZcA
- crkPkD7fdZwRk7tTylCAncrS8awPHwTKwwRHI1PLHbFTUy1nInOt8vVWCO/+fzqpn+/X
- q4qV1KyqHio/5uVh01FiHlSv+BLITWUJYmdu4jKBnEYmhKbk/IGESNPGmEN04Zc4tKPu
- gf4DPaItIe1JP8c6kdOes0vpk5wOO66C4aKqonmjddfB4597wOuCKCHnIWavQO0igRE+
- EGgg==
+ Thu, 02 May 2019 04:30:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=DXweF0jQ0QB/k/rGJN+kfbonyACUsE7waASKG6bvRoQ=;
+ b=bbEOY3UBWHA9nrQiL1gJZ2/gGVMCmQ6IF+6rrt9NByakcOnI7qfP0GyEywuponu8xB
+ Dv2Bb3Jc64sYLe+fXZr2qbenmUgi8hnFHldZqseiduLJ2q/YlmgBNbXjTURjAkHNn3Ou
+ pa1yF34FYttPcROYRQITT0SEDMbW+CZAzXOI/p89sIqxq5rKvuW+VXXOxJ66KwyR+Qn+
+ M1ynLwYzCUjoYIHrm2VcbjzjSyM1NRBx8z49mmDG7tTys2sFTZL1nL8QX5xPGWDR427+
+ uq5L3RbwTSfeZVFJ9fWZOpBY7qyLSOJIVHGVM7VPRC0Z7yd1BZH8a9qefylcyFkJST8K
+ KBVw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=Hg7TtsEFadnOjSgx3jp2tA+2HgpI1482WNMkndbFrzE=;
- b=Uu7kCih40Gl1GCo+QEr2xkT+jHLApBsrrQ1sOhmMxfiQOU1ic++/SAERmswNKgq5NE
- 3B6yH3hwpK/+bYLlPqjnwsNpmYFIOceLzIC8L1NhG4OVs017lSVcQGEZRVlpBTAa4CkY
- Xd0uNSN0nP0+gQD+xS8/0jzpRL93ebrAnfv5i2obr5E2an+O7q5V2ZQaRDp0IZxaylyk
- diCGjofJxPUfmqSWRvdDkSs9apVSBhOo3SUB9NfQMxHGHauDPk0m1FeguoE/n20X94MJ
- 5tKbJm65+lqHMQvW5MCXFsuAIWHiPbn1p8tcODEzlq0FeIMkX7t7zllwt14Rd72ZtAGb
- ZrCA==
-X-Gm-Message-State: APjAAAVUJRVpheN3PCb7rJG5OFRVhN8yUYhlJViUHjMQXakbbRNGkGax
- gXDYB4ZS6/h3MMgZ1TfJe/w=
-X-Google-Smtp-Source: APXvYqzAQr8cdbmARVLcsts793hCcZltNZV1HAC1L8AIp97l0A362BaRRxyz3ih407vfAWx6P+HL6w==
-X-Received: by 2002:a0c:9ac1:: with SMTP id k1mr2553094qvf.36.1556796627624;
- Thu, 02 May 2019 04:30:27 -0700 (PDT)
-Received: from fabio-Latitude-E5450.am.freescale.net
- ([2804:14c:482:3c8:56cb:1049:60d2:137b])
- by smtp.gmail.com with ESMTPSA id a15sm6787239qkk.87.2019.05.02.04.30.24
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=DXweF0jQ0QB/k/rGJN+kfbonyACUsE7waASKG6bvRoQ=;
+ b=er1/N35BO5rlwif60C16C+YnQNyoi4WfLUX5DMpGOBbhvxE/4LS38vLctGUnqTlj51
+ dLoQOCM5m8R853DIN3MizloeSVwDbKSnntr4f/vgIot4LoBxNwRi//tCu2dHrK9kosZg
+ h+a1nFl4CfY3bwhnC2chfhGweYe/5O4pby15b20e6N0//FTw1TEpQ5UKO9Q2rcdMyPCW
+ Vsv2nGkEHfT5N91RbaGbylgaTAaG2q30OlmjG3sQ1pJImzDML+jCWsuOd5rsNS/S8D43
+ SNPoyt5kmaAsdBYfmefiS4MjkN9nPvm54An2br4l7DjfIBlzYm6b6stN78iWDJYMj7Dz
+ jAww==
+X-Gm-Message-State: APjAAAWhEWz3iGLyGsc61osc4zlwkKzIwtliivvEK+LJgn2I2ArLfUzE
+ k32v0691FK7E00VL4dtGzSuE3A==
+X-Google-Smtp-Source: APXvYqxu8aql4ZZQg5YXmNj8g7st+xGNdi3S5rbgFkkYK/EFDweHigpikBPQV/f0CEJTqIh4taQtQA==
+X-Received: by 2002:adf:c748:: with SMTP id b8mr2404630wrh.292.1556796650078; 
+ Thu, 02 May 2019 04:30:50 -0700 (PDT)
+Received: from [192.168.1.2] (200.red-83-34-200.dynamicip.rima-tde.net.
+ [83.34.200.200])
+ by smtp.gmail.com with ESMTPSA id k16sm844785wrd.17.2019.05.02.04.30.48
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 02 May 2019 04:30:26 -0700 (PDT)
-From: Fabio Estevam <festevam@gmail.com>
-To: shawnguo@kernel.org
-Subject: [PATCH] ARM: imx: cpuidle-imx6sx: Restrict the SW2ISO increase to
- i.MX6SX
-Date: Thu,  2 May 2019 08:30:20 -0300
-Message-Id: <20190502113020.8642-1-festevam@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ Thu, 02 May 2019 04:30:49 -0700 (PDT)
+Subject: Re: [PATCH 2/3] drivers: regulator: qcom: add PMS405 SPMI regulator
+To: Mark Brown <broonie@kernel.org>
+References: <a3c281d5-d30e-294f-71ab-957decde2ba0@linaro.org>
+ <20190502023316.GS14916@sirena.org.uk>
+From: Jorge Ramirez <jorge.ramirez-ortiz@linaro.org>
+Message-ID: <dd15d784-f2a1-78c6-3543-69bbcc1143c4@linaro.org>
+Date: Thu, 2 May 2019 13:30:48 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.2.1
+MIME-Version: 1.0
+In-Reply-To: <20190502023316.GS14916@sirena.org.uk>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_043028_939512_25BA0B3C 
-X-CRM114-Status: GOOD (  13.92  )
+X-CRM114-CacheID: sfid-20190502_043052_280653_15911323 
+X-CRM114-Status: GOOD (  25.53  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -94,72 +100,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: cniedermaier@dh-electronics.com, anson.huang@nxp.com,
- stable@vger.kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, vinod.koul@linaro.org,
+ linux-kernel@vger.kernel.org, khasim.mohammed@linaro.org, lgirdwood@gmail.com,
+ bjorn.andersson@linaro.org, robh+dt@kernel.org, linux-arm-msm@vger.kernel.org,
+ niklas.cassel@linaro.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since commit 1e434b703248 ("ARM: imx: update the cpu power up timing
-setting on i.mx6sx") some characters loss is noticed on i.MX6ULL UART
-as reported by Christoph Niedermaier.
+On 5/2/19 04:33, Mark Brown wrote:
+> On Mon, Apr 29, 2019 at 02:31:55PM +0200, Jorge Ramirez wrote:
+>> On 4/27/19 20:21, Mark Brown wrote:
+> 
+>>> Since the point of this change is AFAICT that this regulator only has a
+>>> single linear range it seems like it should just be able to use the
+>>> existing generic functions shouldn't it?  
+> 
+>> yes that would have been ideal but it does not seem to be the case for
+>> this hardware.
+> 
+>> The register that stores the voltage range for all other SPMI regulators
+>> (SPMI_COMMON_REG_VOLTAGE_RANGE 0x40) is used by something else in the
+>> HFS430: SPMI_HFS430_REG_VOLTAGE_LB 0x40 stores the voltage level in two
+>> bytes 0x40 and 0x41;
+> 
+>> This overlap really what is creating the pain: HFS430 cant use 0x40 to
+>> store the range (even if it is only one)
+> 
+>> so yeah, most of the changes in the patch are working around this fact.
+> 
+> I'm not sure I follow here, sorry - I can see that the driver needs a
+> custom get/set selector operation but shouldn't it be able to use the
+> standard list and map operations for linear ranges?
 
-The intention of such commit was to increase the SW2ISO field for i.MX6SX
-only, but since cpuidle-imx6sx is also used on i.MX6UL/i.MX6ULL this caused
-unintended side effects on other SoCs.
+I agree it should, but unfortunately that is not the case; when I first
+posted the patch I was concerned that for a regulator to be supported by
+this driver it should obey to the driver's internals (ie: comply with
+all of the spmi_common_regulator_registers definitions).
 
-Fix this problem by keeping the original SW2ISO value for i.MX6UL/i.MX6ULL
-and only increase SW2ISO in the i.MX6SX case.
+However, since there was just a single range to support, the
+modifications I had to do to support this SPMI regulator were minimal -
+hence why I opted for the changes under discussion instead of writing a
+new driver (which IMO it is an overkill).
 
-Cc: stable@vger.kernel.org
-Fixes: 1e434b703248 ("ARM: imx: update the cpu power up timing setting on i.mx6sx")
-Reported-by: Christoph Niedermaier <cniedermaier@dh-electronics.com>
-Signed-off-by: Fabio Estevam <festevam@gmail.com>
----
- arch/arm/mach-imx/cpuidle-imx6sx.c | 9 ++++++++-
- 1 file changed, 8 insertions(+), 1 deletion(-)
+what do you think?
 
-diff --git a/arch/arm/mach-imx/cpuidle-imx6sx.c b/arch/arm/mach-imx/cpuidle-imx6sx.c
-index fd0053e47a15..57cb9c763222 100644
---- a/arch/arm/mach-imx/cpuidle-imx6sx.c
-+++ b/arch/arm/mach-imx/cpuidle-imx6sx.c
-@@ -15,6 +15,7 @@
- 
- #include "common.h"
- #include "cpuidle.h"
-+#include "hardware.h"
- 
- static int imx6sx_idle_finish(unsigned long val)
- {
-@@ -99,8 +100,12 @@ static struct cpuidle_driver imx6sx_cpuidle_driver = {
- 	.safe_state_index = 0,
- };
- 
-+#define SW2ISO_ORIGINAL		0x2
-+#define SW2ISO_IMX6SX		0xf
- int __init imx6sx_cpuidle_init(void)
- {
-+	u32 sw2iso = SW2ISO_ORIGINAL;
-+
- 	imx6_set_int_mem_clk_lpm(true);
- 	imx6_enable_rbc(false);
- 	imx_gpc_set_l2_mem_power_in_lpm(false);
-@@ -110,7 +115,9 @@ int __init imx6sx_cpuidle_init(void)
- 	 * except for power up sw2iso which need to be
- 	 * larger than LDO ramp up time.
- 	 */
--	imx_gpc_set_arm_power_up_timing(0xf, 1);
-+	if (cpu_is_imx6sx())
-+		sw2iso = SW2ISO_IMX6SX;
-+	imx_gpc_set_arm_power_up_timing(sw2iso, 1);
- 	imx_gpc_set_arm_power_down_timing(1, 1);
- 
- 	return cpuidle_register(&imx6sx_cpuidle_driver, NULL);
--- 
-2.17.1
+> 
+>>
+>> enum spmi_common_regulator_registers {
+>> 	SPMI_COMMON_REG_DIG_MAJOR_REV		= 0x01,
+>> 	SPMI_COMMON_REG_TYPE			= 0x04,
+>> 	SPMI_COMMON_REG_SUBTYPE			= 0x05,
+>> 	SPMI_COMMON_REG_VOLTAGE_RANGE		= 0x40, ******
+>> 	SPMI_COMMON_REG_VOLTAGE_SET		= 0x41,
+>> 	SPMI_COMMON_REG_MODE			= 0x45,
+>> 	SPMI_COMMON_REG_ENABLE			= 0x46,
+>> 	SPMI_COMMON_REG_PULL_DOWN		= 0x48,
+>> 	SPMI_COMMON_REG_SOFT_START		= 0x4c,
+>> 	SPMI_COMMON_REG_STEP_CTRL		= 0x61,
+>> };
+>>
+>> enum spmi_hfs430_registers {
+>> 	SPMI_HFS430_REG_VOLTAGE_LB		= 0x40, *******
+>> 	SPMI_HFS430_REG_VOLTAGE_VALID_LB	= 0x42,
+
+ah, this definition I can remove and use the common one above. I'll do that.
+>> 	SPMI_HFS430_REG_MODE			= 0x45,
+
+
+>> };
+>>
+>> It just needs it's own
+>>> set/get_voltage_sel() operations.  As far as I can see the main thing
+>>> the driver is doing with the custom stuff is handling the fact that
+>>> there's multiple ranges but that's not an issue for this regulator.
+>>> It's possible I'm missing something there but that was the main thing
+>>> (and we do have some generic support for multiple linear ranges in the
+>>> helper code already, can't remember why this driver isn't using that -
+>>> the ranges overlap IIRC?).
+>>>
+>>> TBH looking at the uses of find_range() I'm not sure they're 100%
+>>> sensible as they are - the existing _time_sel() is assuming we only need
+>>> to work out the ramp time between voltages in the same range which is
+>>> going to have trouble.
+>>>
+>>
 
 
 _______________________________________________
