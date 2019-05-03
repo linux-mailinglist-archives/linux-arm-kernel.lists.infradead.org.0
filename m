@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C4B712573
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 02:26:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D5D212574
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 02:26:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EEgkdCAoJt7WhG1iuzxYgV+7FXkp3XjYSiU/EjkcnHQ=; b=UaYNKO5y+8c3oQ
-	79VLtwbn0urPVLiXSqCDh0UMU11gYSEhKEZkPqXLKN2C8fK6oSfHJlomk2c9yDV8fzIBSS3iplnn3
-	Au+/v2+AAuQWoQRkc9Icm2w8bQzvffyLYtqxOWP0mzGgP3IA9kBaPd9sjXTT0Ma24BxAm9dhRu3Bh
-	R7sxnWjYpcv9TmhVk2FF4DFc2sPRgmV6q+5LNoDTf1WwMgBpDg0XQp1D2wqriMAw0IZJaql3WhiJG
-	M8Y7O6ps7bfdBkPa5UScIhvtasoElAJnK8STGo5MYT5IiuxVW4bJarVlGKmc8BLIjGRyZDvgz9l4S
-	LOZCFtNhD+NezTJi3Pjg==;
+	List-Owner; bh=7dyF3PLEL/sZ7o5CVOI/fc6V6cTc4es4xAovMUZg6qs=; b=dMNaY1tko9vt2u
+	9si9UjbsXmMWLv3VDUOMLv82KQI9qSEoooogDwqbmmxqF/abG2tahG/81rmo5/tcjuy4jTqd2MeOh
+	ri3DziRCa84qu1w3Od2fq5xZ8dbsl8xgJGcB8bPMzdneSnsdzWH3wpuAzVko25m8STa/6LCVl026d
+	u1W0jGve0ClO6BYxLHM8XH0wDO0cpPlOKzu0FJHZMu4rYhh4Yr/59EbTGfLT/7jYgRh+tSbDvcixB
+	BGNJiUPHYj596X9M+i1Y+gZyOPuRIz6giAKFiueqZjBNjLkW5+FUe9m9e7PWflHpL71Yp8IthH4FD
+	4ck3Xyf0g8MPe2iZocHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMM1m-0005Mt-F1; Fri, 03 May 2019 00:26:14 +0000
+	id 1hMM1v-0005TU-O8; Fri, 03 May 2019 00:26:23 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMM1e-0005Lk-Al
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 00:26:07 +0000
+ id 1hMM1h-0005Mc-2p
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 00:26:10 +0000
 Received: from quaco.ghostprotocols.net (adsl-173-228-226-134.prtc.net
  [173.228.226.134])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8098021783;
- Fri,  3 May 2019 00:26:03 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 62D8B217D4;
+ Fri,  3 May 2019 00:26:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1556843166;
- bh=V6PvajlKKbO94N9tpD0LRZ4MKdSxlJ0h4zbL/CW1ovI=;
+ s=default; t=1556843168;
+ bh=0W/IEo/M2/Xmyn/H5AkhZO7nQPFZLmoXQI5hS0C/M78=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=KJBrDxZGikPv7ODXs7raFTmF5MSlSpAqAviVGvOaJnzr8n0btgonB+RtLoHP93SgI
- 9Kr8WIHeXS9VToq+6sLW/ZUXv7f9Y4ynRWnKXEQ5++0k2UlY7bxKuAD1zgGxfeNJ+4
- nDewXMgyCQvWO2SLukjaBWa6J0VDNAbU4cEaeYSM=
+ b=VTo6q/l2qk438aHpNfAnJH+BOBJkFvQFuSCy2mO9/y5QOUdX546/hkDlN49DmNTPy
+ MtnXUyP/c2c5SsFnEux+Zj+jm24+0M3lc4emxPL77xyP+Qihg3dzVg8EjSXm3IBby9
+ dkhpOS5FNKkcqsbb+Xnk/VrNao/9ePm/QPa1gALY=
 From: Arnaldo Carvalho de Melo <acme@kernel.org>
 To: Ingo Molnar <mingo@kernel.org>,
 	Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH 07/11] perf cs-etm: Don't check cs_etm_queue::prev_packet
- validity
-Date: Thu,  2 May 2019 20:25:29 -0400
-Message-Id: <20190503002533.29359-8-acme@kernel.org>
+Subject: [PATCH 08/11] perf cs-etm: Always allocate memory for
+ cs_etm_queue::prev_packet
+Date: Thu,  2 May 2019 20:25:30 -0400
+Message-Id: <20190503002533.29359-9-acme@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190503002533.29359-1-acme@kernel.org>
 References: <20190503002533.29359-1-acme@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_172606_387351_10215BEA 
-X-CRM114-Status: GOOD (  11.90  )
+X-CRM114-CacheID: sfid-20190502_172609_161575_F1C30A1D 
+X-CRM114-Status: GOOD (  13.75  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -94,10 +94,25 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Leo Yan <leo.yan@linaro.org>
 
-Since cs_etm_queue::prev_packet is allocated for all cases, it will
-never be NULL pointer; now validity checking prev_packet is pointless,
-remove all of them.
+Robert Walker reported a segmentation fault is observed when process
+CoreSight trace data; this issue can be easily reproduced by the command
+'perf report --itrace=i1000i' for decoding tracing data.
 
+If neither the 'b' flag (synthesize branches events) nor 'l' flag
+(synthesize last branch entries) are specified to option '--itrace',
+cs_etm_queue::prev_packet will not been initialised.  After merging the
+code to support exception packets and sample flags, there introduced a
+number of uses of cs_etm_queue::prev_packet without checking whether it
+is valid, for these cases any accessing to uninitialised prev_packet
+will cause crash.
+
+As cs_etm_queue::prev_packet is used more widely now and it's already
+hard to follow which functions have been called in a context where the
+validity of cs_etm_queue::prev_packet has been checked, this patch
+always allocates memory for cs_etm_queue::prev_packet.
+
+Reported-by: Robert Walker <robert.walker@arm.com>
+Suggested-by: Robert Walker <robert.walker@arm.com>
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 Tested-by: Robert Walker <robert.walker@arm.com>
 Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
@@ -107,43 +122,33 @@ Cc: Mike Leach <mike.leach@linaro.org>
 Cc: Namhyung Kim <namhyung@kernel.org>
 Cc: Suzuki K Poulouse <suzuki.poulose@arm.com>
 Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lkml.kernel.org/r/20190428083228.20246-2-leo.yan@linaro.org
+Fixes: 7100b12cf474 ("perf cs-etm: Generate branch sample for exception packet")
+Fixes: 24fff5eb2b93 ("perf cs-etm: Avoid stale branch samples when flush packet")
+Link: http://lkml.kernel.org/r/20190428083228.20246-1-leo.yan@linaro.org
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 ---
- tools/perf/util/cs-etm.c | 6 +-----
- 1 file changed, 1 insertion(+), 5 deletions(-)
+ tools/perf/util/cs-etm.c | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
 
 diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-index 110804936fc3..7777cfc1ad8c 100644
+index 7777cfc1ad8c..de488b43f440 100644
 --- a/tools/perf/util/cs-etm.c
 +++ b/tools/perf/util/cs-etm.c
-@@ -981,7 +981,6 @@ static int cs_etm__sample(struct cs_etm_queue *etmq)
- 	 * PREV_PACKET is a branch.
- 	 */
- 	if (etm->synth_opts.last_branch &&
--	    etmq->prev_packet &&
- 	    etmq->prev_packet->sample_type == CS_ETM_RANGE &&
- 	    etmq->prev_packet->last_instr_taken_branch)
- 		cs_etm__update_last_branch_rb(etmq);
-@@ -1014,7 +1013,7 @@ static int cs_etm__sample(struct cs_etm_queue *etmq)
- 		etmq->period_instructions = instrs_over;
- 	}
+@@ -422,11 +422,9 @@ static struct cs_etm_queue *cs_etm__alloc_queue(struct cs_etm_auxtrace *etm)
+ 	if (!etmq->packet)
+ 		goto out_free;
  
--	if (etm->sample_branches && etmq->prev_packet) {
-+	if (etm->sample_branches) {
- 		bool generate_sample = false;
+-	if (etm->synth_opts.last_branch || etm->sample_branches) {
+-		etmq->prev_packet = zalloc(szp);
+-		if (!etmq->prev_packet)
+-			goto out_free;
+-	}
++	etmq->prev_packet = zalloc(szp);
++	if (!etmq->prev_packet)
++		goto out_free;
  
- 		/* Generate sample for tracing on packet */
-@@ -1071,9 +1070,6 @@ static int cs_etm__flush(struct cs_etm_queue *etmq)
- 	struct cs_etm_auxtrace *etm = etmq->etm;
- 	struct cs_etm_packet *tmp;
- 
--	if (!etmq->prev_packet)
--		return 0;
--
- 	/* Handle start tracing packet */
- 	if (etmq->prev_packet->sample_type == CS_ETM_EMPTY)
- 		goto swap_packet;
+ 	if (etm->synth_opts.last_branch) {
+ 		size_t sz = sizeof(struct branch_stack);
 -- 
 2.20.1
 
