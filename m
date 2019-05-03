@@ -2,74 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A864125D3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 02:53:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5229012658
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 04:39:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lg6tyke6Ahf+nIIcV4AazCU+BR/A3UZ5Bz2421ncR58=; b=YHaSM/jlbBlcGf
-	AF9cs1YW0jbjFYzSiQ6/ykpVCdMC/eU2xORSPRJPotyZjjDxjo0eff+EtIZcuwIBQt9sO77hPBWrg
-	t62vO/UqDZrycLJilz5/NlSqP/+8O72E5i7e2FhNjI0YTzrBVlmXaSRs2R/h2clXupAXuUtx3GgYh
-	YMDI/wbiUC8lLSzqb034kclGf0B8EyftOIGujfX4QNVZ+IC++Yr7Uph0zatB25oihRLSdwMNmj5ZF
-	2BA/9NDhyCT4CIfd6j8xVllVBle+U1h3jWMYHQUwFXy3twC8XLerQ8j6eUjGooo5fQZSsShDfle0Q
-	UxGiOt711EIbtWUO0s1g==;
+	List-Owner; bh=05mHn0L72+AT8+9lszyQYRTmAZdJZO07BhrcCHzT/3w=; b=eub1wwZyaTilpU
+	o/pV4d7MzdvD9PVBWmVZSSlT4TEdNOp72LFbZy6klX3gIu00c/XE3t3Vp8C/prL1XJ5499xkNRIgx
+	dmqd7TI/kBIHXEFNsCBfAr0ePgjTYnqR7Ipgv5jHbA0jH+qfGou6B7ryfpCdKsdqXjZRLG+I/GDjP
+	0UshBudK2TO6VQYU7o8kiqe0df5flCwXEoVUMnz/faptEuP/f7e6HMjc5WXE1LjNv+Cdt/a1pNGr0
+	AIeU/BeaP86ZtJqMt2iDfSmXOXyfohMoH4QwNbG16TUy92cX8BH3EMKMbjF8AqyA0XMgQ0a6Q5d8/
+	wuuwassVX8rz1XxHXV8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMMRy-0006Os-90; Fri, 03 May 2019 00:53:18 +0000
-Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
+	id 1hMO6E-0008RP-24; Fri, 03 May 2019 02:38:58 +0000
+Received: from mail-db3eur04on0616.outbound.protection.outlook.com
+ ([2a01:111:f400:fe0c::616]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMMRq-0006No-AM
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 00:53:12 +0000
-Received: by mail-qt1-x842.google.com with SMTP id p20so4922244qtc.9
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 02 May 2019 17:53:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=KVq/ptxRQpcNDoBImsMtflPpiDxEADD8mGoV5ENJygU=;
- b=c6dGu3TEKj7g9svDOCStGyjCeqPcYYKRwURWSifIP+8gqyQCF49EtCmn9GEIMJmvZ+
- +XlleJDV98oHyazbTc1/pyV8Pq4dFtZ0dXMHf2HV25jqI1ggdC+Tm5bjGkgw5SeCL3pQ
- Lh6mBgMi6wK06jeVD64CwMDTA4fi9ClwjcUHk=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=KVq/ptxRQpcNDoBImsMtflPpiDxEADD8mGoV5ENJygU=;
- b=QpRuY5NMEQBfyNHvaZ8GyN7YWXQjfKp7a/zdBXvCFnR4n18Rjr7BSFOkml0JH2tNky
- JcH7/vaauu5sjY93Zt/oKo3CSLPglsyapeeqvVGBXLaRmrnLsO/NAx2rDpy5I6SJ9d3c
- HQdgi9GmMIUw86owwgAvmQLzYmXU+VPK3S8JyGgLNSxCWV0h5M/S2orGTbN6rDQIZ4Q5
- h49X0FWUDeaWEiZ7lIVEd/rBa2u+IR46nPNsyAYiQrffg8gWMiirPBV1L/0lRPb6HMfo
- zNW6FwQz/2HFQP0/tXG16QaQgUOwgMfgdMjtHG3WKGTEl5nmwE9YgbSFe2Hh9HR4HWWD
- BLXw==
-X-Gm-Message-State: APjAAAXayOCqqF9+Ogo3obcmk3ouUmh7V9PYxNUYh6nqqGi19f4oldkZ
- bt8Fd8dZDQfuRBQNZwF8Of00hgv+z51l267pyrMBLw==
-X-Google-Smtp-Source: APXvYqyjWk4rmPJKNPpzClFQHuSGSaFCyCx4/b9+Xa9XJSK/iVmucGfYdCZ/C43Ww7mdO1NyQQxlzSgGtf4xZ3HO9bM=
-X-Received: by 2002:ac8:1607:: with SMTP id p7mr6149088qtj.75.1556844788925;
- Thu, 02 May 2019 17:53:08 -0700 (PDT)
+ id 1hMO66-0008Qs-0e
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 02:38:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=9DyR/VMc79T8e3vsOSHIHHZjnGjwQBVNynW38hDDuKo=;
+ b=vpGZDjDnH4k6EZkhCURC6u5n6nbphTA2oYpA+h+QQJtgkFpyVSlWkx4PkrlMo6HoOctygTZk/pKPx0V2Yyso8ZHQ5eLNBbaym/k2UFkoeFd+9VXId8bqhC36JekJBXIwUNUpGHEgYIs2V7wLRPZUCp+OJ9HKSVkw1nuuYKlAKMk=
+Received: from AM0PR04MB4211.eurprd04.prod.outlook.com (52.134.92.158) by
+ AM0PR04MB5588.eurprd04.prod.outlook.com (20.178.119.146) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1856.11; Fri, 3 May 2019 02:38:35 +0000
+Received: from AM0PR04MB4211.eurprd04.prod.outlook.com
+ ([fe80::c415:3cab:a042:2e13]) by AM0PR04MB4211.eurprd04.prod.outlook.com
+ ([fe80::c415:3cab:a042:2e13%6]) with mapi id 15.20.1856.008; Fri, 3 May 2019
+ 02:38:35 +0000
+From: Aisheng Dong <aisheng.dong@nxp.com>
+To: Stephen Boyd <sboyd@kernel.org>, "festevam@gmail.com"
+ <festevam@gmail.com>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-clk@vger.kernel.org"
+ <linux-clk@vger.kernel.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "mturquette@baylibre.com"
+ <mturquette@baylibre.com>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, 
+ "shawnguo@kernel.org" <shawnguo@kernel.org>, Anson Huang
+ <anson.huang@nxp.com>
+Subject: RE: [PATCH V2] clk: imx: pllv4: add fractional-N pll support
+Thread-Topic: [PATCH V2] clk: imx: pllv4: add fractional-N pll support
+Thread-Index: AQHU/u+rfzNhsf6HmUqZui5Dk6oOlaZWxBSAgAHvysA=
+Date: Fri, 3 May 2019 02:38:34 +0000
+Message-ID: <AM0PR04MB4211B63333AB7C50497AE17680350@AM0PR04MB4211.eurprd04.prod.outlook.com>
+References: <1556585557-28795-1-git-send-email-Anson.Huang@nxp.com>
+ <155674445915.200842.2835083854881674143@swboyd.mtv.corp.google.com>
+In-Reply-To: <155674445915.200842.2835083854881674143@swboyd.mtv.corp.google.com>
+Accept-Language: zh-CN, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=aisheng.dong@nxp.com; 
+x-originating-ip: [101.93.238.110]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: f61156a8-36f4-46d9-aed9-08d6cf707083
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB5588; 
+x-ms-traffictypediagnostic: AM0PR04MB5588:
+x-ms-exchange-purlcount: 1
+x-microsoft-antispam-prvs: <AM0PR04MB5588A574C15F7AAFE8C7575B80350@AM0PR04MB5588.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6430;
+x-forefront-prvs: 0026334A56
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(396003)(136003)(366004)(346002)(376002)(39860400002)(189003)(199004)(256004)(478600001)(6436002)(966005)(11346002)(14454004)(66946007)(446003)(66066001)(55016002)(6306002)(110136005)(316002)(476003)(66476007)(66556008)(64756008)(33656002)(99286004)(9686003)(53936002)(66446008)(3846002)(6116002)(81156014)(8676002)(8936002)(81166006)(76116006)(6246003)(229853002)(68736007)(44832011)(73956011)(2501003)(7696005)(76176011)(2906002)(305945005)(4326008)(486006)(102836004)(6636002)(6506007)(25786009)(52536014)(5660300002)(7736002)(186003)(4744005)(26005)(2201001)(71200400001)(74316002)(86362001)(71190400001)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5588;
+ H:AM0PR04MB4211.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: H1ewNlVAy4FDmQSMOq09xIwokzf0cl4onzDU/53npU7PzNc5irxJSpc01V5j0ni1FbMERiSxYSoUVrDYha8d//S1Heo5fEeXW8swYDHW60s7FMOgbx4ArGbi57M6jouHdzxGaytBX9pL9OvaqNuVSuRtq6DtTuGcH0yx4WkrLYT8YFpVZ2c6wMpdwIVVaM/jy9xRg5ufREHE7Jg+aRnv8LORogHt+22c+9H55UHv7H30tqO9rpwJP4Q72bpqH/EEWYWtj1HB9veFebFut4n5kRdxd2asXWo6Ly2Kn5H6rQGLsUwr4prf1ISHGnCiLq04ersZJQSqy10gKATahOzBGH5YO7LMoks8KbmxxHMadzuHeDmCgTXQ1OHAGT3UUsz46fahEi3plz5heBfPupgyGSIB1GSYIvO/Q9QHBXC9O0M=
 MIME-Version: 1.0
-References: <20190429032551.65975-1-drinkcat@chromium.org>
- <20190429032551.65975-2-drinkcat@chromium.org>
- <1556804888.28808.6.camel@mtksdaap41>
-In-Reply-To: <1556804888.28808.6.camel@mtksdaap41>
-From: Nicolas Boichat <drinkcat@chromium.org>
-Date: Fri, 3 May 2019 08:52:58 +0800
-Message-ID: <CANMq1KAugRiL+-bAFijEM7NngLSoOUQtN=rNV5+YYdJ12u+jVQ@mail.gmail.com>
-Subject: Re: [PATCH 1/2] pinctrl: mediatek: Add mtk_eint_pm_ops to common-v2
-To: Yingjoe Chen <yingjoe.chen@mediatek.com>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: f61156a8-36f4-46d9-aed9-08d6cf707083
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 May 2019 02:38:34.8869 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5588
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_175310_383339_0EB2F72D 
-X-CRM114-Status: GOOD (  25.85  )
+X-CRM114-CacheID: sfid-20190502_193850_224849_87C26BDC 
+X-CRM114-Status: GOOD (  11.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
+ no trust [2a01:111:f400:fe0c:0:0:0:616 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -77,7 +110,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -89,98 +121,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chuanjia Liu <Chuanjia.Liu@mediatek.com>,
- Linus Walleij <linus.walleij@linaro.org>, Sean Wang <sean.wang@kernel.org>,
- lkml <linux-kernel@vger.kernel.org>, Evan Green <evgreen@chromium.org>,
- Stephen Boyd <swboyd@chromium.org>, linux-gpio@vger.kernel.org,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 2, 2019 at 9:48 PM Yingjoe Chen <yingjoe.chen@mediatek.com> wrote:
->
-> On Mon, 2019-04-29 at 11:25 +0800, Nicolas Boichat wrote:
-> > pinctrl variants that include pinctrl-mtk-common-v2.h (and not
-> > pinctrl-mtk-common.h) also need to use mtk_eint_pm_ops to setup
-> > wake mask properly, so copy over the pm_ops to v2.
+> From: Stephen Boyd [mailto:sboyd@kernel.org]
+> Sent: Thursday, May 2, 2019 5:01 AM
+> 
+> The Content-transfer-encoding header is still base64. I guess it can't be fixed.
+> 
+
+How can we know it's base64?
+As I saw from the 'Headers' in patchwork, it's:
+"Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit"
+https://patchwork.kernel.org/patch/10922657/
+
+We'd like to fix it this.
+
+Regards
+Dong Aisheng
+
+> Quoting Anson Huang (2019-04-29 17:57:22)
+> > The pllv4 supports fractional-N function, the formula is:
 > >
-> > It is not easy to merge the 2 copies (or move
-> > mtk_eint_suspend/resume to mtk-eint.c), as we need to
-> > dereference pctrl->eint, and struct mtk_pinctrl *pctl has a
-> > different structure definition for v1 and v2.
+> > PLL output freq = input * (mult + num/denom),
 > >
-> > Signed-off-by: Nicolas Boichat <drinkcat@chromium.org>
-> > Reviewed-by: Chuanjia Liu <Chuanjia.Liu@mediatek.com>
-> > ---
-> >  .../pinctrl/mediatek/pinctrl-mtk-common-v2.c  | 19 +++++++++++++++++++
-> >  .../pinctrl/mediatek/pinctrl-mtk-common-v2.h  |  1 +
-> >  2 files changed, 20 insertions(+)
+> > This patch adds fractional-N function support, including clock round
+> > rate, calculate rate and set rate, with this patch, the clock rate of
+> > APLL in clock tree is more accurate than before:
 > >
-> > diff --git a/drivers/pinctrl/mediatek/pinctrl-mtk-common-v2.c b/drivers/pinctrl/mediatek/pinctrl-mtk-common-v2.c
-> > index 20e1c890e73b30c..7e19b5a4748eafe 100644
-> > --- a/drivers/pinctrl/mediatek/pinctrl-mtk-common-v2.c
-> > +++ b/drivers/pinctrl/mediatek/pinctrl-mtk-common-v2.c
-> > @@ -723,3 +723,22 @@ int mtk_pinconf_adv_drive_get(struct mtk_pinctrl *hw,
-> >
-> >       return 0;
-> >  }
-> > +
-> > +static int mtk_eint_suspend(struct device *device)
-> > +{
-> > +     struct mtk_pinctrl *pctl = dev_get_drvdata(device);
-> > +
-> > +     return mtk_eint_do_suspend(pctl->eint);
-> > +}
-> > +
-> > +static int mtk_eint_resume(struct device *device)
-> > +{
-> > +     struct mtk_pinctrl *pctl = dev_get_drvdata(device);
-> > +
-> > +     return mtk_eint_do_resume(pctl->eint);
-> > +}
-> > +
-> > +const struct dev_pm_ops mtk_eint_pm_ops = {
-> > +     .suspend_noirq = mtk_eint_suspend,
-> > +     .resume_noirq = mtk_eint_resume,
-> > +};
->
-> This is identical to the one in pinctrl-mtk-common.c and will have name
-> clash if both pinctrl-mtk-common.c and pinctrl-mtk-common-v2.c are
-> built.
->
-> It would be better if we try to merge both version into mtk-eint.c, this
-> way we could also remove some global functions.
-
-Argh, I didn't think about the name clash, you're right. I guess the
-easy way is to rename this one mtk_eint_pm_ops_v2 ...
-
-As highlighted in the commit message, it's tricky to merge the 2 sets
-of functions, they look identical, but they actually work on struct
-mtk_pinctrl that are defined differently (in
-pinctrl-mtk-common[-v2].h), so the ->eint member is at different
-addresses...
-
-I don't really see a way around this... Unless we want to change
-platform_set_drvdata(pdev, pctl); to pass another type of structure
-that could be shared (but I think that'll make the code fairly
-verbose, with another layer of indirection). Or just assign struct
-mtk_eint to that, since that contains pctl so we could get back the
-struct mtk_pinctrl from that, but that feels ugly as well...
-
->
-> Joe.C
->
->
->
-> _______________________________________________
-> Linux-mediatek mailing list
-> Linux-mediatek@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-mediatek
-
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
