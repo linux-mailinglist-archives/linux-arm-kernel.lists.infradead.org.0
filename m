@@ -2,57 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27EB4132C8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 19:03:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05DF0132D1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 19:04:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rzxNdXKEab8aJXHydSHLtCQgmBfmizrqFEgxSjNsXro=; b=UrS1M2aWOMISGv
-	+vZOhREkitrMJzVjn/S77JRptOuEzW8sjofS9MTYP6pBKYnvDWNfPuAwZiz2Dq3fxtw08xPzAzoWf
-	LPbW37I9hqnfjZjzUCsGP/znD6XlvuApDfVm+phs4pOcRl2GN8oQ6qgtWChzzUi6uLcWy0HFfkCjI
-	xpe+erEgaIVuMwID5CA8S/s/1AuWPBfBXny0qdyfLpfLcL6XXGuEVDyV+yohUnkEP+BK0Sf7PFrm8
-	yx7AyyUDMklaRCTOHl5PWUOjGyNKRWoIqM9p3KVwN5GHmfhx5imsey8iTt+XRHLtNB8MeFuJLhhN9
-	fyq29chZKCIcuuoqss0Q==;
+	List-Owner; bh=C9g72bHtEWTZHzhpdgj8w5oyLwpUrIqbwA0kpvWQ0+c=; b=Iu/Z2kJceHZ8FW
+	xVD1yXTaAMfQEXjTVG6oSx2Kdt6gC3Q5Q3s95Kc0K3v6IQ/TamLjJ3A49odyHs4h/EnOUmMM514sW
+	mKtYA7XIopiprKAGDlpY73sNhSMzcxbHwyBMzhbyRnDffgov5BCFhG1ho8xA/qKp8llckx44p4rCi
+	tc7BhUZXJDyQemBTUgGcAdgPiBEloMLSAEam2D9ZooBirCnAFC9xx1UrDevpMouTnuk8SrCvopf/2
+	IjB7JQ6HSk14udCITKC4ieKFS6mJHS66bOJ+fze0k5u8yfZCND2i00GZ/FMyr++r0Z+F7vAIrinVA
+	AIynsLCYsopsYdw+4UoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMbap-0005F0-Vu; Fri, 03 May 2019 17:03:27 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMbaj-0005EL-3B
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 17:03:22 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B389915A2;
- Fri,  3 May 2019 10:03:19 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 2A5D43F557; Fri,  3 May 2019 10:03:13 -0700 (PDT)
-Date: Fri, 3 May 2019 18:03:10 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Andrey Konovalov <andreyknvl@google.com>
-Subject: Re: [PATCH v14 13/17] IB/mlx4, arm64: untag user pointers in
- mlx4_get_umem_mr
-Message-ID: <20190503170310.GL55449@arrakis.emea.arm.com>
-References: <cover.1556630205.git.andreyknvl@google.com>
- <05c0c078b8b5984af4cc3b105a58c711dcd83342.1556630205.git.andreyknvl@google.com>
+	id 1hMbbs-0005ZO-Gz; Fri, 03 May 2019 17:04:32 +0000
+Received: from mail-eopbgr730070.outbound.protection.outlook.com
+ ([40.107.73.70] helo=NAM05-DM3-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hMbbk-0005YO-KF
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 17:04:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector1-xilinx-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=QI4SwQR5RQkVqW+Q0jY+s+NyNw8aiN9otNV5LN2xGz8=;
+ b=UN6Sl/a7WcUYGZNXU4PHAHHBv7XMuJ83fkXbNMg0eUS4x31amOeD4CmWUcHE1OKhrAI3SJfugTJD76YryPzmfPghsiulV0DkHEQbaaorL09jSWBH4O2KzpaQb37cddjhlpWjY5vHFeKUM364viGUMMVnfw7Gpn0KNAHOtMAUn8E=
+Received: from BL0PR02MB5681.namprd02.prod.outlook.com (20.177.241.92) by
+ BL0PR02MB4289.namprd02.prod.outlook.com (10.167.172.74) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1856.10; Fri, 3 May 2019 17:04:17 +0000
+Received: from BL0PR02MB5681.namprd02.prod.outlook.com
+ ([fe80::6cde:f726:b36e:752d]) by BL0PR02MB5681.namprd02.prod.outlook.com
+ ([fe80::6cde:f726:b36e:752d%5]) with mapi id 15.20.1856.012; Fri, 3 May 2019
+ 17:04:17 +0000
+From: Dragan Cvetic <draganc@xilinx.com>
+To: Rob Herring <robh@kernel.org>
+Subject: RE: [PATCH V3 01/12] dt-bindings: xilinx-sdfec: Add SDFEC binding
+Thread-Topic: [PATCH V3 01/12] dt-bindings: xilinx-sdfec: Add SDFEC binding
+Thread-Index: AQHU/UVMESM8TKHZf0mZ8yysxzDRXaZWsusAgAD9BPCAAJ0dgIABWLzg
+Date: Fri, 3 May 2019 17:04:17 +0000
+Message-ID: <BL0PR02MB5681ECF087DF6672F1611A1BCB350@BL0PR02MB5681.namprd02.prod.outlook.com>
+References: <1556402706-176271-1-git-send-email-dragan.cvetic@xilinx.com>
+ <1556402706-176271-2-git-send-email-dragan.cvetic@xilinx.com>
+ <20190501194738.GA1441@bogus>
+ <BL0PR02MB56815DFC139D65D46D5DFF50CB340@BL0PR02MB5681.namprd02.prod.outlook.com>
+ <CAL_JsqLhmtqUdUd8OPdx-390imegzouAJ43JOhYr16w87afS-Q@mail.gmail.com>
+In-Reply-To: <CAL_JsqLhmtqUdUd8OPdx-390imegzouAJ43JOhYr16w87afS-Q@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=draganc@xilinx.com; 
+x-originating-ip: [149.199.80.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 20505d24-e144-425a-b980-08d6cfe960df
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:BL0PR02MB4289; 
+x-ms-traffictypediagnostic: BL0PR02MB4289:
+x-microsoft-antispam-prvs: <BL0PR02MB428974C526DCE3186FF100BECB350@BL0PR02MB4289.namprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1775;
+x-forefront-prvs: 0026334A56
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(346002)(39860400002)(366004)(396003)(376002)(136003)(13464003)(189003)(199004)(6436002)(256004)(6506007)(316002)(53546011)(6116002)(52536014)(74316002)(54906003)(478600001)(25786009)(68736007)(64756008)(6916009)(102836004)(2906002)(99286004)(71200400001)(66446008)(66946007)(73956011)(71190400001)(8936002)(66556008)(8676002)(229853002)(81156014)(81166006)(3846002)(14454004)(76116006)(33656002)(305945005)(86362001)(9686003)(7736002)(66476007)(186003)(66066001)(107886003)(6246003)(53936002)(76176011)(476003)(11346002)(55016002)(5660300002)(4326008)(486006)(7696005)(26005)(446003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BL0PR02MB4289;
+ H:BL0PR02MB5681.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: xilinx.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: vwY8WFbufxbrIxH9DIyoxxTDqRmMw7RZD+B/wYaiBBtOpT6ungKOKiB6sanxA5qY5AUnhgbp04TJyR6uP9vx3K7NhmAPCfeBAULbJ/wmQXjTy+0hkhzyqx9zcjwruKCTsR4KgcMmRJ3UP4cXK/Ogd5w6HtRPZsySViSd9es0JV4elg2PHvSM0oA4BhZR0P48xSPLDg29K3r9wx6foxoDNof3RDtad9XxiUVlZtSgn5G2uOy+xNKAVZu/Ns6bBfwy2akZ0GST0s1skac7lZEGPOXAVlSw0EdCCqoBtI+by/na5g9yeTfpys7W8sONhDbneTJgNbeD0ZjHVpZAj14kLOiWsqmnV9DhjxjYEVzVwl2Hl9TMyABUtK8rKKchV6FP/JNtIXXLaTRQDc2q5DjKenJnqnvWXbuKH2IjnAfTQLo=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <05c0c078b8b5984af4cc3b105a58c711dcd83342.1556630205.git.andreyknvl@google.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 20505d24-e144-425a-b980-08d6cfe960df
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 May 2019 17:04:17.7848 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR02MB4289
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_100321_149371_1B99B81A 
-X-CRM114-Status: GOOD (  23.10  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190503_100424_665266_E7518D90 
+X-CRM114-Status: GOOD (  22.66  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.73.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -64,82 +111,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Koenig@google.com, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- linux-kselftest@vger.kernel.org, Chintan Pandya <cpandya@codeaurora.org>,
- Felix <Felix.Kuehling@amd.com>, Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, Dave Martin <Dave.Martin@arm.com>,
- Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>, Deucher@google.com,
- Leon Romanovsky <leonro@mellanox.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Dmitry Vyukov <dvyukov@google.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- Kuehling@google.com, Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
- Christian <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "arnd@arndb.de" <arnd@arndb.de>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Michal Simek <michals@xilinx.com>, Derek Kiernan <dkiernan@xilinx.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 30, 2019 at 03:25:09PM +0200, Andrey Konovalov wrote:
-> This patch is a part of a series that extends arm64 kernel ABI to allow to
-> pass tagged user pointers (with the top byte set to something else other
-> than 0x00) as syscall arguments.
-> 
-> mlx4_get_umem_mr() uses provided user pointers for vma lookups, which can
-> only by done with untagged pointers.
-> 
-> Untag user pointers in this function.
-> 
-> Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
-> Reviewed-by: Leon Romanovsky <leonro@mellanox.com>
-> ---
->  drivers/infiniband/hw/mlx4/mr.c | 7 ++++---
->  1 file changed, 4 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/infiniband/hw/mlx4/mr.c b/drivers/infiniband/hw/mlx4/mr.c
-> index 395379a480cb..9a35ed2c6a6f 100644
-> --- a/drivers/infiniband/hw/mlx4/mr.c
-> +++ b/drivers/infiniband/hw/mlx4/mr.c
-> @@ -378,6 +378,7 @@ static struct ib_umem *mlx4_get_umem_mr(struct ib_udata *udata, u64 start,
->  	 * again
->  	 */
->  	if (!ib_access_writable(access_flags)) {
-> +		unsigned long untagged_start = untagged_addr(start);
->  		struct vm_area_struct *vma;
->  
->  		down_read(&current->mm->mmap_sem);
-> @@ -386,9 +387,9 @@ static struct ib_umem *mlx4_get_umem_mr(struct ib_udata *udata, u64 start,
->  		 * cover the memory, but for now it requires a single vma to
->  		 * entirely cover the MR to support RO mappings.
->  		 */
-> -		vma = find_vma(current->mm, start);
-> -		if (vma && vma->vm_end >= start + length &&
-> -		    vma->vm_start <= start) {
-> +		vma = find_vma(current->mm, untagged_start);
-> +		if (vma && vma->vm_end >= untagged_start + length &&
-> +		    vma->vm_start <= untagged_start) {
->  			if (vma->vm_flags & VM_WRITE)
->  				access_flags |= IB_ACCESS_LOCAL_WRITE;
->  		} else {
+Hi Rob,
 
-Discussion ongoing on the previous version of the patch but I'm more
-inclined to do this in ib_uverbs_(re)reg_mr() on cmd.start.
+Please find inline comments below
 
--- 
-Catalin
+Regards
+Dragan
 
+> -----Original Message-----
+> From: Rob Herring [mailto:robh@kernel.org]
+> Sent: Thursday 2 May 2019 21:16
+> To: Dragan Cvetic <draganc@xilinx.com>
+> Cc: arnd@arndb.de; gregkh@linuxfoundation.org; Michal Simek <michals@xilinx.com>; linux-arm-kernel@lists.infradead.org;
+> mark.rutland@arm.com; devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; Derek Kiernan <dkiernan@xilinx.com>
+> Subject: Re: [PATCH V3 01/12] dt-bindings: xilinx-sdfec: Add SDFEC binding
+> 
+> On Thu, May 2, 2019 at 6:04 AM Dragan Cvetic <draganc@xilinx.com> wrote:
+> >
+> > Hi Rob,
+> >
+> > Please find my inline comments below
+> >
+> > Thank you
+> > Dragan
+> >
+> > > -----Original Message-----
+> > > From: Rob Herring [mailto:robh@kernel.org]
+> > > Sent: Wednesday 1 May 2019 20:48
+> > > To: Dragan Cvetic <draganc@xilinx.com>
+> > > Cc: arnd@arndb.de; gregkh@linuxfoundation.org; Michal Simek <michals@xilinx.com>; linux-arm-kernel@lists.infradead.org;
+> > > mark.rutland@arm.com; devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; Derek Kiernan <dkiernan@xilinx.com>
+> > > Subject: Re: [PATCH V3 01/12] dt-bindings: xilinx-sdfec: Add SDFEC binding
+> > >
+> > > On Sat, Apr 27, 2019 at 11:04:55PM +0100, Dragan Cvetic wrote:
+> > > > Add the Soft Decision Forward Error Correction (SDFEC) Engine
+> > > > bindings which is available for the Zynq UltraScale+ RFSoC
+> > > > FPGA's.
+> > > >
+> > > > Signed-off-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
+> > > > Signed-off-by: Derek Kiernan <derek.kiernan@xilinx.com>
+> > > > ---
+> > > >  .../devicetree/bindings/misc/xlnx,sd-fec.txt       | 58 ++++++++++++++++++++++
+> > > >  1 file changed, 58 insertions(+)
+> > > >  create mode 100644 Documentation/devicetree/bindings/misc/xlnx,sd-fec.txt
+> > > >
+> > > > diff --git a/Documentation/devicetree/bindings/misc/xlnx,sd-fec.txt b/Documentation/devicetree/bindings/misc/xlnx,sd-
+> fec.txt
+> > > > new file mode 100644
+> > > > index 0000000..425b6a6
+> > > > --- /dev/null
+> > > > +++ b/Documentation/devicetree/bindings/misc/xlnx,sd-fec.txt
+> > > > @@ -0,0 +1,58 @@
+> > > > +* Xilinx SDFEC(16nm) IP *
+> > > > +
+> > > > +The Soft Decision Forward Error Correction (SDFEC) Engine is a Hard IP block
+> > > > +which provides high-throughput LDPC and Turbo Code implementations.
+> > > > +The LDPC decode & encode functionality is capable of covering a range of
+> > > > +customer specified Quasi-cyclic (QC) codes. The Turbo decode functionality
+> > > > +principally covers codes used by LTE. The FEC Engine offers significant
+> > > > +power and area savings versus implementations done in the FPGA fabric.
+> > > > +
+> > > > +
+> > > > +Required properties:
+> > > > +- compatible: Must be "xlnx,sd-fec-1.1"
+> > > > +- clock-names : List of input clock names from the following:
+> > > > +    - "core_clk", Main processing clock for processing core (required)
+> > > > +    - "s_axi_aclk", AXI4-Lite memory-mapped slave interface clock (required)
+> > > > +    - "s_axis_din_aclk", DIN AXI4-Stream Slave interface clock (optional)
+> > > > +    - "s_axis_din_words-aclk", DIN_WORDS AXI4-Stream Slave interface clock (optional)
+> > > > +    - "s_axis_ctrl_aclk",  Control input AXI4-Stream Slave interface clock (optional)
+> > > > +    - "m_axis_dout_aclk", DOUT AXI4-Stream Master interface clock (optional)
+> > > > +    - "m_axis_dout_words_aclk", DOUT_WORDS AXI4-Stream Master interface clock (optional)
+> > > > +    - "m_axis_status_aclk", Status output AXI4-Stream Master interface clock (optional)
+> > > > +- clocks : Clock phandles (see clock_bindings.txt for details).
+> > > > +- reg: Should contain Xilinx SDFEC 16nm Hardened IP block registers
+> > > > +  location and length.
+> > > > +- xlnx,sdfec-code : Should contain "ldpc" or "turbo" to describe the codes
+> > > > +  being used.
+> > > > +- xlnx,sdfec-din-words : A value 0 indicates that the DIN_WORDS interface is
+> > > > +  driven with a fixed value and is not present on the device, a value of 1
+> > > > +  configures the DIN_WORDS to be block based, while a value of 2 configures the
+> > > > +  DIN_WORDS input to be supplied for each AXI transaction.
+> > > > +- xlnx,sdfec-din-width : Configures the DIN AXI stream where a value of 1
+> > > > +  configures a width of "1x128b", 2 a width of "2x128b" and 4 configures a width
+> > > > +  of "4x128b".
+> > >
+> > > Perhaps append with '-bits' and make the values 0, 128, 256, 512.
+> > >
+> >
+> >
+> > The suggested will require the extra code for converting from 128,256,512  to 1,2,4, as HW is configured with 1, 2 and 4.
+> 
+> A simple divide by 128.
+> 
+> We generally prefer DT to use real units rather than register values.
+
+The data enters/exits SDFEC in 128 bits word units (__int128).
+1,2,4 are not a register values only, they represent a number
+of units which are used in SDFEC communication.
+
+> 
+> Rob
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
