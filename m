@@ -2,88 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C1EC13290
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 18:54:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37AF71329D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 18:57:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BVuYZemHFRsgmaAhR+Pyd0JhOJoS/BcD5Tn+Tbxjq8o=; b=DWpqrxSIsdUlql
-	52GBO2Urv1GqMzRqMTD5OujsvJVWXcqMoQ5V5EBcbYID51o2DG4zHVrvP+scKn3SUHmUpQSjHL3+L
-	7bIsNnSl2P4X8DJ7N7ROb1wEzh60BLi3Y3HJdVWFsExNqSWdPjf96JhqxTWG5wTKA/bNvUCr/aoMr
-	nofAGP5FgHRIS9FqP/702286p3R/HvNpBFuwZR3z1IXPruCws5MCXX918VKyRRs/ntdBjA9H6Vx4r
-	ZuU2pubg4QkhN2jXYTh2ICAsfxwbsIUZwg5PamYHgFhJqtIyauwMQhVZ5elqEqWDgfvvWCz5Y92vn
-	bL52DZcqixAye9bcBb3g==;
+	List-Owner; bh=6fBw0JpjRkyOMfE2p91IWfAeWdb2UmrI1bfVxQThExo=; b=ZQKiYu0XFsVXdF
+	3hjejKykdaoP+9XTtnwjfXbhYqpF6PFZO1RIj6ZBU8sCPc4bG6xYoZ/wgVhx/YZ8mqf5MRF//i7WS
+	QoRVkWZraUpzNzNPCPZcFhbj5JD93PMbWT9zq2an7sSz/UQ1vJCW4nM9g8OSMhaG4B+o26NqYIl+e
+	YD83cqtVFT6yNYepHAyBV9nRDC3n0WQWdKBIIi7LoGwzcLPPSEO3Q5D7oG0qenRpTmmcSYii01V06
+	Hr6GExP1kyBHt0qTIVmnwbhmQPF+KRxIg2ahj0pBJdM01s/ALV0mNPQkE79jFO0PqiRR4MxF8N+J1
+	/bg/c/8bwt43k3j5PTyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMbSJ-0000Gg-F0; Fri, 03 May 2019 16:54:39 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMbRY-0007q6-9g
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 16:53:55 +0000
-Received: by mail-ed1-x544.google.com with SMTP id w37so6770504edw.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 03 May 2019 09:53:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=nexus-software-ie.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=4UUaSV6UsTJj0YzNYNTXseusGNlLAnywMu7z5yzgiuo=;
- b=Bkgs3wYfaIDcescO6hEhbESLxlHtIU1ZdUQ58EaYqQE61UZiG26j0XiHeps/v3dF2T
- mObHp7f4mDaZPFjkWURs3dEesPWFt/MnpxLIrbFA0EzoVbH0vCxvCyJM7PDxxYiIHC7S
- cGuwzBOmhGpj1FAoJGyLBpe/J7gPu4Wadd9JPWW9uSmGh1RqNqScZ37/bqYgXoYqMDZj
- X56LItkbA9QsRjTJR8GPBbgvCyzEkzntxAM6XTRyJjXuVMyut4PjarT1mYF2Ojh5rFMO
- p89UakNVE6Mp0YsGQJjljrEdbL1mHr249gHwxcRJx3Z0SB9//rQdqoAowwatm4jIyzff
- uwBA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=4UUaSV6UsTJj0YzNYNTXseusGNlLAnywMu7z5yzgiuo=;
- b=QhU7KtM+skuNzrbMIr+60lYxB/LzNKOK7NaA37ffTrUxmdwwwseTFsA/Qi0L2iR4rv
- gX2qhIJ8K6NugvCJRGviNttZ4UxpIaUT2CDai1voRAd6+ajN0jpKH37klGQs2bZ2qa/n
- wxwUuDPDBAjHPT9KQqSPPi5CtdqK1xU3SRyPG1UCs4YyVk7dWRDvkJh4eWt1/E9O+3It
- 0agzWlTy7MtdG5UIbk3slB0OENgmcaAnHB6HwFJ4BZnB1D69VAVSn7RI+XRJTIV7Su2o
- jYn2txiGhc0lKaA6Fd4sG6zFqxSL8G5bK6XnaIKf5PBVT+y+ftNCkyI73JlNFu0z1SIb
- DjEQ==
-X-Gm-Message-State: APjAAAU0q0UYM/HrvkvUZG1QVvvmdI1NZu+3Mjw0lOEyPG3FeZNXJKjl
- OlReO+K50++440zl+i2k/ViUUg==
-X-Google-Smtp-Source: APXvYqzB6aUE96YeSt2xyCeOW5vMxyPSMXn7a6sdOIPzy8EsGCltFdnJTGy0RC9T/X5cvIEHR8I49A==
-X-Received: by 2002:a17:906:29d3:: with SMTP id
- y19mr7282365eje.122.1556902431008; 
- Fri, 03 May 2019 09:53:51 -0700 (PDT)
-Received: from event-horizon.net ([80.111.179.123])
- by smtp.gmail.com with ESMTPSA id j55sm707038ede.27.2019.05.03.09.53.49
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 03 May 2019 09:53:50 -0700 (PDT)
-From: Bryan O'Donoghue <pure.logic@nexus-software.ie>
-To: gregkh@linuxfoundation.org, l.stach@pengutronix.de, peng.fan@nxp.com,
- shawnguo@kernel.org, srinivas.kandagatla@linaro.org,
- leonard.crestez@nxp.com
-Subject: [PATCH v6 5/5] dt-bindings: imx-ocotp: Add i.MX8MM compatible
-Date: Fri,  3 May 2019 17:53:42 +0100
-Message-Id: <20190503165342.30139-6-pure.logic@nexus-software.ie>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190503165342.30139-1-pure.logic@nexus-software.ie>
-References: <20190503165342.30139-1-pure.logic@nexus-software.ie>
+	id 1hMbUe-0002Fv-Ah; Fri, 03 May 2019 16:57:04 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hMbUW-0002FR-I2
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 16:56:57 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 091DE15A2;
+ Fri,  3 May 2019 09:56:56 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 7F2813F557; Fri,  3 May 2019 09:56:49 -0700 (PDT)
+Date: Fri, 3 May 2019 17:56:46 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Andrey Konovalov <andreyknvl@google.com>
+Subject: Re: [PATCH v14 10/17] fs, arm64: untag user pointers in
+ fs/userfaultfd.c
+Message-ID: <20190503165646.GK55449@arrakis.emea.arm.com>
+References: <cover.1556630205.git.andreyknvl@google.com>
+ <7d3b28689d47c0fa1b80628f248dbf78548da25f.1556630205.git.andreyknvl@google.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <7d3b28689d47c0fa1b80628f248dbf78548da25f.1556630205.git.andreyknvl@google.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_095352_583361_FA647F23 
-X-CRM114-Status: UNSURE (   9.67  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190503_095656_605775_D978CF56 
+X-CRM114-Status: GOOD (  21.48  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,40 +64,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, aisheng.dong@nxp.com, abel.vesa@nxp.com,
- anson.huang@nxp.com, Rob Herring <robh@kernel.org>, linux-imx@nxp.com,
- kernel@pengutronix.de, fabio.estevam@nxp.com,
- Bryan O'Donoghue <pure.logic@nexus-software.ie>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Koenig@google.com, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ linux-kselftest@vger.kernel.org, Chintan Pandya <cpandya@codeaurora.org>,
+ Felix <Felix.Kuehling@amd.com>, Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>, Deucher@google.com,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Dmitry Vyukov <dvyukov@google.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Kuehling@google.com, Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
+ Christian <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add compatible for i.MX8MM as per arch/arm64/boot/dts/freescale/imx8mm.dtsi
+On Tue, Apr 30, 2019 at 03:25:06PM +0200, Andrey Konovalov wrote:
+> This patch is a part of a series that extends arm64 kernel ABI to allow to
+> pass tagged user pointers (with the top byte set to something else other
+> than 0x00) as syscall arguments.
+> 
+> userfaultfd_register() and userfaultfd_unregister() use provided user
+> pointers for vma lookups, which can only by done with untagged pointers.
+> 
+> Untag user pointers in these functions.
+> 
+> Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+> ---
+>  fs/userfaultfd.c | 5 +++++
+>  1 file changed, 5 insertions(+)
+> 
+> diff --git a/fs/userfaultfd.c b/fs/userfaultfd.c
+> index f5de1e726356..fdee0db0e847 100644
+> --- a/fs/userfaultfd.c
+> +++ b/fs/userfaultfd.c
+> @@ -1325,6 +1325,9 @@ static int userfaultfd_register(struct userfaultfd_ctx *ctx,
+>  		goto out;
+>  	}
+>  
+> +	uffdio_register.range.start =
+> +		untagged_addr(uffdio_register.range.start);
+> +
+>  	ret = validate_range(mm, uffdio_register.range.start,
+>  			     uffdio_register.range.len);
+>  	if (ret)
+> @@ -1514,6 +1517,8 @@ static int userfaultfd_unregister(struct userfaultfd_ctx *ctx,
+>  	if (copy_from_user(&uffdio_unregister, buf, sizeof(uffdio_unregister)))
+>  		goto out;
+>  
+> +	uffdio_unregister.start = untagged_addr(uffdio_unregister.start);
+> +
+>  	ret = validate_range(mm, uffdio_unregister.start,
+>  			     uffdio_unregister.len);
+>  	if (ret)
 
-Signed-off-by: Bryan O'Donoghue <pure.logic@nexus-software.ie>
-Cc: Rob Herring <robh@kernel.org>
-Reviewed-by: Leonard Crestez <leonard.crestez@nxp.com>
----
- Documentation/devicetree/bindings/nvmem/imx-ocotp.txt | 1 +
- 1 file changed, 1 insertion(+)
+Wouldn't it be easier to do this in validate_range()? There are a few
+more calls in this file, though I didn't check whether a tagged address
+would cause issues.
 
-diff --git a/Documentation/devicetree/bindings/nvmem/imx-ocotp.txt b/Documentation/devicetree/bindings/nvmem/imx-ocotp.txt
-index 68f7d6fdd140..96ffd06d2ca8 100644
---- a/Documentation/devicetree/bindings/nvmem/imx-ocotp.txt
-+++ b/Documentation/devicetree/bindings/nvmem/imx-ocotp.txt
-@@ -15,6 +15,7 @@ Required properties:
- 	"fsl,imx6sll-ocotp" (i.MX6SLL),
- 	"fsl,imx7ulp-ocotp" (i.MX7ULP),
- 	"fsl,imx8mq-ocotp" (i.MX8MQ),
-+	"fsl,imx8mm-ocotp" (i.MX8MM),
- 	followed by "syscon".
- - #address-cells : Should be 1
- - #size-cells : Should be 1
 -- 
-2.21.0
-
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
