@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F8771328F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 18:54:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4840E13291
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 18:54:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SyTODaRA5SucrGWj5PVztvJG9yVd4KJu74PwplzR150=; b=Ni/sd79zCVgGGo
-	kMtPqh85095hWzYeiambyjCv04vMMw/Oybko4Lu35wzob6KfSUFxaxv9eTTsT1QDp8uiP3fky+mB+
-	ALdlVVYm7PYaviH+VwERQUoe5sVDXFCFILVTTHx63WnU8vinqIuYp4lnGeTcPYDQuSXWWY36L1mRm
-	xx5nwGu+xGepLwGXELOQBYQc7FwkpjIOJwXqQBj2UAg77fSZ0p4CS/nF4t7FQ9ryj6KL4dMfI9aGR
-	fUm2ZpzqZhJWys0c5WPBeh9L7d/TymKN80X2f7twXkgn3UMlug1c/0dNuR8R1+Nr4hMlTiEpF42qe
-	tc4SwIEJlJKZzTpmIrFA==;
+	List-Owner; bh=U3VpN0G5d3pL+jjBEBOWovkF25OVY5qqB8sfzG2JStk=; b=Oz+EcGkOGJTsnG
+	wpYJ5aXn9KhaeZhq3tEQ96gNXzyOvHd86qC1Q5rqGDzdz53IhN0W7ffn85/O+Ie8LenpU0Gff2JQ4
+	Ofl6IpXOQJwf4dIR7+1pULPcc/3PZqnZQvhidWKyeJpq17sn+fMamfilXVTiZ8pP2eVzNkXxj0kRt
+	Hfg4I9IXR05Bc2zRqAvexHRn4ufYZrhPaIPl3tuZVSHzx5gWUGHLjJFUy2vGIGTGfibITzP46bGsV
+	WYQvzVTFH/wlk4JGYDaR+3qjBt0hhlT/9TAKSJ8BQtcQNL71p51rYiAP03DRfALVaSZsOx1YZOEwc
+	RfTLTB4QGFQ17aBMIt+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMbS9-0008T4-5k; Fri, 03 May 2019 16:54:29 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1hMbSS-0000Uz-TK; Fri, 03 May 2019 16:54:48 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMbRW-0007oF-FL
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 16:53:54 +0000
-Received: by mail-ed1-x543.google.com with SMTP id p26so6781100edr.2
+ id 1hMbRX-0007om-Jm
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 16:53:55 +0000
+Received: by mail-ed1-x541.google.com with SMTP id m4so6766888edd.8
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 03 May 2019 09:53:50 -0700 (PDT)
+ Fri, 03 May 2019 09:53:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=nexus-software-ie.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=mUKYBeA7ET4vqRjNG0ORQtRPuOUTlJyWQvyqzvY85GQ=;
- b=fjjOJqX13hBff9Pqz1CdnYNSRkHFArX6JK/QHx/MbdIwnPsL3cFu7dh6ib0/hkvPWF
- ZrywTea+gG7fU0a6omm3QPMTUWR7zg4QKk1O8GimzjoZA/lgsmQhLW0s5CLYXT0dOhyc
- NOhV6foDGpVmokomgWx3q84ukwFNvflJzIG1SgH4l2M5jsqhk9eFMzswQQlBYUaUd1vq
- 4XadtmK8QEOYue77vUGemQMLg5x2cjsoN6NgzAg9G4Cx3C3gTnKuOslpbG2V0OmvtEMy
- 126mg14Es2tV9KSoMI/qb/hN3i9vaPe6IrjDuTnSgV07vL87HfQh7oXnZWi2WctufTqb
- RzAw==
+ bh=0Wk49vomZFoMlLFJQLGwV/ZFp08bg3i3CXAll6kOF5s=;
+ b=sUcjanuoRtHWVgXhcC3G/6xATzmMBQOO9GTXJN4zvjn6ofqvEWE/9FXcGP1PCzQOT0
+ OEDBIc1luCpKqbLXz4B7vam0bOFSEVLraSOm16xpnF3Pv1cJFN5/OTcd4UV3PP/bmFCr
+ jZ0T52DITzraNRfVAmDdASx7uQB1yYh7OrGhGX20prFjS6X/BYIAzdKu6ZA9ZE1aNP7r
+ JnwDNhbdoogT5ulTcTRvt8/22UK2iXq6bvinNNgCgOVhpmMOkax2Mrti5USFhYjmXY7v
+ S3xJpgYlFaXvr+30u1YOY3XA7gOzwLo7Fu/bVMnXefpqXrrq90GMIxLE7RV7xYsfY8MG
+ j+kg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=mUKYBeA7ET4vqRjNG0ORQtRPuOUTlJyWQvyqzvY85GQ=;
- b=btnpLpo7fJvZ6nHJcqDLaaDz6rc72I4xrNnJKMZsCgizmrA5TuCmmcEeKKG0RjHknO
- 7/Z4c4OIZe/Skg3ivn18t+JheSWXJQU+j9p9x4+cElYsigc/1btlM/i9mjbk4AaJmYR4
- uUmRidSnd8+wRo2v1UuiYQK7CXd8czddVFgs9LFonER42r7e7oOe8zJemHxlVqUiP29/
- J4a74W942Sp0cLl9yFrvBygczehwAV7naMJr4Pvzcv8aaBjIaJ1xlxB4UfgeeSAhw3U2
- w0M9anhuBjf0FEUXe/SLM3KfIDWIbq3mtsaS9jCKI2JIYZFAjM1+MLeBdjpmMxZzA+oh
- Y5pg==
-X-Gm-Message-State: APjAAAUULHxJeyE5xNGv70UwMQoExx88s6aLaMaISD5dig3wU/XJrb80
- 83LLqJ42GekctTejMK4WiOCUBA==
-X-Google-Smtp-Source: APXvYqwso79I8sOgF9/Uyfyz8CiLS4rqN8+jOS+SSo7I58jQARx2l3BNArsuUtX417LEgsFJvAIpsA==
-X-Received: by 2002:aa7:d8d1:: with SMTP id k17mr9786195eds.250.1556902428639; 
- Fri, 03 May 2019 09:53:48 -0700 (PDT)
+ bh=0Wk49vomZFoMlLFJQLGwV/ZFp08bg3i3CXAll6kOF5s=;
+ b=AmybG3Na+pBifO/ZgxiWogjAnXsVQUn074To1p2bjR2gehbTsmiFT170hEcYgWSRfR
+ O17klP7Vijj4JgfExo32ffGjbxjtC8XPcymkk9SwTycLYpGPQKV3aLfj0zIKRvV3hya6
+ k0AoS/IO1jw5J0q/0QmgeA43J1/tBRY2AK3tf2k73yCVVGdeCGG7pdwHsv1oIvh6EpwY
+ kjZ7HRXL8Eel4zjWwNsMO8RM8YB2QK27kkonQjfX2i6vF/DnPeFsGSKDmbKPjFBFqjJo
+ vBvYJ8jKv0wm5Jx3lQ2YxA2590MqWldRw+/w6mst2yPKQp082/0EuxOs7EyNi9JjgQ4A
+ GK/A==
+X-Gm-Message-State: APjAAAUAF9jbxYkCs3ewSStrwmGWUuCwdGgwFVtYwYKUxNSt5gIaK++O
+ 2UgiEkNbKOIQ+ubbxq4fo3cfAQ==
+X-Google-Smtp-Source: APXvYqza9EW7i8l/zxv9uaeeh4p9LsrmmmS7P2HdhsBz8BWTGlYVtxdhtbupMh9ZAAenOnjZehjxEg==
+X-Received: by 2002:a17:906:4f18:: with SMTP id
+ t24mr7114020eju.43.1556902429827; 
+ Fri, 03 May 2019 09:53:49 -0700 (PDT)
 Received: from event-horizon.net ([80.111.179.123])
- by smtp.gmail.com with ESMTPSA id j55sm707038ede.27.2019.05.03.09.53.47
+ by smtp.gmail.com with ESMTPSA id j55sm707038ede.27.2019.05.03.09.53.48
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 03 May 2019 09:53:48 -0700 (PDT)
+ Fri, 03 May 2019 09:53:49 -0700 (PDT)
 From: Bryan O'Donoghue <pure.logic@nexus-software.ie>
 To: gregkh@linuxfoundation.org, l.stach@pengutronix.de, peng.fan@nxp.com,
  shawnguo@kernel.org, srinivas.kandagatla@linaro.org,
  leonard.crestez@nxp.com
-Subject: [PATCH v6 3/5] nvmem: imx-ocotp: Change TIMING calculation to u-boot
- algorithm
-Date: Fri,  3 May 2019 17:53:40 +0100
-Message-Id: <20190503165342.30139-4-pure.logic@nexus-software.ie>
+Subject: [PATCH v6 4/5] nvmem: imx-ocotp: Add i.MX8MM support
+Date: Fri,  3 May 2019 17:53:41 +0100
+Message-Id: <20190503165342.30139-5-pure.logic@nexus-software.ie>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190503165342.30139-1-pure.logic@nexus-software.ie>
 References: <20190503165342.30139-1-pure.logic@nexus-software.ie>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_095350_626671_BD76BD55 
-X-CRM114-Status: GOOD (  15.24  )
+X-CRM114-CacheID: sfid-20190503_095351_961334_1BD5C840 
+X-CRM114-Status: GOOD (  10.62  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -103,90 +103,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The RELAX field of the OCOTP block is turning out as a zero on i.MX8MM.
-This messes up the subsequent re-load of the fuse shadow registers.
+This patch adds support to burn the fuses on the i.MX8MM.
+https://www.nxp.com/webapp/Download?colCode=IMX8MMRM
 
-After some discussion with people @ NXP its clear we have missed a trick
-here in Linux.
+The i.MX8MM is similar to i.MX6 processors in terms of addressing and clock
+setup.
 
-The OCOTP fuse programming time has a physical minimum 'burn time' that is
-not related to the ipg_clk.
-
-We need to define the RELAX, STROBE_READ and STROBE_PROG fields in terms of
-desired timings to allow for the burn-in to safely complete. Right now only
-the RELAX field is calculated in terms of an absolute time and we are
-ending up with a value of zero.
-
-This patch inherits the u-boot timings for the OCOTP_TIMING calculation on
-the i.MX6 and i.MX8. Those timings are known to work and critically specify
-values such as STROBE_PROG as a minimum timing.
-
-Fixes: 0642bac7da42 ("nvmem: imx-ocotp: add write support")
+The documentation specifies 60 discreet OTP registers but, the fusemap
+address space encompasses up to 256 registers. We map the entire putative
+256 OTP registers.
 
 Signed-off-by: Bryan O'Donoghue <pure.logic@nexus-software.ie>
-Suggested-by: Leonard Crestez <leonard.crestez@nxp.com>
-Reviewed-by: Leonard Crestez <leonard.crestez@nxp.com>
 ---
- drivers/nvmem/imx-ocotp.c | 36 ++++++++++++++++++++++++++++++++----
- 1 file changed, 32 insertions(+), 4 deletions(-)
+ drivers/nvmem/imx-ocotp.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
 diff --git a/drivers/nvmem/imx-ocotp.c b/drivers/nvmem/imx-ocotp.c
-index 85a7d0da3abb..2c5009691dd6 100644
+index 2c5009691dd6..189fd5f334f4 100644
 --- a/drivers/nvmem/imx-ocotp.c
 +++ b/drivers/nvmem/imx-ocotp.c
-@@ -50,7 +50,9 @@
- #define IMX_OCOTP_BM_CTRL_ERROR		0x00000200
- #define IMX_OCOTP_BM_CTRL_REL_SHADOWS	0x00000400
+@@ -479,6 +479,12 @@ static const struct ocotp_params imx8mq_params = {
+ 	.set_timing = imx_ocotp_set_imx7_timing,
+ };
  
--#define DEF_RELAX			20	/* > 16.5ns */
-+#define TIMING_STROBE_PROG_US		10	/* Min time to blow a fuse */
-+#define TIMING_STROBE_READ_NS		37	/* Min time before read */
-+#define TIMING_RELAX_NS			17
- #define DEF_FSOURCE			1001	/* > 1000 ns */
- #define DEF_STROBE_PROG			10000	/* IPG clocks */
- #define IMX_OCOTP_WR_UNLOCK		0x3E770000
-@@ -182,12 +184,38 @@ static void imx_ocotp_set_imx6_timing(struct ocotp_priv *priv)
- 	 * fields with timing values to match the current frequency of the
- 	 * ipg_clk. OTP writes will work at maximum bus frequencies as long
- 	 * as the HW_OCOTP_TIMING parameters are set correctly.
-+	 *
-+	 * Note: there are minimum timings required to ensure an OTP fuse burns
-+	 * correctly that are independent of the ipg_clk. Those values are not
-+	 * formally documented anywhere however, working from the minimum
-+	 * timings given in u-boot we can say:
-+	 *
-+	 * - Minimum STROBE_PROG time is 10 microseconds. Intuitively 10
-+	 *   microseconds feels about right as representative of a minimum time
-+	 *   to physically burn out a fuse.
-+	 *
-+	 * - Minimum STROBE_READ i.e. the time to wait post OTP fuse burn before
-+	 *   performing another read is 37 nanoseconds
-+	 *
-+	 * - Minimum RELAX timing is 17 nanoseconds. This final RELAX minimum
-+	 *   timing is not entirely clear the documentation says "This
-+	 *   count value specifies the time to add to all default timing
-+	 *   parameters other than the Tpgm and Trd. It is given in number
-+	 *   of ipg_clk periods." where Tpgm and Trd refer to STROBE_PROG
-+	 *   and STROBE_READ respectively. What the other timing parameters
-+	 *   are though, is not specified. Experience shows a zero RELAX
-+	 *   value will mess up a re-load of the shadow registers post OTP
-+	 *   burn.
- 	 */
- 	clk_rate = clk_get_rate(priv->clk);
- 
--	relax = clk_rate / (1000000000 / DEF_RELAX) - 1;
--	strobe_prog = clk_rate / (1000000000 / 10000) + 2 * (DEF_RELAX + 1) - 1;
--	strobe_read = clk_rate / (1000000000 / 40) + 2 * (DEF_RELAX + 1) - 1;
-+	relax = DIV_ROUND_UP(clk_rate * TIMING_RELAX_NS, 1000000000) - 1;
-+	strobe_read = DIV_ROUND_UP(clk_rate * TIMING_STROBE_READ_NS,
-+				   1000000000);
-+	strobe_read += 2 * (relax + 1) - 1;
-+	strobe_prog = DIV_ROUND_CLOSEST(clk_rate * TIMING_STROBE_PROG_US,
-+					1000000);
-+	strobe_prog += 2 * (relax + 1) - 1;
- 
- 	timing = readl(priv->base + IMX_OCOTP_ADDR_TIMING) & 0x0FC00000;
- 	timing |= strobe_prog & 0x00000FFF;
++static const struct ocotp_params imx8mm_params = {
++	.nregs = 256,
++	.bank_address_words = 0,
++	.set_timing = imx_ocotp_set_imx6_timing,
++};
++
+ static const struct of_device_id imx_ocotp_dt_ids[] = {
+ 	{ .compatible = "fsl,imx6q-ocotp",  .data = &imx6q_params },
+ 	{ .compatible = "fsl,imx6sl-ocotp", .data = &imx6sl_params },
+@@ -489,6 +495,7 @@ static const struct of_device_id imx_ocotp_dt_ids[] = {
+ 	{ .compatible = "fsl,imx6sll-ocotp", .data = &imx6sll_params },
+ 	{ .compatible = "fsl,imx7ulp-ocotp", .data = &imx7ulp_params },
+ 	{ .compatible = "fsl,imx8mq-ocotp", .data = &imx8mq_params },
++	{ .compatible = "fsl,imx8mm-ocotp", .data = &imx8mm_params },
+ 	{ },
+ };
+ MODULE_DEVICE_TABLE(of, imx_ocotp_dt_ids);
 -- 
 2.21.0
 
