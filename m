@@ -2,56 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B31B13286
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 18:51:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 396991328D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 18:54:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=88I+bfnRHB16WCi0i+LxGsdBZ5q6zjzv8MM+Jya28eg=; b=mpax/sLUS7scRI
-	HK43WxFkavz5rLCrJnXEGXW8eaGYa8rmk+pG6XbL7LzuTcRJrL+dJ0RqEVLxb6HAi8x6yok3rhkQn
-	TnC1O2EEcPogC2ed6luiPQbxrX3+ixzvE2kchJ+m5cXBjZMaPbbQ8Bi+QVwSEd0yaLYb6YfgB1S9w
-	ZvG5TEfQu/4Tc7RjPKcRQRDA62bFYoaTH0Z/oNb3FbLFnz6vREOFwWUSrqjDLR8STnjeNGyBrbCPt
-	p3aXBHmcweq/fXZ2SobZwqMJuDrqZqNZWuWJBIdFzBEZCRYe8KjtNsSbGGmi3CvR22tGg0OmXF2cW
-	4cLJ+7X8S6PM9k9aAx3g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=uMiBZ7YGy/uLGdSRyC6CkR3Ixgs3MHn+dZfATxJnD+8=; b=NU+0rO9l589LLq
+	85Jsuav+/wvg5ZxK0J41JrFGICK7G81+cQkfSJZu8WLPdxxfdCCwCJ0rdI4WlzXXuZLj732A0SGZ5
+	b6350OsHlCyjpiMMa+QRSA0HM4/RV+kcc5/HHCOs/qB8Qz98pZs1shpjCPZKagQhYgbzC1IZFdV/m
+	rJQq3Hj4IJi8HCXULnX0GeYclngRhU8s2SO1y1yIEnloGBNUP6bgJPw17QZRCaoi52VwqjOule4tR
+	SgHvhDnS/P0cXq7gDinOwVum6uiOyH+XQKIuewKvca3eu+g36pg1wA6LbhRrgS8UN197J+E1p5rA2
+	dfcQW4kHifK9TrgqQY8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMbPF-0007Qx-Ve; Fri, 03 May 2019 16:51:29 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMbP9-0007Ia-KI
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 16:51:24 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8229A15A2;
- Fri,  3 May 2019 09:51:22 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 1C9913F557; Fri,  3 May 2019 09:51:15 -0700 (PDT)
-Date: Fri, 3 May 2019 17:51:13 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Andrey Konovalov <andreyknvl@google.com>
-Subject: Re: [PATCH v14 08/17] mm, arm64: untag user pointers in
- get_vaddr_frames
-Message-ID: <20190503165113.GJ55449@arrakis.emea.arm.com>
-References: <cover.1556630205.git.andreyknvl@google.com>
- <8e20df035de677029b3f970744ba2d35e2df1db3.1556630205.git.andreyknvl@google.com>
+	id 1hMbRo-0007zi-3x; Fri, 03 May 2019 16:54:08 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hMbRT-0007nY-I4
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 16:53:49 +0000
+Received: by mail-ed1-x544.google.com with SMTP id m4so6766654edd.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 03 May 2019 09:53:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=nexus-software-ie.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=2AXsO3p3XUOOmEOW3jRK4tuWsEU6SSZDBzlNLxQJuMU=;
+ b=wkVjK/gSjX4MySF1NCzYupRTUFLjtYQV9SaFTglc9wSA+nkRWLvtBg0xwv4eW5cAlY
+ vcpfjWHs4mcdk0jp6RUNqGuHAnI7aY4Nsie89PlRMHpXGKRw9Up/XOLHDKI0BGCnHpQC
+ cT7PUe4NPDtxcJ3AO/kT1HmxEKMp6z+hvaH4rZGXVLKloq8APDd6/rOD/zXRJF9e4ONI
+ J4vJRPmVpKl0OgiHJ20BrjM77FZwxY3JhnCbL9/CvZLcMx4Z/pNujgU4m7ZBwMpjkt6O
+ 9W7PLmO3Hbc/6l9ce5pJ9pbz8ZI7ZRXqxAF2WFo8+zmbU1+fbRHNN2hIW2g3JlM4hYbG
+ qKuQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=2AXsO3p3XUOOmEOW3jRK4tuWsEU6SSZDBzlNLxQJuMU=;
+ b=UoKipeQrEdfdyfiZoQhhVshZny5LW7HYbjXr80gb097TSQowZfSJzMmwXwIO2gs72+
+ TCwFsiuG6xUQmk10zu2VXyhqCk1qQRm6rn2h86ZHTaDpvS7h6Q9nJYRNA6KI0/roUoSB
+ U7qOvE+Y2kRk2EbZAqN934OOZvho/ljUF0MS4MzC2/6kY16Z4YHx/Uz+xcS8rIczCmFe
+ jYMed1NxVHkM0o8ubhI/2DxWfLopdcMfIU/pnw3g5bVQ9dfgHjzqr6PIXPqfNPsDVQko
+ OejSqtq3jsLKGR2ezFWgxgA6PE/paaCjvB4BFuCEsFuUJNsXa4I2Qss+pOSAfzm4gxDT
+ uVow==
+X-Gm-Message-State: APjAAAWH3TjpuC2Ukhdojr/rAMbHFe6KjHnx9jMnGrkMZvdATdiBpJdP
+ gG2/h7Nub4vBPwLL6ypZEE6XTA==
+X-Google-Smtp-Source: APXvYqznu+dw1Grq076eKc24OB56ZD8jrVot65g+y4tMEPBdS1clOnUBiCr/w9GC71Y/gWnsR9JnDw==
+X-Received: by 2002:a17:906:e10e:: with SMTP id
+ gj14mr7324252ejb.285.1556902425262; 
+ Fri, 03 May 2019 09:53:45 -0700 (PDT)
+Received: from event-horizon.net ([80.111.179.123])
+ by smtp.gmail.com with ESMTPSA id j55sm707038ede.27.2019.05.03.09.53.44
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 03 May 2019 09:53:44 -0700 (PDT)
+From: Bryan O'Donoghue <pure.logic@nexus-software.ie>
+To: gregkh@linuxfoundation.org, l.stach@pengutronix.de, peng.fan@nxp.com,
+ shawnguo@kernel.org, srinivas.kandagatla@linaro.org,
+ leonard.crestez@nxp.com
+Subject: [RESEND PATCH v6 0/5] Add i.MX8MM OCOTP support
+Date: Fri,  3 May 2019 17:53:37 +0100
+Message-Id: <20190503165342.30139-1-pure.logic@nexus-software.ie>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <8e20df035de677029b3f970744ba2d35e2df1db3.1556630205.git.andreyknvl@google.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_095123_676205_B2C3746C 
-X-CRM114-Status: GOOD (  18.35  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190503_095348_009522_591603A0 
+X-CRM114-Status: GOOD (  13.45  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,66 +92,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Koenig@google.com, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- linux-kselftest@vger.kernel.org, Chintan Pandya <cpandya@codeaurora.org>,
- Felix <Felix.Kuehling@amd.com>, Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, Dave Martin <Dave.Martin@arm.com>,
- Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>, Deucher@google.com,
- Alex Williamson <alex.williamson@redhat.com>,
- Dmitry Vyukov <dvyukov@google.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- Kuehling@google.com, Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
- Christian <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: devel@driverdev.osuosl.org, aisheng.dong@nxp.com, abel.vesa@nxp.com,
+ anson.huang@nxp.com, linux-imx@nxp.com, kernel@pengutronix.de,
+ fabio.estevam@nxp.com, Bryan O'Donoghue <pure.logic@nexus-software.ie>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 30, 2019 at 03:25:04PM +0200, Andrey Konovalov wrote:
-> This patch is a part of a series that extends arm64 kernel ABI to allow to
-> pass tagged user pointers (with the top byte set to something else other
-> than 0x00) as syscall arguments.
-> 
-> get_vaddr_frames uses provided user pointers for vma lookups, which can
-> only by done with untagged pointers. Instead of locating and changing
-> all callers of this function, perform untagging in it.
-> 
-> Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
-> ---
->  mm/frame_vector.c | 2 ++
->  1 file changed, 2 insertions(+)
-> 
-> diff --git a/mm/frame_vector.c b/mm/frame_vector.c
-> index c64dca6e27c2..c431ca81dad5 100644
-> --- a/mm/frame_vector.c
-> +++ b/mm/frame_vector.c
-> @@ -46,6 +46,8 @@ int get_vaddr_frames(unsigned long start, unsigned int nr_frames,
->  	if (WARN_ON_ONCE(nr_frames > vec->nr_allocated))
->  		nr_frames = vec->nr_allocated;
->  
-> +	start = untagged_addr(start);
-> +
->  	down_read(&mm->mmap_sem);
->  	locked = 1;
->  	vma = find_vma_intersection(mm, start, start + 1);
+V6 RESEND:
+- Adding Greg to sender list. Greg looks like you are the right person to
+  apply this.
 
-Is this some buffer that the user may have malloc'ed? I got lost when
-trying to track down the provenience of this buffer.
+- Adding devel@driverdev.osuosl.org to sender list
+
+- History:
+  https://www.spinics.net/lists/arm-kernel/msg723454.html
+  https://www.spinics.net/lists/arm-kernel/msg723321.html
+  https://www.spinics.net/lists/arm-kernel/msg722655.html
+  https://www.spinics.net/lists/arm-kernel/msg722449.html
+  https://www.spinics.net/lists/arm-kernel/msg722441.html
+  https://www.spinics.net/lists/arm-kernel/msg722350.html
+
+V6:
+- Drop BV_ prefix from u-boot timing defines
+- Add RB Leonard
+
+V5:
+- Adopt u-boot method of calculating timings.
+  On the basis that the OTP registers have a programming time that is not
+  related to the ipg_clk rate specify the various timing inputs to the
+  RELAX, STROBE_READ and STROBE_PROG as-is done in u-boot.
+
+  The wait time to burn a given OTP fuse is not documented anywhere except
+  in code in u-boot.
+
+  The ipg_clk then is used to clock the registers in the OCOTP block and to
+  tell the OCOTP block how long to wait for programming to complete and how
+  long to delay before doing an automatic re-read of the registers.
+
+  Tested on the i.MX8MM-EVK
+
+  relax = 1 strobe_read 6 strobe_prog 670
+
+V4:
+- Change the RELAX fix to drop subtraction of -1 for all users - Leonard
+- Expand register definition from the 60 documented OTP registers to the
+  entire 256 registers putatively in the address space*
+- Add Reviewed-by as indicated - Leonard
+- Added Suggested-by where it made sense - Bryan
+
+* Dumping the expanded address space shows that there are indeed OTP values
+  present that can be read back from registers that are not formally
+  documented for i.MX8MM eg.
+
+Bank 20
+        0x55000801
+        0x00014d14
+        0xd503201f
+        0x55000801
+Bank 21
+        0x00014d20
+        0xd503201f
+        0x00000000
+        0x00000000
+
+V3:
+- Fix commit log for the expanding the ADDR field i.MX6 uses seven not four
+  bits, which is why the existing define says 0x7F not 0x0F - bod
+
+V2:
+- Rebased to linux-next/master to align with i.8MQ work
+- Two patches dropped as a result of rebase
+- Added patch to expand OCOTP_CTRL_ADDR to 8 bits for all users - Leonard
+- Makes sure nregs = 60 not 64 for i.MX8MM
+- Tested imx8mm-evk, imx7s-warp7
+
+V1:
+This set adds support for the i.MX8MM.
+
+When adding support for this processor there are two interesting gotchas to
+watch for.
+
+#1 We current do not preserve the WAIT field for i.MX6 and since we are
+   reusing the i.MX6 set_timing() values, this would also affect i.MX8.
+   On the face of it, it appears to be an inocuous error with no real side
+   effects.
+
+#2 Secondly the i.MX8MM will calculate a zero value for the RELAX bit-field
+   when programming up OTP fuses.
+   This is fine for programming the fuses but, it introduces a strange
+   failure state with reloading the shadow registers subsequent to blowing
+   an OTP fuse.
+   The second important patch here then is ensuring the RELAX field is
+   non-zero to avoid the failure state.
+
+Bryan O'Donoghue (5):
+  nvmem: imx-ocotp: Elongate OCOTP_CTRL ADDR field to eight bits
+  nvmem: imx-ocotp: Ensure WAIT bits are preserved when setting timing
+  nvmem: imx-ocotp: Change TIMING calculation to u-boot algorithm
+  nvmem: imx-ocotp: Add i.MX8MM support
+  dt-bindings: imx-ocotp: Add i.MX8MM compatible
+
+ .../devicetree/bindings/nvmem/imx-ocotp.txt   |  1 +
+ drivers/nvmem/imx-ocotp.c                     | 48 ++++++++++++++++---
+ 2 files changed, 43 insertions(+), 6 deletions(-)
 
 -- 
-Catalin
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
