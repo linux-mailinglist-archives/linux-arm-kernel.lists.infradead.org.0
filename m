@@ -2,51 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC48312E76
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 14:49:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7541B12F35
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 15:31:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dVZ1pLtXLDZOsjrZ/usKRJuFnnH+wZ8BQEXVqlKylO8=; b=Zo23qsSqkipFYX
-	2m7AbXfdTThbopgPeccmSWnR/jDODJLp3yvp6f/ALhEucpt0r3X8r2hmsS6Op/XKFUNYwakKRivlW
-	nmcU4w5p5IsrdMDdNcAujLg/MeO+iVLzv08gPSccsgPaheWZJ6p/pOoylMN1LcuY89/jM6VRM6VBq
-	GfLaj/P5rQM3DfLnyJ/sToFhsE0zkDbdwFEJH3EbLEhuJzpu3rxjvK26h5YyCaNjAMJh0TDZSkhiH
-	Apl2Obwb8lDwaT68jPssrQ+cE6dreDFcLT9UyvW6KyWtn51FAKR/MxYzIe1qXX5OKn4lgrSo0cyV1
-	xoQ+ahJnruie1o/SrZ6w==;
+	List-Owner; bh=/VXCa+wfdCwiDcJnIsFEhoMlQuLEaJ3n/9CsfGz8P8o=; b=FXjli5oh4HVu+B
+	UeLHa7KW44nb2YzsLQ9od9rhGI//Z5WXZ7XWgcc7J/qicw7Awlbko/AfdcuwUZv3iQM8ix+LMyVxK
+	Aldl92Xs4b29xY3pemP/IykfnUzn6EaQGZY8VUmlyL1A2yVm0bCqQ6pDFmQcZ8+HKVVzFRCJArCkv
+	BECMTmkGpDbmwak+fL9b6iqf/K0avWt4SeZEj3BbNTXC1GKz7ifB6c5r+5UUbTUliTcQYfHzqGDyW
+	tVMHV2LOeIhWJNMxskzjxNLeMSO2dh2IAFKYupyQC+rlmRpWUMFVeOZ3eoYg5rxddQKihmgrN3J3T
+	ctju88rWY+kP47ibpl8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMXcs-0000jl-CO; Fri, 03 May 2019 12:49:18 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMXb2-0005Oc-9T
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 12:48:01 +0000
+	id 1hMYHy-0001cy-3U; Fri, 03 May 2019 13:31:46 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hMYHI-0000pd-7m
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 03 May 2019 13:31:04 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+ Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=18mkkr+AZHjY1/CxfkS+ECxZvRNJf95f1hjnlyZsNLk=; b=z4h8t/gcPMcNAKB2Ivc9GvbKZ7
+ OkM81qQY+l+apAfiyCjiZ1NZFPxE/kGwATsSWQlyn5XIa8XTuMSvrPNSE3xJ/kGXxlHPiv/0snL9+
+ fXaKH1R1iZor0JlnteE7jLeGAcBaezMM7rAcXjIxZRoouw7FRAAEId2HZbNyjm/xo0H9opoW4HFPV
+ uPchQYeZQbckoVL/voy0WsCcd+BbomFUZBy2itSSln5hn6ilmVbyAvScRS/tr4mPbpQai36ty24mQ
+ aGyYicsMqJ2eo5DJpUUn3fMN/itO1nZxJZAiv3qTtdIhJV97x1uAL6aJetFXyv5HLWlwyq6W4UL32
+ eRNrm2Jg==;
+Received: from foss.arm.com ([217.140.101.70])
+ by merlin.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hMXb6-0005nk-DI
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 12:47:29 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3409C374;
- Fri,  3 May 2019 05:47:24 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AFC11165C;
+ Fri,  3 May 2019 05:47:27 -0700 (PDT)
 Received: from filthy-habits.cambridge.arm.com
  (filthy-habits.cambridge.arm.com [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F08423F220;
- Fri,  3 May 2019 05:47:20 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 771713F220;
+ Fri,  3 May 2019 05:47:24 -0700 (PDT)
 From: Marc Zyngier <marc.zyngier@arm.com>
 To: Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH 46/56] KVM: arm64: Add capability to advertise ptrauth for
- guest
-Date: Fri,  3 May 2019 13:44:17 +0100
-Message-Id: <20190503124427.190206-47-marc.zyngier@arm.com>
+Subject: [PATCH 47/56] arm64: arm_pmu: Remove unnecessary isb instruction
+Date: Fri,  3 May 2019 13:44:18 +0100
+Message-Id: <20190503124427.190206-48-marc.zyngier@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190503124427.190206-1-marc.zyngier@arm.com>
 References: <20190503124427.190206-1-marc.zyngier@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_054724_986394_E6E2399B 
-X-CRM114-Status: GOOD (  13.24  )
+X-CRM114-CacheID: sfid-20190503_084728_550527_B36D2358 
+X-CRM114-Status: GOOD (  11.65  )
 X-Spam-Score: -5.0 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
  Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -80,87 +94,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Amit Daniel Kachhap <amit.kachhap@arm.com>
+From: Andrew Murray <andrew.murray@arm.com>
 
-This patch advertises the capability of two cpu feature called address
-pointer authentication and generic pointer authentication. These
-capabilities depend upon system support for pointer authentication and
-VHE mode.
+The armv8pmu_enable_event_counter function issues an isb instruction
+after enabling a pair of counters - this doesn't provide any value
+and is inconsistent with the armv8pmu_disable_event_counter.
 
-The current arm64 KVM partially implements pointer authentication and
-support of address/generic authentication are tied together. However,
-separate ABI requirements for both of them is added so that any future
-isolated implementation will not require any ABI changes.
+In any case armv8pmu_enable_event_counter is always called with the
+PMU stopped. Starting the PMU with armv8pmu_start results in an isb
+instruction being issued prior to writing to PMCR_EL0.
 
-Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: Marc Zyngier <marc.zyngier@arm.com>
-Cc: Christoffer Dall <christoffer.dall@arm.com>
-Cc: kvmarm@lists.cs.columbia.edu
+Let's remove the unnecessary isb instruction.
+
+Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Acked-by: Mark Rutland <mark.rutland@arm.com>
 Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 ---
- Documentation/virtual/kvm/api.txt | 14 ++++++++++----
- arch/arm64/kvm/reset.c            |  5 +++++
- include/uapi/linux/kvm.h          |  2 ++
- 3 files changed, 17 insertions(+), 4 deletions(-)
+ arch/arm64/kernel/perf_event.c | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/Documentation/virtual/kvm/api.txt b/Documentation/virtual/kvm/api.txt
-index 32afe7f5c35a..fac1887f25b5 100644
---- a/Documentation/virtual/kvm/api.txt
-+++ b/Documentation/virtual/kvm/api.txt
-@@ -2763,13 +2763,19 @@ Possible features:
+diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
+index 4addb38bc250..cccf4fc86d67 100644
+--- a/arch/arm64/kernel/perf_event.c
++++ b/arch/arm64/kernel/perf_event.c
+@@ -533,7 +533,6 @@ static inline void armv8pmu_enable_event_counter(struct perf_event *event)
+ 	armv8pmu_enable_counter(idx);
+ 	if (armv8pmu_event_is_chained(event))
+ 		armv8pmu_enable_counter(idx - 1);
+-	isb();
+ }
  
- 	- KVM_ARM_VCPU_PTRAUTH_ADDRESS: Enables Address Pointer authentication
- 	  for arm64 only.
--	  Both KVM_ARM_VCPU_PTRAUTH_ADDRESS and KVM_ARM_VCPU_PTRAUTH_GENERIC
--	  must be requested or neither must be requested.
-+	  Depends on KVM_CAP_ARM_PTRAUTH_ADDRESS.
-+	  If KVM_CAP_ARM_PTRAUTH_ADDRESS and KVM_CAP_ARM_PTRAUTH_GENERIC are
-+	  both present, then both KVM_ARM_VCPU_PTRAUTH_ADDRESS and
-+	  KVM_ARM_VCPU_PTRAUTH_GENERIC must be requested or neither must be
-+	  requested.
- 
- 	- KVM_ARM_VCPU_PTRAUTH_GENERIC: Enables Generic Pointer authentication
- 	  for arm64 only.
--	  Both KVM_ARM_VCPU_PTRAUTH_ADDRESS and KVM_ARM_VCPU_PTRAUTH_GENERIC
--	  must be requested or neither must be requested.
-+	  Depends on KVM_CAP_ARM_PTRAUTH_GENERIC.
-+	  If KVM_CAP_ARM_PTRAUTH_ADDRESS and KVM_CAP_ARM_PTRAUTH_GENERIC are
-+	  both present, then both KVM_ARM_VCPU_PTRAUTH_ADDRESS and
-+	  KVM_ARM_VCPU_PTRAUTH_GENERIC must be requested or neither must be
-+	  requested.
- 
- 	- KVM_ARM_VCPU_SVE: Enables SVE for the CPU (arm64 only).
- 	  Depends on KVM_CAP_ARM_SVE.
-diff --git a/arch/arm64/kvm/reset.c b/arch/arm64/kvm/reset.c
-index 028d0c604652..f0faf54f5857 100644
---- a/arch/arm64/kvm/reset.c
-+++ b/arch/arm64/kvm/reset.c
-@@ -101,6 +101,11 @@ int kvm_arch_vm_ioctl_check_extension(struct kvm *kvm, long ext)
- 	case KVM_CAP_ARM_SVE:
- 		r = system_supports_sve();
- 		break;
-+	case KVM_CAP_ARM_PTRAUTH_ADDRESS:
-+	case KVM_CAP_ARM_PTRAUTH_GENERIC:
-+		r = has_vhe() && system_supports_address_auth() &&
-+				 system_supports_generic_auth();
-+		break;
- 	default:
- 		r = 0;
- 	}
-diff --git a/include/uapi/linux/kvm.h b/include/uapi/linux/kvm.h
-index 1d564445b515..4dc34f8e29f6 100644
---- a/include/uapi/linux/kvm.h
-+++ b/include/uapi/linux/kvm.h
-@@ -989,6 +989,8 @@ struct kvm_ppc_resize_hpt {
- #define KVM_CAP_MANUAL_DIRTY_LOG_PROTECT 166
- #define KVM_CAP_HYPERV_CPUID 167
- #define KVM_CAP_ARM_SVE 168
-+#define KVM_CAP_ARM_PTRAUTH_ADDRESS 169
-+#define KVM_CAP_ARM_PTRAUTH_GENERIC 170
- 
- #ifdef KVM_CAP_IRQ_ROUTING
- 
+ static inline int armv8pmu_disable_counter(int idx)
 -- 
 2.20.1
 
