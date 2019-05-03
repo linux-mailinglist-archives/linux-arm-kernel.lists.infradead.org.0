@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D1E212BF3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 13:02:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 103B012C02
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 13:07:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=NjfxKKWvIFA3zteLOB9U22ioGGwD/l8RQXf9mPIaow4=; b=kC0FxYOhm5ZlLJsDtIeCBFfJ8
-	aFd94vZWYubV/lCVoE4Eqe4HDMog6tYuNPWI2HKrhgu9I+/8MZVrMQ9OVyZph7YruEwTm+iI3uNmW
-	6WjUq+RCzc9n7J8Agmi1OC3AU6cmD/XAwTdRfeJhnfKR7/wzl5Kqes/98FIpwdZrKMZyVXPQ0hjfW
-	nfBWfGqls0RxXaFcCjewSXYvQrZst8PHiad7R+eH663XAD1p1LLPdZMcU0R+0tQFd6db65UEgJi7m
-	O8QdvqhPGjkazQMz61KweH2SmSdJy6L7c4AxoJwzj6SFh31718vy5aMGWgPFRh0T6h5ARtc1neFPj
-	iaeQxQnHA==;
+	 bh=moDHV+ndH2Mj6Lm2hEjx1En6SA+tERgJ5+GpWXwByxg=; b=pjmBWHRsr/BWa/RieedeeD0mm
+	9OBIdfVC/1LexMgZUPDsqxkicioRDg45ZFIzHs6cOL+ip2O4wva/ZbZncukBLhXd4fgdXx1i+lUMJ
+	q0VGTe90Vl/mpDr6d8qkjD3HWDEts88VjFOLvtG8mIzn2550kxGBvX1/dekpJHCvi1740TUJyqYA2
+	LA0SxBXuL+KW6aQrgkxuYHVi1LQzmEOMynmwsHbg1ZJxy17p4K9x6Z2ai9mvwxaR2jMjDxtvLlTKO
+	2TIEMX7KUhTGyWcl6zIRg1p8k0wXD70fzUU6pFffVdTZaNwwdqhHGss01yfSHoD5wZM8mJYWLGqWD
+	nUFROaOXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMVxC-00077P-ER; Fri, 03 May 2019 11:02:10 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hMW2Z-0000tM-IO; Fri, 03 May 2019 11:07:43 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMVx4-00076r-SF
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 11:02:04 +0000
-Received: by mail-wr1-x441.google.com with SMTP id a9so7326208wrp.6
+ id 1hMW2S-0000sk-AM
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 11:07:37 +0000
+Received: by mail-wr1-x444.google.com with SMTP id a9so7348145wrp.6
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 03 May 2019 04:02:02 -0700 (PDT)
+ Fri, 03 May 2019 04:07:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=nGfgCQXG08efjjx2XWvqXdQV7y9Ll65hvnLfZn3O1ag=;
- b=bgWOxyzuPG//QO2JUiLSKloKw++xzOzO4bBxyiHmHbyJIK1PggjN3UQ+TaymK810Pu
- Ancw4z6IABPZColxV3nbSsFbOyh5GLhSpSSw3CcxpiFmLREAr0XkGyTwp2aZgpSXUISA
- zfX9l/hrJ76Yfj8mqDKmpiKkuCkPyBGZ+HwABA/fWnKh1fjMML4dburNQSZqC/HrmEnI
- nMxegD0LT1/WjgLYeT64jzkKSvOGBSwr0Ph2m7wQW57c7eQf3VpYUyuGzUnN2/NI/2V8
- jCn3gLgzIZFg1KsovV8Xb5h8ciQI159W0G/hsmnIV5aroqKatBfhcuqDIrlK1RV72dMH
- k7qw==
+ bh=YpAYu2aGgmHElV09nPrKKKpHaRIZFfJTu8xyr7w6FJ0=;
+ b=caBhdS/8I0WX4MnHOx4k7w/1pPNo2BgsqRuKhIyi5451TY2FeTuE9X4avsaYGkO7Pz
+ a6lp9CxLKUK/Np/D15pRUinhgeXHS1eI1wTV5Igoica47BnsseYsiz4EELf1x/sXyB+/
+ vcznVD1pptRAQEYkF/78qb2T7ekuFgcxGDVgrjtV85uOa99WDnAQ2/G0VLNpvR732Kx0
+ Kh0Oprx11ReIMvFT7iNeBA0dwD1PSy6ffKV2U7/L0XXFGq0ZG/l/lOvK1CuK1F/r+jX+
+ Y1NUdNk3ozGc/AtqN1MO51lgZQfqrI/b4vBwnesiFmjwxPd8aWciWvg+NQGMtyrF61Xt
+ DaTg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=nGfgCQXG08efjjx2XWvqXdQV7y9Ll65hvnLfZn3O1ag=;
- b=EA/YmW/fejoK08tjipjaUVlVoSyL97/3sElH8XEv/n0UZKkOLH3vVsBRkw28Kp0FeS
- DNP0e53xgvrvt3il9QyVl1FhmfeDLEMzp0lXljQA32mXFslCEFrzoyiJkGs7jWm5gmtl
- b8jC1ru+TINvzbSIGwb1oSmbJMjx+a4DvoCxT+YWIUlYXellE0d1rIRpHUq4zIavR6Xm
- 3/JshPOSgf9t7l2EBR3AP8NilBMqfixiVMTnXJPI39BdwLVBnTDxhqKYBEY2ctc2ugc9
- 1M+oSHDGZmFoiJzW8JbI7lNBZt4EykuuBQ6RQJPP+Chs1+qFnQ9JDraObjegmEi2IQ+0
- glKg==
-X-Gm-Message-State: APjAAAU0qSWZhnwLE/isjordOUxew7z4j6D4PDE/3GNCQI1FKnd6eEil
- utJV3VF081BNKeAJmFYRAV0=
-X-Google-Smtp-Source: APXvYqyZrCi9BgSuSGPoKfa+sfrnKJfwljqkgF9FkpEdGOxfOe/jX4Ra5F+4c3H7nv9LPTNjKbL2ZQ==
-X-Received: by 2002:a05:6000:9:: with SMTP id h9mr6692149wrx.194.1556881321143; 
- Fri, 03 May 2019 04:02:01 -0700 (PDT)
+ bh=YpAYu2aGgmHElV09nPrKKKpHaRIZFfJTu8xyr7w6FJ0=;
+ b=mqzEhvnOmiQSNuJjapUrtgu9FC51Z4wUlmNpbnKydeti4EO7G4RufdmrreMYh8fmdx
+ IBsOFvsYyhaxJDB119/qnl/AzYEgeCsrtHIKbPMBcJIlHsEeHythoxMwDRQ7zVz1UUxA
+ t7vDOD4ClJ/0YV9eV6uB9fAmFiqICz1y72ioLq8YHOhuDzekOHpZgUYg1vzX8doGYlab
+ d8tKEDVStiEK50Xg2c7pb3hrqKxZ7f/c2yKD+kGRqjGtM19gDEvza5U+8wC0ssTxzs1h
+ g37VHV9/zb3tIRWThqwWT2gQtQdqN8vMvYKCJ8LMnAU3urBSlCsb4E8zoaXwFjDnCRxJ
+ PYTQ==
+X-Gm-Message-State: APjAAAXSgiT2FmsEHEns8qfoaJDZF9S3Xr1A0sE2C/uGA+EqHkh1KGsF
+ BKpuRDoNyw0mGsIqwJmc65s=
+X-Google-Smtp-Source: APXvYqzjiQa8Q7+aDDyQPZIshcqUe8xFgkRxo6KKN6IKWW0PaiXZLSdZpkK0irkKsMNSsQieQ0Zlsg==
+X-Received: by 2002:a5d:6341:: with SMTP id b1mr6600866wrw.28.1556881654652;
+ Fri, 03 May 2019 04:07:34 -0700 (PDT)
 Received: from localhost (p2E5BEF36.dip0.t-ipconnect.de. [46.91.239.54])
- by smtp.gmail.com with ESMTPSA id x18sm1635766wrw.14.2019.05.03.04.01.59
+ by smtp.gmail.com with ESMTPSA id j190sm2404085wmb.19.2019.05.03.04.07.33
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 03 May 2019 04:02:00 -0700 (PDT)
-Date: Fri, 3 May 2019 13:01:59 +0200
+ Fri, 03 May 2019 04:07:33 -0700 (PDT)
+Date: Fri, 3 May 2019 13:07:32 +0200
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Vidya Sagar <vidyas@nvidia.com>
-Subject: Re: [PATCH V5 02/16] PCI/PME: Export pcie_pme_disable_msi() &
- pcie_pme_no_msi() APIs
-Message-ID: <20190503110159.GB32400@ulmo>
+Subject: Re: [PATCH V5 03/16] PCI: Export pcie_bus_config symbol
+Message-ID: <20190503110732.GC32400@ulmo>
 References: <20190424052004.6270-1-vidyas@nvidia.com>
- <20190424052004.6270-3-vidyas@nvidia.com>
+ <20190424052004.6270-4-vidyas@nvidia.com>
 MIME-Version: 1.0
-In-Reply-To: <20190424052004.6270-3-vidyas@nvidia.com>
+In-Reply-To: <20190424052004.6270-4-vidyas@nvidia.com>
 User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_040202_911200_CB598D06 
-X-CRM114-Status: GOOD (  16.81  )
+X-CRM114-CacheID: sfid-20190503_040736_385010_FC9B6EB9 
+X-CRM114-Status: GOOD (  17.36  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (thierry.reding[at]gmail.com)
@@ -106,127 +105,93 @@ Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
  robh+dt@kernel.org, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
  bhelgaas@google.com, jonathanh@nvidia.com,
  linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
-Content-Type: multipart/mixed; boundary="===============8674907831973918863=="
+Content-Type: multipart/mixed; boundary="===============1289226113309427538=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============8674907831973918863==
+--===============1289226113309427538==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ZfOjI3PrQbgiZnxM"
+	protocol="application/pgp-signature"; boundary="R+My9LyyhiUvIEro"
 Content-Disposition: inline
 
 
---ZfOjI3PrQbgiZnxM
+--R+My9LyyhiUvIEro
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Wed, Apr 24, 2019 at 10:49:50AM +0530, Vidya Sagar wrote:
-> Export pcie_pme_disable_msi() & pcie_pme_no_msi() APIs to enable drivers
-> using this API be able to build as loadable modules.
+On Wed, Apr 24, 2019 at 10:49:51AM +0530, Vidya Sagar wrote:
+> Export pcie_bus_config to enable host controller drivers setting it to a
+> specific configuration be able to build as loadable modules
 >=20
 > Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
 > ---
-> Changes from [v4]:
+> Changes since [v4]:
 > * None
 >=20
-> Changes from [v3]:
+> Changes since [v3]:
 > * None
 >=20
-> Changes from [v2]:
-> * Exported pcie_pme_no_msi() API after making pcie_pme_msi_disabled a sta=
-tic
+> Changes since [v2]:
+> * None
 >=20
-> Changes from [v1]:
+> Changes since [v1]:
 > * This is a new patch in v2 series
 >=20
->  drivers/pci/pcie/pme.c     | 14 +++++++++++++-
->  drivers/pci/pcie/portdrv.h | 16 +++-------------
->  2 files changed, 16 insertions(+), 14 deletions(-)
->=20
-> diff --git a/drivers/pci/pcie/pme.c b/drivers/pci/pcie/pme.c
-> index 54d593d10396..d5e0ea4a62fc 100644
-> --- a/drivers/pci/pcie/pme.c
-> +++ b/drivers/pci/pcie/pme.c
-> @@ -25,7 +25,19 @@
->   * that using MSI for PCIe PME signaling doesn't play well with PCIe PME=
--based
->   * wake-up from system sleep states.
->   */
-> -bool pcie_pme_msi_disabled;
-> +static bool pcie_pme_msi_disabled;
-> +
-> +void pcie_pme_disable_msi(void)
-> +{
-> +	pcie_pme_msi_disabled =3D true;
-> +}
-> +EXPORT_SYMBOL_GPL(pcie_pme_disable_msi);
-> +
-> +bool pcie_pme_no_msi(void)
-> +{
-> +	return pcie_pme_msi_disabled;
-> +}
-> +EXPORT_SYMBOL_GPL(pcie_pme_no_msi);
-> =20
->  static int __init pcie_pme_setup(char *str)
->  {
-> diff --git a/drivers/pci/pcie/portdrv.h b/drivers/pci/pcie/portdrv.h
-> index 1d50dc58ac40..7c8c3da4bd58 100644
-> --- a/drivers/pci/pcie/portdrv.h
-> +++ b/drivers/pci/pcie/portdrv.h
-> @@ -125,22 +125,12 @@ void pcie_port_bus_unregister(void);
->  struct pci_dev;
-> =20
->  #ifdef CONFIG_PCIE_PME
-> -extern bool pcie_pme_msi_disabled;
-> -
-> -static inline void pcie_pme_disable_msi(void)
-> -{
-> -	pcie_pme_msi_disabled =3D true;
-> -}
-> -
-> -static inline bool pcie_pme_no_msi(void)
-> -{
-> -	return pcie_pme_msi_disabled;
-> -}
-> -
-> +void pcie_pme_disable_msi(void);
-> +bool pcie_pme_no_msi(void);
->  void pcie_pme_interrupt_enable(struct pci_dev *dev, bool enable);
->  #else /* !CONFIG_PCIE_PME */
->  static inline void pcie_pme_disable_msi(void) {}
-> -static inline bool pcie_pme_no_msi(void) { return false; }
-> +static inline bool pcie_pme_no_msi(void) {}
+>  drivers/pci/pci.c | 1 +
+>  1 file changed, 1 insertion(+)
 
-This looks wrong.
+It doesn't look to me like this is something that host controller
+drivers are supposed to change. This is set via the pci kernel command-
+line parameter, meaning it's a way of tuning the system configuration.
+Drivers should not be allowed to override this after the fact.
+
+Why do we need to set this?
 
 Thierry
 
---ZfOjI3PrQbgiZnxM
+> diff --git a/drivers/pci/pci.c b/drivers/pci/pci.c
+> index f5ff01dc4b13..731f78508601 100644
+> --- a/drivers/pci/pci.c
+> +++ b/drivers/pci/pci.c
+> @@ -94,6 +94,7 @@ unsigned long pci_hotplug_mem_size =3D DEFAULT_HOTPLUG_=
+MEM_SIZE;
+>  unsigned long pci_hotplug_bus_size =3D DEFAULT_HOTPLUG_BUS_SIZE;
+> =20
+>  enum pcie_bus_config_types pcie_bus_config =3D PCIE_BUS_DEFAULT;
+> +EXPORT_SYMBOL_GPL(pcie_bus_config);
+> =20
+>  /*
+>   * The default CLS is used if arch didn't set CLS explicitly and not
+> --=20
+> 2.17.1
+>=20
+
+--R+My9LyyhiUvIEro
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAlzMH6YACgkQ3SOs138+
-s6E4xw//dFTo8a4I8XRjFuw8mmRxoi0ZrVcgaoQ/hqpIqu/cew7PXc9XaqiB0JIK
-KJjArrSz8XHoez/vrmk4CBNk5ECEAeVV6Eyrm3R99fPoBuBihH+B3QYkeMALa6hh
-l2WUQRuDIYbRF71GjZlcgslAqZ8Bde19bxdwPg1T9kyOZmQrAiFq/PsRUPGscz1T
-b5EVJMR+GiKQ/dceyluUz1bqp0JFpdX6Ae6IgCKrw2Z1plVvGi39Pzix1Za1Q3pY
-EAlwOo6cebEhx0D7j/W/PLQM8+nQhBBAZiUWlwCOq/lsaL8Gt3r0RoLZchbX11Fp
-hOmz1535bjHaUx/NT6zz2QgKvJ8tErCCooq+RUlubv6QLdOTIegaLDVpCAa4CsTv
-wByyM7+oWwCvmIkWmv+nfllINKUiRFZOWASJ7aXAQh/1GGpx6wU/eaI+fbGMI/XJ
-c0n031xH/GPAL5fx9BnX5M0mYBUkxTEWWvMuAwrodEtJEqc++RIs9CHGXNICSqPs
-39NNzOS3tlhFDdR/KMe86vNYl8vfhjbM7m5v+8hmLwi4tOFO2KYY4KUXHNSgfnIi
-tMbUOjs3ojI3E3vvLqiYYPQ1F0xLCuY1KshgaZ/V7tdqn/pzPQtYaEedA3jh7XVd
-FVqPM1w7coRP7ty0PfJtfkUjOiV16jmSZdeMbzIJUqd7+9u5h74=
-=+xfr
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAlzMIPQACgkQ3SOs138+
+s6GSnA/9HdsbQNxtdYHMx36I9O7XPCiJpWTqbqCG5v80y6wwm85gZ7gKZ3tnpqoG
+AVff+CvhQQwIIW7t5OxkdDNvNz/65YPCYRngILQIIgQbXppF/tMu3YMQVPWGNY6R
+LuV8/SkicRqGoyYvEhNY8oxObL191X964tV6roAy2zaPCk4FuNCqJPlRPpu7fXlG
+u9H5zlpi/gVtvZNyJyOJLb/zG9cXIaO4lJCN43thTSD/vVCtytgvQRNWHWT9r7lR
+wqy5o69fRtUXowCRNjlVR/nYJfguU1Eh+9YVr8l0Hen9XgKyNv6ebrzWSeZx76nS
+xTj3bgbOrGm4yWM4EbQZNiGzM1d1+Ggz08osM7n6dqymSMP1zjAHAvb/S+7AulfC
+J2b9VwKf/VnRzdU5fkbQEHtPsoOAwA7t70z5qwukraNLVgE7BO0R4A+Wca1kRRJ+
+2NMhLmTFJJoR42ZI80UGH6KjixdU7p8cAup1ftb6YqxAWxIthSjb+xhka9s0cPV0
+/XcAjoNMXXV9LRk/VoiuNhPMNs17u19NwVZ4O4f/l6qiSvI4BsjMs5B/70UXJgET
+aAw4RI207uObGTDCKFKEXNVKf3WPwjiCRBv8X06OfKReDdnPobVETv4boTZFfreZ
+WNKJYDqWndqUkSMR46sxPEUnfXNr+he7XCyzGLhOs3lAxGEsdPE=
+=F/Ew
 -----END PGP SIGNATURE-----
 
---ZfOjI3PrQbgiZnxM--
+--R+My9LyyhiUvIEro--
 
 
---===============8674907831973918863==
+--===============1289226113309427538==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -237,5 +202,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============8674907831973918863==--
+--===============1289226113309427538==--
 
