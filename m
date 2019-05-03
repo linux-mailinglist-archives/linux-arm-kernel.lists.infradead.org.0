@@ -2,55 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF3E0131CF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 18:05:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DEF0131CE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 18:04:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=HlZ1yvXFHcV2U2ycUwegBUIIKYpw9wklPzU4wi+OspU=; b=uYcl5etKssyOW23ZjUqhuPy5eX
-	gYXAozCSZ5l0mEDuKNy92gE9bDVRtINh8EM8YgFSV3wocTzuoyAMqWQyKNvKHhkZqmtKe7oxm8mq/
-	2EFL/hQE5Zt6Lsx6AaonhkeZ/PRSPOm33maUvlqR5cDCsk/LedP61aUmiVVh2gw5nR/lGNbQf7Rsw
-	5FBP6DncsXzaRjO9sABO3HwHySRpuo0VT8NtGIvSBKm2VF/PH8c5w19rNJsfiY7+P17VMAHcPHbue
-	pTGtY9N2jP87a4d9ZJ+gGfNJLYTSze7Dq+v72mNQAoXJgxx3BxkQWZlWqm5uN/7GwHzZSGUazNnhC
-	dCxEg8qQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:Subject:From:To:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pIgDCZr78ARGokeJfIVaO7wp/4OhOnFn/yD+DXXv2zg=; b=ZHDca7+eRKo9E1
+	5pnnV5gwB/xON4nKtCjJ99JWtQNFpLBn9K/JVzvWbNMQ/B8WVgHvuQkslSpzZndE2OQHTIbNizzLM
+	o6iY5axzENTFVkpSxvC9fqXKDIUxU7zfnwcELvkpXGiK/Lqmcz9Zctqr1QmwH9DdC0dCU+yDTsxI4
+	8wyYbkP2YcVw3lmKC6BQPVVQGBwYyg7FBNi+/vZHLBY1hiQ1zfsMSpvBjCjJnPU2wJBl0DnkzEdbg
+	xIBSr0ysjXn8Fy2EFKKaCv2IXIbH63iHDOI8o5MI2EO9H8VN21H8RdUa0XwbKD7O9BCeK7qwqZ39M
+	dPSIaSlb1sjAdF2tblKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMagN-0001am-5m; Fri, 03 May 2019 16:05:07 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMafx-0001FF-Us
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 16:04:45 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B4582374;
- Fri,  3 May 2019 09:04:41 -0700 (PDT)
-Received: from en101.cambridge.arm.com (en101.cambridge.arm.com [10.1.196.93])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id
- 998F33F557; Fri,  3 May 2019 09:04:40 -0700 (PDT)
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/2] coresight: alloc_perf_buf: Do not call smp_processor_id
- from preemptible
-Date: Fri,  3 May 2019 17:04:19 +0100
-Message-Id: <1556899459-27785-2-git-send-email-suzuki.poulose@arm.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1556899459-27785-1-git-send-email-suzuki.poulose@arm.com>
-References: <1556899459-27785-1-git-send-email-suzuki.poulose@arm.com>
+	id 1hMag8-0001JF-Ms; Fri, 03 May 2019 16:04:52 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hMafv-0001CC-J7
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 16:04:41 +0000
+Received: from localhost (unknown [104.132.0.70])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 221332087F;
+ Fri,  3 May 2019 16:04:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1556899479;
+ bh=JdlBvbpgwTZwWsD4guYUIZYoCxCR4OIhqQOaiWx5q10=;
+ h=In-Reply-To:References:To:Cc:From:Subject:Date:From;
+ b=ayT7lgAQTwFDo4HPf18Lohoa8Jwp7Z4gxW3Rlho4mK60JePpKgeniW0QLNfYsG3nj
+ rnEZIaJ2W+pHv8Ra9FH3nDq6TJ/6zVyvEN6rAZeFcRyIFGzDYsMsaNdp0Yk8QHkLGF
+ 5iUcphZytFuVA+iC7TyaqpJoBRFu2LJy8X3l/HJU=
+MIME-Version: 1.0
+In-Reply-To: <201905031619.nJ5l01Tg%lkp@intel.com>
+References: <201905031619.nJ5l01Tg%lkp@intel.com>
+To: Paul Walmsley <paul.walmsley@sifive.com>, kbuild test robot <lkp@intel.com>
+From: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [clk:clk-sifive-fu540 3/3]
+ drivers/clk/sifive/fu540-prci.c:534:41-42: WARNING: Use ARRAY_SIZE
+Message-ID: <155689947835.200842.14950816155129185642@swboyd.mtv.corp.google.com>
+User-Agent: alot/0.8
+Date: Fri, 03 May 2019 09:04:38 -0700
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_090442_333882_23C8A84E 
-X-CRM114-Status: GOOD (  13.67  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190503_090439_734524_FFC9C564 
+X-CRM114-Status: UNSURE (   8.14  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -62,69 +76,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: coresight@lists.linaro.org, linux-kernel@vger.kernel.org,
- mathieu.poirier@linaro.org, Suzuki K Poulose <suzuki.poulose@arm.com>
-MIME-Version: 1.0
+Cc: kbuild-all@01.org, linux-arm-kernel@lists.infradead.org,
+ linux-clk@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We find the current CPU using smp_processor_id() if the event is not bound
-to a CPU, to find the node for memory allocation. Use the safe numa_node_id()
-instead to avoid BUG().
+Quoting kbuild test robot (2019-05-03 01:21:21)
+> tree:   https://git.kernel.org/pub/scm/linux/kernel/git/clk/linux.git clk-sifive-fu540
+> head:   85ed1c299cca9beb5df6006361cf18bfa2305836
+> commit: 85ed1c299cca9beb5df6006361cf18bfa2305836 [3/3] clk: sifive: add a driver for the SiFive FU540 PRCI IP block
+> 
+> If you fix the issue, kindly add following tag
+> Reported-by: kbuild test robot <lkp@intel.com>
+> 
+> 
+> coccinelle warnings: (new ones prefixed by >>)
+> 
+> >> drivers/clk/sifive/fu540-prci.c:534:41-42: WARNING: Use ARRAY_SIZE
 
- BUG: using smp_processor_id() in preemptible [00000000] code: perf/1743
- caller is tmc_alloc_etr_buffer+0x1bc/0x1f0
- CPU: 1 PID: 1743 Comm: perf Not tainted 5.1.0-rc6-147786-g116841e #344
- Hardware name: ARM LTD ARM Juno Development Platform/ARM Juno Development Platform, BIOS EDK II Feb  1 2019
- Call trace:
-  dump_backtrace+0x0/0x150
-  show_stack+0x14/0x20
-  dump_stack+0x9c/0xc4
-  debug_smp_processor_id+0x10c/0x110
-  tmc_alloc_etr_buffer+0x1bc/0x1f0
-  etm_setup_aux+0x1c4/0x230
-  rb_alloc_aux+0x1b8/0x2b8
-  perf_mmap+0x35c/0x478
-  mmap_region+0x34c/0x4f0
-  do_mmap+0x2d8/0x418
-  vm_mmap_pgoff+0xd0/0xf8
-  ksys_mmap_pgoff+0x88/0xf8
-  __arm64_sys_mmap+0x28/0x38
-  el0_svc_handler+0xd8/0x138
-  el0_svc+0x8/0xc
-
-Fixes: 22f429f19c4135d51e9 ("coresight: etm-perf: Add support for ETR backend")
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
-Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
----
- drivers/hwtracing/coresight/coresight-tmc-etr.c | 7 ++-----
- 1 file changed, 2 insertions(+), 5 deletions(-)
-
-diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-index 74578bd..104df66 100644
---- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
-+++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-@@ -1184,14 +1184,11 @@ static struct etr_buf *
- alloc_etr_buf(struct tmc_drvdata *drvdata, struct perf_event *event,
- 	      int nr_pages, void **pages, bool snapshot)
- {
--	int node, cpu = event->cpu;
-+	int node;
- 	struct etr_buf *etr_buf;
- 	unsigned long size;
- 
--	if (cpu == -1)
--		cpu = smp_processor_id();
--	node = cpu_to_node(cpu);
--
-+	node = (event->cpu == -1) ? numa_node_id() : cpu_to_node(event->cpu);
- 	/*
- 	 * Try to match the perf ring buffer size if it is larger
- 	 * than the size requested via sysfs.
--- 
-2.7.4
+I had a review comment about this on the previous version... I'll go fix
+it myself.
 
 
 _______________________________________________
