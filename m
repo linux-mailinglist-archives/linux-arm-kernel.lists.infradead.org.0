@@ -2,100 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62B62132C5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 19:03:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27EB4132C8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 19:03:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x+XMKSZRAUeJAWP7isk3+xAG9rASkTJELFn3dKy+ats=; b=hQ+fv8ROr8NVVW
-	5rCoCDnGH0iKGGf7rOszIc639cGy97gKWhB6F25HfZ/xVjPCo7RJTvcpXR9M0gUa2arWwDHgIleMf
-	UtEHqdPO3P81bDPTJEC8U7AsFvK4s42KMrQwFvUHRN6thgPEIU4Ks9YZnPWno4yrE3lb5j6ZV1ygu
-	t8+XMyt+Zw3gapbG7eDtCHYgQcuDTLe7Q0Lejr1/f4nY5jcpP48ZCCI7h1m8Yfpid4y4uf3Uxs1VE
-	PVZbR91mGQNnhON5GWI9JcDNdjWX+fD8oUH3Dr+2PFLy6Fk97Iy8RIE1GnNByAm1vUty0Mv3OfOMH
-	K3Fjof4mJZEIB6pAS5aw==;
+	List-Owner; bh=rzxNdXKEab8aJXHydSHLtCQgmBfmizrqFEgxSjNsXro=; b=UrS1M2aWOMISGv
+	+vZOhREkitrMJzVjn/S77JRptOuEzW8sjofS9MTYP6pBKYnvDWNfPuAwZiz2Dq3fxtw08xPzAzoWf
+	LPbW37I9hqnfjZjzUCsGP/znD6XlvuApDfVm+phs4pOcRl2GN8oQ6qgtWChzzUi6uLcWy0HFfkCjI
+	xpe+erEgaIVuMwID5CA8S/s/1AuWPBfBXny0qdyfLpfLcL6XXGuEVDyV+yohUnkEP+BK0Sf7PFrm8
+	yx7AyyUDMklaRCTOHl5PWUOjGyNKRWoIqM9p3KVwN5GHmfhx5imsey8iTt+XRHLtNB8MeFuJLhhN9
+	fyq29chZKCIcuuoqss0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMbaN-0004xl-Oe; Fri, 03 May 2019 17:02:59 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMbaG-0004wT-U9
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 17:02:54 +0000
-Received: by mail-pf1-x441.google.com with SMTP id v80so3179206pfa.3
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 03 May 2019 10:02:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=e71LeW3j52z02CfoTglw12Lmjisq73YxcosFVCbh53o=;
- b=hrUWYPl6ix6lmEUT+7gmZcFzhb63MdRST9wYPDOIVDmC/LzaxdIO5YqMR9VHPo0Bm0
- 82stpci7nJLYQd5BJl4soh4Z123TLPBWd09ZiRFMLpvEXvCMb061QG9scqw6rKtpjh1E
- kkX/N5wtLrWsHL4J8i87lISK1gdR2s5yYRrwWyERLEcyPvXTU/sq2szATYe2giWY1Voi
- xegRCJX/tNYrsRrlMBUOoE/lSVvaj9xedR/ofO78sPnsVcn8prsnDB5Yr6LyCqUE5WTv
- mbWGCLv9qzSIZdmyGpriTFfAh+bRHrqHP2qnfunh3CTdkyZihHHjTUToVuOGOkc6JjZe
- 6jDg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=e71LeW3j52z02CfoTglw12Lmjisq73YxcosFVCbh53o=;
- b=mCIjDZ+PNeqc+8RbjUzLmZtQEvfc9gGupJwJaNrNWQfgHrez/EzsAojmup8vZ+YfMX
- fzTag0TKRKkDUodXRxXKjUu+bqcYHdb2yolKYh7MYyn8UNpqUSfc9iWB3RUAzVlVubik
- qsyFLIwsgwOwnBeikN7JcAGyOkGgFQ9dJQVAWK+1K6RWZR207pMa//74q0p97INjLqHo
- PMRIi9C+e0d11zMNSlspfb/5ZXQP2kwp+VPWZjSRK4PIn83jnW0AK5f+oG+kHegAaNAa
- AVIVyNO+vWbw93ztKSIC3+UaRpaJtLXvgbbyM+q1SfjyPoM+c4Td9GukM9/Ea6jNCIOl
- 7u0g==
-X-Gm-Message-State: APjAAAVuGajDLwFS+pFaf6H03kLdYPl5bDzcn0XYb/LLz7jMSRLvqJD+
- 3kJRRn8nPFTnzwcpI8GWp3jlZQ==
-X-Google-Smtp-Source: APXvYqyTK6cg0M1/C2OXTAJ465eNh4Ogi4rZP6tl1I9CMzK8OhQ3QscAC72wbWMwk3C+thhafvr1Sg==
-X-Received: by 2002:a62:5fc7:: with SMTP id
- t190mr12168728pfb.191.1556902968531; 
- Fri, 03 May 2019 10:02:48 -0700 (PDT)
-Received: from google.com ([2620:15c:201:2:ce90:ab18:83b0:619])
- by smtp.gmail.com with ESMTPSA id j7sm3380683pfh.62.2019.05.03.10.02.46
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 03 May 2019 10:02:47 -0700 (PDT)
-Date: Fri, 3 May 2019 10:02:42 -0700
-From: Sami Tolvanen <samitolvanen@google.com>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH 2/2] arm64: use the correct function type in
- SYSCALL_DEFINE0
-Message-ID: <20190503170242.GA211922@google.com>
-References: <20190501200451.255615-1-samitolvanen@google.com>
- <20190501200451.255615-3-samitolvanen@google.com>
- <20190503102128.GD47811@lakrids.cambridge.arm.com>
+	id 1hMbap-0005F0-Vu; Fri, 03 May 2019 17:03:27 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hMbaj-0005EL-3B
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 17:03:22 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B389915A2;
+ Fri,  3 May 2019 10:03:19 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 2A5D43F557; Fri,  3 May 2019 10:03:13 -0700 (PDT)
+Date: Fri, 3 May 2019 18:03:10 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Andrey Konovalov <andreyknvl@google.com>
+Subject: Re: [PATCH v14 13/17] IB/mlx4, arm64: untag user pointers in
+ mlx4_get_umem_mr
+Message-ID: <20190503170310.GL55449@arrakis.emea.arm.com>
+References: <cover.1556630205.git.andreyknvl@google.com>
+ <05c0c078b8b5984af4cc3b105a58c711dcd83342.1556630205.git.andreyknvl@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190503102128.GD47811@lakrids.cambridge.arm.com>
+In-Reply-To: <05c0c078b8b5984af4cc3b105a58c711dcd83342.1556630205.git.andreyknvl@google.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_100253_000929_EB4CA0A4 
-X-CRM114-Status: GOOD (  13.15  )
-X-Spam-Score: -13.3 (-------------)
+X-CRM114-CacheID: sfid-20190503_100321_149371_1B99B81A 
+X-CRM114-Status: GOOD (  23.10  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-13.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 2.4 FSL_HELO_FAKE          No description available.
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 T_DKIMWL_WL_MED        DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -107,40 +64,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
- Will Deacon <will.deacon@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Koenig@google.com, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ linux-kselftest@vger.kernel.org, Chintan Pandya <cpandya@codeaurora.org>,
+ Felix <Felix.Kuehling@amd.com>, Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>, Deucher@google.com,
+ Leon Romanovsky <leonro@mellanox.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Dmitry Vyukov <dvyukov@google.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Kuehling@google.com, Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
+ Christian <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mark,
-
-On Fri, May 03, 2019 at 11:21:28AM +0100, Mark Rutland wrote:
-> Generally, this makes sense, but I'm not sure that this is complete.
+On Tue, Apr 30, 2019 at 03:25:09PM +0200, Andrey Konovalov wrote:
+> This patch is a part of a series that extends arm64 kernel ABI to allow to
+> pass tagged user pointers (with the top byte set to something else other
+> than 0x00) as syscall arguments.
 > 
-> IIUC this introduces a new type mismatch with sys_ni_syscall() in some
-> cases.
+> mlx4_get_umem_mr() uses provided user pointers for vma lookups, which can
+> only by done with untagged pointers.
+> 
+> Untag user pointers in this function.
+> 
+> Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+> Reviewed-by: Leon Romanovsky <leonro@mellanox.com>
+> ---
+>  drivers/infiniband/hw/mlx4/mr.c | 7 ++++---
+>  1 file changed, 4 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/infiniband/hw/mlx4/mr.c b/drivers/infiniband/hw/mlx4/mr.c
+> index 395379a480cb..9a35ed2c6a6f 100644
+> --- a/drivers/infiniband/hw/mlx4/mr.c
+> +++ b/drivers/infiniband/hw/mlx4/mr.c
+> @@ -378,6 +378,7 @@ static struct ib_umem *mlx4_get_umem_mr(struct ib_udata *udata, u64 start,
+>  	 * again
+>  	 */
+>  	if (!ib_access_writable(access_flags)) {
+> +		unsigned long untagged_start = untagged_addr(start);
+>  		struct vm_area_struct *vma;
+>  
+>  		down_read(&current->mm->mmap_sem);
+> @@ -386,9 +387,9 @@ static struct ib_umem *mlx4_get_umem_mr(struct ib_udata *udata, u64 start,
+>  		 * cover the memory, but for now it requires a single vma to
+>  		 * entirely cover the MR to support RO mappings.
+>  		 */
+> -		vma = find_vma(current->mm, start);
+> -		if (vma && vma->vm_end >= start + length &&
+> -		    vma->vm_start <= start) {
+> +		vma = find_vma(current->mm, untagged_start);
+> +		if (vma && vma->vm_end >= untagged_start + length &&
+> +		    vma->vm_start <= untagged_start) {
+>  			if (vma->vm_flags & VM_WRITE)
+>  				access_flags |= IB_ACCESS_LOCAL_WRITE;
+>  		} else {
 
-Thanks for the review. You're correct, sys_ni_syscall needs to be fixed
-too. I'll include this in v2.
+Discussion ongoing on the previous version of the patch but I'm more
+inclined to do this in ib_uverbs_(re)reg_mr() on cmd.start.
 
-> We probably need that to use SYSCALL_DEFINE0(), and maybe have a
-> ksys_ni_syscall() for in-kernel wrappers.
-
-Why would we need ksys_ni_syscall? It seems something like this should
-be sufficient:
-
-  asmlinkage long sys_ni_syscall(void);
-
-  SYSCALL_DEFINE0(ni_syscall)
-  {
-          return sys_ni_syscall();
-  }
-
-Sami
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
