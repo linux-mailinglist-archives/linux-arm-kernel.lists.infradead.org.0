@@ -2,64 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4FE212EBB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 15:03:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CF9712EB2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 15:03:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AI1CWSV/MW2oZWyC9kNwAiHsoEaByB+NG8bdOTEZC+I=; b=OcID6Df12Yavlg
-	SWc1YpvdD1V34CVH88t/WivAiFXEQ/zHErl2hyDo5Q3G68l/KIQz8dcQ2A6qaRS8wmYWSdqir9VKL
-	Vf5jVh4ZWwPYBcsV7aBl0GG2zU4fFlKC5sm3mRTzTQOPu5Vc0Y4UH6vIGid8mJVu5b3o/lBY+NPv9
-	cW7U7Tj/W5mRpI61+2v9pO/XhAqNcEU+KAdePMxx3a4Zxw2jE9ytMvZGmlsFgEQIKfbiix0x5GcxX
-	CuLZXM8xegdViz7pMSUISgTCGemslD0dEvuU1yfVcq+hvokcFOnBkK0PyLbVXMET8S9LupIvH022n
-	MkHPk8WHrmIa6JXOo4ZQ==;
+	List-Owner; bh=vpWEEduK/VLM1d1hpIECnxYc3MOzEa7qNJ2GpO39FVw=; b=kBWPgn5KIhX7j2
+	CdyCfFuf9rER9Bl5HOS5VbyvV5U1AzneQKWGjdDu5rkn6GARv/cDOvtMGTaZ9mJ+MS6nZsB46XL0c
+	bJakKJ9Q6d82rOgYGTjRh23nxPYCncefNnYozzdNTgroUkmaYIxpKMYP2L83BhPMmkP4nSY/vz5EX
+	xMQUqw8URmWbKOZGhDrmJigvnDtBm9ryV16WJ3qWAtKPylhr6LuNFTar/y/1DF0Jmi7Gy7Ba8kWPW
+	WMht+5AL7KnjgiI49AoEg03l/tINii4UGj7+u+ihK/4yT7uXlD355JSuZLBS+JOxnA/CnaIDNQewW
+	LLrL6hy47t8CqS6YSGuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMXqZ-00043C-Jc; Fri, 03 May 2019 13:03:27 +0000
+	id 1hMXq4-0003It-Vg; Fri, 03 May 2019 13:02:57 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMXo7-0000NO-F4
- for linux-arm-kernel@bombadil.infradead.org; Fri, 03 May 2019 13:00:55 +0000
+ id 1hMXo5-0000Hz-Qm
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 03 May 2019 13:00:54 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=RU4bUZmyNtllEdkiyU2awy9i/d555TETGeibkD/I53w=; b=CJCMdVjDB2IgZXJTem9LT+e9bq
- 5kBU8XuvZIIugIZc9qY2/dkTi7GXNsiY590SaYkLC+hckGjTVa1E3Xbuiqt9HOi1WAevN1tvWkhLr
- YcT8kOqoA6Kah46zMiQ5AiYs3IkUXZtwQmJ+oAQb2BK+vSfV+ZZT+8dF1h+QL0Uo50YPhFeY42plX
- ipMYty0eNvUDUDdmaELjuY1IL/AY7pCZJqEarOu3jfEuvNJOJF96e4ZG0MRqchgPk0FvxsMIzsRvE
- EvfjWPhOCXS9UOpaNqt+qwcu56i+lLzDoOfFTwTbLao2oBGvU+LJjyThH+4nMntdB+pgJldcvh00j
- yE0EHQhg==;
+ bh=k8Cxj3HkKO6y0B4Ta4gn1juOdZWyS1Q72cYmYNOe23I=; b=GHMKl7f2GXSWvFcmTNdkT68Nkn
+ c/meeLHJpRpJxVra6Vsn25s5KGw8k1apPnygmjgPBJtLbC2p+kNPZ2XfURHUOoDpl7DeAJf3nuBg/
+ J9zrXiXPxt0jE5rBgrp2chiw4Z/boutOnSYJLKOneA8FbgFI3t8kIAcfah0T/zWmsvW6MEi6LY6Cx
+ EhWxXnwB3eEROSfxKK1f2xAAxI4zLBo81IAZGgUUEnZcwVqiOTcUq32UCbevpWYKphQ9dRXSYfQkM
+ l/Qw10Kt9OWl+sQC7A/gwQMwgWbzfPxmIJmSmUvhnvKKxcvQwqC1iq593M7DwgNzjmh0p2ERwxHXf
+ aPuT4A7Q==;
 Received: from foss.arm.com ([217.140.101.70])
  by casper.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMXa8-000265-Kw
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 12:46:30 +0000
+ id 1hMXaC-000265-2x
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 12:46:33 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 287CD16A3;
- Fri,  3 May 2019 05:46:28 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A3B7E16A3;
+ Fri,  3 May 2019 05:46:31 -0700 (PDT)
 Received: from filthy-habits.cambridge.arm.com
  (filthy-habits.cambridge.arm.com [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E539B3F220;
- Fri,  3 May 2019 05:46:24 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6B8B53F220;
+ Fri,  3 May 2019 05:46:28 -0700 (PDT)
 From: Marc Zyngier <marc.zyngier@arm.com>
 To: Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH 30/56] KVM: arm/arm64: Demote kvm_arm_init_arch_resources() to
- just set up SVE
-Date: Fri,  3 May 2019 13:44:01 +0100
-Message-Id: <20190503124427.190206-31-marc.zyngier@arm.com>
+Subject: [PATCH 31/56] KVM: arm: Make vcpu finalization stubs into inline
+ functions
+Date: Fri,  3 May 2019 13:44:02 +0100
+Message-Id: <20190503124427.190206-32-marc.zyngier@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190503124427.190206-1-marc.zyngier@arm.com>
 References: <20190503124427.190206-1-marc.zyngier@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_134629_022385_9FE9A50A 
-X-CRM114-Status: GOOD (  14.31  )
+X-CRM114-CacheID: sfid-20190503_134632_283062_19CB9896 
+X-CRM114-Status: GOOD (  10.96  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
  Content analysis details:   (-5.0 points, 5.0 required)
@@ -97,78 +97,51 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Dave Martin <Dave.Martin@arm.com>
 
-The introduction of kvm_arm_init_arch_resources() looks like
-premature factoring, since nothing else uses this hook yet and it
-is not clear what will use it in the future.
+The vcpu finalization stubs kvm_arm_vcpu_finalize() and
+kvm_arm_vcpu_is_finalized() are currently #defines for ARM, which
+limits the type-checking that the compiler can do at runtime.
 
-For now, let's not pretend that this is a general thing:
+The only reason for them to be #defines was to avoid reliance on
+the definition of struct kvm_vcpu, which is not available here due
+to circular #include problems.  However, because these are stubs
+containing no code, they don't need the definition of struct
+kvm_vcpu after all; only a declaration is needed (which is
+available already).
 
-This patch simply renames the function to kvm_arm_init_sve(),
-retaining the arm stub version under the new name.
+So in the interests of cleanliness, this patch converts them to
+inline functions.
+
+No functional change.
 
 Suggested-by: Andrew Jones <drjones@redhat.com>
 Signed-off-by: Dave Martin <Dave.Martin@arm.com>
 Reviewed-by: Andrew Jones <drjones@redhat.com>
 Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 ---
- arch/arm/include/asm/kvm_host.h   | 2 +-
- arch/arm64/include/asm/kvm_host.h | 2 +-
- arch/arm64/kvm/reset.c            | 2 +-
- virt/kvm/arm/arm.c                | 2 +-
- 4 files changed, 4 insertions(+), 4 deletions(-)
+ arch/arm/include/asm/kvm_host.h | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
 
 diff --git a/arch/arm/include/asm/kvm_host.h b/arch/arm/include/asm/kvm_host.h
-index e80cfc18412b..d95627393353 100644
+index d95627393353..7feddacbc207 100644
 --- a/arch/arm/include/asm/kvm_host.h
 +++ b/arch/arm/include/asm/kvm_host.h
-@@ -54,7 +54,7 @@
+@@ -412,7 +412,14 @@ static inline int kvm_arm_setup_stage2(struct kvm *kvm, unsigned long type)
+ 	return 0;
+ }
  
- DECLARE_STATIC_KEY_FALSE(userspace_irqchip_in_use);
+-#define kvm_arm_vcpu_finalize(vcpu, what) (-EINVAL)
+-#define kvm_arm_vcpu_is_finalized(vcpu) true
++static inline int kvm_arm_vcpu_finalize(struct kvm_vcpu *vcpu, int what)
++{
++	return -EINVAL;
++}
++
++static inline bool kvm_arm_vcpu_is_finalized(struct kvm_vcpu *vcpu)
++{
++	return true;
++}
  
--static inline int kvm_arm_init_arch_resources(void) { return 0; }
-+static inline int kvm_arm_init_sve(void) { return 0; }
- 
- u32 *kvm_vcpu_reg(struct kvm_vcpu *vcpu, u8 reg_num, u32 mode);
- int __attribute_const__ kvm_target_cpu(void);
-diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
-index 9d57cf8be879..6adf08ba9277 100644
---- a/arch/arm64/include/asm/kvm_host.h
-+++ b/arch/arm64/include/asm/kvm_host.h
-@@ -59,7 +59,7 @@
- DECLARE_STATIC_KEY_FALSE(userspace_irqchip_in_use);
- 
- extern unsigned int kvm_sve_max_vl;
--int kvm_arm_init_arch_resources(void);
-+int kvm_arm_init_sve(void);
- 
- int __attribute_const__ kvm_target_cpu(void);
- int kvm_reset_vcpu(struct kvm_vcpu *vcpu);
-diff --git a/arch/arm64/kvm/reset.c b/arch/arm64/kvm/reset.c
-index f13378d0a0ad..8847f389f56d 100644
---- a/arch/arm64/kvm/reset.c
-+++ b/arch/arm64/kvm/reset.c
-@@ -110,7 +110,7 @@ int kvm_arch_vm_ioctl_check_extension(struct kvm *kvm, long ext)
- 
- unsigned int kvm_sve_max_vl;
- 
--int kvm_arm_init_arch_resources(void)
-+int kvm_arm_init_sve(void)
- {
- 	if (system_supports_sve()) {
- 		kvm_sve_max_vl = sve_max_virtualisable_vl;
-diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
-index 9edbf0f676e7..7039c99cc217 100644
---- a/virt/kvm/arm/arm.c
-+++ b/virt/kvm/arm/arm.c
-@@ -1682,7 +1682,7 @@ int kvm_arch_init(void *opaque)
- 	if (err)
- 		return err;
- 
--	err = kvm_arm_init_arch_resources();
-+	err = kvm_arm_init_sve();
- 	if (err)
- 		return err;
- 
+ #endif /* __ARM_KVM_HOST_H__ */
 -- 
 2.20.1
 
