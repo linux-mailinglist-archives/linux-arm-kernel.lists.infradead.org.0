@@ -2,49 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4242112E52
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 14:47:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4479412E5C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 14:47:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZenD1yfDd7eGyUGDCoapH+5lAmwa2CtDs0FRL9pEDM8=; b=oarZDitjHyY384
-	Vre550QhVGYlD82FvbNAVGrkEki+NFBeWRllYrHq4k6n+n99LwyEp+iruUseduvdfVdMDXSMh+oZb
-	GeRK4LKXHyUkxvEV5z/n0KcC24qsawEYBJDsHkPm6pck5ZBBnZEh/YRpfvROovY/gaPtO3Q2++YqU
-	WU0HPBBQ8ne+vqLQ5jeWoqs30kLhO+x3qepZ+R3Qf/jUkxhAK9vU9VvjOnu2f+c7+NoeCyKz2TarU
-	Ye0X8Ia9F/Tv0qTsdnFx+Ov+eO+RJhKccYJGmad3GrkQ8uzBho27fDpePUyZINVvMRDX7CM5VOmky
-	J5mDWwMUa30zzGCmeb0g==;
+	List-Owner; bh=0VdxPVeylHZfWiZMjNo0Uj5ga+fL9R1EygggmR3WPQY=; b=GIyZpCm88QvmHl
+	IHOWBXgoqR6gQctrEQgmJwsMeZF84AlInqc6BWSg3C1MK0KNhfAaxcWG8NhrXszOtVYb/kNosYjIF
+	8nlxRuvy7MK+lMUeP+GVirc4LSJMgNJ2BsyU1xi7Yz7D1++qhfMe9Pxw4p8nCI1j7bnoBWSbo1lWd
+	IvhY9Ue/ibQC+uIOMPkBOyRLZcV7x2rZTEq0ACQd6YeLmbM7nOOF2FBM9gOAuUNdgocM9uo/oS9bK
+	wPi4DgX4OaeuLf52dvs1eyyrd0VcJwwlSNdkQGdtVkRahEgpUm1GceShozM04twaE+61rvcZz8QkC
+	SfZuCh3LCdb6Zh9UCe/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMXb9-0006sR-QY; Fri, 03 May 2019 12:47:31 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
+	id 1hMXbJ-000763-LV; Fri, 03 May 2019 12:47:41 +0000
+Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMXZZ-0004wg-CW
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 12:46:34 +0000
+ id 1hMXZc-00051L-R0
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 12:46:36 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 229B8374;
- Fri,  3 May 2019 05:45:53 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9D4DC80D;
+ Fri,  3 May 2019 05:45:56 -0700 (PDT)
 Received: from filthy-habits.cambridge.arm.com
  (filthy-habits.cambridge.arm.com [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DF6DD3F220;
- Fri,  3 May 2019 05:45:49 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 661F63F220;
+ Fri,  3 May 2019 05:45:53 -0700 (PDT)
 From: Marc Zyngier <marc.zyngier@arm.com>
 To: Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH 20/56] arm64/sve: In-kernel vector length availability query
- interface
-Date: Fri,  3 May 2019 13:43:51 +0100
-Message-Id: <20190503124427.190206-21-marc.zyngier@arm.com>
+Subject: [PATCH 21/56] KVM: arm/arm64: Add hook for arch-specific KVM
+ initialisation
+Date: Fri,  3 May 2019 13:43:52 +0100
+Message-Id: <20190503124427.190206-22-marc.zyngier@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190503124427.190206-1-marc.zyngier@arm.com>
 References: <20190503124427.190206-1-marc.zyngier@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_054553_912180_46ECC75F 
-X-CRM114-Status: GOOD (  19.47  )
+X-CRM114-CacheID: sfid-20190503_054557_296056_97B4F7DE 
+X-CRM114-Status: GOOD (  11.55  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -75,111 +74,77 @@ Cc: Mark Rutland <mark.rutland@arm.com>,
  Andrew Murray <andrew.murray@arm.com>,
  =?UTF-8?q?Alex=20Benn=C3=A9e?= <alex.bennee@linaro.org>,
  Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogRGF2ZSBNYXJ0aW4gPERhdmUuTWFydGluQGFybS5jb20+CgpLVk0gd2lsbCBuZWVkIHRv
-IGludGVycm9nYXRlIHRoZSBzZXQgb2YgU1ZFIHZlY3RvciBsZW5ndGhzCmF2YWlsYWJsZSBvbiB0
-aGUgc3lzdGVtLgoKVGhpcyBwYXRjaCBleHBvc2VzIHRoZSByZWxldmFudCBiaXRzIHRvIHRoZSBr
-ZXJuZWwsIGFsb25nIHdpdGggYQpzdmVfdnFfYXZhaWxhYmxlKCkgaGVscGVyIHRvIGNoZWNrIHdo
-ZXRoZXIgYSBwYXJ0aWN1bGFyIHZlY3RvcgpsZW5ndGggaXMgc3VwcG9ydGVkLgoKX192cV90b19i
-aXQoKSBhbmQgX19iaXRfdG9fdnEoKSBhcmUgbm90IGludGVuZGVkIGZvciB1c2Ugb3V0c2lkZQp0
-aGVzZSBmdW5jdGlvbnM6IG5vdyB0aGF0IHRoZXNlIGFyZSBleHBvc2VkIG91dHNpZGUgZnBzaW1k
-LmMsIHRoZXkKYXJlIHByZWZpeGVkIHdpdGggX18gaW4gb3JkZXIgdG8gcHJvdmlkZSBhbiBleHRy
-YSBoaW50IHRoYXQgdGhleQphcmUgbm90IGludGVuZGVkIGZvciBnZW5lcmFsLXB1cnBvc2UgdXNl
-LgoKU2lnbmVkLW9mZi1ieTogRGF2ZSBNYXJ0aW4gPERhdmUuTWFydGluQGFybS5jb20+ClJldmll
-d2VkLWJ5OiBBbGV4IEJlbm7DqWUgPGFsZXguYmVubmVlQGxpbmFyby5vcmc+ClRlc3RlZC1ieTog
-emhhbmcubGVpIDx6aGFuZy5sZWlAanAuZnVqaXRzdS5jb20+ClNpZ25lZC1vZmYtYnk6IE1hcmMg
-WnluZ2llciA8bWFyYy56eW5naWVyQGFybS5jb20+Ci0tLQogYXJjaC9hcm02NC9pbmNsdWRlL2Fz
-bS9mcHNpbWQuaCB8IDI5ICsrKysrKysrKysrKysrKysrKysrKysrKysrKwogYXJjaC9hcm02NC9r
-ZXJuZWwvZnBzaW1kLmMgICAgICB8IDM1ICsrKysrKysrLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LQogMiBmaWxlcyBjaGFuZ2VkLCAzNyBpbnNlcnRpb25zKCspLCAyNyBkZWxldGlvbnMoLSkKCmRp
-ZmYgLS1naXQgYS9hcmNoL2FybTY0L2luY2x1ZGUvYXNtL2Zwc2ltZC5oIGIvYXJjaC9hcm02NC9p
-bmNsdWRlL2FzbS9mcHNpbWQuaAppbmRleCBkZjdhMTQzMDUyMjIuLmFkNmQyZTQxZWIzNyAxMDA2
-NDQKLS0tIGEvYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9mcHNpbWQuaAorKysgYi9hcmNoL2FybTY0
-L2luY2x1ZGUvYXNtL2Zwc2ltZC5oCkBAIC0yNCwxMCArMjQsMTMgQEAKIAogI2lmbmRlZiBfX0FT
-U0VNQkxZX18KIAorI2luY2x1ZGUgPGxpbnV4L2JpdG1hcC5oPgogI2luY2x1ZGUgPGxpbnV4L2J1
-aWxkX2J1Zy5oPgorI2luY2x1ZGUgPGxpbnV4L2J1Zy5oPgogI2luY2x1ZGUgPGxpbnV4L2NhY2hl
-Lmg+CiAjaW5jbHVkZSA8bGludXgvaW5pdC5oPgogI2luY2x1ZGUgPGxpbnV4L3N0ZGRlZi5oPgor
-I2luY2x1ZGUgPGxpbnV4L3R5cGVzLmg+CiAKICNpZiBkZWZpbmVkKF9fS0VSTkVMX18pICYmIGRl
-ZmluZWQoQ09ORklHX0NPTVBBVCkKIC8qIE1hc2tzIGZvciBleHRyYWN0aW5nIHRoZSBGUFNSIGFu
-ZCBGUENSIGZyb20gdGhlIEZQU0NSICovCkBAIC04OSw2ICs5MiwzMiBAQCBleHRlcm4gdTY0IHJl
-YWRfemNyX2ZlYXR1cmVzKHZvaWQpOwogCiBleHRlcm4gaW50IF9fcm9fYWZ0ZXJfaW5pdCBzdmVf
-bWF4X3ZsOwogZXh0ZXJuIGludCBfX3JvX2FmdGVyX2luaXQgc3ZlX21heF92aXJ0dWFsaXNhYmxl
-X3ZsOworLyogU2V0IG9mIGF2YWlsYWJsZSB2ZWN0b3IgbGVuZ3RocywgYXMgdnFfdG9fYml0KHZx
-KTogKi8KK2V4dGVybiBfX3JvX2FmdGVyX2luaXQgREVDTEFSRV9CSVRNQVAoc3ZlX3ZxX21hcCwg
-U1ZFX1ZRX01BWCk7CisKKy8qCisgKiBIZWxwZXJzIHRvIHRyYW5zbGF0ZSBiaXQgaW5kaWNlcyBp
-biBzdmVfdnFfbWFwIHRvIFZRIHZhbHVlcyAoYW5kCisgKiB2aWNlIHZlcnNhKS4gIFRoaXMgYWxs
-b3dzIGZpbmRfbmV4dF9iaXQoKSB0byBiZSB1c2VkIHRvIGZpbmQgdGhlCisgKiBfbWF4aW11bV8g
-VlEgbm90IGV4Y2VlZGluZyBhIGNlcnRhaW4gdmFsdWUuCisgKi8KK3N0YXRpYyBpbmxpbmUgdW5z
-aWduZWQgaW50IF9fdnFfdG9fYml0KHVuc2lnbmVkIGludCB2cSkKK3sKKwlyZXR1cm4gU1ZFX1ZR
-X01BWCAtIHZxOworfQorCitzdGF0aWMgaW5saW5lIHVuc2lnbmVkIGludCBfX2JpdF90b192cSh1
-bnNpZ25lZCBpbnQgYml0KQoreworCWlmIChXQVJOX09OKGJpdCA+PSBTVkVfVlFfTUFYKSkKKwkJ
-Yml0ID0gU1ZFX1ZRX01BWCAtIDE7CisKKwlyZXR1cm4gU1ZFX1ZRX01BWCAtIGJpdDsKK30KKwor
-LyogRW5zdXJlIHZxID49IFNWRV9WUV9NSU4gJiYgdnEgPD0gU1ZFX1ZRX01BWCBiZWZvcmUgY2Fs
-bGluZyB0aGlzIGZ1bmN0aW9uICovCitzdGF0aWMgaW5saW5lIGJvb2wgc3ZlX3ZxX2F2YWlsYWJs
-ZSh1bnNpZ25lZCBpbnQgdnEpCit7CisJcmV0dXJuIHRlc3RfYml0KF9fdnFfdG9fYml0KHZxKSwg
-c3ZlX3ZxX21hcCk7Cit9CiAKICNpZmRlZiBDT05GSUdfQVJNNjRfU1ZFCiAKZGlmZiAtLWdpdCBh
-L2FyY2gvYXJtNjQva2VybmVsL2Zwc2ltZC5jIGIvYXJjaC9hcm02NC9rZXJuZWwvZnBzaW1kLmMK
-aW5kZXggOGE5M2FmYTc4NjAwLi41NzcyOTZiYmE3MzAgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtNjQv
-a2VybmVsL2Zwc2ltZC5jCisrKyBiL2FyY2gvYXJtNjQva2VybmVsL2Zwc2ltZC5jCkBAIC0xMzYs
-NyArMTM2LDcgQEAgc3RhdGljIGludCBzdmVfZGVmYXVsdF92bCA9IC0xOwogaW50IF9fcm9fYWZ0
-ZXJfaW5pdCBzdmVfbWF4X3ZsID0gU1ZFX1ZMX01JTjsKIGludCBfX3JvX2FmdGVyX2luaXQgc3Zl
-X21heF92aXJ0dWFsaXNhYmxlX3ZsID0gU1ZFX1ZMX01JTjsKIC8qIFNldCBvZiBhdmFpbGFibGUg
-dmVjdG9yIGxlbmd0aHMsIGFzIHZxX3RvX2JpdCh2cSk6ICovCi1zdGF0aWMgX19yb19hZnRlcl9p
-bml0IERFQ0xBUkVfQklUTUFQKHN2ZV92cV9tYXAsIFNWRV9WUV9NQVgpOworX19yb19hZnRlcl9p
-bml0IERFQ0xBUkVfQklUTUFQKHN2ZV92cV9tYXAsIFNWRV9WUV9NQVgpOwogLyogU2V0IG9mIHZl
-Y3RvciBsZW5ndGhzIHByZXNlbnQgb24gYXQgbGVhc3Qgb25lIGNwdTogKi8KIHN0YXRpYyBfX3Jv
-X2FmdGVyX2luaXQgREVDTEFSRV9CSVRNQVAoc3ZlX3ZxX3BhcnRpYWxfbWFwLCBTVkVfVlFfTUFY
-KTsKIHN0YXRpYyB2b2lkIF9fcGVyY3B1ICplZmlfc3ZlX3N0YXRlOwpAQCAtMjY5LDI1ICsyNjks
-NiBAQCB2b2lkIGZwc2ltZF9zYXZlKHZvaWQpCiAJfQogfQogCi0vKgotICogSGVscGVycyB0byB0
-cmFuc2xhdGUgYml0IGluZGljZXMgaW4gc3ZlX3ZxX21hcCB0byBWUSB2YWx1ZXMgKGFuZAotICog
-dmljZSB2ZXJzYSkuICBUaGlzIGFsbG93cyBmaW5kX25leHRfYml0KCkgdG8gYmUgdXNlZCB0byBm
-aW5kIHRoZQotICogX21heGltdW1fIFZRIG5vdCBleGNlZWRpbmcgYSBjZXJ0YWluIHZhbHVlLgot
-ICovCi0KLXN0YXRpYyB1bnNpZ25lZCBpbnQgdnFfdG9fYml0KHVuc2lnbmVkIGludCB2cSkKLXsK
-LQlyZXR1cm4gU1ZFX1ZRX01BWCAtIHZxOwotfQotCi1zdGF0aWMgdW5zaWduZWQgaW50IGJpdF90
-b192cSh1bnNpZ25lZCBpbnQgYml0KQotewotCWlmIChXQVJOX09OKGJpdCA+PSBTVkVfVlFfTUFY
-KSkKLQkJYml0ID0gU1ZFX1ZRX01BWCAtIDE7Ci0KLQlyZXR1cm4gU1ZFX1ZRX01BWCAtIGJpdDsK
-LX0KLQogLyoKICAqIEFsbCB2ZWN0b3IgbGVuZ3RoIHNlbGVjdGlvbiBmcm9tIHVzZXJzcGFjZSBj
-b21lcyB0aHJvdWdoIGhlcmUuCiAgKiBXZSdyZSBvbiBhIHNsb3cgcGF0aCwgc28gc29tZSBzYW5p
-dHktY2hlY2tzIGFyZSBpbmNsdWRlZC4KQEAgLTMwOSw4ICsyOTAsOCBAQCBzdGF0aWMgdW5zaWdu
-ZWQgaW50IGZpbmRfc3VwcG9ydGVkX3ZlY3Rvcl9sZW5ndGgodW5zaWduZWQgaW50IHZsKQogCQl2
-bCA9IG1heF92bDsKIAogCWJpdCA9IGZpbmRfbmV4dF9iaXQoc3ZlX3ZxX21hcCwgU1ZFX1ZRX01B
-WCwKLQkJCSAgICB2cV90b19iaXQoc3ZlX3ZxX2Zyb21fdmwodmwpKSk7Ci0JcmV0dXJuIHN2ZV92
-bF9mcm9tX3ZxKGJpdF90b192cShiaXQpKTsKKwkJCSAgICBfX3ZxX3RvX2JpdChzdmVfdnFfZnJv
-bV92bCh2bCkpKTsKKwlyZXR1cm4gc3ZlX3ZsX2Zyb21fdnEoX19iaXRfdG9fdnEoYml0KSk7CiB9
-CiAKICNpZmRlZiBDT05GSUdfU1lTQ1RMCkBAIC02NDgsNyArNjI5LDcgQEAgc3RhdGljIHZvaWQg
-c3ZlX3Byb2JlX3ZxcyhERUNMQVJFX0JJVE1BUChtYXAsIFNWRV9WUV9NQVgpKQogCQl3cml0ZV9z
-eXNyZWdfcyh6Y3IgfCAodnEgLSAxKSwgU1lTX1pDUl9FTDEpOyAvKiBzZWxmLXN5bmNpbmcgKi8K
-IAkJdmwgPSBzdmVfZ2V0X3ZsKCk7CiAJCXZxID0gc3ZlX3ZxX2Zyb21fdmwodmwpOyAvKiBza2lw
-IGludGVydmVuaW5nIGxlbmd0aHMgKi8KLQkJc2V0X2JpdCh2cV90b19iaXQodnEpLCBtYXApOwor
-CQlzZXRfYml0KF9fdnFfdG9fYml0KHZxKSwgbWFwKTsKIAl9CiB9CiAKQEAgLTcxNyw3ICs2OTgs
-NyBAQCBpbnQgc3ZlX3ZlcmlmeV92cV9tYXAodm9pZCkKIAkgKiBNaXNtYXRjaGVzIGFib3ZlIHN2
-ZV9tYXhfdmlydHVhbGlzYWJsZV92bCBhcmUgZmluZSwgc2luY2UKIAkgKiBubyBndWVzdCBpcyBh
-bGxvd2VkIHRvIGNvbmZpZ3VyZSBaQ1JfRUwyLkxFTiB0byBleGNlZWQgdGhpczoKIAkgKi8KLQlp
-ZiAoc3ZlX3ZsX2Zyb21fdnEoYml0X3RvX3ZxKGIpKSA8PSBzdmVfbWF4X3ZpcnR1YWxpc2FibGVf
-dmwpIHsKKwlpZiAoc3ZlX3ZsX2Zyb21fdnEoX19iaXRfdG9fdnEoYikpIDw9IHN2ZV9tYXhfdmly
-dHVhbGlzYWJsZV92bCkgewogCQlwcl93YXJuKCJTVkU6IGNwdSVkOiBVbnN1cHBvcnRlZCB2ZWN0
-b3IgbGVuZ3RoKHMpIHByZXNlbnRcbiIsCiAJCQlzbXBfcHJvY2Vzc29yX2lkKCkpOwogCQlyZXR1
-cm4gLUVJTlZBTDsKQEAgLTgwMSw4ICs3ODIsOCBAQCB2b2lkIF9faW5pdCBzdmVfc2V0dXAodm9p
-ZCkKIAkgKiBzbyBzdmVfdnFfbWFwIG11c3QgaGF2ZSBhdCBsZWFzdCBTVkVfVlFfTUlOIHNldC4K
-IAkgKiBJZiBzb21ldGhpbmcgd2VudCB3cm9uZywgYXQgbGVhc3QgdHJ5IHRvIHBhdGNoIGl0IHVw
-OgogCSAqLwotCWlmIChXQVJOX09OKCF0ZXN0X2JpdCh2cV90b19iaXQoU1ZFX1ZRX01JTiksIHN2
-ZV92cV9tYXApKSkKLQkJc2V0X2JpdCh2cV90b19iaXQoU1ZFX1ZRX01JTiksIHN2ZV92cV9tYXAp
-OworCWlmIChXQVJOX09OKCF0ZXN0X2JpdChfX3ZxX3RvX2JpdChTVkVfVlFfTUlOKSwgc3ZlX3Zx
-X21hcCkpKQorCQlzZXRfYml0KF9fdnFfdG9fYml0KFNWRV9WUV9NSU4pLCBzdmVfdnFfbWFwKTsK
-IAogCXpjciA9IHJlYWRfc2FuaXRpc2VkX2Z0cl9yZWcoU1lTX1pDUl9FTDEpOwogCXN2ZV9tYXhf
-dmwgPSBzdmVfdmxfZnJvbV92cSgoemNyICYgWkNSX0VMeF9MRU5fTUFTSykgKyAxKTsKQEAgLTgz
-MSw3ICs4MTIsNyBAQCB2b2lkIF9faW5pdCBzdmVfc2V0dXAodm9pZCkKIAkJLyogTm8gdmlydHVh
-bGlzYWJsZSBWTHM/ICBUaGlzIGlzIGFyY2hpdGVjdHVyYWxseSBmb3JiaWRkZW4uICovCiAJCXN2
-ZV9tYXhfdmlydHVhbGlzYWJsZV92bCA9IFNWRV9WUV9NSU47CiAJZWxzZSAvKiBiICsgMSA8IFNW
-RV9WUV9NQVggKi8KLQkJc3ZlX21heF92aXJ0dWFsaXNhYmxlX3ZsID0gc3ZlX3ZsX2Zyb21fdnEo
-Yml0X3RvX3ZxKGIgKyAxKSk7CisJCXN2ZV9tYXhfdmlydHVhbGlzYWJsZV92bCA9IHN2ZV92bF9m
-cm9tX3ZxKF9fYml0X3RvX3ZxKGIgKyAxKSk7CiAKIAlpZiAoc3ZlX21heF92aXJ0dWFsaXNhYmxl
-X3ZsID4gc3ZlX21heF92bCkKIAkJc3ZlX21heF92aXJ0dWFsaXNhYmxlX3ZsID0gc3ZlX21heF92
-bDsKLS0gCjIuMjAuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL2xpbnV4LWFybS1rZXJuZWwK
+From: Dave Martin <Dave.Martin@arm.com>
+
+This patch adds a kvm_arm_init_arch_resources() hook to perform
+subarch-specific initialisation when starting up KVM.
+
+This will be used in a subsequent patch for global SVE-related
+setup on arm64.
+
+No functional change.
+
+Signed-off-by: Dave Martin <Dave.Martin@arm.com>
+Reviewed-by: Julien Thierry <julien.thierry@arm.com>
+Tested-by: zhang.lei <zhang.lei@jp.fujitsu.com>
+Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+---
+ arch/arm/include/asm/kvm_host.h   | 2 ++
+ arch/arm64/include/asm/kvm_host.h | 2 ++
+ virt/kvm/arm/arm.c                | 4 ++++
+ 3 files changed, 8 insertions(+)
+
+diff --git a/arch/arm/include/asm/kvm_host.h b/arch/arm/include/asm/kvm_host.h
+index 770d73257ad9..a49ee01242ff 100644
+--- a/arch/arm/include/asm/kvm_host.h
++++ b/arch/arm/include/asm/kvm_host.h
+@@ -53,6 +53,8 @@
+ 
+ DECLARE_STATIC_KEY_FALSE(userspace_irqchip_in_use);
+ 
++static inline int kvm_arm_init_arch_resources(void) { return 0; }
++
+ u32 *kvm_vcpu_reg(struct kvm_vcpu *vcpu, u8 reg_num, u32 mode);
+ int __attribute_const__ kvm_target_cpu(void);
+ int kvm_reset_vcpu(struct kvm_vcpu *vcpu);
+diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+index 205438a108f6..3e8950942591 100644
+--- a/arch/arm64/include/asm/kvm_host.h
++++ b/arch/arm64/include/asm/kvm_host.h
+@@ -58,6 +58,8 @@
+ 
+ DECLARE_STATIC_KEY_FALSE(userspace_irqchip_in_use);
+ 
++static inline int kvm_arm_init_arch_resources(void) { return 0; }
++
+ int __attribute_const__ kvm_target_cpu(void);
+ int kvm_reset_vcpu(struct kvm_vcpu *vcpu);
+ int kvm_arch_vm_ioctl_check_extension(struct kvm *kvm, long ext);
+diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
+index 99c37384ba7b..c69e1370a5dc 100644
+--- a/virt/kvm/arm/arm.c
++++ b/virt/kvm/arm/arm.c
+@@ -1664,6 +1664,10 @@ int kvm_arch_init(void *opaque)
+ 	if (err)
+ 		return err;
+ 
++	err = kvm_arm_init_arch_resources();
++	if (err)
++		return err;
++
+ 	if (!in_hyp_mode) {
+ 		err = init_hyp_mode();
+ 		if (err)
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
