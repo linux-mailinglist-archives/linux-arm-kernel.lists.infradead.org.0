@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67DED12EBC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 15:03:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D5C912EBE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 15:03:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jKvHu/Kd27WYQ8ja+FtS7aKF7ox13QNpWXUXjJcdn2E=; b=fblXR+RubYFoFf
-	M4NrbmVqqxeKahEKrs5I6KtWlAyj27NMZ4iKd6+sGfH/cMBoaIY08e7uYUFz+Btqj992/nIFkNo2o
-	tagLXTKNdQcO+1kIvJY3DCjgR4SJyUnFWzBwbBu0h/rA76VdNTFRqN94Pa68otkj4DJZRLjAo5gwX
-	T2m5UTY64cr+8ktKw6maNuNXtSukeopPNu1tx02F8WLaNUcvgxbnmjn9KQkS6OIrCGm7PxEshivYG
-	IREMSdHAOctRXFuvnqW9Ij4TqvBkaXKBQFZF1wtNsqGGJ5WvUTfEdQm4C9nSGoHKSRY1FwmsOSOqC
-	3fJ3HUDr1J3PpBVsEjsQ==;
+	List-Owner; bh=VFkI0yNSC0hF1Mt4YHdLacJ0y4O3ph2ggGaD5GTuzhI=; b=CHYl/nxK5j43EU
+	JuKB5EnwEhfPrq8C0dtRM9Omln41TdlOWqKP7JaPUcUUXF1GbqA0gU4eRhuppGjZ7FXTuEKEv36Nj
+	K7PKKxBB3DvcYBcT4Y0EOa0oiaN9WiHHH1VlISozccJSrnGV4TvpE7WI/47nX9cXihWqUCTQofyis
+	PjYohTs7rOZOi+8ViJJlo9tpHfAWyvTna0nNEQ96+Mcw0fNiuNru81Jg9CsHZ/kVR7KkwQZMaeT6B
+	tWmUWmYGdXJT923LEZqIMQrlDNGNntsl/AsK3wd3OlJup4xDl2fHaOKxo3Uc4vnGb5B/SfzPVz5r0
+	w9YTkGb7hM9G81iDrcEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMXqj-0004MZ-Pz; Fri, 03 May 2019 13:03:37 +0000
+	id 1hMXqt-0004aD-OQ; Fri, 03 May 2019 13:03:47 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMXo7-0000Hk-T1
+ id 1hMXo7-0000Hz-Sz
  for linux-arm-kernel@bombadil.infradead.org; Fri, 03 May 2019 13:00:55 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
@@ -29,36 +29,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=inCZ+AwtU3Se3Y2IG/Iy0AJc8rZS9jhAY3yNzRLhPdU=; b=lINB12xwB3UqELQeeEAHqFMRmM
- VjqfjUeAQnsetNcaze8NIBCKDosuoR0runoGD1qMsa9ejdGZvDJE8rZj7B7eiKKWA0Uh9adn0dtGo
- c5ZB5PCdf+6q22Dmyy7qeajSfnlB6b7en/HabPrp0Is4LaRvSz4sa3GCRoMR9o0RUiiqtgfsmA3Zg
- YNIVncdvDKPcVVnGk0tn7ERk8qWvAbUwO7ncUBHGRhiwU9YTu5qK6QcQgfPNh2vfTolOA6h8BEPGC
- 1kWFkLBXxc+PSUll2y37hC0DcoezT6Yv7s9rciZyYQstPjqgcq4ikuXjkiKAr5GQneptgq/CFf343
- 4JwgLW/A==;
+ bh=h74E8fTJb/uELTinY90g5KHcOSDdMV200BS2ojtSaa0=; b=Ax4C+JEQY3NstzJt21s+mFuvk4
+ A+OdCT+1b1hZboejsjxD4o7jK/w09RYQMZCyGRkx03nAo1coXn3tcEHBnjd7J/Owh5fPGmgvgB3/s
+ pPtdbMSUJipbHj2ZeBpb9wyQbxycrPd1zSJuxtWK/v3PcCXbz8TRoGDTFZtTQFWiTum6PuhpRuTBn
+ j3DnG6MpaYs+wygk6UBK1WCSTMvqj8HQl1MqYfhf3WAtcSC1ivXvU43H5wSD/cA9YveMcB1T5lPn0
+ fF9TB9GPXYtcfVSPqiLlf8rn2ElVhbiX6Wraw6pTyep/B5sSL2u5FtKQ6nMvF8KAwdX0JYuvC4HHm
+ XRlGedLw==;
 Received: from foss.arm.com ([217.140.101.70])
  by casper.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMXa2-000265-CW
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 12:46:24 +0000
+ id 1hMXa5-000265-4q
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 12:46:27 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 281E116A3;
- Fri,  3 May 2019 05:46:21 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A26C816A3;
+ Fri,  3 May 2019 05:46:24 -0700 (PDT)
 Received: from filthy-habits.cambridge.arm.com
  (filthy-habits.cambridge.arm.com [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E4E863F220;
- Fri,  3 May 2019 05:46:17 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6B2773F220;
+ Fri,  3 May 2019 05:46:21 -0700 (PDT)
 From: Marc Zyngier <marc.zyngier@arm.com>
 To: Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH 28/56] arm64: KVM: Fix system register enumeration
-Date: Fri,  3 May 2019 13:43:59 +0100
-Message-Id: <20190503124427.190206-29-marc.zyngier@arm.com>
+Subject: [PATCH 29/56] arm64/sve: Clarify vq map semantics
+Date: Fri,  3 May 2019 13:44:00 +0100
+Message-Id: <20190503124427.190206-30-marc.zyngier@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190503124427.190206-1-marc.zyngier@arm.com>
 References: <20190503124427.190206-1-marc.zyngier@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_134622_650152_74FD929F 
-X-CRM114-Status: GOOD (  11.43  )
+X-CRM114-CacheID: sfid-20190503_134625_539040_396920DC 
+X-CRM114-Status: GOOD (  14.67  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
  Content analysis details:   (-5.0 points, 5.0 required)
@@ -94,55 +94,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The introduction of the SVE registers to userspace started with a
-refactoring of the way we expose any register via the ONE_REG
-interface.
+From: Dave Martin <Dave.Martin@arm.com>
 
-Unfortunately, this change doesn't exactly behave as expected
-if the number of registers is non-zero and consider everything
-to be an error. The visible result is that QEMU barfs very early
-when creating vcpus.
+Currently the meanings of sve_vq_map and the ancillary helpers
+__bit_to_vq() and __vq_to_bit() are not clearly explained.
 
-Make sure we only exit early in case there is an actual error, rather
-than a positive number of registers...
+This patch makes the explanatory comment clearer, and removes the
+duplicate comment from fpsimd.h.
 
-Fixes: be25bbb392fa ("KVM: arm64: Factor out core register ID enumeration")
+The WARN_ON() currently present in __bit_to_vq() confuses the
+intended use of this helper.  Since these are low-level helpers not
+intended for general-purpose use anyway, it is better not to make
+guesses about how these functions will be used: rather, this patch
+removes the WARN_ON() and relies on callers to use the helpers
+sensibly.
+
+Suggested-by: Andrew Jones <drjones@redhat.com>
+Signed-off-by: Dave Martin <Dave.Martin@arm.com>
+Reviewed-by: Andrew Jones <drjones@redhat.com>
 Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 ---
- arch/arm64/kvm/guest.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ arch/arm64/include/asm/fpsimd.h | 4 ----
+ arch/arm64/kernel/fpsimd.c      | 7 ++++++-
+ 2 files changed, 6 insertions(+), 5 deletions(-)
 
-diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
-index 086ab0508d69..4f7b26bbf671 100644
---- a/arch/arm64/kvm/guest.c
-+++ b/arch/arm64/kvm/guest.c
-@@ -604,22 +604,22 @@ int kvm_arm_copy_reg_indices(struct kvm_vcpu *vcpu, u64 __user *uindices)
- 	int ret;
+diff --git a/arch/arm64/include/asm/fpsimd.h b/arch/arm64/include/asm/fpsimd.h
+index ad6d2e41eb37..df62bbd33a9a 100644
+--- a/arch/arm64/include/asm/fpsimd.h
++++ b/arch/arm64/include/asm/fpsimd.h
+@@ -92,7 +92,6 @@ extern u64 read_zcr_features(void);
  
- 	ret = copy_core_reg_indices(vcpu, uindices);
--	if (ret)
-+	if (ret < 0)
- 		return ret;
- 	uindices += ret;
+ extern int __ro_after_init sve_max_vl;
+ extern int __ro_after_init sve_max_virtualisable_vl;
+-/* Set of available vector lengths, as vq_to_bit(vq): */
+ extern __ro_after_init DECLARE_BITMAP(sve_vq_map, SVE_VQ_MAX);
  
- 	ret = copy_sve_reg_indices(vcpu, uindices);
--	if (ret)
-+	if (ret < 0)
- 		return ret;
- 	uindices += ret;
+ /*
+@@ -107,9 +106,6 @@ static inline unsigned int __vq_to_bit(unsigned int vq)
  
- 	ret = kvm_arm_copy_fw_reg_indices(vcpu, uindices);
--	if (ret)
-+	if (ret < 0)
- 		return ret;
- 	uindices += kvm_arm_get_fw_num_regs(vcpu);
+ static inline unsigned int __bit_to_vq(unsigned int bit)
+ {
+-	if (WARN_ON(bit >= SVE_VQ_MAX))
+-		bit = SVE_VQ_MAX - 1;
+-
+ 	return SVE_VQ_MAX - bit;
+ }
  
- 	ret = copy_timer_indices(vcpu, uindices);
--	if (ret)
-+	if (ret < 0)
- 		return ret;
- 	uindices += NUM_TIMER_REGS;
+diff --git a/arch/arm64/kernel/fpsimd.c b/arch/arm64/kernel/fpsimd.c
+index 577296bba730..56afa40263d9 100644
+--- a/arch/arm64/kernel/fpsimd.c
++++ b/arch/arm64/kernel/fpsimd.c
+@@ -135,10 +135,15 @@ static int sve_default_vl = -1;
+ /* Maximum supported vector length across all CPUs (initially poisoned) */
+ int __ro_after_init sve_max_vl = SVE_VL_MIN;
+ int __ro_after_init sve_max_virtualisable_vl = SVE_VL_MIN;
+-/* Set of available vector lengths, as vq_to_bit(vq): */
++
++/*
++ * Set of available vector lengths,
++ * where length vq encoded as bit __vq_to_bit(vq):
++ */
+ __ro_after_init DECLARE_BITMAP(sve_vq_map, SVE_VQ_MAX);
+ /* Set of vector lengths present on at least one cpu: */
+ static __ro_after_init DECLARE_BITMAP(sve_vq_partial_map, SVE_VQ_MAX);
++
+ static void __percpu *efi_sve_state;
  
+ #else /* ! CONFIG_ARM64_SVE */
 -- 
 2.20.1
 
