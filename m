@@ -2,81 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 999C913387
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 20:14:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C9121339A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 20:26:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Ucw6CRdwR+VEfTIN6yMZ3InEvK2JIKhP0FcN+hSZeyc=; b=DsQ3k2mMt2n6nL
-	Cq2wCfuVTY5yUr3BMyVeW1Il3VCYbeWDN2jf5bvZjCb+WMXSPdl/KFop+BTkcJZkd59kdrdC8RQ1A
-	CJ5jl4ESGTH9g4hZJA+QnEokmuOsFMc92bT/COVazYWwPkCOTLBCa4qjk52FNu1Q6bTYTx+XmUmA+
-	mpf1P14qxWigA9ZoAHzd/ZSUEsm0CHxN3Z8HRSf22l+Gnc5KuIrdrRbfXNqAxFr8YXgZ45V4AC1VV
-	pkDP4j7nmfwu0136GdL8Sj99Hu+QfZ44UF/ESgo1nm+Nomsc8WBDFPbfwvYmrko8AtpDXV/rbXuN7
-	YshWJkt90W19OlYRR/uQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0GcinMUvr60Ujv5zFiTdxGhlkDRNqOw4//eNNLfG0js=; b=gy9BTAZ6755kX7
+	QvN8/Godq+68KGLd1cy6XJqDdo4sTUkrI6oFOyondN2/apsXDeXgJrZ0KximPTXMjSngw4CI/4v6N
+	JSbhabBMugpyg05KBh3qaEPFGprpr5eQI5OzkGdGquEBuk9JGen1DZtOATyHG8+CGJUyCJMx8/W66
+	4jQIHdB09yXlxLNNOkM/fsMGhHRKL1jz8F+w/F76QgXdfMlLDjrZ3+T8DvECsUnQDqBEqFzkxai1P
+	rMS9qCQ1tHRbdQ7UDEUAvleh/y6K3ygAVgBqR2pZQUGsIPeAu6A0qDNVSaREJmT7O91goo27zpVVX
+	FuWsGosK1g21SRPfehRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMch9-0007OC-27; Fri, 03 May 2019 18:14:03 +0000
-Received: from mx0b-00082601.pphosted.com ([67.231.153.30])
+	id 1hMctX-0003nA-Rh; Fri, 03 May 2019 18:26:51 +0000
+Received: from mail-it1-x141.google.com ([2607:f8b0:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMch1-0007Nm-Ax
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 18:13:56 +0000
-Received: from pps.filterd (m0148460.ppops.net [127.0.0.1])
- by mx0a-00082601.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x43I3VX1019040
- for <linux-arm-kernel@lists.infradead.org>; Fri, 3 May 2019 11:13:54 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fb.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=facebook;
- bh=883wCebAN1KM2oekjLpbnb88YeeO9l8mZlAi2lYfxLU=;
- b=MjbnO6Ez7XPNNhUZqp2S309sB4RiGFOdNfsdxcyc1Am6gQk6Vg+D40RUXeD2+W2sIezl
- Yqfx3FuHKfQN9tsUbotv915Suc1+FamF5n2s4vmXVDAm5yegPPG0CZjhmWt8VRUEsshe
- 0c9mVqrnkSLAPdfye+iNUZwmLTGsh+Ff4B4= 
-Received: from maileast.thefacebook.com ([163.114.130.16])
- by mx0a-00082601.pphosted.com with ESMTP id 2s8sbu89tn-2
- (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Fri, 03 May 2019 11:13:54 -0700
-Received: from mx-out.facebook.com (2620:10d:c0a8:1b::d) by
- mail.thefacebook.com (2620:10d:c0a8:83::6) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Fri, 3 May 2019 11:13:53 -0700
-Received: by devvm4117.prn2.facebook.com (Postfix, from userid 167582)
- id E48EFD713BB5; Fri,  3 May 2019 11:13:51 -0700 (PDT)
-Smtp-Origin-Hostprefix: devvm
-From: Vijay Khemka <vijaykhemka@fb.com>
-Smtp-Origin-Hostname: devvm4117.prn2.facebook.com
-To: Arnd Bergmann <arnd@arndb.de>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Joel Stanley <joel@jms.id.au>, Andrew Jeffery
- <andrew@aj.id.au>, <linux-arm-kernel@lists.infradead.org>,
- <linux-aspeed@lists.ozlabs.org>, <linux-kernel@vger.kernel.org>
-Smtp-Origin-Cluster: prn2c23
-Subject: [PATCH v2] misc: aspeed-lpc-ctrl: Correct return values
-Date: Fri, 3 May 2019 11:13:36 -0700
-Message-ID: <20190503181336.579877-1-vijaykhemka@fb.com>
-X-Mailer: git-send-email 2.17.1
-X-FB-Internal: Safe
+ id 1hMctR-0003mK-63
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 18:26:46 +0000
+Received: by mail-it1-x141.google.com with SMTP id i131so10671422itf.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 03 May 2019 11:26:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
+ h=date:from:to:cc:subject:in-reply-to:message-id:references
+ :user-agent:mime-version;
+ bh=m5kmd11ubDHH1HewU/387yrI6xXuVNir/39BbjOjwYQ=;
+ b=jukmNt5KJt5IuJ7udL/j3gODOUg+hDKAhLZ/bhshiuVm8TFhtuqHsjqr9UwmrO2f8S
+ NXiE/RTnH1LeUr/VBZzzKtfRvJbnLT3deZsEBpHUzpFDfMOv0Ve/DO412v0GieRxwz1P
+ Fv9/RBBd1laXGJXW5afroutKYrM1WY8Bad6VuQqTVsdXHUFYeTSGc01yqJThZV62BBaC
+ v90W2uPZqeJpJLhNe6x5lN7X0OJ0UbP31LHSDY3K51aylYmjPaJsQjqNeenJucTBPqP/
+ rw+upvm12bVtk4/jbyThssVqPeHGGXty4x+CI1kCILYsN9A/DgiSlsQXFgGMEEgFl5F3
+ ahSg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
+ :references:user-agent:mime-version;
+ bh=m5kmd11ubDHH1HewU/387yrI6xXuVNir/39BbjOjwYQ=;
+ b=sYSq4a5yMYEZSBL/TiT9ACvB7OXXWp54h5MZL1lOMP8qCwkyuHuJ8zTM8hsaEGdjPR
+ 0mXRaIEYVEYtS6EFID7oEKAAaeu1DHPIv0ZvkCTk7UnWZDylBJRUUxFuASTOFku0+X0m
+ MXrDd2XfbNqN5wLWUojJx4Abpadl5E0mhzU59ZuFMx5mYvAJPsphMIpFmykfTtWCCRHY
+ g2ttNJZ4lR4otQGSYdEQu6m7Uw3NiPrsgQjIJqahOX598MFWSTo+b7QxeiNrI+BgOYog
+ rQrW25+LG1fbOSQ6WUCiUAQx6IFt5hSa6Y1vKLMWiiuCSNGOprUqUXY8MeK9sJT4N52K
+ iIbg==
+X-Gm-Message-State: APjAAAU4t2ne9Bhw6nZkSw2X2uqJXvSDZV1fQn+A9XPYgrPIXkfF/0oc
+ bDAXIFhhtsl61mZRwb9+KKkiHw==
+X-Google-Smtp-Source: APXvYqyda5mEqX/Cfym5qPzwkj3KHnAba0EJj2kf5Vz5txRvRPkKjQ3i0kz6PY3yy3JhzOu/n9odjA==
+X-Received: by 2002:a02:cb4e:: with SMTP id k14mr8487413jap.20.1556908001869; 
+ Fri, 03 May 2019 11:26:41 -0700 (PDT)
+Received: from localhost (74-95-18-198-Albuquerque.hfc.comcastbusiness.net.
+ [74.95.18.198])
+ by smtp.gmail.com with ESMTPSA id 7sm1040675iog.26.2019.05.03.11.26.40
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 03 May 2019 11:26:41 -0700 (PDT)
+Date: Fri, 3 May 2019 11:26:40 -0700 (PDT)
+From: Paul Walmsley <paul.walmsley@sifive.com>
+X-X-Sender: paulw@viisi.sifive.com
+To: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [clk:clk-sifive-fu540 3/3]
+ drivers/clk/sifive/fu540-prci.c:534:41-42: WARNING: Use ARRAY_SIZE
+In-Reply-To: <155689947835.200842.14950816155129185642@swboyd.mtv.corp.google.com>
+Message-ID: <alpine.DEB.2.21.9999.1905031126040.4777@viisi.sifive.com>
+References: <201905031619.nJ5l01Tg%lkp@intel.com>
+ <155689947835.200842.14950816155129185642@swboyd.mtv.corp.google.com>
+User-Agent: Alpine 2.21.9999 (DEB 301 2018-08-15)
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-03_11:, , signatures=0
-X-Proofpoint-Spam-Details: rule=fb_default_notspam policy=fb_default score=0
- priorityscore=1501
- malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1810050000 definitions=main-1905030118
-X-FB-Internal: deliver
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_111355_504706_37B6A4FF 
-X-CRM114-Status: GOOD (  13.51  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190503_112645_262174_0CD98778 
+X-CRM114-Status: GOOD (  11.86  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [67.231.153.30 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -85,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -97,68 +99,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sdasari@fb.com, vijaykhemka@fb.com
+Cc: kbuild-all@01.org, linux-clk@vger.kernel.org,
+ kbuild test robot <lkp@intel.com>, linux-arm-kernel@lists.infradead.org,
+ Paul Walmsley <paul.walmsley@sifive.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Corrected some of return values with appropriate meanings and reported
-relevant messages as debug information.
+On Fri, 3 May 2019, Stephen Boyd wrote:
 
-Signed-off-by: Vijay Khemka <vijaykhemka@fb.com>
----
- drivers/misc/aspeed-lpc-ctrl.c | 14 +++++++-------
- 1 file changed, 7 insertions(+), 7 deletions(-)
+> Quoting kbuild test robot (2019-05-03 01:21:21)
+> > tree:   https://git.kernel.org/pub/scm/linux/kernel/git/clk/linux.git clk-sifive-fu540
+> > head:   85ed1c299cca9beb5df6006361cf18bfa2305836
+> > commit: 85ed1c299cca9beb5df6006361cf18bfa2305836 [3/3] clk: sifive: add a driver for the SiFive FU540 PRCI IP block
+> > 
+> > If you fix the issue, kindly add following tag
+> > Reported-by: kbuild test robot <lkp@intel.com>
+> > 
+> > 
+> > coccinelle warnings: (new ones prefixed by >>)
+> > 
+> > >> drivers/clk/sifive/fu540-prci.c:534:41-42: WARNING: Use ARRAY_SIZE
+> 
+> I had a review comment about this on the previous version... I'll go fix
+> it myself.
 
-diff --git a/drivers/misc/aspeed-lpc-ctrl.c b/drivers/misc/aspeed-lpc-ctrl.c
-index 332210e06e98..aca13779764a 100644
---- a/drivers/misc/aspeed-lpc-ctrl.c
-+++ b/drivers/misc/aspeed-lpc-ctrl.c
-@@ -93,8 +93,8 @@ static long aspeed_lpc_ctrl_ioctl(struct file *file, unsigned int cmd,
- 
- 		/* If memory-region is not described in device tree */
- 		if (!lpc_ctrl->mem_size) {
--			dev_err(dev, "Didn't find reserved memory\n");
--			return -EINVAL;
-+			dev_dbg(dev, "Didn't find reserved memory\n");
-+			return -ENXIO;
- 		}
- 
- 		map.size = lpc_ctrl->mem_size;
-@@ -134,16 +134,16 @@ static long aspeed_lpc_ctrl_ioctl(struct file *file, unsigned int cmd,
- 
- 		if (map.window_type == ASPEED_LPC_CTRL_WINDOW_FLASH) {
- 			if (!lpc_ctrl->pnor_size) {
--				dev_err(dev, "Didn't find host pnor flash\n");
--				return -EINVAL;
-+				dev_dbg(dev, "Didn't find host pnor flash\n");
-+				return -ENXIO;
- 			}
- 			addr = lpc_ctrl->pnor_base;
- 			size = lpc_ctrl->pnor_size;
- 		} else if (map.window_type == ASPEED_LPC_CTRL_WINDOW_MEMORY) {
- 			/* If memory-region is not described in device tree */
- 			if (!lpc_ctrl->mem_size) {
--				dev_err(dev, "Didn't find reserved memory\n");
--				return -EINVAL;
-+				dev_dbg(dev, "Didn't find reserved memory\n");
-+				return -ENXIO;
- 			}
- 			addr = lpc_ctrl->mem_base;
- 			size = lpc_ctrl->mem_size;
-@@ -239,7 +239,7 @@ static int aspeed_lpc_ctrl_probe(struct platform_device *pdev)
- 		of_node_put(node);
- 		if (rc) {
- 			dev_err(dev, "Couldn't address to resource for reserved memory\n");
--			return -ENOMEM;
-+			return -ENXIO;
- 		}
- 
- 		lpc_ctrl->mem_size = resource_size(&resm);
--- 
-2.17.1
+Thanks; I had intended to make that change.  Sorry about that,
 
+- Paul
 
 _______________________________________________
 linux-arm-kernel mailing list
