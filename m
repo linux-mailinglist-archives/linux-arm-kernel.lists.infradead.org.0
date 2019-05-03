@@ -2,79 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3737412726
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 07:31:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62CB512728
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 07:32:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=SKwVJ1rZKwY3NqdC9Zf/iNVMu63lXayV3LEXy+r0ERw=; b=Bdurf/X6iYUhXZ
-	106804Nog98RORnrFRmoba/TbGcFzAC6Bj3gH1BR60GanPK1rWU0fGloOoIIXZKfybRDmrKx+4IAc
-	TgTJrYFL8B8BokhS4CoZwAVZsVKSit9WwGsndQWrNm28jLHDSzE5ppZVOd6SzjpRUe+H0Zw7r4f7U
-	Bjg06+KvydUKMCqv3aTbEbS7KWTdphcrgx+rBKnHAZrot4TbLbOU56J+a7gjYm1vsYao4Dirsfyp/
-	AfpOENAZmLm5+sAfoDHNMMe57oqm5VWeqm2N7p1AqUiyoPlvCdfPwkNhP1acmL4NwG1iFXAVzaFmg
-	gYkM9rdKlBjKbSzspZ9g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=8CzsAi3GN1KPGPHKwi5OvyiDg1EEX4C/QPxfAwx4ZEs=; b=IvO09U2UTws3AfROejVXU1gWlA
+	edV1InqN24GUosuDfgcu6PG+A+hNaQSuRAcWcX1A+SUY1dNxaCvK8B37r0Cx2+RoIuJCXKsKagJXO
+	mzvcJoorPJTW50oWDiyPb9csEn/Hif/Lpnko6MRJKwGca/LLi4boUDXnbKkuLSR9IMP4BGXh4XiE+
+	HDx+kqYRT/5drhXNNPXOp1h5KTDP5DvIHOOhBgePqaPOk8/fibBZpx3ZcRIxd5cP6mzvnlyQWx4gU
+	lLLjPqN/L8PhpOtVmzNWiXIATCOARiTM/AjwBsV029eDykYZEcKSz3PpuakzEgRYsW6jYNYwc3awC
+	fepcS8yA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMQnT-0001ro-OF; Fri, 03 May 2019 05:31:47 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hMQne-0001yZ-G2; Fri, 03 May 2019 05:31:58 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMQnM-0001qw-6k
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 05:31:41 +0000
-Received: by mail-pg1-x541.google.com with SMTP id t22so2159465pgi.10
+ id 1hMQnQ-0001rm-Kj
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 05:31:46 +0000
+Received: by mail-pl1-x641.google.com with SMTP id b3so2148612plr.7
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 02 May 2019 22:31:37 -0700 (PDT)
+ Thu, 02 May 2019 22:31:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=vbA+h1SWOeC+A9lxbgQ9nyiTDR7RZSnCD5SEiXc6Chc=;
- b=Lnij2FPqvmSvFcPoNxUkNY/JS83WNPIYA/lZMituG08241YitIDNyfyYAsIOyD2Vh7
- mPJcAWqwUWvDcuiJDnes/xhUyrREUUDjtGk72y8FQISb0WqkF/rLk2Y5TsKzoEM1vnpc
- t78JV1qjKZGg6Bg4HyO2Q+i76zrgSDWvXioq5M5V33GczeXpvgZQjQFnqx3Mlct7t1Tn
- CpexQ+3yESDh8pR647ZS71i1ozQR7ZdPGPXXXGF6WoreVf5pNozrPzsHYgBwzR9Vd17M
- e4+0EOPKodzzCLmTEltxUcckAVPtISrrtbLDxDNUCw3BTjZTOFiqLj7nJUFHyOeL/Ezt
- xztg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=J11CAk6hX0rsSVl1UifJnPX7sfZSPwS6EsqX4Zx/yUk=;
+ b=NfAt7TlYBcZ8Q5tKMBk2voI//3YAMOFFa7XGfmx+BhWuhARWaZjbkWNGgkq9G8p6UQ
+ u0kiZStj8L0+SyBOGy3uMShfifPODyzMtk+t0I0LcDIiIW4UXtcLPVwXqiCOBfbUBDN1
+ DuJoN7p2DjMbLUQ+g4HA58dJMuV8nO8WA34spCrn5Jcn+GqoVLgeo9+puGtORnzSkcJa
+ GcRLRyHdBo6S3wWoYkjQD8Rd492P8MiWkAks7X9+zQ9oIYpCJw/NU15eDjVMv3Sv7faQ
+ caiD+zPX7x+gleUDKJDKnsowuokZ5sLwLv9U0HGkcAZSf2ZI0yLO/so4RPHklq3EbkKc
+ OXiw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=vbA+h1SWOeC+A9lxbgQ9nyiTDR7RZSnCD5SEiXc6Chc=;
- b=R2xztKy06vjIebIw/PQRu7+eHHk39MR448434FRsqCNAxO1AHMCmfroZBTgANC/nF0
- NfpsQ4cBI8xjjdDLpc6EjPBS/Hb9tZ6VmyPWpDzs4atr0wdsY60iE36Fhp7POpkTV39v
- txxn40O23tHcVPccvOUBjQ/9UjfMf8ODEx24pZvd4EEwx7hnnAfAe6G8DDqwW7w1uTcm
- 7/JjA6sNHmJPaUw/+fa9ZTziWBQC7p2Sqym03Nf5Ih0P0pBX8EL2jfMFE/DxhJCfmybD
- 9Q5aZgN3zkleg3ECZ34CgpBgdY6mOhKGJnRRakZ7q2eBPpDNLp/uYSW8dF1z2SQoU/UP
- pO7w==
-X-Gm-Message-State: APjAAAXIOOG5s3eOXHTe7tPOHs3x2Xz6LFEUY/clL3WtsXObKC24MbCY
- oQo2xw9zKiJ5MyTDPYaV4o9b
-X-Google-Smtp-Source: APXvYqwdnJ1wGysGVAJNxsji+b4A9Fu8qkeqQd4DxFfJGQBIFlAwwOQZoni5fRsBgxCIpFPuLIDZLg==
-X-Received: by 2002:a65:5246:: with SMTP id q6mr8137656pgp.296.1556861496796; 
- Thu, 02 May 2019 22:31:36 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=J11CAk6hX0rsSVl1UifJnPX7sfZSPwS6EsqX4Zx/yUk=;
+ b=lDNsUO9nlmQBeT/dXncv+Doa1UldSo6D385svxcK2KZW9CyK1issi2dkD/zmuI7/d8
+ lcGk6XNcQ9kajwozD7FLgRut9ghhq4mPbEf3fq6lmZyRJ8pH/MYSyvcIjISobKhxJ8iW
+ fv/SRFS69+hjuXvjRSmr68hrgWMaaVxXX+Ixyy+QpH27amik3oR6FwPQiaYQOSHyQAtE
+ Ni2zwzXgZbEqjc8v2k4FyIkru6uHKkuJmu8IIlhGWxcUo8/4slm2HzbwCRqsgK+3xj/H
+ c1kQU+bzBAkB9O//JauULhzHwn7iKs4/G0ly1QNPpKW73XW6GbGATNwpJFfVHLl+T/sb
+ ZGmQ==
+X-Gm-Message-State: APjAAAXobuPWx7N5G/n+F7hCjXWYVdm+lJ09/5VVoYQ9nvOp8wazoizm
+ A1Dii4dOxgMFQ1Z6mJhYGSYd
+X-Google-Smtp-Source: APXvYqx/FVvHZEajj3S63ojtZ+4apc82r5QUp3f7agjtxwzWnPlXgrRA0LNj6Lde8RF6sZUQ+Nn1Uw==
+X-Received: by 2002:a17:902:e283:: with SMTP id
+ cf3mr8159182plb.160.1556861502960; 
+ Thu, 02 May 2019 22:31:42 -0700 (PDT)
 Received: from localhost.localdomain ([2405:204:72c7:3835:31df:f367:f70b:ed86])
- by smtp.gmail.com with ESMTPSA id l15sm1152226pgb.71.2019.05.02.22.31.30
+ by smtp.gmail.com with ESMTPSA id l15sm1152226pgb.71.2019.05.02.22.31.37
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 02 May 2019 22:31:36 -0700 (PDT)
+ Thu, 02 May 2019 22:31:42 -0700 (PDT)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: mcoquelin.stm32@gmail.com,
 	alexandre.torgue@st.com,
 	robh+dt@kernel.org
-Subject: [PATCH 0/3] Add Avenger96 board support
-Date: Fri,  3 May 2019 11:01:20 +0530
-Message-Id: <20190503053123.6828-1-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH 1/3] dt-bindings: arm: stm32: Document Avenger96 devicetree
+ binding
+Date: Fri,  3 May 2019 11:01:21 +0530
+Message-Id: <20190503053123.6828-2-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.17.1
-MIME-Version: 1.0
+In-Reply-To: <20190503053123.6828-1-manivannan.sadhasivam@linaro.org>
+References: <20190503053123.6828-1-manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_223140_271180_DCBFD5DC 
-X-CRM114-Status: GOOD (  10.51  )
+X-CRM114-CacheID: sfid-20190502_223144_726277_7D7C57AB 
+X-CRM114-Status: UNSURE (   9.56  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -99,35 +103,38 @@ Cc: devicetree@vger.kernel.org, loic.pallardy@st.com,
  linux-kernel@vger.kernel.org,
  Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
  linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGVsbG8sCgpUaGlzIHBhdGNoc2V0IGFkZHMgQXZlbmdlcjk2IGJvYXJkIHN1cHBvcnQuIFRoaXMg
-Ym9hcmQgaXMgb25lIG9mIHRoZQpDb25zdW1lciBFZGl0aW9uIGJvYXJkcyBvZiB0aGUgOTZCb2Fy
-ZHMgZmFtaWx5IGZyb20gQXJyb3cgRWxlY3Ryb25pY3MKZmVhdHVyaW5nIFNUTTMyTVAxNTdBIE1Q
-VSBhbmQgaGFzIHRoZSBmb2xsb3dpbmcgZmVhdHVyZXM6CiAgICAKU29DOiBTVE0zMk1QMTU3QUFD
-ClBNSUM6IFNUUE1JQzFBClJBTTogMTAyNCBNYnl0ZSBAIDUzM01IegpTdG9yYWdlOiBlTU1DIHY0
-LjUxOiA4IEdieXRlCiAgICAgICAgIG1pY3JvU0QgU29ja2V0OiBVSFMtMSB2My4wMQpFdGhlcm5l
-dCBQb3J0OiAxMC8xMDAvMTAwMCBNYml0L3MsIElFRUUgODAyLjMgQ29tcGxpYW50CldpcmVsZXNz
-OiBXaUZpIDUgR0h6ICYgMi40R0h6IElFRUUgODAyLjExYS9iL2cvbi9hYwogICAgICAgICAgQmx1
-ZXRvb3Rowq52NC4yIChCUi9FRFIvQkxFKQpVU0I6IDJ4IFR5cGUgQSAoVVNCIDIuMCkgSG9zdCBh
-bmQgMXggTWljcm8gQiAoVVNCIDIuMCkgT1RHCkRpc3BsYXk6IEhETUk6IFdYR0EgKDEzNjZ4NzY4
-KUAgNjAgZnBzLCBIRE1JIDEuNApMRUQ6IDR4IFVzZXIgTEVELCAxeCBXaUZpIExFRCwgMXggQlQg
-TEVECgpNb3JlIGluZm9ybWF0aW9uIGFib3V0IHRoaXMgYm9hcmQgY2FuIGJlIGZvdW5kIGluIDk2
-Qm9hcmRzIHdlYnNpdGU6Cmh0dHBzOi8vd3d3Ljk2Ym9hcmRzLm9yZy9wcm9kdWN0L2F2ZW5nZXI5
-Ni8KClRoYW5rcywKTWFuaQoKTWFuaXZhbm5hbiBTYWRoYXNpdmFtICgzKToKICBkdC1iaW5kaW5n
-czogYXJtOiBzdG0zMjogRG9jdW1lbnQgQXZlbmdlcjk2IGRldmljZXRyZWUgYmluZGluZwogIEFS
-TTogZHRzOiBzdG0zMm1wMTU3OiBBZGQgbWlzc2luZyBwaW5jdHJsIGRlZmluaXRpb25zCiAgQVJN
-OiBkdHM6IEFkZCBBdmVuZ2VyOTYgZGV2aWNldHJlZSBzdXBwb3J0IGJhc2VkIG9uIFNUTTMyTVAx
-NTdBCgogLi4uL2RldmljZXRyZWUvYmluZGluZ3MvYXJtL3N0bTMyL3N0bTMyLnR4dCAgIHwgICA2
-ICsKIGFyY2gvYXJtL2Jvb3QvZHRzL01ha2VmaWxlICAgICAgICAgICAgICAgICAgICB8ICAgMSAr
-CiBhcmNoL2FybS9ib290L2R0cy9zdG0zMm1wMTU3LXBpbmN0cmwuZHRzaSAgICAgfCAgNjIgKysr
-KwogYXJjaC9hcm0vYm9vdC9kdHMvc3RtMzJtcDE1N2EtYXZlbmdlcjk2LmR0cyAgIHwgMzIwICsr
-KysrKysrKysrKysrKysrKwogNCBmaWxlcyBjaGFuZ2VkLCAzODkgaW5zZXJ0aW9ucygrKQogY3Jl
-YXRlIG1vZGUgMTAwNjQ0IGFyY2gvYXJtL2Jvb3QvZHRzL3N0bTMybXAxNTdhLWF2ZW5nZXI5Ni5k
-dHMKCi0tIAoyLjE3LjEKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
-c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Document devicetree binding for Avenger96 board.
+
+Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+---
+ Documentation/devicetree/bindings/arm/stm32/stm32.txt | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/arm/stm32/stm32.txt b/Documentation/devicetree/bindings/arm/stm32/stm32.txt
+index 6808ed9ddfd5..eba363a4b514 100644
+--- a/Documentation/devicetree/bindings/arm/stm32/stm32.txt
++++ b/Documentation/devicetree/bindings/arm/stm32/stm32.txt
+@@ -8,3 +8,9 @@ using one of the following compatible strings:
+   st,stm32f746
+   st,stm32h743
+   st,stm32mp157
++
++Boards:
++
++Root node property compatible must contain one of below depending on board:
++
++ - Avenger96: "arrow,stm32mp157a-avenger96"
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
