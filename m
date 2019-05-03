@@ -2,91 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7F04128DB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 09:29:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65E8112911
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 09:49:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=j1agit8eR0KtIjgR0tnsp4S20oYOLYU16x7b2xGl9IE=; b=DGSVyu6fePidWY8uk6EiLpl52J
-	5mgbBfrDGSclIgMtetMP1JIQ47jEZ7kG6jbHFjQrXd05wMkoJ0mONnU8ZT9rH3NCXsKJ1iQj10Ywa
-	jtO4fNslV7GceJ0Y0Zdk/yHZzTujF42b6G7vuN3KbGSiaf9YicIM/jNVygaoocmW4PqA0kfYN7CI1
-	0k7ShuWdKa3Z7wHYw5hBJ1DleRtG/a0oxalmFr+lSOaNWnGWOJml+Jz2BSsZ+Ld9NnNZUtWy2KAfk
-	FeuG4oaKCoAt5zPQMwU3D/dHSozem0caIYTC7skzukgs4QoJkBFQFfxA4mtqzlLVEinZrN4wMt6z6
-	eTVKUxpg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YMRUxXe1YoaSQOiBr1zts8MyFJlEgDYgnegYzXmm9+U=; b=ceKQ0j7802ciIh
+	Sw3UYuz7+AgeRWO5OQfvEwvj3mQhlgXhagcmNf72zzAEnrQ85YVsOJv1SLjkkXSFK70XEWWYLtndz
+	UH3hNTKNQpD79AicOP0W5dZu/1mv+I7CJdUvg5JjVeep+4h0Obl3/9DFRXSXTZAYVN1FRZzxQb2xC
+	8Lj/ua29GTZBKZDG7Hq87BQ9vqh0IvRfFLSOZopKnKRTzjYH79ptfFzppMmuMiGMJjXUXwf8yCCNu
+	DxwopQaAdJCVBOsCiUOWhi5wLWJv/JXkOB9XkjEoCa28fRVqoN8R108YKJt6jXN6RrISxXO3uI3U7
+	jRwO4Zx2pEKw1d2zScgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMSdg-00080v-N4; Fri, 03 May 2019 07:29:48 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1hMSwY-00060b-6Y; Fri, 03 May 2019 07:49:18 +0000
+Received: from mail2-relais-roc.national.inria.fr ([192.134.164.83])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMScb-0006j0-I9
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 07:28:56 +0000
-Received: by mail-pg1-x544.google.com with SMTP id f6so2304496pgs.8
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 03 May 2019 00:28:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=iV91r0hSgx47A83AU5LfJSSAdebNF8xkPCOvty2B81w=;
- b=f0kMsjpx0hReZbqS9A/IXDD04OeHrLmjwND+PaKZnv0lNFwIvz1+8f/D0fcaBpcjIr
- 3THia+s7KlQAPC75y6kfAM5tFbhKhcK34VvYtG4SXXajH/prr3rBdObYEUimYeMrLHAM
- W9stvHHEUJWhi/4TWXlJBqWsT9hZSZP2hS/A+mhwG5KMLY0Nh0oFW2fr+lFayywX4In0
- iEQuIFu8AXL/SFXCBXSjZJiu/68s0Vcvab2mgf6lLgypQd+wNuiqu6e7aGeAz40vry7K
- 0QXiQC5eQDPBGYe90V+j2Vs6Ek4/nQiUNNjl0nkv+uApUE6juP602HM41dGAu2IDWZsd
- 3cWA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=iV91r0hSgx47A83AU5LfJSSAdebNF8xkPCOvty2B81w=;
- b=afm8qIKadxtLE0vPHZ0vdp60FQw8VEAS2J/pv/ert9DlvrB3mJvNUih2xcWyZIM4Kc
- DE56bZ1iJMH5Z+j4TwZy5UzCXHcd65dUiuGdRHB8w19UoIfDjvQ2SRs/8B6AEzAuidGU
- w3l6TDgyvtDbKiondTpxRmJw/W4HQbxPRotapX1aO62u2HCT430HzJNCcfKHLSR8bGKJ
- c8CT2s1LIMtJ1MaSwhOQb5tT+rBswXABKqEd9H/eFGf8W3IerKHw7Qn1s32eZDXB+SR8
- jXMI5NtbGQRKaPt20pFLgbbEkXdx7ThtM4LJGTyp81REKlTMLEsHcw8SoOYP8WU4uFWq
- w90Q==
-X-Gm-Message-State: APjAAAXClqWTeIdJz2EudXAR9qcP+GiDJnz3qqteC7twxs1HecPUcvMT
- I/UTQI7BsHrz+FmFVua0Krc=
-X-Google-Smtp-Source: APXvYqx3mHSYhYaU9e7dYSrcNlJV0QAsUNqmUsZfT1vnGpilYcYIfUsnBG2kbbtSGDGI8szlCy5aNg==
-X-Received: by 2002:a63:534f:: with SMTP id t15mr8595106pgl.445.1556868521022; 
- Fri, 03 May 2019 00:28:41 -0700 (PDT)
-Received: from localhost (68.168.130.77.16clouds.com. [68.168.130.77])
- by smtp.gmail.com with ESMTPSA id c18sm2318243pfc.0.2019.05.03.00.28.40
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 03 May 2019 00:28:40 -0700 (PDT)
-From: Yangtao Li <tiny.windzz@gmail.com>
-To: lee.jones@linaro.org, robh+dt@kernel.org, mark.rutland@arm.com,
- maxime.ripard@bootlin.com, wens@csie.org, jic23@kernel.org,
- knaack.h@gmx.de, lars@metafoo.de, pmeerw@pmeerw.net
-Subject: [PATCH 7/7] iio: adc: sun4i-gpadc-iio convert to SPDX license tags
-Date: Fri,  3 May 2019 03:28:13 -0400
-Message-Id: <20190503072813.2719-8-tiny.windzz@gmail.com>
-X-Mailer: git-send-email 2.17.0
-In-Reply-To: <20190503072813.2719-1-tiny.windzz@gmail.com>
-References: <20190503072813.2719-1-tiny.windzz@gmail.com>
+ id 1hMSwQ-0005zk-Tw
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 07:49:13 +0000
+X-IronPort-AV: E=Sophos;i="5.60,424,1549926000"; d="scan'208";a="381465281"
+Received: from vaio-julia.rsr.lip6.fr ([132.227.76.33])
+ by mail2-relais-roc.national.inria.fr with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 03 May 2019 09:38:15 +0200
+Date: Fri, 3 May 2019 09:38:12 +0200 (CEST)
+From: Julia Lawall <julia.lawall@lip6.fr>
+X-X-Sender: jll@hadrien
+To: Stephen Boyd <sboyd@kernel.org>
+Subject: [clk:clk-parent-rewrite 18/78] drivers/clk/clk.c:371:11-16: WARNING:
+ Unsigned expression compared with zero: index >= 0 (fwd)
+Message-ID: <alpine.DEB.2.20.1905030937270.3572@hadrien>
+User-Agent: Alpine 2.20 (DEB 67 2015-01-07)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_002842_352503_D8083B34 
-X-CRM114-Status: GOOD (  11.52  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190503_004911_248279_A5D229FA 
+X-CRM114-Status: GOOD (  15.57  )
+X-Spam-Score: -4.3 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-4.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tiny.windzz[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.134.164.83 listed in list.dnswl.org]
+ 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -98,42 +58,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-iio@vger.kernel.org, devicetree@vger.kernel.org,
- Yangtao Li <tiny.windzz@gmail.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ kbuild-all@01.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Updates license to use SPDX-License-Identifier.
+On line 371, index is unsigned, so it is always >= 0.
 
-Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+julia
+
+---------- Forwarded message ----------
+Date: Fri, 3 May 2019 15:30:37 +0800
+From: kbuild test robot <lkp@intel.com>
+To: kbuild@01.org
+Cc: Julia Lawall <julia.lawall@lip6.fr>
+Subject: [clk:clk-parent-rewrite 18/78] drivers/clk/clk.c:371:11-16: WARNING:
+    Unsigned expression compared with zero: index >= 0
+
+CC: kbuild-all@01.org
+CC: linux-clk@vger.kernel.org
+CC: linux-arm-kernel@lists.infradead.org
+TO: Stephen Boyd <sboyd@kernel.org>
+
+tree:   https://git.kernel.org/pub/scm/linux/kernel/git/clk/linux.git clk-parent-rewrite
+head:   f5e93ab2421d0dd27acac9159d9c4834cd5705e7
+commit: 9fd6fd58989e06bc5fe92f5aef85a64f63340ab1 [18/78] clk: Cache core in clk_fetch_parent_index() without names
+:::::: branch date: 12 hours ago
+:::::: commit date: 34 hours ago
+
+If you fix the issue, kindly add following tag
+Reported-by: kbuild test robot <lkp@intel.com>
+Reported-by: Julia Lawall <julia.lawall@lip6.fr>
+
+>> drivers/clk/clk.c:371:11-16: WARNING: Unsigned expression compared with zero: index >= 0
+
+# https://git.kernel.org/pub/scm/linux/kernel/git/clk/linux.git/commit/?id=9fd6fd58989e06bc5fe92f5aef85a64f63340ab1
+git remote add clk https://git.kernel.org/pub/scm/linux/kernel/git/clk/linux.git
+git remote update clk
+git checkout 9fd6fd58989e06bc5fe92f5aef85a64f63340ab1
+vim +371 drivers/clk/clk.c
+
+bddca894 Prashant Gaikwad 2012-12-26  326
+fc0c209c Stephen Boyd     2019-04-12  327  /**
+dde4eff4 Stephen Boyd     2019-04-12  328   * clk_core_get - Find the clk_core parent of a clk
+fc0c209c Stephen Boyd     2019-04-12  329   * @core: clk to find parent of
+9fd6fd58 Stephen Boyd     2019-04-30  330   * @p_index: parent index to search for
+fc0c209c Stephen Boyd     2019-04-12  331   *
+fc0c209c Stephen Boyd     2019-04-12  332   * This is the preferred method for clk providers to find the parent of a
+fc0c209c Stephen Boyd     2019-04-12  333   * clk when that parent is external to the clk controller. The parent_names
+fc0c209c Stephen Boyd     2019-04-12  334   * array is indexed and treated as a local name matching a string in the device
+dde4eff4 Stephen Boyd     2019-04-12  335   * node's 'clock-names' property or as the 'con_id' matching the device's
+dde4eff4 Stephen Boyd     2019-04-12  336   * dev_name() in a clk_lookup. This allows clk providers to use their own
+fc0c209c Stephen Boyd     2019-04-12  337   * namespace instead of looking for a globally unique parent string.
+fc0c209c Stephen Boyd     2019-04-12  338   *
+fc0c209c Stephen Boyd     2019-04-12  339   * For example the following DT snippet would allow a clock registered by the
+fc0c209c Stephen Boyd     2019-04-12  340   * clock-controller@c001 that has a clk_init_data::parent_data array
+fc0c209c Stephen Boyd     2019-04-12  341   * with 'xtal' in the 'name' member to find the clock provided by the
+fc0c209c Stephen Boyd     2019-04-12  342   * clock-controller@f00abcd without needing to get the globally unique name of
+fc0c209c Stephen Boyd     2019-04-12  343   * the xtal clk.
+fc0c209c Stephen Boyd     2019-04-12  344   *
+fc0c209c Stephen Boyd     2019-04-12  345   *      parent: clock-controller@f00abcd {
+fc0c209c Stephen Boyd     2019-04-12  346   *              reg = <0xf00abcd 0xabcd>;
+fc0c209c Stephen Boyd     2019-04-12  347   *              #clock-cells = <0>;
+fc0c209c Stephen Boyd     2019-04-12  348   *      };
+fc0c209c Stephen Boyd     2019-04-12  349   *
+fc0c209c Stephen Boyd     2019-04-12  350   *      clock-controller@c001 {
+fc0c209c Stephen Boyd     2019-04-12  351   *              reg = <0xc001 0xf00d>;
+fc0c209c Stephen Boyd     2019-04-12  352   *              clocks = <&parent>;
+fc0c209c Stephen Boyd     2019-04-12  353   *              clock-names = "xtal";
+fc0c209c Stephen Boyd     2019-04-12  354   *              #clock-cells = <1>;
+fc0c209c Stephen Boyd     2019-04-12  355   *      };
+fc0c209c Stephen Boyd     2019-04-12  356   *
+fc0c209c Stephen Boyd     2019-04-12  357   * Returns: -ENOENT when the provider can't be found or the clk doesn't
+fc0c209c Stephen Boyd     2019-04-12  358   * exist in the provider. -EINVAL when the name can't be found. NULL when the
+fc0c209c Stephen Boyd     2019-04-12  359   * provider knows about the clk but it isn't provided on this system.
+fc0c209c Stephen Boyd     2019-04-12  360   * A valid clk_core pointer when the clk can be found in the provider.
+fc0c209c Stephen Boyd     2019-04-12  361   */
+9fd6fd58 Stephen Boyd     2019-04-30  362  static struct clk_core *clk_core_get(struct clk_core *core, u8 p_index)
+fc0c209c Stephen Boyd     2019-04-12  363  {
+9fd6fd58 Stephen Boyd     2019-04-30  364  	const char *name = core->parents[p_index].fw_name;
+9fd6fd58 Stephen Boyd     2019-04-30  365  	u8 index = core->parents[p_index].index;
+dde4eff4 Stephen Boyd     2019-04-12  366  	struct clk_hw *hw = ERR_PTR(-ENOENT);
+dde4eff4 Stephen Boyd     2019-04-12  367  	struct device *dev = core->dev;
+dde4eff4 Stephen Boyd     2019-04-12  368  	const char *dev_id = dev ? dev_name(dev) : NULL;
+fc0c209c Stephen Boyd     2019-04-12  369  	struct device_node *np = core->of_node;
+fc0c209c Stephen Boyd     2019-04-12  370
+601b6e93 Stephen Boyd     2019-04-12 @371  	if (np && index >= 0)
+601b6e93 Stephen Boyd     2019-04-12  372  		hw = of_clk_get_hw(np, index, name);
+dde4eff4 Stephen Boyd     2019-04-12  373
+dde4eff4 Stephen Boyd     2019-04-12  374  	/*
+dde4eff4 Stephen Boyd     2019-04-12  375  	 * If the DT search above couldn't find the provider or the provider
+dde4eff4 Stephen Boyd     2019-04-12  376  	 * didn't know about this clk, fallback to looking up via clkdev based
+dde4eff4 Stephen Boyd     2019-04-12  377  	 * clk_lookups
+dde4eff4 Stephen Boyd     2019-04-12  378  	 */
+601b6e93 Stephen Boyd     2019-04-12  379  	if (PTR_ERR(hw) == -ENOENT && name)
+dde4eff4 Stephen Boyd     2019-04-12  380  		hw = clk_find_hw(dev_id, name);
+dde4eff4 Stephen Boyd     2019-04-12  381
+dde4eff4 Stephen Boyd     2019-04-12  382  	if (IS_ERR(hw))
+fc0c209c Stephen Boyd     2019-04-12  383  		return ERR_CAST(hw);
+fc0c209c Stephen Boyd     2019-04-12  384
+fc0c209c Stephen Boyd     2019-04-12  385  	return hw->core;
+fc0c209c Stephen Boyd     2019-04-12  386  }
+fc0c209c Stephen Boyd     2019-04-12  387
+
+:::::: The code at line 371 was first introduced by commit
+:::::: 601b6e93304a65f8f7c37168763ab9ba5b195ce5 clk: Allow parents to be specified via clkspec index
+
+:::::: TO: Stephen Boyd <sboyd@kernel.org>
+:::::: CC: Stephen Boyd <sboyd@kernel.org>
+
 ---
- drivers/iio/adc/sun4i-gpadc-iio.c | 5 +----
- 1 file changed, 1 insertion(+), 4 deletions(-)
-
-diff --git a/drivers/iio/adc/sun4i-gpadc-iio.c b/drivers/iio/adc/sun4i-gpadc-iio.c
-index 9b6fc592f54c..cf2bf3ab3342 100644
---- a/drivers/iio/adc/sun4i-gpadc-iio.c
-+++ b/drivers/iio/adc/sun4i-gpadc-iio.c
-@@ -1,11 +1,8 @@
-+// SPDX-License-Identifier: GPL-2.0+
- /* ADC driver for sunxi platforms' (A10, A13 and A31) GPADC
-  *
-  * Copyright (c) 2016 Quentin Schulz <quentin.schulz@free-electrons.com>
-  *
-- * This program is free software; you can redistribute it and/or modify it under
-- * the terms of the GNU General Public License version 2 as published by the
-- * Free Software Foundation.
-- *
-  * The Allwinner SoCs all have an ADC that can also act as a touchscreen
-  * controller and a thermal sensor.
-  * The thermal sensor works only when the ADC acts as a touchscreen controller
--- 
-2.17.1
-
+0-DAY kernel test infrastructure                Open Source Technology Center
+https://lists.01.org/pipermail/kbuild-all                   Intel Corporation
 
 _______________________________________________
 linux-arm-kernel mailing list
