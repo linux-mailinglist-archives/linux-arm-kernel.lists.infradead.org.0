@@ -2,51 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65E8112911
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 09:49:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0AE11292D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 09:56:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=YMRUxXe1YoaSQOiBr1zts8MyFJlEgDYgnegYzXmm9+U=; b=ceKQ0j7802ciIh
-	Sw3UYuz7+AgeRWO5OQfvEwvj3mQhlgXhagcmNf72zzAEnrQ85YVsOJv1SLjkkXSFK70XEWWYLtndz
-	UH3hNTKNQpD79AicOP0W5dZu/1mv+I7CJdUvg5JjVeep+4h0Obl3/9DFRXSXTZAYVN1FRZzxQb2xC
-	8Lj/ua29GTZBKZDG7Hq87BQ9vqh0IvRfFLSOZopKnKRTzjYH79ptfFzppMmuMiGMJjXUXwf8yCCNu
-	DxwopQaAdJCVBOsCiUOWhi5wLWJv/JXkOB9XkjEoCa28fRVqoN8R108YKJt6jXN6RrISxXO3uI3U7
-	jRwO4Zx2pEKw1d2zScgg==;
+	List-Owner; bh=uXll9bUk2V9yW3eahOOeouzAmWtrJHbp9g9aBu/Bte4=; b=F2HiwRWSGXBRhh
+	LDH8SoNEg+rppAkm95qvSY3+B0lv67HnQRt8YKS2n3NsETPDDEiYGiIPg4mfCFVdAFVzKBwivMGtN
+	bGJwCNg9rt6EgQoRHHRGy9/pRWnsoQtcjO0tY1zjcV769v3xucHPZKJGTyBSeQJL+Eci5N3ib5MxI
+	q+j2EjoJ8FbLAYTu2zV9oKhRZiPwMs0/7X+aTxZp0FrN8CQ4CEe8QjjklbX1zgbJnfHkPmL3gX3Im
+	1qA/i2MteSBx+yFEYtDRYf0kuBXlQt32g9OvmKB27LP5HXxqK7rBsY2b+6rP0mXgtr4nQ2DgIIO9U
+	UqqHPF3SRF+BxXe6/ePA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMSwY-00060b-6Y; Fri, 03 May 2019 07:49:18 +0000
-Received: from mail2-relais-roc.national.inria.fr ([192.134.164.83])
+	id 1hMT3k-0000WA-I6; Fri, 03 May 2019 07:56:44 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMSwQ-0005zk-Tw
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 07:49:13 +0000
-X-IronPort-AV: E=Sophos;i="5.60,424,1549926000"; d="scan'208";a="381465281"
-Received: from vaio-julia.rsr.lip6.fr ([132.227.76.33])
- by mail2-relais-roc.national.inria.fr with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 03 May 2019 09:38:15 +0200
-Date: Fri, 3 May 2019 09:38:12 +0200 (CEST)
-From: Julia Lawall <julia.lawall@lip6.fr>
-X-X-Sender: jll@hadrien
-To: Stephen Boyd <sboyd@kernel.org>
-Subject: [clk:clk-parent-rewrite 18/78] drivers/clk/clk.c:371:11-16: WARNING:
- Unsigned expression compared with zero: index >= 0 (fwd)
-Message-ID: <alpine.DEB.2.20.1905030937270.3572@hadrien>
-User-Agent: Alpine 2.20 (DEB 67 2015-01-07)
+ id 1hMT3c-0000UI-9H; Fri, 03 May 2019 07:56:39 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 73F1A3576;
+ Fri,  3 May 2019 09:56:30 +0200 (CEST)
+Received: by meh.true.cz (OpenSMTPD) with ESMTP id 6d818a11;
+ Fri, 3 May 2019 09:56:28 +0200 (CEST)
+From: =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
+To: netdev@vger.kernel.org, devicetree@vger.kernel.org,
+ Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH v3 00/10] of_net: Add NVMEM support to of_get_mac_address
+Date: Fri,  3 May 2019 09:55:57 +0200
+Message-Id: <1556870168-26864-1-git-send-email-ynezz@true.cz>
+X-Mailer: git-send-email 1.9.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_004911_248279_A5D229FA 
-X-CRM114-Status: GOOD (  15.57  )
-X-Spam-Score: -4.3 (----)
+X-CRM114-CacheID: sfid-20190503_005636_644780_44BCE6D2 
+X-CRM114-Status: GOOD (  12.26  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-4.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.134.164.83 listed in list.dnswl.org]
- 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [178.217.244.18 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -58,122 +57,159 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- kbuild-all@01.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ linux-mediatek@lists.infradead.org,
+ =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>,
+ Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Heiner Kallweit <hkallweit1@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On line 371, index is unsigned, so it is always >= 0.
-
-julia
-
----------- Forwarded message ----------
-Date: Fri, 3 May 2019 15:30:37 +0800
-From: kbuild test robot <lkp@intel.com>
-To: kbuild@01.org
-Cc: Julia Lawall <julia.lawall@lip6.fr>
-Subject: [clk:clk-parent-rewrite 18/78] drivers/clk/clk.c:371:11-16: WARNING:
-    Unsigned expression compared with zero: index >= 0
-
-CC: kbuild-all@01.org
-CC: linux-clk@vger.kernel.org
-CC: linux-arm-kernel@lists.infradead.org
-TO: Stephen Boyd <sboyd@kernel.org>
-
-tree:   https://git.kernel.org/pub/scm/linux/kernel/git/clk/linux.git clk-parent-rewrite
-head:   f5e93ab2421d0dd27acac9159d9c4834cd5705e7
-commit: 9fd6fd58989e06bc5fe92f5aef85a64f63340ab1 [18/78] clk: Cache core in clk_fetch_parent_index() without names
-:::::: branch date: 12 hours ago
-:::::: commit date: 34 hours ago
-
-If you fix the issue, kindly add following tag
-Reported-by: kbuild test robot <lkp@intel.com>
-Reported-by: Julia Lawall <julia.lawall@lip6.fr>
-
->> drivers/clk/clk.c:371:11-16: WARNING: Unsigned expression compared with zero: index >= 0
-
-# https://git.kernel.org/pub/scm/linux/kernel/git/clk/linux.git/commit/?id=9fd6fd58989e06bc5fe92f5aef85a64f63340ab1
-git remote add clk https://git.kernel.org/pub/scm/linux/kernel/git/clk/linux.git
-git remote update clk
-git checkout 9fd6fd58989e06bc5fe92f5aef85a64f63340ab1
-vim +371 drivers/clk/clk.c
-
-bddca894 Prashant Gaikwad 2012-12-26  326
-fc0c209c Stephen Boyd     2019-04-12  327  /**
-dde4eff4 Stephen Boyd     2019-04-12  328   * clk_core_get - Find the clk_core parent of a clk
-fc0c209c Stephen Boyd     2019-04-12  329   * @core: clk to find parent of
-9fd6fd58 Stephen Boyd     2019-04-30  330   * @p_index: parent index to search for
-fc0c209c Stephen Boyd     2019-04-12  331   *
-fc0c209c Stephen Boyd     2019-04-12  332   * This is the preferred method for clk providers to find the parent of a
-fc0c209c Stephen Boyd     2019-04-12  333   * clk when that parent is external to the clk controller. The parent_names
-fc0c209c Stephen Boyd     2019-04-12  334   * array is indexed and treated as a local name matching a string in the device
-dde4eff4 Stephen Boyd     2019-04-12  335   * node's 'clock-names' property or as the 'con_id' matching the device's
-dde4eff4 Stephen Boyd     2019-04-12  336   * dev_name() in a clk_lookup. This allows clk providers to use their own
-fc0c209c Stephen Boyd     2019-04-12  337   * namespace instead of looking for a globally unique parent string.
-fc0c209c Stephen Boyd     2019-04-12  338   *
-fc0c209c Stephen Boyd     2019-04-12  339   * For example the following DT snippet would allow a clock registered by the
-fc0c209c Stephen Boyd     2019-04-12  340   * clock-controller@c001 that has a clk_init_data::parent_data array
-fc0c209c Stephen Boyd     2019-04-12  341   * with 'xtal' in the 'name' member to find the clock provided by the
-fc0c209c Stephen Boyd     2019-04-12  342   * clock-controller@f00abcd without needing to get the globally unique name of
-fc0c209c Stephen Boyd     2019-04-12  343   * the xtal clk.
-fc0c209c Stephen Boyd     2019-04-12  344   *
-fc0c209c Stephen Boyd     2019-04-12  345   *      parent: clock-controller@f00abcd {
-fc0c209c Stephen Boyd     2019-04-12  346   *              reg = <0xf00abcd 0xabcd>;
-fc0c209c Stephen Boyd     2019-04-12  347   *              #clock-cells = <0>;
-fc0c209c Stephen Boyd     2019-04-12  348   *      };
-fc0c209c Stephen Boyd     2019-04-12  349   *
-fc0c209c Stephen Boyd     2019-04-12  350   *      clock-controller@c001 {
-fc0c209c Stephen Boyd     2019-04-12  351   *              reg = <0xc001 0xf00d>;
-fc0c209c Stephen Boyd     2019-04-12  352   *              clocks = <&parent>;
-fc0c209c Stephen Boyd     2019-04-12  353   *              clock-names = "xtal";
-fc0c209c Stephen Boyd     2019-04-12  354   *              #clock-cells = <1>;
-fc0c209c Stephen Boyd     2019-04-12  355   *      };
-fc0c209c Stephen Boyd     2019-04-12  356   *
-fc0c209c Stephen Boyd     2019-04-12  357   * Returns: -ENOENT when the provider can't be found or the clk doesn't
-fc0c209c Stephen Boyd     2019-04-12  358   * exist in the provider. -EINVAL when the name can't be found. NULL when the
-fc0c209c Stephen Boyd     2019-04-12  359   * provider knows about the clk but it isn't provided on this system.
-fc0c209c Stephen Boyd     2019-04-12  360   * A valid clk_core pointer when the clk can be found in the provider.
-fc0c209c Stephen Boyd     2019-04-12  361   */
-9fd6fd58 Stephen Boyd     2019-04-30  362  static struct clk_core *clk_core_get(struct clk_core *core, u8 p_index)
-fc0c209c Stephen Boyd     2019-04-12  363  {
-9fd6fd58 Stephen Boyd     2019-04-30  364  	const char *name = core->parents[p_index].fw_name;
-9fd6fd58 Stephen Boyd     2019-04-30  365  	u8 index = core->parents[p_index].index;
-dde4eff4 Stephen Boyd     2019-04-12  366  	struct clk_hw *hw = ERR_PTR(-ENOENT);
-dde4eff4 Stephen Boyd     2019-04-12  367  	struct device *dev = core->dev;
-dde4eff4 Stephen Boyd     2019-04-12  368  	const char *dev_id = dev ? dev_name(dev) : NULL;
-fc0c209c Stephen Boyd     2019-04-12  369  	struct device_node *np = core->of_node;
-fc0c209c Stephen Boyd     2019-04-12  370
-601b6e93 Stephen Boyd     2019-04-12 @371  	if (np && index >= 0)
-601b6e93 Stephen Boyd     2019-04-12  372  		hw = of_clk_get_hw(np, index, name);
-dde4eff4 Stephen Boyd     2019-04-12  373
-dde4eff4 Stephen Boyd     2019-04-12  374  	/*
-dde4eff4 Stephen Boyd     2019-04-12  375  	 * If the DT search above couldn't find the provider or the provider
-dde4eff4 Stephen Boyd     2019-04-12  376  	 * didn't know about this clk, fallback to looking up via clkdev based
-dde4eff4 Stephen Boyd     2019-04-12  377  	 * clk_lookups
-dde4eff4 Stephen Boyd     2019-04-12  378  	 */
-601b6e93 Stephen Boyd     2019-04-12  379  	if (PTR_ERR(hw) == -ENOENT && name)
-dde4eff4 Stephen Boyd     2019-04-12  380  		hw = clk_find_hw(dev_id, name);
-dde4eff4 Stephen Boyd     2019-04-12  381
-dde4eff4 Stephen Boyd     2019-04-12  382  	if (IS_ERR(hw))
-fc0c209c Stephen Boyd     2019-04-12  383  		return ERR_CAST(hw);
-fc0c209c Stephen Boyd     2019-04-12  384
-fc0c209c Stephen Boyd     2019-04-12  385  	return hw->core;
-fc0c209c Stephen Boyd     2019-04-12  386  }
-fc0c209c Stephen Boyd     2019-04-12  387
-
-:::::: The code at line 371 was first introduced by commit
-:::::: 601b6e93304a65f8f7c37168763ab9ba5b195ce5 clk: Allow parents to be specified via clkspec index
-
-:::::: TO: Stephen Boyd <sboyd@kernel.org>
-:::::: CC: Stephen Boyd <sboyd@kernel.org>
-
----
-0-DAY kernel test infrastructure                Open Source Technology Center
-https://lists.01.org/pipermail/kbuild-all                   Intel Corporation
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgp0aGlzIHBhdGNoIHNlcmllcyBpcyBhIGNvbnRpbnVhdGlvbiBvZiBteSBwcmV2aW91cyBh
+dHRlbXB0WzFdLCB3aGVyZSBJJ3ZlCnRyaWVkIHRvIHdpcmUgTVREIGxheWVyIGludG8gb2ZfZ2V0
+X21hY19hZGRyZXNzLCBzbyBpdCB3b3VsZCBiZSBwb3NzaWJsZSB0bwpsb2FkIE1BQyBhZGRyZXNz
+ZXMgZnJvbSB2YXJpb3VzIE5WTUVNcyBhcyBFRVBST01zIGV0Yy4KClByZWRlY2Vzc29yIG9mIHRo
+aXMgcGF0Y2ggd2hpY2ggdXNlZCBkaXJlY3RseSBNVEQgbGF5ZXIgaGFzIG9yaWdpbmF0ZWQgaW4K
+T3BlbldydCBzb21lIHRpbWUgYWdvIGFuZCBzdXBwb3J0cyBhbHJlYWR5IGFib3V0IDQ5NyB1c2Ug
+Y2FzZXMgaW4gMzU3CmRldmljZSB0cmVlIGZpbGVzLgoKRHVyaW5nIHRoZSByZXZpZXcgcHJvY2Vz
+cyBvZiBteSAxc3QgYXR0ZW1wdCBJIHdhcyB0b2xkLCB0aGF0IEkgc2hvdWxkbid0IGJlCnVzaW5n
+IE1URCBkaXJlY3RseSwgYnV0IHRoYXQgSSBzaG91bGQgcmF0aGVyIHVzZSBuZXcgTlZNRU0gc3Vi
+c3lzdGVtIGFuZApkdXJyaW5nIHRoZSByZXZpZXcgcHJvY2Nlc3Mgb2YgdjIgSSB3YXMgdG9sZCwg
+dGhhdCBJIHNob3VsZCBoYW5kbGUKRVBST0JFX0RFRkZFUiBlcnJvciBhcyB3ZWxsLCBzbyB0aGlz
+IHYzIHBhdGNoIHNlcmllcyB0cmllcyB0byBhY2NvbW1vZGF0ZQphbGwgdGhpcyByZW1hcmtzLgoK
+Rmlyc3QgcGF0Y2ggaXMgd2lyaW5nIE5WTUVNIHN1cHBvcnQgZGlyZWN0bHkgaW50byBvZl9nZXRf
+bWFjX2FkZHJlc3MgYXMKaXQncyBvYnZpb3VzLCB0aGF0IGFkZGluZyBzdXBwb3J0IGZvciBOVk1F
+TSBpbnRvIGV2ZXJ5IG90aGVyIGRyaXZlciB3b3VsZAptZWFuIGFkZGluZyBhIGxvdCBvZiByZXBl
+dGl0aXZlIGNvZGUuIFRoaXMgcGF0Y2ggYWxsb3dzIHVzIHRvIGNvbmZpZ3VyZSBNQUMKYWRkcmVz
+c2VzIGluIHZhcmlvdXMgZGV2aWNlcyBsaWtlIGV0aGVybmV0IGFuZCB3aXJlbGVzcyBhZGFwdGVy
+cyBkaXJlY3RseQpmcm9tIG9mX2dldF9tYWNfYWRkcmVzcywgd2hpY2ggaXMgdXNlZCBieSBxdWl0
+ZSBhIGxvdCBvZiBkcml2ZXJzIGluIHRoZQp0cmVlIGFscmVhZHkuCgpTZWNvbmQgcGF0Y2ggaXMg
+c2ltcGx5IHVwZGF0aW5nIGRvY3VtZW50YXRpb24gd2l0aCBOVk1FTSBiaXRzLCBhbmQgY2xlYW5p
+bmcKdXAgYWxsIGN1cnJlbnQgYmluZGluZyBkb2N1bWVudGF0aW9uIHJlZmVyZW5jaW5nIGFueSBv
+ZiB0aGUgTUFDIGFkZHJlc3MKcmVsYXRlZCBwcm9wZXJ0aWVzLgoKVGhpcmQgYW5kIGZvdXJ0aCBw
+YXRjaGVzIGFyZSBzaW1wbHkgcmVtb3ZpbmcgZHVwbGljYXRlIE5WTUVNIGNvZGUgd2hpY2ggaXMK
+bm8gbG9uZ2VyIG5lZWRlZCBhcyB0aGUgZmlyc3QgcGF0Y2ggaGFzIHdpcmVkIE5WTUVNIHN1cHBv
+cnQgZGlyZWN0bHkgaW50bwpvZl9nZXRfbWFjX2FkZHJlc3MuCgpQYXRjaGVzIDUtMTAgYXJlIGNv
+bnZlcnRpbmcgYWxsIGN1cnJlbnQgdXNlcnMgb2Ygb2ZfZ2V0X21hY19hZGRyZXNzIHRvIHRoZQpu
+ZXcgRVJSX1BUUiBlbmNvZGVkIGVycm9yIHZhbHVlLCBhcyBvZl9nZXRfbWFjX2FkZHJlc3MgY291
+bGQgbm93IHJldHVybgp2YWxpZCBwb2ludGVyLCBOVUxMIGFuZCBFUlJfUFRSLgoKSnVzdCBmb3Ig
+YSBiZXR0ZXIgcGljdHVyZSwgdGhpcyBwYXRjaCBzZXJpZXMgYW5kIG9uZSBzaW1wbGUgcGF0Y2hb
+Ml0gb24gdG9wCm9mIGl0LCBhbGxvd3MgbWUgdG8gY29uZmlndXJlIDhEZXZpY2VzIENhcmFtYm9s
+YTIgYm9hcmQncyBNQUMgYWRkcmVzc2VzCndpdGggZm9sbG93aW5nIERUUyAoc2ltcGxpZmllZCk6
+CgogJnNwaSB7CiAJZmxhc2hAMCB7CiAJCXBhcnRpdGlvbnMgewoJCQlhcnQ6IHBhcnRpdGlvbkBm
+ZjAwMDAgewoJCQkJbGFiZWwgPSAiYXJ0IjsKCQkJCXJlZyA9IDwweGZmMDAwMCAweDAxMDAwMD47
+CgkJCQlyZWFkLW9ubHk7CgoJCQkJbnZtZW0tY2VsbHMgewoJCQkJCWNvbXBhdGlibGUgPSAibnZt
+ZW0tY2VsbHMiOwoJCQkJCSNhZGRyZXNzLWNlbGxzID0gPDE+OwoJCQkJCSNzaXplLWNlbGxzID0g
+PDE+OwoKCQkJCQlldGgwX2FkZHI6IGV0aC1tYWMtYWRkckAwIHsKCQkJCQkJcmVnID0gPDB4MCAw
+eDY+OwoJCQkJCX07CgoJCQkJCWV0aDFfYWRkcjogZXRoLW1hYy1hZGRyQDYgewoJCQkJCQlyZWcg
+PSA8MHg2IDB4Nj47CgkJCQkJfTsKCgkJCQkJd21hY19hZGRyOiB3aWZpLW1hYy1hZGRyQDEwMDIg
+ewoJCQkJCQlyZWcgPSA8MHgxMDAyIDB4Nj47CgkJCQkJfTsKCQkJCX07CgkJCX07CgkJfTsKCX07
+CiB9OwoKICZldGgwIHsKCW52bWVtLWNlbGxzID0gPCZldGgwX2FkZHI+OwoJbnZtZW0tY2VsbC1u
+YW1lcyA9ICJtYWMtYWRkcmVzcyI7CiB9OwoKICZldGgxIHsKCW52bWVtLWNlbGxzID0gPCZldGgx
+X2FkZHI+OwoJbnZtZW0tY2VsbC1uYW1lcyA9ICJtYWMtYWRkcmVzcyI7CiB9OwoKICZ3bWFjIHsK
+CW52bWVtLWNlbGxzID0gPCZ3bWFjX2FkZHI+OwoJbnZtZW0tY2VsbC1uYW1lcyA9ICJtYWMtYWRk
+cmVzcyI7CiB9OwoKCjEuIGh0dHBzOi8vcGF0Y2h3b3JrLm96bGFicy5vcmcvcGF0Y2gvMTA4NjYy
+OC8KMi4gaHR0cHM6Ly9wYXRjaHdvcmsub3psYWJzLm9yZy9wYXRjaC84OTA3MzgvCgotLSB5bmV6
+egoKUGV0ciDFoHRldGlhciAoMTApOgogIG9mX25ldDogYWRkIE5WTUVNIHN1cHBvcnQgdG8gb2Zf
+Z2V0X21hY19hZGRyZXNzCiAgZHQtYmluZGluZ3M6IGRvYzogcmVmbGVjdCBuZXcgTlZNRU0gb2Zf
+Z2V0X21hY19hZGRyZXNzIGJlaGF2aW91cgogIG5ldDogbWFjYjogc3VwcG9ydCBvZl9nZXRfbWFj
+X2FkZHJlc3MgbmV3IEVSUl9QVFIgZXJyb3IKICBuZXQ6IGRhdmluY2k6IHN1cHBvcnQgb2ZfZ2V0
+X21hY19hZGRyZXNzIG5ldyBFUlJfUFRSIGVycm9yCiAgbmV0OiBldGhlcm5ldDogc3VwcG9ydCBv
+Zl9nZXRfbWFjX2FkZHJlc3MgbmV3IEVSUl9QVFIgZXJyb3IKICBuZXQ6IHVzYjogc3VwcG9ydCBv
+Zl9nZXRfbWFjX2FkZHJlc3MgbmV3IEVSUl9QVFIgZXJyb3IKICBuZXQ6IHdpcmVsZXNzOiBzdXBw
+b3J0IG9mX2dldF9tYWNfYWRkcmVzcyBuZXcgRVJSX1BUUiBlcnJvcgogIHN0YWdpbmc6IG9jdGVv
+bi1ldGhlcm5ldDogc3VwcG9ydCBvZl9nZXRfbWFjX2FkZHJlc3MgbmV3IEVSUl9QVFIgZXJyb3IK
+ICBBUk06IEtpcmt3b29kOiBzdXBwb3J0IG9mX2dldF9tYWNfYWRkcmVzcyBuZXcgRVJSX1BUUiBl
+cnJvcgogIHBvd2VycGM6IHRzaTEwODogc3VwcG9ydCBvZl9nZXRfbWFjX2FkZHJlc3MgbmV3IEVS
+Ul9QVFIgZXJyb3IKCiAuLi4vZGV2aWNldHJlZS9iaW5kaW5ncy9uZXQvYWx0ZXJhX3RzZS50eHQg
+ICAgICAgICB8ICA1ICstCiBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvbmV0L2Ft
+ZC14Z2JlLnR4dCB8ICA1ICstCiAuLi4vZGV2aWNldHJlZS9iaW5kaW5ncy9uZXQvYnJjbSxhbWFj
+LnR4dCAgICAgICAgICB8ICA0ICstCiBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mv
+bmV0L2Nwc3cudHh0ICAgICB8ICA0ICstCiAuLi4vZGV2aWNldHJlZS9iaW5kaW5ncy9uZXQvZGF2
+aW5jaV9lbWFjLnR4dCAgICAgICB8ICA1ICstCiBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmlu
+ZGluZ3MvbmV0L2RzYS9kc2EudHh0ICB8ICA1ICstCiBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUv
+YmluZGluZ3MvbmV0L2V0aGVybmV0LnR4dCB8ICA2ICstCiAuLi4vZGV2aWNldHJlZS9iaW5kaW5n
+cy9uZXQvaGlzaWxpY29uLWZlbWFjLnR4dCAgICB8ICA0ICstCiAuLi4vYmluZGluZ3MvbmV0L2hp
+c2lsaWNvbi1oaXg1aGQyLWdtYWMudHh0ICAgICAgICB8ICA0ICstCiAuLi4vZGV2aWNldHJlZS9i
+aW5kaW5ncy9uZXQva2V5c3RvbmUtbmV0Y3AudHh0ICAgICB8IDEwICsrLS0KIERvY3VtZW50YXRp
+b24vZGV2aWNldHJlZS9iaW5kaW5ncy9uZXQvbWFjYi50eHQgICAgIHwgIDUgKy0KIC4uLi9kZXZp
+Y2V0cmVlL2JpbmRpbmdzL25ldC9tYXJ2ZWxsLXB4YTE2OC50eHQgICAgIHwgIDQgKy0KIC4uLi9k
+ZXZpY2V0cmVlL2JpbmRpbmdzL25ldC9taWNyb2NoaXAsZW5jMjhqNjAudHh0IHwgIDMgKy0KIC4u
+Li9kZXZpY2V0cmVlL2JpbmRpbmdzL25ldC9taWNyb2NoaXAsbGFuNzh4eC50eHQgIHwgIDUgKy0K
+IC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdzL25ldC9xY2EscWNhNzAwMC50eHQgICAgICAgIHwgIDQg
+Ky0KIC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdzL25ldC9zYW1zdW5nLXN4Z2JlLnR4dCAgICAgIHwg
+IDQgKy0KIC4uLi9iaW5kaW5ncy9uZXQvc25wcyxkd2MtcW9zLWV0aGVybmV0LnR4dCAgICAgICAg
+IHwgIDUgKy0KIC4uLi9iaW5kaW5ncy9uZXQvc29jaW9uZXh0LHVuaXBoaWVyLWF2ZTQudHh0ICAg
+ICAgIHwgIDQgKy0KIC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdzL25ldC9zb2Npb25leHQtbmV0c2Vj
+LnR4dCAgIHwgIDUgKy0KIC4uLi9iaW5kaW5ncy9uZXQvd2lyZWxlc3MvbWVkaWF0ZWssbXQ3Ni50
+eHQgICAgICAgIHwgIDUgKy0KIC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdzL25ldC93aXJlbGVzcy9x
+Y2EsYXRoOWsudHh0IHwgIDQgKy0KIGFyY2gvYXJtL21hY2gtbXZlYnUva2lya3dvb2QuYyAgICAg
+ICAgICAgICAgICAgICAgIHwgIDMgKy0KIGFyY2gvcG93ZXJwYy9zeXNkZXYvdHNpMTA4X2Rldi5j
+ICAgICAgICAgICAgICAgICAgIHwgIDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVybmV0L2Flcm9mbGV4
+L2dyZXRoLmMgICAgICAgICAgICAgIHwgIDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVybmV0L2FsbHdp
+bm5lci9zdW40aS1lbWFjLmMgICAgICAgIHwgIDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVybmV0L2Fs
+dGVyYS9hbHRlcmFfdHNlX21haW4uYyAgICAgIHwgIDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVybmV0
+L2FyYy9lbWFjX21haW4uYyAgICAgICAgICAgICAgIHwgIDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVy
+bmV0L2F1cm9yYS9uYjg4MDAuYyAgICAgICAgICAgICAgIHwgIDIgKy0KIGRyaXZlcnMvbmV0L2V0
+aGVybmV0L2Jyb2FkY29tL2JjbXN5c3BvcnQuYyAgICAgICAgIHwgIDIgKy0KIGRyaXZlcnMvbmV0
+L2V0aGVybmV0L2Jyb2FkY29tL2JnbWFjLWJjbWEuYyAgICAgICAgIHwgIDIgKy0KIGRyaXZlcnMv
+bmV0L2V0aGVybmV0L2Jyb2FkY29tL2JnbWFjLXBsYXRmb3JtLmMgICAgIHwgIDIgKy0KIGRyaXZl
+cnMvbmV0L2V0aGVybmV0L2Jyb2FkY29tL2dlbmV0L2JjbWdlbmV0LmMgICAgIHwgIDIgKy0KIGRy
+aXZlcnMvbmV0L2V0aGVybmV0L2NhZGVuY2UvbWFjYl9tYWluLmMgICAgICAgICAgIHwgMTIgKyst
+LQogZHJpdmVycy9uZXQvZXRoZXJuZXQvY2F2aXVtL29jdGVvbi9vY3Rlb25fbWdtdC5jICAgfCAg
+MiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvY2F2aXVtL3RodW5kZXIvdGh1bmRlcl9iZ3guYyAg
+fCAgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvZGF2aWNvbS9kbTkwMDAuYyAgICAgICAgICAg
+ICAgfCAgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvZXRob2MuYyAgICAgICAgICAgICAgICAg
+ICAgICAgfCAgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvZXpjaGlwL25wc19lbmV0LmMgICAg
+ICAgICAgICAgfCAgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvZnJlZXNjYWxlL2ZlY19tYWlu
+LmMgICAgICAgICAgfCAgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvZnJlZXNjYWxlL2ZlY19t
+cGM1Mnh4LmMgICAgICAgfCAgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvZnJlZXNjYWxlL2Zt
+YW4vbWFjLmMgICAgICAgICAgfCAgMiArLQogLi4uL25ldC9ldGhlcm5ldC9mcmVlc2NhbGUvZnNf
+ZW5ldC9mc19lbmV0LW1haW4uYyAgfCAgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvZnJlZXNj
+YWxlL2dpYW5mYXIuYyAgICAgICAgICAgfCAgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvZnJl
+ZXNjYWxlL3VjY19nZXRoLmMgICAgICAgICAgfCAgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQv
+aGlzaWxpY29uL2hpc2lfZmVtYWMuYyAgICAgICAgfCAgMiArLQogZHJpdmVycy9uZXQvZXRoZXJu
+ZXQvaGlzaWxpY29uL2hpeDVoZDJfZ21hYy5jICAgICAgfCAgMiArLQogZHJpdmVycy9uZXQvZXRo
+ZXJuZXQvbGFudGlxX3hyeDIwMC5jICAgICAgICAgICAgICAgfCAgMiArLQogZHJpdmVycy9uZXQv
+ZXRoZXJuZXQvbWFydmVsbC9tdjY0M3h4X2V0aC5jICAgICAgICAgfCAgMiArLQogZHJpdmVycy9u
+ZXQvZXRoZXJuZXQvbWFydmVsbC9tdm5ldGEuYyAgICAgICAgICAgICAgfCAgMiArLQogZHJpdmVy
+cy9uZXQvZXRoZXJuZXQvbWFydmVsbC9weGExNjhfZXRoLmMgICAgICAgICAgfCAgMiArLQogZHJp
+dmVycy9uZXQvZXRoZXJuZXQvbWFydmVsbC9za3kyLmMgICAgICAgICAgICAgICAgfCAgMiArLQog
+ZHJpdmVycy9uZXQvZXRoZXJuZXQvbWVkaWF0ZWsvbXRrX2V0aF9zb2MuYyAgICAgICAgfCAgMiAr
+LQogZHJpdmVycy9uZXQvZXRoZXJuZXQvbWljcmVsL2tzODg1MS5jICAgICAgICAgICAgICAgfCAg
+MiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvbWljcmVsL2tzODg1MV9tbGwuYyAgICAgICAgICAg
+fCAgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvbWljcm9jaGlwL2VuYzI4ajYwLmMgICAgICAg
+ICAgfCAgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvbnhwL2xwY19ldGguYyAgICAgICAgICAg
+ICAgICAgfCAgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvcXVhbGNvbW0vcWNhX3NwaS5jICAg
+ICAgICAgICAgfCAgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvcXVhbGNvbW0vcWNhX3VhcnQu
+YyAgICAgICAgICAgfCAgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvcmVuZXNhcy9yYXZiX21h
+aW4uYyAgICAgICAgICAgfCAgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvcmVuZXNhcy9zaF9l
+dGguYyAgICAgICAgICAgICAgfCAgMiArLQogLi4uL25ldC9ldGhlcm5ldC9zYW1zdW5nL3N4Z2Jl
+L3N4Z2JlX3BsYXRmb3JtLmMgICAgfCAgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvc29jaW9u
+ZXh0L3NuaV9hdmUuYyAgICAgICAgICAgfCAgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvc3Rt
+aWNyby9zdG1tYWMvc3RtbWFjX21haW4uYyAgfCAgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQv
+dGkvY3Bzdy5jICAgICAgICAgICAgICAgICAgICAgfCAgMiArLQogZHJpdmVycy9uZXQvZXRoZXJu
+ZXQvdGkvZGF2aW5jaV9lbWFjLmMgICAgICAgICAgICAgfCAxNiArKy0tLS0KIGRyaXZlcnMvbmV0
+L2V0aGVybmV0L3RpL25ldGNwX2NvcmUuYyAgICAgICAgICAgICAgIHwgIDIgKy0KIGRyaXZlcnMv
+bmV0L2V0aGVybmV0L3dpem5ldC93NTEwMC5jICAgICAgICAgICAgICAgIHwgIDIgKy0KIGRyaXZl
+cnMvbmV0L2V0aGVybmV0L3hpbGlueC9sbF90ZW1hY19tYWluLmMgICAgICAgIHwgIDIgKy0KIGRy
+aXZlcnMvbmV0L2V0aGVybmV0L3hpbGlueC94aWxpbnhfYXhpZW5ldF9tYWluLmMgIHwgIDIgKy0K
+IGRyaXZlcnMvbmV0L2V0aGVybmV0L3hpbGlueC94aWxpbnhfZW1hY2xpdGUuYyAgICAgIHwgIDIg
+Ky0KIGRyaXZlcnMvbmV0L3VzYi9zbXNjNzV4eC5jICAgICAgICAgICAgICAgICAgICAgICAgIHwg
+IDIgKy0KIGRyaXZlcnMvbmV0L3VzYi9zbXNjOTV4eC5jICAgICAgICAgICAgICAgICAgICAgICAg
+IHwgIDIgKy0KIGRyaXZlcnMvbmV0L3dpcmVsZXNzL2F0aC9hdGg5ay9pbml0LmMgICAgICAgICAg
+ICAgIHwgIDIgKy0KIGRyaXZlcnMvbmV0L3dpcmVsZXNzL21lZGlhdGVrL210NzYvZWVwcm9tLmMg
+ICAgICAgIHwgIDIgKy0KIGRyaXZlcnMvbmV0L3dpcmVsZXNzL3JhbGluay9ydDJ4MDAvcnQyeDAw
+ZGV2LmMgICAgIHwgIDIgKy0KIGRyaXZlcnMvb2Yvb2ZfbmV0LmMgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgIHwgNjUgKysrKysrKysrKysrKysrKysrKysrLQogZHJpdmVycy9zdGFnaW5n
+L29jdGVvbi9ldGhlcm5ldC5jICAgICAgICAgICAgICAgICAgfCAgMiArLQogbmV0L2V0aGVybmV0
+L2V0aC5jICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgMiArLQogNzggZmlsZXMg
+Y2hhbmdlZCwgMTg2IGluc2VydGlvbnMoKyksIDExNiBkZWxldGlvbnMoLSkKCi0tIAoxLjkuMQoK
+Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFy
+bS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
+ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1r
+ZXJuZWwK
