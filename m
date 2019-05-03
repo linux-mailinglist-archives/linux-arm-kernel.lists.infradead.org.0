@@ -2,55 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0764F12E81
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 14:51:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEABB12E94
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 14:58:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GDdtUbixqu2GLKI5PLi8m4+mL/8wD7GfX5rEJ/XjOSA=; b=QurCWytppGLslN
-	IcZ2NuRO36kovy7BngMV7+ar5tVxhyc968W+HJuuX2gfh63Le8eSoIZqpXJ7b/lYAKxbtyFcnbRMb
-	+omcwe1nlOj7O1MdfJYWlA9O+TLqXSOZid0QgWfCEjKJfAaa4OaQjFRDf+67EVZAIFJDJaKo1wAXp
-	gwOOhKIEikrLoLaPKg2a9BUgpch+pq5TRLg5rra9daK/x29EVa+mWUAuSiY2BOOxGDP7Vzlp/9/bV
-	YgRUUeUrNNo2oXZfaHp1MOWhdLC9xePw2idxK6trqKIAn2QKe54RnloZ8pbB2tw8+KoVVCFciJ46R
-	tSeA60wxXZ1Lwaln1QNg==;
+	List-Owner; bh=VsYQQ260oPgac+mrNP7dLihZw4VnKGTW8Cx5uLtNtEI=; b=EUOAxxD60zniJH
+	LfDXztMIjusbDyC5h0Y4xZoNX6+JRxrk+pgvc7F81v9mHVAnw5g/wWK1zNYSAmor5cJiJ/jtKfKmR
+	VDiY5vT666+jaCj3QhPWZyW72/Gujv7ixWzApNL28YaowkchGUsrBe8L3Sq0iyzMpoBekNxKJ4ZAt
+	nMxyXfB0JPV0gK7nmyYOts/aq4wVizNzwAQhio/5gwtEKR0NjLmUjt3D3QivGS9iAA05kZkP3ZCeg
+	LX8Hq30Wx1uLYLiQdh76aOxUFZDO7LerOqzqNaNRDCR5WPDo5o4CgqrQa3paYs6RuJFxav4hfCHEY
+	88BQOe5KxipGATpnoR1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMXeh-0003df-Bb; Fri, 03 May 2019 12:51:11 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1hMXlK-00067g-2l; Fri, 03 May 2019 12:58:02 +0000
+Received: from mail-qt1-f196.google.com ([209.85.160.196])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMXdk-0002Jb-K9; Fri, 03 May 2019 12:50:15 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 350BB260BE4;
- Fri,  3 May 2019 13:50:09 +0100 (BST)
-Date: Fri, 3 May 2019 14:50:06 +0200
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Miquel Raynal <miquel.raynal@bootlin.com>
-Subject: Re: [PATCH v2 07/36] mtd: rawnand: Avoid a typedef
-Message-ID: <20190503145006.574af442@collabora.com>
-In-Reply-To: <20190503144030.7fbbc0d4@xps13>
-References: <20190304222841.13899-1-miquel.raynal@bootlin.com>
- <20190304222841.13899-8-miquel.raynal@bootlin.com>
- <20190331135513.59257c1d@collabora.com>
- <20190503144030.7fbbc0d4@xps13>
-Organization: Collabora
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ id 1hMXlC-00067K-Sl
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 12:57:56 +0000
+Received: by mail-qt1-f196.google.com with SMTP id g4so6483379qtq.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 03 May 2019 05:57:54 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=2Sdy9iaHURUvZLe2z2TWslaL2IkPLpsKGDTPao4Xq9w=;
+ b=CVCvCRY20ZBg4ShRahv+lL2wRzSPsOYwHfDfX13pvuhqcUpOSGQO6J+eaO5gdzeref
+ 0rOOqr0b8m99QJQPPhrB8WYB06BZiiXgN3pH0hw1B2gCvBo6Xm+uxtGimo3DtOD0V7zH
+ NB08ow1CzfMmL9fYaoPzucH3Uwf0Y/IjVSHNMhq47C6A9XrZP/FG8s7SnpKlqCwlVdUN
+ uA++JLPN1Hu4RA80bpdH/DlkZd4XUqAQx0BTIz5JT4j2Cb0dUElfhuUXoePxzeVlehLw
+ o8clfekQgSp72zfTw5X1nIU/HKjROn+pgj0nUAFpQuTe4nE8k7p3q5p8uIXz0P+juh+f
+ IaUg==
+X-Gm-Message-State: APjAAAW47hXUFMIy7VoQ/TZM35SKEVdKoFj/gzSLdICgetQDVbJUczkN
+ wdqDw7YprPysvpWTIKP7LP3PzoHs36JL9y3rrvn2DwOY0D0=
+X-Google-Smtp-Source: APXvYqz4I66pwqVNkia+5QmCH0JMxT1NXFZAqd7SA9VcuUTPzK6FTtjijdQ+px26v/oRzFFrRi75cZp5kQT3vJ2MYQI=
+X-Received: by 2002:a0c:980b:: with SMTP id c11mr8129691qvd.115.1556888273217; 
+ Fri, 03 May 2019 05:57:53 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190430092839.767e5bf8@canb.auug.org.au>
+ <CACRpkdYBuBf7jA2nUitiZWRriXVTPWCyB93q2CzmP4tbVZXqHA@mail.gmail.com>
+In-Reply-To: <CACRpkdYBuBf7jA2nUitiZWRriXVTPWCyB93q2CzmP4tbVZXqHA@mail.gmail.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Fri, 3 May 2019 08:57:35 -0400
+Message-ID: <CAK8P3a1dy92NYX=bo6LYUGkFmKjGq65HjomOq7cCYDgx6ceoaA@mail.gmail.com>
+Subject: Re: linux-next: build warning after merge of the arm-soc tree
+To: Linus Walleij <linus.walleij@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_055013_109536_172D1B03 
-X-CRM114-Status: GOOD (  27.07  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190503_055754_932030_931126DE 
+X-CRM114-Status: GOOD (  12.20  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.196 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.196 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -62,104 +82,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mason Yang <masonccyang@mxic.com.tw>, Vignesh R <vigneshr@ti.com>,
- Tudor Ambarus <Tudor.Ambarus@microchip.com>, Julien Su <juliensu@mxic.com.tw>,
- Richard Weinberger <richard@nod.at>, Boris Brezillon <bbrezillon@kernel.org>,
- Schrempf Frieder <frieder.schrempf@kontron.de>,
- Paul Cercueil <paul@crapouillou.net>, Marek Vasut <marek.vasut@gmail.com>,
- linux-mtd@lists.infradead.org, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Brian Norris <computersforpeace@gmail.com>,
- David Woodhouse <dwmw2@infradead.org>, linux-arm-kernel@lists.infradead.org
+Cc: Olof Johansson <olof@lixom.net>, Stephen Rothwell <sfr@canb.auug.org.au>,
+ Linux Next Mailing List <linux-next@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 3 May 2019 14:40:30 +0200
-Miquel Raynal <miquel.raynal@bootlin.com> wrote:
+On Fri, May 3, 2019 at 2:49 AM Linus Walleij <linus.walleij@linaro.org> wrote:
+>
+> On Tue, Apr 30, 2019 at 12:28 AM Stephen Rothwell <sfr@canb.auug.org.au> wrote:
+>
+> > After merging the arm-soc tree, today's linux-next build
+> > (x86_64 allmodconfig) produced this warning:
+> >
+> > drivers/clocksource/timer-ixp4xx.c:78:20: warning: 'ixp4xx_read_sched_clock' defined but not used [-Wunused-function]
+> >  static u64 notrace ixp4xx_read_sched_clock(void)
+> >                     ^~~~~~~~~~~~~~~~~~~~~~~
+>
+> This is kind of normal for timer drivers, as the sched_clock() call is #ifdef:ed
+> for CONFIG_ARM, it is not uniformly available on all archs. This appears
+> as a side effect of COMPILE_TEST which I think is fair to produce
+> things like this.
 
-> Hi Boris,
-> 
-> Boris Brezillon <boris.brezillon@collabora.com> wrote on Sun, 31 Mar
-> 2019 13:55:13 +0200:
-> 
-> > On Mon,  4 Mar 2019 23:28:12 +0100
-> > Miquel Raynal <miquel.raynal@bootlin.com> wrote:
-> >   
-> > > In new code, the use of typedef is discouraged. Before moving this
-> > > section out of the raw NAND base, let's switch the nand_ecc_modes_t
-> > > type into a regular nand_ecc_mode enumeration.
-> > > 
-> > > Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
-> > > ---
-> > >  drivers/mtd/nand/raw/nand_base.c               | 4 ++--
-> > >  include/linux/mtd/rawnand.h                    | 6 +++---
-> > >  include/linux/platform_data/mtd-davinci.h      | 2 +-
-> > >  include/linux/platform_data/mtd-nand-s3c2410.h | 2 +-
-> > >  4 files changed, 7 insertions(+), 7 deletions(-)
-> > > 
-> > > diff --git a/drivers/mtd/nand/raw/nand_base.c b/drivers/mtd/nand/raw/nand_base.c
-> > > index e14f02a01efd..05174c6a3099 100644
-> > > --- a/drivers/mtd/nand/raw/nand_base.c
-> > > +++ b/drivers/mtd/nand/raw/nand_base.c
-> > > @@ -4881,8 +4881,8 @@ static int of_get_nand_ecc_mode(struct device_node *np)
-> > >  
-> > >  	/*
-> > >  	 * For backward compatibility we support few obsoleted values that don't
-> > > -	 * have their mappings into nand_ecc_modes_t anymore (they were merged
-> > > -	 * with other enums).
-> > > +	 * have their mappings into the nand_ecc_mode enum anymore (they were
-> > > +	 * merged with other enums).
-> > >  	 */
-> > >  	if (!strcasecmp(pm, "soft_bch"))
-> > >  		return NAND_ECC_SOFT;
-> > > diff --git a/include/linux/mtd/rawnand.h b/include/linux/mtd/rawnand.h
-> > > index 14748183508b..c5bf6bb49329 100644
-> > > --- a/include/linux/mtd/rawnand.h
-> > > +++ b/include/linux/mtd/rawnand.h
-> > > @@ -87,14 +87,14 @@ struct nand_chip;
-> > >  /*
-> > >   * Constants for ECC_MODES
-> > >   */
-> > > -typedef enum {
-> > > +enum nand_ecc_mode {
-> > >  	NAND_ECC_NONE,
-> > >  	NAND_ECC_SOFT,
-> > >  	NAND_ECC_HW,
-> > >  	NAND_ECC_HW_SYNDROME,
-> > >  	NAND_ECC_HW_OOB_FIRST,
-> > >  	NAND_ECC_ON_DIE,
-> > > -} nand_ecc_modes_t;
-> > > +};    
-> > 
-> > Hm, I'm really not a big fan of this enum because it's mixing 2
-> > different concepts: the type of ECC engine to use (on-die,
-> > hw-controller-side, software, no-ECC) and the layout of
-> > ECC/FREE bytes (_SYNDROME, _OOB_FIRST).
-> > 
-> > I'd recommend creating a nand_ecc_engine_type enum:
-> > 
-> > enum nand_ecc_engine_type {
-> > 	NAND_NO_ECC_ENGINE,
-> > 	NAND_SOFT_ECC_ENGINE,
-> > 	NAND_HW_ECC_ENGINE,
-> > 	NAND_ON_DIE_ECC_ENGINE,
-> > };
-> > 
-> > and then convert the raw NAND layer to this enum when the time comes.  
-> 
-> I started something but this goes way too far from what I want to
-> achieve. I know it would be nice to have it but it has an
-> increasingly number of side effects which scared me. The way the
-> series is organized does not allow to easily ignore the raw NAND layer
-> first and then convert it. I am giving up on this one for now, sorry.
+Could you send a fixup patch to mark the function __maybe_unused or
+move it into the #ifdef?
 
-I don't think that's a wise choice. Why not focusing on
-nand_device/spinand with a clean implementation that does not try to
-convert the rawnand layer to this approach? The reason I initially
-started over with a new generic NAND layer instead of copying things
-from nand_base is that I wanted to avoid having to deal with stuff that
-were not so great in there, and clearly nand_ecc_mode is one of them.
+         Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
