@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62CB512728
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 07:32:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 514BD1272C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 07:32:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,74 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=8CzsAi3GN1KPGPHKwi5OvyiDg1EEX4C/QPxfAwx4ZEs=; b=IvO09U2UTws3AfROejVXU1gWlA
-	edV1InqN24GUosuDfgcu6PG+A+hNaQSuRAcWcX1A+SUY1dNxaCvK8B37r0Cx2+RoIuJCXKsKagJXO
-	mzvcJoorPJTW50oWDiyPb9csEn/Hif/Lpnko6MRJKwGca/LLi4boUDXnbKkuLSR9IMP4BGXh4XiE+
-	HDx+kqYRT/5drhXNNPXOp1h5KTDP5DvIHOOhBgePqaPOk8/fibBZpx3ZcRIxd5cP6mzvnlyQWx4gU
-	lLLjPqN/L8PhpOtVmzNWiXIATCOARiTM/AjwBsV029eDykYZEcKSz3PpuakzEgRYsW6jYNYwc3awC
-	fepcS8yA==;
+	bh=xtTCghH/0g2B7bR/P+kGVjNl5FjX3w7E/KT9oEzJQkk=; b=eOPSosKuv2+bbtT6ZeeH9Nh1gu
+	9ob7bOW7Enm3jNq+nETWGzQpu9hUdTJ5zhKd3dHSndFdofxrvaCgqTTMRF4VJMkIr/Ng+6BRVZDJO
+	wL6uZDFDYYsL77ertwvwdA9ziTKL8jLYM7no/kiJ/JVM6fx5GpCFi/0wRzG0v+4wmlZozHEovFxKz
+	qlRS7jZWbYop6j9/V2F6PSV8QXMwZT+p/LzvVyPuEWaauM2WnlNjnSKkQg3K+9X5unsUTfzw6nCTi
+	Y8YHPGPyTwXfa4kgU0GtEfQpWbkdayTGb5puddvDJYAloj5/CwPzc2PXC4ZBda3m09X9zqvKG9bNG
+	ELCXTOTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMQne-0001yZ-G2; Fri, 03 May 2019 05:31:58 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hMQno-0002Eh-U0; Fri, 03 May 2019 05:32:08 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMQnQ-0001rm-Kj
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 05:31:46 +0000
-Received: by mail-pl1-x641.google.com with SMTP id b3so2148612plr.7
+ id 1hMQnV-0001xj-7s
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 05:31:51 +0000
+Received: by mail-pg1-x544.google.com with SMTP id f6so2162457pgs.8
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 02 May 2019 22:31:43 -0700 (PDT)
+ Thu, 02 May 2019 22:31:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=J11CAk6hX0rsSVl1UifJnPX7sfZSPwS6EsqX4Zx/yUk=;
- b=NfAt7TlYBcZ8Q5tKMBk2voI//3YAMOFFa7XGfmx+BhWuhARWaZjbkWNGgkq9G8p6UQ
- u0kiZStj8L0+SyBOGy3uMShfifPODyzMtk+t0I0LcDIiIW4UXtcLPVwXqiCOBfbUBDN1
- DuJoN7p2DjMbLUQ+g4HA58dJMuV8nO8WA34spCrn5Jcn+GqoVLgeo9+puGtORnzSkcJa
- GcRLRyHdBo6S3wWoYkjQD8Rd492P8MiWkAks7X9+zQ9oIYpCJw/NU15eDjVMv3Sv7faQ
- caiD+zPX7x+gleUDKJDKnsowuokZ5sLwLv9U0HGkcAZSf2ZI0yLO/so4RPHklq3EbkKc
- OXiw==
+ bh=o2KnYtWi5SLktJn2op8zkW2H4ncbiGRKRjw+VMEkUnU=;
+ b=HMBjz4VxsRY0GQSmLRIjcd/LPfpLc9xSHhYK+CETWHZGNTwq8RwHcbROkiHwm+6Ghi
+ EDy0OWzoxVBy78gHvt5bKH9BZYqXNeXa3khB1qmIh/wgfyptgf1NEurtoc+Y9Ey4uEsW
+ HVOWDx7mFk+nhWnVsunMPSj+1aYqaVbeRyUloYlht+SgOoLtw3TSpsDEFOn1rdSh0mRN
+ l7RUjBmSJ+Yg04dgR7S12gOyQzgSYKqHCTkXY0rL5w+3tvpAPh9yWZT8QVEJivWTJPee
+ N1umIS//rg3Drebciyt+JRxHGe2eUrLIPVHz1ys0xSsXqm2TndPy1/gDWRybFpTVpCfl
+ V8kw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=J11CAk6hX0rsSVl1UifJnPX7sfZSPwS6EsqX4Zx/yUk=;
- b=lDNsUO9nlmQBeT/dXncv+Doa1UldSo6D385svxcK2KZW9CyK1issi2dkD/zmuI7/d8
- lcGk6XNcQ9kajwozD7FLgRut9ghhq4mPbEf3fq6lmZyRJ8pH/MYSyvcIjISobKhxJ8iW
- fv/SRFS69+hjuXvjRSmr68hrgWMaaVxXX+Ixyy+QpH27amik3oR6FwPQiaYQOSHyQAtE
- Ni2zwzXgZbEqjc8v2k4FyIkru6uHKkuJmu8IIlhGWxcUo8/4slm2HzbwCRqsgK+3xj/H
- c1kQU+bzBAkB9O//JauULhzHwn7iKs4/G0ly1QNPpKW73XW6GbGATNwpJFfVHLl+T/sb
- ZGmQ==
-X-Gm-Message-State: APjAAAXobuPWx7N5G/n+F7hCjXWYVdm+lJ09/5VVoYQ9nvOp8wazoizm
- A1Dii4dOxgMFQ1Z6mJhYGSYd
-X-Google-Smtp-Source: APXvYqx/FVvHZEajj3S63ojtZ+4apc82r5QUp3f7agjtxwzWnPlXgrRA0LNj6Lde8RF6sZUQ+Nn1Uw==
-X-Received: by 2002:a17:902:e283:: with SMTP id
- cf3mr8159182plb.160.1556861502960; 
- Thu, 02 May 2019 22:31:42 -0700 (PDT)
+ bh=o2KnYtWi5SLktJn2op8zkW2H4ncbiGRKRjw+VMEkUnU=;
+ b=SgCx7jf0GVe17GmKC9exgNkhQVQP8pxk7l7idFGVftHoNcQqE2ilBDs/kVNyM4ijmE
+ /OnGEph9ji5MO4QmctGWxc1fxXyNip/Q+qJhy8880QkTrLx9YS56oNFQ2caopJR846tH
+ EagvH7bjcZn1hIUosruV6bTdZ7WnKtJ0yod1gon3jNG7nDs+lqEXMdLCnNOSGnLYRscH
+ 9aJ1UPaTYz3NTRguXmdGZzfKeyqczXNKtr03aEI7hfPVNbZblBqL0lgaAP+XTEGJ5frE
+ drvEip8ygqzYUqSBpfQAimx7q1riWLgHX/iRhNLPdCNM8yoVOueAG30EenSxmdBSBxKY
+ hVvw==
+X-Gm-Message-State: APjAAAX59+uP5zNqLgMqEUchgdLfW6Df7Kh8rP62pgvNAk/DR757RqEa
+ VFUaQ1OH8FScGOWqyTL1zKpu
+X-Google-Smtp-Source: APXvYqxABA9lxDSm2LKatJUanyxVDJb7MJrFiBSyTE90tiesPer2oZLAcR7IjsvsZ4bxW1EYHkaDog==
+X-Received: by 2002:a63:6fc1:: with SMTP id k184mr8099288pgc.239.1556861508351; 
+ Thu, 02 May 2019 22:31:48 -0700 (PDT)
 Received: from localhost.localdomain ([2405:204:72c7:3835:31df:f367:f70b:ed86])
- by smtp.gmail.com with ESMTPSA id l15sm1152226pgb.71.2019.05.02.22.31.37
+ by smtp.gmail.com with ESMTPSA id l15sm1152226pgb.71.2019.05.02.22.31.43
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 02 May 2019 22:31:42 -0700 (PDT)
+ Thu, 02 May 2019 22:31:47 -0700 (PDT)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: mcoquelin.stm32@gmail.com,
 	alexandre.torgue@st.com,
 	robh+dt@kernel.org
-Subject: [PATCH 1/3] dt-bindings: arm: stm32: Document Avenger96 devicetree
- binding
-Date: Fri,  3 May 2019 11:01:21 +0530
-Message-Id: <20190503053123.6828-2-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH 2/3] ARM: dts: stm32mp157: Add missing pinctrl definitions
+Date: Fri,  3 May 2019 11:01:22 +0530
+Message-Id: <20190503053123.6828-3-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190503053123.6828-1-manivannan.sadhasivam@linaro.org>
 References: <20190503053123.6828-1-manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_223144_726277_7D7C57AB 
-X-CRM114-Status: UNSURE (   9.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190502_223149_306919_3286C852 
+X-CRM114-Status: GOOD (  11.16  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -109,27 +106,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Document devicetree binding for Avenger96 board.
+Add missing pinctrl definitions for STM32MP157 MPU.
 
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- Documentation/devicetree/bindings/arm/stm32/stm32.txt | 6 ++++++
- 1 file changed, 6 insertions(+)
+ arch/arm/boot/dts/stm32mp157-pinctrl.dtsi | 62 +++++++++++++++++++++++
+ 1 file changed, 62 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/arm/stm32/stm32.txt b/Documentation/devicetree/bindings/arm/stm32/stm32.txt
-index 6808ed9ddfd5..eba363a4b514 100644
---- a/Documentation/devicetree/bindings/arm/stm32/stm32.txt
-+++ b/Documentation/devicetree/bindings/arm/stm32/stm32.txt
-@@ -8,3 +8,9 @@ using one of the following compatible strings:
-   st,stm32f746
-   st,stm32h743
-   st,stm32mp157
+diff --git a/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
+index 85c417d9983b..0b5bcf6a7c97 100644
+--- a/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
++++ b/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
+@@ -241,6 +241,23 @@
+ 				};
+ 			};
+ 
++			i2c1_pins_b: i2c1-2 {
++				pins {
++					pinmux = <STM32_PINMUX('F', 14, AF5)>, /* I2C1_SCL */
++						 <STM32_PINMUX('F', 15, AF5)>; /* I2C1_SDA */
++					bias-disable;
++					drive-open-drain;
++					slew-rate = <0>;
++				};
++			};
 +
-+Boards:
++			i2c1_pins_sleep_b: i2c1-3 {
++				pins {
++					pinmux = <STM32_PINMUX('F', 14, ANALOG)>, /* I2C1_SCL */
++						 <STM32_PINMUX('F', 15, ANALOG)>; /* I2C1_SDA */
++				};
++			};
 +
-+Root node property compatible must contain one of below depending on board:
+ 			i2c2_pins_a: i2c2-0 {
+ 				pins {
+ 					pinmux = <STM32_PINMUX('H', 4, AF4)>, /* I2C2_SCL */
+@@ -258,6 +275,23 @@
+ 				};
+ 			};
+ 
++			i2c2_pins_b: i2c2-2 {
++				pins {
++					pinmux = <STM32_PINMUX('Z', 0, AF3)>, /* I2C2_SCL */
++						 <STM32_PINMUX('H', 5, AF4)>; /* I2C2_SDA */
++					bias-disable;
++					drive-open-drain;
++					slew-rate = <0>;
++				};
++			};
 +
-+ - Avenger96: "arrow,stm32mp157a-avenger96"
++			i2c2_pins_sleep_b: i2c2-3 {
++				pins {
++					pinmux = <STM32_PINMUX('Z', 0, ANALOG)>, /* I2C2_SCL */
++						 <STM32_PINMUX('H', 5, ANALOG)>; /* I2C2_SDA */
++				};
++			};
++
+ 			i2c5_pins_a: i2c5-0 {
+ 				pins {
+ 					pinmux = <STM32_PINMUX('A', 11, AF4)>, /* I2C5_SCL */
+@@ -599,6 +633,34 @@
+ 					bias-disable;
+ 				};
+ 			};
++
++			uart4_pins_b: uart4-1 {
++				pins1 {
++					pinmux = <STM32_PINMUX('D', 1, AF8)>; /* UART4_TX */
++					bias-disable;
++					drive-push-pull;
++					slew-rate = <0>;
++				};
++				pins2 {
++					pinmux = <STM32_PINMUX('B', 2, AF8)>; /* UART4_RX */
++					bias-disable;
++				};
++			};
++
++			uart7_pins_a: uart7-0 {
++				pins1 {
++					pinmux = <STM32_PINMUX('E', 8, AF7)>; /* UART4_TX */
++					bias-disable;
++					drive-push-pull;
++					slew-rate = <0>;
++				};
++				pins2 {
++					pinmux = <STM32_PINMUX('E', 7, AF7)>, /* UART4_RX */
++						 <STM32_PINMUX('E', 10, AF7)>, /* UART4_CTS */
++						 <STM32_PINMUX('E', 9, AF7)>; /* UART4_RTS */
++					bias-disable;
++				};
++			};
+ 		};
+ 
+ 		pinctrl_z: pin-controller-z@54004000 {
 -- 
 2.17.1
 
