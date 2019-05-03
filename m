@@ -2,110 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9959B132D4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 19:05:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62B62132C5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 19:03:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9EgRxq6qnz3dh9trq2oH/E4yIUSByY6YdL17S/jiW0Q=; b=N3H9ifWzbSSxVD
-	DEZvxMyr/+1PVBw5YTidIJ0BN9J1LHC5L0IhhCaQVt1xRcRS01PU6oohcq2qbeQY+1QdiRD+M+/U/
-	kE7DOMQcVfTPjbtw3dm3AIn13RzylPBea+WgBnv5RJ9oaFuRFsk4CGwHHv47ChBSbjjZG///XEMEN
-	TVm+XtZAHcnB20adQ4UpLZ39xpNCL59n1qikPkoTVkJJskuGNXAn02827nOge4G1zW6kVVDHdbXcl
-	ywzthffpfthnMt5O+lV7kg/Ok6evns1K4JqqBthTLPdoAKllACxqzJZtZByxLOm+F3PEEMe2cvrDe
-	0AM42dWKaIUNXTL0Y5VA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=x+XMKSZRAUeJAWP7isk3+xAG9rASkTJELFn3dKy+ats=; b=hQ+fv8ROr8NVVW
+	5rCoCDnGH0iKGGf7rOszIc639cGy97gKWhB6F25HfZ/xVjPCo7RJTvcpXR9M0gUa2arWwDHgIleMf
+	UtEHqdPO3P81bDPTJEC8U7AsFvK4s42KMrQwFvUHRN6thgPEIU4Ks9YZnPWno4yrE3lb5j6ZV1ygu
+	t8+XMyt+Zw3gapbG7eDtCHYgQcuDTLe7Q0Lejr1/f4nY5jcpP48ZCCI7h1m8Yfpid4y4uf3Uxs1VE
+	PVZbR91mGQNnhON5GWI9JcDNdjWX+fD8oUH3Dr+2PFLy6Fk97Iy8RIE1GnNByAm1vUty0Mv3OfOMH
+	K3Fjof4mJZEIB6pAS5aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMbcJ-0005td-No; Fri, 03 May 2019 17:04:59 +0000
-Received: from mail-out.m-online.net ([212.18.0.9])
+	id 1hMbaN-0004xl-Oe; Fri, 03 May 2019 17:02:59 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMbcB-0005sj-IJ
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 17:04:53 +0000
-Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 44wdm16KPyz1rGht;
- Fri,  3 May 2019 19:04:49 +0200 (CEST)
-Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 44wdm15TZ2z1qtf8;
- Fri,  3 May 2019 19:04:49 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at mnet-online.de
-Received: from mail.mnet-online.de ([192.168.8.182])
- by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
- port 10024)
- with ESMTP id TUYj8Hjr_91r; Fri,  3 May 2019 19:04:48 +0200 (CEST)
-X-Auth-Info: CCB6StU1UhwMxhvVWndYWn3QIZyeDOLtN6PXHrzgihg=
-Received: from [IPv6:::1] (unknown [195.140.253.167])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.mnet-online.de (Postfix) with ESMTPSA;
- Fri,  3 May 2019 19:04:48 +0200 (CEST)
-Subject: Re: [PATCH 3/8] ARM: dts: imx53: Add ethernet PHY reset on M53Menlo
-To: Fabio Estevam <festevam@gmail.com>
-References: <20190503155235.6414-1-marex@denx.de>
- <20190503155235.6414-3-marex@denx.de>
- <CAOMZO5C6zDP7W=BVSDGvNA0GtS6iGTHBNTsDjFN_tNdEbL+VEQ@mail.gmail.com>
-From: Marek Vasut <marex@denx.de>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marex@denx.de; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <5930dc87-0566-fac8-3956-699db8399cbd@denx.de>
-Date: Fri, 3 May 2019 19:00:37 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hMbaG-0004wT-U9
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 17:02:54 +0000
+Received: by mail-pf1-x441.google.com with SMTP id v80so3179206pfa.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 03 May 2019 10:02:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=e71LeW3j52z02CfoTglw12Lmjisq73YxcosFVCbh53o=;
+ b=hrUWYPl6ix6lmEUT+7gmZcFzhb63MdRST9wYPDOIVDmC/LzaxdIO5YqMR9VHPo0Bm0
+ 82stpci7nJLYQd5BJl4soh4Z123TLPBWd09ZiRFMLpvEXvCMb061QG9scqw6rKtpjh1E
+ kkX/N5wtLrWsHL4J8i87lISK1gdR2s5yYRrwWyERLEcyPvXTU/sq2szATYe2giWY1Voi
+ xegRCJX/tNYrsRrlMBUOoE/lSVvaj9xedR/ofO78sPnsVcn8prsnDB5Yr6LyCqUE5WTv
+ mbWGCLv9qzSIZdmyGpriTFfAh+bRHrqHP2qnfunh3CTdkyZihHHjTUToVuOGOkc6JjZe
+ 6jDg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=e71LeW3j52z02CfoTglw12Lmjisq73YxcosFVCbh53o=;
+ b=mCIjDZ+PNeqc+8RbjUzLmZtQEvfc9gGupJwJaNrNWQfgHrez/EzsAojmup8vZ+YfMX
+ fzTag0TKRKkDUodXRxXKjUu+bqcYHdb2yolKYh7MYyn8UNpqUSfc9iWB3RUAzVlVubik
+ qsyFLIwsgwOwnBeikN7JcAGyOkGgFQ9dJQVAWK+1K6RWZR207pMa//74q0p97INjLqHo
+ PMRIi9C+e0d11zMNSlspfb/5ZXQP2kwp+VPWZjSRK4PIn83jnW0AK5f+oG+kHegAaNAa
+ AVIVyNO+vWbw93ztKSIC3+UaRpaJtLXvgbbyM+q1SfjyPoM+c4Td9GukM9/Ea6jNCIOl
+ 7u0g==
+X-Gm-Message-State: APjAAAVuGajDLwFS+pFaf6H03kLdYPl5bDzcn0XYb/LLz7jMSRLvqJD+
+ 3kJRRn8nPFTnzwcpI8GWp3jlZQ==
+X-Google-Smtp-Source: APXvYqyTK6cg0M1/C2OXTAJ465eNh4Ogi4rZP6tl1I9CMzK8OhQ3QscAC72wbWMwk3C+thhafvr1Sg==
+X-Received: by 2002:a62:5fc7:: with SMTP id
+ t190mr12168728pfb.191.1556902968531; 
+ Fri, 03 May 2019 10:02:48 -0700 (PDT)
+Received: from google.com ([2620:15c:201:2:ce90:ab18:83b0:619])
+ by smtp.gmail.com with ESMTPSA id j7sm3380683pfh.62.2019.05.03.10.02.46
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Fri, 03 May 2019 10:02:47 -0700 (PDT)
+Date: Fri, 3 May 2019 10:02:42 -0700
+From: Sami Tolvanen <samitolvanen@google.com>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH 2/2] arm64: use the correct function type in
+ SYSCALL_DEFINE0
+Message-ID: <20190503170242.GA211922@google.com>
+References: <20190501200451.255615-1-samitolvanen@google.com>
+ <20190501200451.255615-3-samitolvanen@google.com>
+ <20190503102128.GD47811@lakrids.cambridge.arm.com>
 MIME-Version: 1.0
-In-Reply-To: <CAOMZO5C6zDP7W=BVSDGvNA0GtS6iGTHBNTsDjFN_tNdEbL+VEQ@mail.gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190503102128.GD47811@lakrids.cambridge.arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_100451_907098_3CEB9863 
-X-CRM114-Status: GOOD (  14.77  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190503_100253_000929_EB4CA0A4 
+X-CRM114-Status: GOOD (  13.15  )
+X-Spam-Score: -13.3 (-------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-13.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.18.0.9 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ 2.4 FSL_HELO_FAKE          No description available.
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 T_DKIMWL_WL_MED        DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -117,37 +107,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shawn Guo <shawnguo@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Kees Cook <keescook@chromium.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ Will Deacon <will.deacon@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/3/19 6:19 PM, Fabio Estevam wrote:
-> On Fri, May 3, 2019 at 12:52 PM Marek Vasut <marex@denx.de> wrote:
->>
->> diff --git a/arch/arm/boot/dts/imx53-m53menlo.dts b/arch/arm/boot/dts/imx53-m53menlo.dts
->> index 46f990759660..a4cd2c22fa9e 100644
->> --- a/arch/arm/boot/dts/imx53-m53menlo.dts
->> +++ b/arch/arm/boot/dts/imx53-m53menlo.dts
->> @@ -86,6 +86,7 @@
->>         pinctrl-names = "default";
->>         pinctrl-0 = <&pinctrl_fec>;
->>         phy-mode = "rmii";
->> +       phy-reset-gpios = <&gpio7 7 GPIO_ACTIVE_HIGH>;
-> 
-> I suppose that this should be GPIO_ACTIVE_LOW instead.
-> 
-> The FEC driver ignores the phy-reset-gpios polarity and it assumes
-> active low unless the property 'phy-reset-active-high' is passed.
+Hi Mark,
 
-I double-checked the schematic, yes, it should be active low. Thanks
+On Fri, May 03, 2019 at 11:21:28AM +0100, Mark Rutland wrote:
+> Generally, this makes sense, but I'm not sure that this is complete.
+> 
+> IIUC this introduces a new type mismatch with sys_ni_syscall() in some
+> cases.
 
--- 
-Best regards,
-Marek Vasut
+Thanks for the review. You're correct, sys_ni_syscall needs to be fixed
+too. I'll include this in v2.
+
+> We probably need that to use SYSCALL_DEFINE0(), and maybe have a
+> ksys_ni_syscall() for in-kernel wrappers.
+
+Why would we need ksys_ni_syscall? It seems something like this should
+be sufficient:
+
+  asmlinkage long sys_ni_syscall(void);
+
+  SYSCALL_DEFINE0(ni_syscall)
+  {
+          return sys_ni_syscall();
+  }
+
+Sami
 
 _______________________________________________
 linux-arm-kernel mailing list
