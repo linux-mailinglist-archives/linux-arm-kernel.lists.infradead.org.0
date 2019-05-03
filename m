@@ -2,77 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D034A13653
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 May 2019 01:46:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 070B513656
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 May 2019 01:48:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vaVYG2UuW0FJD4G9AaW8YsKm8MLJ04vBebUCK4m0lQc=; b=MZ9sZhNSW+Ail3
-	8f8A6df/s3MzEsgr4IQrCRqJZ1ABjJJsNUiTB3Wp1J/bajS1Ny87JiQDkx/TKGIkj19Mowi5a2MQu
-	xVwiruzUSYs+zcpiTJfB7z9l9dyIlE9YlZzmHVLsO0Kpk2twArt7hM6Su4HQPJ6bTZDrh1fTzYXp0
-	u7BaP0RGe60FhnPvNvthSNQUhQ8XcvQhF3DYCmPHMAIBLvQ4ISX4u2nGUXiENA3bLXZTR2fYgLxAX
-	syTnPBPmSXwXPbegtVEXStCgau6nm4iEpPPN1/mnhSzdRjesDDMA72R2CJMVD6ac0XHJojWJ2mVUW
-	UEDA8fbWJoQArkAcve9Q==;
+	List-Owner; bh=6fE3v/NP3aDU9krijBI/prbudoLNikWJ69clomCx9PI=; b=S+W3SFi1ZGFm2J
+	4d52XD2Nnh9AdcIei/aPWyHadiDwzKJZ/ser2JxZP75+k3xBtZiJ/T9I4/rO/Om9AJZEKO5STi7/4
+	q6G1Jq5Mpo4kR1Gjn+hYHS/PZhCujKW9IEJcyQKcwJ9cPLZBnSzmllaoH70RHT5R1yfGMGRvTO614
+	WOAuUUscgfRdEEI58BhRU1uhnOU9W709GgEHNM4un2elVrtcwO7AwvamU3XQBJAbUhHQ0GO/Fqhp5
+	yoNFdwNxtDxg9PkOQlgdQEQrE+CLcBNT8uLmSe6lrwSAaTL6K6d98kCAmf0/ULEc65IuJaagm8egJ
+	5Bp6DGxK4UbawbS9TXpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMhsQ-0005nK-Hb; Fri, 03 May 2019 23:46:02 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hMhuq-00068J-3s; Fri, 03 May 2019 23:48:32 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMhsG-0005ld-BL
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 23:45:53 +0000
-Received: by mail-pl1-x643.google.com with SMTP id bi2so3404331plb.13
+ id 1hMhui-00067E-Om
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 23:48:26 +0000
+Received: by mail-pl1-x644.google.com with SMTP id o5so3410737pls.12
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 03 May 2019 16:45:50 -0700 (PDT)
+ Fri, 03 May 2019 16:48:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=XbIwRnpHasrOr38KG1gDBykd/s7vNBHOqXcN+WuSbls=;
- b=hRT6Lt40DTjB+SAfX7dTiYCmgcS0xVV4LOZGxF1nNO1rE6hTxBbwg0EOCg90s634u1
- RAmh5pNALXGX4G8EPiTonOV0il0j4303l80tCXD0rNbGUOUcwN7zZ9qvSXsYdKqHM6zL
- ME3uD6VSGCzZb29q39EjXHNlWjKzINHiqmMl4=
+ bh=PEbVvCDak8dCpI2HnTFwocIiYZvOr0ebCOGSVDXq9U8=;
+ b=RGP+SCYMLHEk5WjF+mHki7uJYv5LbeWl/W59ixEjp7SqRFxLYgdyeLFfNsh1I0z0mT
+ cb/sCQwX3HTa38w/+UuVb9LXLRoXVIFbivcUH4aHmEsAorf62RmWtD+486wZ5IFXqkCK
+ k4ZFTZOefUEJopS0g8GIGZg3EOG6KH+WOcI/s=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=XbIwRnpHasrOr38KG1gDBykd/s7vNBHOqXcN+WuSbls=;
- b=YjH1FjzsN1m3eCscLh/yTtKx9yXGVW9eiap9Z2+j7ayVsE7/hNrPoSnVD/6pGoH55M
- t9oMxyLi3L6F2bPaujBvw5dYSdY/fQzgAsZi2cVBuHEUojfKUWYNrXGhkHfTfFDr29O9
- pHTc53HLpxmvc24Jr37c7IpcQnqGSqSF2vU43oNOylAHTrhiNWEOA3Jguz+l4ydVj3xm
- bOo2ivRq82hz1PujiUory7dGODBUJBqeRymXCzzDflZNpoy+2XzmZjgwK+SkageldjHq
- 7FXxbheGe4MF9m3MzQyp9VugJ27L0K2WWZ8Kf10DNV9j5J1CLGZ8r89J/3uQjEmIICzB
- 5gzw==
-X-Gm-Message-State: APjAAAWNO69u79i0BiSTfJOpB5eaSaKSO1FPn6FJtdiku0gMR0CP/f0l
- p3k/V5PECH3/TKYGU2RYkd0O3w==
-X-Google-Smtp-Source: APXvYqywi/Agi0SinrIsRvR8a9BzPcCCDDx1uoFGnmEtsaMSQWa+m9ZHFlINHMkxcDC/VFmBjbEvQA==
-X-Received: by 2002:a17:902:6b01:: with SMTP id
- o1mr14464517plk.318.1556927149935; 
- Fri, 03 May 2019 16:45:49 -0700 (PDT)
+ bh=PEbVvCDak8dCpI2HnTFwocIiYZvOr0ebCOGSVDXq9U8=;
+ b=OqJAAPw8F8o0SyhfsE22tbDWeZOr2RIQ6S8f1ATjD1hvxwQFIlno1BjhgGBYyxYKLJ
+ kbLsnpw/6wJx6143tYaOYZoMEI8Brk2++Egb1zBSLCdVULjj3cDhzboB5SKO/pYIN6Ma
+ m/lId6J6jpgjrSAxzMM7kFxBfNyc+lgezU2ztryknhZh6TQPb8Auk2QCEBgR9UsfprFP
+ NWea/OO6HGQiQIcTPT5CEeAM+2iOZvRu3igAKBJsQ+i8p/HhnwoyRqBzWjE0h/cROqrH
+ b6tQkdu9YVmWBDmNTKGQcFrQaVBmQX0GzskPAXdSUT7TMxCijMZAaUjhVnUe34yOxto7
+ 4x6A==
+X-Gm-Message-State: APjAAAUgp/6EKdI0MH8/jUtPvkGvz8EzaEicGPwdpXXIAcZOTN8gu2SO
+ T1eR1O6LafXh5oyuqCgaOkuSbA==
+X-Google-Smtp-Source: APXvYqxeKcjKarf8WpC7SOBVbIuTMoZDl+AyM8KJSHyTbJ15hk1FROhg2a9ECGzoKsHIXJxvHdpNjA==
+X-Received: by 2002:a17:902:b703:: with SMTP id
+ d3mr14041484pls.93.1556927303213; 
+ Fri, 03 May 2019 16:48:23 -0700 (PDT)
 Received: from tictac2.mtv.corp.google.com
  ([2620:15c:202:1:24fa:e766:52c9:e3b2])
- by smtp.gmail.com with ESMTPSA id f22sm4019071pgv.45.2019.05.03.16.45.48
+ by smtp.gmail.com with ESMTPSA id p6sm4231875pfd.122.2019.05.03.16.48.22
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 03 May 2019 16:45:49 -0700 (PDT)
+ Fri, 03 May 2019 16:48:22 -0700 (PDT)
 From: Douglas Anderson <dianders@chromium.org>
 To: Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH] ARM: dts: rockchip: Make rk3288-veyron-mickey's emmc work
- again
-Date: Fri,  3 May 2019 16:45:37 -0700
-Message-Id: <20190503234537.230177-1-dianders@chromium.org>
+Subject: [PATCH] ARM: dts: rockchip: Remove bogus 'i2s_clk_out' from
+ rk3288-veyron-mickey
+Date: Fri,  3 May 2019 16:48:14 -0700
+Message-Id: <20190503234814.230901-1-dianders@chromium.org>
 X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_164552_388573_5B5D7675 
-X-CRM114-Status: GOOD (  11.91  )
+X-CRM114-CacheID: sfid-20190503_164824_830078_780D322C 
+X-CRM114-Status: GOOD (  12.48  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -95,71 +95,47 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- amstan@chromium.org, Shawn Lin <shawn.lin@rock-chips.com>,
- briannorris@chromium.org, Douglas Anderson <dianders@chromium.org>,
- Rob Herring <robh+dt@kernel.org>, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, mka@chromium.org,
- linux-arm-kernel@lists.infradead.org
+ amstan@chromium.org, briannorris@chromium.org,
+ Douglas Anderson <dianders@chromium.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ mka@chromium.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When I try to boot rk3288-veyron-mickey I totally fail to make the
-eMMC work.  Specifically my logs (on Chrome OS 4.19):
+The rk3288-veyron-mickey device tree overrides the default "i2s" clock
+settings to add the clock for "i2s_clk_out".
 
-  mmc_host mmc1: card is non-removable.
-  mmc_host mmc1: Bus speed (slot 0) = 400000Hz (slot req 400000Hz, actual 400000HZ div = 0)
-  mmc_host mmc1: Bus speed (slot 0) = 50000000Hz (slot req 52000000Hz, actual 50000000HZ div = 0)
-  mmc1: switch to bus width 8 failed
-  mmc1: switch to bus width 4 failed
-  mmc1: new high speed MMC card at address 0001
-  mmcblk1: mmc1:0001 HAG2e 14.7 GiB
-  mmcblk1boot0: mmc1:0001 HAG2e partition 1 4.00 MiB
-  mmcblk1boot1: mmc1:0001 HAG2e partition 2 4.00 MiB
-  mmcblk1rpmb: mmc1:0001 HAG2e partition 3 4.00 MiB, chardev (243:0)
-  mmc_host mmc1: Bus speed (slot 0) = 400000Hz (slot req 400000Hz, actual 400000HZ div = 0)
-  mmc_host mmc1: Bus speed (slot 0) = 50000000Hz (slot req 52000000Hz, actual 50000000HZ div = 0)
-  mmc1: switch to bus width 8 failed
-  mmc1: switch to bus width 4 failed
-  mmc1: tried to HW reset card, got error -110
-  mmcblk1: error -110 requesting status
-  mmcblk1: recovery failed!
-  print_req_error: I/O error, dev mmcblk1, sector 0
-  ...
+That clock is only present in the bindings downstream Chrome OS 3.14
+tree.  Upstream the i2s port bindings doesn't specify that as a
+possible clock.
 
-When I remove the '/delete-property/mmc-hs200-1_8v' then everything is
-hunky dory.
+Let's remove it.
 
-That line comes from the original submission of the mickey dts
-upstream, so presumably at the time the HS200 was failing and just
-enumerating things as a high speed device was fine.  ...or maybe it's
-just that some mickey devices work when enumerating at "high speed",
-just not mine?
-
-In any case, hs200 seems good now.  Let's turn it on.
+NOTE: for other rk3288-veyron devices this clock is consumed by
+'maxim,max98090'.  Presumably if this clock is needed for mickey it'll
+need to be consumed by something similar.
 
 Signed-off-by: Douglas Anderson <dianders@chromium.org>
 ---
 
- arch/arm/boot/dts/rk3288-veyron-mickey.dts | 4 ----
- 1 file changed, 4 deletions(-)
+ arch/arm/boot/dts/rk3288-veyron-mickey.dts | 2 --
+ 1 file changed, 2 deletions(-)
 
 diff --git a/arch/arm/boot/dts/rk3288-veyron-mickey.dts b/arch/arm/boot/dts/rk3288-veyron-mickey.dts
-index e852594417b5..b13f87792e9f 100644
+index e852594417b5..f9c4ece3c0d3 100644
 --- a/arch/arm/boot/dts/rk3288-veyron-mickey.dts
 +++ b/arch/arm/boot/dts/rk3288-veyron-mickey.dts
-@@ -128,10 +128,6 @@
- 	};
+@@ -142,8 +142,6 @@
+ 
+ &i2s {
+ 	status = "okay";
+-	clock-names = "i2s_hclk", "i2s_clk", "i2s_clk_out";
+-	clocks = <&cru HCLK_I2S0>, <&cru SCLK_I2S0>, <&cru SCLK_I2S0_OUT>;
  };
  
--&emmc {
--	/delete-property/mmc-hs200-1_8v;
--};
--
- &i2c2 {
- 	status = "disabled";
- };
+ &rk808 {
 -- 
 2.21.0.1020.gf2820cf01a-goog
 
