@@ -2,65 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E8811285A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 09:02:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A7D412882
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 09:13:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Zq8V69FyVP9BmqaKjclKfjBAZz1lOd4jbwLVYwwW9Yk=; b=Kue7ADz3w2TCsEyFAoP66AATJ
-	LIZVMdoNaABxKx6t+kvctx3sW5A588VY3O/9bZAmnTU0NXBcIgyZSaYc5QZ18EWhRphj8yE8AKOrP
-	Ma8h5k5RZZ4CbFOaPU0fdU9IpT8tToSRx9wYnw6fCzw7IeDgWavIE4ootJkBIErDZ3955kUaQMTep
-	Jdg7iAMLtq+4jldx0Wmjq+mTgNbvNcLchDhRYmS7rcMeGzCNi0W/TQVyTx21Wer4ALx3DoyR2Ij7R
-	jpAgAea/swxlaCFa9Lrgt3svYo1SfNH7/HUTWJWHKUbCUfNiMiyKjw6f+i9aaTZduJevVQntsZSFV
-	gccT96XRw==;
+	 bh=gDkIFaQwPwW0j1fWNfrsLCLuV9sO97gFWNegyF0C/Gw=; b=W+bzOK5N1aqKc3vQ8+IQjr+11
+	svOGx4Xk33xksOuzJJAbFNWz4U6QMcfQSCAtUUoMJOUurq5DOJe9J9bExS72KewQI0aCp5UG9gMKL
+	0HcZyyxO8Th76FUSsThym+FnNbSpSjvjbMvPh4TMsnGK2AWJhCdr1STfmuhPteIBYVYQRCyxP6C9E
+	oryh++qOgqYIjX7v7pSi4uZ7T92Pv2sIAd8kuYYMl7pVeSXRD4COLiBy7VbSwfo3U+xT2z3bunlNK
+	WoBVhEiiWQ5Hl/1uReQ8T8/cNmCNcBgvf/XMLqJ6auGREKRqYSocsh9OUbwUe9UwQi6Af5WIcnCYA
+	xpW8Sv5Jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMSDY-00060M-8C; Fri, 03 May 2019 07:02:48 +0000
-Received: from icp-osb-irony-out6.external.iinet.net.au ([203.59.1.106])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMSDQ-0005zr-KB
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 07:02:42 +0000
-X-IronPort-Anti-Spam-Filtered: true
-X-IronPort-Anti-Spam-Result: =?us-ascii?q?A2AHAABU5stc/zXSMGcNWBkBAQEBAQE?=
- =?us-ascii?q?BAQEBAQEHAQEBAQEBgVMCAQEBAQELAYQlhBCTYwEBAQEBAQaBNYNehW6PBoF?=
- =?us-ascii?q?7hH0Chlc2Bw4BAwEBAQQBAQEBAoZfAQEBAQIBIwQRQQULCw0LAgImAgJXBg0?=
- =?us-ascii?q?GAgEBgx6BdwWtGXF8MxqFLYMqgUWBCycBgV2KBXiBB4E4gms+h06CWASLE4c?=
- =?us-ascii?q?mUJQkCYILkj4hjCcDiRyifwqBfTMaCCgIgyeCGxeOMWCTCQEB?=
-X-IPAS-Result: =?us-ascii?q?A2AHAABU5stc/zXSMGcNWBkBAQEBAQEBAQEBAQEHAQEBA?=
- =?us-ascii?q?QEBgVMCAQEBAQELAYQlhBCTYwEBAQEBAQaBNYNehW6PBoF7hH0Chlc2Bw4BA?=
- =?us-ascii?q?wEBAQQBAQEBAoZfAQEBAQIBIwQRQQULCw0LAgImAgJXBg0GAgEBgx6BdwWtG?=
- =?us-ascii?q?XF8MxqFLYMqgUWBCycBgV2KBXiBB4E4gms+h06CWASLE4cmUJQkCYILkj4hj?=
- =?us-ascii?q?CcDiRyifwqBfTMaCCgIgyeCGxeOMWCTCQEB?=
-X-IronPort-AV: E=Sophos;i="5.60,424,1549900800"; d="scan'208";a="157783043"
-Received: from unknown (HELO [10.44.0.22]) ([103.48.210.53])
- by icp-osb-irony-out6.iinet.net.au with ESMTP; 03 May 2019 15:02:26 +0800
-Subject: Re: [PATCH 1/6] ARM: ks8695: watchdog: stop using mach/*.h
-To: Arnd Bergmann <arnd@arndb.de>
-References: <20190415202501.941196-1-arnd@arndb.de>
-From: Greg Ungerer <gerg@uclinux.org>
-Message-ID: <2424c672-e3fb-4c32-4c24-fafc59d03a96@uclinux.org>
-Date: Fri, 3 May 2019 17:02:23 +1000
+	id 1hMSOC-0000e9-1t; Fri, 03 May 2019 07:13:48 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hMSO4-0000dl-FA
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 07:13:42 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x4376qPM027874; Fri, 3 May 2019 09:13:29 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=/6Z2KyQOPl3FSVk+uXWK41nlphShPXx7ZFPnixJ5kcs=;
+ b=peg63AqFBuEHUy4meGtp7rX6Zkxkj5W5NN48lDRZtgWC8KWm9W8Kko4/cdvJkNg9g9Jn
+ Ti3t67EocyLA1WkmQNdI0sjQFkdmgs372W5vA95a3MSaqY9O4xpNZZIm5j54T18pqy13
+ 4xG1xRW3EFxhLSH87K08UAX+FwGAalrf+TNQGYXmyvof0d11hAkQ7I7nlBww1Fp6u0Nl
+ wC4/7i6JO9i+CcPvVVdEUUsAM6gRfSEWaBf+yn+/FBBSE6RPOjltbw4dzuEQKZb3Ld9H
+ Z56LS6H3KvZwaaVh/fOh2lLR/tWwSGwYHA/PswUGOeda2GBukhK4Xxq+y+IR4GiZUTMq 2Q== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2s6xgrvhe9-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Fri, 03 May 2019 09:13:29 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 06F9331;
+ Fri,  3 May 2019 07:13:29 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D3EF11318;
+ Fri,  3 May 2019 07:13:28 +0000 (GMT)
+Received: from [10.48.0.204] (10.75.127.50) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 3 May
+ 2019 09:13:28 +0200
+Subject: Re: [PATCH 2/3] ARM: dts: stm32mp157: Add missing pinctrl definitions
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ <mcoquelin.stm32@gmail.com>, <robh+dt@kernel.org>
+References: <20190503053123.6828-1-manivannan.sadhasivam@linaro.org>
+ <20190503053123.6828-3-manivannan.sadhasivam@linaro.org>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <369b2593-71b6-0b00-b72c-041967ffba73@st.com>
+Date: Fri, 3 May 2019 09:13:27 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190415202501.941196-1-arnd@arndb.de>
+In-Reply-To: <20190503053123.6828-3-manivannan.sadhasivam@linaro.org>
 Content-Language: en-US
+X-Originating-IP: [10.75.127.50]
+X-ClientProxiedBy: SFHDAG6NODE3.st.com (10.75.127.18) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-05-03_02:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_000240_916347_A9A5C9F8 
-X-CRM114-Status: GOOD (  24.93  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190503_001340_965219_A1D0E136 
+X-CRM114-Status: GOOD (  16.93  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [203.59.1.106 listed in list.dnswl.org]
- 0.9 SPF_FAIL               SPF: sender does not match SPF record (fail)
- [SPF failed: Please see http://www.openspf.org/Why?s=mfrom;
- id=gerg%40uclinux.org; ip=203.59.1.106; r=bombadil.infradead.org]
+ low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -72,173 +96,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-watchdog@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
- linux-kernel@vger.kernel.org, arm@kernel.org,
- Guenter Roeck <linux@roeck-us.net>, Wim Van Sebroeck <wim@linux-watchdog.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, loic.pallardy@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Arnd,
+Hi Mani
 
-On 16/4/19 6:24 am, Arnd Bergmann wrote:
-> drivers should not rely on machine specific headers but
-> get their information from the platform device.
+On 5/3/19 7:31 AM, Manivannan Sadhasivam wrote:
+> Add missing pinctrl definitions for STM32MP157 MPU.
 > 
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-
-I dug out some old ks8695 based hardware to try this out.
-I had a lot of trouble getting anything modern working on it.
-In the end I still don't have a reliable test bed to test this properly.
-
-Your patch series works as well as the kernel before the changes,
-so I am happy enough to ack them as they are.
-
-Acked-by: Greg Ungerer <gerg@kernel.org>
-
-Ultimately though I am left wondering if the ks8695 support in the
-kernel is useful to anyone the way it is at the moment. With a minimal
-kernel configuration I can boot up to a shell - but the system is
-really unreliable if you try to interactively use it. I don't think
-it is the hardware - it seems to run reliably with the old code
-it has running from flash on it. I am only testing the new kernel,
-running with the existing user space root filesystem on it (which
-dates from 2004 :-)
-
-Regards
-Greg
-
-
-
->   arch/arm/mach-ks8695/devices.c | 13 ++++++++++++-
->   drivers/watchdog/Kconfig       |  2 +-
->   drivers/watchdog/ks8695_wdt.c  | 30 +++++++++++++++++-------------
->   3 files changed, 30 insertions(+), 15 deletions(-)
+> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> ---
+>   arch/arm/boot/dts/stm32mp157-pinctrl.dtsi | 62 +++++++++++++++++++++++
+>   1 file changed, 62 insertions(+)
 > 
-> diff --git a/arch/arm/mach-ks8695/devices.c b/arch/arm/mach-ks8695/devices.c
-> index 61cf20beb45f..57766817d86f 100644
-> --- a/arch/arm/mach-ks8695/devices.c
-> +++ b/arch/arm/mach-ks8695/devices.c
-> @@ -169,11 +169,22 @@ void __init ks8696_add_device_hpna(void)
->   /* --------------------------------------------------------------------
->    *  Watchdog
->    * -------------------------------------------------------------------- */
-> +#define KS8695_TMR_OFFSET      (0xF0000 + 0xE400)
-> +#define KS8695_TMR_PA          (KS8695_IO_PA + KS8695_TMR_OFFSET)
-> +static struct resource ks8695_wdt_resources[] = {
-> +	[0] = {
-> +		.name	= "tmr",
-> +		.start	= KS8695_TMR_PA,
-> +		.end	= KS8695_TMR_PA + 0xf,
-> +		.flags	= IORESOURCE_MEM,
-> +	},
-> +};
+> diff --git a/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
+> index 85c417d9983b..0b5bcf6a7c97 100644
+> --- a/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
+> +++ b/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
+> @@ -241,6 +241,23 @@
+>   				};
+>   			};
 >   
->   static struct platform_device ks8695_wdt_device = {
->   	.name		= "ks8695_wdt",
->   	.id		= -1,
-> -	.num_resources	= 0,
-> +	.resource	= ks8695_wdt_resources,
-> +	.num_resources	= ARRAY_SIZE(ks8695_wdt_resources),
->   };
->   
->   static void __init ks8695_add_device_watchdog(void)
-> diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
-> index 242eea859637..046e01daef57 100644
-> --- a/drivers/watchdog/Kconfig
-> +++ b/drivers/watchdog/Kconfig
-> @@ -397,7 +397,7 @@ config IXP4XX_WATCHDOG
->   
->   config KS8695_WATCHDOG
->   	tristate "KS8695 watchdog"
-> -	depends on ARCH_KS8695
-> +	depends on ARCH_KS8695 || COMPILE_TEST
->   	help
->   	  Watchdog timer embedded into KS8695 processor. This will reboot your
->   	  system when the timeout is reached.
-> diff --git a/drivers/watchdog/ks8695_wdt.c b/drivers/watchdog/ks8695_wdt.c
-> index 1e41818a44bc..87c542c2f912 100644
-> --- a/drivers/watchdog/ks8695_wdt.c
-> +++ b/drivers/watchdog/ks8695_wdt.c
-> @@ -23,10 +23,8 @@
->   #include <linux/watchdog.h>
->   #include <linux/io.h>
->   #include <linux/uaccess.h>
-> -#include <mach/hardware.h>
->   
-> -#define KS8695_TMR_OFFSET	(0xF0000 + 0xE400)
-> -#define KS8695_TMR_VA		(KS8695_IO_VA + KS8695_TMR_OFFSET)
-> +#define KS8695_CLOCK_RATE  25000000
->   
->   /*
->    * Timer registers
-> @@ -57,6 +55,7 @@ MODULE_PARM_DESC(nowayout, "Watchdog cannot be stopped once started (default="
->   
->   static unsigned long ks8695wdt_busy;
->   static DEFINE_SPINLOCK(ks8695_lock);
-> +static void __iomem *tmr_reg;
->   
->   /* ......................................................................... */
->   
-> @@ -69,8 +68,8 @@ static inline void ks8695_wdt_stop(void)
->   
->   	spin_lock(&ks8695_lock);
->   	/* disable timer0 */
-> -	tmcon = __raw_readl(KS8695_TMR_VA + KS8695_TMCON);
-> -	__raw_writel(tmcon & ~TMCON_T0EN, KS8695_TMR_VA + KS8695_TMCON);
-> +	tmcon = __raw_readl(tmr_reg + KS8695_TMCON);
-> +	__raw_writel(tmcon & ~TMCON_T0EN, tmr_reg + KS8695_TMCON);
->   	spin_unlock(&ks8695_lock);
->   }
->   
-> @@ -84,15 +83,15 @@ static inline void ks8695_wdt_start(void)
->   
->   	spin_lock(&ks8695_lock);
->   	/* disable timer0 */
-> -	tmcon = __raw_readl(KS8695_TMR_VA + KS8695_TMCON);
-> -	__raw_writel(tmcon & ~TMCON_T0EN, KS8695_TMR_VA + KS8695_TMCON);
-> +	tmcon = __raw_readl(tmr_reg + KS8695_TMCON);
-> +	__raw_writel(tmcon & ~TMCON_T0EN, tmr_reg + KS8695_TMCON);
->   
->   	/* program timer0 */
-> -	__raw_writel(tval | T0TC_WATCHDOG, KS8695_TMR_VA + KS8695_T0TC);
-> +	__raw_writel(tval | T0TC_WATCHDOG, tmr_reg + KS8695_T0TC);
->   
->   	/* re-enable timer0 */
-> -	tmcon = __raw_readl(KS8695_TMR_VA + KS8695_TMCON);
-> -	__raw_writel(tmcon | TMCON_T0EN, KS8695_TMR_VA + KS8695_TMCON);
-> +	tmcon = __raw_readl(tmr_reg + KS8695_TMCON);
-> +	__raw_writel(tmcon | TMCON_T0EN, tmr_reg + KS8695_TMCON);
->   	spin_unlock(&ks8695_lock);
->   }
->   
-> @@ -105,9 +104,9 @@ static inline void ks8695_wdt_reload(void)
->   
->   	spin_lock(&ks8695_lock);
->   	/* disable, then re-enable timer0 */
-> -	tmcon = __raw_readl(KS8695_TMR_VA + KS8695_TMCON);
-> -	__raw_writel(tmcon & ~TMCON_T0EN, KS8695_TMR_VA + KS8695_TMCON);
-> -	__raw_writel(tmcon | TMCON_T0EN, KS8695_TMR_VA + KS8695_TMCON);
-> +	tmcon = __raw_readl(tmr_reg + KS8695_TMCON);
-> +	__raw_writel(tmcon & ~TMCON_T0EN, tmr_reg + KS8695_TMCON);
-> +	__raw_writel(tmcon | TMCON_T0EN, tmr_reg + KS8695_TMCON);
->   	spin_unlock(&ks8695_lock);
->   }
->   
-> @@ -238,6 +237,11 @@ static struct miscdevice ks8695wdt_miscdev = {
->   static int ks8695wdt_probe(struct platform_device *pdev)
->   {
->   	int res;
-> +	struct resource *resource = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> +			i2c1_pins_b: i2c1-2 {
+> +				pins {
+> +					pinmux = <STM32_PINMUX('F', 14, AF5)>, /* I2C1_SCL */
+> +						 <STM32_PINMUX('F', 15, AF5)>; /* I2C1_SDA */
+> +					bias-disable;
+> +					drive-open-drain;
+> +					slew-rate = <0>;
+> +				};
+> +			};
 > +
-> +	tmr_reg = devm_ioremap_resource(&pdev->dev, resource);
-> +	if (!tmr_reg)
-> +		return -ENXIO;
+> +			i2c1_pins_sleep_b: i2c1-3 {
+> +				pins {
+> +					pinmux = <STM32_PINMUX('F', 14, ANALOG)>, /* I2C1_SCL */
+> +						 <STM32_PINMUX('F', 15, ANALOG)>; /* I2C1_SDA */
+> +				};
+> +			};
+> +
+>   			i2c2_pins_a: i2c2-0 {
+>   				pins {
+>   					pinmux = <STM32_PINMUX('H', 4, AF4)>, /* I2C2_SCL */
+> @@ -258,6 +275,23 @@
+>   				};
+>   			};
 >   
->   	if (ks8695wdt_miscdev.parent)
->   		return -EBUSY;
+> +			i2c2_pins_b: i2c2-2 {
+> +				pins {
+> +					pinmux = <STM32_PINMUX('Z', 0, AF3)>, /* I2C2_SCL */
+> +						 <STM32_PINMUX('H', 5, AF4)>; /* I2C2_SDA */
+
+You can't do that. <STM32_PINMUX('Z', 0, AF3)> has to be declared in 
+pincontroller-z. So in your case, you have to define 2 groups for i2C2 
+for your default state (the same for the sleep state).
+
+regards
+Alex
+
+
+
+
+> +					bias-disable;
+> +					drive-open-drain;
+> +					slew-rate = <0>;
+> +				};
+> +			};
+> +
+> +			i2c2_pins_sleep_b: i2c2-3 {
+> +				pins {
+> +					pinmux = <STM32_PINMUX('Z', 0, ANALOG)>, /* I2C2_SCL */
+> +						 <STM32_PINMUX('H', 5, ANALOG)>; /* I2C2_SDA */
+> +				};
+> +			};
+> +
+>   			i2c5_pins_a: i2c5-0 {
+>   				pins {
+>   					pinmux = <STM32_PINMUX('A', 11, AF4)>, /* I2C5_SCL */
+> @@ -599,6 +633,34 @@
+>   					bias-disable;
+>   				};
+>   			};
+> +
+> +			uart4_pins_b: uart4-1 {
+> +				pins1 {
+> +					pinmux = <STM32_PINMUX('D', 1, AF8)>; /* UART4_TX */
+> +					bias-disable;
+> +					drive-push-pull;
+> +					slew-rate = <0>;
+> +				};
+> +				pins2 {
+> +					pinmux = <STM32_PINMUX('B', 2, AF8)>; /* UART4_RX */
+> +					bias-disable;
+> +				};
+> +			};
+> +
+> +			uart7_pins_a: uart7-0 {
+> +				pins1 {
+> +					pinmux = <STM32_PINMUX('E', 8, AF7)>; /* UART4_TX */
+> +					bias-disable;
+> +					drive-push-pull;
+> +					slew-rate = <0>;
+> +				};
+> +				pins2 {
+> +					pinmux = <STM32_PINMUX('E', 7, AF7)>, /* UART4_RX */
+> +						 <STM32_PINMUX('E', 10, AF7)>, /* UART4_CTS */
+> +						 <STM32_PINMUX('E', 9, AF7)>; /* UART4_RTS */
+> +					bias-disable;
+> +				};
+> +			};
+>   		};
+>   
+>   		pinctrl_z: pin-controller-z@54004000 {
 > 
 
 _______________________________________________
