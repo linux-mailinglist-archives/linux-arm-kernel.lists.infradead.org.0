@@ -2,54 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59DDE12F0A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 15:26:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D13B8127FF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 08:50:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CCiAYp3kW9BokJKl5eblOTREKlb0QhPv/sFUDQiIoeY=; b=TZpqYBNEptkvK8
-	vWVIewrpcMJb52ZMKFIUqMmKebZx50bIB6d7m5+an+fsl2D1Ia/OfLvLAoxv52FJJsWzYGYHRKuvm
-	XrlnOXHdbdDjKHHG0EZFTD+aoYLo0vpE+d5btJt3WTZ5R58IJT6rzfSj8S90fESW4vaQww0KA/ASy
-	7sYsa8sUf6V0AYqmanPBtxeKsXSetJzj65cwO+fSDdeB1VBwsupNnGDALYMtG4YAssBn5LmCUNnki
-	RDwyHDwCL2eUVaIPrJ7HT1NgZLAKL0JU59XfIJvXP1jsk4JWt/dRCz4OZ4JArhdp2LIvzsWnhmTv8
-	vNia7zSBKBkik1xbUrsA==;
+	List-Owner; bh=ebg/yTWvJze6UvpY+eRAgpwnTig6daELWiqz7Z7b3/E=; b=YAU5THWJV4/83Y
+	giogYWLu3q4VscznkjWD5vcwWjMFpjrj79meeXg0NmhSEKgYXXNqbb1Feu7B7aceO+8AZmf0HdKPd
+	eec8Gf+guH9jWvPV1vfFCEAWgzhdCgv8YwuwwRwvfKlFFqDKEXTbn/+BdQQdTlFN3zYlmu34Kanmo
+	Wa0xKj54eE3a8izBn+lrCck7E6P6OHRIPCaxGQ4xMmMMUHvWMIzDiJ5tf1LEInuzAM9rIuAcJXpmq
+	+UCKJ8IO7KXM1pRSZmf1EvQZB1RXn7pX+/rOE4hCoeEmmPRK/cOXsbYK41QqEfBxaTZvxI3U+xk4F
+	cMsO5hgTG5ZCrAp4QC2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMYCp-0006Fz-0a; Fri, 03 May 2019 13:26:27 +0000
-Received: from [5.180.42.13] (helo=deadmen.hmeau.com)
+	id 1hMS14-0000R3-Fz; Fri, 03 May 2019 06:49:54 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMYCh-0006D4-6o
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 13:26:20 +0000
-Received: from gondobar.mordor.me.apana.org.au ([192.168.128.4] helo=gondobar)
- by deadmen.hmeau.com with esmtps (Exim 4.89 #2 (Debian))
- id 1hMRNr-0005mF-Ha; Fri, 03 May 2019 14:09:23 +0800
-Received: from herbert by gondobar with local (Exim 4.89)
- (envelope-from <herbert@gondor.apana.org.au>)
- id 1hMRNn-0003DW-W8; Fri, 03 May 2019 14:09:20 +0800
-Date: Fri, 3 May 2019 14:09:19 +0800
-From: Herbert Xu <herbert@gondor.apana.org.au>
-To: Lionel Debieve <lionel.debieve@st.com>
-Subject: Re: [PATCH 1/3] crypto: stm32/cryp - add weak key check for DES
-Message-ID: <20190503060919.xkh4c4dupbz6tok6@gondor.apana.org.au>
-References: <1556112893-13116-1-git-send-email-lionel.debieve@st.com>
+ id 1hMS0y-0000Pe-GL
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 06:49:50 +0000
+Received: by mail-lj1-x242.google.com with SMTP id c6so4318232lji.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 02 May 2019 23:49:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=CXAK1ulb/vcSgb2pd77d2EZm7UG82ynLQc1JZ6Vcu+0=;
+ b=jf69vmuwzCyDeTyzrpNf6Eu0pW34zkJvMy75KCm+8TajY01Zlp0oDtIpQvBxmIsA+4
+ 4jFnJUSbERgFEavYDawKg4UaNQmbIsm9PzvhQ5rFt/EurU/g1PnaxRvdXlNEyFRL6ZqX
+ bfISG1dH3xJ3Kb4mxx7kkfsp+i4zU5cVtLLzSHfYODSlOnhtW2Doqdpu8a9dyDlNWbEs
+ Oqtaloi6J6dKJI+sJlUq2qqaFx5lAOLLkztcLcJ8Xdnk4Z8mhg6MJ5S6CgvJzVzfBBXy
+ iHsv894tXVMk/1nCzj3Oc/2gWguy9xornWA/xr8yoIapR4k79dgX0J0OajT4d7e1xA8R
+ E0mw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=CXAK1ulb/vcSgb2pd77d2EZm7UG82ynLQc1JZ6Vcu+0=;
+ b=jRgNShZl6CnDIT7uh+JOzJbjDBW5X5//aWvqpDcznyEpejewpcdWy/POTKQmUDmMDn
+ GQfNF0Yw47cvvXvP+DhBoHMfh1sUVmo5WLspHkzyDXLvSIsJAtg6DckxAY1UgNGf/yJL
+ lK0BTZ+QiNwV5MY+TUbejfECpJLOnAIogW3aPczec9+cZ9La+fZkM5T/7vMe7ebUQAmo
+ sEHCXEVXObA6oQPuwq3ltUrya76NzSKtsEXtIHku70l/Hoi2SH2gkszAZK6KP1cIrwym
+ QSGNxgh7xd/tYdV4N9taCNT8+Z5WDtyTV4tEIDdwWED+VM8CU5gcpFrS3HgTCxX9QzOK
+ 1WzQ==
+X-Gm-Message-State: APjAAAXUzPnXHVZeEUB0TDOiO7VN/J7FM10D58BTZkjc05mKQ1ceoKZb
+ gB5PAVreMXpJ9Z3l//mAzzzMWhuBfpLqnpL3JpFBSg==
+X-Google-Smtp-Source: APXvYqz08Q0LXJKUPd9rh/k89P1WML5/iS1DxcMbScMPKcbZEELiLJ/4k/1lYnAK2jfH2rxmZAFg3ZsnLAyoJGznflk=
+X-Received: by 2002:a2e:3a17:: with SMTP id h23mr4472998lja.105.1556866185213; 
+ Thu, 02 May 2019 23:49:45 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1556112893-13116-1-git-send-email-lionel.debieve@st.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+References: <20190430092839.767e5bf8@canb.auug.org.au>
+In-Reply-To: <20190430092839.767e5bf8@canb.auug.org.au>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Fri, 3 May 2019 07:49:33 +0100
+Message-ID: <CACRpkdYBuBf7jA2nUitiZWRriXVTPWCyB93q2CzmP4tbVZXqHA@mail.gmail.com>
+Subject: Re: linux-next: build warning after merge of the arm-soc tree
+To: Stephen Rothwell <sfr@canb.auug.org.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_062619_478271_E94FA26A 
-X-CRM114-Status: UNSURE (   7.97  )
+X-CRM114-CacheID: sfid-20190502_234948_569825_5036CB8F 
+X-CRM114-Status: UNSURE (   9.38  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.3 (+)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -61,32 +90,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
- Fabien Dessenne <fabien.dessenne@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-crypto@vger.kernel.org,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
- Benjamin Gaignard <benjamin.gaignard@st.com>
+Cc: Olof Johansson <olof@lixom.net>,
+ Linux Next Mailing List <linux-next@vger.kernel.org>,
+ ARM <linux-arm-kernel@lists.infradead.org>, Arnd Bergmann <arnd@arndb.de>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 24, 2019 at 03:34:51PM +0200, Lionel Debieve wrote:
-> Add weak key test for des functions calling the generic
-> des_ekey.
-> 
-> Signed-off-by: Lionel Debieve <lionel.debieve@st.com>
-> ---
->  drivers/crypto/stm32/Kconfig      |  1 +
->  drivers/crypto/stm32/stm32-cryp.c | 13 +++++++++++--
->  2 files changed, 12 insertions(+), 2 deletions(-)
+On Tue, Apr 30, 2019 at 12:28 AM Stephen Rothwell <sfr@canb.auug.org.au> wrote:
 
-All applied.  Thanks.
--- 
-Email: Herbert Xu <herbert@gondor.apana.org.au>
-Home Page: http://gondor.apana.org.au/~herbert/
-PGP Key: http://gondor.apana.org.au/~herbert/pubkey.txt
+> After merging the arm-soc tree, today's linux-next build
+> (x86_64 allmodconfig) produced this warning:
+>
+> drivers/clocksource/timer-ixp4xx.c:78:20: warning: 'ixp4xx_read_sched_clock' defined but not used [-Wunused-function]
+>  static u64 notrace ixp4xx_read_sched_clock(void)
+>                     ^~~~~~~~~~~~~~~~~~~~~~~
+
+This is kind of normal for timer drivers, as the sched_clock() call is #ifdef:ed
+for CONFIG_ARM, it is not uniformly available on all archs. This appears
+as a side effect of COMPILE_TEST which I think is fair to produce
+things like this.
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
