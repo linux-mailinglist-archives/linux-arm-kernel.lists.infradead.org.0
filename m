@@ -2,82 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9584012D09
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 13:59:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 248CE12D0D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 13:59:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U43Mk7+E7mPEIO5LYDYHmp1OZMJlNeXTAg6iycNpXBI=; b=hZOllt7lq0ezPO
-	ClEBGnVmOVgOIRB3KD1iskcFF2B8mCtkgSWtfbuuTeFPO4EhGIJN1nflYWAa4eW5zCWLP084nI3C2
-	Xcmjxw3ehDyrhSmFBz1a+TMl6izwuwfLB6evnexuU+ikxqOkbAxiibD0uND7SmIHc2gwMg+glc/uW
-	w8ODXRYT/WJstWqKRKGbkv87SaeU98msb9b/NmAQu+ouTYPqnOaDLpeBXvLAG0Ld5yIzwB92bqcmg
-	+8Ce9dQEANM9A2Vd0ekLHiWuCH+FzHZwcglvlGPsbRVAonrH3XQTKtMWiXJc30FwqLX8CYX7QF9bp
-	UXN95DgPVxt3aycZptaw==;
+	List-Owner; bh=LjD0rB+NNaLq/u7+heaje0PIyAKLVBFwXCWnVCXZK1Y=; b=iu21/K4n0w49Ex
+	not3TitU7QFuAZ60QyDj8s4+MbzkhCAkDy8hym0uwEw3CPeerh1XFZsqnChZMeDSYHa9fxjpfvTtc
+	ycMtcH216K6EM7r4596tWVTSoTYejfbIyB16s52i/PfRs1H3IehWkQnlxQ9krPaPHfThnOO2KEtRg
+	rupSvebzI8kRZMt8d5JlTQr5d9ak+k2Jmu5QmTQ1uLd+4htsU0qwXbOKmeB8Y+QwMFfEI/K+ntaL8
+	b8bTybzsJjmPXaTuFG9WX5PRTHyWnsbgA09uadAz5aw8p5RxbfHc6sg+4ygONPf/qA9pofiXS39KB
+	wiBfZ3l5jGnW63Kc6ghw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMWqQ-0007Sl-D2; Fri, 03 May 2019 11:59:14 +0000
-Received: from mail-it1-x143.google.com ([2607:f8b0:4864:20::143])
+	id 1hMWqt-0007iS-Q4; Fri, 03 May 2019 11:59:43 +0000
+Received: from verein.lst.de ([213.95.11.211] helo=newverein.lst.de)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMWqI-0007Rt-2Q
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 11:59:08 +0000
-Received: by mail-it1-x143.google.com with SMTP id a190so8623560ite.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 03 May 2019 04:59:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=vDgYOPNAs5a7jn6rrh+mqlUAcW/QL6gqLTt3pqvnNY8=;
- b=Y6srGshKU+8ofVAzr5oXPRlANIBEkdOrCHKBPiE3tUswNgNowbNADcWMckRUE5gkSL
- 9ukukehth9mBJJ/QJCpdkUMMW2+iAg10JbBAKpi7BjWy2OQ+HfalsNh4xdNDSsHWnKVY
- 6bANvGQZzE11Hw3Y7RiWx/Sk3RaGiUf3o+mJs=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=vDgYOPNAs5a7jn6rrh+mqlUAcW/QL6gqLTt3pqvnNY8=;
- b=e8V3VLfq0WcbdSvVq4KDxQJWKXhjN6fldQFVknwi9JM5A0Od7dc5Ssx7Q7Na5LHVUy
- y/TCdtqKadY3y0rtRramOrrPrxFan02FOmC7QDU4Ja/80QVFtstGbHK3J47ox9e0Y+nP
- gpyVkS4Gg+xQzGXjoC4hIL77M+wjBe2v6R+TRdHq3AlIwU2z3m/cycVvpEa5dI1cse7P
- ytSiTZ42tEZ4b9vfzWdMNjl12FBOgqMmnQF6iq+EQ+cUdqXDaZD8yQAGmp/orccoUiGY
- lP5MLpcrBdG+yjpU38/Gf/vOapckyImHVEB3vfhV8wXEBHMvLbS0Rc/eMZ0gDl5uraQt
- ljFQ==
-X-Gm-Message-State: APjAAAWvp0DyFmyakFBH+3qTrN7Ta8Ahp8pUZEY0vfQNNpxR6Yng8dtj
- GxYUYTJpatHtXfOX1PcA2Qr0EpJJOIl7zaR1/vM9rg==
-X-Google-Smtp-Source: APXvYqxogbylovsed3LC9Wji6QY3Bj1N0GsCs2SPDNY1RvVGOuqXHQj+rfQkbvVmWscSed3alM3kokBhRmxHN3Y8JlY=
-X-Received: by 2002:a24:70d5:: with SMTP id f204mr6307014itc.32.1556884744596; 
- Fri, 03 May 2019 04:59:04 -0700 (PDT)
+ id 1hMWqn-0007hw-4H
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 11:59:38 +0000
+Received: by newverein.lst.de (Postfix, from userid 2407)
+ id 0F59368AFE; Fri,  3 May 2019 13:59:19 +0200 (CEST)
+Date: Fri, 3 May 2019 13:59:18 +0200
+From: Christoph Hellwig <hch@lst.de>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: implement generic dma_map_ops for IOMMUs v4
+Message-ID: <20190503115918.GA19657@lst.de>
+References: <20190430105214.24628-1-hch@lst.de> <20190502132208.GA3069@lst.de>
+ <20190503114731.GH55449@arrakis.emea.arm.com>
 MIME-Version: 1.0
-References: <20190413165418.27880-1-megous@megous.com>
- <20190413165418.27880-6-megous@megous.com>
-In-Reply-To: <20190413165418.27880-6-megous@megous.com>
-From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Fri, 3 May 2019 17:28:53 +0530
-Message-ID: <CAMty3ZDx6NXyYhQehYT9geeGwAk2PZidiVMwVw1nnZJa3zwyOg@mail.gmail.com>
-Subject: Re: [linux-sunxi] [PATCH v4 5/9] arm64: dts: allwinner: orange-pi-3:
- Enable ethernet
-To: megous@megous.com
+Content-Disposition: inline
+In-Reply-To: <20190503114731.GH55449@arrakis.emea.arm.com>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_045906_583025_82462F9C 
-X-CRM114-Status: GOOD (  20.79  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190503_045937_316308_91534E56 
+X-CRM114-Status: GOOD (  12.07  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ no trust [213.95.11.211 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -89,86 +57,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Jose Abreu <joabreu@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- devicetree <devicetree@vger.kernel.org>,
- Maxime Ripard <maxime.ripard@bootlin.com>, netdev@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>,
- linux-stm32@st-md-mailman.stormreply.com, Chen-Yu Tsai <wens@csie.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- linux-kernel <linux-kernel@vger.kernel.org>, David Airlie <airlied@linux.ie>,
- linux-sunxi <linux-sunxi@googlegroups.com>, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Daniel Vetter <daniel@ffwll.ch>, linux-gpio@vger.kernel.org,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Cc: Tom Lendacky <thomas.lendacky@amd.com>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Apr 13, 2019 at 10:24 PM megous via linux-sunxi
-<linux-sunxi@googlegroups.com> wrote:
->
-> From: Ondrej Jirman <megous@megous.com>
->
-> Orange Pi 3 has two regulators that power the Realtek RTL8211E. According
-> to the phy datasheet, both regulators need to be enabled at the same time,
-> but we can only specify a single phy-supply in the DT.
->
-> This can be achieved by making one regulator depedning on the other via
-> vin-supply. While it's not a technically correct description of the
-> hardware, it achieves the purpose.
->
-> All values of RX/TX delay were tested exhaustively and a middle one of the
-> working values was chosen.
->
-> Signed-off-by: Ondrej Jirman <megous@megous.com>
-> ---
->  .../dts/allwinner/sun50i-h6-orangepi-3.dts    | 44 +++++++++++++++++++
->  1 file changed, 44 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-> index 17d496990108..6d6b1f66796d 100644
-> --- a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-> +++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-> @@ -15,6 +15,7 @@
->
->         aliases {
->                 serial0 = &uart0;
-> +               ethernet0 = &emac;
->         };
->
->         chosen {
-> @@ -44,6 +45,27 @@
->                 regulator-max-microvolt = <5000000>;
->                 regulator-always-on;
->         };
-> +
-> +       /*
-> +        * The board uses 2.5V RGMII signalling. Power sequence to enable
-> +        * the phy is to enable GMAC-2V5 and GMAC-3V3 (aldo2) power rails
-> +        * at the same time and to wait 100ms.
-> +        */
-> +       reg_gmac_2v5: gmac-2v5 {
-> +               compatible = "regulator-fixed";
-> +               regulator-name = "gmac-2v5";
-> +               regulator-min-microvolt = <2500000>;
-> +               regulator-max-microvolt = <2500000>;
-> +               startup-delay-us = <100000>;
-> +               enable-active-high;
-> +               gpio = <&pio 3 6 GPIO_ACTIVE_HIGH>; /* PD6 */
-> +
-> +               /* The real parent of gmac-2v5 is reg_vcc5v, but we need to
-> +                * enable two regulators to power the phy. This is one way
-> +                * to achieve that.
-> +                */
-> +               vin-supply = <&reg_aldo2>; /* GMAC-3V3 */
+On Fri, May 03, 2019 at 12:47:31PM +0100, Catalin Marinas wrote:
+> On Thu, May 02, 2019 at 03:22:08PM +0200, Christoph Hellwig wrote:
+> > can you quickly look over the arm64 parts?  I'd really like to still
+> > get this series in for this merge window as it would conflict with
+> > a lot of dma-mapping work for next merge window, and we also have
+> > the amd and possibly intel iommu conversions to use it waiting.
+> 
+> Done. They look fine to me.
 
-The actual output supply pin name is GMAC-3V which has an input of
-VCC3V3-MAC (ie aldo2), if we compatible to schematics better to use
-the same, IMHO.
+Ok, great.  Although I have to admit I feel about uneasy about
+merging them for 5.2 unless Linus ends up doing an rc8.  I plan to
+pull the prep_coherent patch into the dma-mapping tree as we'll
+need it as a prepation for other things as well, and then we can
+just have an immutable tree with the dma-iommu changes, so that
+it doesn't block other DMA mapping changes that will touch this
+code as well.
+
+> 
+> -- 
+> Catalin
+---end quoted text---
 
 _______________________________________________
 linux-arm-kernel mailing list
