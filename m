@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7B1512EB3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 15:03:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D92712EAE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 15:02:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f8NlLUWX0yzB9SVhtQIKhysUVX7Sf0t8svglhcltUPE=; b=OGSGDt5OQh/Gq/
-	AZnPDrc/QqKxfQGSr5nX2pSpybqOsnXlYxu0nPjwlx3rmsCdjvZqZcZwQ1A2Jbjl5VfVOLKgQ9Fbo
-	zMX/bWfys9Ljg/gt9ZA2i1AU+k52eROMLCQMG0s+Oh5/4ngEnmNjLEhjV0w4n8CBzw+I7Xy1Ut18S
-	oNkU4KCV36E6DPWoCZhUmpgW34EXOrd8l9HB9/mGK2cMtalkYxCOZ7+sreGduuHC9C0yM60cwTdV9
-	U4gNuy49SyXrlSDLDv0aege3ZF55vLwHxBHUePBVf2GEVcnDrellvQlVw4KjINF/cPw5sDLTJx34f
-	Dy9QoljwIa4ExcK++cEA==;
+	List-Owner; bh=1k/yTJAZuv6hju8/1DIrfpdeomYSyBUl5PjuxhMDeH4=; b=BVWnFT3ZiOiByv
+	WEWrp+A/ZbGWxsQNmBjuc7jr6TKcbcKs+d185dzGTNM8KxQCbFL4uR2R0Pm2hIjiVM1D8pNdGGDe3
+	ALIKjy/I1Qvpt28R7O+KlxXtFkXZntWPDEe5+TEQ3hpoji/rkazvDerYFsi9M54Lk0D3qfhbQDBrz
+	kBDWCXGSIpKlWCsqSMMU3fLSZYi/0MbXJzKA0voCvN7zMIt5N0sFuh5qTVGAlr47lFq8w30HyW9TF
+	KzTwkTcKfMvewxAdMsGmeLl1qLQQEbGsyQjMO+9e5Or5LpD900/1Iih9EkCTGKdwK/cXkHmMdVDN7
+	9XCOTRf7bYkDPG4dqqWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMXqF-0003ZG-Hx; Fri, 03 May 2019 13:03:07 +0000
+	id 1hMXpX-0002V0-9t; Fri, 03 May 2019 13:02:23 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMXo5-0000Tx-7O
- for linux-arm-kernel@bombadil.infradead.org; Fri, 03 May 2019 13:00:54 +0000
+ id 1hMXo4-0000Hz-ME
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 03 May 2019 13:00:52 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=uIa2eHP6OG54anvgk0mf9URVSIK5m2nKp0XWhFlfFxI=; b=g2ekiM6ansOhiinzi/P88QQenX
- 4gHu43CA+ssgYvMLPfySdoxcjNkImwtZ4uZQlAMtQbekaDD6s+hmj3osE/oehHIbv2qwUwB7ji8X4
- fkaZoxdoN7Pb3wi1AABWjmgnJFgMMCAbcK3hePEZ/GzEtvkIfF/OZBEnMIGwLYAenJ/DygIqTkm9z
- 3hKIfcUDFyMWuuaW6tJvGfcmRXHy4IHUV87Dod64eb7CS2v9c0n1QMZpePpnF0i3302S2uY2qujrx
- z7zI4q2lh5Xo3tlosFA7IwCAKxApjQHIM6Qk4tqIpslQJoTfO8z74QJd2YLDXDwr10jkZn188pPoh
- YYdJGS8Q==;
+ bh=oVGiJMhGTW6dj5ucK3YRt666RkcJekE5UY3jSrdIK1E=; b=mcWqfz0Odg/u+G8+N5955tzA1g
+ VUWRbSy8ZdBaBKgPpue4LQLNkGjt33SUmZMeAYaxcVaOx0UEspuzqb7dMcAmdOmPhjHN9BuUmpyAO
+ BK2ePqnaPVXx7yZ4+tSIgNHtdU1VKfLJm0FtDgHrJZ/krKc6LvY64NT++7kI4wTzB2yReI+lSeFIL
+ GfuhjQOLXFCeftqox1nj1nNXNnvqYcSJnPzM3b90Pt9/BSF/kySpDb9Y7waiU21OFX0wS5ur0mW74
+ to5sJZKLEsiWExTPys9evVgoyaJ3Z1vyhlF/7YDrJ8HMt8YaaSAvixvHxtQk8bUC6k2Ao6/TOELdH
+ Q5lVkTXA==;
 Received: from foss.arm.com ([217.140.101.70])
  by casper.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMXaJ-00028c-QV
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 12:46:42 +0000
+ id 1hMXaM-00028c-EZ
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 12:46:44 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A4FA6374;
- Fri,  3 May 2019 05:46:38 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2B30780D;
+ Fri,  3 May 2019 05:46:42 -0700 (PDT)
 Received: from filthy-habits.cambridge.arm.com
  (filthy-habits.cambridge.arm.com [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6CB823F220;
- Fri,  3 May 2019 05:46:35 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E81263F220;
+ Fri,  3 May 2019 05:46:38 -0700 (PDT)
 From: Marc Zyngier <marc.zyngier@arm.com>
 To: Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH 33/56] KVM: arm64/sve: Clean up UAPI register ID definitions
-Date: Fri,  3 May 2019 13:44:04 +0100
-Message-Id: <20190503124427.190206-34-marc.zyngier@arm.com>
+Subject: [PATCH 34/56] KVM: arm64/sve: Miscellaneous tidyups in guest.c
+Date: Fri,  3 May 2019 13:44:05 +0100
+Message-Id: <20190503124427.190206-35-marc.zyngier@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190503124427.190206-1-marc.zyngier@arm.com>
 References: <20190503124427.190206-1-marc.zyngier@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_134640_172700_5E0DF8A2 
-X-CRM114-Status: GOOD (  18.19  )
+X-CRM114-CacheID: sfid-20190503_134642_783384_0E10464D 
+X-CRM114-Status: GOOD (  16.67  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
  Content analysis details:   (-5.0 points, 5.0 required)
@@ -96,111 +96,122 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Dave Martin <Dave.Martin@arm.com>
 
-Currently, the SVE register ID macros are not all defined in the
-same way, and advertise the fact that FFR maps onto the nonexistent
-predicate register P16.  This is really just for kernel
-convenience, and may lead userspace into bad habits.
+ * Remove a few redundant blank lines that are stylistically
+   inconsistent with code already in guest.c and are just taking up
+   space.
 
-Instead, this patch masks the ID macro arguments so that
-architecturally invalid register numbers will not be passed through
-any more, and uses a literal KVM_REG_ARM64_SVE_FFR_BASE macro to
-define KVM_REG_ARM64_SVE_FFR(), similarly to the way the _ZREG()
-and _PREG() macros are defined.
+ * Delete a couple of pointless empty default cases from switch
+   statements whose behaviour is otherwise obvious anyway.
 
-Rather than plugging in magic numbers for the number of Z- and P-
-registers and the maximum possible number of register slices, this
-patch provides definitions for those too.  Userspace is going to
-need them in any case, and it makes sense for them to come from
-<uapi/asm/kvm.h>.
+ * Fix some typos and consolidate some redundantly duplicated
+   comments.
 
-sve_reg_to_region() uses convenience constants that are defined in
-a different way, and also makes use of the fact that the FFR IDs
-are really contiguous with the P15 IDs, so this patch retains the
-existing convenience constants in guest.c, supplemented with a
-couple of sanity checks to check for consistency with the UAPI
-header.
+ * Respell the slice index check in sve_reg_to_region() as "> 0"
+   to be more consistent with what is logically being checked here
+   (i.e., "is the slice index too large"), even though we don't try
+   to cope with multiple slices yet.
 
-Fixes: e1c9c98345b3 ("KVM: arm64/sve: Add SVE support to register access ioctl interface")
+No functional change.
+
 Suggested-by: Andrew Jones <drjones@redhat.com>
 Signed-off-by: Dave Martin <Dave.Martin@arm.com>
 Reviewed-by: Andrew Jones <drjones@redhat.com>
 Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 ---
- arch/arm64/include/uapi/asm/kvm.h | 32 ++++++++++++++++++++++---------
- arch/arm64/kvm/guest.c            |  9 +++++++++
- 2 files changed, 32 insertions(+), 9 deletions(-)
+ arch/arm64/kvm/guest.c | 18 +++++-------------
+ 1 file changed, 5 insertions(+), 13 deletions(-)
 
-diff --git a/arch/arm64/include/uapi/asm/kvm.h b/arch/arm64/include/uapi/asm/kvm.h
-index 6963b7e8062b..2a04ef015469 100644
---- a/arch/arm64/include/uapi/asm/kvm.h
-+++ b/arch/arm64/include/uapi/asm/kvm.h
-@@ -35,6 +35,7 @@
- #include <linux/psci.h>
- #include <linux/types.h>
- #include <asm/ptrace.h>
-+#include <asm/sve_context.h>
- 
- #define __KVM_HAVE_GUEST_DEBUG
- #define __KVM_HAVE_IRQ_LINE
-@@ -233,16 +234,29 @@ struct kvm_vcpu_events {
- /* Z- and P-regs occupy blocks at the following offsets within this range: */
- #define KVM_REG_ARM64_SVE_ZREG_BASE	0
- #define KVM_REG_ARM64_SVE_PREG_BASE	0x400
-+#define KVM_REG_ARM64_SVE_FFR_BASE	0x600
- 
--#define KVM_REG_ARM64_SVE_ZREG(n, i)	(KVM_REG_ARM64 | KVM_REG_ARM64_SVE | \
--					 KVM_REG_ARM64_SVE_ZREG_BASE |	\
--					 KVM_REG_SIZE_U2048 |		\
--					 ((n) << 5) | (i))
--#define KVM_REG_ARM64_SVE_PREG(n, i)	(KVM_REG_ARM64 | KVM_REG_ARM64_SVE | \
--					 KVM_REG_ARM64_SVE_PREG_BASE |	\
--					 KVM_REG_SIZE_U256 |		\
--					 ((n) << 5) | (i))
--#define KVM_REG_ARM64_SVE_FFR(i)	KVM_REG_ARM64_SVE_PREG(16, i)
-+#define KVM_ARM64_SVE_NUM_ZREGS		__SVE_NUM_ZREGS
-+#define KVM_ARM64_SVE_NUM_PREGS		__SVE_NUM_PREGS
-+
-+#define KVM_ARM64_SVE_MAX_SLICES	32
-+
-+#define KVM_REG_ARM64_SVE_ZREG(n, i)					\
-+	(KVM_REG_ARM64 | KVM_REG_ARM64_SVE | KVM_REG_ARM64_SVE_ZREG_BASE | \
-+	 KVM_REG_SIZE_U2048 |						\
-+	 (((n) & (KVM_ARM64_SVE_NUM_ZREGS - 1)) << 5) |			\
-+	 ((i) & (KVM_ARM64_SVE_MAX_SLICES - 1)))
-+
-+#define KVM_REG_ARM64_SVE_PREG(n, i)					\
-+	(KVM_REG_ARM64 | KVM_REG_ARM64_SVE | KVM_REG_ARM64_SVE_PREG_BASE | \
-+	 KVM_REG_SIZE_U256 |						\
-+	 (((n) & (KVM_ARM64_SVE_NUM_PREGS - 1)) << 5) |			\
-+	 ((i) & (KVM_ARM64_SVE_MAX_SLICES - 1)))
-+
-+#define KVM_REG_ARM64_SVE_FFR(i)					\
-+	(KVM_REG_ARM64 | KVM_REG_ARM64_SVE | KVM_REG_ARM64_SVE_FFR_BASE | \
-+	 KVM_REG_SIZE_U256 |						\
-+	 ((i) & (KVM_ARM64_SVE_MAX_SLICES - 1)))
- 
- /* Vector lengths pseudo-register: */
- #define KVM_REG_ARM64_SVE_VLS		(KVM_REG_ARM64 | KVM_REG_ARM64_SVE | \
 diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
-index 4f7b26bbf671..2e449e1dea73 100644
+index 2e449e1dea73..f5ff7aea25aa 100644
 --- a/arch/arm64/kvm/guest.c
 +++ b/arch/arm64/kvm/guest.c
-@@ -325,6 +325,15 @@ static int sve_reg_to_region(struct sve_state_reg_region *region,
+@@ -290,9 +290,10 @@ static int set_sve_vls(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
+ #define KVM_SVE_PREG_SIZE KVM_REG_SIZE(KVM_REG_ARM64_SVE_PREG(0, 0))
  
- 	size_t sve_state_size;
+ /*
+- * number of register slices required to cover each whole SVE register on vcpu
+- * NOTE: If you are tempted to modify this, you must also to rework
+- * sve_reg_to_region() to match:
++ * Number of register slices required to cover each whole SVE register.
++ * NOTE: Only the first slice every exists, for now.
++ * If you are tempted to modify this, you must also rework sve_reg_to_region()
++ * to match:
+  */
+ #define vcpu_sve_slices(vcpu) 1
  
-+	const u64 last_preg_id = KVM_REG_ARM64_SVE_PREG(SVE_NUM_PREGS - 1,
-+							SVE_NUM_SLICES - 1);
-+
-+	/* Verify that the P-regs and FFR really do have contiguous IDs: */
-+	BUILD_BUG_ON(KVM_REG_ARM64_SVE_FFR(0) != last_preg_id + 1);
-+
-+	/* Verify that we match the UAPI header: */
-+	BUILD_BUG_ON(SVE_NUM_SLICES != KVM_ARM64_SVE_MAX_SLICES);
-+
- 	/* Only the first slice ever exists, for now: */
- 	if ((reg->id & SVE_REG_SLICE_MASK) != 0)
+@@ -334,8 +335,7 @@ static int sve_reg_to_region(struct sve_state_reg_region *region,
+ 	/* Verify that we match the UAPI header: */
+ 	BUILD_BUG_ON(SVE_NUM_SLICES != KVM_ARM64_SVE_MAX_SLICES);
+ 
+-	/* Only the first slice ever exists, for now: */
+-	if ((reg->id & SVE_REG_SLICE_MASK) != 0)
++	if ((reg->id & SVE_REG_SLICE_MASK) > 0)
  		return -ENOENT;
+ 
+ 	vq = sve_vq_from_vl(vcpu->arch.sve_max_vl);
+@@ -520,7 +520,6 @@ static int get_timer_reg(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
+ 
+ static unsigned long num_sve_regs(const struct kvm_vcpu *vcpu)
+ {
+-	/* Only the first slice ever exists, for now */
+ 	const unsigned int slices = vcpu_sve_slices(vcpu);
+ 
+ 	if (!vcpu_has_sve(vcpu))
+@@ -536,7 +535,6 @@ static unsigned long num_sve_regs(const struct kvm_vcpu *vcpu)
+ static int copy_sve_reg_indices(const struct kvm_vcpu *vcpu,
+ 				u64 __user *uindices)
+ {
+-	/* Only the first slice ever exists, for now */
+ 	const unsigned int slices = vcpu_sve_slices(vcpu);
+ 	u64 reg;
+ 	unsigned int i, n;
+@@ -555,7 +553,6 @@ static int copy_sve_reg_indices(const struct kvm_vcpu *vcpu,
+ 	reg = KVM_REG_ARM64_SVE_VLS;
+ 	if (put_user(reg, uindices++))
+ 		return -EFAULT;
+-
+ 	++num_regs;
+ 
+ 	for (i = 0; i < slices; i++) {
+@@ -563,7 +560,6 @@ static int copy_sve_reg_indices(const struct kvm_vcpu *vcpu,
+ 			reg = KVM_REG_ARM64_SVE_ZREG(n, i);
+ 			if (put_user(reg, uindices++))
+ 				return -EFAULT;
+-
+ 			num_regs++;
+ 		}
+ 
+@@ -571,14 +567,12 @@ static int copy_sve_reg_indices(const struct kvm_vcpu *vcpu,
+ 			reg = KVM_REG_ARM64_SVE_PREG(n, i);
+ 			if (put_user(reg, uindices++))
+ 				return -EFAULT;
+-
+ 			num_regs++;
+ 		}
+ 
+ 		reg = KVM_REG_ARM64_SVE_FFR(i);
+ 		if (put_user(reg, uindices++))
+ 			return -EFAULT;
+-
+ 		num_regs++;
+ 	}
+ 
+@@ -645,7 +639,6 @@ int kvm_arm_get_reg(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
+ 	case KVM_REG_ARM_CORE:	return get_core_reg(vcpu, reg);
+ 	case KVM_REG_ARM_FW:	return kvm_arm_get_fw_reg(vcpu, reg);
+ 	case KVM_REG_ARM64_SVE:	return get_sve_reg(vcpu, reg);
+-	default: break; /* fall through */
+ 	}
+ 
+ 	if (is_timer_reg(reg->id))
+@@ -664,7 +657,6 @@ int kvm_arm_set_reg(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
+ 	case KVM_REG_ARM_CORE:	return set_core_reg(vcpu, reg);
+ 	case KVM_REG_ARM_FW:	return kvm_arm_set_fw_reg(vcpu, reg);
+ 	case KVM_REG_ARM64_SVE:	return set_sve_reg(vcpu, reg);
+-	default: break; /* fall through */
+ 	}
+ 
+ 	if (is_timer_reg(reg->id))
 -- 
 2.20.1
 
