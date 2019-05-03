@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D3E4F129D4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 10:21:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8EC6129D6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 10:24:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nKf7dfMIjJ3eMQrQLu1y7LNEwXNN2ge+EVG5ld6fKGQ=; b=Ib6//BlEZYLFjr
-	5Sn1RV0tI+9EDnaiqpRw9DXrGHxA8CPjuLVMgpNXkzvj3+SAqKze8FTWcMujplwuyroHU+WTVcLb3
-	a0UQG5tr56O3ptpBozSFzROhYdDQ2b9IMntu2rrhDQKCil43g+mfs2NlFFVH3ZYV7YcZpd4kbqlwA
-	4ialVLhHd2OLdQ3We+f6MKjL9BTux+mDN2eaPAV/s1yDTINcuDNM3xvLV0aGDi60DQHnyk0NSho8L
-	B9PJSRFr5GlBAYRcxG85LrPzjepjrJ0+MYCifVMM46qibpPByJKaCeFf8Z3AwyIfyGE8zvn9hEtx1
-	uxTPuQ5vTTM20cDSc49g==;
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:References:In-Reply-To:
+	Mime-Version:Date:To:From:Subject:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/RYpweoVIL8RjBXN9hB7akDzBmuE3xzZZKD8ryC/kRE=; b=LgpMyIg7Gy8+pa
+	3+7Y5oRRGF7jOg2/YTj1CJ0kljfxYuMvk1Pazy4uK41vrxHef9VbVohkWpao2X6O2aoxXTjcpHOVb
+	zNs+MD0G8e95xVjzQ3JcfiR3Vpg6RDDaALL11/RSUiFMrTkEQdrlPLEIcENkux38Qt9Mi8cls5zNl
+	msJgf0UbpAyhEyhmbjdJbi24xMsVMX786m38lPwua7RtI+DDTVSKfg5hk4FY3J2y6Xd81e07VsYUx
+	ssayvvPQaNisa7Qx9Lt0SeWgeqsNPdg3YKsxWL3q26rG3T0NkXuiqi1Gb68hbLMRR3wd4/aKDXUHh
+	wEYsWgoNHPbO3JQqga3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMTS3-0002Qr-Pf; Fri, 03 May 2019 08:21:51 +0000
-Received: from mga06.intel.com ([134.134.136.31])
+	id 1hMTUt-0003jf-88; Fri, 03 May 2019 08:24:47 +0000
+Received: from securetransport.cubewerk.de ([188.68.39.254])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMTRw-0002QT-KA
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 08:21:46 +0000
-X-Amp-Result: UNSCANNABLE
-X-Amp-File-Uploaded: False
-Received: from orsmga004.jf.intel.com ([10.7.209.38])
- by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 03 May 2019 01:21:43 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.60,425,1549958400"; d="scan'208";a="296629461"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by orsmga004.jf.intel.com with ESMTP; 03 May 2019 01:21:42 -0700
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1hMTRt-0005fY-PN; Fri, 03 May 2019 16:21:41 +0800
-Date: Fri, 3 May 2019 16:21:21 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Paul Walmsley <paul.walmsley@sifive.com>
-Subject: [clk:clk-sifive-fu540 3/3]
- drivers/clk/sifive/fu540-prci.c:534:41-42: WARNING: Use ARRAY_SIZE
-Message-ID: <201905031619.nJ5l01Tg%lkp@intel.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-X-Patchwork-Hint: ignore
-User-Agent: Mutt/1.5.23 (2014-03-12)
+ id 1hMTUm-0003jI-Q3
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 08:24:42 +0000
+Received: from DHPLMX01.DH-ELECTRONICS.ORG (unknown [188.193.158.174])
+ (using TLSv1.2 with cipher DHE-RSA-CAMELLIA128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by securetransport.cubewerk.de (Postfix) with ESMTPSA id E4BEF5E987;
+ Fri,  3 May 2019 10:23:47 +0200 (CEST)
+Received: from DHPLMX01 (localhost [127.0.0.1])
+ by DHPLMX01.DH-ELECTRONICS.ORG (Postfix) with ESMTP id 9A2A32140024;
+ Fri,  3 May 2019 10:23:47 +0200 (CEST)
+Received: by DHPLMX01 (kopano-spooler) with MAPI; Fri, 3 May 2019 10:23:47
+ +0200
+Subject: RE: [PATCH] ARM: imx: cpuidle-imx6sx: Restrict the SW2ISO increase
+ to i.MX6SX [Klartext]
+From: =?utf-8?Q?Christoph_Niedermaier?= <cniedermaier@dh-electronics.com>
+To: =?utf-8?Q?Fabio_Estevam?= <festevam@gmail.com>, =?utf-8?Q?shawnguo=40k?=
+ =?utf-8?Q?ernel=2Eorg?= <shawnguo@kernel.org>
+Date: Fri, 3 May 2019 08:23:47 +0000
+Mime-Version: 1.0
+In-Reply-To: <20190502113020.8642-1-festevam@gmail.com>
+References: <20190502113020.8642-1-festevam@gmail.com>
+X-Priority: 3 (Normal)
+X-Mailer: Kopano 8.6.8
+Message-Id: <kcis.9E822BA1761B40BAB23F42EDD9B5F6A8@DHPLMX01>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_012144_715476_813C2464 
-X-CRM114-Status: GOOD (  15.04  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190503_012440_993732_87E86B8E 
+X-CRM114-Status: GOOD (  15.59  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.31 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_QP_LONG_LINE      RAW: Quoted-printable line longer than 76
+ chars
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -67,102 +67,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Boyd <sboyd@kernel.org>, kbuild-all@01.org,
- linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org
+Cc: =?utf-8?Q?linux-arm-kernel=40lists=2Einfradead=2Eorg?=
+ <linux-arm-kernel@lists.infradead.org>,
+ =?utf-8?Q?stable=40vger=2Ekernel=2E?= =?utf-8?Q?org?= <stable@vger.kernel.org>,
+ =?utf-8?Q?linux-imx=40nxp=2Ecom?= <linux-imx@nxp.com>,
+ =?utf-8?Q?kernel=40pengutronix=2Ede?= <kernel@pengutronix.de>,
+ =?utf-8?Q?anson=2Ehuang=40nxp=2E?= =?utf-8?Q?com?= <anson.huang@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree:   https://git.kernel.org/pub/scm/linux/kernel/git/clk/linux.git clk-sifive-fu540
-head:   85ed1c299cca9beb5df6006361cf18bfa2305836
-commit: 85ed1c299cca9beb5df6006361cf18bfa2305836 [3/3] clk: sifive: add a driver for the SiFive FU540 PRCI IP block
+From: Fabio Estevam <festevam@gmail.com>
+Sent: Thursday 2nd May 2019 13:30
+> Since commit 1e434b703248 ("ARM: imx: update the cpu power up timing
+> setting on i.mx6sx") some characters loss is noticed on i.MX6ULL UART
+> as reported by Christoph Niedermaier.
+> 
+> The intention of such commit was to increase the SW2ISO field for i.MX6SX
+> only, but since cpuidle-imx6sx is also used on i.MX6UL/i.MX6ULL this caused
+> unintended side effects on other SoCs.
+> 
+> Fix this problem by keeping the original SW2ISO value for i.MX6UL/i.MX6ULL
+> and only increase SW2ISO in the i.MX6SX case.
+> 
+> Cc: stable@vger.kernel.org
+> Fixes: 1e434b703248 ("ARM: imx: update the cpu power up timing setting on
+> i.mx6sx")
+> Reported-by: Christoph Niedermaier <cniedermaier@dh-electronics.com>
+> Signed-off-by: Fabio Estevam <festevam@gmail.com>
+> ---
+>  arch/arm/mach-imx/cpuidle-imx6sx.c | 9 ++++++++-
+>  1 file changed, 8 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm/mach-imx/cpuidle-imx6sx.c b/arch/arm/mach-imx/cpuidle-imx6sx.c
+> index fd0053e47a15..57cb9c763222 100644
+> --- a/arch/arm/mach-imx/cpuidle-imx6sx.c
+> +++ b/arch/arm/mach-imx/cpuidle-imx6sx.c
+> @@ -15,6 +15,7 @@
+>  
+>  #include "common.h"
+>  #include "cpuidle.h"
+> +#include "hardware.h"
+>  
+>  static int imx6sx_idle_finish(unsigned long val)
+>  {
+> @@ -99,8 +100,12 @@ static struct cpuidle_driver imx6sx_cpuidle_driver = {
+>  .safe_state_index = 0,
+>  };
+>  
+> +#define SW2ISO_ORIGINAL 0x2
+> +#define SW2ISO_IMX6SX 0xf
+>  int __init imx6sx_cpuidle_init(void)
+>  {
+> + u32 sw2iso = SW2ISO_ORIGINAL;
+> +
+>  imx6_set_int_mem_clk_lpm(true);
+>  imx6_enable_rbc(false);
+>  imx_gpc_set_l2_mem_power_in_lpm(false);
+> @@ -110,7 +115,9 @@ int __init imx6sx_cpuidle_init(void)
+>  * except for power up sw2iso which need to be
+>  * larger than LDO ramp up time.
+>  */
+> - imx_gpc_set_arm_power_up_timing(0xf, 1);
+> + if (cpu_is_imx6sx())
+> + sw2iso = SW2ISO_IMX6SX;
+> + imx_gpc_set_arm_power_up_timing(sw2iso, 1);
+>  imx_gpc_set_arm_power_down_timing(1, 1);
+>  
+>  return cpuidle_register(&imx6sx_cpuidle_driver, NULL);
+>
 
-If you fix the issue, kindly add following tag
-Reported-by: kbuild test robot <lkp@intel.com>
+Tested-by: Christoph Niedermaier <cniedermaier@dh-electronics.com>
 
-
-coccinelle warnings: (new ones prefixed by >>)
-
->> drivers/clk/sifive/fu540-prci.c:534:41-42: WARNING: Use ARRAY_SIZE
-
-vim +534 drivers/clk/sifive/fu540-prci.c
-
-   508	
-   509	/**
-   510	 * __prci_register_clocks() - register clock controls in the PRCI with Linux
-   511	 * @dev: Linux struct device *
-   512	 *
-   513	 * Register the list of clock controls described in __prci_init_plls[] with
-   514	 * the Linux clock framework.
-   515	 *
-   516	 * Return: 0 upon success or a negative error code upon failure.
-   517	 */
-   518	static int __prci_register_clocks(struct device *dev, struct __prci_data *pd)
-   519	{
-   520		struct clk_init_data init;
-   521		struct __prci_clock *pic;
-   522		int parent_count, i, clk_hw_count, r;
-   523	
-   524		parent_count = of_clk_get_parent_count(dev->of_node);
-   525		if (parent_count != EXPECTED_CLK_PARENT_COUNT) {
-   526			dev_err(dev, "expected only two parent clocks, found %d\n",
-   527				parent_count);
-   528			return -EINVAL;
-   529		}
-   530	
-   531		memset(&init, 0, sizeof(struct clk_init_data));
-   532	
-   533		/* Register PLLs */
- > 534		clk_hw_count = sizeof(__prci_init_clocks) / sizeof(struct __prci_clock);
-   535	
-   536		for (i = 0; i < clk_hw_count; ++i) {
-   537			pic = &__prci_init_clocks[i];
-   538	
-   539			init.name = pic->name;
-   540			init.parent_names = &pic->parent_name;
-   541			init.num_parents = 1;
-   542			init.ops = pic->ops;
-   543			pic->hw.init = &init;
-   544	
-   545			pic->pd = pd;
-   546	
-   547			if (pic->pwd)
-   548				__prci_wrpll_read_cfg(pd, pic->pwd);
-   549	
-   550			r = devm_clk_hw_register(dev, &pic->hw);
-   551			if (r) {
-   552				dev_warn(dev, "Failed to register clock %s: %d\n",
-   553					 init.name, r);
-   554				return r;
-   555			}
-   556	
-   557			r = clk_hw_register_clkdev(&pic->hw, pic->name, dev_name(dev));
-   558			if (r) {
-   559				dev_warn(dev, "Failed to register clkdev for %s: %d\n",
-   560					 init.name, r);
-   561				return r;
-   562			}
-   563	
-   564			pd->hw_clks.hws[i] = &pic->hw;
-   565		}
-   566	
-   567		pd->hw_clks.num = i;
-   568	
-   569		r = devm_of_clk_add_hw_provider(dev, of_clk_hw_onecell_get,
-   570						&pd->hw_clks);
-   571		if (r) {
-   572			dev_err(dev, "could not add hw_provider: %d\n", r);
-   573			return r;
-   574		}
-   575	
-   576		return 0;
-   577	}
-   578	
-
----
-0-DAY kernel test infrastructure                Open Source Technology Center
-https://lists.01.org/pipermail/kbuild-all                   Intel Corporation
+Best regards,
 
 _______________________________________________
 linux-arm-kernel mailing list
