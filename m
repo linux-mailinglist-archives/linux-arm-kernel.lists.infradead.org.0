@@ -2,111 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D5EF12EC0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 15:04:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E34BB12F31
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 15:31:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RyaFiwozRrVqwNN87NkrPz/d6r4jlXI3gQekFuhKuCw=; b=qrRx11Jmh7Prs5
-	Dmd6Jj1W67ZGWTsqyd6zjbvpp1oS/qTfizPg8aMQ7o/z5zok1XKeKjfSI5ONs3MgpHxled11M+yBs
-	3YpD9c5RMwkUfluOSWlCgTmwmiX6zYUAOxAnJheU9zLgzo9hdAG/0Rt+Ih+8Vd3w/8Gjvv7EHaNZ0
-	/hQBPA0efH2dDHJPvvD9nxAtt8MMgNJctBYXvpHbMoSIFlj/IliTsMAZ0KXrUtPby+HZK9hFKb9l6
-	8o44cxXd3qWA2VY9Zgnyhp0I8T0w2OVxopcOIG3Pz6pYIYUa0Qcr2L4RjbKHBUIpaP2tWtrY5slXq
-	7/2aQlzibtkGvgzGVPsQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=UERG50daP51oST87ERxVaFhnFHu/VR+DHE2NR2Do1u0=; b=jZr
+	+gkUEEBS4uw3AZ6coq5cxG/grAAXH3GQ66KDrNecc6amExuqNhwqERjJnz3d86psBy6ZriRvsoilf
+	GGkQJ1pdZf3LyhESir+1Dr7tri3JIco6AdGdUIafNQ/OnIIKz411QI0IC6ao2+9/+h80qFqzEYXh6
+	cgAekocnnzXgYsfWIm+OlE2g14Twnz7F1mnMM0wZxV0WT62Bpwn0kRhOlhLRVF5fl5nzI66sILLqS
+	MmW9gwblvR4MFA27FFH6ZWFx1/G2oL2FfX7RIpc6ETufUJr4IMYWkmg4opEO1UnCnsZbTD9JM1+NZ
+	Y/rtaMo6NjIlG/5hfbeWTvZm04BVS0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMXr6-0004r0-Ag; Fri, 03 May 2019 13:04:00 +0000
-Received: from mail-eopbgr80041.outbound.protection.outlook.com ([40.107.8.41]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1hMYHS-0000w7-4a; Fri, 03 May 2019 13:31:14 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMXoG-0000xc-Ai
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 13:01:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+bGCSRBedFExNob9USjPhrev+AeBnxxUlE1UwuDJV2g=;
- b=VoE5CMwA1qZqYzPaOIWfWDU3msZjKg2iEgHdFQsi/4W8Mvj7fqlOM7vHIWGURIa/lxCdjJQJx5NAc1kZX1CBvg4IvJNb1M7dsCp72RqYTcrqVEvlt6NksLoizhf+1hcDig29w8J8Czlxt7xNAHOyeVsKWxiK3VQpSw9szXy2J9g=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3659.eurprd04.prod.outlook.com (52.134.66.160) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1856.12; Fri, 3 May 2019 13:00:59 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::e8ca:4f6b:e43:c170]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::e8ca:4f6b:e43:c170%3]) with mapi id 15.20.1856.012; Fri, 3 May 2019
- 13:00:59 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Stephen Boyd <sboyd@kernel.org>, "festevam@gmail.com"
- <festevam@gmail.com>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-clk@vger.kernel.org"
- <linux-clk@vger.kernel.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>, "mturquette@baylibre.com"
- <mturquette@baylibre.com>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, 
- "shawnguo@kernel.org" <shawnguo@kernel.org>, Aisheng Dong
- <aisheng.dong@nxp.com>
-Subject: RE: [PATCH V2] clk: imx: pllv4: add fractional-N pll support
-Thread-Topic: [PATCH V2] clk: imx: pllv4: add fractional-N pll support
-Thread-Index: AQHU/u+rfzNhsf6HmUqZui5Dk6oOlaZWxBSAgAKeEQA=
-Date: Fri, 3 May 2019 13:00:58 +0000
-Message-ID: <DB3PR0402MB3916CB92026E67F0D7BE045BF5350@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1556585557-28795-1-git-send-email-Anson.Huang@nxp.com>
- <155674445915.200842.2835083854881674143@swboyd.mtv.corp.google.com>
-In-Reply-To: <155674445915.200842.2835083854881674143@swboyd.mtv.corp.google.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.68]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 5e74dbac-2209-4e79-700a-08d6cfc76360
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3659; 
-x-ms-traffictypediagnostic: DB3PR0402MB3659:
-x-microsoft-antispam-prvs: <DB3PR0402MB36595F2C2B82A00660A6717AF5350@DB3PR0402MB3659.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:5236;
-x-forefront-prvs: 0026334A56
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(39860400002)(366004)(396003)(376002)(346002)(136003)(199004)(13464003)(189003)(81166006)(8676002)(81156014)(52536014)(3846002)(8936002)(6116002)(55016002)(9686003)(7736002)(6436002)(316002)(305945005)(6636002)(229853002)(53936002)(110136005)(6246003)(5660300002)(478600001)(99286004)(66066001)(73956011)(102836004)(66946007)(76176011)(53546011)(6506007)(71200400001)(71190400001)(7696005)(76116006)(66446008)(64756008)(66556008)(66476007)(256004)(14444005)(33656002)(186003)(2201001)(4326008)(25786009)(86362001)(14454004)(68736007)(2906002)(45080400002)(2501003)(11346002)(26005)(476003)(446003)(44832011)(74316002)(486006)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3659;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: zXjDiLjeG47ZlMy1yeU0mpdvEBjHVPC1zwixJ59d+jEIZCTVuhNeus36GkSCuUBcEM2egO30gEqs9ZN73SeiDh9H/1QMaaEIkJNzrNXdTSBzSt4+BvH1htFB5MU5bAohC7x7kG1ANzaGnQU/6ptxbCaq9WypVmgOsISt2x1VdNn87293OXBb7TZqLsbz4GKaj26pTNeb8wk9T1KK5YIjakDaH+9Y+J58JHsF2BqOKVVdZgVvQBx0qsthn8lQFVdJoQeZL+0NbMfCYaFzusrS9yXMwNoglP0wdv2aIHAAuj+5nWot4tzJWZPNDleEeuVS8XJFQISMC9UwsE074+LtaJxs06GdQ6d5Uefng+s+/ppk0H88+M5rehItr3kUsAbumBBkmXQXUIUulkrdxwiZKpUfgUUTr8YCeDV3+ZYDod4=
-MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5e74dbac-2209-4e79-700a-08d6cfc76360
-X-MS-Exchange-CrossTenant-originalarrivaltime: 03 May 2019 13:00:59.1159 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3659
+ id 1hMYHD-0000pd-NI
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 03 May 2019 13:30:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Message-Id:Date:Subject:Cc:To:From:
+ Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=RYH/YO/RkA4XGJbvLIFo4fWIsBT1IwFt9t25PBtlx3o=; b=puV0KnBBYTozxYOu/Q6xWSu7d
+ xDDlwo/YNWZqjlZx1Qz0FSskJypgQocV/WE7LuVCe9p/flyxUmHjE1BtiJvwme+tZn7jIL4QtjDfK
+ hySVZi+afiUHpE4VZs6g5NKPwLWDBai4GwLxvBG4fB7wpmc7aHPfrMe1Lwvz5DqAKk4v3lqfnMqZL
+ YgVLLOWlT0bJKkH2DxYcqyQnF4hD0tIC3FMlL+7c/7xfg6KjGGddrNerD+x/hyetnJLUpGj5uqXvA
+ BApxN5SMixs6ZOYqrWGQVLG27uRyQGqicMU3EcXuVVtq7pAR7V1STUdRKvj4GeHxoQDMaMrWiDzr2
+ nQlO1cinQ==;
+Received: from inva020.nxp.com ([92.121.34.13])
+ by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hMXqP-0006Ee-7q
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 13:03:18 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id F24EA1A00C7;
+ Fri,  3 May 2019 15:03:13 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E565C1A0029;
+ Fri,  3 May 2019 15:03:13 +0200 (CEST)
+Received: from fsr-ub1864-101.ea.freescale.net
+ (fsr-ub1864-101.ea.freescale.net [10.171.82.13])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 5949A205F4;
+ Fri,  3 May 2019 15:03:13 +0200 (CEST)
+From: laurentiu.tudor@nxp.com
+To: netdev@vger.kernel.org, madalin.bucur@nxp.com, camelia.groza@nxp.com,
+ leoyang.li@nxp.com
+Subject: [PATCH v3] dpaa_eth: fix SG frame cleanup
+Date: Fri,  3 May 2019 16:03:11 +0300
+Message-Id: <20190503130311.9914-1-laurentiu.tudor@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_060104_980374_4827C2D0 
-X-CRM114-Status: GOOD (  12.42  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+X-CRM114-CacheID: sfid-20190503_090317_382928_121ACB0C 
+X-CRM114-Status: UNSURE (   9.38  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.8.41 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -118,52 +81,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+ Joakim.Tjernlund@infinera.com, linuxppc-dev@lists.ozlabs.org,
+ davem@davemloft.net, linux-arm-kernel@lists.infradead.org,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Stephen
+From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
 
-> -----Original Message-----
-> From: Stephen Boyd [mailto:sboyd@kernel.org]
-> Sent: Thursday, May 2, 2019 5:01 AM
-> To: festevam@gmail.com; kernel@pengutronix.de; linux-arm-
-> kernel@lists.infradead.org; linux-clk@vger.kernel.org; linux-
-> kernel@vger.kernel.org; mturquette@baylibre.com;
-> s.hauer@pengutronix.de; shawnguo@kernel.org; Aisheng Dong
-> <aisheng.dong@nxp.com>; Anson Huang <anson.huang@nxp.com>
-> Cc: dl-linux-imx <linux-imx@nxp.com>
-> Subject: Re: [PATCH V2] clk: imx: pllv4: add fractional-N pll support
-> 
-> The Content-transfer-encoding header is still base64. I guess it can't be fixed.
+Fix issue with the entry indexing in the sg frame cleanup code being
+off-by-1. This problem showed up when doing some basic iperf tests and
+manifested in traffic coming to a halt.
 
-Below is my git sendmail configuration, the encoding is set to UTF-8, I don't know
-why it is still base64, let me know if you know how to fix it, thanks. And, will you still
-review this patch? 
+Signed-off-by: Laurentiu Tudor <laurentiu.tudor@nxp.com>
+Acked-by: Madalin Bucur <madalin.bucur@nxp.com>
+Cc: <stable@vger.kernel.org>
+---
+v3:
+ - added cc:stable tag (Joakim)
+ - pulled from the original patch series and send individually
 
-Anson.
+ drivers/net/ethernet/freescale/dpaa/dpaa_eth.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-  6 [sendemail]
-  7         smtpserver = outlook.office365.com
-  8         smtpencryption = tls
-  9         smtpuser = Anson.Huang@nxp.com
- 10         smtpserverport = 587
- 11         confirm = never
- 12         assume8bitEncoding = UTF-8
+diff --git a/drivers/net/ethernet/freescale/dpaa/dpaa_eth.c b/drivers/net/ethernet/freescale/dpaa/dpaa_eth.c
+index daede7272768..40420edc9ce6 100644
+--- a/drivers/net/ethernet/freescale/dpaa/dpaa_eth.c
++++ b/drivers/net/ethernet/freescale/dpaa/dpaa_eth.c
+@@ -1663,7 +1663,7 @@ static struct sk_buff *dpaa_cleanup_tx_fd(const struct dpaa_priv *priv,
+ 				 qm_sg_entry_get_len(&sgt[0]), dma_dir);
+ 
+ 		/* remaining pages were mapped with skb_frag_dma_map() */
+-		for (i = 1; i < nr_frags; i++) {
++		for (i = 1; i <= nr_frags; i++) {
+ 			WARN_ON(qm_sg_entry_is_ext(&sgt[i]));
+ 
+ 			dma_unmap_page(dev, qm_sg_addr(&sgt[i]),
+-- 
+2.17.1
 
 
-> 
-> Quoting Anson Huang (2019-04-29 17:57:22)
-> > The pllv4 supports fractional-N function, the formula is:
-> >
-> > PLL output freq = input * (mult + num/denom),
-> >
-> > This patch adds fractional-N function support, including clock round
-> > rate, calculate rate and set rate, with this patch, the clock rate of
-> > APLL in clock tree is more accurate than before:
-> >
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
