@@ -2,82 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4613413104
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 17:15:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A09BF1310D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 17:18:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CgPmQmmib+jFOrz6SquKIJVK5fStUF2Env3u6zyY/y8=; b=vCuPCQ7Dpi3kdPJdZaXGq8Plb
-	WD3YVpX4Li7kfxChsqT1W5hSyQySvhp+h6xBbJAjr9yDYgEef32Fn+22yE1gDKuKfoTFeF0kZva5K
-	m8V9h4tHpiHsVv4FMbzDJlD56wq9MgN2sutaj/eTrzaxvWh1DqONiQqU0p+2L4i0JNoYV6IZkFfvV
-	o9PXEYYhz74Q2Eh8Qos9EaW5K2cWg8xI1/9exDoxf2qU6S6smNbkQw56F1Vn9oLzQizaUshgXdiFj
-	rG9wZhSiPfif7tNSBITw85/W4tkyr3Bi4NT3r4wgWhWH7OdF38Ip6O79SwAFQh7zqktbpsS7o14MS
-	rmg5iBJqg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=deN4lG5xA+eNRvPJ6PgCQ2slmFI+473hfRVinerCzH4=; b=e/d/e5hAQ0R+42
+	VJLQ7//o02PDo3Hbiymlk+O+nnxme6dmnbiUV0+3xCjTuCNWK0cdPFd1sd3rIxrd9xcKYlR/s+NRD
+	MgY9BFKZ+0epg0sOhdr6xOr2VBTNURmO1jRBXEVhhB2K0cRYs5NI+VtcPBhDWVbWnF4cDEMheJTt4
+	8ERt0eSO4NU6E4fHZLegjbgkiOoyjvIOoDdjGd0Vkmt88oO8F/f9ToxCAM8Qq/AYBeSAkr9jqeBgn
+	4mumldtjDaJgISBfhqOD07xlVT0nH6f4zdr3pNPStYK+5S+XmmT5y2sRmDKmv/2rmoYiQHHUceWXE
+	XFdBOe1frkIxN7nbrYgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMZuF-0005B3-AH; Fri, 03 May 2019 15:15:23 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1hMZxE-0005t7-Kb; Fri, 03 May 2019 15:18:28 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMZu5-00059y-Oq
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 15:15:15 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x43F62RV017185; Fri, 3 May 2019 17:15:05 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=8DawQvv/zqFabgNWPmRdhTtTHiA+WeCJUXr6hjLZOlM=;
- b=ypZr4/Ixn6xpsm+n6FkR9Ojs95HhY2gKyCQFM9XvUW1RCzOTZfGvANzDvPIx5rfxc8Kr
- /J000WheVL2zFf8UXmTXEEq8SsxtUKt4sCD9dwwGSyxlACXuaFuklqptWSYdpSSF6asY
- Ta8IMT3DuoQoYEuZ+cUUjbolCImAEEKVRw3Ks7xuxHCjmTfO914H0aRpLYOuTgcAdlPj
- kdTTz3aFbOCAVea3udPeu0rdWTGWAdUASenQzFp1Rt25TYG4KJUaKqE758lOgsFJ7+Hi
- GjW5ufiQRtEDX/0Q9aUoXPCRFdZDIoDVQRCHjlCQqDbXMjbcL/h9xLeUnlZGTN45gzGD oQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2s6xgrxnrc-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Fri, 03 May 2019 17:15:05 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 7D0323A;
- Fri,  3 May 2019 15:15:04 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 588042930;
- Fri,  3 May 2019 15:15:04 +0000 (GMT)
-Received: from [10.48.0.237] (10.75.127.45) by SFHDAG6NODE1.st.com
- (10.75.127.16) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 3 May
- 2019 17:15:03 +0200
-Subject: Re: [PATCH V2 0/5] mmc: mmci: add busy detect for stm32 sdmmc variant
-To: Ulf Hansson <ulf.hansson@linaro.org>
-References: <1556264798-18540-1-git-send-email-ludovic.Barre@st.com>
- <CAPDyKFqbn=UcbwoH_z+yjrjvHQZaMtmsD=n0yrBV7DAK5VRJEQ@mail.gmail.com>
- <74b91eb4-e5a3-38b2-f732-29cdd058eb6a@st.com>
- <CAPDyKFoURwnai1hbCbO+Uh6+hc7A4dYHjWkqeFAEgMQET-BzwA@mail.gmail.com>
-From: Ludovic BARRE <ludovic.barre@st.com>
-Message-ID: <bccca4e0-849d-2589-c144-296cc273245d@st.com>
-Date: Fri, 3 May 2019 17:15:03 +0200
+ id 1hMZx7-0005s2-FJ
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 15:18:22 +0000
+Received: by mail-wm1-x341.google.com with SMTP id y5so7206942wma.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 03 May 2019 08:18:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:openpgp:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=b4bYbi8YD9r7VkoaNAe5HTZAcJUr3+8rVC7UnnMmUKM=;
+ b=FlnqY919rtUpMPpAyFSkstelMDxDpZz0et+dJ1WjTcG7j4nAZsnAg5/6ChGvwG9Hsc
+ caTFt4nwbeXQ3HPlV0RD7/iqZdCBpIE0Dy8pU9eXFl5SxbORaWWy/LL1+KrBc5PgCx/g
+ YfcE3571gInUKNQPgXZr7diyDwr9Jeh0F4ZJBMoXsU1aixw7t6uf0kh90xN+mL++hOJd
+ spzfCZI0D6zXJSje2GxHusU9qC5+e6N6KeEngc/1WLbFw5Rt/xoFiA77dIQvD3KJRAQB
+ +nhlqPoeQIvRUnXbWm1u96SL6iKrceY6rAwGiZDTLMuczVVLOpuVm6snRTXHQ1ghQ93Q
+ UBKQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=b4bYbi8YD9r7VkoaNAe5HTZAcJUr3+8rVC7UnnMmUKM=;
+ b=bzvmCeRP9gI68DP1F/GTdeiXqhEoS6meYMkg91UEKHkvthL0wxL7pAtJl+cbQ/q2lO
+ eY0EofOE6H//IOZrMqo2xLsSXBRQHjh24R0XakrkZOz4Dwig1qxrMuIXYRsifPaTKu2+
+ t4ZFA+GGbWiPzFfkb3dJx/HDlYXYsMcJMgiqB4xwWWRWeAcHItMis2GAxGzFyJ/zbMHZ
+ dNsd9xcYd1zPxGHSK26jZqzZp6726QstIH4MoR8YgSbqUYKVVrRrUSZ+P957acenD2pB
+ s1eBsyWZIvCLidWwjHtOHzwPHSpmRU3H85u5zhf4BTIgummjY4ii1wrg51RiEox0k9C1
+ T3Iw==
+X-Gm-Message-State: APjAAAU4LhmWEMf7XVZd+vrNRc+gmaJQIu5vfjhpBHWJ+dAHi5/fKKnY
+ l6C6aQpGUZ+/2aTF6FtQBL0=
+X-Google-Smtp-Source: APXvYqwBonBB/rPSrMqlaBkXk23nXrEJT1dwpnliPBl8EyPDu3+3q/Ism1DcUyMMQCbkPyoOI5flWg==
+X-Received: by 2002:a1c:eb18:: with SMTP id j24mr7059073wmh.32.1556896699306; 
+ Fri, 03 May 2019 08:18:19 -0700 (PDT)
+Received: from [192.168.1.4] (ip-86-49-110-70.net.upcbroadband.cz.
+ [86.49.110.70])
+ by smtp.gmail.com with ESMTPSA id 195sm4366416wme.32.2019.05.03.08.18.18
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Fri, 03 May 2019 08:18:18 -0700 (PDT)
+Subject: Re: [PATCH] ARM: dts: r8a779x: Configure PMIC IRQ pinmux
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+References: <20190502140634.4529-1-marek.vasut@gmail.com>
+ <CAMuHMdVGAq1XgSohBjc8i4c_o-N-yWGedS_LLS_Apr4Bx10xGQ@mail.gmail.com>
+From: Marek Vasut <marek.vasut@gmail.com>
+Openpgp: preference=signencrypt
+Message-ID: <fa79e656-d71a-6f3d-21a5-8acac72e20f0@gmail.com>
+Date: Fri, 3 May 2019 17:18:17 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <CAPDyKFoURwnai1hbCbO+Uh6+hc7A4dYHjWkqeFAEgMQET-BzwA@mail.gmail.com>
+In-Reply-To: <CAMuHMdVGAq1XgSohBjc8i4c_o-N-yWGedS_LLS_Apr4Bx10xGQ@mail.gmail.com>
 Content-Language: en-US
-X-Originating-IP: [10.75.127.45]
-X-ClientProxiedBy: SFHDAG3NODE1.st.com (10.75.127.7) To SFHDAG6NODE1.st.com
- (10.75.127.16)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-03_08:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_081514_161048_99639C5A 
-X-CRM114-Status: GOOD (  24.12  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190503_081821_544901_EC2A5510 
+X-CRM114-Status: GOOD (  14.63  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (marek.vasut[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -97,106 +103,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Simon Horman <horms+renesas@verge.net.au>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-hi Ulf
+On 5/3/19 2:36 PM, Geert Uytterhoeven wrote:
+Hi,
 
-On 5/3/19 3:29 PM, Ulf Hansson wrote:
-> On Tue, 30 Apr 2019 at 14:06, Ludovic BARRE <ludovic.barre@st.com> wrote:
+[...]
+
+>>  &rwdt {
+>> @@ -309,6 +314,8 @@
+>>  };
 >>
->>
->>
->> On 4/30/19 1:13 PM, Ulf Hansson wrote:
->>> On Fri, 26 Apr 2019 at 09:46, Ludovic Barre <ludovic.Barre@st.com> wrote:
->>>>
->>>> From: Ludovic Barre <ludovic.barre@st.com>
->>>>
->>>> This patch series adds busy detect for stm32 sdmmc variant.
->>>> Some adaptations are required:
->>>> -Avoid to check and poll busy status when is not expected.
->>>> -Clear busy status bit if busy_detect_flag and busy_detect_mask are
->>>>    different.
->>>> -Add hardware busy timeout with MMCIDATATIMER register.
->>>>
->>>> V2:
->>>> -mmci_cmd_irq cleanup in separate patch.
->>>> -simplify the busy_detect_flag exclude
->>>> -replace sdmmc specific comment in
->>>> "mmc: mmci: avoid fake busy polling in mmci_irq"
->>>> to focus on common behavior
->>>>
->>>> Ludovic Barre (5):
->>>>     mmc: mmci: cleanup mmci_cmd_irq for busy detect feature
->>>>     mmc: mmci: avoid fake busy polling in mmci_irq
->>>>     mmc: mmci: fix clear of busy detect status
->>>>     mmc: mmci: add hardware busy timeout feature
->>>>     mmc: mmci: add busy detect for stm32 sdmmc variant
->>>>
->>>>    drivers/mmc/host/mmci.c | 61 ++++++++++++++++++++++++++++++++++++++-----------
->>>>    drivers/mmc/host/mmci.h |  3 +++
->>>>    2 files changed, 51 insertions(+), 13 deletions(-)
->>>>
->>>> --
->>>> 2.7.4
->>>>
->>>
->>> Ludovic, just wanted to let you know that I am reviewing and testing
->>> this series.
->>>
->>> However, while running some tests on Ux500 for validating the busy
->>> detection code, even without your series applied, I encounter some odd
->>> behaviors. I am looking into the problem to understand better and will
->>> let you know as soon as I have some more data to share.
->>
->> Oops, don't hesitate to share your status, if I could help.
+>>  &iic3 {
+>> +       pinctrl-names = "default";
+>> +       pinctrl-0 = <&pmic_irq_pins>;
 > 
-> Thanks! Good and bad news here, then.
-> 
-> I now understand what is going on - and there is certainly room for
-> improvements here, but more importantly the actual mmci busy detection
-> works as expected.
-> 
-> When it comes to improvements, the main issue I have found is how we
-> treat DATA WRITES. In many cases we simply don't use the HW busy
-> detection at all, but instead rely on the mmc core to send CMD13 in a
-> loop to poll. Well, then if the polling would have consisted of a
-> couple of CMD13s that wouldn't be an issue, but my observations is
-> rather that the numbers of CMD13 sent to poll is in the range or
-> hundreds/thousands - per each WRITE request!
-> 
-> I am going to send a patch (or two) that improves the behavior. It
-> might even involve changing parts in core layer, not sure how the end
-> result will look like yet.
+> Given Blanche has a single device connected to irq2, I think it makes
+> sense to move the pinctrl properties to the pmic node below.
 
-yes, these will improve the drivers without hardware busy completion.
-great
+It makes blanche somehow inconsistent with the other boards, but if you
+insist ... ?
 
+> With that fixed:
+> Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 > 
-> In any case, I have applied patch 1 and patch2 for next, as the tests
-> turned out well at my side. I also took the liberty of updating some
-> of the comments/changelogs, please have look and tell if there is
-> something you want to change.
+> Gr{oetje,eeting}s,
 > 
-> I will continue with the rest of series next week.
+>                         Geert
+> 
 
-thanks, and good week-end.
 
-> 
-> Kind regards
-> Uffe
-> 
+-- 
+Best regards,
+Marek Vasut
 
 _______________________________________________
 linux-arm-kernel mailing list
