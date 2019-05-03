@@ -2,64 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 811FD1318C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 17:54:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A59A1318D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 17:54:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CYj3aWkzOmpbpQpEaso4aITOqXTN3yceX7bVWisKhes=; b=nA2P6R4O3cF1VO
-	dhnhTNyLIxtgEgnSQy5UchLFIv0wz0jNNbIUSz2lbrcv9mF0kBrBE7iUlTZUkoV9GG/5B9VZBiZqX
-	qqt7LTWOSbSsMnVjISbZchUUouDJio7VPkGQaMLWmdU8UOcFF7hN4ZJqoL2hY05mxeRKVOEjUs0fy
-	NsAVKiXBKRxnunq8cPaIADIeIzvR0yLuVXnzuNtn961fo6C7kV1BU+cHRCLYNNgoO1/hI2swIcdjh
-	9FmPsALbZID6p+DhDTbPuNUvmcNJZvNvpiXETJiLv9NtcaUiiasc3fuhPq15qaOA5lNlFGgXSawEy
-	5YjcdUjhZJp+EJ6u9fnA==;
+	List-Owner; bh=7fsmGA1zGOx0lFqYrO+WoIYMI9WyghMw/JRiGfLKlqk=; b=fhuB2L3ecCJr0K
+	8PTPQfPIk4d87nWgd39bLfNXowZAn78qs9KcM7J61PM+t8hOFbw8tcdSkTVMpElDjeQKAjNJa6Cq7
+	6urdtJxBVqACUUfy3rszCgCigjvE4iCTHKRU49X1DAHTpYC0Vu4O7tAijXTevXDOdoeO0RXPPShmO
+	hzMADVad6OnyIVWrqEHt4XM/y/F42jAeqa6PihdezCMp+bydRBNd7lsR5IOhLX8SYnS4q/bzeCTv7
+	LQ25XD8J/9lrHTcBsyovSlC2xfkCzkZ/zHPuBrpWvpj91qn5/9YfxjpLB/i1gr5z72SDJ6a74ZgYO
+	2NOOEFqWeXkC177vwAlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMaVp-00049X-7C; Fri, 03 May 2019 15:54:13 +0000
-Received: from mail-out.m-online.net ([2001:a60:0:28:0:1:25:1])
+	id 1hMaW2-0004R6-Li; Fri, 03 May 2019 15:54:26 +0000
+Received: from casper.infradead.org ([85.118.1.10])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMaUf-0002e9-RR
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 15:53:08 +0000
-Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 44wc94366yz1rYXN;
- Fri,  3 May 2019 17:52:56 +0200 (CEST)
-Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 44wc942fYBz1qtf0;
- Fri,  3 May 2019 17:52:56 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at mnet-online.de
-Received: from mail.mnet-online.de ([192.168.8.182])
- by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
- port 10024)
- with ESMTP id U_7WBs4quDGs; Fri,  3 May 2019 17:52:55 +0200 (CEST)
-X-Auth-Info: r9o4fj6sXC1jjSddLCBoDzerkKneYKsyYrZn7OQeTlY=
-Received: from kurokawa.lan (ip-86-49-110-70.net.upcbroadband.cz
- [86.49.110.70])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.mnet-online.de (Postfix) with ESMTPSA;
- Fri,  3 May 2019 17:52:55 +0200 (CEST)
-From: Marek Vasut <marex@denx.de>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 8/8] ARM: dts: imx53: Update pinmux settings on M53Menlo
-Date: Fri,  3 May 2019 17:52:35 +0200
-Message-Id: <20190503155235.6414-8-marex@denx.de>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190503155235.6414-1-marex@denx.de>
-References: <20190503155235.6414-1-marex@denx.de>
+ id 1hMaVN-0003fQ-RG
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 03 May 2019 15:53:45 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Transfer-Encoding:
+ Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+ Sender:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=1ovIMkK7qwjA8XxjzuMVd+9HRLITFhDeveuvPvxFSoM=; b=RcoRRZMpu/3NuYhjh2Sfp6eVJK
+ TIt0/gJEmu62nrAYnrIBtjv7gtV0fDVB871B9DmjDoyHTy/Z4O0PvwfpiSiV5+8v1fWBNw8qS74Q0
+ 6JWOsFlXFSJvUk/bjZWTPfvXWWkhj46ZjY1NLGWrAk4S6Ja+kt6SphqdNz9APKy26Gd9pKyXS85KU
+ qGD5u5IafhnSpyCa9M4DACj50lnuNuExgnJy4kE7mN7Lhezj4vOihOI+Qs4Iy5FWiO5Sp307iv66e
+ W0H9Sh/zrnSX+/mJFXWDzolysMwd3iec5TcdWWvo47X1leUDyUWRzdyyuAS0BKyNJ8MzcrP5Z+bZe
+ NYE9X2SQ==;
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
+ by casper.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hMaVJ-0001yT-NB
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 15:53:43 +0000
+X-Originating-IP: 90.66.53.80
+Received: from localhost (lfbn-1-3034-80.w90-66.abo.wanadoo.fr [90.66.53.80])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id ECAF2C000E;
+ Fri,  3 May 2019 15:53:02 +0000 (UTC)
+Date: Fri, 3 May 2019 17:53:02 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Anders Roxell <anders.roxell@linaro.org>
+Subject: Re: [PATCH] rtc: imxdi: remove unused variable
+Message-ID: <20190503155302.GF22550@piout.net>
+References: <20190503154217.13205-1-anders.roxell@linaro.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190503154217.13205-1-anders.roxell@linaro.org>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_085302_545503_9B748CF9 
-X-CRM114-Status: GOOD (  10.81  )
+X-CRM114-CacheID: sfid-20190503_165341_774872_59DC5562 
+X-CRM114-Status: GOOD (  11.89  )
 X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.7 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:a60:0:28:0:1:25:1 listed in] [list.dnswl.org]
+ low trust [217.70.183.198 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.198 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -71,160 +78,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>, Fabio Estevam <festevam@gmail.com>,
- Shawn Guo <shawnguo@kernel.org>, NXP Linux Team <linux-imx@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-rtc@vger.kernel.org, a.zummo@towertech.it, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Update pinmux settings according to hardware team input.
-
-Signed-off-by: Marek Vasut <marex@denx.de>
-Cc: Shawn Guo <shawnguo@kernel.org>
-Cc: Fabio Estevam <festevam@gmail.com>
-Cc: NXP Linux Team <linux-imx@nxp.com>
-To: linux-arm-kernel@lists.infradead.org
----
- arch/arm/boot/dts/imx53-m53menlo.dts | 87 ++++++++++++++++------------
- 1 file changed, 49 insertions(+), 38 deletions(-)
-
-diff --git a/arch/arm/boot/dts/imx53-m53menlo.dts b/arch/arm/boot/dts/imx53-m53menlo.dts
-index 40c8da9ddbaf..40bfa77b96d4 100644
---- a/arch/arm/boot/dts/imx53-m53menlo.dts
-+++ b/arch/arm/boot/dts/imx53-m53menlo.dts
-@@ -234,27 +234,31 @@
- 	imx53-m53evk {
- 		hoggrp {
- 			fsl,pins = <
--				MX53_PAD_GPIO_0__CCM_SSI_EXT1_CLK	0x1c4
--				MX53_PAD_EIM_EB3__GPIO2_31		0x1d5
--				MX53_PAD_PATA_DA_0__GPIO7_6		0x1d5
--				MX53_PAD_GPIO_19__CCM_CLKO		0x1d5
--				MX53_PAD_CSI0_MCLK__CCM_CSI0_MCLK	0x1d5
--				MX53_PAD_CSI0_DAT4__GPIO5_22		0x1d5
--				MX53_PAD_CSI0_DAT5__GPIO5_23		0x1d5
--				MX53_PAD_CSI0_DAT6__GPIO5_24		0x1d5
--				MX53_PAD_CSI0_DAT7__GPIO5_25		0x1d5
--				MX53_PAD_CSI0_DAT8__GPIO5_26		0x1d5
--				MX53_PAD_CSI0_DAT9__GPIO5_27		0x1d5
--				MX53_PAD_CSI0_DAT10__GPIO5_28		0x1d5
--				MX53_PAD_CSI0_DAT11__GPIO5_29		0x1d5
--				MX53_PAD_CSI0_DAT14__GPIO6_0		0x1d5
-+				MX53_PAD_GPIO_19__CCM_CLKO		0x1e4
-+				MX53_PAD_CSI0_DATA_EN__GPIO5_20		0x1e4
-+				MX53_PAD_CSI0_DAT4__GPIO5_22		0x1e4
-+				MX53_PAD_CSI0_DAT5__GPIO5_23		0x1c4
-+				MX53_PAD_CSI0_DAT6__GPIO5_24		0x1e4
-+				MX53_PAD_CSI0_DAT7__GPIO5_25		0x1e4
-+				MX53_PAD_CSI0_DAT8__GPIO5_26		0x1e4
-+				MX53_PAD_CSI0_DAT9__GPIO5_27		0x1c4
-+				MX53_PAD_CSI0_DAT10__GPIO5_28		0x1e4
-+				MX53_PAD_CSI0_DAT11__GPIO5_29		0x1e4
-+				MX53_PAD_PATA_DATA11__GPIO2_11		0x1e4
-+				MX53_PAD_EIM_D24__GPIO3_24		0x1e4
-+				MX53_PAD_EIM_D25__GPIO3_25		0x1e4
-+				MX53_PAD_EIM_D29__GPIO3_29		0x1e4
-+				MX53_PAD_CSI0_PIXCLK__GPIO5_18		0x1e4
-+				MX53_PAD_CSI0_VSYNC__GPIO5_21		0x1e4
-+				MX53_PAD_CSI0_DAT18__GPIO6_4		0x1c4
-+				MX53_PAD_PATA_DATA8__GPIO2_8		0x1e4
- 			>;
- 		};
- 
- 		pinctrl_led: ledgrp {
- 			fsl,pins = <
--				MX53_PAD_CSI0_DAT15__GPIO6_1		0x1d5
--				MX53_PAD_CSI0_DAT16__GPIO6_2		0x1d5
-+				MX53_PAD_CSI0_DAT15__GPIO6_1		0x1c4
-+				MX53_PAD_CSI0_DAT16__GPIO6_2		0x1c4
- 			>;
- 		};
- 
-@@ -273,49 +277,56 @@
- 
- 		pinctrl_can2: can2grp {
- 			fsl,pins = <
--				MX53_PAD_KEY_COL4__CAN2_TXCAN		0x1c4
-+				MX53_PAD_KEY_COL4__CAN2_TXCAN		0x1e4
- 				MX53_PAD_KEY_ROW4__CAN2_RXCAN		0x1c4
- 			>;
- 		};
- 
- 		pinctrl_display_gpio: display-gpiogrp {
- 			fsl,pins = <
--				MX53_PAD_CSI0_DAT12__GPIO5_30		0x1d5 /* Reset */
--				MX53_PAD_CSI0_DAT13__GPIO5_31		0x1d5 /* Interrupt */
-+				MX53_PAD_CSI0_DAT12__GPIO5_30		0x1c4 /* Reset */
-+				MX53_PAD_CSI0_MCLK__GPIO5_19		0x1e4 /* Int-K */
-+				MX53_PAD_CSI0_DAT13__GPIO5_31		0x1c4 /* Int-I */
-+
-+				MX53_PAD_CSI0_DAT14__GPIO6_0		0x1c4 /* Power down */
- 			>;
- 		};
- 
- 		pinctrl_edt_ft5x06: edt-ft5x06grp {
- 			fsl,pins = <
--				MX53_PAD_PATA_DATA9__GPIO2_9		0x1d5 /* Reset */
--				MX53_PAD_CSI0_DAT19__GPIO6_5		0x1d5 /* Interrupt */
--				MX53_PAD_PATA_DATA10__GPIO2_10		0x1d5 /* Wake */
-+				MX53_PAD_PATA_DATA9__GPIO2_9		0x1e4 /* Reset */
-+				MX53_PAD_CSI0_DAT19__GPIO6_5		0x1c4 /* Interrupt */
-+				MX53_PAD_PATA_DATA10__GPIO2_10		0x1e4 /* Wake */
- 			>;
- 		};
- 
- 		pinctrl_esdhc1: esdhc1grp {
- 			fsl,pins = <
--				MX53_PAD_SD1_DATA0__ESDHC1_DAT0		0x1d5
--				MX53_PAD_SD1_DATA1__ESDHC1_DAT1		0x1d5
--				MX53_PAD_SD1_DATA2__ESDHC1_DAT2		0x1d5
--				MX53_PAD_SD1_DATA3__ESDHC1_DAT3		0x1d5
--				MX53_PAD_SD1_CMD__ESDHC1_CMD		0x1d5
--				MX53_PAD_SD1_CLK__ESDHC1_CLK		0x1d5
-+				MX53_PAD_SD1_DATA0__ESDHC1_DAT0		0x1e4
-+				MX53_PAD_SD1_DATA1__ESDHC1_DAT1		0x1e4
-+				MX53_PAD_SD1_DATA2__ESDHC1_DAT2		0x1e4
-+				MX53_PAD_SD1_DATA3__ESDHC1_DAT3		0x1e4
-+				MX53_PAD_SD1_CMD__ESDHC1_CMD		0x1e4
-+				MX53_PAD_SD1_CLK__ESDHC1_CLK		0x1e4
-+				MX53_PAD_GPIO_1__GPIO1_1		0x1c4
-+				MX53_PAD_GPIO_9__GPIO1_9		0x1e4
- 			>;
- 		};
- 
- 		pinctrl_fec: fecgrp {
- 			fsl,pins = <
--				MX53_PAD_FEC_MDC__FEC_MDC		0x4
--				MX53_PAD_FEC_MDIO__FEC_MDIO		0x1fc
--				MX53_PAD_FEC_REF_CLK__FEC_TX_CLK	0x180
--				MX53_PAD_FEC_RX_ER__FEC_RX_ER		0x180
--				MX53_PAD_FEC_CRS_DV__FEC_RX_DV		0x180
--				MX53_PAD_FEC_RXD1__FEC_RDATA_1		0x180
--				MX53_PAD_FEC_RXD0__FEC_RDATA_0		0x180
--				MX53_PAD_FEC_TX_EN__FEC_TX_EN		0x4
--				MX53_PAD_FEC_TXD1__FEC_TDATA_1		0x4
--				MX53_PAD_FEC_TXD0__FEC_TDATA_0		0x4
-+				MX53_PAD_FEC_MDC__FEC_MDC		0x1e4
-+				MX53_PAD_FEC_MDIO__FEC_MDIO		0x1e4
-+				MX53_PAD_FEC_REF_CLK__FEC_TX_CLK	0x1e4
-+				MX53_PAD_FEC_RX_ER__FEC_RX_ER		0x1e4
-+				MX53_PAD_FEC_CRS_DV__FEC_RX_DV		0x1e4
-+				MX53_PAD_FEC_RXD1__FEC_RDATA_1		0x1e4
-+				MX53_PAD_FEC_RXD0__FEC_RDATA_0		0x1e4
-+				MX53_PAD_FEC_TX_EN__FEC_TX_EN		0x1c4
-+				MX53_PAD_FEC_TXD1__FEC_TDATA_1		0x1e4
-+				MX53_PAD_FEC_TXD0__FEC_TDATA_0		0x1e4
-+				MX53_PAD_PATA_DA_1__GPIO7_7		0x1e4
-+				MX53_PAD_EIM_EB3__GPIO2_31		0x1e4
- 			>;
- 		};
- 
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMDMvMDUvMjAxOSAxNzo0MjoxNyswMjAwLCBBbmRlcnMgUm94ZWxsIHdyb3RlOgo+IFRoaXMg
+dmFyaWFibGUgaXMgbm8gbG9uZ2VyIHVzZWQgYW5kIHRoZSBjb21waWxlciByaWdodGx5IGNvbXBs
+YWlucyB0aGF0Cj4gaXQgc2hvdWxkIGJlIHJlbW92ZWQuCj4gCj4gLi4vZHJpdmVycy9ydGMvcnRj
+LWlteGRpLmM6IEluIGZ1bmN0aW9uIOKAmGRyeWljZV9ydGNfc2V0X2FsYXJt4oCZOgo+IC4uL2Ry
+aXZlcnMvcnRjL3J0Yy1pbXhkaS5jOjYzMzoxNjogd2FybmluZzogdW51c2VkIHZhcmlhYmxlIOKA
+mG5vd+KAmSBbLVd1bnVzZWQtdmFyaWFibGVdCj4gICB1bnNpZ25lZCBsb25nIG5vdzsKPiAgICAg
+ICAgICAgICAgICAgXn5+Cj4gCj4gUmV3b3JrIHRvIHJlbW92ZSB0aGUgdW51c2VkIHZhcmlhYmxl
+Lgo+IAo+IEZpeGVzOiA2MjlkNDg4YTNlYjYgKCJydGM6IGlteGRpOiByZW1vdmUgdW5uZWNlc3Nh
+cnkgY2hlY2siKQo+IFNpZ25lZC1vZmYtYnk6IEFuZGVycyBSb3hlbGwgPGFuZGVycy5yb3hlbGxA
+bGluYXJvLm9yZz4KPiAtLS0KPiAgZHJpdmVycy9ydGMvcnRjLWlteGRpLmMgfCAxIC0KPiAgMSBm
+aWxlIGNoYW5nZWQsIDEgZGVsZXRpb24oLSkKPiAKQXBwbGllZCwgdGhhbmtzLgoKLS0gCkFsZXhh
+bmRyZSBCZWxsb25pLCBCb290bGluCkVtYmVkZGVkIExpbnV4IGFuZCBLZXJuZWwgZW5naW5lZXJp
+bmcKaHR0cHM6Ly9ib290bGluLmNvbQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtl
+cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
