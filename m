@@ -2,103 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8BA712AEA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 11:45:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CB2812AFD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 11:48:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=FGMoc1kFY698LS+a+CG1yViR9ebfYIjbqYex59QM5Jo=; b=VoRd/UN4EyG15W
-	eU33iYop+dmvNotGVDY/FarpZlE2TfsVKTK9zCc0X/VRepykdlzann6zPp7fanEln3vEja02mVPOV
-	hqhaNFH/oCfEjgm26K2N6ssjmSrDX3rRyLttp74+CLUrzpp1kcLK5kidr533kOO64UCeSFKu1pHM3
-	7cz+hV4koEJMLgN0tyaH7fIe9Q937+8ng6n3W3pAsIfYtXkDvTHif1AVrmkwlxnseVcys1buJouQZ
-	gsugQverSNHuxt05oQhEehPm0mJyXz2ks+bjV5tBzIZsm4IrjsM5nnd/Yyo8IETsSeA/QmS6E2Ol3
-	mr5KwoI14IqwhSFk1dSg==;
+	References:List-Owner; bh=QVamPBEygKwWWMGnM69VyBXlgeBntem6AMsGig2w8WY=; b=ft6
+	VfsEEP0HJjpbWtcIQV3rwShNSyplciAF8lNqj2mbg51zSXBslJU7WaO0qWkDotg9oU/ug9h98EKwF
+	Ko1e4wMWZTGK5rcox9I0FYxFYz6nxa0Q2nB884l9pJ+B4noBKTjh4vIIrDs+8pEmWrsTGNn+XRY7D
+	H0ZKQJbzA4BsPo0dLFMkNaHl60eyI/nqN3KPVJszH8pE2alWJAG/bQrEo0sflJaEtUBZorJ4zaGCk
+	UECX6Q3xfXFzEINC4jPT0T6t9jxrXWBMOe6E9ltoyrbubnQJZzgRG4YE7D/GABxOANwXRtfNnjV4i
+	rX9gSBxWMgfx4QfpSpKcU/c3tpACDCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMUl4-0002z2-D4; Fri, 03 May 2019 09:45:34 +0000
-Received: from mail-eopbgr10064.outbound.protection.outlook.com ([40.107.1.64]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1hMUnV-0003Z5-3f; Fri, 03 May 2019 09:48:05 +0000
+Received: from haggis.mythic-beasts.com ([2a00:1098:0:86:1000:0:2:1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMUkO-000167-Jw
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 09:45:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=GgjsFt9CS2wYblioVnW9GXVgsBc7Lxls5TP+tJdMSTg=;
- b=sY8KpSTvAH+KsyJjtsSLHvWgKlVYbYdgjOKkIUddQbWvK4OuaZUQG1ppEgdjPcndRTJ4j5hNm/07/y54CtrZpFkz9iiJsA5UvZqsW920N56EsXi7WymjKnSnZh3nTJPlQshfDVBJ8NdjodaoezXEDfmNeskblwmksBQpTS+aLJc=
-Received: from AM0PR04MB6434.eurprd04.prod.outlook.com (20.179.252.215) by
- AM0PR04MB5026.eurprd04.prod.outlook.com (20.177.40.143) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1835.16; Fri, 3 May 2019 09:44:48 +0000
-Received: from AM0PR04MB6434.eurprd04.prod.outlook.com
- ([fe80::19be:75a:9fe:7cec]) by AM0PR04MB6434.eurprd04.prod.outlook.com
- ([fe80::19be:75a:9fe:7cec%7]) with mapi id 15.20.1856.008; Fri, 3 May 2019
- 09:44:48 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Viresh Kumar <viresh.kumar@linaro.org>
-Subject: Re: [PATCH v2 1/3] cpufreq: Add imx-cpufreq-dt driver
-Thread-Topic: [PATCH v2 1/3] cpufreq: Add imx-cpufreq-dt driver
-Thread-Index: AQHVATiRBI3TxTCIzUmxtrShT8luGA==
-Date: Fri, 3 May 2019 09:44:48 +0000
-Message-ID: <AM0PR04MB64345196835732B019F1D885EE350@AM0PR04MB6434.eurprd04.prod.outlook.com>
-References: <cover.1556836868.git.leonard.crestez@nxp.com>
- <df3a41d8bf57b8dd8f8c17599eeca98d6e43962c.1556836868.git.leonard.crestez@nxp.com>
- <20190503065227.afqgmylbjwhg2mc3@vireshk-i7>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [89.37.124.34]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 02c6117b-65d7-47bf-3a3f-08d6cfabfb72
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB5026; 
-x-ms-traffictypediagnostic: AM0PR04MB5026:
-x-microsoft-antispam-prvs: <AM0PR04MB502644CF3D3FD5305C9C076BEE350@AM0PR04MB5026.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0026334A56
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(136003)(39860400002)(376002)(346002)(396003)(199004)(189003)(102836004)(6506007)(81166006)(186003)(229853002)(446003)(3846002)(81156014)(71190400001)(7736002)(476003)(53546011)(486006)(5660300002)(6116002)(71200400001)(8936002)(14454004)(66556008)(66066001)(64756008)(44832011)(73956011)(66446008)(66946007)(6436002)(66476007)(76176011)(7696005)(6916009)(8676002)(99286004)(55016002)(478600001)(305945005)(91956017)(316002)(26005)(6246003)(52536014)(86362001)(4326008)(76116006)(68736007)(53936002)(256004)(9686003)(14444005)(33656002)(54906003)(74316002)(2906002)(25786009);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5026;
- H:AM0PR04MB6434.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: +3SbIyqczB4WcVuMTIx7eEqlwDW7paAcWNyhRKdjgHVfhIHl1BNQW2ujWUqcRAyy12ipAxyujYyGzCGyUq26zgFGQymSWu1Fe10zAJFYKFOaEzM2FZFSSB1WfyUJWs+OBbyI5a4lTBMo+Hh9A3w7cjsbJxpmsMHgzB8gFRBMQWnLvEXfln0Bk8K43ByVkxyyVakAiHcQQ8MBo47RSU7WmYosv05L/pcnqaESoV97pJvTuODz9rMlCwtk663zrIbY1p/6sMKgzH9H1ZAF44zJ9swN4oljmzFOy+ZWfSze/x1xz+5iFPYPBiII4DWQ4SvnJxE8myGkMqYeJZilQ5QsRNE979bo4okNJ6o0Tmmeep+UPSe9KfI76412DIA1V/6RM+SCpgA9QNzdQ5hbWOGLP/7qhdaquxvWuERv9q8Sncw=
-MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 02c6117b-65d7-47bf-3a3f-08d6cfabfb72
-X-MS-Exchange-CrossTenant-originalarrivaltime: 03 May 2019 09:44:48.3069 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5026
+ id 1hMUnL-0003UG-Uu
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 09:47:57 +0000
+Received: from [199.195.250.187] (port=56539 helo=hermes.aosc.io)
+ by haggis.mythic-beasts.com with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.90_1)
+ (envelope-from <icenowy@aosc.io>)
+ id 1hMUnJ-0000Am-8K; Fri, 03 May 2019 10:47:53 +0100
+Received: from localhost (localhost [127.0.0.1]) (Authenticated sender:
+ icenowy@aosc.io)
+ by hermes.aosc.io (Postfix) with ESMTPSA id 0EE74431BF;
+ Fri,  3 May 2019 09:47:43 +0000 (UTC)
+From: Icenowy Zheng <icenowy@aosc.io>
+To: Maxime Ripard <maxime.ripard@bootlin.com>,
+	Chen-Yu Tsai <wens@csie.org>
+Subject: [PATCH v2] arm64: dts: allwinner: h6: add PIO VCC bank supplies for
+ Pine H64
+Date: Fri,  3 May 2019 17:47:20 +0800
+Message-Id: <20190503094720.21502-1-icenowy@aosc.io>
+X-BlackCat-Spam-Score: 9
+X-Spam-Status: No, score=0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_024453_597856_F6C20A80 
-X-CRM114-Status: GOOD (  12.25  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190503_024756_006275_5E236518 
+X-CRM114-Status: GOOD (  14.63  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.64 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a00:1098:0:86:1000:0:2:1 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -110,77 +65,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
- Anson Huang <anson.huang@nxp.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>, Lucas Stach <l.stach@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Jacky Bai <ping.bai@nxp.com>
+Cc: devicetree@vger.kernel.org, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Icenowy Zheng <icenowy@aosc.io>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03.05.2019 09:52, Viresh Kumar wrote:
-> On 02-05-19, 22:44, Leonard Crestez wrote:
->> Right now in upstream imx8m cpufreq support just lists a common subset
->> of OPPs because the higher ones should only be attempted after checking
->> speed grading in fuses.
->>
->> Add a small driver which checks speed grading from nvmem cells before
->> registering cpufreq-dt.
->>
->> This allows unlocking all frequencies for imx8mm and imx8mq.
->>
->> diff --git a/drivers/cpufreq/Kconfig.arm b/drivers/cpufreq/Kconfig.arm
->> @@ -90,10 +90,20 @@ config ARM_IMX6Q_CPUFREQ
->>   	help
->>   	  This adds cpufreq driver support for Freescale i.MX6 series SoCs.
->>   
->>   	  If in doubt, say N.
->>   
->> +config ARM_IMX_CPUFREQ_DT
->> +	tristate "Freescale i.MX8M cpufreq support"
->> +	depends on ARCH_MXC && CPUFREQ_DT
->> +	default m if (ARCH_MXC && CPUFREQ_DT)
->> +	help
->> +	  This adds cpufreq driver support for newer Freescale i.MX series
-> 
-> "newer" is a relative thing, it won't be newer an year or two later. Just drop
-> it.
+The Allwinner H6 SoC features tweakable VCC for PC, PD, PG, PL and PM
+banks.
 
-I meant "newer than i.MX6". Various attempts at adding explicit cpufreq 
-drivers for newer SOCs were rejected in favor of cpufreq-dt.
+This patch adds supplies for these banks except PL bank. PL bank is
+where PMIC is attached, and currently if a PMIC regulator is added
+for it a dependency loop will happen.
 
-I'll change to mention i.MX8M explicitly and update if 7 is added.
+Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+---
+Changes in v2:
+- Added PG/PM banks.
 
->> +static struct platform_driver imx_cpufreq_dt_driver = {
->> +	.probe = imx_cpufreq_dt_probe,
->> +	.remove = imx_cpufreq_dt_remove,
->> +	.driver = {
->> +		.name = "imx-cpufreq-dt",
->> +	},
->> +};
->> +module_platform_driver(imx_cpufreq_dt_driver);
-> 
-> Why add another virtual device-driver pair here? The only reason why we have
-> been adding it was to get deferred probe to work which doesn't look like the
-> case for this driver. Why not do everything from the init() routine ?
+ arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-The imx-cpufreq-dt platform_driver reads from fuses (nvmem/imx-ocotp) 
-which can be theoretically be built as a module and also has clock 
-requirements. No sure we should rely that the call to read from nvmem 
-never returns EPROBE_DEFER.
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts
+index 4802902e128f..9e464d40cbff 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts
+@@ -127,6 +127,12 @@
+ 	status = "okay";
+ };
+ 
++&pio {
++	vcc-pc-supply = <&reg_bldo2>;
++	vcc-pd-supply = <&reg_cldo1>;
++	vcc-pg-supply = <&reg_aldo1>;
++};
++
+ &r_i2c {
+ 	status = "okay";
+ 
+@@ -247,6 +253,10 @@
+ 	};
+ };
+ 
++&r_pio {
++	vcc-pm-supply = <&reg_aldo1>;
++};
++
+ &uart0 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&uart0_ph_pins>;
+-- 
+2.18.1
 
-I'm not sure which "init()" you mean, the registration code is inside 
-soc driver and at that point the fuse driver might not be available.
-
---
-Regards,
-Leonard
 
 _______________________________________________
 linux-arm-kernel mailing list
