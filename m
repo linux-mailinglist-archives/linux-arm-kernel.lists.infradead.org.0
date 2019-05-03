@@ -2,64 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9DC1913186
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 17:53:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 811FD1318C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 17:54:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cyf/phxG+8/CVm/8PDi9Sen+hx6pjzAWqBd/3e8AtU8=; b=NxY8gWVQHB4/yF
-	BPdQ6WRU21z3p7UxR97E0bsq0IhI+SLmCkRoFYErEo375KMF9KomBKQA+eMgIZOrRaqZrqNIxpJDT
-	aW5mlK1bUZlEw+J4i3tPNjbxXagCVqYqkpQJu7hE6Pw0R0KsvazQoeq7cgC19WXRAWBRlMfuAZ+ui
-	HlxtvfMZMZEel8IovWklsVbDYPYN94Uhnpa3npTsKXuRdt7l6zjgiMqsY88WqnYFEzmjOBbnpOxVg
-	WLS4OcxeBLgwtLb2wOg+t+ypDPA4vsriCD32ktryOWlyy78zAckDpOHY3izNiouRNE6wKpUk9kLK2
-	zdlnOsJe2WT4FIWV+Qgg==;
+	List-Owner; bh=CYj3aWkzOmpbpQpEaso4aITOqXTN3yceX7bVWisKhes=; b=nA2P6R4O3cF1VO
+	dhnhTNyLIxtgEgnSQy5UchLFIv0wz0jNNbIUSz2lbrcv9mF0kBrBE7iUlTZUkoV9GG/5B9VZBiZqX
+	qqt7LTWOSbSsMnVjISbZchUUouDJio7VPkGQaMLWmdU8UOcFF7hN4ZJqoL2hY05mxeRKVOEjUs0fy
+	NsAVKiXBKRxnunq8cPaIADIeIzvR0yLuVXnzuNtn961fo6C7kV1BU+cHRCLYNNgoO1/hI2swIcdjh
+	9FmPsALbZID6p+DhDTbPuNUvmcNJZvNvpiXETJiLv9NtcaUiiasc3fuhPq15qaOA5lNlFGgXSawEy
+	5YjcdUjhZJp+EJ6u9fnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMaVA-0003CI-8W; Fri, 03 May 2019 15:53:32 +0000
-Received: from mail-out.m-online.net ([212.18.0.9])
+	id 1hMaVp-00049X-7C; Fri, 03 May 2019 15:54:13 +0000
+Received: from mail-out.m-online.net ([2001:a60:0:28:0:1:25:1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMaUa-0002ak-BO
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 15:52:57 +0000
+ id 1hMaUf-0002e9-RR
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 15:53:08 +0000
 Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 44wc9315lwz1rHd7;
- Fri,  3 May 2019 17:52:55 +0200 (CEST)
+ by mail-out.m-online.net (Postfix) with ESMTP id 44wc94366yz1rYXN;
+ Fri,  3 May 2019 17:52:56 +0200 (CEST)
 Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 44wc930xmBz1qtf0;
- Fri,  3 May 2019 17:52:55 +0200 (CEST)
+ by mail.m-online.net (Postfix) with ESMTP id 44wc942fYBz1qtf0;
+ Fri,  3 May 2019 17:52:56 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at mnet-online.de
 Received: from mail.mnet-online.de ([192.168.8.182])
  by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
  port 10024)
- with ESMTP id PycviH-fN8xH; Fri,  3 May 2019 17:52:54 +0200 (CEST)
-X-Auth-Info: OpHun2qXK2CW7aFyPgmKSeprh9bVmk5KXann7/ElcY4=
+ with ESMTP id U_7WBs4quDGs; Fri,  3 May 2019 17:52:55 +0200 (CEST)
+X-Auth-Info: r9o4fj6sXC1jjSddLCBoDzerkKneYKsyYrZn7OQeTlY=
 Received: from kurokawa.lan (ip-86-49-110-70.net.upcbroadband.cz
  [86.49.110.70])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
  by mail.mnet-online.de (Postfix) with ESMTPSA;
- Fri,  3 May 2019 17:52:54 +0200 (CEST)
+ Fri,  3 May 2019 17:52:55 +0200 (CEST)
 From: Marek Vasut <marex@denx.de>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 7/8] ARM: dts: imx53: Add GPIO line names on M53Menlo
-Date: Fri,  3 May 2019 17:52:34 +0200
-Message-Id: <20190503155235.6414-7-marex@denx.de>
+Subject: [PATCH 8/8] ARM: dts: imx53: Update pinmux settings on M53Menlo
+Date: Fri,  3 May 2019 17:52:35 +0200
+Message-Id: <20190503155235.6414-8-marex@denx.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190503155235.6414-1-marex@denx.de>
 References: <20190503155235.6414-1-marex@denx.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_085256_543681_4A45BB68 
-X-CRM114-Status: GOOD (  10.33  )
+X-CRM114-CacheID: sfid-20190503_085302_545503_9B748CF9 
+X-CRM114-Status: GOOD (  10.81  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.18.0.9 listed in list.dnswl.org]
+ low trust [2001:a60:0:28:0:1:25:1 listed in] [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -78,7 +78,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add meaningful GPIO line names for the board GPIOs.
+Update pinmux settings according to hardware team input.
 
 Signed-off-by: Marek Vasut <marex@denx.de>
 Cc: Shawn Guo <shawnguo@kernel.org>
@@ -86,92 +86,140 @@ Cc: Fabio Estevam <festevam@gmail.com>
 Cc: NXP Linux Team <linux-imx@nxp.com>
 To: linux-arm-kernel@lists.infradead.org
 ---
- arch/arm/boot/dts/imx53-m53menlo.dts | 72 ++++++++++++++++++++++++++++
- 1 file changed, 72 insertions(+)
+ arch/arm/boot/dts/imx53-m53menlo.dts | 87 ++++++++++++++++------------
+ 1 file changed, 49 insertions(+), 38 deletions(-)
 
 diff --git a/arch/arm/boot/dts/imx53-m53menlo.dts b/arch/arm/boot/dts/imx53-m53menlo.dts
-index 567ea20e1ffe..40c8da9ddbaf 100644
+index 40c8da9ddbaf..40bfa77b96d4 100644
 --- a/arch/arm/boot/dts/imx53-m53menlo.dts
 +++ b/arch/arm/boot/dts/imx53-m53menlo.dts
-@@ -115,6 +115,78 @@
- 	status = "okay";
- };
+@@ -234,27 +234,31 @@
+ 	imx53-m53evk {
+ 		hoggrp {
+ 			fsl,pins = <
+-				MX53_PAD_GPIO_0__CCM_SSI_EXT1_CLK	0x1c4
+-				MX53_PAD_EIM_EB3__GPIO2_31		0x1d5
+-				MX53_PAD_PATA_DA_0__GPIO7_6		0x1d5
+-				MX53_PAD_GPIO_19__CCM_CLKO		0x1d5
+-				MX53_PAD_CSI0_MCLK__CCM_CSI0_MCLK	0x1d5
+-				MX53_PAD_CSI0_DAT4__GPIO5_22		0x1d5
+-				MX53_PAD_CSI0_DAT5__GPIO5_23		0x1d5
+-				MX53_PAD_CSI0_DAT6__GPIO5_24		0x1d5
+-				MX53_PAD_CSI0_DAT7__GPIO5_25		0x1d5
+-				MX53_PAD_CSI0_DAT8__GPIO5_26		0x1d5
+-				MX53_PAD_CSI0_DAT9__GPIO5_27		0x1d5
+-				MX53_PAD_CSI0_DAT10__GPIO5_28		0x1d5
+-				MX53_PAD_CSI0_DAT11__GPIO5_29		0x1d5
+-				MX53_PAD_CSI0_DAT14__GPIO6_0		0x1d5
++				MX53_PAD_GPIO_19__CCM_CLKO		0x1e4
++				MX53_PAD_CSI0_DATA_EN__GPIO5_20		0x1e4
++				MX53_PAD_CSI0_DAT4__GPIO5_22		0x1e4
++				MX53_PAD_CSI0_DAT5__GPIO5_23		0x1c4
++				MX53_PAD_CSI0_DAT6__GPIO5_24		0x1e4
++				MX53_PAD_CSI0_DAT7__GPIO5_25		0x1e4
++				MX53_PAD_CSI0_DAT8__GPIO5_26		0x1e4
++				MX53_PAD_CSI0_DAT9__GPIO5_27		0x1c4
++				MX53_PAD_CSI0_DAT10__GPIO5_28		0x1e4
++				MX53_PAD_CSI0_DAT11__GPIO5_29		0x1e4
++				MX53_PAD_PATA_DATA11__GPIO2_11		0x1e4
++				MX53_PAD_EIM_D24__GPIO3_24		0x1e4
++				MX53_PAD_EIM_D25__GPIO3_25		0x1e4
++				MX53_PAD_EIM_D29__GPIO3_29		0x1e4
++				MX53_PAD_CSI0_PIXCLK__GPIO5_18		0x1e4
++				MX53_PAD_CSI0_VSYNC__GPIO5_21		0x1e4
++				MX53_PAD_CSI0_DAT18__GPIO6_4		0x1c4
++				MX53_PAD_PATA_DATA8__GPIO2_8		0x1e4
+ 			>;
+ 		};
  
-+&gpio1 {
-+	gpio-line-names =
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "";
-+};
+ 		pinctrl_led: ledgrp {
+ 			fsl,pins = <
+-				MX53_PAD_CSI0_DAT15__GPIO6_1		0x1d5
+-				MX53_PAD_CSI0_DAT16__GPIO6_2		0x1d5
++				MX53_PAD_CSI0_DAT15__GPIO6_1		0x1c4
++				MX53_PAD_CSI0_DAT16__GPIO6_2		0x1c4
+ 			>;
+ 		};
+ 
+@@ -273,49 +277,56 @@
+ 
+ 		pinctrl_can2: can2grp {
+ 			fsl,pins = <
+-				MX53_PAD_KEY_COL4__CAN2_TXCAN		0x1c4
++				MX53_PAD_KEY_COL4__CAN2_TXCAN		0x1e4
+ 				MX53_PAD_KEY_ROW4__CAN2_RXCAN		0x1c4
+ 			>;
+ 		};
+ 
+ 		pinctrl_display_gpio: display-gpiogrp {
+ 			fsl,pins = <
+-				MX53_PAD_CSI0_DAT12__GPIO5_30		0x1d5 /* Reset */
+-				MX53_PAD_CSI0_DAT13__GPIO5_31		0x1d5 /* Interrupt */
++				MX53_PAD_CSI0_DAT12__GPIO5_30		0x1c4 /* Reset */
++				MX53_PAD_CSI0_MCLK__GPIO5_19		0x1e4 /* Int-K */
++				MX53_PAD_CSI0_DAT13__GPIO5_31		0x1c4 /* Int-I */
 +
-+&gpio2 {
-+	gpio-line-names =
-+		"", "", "", "",
-+		"", "", "", "",
-+		"TestPin_SV2_3", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "";
-+};
-+
-+&gpio3 {
-+	gpio-line-names =
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "",
-+		"CPLD_JTAG_TDI", "CPLD_JTAG_TMS", "", "",
-+		"", "CPLD_JTAG_TDO", "", "";
-+};
-+
-+&gpio5 {
-+	gpio-line-names =
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "CPLD_JTAG_TCK", "KBD_intK",
-+		"CPLD_int", "CPLD_JTAG_internal", "CPLD_D[0]", "CPLD_D[1]",
-+		"CPLD_D[2]", "CPLD_D[3]", "CPLD_D[4]", "CPLD_D[5]",
-+		"CPLD_D[6]", "CPLD_D[7]", "DISP_reset", "KBD_intI";
-+};
-+
-+&gpio6 {
-+	gpio-line-names =
-+		"", "", "", "",
-+		"CPLD_reset", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "";
-+};
-+
-+&gpio7 {
-+	gpio-line-names =
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "USB-OTG_OverCurrent", "", "",
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "",
-+		"", "", "", "";
-+};
-+
- &i2c1 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_i2c1>;
++				MX53_PAD_CSI0_DAT14__GPIO6_0		0x1c4 /* Power down */
+ 			>;
+ 		};
+ 
+ 		pinctrl_edt_ft5x06: edt-ft5x06grp {
+ 			fsl,pins = <
+-				MX53_PAD_PATA_DATA9__GPIO2_9		0x1d5 /* Reset */
+-				MX53_PAD_CSI0_DAT19__GPIO6_5		0x1d5 /* Interrupt */
+-				MX53_PAD_PATA_DATA10__GPIO2_10		0x1d5 /* Wake */
++				MX53_PAD_PATA_DATA9__GPIO2_9		0x1e4 /* Reset */
++				MX53_PAD_CSI0_DAT19__GPIO6_5		0x1c4 /* Interrupt */
++				MX53_PAD_PATA_DATA10__GPIO2_10		0x1e4 /* Wake */
+ 			>;
+ 		};
+ 
+ 		pinctrl_esdhc1: esdhc1grp {
+ 			fsl,pins = <
+-				MX53_PAD_SD1_DATA0__ESDHC1_DAT0		0x1d5
+-				MX53_PAD_SD1_DATA1__ESDHC1_DAT1		0x1d5
+-				MX53_PAD_SD1_DATA2__ESDHC1_DAT2		0x1d5
+-				MX53_PAD_SD1_DATA3__ESDHC1_DAT3		0x1d5
+-				MX53_PAD_SD1_CMD__ESDHC1_CMD		0x1d5
+-				MX53_PAD_SD1_CLK__ESDHC1_CLK		0x1d5
++				MX53_PAD_SD1_DATA0__ESDHC1_DAT0		0x1e4
++				MX53_PAD_SD1_DATA1__ESDHC1_DAT1		0x1e4
++				MX53_PAD_SD1_DATA2__ESDHC1_DAT2		0x1e4
++				MX53_PAD_SD1_DATA3__ESDHC1_DAT3		0x1e4
++				MX53_PAD_SD1_CMD__ESDHC1_CMD		0x1e4
++				MX53_PAD_SD1_CLK__ESDHC1_CLK		0x1e4
++				MX53_PAD_GPIO_1__GPIO1_1		0x1c4
++				MX53_PAD_GPIO_9__GPIO1_9		0x1e4
+ 			>;
+ 		};
+ 
+ 		pinctrl_fec: fecgrp {
+ 			fsl,pins = <
+-				MX53_PAD_FEC_MDC__FEC_MDC		0x4
+-				MX53_PAD_FEC_MDIO__FEC_MDIO		0x1fc
+-				MX53_PAD_FEC_REF_CLK__FEC_TX_CLK	0x180
+-				MX53_PAD_FEC_RX_ER__FEC_RX_ER		0x180
+-				MX53_PAD_FEC_CRS_DV__FEC_RX_DV		0x180
+-				MX53_PAD_FEC_RXD1__FEC_RDATA_1		0x180
+-				MX53_PAD_FEC_RXD0__FEC_RDATA_0		0x180
+-				MX53_PAD_FEC_TX_EN__FEC_TX_EN		0x4
+-				MX53_PAD_FEC_TXD1__FEC_TDATA_1		0x4
+-				MX53_PAD_FEC_TXD0__FEC_TDATA_0		0x4
++				MX53_PAD_FEC_MDC__FEC_MDC		0x1e4
++				MX53_PAD_FEC_MDIO__FEC_MDIO		0x1e4
++				MX53_PAD_FEC_REF_CLK__FEC_TX_CLK	0x1e4
++				MX53_PAD_FEC_RX_ER__FEC_RX_ER		0x1e4
++				MX53_PAD_FEC_CRS_DV__FEC_RX_DV		0x1e4
++				MX53_PAD_FEC_RXD1__FEC_RDATA_1		0x1e4
++				MX53_PAD_FEC_RXD0__FEC_RDATA_0		0x1e4
++				MX53_PAD_FEC_TX_EN__FEC_TX_EN		0x1c4
++				MX53_PAD_FEC_TXD1__FEC_TDATA_1		0x1e4
++				MX53_PAD_FEC_TXD0__FEC_TDATA_0		0x1e4
++				MX53_PAD_PATA_DA_1__GPIO7_7		0x1e4
++				MX53_PAD_EIM_EB3__GPIO2_31		0x1e4
+ 			>;
+ 		};
+ 
 -- 
 2.20.1
 
