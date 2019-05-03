@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 918EB12C54
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 13:26:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D210012C5F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 13:28:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Vt4yxsjug/omIFJc90exFeFVTbSkX02IIxhI+d8WXUs=; b=UwENj2gQmpY2DAg1HOyhW+v3/
-	fyogAwzm/PpcDUPPbPnWJCgmjbIybccfbm5J88d5+0u9urDb83kD9B6rqflxMTUHAbfcAPWIyR6pX
-	wWVOUVk8kp8x3URsOX7PGe0XILr3PVj2IBRmXZ54NMdEvS9fxX1TUksLctTRs5o7rdAt/ZrQZtOny
-	HscebCWa0pc6aECukclGAzhR7ZSbl0vOPK41VA3QvDibgUfgh8tgVDRF47TOONnLtfCTsBQqzlAf5
-	ahAmvEnsfJlxJXs9sqQm0CqfGHrs3k6kxfcSs2GvqpdPAqy+qBFJy1y4AqF4cI2HPtV93nkPU88Og
-	3vpglz9ig==;
+	 bh=PYpdVzACmVzBmmhaaGOL9TPyyYZsmo2Wo8IiYdklw8E=; b=ZjBa3x2mTkNDLf3EHRhIDWLCB
+	xxoQJS0arU8TJssHZDSUCC++lPy14NB/bpLyVw5n3FPaFd785VxY1TNVg4FeN6OkoAllcDA8SG9Sb
+	skoYjK8AQ1hetxcusah7uOaxDO3cQax1aht0l1YHRBWx6UZYFSwjR9s9Ppl9kQ2hAcc6tj2wkrYJL
+	RSXjyUcznLoDkS8A4kEc2zDgNAwKYKrsIlVxNHJPjYWdOS/Ne94tU2ISUbEL1eTCEGVPL+Lz2b5I4
+	VTlruEny+6LuOpLvYWv3pGfMkELMXYSx7KoTPSkKfTrl7TEgOyzN75G1DvId3/XgxZVgdKfhlQf+o
+	lyZmoBlkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMWL1-0000Tq-Vu; Fri, 03 May 2019 11:26:47 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1hMWME-0000xs-Sz; Fri, 03 May 2019 11:28:02 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMWKv-0000TM-Cv
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 11:26:42 +0000
-Received: by mail-wr1-x442.google.com with SMTP id k16so7428993wrn.5
+ id 1hMWM6-0000wH-Cj
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 11:27:55 +0000
+Received: by mail-wm1-x341.google.com with SMTP id q15so6684386wmf.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 03 May 2019 04:26:41 -0700 (PDT)
+ Fri, 03 May 2019 04:27:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=j9Bj+Dr7WyGv/rMCkmt5BFQpG8uQuF0RuguMoXtRvS0=;
- b=KhcmV8O0dVPoB8tdfI0z+kSjdn0vdYUoQOtCSIuzIFMc9Aa4HDUEnrmw8ciYUvNEJy
- cvtUtn9J7f0xcQIm9oTTSb1CPbKpiYTi63Up+RBnqOLRJEy3mB75iZM3JjDoGR8dg2in
- MMdZCcNPKdneA1jqG0wBS25E0In2g/NgyNJcxSAzkGzuQF/bnPJ9sYywS8i0ErLThyoP
- q8Z9/bTw4J4LJDR1aGodbcw9SXlS+YrsYzComoXB45V24RjcJN6pzGoMIUd3Kf/g0kFo
- JBhZoShu8+BzKxJtAFo+zvIyY5YFvWbaE2SwEA+I/0YifEKenih8ayBtbD5eUv1s6Eoo
- Mmuw==
+ bh=+STCk8lkhn2EMGrmWWOJnwKAHaye6MrOKuwobW7Ffyw=;
+ b=Hn0+ae2RVQUkEg8KJ9vqDa6wvcfoucf5Bkh5dCex2giBknGyExKhLscPZNBMctQyiS
+ vj6IW8k8OlAIBqGtXyRbl65EWeEvHqIoP5rp6wiPXbc2r6QRxJq85R8u/Igdl5HMqlZQ
+ cAq8UTqF/s9oxgnxWWu1SgPGbVqjEdGMOvfrkyqVArd+HmG3iB29yeXCBMLZrzB7otxl
+ Dnm4kKrJAT1OQ9wFZqxhdfTHbkjWXCbo3SAPF5zuUx4Xf9Z6lwuAbv7Ja1FZIytgyUrt
+ fohOb8XJFrdeTs+ExhyQaLW+fkXkmexL/lbI88wn3lgeN67vP85wx/bhtPT2rDUiQ8zw
+ 3zMg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=j9Bj+Dr7WyGv/rMCkmt5BFQpG8uQuF0RuguMoXtRvS0=;
- b=dh5tNLAHfI3gSbplILvmpRh64Xw3Ap+kGQAIE0VvxMX+QJBYcu8p/Kadu6waJR6ORQ
- 2rXe8v8YxyM6TCgizSp8KbJG45vtjVqnZZME5IB3F5cVwdXwakO7vSFYqxLqk7tAQCRw
- zii4NCfi7P85ASHzQoTsX1XTmSmybtwI9KBC6hodd8M3y5ImusEQE9glfu2pbmb7JmgS
- IInVLSe4g3wOzkIvAVedxUU8nj7Eh/sZHEsA0gjleJK9bshqHmY8OkaMZRQ6h3sy5zbW
- lmITpdkwrVLBHFjUGrOVwpkIdIoNQa0VlCZlp8OXzsRt1Bnc2kf3mLtQzwxhJ2k407zd
- LACw==
-X-Gm-Message-State: APjAAAWqpXCpbKGi72hhSPuAmSRgEbPed8EqFLxjVT++XkzAOrxCVDwo
- jtBbQjXwS6BOJ0bW2Hie1GQ=
-X-Google-Smtp-Source: APXvYqw2hvhDgJ3VCDJcQcuW3ahQwR7R2Mg91+rWb9Y8oVcliDb9EpMX8XcPO53tP0nhm0GQTpf37g==
-X-Received: by 2002:adf:e9cb:: with SMTP id l11mr6376382wrn.114.1556882799909; 
- Fri, 03 May 2019 04:26:39 -0700 (PDT)
+ bh=+STCk8lkhn2EMGrmWWOJnwKAHaye6MrOKuwobW7Ffyw=;
+ b=QrSdrOKZwpxs58rgyu1V7W9WxUbGzcAKkqhMF6+migDb9Rxr23RzHkG/wB66OXucw/
+ dRSkkWVeR8txg1b/cLo9EzCF3j5zG2cH1fwEyyek9pSYPd1n9FxmUsK1nR/JcDKQt7DK
+ b1fjU8vJbjI7R9N4aZ/dHzsm9a49seH7gaTUp+nslG8Y87ZcDndCPNEkO8k1z/H1Saq8
+ p1YEHE97pzi2a/WrwO5yJOyEe16Ej7Ufs8eD3nbDAY+9SbOrkgQzRAbHuKpqqrlNsWZx
+ 5R9qD7C6MIc/MUgM7FENvZegk4UdNoFFaSQTv0EXB0C1iVDKUPRMfVRxeVfeGvL2zcL7
+ 9/hw==
+X-Gm-Message-State: APjAAAVHEir/ieHH7bQy5i5y7d7v8cl3ODsNRCCsEQkJlpxQkV1ZE3d9
+ 3LViIWCB16H7rmQMuCnx5N8=
+X-Google-Smtp-Source: APXvYqwQrxKNaLICLGkYq38/wgnqvaPrZNOSheS067NT8/BmmHPNXUeg9NSyFiuVMn7NIkQ0UQJzGg==
+X-Received: by 2002:a7b:c053:: with SMTP id u19mr5695704wmc.63.1556882873012; 
+ Fri, 03 May 2019 04:27:53 -0700 (PDT)
 Received: from localhost (p2E5BEF36.dip0.t-ipconnect.de. [46.91.239.54])
- by smtp.gmail.com with ESMTPSA id t27sm4332288wrb.27.2019.05.03.04.26.38
+ by smtp.gmail.com with ESMTPSA id d29sm1413751wrb.61.2019.05.03.04.27.52
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 03 May 2019 04:26:39 -0700 (PDT)
-Date: Fri, 3 May 2019 13:26:37 +0200
+ Fri, 03 May 2019 04:27:52 -0700 (PDT)
+Date: Fri, 3 May 2019 13:27:51 +0200
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Vidya Sagar <vidyas@nvidia.com>
-Subject: Re: [PATCH V5 12/16] arm64: tegra: Add P2U and PCIe controller nodes
- to Tegra194 DT
-Message-ID: <20190503112637.GF32400@ulmo>
+Subject: Re: [PATCH V5 13/16] arm64: tegra: Enable PCIe slots in P2972-0000
+ board
+Message-ID: <20190503112751.GG32400@ulmo>
 References: <20190424052004.6270-1-vidyas@nvidia.com>
- <20190424052004.6270-13-vidyas@nvidia.com>
+ <20190424052004.6270-14-vidyas@nvidia.com>
 MIME-Version: 1.0
-In-Reply-To: <20190424052004.6270-13-vidyas@nvidia.com>
+In-Reply-To: <20190424052004.6270-14-vidyas@nvidia.com>
 User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_042641_461221_8328E1C2 
-X-CRM114-Status: GOOD (  15.19  )
+X-CRM114-CacheID: sfid-20190503_042754_431887_59F8B401 
+X-CRM114-Status: GOOD (  14.74  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (thierry.reding[at]gmail.com)
@@ -106,27 +106,29 @@ Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
  robh+dt@kernel.org, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
  bhelgaas@google.com, jonathanh@nvidia.com,
  linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
-Content-Type: multipart/mixed; boundary="===============7435059741593917560=="
+Content-Type: multipart/mixed; boundary="===============0143239425727969910=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============7435059741593917560==
+--===============0143239425727969910==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="jkO+KyKz7TfD21mV"
+	protocol="application/pgp-signature"; boundary="jt0yj30bxbg11sci"
 Content-Disposition: inline
 
 
---jkO+KyKz7TfD21mV
+--jt0yj30bxbg11sci
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Wed, Apr 24, 2019 at 10:50:00AM +0530, Vidya Sagar wrote:
-> Add P2U (PIPE to UPHY) and PCIe controller nodes to device tree.
-> The Tegra194 SoC contains six PCIe controllers and twenty P2U instances
-> grouped into two different PHY bricks namely High-Speed IO (HSIO-12 P2Us)
-> and NVIDIA High Speed (NVHS-8 P2Us) respectively.
+On Wed, Apr 24, 2019 at 10:50:01AM +0530, Vidya Sagar wrote:
+> Enable PCIe controller nodes to enable respective PCIe slots on
+> P2972-0000 board. Following is the ownership of slots by different
+> PCIe controllers.
+> Controller-0 : M.2 Key-M slot
+> Controller-1 : On-board Marvell eSATA controller
+> Controller-3 : M.2 Key-E slot
 >=20
 > Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
 > ---
@@ -137,76 +139,74 @@ On Wed, Apr 24, 2019 at 10:50:00AM +0530, Vidya Sagar wrote:
 > * None
 >=20
 > Changes since [v2]:
-> * Included 'hsio' or 'nvhs' in P2U node's label names to reflect which br=
-ick
->   they belong to
-> * Removed leading zeros in unit address
+> * Changed P2U label names to reflect new format that includes 'hsio'/'nvh=
+s'
+>   strings to reflect UPHY brick they belong to
 >=20
 > Changes since [v1]:
-> * Flattened all P2U nodes by removing 'hsio-p2u' and 'nvhs-p2u' super nod=
-es
-> * Changed P2U nodes compatible string from 'nvidia,tegra194-phy-p2u' to '=
-nvidia,tegra194-p2u'
-> * Changed reg-name from 'base' to 'ctl'
-> * Updated all PCIe nodes according to the changes made to DT documentatio=
-n file
+> * Dropped 'pcie-' from phy-names property strings
 >=20
->  arch/arm64/boot/dts/nvidia/tegra194.dtsi | 449 +++++++++++++++++++++++
->  1 file changed, 449 insertions(+)
+>  .../arm64/boot/dts/nvidia/tegra194-p2888.dtsi |  2 +-
+>  .../boot/dts/nvidia/tegra194-p2972-0000.dts   | 41 +++++++++++++++++++
+>  2 files changed, 42 insertions(+), 1 deletion(-)
 >=20
-> diff --git a/arch/arm64/boot/dts/nvidia/tegra194.dtsi b/arch/arm64/boot/d=
-ts/nvidia/tegra194.dtsi
-> index c77ca211fa8f..dc433b446ff5 100644
-> --- a/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-> +++ b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-[...]
+> diff --git a/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi b/arch/arm64/=
+boot/dts/nvidia/tegra194-p2888.dtsi
+> index 0fd5bd29fbf9..30a83d4c5b69 100644
+> --- a/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi
+> +++ b/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi
+> @@ -191,7 +191,7 @@
+>  						regulator-boot-on;
+>  					};
+> =20
+> -					sd3 {
+> +					vdd_1v8ao: sd3 {
+>  						regulator-name =3D "VDD_1V8AO";
+>  						regulator-min-microvolt =3D <1800000>;
+>  						regulator-max-microvolt =3D <1800000>;
+> diff --git a/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts b/arch/ar=
+m64/boot/dts/nvidia/tegra194-p2972-0000.dts
+> index b62e96945846..7411c64e24a6 100644
+> --- a/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
+> +++ b/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
+> @@ -169,4 +169,45 @@
+>  			};
+>  		};
+>  	};
+> +
 > +	pcie@14180000 {
 [...]
-> +		ranges =3D <0x81000000 0x0 0x38100000 0x0 0x38100000 0x0 0x00100000   =
- /* downstream I/O (1MB) */
-> +			  0xc2000000 0x18 0x00000000 0x18 0x00000000 0x3 0x40000000  /* prefe=
-tchable memory (13GB) */
-> +			  0x82000000 0x0 0x40000000 0x1B 0x40000000 0x0 0xC0000000>; /* non-p=
-refetchable memory (3GB) */
-
-Please be consistent in the capitalization of hexadecimal numbers. You
-use lowercase hexdigits in one place and upprecase in others. Just stick
-to one (preferably lowercase since that's already used elsewhere in this
-file).
-
-> +	};
-> +
 > +	pcie@14100000 {
+[...]
 
-Also, entries should be sorted by unit-address, so controller 0 above
-needs to go further down.
+Again, these should be sorted by unit-address.
 
 Thierry
 
---jkO+KyKz7TfD21mV
+--jt0yj30bxbg11sci
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAlzMJW0ACgkQ3SOs138+
-s6E+CxAAl1IP5hPwNub+ynrfDHIlvS8wnANVpXA+TBShMg1rBrA2c7ErQwRKFKrH
-nt0A/GAU1JPp+Ugy6Rvesx1f+mNpHl3ueZY9DnlY7FRjfgv39qKvFuCRAPHR2YDk
-CCgNJjCBroY3+OvmMxtK0b46pB7xtAwDXVBp0DbUGibGU+6wQ5XplqmwqQONu9YU
-tmMCy2vpr1PNzwgLGfhC7owYfz4vQVzJDWeSfUVbuf0uuhaYg9Lak5cfPJqEPPEF
-husujx86GqI+xk4zhAN/mvoMN9OoJplO7icUXCJRrB9lHOycZOA3SZwDFZm/rRmA
-q7AwE+bXW0FIX6Zel+6wAxBdpwvqc/RJmsRAe1efSh88NuTFn3AWW8Fc4K+4mOn/
-royxYh3z7Z/91PmfgoF9Ku6xtpeZVmD63lDQ+LHbTgrDb2lEjZ66Wcque1mYn4pt
-N6ko8YOVjwSEu0kVTk36j7Qyrk7VMTzuloelaaplcXY8iX0ClplKPTYH8+FbzXgQ
-W3itYlLXLNJQpfEceRZwuqWCcerLyURykmeVOih1n8PLuK0yEK8fr8GvyGP2JMvG
-hoF0m1QDdjnm1G7LvfLCBrngb6Bze4wQ+wLqn2u3ydi0m1gU5vJ0ac1oKIhMm6Si
-ntXZJ7cuJbnw4M3fkL8zHz+2HPyVZ+ZmZV/1GNX6KMKocNI8A6o=
-=IZEE
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAlzMJbcACgkQ3SOs138+
+s6HqvA/+M9cG4kk4zwslByULuSa3GW5lU3VrIoR10dZx2JrclNuFl6eQDq7V4k+j
+deUegnpbG0goInypfsnJjE1+hIea6yuNBfNdJjSlZFh5rQHkUMTQjn3S+N50UHEL
+otKt7xqpY963RRujKLQg+E+SUNi9unfKWy3hK2UhaZHVO77bP7hcsV7ViukhPwD3
+mPKyhbC5JEFjj4rPCGbLYfc2JhE0Gn7/f6Y9AZtIjIOm6MWSJwQyfcPMRkhlnnxn
+J++oHYUprmbOtJ91v8Wm3RFj19UmDDgac2cqxivu+p4JlH3FgJc7LRZsBr46OQcm
+hBwpLOQWcyDYx9hHOBbZZl7XuYb1wQQMhQMZzKapkcgNnRGKnN/Yhbm+Ac4ekopZ
+UKN/v4MEmHM9DpTgzVG+A3i6iTIvLJsQt3/vwgTfO65FwYUo8wUigUQJIPiSvtOJ
+OGtM18DBINzIJVGuPzcAMLiVNJb1p1mECu7fyS+/tgHT2xS55D3Q5QIpFiqvhqAG
+Vd81Jim/e2dBO0kJ17wSWbSM77AN0ETMkngiB7Jc3A98R5bNVQvwtGBq0xfRE1Yp
+R8KHqW7TP2/Iin6yJywqg6OyK7SBMlP+Mh1pU6rfz94JQ1CKCl6w/9zG0/tzMapP
+SQckzgvfGXJrSbBq7K/RQKbNdrC5f9cNKoPCXaqwze6sx5qw7L8=
+=/a8a
 -----END PGP SIGNATURE-----
 
---jkO+KyKz7TfD21mV--
+--jt0yj30bxbg11sci--
 
 
---===============7435059741593917560==
+--===============0143239425727969910==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -217,5 +217,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============7435059741593917560==--
+--===============0143239425727969910==--
 
