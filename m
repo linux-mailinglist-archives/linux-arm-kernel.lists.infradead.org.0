@@ -2,71 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E199112971
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 10:04:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3996612977
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 10:04:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Umm8a/XBQHbepLouSCC0/lbbeVeSNP+d2X4/C9mLngo=; b=XaDCEIMsA/BJwi
-	ctV15Pdr4mKGNQVrqEIjyO5GOtf463syK/vHbFs3gNhYzR0/YaF/HEzzihQvkHiPcXMK1zIjhxD0O
-	YO7z120kFOagct3BDUV7N0QuLfNnLBeFYN/tEU3kXGGY8wXlzJvV7jUAU/cx1OFoAhk3ZQup2+xe6
-	YlYz+4ko150kDPKdGfFr1lv/o23aOc68r9wlOJj0QKTR1mvfRzF627RFoanJQu71zqRdA9AImaUxT
-	ikOiXtSbWR4lEXhwhgIt0g7rYoXW82p9ikRhjpL8vbskCco7W6BrNgRSVm6LZf3ql19SAQi0ZFXiw
-	AiomUtXuhRSslYB+b+zA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=z/JyJXrR2FcwARRZfX/Fh2o2PAVBkdWtHnVjLcv4QYA=; b=nS/lt2C0sRVaEM
+	T3qC3UmxI+mY0KB8DsGgrJs0pjZRHF6QIgv3L8sxrWmM0MCl/G74aMeTD+zWw0NYFs1aOM2kIRilH
+	PI1gXxKf5bTiFGF7LoE0nr5zu8b5vgknVhs+2MZQkZTbScChVLIC7i9LyozxkbZMD/S2sMrn4bPlx
+	g/aHBJ0Z0X2N/EwVmKxiNlID9KuRrXm7m4ZAwqydCs4Sl1k0dG6ALOhNbmTatX2fKIlDIO9ZcsVEJ
+	4aiAO2f2GMMTLhgUGU7G9JsdEC/tNvJEXgZgL0/x6GLurnqlztRTtXhP1N1I8E53/QZgfp4/TpaQy
+	JRvr10aPjzsEGWZvF/0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMTB5-0003YS-Bj; Fri, 03 May 2019 08:04:19 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1hMTBb-0003oc-7y; Fri, 03 May 2019 08:04:51 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMTAx-0003XD-CR
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 08:04:13 +0000
-Received: by mail-qt1-x843.google.com with SMTP id j6so5752822qtq.1
+ id 1hMTBU-0003oA-7S
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 08:04:45 +0000
+Received: by mail-wr1-x441.google.com with SMTP id e28so6658378wra.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 03 May 2019 01:04:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=QyYnh8hGNxo4y79JyoBAvnyJOsqV/eKCHgC2055Dj70=;
- b=TFsaDfJktcepJhaSVkSy9jmcH5WklitGZ2BBIrKTkDmfye484EI32NBvqAF18RhDM4
- icz2jBCDxSTj6qmQVp0LN0YlkJPVgxnXUunfIEesZ1FOAC5727DnzDgNJ++yI7ZM9nil
- K47/JWKZTYl0cyTlCD15zHWhm1WvSpjJECOdY=
+ Fri, 03 May 2019 01:04:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=TpXqJQI7PVBHDytg+IGA8i8m1/XYj0MrND3X98mgWRU=;
+ b=KOwMT0Cl9efaAA08+DXGflf+klv1sSVEHKxtGUL+CBB2gxt07xyd+GyRUCCFVKzsBF
+ vKFUzaTq0/DOqlmb39mbYs9iH9RkOcgL/KAAeaSaMlUscaGj/bjbj+P1qApNVwESdscJ
+ g+1LJrqUlO8vcWihy8sZ39L1L6LS1ajt0o5fzIYYJaQhvca+WfuJGXFbdFR2rcym4b4t
+ zBYkf1Llb/Z3r2f2Mqm8DStMLgaZcHBFBYpuH2Uow5/FZOaBijtEgoGFhaFs2w3Lbcsf
+ fUx7d6Qd9AwY90DycZfziK6toE6kMAjg8Mx+cK1CNVyDwdMXuzYcxD1e3vRmAV6UcGSV
+ 1pBQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=QyYnh8hGNxo4y79JyoBAvnyJOsqV/eKCHgC2055Dj70=;
- b=pQIWQvv5oXNkVEjovZisw8n86RSunA6stbkodI0rJ6fOY5yth4SVG3EdZyg810f8dw
- axPoLPTdKT8gN6Sr13jkLFudkAeGhpbV80UFNgyqS9FCz5sJw/TafT5yQ6xOJ27KRxyS
- E5lOuHKz68b3T9g+Lq3oe4ae4G3qrlyy2VG0NP1YeWRHhwI/ilsbeOQW5aKhVcXqEBVP
- TpJneMgr5WWkTsvlTxSE3d1rziYd3p4Pxk4CMOvNWErY7b2KeKUS/GmHSM+8TV6BJIdU
- pTPh9Si0rU87k5i2VEyzjCzLUg2D5+e5ZtAdGLEifhMFygLEJnbMcgSk75ERn3n74nBx
- V5Bg==
-X-Gm-Message-State: APjAAAULBaRa7KjrTppSmMwxCz8VbLJo+8Xeuml9b7nl5/6Vpm6FdqJX
- B8I8ldWhYhvgyE45d0T6vD6UIvt5NN58A4wb0m9r7w==
-X-Google-Smtp-Source: APXvYqwK9NYfQA/9uIkz+E3ZSXoSVmvGacXxJP1bm9lZj8RtDGEHaMjRHL1WIrVFMhk5ZLbA20X7lzzIyVAj/Hr6Db0=
-X-Received: by 2002:ac8:3822:: with SMTP id q31mr7331051qtb.0.1556870649914;
- Fri, 03 May 2019 01:04:09 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=TpXqJQI7PVBHDytg+IGA8i8m1/XYj0MrND3X98mgWRU=;
+ b=OOtOg+nzf3oe+IgcK3kOjjYbiXuRZw+sKr7z5lKJeEcayOquzMSVOFkmI5YMMNzZ/c
+ WjIHX6J3Vec5bYXvWaWXCEpudads9tT9VGWjeoSjazOHzEBiOAUX6gnGJXX8Ha0i1sWJ
+ KjjoAP/Uvmda2T37obdS9U37EvkZq7PXxdD3c5tNgEgXOJccblSFs7wN3lAl3ILlf0y7
+ FZ7YTiFpSHHyi4zqvBnSevrtJRmKJNGzX7FTnikGCvxRRbzXbtEPCrq7HvrKIEdPbQ9n
+ P48pMXubA3Gf+z9nFZN3q81M7ZqBE4I0Emoq3OG2WXqec9Xlx4qZgCsfp4Ef42M+d1ba
+ NwiQ==
+X-Gm-Message-State: APjAAAUcL+nkiQaoSfFQ8m8Di5WZxQ4v+LdcnI3Vkx3GAOP+CRsn2iiq
+ 2+OgjORr07veDv8n8xzES4vijA==
+X-Google-Smtp-Source: APXvYqzRH5TpkdzGloadzIxAtQZsM2JgxqfDy9oibY2Qrd4ctA1Tpc85qqJ9ZfJamG8tTMt5Vi3YIQ==
+X-Received: by 2002:a5d:430f:: with SMTP id h15mr5756534wrq.132.1556870681778; 
+ Fri, 03 May 2019 01:04:41 -0700 (PDT)
+Received: from [192.168.0.41] (223.235.129.77.rev.sfr.net. [77.129.235.223])
+ by smtp.googlemail.com with ESMTPSA id k1sm1159060wmi.48.2019.05.03.01.04.39
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 03 May 2019 01:04:41 -0700 (PDT)
+Subject: Re: [PATCH 1/6] thermal: Introduce
+ devm_thermal_of_cooling_device_register
+To: Guenter Roeck <linux@roeck-us.net>, linux-hwmon@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
+ linux-kernel@vger.kernel.org, openbmc@lists.ozlabs.org,
+ linux-pm@vger.kernel.org
+References: <1555617500-10862-1-git-send-email-linux@roeck-us.net>
+ <1555617500-10862-2-git-send-email-linux@roeck-us.net>
+ <20190501164843.GA16333@roeck-us.net>
+From: Daniel Lezcano <daniel.lezcano@linaro.org>
+Message-ID: <c8a26b7d-2775-e13f-21b7-dbc901ea3b0b@linaro.org>
+Date: Fri, 3 May 2019 10:04:39 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-References: <1556793795-25204-1-git-send-email-michael.kao@mediatek.com>
- <1556793795-25204-2-git-send-email-michael.kao@mediatek.com>
-In-Reply-To: <1556793795-25204-2-git-send-email-michael.kao@mediatek.com>
-From: Hsin-Yi Wang <hsinyi@chromium.org>
-Date: Fri, 3 May 2019 16:03:58 +0800
-Message-ID: <CAJMQK-isJf6f+OubbCdoXs8L2cup=rm3Z8Mr7Q26QshMP-0wxA@mail.gmail.com>
-Subject: Re: [PATCH 1/8] arm64: dts: mt8183: add thermal zone node
-To: "michael.kao" <michael.kao@mediatek.com>
+In-Reply-To: <20190501164843.GA16333@roeck-us.net>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_010411_452124_0E75A99D 
-X-CRM114-Status: GOOD (  13.42  )
+X-CRM114-CacheID: sfid-20190503_010444_277981_95E3A00B 
+X-CRM114-Status: GOOD (  14.61  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -76,7 +93,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -88,126 +104,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, jamesjj.liao@mediatek.com,
- devicetree@vger.kernel.org, louis.yu@mediatek.com, dawei.chien@mediatek.com,
- linux-pm@vger.kernel.org, Daniel Lezcano <daniel.lezcano@linaro.org>,
- roger.lu@mediatek.com, linux-kernel@vger.kernel.org,
- Eduardo Valentin <edubezval@gmail.com>, fan.chen@mediatek.com,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>, Zhang Rui <rui.zhang@intel.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Jean Delvare <jdelvare@suse.com>, Tomer Maimon <tmaimon77@gmail.com>,
+ Nancy Yuen <yuenn@google.com>, Andrew Jeffery <andrew@aj.id.au>,
+ Patrick Venture <venture@google.com>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Kamil Debski <kamil@wypas.org>, Tali Perry <tali.perry1@gmail.com>,
+ Eduardo Valentin <edubezval@gmail.com>, Avi Fishman <avifishman70@gmail.com>,
+ Joel Stanley <joel@jms.id.au>, Zhang Rui <rui.zhang@intel.com>,
+ Benjamin Fair <benjaminfair@google.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 2, 2019 at 10:43 AM michael.kao <michael.kao@mediatek.com> wrote:
->
-> Add thermal zone node to Mediatek MT8183 dts file.
->
-> Signed-off-by: Michael Kao <michael.kao@mediatek.com>
-> ---
->  arch/arm64/boot/dts/mediatek/mt8183.dtsi | 64 ++++++++++++++++++++++++++++++++
->  1 file changed, 64 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> index 926df75..b92116f 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> +++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> @@ -334,6 +334,67 @@
->                         status = "disabled";
->                 };
->
-> +               thermal: thermal@1100b000 {
-> +                       #thermal-sensor-cells = <1>;
-> +                       compatible = "mediatek,mt8183-thermal";
-> +                       reg = <0 0x1100b000 0 0x1000>;
-> +                       interrupts = <0 76 IRQ_TYPE_LEVEL_LOW>;
-> +                       clocks = <&infracfg CLK_INFRA_THERM>,
-> +                                <&infracfg CLK_INFRA_AUXADC>;
-> +                       clock-names = "therm", "auxadc";
-> +                       resets = <&infracfg  MT8183_INFRACFG_AO_THERM_SW_RST>;
-> +                       mediatek,auxadc = <&auxadc>;
-> +                       mediatek,apmixedsys = <&apmixedsys>;
-> +                       mediatek,hw-reset-temp = <117000>;
-> +                       nvmem-cells = <&thermal_calibration>;
-> +                       nvmem-cell-names = "calibration-data";
-> +               };
-> +
-> +               thermal-zones {
-> +                       cpu_thermal: cpu_thermal {
-> +                               polling-delay-passive = <1000>;
-> +                               polling-delay = <1000>;
-> +
-> +                               thermal-sensors = <&thermal 0>;
-> +                               sustainable-power = <1500>;
-> +                       };
-> +
-> +                       tzts1: tzts1 {
-> +                               polling-delay-passive = <1000>;
-> +                               polling-delay = <1000>;
-> +                               thermal-sensors = <&thermal 1>;
-Is sustainable-power required for tzts? Though it's an optional
-property, kernel would have warning:
-[    0.631556] thermal thermal_zone1: power_allocator:
-sustainable_power will be estimated
-[    0.639586] thermal thermal_zone2: power_allocator:
-sustainable_power will be estimated
-[    0.647611] thermal thermal_zone3: power_allocator:
-sustainable_power will be estimated
-[    0.655635] thermal thermal_zone4: power_allocator:
-sustainable_power will be estimated
-[    0.663658] thermal thermal_zone5: power_allocator:
-sustainable_power will be estimated
-if no sustainable-power assigned.
-
-> +                       };
-> +
-> +                       tzts2: tzts2 {
-> +                               polling-delay-passive = <1000>;
-> +                               polling-delay = <1000>;
-> +                               thermal-sensors = <&thermal 2>;
-> +                       };
-> +
-> +                       tzts3: tzts3 {
-> +                               polling-delay-passive = <1000>;
-> +                               polling-delay = <1000>;
-> +                               thermal-sensors = <&thermal 3>;
-> +                       };
-> +
-> +                       tzts4: tzts4 {
-> +                               polling-delay-passive = <1000>;
-> +                               polling-delay = <1000>;
-> +                               thermal-sensors = <&thermal 4>;
-> +                       };
-> +
-> +                       tzts5: tzts5 {
-> +                               polling-delay-passive = <1000>;
-> +                               polling-delay = <1000>;
-> +                               thermal-sensors = <&thermal 5>;
-> +                       };
-> +
-> +                       tztsABB: tztsABB {
-> +                               polling-delay-passive = <1000>;
-> +                               polling-delay = <1000>;
-> +                               thermal-sensors = <&thermal 6>;
-> +                       };
-> +               };
->                 audiosys: syscon@11220000 {
->                         compatible = "mediatek,mt8183-audiosys", "syscon";
->                         reg = <0 0x11220000 0 0x1000>;
-> @@ -368,6 +429,9 @@
->                         compatible = "mediatek,mt8183-efuse",
->                                      "mediatek,efuse";
->                         reg = <0 0x11f10000 0 0x1000>;
-> +                       thermal_calibration: calib@180 {
-> +                               reg = <0x180 0xc>;
-> +                       };
->                 };
->
->                 mfgcfg: syscon@13000000 {
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMDEvMDUvMjAxOSAxODo0OCwgR3VlbnRlciBSb2VjayB3cm90ZToKPiBPbiBUaHUsIEFwciAx
+OCwgMjAxOSBhdCAxMjo1ODoxNVBNIC0wNzAwLCBHdWVudGVyIFJvZWNrIHdyb3RlOgo+PiB0aGVy
+bWFsX29mX2Nvb2xpbmdfZGV2aWNlX3JlZ2lzdGVyKCkgYW5kIHRoZXJtYWxfY29vbGluZ19kZXZp
+Y2VfcmVnaXN0ZXIoKQo+PiBhcmUgdHlwaWNhbGx5IGNhbGxlZCBmcm9tIGRyaXZlciBwcm9iZSBm
+dW5jdGlvbnMsIGFuZAo+PiB0aGVybWFsX2Nvb2xpbmdfZGV2aWNlX3VucmVnaXN0ZXIoKSBpcyBj
+YWxsZWQgZnJvbSByZW1vdmUgZnVuY3Rpb25zLiBUaGlzCj4+IG1ha2VzIGJvdGggYSBwZXJmZWN0
+IGNhbmRpZGF0ZSBmb3IgZGV2aWNlIG1hbmFnZWQgZnVuY3Rpb25zLgo+Pgo+PiBJbnRyb2R1Y2Ug
+ZGV2bV90aGVybWFsX29mX2Nvb2xpbmdfZGV2aWNlX3JlZ2lzdGVyKCkuIFRoaXMgZnVuY3Rpb24g
+Y2FuCj4+IGFsc28gYmUgdXNlZCB0byByZXBsYWNlIHRoZXJtYWxfY29vbGluZ19kZXZpY2VfcmVn
+aXN0ZXIoKSBieSBwYXNzaW5nIGEgTlVMTAo+PiBwb2ludGVyIGFzIGRldmljZSBub2RlLiBUaGUg
+bmV3IGZ1bmN0aW9uIHJlcXVpcmVzIGJvdGggc3RydWN0IGRldmljZSAqCj4+IGFuZCBzdHJ1Y3Qg
+ZGV2aWNlX25vZGUgKiBhcyBwYXJhbWV0ZXJzIHNpbmNlIHRoZSBzdHJ1Y3QgZGV2aWNlX25vZGUg
+Kgo+PiBwYXJhbWV0ZXIgaXMgbm90IGFsd2F5cyBpZGVudGljYWwgdG8gZGV2LT5vZl9ub2RlLgo+
+Pgo+PiBEb24ndCBpbnRyb2R1Y2UgYSBkZXZpY2UgbWFuYWdlZCByZW1vdmUgZnVuY3Rpb24gc2lu
+Y2UgaXQgaXMgbm90IG5lZWRlZAo+PiBhdCB0aGlzIHBvaW50Lgo+Pgo+IAo+IEFueSBmZWVkYmFj
+ayAvIHRob3VnaHRzIC8gY29tbWVudHMgPwoKSGkgR3VlbnRlciwKCkkgaGF2ZSBjb21tZW50cyBh
+Ym91dCB5b3VyIHBhdGNoIGJ1dCBJIG5lZWQgc29tZSB0aW1lIHRvIGRvdWJsZSBjaGVjayBpbgp0
+aGUgY3VycmVudCBjb2RlIGhvdyB0aGUgJ29mJyBhbmQgJ2Rldm0nIGFyZSBpbXBsZW1lbnRlZC4K
+CgotLSAKIDxodHRwOi8vd3d3LmxpbmFyby5vcmcvPiBMaW5hcm8ub3JnIOKUgiBPcGVuIHNvdXJj
+ZSBzb2Z0d2FyZSBmb3IgQVJNIFNvQ3MKCkZvbGxvdyBMaW5hcm86ICA8aHR0cDovL3d3dy5mYWNl
+Ym9vay5jb20vcGFnZXMvTGluYXJvPiBGYWNlYm9vayB8CjxodHRwOi8vdHdpdHRlci5jb20vIyEv
+bGluYXJvb3JnPiBUd2l0dGVyIHwKPGh0dHA6Ly93d3cubGluYXJvLm9yZy9saW5hcm8tYmxvZy8+
+IEJsb2cKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
+aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1hcm0ta2VybmVsCg==
