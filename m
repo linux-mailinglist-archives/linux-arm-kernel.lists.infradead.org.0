@@ -2,61 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0B83131FC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 18:18:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2AE8813205
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 18:19:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oGnRrdqpHMDzo0uP32x7bKlgao/PMmzdHMKfYwVrruA=; b=uIDPImX1mgLK0i
-	IsyflnJJuLvPIS7zDyVfeio+83SjmdLyGO2aX4fukXJLSei1BrCofg4tock8pd4/7vXP0N1+V/9V7
-	V54oXflEZlxWqE90DtEHE1z6UDlGv9oAcmVknSrrUBiWpsTMLgfqWawX1hO1qqrLG2FbSjq4OoreS
-	j1s6a2htIBfWKyuYlILfzH88f5SsJvNd7086XO0c/xpACOUv89weJq/4ychtg0PeE20MScVMqNJC3
-	ur+TpeZsdxpOcHQ9d7OZKnSvn/jJVqT1Y3ggo98s5vJ/adgT99Y4RKp9Ltx0/Zngs7OE5KCAVBwuM
-	dE9MgubkMafXr9o5r1Vg==;
+	List-Owner; bh=tMkeGoNseo2Lij5gmUbNspTp4QlWSYpLLMFeFFTPTAM=; b=McoC3YIAfzvjkK
+	++7qVZgD1cSrQZTdkP2q4IkgfpjKrvmU4nghoKcGLt6VDKO4mtJqGUDyH/pq9yk8PFbaexqQwWazz
+	Pn9xoQlvv4rn3Tzkjv29ukk9Eq4S9nJCtc5Ux8saKXCkliN+2JMHufQTjCmAzesHHA8Ib/wGpOj0+
+	s39UuZiJfQrN7GQq3aYw8TNu1iAXlwuki/18BGrlIIJ2Gc4aDuN2iOV36OYcCvpy7xL3W+/gVSwDw
+	whnpVgjhIEEQQkx+gHS+eqiq+INgI/s0xXCz4ePCszt+laCi+G6E8yHrgv9ALlSEDnRi+T6bScCGU
+	CuZZ6XT6Nc+KW+W84G7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMatR-0007Hq-4c; Fri, 03 May 2019 16:18:37 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hMauN-0007gh-1j; Fri, 03 May 2019 16:19:35 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMatJ-0007HB-Fo; Fri, 03 May 2019 16:18:31 +0000
-Received: from guoren-Inspiron-7460 (23.83.240.247.16clouds.com
- [23.83.240.247])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1DE0020651;
- Fri,  3 May 2019 16:18:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1556900308;
- bh=1gc+88gGR8xs/HHG6j+3eKyXyw0MdhLPFZmbxDlan0s=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ORHT3+AoYShsuuQO5PFoH4MN9lIuD27v03opdUhE7D6MhJ3ZFlrne2bcwdb1S/99e
- JNCnsuMLUbfOQundyleyVhRpdJdwc193k7lyiJTj+1sl9zI38iCZlnHNebbBFtS/8d
- UBobcwP26APlYC3LB4Vq9ec4UDgXUUcThKhfVnBY=
-Date: Sat, 4 May 2019 00:18:08 +0800
-From: Guo Ren <guoren@kernel.org>
-To: Mike Rapoport <rppt@linux.ibm.com>
-Subject: Re: [PATCH 05/15] csky: switch to generic version of pte allocation
-Message-ID: <20190503161808.GA11596@guoren-Inspiron-7460>
-References: <1556810922-20248-1-git-send-email-rppt@linux.ibm.com>
- <1556810922-20248-6-git-send-email-rppt@linux.ibm.com>
- <20190503160348.GA9526@guoren-Inspiron-7460>
+ id 1hMauE-0007fk-Vu
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 16:19:28 +0000
+Received: by mail-lj1-x244.google.com with SMTP id s7so287662ljh.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 03 May 2019 09:19:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Z8XfvrWHQrG8pFf6VAlALdHpgI1ybJnNhuKAeSk0E5w=;
+ b=l7W6ewczDQ2ADucoNIqF0xL+e4qawtSPR4C9VqshxVgl0k/jz9dxs8IkSjL7boCZMW
+ XKS0MzlU8Ls1e8PWmR211xsMUvMDxZPlgFv6cWhxHQxueVNoVx83rWyTyMSsu9e5PvfJ
+ br3U4hu9azE0mwWOuPlArn0kCxJrumH4pVtynsuO2k08xCiB6Dv0fOHD3Z5CSmAH9SiF
+ jFT37OLSQFaRpHI7A0/LdmBmRt6DHpuUjQar1XDIjfRImOGRBhu9TlcuezUUNbHmHhrh
+ PX8e5hJOrrBPwT2w7Nmw0ZtY0k8QYCbDzjOHcF2ghBUSDapIGcUcGT0/kTjWkW8slqS5
+ 4ONQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Z8XfvrWHQrG8pFf6VAlALdHpgI1ybJnNhuKAeSk0E5w=;
+ b=ijz7ecNLJJyPNzSTxqwx3jWMO1gtD0dAJhUR5uRKGU5j6FaQE9y8AxE+2maEGMGlpW
+ eQHaYheeCfAZd5LX8TVs/nJ8AYvdUCki6w3/zSVRERr+m4oLNvQD1TX0VIOdr8i6PDsn
+ +3OZr8uHPImeiu+4iCPTqOn2BYLbRWowax4IU5nsaKODIqljXIFAXw9hG8CIKW6rqxxF
+ BOWkEaFbVwIUQdmWIA/S4VpYh5DHpREVoPj3cnv8ApJ2Md/o62KSeaxx595Mp8bOE+kV
+ 9PDckK7dyk1ml/1jZ1x59ytKh14kUtPokDsZQn0DcRi1VQeUetb+3+496E0pmBGff+DB
+ rPKg==
+X-Gm-Message-State: APjAAAWLEGFSVMph/7xdzrmMmVQVj1St4N2vK+euMZttp6hD9DjWASYg
+ 5+XdD7B9ks45KtaPDozQhZR+UrUnXi5kYal4+XJ6SvWCTJk=
+X-Google-Smtp-Source: APXvYqxW3qmsd/asuSY3DNJ6+Q73Pns3CRGPATx7rQ0atM/eDARR4IHBSvqbaAMTXg9wwbSYEjBGgZli9SdvZGYMeW4=
+X-Received: by 2002:a2e:97d8:: with SMTP id m24mr5566176ljj.192.1556900364916; 
+ Fri, 03 May 2019 09:19:24 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190503160348.GA9526@guoren-Inspiron-7460>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+References: <20190503155235.6414-1-marex@denx.de>
+ <20190503155235.6414-3-marex@denx.de>
+In-Reply-To: <20190503155235.6414-3-marex@denx.de>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Fri, 3 May 2019 13:19:24 -0300
+Message-ID: <CAOMZO5C6zDP7W=BVSDGvNA0GtS6iGTHBNTsDjFN_tNdEbL+VEQ@mail.gmail.com>
+Subject: Re: [PATCH 3/8] ARM: dts: imx53: Add ethernet PHY reset on M53Menlo
+To: Marek Vasut <marex@denx.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_091829_570187_D737CAB8 
-X-CRM114-Status: GOOD (  21.67  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190503_091927_022360_A3649A06 
+X-CRM114-Status: GOOD (  10.51  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -65,7 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -77,121 +92,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Michal Hocko <mhocko@suse.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Palmer Dabbelt <palmer@sifive.com>, linux-kernel@vger.kernel.org,
- Michael Ellerman <mpe@ellerman.id.au>, linux-riscv@lists.infradead.org,
- linux-arch@vger.kernel.org, linux-hexagon@vger.kernel.org,
- Helge Deller <deller@gmx.de>, x86@kernel.org,
- Russell King <linux@armlinux.org.uk>, Matthew Wilcox <willy@infradead.org>,
- Geert Uytterhoeven <geert@linux-m68k.org>, Matt Turner <mattst88@gmail.com>,
- Sam Creasey <sammy@sammy.net>, Arnd Bergmann <arnd@arndb.de>,
- linux-alpha@vger.kernel.org, linux-um@lists.infradead.org,
- linux-m68k@lists.linux-m68k.org, Greentime Hu <green.hu@gmail.com>,
- Ley Foon Tan <lftan@altera.com>, Guan Xuetao <gxt@pku.edu.cn>,
- linux-arm-kernel@lists.infradead.org, linux-parisc@vger.kernel.org,
- linux-mips@vger.kernel.org, Richard Kuo <rkuo@codeaurora.org>,
- Paul Burton <paul.burton@mips.com>, Richard Weinberger <richard@nod.at>,
- nios2-dev@lists.rocketboards.org, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org
+Cc: Shawn Guo <shawnguo@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, May 04, 2019 at 12:03:48AM +0800, Guo Ren wrote:
-> Hi Mike,
-> 
-> Acked-by: Guo Ren <ren_guo@c-sky.com>
-> 
-> On Thu, May 02, 2019 at 06:28:32PM +0300, Mike Rapoport wrote:
-> > The csky implementation pte_alloc_one(), pte_free_kernel() and pte_free()
-> > is identical to the generic except of lack of __GFP_ACCOUNT for the user
-> > PTEs allocation.
-> > 
-> > Switch csky to use generic version of these functions.
-> Ok.
-> 
-> > 
-> > The csky implementation of pte_alloc_one_kernel() is not replaced because
-> > it does not clear the allocated page but rather sets each PTE in it to a
-> > non-zero value.
-> Yes, we must set each PTE to _PAGE_GLOBAL because hardware refill the
-> MMU TLB entry with two PTEs and it use the result of pte0.global | pte1.global.
-                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^
-                                              correct: pte0.global & pte1.global
-> If pte0 is valid and pte1 is invalid, we must set _PAGE_GLOBAL in
-> invalid pte entry. Fortunately, there is no performance issue.
-> 
-> > 
-> > The pte_free_kernel() and pte_free() versions on csky are identical to the
-> > generic ones and can be simply dropped.
-> Ok.
-> 
-> Best Regards
->  Guo Ren
-> 
-> > 
-> > Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
-> > ---
-> >  arch/csky/include/asm/pgalloc.h | 30 +++---------------------------
-> >  1 file changed, 3 insertions(+), 27 deletions(-)
-> > 
-> > diff --git a/arch/csky/include/asm/pgalloc.h b/arch/csky/include/asm/pgalloc.h
-> > index d213bb4..98c571670 100644
-> > --- a/arch/csky/include/asm/pgalloc.h
-> > +++ b/arch/csky/include/asm/pgalloc.h
-> > @@ -8,6 +8,9 @@
-> >  #include <linux/mm.h>
-> >  #include <linux/sched.h>
-> >  
-> > +#define __HAVE_ARCH_PTE_ALLOC_ONE_KERNEL
-> > +#include <asm-generic/pgalloc.h>	/* for pte_{alloc,free}_one */
-> > +
-> >  static inline void pmd_populate_kernel(struct mm_struct *mm, pmd_t *pmd,
-> >  					pte_t *pte)
-> >  {
-> > @@ -39,33 +42,6 @@ static inline pte_t *pte_alloc_one_kernel(struct mm_struct *mm)
-> >  	return pte;
-> >  }
-> >  
-> > -static inline struct page *pte_alloc_one(struct mm_struct *mm)
-> > -{
-> > -	struct page *pte;
-> > -
-> > -	pte = alloc_pages(GFP_KERNEL | __GFP_ZERO, 0);
-> > -	if (!pte)
-> > -		return NULL;
-> > -
-> > -	if (!pgtable_page_ctor(pte)) {
-> > -		__free_page(pte);
-> > -		return NULL;
-> > -	}
-> > -
-> > -	return pte;
-> > -}
-> > -
-> > -static inline void pte_free_kernel(struct mm_struct *mm, pte_t *pte)
-> > -{
-> > -	free_pages((unsigned long)pte, PTE_ORDER);
-> > -}
-> > -
-> > -static inline void pte_free(struct mm_struct *mm, pgtable_t pte)
-> > -{
-> > -	pgtable_page_dtor(pte);
-> > -	__free_pages(pte, PTE_ORDER);
-> > -}
-> > -
-> >  static inline void pgd_free(struct mm_struct *mm, pgd_t *pgd)
-> >  {
-> >  	free_pages((unsigned long)pgd, PGD_ORDER);
-> > -- 
-> > 2.7.4
-> > 
-> 
-> _______________________________________________
-> linux-riscv mailing list
-> linux-riscv@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-riscv
+On Fri, May 3, 2019 at 12:52 PM Marek Vasut <marex@denx.de> wrote:
+>
+> diff --git a/arch/arm/boot/dts/imx53-m53menlo.dts b/arch/arm/boot/dts/imx53-m53menlo.dts
+> index 46f990759660..a4cd2c22fa9e 100644
+> --- a/arch/arm/boot/dts/imx53-m53menlo.dts
+> +++ b/arch/arm/boot/dts/imx53-m53menlo.dts
+> @@ -86,6 +86,7 @@
+>         pinctrl-names = "default";
+>         pinctrl-0 = <&pinctrl_fec>;
+>         phy-mode = "rmii";
+> +       phy-reset-gpios = <&gpio7 7 GPIO_ACTIVE_HIGH>;
+
+I suppose that this should be GPIO_ACTIVE_LOW instead.
+
+The FEC driver ignores the phy-reset-gpios polarity and it assumes
+active low unless the property 'phy-reset-active-high' is passed.
 
 _______________________________________________
 linux-arm-kernel mailing list
