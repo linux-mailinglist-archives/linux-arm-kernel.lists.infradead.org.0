@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4AB031329F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 18:57:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9959B132D4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 19:05:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RTyvaEhx+Mx0gTL8F5tsTFso7sXNOGQvbt2iyxPXNIk=; b=TsKDjM3EWrXbAJ
-	rHZkHTbgITLg/9cYl8+HswT4DF0buc3Un8DBYus0PZh8GqFxFls0a0OR8wNKWbo1hHGNOqjHZNn83
-	hbR1IzTFVPjhERfortGH4T4XM9t956V+lMJPeV5TRzfuoJWdfGtGlZCoGUQDBVNSTff6ldA+eMI5O
-	dnh3cASs6msLsXfR9wCebplk9aFJOhax1dby0lWTGmkb30Ja/FYlSZWy2kQdSUL2TN4j6Gap4/2oi
-	fvxnOaH4gddRFaL1KMNo6no6zH+1xF1weCmvlN8rLrIjSi3JEgJCJMHlFW4sL+0L9gI9Y0Oqrk4iX
-	SKpYOTNwAslu+xz0eDgg==;
+	List-Owner; bh=9EgRxq6qnz3dh9trq2oH/E4yIUSByY6YdL17S/jiW0Q=; b=N3H9ifWzbSSxVD
+	DEZvxMyr/+1PVBw5YTidIJ0BN9J1LHC5L0IhhCaQVt1xRcRS01PU6oohcq2qbeQY+1QdiRD+M+/U/
+	kE7DOMQcVfTPjbtw3dm3AIn13RzylPBea+WgBnv5RJ9oaFuRFsk4CGwHHv47ChBSbjjZG///XEMEN
+	TVm+XtZAHcnB20adQ4UpLZ39xpNCL59n1qikPkoTVkJJskuGNXAn02827nOge4G1zW6kVVDHdbXcl
+	ywzthffpfthnMt5O+lV7kg/Ok6evns1K4JqqBthTLPdoAKllACxqzJZtZByxLOm+F3PEEMe2cvrDe
+	0AM42dWKaIUNXTL0Y5VA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMbV7-0002WW-Jx; Fri, 03 May 2019 16:57:33 +0000
-Received: from mail-out.m-online.net ([212.18.0.10])
+	id 1hMbcJ-0005td-No; Fri, 03 May 2019 17:04:59 +0000
+Received: from mail-out.m-online.net ([212.18.0.9])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMbV0-0002Vx-Kv
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 16:57:28 +0000
+ id 1hMbcB-0005sj-IJ
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 17:04:53 +0000
 Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 44wdbS5qzYz1rXhP;
- Fri,  3 May 2019 18:57:24 +0200 (CEST)
+ by mail-out.m-online.net (Postfix) with ESMTP id 44wdm16KPyz1rGht;
+ Fri,  3 May 2019 19:04:49 +0200 (CEST)
 Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 44wdbS5K7Pz1qtf6;
- Fri,  3 May 2019 18:57:24 +0200 (CEST)
+ by mail.m-online.net (Postfix) with ESMTP id 44wdm15TZ2z1qtf8;
+ Fri,  3 May 2019 19:04:49 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at mnet-online.de
 Received: from mail.mnet-online.de ([192.168.8.182])
  by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
  port 10024)
- with ESMTP id fIxVwJ37HReU; Fri,  3 May 2019 18:57:23 +0200 (CEST)
-X-Auth-Info: VZOUybLRav9bzOe91RDsaU9UO7lcFj7kHhHRiStuQ1s=
+ with ESMTP id TUYj8Hjr_91r; Fri,  3 May 2019 19:04:48 +0200 (CEST)
+X-Auth-Info: CCB6StU1UhwMxhvVWndYWn3QIZyeDOLtN6PXHrzgihg=
 Received: from [IPv6:::1] (unknown [195.140.253.167])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
  by mail.mnet-online.de (Postfix) with ESMTPSA;
- Fri,  3 May 2019 18:57:23 +0200 (CEST)
-Subject: Re: [PATCH 2/8] ARM: dts: imx53: Update USB configuration on M53Menlo
+ Fri,  3 May 2019 19:04:48 +0200 (CEST)
+Subject: Re: [PATCH 3/8] ARM: dts: imx53: Add ethernet PHY reset on M53Menlo
 To: Fabio Estevam <festevam@gmail.com>
 References: <20190503155235.6414-1-marex@denx.de>
- <20190503155235.6414-2-marex@denx.de>
- <CAOMZO5CSMba5kj_xVg=oFBEpFOAktgPJECYxqDK_ggNfercJcw@mail.gmail.com>
+ <20190503155235.6414-3-marex@denx.de>
+ <CAOMZO5C6zDP7W=BVSDGvNA0GtS6iGTHBNTsDjFN_tNdEbL+VEQ@mail.gmail.com>
 From: Marek Vasut <marex@denx.de>
 Openpgp: preference=signencrypt
 Autocrypt: addr=marex@denx.de; prefer-encrypt=mutual; keydata=
@@ -89,23 +89,23 @@ Autocrypt: addr=marex@denx.de; prefer-encrypt=mutual; keydata=
  tgPc2T/X/ETe5eCuhxMytIYbt1fK2pDXPoIKbbDK4uEmg9USXZ+pYrac4PFo1d+6D6vmTjRZ
  GRRITOVpKgBndfPyqofxeKNKGdNf9FS/x89RlnDWXsQHm+0pXguSRG9XdB16ZFNgeo8SeZVr
  qc9uLfhyQp/zB6qEnuX1TToug7PuDgcNZdjN3vgTXyno2TFMxp/LKHqg
-Message-ID: <0b056f46-a751-d2d7-0bdb-2b4a708910d3@denx.de>
-Date: Fri, 3 May 2019 18:57:23 +0200
+Message-ID: <5930dc87-0566-fac8-3956-699db8399cbd@denx.de>
+Date: Fri, 3 May 2019 19:00:37 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <CAOMZO5CSMba5kj_xVg=oFBEpFOAktgPJECYxqDK_ggNfercJcw@mail.gmail.com>
+In-Reply-To: <CAOMZO5C6zDP7W=BVSDGvNA0GtS6iGTHBNTsDjFN_tNdEbL+VEQ@mail.gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_095726_989840_EEC73EF0 
-X-CRM114-Status: GOOD (  13.72  )
+X-CRM114-CacheID: sfid-20190503_100451_907098_3CEB9863 
+X-CRM114-Status: GOOD (  14.77  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.18.0.10 listed in list.dnswl.org]
+ low trust [212.18.0.9 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -125,27 +125,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/3/19 6:16 PM, Fabio Estevam wrote:
-> Hi Marek,
-> 
+On 5/3/19 6:19 PM, Fabio Estevam wrote:
 > On Fri, May 3, 2019 at 12:52 PM Marek Vasut <marex@denx.de> wrote:
-> 
+>>
 >> diff --git a/arch/arm/boot/dts/imx53-m53menlo.dts b/arch/arm/boot/dts/imx53-m53menlo.dts
->> index 62bc6a95a477..46f990759660 100644
+>> index 46f990759660..a4cd2c22fa9e 100644
 >> --- a/arch/arm/boot/dts/imx53-m53menlo.dts
 >> +++ b/arch/arm/boot/dts/imx53-m53menlo.dts
->> @@ -50,7 +50,7 @@
->>                 regulator-name = "vbus";
->>                 regulator-min-microvolt = <5000000>;
->>                 regulator-max-microvolt = <5000000>;
->> -               gpio = <&gpio1 2 GPIO_ACTIVE_LOW>;
->> +               gpio = <&gpio1 2 GPIO_ACTIVE_HIGH>;
+>> @@ -86,6 +86,7 @@
+>>         pinctrl-names = "default";
+>>         pinctrl-0 = <&pinctrl_fec>;
+>>         phy-mode = "rmii";
+>> +       phy-reset-gpios = <&gpio7 7 GPIO_ACTIVE_HIGH>;
 > 
-> If this GPIO controlled regulator is changed to active high, then it
-> needs the 'enable-active-high' property.
+> I suppose that this should be GPIO_ACTIVE_LOW instead.
+> 
+> The FEC driver ignores the phy-reset-gpios polarity and it assumes
+> active low unless the property 'phy-reset-active-high' is passed.
 
-True, I should know ( 0e7d6f94016407fd7e1ae472e254d64d4454e9c8 ).
-Thanks
+I double-checked the schematic, yes, it should be active low. Thanks
 
 -- 
 Best regards,
