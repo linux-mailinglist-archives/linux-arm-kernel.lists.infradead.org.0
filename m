@@ -2,88 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 043A01315F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 17:42:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 164E113181
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 17:53:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=dt9Y8QThhNTLyT6e1mnV2P5OEw3IwD1cJzI9ggvojeI=; b=JqeGI4VojBPOU+
-	diKhMijMKSepqtDXiZ7c4Vp3NXnc9vN/J+StIOjwlTlnn8RxAriOWPHdcz9I6bOGEzNaWsfzmORew
-	AsyEQwPHpli9K+od9cxYJ7wvYF7jcXXSY1Z5y9uWSHXm7WwT8tYcr+VJBLYJFYJ/NMCgODoIxvzMu
-	bWlh9fpw0ZJ11SmntA4Baq9oUikoLHyBMNjsG1z3MSdZaJrYLkrFw7vxlFglsHteT9Jw3JeSfPpbh
-	go0g2WtJlu2pI3YB1rrtE6y0ISzf6Pmldsq16Ap68Gy1y0ODR1FJ8/uoEthTcynOs4Dl6lvmH68EQ
-	BjTdt6ZCCInB6Wm/0sjA==;
+	List-Owner; bh=P0UQ28L8QJMubxNNzdu5dqQ8RZ1y+tuJlRwCJvLNSiw=; b=HgQCAvAdj25xvX
+	av++qIBAWJWLW8DJQU5nURPNfqDmZo6/3VTl8iygbQYOSOtdDJSAf4gfg+cgBF3rOi73gElVVMMpQ
+	d5yZUtOF8CpdyfDPXj+NzmI/p4M/PlynnO4x55KzwNwP13ykeCh8S0aRmAqMJXsbGw+KLl5iagLsi
+	12tsyJFhf91N0+0Ls+lvIBBPmlkdWqq3OmzH0XyIFGq/1zArjA4ZdFDifjuiHSawAipb0ZF+SdR18
+	rnqhwHgC5U7IJJ8NFLekBO8UJP3mMe3SdOuPw0oN2T3JEzR6naK/Bj2+1Oa2ir0ciEjpcTBjFakae
+	mbH1eJSPMKwS65Z+EITA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMaKf-0007Pg-Qg; Fri, 03 May 2019 15:42:41 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1hMaUp-0002hO-Cu; Fri, 03 May 2019 15:53:11 +0000
+Received: from mail-out.m-online.net ([212.18.0.10])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMaKZ-0007PE-K0
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 15:42:36 +0000
-Received: by mail-lf1-x144.google.com with SMTP id k18so4707025lfj.13
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 03 May 2019 08:42:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=hxoy1ZV5sToffY4PE/tTqurkXva76ASJNTG/Gm0iUtc=;
- b=uZfp/N3AZYMWXt5Qex8B7lqHo+QCVU0lHkKBJ7/OsujvSrSe/6pCz3Tx/Fi9EzN5MH
- 4jcT8gkcTgrPnCoo0P9vfF+6iCLssr6QFtKBslx199cYK4OJTJbpS+BzwLFO3fNnGR9b
- VV2/ovqWA8W5ztSfjC8UYtL1loIfqqFXPq5PVQxDXjllaDkSGlGoRpcF2xCH40qpsyiy
- 96McdV4eFzJOBsohHc8zfmOaseibnvi5v5D/B6K48C9GCV0/jkvl2LfwuhXtVXBBpdpe
- mKLwvvII1dMDaDBYVc/tupFgRk7th1DURgzTvLxVX4NxKO9XBDRzZt6m+n8HojOyywtw
- VHXA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=hxoy1ZV5sToffY4PE/tTqurkXva76ASJNTG/Gm0iUtc=;
- b=MaM7n6c0Xip7klADSYxa/LHqZQoaoEY9Zu1tKIgISkE2HK4YdgmkRtOi2osU9u1lGx
- ACdnCgDQlRBeHuWZYu42pQgEdzgx0X00CRTMRRy0Lz6gybheQmq4xyVQKvh4iPJg6thO
- aJ7rswn83A0l9wqHJwT/BnhCry2jnUtJBvRfSZ8c0WlKV8N3hMomsvGfiQOPP5iIyBZP
- KeQZsZmvvC5vhr8MTRC/u/tGt+rciiuHx45LX1AAyAafDR4hEuIW91PGTMY9AJIwhA8T
- WlPc1I4p2mB76hKPqbcCaXmIUo9ObT/RQ3AhsWMBTHeRga78cav2dtnsxbDEWQAnJNup
- 7VIQ==
-X-Gm-Message-State: APjAAAUGPe3hIBt1lo3bIs+5LfD7fVidENoyxw9sXCZxYWBTQE6dxd50
- +ydY/5kfjuyjR+VhNEN+IVNg6w==
-X-Google-Smtp-Source: APXvYqyU4uQeJLG/OtvlrhNPGDGwC02F9Y9cEMoD1VswE6z2M+2QplpwXLVYjy+XAotMFpGdXNqlcw==
-X-Received: by 2002:a19:f60f:: with SMTP id x15mr5444261lfe.95.1556898152317; 
- Fri, 03 May 2019 08:42:32 -0700 (PDT)
-Received: from localhost (c-573670d5.07-21-73746f28.bbcust.telenor.se.
- [213.112.54.87])
- by smtp.gmail.com with ESMTPSA id 63sm486077lfz.2.2019.05.03.08.42.31
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 03 May 2019 08:42:31 -0700 (PDT)
-From: Anders Roxell <anders.roxell@linaro.org>
-To: a.zummo@towertech.it, alexandre.belloni@bootlin.com, shawnguo@kernel.org,
- s.hauer@pengutronix.de
-Subject: [PATCH] rtc: imxdi: remove unused variable
-Date: Fri,  3 May 2019 17:42:17 +0200
-Message-Id: <20190503154217.13205-1-anders.roxell@linaro.org>
+ id 1hMaUX-0002Zx-Fl
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 15:52:56 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 44wc8w3htVz1rXvr;
+ Fri,  3 May 2019 17:52:48 +0200 (CEST)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 44wc8w3Crxz1qtf0;
+ Fri,  3 May 2019 17:52:48 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id qh8xUnpSd7xM; Fri,  3 May 2019 17:52:47 +0200 (CEST)
+X-Auth-Info: 9JUxOLwdBGbY55D/s2vj/4PlD9TfRxxRTRpuphWGVGc=
+Received: from kurokawa.lan (ip-86-49-110-70.net.upcbroadband.cz
+ [86.49.110.70])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Fri,  3 May 2019 17:52:47 +0200 (CEST)
+From: Marek Vasut <marex@denx.de>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 1/8] ARM: dts: imx53: Update UART configuration on M53Menlo
+Date: Fri,  3 May 2019 17:52:28 +0200
+Message-Id: <20190503155235.6414-1-marex@denx.de>
 X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_084235_659966_8CAD6F41 
-X-CRM114-Status: GOOD (  10.58  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190503_085253_681420_42FB88F1 
+X-CRM114-Status: GOOD (  10.40  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.18.0.10 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,31 +69,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, Anders Roxell <anders.roxell@linaro.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Marek Vasut <marex@denx.de>, Fabio Estevam <festevam@gmail.com>,
+ Shawn Guo <shawnguo@kernel.org>, NXP Linux Team <linux-imx@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VGhpcyB2YXJpYWJsZSBpcyBubyBsb25nZXIgdXNlZCBhbmQgdGhlIGNvbXBpbGVyIHJpZ2h0bHkg
-Y29tcGxhaW5zIHRoYXQKaXQgc2hvdWxkIGJlIHJlbW92ZWQuCgouLi9kcml2ZXJzL3J0Yy9ydGMt
-aW14ZGkuYzogSW4gZnVuY3Rpb24g4oCYZHJ5aWNlX3J0Y19zZXRfYWxhcm3igJk6Ci4uL2RyaXZl
-cnMvcnRjL3J0Yy1pbXhkaS5jOjYzMzoxNjogd2FybmluZzogdW51c2VkIHZhcmlhYmxlIOKAmG5v
-d+KAmSBbLVd1bnVzZWQtdmFyaWFibGVdCiAgdW5zaWduZWQgbG9uZyBub3c7CiAgICAgICAgICAg
-ICAgICBefn4KClJld29yayB0byByZW1vdmUgdGhlIHVudXNlZCB2YXJpYWJsZS4KCkZpeGVzOiA2
-MjlkNDg4YTNlYjYgKCJydGM6IGlteGRpOiByZW1vdmUgdW5uZWNlc3NhcnkgY2hlY2siKQpTaWdu
-ZWQtb2ZmLWJ5OiBBbmRlcnMgUm94ZWxsIDxhbmRlcnMucm94ZWxsQGxpbmFyby5vcmc+Ci0tLQog
-ZHJpdmVycy9ydGMvcnRjLWlteGRpLmMgfCAxIC0KIDEgZmlsZSBjaGFuZ2VkLCAxIGRlbGV0aW9u
-KC0pCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9ydGMvcnRjLWlteGRpLmMgYi9kcml2ZXJzL3J0Yy9y
-dGMtaW14ZGkuYwppbmRleCA2MzQyYmM0MDM2NDUuLjNmM2Q2NTJhMGIwZiAxMDA2NDQKLS0tIGEv
-ZHJpdmVycy9ydGMvcnRjLWlteGRpLmMKKysrIGIvZHJpdmVycy9ydGMvcnRjLWlteGRpLmMKQEAg
-LTYzMCw3ICs2MzAsNiBAQCBzdGF0aWMgaW50IGRyeWljZV9ydGNfcmVhZF9hbGFybShzdHJ1Y3Qg
-ZGV2aWNlICpkZXYsIHN0cnVjdCBydGNfd2thbHJtICphbGFybSkKIHN0YXRpYyBpbnQgZHJ5aWNl
-X3J0Y19zZXRfYWxhcm0oc3RydWN0IGRldmljZSAqZGV2LCBzdHJ1Y3QgcnRjX3drYWxybSAqYWxh
-cm0pCiB7CiAJc3RydWN0IGlteGRpX2RldiAqaW14ZGkgPSBkZXZfZ2V0X2RydmRhdGEoZGV2KTsK
-LQl1bnNpZ25lZCBsb25nIG5vdzsKIAlpbnQgcmM7CiAKIAkvKiB3cml0ZSB0aGUgbmV3IGFsYXJt
-IHRpbWUgKi8KLS0gCjIuMjAuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJu
-ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Enable flow control lines on UART1 and UART2, add matching pinmux entries.
+Add and enable UART3 with RS485 mode enabled on boot.
+
+Signed-off-by: Marek Vasut <marex@denx.de>
+Cc: Shawn Guo <shawnguo@kernel.org>
+Cc: Fabio Estevam <festevam@gmail.com>
+Cc: NXP Linux Team <linux-imx@nxp.com>
+To: linux-arm-kernel@lists.infradead.org
+---
+ arch/arm/boot/dts/imx53-m53menlo.dts | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+diff --git a/arch/arm/boot/dts/imx53-m53menlo.dts b/arch/arm/boot/dts/imx53-m53menlo.dts
+index f0a3fde0739c..62bc6a95a477 100644
+--- a/arch/arm/boot/dts/imx53-m53menlo.dts
++++ b/arch/arm/boot/dts/imx53-m53menlo.dts
+@@ -244,6 +244,8 @@
+ 			fsl,pins = <
+ 				MX53_PAD_PATA_DIOW__UART1_TXD_MUX	0x1e4
+ 				MX53_PAD_PATA_DMACK__UART1_RXD_MUX	0x1e4
++				MX53_PAD_PATA_IORDY__UART1_RTS		0x1e4
++				MX53_PAD_PATA_RESET_B__UART1_CTS	0x1e4
+ 			>;
+ 		};
+ 
+@@ -251,6 +253,16 @@
+ 			fsl,pins = <
+ 				MX53_PAD_PATA_BUFFER_EN__UART2_RXD_MUX	0x1e4
+ 				MX53_PAD_PATA_DMARQ__UART2_TXD_MUX	0x1e4
++				MX53_PAD_PATA_DIOR__UART2_RTS		0x1e4
++				MX53_PAD_PATA_INTRQ__UART2_CTS		0x1e4
++			>;
++		};
++
++		pinctrl_uart3: uart3grp {
++			fsl,pins = <
++				MX53_PAD_PATA_CS_1__UART3_RXD_MUX	0x1e4
++				MX53_PAD_PATA_CS_0__UART3_TXD_MUX	0x1e4
++				MX53_PAD_PATA_DA_2__UART3_RTS		0x1e4
+ 			>;
+ 		};
+ 
+@@ -287,12 +299,21 @@
+ &uart1 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_uart1>;
++	uart-has-rtscts;
+ 	status = "okay";
+ };
+ 
+ &uart2 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_uart2>;
++	uart-has-rtscts;
++	status = "okay";
++};
++
++&uart3 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_uart3>;
++	linux,rs485-enabled-at-boot-time;
+ 	status = "okay";
+ };
+ 
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
