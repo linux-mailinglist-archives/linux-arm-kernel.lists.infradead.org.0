@@ -2,74 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E34BB12F31
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 15:31:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E77FC12EC8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 15:07:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=UERG50daP51oST87ERxVaFhnFHu/VR+DHE2NR2Do1u0=; b=jZr
-	+gkUEEBS4uw3AZ6coq5cxG/grAAXH3GQ66KDrNecc6amExuqNhwqERjJnz3d86psBy6ZriRvsoilf
-	GGkQJ1pdZf3LyhESir+1Dr7tri3JIco6AdGdUIafNQ/OnIIKz411QI0IC6ao2+9/+h80qFqzEYXh6
-	cgAekocnnzXgYsfWIm+OlE2g14Twnz7F1mnMM0wZxV0WT62Bpwn0kRhOlhLRVF5fl5nzI66sILLqS
-	MmW9gwblvR4MFA27FFH6ZWFx1/G2oL2FfX7RIpc6ETufUJr4IMYWkmg4opEO1UnCnsZbTD9JM1+NZ
-	Y/rtaMo6NjIlG/5hfbeWTvZm04BVS0w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZUZdPS7MYus6VNQJtTWV4ZcNgVU3VltHGQc/GgyGX+M=; b=Ndfep4YRoxGOWd
+	55SRwvgx6UE0Y6nwU1ZpV8dPtuNbC0MNiyd+MARLtV20RTEWAI0aT4Sy1p8CQeW6eINpquow7OLlU
+	PIEfahJ6yQlfJX0CWUHaoeyuvwPbYEUVCS5uAc+KIxkd0SLJy3sPd1tE/zYqPMWJTQVhuw1HDOzMu
+	8cTD3E73KMe23ohooGN3i1CDHdUGSiS258uoRxOLGImUwF+ptrdczP7+1nb/gASZv6rePhNuNJfwD
+	JYQIAIUsnWzVm065uMvKzpJ5n1FqbvO53uZTn3Ybw/qSriH+aSO2W92E/M9K3YLY9FvaBY2NeKslC
+	tS56Bp4Ii8MzLyiX2V/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMYHS-0000w7-4a; Fri, 03 May 2019 13:31:14 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hMXub-0006sy-Rw; Fri, 03 May 2019 13:07:37 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMYHD-0000pd-NI
- for linux-arm-kernel@bombadil.infradead.org; Fri, 03 May 2019 13:30:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Message-Id:Date:Subject:Cc:To:From:
- Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=RYH/YO/RkA4XGJbvLIFo4fWIsBT1IwFt9t25PBtlx3o=; b=puV0KnBBYTozxYOu/Q6xWSu7d
- xDDlwo/YNWZqjlZx1Qz0FSskJypgQocV/WE7LuVCe9p/flyxUmHjE1BtiJvwme+tZn7jIL4QtjDfK
- hySVZi+afiUHpE4VZs6g5NKPwLWDBai4GwLxvBG4fB7wpmc7aHPfrMe1Lwvz5DqAKk4v3lqfnMqZL
- YgVLLOWlT0bJKkH2DxYcqyQnF4hD0tIC3FMlL+7c/7xfg6KjGGddrNerD+x/hyetnJLUpGj5uqXvA
- BApxN5SMixs6ZOYqrWGQVLG27uRyQGqicMU3EcXuVVtq7pAR7V1STUdRKvj4GeHxoQDMaMrWiDzr2
- nQlO1cinQ==;
-Received: from inva020.nxp.com ([92.121.34.13])
- by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMXqP-0006Ee-7q
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 13:03:18 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id F24EA1A00C7;
- Fri,  3 May 2019 15:03:13 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E565C1A0029;
- Fri,  3 May 2019 15:03:13 +0200 (CEST)
-Received: from fsr-ub1864-101.ea.freescale.net
- (fsr-ub1864-101.ea.freescale.net [10.171.82.13])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 5949A205F4;
- Fri,  3 May 2019 15:03:13 +0200 (CEST)
-From: laurentiu.tudor@nxp.com
-To: netdev@vger.kernel.org, madalin.bucur@nxp.com, camelia.groza@nxp.com,
- leoyang.li@nxp.com
-Subject: [PATCH v3] dpaa_eth: fix SG frame cleanup
-Date: Fri,  3 May 2019 16:03:11 +0300
-Message-Id: <20190503130311.9914-1-laurentiu.tudor@nxp.com>
-X-Mailer: git-send-email 2.17.1
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1hMXuU-0006sc-9b
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 13:07:31 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+ by ns.iliad.fr (Postfix) with ESMTP id E15D62043B;
+ Fri,  3 May 2019 15:07:27 +0200 (CEST)
+Received: from [192.168.108.49] (freebox.vlq16.iliad.fr [213.36.7.13])
+ by ns.iliad.fr (Postfix) with ESMTP id CB6DC2041C;
+ Fri,  3 May 2019 15:07:27 +0200 (CEST)
+Subject: Re: [PATCH] arm64/io: Don't use WZR in writel
+To: Robin Murphy <robin.murphy@arm.com>,
+ AngeloGioacchino Del Regno <kholk11@gmail.com>
+References: <68b71c15f32341468a868f6418e4fcb375bc49ba.camel@gmail.com>
+ <20190211105755.GB30880@fuggles.cambridge.arm.com>
+ <38d8965a-cd41-17cf-1b95-8dd58c079be4@arm.com>
+ <874c702b8af760aa8fae38d478c79e3ecba00515.camel@gmail.com>
+ <235d20ef-3054-69d9-975d-25aebf32aad3@arm.com>
+ <20190223181254.GC572@tuxbook-pro> <86zhqm8i6d.wl-marc.zyngier@arm.com>
+ <20190224035356.GD572@tuxbook-pro>
+ <33d765b5-1807-fa6c-1ceb-99f09f7c8d5a@free.fr>
+ <8eb4f446-6152-ffb6-9529-77fb0bcc307f@arm.com>
+ <7b5e8bb1-d339-07f7-66f6-7f09df2107c4@free.fr>
+ <3757fc2d-0587-be46-8f75-6d79906be8bd@arm.com>
+ <5b83a4c2-1f0e-337f-a78d-f7d84fe01ab3@free.fr>
+ <a6f89d1a-e7bb-bae9-6666-f4d5b263b835@free.fr>
+ <b7a3c9d1-6bbc-1f14-956f-ee4dd3bce175@arm.com>
+From: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Message-ID: <bd3d23ed-1e4c-861b-35e6-08c2f7e4a47c@free.fr>
+Date: Fri, 3 May 2019 15:07:27 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <b7a3c9d1-6bbc-1f14-956f-ee4dd3bce175@arm.com>
+Content-Language: en-US
+X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
+ Fri May  3 15:07:27 2019 +0200 (CEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_090317_382928_121ACB0C 
-X-CRM114-Status: UNSURE (   9.38  )
+X-CRM114-CacheID: sfid-20190503_060730_480588_204E3302 
+X-CRM114-Status: UNSURE (   7.59  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ medium trust [212.27.33.1 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (marc.w.gonzalez[at]free.fr)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -81,49 +80,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, stable@vger.kernel.org,
- Joakim.Tjernlund@infinera.com, linuxppc-dev@lists.ozlabs.org,
- davem@davemloft.net, linux-arm-kernel@lists.infradead.org,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Jeffrey Hugo <jhugo@codeaurora.org>, MSM <linux-arm-msm@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
+On 03/05/2019 14:48, Robin Murphy wrote:
 
-Fix issue with the entry indexing in the sg frame cleanup code being
-off-by-1. This problem showed up when doing some basic iperf tests and
-manifested in traffic coming to a halt.
+> Anyway, I'll clean up my patch and post it properly - thanks to you and 
+> Bjorn for testing.
 
-Signed-off-by: Laurentiu Tudor <laurentiu.tudor@nxp.com>
-Acked-by: Madalin Bucur <madalin.bucur@nxp.com>
-Cc: <stable@vger.kernel.org>
----
-v3:
- - added cc:stable tag (Joakim)
- - pulled from the original patch series and send individually
+Cool. Thanks!
 
- drivers/net/ethernet/freescale/dpaa/dpaa_eth.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+AngeloGioacchino, are you still monitoring this thread?
 
-diff --git a/drivers/net/ethernet/freescale/dpaa/dpaa_eth.c b/drivers/net/ethernet/freescale/dpaa/dpaa_eth.c
-index daede7272768..40420edc9ce6 100644
---- a/drivers/net/ethernet/freescale/dpaa/dpaa_eth.c
-+++ b/drivers/net/ethernet/freescale/dpaa/dpaa_eth.c
-@@ -1663,7 +1663,7 @@ static struct sk_buff *dpaa_cleanup_tx_fd(const struct dpaa_priv *priv,
- 				 qm_sg_entry_get_len(&sgt[0]), dma_dir);
- 
- 		/* remaining pages were mapped with skb_frag_dma_map() */
--		for (i = 1; i < nr_frags; i++) {
-+		for (i = 1; i <= nr_frags; i++) {
- 			WARN_ON(qm_sg_entry_is_ext(&sgt[i]));
- 
- 			dma_unmap_page(dev, qm_sg_addr(&sgt[i]),
--- 
-2.17.1
+On which qcom platform(s) did you run into the issue?
+(Robin's work-around has been tested on msm8996 and msm8998.)
 
+Regards.
 
 _______________________________________________
 linux-arm-kernel mailing list
