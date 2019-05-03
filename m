@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D5C912EBE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 15:03:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4FE212EBB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 15:03:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VFkI0yNSC0hF1Mt4YHdLacJ0y4O3ph2ggGaD5GTuzhI=; b=CHYl/nxK5j43EU
-	JuKB5EnwEhfPrq8C0dtRM9Omln41TdlOWqKP7JaPUcUUXF1GbqA0gU4eRhuppGjZ7FXTuEKEv36Nj
-	K7PKKxBB3DvcYBcT4Y0EOa0oiaN9WiHHH1VlISozccJSrnGV4TvpE7WI/47nX9cXihWqUCTQofyis
-	PjYohTs7rOZOi+8ViJJlo9tpHfAWyvTna0nNEQ96+Mcw0fNiuNru81Jg9CsHZ/kVR7KkwQZMaeT6B
-	tWmUWmYGdXJT923LEZqIMQrlDNGNntsl/AsK3wd3OlJup4xDl2fHaOKxo3Uc4vnGb5B/SfzPVz5r0
-	w9YTkGb7hM9G81iDrcEQ==;
+	List-Owner; bh=AI1CWSV/MW2oZWyC9kNwAiHsoEaByB+NG8bdOTEZC+I=; b=OcID6Df12Yavlg
+	SWc1YpvdD1V34CVH88t/WivAiFXEQ/zHErl2hyDo5Q3G68l/KIQz8dcQ2A6qaRS8wmYWSdqir9VKL
+	Vf5jVh4ZWwPYBcsV7aBl0GG2zU4fFlKC5sm3mRTzTQOPu5Vc0Y4UH6vIGid8mJVu5b3o/lBY+NPv9
+	cW7U7Tj/W5mRpI61+2v9pO/XhAqNcEU+KAdePMxx3a4Zxw2jE9ytMvZGmlsFgEQIKfbiix0x5GcxX
+	CuLZXM8xegdViz7pMSUISgTCGemslD0dEvuU1yfVcq+hvokcFOnBkK0PyLbVXMET8S9LupIvH022n
+	MkHPk8WHrmIa6JXOo4ZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMXqt-0004aD-OQ; Fri, 03 May 2019 13:03:47 +0000
+	id 1hMXqZ-00043C-Jc; Fri, 03 May 2019 13:03:27 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMXo7-0000Hz-Sz
+ id 1hMXo7-0000NO-F4
  for linux-arm-kernel@bombadil.infradead.org; Fri, 03 May 2019 13:00:55 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
@@ -29,36 +29,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=h74E8fTJb/uELTinY90g5KHcOSDdMV200BS2ojtSaa0=; b=Ax4C+JEQY3NstzJt21s+mFuvk4
- A+OdCT+1b1hZboejsjxD4o7jK/w09RYQMZCyGRkx03nAo1coXn3tcEHBnjd7J/Owh5fPGmgvgB3/s
- pPtdbMSUJipbHj2ZeBpb9wyQbxycrPd1zSJuxtWK/v3PcCXbz8TRoGDTFZtTQFWiTum6PuhpRuTBn
- j3DnG6MpaYs+wygk6UBK1WCSTMvqj8HQl1MqYfhf3WAtcSC1ivXvU43H5wSD/cA9YveMcB1T5lPn0
- fF9TB9GPXYtcfVSPqiLlf8rn2ElVhbiX6Wraw6pTyep/B5sSL2u5FtKQ6nMvF8KAwdX0JYuvC4HHm
- XRlGedLw==;
+ bh=RU4bUZmyNtllEdkiyU2awy9i/d555TETGeibkD/I53w=; b=CJCMdVjDB2IgZXJTem9LT+e9bq
+ 5kBU8XuvZIIugIZc9qY2/dkTi7GXNsiY590SaYkLC+hckGjTVa1E3Xbuiqt9HOi1WAevN1tvWkhLr
+ YcT8kOqoA6Kah46zMiQ5AiYs3IkUXZtwQmJ+oAQb2BK+vSfV+ZZT+8dF1h+QL0Uo50YPhFeY42plX
+ ipMYty0eNvUDUDdmaELjuY1IL/AY7pCZJqEarOu3jfEuvNJOJF96e4ZG0MRqchgPk0FvxsMIzsRvE
+ EvfjWPhOCXS9UOpaNqt+qwcu56i+lLzDoOfFTwTbLao2oBGvU+LJjyThH+4nMntdB+pgJldcvh00j
+ yE0EHQhg==;
 Received: from foss.arm.com ([217.140.101.70])
  by casper.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMXa5-000265-4q
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 12:46:27 +0000
+ id 1hMXa8-000265-Kw
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 12:46:30 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A26C816A3;
- Fri,  3 May 2019 05:46:24 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 287CD16A3;
+ Fri,  3 May 2019 05:46:28 -0700 (PDT)
 Received: from filthy-habits.cambridge.arm.com
  (filthy-habits.cambridge.arm.com [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6B2773F220;
- Fri,  3 May 2019 05:46:21 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E539B3F220;
+ Fri,  3 May 2019 05:46:24 -0700 (PDT)
 From: Marc Zyngier <marc.zyngier@arm.com>
 To: Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH 29/56] arm64/sve: Clarify vq map semantics
-Date: Fri,  3 May 2019 13:44:00 +0100
-Message-Id: <20190503124427.190206-30-marc.zyngier@arm.com>
+Subject: [PATCH 30/56] KVM: arm/arm64: Demote kvm_arm_init_arch_resources() to
+ just set up SVE
+Date: Fri,  3 May 2019 13:44:01 +0100
+Message-Id: <20190503124427.190206-31-marc.zyngier@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190503124427.190206-1-marc.zyngier@arm.com>
 References: <20190503124427.190206-1-marc.zyngier@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_134625_539040_396920DC 
-X-CRM114-Status: GOOD (  14.67  )
+X-CRM114-CacheID: sfid-20190503_134629_022385_9FE9A50A 
+X-CRM114-Status: GOOD (  14.31  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
  Content analysis details:   (-5.0 points, 5.0 required)
@@ -96,71 +97,78 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Dave Martin <Dave.Martin@arm.com>
 
-Currently the meanings of sve_vq_map and the ancillary helpers
-__bit_to_vq() and __vq_to_bit() are not clearly explained.
+The introduction of kvm_arm_init_arch_resources() looks like
+premature factoring, since nothing else uses this hook yet and it
+is not clear what will use it in the future.
 
-This patch makes the explanatory comment clearer, and removes the
-duplicate comment from fpsimd.h.
+For now, let's not pretend that this is a general thing:
 
-The WARN_ON() currently present in __bit_to_vq() confuses the
-intended use of this helper.  Since these are low-level helpers not
-intended for general-purpose use anyway, it is better not to make
-guesses about how these functions will be used: rather, this patch
-removes the WARN_ON() and relies on callers to use the helpers
-sensibly.
+This patch simply renames the function to kvm_arm_init_sve(),
+retaining the arm stub version under the new name.
 
 Suggested-by: Andrew Jones <drjones@redhat.com>
 Signed-off-by: Dave Martin <Dave.Martin@arm.com>
 Reviewed-by: Andrew Jones <drjones@redhat.com>
 Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 ---
- arch/arm64/include/asm/fpsimd.h | 4 ----
- arch/arm64/kernel/fpsimd.c      | 7 ++++++-
- 2 files changed, 6 insertions(+), 5 deletions(-)
+ arch/arm/include/asm/kvm_host.h   | 2 +-
+ arch/arm64/include/asm/kvm_host.h | 2 +-
+ arch/arm64/kvm/reset.c            | 2 +-
+ virt/kvm/arm/arm.c                | 2 +-
+ 4 files changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm64/include/asm/fpsimd.h b/arch/arm64/include/asm/fpsimd.h
-index ad6d2e41eb37..df62bbd33a9a 100644
---- a/arch/arm64/include/asm/fpsimd.h
-+++ b/arch/arm64/include/asm/fpsimd.h
-@@ -92,7 +92,6 @@ extern u64 read_zcr_features(void);
+diff --git a/arch/arm/include/asm/kvm_host.h b/arch/arm/include/asm/kvm_host.h
+index e80cfc18412b..d95627393353 100644
+--- a/arch/arm/include/asm/kvm_host.h
++++ b/arch/arm/include/asm/kvm_host.h
+@@ -54,7 +54,7 @@
  
- extern int __ro_after_init sve_max_vl;
- extern int __ro_after_init sve_max_virtualisable_vl;
--/* Set of available vector lengths, as vq_to_bit(vq): */
- extern __ro_after_init DECLARE_BITMAP(sve_vq_map, SVE_VQ_MAX);
+ DECLARE_STATIC_KEY_FALSE(userspace_irqchip_in_use);
  
- /*
-@@ -107,9 +106,6 @@ static inline unsigned int __vq_to_bit(unsigned int vq)
+-static inline int kvm_arm_init_arch_resources(void) { return 0; }
++static inline int kvm_arm_init_sve(void) { return 0; }
  
- static inline unsigned int __bit_to_vq(unsigned int bit)
+ u32 *kvm_vcpu_reg(struct kvm_vcpu *vcpu, u8 reg_num, u32 mode);
+ int __attribute_const__ kvm_target_cpu(void);
+diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+index 9d57cf8be879..6adf08ba9277 100644
+--- a/arch/arm64/include/asm/kvm_host.h
++++ b/arch/arm64/include/asm/kvm_host.h
+@@ -59,7 +59,7 @@
+ DECLARE_STATIC_KEY_FALSE(userspace_irqchip_in_use);
+ 
+ extern unsigned int kvm_sve_max_vl;
+-int kvm_arm_init_arch_resources(void);
++int kvm_arm_init_sve(void);
+ 
+ int __attribute_const__ kvm_target_cpu(void);
+ int kvm_reset_vcpu(struct kvm_vcpu *vcpu);
+diff --git a/arch/arm64/kvm/reset.c b/arch/arm64/kvm/reset.c
+index f13378d0a0ad..8847f389f56d 100644
+--- a/arch/arm64/kvm/reset.c
++++ b/arch/arm64/kvm/reset.c
+@@ -110,7 +110,7 @@ int kvm_arch_vm_ioctl_check_extension(struct kvm *kvm, long ext)
+ 
+ unsigned int kvm_sve_max_vl;
+ 
+-int kvm_arm_init_arch_resources(void)
++int kvm_arm_init_sve(void)
  {
--	if (WARN_ON(bit >= SVE_VQ_MAX))
--		bit = SVE_VQ_MAX - 1;
--
- 	return SVE_VQ_MAX - bit;
- }
+ 	if (system_supports_sve()) {
+ 		kvm_sve_max_vl = sve_max_virtualisable_vl;
+diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
+index 9edbf0f676e7..7039c99cc217 100644
+--- a/virt/kvm/arm/arm.c
++++ b/virt/kvm/arm/arm.c
+@@ -1682,7 +1682,7 @@ int kvm_arch_init(void *opaque)
+ 	if (err)
+ 		return err;
  
-diff --git a/arch/arm64/kernel/fpsimd.c b/arch/arm64/kernel/fpsimd.c
-index 577296bba730..56afa40263d9 100644
---- a/arch/arm64/kernel/fpsimd.c
-+++ b/arch/arm64/kernel/fpsimd.c
-@@ -135,10 +135,15 @@ static int sve_default_vl = -1;
- /* Maximum supported vector length across all CPUs (initially poisoned) */
- int __ro_after_init sve_max_vl = SVE_VL_MIN;
- int __ro_after_init sve_max_virtualisable_vl = SVE_VL_MIN;
--/* Set of available vector lengths, as vq_to_bit(vq): */
-+
-+/*
-+ * Set of available vector lengths,
-+ * where length vq encoded as bit __vq_to_bit(vq):
-+ */
- __ro_after_init DECLARE_BITMAP(sve_vq_map, SVE_VQ_MAX);
- /* Set of vector lengths present on at least one cpu: */
- static __ro_after_init DECLARE_BITMAP(sve_vq_partial_map, SVE_VQ_MAX);
-+
- static void __percpu *efi_sve_state;
+-	err = kvm_arm_init_arch_resources();
++	err = kvm_arm_init_sve();
+ 	if (err)
+ 		return err;
  
- #else /* ! CONFIG_ARM64_SVE */
 -- 
 2.20.1
 
