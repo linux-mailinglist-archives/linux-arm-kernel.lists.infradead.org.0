@@ -2,69 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5EC2F12D8A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 14:29:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B56612DBE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 14:37:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vyiGWY+/jiQZcrIS3rrwXYO7RJLZxj5sEtcdPZWXbvs=; b=N83+L38DCxVIUA
-	oYCOE6vDGDh3gP0BB0Xu0XXjkZ5eU9b2tXJAju4uvkS/yVbQMGs23+hdz9q1HkIxmfu6lSPv76A5d
-	37+zD0YH9p7Mxh7kXACFJbk9LxCcWD12CLXgPnJB57QcgRSm/hX7ThQo6A4RuDP+nVnwssatRlW6L
-	tntg7WPR924ttw3Hh+BpPo2BPm/EnRnbxoRltWcFr8p/Islqf9xTIREcOuIk/sFwlq2UnWPdXg3lh
-	b9j4OdQsSHt/5puy8juc71oxNj7UJMz21jjgfdRTPEprFKFYp/XqD28CixaefPwF3lpDOwRduYhUb
-	3J+Q6KEQo+/UrDq5BKIw==;
+	List-Owner; bh=ZMH0AbH55Rr4C3G0ZAwnhnUplpkobn9IPyQ9KL9Ehbg=; b=h6YwXaMuBU6Xf1
+	TExSuz+JmsZGbETwNSEuo7n9neNF9ql1HNz81ES/cgZegJKT6aT+0c9Arz5FKnzYzIYPV/ARDLbAM
+	cr9dUnFJ307ez0tUFHkZJrfomuPxbO+kdfNLPrYAX0ObQKvgyYEtrcuPE8fvlOciSBDbq2Xd6wdKT
+	AGbzqrs5z0gv33dSSvBwb34WUeFnEd/s9CzAu/zWJTsg3NYIt0TnHawVfRnsCe4VpQ1OpN0UNgOf0
+	PfJpLpj4EwsS3OXC6FXmksMN3WZhvf25DHdI5uy+IqbI1YT2bdZMi24hDyTU592qLHXygSeEZwQgr
+	JJprHDE9XEMu3nlcjUzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMXJe-0003nK-GK; Fri, 03 May 2019 12:29:26 +0000
-Received: from vps0.lunn.ch ([185.16.172.187])
+	id 1hMXRF-0007a6-7I; Fri, 03 May 2019 12:37:17 +0000
+Received: from mail-vs1-f65.google.com ([209.85.217.65])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMXJX-0003lL-B9
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 12:29:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
- s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=R6e6QMt4Ry7Ciu1Kvg2pPK4dklAxRHwK6AKu5GkzKCU=; b=ojHPNQP/rDkJLkCCTKgFGjvMMp
- r6BF6jbtmMUYw+qiHA0GQKTDkj7yRabYDhGOxREUrQvokSpX5Fr9BZuLGdhV9PdpZu6+2NsWx4g4e
- WTiMK3Oj/AdU5d72l0unGGETlh4mur5J7qreOrsikuz7n9WilhtXjLOarDv5jd1mb2Uc=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
- (envelope-from <andrew@lunn.ch>)
- id 1hMXJO-0001AD-GE; Fri, 03 May 2019 14:29:10 +0200
-Date: Fri, 3 May 2019 14:29:10 +0200
-From: Andrew Lunn <andrew@lunn.ch>
-To: Nicolas Ferre <nicolas.ferre@microchip.com>
-Subject: Re: [PATCH] net: macb: remove redundant struct phy_device declaration
-Message-ID: <20190503122910.GB1941@lunn.ch>
-References: <20190503103628.17160-1-nicolas.ferre@microchip.com>
+ id 1hMXR7-0007Zg-Az
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 12:37:11 +0000
+Received: by mail-vs1-f65.google.com with SMTP id b74so3456722vsd.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 03 May 2019 05:37:08 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=jDCEaUKwzXmAEfj30fOgoVtiP8zX20N3JlYslFBSUKs=;
+ b=Cy61rXzv8HCjiJWjYlOzjPRXe0KFsnQjIJJGyOioKbssu8LWmvKRC9xQmqn0Xf74uy
+ 6TfUsHLvIH2hcky0nCuvWbh4OI9QwcJA2/Oj+8PoCZsdtARI8YyNOYDyfqvUPlBrWYpT
+ ZJXbZXzx6kKccnwCVSKFsX1f7tTk0yWwQm3FAfdzlp9QBXOlLg2xa30tBoFKUnpez1z8
+ QlyMz8QNgyCYeUMljiDh57J1KteAj4SX9mHI6QxwvMVf6awtcKsWlzdYxLuzQI+WWAy8
+ BHVtqdEwTv8Mrwn+FaacgTxR1n/1s8Ld25BLvfYbB+/piYEpEtSHX7opkZaqF4bO/yaV
+ ZF3A==
+X-Gm-Message-State: APjAAAXQJHlzfb5uYhbeg/YblFn1IStfca6tIyGfQRbecKSNUHEDktWl
+ fKT5MBdRT6yomBiyNOuh1S2bNR+YWYdVTSvRA64=
+X-Google-Smtp-Source: APXvYqxZ8ehBgdn2BB6Bd6C/MNFHr+UaTZDJZf7alyfEwt7exeQ8PhOBcwpgZYVJqiE6wI0Vtja3AjgibQWul/g0lKU=
+X-Received: by 2002:a67:ba07:: with SMTP id l7mr5107913vsn.11.1556887027407;
+ Fri, 03 May 2019 05:37:07 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190503103628.17160-1-nicolas.ferre@microchip.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+References: <20190502140634.4529-1-marek.vasut@gmail.com>
+In-Reply-To: <20190502140634.4529-1-marek.vasut@gmail.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Fri, 3 May 2019 14:36:55 +0200
+Message-ID: <CAMuHMdVGAq1XgSohBjc8i4c_o-N-yWGedS_LLS_Apr4Bx10xGQ@mail.gmail.com>
+Subject: Re: [PATCH] ARM: dts: r8a779x: Configure PMIC IRQ pinmux
+To: Marek Vasut <marek.vasut@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_052919_535690_38F40E06 
-X-CRM114-Status: UNSURE (   7.81  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190503_053709_375701_DC82C15F 
+X-CRM114-Status: GOOD (  14.62  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [185.16.172.187 listed in list.dnswl.org]
+ no trust [209.85.217.65 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.217.65 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -76,27 +80,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, michal.simek@xilinx.com,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- "David S. Miller" <davem@davemloft.net>, harini.katakam@xilinx.com,
- Claudiu Beznea <claudiu.beznea@microchip.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Simon Horman <horms+renesas@verge.net.au>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 03, 2019 at 12:36:28PM +0200, Nicolas Ferre wrote:
-> While moving the chunk of code during 739de9a1563a
-> ("net: macb: Reorganize macb_mii bringup"), the declaration of
-> struct phy_device declaration was kept. It's not useful in this
-> function as we alrady have a phydev pointer.
-> 
-> Signed-off-by: Nicolas Ferre <nicolas.ferre@microchip.com>
+Hi Marek,
 
-Reviewed-by: Andrew Lunn <andrew@lunn.ch>
+On Thu, May 2, 2019 at 4:06 PM <marek.vasut@gmail.com> wrote:
+> From: Marek Vasut <marek.vasut+renesas@gmail.com>
+>
+> The PMIC IRQ line pin multiplexing configuration is missing from the DTs.
+> Since the line is configured correctly by default, the system works fine.
+> However, add the IRQ line pin multiplexing configuration for completeness.
+>
+> Signed-off-by: Marek Vasut <marek.vasut+renesas@gmail.com>
 
-    Andrew
+Thanks for your patch!
+
+> --- a/arch/arm/boot/dts/r8a7790-lager.dts
+> +++ b/arch/arm/boot/dts/r8a7790-lager.dts
+> @@ -423,6 +423,8 @@
+>          */
+>         i2cpwr: i2c-13 {
+>                 compatible = "i2c-demux-pinctrl";
+> +               pinctrl-names = "default";
+> +               pinctrl-0 = <&pmic_irq_pins>;
+>                 i2c-parent = <&iic3>, <&i2c3>;
+>                 i2c-bus-name = "i2c-pwr";
+>                 #address-cells = <1>;
+> @@ -615,6 +617,11 @@
+>                 function = "iic3";
+>         };
+>
+> +       pmic_irq_pins: pmicirq {
+> +               groups = "intc_irq2";
+> +               function = "intc";
+> +       };
+
+Please insert according to alphabetical sort order.
+Oh, we don't have the R-Car Gen2 entries sorted yet. Nevermind...
+
+> --- a/arch/arm/boot/dts/r8a7792-blanche.dts
+> +++ b/arch/arm/boot/dts/r8a7792-blanche.dts
+> @@ -234,6 +234,11 @@
+>                 groups = "du1_rgb666", "du1_sync", "du1_disp";
+>                 function = "du1";
+>         };
+> +
+> +       pmic_irq_pins: pmicirq {
+> +               groups = "intc_irq2";
+> +               function = "intc";
+> +       };
+>  };
+>
+>  &rwdt {
+> @@ -309,6 +314,8 @@
+>  };
+>
+>  &iic3 {
+> +       pinctrl-names = "default";
+> +       pinctrl-0 = <&pmic_irq_pins>;
+
+Given Blanche has a single device connected to irq2, I think it makes
+sense to move the pinctrl properties to the pmic node below.
+
+With that fixed:
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
