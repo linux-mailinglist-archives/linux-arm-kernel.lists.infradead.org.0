@@ -2,73 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A36B91288F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 09:16:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1F3D128BF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  3 May 2019 09:28:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mU6d+2w6mXMOfVGCWsTjmjEljVtBbR1TGftd6U64JpU=; b=JOGbm9MHq/ZFxG
-	AfwQMYuQiprWxn5b1su2QD8orHBqL47k7ZTACiLVQqLZ5BFQ29RfpcRn7+1pkdQEplEH/mYGmwuJZ
-	NADPkJDqQ+sZyo2gltZcenYJtytzBfLIBktgj3R0p2KUuQ84B+buAKOi/x3rLYmD5l2Pgm+rAdnPG
-	0tKU038CmfCbkRrVZmMCw6QE9gUvkm/S918KhRMw0rT5xuzoEBdFrwAg5HEs+C2TO8lMVYq0759RG
-	nKxdBKRuQ0B2nOE5vAJhnzruWSEb+NzW/nbogs0E0fwEgRHOo4I+zU7UEtqdqF9h5kKsoFtB9Ymbp
-	5H8DXRGYTLdiDyBVARJg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=L0qLJTjqenLvBPuJxDYKks4MtBhlY4cS4RAo134V0YQ=; b=LfU
+	wBn9jExMxgrfYEwOc0/pvtkNQEP+2UofU5gJlZ7SLGmdP2F8zkgCnOuAu9SXX0yoh0DOvfJG7K0cA
+	DD6pf/7ZYaTPLxSO9BmYf+i7t784lPPwspClvIeLH5uHl8pGU4onWM8Md9MPRZxhKkM6sFiWM7hDN
+	yUmuuS7Tjyku9DBVSoEviq2vObPAfFrE7mNCkp6qeGviJsEnJvmY+xrpDt6530En6eP+iaKVax+c/
+	D9rzEzq8IP6a6NOB/qRyxGPv8wIacrfWMNWEloGzuvZ2MNFxHeQ5lKrymO6kjoY8gvEjlKjzY8mVk
+	P+WY9/7mZqg/zltcAjYFyoeAM7w57lQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMSR6-0002P8-9m; Fri, 03 May 2019 07:16:48 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1hMScP-0006K8-4q; Fri, 03 May 2019 07:28:29 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMSR0-0002OR-2u
- for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 07:16:43 +0000
-Received: by mail-qt1-x844.google.com with SMTP id e2so3987755qtb.4
+ id 1hMScH-0006Je-AS
+ for linux-arm-kernel@lists.infradead.org; Fri, 03 May 2019 07:28:22 +0000
+Received: by mail-pf1-x442.google.com with SMTP id e67so2456525pfe.10
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 03 May 2019 00:16:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=KlnuPNTSqAOsReFStbtqUTb18X37z9g45qyDj7kddRA=;
- b=hEJ22Rh6lnEcmSMaMMuUlZdfXJ7KCYTX3AM2srreiE8Sf6OAnRXfVnZRnjcSn4jHPY
- 3p24HRD5HVSh44RxdFmCpqu/1sYnULlRTl0XRo2uF6K5RVegrPF0550505OwkW0+qT+m
- 5FmONnZuEwLBqfg9dGyH0yJSkdmST31cbhVaE=
+ Fri, 03 May 2019 00:28:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=xG3BXzoSNSy7tAxX5sR0WHhb5RCNXLJmoOdev9tDivc=;
+ b=pUDYAZth1/cN7IFBdUvzoPxGI7x2IfzE1oP4oWYaHFPAgsXF/UEur45b310L3vBqnA
+ qbaTAce2XBZqHM8z7Vx+3Ej0UGZxnllvyiua0VvQJ5c9eyV3NurumZFJ6EIIaOtQCHuf
+ 1ttWNOkwk1OATCzTt2tHIAdWr33QR05MIjiEQ3DAFlbdyFUyGC5ln0N2JiEPclqTIdm3
+ hSgkY+B4edwSmhQM4E4/63tRN+YPkchz1k63n1Xwe0dIEh3m/zxhCHWlC3mmLll5Z9vG
+ tRZhLnT0El0UuGckeZBJx1O1k5RO4A5z1CSjJVLrwR/bmHZuQnRWCbgSLNFS+my+4tUV
+ 6KMQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=KlnuPNTSqAOsReFStbtqUTb18X37z9g45qyDj7kddRA=;
- b=HIecjhu5SghRZ5wZ6M5IP2PfIW22v6KkiGk+vt7ujgNXm8Tm1tSeP4hwANrlA3xnTT
- CS+j7Cv4rZN+aaMfIw6q73al4jpJqgM9cxE0gJ1RzjLzvmfoLi0aES1Fr9bfn8Dw0kit
- slorPCI5wQ54LIrq62Apo78hGR1Z2Y6QDIoxPaChouLs5AXZktuT+PGSA+nK3z8xSP5s
- ackLoZVoFzMFsyoXQlS7Fn48diA748/+JbFd+t5lTEJEg3LkKq3ynSBeQVTp/Q+HNJFB
- xGcb84pInXTKLdfpY/Cl6GpoEUxWNJHqOC0XCnL1Np3mMNVxu0N4R/t8QMc9Cnbp7wD0
- baGg==
-X-Gm-Message-State: APjAAAVNjKNiZOC4hj6FFQmtoSEDhqNehNBzsDLvE+Eav9PeLXE79TKs
- 2IF/7mt2N1CA21/zMRjSt0opiWddmyO5R+wbf3+VOQ==
-X-Google-Smtp-Source: APXvYqwhRV3TvOuByNuwZ+DDBwx1hJ5Ye6qvgO/XvXATKgGv9cIvbe0igodjrM3jyeRk2df7QWBovKlHBg7m9FObZ4Q=
-X-Received: by 2002:ad4:534b:: with SMTP id v11mr6824906qvs.31.1556867800383; 
- Fri, 03 May 2019 00:16:40 -0700 (PDT)
-MIME-Version: 1.0
-References: <1556793795-25204-1-git-send-email-michael.kao@mediatek.com>
- <1556793795-25204-3-git-send-email-michael.kao@mediatek.com>
-In-Reply-To: <1556793795-25204-3-git-send-email-michael.kao@mediatek.com>
-From: Hsin-Yi Wang <hsinyi@chromium.org>
-Date: Fri, 3 May 2019 15:16:29 +0800
-Message-ID: <CAJMQK-jujDXt18M8610G4GpHdrikTD0ZZG_=C2YTt63UfxuHuQ@mail.gmail.com>
-Subject: Re: [PATCH 2/8] arm64: dts: mt8183: add/update dynamic power
- coefficients
-To: "michael.kao" <michael.kao@mediatek.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=xG3BXzoSNSy7tAxX5sR0WHhb5RCNXLJmoOdev9tDivc=;
+ b=taD69rAXbo36TDwtwylMR0/1HSzJ3gfiOVhr71s/xsGpV9slGIdOK5lS33i9QAEJHR
+ OhRAFeSJQGC8YzPUDcSlZk+xf6FYZakvbFpl6Y8kbcPqmFbjkzkaIrEiA21ThS8sPs6m
+ NweqaL3o5anRHIUMdzDjW1ExbMPTQDElvFWwCHRYgLdGoZ5Dg0gS5LHw2gK7psFwrui/
+ ix2JVbmsysI09vDdiKRdvGjXHnB90Kotc1mBkwafR21VLT9i4RcQyINZDuWucvXlbOdg
+ OrXZla9LO4fSTNPy/5G3zx/FcIHhPe3G1QwXTeFykrPJrtm20hUGukrz25TmHiuJDIsn
+ 5KWA==
+X-Gm-Message-State: APjAAAU1mbwBTicAagMeBZAx6G+wUudBnw8u3AXoOU9UrAq74DUhSBrL
+ +OhLpsBl0DcSIOR4TJvqEWA=
+X-Google-Smtp-Source: APXvYqwkix/U4Pl8qw1a/oiCfdrTNq3/mjtlSb174nAEyztOcuN7A4BP+EWtep/RCQWpK8mbpBmvDg==
+X-Received: by 2002:a62:5ec4:: with SMTP id s187mr4998560pfb.185.1556868499995; 
+ Fri, 03 May 2019 00:28:19 -0700 (PDT)
+Received: from localhost (68.168.130.77.16clouds.com. [68.168.130.77])
+ by smtp.gmail.com with ESMTPSA id g10sm2944183pfg.153.2019.05.03.00.28.18
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 03 May 2019 00:28:19 -0700 (PDT)
+From: Yangtao Li <tiny.windzz@gmail.com>
+To: lee.jones@linaro.org, robh+dt@kernel.org, mark.rutland@arm.com,
+ maxime.ripard@bootlin.com, wens@csie.org, jic23@kernel.org,
+ knaack.h@gmx.de, lars@metafoo.de, pmeerw@pmeerw.net
+Subject: [PATCH 0/7] Add support for H6 thermal sensor
+Date: Fri,  3 May 2019 03:28:06 -0400
+Message-Id: <20190503072813.2719-1-tiny.windzz@gmail.com>
+X-Mailer: git-send-email 2.17.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_001642_149411_5BF9F9DF 
-X-CRM114-Status: GOOD (  12.25  )
+X-CRM114-CacheID: sfid-20190503_002821_361169_1AE329D6 
+X-CRM114-Status: UNSURE (   9.34  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (tiny.windzz[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -77,7 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -89,108 +95,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, jamesjj.liao@mediatek.com,
- devicetree@vger.kernel.org, louis.yu@mediatek.com, dawei.chien@mediatek.com,
- linux-pm@vger.kernel.org, Daniel Lezcano <daniel.lezcano@linaro.org>,
- roger.lu@mediatek.com, linux-kernel@vger.kernel.org,
- Eduardo Valentin <edubezval@gmail.com>, fan.chen@mediatek.com,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>, Zhang Rui <rui.zhang@intel.com>,
+Cc: linux-iio@vger.kernel.org, devicetree@vger.kernel.org,
+ Yangtao Li <tiny.windzz@gmail.com>, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 2, 2019 at 10:43 AM michael.kao <michael.kao@mediatek.com> wrote:
->
-> Add dynamic power coefficients for all cores and update those of
-> CPU0 and CPU4.
->
-> Signed-off-by: Michael.Kao <michael.kao@mediatek.com>
-> ---
->  arch/arm64/boot/dts/mediatek/mt8183.dtsi | 16 ++++++++++++++++
->  1 file changed, 16 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> index b92116f..5668fb8 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> +++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> @@ -58,6 +58,8 @@
->                         compatible = "arm,cortex-a53";
->                         reg = <0x000>;
->                         enable-method = "psci";
-> +                       dynamic-power-coefficient = <84>;
-> +                       #cooling-cells = <2>;
-Should this line be in [3/8] arm64: dts: mt8183: Add #cooling-cells to
-CPU nodes?
+This patchset adds support for the H6 ths sensor.
 
->                 };
->
->                 cpu1: cpu@1 {
-> @@ -65,6 +67,8 @@
->                         compatible = "arm,cortex-a53";
->                         reg = <0x001>;
->                         enable-method = "psci";
-> +                       dynamic-power-coefficient = <84>;
-> +                       #cooling-cells = <2>;
->                 };
->
->                 cpu2: cpu@2 {
-> @@ -72,6 +76,8 @@
->                         compatible = "arm,cortex-a53";
->                         reg = <0x002>;
->                         enable-method = "psci";
-> +                       dynamic-power-coefficient = <84>;
-> +                       #cooling-cells = <2>;
->                 };
->
->                 cpu3: cpu@3 {
-> @@ -79,6 +85,8 @@
->                         compatible = "arm,cortex-a53";
->                         reg = <0x003>;
->                         enable-method = "psci";
-> +                       dynamic-power-coefficient = <84>;
-> +                       #cooling-cells = <2>;
->                 };
->
->                 cpu4: cpu@100 {
-> @@ -86,6 +94,8 @@
->                         compatible = "arm,cortex-a73";
->                         reg = <0x100>;
->                         enable-method = "psci";
-> +                       dynamic-power-coefficient = <211>;
-> +                       #cooling-cells = <2>;
->                 };
->
->                 cpu5: cpu@101 {
-> @@ -93,6 +103,8 @@
->                         compatible = "arm,cortex-a73";
->                         reg = <0x101>;
->                         enable-method = "psci";
-> +                       dynamic-power-coefficient = <211>;
-> +                       #cooling-cells = <2>;
->                 };
->
->                 cpu6: cpu@102 {
-> @@ -100,6 +112,8 @@
->                         compatible = "arm,cortex-a73";
->                         reg = <0x102>;
->                         enable-method = "psci";
-> +                       dynamic-power-coefficient = <211>;
-> +                       #cooling-cells = <2>;
->                 };
->
->                 cpu7: cpu@103 {
-> @@ -107,6 +121,8 @@
->                         compatible = "arm,cortex-a73";
->                         reg = <0x103>;
->                         enable-method = "psci";
-> +                       dynamic-power-coefficient = <211>;
-> +                       #cooling-cells = <2>;
->                 };
->         };
->
+Based on IIO-based thermal sensor driver for Allwinner H3 and A83T SoC,
+thx to Philipp Rossak's work.
+
+TODO: calibrate thermal sensor by using information from sid.
+
+Yangtao Li (7):
+  iio: adc: sun4i-gpadc: rework for support multiple thermal sensor
+  iio: adc: sun4i-gpadc: introduce temp_data in gpadc_data
+  iio: adc: sun4i-gpadc: introduce gpadc_enable and gpadc_disable in
+    gpadc_data
+  iio: adc: sun4i-gpadc-iio: support clocks and reset
+  dt-bindings: mfd: Add H6 GPADC binding
+  iio: adc: sun4i-gpadc-iio: add support for H6 thermal sensor
+  iio: adc: sun4i-gpadc-iio convert to SPDX license tags
+
+ .../devicetree/bindings/mfd/sun4i-gpadc.txt   |  27 ++-
+ drivers/iio/adc/sun4i-gpadc-iio.c             | 208 +++++++++++++++---
+ include/linux/mfd/sun4i-gpadc.h               |   9 +
+ 3 files changed, 213 insertions(+), 31 deletions(-)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
