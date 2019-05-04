@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B75B13A39
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 May 2019 15:25:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0B6513A57
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 May 2019 15:26:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=B4FxiBNmiZ3av1jMWiWPKsKe+pKsqnExm/qDogFSyu4=; b=K4TUsKZ4sr/HruGdmBW2spmPqx
-	CJ1S/Q63Z+HMQrLUJKKjNOzXZ/vzQq0H1b5q1jyUYMJBXHCs4kYMGvEuySoVDyhQ9GhZVftfSfqqG
-	pi3g9nKslpB6qZ0doxcFO4k+z+2J9EBLaZrJOMClDA7gi1BpgrWEb8DisE98/hVtmmFiB8hkw+zVw
-	4LlbgTGzDeXL/cYzUBnlg/cs7mHIywSwmUbXaCyePnga1lR77KLmue9kRxEyflI+Q3K5c3VyQJZJD
-	voj/JDpeCHXzC3b6bGRS/mJTco/LQCAb/SeTh1DQhejux3SboVJpwHmE6lMHfO+yFOjXI0ArTgw88
-	K1gf5/KA==;
+	bh=hlp+4NGUzHXK1GwSWnxa2xFqnQ/30WmJnnHrtVtd+F0=; b=FSadZRbPmY7LQoKAg7dsVYFU41
+	WqhkO/dWJpRALUdC/PbMfr6oW/7H8EV4L94TeJkaonhv6VJV+3HD38PDPFgfBwMi4fr6kApXqC7Fu
+	ZRIFo2R3v0W4v/13QFKvyBUbBahhUBE40PcdjCD+OCYBCDIV16sLSmqsQP2rRisLCrP5ieV5Dx4M1
+	rmEjzm48TPJ1ZVzTEe5Bz4Ja988ppediHFaHpDLyhDS3lo+0KjDvA64RxGUczKB0AS3oVDKAA1ODC
+	1quWiGtHS8/rM71Ir+zPn53InSh6F71vuYfrDaXT8AUBCHwvNH0/yptAzMNO42lYknqgfrEtS2YKS
+	9iYy0W+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMufd-0006eJ-MI; Sat, 04 May 2019 13:25:41 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1hMufz-0008Jt-Jb; Sat, 04 May 2019 13:26:03 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMueW-0005dA-E2
- for linux-arm-kernel@lists.infradead.org; Sat, 04 May 2019 13:24:43 +0000
-Received: by mail-ed1-x543.google.com with SMTP id w33so7118704edb.10
+ id 1hMueb-0005mW-FE
+ for linux-arm-kernel@lists.infradead.org; Sat, 04 May 2019 13:24:57 +0000
+Received: by mail-ed1-x544.google.com with SMTP id b8so9413431edm.11
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 04 May 2019 06:24:32 -0700 (PDT)
+ Sat, 04 May 2019 06:24:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=arista.com; s=googlenew;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Pb0FurG1gPallERUa4GtO9mxZ28AqtkU2mAXxV5NwXw=;
- b=W8f9FzvsVHhGxLFBguWeeZs+ubClbXwnb1xuM9tOkfL1yYUyX2simh1nO5w3OVm6Vn
- v5sn0WNvAF3uskflo6rHExNjsGbtgZGJy/D02rtnfVatfgyHhL/LvzV+aA9Q7P9DiSl3
- mMO77SpCuHiaXpRzF/a6zNT5gRWMU+q61suKesL9n+3j3/TOF1jdh4GNvcBHlmBHVJEp
- SE2Yui5ftEFWzpaOfxenjEY3KCXsWWHH8YaEQeyN6X4Zg+t/A6GFrsCTqRe6XzzYn1Tj
- bgFziDpik4zAyOzj3GZ4i2BEbcjQO7MrJR6c6se5sYhMF1j2ryHMeSg+Pqv7gwrC9D7R
- Ba4w==
+ bh=sb2VTb4udp+6GTieqmLKKDw9TvPkS7RxQiDXi2VcIW4=;
+ b=SnT8zaBJiObAYRFxhwtf+f/3VQmGBoZAW3SXxdaI8INxvtillslvLUr45ZRXKZzPye
+ qeBxqU9FVyVNPgCPbMbG1fDhERaiF0fSUX6TDQM2R3HzISi8EMKjlAXnxyZ73TxUcY46
+ sNEtcpHMUApJ4Hw0ZrFVtwjXDIHFzKSH8Gqkla9Iv2OH2IzuyEEX1kVTrdxUD6zAjcJl
+ 3XnaLQ+5cp9HGMd6Yu1uCVl74tiR6UUkfedEmmX7pcpQdb+6ccONauEWazSnRzGVcVbH
+ pif5JdcAsR8S1i+fbqrcR2pQNVGPw8Xip/4LsTN4STVK4Fskhy7IG3cVdw1ociHZeUWj
+ JJeQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=Pb0FurG1gPallERUa4GtO9mxZ28AqtkU2mAXxV5NwXw=;
- b=nycHbAFoQa4qNMmgtUj4JXb73J/JePX0GJE7i4I76aITA3gQZxCdZNvi0FPlclouDV
- suHW3ZwVX5/ipzfR1EGUlM9Daq5jgqCFiXjE2v4j1Hine8at9yAofboh8GyvRjSMjx+x
- eyiiOMMf8gC36I/+oLX3BD/rOFZvU88h7aMZxGYNtSar2ioHVzvCNwnCphU5dT6TGkMT
- WXilT3KaNt1QOHxrEkm9ueRwWEvdBF/fgR5p3RE9wfwV66SE1/n4tQpQH2O/gzTLRa1s
- sthCkyc2yeYBU4mmFyDQsjINz4oOaZWrLYbYt6iBFnoih4U/+kKTAlqBNoqP6AYsP5ng
- kIDQ==
-X-Gm-Message-State: APjAAAUIEYZMcd5Dg/PbJpL6PIRq+UfVOdYabCW+1X3yaS6Zc0vFtPXR
- 32zAbaMxv8VMeeYjVXmJwi4CWA==
-X-Google-Smtp-Source: APXvYqwLofPa/Ot8PBnBqSJONpdwchx14qZlLoKPK2dNR5dn5+G7//+sHPRbUzyJrnQyhD48s52O/Q==
-X-Received: by 2002:a17:906:ad85:: with SMTP id
- la5mr10674324ejb.294.1556976270719; 
- Sat, 04 May 2019 06:24:30 -0700 (PDT)
+ bh=sb2VTb4udp+6GTieqmLKKDw9TvPkS7RxQiDXi2VcIW4=;
+ b=gERqgooHAY0Iv6vvFJdPf1uwN9DLV11jd1upSU0bwMGgASvnSBP1w15E9SeeUQPtws
+ EccdOmgpVOldw/b4df+twZu6LbdQHawMT8rBtg61mWXAnHT97evAJgISk1kuUXSn56hL
+ h8xS5Tr3zDXN7CkWMwJTkBxKK58Ai5RJaBkqYPxSk5LAJMbzIViKOmfVATsLwc0EFuXc
+ 9OKR416KENVssYGOyhLnYeuBeKjkgY3okHGPYdm0K5jzEM6GcymHE3qt5O52J2boRtk4
+ ULoU8YL1rkjh/ILyHy55FoATd69fW40/IxosTcgMM6Fc8h6faEvplY1Ph8j8FKk48YEH
+ dwgQ==
+X-Gm-Message-State: APjAAAUYLNBwFS8EqVvNkbrp+Ph/Koke3jGPLvkV2e+76NX3FBGEgJXH
+ x0rNNsM5EjBLdI+9oYpeKeWmqg==
+X-Google-Smtp-Source: APXvYqwaSzRWqBEJqGRH69WRSRi1pj7zvXUKCrAKxtGUDVsuP7u9eej8NsqK5DROxcMotEQb7gEQ/Q==
+X-Received: by 2002:aa7:c387:: with SMTP id k7mr14732853edq.73.1556976275602; 
+ Sat, 04 May 2019 06:24:35 -0700 (PDT)
 Received: from localhost.localdomain ([79.97.203.116])
- by smtp.gmail.com with ESMTPSA id s53sm1391106edb.20.2019.05.04.06.24.29
+ by smtp.gmail.com with ESMTPSA id s53sm1391106edb.20.2019.05.04.06.24.33
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 04 May 2019 06:24:30 -0700 (PDT)
+ Sat, 04 May 2019 06:24:34 -0700 (PDT)
 From: Tom Murphy <tmurphy@arista.com>
 To: iommu@lists.linux-foundation.org
-Subject: [RFC 3/7] iommu: improve iommu iotlb flushing
-Date: Sat,  4 May 2019 14:23:19 +0100
-Message-Id: <20190504132327.27041-4-tmurphy@arista.com>
+Subject: [RFC 4/7] iommu/dma-iommu: Handle freelists in the dma-iommu api path
+Date: Sat,  4 May 2019 14:23:20 +0100
+Message-Id: <20190504132327.27041-5-tmurphy@arista.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190504132327.27041-1-tmurphy@arista.com>
 References: <20190504132327.27041-1-tmurphy@arista.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190504_062433_371428_C380B814 
-X-CRM114-Status: GOOD (  21.29  )
+X-CRM114-CacheID: sfid-20190504_062438_038697_83A959B4 
+X-CRM114-Status: GOOD (  20.69  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -119,472 +118,210 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a new iommu_ops::flush_iotlb_range function which allows us to flush
-the entire range of an iommu_unmap and implement it for the amd and
-intel iommu drivers.
-remove the iotlb_range_add because it isn't used anywhere.
+Currently the iova flush queue implementation in the dma-iommu api path
+doesn't handle freelists. Change the unmap_fast code to allow it to
+return any freelists which need to be handled.
 
 Signed-off-by: Tom Murphy <tmurphy@arista.com>
 ---
- drivers/iommu/amd_iommu.c       | 14 +++++----
- drivers/iommu/arm-smmu-v3.c     |  3 +-
- drivers/iommu/arm-smmu.c        |  2 +-
- drivers/iommu/exynos-iommu.c    |  3 +-
- drivers/iommu/intel-iommu.c     | 50 ++++++++++++++++++++-------------
- drivers/iommu/iommu.c           | 11 +++++---
- drivers/iommu/ipmmu-vmsa.c      |  2 +-
- drivers/iommu/msm_iommu.c       |  2 +-
- drivers/iommu/mtk_iommu.c       |  3 +-
- drivers/iommu/mtk_iommu_v1.c    |  3 +-
- drivers/iommu/omap-iommu.c      |  2 +-
- drivers/iommu/qcom_iommu.c      |  2 +-
- drivers/iommu/rockchip-iommu.c  |  2 +-
- drivers/iommu/s390-iommu.c      |  3 +-
- drivers/iommu/tegra-gart.c      |  2 +-
- drivers/iommu/tegra-smmu.c      |  2 +-
- drivers/vfio/vfio_iommu_type1.c |  1 -
- include/linux/iommu.h           | 21 ++++++++------
- 18 files changed, 77 insertions(+), 51 deletions(-)
+ drivers/iommu/dma-iommu.c       | 39 +++++++++++++++++++++++----------
+ drivers/iommu/iommu.c           | 10 +++++----
+ drivers/vfio/vfio_iommu_type1.c |  2 +-
+ include/linux/iommu.h           |  3 ++-
+ 4 files changed, 36 insertions(+), 18 deletions(-)
 
-diff --git a/drivers/iommu/amd_iommu.c b/drivers/iommu/amd_iommu.c
-index f7cdd2ab7f11..de98265b5f4e 100644
---- a/drivers/iommu/amd_iommu.c
-+++ b/drivers/iommu/amd_iommu.c
-@@ -3105,7 +3105,7 @@ static int amd_iommu_map(struct iommu_domain *dom, unsigned long iova,
- }
- 
- static size_t amd_iommu_unmap(struct iommu_domain *dom, unsigned long iova,
--			   size_t page_size)
-+			   size_t page_size, struct page **freelist)
- {
- 	struct protection_domain *domain = to_pdomain(dom);
- 	size_t unmap_size;
-@@ -3246,9 +3246,14 @@ static void amd_iommu_flush_iotlb_all(struct iommu_domain *domain)
- 	domain_flush_complete(dom);
- }
- 
--static void amd_iommu_iotlb_range_add(struct iommu_domain *domain,
--				      unsigned long iova, size_t size)
-+static void amd_iommu_flush_iotlb_range(struct iommu_domain *domain,
-+				      unsigned long iova, size_t size,
-+				      struct page *freelist)
- {
-+	struct protection_domain *dom = to_pdomain(domain);
-+
-+	domain_flush_pages(dom, iova, size);
-+	domain_flush_complete(dom);
- }
- 
- const struct iommu_ops amd_iommu_ops = {
-@@ -3269,8 +3274,7 @@ const struct iommu_ops amd_iommu_ops = {
- 	.is_attach_deferred = amd_iommu_is_attach_deferred,
- 	.pgsize_bitmap	= AMD_IOMMU_PGSIZES,
- 	.flush_iotlb_all = amd_iommu_flush_iotlb_all,
--	.iotlb_range_add = amd_iommu_iotlb_range_add,
--	.iotlb_sync = amd_iommu_flush_iotlb_all,
-+	.flush_iotlb_range = amd_iommu_flush_iotlb_range,
+diff --git a/drivers/iommu/dma-iommu.c b/drivers/iommu/dma-iommu.c
+index fa5713a4f6f8..82ba500886b4 100644
+--- a/drivers/iommu/dma-iommu.c
++++ b/drivers/iommu/dma-iommu.c
+@@ -49,6 +49,18 @@ struct iommu_dma_cookie {
+ 	struct iommu_domain		*fq_domain;
  };
  
- /*****************************************************************************
-diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index d3880010c6cf..2d24185614b9 100644
---- a/drivers/iommu/arm-smmu-v3.c
-+++ b/drivers/iommu/arm-smmu-v3.c
-@@ -1788,7 +1788,8 @@ static int arm_smmu_map(struct iommu_domain *domain, unsigned long iova,
- }
- 
- static size_t
--arm_smmu_unmap(struct iommu_domain *domain, unsigned long iova, size_t size)
-+arm_smmu_unmap(struct iommu_domain *domain, unsigned long iova, size_t size,
-+		struct page **freelist)
- {
- 	struct io_pgtable_ops *ops = to_smmu_domain(domain)->pgtbl_ops;
- 
-diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-index 045d93884164..80bcd4d3197a 100644
---- a/drivers/iommu/arm-smmu.c
-+++ b/drivers/iommu/arm-smmu.c
-@@ -1303,7 +1303,7 @@ static int arm_smmu_map(struct iommu_domain *domain, unsigned long iova,
- }
- 
- static size_t arm_smmu_unmap(struct iommu_domain *domain, unsigned long iova,
--			     size_t size)
-+			     size_t size, struct page **freelist)
- {
- 	struct io_pgtable_ops *ops = to_smmu_domain(domain)->pgtbl_ops;
- 	struct arm_smmu_device *smmu = to_smmu_domain(domain)->smmu;
-diff --git a/drivers/iommu/exynos-iommu.c b/drivers/iommu/exynos-iommu.c
-index 05c6bc099d62..5f858ca8a970 100644
---- a/drivers/iommu/exynos-iommu.c
-+++ b/drivers/iommu/exynos-iommu.c
-@@ -1133,7 +1133,8 @@ static void exynos_iommu_tlb_invalidate_entry(struct exynos_iommu_domain *domain
- }
- 
- static size_t exynos_iommu_unmap(struct iommu_domain *iommu_domain,
--				 unsigned long l_iova, size_t size)
-+				 unsigned long l_iova, size_t size,
-+				 struct page **freelist)
- {
- 	struct exynos_iommu_domain *domain = to_exynos_domain(iommu_domain);
- 	sysmmu_iova_t iova = (sysmmu_iova_t)l_iova;
-diff --git a/drivers/iommu/intel-iommu.c b/drivers/iommu/intel-iommu.c
-index 77895cd89f29..87622a28b854 100644
---- a/drivers/iommu/intel-iommu.c
-+++ b/drivers/iommu/intel-iommu.c
-@@ -1146,17 +1146,17 @@ static struct page *dma_pte_clear_level(struct dmar_domain *domain, int level,
-    pages can only be freed after the IOTLB flush has been done. */
- static struct page *domain_unmap(struct dmar_domain *domain,
- 				 unsigned long start_pfn,
--				 unsigned long last_pfn)
-+				 unsigned long last_pfn,
-+				 struct page *freelist)
- {
--	struct page *freelist;
--
- 	BUG_ON(!domain_pfn_supported(domain, start_pfn));
- 	BUG_ON(!domain_pfn_supported(domain, last_pfn));
- 	BUG_ON(start_pfn > last_pfn);
- 
- 	/* we don't need lock here; nobody else touches the iova range */
- 	freelist = dma_pte_clear_level(domain, agaw_to_level(domain->agaw),
--				       domain->pgd, 0, start_pfn, last_pfn, NULL);
-+				       domain->pgd, 0, start_pfn, last_pfn,
-+				       freelist);
- 
- 	/* free pgd */
- 	if (start_pfn == 0 && last_pfn == DOMAIN_MAX_PFN(domain->gaw)) {
-@@ -1873,7 +1873,7 @@ static void domain_exit(struct dmar_domain *domain)
- 	if (domain->domain.type == IOMMU_DOMAIN_DMA)
- 		put_iova_domain(&domain->iovad);
- 
--	freelist = domain_unmap(domain, 0, DOMAIN_MAX_PFN(domain->gaw));
-+	freelist = domain_unmap(domain, 0, DOMAIN_MAX_PFN(domain->gaw), NULL);
- 
- 	dma_free_pagelist(freelist);
- 
-@@ -3340,7 +3340,7 @@ static void intel_unmap(struct device *dev, dma_addr_t dev_addr, size_t size)
- 
- 	dev_dbg(dev, "Device unmapping: pfn %lx-%lx\n", start_pfn, last_pfn);
- 
--	freelist = domain_unmap(domain, start_pfn, last_pfn);
-+	freelist = domain_unmap(domain, start_pfn, last_pfn, NULL);
- 
- 	if (intel_iommu_strict) {
- 		iommu_flush_iotlb_psi(iommu, domain, start_pfn,
-@@ -4190,7 +4190,7 @@ static int intel_iommu_memory_notifier(struct notifier_block *nb,
- 			struct page *freelist;
- 
- 			freelist = domain_unmap(si_domain, start_vpfn,
--					last_vpfn);
-+					last_vpfn, NULL);
- 
- 			rcu_read_lock();
- 			for_each_active_iommu(iommu, drhd)
-@@ -4780,13 +4780,12 @@ static int intel_iommu_map(struct iommu_domain *domain,
- }
- 
- static size_t intel_iommu_unmap(struct iommu_domain *domain,
--				unsigned long iova, size_t size)
-+				unsigned long iova, size_t size,
-+				struct page **freelist)
- {
- 	struct dmar_domain *dmar_domain = to_dmar_domain(domain);
--	struct page *freelist = NULL;
- 	unsigned long start_pfn, last_pfn;
--	unsigned int npages;
--	int iommu_id, level = 0;
-+	int level = 0;
- 
- 	/* Cope with horrid API which requires us to unmap more than the
- 	   size argument if it happens to be a large-page mapping. */
-@@ -4798,20 +4797,32 @@ static size_t intel_iommu_unmap(struct iommu_domain *domain,
- 	start_pfn = iova >> VTD_PAGE_SHIFT;
- 	last_pfn = (iova + size - 1) >> VTD_PAGE_SHIFT;
- 
--	freelist = domain_unmap(dmar_domain, start_pfn, last_pfn);
-+	*freelist = domain_unmap(dmar_domain, start_pfn, last_pfn, *freelist);
-+	if (dmar_domain->max_addr == iova + size)
-+		dmar_domain->max_addr = iova;
++static void iommu_dma_entry_dtor(unsigned long data)
++{
++	struct page *freelist = (struct page *)data;
 +
-+	return size;
++	while (freelist != NULL) {
++		unsigned long p = (unsigned long)page_address(freelist);
++
++		freelist = freelist->freelist;
++		free_page(p);
++	}
 +}
 +
-+static void intel_iommu_flush_iotlb_range(struct iommu_domain *domain,
-+					unsigned long iova, size_t size,
-+					struct page *freelist)
-+{
-+	struct dmar_domain *dmar_domain = to_dmar_domain(domain);
-+	unsigned long start_pfn, last_pfn;
-+	unsigned long iova_pfn = IOVA_PFN(iova);
-+	unsigned long nrpages;
-+	int iommu_id;
+ static inline size_t cookie_msi_granule(struct iommu_dma_cookie *cookie)
+ {
+ 	if (cookie->type == IOMMU_DMA_IOVA_COOKIE)
+@@ -313,7 +325,8 @@ static int iommu_dma_init_domain(struct iommu_domain *domain, dma_addr_t base,
+ 	if (!cookie->fq_domain && !iommu_domain_get_attr(domain,
+ 			DOMAIN_ATTR_DMA_USE_FLUSH_QUEUE, &attr) && attr) {
+ 		cookie->fq_domain = domain;
+-		init_iova_flush_queue(iovad, iommu_dma_flush_iotlb_all, NULL);
++		init_iova_flush_queue(iovad, iommu_dma_flush_iotlb_all,
++				iommu_dma_entry_dtor);
+ 	}
  
--	npages = last_pfn - start_pfn + 1;
-+	nrpages = aligned_nrpages(iova, size);
-+	start_pfn = mm_to_dma_pfn(iova_pfn);
-+	last_pfn = start_pfn + nrpages - 1;
- 
- 	for_each_domain_iommu(iommu_id, dmar_domain)
- 		iommu_flush_iotlb_psi(g_iommus[iommu_id], dmar_domain,
--				      start_pfn, npages, !freelist, 0);
-+				start_pfn, nrpages, !freelist, 0);
- 
- 	dma_free_pagelist(freelist);
--
--	if (dmar_domain->max_addr == iova + size)
--		dmar_domain->max_addr = iova;
--
--	return size;
+ 	if (!dev)
+@@ -393,7 +406,7 @@ static dma_addr_t iommu_dma_alloc_iova(struct iommu_domain *domain,
  }
  
- static phys_addr_t intel_iommu_iova_to_phys(struct iommu_domain *domain,
-@@ -5039,6 +5050,7 @@ const struct iommu_ops intel_iommu_ops = {
- 	.detach_dev		= intel_iommu_detach_device,
- 	.map			= intel_iommu_map,
- 	.unmap			= intel_iommu_unmap,
-+	.flush_iotlb_range	= intel_iommu_flush_iotlb_range,
- 	.iova_to_phys		= intel_iommu_iova_to_phys,
- 	.add_device		= intel_iommu_add_device,
- 	.remove_device		= intel_iommu_remove_device,
+ static void iommu_dma_free_iova(struct iommu_dma_cookie *cookie,
+-		dma_addr_t iova, size_t size)
++		dma_addr_t iova, size_t size, struct page *freelist)
+ {
+ 	struct iova_domain *iovad = &cookie->iovad;
+ 
+@@ -402,7 +415,8 @@ static void iommu_dma_free_iova(struct iommu_dma_cookie *cookie,
+ 		cookie->msi_iova -= size;
+ 	else if (cookie->fq_domain)	/* non-strict mode */
+ 		queue_iova(iovad, iova_pfn(iovad, iova),
+-				size >> iova_shift(iovad), 0);
++				size >> iova_shift(iovad),
++				(unsigned long) freelist);
+ 	else
+ 		free_iova_fast(iovad, iova_pfn(iovad, iova),
+ 				size >> iova_shift(iovad));
+@@ -414,14 +428,15 @@ static void __iommu_dma_unmap(struct iommu_domain *domain, dma_addr_t dma_addr,
+ 	struct iommu_dma_cookie *cookie = domain->iova_cookie;
+ 	struct iova_domain *iovad = &cookie->iovad;
+ 	size_t iova_off = iova_offset(iovad, dma_addr);
++	struct page *freelist;
+ 
+ 	dma_addr -= iova_off;
+ 	size = iova_align(iovad, size + iova_off);
+ 
+-	WARN_ON(iommu_unmap_fast(domain, dma_addr, size) != size);
++	WARN_ON(iommu_unmap_fast(domain, dma_addr, size, &freelist) != size);
+ 	if (!cookie->fq_domain)
+-		iommu_tlb_sync(domain);
+-	iommu_dma_free_iova(cookie, dma_addr, size);
++		iommu_flush_iotlb_range(domain, dma_addr, size, freelist);
++	iommu_dma_free_iova(cookie, dma_addr, size, freelist);
+ }
+ 
+ static dma_addr_t __iommu_dma_map(struct device *dev, phys_addr_t phys,
+@@ -441,7 +456,7 @@ static dma_addr_t __iommu_dma_map(struct device *dev, phys_addr_t phys,
+ 		return DMA_MAPPING_ERROR;
+ 
+ 	if (iommu_map(domain, iova, phys - iova_off, size, prot)) {
+-		iommu_dma_free_iova(cookie, iova, size);
++		iommu_dma_free_iova(cookie, iova, size, NULL);
+ 		return DMA_MAPPING_ERROR;
+ 	}
+ 	return iova + iova_off;
+@@ -600,7 +615,7 @@ static void *iommu_dma_alloc_remap(struct device *dev, size_t size,
+ 	struct iova_domain *iovad = &cookie->iovad;
+ 	bool coherent = dev_is_dma_coherent(dev);
+ 	int ioprot = dma_info_to_prot(DMA_BIDIRECTIONAL, coherent, attrs);
+-	pgprot_t prot = arch_dma_mmap_pgprot(dev, PAGE_KERNEL, attrs);
++	pgprot_t prot = pgprot_noncached(PAGE_KERNEL);
+ 	unsigned int count, min_size, alloc_sizes = domain->pgsize_bitmap;
+ 	struct page **pages;
+ 	struct sg_table sgt;
+@@ -659,7 +674,7 @@ static void *iommu_dma_alloc_remap(struct device *dev, size_t size,
+ out_free_sg:
+ 	sg_free_table(&sgt);
+ out_free_iova:
+-	iommu_dma_free_iova(cookie, iova, size);
++	iommu_dma_free_iova(cookie, iova, size, NULL);
+ out_free_pages:
+ 	__iommu_dma_free_pages(pages, count);
+ 	return NULL;
+@@ -668,7 +683,7 @@ static void *iommu_dma_alloc_remap(struct device *dev, size_t size,
+ static void *iommu_dma_alloc_contiguous_remap(struct device *dev, size_t size,
+ 		dma_addr_t *dma_handle, gfp_t gfp, unsigned long attrs)
+ {
+-	pgprot_t prot = arch_dma_mmap_pgprot(dev, PAGE_KERNEL, attrs);
++	pgprot_t prot = pgprot_noncached(PAGE_KERNEL);
+ 	struct page *page;
+ 	void *addr;
+ 
+@@ -1009,7 +1024,7 @@ static int iommu_dma_map_sg(struct device *dev, struct scatterlist *sg,
+ 	return __finalise_sg(dev, sg, nents, iova);
+ 
+ out_free_iova:
+-	iommu_dma_free_iova(cookie, iova, iova_len);
++	iommu_dma_free_iova(cookie, iova, iova_len, NULL);
+ out_restore_sg:
+ 	__invalidate_sg(sg, nents);
+ 	return 0;
+@@ -1115,7 +1130,7 @@ static int iommu_dma_mmap(struct device *dev, struct vm_area_struct *vma,
+ 	unsigned long pfn;
+ 	int ret;
+ 
+-	vma->vm_page_prot = arch_dma_mmap_pgprot(dev, vma->vm_page_prot, attrs);
++	vma->vm_page_prot = pgprot_noncached(vma->vm_page_prot);
+ 
+ 	if (dma_mmap_from_dev_coherent(dev, vma, cpu_addr, size, &ret))
+ 		return ret;
 diff --git a/drivers/iommu/iommu.c b/drivers/iommu/iommu.c
-index 6353e13ae79f..23918e7a0094 100644
+index 23918e7a0094..c7a7d9adb753 100644
 --- a/drivers/iommu/iommu.c
 +++ b/drivers/iommu/iommu.c
-@@ -1658,6 +1658,7 @@ static size_t __iommu_unmap(struct iommu_domain *domain,
+@@ -1654,7 +1654,7 @@ EXPORT_SYMBOL_GPL(iommu_map);
+ 
+ static size_t __iommu_unmap(struct iommu_domain *domain,
+ 			    unsigned long iova, size_t size,
+-			    bool sync)
++			    bool sync, struct page **freelist)
  {
  	const struct iommu_ops *ops = domain->ops;
  	size_t unmapped_page, unmapped = 0;
-+	struct page *freelist_head = NULL;
- 	unsigned long orig_iova = iova;
- 	unsigned int min_pagesz;
+@@ -1710,6 +1710,8 @@ static size_t __iommu_unmap(struct iommu_domain *domain,
+ 	if (sync && ops->flush_iotlb_range)
+ 		ops->flush_iotlb_range(domain, orig_iova, unmapped,
+ 				freelist_head);
++	else if (freelist)
++		*freelist = freelist_head;
  
-@@ -1691,13 +1692,11 @@ static size_t __iommu_unmap(struct iommu_domain *domain,
- 	while (unmapped < size) {
- 		size_t pgsize = iommu_pgsize(domain, iova, size - unmapped);
- 
--		unmapped_page = ops->unmap(domain, iova, pgsize);
-+		unmapped_page = ops->unmap(domain, iova, pgsize,
-+				&freelist_head);
- 		if (!unmapped_page)
- 			break;
- 
--		if (sync && ops->iotlb_range_add)
--			ops->iotlb_range_add(domain, iova, pgsize);
--
- 		pr_debug("unmapped: iova 0x%lx size 0x%zx\n",
- 			 iova, unmapped_page);
- 
-@@ -1708,6 +1707,10 @@ static size_t __iommu_unmap(struct iommu_domain *domain,
- 	if (sync && ops->iotlb_sync)
- 		ops->iotlb_sync(domain);
- 
-+	if (sync && ops->flush_iotlb_range)
-+		ops->flush_iotlb_range(domain, orig_iova, unmapped,
-+				freelist_head);
-+
  	trace_unmap(orig_iova, size, unmapped);
  	return unmapped;
- }
-diff --git a/drivers/iommu/ipmmu-vmsa.c b/drivers/iommu/ipmmu-vmsa.c
-index 9a380c10655e..7c30d82a2f99 100644
---- a/drivers/iommu/ipmmu-vmsa.c
-+++ b/drivers/iommu/ipmmu-vmsa.c
-@@ -718,7 +718,7 @@ static int ipmmu_map(struct iommu_domain *io_domain, unsigned long iova,
- }
- 
- static size_t ipmmu_unmap(struct iommu_domain *io_domain, unsigned long iova,
--			  size_t size)
-+			  size_t size, struct page **freelist)
+@@ -1718,14 +1720,14 @@ static size_t __iommu_unmap(struct iommu_domain *domain,
+ size_t iommu_unmap(struct iommu_domain *domain,
+ 		   unsigned long iova, size_t size)
  {
- 	struct ipmmu_vmsa_domain *domain = to_vmsa_domain(io_domain);
- 
-diff --git a/drivers/iommu/msm_iommu.c b/drivers/iommu/msm_iommu.c
-index 9fb0eb7a4d02..d5067af98602 100644
---- a/drivers/iommu/msm_iommu.c
-+++ b/drivers/iommu/msm_iommu.c
-@@ -522,7 +522,7 @@ static int msm_iommu_map(struct iommu_domain *domain, unsigned long iova,
+-	return __iommu_unmap(domain, iova, size, true);
++	return __iommu_unmap(domain, iova, size, true, NULL);
  }
+ EXPORT_SYMBOL_GPL(iommu_unmap);
  
- static size_t msm_iommu_unmap(struct iommu_domain *domain, unsigned long iova,
--			      size_t len)
-+			      size_t len, struct page **freelist)
+ size_t iommu_unmap_fast(struct iommu_domain *domain,
+-			unsigned long iova, size_t size)
++			unsigned long iova, size_t size, struct page **freelist)
  {
- 	struct msm_priv *priv = to_msm_priv(domain);
- 	unsigned long flags;
-diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-index de3e02277b70..18a08e77b24f 100644
---- a/drivers/iommu/mtk_iommu.c
-+++ b/drivers/iommu/mtk_iommu.c
-@@ -379,7 +379,8 @@ static int mtk_iommu_map(struct iommu_domain *domain, unsigned long iova,
+-	return __iommu_unmap(domain, iova, size, false);
++	return __iommu_unmap(domain, iova, size, false, freelist);
  }
+ EXPORT_SYMBOL_GPL(iommu_unmap_fast);
  
- static size_t mtk_iommu_unmap(struct iommu_domain *domain,
--			      unsigned long iova, size_t size)
-+			      unsigned long iova, size_t size,
-+			      struct page **freelist)
- {
- 	struct mtk_iommu_domain *dom = to_mtk_domain(domain);
- 	unsigned long flags;
-diff --git a/drivers/iommu/mtk_iommu_v1.c b/drivers/iommu/mtk_iommu_v1.c
-index 52b01e3a49df..79d7e35e06ee 100644
---- a/drivers/iommu/mtk_iommu_v1.c
-+++ b/drivers/iommu/mtk_iommu_v1.c
-@@ -332,7 +332,8 @@ static int mtk_iommu_map(struct iommu_domain *domain, unsigned long iova,
- }
- 
- static size_t mtk_iommu_unmap(struct iommu_domain *domain,
--			      unsigned long iova, size_t size)
-+			      unsigned long iova, size_t size,
-+			      struct page **freelist)
- {
- 	struct mtk_iommu_domain *dom = to_mtk_domain(domain);
- 	unsigned long flags;
-diff --git a/drivers/iommu/omap-iommu.c b/drivers/iommu/omap-iommu.c
-index d2fb347aa4ff..680a2ea76c60 100644
---- a/drivers/iommu/omap-iommu.c
-+++ b/drivers/iommu/omap-iommu.c
-@@ -1153,7 +1153,7 @@ static int omap_iommu_map(struct iommu_domain *domain, unsigned long da,
- }
- 
- static size_t omap_iommu_unmap(struct iommu_domain *domain, unsigned long da,
--			       size_t size)
-+			       size_t size, struct page **freelist)
- {
- 	struct omap_iommu_domain *omap_domain = to_omap_domain(domain);
- 	struct device *dev = omap_domain->dev;
-diff --git a/drivers/iommu/qcom_iommu.c b/drivers/iommu/qcom_iommu.c
-index 8cdd3f059513..0a4bcd604bdc 100644
---- a/drivers/iommu/qcom_iommu.c
-+++ b/drivers/iommu/qcom_iommu.c
-@@ -428,7 +428,7 @@ static int qcom_iommu_map(struct iommu_domain *domain, unsigned long iova,
- }
- 
- static size_t qcom_iommu_unmap(struct iommu_domain *domain, unsigned long iova,
--			       size_t size)
-+			       size_t size, struct page **freelist)
- {
- 	size_t ret;
- 	unsigned long flags;
-diff --git a/drivers/iommu/rockchip-iommu.c b/drivers/iommu/rockchip-iommu.c
-index 77d4bd93fe4b..7fce623a0ff6 100644
---- a/drivers/iommu/rockchip-iommu.c
-+++ b/drivers/iommu/rockchip-iommu.c
-@@ -797,7 +797,7 @@ static int rk_iommu_map(struct iommu_domain *domain, unsigned long _iova,
- }
- 
- static size_t rk_iommu_unmap(struct iommu_domain *domain, unsigned long _iova,
--			     size_t size)
-+			     size_t size, struct page **freelist)
- {
- 	struct rk_iommu_domain *rk_domain = to_rk_domain(domain);
- 	unsigned long flags;
-diff --git a/drivers/iommu/s390-iommu.c b/drivers/iommu/s390-iommu.c
-index 22d4db302c1c..b58755219a1f 100644
---- a/drivers/iommu/s390-iommu.c
-+++ b/drivers/iommu/s390-iommu.c
-@@ -314,7 +314,8 @@ static phys_addr_t s390_iommu_iova_to_phys(struct iommu_domain *domain,
- }
- 
- static size_t s390_iommu_unmap(struct iommu_domain *domain,
--			       unsigned long iova, size_t size)
-+			       unsigned long iova, size_t size,
-+			       struct page **freelist)
- {
- 	struct s390_domain *s390_domain = to_s390_domain(domain);
- 	int flags = ZPCI_PTE_INVALID;
-diff --git a/drivers/iommu/tegra-gart.c b/drivers/iommu/tegra-gart.c
-index 4d8057916552..823e5fe31c34 100644
---- a/drivers/iommu/tegra-gart.c
-+++ b/drivers/iommu/tegra-gart.c
-@@ -219,7 +219,7 @@ static inline int __gart_iommu_unmap(struct gart_device *gart,
- }
- 
- static size_t gart_iommu_unmap(struct iommu_domain *domain, unsigned long iova,
--			       size_t bytes)
-+			       size_t bytes, struct page **freelist)
- {
- 	struct gart_device *gart = gart_handle;
- 	int err;
-diff --git a/drivers/iommu/tegra-smmu.c b/drivers/iommu/tegra-smmu.c
-index 5182c7d6171e..612073a445b7 100644
---- a/drivers/iommu/tegra-smmu.c
-+++ b/drivers/iommu/tegra-smmu.c
-@@ -662,7 +662,7 @@ static int tegra_smmu_map(struct iommu_domain *domain, unsigned long iova,
- }
- 
- static size_t tegra_smmu_unmap(struct iommu_domain *domain, unsigned long iova,
--			       size_t size)
-+			       size_t size, struct page **freelist)
- {
- 	struct tegra_smmu_as *as = to_smmu_as(domain);
- 	dma_addr_t pte_dma;
 diff --git a/drivers/vfio/vfio_iommu_type1.c b/drivers/vfio/vfio_iommu_type1.c
-index d0f731c9920a..26c3f519b01a 100644
+index 26c3f519b01a..5f58fcb1c2e1 100644
 --- a/drivers/vfio/vfio_iommu_type1.c
 +++ b/drivers/vfio/vfio_iommu_type1.c
-@@ -715,7 +715,6 @@ static size_t unmap_unpin_fast(struct vfio_domain *domain,
+@@ -710,7 +710,7 @@ static size_t unmap_unpin_fast(struct vfio_domain *domain,
+ 	struct vfio_regions *entry = kzalloc(sizeof(*entry), GFP_KERNEL);
+ 
+ 	if (entry) {
+-		unmapped = iommu_unmap_fast(domain->domain, *iova, len);
++		unmapped = iommu_unmap_fast(domain->domain, *iova, len, NULL);
+ 
  		if (!unmapped) {
  			kfree(entry);
- 		} else {
--			iommu_tlb_range_add(domain->domain, *iova, unmapped);
- 			entry->iova = *iova;
- 			entry->phys = phys;
- 			entry->len  = unmapped;
 diff --git a/include/linux/iommu.h b/include/linux/iommu.h
-index 9318fa1d822e..7e084eb1725f 100644
+index 7e084eb1725f..f472cfee1c8c 100644
 --- a/include/linux/iommu.h
 +++ b/include/linux/iommu.h
-@@ -172,7 +172,7 @@ struct iommu_resv_region {
-  * @map: map a physically contiguous memory region to an iommu domain
-  * @unmap: unmap a physically contiguous memory region from an iommu domain
-  * @flush_iotlb_all: Synchronously flush all hardware TLBs for this domain
-- * @iotlb_range_add: Add a given iova range to the flush queue for this domain
-+ * @flush_iotlb_range: Flush given iova range of hardware TLBs for this domain
-  * @iotlb_sync_map: Sync mappings created recently using @map to the hardware
-  * @iotlb_sync: Flush all queued ranges from the hardware TLBs and empty flush
-  *            queue
-@@ -209,10 +209,11 @@ struct iommu_ops {
- 	int (*map)(struct iommu_domain *domain, unsigned long iova,
- 		   phys_addr_t paddr, size_t size, int prot);
- 	size_t (*unmap)(struct iommu_domain *domain, unsigned long iova,
--		     size_t size);
-+		     size_t size, struct page **freelist);
- 	void (*flush_iotlb_all)(struct iommu_domain *domain);
--	void (*iotlb_range_add)(struct iommu_domain *domain,
--				unsigned long iova, size_t size);
-+	void (*flush_iotlb_range)(struct iommu_domain *domain,
-+				unsigned long iova, size_t size,
-+				struct page *freelist);
- 	void (*iotlb_sync_map)(struct iommu_domain *domain);
- 	void (*iotlb_sync)(struct iommu_domain *domain);
- 	phys_addr_t (*iova_to_phys)(struct iommu_domain *domain, dma_addr_t iova);
-@@ -371,11 +372,12 @@ static inline void iommu_flush_tlb_all(struct iommu_domain *domain)
- 		domain->ops->flush_iotlb_all(domain);
- }
- 
--static inline void iommu_tlb_range_add(struct iommu_domain *domain,
--				       unsigned long iova, size_t size)
-+static inline void iommu_flush_iotlb_range(struct iommu_domain *domain,
-+			      unsigned long iova, size_t size,
-+			      struct page *freelist)
- {
--	if (domain->ops->iotlb_range_add)
--		domain->ops->iotlb_range_add(domain, iova, size);
-+	if (domain->ops->flush_iotlb_range)
-+		domain->ops->flush_iotlb_range(domain, iova, size, freelist);
- }
- 
- static inline void iommu_tlb_sync(struct iommu_domain *domain)
-@@ -487,7 +489,8 @@ static inline size_t iommu_unmap(struct iommu_domain *domain,
- }
- 
- static inline size_t iommu_unmap_fast(struct iommu_domain *domain,
--				      unsigned long iova, int gfp_order)
-+				      unsigned long iova, int gfp_order,
-+					  struct page **freelist)
- {
- 	return 0;
- }
+@@ -310,7 +310,8 @@ extern int iommu_map(struct iommu_domain *domain, unsigned long iova,
+ extern size_t iommu_unmap(struct iommu_domain *domain, unsigned long iova,
+ 			  size_t size);
+ extern size_t iommu_unmap_fast(struct iommu_domain *domain,
+-			       unsigned long iova, size_t size);
++			       unsigned long iova, size_t size,
++			       struct page **freelist);
+ extern size_t iommu_map_sg(struct iommu_domain *domain, unsigned long iova,
+ 			   struct scatterlist *sg,unsigned int nents, int prot);
+ extern phys_addr_t iommu_iova_to_phys(struct iommu_domain *domain, dma_addr_t iova);
 -- 
 2.17.1
 
