@@ -2,64 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 706E213A8C
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 May 2019 16:04:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F9A813A93
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 May 2019 16:27:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MOfpVagJN5RNC9GIOF1yqOTKFwRN/ww7LOHmZeib/cI=; b=XIyfQcEsgg6P8j
-	Vf6oL5PxezcR+zY0ZpydA64BOH9Z6I6Qishs5AgL/uFyXgF8cDeOHXY8/MOH3o8hzrOL+z9DmHeBU
-	9Hs3rtRSVZvbAgPATy0lGfG3JlQ4g2sjqoGnbmDB0HSLyFMQgsWl/EKvZlK2W8qqDYj5zhRMdsuwM
-	y/QQfbfXOzIx2PL7iostsTb0D683GocuECWAj5/MhE22hHBZHDjCbXjsdcJqsy9FSTvqbj/6yuidx
-	S9oeOg95K2OT+UPmabt3Da9u7A9XzaDkmOb7IO2YBV0PFRdieBra+eYZ3zB9XOYnljEsjYfvslVXz
-	Aw3dbvSKYnyL82sw/LhQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=HEleYDrQD7IaRB2svkc0iwJxKUuM03Tv3gyeqC3Eg0U=; b=aYLNKrsrHfwCye9UfasheiFvT
+	97sMd8RJy3agUu2DGuk0eqsuuErShVgvWhQaBA+rUJpmIpnt/SkJ9yTvKPUKOGoxn641LYRqNVGyn
+	fIQZRy6BhCYfjQFieiYZVSnFtOaqgWm7Gb0Q2X0Wi/fYYG44pkj+irkfW0TK9H4FdmMj6V9FIef/X
+	y634/fCg8/vSpYt+fBC5NPjyC9GT7NlqTqEHnB5b6GexHM/QTNbhedA7zY+uqSK9DbqpX+wkHKnBc
+	DkT+7UUi2kfFPR5nIiSqMKOTTblgGKEFvOBP9Xr9XXJQeKgRvk9Qx/7d7jXCUh/qV/ZuDg7OfQodN
+	2Hj8Xq6FA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMvHX-0004cG-Vk; Sat, 04 May 2019 14:04:51 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMvHR-0004bb-W2; Sat, 04 May 2019 14:04:47 +0000
-X-UUID: 7997a1fe426d48ac953f1810b02bf661-20190504
-X-UUID: 7997a1fe426d48ac953f1810b02bf661-20190504
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <yingjoe.chen@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1903619551; Sat, 04 May 2019 06:04:38 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sat, 4 May 2019 07:04:36 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sat, 4 May 2019 22:04:22 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Sat, 4 May 2019 22:04:16 +0800
-Message-ID: <1556978656.25811.1.camel@mtksdaap41>
-Subject: Re: [PATCH v3 10/10] rtc: Add support for the MediaTek MT6358 RTC
-From: Yingjoe Chen <yingjoe.chen@mediatek.com>
-To: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
-Date: Sat, 4 May 2019 22:04:16 +0800
-In-Reply-To: <20190503093117.54830-11-hsin-hsiung.wang@mediatek.com>
-References: <20190503093117.54830-1-hsin-hsiung.wang@mediatek.com>
- <20190503093117.54830-11-hsin-hsiung.wang@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+	id 1hMvdM-0005UL-LW; Sat, 04 May 2019 14:27:24 +0000
+Received: from icp-osb-irony-out7.external.iinet.net.au ([203.59.1.107])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hMvdC-0005LB-E4
+ for linux-arm-kernel@lists.infradead.org; Sat, 04 May 2019 14:27:17 +0000
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: =?us-ascii?q?A2AJAACjoM1c/7akqnwNWBkBAQEBAQE?=
+ =?us-ascii?q?BAQEBAQEHAQEBAQEBgVQBAQEBAQELAYQlhBCTYAEBAQEBAQaBCC2DXoVukQG?=
+ =?us-ascii?q?EfQKCKTcGDgEDAQEBBAEBAQEChl8BAQEBAgEjFUEQCw4KAgImAgJXBgEMBgI?=
+ =?us-ascii?q?BAYMegXcFqjtxgS+FR4MegUWBCycBi2R4gQeBOIJrPodOglgEizeBboVolCU?=
+ =?us-ascii?q?JgguSPwYblUiMG5Z2gXgzGggoCIMnkGNgkT8BAQ?=
+X-IPAS-Result: =?us-ascii?q?A2AJAACjoM1c/7akqnwNWBkBAQEBAQEBAQEBAQEHAQEBA?=
+ =?us-ascii?q?QEBgVQBAQEBAQELAYQlhBCTYAEBAQEBAQaBCC2DXoVukQGEfQKCKTcGDgEDA?=
+ =?us-ascii?q?QEBBAEBAQEChl8BAQEBAgEjFUEQCw4KAgImAgJXBgEMBgIBAYMegXcFqjtxg?=
+ =?us-ascii?q?S+FR4MegUWBCycBi2R4gQeBOIJrPodOglgEizeBboVolCUJgguSPwYblUiMG?=
+ =?us-ascii?q?5Z2gXgzGggoCIMnkGNgkT8BAQ?=
+X-IronPort-AV: E=Sophos;i="5.60,430,1549900800"; d="scan'208";a="173381743"
+Received: from 124-170-164-182.dyn.iinet.net.au (HELO [192.168.0.106])
+ ([124.170.164.182])
+ by icp-osb-irony-out7.iinet.net.au with ESMTP; 04 May 2019 22:27:06 +0800
+Subject: Re: [PATCH 1/6] ARM: ks8695: watchdog: stop using mach/*.h
+To: Guenter Roeck <linux@roeck-us.net>,
+ Linus Walleij <linus.walleij@linaro.org>
+References: <20190415202501.941196-1-arnd@arndb.de>
+ <2424c672-e3fb-4c32-4c24-fafc59d03a96@uclinux.org>
+ <CACRpkdaJ+2bub_nDp9=5b4kyKjWDnOGKscWg3KsEVixDpk8rzA@mail.gmail.com>
+ <20190503170613.GA1783@roeck-us.net>
+From: Greg Ungerer <gerg@kernel.org>
+Message-ID: <d8d81aca-722d-8b5f-cd5f-30cc3e4e407b@kernel.org>
+Date: Sun, 5 May 2019 00:26:53 +1000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 94F06579A06AD170C4104FD99EDD8ACC6517C53AB96CA365032830D34A4671372000:8
-X-MTK: N
+In-Reply-To: <20190503170613.GA1783@roeck-us.net>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190504_070446_042402_1B77711F 
-X-CRM114-Status: GOOD (  17.55  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190504_072714_849087_DE623311 
+X-CRM114-Status: GOOD (  17.99  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [203.59.1.107 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -71,122 +75,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark
- Rutland <mark.rutland@arm.com>, Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, srv_heupstream@mediatek.com,
- devicetree@vger.kernel.org, Ran Bi <ran.bi@mediatek.com>,
- Sean Wang <sean.wang@mediatek.com>, Liam Girdwood <lgirdwood@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, linux-kernel@vger.kernel.org, Mark
- Brown <broonie@kernel.org>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Eddie Huang <eddie.huang@mediatek.com>, Lee Jones <lee.jones@linaro.org>,
- linux-arm-kernel@lists.infradead.org, linux-rtc@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: LINUXWATCHDOG <linux-watchdog@vger.kernel.org>,
+ Arnd Bergmann <arnd@arndb.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ arm-soc <arm@kernel.org>, Wim Van Sebroeck <wim@linux-watchdog.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2019-05-03 at 17:31 +0800, Hsin-Hsiung Wang wrote:
-> From: Ran Bi <ran.bi@mediatek.com>
+
+On 4/5/19 3:06 am, Guenter Roeck wrote:
+> On Fri, May 03, 2019 at 08:16:05AM +0100, Linus Walleij wrote:
+>> On Fri, May 3, 2019 at 8:02 AM Greg Ungerer <gerg@uclinux.org> wrote:
+>>
+>>> I dug out some old ks8695 based hardware to try this out.
+>>> I had a lot of trouble getting anything modern working on it.
+>>> In the end I still don't have a reliable test bed to test this properly.
+>>
+>> What is usually used by old ARMv4 systems is OpenWrt or
+>> OpenEmbedded. Those is the only build systems that reliably
+>> produce a userspace for these things now, and it is also the
+>> appropriate size for this kind of systems.
+
+No, I can produce a user space environment for the KS8695 as well
+using the uClinux-dist build system. But that worked even less well
+than the old root filesystem that I had (which was also built with
+an older version of that build system).
+
+But there is no reason that old root filesystem should not work.
+And that is the thing that concerns me a bit here. I could mount
+it ok (it was a CRAMFS), it would run up the shell to a shell prompt,
+but when I try to run any commands from there they would oops.
+I didn't debug any further than that.
+
+
+>>> Ultimately though I am left wondering if the ks8695 support in the
+>>> kernel is useful to anyone the way it is at the moment. With a minimal
+>>> kernel configuration I can boot up to a shell - but the system is
+>>> really unreliable if you try to interactively use it. I don't think
+>>> it is the hardware - it seems to run reliably with the old code
+>>> it has running from flash on it. I am only testing the new kernel,
+>>> running with the existing user space root filesystem on it (which
+>>> dates from 2004 :-)
+>>
+>> Personally I think it is a bad sign that this subarch and boards do
+>> not have active OpenWrt support, they are routers after all (right?)
+>> and any active use of networking equipment should use a recent
+>> userspace as well, given all the security bugs that popped up over
+>> the years.
+>>
+>> With IXP4xx, Gemini and EP93xx we have found active users and
+>> companies selling the chips and reference designs and even
+>> recommending it for new products (!) at times.  If this is not the
+>> case with KS8695 and no hobbyists are willing to submit it
+>> to OpenWrt and modernize it to use device tree I think it should be
+>> deleted from the kernel.
+>>
 > 
-> This add support for the MediaTek MT6358 RTC. Driver using
-> compatible data to store different RTC_WRTGR address offset.
-> 
-> Signed-off-by: Ran Bi <ran.bi@mediatek.com>
-> ---
->  drivers/rtc/rtc-mt6397.c | 43 ++++++++++++++++++++++++++++++++--------
->  1 file changed, 35 insertions(+), 8 deletions(-)
-> 
-> diff --git a/drivers/rtc/rtc-mt6397.c b/drivers/rtc/rtc-mt6397.c
-> index f85f1fc29e32..3476e29db87c 100644
-> --- a/drivers/rtc/rtc-mt6397.c
-> +++ b/drivers/rtc/rtc-mt6397.c
-> @@ -20,6 +20,7 @@
->  #include <linux/irqdomain.h>
->  #include <linux/platform_device.h>
->  #include <linux/of_address.h>
-> +#include <linux/of_device.h>
->  #include <linux/of_irq.h>
->  #include <linux/io.h>
->  #include <linux/mfd/mt6397/core.h>
-> @@ -27,7 +28,8 @@
->  #define RTC_BBPU		0x0000
->  #define RTC_BBPU_CBUSY		BIT(6)
->  
-> -#define RTC_WRTGR		0x003c
-> +#define RTC_WRTGR_MT6358	0x3a
-> +#define RTC_WRTGR_MT6397	0x3c
->  
->  #define RTC_IRQ_STA		0x0002
->  #define RTC_IRQ_STA_AL		BIT(0)
-> @@ -71,6 +73,10 @@
->  #define RTC_NUM_YEARS		128
->  #define RTC_MIN_YEAR_OFFSET	(RTC_MIN_YEAR - RTC_BASE_YEAR)
->  
-> +struct mtk_rtc_compatible {
-> +	u32			wrtgr_addr;
-> +};
-> +
->  struct mt6397_rtc {
->  	struct device		*dev;
->  	struct rtc_device	*rtc_dev;
-> @@ -78,7 +84,25 @@ struct mt6397_rtc {
->  	struct regmap		*regmap;
->  	int			irq;
->  	u32			addr_base;
-> +	const struct mtk_rtc_compatible *dev_comp;
-> +};
-> +
-> +static const struct mtk_rtc_compatible mt6358_rtc_compat = {
-> +	.wrtgr_addr = RTC_WRTGR_MT6358,
-> +};
-> +
-> +static const struct mtk_rtc_compatible mt6397_rtc_compat = {
-> +	.wrtgr_addr = RTC_WRTGR_MT6397,
-> +};
-> +
-> +static const struct of_device_id mt6397_rtc_of_match[] = {
-> +	{ .compatible = "mediatek,mt6358-rtc",
-> +		.data = (void *)&mt6358_rtc_compat, },
-> +	{ .compatible = "mediatek,mt6397-rtc",
-> +		.data = (void *)&mt6397_rtc_compat, },
-> +	{}
->  };
-> +MODULE_DEVICE_TABLE(of, mt6397_rtc_of_match);
->  
->  static int mtk_rtc_write_trigger(struct mt6397_rtc *rtc)
->  {
-> @@ -86,7 +110,8 @@ static int mtk_rtc_write_trigger(struct mt6397_rtc *rtc)
->  	int ret;
->  	u32 data;
->  
-> -	ret = regmap_write(rtc->regmap, rtc->addr_base + RTC_WRTGR, 1);
-> +	ret = regmap_write(rtc->regmap,
-> +			   rtc->addr_base + rtc->dev_comp->wrtgr_addr, 1);
->  	if (ret < 0)
->  		return ret;
->  
-> @@ -332,6 +357,7 @@ static int mtk_rtc_probe(struct platform_device *pdev)
->  	struct resource *res;
->  	struct mt6397_chip *mt6397_chip = dev_get_drvdata(pdev->dev.parent);
->  	struct mt6397_rtc *rtc;
-> +	const struct of_device_id *of_id;
->  	int ret;
->  
->  	rtc = devm_kzalloc(&pdev->dev, sizeof(struct mt6397_rtc), GFP_KERNEL);
-> @@ -341,6 +367,13 @@ static int mtk_rtc_probe(struct platform_device *pdev)
->  	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
->  	rtc->addr_base = res->start;
->  
-> +	of_id = of_match_device(mt6397_rtc_of_match, &pdev->dev);
-> +	if (!of_id) {
+> That may be the best approach if indeed no one is using it,
+> much less maintaining it.
 
-This will never happens, but I'm fine with it.
+Well, I for one don't really use it any more. So I don't have a lot
+of motivation to maintain it any longer.
 
-Review-by: Yingjoe Chen <yingjoe.chen@mediatek.com>
-
-Joe.C
-
+Regards
+Greg
 
 
 _______________________________________________
