@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 119B213859
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 May 2019 11:00:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E1661385D
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 May 2019 11:01:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ON9DHHKawvPloUmYYuijtfk5yjE61rIqc8/s7ocers8=; b=mbDOBvze1nH7hn
-	+A2H2w3mX1kX0gBLcvBHyvCQP4b/9ZIniuZbPwKHZOq3vjOEWm9ecrrP0c7kFKdZjxE0XQqaG9spe
-	lkaEVbcpc/hj10Q4SOS3tXv2wAXLAyuJqrX4CnmluoiaEl/431jfv7Fi6bN9GdBpvatxbsyvPUJxp
-	fQ6eVQzJfaXeYXxG8rhCb9u97d+qNeEYhueVUFsd3aN/3M3clftnaYqReIzhIbTjPuErxkZHZqzhJ
-	ECC3J13QsIGlv+A3GZp/CQqZCM3HMOBGQY+qpmMrCXI2V5Hr9EDUhgVxdyMi/NSBb2IMYb7SeuuFG
-	MTp62jh/3+gwJIAmh/jw==;
+	List-Owner; bh=nLwfMw0rxTU5IG/C7RRfxp1Y+jhj/2LtITaNBRtXsas=; b=W4B67Nhu3qCgBq
+	vpjDomdWZKS4vFeSwpnDq8YhXB5Pks1TOWHLeAPHCrGlH8TjIFJ2Prczl6EMxVeP5ihntWiM4/gIG
+	wWRCgomFOltwLuG5BihIYBtngdGBGD1cHWthsDuDlxitLPARWruCbPqPCq/NS9p8yXJ2rSUpJYujH
+	sLbUwje8Sp+ZoHG+brPkBt+IBfhHdfQJdIVC6mQGU4v/WV0drk+CHwf+6TiDutebLqXqgnhlPaCBb
+	KZioZ+N92xV98QoSyBA0RicmYsLFmTge9hB/Ef7Um21vlwKugBJ0FVg4hOvll8KjMVus998RPuUrR
+	duqeLuTzriM7sQTxAovA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMqX6-0002HB-2n; Sat, 04 May 2019 09:00:36 +0000
+	id 1hMqXl-0002WY-Nu; Sat, 04 May 2019 09:01:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMqWz-0002Gk-Bq
- for linux-arm-kernel@lists.infradead.org; Sat, 04 May 2019 09:00:31 +0000
+ id 1hMqXe-0002W3-FL
+ for linux-arm-kernel@lists.infradead.org; Sat, 04 May 2019 09:01:12 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id ADD44206BB;
- Sat,  4 May 2019 09:00:27 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id AC279206BB;
+ Sat,  4 May 2019 09:01:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1556960428;
- bh=7HXqKzpxUiSs04dSG1RdKuXbafCjffLyeVJkF8NBEOg=;
+ s=default; t=1556960470;
+ bh=1wog7op6KUdEbh1ddTxIbGBcVvZCfXmyXwq3L2djir0=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=puUuzFkkzwwSmbdSjWHix07/cvUiyDGyk0+FIz9i4YcJ7oA6H7JhGuDTt7y30D2zN
- eCdZKfgo7WOKsnlgmcJ93LF816InzU+PNYuJpGhQOM+HiUwVpwCiZstZvYR2idVS9/
- YWJc88yVVZkIVYsvxgD8/JipbwxoZNuKsOaMrxW0=
-Date: Sat, 4 May 2019 11:00:25 +0200
+ b=kLFImG8vEA6IBIoJ5i4sZ2ZDvwqgE8y+uv0rcN8zC+X2w0/wK7KCt+n7CcLSCay2H
+ tbMjjMhcdkrNdFpVxfx8VCGv+0XgQZ8dJ4pKFefj+QHUEdLriQR++o5nJFQZ0FiStA
+ t9ghh8TgGkalmZRSZve6Ek9jJyXFHUC9y88s8gIc=
+Date: Sat, 4 May 2019 11:01:07 +0200
 From: Greg KH <gregkh@linuxfoundation.org>
 To: Dragan Cvetic <draganc@xilinx.com>
-Subject: Re: [PATCH V3 07/12] misc: xilinx_sdfec: Add ability to configure LDPC
-Message-ID: <20190504090025.GB13840@kroah.com>
+Subject: Re: [PATCH V3 04/12] misc: xilinx_sdfec: Add open, close and ioctl
+Message-ID: <20190504090107.GC13840@kroah.com>
 References: <1556402706-176271-1-git-send-email-dragan.cvetic@xilinx.com>
- <1556402706-176271-8-git-send-email-dragan.cvetic@xilinx.com>
- <20190502172713.GD1874@kroah.com>
- <BL0PR02MB5681D386363988CB2CA4D040CB350@BL0PR02MB5681.namprd02.prod.outlook.com>
+ <1556402706-176271-5-git-send-email-dragan.cvetic@xilinx.com>
+ <20190502172345.GC1874@kroah.com>
+ <BL0PR02MB568178214B7789431977E91BCB350@BL0PR02MB5681.namprd02.prod.outlook.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <BL0PR02MB5681D386363988CB2CA4D040CB350@BL0PR02MB5681.namprd02.prod.outlook.com>
+In-Reply-To: <BL0PR02MB568178214B7789431977E91BCB350@BL0PR02MB5681.namprd02.prod.outlook.com>
 User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190504_020029_427472_EB0ED586 
-X-CRM114-Status: GOOD (  16.74  )
+X-CRM114-CacheID: sfid-20190504_020110_529784_5A8E615F 
+X-CRM114-Status: GOOD (  11.80  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -87,56 +87,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 03, 2019 at 04:49:19PM +0000, Dragan Cvetic wrote:
-> Hi Greg,
+On Fri, May 03, 2019 at 04:46:12PM +0000, Dragan Cvetic wrote:
 > 
-> Please find inline comments below.
-
-As they should be, no need to mention it :)
-
+> 
 > > -----Original Message-----
 > > From: Greg KH [mailto:gregkh@linuxfoundation.org]
-> > Sent: Thursday 2 May 2019 18:27
+> > Sent: Thursday 2 May 2019 18:24
 > > To: Dragan Cvetic <draganc@xilinx.com>
 > > Cc: arnd@arndb.de; Michal Simek <michals@xilinx.com>; linux-arm-kernel@lists.infradead.org; robh+dt@kernel.org;
 > > mark.rutland@arm.com; devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; Derek Kiernan <dkiernan@xilinx.com>
-> > Subject: Re: [PATCH V3 07/12] misc: xilinx_sdfec: Add ability to configure LDPC
+> > Subject: Re: [PATCH V3 04/12] misc: xilinx_sdfec: Add open, close and ioctl
 > > 
-> > On Sat, Apr 27, 2019 at 11:05:01PM +0100, Dragan Cvetic wrote:
-> > > --- a/include/uapi/misc/xilinx_sdfec.h
-> > > +++ b/include/uapi/misc/xilinx_sdfec.h
+> > On Sat, Apr 27, 2019 at 11:04:58PM +0100, Dragan Cvetic wrote:
+> > > Add char device interface per DT node present and support
+> > > file operations:
+> > > - open(),
+> > > - close(),
+> > > - unlocked_ioctl(),
+> > > - compat_ioctl().
 > > 
-> > <snip>
-> > 
-> > > +/**
-> > > + * xsdfec_calculate_shared_ldpc_table_entry_size - Calculates shared code
-> > > + * table sizes.
-> > > + * @ldpc: Pointer to the LPDC Code Parameters
-> > > + * @table_sizes: Pointer to structure containing the calculated table sizes
-> > > + *
-> > > + * Calculates the size of shared LDPC code tables used for a specified LPDC code
-> > > + * parameters.
-> > > + */
-> > > +inline void
-> > > +xsdfec_calculate_shared_ldpc_table_entry_size(struct xsdfec_ldpc_params *ldpc,
-> > > +	struct xsdfec_ldpc_param_table_sizes *table_sizes)
-> > > +{
-> > > +	/* Calculate the sc_size in 32 bit words */
-> > > +	table_sizes->sc_size = (ldpc->nlayers + 3) >> 2;
-> > > +	/* Calculate the la_size in 256 bit words */
-> > > +	table_sizes->la_size = ((ldpc->nlayers << 2) + 15) >> 4;
-> > > +	/* Calculate the qc_size in 256 bit words */
-> > > +	table_sizes->qc_size = ((ldpc->nqc << 2) + 15) >> 4;
-> > > +}
-> > 
-> > Why do you have an inline function in a user api .h file?  That's really
-> > not a good idea.
+> > Why do you need compat_ioctl() at all?  Any "new" driver should never
+> > need it.  Just create your structures properly.
 > 
-> This is just a Helper function for users aligning the calculations.
-> Please advise, is this acceptable?
+> This was a comment from Arnd, see https://lkml.org/lkml/2019/3/19/377.
+> Please advise.
 
-Not really, just have actual api functions in a uapi .h file, why would
-userspace care about this type of thing?
+Why do you need a compat_ioctl callback when there is nothing to fix up?
 
 thanks,
 
