@@ -2,68 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0CF713AB5
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 May 2019 16:41:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE8DF13AC3
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 May 2019 16:47:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O8k7QOndYnJMVKgF7LDwMWAm2cDlwZxNtUcyBxAAqyI=; b=pwFi8SB1rgoJAs
-	BnqpUBtcUAbXF9wz2XQrZE9snBggVtLxaO9Tk5nXQgWX1s5FdfNXROuFi9qcQ7suSHXjFn1zmTBLu
-	GkiHUd3qq895O0h6mLhLgNs8O4CnQdSU4Z8LLgBR6/Wa9J3Awmpz6/ov4NVGi7uRIUSMp1PMRYXSj
-	PQnOnPENzHfRAoeY7mtsaKFOtWONdOu6pjuP8OHt4+egNcT74pV7+OjvSkss7/wQpGlQqkoNFaBxo
-	BaAR9gdcmzMGves2og3l5wxR2Px7TcmRkAsHIv0OUiQo937q7eLzDoQubr2JUojBjohqJw6twWy5e
-	tBE2iurp4xVzHQoxg6Ng==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=fZZS/uR6F3VH+89tXH/5luzUAXnBbIfu8UyBfHAGnZw=; b=O5q
+	s69+NmtSaHJJ81yLNfJGOP+kjTgl/vdZNgUJsjvCGFsJUf8gKE7Dap69DSdFFAxaMawua6D3gbbo1
+	/YyNqLT2A6qRCo9xhNSf2p+hwQTPzNX6Yw0o38A2iv8RAQ2rADCXpKTeSikSPYV6RyZ4tckjGIlia
+	6m2nlOJCW4sld0IJ5g/q8M0FDahSZnVijR11vzjrF72hs3A++nOLTdMnqCXmUlU827te2nwbmjEWd
+	NQ75p4+cboBPfmHZErN4B/4TWaNNfoMWzCs3RemYY1rXJebtw1huQ0GzwFi23aqFAvTFDGkx+yoHP
+	ufKbPLjfMTiyTbGOH4gN3S0w1xYHCuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMvr8-0002Sr-RG; Sat, 04 May 2019 14:41:38 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hMvwN-0004VK-17; Sat, 04 May 2019 14:47:03 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMvr1-0002SH-GW
- for linux-arm-kernel@lists.infradead.org; Sat, 04 May 2019 14:41:33 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0F9C720859;
- Sat,  4 May 2019 14:41:29 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1556980890;
- bh=gSjzNXwzVADkhUG1J+XQmSWvUA18jz5VVOMIPF/+1Wo=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ThCm6UKrH6zyS8oz0Qw5T0dAyoGWPWxAFtryrhciPkXkkctI/EgK8butFvzCy9Hyu
- RxqXKbYhZxGYfCNElmz9Q6ap8/AIANtSZHt7V2oAuWjLBRlgyXzVdYYLpGdJaRvbrO
- tpoVgZrage+I+yowLYnvLnctJR+7XYiJHtWMEhRg=
-Date: Sat, 4 May 2019 16:41:28 +0200
-From: Greg KH <gregkh@linuxfoundation.org>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH V3 04/12] misc: xilinx_sdfec: Add open, close and ioctl
-Message-ID: <20190504144128.GA13454@kroah.com>
-References: <1556402706-176271-1-git-send-email-dragan.cvetic@xilinx.com>
- <1556402706-176271-5-git-send-email-dragan.cvetic@xilinx.com>
- <20190502172345.GC1874@kroah.com>
- <CAK8P3a2EKXrg4amHDi5zVvOQ8AM+u6EAhBc=T8Hk_tU20xSV4w@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK8P3a2EKXrg4amHDi5zVvOQ8AM+u6EAhBc=T8Hk_tU20xSV4w@mail.gmail.com>
-User-Agent: Mutt/1.11.4 (2019-03-13)
+ id 1hMvwG-0004Us-L7
+ for linux-arm-kernel@lists.infradead.org; Sat, 04 May 2019 14:46:57 +0000
+Received: by mail-qt1-x844.google.com with SMTP id c13so10036019qtn.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 04 May 2019 07:46:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=NrYZiyAylt6izKT0JP58LPPlYggyMkdqPMz1VP35jj0=;
+ b=Jlm14QvA5eq8GhEQXyfSaoYmznYfS5hKuffrc4QLAfHLZJx8r7p6qUW3z+oj7XXLn3
+ JI3B+MNhgkwsOTf+eGpL6dV632Qai1EcOe4ru/pcoGX+ozuZ6nsNRWLrCSzKRObg8KVN
+ yP7/Uw6ULHTPUiZpk9Ji5m/gFGPV6ctd807bfxd6xZIwQDLexv7DdVD8YyNty8TchtdV
+ tyGiQDtFv9yWbz8FBm6zhpMG4lIzUJbQ5NAVug0rQikNEG1Vz8VobflhPnBSwdQuOlXb
+ dSvtvc6pkL3CGN2z8w2dvGzzyg0WzpY8UcpMcac46Mi4yxCSujvg5ykpqtcSb/cwedNM
+ bb1g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=NrYZiyAylt6izKT0JP58LPPlYggyMkdqPMz1VP35jj0=;
+ b=WuYCmpPVDPu63Z2G2+e5dcjMF/eeEk9WJwPTgviuHijAUTYcaLbLH6pcgD540v2byd
+ 6JN88yqk6dTtc6I8fJnDVXgcS+ag83stabeblDkxKj6g7TiFh9TXFd3haRh9DQvJ9Wyz
+ 0/UCmWMgfsLKmKiWDCR2K1Zqshk+/GkRvlVxX7dzPXOafWvQ5fE1oj5XfhlBVaqDvJDH
+ h7OOsrCqZIaJ1n2P7zFWDlfldWx3JNO/yOo8G+r6GJuLK8ebQNo3MzhkZ2RhUH2w2xyr
+ BrA3Ua39DkrNAmg0hnOv6bmX3D8sTnmBR16xu5uOld65OTRSkmDiYwLY7V8Zm4tXDHnl
+ olrQ==
+X-Gm-Message-State: APjAAAU7UTLE9mj4r4szBn0+KvE4e//VcrOTMYH5owEzfEvWM3x4Dm6t
+ DTSy/fuP+r+bGjFTpvV0GWB7ot0loyM=
+X-Google-Smtp-Source: APXvYqz3JKAK/VzgGiKdp9YMPc+/PJE7dhbBx+8FM2glvc8IQ1350AT461lZz4XTgIyaxSL9Yc8hwg==
+X-Received: by 2002:aed:3a04:: with SMTP id n4mr14109265qte.162.1556981214926; 
+ Sat, 04 May 2019 07:46:54 -0700 (PDT)
+Received: from localhost.localdomain ([2804:14c:482:3c8:56cb:1049:60d2:137b])
+ by smtp.gmail.com with ESMTPSA id
+ h30sm7248455qth.49.2019.05.04.07.46.52
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sat, 04 May 2019 07:46:53 -0700 (PDT)
+From: Fabio Estevam <festevam@gmail.com>
+To: shawnguo@kernel.org
+Subject: [PATCH] ARM: imx_v6_v7_defconfig: Enable the OV2680 camera driver
+Date: Sat,  4 May 2019 11:46:45 -0300
+Message-Id: <20190504144645.32725-1-festevam@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190504_074131_914848_49052FE5 
-X-CRM114-Status: GOOD (  15.10  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190504_074656_686868_0C0D5FB2 
+X-CRM114-Status: GOOD (  10.69  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -75,46 +93,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- Dragan Cvetic <dragan.cvetic@xilinx.com>,
- Michal Simek <michal.simek@xilinx.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Derek Kiernan <derek.kiernan@xilinx.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Fabio Estevam <festevam@gmail.com>, rui.silva@linaro.org,
+ linux-arm-kernel@lists.infradead.org, otavio@ossystems.com.br
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, May 04, 2019 at 10:35:02AM -0400, Arnd Bergmann wrote:
-> On Thu, May 2, 2019 at 1:23 PM Greg KH <gregkh@linuxfoundation.org> wrote:
-> >
-> > On Sat, Apr 27, 2019 at 11:04:58PM +0100, Dragan Cvetic wrote:
-> > > Add char device interface per DT node present and support
-> > > file operations:
-> > > - open(),
-> > > - close(),
-> > > - unlocked_ioctl(),
-> > > - compat_ioctl().
-> >
-> > Why do you need compat_ioctl() at all?  Any "new" driver should never
-> > need it.  Just create your structures properly.
-> 
-> The function he added was the version that is needed when the structures
-> are compatible. I submitted a series to add a generic 'compat_ptr_ioctl'
-> implementation that would save a few lines here doing the same thing,
-> but it's not merged yet.
-> 
-> Generally speaking, every driver that has a .ioctl() function should also
-> have a .compat_ioctl(), and ideally it should be exactly this trivial
-> version.
+Enable the OV2680 camera driver as it is used on the imx7s-warp board.
 
-Ok, for some reason I thought if there was no need for a compat ioctl
-(i.e. no pointer mess), then no need for a callback at all.
+Signed-off-by: Fabio Estevam <festevam@gmail.com>
+---
+ arch/arm/configs/imx_v6_v7_defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-thanks,
+diff --git a/arch/arm/configs/imx_v6_v7_defconfig b/arch/arm/configs/imx_v6_v7_defconfig
+index 765003ac7053..9a34ab210275 100644
+--- a/arch/arm/configs/imx_v6_v7_defconfig
++++ b/arch/arm/configs/imx_v6_v7_defconfig
+@@ -268,6 +268,7 @@ CONFIG_VIDEO_CODA=m
+ CONFIG_VIDEO_IMX_PXP=y
+ # CONFIG_MEDIA_SUBDRV_AUTOSELECT is not set
+ CONFIG_VIDEO_ADV7180=m
++CONFIG_VIDEO_OV2680=m
+ CONFIG_VIDEO_OV5640=m
+ CONFIG_IMX_IPUV3_CORE=y
+ CONFIG_DRM=y
+-- 
+2.17.1
 
-greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
