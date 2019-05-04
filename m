@@ -2,68 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F9A813A93
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 May 2019 16:27:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AC6313A9A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  4 May 2019 16:35:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=HEleYDrQD7IaRB2svkc0iwJxKUuM03Tv3gyeqC3Eg0U=; b=aYLNKrsrHfwCye9UfasheiFvT
-	97sMd8RJy3agUu2DGuk0eqsuuErShVgvWhQaBA+rUJpmIpnt/SkJ9yTvKPUKOGoxn641LYRqNVGyn
-	fIQZRy6BhCYfjQFieiYZVSnFtOaqgWm7Gb0Q2X0Wi/fYYG44pkj+irkfW0TK9H4FdmMj6V9FIef/X
-	y634/fCg8/vSpYt+fBC5NPjyC9GT7NlqTqEHnB5b6GexHM/QTNbhedA7zY+uqSK9DbqpX+wkHKnBc
-	DkT+7UUi2kfFPR5nIiSqMKOTTblgGKEFvOBP9Xr9XXJQeKgRvk9Qx/7d7jXCUh/qV/ZuDg7OfQodN
-	2Hj8Xq6FA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AemfGq1PScV7BCl6OBG7/StaVp/vo/oO8RS6+6bMMsY=; b=iJQk7kOmLSprr+
+	+tQn3M+BQXRetZt9bZDadkUZFGtoOqiKP4+rm4gwuBf5gPey1YQ6lz1Dnn6I/8+7dDQh3k4495jy6
+	04Z/Xl8Nz+nbq2yemPWQjSu4jvK/8GRJHFOVn+tZDYwqApmab/CJaCF17ZzimbHjShjf3NqfyU4/5
+	leRKL3idYjMCjb433wC+kRK2ryv4qqw10q+qF3+BMBODqjwzyKrf7r0TEnC0m/C0txZt7uhmdXMJC
+	X/UnW31RszVkmuc+g+ihp2eFkz5MZ7hUzRhVegpMKJ1TNclsBPc6xSS1rcXGv2WqSmsCCRtmKD9+m
+	3MvUwufIHLJhF5nbvZ8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMvdM-0005UL-LW; Sat, 04 May 2019 14:27:24 +0000
-Received: from icp-osb-irony-out7.external.iinet.net.au ([203.59.1.107])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMvdC-0005LB-E4
- for linux-arm-kernel@lists.infradead.org; Sat, 04 May 2019 14:27:17 +0000
-X-IronPort-Anti-Spam-Filtered: true
-X-IronPort-Anti-Spam-Result: =?us-ascii?q?A2AJAACjoM1c/7akqnwNWBkBAQEBAQE?=
- =?us-ascii?q?BAQEBAQEHAQEBAQEBgVQBAQEBAQELAYQlhBCTYAEBAQEBAQaBCC2DXoVukQG?=
- =?us-ascii?q?EfQKCKTcGDgEDAQEBBAEBAQEChl8BAQEBAgEjFUEQCw4KAgImAgJXBgEMBgI?=
- =?us-ascii?q?BAYMegXcFqjtxgS+FR4MegUWBCycBi2R4gQeBOIJrPodOglgEizeBboVolCU?=
- =?us-ascii?q?JgguSPwYblUiMG5Z2gXgzGggoCIMnkGNgkT8BAQ?=
-X-IPAS-Result: =?us-ascii?q?A2AJAACjoM1c/7akqnwNWBkBAQEBAQEBAQEBAQEHAQEBA?=
- =?us-ascii?q?QEBgVQBAQEBAQELAYQlhBCTYAEBAQEBAQaBCC2DXoVukQGEfQKCKTcGDgEDA?=
- =?us-ascii?q?QEBBAEBAQEChl8BAQEBAgEjFUEQCw4KAgImAgJXBgEMBgIBAYMegXcFqjtxg?=
- =?us-ascii?q?S+FR4MegUWBCycBi2R4gQeBOIJrPodOglgEizeBboVolCUJgguSPwYblUiMG?=
- =?us-ascii?q?5Z2gXgzGggoCIMnkGNgkT8BAQ?=
-X-IronPort-AV: E=Sophos;i="5.60,430,1549900800"; d="scan'208";a="173381743"
-Received: from 124-170-164-182.dyn.iinet.net.au (HELO [192.168.0.106])
- ([124.170.164.182])
- by icp-osb-irony-out7.iinet.net.au with ESMTP; 04 May 2019 22:27:06 +0800
-Subject: Re: [PATCH 1/6] ARM: ks8695: watchdog: stop using mach/*.h
-To: Guenter Roeck <linux@roeck-us.net>,
- Linus Walleij <linus.walleij@linaro.org>
-References: <20190415202501.941196-1-arnd@arndb.de>
- <2424c672-e3fb-4c32-4c24-fafc59d03a96@uclinux.org>
- <CACRpkdaJ+2bub_nDp9=5b4kyKjWDnOGKscWg3KsEVixDpk8rzA@mail.gmail.com>
- <20190503170613.GA1783@roeck-us.net>
-From: Greg Ungerer <gerg@kernel.org>
-Message-ID: <d8d81aca-722d-8b5f-cd5f-30cc3e4e407b@kernel.org>
-Date: Sun, 5 May 2019 00:26:53 +1000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hMvlF-0000Gk-1U; Sat, 04 May 2019 14:35:33 +0000
+Received: from mail-qt1-f193.google.com ([209.85.160.193])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hMvl8-0000Fv-K5
+ for linux-arm-kernel@lists.infradead.org; Sat, 04 May 2019 14:35:27 +0000
+Received: by mail-qt1-f193.google.com with SMTP id c35so10041443qtk.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 04 May 2019 07:35:20 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=tQgaLnyd1PzWRuAcPpOm2m6B4C3dJFTkE6v5h3uPP4o=;
+ b=CEzJnNVT0QqHzm+15JT3pRgWuM9ibnSurGS3u7MevI1wXoszHKig2u0heQt8ZWBvZF
+ E33wTKKfeFdOD/qRAaYA/WmwbRlqGj1Ga/IQ7GFaApHtncye+bRyvSvv8xlGAcReSenF
+ FgSqxv7XBSULqmqJzu1dyHJEBrvWut68tpg/mjGRTwPN7Vp5OeZbwvQOp5pUFVIkooJQ
+ NsxEH8Gf5OHsEuBuI0vr40AgxcnyPoD2vp0bS7CdiHo7mwKOKwV3Wm1jc9wGrY/8wIEt
+ M7eiVu91RkwBMdkGQOH36wYiwVuLqjKnGikL+6URLw+HW16/oBdFCxYJnp68AI6t27a0
+ efiA==
+X-Gm-Message-State: APjAAAX7q6iHGnEHdNYA/FuqSbNDILtuH8URfLTJ2qBUV2KBjE5q++ev
+ VWz7qpKqErES4Lmz+ZrCiBl4Q6W0vTMo1fEQJ78=
+X-Google-Smtp-Source: APXvYqxvPIZmsXc7/1Lsx8u1uNwbWRJxYtcxgpxdevIAEaVf/6zZoMUz0DyMRRuNK8rGfyNiuEKbyfamxoIOG5ECJA4=
+X-Received: by 2002:ac8:29cf:: with SMTP id 15mr13552977qtt.319.1556980520015; 
+ Sat, 04 May 2019 07:35:20 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190503170613.GA1783@roeck-us.net>
-Content-Language: en-US
+References: <1556402706-176271-1-git-send-email-dragan.cvetic@xilinx.com>
+ <1556402706-176271-5-git-send-email-dragan.cvetic@xilinx.com>
+ <20190502172345.GC1874@kroah.com>
+In-Reply-To: <20190502172345.GC1874@kroah.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Sat, 4 May 2019 10:35:02 -0400
+Message-ID: <CAK8P3a2EKXrg4amHDi5zVvOQ8AM+u6EAhBc=T8Hk_tU20xSV4w@mail.gmail.com>
+Subject: Re: [PATCH V3 04/12] misc: xilinx_sdfec: Add open, close and ioctl
+To: Greg KH <gregkh@linuxfoundation.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190504_072714_849087_DE623311 
-X-CRM114-Status: GOOD (  17.99  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190504_073526_660343_A2B83B18 
+X-CRM114-Status: GOOD (  11.23  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [203.59.1.107 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.193 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.193 listed in wl.mailspike.net]
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -75,74 +83,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: LINUXWATCHDOG <linux-watchdog@vger.kernel.org>,
- Arnd Bergmann <arnd@arndb.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- arm-soc <arm@kernel.org>, Wim Van Sebroeck <wim@linux-watchdog.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
+ Dragan Cvetic <dragan.cvetic@xilinx.com>,
+ Michal Simek <michal.simek@xilinx.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Derek Kiernan <derek.kiernan@xilinx.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, May 2, 2019 at 1:23 PM Greg KH <gregkh@linuxfoundation.org> wrote:
+>
+> On Sat, Apr 27, 2019 at 11:04:58PM +0100, Dragan Cvetic wrote:
+> > Add char device interface per DT node present and support
+> > file operations:
+> > - open(),
+> > - close(),
+> > - unlocked_ioctl(),
+> > - compat_ioctl().
+>
+> Why do you need compat_ioctl() at all?  Any "new" driver should never
+> need it.  Just create your structures properly.
 
-On 4/5/19 3:06 am, Guenter Roeck wrote:
-> On Fri, May 03, 2019 at 08:16:05AM +0100, Linus Walleij wrote:
->> On Fri, May 3, 2019 at 8:02 AM Greg Ungerer <gerg@uclinux.org> wrote:
->>
->>> I dug out some old ks8695 based hardware to try this out.
->>> I had a lot of trouble getting anything modern working on it.
->>> In the end I still don't have a reliable test bed to test this properly.
->>
->> What is usually used by old ARMv4 systems is OpenWrt or
->> OpenEmbedded. Those is the only build systems that reliably
->> produce a userspace for these things now, and it is also the
->> appropriate size for this kind of systems.
+The function he added was the version that is needed when the structures
+are compatible. I submitted a series to add a generic 'compat_ptr_ioctl'
+implementation that would save a few lines here doing the same thing,
+but it's not merged yet.
 
-No, I can produce a user space environment for the KS8695 as well
-using the uClinux-dist build system. But that worked even less well
-than the old root filesystem that I had (which was also built with
-an older version of that build system).
+Generally speaking, every driver that has a .ioctl() function should also
+have a .compat_ioctl(), and ideally it should be exactly this trivial
+version.
 
-But there is no reason that old root filesystem should not work.
-And that is the thing that concerns me a bit here. I could mount
-it ok (it was a CRAMFS), it would run up the shell to a shell prompt,
-but when I try to run any commands from there they would oops.
-I didn't debug any further than that.
-
-
->>> Ultimately though I am left wondering if the ks8695 support in the
->>> kernel is useful to anyone the way it is at the moment. With a minimal
->>> kernel configuration I can boot up to a shell - but the system is
->>> really unreliable if you try to interactively use it. I don't think
->>> it is the hardware - it seems to run reliably with the old code
->>> it has running from flash on it. I am only testing the new kernel,
->>> running with the existing user space root filesystem on it (which
->>> dates from 2004 :-)
->>
->> Personally I think it is a bad sign that this subarch and boards do
->> not have active OpenWrt support, they are routers after all (right?)
->> and any active use of networking equipment should use a recent
->> userspace as well, given all the security bugs that popped up over
->> the years.
->>
->> With IXP4xx, Gemini and EP93xx we have found active users and
->> companies selling the chips and reference designs and even
->> recommending it for new products (!) at times.  If this is not the
->> case with KS8695 and no hobbyists are willing to submit it
->> to OpenWrt and modernize it to use device tree I think it should be
->> deleted from the kernel.
->>
-> 
-> That may be the best approach if indeed no one is using it,
-> much less maintaining it.
-
-Well, I for one don't really use it any more. So I don't have a lot
-of motivation to maintain it any longer.
-
-Regards
-Greg
-
+        Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
