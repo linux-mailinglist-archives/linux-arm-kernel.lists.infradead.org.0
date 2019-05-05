@@ -2,40 +2,40 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74B4613CBA
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 May 2019 04:15:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D95CF13CC1
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 May 2019 04:15:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=WnbogKxE9DckjUc+vPSJDcPlRKVlaNrLZXLWZ2gzZNk=; b=t6MHewxvyaxTF/
-	DXJo+I2L3Fz5a0FxPb/N3eKtFAJteAgT7kZSMNVEa2F1/QtE5XKLLAp+O7OnvwDMeTsf63uK9I4Lo
-	W4EaBeePpJ8SOQ3Jp7rKEmC90xy/GUYDbHBvQHea+41n0OPDpppxSXE6ozfNtu1F/CBFFcjBLQSvt
-	1mW+nUU4ESlY4L3dl9MisAUota/hjvip+CO/m7LoXFEOGfHI+FEWgAq+O9iE7Hcpq8SlIrEHxMmUf
-	F2V62xNu/Qbiavl3fvsyOzdd+H7hFOCq7zMbS32yKvEFQAcT4DT/0nSqtQL6kdW+RBMQ1dMDmqc1I
-	54wrgKXolP7MERCAt4/g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8NbtyFdw3Reve3JpUZDkAL0fQ+MOn6rhAAtil3UbhmI=; b=MINDeKOZutzaJH
+	JHtHd5JmLUhu2absmdut6kZAMVpsLHA3CsT1JQRuImyP9Q8dT/QxvwMnLNg7ZYChvXh3btzJbFmC0
+	mDlHAu33lvSD0KQCE9YZloqgDAT8Guh/RfXz7YQKEX8smACnUixN7KNW/roUxBCwRst1Z1NzOwUsf
+	mQ8CiwZ/u1vZHxDR3iIDistw9pV2x1nrz37K1p16P4Q8s31KkQN7lzl9t4OET9yGmLZPcTXTdkCF3
+	/CPIZcrkC9K/11bjeyy9Xz2c1ySRwhGecQCzTHnLdVHAUxwdBn8h5nOy0mT4IZHnqXM2HKhRP+92E
+	0nP4gukMM6wHmULc8gdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hN6gH-00088p-Be; Sun, 05 May 2019 02:15:09 +0000
+	id 1hN6gh-00019g-Dn; Sun, 05 May 2019 02:15:35 +0000
 Received: from mail-eopbgr150083.outbound.protection.outlook.com
  ([40.107.15.83] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hN6g3-00087q-Ls
- for linux-arm-kernel@lists.infradead.org; Sun, 05 May 2019 02:14:57 +0000
+ id 1hN6g5-00087q-Ve
+ for linux-arm-kernel@lists.infradead.org; Sun, 05 May 2019 02:14:59 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=CmoO/TCISfDIYgqg/9LN6RwC+pszocvbN38rrJjOVzQ=;
- b=m1JEQR6K82ROUQNOAHteFNrd0lKVePRuxxmwrbXIFvCC7c2HIS3Ri0DFwWYEXPwxHR4CNERNur3eP8PelqoE2AvZt7Sm+Wvh/GtjNIv3Sjj4MGcsldlvuSgf8YSCN4e0GxqWO/7EADPFVo0K91pNaMYJf3Z3+KuDy/UGX71sW9E=
+ bh=sOIRiR5vwE7X1H3TBSlJ90bjqK0SXHYdQy7zVWW4VpA=;
+ b=Ga+t7pSjjPlSGTGtS4RuNL35blOzRhQMLtjf4xtMzScemmuZvzmrosx18g/aKg04J/PaUYYkkXigx5KyhxeQFcRHMaQo1+zsC/8V6QqdJG3S3nMcovNPigu5g7AejFqWdlnAXrsLT+2OX/sEDcV0RfSGWeeYLYkX8xeu2Ar6DmE=
 Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
  DB3PR0402MB3721.eurprd04.prod.outlook.com (52.134.67.141) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1856.12; Sun, 5 May 2019 02:14:48 +0000
+ 15.20.1856.12; Sun, 5 May 2019 02:14:54 +0000
 Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
  ([fe80::e8ca:4f6b:e43:c170]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
  ([fe80::e8ca:4f6b:e43:c170%3]) with mapi id 15.20.1856.012; Sun, 5 May 2019
- 02:14:48 +0000
+ 02:14:54 +0000
 From: Anson Huang <anson.huang@nxp.com>
 To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
  <mark.rutland@arm.com>, "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
@@ -50,13 +50,14 @@ To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
  <linux-kernel@vger.kernel.org>, "linux-watchdog@vger.kernel.org"
  <linux-watchdog@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
  <linux-arm-kernel@lists.infradead.org>
-Subject: [PATCH V3 1/3] dt-bindings: watchdog: move i.MX system controller
- watchdog binding to SCU
-Thread-Topic: [PATCH V3 1/3] dt-bindings: watchdog: move i.MX system
- controller watchdog binding to SCU
-Thread-Index: AQHVAuhQe2wZP2oZpkWGF/5cltOBfA==
-Date: Sun, 5 May 2019 02:14:47 +0000
-Message-ID: <1557022189-10993-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V3 2/3] arm64: dts: imx8qxp: Move watchdog node into scu node
+Thread-Topic: [PATCH V3 2/3] arm64: dts: imx8qxp: Move watchdog node into scu
+ node
+Thread-Index: AQHVAuhTBtAtjXVfOEek45bdpineYw==
+Date: Sun, 5 May 2019 02:14:54 +0000
+Message-ID: <1557022189-10993-2-git-send-email-Anson.Huang@nxp.com>
+References: <1557022189-10993-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1557022189-10993-1-git-send-email-Anson.Huang@nxp.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -70,35 +71,35 @@ authentication-results: spf=none (sender IP is )
 x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [119.31.174.66]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 80309e0c-1025-4b23-3dd2-08d6d0ff7281
+x-ms-office365-filtering-correlation-id: dfc90f3a-a627-4654-0be3-08d6d0ff75e3
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
  SRVR:DB3PR0402MB3721; 
 x-ms-traffictypediagnostic: DB3PR0402MB3721:
-x-microsoft-antispam-prvs: <DB3PR0402MB3721E87E81C9BDE4FE1DF66DF5370@DB3PR0402MB3721.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1265;
+x-microsoft-antispam-prvs: <DB3PR0402MB372116DC26A789F8CFCA840AF5370@DB3PR0402MB3721.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:514;
 x-forefront-prvs: 00286C0CA6
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(376002)(39860400002)(366004)(346002)(136003)(199004)(189003)(14444005)(2906002)(256004)(86362001)(25786009)(71190400001)(14454004)(316002)(2501003)(36756003)(6116002)(3846002)(2201001)(52116002)(478600001)(68736007)(99286004)(66066001)(8936002)(50226002)(71200400001)(6486002)(6436002)(6512007)(53936002)(4326008)(81156014)(7416002)(486006)(305945005)(186003)(73956011)(66946007)(2616005)(476003)(66476007)(66556008)(64756008)(66446008)(102836004)(110136005)(5660300002)(6506007)(386003)(8676002)(81166006)(7736002)(26005)(921003)(1121003);
+ SFS:(10009020)(396003)(376002)(39860400002)(366004)(346002)(136003)(199004)(189003)(2906002)(256004)(86362001)(25786009)(71190400001)(14454004)(76176011)(316002)(4744005)(2501003)(36756003)(6116002)(3846002)(2201001)(52116002)(478600001)(68736007)(99286004)(66066001)(8936002)(50226002)(71200400001)(6486002)(6436002)(6512007)(53936002)(4326008)(81156014)(7416002)(486006)(305945005)(186003)(73956011)(11346002)(66946007)(2616005)(476003)(66476007)(66556008)(64756008)(66446008)(446003)(102836004)(110136005)(5660300002)(6506007)(386003)(8676002)(81166006)(7736002)(26005)(921003)(32563001)(1121003);
  DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3721;
  H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: AFslhTDzMqOIWFBuWe82bQ7JTRW8ukW5HRAYfFi3+jEMAHXgsxiEIXrxirpw4BND7i+ray0CZc9rL2qdQjXMhPZ9WntjD4IjFc1bP1k/4t//i1ngPqtODN/K4WuSj28zxsA9Qcw/WBjXHzaMSJzwFn+A9so/6u/TxI10AQ6ndLjrmXvqBzNcMf6HZb3WiuaQD+2JV+g2MWCYiP2Bfeu4IL4qbNu3TieK0BgZPcasUhZ4kHk4QO1rvBZu93qI3D21UmvXp+hdfHHu19Fa4avIGBu7Z6Vd9922SJ7vhC/lmI0PbvHeYmz3KBrdt/MUkZN2td4TSTsqFfOwAHK7Ya4VxhA7fi9+AWa3SDWS1BBYWs4X/EXpQkAc12fH5xPrt6PjuJBrSzoVVa7I6VZNh1THwTtGebc6wEE8mAkXxN2useE=
+x-microsoft-antispam-message-info: KNJoHOmTGvGyjva4U5WNjE3v1mS9zI9kxt+Ji7MT0dc6jCcvE1X9iEhypq1toPcP4xBy2yTKOxGYz0OehzWOLbh309/9myuYa4fftG4su9e3WMSsvIwGvptXPCom2kalFCfnLGb7z7R/nXwPTqLKsLDf8E1lrgrHNFj8g936uRSqk6329NZqklHgFmlFJQ+ci2ZnT0JX8fmsN184ZjlG9KrLmUfLzoH/TnHtbwdzrqx/6epGMRT9DcfrXoJuQ1q0WrlOpmsQev63gPSU5IUyBlQHglSUp5HBH9gIqUiq1Ds4j2EKdKwFHd0W2Hl0eoFWRdS3xxiYv7imCRakLb3kwszVbgPHsIbXThAfJ1BeseZZpSd7nJQWJCXIdvY2kUCzs+n8m50qdN8vK53BqLcOxGrM/akQoxIzqxueZHnFYiM=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 80309e0c-1025-4b23-3dd2-08d6d0ff7281
-X-MS-Exchange-CrossTenant-originalarrivaltime: 05 May 2019 02:14:47.9707 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: dfc90f3a-a627-4654-0be3-08d6d0ff75e3
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 May 2019 02:14:54.3433 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3721
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190504_191455_820441_F2E16C2C 
-X-CRM114-Status: GOOD (  14.20  )
+X-CRM114-CacheID: sfid-20190504_191458_018816_DAF4398A 
+X-CRM114-Status: GOOD (  13.15  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -132,42 +133,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-i.MX system controller watchdog depends on SCU driver to support
-interrupt function, so it needs to be subnode of SCU node in DT,
-binding doc should be moved to fsl,scu.txt as well.
+i.MX system controller watchdog has pretimeout function which
+depends on i.MX SCU driver, so it should be a subnode of SCU.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
-Changes since V2:
-	- no content change, just merge two dt-binding patches and improve the commit message.
+No change.
 ---
- .../devicetree/bindings/arm/freescale/fsl,scu.txt  | 15 ++++++++++++++
- .../bindings/watchdog/fsl-imx-sc-wdt.txt           | 24 ----------------------
- 2 files changed, 15 insertions(+), 24 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/watchdog/fsl-imx-sc-wdt.txt
+ arch/arm64/boot/dts/freescale/imx8qxp.dtsi | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-index 72d481c..9967212 100644
---- a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-+++ b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-@@ -122,6 +122,16 @@ RTC bindings based on SCU Message Protocol
- Required properties:
- - compatible: should be "fsl,imx8qxp-sc-rtc";
- 
-+Watchdog bindings based on SCU Message Protocol
-+------------------------------------------------------------
-+
-+Required properties:
-+- compatible: should be:
-+              "fsl,imx8qxp-sc-wdt"
-+              followed by "fsl,imx-sc-wdt";
-+Optional properties:
-+- timeout-sec: contains the watchdog timeout in seconds.
-+
- Example (imx8qxp):
- -------------
- lsio_mu1: mailbox@5d1c0000 {
-@@ -168,6 +178,11 @@ firmware {
+diff --git a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
+index 0683ee2..b17c22e 100644
+--- a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
+@@ -149,6 +149,11 @@
  		rtc: rtc {
  			compatible = "fsl,imx8qxp-sc-rtc";
  		};
@@ -177,38 +157,18 @@ index 72d481c..9967212 100644
 +			timeout-sec = <60>;
 +		};
  	};
- };
  
-diff --git a/Documentation/devicetree/bindings/watchdog/fsl-imx-sc-wdt.txt b/Documentation/devicetree/bindings/watchdog/fsl-imx-sc-wdt.txt
-deleted file mode 100644
-index 02b87e9..0000000
---- a/Documentation/devicetree/bindings/watchdog/fsl-imx-sc-wdt.txt
-+++ /dev/null
-@@ -1,24 +0,0 @@
--* Freescale i.MX System Controller Watchdog
+ 	timer {
+@@ -517,9 +522,4 @@
+ 			power-domains = <&pd IMX_SC_R_GPIO_7>;
+ 		};
+ 	};
 -
--i.MX system controller watchdog is for i.MX SoCs with system controller inside,
--the watchdog is managed by system controller, users can ONLY communicate with
--system controller from secure mode for watchdog operations, so Linux i.MX system
--controller watchdog driver will call ARM SMC API and trap into ARM-Trusted-Firmware
--for watchdog operations, ARM-Trusted-Firmware is running at secure EL3 mode and
--it will request system controller to execute the watchdog operation passed from
--Linux kernel.
--
--Required properties:
--- compatible:	Should be :
--		"fsl,imx8qxp-sc-wdt"
--		followed by "fsl,imx-sc-wdt";
--
--Optional properties:
--- timeout-sec : Contains the watchdog timeout in seconds.
--
--Examples:
--
--watchdog {
--	compatible = "fsl,imx8qxp-sc-wdt", "fsl,imx-sc-wdt";
--	timeout-sec = <60>;
--};
+-	watchdog {
+-		compatible = "fsl,imx8qxp-sc-wdt", "fsl,imx-sc-wdt";
+-		timeout-sec = <60>;
+-	};
+ };
 -- 
 2.7.4
 
