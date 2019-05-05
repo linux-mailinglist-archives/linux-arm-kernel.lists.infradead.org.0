@@ -2,58 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EEB8413F18
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 May 2019 13:06:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 67E1113F0E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 May 2019 13:05:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ma8dg34OV2sq4/a0jkGIXDIYNYnn/GbnU0Ilb3xh/Yc=; b=aI1Wy5sSB4jOm5
-	lJqWakrYtn7dg2gXOE6pjMnXsvoa4Aqlp24X/Dg3Q4YNGVcZiW9vHoepbuBv5lQ/TXaDu4GRQ4tvX
-	OnQY89Cvn85HxqPkIaR9jupbMKAGmHg94Ige0ru0upJaDVRnYnMm7jyRByOz7W/Oe11Qn8FoEYloK
-	yLVXMYwLCngWdCHnYnB20K3B9jCOB9QsEPhG0ljsM+NQp+SICJmCbOkLt+Mkw4eS22G+MZZ3pg+C9
-	ZQk4DqocOdUXtgvYEBpXfW5NXLeXJhMbYiFUXlmfqS0zajFx+vdtgV70h7xDnqNWYhEi1qBB8XIp3
-	LnIWxfWgiAqnGD1dW9Mw==;
+	List-Owner; bh=j1irwi66jlmtKLA7lKE7azxBlaIccXU9u4GXb6N90FY=; b=WiOKZ1RF99yq0m
+	l3MAmuhbYRdMbtGMtU8yqMRNJBDN1482MqPOiMPalPOhY3x/scWDSJR7PpvNNbIcPp1pmpWSs4Ta/
+	IN7nXzzigoqRnhaLTAV7t/7cjX7Yj6jYoOyO1Yk3XcDMGSbqS1DGsc0Li4AL3kr+oA0EI3IshPL34
+	DNKw151K+n1bkzGchBLnCj4xBctOz4jsNuRUAzJg+YIYxKeWqjQQAo+TOY24znC2wuKEjPYTW0tit
+	Z4NHuo3uLyG3GVgz1K1KY2LJrD0J3c2++8mN69tQDortAWrVUARF+KzYFEITQh62k5HX4z8Yl41LQ
+	5CisiIn3fea/ycSUtgOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNEy7-0006pz-7o; Sun, 05 May 2019 11:06:07 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hNExl-0006Nx-5j; Sun, 05 May 2019 11:05:45 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNExd-0006MH-6V; Sun, 05 May 2019 11:05:39 +0000
-X-UUID: 6f3c53c3fed7420f9ea22bec5dee0a07-20190505
-X-UUID: 6f3c53c3fed7420f9ea22bec5dee0a07-20190505
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ id 1hNExb-0006M4-PP; Sun, 05 May 2019 11:05:37 +0000
+X-UUID: 27158b369fdb40788b8a24d4db96bc1e-20190505
+X-UUID: 27158b369fdb40788b8a24d4db96bc1e-20190505
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
  (envelope-from <jitao.shi@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2030855415; Sun, 05 May 2019 03:05:30 -0800
-Received: from MTKMBS33DR.mediatek.inc (172.27.6.106) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 5 May 2019 04:05:28 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS33DR.mediatek.inc
- (172.27.6.106) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Sun, 5 May 2019 19:05:25 +0800
+ with ESMTP id 1285802185; Sun, 05 May 2019 03:05:31 -0800
+Received: from MTKMBS33N2.mediatek.inc (172.27.4.76) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 5 May 2019 04:05:30 -0700
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS33N2.mediatek.inc
+ (172.27.4.76) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Sun, 5 May 2019 19:05:27 +0800
 Received: from mszsdclx1018.gcn.mediatek.inc (172.27.4.253) by
  MTKCAS32.mediatek.inc (172.27.4.170) with Microsoft SMTP Server id
- 15.0.1395.4 via Frontend Transport; Sun, 5 May 2019 19:05:24 +0800
+ 15.0.1395.4 via Frontend Transport; Sun, 5 May 2019 19:05:26 +0800
 From: Jitao Shi <jitao.shi@mediatek.com>
 To: Rob Herring <robh+dt@kernel.org>, Pawel Moll <pawel.moll@arm.com>, "Mark
  Rutland" <mark.rutland@arm.com>, Ian Campbell
  <ijc+devicetree@hellion.org.uk>, Kumar Gala <galak@codeaurora.org>,
  <linux-pwm@vger.kernel.org>, David Airlie <airlied@linux.ie>, Matthias
  Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH 1/2] arm64: dts: mt8183: add dsi node
-Date: Sun, 5 May 2019 19:05:16 +0800
-Message-ID: <20190505110517.965-2-jitao.shi@mediatek.com>
+Subject: [PATCH 2/2] arm64: dts: mt8183: add pwm0 node
+Date: Sun, 5 May 2019 19:05:17 +0800
+Message-ID: <20190505110517.965-3-jitao.shi@mediatek.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190505110517.965-1-jitao.shi@mediatek.com>
 References: <20190505110517.965-1-jitao.shi@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190505_040537_240667_1979008D 
-X-CRM114-Status: UNSURE (   8.16  )
+X-CRM114-CacheID: sfid-20190505_040536_022904_AF7C4A66 
+X-CRM114-Status: UNSURE (   8.72  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -91,55 +91,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add dsi and mipitx nodes to the mt8183
+Add pwm0 node to the mt8183
 
 Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
 ---
- arch/arm64/boot/dts/mediatek/mt8183.dtsi | 24 ++++++++++++++++++++++++
- 1 file changed, 24 insertions(+)
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-index b36e37fcdfe3..84f465fa4fac 100644
+index 84f465fa4fac..b0dda57a7e23 100644
 --- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
 +++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-@@ -353,6 +353,16 @@
+@@ -323,6 +323,17 @@
  			status = "disabled";
  		};
  
-+		mipi_tx0: mipi-dphy@11e50000 {
-+			compatible = "mediatek,mt8183-mipi-tx";
-+			reg = <0 0x11e50000 0 0x1000>;
-+			clocks = <&apmixedsys CLK_APMIXED_MIPID0_26M>;
-+			clock-names = "ref_clk";
-+			#clock-cells = <0>;
-+			#phy-cells = <0>;
-+			clock-output-names = "mipi_tx0_pll";
-+		};
-+
- 		mfgcfg: syscon@13000000 {
- 			compatible = "mediatek,mt8183-mfgcfg", "syscon";
- 			reg = <0 0x13000000 0 0x1000>;
-@@ -365,6 +375,20 @@
- 			#clock-cells = <1>;
- 		};
- 
-+		dsi0: dsi@14014000 {
-+			compatible = "mediatek,mt8183-dsi";
-+			reg = <0 0x14014000 0 0x1000>;
-+			interrupts = <GIC_SPI 236 IRQ_TYPE_LEVEL_LOW>;
++		pwm0: pwm@1100e000 {
++			compatible = "mediatek,mt8183-disp-pwm";
++			reg = <0 0x1100e000 0 0x1000>;
++			interrupts = <GIC_SPI 128 IRQ_TYPE_LEVEL_LOW>;
 +			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-+			mediatek,syscon-dsi = <&mmsys 0x140>;
-+			clocks = <&mmsys CLK_MM_DSI0_MM>,
-+				<&mmsys CLK_MM_DSI0_IF>,
-+				<&mipi_tx0>;
-+			clock-names = "engine", "digital", "hs";
-+			phys = <&mipi_tx0>;
-+			phy-names = "dphy";
++			#pwm-cells = <2>;
++			clocks = <&topckgen CLK_TOP_MUX_DISP_PWM>,
++					<&infracfg CLK_INFRA_DISP_PWM>;
++			clock-names = "main", "mm";
 +		};
 +
- 		smi_common: smi@14019000 {
- 			compatible = "mediatek,mt8183-smi-common", "syscon";
- 			reg = <0 0x14019000 0 0x1000>;
+ 		audiosys: syscon@11220000 {
+ 			compatible = "mediatek,mt8183-audiosys", "syscon";
+ 			reg = <0 0x11220000 0 0x1000>;
 -- 
 2.21.0
 
