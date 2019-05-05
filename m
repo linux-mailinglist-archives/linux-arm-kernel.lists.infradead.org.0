@@ -2,88 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75E6A13DB1
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 May 2019 08:16:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D454B13DBC
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 May 2019 08:18:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
 	References:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FuS/bc5qK0YYPUiJLbNVEagDmLZ+cPCdNiZDlzP943k=; b=HZKH9xWBxEcDex
-	NSA6agTI5SYIyXATYCz5xbThcZfiwC6RAFYYoKEhEEOgbURiMzZhjMqNwHcM0iGNkL8XFxX64ga55
-	6RoEDYknsvrQA0o7mQwMEAc+acVSzaXYDdWuPu4xToVtocJnYqvyAvYVR32Vckqo0zm9XRRL6n8nR
-	dSpMponObomoVosn2oTYKQawsYKUacMe8ufX0mi/OQX6QYKLGr4ei9iGS4tMpzTbfDmShYkAYA59H
-	MM488SBMSswV0g8pwiVSk8deeTtrgVYEbTSD1XjzR7fPBGJFaSdXT5Sh5JP26WcOFuHsa8gfCXPgV
-	zsOe/479HHChIpXUyiWA==;
+	List-Owner; bh=KfiZ0AYRwLSNuZvBBLHewzsl1ecm+oXEFDgTGoRhapQ=; b=JWWLVD3yelMXCT
+	Ki3wlwrjezyVQHW7VfYvZ+mpMnkn5ubdpcD0g/PAnuTlDB1wZHjZrS0Bqpe6940qEnRcu7EHCzdMy
+	LCJdZVrdEWgFGrs1Q/+spqLowzuqPStVPnCn6l0O7dYy0oS/T9V2aRXNntPLF7cUcVF/ZVXvtd3TP
+	nzubOQWQGOCtdXPOKW/pJz8S2CM8II5K0mkROlvUikPBmTeUAhzLa0yMqjye3XncRZ96GW3RFnhD1
+	8F4CXv0BOtKDrLX4nIYWyAr8c16NKCBZZxIf19lcO8xcHxgRsHwGBLyjbufj/mf4pg7vuStNRYZG+
+	c/tuuWOmIARAijpbpeyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNARM-0004mg-70; Sun, 05 May 2019 06:16:00 +0000
+	id 1hNATO-00057A-1E; Sun, 05 May 2019 06:18:06 +0000
 Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
  helo=mx0a-001b2d01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNARA-0004l7-EN
- for linux-arm-kernel@lists.infradead.org; Sun, 05 May 2019 06:15:49 +0000
-Received: from pps.filterd (m0098417.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x4566xDC019316
- for <linux-arm-kernel@lists.infradead.org>; Sun, 5 May 2019 02:15:40 -0400
+ id 1hNATB-00056D-17
+ for linux-arm-kernel@lists.infradead.org; Sun, 05 May 2019 06:17:54 +0000
+Received: from pps.filterd (m0098419.ppops.net [127.0.0.1])
+ by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x4566VmB087758
+ for <linux-arm-kernel@lists.infradead.org>; Sun, 5 May 2019 02:17:52 -0400
 Received: from e06smtp07.uk.ibm.com (e06smtp07.uk.ibm.com [195.75.94.103])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2s9qttcb7k-1
+ by mx0b-001b2d01.pphosted.com with ESMTP id 2s9qjwmxaa-1
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Sun, 05 May 2019 02:15:40 -0400
+ for <linux-arm-kernel@lists.infradead.org>; Sun, 05 May 2019 02:17:52 -0400
 Received: from localhost
  by e06smtp07.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
  Violators will be prosecuted
  for <linux-arm-kernel@lists.infradead.org> from <rppt@linux.ibm.com>;
- Sun, 5 May 2019 07:15:38 +0100
-Received: from b06cxnps3074.portsmouth.uk.ibm.com (9.149.109.194)
+ Sun, 5 May 2019 07:17:50 +0100
+Received: from b06cxnps4076.portsmouth.uk.ibm.com (9.149.109.198)
  by e06smtp07.uk.ibm.com (192.168.101.137) with IBM ESMTP SMTP Gateway:
  Authorized Use Only! Violators will be prosecuted; 
  (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Sun, 5 May 2019 07:15:31 +0100
-Received: from d06av24.portsmouth.uk.ibm.com (mk.ibm.com [9.149.105.60])
- by b06cxnps3074.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x456FUUd61079648
+ Sun, 5 May 2019 07:17:42 +0100
+Received: from b06wcsmtp001.portsmouth.uk.ibm.com
+ (b06wcsmtp001.portsmouth.uk.ibm.com [9.149.105.160])
+ by b06cxnps4076.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x456Hf6G48759002
  (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Sun, 5 May 2019 06:15:30 GMT
-Received: from d06av24.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id EB15F42042;
- Sun,  5 May 2019 06:15:29 +0000 (GMT)
-Received: from d06av24.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id BE8ED42047;
- Sun,  5 May 2019 06:15:27 +0000 (GMT)
+ Sun, 5 May 2019 06:17:41 GMT
+Received: from b06wcsmtp001.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 59F9EA405F;
+ Sun,  5 May 2019 06:17:41 +0000 (GMT)
+Received: from b06wcsmtp001.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 2D3E4A4054;
+ Sun,  5 May 2019 06:17:39 +0000 (GMT)
 Received: from rapoport-lnx (unknown [9.148.8.112])
- by d06av24.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
- Sun,  5 May 2019 06:15:27 +0000 (GMT)
-Date: Sun, 5 May 2019 09:15:26 +0300
+ by b06wcsmtp001.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
+ Sun,  5 May 2019 06:17:39 +0000 (GMT)
+Date: Sun, 5 May 2019 09:17:37 +0300
 From: Mike Rapoport <rppt@linux.ibm.com>
 To: Paul Burton <paul.burton@mips.com>
-Subject: Re: [PATCH 01/15] asm-generic, x86: introduce generic
- pte_{alloc,free}_one[_kernel]
+Subject: Re: [PATCH 08/15] mips: switch to generic version of pte allocation
 References: <1556810922-20248-1-git-send-email-rppt@linux.ibm.com>
- <1556810922-20248-2-git-send-email-rppt@linux.ibm.com>
- <20190502190310.voenw3pwgpelmdgw@pburton-laptop>
+ <1556810922-20248-9-git-send-email-rppt@linux.ibm.com>
+ <20190502190945.rrrxfxo3rbhgc3cx@pburton-laptop>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190502190310.voenw3pwgpelmdgw@pburton-laptop>
+In-Reply-To: <20190502190945.rrrxfxo3rbhgc3cx@pburton-laptop>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-TM-AS-GCONF: 00
-x-cbid: 19050506-0028-0000-0000-0000036A7624
+x-cbid: 19050506-0028-0000-0000-0000036A763C
 X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19050506-0029-0000-0000-00002429E811
-Message-Id: <20190505061525.GC15755@rapoport-lnx>
+x-cbparentid: 19050506-0029-0000-0000-00002429E828
+Message-Id: <20190505061737.GD15755@rapoport-lnx>
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2019-05-05_04:, , signatures=0
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
  priorityscore=1501
  malwarescore=0 suspectscore=2 phishscore=0 bulkscore=0 spamscore=0
  clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=823 adultscore=0 classifier=spam adjust=0 reason=mlx
+ mlxlogscore=804 adultscore=0 classifier=spam adjust=0 reason=mlx
  scancount=1 engine=8.0.1-1810050000 definitions=main-1905050056
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190504_231548_609969_6AF7CD16 
-X-CRM114-Status: GOOD (  21.92  )
+X-CRM114-CacheID: sfid-20190504_231753_195384_A2FDAA69 
+X-CRM114-Status: GOOD (  23.41  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -132,26 +132,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 02, 2019 at 07:03:11PM +0000, Paul Burton wrote:
+On Thu, May 02, 2019 at 07:09:47PM +0000, Paul Burton wrote:
 > Hi Mike,
 > 
-> On Thu, May 02, 2019 at 06:28:28PM +0300, Mike Rapoport wrote:
-> > +/**
-> > + * pte_free_kernel - free PTE-level user page table page
-> > + * @mm: the mm_struct of the current context
-> > + * @pte_page: the `struct page` representing the page table
-> > + */
-> > +static inline void pte_free(struct mm_struct *mm, struct page *pte_page)
-> > +{
-> > +	pgtable_page_dtor(pte_page);
-> > +	__free_page(pte_page);
-> > +}
+> On Thu, May 02, 2019 at 06:28:35PM +0300, Mike Rapoport wrote:
+> > MIPS allocates kernel PTE pages with
+> > 
+> > 	__get_free_pages(GFP_KERNEL | __GFP_ZERO, PTE_ORDER)
+> > 
+> > and user PTE pages with
+> > 
+> > 	alloc_pages(GFP_KERNEL | __GFP_ZERO, PTE_ORDER)
 > 
-> Nit: the comment names the wrong function (s/pte_free_kernel/pte_free/).
+> That bit isn't quite true - we don't use __GFP_ZERO in pte_alloc_one() &
+> instead call clear_highpage() on the allocated page. Not that I have a
+> problem with using __GFP_ZERO - it seems like the more optimal choice.
+> It just might be worth mentioning the change & expected equivalent
+> behavior.
 
-Argh, evil copy-paste :)
-Thanks!
+You are right, I'll fix the changelog.
  
+> Otherwise:
+> 
+>     Acked-by: Paul Burton <paul.burton@mips.com>
+
+Thanks.
+
 > Thanks,
 >     Paul
 > 
