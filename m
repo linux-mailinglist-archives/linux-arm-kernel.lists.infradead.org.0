@@ -2,97 +2,117 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98A0913DE2
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 May 2019 08:24:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4036113DEE
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 May 2019 08:32:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
-	References:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hEtt+IP96+bDoL8MLvUk2dwN51PVUHh1e/xzX+qx0yo=; b=B6wmdOjELrXRwj
-	hCDnlKPWhJJis9lf5OAKFLxeRp/Y62Cr1rn91JzkRw65f1R2lEGTpQHe/F7co5camOcCXDfM7TsbA
-	Q/hCS/SYLtQsVAzmGUC4nE56bbSxPC1GpQFUZioRY36Me7a/OeSRollE7HwYQZe/RqHw9w2uv2gyC
-	sKDszHMyx2V44x9OjFZbT0tgYzHz0kXpiGfWrTNBGs1qJbVUf69l6BMsC0j/zLXdkeGu348JpNj3v
-	+joNQaFVgwPHg1K4N4Znc+KcUZPFpv42nUbIrTX6eUYWeZ66NAFPXKfBSWYtAkvygypyWSL/enhyy
-	AhtlRDhJcBvYrTaxvKYA==;
+	List-Owner; bh=YTkQ1imH7+kn20XCuVvBNG79dDtNlHRqxbUjb55NhrY=; b=gybkZ5LZjFShUA
+	Eg3IrQuw0QmY8G92RHcT7ApStmBWcYIqpzqsJCCCR57mrjgw38hNuk96FSsDJ+WhHRMZIE3fwjzK1
+	ZYRG+hIEd/oGL6TNSOwelibnDWf8fISi1hQpAbM+ThnGhfgKNSugxSg2pZxSIwkki2tDP5+mGAWr9
+	YtNepGvulQMenF2fU7bTE2qqoQuoGtzGLd5IgCvd3O43Ymm3rCPQgReeCE/FFDBSKEiZ+hj421AHF
+	DC7XwbyIeS2Eo2WYMVsy11UF7kGDLyb8BvOOrcWZ4LHBJ83mvetOGdNMmr2GopmcxFte8QbdV5I9g
+	OFUSs4lufKwdRuGv9bQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNAZD-0007qf-7e; Sun, 05 May 2019 06:24:07 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1hNAhY-0002Ty-TI; Sun, 05 May 2019 06:32:44 +0000
+Received: from mail-eopbgr60050.outbound.protection.outlook.com ([40.107.6.50]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNAZ1-0007pf-0C
- for linux-arm-kernel@lists.infradead.org; Sun, 05 May 2019 06:23:56 +0000
-Received: from pps.filterd (m0098421.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x456LePP042707
- for <linux-arm-kernel@lists.infradead.org>; Sun, 5 May 2019 02:23:54 -0400
-Received: from e06smtp05.uk.ibm.com (e06smtp05.uk.ibm.com [195.75.94.101])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2s9r5hc07v-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Sun, 05 May 2019 02:23:54 -0400
-Received: from localhost
- by e06smtp05.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-arm-kernel@lists.infradead.org> from <rppt@linux.ibm.com>;
- Sun, 5 May 2019 07:23:51 +0100
-Received: from b06cxnps4076.portsmouth.uk.ibm.com (9.149.109.198)
- by e06smtp05.uk.ibm.com (192.168.101.135) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Sun, 5 May 2019 07:23:44 +0100
-Received: from d06av22.portsmouth.uk.ibm.com (d06av22.portsmouth.uk.ibm.com
- [9.149.105.58])
- by b06cxnps4076.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x456Nh9r52560040
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Sun, 5 May 2019 06:23:43 GMT
-Received: from d06av22.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 40EC84C046;
- Sun,  5 May 2019 06:23:43 +0000 (GMT)
-Received: from d06av22.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 1D4414C040;
- Sun,  5 May 2019 06:23:41 +0000 (GMT)
-Received: from rapoport-lnx (unknown [9.148.8.112])
- by d06av22.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
- Sun,  5 May 2019 06:23:41 +0000 (GMT)
-Date: Sun, 5 May 2019 09:23:39 +0300
-From: Mike Rapoport <rppt@linux.ibm.com>
-To: Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: Re: [PATCH 12/15] powerpc/nohash/64: switch to generic version of
- pte allocation
-References: <1556810922-20248-1-git-send-email-rppt@linux.ibm.com>
- <1556810922-20248-13-git-send-email-rppt@linux.ibm.com>
- <adcb6ae6-48d9-5ba9-2732-a0ab1d96667c@c-s.fr>
+ id 1hNAhL-0002Tc-6t
+ for linux-arm-kernel@lists.infradead.org; Sun, 05 May 2019 06:32:32 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=YvCLbovyrtXbhBwylybs9/WOyi1tEma+jWqgLTlf+xc=;
+ b=P6MTzGn5o4gnj8zrwlAgkEnrm+MNFAbXTrG4juQ30j5dNbKfDw45fGb1dpxwtG7CHyingp7bH0ZTGEyQfa4P9l/JP5P78O8gZODaC1EpkW7KLLHjUFr56/FGPn4y1i70FA50N40YSN0xqq2FG94ZniC4nXSQIf56piHqk3bstrE=
+Received: from AM0PR04MB4211.eurprd04.prod.outlook.com (52.134.92.158) by
+ AM0PR04MB4196.eurprd04.prod.outlook.com (52.134.90.28) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1856.11; Sun, 5 May 2019 06:32:21 +0000
+Received: from AM0PR04MB4211.eurprd04.prod.outlook.com
+ ([fe80::c415:3cab:a042:2e13]) by AM0PR04MB4211.eurprd04.prod.outlook.com
+ ([fe80::c415:3cab:a042:2e13%6]) with mapi id 15.20.1856.012; Sun, 5 May 2019
+ 06:32:21 +0000
+From: Aisheng Dong <aisheng.dong@nxp.com>
+To: Anson Huang <anson.huang@nxp.com>, "mturquette@baylibre.com"
+ <mturquette@baylibre.com>, "sboyd@kernel.org" <sboyd@kernel.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
+ <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>, "l.stach@pengutronix.de"
+ <l.stach@pengutronix.de>, "pp@emlix.com" <pp@emlix.com>,
+ "tiny.windzz@gmail.com" <tiny.windzz@gmail.com>, "colin.didier@devialet.com"
+ <colin.didier@devialet.com>, "robh@kernel.org" <robh@kernel.org>, Jacky Bai
+ <ping.bai@nxp.com>, Leonard Crestez <leonard.crestez@nxp.com>,
+ "hofrat@osadl.org" <hofrat@osadl.org>, "michael@amarulasolutions.com"
+ <michael@amarulasolutions.com>, "stefan@agner.ch" <stefan@agner.ch>, Abel
+ Vesa <abel.vesa@nxp.com>, "linux-clk@vger.kernel.org"
+ <linux-clk@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: RE: [PATCH 1/2] clk: imx: Add common API for masking MMDC handshake
+Thread-Topic: [PATCH 1/2] clk: imx: Add common API for masking MMDC handshake
+Thread-Index: AQHVAwpmnCdleDO3TECDUWrDtJQRdKZcEfNg
+Date: Sun, 5 May 2019 06:32:21 +0000
+Message-ID: <AM0PR04MB42111E93D8F3C867CA49CC4280370@AM0PR04MB4211.eurprd04.prod.outlook.com>
+References: <1557036830-13567-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1557036830-13567-1-git-send-email-Anson.Huang@nxp.com>
+Accept-Language: zh-CN, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=aisheng.dong@nxp.com; 
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 8c10e469-88b5-4f97-a225-08d6d1236ddc
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB4196; 
+x-ms-traffictypediagnostic: AM0PR04MB4196:
+x-microsoft-antispam-prvs: <AM0PR04MB419602F0AF2956654CF4308980370@AM0PR04MB4196.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3044;
+x-forefront-prvs: 00286C0CA6
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(39860400002)(376002)(366004)(396003)(346002)(136003)(189003)(199004)(66066001)(6246003)(4744005)(53936002)(14454004)(66556008)(4326008)(7416002)(2501003)(44832011)(26005)(186003)(476003)(2201001)(7736002)(486006)(305945005)(316002)(81166006)(2906002)(76116006)(81156014)(66476007)(66446008)(73956011)(9686003)(8676002)(66946007)(8936002)(64756008)(5660300002)(6436002)(86362001)(55016002)(229853002)(52536014)(68736007)(71200400001)(71190400001)(53546011)(6506007)(7696005)(76176011)(256004)(102836004)(33656002)(99286004)(6116002)(446003)(3846002)(11346002)(110136005)(478600001)(74316002)(25786009)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4196;
+ H:AM0PR04MB4211.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 75MZNZTJC0oRR0rNu4i2eEyrb6v9ry7X/mc9gwWj8cWrqXTvJ0t1pD26pKvwgoHWBLXPniSFx6QVRoWXMM7bceiUszDw447JZophY9tpyyfsAd+gEDOcO5XPJUBV91xcn9e38SoGlGRRKXYDG1pae5FuRPUUHxN5rf/y4ZXbXgWKBEG32J1RZSskg7iF4Xa4dsqofVpze8N+3EbqPQ0XlHLI9+UMqrvKAj7IC7kirpxbkWs/PMuRLM9h78LpVDpo450aclHjOcEUVUduUY9RNvC+OWEkukI5D2oHXSz814WahpPltjts8L+6PmZUIJDWQJSdR6kgLz7wCnrBUzdntJ4/cb+Qortww/4hOkJEf8XhwukdV2/4hh26e+CDfOLKYAQZR2dgiV85LHNE+f2pcQ+y7E8r/GLbeTmV52/jbmg=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <adcb6ae6-48d9-5ba9-2732-a0ab1d96667c@c-s.fr>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-TM-AS-GCONF: 00
-x-cbid: 19050506-0020-0000-0000-000003397072
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19050506-0021-0000-0000-0000218C0137
-Message-Id: <20190505062339.GF15755@rapoport-lnx>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-05_04:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1810050000 definitions=main-1905050057
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8c10e469-88b5-4f97-a225-08d6d1236ddc
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 May 2019 06:32:21.5391 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4196
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190504_232355_170176_2F6D1DED 
-X-CRM114-Status: GOOD (  24.98  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190504_233231_252312_2AEBEFE6 
+X-CRM114-Status: UNSURE (   7.70  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.6.50 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -104,119 +124,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Michal Hocko <mhocko@suse.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Palmer Dabbelt <palmer@sifive.com>, linux-kernel@vger.kernel.org,
- Guo Ren <guoren@kernel.org>, linux-riscv@lists.infradead.org,
- linux-arch@vger.kernel.org, Richard Weinberger <richard@nod.at>,
- Helge Deller <deller@gmx.de>, x86@kernel.org,
- Russell King <linux@armlinux.org.uk>, Matthew Wilcox <willy@infradead.org>,
- Geert Uytterhoeven <geert@linux-m68k.org>, Matt Turner <mattst88@gmail.com>,
- Sam Creasey <sammy@sammy.net>, Arnd Bergmann <arnd@arndb.de>,
- linux-alpha@vger.kernel.org, linux-um@lists.infradead.org,
- linux-m68k@lists.linux-m68k.org, Greentime Hu <green.hu@gmail.com>,
- Ley Foon Tan <lftan@altera.com>, Guan Xuetao <gxt@pku.edu.cn>,
- linux-arm-kernel@lists.infradead.org, linux-parisc@vger.kernel.org,
- linux-mips@vger.kernel.org, Richard Kuo <rkuo@codeaurora.org>,
- Paul Burton <paul.burton@mips.com>, linux-hexagon@vger.kernel.org,
- nios2-dev@lists.rocketboards.org, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: dl-linux-imx <linux-imx@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 02, 2019 at 06:56:07PM +0200, Christophe Leroy wrote:
-> =
+> From: Anson Huang
+> Sent: Sunday, May 5, 2019 2:19 PM
+> Subject: [PATCH 1/2] clk: imx: Add common API for masking MMDC handshake
+> 
+> All i.MX6 SoCs need to mask unused MMDC channel's handshake for low
+> power modes, this patch provides common API for masking the MMDC
+> channel passed from caller.
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-> =
+Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
 
-> Le 02/05/2019 =E0 17:28, Mike Rapoport a =E9crit=A0:
-> >The 64-bit book-E powerpc implements pte_alloc_one(),
-> >pte_alloc_one_kernel(), pte_free_kernel() and pte_free() the same way as
-> >the generic version.
-> =
-
-> Will soon be converted to the same as the 3 other PPC subarches, see
-> https://patchwork.ozlabs.org/patch/1091590/
- =
-
-Thanks for the heads up. I'll drop this from the next re-spin.
-
-> Christophe
-> =
-
-> >
-> >Switch it to the generic version that does exactly the same thing.
-> >
-> >Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
-> >---
-> >  arch/powerpc/include/asm/nohash/64/pgalloc.h | 35 ++------------------=
---------
-> >  1 file changed, 2 insertions(+), 33 deletions(-)
-> >
-> >diff --git a/arch/powerpc/include/asm/nohash/64/pgalloc.h b/arch/powerpc=
-/include/asm/nohash/64/pgalloc.h
-> >index 66d086f..bfb53a0 100644
-> >--- a/arch/powerpc/include/asm/nohash/64/pgalloc.h
-> >+++ b/arch/powerpc/include/asm/nohash/64/pgalloc.h
-> >@@ -11,6 +11,8 @@
-> >  #include <linux/cpumask.h>
-> >  #include <linux/percpu.h>
-> >+#include <asm-generic/pgalloc.h>	/* for pte_{alloc,free}_one */
-> >+
-> >  struct vmemmap_backing {
-> >  	struct vmemmap_backing *list;
-> >  	unsigned long phys;
-> >@@ -92,39 +94,6 @@ static inline void pmd_free(struct mm_struct *mm, pmd=
-_t *pmd)
-> >  	kmem_cache_free(PGT_CACHE(PMD_CACHE_INDEX), pmd);
-> >  }
-> >-
-> >-static inline pte_t *pte_alloc_one_kernel(struct mm_struct *mm)
-> >-{
-> >-	return (pte_t *)__get_free_page(GFP_KERNEL | __GFP_ZERO);
-> >-}
-> >-
-> >-static inline pgtable_t pte_alloc_one(struct mm_struct *mm)
-> >-{
-> >-	struct page *page;
-> >-	pte_t *pte;
-> >-
-> >-	pte =3D (pte_t *)__get_free_page(GFP_KERNEL | __GFP_ZERO | __GFP_ACCOU=
-NT);
-> >-	if (!pte)
-> >-		return NULL;
-> >-	page =3D virt_to_page(pte);
-> >-	if (!pgtable_page_ctor(page)) {
-> >-		__free_page(page);
-> >-		return NULL;
-> >-	}
-> >-	return page;
-> >-}
-> >-
-> >-static inline void pte_free_kernel(struct mm_struct *mm, pte_t *pte)
-> >-{
-> >-	free_page((unsigned long)pte);
-> >-}
-> >-
-> >-static inline void pte_free(struct mm_struct *mm, pgtable_t ptepage)
-> >-{
-> >-	pgtable_page_dtor(ptepage);
-> >-	__free_page(ptepage);
-> >-}
-> >-
-> >  static inline void pgtable_free(void *table, int shift)
-> >  {
-> >  	if (!shift) {
-> >
-> =
-
-
--- =
-
-Sincerely yours,
-Mike.
-
+Regards
+Dong Aisheng
 
 _______________________________________________
 linux-arm-kernel mailing list
