@@ -2,110 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 05F6F13FBE
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 May 2019 15:29:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E9BB14014
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 May 2019 16:11:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2neye1Ma6Qp1HLJCP/EAGOEWI199ru27Rcg6PZw+Ms0=; b=GU8rxUFQparvTi
-	SrJXM7khFmnNNO+HQo5FPmqsaf60zaT3UMe7NGoIiV+n7jyDbjL4nBNUCG952/3pUbtaqbCtQk608
-	P5qUZh3ZfHPGejesRYjDbZ4LLisTBY9M9Gxgy2PaUlaaaGEDY669SIALXYoc5qKsTVyMMXAQhdxBp
-	WysG3BAiYuXQmvLrLGrMAoPj9kR7SnMJAEWtOJJ2dbBxfkRI3vY9i/uyKY9iC3XwURPTjpXLb6Mvh
-	KIOuxYpXf7jHVL2PGU1N+4oEjTfsbBkjkX9JFDMMZeohd2/zePBGOXz/Rxpy+3UpDYiavL55ob2T2
-	UJwREY2aqf6S3xhhAoxQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:In-Reply-To:
+	Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=rfVt64i2Zr64ftdq8uS7NFKUd9QfLOYDMxp2v/y3Jr8=; b=JvvoBmA7R7UaT2
+	nlbl8/gaOZteYYZedAclsRx2dDOUCr/JvG6Gip9ecQe6uNcaf4bvCtfdicso2xPca7EKXYQhj5rot
+	eFyWOxWZqOkR0DN8urqPSLF4TpX5DH2kavXMzXLbCGGppqCRGyorWVEjhG/OXnphVNYpUnvJ64uBQ
+	XxwOfnAK7qu8buAA+vlqwS/cMAoKMYrrKPIq54bbd7dndbzZQwzPIcaHaLM4u8hBX9gtrETLsys2o
+	DTv+BrK+aceJiV8riqRfF8RxDA7vbA2PS0WsGxKZuFq1/pACwjmSuUrwlzU4kpSpTPzYW1ysWARQo
+	1XWZ/eU6LDxiiRhRTYMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNHCP-0008Aq-IL; Sun, 05 May 2019 13:29:01 +0000
-Received: from mail-eopbgr60044.outbound.protection.outlook.com ([40.107.6.44]
- helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+	id 1hNHr3-0006UU-Bn; Sun, 05 May 2019 14:11:01 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNHBv-0007Y2-I4
- for linux-arm-kernel@lists.infradead.org; Sun, 05 May 2019 13:28:37 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=J0sRY4MRlfUGqyv1fW60W7NMUpX7Lruwrq8nEp7FiPk=;
- b=gUeEUN7Mx03i3d75huV5hu5ZOOrTe2Fgnjt30vscjwsMSLi758kCP19YWnh0NLJ+lK56ENRUfIf6+5H1tDtp3GV3Y0jzhZP9D9lVZ200+HlVSAxjA/T/VFFLLbRifC82bxEj3+645XfQCrnhK3vZ2HRnruXKFHJV5kJS8ppZiFg=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB4259.eurprd04.prod.outlook.com (52.134.126.138) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1856.12; Sun, 5 May 2019 13:28:29 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::3173:24:d401:2378]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::3173:24:d401:2378%6]) with mapi id 15.20.1856.012; Sun, 5 May 2019
- 13:28:29 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "shawnguo@kernel.org"
- <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>, "srinivas.kandagatla@linaro.org"
- <srinivas.kandagatla@linaro.org>
-Subject: [PATCH 4/4] arm64: dts: imx: add i.MX8QXP ocotp support
-Thread-Topic: [PATCH 4/4] arm64: dts: imx: add i.MX8QXP ocotp support
-Thread-Index: AQHVA0ZtsxbN8eaaUUa3sSDIde4/ig==
-Date: Sun, 5 May 2019 13:28:29 +0000
-Message-ID: <20190505134130.28071-4-peng.fan@nxp.com>
-References: <20190505134130.28071-1-peng.fan@nxp.com>
-In-Reply-To: <20190505134130.28071-1-peng.fan@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.16.4
-x-clientproxiedby: HK0PR03CA0099.apcprd03.prod.outlook.com
- (2603:1096:203:b0::15) To AM0PR04MB4481.eurprd04.prod.outlook.com
- (2603:10a6:208:70::15)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [119.31.174.71]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 7265ab6c-b5f3-4d7d-518d-08d6d15d8fb5
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB4259; 
-x-ms-traffictypediagnostic: AM0PR04MB4259:
-x-microsoft-antispam-prvs: <AM0PR04MB4259A9169BD637AC21C00A7388370@AM0PR04MB4259.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:243;
-x-forefront-prvs: 00286C0CA6
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(376002)(39860400002)(396003)(136003)(366004)(346002)(189003)(199004)(486006)(54906003)(110136005)(68736007)(446003)(2906002)(11346002)(476003)(2616005)(8936002)(8676002)(66066001)(81166006)(7416002)(7736002)(305945005)(44832011)(53936002)(36756003)(50226002)(4326008)(25786009)(86362001)(2201001)(1076003)(4744005)(5660300002)(81156014)(52116002)(99286004)(76176011)(102836004)(316002)(6506007)(3846002)(6116002)(386003)(478600001)(256004)(6512007)(71200400001)(14454004)(6486002)(6436002)(2501003)(66946007)(73956011)(186003)(71190400001)(66446008)(26005)(66476007)(66556008)(64756008);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4259;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: hGc3i8tyOAeLDi8SoPZmw0O1AtRwwQ9z+26S+2ecni9jm5zYKQS9n9kOzfrq9tap3MOV376IOSxQub3VfyQ/dkkMPoDW0RimlhoPtWrNAMQ4HpSeQhQGISCFIgBhd73upBX4uFjgnhmM1TXHqu+FqfS/2kDoJFZoz/EDcU+R6PFpk7eroHYIpR9lxym9xg3bSZAE+xJfRVzjaD5xu+3yOaE0/N3qGlgT10gp+Lsb9uzzxT63FzkTHkd96VVoRgfUKlRRofNz7vLszbIYjZZbQ1kviko2HrPycav1Zz8eBdVVtph9L2saV8YggOowrt8An44PjBZvM5gnAyDAjtSbjYaFBoR2OuJ87uN5hniRb3XsK4avKqRFffrgKb14UacQUmZrLD9gaj1cVeAjbA0+MCaFUR3fI7zhB6co0pKq6TA=
+ id 1hNHqw-0006U1-AV
+ for linux-arm-kernel@lists.infradead.org; Sun, 05 May 2019 14:10:56 +0000
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id F1FF4C06645C;
+ Sun,  5 May 2019 14:10:48 +0000 (UTC)
+Received: from colo-mx.corp.redhat.com
+ (colo-mx01.intmail.prod.int.phx2.redhat.com [10.5.11.20])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id C7B5A60C43;
+ Sun,  5 May 2019 14:10:48 +0000 (UTC)
+Received: from zmail17.collab.prod.int.phx2.redhat.com
+ (zmail17.collab.prod.int.phx2.redhat.com [10.5.83.19])
+ by colo-mx.corp.redhat.com (Postfix) with ESMTP id 4EEA718089C8;
+ Sun,  5 May 2019 14:10:48 +0000 (UTC)
+Date: Sun, 5 May 2019 10:10:45 -0400 (EDT)
+From: Jan Stancek <jstancek@redhat.com>
+To: linux-mm@kvack.org, linux-arm-kernel@lists.infradead.org
+Message-ID: <1817839533.20996552.1557065445233.JavaMail.zimbra@redhat.com>
+In-Reply-To: <820667266.20994189.1557058281210.JavaMail.zimbra@redhat.com>
+Subject: [bug] aarch64: userspace stalls on page fault after dd2283f2605e
+ ("mm: mmap: zap pages with read mmap_sem in munmap")
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7265ab6c-b5f3-4d7d-518d-08d6d15d8fb5
-X-MS-Exchange-CrossTenant-originalarrivaltime: 05 May 2019 13:28:29.7949 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4259
+X-Originating-IP: [10.40.204.49, 10.4.195.17]
+Thread-Topic: aarch64: userspace stalls on page fault after dd2283f2605e ("mm:
+ mmap: zap pages with read mmap_sem in munmap")
+Thread-Index: mxi6IavaUitcMtER3aVvUOvUE5iG/g==
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.31]); Sun, 05 May 2019 14:10:49 +0000 (UTC)
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190505_062832_110095_46D40F3B 
-X-CRM114-Status: GOOD (  11.57  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190505_071054_403437_7B2F80B4 
+X-CRM114-Status: GOOD (  13.59  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.6.44 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -117,58 +76,148 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Peng Fan <peng.fan@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "van.freenix@gmail.com" <van.freenix@gmail.com>,
- Daniel Baluta <daniel.baluta@nxp.com>, Aisheng Dong <aisheng.dong@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Andrea Arcangeli <aarcange@redhat.com>,
+ yang shi <yang.shi@linux.alibaba.com>, willy@infradead.org,
+ kirill shutemov <kirill.shutemov@linux.intel.com>,
+ Waiman Long <longman@redhat.com>, kirill@shutemov.name,
+ akpm@linux-foundation.org, Jan Stancek <jstancek@redhat.com>, vbabka@suse.cz
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add i.MX8QXP ocotp node
+Hi,
 
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
-Cc: Rob Herring <robh+dt@kernel.org>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: Shawn Guo <shawnguo@kernel.org>
-Cc: Sascha Hauer <s.hauer@pengutronix.de>
-Cc: Pengutronix Kernel Team <kernel@pengutronix.de>
-Cc: Fabio Estevam <festevam@gmail.com>
-Cc: NXP Linux Team <linux-imx@nxp.com>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>
-Cc: Anson Huang <anson.huang@nxp.com>
-Cc: Daniel Baluta <daniel.baluta@nxp.com>
-Cc: devicetree@vger.kernel.org
-Cc: linux-arm-kernel@lists.infradead.org
----
- arch/arm64/boot/dts/freescale/imx8qxp.dtsi | 6 ++++++
- 1 file changed, 6 insertions(+)
+I'm seeing userspace program getting stuck on aarch64, on kernels 4.20 and newer.
+It stalls from seconds to hours.
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-index 0683ee2a48ae..f29998d7274a 100644
---- a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-@@ -141,6 +141,12 @@
- 			compatible = "fsl,imx8qxp-iomuxc";
- 		};
- 
-+		ocotp: imx8qx-ocotp {
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+			compatible = "fsl,imx8qxp-ocotp";
-+		};
-+
- 		pd: imx8qx-pd {
- 			compatible = "fsl,imx8qxp-scu-pd";
- 			#power-domain-cells = <1>;
--- 
-2.16.4
+I have simplified it to following scenario (reproducer linked below [1]):
+  while (1):
+    spawn Thread 1: mmap, write, munmap
+    spawn Thread 2: <nothing>
+
+Thread 1 is sporadically getting stuck on write to mapped area. User-space is not
+moving forward - stdout output stops. Observed CPU usage is however 100%.
+
+At this time, kernel appears to be busy handling page faults (~700k per second):
+
+# perf top -a -g
+-   98.97%     8.30%  a.out                     [.] map_write_unmap
+   - 23.52% map_write_unmap
+      - 24.29% el0_sync
+         - 10.42% do_mem_abort
+            - 17.81% do_translation_fault
+               - 33.01% do_page_fault
+                  - 56.18% handle_mm_fault
+                       40.26% __handle_mm_fault
+                       2.19% __ll_sc___cmpxchg_case_acq_4
+                       0.87% mem_cgroup_from_task
+                  - 6.18% find_vma
+                       5.38% vmacache_find
+                    1.35% __ll_sc___cmpxchg_case_acq_8
+                    1.23% __ll_sc_atomic64_sub_return_release
+                    0.78% down_read_trylock
+           0.93% do_translation_fault
+   + 8.30% thread_start
+
+#  perf stat -p 8189 -d 
+^C
+ Performance counter stats for process id '8189':
+
+        984.311350      task-clock (msec)         #    1.000 CPUs utilized
+                 0      context-switches          #    0.000 K/sec
+                 0      cpu-migrations            #    0.000 K/sec
+           723,641      page-faults               #    0.735 M/sec
+     2,559,199,434      cycles                    #    2.600 GHz
+       711,933,112      instructions              #    0.28  insn per cycle
+   <not supported>      branches
+           757,658      branch-misses
+       205,840,557      L1-dcache-loads           #  209.121 M/sec
+        40,561,529      L1-dcache-load-misses     #   19.71% of all L1-dcache hits
+   <not supported>      LLC-loads
+   <not supported>      LLC-load-misses
+
+       0.984454892 seconds time elapsed
+
+With some extra traces, it appears looping in page fault for same address, over and over:
+  do_page_fault // mm_flags: 0x55
+    __do_page_fault
+      __handle_mm_fault
+        handle_pte_fault
+          ptep_set_access_flags
+            if (pte_same(pte, entry))  // pte: e8000805060f53, entry: e8000805060f53
+
+I had traces in mmap() and munmap() as well, they don't get hit when reproducer
+hits the bad state.
+
+Notes:
+- I'm not able to reproduce this on x86.
+- Attaching GDB or strace immediatelly recovers application from stall.
+- It also seems to recover faster when system is busy with other tasks.
+- MAP_SHARED vs. MAP_PRIVATE makes no difference.
+- Turning off THP makes no difference.
+- Reproducer [1] usually hits it within ~minute on HW described below.
+- Longman mentioned that "When the rwsem becomes reader-owned, it causes
+  all the spinning writers to go to sleep adding wakeup latency to
+  the time required to finish the critical sections", but this looks
+  like busy loop, so I'm not sure if it's related to rwsem issues identified
+  in: https://lore.kernel.org/lkml/20190428212557.13482-2-longman@redhat.com/
+- I tried 2 different aarch64 systems so far: APM X-Gene CPU Potenza A3 and
+  Qualcomm 65-LA-115-151.
+  I can reproduce it on both with v5.1-rc7. It's easier to reproduce
+  on latter one (for longer periods of time), which has 46 CPUs.
+- Sample output of reproducer on otherwise idle system:
+  # ./a.out
+  [00000314] map_write_unmap took: 26305 ms
+  [00000867] map_write_unmap took: 13642 ms
+  [00002200] map_write_unmap took: 44237 ms
+  [00002851] map_write_unmap took: 992 ms
+  [00004725] map_write_unmap took: 542 ms
+  [00006443] map_write_unmap took: 5333 ms
+  [00006593] map_write_unmap took: 21162 ms
+  [00007435] map_write_unmap took: 16982 ms
+  [00007488] map_write unmap took: 13 ms^C
+
+I ran a bisect, which identified following commit as first bad one:
+  dd2283f2605e ("mm: mmap: zap pages with read mmap_sem in munmap")
+
+I can also make the issue go away with following change:
+diff --git a/mm/mmap.c b/mm/mmap.c
+index 330f12c17fa1..13ce465740e2 100644
+--- a/mm/mmap.c
++++ b/mm/mmap.c
+@@ -2844,7 +2844,7 @@ EXPORT_SYMBOL(vm_munmap);
+ SYSCALL_DEFINE2(munmap, unsigned long, addr, size_t, len)
+ {
+        profile_munmap(addr);
+-       return __vm_munmap(addr, len, true);
++       return __vm_munmap(addr, len, false);
+ }
+
+# cat /proc/cpuinfo  | head
+processor       : 0
+BogoMIPS        : 40.00
+Features        : fp asimd evtstrm aes pmull sha1 sha2 crc32 cpuid asimdrdm
+CPU implementer : 0x51
+CPU architecture: 8
+CPU variant     : 0x0
+CPU part        : 0xc00
+CPU revision    : 1
+
+# numactl -H
+available: 1 nodes (0)
+node 0 cpus: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45
+node 0 size: 97938 MB
+node 0 free: 95732 MB
+node distances:
+node   0 
+  0:  10 
+
+Regards,
+Jan
+
+[1] https://github.com/jstancek/reproducers/blob/master/kernel/page_fault_stall/mmap5.c
+[2] https://github.com/jstancek/reproducers/blob/master/kernel/page_fault_stall/config
 
 _______________________________________________
 linux-arm-kernel mailing list
