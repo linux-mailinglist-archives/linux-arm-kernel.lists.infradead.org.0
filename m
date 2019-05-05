@@ -2,69 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E9BB14014
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 May 2019 16:11:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2422614087
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 May 2019 17:11:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:In-Reply-To:
-	Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=rfVt64i2Zr64ftdq8uS7NFKUd9QfLOYDMxp2v/y3Jr8=; b=JvvoBmA7R7UaT2
-	nlbl8/gaOZteYYZedAclsRx2dDOUCr/JvG6Gip9ecQe6uNcaf4bvCtfdicso2xPca7EKXYQhj5rot
-	eFyWOxWZqOkR0DN8urqPSLF4TpX5DH2kavXMzXLbCGGppqCRGyorWVEjhG/OXnphVNYpUnvJ64uBQ
-	XxwOfnAK7qu8buAA+vlqwS/cMAoKMYrrKPIq54bbd7dndbzZQwzPIcaHaLM4u8hBX9gtrETLsys2o
-	DTv+BrK+aceJiV8riqRfF8RxDA7vbA2PS0WsGxKZuFq1/pACwjmSuUrwlzU4kpSpTPzYW1ysWARQo
-	1XWZ/eU6LDxiiRhRTYMw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Uj5aUMK6KPdbJSIgdrklku/IyycD0D3IrqvasM+XoeU=; b=Jya6Hbh1/C/Zwq
+	2+LNU6+0XIV91yF6kuCg2S5ovzDRaYGa5UolZ7VjumFoxiqBK8M+4AxWoukI6KXZh14G0uUDhbiNP
+	bj87ftt5ptYhf/FYNFi8Vc9oArpROOu6dm2GcN7g+qbvEvInEIxmfVRlAgDrXSES8CInSFxyd6DUM
+	xX8VTsVAOm1KwextgmIfQYvlZkmkn1fqB3jBejiDGHpDS+PYhOONGQ0eAnPgVjCXCofw6en/V7DFb
+	Yn+7wbBIBHep7TSfcjfhPDtrMRHBDpOPNC6uq6UG/BF9ba64pUsRUtpte7nCQbBGQxwNOO/wNiMpA
+	0rzNInqNtaXOecAKdduA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNHr3-0006UU-Bn; Sun, 05 May 2019 14:11:01 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hNInY-0007pv-GM; Sun, 05 May 2019 15:11:28 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNHqw-0006U1-AV
- for linux-arm-kernel@lists.infradead.org; Sun, 05 May 2019 14:10:56 +0000
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ id 1hNInS-0007pC-78
+ for linux-arm-kernel@lists.infradead.org; Sun, 05 May 2019 15:11:23 +0000
+Received: from localhost.localdomain (unknown [194.230.155.114])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id F1FF4C06645C;
- Sun,  5 May 2019 14:10:48 +0000 (UTC)
-Received: from colo-mx.corp.redhat.com
- (colo-mx01.intmail.prod.int.phx2.redhat.com [10.5.11.20])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id C7B5A60C43;
- Sun,  5 May 2019 14:10:48 +0000 (UTC)
-Received: from zmail17.collab.prod.int.phx2.redhat.com
- (zmail17.collab.prod.int.phx2.redhat.com [10.5.83.19])
- by colo-mx.corp.redhat.com (Postfix) with ESMTP id 4EEA718089C8;
- Sun,  5 May 2019 14:10:48 +0000 (UTC)
-Date: Sun, 5 May 2019 10:10:45 -0400 (EDT)
-From: Jan Stancek <jstancek@redhat.com>
-To: linux-mm@kvack.org, linux-arm-kernel@lists.infradead.org
-Message-ID: <1817839533.20996552.1557065445233.JavaMail.zimbra@redhat.com>
-In-Reply-To: <820667266.20994189.1557058281210.JavaMail.zimbra@redhat.com>
-Subject: [bug] aarch64: userspace stalls on page fault after dd2283f2605e
- ("mm: mmap: zap pages with read mmap_sem in munmap")
-MIME-Version: 1.0
-X-Originating-IP: [10.40.204.49, 10.4.195.17]
-Thread-Topic: aarch64: userspace stalls on page fault after dd2283f2605e ("mm:
- mmap: zap pages with read mmap_sem in munmap")
-Thread-Index: mxi6IavaUitcMtER3aVvUOvUE5iG/g==
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.31]); Sun, 05 May 2019 14:10:49 +0000 (UTC)
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+ by mail.kernel.org (Postfix) with ESMTPSA id F039B208C0;
+ Sun,  5 May 2019 15:11:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1557069078;
+ bh=29Ns3mM74Ky+ju6uxOaSJ/6kMwlQ1AH4JKwc3yBAeyc=;
+ h=From:To:Subject:Date:From;
+ b=Nok77GAegvIzsoGdmcUM0seHVHAUwvH7B4J3o7SzHN9sUReol23cgELFgTcbzaO+M
+ A8XRYai5Gn5ExqXsfz8GeCmb3DiGZ2poH+qpAdU4TI9RDKPGOvF+ADdqlN6aUTaOwU
+ EZGNXtfB7pQLXTKXPdGUIWvEcfw3P1MKxiDyil60=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Kyungmin Park <kyungmin.park@samsung.com>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Kukjin Kim <kgene@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, linux-media@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] [media] exynos4-is: Add missing of_node_put to fix reference
+ leaks
+Date: Sun,  5 May 2019 17:11:09 +0200
+Message-Id: <20190505151109.4361-1-krzk@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190505_071054_403437_7B2F80B4 
-X-CRM114-Status: GOOD (  13.59  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190505_081122_279424_568F1CF6 
+X-CRM114-Status: GOOD (  11.99  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -76,148 +77,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrea Arcangeli <aarcange@redhat.com>,
- yang shi <yang.shi@linux.alibaba.com>, willy@infradead.org,
- kirill shutemov <kirill.shutemov@linux.intel.com>,
- Waiman Long <longman@redhat.com>, kirill@shutemov.name,
- akpm@linux-foundation.org, Jan Stancek <jstancek@redhat.com>, vbabka@suse.cz
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Drop the reference to "parallel-ports" and remote endpoint's parent
+nodes obtained previously with of_get_child_by_name() and
+of_get_parent() respectively.
 
-I'm seeing userspace program getting stuck on aarch64, on kernels 4.20 and newer.
-It stalls from seconds to hours.
+Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+---
+ drivers/media/platform/exynos4-is/media-dev.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
-I have simplified it to following scenario (reproducer linked below [1]):
-  while (1):
-    spawn Thread 1: mmap, write, munmap
-    spawn Thread 2: <nothing>
-
-Thread 1 is sporadically getting stuck on write to mapped area. User-space is not
-moving forward - stdout output stops. Observed CPU usage is however 100%.
-
-At this time, kernel appears to be busy handling page faults (~700k per second):
-
-# perf top -a -g
--   98.97%     8.30%  a.out                     [.] map_write_unmap
-   - 23.52% map_write_unmap
-      - 24.29% el0_sync
-         - 10.42% do_mem_abort
-            - 17.81% do_translation_fault
-               - 33.01% do_page_fault
-                  - 56.18% handle_mm_fault
-                       40.26% __handle_mm_fault
-                       2.19% __ll_sc___cmpxchg_case_acq_4
-                       0.87% mem_cgroup_from_task
-                  - 6.18% find_vma
-                       5.38% vmacache_find
-                    1.35% __ll_sc___cmpxchg_case_acq_8
-                    1.23% __ll_sc_atomic64_sub_return_release
-                    0.78% down_read_trylock
-           0.93% do_translation_fault
-   + 8.30% thread_start
-
-#  perf stat -p 8189 -d 
-^C
- Performance counter stats for process id '8189':
-
-        984.311350      task-clock (msec)         #    1.000 CPUs utilized
-                 0      context-switches          #    0.000 K/sec
-                 0      cpu-migrations            #    0.000 K/sec
-           723,641      page-faults               #    0.735 M/sec
-     2,559,199,434      cycles                    #    2.600 GHz
-       711,933,112      instructions              #    0.28  insn per cycle
-   <not supported>      branches
-           757,658      branch-misses
-       205,840,557      L1-dcache-loads           #  209.121 M/sec
-        40,561,529      L1-dcache-load-misses     #   19.71% of all L1-dcache hits
-   <not supported>      LLC-loads
-   <not supported>      LLC-load-misses
-
-       0.984454892 seconds time elapsed
-
-With some extra traces, it appears looping in page fault for same address, over and over:
-  do_page_fault // mm_flags: 0x55
-    __do_page_fault
-      __handle_mm_fault
-        handle_pte_fault
-          ptep_set_access_flags
-            if (pte_same(pte, entry))  // pte: e8000805060f53, entry: e8000805060f53
-
-I had traces in mmap() and munmap() as well, they don't get hit when reproducer
-hits the bad state.
-
-Notes:
-- I'm not able to reproduce this on x86.
-- Attaching GDB or strace immediatelly recovers application from stall.
-- It also seems to recover faster when system is busy with other tasks.
-- MAP_SHARED vs. MAP_PRIVATE makes no difference.
-- Turning off THP makes no difference.
-- Reproducer [1] usually hits it within ~minute on HW described below.
-- Longman mentioned that "When the rwsem becomes reader-owned, it causes
-  all the spinning writers to go to sleep adding wakeup latency to
-  the time required to finish the critical sections", but this looks
-  like busy loop, so I'm not sure if it's related to rwsem issues identified
-  in: https://lore.kernel.org/lkml/20190428212557.13482-2-longman@redhat.com/
-- I tried 2 different aarch64 systems so far: APM X-Gene CPU Potenza A3 and
-  Qualcomm 65-LA-115-151.
-  I can reproduce it on both with v5.1-rc7. It's easier to reproduce
-  on latter one (for longer periods of time), which has 46 CPUs.
-- Sample output of reproducer on otherwise idle system:
-  # ./a.out
-  [00000314] map_write_unmap took: 26305 ms
-  [00000867] map_write_unmap took: 13642 ms
-  [00002200] map_write_unmap took: 44237 ms
-  [00002851] map_write_unmap took: 992 ms
-  [00004725] map_write_unmap took: 542 ms
-  [00006443] map_write_unmap took: 5333 ms
-  [00006593] map_write_unmap took: 21162 ms
-  [00007435] map_write_unmap took: 16982 ms
-  [00007488] map_write unmap took: 13 ms^C
-
-I ran a bisect, which identified following commit as first bad one:
-  dd2283f2605e ("mm: mmap: zap pages with read mmap_sem in munmap")
-
-I can also make the issue go away with following change:
-diff --git a/mm/mmap.c b/mm/mmap.c
-index 330f12c17fa1..13ce465740e2 100644
---- a/mm/mmap.c
-+++ b/mm/mmap.c
-@@ -2844,7 +2844,7 @@ EXPORT_SYMBOL(vm_munmap);
- SYSCALL_DEFINE2(munmap, unsigned long, addr, size_t, len)
+diff --git a/drivers/media/platform/exynos4-is/media-dev.c b/drivers/media/platform/exynos4-is/media-dev.c
+index 463f2d84553e..d1d5041cdae5 100644
+--- a/drivers/media/platform/exynos4-is/media-dev.c
++++ b/drivers/media/platform/exynos4-is/media-dev.c
+@@ -449,6 +449,7 @@ static int fimc_md_parse_port_node(struct fimc_md *fmd,
+ 		pd->fimc_bus_type = FIMC_BUS_TYPE_ISP_WRITEBACK;
+ 	else
+ 		pd->fimc_bus_type = pd->sensor_bus_type;
++	of_node_put(np);
+ 
+ 	if (WARN_ON(index >= ARRAY_SIZE(fmd->sensor))) {
+ 		of_node_put(rem);
+@@ -474,7 +475,8 @@ static int fimc_md_parse_port_node(struct fimc_md *fmd,
+ static int fimc_md_register_sensor_entities(struct fimc_md *fmd)
  {
-        profile_munmap(addr);
--       return __vm_munmap(addr, len, true);
-+       return __vm_munmap(addr, len, false);
- }
+ 	struct device_node *parent = fmd->pdev->dev.of_node;
+-	struct device_node *node, *ports;
++	struct device_node *ports = NULL;
++	struct device_node *node;
+ 	int index = 0;
+ 	int ret;
+ 
+@@ -523,12 +525,14 @@ static int fimc_md_register_sensor_entities(struct fimc_md *fmd)
+ 		}
+ 		index++;
+ 	}
++	of_node_put(ports);
+ 
+ rpm_put:
+ 	pm_runtime_put(fmd->pmf);
+ 	return 0;
+ 
+ cleanup:
++	of_node_put(ports);
+ 	v4l2_async_notifier_cleanup(&fmd->subdev_notifier);
+ 	pm_runtime_put(fmd->pmf);
+ 	return ret;
+-- 
+2.17.1
 
-# cat /proc/cpuinfo  | head
-processor       : 0
-BogoMIPS        : 40.00
-Features        : fp asimd evtstrm aes pmull sha1 sha2 crc32 cpuid asimdrdm
-CPU implementer : 0x51
-CPU architecture: 8
-CPU variant     : 0x0
-CPU part        : 0xc00
-CPU revision    : 1
-
-# numactl -H
-available: 1 nodes (0)
-node 0 cpus: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45
-node 0 size: 97938 MB
-node 0 free: 95732 MB
-node distances:
-node   0 
-  0:  10 
-
-Regards,
-Jan
-
-[1] https://github.com/jstancek/reproducers/blob/master/kernel/page_fault_stall/mmap5.c
-[2] https://github.com/jstancek/reproducers/blob/master/kernel/page_fault_stall/config
 
 _______________________________________________
 linux-arm-kernel mailing list
