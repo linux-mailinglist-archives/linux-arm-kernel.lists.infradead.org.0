@@ -2,68 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A09B9140B1
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 May 2019 17:39:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A747140B5
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  5 May 2019 17:40:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mVraxhmi97FIvZR9uJ6kqbOdjlzbXKEaU+jzSyxqP5Q=; b=b+rHRD9t4+M/8/
-	daiKxmmbyKB6ioWeM/zkjErs86FNf3hZHF/yLCJ2UIUy39UqMh5GyPSCeE7Q3dw55wKq+Om78t1YF
-	5hnAxq2acR6iCeqZ7+yc0Tx0LNShzra50k4bUwdmGhCCbAk51yYc5EspLE+SrryHLvSkgHcn93ARO
-	kjpgkfRMglxe7Y5V5PjWK0MwqT3/LwFo3gHJb0w+zttX5W2XL4sJRTZLTLh6nDQ5XoxtaSgqy7iUe
-	HTtpEDYBgSHhCCNq2eby/ebVc3a9vc+PuqsF3z52iV1uJuBDnO0jpXW4sg6QDBTbpKsBJf8LDXSFf
-	eOFy9+H2SrBgrkabbS1w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XSCk+GlhxlMQ38LqQHkZOt5c+5Dvef+awq/boFhUYs8=; b=Z4n2XJwV5s9+C4
+	tGw2ONhFeqVJJ4LSIgo3lt+PdoAFjvYlf7GaaEC66AOx89jWd8EAasPCPMnyPKDK1CTJ1dKwdkQI4
+	ciJcI0Cm8DoNcL74BwNS1wWtYlOUcfw/8OLDfPlZg/VNozZWJ5MIcSCwWxI+wXhPtavEsZCKkt1TE
+	iFFV4GxehBf5drmc6pgz7w6yJcL+R4abVEBpyZuySIaMCli58IJMozF1b1wLFGHDcwJnk63Z1vH+t
+	PWAoF/3k8olc/prpFwUPjxsVhyQy/oDaFZEr6tr/YA4ZgbBSrz4efrV9bmc8X9OIssSEAUxHn+j0m
+	kkbQeKTV0y0PrvFjx/BQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNJER-0007Im-2u; Sun, 05 May 2019 15:39:15 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hNJFh-0000MV-2B; Sun, 05 May 2019 15:40:33 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNJEK-0007IH-T3
- for linux-arm-kernel@lists.infradead.org; Sun, 05 May 2019 15:39:10 +0000
-Received: from archlinux (cpc91196-cmbg18-2-0-cust659.5-4.cable.virginm.net
- [81.96.234.148])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 88997206DF;
- Sun,  5 May 2019 15:39:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1557070748;
- bh=x5pvTT0YfjwpIeJljFGVaOyqST+4wd9cZ02Kih+mMgw=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=cbbgoCrc1p21k3S4ympnovRb9UwA9gY2sKrCeLJ6naLJ46AhAAb9UbespVun4u4PJ
- i9Q5TwAyWOZ3JjTn0uh6TmU//BuFLoKDtNweNjN7s6ghGW+IZceJJ8YLKGlEkgndBW
- k1fuib3ycTjNlO5AXIrNicND8WcvnkLAIChiCUsM=
-Date: Sun, 5 May 2019 16:39:01 +0100
-From: Jonathan Cameron <jic23@kernel.org>
-To: Philippe Schenker <dev@pschenker.ch>
-Subject: Re: [PATCH 1/3] iio: stmpe-adc: Remove unnecessary assignment
-Message-ID: <20190505163901.2cc9dec9@archlinux>
-In-Reply-To: <20190503135725.9959-1-dev@pschenker.ch>
-References: <20190503135725.9959-1-dev@pschenker.ch>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1hNJFX-0000LR-6U; Sun, 05 May 2019 15:40:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
+ In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
+ :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=rT3xoMkezWbZrfZ/DsjT+vdesqGpf6yK3V9dQLDcRU4=; b=2VLRGUWQ2FCcbKWWqIpsP6xggD
+ tsCxva7g5DxwtN9Pbh4lbWUE4OqUzpkHePp8whFW6sUCGOga90chTiktQXP5vQSN1TVfkRvYmKwyA
+ /s90nUJkzCOjfHFghuHMYNleFXeb53wbT75DNmiOeXNJv4voqeqCIidGDem35d6LhZFI7MZiQDAwB
+ MhujOGq6BZ7Jw4KttruEP33AqHrAeLReIbR2oYgtEqgz5DjN3evjutC/XIqxnuyQqRsuzMwoF8IXJ
+ OuEtKMC4uCZVvkSmyIn765oKGeBFjEYggQXnipshazsAm+TYu7fgLvPJl0Z06tXo7c85iPrvt5BDN
+ ZEmp1UMA==;
+Received: from static-50-53-52-16.bvtn.or.frontiernet.net ([50.53.52.16]
+ helo=midway.dunlab)
+ by merlin.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hNJFS-0002vP-6i; Sun, 05 May 2019 15:40:19 +0000
+Subject: Re: [next PATCH] usb: mtu3: fix up undefined reference to
+ usb_debug_root
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+References: <2b79c411c5d07a6846967c41803b328e300df8c6.1557035810.git.chunfeng.yun@mediatek.com>
+From: Randy Dunlap <rdunlap@infradead.org>
+Message-ID: <493f7e77-2c84-9812-2c27-760496610522@infradead.org>
+Date: Sun, 5 May 2019 08:40:14 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190505_083908_959942_E0828F7C 
-X-CRM114-Status: GOOD (  13.89  )
-X-Spam-Score: -5.2 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
+In-Reply-To: <2b79c411c5d07a6846967c41803b328e300df8c6.1557035810.git.chunfeng.yun@mediatek.com>
+Content-Language: en-US
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -75,59 +62,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Lars-Peter Clausen <lars@metafoo.de>,
- Max Krummenacher <max.krummenacher@toradex.com>, linux-iio@vger.kernel.org,
- linux-kernel@vger.kernel.org, Stefan Agner <stefan@agner.ch>,
- Philippe Schenker <philippe.schenker@toradex.com>,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Hartmut Knaack <knaack.h@gmx.de>,
- Lee Jones <lee.jones@linaro.org>, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org,
- Alexandre Torgue <alexandre.torgue@st.com>
+Cc: Matthias Brugger <matthias.bgg@gmail.com>, linux-usb@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri,  3 May 2019 15:57:23 +0200
-Philippe Schenker <dev@pschenker.ch> wrote:
-
-> From: Philippe Schenker <philippe.schenker@toradex.com>
+On 5/4/19 11:02 PM, Chunfeng Yun wrote:
+> When CONFIG_USB is not set, and CONFIG_USB_GADGET is set,
+> there is an issue:
 > 
-> Remove unnecessary assignment. This could potentially cause an issue, if
-> the wait function runs into a timeout. Furthermore is this assignment also
-> not there in stmpe_read_temp()
+> ld:
+> drivers/usb/mtu3/mtu3_debugfs.o: in function 'ssusb_debugfs_create_root':
+> mtu3_debugfs.c:(.text+0xba3): undefined reference to 'usb_debug_root'
 > 
-> Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
-This would probably have benefited from a statement that *val is set
-twice currently. Good find.
+> usb_debug_root is only built when CONFIG_USB is enabled, so here drop it
+> and use NULL instead.
+> 
+> Reported-by: Randy Dunlap <rdunlap@infradead.org>
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 
-Applied to the togreg branch of iio.git and pushed out as testing
-for the autobuilders to play with it.
+Acked-by: Randy Dunlap <rdunlap@infradead.org> # build-tested
 
-Thanks,
-
-Jonathan
+Thanks.
 
 > ---
+>  drivers/usb/mtu3/mtu3_debugfs.c | 3 +--
+>  1 file changed, 1 insertion(+), 2 deletions(-)
 > 
->  drivers/iio/adc/stmpe-adc.c | 2 --
->  1 file changed, 2 deletions(-)
+> diff --git a/drivers/usb/mtu3/mtu3_debugfs.c b/drivers/usb/mtu3/mtu3_debugfs.c
+> index c96e5dab0a48..3ed666f94dd9 100644
+> --- a/drivers/usb/mtu3/mtu3_debugfs.c
+> +++ b/drivers/usb/mtu3/mtu3_debugfs.c
+> @@ -528,8 +528,7 @@ void ssusb_dr_debugfs_init(struct ssusb_mtk *ssusb)
+>  
+>  void ssusb_debugfs_create_root(struct ssusb_mtk *ssusb)
+>  {
+> -	ssusb->dbgfs_root =
+> -		debugfs_create_dir(dev_name(ssusb->dev), usb_debug_root);
+> +	ssusb->dbgfs_root = debugfs_create_dir(dev_name(ssusb->dev), NULL);
+>  }
+>  
+>  void ssusb_debugfs_remove_root(struct ssusb_mtk *ssusb)
 > 
-> diff --git a/drivers/iio/adc/stmpe-adc.c b/drivers/iio/adc/stmpe-adc.c
-> index 37f4b74a5d32..87141177fbda 100644
-> --- a/drivers/iio/adc/stmpe-adc.c
-> +++ b/drivers/iio/adc/stmpe-adc.c
-> @@ -78,8 +78,6 @@ static int stmpe_read_voltage(struct stmpe_adc *info,
->  	stmpe_reg_write(info->stmpe, STMPE_REG_ADC_CAPT,
->  			STMPE_ADC_CH(info->channel));
->  
-> -	*val = info->value;
-> -
->  	ret = wait_for_completion_interruptible_timeout
->  		(&info->completion, STMPE_ADC_TIMEOUT);
->  
 
+
+-- 
+~Randy
 
 _______________________________________________
 linux-arm-kernel mailing list
