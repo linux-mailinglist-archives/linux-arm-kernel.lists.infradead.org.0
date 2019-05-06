@@ -2,69 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D42AB14E90
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 17:04:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A25AB14E94
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 17:04:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
-	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=cvdLSjM2ynRZb2shQtYH/Xk+hxk5Ygrsvkcod18/d6Y=; b=aZc
-	G6GemtK4LB/l7ERcjhfcAmCo+tRe5OaewT2Gd2lRIp/jdKTUEwSwgSbRckT7SsuzeN7151n1Z0ywq
-	pTHX1tRwaDKz8duPVQinyn3xmXdgRw77j1QLem+CKTxDDdEnUAoGCeKrIrQXEeYhXGdzvHEWTyrGU
-	nFj5U+KfYd3Cl4VJw2aFfnnjY+bhm6esRolxYBJnxGuG6Z/QkSMnw/8qedLonmwp7KLG0BpoY2Ob4
-	no7mfif8fK8QBags8I7c8LaZKmxF19DVUEkMablj4gpovxFNVrF4+X60FaHu2dbk+TQIyh4OCZPMa
-	5KVSCsOriwlsPMVSLcuNAxyu96vqFSQ==;
+	List-Owner; bh=6DL8m321deHrGPAgBo0mVdHWoFTjWLT+b3zJeZbpZUk=; b=rJUGQjZdccH+2X
+	7KGgDR5OnwejmeUkMomfF/AMjsl2Gauz+s0WuXJDs+FGgp8tpIRRKc5sSKOgutRrUqpSzAoE8WVnm
+	BEciWAbNihonABc+MsbkPWFiijTzFPvzBWa/TT3QzS8EqCHlNcNoPLItdbqDs80A3D7dWPYuPN3nJ
+	Ya+ZNr/doB8/iFwJPMYUw6Ynqb5K3nFnhD16zIKJzxA6NT30DSO4uIjWdz0YJy0vKxpMbsOavwzKK
+	xKk02FF5MyC0WMylSyveyVQT093uv56qapiA20GcWLEgoSSeFy2S4tlRL1uDjJOpX0N2Vt4JBTUpq
+	k7rqtKU4QAi47TY3zN7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNfAF-0005gp-Ik; Mon, 06 May 2019 15:04:23 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1hNfAW-000634-A5; Mon, 06 May 2019 15:04:40 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNf9n-0005IH-Md
- for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 15:03:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
- Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
- List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=zISSK7BMRYtIQviKajlbZmcAGpaqp8FrE1fMsg4iIKo=; b=IgXp/W6CoO4P
- BO28c6HBJ90m+XCsFGUw4N6vy5L6hc/Dx4mbWe+GybtKJwztrc2tlCEUjvdQNgvVkp55+a8AYHb+V
- Swobdgpkh3n+5u978/3qASuBEk+SyY6na/dKg+7P2h7SoNEuV4cYwfpQKJbuenq/m3iKb68WRrPw6
- VZz3Q=;
-Received: from [2001:268:c0e6:658d:8f3d:d90b:c4e4:2fdf]
- (helo=finisterre.ee.mobilebroadband)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hNf9i-0001uZ-B8; Mon, 06 May 2019 15:03:50 +0000
-Received: by finisterre.ee.mobilebroadband (Postfix, from userid 1000)
- id C12E7440035; Mon,  6 May 2019 16:03:44 +0100 (BST)
-From: Mark Brown <broonie@kernel.org>
-To: Olivier Moysan <olivier.moysan@st.com>
-Subject: Applied "ASoC: stm32: spdifrx: update pcm hardware constraints" to
- the asoc tree
-In-Reply-To: <1557146646-18150-2-git-send-email-olivier.moysan@st.com>
-X-Patchwork-Hint: ignore
-Message-Id: <20190506150344.C12E7440035@finisterre.ee.mobilebroadband>
-Date: Mon,  6 May 2019 16:03:44 +0100 (BST)
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+ id 1hNfAG-0005uW-7h; Mon, 06 May 2019 15:04:32 +0000
+Received: from mail-qt1-f174.google.com (mail-qt1-f174.google.com
+ [209.85.160.174])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 408C02173B;
+ Mon,  6 May 2019 15:04:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1557155063;
+ bh=GTU8OTjGtl5LOFT7cRg59KsW701NKsE0VzSWQUozfUE=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=Cvs5PHrbtmKdII0xM3nLCehc/8f272vJsChhVCWWGXtXnPy7j1H/KGXvY2kmKL2BW
+ ztsO2Cyzhz3QDyMR2bZxoONjXQdNpFbU42iJMQvfAsfgu9+xrUYnRYmd6+1vxUO5xT
+ aEepz0ihsx+ItjP/ZKs1EzwY1OQWrEXvEeWPn5E8=
+Received: by mail-qt1-f174.google.com with SMTP id y42so15047189qtk.6;
+ Mon, 06 May 2019 08:04:23 -0700 (PDT)
+X-Gm-Message-State: APjAAAUgzvqmWYJmvPEicJ8eRiZf4CBkXmh/V9he4alQ/1KSf04Vc/ax
+ VmFripgvd1j3tZuA/PiKzPkAZaHMB1yXqGqBkg==
+X-Google-Smtp-Source: APXvYqwTGaTwpQhCxUNSWGGAJ6lrotLyqlbDqtumhudX19OwLFLZtjwpqmue9eoggzwpO7k4YQzf0M3Agg9uhmRbdSE=
+X-Received: by 2002:ac8:610f:: with SMTP id a15mr21088874qtm.257.1557155062365; 
+ Mon, 06 May 2019 08:04:22 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190501121448.3812-1-jagan@amarulasolutions.com>
+ <20190501193429.GA9075@ravnborg.org>
+ <CAMty3ZAfwVyvmAmenhrQHJcy3eq-Yb61a4WLop_8jS-7vM940A@mail.gmail.com>
+In-Reply-To: <CAMty3ZAfwVyvmAmenhrQHJcy3eq-Yb61a4WLop_8jS-7vM940A@mail.gmail.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Mon, 6 May 2019 10:04:10 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq+mYy1JF_cM7sD82aLuUSnZnwsSD6-Q-W1uTp+_oSdRmg@mail.gmail.com>
+Message-ID: <CAL_Jsq+mYy1JF_cM7sD82aLuUSnZnwsSD6-Q-W1uTp+_oSdRmg@mail.gmail.com>
+Subject: Re: [PATCH 1/2] drm/panel: simple: Add FriendlyELEC HD702E 800x1280
+ LCD panel
+To: Jagan Teki <jagan@amarulasolutions.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_080355_879366_3EE348FF 
-X-CRM114-Status: GOOD (  15.28  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190506_080424_620625_60999CBB 
+X-CRM114-Status: GOOD (  14.08  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.1 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -76,78 +84,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, olivier.moysan@st.com, alexandre.torgue@st.com,
- tiwai@suse.com, arnaud.pouliquen@st.com, lgirdwood@gmail.com,
- linux-kernel@vger.kernel.org, Mark Brown <broonie@kernel.org>,
- mcoquelin.stm32@gmail.com, perex@perex.cz,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- benjamin.gaignard@st.com
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ David Airlie <airlied@linux.ie>,
+ linux-amarula <linux-amarula@amarulasolutions.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Sam Ravnborg <sam@ravnborg.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch
+On Mon, May 6, 2019 at 4:56 AM Jagan Teki <jagan@amarulasolutions.com> wrote:
+>
+> Hi Sam,
+>
+> On Thu, May 2, 2019 at 1:04 AM Sam Ravnborg <sam@ravnborg.org> wrote:
+> >
+> > Hi Jagan
+> >
+> > On Wed, May 01, 2019 at 05:44:47PM +0530, Jagan Teki wrote:
+> > > HD702E lcd is FriendlyELEC developed eDP LCD panel with 800x1280
+> > > resolution. It has built in Goodix, GT9271 captive touchscreen
+> > > with backlight adjustable via PWM.
+> > >
+> > > Add support for it.
+> > >
+> > > Cc: Thierry Reding <thierry.reding@gmail.com>
+> > > Cc: Sam Ravnborg <sam@ravnborg.org>
+> > > Cc: David Airlie <airlied@linux.ie>
+> > > Cc: Daniel Vetter <daniel@ffwll.ch>
+> > > Cc: dri-devel@lists.freedesktop.org
+> > > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+> >
+> > Please submit the binding in a separate patch as per
+> > Documentation/devicetree/bindings/submitting-patches.txt
+>
+> Hmm.. prepared like this initially but few of my patches were combined
+> earlier even-though I sent it separately. anyway let me separate it
+> again.
 
-   ASoC: stm32: spdifrx: update pcm hardware constraints
+For what subsystem? All the maintainers that I was aware of doing that
+have stopped.
 
-has been applied to the asoc tree at
-
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.2
-
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
-
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
-
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
-
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
-
-Thanks,
-Mark
-
-From 863137f0bc5eb2a3a65d1d29778ac65642171b17 Mon Sep 17 00:00:00 2001
-From: Olivier Moysan <olivier.moysan@st.com>
-Date: Mon, 6 May 2019 14:44:04 +0200
-Subject: [PATCH] ASoC: stm32: spdifrx: update pcm hardware constraints
-
-- Set period minimum size. Ensure at least 5ms period
-up to 48kHz/16 bits to prevent underrun/overrun.
-- Remove MDMA constraints on period maximum size and
-set period maximum to half the buffer maximum size.
-
-Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- sound/soc/stm/stm32_spdifrx.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/sound/soc/stm/stm32_spdifrx.c b/sound/soc/stm/stm32_spdifrx.c
-index b4c3d983e195..aa83b50efabb 100644
---- a/sound/soc/stm/stm32_spdifrx.c
-+++ b/sound/soc/stm/stm32_spdifrx.c
-@@ -845,7 +845,8 @@ static struct snd_soc_dai_driver stm32_spdifrx_dai[] = {
- static const struct snd_pcm_hardware stm32_spdifrx_pcm_hw = {
- 	.info = SNDRV_PCM_INFO_INTERLEAVED | SNDRV_PCM_INFO_MMAP,
- 	.buffer_bytes_max = 8 * PAGE_SIZE,
--	.period_bytes_max = 2048, /* MDMA constraint */
-+	.period_bytes_min = 1024,
-+	.period_bytes_max = 4 * PAGE_SIZE,
- 	.periods_min = 2,
- 	.periods_max = 8,
- };
--- 
-2.20.1
-
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
