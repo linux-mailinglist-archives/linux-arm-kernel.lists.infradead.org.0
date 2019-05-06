@@ -2,89 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D99A1561C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 00:41:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 461F21563B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 00:57:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=X60VDIn4CZ10MHehwpLlxQQ7MNS17vD0pLHY10msWAs=; b=lXt8/OGZ1ZJrnARkxhLi2wfNtV
-	X3H7L++JecudYYT/adWpX1jpCQNnxG7vdeYQzy6/yhJKlMEeJw0uJpARy1l11XVHdsCkySC+hKxMC
-	/MhoWypAXMfvV0ICElKt5BIzKJpQUbWoa64S88fhoZjntTBW9vRLsQ5/bmhb+t/85AvH+BSagV9yr
-	AwrEBdJ1E+zBWNGUv7fSGuT8p5glEi3CHkS1kW4gHHA41tGDyiCcnnEEW/lvjvrJxx4bXWJbxVYT7
-	OzDt+84hRITZdrknEY457FcE5WYEuNLt7QOI7RrtUs/ol07MhSibwA+T3FY4/qPbUeDcT0tuv7WyP
-	ociAEMQQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dzU/ZPBW0qmMu4hfdG+K8Ig4SBbtApUvhb9Oc5HpSOg=; b=b3MbMx0maeEyc8
+	iI1vn5niohjCGDBqajOOe7Je3ju1BbfAOKpSlbd8SOlAE86GHiFTKHbQyWX+659TDhT+Is4hGooPG
+	sifGs6waNrMCZB8DppuyuK1NGPTTq7YkP1kn37tC1iR8AwtPqDlBsBPZxAqVR1NphzPfFlpRQdkRP
+	pG6c5/h2sDMWqOBxtS8r2JJooxSzIWsn4ZlkDpbtx64xKqvLyY+Zcr3r3oF9A5tNBBzVV5SEnzjC/
+	vm5EouX4zHdT91nB/vpfDr2eYytJcFnw60yfWEHQcKUEJVSdOEXMsswX9I3/xXHD0KGcgyEOLITKn
+	jDyE12TnjMO5XImxhaNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNmIo-000168-3q; Mon, 06 May 2019 22:41:42 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hNmXp-0005kC-AP; Mon, 06 May 2019 22:57:13 +0000
+Received: from smtp81.iad3b.emailsrvr.com ([146.20.161.81])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNmIR-0000l6-9o
- for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 22:41:20 +0000
-Received: by mail-pf1-x444.google.com with SMTP id t87so6943692pfa.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 May 2019 15:41:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=FL8AbszKRwppcPe458VUea1JFGXeL+AyuUIjEd2fdow=;
- b=WD8Bl/oz4MmtFrgl/OR94+xGKMcER30iXdBiIr4cfyk1QUcR5T6uNyJUFUGTkXpwvS
- cyBf92CemP6O/jgpDmadEEXXJQXaB50ksCHXaLl8OL3UOesvt/RIvo5mIaCinVXp37V2
- NzSwXCFOw4VZMoJLhEAaOeByPwVXfN97zDFmZZUSM4RADzzcWPxo6c0wALyVFp1kSY4r
- vXS+JgG/+w7dw1E/u7NoB7l0TfMaBYZxEUE+CwGB11X0hsfTGO+jcFkGkvwVRM2qrcR8
- NcqYW5lEkUE9C8j/gvHc9jSodFPbNJ9VkoJ7lUr2DFVWsMJ1lyMy2IIpgQqZ9jet7hky
- gXLg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=FL8AbszKRwppcPe458VUea1JFGXeL+AyuUIjEd2fdow=;
- b=td61Zb0wLf0LT8iOM7AvdhRXLcWWH0HwAFnshsIAaDS97UybgoFmMPvBaBdZ0nVZBO
- NgjuRQH6GUHvuNg57YOc6beAI8fEQWv6AgxE2wwrTX45z7so3KeZt/Y3R0VhoqAnt8k5
- HJCtYiyhyeb8huMXJ9aEcX6MtnDRyRWAE0y4l35+Q5I1eFfseskMwTNmxtIHS24eKiVF
- +VOKhVlOuSEuY+ScTupGVztyhEN6HExdaRZ/uH9glBedS3J+60yFq/CM9IFfa6xwQYYu
- kap1uYhdSi+/j6K53/feV220ifIL4Y0c7z1rX7ysmKMuHD2dP3aubfOcrtYNkPiKZ/ds
- ctYA==
-X-Gm-Message-State: APjAAAUawSRJY4HfWc5270YBoD0Mzgc5TZx4YQ5NYlK2aBWg+AbEBAvv
- e8H7mXtD+YtJXw7GK7wcisA=
-X-Google-Smtp-Source: APXvYqzazBLsdP/PngE2ih+OrbyZh7ATgIiJ4YmGbGaickNYpdl6b/VcxzBShKtEhMdIOZbF6BYLhg==
-X-Received: by 2002:a63:fe0a:: with SMTP id p10mr34894833pgh.86.1557182478738; 
- Mon, 06 May 2019 15:41:18 -0700 (PDT)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.250])
- by smtp.gmail.com with ESMTPSA id s11sm19784153pga.36.2019.05.06.15.41.17
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 06 May 2019 15:41:17 -0700 (PDT)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 2/2] hwmon: scmi: Scale values to target desired HWMON units
-Date: Mon,  6 May 2019 15:41:09 -0700
-Message-Id: <20190506224109.9357-3-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190506224109.9357-1-f.fainelli@gmail.com>
-References: <20190506224109.9357-1-f.fainelli@gmail.com>
+ id 1hNmXg-0005en-9u; Mon, 06 May 2019 22:57:06 +0000
+Received: from smtp19.relay.iad3b.emailsrvr.com (localhost [127.0.0.1])
+ by smtp19.relay.iad3b.emailsrvr.com (SMTP Server) with ESMTP id 0189F401B0;
+ Mon,  6 May 2019 18:57:01 -0400 (EDT)
+X-SMTPDoctor-Processed: csmtpprox beta
+Received: from smtp19.relay.iad3b.emailsrvr.com (localhost [127.0.0.1])
+ by smtp19.relay.iad3b.emailsrvr.com (SMTP Server) with ESMTP id E6A2F401EB;
+ Mon,  6 May 2019 18:57:00 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=g001.emailsrvr.com;
+ s=20190322-9u7zjiwi; t=1557183420;
+ bh=M66upwQcYfZke/JgzTNK76Q3ajUzl56JXsDHQtItSRA=;
+ h=Subject:From:Date:To:From;
+ b=ekv3mC598bdCnUkrtViS4mBVXvm5CR1TUCIxxX7iMV9MaIug0mejYT+kpft5r9E9u
+ 8v9yn9KQ8sDPVO8Cdk0Pfm/lte100BfGxWVlT271cH+rw0XvZ4mG+cjjmg3nz1vXkc
+ 4SLn8N1jNU0hltSh7S/AEfdJJ+lNtAuWlLHL1X2M=
+X-Auth-ID: mcdermj@xenotropic.com
+Received: by smtp19.relay.iad3b.emailsrvr.com (Authenticated sender:
+ mcdermj-AT-xenotropic.com) with ESMTPSA id D5A3F401B0; 
+ Mon,  6 May 2019 18:56:59 -0400 (EDT)
+X-Sender-Id: mcdermj@xenotropic.com
+Received: from [10.0.3.33] (c-73-96-52-102.hsd1.or.comcast.net [73.96.52.102])
+ (using TLSv1.2 with cipher DHE-RSA-AES256-GCM-SHA384)
+ by 0.0.0.0:465 (trex/5.7.12); Mon, 06 May 2019 18:57:00 -0400
+Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
+Subject: Re: [PATCH] i2c: bcm2835: Model Divider in CCF
+From: Annaliese McDermond <nh6z@nh6z.net>
+In-Reply-To: <87o94fo3h0.fsf@anholt.net>
+Date: Mon, 6 May 2019 15:56:58 -0700
+Message-Id: <C611AB4D-7674-438D-BB95-9F83852043EA@nh6z.net>
+References: <20190505034339.30778-1-nh6z@nh6z.net> <87o94fo3h0.fsf@anholt.net>
+To: Eric Anholt <eric@anholt.net>
+X-Mailer: Apple Mail (2.3445.104.11)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_154119_341718_A4D9A9EF 
-X-CRM114-Status: GOOD (  16.71  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190506_155704_439712_5BB3E0AF 
+X-CRM114-Status: UNSURE (   9.47  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ no trust [146.20.161.81 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,110 +79,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:HARDWARE MONITORING" <linux-hwmon@vger.kernel.org>,
- Jean Delvare <jdelvare@suse.com>, Florian Fainelli <f.fainelli@gmail.com>,
- bcm-kernel-feedback-list@broadcom.com, Guenter Roeck <linux@roeck-us.net>,
- Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Stefan Wahren <stefan.wahren@i2se.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, swarren@wwwdotorg.org,
+ wsa@the-dreams.de, team@nwdigitalradio.com,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-i2c@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If the SCMI firmware implementation is reporting values in a scale that
-is different from the HWMON units, we need to scale up or down the value
-according to how far appart they are.
-
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
----
- drivers/hwmon/scmi-hwmon.c | 55 +++++++++++++++++++++++++++++++-------
- 1 file changed, 46 insertions(+), 9 deletions(-)
-
-diff --git a/drivers/hwmon/scmi-hwmon.c b/drivers/hwmon/scmi-hwmon.c
-index a80183a488c5..e9913509cb88 100644
---- a/drivers/hwmon/scmi-hwmon.c
-+++ b/drivers/hwmon/scmi-hwmon.c
-@@ -18,6 +18,51 @@ struct scmi_sensors {
- 	const struct scmi_sensor_info **info[hwmon_max];
- };
- 
-+static enum hwmon_sensor_types scmi_types[] = {
-+	[TEMPERATURE_C] = hwmon_temp,
-+	[VOLTAGE] = hwmon_in,
-+	[CURRENT] = hwmon_curr,
-+	[POWER] = hwmon_power,
-+	[ENERGY] = hwmon_energy,
-+};
-+
-+static u64 scmi_hwmon_scale(const struct scmi_sensor_info *sensor, u64 value)
-+{
-+	u64 scaled_value = value;
-+	s8 desired_scale;
-+	int n, p;
-+
-+	switch (sensor->type) {
-+	case TEMPERATURE_C:
-+	case VOLTAGE:
-+	case CURRENT:
-+		/* fall through */
-+		desired_scale = -3;
-+		break;
-+	case POWER:
-+	case ENERGY:
-+		/* fall through */
-+		desired_scale = -6;
-+		break;
-+	default:
-+		return scaled_value;
-+	}
-+
-+	n = (s8)sensor->scale - desired_scale;
-+        if (n == 0)
-+                return scaled_value;
-+
-+	for (p = 0; p < abs(n); p++) {
-+		/* Need to scale up from sensor to HWMON */
-+		if (n > 0)
-+			scaled_value *= 10;
-+		else
-+			do_div(scaled_value, 10);
-+	}
-+
-+        return scaled_value;
-+}
-+
- static int scmi_hwmon_read(struct device *dev, enum hwmon_sensor_types type,
- 			   u32 attr, int channel, long *val)
- {
-@@ -30,7 +75,7 @@ static int scmi_hwmon_read(struct device *dev, enum hwmon_sensor_types type,
- 	sensor = *(scmi_sensors->info[type] + channel);
- 	ret = h->sensor_ops->reading_get(h, sensor->id, false, &value);
- 	if (!ret)
--		*val = value;
-+		*val = scmi_hwmon_scale(sensor, value);
- 
- 	return ret;
- }
-@@ -91,14 +136,6 @@ static int scmi_hwmon_add_chan_info(struct hwmon_channel_info *scmi_hwmon_chan,
- 	return 0;
- }
- 
--static enum hwmon_sensor_types scmi_types[] = {
--	[TEMPERATURE_C] = hwmon_temp,
--	[VOLTAGE] = hwmon_in,
--	[CURRENT] = hwmon_curr,
--	[POWER] = hwmon_power,
--	[ENERGY] = hwmon_energy,
--};
--
- static u32 hwmon_attributes[] = {
- 	[hwmon_chip] = HWMON_C_REGISTER_TZ,
- 	[hwmon_temp] = HWMON_T_INPUT | HWMON_T_LABEL,
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Cgo+IE9uIE1heSA2LCAyMDE5LCBhdCAxMToxNCBBTSwgRXJpYyBBbmhvbHQgPGVyaWNAYW5ob2x0
+Lm5ldD4gd3JvdGU6Cj4gCj4gQW5uYWxpZXNlIE1jRGVybW9uZCA8bmg2ekBuaDZ6Lm5ldD4gd3Jp
+dGVzOgo+IAo+PiBNb2RlbCB0aGUgSTJDIGJ1cyBjbG9jayBkaXZpZGVyIGFzIGEgcGFydCBvZiB0
+aGUgQ29yZSBDbG9jayBGcmFtZXdvcmsuCj4+IFByaW1hcmlseSB0aGlzIHJlbW92ZXMgdGhlIGNs
+a19nZXRfcmF0ZSgpIGNhbGwgZnJvbSBlYWNoIHRyYW5zZmVyLgo+PiBUaGlzIGNhbGwgY2F1c2Vz
+IHByb2JsZW1zIGZvciBzbGF2ZSBkcml2ZXJzIHRoYXQgdGhlbXNlbHZlcyBoYXZlCj4+IGludGVy
+bmFsIGNsb2NrIGNvbXBvbmVudHMgdGhhdCBhcmUgY29udHJvbGxlZCBieSBhbiBJMkMgaW50ZXJm
+YWNlLgo+PiBXaGVuIHRoZSBzbGF2ZSdzIGludGVybmFsIGNsb2NrIGNvbXBvbmVudCBpcyBwcmVw
+YXJlZCwgdGhlIHByZXBhcmUKPj4gbG9jayBpcyBvYnRhaW5lZCwgYW5kIGl0IG1ha2VzIGNhbGxz
+IHRvIHRoZSBJMkMgc3Vic3lzdGVtIHRvCj4+IGNvbW1hbmQgdGhlIGhhcmR3YXJlIHRvIGFjdGl2
+YXRlIHRoZSBjbG9jay4gIEluIG9yZGVyIHRvIHBlcmZvcm0KPj4gdGhlIEkyQyB0cmFuc2Zlciwg
+dGhpcyBkcml2ZXIgc2V0cyB0aGUgZGl2aWRlciwgd2hpY2ggcmVxdWlyZXMKPj4gaXQgdG8gZ2V0
+IHRoZSBwYXJlbnQgY2xvY2sgcmF0ZSwgd2hpY2ggaXQgZG9lcyB3aXRoIGNsa19nZXRfcmF0ZSgp
+Lgo+PiBVbmZvcnR1bmF0ZWx5LCB0aGlzIGZ1bmN0aW9uIHdpbGwgdHJ5IHRvIHRha2UgdGhlIGNs
+b2NrIHByZXBhcmUKPj4gbG9jaywgd2hpY2ggaXMgYWxyZWFkeSBoZWxkIGJ5IHRoZSBzbGF2ZSdz
+IGludGVybmFsIGNsb2NrIGNhbGxzCj4+IGNyZWF0aW5nIGEgZGVhZGxvY2suCj4+IAo+PiBNb2Rl
+bGluZyB0aGUgZGl2aWRlciBpbiB0aGUgQ0NGIG5hdGl2ZWx5IHJlbW92ZXMgdGhpcyBkZXBlbmRl
+bmN5Cj4+IGFuZCB0aGUgZGl2aWRlciB2YWx1ZSBpcyBvbmx5IHNldCB1cG9uIGNoYW5naW5nIHRo
+ZSBidXMgY2xvY2sKPj4gZnJlcXVlbmN5IG9yIGNoYW5nZXMgaW4gdGhlIHBhcmVudCBjbG9jayB0
+aGF0IGNhc2NhZGUgZG93biB0byB0aGlzCj4+IGRpdmlzb3IuICBUaGlzIG9idmlhdGVzIHRoZSBu
+ZWVkIHRvIHNldCB0aGUgZGl2aWRlciB3aXRoIGV2ZXJ5Cj4+IHRyYW5zZmVyIGFuZCBhdm9pZHMg
+dGhlIGRlYWRsb2NrIGRlc2NyaWJlZCBhYm92ZS4gIEl0IGFsc28gc2hvdWxkCj4+IHByb3ZpZGUg
+YmV0dGVyIGNsb2NrIGRlYnVnZ2luZyBhbmQgc2F2ZSBhIGZldyBjeWNsZXMgb24gZWFjaAo+PiB0
+cmFuc2ZlciBkdWUgdG8gbm90IGhhdmluZyB0byByZWNhbGN1YXRlIHRoZSBkaXZpZGVyIHZhbHVl
+Lgo+IAo+IEFueSBjaGFuY2Ugd2UgY291bGQgcmV1c2UgY2xrX3JlZ2lzdGVyX2RpdmlkZXIoKSBp
+bnN0ZWFkIG9mIGhhdmluZyBvdXIKPiBvd24gc2V0L3JvdW5kL3JlY2FsYyByYXRlIGltcGxlbWVu
+dGF0aW9ucz8KCkVyaWMgLS0KCknigJlkIGxvdmUgdG8sIGJ1dCB0aGUgc2V0X3JhdGUgaW1wbGVt
+ZW50YXRpb24gaW5jbHVkZXMgc2V0dGluZyB0aGUKQkNNMjgzNV9JMkNfRkVETF9TSElGVCBhbmQg
+QkNNMjgzNV9JMkNfUkVETF9TSElGVCByZWdpc3RlcnMgZm9yIHRoZSAKcmlzaW5nIGFuZCBmYWxs
+aW5nIGVkZ2UgZGVsYXkgb24gdGhlIEkyQyBidXMgYmFzZWQgb24gd2hhdCB0aGUgZGl2aWRlcgp2
+YWx1ZSBpcy4KCi0tCkFubmFsaWVzZSBNY0Rlcm1vbmQKbmg2ekBuaDZ6Lm5ldApfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
+aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
