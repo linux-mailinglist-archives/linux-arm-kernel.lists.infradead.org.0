@@ -2,52 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5FE241536C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 20:11:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 893EC15375
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 20:12:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9yzkR4hAik9FGDHeGKSA0TzTgC4BH+oO3pLby/Cy4vY=; b=a/6w0qu4Oxono9
-	c1VfX+q6U4JbPsT17fLwsL1ZN2iWTqH+8EC1sXOogatQ4souQ2KE8RhpDkWDDltb2oCQrbnm4y0IQ
-	gDZIFe6tWgx8r7tJNcHanfIbjDrkLIknspD3yylAM9MY5EdBWt5a9ZB9qwtEwO7y2t4pn3ep/I0ak
-	olMpvOBLjWwab/NdpM9emGfljkTxt3vT+S5umGPOcvZbrgfpbMHbqQ1qE5Fg3N8DOHBVEbdr4aiPX
-	39VUOVkNOXWDnkpwRF6Uar8FdS4LAh0cSriC+d/FRyA6klwMFwc0HGfH2IBGsX8msLD/bjPDgpFVx
-	BiqoA42Pyx53bBC9Na0g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GpciDKKRGX2oSJwPBnrb3Uh1r1uMUr9MtcK2p/yj3Go=; b=JbmYpi+ryQcrLE
+	HmEA1nzcUIqJeTbiOVgFHvQZjkBPnJnn5iyhIozaRiPdUN0+hC82QvVikMm5jO4UKPEcTMeUq7WNP
+	zaghdyH/EuMIkUVFwTaBrUjE6SY4JhPEBpYsn/1u0ucVAhYFBmwPDCdv4+FVVWYlqJ2VOVAZrRckJ
+	OmKzw0Y271xrf90sbsQ4a9q1PHnavHFp8TMBvq0xEnYGXs1BffzciXvBVbFcvwR1jhuZW4XyWo0oQ
+	dbbp8gEagHZ8S1YNJ2N2IW9pV/zTF1eMxfdvWDsCmd1mMaxx9bZswu1uNJiCv6rtNJ50JmbggF8mp
+	e60dJbcaZR1r2GDOUsoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNi5W-0007dY-Hy; Mon, 06 May 2019 18:11:42 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNi5M-0007cZ-Dx
- for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 18:11:37 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D67F8A78;
- Mon,  6 May 2019 11:11:31 -0700 (PDT)
-Received: from brain-police (usa-sjc-mx-foss1.foss.arm.com [217.140.101.70])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EF87A3F5AF;
- Mon,  6 May 2019 11:11:29 -0700 (PDT)
-Date: Mon, 6 May 2019 19:11:22 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: torvalds@linux-foundation.org
-Subject: [GIT PULL] arm64: updates for 5.2
-Message-ID: <20190506181122.GC2875@brain-police>
+	id 1hNi6c-0008FE-La; Mon, 06 May 2019 18:12:50 +0000
+Received: from mout.kundenserver.de ([212.227.17.13])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hNi6U-0008EJ-IZ; Mon, 06 May 2019 18:12:44 +0000
+Received: from [192.168.1.166] ([37.4.249.123]) by mrelayeu.kundenserver.de
+ (mreue107 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1MHFwM-1hS3hN2Tz6-00DJIf; Mon, 06 May 2019 20:12:29 +0200
+Subject: Re: [PATCH v2 0/3] staging: vchiq: use interruptible waits
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-kernel@vger.kernel.org
+References: <20190506144030.29056-1-nsaenzjulienne@suse.de>
+From: Stefan Wahren <stefan.wahren@i2se.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=stefan.wahren@i2se.com; keydata=
+ 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 AQ==
+Message-ID: <b2679404-ba00-d18e-fe15-44c6e280dc11@i2se.com>
+Date: Mon, 6 May 2019 20:12:27 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20190506144030.29056-1-nsaenzjulienne@suse.de>
+Content-Language: en-US
+X-Provags-ID: V03:K1:OO0YujQIAL03yiODcrGeZwSAoqP+QyZGcS3Rb/0D4viZDd3HuAr
+ A0n/6hygucW8vIYS2sdJnsPBdTgKZVIeJrBLQfCJXdQU82yox2zXEi82Aeh1xK73P87Lwkf
+ fdt1AfVEuBdqTkkgEITpoL3bFeRm3MvFQBya5po2xJvt4rt2lLSzf0NQlXFpi32U8ln6dhY
+ NDXoAES+YgvwLNCrGIXTA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:3UH7jCBTWv8=:f5pksuQByHCya4v0SpsqPd
+ rvQGgK/Xf2fZ9FYd+D6KuDn3qJN+Zbt9Tw+SFtQBpaq6cFtjdcKxJXw9Fy5JuQlVgwtBCX31b
+ z0Z0Hl0XTK6phUUZkj7VGHQdgtexXFW8TPIHyFr7rIgwjxMPKJ+LxKO27AYkkUtd/vCF9U+lr
+ xCigT9DIOy9Mwe8xe7yhDu/bnEn4MO4TwIrG4iU9woBrZgZV9vL/xKNwgTLi74duS9Q16ew5X
+ VoAUCtjyPTO3kdUWffGc/512KXhfUkZwHCzzfWPyZ5LOnAee/MxoExhsgUppX/iB6n7Vd3roy
+ Dvu3n0HeGlFQlFPj3AoduvgguL/J9ONCEIbVTRHdRbZ+CXcjHducbyhmgH5qyQOAgtGOXTadg
+ rBOdc610VxGRLPEDH1kMYiJR3par4JD8+78izqlvoNEY75HoppdHzZeY2j8SZfGc/HJaSgbLi
+ 3Kas8kPfJgRZBLDDw4+C0QFEIz9qYjqSaTGS64OHFZMxonrm2hixuuXkn6pcNRzm/vkaBkEMQ
+ YZ1til0P90w1e9vmGgK51WXz6YsEUZRdHWFnqkWQF9lT33dqWgu8/zuLjV4CHuLQ73+5mCdz9
+ eVsae038tLQ+5C8LzogmOk/I6yTvlwHG36GhYxl7pkJgo2mtZW7qugKnhPpQ688Oz1niaOd6V
+ TRl7aEpOA56HSzu+8FKf4FH++RBHLUE7dT2yQo47X5PU6S6BuDiLDvVeYoKDa6f1Rv792Ws3q
+ crWF3LZmzEg8pNdmeg6mBWvOFSW1uX/f4LpOGp7o5LudukrpVUORNlxnGeA=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_111132_480932_0AAE8EEE 
-X-CRM114-Status: GOOD (  25.06  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190506_111242_916677_8BD580A9 
+X-CRM114-Status: GOOD (  12.50  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.13 listed in list.dnswl.org]
+ 0.1 URIBL_SBL_A Contains URL's A record listed in the Spamhaus SBL
+ blocklist [URIs: lists.fedoraproject.org]
+ 0.6 URIBL_SBL Contains an URL's NS IP listed in the Spamhaus SBL
+ blocklist [URIs: lists.fedoraproject.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -60,340 +123,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: marc.zyngier@arm.com, catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
- jpoimboe@redhat.com, tglx@linutronix.de, linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org, devel@driverdev.osuosl.org,
+ phil@raspberrypi.org, linux-rpi-kernel@lists.infradead.org,
+ dan.carpenter@oracle.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Linus,
+Hi Nicolas,
 
-Please pull these arm64 updates for 5.2. As per usual, there are details
-in the tag, but it's worth noting that we're including the core
-"mitigations=" command-line code here from -tip so that we could develop
-arm64 support on top of adding support for the "cpu/vulnerabilities"
-directory under sysfs.
+Am 06.05.19 um 16:40 schrieb Nicolas Saenz Julienne:
+> Hi,
+> ...
+>
+> Regards,
+> Nicolas
+>
+> [1] https://github.com/raspberrypi/linux/issues/2881
+> [2] https://archlinuxarm.org/forum/viewtopic.php?f=65&t=13485
+> [3] https://lists.fedoraproject.org/archives/list/arm@lists.fedoraproject.org/message/GBXGJ7DOV5CQQXFPOZCXTRD6W4BEPT4Q/
+>
+> --
+>
+> Changes since v1:
+>   - Proplery format revert commits
+>   - Add code comment to remind of this issue
+>   - Add Fixes tags
+>
+> Nicolas Saenz Julienne (3):
+>   staging: vchiq_2835_arm: revert "quit using custom
+>     down_interruptible()"
+>   staging: vchiq: revert "switch to wait_for_completion_killable"
+>   staging: vchiq: make wait events interruptible
+>
+>  .../interface/vchiq_arm/vchiq_2835_arm.c      |  2 +-
+>  .../interface/vchiq_arm/vchiq_arm.c           | 21 +++++++------
+>  .../interface/vchiq_arm/vchiq_core.c          | 31 ++++++++++++-------
+>  .../interface/vchiq_arm/vchiq_util.c          |  6 ++--
+>  4 files changed, 35 insertions(+), 25 deletions(-)
+>
+against which tree should this series apply?
 
-There is a straightforward conflict with -tip in the mm/kasan Makefile,
-which just involves replacing a '-pg' with '$(CC_FLAGS_FTRACE)'. I also
-ended up applying a duplicate of 045afc24124d ("arm64: futex: Fix
-FUTEX_WAKE_OP atomic ops with non-zero result value") as 84ff7a09c371,
-which I'm not very pleased about. The fix in mainline was based on -rc4,
-so the alternative would've been merging all of that in, which seemed a
-lot messier. In future, we're going to avoid fast-forwarding our fixes
-branch with each -rc, so this shouldn't happen again.
+Since the merge window opened the current staging-linus wont be
+available soon.
 
-Cheers,
+Stefan
 
-Will
-
---->8
-
-The following changes since commit 79a3aaa7b82e3106be97842dedfd8429248896e6:
-
-  Linux 5.1-rc3 (2019-03-31 14:39:29 -0700)
-
-are available in the git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git tags/arm64-upstream
-
-for you to fetch changes up to b33f908811b7627015238e0dee9baf2b4c9d720d:
-
-  Merge branch 'for-next/perf' of git://git.kernel.org/pub/scm/linux/kernel/git/will/linux into for-next/core (2019-05-03 10:18:08 +0100)
-
-----------------------------------------------------------------
-arm64 updates for 5.2
-
-Mostly just incremental improvements here:
-
-- Introduce AT_HWCAP2 for advertising CPU features to userspace
-
-- Expose SVE2 availability to userspace
-
-- Support for "data cache clean to point of deep persistence" (DC PODP)
-
-- Honour "mitigations=off" on the cmdline and advertise status via sysfs
-
-- CPU timer erratum workaround (Neoverse-N1 #1188873)
-
-- Introduce perf PMU driver for the SMMUv3 performance counters
-
-- Add config option to disable the kuser helpers page for AArch32 tasks
-
-- Futex modifications to ensure liveness under contention
-
-- Rework debug exception handling to seperate kernel and user handlers
-
-- Non-critical fixes and cleanup
-
-----------------------------------------------------------------
-Alexandru Elisei (1):
-      arm64: Use defines instead of magic numbers
-
-Andrew Murray (6):
-      arm64: HWCAP: add support for AT_HWCAP2
-      arm64: HWCAP: encapsulate elf_hwcap
-      arm64: Handle trapped DC CVADP
-      arm64: Expose DC CVADP to userspace
-      arm64: add CVADP support to the cache maintenance helper
-      arm64: Advertise ARM64_HAS_DCPODP cpu feature
-
-Anshuman Khandual (1):
-      KVM: ARM: Remove pgtable page standard functions from stage-2 page tables
-
-Arun KS (1):
-      arm64: Fix size of __early_cpu_boot_status
-
-Boyang Zhou (1):
-      arm64: mmap: Ensure file offset is treated as unsigned
-
-Dave Martin (1):
-      arm64: Expose SVE2 features for userspace
-
-Jean-Philippe Brucker (2):
-      arm64: Clear OSDLR_EL1 on CPU boot
-      arm64: Save and restore OSDLR_EL1 across suspend/resume
-
-Jeremy Linton (6):
-      arm64: Provide a command line to disable spectre_v2 mitigation
-      arm64: add sysfs vulnerability show for meltdown
-      arm64: Always enable spectre-v2 vulnerability detection
-      arm64: add sysfs vulnerability show for spectre-v2
-      arm64: Always enable ssb vulnerability detection
-      arm64: add sysfs vulnerability show for speculative store bypass
-
-Josh Poimboeuf (6):
-      cpu/speculation: Add 'mitigations=' cmdline option
-      x86/speculation: Support 'mitigations=' cmdline option
-      powerpc/speculation: Support 'mitigations=' cmdline option
-      s390/speculation: Support 'mitigations=' cmdline option
-      arm64/speculation: Support 'mitigations=' cmdline option
-      Documentation: Add ARM64 to kernel-parameters.rst
-
-Kees Cook (1):
-      arm64: sysreg: Make mrs_s and msr_s macros work with Clang and LTO
-
-Kefeng Wang (1):
-      ACPI/IORT: Reject platform device creation on NUMA node mapping failure
-
-Marc Zyngier (13):
-      arm64: Advertise mitigation of Spectre-v2, or lack thereof
-      arm64: Use firmware to detect CPUs that are not affected by Spectre-v2
-      arm64: Restrict ARM64_ERRATUM_1188873 mitigation to AArch32
-      arm64: Make ARM64_ERRATUM_1188873 depend on COMPAT
-      arm64: Add part number for Neoverse N1
-      arm64: Apply ARM64_ERRATUM_1188873 to Neoverse-N1
-      ARM: vdso: Remove dependency with the arch_timer driver internals
-      watchdog/sbsa: Use arch_timer_read_counter instead of arch_counter_get_cntvct
-      arm64: Use arch_timer_read_counter instead of arch_counter_get_cntvct
-      clocksource/arm_arch_timer: Direcly assign set_next_event workaround
-      clocksource/arm_arch_timer: Drop use of static key in arch_timer_reg_read_stable
-      clocksource/arm_arch_timer: Remove use of workaround static key
-      clocksource/arm_arch_timer: Use arch_timer_read_counter to access stable counters
-
-Mark Rutland (1):
-      arm64: instrument smp_{load_acquire,store_release}
-
-Masahiro Yamada (2):
-      arm64: vdso: fix and clean-up Makefile
-      arm64: vdso: use $(LD) instead of $(CC) to link VDSO
-
-Masami Hiramatsu (1):
-      arm64: ptrace: Add function argument access API
-
-Matteo Croce (1):
-      arm64/vdso: don't leak kernel addresses
-
-Mian Yousaf Kaukab (2):
-      arm64: Add sysfs vulnerability show for spectre-v1
-      arm64: enable generic CPU vulnerabilites support
-
-Miles Chen (2):
-      arm64: setup min_low_pfn
-      arm64: mm: check virtual addr in virt_to_page() if CONFIG_DEBUG_VIRTUAL=y
-
-Muchun Song (1):
-      arm64: mm: fix incorrect assignment of 'max_mapnr'
-
-Neil Leeder (2):
-      ACPI/IORT: Add support for PMCG
-      perf/smmuv3: Add arm64 smmuv3 pmu driver
-
-Nishad Kamdar (1):
-      arm64: Use the correct style for SPDX License Identifier
-
-Qian Cai (3):
-      arm64/mm: fix kernel-doc comments
-      arm64: Fix compiler warning from pte_unmap() with -Wunused-but-set-variable
-      arm64: mm: Remove pte_unmap_nested()
-
-Raphael Gault (1):
-      arm64: perf_event: Remove wrongfully used inline
-
-Robin Murphy (2):
-      perf/arm-cci: Remove broken race mitigation
-      perf/arm-ccn: Clean up CPU hotplug handling
-
-Shameer Kolothum (2):
-      perf/smmuv3: Add MSI irq support
-      perf/smmuv3: Enable HiSilicon Erratum 162001800 quirk
-
-Torsten Duwe (3):
-      arm64: Makefile: Replace -pg with CC_FLAGS_FTRACE
-      efi/arm/arm64: Makefile: Replace -pg with CC_FLAGS_FTRACE
-      kasan: Makefile: Replace -pg with CC_FLAGS_FTRACE
-
-Vincenzo Frascino (7):
-      arm64: compat: Reduce address limit
-      arm64: vdso: Fix clock_getres() for CLOCK_REALTIME
-      arm64: compat: Alloc separate pages for vectors and sigpage
-      arm64: compat: Split kuser32
-      arm64: compat: Refactor aarch32_alloc_vdso_pages()
-      arm64: compat: Add KUSER_HELPERS config option
-      arm64: compat: Reduce address limit for 64K pages
-
-Wen Yang (1):
-      arm64: cpu_ops: fix a leaked reference by adding missing of_node_put
-
-Will Deacon (25):
-      arm64: mm: Make show_pte() a static function
-      arm64: mm: Ensure we ignore the initrd if it is placed out of range
-      arm64: debug: Remove unused return value from do_debug_exception()
-      arm64: debug: Rename addr parameter for non-watchpoint exception hooks
-      arm64: debug: Remove meaningless comment
-      arm64: debug: Separate debug hooks based on target exception level
-      arm64: kprobes: Avoid calling kprobes debug handlers explicitly
-      arm64: debug: Remove redundant user_mode(regs) checks from debug handlers
-      arm64: probes: Move magic BRK values into brk-imm.h
-      arm64: debug: Clean up brk_handler()
-      arm64: mm: Consolidate early page table allocation
-      arm64: Kconfig: Make CONFIG_COMPAT a menuconfig entry
-      Merge branch 'core/speculation' of git://git.kernel.org/.../tip/tip into for-next/mitigations
-      arm64: futex: Fix FUTEX_WAKE_OP atomic ops with non-zero result value
-      locking/futex: Allow low-level atomic operations to return -EAGAIN
-      arm64: futex: Bound number of LDXR/STXR loops in FUTEX_WAKE_OP
-      arm64: futex: Avoid copying out uninitialised stack in failed cmpxchg()
-      futex: Update comments and docs about return values of arch futex code
-      arm64: Kconfig: Tidy up errata workaround help text
-      arm64: arch_timer: Ensure counter register reads occur with seqlock held
-      arm64: ssbs: Don't treat CPUs with SSBS as unaffected by SSB
-      Merge branch 'for-next/futex' of git://git.kernel.org/.../arm64/linux into for-next/core
-      Merge branch 'for-next/mitigations' of git://git.kernel.org/.../arm64/linux into for-next/core
-      Merge branch 'for-next/timers' of git://git.kernel.org/.../arm64/linux into for-next/core
-      Merge branch 'for-next/perf' of git://git.kernel.org/.../will/linux into for-next/core
-
-Xiongfeng Wang (1):
-      firmware: arm_sdei: Prohibit probing in '_sdei_handler'
-
-Yu Zhao (3):
-      arm64: mm: use appropriate ctors for page tables
-      arm64: mm: don't call page table ctors for init_mm
-      arm64: mm: enable per pmd page table lock
-
- Documentation/admin-guide/kernel-parameters.rst |   1 +
- Documentation/admin-guide/kernel-parameters.txt |  42 +-
- Documentation/arm64/cpu-feature-registers.txt   |  16 +
- Documentation/arm64/elf_hwcaps.txt              |  41 +-
- Documentation/arm64/silicon-errata.txt          |   2 +
- Documentation/arm64/sve.txt                     |  17 +
- Documentation/robust-futexes.txt                |   3 +-
- arch/arm/include/asm/arch_timer.h               |  18 +-
- arch/arm/include/asm/cp15.h                     |   2 +
- arch/arm/include/asm/stage2_pgtable.h           |   4 +-
- arch/arm/vdso/vgettimeofday.c                   |   5 +-
- arch/arm64/Kconfig                              | 132 ++--
- arch/arm64/boot/dts/mediatek/mt2712-pinfunc.h   |   2 +-
- arch/arm64/crypto/aes-ce-ccm-glue.c             |   2 +-
- arch/arm64/crypto/aes-neonbs-glue.c             |   2 +-
- arch/arm64/crypto/chacha-neon-glue.c            |   2 +-
- arch/arm64/crypto/crct10dif-ce-glue.c           |   4 +-
- arch/arm64/crypto/ghash-ce-glue.c               |   8 +-
- arch/arm64/crypto/nhpoly1305-neon-glue.c        |   2 +-
- arch/arm64/crypto/sha256-glue.c                 |   4 +-
- arch/arm64/include/asm/arch_timer.h             | 119 +++-
- arch/arm64/include/asm/assembler.h              |   8 +-
- arch/arm64/include/asm/barrier.h                |  24 +-
- arch/arm64/include/asm/brk-imm.h                |   5 +
- arch/arm64/include/asm/cpucaps.h                |   3 +-
- arch/arm64/include/asm/cpufeature.h             |  25 +-
- arch/arm64/include/asm/cputype.h                |   2 +
- arch/arm64/include/asm/debug-monitors.h         |  25 +-
- arch/arm64/include/asm/elf.h                    |   6 +-
- arch/arm64/include/asm/esr.h                    |   7 +-
- arch/arm64/include/asm/futex.h                  |  63 +-
- arch/arm64/include/asm/hwcap.h                  |  60 +-
- arch/arm64/include/asm/irqflags.h               |   8 +-
- arch/arm64/include/asm/kprobes.h                |   2 -
- arch/arm64/include/asm/kvm_hyp.h                |   4 +-
- arch/arm64/include/asm/memory.h                 |   2 +-
- arch/arm64/include/asm/pgalloc.h                |  12 +-
- arch/arm64/include/asm/pgtable.h                |   5 +-
- arch/arm64/include/asm/pointer_auth.h           |   2 +-
- arch/arm64/include/asm/processor.h              |   8 +
- arch/arm64/include/asm/ptrace.h                 |  22 +
- arch/arm64/include/asm/sdei.h                   |   2 +-
- arch/arm64/include/asm/signal32.h               |   2 -
- arch/arm64/include/asm/stage2_pgtable.h         |   4 +-
- arch/arm64/include/asm/sysreg.h                 |  59 +-
- arch/arm64/include/asm/system_misc.h            |   1 -
- arch/arm64/include/asm/tlb.h                    |   5 +-
- arch/arm64/include/asm/vdso_datapage.h          |   1 +
- arch/arm64/include/asm/vmap_stack.h             |   2 +-
- arch/arm64/include/uapi/asm/hwcap.h             |  13 +-
- arch/arm64/kernel/Makefile                      |  11 +-
- arch/arm64/kernel/asm-offsets.c                 |   2 +-
- arch/arm64/kernel/cpu_errata.c                  | 256 +++++--
- arch/arm64/kernel/cpu_ops.c                     |   1 +
- arch/arm64/kernel/cpufeature.c                  | 193 ++++--
- arch/arm64/kernel/cpuinfo.c                     |   9 +-
- arch/arm64/kernel/debug-monitors.c              | 115 ++--
- arch/arm64/kernel/entry.S                       |  19 +-
- arch/arm64/kernel/fpsimd.c                      |   4 +-
- arch/arm64/kernel/head.S                        |  12 +-
- arch/arm64/kernel/kgdb.c                        |  30 +-
- arch/arm64/kernel/kuser32.S                     |  66 +-
- arch/arm64/kernel/perf_event.c                  |   4 +-
- arch/arm64/kernel/probes/kprobes.c              |  22 +-
- arch/arm64/kernel/probes/uprobes.c              |  19 +-
- arch/arm64/kernel/signal32.c                    |   3 +-
- arch/arm64/kernel/sigreturn32.S                 |  46 ++
- arch/arm64/kernel/sys.c                         |   2 +-
- arch/arm64/kernel/traps.c                       |  33 +-
- arch/arm64/kernel/vdso.c                        | 139 +++-
- arch/arm64/kernel/vdso/Makefile                 |  19 +-
- arch/arm64/kernel/vdso/gettimeofday.S           |  22 +-
- arch/arm64/lib/Makefile                         |   2 +-
- arch/arm64/mm/fault.c                           |  16 +-
- arch/arm64/mm/init.c                            |   5 +-
- arch/arm64/mm/mmu.c                             |  47 +-
- arch/arm64/mm/numa.c                            |  25 +-
- arch/arm64/mm/proc.S                            |  34 +-
- arch/powerpc/kernel/security.c                  |   6 +-
- arch/powerpc/kernel/setup_64.c                  |   2 +-
- arch/s390/kernel/nospec-branch.c                |   3 +-
- arch/x86/kernel/cpu/bugs.c                      |  11 +-
- arch/x86/mm/pti.c                               |   4 +-
- drivers/acpi/arm64/iort.c                       | 150 +++-
- drivers/clocksource/arm_arch_timer.c            | 138 ++--
- drivers/firmware/arm_sdei.c                     |   3 +
- drivers/firmware/efi/libstub/Makefile           |   6 +-
- drivers/perf/Kconfig                            |   9 +
- drivers/perf/Makefile                           |   1 +
- drivers/perf/arm-cci.c                          |  21 +-
- drivers/perf/arm-ccn.c                          |  25 +-
- drivers/perf/arm_smmuv3_pmu.c                   | 865 ++++++++++++++++++++++++
- drivers/watchdog/sbsa_gwdt.c                    |   2 +-
- include/asm-generic/futex.h                     |   8 +-
- include/linux/acpi_iort.h                       |   8 +
- include/linux/cpu.h                             |  24 +
- kernel/cpu.c                                    |  15 +
- kernel/futex.c                                  | 188 +++--
- mm/kasan/Makefile                               |   6 +-
- virt/kvm/arm/mmu.c                              |   2 +-
- 100 files changed, 2624 insertions(+), 839 deletions(-)
- create mode 100644 arch/arm64/kernel/sigreturn32.S
- create mode 100644 drivers/perf/arm_smmuv3_pmu.c
 
 _______________________________________________
 linux-arm-kernel mailing list
