@@ -2,82 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C681147E4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 11:56:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15EEE147EE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 11:59:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/AKkGxVZFKUfVBxg6M0oMi2SVfrrP6QwRtIqPzCSES4=; b=jhMhIPsQxTbn+R
-	7L7GhdvvzqqwRwfmhe6zr1DFdp/955qEUXG1LhUsgJOTWkQR67WcwrYEGcn4fao64/LiwTvmT8Vnw
-	HmRrQqsCoXHUgxSOgPVUj53bz4FkvOT6S8+i2FZ3FIPgcdFoWlqCVVOaXHeDd43RscFvf3/nkvqzt
-	aW4V6PWjF/VBJGBOwayRRIDhMUfMJmhhU2+8RekCxPiRgp7nKcOmcgq7ZvFUXrlu/T+cq1goLbNkE
-	4N8JuB7Fwr/o0heovVzNy7c+9xUteT+ujjOSCwh9yfw6YXUv9tzGSoo5h3cyLoePRYZ+4OGoeSuIJ
-	bd1Jgdd0hFMJaODeJwOA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=IwFHekN3yjl1WwQKaLXK/v8IX8bFCoOG2Rp8+fT1qtw=; b=AbsHXPszF+JQBd
+	DKZQVuOFWGxynhHxuXqQjZyT2OcXhDkt8rtKVfs6W6mj1z3TEzkHUMdoY13pn0WPYjqfz9nn9ECmE
+	g0Ggqt4pTgMsPF2JjzXeb1aABz3dyijVBcCSyhYlGXg0nr3JfTFFIS8AQLg0jPjn7aJQ1XF8+oUyH
+	mwQJh0YZ8ix4WN3I2riIbRmJvnBTuyhuU14eCzHYnKC98JpUaJfx+m97oV3PeZrDQMqUnLH1F64Mi
+	yqYd3llSihL94hGHS/DezoAli71Z5SEQ4byTGdzSc9nnpZv5RowF4THwFyApfSvZpPMYgaM+PpzBZ
+	dMK1mQljOULDKIEzBa+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNaMZ-0001yJ-28; Mon, 06 May 2019 09:56:47 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1hNaOn-0002VE-Th; Mon, 06 May 2019 09:59:05 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNaMN-0001xT-S5
- for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 09:56:38 +0000
-Received: by mail-io1-xd42.google.com with SMTP id v7so4201619iob.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 May 2019 02:56:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=GKysu+ggf2+uQ2eAYt5TABC1hM3kbCmZ2bSj1OoK+OM=;
- b=MhppLfhCXW0INxzbxBlzLRgcumDMA+umn+ZIMi6q0SEj+gA8/uRdEhMghQ4vKoYlde
- wny1k8TC8SRS3s4LbUOF7CBlrkRiJGnGlgqons8KzzHCVS0QGRKKj7maoD8EyAmx/H/P
- ZQzliTixtkHeJsxdpySNWEHEBjUraQGgGtZIs=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=GKysu+ggf2+uQ2eAYt5TABC1hM3kbCmZ2bSj1OoK+OM=;
- b=YnFaf2Sy1qq5CCQfpFU5Lpd4tQWjmKRTIXSnT+Lcrw/0XoP57tkM+BIiRYAhlVxO/t
- ir/F5zrLSNMWmDBiMxlJ/DlKKGPUhHBfkP2DivET6+GvATdV+0uAIm/+XVL6FbOVxXez
- kGmf43rRacBY16DqNwA+X6z6gYM10bNOP/f3nl/DyIKsZRxi/wA0NRR1dOER4UpXpn1c
- q1cIgs9aLaTuMF8TFxWWr3VEJ1eIvq7YOEMV+nhb+XiHxtH9wsO2JAiYv4Lxj88FIbnp
- 7L4CZ+tVsXKYebtuFMlqV996DC0rvkAH6NsfHXdj3EAdjOI90gSiy5K9vC+ayuuoWBtO
- FWjg==
-X-Gm-Message-State: APjAAAWHGX+M8DkFNyK0Q+rfWpyviaaoLGc3vRuo37owPo083Xds45xz
- wdR2ccmspvNBDsHDujczqIEIrmK5+g4eQJZOjYRQZQ==
-X-Google-Smtp-Source: APXvYqxnO2dIWJ1E/SWJUjsbW7VCI6mmCoIsPzRHG8r3fnfPHd+tzQrIUou2K1SZ7cU+q2Nd+dainfJ8cFKvythXg7c=
-X-Received: by 2002:a6b:bb82:: with SMTP id l124mr2188291iof.252.1557136594368; 
- Mon, 06 May 2019 02:56:34 -0700 (PDT)
+ id 1hNaOf-0002Up-Hh; Mon, 06 May 2019 09:58:59 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id DFA9E384F;
+ Mon,  6 May 2019 11:58:54 +0200 (CEST)
+Received: by meh.true.cz (OpenSMTPD) with ESMTP id 31fc53e1;
+ Mon, 6 May 2019 11:58:53 +0200 (CEST)
+From: =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
+To: "David S. Miller" <davem@davemloft.net>,
+ Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH net-next 0/3] of_get_mac_address ERR_PTR fixes
+Date: Mon,  6 May 2019 11:58:34 +0200
+Message-Id: <1557136717-531-1-git-send-email-ynezz@true.cz>
+X-Mailer: git-send-email 1.9.1
 MIME-Version: 1.0
-References: <20190501121448.3812-1-jagan@amarulasolutions.com>
- <20190501193429.GA9075@ravnborg.org>
-In-Reply-To: <20190501193429.GA9075@ravnborg.org>
-From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Mon, 6 May 2019 15:26:22 +0530
-Message-ID: <CAMty3ZAfwVyvmAmenhrQHJcy3eq-Yb61a4WLop_8jS-7vM940A@mail.gmail.com>
-Subject: Re: [PATCH 1/2] drm/panel: simple: Add FriendlyELEC HD702E 800x1280
- LCD panel
-To: Sam Ravnborg <sam@ravnborg.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_025636_403008_81D5E558 
-X-CRM114-Status: GOOD (  25.80  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190506_025857_891109_25A1B244 
+X-CRM114-Status: GOOD (  11.18  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ no trust [178.217.244.18 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -89,162 +57,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- David Airlie <airlied@linux.ie>, linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devel@driverdev.osuosl.org, Andrew Lunn <andrew@lunn.ch>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org,
+ =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>,
+ Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Heiner Kallweit <hkallweit1@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sam,
-
-On Thu, May 2, 2019 at 1:04 AM Sam Ravnborg <sam@ravnborg.org> wrote:
->
-> Hi Jagan
->
-> On Wed, May 01, 2019 at 05:44:47PM +0530, Jagan Teki wrote:
-> > HD702E lcd is FriendlyELEC developed eDP LCD panel with 800x1280
-> > resolution. It has built in Goodix, GT9271 captive touchscreen
-> > with backlight adjustable via PWM.
-> >
-> > Add support for it.
-> >
-> > Cc: Thierry Reding <thierry.reding@gmail.com>
-> > Cc: Sam Ravnborg <sam@ravnborg.org>
-> > Cc: David Airlie <airlied@linux.ie>
-> > Cc: Daniel Vetter <daniel@ffwll.ch>
-> > Cc: dri-devel@lists.freedesktop.org
-> > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
->
-> Please submit the binding in a separate patch as per
-> Documentation/devicetree/bindings/submitting-patches.txt
-
-Hmm.. prepared like this initially but few of my patches were combined
-earlier even-though I sent it separately. anyway let me separate it
-again.
-
->
-> The binding looks like it is compatible with common-panel and
-> simple-panel - please say so in the bindings.
-> See for example the last few binding documents added to the kernel tree.
-
-Correct, will update.
-
->
-> > ---
-> >  .../display/panel/friendlyarm,hd702e.txt      | 29 +++++++++++++++++++
-> >  drivers/gpu/drm/panel/panel-simple.c          | 26 +++++++++++++++++
-> >  2 files changed, 55 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/display/panel/friendlyarm,hd702e.txt
-> >
-> > diff --git a/Documentation/devicetree/bindings/display/panel/friendlyarm,hd702e.txt b/Documentation/devicetree/bindings/display/panel/friendlyarm,hd702e.txt
-> > new file mode 100644
-> > index 000000000000..67349d7f79be
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/display/panel/friendlyarm,hd702e.txt
-> > @@ -0,0 +1,29 @@
-> > +FriendlyELEC HD702E 800x1280 LCD panel
-> > +
-> > +HD702E lcd is FriendlyELEC developed eDP LCD panel with 800x1280
-> > +resolution. It has built in Goodix, GT9271 captive touchscreen
-> > +with backlight adjustable via PWM.
-> > +
-> > +Required properties:
-> > +- compatible: should be "friendlyarm,hd702e"
-> > +- power-supply: regulator to provide the supply voltage
-> > +
-> > +Optional properties:
-> > +- backlight: phandle of the backlight device attached to the panel
-> > +
-> > +Optional nodes:
-> > +- Video port for LCD panel input.
-> > +
-> > +Example:
-> > +
-> > +     panel {
-> > +             compatible ="friendlyarm,hd702e";
-> > +             backlight = <&backlight>;
-> > +             power-supply = <&vcc3v3_sys>;
-> > +
-> > +             port {
-> > +                     panel_in_edp: endpoint {
-> > +                             remote-endpoint = <&edp_out_panel>;
-> > +                     };
-> > +             };
-> > +     };
-> > diff --git a/drivers/gpu/drm/panel/panel-simple.c b/drivers/gpu/drm/panel/panel-simple.c
-> > index 9e8218f6a3f2..9db3c0c65ef2 100644
-> > --- a/drivers/gpu/drm/panel/panel-simple.c
-> > +++ b/drivers/gpu/drm/panel/panel-simple.c
-> > @@ -1184,6 +1184,29 @@ static const struct panel_desc foxlink_fl500wvr00_a0t = {
-> >       .bus_format = MEDIA_BUS_FMT_RGB888_1X24,
-> >  };
-> >
-> > +static const struct drm_display_mode friendlyarm_hd702e_mode = {
-> > +     .clock          = 67185,
-> > +     .hdisplay       = 800,
-> > +     .hsync_start    = 800 + 20,
-> > +     .hsync_end      = 800 + 20 + 24,
-> > +     .htotal         = 800 + 20 + 24 + 20,
-> > +     .vdisplay       = 1280,
-> > +     .vsync_start    = 1280 + 4,
-> > +     .vsync_end      = 1280 + 4 + 8,
-> > +     .vtotal         = 1280 + 4 + 8 + 4,
-> > +     .vrefresh       = 60,
-> > +     .flags          = DRM_MODE_FLAG_NVSYNC | DRM_MODE_FLAG_NHSYNC,
-> > +};
-> > +
-> > +static const struct panel_desc friendlyarm_hd702e = {
-> > +     .modes = &friendlyarm_hd702e_mode,
-> > +     .num_modes = 1,
-> > +     .size = {
-> > +             .width  = 94,
-> > +             .height = 151,
-> > +     },
-> > +};
-> As I read the datasheet then this panel needs at least a prepare delay
-> of 10 ms (it says > 10 ms from VGH until Data).
-> And then we also know that VGH shall be valid at least 10 ms after DVDD
-> so prepare is likely 20 ms.
->
-> Based on datasheet found here:
-> https://pan.baidu.com/s/1geEfBLh/
->
-> Please evaluate all delays.
-
-This part I'm unclear, I tried to get the datasheet of this but
-couldn't find it either. I have a reference for these FriendlyELEC
-panels from https://github.com/friendlyarm/kernel-rockchip/blob/nanopi4-linux-v4.4.y/drivers/gpu/drm/panel/panel-friendlyelec.c
-but they are not using any of these delays.
-
->
-> > +
-> >  static const struct drm_display_mode giantplus_gpg482739qs5_mode = {
-> >       .clock = 9000,
-> >       .hdisplay = 480,
-> > @@ -2634,6 +2657,9 @@ static const struct of_device_id platform_of_match[] = {
-> >       }, {
-> >               .compatible = "edt,etm0700g0edh6",
-> >               .data = &edt_etm0700g0bdh6,
-> > +     }, {
-> > +             .compatible = "friendlyarm,hd702e",
-> > +             .data = &friendlyarm_hd702e,
-> >       }, {
-> >               .compatible = "foxlink,fl500wvr00-a0t",
-> >               .data = &foxlink_fl500wvr00_a0t,
->
-> Add these in sorted order.
-> "fox" is before "fri"
-
-True, will sort it.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgp0aGlzIHBhdGNoIHNlcmllcyBpcyBhbiBhdHRlbXB0IHRvIGZpeCB0aGUgbWVzcywgSSd2
+ZSBzb21laG93IG1hbmFnZWQgdG8KaW50cm9kdWNlLgoKRmlyc3QgcGF0Y2ggaW4gdGhpcyBzZXJp
+ZXMgaXMgZGVmYWN0byB2NSBvZiB0aGUgcHJldmlvdXMgMDUvMTAgcGF0Y2ggaW4gdGhlCnNlcmll
+cywgYnV0IHNpbmNlIHRoZSB2NCBvZiB0aGlzIDA1LzEwIHBhdGNoIHdhc24ndCBwaWNrZWQgdXAg
+YnkgdGhlCnBhdGNod29yayBmb3Igc29tZSB1bmtub3duIHJlYXNvbiwgdGhpcyBwYXRjaCB3YXNu
+J3QgYXBwbGllZCB3aXRoIHRoZSBvdGhlcgo5IHBhdGNoZXMgaW4gdGhlIHNlcmllcywgc28gSSdt
+IHJlc2VuZGluZyBpdCBhcyBhIHNlcGFyYXRlIHBhdGNoIG9mIHRoaXMKZml4dXAgc2VyaWVzIGFn
+YWluLgoKU2Vjb25kIHBhdGNoIGlzIGEgcmVzdWx0IG9mIHRoaXMgcmViYXNlIGFnYWluc3QgbmV0
+LW5leHQgdHJlZSwgd2hlcmUgSSB3YXMKY2hlY2tpbmcgYWdhaW4gYWxsIGN1cnJlbnQgdXNlcnMg
+b2Ygb2ZfZ2V0X21hY19hZGRyZXNzIGFuZCBmb3VuZCBvdXQsIHRoYXQKdGhlcmUncyBuZXcgb25l
+IGluIERTQSwgc28gSSd2ZSBjb252ZXJ0ZWQgdGhpcyB1c2VyIHRvIHRoZSBuZXcgRVJSX1BUUgpl
+bmNvZGVkIGVycm9yIHZhbHVlIGFzIHdlbGwuCgpUaGlyZCBwYXRjaCB3aGljaCB3YXMgc2VudCBh
+cyB2NSB3YXNuJ3QgY29uc2lkZXJlZCBmb3IgbWVyZ2UsIGJ1dCBJIHN0aWxsCnRoaW5rLCB0aGF0
+IHdlIG5lZWQgdG8gY2hlY2sgZm9yIHBvc3NpYmxlIE5VTEwgdmFsdWUsIHRodXMgY3VycmVudCBJ
+U19FUlIKY2hlY2sgaXNuJ3Qgc3VmZmljaWVudCBhbmQgd2UgbmVlZCB0byB1c2UgSVNfRVJSX09S
+X05VTEwgaW5zdGVhZC4KCkNoZWVycywKClBldHIKClBldHIgxaB0ZXRpYXIgKDMpOgogIG5ldDog
+ZXRoZXJuZXQ6IHN1cHBvcnQgb2ZfZ2V0X21hY19hZGRyZXNzIG5ldyBFUlJfUFRSIGVycm9yCiAg
+bmV0OiBkc2E6IHN1cHBvcnQgb2ZfZ2V0X21hY19hZGRyZXNzIG5ldyBFUlJfUFRSIGVycm9yCiAg
+c3RhZ2luZzogb2N0ZW9uLWV0aGVybmV0OiBGaXggb2ZfZ2V0X21hY19hZGRyZXNzIEVSUl9QVFIg
+Y2hlY2sKCiBkcml2ZXJzL25ldC9ldGhlcm5ldC9hZXJvZmxleC9ncmV0aC5jICAgICAgICAgICAg
+ICAgICB8IDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVybmV0L2FsbHdpbm5lci9zdW40aS1lbWFjLmMg
+ICAgICAgICAgIHwgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvYWx0ZXJhL2FsdGVyYV90c2Vf
+bWFpbi5jICAgICAgICAgfCAyICstCiBkcml2ZXJzL25ldC9ldGhlcm5ldC9hcmMvZW1hY19tYWlu
+LmMgICAgICAgICAgICAgICAgICB8IDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVybmV0L2F1cm9yYS9u
+Yjg4MDAuYyAgICAgICAgICAgICAgICAgIHwgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvYnJv
+YWRjb20vYmNtc3lzcG9ydC5jICAgICAgICAgICAgfCAyICstCiBkcml2ZXJzL25ldC9ldGhlcm5l
+dC9icm9hZGNvbS9iZ21hYy1iY21hLmMgICAgICAgICAgICB8IDIgKy0KIGRyaXZlcnMvbmV0L2V0
+aGVybmV0L2Jyb2FkY29tL2JnbWFjLXBsYXRmb3JtLmMgICAgICAgIHwgMiArLQogZHJpdmVycy9u
+ZXQvZXRoZXJuZXQvYnJvYWRjb20vZ2VuZXQvYmNtZ2VuZXQuYyAgICAgICAgfCAyICstCiBkcml2
+ZXJzL25ldC9ldGhlcm5ldC9jYXZpdW0vb2N0ZW9uL29jdGVvbl9tZ210LmMgICAgICB8IDIgKy0K
+IGRyaXZlcnMvbmV0L2V0aGVybmV0L2Nhdml1bS90aHVuZGVyL3RodW5kZXJfYmd4LmMgICAgIHwg
+MiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvZGF2aWNvbS9kbTkwMDAuYyAgICAgICAgICAgICAg
+ICAgfCAyICstCiBkcml2ZXJzL25ldC9ldGhlcm5ldC9ldGhvYy5jICAgICAgICAgICAgICAgICAg
+ICAgICAgICB8IDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVybmV0L2V6Y2hpcC9ucHNfZW5ldC5jICAg
+ICAgICAgICAgICAgIHwgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvZnJlZXNjYWxlL2ZlY19t
+YWluLmMgICAgICAgICAgICAgfCAyICstCiBkcml2ZXJzL25ldC9ldGhlcm5ldC9mcmVlc2NhbGUv
+ZmVjX21wYzUyeHguYyAgICAgICAgICB8IDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVybmV0L2ZyZWVz
+Y2FsZS9mbWFuL21hYy5jICAgICAgICAgICAgIHwgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQv
+ZnJlZXNjYWxlL2ZzX2VuZXQvZnNfZW5ldC1tYWluLmMgfCAyICstCiBkcml2ZXJzL25ldC9ldGhl
+cm5ldC9mcmVlc2NhbGUvZ2lhbmZhci5jICAgICAgICAgICAgICB8IDIgKy0KIGRyaXZlcnMvbmV0
+L2V0aGVybmV0L2ZyZWVzY2FsZS91Y2NfZ2V0aC5jICAgICAgICAgICAgIHwgMiArLQogZHJpdmVy
+cy9uZXQvZXRoZXJuZXQvaGlzaWxpY29uL2hpc2lfZmVtYWMuYyAgICAgICAgICAgfCAyICstCiBk
+cml2ZXJzL25ldC9ldGhlcm5ldC9oaXNpbGljb24vaGl4NWhkMl9nbWFjLmMgICAgICAgICB8IDIg
+Ky0KIGRyaXZlcnMvbmV0L2V0aGVybmV0L2xhbnRpcV94cngyMDAuYyAgICAgICAgICAgICAgICAg
+IHwgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvbWFydmVsbC9tdjY0M3h4X2V0aC5jICAgICAg
+ICAgICAgfCAyICstCiBkcml2ZXJzL25ldC9ldGhlcm5ldC9tYXJ2ZWxsL212bmV0YS5jICAgICAg
+ICAgICAgICAgICB8IDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVybmV0L21hcnZlbGwvcHhhMTY4X2V0
+aC5jICAgICAgICAgICAgIHwgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvbWFydmVsbC9za3ky
+LmMgICAgICAgICAgICAgICAgICAgfCAyICstCiBkcml2ZXJzL25ldC9ldGhlcm5ldC9tZWRpYXRl
+ay9tdGtfZXRoX3NvYy5jICAgICAgICAgICB8IDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVybmV0L21p
+Y3JlbC9rczg4NTEuYyAgICAgICAgICAgICAgICAgIHwgMiArLQogZHJpdmVycy9uZXQvZXRoZXJu
+ZXQvbWljcmVsL2tzODg1MV9tbGwuYyAgICAgICAgICAgICAgfCAyICstCiBkcml2ZXJzL25ldC9l
+dGhlcm5ldC9ueHAvbHBjX2V0aC5jICAgICAgICAgICAgICAgICAgICB8IDIgKy0KIGRyaXZlcnMv
+bmV0L2V0aGVybmV0L3F1YWxjb21tL3FjYV9zcGkuYyAgICAgICAgICAgICAgIHwgMiArLQogZHJp
+dmVycy9uZXQvZXRoZXJuZXQvcXVhbGNvbW0vcWNhX3VhcnQuYyAgICAgICAgICAgICAgfCAyICst
+CiBkcml2ZXJzL25ldC9ldGhlcm5ldC9yZW5lc2FzL3JhdmJfbWFpbi5jICAgICAgICAgICAgICB8
+IDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVybmV0L3JlbmVzYXMvc2hfZXRoLmMgICAgICAgICAgICAg
+ICAgIHwgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvc2Ftc3VuZy9zeGdiZS9zeGdiZV9wbGF0
+Zm9ybS5jICAgfCAyICstCiBkcml2ZXJzL25ldC9ldGhlcm5ldC9zb2Npb25leHQvc25pX2F2ZS5j
+ICAgICAgICAgICAgICB8IDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVybmV0L3N0bWljcm8vc3RtbWFj
+L3N0bW1hY19tYWluLmMgICAgIHwgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvdGkvY3Bzdy5j
+ICAgICAgICAgICAgICAgICAgICAgICAgfCAyICstCiBkcml2ZXJzL25ldC9ldGhlcm5ldC90aS9u
+ZXRjcF9jb3JlLmMgICAgICAgICAgICAgICAgICB8IDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVybmV0
+L3dpem5ldC93NTEwMC5jICAgICAgICAgICAgICAgICAgIHwgMiArLQogZHJpdmVycy9uZXQvZXRo
+ZXJuZXQveGlsaW54L2xsX3RlbWFjX21haW4uYyAgICAgICAgICAgfCAyICstCiBkcml2ZXJzL25l
+dC9ldGhlcm5ldC94aWxpbngveGlsaW54X2F4aWVuZXRfbWFpbi5jICAgICB8IDIgKy0KIGRyaXZl
+cnMvbmV0L2V0aGVybmV0L3hpbGlueC94aWxpbnhfZW1hY2xpdGUuYyAgICAgICAgIHwgMiArLQog
+ZHJpdmVycy9zdGFnaW5nL29jdGVvbi9ldGhlcm5ldC5jICAgICAgICAgICAgICAgICAgICAgfCAy
+ICstCiBuZXQvZHNhL3NsYXZlLmMgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICB8IDIgKy0KIG5ldC9ldGhlcm5ldC9ldGguYyAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgIHwgMiArLQogNDcgZmlsZXMgY2hhbmdlZCwgNDcgaW5zZXJ0aW9ucygrKSwgNDcgZGVs
+ZXRpb25zKC0pCgotLSAKMS45LjEKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
+bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
