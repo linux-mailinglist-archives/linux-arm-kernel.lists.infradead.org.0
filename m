@@ -2,80 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D665315184
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 18:33:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 661CB151AF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 18:34:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5R6HkjIiTKNsUHexS+lXLmNM7aTg0IH/qmEx3wNtRfI=; b=EdaVg0E8WAUr/S
-	4lcUvJkO0SCdEOh+y1A2cdCmJ8XzBUzFTV+TxKX1lQeNDB9r6KUmNaMHj9tAQu8q/WattNSnHLP4d
-	DHpuqC4YXXL8cAHMtf/ScwJMVY9CkaF7/30R5WpHBS5WPLXgNQRVa8J9u3BCHZaGDKLPRP8Wh0I/5
-	SlM5fQ30wdkVbqZhGYpfylU88lLt+zaK+nPqkJwakMixaF5Nqr1CXMAYZreRhUWMzE5MUEh6ciMlL
-	snt5Qd9dC+yKIg7otPIU6ogGzpO5/V2jwFvG/frjeA0OD5P2o0WV/gDCgY5HfvWrBL4Q5vC71nWiW
-	TFgmJlVCHq+N9HbTjegw==;
+	List-Owner; bh=9kIjzgzD5ns6yAr1LBRUfG9amLIVTDTbxpN84viYyes=; b=q+r6V87OkmkKe0
+	D43pEPla2rSNjlg/1Pxny4i5lMc8dR3AAvOVm1eUWUu5+/FCDS/HKvU+IM7TEIO7kJxVNCdVRUWNj
+	0tGCPqBEB48mOsOsSB7GoS195/IfraC2dxJmZ2wIV8o+nrBjQWyFRczEgdioZkFFcGW+ASdFrMCrp
+	zoHG+s5Gva5+eELuluX9u2HJ9XvrcSV52Git4xZZ7ZQvlstaQyJUPguByHwV2kOqRcvJzDgQiiCK9
+	sh15zZHmBSj8Y7hfxjRdKG0ZiwNxqRRFxCc7pxw17WaUilzcESyeoWnKhp5drSmhKRz0w45RoCoFn
+	W9fGsVynv+LJ8ynM1wMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNgY2-000092-5Q; Mon, 06 May 2019 16:33:02 +0000
-Received: from merlin.infradead.org ([205.233.59.134])
+	id 1hNgZK-0001hq-Ov; Mon, 06 May 2019 16:34:22 +0000
+Received: from mail-yw1-xc4a.google.com ([2607:f8b0:4864:20::c4a])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNgWo-0007N6-Qf
- for linux-arm-kernel@bombadil.infradead.org; Mon, 06 May 2019 16:31:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Type:Cc:To:From:Subject:
- References:Mime-Version:Message-Id:In-Reply-To:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=RiesdCLpp+R0f3O9XnLGGd6rw9hYPfKFlydZlXAyMMc=; b=3V80JLEBMnKLqjJVUtJ3Go+GK
- 9ZWy7d0kO8exdne5R8rvN0LnOFK1A/dygQVpQn/RbyOLwUg9je1624iohtYBDQjJdMvHSwHm7zdmz
- DJXS7nzgemV2r6ZzlQUOAkNOS1kfoCovR6/yFiO8tsq2vYV7H63kdiZ/eqpu3iljLrkgIpdzrchmr
- EEf98QfdXNspnxhByPVyTHJXsk5Bz3irpgSWiUSslfP29ZNbtRk4LMmC1JK1LPlxReswZ+svaA1Ih
- bebsi0+ykAiizh8cVzAn/QKj56sdgg0GrM5rlknpSIGOyqlYbdXLm2kVrKgWqzBaVlqjKp5wWywoY
- J7ftTSOeg==;
-Received: from mail-qk1-x74a.google.com ([2607:f8b0:4864:20::74a])
- by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNgWm-00064P-9C
- for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 16:31:45 +0000
-Received: by mail-qk1-x74a.google.com with SMTP id a64so11072672qkf.8
+ id 1hNgWh-0007DV-MH
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 16:32:16 +0000
+Received: by mail-yw1-xc4a.google.com with SMTP id j62so26228894ywe.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 May 2019 09:31:40 -0700 (PDT)
+ Mon, 06 May 2019 09:31:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=RiesdCLpp+R0f3O9XnLGGd6rw9hYPfKFlydZlXAyMMc=;
- b=Q6QAvdDCFNZuLS9ja3NkrMR3RvJ0S09G7HKj9q0ktYjp11DSu6sbwte4Z+MCgpdXSa
- OGL0kcCil/ti4co+BeFvhTmmJ7+RXsHFsfK1hhHv1eec6VZbNopqVkjLet50ydoaeiwT
- XvmlmBaXIzsx1T6Dyaajg7Bz5pq9Axsw6cJNm2DtIdCFs4IeQzb8CYH1eWRXRhTqPi8L
- 9AZ0ieEA2P7xzH+IK3hHC6FzJl7z9XjQD9wvxFqfvRNHuz4Kvz+PKDcTznem4kO3i/YF
- 7eAO6TlPEh3PGwlYJ/3xngzxB39JPbQ+aqDHIcDB8TtrzW/euZk2kR1+K4+g3OqdGfdF
- qJTQ==
+ :cc; bh=XsLXWNDlsBBI0M98p6y9Vt03OYjBcfLHAOwfOkL6Mk8=;
+ b=kEClrhOVjhAItZ8ad4444tIss3a4M0x8Yot0yP0UgDJhkHPz5JJSrKt8hPGcBCGy4k
+ n4A8xX+jnj6SxUqb5Teq0gUiCKNzkVcA04YhcbUNwlyz4R1O6RfjMZcPvXzWJ1RdceKB
+ oQhTiP7SkvbOtmqbJ2RUuk4j1OYZLTrgQf9mkPglzFxH/VOrmTQ4nsN9RjYlhUC2s+eh
+ 3RVGdXHQ+PFLeCy7nvUg/hvDRpVltVdy/tgWDjXNd7yymqhFMcWgbq1pcJP1+YPDmRyD
+ x5gmgR7lpn+iTAg+S4pO9Zaw/FFLdxShW6UDAYaJnd95g7v5e/84elY+8pkkjOlGa4Nw
+ P+ag==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=RiesdCLpp+R0f3O9XnLGGd6rw9hYPfKFlydZlXAyMMc=;
- b=H5mBS+QjWjlAV3eLvJsUQ5170iqt/7qK/YDmRoHabh2wZGeDfpjDZ8LSOTb5XKBeUP
- YZAVb3yOkdTR7oy6gfUKZqcEMS2LqFlGSwBmmv2oUVMrCkYqLqLhUa5wjcbosNvZnmsa
- ZEyIa3uNxim4X4GRcdZVF12sNw4es1q11bVQ9fzC1j/tTWZXPhpeKCuEnWej+EMHwIRa
- bo6nYlflOpvo0I9RViiPZZgqLkM4RgZdykUtUfJVPG3tbTijrEv5Xhv883RYsyVKQV3T
- 8x/n9min+4zAUBvnzWKbegjgdOVfpGeWI71iQH78JEWeqVZMqsQQuKoUAfyxqPFii4Tm
- 8RDQ==
-X-Gm-Message-State: APjAAAUNTBxT+KYN/+SMWnr8jti2ELavsTFSqcyHpL+mcZJuxeQGUKtJ
- Yl0STJmBD4ls5hvAPSS35z9LDn2xHz0QHCOMeA2KRVVEZ/HPGCudq+FeKzvR75ZMSwp3uJKYwVb
- kyQKsZk8FzgccIZ6lOzqZOw8g7JbJToHI5Iyck+iHPCXu8jxYh0+I72Z5OiTdIf2YZbG1eJWAhB
- rpzcd/HxTqXrwsBKk=
-X-Google-Smtp-Source: APXvYqxNt6uYI1SB2jQypHitLB3ZO6cfBHn8QWvA0b8eMRqYbeBN0u2XyLJdNX/EJB3bCPY6PcnOySobJPUt2l9F
-X-Received: by 2002:a37:9ed6:: with SMTP id h205mr2433459qke.152.1557160294772; 
- Mon, 06 May 2019 09:31:34 -0700 (PDT)
-Date: Mon,  6 May 2019 18:30:55 +0200
+ bh=XsLXWNDlsBBI0M98p6y9Vt03OYjBcfLHAOwfOkL6Mk8=;
+ b=kqJTmQ6KWMH2fKjpPF1u7t98p4R3ZfUvVhNPt7Vb6v6lb2ttiS9H1LSzkHThRtkCAf
+ C5pTONrWtCRUBq6rgNd2qjpXcbci6tXsOCTyTyrdGV4X8psE2E3iTmFm9yIWtZqfoldX
+ pg9V08xWAR46fb7copOdNv40qk54bgUp0xvhV4TQI5A9kLFplh9MUZqtKVXzfPGjFvHw
+ rra0KztiqF5nXxsrzVeJuE4WVUP3RbVC5NlYg1qKQLBHCGS+uHj74e8KHh46x/nTNopS
+ njDq9MfOJKFy9WvnXR/+zPdOry09tdy+hKXMUYBqAEM4t61skOVjHYWHmzC4lKN21WNi
+ E48w==
+X-Gm-Message-State: APjAAAXisi1UWldG7Zjck6OgwK1qu7uMqsLCfTMsfWLqYrmH8hIS+Srp
+ NOQ6T6Ibacs8sdtuMVwlz8/voK4Jt8I1CyJKlcuQDXCnxpsrw92ucCaUlFi+1oKm0WQJCasKjp2
+ qpelfHjvZqxJpjjrfjvmdquwI9DwHrXsvNM5ANu2Zt0dRbGthNQgA6hsU0zidNhBlvgNBqlNdwX
+ 8ORUZ35gN7FPISZjE=
+X-Google-Smtp-Source: APXvYqynTJlFStkm7itRuyZbu5fDIV0oTx6a8awLBBeIPofcOk875PcBne7EkMsm55r8chxW1lodIy8g+/aDw2aV
+X-Received: by 2002:a81:7903:: with SMTP id u3mr17016403ywc.478.1557160297906; 
+ Mon, 06 May 2019 09:31:37 -0700 (PDT)
+Date: Mon,  6 May 2019 18:30:56 +0200
 In-Reply-To: <cover.1557160186.git.andreyknvl@google.com>
-Message-Id: <ac2ca3454b1ae8856ea2e29a1316fea50a30c788.1557160186.git.andreyknvl@google.com>
+Message-Id: <30b44d469bb545c608531faf01fb10248ed78887.1557160186.git.andreyknvl@google.com>
 Mime-Version: 1.0
 References: <cover.1557160186.git.andreyknvl@google.com>
 X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
-Subject: [PATCH v15 09/17] fs, arm64: untag user pointers in copy_mount_options
+Subject: [PATCH v15 10/17] fs, arm64: untag user pointers in fs/userfaultfd.c
 From: Andrey Konovalov <andreyknvl@google.com>
 To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org, 
  linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org, 
@@ -83,26 +67,26 @@ To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
  linux-media@vger.kernel.org, kvm@vger.kernel.org, 
  linux-kselftest@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_123144_335603_CBDB1B64 
-X-CRM114-Status: GOOD (  16.28  )
+X-CRM114-CacheID: sfid-20190506_093140_164677_0DDB36CC 
+X-CRM114-Status: GOOD (  13.83  )
 X-Spam-Score: -7.7 (-------)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:c4a listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:74a listed in]
- [list.dnswl.org]
  -0.0 T_DKIMWL_WL_MED        DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -143,32 +127,94 @@ This patch is a part of a series that extends arm64 kernel ABI to allow to
 pass tagged user pointers (with the top byte set to something else other
 than 0x00) as syscall arguments.
 
-In copy_mount_options a user address is being subtracted from TASK_SIZE.
-If the address is lower than TASK_SIZE, the size is calculated to not
-allow the exact_copy_from_user() call to cross TASK_SIZE boundary.
-However if the address is tagged, then the size will be calculated
-incorrectly.
+userfaultfd code use provided user pointers for vma lookups, which can
+only by done with untagged pointers.
 
-Untag the address before subtracting.
+Untag user pointers in validate_range().
 
 Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
 ---
- fs/namespace.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ fs/userfaultfd.c | 22 ++++++++++++----------
+ 1 file changed, 12 insertions(+), 10 deletions(-)
 
-diff --git a/fs/namespace.c b/fs/namespace.c
-index c9cab307fa77..c27e5713bf04 100644
---- a/fs/namespace.c
-+++ b/fs/namespace.c
-@@ -2825,7 +2825,7 @@ void *copy_mount_options(const void __user * data)
- 	 * the remainder of the page.
- 	 */
- 	/* copy_from_user cannot cross TASK_SIZE ! */
--	size = TASK_SIZE - (unsigned long)data;
-+	size = TASK_SIZE - (unsigned long)untagged_addr(data);
- 	if (size > PAGE_SIZE)
- 		size = PAGE_SIZE;
+diff --git a/fs/userfaultfd.c b/fs/userfaultfd.c
+index f5de1e726356..aa47ed0969dd 100644
+--- a/fs/userfaultfd.c
++++ b/fs/userfaultfd.c
+@@ -1261,21 +1261,23 @@ static __always_inline void wake_userfault(struct userfaultfd_ctx *ctx,
+ }
  
+ static __always_inline int validate_range(struct mm_struct *mm,
+-					  __u64 start, __u64 len)
++					  __u64 *start, __u64 len)
+ {
+ 	__u64 task_size = mm->task_size;
+ 
+-	if (start & ~PAGE_MASK)
++	*start = untagged_addr(*start);
++
++	if (*start & ~PAGE_MASK)
+ 		return -EINVAL;
+ 	if (len & ~PAGE_MASK)
+ 		return -EINVAL;
+ 	if (!len)
+ 		return -EINVAL;
+-	if (start < mmap_min_addr)
++	if (*start < mmap_min_addr)
+ 		return -EINVAL;
+-	if (start >= task_size)
++	if (*start >= task_size)
+ 		return -EINVAL;
+-	if (len > task_size - start)
++	if (len > task_size - *start)
+ 		return -EINVAL;
+ 	return 0;
+ }
+@@ -1325,7 +1327,7 @@ static int userfaultfd_register(struct userfaultfd_ctx *ctx,
+ 		goto out;
+ 	}
+ 
+-	ret = validate_range(mm, uffdio_register.range.start,
++	ret = validate_range(mm, &uffdio_register.range.start,
+ 			     uffdio_register.range.len);
+ 	if (ret)
+ 		goto out;
+@@ -1514,7 +1516,7 @@ static int userfaultfd_unregister(struct userfaultfd_ctx *ctx,
+ 	if (copy_from_user(&uffdio_unregister, buf, sizeof(uffdio_unregister)))
+ 		goto out;
+ 
+-	ret = validate_range(mm, uffdio_unregister.start,
++	ret = validate_range(mm, &uffdio_unregister.start,
+ 			     uffdio_unregister.len);
+ 	if (ret)
+ 		goto out;
+@@ -1665,7 +1667,7 @@ static int userfaultfd_wake(struct userfaultfd_ctx *ctx,
+ 	if (copy_from_user(&uffdio_wake, buf, sizeof(uffdio_wake)))
+ 		goto out;
+ 
+-	ret = validate_range(ctx->mm, uffdio_wake.start, uffdio_wake.len);
++	ret = validate_range(ctx->mm, &uffdio_wake.start, uffdio_wake.len);
+ 	if (ret)
+ 		goto out;
+ 
+@@ -1705,7 +1707,7 @@ static int userfaultfd_copy(struct userfaultfd_ctx *ctx,
+ 			   sizeof(uffdio_copy)-sizeof(__s64)))
+ 		goto out;
+ 
+-	ret = validate_range(ctx->mm, uffdio_copy.dst, uffdio_copy.len);
++	ret = validate_range(ctx->mm, &uffdio_copy.dst, uffdio_copy.len);
+ 	if (ret)
+ 		goto out;
+ 	/*
+@@ -1761,7 +1763,7 @@ static int userfaultfd_zeropage(struct userfaultfd_ctx *ctx,
+ 			   sizeof(uffdio_zeropage)-sizeof(__s64)))
+ 		goto out;
+ 
+-	ret = validate_range(ctx->mm, uffdio_zeropage.range.start,
++	ret = validate_range(ctx->mm, &uffdio_zeropage.range.start,
+ 			     uffdio_zeropage.range.len);
+ 	if (ret)
+ 		goto out;
 -- 
 2.21.0.1020.gf2820cf01a-goog
 
