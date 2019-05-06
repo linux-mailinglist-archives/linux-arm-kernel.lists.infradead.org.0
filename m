@@ -2,78 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 955641502C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 17:27:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E70115046
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 17:30:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C0BwnmIYGwq3e+IEIYrZJVSSS2TKq2vRcTYBfgGJqWg=; b=aZaVn0wz2gItz3
-	Ssscoh/tAJm6jmlsXf9lznCXJbj9m8aYlsc4tgufoma7GBYijmc/cpLzHPMvDCv4e3m/OBLKwtoQu
-	W1VlUEGV+H6IYcLsTkblbrfhYn1To0N/7NvVA+nXESeueDGkv0uTZ06zf83OeZHMZlksj1Qamiiv2
-	eTZpF7UkqTZ0xmVjCwmzZYPvCK2Q0LBMDXD3YvTswaq9YBBz+3GaEdWrUAuYYabHkrrv3RgFtGtmB
-	efUzXwB/D/txN44XWpQsgGnJ8Y1qcDtmvHI4t/SM4nNDWsRmjWFWgpb63bizi80he1G+46hVV/JQU
-	ePa5Oos/kx7bQCt9ZoUw==;
+	List-Owner; bh=pkT+gyekJJ3MtEJ/uNvDcV7Sc118KvbyLSnUAKuPIeI=; b=pzY4tczoZgiCE7
+	Fbvmm1H0M6PDiu003hCQSKQy1V5gm4t2DfaXk/nro9vYJlggmwT6lrVFTXHaUmHvFmRoCsEQa9/u3
+	SRrBCWqoOR/D/97O4u8Gu4yYv2RaIHZzdAekMX2cUyHyhSf9kbjMG7YVLC6thIl5wVW9jRfQLLfeW
+	19uj5arD/yqjV23RdYiZjLRDVB02/wiq05kJKlV0gdalvtoukpWhGmtU8vr1uqJ0P/XMkTmDvxHKZ
+	H4QJ0bWbBfhmIXh+LtNzpYBGI9yWZ/GMu9Umh3qmxFvG7SEeNnVONF3+g4dQalU+isqUif8oEVppx
+	y3KWqNufOqun7r7xOiSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNfWb-0006fE-L8; Mon, 06 May 2019 15:27:29 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hNfZo-0008N4-HE; Mon, 06 May 2019 15:30:48 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNfWU-0006e7-Ea
- for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 15:27:23 +0000
-Received: by mail-wr1-x444.google.com with SMTP id h4so17817906wre.7
+ id 1hNfZh-0008Mb-1u
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 15:30:42 +0000
+Received: from mail-qk1-f175.google.com (mail-qk1-f175.google.com
+ [209.85.222.175])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 942E32087F
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 May 2019 08:27:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=arista.com; s=googlenew;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=GuMSdmXl0z53dDi0xhlaU7BU2n/bLw/DBUWaPvlO+dc=;
- b=C/d9PWiZ7kbJC0oH7zo5Ibhtjb0LJxg5WGRhk2z22dgXTR0ahak265kLVZyGYOhfje
- aEtSmh42RRvz8bCCBZRBFOn7uv5XCF0ECqKL0Hb338d0yPodqMwGb1L0gvRyJgITkaxQ
- Ki1y61sbdbPypKRjDCxUR8MH0zfn/bbro9LPpFVyLBByJZzEOqelQf5tS81MK2FkUIP3
- sLhve+NsmP0dlDX03w14Qjs93JrqJwcC/r4yHUZhJhCv/72E7VCM80drfYcNtln/9ipb
- cKIyK6t7ROv023pVx/00hbtubgQCmfBlIjzs3E6R48gtIILod1LUINjWV6UVWZ8tSjxH
- BBpA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=GuMSdmXl0z53dDi0xhlaU7BU2n/bLw/DBUWaPvlO+dc=;
- b=bNAJ3AUbjxPJyzLC0x/wsgVbtpUE13DS13SjyPwZ53BAVxR4vWFISoZH3S194x2uPj
- ukRQ4bw7fBiHrqVZFdVYh/Wqwfs1u4qKYHsM1U1i9Zc8srwkaliq56vay8SwdwfPzq2A
- uz2FmpT+KGZe4s1n2fspNtk1bNPId+cy7EkUE1ddms8YE4HrJXE3+t6TvVgp66DGyXfS
- KpQ4JH2XSeMvPiM16refiZnF56O2rEU/bXLWgcAfhwKLZoAIEmoHF/1j7KvVk6rxoxbD
- yhon2s5kjRDgzDeJygqh/SLiCQQ+NyUZuqcV3PsQ3KfX0VpWzLN1H3yxL81qepL37+8H
- IxnQ==
-X-Gm-Message-State: APjAAAVJ1oRGHzHL73LHmMr5iKKtGm8ptoVGZ/Eo5lCf03S7AzRPQnTX
- iiRwr3tGNV4Sz+6/Crk0+1lO0a0/4fsVlOd3BxNtAA==
-X-Google-Smtp-Source: APXvYqzdYjq2KzNwXSYRUYk147h4YL+JNa0zWfymURRoAL7aXQogilrHn37rwl9PoIS46ayzMGu+Ikwm2tOs7SUKN4Y=
-X-Received: by 2002:a5d:5551:: with SMTP id g17mr20082024wrw.50.1557156440752; 
- Mon, 06 May 2019 08:27:20 -0700 (PDT)
+ Mon,  6 May 2019 15:30:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1557156640;
+ bh=y4bAG5gq6U3haHrnf1MAV7rGMGFLAEB6Ibt6G1yZvZ8=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=aCPzxtAo0cqsJZqURdeQaqK83/p0unGaJCJFcRgDP3xUetjGuPbKSaaz4RyQZOCGf
+ /URNPAAIMkGZjS1uhIVqAHOYluDNONqThbPpvu6Ld1kr9ug6sBG0HSGe7yCwjzvQbi
+ J/2K1pqUToZdrV4joYCJYB6MSw6KfCpGLH9VsV8Y=
+Received: by mail-qk1-f175.google.com with SMTP id a132so8009382qkb.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 06 May 2019 08:30:40 -0700 (PDT)
+X-Gm-Message-State: APjAAAX77TetcaqNcF5736505B4obnwiFlesRdJc35/Wk1RAVIkT4+Md
+ 5FP+KUUEUArVJuoL4JtfCqhL16jwG5BFape2yg==
+X-Google-Smtp-Source: APXvYqznvmDWZUjkaxr0sSjLP51EjpfxMMduwQvYSJXU0WPFWR7Y+y3kDu4pbxxZImHKPkVymEqchQsoW0f0gHPW8x4=
+X-Received: by 2002:a37:4711:: with SMTP id u17mr20161936qka.326.1557156639851; 
+ Mon, 06 May 2019 08:30:39 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190504132327.27041-1-tmurphy@arista.com>
- <20190504132327.27041-2-tmurphy@arista.com>
- <8fef18f5-773c-e1c9-2537-c9dff5bfd35e@linux.intel.com>
-In-Reply-To: <8fef18f5-773c-e1c9-2537-c9dff5bfd35e@linux.intel.com>
-From: Tom Murphy <tmurphy@arista.com>
-Date: Mon, 6 May 2019 16:27:09 +0100
-Message-ID: <CAPL0++4_Qa+dxzQ2k6BJi_o+VSSrHEtomYgVmRqjtjsOfHbGew@mail.gmail.com>
-Subject: Re: [RFC 1/7] iommu/vt-d: Set the dma_ops per device so we can remove
- the iommu_no_mapping code
-To: Lu Baolu <baolu.lu@linux.intel.com>
+References: <20190428024847.5046-1-peter.chen@nxp.com>
+ <20190428024847.5046-7-peter.chen@nxp.com>
+ <CAL_JsqLPK8kuYTT7ekZbAzywp2kr9xKA0_X3BAqVn5hShbPM+w@mail.gmail.com>
+ <VI1PR04MB5327641FD0A21BB4C93A85A58B370@VI1PR04MB5327.eurprd04.prod.outlook.com>
+In-Reply-To: <VI1PR04MB5327641FD0A21BB4C93A85A58B370@VI1PR04MB5327.eurprd04.prod.outlook.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Mon, 6 May 2019 10:30:27 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq+OywH+_caxtrBJF=nMVxFeHsuL8jbLq=a6VBXWiZ0ktA@mail.gmail.com>
+Message-ID: <CAL_Jsq+OywH+_caxtrBJF=nMVxFeHsuL8jbLq=a6VBXWiZ0ktA@mail.gmail.com>
+Subject: Re: [PATCH 6/7] ARM: dts: imx7ulp: add imx7ulp USBOTG1 support
+To: Peter Chen <peter.chen@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_082722_494415_4A9B5AA3 
-X-CRM114-Status: GOOD (  22.91  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190506_083041_132073_0D3EECCD 
+X-CRM114-Status: GOOD (  18.01  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -94,111 +87,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, kvm@vger.kernel.org,
- Will Deacon <will.deacon@arm.com>, David Brown <david.brown@linaro.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Marek Szyprowski <m.szyprowski@samsung.com>, linux-s390@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
- iommu@lists.linux-foundation.org, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>, linux-rockchip@lists.infradead.org,
- Kukjin Kim <kgene@kernel.org>, Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- Andy Gross <andy.gross@linaro.org>, linux-tegra@vger.kernel.org,
- Marc Zyngier <marc.zyngier@arm.com>, linux-arm-msm@vger.kernel.org,
- Alex Williamson <alex.williamson@redhat.com>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Robin Murphy <robin.murphy@arm.com>, linux-kernel@vger.kernel.org,
- Tom Murphy <murphyt7@tcd.ie>, Rob Clark <robdclark@gmail.com>,
- David Woodhouse <dwmw2@infradead.org>
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, "balbi@kernel.org" <balbi@kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 6, 2019 at 2:48 AM Lu Baolu <baolu.lu@linux.intel.com> wrote:
+On Sat, May 4, 2019 at 10:13 PM Peter Chen <peter.chen@nxp.com> wrote:
 >
-> Hi,
 >
-> On 5/4/19 9:23 PM, Tom Murphy wrote:
-> > Set the dma_ops per device so we can remove the iommu_no_mapping code.
+> > > ---
+> > >  arch/arm/boot/dts/imx7ulp.dtsi | 30 ++++++++++++++++++++++++++++++
+> > >  1 file changed, 30 insertions(+)
+> > >
+> > > diff --git a/arch/arm/boot/dts/imx7ulp.dtsi
+> > > b/arch/arm/boot/dts/imx7ulp.dtsi index fca6e50f37c8..e2944f98eac6
+> > > 100644
+> > > --- a/arch/arm/boot/dts/imx7ulp.dtsi
+> > > +++ b/arch/arm/boot/dts/imx7ulp.dtsi
+> > > @@ -30,6 +30,7 @@
+> > >                 serial1 = &lpuart5;
+> > >                 serial2 = &lpuart6;
+> > >                 serial3 = &lpuart7;
+> > > +               usbphy0 = &usbphy1;
 > >
-> > Signed-off-by: Tom Murphy<tmurphy@arista.com>
-> > ---
-> >   drivers/iommu/intel-iommu.c | 85 +++----------------------------------
-> >   1 file changed, 6 insertions(+), 79 deletions(-)
+> > Drop this. You shouldn't need an alias.
 > >
-> > diff --git a/drivers/iommu/intel-iommu.c b/drivers/iommu/intel-iommu.c
-> > index eace915602f0..2db1dc47e7e4 100644
-> > --- a/drivers/iommu/intel-iommu.c
-> > +++ b/drivers/iommu/intel-iommu.c
-> > @@ -2622,17 +2622,6 @@ static int __init si_domain_init(int hw)
-> >       return 0;
-> >   }
-> >
-> > -static int identity_mapping(struct device *dev)
-> > -{
-> > -     struct device_domain_info *info;
-> > -
-> > -     info = dev->archdata.iommu;
-> > -     if (info && info != DUMMY_DEVICE_DOMAIN_INFO)
-> > -             return (info->domain == si_domain);
-> > -
-> > -     return 0;
-> > -}
-> > -
-> >   static int domain_add_dev_info(struct dmar_domain *domain, struct device *dev)
-> >   {
-> >       struct dmar_domain *ndomain;
-> > @@ -3270,43 +3259,6 @@ static unsigned long intel_alloc_iova(struct device *dev,
-> >       return iova_pfn;
-> >   }
-> >
-> > -/* Check if the dev needs to go through non-identity map and unmap process.*/
-> > -static int iommu_no_mapping(struct device *dev)
-> > -{
-> > -     int found;
-> > -
-> > -     if (iommu_dummy(dev))
-> > -             return 1;
-> > -
-> > -     found = identity_mapping(dev);
-> > -     if (found) {
-> > -             /*
-> > -              * If the device's dma_mask is less than the system's memory
-> > -              * size then this is not a candidate for identity mapping.
-> > -              */
-> > -             u64 dma_mask = *dev->dma_mask;
-> > -
-> > -             if (dev->coherent_dma_mask &&
-> > -                 dev->coherent_dma_mask < dma_mask)
-> > -                     dma_mask = dev->coherent_dma_mask;
-> > -
-> > -             if (dma_mask < dma_get_required_mask(dev)) {
-> > -                     /*
-> > -                      * 32 bit DMA is removed from si_domain and fall back
-> > -                      * to non-identity mapping.
-> > -                      */
-> > -                     dmar_remove_one_dev_info(dev);
-> > -                     dev_warn(dev, "32bit DMA uses non-identity mapping\n");
-> > -
-> > -                     return 0;
-> > -             }
 >
-> The iommu_no_mapping() also checks whether any 32bit DMA device uses
-> identity mapping. The device might not work if the system memory space
-> is bigger than 4G.
+> It is a derived USB PHY and used on most of i.mx chipidea USB controllers.
+> At the source code, we use aligned id to know the controller number.
+>
+>         ret = of_alias_get_id(np, "usbphy");
+>         if (ret < 0)
+>                 dev_dbg(&pdev->dev, "failed to get alias id, errno %d\n", ret);
+>         mxs_phy->port_id = ret;
 
-It looks like their is actually a bug in the v3 of the "iommu/vt-d:
-Delegate DMA domain to generic iommu" patch set. I will leave a
-message in that email thread. Fixing that bug should also fix this
-issue.
-
+fsl,anatop property should probably have cell to specify this.
 
 >
-> Will you add this to other place, or it's unnecessary?
+> > >         };
+> > >
+> > >         cpus {
+> > > @@ -133,6 +134,35 @@
+> > >                         clock-names = "ipg", "per";
+> > >                 };
+> > >
+> > > +               usbotg1: usb@40330000 {
+> > > +                       compatible = "fsl,imx7ulp-usb", "fsl,imx6ul-usb",
+> > > +                               "fsl,imx27-usb";
+> > > +                       reg = <0x40330000 0x200>;
+> > > +                       interrupts = <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>;
+> > > +                       clocks = <&pcc2 IMX7ULP_CLK_USB0>;
+> > > +                       fsl,usbphy = <&usbphy1>;
+> >
+> > Don't use this for new users. Use the phy binding instead.
+> >
 >
-> Best regards,
-> Lu Baolu
+> It is not a new user, the USB PHY used at imx7ulp is the same with imx6's.
+
+New SoC is a new user. The chipidea core already supports using 'phys'
+so you should be able to just use the common code.
+
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
