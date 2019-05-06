@@ -2,55 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E56E8153DA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 20:52:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58584153E9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 20:53:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=bmfNdCgRaLFOjxIhAt+uwZCmy9Nd1+STz8wPjyNwFjM=; b=IPzLBc8g3xTCiKeoJwbUINXwg
-	6k3eLuU6ddp+DcnxOGeZI/zc4lEKl7SOfEt/CR2e0Vlq3tMoNYp1pqUeUlbSBCUfEwB84JiAToccD
-	GUYU6JbBhgXaP2ZY71gIOiRMzshKklrVzgHzfMaaEIB3RV8YWpl7pKkIJHvstGUiPfiPeLlsnrLnM
-	m2r+1259bFLxtephg4Xo2Q013L2BCyMEkZc1Ngms7NXddbUiFvTX6UgbOmZlkIsICNJRBbxyZCrW2
-	cuKWsZbtqQdSQrU5FAdz5lPnhMv8UAq0VtT3/jTzGPQjbSVHQILzVAbopq4nULEDCxHCfvgLeGnlD
-	MbUn+ND6Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=a1iPJQiKyIvoM1Xn5X6NQ9WNzMS3Pc5EvG5DO3uhw5o=; b=PMjRrS02zGmXdn
+	xlOiGughSKsUAkpuJHnfU2Nr4R8N3MmxjrZObz1+unYBmguzF16VbU+XqXSTEgKdQlo9qpw5wVq10
+	RIur+SnzM+tqk3OzQR/9v6+g02n9jtjrjeP/akqmPPvxmEfxeN1onr+UY7CE9/eYtYyntIFLGbKyF
+	vc8kPj9ug5LRZKfpDRhZ74nM5vOwGR+FrcrqujEAu65b6Mt+IZ2cxxyUY7cLZRnrPqP5mVYBzICRf
+	4QcudqF+PhpQtbMDSlVHOWpAq2iy8ziHquHSZG816PV6txb8p59x61aIQJ2LgAt1ECEsve/lh+lSv
+	pElNzBNpiiF5jZJAD1+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNiiU-0004NW-3Y; Mon, 06 May 2019 18:51:58 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1hNija-0004gB-8r; Mon, 06 May 2019 18:53:06 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNiiN-0004N6-7t; Mon, 06 May 2019 18:51:52 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 6121AACCD;
- Mon,  6 May 2019 18:51:49 +0000 (UTC)
-Message-ID: <9871b5d816b3868633381dba84b315bb21bb2ace.camel@suse.de>
-Subject: Re: [PATCH v2 0/3] staging: vchiq: use interruptible waits
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Stefan Wahren <stefan.wahren@i2se.com>, linux-kernel@vger.kernel.org
-Date: Mon, 06 May 2019 20:51:47 +0200
-In-Reply-To: <b2679404-ba00-d18e-fe15-44c6e280dc11@i2se.com>
-References: <20190506144030.29056-1-nsaenzjulienne@suse.de>
- <b2679404-ba00-d18e-fe15-44c6e280dc11@i2se.com>
-User-Agent: Evolution 3.30.5 
+ id 1hNijR-0004fI-Dm
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 18:52:58 +0000
+Received: by mail-ed1-x542.google.com with SMTP id w33so13994723edb.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 06 May 2019 11:52:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=arista.com; s=googlenew;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=xOMG2HdbEZ3SrXQ8q7Gqb0A8n9cqtIr7U5g8ZrmeSwY=;
+ b=jhxVShgPi56fhBmH6sXGURNSQPG8rifG26Da8orjFSRRc8gRE6k4Cv6HwdBHg4knfI
+ l5tc2Q+doMEgflLHad6284EeKM+Hshw3o9FH3NdEkGrVsvtFV4R2axudVscNb2s97B7y
+ TU8ZHMgrm2I96elHH5u5wUkhBml+5CSM0Bdrjpo6Z3hiwSnAQoLfuou4AItwdkOpsxed
+ 80lBtJ3c6s9ug68FFc8DHgEZ18q+zoY1HdpsnDLUDCZ8hzDP1k/iNQBJQXz0tnLVDZDA
+ PjjVf3eEJQcaUVjosMg85BMeUtS+scBv/cwOJtifNVGUGwrOUDP6xQ2JB5R79hYAa3k2
+ M/6g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=xOMG2HdbEZ3SrXQ8q7Gqb0A8n9cqtIr7U5g8ZrmeSwY=;
+ b=MAOZzCZoYyaTR6HychrosNYuEj6d8RyFS/IEtusodYlAzB8X+6+DTwL1BYLg8sZ1bQ
+ ePjC3mCa2C+LqVXIaLCH0vifFiNu4FcA8gvrr+NsuvW1NeBgXj7kMTStx7s2soWssLMG
+ eg+Eru03Y62Au6C19kUROTFnjhVoUr+mzHmXkmT86GVoMFyazoM6XpBeLpdzKOHfMEXQ
+ 6MRULs0M7wvj4EIRQWYhj5WmE/gpbJ4WUMJeFmq04Hl4liZQx6nA1kF2XR2Z+rJDg/ZE
+ DTsEZx5/1FudIoTlNP8tiwwqZFhZDWyFWUyK4K6lNr5xp/WFC2czR8ojVOkxtWFf/xKy
+ mCDw==
+X-Gm-Message-State: APjAAAXLtBNI1uLsN/yuSw7qhbtNwRXGTvl4Lx617/CoM6004p9tvrZy
+ EBWEmMYIR8CegbgXeJJgIowKzw==
+X-Google-Smtp-Source: APXvYqx/0bwigCkWFM3Wz/6ksylC3p72YzFRn5H6iW89lDNU+bH1gdGYQluV+iLWz8wcDznRZGXmPg==
+X-Received: by 2002:a17:906:469a:: with SMTP id
+ a26mr20917778ejr.164.1557168775535; 
+ Mon, 06 May 2019 11:52:55 -0700 (PDT)
+Received: from localhost.localdomain ([2a02:8084:a0:bc00:d9d9:922a:828d:a50e])
+ by smtp.gmail.com with ESMTPSA id
+ e35sm3361412eda.2.2019.05.06.11.52.54
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 06 May 2019 11:52:54 -0700 (PDT)
+From: Tom Murphy <tmurphy@arista.com>
+To: iommu@lists.linux-foundation.org
+Subject: [PATCH v3 0/4] iommu/amd: Convert the AMD iommu driver to the
+ dma-iommu api
+Date: Mon,  6 May 2019 19:52:02 +0100
+Message-Id: <20190506185207.31069-1-tmurphy@arista.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_115151_425233_189A3652 
-X-CRM114-Status: GOOD (  12.84  )
-X-Spam-Score: -1.6 (-)
+X-CRM114-CacheID: sfid-20190506_115257_543580_CA854F26 
+X-CRM114-Status: GOOD (  13.31  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.6 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 0.1 URIBL_SBL_A Contains URL's A record listed in the Spamhaus SBL
- blocklist [URIs: lists.fedoraproject.org]
- 0.6 URIBL_SBL Contains an URL's NS IP listed in the Spamhaus SBL
- blocklist [URIs: lists.fedoraproject.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -62,106 +98,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, devel@driverdev.osuosl.org,
- phil@raspberrypi.org, linux-rpi-kernel@lists.infradead.org,
- dan.carpenter@oracle.com
-Content-Type: multipart/mixed; boundary="===============3166619135935029067=="
+Cc: Heiko Stuebner <heiko@sntech.de>, Will Deacon <will.deacon@arm.com>,
+ David Brown <david.brown@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Marek Szyprowski <m.szyprowski@samsung.com>, linux-s390@vger.kernel.org,
+ linux-samsung-soc@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
+ linux-rockchip@lists.infradead.org, Kukjin Kim <kgene@kernel.org>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ Andy Gross <andy.gross@linaro.org>, linux-tegra@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Tom Murphy <tmurphy@arista.com>,
+ Robin Murphy <robin.murphy@arm.com>, linux-kernel@vger.kernel.org,
+ murphyt7@tcd.ie, Rob Clark <robdclark@gmail.com>,
+ David Woodhouse <dwmw2@infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Convert the AMD iommu driver to the dma-iommu api. Remove the iova
+handling and reserve region code from the AMD iommu driver.
 
---===============3166619135935029067==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-7b5y6BpkJZ6GF8kuMfMZ"
+Change-log:
+v3:
+-rename dma_limit to dma_mask
+-exit handle_deferred_device early if (!is_kdump_kernel())
+-remove pointless calls to handle_deferred_device
+v2:
+-Rebase on top of this series:
+ http://git.infradead.org/users/hch/misc.git/shortlog/refs/heads/dma-iommu-ops.3
+-Add a gfp_t parameter to the iommu_ops::map function.
+-Made use of the reserve region code inside the dma-iommu api
 
+Tom Murphy (4):
+  iommu: Add gfp parameter to iommu_ops::map
+  iommu/dma-iommu: Handle deferred devices
+  iommu/dma-iommu: Use the dev->coherent_dma_mask
+  iommu/amd: Convert the AMD iommu driver to the dma-iommu api
 
---=-7b5y6BpkJZ6GF8kuMfMZ
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+ drivers/iommu/Kconfig          |   1 +
+ drivers/iommu/amd_iommu.c      | 694 ++++-----------------------------
+ drivers/iommu/arm-smmu-v3.c    |   2 +-
+ drivers/iommu/arm-smmu.c       |   2 +-
+ drivers/iommu/dma-iommu.c      |  50 ++-
+ drivers/iommu/exynos-iommu.c   |   2 +-
+ drivers/iommu/intel-iommu.c    |   2 +-
+ drivers/iommu/iommu.c          |  43 +-
+ drivers/iommu/ipmmu-vmsa.c     |   2 +-
+ drivers/iommu/msm_iommu.c      |   2 +-
+ drivers/iommu/mtk_iommu.c      |   2 +-
+ drivers/iommu/mtk_iommu_v1.c   |   2 +-
+ drivers/iommu/omap-iommu.c     |   2 +-
+ drivers/iommu/qcom_iommu.c     |   2 +-
+ drivers/iommu/rockchip-iommu.c |   2 +-
+ drivers/iommu/s390-iommu.c     |   2 +-
+ drivers/iommu/tegra-gart.c     |   2 +-
+ drivers/iommu/tegra-smmu.c     |   2 +-
+ include/linux/iommu.h          |  21 +-
+ 19 files changed, 184 insertions(+), 653 deletions(-)
 
-On Mon, 2019-05-06 at 20:12 +0200, Stefan Wahren wrote:
-> Hi Nicolas,
->=20
-> Am 06.05.19 um 16:40 schrieb Nicolas Saenz Julienne:
-> > Hi,
-> > ...
-> >=20
-> > Regards,
-> > Nicolas
-> >=20
-> > [1] https://github.com/raspberrypi/linux/issues/2881
-> > [2] https://archlinuxarm.org/forum/viewtopic.php?f=3D65&t=3D13485
-> > [3]=20
-> >=20
-https://lists.fedoraproject.org/archives/list/arm@lists.fedoraproject.org/m=
-essage/GBXGJ7DOV5CQQXFPOZCXTRD6W4BEPT4Q/
-> >=20
-> > --
-> >=20
-> > Changes since v1:
-> >   - Proplery format revert commits
-> >   - Add code comment to remind of this issue
-> >   - Add Fixes tags
-> >=20
-> > Nicolas Saenz Julienne (3):
-> >   staging: vchiq_2835_arm: revert "quit using custom
-> >     down_interruptible()"
-> >   staging: vchiq: revert "switch to wait_for_completion_killable"
-> >   staging: vchiq: make wait events interruptible
-> >=20
-> >  .../interface/vchiq_arm/vchiq_2835_arm.c      |  2 +-
-> >  .../interface/vchiq_arm/vchiq_arm.c           | 21 +++++++------
-> >  .../interface/vchiq_arm/vchiq_core.c          | 31 ++++++++++++-------
-> >  .../interface/vchiq_arm/vchiq_util.c          |  6 ++--
-> >  4 files changed, 35 insertions(+), 25 deletions(-)
-> >=20
-> against which tree should this series apply?
->=20
-> Since the merge window opened the current staging-linus wont be
-> available soon.
+-- 
+2.17.1
 
-I don't know if that's what you meant, but I guess we should wait for 5.2-r=
-c1
-and then push it, the fixes will eventually get into the stable version of =
-5.1.
-
-
-Regards,
-Nicolas
-
-
---=-7b5y6BpkJZ6GF8kuMfMZ
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAlzQgkMACgkQlfZmHno8
-x/5aeQf/WayQQc7jVUFGX+QXs7v5yyWsQeju/5uDmQTIx7tBkCMoEjSTOzlRs4eI
-Sql06hOgpYwHD2U74Mu2bqon/sgK3royEyESPglhyI4v/V3/rFoGSd2qyRCRNs0U
-ev6zXzgWYntfEguNgzhAMB+VN6MP36ea+UbPgr+88YCzKR1KBPxNjbpRH5gSoPn0
-nWVFaxYidiJvFuHpuwDVYwBpDpSQkGcwhUL3ubPtZP3N0QO1MgdpJwY8+pWf+aHU
-Uou4nOuQuZ7smASZ4aPWSu5HU0QoA2E+4WvKx6VezMDoBrcmH37jYUi+NIlp6dHC
-dOxi0KAZi7Tam8WdDqSlo8upfd6qAQ==
-=EZQz
------END PGP SIGNATURE-----
-
---=-7b5y6BpkJZ6GF8kuMfMZ--
-
-
-
---===============3166619135935029067==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3166619135935029067==--
-
-
