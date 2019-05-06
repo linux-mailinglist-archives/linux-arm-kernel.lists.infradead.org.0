@@ -2,86 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7415E1434B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 03:08:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A59F14360
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 03:41:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=nOp+nDNyDirKmCLpcRjvwZt7CdLaAmtZB4jtd5Tzgc4=; b=ipA
-	EA5g/796yTJ5X1X52dKGC7d92Eu/uudAUGJTrh1hrzfo+SYfITAl+A90wcLGIBneoKj29X7gUz2bN
-	etEVUdfRdeRAdbgDzOQu7LmUIHNETcAsnJDlTR9cNW4UzdKEALJXwsrUm61V7pwN1ip/C4O8Ij0YS
-	AxU7cNCgCnj6O47QaRVDoittiAgMXnAYhhbTaudL/TtLkjgyOWkNTHTxxCFOFoyxjWjrREBB8zINF
-	YUJtZ6fcz/nIPmsrpaatL827Wc2FPEEdQQg0NAAJmgpRdvxP5t1jNuyvRiiCXO4eKwiO2qynp8Tn8
-	Eb2HBwfvMyrrguIcH5gT9CffeIDGiuA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=su1d0hHf70yDuVyxYfxcW9u9h+EZTmJiL82bYYPP7pI=; b=agtsKTTczkdvxLA1kub6xZy/1
+	KnVb7UUJdrrWGGRzsS5F9waFpAz2kqY/gQWzO09rKs4VE7Vqcl1J7diLc8ErKoOOSeBiua8PjlJmU
+	HCzUSrWVo9AJ2PTtUaQDqXT6TTXSyMDRxFKTnBesMTXvialpXOMgFDzdWzIM+E9v/XzjXq5Rsvf4v
+	5XUx51CnzNrMkxO8n50+e0bCmglTgPBN0KBjuegaZa9E3yLzmlMWR9SUAse4subPCh4oJiGqz1VEL
+	8mZ1U574wb0N8DB9tjBtHKCwfOvgNNQhLZ3TDdYF2jDHjX8tQvzGvEXaC0AaV+zINmyPDejvmps82
+	LbbN+FJKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNS7L-0004dI-Je; Mon, 06 May 2019 01:08:31 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1hNSdW-0005yR-Ch; Mon, 06 May 2019 01:41:46 +0000
+Received: from mga14.intel.com ([192.55.52.115])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNS7F-0004cn-Av
- for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 01:08:26 +0000
-Received: by mail-wr1-x442.google.com with SMTP id h4so15072612wre.7
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 05 May 2019 18:08:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=FKTE+cin9FPr9rrkGNck3/B4OfvJ0E5J1uTuf06jUr0=;
- b=MehMSNyzIm3kJejGtxa1wWUuqoTT5OAVQGn9fTLAIffKTMQLBF+NbfWEbor8EuslcC
- iKIUF7ahkSIa0y41I/OT2kD80+GkBhtk6K2pgRrn/MZ/yhlbHjxNzQ18tcsjL7FLesi3
- NIDBLxN3V1n3LbdkMPhK7bNofEyByqeo2kskg2ITd0exWD4zcfnmRcrbBjXzu8bT10mP
- iG/EoXIRB+GTn9xlUjGOpfoz6aiJ1cHN7cBONIbwtl9AtnYXG8hGJGAwd83FLyPV0Wfh
- zz0Zu1d6FOH09WUcPgP1PJCXTyXem9vReqgvI/WuWToBVwAvoaShiMej0L3KtAo8YXkX
- rNMQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=FKTE+cin9FPr9rrkGNck3/B4OfvJ0E5J1uTuf06jUr0=;
- b=TCZzO9y+tNgLBbSiwJbrY5r149Y4bsf3mRDv1ddKYwMoWLV8ltB+wGSRoI3bKIrE9H
- t7ua4BanahAVNsGuG16nVJQEqNxoCJ2QDXd3Lxj/31otEQqHc53T8uFc86qdshKo909T
- vkDXYO671/05TOFw7NUcH+QubCtPouGFoRKkWlynFWBHg60AQy95peswAmb1KTG4reLI
- eAm50IZM5efXhLZoi9IebG20FOWZm6I5cX1EPWi2nxhSHmY90Wuuypo6i4MRruo6jz0C
- d3dVO1vpRtKy0sViv6tr9KvkgC81ECLtTVdxIJRex1SLUfYeG4GOu0imvIKcQwKY2dIi
- Xkqg==
-X-Gm-Message-State: APjAAAWri6MxGArqCaiOVI2AKLn6OOiVoenAORW5PXbXspE1Mcr7mqdz
- p33r6WcC1ZNj9mu6RiNcmZ0=
-X-Google-Smtp-Source: APXvYqzUAV/YDoSG4WtLzgy5WotRZ7dUv3Ed9/JUh+5zCDDk/CuWb3I8YDOI/iPHXky47Z359+REAg==
-X-Received: by 2002:adf:f383:: with SMTP id m3mr2298118wro.164.1557104902871; 
- Sun, 05 May 2019 18:08:22 -0700 (PDT)
-Received: from localhost.localdomain (5-12-225-227.residential.rdsnet.ro.
- [5.12.225.227])
- by smtp.gmail.com with ESMTPSA id z5sm20955384wre.70.2019.05.05.18.08.21
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 05 May 2019 18:08:22 -0700 (PDT)
-From: Vladimir Oltean <olteanv@gmail.com>
-To: shawnguo@kernel.org
-Subject: [PATCH] ARM: dts: Introduce the NXP LS1021A-TSN board
-Date: Mon,  6 May 2019 04:08:00 +0300
-Message-Id: <20190506010800.2433-1-olteanv@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ id 1hNSdN-0005wS-1W; Mon, 06 May 2019 01:41:38 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga008.fm.intel.com ([10.253.24.58])
+ by fmsmga103.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 05 May 2019 18:41:29 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.60,435,1549958400"; d="scan'208";a="146639249"
+Received: from allen-box.sh.intel.com (HELO [10.239.159.136])
+ ([10.239.159.136])
+ by fmsmga008.fm.intel.com with ESMTP; 05 May 2019 18:41:24 -0700
+Subject: Re: [RFC 6/7] iommu/vt-d: convert the intel iommu driver to the
+ dma-iommu ops api
+To: Tom Murphy <tmurphy@arista.com>
+References: <20190504132327.27041-1-tmurphy@arista.com>
+ <20190504132327.27041-7-tmurphy@arista.com>
+ <602b77a2-9c68-ad14-b64f-904a7ff27a15@linux.intel.com>
+ <CAPL0++57nyLYP1fq=-6zvNS0z_iCqjWLbQ1MsG5F60ODkmRCQQ@mail.gmail.com>
+From: Lu Baolu <baolu.lu@linux.intel.com>
+Message-ID: <2419e94d-bfdb-e70d-bbfd-425671886e99@linux.intel.com>
+Date: Mon, 6 May 2019 09:34:59 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <CAPL0++57nyLYP1fq=-6zvNS0z_iCqjWLbQ1MsG5F60ODkmRCQQ@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190505_180825_404634_250D984F 
-X-CRM114-Status: GOOD (  16.20  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190505_184137_103811_C62A7CCB 
+X-CRM114-Status: GOOD (  21.61  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (olteanv[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.115 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,300 +68,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, leoyang.li@nxp.com, robh+dt@kernel.org,
- Vladimir Oltean <olteanv@gmail.com>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: Heiko Stuebner <heiko@sntech.de>, kvm@vger.kernel.org,
+ Will Deacon <will.deacon@arm.com>, David Brown <david.brown@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Marek Szyprowski <m.szyprowski@samsung.com>, linux-s390@vger.kernel.org,
+ linux-samsung-soc@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
+ iommu@lists.linux-foundation.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>, linux-rockchip@lists.infradead.org,
+ Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Andy Gross <andy.gross@linaro.org>, linux-tegra@vger.kernel.org,
+ Marc Zyngier <marc.zyngier@arm.com>, linux-arm-msm@vger.kernel.org,
+ Alex Williamson <alex.williamson@redhat.com>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ Robin Murphy <robin.murphy@arm.com>, linux-kernel@vger.kernel.org,
+ Tom Murphy <murphyt7@tcd.ie>, Rob Clark <robdclark@gmail.com>,
+ David Woodhouse <dwmw2@infradead.org>, baolu.lu@linux.intel.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The LS1021A-TSN is a development board built by VVDN/Argonboards in
-partnership with NXP.
+Hi,
 
-It features the LS1021A SoC and the first-generation SJA1105T Ethernet
-switch for prototyping implementations of a subset of IEEE 802.1 TSN
-standards.
+On 5/6/19 1:03 AM, Tom Murphy wrote:
+> On Sun, May 5, 2019 at 3:44 AM Lu Baolu<baolu.lu@linux.intel.com>  wrote:
+>> Hi,
+>>
+>> On 5/4/19 9:23 PM, Tom Murphy wrote:
+>>> static int intel_iommu_add_device(struct device *dev)
+>>>    {
+>>> +     struct dmar_domain *dmar_domain;
+>>> +     struct iommu_domain *domain;
+>>>        struct intel_iommu *iommu;
+>>>        struct iommu_group *group;
+>>> -     struct iommu_domain *domain;
+>>> +     dma_addr_t base;
+>>>        u8 bus, devfn;
+>>>
+>>>        iommu = device_to_iommu(dev, &bus, &devfn);
+>>> @@ -4871,9 +4514,12 @@ static int intel_iommu_add_device(struct device *dev)
+>>>        if (IS_ERR(group))
+>>>                return PTR_ERR(group);
+>>>
+>>> +     base = IOVA_START_PFN << VTD_PAGE_SHIFT;
+>>>        domain = iommu_get_domain_for_dev(dev);
+>>> +     dmar_domain = to_dmar_domain(domain);
+>>>        if (domain->type == IOMMU_DOMAIN_DMA)
+>>> -             dev->dma_ops = &intel_dma_ops;
+>>> +             iommu_setup_dma_ops(dev, base,
+>>> +                             __DOMAIN_MAX_ADDR(dmar_domain->gaw) - base);
+>> I didn't find the implementation of iommu_setup_dma_ops() in this
+>> series. Will the iova resource be initialized in this function?
+> Ah sorry, I should've mentioned this is based on the
+> http://git.infradead.org/users/hch/misc.git/shortlog/refs/heads/dma-iommu-ops.3
+> branch with the "iommu/vt-d: Delegate DMA domain to generic iommu" and
+> "iommu/amd: Convert the AMD iommu driver to the dma-iommu api" patch
+> sets applied.
+> 
+>> If so, will this block iommu_group_create_direct_mappings() which
+>> reserves and maps the reserved iova ranges.
+> The reserved regions will be reserved by the
+> iova_reserve_iommu_regions function instead:
+> (https://github.com/torvalds/linux/blob/6203838dec05352bc357625b1e9ba0a10d3bca35/drivers/iommu/dma-iommu.c#L238
+> )
+> iommu_setup_dma_ops calls iommu_dma_init_domain which calls
+> iova_reserve_iommu_regions.
+> iommu_group_create_direct_mappings will still execute normally but it
+> won't be able to call the intel_iommu_apply_resv_region function
+> because it's been removed in this patchset.
+> This shouldn't change any behavior and the same regions should be reserved.
+> 
 
-It has two regular Ethernet ports and four switched, TSN-capable ports.
+Okay, I understand it now. Thanks for the explanation.
 
-It also features:
-- One Arduino header
-- One expansion header
-- Two USB 3.0 ports
-- One mini PCIe slot
-- One SATA interface
-- Accelerometer, gyroscope, temperature sensors
-
-Signed-off-by: Vladimir Oltean <olteanv@gmail.com>
----
- arch/arm/boot/dts/Makefile        |   3 +-
- arch/arm/boot/dts/ls1021a-tsn.dts | 238 ++++++++++++++++++++++++++++++
- 2 files changed, 240 insertions(+), 1 deletion(-)
- create mode 100644 arch/arm/boot/dts/ls1021a-tsn.dts
-
-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index f4f5aeaf3298..529f0150f6b4 100644
---- a/arch/arm/boot/dts/Makefile
-+++ b/arch/arm/boot/dts/Makefile
-@@ -593,7 +593,8 @@ dtb-$(CONFIG_SOC_IMX7ULP) += \
- dtb-$(CONFIG_SOC_LS1021A) += \
- 	ls1021a-moxa-uc-8410a.dtb \
- 	ls1021a-qds.dtb \
--	ls1021a-twr.dtb
-+	ls1021a-twr.dtb \
-+	ls1021a-tsn.dtb
- dtb-$(CONFIG_SOC_VF610) += \
- 	vf500-colibri-eval-v3.dtb \
- 	vf610-bk4.dtb \
-diff --git a/arch/arm/boot/dts/ls1021a-tsn.dts b/arch/arm/boot/dts/ls1021a-tsn.dts
-new file mode 100644
-index 000000000000..5269486699bd
---- /dev/null
-+++ b/arch/arm/boot/dts/ls1021a-tsn.dts
-@@ -0,0 +1,238 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/* Copyright 2016-2018 NXP Semiconductors
-+ * Copyright 2019 Vladimir Oltean <olteanv@gmail.com>
-+ */
-+
-+/dts-v1/;
-+#include "ls1021a.dtsi"
-+
-+/ {
-+	model = "NXP LS1021A-TSN Board";
-+
-+	sys_mclk: clock-mclk {
-+		compatible = "fixed-clock";
-+		#clock-cells = <0>;
-+		clock-frequency = <24576000>;
-+	};
-+
-+	regulators {
-+		compatible = "simple-bus";
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		reg_3p3v: regulator@0 {
-+			compatible = "regulator-fixed";
-+			reg = <0>;
-+			regulator-name = "3P3V";
-+			regulator-min-microvolt = <3300000>;
-+			regulator-max-microvolt = <3300000>;
-+			regulator-always-on;
-+		};
-+		reg_2p5v: regulator@1 {
-+			compatible = "regulator-fixed";
-+			reg = <1>;
-+			regulator-name = "2P5V";
-+			regulator-min-microvolt = <2500000>;
-+			regulator-max-microvolt = <2500000>;
-+			regulator-always-on;
-+		};
-+	};
-+};
-+
-+&enet0 {
-+	tbi-handle = <&tbi0>;
-+	phy-handle = <&sgmii_phy2>;
-+	phy-mode = "sgmii";
-+	status = "ok";
-+};
-+
-+&enet1 {
-+	tbi-handle = <&tbi1>;
-+	phy-handle = <&sgmii_phy1>;
-+	phy-mode = "sgmii";
-+	status = "ok";
-+};
-+
-+/* RGMII delays added via PCB traces */
-+&enet2 {
-+	phy-mode = "rgmii";
-+	status = "ok";
-+	fixed-link {
-+		speed = <1000>;
-+		full-duplex;
-+	};
-+};
-+
-+&dspi0 {
-+	bus-num = <0>;
-+	status = "ok";
-+
-+	/* ADG704BRMZ 1:4 mux/demux */
-+	tsn_switch: sja1105@1 {
-+		reg = <0x1>;
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		compatible = "nxp,sja1105t";
-+		/* 12 MHz */
-+		spi-max-frequency = <12000000>;
-+		/* Sample data on trailing clock edge */
-+		spi-cpha;
-+		fsl,spi-cs-sck-delay = <1000>;
-+		fsl,spi-sck-cs-delay = <1000>;
-+		ports {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			port@0 {
-+				/* ETH5 written on chassis */
-+				label = "swp5";
-+				phy-handle = <&rgmii_phy6>;
-+				phy-mode = "rgmii-id";
-+				reg = <0>;
-+			};
-+			port@1 {
-+				/* ETH2 written on chassis */
-+				label = "swp2";
-+				phy-handle = <&rgmii_phy3>;
-+				phy-mode = "rgmii-id";
-+				reg = <1>;
-+			};
-+			port@2 {
-+				/* ETH3 written on chassis */
-+				label = "swp3";
-+				phy-handle = <&rgmii_phy4>;
-+				phy-mode = "rgmii-id";
-+				reg = <2>;
-+			};
-+			port@3 {
-+				/* ETH4 written on chassis */
-+				phy-handle = <&rgmii_phy5>;
-+				label = "swp4";
-+				phy-mode = "rgmii-id";
-+				reg = <3>;
-+			};
-+			port@4 {
-+				/* Internal port connected to eth2 */
-+				ethernet = <&enet2>;
-+				phy-mode = "rgmii";
-+				reg = <4>;
-+				fixed-link {
-+					speed = <1000>;
-+					full-duplex;
-+				};
-+			};
-+		};
-+	};
-+};
-+
-+&mdio0 {
-+	/* AR8031 */
-+	sgmii_phy1: ethernet-phy@1 {
-+		reg = <0x1>;
-+	};
-+	/* AR8031 */
-+	sgmii_phy2: ethernet-phy@2 {
-+		reg = <0x2>;
-+	};
-+	/* BCM5464 */
-+	rgmii_phy3: ethernet-phy@3 {
-+		reg = <0x3>;
-+	};
-+	rgmii_phy4: ethernet-phy@4 {
-+		reg = <0x4>;
-+	};
-+	rgmii_phy5: ethernet-phy@5 {
-+		reg = <0x5>;
-+	};
-+	rgmii_phy6: ethernet-phy@6 {
-+		reg = <0x6>;
-+	};
-+	/* SGMII PCS for enet0 */
-+	tbi0: tbi-phy@1f {
-+		reg = <0x1f>;
-+		device_type = "tbi-phy";
-+	};
-+};
-+
-+&mdio1 {
-+	/* SGMII PCS for enet1 */
-+	tbi1: tbi-phy@1f {
-+		reg = <0x1f>;
-+		device_type = "tbi-phy";
-+	};
-+};
-+
-+&i2c0 {
-+	status = "ok";
-+
-+	/* 3 axis accelerometer */
-+	accelerometer@1e {
-+		compatible = "fsl,fxls8471";
-+		reg = <0x1e>;
-+		position = <0>;
-+	};
-+	/* Gyroscope is at 0x20 but not supported */
-+	/* Audio codec (SAI2) */
-+	codec@2a {
-+		#sound-dai-cells = <0>;
-+		compatible = "fsl,sgtl5000";
-+		reg = <0x2a>;
-+		VDDA-supply = <&reg_3p3v>;
-+		VDDIO-supply = <&reg_2p5v>;
-+		clocks = <&sys_mclk>;
-+	};
-+	/* Current sensing circuit for 1V VDDCORE PMIC rail */
-+	current-sensor@44 {
-+		compatible = "ti,ina220";
-+		reg = <0x44>;
-+		shunt-resistor = <1000>;
-+	};
-+	/* Current sensing circuit for 12V VCC rail */
-+	current-sensor@45 {
-+		compatible = "ti,ina220";
-+		reg = <0x45>;
-+		shunt-resistor = <1000>;
-+	};
-+	/* Thermal monitor - case */
-+	temperature-sensor@48 {
-+		compatible = "national,lm75";
-+		reg = <0x48>;
-+	};
-+	/* Thermal monitor - chip */
-+	temperature-sensor@4c {
-+		compatible = "ti,tmp451";
-+		reg = <0x4c>;
-+	};
-+	/* 4-channel ADC */
-+	adc@49 {
-+		compatible = "ad7924";
-+		reg = <0x49>;
-+	};
-+};
-+
-+&ifc {
-+	status = "disabled";
-+};
-+
-+&esdhc {
-+	status = "ok";
-+};
-+
-+&uart0 {
-+	status = "ok";
-+};
-+
-+&lpuart0 {
-+	status = "ok";
-+};
-+
-+&lpuart3 {
-+	status = "ok";
-+};
-+
-+&sai2 {
-+	status = "ok";
-+};
-+
-+&sata {
-+	status = "ok";
-+};
--- 
-2.17.1
-
+Best regards,
+Lu Baolu
 
 _______________________________________________
 linux-arm-kernel mailing list
