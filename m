@@ -2,50 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29B4215080
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 17:42:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C5F615082
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 17:42:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Gbcm6sv1wv5A4EiYzH3PrXwNk7iV9He3V3CFZZm5G2c=; b=Td4TyZLurmkqrk
-	l/mPzZlL22n/jXSHeXagsYG87amxcukgEI6oramwUyyrF4GWh5hs4PJS8u9HGbWV9XSTzDvv5WRS9
-	KK1FYNT/rzv4LnGZoz7xkaF2pJa+51obEnuIm2FI+zOaDXpFwHNxTML8rJZwDLk2nPCwCx2lA6OpM
-	E+HgzGT6WDaWp/ukXT1xCmCsJUA+01QANcCG9k0PNX2QX6aRUOiXdlnLt2Wf6UZ9tjYqukKfxxyLg
-	DRaUL2wAtHt13kVV7tS50s6Ey19ro9DZ8Ae6MMHlnirtSZ8nHiOlfYKGd0srdTvwDX5fygoFK/Qyd
-	SoKjTPqW5byB0hUV/j1Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yG0bwRXl4DBIF6hB8cydvmK3scrCRHcJX+Z/5KN1naw=; b=FaY2aVNlKu3nYM
+	lNjZNR9M5Ub0PLaLyZwCbGTG/DFaCd9D00kRc7En3zrxpVFScTLCRsyiMyU3SJu4dAkFN27EzgTfJ
+	b9JAhX+CCmJO5QXKav+fH4xP29Vqj/8p7fgD4E3/eTSuONxmnx84ck8atA7Pha+/o7XlwiZRltgQX
+	qkj29qRJPH/de0r723qieSukq69YIepvkFi1bYCMRZIIfwClezOGrM7KCmwcQol8Qc1WxMNUv5ggZ
+	J+pq3p80YRw7ytWz+lpkMs3hWRoieVagmno5aIv+G1gw6RTWBVIxGBxgWoz1OwESa2sUITCyFw9CG
+	aOGalCkuopAZq/y1UgGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNfkz-00031E-F2; Mon, 06 May 2019 15:42:21 +0000
+	id 1hNfl7-00036y-Sl; Mon, 06 May 2019 15:42:29 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNfkr-00030T-DG
+ id 1hNfkr-00030V-G2
  for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 15:42:15 +0000
 Received: from localhost.localdomain (cpe-70-114-128-244.austin.res.rr.com
  [70.114.128.244])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5CB542087F;
+ by mail.kernel.org (Postfix) with ESMTPSA id E55D321019;
  Mon,  6 May 2019 15:42:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1557157332;
- bh=PtmpuGOeIicQRSUwwLz9NFjLtxTlVLkPV+jDZGoRwMk=;
- h=From:To:Cc:Subject:Date:From;
- b=Gd+EbvqR1ct1GF5zlSs12noqtWR4TIPWLyMFH6+PtuNeP8r2Wwe7X7e4IPQ079iY1
- y3zQIZBrU17Ey73HHS0yux1CDdUfBI3l/YuMQaieJ42yiYluDPnyp5n51wDr5Hp96Z
- q4efR4oFLbCBJOOGVGGyqkMVww3us0IJlWZZWeeo=
+ s=default; t=1557157333;
+ bh=ECz6xac/fEE9lYOfUwyEcUtHgm3dtLMrW0hHWE0Ymlo=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=2CjYu+KGY5LBEL8Lkps5/D2LFRd4dQUQmvz5rRkXRtSLdQdpowxP8rLTiEkdXxIt3
+ jHQRRrMlJILLlSDrp1gNPc8j6xik3llJeSdQk0tJ+yoS5agemaj47zQUL8hUU/WTDi
+ be3mPrh6K+c+dttvpQggwO6HxKRszJxgiunsEzTo=
 From: Dinh Nguyen <dinguyen@kernel.org>
 To: arm@kernel.org
-Subject: [GIT PULL LATE 1/2] ARM: socfpga_defconfig: updates for v5.2
-Date: Mon,  6 May 2019 10:42:04 -0500
-Message-Id: <20190506154205.32759-1-dinguyen@kernel.org>
+Subject: [GIT PULL LATE 2/2] ARM: dts: socfpga: updates for v5.2, part 2
+Date: Mon,  6 May 2019 10:42:05 -0500
+Message-Id: <20190506154205.32759-2-dinguyen@kernel.org>
 X-Mailer: git-send-email 2.20.0
+In-Reply-To: <20190506154205.32759-1-dinguyen@kernel.org>
+References: <20190506154205.32759-1-dinguyen@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_084214_442247_71D634EA 
-X-CRM114-Status: GOOD (  11.40  )
+X-CRM114-CacheID: sfid-20190506_084214_441963_07B58144 
+X-CRM114-Status: GOOD (  11.47  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,38 +83,38 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi Arnd, Kevin, and Olof:
 
-Please pull in these updates to socfpga_defconfig for v5.2.
+Please pull in these additional dts updates for v5.2.
 
 Thanks,
 Dinh
 
+The following changes since commit 4b36daf9ada30a66c93f8701e8c6f23bc3ce94e2:
 
-The following changes since commit 9e98c678c2d6ae3a17cb2de55d17f69dddaa231b:
-
-  Linux 5.1-rc1 (2019-03-17 14:22:26 -0700)
+  arm64: dts: agilex: Add initial support for Intel's Agilex SoCFPGA (2019-04-05 16:36:07 -0500)
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/dinguyen/linux.git tags/socfpga_arm32_defconfig_for_v5.2
+  git://git.kernel.org/pub/scm/linux/kernel/git/dinguyen/linux.git tags/socfpga_dts_updates_for_v5.2_part2
 
-for you to fetch changes up to fce638e85350852294096d82d57a696b7cbb22b5:
+for you to fetch changes up to 2b88976d4183aa9416d8c4efe5d4da98f48a5e3e:
 
-  ARM: socfpga_defconfig: enable LTC2497 (2019-04-24 12:52:47 -0500)
+  ARM: dts: arria10: Add EMAC OCP reset property (2019-05-06 10:26:40 -0500)
 
 ----------------------------------------------------------------
-arm32 socfpga_defconfig updates for v5.2
-- Enable LTC2497 driver
-- Enable support for large block devices
+SoCFPGA DTS updates for v5.2, part 2
+- Add the two ltc2497 devices that are on the SoCFPGA Arria10
+- Add EMAC OCP reset property for Arria10
 
 ----------------------------------------------------------------
 Alan Tull (1):
-      ARM: socfpga_defconfig: enable LTC2497
+      ARM: dts: socfpga: add ltc2497 on arria10 devkit
 
-Andrey Zhizhikin (1):
-      ARM: socfpga_defconfig: enable support for large block devices
+Dinh Nguyen (1):
+      ARM: dts: arria10: Add EMAC OCP reset property
 
- arch/arm/configs/socfpga_defconfig | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ arch/arm/boot/dts/socfpga_arria10.dtsi       | 12 ++++++------
+ arch/arm/boot/dts/socfpga_arria10_socdk.dtsi | 19 +++++++++++++++++++
+ 2 files changed, 25 insertions(+), 6 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
