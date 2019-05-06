@@ -2,129 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5545D14DE2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 16:56:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03A2114E8F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 17:04:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=HFiVJNjaWYVbDhqV2FQdGb5ZxKeXqMrjBv/4N8sygC0=; b=bx8H1pIkF1f3Z1
-	A3Zm5GI78Z7tz3DkuuIuQ2VT0QZHEcMRD+QvurpYaVrJScHCUFNWenaeU0hSxdmD0vL3fXwXAZhal
-	6NPHDmLzyV5kjelT5VhrebRMhgwwTuz+Q5oW35Zq7xYgNd+wqXsdT8Fr5n3QlemaYwTcC39OAaO2C
-	m1rbX6YgaUmlYmFiSs22XCrBk3jBf5vGNINJoHQTkJrcFKNFW12QVgclChgfq8UpdPFSXnYh19SxN
-	hKDq8N55gdUcxnFYNIgOeDkI7C4hXQUSC2qQlbHKznUXHPDePcHALOdjegiArwcT9Ze5rCrJ3xjFo
-	AwaML2VAQrMv7Lu19sVA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=t8x9WSeQa7I76amb/jxwXdkYt2KRibJRFUpEvzcr0+4=; b=rea
+	0LB41ekOZzyJWOAWTP0s0RtjwADawjoZ+z368WuUIV0qpQ1bHlQbooNwsuOttHk2zR8c+1v8ex9HL
+	dAqZpNQiDtTfuDUTgQGAcBQ3+nCQ4fIp4fiQPqIC7n56JezlrB5PBY45bRikXo5cZgWoMKA7qFqbH
+	E5Jlb7Wv/YtiHTnQRH8ja8x8kktGUvnZh2SGnhkPDEZiaB6QRtNwN0jYHuX2rtYEUv+axN8nx0c56
+	tH5e/4miHBx5qT8T5AsRpBGsUIGq+iTnFHaxaFbwhMyIWBzowTE+Mmukdd36Tbh+75xP/tZtoAWS6
+	TP2Rk6wIDZgk/AsgfkytYZ9vyZswi4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNf2j-0002xO-Ix; Mon, 06 May 2019 14:56:37 +0000
-Received: from esa6.microchip.iphmx.com ([216.71.154.253])
+	id 1hNfA5-0005Pa-Sa; Mon, 06 May 2019 15:04:13 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNf2c-0002wY-Fr
- for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 14:56:31 +0000
-Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
- Tudor.Ambarus@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
- envelope-from="Tudor.Ambarus@microchip.com";
- x-sender="Tudor.Ambarus@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa6.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
- envelope-from="Tudor.Ambarus@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa6.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Tudor.Ambarus@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-X-IronPort-AV: E=Sophos;i="5.60,438,1549954800"; d="scan'208";a="29265660"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa6.microchip.iphmx.com with ESMTP/TLS/DHE-RSA-AES256-SHA;
- 06 May 2019 07:56:28 -0700
-Received: from NAM01-BY2-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.76.108) with Microsoft SMTP Server (TLS)
- id 14.3.352.0; Mon, 6 May 2019 07:56:24 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=microchiptechnology.onmicrosoft.com;
- s=selector1-microchiptechnology-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=UgL7A2/gQwOPkAdBNZtGTIvXAtszUuckM0WBOYMb9D0=;
- b=2TpzhU0D4z5cl/9jHMxudEQAOheVh6LENxZXUGZuZiS+w5ciPgOYd67EcwbwoaSGxrX74xXBagCifYrUPOBEJ/mNmK9kXCKqWJApsQ2mequf063lXhmShbgafiqqB2+AsI1PCrv6K20BfldBKCUaKA38mDG7yzm9m0iaSuulN18=
-Received: from BN6PR11MB1842.namprd11.prod.outlook.com (10.175.98.146) by
- BN6PR11MB4049.namprd11.prod.outlook.com (10.255.130.76) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1856.10; Mon, 6 May 2019 14:56:22 +0000
-Received: from BN6PR11MB1842.namprd11.prod.outlook.com
- ([fe80::35b3:7af:7216:8808]) by BN6PR11MB1842.namprd11.prod.outlook.com
- ([fe80::35b3:7af:7216:8808%10]) with mapi id 15.20.1856.012; Mon, 6 May 2019
- 14:56:22 +0000
-From: <Tudor.Ambarus@microchip.com>
-To: <broonie@kernel.org>
-Subject: [PATCH] spi: atmel-quadspi: void return type for atmel_qspi_init()
-Thread-Topic: [PATCH] spi: atmel-quadspi: void return type for
- atmel_qspi_init()
-Thread-Index: AQHVBBveYXVMmUTDqUy6OCq0Aik9PQ==
-Date: Mon, 6 May 2019 14:56:22 +0000
-Message-ID: <20190506145606.5060-1-tudor.ambarus@microchip.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: AM0PR06CA0010.eurprd06.prod.outlook.com
- (2603:10a6:208:ab::23) To BN6PR11MB1842.namprd11.prod.outlook.com
- (2603:10b6:404:101::18)
-x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: git-send-email 2.9.5
-x-originating-ip: [94.177.32.154]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 1fbee562-3924-4a36-828e-08d6d23300ee
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(2017052603328)(7193020);
- SRVR:BN6PR11MB4049; 
-x-ms-traffictypediagnostic: BN6PR11MB4049:
-x-microsoft-antispam-prvs: <BN6PR11MB40490F614FA653512F73C92FF0300@BN6PR11MB4049.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:655;
-x-forefront-prvs: 0029F17A3F
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(376002)(366004)(396003)(346002)(39860400002)(136003)(189003)(199004)(68736007)(52116002)(5640700003)(6506007)(386003)(102836004)(66066001)(99286004)(186003)(26005)(2501003)(14444005)(53936002)(107886003)(5660300002)(256004)(2906002)(8676002)(1730700003)(81156014)(81166006)(36756003)(8936002)(14454004)(7736002)(305945005)(25786009)(6512007)(2351001)(50226002)(72206003)(478600001)(66446008)(64756008)(73956011)(66946007)(66476007)(66556008)(1076003)(6436002)(6486002)(6916009)(4326008)(6116002)(71190400001)(71200400001)(54906003)(486006)(316002)(3846002)(476003)(86362001)(2616005);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BN6PR11MB4049;
- H:BN6PR11MB1842.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: microchip.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: U+6t+hrsJuz/S/s2rg5KcBjgMrTvAnkvi81gEyEnTN1m4FmEPqO7y3arLkmmOvwSMNr7FAwP5nuHmpxGT1exeHeMVJTfZ+JK0lOkaWWzF6P5CGhFszMMWonjPunkpzxP7VVqv8bjafzJ13GA7gAFW8ldfxLlCKW2rYZsmP34PpSAbFpFZyjTrXv03/3zScB+3NsASmkpaMlNqOvOhQDQqcWK3NBhzmDbBwWt8FWjo1o5mVRNiqHdJpChmbMMIFdKo29dQwuSL9Y/ECUoOghAb7Wq7iTjIKHo5Wg8qL/5bY7Mb2ONQIr1r7Ee9yoPioiBWJ3ciAq9wuSB/Esgu3xPf2gXRvApwumBcKHOvLsYYAFhMTEo9HI1gQ+V1tF+WBSaeRr/VIOlr+plqWeeKsz/aOlt7Kfp99WZOd8FPkaTqdI=
-MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1fbee562-3924-4a36-828e-08d6d23300ee
-X-MS-Exchange-CrossTenant-originalarrivaltime: 06 May 2019 14:56:22.5794 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN6PR11MB4049
-X-OriginatorOrg: microchip.com
+ id 1hNf9n-0005IG-J7
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 15:03:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+ List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
+ List-Archive; bh=ulGxU59+SHg0LveLVxFzfgXsIwZDWNfvFJ6byVaTrN4=; b=NM7cVQmEeobn
+ o0U/OVzVq7HtcosM5EC+eu1pb3dJw4ER7LYUhWsCqnSicdu2yZoWP24syMOFiFi89+LJme7CThJat
+ SOhjX+AW0JE6H1G4CId6jsYhsvw9LVJolGztkwffkMi9a0GQ2JUO+WQKGdJTwNsChSEEWSSz3QbhU
+ jEqbQ=;
+Received: from [2001:268:c0e6:658d:8f3d:d90b:c4e4:2fdf]
+ (helo=finisterre.ee.mobilebroadband)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hNf9d-0001uP-IN; Mon, 06 May 2019 15:03:46 +0000
+Received: by finisterre.ee.mobilebroadband (Postfix, from userid 1000)
+ id 26ACA440010; Mon,  6 May 2019 16:03:42 +0100 (BST)
+From: Mark Brown <broonie@kernel.org>
+To: Olivier Moysan <olivier.moysan@st.com>
+Subject: Applied "ASoC: stm32: spdifrx: manage identification registers" to
+ the asoc tree
+In-Reply-To: <1557146646-18150-4-git-send-email-olivier.moysan@st.com>
+X-Patchwork-Hint: ignore
+Message-Id: <20190506150342.26ACA440010@finisterre.ee.mobilebroadband>
+Date: Mon,  6 May 2019 16:03:42 +0100 (BST)
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_075630_621276_BE1BE0EE 
-X-CRM114-Status: GOOD (  10.93  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190506_080355_768946_0463847B 
+X-CRM114-Status: GOOD (  18.33  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.154.253 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -136,71 +76,154 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, Tudor.Ambarus@microchip.com,
- linux-kernel@vger.kernel.org, Ludovic.Desroches@microchip.com,
- linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: alsa-devel@alsa-project.org, olivier.moysan@st.com, alexandre.torgue@st.com,
+ tiwai@suse.com, arnaud.pouliquen@st.com, lgirdwood@gmail.com,
+ linux-kernel@vger.kernel.org, Mark Brown <broonie@kernel.org>,
+ mcoquelin.stm32@gmail.com, perex@perex.cz,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ benjamin.gaignard@st.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Tudor Ambarus <tudor.ambarus@microchip.com>
+The patch
 
-commit 2d30ac5ed633 ("mtd: spi-nor: atmel-quadspi: Use spi-mem interface for atmel-quadspi driver")
-removed the error path from atmel_qspi_init(), but not changed the
-function's return type. Set void return type for atmel_qspi_init().
+   ASoC: stm32: spdifrx: manage identification registers
 
-Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
+has been applied to the asoc tree at
+
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.3
+
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From 1a5c0b28fc56044737f988960f3bc5fdcdba0827 Mon Sep 17 00:00:00 2001
+From: Olivier Moysan <olivier.moysan@st.com>
+Date: Mon, 6 May 2019 14:44:06 +0200
+Subject: [PATCH] ASoC: stm32: spdifrx: manage identification registers
+
+Add support of identification registers in STM32 SPDIFRX.
+
+Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
+Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/atmel-quadspi.c | 12 ++++--------
- 1 file changed, 4 insertions(+), 8 deletions(-)
+ sound/soc/stm/stm32_spdifrx.c | 37 +++++++++++++++++++++++++++++++++--
+ 1 file changed, 35 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/spi/atmel-quadspi.c b/drivers/spi/atmel-quadspi.c
-index 9f24d5f0b431..60aa5b382e58 100644
---- a/drivers/spi/atmel-quadspi.c
-+++ b/drivers/spi/atmel-quadspi.c
-@@ -405,7 +405,7 @@ static int atmel_qspi_setup(struct spi_device *spi)
- 	return 0;
- }
+diff --git a/sound/soc/stm/stm32_spdifrx.c b/sound/soc/stm/stm32_spdifrx.c
+index b4c3d983e195..62a887ee4a03 100644
+--- a/sound/soc/stm/stm32_spdifrx.c
++++ b/sound/soc/stm/stm32_spdifrx.c
+@@ -16,6 +16,7 @@
+  * details.
+  */
  
--static int atmel_qspi_init(struct atmel_qspi *aq)
-+static void atmel_qspi_init(struct atmel_qspi *aq)
- {
- 	/* Reset the QSPI controller */
- 	writel_relaxed(QSPI_CR_SWRST, aq->regs + QSPI_CR);
-@@ -416,8 +416,6 @@ static int atmel_qspi_init(struct atmel_qspi *aq)
++#include <linux/bitfield.h>
+ #include <linux/clk.h>
+ #include <linux/completion.h>
+ #include <linux/delay.h>
+@@ -36,6 +37,9 @@
+ #define STM32_SPDIFRX_DR	0x10
+ #define STM32_SPDIFRX_CSR	0x14
+ #define STM32_SPDIFRX_DIR	0x18
++#define STM32_SPDIFRX_VERR	0x3F4
++#define STM32_SPDIFRX_IDR	0x3F8
++#define STM32_SPDIFRX_SIDR	0x3FC
  
- 	/* Enable the QSPI controller */
- 	writel_relaxed(QSPI_CR_QSPIEN, aq->regs + QSPI_CR);
--
+ /* Bit definition for SPDIF_CR register */
+ #define SPDIFRX_CR_SPDIFEN_SHIFT	0
+@@ -169,6 +173,18 @@
+ #define SPDIFRX_SPDIFEN_SYNC	0x1
+ #define SPDIFRX_SPDIFEN_ENABLE	0x3
+ 
++/* Bit definition for SPDIFRX_VERR register */
++#define SPDIFRX_VERR_MIN_MASK	GENMASK(3, 0)
++#define SPDIFRX_VERR_MAJ_MASK	GENMASK(7, 4)
++
++/* Bit definition for SPDIFRX_IDR register */
++#define SPDIFRX_IDR_ID_MASK	GENMASK(31, 0)
++
++/* Bit definition for SPDIFRX_SIDR register */
++#define SPDIFRX_SIDR_SID_MASK	GENMASK(31, 0)
++
++#define SPDIFRX_IPIDR_NUMBER	0x00130041
++
+ #define SPDIFRX_IN1		0x1
+ #define SPDIFRX_IN2		0x2
+ #define SPDIFRX_IN3		0x3
+@@ -607,6 +623,9 @@ static bool stm32_spdifrx_readable_reg(struct device *dev, unsigned int reg)
+ 	case STM32_SPDIFRX_DR:
+ 	case STM32_SPDIFRX_CSR:
+ 	case STM32_SPDIFRX_DIR:
++	case STM32_SPDIFRX_VERR:
++	case STM32_SPDIFRX_IDR:
++	case STM32_SPDIFRX_SIDR:
+ 		return true;
+ 	default:
+ 		return false;
+@@ -642,10 +661,11 @@ static const struct regmap_config stm32_h7_spdifrx_regmap_conf = {
+ 	.reg_bits = 32,
+ 	.reg_stride = 4,
+ 	.val_bits = 32,
+-	.max_register = STM32_SPDIFRX_DIR,
++	.max_register = STM32_SPDIFRX_SIDR,
+ 	.readable_reg = stm32_spdifrx_readable_reg,
+ 	.volatile_reg = stm32_spdifrx_volatile_reg,
+ 	.writeable_reg = stm32_spdifrx_writeable_reg,
++	.num_reg_defaults_raw = STM32_SPDIFRX_SIDR / sizeof(u32) + 1,
+ 	.fast_io = true,
+ 	.cache_type = REGCACHE_FLAT,
+ };
+@@ -911,6 +931,7 @@ static int stm32_spdifrx_probe(struct platform_device *pdev)
+ 	struct stm32_spdifrx_data *spdifrx;
+ 	struct reset_control *rst;
+ 	const struct snd_dmaengine_pcm_config *pcm_config = NULL;
++	u32 ver, idr;
+ 	int ret;
+ 
+ 	spdifrx = devm_kzalloc(&pdev->dev, sizeof(*spdifrx), GFP_KERNEL);
+@@ -967,7 +988,19 @@ static int stm32_spdifrx_probe(struct platform_device *pdev)
+ 		goto error;
+ 	}
+ 
 -	return 0;
- }
++	ret = regmap_read(spdifrx->regmap, STM32_SPDIFRX_IDR, &idr);
++	if (ret)
++		goto error;
++
++	if (idr == SPDIFRX_IPIDR_NUMBER) {
++		ret = regmap_read(spdifrx->regmap, STM32_SPDIFRX_VERR, &ver);
++
++		dev_dbg(&pdev->dev, "SPDIFRX version: %lu.%lu registered\n",
++			FIELD_GET(SPDIFRX_VERR_MAJ_MASK, ver),
++			FIELD_GET(SPDIFRX_VERR_MIN_MASK, ver));
++	}
++
++	return ret;
  
- static irqreturn_t atmel_qspi_interrupt(int irq, void *dev_id)
-@@ -536,9 +534,7 @@ static int atmel_qspi_probe(struct platform_device *pdev)
- 	if (err)
- 		goto disable_qspick;
- 
--	err = atmel_qspi_init(aq);
--	if (err)
--		goto disable_qspick;
-+	atmel_qspi_init(aq);
- 
- 	err = spi_register_controller(ctrl);
- 	if (err)
-@@ -586,8 +582,8 @@ static int __maybe_unused atmel_qspi_resume(struct device *dev)
- 
- 	clk_prepare_enable(aq->pclk);
- 	clk_prepare_enable(aq->qspick);
--
--	return atmel_qspi_init(aq);
-+	atmel_qspi_init(aq);
-+	return 0;
- }
- 
- static SIMPLE_DEV_PM_OPS(atmel_qspi_pm_ops, atmel_qspi_suspend,
+ error:
+ 	if (!IS_ERR(spdifrx->ctrl_chan))
 -- 
-2.9.5
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
