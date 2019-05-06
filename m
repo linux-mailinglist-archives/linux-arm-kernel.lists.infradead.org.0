@@ -2,92 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91E11152E6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 19:40:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29D6E1530E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 19:49:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VQWoEYHjKofAVeBnMZdW0kXLsgG/74xt9G546dltNy4=; b=IN1MYKyF7BfQDs
-	gvr2hQUP+Jp0AVQ52/rfv1rgCpgcLUQjkAu7iZO7MSFYDKVaSUK+DC8ARkWtJdyKNjc9SlpyfjkKe
-	dL/jpC/WkJUx2EOtUKXtwTvqxBq1sKi6JLsKxu/3tLWFLBXrxVJknHJw8UcCgk71BgXEiTcRGp//d
-	Euo5xrZ9dq5XP/VVkdfF/nEwIyGGJJaVLtVoA2lXD2/2uYBikpN9xEU2xpkfYpQjUqkLHqMZ5j1Xv
-	ieTkMxGCuLr57UOm2MzVaASPrDvsXkD+DcmTtjkwcw+GeQ04h/myf3QXJN01kCVfrJ5SOF3OcKy5i
-	UpC3fgLGdHm5IjM0XWew==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=oCON9Nnl8KVqPAc58aPBhWykGeQquBxiwp5YUUHIoss=; b=CRRjZbtox2j+CmLS9yLi8xTTD
+	gyow1U6ER2xYOocxeqtel6EqyUPEdECH5QDoa9aWXDUCkAG/GocgGytiUIB+uxllO/D+gAyulqhlX
+	UmGx2apPzka35ZK9zisUFk9fLSwJK1PuJJULoq3qlWIvvThcbMHTExBgglbVVOibM9KnHLurwzULE
+	I606TBZktcGr/VYSweeyktBSTlgebKQssXNqneLXKbFAizccq3Tj9xlPFrrD23ZDflxcXZv3L3zoL
+	3nlvDZA0WqZyRahGFGKarCq/nxhGvzsj1ws5bGcdTgkng2fVbf+JlZCqKsfEdxafAQZ9dkzwy8vjU
+	Rb/Rkazng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNhao-0003cz-B8; Mon, 06 May 2019 17:39:58 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hNhjf-0006lK-6l; Mon, 06 May 2019 17:49:07 +0000
+Received: from atrey.karlin.mff.cuni.cz ([195.113.26.193])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNhag-0003cG-EE
- for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 17:39:51 +0000
-Received: by mail-wm1-x344.google.com with SMTP id n25so16172814wmk.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 May 2019 10:39:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=zyUOqcowBEJ2l4EmKaOqaodsfJOAPAaE+gwxfie0pw4=;
- b=La7fGjQN+Tpg654Ybjsk8nXf7jdW84uWIoMQaXu8pTlYA0Myq4YdTiSHebksnInCDo
- /V7cI5O49WZLtPVV6FYMvA9wON4PdzXSt7fxkc+ZDJ6yiuOeoyc4TN2bogyL02Q8mzDq
- Yci7sXQxTCv+FuegY4C05KNNZk64+CIykfDMLSC6/0Nh1oMETGYUbHeXV5+V8xxKk3Yl
- 8NgSQ15TJqWs31GO1Sb2lajRQltIrAo806AjwfL393auq7UBb1qpKen0JMQlySzM+xqD
- RET9nrIzoW2oitxET50ZstzHqDWJY3iN7sLe4RYRBwzy/nlY36KyNMqR20pKaxB5g7C0
- 0Lwg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=zyUOqcowBEJ2l4EmKaOqaodsfJOAPAaE+gwxfie0pw4=;
- b=qhD1K9e9G1b8k9F+CsaJ3rT7jbOZTFp2homMnE/k64EeggEMpJLGHZn/25awwI31lR
- RgrwZuB/TifIYxkYnJsdc1lcWwWYy3tI2hvg+qLRD6gQHHR5S39HnnmCgybLjYIbgK32
- SVCC0JkDpPP7R1LGDwal1T8dQ3U+N5o11NmsokqqiX/UZEAcGaI9f2NsbeFkSuVMpoQu
- 9ZjrT3iNME4wakZRAcYkA/gTvOjz2v8gAGvGCvd2XaHfoEkMTwurXjHkbySPbvlxLa9z
- /LuN/kMJVXj1qUW7LgOIDZfKX+ef9evQK5rmMHPYNDEEs9nAPOFAX3vmdU4NGFKt1CAM
- NX8g==
-X-Gm-Message-State: APjAAAVbeKwMfEh8rqOvzcPt1rPw4PlGVM3sEvkH2nHVKdKXuwLmOWjk
- 67ayyfaPu4HkCUtdED7IBO0eUkZdK+w=
-X-Google-Smtp-Source: APXvYqyf2cb8qXuGQGElB8nD4bTSPaG//hqg3L0nOyHcl3aEnxN38pPpVbUEQDPY9YPGpLFejjha4A==
-X-Received: by 2002:a1c:f30e:: with SMTP id q14mr18837542wmq.31.1557164385868; 
- Mon, 06 May 2019 10:39:45 -0700 (PDT)
-Received: from [192.168.0.41] (64.93.129.77.rev.sfr.net. [77.129.93.64])
- by smtp.googlemail.com with ESMTPSA id j10sm32918866wrb.0.2019.05.06.10.39.44
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 06 May 2019 10:39:45 -0700 (PDT)
-Subject: Re: [PATCH] Remove MODULE_ALIAS() calls that take undefined macro
-To: Masahiro Yamada <yamada.masahiro@socionext.com>,
- linux-kbuild@vger.kernel.org
-References: <1557163697-17882-1-git-send-email-yamada.masahiro@socionext.com>
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
-Message-ID: <6d8e2880-0cc0-a7d8-1d42-4401e15e3ac9@linaro.org>
-Date: Mon, 6 May 2019 19:39:43 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hNhjW-0006kV-Rv
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 17:49:01 +0000
+Received: by atrey.karlin.mff.cuni.cz (Postfix, from userid 512)
+ id 3E6AD80179; Mon,  6 May 2019 19:48:35 +0200 (CEST)
+Date: Mon, 6 May 2019 19:48:46 +0200
+From: Pavel Machek <pavel@denx.de>
+To: wen.yang99@zte.com.cn
+Subject: Re: [PATCH 4.19 46/72] net: xilinx: fix possible object referenceleak
+Message-ID: <20190506174846.GA13326@amd>
+References: <20190503100816.GD5834@amd>
+ <201905051417486865228@zte.com.cn>
 MIME-Version: 1.0
-In-Reply-To: <1557163697-17882-1-git-send-email-yamada.masahiro@socionext.com>
-Content-Language: en-US
+In-Reply-To: <201905051417486865228@zte.com.cn>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_103950_483748_90B5283A 
-X-CRM114-Status: GOOD (  15.03  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190506_104859_201663_ABACAC7B 
+X-CRM114-Status: GOOD (  26.21  )
+X-Spam-Score: -2.2 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.113.26.193 listed in list.dnswl.org]
+ 0.1 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -99,38 +58,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Rothwell <sfr@canb.auug.org.au>,
- Aaro Koskinen <aaro.koskinen@iki.fi>, Tony Lindgren <tony@atomide.com>,
- Alexey Gladkov <gladkov.alexey@gmail.com>, linux-kernel@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
- linux-omap@vger.kernel.org, Lee Jones <lee.jones@linaro.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: sashal@kernel.org, michal.simek@xilinx.com, pavel@denx.de,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org, davem@davemloft.net,
+ netdev@vger.kernel.org, anirudh@xilinx.com, gregkh@linuxfoundation.org,
+ John.Linn@xilinx.com, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============3860526148423131022=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMDYvMDUvMjAxOSAxOToyOCwgTWFzYWhpcm8gWWFtYWRhIHdyb3RlOgo+IFRoZXNlIGZpbGVz
-IGRvIG5vdCBkZWZpbmUgKFVTQkhTXylEUklWRVJfTkFNRS4gWWV0LCB0aGV5IGNhbiBiZQo+IHN1
-Y2Nlc3NmdWxseSBjb21waWxlZCBiZWNhdXNlIHRoZXkgYXJlIG5ldmVyIGJ1aWx0IGFzIGEgbW9k
-dWxlIGJ5Cj4gYW55b25lLCBpLmUsIHRoZSBNT0RVTEVfQUxJQVMoKSBjYWxscyBhcmUgYWx3YXlz
-IG5vLW9wLgo+IAo+IEEgcHJvYmxlbSBzaG93ZWQgdXAgd2hlbiBhIHBhdGNoICJtb2R1bGVwYXJh
-bTogU2F2ZSBpbmZvcm1hdGlvbiBhYm91dAo+IGJ1aWx0LWluIG1vZHVsZXMgaW4gc2VwYXJhdGUg
-ZmlsZSIgaXMgYXBwbGllZC4gV2l0aCB0aGlzIG5ldyBmZWF0dXJlLAo+IE1PRFVMRV8qKCkgYXJl
-IHBvcHVsYXRlZCBldmVuIGlmIHRoZSBjYWxsZXJzIGFyZSBidWlsdC1pbi4KPiAKPiBUbyBhdm9p
-ZCB0aGUgYnVpbGQgZXJyb3JzLCB0aGUgbGluZXMgcmVmZXJlbmNpbmcgdG8gdGhlIHVuZGVmaW5l
-ZAo+IG1hY3JvIG11c3QgYmUgcmVtb3ZlZC4KPiAKPiBUaGUgY29tcGxldGUgZml4IGlzIHRvIHJl
-bW92ZSBhbGwgTU9EVUxFXyogYW5kICNpbmNsdWRlIDxsaW51eC9tb2R1bGUuaD4KPiBsaWtlIG1h
-bnkgIm1ha2UgLi4uIGV4cGxpY2l0bHkgbm9uLW1vZHVsYXIiIGNvbW1pdHMgZGlkLgo+IAo+IEZv
-ciBub3csIEkgYW0gdG91Y2hpbmcgdGhlIG9mZmVuZGluZyBsaW5lcy4KPiAKPiBSZXBvcnRlZC1i
-eTogU3RlcGhlbiBSb3Rod2VsbCA8c2ZyQGNhbmIuYXV1Zy5vcmcuYXU+Cj4gU2lnbmVkLW9mZi1i
-eTogTWFzYWhpcm8gWWFtYWRhIDx5YW1hZGEubWFzYWhpcm9Ac29jaW9uZXh0LmNvbT4KPiAtLS0K
-CkFja2VkLWJ5OiBEYW5pZWwgTGV6Y2FubyA8ZGFuaWVsLmxlemNhbm9AbGluYXJvLm9yZz4KCgoK
-Ci0tIAogPGh0dHA6Ly93d3cubGluYXJvLm9yZy8+IExpbmFyby5vcmcg4pSCIE9wZW4gc291cmNl
-IHNvZnR3YXJlIGZvciBBUk0gU29DcwoKRm9sbG93IExpbmFybzogIDxodHRwOi8vd3d3LmZhY2Vi
-b29rLmNvbS9wYWdlcy9MaW5hcm8+IEZhY2Vib29rIHwKPGh0dHA6Ly90d2l0dGVyLmNvbS8jIS9s
-aW5hcm9vcmc+IFR3aXR0ZXIgfAo8aHR0cDovL3d3dy5saW5hcm8ub3JnL2xpbmFyby1ibG9nLz4g
-QmxvZwoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxp
-bnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFk
-ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
-LWFybS1rZXJuZWwK
+
+--===============3860526148423131022==
+Content-Type: multipart/signed; micalg=pgp-sha1;
+	protocol="application/pgp-signature"; boundary="VS++wcV0S1rZb1Fb"
+Content-Disposition: inline
+
+
+--VS++wcV0S1rZb1Fb
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi!
+> > > [ Upstream commit fa3a419d2f674b431d38748cb58fb7da17ee8949 ]
+> > >
+> > > The call to of_parse_phandle returns a node pointer with refcount
+> > > incremented thus it must be explicitly decremented after the last
+> > > usage.
+> > >
+> > > Detected by coccinelle with the following warnings:
+> > > ./drivers/net/ethernet/xilinx/xilinx_axienet_main.c:1624:1-7: ERROR: =
+missing of_node_put; acquired a node pointer with refcount incremented on l=
+ine 1569, but without a corresponding object release within this function.
+> >=20
+> > Bug is real, but fix is horrible. This already uses gotos for error
+> > handling, so use them....
+> >=20
+> > This fixes it up.
+> >=20
+> > Plus... I do not think these "of_node_put" fixes belong in
+> > stable. They are theoretical bugs; so we hold reference to device tree
+> > structure. a) it is small, b) it stays in memory, anyway. This does
+> > not fix any real problem.
+> >=20
+>=20
+> Thank you very much for your comments.
+> We developed the following coccinelle SmPL to look for places where
+> there is an of_node_put on some path but not on others.
+
+I agree that the fix is good. Thanks for doing coccinelle work.
+
+> We use it to detect drivers/net/ethernet/xilinx/xilinx_axienet_main.c and=
+ found the following issue:
+>=20
+> static int axienet_probe(struct platform_device *pdev)
+> {
+> ...
+>         struct device_node *np;
+> ...
+>         if (ret) {
+>                 dev_err(&pdev->dev, "unable to get DMA resource\n");
+>                 goto free_netdev;  ---> leaked here
+>         }
+> ...
+>         if (IS_ERR(lp->dma_regs)) {
+>                 dev_err(&pdev->dev, "could not map DMA regs\n");
+>                 ret =3D PTR_ERR(lp->dma_regs);
+>                 goto free_netdev; ---> leaked here
+>         }
+> ...
+>          of_node_put(np);   --->    released here
+> ...
+> free_netdev:
+>         free_netdev(ndev);
+>=20
+>         return ret;
+> }
+>=20
+> If we insmod/rmmod xilinx_emaclite.ko multiple times,=20
+> axienet_probe() may be called multiple times, then a resource leak
+> may occur.
+
+Yeah, well. I agree the bug is real. But how much memory will it leak
+during each insmod? Kilobyte? (Is it actually anything at all? I'd
+expect just reference counter to be increaed.) How often do you
+usually insmod?
+
+> At the same time, we also checked the code for handling resource leaks in=
+ the current kernel
+> and found that the regular of_node_put mode is commonly used in
+> addition to the goto target mode.
+
+Ok, so this uglyness happens elsewhere. But I'd really prefer to use
+goto if it is already used in the function.
+
+Thanks,
+
+								Pavel
+--=20
+DENX Software Engineering GmbH,      Managing Director: Wolfgang Denk
+HRB 165235 Munich, Office: Kirchenstr.5, D-82194 Groebenzell, Germany
+
+--VS++wcV0S1rZb1Fb
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: Digital signature
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iEYEARECAAYFAlzQc34ACgkQMOfwapXb+vKjLQCfR30gJwbflpVIZMeXq9XtoP1X
+bpMAn0gYdpIGkf2vx98ZqTyzLuMecomn
+=Ekqr
+-----END PGP SIGNATURE-----
+
+--VS++wcV0S1rZb1Fb--
+
+
+--===============3860526148423131022==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3860526148423131022==--
+
