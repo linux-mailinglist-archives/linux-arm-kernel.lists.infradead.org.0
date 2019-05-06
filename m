@@ -2,91 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2CB6814551
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 09:35:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A59114556
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 09:37:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yZFo1xd5jwoXy/Hn2HH8RAhFfeMYR4Ut65TP3KewxqQ=; b=orP5UmoLW/Om4n
-	EvkSrrFetQzhhdA7LxkUA5vtRKgcZ74L15fumQqJrssHkGIUpoSEvNDc3y2v42bhXyDKPFhDQIsZo
-	7CItSEzhCN3We9F47+7thLGFD5QKkGchCrE6kFEOWtxUsVAeGHRkjTb1WabL/f58kszsIxZFlPBgd
-	kHStZc1BViXjP9QBKt5PwErblO7IiLXiFI3jXgwuxpCN/J4m1v9Y8Glt9iSenxbxzTr69yBUeGxBR
-	0W8ipFhiUwWioDXYhwVkc8Um31hSabXhw4X8f+eaWDFvoB1E/vP1UstCw53CA73WVOAvDF/bAgfTt
-	KPAeNZuNtwAouJYykP1w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+LPUAw/jTIvgP4dQZ7EFtKMe3xX9ZucX130L32H+TQw=; b=VlcB3JDb7uVBU+
+	7ursu/iAUjKgsMAb7ncy+Sk0B//5J7SLX0WQzid/Mc+tUmHQCk3zNGbOiXEV8h+Hz2+mdX69PNrl8
+	B5dChqDQi50W9pra6XZMgZaCuswQiQKYMOWe3bobmKR7lyP5vCeKg6hhA4D68MyEI3xw3+za0i7ub
+	n1Xntju/mPlNaIBWCJBhZK+DRfwZhtm0ziSGHiwJbXg5+KH4GFGSHaOohkEtKi9RiCJAZ98IFF0L/
+	nxcSO/wnnwneSzVGXLttfNkK8E0xql2QWAim4aVVaLvR9QWW7vTzhrWp3m6lJ0F7Q2FtG5/Lyrm1k
+	cTjutwpRaeGkDXg8F++A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNY9V-0001lT-Tl; Mon, 06 May 2019 07:35:09 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1hNYC5-0003Ce-At; Mon, 06 May 2019 07:37:49 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNY9L-0001h9-HN
- for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 07:35:01 +0000
-Received: by mail-lj1-x241.google.com with SMTP id y8so9947938ljd.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 May 2019 00:34:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=rasmusvillemoes.dk; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=ok4FiX0qqzxFXNlfPJQBxeAS7MtYAthIHs0pXM/1gsw=;
- b=HfCKA2GcWuIWfyCu6q7Vb4VuU5C85rltY95cYwAzVOuNpcOxt9Vpj8t6IWJzXJpM16
- uc9PlW5f9Go3h/CJ9UsWwq1rdbfbTV7+cveeHt9cUsGuK9G3I7pEgW3Zv9bOFVDQOZbH
- MpdHFdCp7U0R6aqGNC2FBUx6AIBp++6riZnVE=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=ok4FiX0qqzxFXNlfPJQBxeAS7MtYAthIHs0pXM/1gsw=;
- b=uGRjezP/5t9NvBnS0fe/V4CQl35kUHs6sz7CS4d1tM5U1AvtaLWXkgVphwtlntWXza
- Q+qyfyy1qYN0ZZw2+srGA6vaLp8sVhV05/UyJivwbMXrRLpuog9HRNFiV+qyhNrw97LC
- hoU6t7SlHMF71YnWi7m1rNrKemDBWNdi5E56u6mTWi+f1QRYMnbOdRQFMbkxonk2+xbG
- P6Gjdk4soMKLxbZBMoMPAswRWjV9r7aDuxkikjBt+50h6TTzrfYG8tlijDOGPbXAbsz/
- bEb+vim+wgZuICFwWpyJrggYZN/J7G994bHVyEVApEPFoZo6dOJNwybrvqDxlrSkhldf
- BHbQ==
-X-Gm-Message-State: APjAAAWS+FMHFkTBZX7kR5XhYCfrxQAF0/QPMGD7MOn5NjZXiOjwxtYY
- 2Tg7fXxiN92bJ/RX6epvMUHwhw==
-X-Google-Smtp-Source: APXvYqyIXcDanMudqDV0cbvEgmg2JswEqVaUi3W8CZa23fGsbc0VYTSqSxQKNyi+uTC2tZHBHGapWQ==
-X-Received: by 2002:a2e:9f07:: with SMTP id u7mr3713010ljk.115.1557128097278; 
- Mon, 06 May 2019 00:34:57 -0700 (PDT)
-Received: from [172.16.11.26] ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id y25sm2083764ljh.31.2019.05.06.00.34.55
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 06 May 2019 00:34:56 -0700 (PDT)
-Subject: Re: [PATCH 00/10] implement DYNAMIC_DEBUG_RELATIVE_POINTERS
-To: Ingo Molnar <mingo@kernel.org>
-References: <20190409212517.7321-1-linux@rasmusvillemoes.dk>
- <1afb0702-3cc5-ba4f-2bdd-604d9da2b846@rasmusvillemoes.dk>
- <20190506070544.GA66463@gmail.com>
-From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
-Message-ID: <25dfde77-fdad-0b99-75ec-4ba480058970@rasmusvillemoes.dk>
-Date: Mon, 6 May 2019 09:34:55 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hNYBx-0003C3-Ix
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 07:37:43 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <sha@pengutronix.de>)
+ id 1hNYBt-0003eJ-FE; Mon, 06 May 2019 09:37:37 +0200
+Received: from sha by ptx.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <sha@pengutronix.de>)
+ id 1hNYBr-00071K-1w; Mon, 06 May 2019 09:37:35 +0200
+Date: Mon, 6 May 2019 09:37:35 +0200
+From: Sascha Hauer <s.hauer@pengutronix.de>
+To: Chuanhua Han <chuanhua.han@nxp.com>
+Subject: Re: [EXT] Re: [PATCH 1/2] i2c: imx: I2C Driver doesn't consider
+ I2C_IPGCLK_SEL RCW bit when using ls1046a SoC
+Message-ID: <20190506073735.ctzybytamu44pbvv@pengutronix.de>
+References: <20190430044719.30720-1-chuanhua.han@nxp.com>
+ <20190430125043.weqwzim4gpsvtkfe@pengutronix.de>
+ <AM6PR04MB43571B8D52C1FE9ED20DBA1D97360@AM6PR04MB4357.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-In-Reply-To: <20190506070544.GA66463@gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <AM6PR04MB43571B8D52C1FE9ED20DBA1D97360@AM6PR04MB4357.eurprd04.prod.outlook.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 09:13:06 up 48 days, 18:23, 78 users,  load average: 1.12, 1.24, 1.24
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: sha@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_003459_580747_120397FF 
-X-CRM114-Status: GOOD (  19.26  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190506_003741_784190_8336F61D 
+X-CRM114-Status: GOOD (  19.46  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -98,54 +75,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nick Desaulniers <ndesaulniers@google.com>, Arnd Bergmann <arnd@arndb.de>,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- Linus Torvalds <torvalds@linux-foundation.org>,
- Jason Baron <jbaron@akamai.com>, Ingo Molnar <mingo@redhat.com>,
- Andy Lutomirski <luto@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org, Nathan Chancellor <natechancellor@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Sumit Batra <sumit.batra@nxp.com>, "eha@deif.com" <eha@deif.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>,
+ "wsa+renesas@sang-engineering.com" <wsa+renesas@sang-engineering.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
+ "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
+ "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
+ "linux@rempel-privat.de" <linux@rempel-privat.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "peda@axentia.se" <peda@axentia.se>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ dl-linux-imx <linux-imx@nxp.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 06/05/2019 09.05, Ingo Molnar wrote:
-> 
-> 
-> It's sad to see such nice data footprint savings go the way of the dodo 
-> just because GCC 4.8 is buggy.
-> 
-> The current compatibility cut-off is GCC 4.6:
-> 
->   GNU C                  4.6              gcc --version
-> 
-> Do we know where the GCC bug was fixed, was it in GCC 4.9?
-
-Not sure. The report was from a build on CentOS with gcc 4.8.5, so I
-tried installing the gcc-4.8 package on my Ubuntu machine and could
-reproduce. Then I tried installed gcc-4.9, and after disabling
-CONFIG_RETPOLINE (both CentOS and Ubuntu carry backported retpoline
-support in their 4.8, but apparently not 4.9), I could see that the
-problem was gone. But whether it's gone because it no longer elides an
-asm volatile() on a code path it otherwise emits code for, or because it
-simply doesn't emit the unused static inline() at all I don't know.
-
-I thought 0day also tested a range of supported compiler versions, so I
-was rather surprised at getting this report at all. But I suppose the
-arch/config matrix is already pretty huge. Anyway, the bug certainly
-doesn't exist in any of the gcc versions 0day does test.
-
-I _am_ bending the C rules a bit with the "extern some_var; asm
-volatile(".section some_section\nsome_var: blabla");". I should probably
-ask on the gcc list whether this way of defining a local symbol in
-inline assembly and referring to it from C is supposed to work, or it
-just happens to work by chance.
-
-Rasmus
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gU2F0LCBNYXkgMDQsIDIwMTkgYXQgMDk6Mjg6NDhBTSArMDAwMCwgQ2h1YW5odWEgSGFuIHdy
+b3RlOgo+IAo+IAo+ID4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0KPiA+IEZyb206IFNhc2No
+YSBIYXVlciA8cy5oYXVlckBwZW5ndXRyb25peC5kZT4KPiA+IFNlbnQ6IDIwMTnlubQ05pyIMzDm
+l6UgMjA6NTEKPiA+IFRvOiBDaHVhbmh1YSBIYW4gPGNodWFuaHVhLmhhbkBueHAuY29tPgo+ID4g
+Q2M6IHNoYXduZ3VvQGtlcm5lbC5vcmc7IExlbyBMaSA8bGVveWFuZy5saUBueHAuY29tPjsgcm9i
+aCtkdEBrZXJuZWwub3JnOwo+ID4gbWFyay5ydXRsYW5kQGFybS5jb207IGxpbnV4LWtlcm5lbEB2
+Z2VyLmtlcm5lbC5vcmc7Cj4gPiBsaW51eC1pMmNAdmdlci5rZXJuZWwub3JnOyBsaW51eC1hcm0t
+a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmc7Cj4gPiBkZXZpY2V0cmVlQHZnZXIua2VybmVsLm9y
+ZzsgZmVzdGV2YW1AZ21haWwuY29tOyBkbC1saW51eC1pbXgKPiA+IDxsaW51eC1pbXhAbnhwLmNv
+bT47IHdzYStyZW5lc2FzQHNhbmctZW5naW5lZXJpbmcuY29tOwo+ID4gdS5rbGVpbmUta29lbmln
+QHBlbmd1dHJvbml4LmRlOyBlaGFAZGVpZi5jb207IGxpbnV4QHJlbXBlbC1wcml2YXQuZGU7Cj4g
+PiBsLnN0YWNoQHBlbmd1dHJvbml4LmRlOyBwZWRhQGF4ZW50aWEuc2U7IFN1bWl0IEJhdHJhCj4g
+PiA8c3VtaXQuYmF0cmFAbnhwLmNvbT4KPiA+IFN1YmplY3Q6IFtFWFRdIFJlOiBbUEFUQ0ggMS8y
+XSBpMmM6IGlteDogSTJDIERyaXZlciBkb2Vzbid0IGNvbnNpZGVyCj4gPiBJMkNfSVBHQ0xLX1NF
+TCBSQ1cgYml0IHdoZW4gdXNpbmcgbHMxMDQ2YSBTb0MKPiA+IAo+ID4gQ2F1dGlvbjogRVhUIEVt
+YWlsCj4gPiAKPiA+IE9uIFR1ZSwgQXByIDMwLCAyMDE5IGF0IDEyOjQ3OjE4UE0gKzA4MDAsIENo
+dWFuaHVhIEhhbiB3cm90ZToKPiA+ID4gVGhlIGN1cnJlbnQga2VybmVsIGRyaXZlciBkb2VzIG5v
+dCBjb25zaWRlciBJMkNfSVBHQ0xLX1NFTCAoNDI0IGJpdCBvZgo+ID4gPiBSQ1cpIGluIGRlY2lk
+aW5nICBpMmNfY2xrX3JhdGUgaW4gZnVuY3Rpb24gaTJjX2lteF9zZXRfY2xrKCkgeyAwCj4gPiA+
+IFBsYXRmb3JtIGNsb2NrLzQsIDEgUGxhdGZvcm0gY2xvY2svMn0uCj4gPiA+Cj4gPiA+IFdoZW4g
+dXNpbmcgbHMxMDQ2YSBTb0MsIHRoaXMgcG9wdWxhdGVzIGluY29ycmVjdCB2YWx1ZSBpbiBJQkZE
+Cj4gPiA+IHJlZ2lzdGVyIGlmIEkyQ19JUEdDTEtfU0VMID0gMCwgd2hpY2ggZ2VuZXJhdGVzIGhh
+bGYgb2YgdGhlIGRlc2lyZWQgQ2xvY2suCj4gPiA+Cj4gPiA+IFRoZXJlZm9yZSwgaWYgbHMxMDQ2
+YSBTb0MgaXMgdXNlZCwgd2UgbmVlZCB0byBzZXQgdGhlIGkyYyBjbG9jawo+ID4gPiBhY2NvcmRp
+bmcgdG8gdGhlIGNvcnJlc3BvbmRpbmcgUkNXLgo+ID4gCj4gPiBTbyB0aGUgY2xvY2sgZHJpdmVy
+IHJlcG9ydHMgdGhlIHdyb25nIGNsb2NrLiBQbGVhc2UgZml4IHRoZSBjbG9jayBkcml2ZXIgdGhl
+bi4KPiBObywgdGhpcyBpcyBhIHByb2JsZW0gd2l0aCB0aGUgaTJjIGRyaXZlci4gSXQgaXMgbm90
+IGEgcHJvYmxlbSB3aXRoCj4gdGhlIGNsb2NrIGRyaXZlciwgc28gdGhlIGkyYyBkcml2ZXIgbmVl
+ZHMgdG8gYmUgbW9kaWZpZWQuCgpTbyBob3cgZG9lcyB0aGlzIFJDVyBiaXQgZ2V0IGV2YWx1YXRl
+ZD8gQWNjb3JkaW5nIHRvIHRoZSByZWZlcmVuY2UKbWFudWFsIG9ubHkgb25lIGNsb2NrIGdvZXMg
+dG8gdGhlIGkyYyBtb2R1bGUgKGRlc2NyaWJlZCBhcyAxLzIgUGxhdGZvcm0KQ2xvY2spIGFuZCB0
+aGUgaTJjIG1vZHVsZSBvbmx5IHRha2VzIG9uZSBjbG9jay4gU28gaXQgc2VlbXMgdGhlcmUgbXVz
+dApiZSBhIC8yIGRpdmlkZXIgc29tZXdoZXJlLCBlaXRoZXIgaW4gZWFjaCBpMmMgbW9kdWxlIG9y
+IHNvbWV3aGVyZQpvdXRzaWRlLiBDYW4geW91ciBJQyBndXlzIHRlbGwgeW91IHdoZXJlIGl0IGlz
+PwoKT25lIHJlYXNvbiBJIHN1Z2dlc3RlZCB0aGUgY2xvY2sgZHJpdmVyIGlzIHRoYXQgdGhlIGNs
+b2NrIGRyaXZlcgpjb250YWlucyBTb0Mgc3BlY2lmaWMgY29kZSBhbHJlYWR5LCBzbyBpdCBzaG91
+bGQgYmUgZWFzaWVyIHRvIGludGVncmF0ZQp0aGVyZS4KClNhc2NoYQoKCi0tIApQZW5ndXRyb25p
+eCBlLksuICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgfApJbmR1c3RyaWFsIExpbnV4IFNvbHV0aW9ucyAgICAgICAgICAgICAgICAgfCBodHRw
+Oi8vd3d3LnBlbmd1dHJvbml4LmRlLyAgfApQZWluZXIgU3RyLiA2LTgsIDMxMTM3IEhpbGRlc2hl
+aW0sIEdlcm1hbnkgfCBQaG9uZTogKzQ5LTUxMjEtMjA2OTE3LTAgICAgfApBbXRzZ2VyaWNodCBI
+aWxkZXNoZWltLCBIUkEgMjY4NiAgICAgICAgICAgfCBGYXg6ICAgKzQ5LTUxMjEtMjA2OTE3LTU1
+NTUgfAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGlu
+dXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRl
+YWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
+YXJtLWtlcm5lbAo=
