@@ -2,91 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 594151511F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 18:22:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C53F15140
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 18:29:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pN+wYaexMmQg+gwL1/g+Ov06pjg1+LRKExtVJAZmiZw=; b=f+tyYiMSjkM8BB
-	PJMn9yNpiBGezwXEqHZPUcMhdktwhSvMK9lew62EJ+F5ViJu/IwrYB7ln8TcTvB5OKlhru8TpUDfg
-	2fkWIrte/bQW/az2MuXQdxwU3yjz1mk7KT1NaKHl2I8Uu1NQfj1Ahm0Ip5WEOhHPwtmY4hV1zzXuV
-	NMo/dbqbFsUGo5Tsjh5M+WlH51P7Tvuv+zNMQN1uP4MF9URk03IWMDDXm1dw+xdmrCW4YVPWXPyF5
-	hbDTrnA3SvtO2XGRmkdhFxR00/j90A3xS8jANcVepF18pH80MM3IaYZ9s+IkyALumi2/euO6bdrQL
-	EHImxq97IL2GjwKqXL3Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Y8NdgAYdTFn1s2aur5zJKEG32GKGlIQq4jXFi5RP+8c=; b=qEJwSwpg9vssMK
+	P85XS1w5W/L3Lpzablm26aFns4qrH70weQFFdx79wH6GRhE0l+mD13BvDbaRKepRks/oN7Uuj33SP
+	xJl7Ua7gEn5s9Kus/kk6Uq0SvZHmVRWBlVIN/nxpN2Jz35W5yudP0WloP0eVqujBRnnfqgUZaC8w4
+	6njZK4Bx7krm3SQ6YRFy+sHK36kIBJtedaqiZKIjJ+oy5Ew18kjfbimFQDJD6YeEHW1N/Cugw9/V2
+	hGW0N3HEzXnJtP1Je5VHHMew3+NTQqsNwLZ/AedK/AQKpbBuiUASVSn3Sc+GgnmHq6awq58TVQKPJ
+	QE+kdkqcVAf/EWJUoFuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNgNc-0001r4-Kn; Mon, 06 May 2019 16:22:16 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hNgUg-0004sK-80; Mon, 06 May 2019 16:29:34 +0000
+Received: from mout.kundenserver.de ([217.72.192.73])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNgNU-0001qR-SX
- for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 16:22:10 +0000
-Received: by mail-pg1-x542.google.com with SMTP id j26so6704883pgl.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 May 2019 09:22:08 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=40wSFiuSnxDz381aUfzuDl5Kav43yI7Ct1/keTyO3F8=;
- b=DVotpDP1BfYOu9EIG5sO2py/kG385U8+4RKehRk0tC71Vfe/y8Dohrbwudfghmv4gC
- V1LDKukVm8TPgSIGKPKH/+AzQnvMn07KhJn3HSkyadIn3jlSJ5ClUm6UwCAwkx5Lj2ec
- jTZ+KF06FbPmw0HHf3CBeQEfXVzStv1Mct1AUlW1wy4NJfE7vbBjZ0bMdocNxT2oB1CS
- 9lHhKeWSjQzqoRHwiiBianLagL8GKIjs0O4OySI/oLm6QzImAzv5mMB4tTPiN7x1FtTU
- rnBUs5QzACe456XBtVa1RIzVbxerlIOvNFz0tCOCg55SYKbtj/SOkAkOVG3enaPf58Zc
- SNbQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=40wSFiuSnxDz381aUfzuDl5Kav43yI7Ct1/keTyO3F8=;
- b=oY0kRdJ1T5n3wwcSmYzh8SbIzCw+hcETcjjEFrOnfqNaJ7/gH30TVhzWBG9vyMBKux
- 7e13wdpPuOBvese/oKiTeHb2yFDNxJ4fmca/98gxbSG9xCIGXvgtBh6xqdwqsTqRE9Ry
- a2l1AVpttz0z0Nfbdtll0cf4rQTqVnc6aPGpqHle9VUO5xX3UAKzM7w1D3EGy5j81Nx3
- vPx2p5a3jGhbRlyzmEwjO0LHcw0ojokr2mLLaBiQd486dKdXpiX7g6CSwbWoSM4m3R2L
- PtAOkIA0zcqLCno5WRM4ez/8+OiW99H/CG4bJAidXNirxcfEv9nNQAmfW8IXSJc9X2tE
- i8wQ==
-X-Gm-Message-State: APjAAAU9vukDRnOGTnvVVWz7s3WLT3bCvZOWxVL+uycHkjyzlNu3zkZQ
- juAlbxVGWuUFLXBGdYtJOIkNhuNdUuhoEHgNVrvJnOAoNgo=
-X-Google-Smtp-Source: APXvYqw0KbWeRobzhAngWvuw0v+iBDWRKwDC2xGNXHO8L4kdi1iOFuLP64D72WK0vtdzu/2x0qr2r6kf9SEmu6uA3nY=
-X-Received: by 2002:aa7:90ce:: with SMTP id k14mr30343128pfk.239.1557159727868; 
- Mon, 06 May 2019 09:22:07 -0700 (PDT)
+ id 1hNgUO-0004Z7-1J; Mon, 06 May 2019 16:29:17 +0000
+Received: from [192.168.1.166] ([37.4.249.123]) by mrelayeu.kundenserver.de
+ (mreue108 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1N4yyQ-1ggpCy1Bqe-010quy; Mon, 06 May 2019 18:28:52 +0200
+Subject: Re: [PATCH v2 2/3] staging: vchiq: revert "switch to
+ wait_for_completion_killable"
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Dan Carpenter <dan.carpenter@oracle.com>
+References: <20190506144030.29056-1-nsaenzjulienne@suse.de>
+ <20190506144030.29056-3-nsaenzjulienne@suse.de> <20190506152039.GT2239@kadam>
+ <686a4d50696a87b9cbe2a5908737ce91faec5313.camel@suse.de>
+From: Stefan Wahren <stefan.wahren@i2se.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=stefan.wahren@i2se.com; keydata=
+ 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 AQ==
+Message-ID: <d1de60bd-c4c6-ebb1-1eac-a5eba41c9a78@i2se.com>
+Date: Mon, 6 May 2019 18:28:48 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-References: <cover.1556630205.git.andreyknvl@google.com>
- <05c0c078b8b5984af4cc3b105a58c711dcd83342.1556630205.git.andreyknvl@google.com>
- <20190503170310.GL55449@arrakis.emea.arm.com>
-In-Reply-To: <20190503170310.GL55449@arrakis.emea.arm.com>
-From: Andrey Konovalov <andreyknvl@google.com>
-Date: Mon, 6 May 2019 18:21:56 +0200
-Message-ID: <CAAeHK+weVYv4Tgj8DXv0ZTFZzGEpLYsn-3wxxmQN+ZW88MXbMw@mail.gmail.com>
-Subject: Re: [PATCH v14 13/17] IB/mlx4,
- arm64: untag user pointers in mlx4_get_umem_mr
-To: Catalin Marinas <catalin.marinas@arm.com>
+In-Reply-To: <686a4d50696a87b9cbe2a5908737ce91faec5313.camel@suse.de>
+Content-Language: en-US
+X-Provags-ID: V03:K1:KPMd0yAIvHU/UF+na4jH2152Sj1Ege8WjWBmfcT+IuEM3YZR1G2
+ +sgvLfuoRgxaZr+Hg9dqJ+6FmK9lo2xlfEifB47Tznr0PjqkV9w+I1+xMLnN15/wA5NEYGN
+ WlI8/usboIpa/s2P7ZzYzN0WMfbFj1ggpXmk2IcbtgjWURpLcbr9xNyEHrd5MEL9cUMuHgV
+ EwtI2P7a2ZRO85e0IJ3Jw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:QkAFUe5uD80=:4tFsC4EB6HweFbgqe7hKjw
+ zgBhB3Jz/oZF3haWDtVlXqOhE+mz4P7pKm/shMBfMkTDP3fFEGHa+uimMiKvsKcW54j6O63kA
+ 5FOooUiSvT8Ak08aF1vdVjrOJf1OhStWi4L5h9d1xzyn6fX+cdkPNX9vk0ubI4Ma0Y1154JFX
+ 5aVIG7Skeu/n+Zwfrwd2rdoL4z+pmsQjtSRH84Mnqj702fh4LMRayROI1noTrro8c6KVV1Mmf
+ IejfrbsIoS6jJ5ooNXMKqGyS4gnBEp3UYflPjZdwJdnJ1/SO/AEpbOPb+p8rhhLpnQu//SZTM
+ W5FL+2V3l8BCTulzGpg8wa2VTMcoiZZ4oDuqUriv5DGKSnuk1F3LKaSJhaVXtuZWrF/s9OnUn
+ Q/EZp1GMs8evvoOwolHZDX7OHvxkCBHWuMVQACgsUAhhcaNd9QluMATwatZkjClGBKVJPqpzX
+ y3y8JD0FBb6UF2LU8dHzLnolV1RtsPNfOcAMpD+5oUYtMttg1J+pWGomx6/168YAto0QGdccI
+ X/8hs1yBFl2HMcDtoYyciasBH7T7AgFo72MoTF7zQZ5gAMnklNvsYwOGzI/NXl3gy2Evfpv+s
+ 5DXkUGCYI019ssum7CXy2rW/+6TUQbqAOdCdaq0PbmSdWoH3zNtD8GIxym5hRQnsnFwdzmUkX
+ w/Cz4BiS4DNxXJzXEt/1fY5hrCo8Ww6oFc2apUHxfCNQ9Naym0dobdXiGjTO5uHKo79VFoGqA
+ dSGJkEroMY8yt5VJwG4RftZYnRpbpxGpLb2dwWbjog3P4ne/LJ14TY5UI/A=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_092208_947863_2F760DFB 
-X-CRM114-Status: GOOD (  24.15  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190506_092916_374012_B3A430AE 
+X-CRM114-Status: GOOD (  13.67  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
+ no trust [217.72.192.73 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 T_DKIMWL_WL_MED        DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -98,91 +122,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Koenig@google.com, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org,
- Linux Memory Management List <linux-mm@kvack.org>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Chintan Pandya <cpandya@codeaurora.org>, Felix <Felix.Kuehling@amd.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
- linux-media@vger.kernel.org, Kevin Brodsky <kevin.brodsky@arm.com>,
- Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>, Deucher@google.com,
- Leon Romanovsky <leonro@mellanox.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Dmitry Vyukov <dvyukov@google.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- Kuehling@google.com, Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>, LKML <linux-kernel@vger.kernel.org>,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
- Christian <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: devel@driverdev.osuosl.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ phil@raspberrypi.org, linux-kernel@vger.kernel.org,
+ Eric Anholt <eric@anholt.net>, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 3, 2019 at 7:03 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
+Hi Nicolas,
+
+Am 06.05.19 um 17:59 schrieb Nicolas Saenz Julienne:
+> Hi Dan, thanks for reviewing.
 >
-> On Tue, Apr 30, 2019 at 03:25:09PM +0200, Andrey Konovalov wrote:
-> > This patch is a part of a series that extends arm64 kernel ABI to allow to
-> > pass tagged user pointers (with the top byte set to something else other
-> > than 0x00) as syscall arguments.
-> >
-> > mlx4_get_umem_mr() uses provided user pointers for vma lookups, which can
-> > only by done with untagged pointers.
-> >
-> > Untag user pointers in this function.
-> >
-> > Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
-> > Reviewed-by: Leon Romanovsky <leonro@mellanox.com>
-> > ---
-> >  drivers/infiniband/hw/mlx4/mr.c | 7 ++++---
-> >  1 file changed, 4 insertions(+), 3 deletions(-)
-> >
-> > diff --git a/drivers/infiniband/hw/mlx4/mr.c b/drivers/infiniband/hw/mlx4/mr.c
-> > index 395379a480cb..9a35ed2c6a6f 100644
-> > --- a/drivers/infiniband/hw/mlx4/mr.c
-> > +++ b/drivers/infiniband/hw/mlx4/mr.c
-> > @@ -378,6 +378,7 @@ static struct ib_umem *mlx4_get_umem_mr(struct ib_udata *udata, u64 start,
-> >        * again
-> >        */
-> >       if (!ib_access_writable(access_flags)) {
-> > +             unsigned long untagged_start = untagged_addr(start);
-> >               struct vm_area_struct *vma;
-> >
-> >               down_read(&current->mm->mmap_sem);
-> > @@ -386,9 +387,9 @@ static struct ib_umem *mlx4_get_umem_mr(struct ib_udata *udata, u64 start,
-> >                * cover the memory, but for now it requires a single vma to
-> >                * entirely cover the MR to support RO mappings.
-> >                */
-> > -             vma = find_vma(current->mm, start);
-> > -             if (vma && vma->vm_end >= start + length &&
-> > -                 vma->vm_start <= start) {
-> > +             vma = find_vma(current->mm, untagged_start);
-> > +             if (vma && vma->vm_end >= untagged_start + length &&
-> > +                 vma->vm_start <= untagged_start) {
-> >                       if (vma->vm_flags & VM_WRITE)
-> >                               access_flags |= IB_ACCESS_LOCAL_WRITE;
-> >               } else {
->
-> Discussion ongoing on the previous version of the patch but I'm more
-> inclined to do this in ib_uverbs_(re)reg_mr() on cmd.start.
+> On Mon, 2019-05-06 at 18:20 +0300, Dan Carpenter wrote:
+>> On Mon, May 06, 2019 at 04:40:29PM +0200, Nicolas Saenz Julienne wrote:
+>>> @@ -1740,7 +1740,8 @@ parse_rx_slots(struct vchiq_state *state)
+>>>  					&service->bulk_rx : &service->bulk_tx;
+>>>  
+>>>  				DEBUG_TRACE(PARSE_LINE);
+>>> -				if (mutex_lock_killable(&service->bulk_mutex)) {
+>>> +				if (mutex_lock_killable(
+>>> +					&service->bulk_mutex) != 0) {
+>> This series does't add != 0 consistently...  Personally, I would prefer
+>> we just leave it out.  I use != 0 for two things.  1)  When I'm talking
+>> about the number zero.
+>>
+>> 	if (len == 0) {
+>>
+>> Or with strcmp():
+>>
+>> 	if (strcmp(a, b) == 0) { // a equals b
+>> 	if (strcmp(a, b) < 0) {  // a less than b.
+>>
+>> But here zero means no errors, so I would just leave it out...
+> I agree, I'll fix it.
 
-OK, I want to publish v15 sooner to fix the issue with emails
-addresses, so I'll implement this approach there for now.
+i also agree with Dan, but this specific patch should revert the changes
+of a772f116702e3f0afdd7e6acadc1b8fb3b20b9ff . So mentioned style issue
+should be fixed in a separate patch.
 
-
+Regards Stefan
 
 >
-> --
-> Catalin
+> Regards,
+> Nicolas
+>
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
 
 _______________________________________________
 linux-arm-kernel mailing list
