@@ -2,115 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 893EC15375
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 20:12:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1054F1537A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 20:14:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GpciDKKRGX2oSJwPBnrb3Uh1r1uMUr9MtcK2p/yj3Go=; b=JbmYpi+ryQcrLE
-	HmEA1nzcUIqJeTbiOVgFHvQZjkBPnJnn5iyhIozaRiPdUN0+hC82QvVikMm5jO4UKPEcTMeUq7WNP
-	zaghdyH/EuMIkUVFwTaBrUjE6SY4JhPEBpYsn/1u0ucVAhYFBmwPDCdv4+FVVWYlqJ2VOVAZrRckJ
-	OmKzw0Y271xrf90sbsQ4a9q1PHnavHFp8TMBvq0xEnYGXs1BffzciXvBVbFcvwR1jhuZW4XyWo0oQ
-	dbbp8gEagHZ8S1YNJ2N2IW9pV/zTF1eMxfdvWDsCmd1mMaxx9bZswu1uNJiCv6rtNJ50JmbggF8mp
-	e60dJbcaZR1r2GDOUsoA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Message-ID:Date:References:In-Reply-To:Subject:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=sybSqPCGR8vgvD+HOyIl8CpF+ifL+L206m0Q4BCLTnE=; b=UWCxGeFOqrwXC7KRrufdgCfBx
+	23FVeFgnM6sjPlJF5XgN6Gci6xUVwa4BUEBFFKhY+PvBaQuQp1VJ/jJBhY6CLubzgKdi8KDxR/Zv1
+	H5Pf2V4IYUO9hd7YXVxc+McSAbtfl9D6yNRQE4Tvcmlg3s66Mn6rSaGgHVcnz2vM0dvZdQSMdlSzG
+	JIunc283jDxRhmB19yDzVKw6hiiGXoXtIX2ASN+QCMvI0jgyD4zcQf5ZRXVsmNGDvJmTxHPZ47/rO
+	PEyjpT8evwLA9SwO2Mqm7mvTOOUCkw9dfmcFZEdX67WGfli/MQ9FGS0dKAhbjuxmGu35ef4fOhEVO
+	egUURRHjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNi6c-0008FE-La; Mon, 06 May 2019 18:12:50 +0000
-Received: from mout.kundenserver.de ([212.227.17.13])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNi6U-0008EJ-IZ; Mon, 06 May 2019 18:12:44 +0000
-Received: from [192.168.1.166] ([37.4.249.123]) by mrelayeu.kundenserver.de
- (mreue107 [212.227.15.183]) with ESMTPSA (Nemesis) id
- 1MHFwM-1hS3hN2Tz6-00DJIf; Mon, 06 May 2019 20:12:29 +0200
-Subject: Re: [PATCH v2 0/3] staging: vchiq: use interruptible waits
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-kernel@vger.kernel.org
-References: <20190506144030.29056-1-nsaenzjulienne@suse.de>
-From: Stefan Wahren <stefan.wahren@i2se.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=stefan.wahren@i2se.com; keydata=
- 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 AQ==
-Message-ID: <b2679404-ba00-d18e-fe15-44c6e280dc11@i2se.com>
-Date: Mon, 6 May 2019 20:12:27 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hNi7z-000070-63; Mon, 06 May 2019 18:14:15 +0000
+Received: from anholt.net ([50.246.234.109])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hNi7s-00006V-Ho; Mon, 06 May 2019 18:14:09 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by anholt.net (Postfix) with ESMTP id 4B57710A346B;
+ Mon,  6 May 2019 11:14:05 -0700 (PDT)
+X-Virus-Scanned: Debian amavisd-new at anholt.net
+Received: from anholt.net ([127.0.0.1])
+ by localhost (kingsolver.anholt.net [127.0.0.1]) (amavisd-new, port 10024)
+ with LMTP id hKW1Zyu9ecRG; Mon,  6 May 2019 11:14:04 -0700 (PDT)
+Received: from eliezer.anholt.net (localhost [127.0.0.1])
+ by anholt.net (Postfix) with ESMTP id 09B1410A3468;
+ Mon,  6 May 2019 11:14:04 -0700 (PDT)
+Received: by eliezer.anholt.net (Postfix, from userid 1000)
+ id 5AA492FE3AA9; Mon,  6 May 2019 11:14:03 -0700 (PDT)
+From: Eric Anholt <eric@anholt.net>
+To: Annaliese McDermond <nh6z@nh6z.net>, stefan.wahren@i2se.com,
+ f.fainelli@gmail.com, wsa@the-dreams.de, swarren@wwwdotorg.org,
+ linux-i2c@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH] i2c: bcm2835: Model Divider in CCF
+In-Reply-To: <20190505034339.30778-1-nh6z@nh6z.net>
+References: <20190505034339.30778-1-nh6z@nh6z.net>
+User-Agent: Notmuch/0.22.2+1~gb0bcfaa (http://notmuchmail.org) Emacs/26.1
+ (x86_64-pc-linux-gnu)
+Date: Mon, 06 May 2019 11:14:03 -0700
+Message-ID: <87o94fo3h0.fsf@anholt.net>
 MIME-Version: 1.0
-In-Reply-To: <20190506144030.29056-1-nsaenzjulienne@suse.de>
-Content-Language: en-US
-X-Provags-ID: V03:K1:OO0YujQIAL03yiODcrGeZwSAoqP+QyZGcS3Rb/0D4viZDd3HuAr
- A0n/6hygucW8vIYS2sdJnsPBdTgKZVIeJrBLQfCJXdQU82yox2zXEi82Aeh1xK73P87Lwkf
- fdt1AfVEuBdqTkkgEITpoL3bFeRm3MvFQBya5po2xJvt4rt2lLSzf0NQlXFpi32U8ln6dhY
- NDXoAES+YgvwLNCrGIXTA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:3UH7jCBTWv8=:f5pksuQByHCya4v0SpsqPd
- rvQGgK/Xf2fZ9FYd+D6KuDn3qJN+Zbt9Tw+SFtQBpaq6cFtjdcKxJXw9Fy5JuQlVgwtBCX31b
- z0Z0Hl0XTK6phUUZkj7VGHQdgtexXFW8TPIHyFr7rIgwjxMPKJ+LxKO27AYkkUtd/vCF9U+lr
- xCigT9DIOy9Mwe8xe7yhDu/bnEn4MO4TwIrG4iU9woBrZgZV9vL/xKNwgTLi74duS9Q16ew5X
- VoAUCtjyPTO3kdUWffGc/512KXhfUkZwHCzzfWPyZ5LOnAee/MxoExhsgUppX/iB6n7Vd3roy
- Dvu3n0HeGlFQlFPj3AoduvgguL/J9ONCEIbVTRHdRbZ+CXcjHducbyhmgH5qyQOAgtGOXTadg
- rBOdc610VxGRLPEDH1kMYiJR3par4JD8+78izqlvoNEY75HoppdHzZeY2j8SZfGc/HJaSgbLi
- 3Kas8kPfJgRZBLDDw4+C0QFEIz9qYjqSaTGS64OHFZMxonrm2hixuuXkn6pcNRzm/vkaBkEMQ
- YZ1til0P90w1e9vmGgK51WXz6YsEUZRdHWFnqkWQF9lT33dqWgu8/zuLjV4CHuLQ73+5mCdz9
- eVsae038tLQ+5C8LzogmOk/I6yTvlwHG36GhYxl7pkJgo2mtZW7qugKnhPpQ688Oz1niaOd6V
- TRl7aEpOA56HSzu+8FKf4FH++RBHLUE7dT2yQo47X5PU6S6BuDiLDvVeYoKDa6f1Rv792Ws3q
- crWF3LZmzEg8pNdmeg6mBWvOFSW1uX/f4LpOGp7o5LudukrpVUORNlxnGeA=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_111242_916677_8BD580A9 
-X-CRM114-Status: GOOD (  12.50  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20190506_111408_623672_4F067BC2 
+X-CRM114-Status: GOOD (  14.10  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.13 listed in list.dnswl.org]
- 0.1 URIBL_SBL_A Contains URL's A record listed in the Spamhaus SBL
- blocklist [URIs: lists.fedoraproject.org]
- 0.6 URIBL_SBL Contains an URL's NS IP listed in the Spamhaus SBL
- blocklist [URIs: lists.fedoraproject.org]
+ no trust [50.246.234.109 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -123,55 +70,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, devel@driverdev.osuosl.org,
- phil@raspberrypi.org, linux-rpi-kernel@lists.infradead.org,
- dan.carpenter@oracle.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: team@nwdigitalradio.com, Annaliese McDermond <nh6z@nh6z.net>
+Content-Type: multipart/mixed; boundary="===============7674460212077477684=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Nicolas,
+--===============7674460212077477684==
+Content-Type: multipart/signed; boundary="=-=-=";
+	micalg=pgp-sha512; protocol="application/pgp-signature"
 
-Am 06.05.19 um 16:40 schrieb Nicolas Saenz Julienne:
-> Hi,
-> ...
->
-> Regards,
-> Nicolas
->
-> [1] https://github.com/raspberrypi/linux/issues/2881
-> [2] https://archlinuxarm.org/forum/viewtopic.php?f=65&t=13485
-> [3] https://lists.fedoraproject.org/archives/list/arm@lists.fedoraproject.org/message/GBXGJ7DOV5CQQXFPOZCXTRD6W4BEPT4Q/
->
-> --
->
-> Changes since v1:
->   - Proplery format revert commits
->   - Add code comment to remind of this issue
->   - Add Fixes tags
->
-> Nicolas Saenz Julienne (3):
->   staging: vchiq_2835_arm: revert "quit using custom
->     down_interruptible()"
->   staging: vchiq: revert "switch to wait_for_completion_killable"
->   staging: vchiq: make wait events interruptible
->
->  .../interface/vchiq_arm/vchiq_2835_arm.c      |  2 +-
->  .../interface/vchiq_arm/vchiq_arm.c           | 21 +++++++------
->  .../interface/vchiq_arm/vchiq_core.c          | 31 ++++++++++++-------
->  .../interface/vchiq_arm/vchiq_util.c          |  6 ++--
->  4 files changed, 35 insertions(+), 25 deletions(-)
->
-against which tree should this series apply?
+--=-=-=
+Content-Type: text/plain
 
-Since the merge window opened the current staging-linus wont be
-available soon.
+Annaliese McDermond <nh6z@nh6z.net> writes:
 
-Stefan
+> Model the I2C bus clock divider as a part of the Core Clock Framework.
+> Primarily this removes the clk_get_rate() call from each transfer.
+> This call causes problems for slave drivers that themselves have
+> internal clock components that are controlled by an I2C interface.
+> When the slave's internal clock component is prepared, the prepare
+> lock is obtained, and it makes calls to the I2C subsystem to
+> command the hardware to activate the clock.  In order to perform
+> the I2C transfer, this driver sets the divider, which requires
+> it to get the parent clock rate, which it does with clk_get_rate().
+> Unfortunately, this function will try to take the clock prepare
+> lock, which is already held by the slave's internal clock calls
+> creating a deadlock.
+>
+> Modeling the divider in the CCF natively removes this dependency
+> and the divider value is only set upon changing the bus clock
+> frequency or changes in the parent clock that cascade down to this
+> divisor.  This obviates the need to set the divider with every
+> transfer and avoids the deadlock described above.  It also should
+> provide better clock debugging and save a few cycles on each
+> transfer due to not having to recalcuate the divider value.
 
+Any chance we could reuse clk_register_divider() instead of having our
+own set/round/recalc rate implementations?
+
+--=-=-=
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEE/JuuFDWp9/ZkuCBXtdYpNtH8nugFAlzQeWsACgkQtdYpNtH8
+nuh5Lg/9Hz9DEDFEVdhjXtd+t3vKtl5okxkdaEIugqXb/lA3D71R/ish1ONL2sDL
+09JoAA3Zt+WTMAZM/qPmU7GaDh1gJ9sRNzKi4AktA+XPZK/TUrFdGqZEpwhTYcEe
+NHc3bp6TIzi6zDffoleIwIEhbJbfM42j/XlOycFSocqkIajreaYlofCxMNwQGn80
++JxoQbixw4xhq+0eTbDxO5rwrocM7++l4egkimH3/oX6y+mv39k+T/wwk5zLUQZS
+KNqQgH9Z5Ad12lORo/OxO4XwCwXvFXWQpbAsu27W91d0dRV+SvHJcFNHAYWj7Wol
+lJa6LpDoxLUZBMSroI0qZT3XcQCjJ7Szt18MIGj5AKoRZb3qUK6wI4eRM3CLtSwi
+9FyKLMb7anvfubplCKHT2zBr1CpZRHQAafWQEDmlNyqqsfQRU4w66RuhUwtZ9BXy
+zCCLNsPB2C+oi9bF7RTdsbNWysD0qzT1dGYJIh3FRDjeuAdsKfUqeToXWTnQIxod
+kxpvC84lZgwfJohqt1QLe0vYXmMJ7m24+fwK9U8B7oBCMMvP574VJpUaJUHQUt+l
+WSGN3bihzs1TZOBHyVBuA/ewQndOGbYamLUYXSf0fb6f6JYVFDc42zOh2VGDt+ts
+Qw2bMUaviG5cse6/C25pPYeLiCiH5oX6MGptPmMd+ExHd/shC+Y=
+=Gimv
+-----END PGP SIGNATURE-----
+--=-=-=--
+
+
+--===============7674460212077477684==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7674460212077477684==--
+
