@@ -2,96 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C954F150DB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 18:03:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 619AC150E8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 18:09:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4Y0ncntvjRU7IcyM2YfqAk/c8niNYAERUmVLccXO3kE=; b=cXNpky5BYfhSBV
-	EFHYlEm/Dwor5UiMhiMw2Rfj8eS9MZ3dGDper/hB+n40VkVdljZxVk9Ih3mwPvkhdeZdR+qRi+pnQ
-	cJQueJAn/bskyWTBPqjkgoE1tExdS/g1O3sjg90lNHzX8q9TpML9OEheOw2CedlNIwEeNzxcsmLR1
-	iyI3wruvH9rr/e9muIUcFhn4NrA/vbQ7hm6umPy34P6WWzzxqtYiv3DUg3XrpLxlL5fOLIIdOKrtx
-	zGvovlhwpB7XzvTJrMPgELDFZpcFy5FHyWiadWYs2FF85KoOxGXHNLRzFTwbSspc9T64LO3RUgSbN
-	FlXOzMKyR7SScpUGV7Ow==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=IwFHekN3yjl1WwQKaLXK/v8IX8bFCoOG2Rp8+fT1qtw=; b=T53EAbmPtR3FTN
+	aZvdo6wgY5rPpOUZXnMTmIhlYOfPq6iT5yz3fbEMPPoxUMOQP6B5RVlZQx78u9faG5DeqQUzIFS3q
+	dmCRe8zGfy10tXaEee4YY8ktlKQ6IhV0Jvx70iWYPpju/32a3Vpe57GHl78J6REnV//gTeG7+/i3/
+	Koif/Xq2E9VOAdJIEERU6m8XdbFhi4N/515n0I05ocfIYAyoaDGUGZMVIfw47cjUycTCUP+2oK9cq
+	VncA4DxjO6WbyjVlnCqDVh3sXd+RhCcNZFVuvDIsHNm2dkJBH66CTmii27C7UL46l/iEe/h5Do3M/
+	X959xk+SHFts0g2NeFuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNg4w-0003g7-6W; Mon, 06 May 2019 16:02:58 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hNgAu-0005Jd-DS; Mon, 06 May 2019 16:09:08 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNg4n-0003fP-CW
- for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 16:02:51 +0000
-Received: by mail-pg1-x541.google.com with SMTP id 85so6673144pgc.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 May 2019 09:02:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=h65MRHziS/XlCWzkTo39Affot/MxBBxZ2XDqR6AxO+k=;
- b=T2uzTZYHpOy4PG50ZS7kPplrZmFrxlPpPjn/ROJsOlfzqJ2yB+OpnPQ3f+QwwEMs1d
- 2XjnstY7q9UOyC8dekFPY1YWSkRa+y2hpm40p1z8FL4gOgh0sgQWMNlXrK/qHOHJlGXh
- bPnrHchFQHD6WTeCZU3UZUKQqo5SO6Iy5YNtmeL601IurzdsL/jCIKICFaSGWU3kOLZ/
- A0MlkE9UTOCbREzqKh6I6gfztCzSkVzr6DqjAn/eH/c0E+8BPzO8b0f3eiIMPYu1QpbR
- UVfQeIuGAxZov3Jazo2/pKVt12GzU8mTJQ/HsHNdtXC4W5UQ+EMzQrVuWWCQeuA4EX3d
- AbXA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=h65MRHziS/XlCWzkTo39Affot/MxBBxZ2XDqR6AxO+k=;
- b=lJM39WjFXRwk/+RPpwJXjRutOT3Jv8K4U2g8fBvHvWLqCqjABcmBeks5/QkF2+rkpS
- CAz2PakHDrVpvdLyBHUoalohTulsyvjVNmQkyr2lSzZe9Ltp3DHT+bCDvpvn1D/MXWdJ
- 3n/mRMKFkQ0an4WbJTtszRq5ZpFjPq+HBwsNt9YdooLubfuD+zn9ETvBc7oqVshBNU0q
- 4XrtsmuIQa8G9hxKJT46uobVoq+S3l0IS3dGdulas7NdyL3T2nvX2yFHr8kNMRsD2gx0
- CWAs2/qFvlfr2ZN8PuzvSGfh5R4c6SSUbYD7HGYqfshdkueJMwqLWVcl5MReJCc6Z92r
- vGgA==
-X-Gm-Message-State: APjAAAXOxOFL1AblU41m51RjN8eiLywE0gSm/QnLvL6Wj3RAjnquweKo
- daNepPLG8rUxaBiXsO5m+A0=
-X-Google-Smtp-Source: APXvYqxivXnK448bMAew0yXX3RSNOeE2Ns7z5/ZQ/JaTWPkpJWQ4CnT1HrnEg2Aw6Ar/nsLt7sqegw==
-X-Received: by 2002:aa7:8e55:: with SMTP id d21mr34046155pfr.62.1557158568291; 
- Mon, 06 May 2019 09:02:48 -0700 (PDT)
-Received: from pc ([219.91.191.230])
- by smtp.gmail.com with ESMTPSA id h127sm14343108pgc.31.2019.05.06.09.02.45
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 06 May 2019 09:02:47 -0700 (PDT)
-Date: Mon, 6 May 2019 21:32:40 +0530
-From: Raag Jadav <raagjadav@gmail.com>
-To: Eugen.Hristev@microchip.com, ludovic.desroches@microchip.com
-Subject: Re: [PATCH] i2c: at91: handle TXRDY interrupt spam
-Message-ID: <20190506160240.GA3156@pc>
-References: <1556005008-6318-1-git-send-email-raagjadav@gmail.com>
- <20190429090005.f6ydghzu5n5yruav@M43218.corp.atmel.com>
- <20190429223332.GA3908@pc>
- <20190502140116.rim72idpgvq4h4vc@M43218.corp.atmel.com>
- <20190503235851.GA4242@pc>
- <408ff580-3633-f510-4223-50064f93024a@microchip.com>
+ id 1hNgAm-0005JC-Hd; Mon, 06 May 2019 16:09:02 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id B7E5243D8;
+ Mon,  6 May 2019 18:08:56 +0200 (CEST)
+Received: by meh.true.cz (OpenSMTPD) with ESMTP id 49140d29;
+ Mon, 6 May 2019 18:08:55 +0200 (CEST)
+From: =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
+To: netdev@vger.kernel.org, "David S. Miller" <davem@davemloft.net>,
+ Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH RESEND net-next 0/3] of_get_mac_address ERR_PTR fixes
+Date: Mon,  6 May 2019 18:08:37 +0200
+Message-Id: <1557158920-31586-1-git-send-email-ynezz@true.cz>
+X-Mailer: git-send-email 1.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <408ff580-3633-f510-4223-50064f93024a@microchip.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_090249_425518_9A516009 
-X-CRM114-Status: GOOD (  38.49  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190506_090900_889984_4710B57C 
+X-CRM114-Status: GOOD (  11.05  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (raagjadav[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ no trust [178.217.244.18 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -103,191 +57,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-i2c@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devel@driverdev.osuosl.org, Andrew Lunn <andrew@lunn.ch>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org,
+ =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>,
+ Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Heiner Kallweit <hkallweit1@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 06, 2019 at 08:19:01AM +0000, Eugen.Hristev@microchip.com wrote:
-> 
-> 
-> On 04.05.2019 02:58, Raag Jadav wrote:
-> 
-> > On Thu, May 02, 2019 at 04:01:16PM +0200, Ludovic Desroches wrote:
-> >> On Tue, Apr 30, 2019 at 04:03:32AM +0530, Raag Jadav wrote:
-> >>> External E-Mail
-> >>>
-> >>>
-> >>> On Mon, Apr 29, 2019 at 11:00:05AM +0200, Ludovic Desroches wrote:
-> >>>> Hello Raag,
-> >>>>
-> >>>> On Tue, Apr 23, 2019 at 01:06:48PM +0530, Raag Jadav wrote:
-> >>>>> External E-Mail
-> >>>>>
-> >>>>>
-> >>>>> Performing i2c write operation while SDA or SCL line is held
-> >>>>> or grounded by slave device, we go into infinite at91_twi_write_next_byte
-> >>>>> loop with TXRDY interrupt spam.
-> >>>>
-> >>>> Sorry but I am not sure to have the full picture, the controller is in
-> >>>> slave or master mode?
-> >>>>
-> >>>> SVREAD is only used in slave mode. When SVREAD is set, it means that a read
-> >>>> access is performed and your issue concerns the write operation.
-> >>>>
-> >>>> Regards
-> >>>>
-> >>>> Ludovic
-> >>>
-> >>> Yes, even though the datasheet suggests that SVREAD is irrelevant in master mode,
-> >>> TXRDY and SVREAD are the only ones being set in status register upon reproducing the issue.
-> >>> Couldn't think of a better way to handle such strange behaviour.
-> >>> Any suggestions would be appreciated.
-> >>
-> >> I have the confirmation that you can't rely on the SVREAD flag when in
-> >> master mode. This flag should always have the same value.
-> >>
-> >> I am trying to understand what could lead to your situation. Can you
-> >> give me more details. What kind of device it is? What does lead to this
-> >> situation? Does it happen randomly or not?
-> > 
-> > One of the sama5d2 based board I worked on, was having trouble complete its boot
-> > because of a faulty i2c device, which was randomly holding down the SDA line
-> > on i2c write operation, not allowing the controller to complete its transmission,
-> > causing a massive TXRDY interrupt spam, ultimately hanging the processor.
-> > 
-> > Another strange observation was that SVREAD was being set in the status register
-> > along with TXRDY, every time I reproduced the issue.
-> > You can reproduce it by simply grounding the SDA line and performing i2c write
-> > on the bus.
-> > 
-> > Note that NACK, LOCK or TXCOMP are never set as the transmission never completes.
-> > I'm not sure why slave bits are being set in master mode,
-> > but it's been working reliably for me.
-> > 
-> > This patch doesn't recover the SDA line. It just prevents the processor from
-> > getting hanged in case of i2c bus lockup.
-> 
-> Hello,
-> 
-> I have noticed the same hanging at some points... In my case it is 
-> because of this patch:
-> 
-> commit e8f39e9fc0e0b7bce24922da925af820bacb8ef8
-> Author: David Engraf <david.engraf@sysgo.com>
-> Date:   Thu Apr 26 11:53:14 2018 +0200
-> 
-> 
-> diff --git a/drivers/i2c/busses/i2c-at91.c b/drivers/i2c/busses/i2c-at91.c
-> index bfd1fdf..3f3e8b3 100644
-> --- a/drivers/i2c/busses/i2c-at91.c
-> +++ b/drivers/i2c/busses/i2c-at91.c
-> @@ -518,8 +518,16 @@ static irqreturn_t atmel_twi_interrupt(int irq, 
-> void *dev_id)
->           * the RXRDY interrupt first in order to not keep garbage data 
-> in the
->           * Receive Holding Register for the next transfer.
->           */
-> -       if (irqstatus & AT91_TWI_RXRDY)
-> -               at91_twi_read_next_byte(dev);
-> +       if (irqstatus & AT91_TWI_RXRDY) {
-> +               /*
-> +                * Read all available bytes at once by polling RXRDY 
-> usable w/
-> +                * and w/o FIFO. With FIFO enabled we could also read 
-> RXFL and
-> +                * avoid polling RXRDY.
-> +                */
-> +               do {
-> +                       at91_twi_read_next_byte(dev);
-> +               } while (at91_twi_read(dev, AT91_TWI_SR) & AT91_TWI_RXRDY);
-> +       }
-> 
-> 
-> In my opinion having a do/while with an exit condition relying solely on 
-> a bit read from hardware is unacceptable in IRQ context - kernel can 
-> hang here.
-> A timeout would be a solution...
-> 
-> For me, reverting this patch solves hanging issues.
-> 
-> Hope this helps,
-> 
-> Eugen
-
-Thank you for your input, but my issue concerns i2c write operation.
-I haven't noticed any issue with i2c read yet.
-But given the same scenario, it could be true for RXRDY as well.
-
-Cheers,
-Raag
-
-> 
-> > 
-> > Cheers,
-> > Raag
-> > 
-> >>
-> >> Regards
-> >>
-> >> Ludovic
-> >>
-> >>>
-> >>> Cheers,
-> >>> Raag
-> >>>
-> >>>>
-> >>>>>
-> >>>>> Signed-off-by: Raag Jadav <raagjadav@gmail.com>
-> >>>>> ---
-> >>>>>   drivers/i2c/busses/i2c-at91.c | 6 +++++-
-> >>>>>   1 file changed, 5 insertions(+), 1 deletion(-)
-> >>>>>
-> >>>>> diff --git a/drivers/i2c/busses/i2c-at91.c b/drivers/i2c/busses/i2c-at91.c
-> >>>>> index 3f3e8b3..b2f5fdb 100644
-> >>>>> --- a/drivers/i2c/busses/i2c-at91.c
-> >>>>> +++ b/drivers/i2c/busses/i2c-at91.c
-> >>>>> @@ -72,6 +72,7 @@
-> >>>>>   #define	AT91_TWI_TXCOMP		BIT(0)	/* Transmission Complete */
-> >>>>>   #define	AT91_TWI_RXRDY		BIT(1)	/* Receive Holding Register Ready */
-> >>>>>   #define	AT91_TWI_TXRDY		BIT(2)	/* Transmit Holding Register Ready */
-> >>>>> +#define	AT91_TWI_SVREAD		BIT(3)	/* Slave Read */
-> >>>>>   #define	AT91_TWI_OVRE		BIT(6)	/* Overrun Error */
-> >>>>>   #define	AT91_TWI_UNRE		BIT(7)	/* Underrun Error */
-> >>>>>   #define	AT91_TWI_NACK		BIT(8)	/* Not Acknowledged */
-> >>>>> @@ -571,7 +572,10 @@ static irqreturn_t atmel_twi_interrupt(int irq, void *dev_id)
-> >>>>>   		at91_disable_twi_interrupts(dev);
-> >>>>>   		complete(&dev->cmd_complete);
-> >>>>>   	} else if (irqstatus & AT91_TWI_TXRDY) {
-> >>>>> -		at91_twi_write_next_byte(dev);
-> >>>>> +		if ((status & AT91_TWI_SVREAD) && (dev->buf_len == 0))
-> >>>>> +			at91_twi_write(dev, AT91_TWI_IDR, AT91_TWI_TXRDY);
-> >>>>> +		else
-> >>>>> +			at91_twi_write_next_byte(dev);
-> >>>>>   	}
-> >>>>>   
-> >>>>>   	/* catch error flags */
-> >>>>> -- 
-> >>>>> 2.7.4
-> >>>>>
-> >>>>>
-> >>>
-> >>> _______________________________________________
-> >>> linux-arm-kernel mailing list
-> >>> linux-arm-kernel@lists.infradead.org
-> >>> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> >>>
-> > 
-> > _______________________________________________
-> > linux-arm-kernel mailing list
-> > linux-arm-kernel@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> > 
-> > 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgp0aGlzIHBhdGNoIHNlcmllcyBpcyBhbiBhdHRlbXB0IHRvIGZpeCB0aGUgbWVzcywgSSd2
+ZSBzb21laG93IG1hbmFnZWQgdG8KaW50cm9kdWNlLgoKRmlyc3QgcGF0Y2ggaW4gdGhpcyBzZXJp
+ZXMgaXMgZGVmYWN0byB2NSBvZiB0aGUgcHJldmlvdXMgMDUvMTAgcGF0Y2ggaW4gdGhlCnNlcmll
+cywgYnV0IHNpbmNlIHRoZSB2NCBvZiB0aGlzIDA1LzEwIHBhdGNoIHdhc24ndCBwaWNrZWQgdXAg
+YnkgdGhlCnBhdGNod29yayBmb3Igc29tZSB1bmtub3duIHJlYXNvbiwgdGhpcyBwYXRjaCB3YXNu
+J3QgYXBwbGllZCB3aXRoIHRoZSBvdGhlcgo5IHBhdGNoZXMgaW4gdGhlIHNlcmllcywgc28gSSdt
+IHJlc2VuZGluZyBpdCBhcyBhIHNlcGFyYXRlIHBhdGNoIG9mIHRoaXMKZml4dXAgc2VyaWVzIGFn
+YWluLgoKU2Vjb25kIHBhdGNoIGlzIGEgcmVzdWx0IG9mIHRoaXMgcmViYXNlIGFnYWluc3QgbmV0
+LW5leHQgdHJlZSwgd2hlcmUgSSB3YXMKY2hlY2tpbmcgYWdhaW4gYWxsIGN1cnJlbnQgdXNlcnMg
+b2Ygb2ZfZ2V0X21hY19hZGRyZXNzIGFuZCBmb3VuZCBvdXQsIHRoYXQKdGhlcmUncyBuZXcgb25l
+IGluIERTQSwgc28gSSd2ZSBjb252ZXJ0ZWQgdGhpcyB1c2VyIHRvIHRoZSBuZXcgRVJSX1BUUgpl
+bmNvZGVkIGVycm9yIHZhbHVlIGFzIHdlbGwuCgpUaGlyZCBwYXRjaCB3aGljaCB3YXMgc2VudCBh
+cyB2NSB3YXNuJ3QgY29uc2lkZXJlZCBmb3IgbWVyZ2UsIGJ1dCBJIHN0aWxsCnRoaW5rLCB0aGF0
+IHdlIG5lZWQgdG8gY2hlY2sgZm9yIHBvc3NpYmxlIE5VTEwgdmFsdWUsIHRodXMgY3VycmVudCBJ
+U19FUlIKY2hlY2sgaXNuJ3Qgc3VmZmljaWVudCBhbmQgd2UgbmVlZCB0byB1c2UgSVNfRVJSX09S
+X05VTEwgaW5zdGVhZC4KCkNoZWVycywKClBldHIKClBldHIgxaB0ZXRpYXIgKDMpOgogIG5ldDog
+ZXRoZXJuZXQ6IHN1cHBvcnQgb2ZfZ2V0X21hY19hZGRyZXNzIG5ldyBFUlJfUFRSIGVycm9yCiAg
+bmV0OiBkc2E6IHN1cHBvcnQgb2ZfZ2V0X21hY19hZGRyZXNzIG5ldyBFUlJfUFRSIGVycm9yCiAg
+c3RhZ2luZzogb2N0ZW9uLWV0aGVybmV0OiBGaXggb2ZfZ2V0X21hY19hZGRyZXNzIEVSUl9QVFIg
+Y2hlY2sKCiBkcml2ZXJzL25ldC9ldGhlcm5ldC9hZXJvZmxleC9ncmV0aC5jICAgICAgICAgICAg
+ICAgICB8IDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVybmV0L2FsbHdpbm5lci9zdW40aS1lbWFjLmMg
+ICAgICAgICAgIHwgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvYWx0ZXJhL2FsdGVyYV90c2Vf
+bWFpbi5jICAgICAgICAgfCAyICstCiBkcml2ZXJzL25ldC9ldGhlcm5ldC9hcmMvZW1hY19tYWlu
+LmMgICAgICAgICAgICAgICAgICB8IDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVybmV0L2F1cm9yYS9u
+Yjg4MDAuYyAgICAgICAgICAgICAgICAgIHwgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvYnJv
+YWRjb20vYmNtc3lzcG9ydC5jICAgICAgICAgICAgfCAyICstCiBkcml2ZXJzL25ldC9ldGhlcm5l
+dC9icm9hZGNvbS9iZ21hYy1iY21hLmMgICAgICAgICAgICB8IDIgKy0KIGRyaXZlcnMvbmV0L2V0
+aGVybmV0L2Jyb2FkY29tL2JnbWFjLXBsYXRmb3JtLmMgICAgICAgIHwgMiArLQogZHJpdmVycy9u
+ZXQvZXRoZXJuZXQvYnJvYWRjb20vZ2VuZXQvYmNtZ2VuZXQuYyAgICAgICAgfCAyICstCiBkcml2
+ZXJzL25ldC9ldGhlcm5ldC9jYXZpdW0vb2N0ZW9uL29jdGVvbl9tZ210LmMgICAgICB8IDIgKy0K
+IGRyaXZlcnMvbmV0L2V0aGVybmV0L2Nhdml1bS90aHVuZGVyL3RodW5kZXJfYmd4LmMgICAgIHwg
+MiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvZGF2aWNvbS9kbTkwMDAuYyAgICAgICAgICAgICAg
+ICAgfCAyICstCiBkcml2ZXJzL25ldC9ldGhlcm5ldC9ldGhvYy5jICAgICAgICAgICAgICAgICAg
+ICAgICAgICB8IDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVybmV0L2V6Y2hpcC9ucHNfZW5ldC5jICAg
+ICAgICAgICAgICAgIHwgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvZnJlZXNjYWxlL2ZlY19t
+YWluLmMgICAgICAgICAgICAgfCAyICstCiBkcml2ZXJzL25ldC9ldGhlcm5ldC9mcmVlc2NhbGUv
+ZmVjX21wYzUyeHguYyAgICAgICAgICB8IDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVybmV0L2ZyZWVz
+Y2FsZS9mbWFuL21hYy5jICAgICAgICAgICAgIHwgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQv
+ZnJlZXNjYWxlL2ZzX2VuZXQvZnNfZW5ldC1tYWluLmMgfCAyICstCiBkcml2ZXJzL25ldC9ldGhl
+cm5ldC9mcmVlc2NhbGUvZ2lhbmZhci5jICAgICAgICAgICAgICB8IDIgKy0KIGRyaXZlcnMvbmV0
+L2V0aGVybmV0L2ZyZWVzY2FsZS91Y2NfZ2V0aC5jICAgICAgICAgICAgIHwgMiArLQogZHJpdmVy
+cy9uZXQvZXRoZXJuZXQvaGlzaWxpY29uL2hpc2lfZmVtYWMuYyAgICAgICAgICAgfCAyICstCiBk
+cml2ZXJzL25ldC9ldGhlcm5ldC9oaXNpbGljb24vaGl4NWhkMl9nbWFjLmMgICAgICAgICB8IDIg
+Ky0KIGRyaXZlcnMvbmV0L2V0aGVybmV0L2xhbnRpcV94cngyMDAuYyAgICAgICAgICAgICAgICAg
+IHwgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvbWFydmVsbC9tdjY0M3h4X2V0aC5jICAgICAg
+ICAgICAgfCAyICstCiBkcml2ZXJzL25ldC9ldGhlcm5ldC9tYXJ2ZWxsL212bmV0YS5jICAgICAg
+ICAgICAgICAgICB8IDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVybmV0L21hcnZlbGwvcHhhMTY4X2V0
+aC5jICAgICAgICAgICAgIHwgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvbWFydmVsbC9za3ky
+LmMgICAgICAgICAgICAgICAgICAgfCAyICstCiBkcml2ZXJzL25ldC9ldGhlcm5ldC9tZWRpYXRl
+ay9tdGtfZXRoX3NvYy5jICAgICAgICAgICB8IDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVybmV0L21p
+Y3JlbC9rczg4NTEuYyAgICAgICAgICAgICAgICAgIHwgMiArLQogZHJpdmVycy9uZXQvZXRoZXJu
+ZXQvbWljcmVsL2tzODg1MV9tbGwuYyAgICAgICAgICAgICAgfCAyICstCiBkcml2ZXJzL25ldC9l
+dGhlcm5ldC9ueHAvbHBjX2V0aC5jICAgICAgICAgICAgICAgICAgICB8IDIgKy0KIGRyaXZlcnMv
+bmV0L2V0aGVybmV0L3F1YWxjb21tL3FjYV9zcGkuYyAgICAgICAgICAgICAgIHwgMiArLQogZHJp
+dmVycy9uZXQvZXRoZXJuZXQvcXVhbGNvbW0vcWNhX3VhcnQuYyAgICAgICAgICAgICAgfCAyICst
+CiBkcml2ZXJzL25ldC9ldGhlcm5ldC9yZW5lc2FzL3JhdmJfbWFpbi5jICAgICAgICAgICAgICB8
+IDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVybmV0L3JlbmVzYXMvc2hfZXRoLmMgICAgICAgICAgICAg
+ICAgIHwgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvc2Ftc3VuZy9zeGdiZS9zeGdiZV9wbGF0
+Zm9ybS5jICAgfCAyICstCiBkcml2ZXJzL25ldC9ldGhlcm5ldC9zb2Npb25leHQvc25pX2F2ZS5j
+ICAgICAgICAgICAgICB8IDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVybmV0L3N0bWljcm8vc3RtbWFj
+L3N0bW1hY19tYWluLmMgICAgIHwgMiArLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvdGkvY3Bzdy5j
+ICAgICAgICAgICAgICAgICAgICAgICAgfCAyICstCiBkcml2ZXJzL25ldC9ldGhlcm5ldC90aS9u
+ZXRjcF9jb3JlLmMgICAgICAgICAgICAgICAgICB8IDIgKy0KIGRyaXZlcnMvbmV0L2V0aGVybmV0
+L3dpem5ldC93NTEwMC5jICAgICAgICAgICAgICAgICAgIHwgMiArLQogZHJpdmVycy9uZXQvZXRo
+ZXJuZXQveGlsaW54L2xsX3RlbWFjX21haW4uYyAgICAgICAgICAgfCAyICstCiBkcml2ZXJzL25l
+dC9ldGhlcm5ldC94aWxpbngveGlsaW54X2F4aWVuZXRfbWFpbi5jICAgICB8IDIgKy0KIGRyaXZl
+cnMvbmV0L2V0aGVybmV0L3hpbGlueC94aWxpbnhfZW1hY2xpdGUuYyAgICAgICAgIHwgMiArLQog
+ZHJpdmVycy9zdGFnaW5nL29jdGVvbi9ldGhlcm5ldC5jICAgICAgICAgICAgICAgICAgICAgfCAy
+ICstCiBuZXQvZHNhL3NsYXZlLmMgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICB8IDIgKy0KIG5ldC9ldGhlcm5ldC9ldGguYyAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgIHwgMiArLQogNDcgZmlsZXMgY2hhbmdlZCwgNDcgaW5zZXJ0aW9ucygrKSwgNDcgZGVs
+ZXRpb25zKC0pCgotLSAKMS45LjEKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
+bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
