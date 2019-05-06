@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8548149C3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 14:36:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49929149D7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 14:36:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tPuPPl9UfnM70tERa+e2moEPdpwFL04os06JyRDqlp4=; b=kpXBeCM2Vy1vaY
-	31803bc3EyQqrsqUfcxGe1cba29OPuTVQP20ZsqgfUPKiULx7VIIGkZubOm3oeKDVCkpXnThxETPj
-	zaUeAbDqFIvfB/AyxkRPjbymHEtE33V2YhJa6QlERzStSZmLoCCQpdQ5+AScduPg7v4itfPWTPyfB
-	Bc4gwgQznYRl7Oq6BswYcOcvmgZq18olvNlEKz2AZ2opP51ziYOfyMVHYdBiByF6T9//GNBUH8O9y
-	Bt/T/8G28P9mEZX3Maa11gl3JEVpcCNDLR4kI2fj9IEM5G2HB9LMpo8dgk3WQFHo1RUF6uqIVwaOK
-	RoMbdVOqzJs0z52X4BPw==;
+	List-Owner; bh=H0oKIWBICPt4NCJgsXEwKgWYE8aOoUcTPB+Xnv2KZZw=; b=fEye+L7TZ7D+Ql
+	dyiT6tcRSDoJmMxEUFPZ4YZ4xwZqBbvNGf6eydSnS40fEYHlDpoA+Mj8zHwzq/j8XvsU6F7Bx1cnA
+	XgSXPrFGET1sS3uO3vNAoAtP+nd2xh5G6uPRz9Fy0QyNyPk/nI2IzeRHxxOVQb9l3oMS1okUeRht7
+	D9FOoMlnthLsgonkP3BibPMTAgfPgEhFKz2amxvQYdPGsMjFSgVHCu9aDCSh6/rq2Y6YGfUZo1tUF
+	EIsMVQMnPw267DtBWSKReWYlgLhRicjAdpJrMCA8eucweEmmTcZLwg3qzB1+XlcsxNT9HBIVuiRMJ
+	JAaMgBL08Y1iV6bAivLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNcqi-00089Z-6f; Mon, 06 May 2019 12:36:04 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1hNcrJ-0000SV-S5; Mon, 06 May 2019 12:36:41 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNcpy-0007OO-Li
- for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 12:35:29 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x46CZF0K059214;
- Mon, 6 May 2019 07:35:15 -0500
+ id 1hNcq3-0007W7-L9
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 12:35:43 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x46CZJbg017849;
+ Mon, 6 May 2019 07:35:19 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1557146115;
- bh=J/ztuefVNdaUxVZk/fXN3QlBfazYQfruuHk4r23bWRk=;
+ s=ti-com-17Q1; t=1557146119;
+ bh=k+xYXJk24KElUVNAc9y4GHfBm7/BQojVwXvOY0hlb2M=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=EpGCpl+6cd4Uuq5R/Q2nwvgrnRsdSVn2lPFLAnuLVKEPpMK7kadrN+HygAe80U1MW
- tJLJczcmPSXK41uXdVW4r+WQ8+5vmp2T+vm79Js1WecNEGzOL5k4tYl6VhaqAgtaUB
- m7ua+WFKOra27mS7XSW54tdYx9vjRlxXie7DUezE=
-Received: from DFLE109.ent.ti.com (dfle109.ent.ti.com [10.64.6.30])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x46CZFn4024070
+ b=xK9JGg19rRbmty8mZwA+uvBocr+9M+PlIhum5w3yXmvxojinXIQBx/+8cnvmvhlSm
+ qqMAr+tx7+AZ2BknK1b0Vop0ZvS4Oo5JDwLRnccPAvnsXow7qnetJWjMktk/Nwn4Sg
+ WEBEilerQe5UQtEjTNRXyLFMjlQ19z9tRFQGwUiM=
+Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x46CZJf7035849
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 6 May 2019 07:35:15 -0500
-Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE109.ent.ti.com
- (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ Mon, 6 May 2019 07:35:19 -0500
+Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 6 May
- 2019 07:35:13 -0500
+ 2019 07:35:16 -0500
 Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE104.ent.ti.com
  (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Mon, 6 May 2019 07:35:13 -0500
+ Frontend Transport; Mon, 6 May 2019 07:35:16 -0500
 Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x46CYpUC110286;
- Mon, 6 May 2019 07:35:10 -0500
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x46CYpUD110286;
+ Mon, 6 May 2019 07:35:13 -0500
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
 To: <vkoul@kernel.org>, <robh+dt@kernel.org>, <nm@ti.com>,
  <ssantosh@kernel.org>
-Subject: [PATCH 06/16] dmaengine: Add support for reporting DMA cached data
- amount
-Date: Mon, 6 May 2019 15:34:46 +0300
-Message-ID: <20190506123456.6777-7-peter.ujfalusi@ti.com>
+Subject: [PATCH 07/16] dmaengine: Add function to request slave channel from a
+ dma_device
+Date: Mon, 6 May 2019 15:34:47 +0300
+Message-ID: <20190506123456.6777-8-peter.ujfalusi@ti.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190506123456.6777-1-peter.ujfalusi@ti.com>
 References: <20190506123456.6777-1-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_053519_330966_368E47F2 
-X-CRM114-Status: GOOD (  13.03  )
+X-CRM114-CacheID: sfid-20190506_053524_550443_68A0B803 
+X-CRM114-Status: GOOD (  11.45  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -99,62 +99,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A DMA hardware can have big cache or FIFO and the amount of data sitting in
-the DMA fabric can be an interest for the clients.
-
-For example in audio we want to know the delay in the data flow and in case
-the DMA have significantly large FIFO/cache, it can affect the latenc/delay
+dma_get_any_slave_channel() would skip using the filter function, which
+in some cases needed to be executed before the alloc_chan_resources
+callback to make sure that all parameters are provided for the slave
+channel.
 
 Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 ---
- drivers/dma/dmaengine.h   | 8 ++++++++
- include/linux/dmaengine.h | 2 ++
- 2 files changed, 10 insertions(+)
+ drivers/dma/dmaengine.c   | 7 ++++---
+ include/linux/dmaengine.h | 5 ++++-
+ 2 files changed, 8 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/dma/dmaengine.h b/drivers/dma/dmaengine.h
-index 501c0b063f85..b0b97475707a 100644
---- a/drivers/dma/dmaengine.h
-+++ b/drivers/dma/dmaengine.h
-@@ -77,6 +77,7 @@ static inline enum dma_status dma_cookie_status(struct dma_chan *chan,
- 		state->last = complete;
- 		state->used = used;
- 		state->residue = 0;
-+		state->in_flight_bytes = 0;
- 	}
- 	return dma_async_is_complete(cookie, complete, used);
+diff --git a/drivers/dma/dmaengine.c b/drivers/dma/dmaengine.c
+index 8eed5ff0fc01..7ec93be12088 100644
+--- a/drivers/dma/dmaengine.c
++++ b/drivers/dma/dmaengine.c
+@@ -617,7 +617,8 @@ struct dma_chan *dma_get_slave_channel(struct dma_chan *chan)
  }
-@@ -87,6 +88,13 @@ static inline void dma_set_residue(struct dma_tx_state *state, u32 residue)
- 		state->residue = residue;
- }
+ EXPORT_SYMBOL_GPL(dma_get_slave_channel);
  
-+static inline void dma_set_in_flight_bytes(struct dma_tx_state *state,
-+					   u32 in_flight_bytes)
-+{
-+	if (state)
-+		state->in_flight_bytes = in_flight_bytes;
-+}
-+
- struct dmaengine_desc_callback {
- 	dma_async_tx_callback callback;
- 	dma_async_tx_callback_result callback_result;
-diff --git a/include/linux/dmaengine.h b/include/linux/dmaengine.h
-index 10ff71b13eef..c1486564a314 100644
---- a/include/linux/dmaengine.h
-+++ b/include/linux/dmaengine.h
-@@ -701,11 +701,13 @@ static inline struct dma_async_tx_descriptor *txd_next(struct dma_async_tx_descr
-  * @residue: the remaining number of bytes left to transmit
-  *	on the selected transfer for states DMA_IN_PROGRESS and
-  *	DMA_PAUSED if this is implemented in the driver, else 0
-+ * @in_flight_bytes: amount of data in bytes cached by the DMA.
-  */
- struct dma_tx_state {
- 	dma_cookie_t last;
- 	dma_cookie_t used;
- 	u32 residue;
-+	u32 in_flight_bytes;
- };
+-struct dma_chan *dma_get_any_slave_channel(struct dma_device *device)
++struct dma_chan *dmadev_get_slave_channel(struct dma_device *device,
++					  dma_filter_fn fn, void *fn_param)
+ {
+ 	dma_cap_mask_t mask;
+ 	struct dma_chan *chan;
+@@ -628,13 +629,13 @@ struct dma_chan *dma_get_any_slave_channel(struct dma_device *device)
+ 	/* lock against __dma_request_channel */
+ 	mutex_lock(&dma_list_mutex);
+ 
+-	chan = find_candidate(device, &mask, NULL, NULL);
++	chan = find_candidate(device, &mask, fn, fn_param);
+ 
+ 	mutex_unlock(&dma_list_mutex);
+ 
+ 	return IS_ERR(chan) ? NULL : chan;
+ }
+-EXPORT_SYMBOL_GPL(dma_get_any_slave_channel);
++EXPORT_SYMBOL_GPL(dmadev_get_slave_channel);
  
  /**
+  * __dma_request_channel - try to allocate an exclusive channel
+diff --git a/include/linux/dmaengine.h b/include/linux/dmaengine.h
+index c1486564a314..4774b66f2064 100644
+--- a/include/linux/dmaengine.h
++++ b/include/linux/dmaengine.h
+@@ -1541,7 +1541,10 @@ int dmaenginem_async_device_register(struct dma_device *device);
+ void dma_async_device_unregister(struct dma_device *device);
+ void dma_run_dependencies(struct dma_async_tx_descriptor *tx);
+ struct dma_chan *dma_get_slave_channel(struct dma_chan *chan);
+-struct dma_chan *dma_get_any_slave_channel(struct dma_device *device);
++struct dma_chan *dmadev_get_slave_channel(struct dma_device *device,
++					  dma_filter_fn fn, void *fn_param);
++#define dma_get_any_slave_channel(device) \
++	dmadev_get_slave_channel(device, NULL, NULL)
+ #define dma_request_channel(mask, x, y) __dma_request_channel(&(mask), x, y)
+ #define dma_request_slave_channel_compat(mask, x, y, dev, name) \
+ 	__dma_request_slave_channel_compat(&(mask), x, y, dev, name)
 -- 
 Peter
 
