@@ -2,65 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1455615150
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 18:31:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2592115158
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 18:31:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7w/n2L4pDwz5OK0M29uxFV+lhsFtrQy0qU19fLwu5OM=; b=ubEI5XZLZNIR7W
-	icD8wH63iiPC1vM2q4swh5AZYU7rpa6u1ZcpQMHIgabtcYcPJ7Ekf1+W4HPcasqSx9kt/kEERyy9P
-	TsJZ4raVnUnxMGT06yXNJCngrikkxZkDb3wAhfEEi3JDLloX2nTIWflupatUPa0klsI1b1LG+dmAJ
-	p6ePcimG//NBZDWHaLHdoMXbvLiHdcKAMGwcQDhuORt9HtmiUTgberXvWlvAfMHxsIOLkvipt7lYH
-	fyqs9CxWxnoTosm/+5+cuQW/K2el7UaMUuxLub2diC7IoQDxe8pS5M+szsqMKYFSoStpxzYREPqS1
-	Gg2m67ejfivs70GZVBfw==;
+	List-Owner; bh=PNPVPtfuri11g8lEvdTlY7LOW+ftmOgdR88R1RnlPnU=; b=RdTLNfCfP1EgCp
+	3uS7IYrhN3FgZhy5BhDEhFPMKboxrsdkLxzNR0YVjR3izdHkxLddhk5t69zCmp7OVU+GKkcFVlzCf
+	Kb0Iah2JdjApui5WMt4kxf11F44EPuTDgx79Z3l+qx08Ezwr0tcdZYo0q/IudIrvFiAjOdLto5XLz
+	eFjg8YxEg8G99zFsXkX0Zb6oYw980D+FTPj2IIm623xgFRxdTBW9qCa8iSG57qj9prtyz//FbuoFs
+	cBNtjL0i4dOcQc505edJD3iMAOemNI4OBVoW7S1RX2fqDoNksjdA6/alzVA4fU9iEFm6X0bbZEgjc
+	aDLOyxFRrB66Pd9YLitg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNgWb-0006k9-Or; Mon, 06 May 2019 16:31:33 +0000
-Received: from mail-qt1-x84a.google.com ([2607:f8b0:4864:20::84a])
+	id 1hNgWq-0007CP-JT; Mon, 06 May 2019 16:31:48 +0000
+Received: from mail-ot1-x349.google.com ([2607:f8b0:4864:20::349])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNgWG-0006Wo-Ho
- for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 16:31:13 +0000
-Received: by mail-qt1-x84a.google.com with SMTP id w34so15833480qtc.16
+ id 1hNgWJ-0006Yd-C1
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 16:31:18 +0000
+Received: by mail-ot1-x349.google.com with SMTP id h26so7754250otm.19
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 May 2019 09:31:11 -0700 (PDT)
+ Mon, 06 May 2019 09:31:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=3tB4TRcqPwl6IgCCTq3FyKBtrVczmpENbbiRumQIu5I=;
- b=C5Bzseg2BAkWez5di4p65TqBX8PhS2fPXqJjrcuborrGzdIMmjBkEGS1oepu/kO4gi
- ZrAiwZ1YbirX9TOQW6iDBsdtMTgTZyQlBla9C/k5+v0DS9Eu7yTQTxvIZJRaIMRpa57h
- rZkszsH1RsVjkBjXJm8Nw6zDYrexUGyc9BNsDlgeAocqmj+aaO1LdZJjYgfxEDSFYcJj
- gjdVUEcQ+veFKjzDustw9+BWdSodbg3cE0gzjdewRwKOf7czWg4u+rE0852iiQixBdas
- JIw3pQAvoPC6IfNeEfBV09Q69TtafbxIB+dc/sgJQwlLGyiy5Ze3tqDZ/eiYCNwSry9q
- rXvw==
+ :cc; bh=/Xcm/dv07E6tB6Fg+Bd1uLrNx0q2WagwUZqys5y8XCQ=;
+ b=rAOt6QkMD/QKlKVog82fKw84EsQnaASzO/nI8W5EIDbrmmjV3gr6+15mZ10SMb6Rf5
+ i/ZniLNvWV//CPRfADxSnSKtN/6Gg017m4Gik6Cenllh7RN6CfI/AKj72maW2yKQfmpN
+ GrE1GcO1EKZaX0U+I3FWYiw4misL8V2knxuMTZnhd7+ifYq/drNNa4087ayYcqsu4RzV
+ YnDg0sSjmZfX/PgQJ/vdVYIZT3u95MTKmAQy8Dfp2UhL6OXfBsqkSnVsPRCgY0ZcNTeM
+ d3f8I7eWT+VKLfqWWZufhZUUDge/eC39ycIbKQ1fqVyQEg05Z5H0MBzHuW0wC/j81BOZ
+ a7SA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=3tB4TRcqPwl6IgCCTq3FyKBtrVczmpENbbiRumQIu5I=;
- b=Rv16unMjL8X7YMw5QYJPAM1sW1TQOwxgAy0T20Fnmc2+TLZsQ6kvj6gHmr42tFLQsh
- +1KPSOd+wHDoaavwx6ynaNiK+jvF/6H5RsZdcfAeSN9/6AIaica6LfHJ9b/f1cALgIvL
- 8FHOQb2icu5iCKFOvuKduQhRC2vk4rjiONAu/e6cBDY9s1BCTLs9k7BfG9GyylUV6soj
- kXsGMLkbRiGuVQzY4KAITXXZnqNWvGhX2Zeoekj4dlMaqd0IjSZCfBslWf/PCj+bqLms
- yktQLgZ0CixLeY6Cv8abFM3yZWTT5wAlNkUND1v4N30FhK5nTD07UpBv33xLq1CoZF6C
- 2TdA==
-X-Gm-Message-State: APjAAAWzfin9ypNuxUjGnliU4tWR7qsuNp9promHBUBMozBpYiRS9aQr
- zWOzS5VIPCDSqtUHKHkN6nHuXTjs6i11rS4HuuPYfbBN00w1D6DIIs6G2Alwrp5jVe29iN+5HBM
- 0S0jaGkUuNlpdU2e2ttMmJTqemwYeKVSpaw5QEEUDSTVrDswwJX0mD42SJXNGt7agAKveWd37/k
- LKysPRXisMnDKrl2s=
-X-Google-Smtp-Source: APXvYqwDoIRoTGaFyeue7qd81SpE5xeykRQrED4HzbPSjcVVRn6t+xvIGHOhvH8ghp1kYB1swN7rJoVGjZYp31y2
-X-Received: by 2002:ac8:3390:: with SMTP id c16mr6277321qtb.315.1557160270425; 
- Mon, 06 May 2019 09:31:10 -0700 (PDT)
-Date: Mon,  6 May 2019 18:30:47 +0200
+ bh=/Xcm/dv07E6tB6Fg+Bd1uLrNx0q2WagwUZqys5y8XCQ=;
+ b=IJeYNn+lTuS9+5CK26LYNWT47Xzp3yAcKn0FwrJGf69xGUNtfGadUTYKWXTuW2BG3J
+ vrLk0reWQMNxJDtEOsc738X9iw84ngee7Zhg1Cdi0+TfcCXksBG6U8hdiOV6KwFid1Ty
+ psWObHINZilO22kewK5lOi/+Aok241T6uXtdCsZLetvvd3/8FQhwxKgNmdBvrlyevN06
+ 43IFZ/6c7VaIdTxUGPGzm3Yddiee2AodZw0+HcULHtj7GIPh6GQxbbdbSjsIR8fqeyYZ
+ g2rONJxU/MkG25Db3fQCNxNkonlHaW7rXAGw1mR9EDllTlAiS/xd9MyaHjyoHMyNDtgz
+ tzew==
+X-Gm-Message-State: APjAAAVlbhVoYcHbc99uCMpX90i5DpjZMhyiDjPacFiw2HjfL0fa3RGM
+ pn0GKaSVOFUs6HEYtFwZ9c3bZ7HUWH+OR08X7WBZVpLcsOstWTeHUzh+CaVpMy9wwVgwRw9zVCF
+ f6rB4aaa1j9UhRg5cyMqLHTlZKeZ9l+KrUKtnYO0snISONVP9Jv9YRFJqMO6rnHfHjGQgpBvcOF
+ KzfKuj1eLb5WkF1bw=
+X-Google-Smtp-Source: APXvYqwsU29/a5rUuddp5tcfbPS3CQhzs1NWwE9FVJC7oUUpeYui7bu7Qsrr1jpZGFt27bCra6fHy1EBLcG5J9Rk
+X-Received: by 2002:a9d:4917:: with SMTP id e23mr17423724otf.63.1557160273461; 
+ Mon, 06 May 2019 09:31:13 -0700 (PDT)
+Date: Mon,  6 May 2019 18:30:48 +0200
 In-Reply-To: <cover.1557160186.git.andreyknvl@google.com>
-Message-Id: <67ae3bd92e590d42af22ef2de0ad37b730a13837.1557160186.git.andreyknvl@google.com>
+Message-Id: <02e1242715cc1bf23a139e5e8152fb4feaa4b41d.1557160186.git.andreyknvl@google.com>
 Mime-Version: 1.0
 References: <cover.1557160186.git.andreyknvl@google.com>
 X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
-Subject: [PATCH v15 01/17] uaccess: add untagged_addr definition for other
- arches
+Subject: [PATCH v15 02/17] arm64: untag user pointers in access_ok and
+ __uaccess_mask_ptr
 From: Andrey Konovalov <andreyknvl@google.com>
 To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org, 
  linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org, 
@@ -68,15 +68,15 @@ To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
  linux-media@vger.kernel.org, kvm@vger.kernel.org, 
  linux-kselftest@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_093112_590043_FFDA52BE 
-X-CRM114-Status: GOOD (  10.49  )
+X-CRM114-CacheID: sfid-20190506_093115_695322_12D6BC2A 
+X-CRM114-Status: GOOD (  14.01  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:84a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:349 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
@@ -124,34 +124,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-To allow arm64 syscalls to accept tagged pointers from userspace, we must
-untag them when they are passed to the kernel. Since untagging is done in
-generic parts of the kernel, the untagged_addr macro needs to be defined
-for all architectures.
+This patch is a part of a series that extends arm64 kernel ABI to allow to
+pass tagged user pointers (with the top byte set to something else other
+than 0x00) as syscall arguments.
 
-Define it as a noop for architectures other than arm64.
+copy_from_user (and a few other similar functions) are used to copy data
+from user memory into the kernel memory or vice versa. Since a user can
+provided a tagged pointer to one of the syscalls that use copy_from_user,
+we need to correctly handle such pointers.
 
-Acked-by: Catalin Marinas <catalin.marinas@arm.com>
+Do this by untagging user pointers in access_ok and in __uaccess_mask_ptr,
+before performing access validity checks.
+
+Note, that this patch only temporarily untags the pointers to perform the
+checks, but then passes them as is into the kernel internals.
+
+Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
 ---
- include/linux/mm.h | 4 ++++
- 1 file changed, 4 insertions(+)
+ arch/arm64/include/asm/uaccess.h | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
 
-diff --git a/include/linux/mm.h b/include/linux/mm.h
-index 6b10c21630f5..44041df804a6 100644
---- a/include/linux/mm.h
-+++ b/include/linux/mm.h
-@@ -99,6 +99,10 @@ extern int mmap_rnd_compat_bits __read_mostly;
- #include <asm/pgtable.h>
- #include <asm/processor.h>
+diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
+index e5d5f31c6d36..9164ecb5feca 100644
+--- a/arch/arm64/include/asm/uaccess.h
++++ b/arch/arm64/include/asm/uaccess.h
+@@ -94,7 +94,7 @@ static inline unsigned long __range_ok(const void __user *addr, unsigned long si
+ 	return ret;
+ }
  
-+#ifndef untagged_addr
-+#define untagged_addr(addr) (addr)
-+#endif
-+
- #ifndef __pa_symbol
- #define __pa_symbol(x)  __pa(RELOC_HIDE((unsigned long)(x), 0))
- #endif
+-#define access_ok(addr, size)	__range_ok(addr, size)
++#define access_ok(addr, size)	__range_ok(untagged_addr(addr), size)
+ #define user_addr_max			get_fs
+ 
+ #define _ASM_EXTABLE(from, to)						\
+@@ -226,7 +226,8 @@ static inline void uaccess_enable_not_uao(void)
+ 
+ /*
+  * Sanitise a uaccess pointer such that it becomes NULL if above the
+- * current addr_limit.
++ * current addr_limit. In case the pointer is tagged (has the top byte set),
++ * untag the pointer before checking.
+  */
+ #define uaccess_mask_ptr(ptr) (__typeof__(ptr))__uaccess_mask_ptr(ptr)
+ static inline void __user *__uaccess_mask_ptr(const void __user *ptr)
+@@ -234,10 +235,11 @@ static inline void __user *__uaccess_mask_ptr(const void __user *ptr)
+ 	void __user *safe_ptr;
+ 
+ 	asm volatile(
+-	"	bics	xzr, %1, %2\n"
++	"	bics	xzr, %3, %2\n"
+ 	"	csel	%0, %1, xzr, eq\n"
+ 	: "=&r" (safe_ptr)
+-	: "r" (ptr), "r" (current_thread_info()->addr_limit)
++	: "r" (ptr), "r" (current_thread_info()->addr_limit),
++	  "r" (untagged_addr(ptr))
+ 	: "cc");
+ 
+ 	csdb();
 -- 
 2.21.0.1020.gf2820cf01a-goog
 
