@@ -2,65 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41E5515173
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 18:32:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E12D15183
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 18:32:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C47GerswqtYi4Fg+uPv/E4k2dbyxM/ED1Sgian7l6D4=; b=Hz/11rPTHqV1uH
-	0xyU/sORkKMQYmlRKFbSwMias0go6+PYGx6+EUblz60HY0Ps6lap4a3W3tWsDi2GQdhragzocPGQo
-	PDfJRWM82mpH3zv56UOcTpvDR+dk1StRWj3zAwF3eGOCcQNAFBZcoLk8QPWXyJIqrOWyI+EIDCKHF
-	B8/UzVrLWkZh2psrZkANagkS1HmuhDeDwfrXtIomIv9y+fHUezeIJFODgMlno7yLaVNFq6N+bESSK
-	as46dhrBf+SqlJb3uL3Qe/U7m11ISM6rcu3R4JRQ1PUa6QdeyEUHI/PNzQ1ndOYf8/N0hyAbP5MFx
-	XEjTiX3PAgsGE/mATrzQ==;
+	List-Owner; bh=EtNuht5RIEWgru+IaM6mRwRZFVueG3QZ3wwemq9P7rw=; b=uPp4kaTytwtEEN
+	XoMbj8yIKD2kahVPThNP9xf2q5O1+DQRmCNGzzTfcvuT4hVdVmt9jdMyI7nNfKjaB57efg9EW1zKl
+	xDkkpKZlbomvQfNQH3tpS97P29GfWUOmpxVf28z+5K1fvMSEQjtoxUEKHlUIy06IlRerMpCMm6vwu
+	1AEHJj7ZQuqEIPujnZ4bKYG55HgRcZrarjzz5d/eqktsLkgMeaotrVszSViFLAOMvCSLKYW7yXMi8
+	VYKWUhvomnmMVeDwlMpzZ7WTHN+Md3lNTZJWbDcFd7Y6ipnMVDayGlMqOutfmmo5f7cJY5WsaS719
+	UZj2FE8RiNU9/dV7e2wQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNgXd-00087c-JP; Mon, 06 May 2019 16:32:37 +0000
-Received: from mail-vk1-xa4a.google.com ([2607:f8b0:4864:20::a4a])
+	id 1hNgXq-0008O7-Lj; Mon, 06 May 2019 16:32:50 +0000
+Received: from mail-vs1-xe49.google.com ([2607:f8b0:4864:20::e49])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNgWS-0006mM-S9
- for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 16:31:42 +0000
-Received: by mail-vk1-xa4a.google.com with SMTP id p137so838997vke.3
+ id 1hNgWV-0006ra-UT
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 16:31:43 +0000
+Received: by mail-vs1-xe49.google.com with SMTP id b26so2725443vsl.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 May 2019 09:31:23 -0700 (PDT)
+ Mon, 06 May 2019 09:31:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=5/U30IDTpMzOZZUHty5OaCehkawNQwuaMdmb1lxJ4Z0=;
- b=YtLNTr71LQtDtm4+fIzPRqVEmsig4jIZm+5Xq1i7HEuxqe92Fba7UIz0P7LGc/lCae
- dXG34rcNIps8e/OHQ3Qzc2dw8Q2cw02t5CRXFsyAuFyvOSJWHO7z9kGM+zFce82aoyA3
- qtrPznLya17o1jSMBsriB2NxUvL6TNepNcLFNmzdS0xujMY5BYhLZIcZKNLcHkkh0W1L
- /UJ5RkfdxqJMDgKHhR9weZLpKLMZYLR2mkyZcMWZXKn0tWKezIF4luzZUNs3aAJ9eSxT
- OA5Tz3eW90ZO6gwE2fYYKkT2xZxlwtZaQj4M4Oni1/3Ul1zlOiWvHRCQ7SYhl4fTWfl6
- H0KQ==
+ :cc; bh=ngD1QIqwofb3Y9K5MW1PYIryx3q7PiTEQfc6RhUnaA4=;
+ b=MxkQGAhZKcdMVO3IoBudATPab8TcsjZXX55HRiAN6IeYJiwC1j+iSqld+LLo8qyTyU
+ J83cHqvwCOHlnCBK8LZqFG9H1aqF9NgW/OCa1+Ffyx8ZPU7n9taYd+4siYtOtJGSGqfL
+ 2bs1HGMZCs+84KfkjQ03uml4i8KyBdYF3wjbHGyt6HNd/mpMm+1Qp1No+KcUfeHVzCH2
+ 4161opexQWrAtxUlTCrivmQSMNxZ99d5aHCBZ5OmsHW7nAo6evlOzv9F19PFlipvMxI4
+ C4R/T1FLs15dBoQSeJwhzGqmh+Swz0oYJVhSbKReuunpnwRMPL8ZC0ZS5QHAp3xWLkRd
+ Hr1w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=5/U30IDTpMzOZZUHty5OaCehkawNQwuaMdmb1lxJ4Z0=;
- b=ELrpp/N4NbiXfsx3X/XeVY/1tCUk5800RgleC8l0MA4u6RnviU3lNNBlf9+7ZbgCUz
- XQVF1aNvAT82AoaPBjWJBhqGP8TGrMJ2Wyw2d8s34SSzcqNmjMUtPaiD4S4uvUqMNcPa
- neW8n+zMK7lf0EpeDTMEMO0UY8J15t5BRZV+caYcWIeD5TAPVNLHj0TY1lDAIhADy0s2
- AXlB8PFmHS1E8zWHzmrAy5jUzKimbpWeaqDlIqthN4eaZGCw9lYcFh2k9ou0PrPYz0AV
- z8lFf8DBw91j6mt1v+ReXM4tA1S10xG5SL4VA78jbM1r2VFy+n45zLoH0HeiAch4w9QN
- /7hQ==
-X-Gm-Message-State: APjAAAVIQjSerJo7j17UDMAaKEFbkaz4OCsAgjYcZPzWRi5NK0Um9Nsa
- fHsIe3hVvocJdjXGBXHLmMI5MnLYGJm2wvbSxNe4+3tsnJ055lJlc0S7UKE3xUoDY6ORbA4QZgO
- v7axv/NMl+l+MSMv0AX7hQBTcIK1W31BaFntEnOMutQ9Bsc7RqbJwRi+P/DHkLk7bU3jX5VvZCC
- dX3UtRuCf9ta6wZ/c=
-X-Google-Smtp-Source: APXvYqzPcSLCkM7yKRgWAgtLPPmtlxC3d1i0NZJgfFSPt5rWBLpStTcU2VVry9J5XQbhU5Djgso0ZhxSZBobo+In
-X-Received: by 2002:a67:ed0b:: with SMTP id l11mr13351119vsp.55.1557160282543; 
- Mon, 06 May 2019 09:31:22 -0700 (PDT)
-Date: Mon,  6 May 2019 18:30:51 +0200
+ bh=ngD1QIqwofb3Y9K5MW1PYIryx3q7PiTEQfc6RhUnaA4=;
+ b=s1WL9EqOk7gCqtm6LIL4oakDgyKY/GaUepC741vpEa9wJvjlQOLV9kr0LtDa3H7YZN
+ 3CFHFxfOnNo/8TPCR6HCHe8VCrgnlm/lyyvMmxYUM3qZqPWBvMAsezJX6yNBt+4eAMwg
+ 0VrcdZi9LBg2KN8yQoICmNW4An65eQYzox9i625kD/DRiHM0CL9XXW4YoxTG2c8hvQpF
+ QtfAfgXpdKPaeg0jvb9PotliQR+LEmwYYAEweRwWGJ4ezz1vfFeW7EQsGyZQ7Le4yTJp
+ l5cXR4C9U2Vibt6cb/5x5vhbtELxMOJAeJO79LsRZRqDWXcPIRv7Q9bZj/y6+1plpgZJ
+ cfXg==
+X-Gm-Message-State: APjAAAX8qA2YtwJdOFCbf1qwu3ExmHId4Fm5pCAl/LwsLjv7RM0T3+c3
+ 6jH8aCgr+rv0P5gk56bgUHs8D0woI/mHHTqHDACmAjR5OyW0361US0EBmQCW/tEQO1iwLe/XUCv
+ ZjRNE5xfJ+75poM05w/1TkP0UKvzZpxxwj/ELhP8px2V2O9ZICkBmKzKochbJuJdrAz4mELvesr
+ poH2rDE7dL4fbFzx8=
+X-Google-Smtp-Source: APXvYqwpCSWnm5qxXyuaWGAqRu95+6gB9zDmbHbxq+0Vb45FEs/ziN6+T3PbyTnxcvdIphfk21MnSe6Qp4R1y+WG
+X-Received: by 2002:a1f:b45:: with SMTP id 66mr13881567vkl.38.1557160285529;
+ Mon, 06 May 2019 09:31:25 -0700 (PDT)
+Date: Mon,  6 May 2019 18:30:52 +0200
 In-Reply-To: <cover.1557160186.git.andreyknvl@google.com>
-Message-Id: <00eb4c63fefc054e2c8d626e8fedfca11d7c2600.1557160186.git.andreyknvl@google.com>
+Message-Id: <474b3c113edae1f2fa679dc7237ec070ff4efb70.1557160186.git.andreyknvl@google.com>
 Mime-Version: 1.0
 References: <cover.1557160186.git.andreyknvl@google.com>
 X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
-Subject: [PATCH v15 05/17] arms64: untag user pointers passed to memory
- syscalls
+Subject: [PATCH v15 06/17] mm: untag user pointers in do_pages_move
 From: Andrey Konovalov <andreyknvl@google.com>
 To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org, 
  linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org, 
@@ -68,15 +67,15 @@ To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
  linux-media@vger.kernel.org, kvm@vger.kernel.org, 
  linux-kselftest@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_093125_800004_4A2C20DE 
-X-CRM114-Status: GOOD (  12.41  )
+X-CRM114-CacheID: sfid-20190506_093128_646464_F237B876 
+X-CRM114-Status: GOOD (  12.38  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a4a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e49 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
@@ -128,172 +127,27 @@ This patch is a part of a series that extends arm64 kernel ABI to allow to
 pass tagged user pointers (with the top byte set to something else other
 than 0x00) as syscall arguments.
 
-This patch allows tagged pointers to be passed to the following memory
-syscalls: brk, get_mempolicy, madvise, mbind, mincore, mlock, mlock2,
-mmap, mmap_pgoff, mprotect, mremap, msync, munlock, munmap,
-remap_file_pages, shmat and shmdt.
+do_pages_move() is used in the implementation of the move_pages syscall.
 
-This is done by untagging pointers passed to these syscalls in the
-prologues of their handlers.
+Untag user pointers in this function.
 
 Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
 ---
- arch/arm64/kernel/sys.c | 128 +++++++++++++++++++++++++++++++++++++++-
- 1 file changed, 127 insertions(+), 1 deletion(-)
+ mm/migrate.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/kernel/sys.c b/arch/arm64/kernel/sys.c
-index b44065fb1616..933bb9f3d6ec 100644
---- a/arch/arm64/kernel/sys.c
-+++ b/arch/arm64/kernel/sys.c
-@@ -35,10 +35,33 @@ SYSCALL_DEFINE6(mmap, unsigned long, addr, unsigned long, len,
- {
- 	if (offset_in_page(off) != 0)
- 		return -EINVAL;
--
-+	addr = untagged_addr(addr);
- 	return ksys_mmap_pgoff(addr, len, prot, flags, fd, off >> PAGE_SHIFT);
- }
+diff --git a/mm/migrate.c b/mm/migrate.c
+index 663a5449367a..c014a07135f0 100644
+--- a/mm/migrate.c
++++ b/mm/migrate.c
+@@ -1617,6 +1617,7 @@ static int do_pages_move(struct mm_struct *mm, nodemask_t task_nodes,
+ 		if (get_user(node, nodes + i))
+ 			goto out_flush;
+ 		addr = (unsigned long)p;
++		addr = untagged_addr(addr);
  
-+SYSCALL_DEFINE6(arm64_mmap_pgoff, unsigned long, addr, unsigned long, len,
-+		unsigned long, prot, unsigned long, flags,
-+		unsigned long, fd, unsigned long, pgoff)
-+{
-+	addr = untagged_addr(addr);
-+	return ksys_mmap_pgoff(addr, len, prot, flags, fd, pgoff);
-+}
-+
-+SYSCALL_DEFINE5(arm64_mremap, unsigned long, addr, unsigned long, old_len,
-+		unsigned long, new_len, unsigned long, flags,
-+		unsigned long, new_addr)
-+{
-+	addr = untagged_addr(addr);
-+	new_addr = untagged_addr(new_addr);
-+	return ksys_mremap(addr, old_len, new_len, flags, new_addr);
-+}
-+
-+SYSCALL_DEFINE2(arm64_munmap, unsigned long, addr, size_t, len)
-+{
-+	addr = untagged_addr(addr);
-+	return ksys_munmap(addr, len);
-+}
-+
- SYSCALL_DEFINE1(arm64_personality, unsigned int, personality)
- {
- 	if (personality(personality) == PER_LINUX32 &&
-@@ -47,10 +70,113 @@ SYSCALL_DEFINE1(arm64_personality, unsigned int, personality)
- 	return ksys_personality(personality);
- }
- 
-+SYSCALL_DEFINE1(arm64_brk, unsigned long, brk)
-+{
-+	brk = untagged_addr(brk);
-+	return ksys_brk(brk);
-+}
-+
-+SYSCALL_DEFINE5(arm64_get_mempolicy, int __user *, policy,
-+		unsigned long __user *, nmask, unsigned long, maxnode,
-+		unsigned long, addr, unsigned long, flags)
-+{
-+	addr = untagged_addr(addr);
-+	return ksys_get_mempolicy(policy, nmask, maxnode, addr, flags);
-+}
-+
-+SYSCALL_DEFINE3(arm64_madvise, unsigned long, start,
-+		size_t, len_in, int, behavior)
-+{
-+	start = untagged_addr(start);
-+	return ksys_madvise(start, len_in, behavior);
-+}
-+
-+SYSCALL_DEFINE6(arm64_mbind, unsigned long, start, unsigned long, len,
-+		unsigned long, mode, const unsigned long __user *, nmask,
-+		unsigned long, maxnode, unsigned int, flags)
-+{
-+	start = untagged_addr(start);
-+	return ksys_mbind(start, len, mode, nmask, maxnode, flags);
-+}
-+
-+SYSCALL_DEFINE2(arm64_mlock, unsigned long, start, size_t, len)
-+{
-+	start = untagged_addr(start);
-+	return ksys_mlock(start, len, VM_LOCKED);
-+}
-+
-+SYSCALL_DEFINE2(arm64_mlock2, unsigned long, start, size_t, len)
-+{
-+	start = untagged_addr(start);
-+	return ksys_mlock(start, len, VM_LOCKED);
-+}
-+
-+SYSCALL_DEFINE2(arm64_munlock, unsigned long, start, size_t, len)
-+{
-+	start = untagged_addr(start);
-+	return ksys_munlock(start, len);
-+}
-+
-+SYSCALL_DEFINE3(arm64_mprotect, unsigned long, start, size_t, len,
-+		unsigned long, prot)
-+{
-+	start = untagged_addr(start);
-+	return ksys_mprotect_pkey(start, len, prot, -1);
-+}
-+
-+SYSCALL_DEFINE3(arm64_msync, unsigned long, start, size_t, len, int, flags)
-+{
-+	start = untagged_addr(start);
-+	return ksys_msync(start, len, flags);
-+}
-+
-+SYSCALL_DEFINE3(arm64_mincore, unsigned long, start, size_t, len,
-+		unsigned char __user *, vec)
-+{
-+	start = untagged_addr(start);
-+	return ksys_mincore(start, len, vec);
-+}
-+
-+SYSCALL_DEFINE5(arm64_remap_file_pages, unsigned long, start,
-+		unsigned long, size, unsigned long, prot,
-+		unsigned long, pgoff, unsigned long, flags)
-+{
-+	start = untagged_addr(start);
-+	return ksys_remap_file_pages(start, size, prot, pgoff, flags);
-+}
-+
-+SYSCALL_DEFINE3(arm64_shmat, int, shmid, char __user *, shmaddr, int, shmflg)
-+{
-+	shmaddr = untagged_addr(shmaddr);
-+	return ksys_shmat(shmid, shmaddr, shmflg);
-+}
-+
-+SYSCALL_DEFINE1(arm64_shmdt, char __user *, shmaddr)
-+{
-+	shmaddr = untagged_addr(shmaddr);
-+	return ksys_shmdt(shmaddr);
-+}
-+
- /*
-  * Wrappers to pass the pt_regs argument.
-  */
- #define sys_personality		sys_arm64_personality
-+#define sys_mmap_pgoff		sys_arm64_mmap_pgoff
-+#define sys_mremap		sys_arm64_mremap
-+#define sys_munmap		sys_arm64_munmap
-+#define sys_brk			sys_arm64_brk
-+#define sys_get_mempolicy	sys_arm64_get_mempolicy
-+#define sys_madvise		sys_arm64_madvise
-+#define sys_mbind		sys_arm64_mbind
-+#define sys_mlock		sys_arm64_mlock
-+#define sys_mlock2		sys_arm64_mlock2
-+#define sys_munlock		sys_arm64_munlock
-+#define sys_mprotect		sys_arm64_mprotect
-+#define sys_msync		sys_arm64_msync
-+#define sys_mincore		sys_arm64_mincore
-+#define sys_remap_file_pages	sys_arm64_remap_file_pages
-+#define sys_shmat		sys_arm64_shmat
-+#define sys_shmdt		sys_arm64_shmdt
- 
- asmlinkage long sys_ni_syscall(const struct pt_regs *);
- #define __arm64_sys_ni_syscall	sys_ni_syscall
+ 		err = -ENODEV;
+ 		if (node < 0 || node >= MAX_NUMNODES)
 -- 
 2.21.0.1020.gf2820cf01a-goog
 
