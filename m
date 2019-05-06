@@ -2,74 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5AEF81447F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 08:37:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9ADD414491
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 08:48:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DYT7O5V7WaaSXDcJUUw0QnMPljlsqf+p1MwfU7U/4Bg=; b=i5kqvm2X+UzU6s
-	/rJqB+BiWylSUsZ2hwEOUv+gULoQwimpMQQ00NGWHXpmoUB+ulx5EHEUho3QYcS9UJFwZrejabbi0
-	8gX8j0VEmBbj4GESxGDnSIpWQXbBmd+fB1aKHTEK+r78mAh0gvCSGLHffNm4o7grApV7Bl4w6/eto
-	1kvpLhniMCKVDWYBXBanYw4wh1mvXWGnL6+BfyyNk+Wy4DOhLaFz6OXPGupmQIiGOjmyhfaf5i4VE
-	fqkVMVcla5rqNOajlq+b+L7OJDXuUEIHavAKql3wMuB2Hc8iRIYtW79KcQORAhmInD6M4QCuoVAZv
-	moob6o3rKKv/JoPLYKMQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3YYja4gOoBLKCFo3o2kMx81xGrcOpuokKoFhqt2srJQ=; b=bAAvYNoo0HBCBK
+	DPspA1ruTqMFC/GWz6v0w4kxsP1mU38Uc0K7+t7z5sStI7GxwcqRSvrmi5N1T9c0F+w3YVtzhXmBE
+	nOXa2P/fC19Xk3y4AQiWV/7hiEGRn0mHgrXabRhcV6m1fdiUutC4hAFI3CR/6nzT7T5e+n3OOjmr4
+	x+y395b+BJ7Ox9Xt0n2lINdugepjnhhUZQb1vNMnbeQBIHB84NpdB9eHqFYxt1DKfqfsadhTsMe8S
+	k1nLFznSYLNL1jqfdbZoXRMfRpFT6IoXAGLxPHQ9tjQBQjYacDGfXGanz4uW0XY/T3Wz/+IsItq4+
+	xR6kXDfpkXqPzMMJrYog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNXFS-0008LW-7U; Mon, 06 May 2019 06:37:14 +0000
-Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
+	id 1hNXQI-0002wk-2S; Mon, 06 May 2019 06:48:26 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNXFJ-0008Iz-UA
- for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 06:37:07 +0000
-Received: by mail-oi1-x242.google.com with SMTP id w197so8763741oia.2
+ id 1hNXQB-0002w7-Kk
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 06:48:21 +0000
+Received: by mail-lj1-x244.google.com with SMTP id q10so10070722ljc.6
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 05 May 2019 23:37:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=AsWrneXTR0dVmh3/0SghuMR1v5mpMf18phXdK8FnXQk=;
- b=frf8920IMdLHYA/tNXNdbO5znbdlL6YbO1Vla6P0uim8zVqGlJzdIdUoD9WDeJS6R8
- /s2Rt9jsQT/VZreSzLBh/1i1eBSmy3l3eHLvsSbEvK4Lgh1idRMTIPi0Z0JPe0rH4ybS
- s5pg63tEF90wA1Dlko0cr/SnnAAMkGfWeP1OOqGYkrles+0m21rVkBrpgS/tmXcJ5e9W
- XU7Dr5OGCdaMBI2txRDcgyJMb1dHaJiqoA32A0XpwSC5HhrYet6oFf5W4dHDv/jus9cM
- 7e9xPoBFDurVIDAXFUmnJWqlfxY28c5ML7kuJ7sANzrCi4znsOpJZHVEpgmvLIfgHo4K
- QOvg==
+ Sun, 05 May 2019 23:48:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=rasmusvillemoes.dk; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=C2U/Y3HrsZsGwgSrYLbL41jSdN4fVhl+NLwRQdY4iqY=;
+ b=D8snUQHAfdzQm9GkWQI34dkVAxrAJuZkmWsqO5irUHT1hWyV2hkSyYSsSclecD9gti
+ eZwTtFWJLX5djPnJJpwa1CrKEH1nOO0tvUGWucaebAmsJGSDQJQdRdXKpwRfY3sKAUYf
+ 4wqO50fRoeyvl+KoXsP2lu7dYVZcoUzjU59UA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=AsWrneXTR0dVmh3/0SghuMR1v5mpMf18phXdK8FnXQk=;
- b=TlaIhsdTsQj/6azZ5vDI9Pvy6aFy45pl5P2+emYZJSa7GDqYQCkrFY1gUyLS3rhKTS
- MPj44tQYTNJ+0bqBLXkSk6VS85L1kuu2fo3koHS0lEWzQ91GV1EqCdzkbvQWZnEMi4cf
- n6lKo2WJhngl+k+PpPwJQPn8VtmvVn42en7K3u9Cih8ojqX2es8YLVIyS6TWmYzq/xhs
- sHjk8CfK9GBDCX/mZ+j2TVFCVgEzxGzoIJhZ5zVEFuVAJRBaGX7B/aVeOGVBZnW+HA43
- rZWpaxRzseLwPhzZzwjs6U35hoXwW5cSwvdyruNpLClKheuCDijzYekRO3cD3EEgyEBz
- Cm8Q==
-X-Gm-Message-State: APjAAAUKIzr2bBLY/rDB2J8V12ZFaRJileHPyZImXxxNOy73WCcbkXGH
- 9rqmWzsuogxksvf6idzIyKm76e2hZXrxzj82wgaftA==
-X-Google-Smtp-Source: APXvYqwfACU3oJMu1A/L3M8/Z8X5tpHYCsDugmBY2FX4wctU4dLdhD5XkYMiUU6ywBQrmX0xNHQIVr4RhVDekURBAXk=
-X-Received: by 2002:aca:ba0b:: with SMTP id k11mr171531oif.57.1557124620939;
- Sun, 05 May 2019 23:37:00 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=C2U/Y3HrsZsGwgSrYLbL41jSdN4fVhl+NLwRQdY4iqY=;
+ b=buyJFgGXImcgmT0EmxAL4qX+u3ZOdaLifaQ1FvI9H1daJbXFatH+lk3bGzY+jfUx4K
+ 1SEQ3hMnbIE8BdzOZmWrEbzyRg3kfbg7pB875k1GbeIm3QMx8+t9A8dIL/bhK3sEds/T
+ ZpSwzB5kihcz9CI+cQXvG++o5HMrs5IsXtjdBINKHyPdNet6LJuNXTXqVO1y9jOB8hgk
+ UVQfTpyIFBQFNWghg9t1ke/tuh/oTcvFj0qrR2J/QsCHlOt6PglE02QSpc/oWedFZJFR
+ TwQxTD3Pq6CR5NPtoOnhQ7BpA/lSqLnJY+4+rIh/bU9k+AroOfesufJyC6nAdF8JJS77
+ 8z0w==
+X-Gm-Message-State: APjAAAX8BnpbAPRhxiutYrxll8/pyWZPPuFth7Vohj2uh7uP7DdHKYOj
+ RVfkIFSAYDcwIHOJBiWSNa7pEw==
+X-Google-Smtp-Source: APXvYqzZ60bhW+zmKxgQWKFu3bPVmpIDGkgZaXEtzr6qDGU0QdrT3fUUEmHHE44uPUNcpPCQcav0rQ==
+X-Received: by 2002:a2e:7503:: with SMTP id q3mr587089ljc.190.1557125297062;
+ Sun, 05 May 2019 23:48:17 -0700 (PDT)
+Received: from [172.16.11.26] ([81.216.59.226])
+ by smtp.gmail.com with ESMTPSA id j13sm2142583lfb.34.2019.05.05.23.48.15
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sun, 05 May 2019 23:48:16 -0700 (PDT)
+Subject: Re: [PATCH 00/10] implement DYNAMIC_DEBUG_RELATIVE_POINTERS
+To: Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Andrew Morton <akpm@linux-foundation.org>
+References: <20190409212517.7321-1-linux@rasmusvillemoes.dk>
+From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+Message-ID: <1afb0702-3cc5-ba4f-2bdd-604d9da2b846@rasmusvillemoes.dk>
+Date: Mon, 6 May 2019 08:48:15 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-References: <1246f7a9ce912458ea3b889b0c0e392897a664c8.1554879978.git.baolin.wang@linaro.org>
-In-Reply-To: <1246f7a9ce912458ea3b889b0c0e392897a664c8.1554879978.git.baolin.wang@linaro.org>
-From: Baolin Wang <baolin.wang@linaro.org>
-Date: Mon, 6 May 2019 14:36:49 +0800
-Message-ID: <CAMz4ku+1-w8va__JNkBME5tPuG0AdhzksVbNbYomqY94JggPVg@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: sprd: Add clock properties for serial devices
-To: Arnd Bergmann <arnd@arndb.de>, Rob Herring <robh+dt@kernel.org>, 
- Mark Rutland <mark.rutland@arm.com>
+In-Reply-To: <20190409212517.7321-1-linux@rasmusvillemoes.dk>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190505_233705_973066_39F38B88 
-X-CRM114-Status: GOOD (  13.87  )
+X-CRM114-CacheID: sfid-20190505_234819_827762_31D99130 
+X-CRM114-Status: GOOD (  13.30  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -90,89 +97,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>, Chunyan Zhang <zhang.lyra@gmail.com>,
- LKML <linux-kernel@vger.kernel.org>, arm-soc <arm@kernel.org>,
- Olof Johansson <olof@lixom.net>, Orson Zhai <orsonzhai@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Nick Desaulniers <ndesaulniers@google.com>, Arnd Bergmann <arnd@arndb.de>,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ Jason Baron <jbaron@akamai.com>, Ingo Molnar <mingo@redhat.com>,
+ Nathan Chancellor <natechancellor@gmail.com>, linuxppc-dev@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Olof,
+On 09/04/2019 23.25, Rasmus Villemoes wrote:
 
-On Wed, 10 Apr 2019 at 15:23, Baolin Wang <baolin.wang@linaro.org> wrote:
->
-> We've introduced power management logics for the Spreadtrum serial
-> controller by commit 062ec2774c8a ("serial: sprd: Add power management
-> for the Spreadtrum serial controller"), thus add related clock properties
-> to support this feature.
->
-> Signed-off-by: Baolin Wang <baolin.wang@linaro.org>
-> ---
+> While refreshing these patches, which were orignally just targeted at
+> x86-64, it occured to me that despite the implementation relying on
+> inline asm, there's nothing x86 specific about it, and indeed it seems
+> to work out-of-the-box for ppc64 and arm64 as well, but those have
+> only been compile-tested.
 
-Could you take this patch through the arm-soc tree if no objections
-from you? Thanks.
+So, apart from the Clang build failures for non-x86, I now also got a
+report that gcc 4.8 miscompiles this stuff in some cases [1], even for
+x86 - gcc 4.9 does not seem to have the problem. So, given that the 5.2
+merge window just opened, I suppose this is the point where I should
+pull the plug on this experiment :(
 
->  arch/arm64/boot/dts/sprd/whale2.dtsi |   16 ++++++++++++----
->  1 file changed, 12 insertions(+), 4 deletions(-)
->
-> diff --git a/arch/arm64/boot/dts/sprd/whale2.dtsi b/arch/arm64/boot/dts/sprd/whale2.dtsi
-> index 34b6ca0..b5c5dce 100644
-> --- a/arch/arm64/boot/dts/sprd/whale2.dtsi
-> +++ b/arch/arm64/boot/dts/sprd/whale2.dtsi
-> @@ -75,7 +75,9 @@
->                                              "sprd,sc9836-uart";
->                                 reg = <0x0 0x100>;
->                                 interrupts = <GIC_SPI 2 IRQ_TYPE_LEVEL_HIGH>;
-> -                               clocks = <&ext_26m>;
-> +                               clock-names = "enable", "uart", "source";
-> +                               clocks = <&apapb_gate CLK_UART0_EB>,
-> +                                      <&ap_clk CLK_UART0>, <&ext_26m>;
->                                 status = "disabled";
->                         };
->
-> @@ -84,7 +86,9 @@
->                                              "sprd,sc9836-uart";
->                                 reg = <0x100000 0x100>;
->                                 interrupts = <GIC_SPI 3 IRQ_TYPE_LEVEL_HIGH>;
-> -                               clocks = <&ext_26m>;
-> +                               clock-names = "enable", "uart", "source";
-> +                               clocks = <&apapb_gate CLK_UART1_EB>,
-> +                                      <&ap_clk CLK_UART1>, <&ext_26m>;
->                                 status = "disabled";
->                         };
->
-> @@ -93,7 +97,9 @@
->                                              "sprd,sc9836-uart";
->                                 reg = <0x200000 0x100>;
->                                 interrupts = <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>;
-> -                               clocks = <&ext_26m>;
-> +                               clock-names = "enable", "uart", "source";
-> +                               clocks = <&apapb_gate CLK_UART2_EB>,
-> +                                      <&ap_clk CLK_UART2>, <&ext_26m>;
->                                 status = "disabled";
->                         };
->
-> @@ -102,7 +108,9 @@
->                                              "sprd,sc9836-uart";
->                                 reg = <0x300000 0x100>;
->                                 interrupts = <GIC_SPI 5 IRQ_TYPE_LEVEL_HIGH>;
-> -                               clocks = <&ext_26m>;
-> +                               clock-names = "enable", "uart", "source";
-> +                               clocks = <&apapb_gate CLK_UART3_EB>,
-> +                                      <&ap_clk CLK_UART3>, <&ext_26m>;
->                                 status = "disabled";
->                         };
->                 };
-> --
-> 1.7.9.5
->
+Rasmus
 
+[1] Specifically, the problem manifested in net/ipv4/tcp_input.c: Both
+uses of the static inline inet_csk_clear_xmit_timer() pass a
+compile-time constant 'what', so the ifs get folded away and both uses
+are completely inlined. Yet, gcc still decides to emit a copy of the
+final 'else' branch of inet_csk_clear_xmit_timer() as its own
+inet_csk_reset_xmit_timer.part.55 function, which is of course unused.
+And despite the asm() that defines the ddebug descriptor being an "asm
+volatile", gcc thinks it's fine to elide that (the code path is
+unreachable, after all....), so the entire asm for that function is
 
--- 
-Baolin Wang
-Best Regards
+        .section        .text.unlikely
+        .type   inet_csk_reset_xmit_timer.part.55, @function
+inet_csk_reset_xmit_timer.part.55:
+        movq    $.LC1, %rsi     #,
+        movq    $__UNIQUE_ID_ddebug160, %rdi    #,
+        xorl    %eax, %eax      #
+        jmp     __dynamic_pr_debug      #
+        .size   inet_csk_reset_xmit_timer.part.55,
+.-inet_csk_reset_xmit_timer.part.55
+
+which of course fails to link since the symbol __UNIQUE_ID_ddebug160 is
+nowhere defined.
 
 _______________________________________________
 linux-arm-kernel mailing list
