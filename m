@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEC84151AC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 18:34:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2669E152CC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  6 May 2019 19:31:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4qyK1IhdL6CXuiZ7srow3uepbOllESBU+AXko+zvll8=; b=C2CFLEJ3uJNlJF
-	bID2Xb9bJl4aHxYE/y3AXt9oG2Z4D5b8MonydkhsPVGD+4wRmE/prtPZZp/A61BShsN0VBo6ceq8f
-	xx/tXDcz73MSFbZFZFSfkjDkAX6vHjry2Ins/3ktY3EjBKrp390GYy2Vk5qDJrVQeItloItN99cQB
-	oNih9dA+ShWeZsM/Myf5D2OaFZI0CuHiFdr3oMDdWs1stXVICoXNEehj50A4nqAPPW1G8vZ92JI1Q
-	nBTJhfVCFSKUE4kVACTTYpcUCfFuU18PEdcF+OuD3UBnDJFUNOODQvOvSu/sOZvPDEx77yN2H0W+P
-	70aAHtTnd+Krbudt7K7A==;
+	List-Owner; bh=etcOYzUW7mWN/FTHv8sm/e+mtI94rwQ09av6jjBTxD0=; b=GMe7GyE6yn1May
+	69kN5FZ4Twl3LHmWhzSISUBzzWDtEyxpvAvdLjcqgqhxbMa3v8BYbgxdKO3fR7tWjKM4vZIhrYjRE
+	rTmVu3HP9gff0HFG/sH31fktfohd9GeMx2ZvvcYykh6V0ihVPDq3rfGc8sWCygk7M6CZk1axazYTk
+	Lv1YNXu0/y7d8oN09VEv4QcRNdxjVw862FzDKDEHvSRTnKZnh+nzxfSPZsg0Le9KWs1NTJNTSBAai
+	HASA8kQZFd7YKyP7vNScOjez5etoOxh1frHY1uNKSuxqNjdo/A8g2Zfrsy0RW5+gFmjfqvSzcZ0AW
+	kIk0oLIiiTcan6/lZz4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNgYw-0001GU-Uu; Mon, 06 May 2019 16:33:58 +0000
-Received: from merlin.infradead.org ([205.233.59.134])
+	id 1hNhSO-0001ny-Kg; Mon, 06 May 2019 17:31:16 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNgX1-0007do-5d
- for linux-arm-kernel@bombadil.infradead.org; Mon, 06 May 2019 16:31:59 +0000
+ id 1hNhS8-0001hB-Nz
+ for linux-arm-kernel@bombadil.infradead.org; Mon, 06 May 2019 17:31:00 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=merlin.20170209; h=Content-Type:Cc:To:From:Subject:
  References:Mime-Version:Message-Id:In-Reply-To:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=E5WO9ODhUeb7gchIl3e11LSllsWmM1E2YpuEe+KMyVo=; b=wXjd2L3DdlZVuF1WOjswIgS83
- QCGSRc38LvIP+9h8SS2E9/mLaaDkXzcoW5Q0513bnTDHQMnF7EgYIVEtN4TFAPCLpJVSoLfFLWNi4
- FcDldh8T8l38jpbH5bCdOWBvNsnJ8K/9UdsBHyI8DMrHRALE08IMwMnO4Th4vQ+UuU1nPVJ1cSG+r
- 1XWfwDU1sn0S0ZZwLWZgFsSI+dV6kntVL12T+1dZVjYVEcW/jd8TuGR4hyiRNcEuKsMtAJcXQJE+6
- bm9QQtjVfnpM+LmTp0x1HmrKqsRZpa04VtynwDQEAXDpxpvD2DoJOuHbzWkS+DeYKed41qZw+PMvO
- vnQR8rc/w==;
-Received: from mail-vk1-xa49.google.com ([2607:f8b0:4864:20::a49])
+ bh=40kxRsKyA2BTdfRG/8ycbW9cjWXHDWQTNAmN4QMp2Tc=; b=tLvUD/dcrOEljghltQ/HEnrbi
+ 4sF+Zv8UD4F7LjKTGXIaM1M2qSmnW2KXNH3ugjX+w5KWtV0ba7BXdu777zlV6m+PifOB1dfCK8fjn
+ J6MiJ/LFVR7/+6SMlbepefoqnpMyAbsQuRuON8ygh4kB9eBic+YDzWGlTK1e2mXxpI3zhN2WaZSYw
+ QaNHMxkPPX8r+m/dPBRAKJTb7WZEOj1XiuQTPDRYXJTYPMHFh+hCk2J7WUK6X4fqm5ItvyCoe/3j+
+ 0SM/spcLY6wpL90KEIT1nl3YFRBZ2H3a61zMez6tSFkLbgaArCzlM6mpgf5xXTA4xqVyszxZohvfI
+ LigN6CExA==;
+Received: from mail-yw1-xc49.google.com ([2607:f8b0:4864:20::c49])
  by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNgWz-00066C-Q3
- for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 16:31:58 +0000
-Received: by mail-vk1-xa49.google.com with SMTP id q191so2077208vkh.5
+ id 1hNgX1-00066K-KB
+ for linux-arm-kernel@lists.infradead.org; Mon, 06 May 2019 16:32:00 +0000
+Received: by mail-yw1-xc49.google.com with SMTP id g128so26093713ywf.11
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 May 2019 09:31:56 -0700 (PDT)
+ Mon, 06 May 2019 09:31:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=E5WO9ODhUeb7gchIl3e11LSllsWmM1E2YpuEe+KMyVo=;
- b=ZAV3tC6ygeuQpYDYrKMnamvWU4Ola27jwmOvJT0NrB9zkA9/9VwZpqZILeD/kCkNoz
- 2YieZRVMa/AXiEzwBIxCU1l+GEYmKclsxxyQTiWJfi3V4eZQV5Ty6cVbJ946qs6vtwua
- FnVZYy8h8LlcT9zEGoHGJFhxw76fNhlXkwiMMdgNAFJQ0fdrxIy60WNM3Dx5/MSJjbMm
- JoRnUusKGOL9DOHOG1d4lxStTE2KnFUHyp2053KQyza8HaWrD88UcCSEHERhBeycqSfG
- PaS1O1Y2zDlyyujLwl9tuNkVlIoFOsc0GRtgaeegMD911ZalfKNXqOUfZljQAA2/cuom
- 1W3Q==
+ :cc; bh=40kxRsKyA2BTdfRG/8ycbW9cjWXHDWQTNAmN4QMp2Tc=;
+ b=CbTDaybxwiO68FYaqEU987JbmTIWC/O/zmn5u4LAT2NjIg4zrx3ZZpTdEat2IZI7Zr
+ UMjh3JrD6tSSJSHiA2J1SvwKqxkOFH9jD5t4pSSsFkT8XO0YzO5s2D93y2Fvv558QDT8
+ PC2RKfy08bb/yMf67M9jkhQd5jNijh0tU+IEPR6RStdwOkRtKLjro1177XiqKVVA8CKn
+ 7nvBlr71nBnQ+GeGRfOaL9uXIjXsWpEFZPxFZ6iufv0v5siPwgW5vA64wYvStilJ/+ml
+ T4dkOygYLm3ryZPhfxVQJsF9+4XGOGyyv3U3USZs8bMzVBnZRwvcMGmsqol00hqY8fWp
+ TxbQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=E5WO9ODhUeb7gchIl3e11LSllsWmM1E2YpuEe+KMyVo=;
- b=AUJ5Q7I8wTgK6H1Z6iVTrYpgFQxoAVYmjENPg87BaACiqOX30XayCu3EYFe8pivnMY
- RdHOWjdqU4xdu+j+GksYfXPIq9bSuspsmJGdLcfpm+MQPXlMsrCHInJ/tTTQis2uEic0
- m3+dexnG0+BA31BJ3Xl+sj5z6Ff8mz1mLKWtjmT4IrmAQLAqTZFqJDKZ1apRPUl4imiz
- sgPde8DXqaZxwXX9SCcp+yN6349wQgsFRtlAQPYk0Ixn5cEqbzTQZp4nNdwpr+sYf+YB
- IY0mIwMKRx39Ad/5q5bW/4+blUToshUDP1J8roJcwW7nndZIEb52n125eCLE4bHjDnSx
- B0cw==
-X-Gm-Message-State: APjAAAXWe4mOBagOXEgLLeHgKXcXTxQYve6ejhEVCSaTMilt/+NZy2Lc
- 382XqyRtvAW4O9Kg4j26otaFpVNLgW/p+QWoK2+RiE/OZsM1FSlauNRdteBb5qZw8SvtQRljt4O
- i68cs5HN1uZctZaT0O9jSzo4o9Me2EGuNnlBC1B7eFARxs+6zuVjHtlTESLPJ83/kDAMTJS1Kjq
- 3zw6IEK7mGxoOz80k=
-X-Google-Smtp-Source: APXvYqw1xOoCnPO8YfwpZ5nRgaPpPr24xspNBV17LLiBFtD2eWt0/j9p08QSESkEcGjJ9SGNKNyhv8KaV3q9K4HX
-X-Received: by 2002:a67:efcc:: with SMTP id s12mr4512139vsp.120.1557160313543; 
- Mon, 06 May 2019 09:31:53 -0700 (PDT)
-Date: Mon,  6 May 2019 18:31:01 +0200
+ bh=40kxRsKyA2BTdfRG/8ycbW9cjWXHDWQTNAmN4QMp2Tc=;
+ b=kiY8a5nPUjZunD/EJTTpWp2uc6bxXK9qz0VarI4VlyamJUo4MaUeZiryZ77mP1Wt11
+ w3PImyUv95pKMUFf146fiodOcldxFIdlUlCZ19clOs/P/sEfc4Dtv8vNNZxefFEBUVYm
+ tQuBH6HqCqrLKeKizqqycmWQVUFQlVbKgToyxjWxJ0w1cPvFhswBgB/iyc8HY/ub+rWc
+ RAGO/tKY6S9GPTZvWjGfrQuVMjvqxwr9dfWWAhhW/scsx5M7k7tdqXglHPDCpbuDwWKU
+ 66L785av/jVceowgpQeUOWbaw/dWs1I0EXhSsDXTT8WqEr3q2paiWwQgFAWZDFmVkQnt
+ rMRQ==
+X-Gm-Message-State: APjAAAUvkz77tn6wEfA/QPlY/W1BfccTdy6m4hvlTMt4GKyF282C02Ao
+ G2Mlw2E6vpRo81NwZy6evzC9iIj4yLANbW/7KU58tV1ONGR/xbDjJ2k743J0n3/72zJyzK2ekDL
+ Kke6OmvxHybzRWneWAreehZgPC+u3uHBFqssDJxHjL1MGfxWNKD43mJBkKIUBiR5zsPRnD2izlb
+ ygVKsZiMLPcv+6+Kc=
+X-Google-Smtp-Source: APXvYqy7sMh67zqP2gW9MSWmQP0vNhHkuufaU8XQ9cxxJZb1a1Qrmr7t2Ui4wSymuQ40ovJdWXqcMvlrm4Ub8jqq
+X-Received: by 2002:a25:c5c8:: with SMTP id v191mr18795942ybe.52.1557160316771; 
+ Mon, 06 May 2019 09:31:56 -0700 (PDT)
+Date: Mon,  6 May 2019 18:31:02 +0200
 In-Reply-To: <cover.1557160186.git.andreyknvl@google.com>
-Message-Id: <cdf0b98edefa9227db4a3d1fb6e3c7bc5a6a6215.1557160186.git.andreyknvl@google.com>
+Message-Id: <69a675a5c48fa2572162338c51a1bfa2a3ced27d.1557160186.git.andreyknvl@google.com>
 Mime-Version: 1.0
 References: <cover.1557160186.git.andreyknvl@google.com>
 X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
-Subject: [PATCH v15 15/17] tee, arm64: untag user pointers in tee_shm_register
+Subject: [PATCH v15 16/17] vfio/type1,
+ arm64: untag user pointers in vaddr_get_pfn
 From: Andrey Konovalov <andreyknvl@google.com>
 To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org, 
  linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org, 
@@ -83,15 +84,15 @@ To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
  linux-media@vger.kernel.org, kvm@vger.kernel.org, 
  linux-kselftest@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_123157_851575_14B46DDA 
-X-CRM114-Status: GOOD (  13.04  )
+X-CRM114-CacheID: sfid-20190506_123159_705905_5FAC3001 
+X-CRM114-Status: GOOD (  13.52  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a49 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c49 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
@@ -143,29 +144,29 @@ This patch is a part of a series that extends arm64 kernel ABI to allow to
 pass tagged user pointers (with the top byte set to something else other
 than 0x00) as syscall arguments.
 
-tee_shm_register()->optee_shm_unregister()->check_mem_type() uses provided
-user pointers for vma lookups (via __check_mem_type()), which can only by
-done with untagged pointers.
+vaddr_get_pfn() uses provided user pointers for vma lookups, which can
+only by done with untagged pointers.
 
 Untag user pointers in this function.
 
 Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
 ---
- drivers/tee/tee_shm.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/vfio/vfio_iommu_type1.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/tee/tee_shm.c b/drivers/tee/tee_shm.c
-index 0b9ab1d0dd45..8e7b52ab6c63 100644
---- a/drivers/tee/tee_shm.c
-+++ b/drivers/tee/tee_shm.c
-@@ -263,6 +263,7 @@ struct tee_shm *tee_shm_register(struct tee_context *ctx, unsigned long addr,
- 	shm->teedev = teedev;
- 	shm->ctx = ctx;
- 	shm->id = -1;
-+	addr = untagged_addr(addr);
- 	start = rounddown(addr, PAGE_SIZE);
- 	shm->offset = addr - start;
- 	shm->size = length;
+diff --git a/drivers/vfio/vfio_iommu_type1.c b/drivers/vfio/vfio_iommu_type1.c
+index d0f731c9920a..5daa966d799e 100644
+--- a/drivers/vfio/vfio_iommu_type1.c
++++ b/drivers/vfio/vfio_iommu_type1.c
+@@ -382,6 +382,8 @@ static int vaddr_get_pfn(struct mm_struct *mm, unsigned long vaddr,
+ 
+ 	down_read(&mm->mmap_sem);
+ 
++	vaddr = untagged_addr(vaddr);
++
+ 	vma = find_vma_intersection(mm, vaddr, vaddr + 1);
+ 
+ 	if (vma && vma->vm_flags & VM_PFNMAP) {
 -- 
 2.21.0.1020.gf2820cf01a-goog
 
