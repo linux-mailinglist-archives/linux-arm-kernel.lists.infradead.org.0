@@ -2,99 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB6E816494
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 15:31:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A398164F1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 15:49:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=vrKhsyJhpUqwXbOdyQRRq3Cz68WRqe7ZeKCnHTGXwY4=; b=a+rSsKToF0lTCqO4E8tXBjzkQ
-	fXUMAOSvDqlvPZoV2esLmfeFnO/CxqeXOP/JF8OVmj5be+U+plm3t0aFY/IptG0OQ2nT7dlq1yUIp
-	0fJdc9/U/99jU2ZEYsc9fXWkRwYCFox9V82eLBYnLhZxYc9g3u/kwLUnwdKCuZIkRnXRDS/ughe2Q
-	x/bVR6Kisz99NRBfa8AjFlyDYzD3OdKM7uCXYtyEYWLoLis89QXF3yv1PvFEn6rwFtQcXk/99/sil
-	BLq+defNgQM4vIHuvXqgG+ZnoEnssadusPAMiFUtYBRS7JeGUvURTOzQGy0FGFiVtUvUYqT22rood
-	8APxe4kbg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fXnQfUEJOEGztoqry2OLtUJisGyIWROYd566j93g5Ok=; b=RYMWJY8DsmHvtl
+	HmWjwRA/XrR3mtobi0a9uYLcXzKH6YCirmx3lB1Soa3EglrwRpLCBn5/1nry37DwvDGyp8BKmFfBI
+	bHFdxQlp3l/pQXmHGT1n3mNlbTXSMi1vqoelO+7L/FJ04L9/bvmGIXSws8gzJPiR8Nhfexh2Ujan1
+	B2A4VxtsXl5vUNl97a/e0UgLBMPMK5k1VV8k985OE7b0kxVV5t4ygpY6DdcZdJZlGrAAnKG49Iut2
+	jHRNV1WcRuGlFEFbkTS5FmnBIT5qYLJYHG0KNvufjspvcP7F7MyTmNNOrbfaqUN7yrnm7hdN6pt0y
+	rQge4M8Dk5ZLtwxk2T4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hO0Bj-0002bn-9v; Tue, 07 May 2019 13:31:19 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hO0T4-0008Oo-0C; Tue, 07 May 2019 13:49:14 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hO0Bc-0002b7-EP
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 13:31:13 +0000
-Received: by mail-pg1-x541.google.com with SMTP id j26so8328758pgl.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 May 2019 06:31:08 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=pDfPW38KIL1dpHg7F2t1sYsKkAGlXFceYNzNKtg9UBI=;
- b=cyO3r8SjaSPvRgAnIrHKGrO5McmBXE+WgNeJJg+p7LUXjuglPx0pTYyxK9DRLM7qQL
- X+hnR2TsuMoSzC4XtSsRT4AYHD0Ace+teIBTvnvx+CTZp0a5HCsjLsHHLIMko8qMDNGc
- onbOQHHwLlaF7lk76q1lBaV9YtcJ+vr/Sq2Ittup/KNS/N/f8JchuewoPlD0KOyFraRN
- vUaADbkBjER77QoaMv2SazHjGquXwLSynG0QyGmBp14oyb/FwiPW51cXQMpJOOSPnyBs
- 63qr5wtgj3PeIe8g14L4uCkqslg94SEQSzNqPxbwsiqCxZe4pjAqeuGtDWaWlvoeZHqr
- 5T4w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=pDfPW38KIL1dpHg7F2t1sYsKkAGlXFceYNzNKtg9UBI=;
- b=lKv90+XJZBmZtGee+VWynB0vdtr3PuzoaYJw6PU++Mwj28LXsjBYVx7yhz2GjXs9C0
- rAtoqBgNRV7svXKVEYVKV8AjTHJ08Dp6lemeIkieu+HpHAyrfucmW3YfrFByu0zBEQlY
- O6CAoJEyMJoDhnXJU9/BgBh49NZ2gjjwsAdt6Kc4eT5JBywyJjbrM6luZn3zFyFH7mKR
- cin/rHm3pixVBvQVy8B9SAx3tKE54pooz1rD4dgIKKVczZDapWipu6wx3U+CCaxwZGAu
- dw6rG4ALrYxmpGCJNOWYcHvFbXogMHAGEm+V6cKA+L6P07oyKPLDH/hBEZIiyzri9x5z
- SnOQ==
-X-Gm-Message-State: APjAAAW0n6GQHBPX4b3mGdXdaB2xCE5MJ/ezndh9jAaFLSG+yK4i+g2f
- Pfjl4C27vb48PgIwNI8hGtE=
-X-Google-Smtp-Source: APXvYqzq+Z/Wj+qUOgwRvo3HHKRynDEDgnsJskGpr7/iplM2VPRNaEbMdqqGJgcNsTpPQurrvC4Eog==
-X-Received: by 2002:aa7:8096:: with SMTP id v22mr41241600pff.94.1557235868496; 
- Tue, 07 May 2019 06:31:08 -0700 (PDT)
-Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id
- o5sm34369209pfa.135.2019.05.07.06.31.07
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 07 May 2019 06:31:07 -0700 (PDT)
-Subject: Re: [PATCH 1/2] firmware: arm_scmi: Fetch and store sensor scale
-To: Florian Fainelli <f.fainelli@gmail.com>, linux-kernel@vger.kernel.org
-References: <20190506224109.9357-1-f.fainelli@gmail.com>
- <20190506224109.9357-2-f.fainelli@gmail.com>
-From: Guenter Roeck <linux@roeck-us.net>
-Message-ID: <84470f47-4e65-80c4-d378-9b83b7f487fb@roeck-us.net>
-Date: Tue, 7 May 2019 06:31:06 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hO0Ss-0008Jh-6t
+ for linux-arm-kernel@bombadil.infradead.org; Tue, 07 May 2019 13:49:02 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=mvjmKaTyY872n+iqS7CG0WLtbcqyuP5ujxH0+BdC6n8=; b=j1JBkhtojkWEZm8lkmq3/F8Sp3
+ NW/XsupF25W/zxgnrKVDOoj/TRLsAXbtHwH5YmUrBBNhAvdd9M1K8WPl8kOHKNUNXEtepW5qA8YIi
+ r6X2qkUmCQJvnwB7gSoSRgrOBEV2PPXij9Kh6xkqK0VQIK0EPrsf76+Snex1GaVAP8EjFngjo2xu2
+ UeGvyQviJpubIFBFdV2hyI6988S5Btm+seS7MqK6tDz8Kx+nzh6AylLeiMXrQ2DMUsCnycmyZxd3P
+ FkboEnpdYljok8oF7p6iylty9JJLlNfhkUDSPcLqSljpR0EwZ+ufdHiXDfuAOg8OdpN2VhM7zR+YP
+ caq3xQ2A==;
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
+ by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hO0Sn-0007xp-G4
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 13:49:00 +0000
+X-Originating-IP: 90.88.28.253
+Received: from localhost (aaubervilliers-681-1-86-253.w90-88.abo.wanadoo.fr
+ [90.88.28.253]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id B85901C0011;
+ Tue,  7 May 2019 13:48:17 +0000 (UTC)
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>, Mark Brown <broonie@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <maxime.ripard@bootlin.com>
+Subject: [PATCH 1/4] dt-bindings: spi: Add YAML schemas for the generic SPI
+ options
+Date: Tue,  7 May 2019 15:48:13 +0200
+Message-Id: <b7a6095a5c900fa23cc54d1ccd8e8ef0ccf6e788.1557236840.git-series.maxime.ripard@bootlin.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <20190506224109.9357-2-f.fainelli@gmail.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_063112_542187_1E55E292 
-X-CRM114-Status: GOOD (  21.47  )
-X-Spam-Score: 0.5 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+X-CRM114-CacheID: sfid-20190507_094857_747196_EDF5BAFE 
+X-CRM114-Status: GOOD (  21.15  )
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
- 0.1 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.197 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -106,74 +76,307 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:HARDWARE MONITORING" <linux-hwmon@vger.kernel.org>,
- Jean Delvare <jdelvare@suse.com>, bcm-kernel-feedback-list@broadcom.com,
- linux-arm-kernel@lists.infradead.org, Sudeep Holla <sudeep.holla@arm.com>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-spi@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/6/19 3:41 PM, Florian Fainelli wrote:
-> In preparation for dealing with scales within the SCMI HWMON driver,
-> fetch and store the sensor unit scale into the scmi_sensor_info
-> structure.
-> 
-> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
-> ---
->   drivers/firmware/arm_scmi/sensors.c | 7 ++++++-
->   include/linux/scmi_protocol.h       | 1 +
->   2 files changed, 7 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/firmware/arm_scmi/sensors.c b/drivers/firmware/arm_scmi/sensors.c
-> index b53d5cc9c9f6..f324f0a13ebe 100644
-> --- a/drivers/firmware/arm_scmi/sensors.c
-> +++ b/drivers/firmware/arm_scmi/sensors.c
-> @@ -33,7 +33,8 @@ struct scmi_msg_resp_sensor_description {
->   #define NUM_TRIP_POINTS(x)	(((x) >> 4) & 0xff)
->   		__le32 attributes_high;
->   #define SENSOR_TYPE(x)		((x) & 0xff)
-> -#define SENSOR_SCALE(x)		(((x) >> 11) & 0x3f)
-> +#define SENSOR_SCALE_MASK	0x3f
-> +#define SENSOR_SCALE(x)		(((x) >> 11) & SENSOR_SCALE_MASK)
->   #define SENSOR_UPDATE_SCALE(x)	(((x) >> 22) & 0x1f)
->   #define SENSOR_UPDATE_BASE(x)	(((x) >> 27) & 0x1f)
->   		    u8 name[SCMI_MAX_STR_SIZE];
-> @@ -140,6 +141,10 @@ static int scmi_sensor_description_get(const struct scmi_handle *handle,
->   			s = &si->sensors[desc_index + cnt];
->   			s->id = le32_to_cpu(buf->desc[cnt].id);
->   			s->type = SENSOR_TYPE(attrh);
-> +			s->scale = SENSOR_SCALE(attrh);
-> +			/* Sign extend to a full u8 */
-> +			if (s->scale & ((SENSOR_SCALE_MASK + 1) >> 1))
+The SPI controllers have a bunch of generic options that are needed in a
+device tree. Add a YAML schemas for those.
 
-The logic here is quite confusing. I think it would be better to define,
-say, SENSOR_SCALE_SIGN and use it.
+Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+---
+ Documentation/devicetree/bindings/spi/spi-bus.txt         | 111 +-----
+ Documentation/devicetree/bindings/spi/spi-controller.yaml | 156 +++++++-
+ 2 files changed, 156 insertions(+), 111 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/spi/spi-bus.txt
+ create mode 100644 Documentation/devicetree/bindings/spi/spi-controller.yaml
 
-> +				s->scale |= GENMASK(7, 6);
->   			strlcpy(s->name, buf->desc[cnt].name, SCMI_MAX_STR_SIZE);
->   		}
->   
-> diff --git a/include/linux/scmi_protocol.h b/include/linux/scmi_protocol.h
-> index 3105055c00a7..7746f171f108 100644
-> --- a/include/linux/scmi_protocol.h
-> +++ b/include/linux/scmi_protocol.h
-> @@ -144,6 +144,7 @@ struct scmi_power_ops {
->   struct scmi_sensor_info {
->   	u32 id;
->   	u8 type;
-> +	u8 scale;
+diff --git a/Documentation/devicetree/bindings/spi/spi-bus.txt b/Documentation/devicetree/bindings/spi/spi-bus.txt
+deleted file mode 100644
+index 1f6e86f787ef..000000000000
+--- a/Documentation/devicetree/bindings/spi/spi-bus.txt
++++ /dev/null
+@@ -1,111 +0,0 @@
+-SPI (Serial Peripheral Interface) busses
+-
+-SPI busses can be described with a node for the SPI controller device
+-and a set of child nodes for each SPI slave on the bus.  The system's SPI
+-controller may be described for use in SPI master mode or in SPI slave mode,
+-but not for both at the same time.
+-
+-The SPI controller node requires the following properties:
+-- compatible      - Name of SPI bus controller following generic names
+-		    recommended practice.
+-
+-In master mode, the SPI controller node requires the following additional
+-properties:
+-- #address-cells  - number of cells required to define a chip select
+-		address on the SPI bus.
+-- #size-cells     - should be zero.
+-
+-In slave mode, the SPI controller node requires one additional property:
+-- spi-slave       - Empty property.
+-
+-No other properties are required in the SPI bus node.  It is assumed
+-that a driver for an SPI bus device will understand that it is an SPI bus.
+-However, the binding does not attempt to define the specific method for
+-assigning chip select numbers.  Since SPI chip select configuration is
+-flexible and non-standardized, it is left out of this binding with the
+-assumption that board specific platform code will be used to manage
+-chip selects.  Individual drivers can define additional properties to
+-support describing the chip select layout.
+-
+-Optional properties (master mode only):
+-- cs-gpios	  - gpios chip select.
+-- num-cs	  - total number of chipselects.
+-
+-If cs-gpios is used the number of chip selects will be increased automatically
+-with max(cs-gpios > hw cs).
+-
+-So if for example the controller has 2 CS lines, and the cs-gpios
+-property looks like this:
+-
+-cs-gpios = <&gpio1 0 0>, <0>, <&gpio1 1 0>, <&gpio1 2 0>;
+-
+-Then it should be configured so that num_chipselect = 4 with the
+-following mapping:
+-
+-cs0 : &gpio1 0 0
+-cs1 : native
+-cs2 : &gpio1 1 0
+-cs3 : &gpio1 2 0
+-
+-
+-SPI slave nodes must be children of the SPI controller node.
+-
+-In master mode, one or more slave nodes (up to the number of chip selects) can
+-be present.  Required properties are:
+-- compatible      - Name of SPI device following generic names recommended
+-		    practice.
+-- reg             - Chip select address of device.
+-- spi-max-frequency - Maximum SPI clocking speed of device in Hz.
+-
+-In slave mode, the (single) slave node is optional.
+-If present, it must be called "slave".  Required properties are:
+-- compatible      - Name of SPI device following generic names recommended
+-		    practice.
+-
+-All slave nodes can contain the following optional properties:
+-- spi-cpol        - Empty property indicating device requires inverse clock
+-		    polarity (CPOL) mode.
+-- spi-cpha        - Empty property indicating device requires shifted clock
+-		    phase (CPHA) mode.
+-- spi-cs-high     - Empty property indicating device requires chip select
+-		    active high.
+-- spi-3wire       - Empty property indicating device requires 3-wire mode.
+-- spi-lsb-first   - Empty property indicating device requires LSB first mode.
+-- spi-tx-bus-width - The bus width (number of data wires) that is used for MOSI.
+-		    Defaults to 1 if not present.
+-- spi-rx-bus-width - The bus width (number of data wires) that is used for MISO.
+-		    Defaults to 1 if not present.
+-- spi-rx-delay-us - Microsecond delay after a read transfer.
+-- spi-tx-delay-us - Microsecond delay after a write transfer.
+-
+-Some SPI controllers and devices support Dual and Quad SPI transfer mode.
+-It allows data in the SPI system to be transferred using 2 wires (DUAL) or 4
+-wires (QUAD).
+-Now the value that spi-tx-bus-width and spi-rx-bus-width can receive is
+-only 1 (SINGLE), 2 (DUAL) and 4 (QUAD).
+-Dual/Quad mode is not allowed when 3-wire mode is used.
+-
+-If a gpio chipselect is used for the SPI slave the gpio number will be passed
+-via the SPI master node cs-gpios property.
+-
+-SPI example for an MPC5200 SPI bus:
+-	spi@f00 {
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+-		compatible = "fsl,mpc5200b-spi","fsl,mpc5200-spi";
+-		reg = <0xf00 0x20>;
+-		interrupts = <2 13 0 2 14 0>;
+-		interrupt-parent = <&mpc5200_pic>;
+-
+-		ethernet-switch@0 {
+-			compatible = "micrel,ks8995m";
+-			spi-max-frequency = <1000000>;
+-			reg = <0>;
+-		};
+-
+-		codec@1 {
+-			compatible = "ti,tlv320aic26";
+-			spi-max-frequency = <100000>;
+-			reg = <1>;
+-		};
+-	};
+diff --git a/Documentation/devicetree/bindings/spi/spi-controller.yaml b/Documentation/devicetree/bindings/spi/spi-controller.yaml
+new file mode 100644
+index 000000000000..dc239083886c
+--- /dev/null
++++ b/Documentation/devicetree/bindings/spi/spi-controller.yaml
+@@ -0,0 +1,156 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/spi/spi-controller.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: SPI Controller Generic Binding
++
++maintainers:
++  - Mark Brown <broonie@kernel.org>
++
++description: |
++  SPI busses can be described with a node for the SPI controller device
++  and a set of child nodes for each SPI slave on the bus. The system SPI
++  controller may be described for use in SPI master mode or in SPI slave mode,
++  but not for both at the same time.
++
++properties:
++  $nodename:
++    pattern: "^spi(@[a-zA-Z0-9]+)?$"
++
++  "#address-cells":
++    const: 1
++
++  "#size-cells":
++    const: 0
++
++  cs-gpios:
++    description: |
++      GPIOs used as chip selects.
++      If that property is used, the number of chip selects will be
++      increased automatically with max(cs-gpios, hardware chip selects).
++
++      So if, for example, the controller has 2 CS lines, and the
++      cs-gpios looks like this
++        cs-gpios = <&gpio1 0 0>, <0>, <&gpio1 1 0>, <&gpio1 2 0>;
++
++      Then it should be configured so that num_chipselect = 4, with
++      the following mapping
++        cs0 : &gpio1 0 0
++        cs1 : native
++        cs2 : &gpio1 1 0
++        cs3 : &gpio1 2 0
++
++  num-cs:
++    $ref: /schemas/types.yaml#/definitions/uint32
++    description:
++      Total number of chip selects.
++
++  spi-slave:
++    $ref: /schemas/types.yaml#/definitions/flag
++    description:
++      The SPI controller acts as a slave, instead of a master.
++
++required:
++  - "#address-cells"
++  - "#size-cells"
++
++patternProperties:
++  "^slave$":
++    properties:
++      compatible:
++        description:
++          Compatible of the SPI device.
++
++    required:
++      - compatible
++
++  "^[a-z]+@[0-9]+$":
++    properties:
++      compatible:
++        description:
++          Compatible of the SPI device.
++
++      reg:
++        maxItems: 1
++        description:
++          Chip select used by the device.
++
++      spi-3wire:
++        $ref: /schemas/types.yaml#/definitions/flag
++        description:
++          The device requires 3-wire mode.
++
++      spi-cpha:
++        $ref: /schemas/types.yaml#/definitions/flag
++        description:
++          The device requires shifted clock phase (CPHA) mode.
++
++      spi-cpol:
++        $ref: /schemas/types.yaml#/definitions/flag
++        description:
++          The device requires inverse clock polarity (CPOL) mode.
++
++      spi-cs-high:
++        $ref: /schemas/types.yaml#/definitions/flag
++        description:
++          The device requires the chip select active high.
++
++      spi-lsb-first:
++        $ref: /schemas/types.yaml#/definitions/flag
++        description:
++          The device requires the LSB first mode.
++
++      spi-rx-bus-width:
++        allOf:
++          - $ref: /schemas/types.yaml#/definitions/uint32
++          - enum: [ 1, 2, 4, 8 ]
++          - default: 1
++        description:
++          Bus width to the SPI bus used for MISO.
++
++      spi-rx-delay-us:
++        $ref: /schemas/types.yaml#/definitions/uint32
++        description:
++          Delay, in microseconds, after a read transfer.
++
++      spi-tx-bus-width:
++        allOf:
++          - $ref: /schemas/types.yaml#/definitions/uint32
++          - enum: [ 1, 2, 4, 8 ]
++          - default: 1
++        description:
++          Bus width to the SPI bus used for MOSI.
++
++      spi-tx-delay-us:
++        $ref: /schemas/types.yaml#/definitions/uint32
++        description:
++          Delay, in microseconds, after a write transfer.
++
++    required:
++      - compatible
++      - reg
++
++examples:
++  - |
++    spi@f00 {
++        #address-cells = <1>;
++        #size-cells = <0>;
++        compatible = "fsl,mpc5200b-spi","fsl,mpc5200-spi";
++        reg = <0xf00 0x20>;
++        interrupts = <2 13 0 2 14 0>;
++        interrupt-parent = <&mpc5200_pic>;
++
++        ethernet-switch@0 {
++            compatible = "micrel,ks8995m";
++            spi-max-frequency = <1000000>;
++            reg = <0>;
++        };
++
++        codec@1 {
++            compatible = "ti,tlv320aic26";
++            spi-max-frequency = <100000>;
++            reg = <1>;
++        };
++    };
 
-Why not s8 if this is a signed value ?
-
-Thanks,
-Guenter
-
->   	char name[SCMI_MAX_STR_SIZE];
->   };
->   
-> 
-
+base-commit: fcdb095ad0016d77d3729dcf8ea915ca4b80fd8b
+-- 
+git-series 0.9.1
 
 _______________________________________________
 linux-arm-kernel mailing list
