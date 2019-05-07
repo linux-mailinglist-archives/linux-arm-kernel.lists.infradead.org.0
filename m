@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1F5116231
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 12:54:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 001B016244
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 12:54:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=YT7KGQZL+ZtaMS6GxsFpHv1XUBIl2DKrTJ70jvirdXc=; b=T72UgPfAqKQci4kRxoiEVluFOq
-	h7DffVOjVNn+VHiTWaEmqRvZy5UFBH4IWbgDJVvM/3NpF5bk9st/rCjFUWSTwpQwhJpixDgiJrlT+
-	PFPApD2pwwxjutXNCdH00/+98u/l4ehga3/IYr5Gk54N4GtCREvZ9SdQ1Av0Gqxi1fuNdQIuucuDN
-	G5v6/VUtByiK5CkxbGSFRJHTfpL19Oy2hjXjukEMHN4AboWK47l4XhEOqhcFfZBMUHoRBT4u+WOJK
-	K6TEvUK87ytiSlh9KI58DpQtd1HJ3iTqdi1WdoBJUTW5MevMn22MqtHmxMLntJ3QRhnxPYNmBIl+j
-	JEXIOlwg==;
+	bh=LQ6FuS6j+ggEkwyN4pW0uinTyX2sgqrx0KisoYALsSc=; b=YRhRqRjPRCeuZTsLJq/KldvpGE
+	f6kDj3kqqGk3BSIKtxfCePu0AXFSP3zvENL3ckbm/QAVCHtkXAVBKnz7fnHcG8l7iQXOpsa0+nx8d
+	J2msf1cPyAKCj5C+jzp5Kr0+X6Z1FYdZ97uRBpsTUSH+GQkYefcaKLkjoHOXEI33M+zH6dqC3F5JU
+	8oIqhaO7Tro4ov9hjqm9iK8Xo1KoM7dpHbhyE4bhGN3sKV+89gR/BBr6NTi6bC8jVsDeGl2gxvwqN
+	KMcTfC4Ck0hFbcN/L+6//jbEkztBb20rKjTXMDm+puU/7t8vH5pKZF8ehc/1zgg9eh6jEsT3uVEJR
+	wV28GH0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNxju-0005nJ-04; Tue, 07 May 2019 10:54:26 +0000
+	id 1hNxkG-0006Fd-Pz; Tue, 07 May 2019 10:54:48 +0000
 Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
  helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNxjG-00055H-PI
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 10:53:52 +0000
+ id 1hNxjI-000581-Oc
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 10:53:56 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9D7B6EBD;
- Tue,  7 May 2019 03:53:46 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 18AA21682;
+ Tue,  7 May 2019 03:53:48 -0700 (PDT)
 Received: from en101.cambridge.arm.com (en101.cambridge.arm.com [10.1.196.93])
  by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id
- 696AB3F5AF; Tue,  7 May 2019 03:53:45 -0700 (PDT)
+ D96E73F5AF; Tue,  7 May 2019 03:53:46 -0700 (PDT)
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 04/30] coresight: catu: Cleanup device specific data
-Date: Tue,  7 May 2019 11:52:31 +0100
-Message-Id: <1557226378-10131-5-git-send-email-suzuki.poulose@arm.com>
+Subject: [PATCH v3 05/30] coresight: tpiu: Clean up device specific data
+Date: Tue,  7 May 2019 11:52:32 +0100
+Message-Id: <1557226378-10131-6-git-send-email-suzuki.poulose@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1557226378-10131-1-git-send-email-suzuki.poulose@arm.com>
 References: <1557226378-10131-1-git-send-email-suzuki.poulose@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_035347_404695_A1D937E1 
-X-CRM114-Status: GOOD (  13.34  )
+X-CRM114-CacheID: sfid-20190507_035349_359395_F66C6BE6 
+X-CRM114-Status: GOOD (  13.38  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -69,85 +69,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Switch to using the CoreSight device instead of the real
+Switch to using the coresight device instead of the parent
 amba device.
 
 Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 ---
- drivers/hwtracing/coresight/coresight-catu.c | 13 +++++++------
- drivers/hwtracing/coresight/coresight-catu.h |  1 -
- 2 files changed, 7 insertions(+), 7 deletions(-)
+ drivers/hwtracing/coresight/coresight-tpiu.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-catu.c b/drivers/hwtracing/coresight/coresight-catu.c
-index d948a72..63109c9 100644
---- a/drivers/hwtracing/coresight/coresight-catu.c
-+++ b/drivers/hwtracing/coresight/coresight-catu.c
-@@ -408,13 +408,14 @@ static int catu_enable_hw(struct catu_drvdata *drvdata, void *data)
- 	int rc;
- 	u32 control, mode;
- 	struct etr_buf *etr_buf = data;
-+	struct device *dev = &drvdata->csdev->dev;
+diff --git a/drivers/hwtracing/coresight/coresight-tpiu.c b/drivers/hwtracing/coresight/coresight-tpiu.c
+index 63d9af3..4dd3e7f 100644
+--- a/drivers/hwtracing/coresight/coresight-tpiu.c
++++ b/drivers/hwtracing/coresight/coresight-tpiu.c
+@@ -49,13 +49,11 @@
  
- 	if (catu_wait_for_ready(drvdata))
--		dev_warn(drvdata->dev, "Timeout while waiting for READY\n");
-+		dev_warn(dev, "Timeout while waiting for READY\n");
+ /**
+  * @base:	memory mapped base address for this component.
+- * @dev:	the device entity associated to this component.
+  * @atclk:	optional clock for the core parts of the TPIU.
+  * @csdev:	component vitals needed by the framework.
+  */
+ struct tpiu_drvdata {
+ 	void __iomem		*base;
+-	struct device		*dev;
+ 	struct clk		*atclk;
+ 	struct coresight_device	*csdev;
+ };
+@@ -75,7 +73,7 @@ static int tpiu_enable(struct coresight_device *csdev, u32 mode, void *__unused)
  
- 	control = catu_read_control(drvdata);
- 	if (control & BIT(CATU_CONTROL_ENABLE)) {
--		dev_warn(drvdata->dev, "CATU is already enabled\n");
-+		dev_warn(dev, "CATU is already enabled\n");
- 		return -EBUSY;
- 	}
- 
-@@ -440,7 +441,7 @@ static int catu_enable_hw(struct catu_drvdata *drvdata, void *data)
- 	catu_write_irqen(drvdata, 0);
- 	catu_write_mode(drvdata, mode);
- 	catu_write_control(drvdata, control);
--	dev_dbg(drvdata->dev, "Enabled in %s mode\n",
-+	dev_dbg(dev, "Enabled in %s mode\n",
- 		(mode == CATU_MODE_PASS_THROUGH) ?
- 		"Pass through" :
- 		"Translate");
-@@ -461,15 +462,16 @@ static int catu_enable(struct coresight_device *csdev, void *data)
- static int catu_disable_hw(struct catu_drvdata *drvdata)
- {
- 	int rc = 0;
-+	struct device *dev = &drvdata->csdev->dev;
- 
- 	catu_write_control(drvdata, 0);
- 	coresight_disclaim_device_unlocked(drvdata->base);
- 	if (catu_wait_for_ready(drvdata)) {
--		dev_info(drvdata->dev, "Timeout while waiting for READY\n");
-+		dev_info(dev, "Timeout while waiting for READY\n");
- 		rc = -EAGAIN;
- 	}
- 
--	dev_dbg(drvdata->dev, "Disabled\n");
-+	dev_dbg(dev, "Disabled\n");
- 	return rc;
+ 	tpiu_enable_hw(drvdata);
+ 	atomic_inc(csdev->refcnt);
+-	dev_dbg(drvdata->dev, "TPIU enabled\n");
++	dev_dbg(&csdev->dev, "TPIU enabled\n");
+ 	return 0;
  }
  
-@@ -519,7 +521,6 @@ static int catu_probe(struct amba_device *adev, const struct amba_id *id)
- 		goto out;
- 	}
+@@ -104,7 +102,7 @@ static int tpiu_disable(struct coresight_device *csdev)
  
--	drvdata->dev = dev;
- 	dev_set_drvdata(dev, drvdata);
- 	base = devm_ioremap_resource(dev, &adev->res);
- 	if (IS_ERR(base)) {
-diff --git a/drivers/hwtracing/coresight/coresight-catu.h b/drivers/hwtracing/coresight/coresight-catu.h
-index 1d2ad18..80ceee3 100644
---- a/drivers/hwtracing/coresight/coresight-catu.h
-+++ b/drivers/hwtracing/coresight/coresight-catu.h
-@@ -61,7 +61,6 @@
- #define CATU_IRQEN_OFF		0x0
+ 	tpiu_disable_hw(drvdata);
  
- struct catu_drvdata {
--	struct device *dev;
- 	void __iomem *base;
- 	struct coresight_device *csdev;
- 	int irq;
+-	dev_dbg(drvdata->dev, "TPIU disabled\n");
++	dev_dbg(&csdev->dev, "TPIU disabled\n");
+ 	return 0;
+ }
+ 
+@@ -139,7 +137,6 @@ static int tpiu_probe(struct amba_device *adev, const struct amba_id *id)
+ 	if (!drvdata)
+ 		return -ENOMEM;
+ 
+-	drvdata->dev = &adev->dev;
+ 	drvdata->atclk = devm_clk_get(&adev->dev, "atclk"); /* optional */
+ 	if (!IS_ERR(drvdata->atclk)) {
+ 		ret = clk_prepare_enable(drvdata->atclk);
 -- 
 2.7.4
 
