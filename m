@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B60816268
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 12:57:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A76AA16269
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 12:57:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ce07daIT2LKDVT0+0W09t37zbjKzsAukcn6uiCtnAUo=; b=le+ATpJwhOJiMZzKZ4kc5cX2fa
-	rLvFIFiMmm/cnONQRIQI7AoiFmx2RYMWSWlfyn/4chTqF+0uj+9o7kLTDTR1swZ1SdBYDIczh04Wr
-	Uv7RMp8t2XMbuObzjS7QjgEQEjQJuX9BAr8qBW3vqdzghCaU17xxs11jNYXD5SuodipWMHCpyGqDw
-	ELrc9ODYttrSQ3EHnWnotkwBw3tioIEaJdzA5aotk/H1Wor/979LjEtClYz6Vw1Kyo/j0buEhjxpv
-	WhaUECcjLYg20+54dO6PTl6i3H1q6b5EHgtTGGYH3XyHt9ACtcELUH1H7HSkE5axQX55JHyvt8dHw
-	78EOr1xw==;
+	bh=NT3Lzm+IJ+TSv7N5u6PG50k9q0uGpnzCTW/ZTflZvDw=; b=IJYubQ6h1+giJyIp+wA0wEfviZ
+	/IhO+cAyJDgbl9Y2ufRVyPFQ4pr9VI28+5tndDeP0GaKa4CcM3AYNa8u/vkag7ZKfAXDh9fb0H93K
+	kSGE216ulZN9n6q6mkcmQCOGuxdvRvIpOHkGOutAKLM4yahUZZ2Zyo5pa3lMC2UddeZNWjI8ncz7R
+	mqulO2vvPBtywF3l3r/ibXPgWV2UqtkV04mKPuZSemJ2OXIStVwNmncs5kpv5Q4dRIonX4Og+BAqF
+	MS/KQeB7H9e5D1klYfU4YU2NzOsi/83Lsq3EjOLpui/FBX5FOVxufgC6ST4PSkhYB+ojwhE+5JGXd
+	ppUfKpcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNxmR-0001mC-DU; Tue, 07 May 2019 10:57:03 +0000
-Received: from foss.arm.com ([217.140.101.70])
+	id 1hNxmb-0001yv-Ix; Tue, 07 May 2019 10:57:13 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNxjZ-0005JP-SQ
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 10:54:31 +0000
+ id 1hNxjb-000581-E6
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 10:54:37 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C251F15AD;
- Tue,  7 May 2019 03:54:05 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3DB9B1682;
+ Tue,  7 May 2019 03:54:07 -0700 (PDT)
 Received: from en101.cambridge.arm.com (en101.cambridge.arm.com [10.1.196.93])
  by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id
- 8DE9E3F5AF; Tue,  7 May 2019 03:54:04 -0700 (PDT)
+ 0AE423F5AF; Tue,  7 May 2019 03:54:05 -0700 (PDT)
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 17/30] coresight: Make device to CPU mapping generic
-Date: Tue,  7 May 2019 11:52:44 +0100
-Message-Id: <1557226378-10131-18-git-send-email-suzuki.poulose@arm.com>
+Subject: [PATCH v3 18/30] coresight: Remove cpu field from platform data
+Date: Tue,  7 May 2019 11:52:45 +0100
+Message-Id: <1557226378-10131-19-git-send-email-suzuki.poulose@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1557226378-10131-1-git-send-email-suzuki.poulose@arm.com>
 References: <1557226378-10131-1-git-send-email-suzuki.poulose@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_035406_198724_71609068 
-X-CRM114-Status: GOOD (  14.44  )
+X-CRM114-CacheID: sfid-20190507_035407_740562_34632FCA 
+X-CRM114-Status: GOOD (  15.43  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -68,117 +69,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The CoreSight components ETM and CPU-Debug are always associated
-with CPUs. Replace the of_coresight_get_cpu() with a platform
-agnostic helper, in preparation to add ACPI support.
+CPU field is only used by ETMs and there is a separate API
+for fetching the same. So, let us use that instead of using
+the common platform probing helper. Also, remove it from the
+platform_data.
 
 Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 ---
- drivers/hwtracing/coresight/coresight-cpu-debug.c |  3 +--
- drivers/hwtracing/coresight/coresight-platform.c  | 18 +++++++++++++-----
- include/linux/coresight.h                         |  7 +------
- 3 files changed, 15 insertions(+), 13 deletions(-)
+ drivers/hwtracing/coresight/coresight-etm3x.c    | 2 +-
+ drivers/hwtracing/coresight/coresight-etm4x.c    | 2 +-
+ drivers/hwtracing/coresight/coresight-platform.c | 1 -
+ include/linux/coresight.h                        | 2 --
+ 4 files changed, 2 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-cpu-debug.c b/drivers/hwtracing/coresight/coresight-cpu-debug.c
-index e8819d7..07a1367 100644
---- a/drivers/hwtracing/coresight/coresight-cpu-debug.c
-+++ b/drivers/hwtracing/coresight/coresight-cpu-debug.c
-@@ -572,14 +572,13 @@ static int debug_probe(struct amba_device *adev, const struct amba_id *id)
- 	struct device *dev = &adev->dev;
- 	struct debug_drvdata *drvdata;
- 	struct resource *res = &adev->res;
--	struct device_node *np = adev->dev.of_node;
- 	int ret;
+diff --git a/drivers/hwtracing/coresight/coresight-etm3x.c b/drivers/hwtracing/coresight/coresight-etm3x.c
+index fa2164f..722fab96 100644
+--- a/drivers/hwtracing/coresight/coresight-etm3x.c
++++ b/drivers/hwtracing/coresight/coresight-etm3x.c
+@@ -819,7 +819,7 @@ static int etm_probe(struct amba_device *adev, const struct amba_id *id)
+ 			return ret;
+ 	}
  
- 	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
- 	if (!drvdata)
- 		return -ENOMEM;
- 
--	drvdata->cpu = np ? of_coresight_get_cpu(np) : 0;
+-	drvdata->cpu = pdata ? pdata->cpu : 0;
 +	drvdata->cpu = coresight_get_cpu(dev);
- 	if (per_cpu(debug_drvdata, drvdata->cpu)) {
- 		dev_err(dev, "CPU%d drvdata has already been initialized\n",
- 			drvdata->cpu);
+ 
+ 	cpus_read_lock();
+ 	etmdrvdata[drvdata->cpu] = drvdata;
+diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+index 4355b2e..03576f3 100644
+--- a/drivers/hwtracing/coresight/coresight-etm4x.c
++++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+@@ -1105,7 +1105,7 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
+ 
+ 	spin_lock_init(&drvdata->spinlock);
+ 
+-	drvdata->cpu = pdata ? pdata->cpu : 0;
++	drvdata->cpu = coresight_get_cpu(dev);
+ 
+ 	cpus_read_lock();
+ 	etmdrvdata[drvdata->cpu] = drvdata;
 diff --git a/drivers/hwtracing/coresight/coresight-platform.c b/drivers/hwtracing/coresight/coresight-platform.c
-index 5d78f4f..ba8c146 100644
+index ba8c146..541e500 100644
 --- a/drivers/hwtracing/coresight/coresight-platform.c
 +++ b/drivers/hwtracing/coresight/coresight-platform.c
-@@ -151,12 +151,14 @@ static void of_coresight_get_ports(const struct device_node *node,
- 	}
- }
- 
--int of_coresight_get_cpu(const struct device_node *node)
-+static int of_coresight_get_cpu(struct device *dev)
- {
- 	int cpu;
- 	struct device_node *dn;
- 
--	dn = of_parse_phandle(node, "cpu", 0);
-+	if (!dev->of_node)
-+		return 0;
-+	dn = of_parse_phandle(dev->of_node, "cpu", 0);
- 	/* Affinity defaults to CPU0 */
- 	if (!dn)
- 		return 0;
-@@ -166,7 +168,6 @@ int of_coresight_get_cpu(const struct device_node *node)
- 	/* Affinity to CPU0 if no cpu nodes are found */
- 	return (cpu < 0) ? 0 : cpu;
- }
--EXPORT_SYMBOL_GPL(of_coresight_get_cpu);
- 
- /*
-  * of_coresight_parse_endpoint : Parse the given output endpoint @ep
-@@ -240,8 +241,6 @@ static int of_get_coresight_platform_data(struct device *dev,
- 	bool legacy_binding = false;
- 	struct device_node *node = dev->of_node;
- 
--	pdata->cpu = of_coresight_get_cpu(node);
--
- 	/* Get the number of input and output port for this component */
- 	of_coresight_get_ports(node, &pdata->nr_inport, &pdata->nr_outport);
- 
-@@ -300,6 +299,14 @@ of_get_coresight_platform_data(struct device *dev,
- }
- #endif
- 
-+int coresight_get_cpu(struct device *dev)
-+{
-+	if (is_of_node(dev->fwnode))
-+		return of_coresight_get_cpu(dev);
-+	return 0;
-+}
-+EXPORT_SYMBOL_GPL(coresight_get_cpu);
-+
- struct coresight_platform_data *
- coresight_get_platform_data(struct device *dev)
- {
-@@ -318,6 +325,7 @@ coresight_get_platform_data(struct device *dev)
+@@ -325,7 +325,6 @@ coresight_get_platform_data(struct device *dev)
  
  	/* Use device name as sysfs handle */
  	pdata->name = dev_name(dev);
-+	pdata->cpu = coresight_get_cpu(dev);
+-	pdata->cpu = coresight_get_cpu(dev);
  
  	if (is_of_node(fwnode))
  		ret = of_get_coresight_platform_data(dev, pdata);
 diff --git a/include/linux/coresight.h b/include/linux/coresight.h
-index e2b95e0..98a4440 100644
+index 98a4440..bf241db 100644
 --- a/include/linux/coresight.h
 +++ b/include/linux/coresight.h
-@@ -292,12 +292,7 @@ static inline void coresight_disclaim_device_unlocked(void __iomem *base) {}
+@@ -91,14 +91,12 @@ union coresight_dev_subtype {
  
- #endif
- 
--#ifdef CONFIG_OF
--extern int of_coresight_get_cpu(const struct device_node *node);
--#else
--static inline int of_coresight_get_cpu(const struct device_node *node)
--{ return 0; }
--#endif
-+extern int coresight_get_cpu(struct device *dev);
- 
- struct coresight_platform_data *coresight_get_platform_data(struct device *dev);
- 
+ /**
+  * struct coresight_platform_data - data harvested from the DT specification
+- * @cpu:	the CPU a source belongs to. Only applicable for ETM/PTMs.
+  * @name:	name of the component as shown under sysfs.
+  * @nr_inport:	number of input ports for this component.
+  * @nr_outport:	number of output ports for this component.
+  * @conns:	Array of nr_outport connections from this component
+  */
+ struct coresight_platform_data {
+-	int cpu;
+ 	const char *name;
+ 	int nr_inport;
+ 	int nr_outport;
 -- 
 2.7.4
 
