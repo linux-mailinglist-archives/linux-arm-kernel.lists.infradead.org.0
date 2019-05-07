@@ -2,75 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC99316B7B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 21:38:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF88116B7C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 21:38:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=YJpn1f+iDG53/Ce4I2jOnQ0/tP5D5S4JbcoPyaOWfkQ=; b=gYP
-	LPijKcUof5PaofjYy4HEudS5yqZIe/FD2cY62fdV8leG2dLceYDklhCcQqW2yPJ20lD96gYN9IRDt
-	/klRrcjA3XKwTGR7g0Md/yDQwtVxGwXvulN1vCE1fi4nKWf7iZDFbtRRn+IZt3tbfigHfwB/QiHGh
-	t3CgY7f5zoKQqSLsxcVfkPk6OL2b35KQYCThZPCXIXAzPTeqLIfQTC68Fkk5y6gsNxhlmvkB38VOy
-	MhYy+JWiJTIM07snAjthcztjpEcArrbO8KceRmxXUSmcNRkw9Vs7u7Uuv9OGm/nb0BuX2MBHNVNJl
-	eUIde42Q6aJByEMfVC4CszhLveqj/Tg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=hJmchRaASuaNE95CIAeOp/zCFqm3l0jpm1Zkf8oJyN8=; b=W6xqzobh0R7w/g9VMkVmbmRRjc
+	FJfzPpefyACCtsWoQytZvqgPDcFGgjM2XUOgjQjbEmyILGTYAKlmyHkWikSzRq7U0Sej3KbqZQfkj
+	KLNOMm/JyJYHDebqrt+hURFk9Z9UT4UVLAPYySe7GTs/92YifGfnaUvq3vJintRT+ZJZK2Dls/WuB
+	dvCVErymoRJDkXjmjIzKQxhyz4RkHUt8gr55xKSvGFV3f7tEueSLQIIjCDzPhj22jYfoDRRIu3WRy
+	EwA+gkBGlBkU7OD0MG529ZHNaU+v80eoQG+4h0DDnYPvEk/FsM+dqzNfi7gMt048Lj8C02sGUlFuL
+	RxaRz6GQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hO5uw-0005Ed-N3; Tue, 07 May 2019 19:38:22 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hO5v7-0005Pu-IP; Tue, 07 May 2019 19:38:33 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hO5up-0005Dh-Cp
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 19:38:16 +0000
-Received: by mail-pg1-x543.google.com with SMTP id z3so5108840pgp.8
+ id 1hO5uq-0005EF-GG
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 19:38:17 +0000
+Received: by mail-pl1-x643.google.com with SMTP id d9so8676697pls.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 May 2019 12:38:14 -0700 (PDT)
+ Tue, 07 May 2019 12:38:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=sC/+NY9vNRdIe9N8awakKaLNDu11yUQCUMakYQMWUBk=;
- b=edCfTr60W9kD+WVkXBcM19S0e2usB7m+SrxnRi1Qi+/QHbw6c5vE75E4uK0zW9FJ3u
- hscskKOYoBfaGOf2pGnIigDj8CjnnOK6VpfQUYFDz56BOlujpguZUhLVtnKhRujUde9q
- onWgRfe3beZ+enpnR8U901oLW15LyzB4HDBMlf+4Cuo9e/ZRr7WMFSjIdNlJRPxxQ7XJ
- y3JU6v3vuM5+vh2uJqGmAbybj3BkfZwbgFEFixMtcgq7K8MWlHgBm5N+HepbThduYXUN
- iTWMPLIgg2+t28s5ghdrSLcTR/sPHGYMwkYJVbsDZUtUKs/Qzx4VJuNDfONTXNuYD5Rf
- G6Ww==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=E3cy6coJyOOa2SbBo8UlxqrSWJcV9cpYsmbojY6zx78=;
+ b=PdeQdBMH+PUZqj2w9dPXVinwmbVbRY3710/zgoNzmgAAwN1AnPnO68PuvRcTOgHdGC
+ ztkUdxZHXvkX6BHIg+H4erw9aGn9DaxXx3diAqZuf3ThTXCSBbfcYT9mckVk1F/RYBI8
+ vFPjklCNJW2gmPY9EZSVJmdZO9xxOEsViODA/+Fdy7FjBpKFZi24JMxqOjXFmoBz7vSW
+ AFnR5jMbkNZSEt6tRcevkk0cRRxTwksw0LKr9AldUi8bxRDcLXAQ9LB9PRwx/wLbZzk0
+ zVGxm/MEOKDNF91YJVNk+Ofsq89/gAt68fo76RXVPNxH40O5HAn2CUzUrYt86PSyg7rt
+ FSog==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=sC/+NY9vNRdIe9N8awakKaLNDu11yUQCUMakYQMWUBk=;
- b=HZyaRglyQ7r79eyPAkgqiejuD0qw8aFJEdY45LMEcRCR+JAiLIIhVc8uvruzpPyT/7
- ZqlhZ35oetQmi5EEK0J+whxaAhLbN+XxBeSuQk7ciS1VEiE/NUlqJOKxSSfciCZSkMZ4
- AfOlZTfGNMzL4ZUMaV4UyLoQOjVkRGN7UX8KRp7n7bWcnxpxNiDRxYVZ5G1rKMRPEiga
- wTrqiE4XVxsXASzlYOWm6ou2cyhujJdTASvxQGzOrgeYmE7yLj+FvKDXM8R39wIHtvon
- oau1P1OvYeyZbo12OJ0Exnxs7/eDi4K9OVr4u3Qf6pqd17AF+sg27vZtYygqpvCi6Ptj
- hyLQ==
-X-Gm-Message-State: APjAAAX3D+kdWh1XJ23IDiKhaThYI0A+mqUgFxuElPQhpLtvlDhPeShc
- 2mA6EtsRfqGdq+1TKdrtvh0=
-X-Google-Smtp-Source: APXvYqxwRJZ7Dy7UxedXvqeozShpNdo8JgcXtCXvnqrOfuid/1+Qr8Kk+wFyhVz0N7aIPSx6FwcSjA==
-X-Received: by 2002:a63:2ac5:: with SMTP id
- q188mr32742805pgq.388.1557257894294; 
- Tue, 07 May 2019 12:38:14 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=E3cy6coJyOOa2SbBo8UlxqrSWJcV9cpYsmbojY6zx78=;
+ b=NJHKskLPH+HhG13t8PPsj3TNLYq18lZmUnaafPUWiucMIfp3VFonacyHP2NUHH7+Yw
+ ftGkZmMpFHxRKPEoHgNuOdWZjJ7pGye5n/+r6FAmZ+4MIsjFg/vR8H9e2OY4bsnc+McJ
+ xeMx8FE3eKvnrf8JYVYoQcB9kLXD7CpDOE+pNGkhLq3JVVyPTKRW7NWIe2bxKaqQErsh
+ tT/BpQrOGuAc02Bi1tiyB+LXmejoPS32c6DQmtpsiZfVz6wpYQd/ARyZeRV5RWz7rVBo
+ n7IyKOcKxD0WnUc/ATxxFrBWDJesnjrXPeIL9C98zqPLRB2HPeth2USXptmlso0zxYLe
+ Z8TA==
+X-Gm-Message-State: APjAAAV8RNFFjptoJqZq43f5ap+kM11cb2GsgSXkZUGVud+QWmtg1oeq
+ SPuujVJxn+Zubym2xxKGlWM=
+X-Google-Smtp-Source: APXvYqwSKFH3OcPH0UwFlrAn9EVBXhRUaujmIGC6dieqwuOP4POjIFzGh4hKO76fOOfeE/bNAObGkg==
+X-Received: by 2002:a17:902:8a81:: with SMTP id
+ p1mr42323974plo.106.1557257895759; 
+ Tue, 07 May 2019 12:38:15 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.250])
- by smtp.gmail.com with ESMTPSA id l21sm5964658pff.40.2019.05.07.12.38.12
+ by smtp.gmail.com with ESMTPSA id l21sm5964658pff.40.2019.05.07.12.38.14
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 07 May 2019 12:38:13 -0700 (PDT)
+ Tue, 07 May 2019 12:38:14 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v2 0/3] hwmon: scmi: Scale values to target desired HWMON units
-Date: Tue,  7 May 2019 12:35:01 -0700
-Message-Id: <20190507193504.28248-1-f.fainelli@gmail.com>
+Subject: [PATCH v2 1/3] kernel: Provide a __pow10() function
+Date: Tue,  7 May 2019 12:35:02 -0700
+Message-Id: <20190507193504.28248-2-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190507193504.28248-1-f.fainelli@gmail.com>
+References: <20190507193504.28248-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_123815_473391_577F83B7 
-X-CRM114-Status: GOOD (  11.17  )
+X-CRM114-CacheID: sfid-20190507_123816_537041_061A7B4A 
+X-CRM114-Status: GOOD (  11.06  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -103,31 +107,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sudeep, Guenter,
+Provide a simple macro that can return the value of 10 raised to a
+positive integer. We are going to use this in order to scale units from
+firmware to HWMON.
 
-This patch series adds support for scaling SCMI sensor values read from
-firmware. Sudeep, let me know if you think we should be treating scale
-== 0 as a special value to preserve some firmware compatibility (not
-that this would be desired).
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+---
+ include/linux/kernel.h | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
-Changes in v2:
-
-- added a helper function in kernel.h: __pow10()
-- made the scale in scmi_sensor_info an s8 type, added defines for
-  checking the sign bit and sign extending with a mask
-- simplify computations in hwmon driver
-
-Florian Fainelli (3):
-  kernel: Provide a __pow10() function
-  firmware: arm_scmi: Fetch and store sensor scale
-  hwmon: scmi: Scale values to target desired HWMON units
-
- drivers/firmware/arm_scmi/sensors.c |  6 ++++++
- drivers/hwmon/scmi-hwmon.c          | 30 ++++++++++++++++++++++++++++-
- include/linux/kernel.h              | 11 +++++++++++
- include/linux/scmi_protocol.h       |  1 +
- 4 files changed, 47 insertions(+), 1 deletion(-)
-
+diff --git a/include/linux/kernel.h b/include/linux/kernel.h
+index 2d14e21c16c0..62fc8bd84bc9 100644
+--- a/include/linux/kernel.h
++++ b/include/linux/kernel.h
+@@ -294,6 +294,17 @@ static inline u32 reciprocal_scale(u32 val, u32 ep_ro)
+ 	return (u32)(((u64) val * ep_ro) >> 32);
+ }
+ 
++/* Return in f the value of 10 raise to the power x */
++#define __pow10(x, f)(					\
++{							\
++	typeof(x) __x = abs(x);				\
++	f = 1;						\
++	while (__x--)					\
++		f *= 10;				\
++	f;						\
++}							\
++)
++
+ #if defined(CONFIG_MMU) && \
+ 	(defined(CONFIG_PROVE_LOCKING) || defined(CONFIG_DEBUG_ATOMIC_SLEEP))
+ #define might_fault() __might_fault(__FILE__, __LINE__)
 -- 
 2.17.1
 
