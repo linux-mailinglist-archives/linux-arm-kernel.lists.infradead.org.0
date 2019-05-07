@@ -2,61 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E031165DB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 16:37:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B7121660B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 16:52:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3wvwJk1AtNo+bSl4qR2hg43TMYfhWbg13D9P7e0j8Xw=; b=SQe2F3nHovwjxo
-	dQ8rWCRXzcoEY+JmlHCKa6eiy9sQpHPbGuONZ4at+iXqFXUgywPbbYwxqr9nTkgDf5kwUPGCduFs4
-	QjocKUZb1oHfCx0DxIgebBQeIys5rpNIG52LxUXgNSMdVhUKjf8AUUAJi0fvvK17XZah1MBvbdrdb
-	xXZ7ohRbKM9/TVuQTiQA7hQaRMdlj1ak2VcRLU5EAEqJ446oFhXOpi+9g+TYOvYyHkJCCCkbib/Hu
-	DT7mtxUM7v6Im5KxTdmLS39bH3N/Wl4Zp0LdDLtcktvUjlK6mRxRaL8wsC6g9cwd4vRyvzxk4HdqX
-	7bpIyGXCmjJAS32bySSA==;
+	List-Owner; bh=XkZ20YUq2q1VbcLzYJVV4u4ck0XjRQzoSSkq8U+Nza8=; b=DZa+J3YDlc6R8S
+	30TfAGfvJuNEj01/1k301cnDdn38btFL77sayf6A42aoXS738rs2TU4zDVayOkeHLrIhNyz3ZJZwB
+	CArP1vBB9uVQ4eY8ICrXIGe0NPyD8AcLKVPNpWthqRw5KM+hsrlWxRo1AwCyyhq/1lJsIxyoRqEkD
+	eaQ6UbQLa7pZoyk5/J7eb5DwByFhQRHuDl67I3ZMvu1hb0TTdohVmOhhhuzrh2WnDi/WYoXG+jpCm
+	COMzC5dxT8VTlyzdh5Jj0FKC5PFI4dq887PsZoLxo/ZPeSo1u8cRYpX36UtdtJLxX5X80alAloCKu
+	v/NE6FNUWf8gEZuSgKIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hO1DM-0004jf-Ur; Tue, 07 May 2019 14:37:04 +0000
-Received: from mxout014.mail.hostpoint.ch ([2a00:d70:0:e::314])
+	id 1hO1Ru-0001YQ-V0; Tue, 07 May 2019 14:52:06 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hO1Ct-0004KQ-Nb
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 14:36:39 +0000
-Received: from [10.0.2.46] (helo=asmtp013.mail.hostpoint.ch)
- by mxout014.mail.hostpoint.ch with esmtp (Exim 4.91 (FreeBSD))
- (envelope-from <dev@pschenker.ch>)
- id 1hO1Ci-00028n-4E; Tue, 07 May 2019 16:36:24 +0200
-Received: from [46.140.72.82] (helo=philippe-pc.toradex.int)
- by asmtp013.mail.hostpoint.ch with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.91 (FreeBSD))
- (envelope-from <dev@pschenker.ch>)
- id 1hO1Ch-0008oW-Sx; Tue, 07 May 2019 16:36:24 +0200
-X-Authenticated-Sender-Id: dev@pschenker.ch
-From: Philippe Schenker <dev@pschenker.ch>
-To: linux-iio@vger.kernel.org, Jonathan Cameron <jic23@kernel.org>,
- Stefan Agner <stefan@agner.ch>, Hartmut Knaack <knaack.h@gmx.de>,
- Lars-Peter Clausen <lars@metafoo.de>,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>
-Subject: [PATCH 5/5] iio: stmpe-adc: Reset possible interrupts
-Date: Tue,  7 May 2019 16:36:15 +0200
-Message-Id: <20190507143615.28477-5-dev@pschenker.ch>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190507143615.28477-1-dev@pschenker.ch>
-References: <20190507143615.28477-1-dev@pschenker.ch>
+ id 1hO1Rn-0001Y6-He
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 14:52:01 +0000
+Received: from mail-qt1-f182.google.com (mail-qt1-f182.google.com
+ [209.85.160.182])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E9B9921479
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue,  7 May 2019 14:51:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1557240719;
+ bh=gWUxo89d44SUn3J2Zc928qElLW2XT8oWIyto8ecrjIY=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=YUtgkGToiqE6/WiAbanqadOhny/GrUBQ7hVL+t9ZAGA2iEdyxQtd38ixlsU4zL3y8
+ w+xWAtKkx73pRR7L41YbY9B5/OtTMHhgAsIhu49ZJsJnAEFqRaj8NF3OLQDefAIJOT
+ kgi1vgjg5tXIIEE+/VLjaVz39OGKHTGmPR61RfXw=
+Received: by mail-qt1-f182.google.com with SMTP id o7so7373213qtp.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 07 May 2019 07:51:58 -0700 (PDT)
+X-Gm-Message-State: APjAAAV8DAl+yYnFGsU0NG2gkWRTT34+JADGA5j++8FlvW+7OW7fEo69
+ rGSHLU5z35is3+noFiucxIz9qQ8BsQe2UCWkmQ==
+X-Google-Smtp-Source: APXvYqzxIefvVeNFRFHHncOA0m/a9ZI1n2OxWxSSZe8gViWqPJVgQkyi4KCb2IcqBYcRyd+wlZBqTVovXgTwYP7ETyw=
+X-Received: by 2002:aed:2471:: with SMTP id s46mr6594381qtc.144.1557240718119; 
+ Tue, 07 May 2019 07:51:58 -0700 (PDT)
 MIME-Version: 1.0
+References: <b7a6095a5c900fa23cc54d1ccd8e8ef0ccf6e788.1557236840.git-series.maxime.ripard@bootlin.com>
+ <e39713deed69735e5c02c4273bf84572aa589736.1557236840.git-series.maxime.ripard@bootlin.com>
+In-Reply-To: <e39713deed69735e5c02c4273bf84572aa589736.1557236840.git-series.maxime.ripard@bootlin.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Tue, 7 May 2019 09:51:46 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqLJ+aeG8zakZokv2qfwiLBiJ-49ByGuQ_-YuTUyGXtNnQ@mail.gmail.com>
+Message-ID: <CAL_JsqLJ+aeG8zakZokv2qfwiLBiJ-49ByGuQ_-YuTUyGXtNnQ@mail.gmail.com>
+Subject: Re: [PATCH 3/4] dt-bindings: spi: sun6i: Add YAML schemas
+To: Maxime Ripard <maxime.ripard@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_073635_761674_5A956D1B 
-X-CRM114-Status: UNSURE (   8.86  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190507_075159_622801_3FE00DB0 
+X-CRM114-Status: GOOD (  20.91  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a00:d70:0:e:0:0:0:314 listed in] [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -68,59 +85,195 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Marcel Ziswiler <marcel.ziswiler@toradex.com>, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Philippe Schenker <philippe.schenker@toradex.com>,
- David Laight <David.Laight@ACULAB.COM>,
- Max Krummenacher <max.krummenacher@toradex.com>,
- Lee Jones <lee.jones@linaro.org>, dev@pschenker.ch,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-spi <linux-spi@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Mark Brown <broonie@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Philippe Schenker <philippe.schenker@toradex.com>
+On Tue, May 7, 2019 at 8:48 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+>
+> Switch the DT binding to a YAML schema to enable the DT validation.
+>
+> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+> ---
+>  Documentation/devicetree/bindings/spi/allwinner,sun6i-a31-spi.yaml | 106 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+>  Documentation/devicetree/bindings/spi/spi-sun6i.txt                |  44 +------------------------------
+>  2 files changed, 106 insertions(+), 44 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/spi/allwinner,sun6i-a31-spi.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/spi/spi-sun6i.txt
+>
+> diff --git a/Documentation/devicetree/bindings/spi/allwinner,sun6i-a31-spi.yaml b/Documentation/devicetree/bindings/spi/allwinner,sun6i-a31-spi.yaml
+> new file mode 100644
+> index 000000000000..0cd7244653a8
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/spi/allwinner,sun6i-a31-spi.yaml
+> @@ -0,0 +1,106 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/spi/allwinner,sun6i-a31-spi.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Allwinner A31 SPI Controller Device Tree Bindings
+> +
+> +allOf:
+> +  - $ref: "spi-controller.yaml"
+> +
+> +maintainers:
+> +  - Chen-Yu Tsai <wens@csie.org>
+> +  - Maxime Ripard <maxime.ripard@bootlin.com>
+> +
+> +properties:
+> +  "#address-cells": true
+> +  "#size-cells": true
+> +
+> +  compatible:
+> +    enum:
+> +      - allwinner,sun6i-a31-spi
+> +      - allwinner,sun8i-h3-spi
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: Bus Clock
+> +      - description: Module Clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: ahb
+> +      - const: mod
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +  dmas:
+> +    items:
+> +      - description: RX DMA Channel
+> +      - description: TX DMA Channel
+> +
+> +  dma-names:
+> +    items:
+> +      - const: rx
+> +      - const: tx
+> +
+> +  num-cs: true
+> +
+> +patternProperties:
+> +  "^[a-z]+@[0-9]+$":
 
-Clear any interrupt that still is on the device on every channel
-this driver is activated for in probe and specific channels in
-the timeout handler.
+Same issues here as patch 1.
 
-Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
-
----
-
- drivers/iio/adc/stmpe-adc.c | 5 +++++
- 1 file changed, 5 insertions(+)
-
-diff --git a/drivers/iio/adc/stmpe-adc.c b/drivers/iio/adc/stmpe-adc.c
-index cc752a47444c..a5990e9f2c80 100644
---- a/drivers/iio/adc/stmpe-adc.c
-+++ b/drivers/iio/adc/stmpe-adc.c
-@@ -80,6 +80,8 @@ static int stmpe_read_voltage(struct stmpe_adc *info,
- 	ret = wait_for_completion_timeout(&info->completion, STMPE_ADC_TIMEOUT);
- 
- 	if (ret <= 0) {
-+		stmpe_reg_write(info->stmpe, STMPE_REG_ADC_INT_STA,
-+				STMPE_ADC_CH(info->channel));
- 		mutex_unlock(&info->lock);
- 		return -ETIMEDOUT;
- 	}
-@@ -326,6 +328,9 @@ static int stmpe_adc_probe(struct platform_device *pdev)
- 	stmpe_reg_write(info->stmpe, STMPE_REG_ADC_INT_EN,
- 			~(norequest_mask & 0xFF));
- 
-+	stmpe_reg_write(info->stmpe, STMPE_REG_ADC_INT_STA,
-+			~(norequest_mask & 0xFF));
-+
- 	return devm_iio_device_register(&pdev->dev, indio_dev);
- }
- 
--- 
-2.21.0
-
+> +    properties:
+> +      reg:
+> +        items:
+> +          minimum: 0
+> +          maximum: 4
+> +
+> +      spi-rx-bus-width:
+> +        const: 1
+> +
+> +      spi-tx-bus-width:
+> +        const: 1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    spi1: spi@1c69000 {
+> +        compatible = "allwinner,sun6i-a31-spi";
+> +        reg = <0x01c69000 0x1000>;
+> +        interrupts = <0 66 4>;
+> +        clocks = <&ahb1_gates 21>, <&spi1_clk>;
+> +        clock-names = "ahb", "mod";
+> +        resets = <&ahb1_rst 21>;
+> +        #address-cells = <1>;
+> +        #size-cells = <0>;
+> +    };
+> +
+> +  - |
+> +    spi0: spi@1c68000 {
+> +        compatible = "allwinner,sun8i-h3-spi";
+> +        reg = <0x01c68000 0x1000>;
+> +        interrupts = <0 65 4>;
+> +        clocks = <&ccu 30>, <&ccu 82>;
+> +        clock-names = "ahb", "mod";
+> +        dmas = <&dma 23>, <&dma 23>;
+> +        dma-names = "rx", "tx";
+> +        resets = <&ccu 15>;
+> +        #address-cells = <1>;
+> +        #size-cells = <0>;
+> +    };
+> +
+> +...
+> diff --git a/Documentation/devicetree/bindings/spi/spi-sun6i.txt b/Documentation/devicetree/bindings/spi/spi-sun6i.txt
+> deleted file mode 100644
+> index 435a8e0731ac..000000000000
+> --- a/Documentation/devicetree/bindings/spi/spi-sun6i.txt
+> +++ /dev/null
+> @@ -1,44 +0,0 @@
+> -Allwinner A31/H3 SPI controller
+> -
+> -Required properties:
+> -- compatible: Should be "allwinner,sun6i-a31-spi" or "allwinner,sun8i-h3-spi".
+> -- reg: Should contain register location and length.
+> -- interrupts: Should contain interrupt.
+> -- clocks: phandle to the clocks feeding the SPI controller. Two are
+> -          needed:
+> -  - "ahb": the gated AHB parent clock
+> -  - "mod": the parent module clock
+> -- clock-names: Must contain the clock names described just above
+> -- resets: phandle to the reset controller asserting this device in
+> -          reset
+> -
+> -Optional properties:
+> -- dmas: DMA specifiers for rx and tx dma. See the DMA client binding,
+> -       Documentation/devicetree/bindings/dma/dma.txt
+> -- dma-names: DMA request names should include "rx" and "tx" if present.
+> -
+> -Example:
+> -
+> -spi1: spi@1c69000 {
+> -       compatible = "allwinner,sun6i-a31-spi";
+> -       reg = <0x01c69000 0x1000>;
+> -       interrupts = <0 66 4>;
+> -       clocks = <&ahb1_gates 21>, <&spi1_clk>;
+> -       clock-names = "ahb", "mod";
+> -       resets = <&ahb1_rst 21>;
+> -};
+> -
+> -spi0: spi@1c68000 {
+> -       compatible = "allwinner,sun8i-h3-spi";
+> -       reg = <0x01c68000 0x1000>;
+> -       interrupts = <GIC_SPI 65 IRQ_TYPE_LEVEL_HIGH>;
+> -       clocks = <&ccu CLK_BUS_SPI0>, <&ccu CLK_SPI0>;
+> -       clock-names = "ahb", "mod";
+> -       dmas = <&dma 23>, <&dma 23>;
+> -       dma-names = "rx", "tx";
+> -       pinctrl-names = "default";
+> -       pinctrl-0 = <&spi0_pins>;
+> -       resets = <&ccu RST_BUS_SPI0>;
+> -       #address-cells = <1>;
+> -       #size-cells = <0>;
+> -};
+> --
+> git-series 0.9.1
 
 _______________________________________________
 linux-arm-kernel mailing list
