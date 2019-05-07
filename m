@@ -2,91 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88CCE15EE6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 10:13:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BDF215F27
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 10:15:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9u4rOxM9S9HxS1Jw8XT21ykneMu3g2o0kVwZa14DATU=; b=fO6X2h551F8xxG
-	C6+3wlT0GPJKO6Lbme+qcZdoU3iZPLimd+RDZWa2rWzZrYuuRzfGEgWGZdr43hLCI1LGyUHWyCIiS
-	wI8Zz6MuTWgXJKNq57sz+bMFG9glp6KjgECOYr5fSABN/Vsh9O9yTe4GU7lYSH6XoOdIqA7h6tegd
-	9dVbKyFRI7bptcQYIFdZBy+bzrBLQuV1RCh1b1t+AIQqwiQUfQ9d2rWJ5DkgdKczqxOxhHksDYwGW
-	kKQMLWu9lKfk7En9TVx4NueK3KPGFMOkKFKyvvd1KNnNlnlcZtsMTNjK4ItTjBjYbBV3siOI4FF5n
-	mUj4/WxKT+aIeIwoju0w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=bLrwm+EzUjU4Yz1bpyx+DDI0SfyBjAMLIIzd5AdneA4=; b=RyIBsO3FQmiQjF
+	x015ubPG3ZRYS6Hqyg2pJum8u8/naMQ48vP155KV9iZC6yNUZsZRdbqecDKYinZyWyj+HbRgp1505
+	KCI3fupQSMgKg3RjCZLr7Vw6xVRhkUYqRKzlQDd+dRIqpttq2qwm4aZWjpP3YQvinrsI7i9qKmg67
+	VfO5Nf31k08Fn/PqD16etx85dPc6qJClrXMYTQSufjF2DmxzWs8b8M08NHxdi+KGbi+2QOQWrDtuA
+	TGOyQr45/tYGCHUlP3iGbfyFQqVlLkzo9vc+41GkBJMg+zJvcPzkOw5hGPIeUQ1RN4Msgsevtry3B
+	JjCyNJFuhhBUFGQ7fNDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNvEI-0000xz-0D; Tue, 07 May 2019 08:13:38 +0000
-Received: from mail-yw1-xc44.google.com ([2607:f8b0:4864:20::c44])
+	id 1hNvGV-00047v-JT; Tue, 07 May 2019 08:15:55 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNvEA-0000xQ-TT
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 08:13:32 +0000
-Received: by mail-yw1-xc44.google.com with SMTP id 186so3701134ywo.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 May 2019 01:13:30 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=V6HRNlerzuTlf65wkki7nM6C4D1FGoZOd7Sxrx3wTEw=;
- b=a2XL0SDQvewd8WYswz0hGMJlsRxA35swdEIQZMf9rrzOFkDU8+mU2AbLpuF5Lbdj5D
- cDaDocokLj/D6D2wZOitvMk2H5DzHvVVP1M+0bGarIya75QECeSMefKT6qOSnl66GAWx
- QrwnQba9avOS39HZIpNpzPK5qsd9a6RDKLAYhbuAqEWndLttju3fvDBxmdyeG6Ind4iw
- +tUFXVYlF1cZgDCJykgYK9LgG01uj5tV58+Y6MbNlisax8dGYKDGvQ3aMBrHOW8LsTmF
- LQWunFcIIoUhJwko6J3um0aD5opKEiB2bhPXKS6WwrgvPak/fh7YtXEvZp/v15N97Nmd
- aH+Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=V6HRNlerzuTlf65wkki7nM6C4D1FGoZOd7Sxrx3wTEw=;
- b=DoIi7mEEjbcGlEK8t+vmIaNBZkNItAIKSr4eXFSZHk5rcNMp3o+w7dvlxphNdeSCDe
- zvgNKJ9aKK5RFz3SRldYHdZ2+LBdZmpxFU60nCzM/9pPDf1PTI9/tDyyN/CORvFX4fUY
- mTpT6nPm/vKJI5c2KQLhhAAybPFDKvQ+Dv1S5XJJVQLzVI+HUn31cFzUGetemoKY/nUR
- VH/Y7qq8E7CbVZo6lIJldMs8s6eTCfiYnm91WH+0qq35Op8Knj5IlxZp/oDph4JNCaya
- bnV7lcVVmH8wJrcUqt9NraJRaf0vGu+v4055zRZl9D7Zt+GjwlkezK3YeUyQpSggGO51
- Q4rQ==
-X-Gm-Message-State: APjAAAWlNiFeMRnI+MMt/Po8sC2XbOSmO5lRDsMwebjBSPJX8kVhZ/kY
- Rt4VMvIXCrEkY4lem8Ezuq3pGg==
-X-Google-Smtp-Source: APXvYqyp5wFsCc77MqbpW/aGAmbY/bVQfAc0hh6Nv8MPyK/9OX3F5lCwI4PDDIil85+CzIj80QWWUg==
-X-Received: by 2002:a25:10d6:: with SMTP id 205mr19924624ybq.59.1557216809885; 
- Tue, 07 May 2019 01:13:29 -0700 (PDT)
-Received: from leoy-ThinkPad-X240s (li931-65.members.linode.com.
- [45.56.113.65])
- by smtp.gmail.com with ESMTPSA id 207sm3625406ywv.9.2019.05.07.01.13.24
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 07 May 2019 01:13:28 -0700 (PDT)
-Date: Tue, 7 May 2019 16:13:20 +0800
-From: Leo Yan <leo.yan@linaro.org>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH 2/5] coresight: tmc-etf: Fix snapshot mode update function
-Message-ID: <20190507081320.GB21730@leoy-ThinkPad-X240s>
-References: <20190501175052.29667-1-mathieu.poirier@linaro.org>
- <20190501175052.29667-3-mathieu.poirier@linaro.org>
+ id 1hNvEy-0001EI-7X; Tue, 07 May 2019 08:14:24 +0000
+X-UUID: 2587865bc95a41dfba253dca4362ce74-20190507
+X-UUID: 2587865bc95a41dfba253dca4362ce74-20190507
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <bibby.hsieh@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1694917781; Tue, 07 May 2019 00:14:06 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 7 May 2019 01:14:04 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 7 May 2019 16:13:56 +0800
+Received: from mtkslt302.mediatek.inc (10.21.14.115) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Tue, 7 May 2019 16:13:57 +0800
+From: Bibby Hsieh <bibby.hsieh@mediatek.com>
+To: Jassi Brar <jassisinghbrar@gmail.com>, Matthias Brugger
+ <matthias.bgg@gmail.com>, Rob Herring <robh+dt@kernel.org>, CK HU
+ <ck.hu@mediatek.com>
+Subject: [PATCH v5 00/14] support gce on mt8183 platform
+Date: Tue, 7 May 2019 16:13:43 +0800
+Message-ID: <20190507081355.52630-1-bibby.hsieh@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190501175052.29667-3-mathieu.poirier@linaro.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_011330_954090_E7B87012 
-X-CRM114-Status: GOOD (  18.14  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190507_011420_566850_BC1914B6 
+X-CRM114-Status: GOOD (  12.80  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c44 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -98,59 +69,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: corbet@lwn.net, alexander.shishkin@linux.intel.com,
- coresight@lists.linaro.org, suzuki.poulose@arm.com, acme@kernel.org,
- peterz@infradead.org, mingo@redhat.com, mike.leach@arm.com,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, srv_heupstream@mediatek.com,
+ Daoyuan Huang <daoyuan.huang@mediatek.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
+ Daniel Kurtz <djkurtz@chromium.org>,
+ Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>, kendrick.hsu@mediatek.com,
+ linux-mediatek@lists.infradead.org, Houlong Wei <houlong.wei@mediatek.com>,
+ Sascha
+ Hauer <kernel@pengutronix.de>, Frederic Chen <Frederic.Chen@mediatek.com>,
+ YT Shen <yt.shen@mediatek.com>, Jiaguang Zhang <jiaguang.zhang@mediatek.com>,
+ Bibby Hsieh <bibby.hsieh@mediatek.com>, linux-arm-kernel@lists.infradead.org,
+ ginny.chen@mediatek.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 01, 2019 at 11:50:49AM -0600, Mathieu Poirier wrote:
-> When working in snapshot mode function perf_aux_output_begin()
+Changes since v4:
+ - refine the architecture of the packet encoder function
+ - refine the gce enevt property
+ - change the patch's title
 
-Do you mean perf_aux_output_end() rather than perf_aux_output_begin()?
+Changes since v3:
+ - fix a typo in dt-binding and dtsi
+ - cast the return value to right format
 
-I checked perf_aux_output_begin(), it will always set 'handle->size'
-to zero.
+Changes since v2:
+ - according to CK's review comment, change the property name and
+   refine the parameter
+ - change the patch's title
+ - remove unused property from dt-binding and dts
 
-> does not set the handle->size because the size is expected to be
-> deduced by the placement of the "head" and "old" pointers in user
-> space.  As such there is no point in trying to adjust the amount
-> of data to copy to the ring buffer.
-> 
-> Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Changes since v1:
+ - add prefix "cmdq" in the commit subject
+ - add dt-binding document for get event and subsys function
+ - add fix up tag in fixup patch
+ - fix up some coding style (alignment)
 
-Rest looks good to me:
+MTK will support gce function on mt8183 platform.
+  dt-binding: gce: add gce header file for mt8183
+  mailbox: mediatek: cmdq: support mt8183 gce function
+  arm64: dts: add gce node for mt8183
 
-Reviewed-by: Leo Yan <leo.yan@linaro.org>
+Besides above patches, we refine gce driver on those patches.
+  mailbox: mediatek: cmdq: move the CMDQ_IRQ_MASK into cmdq driver data
+  soc: mediatek: cmdq: clear the event in cmdq initial flow
 
-> ---
->  drivers/hwtracing/coresight/coresight-tmc-etf.c | 6 ++++--
->  1 file changed, 4 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/hwtracing/coresight/coresight-tmc-etf.c b/drivers/hwtracing/coresight/coresight-tmc-etf.c
-> index 7694833b13cb..d3025634f5e6 100644
-> --- a/drivers/hwtracing/coresight/coresight-tmc-etf.c
-> +++ b/drivers/hwtracing/coresight/coresight-tmc-etf.c
-> @@ -497,9 +497,11 @@ static unsigned long tmc_update_etf_buffer(struct coresight_device *csdev,
->  	/*
->  	 * The TMC RAM buffer may be bigger than the space available in the
->  	 * perf ring buffer (handle->size).  If so advance the RRP so that we
-> -	 * get the latest trace data.
-> +	 * get the latest trace data.  In snapshot mode none of that matters
-> +	 * since we are expected to clobber stale data in favour of the latest
-> +	 * traces.
->  	 */
-> -	if (to_read > handle->size) {
-> +	if (!buf->snapshot && to_read > handle->size) {
->  		u32 mask = 0;
->  
->  		/*
-> -- 
-> 2.17.1
-> 
+In order to enhance the convenience of gce usage, we add new helper
+functions and refine the method of instruction combining.
+  dt-binding: gce: remove thread-num property
+  dt-binding: gce: add binding for gce subsys property
+  dt-binding: gce: add binding for gce event property
+  soc: mediatek: cmdq: define the instruction struct
+  soc: mediatek: cmdq: add polling function
+  soc: mediatek: cmdq: add cmdq_dev_get_subsys function
+  soc: mediatek: cmdq: add cmdq_dev_get_event function
+
+Bibby Hsieh (12):
+  dt-binding: gce: remove thread-num property
+  dt-binding: gce: add gce header file for mt8183
+  dt-binding: gce: add binding for gce subsys property
+  dt-binding: gce: add binding for gce event property
+  mailbox: mediatek: cmdq: move the CMDQ_IRQ_MASK into cmdq driver data
+  mailbox: mediatek: cmdq: support mt8183 gce function
+  soc: mediatek: cmdq: clear the event in cmdq initial flow
+  soc: mediatek: cmdq: define the instruction struct
+  soc: mediatek: cmdq: add polling function
+  soc: mediatek: cmdq: add cmdq_dev_get_subsys function
+  soc: mediatek: cmdq: add cmdq_dev_get_event function
+  arm64: dts: add gce node for mt8183
+
+ .../devicetree/bindings/mailbox/mtk-gce.txt   |  31 ++-
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi      |  11 +
+ drivers/mailbox/mtk-cmdq-mailbox.c            |  18 +-
+ drivers/soc/mediatek/mtk-cmdq-helper.c        | 195 ++++++++++++++----
+ include/dt-bindings/gce/mt8183-gce.h          | 177 ++++++++++++++++
+ include/linux/mailbox/mtk-cmdq-mailbox.h      |   5 +
+ include/linux/soc/mediatek/mtk-cmdq.h         |  62 +++++-
+ 7 files changed, 437 insertions(+), 62 deletions(-)
+ create mode 100644 include/dt-bindings/gce/mt8183-gce.h
+
+-- 
+2.18.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
