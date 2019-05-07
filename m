@@ -2,85 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2C1E1644C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 15:10:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2D5C1644E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 15:11:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o1ruKsVVVitQTdV6nX5Zl5OCdCbyxJPvhiH/JgcPkTU=; b=hpZAgeRI04vSgf
-	PHJLClATLp1sWfbTgW5K2uiVFv99H8h50O0YBaXDK91BiRaazbZr/hvRGD9tF2/5B8OFupzUYJ8uJ
-	UlKUny5I9MFeJFbpVG/9R8Sf78DnYIYbxPOoYiHocU9bEqraQ5mjVevqTMZDfbk/o/wEV5Z7NSM1j
-	Z/wNDJ9K1/uLbo01Q20H011+Vlg3Fjy+1cmfIHZLFG2fms27HRRqSbqDXd7V3NeW0m9h6cS8tECQ+
-	fUGBjZJgh66R8kuDXltOr5X5qg5iHenDLDQpNp5diCKugFFE4joA6cnlRdNDgKS6By6DdvxpVdrW6
-	+GKWyqC2mE/tcJzdVRwQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ALo22LxXFLLU8B0MGShSKT2hxJEoezQ0bUwH16XexQY=; b=fjLrXbeHGH0zCT
+	xst63/IAktJptet4RIpsOR4gXrfNWIf++BjUoTZ76P1tDtuhogX+xUhmA5C/7/GMe/D4r57c2Ry9Y
+	/H/k3e3sUgZY6PmB51YYvYuFZk90jSpzoHXWOIpXV5E8x7hXDXSX2U3ebq/ANmcyjsyTEtBYDqOyQ
+	Rd+ufJy0yHA/EKb3jpuYMSeQWkfGtNqwixvMb/TS9/0ZFetP8z/lGkbLmFgSNQvDNBHGVogySPwZ8
+	ycz8hFdY+98HM1Pk4oQLjeaHK9IycwVcI0LgZcCnzSUQMIv/Ne7pKHCa5zZc4xUINcAKw8QEsk51V
+	RBYJWCistM25FemxX28g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNzs2-0002kA-2F; Tue, 07 May 2019 13:10:58 +0000
-Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
+	id 1hNzsH-00032E-Bg; Tue, 07 May 2019 13:11:13 +0000
+Received: from smtp113.ord1d.emailsrvr.com ([184.106.54.113])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNzrt-0002id-3k
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 13:10:50 +0000
-Received: by mail-ot1-x343.google.com with SMTP id u3so9376186otq.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 May 2019 06:10:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=pAgdAjAQ41e+k9RIOAaf7UwVPbjN19zPzB9CqtCyi8o=;
- b=S8yvcDyHGUuySevVVbPrSHU3t8AKRaaUF6KGBJy+P2dAJmiCw3ZklE01rjGliEZPW4
- C2yMlpkmHc1FHLb2I0w5+p1/BEmwSl2dl/i+CsulO4YWdZcu/KtbaktRVu7wpNNzIGXI
- zbFYwyoJyeynlp/9dqdvyIh1uQnz4KrRNOPaI=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=pAgdAjAQ41e+k9RIOAaf7UwVPbjN19zPzB9CqtCyi8o=;
- b=hkK0+JuTMBX5Ys2gCCTs0iPQVIsz1j56KeLA//jvkkh7EgfJP5lqDWlg4ZTqNlvYMb
- 0MKe49Sb9bebCfHgX8OyCRjKMQV89/Vg6FgvAdIim9PNDVuHZzgwTN62svfVLt9s4o8N
- HzIfJFs6xf+lhiDmgZ7Ozwd2g7mSujrvPZIVuiv2JpV08ldqVWzmbMU+i8j6orKfIUm6
- TdpwHtDunDzt+sffy7/a198J990kjkaSaocxIvRScHQj3D0GQ/5VHhFHV5iP8WRLwRU3
- 7ZHmiVAj6E/DK9DzrjjSUyr1pXSF4D72qSilOoU/fQ8k7fx2pIOMpQKE4d8Oycg232Sz
- 94Lw==
-X-Gm-Message-State: APjAAAV9O4MK0eezCai1mCgB8RrbRKODc0TdFJwZ47/a2Cj6TIqm8+aG
- ZjbOkGPbl7CxXktS9t7Ey6QgD/1azX0DcmUugda9Qw==
-X-Google-Smtp-Source: APXvYqyq6Oa3R9ujCSp5aX2pGJv5ioCCjL3fBgrFeYLXZnoYKeISsxqO4YXczAuWqNLSXAJntbNAN0ExsIJit4gfVno=
-X-Received: by 2002:a05:6830:111:: with SMTP id
- i17mr4016302otp.322.1557234647846; 
- Tue, 07 May 2019 06:10:47 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190501121448.3812-1-jagan@amarulasolutions.com>
- <20190501193429.GA9075@ravnborg.org>
- <CAMty3ZAfwVyvmAmenhrQHJcy3eq-Yb61a4WLop_8jS-7vM940A@mail.gmail.com>
- <CAL_Jsq+mYy1JF_cM7sD82aLuUSnZnwsSD6-Q-W1uTp+_oSdRmg@mail.gmail.com>
-In-Reply-To: <CAL_Jsq+mYy1JF_cM7sD82aLuUSnZnwsSD6-Q-W1uTp+_oSdRmg@mail.gmail.com>
-From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Tue, 7 May 2019 18:40:36 +0530
-Message-ID: <CAMty3ZBpRABe4u26ZN91JRB+vVF4Z96k-LDoe37d6EdVDkfJsg@mail.gmail.com>
-Subject: Re: [PATCH 1/2] drm/panel: simple: Add FriendlyELEC HD702E 800x1280
- LCD panel
-To: Rob Herring <robh+dt@kernel.org>
+ id 1hNzs5-0002vO-Ih; Tue, 07 May 2019 13:11:03 +0000
+Received: from smtp7.relay.ord1d.emailsrvr.com (localhost [127.0.0.1])
+ by smtp7.relay.ord1d.emailsrvr.com (SMTP Server) with ESMTP id A36C820188;
+ Tue,  7 May 2019 09:10:58 -0400 (EDT)
+X-SMTPDoctor-Processed: csmtpprox beta
+Received: from smtp7.relay.ord1d.emailsrvr.com (localhost [127.0.0.1])
+ by smtp7.relay.ord1d.emailsrvr.com (SMTP Server) with ESMTP id 94DA120189;
+ Tue,  7 May 2019 09:10:58 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=g001.emailsrvr.com;
+ s=20190322-9u7zjiwi; t=1557234658;
+ bh=OOkoQgnHxu//5/xnAwqLV6gzZ7D2HJz3eqql9tebNv8=;
+ h=Subject:From:Date:To:From;
+ b=RCxY2p/RCqeYXbmgDxdIj575CapFfmLQYnS41gfCliQILm2RyJ5cnLle1dBN3oyH+
+ +KrPxpeVk4MbflLy8jOMINGR8sCJgr9NQNK39yhjsvWzayD8rwMsBAtdEFeA3BFhc5
+ LPwPRgJrfQRfjBPjIXmfnBN5SjTKKZkLvHoyb7d0=
+X-Auth-ID: mcdermj@xenotropic.com
+Received: by smtp7.relay.ord1d.emailsrvr.com (Authenticated sender:
+ mcdermj-AT-xenotropic.com) with ESMTPSA id 9CC5D20188; 
+ Tue,  7 May 2019 09:10:57 -0400 (EDT)
+X-Sender-Id: mcdermj@xenotropic.com
+Received: from [10.0.3.33] (c-73-96-52-102.hsd1.or.comcast.net [73.96.52.102])
+ (using TLSv1.2 with cipher DHE-RSA-AES256-GCM-SHA384)
+ by 0.0.0.0:465 (trex/5.7.12); Tue, 07 May 2019 09:10:58 -0400
+Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
+Subject: Re: [PATCH] i2c: bcm2835: Model Divider in CCF
+From: Annaliese McDermond <nh6z@nh6z.net>
+In-Reply-To: <878svivq8y.fsf@anholt.net>
+Date: Tue, 7 May 2019 06:10:56 -0700
+Message-Id: <F9C09952-3F75-44E7-94A6-1055ADA5A0A8@nh6z.net>
+References: <20190505034339.30778-1-nh6z@nh6z.net> <87o94fo3h0.fsf@anholt.net>
+ <C611AB4D-7674-438D-BB95-9F83852043EA@nh6z.net>
+ <878svivq8y.fsf@anholt.net>
+To: Eric Anholt <eric@anholt.net>
+X-Mailer: Apple Mail (2.3445.104.11)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_061049_157309_8347837B 
-X-CRM114-Status: GOOD (  14.03  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190507_061102_081644_D234940D 
+X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ no trust [184.106.54.113 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -92,61 +81,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- David Airlie <airlied@linux.ie>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Thierry Reding <thierry.reding@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- Sam Ravnborg <sam@ravnborg.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Stefan Wahren <stefan.wahren@i2se.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, swarren@wwwdotorg.org,
+ wsa@the-dreams.de, NWDR Team <team@nwdigitalradio.com>,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-i2c@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 6, 2019 at 8:34 PM Rob Herring <robh+dt@kernel.org> wrote:
->
-> On Mon, May 6, 2019 at 4:56 AM Jagan Teki <jagan@amarulasolutions.com> wrote:
-> >
-> > Hi Sam,
-> >
-> > On Thu, May 2, 2019 at 1:04 AM Sam Ravnborg <sam@ravnborg.org> wrote:
-> > >
-> > > Hi Jagan
-> > >
-> > > On Wed, May 01, 2019 at 05:44:47PM +0530, Jagan Teki wrote:
-> > > > HD702E lcd is FriendlyELEC developed eDP LCD panel with 800x1280
-> > > > resolution. It has built in Goodix, GT9271 captive touchscreen
-> > > > with backlight adjustable via PWM.
-> > > >
-> > > > Add support for it.
-> > > >
-> > > > Cc: Thierry Reding <thierry.reding@gmail.com>
-> > > > Cc: Sam Ravnborg <sam@ravnborg.org>
-> > > > Cc: David Airlie <airlied@linux.ie>
-> > > > Cc: Daniel Vetter <daniel@ffwll.ch>
-> > > > Cc: dri-devel@lists.freedesktop.org
-> > > > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> > >
-> > > Please submit the binding in a separate patch as per
-> > > Documentation/devicetree/bindings/submitting-patches.txt
-> >
-> > Hmm.. prepared like this initially but few of my patches were combined
-> > earlier even-though I sent it separately. anyway let me separate it
-> > again.
->
-> For what subsystem? All the maintainers that I was aware of doing that
-> have stopped.
-
-May be it was recent, Dmitry combined by previous dt and driver changes.
-
-https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=ae97fb589648cd5558f1ceea317404a639307501
-https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=a5f50c501321249d67611353dde6d68d48c5b959
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Cgo+IE9uIE1heSA2LCAyMDE5LCBhdCA5OjMyIFBNLCBFcmljIEFuaG9sdCA8ZXJpY0BhbmhvbHQu
+bmV0PiB3cm90ZToKPiAKPiBBbm5hbGllc2UgTWNEZXJtb25kIDxuaDZ6QG5oNnoubmV0PiB3cml0
+ZXM6Cj4gCj4+PiBPbiBNYXkgNiwgMjAxOSwgYXQgMTE6MTQgQU0sIEVyaWMgQW5ob2x0IDxlcmlj
+QGFuaG9sdC5uZXQ+IHdyb3RlOgo+Pj4gCj4+PiBBbnkgY2hhbmNlIHdlIGNvdWxkIHJldXNlIGNs
+a19yZWdpc3Rlcl9kaXZpZGVyKCkgaW5zdGVhZCBvZiBoYXZpbmcgb3VyCj4+PiBvd24gc2V0L3Jv
+dW5kL3JlY2FsYyByYXRlIGltcGxlbWVudGF0aW9ucz8KPj4gCj4+IEVyaWMgLS0KPj4gCj4+IEni
+gJlkIGxvdmUgdG8sIGJ1dCB0aGUgc2V0X3JhdGUgaW1wbGVtZW50YXRpb24gaW5jbHVkZXMgc2V0
+dGluZyB0aGUKPj4gQkNNMjgzNV9JMkNfRkVETF9TSElGVCBhbmQgQkNNMjgzNV9JMkNfUkVETF9T
+SElGVCByZWdpc3RlcnMgZm9yIHRoZSAKPj4gcmlzaW5nIGFuZCBmYWxsaW5nIGVkZ2UgZGVsYXkg
+b24gdGhlIEkyQyBidXMgYmFzZWQgb24gd2hhdCB0aGUgZGl2aWRlcgo+PiB2YWx1ZSBpcy4KPiAK
+PiBIbW0uICBJIHJhbiBpbnRvIHRoYXQgaW4gY2xrLWJjbTI4MzUuYyBhcyB3ZWxsLCBhbmQgdGhl
+IHNvbHV0aW9uIHdhcwo+IHRoYXQgYmNtMjgzNV9yZWdpc3Rlcl9wbGxfZGl2aWRlcigpIHNldHMg
+dXAgdGhlIGRpdmlkZXIgc3RydWN0dXJlIGFuZAo+IHRoZW4gcmV1c2VzIGNsa19kaXZpZGVyX29w
+cy5yb3VuZF9yYXRlKCkgYW5kIC5yZWNhbGNfcmF0ZSgpCgpJ4oCZbSBub3Qgc3VyZSB0aGlzIG1h
+a2VzIGEgbG90IG9mIHNlbnNlIGluIHRoaXMgcGFydGljdWxhciBjYXNlLiAgSeKAmWQgc3RpbGwK
+aGF2ZSB0byBrZWVwIHRoZSBiY20yODM1X2kyY19yZWdpc3Rlcl9kaXYoKSBmdW5jdGlvbiwgYW5k
+IHJlYWxseSBJ4oCZZCBvbmx5CmJlIHNhdmluZyBoYXZpbmcgdG8gaW1wbGVtZW50IHJvdW5kX3Jh
+dGUoKSBhbmQgcmVjYWxjX3JhdGUoKS4gIFRoZSB0cmFkZW9mZgppcyB0aGF0IHRoZSBjb21tb24g
+cm91bmRfcmF0ZSBhbmQgcmVjYWxjIHJhdGUgYXJlIG11Y2ggbW9yZSBjb21wbGV4IGFuZApyZXF1
+aXJlIGEgbW9yZSBjb21wbGV4IHByaXZhdGUgc3RydWN0dXJlIChjbGtfZGl2aWRlcikgd2hpY2gg
+YWxzbyAKcHJlY2x1ZGVzIG15IHVzZSBvZiB0aGUgY29tbW9uIGJjbTI4MzVfaTJjX3dyaXRlbCgp
+IHVzZWQgaW4gdGhlIHJlc3Qgb2YKdGhlIGRyaXZlciBiZWNhdXNlIEkgbm8gbG9uZ2VyIGhhdmUg
+YSBwb2ludGVyIHRvIHRoZSBiY20yODM1X2kyY19kZXYKc3RydWN0dXJlIHRoYXQgSSBuZWVkIHRv
+IGNhbGwgaXQgaW4gc2V0X3JhdGUoKS4KCkkgZ2V0IHRoZSBkZXNpcmUgdG8gcmV1c2UgY29kZSBh
+bmQgdG8gdXNlIGNvbW1vbiBzdHJ1Y3R1cmVzIHdoZW5ldmVyCnBvc3NpYmxlLiAgSXQganVzdCBz
+ZWVtcyB0byBtZSB0aGF0IGdvaW5nIGRvd24gdGhpcyBwYXRoIGxlYWRzIHRvIG1vcmUKb3ZlcmFs
+bCBjb2RlIHRoYXTigJlzIGxlc3Mgc3RyYWlnaHQgZm9yd2FyZC4gICBNYXliZSBJ4oCZbSB3cm9u
+Zy4KCi0tCkFubmFsaWVzZSBNY0Rlcm1vbmQKbmg2ekBuaDZ6Lm5ldApfX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcg
+bGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
+ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
