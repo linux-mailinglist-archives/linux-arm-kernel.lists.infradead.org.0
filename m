@@ -2,92 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0829615FA3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 10:44:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E00E115FAC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 10:44:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3GUoLbLOjcVhRIJS6PWNDXAW3lJ0iGk7BwesEQhIRAY=; b=g0yXEM+qcV1AFF
-	CW3Jh9uO43QKdgFDiyINbTpvSbB+404hmBmlR3VGn8ruC0clbK2C4a35mDpC35vgsdv8Q07jknJsM
-	T5CC6RkqTvIQPNpyihiI2SzC4Fk7qi+gnxov8RZW75T9IBPShSjQ1c7d0mHt3wYEXSZAayR/GUh0y
-	OWrg1Gmh1G0Jo4qYVPrCg3F77DXhmE9Q2Wsr6IR6Q5DqA+ipXSlL7FOLTzx9FaIEzpzPscNbdP8nM
-	mIVv1QLQ+LW6366k29oiLSKRj1HSJtxN2NqUQ+0NPwwSCkP5cZSImP+DFkoTawVrwOF6dIKNkD2sn
-	Ha6wtswTvgFT/D4qj4Eg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=suJv+clmlX0GSREi6VbRUt7xHpRbrfZeEypwstwjnKU=; b=A+YSCUrYWrrm7e
+	dDVGd7T9N+lUIUulVb/Jnt8rWY9eDUhgougNCkUojT2yvYgh7LegL/fdCooOZ+GueDM5orwMF988v
+	s2XqFaxvLNFUJ/SXpPCbpXCCvM3jILEVf2I/yK5Em1Uv4Jal+6rmRPuodWNk7MtIc41MU8FKPANuH
+	dfhuUOnp2g3EI4tiy11Y6OMmiG5UUTEEcceu4bUlYDvsPR6dHaH4AcyZm1x9Hkba5uEnB0fMrxFK7
+	Tl+rI7AdY4Ic22rrqwpX2YNbMFKfgiXLwJZnaLytH2Ck2VmDiXPzAkg/7T28+yg5SjHI2VjcDmay6
+	wowAWp9QJRGKHfnv1OXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNvi2-0000bF-1O; Tue, 07 May 2019 08:44:22 +0000
-Received: from mail-yw1-xc44.google.com ([2607:f8b0:4864:20::c44])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNvhu-0000ai-GG
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 08:44:15 +0000
-Received: by mail-yw1-xc44.google.com with SMTP id q11so12613737ywb.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 May 2019 01:44:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=iFm6FDZwvJL+HzN1QdmiyPBYMjzcvnFQoiE4auxzRKE=;
- b=fc46tf0xFi4OiMlpZ0NJxygwAsQMTXMIDZQt94ZV6ND8GTVccVsrHkuxOjEdgkvWsq
- kzxhRM0qCdYvptxLiDh8IoVz5/EjqxNrTow2rAUOa0DgSij5Qt+1M/fedBhjFJ0KCdoA
- PpGPrRmskWjBw2mKzSOn+Jxgr3g8tma7Vk+Wh1lI1l2tVPVI/6Uoxxy7CYhOnJ5wXnB/
- 2BCTZ8UYmJssh7/acURudeY6vfo12rrtR2XeZOxhuNZGqsg5FhTg3GYDlKisiURav/1t
- 1y4vlAbluGTx4493LOUZAAM0BAA6wqojpLOmEv1gmE0h79cUKbB0EbhoKLVBJIQkJSIw
- dQFA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=iFm6FDZwvJL+HzN1QdmiyPBYMjzcvnFQoiE4auxzRKE=;
- b=t8cyV1JQs4RwbWYGdOPyprF/WLYx0mkgb4oIHmb2fIRQdklnCw934vDM9LspVaCXlI
- EYnkhjMoJw0KDuEMAFKha1lvRdVcxGXZNMqQQYm1gwUjVhMO8V+k/1ZUyJ94UMr3G8cf
- ZsHIij2spoigwrNVuSwC0yZqTRLI3hqykRrHug3yLI6jKDVAEo2sMM1r/zUkDKPNgnOw
- OPtin90hofPx7drUEosRjm36Y0Pm6KdPu1ydnKFvm9giau7nC6WBCoQI13zAhJv4Azfs
- d8la4ACVkPufkS3i5/Hm9BWNgp2u4P48HUxXhVXaKTdBykbp/CsTDKcQMTtypngtn4jz
- tKiA==
-X-Gm-Message-State: APjAAAU8LrCHkUdA2H7EsXSZNPP1JD+kQZhlwDr4XYQgP8DpKFOJRBNl
- 9bBxyqiBtIhtAhzQtIJhjUFLWw==
-X-Google-Smtp-Source: APXvYqysrVPFAot4v6pAuseL9bvDBO1IBInyUI9EwPNZ77v0bBLxEpuVZyDF7Cm9pQrQTfj4bsYUxg==
-X-Received: by 2002:a25:3bc8:: with SMTP id i191mr20329017yba.16.1557218653359; 
- Tue, 07 May 2019 01:44:13 -0700 (PDT)
-Received: from leoy-ThinkPad-X240s (li931-65.members.linode.com.
- [45.56.113.65])
- by smtp.gmail.com with ESMTPSA id b71sm3593063ywb.1.2019.05.07.01.44.08
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 07 May 2019 01:44:12 -0700 (PDT)
-Date: Tue, 7 May 2019 16:44:04 +0800
-From: Leo Yan <leo.yan@linaro.org>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH 4/5] perf tools: Properly set the value of 'old' in
- snapshot mode
-Message-ID: <20190507084404.GD21730@leoy-ThinkPad-X240s>
-References: <20190501175052.29667-1-mathieu.poirier@linaro.org>
- <20190501175052.29667-5-mathieu.poirier@linaro.org>
+	id 1hNvib-0000xW-Ha; Tue, 07 May 2019 08:44:57 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hNviU-0000we-Uc
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 08:44:52 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3C021374;
+ Tue,  7 May 2019 01:44:50 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 09DC23F238; Tue,  7 May 2019 01:44:47 -0700 (PDT)
+Subject: Re: [PATCH v2 4/5] arm64: irqflags: Introduce explicit debugging for
+ IRQ priorities
+To: Julien Thierry <julien.thierry@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <1556553607-46531-1-git-send-email-julien.thierry@arm.com>
+ <1556553607-46531-5-git-send-email-julien.thierry@arm.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ mQINBE6Jf0UBEADLCxpix34Ch3kQKA9SNlVQroj9aHAEzzl0+V8jrvT9a9GkK+FjBOIQz4KE
+ g+3p+lqgJH4NfwPm9H5I5e3wa+Scz9wAqWLTT772Rqb6hf6kx0kKd0P2jGv79qXSmwru28vJ
+ t9NNsmIhEYwS5eTfCbsZZDCnR31J6qxozsDHpCGLHlYym/VbC199Uq/pN5gH+5JHZyhyZiNW
+ ozUCjMqC4eNW42nYVKZQfbj/k4W9xFfudFaFEhAf/Vb1r6F05eBP1uopuzNkAN7vqS8XcgQH
+ qXI357YC4ToCbmqLue4HK9+2mtf7MTdHZYGZ939OfTlOGuxFW+bhtPQzsHiW7eNe0ew0+LaL
+ 3wdNzT5abPBscqXWVGsZWCAzBmrZato+Pd2bSCDPLInZV0j+rjt7MWiSxEAEowue3IcZA++7
+ ifTDIscQdpeKT8hcL+9eHLgoSDH62SlubO/y8bB1hV8JjLW/jQpLnae0oz25h39ij4ijcp8N
+ t5slf5DNRi1NLz5+iaaLg4gaM3ywVK2VEKdBTg+JTg3dfrb3DH7ctTQquyKun9IVY8AsxMc6
+ lxl4HxrpLX7HgF10685GG5fFla7R1RUnW5svgQhz6YVU33yJjk5lIIrrxKI/wLlhn066mtu1
+ DoD9TEAjwOmpa6ofV6rHeBPehUwMZEsLqlKfLsl0PpsJwov8TQARAQABtCNNYXJjIFp5bmdp
+ ZXIgPG1hcmMuenluZ2llckBhcm0uY29tPokCOwQTAQIAJQIbAwYLCQgHAwIGFQgCCQoLBBYC
+ AwECHgECF4AFAk6NvYYCGQEACgkQI9DQutE9ekObww/+NcUATWXOcnoPflpYG43GZ0XjQLng
+ LQFjBZL+CJV5+1XMDfz4ATH37cR+8gMO1UwmWPv5tOMKLHhw6uLxGG4upPAm0qxjRA/SE3LC
+ 22kBjWiSMrkQgv5FDcwdhAcj8A+gKgcXBeyXsGBXLjo5UQOGvPTQXcqNXB9A3ZZN9vS6QUYN
+ TXFjnUnzCJd+PVI/4jORz9EUVw1q/+kZgmA8/GhfPH3xNetTGLyJCJcQ86acom2liLZZX4+1
+ 6Hda2x3hxpoQo7pTu+XA2YC4XyUstNDYIsE4F4NVHGi88a3N8yWE+Z7cBI2HjGvpfNxZnmKX
+ 6bws6RQ4LHDPhy0yzWFowJXGTqM/e79c1UeqOVxKGFF3VhJJu1nMlh+5hnW4glXOoy/WmDEM
+ UMbl9KbJUfo+GgIQGMp8mwgW0vK4HrSmevlDeMcrLdfbbFbcZLNeFFBn6KqxFZaTd+LpylIH
+ bOPN6fy1Dxf7UZscogYw5Pt0JscgpciuO3DAZo3eXz6ffj2NrWchnbj+SpPBiH4srfFmHY+Y
+ LBemIIOmSqIsjoSRjNEZeEObkshDVG5NncJzbAQY+V3Q3yo9og/8ZiaulVWDbcpKyUpzt7pv
+ cdnY3baDE8ate/cymFP5jGJK++QCeA6u6JzBp7HnKbngqWa6g8qDSjPXBPCLmmRWbc5j0lvA
+ 6ilrF8m5Ag0ETol/RQEQAM/2pdLYCWmf3rtIiP8Wj5NwyjSL6/UrChXtoX9wlY8a4h3EX6E3
+ 64snIJVMLbyr4bwdmPKULlny7T/R8dx/mCOWu/DztrVNQiXWOTKJnd/2iQblBT+W5W8ep/nS
+ w3qUIckKwKdplQtzSKeE+PJ+GMS+DoNDDkcrVjUnsoCEr0aK3cO6g5hLGu8IBbC1CJYSpple
+ VVb/sADnWF3SfUvJ/l4K8Uk4B4+X90KpA7U9MhvDTCy5mJGaTsFqDLpnqp/yqaT2P7kyMG2E
+ w+eqtVIqwwweZA0S+tuqput5xdNAcsj2PugVx9tlw/LJo39nh8NrMxAhv5aQ+JJ2I8UTiHLX
+ QvoC0Yc/jZX/JRB5r4x4IhK34Mv5TiH/gFfZbwxd287Y1jOaD9lhnke1SX5MXF7eCT3cgyB+
+ hgSu42w+2xYl3+rzIhQqxXhaP232t/b3ilJO00ZZ19d4KICGcakeiL6ZBtD8TrtkRiewI3v0
+ o8rUBWtjcDRgg3tWx/PcJvZnw1twbmRdaNvsvnlapD2Y9Js3woRLIjSAGOijwzFXSJyC2HU1
+ AAuR9uo4/QkeIrQVHIxP7TJZdJ9sGEWdeGPzzPlKLHwIX2HzfbdtPejPSXm5LJ026qdtJHgz
+ BAb3NygZG6BH6EC1NPDQ6O53EXorXS1tsSAgp5ZDSFEBklpRVT3E0NrDABEBAAGJAh8EGAEC
+ AAkFAk6Jf0UCGwwACgkQI9DQutE9ekMLBQ//U+Mt9DtFpzMCIHFPE9nNlsCm75j22lNiw6mX
+ mx3cUA3pl+uRGQr/zQC5inQNtjFUmwGkHqrAw+SmG5gsgnM4pSdYvraWaCWOZCQCx1lpaCOl
+ MotrNcwMJTJLQGc4BjJyOeSH59HQDitKfKMu/yjRhzT8CXhys6R0kYMrEN0tbe1cFOJkxSbV
+ 0GgRTDF4PKyLT+RncoKxQe8lGxuk5614aRpBQa0LPafkirwqkUtxsPnarkPUEfkBlnIhAR8L
+ kmneYLu0AvbWjfJCUH7qfpyS/FRrQCoBq9QIEcf2v1f0AIpA27f9KCEv5MZSHXGCdNcbjKw1
+ 39YxYZhmXaHFKDSZIC29YhQJeXWlfDEDq6nIhvurZy3mSh2OMQgaIoFexPCsBBOclH8QUtMk
+ a3jW/qYyrV+qUq9Wf3SKPrXf7B3xB332jFCETbyZQXqmowV+2b3rJFRWn5hK5B+xwvuxKyGq
+ qDOGjof2dKl2zBIxbFgOclV7wqCVkhxSJi/QaOj2zBqSNPXga5DWtX3ekRnJLa1+ijXxmdjz
+ hApihi08gwvP5G9fNGKQyRETePEtEAWt0b7dOqMzYBYGRVr7uS4uT6WP7fzOwAJC4lU7ZYWZ
+ yVshCa0IvTtp1085RtT3qhh9mobkcZ+7cQOY+Tx2RGXS9WeOh2jZjdoWUv6CevXNQyOUXMM=
+Organization: ARM Ltd
+Message-ID: <9b27cb2c-5159-3001-672e-9391d7490944@arm.com>
+Date: Tue, 7 May 2019 09:44:46 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190501175052.29667-5-mathieu.poirier@linaro.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <1556553607-46531-5-git-send-email-julien.thierry@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_014414_573775_38B43EA9 
-X-CRM114-Status: GOOD (  19.93  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190507_014450_994125_6230B6A1 
+X-CRM114-Status: GOOD (  23.64  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c44 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -99,70 +110,138 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: corbet@lwn.net, alexander.shishkin@linux.intel.com,
- coresight@lists.linaro.org, suzuki.poulose@arm.com, acme@kernel.org,
- peterz@infradead.org, mingo@redhat.com, mike.leach@arm.com,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, will.deacon@arm.com,
+ linux-kernel@vger.kernel.org, rostedt@goodmis.org, james.morse@arm.com,
+ yuzenghui@huawei.com, wanghaibin.wang@huawei.com, liwei391@huawei.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 01, 2019 at 11:50:51AM -0600, Mathieu Poirier wrote:
-> In snapshot mode the value of the 'old' pointer needs to be adjusted when
-> 'head' has wrapped around in order to get the latest information in the
-> buffer and be compatible with the generic AUX ring buffer mechanic.
+On 29/04/2019 17:00, Julien Thierry wrote:
+> Using IRQ priority masking to enable/disable interrupts is a bit
+> sensitive as it requires to deal with both ICC_PMR_EL1 and PSR.I.
 > 
-> Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> Introduce some validity checks to both highlight the states in which
+> functions dealing with IRQ enabling/disabling can (not) be called, and
+> bark a warning when called in an unexpected state.
+> 
+> Since these checks are done on hotpaths, introduce a build option to
+> choose whether to do the checking.
+> 
+> Signed-off-by: Julien Thierry <julien.thierry@arm.com>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will.deacon@arm.com>
 > ---
->  tools/perf/arch/arm/util/cs-etm.c | 12 ++++++++++--
->  1 file changed, 10 insertions(+), 2 deletions(-)
+>  arch/arm64/Kconfig                 | 11 +++++++++++
+>  arch/arm64/include/asm/daifflags.h |  9 +++++++++
+>  arch/arm64/include/asm/irqflags.h  | 14 ++++++++++++++
+>  3 files changed, 34 insertions(+)
 > 
-> diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
-> index 911426721170..4e73fe1a6978 100644
-> --- a/tools/perf/arch/arm/util/cs-etm.c
-> +++ b/tools/perf/arch/arm/util/cs-etm.c
-> @@ -541,11 +541,19 @@ static int cs_etm_find_snapshot(struct auxtrace_record *itr __maybe_unused,
->  				unsigned char *data __maybe_unused,
->  				u64 *head, u64 *old)
->  {
-> +	bool wrapped;
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index 7e34b9e..3fb38f3 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -1359,6 +1359,17 @@ config ARM64_PSEUDO_NMI
+> 
+>  	  If unsure, say N
+> 
+> +if ARM64_PSEUDO_NMI
+> +config ARM64_DEBUG_PRIORITY_MASKING
+> +	bool "Debug interrupt priority masking"
+> +	help
+> +	  This adds runtime checks to functions enabling/disabling
+> +	  interrupts when using priority masking. The additional checks verify
+> +	  the validity of ICC_PMR_EL1 when calling concerned functions.
 > +
->  	pr_debug3("%s: mmap index %d old head %zu new head %zu size %zu\n",
->  		  __func__, idx, (size_t)*old, (size_t)*head, mm->len);
->  
-> -	*old = *head;
-> -	*head += mm->len;
-> +	/*
-> +	 * If the last byte in the ring buffer isn't zero, the head has
-> +	 * wrapped around.
-> +	 */
-> +	wrapped = !!(data[mm->len - 1]);
+> +	  If unsure, say N
+> +endif
+> +
+>  config RELOCATABLE
+>  	bool
+>  	help
+> diff --git a/arch/arm64/include/asm/daifflags.h b/arch/arm64/include/asm/daifflags.h
+> index a32ece9..9512968 100644
+> --- a/arch/arm64/include/asm/daifflags.h
+> +++ b/arch/arm64/include/asm/daifflags.h
+> @@ -28,6 +28,11 @@
+>  /* mask/save/unmask/restore all exceptions, including interrupts. */
+>  static inline void local_daif_mask(void)
+>  {
+> +	WARN_ON(IS_ENABLED(CONFIG_ARM64_DEBUG_PRIORITY_MASKING) &&
+> +		system_uses_irq_prio_masking() &&
 
-This is confused for me since I can think out two cases might break
-this checking.
+Given that you repeat these conditions all over the place, how about a
+helper:
 
-The first case is the trace data stream might be zero at the end of the
-buffer; the second case is that the buffer is not really wrapped around
-at this time but the end of buffer contains the stale data by previous
-time.
+#define DEBUG_PRIORITY_MASKING_CHECK(x)			\
+	(IS_ENABLED(CONFIG_ARM64_DEBUG_PRIORITY_MASKING) && \
+	 system_uses_irq_prio_masking() && (x))
 
-Could you confirm both cases will not happen?
+or some variant thereof.
 
-Will do more testing for this patch set.
+> +		(read_sysreg_s(SYS_ICC_PMR_EL1) == (GIC_PRIO_IRQOFF |
+> +						    GIC_PRIO_IGNORE_PMR)));
+> +
+>  	asm volatile(
+>  		"msr	daifset, #0xf		// local_daif_mask\n"
+>  		:
+> @@ -62,6 +67,10 @@ static inline void local_daif_restore(unsigned long flags)
+>  {
+>  	bool irq_disabled = flags & PSR_I_BIT;
+> 
+> +	WARN_ON(IS_ENABLED(CONFIG_ARM64_DEBUG_PRIORITY_MASKING) &&
+> +		system_uses_irq_prio_masking() &&
+> +		!(read_sysreg(daif) & PSR_I_BIT));
+> +
+>  	if (!irq_disabled) {
+>  		trace_hardirqs_on();
+> 
+> diff --git a/arch/arm64/include/asm/irqflags.h b/arch/arm64/include/asm/irqflags.h
+> index 516cdfc..a40abc2 100644
+> --- a/arch/arm64/include/asm/irqflags.h
+> +++ b/arch/arm64/include/asm/irqflags.h
+> @@ -40,6 +40,13 @@
+>   */
+>  static inline void arch_local_irq_enable(void)
+>  {
+> +	if (IS_ENABLED(CONFIG_ARM64_DEBUG_PRIORITY_MASKING) &&
+> +	    system_uses_irq_prio_masking()) {
+> +		u32 pmr = read_sysreg_s(SYS_ICC_PMR_EL1);
+> +
+> +		WARN_ON(pmr != GIC_PRIO_IRQON && pmr != GIC_PRIO_IRQOFF);
+> +	}
+> +
+>  	asm volatile(ALTERNATIVE(
+>  		"msr	daifclr, #2		// arch_local_irq_enable\n"
+>  		"nop",
+> @@ -53,6 +60,13 @@ static inline void arch_local_irq_enable(void)
+> 
+>  static inline void arch_local_irq_disable(void)
+>  {
+> +	if (IS_ENABLED(CONFIG_ARM64_DEBUG_PRIORITY_MASKING) &&
+> +	    system_uses_irq_prio_masking()) {
+> +		u32 pmr = read_sysreg_s(SYS_ICC_PMR_EL1);
+> +
+> +		WARN_ON(pmr != GIC_PRIO_IRQON && pmr != GIC_PRIO_IRQOFF);
+> +	}
+> +
+>  	asm volatile(ALTERNATIVE(
+>  		"msr	daifset, #2		// arch_local_irq_disable",
+>  		"msr_s  " __stringify(SYS_ICC_PMR_EL1) ", %0",
+> --
+> 1.9.1
+> 
+
+nit: There is also the question of using WARN_ON in a context that will
+be extremely noisy if we're in a condition where this fires.
+WARN_ON_ONCE, maybe? This is a debugging thing, so maybe we just don't care.
 
 Thanks,
-Leo Yan
 
-> +
-> +	if (wrapped)
-> +		*old = *head - mm->len;
->  
->  	return 0;
->  }
-> -- 
-> 2.17.1
-> 
+	M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
