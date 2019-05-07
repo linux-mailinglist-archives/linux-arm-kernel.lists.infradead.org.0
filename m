@@ -2,105 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 854B015B7C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 07:54:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 101CD15CD0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 08:07:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fQL4X5ky3L19ZSgJsUd1BR8QBxiCEXpNr/GgHMx7Q3s=; b=DMMMwhdeuTt7NU
-	rsXyNOOSZgl2oo1EmvpMGfdESm/qm838taGrTwWO4TZO3aGs4D6JNiavTppVoN65fGYptgvfZ+eVk
-	SFIo22lOrl7BBhxJrwi0jzEr7tNvjBPNNh8nkz7iqqUNK/xTTjk3mRITrh1DRjoHO9jVjLRsd1GkL
-	QYimpCx5JVXwZndVpLayg2hZOdWKuFdC3Eeleal5vb7Y9ak3mpJ+lM7oXF0srf6UYkf07FQN5grnN
-	t3QaEpVy6ss5lGZrw+oeISY/CbdrHQkYN5txGBHsGVV58nhDFdNWUnIxLxFSq0xOTuoY44m/9qulR
-	ssQfQDxZuGu0ES7VogbQ==;
+	List-Owner; bh=AwZr9VRqEShQGEXdC5NuwKN/VV53nEkoU0MHXe7pHUs=; b=ZQvey+AXnd3DvC
+	nF8s0KGxAP/1U3uajub6GWzqYZlMNRXOTfItN2milu4kNIUevy4HPgA9gJQYDtjUj9NgwK9bbJOix
+	H19QmhP77cYmqQLKUro5WSeUYCL/riBxZIUm0vP7vzCuFT72W7V7D0Nnpr+RmEEv0sO3SmajGZjVp
+	sfalprlks+upufI6jn9P/YxtjL7XkCKZ6VnC7PCm4WqbXoLtPmyJ0mf9tx1q2TvVFHbZ5wRIQTLsZ
+	UabMdN6xRx4jdklvFQcUjGWFQPROx9SJzKcyPImfuXM1ndls9SgPg77fydzEkVkaRgrLgzCurg2cM
+	KQip7qiJm+jmVcgFflhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNt3s-0007iL-Me; Tue, 07 May 2019 05:54:44 +0000
-Received: from aserp2130.oracle.com ([141.146.126.79])
+	id 1hNtG2-0004LR-Tl; Tue, 07 May 2019 06:07:18 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNt3j-0007gs-QS; Tue, 07 May 2019 05:54:37 +0000
-Received: from pps.filterd (aserp2130.oracle.com [127.0.0.1])
- by aserp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x475mn5F173525;
- Tue, 7 May 2019 05:54:20 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=date : from : to : cc
- : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=corp-2018-07-02;
- bh=kJQobYwWo6iFFg61xydLrFO2gb+vbqflfGMqytbSt44=;
- b=FoFGdqOSsVcD9mQe/DscR5O60zlk+Ejev9fOw62vKLZlEilOZD1+sMk5dUblc/KEJOfL
- +gAf1RItHcleauKg8kOyPEhPKJerXL4YpKj/z56S1pfkASQdhdwV3m6o6vI1yVB6Twm9
- X+L6RH7zj2d+oSQ80CjvBjDwLBi/ZO176zo6vHpIgbo/Ik93nbkN0kYmkWT1pBrgtBxJ
- 8OkVEYbfw6E9bmI2erg5nm8bcTIFk0LXJFNLpunYT6zh2j9w3TCQRNzqyfaTTp8yrWDK
- PG9QTzBNjJv2e9BjeQW7TYxEbBn4zUeTeyH8wQ+sxlnny+1WjTPeOWagb64rYsO5Y5SN jg== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by aserp2130.oracle.com with ESMTP id 2s94b5tpe7-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 07 May 2019 05:54:20 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x475qxmF127046;
- Tue, 7 May 2019 05:54:20 GMT
-Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
- by aserp3030.oracle.com with ESMTP id 2s94b99m85-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 07 May 2019 05:54:20 +0000
-Received: from abhmp0009.oracle.com (abhmp0009.oracle.com [141.146.116.15])
- by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x475sDut019063;
- Tue, 7 May 2019 05:54:13 GMT
-Received: from kadam (/196.109.148.118)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Mon, 06 May 2019 22:54:12 -0700
-Date: Tue, 7 May 2019 08:54:05 +0300
-From: Dan Carpenter <dan.carpenter@oracle.com>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: Re: [PATCH v2 2/3] staging: vchiq: revert "switch to
- wait_for_completion_killable"
-Message-ID: <20190507055405.GI2269@kadam>
-References: <20190506144030.29056-1-nsaenzjulienne@suse.de>
- <20190506144030.29056-3-nsaenzjulienne@suse.de>
+ id 1hNtFw-0004KY-5Q
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 06:07:13 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1hNtFo-0005Pa-02; Tue, 07 May 2019 08:07:04 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1hNtFm-0001Aa-Re; Tue, 07 May 2019 08:07:02 +0200
+Date: Tue, 7 May 2019 08:07:02 +0200
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Viresh Kumar <viresh.kumar@linaro.org>
+Subject: Re: [PATCH v2] cpufreq: imx6q: Fix the resource leak caused by
+ incorrect error return
+Message-ID: <20190507060702.ub4zjsurylldj2mm@pengutronix.de>
+References: <20190505080736.27970-1-ping.bai@nxp.com>
+ <20190507055327.sakuoy2j3g7dwv3f@vireshk-i7>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190506144030.29056-3-nsaenzjulienne@suse.de>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-Proofpoint-Virus-Version: vendor=nai engine=5900 definitions=9249
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1810050000 definitions=main-1905070039
-X-Proofpoint-Virus-Version: vendor=nai engine=5900 definitions=9249
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
- definitions=main-1905070039
+In-Reply-To: <20190507055327.sakuoy2j3g7dwv3f@vireshk-i7>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_225435_948115_BCDD5CF2 
-X-CRM114-Status: GOOD (  16.14  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190506_230712_363861_ADAD7C80 
+X-CRM114-Status: GOOD (  10.52  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [141.146.126.79 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -112,47 +68,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: stefan.wahren@i2se.com, devel@driverdev.osuosl.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, phil@raspberrypi.org,
- linux-kernel@vger.kernel.org, Eric Anholt <eric@anholt.net>,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Jacky Bai <ping.bai@nxp.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "rjw@rjwysocki.net" <rjw@rjwysocki.net>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 06, 2019 at 04:40:29PM +0200, Nicolas Saenz Julienne wrote:
-> The killable version of wait_for_completion() is meant to be used on
-> situations where it should not fail at all costs, but still have the
-> convenience of being able to kill it if really necessary. VCHIQ doesn't
-> fit this criteria, as it's mainly used as an interface to V4L2 and ALSA
-> devices.
-> 
-> Fixes: a772f116702e ("staging: vchiq: switch to wait_for_completion_killable")
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> 
-> This reverts commit a772f116702e3f0afdd7e6acadc1b8fb3b20b9ff.
-> ---
+On Tue, May 07, 2019 at 11:23:27AM +0530, Viresh Kumar wrote:
+> On 05-05-19, 08:02, Jacky Bai wrote:
+> > Previous goto only handled the node reference, the opp table,
+> > regulator & clk resource also need to be free before error return.
+> > =
 
-Git just sets you up for failure with its revert.  That code was from
-when git was really new and now everyone gets annoyed when they see a
-raw git hash without a human readable subject.  Just say at the start of
-the commit message:
+> > Fixes: ddb64c5db3c (cpufreq: imx6q: fix possible object reference leak).
+> =
 
-This reverts commit a772f116702e ("staging: vchiq: switch to
-wait_for_completion_killable").
+> This should have been.
+> =
 
-The killable version of wait_for_completion() is meant to be used on
-situations where it should not fail at all costs, but still have the
-convenience of being able to kill it if really necessary. VCHIQ doesn't
-fit this criteria, as it's mainly used as an interface to V4L2 and ALSA
-devices.
+> Fixes: ddb64c5db3cc ("cpufreq: imx6q: fix possible object reference leak")
+> =
 
-Fixes: a772f116702e ("staging: vchiq: switch to wait_for_completion_killable")
+> Auto configure it with following in .gitconfig
+> =
 
-regards,
-dan carpenter
+> [pretty]
+> 	fixes =3D Fixes: %h (\"%s\")
+> 	onelin =3D commit %h (\"%s\")
+> =
 
+> and then:
+> =
+
+> git log --pretty=3Dfixes ddb64c5db3c
+> =
+
+> will generate it by itself.
+
+Just to add my color of the bikeshed, I have (among others):
+
+[alias]
+	oneq =3D show -s --pretty=3D'format:%h (\"%s\")'
+
+in my ~/.gitconfig and can do:
+
+$ git oneq ddb64c5db3c
+ddb64c5db3cc ("cpufreq: imx6q: fix possible object reference leak")
+
+which is a bit shorter than Viresh's suggestion.
+
+(Originally I had "one" without the quotes which I learned (IIRC) from
+the git mailing list. Instead of deviating from this I added 'q' for
+"quotes" to match the usual convention in kernel land.)
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
 
 _______________________________________________
 linux-arm-kernel mailing list
