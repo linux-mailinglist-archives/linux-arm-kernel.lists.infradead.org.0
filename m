@@ -2,75 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 635C116742
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 17:58:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2D3F167B4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 18:22:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y6aoow/HBOx+qa6B5zwAq4w3mkezOQbvxyb3NbuSZWM=; b=samOz+G1yYXB7P
-	i9uqbXeMyMvEP7OvD5ddNWYB8lS7r2HOceL2eyBQoYa6OuQEE7pR+CsWV2G51uvC2/Av5x1vRUMkW
-	XkrYSZT9firP00+X2xfGlYqXTjfMaQbC3VDhuveGwzZXCYbeBgyDEE9A0n3JBNLSUdFnTyk09HhIp
-	R+uDYn0kbblFFPrELeTjXqIrIZ9RG1TLpPbM9QhnUaS6O/dGw8StK8vYaxrQZFESp9hjcc5qb0JNi
-	tUeLHWkr2GylIP5EaW75gzBRztAZHw4myfcxppap6O7iT7xWb46p7SAKRqZ2gKCg6J7BG5mF7sTCN
-	7kaimsqDKdzcomsfWGww==;
+	List-Owner; bh=U7Flpq/Ihey+YXQztBz1QfqZdsBlL3yJY2i0OfVBHE8=; b=WXDufAWUtThFnb
+	7ZY4vifxHDxoAU9wIldNCalaIixpJXDM293wkmpX7WG7ltpvR4kTBrs9YBiu0HVkEa/Our6wY9kPy
+	AiSdb7vAARWwO1zLG+q+JGlzWgQ4+Vi0OWwvvovoKcBYuLAVGzsKCwEyhY7AGvDVtImXBhgZ1e8O2
+	ytZkR6hekkAZpi25gBwqrvCeeCM0ahA13MdWT1L9B7Yo54RYRBmD9pxwNkqiZAiJLHKtHC6NxDsQQ
+	ZJ6Vdff2EoJUi/OOHZuDwnOF+pjLmHdC/b7HVpV/Wmh2DI6bipC6177Dk3R2XSjI1yWWIw7EUA6kY
+	jaqG8Wx/mQAph3FDtUcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hO2Tc-0007lE-Ja; Tue, 07 May 2019 15:57:56 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hO2r5-0002a2-8g; Tue, 07 May 2019 16:22:11 +0000
+Received: from asavdk4.altibox.net ([109.247.116.15])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hO2TV-0007km-Se; Tue, 07 May 2019 15:57:51 +0000
-Received: from mail-qk1-f181.google.com (mail-qk1-f181.google.com
- [209.85.222.181])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1hO2qx-0001I7-JG
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 16:22:05 +0000
+Received: from ravnborg.org (unknown [158.248.194.18])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0F56220825;
- Tue,  7 May 2019 15:57:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1557244669;
- bh=yYeUtQyXycJKGzzKbaR03Sgh1x8livGCDAEBIteSL1I=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=m21zi0uw6YcaiMutrzLXpu2AH8gOQclBvy0xOtN3MrLBng7lPp8C8QFVwZJUsGC5k
- opQvIYdSitiQLmo6xw5A/6HMFIboVYByWnoL6xlNjVBBpWd5sqUZDjnIk3s9cmXba3
- ydobS7X0pn8834+IwkOGzoqFiD0vX8icyqbJKcoE=
-Received: by mail-qk1-f181.google.com with SMTP id j1so4585622qkk.12;
- Tue, 07 May 2019 08:57:49 -0700 (PDT)
-X-Gm-Message-State: APjAAAVyqVkJLMSUgyWUWeGqfbzFO6RXTLilvxgl3Jix1PXqvvrrD657
- Xtc6JmIdQP596kEhuCNDvqBD2q2MnLSh6vHtFQ==
-X-Google-Smtp-Source: APXvYqwk+Jr303x3CaQ9QFpPib22XA30jtdBeT+DhVsEK0IVy2YDsaZ0ABIqg81EzByodZnq8CpRQJzVsrmS0QBUy9A=
-X-Received: by 2002:a37:4b92:: with SMTP id y140mr25992725qka.79.1557244668293; 
- Tue, 07 May 2019 08:57:48 -0700 (PDT)
+ by asavdk4.altibox.net (Postfix) with ESMTPS id 57E01803FE;
+ Tue,  7 May 2019 18:19:52 +0200 (CEST)
+Date: Tue, 7 May 2019 18:19:50 +0200
+From: Sam Ravnborg <sam@ravnborg.org>
+To: Fabio Estevam <festevam@gmail.com>
+Subject: Re: [PATCH RE-RESEND 1/2] drm/panel: Add support for Armadeus ST0700
+ Adapt
+Message-ID: <20190507161950.GA24879@ravnborg.org>
+References: <20190507152713.27494-1-sebastien.szymanski@armadeus.com>
+ <CAOMZO5B2nMsVNO6O_D+YTSjux=-DjNPGxhkEi3AQquOZVODumA@mail.gmail.com>
 MIME-Version: 1.0
-References: <1556893635-18549-1-git-send-email-ynezz@true.cz>
- <20190505.214727.1839442238121977055.davem@davemloft.net>
-In-Reply-To: <20190505.214727.1839442238121977055.davem@davemloft.net>
-From: Rob Herring <robh@kernel.org>
-Date: Tue, 7 May 2019 10:57:36 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqL66PdCv7bFwfD9p6VQCcXOesz3EjPcYB9FGosgjOS8yw@mail.gmail.com>
-Message-ID: <CAL_JsqL66PdCv7bFwfD9p6VQCcXOesz3EjPcYB9FGosgjOS8yw@mail.gmail.com>
-Subject: Re: [PATCH v4 00/10] of_net: Add NVMEM support to of_get_mac_address
-To: David Miller <davem@davemloft.net>
+Content-Disposition: inline
+In-Reply-To: <CAOMZO5B2nMsVNO6O_D+YTSjux=-DjNPGxhkEi3AQquOZVODumA@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=VcLZwmh9 c=1 sm=1 tr=0
+ a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
+ a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=8nJEP1OIZ-IA:10 a=k4gcJ1N8AAAA:8
+ a=VwQbUJbxAAAA:8 a=7gkXJVJtAAAA:8 a=t7PmZwswHXuigcJotc4A:9
+ a=wPNLvfGTeEIA:10 a=0EuUHwVWM4Mljrm1lpjw:22 a=AjGcO6oz07-iQ99wixmX:22
+ a=E9Po1WZjFZOl8hwRPBS3:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_085749_947284_6AF0AB1A 
-X-CRM114-Status: GOOD (  11.46  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190507_092203_813789_4D6437EA 
+X-CRM114-Status: GOOD (  12.00  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [109.247.116.15 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -82,33 +68,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
- devicetree@vger.kernel.org, Maxime Ripard <maxime.ripard@bootlin.com>,
- netdev <netdev@vger.kernel.org>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>,
- Frank Rowand <frowand.list@gmail.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, David Airlie <airlied@linux.ie>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ DRI mailing list <dri-devel@lists.freedesktop.org>,
+ Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ stable <stable@vger.kernel.org>, Shawn Guo <shawnguo@kernel.org>,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Heiner Kallweit <hkallweit1@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gU3VuLCBNYXkgNSwgMjAxOSBhdCAxMTo0NyBQTSBEYXZpZCBNaWxsZXIgPGRhdmVtQGRhdmVt
-bG9mdC5uZXQ+IHdyb3RlOgo+Cj4gRnJvbTogUGV0ciDFoHRldGlhciA8eW5lenpAdHJ1ZS5jej4K
-PiBEYXRlOiBGcmksICAzIE1heSAyMDE5IDE2OjI3OjA1ICswMjAwCj4KPiA+IHRoaXMgcGF0Y2gg
-c2VyaWVzIGlzIGEgY29udGludWF0aW9uIG9mIG15IHByZXZpb3VzIGF0dGVtcHRbMV0sIHdoZXJl
-IEkndmUKPiA+IHRyaWVkIHRvIHdpcmUgTVREIGxheWVyIGludG8gb2ZfZ2V0X21hY19hZGRyZXNz
-LCBzbyBpdCB3b3VsZCBiZSBwb3NzaWJsZSB0bwo+ID4gbG9hZCBNQUMgYWRkcmVzc2VzIGZyb20g
-dmFyaW91cyBOVk1FTXMgYXMgRUVQUk9NcyBldGMuCj4gIC4uLgo+Cj4gU2VyaWVzIGFwcGxpZWQs
-IHRoYW5rIHlvdS4KClBhdGNoIDEgYXQgbGVhc3QgaXMgc3RpbGwgYmUgZGlzY3Vzc2VkLiBXaGF0
-IHdhcyBpbXBsZW1lbnRlZCBiYXNlZCBvbgpteSBjb21tZW50cyBvbiB2MiBpcyByZWFsbHkgYnJv
-a2VuLiBOb3cgdGhlIGFsbG9jYXRlZCBidWZmZXIgaXMKdHJhY2tlZCBieSBib3RoIGRldm0gYW5k
-IERUIHJlZmNvdW50aW5nLiBXaG9ldmVyJ3MgcmVmIGNvdW50IGRyb3BzCmZpcnN0IHdpbGwgZnJl
-ZSB0aGUgYnVmZmVyLgoKUm9iCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi Fabio
+
+On Tue, May 07, 2019 at 12:33:39PM -0300, Fabio Estevam wrote:
+> [Adding Sam, who is helping to review/collect panel-simple patches]
+> =
+
+> On Tue, May 7, 2019 at 12:27 PM S=E9bastien Szymanski
+> <sebastien.szymanski@armadeus.com> wrote:
+> >
+> > This patch adds support for the Armadeus ST0700 Adapt. It comes with a
+> > Santek ST0700I5Y-RBSLW 7.0" WVGA (800x480) TFT and an adapter board so
+> > that it can be connected on the TFT header of Armadeus Dev boards.
+> >
+> > Cc: stable@vger.kernel.org # v4.19
+> > Reviewed-by: Rob Herring <robh@kernel.org>
+> > Signed-off-by: S=E9bastien Szymanski <sebastien.szymanski@armadeus.com>
+Reviewed-by: Sam Ravnborg <sam@ravnborg.org>
+
+If you wil lresend the patch I can apply it.
+I have lost the original mail.
+
+	Sam
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
