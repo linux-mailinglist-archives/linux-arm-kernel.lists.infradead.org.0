@@ -2,53 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3FE9D15F90
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 10:40:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0829615FA3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 10:44:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=DhiIeKQ7RjeXH63elyEyx1hljxd/LYmmSVVIdqm005o=; b=XZ7AecTRtk1YrS15Y5XAbKvmM
-	3sKPC3QUXipNKsn7sd17GriXrxGP5SFOhVEjlfaU2uC+73KCgCID/Y9V3/OEU5y/mPheI9i2bv19R
-	JRXZoWPQ7QcGFKLF/PtiEVz9wWmM/YSiVhdr0RkjHP9HaQTjR5W/UcdquuSqwNfzCJVWWJNixeWQE
-	T1pJQX60ZCjJdFGlGNKZ4PHVwYwdH4r4zHQrgHmmXeV0824qemLq/MXrMHo3HTNCH1medcU5x5iRl
-	jCEWxigZcojzMe4AVtOV48WiuYUCWQ5JiqlDnU8JjFTkXq+wwFwWLq5bdBfght8AuGXjen/CEjea/
-	cluvPEr9Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3GUoLbLOjcVhRIJS6PWNDXAW3lJ0iGk7BwesEQhIRAY=; b=g0yXEM+qcV1AFF
+	CW3Jh9uO43QKdgFDiyINbTpvSbB+404hmBmlR3VGn8ruC0clbK2C4a35mDpC35vgsdv8Q07jknJsM
+	T5CC6RkqTvIQPNpyihiI2SzC4Fk7qi+gnxov8RZW75T9IBPShSjQ1c7d0mHt3wYEXSZAayR/GUh0y
+	OWrg1Gmh1G0Jo4qYVPrCg3F77DXhmE9Q2Wsr6IR6Q5DqA+ipXSlL7FOLTzx9FaIEzpzPscNbdP8nM
+	mIVv1QLQ+LW6366k29oiLSKRj1HSJtxN2NqUQ+0NPwwSCkP5cZSImP+DFkoTawVrwOF6dIKNkD2sn
+	Ha6wtswTvgFT/D4qj4Eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNve3-0007qS-Vh; Tue, 07 May 2019 08:40:16 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNvdv-0006oe-El
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 08:40:09 +0000
-Received: from localhost (p54B332BA.dip0.t-ipconnect.de [84.179.50.186])
- by pokefinder.org (Postfix) with ESMTPSA id 6C28C2C28E9;
- Tue,  7 May 2019 10:40:03 +0200 (CEST)
-Date: Tue, 7 May 2019 10:40:03 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH 1/3] dt-bindings: i2c: add optional mul-value property to
- binding
-Message-ID: <20190507084002.GA25688@kunai>
-References: <20190430043242.29687-1-chuanhua.han@nxp.com>
- <20190502205901.GA24224@bogus>
+	id 1hNvi2-0000bF-1O; Tue, 07 May 2019 08:44:22 +0000
+Received: from mail-yw1-xc44.google.com ([2607:f8b0:4864:20::c44])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hNvhu-0000ai-GG
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 08:44:15 +0000
+Received: by mail-yw1-xc44.google.com with SMTP id q11so12613737ywb.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 07 May 2019 01:44:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=iFm6FDZwvJL+HzN1QdmiyPBYMjzcvnFQoiE4auxzRKE=;
+ b=fc46tf0xFi4OiMlpZ0NJxygwAsQMTXMIDZQt94ZV6ND8GTVccVsrHkuxOjEdgkvWsq
+ kzxhRM0qCdYvptxLiDh8IoVz5/EjqxNrTow2rAUOa0DgSij5Qt+1M/fedBhjFJ0KCdoA
+ PpGPrRmskWjBw2mKzSOn+Jxgr3g8tma7Vk+Wh1lI1l2tVPVI/6Uoxxy7CYhOnJ5wXnB/
+ 2BCTZ8UYmJssh7/acURudeY6vfo12rrtR2XeZOxhuNZGqsg5FhTg3GYDlKisiURav/1t
+ 1y4vlAbluGTx4493LOUZAAM0BAA6wqojpLOmEv1gmE0h79cUKbB0EbhoKLVBJIQkJSIw
+ dQFA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=iFm6FDZwvJL+HzN1QdmiyPBYMjzcvnFQoiE4auxzRKE=;
+ b=t8cyV1JQs4RwbWYGdOPyprF/WLYx0mkgb4oIHmb2fIRQdklnCw934vDM9LspVaCXlI
+ EYnkhjMoJw0KDuEMAFKha1lvRdVcxGXZNMqQQYm1gwUjVhMO8V+k/1ZUyJ94UMr3G8cf
+ ZsHIij2spoigwrNVuSwC0yZqTRLI3hqykRrHug3yLI6jKDVAEo2sMM1r/zUkDKPNgnOw
+ OPtin90hofPx7drUEosRjm36Y0Pm6KdPu1ydnKFvm9giau7nC6WBCoQI13zAhJv4Azfs
+ d8la4ACVkPufkS3i5/Hm9BWNgp2u4P48HUxXhVXaKTdBykbp/CsTDKcQMTtypngtn4jz
+ tKiA==
+X-Gm-Message-State: APjAAAU8LrCHkUdA2H7EsXSZNPP1JD+kQZhlwDr4XYQgP8DpKFOJRBNl
+ 9bBxyqiBtIhtAhzQtIJhjUFLWw==
+X-Google-Smtp-Source: APXvYqysrVPFAot4v6pAuseL9bvDBO1IBInyUI9EwPNZ77v0bBLxEpuVZyDF7Cm9pQrQTfj4bsYUxg==
+X-Received: by 2002:a25:3bc8:: with SMTP id i191mr20329017yba.16.1557218653359; 
+ Tue, 07 May 2019 01:44:13 -0700 (PDT)
+Received: from leoy-ThinkPad-X240s (li931-65.members.linode.com.
+ [45.56.113.65])
+ by smtp.gmail.com with ESMTPSA id b71sm3593063ywb.1.2019.05.07.01.44.08
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 07 May 2019 01:44:12 -0700 (PDT)
+Date: Tue, 7 May 2019 16:44:04 +0800
+From: Leo Yan <leo.yan@linaro.org>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+Subject: Re: [PATCH 4/5] perf tools: Properly set the value of 'old' in
+ snapshot mode
+Message-ID: <20190507084404.GD21730@leoy-ThinkPad-X240s>
+References: <20190501175052.29667-1-mathieu.poirier@linaro.org>
+ <20190501175052.29667-5-mathieu.poirier@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <20190502205901.GA24224@bogus>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <20190501175052.29667-5-mathieu.poirier@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_014007_800369_F6BD293C 
-X-CRM114-Status: GOOD (  18.73  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190507_014414_573775_38B43EA9 
+X-CRM114-Status: GOOD (  19.93  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:c44 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -60,106 +99,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, sumit.batra@nxp.com,
- eha@deif.com, festevam@gmail.com, s.hauer@pengutronix.de,
- u.kleine-koenig@pengutronix.de, linux-kernel@vger.kernel.org,
- leoyang.li@nxp.com, wsa+renesas@sang-engineering.com, l.stach@pengutronix.de,
- linux-i2c@vger.kernel.org, kernel@pengutronix.de,
- Chuanhua Han <chuanhua.han@nxp.com>, linux@rempel-privat.de,
- shawnguo@kernel.org, peda@axentia.se, linux-arm-kernel@lists.infradead.org,
- linux-imx@nxp.com
-Content-Type: multipart/mixed; boundary="===============3827498726113570625=="
+Cc: corbet@lwn.net, alexander.shishkin@linux.intel.com,
+ coresight@lists.linaro.org, suzuki.poulose@arm.com, acme@kernel.org,
+ peterz@infradead.org, mingo@redhat.com, mike.leach@arm.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, May 01, 2019 at 11:50:51AM -0600, Mathieu Poirier wrote:
+> In snapshot mode the value of the 'old' pointer needs to be adjusted when
+> 'head' has wrapped around in order to get the latest information in the
+> buffer and be compatible with the generic AUX ring buffer mechanic.
+> 
+> Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> ---
+>  tools/perf/arch/arm/util/cs-etm.c | 12 ++++++++++--
+>  1 file changed, 10 insertions(+), 2 deletions(-)
+> 
+> diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
+> index 911426721170..4e73fe1a6978 100644
+> --- a/tools/perf/arch/arm/util/cs-etm.c
+> +++ b/tools/perf/arch/arm/util/cs-etm.c
+> @@ -541,11 +541,19 @@ static int cs_etm_find_snapshot(struct auxtrace_record *itr __maybe_unused,
+>  				unsigned char *data __maybe_unused,
+>  				u64 *head, u64 *old)
+>  {
+> +	bool wrapped;
+> +
+>  	pr_debug3("%s: mmap index %d old head %zu new head %zu size %zu\n",
+>  		  __func__, idx, (size_t)*old, (size_t)*head, mm->len);
+>  
+> -	*old = *head;
+> -	*head += mm->len;
+> +	/*
+> +	 * If the last byte in the ring buffer isn't zero, the head has
+> +	 * wrapped around.
+> +	 */
+> +	wrapped = !!(data[mm->len - 1]);
 
---===============3827498726113570625==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="0OAP2g/MAC+5xKAE"
-Content-Disposition: inline
+This is confused for me since I can think out two cases might break
+this checking.
 
+The first case is the trace data stream might be zero at the end of the
+buffer; the second case is that the buffer is not really wrapped around
+at this time but the end of buffer contains the stale data by previous
+time.
 
---0OAP2g/MAC+5xKAE
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Could you confirm both cases will not happen?
 
-On Thu, May 02, 2019 at 03:59:01PM -0500, Rob Herring wrote:
-> On Tue, Apr 30, 2019 at 12:32:40PM +0800, Chuanhua Han wrote:
-> > NXP Layerscape SoC have up to three MUL options available for all
-> > divider values, we choice of MUL determines the internal monitor rate
-> > of the I2C bus (SCL and SDA signals):
-> > A lower MUL value results in a higher sampling rate of the I2C signals.
-> > A higher MUL value results in a lower sampling rate of the I2C signals.
-> >=20
-> > So in Optional properties we added our custom mul-value property in the
-> > binding to select which mul option for the device tree i2c controller
-> > node.
-> >=20
-> > Signed-off-by: Chuanhua Han <chuanhua.han@nxp.com>
-> > ---
-> >  Documentation/devicetree/bindings/i2c/i2c-imx.txt | 3 +++
-> >  1 file changed, 3 insertions(+)
-> >=20
-> > diff --git a/Documentation/devicetree/bindings/i2c/i2c-imx.txt b/Docume=
-ntation/devicetree/bindings/i2c/i2c-imx.txt
-> > index b967544590e8..ba8e7b7b3fa8 100644
-> > --- a/Documentation/devicetree/bindings/i2c/i2c-imx.txt
-> > +++ b/Documentation/devicetree/bindings/i2c/i2c-imx.txt
-> > @@ -18,6 +18,9 @@ Optional properties:
-> >  - sda-gpios: specify the gpio related to SDA pin
-> >  - pinctrl: add extra pinctrl to configure i2c pins to gpio function fo=
-r i2c
-> >    bus recovery, call it "gpio" state
-> > +- mul-value: NXP Layerscape SoC have up to three MUL options available=
- for
-> > +all I2C divider values, it describes which MUL we choose to use for th=
-e driver,
-> > +the values should be 1,2,4.
->=20
-> Needs a vendor prefix. I don't find 'value' to add anything nor do I=20
-> understand what MUL is.
->=20
-> If it is determined by SoC rather than board, then it should perhaps be=
-=20
-> implied by compatible.
+Will do more testing for this patch set.
 
-I was wondering the same.
+Thanks,
+Leo Yan
 
-
---0OAP2g/MAC+5xKAE
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAlzRRF8ACgkQFA3kzBSg
-KbbUbRAApE4I45wTxiU40khw2A2mDLGqByh6dKjqeRVRHGsUrLdKN3tptV5pVqgM
-LdX5QFuA4Hp1TEkPLhuie+S7y0DfcN1NQEOPtP2ofZFTcMV93MhvZ7W2KEegnbld
-RzvlIcqxMHoQgDBsJunkOcZuqUVicSwYETYXsbFGBAMJGTzhZR4Sh2Qt0VNRUmwu
-UMFuBqnnhDXBkl7VSeKXDgjctCJnVaiyqj2jnz5HD4eOBtHj7zvPXnSYyMfYhrUL
-Z6TXVxdloC6j8noqtORUM4YmlleDepXqp/L2SGRhZ1Qi55XQd6oexxiP7ndDZV0W
-WRu3GaJOtXyOQYqeYMkfLbUPn90FkDLCFun1HKPBO07fcX/qWZmZnoXVX2799odV
-jofYTj6X0ILs79fIUT8wAUnMCmEgjgPOynl57loP4f8lh6VoWeDAEI1nwCoPxi0l
-TKabxPYDHpbT7vFP2eaR7/dXQxb+pgLNMUeqzPpIQ7XnSHrLl+7nrhVDcpzSWTr2
-ci6eWscPRJNr/OVa0wd+L4nthna/K89ZApK4zf9aioBTLPZ/EEZscAJ/YuZiJZ2d
-ZtwvTt6ewEz6D5OF6vsNjn7FOuqp7CIEhyPqFU+E5SC3iO05TqBhb9w34F5mO2oK
-Oswf5Q47JpcE4stdbVJa7ZTUd+P8gfmH+X71qLQzcU3wujem2K4=
-=cq07
------END PGP SIGNATURE-----
-
---0OAP2g/MAC+5xKAE--
-
-
---===============3827498726113570625==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> +
+> +	if (wrapped)
+> +		*old = *head - mm->len;
+>  
+>  	return 0;
+>  }
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3827498726113570625==--
-
