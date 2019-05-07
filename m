@@ -2,60 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 229A416847
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 18:45:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C06E61685E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 18:50:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5chVdU/olKWmsUgvGCc9EY8jACEmRAdo58dgHXjhdeA=; b=i4WCuYjNkq8tBx
-	XhpVEezVdB4rKRU1n40zRWVv5B6WUsN8InI0GYVHrAgkoC9YSuWX8/HdwgdZhX1sQdJB8mSVlFbrV
-	HtV0ZkM6R/tpMogVWTLJmug/aMDDPbZDYrddSSIAGtr0yOQiKLFSexJspkDNOMSZwD4AEQ4f1/JO+
-	6n/cmQ8ILZQr+pXrAJN+fd8gxqY1oz9Mr8sVVmS+MIxmeXfodWMds0bLr/0UB03g8/I4chx0DoXSQ
-	RRSueJXvm6OLvhj85CgnuZHLc7/RzAQl1zQPp/1aIm3lZgfZzy4BgRJTDsB7SMydQwiYKnPeDI58+
-	qpbcsDLPDLRL7bVVsnIg==;
+	List-Owner; bh=5BUujH7WFZOxSA1gTqLEDsAb6+2QPgVS9PhJlO5ibEc=; b=nYtmgILeT0ZknS
+	kddXgi2rJzV9nOHgYyZSTXVfXdwLWv+e3ayu1Y0oaGekJJ0RgeqTNUgeKdMJ35kGjxOgSHZqAfd4W
+	UFCW3vtTqwJOWrWwI/N2UTjHNAXeT2otEVOTUOnHWS8Ugv0Wh2PpLCNfleRRnwnMwh+Eql3PWr+uH
+	tbixUyezBWTXmNpb5kcyEqwNAIx2JR8m4+C6FyDRX9j+7AI4Uj42BA9erPBTKYAA/v/ga8MVYqypH
+	e+ZCv/jOKY2qBoA4Yf7VUv5ePwbzUcWVrTqJISvYZX9faO1mqe5OUySc0OwIYyNoev6cgTma3qzSd
+	vvjtjIQicKdKNfsNBCEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hO3DR-0002aN-Jk; Tue, 07 May 2019 16:45:17 +0000
+	id 1hO3Iu-0004X3-UY; Tue, 07 May 2019 16:50:56 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hO3DK-0002Zr-9O; Tue, 07 May 2019 16:45:11 +0000
-Received: from mail-qt1-f169.google.com (mail-qt1-f169.google.com
- [209.85.160.169])
+ id 1hO3In-0004Wg-EZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 16:50:51 +0000
+Received: from mail-qk1-f179.google.com (mail-qk1-f179.google.com
+ [209.85.222.179])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 919FA20989;
- Tue,  7 May 2019 16:45:09 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D3E7020C01
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue,  7 May 2019 16:50:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1557247509;
- bh=iM8J/j10jYr+vXCxXzUjgCYgZk17YUkoK9VE/2fhJ1I=;
+ s=default; t=1557247849;
+ bh=4tZewm4W45u/iRbwmWuTzyVbl39+IFYmFh6qEBuo2/Q=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=INXumkFeyNf58pU/qjd3huFH5ZfaxLIpyMXHCnZHxbXpsPJF6T1W6Vkh88hhOGvrJ
- GIheX5UtWz5QwB5Diw5nYE1jqJSPYf2nUHSJh66NP2uXzpdCBhwXjr4Np+l7L8hUOv
- mxoIiNV+EIzMpgJ0Ex/W0XZsuvBDRvLXKk1WcejY=
-Received: by mail-qt1-f169.google.com with SMTP id t1so1754114qtc.12;
- Tue, 07 May 2019 09:45:09 -0700 (PDT)
-X-Gm-Message-State: APjAAAXrKM+uUBisPh09olxZSH9DoLxwTbYDolbLMpXdtNP8TZcl3TXW
- 69u6Uqoxk2zrtZx+6M3y8VRBuip2tOKjeFxjtg==
-X-Google-Smtp-Source: APXvYqy7rk1sMMIHbSD/9OOZe8P3NIAyg7u8OPXuXWtwWi2WaDv6h/Xnf9ZSQ+8dUBlM+SULUoG2eW9wkEEg+3BdjGk=
-X-Received: by 2002:ac8:641:: with SMTP id e1mr27644859qth.76.1557247508777;
- Tue, 07 May 2019 09:45:08 -0700 (PDT)
+ b=g3/Lcp0RDChVoOY7BcV2cqvrWYSlDwAwTistWTDhiM5XVgVxrLcoa7/9VkLP6ETxC
+ sR93HGCf2/SfTTnVTZYNWN4tLbBt7SdKS8om3QT+TqlLs3M3FhOGjZTZthXB6o0wn4
+ xVBsSagpH2CcyuD4vvfbqWKSRwgtU6qX3z43Ii8A=
+Received: by mail-qk1-f179.google.com with SMTP id g190so1552868qkf.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 07 May 2019 09:50:48 -0700 (PDT)
+X-Gm-Message-State: APjAAAVVAlJ+089dOaNjStr4StYoaYavuV9QuGQHnoUvlVhp9WjzTeAu
+ IcqgU/VssyqzlWDcUSnAgFDxrBBROpKN7Y0U1Q==
+X-Google-Smtp-Source: APXvYqwy91gBuwgIgFwBIlr7H7WziKK1/q+qve5xTg6xIcAxeG7XLdX/VKJhShfFBkFEzLxxQLOwWb8GHqYD7EgmNlA=
+X-Received: by 2002:a37:5c81:: with SMTP id q123mr23947855qkb.29.1557247848038; 
+ Tue, 07 May 2019 09:50:48 -0700 (PDT)
 MIME-Version: 1.0
-References: <1556893635-18549-1-git-send-email-ynezz@true.cz>
- <1556893635-18549-3-git-send-email-ynezz@true.cz>
-In-Reply-To: <1556893635-18549-3-git-send-email-ynezz@true.cz>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Tue, 7 May 2019 11:44:57 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqLt6UFU_6bmh3Pc0taXUgMtAEV7kL7eZU13cLOjoakf=Q@mail.gmail.com>
-Message-ID: <CAL_JsqLt6UFU_6bmh3Pc0taXUgMtAEV7kL7eZU13cLOjoakf=Q@mail.gmail.com>
-Subject: Re: [PATCH v4 02/10] dt-bindings: doc: reflect new NVMEM
- of_get_mac_address behaviour
-To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
+References: <1555681688-19643-1-git-send-email-l.luba@partner.samsung.com>
+ <CGME20190419134822eucas1p29c6eff0f500311749b33c4f556123cf0@eucas1p2.samsung.com>
+ <1555681688-19643-4-git-send-email-l.luba@partner.samsung.com>
+ <20190430223629.GA22317@bogus>
+ <1fd44623-4a59-f014-1ae9-a7cc605ad30f@partner.samsung.com>
+ <CAL_JsqJcm9Z6vYFHGyAZ+h3-kmSv6e=3NtO-fjJn3-QT0JoX+w@mail.gmail.com>
+ <97277857-666d-7720-9d85-19120c977682@partner.samsung.com>
+ <3d221027-292b-7d0d-2510-f230a81f4b52@partner.samsung.com>
+In-Reply-To: <3d221027-292b-7d0d-2510-f230a81f4b52@partner.samsung.com>
+From: Rob Herring <robh@kernel.org>
+Date: Tue, 7 May 2019 11:50:37 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq+K-bdhTBnW5R4M0nDoikfFRdz-BeZf9Rf-hSmACj4B2w@mail.gmail.com>
+Message-ID: <CAL_Jsq+K-bdhTBnW5R4M0nDoikfFRdz-BeZf9Rf-hSmACj4B2w@mail.gmail.com>
+Subject: Re: [PATCH v3 3/4] Documentation: devicetree: add PPMU events
+ description
+To: Lukasz Luba <l.luba@partner.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_094510_367813_22787529 
-X-CRM114-Status: GOOD (  20.36  )
+X-CRM114-CacheID: sfid-20190507_095049_525241_9A15099E 
+X-CRM114-Status: GOOD (  22.51  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -83,97 +92,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
- Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- Frank Rowand <frowand.list@gmail.com>, Florian Fainelli <f.fainelli@gmail.com>,
- Kalle Valo <kvalo@codeaurora.org>, Yisen Zhuang <yisen.zhuang@huawei.com>,
- Vivien Didelot <vivien.didelot@gmail.com>,
- Woojung Huh <woojung.huh@microchip.com>, devicetree@vger.kernel.org,
- Jassi Brar <jaswinder.singh@linaro.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Salil Mehta <salil.mehta@huawei.com>,
- netdev <netdev@vger.kernel.org>,
- linux-wireless <linux-wireless@vger.kernel.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ willy.mh.wolff.ml@gmail.com,
+ linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ "open list:THERMAL" <linux-pm@vger.kernel.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
- "David S. Miller" <davem@davemloft.net>,
- Heiner Kallweit <hkallweit1@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCBNYXkgMywgMjAxOSBhdCA5OjI3IEFNIFBldHIgxaB0ZXRpYXIgPHluZXp6QHRydWUu
-Y3o+IHdyb3RlOgo+Cj4gQXMgb2ZfZ2V0X21hY19hZGRyZXNzIG5vdyBzdXBwb3J0cyBOVk1FTSB1
-bmRlciB0aGUgaG9vZCwgd2UgbmVlZCB0byB1cGRhdGUKPiB0aGUgYmluZGluZ3MgZG9jdW1lbnRh
-dGlvbiB3aXRoIHRoZSBuZXcgbnZtZW0tY2VsbCogcHJvcGVydGllcywgd2hpY2ggd291bGQKPiBt
-ZWFuIGNvcHkmcGFzdGluZyBhIGxvdCBvZiByZWR1bmRhbnQgaW5mb3JtYXRpb24gdG8gZXZlcnkg
-YmluZGluZwo+IGRvY3VtZW50YXRpb24gY3VycmVudGx5IHJlZmVyZW5jaW5nIHNvbWUgb2YgdGhl
-IE1BQyBhZGRyZXNzIHByb3BlcnRpZXMuCj4KPiBTbyBJJ3ZlIGp1c3QgcmVtb3ZlZCBhbGwgdGhl
-IHJlZmVyZW5jZXMgdG8gdGhlIG9wdGlvbmFsIE1BQyBhZGRyZXNzCj4gcHJvcGVydGllcyBhbmQg
-cmVwbGFjZWQgdGhlbSB3aXRoIHRoZSBzbWFsbCBub3RlIHJlZmVyZW5jaW5nCj4gbmV0L2V0aGVy
-bmV0LnR4dCBmaWxlLgo+Cj4gU2lnbmVkLW9mZi1ieTogUGV0ciDFoHRldGlhciA8eW5lenpAdHJ1
-ZS5jej4KPiAtLS0KPgo+ICBDaGFuZ2VzIHNpbmNlIHYyOgo+Cj4gICogcmVwbGFjZWQgb25seSBN
-QUMgYWRkcmVzcyByZWxhdGVkIG9wdGlvbmFsIHByb3BlcnRpZXMgd2l0aCBhIHRleHQKPiAgICBy
-ZWZlcmVuY2luZyBldGhlcm5ldC50eHQKPgo+ICBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmlu
-ZGluZ3MvbmV0L2FsdGVyYV90c2UudHh0ICAgICAgICAgICB8ICA1ICsrLS0tCj4gIERvY3VtZW50
-YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9uZXQvYW1kLXhnYmUudHh0ICAgICAgICAgICAgIHwg
-IDUgKysrLS0KPiAgRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL25ldC9icmNtLGFt
-YWMudHh0ICAgICAgICAgICAgfCAgNCArKy0tCj4gIERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9i
-aW5kaW5ncy9uZXQvY3Bzdy50eHQgICAgICAgICAgICAgICAgIHwgIDQgKysrLQo+ICBEb2N1bWVu
-dGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvbmV0L2RhdmluY2lfZW1hYy50eHQgICAgICAgICB8
-ICA1ICsrKy0tCj4gIERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9uZXQvZHNhL2Rz
-YS50eHQgICAgICAgICAgICAgIHwgIDUgKystLS0KPiAgRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVl
-L2JpbmRpbmdzL25ldC9ldGhlcm5ldC50eHQgICAgICAgICAgICAgfCAgNiArKysrLS0KPiAgRG9j
-dW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL25ldC9oaXNpbGljb24tZmVtYWMudHh0ICAg
-ICAgfCAgNCArKystCj4gIC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdzL25ldC9oaXNpbGljb24taGl4
-NWhkMi1nbWFjLnR4dCAgICAgICAgIHwgIDQgKysrLQo+ICBEb2N1bWVudGF0aW9uL2RldmljZXRy
-ZWUvYmluZGluZ3MvbmV0L2tleXN0b25lLW5ldGNwLnR4dCAgICAgICB8IDEwICsrKysrLS0tLS0K
-PiAgRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL25ldC9tYWNiLnR4dCAgICAgICAg
-ICAgICAgICAgfCAgNSArKy0tLQo+ICBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mv
-bmV0L21hcnZlbGwtcHhhMTY4LnR4dCAgICAgICB8ICA0ICsrKy0KPiAgRG9jdW1lbnRhdGlvbi9k
-ZXZpY2V0cmVlL2JpbmRpbmdzL25ldC9taWNyb2NoaXAsZW5jMjhqNjAudHh0ICAgfCAgMyArKy0K
-PiAgRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL25ldC9taWNyb2NoaXAsbGFuNzh4
-eC50eHQgICAgfCAgNSArKy0tLQo+ICBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mv
-bmV0L3FjYSxxY2E3MDAwLnR4dCAgICAgICAgICB8ICA0ICsrKy0KPiAgRG9jdW1lbnRhdGlvbi9k
-ZXZpY2V0cmVlL2JpbmRpbmdzL25ldC9zYW1zdW5nLXN4Z2JlLnR4dCAgICAgICAgfCAgNCArKyst
-Cj4gIC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdzL25ldC9zbnBzLGR3Yy1xb3MtZXRoZXJuZXQudHh0
-ICAgICAgICAgIHwgIDUgKysrLS0KPiAgLi4uL2RldmljZXRyZWUvYmluZGluZ3MvbmV0L3NvY2lv
-bmV4dCx1bmlwaGllci1hdmU0LnR4dCAgICAgICAgfCAgNCArKy0tCj4gIERvY3VtZW50YXRpb24v
-ZGV2aWNldHJlZS9iaW5kaW5ncy9uZXQvc29jaW9uZXh0LW5ldHNlYy50eHQgICAgIHwgIDUgKysr
-LS0KPiAgLi4uL2RldmljZXRyZWUvYmluZGluZ3MvbmV0L3dpcmVsZXNzL21lZGlhdGVrLG10NzYu
-dHh0ICAgICAgICAgfCAgNSArKystLQo+ICBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGlu
-Z3MvbmV0L3dpcmVsZXNzL3FjYSxhdGg5ay50eHQgICB8ICA0ICsrLS0KPiAgMjEgZmlsZXMgY2hh
-bmdlZCwgNTggaW5zZXJ0aW9ucygrKSwgNDIgZGVsZXRpb25zKC0pCgpbLi4uXQoKPiBkaWZmIC0t
-Z2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL25ldC9rZXlzdG9uZS1uZXRj
-cC50eHQgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvbmV0L2tleXN0b25lLW5l
-dGNwLnR4dAo+IGluZGV4IDA0YmExZGMuLjNhNjVhYWIgMTAwNjQ0Cj4gLS0tIGEvRG9jdW1lbnRh
-dGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL25ldC9rZXlzdG9uZS1uZXRjcC50eHQKPiArKysgYi9E
-b2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvbmV0L2tleXN0b25lLW5ldGNwLnR4dAo+
-IEBAIC0xMzUsMTQgKzEzNSwxNCBAQCBPcHRpb25hbCBwcm9wZXJ0aWVzOgo+ICAgICAgICAgICAg
-ICAgICBhcmUgc3dhcHBlZC4gIFRoZSBuZXRjcCBkcml2ZXIgd2lsbCBzd2FwIHRoZSB0d28gRFdP
-UkRzCj4gICAgICAgICAgICAgICAgIGJhY2sgdG8gdGhlIHByb3BlciBvcmRlciB3aGVuIHRoaXMg
-cHJvcGVydHkgaXMgc2V0IHRvIDIKPiAgICAgICAgICAgICAgICAgd2hlbiBpdCBvYnRhaW5zIHRo
-ZSBtYWMgYWRkcmVzcyBmcm9tIGVmdXNlLgo+IC0tIGxvY2FsLW1hYy1hZGRyZXNzOiAgIHRoZSBk
-cml2ZXIgaXMgZGVzaWduZWQgdG8gdXNlIHRoZSBvZl9nZXRfbWFjX2FkZHJlc3MgYXBpCj4gLSAg
-ICAgICAgICAgICAgICAgICAgICAgb25seSBpZiBlZnVzZS1tYWMgaXMgMC4gV2hlbiBlZnVzZS1t
-YWMgaXMgMCwgdGhlIE1BQwo+IC0gICAgICAgICAgICAgICAgICAgICAgIGFkZHJlc3MgaXMgb2J0
-YWluZWQgZnJvbSBsb2NhbC1tYWMtYWRkcmVzcy4gSWYgdGhpcwo+IC0gICAgICAgICAgICAgICAg
-ICAgICAgIGF0dHJpYnV0ZSBpcyBub3QgcHJlc2VudCwgdGhlbiB0aGUgZHJpdmVyIHdpbGwgdXNl
-IGEKPiAtICAgICAgICAgICAgICAgICAgICAgICByYW5kb20gTUFDIGFkZHJlc3MuCj4gIC0gIm5l
-dGNwLWRldmljZSBsYWJlbCI6ICAgICAgICBwaGFuZGxlIHRvIHRoZSBkZXZpY2Ugc3BlY2lmaWNh
-dGlvbiBmb3IgZWFjaCBvZiBOZXRDUAo+ICAgICAgICAgICAgICAgICAgICAgICAgIHN1Yi1tb2R1
-bGUgYXR0YWNoZWQgdG8gdGhpcyBpbnRlcmZhY2UuCj4KPiArVGhlIE1BQyBhZGRyZXNzIHdpbGwg
-YmUgZGV0ZXJtaW5lZCB1c2luZyB0aGUgb3B0aW9uYWwgcHJvcGVydGllcyBkZWZpbmVkIGluCj4g
-K2V0aGVybmV0LnR4dCwgYXMgcHJvdmlkZWQgYnkgdGhlIG9mX2dldF9tYWNfYWRkcmVzcyBBUEkg
-YW5kIG9ubHkgaWYgZWZ1c2UtbWFjCgpEb24ndCBtYWtlIHJlZmVyZW5jZXMgdG8gTGludXggaW4g
-YmluZGluZ3MuIFlvdSBjYW4gdGFsayBhYm91dApleHBlY3RhdGlvbnMgb2YgY2xpZW50IHByb2dy
-YW1zIChlLmcgTGludXgsIHUtYm9vdCwgQlNELCBldGMuKSB0aG91Z2guCgpSb2IKCl9fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwg
-bWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
-bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Tue, May 7, 2019 at 4:05 AM Lukasz Luba <l.luba@partner.samsung.com> wrote:
+>
+> Hi Rob,
+>
+> On 5/6/19 12:29 PM, Lukasz Luba wrote:
+> > Hi Rob,
+> >
+> > On 5/2/19 10:24 PM, Rob Herring wrote:
+> >> On Thu, May 2, 2019 at 3:52 AM Lukasz Luba
+> >> <l.luba@partner.samsung.com> wrote:
+> >>>
+> >>> Hi Rob,
+> >>>
+> >>> On 5/1/19 12:36 AM, Rob Herring wrote:
+> >>>> On Fri, Apr 19, 2019 at 03:48:07PM +0200, Lukasz Luba wrote:
+> >>>>> Extend the documenation by events description with new
+> >>>>> 'event-data-type'
+> >>>>> field. Add example how the event might be defined in DT.
+> >>>>
+> >>>> Why do we need event types in DT? We don't do this for other h/w
+> >>>> such as
+> >>>> ARM PMU.
+> >>> In ARM PMU all the events are hard-coded into the driver code i.e. in v7
+> >>> arch/arm/kernel/perf_event_v7.c
+> >>> and are seen from perf. They are different type and for different
+> >>> purpose. The Ecynos PPMU events are not seen in perf, they are
+> >>> for internal monitoring and must not be reset by other actors like perf.
+> >>> They are used by the 'bus drivers' to made some heuristics and tune the
+> >>> internal settings, like frequency.
+> >>>
+> >>> Chanwoo has written PPMU driver which relies on DT definition.
+> >>> The DT events are used by other DT devices by phandle.
+> >>
+> >> How is that done? I don't see anything in the binding for that.
+> > Here are the DT devices and how they are pinned together:
+> > - declared devfreq events:
+> > https://elixir.bootlin.com/linux/latest/source/arch/arm/boot/dts/exynos4412-ppmu-common.dtsi
+> >
+> > - devfreq events pinned to the bus device:
+> > https://elixir.bootlin.com/linux/latest/source/arch/arm/boot/dts/exynos4412-odroid-common.dtsi#L107
+> >
+> > - the bus device itself:
+> > https://elixir.bootlin.com/linux/latest/source/arch/arm/boot/dts/exynos4412.dtsi#L457
+> >
+> >
+> > Regards,
+> > Lukasz
+> >
+> >>
+> >> Rob
+> >>
+> >>
+> Can I send the next version of the patch set, which has Chanwoo's
+> suggestions, or do you have some objections to this PPMU entries?
+
+I think the existing binding which this is based on needs some
+changes, so it's pointless really for me to comment on additions.
+
+Rob
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
