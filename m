@@ -2,93 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B51B16393
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 14:16:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6491F1639F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 14:21:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yfeptsT5Vy7HiJ6Cgyk2jvA+yw/Ep9MgEeGJDFrN0xo=; b=uHpCZvmgHEs+S+
-	wQBgVu2Bpc1FAOLANlVtlcHRrB9JJtCA06O3oFscXVNJW2DZ3nlIzSiIQpCFna6EF+Kquk+lTnmxy
-	3at3Ww99s77vho3hTrQ+B5RZ0B1IdLAMxXiCEyGgbu2ElmdRkrN4dqLjfcp4sk0cdRZ2cLDgicqEu
-	fDGUXL5KALKw3/B2haWpPz5RBTS1HPVVVdaogfNaKK8KF5Ejg00s8u3VF4ER3DqKrpsYdt/sc+S1V
-	7vMuw0vGu3JvTE5Bj74bXqgkk29SrZY06cb4BANJ/CjyNIxb7ohcPJOWpXbBoLDFFUYUTJCIU9RBL
-	KLp5i13sk3ylq6CGmOFg==;
+	List-Owner; bh=zhSVngV4GVF8Sg/VTsbA/od4oBa5YJ9vdKvfVh5T2o8=; b=tTA6slVQC6TY5e
+	paiusij3XKGY4ksFDHCKNJm0SJfNmjPdzYnnJ7sXtajXnorPR9HRCKv67AiE0+HOzRQN9t/6cPpeE
+	pDl1WMayO90WI2qx0WlgJcCM/mxhO/QDSWrEnx4UVPk3HVcbe2XJwzTfJ+/uWPF80BICLOqtkVuaM
+	1kLM92C4i21jwdftJwmiJKzIsEiugymULtiIO9fRrrg/PLmJIHdTpJClIs7bUZalKG26lGeQ2IJ4N
+	IdJAdhFWZC+S9tWplwKIRcLyDHjlq/m0Fw1e2PsD4/oPjpEOUdObsHWxOTvL7mo2VtlxGGLiQMaV6
+	aTfT0fKlmRhvaaQdxyWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNz1S-00022a-Ik; Tue, 07 May 2019 12:16:38 +0000
-Received: from mail-yw1-xc41.google.com ([2607:f8b0:4864:20::c41])
+	id 1hNz61-0005J2-7n; Tue, 07 May 2019 12:21:21 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNz1H-0001xL-HM
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 12:16:30 +0000
-Received: by mail-yw1-xc41.google.com with SMTP id 18so8208265ywe.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 May 2019 05:16:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=1OGU3z8V5nsGM9UVa7YrYRSmfjqo2jlaBctn5FM1twc=;
- b=ejzyE3Qe6iMmfUcN4nBrKMwdwyBM+g1XoAS3oJYnyk/aKjQsdouYKRocGqAU3yCEsV
- Pz8d+pEIDbENzcDAlDqSYRJuuugyMBKLONu+jFtwGveSKQbtk8JNr8szGezp+livZwvl
- EXO8wZnuk01HLr+dSKfTlb6FvPFAkPuQg7Deli2EABL6RfeIxUEXshnZbg6u5rXMUjVo
- HHBjJapRmqzpnbEUDLNppH/DbP0FkSbHqdqTjgHOZq3g2uslsROVVuWTvcZZO5R74m6c
- YHaK98XBtMQGN4j0/gGv2L5029JBGIGMeA0Nm/pzF/QVSBDwdUEuQHABdK9z2UwyHipQ
- pqlw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=1OGU3z8V5nsGM9UVa7YrYRSmfjqo2jlaBctn5FM1twc=;
- b=IEmO94GSjUQhH178jzRPZh5lD0DkUftFf1ePWuJfPAJBLG6M2NcmYJ7+XPN5L0zFFh
- 71E+gBnwFH8wzltj3Ie9WCvzXYUxkyX7B0MURIueqsjd7tuc06AcVvehHLZNzqdYz92M
- +p2vejHkgr4UUFLwXhMannO2zeKTuqDtBRkV+eGg8EXzc4qk0PlU8yTy2KtMimBO40/V
- Bu+be9s1U8WaO7QXZLKFUWNRyobZri/R7aY9wnVFpxzeSs8DMaUZoYc5m3/BtlZSq+P3
- UfKdldoj8AeIWTknNdXzvzi9OEcdypK/TRmwRn/0sp1/O0RTbfP6U/2pOpsyGjOR7BJs
- G2Mw==
-X-Gm-Message-State: APjAAAXNxfqBznHAWQljpxN38Juc7nnbRkL7vpMXTDttCwqEyIALBh+t
- ccKG7+B04RFvXH8ibUPgqk9l6A==
-X-Google-Smtp-Source: APXvYqwKQrkWJMiks/oTjoVIK5odg3Rwo6qBkBwMjQuePf3yrCIzKdKE7j0Nh7qj1Tdg6GZsAiPXGg==
-X-Received: by 2002:a25:2c01:: with SMTP id s1mr8124630ybs.339.1557231386207; 
- Tue, 07 May 2019 05:16:26 -0700 (PDT)
-Received: from leoy-ThinkPad-X240s (li931-65.members.linode.com.
- [45.56.113.65])
- by smtp.gmail.com with ESMTPSA id 205sm3651513ywm.98.2019.05.07.05.16.14
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 07 May 2019 05:16:25 -0700 (PDT)
-Date: Tue, 7 May 2019 20:16:04 +0800
-From: Leo Yan <leo.yan@linaro.org>
-To: Sudeep Holla <sudeep.holla@arm.com>
-Subject: Re: [PATCH v1 00/17] dts: Update DT bindings for CoreSight
- replicator and funnel
-Message-ID: <20190507121603.GE21730@leoy-ThinkPad-X240s>
-References: <20190507034734.20622-1-leo.yan@linaro.org>
- <2f2d819d-9b20-7b4c-a558-0ba24a7babf3@arm.com>
- <20190507104612.GA21391@e107155-lin>
+ id 1hNz5s-00057w-86
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 12:21:13 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 326C1205ED;
+ Tue,  7 May 2019 12:21:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1557231669;
+ bh=AGYkrEj2uxk4UWcYj5hJT4ocZ0MX1hx3P87PhI15ZXM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=tojakutQbyKkgVrhxp/DED5mzzPfcAHNxVtUCrrvxOHZiVyr/rUMEKYCy/SGEEOkL
+ ENhJIHzuORYDeGzGqGSPCid/tbPKEmYheiTe7W6hRJ8MiaVeEQkQRiiEvyxAiFZjUg
+ lPPHP6wFfjD4w8kFE5TIkK33w4GgUYw3wMIMrPc8=
+Date: Tue, 7 May 2019 14:21:06 +0200
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Dragan Cvetic <draganc@xilinx.com>
+Subject: Re: [PATCH V3 02/12] misc: xilinx-sdfec: add core driver
+Message-ID: <20190507122106.GA7873@kroah.com>
+References: <1556402706-176271-1-git-send-email-dragan.cvetic@xilinx.com>
+ <1556402706-176271-3-git-send-email-dragan.cvetic@xilinx.com>
+ <20190502172007.GA1874@kroah.com>
+ <BL0PR02MB5681B0F2BC0D74D8604D4289CB350@BL0PR02MB5681.namprd02.prod.outlook.com>
+ <20190504075502.GA11133@kroah.com>
+ <BL0PR02MB56814D6EACC16938A0575D16CB300@BL0PR02MB5681.namprd02.prod.outlook.com>
+ <20190506123425.GA26360@kroah.com>
+ <BL0PR02MB568169E26DCD12498EBDFC3ACB310@BL0PR02MB5681.namprd02.prod.outlook.com>
+ <20190507093941.GC20355@kroah.com>
+ <BL0PR02MB568148AD27F3FE86D168BDF9CB310@BL0PR02MB5681.namprd02.prod.outlook.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190507104612.GA21391@e107155-lin>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <BL0PR02MB568148AD27F3FE86D168BDF9CB310@BL0PR02MB5681.namprd02.prod.outlook.com>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_051627_986326_6F69CFC1 
-X-CRM114-Status: GOOD (  19.18  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190507_052112_327383_2CB9F27C 
+X-CRM114-Status: GOOD (  25.73  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -100,66 +81,141 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, andrew@lunn.ch, linus.walleij@linaro.org,
- liviu.dudau@arm.com, david.brown@linaro.org, haojian.zhuang@linaro.org,
- festevam@gmail.com, Lorenzo.Pieralisi@arm.com, lee.jones@linaro.org,
- xuwei5@hisilicon.com, agross@kernel.org, zhangfei.gao@linaro.org,
- cphealy@gmail.com, mike.leach@linaro.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>, s.hauer@pengutronix.de,
- robh+dt@kernel.org, orsonzhai@gmail.com, linux-arm-kernel@lists.infradead.org,
- mathieu.poirier@linaro.org, guodong.xu@linaro.org, baolin.wang@linaro.org,
- zhang.chunyan@linaro.org, shawnguo@kernel.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "arnd@arndb.de" <arnd@arndb.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, Michal Simek <michals@xilinx.com>,
+ Derek Kiernan <dkiernan@xilinx.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 07, 2019 at 11:46:12AM +0100, Sudeep Holla wrote:
-> On Tue, May 07, 2019 at 09:27:26AM +0100, Suzuki K Poulose wrote:
-> > Leo,
-> >
-> > On 07/05/2019 04:47, Leo Yan wrote:
-> > > Since the DT bindings consolidatoins for CoreSight replicator and funnel
-> > > is ready for kernel v5.2 merge window [1], this patch set is to update
-> > > the related CoreSight DT bindings for platforms; IIUC, this patch set
-> > > will be safe for merging into kernel v5.2 because the dependency
-> > > patches in [1] will be landed into mainline kernel v5.2 cycle.
-> > >
-> > > In this patch set, it tries to update below two compatible strings to
-> > > the latest strings:
-> > >
-> > >    s/"arm,coresight-replicator"/"arm,coresight-static-replicator"
-> > >    s/"arm,coresight-funnel"/"arm,coresight-dynamic-funnel"
-> > >
-> > > Please note, some platforms have two continuous patches, one is for
-> > > updating static replicator compatible string and another is for dynamic
-> > > funnel change; and other platforms have only one patch since it only
-> > > needs to change for dynamic funnel.
-> >
-> > I would have preferred to keep them as a single change. Either way, for
-> > the entire series :
-> >
-> > Acked-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+On Tue, May 07, 2019 at 11:55:42AM +0000, Dragan Cvetic wrote:
 > 
-> Thanks.
-
-Thanks, Suzuki and Sudeep.
-
-> Leo,
 > 
-> I plan to take 9,10,14/17 for v5.3
-
-Yes, please pick up these 3 patches.
-
-Thanks,
-Leo Yan
-
-> Please shout if you plan to take the series directly via different tree.
->
+> > -----Original Message-----
+> > From: Greg KH [mailto:gregkh@linuxfoundation.org]
+> > Sent: Tuesday 7 May 2019 10:40
+> > To: Dragan Cvetic <draganc@xilinx.com>
+> > Cc: arnd@arndb.de; Michal Simek <michals@xilinx.com>; linux-arm-kernel@lists.infradead.org; robh+dt@kernel.org;
+> > mark.rutland@arm.com; devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; Derek Kiernan <dkiernan@xilinx.com>
+> > Subject: Re: [PATCH V3 02/12] misc: xilinx-sdfec: add core driver
+> > 
+> > On Tue, May 07, 2019 at 08:48:41AM +0000, Dragan Cvetic wrote:
+> > >
+> > >
+> > > > -----Original Message-----
+> > > > From: Greg KH [mailto:gregkh@linuxfoundation.org]
+> > > > Sent: Monday 6 May 2019 13:34
+> > > > To: Dragan Cvetic <draganc@xilinx.com>
+> > > > Cc: arnd@arndb.de; Michal Simek <michals@xilinx.com>; linux-arm-kernel@lists.infradead.org; robh+dt@kernel.org;
+> > > > mark.rutland@arm.com; devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; Derek Kiernan <dkiernan@xilinx.com>
+> > > > Subject: Re: [PATCH V3 02/12] misc: xilinx-sdfec: add core driver
+> > > >
+> > > > On Mon, May 06, 2019 at 12:23:56PM +0000, Dragan Cvetic wrote:
+> > > > >
+> > > > >
+> > > > > > -----Original Message-----
+> > > > > > From: Greg KH [mailto:gregkh@linuxfoundation.org]
+> > > > > > Sent: Saturday 4 May 2019 08:55
+> > > > > > To: Dragan Cvetic <draganc@xilinx.com>
+> > > > > > Cc: arnd@arndb.de; Michal Simek <michals@xilinx.com>; linux-arm-kernel@lists.infradead.org; robh+dt@kernel.org;
+> > > > > > mark.rutland@arm.com; devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; Derek Kiernan <dkiernan@xilinx.com>
+> > > > > > Subject: Re: [PATCH V3 02/12] misc: xilinx-sdfec: add core driver
+> > > > > >
+> > > > > > On Fri, May 03, 2019 at 04:41:21PM +0000, Dragan Cvetic wrote:
+> > > > > > > Hi Greg,
+> > > > > > >
+> > > > > > > Please find my inline comments below,
+> > > > > > >
+> > > > > > > Regards
+> > > > > > > Dragan
+> > > > > > >
+> > > > > > > > -----Original Message-----
+> > > > > > > > From: Greg KH [mailto:gregkh@linuxfoundation.org]
+> > > > > > > > Sent: Thursday 2 May 2019 18:20
+> > > > > > > > To: Dragan Cvetic <draganc@xilinx.com>
+> > > > > > > > Cc: arnd@arndb.de; Michal Simek <michals@xilinx.com>; linux-arm-kernel@lists.infradead.org; robh+dt@kernel.org;
+> > > > > > > > mark.rutland@arm.com; devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; Derek Kiernan <dkiernan@xilinx.com>
+> > > > > > > > Subject: Re: [PATCH V3 02/12] misc: xilinx-sdfec: add core driver
+> > > > > > > >
+> > > > > > > > On Sat, Apr 27, 2019 at 11:04:56PM +0100, Dragan Cvetic wrote:
+> > > > > > > > > +#define DRIVER_NAME "xilinx_sdfec"
+> > > > > > > > > +#define DRIVER_VERSION "0.3"
+> > > > > > > >
+> > > > > > > > Version means nothing with the driver in the kernel tree, please remove
+> > > > > > > > it.
+> > > > > > >
+> > > > > > > Will be removed. Thank you.
+> > > > > > >
+> > > > > > > >
+> > > > > > > > > +#define DRIVER_MAX_DEV BIT(MINORBITS)
+> > > > > > > >
+> > > > > > > > Why this number?  Why limit yourself to any number?
+> > > > > > > >
+> > > > > > >
+> > > > > > > There can be max 8 devices for this driver. I'll change to 8.
+> > > > > > >
+> > > > > > > > > +
+> > > > > > > > > +static struct class *xsdfec_class;
+> > > > > > > >
+> > > > > > > > Do you really need your own class?
+> > > > > > >
+> > > > > > > When writing a character device driver, my goal is to create and register an instance
+> > > > > > > of that structure associated with a struct file_operations, exposing a set of operations
+> > > > > > > to the user-space. One of the steps to make this goal is Create a class for a devices,
+> > > > > > > visible in /sys/class/.
+> > > > > >
+> > > > > > Why do you need a class?  Again, why not just use the misc_device api,
+> > > > > > that seems much more relevant here and will make the code a lot simpler.
+> > > > > >
+> > > > >
+> > > > > The driver can have 8 devices in SoC plus more in Programming Logic.
+> > > > > It looked logical to group them under the same MAJOR, although they
+> > > > > are independent of each other.  Is this argument strong enough to use
+> > > > > class?
+> > > >
+> > > > Not really :)
+> > > >
+> > > > 8 devices is pretty small.  What tool will be trying to talk to all of
+> > > > these devices and how was it going to find out what devices were in the
+> > > > system?
+> > > >
+> > >
+> > > These devices are Forward Error Correction encoder/decoder
+> > > and will be part of the RF communication chain. They will be included
+> > > in the system through DT. Also, described in DT.
+> > 
+> > Userspace doesn't mess with DT.
+> > 
+> > I am asking what userspace tool/program is going to be interacting with
+> > these devices through your now-custom api you are creating.  Do you have
+> > a link to that software, and how is that code doing the "determine what
+> > device nodes are associated with what devices" logic?
+> > 
 > 
-> --
-> Regards,
-> Sudeep
+> Example code is not public yet, sorry.
+
+Ok, then I think we need to wait for that to get this merged at the
+minimum, don't you agree?  Otherwise how do we even know that any of
+these codepaths are tested?
+
+> The index number in the device name
+> is a link to device, see snippet from the example code:
+> 
+> #define FEC_DEC  "/dev/xsdfec0"
+> dec_fd = open_xsdfec(FEC_DEC);
+> 
+> The index number corresponds to the device order in DT.
+
+So that implies you don't need a class at all, right?
+
+thanks,
+
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
