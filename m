@@ -2,101 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7280016DE8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 01:42:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE0F016DF0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 01:50:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=h53FSNbeD6QIHWr1/mDRPainkQ0cWKnZd8H6M2+oaWk=; b=MIZvA+Ow8D/oti/BkDFl9r9dq
-	RaUAO9yqpUGEz5Q3tvU7Z+BUh6gQ7em/RycaKcyc6LdvG4y082vdAJOHcQ3kSLycCLVg8PRx23HAq
-	EXWsX+Y7n4SF9eo2VsHqkXQ06YKJY/Etnfm2rxhu9KmWQxRWTL7clBUhWHsi+lvAiNlomYZjpxB7M
-	fZKdhqRgLKzlDpKRK7LSqtKYFqCBE9E/FBtK80XdZBIT4W0jQebtqPBmjgk/P1+IOJeUr7xF47nhN
-	HjjkgHAfrGx66jcfuZNCvTf2fAbVy8JiGpcp+LPnoFSGqVgPxdcDQsy5974thdenNHy+7DtWY8Jjo
-	n4L2N+/Wg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=BmuHCjeFhpzgsh+y5OvYRZO1zAAAAadcEPHEjOZJ/kM=; b=NaFA+AhyEd8qeE
+	f8bdCyOeKqQSDPNm2JOZj69IxwLsacZxmC7GNbBWPsPzltxNWSfZVyxj6SftyId//n3NAw18zRiMD
+	wCPto59cocAPf9z/8ckMqdAeLFsv+BMfEk20R6UD0rO6q+sQiqk92+BeX14G2GtoQl+jjvg1TmSH+
+	5f6e6tfAYWfD29YMBO+qsyHqG9yGHLIZKwG3RaYlZjHV0G0lhFC7WPAYNPvbFmJFIlWnANUiCuAhm
+	zELcsKCqYVAqjNRDS5yIa0z8sJ0/zw3Fj0TMZtNaKJkJOhiVU8vX6a7nVckH/ZbQW4iQyCyj7THA6
+	3q5wyfZsBd4wThkRmzPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hO9io-0008Oz-4p; Tue, 07 May 2019 23:42:06 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hO9rI-0002nS-7P; Tue, 07 May 2019 23:50:52 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hO9ig-0008OK-KF
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 23:42:00 +0000
-Received: by mail-pl1-x642.google.com with SMTP id p15so1746668pll.4
+ id 1hO9rB-0002mo-2T
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 23:50:46 +0000
+Received: by mail-pg1-x541.google.com with SMTP id h1so9110188pgs.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 May 2019 16:41:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=6S43puIWlKpo3l0ctTYo9CwnfuvXVXnPWjkU3LnYrYE=;
- b=GjZeETvJT+eTWZ1uhPcJw7Bco8Ytbnq5Ktg3NTxlpUZBqTga93GcdN2/9ngvD/6dcR
- wSdJarS82zLEtv+15PpZwSzBaLZNI5NgBVmRGnYwfukvjjO+sPldzkBKeHcZl1499w8y
- FUxjc27cnAM2BwgvaxkDFedwHnI9x91/xkIfk2jgFMp48c9c95ZrVGtTRRdUsDRe0as/
- EiVWzqVG1BXnHnI1xyQhCDkeBV650Esz+Em4N2UsfBTuv9qku+0E2m3gCLfyTQFGZpIU
- gTUArMIb28nXA5QKC2GfnyXDKGNSqjtdqDRQwinPl51JXDJrc7BncgukshFwUma73Knj
- n1/Q==
+ Tue, 07 May 2019 16:50:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=C2o4ETy+vWyO645V7kF5tMNDqsri4a3cWb41vpQuvow=;
+ b=cOk+SU1iuvIll4eRwwIrl5D3fmLsvWuhtE1OcoCzB240FCv3dCCE2VDX8UL/cD5vIS
+ x1XUhb0ErANI7cOso8PoCamjW1SavXsouvxL+B20d1sExG7iHT8GufU1y+biN/X1HoEg
+ becIXZZzA9wVvAnEdU6TZhncZ3bW0qSkIbDs0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=6S43puIWlKpo3l0ctTYo9CwnfuvXVXnPWjkU3LnYrYE=;
- b=gulghxAaCz2FLYSQqyuwwK9f3U0cutoQVC9+PIdoqFgXeQk1kCTn8rab/OroYZOUV7
- XBYymyrslIYfnRqawYwHCXvU+Rc++T4oUXRv9O7sd3cDuSUyLj+50WbKned0t9OxC5Cv
- di8jmx0flzz5dCUXpAomp5PYuLNjQgI/e5nbnJkBJps2yBHbvA0NRjVkNQFzcmlzRbCp
- dF4MORn/6h8DeuZJVZTXZEVlpdmy8LxJheddMJj53IVsup+9SEjD+3RdM/NP9ky20ufe
- RzmhSgF2AYkKLkt3tVmDZD7TKipMsDH2U6IvC8vTKkj8UE7hQ1c2uDm+ys2b1j3efFhf
- /kLw==
-X-Gm-Message-State: APjAAAULo5/LPYOVHhDPwA/yRy6xZYok9PuCj69p7pTIxmGIK50F51Yx
- bBot128RqdmizWZqFwlzb/E=
-X-Google-Smtp-Source: APXvYqxccXn8zrgvQZyT7s/F9BOzQU9Kx3XQQw3HZ0E/XS1FVv/mBe9nJlyrYN/apNwFQfaXSQNwUA==
-X-Received: by 2002:a17:902:bc83:: with SMTP id
- bb3mr41252727plb.303.1557272517350; 
- Tue, 07 May 2019 16:41:57 -0700 (PDT)
-Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id
- h189sm24700224pfc.125.2019.05.07.16.41.55
+ bh=C2o4ETy+vWyO645V7kF5tMNDqsri4a3cWb41vpQuvow=;
+ b=cGYRh0vtypzMUt2JwmW2yduf/DR+u20a6klZ8g2V5tiZy7kCYkRAH4z88P0tbLQMRE
+ h1ALm0rjm7K4vge/fjtStr71kLAQFa6s/COgupw1j9/sgXjA1BTHNe1OPqtljpeVNr3T
+ GiU1FhelVJEOOndbu/p9GQeYJzZOKmMH6wzbxubEI72AwEMRQ6BtbE0D2x/xqgA+poK9
+ yh7JK4OcIw9gCV1clkIjPxWIwgflEBTpWwEqr/lbu0HK6syIG15Pt7MH5qrRVPpEAoTD
+ GyvnaJK5cg3c7AwApKPEmTvHRSWy3UrS+uIpvRyrDq2jkZepyrm5T+BV+DSf3chx0dBS
+ b/Xg==
+X-Gm-Message-State: APjAAAWoUmjBKW3aFF2zfhe+Ct1KZkvh1sSMZTsEN9PDr1p5xwEpnLt8
+ 85jVtxldxmQunWjzYdfjwvOERw==
+X-Google-Smtp-Source: APXvYqyPRHj71I0RtZt1k/NbQYF+jTnztfdDZMDt/S2D2rOv+RAfu+tJI8s6apjo+dh+q0OSW58e1A==
+X-Received: by 2002:a63:6b49:: with SMTP id g70mr43558513pgc.340.1557273044079; 
+ Tue, 07 May 2019 16:50:44 -0700 (PDT)
+Received: from tictac2.mtv.corp.google.com
+ ([2620:15c:202:1:24fa:e766:52c9:e3b2])
+ by smtp.gmail.com with ESMTPSA id n18sm30268927pfi.48.2019.05.07.16.50.42
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 07 May 2019 16:41:55 -0700 (PDT)
-Subject: Re: [PATCH v3 2/2] hwmon: scmi: Scale values to target desired HWMON
- units
-To: Florian Fainelli <f.fainelli@gmail.com>, linux-kernel@vger.kernel.org
-References: <20190507230917.21659-1-f.fainelli@gmail.com>
- <20190507230917.21659-3-f.fainelli@gmail.com>
-From: Guenter Roeck <linux@roeck-us.net>
-Message-ID: <690aff21-d68c-7d62-071f-ba1c9502e5ac@roeck-us.net>
-Date: Tue, 7 May 2019 16:41:54 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ Tue, 07 May 2019 16:50:43 -0700 (PDT)
+From: Douglas Anderson <dianders@chromium.org>
+To: Kishon Vijay Abraham I <kishon@ti.com>,
+	Heiko Stuebner <heiko@sntech.de>
+Subject: [PATCH] phy: rockchip-dp: Avoid power leak by leaving the PHY power on
+Date: Tue,  7 May 2019 16:48:56 -0700
+Message-Id: <20190507234857.81414-1-dianders@chromium.org>
+X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
 MIME-Version: 1.0
-In-Reply-To: <20190507230917.21659-3-f.fainelli@gmail.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_164158_668420_14C3FDC8 
-X-CRM114-Status: GOOD (  22.35  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190507_165045_141779_4CA193A6 
+X-CRM114-Status: GOOD (  18.11  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
- 0.1 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -108,95 +93,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:HARDWARE MONITORING" <linux-hwmon@vger.kernel.org>,
- Jean Delvare <jdelvare@suse.com>, bcm-kernel-feedback-list@broadcom.com,
- linux-arm-kernel@lists.infradead.org, Sudeep Holla <sudeep.holla@arm.com>
+Cc: Elaine Zhang <zhangqing@rock-chips.com>, hl@rock-chips.com,
+ dbasehore@chromium.org, Douglas Anderson <dianders@chromium.org>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ mka@chromium.org, ryandcase@chromium.org, groeck@chromium.org,
+ linux-arm-kernel@lists.infradead.org, wxt@rock-chips.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/7/19 4:09 PM, Florian Fainelli wrote:
-> If the SCMI firmware implementation is reporting values in a scale that
-> is different from the HWMON units, we need to scale up or down the value
-> according to how far appart they are.
-> 
-> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
-> ---
->   drivers/hwmon/scmi-hwmon.c | 43 +++++++++++++++++++++++++++++++++++++-
->   1 file changed, 42 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/hwmon/scmi-hwmon.c b/drivers/hwmon/scmi-hwmon.c
-> index a80183a488c5..7820854e5954 100644
-> --- a/drivers/hwmon/scmi-hwmon.c
-> +++ b/drivers/hwmon/scmi-hwmon.c
-> @@ -18,6 +18,47 @@ struct scmi_sensors {
->   	const struct scmi_sensor_info **info[hwmon_max];
->   };
->   
-> +static inline u64 __pow10(u8 x)
-> +{
-> +	u64 r = 1;
-> +
-> +	if (unlikely(x > 18))
-> +		return r;
-> +
+While testing a newer kernel on rk3288-based Chromebooks I found that
+the power draw in suspend was higher on newer kernels compared to the
+downstream Chrome OS 3.14 kernel.  Specifically the power of an
+rk3288-veyron-jerry board that I tested (as measured by the smart
+battery) was ~16 mA on Chrome OS 3.14 and ~21 mA on a newer kernel.
 
-Strictly speaking that would be 19 (10^19=0x8AC7230489E80000),
-and I am not sure if returning 1 in that case is such a good idea.
-If you really want to handle over/underflow situations, it should
-be in the calling code.
+I tracked the regression down to the fact that the "DP PHY" driver
+didn't exist in our downstream 3.14.  We relied on the eDP driver to
+turn on the clock and relied on the fact that the power for the PHY
+was default turned on.
 
-Thanks,
-Guenter
+Specifically the thing that caused the power regression was turning
+the eDP PHY _off_.  Presumably there is some sort of power leak in the
+system and when we turn the PHY off something is leaching power from
+something else and causing excessive power draw.
 
-> +	while (x--)
-> +		r *= 10;
-> +
-> +	return r;
-> +}
-> +
-> +static u64 scmi_hwmon_scale(const struct scmi_sensor_info *sensor, u64 value)
-> +{
-> +	s8 scale = sensor->scale;
-> +	u64 f;
-> +
-> +	switch (sensor->type) {
-> +	case TEMPERATURE_C:
-> +	case VOLTAGE:
-> +	case CURRENT:
-> +		scale += 3;
-> +		break;
-> +	case POWER:
-> +	case ENERGY:
-> +		scale += 6;
-> +		break;
-> +	default:
-> +		break;
-> +	}
-> +
-> +	f = __pow10(abs(scale));
-> +	if (scale > 0)
-> +		value *= f;
-> +	else
-> +		value = div64_u64(value, f);
-> +
-> +        return value;
-> +}
-> +
->   static int scmi_hwmon_read(struct device *dev, enum hwmon_sensor_types type,
->   			   u32 attr, int channel, long *val)
->   {
-> @@ -30,7 +71,7 @@ static int scmi_hwmon_read(struct device *dev, enum hwmon_sensor_types type,
->   	sensor = *(scmi_sensors->info[type] + channel);
->   	ret = h->sensor_ops->reading_get(h, sensor->id, false, &value);
->   	if (!ret)
-> -		*val = value;
-> +		*val = scmi_hwmon_scale(sensor, value);
->   
->   	return ret;
->   }
-> 
+Doing a search through device trees shows that this PHY is only ever
+used on rk3288.  Presumably this power leak is present on all
+rk3288-SoCs running upstream Linux so let's just whack the driver to
+make sure we never turn off power.  We'll still leave the parts that
+turn _on_ the power and grab the clock, though.
+
+NOTES:
+A) If someone can identify what this power leak is and fix it in some
+   other way we can revert this patch.
+B) If someone can show that their particular board doesn't have this
+   power leak (maybe they have rails hooked up differently?) we can
+   perhaps add a device tree property indicating that for some boards
+   it's OK to turn this rail off.  I don't want to add this property
+   until I know of a board that needs it.
+
+Fixes: fd968973de95 ("phy: Add driver for rockchip Display Port PHY")
+Signed-off-by: Douglas Anderson <dianders@chromium.org>
+---
+As far as I know Yakir (the original author) is no longer at Rockchip.
+I've added a few other Rockchip people and hopefully one of them can
+help direct even if they're not directly responsible.
+
+ drivers/phy/rockchip/phy-rockchip-dp.c | 11 +++++++----
+ 1 file changed, 7 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/phy/rockchip/phy-rockchip-dp.c b/drivers/phy/rockchip/phy-rockchip-dp.c
+index 8b267a746576..10bbcd69d6f5 100644
+--- a/drivers/phy/rockchip/phy-rockchip-dp.c
++++ b/drivers/phy/rockchip/phy-rockchip-dp.c
+@@ -35,7 +35,7 @@ struct rockchip_dp_phy {
+ static int rockchip_set_phy_state(struct phy *phy, bool enable)
+ {
+ 	struct rockchip_dp_phy *dp = phy_get_drvdata(phy);
+-	int ret;
++	int ret = 0;
+ 
+ 	if (enable) {
+ 		ret = regmap_write(dp->grf, GRF_SOC_CON12,
+@@ -50,9 +50,12 @@ static int rockchip_set_phy_state(struct phy *phy, bool enable)
+ 	} else {
+ 		clk_disable_unprepare(dp->phy_24m);
+ 
+-		ret = regmap_write(dp->grf, GRF_SOC_CON12,
+-				   GRF_EDP_PHY_SIDDQ_HIWORD_MASK |
+-				   GRF_EDP_PHY_SIDDQ_OFF);
++		/*
++		 * Intentionally don't turn SIDDQ off when disabling
++		 * the PHY.  There is a power leak on rk3288 and
++		 * suspend power _increases_ by 5 mA if you turn this
++		 * off.
++		 */
+ 	}
+ 
+ 	return ret;
+-- 
+2.21.0.1020.gf2820cf01a-goog
 
 
 _______________________________________________
