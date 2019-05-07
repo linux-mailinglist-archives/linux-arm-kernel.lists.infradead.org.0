@@ -2,91 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C14015E5D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 09:39:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 057C515E67
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 09:41:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bL1yyLVNBDNwn/ceko12QUM6KwSvIk+xOGM2zPXxsm4=; b=TqjDPW7A2YdTGZ
-	81l7u3KJZvAK1yj5vJEp1pttQayF8ouqzDT+iiFJiCxCOS2QaToLEVZUZT5wdbPBmnTP6QQKSFk1E
-	WjPVlTW4fDPBKrSsodAPJyy4275fDDISXOHDYIfP3DY2H2eEd/m3Ztq1lNUCiWgLeKljevP2V9+hC
-	9+eaDCqoKAXZ1yMyMsIJ2K7Bf5XW+VUZ+LPmhsW2GVFWmdh1gAq5mgnsUHKy6RCdWSINjIQhXcLSU
-	au2YJtMKPGhF/2E8xGG1ihMLyPT2WSBvwPKOPuXwvPpd4rU1y3xh/YV6mXjr7zqWUm1FDZKraFeBi
-	nr6A5OIt5+6/qylJDTDA==;
+	List-Owner; bh=btd+M1HFb9j1jJ8bq0oWtvlid89Cp7iuJXAv4fRY9vw=; b=d1WeiqAAOCrEWN
+	+J0+Xf9Sc7nbM8LOan1wFMp4R0Ujm3YZeijRvc+UlI4iftTPm6K/3K5yXphsHKalLkvvPnMStY9Ms
+	bkry3ez0f7hpc4MggezH56BE9wCAvN3IFMrgv03V2yEZym0qB04TaHAJn5w9uk9sEp2lsNrmVEZ6i
+	MfmN+4RbdM7Jl711wYolTuISSCgT8DpFae8o2Lzy9F5oprlUrU1sbFDs5UJQIxIBL31IZyUAYHdES
+	HSeTT93/5LySA4EIRJSp+IyQZPp7lXdRn5CLFG4QVGVeVUKmiEYoXU2nGORcByaERPzlYJ1IbzbV9
+	jZq1Q+R9MesHv8WFvjlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNuh2-0000vV-By; Tue, 07 May 2019 07:39:16 +0000
-Received: from mail-yw1-xc44.google.com ([2607:f8b0:4864:20::c44])
+	id 1hNujJ-0002TS-TD; Tue, 07 May 2019 07:41:37 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNugv-0000v1-1G
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 07:39:10 +0000
-Received: by mail-yw1-xc44.google.com with SMTP id 18so7662700ywe.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 May 2019 00:39:08 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=ox0QvGlynKEooKzsy+172nC86UWhPOoEzTXTbKXN/w8=;
- b=Xl3tXHYn4Cog38rXgQyJuLu5mQV3+zR3j8CZoAglumYKlowzaElJz6mRZ1OWslKkv/
- 7ZQS2xpABL41BnsvsHcYu0zS46qawCACVwEGFGVk3Wa511A4Qvt0n27oQOGhYY+JBIaR
- PgN1OKxxDvgsJlTx8/+ppRO7gBpJWke7UnxYB5esH682Tsn32Munxg4r3xQnuKWoQdMx
- 0Wr5iYFvibKWzQ56yW3QAOtAsQNHPfOHRFpgYg22ijbZHF4icpZ699Ubhhw/Fnd2lHjc
- kw6RQvJLlYGuAYl3MxGeoLvGFmmmEqDVi4ARJYfGp68rpr/8MvMmSnsNNxzjMzzLfRD7
- quJA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ox0QvGlynKEooKzsy+172nC86UWhPOoEzTXTbKXN/w8=;
- b=qeyBSLoTSHdoVCZXXlaW2btzOqobPXEHAB1er87bWYGV+Xt9JgASImGtwql1GsLtA/
- QdMbHb3ACQIor8o5bWxs2FrfeGfbJCc63uGpQGpeB2SrQALhk1i5HLknBA3IJstwzo86
- eIUfq5dVU14y0QgRL9t3gQpae2BP0IMY0nMvSlEG1hCOKyNPRTygQ6Mk0P+kwizzpmaS
- vWtChOByVT0tjBY4jUeFlXDHJZm619NwMcqtoed45tmdBT7uNRRy/dEeyAAO1fgZXftf
- jXIA5oXcn1iRLgE1IvWmfTJ0F+bJN0DqtvDlu20tblHKRHz9YRAZTCA09eO/q0wwrj3I
- B+WA==
-X-Gm-Message-State: APjAAAXjcW2mMYTo7uhWbEtAovmFyxdjODyrd993gYZqGfUsyQfCICc1
- fZ8iCJS+3ONQFC7k0FmYcgnX5A==
-X-Google-Smtp-Source: APXvYqxq1FP/vABWC9b7FoslJE9jsa5nBUF5paCEaLCvYC25Fy4vapQLO7lCrtCNsQVLBpXYRkYJkg==
-X-Received: by 2002:a25:504e:: with SMTP id e75mr19562139ybb.68.1557214747824; 
- Tue, 07 May 2019 00:39:07 -0700 (PDT)
-Received: from leoy-ThinkPad-X240s (li931-65.members.linode.com.
- [45.56.113.65])
- by smtp.gmail.com with ESMTPSA id 198sm1379827ywd.23.2019.05.07.00.38.56
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 07 May 2019 00:39:06 -0700 (PDT)
-Date: Tue, 7 May 2019 15:38:50 +0800
-From: Leo Yan <leo.yan@linaro.org>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH 1/5] coresight: Fix buffer size in snapshot mode
-Message-ID: <20190507073850.GA21730@leoy-ThinkPad-X240s>
-References: <20190501175052.29667-1-mathieu.poirier@linaro.org>
- <20190501175052.29667-2-mathieu.poirier@linaro.org>
+ id 1hNujB-0002T4-W1; Tue, 07 May 2019 07:41:31 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9115620989;
+ Tue,  7 May 2019 07:41:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1557214889;
+ bh=bn9LxTz5PdUe1/eUSoWy21rExjTBSKgzZqLiQHJSJt8=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=G9IZEx4Ac6qG5IHydgnkSVdU2W3m3DzHUL1a8UNorDAR3bT8YrmdfqPbnGovYAZqT
+ gJPg1s4gm5MefjSAlyiTpxSL25/qZyI2uPZLngg5B69pvF4BDdV4Ro6afM2qi/0H5h
+ BBPj0fkQFaLnYMa/n4Ir+xUQmGDzRY/bniniJQGg=
+Date: Tue, 7 May 2019 09:41:26 +0200
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Dan Carpenter <dan.carpenter@oracle.com>,
+ Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+Subject: Re: [PATCH net-next v2 0/4] of_get_mac_address ERR_PTR fixes
+Message-ID: <20190507074126.GA26478@kroah.com>
+References: <1557177887-30446-1-git-send-email-ynezz@true.cz>
+ <20190507071914.GJ2269@kadam>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190501175052.29667-2-mathieu.poirier@linaro.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20190507071914.GJ2269@kadam>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_003909_079775_6B42AABF 
-X-CRM114-Status: GOOD (  21.72  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190507_004130_045414_A147C015 
+X-CRM114-Status: GOOD (  18.59  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c44 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -98,129 +73,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: corbet@lwn.net, alexander.shishkin@linux.intel.com,
- coresight@lists.linaro.org, suzuki.poulose@arm.com, acme@kernel.org,
- peterz@infradead.org, mingo@redhat.com, mike.leach@arm.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devel@driverdev.osuosl.org, Andrew Lunn <andrew@lunn.ch>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Frank Rowand <frowand.list@gmail.com>, "David S. Miller" <davem@davemloft.net>,
+ linux-arm-kernel@lists.infradead.org, Heiner Kallweit <hkallweit1@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 01, 2019 at 11:50:48AM -0600, Mathieu Poirier wrote:
-> In snapshot mode the buffer used by the sink devices need to be
-> equal to the ring buffer size in order for the user space mechanic
-> to work properly.
-> 
-> Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> ---
->  drivers/hwtracing/coresight/coresight-etb10.c | 23 +++++++++++++++++++
->  .../hwtracing/coresight/coresight-tmc-etf.c   | 20 ++++++++++++++++
->  .../hwtracing/coresight/coresight-tmc-etr.c   |  8 +++++--
->  3 files changed, 49 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/hwtracing/coresight/coresight-etb10.c b/drivers/hwtracing/coresight/coresight-etb10.c
-> index 4ee4c80a4354..0764647b92bc 100644
-> --- a/drivers/hwtracing/coresight/coresight-etb10.c
-> +++ b/drivers/hwtracing/coresight/coresight-etb10.c
-> @@ -374,7 +374,30 @@ static void *etb_alloc_buffer(struct coresight_device *csdev,
->  			      int nr_pages, bool overwrite)
->  {
->  	int node, cpu = event->cpu;
-> +	u32 capacity;
->  	struct cs_buffers *buf;
-> +	struct etb_drvdata *drvdata;
-> +
-> +	/*
-> +	 * In snapsot mode the size of the perf ring buffer needs to be equal
-> +	 * to the size of the device's internal memory if we want to reuse the
-> +	 * generic AUX buffer management mechanic.
-> +	 *
-> +	 * For example (assuming 4096 byte page size):
-
-Here is delibrately to write as '4096 byte'?  Though I think should be
-'4096 bytes' but I am not confident which is right ...
-
-> +	 *
-> +	 *    # cat /sys/bus/coresight/devices/20010000.etb/mgmt/rdp
-> +	 *    0x2000
-> +	 *    # perf record -e cs_etm/@20010000.etf/ -S -m,8 --per-thread $APP
-> +	 *
-> +	 */
-> +	drvdata = dev_get_drvdata(csdev->dev.parent);
-> +	capacity = drvdata->buffer_depth * ETB_FRAME_SIZE_WORDS;
-> +
-> +	if (overwrite &&
-> +	    ((nr_pages << PAGE_SHIFT) != capacity)) {
-> +		dev_err(&csdev->dev, "Ring buffer not equal to device buffer");
-> +		return NULL;
-> +	}
->  
->  	if (cpu == -1)
->  		cpu = smp_processor_id();
-> diff --git a/drivers/hwtracing/coresight/coresight-tmc-etf.c b/drivers/hwtracing/coresight/coresight-tmc-etf.c
-> index 2527b5d3b65e..7694833b13cb 100644
-> --- a/drivers/hwtracing/coresight/coresight-tmc-etf.c
-> +++ b/drivers/hwtracing/coresight/coresight-tmc-etf.c
-> @@ -380,6 +380,26 @@ static void *tmc_alloc_etf_buffer(struct coresight_device *csdev,
->  {
->  	int node, cpu = event->cpu;
->  	struct cs_buffers *buf;
-> +	struct tmc_drvdata *drvdata;
-> +
-> +	/*
-> +	 * In snapsot mode the size of the perf ring buffer needs to be equal
-> +	 * to the size of the device's internal memory if we want to reuse the
-> +	 * generic AUX buffer management mechanic.
-> +	 *
-> +	 * For example (assuming 4096 byte page size):
-> +	 *
-> +	 *    # cat /sys/bus/coresight/devices/20010000.etf/buffer_size
-> +	 *    0x10000
-> +	 *    # perf record -e cs_etm/@20010000.etf/ -S -m,16 --per-thread $APP
-> +	 *
-> +	 */
-> +	drvdata = dev_get_drvdata(csdev->dev.parent);
-> +	if (overwrite &&
-> +	    ((nr_pages << PAGE_SHIFT) != drvdata->size)) {
-> +		dev_err(&csdev->dev, "Ring buffer not equal to device buffer");
-> +		return NULL;
-> +	}
->  
->  	if (cpu == -1)
->  		cpu = smp_processor_id();
-> diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-> index df6e4b0b84e9..b9881d6d41ba 100644
-> --- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
-> +++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-> @@ -1188,9 +1188,13 @@ alloc_etr_buf(struct tmc_drvdata *drvdata, struct perf_event *event,
->  
->  	/*
->  	 * Try to match the perf ring buffer size if it is larger
-> -	 * than the size requested via sysfs.
-> +	 * than the size requested via sysfs.  In snapsot mode the size
-> +	 * of the perf ring buffer needs to be equal to the allocated
-> +	 * size if we want to reuse the generic AUX buffer management
-> +	 * mechanic.
->  	 */
-> -	if ((nr_pages << PAGE_SHIFT) > drvdata->size) {
-> +	if (snapshot ||
-> +	    (nr_pages << PAGE_SHIFT) > drvdata->size) {
->  		etr_buf = tmc_alloc_etr_buf(drvdata, (nr_pages << PAGE_SHIFT),
->  					    0, node, NULL);
->  		if (!IS_ERR(etr_buf))
-
-If tmc_alloc_etr_buf() returns failure then it's possible to run into
-the below sequence to allocate smaller buffer size for snapshot mode;
-which is not expected for snapshot mode.
-
-So here if tmc_alloc_etr_buf() fails to allocate buffer for snapshot
-mode, should directly bail out with error code.
-
-Thanks,
-Leo Yan
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCBNYXkgMDcsIDIwMTkgYXQgMTA6MTk6MTRBTSArMDMwMCwgRGFuIENhcnBlbnRlciB3
+cm90ZToKPiBPbiBNb24sIE1heSAwNiwgMjAxOSBhdCAxMToyNDo0M1BNICswMjAwLCBQZXRyIMWg
+dGV0aWFyIHdyb3RlOgo+ID4gSGksCj4gPiAKPiA+IHRoaXMgcGF0Y2ggc2VyaWVzIGlzIGFuIGF0
+dGVtcHQgdG8gZml4IHRoZSBtZXNzLCBJJ3ZlIHNvbWVob3cgbWFuYWdlZCB0bwo+ID4gaW50cm9k
+dWNlLgo+ID4gCj4gPiBGaXJzdCBwYXRjaCBpbiB0aGlzIHNlcmllcyBpcyBkZWZhY3RvIHY1IG9m
+IHRoZSBwcmV2aW91cyAwNS8xMCBwYXRjaCBpbiB0aGUKPiA+IHNlcmllcywgYnV0IHNpbmNlIHRo
+ZSB2NCBvZiB0aGlzIDA1LzEwIHBhdGNoIHdhc24ndCBwaWNrZWQgdXAgYnkgdGhlCj4gPiBwYXRj
+aHdvcmsgZm9yIHNvbWUgdW5rbm93biByZWFzb24sIHRoaXMgcGF0Y2ggd2Fzbid0IGFwcGxpZWQg
+d2l0aCB0aGUgb3RoZXIKPiA+IDkgcGF0Y2hlcyBpbiB0aGUgc2VyaWVzLCBzbyBJJ20gcmVzZW5k
+aW5nIGl0IGFzIGEgc2VwYXJhdGUgcGF0Y2ggb2YgdGhpcwo+ID4gZml4dXAgc2VyaWVzIGFnYWlu
+Lgo+IAo+IEkgZmVlbCBzb3J0IG9mIHJpZGljdWxvdXMgYXNraW5nIHRoaXMgb3ZlciBhbmQgb3Zl
+ci4uLiAgTWF5YmUgeW91ciBzcGFtCj4gZmlsdGVyIGlzIGVhdGluZyBteSBlbWFpbHM/Cj4gCj4g
+VGhpcyBidWcgd2FzIGludHJvZHVjZWQgaW4gaHR0cHM6Ly9wYXRjaHdvcmsub3psYWJzLm9yZy9w
+YXRjaC8xMDk0OTE2Lwo+ICJbdjQsMDEvMTBdIG9mX25ldDogYWRkIE5WTUVNIHN1cHBvcnQgdG8g
+b2ZfZ2V0X21hY19hZGRyZXNzIiBidXQgaXQKPiBsb29rcyBsaWtlIG5vIG9uZSBhcHBsaWVkIGl0
+Lgo+IAo+IFlvdSdyZSBhY3RpbmcgYXMgaWYgaXQgKndhcyogYXBwbGllZCBidXQgeW91IHJlZnVz
+ZSB0byBhbnN3ZXIgbXkKPiBxdWVzdGlvbiB3aG8gYXBwbGllZCBpdCBhbmQgd2hpY2ggdG8gd2hp
+Y2ggdHJlZSBzbyBJIGNhbiBmaWd1cmUgb3V0IHdoYXQKPiB3ZW50IHdyb25nLgo+IAo+IEkgb25s
+eSBzZWUgY29tbWVudHMgZnJvbSBsYXN0IEZyaWRheSB0aGF0IGl0IHNob3VsZG4ndCBiZSBhcHBs
+aWVkLi4uICBJCj4gYWxzbyB0b2xkIHlvdSBvbiBGcmlkYXkgaW4gYSBkaWZmZXJlbnQgdGhyZWFk
+IHRoYXQgdGhhdCBwYXRjaCBzaG91bGRuJ3QKPiBiZSBhcHBsaWVkLiAgQnJlYWtpbmcgZ2l0IGJp
+c2VjdCBpcyBhIGJ1ZywgYW5kIHdlIG5ldmVyIGRvIHRoYXQuICBJJ20KPiBqdXN0IHZlcnkgY29u
+ZnVzZWQgcmlnaHQgbm93Li4uICBXaGF0IEknbSB0cnlpbmcgdG8gZG8gaXMgZmlndXJlIG91dCBp
+bgo+IG15IGhlYWQgaG93IHRoaXMgcHJvY2VzcyBmYWlsZWQgc28gd2UgY2FuIGRvIGJldHRlciBu
+ZXh0IHRpbWUuCgpKdXN0IHRvIHJlc2VuZCB0aGlzLCBzbyB0aGF0IGl0IGhvcGVmdWxseSBkb2Vz
+IF9ub3RfIGdldCBzdHVjayBpbiBhIHNwYW0KZmlsdGVyLgoKUGV0ciwgcGxlYXNlIGFkZHJlc3Mg
+RGFuJ3MgY29tbWVudHMsIGRvIG5vdCBpZ25vcmUgdGhlbS4KCmdyZWcgay1oCgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
+aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
