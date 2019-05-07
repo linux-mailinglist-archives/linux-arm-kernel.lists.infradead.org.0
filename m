@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 045BD15D2D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 08:10:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3A3A15D35
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 08:11:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,67 +11,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=SSU7DLSbg5eep7iKDVDL22F4HlypHysZ1TfoprHbTCU=; b=Br8dMGKQQ+n2A4WRUKFJP+6Whq
-	bJ3TIOvKx0/v2t4eP8YnhIaPUt1IcndA2wjxBNZSQdYB3d4E1L0Nb0ZCmwgSVBsgRKqZYc1glZXFA
-	XOMH2L9HdsgXWrVnPPZ7zVAgvvhg+BiQ86o5WSTEZ9D7fzZN1yOdAf4yl5LRPRAM5pBlPHvvB1O4J
-	mOxHHx9etv81h97G+9ZyNR8Z97lwCMhNsfOXZUKgjW4p+KX6e1HFmUTtHQ8yzHgcO1Gml1yhN7PcP
-	9YlYdf6XYdu+5rzOPNbJ0TGTwuKczplTFdZIg9nBBG6XqS7kpzFEVi9TKYV0NhGla4nFhBk8r4sgQ
-	mzDZ2eTg==;
+	bh=eelW2Ert+ym9W57rPGyLEc4lghLbfBHI8ASHLK8peNM=; b=A6IYQDyT1oWTWYT4F1o5yeFDUK
+	1fGrfX819lSZ5I18oPcYf8ngMJPlRCh6MCvYwAy9FHHHO5jfyh/AFz455aaPHp2Md7I3XNVDFm8k6
+	oxxA3rO4jCUHQkHeT1i8NxeQ60BPNqqr4NMaa1GWZFmeQ/o3WbytVup+d7K7zVYtVVBL8CxHAw0g5
+	9uyxXCwfLAGz302Gf4OZYgxJIHN71Y3Rbk5epbRuOGkvH/DMeGYbCtm6oPX8qnTR61afuL8hJ1jZN
+	PSd6H5eCYISFpO97U8fhTefr76rDvkgIWLmEf9js/RAmf1WtUHPT7i6X9ZVUPFX/rB91uaNiiQug8
+	T6xzcQbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNtJV-0006ml-L2; Tue, 07 May 2019 06:10:53 +0000
+	id 1hNtJg-00074e-Gv; Tue, 07 May 2019 06:11:04 +0000
 Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNtJ1-0006JD-6K
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 06:10:29 +0000
-Received: by mail-pg1-x544.google.com with SMTP id h1so7740447pgs.2
+ id 1hNtJ6-0006RJ-I3
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 06:10:37 +0000
+Received: by mail-pg1-x544.google.com with SMTP id 85so7734514pgc.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 06 May 2019 23:10:22 -0700 (PDT)
+ Mon, 06 May 2019 23:10:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :in-reply-to:references;
- bh=zZVeFg3ilWn9d8BrQHwI8nm6+PjT4Uc8w1q60Oaxq8U=;
- b=rPaqrwn1dFRkPgVFFCucjoHDO9tCwtxHdMU6tMSwe80W34i8kOmUplfqdBpDJW71dL
- HM7rhYYCe2OGnSSmfVroNtvEdyr6r7JIRywbildJSl0RVF6A1wLs6aWvKzSZ2PgnRXUr
- cCHXZ+OvTXZRbab/VqQs16S4bcCDRdFSdBLLkKHfQ2NssH3PQGzdeVU7HlXwxk6EchIq
- dOsBethnRBXf/G73slckz7OKvoPkhfOznt28Mc5bFa9lCakZNCytQ77xEb/RWjolQr8b
- 0SziRR+oL/8Spt70qUhBz+G15DXEaE9/MAvB/8OqYQXH9eRx9Nm1j2FxuRpLUtg1ymrJ
- HD0A==
+ bh=Cnx84NxIhSp4uZgqi6VSWZYaVNVqt10XSPlG8JL56aM=;
+ b=zcT6IdJyApB7KuMxuSWwG5peXYnsSHChNqw51B358ycUWDId/NngGMOqGHnT3h3bSm
+ qChmgQ9pGa5Yu+EMHMNgnlyKYIB+8jttgce0QhMdtSj38lOgaDPhUawls09xh0d5XiU9
+ XcUQsGp7Ng6At2b8JIe5cM9Fi4JL9LcN1RY7mpjCslKb9GSOd5Mhf/HsE8HqngQ8riLP
+ Tn/Gs+4flfKLlVDKesVK3VuGQZKXSUi+yaLrRL2c29XWNjnhW/3qUQ/1SZeyFjforxBc
+ bUG3zRsnRVBy6oLxJo+88AKeAdIeoUpkW0hyt61HMVCFbY41ZhTb9Ur818qX/RjkvnlV
+ 3E3g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:in-reply-to:references;
- bh=zZVeFg3ilWn9d8BrQHwI8nm6+PjT4Uc8w1q60Oaxq8U=;
- b=hwOiPXRSFWNbMz48nksSxgEJorXKjppDfNzo+tjXjMg+GVC0/OVVtdR50zcwrd6Oqr
- 18VOiWu6JmIc5goiR63KPobiiPJMauBMCXlMs/YmxkMEtHk2QJqgcKJQAvtM5JmBwm/q
- QY6OeXATlpIXn/0oW2mA6Hr6/QADt9prFu+TSATI8IWz88gwzg1M3LAaErGXPHvYXgVd
- WZs791wswlcjrNsOwBwphvSH3SiJCHfMDvStYmOkym9F5HxUNUz7uAt4KMwZHHioGwQm
- xMZaBZbQ6ZISOOXqw/47Onvqh4tKttnz1LWBzLhgYA6eR0r+Fb55mBMAiXUtZyhbXj4t
- hlJQ==
-X-Gm-Message-State: APjAAAVrH/KtHuIh6iU57ibhgpqUwe+1/ovemZpak93G7Q2zmgda8ss2
- YpdTkfbRwuWPV3j9Tvd9LZTScg==
-X-Google-Smtp-Source: APXvYqx2qWlTeHpIBatZZRSy2fiI3ZlapPkg6bNITXkF5AhanuTKXxUc3Xf9Hd7av0sMdlgfjtY7BA==
-X-Received: by 2002:a65:62c4:: with SMTP id m4mr37228778pgv.308.1557209422442; 
- Mon, 06 May 2019 23:10:22 -0700 (PDT)
+ bh=Cnx84NxIhSp4uZgqi6VSWZYaVNVqt10XSPlG8JL56aM=;
+ b=Jyv18XDbD6OzorPPt6dk0QuJEie9IPP48TQW1Ncwqhq0W8smctXwDKIa8DVUq0bH5V
+ dtcxIWZYPN1Lfe58euXKs6GJGnganAQLk7xTorSCSFywWkCPeyo0dCAZ+8OTg5iF6zrB
+ Mjh06gsLgZ8kbJvdOh51HeRA+38mRjurR2GyN7QxlvLLQqC8p6RWISBa/H3ires+Cq6x
+ PzgFLSlRockv6bFSPrGbbHvFa8BKUlt1q8XhLnqtN+QtJ0jl7cM+0/9K8PjmJxWtH5cb
+ u/sRN80F1ScDx6WgO2jfJiwTQ9QlHpmYC8zsR76SoAmMBq27jR9QsFxljdEoFBOK5Dt3
+ 6RdQ==
+X-Gm-Message-State: APjAAAWy0N8aEpulO5+OPpj0UQNWIZSkh2aexXNGvNvmdzPsS0pepcuC
+ +gLQUYLXBHrZrpkgpJkHJCsr8g==
+X-Google-Smtp-Source: APXvYqzkqrYcV0QI2O93YtbQlxdQBJiQcmO6JQgG6k1Oorppv4hJ97iFy40k5ajwk08mkc41nQffKg==
+X-Received: by 2002:a65:534b:: with SMTP id w11mr37576307pgr.210.1557209427968; 
+ Mon, 06 May 2019 23:10:27 -0700 (PDT)
 Received: from baolinwangubtpc.spreadtrum.com ([117.18.48.102])
- by smtp.gmail.com with ESMTPSA id e184sm30786325pfc.102.2019.05.06.23.10.17
+ by smtp.gmail.com with ESMTPSA id e184sm30786325pfc.102.2019.05.06.23.10.22
  (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 06 May 2019 23:10:21 -0700 (PDT)
+ Mon, 06 May 2019 23:10:27 -0700 (PDT)
 From: Baolin Wang <baolin.wang@linaro.org>
 To: dan.j.williams@intel.com,
 	vkoul@kernel.org
-Subject: [PATCH 3/8] dmaengine: imx-sdma: Let the core do the device node
+Subject: [PATCH 4/8] dmaengine: dma-jz4780: Let the core do the device node
  validation
-Date: Tue,  7 May 2019 14:09:40 +0800
-Message-Id: <60acb5443a9bc18789bd86d6722f4726bf372fbc.1557206859.git.baolin.wang@linaro.org>
+Date: Tue,  7 May 2019 14:09:41 +0800
+Message-Id: <0b8b0597623608bee186c573511be127ae5939c0.1557206859.git.baolin.wang@linaro.org>
 X-Mailer: git-send-email 1.7.9.5
 In-Reply-To: <cover.1557206859.git.baolin.wang@linaro.org>
 References: <cover.1557206859.git.baolin.wang@linaro.org>
 In-Reply-To: <cover.1557206859.git.baolin.wang@linaro.org>
 References: <cover.1557206859.git.baolin.wang@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_231023_949356_D02993E6 
-X-CRM114-Status: GOOD (  13.07  )
+X-CRM114-CacheID: sfid-20190506_231028_932329_12B5166F 
+X-CRM114-Status: GOOD (  11.60  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -115,55 +115,48 @@ Let the DMA engine core do the device node validation instead of drivers.
 
 Signed-off-by: Baolin Wang <baolin.wang@linaro.org>
 ---
- drivers/dma/imx-sdma.c                |    9 ++-------
- include/linux/platform_data/dma-imx.h |    1 -
- 2 files changed, 2 insertions(+), 8 deletions(-)
+ drivers/dma/dma-jz4780.c |    7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c
-index 5f3c137..1a11118 100644
---- a/drivers/dma/imx-sdma.c
-+++ b/drivers/dma/imx-sdma.c
-@@ -1921,16 +1921,11 @@ static int sdma_init(struct sdma_engine *sdma)
- static bool sdma_filter_fn(struct dma_chan *chan, void *fn_param)
- {
- 	struct sdma_channel *sdmac = to_sdma_chan(chan);
--	struct sdma_engine *sdma = sdmac->sdma;
- 	struct imx_dma_data *data = fn_param;
- 
- 	if (!imx_dma_is_general_purpose(chan))
- 		return false;
- 
--	/* return false if it's not the right device */
--	if (sdma->dev->of_node != data->of_node)
--		return false;
--
- 	sdmac->data = *data;
- 	chan->private = &sdmac->data;
- 
-@@ -1958,9 +1953,9 @@ static struct dma_chan *sdma_xlate(struct of_phandle_args *dma_spec,
- 	 * be set to sdmac->event_id1.
- 	 */
- 	data.dma_request2 = 0;
--	data.of_node = ofdma->of_node;
- 
--	return dma_request_channel(mask, sdma_filter_fn, &data);
-+	return __dma_request_channel(&mask, sdma_filter_fn, &data,
-+				     ofdma->of_node);
- }
- 
- static int sdma_probe(struct platform_device *pdev)
-diff --git a/include/linux/platform_data/dma-imx.h b/include/linux/platform_data/dma-imx.h
-index 9daea8d..7d964e7 100644
---- a/include/linux/platform_data/dma-imx.h
-+++ b/include/linux/platform_data/dma-imx.h
-@@ -55,7 +55,6 @@ struct imx_dma_data {
- 	int dma_request2; /* secondary DMA request line */
- 	enum sdma_peripheral_type peripheral_type;
- 	int priority;
--	struct device_node *of_node;
+diff --git a/drivers/dma/dma-jz4780.c b/drivers/dma/dma-jz4780.c
+index 9ce0a38..7e1d381 100644
+--- a/drivers/dma/dma-jz4780.c
++++ b/drivers/dma/dma-jz4780.c
+@@ -160,7 +160,6 @@ struct jz4780_dma_dev {
  };
  
- static inline int imx_dma_is_ipu(struct dma_chan *chan)
+ struct jz4780_dma_filter_data {
+-	struct device_node *of_node;
+ 	uint32_t transfer_type;
+ 	int channel;
+ };
+@@ -765,8 +764,6 @@ static bool jz4780_dma_filter_fn(struct dma_chan *chan, void *param)
+ 	struct jz4780_dma_dev *jzdma = jz4780_dma_chan_parent(jzchan);
+ 	struct jz4780_dma_filter_data *data = param;
+ 
+-	if (jzdma->dma_device.dev->of_node != data->of_node)
+-		return false;
+ 
+ 	if (data->channel > -1) {
+ 		if (data->channel != jzchan->id)
+@@ -790,7 +787,6 @@ static struct dma_chan *jz4780_of_dma_xlate(struct of_phandle_args *dma_spec,
+ 	if (dma_spec->args_count != 2)
+ 		return NULL;
+ 
+-	data.of_node = ofdma->of_node;
+ 	data.transfer_type = dma_spec->args[0];
+ 	data.channel = dma_spec->args[1];
+ 
+@@ -815,7 +811,8 @@ static struct dma_chan *jz4780_of_dma_xlate(struct of_phandle_args *dma_spec,
+ 		return dma_get_slave_channel(
+ 			&jzdma->chan[data.channel].vchan.chan);
+ 	} else {
+-		return dma_request_channel(mask, jz4780_dma_filter_fn, &data);
++		return __dma_request_channel(&mask, jz4780_dma_filter_fn, &data,
++					     ofdma->of_node);
+ 	}
+ }
+ 
 -- 
 1.7.9.5
 
