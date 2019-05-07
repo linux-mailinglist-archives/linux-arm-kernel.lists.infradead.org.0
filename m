@@ -2,112 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73DB1157DF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 05:03:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00AE0157FA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 05:16:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=F7mZyOV7HjbVNDOF1J7vptT6MWUMykGUbh6Vx+pVB2Y=; b=CJ2eQFeGHK+DoQ
-	GV0uU/oWcdjsUdcYqBdl1NSBVTqQZdGdlZtnB1My54Qm94nUA4dtwWaCM9afQfiynrQ91SF5n6xTd
-	RuVxCNjQQnbpHZ56eHy/ZZXxIDR6QilQXb1ourlY2oJFVWNykAWLbuMzlsmsX4wc1HvnOqArCulKU
-	OasVCCWwi/BoL9cL/3GV6UHyXNUVGkeBCotm1hYvAysDDgwrFg4EOy0AA2Qp5VyclQh2+vE/O8Nx5
-	x/Hk5I3VKK804Ys8yuqXEPecI651tfbPn5z1iLeQpr5Dks8cW1WdyDdAgqZoVPEfprropta0qM7EU
-	61RVEYlNFf2zpcjmxmvQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=P8iFTik1h7rhLfTQWArzX+FnWRr4tBtCzy29OW/c3D4=; b=IOPzNgOg/UbHeQ
+	jJHEg3jZSz7TbWWcOtYN9O9Z1eJCn50F+Fazt2UMDMZhBRJlRCMOkrzQd7bvO1xoVUUC3AAw1Gy8n
+	R5ozUDZlXNw9sIXS/+CnURKBfGRIqlvNEiYmWqhhEm6qNN3Sd4ZnLEXjbxnus6l6RHznvDIJDOwnN
+	Xt8SE67JmiChV5k/Ownc/FvPQedkyd5SFJ/deZ0LdJHYaRD/BoV9y4swjJO6JlhVl+O8kh/jwtBnY
+	DS5UH9yB++9JuqDzxtT2RVT0Ribmiz1doqxEUxUyyHAtmQGtwqDCQeUzE3RoX6Vrxyqo2f8AAPw/l
+	SzbDFaIt1z4iJ8AcjXyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNqNf-0005Ta-9a; Tue, 07 May 2019 03:02:59 +0000
-Received: from mail-eopbgr10082.outbound.protection.outlook.com ([40.107.1.82]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1hNqb6-0002Jk-GU; Tue, 07 May 2019 03:16:52 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNqNW-0005SV-Ny
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 03:02:52 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=saxqos/nQDJQsNSHnss4DxFfxmLYJwOdkuVt9kRLtKI=;
- b=RBTacOCkkDIBwkZMccViSTq8vS2sSBUDdxM+JhI2X2j7Gg0xyNNDt3+LoNbyiKlQKDmCW/BTprFm25RO4/t3cFhj7HNwlrmpw4ZpdOu6eCJx8ahi73ZBy7F1VmZonb1fkyJDya+oLl1C9XYMxXCX6mbnVWvSVU35B9H7NfL16i0=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3754.eurprd04.prod.outlook.com (52.134.67.26) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1856.11; Tue, 7 May 2019 03:02:45 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::e8ca:4f6b:e43:c170]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::e8ca:4f6b:e43:c170%3]) with mapi id 15.20.1856.012; Tue, 7 May 2019
- 03:02:45 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
- <mark.rutland@arm.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
- <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: [PATCH] ARM: dts: imx6ul: add clock-frequency to CPU node
-Thread-Topic: [PATCH] ARM: dts: imx6ul: add clock-frequency to CPU node
-Thread-Index: AQHVBIFYqIWZIuwvrU2KnaxGQFBgOQ==
-Date: Tue, 7 May 2019 03:02:45 +0000
-Message-ID: <1557197868-6963-1-git-send-email-Anson.Huang@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.7.4
-x-clientproxiedby: HK0PR01CA0040.apcprd01.prod.exchangelabs.com
- (2603:1096:203:3e::28) To DB3PR0402MB3916.eurprd04.prod.outlook.com
- (2603:10a6:8:10::18)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: c20c8842-c5ee-4aef-245e-08d6d2987a77
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3754; 
-x-ms-traffictypediagnostic: DB3PR0402MB3754:
-x-microsoft-antispam-prvs: <DB3PR0402MB3754CDDA57C6E4FC697AB798F5310@DB3PR0402MB3754.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1388;
-x-forefront-prvs: 0030839EEE
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(376002)(396003)(346002)(366004)(39860400002)(199004)(189003)(2906002)(102836004)(478600001)(386003)(6506007)(99286004)(5660300002)(66066001)(486006)(2501003)(305945005)(86362001)(52116002)(2201001)(3846002)(6116002)(4744005)(68736007)(14454004)(6436002)(8936002)(53936002)(7736002)(25786009)(6486002)(66476007)(73956011)(66946007)(66556008)(64756008)(66446008)(4326008)(186003)(316002)(50226002)(256004)(26005)(36756003)(476003)(2616005)(6512007)(14444005)(71190400001)(110136005)(71200400001)(8676002)(81166006)(81156014)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3754;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: Q58S0t6lLK8acWWH0KWoR8NWY3ZFrWOpZKRsULrvWK+FYCgV0eegaR5cm5tAGS+5lWfW1Qt5YjAKeg9Pc5FFVTp1pWA3P2+4S2Qd7iG68Z5uyF4jQGMiwxTZUo2vOHMJElBg6vI6vSB2EyjbKqs/Sgj6VihFibdyZ9l0d6sNwG5keAlhyDI0D6nf6je7jlu840bc44qSFmmtHN8zvf1eISruR6jFDj75BMGuC0mzKCA1olmPug4FSVhlWSbX6qvhh5WWA23fe4jzZMLDaLMMvcCh/mDWrtMObbc4c9p4iqye8jYJ9T+QNPGJp/hmFvOvslLJ3uatlG3+c27/Rs4IOUUfLMyfsved7tbXBCpfThEFKfBgTMad9o3hN7ahSAaQChHkJWzzJlhcovcNF9CFLtM2FmGlIw/n1z3rotqeagQ=
+ id 1hNqay-0002Ii-Su
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 03:16:46 +0000
+Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 7307ECCD5438F59D00B5;
+ Tue,  7 May 2019 11:16:31 +0800 (CST)
+Received: from [127.0.0.1] (10.177.223.23) by DGGEMS407-HUB.china.huawei.com
+ (10.3.19.207) with Microsoft SMTP Server id 14.3.439.0; Tue, 7 May 2019
+ 11:16:22 +0800
+Subject: Re: [RFC] munmap(64k) is much slower with patch set reduce
+ synchronous TLB invalidation on ARM64 merged
+To: Will Deacon <will.deacon@arm.com>
+References: <3a0e9ffc-315b-079f-bc0b-3ee3dca88905@huawei.com>
+ <20190506184714.GE2875@brain-police>
+From: Hanjun Guo <guohanjun@huawei.com>
+Message-ID: <17eeae5a-dcc0-7e7f-154d-664a8e83ccf5@huawei.com>
+Date: Tue, 7 May 2019 11:15:46 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
+ Thunderbird/52.5.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c20c8842-c5ee-4aef-245e-08d6d2987a77
-X-MS-Exchange-CrossTenant-originalarrivaltime: 07 May 2019 03:02:45.6328 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3754
+In-Reply-To: <20190506184714.GE2875@brain-police>
+Content-Language: en-US
+X-Originating-IP: [10.177.223.23]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_200250_858551_08CBD445 
-X-CRM114-Status: GOOD (  12.72  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190506_201645_160964_C9DF8157 
+X-CRM114-Status: GOOD (  12.50  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.82 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -119,47 +67,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: "wangxiongfeng \(C\)" <wangxiongfeng2@huawei.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Linuxarm <linuxarm@huawei.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "Zhouguanghui \(OS Kernel\)" <zhouguanghui1@huawei.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add clock-frequency property to CPU node. Avoids warnings like
-"/cpus/cpu@0 missing clock-frequency property" for "arm,cortex-a7".
+On 2019/5/7 2:47, Will Deacon wrote:
+> On Sat, May 04, 2019 at 07:44:59PM +0800, Hanjun Guo wrote:
+>> With patch set "Avoid synchronous TLB invalidation for intermediate
+>> page-table entries on arm64" was merged, munmap() for hugepage such as
+>> 2M will be much faster, but with following case, munmap(64k) will take
+>> much longer time than before:
+> 
+> I didn't find anything grepping for that subject. Could you provide a commit
+> ID instead, please?
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
- arch/arm/boot/dts/imx6ul.dtsi  | 1 +
- arch/arm/boot/dts/imx6ull.dtsi | 1 +
- 2 files changed, 2 insertions(+)
+Sorry for not clear, this is a patch set:
 
-diff --git a/arch/arm/boot/dts/imx6ul.dtsi b/arch/arm/boot/dts/imx6ul.dtsi
-index bbf010c..fc388b8 100644
---- a/arch/arm/boot/dts/imx6ul.dtsi
-+++ b/arch/arm/boot/dts/imx6ul.dtsi
-@@ -59,6 +59,7 @@
- 			compatible = "arm,cortex-a7";
- 			device_type = "cpu";
- 			reg = <0>;
-+			clock-frequency = <696000000>;
- 			clock-latency = <61036>; /* two CLK32 periods */
- 			#cooling-cells = <2>;
- 			operating-points = <
-diff --git a/arch/arm/boot/dts/imx6ull.dtsi b/arch/arm/boot/dts/imx6ull.dtsi
-index 22e4a30..727b92f 100644
---- a/arch/arm/boot/dts/imx6ull.dtsi
-+++ b/arch/arm/boot/dts/imx6ull.dtsi
-@@ -12,6 +12,7 @@
- /delete-node/ &crypto;
- 
- &cpu0 {
-+	clock-frequency = <900000000>;
- 	operating-points = <
- 		/* kHz	uV */
- 		900000	1275000
--- 
-2.7.4
+https://lkml.org/lkml/2018/8/30/751
+
+And for specific commit IDs,
+f270ab8 arm64: tlb: Adjust stride and type of TLBI according to mmu_gather
+67a902a arm64: tlbflush: Allow stride to be specified for __flush_tlb_range()
+
+> 
+>> #define MEM_LEN_TEST			(0x10000UL)
+>> #define MEM_ADD_START			(0x8000fffef000UL)
+>> #define MEM1_ADD_START			(0x800000090000UL)
+>>
+>> mem = (unsigned char *)mmap((void *)MEM_ADD_START, MEM_LEN_TEST, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+>>
+>> mem1 = (unsigned char *)mmap((void *)MEM1_ADD_START, MEM_LEN_TEST, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+>>
+>> munmap(mem, MEM_LEN_TEST); // will take much longer time (from 50us to 230us on A55) than before
+>>
+>> munmap(mem1, MEM_LEN_TEST);
+>>
+>> munmap(mem, MEM_LEN_TEST) will finally call unmap_region() in the kernel,
+>> and in free_pgtables() will adjust the start and end in mmu_gather, so when
+>> running to __flush_tlb_range(), the (end - start) will more that 1G but less
+>> than 2G in this case, on the other hand, (MAX_TLBI_OPS * stride) will be 2G
+>> as the stride is 2M.
+>>
+>> So in the end if ((end - start) > (MAX_TLBI_OPS * stride)) will not valid,
+>> and will take loops to invalidate the TLB for many times which is time consuming.
+>>
+>> Can we make the (MAX_TLBI_OPS * stride) as constant such as 4M (which is the
+>> value before "Avoid synchronous TLB invalidation for intermediate page-table
+>> entries on arm64" merged)? or a smaller value for MAX_TLBI_OPS?
+> 
+> Changing MAX_TLBI_OPS will hurt the common case when tearing down PMD tables
+> with 4k pages, so I'm hesitant to change that again.
+
+It's true, but MAX_TLBI_OPS(1024) seems not an objective value fits all needs.
+Is it reasonable to update the algorithm of adjusting the start and end in mmu_gather
+in function free_pgtables()?
+
+Thanks
+Hanjun
+
 
 _______________________________________________
 linux-arm-kernel mailing list
