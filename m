@@ -2,103 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E00E115FAC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 10:44:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C486315FB8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 10:48:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=suJv+clmlX0GSREi6VbRUt7xHpRbrfZeEypwstwjnKU=; b=A+YSCUrYWrrm7e
-	dDVGd7T9N+lUIUulVb/Jnt8rWY9eDUhgougNCkUojT2yvYgh7LegL/fdCooOZ+GueDM5orwMF988v
-	s2XqFaxvLNFUJ/SXpPCbpXCCvM3jILEVf2I/yK5Em1Uv4Jal+6rmRPuodWNk7MtIc41MU8FKPANuH
-	dfhuUOnp2g3EI4tiy11Y6OMmiG5UUTEEcceu4bUlYDvsPR6dHaH4AcyZm1x9Hkba5uEnB0fMrxFK7
-	Tl+rI7AdY4Ic22rrqwpX2YNbMFKfgiXLwJZnaLytH2Ck2VmDiXPzAkg/7T28+yg5SjHI2VjcDmay6
-	wowAWp9QJRGKHfnv1OXg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=l8K1qm55PeBD4zAVYEIkbfE8NDCh07lu9PIoTyaveuw=; b=qmhBxDy4MdMtTi
+	uunWSUeTfcJTbymey3rBdKGVp5j9k8vAfiAoaiEQlY7zpH73PC897eaQ4p6lBa3mtH6XmaHOOZ4u0
+	Kp+uSePGjuHZjOY5OF52iyYfjALVnV09K/IAVsxyUumacJx2MkAA2t4cmXAJl4e4m/KwiwSH2Q9F8
+	yCuvo6T7B5FN6SkkHbf0d76Vot7J6vkH/UtaXNlr9Ux9Cu3KBxOCO8xFmIrFpNAM9Q3Tdr72v4ttg
+	51pOmVd5TVWgpY734LfFNEBV6NHEI/OJGb9ZXGz93vU9NSat7XxTv0irN1NoZ9zX3tciDYaRHPc6i
+	i7MgT1KMlxISzRITaAog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNvib-0000xW-Ha; Tue, 07 May 2019 08:44:57 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNviU-0000we-Uc
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 08:44:52 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3C021374;
- Tue,  7 May 2019 01:44:50 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 09DC23F238; Tue,  7 May 2019 01:44:47 -0700 (PDT)
-Subject: Re: [PATCH v2 4/5] arm64: irqflags: Introduce explicit debugging for
- IRQ priorities
-To: Julien Thierry <julien.thierry@arm.com>,
- linux-arm-kernel@lists.infradead.org
-References: <1556553607-46531-1-git-send-email-julien.thierry@arm.com>
- <1556553607-46531-5-git-send-email-julien.thierry@arm.com>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
-Organization: ARM Ltd
-Message-ID: <9b27cb2c-5159-3001-672e-9391d7490944@arm.com>
-Date: Tue, 7 May 2019 09:44:46 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <1556553607-46531-5-git-send-email-julien.thierry@arm.com>
+	id 1hNvmE-0002aL-Je; Tue, 07 May 2019 08:48:42 +0000
+Received: from mail-eopbgr140057.outbound.protection.outlook.com
+ ([40.107.14.57] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hNvm6-0002Zp-SQ
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 08:48:36 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Aq3CVt2b3lc5FgEiUrsD8dwwYa/6bf7sNuyyllfY9Qc=;
+ b=F+eBurhH5ulkkI/Ip3iWxA7Fvj17RV1u8yGpfDq2GcYSOGcKaSsdjTZjZHY6s93kE8DnQjT3m7+kCUQO6lVrYMFlbjFILdD4KWz8BrNH3kJgoUkdiZcT37LnV/3GuMAVZsN/6a6O7s5iVo4VN/WEHAv3zZtaONraskrqCzgypKE=
+Received: from AM5PR0402MB2865.eurprd04.prod.outlook.com (10.175.44.16) by
+ AM5PR0402MB2849.eurprd04.prod.outlook.com (10.175.40.20) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1856.10; Tue, 7 May 2019 08:48:31 +0000
+Received: from AM5PR0402MB2865.eurprd04.prod.outlook.com
+ ([fe80::d8ed:b418:4ee9:a51]) by AM5PR0402MB2865.eurprd04.prod.outlook.com
+ ([fe80::d8ed:b418:4ee9:a51%9]) with mapi id 15.20.1856.012; Tue, 7 May 2019
+ 08:48:31 +0000
+From: Ran Wang <ran.wang_1@nxp.com>
+To: Rob Herring <robh@kernel.org>
+Subject: RE: [PATCH v2] arm64: dts: ls1028a: Add USB dt nodes
+Thread-Topic: [PATCH v2] arm64: dts: ls1028a: Add USB dt nodes
+Thread-Index: AQHU+/SBIFirjMEfrESTZvW0Hl61haZW+m4AgAhvTQA=
+Date: Tue, 7 May 2019 08:48:31 +0000
+Message-ID: <AM5PR0402MB286539A070BDEEDFC3304F0EF1310@AM5PR0402MB2865.eurprd04.prod.outlook.com>
+References: <20190426055558.44544-1-ran.wang_1@nxp.com>
+ <20190501235410.GA25492@bogus>
+In-Reply-To: <20190501235410.GA25492@bogus>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=ran.wang_1@nxp.com; 
+x-originating-ip: [92.121.36.197]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: bd759458-80dc-4b19-23ff-08d6d2c8c853
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:AM5PR0402MB2849; 
+x-ms-traffictypediagnostic: AM5PR0402MB2849:
+x-microsoft-antispam-prvs: <AM5PR0402MB2849500B82E1C50B29BEE3BFF1310@AM5PR0402MB2849.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3513;
+x-forefront-prvs: 0030839EEE
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(979002)(346002)(136003)(366004)(376002)(396003)(39860400002)(189003)(199004)(305945005)(86362001)(71190400001)(71200400001)(6506007)(6246003)(81156014)(6916009)(53546011)(33656002)(81166006)(54906003)(53936002)(8676002)(26005)(55016002)(446003)(5660300002)(186003)(7736002)(9686003)(8936002)(74316002)(52536014)(256004)(102836004)(6436002)(73956011)(7696005)(316002)(11346002)(486006)(66556008)(66476007)(64756008)(66446008)(14454004)(66946007)(99286004)(68736007)(76116006)(76176011)(229853002)(66066001)(25786009)(2906002)(4326008)(478600001)(14444005)(476003)(3846002)(6116002)(969003)(989001)(999001)(1009001)(1019001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM5PR0402MB2849;
+ H:AM5PR0402MB2865.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: Adic0pvt9H5MNoFvyJ0glYIODbCuQCtSp47pzv5ExGAAkbdyCY+sMLA9zEkT3YBpeKBg8w0dOLsavZlo+ymemg5m/UfvyIUJWPDuQMO47r+JUYjWNWun5jucu7lCg0IppuHIXUqM8mw5CeZSd+Bf3z0CvUiWUGoaOGU5pRofAN+8X+YbK8QOX2A+K6qB8ca0dX0syNsE57aQKeZtSLKEZMuITh4YlB5ypCozvgR4TcU1mFlWCPWWbO1EFt0NEoQcQRE2UpG4gtDo4TDZQtbFU5cqLDTVZYxukVpItMyfqNHsPSa/tbf9MJIXO+x0nff3eji7OCWZK1gwhIiAtpySQRDIsYvpbAUFXbJpkgwFq8z20Z4lJ91S7L74ya2TaE9LuIji+XYweQQnnIobwK+SbBjra7lhVq/AuMIZLmlYEuA=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: bd759458-80dc-4b19-23ff-08d6d2c8c853
+X-MS-Exchange-CrossTenant-originalarrivaltime: 07 May 2019 08:48:31.4346 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM5PR0402MB2849
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_014450_994125_6230B6A1 
-X-CRM114-Status: GOOD (  23.64  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190507_014834_982988_FBF1841A 
+X-CRM114-Status: GOOD (  17.19  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.14.57 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -110,138 +110,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, rostedt@goodmis.org, james.morse@arm.com,
- yuzenghui@huawei.com, wanghaibin.wang@huawei.com, liwei391@huawei.com
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Leo Li <leoyang.li@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 29/04/2019 17:00, Julien Thierry wrote:
-> Using IRQ priority masking to enable/disable interrupts is a bit
-> sensitive as it requires to deal with both ICC_PMR_EL1 and PSR.I.
-> 
-> Introduce some validity checks to both highlight the states in which
-> functions dealing with IRQ enabling/disabling can (not) be called, and
-> bark a warning when called in an unexpected state.
-> 
-> Since these checks are done on hotpaths, introduce a build option to
-> choose whether to do the checking.
-> 
-> Signed-off-by: Julien Thierry <julien.thierry@arm.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will.deacon@arm.com>
-> ---
->  arch/arm64/Kconfig                 | 11 +++++++++++
->  arch/arm64/include/asm/daifflags.h |  9 +++++++++
->  arch/arm64/include/asm/irqflags.h  | 14 ++++++++++++++
->  3 files changed, 34 insertions(+)
-> 
-> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> index 7e34b9e..3fb38f3 100644
-> --- a/arch/arm64/Kconfig
-> +++ b/arch/arm64/Kconfig
-> @@ -1359,6 +1359,17 @@ config ARM64_PSEUDO_NMI
-> 
->  	  If unsure, say N
-> 
-> +if ARM64_PSEUDO_NMI
-> +config ARM64_DEBUG_PRIORITY_MASKING
-> +	bool "Debug interrupt priority masking"
-> +	help
-> +	  This adds runtime checks to functions enabling/disabling
-> +	  interrupts when using priority masking. The additional checks verify
-> +	  the validity of ICC_PMR_EL1 when calling concerned functions.
-> +
-> +	  If unsure, say N
-> +endif
-> +
->  config RELOCATABLE
->  	bool
->  	help
-> diff --git a/arch/arm64/include/asm/daifflags.h b/arch/arm64/include/asm/daifflags.h
-> index a32ece9..9512968 100644
-> --- a/arch/arm64/include/asm/daifflags.h
-> +++ b/arch/arm64/include/asm/daifflags.h
-> @@ -28,6 +28,11 @@
->  /* mask/save/unmask/restore all exceptions, including interrupts. */
->  static inline void local_daif_mask(void)
->  {
-> +	WARN_ON(IS_ENABLED(CONFIG_ARM64_DEBUG_PRIORITY_MASKING) &&
-> +		system_uses_irq_prio_masking() &&
+Hi Rob,
 
-Given that you repeat these conditions all over the place, how about a
-helper:
-
-#define DEBUG_PRIORITY_MASKING_CHECK(x)			\
-	(IS_ENABLED(CONFIG_ARM64_DEBUG_PRIORITY_MASKING) && \
-	 system_uses_irq_prio_masking() && (x))
-
-or some variant thereof.
-
-> +		(read_sysreg_s(SYS_ICC_PMR_EL1) == (GIC_PRIO_IRQOFF |
-> +						    GIC_PRIO_IGNORE_PMR)));
-> +
->  	asm volatile(
->  		"msr	daifset, #0xf		// local_daif_mask\n"
->  		:
-> @@ -62,6 +67,10 @@ static inline void local_daif_restore(unsigned long flags)
->  {
->  	bool irq_disabled = flags & PSR_I_BIT;
+On Thursday, May 02, 2019 07:54 Rob Herring wrote:
 > 
-> +	WARN_ON(IS_ENABLED(CONFIG_ARM64_DEBUG_PRIORITY_MASKING) &&
-> +		system_uses_irq_prio_masking() &&
-> +		!(read_sysreg(daif) & PSR_I_BIT));
-> +
->  	if (!irq_disabled) {
->  		trace_hardirqs_on();
-> 
-> diff --git a/arch/arm64/include/asm/irqflags.h b/arch/arm64/include/asm/irqflags.h
-> index 516cdfc..a40abc2 100644
-> --- a/arch/arm64/include/asm/irqflags.h
-> +++ b/arch/arm64/include/asm/irqflags.h
-> @@ -40,6 +40,13 @@
->   */
->  static inline void arch_local_irq_enable(void)
->  {
-> +	if (IS_ENABLED(CONFIG_ARM64_DEBUG_PRIORITY_MASKING) &&
-> +	    system_uses_irq_prio_masking()) {
-> +		u32 pmr = read_sysreg_s(SYS_ICC_PMR_EL1);
-> +
-> +		WARN_ON(pmr != GIC_PRIO_IRQON && pmr != GIC_PRIO_IRQOFF);
-> +	}
-> +
->  	asm volatile(ALTERNATIVE(
->  		"msr	daifclr, #2		// arch_local_irq_enable\n"
->  		"nop",
-> @@ -53,6 +60,13 @@ static inline void arch_local_irq_enable(void)
-> 
->  static inline void arch_local_irq_disable(void)
->  {
-> +	if (IS_ENABLED(CONFIG_ARM64_DEBUG_PRIORITY_MASKING) &&
-> +	    system_uses_irq_prio_masking()) {
-> +		u32 pmr = read_sysreg_s(SYS_ICC_PMR_EL1);
-> +
-> +		WARN_ON(pmr != GIC_PRIO_IRQON && pmr != GIC_PRIO_IRQOFF);
-> +	}
-> +
->  	asm volatile(ALTERNATIVE(
->  		"msr	daifset, #2		// arch_local_irq_disable",
->  		"msr_s  " __stringify(SYS_ICC_PMR_EL1) ", %0",
-> --
-> 1.9.1
-> 
+> On Fri, Apr 26, 2019 at 05:54:26AM +0000, Ran Wang wrote:
+> > This patch adds USB dt nodes for LS1028A.
+> >
+> > Signed-off-by: Ran Wang <ran.wang_1@nxp.com>
+> > ---
+> > Changes in v2:
+> >   - Rename node from usb3@... to usb@... to meet DTSpec
+> >
+> >  arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi |   20
+> ++++++++++++++++++++
+> >  1 files changed, 20 insertions(+), 0 deletions(-)
+> >
+> > diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+> b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+> > index 8dd3501..188cfb8 100644
+> > --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+> > +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+> > @@ -144,6 +144,26 @@
+> >  			clocks = <&sysclk>;
+> >  		};
+> >
+> > +		usb0:usb@3100000 {
+>                      ^ space needed
 
-nit: There is also the question of using WARN_ON in a context that will
-be extremely noisy if we're in a condition where this fires.
-WARN_ON_ONCE, maybe? This is a debugging thing, so maybe we just don't care.
+Yes, will update this in next version.
+ 
+> > +			compatible= "snps,dwc3";
+> 
+> Needs an SoC specific compatible.
 
-Thanks,
+Do you mean change compatible to "snps,dwc3", "fsl,ls1028a-dwc3" ?
 
-	M.
--- 
-Jazz is not dead. It just smells funny...
+As I know, so far there is no SoC specific programming for this IP, so do
+you think it's still necessary to add it?
+
+Regards,
+Ran
+
+> > +			reg= <0x0 0x3100000 0x0 0x10000>;
+> > +			interrupts= <0 80 0x4>;
+> > +			dr_mode= "host";
+> > +			snps,dis_rxdet_inp3_quirk;
+> > +			snps,quirk-frame-length-adjustment = <0x20>;
+> > +			snps,incr-burst-type-adjustment = <1>, <4>, <8>, <16>;
+> > +		};
+> > +
+> > +		usb1:usb@3110000 {
+> > +			compatible= "snps,dwc3";
+> > +			reg= <0x0 0x3110000 0x0 0x10000>;
+> > +			interrupts= <0 81 0x4>;
+> > +			dr_mode= "host";
+> > +			snps,dis_rxdet_inp3_quirk;
+> > +			snps,quirk-frame-length-adjustment = <0x20>;
+> > +			snps,incr-burst-type-adjustment = <1>, <4>, <8>, <16>;
+> > +		};
+> > +
+> >  		i2c0: i2c@2000000 {
+> >  			compatible = "fsl,vf610-i2c";
+> >  			#address-cells = <1>;
+> > --
+> > 1.7.1
+> >
 
 _______________________________________________
 linux-arm-kernel mailing list
