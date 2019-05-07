@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44B501627C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 12:59:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A19616271
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 12:57:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=hWX+RomB5wCWgfXpk9NsWCInDPZQHYMwdRLUWZeMuLM=; b=GHqbsGnX7Tp17Fos9qDvPGS2u9
-	fwKzWM05icNs/143QG510HbfOJDzlHrxFEn8ln9RD+sCm4Z/KK9fOyR+uNAk0TSJbXZlLvcloKChi
-	TRQKM4jtQYSaM85OufQrx9XI2PCWWtUQEqzLBM01imNWCzZn0W/JMhLZ3I85L3BR9CRKlju4+aF8B
-	c/++GjxjAF0t1Xv54Pe1bsBRSdUF5WBmzMSUJF8ZVQ341V2rDytEO+kXWRcPAJimLcL8+KH1VXblW
-	hmrpCJTrixK2pAN9U1vO26N1LuN7qJ80qUsMc5OevPUsJrN69PGVA18Xo39uBKAav6PiIpoIUup82
-	ZrtzYkTA==;
+	bh=D1x9uG6mFrTqRTS8QDH9hiOGp2U5+I9HsgfpdSedJaQ=; b=qBYdlooQc8rvvZPpyIp+4ERRLD
+	61SFE/vOIUS55O5rnn01tpdcrJqCYvNHuL0FtWJFk0+euWC/Gly8jfVzBTD5QC92naKiQoSeZT/le
+	ACw9BWwDgXtlRRvcSx/NyoRUsKEMW+l0WE52E43kYerqOwUw+1+Kt2hkuXOjcTLsqsUrsOvUeYe/K
+	BtObQCCdk/4Al9hqSfmcF6k1NdivOl70H7pEe1Jg60WmWJ3/m60QNYgTvoIc3qtt2rzJpIUli8fBm
+	g+f6XtPfpCP1orB5xjJQrqG2aOF8FpVXDdxT3W6D6Pckb4UeeGUATjrr0MOFbVcW6fAIcqhKBl3w+
+	b/E4Vg0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNxoi-0004mY-K7; Tue, 07 May 2019 10:59:24 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
+	id 1hNxnG-0002sL-IR; Tue, 07 May 2019 10:57:54 +0000
+Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNxjh-0005jM-Dx
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 10:54:50 +0000
+ id 1hNxji-00059a-NU
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 10:54:46 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1438216A3;
- Tue,  7 May 2019 03:54:13 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 844E01713;
+ Tue,  7 May 2019 03:54:14 -0700 (PDT)
 Received: from en101.cambridge.arm.com (en101.cambridge.arm.com [10.1.196.93])
  by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id
- D4F463F5AF; Tue,  7 May 2019 03:54:11 -0700 (PDT)
+ 50F843F5AF; Tue,  7 May 2019 03:54:13 -0700 (PDT)
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 22/30] coresight: Rearrange platform data probing
-Date: Tue,  7 May 2019 11:52:49 +0100
-Message-Id: <1557226378-10131-23-git-send-email-suzuki.poulose@arm.com>
+Subject: [PATCH v3 23/30] coresight: Add support for releasing platform
+ specific data
+Date: Tue,  7 May 2019 11:52:50 +0100
+Message-Id: <1557226378-10131-24-git-send-email-suzuki.poulose@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1557226378-10131-1-git-send-email-suzuki.poulose@arm.com>
 References: <1557226378-10131-1-git-send-email-suzuki.poulose@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_035414_132653_4A497B61 
-X-CRM114-Status: GOOD (  18.39  )
+X-CRM114-CacheID: sfid-20190507_035415_661674_0E337FA8 
+X-CRM114-Status: GOOD (  13.64  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -69,311 +69,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We are about to introduce methods to clean up the platform data
-as we switch to tracking the device reference from "name" to "fwnode
-handles" for device connections. This requires us to drop the fwnode
-handle references when the data is no longer required - i.e, when
-the device probe fails or the device gets unregistered.
-
-In order to consolidate the invocation of the cleanup, we delay the
-platform probing to the very last minute, possibly before invoking
-the coresight_register. Then, we leave the coresight core code to
-do the clean up. i.e, if the coresight_register fails, it takes
-care of freeing the data. Otherwise, coresight_unregister will
-do the necessary operations.
+Add a helper to clean up the platform specific data provided
+by the firmware. This will be later used for dropping the necessary
+references when we switch to the fwnode handles for tracking
+connections.
 
 Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 ---
- drivers/hwtracing/coresight/coresight-catu.c       | 14 +++++++-------
- drivers/hwtracing/coresight/coresight-etb10.c      | 10 +++++-----
- drivers/hwtracing/coresight/coresight-etm3x.c      | 12 +++++++-----
- drivers/hwtracing/coresight/coresight-etm4x.c      | 12 +++++++-----
- drivers/hwtracing/coresight/coresight-funnel.c     | 12 +++++++-----
- drivers/hwtracing/coresight/coresight-replicator.c | 12 +++++++-----
- drivers/hwtracing/coresight/coresight-stm.c        | 11 +++++++----
- drivers/hwtracing/coresight/coresight-tmc.c        | 16 ++++++++--------
- drivers/hwtracing/coresight/coresight-tpiu.c       | 10 +++++-----
- 9 files changed, 60 insertions(+), 49 deletions(-)
+ drivers/hwtracing/coresight/coresight-platform.c | 6 +++++-
+ drivers/hwtracing/coresight/coresight-priv.h     | 4 ++++
+ drivers/hwtracing/coresight/coresight.c          | 3 +++
+ 3 files changed, 12 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-catu.c b/drivers/hwtracing/coresight/coresight-catu.c
-index 05c7304..1c1ad12 100644
---- a/drivers/hwtracing/coresight/coresight-catu.c
-+++ b/drivers/hwtracing/coresight/coresight-catu.c
-@@ -505,13 +505,6 @@ static int catu_probe(struct amba_device *adev, const struct amba_id *id)
- 	struct device *dev = &adev->dev;
- 	void __iomem *base;
+diff --git a/drivers/hwtracing/coresight/coresight-platform.c b/drivers/hwtracing/coresight/coresight-platform.c
+index f500de6..53d6eed 100644
+--- a/drivers/hwtracing/coresight/coresight-platform.c
++++ b/drivers/hwtracing/coresight/coresight-platform.c
+@@ -17,6 +17,7 @@
+ #include <linux/cpumask.h>
+ #include <asm/smp_plat.h>
  
--	pdata = coresight_get_platform_data(dev);
--	if (IS_ERR(pdata)) {
--		ret = PTR_ERR(pdata);
--		goto out;
--	}
--	dev->platform_data = pdata;
--
- 	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
- 	if (!drvdata) {
- 		ret = -ENOMEM;
-@@ -544,6 +537,13 @@ static int catu_probe(struct amba_device *adev, const struct amba_id *id)
- 	if (ret)
- 		goto out;
++#include "coresight-priv.h"
+ /*
+  * coresight_alloc_conns: Allocate connections record for each output
+  * port from the device.
+@@ -311,7 +312,7 @@ struct coresight_platform_data *
+ coresight_get_platform_data(struct device *dev)
+ {
+ 	int ret = -ENOENT;
+-	struct coresight_platform_data *pdata;
++	struct coresight_platform_data *pdata = NULL;
+ 	struct fwnode_handle *fwnode = dev_fwnode(dev);
  
-+	pdata = coresight_get_platform_data(dev);
-+	if (IS_ERR(pdata)) {
-+		ret = PTR_ERR(pdata);
-+		goto out;
-+	}
-+	dev->platform_data = pdata;
+ 	if (IS_ERR_OR_NULL(fwnode))
+@@ -329,6 +330,9 @@ coresight_get_platform_data(struct device *dev)
+ 	if (!ret)
+ 		return pdata;
+ error:
++	if (!IS_ERR_OR_NULL(pdata))
++		/* Cleanup the connection information */
++		coresight_release_platform_data(pdata);
+ 	return ERR_PTR(ret);
+ }
+ EXPORT_SYMBOL_GPL(coresight_get_platform_data);
+diff --git a/drivers/hwtracing/coresight/coresight-priv.h b/drivers/hwtracing/coresight/coresight-priv.h
+index e0684d0..c216421 100644
+--- a/drivers/hwtracing/coresight/coresight-priv.h
++++ b/drivers/hwtracing/coresight/coresight-priv.h
+@@ -200,4 +200,8 @@ static inline void *coresight_get_uci_data(const struct amba_id *id)
+ 	return 0;
+ }
+ 
++static inline void
++coresight_release_platform_data(struct coresight_platform_data *pdata)
++{}
 +
- 	drvdata->base = base;
- 	catu_desc.pdata = pdata;
- 	catu_desc.dev = dev;
-diff --git a/drivers/hwtracing/coresight/coresight-etb10.c b/drivers/hwtracing/coresight/coresight-etb10.c
-index 5e7ecc6..09df827 100644
---- a/drivers/hwtracing/coresight/coresight-etb10.c
-+++ b/drivers/hwtracing/coresight/coresight-etb10.c
-@@ -726,11 +726,6 @@ static int etb_probe(struct amba_device *adev, const struct amba_id *id)
- 	struct resource *res = &adev->res;
- 	struct coresight_desc desc = { 0 };
- 
--	pdata = coresight_get_platform_data(dev);
--	if (IS_ERR(pdata))
--		return PTR_ERR(pdata);
--	adev->dev.platform_data = pdata;
--
- 	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
- 	if (!drvdata)
- 		return -ENOMEM;
-@@ -765,6 +760,11 @@ static int etb_probe(struct amba_device *adev, const struct amba_id *id)
- 	/* This device is not associated with a session */
- 	drvdata->pid = -1;
- 
-+	pdata = coresight_get_platform_data(dev);
-+	if (IS_ERR(pdata))
-+		return PTR_ERR(pdata);
-+	adev->dev.platform_data = pdata;
-+
- 	desc.type = CORESIGHT_DEV_TYPE_SINK;
- 	desc.subtype.sink_subtype = CORESIGHT_DEV_SUBTYPE_SINK_BUFFER;
- 	desc.ops = &etb_cs_ops;
-diff --git a/drivers/hwtracing/coresight/coresight-etm3x.c b/drivers/hwtracing/coresight/coresight-etm3x.c
-index 101fb01..f2d4616 100644
---- a/drivers/hwtracing/coresight/coresight-etm3x.c
-+++ b/drivers/hwtracing/coresight/coresight-etm3x.c
-@@ -795,11 +795,6 @@ static int etm_probe(struct amba_device *adev, const struct amba_id *id)
- 	if (!drvdata)
- 		return -ENOMEM;
- 
--	pdata = coresight_get_platform_data(dev);
--	if (IS_ERR(pdata))
--		return PTR_ERR(pdata);
--
--	adev->dev.platform_data = pdata;
- 	drvdata->use_cp14 = fwnode_property_read_bool(dev->fwnode, "arm,cp14");
- 	dev_set_drvdata(dev, drvdata);
- 
-@@ -849,6 +844,13 @@ static int etm_probe(struct amba_device *adev, const struct amba_id *id)
- 	etm_init_trace_id(drvdata);
- 	etm_set_default(&drvdata->config);
- 
-+	pdata = coresight_get_platform_data(dev);
-+	if (IS_ERR(pdata)) {
-+		ret = PTR_ERR(pdata);
-+		goto err_arch_supported;
-+	}
-+	adev->dev.platform_data = pdata;
-+
- 	desc.type = CORESIGHT_DEV_TYPE_SOURCE;
- 	desc.subtype.source_subtype = CORESIGHT_DEV_SUBTYPE_SOURCE_PROC;
- 	desc.ops = &etm_cs_ops;
-diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-index 8adc148..1609da1 100644
---- a/drivers/hwtracing/coresight/coresight-etm4x.c
-+++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-@@ -1089,11 +1089,6 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
- 	if (!drvdata)
- 		return -ENOMEM;
- 
--	pdata = coresight_get_platform_data(dev);
--	if (IS_ERR(pdata))
--		return PTR_ERR(pdata);
--	adev->dev.platform_data = pdata;
--
- 	dev_set_drvdata(dev, drvdata);
- 
- 	/* Validity for the resource is already checked by the AMBA core */
-@@ -1136,6 +1131,13 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
- 	etm4_init_trace_id(drvdata);
- 	etm4_set_default(&drvdata->config);
- 
-+	pdata = coresight_get_platform_data(dev);
-+	if (IS_ERR(pdata)) {
-+		ret = PTR_ERR(pdata);
-+		goto err_arch_supported;
-+	}
-+	adev->dev.platform_data = pdata;
-+
- 	desc.type = CORESIGHT_DEV_TYPE_SOURCE;
- 	desc.subtype.source_subtype = CORESIGHT_DEV_SUBTYPE_SOURCE_PROC;
- 	desc.ops = &etm4_cs_ops;
-diff --git a/drivers/hwtracing/coresight/coresight-funnel.c b/drivers/hwtracing/coresight/coresight-funnel.c
-index ded33f5..75fa2d3 100644
---- a/drivers/hwtracing/coresight/coresight-funnel.c
-+++ b/drivers/hwtracing/coresight/coresight-funnel.c
-@@ -188,11 +188,6 @@ static int funnel_probe(struct device *dev, struct resource *res)
- 	struct funnel_drvdata *drvdata;
- 	struct coresight_desc desc = { 0 };
- 
--	pdata = coresight_get_platform_data(dev);
--	if (IS_ERR(pdata))
--		return PTR_ERR(pdata);
--	dev->platform_data = pdata;
--
- 	if (is_of_node(dev_fwnode(dev)) &&
- 	    of_device_is_compatible(dev->of_node, "arm,coresight-funnel"))
- 		pr_warn_once("Uses OBSOLETE CoreSight funnel binding\n");
-@@ -224,6 +219,13 @@ static int funnel_probe(struct device *dev, struct resource *res)
- 
- 	dev_set_drvdata(dev, drvdata);
- 
-+	pdata = coresight_get_platform_data(dev);
-+	if (IS_ERR(pdata)) {
-+		ret = PTR_ERR(pdata);
-+		goto out_disable_clk;
-+	}
-+	dev->platform_data = pdata;
-+
- 	desc.type = CORESIGHT_DEV_TYPE_LINK;
- 	desc.subtype.link_subtype = CORESIGHT_DEV_SUBTYPE_LINK_MERG;
- 	desc.ops = &funnel_cs_ops;
-diff --git a/drivers/hwtracing/coresight/coresight-replicator.c b/drivers/hwtracing/coresight/coresight-replicator.c
-index f28bafd..64dfde7 100644
---- a/drivers/hwtracing/coresight/coresight-replicator.c
-+++ b/drivers/hwtracing/coresight/coresight-replicator.c
-@@ -179,11 +179,6 @@ static int replicator_probe(struct device *dev, struct resource *res)
- 	struct coresight_desc desc = { 0 };
- 	void __iomem *base;
- 
--	pdata = coresight_get_platform_data(dev);
--	if (IS_ERR(pdata))
--		return PTR_ERR(pdata);
--	dev->platform_data = pdata;
--
- 	if (is_of_node(dev_fwnode(dev)) &&
- 	    of_device_is_compatible(dev->of_node, "arm,coresight-replicator"))
- 		pr_warn_once("Uses OBSOLETE CoreSight replicator binding\n");
-@@ -215,6 +210,13 @@ static int replicator_probe(struct device *dev, struct resource *res)
- 
- 	dev_set_drvdata(dev, drvdata);
- 
-+	pdata = coresight_get_platform_data(dev);
-+	if (IS_ERR(pdata)) {
-+		ret = PTR_ERR(pdata);
-+		goto out_disable_clk;
-+	}
-+	dev->platform_data = pdata;
-+
- 	desc.type = CORESIGHT_DEV_TYPE_LINK;
- 	desc.subtype.link_subtype = CORESIGHT_DEV_SUBTYPE_LINK_SPLIT;
- 	desc.ops = &replicator_cs_ops;
-diff --git a/drivers/hwtracing/coresight/coresight-stm.c b/drivers/hwtracing/coresight/coresight-stm.c
-index 02031d9..03528f3 100644
---- a/drivers/hwtracing/coresight/coresight-stm.c
-+++ b/drivers/hwtracing/coresight/coresight-stm.c
-@@ -810,10 +810,6 @@ static int stm_probe(struct amba_device *adev, const struct amba_id *id)
- 	size_t bitmap_size;
- 	struct coresight_desc desc = { 0 };
- 
--	pdata = coresight_get_platform_data(dev);
--	if (IS_ERR(pdata))
--		return PTR_ERR(pdata);
--	adev->dev.platform_data = pdata;
- 	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
- 	if (!drvdata)
- 		return -ENOMEM;
-@@ -866,6 +862,13 @@ static int stm_probe(struct amba_device *adev, const struct amba_id *id)
- 		return -EPROBE_DEFER;
- 	}
- 
-+	pdata = coresight_get_platform_data(dev);
-+	if (IS_ERR(pdata)) {
-+		ret = PTR_ERR(pdata);
-+		goto stm_unregister;
-+	}
-+	adev->dev.platform_data = pdata;
-+
- 	desc.type = CORESIGHT_DEV_TYPE_SOURCE;
- 	desc.subtype.source_subtype = CORESIGHT_DEV_SUBTYPE_SOURCE_SOFTWARE;
- 	desc.ops = &stm_cs_ops;
-diff --git a/drivers/hwtracing/coresight/coresight-tmc.c b/drivers/hwtracing/coresight/coresight-tmc.c
-index 44a5719..212630e 100644
---- a/drivers/hwtracing/coresight/coresight-tmc.c
-+++ b/drivers/hwtracing/coresight/coresight-tmc.c
-@@ -398,13 +398,6 @@ static int tmc_probe(struct amba_device *adev, const struct amba_id *id)
- 	struct resource *res = &adev->res;
- 	struct coresight_desc desc = { 0 };
- 
--	pdata = coresight_get_platform_data(dev);
--	if (IS_ERR(pdata)) {
--		ret = PTR_ERR(pdata);
--		goto out;
--	}
--	adev->dev.platform_data = pdata;
--
- 	ret = -ENOMEM;
- 	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
- 	if (!drvdata)
-@@ -434,7 +427,6 @@ static int tmc_probe(struct amba_device *adev, const struct amba_id *id)
- 	else
- 		drvdata->size = readl_relaxed(drvdata->base + TMC_RSZ) * 4;
- 
--	desc.pdata = pdata;
- 	desc.dev = dev;
- 	desc.groups = coresight_tmc_groups;
- 	desc.name = dev_name(dev);
-@@ -467,6 +459,14 @@ static int tmc_probe(struct amba_device *adev, const struct amba_id *id)
- 		goto out;
- 	}
- 
-+	pdata = coresight_get_platform_data(dev);
-+	if (IS_ERR(pdata)) {
-+		ret = PTR_ERR(pdata);
-+		goto out;
-+	}
-+	adev->dev.platform_data = pdata;
-+	desc.pdata = pdata;
-+
- 	drvdata->csdev = coresight_register(&desc);
- 	if (IS_ERR(drvdata->csdev)) {
- 		ret = PTR_ERR(drvdata->csdev);
-diff --git a/drivers/hwtracing/coresight/coresight-tpiu.c b/drivers/hwtracing/coresight/coresight-tpiu.c
-index d8a2e39..b699d61 100644
---- a/drivers/hwtracing/coresight/coresight-tpiu.c
-+++ b/drivers/hwtracing/coresight/coresight-tpiu.c
-@@ -125,11 +125,6 @@ static int tpiu_probe(struct amba_device *adev, const struct amba_id *id)
- 	struct resource *res = &adev->res;
- 	struct coresight_desc desc = { 0 };
- 
--	pdata = coresight_get_platform_data(dev);
--	if (IS_ERR(pdata))
--		return PTR_ERR(pdata);
--	dev->platform_data = pdata;
--
- 	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
- 	if (!drvdata)
- 		return -ENOMEM;
-@@ -152,6 +147,11 @@ static int tpiu_probe(struct amba_device *adev, const struct amba_id *id)
- 	/* Disable tpiu to support older devices */
- 	tpiu_disable_hw(drvdata);
- 
-+	pdata = coresight_get_platform_data(dev);
-+	if (IS_ERR(pdata))
-+		return PTR_ERR(pdata);
-+	dev->platform_data = pdata;
-+
- 	desc.type = CORESIGHT_DEV_TYPE_SINK;
- 	desc.subtype.sink_subtype = CORESIGHT_DEV_SUBTYPE_SINK_PORT;
- 	desc.ops = &tpiu_cs_ops;
+ #endif
+diff --git a/drivers/hwtracing/coresight/coresight.c b/drivers/hwtracing/coresight/coresight.c
+index 96e1515..526141c 100644
+--- a/drivers/hwtracing/coresight/coresight.c
++++ b/drivers/hwtracing/coresight/coresight.c
+@@ -1250,6 +1250,8 @@ struct coresight_device *coresight_register(struct coresight_desc *desc)
+ err_free_csdev:
+ 	kfree(csdev);
+ err_out:
++	/* Cleanup the connection information */
++	coresight_release_platform_data(desc->pdata);
+ 	return ERR_PTR(ret);
+ }
+ EXPORT_SYMBOL_GPL(coresight_register);
+@@ -1259,6 +1261,7 @@ void coresight_unregister(struct coresight_device *csdev)
+ 	etm_perf_del_symlink_sink(csdev);
+ 	/* Remove references of that device in the topology */
+ 	coresight_remove_conns(csdev);
++	coresight_release_platform_data(csdev->pdata);
+ 	device_unregister(&csdev->dev);
+ }
+ EXPORT_SYMBOL_GPL(coresight_unregister);
 -- 
 2.7.4
 
