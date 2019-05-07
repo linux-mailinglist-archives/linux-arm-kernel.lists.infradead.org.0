@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBD4F1579C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 04:29:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC712157A4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 04:31:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=t8x9WSeQa7I76amb/jxwXdkYt2KRibJRFUpEvzcr0+4=; b=Y6c
-	VYEZS1l7DmmO2f1rk4iPrj8CgsVOaKVPIHvO8pOA2NYYK+CF04v/DEy+UuIQdiUMTd30cSlWlJQpT
-	vWwWPAE4xOXw2ZzoF86jR2MvZfOQpC0NXxgg/RIv22Fj3lh1sx0/DShPUFW95JMyoL2ww9VLq5yNq
-	S88+CcdXEyutLs6txnUGAEWzj3iuq/gbvVEwwPBwZihQ3EAem00cUoBHSlQGD1tdH77mYNJWoZibp
-	l7+hCW1Pl67CV1ygAK9kIAp6kyJeEAdYGZ92TJF6gtusOhpFi/IOU29IaWMCV3KZpoqfu1BG4tpXC
-	jggi710A/WQXTAWUn4wZIQcEz44/zKg==;
+	References:List-Owner; bh=t8x9WSeQa7I76amb/jxwXdkYt2KRibJRFUpEvzcr0+4=; b=ZcE
+	qV/v/fSVvysy1nEPbCr+YJCNPCHyDV+zIHOAwuUqwejL3ig/kmwlkzkrJf95pnnFI7SHXs7pmU9Xd
+	/Yjjc6JIDfuMbxnt8yiiLidU36LAzWYIgvQpJQePCcaSaPj3sD7eUPc6fzLKgUyILwA8ukhUQzr1d
+	hkydufv/cXmJkRwsNlxD7/2TdZ4uMyOR3CjdCBdF2nuoQpgegy6FiXDRzhZC7Dr0VfQEZ3mF+mhXD
+	KHwIt+pRncwBncc7fTGZk5htfN56L1fIsTJXvVBBo3H4jQqhLlMQgB7FyPStVY2aaRrfgb+jZz/eM
+	/jBKwk/GMEtz9ghcpLPH9od9OiDFy7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNpr7-00035F-R0; Tue, 07 May 2019 02:29:21 +0000
+	id 1hNpsl-0004fp-1H; Tue, 07 May 2019 02:31:03 +0000
 Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNpr0-00034g-7b
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 02:29:15 +0000
+ id 1hNpsc-0004fI-NF
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 02:30:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=ulGxU59+SHg0LveLVxFzfgXsIwZDWNfvFJ6byVaTrN4=; b=Jt7pOvhVkugI
- Brht+MUZCnK4GVOK/QGz9Lbajwg7fahsWmXWDykb8/bUfU0SQN00IRZYxEDIyCv3O9Tcp6063SAyI
- AvOPxS4lIC0ETl2usBXDVdHfI9clQME3I7HtqK4xa+6tzqRo0ZOnfkwNEoFaf34aKyUQPZu/K6VSn
- Y1YKQ=;
+ List-Archive; bh=ulGxU59+SHg0LveLVxFzfgXsIwZDWNfvFJ6byVaTrN4=; b=inpTcYnsbYBC
+ RXzSlqPMPbhywhoEEOZ12cSdNDZKetcVk2o8QMn/M1u89/Hw5qJq/LA+9y5mkpHPQkh9oiusUfErE
+ /5cLCWnlynFDjUm55jCmzNLd1GKiGHJcqVAsti5pPV58KqRQHi89y/+hnh8lqcpRv/QDHqKIbp8Ow
+ hW6dQ=;
 Received: from kd111239185057.au-net.ne.jp ([111.239.185.57]
  helo=finisterre.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
  (envelope-from <broonie@sirena.org.uk>)
- id 1hNpqq-0003Rc-UP; Tue, 07 May 2019 02:29:05 +0000
+ id 1hNpsN-0003Sy-6i; Tue, 07 May 2019 02:30:40 +0000
 Received: by finisterre.ee.mobilebroadband (Postfix, from userid 1000)
- id 9D39444000C; Tue,  7 May 2019 03:28:54 +0100 (BST)
+ id B7423440036; Tue,  7 May 2019 03:30:33 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
 To: Olivier Moysan <olivier.moysan@st.com>
 Subject: Applied "ASoC: stm32: spdifrx: manage identification registers" to
  the asoc tree
 In-Reply-To: <1557146646-18150-4-git-send-email-olivier.moysan@st.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20190507022901.9D39444000C@finisterre.sirena.org.uk>
-Date: Tue,  7 May 2019 03:28:54 +0100 (BST)
+Message-Id: <20190507023033.B7423440036@finisterre.sirena.org.uk>
+Date: Tue,  7 May 2019 03:30:33 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_192914_424354_67457E16 
+X-CRM114-CacheID: sfid-20190506_193055_602997_CABF5B12 
 X-CRM114-Status: GOOD (  18.06  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
