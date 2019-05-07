@@ -2,79 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C590D16C9E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 22:50:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A942F16CAE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 22:52:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=FYoXldEU9be5jPrltS9DXW2Oh84G5SPbj2yQV4aFzjg=; b=eojXwlvBsAoIuq
-	5mrJ3Jk8ekIVmX+NKsNRQKpvSKd9bc9TlnYqdn5CESY3xBhIJ7JZuf6IpMO3THsoYdzRaEZxQehQY
-	rhezi910UgjFfyD7Z8jmPbrG8gWra/IXtN0DvvI+D8OspHJ8+P3q0QtdFTnj25l52jgjktf6Z9H7u
-	ZV8J2izZil75JI7gFUs11znoxU0W5cmHD5WGwdFdXFmugNuN91so4atqaDg9q6ftpm9WdSnmH2Heb
-	6s3eexlDKmvD/6s5UJKGKpzyA4MmW9+af9V9pW/aF9x02rdlcJvPZwPBjDqjFSWwa9pF9SM0GrMXw
-	117QOn9KIfyiGh97nl/Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=WVULHo8COzqjeYGO+0KOfRewU05RQqL6goh8qugEAUI=; b=Alx
+	b/fzdV6Sy11qilMA9Sv6Yq0mxEjDIojD98Fm9EVEQhS5SuKWBUmWp1IApOD2RwKxZJqGWUUhaKNa9
+	zQnLri7cJO5AWSwtqviiccoCN6WbmBSkNMWiZdoHTs2x5wAvJfMCxdGyoKiaVjDWj1B+DXRSefCvq
+	wzy+4Tu7jm2lCwg73Fn6jfauAieHKBrgmJYpk6BbU/0aJNKsnL2BjmNcQV25QyLGPHJgQFeS+jxpH
+	qfDF4dPI5UfO7+5Kfs6gUo3/k+nW2OCdDKd5+WVcQmpK5l5B6rIGfTkVSDIY1jsvKUvgHNdYuibhy
+	MvgH0Xo9huTHjovPhD+SL9Vcs/OFBUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hO72T-00060w-1w; Tue, 07 May 2019 20:50:13 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hO74r-0007vm-UM; Tue, 07 May 2019 20:52:41 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hO72E-0005zc-N1
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 20:49:59 +0000
-Received: by mail-pf1-x441.google.com with SMTP id z26so9267804pfg.6
+ id 1hO74k-0007vB-Sd
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 20:52:36 +0000
+Received: by mail-pf1-x444.google.com with SMTP id y13so9260787pfm.11
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 May 2019 13:49:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=16ni+8UEniYJYlMiaLm9MTZL5f4uI05QVZvXY8kGkyE=;
- b=GtBJBi17Nvcq1G7rVZ9uJaeHxN4bn4kXoaDa6iTX8XSeUFAicrKXpkEgXGf3y81kvf
- 5mT8XP9qGfozJM+DJlH2PiPHjL8scDu/V6aO++md4LgoYQ6eaGaD41a2YFFVxDS16Hzj
- AfaZDXtfrRnyP36FduMmBoEotVSb6OqRnajcI=
+ Tue, 07 May 2019 13:52:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=FZCsu76ETp0rZ0rXi+vAgG1DHkuU4ZJZHgq+GTX/TeU=;
+ b=YAPiArlNMJBDkaS6R4dyKdz6IW6HPGijvrYEY77nrpT0RtiYVI/ag+5Pu2wgUGwo42
+ Dt62ElIE2Cj70zDg5l5U2dA3F8NwPho09EZ5kMdemAVcRAkryb8UIgjiSoQtTrodY6wS
+ pB8y1FCEB+FaYbuySFo7uKAwbJlOzBIbrWgtjrvXpsvWxIZ+x/s9o+qedboWmJrnvhE0
+ sTh++leHrUsJiCUPsLhrIpADXMoMdIr7AmGKE1hdhAQDfrLfMyx+qwGbfvu8AzTqav4C
+ Co2wU+rVb5/IzT2tJ95tS+CzpzS95zpLpFaa2i+ieZj+0XV7oL6YJPPpR9ViZMAhZEBN
+ WjHw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=16ni+8UEniYJYlMiaLm9MTZL5f4uI05QVZvXY8kGkyE=;
- b=IciiGpqqX12TjqvvswCvYnybmkN8LiAd729ad3ULODqXdBwdGfvmawyKdB+XOmN3xV
- 4QgCcwl43mf6PSIBJzZlTEOog1SYxTnZW7/HvJwkw5ICXxnuqqhDC+uk6+fZGKP5zjCm
- +j+cfoCdSAP+GtKHxFmJVslnPgTIlhauAPTE+sgz0pVHlnh246nxW/Jco7Lyr5d2dlh5
- wzHXhMtz9yvKTR4SKLu8K2KUYR36us+a1gqP1Dpsb9tSCq+HqFhNL679BSEchVZsaJkE
- NGYNzMLUF7u53y/8dvkBrJcpuDCdnl/qXwiyKResqJXkQ+fbcnDMawISb9cb317z02Mt
- XAQQ==
-X-Gm-Message-State: APjAAAV8T6Rr7y/bl/OPEFvr880/fQ6TuDSYMKPE5/wH1h/iM2CoGeOW
- z9dPzV7wCe4Nff0ausm8PwL3Xg==
-X-Google-Smtp-Source: APXvYqzq46xNr1WmdaRR59uTuZVU09D1ZwcWwdDjivzpxshj1SH+qs20Hl2kkBUMpFYjGgNqsTbWWA==
-X-Received: by 2002:a63:9d8d:: with SMTP id
- i135mr25594688pgd.245.1557262197357; 
- Tue, 07 May 2019 13:49:57 -0700 (PDT)
-Received: from tictac2.mtv.corp.google.com
- ([2620:15c:202:1:24fa:e766:52c9:e3b2])
- by smtp.gmail.com with ESMTPSA id x19sm8312796pga.4.2019.05.07.13.49.56
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 07 May 2019 13:49:56 -0700 (PDT)
-From: Douglas Anderson <dianders@chromium.org>
-To: Stephen Boyd <sboyd@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH] clk: rockchip: Use clk_hw_get_rate() in MMC phase calculation
-Date: Tue,  7 May 2019 13:49:35 -0700
-Message-Id: <20190507204935.256982-1-dianders@chromium.org>
-X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
-MIME-Version: 1.0
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=FZCsu76ETp0rZ0rXi+vAgG1DHkuU4ZJZHgq+GTX/TeU=;
+ b=JhzBHXDrU8YWoQnpTY5U0359MRa2FYI/vmY0w5RdN4bX/3jRHdNjHjXRkk6akrwPKa
+ +y6uLBE4wGkBD0cyKKA11eeKe97qYNC3Os1qqcW1cJW8KeTDCjC7eaRB2ihBeBVqL++/
+ nnOUEdQMmyzaIBxZGhE6qyKREmunzT0cJj+ccqWwzs4LQWr6f6T0slbyBR2XIeVmyC0I
+ XQN92FTnlOZ1vQEC9nJMwVa0FXwN22bH6BUvP7HGOECVOPyntZyZM1NiL5OscUQXyWFM
+ qxWiXwiY/wPaBu9kQA66jjSLZWNOgPH1nZx78PDo5HP5/Z++/HZYX6jFnUAvTXLSELl2
+ BFSw==
+X-Gm-Message-State: APjAAAVauCumNwgR0i54twR1Tsdzo33hKVk5r8XDWuw6/2tAKgWdWFt/
+ N1/ZpyOqTPN9jxsGiVWQ3NM=
+X-Google-Smtp-Source: APXvYqwWbLNioOJ3VoiOYrPTtL15jPigps8VxBp1q1jIpMmqAM8LVIWhwtY4EDHxbahQvfobdasYwQ==
+X-Received: by 2002:a65:5181:: with SMTP id h1mr42672849pgq.167.1557262353965; 
+ Tue, 07 May 2019 13:52:33 -0700 (PDT)
+Received: from localhost ([2601:640:2:82fb:19d3:11c4:475e:3daa])
+ by smtp.gmail.com with ESMTPSA id n184sm13459640pfn.21.2019.05.07.13.52.32
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 07 May 2019 13:52:32 -0700 (PDT)
+From: Yury Norov <yury.norov@gmail.com>
+X-Google-Original-From: Yury Norov <ynorov@marvell.com>
+To: Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] arm64: don't trash config with compat symbol if COMPAT is
+ disabled
+Date: Tue,  7 May 2019 13:52:28 -0700
+Message-Id: <20190507205228.8186-1-ynorov@marvell.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_134958_747064_9E737D0D 
-X-CRM114-Status: GOOD (  11.76  )
+X-CRM114-CacheID: sfid-20190507_135234_973989_4EFE95C5 
+X-CRM114-Status: GOOD (  11.82  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (yury.norov[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -82,7 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,49 +96,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: hal@halemmerich.com, Michael Turquette <mturquette@baylibre.com>,
- linux-clk@vger.kernel.org, Douglas Anderson <dianders@chromium.org>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Shawn Lin <shawn.lin@rock-chips.com>, linux-arm-kernel@lists.infradead.org
+Cc: Yury Norov <ynorov@marvell.com>, Yury Norov <yury.norov@gmail.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When calculating the MMC phase we can just use clk_hw_get_rate()
-instead of clk_get_rate().  This avoids recalculating the rate.
+From: Yury Norov <ynorov@marvell.com>
 
-Suggested-by: Stephen Boyd <sboyd@kernel.org>
-Signed-off-by: Douglas Anderson <dianders@chromium.org>
+ARCH_WANT_COMPAT_IPC_PARSE_VERSION is selected unconditionally. It
+makes little sense if kernel is compiled without COMPAT support.
+Fix it.
+
+This patch makes no functional changes since all existing code which
+is guarded with ARCH_WANT_COMPAT_IPC_PARSE_VERSION is also guarded
+with COMPAT.
+
+Signed-off-by: Yury Norov <ynorov@marvell.com>
 ---
+ arch/arm64/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
- drivers/clk/rockchip/clk-mmc-phase.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/clk/rockchip/clk-mmc-phase.c b/drivers/clk/rockchip/clk-mmc-phase.c
-index 026a26bb702d..07526f64dbfd 100644
---- a/drivers/clk/rockchip/clk-mmc-phase.c
-+++ b/drivers/clk/rockchip/clk-mmc-phase.c
-@@ -55,7 +55,7 @@ static unsigned long rockchip_mmc_recalc(struct clk_hw *hw,
- static int rockchip_mmc_get_phase(struct clk_hw *hw)
- {
- 	struct rockchip_mmc_clock *mmc_clock = to_mmc_clock(hw);
--	unsigned long rate = clk_get_rate(hw->clk);
-+	unsigned long rate = clk_hw_get_rate(hw);
- 	u32 raw_value;
- 	u16 degrees;
- 	u32 delay_num = 0;
-@@ -86,7 +86,7 @@ static int rockchip_mmc_get_phase(struct clk_hw *hw)
- static int rockchip_mmc_set_phase(struct clk_hw *hw, int degrees)
- {
- 	struct rockchip_mmc_clock *mmc_clock = to_mmc_clock(hw);
--	unsigned long rate = clk_get_rate(hw->clk);
-+	unsigned long rate = clk_hw_get_rate(hw);
- 	u8 nineties, remainder;
- 	u8 delay_num;
- 	u32 raw_value;
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 305b50f8f791..38e6dc6a50c8 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -65,7 +65,7 @@ config ARM64
+ 	select ARCH_SUPPORTS_ATOMIC_RMW
+ 	select ARCH_SUPPORTS_INT128 if GCC_VERSION >= 50000 || CC_IS_CLANG
+ 	select ARCH_SUPPORTS_NUMA_BALANCING
+-	select ARCH_WANT_COMPAT_IPC_PARSE_VERSION
++	select ARCH_WANT_COMPAT_IPC_PARSE_VERSION if COMPAT
+ 	select ARCH_WANT_FRAME_POINTERS
+ 	select ARCH_HAS_UBSAN_SANITIZE_ALL
+ 	select ARM_AMBA
 -- 
-2.21.0.1020.gf2820cf01a-goog
+2.17.1
 
 
 _______________________________________________
