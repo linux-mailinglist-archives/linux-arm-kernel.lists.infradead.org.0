@@ -2,77 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E92A615DED
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 09:10:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4DCB15E04
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 09:20:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=b5UIDK9RkbsNK7GOtejduhyECVf1zYLyJIFgpNUR40U=; b=VCqKli2vpDHW7GPF0DNCUF+Ta
-	4E1Va/F64NX6fJAcQIKJ5QCd6JBtCoXiww0Oi8flhtUI4nP3bDX7H+rj6XmF+RexfvoNAn6rQ6Sd6
-	rzApaYWCZ5rLdmdavprJiGSKJVfSzRt02eo9b3lxU0lbw4Pqc99WiE6YOwpMTZX3v38ZSozgLoIqE
-	D13MxTY6w6M6+DBHk9sKuXsAf5P7Zk8ZDdVpXkQeWcq5BndULjaXZ7fB33potjO3oIS1yKz0A43av
-	nHPjU9CZzQ22AWL4GMFZQfhe+pGhqASksEERnYBEvPkgfZV6kbGOccSbKkoJ0xnAb/mCmtP82oQP8
-	GU3lae9Lg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jjJxoSPJSnXwbhEVN7FkcvGCioDTG1JYuqdXn//sBeA=; b=NAPbHS/Uq1xmiM
+	VUPeI+rkSmX7HZOFNAiHp6lp3AffwVYV3DY7PqtdgPaL/fIk9CF/MjhrB+jO8u9hdydYaFNJG9gc4
+	YMj4Zpfu5OkIO71fnhX0Cv+ExpVkLqlYoHUFgj1eNJChMxwN273ka56ZymcnmNAqnimWMbP/1doXc
+	7BdMjljEX9tdsKwps2+6FQma20n/jyuopJucvEQscOFqaLxgFkLCcZ00n7JtzlCqldXJ1LwCxHZeJ
+	5nyGqTLhXY5ZMSz7SrBA+XypsIjEfn1KLFTSneIef8fT42/7qDecden//wzDAM+p7tN0HWQnfQZbn
+	7+3VLfzNdzn9G0BRbzWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNuFd-0008J8-5e; Tue, 07 May 2019 07:10:57 +0000
-Received: from hqemgate16.nvidia.com ([216.228.121.65])
+	id 1hNuOX-0002af-NZ; Tue, 07 May 2019 07:20:09 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNuFV-0008IQ-C2
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 07:10:50 +0000
-Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5cd12f740000>; Tue, 07 May 2019 00:10:44 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate102.nvidia.com (PGP Universal service);
- Tue, 07 May 2019 00:10:48 -0700
-X-PGP-Universal: processed;
- by hqpgpgate102.nvidia.com on Tue, 07 May 2019 00:10:48 -0700
-Received: from [10.25.73.250] (172.20.13.39) by HQMAIL101.nvidia.com
- (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 7 May
- 2019 07:10:40 +0000
-Subject: Re: [PATCH V5 02/16] PCI/PME: Export pcie_pme_disable_msi() &
- pcie_pme_no_msi() APIs
-To: Thierry Reding <thierry.reding@gmail.com>
-References: <20190424052004.6270-1-vidyas@nvidia.com>
- <20190424052004.6270-3-vidyas@nvidia.com> <20190503110159.GB32400@ulmo>
-X-Nvconfidentiality: public
-From: Vidya Sagar <vidyas@nvidia.com>
-Message-ID: <b8f482f4-8136-07b5-3d68-f45a6fd580ba@nvidia.com>
-Date: Tue, 7 May 2019 12:40:36 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hNuOK-0002OP-9T; Tue, 07 May 2019 07:19:57 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x477IcRt038826;
+ Tue, 7 May 2019 07:19:35 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : references : mime-version : content-type :
+ content-transfer-encoding : in-reply-to; s=corp-2018-07-02;
+ bh=gh8GNwW8JqZ8l33L2MV69qCHnkHRZFobSuIcGq9lqV0=;
+ b=venWrvI6fSC2eMSfNzb1Q926sV0muoBDKBR3ySVP26vVAExTIWIj/ycLzEF/EaE3pNqL
+ Kfq4LuQOdvXOcoDZftZDcr0lWu6s/OXW8rcNEMRsKmFu10eq0A2RxcHPxQZRdurDnbia
+ sPzFCWXBkxCEdOcC6XKjHzJ1D2SbnFHv/xZbTFrXUbYg5cOiXU58sj/Ktn1SoxWO7iWy
+ TyBigWKovcvi3Y+0JxZWlgT42tTA6LSEL+W0cfC1OiqNHYlaHtIoc3HgPd5X5tcG8Tz0
+ QgGlPbQzzMWdzyax7siw69SR2Upn40agESX8RjEOCJNMiJhXgPMHcaT7VDRTjO4RJjZ5 0A== 
+Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
+ by userp2130.oracle.com with ESMTP id 2s94bfu2n9-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 07 May 2019 07:19:35 +0000
+Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
+ by aserp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x477JQw8151924;
+ Tue, 7 May 2019 07:19:34 GMT
+Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
+ by aserp3020.oracle.com with ESMTP id 2s9ayeqf76-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 07 May 2019 07:19:34 +0000
+Received: from abhmp0012.oracle.com (abhmp0012.oracle.com [141.146.116.18])
+ by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x477JP0j007791;
+ Tue, 7 May 2019 07:19:25 GMT
+Received: from kadam (/105.53.239.4) by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Tue, 07 May 2019 00:19:24 -0700
+Date: Tue, 7 May 2019 10:19:14 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+Subject: Re: [PATCH net-next v2 0/4] of_get_mac_address ERR_PTR fixes
+Message-ID: <20190507071914.GJ2269@kadam>
+References: <1557177887-30446-1-git-send-email-ynezz@true.cz>
 MIME-Version: 1.0
-In-Reply-To: <20190503110159.GB32400@ulmo>
-X-Originating-IP: [172.20.13.39]
-X-ClientProxiedBy: HQMAIL106.nvidia.com (172.18.146.12) To
- HQMAIL101.nvidia.com (172.20.187.10)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1557213044; bh=KIRiMdJ3vHsuNoXRBzUBVE4jj3DtsdclgdYyB8TtsKg=;
- h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
- Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
- X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=N0cu64tGkekeUlr8GKtZ16+dmuv0OOULTcHPKb31Wg/Etaa5vKT7q/lCU9FWUezN/
- X+GgJbW6gv3Wlgg0qz4wcVp/+BHHqKijSr7kxXMORKyhWwiG/1PY1x/PskChTDTaiM
- Ix0gYrXm/p0ytf1PRzZ6mjbbv5b7q7+flVxgw3YiG76X7uayqz/Z/aUO4r/CkBb/2t
- D6MMYSGaJci4N2uY/oLvsOcCw1MxHSwVGcbrWEJFGvFuL73XUq5CGYt/yx+PQy9377
- t3IfNouplwTxNXL9xDOEvQ4LHkNjw+z/z/MUkElZPJv+nFXO4z/VecuQreGLOwJQe3
- f15d3SAi3cWww==
+Content-Disposition: inline
+In-Reply-To: <1557177887-30446-1-git-send-email-ynezz@true.cz>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Proofpoint-Virus-Version: vendor=nai engine=5900 definitions=9249
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1905070048
+X-Proofpoint-Virus-Version: vendor=nai engine=5900 definitions=9249
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
+ definitions=main-1905070048
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_001049_422643_56BA7EE2 
-X-CRM114-Status: GOOD (  13.08  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190507_001956_466572_272F8FF6 
+X-CRM114-Status: GOOD (  19.30  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.65 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.86 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -82,6 +95,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
  -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -94,103 +109,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
- mperttunen@nvidia.com, mmaddireddy@nvidia.com, linux-pci@vger.kernel.org,
- catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- kthota@nvidia.com, kishon@ti.com, linux-tegra@vger.kernel.org,
- robh+dt@kernel.org, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
- bhelgaas@google.com, jonathanh@nvidia.com,
- linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: devel@driverdev.osuosl.org, Andrew Lunn <andrew@lunn.ch>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Frank Rowand <frowand.list@gmail.com>, "David S. Miller" <davem@davemloft.net>,
+ linux-arm-kernel@lists.infradead.org, Heiner Kallweit <hkallweit1@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/3/2019 4:31 PM, Thierry Reding wrote:
-> On Wed, Apr 24, 2019 at 10:49:50AM +0530, Vidya Sagar wrote:
->> Export pcie_pme_disable_msi() & pcie_pme_no_msi() APIs to enable drivers
->> using this API be able to build as loadable modules.
->>
->> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
->> ---
->> Changes from [v4]:
->> * None
->>
->> Changes from [v3]:
->> * None
->>
->> Changes from [v2]:
->> * Exported pcie_pme_no_msi() API after making pcie_pme_msi_disabled a static
->>
->> Changes from [v1]:
->> * This is a new patch in v2 series
->>
->>   drivers/pci/pcie/pme.c     | 14 +++++++++++++-
->>   drivers/pci/pcie/portdrv.h | 16 +++-------------
->>   2 files changed, 16 insertions(+), 14 deletions(-)
->>
->> diff --git a/drivers/pci/pcie/pme.c b/drivers/pci/pcie/pme.c
->> index 54d593d10396..d5e0ea4a62fc 100644
->> --- a/drivers/pci/pcie/pme.c
->> +++ b/drivers/pci/pcie/pme.c
->> @@ -25,7 +25,19 @@
->>    * that using MSI for PCIe PME signaling doesn't play well with PCIe PME-based
->>    * wake-up from system sleep states.
->>    */
->> -bool pcie_pme_msi_disabled;
->> +static bool pcie_pme_msi_disabled;
->> +
->> +void pcie_pme_disable_msi(void)
->> +{
->> +	pcie_pme_msi_disabled = true;
->> +}
->> +EXPORT_SYMBOL_GPL(pcie_pme_disable_msi);
->> +
->> +bool pcie_pme_no_msi(void)
->> +{
->> +	return pcie_pme_msi_disabled;
->> +}
->> +EXPORT_SYMBOL_GPL(pcie_pme_no_msi);
->>   
->>   static int __init pcie_pme_setup(char *str)
->>   {
->> diff --git a/drivers/pci/pcie/portdrv.h b/drivers/pci/pcie/portdrv.h
->> index 1d50dc58ac40..7c8c3da4bd58 100644
->> --- a/drivers/pci/pcie/portdrv.h
->> +++ b/drivers/pci/pcie/portdrv.h
->> @@ -125,22 +125,12 @@ void pcie_port_bus_unregister(void);
->>   struct pci_dev;
->>   
->>   #ifdef CONFIG_PCIE_PME
->> -extern bool pcie_pme_msi_disabled;
->> -
->> -static inline void pcie_pme_disable_msi(void)
->> -{
->> -	pcie_pme_msi_disabled = true;
->> -}
->> -
->> -static inline bool pcie_pme_no_msi(void)
->> -{
->> -	return pcie_pme_msi_disabled;
->> -}
->> -
->> +void pcie_pme_disable_msi(void);
->> +bool pcie_pme_no_msi(void);
->>   void pcie_pme_interrupt_enable(struct pci_dev *dev, bool enable);
->>   #else /* !CONFIG_PCIE_PME */
->>   static inline void pcie_pme_disable_msi(void) {}
->> -static inline bool pcie_pme_no_msi(void) { return false; }
->> +static inline bool pcie_pme_no_msi(void) {}
-> 
-> This looks wrong.
-Can you please give more info on what is wrong in this?
-
-> 
-> Thierry
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gTW9uLCBNYXkgMDYsIDIwMTkgYXQgMTE6MjQ6NDNQTSArMDIwMCwgUGV0ciDFoHRldGlhciB3
+cm90ZToKPiBIaSwKPiAKPiB0aGlzIHBhdGNoIHNlcmllcyBpcyBhbiBhdHRlbXB0IHRvIGZpeCB0
+aGUgbWVzcywgSSd2ZSBzb21laG93IG1hbmFnZWQgdG8KPiBpbnRyb2R1Y2UuCj4gCj4gRmlyc3Qg
+cGF0Y2ggaW4gdGhpcyBzZXJpZXMgaXMgZGVmYWN0byB2NSBvZiB0aGUgcHJldmlvdXMgMDUvMTAg
+cGF0Y2ggaW4gdGhlCj4gc2VyaWVzLCBidXQgc2luY2UgdGhlIHY0IG9mIHRoaXMgMDUvMTAgcGF0
+Y2ggd2Fzbid0IHBpY2tlZCB1cCBieSB0aGUKPiBwYXRjaHdvcmsgZm9yIHNvbWUgdW5rbm93biBy
+ZWFzb24sIHRoaXMgcGF0Y2ggd2Fzbid0IGFwcGxpZWQgd2l0aCB0aGUgb3RoZXIKPiA5IHBhdGNo
+ZXMgaW4gdGhlIHNlcmllcywgc28gSSdtIHJlc2VuZGluZyBpdCBhcyBhIHNlcGFyYXRlIHBhdGNo
+IG9mIHRoaXMKPiBmaXh1cCBzZXJpZXMgYWdhaW4uCgpJIGZlZWwgc29ydCBvZiByaWRpY3Vsb3Vz
+IGFza2luZyB0aGlzIG92ZXIgYW5kIG92ZXIuLi4gIE1heWJlIHlvdXIgc3BhbQpmaWx0ZXIgaXMg
+ZWF0aW5nIG15IGVtYWlscz8KClRoaXMgYnVnIHdhcyBpbnRyb2R1Y2VkIGluIGh0dHBzOi8vcGF0
+Y2h3b3JrLm96bGFicy5vcmcvcGF0Y2gvMTA5NDkxNi8KIlt2NCwwMS8xMF0gb2ZfbmV0OiBhZGQg
+TlZNRU0gc3VwcG9ydCB0byBvZl9nZXRfbWFjX2FkZHJlc3MiIGJ1dCBpdApsb29rcyBsaWtlIG5v
+IG9uZSBhcHBsaWVkIGl0LgoKWW91J3JlIGFjdGluZyBhcyBpZiBpdCAqd2FzKiBhcHBsaWVkIGJ1
+dCB5b3UgcmVmdXNlIHRvIGFuc3dlciBteQpxdWVzdGlvbiB3aG8gYXBwbGllZCBpdCBhbmQgd2hp
+Y2ggdG8gd2hpY2ggdHJlZSBzbyBJIGNhbiBmaWd1cmUgb3V0IHdoYXQKd2VudCB3cm9uZy4KCkkg
+b25seSBzZWUgY29tbWVudHMgZnJvbSBsYXN0IEZyaWRheSB0aGF0IGl0IHNob3VsZG4ndCBiZSBh
+cHBsaWVkLi4uICBJCmFsc28gdG9sZCB5b3Ugb24gRnJpZGF5IGluIGEgZGlmZmVyZW50IHRocmVh
+ZCB0aGF0IHRoYXQgcGF0Y2ggc2hvdWxkbid0CmJlIGFwcGxpZWQuICBCcmVha2luZyBnaXQgYmlz
+ZWN0IGlzIGEgYnVnLCBhbmQgd2UgbmV2ZXIgZG8gdGhhdC4gIEknbQpqdXN0IHZlcnkgY29uZnVz
+ZWQgcmlnaHQgbm93Li4uICBXaGF0IEknbSB0cnlpbmcgdG8gZG8gaXMgZmlndXJlIG91dCBpbgpt
+eSBoZWFkIGhvdyB0aGlzIHByb2Nlc3MgZmFpbGVkIHNvIHdlIGNhbiBkbyBiZXR0ZXIgbmV4dCB0
+aW1lLgoKcmVnYXJkcywKZGFuIGNhcnBlbnRlcgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4
+LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9y
+Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
