@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9F491646D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 15:18:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 230C216480
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 15:25:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wFZeIH+eaeJwOUkUUibv37vY/GhNPHgE7h1f83UMki8=; b=R8h6NreHTrksuu
-	OV23QieYgFamlXX6gnp6KAJkXMyZ4g04bHpImBePx0dAGHCXAsSAV4MqA1fZTHEOXLNFoq2EBqya3
-	D0Y82pVvVVSUhjFraC56CMtRAh4BPFsjYEmNTTJ/euTfH1fDnYSXPRBY3U6KaO5QqX+OMQwWIwsYV
-	rZXISkn5K+5UgStG34NU0tbkyS2tsyGgaSSqXF4lcOLg2YTqh2/l12yyc5fqcnvqDQsgtctzAWWg4
-	fdDYqkvzZJEBWouwPc7SSwXEQEuUWMFxFDKsZik/Do82QcxqO6WAkY4OEmQ2pi6xY5ZTwyuOlbV79
-	3+8/UIMdybRe5yoPQCUg==;
+	List-Owner; bh=YLZBayHHfqOfJIyYpaWZGuIkW4ibMDRrrwJ6H2NEloE=; b=CfrG5/h2+0Ui5a
+	+bs9XCnbhzQYFR4Rwr1rvQME/W2PYthfzVDJdEkn0giuUBh2DNEoIMOAwcFgCJ9HRTMMnXZc7+lwf
+	6lTepXWS67Zh+etp4Hx0JaiHVcSzSkatle/Mv+bD/qAjRpWtCmDFcRWqYqSSqbtbnnK3jwKg97u7a
+	aHKWKHjZATa1ekMBDxD0K3xn0Th7wT+BOHO1rn9tmHZHDF/LK15Msuiu0K722LUh0CWFvw2Ah50SJ
+	X/VYkkT3S1kk7vYV29P7JvFOKRKoaMzUijr5m3D0qD0QszIovFwcqEsxlcN6qMgI+4YWlj3yVHEvb
+	avpFC+CcjHOUPG+JifBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNzyw-0005al-Cb; Tue, 07 May 2019 13:18:06 +0000
+	id 1hO05m-0007hw-3k; Tue, 07 May 2019 13:25:10 +0000
 Received: from mail-yw1-xc44.google.com ([2607:f8b0:4864:20::c44])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNzyq-0005aS-Cd
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 13:18:01 +0000
-Received: by mail-yw1-xc44.google.com with SMTP id n188so13194563ywe.2
+ id 1hO05c-0007fv-2d
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 13:25:01 +0000
+Received: by mail-yw1-xc44.google.com with SMTP id o65so11413712ywd.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 May 2019 06:18:00 -0700 (PDT)
+ Tue, 07 May 2019 06:24:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=+G2PZOXhphMVRio3+o7+J+xy7+EbGDGUf52xdm8eGto=;
- b=HszlHktNSEhdS6y6pF8BLAMxgq6N/dBeaxKhn3s+C7hEa9KWWYx5ql7lZqebRYfB0R
- r7lwHumkMNhG19j2nQSwS9gAu4eyoSQ9bywaUqU/HxvuaeALBPquW3j1UpKdWvoSLnIK
- +pwrGle1dRfXNdOLdRguvmhEH47eW4T0QSL7r8fZm6oknbyeft/zPBO0U77UWAJ+BNI8
- EOnZWumERYhRkcAgP5oht0nqo6IQ0WE4wJlDhVXXgbwgWuWNqrW73QyL/FJJ32Smm+rn
- CWvJXYVBHFpbh+j7v4qLdiVbMrLjZ97tI1uaRAFAATJdgW85UBuEfDITev6xAEesL2+w
- SA/Q==
+ bh=lVsahdOnBOZDxzW8dvWFMzfuxkpcwi/phRsS/o8yUb4=;
+ b=DE0qy/TjHky1YxMUT/JBk/6SrXkL5J7dGBG6jgejLQb1z23KoLWC1ispb5GneO4fEO
+ FjNsQRmvn0eNPCm7jCN6AxXDQUb2dP2HXAIiV1GiDw818OfFQh6vNnKvzStvKJ7pk3ad
+ RoyhJpRuONZbUhliwFvKcbFWcJ1IeD79xaTPhdhCpZP+EU6TyfJCE0sFcilzwa4iIohA
+ cFee7t5/LQ6uzdFMNayLQSTM4j1svPuMKoR2UXbt7PFFt2YpaxhYXc2C8duup6naNT7H
+ mYAdS0GS80QSGQ72CujjPJGgPXu+DsmT1VY4jYFsTs8/rD9elVeCytsFtiVIQn6a+GCy
+ yWbg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=+G2PZOXhphMVRio3+o7+J+xy7+EbGDGUf52xdm8eGto=;
- b=T1Bi+Yy4u0xK/zRTafsDvAFu8kJxbDqtRJaQ4RSNjECYRBuMDG8AL+HzGloofria01
- cuWZ6QH5cedwrnu0mxTaO4L3qq8+qlWa0FTe3NEm85tm7fksQPCPATT4HKaBZKMoLtdp
- jzFNmjD26GimF4gLRvu1hy93tRBUVmOKe05rbu59+JauaGD6R2R3XAsxCRVCeMbzjzmU
- 738EH7LRiNXwxNlbN9z0eiySZDr2MliwfnX0S6sznUYh2rAqTEOz/LcqpzmyaQ1BPr7Z
- C295PI6Yq/fWf6R71L6yOMsZoLMkjCVXO+CLDaN/eXJW5UOVXcTngtiJ02hYl+uQtMvz
- Ua1w==
-X-Gm-Message-State: APjAAAXalYiVtwUb74MM191ZxOgyVlxCWjMgdGTbrFDo0Rb0uVlElllu
- LkbOuQYkhcxg4wrqY0nGPQ3vnw==
-X-Google-Smtp-Source: APXvYqwVn9N2OO0gaK8Nwc2EFsWV42Zl7mOjYFOXGjk6IWhMf8AObq1uDxCyBWs5c47OgnL8pJGUIA==
-X-Received: by 2002:a25:ab0a:: with SMTP id u10mr21248467ybi.359.1557235079108; 
- Tue, 07 May 2019 06:17:59 -0700 (PDT)
+ bh=lVsahdOnBOZDxzW8dvWFMzfuxkpcwi/phRsS/o8yUb4=;
+ b=ujaW6xnMD0TB9YN21jipi/GTqeFM5BHWEVkku6zKJG8yTNT7EEgBh48l7+wH1Ek63C
+ hscysSw4DCUAgF6KPqau5VnXtJ5slXU4xg0okmzSqFtEieM5eR/1l0b8F2uV3E4wJ5Rg
+ ujjojZjfyjqrtd/4IBOfvdwUTuQ0k0hWpaivRk6sXsxFpgIvDJEG9rSDA2AYolaNfTwH
+ 6Phhb0ISUempvjrCD8SL4CIfBsbzkyvyG2SU/pF9Rax5/gd1X4gYDXYql+kmHliq+xJ8
+ Ut2GuDQ+dPb3obxSIhYFZ4R+cRQv+o3AzvoBLUDmJ/i9C/mA02PTVlNUdAPewvRe5yKX
+ Le4A==
+X-Gm-Message-State: APjAAAXwiYLzkqAVGBFaXA7lsFyQUA5skRbnzm54qZKcyRd14kT7PH4Z
+ n7EC4YIVCIAh7+vQBX8qQ5TT2g==
+X-Google-Smtp-Source: APXvYqwLlLx2VPS08X+fXEZExXfhoADnglZQLimgO/mG0hU8bd+tL2jNoy8rvymIVtWAAC2f7BTfEQ==
+X-Received: by 2002:a25:94a:: with SMTP id u10mr20280794ybm.366.1557235498848; 
+ Tue, 07 May 2019 06:24:58 -0700 (PDT)
 Received: from leoy-ThinkPad-X240s (li931-65.members.linode.com.
  [45.56.113.65])
- by smtp.gmail.com with ESMTPSA id h10sm4763221ywh.80.2019.05.07.06.17.53
+ by smtp.gmail.com with ESMTPSA id t2sm3987202ywt.56.2019.05.07.06.24.50
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 07 May 2019 06:17:58 -0700 (PDT)
-Date: Tue, 7 May 2019 21:17:50 +0800
+ Tue, 07 May 2019 06:24:57 -0700 (PDT)
+Date: Tue, 7 May 2019 21:24:46 +0800
 From: Leo Yan <leo.yan@linaro.org>
-To: Fabio Estevam <festevam@gmail.com>
-Subject: Re: [PATCH v1 04/17] ARM: dts: imx7s: Update coresight bindings for
- funnel
-Message-ID: <20190507131750.GG21730@leoy-ThinkPad-X240s>
+To: Sudeep Holla <sudeep.holla@arm.com>
+Subject: Re: [PATCH v1 00/17] dts: Update DT bindings for CoreSight
+ replicator and funnel
+Message-ID: <20190507132446.GH21730@leoy-ThinkPad-X240s>
 References: <20190507034734.20622-1-leo.yan@linaro.org>
- <20190507034734.20622-5-leo.yan@linaro.org>
- <CAOMZO5D-8o25Wg1JW2rmWQepAKKGr5XTtpJm7J_qHJ8vLb-RKw@mail.gmail.com>
- <20190507123413.GF21730@leoy-ThinkPad-X240s>
- <CAOMZO5DdmLaaz0+puaHPvpT=FSZPBb9Ok4Y7axb3mMSOZ5vWag@mail.gmail.com>
+ <2f2d819d-9b20-7b4c-a558-0ba24a7babf3@arm.com>
+ <20190507104612.GA21391@e107155-lin>
+ <20190507121603.GE21730@leoy-ThinkPad-X240s>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAOMZO5DdmLaaz0+puaHPvpT=FSZPBb9Ok4Y7axb3mMSOZ5vWag@mail.gmail.com>
+In-Reply-To: <20190507121603.GE21730@leoy-ThinkPad-X240s>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_061800_428492_55958C64 
-X-CRM114-Status: GOOD (  14.38  )
+X-CRM114-CacheID: sfid-20190507_062500_136129_53888B9B 
+X-CRM114-Status: UNSURE (   9.67  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -102,40 +102,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Rob Herring <robh+dt@kernel.org>,
- Chris Healy <cphealy@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Mike Leach <mike.leach@linaro.org>
+Cc: mark.rutland@arm.com, andrew@lunn.ch, linus.walleij@linaro.org,
+ liviu.dudau@arm.com, david.brown@linaro.org, haojian.zhuang@linaro.org,
+ festevam@gmail.com, Lorenzo.Pieralisi@arm.com, lee.jones@linaro.org,
+ xuwei5@hisilicon.com, agross@kernel.org, zhangfei.gao@linaro.org,
+ cphealy@gmail.com, mike.leach@linaro.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, s.hauer@pengutronix.de,
+ robh+dt@kernel.org, orsonzhai@gmail.com, linux-arm-kernel@lists.infradead.org,
+ mathieu.poirier@linaro.org, guodong.xu@linaro.org, baolin.wang@linaro.org,
+ zhang.chunyan@linaro.org, shawnguo@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Fabio,
+Hi Sudeep,
 
-On Tue, May 07, 2019 at 09:36:43AM -0300, Fabio Estevam wrote:
-> Hi Leo,
-> 
-> On Tue, May 7, 2019 at 9:34 AM Leo Yan <leo.yan@linaro.org> wrote:
-> 
-> > The main reason for changing the compatible string is: the old binding
-> > strings are obsolete (the old bindings are still supported for backwards
-> > compatibility) and the drivers will report warning if DTS uses these
-> > obsolete strings; so this patch tries to update bindings with latest
-> > compatible strings and thus can dismiss warning during CoreSight
-> > driver's initialization.
-> >
-> > Please let me know if anything is not clear for you.
-> 
-> What I am saying is that the patch should have such explanation in the
-> commit log.
+On Tue, May 07, 2019 at 08:16:04PM +0800, Leo Yan wrote:
 
-Makes sense :)  Will spin new patch set with more clear explanation.
+[...]
 
-Thanks for the suggestion!
+> > I plan to take 9,10,14/17 for v5.3
+> 
+> Yes, please pick up these 3 patches.
+
+I am planning to respin new patch set with more clear explaination in
+the commit log.
+
+Please let me know if it's okay for you to wait for new patch set, or
+will you directly pick up these three patches and I should drop these
+3 patches in next version?
+
+Thanks,
 Leo Yan
 
 _______________________________________________
