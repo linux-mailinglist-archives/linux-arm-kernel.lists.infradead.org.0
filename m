@@ -2,86 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1AE6616D98
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 00:47:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E685816DBC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 01:10:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=DVpskjv+3eRz80E9yFEP0FW5BaPuwyeuMk2te961qBU=; b=No79i7oHizWtwOpM1SJdABoOs
-	UOIbG/xuH6ymE7u4RCbalE43qo5QUYKh2h8dBxW03jLoJ2exgU8C1bGT+lOO/oQRGruQmfDAjYJA7
-	MTT23yddWUqneAHdJnJXwRJW/akPuuJ4ulfrtjeLSwcm7Ut7RNbes/wa9NpWS8fFyeBJgKSGgoe6l
-	UbhtE8joTQOPBR0df/02Cbmwsb8R+JXfKeQXsFBZe4Fc4Of5EbtXXlEmyyuO0LKgfseCwzM4Yap1h
-	bOqXA1j5dH/KmRmFWgdg9MYTiIK8Lt1+3Jb/99sjHcSVL/fT+wPyn8LV3cB7G2JlIfKvu5TMp82cO
-	izpmZlveg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=OimJDXUdYQCzuTgrXOQc0OSsEEvayTbHFs88InZaGjA=; b=heE
+	3OcQfTfMez37cz4Y7LZr4XJrgkMfdPdyjgR9cRjbQ7Mc1HXmea+Sm8jO4o8uyHmV6IEFtdPw51tPN
+	b+bnqTvD4y1E0U+ieQb9kMiOLK5bUl6X8cZsgFHlh5rdu+Kuxoz6xy7t0WsnWxNjKqLBtjEZ/nUpV
+	PvlzyQP5wz9FnlNNiw4pgpfl8/xvpaeBWiQNePuAXmCl2aC+Fbl5wcfh1oiAzpsZ58rJTVuNAYljY
+	UxuCTh4e3OF2RDHGE3TBbaLLE+v0fU7yE88xxuAjhSGNCnirB4Bh2yXG72FqTSdiQSbJJhXDECLu4
+	tDbt1QnCv0efzULw7eQgJ0eiI+wdykw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hO8rN-0007SR-Ku; Tue, 07 May 2019 22:46:53 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1hO9E7-0006mq-Dn; Tue, 07 May 2019 23:10:23 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hO8rG-0007RO-5m
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 22:46:47 +0000
-Received: by mail-ed1-x542.google.com with SMTP id m4so20226204edd.8
+ id 1hO9Dy-0006i9-9v
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 23:10:15 +0000
+Received: by mail-pl1-x642.google.com with SMTP id bi2so8898296plb.13
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 May 2019 15:46:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding:content-language;
- bh=2SBXkPPsS90MxklCe6MIGlkttGdHW3kI9AU6dDeoWq0=;
- b=c8YCsFOL5XUurB/wLU01FUTlJ+LmbsoTAONIDSv6Ve2y9sfQIO00JcBoneTawrU37S
- ZxHXBrqZPJHAB7Y9fHXTTthRpBiTxbWYVk+FE08Jp0WYjYvYKAl5oBOeeH4MtBg/3L0C
- h0QAqHEOXzezLEUlvcU8JoSmAFNwDCBsNmcWw=
+ Tue, 07 May 2019 16:10:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=PP6+fndUIG4IIkxYrEQFsbVdqZqEU6ScA9UQeyIypuQ=;
+ b=Kpgce/hwwS3m0yYRu4AlEIBbliaNKE7pCuG22IqFi2+0C/o1qPz3yPhkswJLNnR4dL
+ EZNN9imgzu6r7+650jRs/Aa9mhk+wRmMPbxaHmoLuBmz2s7F2BgoOrpbmK1YfZOPIsXq
+ +NOcryVJ4zdm3pxAaCe1NgXfCy0wRvmb2D8bMw6OgwsHnnD6NBCKt1MJWLIv+eYN9VSc
+ SYjtUvJ2nzbHfmklqK6TppCggVKzIhE+5TrBAQg4YGp2LNddiQjH8sJVw/OQiC5Nykn4
+ gygKINbDiCpkvAFBltAOQDGC+NowC/gys4+axE/y9H0BeiF8Dod6/VluFGsW7/SBoRJk
+ YFRQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=2SBXkPPsS90MxklCe6MIGlkttGdHW3kI9AU6dDeoWq0=;
- b=iyQNiG4QPiAvXbt4z3SbC1kIsdaFllWWHTqp74ld3MESlLKUecUQUyR5cc9aIvQnz1
- Cp4wz0FxVaoWEVn16wz/F8lgSRhLqdAiFSQXRowHNuQO7BAN0vTS4oWY3e0F1M+JuMOc
- LJHBs2HrImxVrvUlPr3bxoUoEEC1O4KeCp9xGdtCeGl77zraqKfW09DFLSC8ob0pFKLk
- /BH1sWjEPkqli4/Pj+F2jMWdOoT9XsckyxBAx5nJd4a0Z66YqoHfH+ut/uoxQsRZGTf6
- 4qLADYWnbohm8cAwan8X/kk26szi3p+Jx/tEMPXv5SFEUryfbHjE74W0HziRsRlGPhiC
- 2iMw==
-X-Gm-Message-State: APjAAAVqtau3wlhPDpCVsg+JVKIRuZ24utnOTkb6DkHzjtcw2KfLGqko
- els/EoZ3OlQJ2Daf2iiYDw2Pig==
-X-Google-Smtp-Source: APXvYqyXCGYgKhd7HiuSIvjEImJkx/UgMafy843ubjLvtfYY0p7CumAUjx/69TyceblENiM727jj+g==
-X-Received: by 2002:a50:c201:: with SMTP id n1mr35712206edf.244.1557269202927; 
- Tue, 07 May 2019 15:46:42 -0700 (PDT)
-Received: from [10.136.13.65] ([192.19.228.250])
- by smtp.gmail.com with ESMTPSA id s53sm4603529edb.20.2019.05.07.15.46.39
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=PP6+fndUIG4IIkxYrEQFsbVdqZqEU6ScA9UQeyIypuQ=;
+ b=o6ZwK++GuWOikmAaEPV0nuZBzIu5/q5zsatNlj3LbG8k54KZxF4Se9+4nxOt37zltz
+ UY1WIwmpf4KnUVfCTuxJCqnqVlLCLu4bpJBvRrWmR+xW94ZWutIp10N3xzydVvm7GyFV
+ aVTyZmygvsSInyJD4AaK44EUL8A/481oYF+ev02vyNmslQzN8BK68YUxLeRV88/1c/0k
+ OlMFtyi0elR1eMu9jInwkU4v13SHAwpDLftRM0CrtMKRI98kZ91m+Hl0lEZXhjeF58D8
+ kjgdKBC4YRMgw5ykpEOOjA5aH83fo1vKHoxu2aZ2UlAafcK2RsjumS5bSkqR1nP/Ywsr
+ zy4w==
+X-Gm-Message-State: APjAAAVYp7U4SXb8TKCL9dzLOYqsUd1lpTCRHWRb6e6dr8YD0wrOPqCO
+ YZSN2CemtEms2tx2Em1stjI=
+X-Google-Smtp-Source: APXvYqyhousJMqD5DgnvXJFbKsTA00ZmyGSAFJJ6eypXpI5duu/6vzyNKl7HSIuPW2rqnyhPuGsdDg==
+X-Received: by 2002:a17:902:5acb:: with SMTP id
+ g11mr7135217plm.198.1557270613082; 
+ Tue, 07 May 2019 16:10:13 -0700 (PDT)
+Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.250])
+ by smtp.gmail.com with ESMTPSA id w12sm7154742pfj.41.2019.05.07.16.10.11
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 07 May 2019 15:46:41 -0700 (PDT)
-Subject: Re: [PATCH 2/2] mmc: sdhci-iproc: Set NO_HISPD bit to fix HS50 data
- hold time problem
-To: Adrian Hunter <adrian.hunter@intel.com>,
- Ulf Hansson <ulf.hansson@linaro.org>, Ray Jui <rjui@broadcom.com>,
- Scott Branden <sbranden@broadcom.com>, Stefan Wahren <stefan.wahren@i2se.com>
-References: <20190506170115.10840-1-scott.branden@broadcom.com>
- <20190506170115.10840-3-scott.branden@broadcom.com>
- <673b3d25-0256-9cd7-c89a-673546e69f3a@intel.com>
-From: Scott Branden <scott.branden@broadcom.com>
-Message-ID: <293b4f12-c74f-35fe-80d7-fdb25405e499@broadcom.com>
-Date: Tue, 7 May 2019 15:46:37 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <673b3d25-0256-9cd7-c89a-673546e69f3a@intel.com>
-Content-Language: en-US
+ Tue, 07 May 2019 16:10:12 -0700 (PDT)
+From: Florian Fainelli <f.fainelli@gmail.com>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH v3 0/2] hwmon: scmi: Scale values to target desired HWMON units
+Date: Tue,  7 May 2019 16:09:15 -0700
+Message-Id: <20190507230917.21659-1-f.fainelli@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_154646_229882_0AD05200 
-X-CRM114-Status: GOOD (  22.30  )
+X-CRM114-CacheID: sfid-20190507_161014_342027_154E6524 
+X-CRM114-Status: GOOD (  13.18  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -89,7 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -101,61 +93,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-mmc@vger.kernel.org, Trac Hoang <trac.hoang@broadcom.com>,
- BCM Kernel Feedback <bcm-kernel-feedback-list@broadcom.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: "open list:HARDWARE MONITORING" <linux-hwmon@vger.kernel.org>,
+ Jean Delvare <jdelvare@suse.com>, Florian Fainelli <f.fainelli@gmail.com>,
+ bcm-kernel-feedback-list@broadcom.com, Guenter Roeck <linux@roeck-us.net>,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Adrian,
+Hi Sudeep, Guenter,
 
-On 2019-05-06 11:31 p.m., Adrian Hunter wrote:
-> On 6/05/19 8:01 PM, Scott Branden wrote:
->> From: Trac Hoang <trac.hoang@broadcom.com>
->>
->> The iproc host eMMC/SD controller hold time does not meet the
->> specification in the HS50 mode.  This problem can be mitigated
->> by disabling the HISPD bit; thus forcing the controller output
->> data to be driven on the falling clock edges rather than the
->> rising clock edges.
->>
->> Fixes: f5f968f2371c ("mmc: sdhci-iproc: suppress spurious interrupt with Multiblock read")
-> Is this fixes tag correct, because it doesn't seem related.  Maybe explain
-> that in the commit message.
+This patch series adds support for scaling SCMI sensor values read from
+firmware. Sudeep, let me know if you think we should be treating scale
+== 0 as a special value to preserve some firmware compatibility (not
+that this would be desired).
 
-I chose this tag to assist stable kernel maintainers so that the change 
-does not produce merge conflicts backporting to older kernel versions.
+Changes in v3:
 
-In reality, the timing bug existed since the driver was first introduced 
-but there is no need for this driver to be supported in kernel versions 
-that old.
+- add a local __pow10 function to scmi-hwmon.c while a plan to provide
+  a generic function is figured out.
+- add check on power > 18 which would overflow a 64-bit unsigned integer
+- use div64_u64() to properly divide a 64-bit quantity with an unsigned
+  64-bit quantity
 
-Do you want me to add such to the commit message?
+Changes in v2:
 
->
->> Signed-off-by: Trac Hoang <trac.hoang@broadcom.com>
->> Signed-off-by: Scott Branden <scott.branden@broadcom.com>
->> ---
->>   drivers/mmc/host/sdhci-iproc.c | 3 ++-
->>   1 file changed, 2 insertions(+), 1 deletion(-)
->>
->> diff --git a/drivers/mmc/host/sdhci-iproc.c b/drivers/mmc/host/sdhci-iproc.c
->> index 9d4071c41c94..2feb4ef32035 100644
->> --- a/drivers/mmc/host/sdhci-iproc.c
->> +++ b/drivers/mmc/host/sdhci-iproc.c
->> @@ -220,7 +220,8 @@ static const struct sdhci_iproc_data iproc_cygnus_data = {
->>   
->>   static const struct sdhci_pltfm_data sdhci_iproc_pltfm_data = {
->>   	.quirks = SDHCI_QUIRK_DATA_TIMEOUT_USES_SDCLK |
->> -		  SDHCI_QUIRK_MULTIBLOCK_READ_ACMD12,
->> +		  SDHCI_QUIRK_MULTIBLOCK_READ_ACMD12 |
->> +		  SDHCI_QUIRK_NO_HISPD_BIT,
->>   	.quirks2 = SDHCI_QUIRK2_ACMD23_BROKEN,
->>   	.ops = &sdhci_iproc_ops,
->>   };
->>
+- added a helper function in kernel.h: __pow10()
+- made the scale in scmi_sensor_info an s8 type, added defines for
+  checking the sign bit and sign extending with a mask
+- simplify computations in hwmon driver
+
+
+Florian Fainelli (2):
+  firmware: arm_scmi: Fetch and store sensor scale
+  hwmon: scmi: Scale values to target desired HWMON units
+
+ drivers/firmware/arm_scmi/sensors.c |  6 ++++
+ drivers/hwmon/scmi-hwmon.c          | 43 ++++++++++++++++++++++++++++-
+ include/linux/scmi_protocol.h       |  1 +
+ 3 files changed, 49 insertions(+), 1 deletion(-)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
