@@ -2,52 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F9D7169E6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 20:07:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37A87169E7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 20:08:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=C+Avk4lB4pJ7z6f4/XuuYq1onynexScJXec8B87A/so=; b=hNQ8Uo2628OsR5
-	sPzMMRdym871aebq4tMmR1++JSyr8MofI5gsszyIbfbPGiBRJVb2FuA4JbafUdvZ3CtjnQ1CE94Dw
-	R3HT2vDAKDsmPQ4X19+sZEq+2lbsiNwu8mLdqqox6k5jptYxzXNIi/dwQmP5xhUjpMNrIOyIFRazt
-	VowT2TCjf/aLao2RCZh0EvIPPknpwNbfAQeSOeKInr0C5HkV1zVA9ILI2L8YrSvoZnE2WDmIcTvWm
-	gQ9wLXWuZY8egB1GFLWMiGuiGmGQPtv8l9O/oG4h/1tDRGkSk+FYDHzJIa/lvHExOJ6I4Cv6tkL4c
-	GkdjbyR9mUVNg7M+OOsw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Vl8+O+1vdkAKfVPX4a+JQ5BvBndJH4Tk+sAXE7ufTaQ=; b=uI6PuIVPrNE8Wd
+	xX0mbt8dw5IObuer8pnuqj5pi4X/OCvuUsMXkqHAc/S1m6jqzj0Sh9YeqREQqZfJoyG18ctaxz5dF
+	ZQxvbTaBJQYLxwbMMTrQ2xBN67usXMRyfhK+Eju7bqCQ61mxF5F3oE9YyARtwDmetKnhnbPdijXK1
+	f4n4YsraPM0XjHSLWuGxWKiqG0IrpHOeEMZQH0iCdJznJxYwGqXzAXcUOTle3AHuJF/ncz+wNKqvx
+	Md0gKTbGh3nc7a8TRzKToV8HnlW/NdZmHH19FP/+s3cnaBHBTGgaFtS0MlWRmsakjcuj3vh7Z8cf6
+	TirlxwYXx+exce1uLxlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hO4VL-0005IS-V2; Tue, 07 May 2019 18:07:51 +0000
-Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+	id 1hO4VX-0005RU-Om; Tue, 07 May 2019 18:08:03 +0000
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hO4VD-0005HS-Ok
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 18:07:45 +0000
+ id 1hO4VF-0005Hm-Ro
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 18:07:47 +0000
 X-Originating-IP: 90.89.68.76
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (Authenticated sender: maxime.ripard@bootlin.com)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 470F1FF804;
- Tue,  7 May 2019 18:07:36 +0000 (UTC)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id E7A27C000B;
+ Tue,  7 May 2019 18:07:38 +0000 (UTC)
 From: Maxime Ripard <maxime.ripard@bootlin.com>
 To: Mark Brown <broonie@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
  Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
  Frank Rowand <frowand.list@gmail.com>
-Subject: [PATCH v2 1/2] dt-bindings: sound: Convert Allwinner SPDIF binding to
- YAML
-Date: Tue,  7 May 2019 20:07:28 +0200
-Message-Id: <dc84c7e9ce272109052f553a5e050bfe1a09e9d6.1557252411.git-series.maxime.ripard@bootlin.com>
+Subject: [PATCH v2 2/2] dt-bindings: sound: sun4i-spdif: Document that the RX
+ channel can be missing
+Date: Tue,  7 May 2019 20:07:29 +0200
+Message-Id: <d9afb19c32f8b9b2c40c8d4c0c3df74bff0ccf35.1557252411.git-series.maxime.ripard@bootlin.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <dc84c7e9ce272109052f553a5e050bfe1a09e9d6.1557252411.git-series.maxime.ripard@bootlin.com>
+References: <dc84c7e9ce272109052f553a5e050bfe1a09e9d6.1557252411.git-series.maxime.ripard@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_110744_105335_D3613E7E 
-X-CRM114-Status: GOOD (  13.61  )
+X-CRM114-CacheID: sfid-20190507_110746_044892_E86EE057 
+X-CRM114-Status: GOOD (  10.35  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.199 listed in list.dnswl.org]
+ low trust [217.70.183.198 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.198 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -68,183 +72,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Allwinner SoCs feature an SPDIF controller across multiple SoC
-generations.
+The H3 and compatibles controllers don't have any reception capabilities,
+even though it was never documented as such in the binding before.
 
-However, earlier generations were a bit simpler than the subsequent ones,
-and for example would always have RX and TX capabilities, and no reset
-lines.
+Therefore, on those controllers, we don't have the option to set an RX DMA
+channel.
 
-In order to express this, let's create two YAML schemas instead of the free
-form text we had before.
+This was already done in the DTSI, but the binding itself was never
+updated. Let's add a special case in the schemas.
 
 Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 
 ---
 
 Changes from v1:
-  - Merged the two schemas together and used the draft-7 conditionals
+  - switch to a draft7 conditional
 ---
- Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml | 98 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
- Documentation/devicetree/bindings/sound/sunxi,sun4i-spdif.txt          | 42 +-------------------------------
- 2 files changed, 98 insertions(+), 42 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml
- delete mode 100644 Documentation/devicetree/bindings/sound/sunxi,sun4i-spdif.txt
+ Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml | 45 ++++++++++++++++++++++++++++++++++++---------
+ 1 file changed, 36 insertions(+), 9 deletions(-)
 
 diff --git a/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml b/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml
-new file mode 100644
-index 000000000000..5698e5de5e31
---- /dev/null
+index 5698e5de5e31..8f1bc1a1af96 100644
+--- a/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml
 +++ b/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml
-@@ -0,0 +1,98 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/sound/allwinner,sun4i-a10-spdif.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Allwinner A10 S/PDIF Controller Device Tree Bindings
-+
-+maintainers:
-+  - Chen-Yu Tsai <wens@csie.org>
-+  - Liam Girdwood <lgirdwood@gmail.com>
-+  - Mark Brown <broonie@kernel.org>
-+  - Maxime Ripard <maxime.ripard@bootlin.com>
-+
-+properties:
-+  "#sound-dai-cells":
-+    const: 0
-+
-+  compatible:
-+    oneOf:
-+      - const: allwinner,sun4i-a10-spdif
-+      - const: allwinner,sun6i-a31-spdif
-+      - const: allwinner,sun8i-h3-spdif
-+      - items:
-+          - const: allwinner,sun8i-a83t-spdif
-+          - const: allwinner,sun8i-h3-spdif
-+      - items:
-+          - const: allwinner,sun50i-a64-spdif
-+          - const: allwinner,sun8i-h3-spdif
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    items:
-+      - description: Bus Clock
-+      - description: Module Clock
-+
-+  clock-names:
-+    items:
-+      - const: apb
-+      - const: spdif
-+
-+  dmas:
-+    items:
-+      - description: RX DMA Channel
-+      - description: TX DMA Channel
-+
-+  dma-names:
-+    items:
-+      - const: rx
-+      - const: tx
-+
-+  resets:
-+    maxItems: 1
-+
-+allOf:
+@@ -44,15 +44,8 @@ properties:
+       - const: apb
+       - const: spdif
+ 
+-  dmas:
+-    items:
+-      - description: RX DMA Channel
+-      - description: TX DMA Channel
+-
+-  dma-names:
+-    items:
+-      - const: rx
+-      - const: tx
++  dmas: true
++  dma-names: true
+ 
+   resets:
+     maxItems: 1
+@@ -70,6 +63,40 @@ allOf:
+       required:
+         - resets
+ 
 +  - if:
 +      properties:
 +        compatible:
 +          contains:
-+            enum:
-+              - allwinner,sun6i-a31-spdif
-+              - allwinner,sun8i-h3-spdif
++            const: allwinner,sun8i-h3-spdif
 +
 +    then:
-+      required:
-+        - resets
++      properties:
++        dmas:
++          maxItems: 1
++          items:
++            - description: RX DMA Channel
 +
-+required:
-+  - "#sound-dai-cells"
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+  - dmas
-+  - dma-names
++        dma-names:
++          maxItems: 1
++          items:
++            - const: tx
 +
-+additionalProperties: false
++    else:
++      properties:
++        dmas:
++          minItems: 2
++          maxItems: 2
++          items:
++            - description: RX DMA Channel
++            - description: TX DMA Channel
 +
-+examples:
-+  - |
-+    spdif: spdif@1c21000 {
-+        #sound-dai-cells = <0>;
-+        compatible = "allwinner,sun4i-a10-spdif";
-+        reg = <0x01c21000 0x40>;
-+        interrupts = <13>;
-+        clocks = <&apb0_gates 1>, <&spdif_clk>;
-+        clock-names = "apb", "spdif";
-+        dmas = <&dma 0 2>, <&dma 0 2>;
-+        dma-names = "rx", "tx";
-+    };
++        dma-names:
++          minItems: 2
++          maxItems: 2
++          items:
++            - const: rx
++            - const: tx
 +
-+...
-diff --git a/Documentation/devicetree/bindings/sound/sunxi,sun4i-spdif.txt b/Documentation/devicetree/bindings/sound/sunxi,sun4i-spdif.txt
-deleted file mode 100644
-index 0c64a209c2e9..000000000000
---- a/Documentation/devicetree/bindings/sound/sunxi,sun4i-spdif.txt
-+++ /dev/null
-@@ -1,42 +0,0 @@
--Allwinner Sony/Philips Digital Interface Format (S/PDIF) Controller
--
--The Allwinner S/PDIF audio block is a transceiver that allows the
--processor to receive and transmit digital audio via an coaxial cable or
--a fibre cable.
--For now only playback is supported.
--
--Required properties:
--
--  - compatible		: should be one of the following:
--    - "allwinner,sun4i-a10-spdif": for the Allwinner A10 SoC
--    - "allwinner,sun6i-a31-spdif": for the Allwinner A31 SoC
--    - "allwinner,sun8i-h3-spdif": for the Allwinner H3 SoC
--
--  - reg			: Offset and length of the register set for the device.
--
--  - interrupts		: Contains the spdif interrupt.
--
--  - dmas		: Generic dma devicetree binding as described in
--			  Documentation/devicetree/bindings/dma/dma.txt.
--
--  - dma-names		: Two dmas have to be defined, "tx" and "rx".
--
--  - clocks		: Contains an entry for each entry in clock-names.
--
--  - clock-names		: Includes the following entries:
--	"apb"		  clock for the spdif bus.
--	"spdif"		  clock for spdif controller.
--
--  - resets		: reset specifier for the ahb reset (A31 and newer only)
--
--Example:
--
--spdif: spdif@1c21000 {
--	compatible = "allwinner,sun4i-a10-spdif";
--	reg = <0x01c21000 0x40>;
--	interrupts = <13>;
--	clocks = <&apb0_gates 1>, <&spdif_clk>;
--	clock-names = "apb", "spdif";
--	dmas = <&dma 0 2>, <&dma 0 2>;
--	dma-names = "rx", "tx";
--};
-
-base-commit: 00c3bc00f0cadbb48f2414370733892676511e79
+ required:
+   - "#sound-dai-cells"
+   - compatible
 -- 
 git-series 0.9.1
 
