@@ -2,67 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B3B215E9F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 09:51:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A75EF15E9E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 09:51:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BOwP1jcM3i7XM7ZWIxKRXCKxA009ByiaW8jviRMPoS4=; b=pf5D7JB0kmDsy+
-	NxMgd6XLWekwqZLCRvR6r2Qq1V0naG8ZypJdf/DvjyKaDmA3/nb1hRK5OHoAXftmozpjANKESqBiz
-	BaMhJgjh8yehdAthOPegzrKJ+ctfaEN0/byvAoF+cktNAMB7vMIjsinKIXEzQozgrJx0yQaLIA/FR
-	bdA1wur+PtlO6ccadwkQVhdAoyvWOdVgRm7cMwgtnXVuhZmbPrWlQe9aP8sdURyMdIvPl1MJGFXaI
-	8Rrh9Ye+16rJttEQyCmKRQh6EinWHEUFpRgNbIQVO1BwUVyS3V2l1YKYSltucKjW0819wNOCAeoIV
-	JID7mrVqZrRuFWnVX1lw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=WB0k2aaAbg6sDtwpe4fycZOdH42hhXg+JRYxTytT+6Y=; b=ZwcJd/BlfmkWiJgvMjFCyGznC
+	MEMge1GE7E8t6ERcHX1ezpg4kPln/3PckarNuHCpSfMn7rjOl0MceqpT7U+NNlJYmztruzEWpUdsk
+	ZmJrMpcaDDHmIcLWlKBckce1WT1BBOzkS+fOOK4DZCtD56xUOJpfYWBn5jiP89H/uctLHYXkmfyw/
+	6EUCGPyRRFoUPVqDcRJv5diUCe5u2TGcXsoRHC1sz+oGIq/foT91uLY/jejVDysM+hfOvJRg1CORX
+	mXi39zsnt8L4p8eWRaLDmySL5Hzr6vaYvBxV6yZutlk+kGZYwiED2PjFrTUB3949Zahebpr9XeE2h
+	Iza1pOetQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNut2-0007Yy-9k; Tue, 07 May 2019 07:51:40 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hNusr-0007O9-Lv; Tue, 07 May 2019 07:51:29 +0000
+Received: from hqemgate16.nvidia.com ([216.228.121.65])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNusp-0007Np-4E; Tue, 07 May 2019 07:51:31 +0000
-X-UUID: 2afb7553cbbe413fa3590c0414014418-20190506
-X-UUID: 2afb7553cbbe413fa3590c0414014418-20190506
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <roger.lu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 491281644; Mon, 06 May 2019 23:51:07 -0800
-Received: from mtkmbs03n2.mediatek.inc (172.21.101.182) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 7 May 2019 00:51:06 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs03n2.mediatek.inc (172.21.101.182) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 7 May 2019 15:50:57 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 7 May 2019 15:50:57 +0800
-Message-ID: <1557215457.2147.90.camel@mtksdaap41>
-Subject: Re: [RFC v1 1/3] dt-bindings: soc: add mtk svs dt-bindings
-From: Roger Lu <roger.lu@mediatek.com>
-To: Stephen Boyd <sboyd@kernel.org>
-Date: Tue, 7 May 2019 15:50:57 +0800
-In-Reply-To: <155691770027.200842.16164651681407381397@swboyd.mtv.corp.google.com>
-References: <20190430112012.4514-1-roger.lu@mediatek.com>
- <20190430112012.4514-2-roger.lu@mediatek.com>
- <155665629219.168659.8221738507474891604@swboyd.mtv.corp.google.com>
- <1556777971.12123.35.camel@mtksdaap41>
- <155691770027.200842.16164651681407381397@swboyd.mtv.corp.google.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hNusk-0007Nq-Pa
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 07:51:24 +0000
+Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5cd138f60000>; Tue, 07 May 2019 00:51:18 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate102.nvidia.com (PGP Universal service);
+ Tue, 07 May 2019 00:51:22 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate102.nvidia.com on Tue, 07 May 2019 00:51:22 -0700
+Received: from [10.25.73.250] (172.20.13.39) by HQMAIL101.nvidia.com
+ (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 7 May
+ 2019 07:51:15 +0000
+Subject: Re: [PATCH V5 02/16] PCI/PME: Export pcie_pme_disable_msi() &
+ pcie_pme_no_msi() APIs
+From: Vidya Sagar <vidyas@nvidia.com>
+To: Thierry Reding <thierry.reding@gmail.com>
+References: <20190424052004.6270-1-vidyas@nvidia.com>
+ <20190424052004.6270-3-vidyas@nvidia.com> <20190503110159.GB32400@ulmo>
+ <b8f482f4-8136-07b5-3d68-f45a6fd580ba@nvidia.com>
+X-Nvconfidentiality: public
+Message-ID: <f550fc06-98b1-0e08-874a-f2fba49d32b5@nvidia.com>
+Date: Tue, 7 May 2019 13:21:11 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 2A70FA32ECE4104952054275D588E9976EED734ADF312A104C76D8D354D178072000:8
-X-MTK: N
+In-Reply-To: <b8f482f4-8136-07b5-3d68-f45a6fd580ba@nvidia.com>
+X-Originating-IP: [172.20.13.39]
+X-ClientProxiedBy: HQMAIL106.nvidia.com (172.18.146.12) To
+ HQMAIL101.nvidia.com (172.20.187.10)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1557215478; bh=9MM2Job8LFhpLfYfcy/viLo+D6a9yn3lQWyaaUwWEG4=;
+ h=X-PGP-Universal:Subject:From:To:CC:References:X-Nvconfidentiality:
+ Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
+ X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=o0JRNPqYfaCtg1oCXPE4tDy0BvTxjjKUHDRoJ36ll2ac2Tqa56V4pnsNTpCF7TTgc
+ hobKxRYWdZMQt2/V5jzADR5cC4I0TLI/gQ8FDAxNqZ02CoxGqx39N+GOflwX9hPkfD
+ pFK3IWx2aLZmk+lMSDMqyxUHg+T7U3XXN57Z+j7bL1xxqlREQhqPVU8rhq66NVNTfi
+ KRYakrWeVQ5M6XFvZqGg/wjSrZIhG8PcGmF/gmIVppWNcGUH6oh+taEbX4RHSHmVK3
+ BFrlgliw26g3JlwrbwBJfLbGA0SgVaNcu1vo8pgYGM2Kiujk9ybT3ZnRW0dBrPOxd5
+ VVAI5B4smOhPg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_005127_512096_2F34A9E3 
-X-CRM114-Status: GOOD (  26.74  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190507_005122_840340_1507FE58 
+X-CRM114-Status: GOOD (  11.88  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.65 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -74,147 +95,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
- Angus.Lin@mediatek.com, linux-pm@vger.kernel.org,
- Viresh Kumar <vireshk@kernel.org>, Kevin Hilman <khilman@kernel.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
- HenryC.Chen@mediatek.com, devicetree@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Andy-YT.Liu@mediatek.com, Matthias
- Brugger <matthias.bgg@gmail.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ mperttunen@nvidia.com, mmaddireddy@nvidia.com, linux-pci@vger.kernel.org,
+ catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ kthota@nvidia.com, kishon@ti.com, linux-tegra@vger.kernel.org,
+ robh+dt@kernel.org, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
+ bhelgaas@google.com, jonathanh@nvidia.com,
+ linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="windows-1252"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Dear Stephen,
+On 5/7/2019 12:40 PM, Vidya Sagar wrote:
+> On 5/3/2019 4:31 PM, Thierry Reding wrote:
+>> On Wed, Apr 24, 2019 at 10:49:50AM +0530, Vidya Sagar wrote:
+>>> Export pcie_pme_disable_msi() & pcie_pme_no_msi() APIs to enable drivers
+>>> using this API be able to build as loadable modules.
+>>>
+>>> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
+>>> ---
+>>> Changes from [v4]:
+>>> * None
+>>>
+>>> Changes from [v3]:
+>>> * None
+>>>
+>>> Changes from [v2]:
+>>> * Exported pcie_pme_no_msi() API after making pcie_pme_msi_disabled a s=
+tatic
+>>>
+>>> Changes from [v1]:
+>>> * This is a new patch in v2 series
+>>>
+>>> =A0 drivers/pci/pcie/pme.c=A0=A0=A0=A0 | 14 +++++++++++++-
+>>> =A0 drivers/pci/pcie/portdrv.h | 16 +++-------------
+>>> =A0 2 files changed, 16 insertions(+), 14 deletions(-)
+>>>
+>>> diff --git a/drivers/pci/pcie/pme.c b/drivers/pci/pcie/pme.c
+>>> index 54d593d10396..d5e0ea4a62fc 100644
+>>> --- a/drivers/pci/pcie/pme.c
+>>> +++ b/drivers/pci/pcie/pme.c
+>>> @@ -25,7 +25,19 @@
+>>> =A0=A0 * that using MSI for PCIe PME signaling doesn't play well with P=
+CIe PME-based
+>>> =A0=A0 * wake-up from system sleep states.
+>>> =A0=A0 */
+>>> -bool pcie_pme_msi_disabled;
+>>> +static bool pcie_pme_msi_disabled;
+>>> +
+>>> +void pcie_pme_disable_msi(void)
+>>> +{
+>>> +=A0=A0=A0 pcie_pme_msi_disabled =3D true;
+>>> +}
+>>> +EXPORT_SYMBOL_GPL(pcie_pme_disable_msi);
+>>> +
+>>> +bool pcie_pme_no_msi(void)
+>>> +{
+>>> +=A0=A0=A0 return pcie_pme_msi_disabled;
+>>> +}
+>>> +EXPORT_SYMBOL_GPL(pcie_pme_no_msi);
+>>> =A0 static int __init pcie_pme_setup(char *str)
+>>> =A0 {
+>>> diff --git a/drivers/pci/pcie/portdrv.h b/drivers/pci/pcie/portdrv.h
+>>> index 1d50dc58ac40..7c8c3da4bd58 100644
+>>> --- a/drivers/pci/pcie/portdrv.h
+>>> +++ b/drivers/pci/pcie/portdrv.h
+>>> @@ -125,22 +125,12 @@ void pcie_port_bus_unregister(void);
+>>> =A0 struct pci_dev;
+>>> =A0 #ifdef CONFIG_PCIE_PME
+>>> -extern bool pcie_pme_msi_disabled;
+>>> -
+>>> -static inline void pcie_pme_disable_msi(void)
+>>> -{
+>>> -=A0=A0=A0 pcie_pme_msi_disabled =3D true;
+>>> -}
+>>> -
+>>> -static inline bool pcie_pme_no_msi(void)
+>>> -{
+>>> -=A0=A0=A0 return pcie_pme_msi_disabled;
+>>> -}
+>>> -
+>>> +void pcie_pme_disable_msi(void);
+>>> +bool pcie_pme_no_msi(void);
+>>> =A0 void pcie_pme_interrupt_enable(struct pci_dev *dev, bool enable);
+>>> =A0 #else /* !CONFIG_PCIE_PME */
+>>> =A0 static inline void pcie_pme_disable_msi(void) {}
+>>> -static inline bool pcie_pme_no_msi(void) { return false; }
+>>> +static inline bool pcie_pme_no_msi(void) {}
+>>
+>> This looks wrong.
+> Can you please give more info on what is wrong in this?
+Is missing "return false;" the wrong here or there is more than just this?
 
-Sorry for the late reply.
+> =
 
-On Fri, 2019-05-03 at 14:08 -0700, Stephen Boyd wrote:
-> Quoting Roger Lu (2019-05-01 23:19:31)
-> > On Tue, 2019-04-30 at 13:31 -0700, Stephen Boyd wrote:
-> > > Quoting Roger Lu (2019-04-30 04:20:10)
-> > > > diff --git a/Documentation/devicetree/bindings/power/mtk-svs.txt b/Documentation/devicetree/bindings/power/mtk-svs.txt
-> > > > new file mode 100644
-> > > > index 000000000000..355329db74ba
-> > > > --- /dev/null
-> > > > +++ b/Documentation/devicetree/bindings/power/mtk-svs.txt
-> [..]
-> > > > +
-> > > > +               svs_gpu: svs_gpu {
-> > > > +                       compatible = "mediatek,mt8183-svs-gpu";
-> > > > +                       power-domains = <&scpsys MT8183_POWER_DOMAIN_MFG_2D>;
-> > > > +                       operating-points-v2 = <&gpu_opp_table>;
-> > > > +               };
-> > > 
-> > > It looks like you need multiple OPPs for a single device, because it has
-> > > different independent power supplies it wants to associate the OPP
-> > > tables with?
-> > Yes. SVS has different controllers inside the hardware in order to
-> > calculate and optimize different OPP table voltage part.
-> 
-> So is there more than one SVS register region that needs certain devices
-> to be powered on or at least have their power domain enabled so that the
-> SVS hardware can read the voltage and adjust accordingly? I should read
-> the driver I suppose.
-No, basically, each SVS controller (aka SVS bank) only has one SVS
-register region that needs to be powered on for the init.
-In MT8183 SVS case, SVS has four controllers (banks). Each SVS bank
-needs corresponding power domain to be on for its init.
-
-#SVS bank corresponding power domain
-svs_cpu_little: Needs CPU-A53 power on for init
-svs_cpu_big: Needs CPU-A73 power on for init
-svs_cci: Needs CPU-A53 power on for init
-svs_gpu: Needs MFG_2D power on for init
-
-P.S SVS driver will use pm_runtime_get_sync() to turn on power before
-svs bank init and pm_runtime_put_sync() to turn off power power after
-svs bank init.
-
-> 
-> > 
-> > > Why can't these OPP tables be attached to the devices that
-> > > use them, i.e. CPU, GPU, CCI, etc.? Seems odd that those devices don't
-> > > have OPP tables that this hardware block can look up somehow.
-> > Those OPP tables are attached by our DVFS node (please refers below
-> > patch). SVS just shares with their OPP table and help optimize these OPP
-> > tables' voltage part.
-> > 
-> > Add cpufreq DTS node to the mt8183 and mt8183-evb
-> > https://patchwork.kernel.org/patch/10921675/
-> 
-> Cool thanks for the pointer.
-> 
-> > 
-> > 
-> > > Similarly,
-> > > the power domains should probably be part of the devices that are using
-> > > them and not these sub-nodes that are mirroring the other hardware
-> > > blocks in the system?
-> > Oh. There is a svs controller in GPU power-domain. We need to turn on
-> > GPU power so that svs controller can work functionally. Therefore, we
-> > add GPU power-domains in our svs_gpu sub-node.
-> > 
-> > 
-> 
-> Sorry, I'm not really following what you're saying too closely. I think
-> I get it but it sounds complicated.
-> 
-> I'm mostly wondering if having properties like svs-gpu = <&gpu_node>,
-> and svs-cci = <&cci_node> would work for you. The idea would be to link
-> this hardware block to the nodes that it's going to adjust the OPPs of.
-> Once you have the node, use some sort of OPP API to get the OPP table
-> for a device_node and adjust it at runtime for the current OPP.
-Yes, I understand your idea. Thank you. I share my design purpose and
-the troubles I encountered when linking other hardware block.
-
-#my design purpose
-1. SVS bank doesn't need all the resources in other device node like
-cci_node. Therefore, I model SVS sub-nodes to declare what svs bank
-needs.
-
-#troubles - linking other hardware block
-1. I don't know how to get cpu devcie after we link CPU node
-(svs_cpu_little = <cpu0>). I use "get_cpu_device(unsigned cpu)" in Linux
-driver to attain cpuX device generally.
-2. Our MT8183 has three gpu-related node as below, svs_gpu need the
-reference of gpu (OPP table) & gpu_core2 (power-domain MFG_2D) to make
-sure svs_gpu can init and update gpu OPP table. I don't know how to
-refer two nodes by one property. Therefore, I model a svs_gpu to declare
-what it needs.
-
-gpu: mali@13040000 {
-	...
-	power-domains = <&scpsys MT8183_POWER_DOMAIN_MFG_CORE0>;
-	operating-points-v2 = <&gpu_opp_table>;
-	...
-}
-
-gpu_core1: mali_gpu_core1 {
-	...
-	power-domains = <&scpsys MT8183_POWER_DOMAIN_MFG_CORE1>;
-};
-
-gpu_core2: mali_gpu_core2 {
-	...
-	power-domains = <&scpsys MT8183_POWER_DOMAIN_MFG_2D>;
-};
-
-P.S MT8183 GPU won't do upstream. So, there is no patchwork weblink to
-refer.
-
-> It sounds like it might be a little more complicated if the hardware goes
-> haywire when the device like GPU is powered down and the power domain is
-> shut off. Hopefully it isn't though, so that the driver can mostly sit
-> on top of the SVS hardware and poke OPP every once and a while when the
-> voltage needs to change, regardless of the power state of the device.
-
-> _______________________________________________
-> Linux-mediatek mailing list
-> Linux-mediatek@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-mediatek
+>>
+>> Thierry
+>>
+> =
 
 
 
