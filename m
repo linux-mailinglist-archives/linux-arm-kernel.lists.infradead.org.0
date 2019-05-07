@@ -2,85 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C06E61685E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 18:50:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A88016875
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 18:56:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5BUujH7WFZOxSA1gTqLEDsAb6+2QPgVS9PhJlO5ibEc=; b=nYtmgILeT0ZknS
-	kddXgi2rJzV9nOHgYyZSTXVfXdwLWv+e3ayu1Y0oaGekJJ0RgeqTNUgeKdMJ35kGjxOgSHZqAfd4W
-	UFCW3vtTqwJOWrWwI/N2UTjHNAXeT2otEVOTUOnHWS8Ugv0Wh2PpLCNfleRRnwnMwh+Eql3PWr+uH
-	tbixUyezBWTXmNpb5kcyEqwNAIx2JR8m4+C6FyDRX9j+7AI4Uj42BA9erPBTKYAA/v/ga8MVYqypH
-	e+ZCv/jOKY2qBoA4Yf7VUv5ePwbzUcWVrTqJISvYZX9faO1mqe5OUySc0OwIYyNoev6cgTma3qzSd
-	vvjtjIQicKdKNfsNBCEw==;
+	List-Owner; bh=Dt5SVAGwYU00onQ5iiL42s38ND1mR6W3bok5i4BOCp4=; b=rkcnsT6iDCOkh/
+	YCKMIx/ZL7O3vpQooLFtlygU/AZ9J6M649Q0vA0sI4kZu7g+l/l/qtr4/UNVcWbw7bs/v55p6I8km
+	ha5GtyIjWfABmn4W7inI3anJ9cF5u+oCWFBNCe65T3KwW6+XQyeFPECWxMv1Ei8aNOr0vmTXEzjls
+	PV25DKX/znCzifZDLgMxqbOePOv2MvTkKB9MuP9sRhy1ReCL5EpScfZUzpon/O4i7nQ1ElCcEoacN
+	+04XcCbCDWvIua4eNZpZb1sR/q+9Fzlvv5onXf49MH5ShKbNucTbHGLxeY2aHOfR4owdE42Ey6lby
+	U6GynTVcDzMABicVt2JQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hO3Iu-0004X3-UY; Tue, 07 May 2019 16:50:56 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hO3Nz-0006b4-9W; Tue, 07 May 2019 16:56:11 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hO3In-0004Wg-EZ
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 16:50:51 +0000
-Received: from mail-qk1-f179.google.com (mail-qk1-f179.google.com
- [209.85.222.179])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D3E7020C01
+ id 1hO3Nt-0006ad-2T
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 16:56:06 +0000
+Received: by mail-oi1-f195.google.com with SMTP id l203so12936212oia.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue,  7 May 2019 16:50:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1557247849;
- bh=4tZewm4W45u/iRbwmWuTzyVbl39+IFYmFh6qEBuo2/Q=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=g3/Lcp0RDChVoOY7BcV2cqvrWYSlDwAwTistWTDhiM5XVgVxrLcoa7/9VkLP6ETxC
- sR93HGCf2/SfTTnVTZYNWN4tLbBt7SdKS8om3QT+TqlLs3M3FhOGjZTZthXB6o0wn4
- xVBsSagpH2CcyuD4vvfbqWKSRwgtU6qX3z43Ii8A=
-Received: by mail-qk1-f179.google.com with SMTP id g190so1552868qkf.8
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 May 2019 09:50:48 -0700 (PDT)
-X-Gm-Message-State: APjAAAVVAlJ+089dOaNjStr4StYoaYavuV9QuGQHnoUvlVhp9WjzTeAu
- IcqgU/VssyqzlWDcUSnAgFDxrBBROpKN7Y0U1Q==
-X-Google-Smtp-Source: APXvYqwy91gBuwgIgFwBIlr7H7WziKK1/q+qve5xTg6xIcAxeG7XLdX/VKJhShfFBkFEzLxxQLOwWb8GHqYD7EgmNlA=
-X-Received: by 2002:a37:5c81:: with SMTP id q123mr23947855qkb.29.1557247848038; 
- Tue, 07 May 2019 09:50:48 -0700 (PDT)
-MIME-Version: 1.0
-References: <1555681688-19643-1-git-send-email-l.luba@partner.samsung.com>
- <CGME20190419134822eucas1p29c6eff0f500311749b33c4f556123cf0@eucas1p2.samsung.com>
- <1555681688-19643-4-git-send-email-l.luba@partner.samsung.com>
- <20190430223629.GA22317@bogus>
- <1fd44623-4a59-f014-1ae9-a7cc605ad30f@partner.samsung.com>
- <CAL_JsqJcm9Z6vYFHGyAZ+h3-kmSv6e=3NtO-fjJn3-QT0JoX+w@mail.gmail.com>
- <97277857-666d-7720-9d85-19120c977682@partner.samsung.com>
- <3d221027-292b-7d0d-2510-f230a81f4b52@partner.samsung.com>
-In-Reply-To: <3d221027-292b-7d0d-2510-f230a81f4b52@partner.samsung.com>
+ Tue, 07 May 2019 09:56:04 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=GHBrVv53KHjD9Lzdqkki/7g03N+HBCIm+A+C+qlOgKo=;
+ b=TWW81WUhoikhyGwN6CCr9xWkNjaGqii+QPjmXXNXLdo3xC0GlhF/HVDQD5w9Ewakv5
+ g6siJqg7JFd7DUoLYCqxkODcLl3BYwOIs9xcpbdxNPljvNxrFzQNTL4Lej+Ru/Q6Ikyj
+ PjJq6P5o1Wt1z/xFTrPfLl78LHopIe1Oa+c8hrZyqrwolrcRkuaGOQeIyCGx1PWO5YiV
+ iApLRJPA9r7ZSvjhEfV/pLlY29MAAUxa9UgpfoSiEMhRSobo+6WI8YmZ1R2UExZ1K+2o
+ ic+uYMrDUliru5VbnyajekfCAlRhewt8AXWTrANz8MK9bo/Y4zl2E0p7KVFr0P/oO/97
+ lWtQ==
+X-Gm-Message-State: APjAAAXX/dqgBDTI57/zOvVLsyn9OacG0TqzLoFLOJO3uRIg4BF3idV7
+ 0BrVDp+6rTtYqdcW8OPXMg==
+X-Google-Smtp-Source: APXvYqziy0dt5yKxPRpC/WI0aEFVwLEYWl2rCLc0y89G5wpDrqyJ0QCVbRi5gzlBoihgjYMXAFGgkQ==
+X-Received: by 2002:aca:db45:: with SMTP id s66mr824655oig.59.1557248162731;
+ Tue, 07 May 2019 09:56:02 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id n3sm5590234oia.46.2019.05.07.09.56.01
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 07 May 2019 09:56:01 -0700 (PDT)
+Date: Tue, 7 May 2019 11:56:01 -0500
 From: Rob Herring <robh@kernel.org>
-Date: Tue, 7 May 2019 11:50:37 -0500
-X-Gmail-Original-Message-ID: <CAL_Jsq+K-bdhTBnW5R4M0nDoikfFRdz-BeZf9Rf-hSmACj4B2w@mail.gmail.com>
-Message-ID: <CAL_Jsq+K-bdhTBnW5R4M0nDoikfFRdz-BeZf9Rf-hSmACj4B2w@mail.gmail.com>
-Subject: Re: [PATCH v3 3/4] Documentation: devicetree: add PPMU events
- description
-To: Lukasz Luba <l.luba@partner.samsung.com>
+To: Robin Gong <yibin.gong@nxp.com>
+Subject: Re: [PATCH v3 10/14] dt-bindings: dma: imx-sdma: add i.mx6ul/6sx
+ compatible name
+Message-ID: <20190507165601.GA17194@bogus>
+References: <1557249513-4903-1-git-send-email-yibin.gong@nxp.com>
+ <1557249513-4903-11-git-send-email-yibin.gong@nxp.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1557249513-4903-11-git-send-email-yibin.gong@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_095049_525241_9A15099E 
-X-CRM114-Status: GOOD (  22.51  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190507_095605_110206_C3BEE386 
+X-CRM114-Status: GOOD (  12.19  )
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.195 listed in list.dnswl.org]
+ 0.1 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -92,83 +91,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- willy.mh.wolff.ml@gmail.com,
- linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- "open list:THERMAL" <linux-pm@vger.kernel.org>,
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "robh@kernel.org" <robh@kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "plyatov@gmail.com" <plyatov@gmail.com>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, Kukjin Kim <kgene@kernel.org>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
+ "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
+ "vkoul@kernel.org" <vkoul@kernel.org>,
+ "broonie@kernel.org" <broonie@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
+ "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
+ "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 7, 2019 at 4:05 AM Lukasz Luba <l.luba@partner.samsung.com> wrote:
->
-> Hi Rob,
->
-> On 5/6/19 12:29 PM, Lukasz Luba wrote:
-> > Hi Rob,
-> >
-> > On 5/2/19 10:24 PM, Rob Herring wrote:
-> >> On Thu, May 2, 2019 at 3:52 AM Lukasz Luba
-> >> <l.luba@partner.samsung.com> wrote:
-> >>>
-> >>> Hi Rob,
-> >>>
-> >>> On 5/1/19 12:36 AM, Rob Herring wrote:
-> >>>> On Fri, Apr 19, 2019 at 03:48:07PM +0200, Lukasz Luba wrote:
-> >>>>> Extend the documenation by events description with new
-> >>>>> 'event-data-type'
-> >>>>> field. Add example how the event might be defined in DT.
-> >>>>
-> >>>> Why do we need event types in DT? We don't do this for other h/w
-> >>>> such as
-> >>>> ARM PMU.
-> >>> In ARM PMU all the events are hard-coded into the driver code i.e. in v7
-> >>> arch/arm/kernel/perf_event_v7.c
-> >>> and are seen from perf. They are different type and for different
-> >>> purpose. The Ecynos PPMU events are not seen in perf, they are
-> >>> for internal monitoring and must not be reset by other actors like perf.
-> >>> They are used by the 'bus drivers' to made some heuristics and tune the
-> >>> internal settings, like frequency.
-> >>>
-> >>> Chanwoo has written PPMU driver which relies on DT definition.
-> >>> The DT events are used by other DT devices by phandle.
-> >>
-> >> How is that done? I don't see anything in the binding for that.
-> > Here are the DT devices and how they are pinned together:
-> > - declared devfreq events:
-> > https://elixir.bootlin.com/linux/latest/source/arch/arm/boot/dts/exynos4412-ppmu-common.dtsi
-> >
-> > - devfreq events pinned to the bus device:
-> > https://elixir.bootlin.com/linux/latest/source/arch/arm/boot/dts/exynos4412-odroid-common.dtsi#L107
-> >
-> > - the bus device itself:
-> > https://elixir.bootlin.com/linux/latest/source/arch/arm/boot/dts/exynos4412.dtsi#L457
-> >
-> >
-> > Regards,
-> > Lukasz
-> >
-> >>
-> >> Rob
-> >>
-> >>
-> Can I send the next version of the patch set, which has Chanwoo's
-> suggestions, or do you have some objections to this PPMU entries?
+On Tue, 7 May 2019 09:16:38 +0000, Robin Gong wrote:
+> Add i.mx6ul and i.mx6sx compatible name.
+> 
+> Signed-off-by: Robin Gong <yibin.gong@nxp.com>
+> ---
+>  Documentation/devicetree/bindings/dma/fsl-imx-sdma.txt | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
 
-I think the existing binding which this is based on needs some
-changes, so it's pointless really for me to comment on additions.
+Please add Acked-by/Reviewed-by tags when posting new versions. However,
+there's no need to repost patches *only* to add the tags. The upstream
+maintainer will do that for acks received on the version they apply.
 
-Rob
+If a tag was not added on purpose, please state why and what changed.
 
 _______________________________________________
 linux-arm-kernel mailing list
