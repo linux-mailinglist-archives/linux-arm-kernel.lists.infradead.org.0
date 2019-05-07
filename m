@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4EA3516DBD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 01:10:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE70A16DBE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 01:10:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,69 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=nBONK892MuSmLfjUgo6oUtxsgZDJF8aeLdjbJm2hVgc=; b=QqVbnJxG/h3O97DO6G7rmR6tkW
-	362cTuBuMqdvcwKTQ/PTE80dRfiUHIuehmiwkFZMbf3Mu4yGgH7UVTWxVLXSoWMaUTb91YLsukcQd
-	GcvlyHXnR4csM8W9YTDV5VINDJMgsxJVR405w2Ew0lyuoFq0s5v+IHo6U0+aRiI5C8As2kvOiXABx
-	CaL8fOGZjh65Yv6sblGE6h6aoNcnbAz8DoJeYYQNimpJHC8SrpT7dPbFg2guP+jKrHG/rXVMs8LZ2
-	Qc1oB5zgMXLIt70u2k8+bhRUWw7ahcE9ubammZrgt07nAOpGJ/jeSGsBnkU/SWoGNCBAtJswS34/P
-	69v/gzgA==;
+	bh=+CWPg8giFZAAke3bfwZf2K82ZhZ7khazy7hD6SBVkJo=; b=J4LhpLkO70hGmO0CLLnpL0Z73c
+	mYd7LRK5TFMYdMTeDLVqFCO/jTS1H/V+9cAFWAwwvrftbeGBd0m58A1Zozqmz2XWh70OAz9y4kazJ
+	uKZZI9VMzbO/iLPSUH+CH2z2X8rWaV4UmX5/64cvXuz+n1tRYsSlof3MB8YL+EQXiYTmlgOQxO57A
+	2rhIvt/RtIqQnH8QqJ/adBCIu6yDX/pmjrbhg7Vrv3ef2+dj+u2i5670TIopUYPwdi2HCdAoDZ92j
+	WymzrhgXLrAgNmjqwqAVTa10Q0r7uuxifYXVpW7zG7LcnuQ1RMZvrjHMEiqR2M+gv6sEjH2VPJ7yY
+	iDR5y+3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hO9EG-00071B-Ud; Tue, 07 May 2019 23:10:32 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hO9EQ-0007FK-Qk; Tue, 07 May 2019 23:10:42 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hO9Dz-0006ll-6P
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 23:10:16 +0000
-Received: by mail-pl1-x644.google.com with SMTP id n8so8906409plp.10
+ id 1hO9E0-0006mJ-RV
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 23:10:18 +0000
+Received: by mail-pf1-x441.google.com with SMTP id t87so8851900pfa.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 May 2019 16:10:15 -0700 (PDT)
+ Tue, 07 May 2019 16:10:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=NxAUam5Dvt1HQoAAg/vTkC6mAACjVaJFnU6FSnpD4fQ=;
- b=W79MYHObhxKSz1yrBebZxY6fIgGFQNZrGIKFl/P07u3fvm0L1svG6Kge0eSRxVMp++
- HozWeRJd9krBTS+xX5kgatnXuUjD9tj/TvnMEHLL2cO8kQbZUF/lNWw586NJu17NAMcv
- ailq0uRykUWp8uFLRxoqACxHQA2bO+U4QJFEiX7wlWIww54EXW5ykKohjZClEbzdG4V5
- pQbIuKE1pEUnCXX9kQb6IU1GoFh54YlYmLWJfJR7yjlnLPnZ1cUP5EzLwc4P1HW5elL9
- I2H+DGBEluRSfw6DRuLlopJp/7NEJQPNe2mdK/zjG7tkkusjqNjlfErgu5gtocC1UsO2
- s10Q==
+ bh=jKMO64xZ/NLNKAqyiQNdSxQ5RK52UXZdK9wfMghWcTw=;
+ b=S6HCWjxdMhJXtpwtM6/5wElmUx+WcK79V76XMFaSdug+PAu+yyFKLenuOkNhRbUxmS
+ v3peC+1jROrGVnrXIO+nS9/OSVcDeZ0XUNanPKar19SXIlUGdEois0Y36nWjHYo55e+t
+ Apt2ZkWGfyiHwqu8+2TeAWya9gA+W3IanulvL9jEBzQBrfuBZUuOnqV3OycdOW45RDgQ
+ ietXGqmx6LdjfDE8N760ppa9EixmyUX/Mebgb4XYQjyT0pWlFOH+1RYHxeZ4g0fODrjV
+ /CdGuaj/I+JvyJ8z51L4ubjESbAmmGTB6BZWI1e/dlj5qk6WT+YUJNX/csrzSFx0fbAb
+ 7keg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=NxAUam5Dvt1HQoAAg/vTkC6mAACjVaJFnU6FSnpD4fQ=;
- b=mbE+iF8LhW5fE65P/w3VNXYCrbKWEqu0WHmT7Qks4ReyMULpFOPNPymslhBFjh0tbX
- JczgMr8oiWJx/fT9XEifdanPSeKa6mXW6oXMdpZZOxRVZE4rZwunY/RRQD0eic8rOB0o
- 7Eh9un7Ezdyr19WKGloVKa4RKVd54o4nNmcHGqSbkiieKy/MYDSYJrpqq+DcGwBZBYQx
- 19fQoZiIjBpWfeW6KpaDXDh6k83jW5RituhNRhNrxNb5f3sgy2VSZvV3ykJRXCgbgrxr
- TuytBo5ohWdJbfNgoM68Xlg+14qx9ctb6HCVHtp/1bEoZBtgjM6/cNUdkudjd0M7AuAB
- oSdw==
-X-Gm-Message-State: APjAAAWCLPV8wtrsg+3EA2nwk3j0uwxxiukhLkzVrtt8s2aWv3Vc1f20
- M/vEG3RmNNEKPHqe3cNGb7Tl81FK
-X-Google-Smtp-Source: APXvYqwxsPy0o2lNDye/b4YPbzc/hYdJL1LqlWL1647cpG9aT7GB0XIvVQFfixDP9ZMIBfigSy0I8g==
-X-Received: by 2002:a17:902:9a9:: with SMTP id
- 38mr28196267pln.10.1557270614534; 
- Tue, 07 May 2019 16:10:14 -0700 (PDT)
+ bh=jKMO64xZ/NLNKAqyiQNdSxQ5RK52UXZdK9wfMghWcTw=;
+ b=ZiVIQ1Oy25HU1dooehTf06BALpejFtv/P/OsVTlc4ZT/OFNk1NJhjvQnbMv2Ytsx8D
+ zWQeXbmK3i4ngHVhj4N+gTqxKabaUbc8BBSYNSu996nuSr4xOM+NketGWKDrNvZW7zJ5
+ gKFDR8KYDo3SwkxLNfKtS6dvIZREUVWse1m14lt+S9J2JT7jU7Lj7ka5w1/hwSVTpnkD
+ 5m0mKyJmf9g49SRe3OPoqsouTLLqbdg+Oq4y2wJBUw4uV2UxUxvfbs0zWUAFOxhgxnH2
+ pv96K0QzLPIu0vPB+qVXED6PKJRzFxFtoQW8DxQXasdbXveprE7+5XZXjpe8dt8TOJRU
+ SAGA==
+X-Gm-Message-State: APjAAAWRGhMRcMKbPnqQPzsbTSYcFRlsWayYYbPpClWw/+Bmc/2vV/am
+ eJCR6enjXwPkzv+HXrkxHpk=
+X-Google-Smtp-Source: APXvYqxwBYjE6jd3+l8NIjy4bYaiYCnr9KFnXMPOKo6jq8A3gHkYS7MaEekUk25FuV5XGUSfcQ+cjw==
+X-Received: by 2002:a63:e956:: with SMTP id q22mr43144036pgj.277.1557270616179; 
+ Tue, 07 May 2019 16:10:16 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.250])
- by smtp.gmail.com with ESMTPSA id w12sm7154742pfj.41.2019.05.07.16.10.13
+ by smtp.gmail.com with ESMTPSA id w12sm7154742pfj.41.2019.05.07.16.10.14
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 07 May 2019 16:10:13 -0700 (PDT)
+ Tue, 07 May 2019 16:10:15 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v3 1/2] firmware: arm_scmi: Fetch and store sensor scale
-Date: Tue,  7 May 2019 16:09:16 -0700
-Message-Id: <20190507230917.21659-2-f.fainelli@gmail.com>
+Subject: [PATCH v3 2/2] hwmon: scmi: Scale values to target desired HWMON units
+Date: Tue,  7 May 2019 16:09:17 -0700
+Message-Id: <20190507230917.21659-3-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190507230917.21659-1-f.fainelli@gmail.com>
 References: <20190507230917.21659-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_161015_241372_7F10E5B8 
-X-CRM114-Status: GOOD (  12.56  )
+X-CRM114-CacheID: sfid-20190507_161016_907980_D779864B 
+X-CRM114-Status: GOOD (  14.93  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -107,53 +106,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In preparation for dealing with scales within the SCMI HWMON driver,
-fetch and store the sensor unit scale into the scmi_sensor_info
-structure. In order to simplify computations for upper layer, take care
-of sign extending the scale to a full 8-bit signed value.
+If the SCMI firmware implementation is reporting values in a scale that
+is different from the HWMON units, we need to scale up or down the value
+according to how far appart they are.
 
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- drivers/firmware/arm_scmi/sensors.c | 6 ++++++
- include/linux/scmi_protocol.h       | 1 +
- 2 files changed, 7 insertions(+)
+ drivers/hwmon/scmi-hwmon.c | 43 +++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 42 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/firmware/arm_scmi/sensors.c b/drivers/firmware/arm_scmi/sensors.c
-index b53d5cc9c9f6..21353470a740 100644
---- a/drivers/firmware/arm_scmi/sensors.c
-+++ b/drivers/firmware/arm_scmi/sensors.c
-@@ -34,6 +34,8 @@ struct scmi_msg_resp_sensor_description {
- 		__le32 attributes_high;
- #define SENSOR_TYPE(x)		((x) & 0xff)
- #define SENSOR_SCALE(x)		(((x) >> 11) & 0x3f)
-+#define SENSOR_SCALE_SIGN	BIT(5)
-+#define SENSOR_SCALE_EXTEND	GENMASK(7, 6)
- #define SENSOR_UPDATE_SCALE(x)	(((x) >> 22) & 0x1f)
- #define SENSOR_UPDATE_BASE(x)	(((x) >> 27) & 0x1f)
- 		    u8 name[SCMI_MAX_STR_SIZE];
-@@ -140,6 +142,10 @@ static int scmi_sensor_description_get(const struct scmi_handle *handle,
- 			s = &si->sensors[desc_index + cnt];
- 			s->id = le32_to_cpu(buf->desc[cnt].id);
- 			s->type = SENSOR_TYPE(attrh);
-+			s->scale = SENSOR_SCALE(attrh);
-+			/* Sign extend to a full s8 */
-+			if (s->scale & SENSOR_SCALE_SIGN)
-+				s->scale |= SENSOR_SCALE_EXTEND;
- 			strlcpy(s->name, buf->desc[cnt].name, SCMI_MAX_STR_SIZE);
- 		}
- 
-diff --git a/include/linux/scmi_protocol.h b/include/linux/scmi_protocol.h
-index 3105055c00a7..9ff2e9357e9a 100644
---- a/include/linux/scmi_protocol.h
-+++ b/include/linux/scmi_protocol.h
-@@ -144,6 +144,7 @@ struct scmi_power_ops {
- struct scmi_sensor_info {
- 	u32 id;
- 	u8 type;
-+	s8 scale;
- 	char name[SCMI_MAX_STR_SIZE];
+diff --git a/drivers/hwmon/scmi-hwmon.c b/drivers/hwmon/scmi-hwmon.c
+index a80183a488c5..7820854e5954 100644
+--- a/drivers/hwmon/scmi-hwmon.c
++++ b/drivers/hwmon/scmi-hwmon.c
+@@ -18,6 +18,47 @@ struct scmi_sensors {
+ 	const struct scmi_sensor_info **info[hwmon_max];
  };
  
++static inline u64 __pow10(u8 x)
++{
++	u64 r = 1;
++
++	if (unlikely(x > 18))
++		return r;
++
++	while (x--)
++		r *= 10;
++
++	return r;
++}
++
++static u64 scmi_hwmon_scale(const struct scmi_sensor_info *sensor, u64 value)
++{
++	s8 scale = sensor->scale;
++	u64 f;
++
++	switch (sensor->type) {
++	case TEMPERATURE_C:
++	case VOLTAGE:
++	case CURRENT:
++		scale += 3;
++		break;
++	case POWER:
++	case ENERGY:
++		scale += 6;
++		break;
++	default:
++		break;
++	}
++
++	f = __pow10(abs(scale));
++	if (scale > 0)
++		value *= f;
++	else
++		value = div64_u64(value, f);
++
++        return value;
++}
++
+ static int scmi_hwmon_read(struct device *dev, enum hwmon_sensor_types type,
+ 			   u32 attr, int channel, long *val)
+ {
+@@ -30,7 +71,7 @@ static int scmi_hwmon_read(struct device *dev, enum hwmon_sensor_types type,
+ 	sensor = *(scmi_sensors->info[type] + channel);
+ 	ret = h->sensor_ops->reading_get(h, sensor->id, false, &value);
+ 	if (!ret)
+-		*val = value;
++		*val = scmi_hwmon_scale(sensor, value);
+ 
+ 	return ret;
+ }
 -- 
 2.17.1
 
