@@ -2,76 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4FF2916C20
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 22:22:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96B8E16C95
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 22:49:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:To:Subject:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4SxJzPqrMqKZwo3/vmXZ+ZP2Bz9JnEBRyOEUBGbLt4w=; b=Pc3Eol5cQxpQ9M
-	eoyYdlmEnnLMUEUZmpj+SbdVnNVuhbmFZS1ulbw1ofqW9BG09hWAw2YQhcv2CF31TOR7M7qdpR0G9
-	blU1+EzVkEmDhvaNjyGjlUP2dw0/GG0DHcdb5y3f70pq8pA6kbzXTdb3N1bJMtqDL9+o96hFv7f4g
-	r/fqs8m8twzoRu//JvkROjFo0TZ+yzy/aWqjYqs7fGK5zDmB/CycVaPVRnB5xUM2hnsyA59JOBCQI
-	wblEV2Q5JpVV0SZ6jj7q6EcJC9rNkcW4F0YRRJY/CwxygQoy8lERvgrKE/67Hg5xBSoQ8Vjm1a6y8
-	jgQIQL3jJL3IlzvQl0aA==;
+	List-Owner; bh=AjO3Ngi2WnpWDzqjxkXxFisKj9Etsx1/4CDST+tE4rk=; b=ee5ZHp6f+xdRy6
+	osWa7ZrPND6K+sngeHjJQinG+lIASR8iI/+6i1zvGhvceYKqXB4wkAa2kssW5DunA/UNKGvvDJEYg
+	iZD89kX4UPmZADeh5Lt9I7NdwKbTedMvH0RXy+Rl8aJl40F2tp3SiU8gbHkB/ZVusf/Rqr+0M5Uhk
+	wTfdKZIFCzlEMRJznSMU73qj9Ao4Tdtr1QtAnhLoygAKoFtq4DJNDTGhIKm6QPA/qsflbkAbcWfvW
+	MR9q+feSQs3QI7krGlRxXKhPbHkQh90FX9lvjiFZESxEgE9n8plIGrbV74gSQL9Lh/mRO4hxJQv0V
+	oIKToHklNgxG2rfeIooA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hO6bk-0005EJ-2n; Tue, 07 May 2019 20:22:36 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1hO71V-0005Xt-IX; Tue, 07 May 2019 20:49:13 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hO6bd-0005Dt-1u
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 20:22:30 +0000
-Received: by mail-io1-xd41.google.com with SMTP id z4so8655064iol.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 May 2019 13:22:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=f/phaMWBl8w/orUI/9ZcUjqn97xNpkGoSxumQHQ36oo=;
- b=U7ktGtyL5obMT3Ns6vFGIRSK82bpBmCyHjyuBdkMA/x+xRRJhOrr4/xmTUzfNyCdYl
- 4D8bG4tujLKy5OYi6Z/2D2my0tc7OmuGnvmXwNrmpHb2Huoa+7v7Kx7uL97pYJ+U3usP
- lPB8lJ9+yNaeTBqsxPnCY6WtQ0g3SHrb79Ey/Mwv0X6iwdTpxdqzzO4J2ZWXflbK6YXi
- LS8DJ5+jK+INMRhB8jYeIKkaVtMZNYX1Nb3bCs3iZst3UDVqBcGFJb+h0WvxSgRE0twr
- r2tb4Z/UIme7w8T2z0tD9JKAo+KELwZ8e2sMkyeanv7TQxhew0LMSx4whCGNNjPd9D6j
- EiZg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=f/phaMWBl8w/orUI/9ZcUjqn97xNpkGoSxumQHQ36oo=;
- b=d+T/jZx9a0F1MaeE2Q+vgP5zePuXjaVZPcki6aT7YT7Kxwe2EwFnaSxX4NJ8hEZgsq
- fBKy/IHRKSd8OqCULeKlaYnrZ5RTtPME2nQIcPKqe1lEVPxNaZ/YIh9hg1SAs7urRLJd
- FgulxcoorCBVk4XMSnvj/JVhuMt4r+13WoROWT//JfQNPhS1Trv1InzEJ4S1zEx+GJu2
- +fiyZv+HK8G9eWqp2SQUj6sdDJACLbP7MGycoj10NlnnfeglnZH07Ru76l+INcxUS3XW
- M/edSDd6L5TBBLkZrCaBPPJd0V192J9AgJOM4RVwY4JZKcQH4q8qbifQMFPd9f11K9la
- 3Wjw==
-X-Gm-Message-State: APjAAAXYxLYJvEBva9aOj6p1DpuYMBf2ovvRXLHVfsV5oOfYWcTtUsE5
- JVKZgpK62I232Vwv6xuUCkv1F9bLcN12TanPkgL2Og==
-X-Google-Smtp-Source: APXvYqz6K0++xnYrVO/nMmMDHzCmrnnJ30KtQKIfudJMzsziMdkOgJkw4NsAQTNp2qZF0i6awVk98pLh50NJVhkdTnY=
-X-Received: by 2002:a6b:8bc8:: with SMTP id n191mr5033675iod.86.1557260547792; 
- Tue, 07 May 2019 13:22:27 -0700 (PDT)
+ id 1hO71N-0005X3-LU; Tue, 07 May 2019 20:49:07 +0000
+Received: from localhost (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5ED85205C9;
+ Tue,  7 May 2019 20:49:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1557262144;
+ bh=UgQi0e7oHFXGjN1t4VrSnFtRC24frVRuEPTYfkilrW0=;
+ h=In-Reply-To:References:From:Subject:Cc:To:Date:From;
+ b=wxmG5tUCN0ycumdAr5/YRmGR0VS6AW087jInglKNSFP74iCaL9HDqJd0HLwAUYT/F
+ TNmpN2BxlDjHfQzQm3/94TRUXspHIbucrf9jvaUpSHO+GHrTTODDiGrafiurVmYr3b
+ 9cRG+CeH6C9+gOusj5zihFQMz3pxy+0EUL75anQU=
 MIME-Version: 1.0
-References: <20190501175052.29667-1-mathieu.poirier@linaro.org>
- <20190501175052.29667-2-mathieu.poirier@linaro.org>
- <808f4985-bbc8-6473-52c2-31b3743199bb@arm.com>
-In-Reply-To: <808f4985-bbc8-6473-52c2-31b3743199bb@arm.com>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Tue, 7 May 2019 14:22:16 -0600
-Message-ID: <CANLsYkxzFcGJZm5Vd2x=467+6t1Wm6YqHGMd3sQMh-Eak-nFRg@mail.gmail.com>
-Subject: Re: [PATCH 1/5] coresight: Fix buffer size in snapshot mode
-To: Suzuki K Poulose <suzuki.poulose@arm.com>
+In-Reply-To: <1557215457.2147.90.camel@mtksdaap41>
+References: <20190430112012.4514-1-roger.lu@mediatek.com>
+ <20190430112012.4514-2-roger.lu@mediatek.com>
+ <155665629219.168659.8221738507474891604@swboyd.mtv.corp.google.com>
+ <1556777971.12123.35.camel@mtksdaap41>
+ <155691770027.200842.16164651681407381397@swboyd.mtv.corp.google.com>
+ <1557215457.2147.90.camel@mtksdaap41>
+From: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [RFC v1 1/3] dt-bindings: soc: add mtk svs dt-bindings
+To: Roger Lu <roger.lu@mediatek.com>
+Message-ID: <155726214346.14659.17800352563837760252@swboyd.mtv.corp.google.com>
+User-Agent: alot/0.8
+Date: Tue, 07 May 2019 13:49:03 -0700
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_132229_195498_565440EA 
-X-CRM114-Status: GOOD (  24.85  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190507_134905_743193_F22E7D7C 
+X-CRM114-Status: GOOD (  30.39  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -80,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -91,84 +78,164 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jon Corbet <corbet@lwn.net>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Coresight ML <coresight@lists.linaro.org>,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- Peter Zijlstra <peterz@infradead.org>, Ingo Molnar <mingo@redhat.com>,
- Mike Leach <Mike.leach@arm.com>, Leo Yan <leo.yan@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
+ Angus.Lin@mediatek.com, linux-pm@vger.kernel.org,
+ Viresh Kumar <vireshk@kernel.org>, Kevin Hilman <khilman@kernel.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
+ HenryC.Chen@mediatek.com, devicetree@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Andy-YT.Liu@mediatek.com, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hey Suzuki,
+Quoting Roger Lu (2019-05-07 00:50:57)
+> Dear Stephen,
+> 
+> Sorry for the late reply.
+> 
+> On Fri, 2019-05-03 at 14:08 -0700, Stephen Boyd wrote:
+> > Quoting Roger Lu (2019-05-01 23:19:31)
+> > > On Tue, 2019-04-30 at 13:31 -0700, Stephen Boyd wrote:
+> > > > Quoting Roger Lu (2019-04-30 04:20:10)
+> > > > > diff --git a/Documentation/devicetree/bindings/power/mtk-svs.txt b/Documentation/devicetree/bindings/power/mtk-svs.txt
+> > > > > new file mode 100644
+> > > > > index 000000000000..355329db74ba
+> > > > > --- /dev/null
+> > > > > +++ b/Documentation/devicetree/bindings/power/mtk-svs.txt
+> > [..]
+> > > > > +
+> > > > > +               svs_gpu: svs_gpu {
+> > > > > +                       compatible = "mediatek,mt8183-svs-gpu";
+> > > > > +                       power-domains = <&scpsys MT8183_POWER_DOMAIN_MFG_2D>;
+> > > > > +                       operating-points-v2 = <&gpu_opp_table>;
+> > > > > +               };
+> > > > 
+> > > > It looks like you need multiple OPPs for a single device, because it has
+> > > > different independent power supplies it wants to associate the OPP
+> > > > tables with?
+> > > Yes. SVS has different controllers inside the hardware in order to
+> > > calculate and optimize different OPP table voltage part.
+> > 
+> > So is there more than one SVS register region that needs certain devices
+> > to be powered on or at least have their power domain enabled so that the
+> > SVS hardware can read the voltage and adjust accordingly? I should read
+> > the driver I suppose.
+> No, basically, each SVS controller (aka SVS bank) only has one SVS
+> register region that needs to be powered on for the init.
+> In MT8183 SVS case, SVS has four controllers (banks). Each SVS bank
+> needs corresponding power domain to be on for its init.
+> 
+> #SVS bank corresponding power domain
+> svs_cpu_little: Needs CPU-A53 power on for init
+> svs_cpu_big: Needs CPU-A73 power on for init
+> svs_cci: Needs CPU-A53 power on for init
+> svs_gpu: Needs MFG_2D power on for init
+> 
+> P.S SVS driver will use pm_runtime_get_sync() to turn on power before
+> svs bank init and pm_runtime_put_sync() to turn off power power after
+> svs bank init.
 
-On Tue, 7 May 2019 at 02:50, Suzuki K Poulose <suzuki.poulose@arm.com> wrote:
->
-> Hi Mathieu,
->
-> On 01/05/2019 18:50, Mathieu Poirier wrote:
-> > In snapshot mode the buffer used by the sink devices need to be
-> > equal to the ring buffer size in order for the user space mechanic
-> > to work properly.
->
-> The patch as such looks good to me. However I don't understand the
-> need for it for ETB and ETF. We can't use the AUX buf directly anyway
-> for these devices. We could always pretend that there was no overflow and
-> simply copy it to the AUX buf. The decoder would know the end of trace packets.
-> What am I missing here ?
+Ok. How are you making sure that certain CPUs are powered on?
 
-The problem here is to figure out how to recognised a buffer wrap has
-occurred in function cs_etm_find_snapshot() and how to compute the
-value of '*old'.  But looking at patch 4/5 again I came up with a
-better way to proceed, one that should remove the need for this patch.
-I will send another revision.
+> 
+> > 
+> > > 
+> > > > Why can't these OPP tables be attached to the devices that
+> > > > use them, i.e. CPU, GPU, CCI, etc.? Seems odd that those devices don't
+> > > > have OPP tables that this hardware block can look up somehow.
+> > > Those OPP tables are attached by our DVFS node (please refers below
+> > > patch). SVS just shares with their OPP table and help optimize these OPP
+> > > tables' voltage part.
+> > > 
+> > > Add cpufreq DTS node to the mt8183 and mt8183-evb
+> > > https://patchwork.kernel.org/patch/10921675/
+> > 
+> > Cool thanks for the pointer.
+> > 
+> > > 
+> > > 
+> > > > Similarly,
+> > > > the power domains should probably be part of the devices that are using
+> > > > them and not these sub-nodes that are mirroring the other hardware
+> > > > blocks in the system?
+> > > Oh. There is a svs controller in GPU power-domain. We need to turn on
+> > > GPU power so that svs controller can work functionally. Therefore, we
+> > > add GPU power-domains in our svs_gpu sub-node.
+> > > 
+> > > 
+> > 
+> > Sorry, I'm not really following what you're saying too closely. I think
+> > I get it but it sounds complicated.
+> > 
+> > I'm mostly wondering if having properties like svs-gpu = <&gpu_node>,
+> > and svs-cci = <&cci_node> would work for you. The idea would be to link
+> > this hardware block to the nodes that it's going to adjust the OPPs of.
+> > Once you have the node, use some sort of OPP API to get the OPP table
+> > for a device_node and adjust it at runtime for the current OPP.
+> Yes, I understand your idea. Thank you. I share my design purpose and
+> the troubles I encountered when linking other hardware block.
+> 
+> #my design purpose
+> 1. SVS bank doesn't need all the resources in other device node like
+> cci_node. Therefore, I model SVS sub-nodes to declare what svs bank
+> needs.
 
-Mathieu
+Do you mean that there are other properties in the cci_node that the SVS
+hardware block doesn't use? That doesn't sound like a problem to me. I
+view nodes in the SoC bus as all memory mapped IO devices and it sounds
+like SVS is a hardware IP core that's off to the side in the system that
+has some sensors that goes into various other IP blocks in the system.
+It's correct to model the registers and interrupts, etc. as one node for
+the one hardware block that's delivered by the hardware engineers.
 
->
-> >
-> > Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> > ---
-> >   drivers/hwtracing/coresight/coresight-etb10.c | 23 +++++++++++++++++++
-> >   .../hwtracing/coresight/coresight-tmc-etf.c   | 20 ++++++++++++++++
-> >   .../hwtracing/coresight/coresight-tmc-etr.c   |  8 +++++--
-> >   3 files changed, 49 insertions(+), 2 deletions(-)
-> >
-> > diff --git a/drivers/hwtracing/coresight/coresight-etb10.c b/drivers/hwtracing/coresight/coresight-etb10.c
-> > index 4ee4c80a4354..0764647b92bc 100644
-> > --- a/drivers/hwtracing/coresight/coresight-etb10.c
-> > +++ b/drivers/hwtracing/coresight/coresight-etb10.c
-> > @@ -374,7 +374,30 @@ static void *etb_alloc_buffer(struct coresight_device *csdev,
-> >                             int nr_pages, bool overwrite)
-> >   {
-> >       int node, cpu = event->cpu;
-> > +     u32 capacity;
-> >       struct cs_buffers *buf;
-> > +     struct etb_drvdata *drvdata;
-> > +
-> > +     /*
-> > +      * In snapsot mode the size of the perf ring buffer needs to be equal
-> > +      * to the size of the device's internal memory if we want to reuse the
-> > +      * generic AUX buffer management mechanic.
-> > +      *
-> > +      * For example (assuming 4096 byte page size):
-> > +      *
-> > +      *    # cat /sys/bus/coresight/devices/20010000.etb/mgmt/rdp
-> > +      *    0x2000
-> > +      *    # perf record -e cs_etm/@20010000.etf/ -S -m,8 --per-thread $APP
-> > +      *
-> > +      */
->
-> If at all we need to do this, Is there a way to force the perf to use the
-> appropriate size for AUX buf depending on the sink ? I would prefer that instead
-> of finding this magic number and calculating it based on the page_size. If we
-> could not do that easily, it may be a good idea to expose something like,
-> "buffer_pages" under sysfs to help the user a bit.
->
-> Suzuki
+> 
+> #troubles - linking other hardware block
+> 1. I don't know how to get cpu devcie after we link CPU node
+> (svs_cpu_little = <cpu0>). I use "get_cpu_device(unsigned cpu)" in Linux
+> driver to attain cpuX device generally.
+
+This should probably be some sort of list property that points to all
+the CPUs in the little and big clusters. Then the code can iterate
+through the node pointers and look for an OPP table in any of them by
+combining of_cpu_node_to_id() with get_cpu_device()?
+
+> 2. Our MT8183 has three gpu-related node as below, svs_gpu need the
+> reference of gpu (OPP table) & gpu_core2 (power-domain MFG_2D) to make
+> sure svs_gpu can init and update gpu OPP table. I don't know how to
+> refer two nodes by one property. Therefore, I model a svs_gpu to declare
+> what it needs.
+> 
+> gpu: mali@13040000 {
+>         ...
+>         power-domains = <&scpsys MT8183_POWER_DOMAIN_MFG_CORE0>;
+>         operating-points-v2 = <&gpu_opp_table>;
+>         ...
+> }
+> 
+> gpu_core1: mali_gpu_core1 {
+>         ...
+>         power-domains = <&scpsys MT8183_POWER_DOMAIN_MFG_CORE1>;
+> };
+> 
+> gpu_core2: mali_gpu_core2 {
+>         ...
+>         power-domains = <&scpsys MT8183_POWER_DOMAIN_MFG_2D>;
+> };
+
+These three nodes should be combined into one node for the GPU. The
+power domains will need to be referred to by name. Luckily we have
+support for multiple power domains in the kernel now so this should
+work. Let us know if it doesn't work for some reason.
+
+> 
+> P.S MT8183 GPU won't do upstream. So, there is no patchwork weblink to
+> refer.
+
+Sure.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
