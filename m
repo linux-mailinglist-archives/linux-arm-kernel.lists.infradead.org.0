@@ -2,65 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A43F15D66
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 08:33:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 204DC15D6D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 08:33:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JpmlrecOCZDK2rynKWDhkPbmBcacnLW9ASbn2NOSU20=; b=aDdXYZCD60/tjx
-	LPkyw1eBAd8cjFkyTkFjVj0bGUX/L9z7NzBd+mdkcovdRwu7bEOPSV6UUKy4dXKTbZ9hZTt5/DyWR
-	cvmF+ojmCDWrpgmV9TqFVKgp5NUH3bIACt1ampxHw0phVPH2/vRg6Q75Vx2nzapt2Pawi14j1D43/
-	ku2lmiZdt7YOBtUoFatKpjrfKLrQIbth+A0Ieu8bA05yhh6eStvZoCslF1c6Le3RwepJ5es6IQ/oa
-	me8yMXcIISR/DnStCTLtUbq5OoySOE3ZwKQuos4M1Zs/iqsGBWNB3u79asISksMpW+Vz1GHEusFp9
-	3FzP1XJDi6Dq5tAoicpg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=61VsWLQtZrj+nCc0n0TNsdgxXTRBvlOTpTOo3CtgGM0=; b=ckH442xZtGhiG0
+	rEJ+5QWVuoYaHXNF0B5+3f40zKiwh9ZANqAuFg5s/RpVPtWstpIl25ntLYpZzFGs1OZB6yaZaJbi5
+	UChgAlJNT3daMU3vjWJxVIbuh8UufDLWOKgC4noLQY3mmBJorNkPi8asYaDo6uoXwXMv/vmsOn92O
+	6lE2yFo1am+/DVvl7sRW2SDCA2x6Dp1rQ4jTzi/49DPRXk1Vln9ndPremklFdAF2zHHtzXOOszSX8
+	LaE/BfKzuhuU58Q/SYJ6MuvQx8lLeU2Kf1vtTk4FlZMK8Wb52JPDjhaZ9NiT405CftTKsgd1boPqx
+	A+xEx236CclKSYPHaixw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNtf9-0007Ab-DD; Tue, 07 May 2019 06:33:15 +0000
-Received: from mga12.intel.com ([192.55.52.136])
+	id 1hNtfj-0007Px-3i; Tue, 07 May 2019 06:33:51 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNtf2-0007AG-1u
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 06:33:09 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga007.fm.intel.com ([10.253.24.52])
- by fmsmga106.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 06 May 2019 23:33:08 -0700
-X-ExtLoop1: 1
-Received: from ahunter-desktop.fi.intel.com (HELO [10.237.72.198])
- ([10.237.72.198])
- by fmsmga007.fm.intel.com with ESMTP; 06 May 2019 23:33:05 -0700
-Subject: Re: [PATCH 1/2] mmc: sdhci-iproc: cygnus: Set NO_HISPD bit to fix
- HS50 data hold time problem
-To: Scott Branden <scott.branden@broadcom.com>,
- Ulf Hansson <ulf.hansson@linaro.org>, Ray Jui <rjui@broadcom.com>,
- Scott Branden <sbranden@broadcom.com>, Stefan Wahren <stefan.wahren@i2se.com>
-References: <20190506170115.10840-1-scott.branden@broadcom.com>
- <20190506170115.10840-2-scott.branden@broadcom.com>
-From: Adrian Hunter <adrian.hunter@intel.com>
-Organization: Intel Finland Oy, Registered Address: PL 281, 00181 Helsinki,
- Business Identity Code: 0357606 - 4, Domiciled in Helsinki
-Message-ID: <195374db-9a9a-2807-d8be-50ec4e8fedcb@intel.com>
-Date: Tue, 7 May 2019 09:32:58 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hNtfb-0007Pc-ED
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 06:33:44 +0000
+Received: from localhost (unknown [37.142.3.125])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D6C092087F;
+ Tue,  7 May 2019 06:33:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1557210822;
+ bh=oBFyk7fpihJdB0jCxegQVyX+6vGmLC1DK9IvU35itFk=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=RyPsl6lmqvcCnKl41VkY/GHW2+ETy7nDPo8Tpqc6bp7gDCBLdqWePFxG5B2Wa9vwT
+ R3/WlBSqCc8Bj3KtWz9uGTPPZS6ordaRPlQ/fveMibMSWfgfc4tq1AglaAlmwW4kMa
+ oMxOIvxG2cStHRR+RV/gLi/uVrPbQ27CrKcpR2aA=
+Date: Tue, 7 May 2019 09:33:37 +0300
+From: Leon Romanovsky <leon@kernel.org>
+To: Jason Gunthorpe <jgg@ziepe.ca>
+Subject: Re: [PATCH v15 13/17] IB, arm64: untag user pointers in
+ ib_uverbs_(re)reg_mr()
+Message-ID: <20190507063337.GP6938@mtr-leonro.mtl.com>
+References: <cover.1557160186.git.andreyknvl@google.com>
+ <66d044ab9445dcf36a96205a109458ac23f38b73.1557160186.git.andreyknvl@google.com>
+ <20190506195020.GD6201@ziepe.ca>
 MIME-Version: 1.0
-In-Reply-To: <20190506170115.10840-2-scott.branden@broadcom.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190506195020.GD6201@ziepe.ca>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_233308_110590_F407F680 
-X-CRM114-Status: GOOD (  21.13  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190506_233343_492371_D040C343 
+X-CRM114-Status: GOOD (  14.85  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.136 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -72,51 +78,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-mmc@vger.kernel.org, Trac Hoang <trac.hoang@broadcom.com>,
- BCM Kernel Feedback <bcm-kernel-feedback-list@broadcom.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ linux-kselftest@vger.kernel.org, Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, linux-rdma@vger.kernel.org,
+ amd-gfx@lists.freedesktop.org, Dmitry Vyukov <dvyukov@google.com>,
+ Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
+ linux-media@vger.kernel.org, Kevin Brodsky <kevin.brodsky@arm.com>,
+ Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/05/19 8:01 PM, Scott Branden wrote:
-> From: Trac Hoang <trac.hoang@broadcom.com>
-> 
-> The iproc host eMMC/SD controller hold time does not meet the
-> specification in the HS50 mode. This problem can be mitigated
-> by disabling the HISPD bit; thus forcing the controller output
-> data to be driven on the falling clock edges rather than the
-> rising clock edges.
-> 
-> This change applies only to the Cygnus platform.
-> 
-> Fixes: c833e92bbb60 ("mmc: sdhci-iproc: support standard byte register accesses")
-> Signed-off-by: Trac Hoang <trac.hoang@broadcom.com>
-> Signed-off-by: Scott Branden <scott.branden@broadcom.com>
+On Mon, May 06, 2019 at 04:50:20PM -0300, Jason Gunthorpe wrote:
+> On Mon, May 06, 2019 at 06:30:59PM +0200, Andrey Konovalov wrote:
+> > This patch is a part of a series that extends arm64 kernel ABI to allow to
+> > pass tagged user pointers (with the top byte set to something else other
+> > than 0x00) as syscall arguments.
+> >
+> > ib_uverbs_(re)reg_mr() use provided user pointers for vma lookups (through
+> > e.g. mlx4_get_umem_mr()), which can only by done with untagged pointers.
+> >
+> > Untag user pointers in these functions.
+> >
+> > Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+> > ---
+> >  drivers/infiniband/core/uverbs_cmd.c | 4 ++++
+> >  1 file changed, 4 insertions(+)
+>
+> I think this is OK.. We should really get it tested though.. Leon?
 
-Acked-by: Adrian Hunter <adrian.hunter@intel.com>
+It can be done after v5.2-rc1.
 
-> ---
->  drivers/mmc/host/sdhci-iproc.c | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/mmc/host/sdhci-iproc.c b/drivers/mmc/host/sdhci-iproc.c
-> index 9d12c06c7fd6..9d4071c41c94 100644
-> --- a/drivers/mmc/host/sdhci-iproc.c
-> +++ b/drivers/mmc/host/sdhci-iproc.c
-> @@ -196,7 +196,8 @@ static const struct sdhci_ops sdhci_iproc_32only_ops = {
->  };
->  
->  static const struct sdhci_pltfm_data sdhci_iproc_cygnus_pltfm_data = {
-> -	.quirks = SDHCI_QUIRK_DATA_TIMEOUT_USES_SDCLK,
-> +	.quirks = SDHCI_QUIRK_DATA_TIMEOUT_USES_SDCLK |
-> +		  SDHCI_QUIRK_NO_HISPD_BIT,
->  	.quirks2 = SDHCI_QUIRK2_ACMD23_BROKEN | SDHCI_QUIRK2_HOST_OFF_CARD_ON,
->  	.ops = &sdhci_iproc_32only_ops,
->  };
-> 
+Thanks
 
+>
+> Jason
 
 _______________________________________________
 linux-arm-kernel mailing list
