@@ -2,65 +2,108 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E5E61157AB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 04:33:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73DB1157DF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 05:03:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
-	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=t8x9WSeQa7I76amb/jxwXdkYt2KRibJRFUpEvzcr0+4=; b=S4W
-	h9XV5f3msOlNpn8omuzfiu4ucZ+wMt1RLJ5c285ri4rg+irWIaiGw3LrotPIvnUIzJTC7ZjaHypOm
-	H46cJfHwQKgTFSv8mu7WGDLXCRXl3y/yk4TfBbeotomCpBa5PAACDeUNuFdySC7eyroXhmi3cRw/a
-	82iEnSi52wfxt21xk76CH8BaiF7ks8cjx3yMMHAVhmC1DB4BcaYsqOSaIdFl+PYLs1xTdL61VRpIZ
-	o8MeGp5ZGhFmHzIFQNJHO+7JpSsYv/W6BdZd83gtbHLjlEmXvN15/iv5l9Vy859L2+MAKdQM+HPOF
-	SshFuMoKvgovqXZZzkTxocd0SxUmFrQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=F7mZyOV7HjbVNDOF1J7vptT6MWUMykGUbh6Vx+pVB2Y=; b=CJ2eQFeGHK+DoQ
+	GV0uU/oWcdjsUdcYqBdl1NSBVTqQZdGdlZtnB1My54Qm94nUA4dtwWaCM9afQfiynrQ91SF5n6xTd
+	RuVxCNjQQnbpHZ56eHy/ZZXxIDR6QilQXb1ourlY2oJFVWNykAWLbuMzlsmsX4wc1HvnOqArCulKU
+	OasVCCWwi/BoL9cL/3GV6UHyXNUVGkeBCotm1hYvAysDDgwrFg4EOy0AA2Qp5VyclQh2+vE/O8Nx5
+	x/Hk5I3VKK804Ys8yuqXEPecI651tfbPn5z1iLeQpr5Dks8cW1WdyDdAgqZoVPEfprropta0qM7EU
+	61RVEYlNFf2zpcjmxmvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNpum-0004zg-Rd; Tue, 07 May 2019 02:33:08 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1hNqNf-0005Ta-9a; Tue, 07 May 2019 03:02:59 +0000
+Received: from mail-eopbgr10082.outbound.protection.outlook.com ([40.107.1.82]
+ helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNpuf-0004zE-Cq
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 02:33:03 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
- Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
- List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=ulGxU59+SHg0LveLVxFzfgXsIwZDWNfvFJ6byVaTrN4=; b=L0/VEO+W2/21
- 51anoW1FdyyRxfq0q/AiTj/LsOLLjLPZIAyyasE52MezVB59pwN0OWpnqHuyDQR1LguB4AuLFneU6
- RJPW1HEHVyp3xYfNGXI+FY3dETq3JV8wCsH+PVXcXQxF7hBILmw0cm2lyb4Z31feHXq/rJmbANf68
- LCfNg=;
-Received: from kd111239185057.au-net.ne.jp ([111.239.185.57]
- helo=finisterre.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hNpuU-0003UI-A4; Tue, 07 May 2019 02:32:51 +0000
-Received: by finisterre.ee.mobilebroadband (Postfix, from userid 1000)
- id A64D7440017; Tue,  7 May 2019 03:32:46 +0100 (BST)
-From: Mark Brown <broonie@kernel.org>
-To: Olivier Moysan <olivier.moysan@st.com>
-Subject: Applied "ASoC: stm32: spdifrx: manage identification registers" to
- the asoc tree
-In-Reply-To: <1557146646-18150-4-git-send-email-olivier.moysan@st.com>
-X-Patchwork-Hint: ignore
-Message-Id: <20190507023246.A64D7440017@finisterre.sirena.org.uk>
-Date: Tue,  7 May 2019 03:32:46 +0100 (BST)
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+ id 1hNqNW-0005SV-Ny
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 03:02:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=saxqos/nQDJQsNSHnss4DxFfxmLYJwOdkuVt9kRLtKI=;
+ b=RBTacOCkkDIBwkZMccViSTq8vS2sSBUDdxM+JhI2X2j7Gg0xyNNDt3+LoNbyiKlQKDmCW/BTprFm25RO4/t3cFhj7HNwlrmpw4ZpdOu6eCJx8ahi73ZBy7F1VmZonb1fkyJDya+oLl1C9XYMxXCX6mbnVWvSVU35B9H7NfL16i0=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3754.eurprd04.prod.outlook.com (52.134.67.26) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1856.11; Tue, 7 May 2019 03:02:45 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::e8ca:4f6b:e43:c170]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::e8ca:4f6b:e43:c170%3]) with mapi id 15.20.1856.012; Tue, 7 May 2019
+ 03:02:45 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
+ <mark.rutland@arm.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
+ <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: [PATCH] ARM: dts: imx6ul: add clock-frequency to CPU node
+Thread-Topic: [PATCH] ARM: dts: imx6ul: add clock-frequency to CPU node
+Thread-Index: AQHVBIFYqIWZIuwvrU2KnaxGQFBgOQ==
+Date: Tue, 7 May 2019 03:02:45 +0000
+Message-ID: <1557197868-6963-1-git-send-email-Anson.Huang@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.7.4
+x-clientproxiedby: HK0PR01CA0040.apcprd01.prod.exchangelabs.com
+ (2603:1096:203:3e::28) To DB3PR0402MB3916.eurprd04.prod.outlook.com
+ (2603:10a6:8:10::18)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: c20c8842-c5ee-4aef-245e-08d6d2987a77
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:DB3PR0402MB3754; 
+x-ms-traffictypediagnostic: DB3PR0402MB3754:
+x-microsoft-antispam-prvs: <DB3PR0402MB3754CDDA57C6E4FC697AB798F5310@DB3PR0402MB3754.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1388;
+x-forefront-prvs: 0030839EEE
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(136003)(376002)(396003)(346002)(366004)(39860400002)(199004)(189003)(2906002)(102836004)(478600001)(386003)(6506007)(99286004)(5660300002)(66066001)(486006)(2501003)(305945005)(86362001)(52116002)(2201001)(3846002)(6116002)(4744005)(68736007)(14454004)(6436002)(8936002)(53936002)(7736002)(25786009)(6486002)(66476007)(73956011)(66946007)(66556008)(64756008)(66446008)(4326008)(186003)(316002)(50226002)(256004)(26005)(36756003)(476003)(2616005)(6512007)(14444005)(71190400001)(110136005)(71200400001)(8676002)(81166006)(81156014)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3754;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: Q58S0t6lLK8acWWH0KWoR8NWY3ZFrWOpZKRsULrvWK+FYCgV0eegaR5cm5tAGS+5lWfW1Qt5YjAKeg9Pc5FFVTp1pWA3P2+4S2Qd7iG68Z5uyF4jQGMiwxTZUo2vOHMJElBg6vI6vSB2EyjbKqs/Sgj6VihFibdyZ9l0d6sNwG5keAlhyDI0D6nf6je7jlu840bc44qSFmmtHN8zvf1eISruR6jFDj75BMGuC0mzKCA1olmPug4FSVhlWSbX6qvhh5WWA23fe4jzZMLDaLMMvcCh/mDWrtMObbc4c9p4iqye8jYJ9T+QNPGJp/hmFvOvslLJ3uatlG3+c27/Rs4IOUUfLMyfsved7tbXBCpfThEFKfBgTMad9o3hN7ahSAaQChHkJWzzJlhcovcNF9CFLtM2FmGlIw/n1z3rotqeagQ=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: c20c8842-c5ee-4aef-245e-08d6d2987a77
+X-MS-Exchange-CrossTenant-originalarrivaltime: 07 May 2019 03:02:45.6328 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3754
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_193301_585929_780B79B1 
-X-CRM114-Status: GOOD (  18.06  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190506_200250_858551_08CBD445 
+X-CRM114-Status: GOOD (  12.72  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.1 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.1.82 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -76,154 +119,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, olivier.moysan@st.com, alexandre.torgue@st.com,
- tiwai@suse.com, arnaud.pouliquen@st.com, lgirdwood@gmail.com,
- linux-kernel@vger.kernel.org, Mark Brown <broonie@kernel.org>,
- mcoquelin.stm32@gmail.com, perex@perex.cz,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- benjamin.gaignard@st.com
-MIME-Version: 1.0
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch
+Add clock-frequency property to CPU node. Avoids warnings like
+"/cpus/cpu@0 missing clock-frequency property" for "arm,cortex-a7".
 
-   ASoC: stm32: spdifrx: manage identification registers
-
-has been applied to the asoc tree at
-
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.3
-
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
-
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
-
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
-
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
-
-Thanks,
-Mark
-
-From 1a5c0b28fc56044737f988960f3bc5fdcdba0827 Mon Sep 17 00:00:00 2001
-From: Olivier Moysan <olivier.moysan@st.com>
-Date: Mon, 6 May 2019 14:44:06 +0200
-Subject: [PATCH] ASoC: stm32: spdifrx: manage identification registers
-
-Add support of identification registers in STM32 SPDIFRX.
-
-Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-Signed-off-by: Mark Brown <broonie@kernel.org>
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- sound/soc/stm/stm32_spdifrx.c | 37 +++++++++++++++++++++++++++++++++--
- 1 file changed, 35 insertions(+), 2 deletions(-)
+ arch/arm/boot/dts/imx6ul.dtsi  | 1 +
+ arch/arm/boot/dts/imx6ull.dtsi | 1 +
+ 2 files changed, 2 insertions(+)
 
-diff --git a/sound/soc/stm/stm32_spdifrx.c b/sound/soc/stm/stm32_spdifrx.c
-index b4c3d983e195..62a887ee4a03 100644
---- a/sound/soc/stm/stm32_spdifrx.c
-+++ b/sound/soc/stm/stm32_spdifrx.c
-@@ -16,6 +16,7 @@
-  * details.
-  */
+diff --git a/arch/arm/boot/dts/imx6ul.dtsi b/arch/arm/boot/dts/imx6ul.dtsi
+index bbf010c..fc388b8 100644
+--- a/arch/arm/boot/dts/imx6ul.dtsi
++++ b/arch/arm/boot/dts/imx6ul.dtsi
+@@ -59,6 +59,7 @@
+ 			compatible = "arm,cortex-a7";
+ 			device_type = "cpu";
+ 			reg = <0>;
++			clock-frequency = <696000000>;
+ 			clock-latency = <61036>; /* two CLK32 periods */
+ 			#cooling-cells = <2>;
+ 			operating-points = <
+diff --git a/arch/arm/boot/dts/imx6ull.dtsi b/arch/arm/boot/dts/imx6ull.dtsi
+index 22e4a30..727b92f 100644
+--- a/arch/arm/boot/dts/imx6ull.dtsi
++++ b/arch/arm/boot/dts/imx6ull.dtsi
+@@ -12,6 +12,7 @@
+ /delete-node/ &crypto;
  
-+#include <linux/bitfield.h>
- #include <linux/clk.h>
- #include <linux/completion.h>
- #include <linux/delay.h>
-@@ -36,6 +37,9 @@
- #define STM32_SPDIFRX_DR	0x10
- #define STM32_SPDIFRX_CSR	0x14
- #define STM32_SPDIFRX_DIR	0x18
-+#define STM32_SPDIFRX_VERR	0x3F4
-+#define STM32_SPDIFRX_IDR	0x3F8
-+#define STM32_SPDIFRX_SIDR	0x3FC
- 
- /* Bit definition for SPDIF_CR register */
- #define SPDIFRX_CR_SPDIFEN_SHIFT	0
-@@ -169,6 +173,18 @@
- #define SPDIFRX_SPDIFEN_SYNC	0x1
- #define SPDIFRX_SPDIFEN_ENABLE	0x3
- 
-+/* Bit definition for SPDIFRX_VERR register */
-+#define SPDIFRX_VERR_MIN_MASK	GENMASK(3, 0)
-+#define SPDIFRX_VERR_MAJ_MASK	GENMASK(7, 4)
-+
-+/* Bit definition for SPDIFRX_IDR register */
-+#define SPDIFRX_IDR_ID_MASK	GENMASK(31, 0)
-+
-+/* Bit definition for SPDIFRX_SIDR register */
-+#define SPDIFRX_SIDR_SID_MASK	GENMASK(31, 0)
-+
-+#define SPDIFRX_IPIDR_NUMBER	0x00130041
-+
- #define SPDIFRX_IN1		0x1
- #define SPDIFRX_IN2		0x2
- #define SPDIFRX_IN3		0x3
-@@ -607,6 +623,9 @@ static bool stm32_spdifrx_readable_reg(struct device *dev, unsigned int reg)
- 	case STM32_SPDIFRX_DR:
- 	case STM32_SPDIFRX_CSR:
- 	case STM32_SPDIFRX_DIR:
-+	case STM32_SPDIFRX_VERR:
-+	case STM32_SPDIFRX_IDR:
-+	case STM32_SPDIFRX_SIDR:
- 		return true;
- 	default:
- 		return false;
-@@ -642,10 +661,11 @@ static const struct regmap_config stm32_h7_spdifrx_regmap_conf = {
- 	.reg_bits = 32,
- 	.reg_stride = 4,
- 	.val_bits = 32,
--	.max_register = STM32_SPDIFRX_DIR,
-+	.max_register = STM32_SPDIFRX_SIDR,
- 	.readable_reg = stm32_spdifrx_readable_reg,
- 	.volatile_reg = stm32_spdifrx_volatile_reg,
- 	.writeable_reg = stm32_spdifrx_writeable_reg,
-+	.num_reg_defaults_raw = STM32_SPDIFRX_SIDR / sizeof(u32) + 1,
- 	.fast_io = true,
- 	.cache_type = REGCACHE_FLAT,
- };
-@@ -911,6 +931,7 @@ static int stm32_spdifrx_probe(struct platform_device *pdev)
- 	struct stm32_spdifrx_data *spdifrx;
- 	struct reset_control *rst;
- 	const struct snd_dmaengine_pcm_config *pcm_config = NULL;
-+	u32 ver, idr;
- 	int ret;
- 
- 	spdifrx = devm_kzalloc(&pdev->dev, sizeof(*spdifrx), GFP_KERNEL);
-@@ -967,7 +988,19 @@ static int stm32_spdifrx_probe(struct platform_device *pdev)
- 		goto error;
- 	}
- 
--	return 0;
-+	ret = regmap_read(spdifrx->regmap, STM32_SPDIFRX_IDR, &idr);
-+	if (ret)
-+		goto error;
-+
-+	if (idr == SPDIFRX_IPIDR_NUMBER) {
-+		ret = regmap_read(spdifrx->regmap, STM32_SPDIFRX_VERR, &ver);
-+
-+		dev_dbg(&pdev->dev, "SPDIFRX version: %lu.%lu registered\n",
-+			FIELD_GET(SPDIFRX_VERR_MAJ_MASK, ver),
-+			FIELD_GET(SPDIFRX_VERR_MIN_MASK, ver));
-+	}
-+
-+	return ret;
- 
- error:
- 	if (!IS_ERR(spdifrx->ctrl_chan))
+ &cpu0 {
++	clock-frequency = <900000000>;
+ 	operating-points = <
+ 		/* kHz	uV */
+ 		900000	1275000
 -- 
-2.20.1
-
+2.7.4
 
 _______________________________________________
 linux-arm-kernel mailing list
