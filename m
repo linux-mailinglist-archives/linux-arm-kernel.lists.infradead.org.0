@@ -2,93 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC61A161E0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 12:24:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED7AA161E5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 12:25:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=nJVYtmS4bzvyGbClLgPtTBPOkd4uIUO50AwwROYrk2g=; b=S7n5h7tdUI3/qE
-	7QW+n7Q3EGrmvjEkTm6WzpF0swytzpWxxJIpNqvZSAr/XrcuivxiXqxGiRrxWGTG23yNDcJpB8vdc
-	K7k8UMxIqpiCPa81Wx1muMwCVbSvi1jecWpWJu6sEkNrPv29kDmb3buVAVMQxpdyCJu82CeI9AbY4
-	Hm/U4GB6+7OfYrOj69g6Ks/VLJRQR0NO+hWu6Y1oji0dpcrYR8K3jNwn3UgRxmOTDIVi725bd8cLg
-	B8X0wzW5yoy6u2mBLVVwh6vwwB1xd/SyjSgAGTaL99aZldaO6YxmVwKsVmtoAYAj7tLhtHyY8u2n3
-	J0zWsiGqf77L8+koBdQg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=pl2Fom8p72GF1M+1EXSuFc2C60f9d7sPKB3iXTlsAdQ=; b=PZw74sZlNWUX1W8vuu6mlMzmw
+	0vuS35Pxrq6c5BX8tBa0vkJSaBoKk/cX/vs8svlbuTScZEfMmTSDUItYQi8B+ubEucoM2EAQPxgQz
+	qQC31W8UvKTzDc5paG1JipevvLLSrDtUqWgvp2NiM80Xav9OyQLpMICQ3iXjU6lFThQmmaz14FqI/
+	zMy06jOqWZJ7XdS1JTZmi38x7CsejeHajGae9yaxRLgYwXJrlrJ2ZHqGl6vuvsq4KkIMmKbiDQIsk
+	dX32Bzk2/myn1Tde1oN2fdE0m5YRGbssts+IcZgP+1WDhxqmk8srhS/LCHyWaS+ylFrOBdYKS/Ny6
+	axx5buBUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNxGn-00017G-9X; Tue, 07 May 2019 10:24:21 +0000
-Received: from mail-eopbgr30081.outbound.protection.outlook.com ([40.107.3.81]
- helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+	id 1hNxHm-0002er-0S; Tue, 07 May 2019 10:25:22 +0000
+Received: from hqemgate15.nvidia.com ([216.228.121.64])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNxGf-00016o-VW
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 10:24:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=qC5KLEluilj9HPoBxEBUgVb5MMYQWC+BIYnMmL9Plr8=;
- b=S6SkxTd0hY2ni6z1gj0R7jBBzUTu7/xqQ+PjOz1EHj0+Wu1RbeKQzqUjjAW0614eWSr57ija7sQeez8+P5OygoqROZSKMVm2uvxkkr7svYjrknVR58gRP/pqWgPFr1T9WIEuaj/bGV6/Rw0yQdLoy2/EomNElmkvQOOqZB1mB+A=
-Received: from AM0PR04MB6434.eurprd04.prod.outlook.com (20.179.252.215) by
- AM0PR04MB5409.eurprd04.prod.outlook.com (20.178.116.92) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1856.14; Tue, 7 May 2019 10:24:10 +0000
-Received: from AM0PR04MB6434.eurprd04.prod.outlook.com
- ([fe80::19be:75a:9fe:7cec]) by AM0PR04MB6434.eurprd04.prod.outlook.com
- ([fe80::19be:75a:9fe:7cec%7]) with mapi id 15.20.1856.012; Tue, 7 May 2019
- 10:24:10 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: =?iso-8859-1?Q?Guido_G=FCnther?= <agx@sigxcpu.org>, Abel Vesa
- <abel.vesa@nxp.com>, Lucas Stach <l.stach@pengutronix.de>
-Subject: Re: [PATCH] soc: imx: Get iMX8MQ revision for B0 from ATF
-Thread-Topic: [PATCH] soc: imx: Get iMX8MQ revision for B0 from ATF
-Thread-Index: AQHVAbePp28Sq24nH0ukEcxeJWhXpA==
-Date: Tue, 7 May 2019 10:24:10 +0000
-Message-ID: <AM0PR04MB6434517A0235C8308D86B050EE310@AM0PR04MB6434.eurprd04.prod.outlook.com>
-References: <d85c6cfe79f9fc1e7761c952e29dfb2f71cff2c1.1556891520.git.agx@sigxcpu.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [89.37.124.34]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 56296692-e382-445a-6d67-08d6d2d62539
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB5409; 
-x-ms-traffictypediagnostic: AM0PR04MB5409:
-x-microsoft-antispam-prvs: <AM0PR04MB54096C185BEDA4001C1CA712EE310@AM0PR04MB5409.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 0030839EEE
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(396003)(39860400002)(346002)(376002)(366004)(199004)(189003)(54534003)(71190400001)(33656002)(91956017)(44832011)(5660300002)(66446008)(66556008)(66476007)(64756008)(316002)(73956011)(76116006)(66946007)(68736007)(66574012)(54906003)(110136005)(3846002)(6116002)(2906002)(99286004)(102836004)(76176011)(53546011)(74316002)(6506007)(7696005)(66066001)(186003)(55016002)(9686003)(26005)(476003)(486006)(52536014)(6436002)(229853002)(6246003)(86362001)(71200400001)(446003)(81156014)(81166006)(8676002)(478600001)(8936002)(25786009)(7736002)(4326008)(14454004)(305945005)(256004)(53936002)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5409;
- H:AM0PR04MB6434.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 7S6zDAL0B+PMy2PnEFQrkNDmL2gIZ7DS2II4N8Xb8kJMD+JqdQ6xpvr5YdT4TVMoiPSUGvddive5ECEk9mhsTpr6VH2hkxlSIE9Tm84+H75HO/dSa7/i61VOidNcCluEmT8v/tx4U3S64CS1DDKfuWI183lKCHaXY/0MYZMJiPmuC5wq5FWrgohCCugS9z6tz3B3UVipE+w9G0921D9Tdiyg0U0Er9ByvJgcsCyTB/5FBlk+7WSWGa5UrGgzR0pPTef2HDolJNx2RhCWhzlROS1FtEsfzC+E9xWp+K3kbJnGQLDYBetivOvmaMbnjPmBb3R8AcadBLKwZsNcq3CF7fYxY/UtMymmuKnXSQ31Fecjf9EEl3ZtA/802VO74LUUZenjvVgps8XmlwTQcLrL9OZ992XIHvUBml/KWjKNchQ=
+ id 1hNxHe-0002eL-Ep
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 10:25:16 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate15.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5cd15ce70001>; Tue, 07 May 2019 03:24:39 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Tue, 07 May 2019 03:25:14 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Tue, 07 May 2019 03:25:14 -0700
+Received: from [10.25.73.250] (172.20.13.39) by HQMAIL101.nvidia.com
+ (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 7 May
+ 2019 10:25:08 +0000
+Subject: Re: [PATCH V5 14/16] phy: tegra: Add PCIe PIPE2UPHY support
+To: Thierry Reding <thierry.reding@gmail.com>
+References: <20190424052004.6270-1-vidyas@nvidia.com>
+ <20190424052004.6270-15-vidyas@nvidia.com> <20190503113558.GH32400@ulmo>
+X-Nvconfidentiality: public
+From: Vidya Sagar <vidyas@nvidia.com>
+Message-ID: <11cf6543-46c0-f95a-d23d-059aeef807ac@nvidia.com>
+Date: Tue, 7 May 2019 15:55:05 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 56296692-e382-445a-6d67-08d6d2d62539
-X-MS-Exchange-CrossTenant-originalarrivaltime: 07 May 2019 10:24:10.7599 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5409
+In-Reply-To: <20190503113558.GH32400@ulmo>
+X-Originating-IP: [172.20.13.39]
+X-ClientProxiedBy: HQMAIL106.nvidia.com (172.18.146.12) To
+ HQMAIL101.nvidia.com (172.20.187.10)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1557224679; bh=BOABvpH1oxJXKgemW+XeH/LQSarKXw3t6a6SIta4LAQ=;
+ h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
+ Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
+ X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=q87w5cOdVbN7Lw0+BoqF7OyKYTdp52C4oht1PNzd+X4fyWO79R+hDxiRxgfO8isJo
+ jcsUgNyYhu0KgRfBMo6Nosie0qtRK38dpbwdpDE5oEBLgR4SjYzWFKF7iZN/LIriIy
+ v/mZhSEaBSpg6OU+hEDp0/4ByYuwqHs9Qd3oiQWbBjwHuPXh3RvPdvzh/75uFcGlzK
+ FsEcekp+bw0KUYMe+AvdvZjNp19mpJmqRecVcSwOxwgSw3rNEtIJSI9IukPzOfhJAL
+ nYPuMftanyBln7tnv4PMFo2Ny451WIe9IzE2mD2lKloGuxcfczgPR4JinwX5B8RbVR
+ gmEAf3nI19asg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_032414_105119_07C39881 
-X-CRM114-Status: GOOD (  11.61  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190507_032514_515000_055707E4 
+X-CRM114-Status: GOOD (  25.23  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.81 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.64 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -98,6 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -109,67 +93,248 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jacky Bai <ping.bai@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ mperttunen@nvidia.com, mmaddireddy@nvidia.com, linux-pci@vger.kernel.org,
+ catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ kthota@nvidia.com, kishon@ti.com, linux-tegra@vger.kernel.org,
+ robh+dt@kernel.org, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
+ bhelgaas@google.com, jonathanh@nvidia.com,
+ linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03.05.2019 16:53, Guido G=FCnther wrote:
-> This is similar to what the BSP does and needed to e.g. determine
-> necessary quirks for MIPI DSI.
-> =
+On 5/3/2019 5:05 PM, Thierry Reding wrote:
+> On Wed, Apr 24, 2019 at 10:50:02AM +0530, Vidya Sagar wrote:
+>> Synopsys DesignWare core based PCIe controllers in Tegra 194 SoC interface
+>> with Universal PHY (UPHY) module through a PIPE2UPHY (P2U) module.
+>> For each PCIe lane of a controller, there is a P2U unit instantiated at
+>> hardware level. This driver provides support for the programming required
+>> for each P2U that is going to be used for a PCIe controller.
+>>
+>> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
+>> ---
+>> Changes since [v4]:
+>> * None
+>>
+>> Changes since [v3]:
+>> * Rebased on top of linux-next top of the tree
+>>
+>> Changes since [v2]:
+>> * Replaced spaces with tabs in Kconfig file
+>> * Sorted header file inclusion alphabetically
+>>
+>> Changes since [v1]:
+>> * Added COMPILE_TEST in Kconfig
+>> * Removed empty phy_ops implementations
+>> * Modified code according to DT documentation file modifications
+>>
+>>   drivers/phy/tegra/Kconfig             |   7 ++
+>>   drivers/phy/tegra/Makefile            |   1 +
+>>   drivers/phy/tegra/pcie-p2u-tegra194.c | 120 ++++++++++++++++++++++++++
+>>   3 files changed, 128 insertions(+)
+>>   create mode 100644 drivers/phy/tegra/pcie-p2u-tegra194.c
+>>
+>> diff --git a/drivers/phy/tegra/Kconfig b/drivers/phy/tegra/Kconfig
+>> index a3b1de953fb7..06d423fa85b4 100644
+>> --- a/drivers/phy/tegra/Kconfig
+>> +++ b/drivers/phy/tegra/Kconfig
+>> @@ -6,3 +6,10 @@ config PHY_TEGRA_XUSB
+>>   
+>>   	  To compile this driver as a module, choose M here: the module will
+>>   	  be called phy-tegra-xusb.
+>> +
+>> +config PHY_TEGRA194_PCIE_P2U
+>> +	tristate "NVIDIA Tegra P2U PHY Driver"
+>> +	depends on ARCH_TEGRA || COMPILE_TEST
+>> +	select GENERIC_PHY
+>> +	help
+>> +	  Enable this to support the P2U (PIPE to UPHY) that is part of Tegra 19x SOCs.
+>> diff --git a/drivers/phy/tegra/Makefile b/drivers/phy/tegra/Makefile
+>> index a93cd9a499b2..1aaca794f40c 100644
+>> --- a/drivers/phy/tegra/Makefile
+>> +++ b/drivers/phy/tegra/Makefile
+>> @@ -5,3 +5,4 @@ phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_124_SOC) += xusb-tegra124.o
+>>   phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_132_SOC) += xusb-tegra124.o
+>>   phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_210_SOC) += xusb-tegra210.o
+>>   phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_186_SOC) += xusb-tegra186.o
+>> +obj-$(CONFIG_PHY_TEGRA194_PCIE_P2U) += pcie-p2u-tegra194.o
+>> diff --git a/drivers/phy/tegra/pcie-p2u-tegra194.c b/drivers/phy/tegra/pcie-p2u-tegra194.c
+>> new file mode 100644
+>> index 000000000000..a5d85e411088
+>> --- /dev/null
+>> +++ b/drivers/phy/tegra/pcie-p2u-tegra194.c
+>> @@ -0,0 +1,120 @@
+>> +// SPDX-License-Identifier: GPL-2.0+
+>> +/*
+>> + * P2U (PIPE to UPHY) driver for Tegra T194 SoC
+>> + *
+>> + * Copyright (C) 2019 NVIDIA Corporation.
+>> + *
+>> + * Author: Vidya Sagar <vidyas@nvidia.com>
+>> + */
+>> +
+>> +#include <linux/delay.h>
+>> +#include <linux/err.h>
+>> +#include <linux/interrupt.h>
+>> +#include <linux/io.h>
+>> +#include <linux/module.h>
+>> +#include <linux/of.h>
+>> +#include <linux/of_platform.h>
+>> +#include <linux/phy/phy.h>
+>> +#include <linux/platform_device.h>
+>> +#include <soc/tegra/bpmp-abi.h>
+> 
+> Looks to me like not all of the above are actually needed. I don't see
+> anything from delay.h used, and you certainly aren't using anything from
+> soc/tegra/bpmp-abi.h either.
+Done.
 
-> Signed-off-by: Guido G=FCnther <agx@sigxcpu.org>
-> =
+> 
+>> +
+>> +#define P2U_PERIODIC_EQ_CTRL_GEN3	0xc0
+>> +#define P2U_PERIODIC_EQ_CTRL_GEN3_PERIODIC_EQ_EN		BIT(0)
+>> +#define P2U_PERIODIC_EQ_CTRL_GEN3_INIT_PRESET_EQ_TRAIN_EN	BIT(1)
+>> +#define P2U_PERIODIC_EQ_CTRL_GEN4	0xc4
+>> +#define P2U_PERIODIC_EQ_CTRL_GEN4_INIT_PRESET_EQ_TRAIN_EN	BIT(1)
+>> +
+>> +#define P2U_RX_DEBOUNCE_TIME				0xa4
+>> +#define P2U_RX_DEBOUNCE_TIME_DEBOUNCE_TIMER_MASK	0xffff
+>> +#define P2U_RX_DEBOUNCE_TIME_DEBOUNCE_TIMER_VAL		160
+>> +
+>> +struct tegra_p2u {
+>> +	void __iomem *base;
+>> +};
+>> +
+>> +static int tegra_p2u_power_on(struct phy *x)
+>> +{
+>> +	struct tegra_p2u *phy = phy_get_drvdata(x);
+>> +	u32 val;
+>> +
+>> +	val = readl(phy->base + P2U_PERIODIC_EQ_CTRL_GEN3);
+>> +	val &= ~P2U_PERIODIC_EQ_CTRL_GEN3_PERIODIC_EQ_EN;
+>> +	val |= P2U_PERIODIC_EQ_CTRL_GEN3_INIT_PRESET_EQ_TRAIN_EN;
+>> +	writel(val, phy->base + P2U_PERIODIC_EQ_CTRL_GEN3);
+>> +
+>> +	val = readl(phy->base + P2U_PERIODIC_EQ_CTRL_GEN4);
+>> +	val |= P2U_PERIODIC_EQ_CTRL_GEN4_INIT_PRESET_EQ_TRAIN_EN;
+>> +	writel(val, phy->base + P2U_PERIODIC_EQ_CTRL_GEN4);
+>> +
+>> +	val = readl(phy->base + P2U_RX_DEBOUNCE_TIME);
+>> +	val &= ~P2U_RX_DEBOUNCE_TIME_DEBOUNCE_TIMER_MASK;
+>> +	val |= P2U_RX_DEBOUNCE_TIME_DEBOUNCE_TIMER_VAL;
+>> +	writel(val, phy->base + P2U_RX_DEBOUNCE_TIME);
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static const struct phy_ops ops = {
+>> +	.power_on	= tegra_p2u_power_on,
+>> +	.owner		= THIS_MODULE,
+> 
+> I think it's perhaps best to just stick with single spaces around the =
+> instead of trying to arbitrarily align these. See below for why I think
+> so.
+Done.
 
->  From the list discussion and changelog it's not clear to me why a
-> different method was chosen for the B1 silicon so I left that in place
-> as is and only trigger on the B0 silicon I have here.
+> 
+>> +};
+>> +
+>> +static int tegra_p2u_probe(struct platform_device *pdev)
+>> +{
+>> +	struct phy_provider *phy_provider;
+>> +	struct device *dev = &pdev->dev;
+>> +	struct phy *generic_phy;
+>> +	struct tegra_p2u *phy;
+>> +	struct resource *res;
+>> +
+>> +	phy = devm_kzalloc(dev, sizeof(*phy), GFP_KERNEL);
+>> +	if (!phy)
+>> +		return -ENOMEM;
+>> +
+>> +	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "ctl");
+>> +	phy->base = devm_ioremap_resource(dev, res);
+>> +	if (IS_ERR(phy->base))
+>> +		return PTR_ERR_OR_ZERO(phy->base);
+>> +
+>> +	platform_set_drvdata(pdev, phy);
+> 
+> You could use dev_set_drvdata() here since you already use dev (instead
+> of pdev) everywhere else.
+Since this is a platform driver, wouldn't it make more sense to use platform_set_drvdata()
+instead of dev_set_drvdata()?
 
-Fetching revision without an ATF call was done for the sake of avoiding =
+> 
+>> +
+>> +	generic_phy = devm_phy_create(dev, NULL, &ops);
+>> +	if (IS_ERR(generic_phy))
+>> +		return PTR_ERR_OR_ZERO(generic_phy);
+>> +
+>> +	phy_set_drvdata(generic_phy, phy);
+>> +
+>> +	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+>> +	if (IS_ERR(phy_provider))
+>> +		return PTR_ERR_OR_ZERO(phy_provider);
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static int tegra_p2u_remove(struct platform_device *pdev)
+>> +{
+>> +	return 0;
+>> +}
+> 
+> I thought it had already been mentioned that you don't need to implement
+> this if it's empty?
+Done.
 
-depending on ATF as much as vendor tree does. I'm not sure avoiding ATF =
+> 
+>> +
+>> +static const struct of_device_id tegra_p2u_id_table[] = {
+>> +	{
+>> +		.compatible = "nvidia,tegra194-p2u",
+>> +	},
+>> +	{}
+>> +};
+>> +MODULE_DEVICE_TABLE(of, tegra_p2u_id_table);
+>> +
+>> +static struct platform_driver tegra_p2u_driver = {
+>> +	.probe		= tegra_p2u_probe,
+>> +	.remove		= tegra_p2u_remove,
+>> +	.driver		= {
+>> +		.name	= "tegra194-p2u",
+>> +		.of_match_table = tegra_p2u_id_table,
+> 
+> Again, I don't think the artificial padding does this any good. For
+> example, the .driver.name's assignment operator is padded to the same
+> column as members of the parent structure, so that's confusing to read.
+> Also, .of_match_table is not padded at all, so it's inconsistent. Just
+> use single spaces around =. That's easy to keep consistent and really
+> doesn't read that bad.
+Done.
 
-dependencies is a good approach.
+> 
+>> +	},
+>> +};
+>> +
+>> +module_platform_driver(tegra_p2u_driver);
+> 
+> It's customary to have no blank line between the closing "};" and the
+> module_platform_driver() macro.
+Done.
 
-The imx8mq reference manual claims that 0x3036006c is should be soc =
+> 
+> Thierry
+> 
+>> +
+>> +MODULE_AUTHOR("Vidya Sagar <vidyas@nvidia.com>");
+>> +MODULE_DESCRIPTION("NVIDIA Tegra PIPE2UPHY PHY driver");
+>> +MODULE_LICENSE("GPL v2");
+>> -- 
+>> 2.17.1
+>>
 
-revision but that incorrectly reports 0x00824010 meaning "A0" on all =
-
-chips. So some nasty hacks are done in ATF instead by poking at ROM and =
-
-OCOTP.
-
-There were multiple discussions also for GPCv2 and 8mm about how much to =
-
-rely on firmware. I personally think that duplicating ATF workarounds =
-
-just makes supporting imx8m harder in Linux. Don't we want firmware to =
-
-help us with silicon erratas?
-
-> +#define IMX8MQ_ATF_GET_SOC_INFO		0xc2000006
-
-Any reason not to use original FSL_SIP_GET_SOC_INFO constant name?
-
-Since ATF can fetch revision for B1 as well it makes no sense to keep =
-
-the old code if we switch to using a SIP call, just call ATF always.
-
-ATF upstream currently has 8mq support but no SIP call for GET_SOC_INFO, =
-
-that could be added easily.
-
---
-Regards,
-Leonard
 
 _______________________________________________
 linux-arm-kernel mailing list
