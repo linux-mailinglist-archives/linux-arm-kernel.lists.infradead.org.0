@@ -2,63 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9B90166B5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 17:27:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 13973166C3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 17:32:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cMmYZOUulwTRNgWxq3MBfKIiZsTQaaFZZHBXny9YMzQ=; b=llgzuSERmqVhVE
-	NvKPVnEII9LYdoca7RjSM/txjufhAQl1hpZTnYnh1K7L1ImjYVXGEr8dBEILU8B1Ye3ZUHD5Waqzq
-	T9i2y/enM+0D/dhDCNHY6gxM0xhIrZBWhzMrfIJo+CcBvKnul7884MBAbgHb1RvMYcYkOpFlUcp5a
-	5jyZb4on+apzFNkcUzObNpFyG+qx0uEfWXUclwLykEmObe/p0yufm0YxcDG5piVi1WH/1MuQvm/G9
-	a8jb1T7EvxTmH8u6a6B8493RiVTvY6SStjc8bl2QBr8/0gaeyabFoeM7sZESz4MBAMxKmh8mPfKag
-	apjycwlRFwuweEwq5YDg==;
+	List-Owner; bh=V+OvnpvJsIciG7CcJvGcHjg9A9JO3V6H3Wet+tJIO/I=; b=ehJvnipiZOlzdc
+	v0DDhUITHAeml3dD0ACBvuOx6whIs2SH7qneM+rY84QOeL2FepnP/hVlxFbsfRL6ayvMGRgRmb+Ch
+	aZe2kX5qV0N1eowiUHXRMKcXiqcl9lt1BqSAqjY/dJ1ecEbtmgwZr7b4KzSqqz5Hxt7r8WUK9C/B5
+	GhIXzCnOnPNytBavpq+ZCStwM0b+JzXmUSqFqvFlG5kxALx28HQPexQKk4k4S89B5s0Gll85E+qyc
+	HAhmVSpJKflict6x36truxhDk1tAl3UjXFhzudFzl4NQRickyb9A/m/kPc6a5YJLisTIcvXk3vAz3
+	9znKt0ZMI8hgk4hLpfQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hO20X-0005cF-SS; Tue, 07 May 2019 15:27:53 +0000
-Received: from 5.mo178.mail-out.ovh.net ([46.105.51.53])
+	id 1hO24e-0007Ed-6a; Tue, 07 May 2019 15:32:08 +0000
+Received: from mail-yw1-xc42.google.com ([2607:f8b0:4864:20::c42])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hO20Q-0005b3-LK
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 15:27:48 +0000
-Received: from player697.ha.ovh.net (unknown [10.109.159.222])
- by mo178.mail-out.ovh.net (Postfix) with ESMTP id DC9505EA58
+ id 1hO24X-0007EK-07
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 15:32:02 +0000
+Received: by mail-yw1-xc42.google.com with SMTP id 186so4715195ywo.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue,  7 May 2019 17:27:42 +0200 (CEST)
-Received: from armadeus.com (lfbn-1-7591-179.w90-126.abo.wanadoo.fr
- [90.126.248.179])
- (Authenticated sender: sebastien.szymanski@armadeus.com)
- by player697.ha.ovh.net (Postfix) with ESMTPSA id 261115875B80;
- Tue,  7 May 2019 15:27:23 +0000 (UTC)
-From: =?UTF-8?q?S=C3=A9bastien=20Szymanski?= <sebastien.szymanski@armadeus.com>
-To: linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
- NXP Linux Team <linux-imx@nxp.com>
-Subject: [PATCH RE-RESEND 2/2] ARM: dts: opos6uldev: use OF graph to describe
- the display
-Date: Tue,  7 May 2019 17:27:13 +0200
-Message-Id: <20190507152713.27494-2-sebastien.szymanski@armadeus.com>
-X-Mailer: git-send-email 2.19.2
-In-Reply-To: <20190507152713.27494-1-sebastien.szymanski@armadeus.com>
-References: <20190507152713.27494-1-sebastien.szymanski@armadeus.com>
+ Tue, 07 May 2019 08:32:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=GkQLHK+Gx3q0MiBFmJoQJS2NfenOozkS7hYf6TUV7KE=;
+ b=Ab0EuHpLFxhDQbYMt6Ng5GoDSZkSVcBkFA5BcYvfSCljM1nK66L64WoLNvwOzNSiGz
+ i3jp/auTZ6refcwp8YdSQNWN8oxEzwgxV3HUBg9rP7i27mX7t80WKmdLBaOpPp205BR/
+ 4bik9JxY7FOQAIj3ts8r8VmUKncp/4wvgJcbFFdlwoF/Bo7o1TLeoUVkp+U5bkjMYdaN
+ N0YKixlmN5A3wgIC6ERk/Qy4pMz0UfQH6pw14jWGxpnho4J9UI94+FJmUsHz0ikhoc+7
+ z86EGsj89WPO6V9yO1zdqQWwvm8JVvOqqy8WEu/nMCTPoV6IvKcYyCoD1ID9g2bTdFzL
+ ZaHA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=GkQLHK+Gx3q0MiBFmJoQJS2NfenOozkS7hYf6TUV7KE=;
+ b=OFsGrTKtYHlP5a/DQCLHWH626t1bYmK9H6ScWtNK+4qkhJ8/iBTNd7SrCwdWjssuo6
+ oLL1SigHZzfq3pL9hUuNP9QyQgK/cXJH8Yh9Ob4tYRWfBCwJ+hEWZmJJ8PK96lObmjxg
+ Dshu5+yGEwmNuZdAKXqNujWtNR48p3/iEpIkfe7MaTLaQaKkN+EzlIaGQoKIHiHvFR2B
+ 3bfEF9uBHdKbe9bhVt7AAmNfaknAx4+qxtF4iOWQG1bpgcjc1F0lE2SguUFuQ87K15s5
+ UeUYxMZT2xcvAVou1xTB9dHwby6C/eN6EqUfcNL5J4bVW6h0HYvpj4tbSMxTpBq4tehs
+ LhaQ==
+X-Gm-Message-State: APjAAAWSUXA//u9WqsPhRu2vYZN1DJDfTth5wBHVdixz59y9ofClSB6P
+ 3qaBshc1O0Udv/gB/E/YS/FwHQ==
+X-Google-Smtp-Source: APXvYqyHM5C7+mUGZUFOz/ZnBaA6IZMSH1zBP06n2m6vV6SBAbKjd5/Y01OUn37vOcL9JcDFncpXDg==
+X-Received: by 2002:a25:ba08:: with SMTP id t8mr22444060ybg.467.1557243119334; 
+ Tue, 07 May 2019 08:31:59 -0700 (PDT)
+Received: from leoy-ThinkPad-X240s (li931-65.members.linode.com.
+ [45.56.113.65])
+ by smtp.gmail.com with ESMTPSA id g187sm3694982ywa.4.2019.05.07.08.31.49
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 07 May 2019 08:31:58 -0700 (PDT)
+Date: Tue, 7 May 2019 23:31:44 +0800
+From: Leo Yan <leo.yan@linaro.org>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: [PATCH v1 00/17] dts: Update DT bindings for CoreSight
+ replicator and funnel
+Message-ID: <20190507153144.GI21730@leoy-ThinkPad-X240s>
+References: <20190507034734.20622-1-leo.yan@linaro.org>
+ <2f2d819d-9b20-7b4c-a558-0ba24a7babf3@arm.com>
+ <20190507104612.GA21391@e107155-lin>
+ <20190507121603.GE21730@leoy-ThinkPad-X240s>
+ <20190507132446.GH21730@leoy-ThinkPad-X240s>
+ <00a6305a-a34e-a2df-3a08-b19e41e00cbe@arm.com>
 MIME-Version: 1.0
-X-Ovh-Tracer-Id: 11812378874205393943
-X-VR-SPAMSTATE: OK
-X-VR-SPAMSCORE: -100
-X-VR-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgeduuddrkedtgdelgecutefuodetggdotefrodftvfcurfhrohhfihhlvgemucfqggfjpdevjffgvefmvefgnecuuegrihhlohhuthemucehtddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
+Content-Disposition: inline
+In-Reply-To: <00a6305a-a34e-a2df-3a08-b19e41e00cbe@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_082746_841994_E0B371BA 
-X-CRM114-Status: GOOD (  12.57  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190507_083201_042275_CC4B4572 
+X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.105.51.53 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:c42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -70,49 +104,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Daniel Vetter <daniel@ffwll.ch>,
- David Airlie <airlied@linux.ie>, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, stable@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, andrew@lunn.ch, linus.walleij@linaro.org,
+ liviu.dudau@arm.com, david.brown@linaro.org, haojian.zhuang@linaro.org,
+ festevam@gmail.com, Lorenzo.Pieralisi@arm.com, lee.jones@linaro.org,
+ xuwei5@hisilicon.com, agross@kernel.org, zhangfei.gao@linaro.org,
+ cphealy@gmail.com, mike.leach@linaro.org, s.hauer@pengutronix.de,
+ robh+dt@kernel.org, orsonzhai@gmail.com, linux-arm-kernel@lists.infradead.org,
+ mathieu.poirier@linaro.org, guodong.xu@linaro.org, baolin.wang@linaro.org,
+ zhang.chunyan@linaro.org, Sudeep.Holla@arm.com, shawnguo@kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VG8gbWFrZSB1c2Ugb2YgdGhlIG5ldyBlTENESUYgRFJNIGRyaXZlciBPRiBncmFwaCBkZXNjcmlw
-dGlvbiBpcwpyZXF1aXJlZC4gRGVzY3JpYmUgdGhlIGRpc3BsYXkgdXNpbmcgT0YgZ3JhcGggbm9k
-ZXMuCgpDYzogc3RhYmxlQHZnZXIua2VybmVsLm9yZyAjIHY0LjE5ClNpZ25lZC1vZmYtYnk6IFPD
-qWJhc3RpZW4gU3p5bWFuc2tpIDxzZWJhc3RpZW4uc3p5bWFuc2tpQGFybWFkZXVzLmNvbT4KLS0t
-CiBhcmNoL2FybS9ib290L2R0cy9pbXg2dWwtb3BvczZ1bGRldi5kdHMgfCAzNyArKysrKysrKysr
-Ky0tLS0tLS0tLS0tLS0tCiAxIGZpbGUgY2hhbmdlZCwgMTYgaW5zZXJ0aW9ucygrKSwgMjEgZGVs
-ZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvaW14NnVsLW9wb3M2dWxk
-ZXYuZHRzIGIvYXJjaC9hcm0vYm9vdC9kdHMvaW14NnVsLW9wb3M2dWxkZXYuZHRzCmluZGV4IDBl
-NTllZTU3ZmQ1NS4uOGVjZGI5YWQyYjJlIDEwMDY0NAotLS0gYS9hcmNoL2FybS9ib290L2R0cy9p
-bXg2dWwtb3BvczZ1bGRldi5kdHMKKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvaW14NnVsLW9wb3M2
-dWxkZXYuZHRzCkBAIC01Niw3ICs1Niw3IEBACiAJCXN0ZG91dC1wYXRoID0gJnVhcnQxOwogCX07
-CiAKLQliYWNrbGlnaHQgeworCWJhY2tsaWdodDogYmFja2xpZ2h0IHsKIAkJY29tcGF0aWJsZSA9
-ICJwd20tYmFja2xpZ2h0IjsKIAkJcHdtcyA9IDwmcHdtMyAwIDE5MTAwMD47CiAJCWJyaWdodG5l
-c3MtbGV2ZWxzID0gPDAgNCA4IDE2IDMyIDY0IDEyOCAyNTU+OwpAQCAtOTcsNiArOTcsMTggQEAK
-IAkJZ3Bpb3MgPSA8JmdwaW81IDEgR1BJT19BQ1RJVkVfSElHSD47CiAJfTsKIAorCXBhbmVsOiBw
-YW5lbCB7CisJCWNvbXBhdGlibGUgPSAiYXJtYWRldXMsc3QwNzAwLWFkYXB0IjsKKwkJcG93ZXIt
-c3VwcGx5ID0gPCZyZWdfM3YzPjsKKwkJYmFja2xpZ2h0ID0gPCZiYWNrbGlnaHQ+OworCisJCXBv
-cnQgeworCQkJcGFuZWxfaW46IGVuZHBvaW50IHsKKwkJCQlyZW1vdGUtZW5kcG9pbnQgPSA8Jmxj
-ZGlmX291dD47CisJCQl9OworCQl9OworCX07CisKIAlyZWdfNXY6IHJlZ3VsYXRvci01diB7CiAJ
-CWNvbXBhdGlibGUgPSAicmVndWxhdG9yLWZpeGVkIjsKIAkJcmVndWxhdG9yLW5hbWUgPSAiNVYi
-OwpAQCAtMTgyLDI4ICsxOTQsMTEgQEAKICZsY2RpZiB7CiAJcGluY3RybC1uYW1lcyA9ICJkZWZh
-dWx0IjsKIAlwaW5jdHJsLTAgPSA8JnBpbmN0cmxfbGNkaWY+OwotCWRpc3BsYXkgPSA8JmRpc3Bs
-YXkwPjsKLQlsY2Qtc3VwcGx5ID0gPCZyZWdfM3YzPjsKIAlzdGF0dXMgPSAib2theSI7CiAKLQlk
-aXNwbGF5MDogZGlzcGxheTAgewotCQliaXRzLXBlci1waXhlbCA9IDwzMj47Ci0JCWJ1cy13aWR0
-aCA9IDwxOD47Ci0KLQkJZGlzcGxheS10aW1pbmdzIHsKLQkJCXRpbWluZzA6IHRpbWluZzAgewot
-CQkJCWNsb2NrLWZyZXF1ZW5jeSA9IDwzMzAwMDAzMz47Ci0JCQkJaGFjdGl2ZSA9IDw4MDA+Owot
-CQkJCXZhY3RpdmUgPSA8NDgwPjsKLQkJCQloYmFjay1wb3JjaCA9IDw5Nj47Ci0JCQkJaGZyb250
-LXBvcmNoID0gPDk2PjsKLQkJCQl2YmFjay1wb3JjaCA9IDwyMD47Ci0JCQkJdmZyb250LXBvcmNo
-ID0gPDIxPjsKLQkJCQloc3luYy1sZW4gPSA8NjQ+OwotCQkJCXZzeW5jLWxlbiA9IDw0PjsKLQkJ
-CQlkZS1hY3RpdmUgPSA8MT47Ci0JCQkJcGl4ZWxjbGstYWN0aXZlID0gPDA+OwotCQkJfTsKKwlw
-b3J0IHsKKwkJbGNkaWZfb3V0OiBlbmRwb2ludCB7CisJCQlyZW1vdGUtZW5kcG9pbnQgPSA8JnBh
-bmVsX2luPjsKIAkJfTsKIAl9OwogfTsKLS0gCjIuMTkuMgoKCl9fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
-CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
-ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi Suzuki,
+
+On Tue, May 07, 2019 at 04:06:32PM +0100, Suzuki K Poulose wrote:
+
+[...]
+
+> Leo,
+> 
+> If you do respin, please could you merge the separate patches for funnel and
+> replicator per DTS into a single patch.
+
+Okay, will do it.
+
+Thanks,
+Leo Yan
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
