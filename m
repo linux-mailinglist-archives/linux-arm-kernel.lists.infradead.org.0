@@ -2,81 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6E4E16CCE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 23:07:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 328B616CF1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 23:14:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P/O3YMH/W1r2zzlQYDDXSjsn8V7Nz1Zzr9hMArJlbkE=; b=HK5Xa5GTGESblP
-	WK1ainOwOCb+rOpkGcrN2Ujd9UT9vKumwDkwN98PYD2J7pd/M8wQycbuCaK/mLoIb0d4bwT4U6s74
-	mQxBSjjy2KLmEWweyXFxg4GeWBjRjyppu/V3DbDsqHOK4+t8rvVEeBgTvMjn8q3TnbHU5vpr+YGRk
-	d9IqXY9STh+cFKy++Y6UtdcFRqZv4uvONgWge6nhngSXf1T9OEFXkQJ+Z1+pwDycziilH+LojUN6j
-	7V10NVIL5CBL5Sckx9f9bQfcWbHHGEDmGWyXzoh3J+G4zjlDlXmIh+V43A7azOLFa6QQdvWS124jc
-	4g75VIvuBKSCSOL/Tzjw==;
+	List-Owner; bh=YALL3PyGJieEfJsCxqI9uQXbSqyiOLTbT2h6XuxIJ7E=; b=Myqq+uC9zjbYKH
+	3O3+qZNgUSIvogqWlZatZqE+g7ovz7CR3CjjGoiMaT3RIOtzpEHRipT0tGrYPNDewclmPPt4zogts
+	yCQMadhhHqRLQQZl/Z5ybZcVeKiigBs9ylXpNv0g7ah4UnjVI/14bVCLry9M78Q8OJ8auUw0q5SzH
+	UJou0eB4k0v7uZmrVz00VS7L+F+a0isvge7y03Z6G3YqC1jtDhT0KgKtyoqOe7Nl0CPfCQpuiHsgE
+	/nbgCH2gm22/w51mT4wAjZ9Bk7ONxJBMk7EIHP49C8wyauw2x6huWmpoqkecw/yNQNitgBNQ7zzx6
+	w6UT/AmnHjJ9UbwVsIiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hO7Im-0007Lu-VK; Tue, 07 May 2019 21:07:04 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hO7QF-0000oc-0C; Tue, 07 May 2019 21:14:47 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hO7Ig-0007LM-1m
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 21:06:59 +0000
-Received: by mail-pf1-x441.google.com with SMTP id e24so9271452pfi.12
+ id 1hO7Q8-0000oJ-ED
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 21:14:41 +0000
+Received: by mail-pl1-x644.google.com with SMTP id d3so4766526plj.11
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 May 2019 14:06:57 -0700 (PDT)
+ Tue, 07 May 2019 14:14:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=VL8uiSCPpzZNMmP+oEVAuQOFn8NTTTisNh1ggwInehw=;
- b=hd/bYwseMXfh2hIOB9c0up4PVwZLYR4n6c+ckG//+BXsEDwauzmZywkj452nBvEUDt
- sAiDFdvaMIJ1RFSq6Ts6UGBoViNk/9II0Yq0+34q03rC6fWIJ2LcUt4FNYDtMLd4p6Xi
- gD3JeSihu3tqX3M4nl+YuCPfpbSEDGaEDr2VfjzyKCSZFUVAN1IOj3Q5JHx4ucy/V6MF
- nDJ4pXd7Pr1CvPECi+wBzmq0f6e2kR0w8cY0Ztn+n4WwBsSpM4QEMxpV0dDs2g/QlysO
- 1r1V265aKrVbP6t/tlMivLjqUmI8SGQ3fMGawtfQMSNccF+8pthXpJZzv3ElDkKqXo86
- 91aw==
+ bh=jnh3OyB3pg4krglKKAZTgjWeTb51Mu7a+nGj/rrHdZU=;
+ b=TGP+20CMVev4R/LFl07QzMVxWxt0d/zOI9TOl1yKaVPsRfcbEQde4vZelOCJ90Kw8/
+ fzcKpW7H7ORKJgRfpHe41rGiWIa+rZ8/mvLmAREoCVxVhTmUzxwmN7B+Dp79ryCx9Ngt
+ GMdcpOJL9gE6WNS1HY4/Ll1BjGLDlKDD5ciIlbUZ4KNnh8NEZC/hERuJALvddUgjdIN7
+ KTQAEsACZeznHS3p2oCKXOy4WSp5bQetblpTLRpQWV4sxnVzHyhfWUCPoaMt0h1Sw6mA
+ udtv1DnEzo2iJ8HIUTej0mfIiAnWg+9VlPykxFZmEPLuMZ5myJB1GtjOqPTyga4M+t6E
+ fadw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
  :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=VL8uiSCPpzZNMmP+oEVAuQOFn8NTTTisNh1ggwInehw=;
- b=S5H0bxdDqqo9VC8cvbvOfyCQRUV7095pZ57Br/Pgt5WA8FBeH83LuK/7CzzBFzpstu
- Li1ew7hR5Tq1xN2eyffNZTp1zYisu3zfFW7uQmhbxmSltCGpqxTF1H9VdrkW9IP0I6vS
- ZvA1JF7AkVgkf3mU3DHUTVirLNkH+mSwHdw9BFnCnCnXUoj7o+EfpDWD/lRwIlWPYz6F
- 5I7FOj3RkFan6DiU3+o+fQqPe7OkgtILcboPS5KazB/9UNEkvtqkTIzBd1e4coOEIEAP
- 7MITZzXAVAXjCli1Aw2A3f6ZhNTPGuPDv1WzfSUQTatr2c1tvTsRYd2T9TdEgrbgrlyb
- i6vQ==
-X-Gm-Message-State: APjAAAUebvsAoqyjV/jeqEG23rggRzUkmmess7I8pESyi8jh363weebG
- 6NNp2vw/qiYCDJykApgj2ETRLB6t
-X-Google-Smtp-Source: APXvYqx1ktV35C20uU5UuqbaQvu3JK7lhcdWdBSMcoeOiHXkOeEm0E+QpkPPBfwH3ZwQSt0JbhhpAw==
-X-Received: by 2002:a62:160b:: with SMTP id 11mr43708208pfw.88.1557263216768; 
- Tue, 07 May 2019 14:06:56 -0700 (PDT)
+ bh=jnh3OyB3pg4krglKKAZTgjWeTb51Mu7a+nGj/rrHdZU=;
+ b=EzrV8Y/gKTxVNkIHxCo1aOVDptSZDQu6Fx2aRYbgHnajsr1Jyb0zoMg1U/UVb5TMPF
+ 81e6vnlcunmn93WdTUFb87qI3l2PsHtr+1Te1XvaB5wTDPrSh3B6w/lyAUVQptI6m60s
+ xTn/wivfprsv1OfVvJ4echJRe0aU0ONVegogghIRgTraseMQwI7Rd+D1fUZsNHKLrcnh
+ 3Q4neREaRTsp+pJ4IFWmyiA4d1rJ/tQx92XHyj3SXZczOIIVnFBXbc3sI+q7D++5eADR
+ V14pZMvYsLWAd1LUUM4UAd1Qj2pDz87SZD3Jh/1uzjO+5qMCNQeLXzXRJ4ova//ISFCM
+ lBqQ==
+X-Gm-Message-State: APjAAAUAdGt4F+aZc0+28QuFIIetxYmiZVgetdaORU460/7aWssUlpZb
+ Y7z/MadQdqgwmEVGBeKOcPg=
+X-Google-Smtp-Source: APXvYqyyPSuo9mZZGgAtdJCo3Lx/KJweX4opkpet3eADhTkNs1WvpjzxIGgUqufpu5tKZ6oFrhiLbA==
+X-Received: by 2002:a17:902:9686:: with SMTP id
+ n6mr43464175plp.282.1557263679684; 
+ Tue, 07 May 2019 14:14:39 -0700 (PDT)
 Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id k191sm27841147pfc.151.2019.05.07.14.06.54
+ by smtp.gmail.com with ESMTPSA id v40sm7925116pgn.17.2019.05.07.14.14.38
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 07 May 2019 14:06:55 -0700 (PDT)
-Date: Tue, 7 May 2019 14:06:54 -0700
+ Tue, 07 May 2019 14:14:38 -0700 (PDT)
+Date: Tue, 7 May 2019 14:14:37 -0700
 From: Guenter Roeck <linux@roeck-us.net>
 To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: [PATCH v2 1/3] kernel: Provide a __pow10() function
-Message-ID: <20190507210654.GA4951@roeck-us.net>
+Subject: Re: [PATCH v2 3/3] hwmon: scmi: Scale values to target desired HWMON
+ units
+Message-ID: <20190507211437.GB4951@roeck-us.net>
 References: <20190507193504.28248-1-f.fainelli@gmail.com>
- <20190507193504.28248-2-f.fainelli@gmail.com>
+ <20190507193504.28248-4-f.fainelli@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190507193504.28248-2-f.fainelli@gmail.com>
+In-Reply-To: <20190507193504.28248-4-f.fainelli@gmail.com>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_140658_093255_ADD44CDE 
-X-CRM114-Status: GOOD (  17.53  )
+X-CRM114-CacheID: sfid-20190507_141440_497415_975BFB32 
+X-CRM114-Status: GOOD (  19.16  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  0.1 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -112,51 +114,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 07, 2019 at 12:35:02PM -0700, Florian Fainelli wrote:
-> Provide a simple macro that can return the value of 10 raised to a
-> positive integer. We are going to use this in order to scale units from
-> firmware to HWMON.
+On Tue, May 07, 2019 at 12:35:04PM -0700, Florian Fainelli wrote:
+> If the SCMI firmware implementation is reporting values in a scale that
+> is different from the HWMON units, we need to scale up or down the value
+> according to how far appart they are.
 > 
 > Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 > ---
->  include/linux/kernel.h | 11 +++++++++++
->  1 file changed, 11 insertions(+)
+>  drivers/hwmon/scmi-hwmon.c | 30 +++++++++++++++++++++++++++++-
+>  1 file changed, 29 insertions(+), 1 deletion(-)
 > 
-> diff --git a/include/linux/kernel.h b/include/linux/kernel.h
-> index 2d14e21c16c0..62fc8bd84bc9 100644
-> --- a/include/linux/kernel.h
-> +++ b/include/linux/kernel.h
-> @@ -294,6 +294,17 @@ static inline u32 reciprocal_scale(u32 val, u32 ep_ro)
->  	return (u32)(((u64) val * ep_ro) >> 32);
->  }
+> diff --git a/drivers/hwmon/scmi-hwmon.c b/drivers/hwmon/scmi-hwmon.c
+> index a80183a488c5..5c244053efc8 100644
+> --- a/drivers/hwmon/scmi-hwmon.c
+> +++ b/drivers/hwmon/scmi-hwmon.c
+> @@ -18,6 +18,34 @@ struct scmi_sensors {
+>  	const struct scmi_sensor_info **info[hwmon_max];
+>  };
 >  
-> +/* Return in f the value of 10 raise to the power x */
-> +#define __pow10(x, f)(					\
-> +{							\
-> +	typeof(x) __x = abs(x);				\
-> +	f = 1;						\
-> +	while (__x--)					\
-> +		f *= 10;				\
-> +	f;						\
-> +}							\
-> +)
+> +static u64 scmi_hwmon_scale(const struct scmi_sensor_info *sensor, u64 value)
+> +{
+> +	s8 scale = sensor->scale;
+> +	unsigned long long f;
 
-Kind of unusual. I would have expected to use this like
-	f = __pow10(x);
-ie without having to provide f as parameter. That would be much less
-confusing. I assume this is to make the result type independent, but
-I am not sure if that is worth the trouble.
+do_div() takes either an uint32 or an unsigned long as second parameter,
+so this doesn't really help. If you want to be able to handle scales
+outside the 32-bit range, you would have to use u64 and div64_u64().
 
-Are there users outside the hwmon code ? If not, it might be simpler
-to keep it there for now.
-
-Thanks,
 Guenter
 
 > +
->  #if defined(CONFIG_MMU) && \
->  	(defined(CONFIG_PROVE_LOCKING) || defined(CONFIG_DEBUG_ATOMIC_SLEEP))
->  #define might_fault() __might_fault(__FILE__, __LINE__)
+> +	switch (sensor->type) {
+> +	case TEMPERATURE_C:
+> +	case VOLTAGE:
+> +	case CURRENT:
+> +		scale += 3;
+> +		break;
+> +	case POWER:
+> +	case ENERGY:
+> +		scale += 6;
+> +		break;
+> +	default:
+> +		break;
+> +	}
+> +
+> +	__pow10(abs(scale), f);
+> +	if (scale > 0)
+> +		value *= f;
+> +	else
+> +		do_div(value, f);
+> +
+> +        return value;
+> +}
+> +
+>  static int scmi_hwmon_read(struct device *dev, enum hwmon_sensor_types type,
+>  			   u32 attr, int channel, long *val)
+>  {
+> @@ -30,7 +58,7 @@ static int scmi_hwmon_read(struct device *dev, enum hwmon_sensor_types type,
+>  	sensor = *(scmi_sensors->info[type] + channel);
+>  	ret = h->sensor_ops->reading_get(h, sensor->id, false, &value);
+>  	if (!ret)
+> -		*val = value;
+> +		*val = scmi_hwmon_scale(sensor, value);
+>  
+>  	return ret;
+>  }
 > -- 
 > 2.17.1
 > 
