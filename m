@@ -2,84 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55EB715F5E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 10:30:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43CD115F64
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 10:31:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RMssa51GCi6Bli9tCdDOoNeAyXIQBAOZXcQJF5E/lS4=; b=D154RIS1inx7qa
-	OKJtIaEvojHbF9fd/LulYlHqNk1HuyEt57xOnrrx4z40Oljlh+/1CXX4FIilLfwM4Sl8tl1DNVsYo
-	A+jK1Zg/R6qlqjXMHs9VDY5V2V7k5P95Z7Ygc/WoDC4K6QLnbJNpsWioCxATsRJGoAHTSsQjowkHb
-	U+4QlytLluUbHCeElJBOLautn0swdLxzkxRTjMMMwfwmNldvxAyaM5qMNLgOXnjMUTEowpHnos0uI
-	CdmTKaCtq4d588IrrvnJEVFYdeSXPNbuXuoJVoKGDi1/1i8mEkiO1kU2jhpov1sqHfmikeUtXEHnU
-	hoKXDGRQL0pNPklo7BEQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=WbNR2vaBTM9/mcoAujA0t9HlvQiN4KGQqfYxCUzWMG4=; b=q0bK7VAK0Ei7amL73XJNxZjt3
+	PfvmupJ4G/yOCXd4PUVwaK83RPHdrhWvgpozdLDuLp88e4BufOSOJHtk+VycGhv8bEhExELRlFxua
+	028lf9+G5gua+g0hIXlWO8qpjeKs1j8tfq0V+hEpr6595BnvDk0E2PZh2CGnSqY7q/7btpl6s9udz
+	jClcLHzemaX9WIIxBSr/xNkgf2da9ZXfe1INfS2Ng5eT+PuZr2Vg09v4dedQrKl6+93h25yM+Qbf9
+	x6i6iUH7jBkGuhz2plsuPuR7ICDMFHUutTy2jFMdogTzeLJRm+TY3xZqYFzOh1jYp1sTsESUmZnzW
+	Ct0Ml4hjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNvUC-0001i4-To; Tue, 07 May 2019 08:30:04 +0000
-Received: from mail-yw1-xc43.google.com ([2607:f8b0:4864:20::c43])
+	id 1hNvVS-0003KZ-75; Tue, 07 May 2019 08:31:22 +0000
+Received: from hqemgate14.nvidia.com ([216.228.121.143])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNvU3-0001h6-NW
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 08:29:57 +0000
-Received: by mail-yw1-xc43.google.com with SMTP id a130so6955296ywe.13
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 May 2019 01:29:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=UNq780S9Il2xGCGc6hYdagY5z9aOQkZ/Ci4iGfutpL8=;
- b=Gv2RKzxjA5tJevDAowfpmTM7ZLkGwjyI9/pd+TFt3vucB7w8JUGgIY5oSo3y/LbEHp
- R8j92mSRhTXBD+NA0k3I+W4Wi1widNB/BpiW5JbwUNFaZGDQ8EZY3J0r8Z75kUt70VHS
- QUwjmqv3aZYqKCkYisxPaLf7LvWZ+DyLpuGaIZphFsMiiFGpcEj5zzgR3hdY48vo099/
- 2qTwRZKp+l1YoGEoxHsYGeznWVNh8wgVE4vBZ1IUQATpwelgQd1zNgisLzh47a5K7v52
- bO+d7XYDKzaShIbx7x2qwXF1VICNj56ysSBRIudrhDOMXrOZ4XLCqijd+Na52x80/j7s
- xaxQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=UNq780S9Il2xGCGc6hYdagY5z9aOQkZ/Ci4iGfutpL8=;
- b=b99Bqi9TeZ9j3P3XzylTA4tdghmgGFJx1ChJbbr2F/UiYpR7x0O7Wx4CsqH1xxm6Dx
- TsbYtwyt/BYICfXcTPc+jsv1MMalFKfuBZJuX3WUerypcOVnZZP3n238nfB3QQfcJ3P1
- 00hg65Euk/muyrrtb4R6CiKNerFeAx03y5L1eJjRI2FY5DarqvS9vf9CeWnPEGqYXltG
- pifCKq7Nc27wmkiCSXhwd4vaNRiwAFmT9U5iu2VEe51K2O276xG6fJ8nRZhJsdviYnmV
- mvRL1pYcmUcFnmuOG/HUSKwLBVvtl2Uw63xl3llBqukn1JVHTjIycgwFVOob2VXjM8IS
- JCHQ==
-X-Gm-Message-State: APjAAAWGGPX2dfaceZ2gllVWje7VR+Xsnza+qecBdlMi+u/uQCYwV2sO
- kcjdMi02FHDIGEdffmb1FRn96Q==
-X-Google-Smtp-Source: APXvYqyJdaQGQ+aiX4yWrANU5XPpcjwfUywnfa6FwCHFQPEVLTcg9HL4UesogaDJ3meRc+3hNxiYKA==
-X-Received: by 2002:a81:5f82:: with SMTP id t124mr19933252ywb.94.1557217793690; 
- Tue, 07 May 2019 01:29:53 -0700 (PDT)
-Received: from leoy-ThinkPad-X240s (li931-65.members.linode.com.
- [45.56.113.65])
- by smtp.gmail.com with ESMTPSA id 124sm3638912yws.21.2019.05.07.01.29.49
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 07 May 2019 01:29:52 -0700 (PDT)
-Date: Tue, 7 May 2019 16:29:45 +0800
-From: Leo Yan <leo.yan@linaro.org>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH 3/5] coresight: perf: Don't set the truncated flag in
- snapshot mode
-Message-ID: <20190507082945.GC21730@leoy-ThinkPad-X240s>
-References: <20190501175052.29667-1-mathieu.poirier@linaro.org>
- <20190501175052.29667-4-mathieu.poirier@linaro.org>
+ id 1hNvVL-0003KA-8e
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 08:31:16 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate14.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5cd1425a0000>; Tue, 07 May 2019 01:31:22 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Tue, 07 May 2019 01:31:14 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Tue, 07 May 2019 01:31:14 -0700
+Received: from [10.25.73.250] (10.124.1.5) by HQMAIL101.nvidia.com
+ (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 7 May
+ 2019 08:31:07 +0000
+Subject: Re: [PATCH V5 09/16] Documentation/devicetree: Add PCIe
+ supports-clkreq property
+To: Rob Herring <robh@kernel.org>
+References: <20190424052004.6270-1-vidyas@nvidia.com>
+ <20190424052004.6270-10-vidyas@nvidia.com> <20190426152229.GA8492@bogus>
+X-Nvconfidentiality: public
+From: Vidya Sagar <vidyas@nvidia.com>
+Message-ID: <d8ef9c8d-031b-4c77-b225-4a1fef3bc9eb@nvidia.com>
+Date: Tue, 7 May 2019 14:01:03 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190501175052.29667-4-mathieu.poirier@linaro.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20190426152229.GA8492@bogus>
+X-Originating-IP: [10.124.1.5]
+X-ClientProxiedBy: HQMAIL101.nvidia.com (172.20.187.10) To
+ HQMAIL101.nvidia.com (172.20.187.10)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1557217882; bh=E4R0bJaTc1XE8Bf2zvQbXuwPLi2Wnco5hGqGVqidxEo=;
+ h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
+ Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
+ X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=EjKMx+IrwLC7OlCn4DahxXHLMvnH1eWfEWPdkY/ioG3avM5ymJYSCMMugCZWV4n1x
+ FsOJwNFO2fEcxle7Ne9WovuScxWqwRHx8lpa3BH6b5A5udhmvr0irtXmCru6Hy0Yj+
+ ED+8LoEy0fZ9yJDTov8NGlEc5ExVyXI8sLRmBkfdsUftk4M49ons7tllllj0Ao4+Oe
+ LOAiIjAeZxulLxMFTdZE5b+O4bXhiWyDQ+7rWqPnDr9cE9Ti4gLfT9GPKz0qwyUW5n
+ cJYifvYWO84KI8RI3CC/5HLc5ZfUjYfPOLxSDFJM4BbzUCxT5FdeB/KHkV5KIq3TQV
+ tkXX3FOplgwVQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_012955_958632_FE87C864 
-X-CRM114-Status: GOOD (  18.31  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190507_013115_317859_F97FD717 
+X-CRM114-Status: GOOD (  13.38  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c43 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.143 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -88,6 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -99,105 +94,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: corbet@lwn.net, alexander.shishkin@linux.intel.com,
- coresight@lists.linaro.org, suzuki.poulose@arm.com, acme@kernel.org,
- peterz@infradead.org, mingo@redhat.com, mike.leach@arm.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ mperttunen@nvidia.com, mmaddireddy@nvidia.com, linux-pci@vger.kernel.org,
+ catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ kthota@nvidia.com, kishon@ti.com, linux-tegra@vger.kernel.org,
+ thierry.reding@gmail.com, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
+ bhelgaas@google.com, jonathanh@nvidia.com,
+ linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 01, 2019 at 11:50:50AM -0600, Mathieu Poirier wrote:
-> This patch avoids setting the truncated flag when operaring in snapshot
-
-s/operaring/operating
-
-> mode since the trace buffer is expected to be truncated and discontinuous
-> from one snapshot to another.  Moreover when the truncated flag is set
-> the perf core stops enabling the event, waiting for user space to consume
-> the data.  In snapshot mode this is clearly not what we want since it
-> results in stale data.
-
-Not sure if I understand correctly or not.
-
-If set TRUNCATED flag and the user space has finished to read out the
-trace data, will perf not re-enable the event anymore for snapshot mode?
-
-Seems to me, the perf core code cannot handle properly for TRUNCATED
-flag with snapshot mode.  Sorry if introduce noise, will look into the
-perf core code.
-
-Thanks,
-Leo Yan
-
-> Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> ---
->  drivers/hwtracing/coresight/coresight-etb10.c   | 8 +++++++-
->  drivers/hwtracing/coresight/coresight-tmc-etf.c | 8 +++++++-
->  drivers/hwtracing/coresight/coresight-tmc-etr.c | 8 +++++++-
->  3 files changed, 21 insertions(+), 3 deletions(-)
+On 4/26/2019 8:52 PM, Rob Herring wrote:
+> On Wed, Apr 24, 2019 at 10:49:57AM +0530, Vidya Sagar wrote:
+>> Some host controllers need to know the existence of clkreq signal routing to
+>> downstream devices to be able to advertise low power features like ASPM L1
+>> substates. Without clkreq signal routing being present, enabling ASPM L1 sub
+>> states might lead to downstream devices falling off the bus. Hence a new device
+>> tree property 'supports-clkreq' is added to make such host controllers
+>> aware of clkreq signal routing to downstream devices.
 > 
-> diff --git a/drivers/hwtracing/coresight/coresight-etb10.c b/drivers/hwtracing/coresight/coresight-etb10.c
-> index 0764647b92bc..6ff48be91f61 100644
-> --- a/drivers/hwtracing/coresight/coresight-etb10.c
-> +++ b/drivers/hwtracing/coresight/coresight-etb10.c
-> @@ -535,7 +535,13 @@ static unsigned long etb_update_buffer(struct coresight_device *csdev,
->  		lost = true;
->  	}
->  
-> -	if (lost)
-> +	/*
-> +	 * Don't set the TRUNCATED flag in snapshot mode because 1) the
-> +	 * captured buffer is expected to be truncated and 2) a full buffer
-> +	 * prevents the event from being re-enabled by the perf core,
-> +	 * resulting in stale data being send to user space.
-> +	 */
-> +	if (!buf->snapshot && lost)
->  		perf_aux_output_flag(handle, PERF_AUX_FLAG_TRUNCATED);
->  
->  	/* finally tell HW where we want to start reading from */
-> diff --git a/drivers/hwtracing/coresight/coresight-tmc-etf.c b/drivers/hwtracing/coresight/coresight-tmc-etf.c
-> index d3025634f5e6..8039bd389034 100644
-> --- a/drivers/hwtracing/coresight/coresight-tmc-etf.c
-> +++ b/drivers/hwtracing/coresight/coresight-tmc-etf.c
-> @@ -538,7 +538,13 @@ static unsigned long tmc_update_etf_buffer(struct coresight_device *csdev,
->  		lost = true;
->  	}
->  
-> -	if (lost)
-> +	/*
-> +	 * Don't set the TRUNCATED flag in snapshot mode because 1) the
-> +	 * captured buffer is expected to be truncated and 2) a full buffer
-> +	 * prevents the event from being re-enabled by the perf core,
-> +	 * resulting in stale data being send to user space.
-> +	 */
-> +	if (!buf->snapshot && lost)
->  		perf_aux_output_flag(handle, PERF_AUX_FLAG_TRUNCATED);
->  
->  	cur = buf->cur;
-> diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-> index b9881d6d41ba..718586a083af 100644
-> --- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
-> +++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-> @@ -1516,7 +1516,13 @@ tmc_update_etr_buffer(struct coresight_device *csdev,
->  
->  	lost |= etr_buf->full;
->  out:
-> -	if (lost)
-> +	/*
-> +	 * Don't set the TRUNCATED flag in snapshot mode because 1) the
-> +	 * captured buffer is expected to be truncated and 2) a full buffer
-> +	 * prevents the event from being re-enabled by the perf core,
-> +	 * resulting in stale data being send to user space.
-> +	 */
-> +	if (!etr_perf->snapshot && lost)
->  		perf_aux_output_flag(handle, PERF_AUX_FLAG_TRUNCATED);
->  	return size;
->  }
-> -- 
-> 2.17.1
+> Please be consistent with subjects (Use 'dt-bindings: ...')
+When I had made this change, I did a git log and saw 'Documentation/devicetree:' as
+the prefix and hence added it. But, now, with linux-next top of the tree,  I see
+two more commits with 'dt-bindings:' prefix. I'll change my patch also to the new
+'dt-bindings:' prefix.
+
 > 
+> With that change,
+> 
+> Reviewed-by: Rob Herring <robh@kernel.org>
+> 
+>>
+>> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
+>> ---
+>> Changes since [v4]:
+>> * None
+>>
+>> Changes since [v3]:
+>> * Rebased on top of linux-next top of the tree
+>>
+>> Changes since [v2]:
+>> * None
+>>
+>> Changes since [v1]:
+>> * This is a new patch in v2 series
+>>
+>>   Documentation/devicetree/bindings/pci/pci.txt | 5 +++++
+>>   1 file changed, 5 insertions(+)
+
 
 _______________________________________________
 linux-arm-kernel mailing list
