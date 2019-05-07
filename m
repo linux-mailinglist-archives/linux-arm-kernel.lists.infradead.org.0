@@ -2,62 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 212D415DE3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 09:07:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E92A615DED
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 09:10:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BvBW59PBF2ox097riEPdsaOZMh8RWk0LM1GFKMhNBO8=; b=mQzcIuI+1ql4qdKrmy2/4pyTY
-	rHO8eQARJ7BOQU4V9iH+wWBE3ulzuIoKAXQfkj0ixWu23k677HjbN/V+ML0czO7A09gk0hMwNwYaj
-	+cIUZmMKYHCs7MBtyPux8iXlxp7U4SzVq8HLBiCs4s0nIPxfgXAjIjHkn3nbB3/9aVAVD8/m0UJKE
-	Q8BncMOSskozJct9wLkO84WCOe/heaid6NcZMGAoRoRLv7nAGoHmlM/ezouchCOiR+Y2pRj4URUX8
-	CuY3p9WGp0Q956hV9gPqCBknCVGYiBPiZWd1UjUBx8F+6/WVDIU1bAYXXBMd29cmzLIslvKDJp9ez
-	0zPuBmGMA==;
+	 bh=b5UIDK9RkbsNK7GOtejduhyECVf1zYLyJIFgpNUR40U=; b=VCqKli2vpDHW7GPF0DNCUF+Ta
+	4E1Va/F64NX6fJAcQIKJ5QCd6JBtCoXiww0Oi8flhtUI4nP3bDX7H+rj6XmF+RexfvoNAn6rQ6Sd6
+	rzApaYWCZ5rLdmdavprJiGSKJVfSzRt02eo9b3lxU0lbw4Pqc99WiE6YOwpMTZX3v38ZSozgLoIqE
+	D13MxTY6w6M6+DBHk9sKuXsAf5P7Zk8ZDdVpXkQeWcq5BndULjaXZ7fB33potjO3oIS1yKz0A43av
+	nHPjU9CZzQ22AWL4GMFZQfhe+pGhqASksEERnYBEvPkgfZV6kbGOccSbKkoJ0xnAb/mCmtP82oQP8
+	GU3lae9Lg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNuBr-0006Ra-0R; Tue, 07 May 2019 07:07:03 +0000
-Received: from relay11.mail.gandi.net ([217.70.178.231])
+	id 1hNuFd-0008J8-5e; Tue, 07 May 2019 07:10:57 +0000
+Received: from hqemgate16.nvidia.com ([216.228.121.65])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNuBi-0006QC-NC
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 07:06:56 +0000
-Received: from localhost (aaubervilliers-681-1-29-145.w90-88.abo.wanadoo.fr
- [90.88.149.145]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay11.mail.gandi.net (Postfix) with ESMTPSA id 1420C100012;
- Tue,  7 May 2019 07:06:41 +0000 (UTC)
-Date: Tue, 7 May 2019 09:06:41 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Jagan Teki <jagan@amarulasolutions.com>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Michael Trimarchi <michael@amarulasolutions.com>,
- devicetree <devicetree@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-sunxi <linux-sunxi@googlegroups.com>
-Subject: Re: [linux-sunxi] Re: [PATCH v2] arm64: allwinner: h6:
- orangepi-one-plus: Add Ethernet support
-Message-ID: <20190507070641.7whs4ckiqupaah35@flea>
-References: <20190503115928.27662-1-jagan@amarulasolutions.com>
- <20190503144651.ttqfha656dykqjzo@flea>
- <CAMty3ZCQTiX5OvCG_uMRS02vFu0c1-bkcyauLD6oaFcd=y3RNA@mail.gmail.com>
- <20190506133101.c3twwwydy5mez3db@core.my.home>
+ id 1hNuFV-0008IQ-C2
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 07:10:50 +0000
+Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5cd12f740000>; Tue, 07 May 2019 00:10:44 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate102.nvidia.com (PGP Universal service);
+ Tue, 07 May 2019 00:10:48 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate102.nvidia.com on Tue, 07 May 2019 00:10:48 -0700
+Received: from [10.25.73.250] (172.20.13.39) by HQMAIL101.nvidia.com
+ (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 7 May
+ 2019 07:10:40 +0000
+Subject: Re: [PATCH V5 02/16] PCI/PME: Export pcie_pme_disable_msi() &
+ pcie_pme_no_msi() APIs
+To: Thierry Reding <thierry.reding@gmail.com>
+References: <20190424052004.6270-1-vidyas@nvidia.com>
+ <20190424052004.6270-3-vidyas@nvidia.com> <20190503110159.GB32400@ulmo>
+X-Nvconfidentiality: public
+From: Vidya Sagar <vidyas@nvidia.com>
+Message-ID: <b8f482f4-8136-07b5-3d68-f45a6fd580ba@nvidia.com>
+Date: Tue, 7 May 2019 12:40:36 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190506133101.c3twwwydy5mez3db@core.my.home>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <20190503110159.GB32400@ulmo>
+X-Originating-IP: [172.20.13.39]
+X-ClientProxiedBy: HQMAIL106.nvidia.com (172.18.146.12) To
+ HQMAIL101.nvidia.com (172.20.187.10)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1557213044; bh=KIRiMdJ3vHsuNoXRBzUBVE4jj3DtsdclgdYyB8TtsKg=;
+ h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
+ Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
+ X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=N0cu64tGkekeUlr8GKtZ16+dmuv0OOULTcHPKb31Wg/Etaa5vKT7q/lCU9FWUezN/
+ X+GgJbW6gv3Wlgg0qz4wcVp/+BHHqKijSr7kxXMORKyhWwiG/1PY1x/PskChTDTaiM
+ Ix0gYrXm/p0ytf1PRzZ6mjbbv5b7q7+flVxgw3YiG76X7uayqz/Z/aUO4r/CkBb/2t
+ D6MMYSGaJci4N2uY/oLvsOcCw1MxHSwVGcbrWEJFGvFuL73XUq5CGYt/yx+PQy9377
+ t3IfNouplwTxNXL9xDOEvQ4LHkNjw+z/z/MUkElZPJv+nFXO4z/VecuQreGLOwJQe3
+ f15d3SAi3cWww==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_000655_050749_75CA0DB9 
-X-CRM114-Status: GOOD (  23.84  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190507_001049_422643_56BA7EE2 
+X-CRM114-Status: GOOD (  13.08  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.231 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.65 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -69,165 +94,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4738755748858421670=="
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ mperttunen@nvidia.com, mmaddireddy@nvidia.com, linux-pci@vger.kernel.org,
+ catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ kthota@nvidia.com, kishon@ti.com, linux-tegra@vger.kernel.org,
+ robh+dt@kernel.org, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
+ bhelgaas@google.com, jonathanh@nvidia.com,
+ linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 5/3/2019 4:31 PM, Thierry Reding wrote:
+> On Wed, Apr 24, 2019 at 10:49:50AM +0530, Vidya Sagar wrote:
+>> Export pcie_pme_disable_msi() & pcie_pme_no_msi() APIs to enable drivers
+>> using this API be able to build as loadable modules.
+>>
+>> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
+>> ---
+>> Changes from [v4]:
+>> * None
+>>
+>> Changes from [v3]:
+>> * None
+>>
+>> Changes from [v2]:
+>> * Exported pcie_pme_no_msi() API after making pcie_pme_msi_disabled a static
+>>
+>> Changes from [v1]:
+>> * This is a new patch in v2 series
+>>
+>>   drivers/pci/pcie/pme.c     | 14 +++++++++++++-
+>>   drivers/pci/pcie/portdrv.h | 16 +++-------------
+>>   2 files changed, 16 insertions(+), 14 deletions(-)
+>>
+>> diff --git a/drivers/pci/pcie/pme.c b/drivers/pci/pcie/pme.c
+>> index 54d593d10396..d5e0ea4a62fc 100644
+>> --- a/drivers/pci/pcie/pme.c
+>> +++ b/drivers/pci/pcie/pme.c
+>> @@ -25,7 +25,19 @@
+>>    * that using MSI for PCIe PME signaling doesn't play well with PCIe PME-based
+>>    * wake-up from system sleep states.
+>>    */
+>> -bool pcie_pme_msi_disabled;
+>> +static bool pcie_pme_msi_disabled;
+>> +
+>> +void pcie_pme_disable_msi(void)
+>> +{
+>> +	pcie_pme_msi_disabled = true;
+>> +}
+>> +EXPORT_SYMBOL_GPL(pcie_pme_disable_msi);
+>> +
+>> +bool pcie_pme_no_msi(void)
+>> +{
+>> +	return pcie_pme_msi_disabled;
+>> +}
+>> +EXPORT_SYMBOL_GPL(pcie_pme_no_msi);
+>>   
+>>   static int __init pcie_pme_setup(char *str)
+>>   {
+>> diff --git a/drivers/pci/pcie/portdrv.h b/drivers/pci/pcie/portdrv.h
+>> index 1d50dc58ac40..7c8c3da4bd58 100644
+>> --- a/drivers/pci/pcie/portdrv.h
+>> +++ b/drivers/pci/pcie/portdrv.h
+>> @@ -125,22 +125,12 @@ void pcie_port_bus_unregister(void);
+>>   struct pci_dev;
+>>   
+>>   #ifdef CONFIG_PCIE_PME
+>> -extern bool pcie_pme_msi_disabled;
+>> -
+>> -static inline void pcie_pme_disable_msi(void)
+>> -{
+>> -	pcie_pme_msi_disabled = true;
+>> -}
+>> -
+>> -static inline bool pcie_pme_no_msi(void)
+>> -{
+>> -	return pcie_pme_msi_disabled;
+>> -}
+>> -
+>> +void pcie_pme_disable_msi(void);
+>> +bool pcie_pme_no_msi(void);
+>>   void pcie_pme_interrupt_enable(struct pci_dev *dev, bool enable);
+>>   #else /* !CONFIG_PCIE_PME */
+>>   static inline void pcie_pme_disable_msi(void) {}
+>> -static inline bool pcie_pme_no_msi(void) { return false; }
+>> +static inline bool pcie_pme_no_msi(void) {}
+> 
+> This looks wrong.
+Can you please give more info on what is wrong in this?
 
---===============4738755748858421670==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="t252ai7obnvmcokm"
-Content-Disposition: inline
+> 
+> Thierry
+> 
 
-
---t252ai7obnvmcokm
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Mon, May 06, 2019 at 03:31:01PM +0200, Ond=C5=99ej Jirman wrote:
-> > > > ---
-> > > > Changes for v2:
-> > > > - emac changes on top of https://patchwork.kernel.org/cover/1089952=
-9/
-> > > >   series
-> > > >
-> > > >  .../allwinner/sun50i-h6-orangepi-one-plus.dts |  8 ++++
-> > > >  .../dts/allwinner/sun50i-h6-orangepi.dtsi     | 42 +++++++++++++++=
-++++
-> > > >  2 files changed, 50 insertions(+)
-> > > >
-> > > > diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-one-p=
-lus.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-one-plus.dts
-> > > > index 12e17567ab56..9e8ed1053715 100644
-> > > > --- a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-one-plus.dts
-> > > > +++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-one-plus.dts
-> > > > @@ -9,4 +9,12 @@
-> > > >  / {
-> > > >       model =3D "OrangePi One Plus";
-> > > >       compatible =3D "xunlong,orangepi-one-plus", "allwinner,sun50i=
--h6";
-> > > > +
-> > > > +     aliases {
-> > > > +             ethernet0 =3D &emac;
-> > > > +     };
-> > > > +};
-> > > > +
-> > > > +&emac {
-> > > > +     status =3D "okay";
-> > > >  };
-> > > > diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi.dtsi =
-b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi.dtsi
-> > > > index 62e27948a3fa..c48e24acaf8a 100644
-> > > > --- a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi.dtsi
-> > > > +++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi.dtsi
-> > > > @@ -45,6 +45,48 @@
-> > > >               regulator-max-microvolt =3D <5000000>;
-> > > >               regulator-always-on;
-> > > >       };
-> > > > +
-> > > > +     /*
-> > > > +      * The board uses 2.5V RGMII signalling. Power sequence to en=
-able
-> > > > +      * the phy is to enable GMAC-2V5 and GMAC-3V (aldo2) power ra=
-ils
-> > > > +      * at the same time and to wait 100ms.
-> > > > +      */
-> > > > +     reg_gmac_2v5: gmac-2v5 {
-> > > > +             compatible =3D "regulator-fixed";
-> > > > +             regulator-name =3D "gmac-2v5";
-> > > > +             regulator-min-microvolt =3D <2500000>;
-> > > > +             regulator-max-microvolt =3D <2500000>;
-> > > > +             startup-delay-us =3D <100000>;
-> > > > +             enable-active-high;
-> > > > +             gpio =3D <&pio 3 6 GPIO_ACTIVE_HIGH>; /* GMAC_EN: PD6=
- */
-> > > > +
-> > > > +             /* The real parent of gmac-2v5 is reg_vcc5v, but we n=
-eed to
-> > > > +              * enable two regulators to power the phy. This is on=
-e way
-> > > > +              * to achieve that.
-> > > > +              */
-> > > > +             vin-supply =3D <&reg_aldo2>; /* VCC3V3-MAC: GMAC-3V */
-> > > > +     };
-> > > > +};
-> > > > +
-> > > > +&emac {
-> > > > +     pinctrl-names =3D "default";
-> > > > +     pinctrl-0 =3D <&ext_rgmii_pins>;
-> > > > +     phy-mode =3D "rgmii";
-> > > > +     phy-handle =3D <&ext_rgmii_phy>;
-> > > > +     phy-supply =3D <&reg_gmac_2v5>;
-> > > > +     allwinner,rx-delay-ps =3D <1500>;
-> > > > +     allwinner,tx-delay-ps =3D <700>;
-> > > > +};
-> > > > +
-> > > > +&mdio {
-> > > > +     ext_rgmii_phy: ethernet-phy@1 {
-> > > > +             compatible =3D "ethernet-phy-ieee802.3-c22";
-> > > > +             reg =3D <1>;
-> > > > +
-> > > > +             reset-gpios =3D <&pio 3 14 GPIO_ACTIVE_LOW>; /* RGMII=
--RESET: PD14 */
-> > > > +             reset-assert-us =3D <15000>;
-> > > > +             reset-deassert-us =3D <40000>;
-> > > > +     };
-> > > >  };
-> > >
-> > > ... however, at no point in time you explain why you made that switch,
-> > > and while most of the definition of the EMAC nodes is in the DTSI, you
-> > > only enable it in one DTS.
-> >
-> > The dtsi is shared b/w 1+ and lite2 and 1+ has emac, so I enabled the
-> > status directly on dts and keeping the relevant nodes on dtsi just
-> > like SoC dtsi does. do I need to mention this in commit log?
->
-> Lite 2 doesn't have reg_gmac_2v5 and it also doesn't have the external ph=
-y.
-> But with this patch, reg_gmac_2v5 will also show up in the Lite 2's final
-> DTB.
->
-> Comapred to SoC dtsi, the SoC always has things that are in the dtsi, they
-> are just not enabled/used by the board, but they are present on the chip.
->
-> So this comes down to what the meaning of board-level dtsi should be. I
-> doubt we want it to mean "a collection of stuff that may or may not be
-> present on the boards that depend on it".
-
-Agreed.
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---t252ai7obnvmcokm
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXNEugQAKCRDj7w1vZxhR
-xSqpAP9+c1gUKZN/ouCvKfloPe7AajE+A0yKbWtfWhHElWT14QEAzjJAuWb8Rv+a
-FfdAW6X7qq2yr9sNkluAa/DRkDrm+Q8=
-=30DV
------END PGP SIGNATURE-----
-
---t252ai7obnvmcokm--
-
-
---===============4738755748858421670==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4738755748858421670==--
-
