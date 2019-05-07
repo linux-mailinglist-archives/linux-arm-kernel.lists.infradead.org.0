@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 001B016244
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 12:54:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62B3316245
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 12:55:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=LQ6FuS6j+ggEkwyN4pW0uinTyX2sgqrx0KisoYALsSc=; b=YRhRqRjPRCeuZTsLJq/KldvpGE
-	f6kDj3kqqGk3BSIKtxfCePu0AXFSP3zvENL3ckbm/QAVCHtkXAVBKnz7fnHcG8l7iQXOpsa0+nx8d
-	J2msf1cPyAKCj5C+jzp5Kr0+X6Z1FYdZ97uRBpsTUSH+GQkYefcaKLkjoHOXEI33M+zH6dqC3F5JU
-	8oIqhaO7Tro4ov9hjqm9iK8Xo1KoM7dpHbhyE4bhGN3sKV+89gR/BBr6NTi6bC8jVsDeGl2gxvwqN
-	KMcTfC4Ck0hFbcN/L+6//jbEkztBb20rKjTXMDm+puU/7t8vH5pKZF8ehc/1zgg9eh6jEsT3uVEJR
-	wV28GH0Q==;
+	bh=X1yTuACtDfiDPq9WU3lGyHm1etldsRY9YF/WTCwhG+Q=; b=lTCbtJ0zoR8s1jXt3Or/zKnt2d
+	Ae/g3Y+1RpxYO5bDHyfEX3fQgNVyqVFRoEhVgGEO/+HdOvGnDd1ad4+Ella2uuKfUE6aEJiICR89a
+	gC+uIW5SvRh2qMjBBISXuIlm7klc4hBwDr5WT966grbhYGjAn8YvVMBA/HGwD6TOZBxu/EWlKPFeu
+	4PcNo+I2QfKQn3OueF+jR/77/BO3vHEWASx3YCJGmc8V8hYrl74ICqDKU4INGeOFiRCyBVJ/NVE4T
+	BV4eqas9KUMtILkSA5yMumRT/hq8yv9XFcHGohbD4pUlWRsOUVDGy8YQdXeMg2dnRQ6eqafflz3bH
+	Oox6ubLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNxkG-0006Fd-Pz; Tue, 07 May 2019 10:54:48 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
+	id 1hNxkR-0006S5-MA; Tue, 07 May 2019 10:54:59 +0000
+Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNxjI-000581-Oc
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 10:53:56 +0000
+ id 1hNxjJ-00059a-QM
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 10:54:00 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 18AA21682;
- Tue,  7 May 2019 03:53:48 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8836D374;
+ Tue,  7 May 2019 03:53:49 -0700 (PDT)
 Received: from en101.cambridge.arm.com (en101.cambridge.arm.com [10.1.196.93])
  by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id
- D96E73F5AF; Tue,  7 May 2019 03:53:46 -0700 (PDT)
+ 550573F5AF; Tue,  7 May 2019 03:53:48 -0700 (PDT)
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 05/30] coresight: tpiu: Clean up device specific data
-Date: Tue,  7 May 2019 11:52:32 +0100
-Message-Id: <1557226378-10131-6-git-send-email-suzuki.poulose@arm.com>
+Subject: [PATCH v3 06/30] coresight: stm: Cleanup device specific data
+Date: Tue,  7 May 2019 11:52:33 +0100
+Message-Id: <1557226378-10131-7-git-send-email-suzuki.poulose@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1557226378-10131-1-git-send-email-suzuki.poulose@arm.com>
 References: <1557226378-10131-1-git-send-email-suzuki.poulose@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_035349_359395_F66C6BE6 
-X-CRM114-Status: GOOD (  13.38  )
+X-CRM114-CacheID: sfid-20190507_035350_391545_80851570 
+X-CRM114-Status: GOOD (  14.62  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -69,52 +68,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Switch to using the coresight device instead of the parent
-amba device.
+Keep track of the STM coresight device which is a child device
+of the AMBA device. Since we can get to the coresight_device
+from the "device" instance, remove the explicit field.
 
 Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 ---
- drivers/hwtracing/coresight/coresight-tpiu.c | 7 ++-----
- 1 file changed, 2 insertions(+), 5 deletions(-)
+ drivers/hwtracing/coresight/coresight-stm.c | 21 ++++++++++-----------
+ 1 file changed, 10 insertions(+), 11 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-tpiu.c b/drivers/hwtracing/coresight/coresight-tpiu.c
-index 63d9af3..4dd3e7f 100644
---- a/drivers/hwtracing/coresight/coresight-tpiu.c
-+++ b/drivers/hwtracing/coresight/coresight-tpiu.c
-@@ -49,13 +49,11 @@
- 
+diff --git a/drivers/hwtracing/coresight/coresight-stm.c b/drivers/hwtracing/coresight/coresight-stm.c
+index 9f8a844..8f50484 100644
+--- a/drivers/hwtracing/coresight/coresight-stm.c
++++ b/drivers/hwtracing/coresight/coresight-stm.c
+@@ -110,7 +110,6 @@ struct channel_space {
  /**
-  * @base:	memory mapped base address for this component.
-- * @dev:	the device entity associated to this component.
-  * @atclk:	optional clock for the core parts of the TPIU.
-  * @csdev:	component vitals needed by the framework.
+  * struct stm_drvdata - specifics associated to an STM component
+  * @base:		memory mapped base address for this component.
+- * @dev:		the device entity associated to this component.
+  * @atclk:		optional clock for the core parts of the STM.
+  * @csdev:		component vitals needed by the framework.
+  * @spinlock:		only one at a time pls.
+@@ -128,7 +127,6 @@ struct channel_space {
   */
- struct tpiu_drvdata {
+ struct stm_drvdata {
  	void __iomem		*base;
 -	struct device		*dev;
  	struct clk		*atclk;
  	struct coresight_device	*csdev;
- };
-@@ -75,7 +73,7 @@ static int tpiu_enable(struct coresight_device *csdev, u32 mode, void *__unused)
+ 	spinlock_t		spinlock;
+@@ -205,13 +203,13 @@ static int stm_enable(struct coresight_device *csdev,
+ 	if (val)
+ 		return -EBUSY;
  
- 	tpiu_enable_hw(drvdata);
- 	atomic_inc(csdev->refcnt);
--	dev_dbg(drvdata->dev, "TPIU enabled\n");
-+	dev_dbg(&csdev->dev, "TPIU enabled\n");
+-	pm_runtime_get_sync(drvdata->dev);
++	pm_runtime_get_sync(csdev->dev.parent);
+ 
+ 	spin_lock(&drvdata->spinlock);
+ 	stm_enable_hw(drvdata);
+ 	spin_unlock(&drvdata->spinlock);
+ 
+-	dev_dbg(drvdata->dev, "STM tracing enabled\n");
++	dev_dbg(&csdev->dev, "STM tracing enabled\n");
  	return 0;
  }
  
-@@ -104,7 +102,7 @@ static int tpiu_disable(struct coresight_device *csdev)
+@@ -271,10 +269,10 @@ static void stm_disable(struct coresight_device *csdev,
+ 		/* Wait until the engine has completely stopped */
+ 		coresight_timeout(drvdata->base, STMTCSR, STMTCSR_BUSY_BIT, 0);
  
- 	tpiu_disable_hw(drvdata);
+-		pm_runtime_put(drvdata->dev);
++		pm_runtime_put(csdev->dev.parent);
  
--	dev_dbg(drvdata->dev, "TPIU disabled\n");
-+	dev_dbg(&csdev->dev, "TPIU disabled\n");
- 	return 0;
+ 		local_set(&drvdata->mode, CS_MODE_DISABLED);
+-		dev_dbg(drvdata->dev, "STM tracing disabled\n");
++		dev_dbg(&csdev->dev, "STM tracing disabled\n");
+ 	}
  }
  
-@@ -139,7 +137,6 @@ static int tpiu_probe(struct amba_device *adev, const struct amba_id *id)
+@@ -763,9 +761,10 @@ static void stm_init_default_data(struct stm_drvdata *drvdata)
+ 	bitmap_clear(drvdata->chs.guaranteed, 0, drvdata->numsp);
+ }
+ 
+-static void stm_init_generic_data(struct stm_drvdata *drvdata)
++static void stm_init_generic_data(struct stm_drvdata *drvdata,
++				  const char *name)
+ {
+-	drvdata->stm.name = dev_name(drvdata->dev);
++	drvdata->stm.name = name;
+ 
+ 	/*
+ 	 * MasterIDs are assigned at HW design phase. As such the core is
+@@ -807,7 +806,6 @@ static int stm_probe(struct amba_device *adev, const struct amba_id *id)
  	if (!drvdata)
  		return -ENOMEM;
  
@@ -122,6 +148,25 @@ index 63d9af3..4dd3e7f 100644
  	drvdata->atclk = devm_clk_get(&adev->dev, "atclk"); /* optional */
  	if (!IS_ERR(drvdata->atclk)) {
  		ret = clk_prepare_enable(drvdata->atclk);
+@@ -848,7 +846,7 @@ static int stm_probe(struct amba_device *adev, const struct amba_id *id)
+ 	spin_lock_init(&drvdata->spinlock);
+ 
+ 	stm_init_default_data(drvdata);
+-	stm_init_generic_data(drvdata);
++	stm_init_generic_data(drvdata, dev_name(dev));
+ 
+ 	if (stm_register_device(dev, &drvdata->stm, THIS_MODULE)) {
+ 		dev_info(dev,
+@@ -870,7 +868,8 @@ static int stm_probe(struct amba_device *adev, const struct amba_id *id)
+ 
+ 	pm_runtime_put(&adev->dev);
+ 
+-	dev_info(dev, "%s initialized\n", (char *)coresight_get_uci_data(id));
++	dev_info(&drvdata->csdev->dev, "%s initialized\n",
++		 (char *)coresight_get_uci_data(id));
+ 	return 0;
+ 
+ stm_unregister:
 -- 
 2.7.4
 
