@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3782416267
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 12:56:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3522D16249
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  7 May 2019 12:55:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=lOhMhQI4/LtPaVTzGwE6hgKKucKfZs181Z+L1+TtwMk=; b=t8VmqhBhdYu4499XuulGyQuhV5
-	quJ9GL1lUA0pZndqSXY1zEsK4xEaN3k2PUM6OfPw1d8g7w4ToVejyCX53Lp3W4kVpE6NlMIH3+TMB
-	sid4KezfxTOluYfzAuheOijSDD878w1cllXmADm3lSNs/oum68EpFGQdqQ33rjqZELeTHIQsBf/f/
-	pnGZKbEugDJMG4F4p78O6X4R1WMUOeQ/D5a5pVlRPUR1LJeXUmeWmbe9F6mENmdLdHlu4bTHebGPq
-	Rjsa06JnhJx7VwyLwikRjDQR0YzGj5xHjwJabQGdDVPzpkjGlkiXndZ/T6RAB3v36WldcGzciXNdc
-	mpixPVPQ==;
+	bh=43OUlW88swv1QyYrCDIKeMrLU5s5L6bHvnJ/ykMA7lU=; b=agr/5iCLH8y4conMbJwnXbT8QV
+	Iy2pq0LnrCa33uivJH72WbVTaBWRZn1vFL/pXKvnZrqBbL8RAp3GYI+qgcqksF2bZB0c6xX/EqnvU
+	dojAjhS4DPLzuZFV4Ora++VFfT3QtOy3oEXNBcWWd+eJvuDtBVJ503z9bTf3tvF9P2eKU3n4J4RQd
+	uFvqjkK0qYI4ylNIttBLvQhTwpLxJI8RxLciu2NIVUeh2w4d9ka+kD70g4TsFs6L8Xp42H8i4sZ/J
+	f54u2/lRMOcLF0kiJ8uB8WVwnn0e8TePqB+aKm5B0hLQ9BreqTNZKmS1r7Oh4bgvytzt5VRnH4/3Y
+	B9BD1Gog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNxmH-0001aE-FV; Tue, 07 May 2019 10:56:53 +0000
+	id 1hNxl9-0008Rh-7Q; Tue, 07 May 2019 10:55:43 +0000
 Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNxjO-0005Gk-7h
- for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 10:54:02 +0000
+ id 1hNxjP-0005JP-Tu
+ for linux-arm-kernel@lists.infradead.org; Tue, 07 May 2019 10:54:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E39141688;
- Tue,  7 May 2019 03:53:53 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5F1EF15AD;
+ Tue,  7 May 2019 03:53:55 -0700 (PDT)
 Received: from en101.cambridge.arm.com (en101.cambridge.arm.com [10.1.196.93])
  by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id
- B098B3F5AF; Tue,  7 May 2019 03:53:52 -0700 (PDT)
+ 2C1EF3F5AF; Tue,  7 May 2019 03:53:54 -0700 (PDT)
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 09/30] coresight: Use coresight device names for sinks in
- PMU attribute
-Date: Tue,  7 May 2019 11:52:36 +0100
-Message-Id: <1557226378-10131-10-git-send-email-suzuki.poulose@arm.com>
+Subject: [PATCH v3 10/30] coresight: Rename of_coresight to coresight-platform
+Date: Tue,  7 May 2019 11:52:37 +0100
+Message-Id: <1557226378-10131-11-git-send-email-suzuki.poulose@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1557226378-10131-1-git-send-email-suzuki.poulose@arm.com>
 References: <1557226378-10131-1-git-send-email-suzuki.poulose@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_035354_888492_E0B3AD4D 
-X-CRM114-Status: GOOD (  11.38  )
+X-CRM114-CacheID: sfid-20190507_035356_823430_0F2E1CC5 
+X-CRM114-Status: GOOD (  11.29  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -69,49 +68,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Rename the firmware handling file to a more generic
+name, in preparation for adding ACPI support. Right now
+we only support DT and we have all the platform handling
+code in of_coresight.c. Let us rename the file to
+coresight-platform.c in order to keep the platform handling
+in a single place for DT and the upcoming ACPI support.
 
-Move to using the coresight device name instead of the parent
-device name for SINK attribute for PMU.
-
-Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 ---
- drivers/hwtracing/coresight/coresight-etm-perf.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ drivers/hwtracing/coresight/Makefile                                 | 3 +--
+ drivers/hwtracing/coresight/{of_coresight.c => coresight-platform.c} | 3 ++-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+ rename drivers/hwtracing/coresight/{of_coresight.c => coresight-platform.c} (99%)
 
-diff --git a/drivers/hwtracing/coresight/coresight-etm-perf.c b/drivers/hwtracing/coresight/coresight-etm-perf.c
-index 3c62944..5c1ca0d 100644
---- a/drivers/hwtracing/coresight/coresight-etm-perf.c
-+++ b/drivers/hwtracing/coresight/coresight-etm-perf.c
-@@ -523,7 +523,7 @@ int etm_perf_add_symlink_sink(struct coresight_device *csdev)
- 	unsigned long hash;
- 	const char *name;
- 	struct device *pmu_dev = etm_pmu.dev;
--	struct device *pdev = csdev->dev.parent;
-+	struct device *dev = &csdev->dev;
- 	struct dev_ext_attribute *ea;
+diff --git a/drivers/hwtracing/coresight/Makefile b/drivers/hwtracing/coresight/Makefile
+index 3b435aa..3c0ac42 100644
+--- a/drivers/hwtracing/coresight/Makefile
++++ b/drivers/hwtracing/coresight/Makefile
+@@ -2,8 +2,7 @@
+ #
+ # Makefile for CoreSight drivers.
+ #
+-obj-$(CONFIG_CORESIGHT) += coresight.o coresight-etm-perf.o
+-obj-$(CONFIG_OF) += of_coresight.o
++obj-$(CONFIG_CORESIGHT) += coresight.o coresight-etm-perf.o coresight-platform.o
+ obj-$(CONFIG_CORESIGHT_LINK_AND_SINK_TMC) += coresight-tmc.o \
+ 					     coresight-tmc-etf.o \
+ 					     coresight-tmc-etr.o
+diff --git a/drivers/hwtracing/coresight/of_coresight.c b/drivers/hwtracing/coresight/coresight-platform.c
+similarity index 99%
+rename from drivers/hwtracing/coresight/of_coresight.c
+rename to drivers/hwtracing/coresight/coresight-platform.c
+index 7045930..514cc2b 100644
+--- a/drivers/hwtracing/coresight/of_coresight.c
++++ b/drivers/hwtracing/coresight/coresight-platform.c
+@@ -17,7 +17,7 @@
+ #include <linux/cpumask.h>
+ #include <asm/smp_plat.h>
  
- 	if (csdev->type != CORESIGHT_DEV_TYPE_SINK &&
-@@ -536,15 +536,15 @@ int etm_perf_add_symlink_sink(struct coresight_device *csdev)
- 	if (!etm_perf_up)
- 		return -EPROBE_DEFER;
- 
--	ea = devm_kzalloc(pdev, sizeof(*ea), GFP_KERNEL);
-+	ea = devm_kzalloc(dev, sizeof(*ea), GFP_KERNEL);
- 	if (!ea)
- 		return -ENOMEM;
- 
--	name = dev_name(pdev);
-+	name = dev_name(dev);
- 	/* See function coresight_get_sink_by_id() to know where this is used */
- 	hash = hashlen_hash(hashlen_string(NULL, name));
- 
--	ea->attr.attr.name = devm_kstrdup(pdev, name, GFP_KERNEL);
-+	ea->attr.attr.name = devm_kstrdup(dev, name, GFP_KERNEL);
- 	if (!ea->attr.attr.name)
- 		return -ENOMEM;
- 
+-
++#ifdef CONFIG_OF
+ static int of_dev_node_match(struct device *dev, void *data)
+ {
+ 	return dev->of_node == data;
+@@ -295,3 +295,4 @@ of_get_coresight_platform_data(struct device *dev,
+ 	return pdata;
+ }
+ EXPORT_SYMBOL_GPL(of_get_coresight_platform_data);
++#endif
 -- 
 2.7.4
 
