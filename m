@@ -2,89 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D06B817E41
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 18:41:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7EE817E59
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 18:44:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=jEt6xgSn1Ic3OLzK2DANjM33SoTGb/o04uNCqW/wu08=; b=tJ5Y3N44TPy0OzWS8PgKqYXlWb
-	iIwTW5HELrLdp2IY2HzFecQPbEvk4C3A9ICY0COEzuDcFsNonfTvkMOrSbAtz8viJsd8yLFDNshrZ
-	t4j9nPgtvXOl+p4VAsiLHyXuU9LIl34sK21765OdZkog5Ao8mjpZlxNjpAjNU63FU9sLonvaDf2dM
-	srunllvsVZew+OWjqr/21owOK8Xf9l6NrQdTLN5d7iiZK21N2ezw/aYMDDJmDT3IugD2s/w5BgOc8
-	h3lBDo5VrAMejP/f69WM94Lhx3XCotu215qL7xxl5V6vE1oeBagNjANuU6kJcYzlp/E6jMurjtm9z
-	iker4wJA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=mmxKhiFNiP4XKRrZj/ZcG1JhSxT++9izlC3GCO1sDAY=; b=hh+g3Ijy3qSgPd3osmBhb/sCa
+	1XLh4/86CGFR1jR85vE2qLH2hsODiy+xd57fKWVRD9U50wulOY+PGD+s3wwcwB7LX4d9vD/WwiN2N
+	5B9tSDMeAWQqSnGC5kSIr1wuMJ/3aFadF34vaHPS8LAlVNEqGqcJEWKcWUDfOYPA5EJwe2bv9jnwV
+	dntgEYR9OEK/eYLQVbSVqpd4zbUMnPS73CVb5z+x/BDRR0/M0MjEizIvF9prRdhojYbcMbwRbpUxO
+	e1WGxtc0B8zQc0NrwL3RqMwVn8X0HMMhrXpGFWplw9Zq/Sirg+482tHB8L8RXF9/u3JV5cElHyXST
+	XrUH1OtmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOPdH-0005Vs-MQ; Wed, 08 May 2019 16:41:27 +0000
-Received: from mail-yw1-xc41.google.com ([2607:f8b0:4864:20::c41])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOPcs-00059G-IM
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 16:41:06 +0000
-Received: by mail-yw1-xc41.google.com with SMTP id n188so16779288ywe.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 May 2019 09:41:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=pK0d0RZmUxDAg2UlpJZk6eqKP4c8MBzekwXBlQJcaEA=;
- b=YS5aDbbBHo/ZpqucQo4JmlEVicPBsSMyK91OtXe2V8t5TpyOfWVVDZcWLMQ/dv72Jf
- v62QeBR8G9/vH2qg+fbIYKlXx5sgCxG23YYKxDnUkXd6o3YISBsF+FfsL2MJqAoy1Qzy
- wBj+YvrFo99bgAxJ4s7iDmnOj9bnYrxt2dH3s=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=pK0d0RZmUxDAg2UlpJZk6eqKP4c8MBzekwXBlQJcaEA=;
- b=ZB57Pw6ipQYQQl/w7SJGtTRn5Z8NrYtd2C5R+X+nHGNLT9nsQzEscfK6nVOP7Wa1Na
- Jfvb3mzjaapecH6QN+x2Q4b+nuSM3h4RLPXYUWlrQX+knFzstp1ptt4PVGgxAm6D6+6E
- uL+xMYKOAr7CpGy7WLskLi6DcdDlfpB3G/edPnMqFxL/PdhYnOA0wB6jGy2cfIIOGd5J
- y96Y9CCDMY21TJ8D7xu8GTD/6H4DphYGawvAbmIva2jP36KC3qp763G13J8r8B1Hc5G0
- eQFZY/UeivMCeGFH7QTmGUPKE+WTsoCxblAVzcVChcz9hGNm91bnkNp7qrGibREJvige
- cOKA==
-X-Gm-Message-State: APjAAAXp2CKJrE1yMYsrb93SIKxcn1SUnq25m+COkKkEtf+srCqxaIBg
- EoRryax8wat1jyhPTwXEN8BJdw==
-X-Google-Smtp-Source: APXvYqz9ir/Gh8NUb1ycpQcDDVHcfdkyx6GifoD6MZrbq72G+zOHknduP6n8ZVhZZ9W94OE4VgRLcg==
-X-Received: by 2002:a25:4941:: with SMTP id w62mr27324493yba.360.1557333661480; 
- Wed, 08 May 2019 09:41:01 -0700 (PDT)
-Received: from lbrmn-lnxub113.broadcom.net ([192.19.228.250])
- by smtp.gmail.com with ESMTPSA id u6sm4671081ywl.71.2019.05.08.09.40.59
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 08 May 2019 09:41:00 -0700 (PDT)
-From: Scott Branden <scott.branden@broadcom.com>
-To: Adrian Hunter <adrian.hunter@intel.com>,
- Ulf Hansson <ulf.hansson@linaro.org>, Ray Jui <rjui@broadcom.com>,
- Scott Branden <sbranden@broadcom.com>,
- Stefan Wahren <stefan.wahren@i2se.com>
-Subject: [PATCH v2 2/2] mmc: sdhci-iproc: Set NO_HISPD bit to fix HS50 data
- hold time problem
-Date: Wed,  8 May 2019 09:40:44 -0700
-Message-Id: <20190508164044.22451-3-scott.branden@broadcom.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190508164044.22451-1-scott.branden@broadcom.com>
-References: <20190508164044.22451-1-scott.branden@broadcom.com>
+	id 1hOPfo-000669-3A; Wed, 08 May 2019 16:44:04 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hOPfg-00065N-VG
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 16:43:58 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EF3F1374;
+ Wed,  8 May 2019 09:43:55 -0700 (PDT)
+Received: from [10.1.196.93] (en101.cambridge.arm.com [10.1.196.93])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 31F693F238;
+ Wed,  8 May 2019 09:43:55 -0700 (PDT)
+Subject: Re: [PATCH 1/2] coresight: Do not call smp_processor_id() from
+ preemptible
+To: mathieu.poirier@linaro.org
+References: <1556899459-27785-1-git-send-email-suzuki.poulose@arm.com>
+ <CANLsYkyxDY8g9zyhTyTqALgF5dmVX1F7DA_93ECpnvAaACYX8g@mail.gmail.com>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+Message-ID: <ea6e3e0f-dea4-39dd-cc29-14001091a4ec@arm.com>
+Date: Wed, 8 May 2019 17:43:53 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <CANLsYkyxDY8g9zyhTyTqALgF5dmVX1F7DA_93ECpnvAaACYX8g@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_094102_846748_B5AA4E60 
-X-CRM114-Status: GOOD (  16.29  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190508_094357_014363_FC0A1A25 
+X-CRM114-Status: GOOD (  21.61  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,49 +65,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Scott Branden <scott.branden@broadcom.com>, linux-mmc@vger.kernel.org,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org,
- Trac Hoang <trac.hoang@broadcom.com>,
- BCM Kernel Feedback <bcm-kernel-feedback-list@broadcom.com>,
+Cc: coresight@lists.linaro.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Trac Hoang <trac.hoang@broadcom.com>
 
-The iproc host eMMC/SD controller hold time does not meet the
-specification in the HS50 mode.  This problem can be mitigated
-by disabling the HISPD bit; thus forcing the controller output
-data to be driven on the falling clock edges rather than the
-rising clock edges.
 
-Cc: stable@vger.kernel.org # v4.12+
-Signed-off-by: Trac Hoang <trac.hoang@broadcom.com>
-Signed-off-by: Scott Branden <scott.branden@broadcom.com>
----
- drivers/mmc/host/sdhci-iproc.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+On 08/05/2019 17:39, Mathieu Poirier wrote:
+> Hi Suzuki,
+> 
+> On Fri, 3 May 2019 at 10:04, Suzuki K Poulose <suzuki.poulose@arm.com> wrote:
+>>
+>> Instead of using smp_processor_id() to figure out the node,
+>> use the numa_node_id() for the current CPU node to avoid
+>> splats like :
+>>
+>>   BUG: using smp_processor_id() in preemptible [00000000] code: perf/1743
+>>   caller is alloc_etr_buf.isra.6+0x80/0xa0
+>>   CPU: 1 PID: 1743 Comm: perf Not tainted 5.1.0-rc6-147786-g116841e #344
+>>   Hardware name: ARM LTD ARM Juno Development Platform/ARM Juno Development Platform, BIOS EDK II Feb  1 2019
+>>    Call trace:
+>>     dump_backtrace+0x0/0x150
+>>     show_stack+0x14/0x20
+>>     dump_stack+0x9c/0xc4
+>>     debug_smp_processor_id+0x10c/0x110
+>>     alloc_etr_buf.isra.6+0x80/0xa0
+>>     tmc_alloc_etr_buffer+0x12c/0x1f0
+>>     etm_setup_aux+0x1c4/0x230
+>>     rb_alloc_aux+0x1b8/0x2b8
+>>     perf_mmap+0x35c/0x478
+>>     mmap_region+0x34c/0x4f0
+>>     do_mmap+0x2d8/0x418
+>>     vm_mmap_pgoff+0xd0/0xf8
+>>     ksys_mmap_pgoff+0x88/0xf8
+>>     __arm64_sys_mmap+0x28/0x38
+>>     el0_svc_handler+0xd8/0x138
+>>     el0_svc+0x8/0xc
+>>
+> 
+> That is very interesting...
+> 
+>> Fixes: 855ab61c16bf70b646 ("coresight: tmc-etr: Refactor function tmc_etr_setup_perf_buf()")
+>> Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+>> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+>> ---
+>>   drivers/hwtracing/coresight/coresight-tmc-etr.c | 6 ++----
+>>   1 file changed, 2 insertions(+), 4 deletions(-)
+>>
+>> diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
+>> index 793639f..74578bd 100644
+>> --- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
+>> +++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
+>> @@ -1323,13 +1323,11 @@ static struct etr_perf_buffer *
+>>   tmc_etr_setup_perf_buf(struct tmc_drvdata *drvdata, struct perf_event *event,
+>>                         int nr_pages, void **pages, bool snapshot)
+>>   {
+>> -       int node, cpu = event->cpu;
+>> +       int node;
+>>          struct etr_buf *etr_buf;
+>>          struct etr_perf_buffer *etr_perf;
+>>
+>> -       if (cpu == -1)
+>> -               cpu = smp_processor_id();
+>> -       node = cpu_to_node(cpu);
+>> +       node = (event->cpu == -1)? numa_node_id() : cpu_to_node(event->cpu);
+> 
+> Seems to me using numa_node_id() simply circumvent function
+> debug_smp_processor_id() and using get_cpu() and put_cpu() would be
+> more appropriate.  But I'll trust the NUMA people have thought about
+> this long before me.  Would you mind sending another revision that fix
+> the same code for ETB and ETF?
 
-diff --git a/drivers/mmc/host/sdhci-iproc.c b/drivers/mmc/host/sdhci-iproc.c
-index 9d4071c41c94..2feb4ef32035 100644
---- a/drivers/mmc/host/sdhci-iproc.c
-+++ b/drivers/mmc/host/sdhci-iproc.c
-@@ -220,7 +220,8 @@ static const struct sdhci_iproc_data iproc_cygnus_data = {
- 
- static const struct sdhci_pltfm_data sdhci_iproc_pltfm_data = {
- 	.quirks = SDHCI_QUIRK_DATA_TIMEOUT_USES_SDCLK |
--		  SDHCI_QUIRK_MULTIBLOCK_READ_ACMD12,
-+		  SDHCI_QUIRK_MULTIBLOCK_READ_ACMD12 |
-+		  SDHCI_QUIRK_NO_HISPD_BIT,
- 	.quirks2 = SDHCI_QUIRK2_ACMD23_BROKEN,
- 	.ops = &sdhci_iproc_ops,
- };
--- 
-2.17.1
+Sure, will send it soon.
 
+Suzuki
 
 _______________________________________________
 linux-arm-kernel mailing list
