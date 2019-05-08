@@ -2,58 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 522A817E80
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 18:52:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1FE8E17EAF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 19:00:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9b09h/fBUEt+Iu6/wzBdVIHiVx6wvb0ppidBb5gcNfI=; b=RPMHd2YZTJgQmc
-	dR2FoC2FEoPAx08Otobo2XKRHG16C25yrXPLHKpX8jY1q3GkLuVzlgl1mb4t5PKsxWyKzWOj+dXaM
-	ohjzMfHB44APUi9YZ40uwlCfvp0i44iFXL0lnSSUEXD1W7w+8W/6XhezoX1SvDagM5SBUcspZs1S+
-	57ntB690GYndwBNY86oraaazRhygzYIeVRizPHUfZOO3qtoxTazdhBppQqlZQMRSL98qfn+9ZJHOU
-	7lu7ErWjtcqMvzUZUrvYcKTzM9n4tjiJOFjFVkG7oOCWqgi7OvXktIlhAWwlD0AUUjmSF4hkQnvCk
-	lchT9Ym8HjdkeMjfgrjg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=DH+dOZjPU/KhEsfcxwUmyQaHwh5Fxa8QnT8+thzj44s=; b=Lne
+	pglCC8kxzLgBfCOXfAPziKDhpeMK0xSYSKlw2cnHDPDo6og7DPvxw9Qta7LyuWDFjZS3NBWF3mKtT
+	nz4m3gwIKGr9tT3iaB65JbGS7agEAnyOJ+GGAl3FZhjpqhQAWw4T+Ur3AJz8orNACQWn/2Ahxjsw6
+	40jriHYLk8JbGsScGEs+81VbE7Isw76F/0M+JmcSlgLcsYBC4Pva/W947HqordXcXhoskxXjhRvY3
+	Z1vIDagywQJDg79RYXBS7psoiYIe3XPYkv+B8oMftIME7hyLKnLaEp5rROtUcZFCKWZ17P4sinjmp
+	cAIwf56tr6O81x3C934l2EyT7IIHtbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOPnW-0001Qm-9w; Wed, 08 May 2019 16:52:02 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOPnP-0001QS-3x
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 16:51:56 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AA90F80D;
- Wed,  8 May 2019 09:51:54 -0700 (PDT)
-Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2D5743F238;
- Wed,  8 May 2019 09:51:52 -0700 (PDT)
-Date: Wed, 8 May 2019 17:51:49 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Hanjun Guo <guohanjun@huawei.com>
-Subject: Re: [PATCH v3 0/5] arm64: SPE ACPI enablement
-Message-ID: <20190508165149.GB21553@e107155-lin>
-References: <20190503232407.37195-1-jeremy.linton@arm.com>
- <5eaa1607-4bf0-a320-e9cf-2d51eca912c6@huawei.com>
- <82032e5b-0cb5-e48f-ab51-ba5d5f9dceec@arm.com>
- <819de863-92ff-51c5-9c35-880db4f6a922@huawei.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <819de863-92ff-51c5-9c35-880db4f6a922@huawei.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+	id 1hOPw0-000517-VF; Wed, 08 May 2019 17:00:48 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hOPvs-0004z9-Mq
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 17:00:42 +0000
+Received: by mail-pf1-x442.google.com with SMTP id u17so10805054pfn.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 08 May 2019 10:00:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=reuVuInEGSPVqhLJ9GfTV+s0+z5HcOAxAjqzHbqMNXQ=;
+ b=hf/JjJpboF2fHUPqQd52zL+q2Ztg6NGjvdjZBXvCpJs7Ni7ozPM0anw0BA//1DrmUd
+ YXGr2x/hDjlYst07ErUwpTeEJj3FAMxmaYHilkH7RsUb1W5Y72VjJUxXJUcKbO3g8zP8
+ j0zWxRF0YjHE8VbzipIj2glS0NjJ728rzsRg6gV4WmceL38CmyaETPVPhLiV8coF93Ue
+ ihppFWu7EzkugKZ+zWY/j1+KyyBrB0fvfMEN+fozovuA51S7dU6u4c4FS8hLNt6ItYE4
+ keczlXyBoz7S1eh20MdyJ5IW7QZkpyLUD/uATHzxvSkU+9sXwZ+dOupepzuBQkBbsZVs
+ MhuQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=reuVuInEGSPVqhLJ9GfTV+s0+z5HcOAxAjqzHbqMNXQ=;
+ b=GHiEa9rG5aL2VprPuzbTHOO9SDn17/IqdaEAHhptEaEtwGnftal3WcUuiUtBkne61z
+ nqWUt5eh5eP3iannBLi2Y8LBZ2GobFWHCqakC9lpyAzmm/zxkWLlLtAF/KkSz4dScasi
+ eBMqbTp4a6fFiQLiHaMijIpgPFmnuAi/SM+KlytkJc6hQO0LJDR1Ic1lL7g9HSpdjT6f
+ k+Y52DTyJC7ePoFOVfb+WvofUcBBKiP8Kt+7XAcPZo79EQK3gS27ei2fkOzjgn2TL2Uk
+ jUEyeKwfuoP3OaEdK9MeaLGGCKWz/6l/cFy0QE87noI5L7sYiBilwsOyJd9iL9bTrl27
+ luaw==
+X-Gm-Message-State: APjAAAVKEad6zdhFJtoWMk3J/2GcgSbd4Ou/dUn0xLyvwRNr68Lb3I48
+ DQSvqPNBBqM8nMqDpkpM6Ho=
+X-Google-Smtp-Source: APXvYqwddnrPq2MkpKs7xjxlDXgLahFp33wBgfHSukJs3hHHDgLSDN0lv63czoL2gfgFDo1BcR1V6w==
+X-Received: by 2002:a63:471d:: with SMTP id u29mr1994172pga.39.1557334839281; 
+ Wed, 08 May 2019 10:00:39 -0700 (PDT)
+Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.250])
+ by smtp.gmail.com with ESMTPSA id a80sm11347773pfj.105.2019.05.08.10.00.37
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 08 May 2019 10:00:38 -0700 (PDT)
+From: Florian Fainelli <f.fainelli@gmail.com>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH v4 0/2] hwmon: scmi: Scale values to target desired HWMON units
+Date: Wed,  8 May 2019 10:00:33 -0700
+Message-Id: <20190508170035.19671-1-f.fainelli@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_095155_168584_EB5AC02F 
-X-CRM114-Status: GOOD (  23.55  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190508_100040_764813_2D6B9300 
+X-CRM114-Status: GOOD (  12.95  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -65,84 +92,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>, will.deacon@arm.com,
- john.garry@huawei.com, rjw@rjwysocki.net, linuxarm@huawei.com,
- Jeremy Linton <jeremy.linton@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
- linux-acpi@vger.kernel.org, Hongbo Yao <yaohongbo@huawei.com>,
- catalin.marinas@arm.com, linux-arm-kernel@lists.infradead.org, lenb@kernel.org
+Cc: "open list:HARDWARE MONITORING" <linux-hwmon@vger.kernel.org>,
+ Jean Delvare <jdelvare@suse.com>, Florian Fainelli <f.fainelli@gmail.com>,
+ bcm-kernel-feedback-list@broadcom.com, Guenter Roeck <linux@roeck-us.net>,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 08, 2019 at 05:35:51PM +0800, Hanjun Guo wrote:
-> +Cc Alexander.
->
-> On 2019/5/8 1:58, Jeremy Linton wrote:
-> > Hi,
-> >
-> > On 5/4/19 6:06 AM, Hanjun Guo wrote:
-> >> Hi Jeremy, Mark,
-> >>
-> >> On 2019/5/4 7:24, Jeremy Linton wrote:
-> >>> This patch series enables the Arm Statistical Profiling
-> >>> Extension (SPE) on ACPI platforms.
-> >>>
-> >>> This is possible because ACPI 6.3 uses a previously
-> >>> reserved field in the MADT to store the SPE interrupt
-> >>> number, similarly to how the normal PMU is described.
-> >>> If a consistent valid interrupt exists across all the
-> >>> cores in the system, a platform device is registered.
-> >>> That then triggers the SPE module, which runs as normal.
-> >>>
-> >>> We also add the ability to parse the PPTT for IDENTICAL
-> >>> cores. We then use this to sanity check the single SPE
-> >>> device we create. This creates a bit of a problem with
-> >>> respect to the specification though. The specification
-> >>> says that its legal for multiple tree's to exist in the
-> >>> PPTT. We handle this fine, but what happens in the
-> >>> case of multiple tree's is that the lack of a common
-> >>> node with IDENTICAL set forces us to assume that there
-> >>> are multiple non-IDENTICAL cores in the machine.
-> >>
-> >> Adding this patch set on top of latest mainline kernel,
-> >> and tested on D06 which has the SPE feature, in boot message
-> >> shows it was probed successfully:
-> >>
-> >> arm_spe_pmu arm,spe-v1: probed for CPUs 0-95 [max_record_sz 128, align 4, features 0x7]
-> >>
-> >> but when I test it with spe events such as
-> >>
-> >> perf record -c 1024 -e arm_spe_0/branch_filter=0/ -o spe ls
-> >>
-> >> it fails with:
-> >> failed to mmap with 12 (Cannot allocate memory),
-> >>
-> >> Confirmed that patch [0] is merged and other perf events are working
-> >> fine.
-> >
-> > Its pretty easy to get into the weeds with this driver, does it work with examples like:
-> >
-> > https://lkml.org/lkml/2018/1/14/122
->
-> No, not work at all.
->
-> SPE works on 5.0, but not work after 5.1-rc1, bisected to this commit:
->
-> 5768402fd9c6 perf/ring_buffer: Use high order allocations for AUX buffers optimistically
->
+Hi Sudeep, Guenter,
 
-Indeed this patch breaks SPE. As mentioned in the patch, it uses high
-order allocations for AUX buffers and SPE PMU setup_aux explicitly
-fails with the warning "unexpected high-order page for auxbuf!" if
-it encounters one.
+This patch series adds support for scaling SCMI sensor values read from
+firmware. Sudeep, let me know if you think we should be treating scale
+== 0 as a special value to preserve some firmware compatibility (not
+that this would be desired).
 
-I don't know the intention of that check in SPE. Will ?
+Changes in v4:
+- deal with overflow in the caller of __pow10() as suggested by Guenter
+  which makes us rework a bit how the value argument/return value are
+  passed
+- don't harcode the latest power of 10 factor to be 18, just rely on
+  overflowing the u64 value instead
 
---
-Regards,
-Sudeep
+Changes in v3:
+
+- add a local __pow10 function to scmi-hwmon.c while a plan to provide
+  a generic function is figured out.
+- add check on power > 18 which would overflow a 64-bit unsigned integer
+- use div64_u64() to properly divide a 64-bit quantity with an unsigned
+  64-bit quantity
+
+Changes in v2:
+
+- added a helper function in kernel.h: __pow10()
+- made the scale in scmi_sensor_info an s8 type, added defines for
+  checking the sign bit and sign extending with a mask
+- simplify computations in hwmon driver
+
+Florian Fainelli (2):
+  firmware: arm_scmi: Fetch and store sensor scale
+  hwmon: scmi: Scale values to target desired HWMON units
+
+ drivers/firmware/arm_scmi/sensors.c |  6 ++++
+ drivers/hwmon/scmi-hwmon.c          | 46 +++++++++++++++++++++++++++++
+ include/linux/scmi_protocol.h       |  1 +
+ 3 files changed, 53 insertions(+)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
