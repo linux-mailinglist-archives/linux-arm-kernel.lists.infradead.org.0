@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9452F16F5B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 04:59:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82D0816F61
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 05:01:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OqN0qlsJ7KZJXhHqDe+GPVptJxRm6z8cHY2sZGUZymA=; b=Pq7deV/oAOjKbc
-	VPaP6FqerqSJ6EXKokbCoqkZHPjkBTXX86yNCMc163BIGzaXjK8DmZ0FmvFJW+jxzQ9QragxzZTSg
-	vCqn95ewbgREFomdWGhnXaEcNBRXkUax6DAQEZJaIvS4u6o0Yc54Q6SEKWQLS80iCs+gJzYUSMBwL
-	4ymDoHIhC5sErrdPsZprOehJ1siqs72v9+O4iEuT82yH87uUJJF13zAOO8K8zHlLIx3wEoZOpEY4z
-	k0vVYIn/w6TohsJIykPGChY8/uwfZk+8l/RoI4sqoDPCLzWd7jLX8s3u+bwZYwEF3d32U+dFzkoIq
-	e80eaNuCEhKDYZSd1fAg==;
+	List-Owner; bh=N3nfqt7Mvj/hm1KFFuA2BLqWdXI7hjDxg9ZWTSQjwvI=; b=ffqHoFBT8IfJiq
+	aQj2kXcINuhHSJ6L3Zv4E54HEOTtXpGcNHQSaPvmHwHsredEcoOyD7ARuyIZOo5BzGcaPknlkjWMy
+	FWkVz1AIFYPsLyhNEnEd2VJ3v6CO/xekvU3gyBCmASFD7OR+SUa7FxdVk8g8I2nFBxejlN1m3kdfi
+	QRlgTncBi6TieWmaFCgQ0JqOhMr1RWGnbDvDF+OO4f/wdxHOCmiNFlk/RVY09uU+CQUfOx4m6bZtX
+	G1oFs8Fw5lcK7qUIYofiC4Jk4aSeD32YIPxhgjWN7zLoxcxwcTK4OdD6e76R86bd6o8Om0ut1DfHa
+	y3To7nXtKebZPsSQo5Ng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOCnz-0003GM-KK; Wed, 08 May 2019 02:59:39 +0000
+	id 1hOCpb-0004mU-9x; Wed, 08 May 2019 03:01:19 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOCns-0003Fr-N1; Wed, 08 May 2019 02:59:33 +0000
-X-UUID: f41a6a178a4546a7a33654096d80ee4a-20190507
-X-UUID: f41a6a178a4546a7a33654096d80ee4a-20190507
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ id 1hOCpU-0004m0-SY; Wed, 08 May 2019 03:01:14 +0000
+X-UUID: 6e31dd1d9a7545339ed474ffc5aad4d9-20190507
+X-UUID: 6e31dd1d9a7545339ed474ffc5aad4d9-20190507
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <ck.hu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1851197226; Tue, 07 May 2019 18:59:18 -0800
-Received: from MTKMBS33N1.mediatek.inc (172.27.4.75) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 7 May 2019 19:59:17 -0700
+ with ESMTP id 157985393; Tue, 07 May 2019 19:00:39 -0800
+Received: from MTKMBS33DR.mediatek.inc (172.27.6.106) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 7 May 2019 20:00:37 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- MTKMBS33N1.mediatek.inc (172.27.4.75) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 8 May 2019 10:59:15 +0800
+ MTKMBS33DR.mediatek.inc (172.27.6.106) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 8 May 2019 11:00:34 +0800
 Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 8 May 2019 10:59:15 +0800
-Message-ID: <1557284354.31731.9.camel@mtksdaap41>
-Subject: Re: [v2 4/5] drm/mediatek: add frame size control
+ Transport; Wed, 8 May 2019 11:00:34 +0800
+Message-ID: <1557284434.31731.10.camel@mtksdaap41>
+Subject: Re: [v2 5/5] drm/mediatek: add mt8183 dsi driver support
 From: CK Hu <ck.hu@mediatek.com>
 To: Jitao Shi <jitao.shi@mediatek.com>
-Date: Wed, 8 May 2019 10:59:14 +0800
-In-Reply-To: <20190416060501.76276-5-jitao.shi@mediatek.com>
+Date: Wed, 8 May 2019 11:00:34 +0800
+In-Reply-To: <20190416060501.76276-6-jitao.shi@mediatek.com>
 References: <20190416060501.76276-1-jitao.shi@mediatek.com>
- <20190416060501.76276-5-jitao.shi@mediatek.com>
+ <20190416060501.76276-6-jitao.shi@mediatek.com>
 X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_195932_754728_61D3BBDC 
-X-CRM114-Status: GOOD (  14.13  )
+X-CRM114-CacheID: sfid-20190507_200112_928098_23A3EE04 
+X-CRM114-Status: GOOD (  12.64  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -94,47 +94,41 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Hi, Jitao:
 
 On Tue, 2019-04-16 at 14:05 +0800, Jitao Shi wrote:
-> Our new DSI chip has frame size control.
-> So add the driver data to control for different chips.
+> Add mt8183 dsi driver data. Enable size control and
+> reg commit control.
 > 
 
 Reviewed-by: CK Hu <ck.hu@mediatek.com>
 
 > Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
 > ---
->  drivers/gpu/drm/mediatek/mtk_dsi.c | 5 +++++
->  1 file changed, 5 insertions(+)
+>  drivers/gpu/drm/mediatek/mtk_dsi.c | 8 ++++++++
+>  1 file changed, 8 insertions(+)
 > 
 > diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
-> index be42405a0a78..458a700ce74c 100644
+> index 458a700ce74c..f0b36ec38e4f 100644
 > --- a/drivers/gpu/drm/mediatek/mtk_dsi.c
 > +++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
-> @@ -78,6 +78,7 @@
->  #define DSI_VBP_NL		0x24
->  #define DSI_VFP_NL		0x28
->  #define DSI_VACT_NL		0x2C
-> +#define DSI_SIZE_CON		0x38
->  #define DSI_HSA_WC		0x50
->  #define DSI_HBP_WC		0x54
->  #define DSI_HFP_WC		0x58
-> @@ -162,6 +163,7 @@ struct phy;
->  struct mtk_dsi_driver_data {
->  	const u32 reg_cmdq_off;
->  	bool has_shadow_ctl;
-> +	bool has_size_ctl;
+> @@ -1104,11 +1104,19 @@ static const struct mtk_dsi_driver_data mt2701_dsi_driver_data = {
+>  	.reg_cmdq_off = 0x180,
 >  };
 >  
->  struct mtk_dsi {
-> @@ -430,6 +432,9 @@ static void mtk_dsi_config_vdo_timing(struct mtk_dsi *dsi)
->  	writel(vm->vfront_porch, dsi->regs + DSI_VFP_NL);
->  	writel(vm->vactive, dsi->regs + DSI_VACT_NL);
->  
-> +	if (dsi->driver_data->has_size_ctl)
-> +		writel(vm->vactive << 16 | vm->hactive, dsi->regs + DSI_SIZE_CON);
+> +static const struct mtk_dsi_driver_data mt8183_dsi_driver_data = {
+> +	.reg_cmdq_off = 0x200,
+> +	.has_shadow_ctl = true,
+> +	.has_size_ctl = true,
+> +};
 > +
->  	horizontal_sync_active_byte = (vm->hsync_len * dsi_tmp_buf_bpp - 10);
+>  static const struct of_device_id mtk_dsi_of_match[] = {
+>  	{ .compatible = "mediatek,mt2701-dsi",
+>  	  .data = &mt2701_dsi_driver_data },
+>  	{ .compatible = "mediatek,mt8173-dsi",
+>  	  .data = &mt8173_dsi_driver_data },
+> +	{ .compatible = "mediatek,mt8183-dsi",
+> +	  .data = &mt8183_dsi_driver_data },
+>  	{ },
+>  };
 >  
->  	if (dsi->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE)
 
 
 
