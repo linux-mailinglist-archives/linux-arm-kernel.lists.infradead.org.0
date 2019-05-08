@@ -2,56 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B16717993
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 14:40:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 571B2179BF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 14:50:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=ft3x7Urw1sOFjaiM5iKctKLSH77lfO1yknPH8kvoygU=; b=jm1TL/kpxHFbXl
-	zvWoQHQfPPnHCVE05XsAzS+dVPBTrNac69l/DYwrqNFeOKqoYGQ70Ynihe1f8nH4Az53+78tyBrjZ
-	l1CfJAyVvuF5lyAMEVMPfBuPs++dR5Tb9Hcc/IsFXmLl8zIoK1uL8mpL0/cQU2Fltk/gd6YNIB847
-	d1h150r51O7orFbWSSD5QSaQJGeYWgKt9AXL6oM96T/5s5gRuRUHpVlnIoJFzdf+W4+e5zIMrjnKz
-	PlSi5R3eDVnN+kSRqJ9YwfAwKHZVtypofSfRooJxqTxdOHI4yJOclfb/qm4il+gPeA+skm+lJ0Xgg
-	itJl1ar++SEVX5LrbPPg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=AntwtAUSCs2zLag/Aqec0jg2WX6zXM4WDQDHb9929WU=; b=h48vuanMXRO2LUNk8GmsAZdK3
+	LW56+mRQI/oKRXjzw7r0NPmRcCEBfKKBKkS4t8uNQH2UGowZ0x6fJJl0hIXfG2OGnncsCbmqtzviS
+	JYLTEQpDBlBzZ0vPW5eCWz4nCQDqcrdGngevuGpC75v98YkTGCXuDiZKWk6K2Vzlmy3fmGOA+nRBI
+	wuLNM0Y8F/ytK2oetCzY5iNZM65CeTUe93GgoG2NN7w4t+icOcoHn51aMoDg+ePHcPXGOMLnlY5tM
+	/YKOgSDHhW7S2oJouypeD59cc9q7xaAzrDfoqeD5ha5ZGeS9qo7BxlFEwlvlXnUJOfzwFsheF/VTE
+	RmyMSd/SA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOLs7-0000ju-6Z; Wed, 08 May 2019 12:40:31 +0000
-Received: from honk.sigxcpu.org ([24.134.29.49])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOLrz-0000iz-62
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 12:40:25 +0000
-Received: from localhost (localhost [127.0.0.1])
- by honk.sigxcpu.org (Postfix) with ESMTP id C0045FB03;
- Wed,  8 May 2019 14:40:20 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
-Received: from honk.sigxcpu.org ([127.0.0.1])
- by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id nZU3glKHYqCD; Wed,  8 May 2019 14:40:18 +0200 (CEST)
-Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
- id 566BE47B7D; Wed,  8 May 2019 14:40:18 +0200 (CEST)
-Date: Wed, 8 May 2019 14:40:18 +0200
-From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-To: Leonard Crestez <leonard.crestez@nxp.com>,
- Abel Vesa <abel.vesa@nxp.com>, Lucas Stach <l.stach@pengutronix.de>
-Subject: [RFC PATCH] soc: imx: Try harder to get imq8mq SoC revisions
-Message-ID: <20190508124018.GA16859@bogon.m.sigxcpu.org>
+	id 1hOM21-0003r0-8L; Wed, 08 May 2019 12:50:45 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hOM1t-0003qK-Fd
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 12:50:39 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A6F5380D;
+ Wed,  8 May 2019 05:50:33 -0700 (PDT)
+Received: from [10.1.196.75] (e110467-lin.cambridge.arm.com [10.1.196.75])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2459A3F575;
+ Wed,  8 May 2019 05:50:30 -0700 (PDT)
+Subject: Re: [Question] Memory hotplug clarification for Qemu ARM/virt
+To: Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ Catalin Marinas <Catalin.Marinas@arm.com>,
+ Anshuman Khandual <anshuman.khandual@arm.com>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, linux-mm <linux-mm@kvack.org>
+References: <5FC3163CFD30C246ABAA99954A238FA83F1B6A66@lhreml524-mbs.china.huawei.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <ca5f7231-6924-0720-73a5-766eb13ee331@arm.com>
+Date: Wed, 8 May 2019 13:50:29 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <AM0PR04MB6434517A0235C8308D86B050EE310@AM0PR04MB6434.eurprd04.prod.outlook.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <5FC3163CFD30C246ABAA99954A238FA83F1B6A66@lhreml524-mbs.china.huawei.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_054023_535430_BE82FDA3 
-X-CRM114-Status: GOOD (  15.29  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190508_055037_536781_2BC80550 
+X-CRM114-Status: GOOD (  29.06  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [24.134.29.49 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,183 +67,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jacky Bai <ping.bai@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: "peter.maydell@linaro.org" <peter.maydell@linaro.org>,
+ "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>,
+ "qemu-devel@nongnu.org" <qemu-devel@nongnu.org>,
+ Linuxarm <linuxarm@huawei.com>,
+ "eric.auger@redhat.com" <eric.auger@redhat.com>,
+ "qemu-arm@nongnu.org" <qemu-arm@nongnu.org>, "xuwei \(O\)" <xuwei5@huawei.com>,
+ Jonathan Cameron <jonathan.cameron@huawei.com>,
+ Igor Mammedov <imammedo@redhat.com>, Laszlo Ersek <lersek@redhat.com>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Leonard,
+Hi Shameer,
 
-Thanks for your comments. Let's try s.th. different then: identify by
-bootrom, ocotop and anatop and fall back to ATF afterwards (I'll split
-out the DT part and add binding docs if this makes sense). I'm also
-happy to drop the whole ATF logic until mailine ATF catched up:
+On 08/05/2019 11:15, Shameerali Kolothum Thodi wrote:
+> Hi,
+> 
+> This series here[0] attempts to add support for PCDIMM in QEMU for
+> ARM/Virt platform and has stumbled upon an issue as it is not clear(at least
+> from Qemu/EDK2 point of view) how in physical world the hotpluggable
+> memory is handled by kernel.
+> 
+> The proposed implementation in Qemu, builds the SRAT and DSDT parts
+> and uses GED device to trigger the hotplug. This works fine.
+> 
+> But when we added the DT node corresponding to the PCDIMM(cold plug
+> scenario), we noticed that Guest kernel see this memory during early boot
+> even if we are booting with ACPI. Because of this, hotpluggable memory
+> may end up in zone normal and make it non-hot-un-pluggable even if Guest
+> boots with ACPI.
+> 
+> Further discussions[1] revealed that, EDK2 UEFI has no means to interpret the
+> ACPI content from Qemu(this is designed to do so) and uses DT info to
+> build the GetMemoryMap(). To solve this, introduced "hotpluggable" property
+> to DT memory node(patches #7 & #8 from [0]) so that UEFI can differentiate
+> the nodes and exclude the hotpluggable ones from GetMemoryMap().
+> 
+> But then Laszlo rightly pointed out that in order to accommodate the changes
+> into UEFI we need to know how exactly Linux expects/handles all the
+> hotpluggable memory scenarios. Please find the discussion here[2].
+> 
+> For ease, I am just copying the relevant comment from Laszlo below,
+> 
+> /******
+> "Given patches #7 and #8, as I understand them, the firmware cannot distinguish
+>   hotpluggable & present, from hotpluggable & absent. The firmware can only
+>   skip both hotpluggable cases. That's fine in that the firmware will hog neither
+>   type -- but is that OK for the OS as well, for both ACPI boot and DT boot?
+> 
+> Consider in particular the "hotpluggable & present, ACPI boot" case. Assuming
+> we modify the firmware to skip "hotpluggable" altogether, the UEFI memmap
+> will not include the range despite it being present at boot. Presumably, ACPI
+> will refer to the range somehow, however. Will that not confuse the OS?
+> 
+> When Igor raised this earlier, I suggested that hotpluggable-and-present should
+> be added by the firmware, but also allocated immediately, as EfiBootServicesData
+> type memory. This will prevent other drivers in the firmware from allocating AcpiNVS
+> or Reserved chunks from the same memory range, the UEFI memmap will contain
+> the range as EfiBootServicesData, and then the OS can release that allocation in
+> one go early during boot.
+> 
+> But this really has to be clarified from the Linux kernel's expectations. Please
+> formalize all of the following cases:
+> 
+> OS boot (DT/ACPI)  hotpluggable & ...  GetMemoryMap() should report as  DT/ACPI should report as
+> -----------------  ------------------  -------------------------------  ------------------------
+> DT                 present             ?                                ?
+> DT                 absent              ?                                ?
+> ACPI               present             ?                                ?
+> ACPI               absent              ?                                ?
+> 
+> Again, this table is dictated by Linux."
+> 
+> ******/
+> 
+> Could you please take a look at this and let us know what is expected here from
+> a Linux kernel view point.
 
-The mainline ATF doesn't currently support the FSL_SIP_GET_SOC_INFO call
-nor does it have the code to identify different imx8mq SOC revisions so
-mimic what NXPs ATF does here.
+For arm64, so far we've not even been considering DT-based hotplug - as 
+far as I'm aware there would still be a big open question there around 
+notification mechanisms and how to describe them. The DT stuff so far 
+has come from the PowerPC folks, so it's probably worth seeing what 
+their ideas are.
 
-As a fallback use ATF so we can identify new revisions once it gains
-support or when using NXPs ATF.
+ACPI-wise I've always assumed/hoped that hotplug-related things should 
+be sufficiently well-specified in UEFI that "do whatever x86/IA-64 do" 
+would be enough for us.
 
-Signed-off-by: Guido G=FCnther <agx@sigxcpu.org>
----
- arch/arm64/boot/dts/freescale/imx8mq.dtsi | 12 ++++
- drivers/soc/imx/soc-imx8.c                | 68 ++++++++++++++++++-----
- 2 files changed, 67 insertions(+), 13 deletions(-)
+Robin.
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dt=
-s/freescale/imx8mq.dtsi
-index 6d635ba0904c..52aa1600b33b 100644
---- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-@@ -246,6 +246,18 @@
- 		ranges =3D <0x0 0x0 0x0 0x3e000000>;
- 		dma-ranges =3D <0x40000000 0x0 0x40000000 0xc0000000>;
- =
-
-+		bus@00000000 { /* ROM */
-+			compatible =3D "simple-bus";
-+			#address-cells =3D <1>;
-+			#size-cells =3D <1>;
-+			ranges =3D <0x00000000 0x00000000 0x20000>;
-+
-+			rom@00000000 {
-+				compatible =3D "fsl,imx8mq-bootrom";
-+				reg =3D <0x00000000 0x1e800>;
-+			};
-+		};
-+
- 		bus@30000000 { /* AIPS1 */
- 			compatible =3D "fsl,imx8mq-aips-bus", "simple-bus";
- 			#address-cells =3D <1>;
-diff --git a/drivers/soc/imx/soc-imx8.c b/drivers/soc/imx/soc-imx8.c
-index fc6429f9170a..0a1fe82efe86 100644
---- a/drivers/soc/imx/soc-imx8.c
-+++ b/drivers/soc/imx/soc-imx8.c
-@@ -3,6 +3,7 @@
-  * Copyright 2019 NXP.
-  */
- =
-
-+#include <linux/arm-smccc.h>
- #include <linux/init.h>
- #include <linux/io.h>
- #include <linux/of_address.h>
-@@ -11,39 +12,80 @@
- #include <linux/platform_device.h>
- #include <linux/of.h>
- =
-
-+#define REV_A0				0x10
-+#define REV_B0				0x20
- #define REV_B1				0x21
- =
-
-+#define IMX8MQ_SW_INFO_A0		0x800
-+#define IMX8MQ_SW_INFO_B0		0x83C
- #define IMX8MQ_SW_INFO_B1		0x40
- #define IMX8MQ_SW_MAGIC_B1		0xff0055aa
- =
-
-+#define FSL_SIP_GET_SOC_INFO		0xc2000006
-+
- struct imx8_soc_data {
- 	char *name;
- 	u32 (*soc_revision)(void);
- };
- =
-
--static u32 __init imx8mq_soc_revision(void)
-+static u32 __init imx8mq_soc_revision_atf(void)
-+{
-+	struct arm_smccc_res res =3D { 0 };
-+
-+	arm_smccc_smc(FSL_SIP_GET_SOC_INFO, 0, 0, 0, 0, 0, 0, 0, &res);
-+	/*
-+	 * Bit [23:16] is the silicon ID
-+	 * Bit[7:4] is the base layer revision,
-+	 * Bit[3:0] is the metal layer revision
-+	 * e.g. 0x10 stands for Tapeout 1.0
-+	 */
-+	return res.a0 & 0xff;
-+}
-+
-+static u32 __init imx8mq_soc_magic_node(const char *node, u32 offset)
- {
- 	struct device_node *np;
--	void __iomem *ocotp_base;
-+	void __iomem *base;
- 	u32 magic;
--	u32 rev =3D 0;
- =
-
--	np =3D of_find_compatible_node(NULL, NULL, "fsl,imx8mq-ocotp");
-+	np =3D of_find_compatible_node(NULL, NULL, node);
- 	if (!np)
--		goto out;
-+		return 0;
-+	base =3D of_iomap(np, 0);
-+	WARN_ON(!base);
-+
-+	magic =3D readl_relaxed(base + offset);
-+	iounmap(base);
-+	of_node_put(np);
-+
-+	return magic;
-+}
- =
-
--	ocotp_base =3D of_iomap(np, 0);
--	WARN_ON(!ocotp_base);
-+static u32 __init imx8mq_soc_revision(void)
-+{
-+	u32 magic;
- =
-
--	magic =3D readl_relaxed(ocotp_base + IMX8MQ_SW_INFO_B1);
-+	/* B1 revision identified by ocotop */
-+	magic =3D imx8mq_soc_magic_node("fsl,imx8mq-ocotp", IMX8MQ_SW_INFO_B1);
- 	if (magic =3D=3D IMX8MQ_SW_MAGIC_B1)
--		rev =3D REV_B1;
-+		return REV_B1;
- =
-
--	iounmap(ocotp_base);
-+	/* B0 identified by bootrom */
-+	magic =3D imx8mq_soc_magic_node("fsl,imx8mq-bootrom", IMX8MQ_SW_INFO_B0);
-+	if ((magic & 0xff) =3D=3D REV_B0)
-+		return REV_B0;
- =
-
--out:
--	of_node_put(np);
--	return rev;
-+	/* A0 identified by anatop */
-+	magic =3D imx8mq_soc_magic_node("fsl,imx8mq-anatop", IMX8MQ_SW_INFO_A0);
-+	if ((magic & 0xff) =3D=3D REV_A0)
-+		return REV_A0;
-+
-+	/* Read revision from ATF as fallback */
-+	magic =3D imx8mq_soc_revision_atf();
-+	if (magic !=3D 0xff)
-+		return magic;
-+
-+	return 0;
- }
- =
-
- static const struct imx8_soc_data imx8mq_soc_data =3D {
--- =
-
-2.20.1
+> (Hi Laszlo/Igor/Eric, please feel free to add/change if I have missed any valid
+> points above).
+> 
+> Thanks,
+> Shameer
+> [0] https://patchwork.kernel.org/cover/10890919/
+> [1] https://patchwork.kernel.org/patch/10863299/
+> [2] https://patchwork.kernel.org/patch/10890937/
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
