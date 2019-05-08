@@ -2,53 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0627D174E2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 11:18:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8961617520
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 11:28:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=EXvke+gqSWlbcZjTs5ORPtkfVQYoZvhFMqMY3JgvIaI=; b=QpiejJbCv9lMHV
-	ZC+7jic3PCEZ2/0vg7Mp1xFKi2gjhNHHIx/NK8tqLNZAWMt6L5anvLiDgin+7gXwfcx/ae5h0E/9/
-	a62yvGmAEdvmyreeofWfUYtfXbd2Uq8JAtDDcE8nPnr3AQ0NrZTq/mGVI5x1TAbDJBRq/oEv6FZdo
-	OxafKn9IHOD9ArDJxIAdMtT4f2Xh1+pn+pzff3gVxTZ7pp2CadXrvE18gf3MBtoudcP3giH4S0tyk
-	V+6MaO5SRoI6QJ/s0h8psJYbVWi+CyZk+SiWfIGxuaXlGWqHuHoxA9Aui6jp5wzsrmC8MltkGzZd8
-	IdQ5BLe/d1XIKoIhXD8g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EI6y/o+f20g/ooxYPE8W6YgaPrJOaeOlMlMBX3Fsi9A=; b=s0c4O7F8kXMz2T
+	K19IZUPIVofLKf7kWWueE9EXUCgplK7/Idj8CVf6d5qeoY0xoklYR9+3uYv3Mn66NWjDwsQ/mzzS+
+	2bqY2gm8gspnxfIyFN2AWSRBWsi61U67x23jOZoXTBUCIdTNjB/D7MmPZfVeYyhqag8Qt/xTJuEl0
+	IQOe4KQDMuibDW8ZCpnz1Ya+KXbNwjW7HNqqrK4NC8PJgNu3yoGEUksQWJvNTzV11TbBdgCzvhqum
+	vWd+nUCXOgvYh0s7wFqgLlktbL90rTp+TmI4V98HRFtOh3yuYt/ljMIZw6+ahDUvPlB8pdYRUWQGw
+	FpPrPrgZ7Ds5F2BmLFVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOIiL-00053C-Gl; Wed, 08 May 2019 09:18:13 +0000
+	id 1hOIs5-0000HK-E9; Wed, 08 May 2019 09:28:17 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOIiC-00051k-Re; Wed, 08 May 2019 09:18:06 +0000
-X-UUID: e605acce96724c3c83d5ce7c6f942697-20190508
-X-UUID: e605acce96724c3c83d5ce7c6f942697-20190508
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <chunfeng.yun@mediatek.com>)
+ id 1hOIrw-0000GM-JO; Wed, 08 May 2019 09:28:10 +0000
+X-UUID: a97f1ce11f194c39b5799837d6a3805d-20190508
+X-UUID: a97f1ce11f194c39b5799837d6a3805d-20190508
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <andrew-sh.cheng@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1996166909; Wed, 08 May 2019 01:17:59 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 8 May 2019 02:17:57 -0700
+ with ESMTP id 745304140; Wed, 08 May 2019 01:28:05 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 8 May 2019 02:28:04 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 8 May 2019 17:17:55 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 8 May 2019 17:27:56 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 8 May 2019 17:17:54 +0800
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Rob Herring <robh+dt@kernel.org>
-Subject: [v3 PATCH] dt-binding: usb: add usb-role-switch property
-Date: Wed, 8 May 2019 17:17:44 +0800
-Message-ID: <c3596e996c9ab39c6b9bc14b93309244c4a55014.1557306151.git.chunfeng.yun@mediatek.com>
-X-Mailer: git-send-email 1.7.9.5
+ Transport; Wed, 8 May 2019 17:27:56 +0800
+Message-ID: <1557307676.27568.1.camel@mtksdaap41>
+Subject: Re: [PATCH v2 3/4] dt-bindings: devfreq: add compatible for mt8183
+ cci devfreq
+From: andrew-sh.cheng <andrew-sh.cheng@mediatek.com>
+To: Chanwoo Choi <cw00.choi@samsung.com>
+Date: Wed, 8 May 2019 17:27:56 +0800
+In-Reply-To: <28f2c90a-9588-3afa-193d-2572c9cc9bf5@samsung.com>
+References: <1553841972-19737-1-git-send-email-andrew-sh.cheng@mediatek.com>
+ <CGME20190329064630epcas5p216f8d9263dc6fea26bb71165b5673111@epcas5p2.samsung.com>
+ <1553841972-19737-4-git-send-email-andrew-sh.cheng@mediatek.com>
+ <28f2c90a-9588-3afa-193d-2572c9cc9bf5@samsung.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_021804_896649_3E843FF5 
-X-CRM114-Status: UNSURE (   9.74  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190508_022808_644763_5F9DD486 
+X-CRM114-Status: GOOD (  17.23  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,71 +74,48 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>, Felipe
- Balbi <felipe.balbi@linux.intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org, Yu
- Chen <chenyu56@huawei.com>, linux-kernel@vger.kernel.org,
- Biju Das <biju.das@bp.renesas.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
- linux-mediatek@lists.infradead.org, Min Guo <min.guo@mediatek.com>,
+ srv_heupstream@mediatek.com, linux-pm@vger.kernel.org,
+ Viresh Kumar <viresh.kumar@linaro.org>, "Rafael J.
+ Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, fan.chen@mediatek.com,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, linux-mediatek@lists.infradead.org,
  Matthias Brugger <matthias.bgg@gmail.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a property usb-role-switch to tell the driver that use
-USB Role Switch framework to handle the role switch,
-it's useful when the driver has already supported other ways,
-such as extcon framework etc.
-
-Cc: Biju Das <biju.das@bp.renesas.com>
-Cc: Yu Chen <chenyu56@huawei.com>
-Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
----
-v3:
-    add property type, modify description suggested by Heikki
-
-v2:
-    describe it in terms of h/w functionality suggested by Rob
-
-v1:
-    the property is discussed in:
-    [v2,2/7] dt-bindings: usb: renesas_usb3: add usb-role-switch property
-    https://patchwork.kernel.org/patch/10852497/
-
-    Mediatek and Hisilicon also try to use it:
-    [v4,3/6] dt-bindings: usb: mtu3: add properties about USB Role Switch
-    https://patchwork.kernel.org/patch/10918385/
-    [v4,6/6] usb: mtu3: register a USB Role Switch for dual role mode
-    https://patchwork.kernel.org/patch/10918367/
-
-    [v6,10/13] usb: dwc3: Registering a role switch in the DRD code
-    https://patchwork.kernel.org/patch/10909981/
----
- Documentation/devicetree/bindings/usb/generic.txt | 4 ++++
- 1 file changed, 4 insertions(+)
-
-diff --git a/Documentation/devicetree/bindings/usb/generic.txt b/Documentation/devicetree/bindings/usb/generic.txt
-index 0a74ab8dfdc2..cf5a1ad456e6 100644
---- a/Documentation/devicetree/bindings/usb/generic.txt
-+++ b/Documentation/devicetree/bindings/usb/generic.txt
-@@ -30,6 +30,10 @@ Optional properties:
- 			optional for OTG device.
-  - adp-disable: tells OTG controllers we want to disable OTG ADP, ADP is
- 			optional for OTG device.
-+ - usb-role-switch: boolean, indicates that the device is capable of assigning
-+			the USB data role (USB host or USB device) for a given
-+			USB connector, such as Type-C, Type-B(micro).
-+			see connector/usb-connector.txt.
- 
- This is an attribute to a USB controller such as:
- 
--- 
-2.21.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCAyMDE5LTA0LTE2IGF0IDE4OjA4ICswOTAwLCBDaGFud29vIENob2kgd3JvdGU6Cj4g
+SGksCj4gCj4gSSBhbHJlYWR5IHJldmlld2VkIHRoaXMgcGF0Y2ggb24gdjFbMV0uCj4gWzFdIGh0
+dHBzOi8vbGttbC5vcmcvbGttbC8yMDE5LzIvMTEvMjIyOAo+IAo+IEJ1dCwgdGhlIHNlY29uZCB2
+ZXJzaW9uIHBhdGNoIGRvZXNuJ3QgaW5jbHVkZSB0aGUgYW55dGhpbmcKPiBhYm91dCByZXZpZXcu
+IFBsZWFzZSBjaGVjayBpdFsxXS4KSEkgQ2hhbndvbywKU29ycnkgZm9yIHRoaXMgY2x1bXN5IG1p
+c3Rha2UuCkkgd2lsbCB1cGRhdGUgYXQgcGF0Y2ggdjMKPiAKPiBPbiAxOS4gMy4gMjkuIOyYpO2b
+hCAzOjQ2LCBBbmRyZXctc2guQ2hlbmcgd3JvdGU6Cj4gPiBUaGlzIGFkZHMgZHQtYmluZGluZyBk
+b2N1bWVudGF0aW9uIG9mIGNjaSBkZXZmcmVxCj4gPiBmb3IgTWVkaWF0ZWsgTVQ4MTgzIFNvQyBw
+bGF0Zm9ybS4KPiA+IAo+ID4gU2lnbmVkLW9mZi1ieTogQW5kcmV3LXNoLkNoZW5nIDxhbmRyZXct
+c2guY2hlbmdAbWVkaWF0ZWsuY29tPgo+ID4gLS0tCj4gPiAgLi4uL2JpbmRpbmdzL2RldmZyZXEv
+bXQ4MTgzLWNjaS1kZXZmcmVxLnR4dCAgICAgICAgICAgfCAxOSArKysrKysrKysrKysrKysrKysr
+Cj4gPiAgMSBmaWxlIGNoYW5nZWQsIDE5IGluc2VydGlvbnMoKykKPiA+ICBjcmVhdGUgbW9kZSAx
+MDA2NDQgRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2RldmZyZXEvbXQ4MTgzLWNj
+aS1kZXZmcmVxLnR4dAo+ID4gCj4gPiBkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0
+cmVlL2JpbmRpbmdzL2RldmZyZXEvbXQ4MTgzLWNjaS1kZXZmcmVxLnR4dCBiL0RvY3VtZW50YXRp
+b24vZGV2aWNldHJlZS9iaW5kaW5ncy9kZXZmcmVxL210ODE4My1jY2ktZGV2ZnJlcS50eHQKPiA+
+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4gPiBpbmRleCAwMDAwMDAwLi5lMmI2MWNmCj4gPiAtLS0g
+L2Rldi9udWxsCj4gPiArKysgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGV2
+ZnJlcS9tdDgxODMtY2NpLWRldmZyZXEudHh0Cj4gPiBAQCAtMCwwICsxLDE5IEBACj4gPiArKiBN
+ZWRpYXRlayBDQ0kgZnJlcXVlbmN5IGRldmljZQo+ID4gKwo+ID4gK1JlcXVpcmVkIHByb3BlcnRp
+ZXM6Cj4gPiArLSBjb21wYXRpYmxlOiBzaG91bGQgY29udGFpbiAibWVkaWF0ZWssbXQ4MTgzLWNj
+aSIgZm9yIGNjaSBkZXZmcmVxCj4gPiArCj4gPiArLSBjbG9ja3M6IGZvciBjY2kgZGV2ZnJlcQo+
+ID4gKwo+ID4gKy0gY2xvY2stbmFtZXM6IGZvciBjY2kgZGV2ZnJlcSBkcml2ZXIgdG8gcmVmZXJl
+bmNlCj4gPiArCj4gPiArLSBvcGVyYXRpbmctcG9pbnRzLXYyOiBmb3IgY2NpIGRldmZyZXEgb3Bw
+IHRhYmxlCj4gPiArCj4gPiArRXhhbXBsZToKPiA+ICsJY2NpOiBjY2kgewo+ID4gKwkJY29tcGF0
+aWJsZSA9ICJtZWRpYXRlayxjY2kiOwo+ID4gKwkJY2xvY2tzID0gPCZhcG1peGVkc3lzIENMS19B
+UE1JWEVEX0NDSVBMTD47Cj4gPiArCQljbG9jay1uYW1lcyA9ICJjY2lfY2xvY2siOwo+ID4gKwkJ
+b3BlcmF0aW5nLXBvaW50cy12MiA9IDwmY2NpX29wcD47Cj4gPiArCX07Cj4gPiArCj4gPiAKPiAK
+PiAKCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGlu
+dXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRl
+YWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
+YXJtLWtlcm5lbAo=
