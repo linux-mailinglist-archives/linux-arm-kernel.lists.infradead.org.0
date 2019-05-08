@@ -2,78 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFBB018159
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 22:54:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A00D718175
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 23:07:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WJ7j7m/swLrOdL/zMZVFhx6HYBaA42/rDvAv2DimiXo=; b=XkhHDWp4xYdDYp
-	j3TTP3vW4bfNr9cY9EUKd4+0liirb7Z1vjh3lzSMhDv7pp//tqKVHuIPa2FtnbAKTNALHrhzA6EHT
-	fIyyfq+Xmwb3ANyfykWpZs6JuMfjsaRS6tPRavQGaIzL6mmIpuVxwrkx5F7rsaes6iwEMaeyKLa1N
-	7QT9k3nI3yXksHr9CjOpG71EbUY/5Uk/HV3FFZjYvq3KBsLtXSuos3Gwxde1xa6rHVoGKBSUCSJXI
-	+XA9ALGUVGiLDwNzYeq3katsbALVmiBmXyQR98JG+4vvGpdteZUrHDTQegJ+c7OPiPz1Vc3QFmKMt
-	6o7NWEVnqDprQEQI6VuA==;
+	List-Owner; bh=Wc7/gFhJic1/dnAzR7xbBmAjQ8sbhFT1r8Vh/V5R19E=; b=S0O+qf8rAiy9xh
+	nzSkhs3fP14dDXjancU1bvBuIMk2vg34nawPMvzCv8oYX0K8oGMcZG88DFexht4/IeSZXuvV9Txfi
+	LwnFxj/X5MxCF+1t94ogMBL+l95o7m7eV1eml39YgAXPrJvVaUNnpaqST32KENYCYBPflIFojVnNC
+	WQiuSDQe3Fsn74/PlwnrH8SP0TpQ4ooZhX5qQ1LBo/Ks6ZMCM9fL4noMcrGc4XP+H5/jQDHYKpsCs
+	c1zXtQrJteXhp4ZjKM3Lt1BK197BM8YwiW2WLBksyF6hsXhTiOOlp/+H4qO/oLc/isCCDqKl4SASl
+	yQzWwHWJ5l1j3rvZJpDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOTaA-0001Kt-1n; Wed, 08 May 2019 20:54:30 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hOTn9-0005xi-Ih; Wed, 08 May 2019 21:07:55 +0000
+Received: from asavdk3.altibox.net ([109.247.116.14])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOTa1-0001Jv-PQ
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 20:54:23 +0000
-Received: from mail-qt1-f182.google.com (mail-qt1-f182.google.com
- [209.85.160.182])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1hOTmz-0005wC-Rb; Wed, 08 May 2019 21:07:48 +0000
+Received: from ravnborg.org (unknown [158.248.194.18])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DDC242173B
- for <linux-arm-kernel@lists.infradead.org>;
- Wed,  8 May 2019 20:54:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1557348860;
- bh=tWV/gWokrqjEWW86w0MvmRWKkr4PcsLZwu+5cA4DvzA=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=u4XyIss2ZXPprn66sZ96vvDCzr3ElW8ae4YOO7qN+8ylqNt6qfhtICVT7SKnaUbzO
- Foc2/SbyKg2TWjcyuQ349Ls/2ezeJRLrrLI8S+p6vVQBVRZ6mEWKTauDEWq0LO3PxH
- WRPHnz1ry4j1pOFVRC7rgyf35PhzgQ2DgkAOw1dE=
-Received: by mail-qt1-f182.google.com with SMTP id j6so108778qtq.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 May 2019 13:54:19 -0700 (PDT)
-X-Gm-Message-State: APjAAAVuxzLqFXd1YFM0uvb1hHLQlx3wjpm4wFIIaG3lmNVqGAOAYzNt
- 9Y9cKJ0T/+SEjVSDdLwnLBnlEE3cpqIAmM2l7A==
-X-Google-Smtp-Source: APXvYqyIJO9jyUOfSxSgewiDo7+nsX9cXd1yYrxNAIDDw7xZk7u75QnrWiHLuORUna7KxFgMuRPNFiFYpjr5kLEeL6Y=
-X-Received: by 2002:aed:306c:: with SMTP id 99mr128390qte.38.1557348859072;
- Wed, 08 May 2019 13:54:19 -0700 (PDT)
+ by asavdk3.altibox.net (Postfix) with ESMTPS id F0EBF2002D;
+ Wed,  8 May 2019 23:07:32 +0200 (CEST)
+Date: Wed, 8 May 2019 23:07:31 +0200
+From: Sam Ravnborg <sam@ravnborg.org>
+To: allen <allen.chen@ite.com.tw>
+Subject: Re: [PATCH 2/3] drm/bridge: add it6505 driver
+Message-ID: <20190508210731.GA19781@ravnborg.org>
+References: <1557301722-20827-1-git-send-email-allen.chen@ite.com.tw>
+ <1557301722-20827-3-git-send-email-allen.chen@ite.com.tw>
 MIME-Version: 1.0
-References: <1556876854-32441-1-git-send-email-alexandre.torgue@st.com>
-In-Reply-To: <1556876854-32441-1-git-send-email-alexandre.torgue@st.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Wed, 8 May 2019 15:54:07 -0500
-X-Gmail-Original-Message-ID: <CAL_Jsq+sydL5tHafgOWaW-+j4OJZ1JxVh5b=YXSMYRDxEDG3-g@mail.gmail.com>
-Message-ID: <CAL_Jsq+sydL5tHafgOWaW-+j4OJZ1JxVh5b=YXSMYRDxEDG3-g@mail.gmail.com>
-Subject: Re: [PATCH] dt-bindings: pinctrl: Convert stm32 pinctrl bindings to
- jason-schema
-To: Alexandre Torgue <alexandre.torgue@st.com>
+Content-Disposition: inline
+In-Reply-To: <1557301722-20827-3-git-send-email-allen.chen@ite.com.tw>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=dqr19Wo4 c=1 sm=1 tr=0
+ a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
+ a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=Ns9eNvu6AAAA:8
+ a=mpaa-ttXAAAA:8 a=1XWaLZrsAAAA:8 a=-sMfrFBIwg32JD2js3EA:9
+ a=nplNrf5OaxeiL364:21 a=b2S3cVGQPHHqZ59X:21 a=CjuIK1q_8ugA:10
+ a=LZLx1i01EnjtqRv10NxV:22 a=6heAxKwa5pAsJatQ0mat:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_135421_863724_E2E1D147 
-X-CRM114-Status: GOOD (  27.56  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190508_140746_451197_50C5C3FB 
+X-CRM114-Status: GOOD (  29.81  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [109.247.116.14 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -85,376 +66,649 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+Cc: Archit Taneja <architt@codeaurora.org>, Jitao Shi <jitao.shi@mediatek.com>,
+ Yilun Lin <yllin@google.com>, open list <linux-kernel@vger.kernel.org>,
+ "open list:DRM DRIVERS" <dri-devel@lists.freedesktop.org>,
+ David Airlie <airlied@linux.ie>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Pi-Hsun Shih <pihsun@chromium.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ "moderated list:ARM/Mediatek SoC support"
  <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-What's jason-schema? ;)
+Hi allen.
 
-On Fri, May 3, 2019 at 4:47 AM Alexandre Torgue <alexandre.torgue@st.com> wrote:
->
-> Convert the STM32 pinctrl binding to DT schema format using json-schema.
->
-> Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
+Thanks for this fine patch.
+A few comments follows.
+
+Consider to use DRM_DEV_ERROR and friends.
+Then you get the devicename included in logging
+and this makes it much easier to find relevant entries.
+
+On Wed, May 08, 2019 at 03:48:41PM +0800, allen wrote:
+> From: Allen Chen <allen.chen@ite.com.tw>
+> 
+> This adds support for the iTE IT6505.
+> This device can convert DPI signal to DP output.
+> 
+> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> Signed-off-by: Yilun Lin <yllin@google.com>
+> Signed-off-by: Allen Chen <allen.chen@ite.com.tw>
 > ---
->
-> Hi,
->
-> First pacth to convert DT bindings file (here pinctrl STM32) to jsaon-schema
-> in order to take advantage of devicetree validation tool for STM32.
+>  drivers/gpu/drm/bridge/Kconfig      |   22 +
+>  drivers/gpu/drm/bridge/Makefile     |    1 +
+>  drivers/gpu/drm/bridge/ite-it6505.c | 2637 +++++++++++++++++++++++++++++++++++
+>  3 files changed, 2660 insertions(+)
+>  create mode 100644 drivers/gpu/drm/bridge/ite-it6505.c
+> 
+> diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kconfig
+> index 9c9c4df..d12e48c 100644
+> --- a/drivers/gpu/drm/bridge/Kconfig
+> +++ b/drivers/gpu/drm/bridge/Kconfig
+> @@ -43,6 +43,28 @@ config DRM_DUMB_VGA_DAC
+>  	  Support for non-programmable RGB to VGA DAC bridges, such as ADI
+>  	  ADV7123, TI THS8134 and THS8135 or passive resistor ladder DACs.
+>  
+> +config DRM_ITE_IT6505
+> +	tristate "ITE IT6505 DP bridge"
+> +	depends on OF
+> +	select DRM_KMS_HELPER
+> +	help
+> +	  ITE IT6505 DP bridge chip driver.
 
-> diff --git a/Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml b/Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml
+Why is it relevant to have these features as features
+that can be enabed/disabled on Kconfig level?
+It is likely more flexible to do it run-time
+if needed to turn them off.
+And it would simplify the code.
+
+> +
+> +config DRM_ITE_IT6505_ENHDCP
+> +	tristate "Enable IT6505 HDCP function"
+> +	depends on DRM_ITE_IT6505
+> +	default y
+> +
+> +config DRM_ITE_IT6505_ENAUD
+> +        tristate "Enable IT6505 audio function"
+> +        depends on DRM_ITE_IT6505
+> +        default y
+> +
+> +config DRM_ITE_IT6505_ENPWRONOFF
+> +        tristate "Enable IT6505 power on/off function"
+> +        depends on DRM_ITE_IT6505
+> +        default y
+> +
+>  config DRM_LVDS_ENCODER
+>  	tristate "Transparent parallel to LVDS encoder support"
+>  	depends on OF
+> diff --git a/drivers/gpu/drm/bridge/Makefile b/drivers/gpu/drm/bridge/Makefile
+> index 4934fcf..f5abca5 100644
+> --- a/drivers/gpu/drm/bridge/Makefile
+> +++ b/drivers/gpu/drm/bridge/Makefile
+> @@ -2,6 +2,7 @@
+>  obj-$(CONFIG_DRM_ANALOGIX_ANX78XX) += analogix-anx78xx.o
+>  obj-$(CONFIG_DRM_CDNS_DSI) += cdns-dsi.o
+>  obj-$(CONFIG_DRM_DUMB_VGA_DAC) += dumb-vga-dac.o
+> +obj-$(CONFIG_DRM_ITE_IT6505) += ite-it6505.o
+>  obj-$(CONFIG_DRM_LVDS_ENCODER) += lvds-encoder.o
+>  obj-$(CONFIG_DRM_MEGACHIPS_STDPXXXX_GE_B850V3_FW) += megachips-stdpxxxx-ge-b850v3-fw.o
+>  obj-$(CONFIG_DRM_NXP_PTN3460) += nxp-ptn3460.o
+> diff --git a/drivers/gpu/drm/bridge/ite-it6505.c b/drivers/gpu/drm/bridge/ite-it6505.c
 > new file mode 100644
-> index 0000000..fcceca0
+> index 0000000..13079a8
 > --- /dev/null
-> +++ b/Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml
-> @@ -0,0 +1,271 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +# Copyright (C) STMicroelectronics 2019.
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/pinctrl/st,stm32-pinctrl.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: STM32 GPIO and Pin Mux/Config controller
-> +
-> +maintainers:
-> +  - Alexandre TORGUE <alexandre.torgue@st.com>
+> +++ b/drivers/gpu/drm/bridge/ite-it6505.c
+> @@ -0,0 +1,2637 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright (c) 2018, The Linux Foundation. All rights reserved.
+> + */
+> +#include <linux/bits.h>
+> +#include <linux/delay.h>
+> +#include <linux/device.h>
+> +#include <linux/err.h>
+> +#include <linux/extcon.h>
+> +#include <linux/fs.h>
+> +#include <linux/gpio/consumer.h>
+> +#include <linux/i2c.h>
+> +#include <linux/interrupt.h>
+> +#include <linux/kernel.h>
+> +#include <linux/module.h>
+> +#include <linux/regmap.h>
+> +#include <linux/regulator/consumer.h>
+> +#include <linux/semaphore.h>
+> +#include <linux/types.h>
+> +#include <crypto/hash.h>
+> +#include <crypto/sha.h>
+> +#include <drm/drmP.h>
+> +#include <drm/drm_atomic_helper.h>
+> +#include <drm/drm_crtc.h>
+> +#include <drm/drm_crtc_helper.h>
+> +#include <drm/drm_dp_helper.h>
+> +#include <drm/drm_edid.h>
+Please put a blank line between the individual blocks
+of include files.
+So all #include <linux/... comens first
 
-nit: add a blank line
+Then #include <crypto/...
 
-> +description: |
-> +  STMicroelectronics's STM32 MCUs intregrate a GPIO and Pin mux/config hardware
-> +  controller. It controls the input/output settings on the available pins and
-> +  also provides ability to multiplex and configure the output of various
-> +  on-chip controllers onto these pads.
-> +
-> +properties:
-> +  compatible:
-> +      items:
+And finally #include <drm/...
 
-You can drop items since there is only 1.
+Use of drmP.h is deprecated. Please do not use it.
+You need to add forwards or includes to avoids.
 
-> +        - enum:
-> +          - st,stm32f429-pinctrl
-> +          - st,stm32f469-pinctrl
-> +          - st,stm32f746-pinctrl
-> +          - st,stm32f769-pinctrl
-> +          - st,stm32h743-pinctrl
-> +          - st,stm32mp157-pinctrl
-> +          - st,stm32mp157-z-pinctrl
-> +
-> +  '#address-cells':
-> +    const: 1
-> +  '#size-cells':
-> +    const: 1
-> +    description:
-> +      Defines mapping between pin controller node (parent) to
-> +      gpio-bank node (children).
-
-Don't need description for common properties unless there's really
-something binding specific to add. Same is true on a bunch of other
-description entries.
 
 > +
-> +  ranges:
-> +    description:
-> +      Defines mapping between pin controller node (parent) to
-> +      gpio-bank node (children).
-> +  pins-are-numbered:
-> +    description:
-> +      Specify the subnodes are using numbered pinmux to
-> +      specify pins.
-> +  st,syscfg:
+> +#define AX 0
+> +#define BX 1
+> +#define AUDSEL I2S
+> +#define AUDTYPE LPCM
+> +#define AUDFS AUD48K
+> +#define AUDCH 2
+> +/* 0: Standard I2S;1: 32bit I2S */
+> +#define I2SINPUTFMT 1
+> +/* 0: Left-justified;1: Right-justified */
+> +#define I2SJUSTIFIED 0
+> +/* 0: Data delay 1T correspond to WS;1: No data delay correspond to WS */
+> +#define I2SDATADELAY 0
+> +/* 0: is left channel;1: is right channel */
+> +#define I2SWSCHANNEL 0
+> +/* 0: MSB shift first;1: LSB shift first */
+> +#define I2SDATASEQ 0
+> +
+> +#define LANESWAP 0
+> +#define LANE 4
+> +#define _HBR 1
+> +#define ENHFRAME 1
+> +#define ENSSC 1
+> +
+> +#define FLAGTRAINDOWN 100
+> +#define TRAINFAILCNT 5
+> +#define AUX_WAIT_TIMEOUT_MS 15
+> +#define PCLK_DELAY 1
+> +#define PCLK_INV 0
+> +#define EDIDRETRYTIME 5
+> +#define SHOWVIDEOTIMING 2
+> +#define PWROFFRETRYTIME 5
+> +
+> +/* AX or BX */
+> +#define CHIP_VERSION BX
 
-Needs to define the type (phandle-array).
+If this driver is for BX only then drop the AX releated code.
+This would simplify the driver.
 
-> +    description: |
-> +      Should be phandle/offset/mask:
-> +        - The phandle to the syscon node which includes IRQ mux selection register.
-> +        - The offset of the IRQ mux selection register
-> +        - The field mask of IRQ mux, needed if different of 0xf.
+If this is really needed then provide an empty variant of
+it6505_termination() for AX, to simplify the call sites.
 
-This can be expressed as a constraint:
-
-items:
-  - items:
-    - description: The phandle to the syscon node which includes IRQ
-mux selection register.
-    - description: The offset of the IRQ mux selection register
-    - description: The field mask of IRQ mux, needed if different of 0xf.
-
-Perhaps there are some constraints on the values of the cells.
+And it6505_termination() calls for two functions so we
+void a bool parameter that makes the function do two
+different things.
 
 > +
-> +  hwlocks:
-> +    description: Reference to a phandle of a hardware spinlock provider node.
-
-No need for a description.
-
-> +  st,package:
-> +    description:
-> +     Indicates the SOC package used.
-> +     More details in include/dt-bindings/pinctrl/stm32-pinfunc.h
-> +    allOf:
-> +      - $ref: /schemas/types.yaml#/definitions/uint32
-> +      - enum: [1, 2, 4, 8]
+> +/* if use this define will power on in probe */
+> +/* #define TEST_MODE */
 > +
-> +patternProperties:
-> +  '^gpio@[0-9a-z]*$':
+> +/* if use this define will enable AUX debug option */
+> +/* #define ENAUX_TRANSFER_DEBUG */
+> +
+> +/* if use this define will enable SHA debug */
+> +/* #define SHA_DEBUG */
+Consider how much of this really belongs in a production driver.
+If relevant consider to add some way to enable this runtime.
+> +
+> +enum sys_status {
+> +	SYS_UNPLUG = 0,
+> +	SYS_HPD,
+> +	SYS_AUTOTRAIN,
+> +	SYS_WAIT,
+> +	SYS_TRAINFAIL,
+> +	SYS_ReHDCP,
+> +	SYS_PWRDN,
+> +	SYS_NOROP,
+> +	SYS_Unknown,
+> +};
+> +
+> +enum it6505_aud_sel {
+> +	I2S = 0,
+> +	SPDIF,
+> +};
+> +
+> +enum it6505_aud_fs {
+> +	AUD24K = 0x6,
+> +	AUD32K = 0x3,
+> +	AUD48K = 0x2,
+> +	AUD96K = 0xA,
+> +	AUD192K = 0xE,
+> +	AUD44P1K = 0x0,
+> +	AUD88P2K = 0x8,
+> +	AUD176P4K = 0xC,
+> +};
+> +
+> +enum it6505_aud_type {
+> +	LPCM = 0,
+> +	NLPCM,
+> +	DSS,
+> +	HBR,
+> +};
+> +
+> +enum aud_word_length {
+> +	AUD16BIT = 0,
+> +	AUD18BIT,
+> +	AUD20BIT,
+> +	AUD24BIT,
+> +};
+> +
+> +/* Audio Sample Word Length: AUD16BIT, AUD18BIT, AUD20BIT, AUD24BIT */
+> +#define AUDWORDLENGTH AUD24BIT
+> +
+> +struct it6505_platform_data {
+> +	struct regulator *pwr18;
+> +	struct regulator *ovdd;
+> +	struct gpio_desc *gpiod_hpd;
+> +	struct gpio_desc *gpiod_pd;
 
-Hex only: a-f
+gpiod_pd is not used and can be deleted.
 
-> +    properties:
-> +      gpio-controller:
-> +        description:
-> +          Indicates this device is a GPIO controller.
+> +	struct gpio_desc *gpiod_reset;
+> +
+> +	int hpd_irq;
+> +	int intp_irq;
+hpd_irq and intp_irq are only used in one function.
+Drop them from it6505_platform_data and use local variables.
 
-No need to describe standard properties.
+> +};
+> +
+> +struct it6505_dp_port {
+> +	struct it6505 *it6505_dp;
+> +	struct notifier_block event_nb;
+> +	struct extcon_dev *extcon;
+> +	struct work_struct extcon_wq;
+> +	u8 id;
+It did not see this used, only assigned. Maybe I missed something?
+> +};
+> +
+> +struct it6505 {
+> +	struct drm_dp_aux aux;
+> +	struct drm_bridge bridge;
+> +	struct i2c_client *client;
+> +	struct edid *edid;
+> +	struct drm_connector connector;
+> +	struct drm_dp_link link;
+> +	struct it6505_platform_data pdata;
+> +	struct mutex lock;
+I would be helpfull with a comment what the lock protects.
 
-> +      '#gpio-cells':
-> +        const: 2
-> +        description: |
-> +          The first cell is the pin number.
-> +          The second one is the polarity
-> +          * 0 for active high.
-> +          * 1 for active low.
+> +	struct regmap *regmap;
+> +	struct it6505_dp_port *port;
+> +	/* thread sequence control */
+> +	struct semaphore sem_notifier;
+> +
+> +	u8 dpcd[DP_RECEIVER_CAP_SIZE];
+> +	enum sys_status status;
+> +	u8 dumpdpcd[30];
+> +	u8 dpcd_rev;
+dpcd_rev is only used in one function.
+Drop it and use local variabel.
 
-As long as this is the standard cell definition, no need to describe.
+I did not check further - please verify that all
+members are used and are relevant to have in this
+struct.
+
+> +	bool hbr;
+> +	u8 lane;
+> +	u8 en_ssc;
+> +	bool en_hframe;
+> +	bool laneswap;
+> +
+> +	enum it6505_aud_sel aud_sel;
+> +	enum it6505_aud_fs aud_fs;
+> +	enum it6505_aud_type aud_type;
+> +	u8 aud_ch;
+> +	u8 i2s_input_fmt;
+> +	u8 i2s_justified;
+> +	u8 i2s_data_delay;
+> +	u8 i2s_ws_channel;
+> +	u8 i2s_data_seq;
+> +	u8 vidstable_done;
+> +	enum aud_word_length audwordlength;
+> +	u8 cntfsm;
+> +	bool cp_ready;
+> +	unsigned int bstatus;
+> +	bool cp_done;
+> +	u8 downstream_repeater;
+> +	u8 am0[8];
+> +	u8 binfo[2];
+> +	u8 ksvlist[5 * 12];
+> +	unsigned int sha[5];
+> +	unsigned int w[80];
+> +	u8 shainput[64];
+> +	u8 av[5][4];
+> +	u8 bv[5][4];
+> +	u8 passsha;
+> +	bool powered;
+> +	/* it6505 driver hold option */
+> +	unsigned int it6505_drv_hold;
+> +};
+> +
+> +static int it6505_poweron(struct it6505 *it6505);
+> +#ifdef CONFIG_DRM_ITE_IT6505_ENPWRONOFF
+> +static int it6505_poweroff(struct it6505 *it6505);
+> +#endif
+> +
+> +static const struct regmap_range it6505_bridge_volatile_ranges[] = {
+> +	{ .range_min = 0, .range_max = 0xFF },
+> +};
+> +
+> +static const struct regmap_access_table it6505_bridge_volatile_table = {
+> +	.yes_ranges = it6505_bridge_volatile_ranges,
+> +	.n_yes_ranges = ARRAY_SIZE(it6505_bridge_volatile_ranges),
+> +};
+> +
+> +static const struct regmap_config it6505_bridge_regmap_config = {
+> +	.reg_bits = 8,
+> +	.val_bits = 8,
+> +	.volatile_table = &it6505_bridge_volatile_table,
+> +	.cache_type = REGCACHE_NONE,
+> +};
+> +
+> +static int dptxrd(struct it6505 *it6505, unsigned int reg_addr,
+> +		  unsigned int *value)
+> +{
+> +	int err;
+> +
+> +	err = regmap_read(it6505->regmap, reg_addr, value);
+> +	if (err < 0) {
+> +		DRM_ERROR("%s read fail err reg_addr[0x%x] err:%d\n",
+> +			  __func__, reg_addr, err);
+> +		return err;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static void it6505_dump(struct it6505 *it6505)
+> +{
+> +	unsigned int value, i;
+> +
+> +	DRM_DEBUG_DRIVER("\n----------%s start----------\n", __func__);
+> +	for (i = 0; i <= 0xff; i++) {
+> +		dptxrd(it6505, i, &value);
+> +		DRM_DEBUG_DRIVER("%s[0x%x] = 0x%x\n", __func__, i, value);
+> +	}
+> +	DRM_DEBUG_DRIVER("\n----------%s end----------\n\n", __func__);
+> +}
+Are these headers really needed in a production driver?
 
 > +
-> +      reg:
-> +        description:
-> +          The gpio address range, relative to the pinctrl range.
-
-Need to say how many entries (maxItems), not what reg is.
-
-> +      clocks:
-> +        description:
-> +          Clock that drives this bank.
-
-ditto.
-
-> +      st,bank-name:
-
-type?
-
-possible values or regex match?
-
-> +        description:
-> +          Should be a name string for this bank as specified in the datasheet.
-> +      reset:
-
-resets
-
-How many items?
-
-> +        description:
-> +          Reference to the reset controller.
-> +      gpio-ranges:
-> +        description: |
-> +          Define a dedicated mapping between a pin-controller and
-> +          a gpio controller. Format is <&phandle a b c> with:
-> +          -(phandle): phandle of pin-controller.
-> +          -(a): gpio base offset in range.
-> +          -(b): pin base offset in range.
-> +          -(c): gpio count in range.
-
-All common, so not needed here.
-
-> +          This entry has to be used either if there are holes inside a bank:
-> +          GPIOB0/B1/B2/B14/B15 (see example 2) or if banks are not contiguous:
-> +          GPIOA/B/C/E...
-> +          NOTE: If "gpio-ranges" is used for a gpio controller, all gpio-controller
-> +          have to use a "gpio-ranges" entry.
-> +          More details in Documentation/devicetree/bindings/gpio/gpio.txt.
+> +static int dptxwr(struct it6505 *it6505, unsigned int reg_addr,
+> +		  unsigned int reg_val)
+> +{
+> +	int err;
 > +
-> +      ngpios:
-> +        description:
-> +          Number of available gpios in a bank.
-> +        minimum: 1
-> +        maximum: 16
+> +	err = regmap_write(it6505->regmap, reg_addr, reg_val);
 > +
-> +      st,bank-ioport:
+> +	if (err < 0) {
+> +		DRM_ERROR("%s write fail err reg[0x%x] = 0x%x err = %d\n",
+> +			__func__, reg_addr, reg_val, err);
+> +		return err;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int dptxset(struct it6505 *it6505, unsigned int reg, unsigned int mask,
+> +		   unsigned int value)
+> +{
+> +	int err;
+> +
+> +	err = regmap_update_bits(it6505->regmap, reg, mask, value);
+> +	if (err < 0) {
+> +		DRM_ERROR("%s write fail err %d\n", __func__, err);
+> +		return err;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static inline struct it6505 *connector_to_it6505(struct drm_connector *c)
+> +{
+> +	return container_of(c, struct it6505, connector);
+> +}
+> +
+> +static inline struct it6505 *bridge_to_it6505(struct drm_bridge *bridge)
+> +{
+> +	return container_of(bridge, struct it6505, bridge);
+> +}
+> +
+> +static void it6505_init_fsm(struct it6505 *it6505)
+> +{
+> +	it6505->aud_sel = AUDSEL;
+> +	it6505->aud_fs = AUDFS;
+> +	it6505->aud_ch = AUDCH;
+> +	it6505->aud_type = AUDTYPE;
+> +	it6505->i2s_input_fmt = I2SINPUTFMT;
+> +	it6505->i2s_justified = I2SJUSTIFIED;
+> +	it6505->i2s_data_delay = I2SDATADELAY;
+> +	it6505->i2s_ws_channel = I2SWSCHANNEL;
+> +	it6505->i2s_data_seq = I2SDATASEQ;
+> +	it6505->audwordlength = AUDWORDLENGTH;
+> +
+> +	it6505->status = SYS_Unknown;
+> +	it6505->hbr = _HBR;
+> +	it6505->lane = LANE;
+> +	it6505->en_ssc = ENSSC;
+> +	it6505->en_hframe = ENHFRAME;
+> +	it6505->laneswap = LANESWAP;
+> +	it6505->vidstable_done = 0;
+> +}
+> +
+> +#if (CHIP_VERSION == BX)
+> +static void it6505_termination(struct it6505 *it6505, bool s)
+> +{
+> +	DRM_DEBUG_DRIVER("%s switch!!\n", __func__);
+> +	if (s) {
+> +		dptxset(it6505, 0x5D, 0x80, 0x00);
+> +		dptxset(it6505, 0x5E, 0x02, 0x02);
+> +		DRM_DEBUG_DRIVER("%s ON!!\n", __func__);
+> +	} else {
+> +		dptxset(it6505, 0x5D, 0x80, 0x80);
+> +		dptxset(it6505, 0x5E, 0x02, 0x00);
+> +		dptxset(it6505, 0x5C, 0xF0, 0x00);
+> +		DRM_DEBUG_DRIVER("%s OFF!!\n", __func__);
+> +	}
+> +}
+> +#endif
+> +
+> +static bool dptx_getsinkhpd(struct it6505 *it6505)
+> +{
+> +	unsigned int value;
+> +	int ret;
+> +
+> +	ret = dptxrd(it6505, 0x0D, &value);
+> +
+> +	if (ret < 0)
+> +		return false;
+> +
+> +	return (value & 2) == 2;
+> +}
+> +
+> +static void show_vid_info(struct it6505 *it6505)
+> +{
+> +	int hsync_pol, vsync_pol, interlaced;
+> +	int htotal, hdes, hdew, hfph, hsyncw;
+> +	int vtotal, vdes, vdew, vfph, vsyncw;
+> +	int rddata, rddata1, i;
+> +	int pclk, sum;
+> +
+> +	usleep_range(10000, 15000);
+> +	dptxwr(it6505, 0x0F, 0x00);
+> +	dptxrd(it6505, 0xa0, &rddata);
+> +	hsync_pol = rddata & BIT(0);
+> +	vsync_pol = (rddata & BIT(2)) >> 2;
+> +	interlaced = (rddata & BIT(4)) >> 4;
+> +
+> +	dptxrd(it6505, 0xa1, &rddata);
+> +	dptxrd(it6505, 0xa2, &rddata1);
+> +	htotal = ((rddata1 & 0x1F) << 8) + rddata;
+> +
+> +	dptxrd(it6505, 0xa3, &rddata);
+> +	dptxrd(it6505, 0xa4, &rddata1);
+> +
+> +	hdes = ((rddata1 & 0x1F) << 8) + rddata;
+> +
+> +	dptxrd(it6505, 0xa5, &rddata);
+> +	dptxrd(it6505, 0xa6, &rddata1);
+> +
+> +	hdew = ((rddata1 & 0x1F) << 8) + rddata;
+> +
+> +	dptxrd(it6505, 0xa7, &rddata);
+> +	dptxrd(it6505, 0xa8, &rddata1);
+> +
+> +	hfph = ((rddata1 & 0x1F) << 8) + rddata;
+> +
+> +	dptxrd(it6505, 0xa9, &rddata);
+> +	dptxrd(it6505, 0xaa, &rddata1);
+> +
+> +	hsyncw = ((rddata1 & 0x1F) << 8) + rddata;
+> +
+> +	dptxrd(it6505, 0xab, &rddata);
+> +	dptxrd(it6505, 0xac, &rddata1);
+> +	vtotal = ((rddata1 & 0x0F) << 8) + rddata;
+> +
+> +	dptxrd(it6505, 0xad, &rddata);
+> +	dptxrd(it6505, 0xae, &rddata1);
+> +	vdes = ((rddata1 & 0x0F) << 8) + rddata;
+> +
+> +	dptxrd(it6505, 0xaf, &rddata);
+> +	dptxrd(it6505, 0xb0, &rddata1);
+> +	vdew = ((rddata1 & 0x0F) << 8) + rddata;
+> +
+> +	dptxrd(it6505, 0xb1, &rddata);
+> +	dptxrd(it6505, 0xb2, &rddata1);
+> +	vfph = ((rddata1 & 0x0F) << 8) + rddata;
+> +
+> +	dptxrd(it6505, 0xb3, &rddata);
+> +	dptxrd(it6505, 0xb4, &rddata1);
+> +	vsyncw = ((rddata1 & 0x0F) << 8) + rddata;
+> +
+> +	sum = 0;
+> +	for (i = 0; i < 100; i++) {
+> +		dptxset(it6505, 0x12, 0x80, 0x80);
+> +		usleep_range(10000, 15000);
+> +		dptxset(it6505, 0x12, 0x80, 0x00);
+> +
+> +		dptxrd(it6505, 0x13, &rddata);
+> +		dptxrd(it6505, 0x14, &rddata1);
+> +		rddata = ((rddata1 & 0x0F) << 8) + rddata;
+> +
+> +		sum += rddata;
+> +	}
+> +
+> +	sum /= 100;
+> +	pclk = 13500 * 2048 / sum;
+> +
+> +	DRM_DEBUG_DRIVER("\n----------Video Input Timing----------\n");
+> +	DRM_DEBUG_DRIVER("PCLK = %d.%dMHz\n", pclk / 1000, pclk % 1000);
+> +	DRM_DEBUG_DRIVER("HTotal = %d\n", htotal);
+> +	DRM_DEBUG_DRIVER("HActive = %d\n", hdew);
+> +	DRM_DEBUG_DRIVER("HFrontPorch = %d\n", hfph);
+> +	DRM_DEBUG_DRIVER("HSyncWidth = %d\n", hsyncw);
+> +	DRM_DEBUG_DRIVER("HBackPorch = %d\n", htotal - hdew - hfph - hsyncw);
+> +	DRM_DEBUG_DRIVER("VTotal = %d\n", vtotal);
+> +	DRM_DEBUG_DRIVER("VActive = %d\n", vdew);
+> +	DRM_DEBUG_DRIVER("VFrontPorch = %d\n", vfph);
+> +	DRM_DEBUG_DRIVER("VSyncWidth = %d\n", vsyncw);
+> +	DRM_DEBUG_DRIVER("VBackPorch = %d\n", vtotal - vdew - vfph - vsyncw);
 
-type?
+Can DRM_MODE_FMT and DRM_MODE_ARG be used here?
 
-> +        description:
-> +          Should correspond to the EXTI IOport selection (EXTI line used
-> +          to select GPIOs as interrupts).
+> +}
 > +
-> +    required:
-> +      - gpio-controller
-> +      - '#gpio-cells'
-> +      - reg
-> +      - clocks
-> +      - st,bank-name
+> +static void dptx_sys_chg(struct it6505 *it6505, enum sys_status newstate)
+> +{
+> +	unsigned int i = 0;
+> +	unsigned int reg06, reg07, reg08, reg0d, reg0e;
 > +
-> +  '-[0-9]*$':
-> +    patternProperties:
-> +      '^pins':
-> +        description: |
-> +          A pinctrl node should contain at least one subnode representing the
-> +          pinctrl group available on the machine. Each subnode will list the
-> +          pins it needs, and how they should be configured, with regard to muxer
-> +          configuration, pullups, drive, output high/low and output speed.
-> +        properties:
-> +          pinmux:
-> +            allOf:
-> +              - $ref: "/schemas/types.yaml#/definitions/uint32-array"
-> +            description: |
-> +              Integer array, represents gpio pin number and mux setting.
-> +              Supported pin number and mux varies for different SoCs, and are
-> +              defined in dt-bindings/pinctrl/<soc>-pinfunc.h directly.
-> +              These defines are calculated as: ((port * 16 + line) << 8) | function
-> +              With:
-> +              - port: The gpio port index (PA = 0, PB = 1, ..., PK = 11)
-> +              - line: The line offset within the port (PA0 = 0, PA1 = 1, ..., PA15 = 15)
-> +              - function: The function number, can be:
-> +              * 0 : GPIO
-> +              * 1 : Alternate Function 0
-> +              * 2 : Alternate Function 1
-> +              * 3 : Alternate Function 2
-> +              * ...
-> +              * 16 : Alternate Function 15
-> +              * 17 : Analog
-> +              To simplify the usage, macro is available to generate "pinmux" field.
-> +              This macro is available here:
-> +                - include/dt-bindings/pinctrl/stm32-pinfunc.h
-> +              Some examples of using macro:
-> +               /* GPIO A9 set as alernate function 2 */
-> +               ... {
-> +                          pinmux = <STM32_PINMUX('A', 9, AF2)>;
-> +               };
-> +               /* GPIO A9 set as GPIO  */
-> +               ... {
-> +                          pinmux = <STM32_PINMUX('A', 9, GPIO)>;
-> +               };
-> +               /* GPIO A9 set as analog */
-> +               ... {
-> +                          pinmux = <STM32_PINMUX('A', 9, ANALOG)>;
-> +               };
+> +	dptxrd(it6505, 0x06, &reg06);
+> +	dptxrd(it6505, 0x07, &reg07);
+> +	dptxrd(it6505, 0x08, &reg08);
+> +	dptxrd(it6505, 0x0d, &reg0d);
+> +	dptxrd(it6505, 0x0e, &reg0e);
 > +
-> +          bias-disable:
-> +            type: boolean
-> +          bias-pull-down:
-> +            type: boolean
-> +          bias-pull-up:
-> +            type: boolean
-> +          drive-push-pull:
-> +            type: boolean
-> +          drive-open-drain:
-> +            type: boolean
-> +          output-low:
-> +            type: boolean
-> +          output-high:
-> +            type: boolean
-> +          slew-rate:
-> +            description: |
-> +              0: Low speed
-> +              1: Medium speed
-> +              2: Fast speed
-> +              3: High speed
-> +            allOf:
-> +              - $ref: /schemas/types.yaml#/definitions/uint32
-> +              - enum: [0, 1, 2, 3]
-> +
-> +        required:
-> +          - pinmux
-> +
-> +required:
-> +  - compatible
-> +  - '#address-cells'
-> +  - '#size-cells'
-> +  - ranges
-> +  - pins-are-numbered
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/pinctrl/stm32-pinfunc.h>
-> +    //Example 1
-> +      pin-controller@40020000 {
+> +	DRM_DEBUG_DRIVER("[%s]reg06 = 0x%x\n", __func__, reg06);
+> +	DRM_DEBUG_DRIVER("[%s]reg07 = 0x%x\n", __func__, reg07);
+> +	DRM_DEBUG_DRIVER("[%s]reg08 = 0x%x\n", __func__, reg08);
+> +	DRM_DEBUG_DRIVER("[%s]reg0d = 0x%x\n", __func__, reg0d);
+> +	DRM_DEBUG_DRIVER("[%s]reg0e = 0x%x\n", __func__, reg0e);
+Looks like debugging artifacts that are not relevant in a production
+driver.
 
-Because we're horribly inconsistent, 'pinctrl' is the standard node name.
+> +
+> +	if (newstate != SYS_UNPLUG) {
+> +		if (!dptx_getsinkhpd(it6505))
+> +			newstate = SYS_UNPLUG;
+> +	}
+> +
+> +	it6505->status = newstate;
+> +
+> +	switch (it6505->status) {
+> +	case SYS_UNPLUG:
+> +		DRM_DEBUG_DRIVER("sys_state is changing to SYS_UNPLUG!");
+> +		kfree(it6505->edid);
+> +		it6505->edid = NULL;
+> +		DRM_DEBUG_DRIVER("Free it6505 EDID memory!");
+> +#if (CHIP_VERSION == BX)
+> +		it6505_termination(it6505, false);
+> +#endif
+> +		break;
+> +	case SYS_HPD:
+> +		DRM_DEBUG_DRIVER("sys_state is changing to SYS_HPD!");
+> +#if (CHIP_VERSION == BX)
+> +		it6505_termination(it6505, true);
+> +#endif
+> +		break;
+> +	case SYS_AUTOTRAIN:
+> +		DRM_DEBUG_DRIVER("sys_state is changing to SYS_AUTOTRAIN!");
+> +		break;
+> +	case SYS_WAIT:
+> +		DRM_DEBUG_DRIVER("sys_state is changing to SYS_WAIT!");
+> +		break;
+> +#ifdef CONFIG_DRM_ITE_IT6505_ENHDCP
+> +	case SYS_ReHDCP:
+> +		DRM_DEBUG_DRIVER("sys_state is changing to SYS_ReHDCP!");
+> +		break;
+> +#endif
+> +	case SYS_NOROP:
+> +		DRM_DEBUG_DRIVER("sys_state is changing to SYS_NOROP!");
+> +		for (i = 0; i < SHOWVIDEOTIMING; i++)
+> +			show_vid_info(it6505);
+> +#ifdef TEST_MODE
+> +		it6505->it6505_drv_hold = 1;
+> +		DRM_DEBUG_DRIVER("set it6505_drv_hold:%d",
+> +				it6505->it6505_drv_hold);
+> +#endif
+> +		break;
+> +	case SYS_PWRDN:
+> +		DRM_DEBUG_DRIVER("sys_state is changing to SYS_PWRDN!");
+> +		/* Reset and PwrDn AFE */
+> +		break;
+> +	default:
+> +		DRM_DEBUG_DRIVER("sys_state is changing to SYS_UNKNOWN!");
+> +		break;
+> +	}
+> +}
 
-> +              #address-cells = <1>;
-> +              #size-cells = <1>;
-> +              compatible = "st,stm32f429-pinctrl";
-> +              ranges = <0 0x40020000 0x3000>;
-> +              pins-are-numbered;
-> +
-> +              gpioa: gpio@0 {
-> +                      gpio-controller;
-> +                      #gpio-cells = <2>;
-> +                      reg = <0x0 0x400>;
-> +                      resets = <&reset_ahb1 0>;
-> +                      st,bank-name = "GPIOA";
-> +              };
-> +       };
-> +
-> +    //Example 2 (using gpio-ranges)
-> +      pin-controller@50020000 {
-> +              #address-cells = <1>;
-> +              #size-cells = <1>;
-> +              compatible = "st,stm32f429-pinctrl";
-> +              ranges = <0 0x50020000 0x3000>;
-> +              pins-are-numbered;
-> +
-> +              gpiob: gpio@1000 {
-> +                      gpio-controller;
-> +                      #gpio-cells = <2>;
-> +                      reg = <0x1000 0x400>;
-> +                      resets = <&reset_ahb1 0>;
-> +                      st,bank-name = "GPIOB";
-> +                      gpio-ranges = <&pinctrl 0 0 16>;
-> +              };
-> +
-> +              gpioc: gpio@2000 {
-> +                      gpio-controller;
-> +                      #gpio-cells = <2>;
-> +                      reg = <0x2000 0x400>;
-> +                      resets = <&reset_ahb1 0>;
-> +                      st,bank-name = "GPIOC";
-> +                      ngpios = <5>;
-> +                      gpio-ranges = <&pinctrl 0 16 3>,
-> +                                    <&pinctrl 14 30 2>;
-> +              };
-> +      };
-> +
-> +    //Example 3 pin groups
-> +      pin-controller@60020000 {
-> +        usart1_pins_a: usart1-0 {
-> +                pins1 {
-> +                        pinmux = <STM32_PINMUX('A', 9, AF7)>;
-> +                        bias-disable;
-> +                        drive-push-pull;
-> +                        slew-rate = <0>;
-> +                };
-> +                pins2 {
-> +                        pinmux = <STM32_PINMUX('A', 10, AF7)>;
-> +                        bias-disable;
-> +                };
-> +        };
-> +    };
-> +
-> +    usart1 {
-> +                pinctrl-0 = <&usart1_pins_a>;
-> +                pinctrl-names = "default";
-> +    };
-> +
-> +...
-> --
-> 2.7.4
->
+I browsed the driver and did not find anything other
+than issues that are already reported above.
+
+As I have no experience with a bridge driver as such the functionality
+was not looked at.
+
+	Sam
 
 _______________________________________________
 linux-arm-kernel mailing list
