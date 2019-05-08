@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE2F316F04
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 04:21:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A42E16F05
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 04:21:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,52 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=gZlTGjAoSW4OykD04O1rULT82ejmPp8XnwVmq240x3I=; b=m8ylU5tENV/LmHILdkZwxA7oHL
-	+vb5ajXSqFdHkgNfz2dEal52rcyZ7MArhmWPDTC5L8E0FsgaGhRTaiBk513tYHgUVUU+LudyDZ5uM
-	W/xb868OR64ICg68p3RpYbZeoFp6A/12vCV0THs1Swf21uc3CjC+Phq2M86YrOpIqg+Pdt0LnNh6/
-	3fSXY9jy0NV8lQq9FgSV3I+QMxwSmAqgWGRgqgAf4Rw9GsDTGiEtTnLSn4/hxKRit/fySIXLEsmcl
-	Gp5u8+0HjLg4CkkIOQmFOyDm1nKqGqDIGQ4Y1J9CuGw4BXs5f9gSFx0G9WXUEtW7PmNaBv0ZhVTd4
-	A3BbM3iA==;
+	bh=fusqst4tqXvsUqHazjcvItxe3tZZt7HcPLmQWFb/6EE=; b=Uvtsr5Dx/OvfZMfdo2hPc1NIOM
+	O86uTY4GRXlDMalbKXQe2nodkogORRn3HI4p8Vnsxt43lvQFqTVy1mtwfh+/iiLzQHCQfsQB+eqq2
+	We1pgbrXp1VUyT282VCBl3CyY+UCZQ6eRdsIuTEu/lFbXpv5LpQKDOV6A5/86sv6jz8sEzjOjUVqm
+	YMkrZFkcUU7Po1TdojQxh7w2nod5PxljnIqCYZBt2tAfGxvrYOPS7R5bwMztbEEBpP2HazGRRz3EF
+	zekzbMI+coP6jwL+lRchEi4ZyYKqTa2O+F6O2KTlyMH7FmfsZ+gU9PWvAepsBDDoYrs+XpOSdZaGY
+	1lzSLhyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOCCY-0005XQ-Le; Wed, 08 May 2019 02:20:58 +0000
-Received: from mail-yw1-xc43.google.com ([2607:f8b0:4864:20::c43])
+	id 1hOCCi-0005lc-RN; Wed, 08 May 2019 02:21:08 +0000
+Received: from mail-yw1-xc41.google.com ([2607:f8b0:4864:20::c41])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOCBu-0004t9-Qh
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 02:20:34 +0000
-Received: by mail-yw1-xc43.google.com with SMTP id b74so14857769ywe.5
+ id 1hOCC2-00051W-2X
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 02:20:45 +0000
+Received: by mail-yw1-xc41.google.com with SMTP id w21so5889836ywd.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 May 2019 19:20:18 -0700 (PDT)
+ Tue, 07 May 2019 19:20:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=luzkdm/vY/d9DSMJpZXXkdaCYVQylLWX37IuJlSjSvI=;
- b=O4CvT+wpioFlo6o1ONKedXd5PmRIkZ34A7MtUnDx5L42qIpPstYgNWmOxMg4LEGRyb
- DTpNaSj2GxM7k8NZLthuEyRPb3YKw47qUBfjXZUtBzCNNntwpttHmeU8dfBBg78D1iGg
- vuAMTacyFw5gLbCb6GUZG+J5G/heP+LtZee6+vPsxbSXotGPX9KI740YKLzJPbGfjAhP
- 3mr2ytKXAY7QnMyz2MwpdNl4yGLWt3jikQ3T8fOOGCPrb8llxwC4/Kb71nUkJZ0aXmiW
- nUTMrLpvwZtmkA7+Dmqhy5yxPQ0guX2QYX1ro2RwDjsq7xioeAcYl9ruVbHsm64Xqm4N
- ZfKg==
+ bh=AG3FqXHLs4/OFGe9lSxLhNOZ2EEYR0vwOTMhYn26hGo=;
+ b=P/eBgw2AZxiQULSdHa/cTRJXa0hypgcD0Sg7WsC+8N1aAaZkkB5Zf79CxpulQW2L66
+ H0y4n5HkqbK6Cj22lHTSc63ASar/nQT6Q1d4VsJStFQXUVb7ORvlTSEziogYg5vkwq/A
+ 5OJJm23AUom2BG0qsfj4piAmSEQdDXTH5p+W7+pajHJkcsKPTnvtVZM2Qx+knKNMKJyW
+ T5spVxIbcgr94pyej+So1AJYp9vmsjJeaIZBU24g+hYruPyYwJteP6z5DeSDJfG62s6H
+ 5AUslmpr6EiXAYrvyjFIpfYXMIwWafgJ5ufqz5eo6/zYDLk8t/3HoQYwi8ahi2+jYzs/
+ ca/Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=luzkdm/vY/d9DSMJpZXXkdaCYVQylLWX37IuJlSjSvI=;
- b=UYJcmhm2qr9QVfpcgf9sHKpbDQm3eQeOLi76mNH+nd1GiIrFU/2UOPTb8rGGI+JHd2
- qkNW5DUkTuKcuec5B8DbO3ucTAwrAUssuAF6blmc0pTZBbunTw18o9/+yqsrHceu5ANX
- 8ec9+J+kiiTDk+cu+izu3wb1vkiISIsLq9PlXo8BFQVwV/nLX5f4bYfz2ISKWEG9KIX2
- ulWiorlHUtAilpuXKXJ26qcwSfaNg81cmAP5Rn895FRitTqNQig2JgNI+/30qcKLeRkP
- ckAVHzMRgHAbrlQAqjtr7B9DAi0dKEw966I91qkRxkT0mIYuCc5+97/DL/piJhDzHc7E
- 9vvw==
-X-Gm-Message-State: APjAAAWnOpgIZbfyGefx+IueokAo+vi8mwa75XadDeF4IO9MfS3FAFlM
- ez/6pdDcn8x4/HZ+Fx2SuD7BUA==
-X-Google-Smtp-Source: APXvYqwtZ33+oLWzmatl408B313A7G34hUUVmzsJOmZ1DLU5dGNKsPVJWev9P0fXaghzne8AaVkDvQ==
-X-Received: by 2002:a25:7652:: with SMTP id r79mr22520606ybc.216.1557282018025; 
- Tue, 07 May 2019 19:20:18 -0700 (PDT)
+ bh=AG3FqXHLs4/OFGe9lSxLhNOZ2EEYR0vwOTMhYn26hGo=;
+ b=pgygAw95uXRTTNQPCHjzMSNkV9fibRDCmZtdBVnDW78crr1mKpclIeFM6DYHyHlCks
+ sm31BtrhuYLcLMaTSeIWxtCvMg/D9yFL40exONzgjn9zrmDoAUEzdiQ0bGKlE0pTEX5M
+ JiS45a8mwYj88wgMxh19sDVilR7QNHCDUjQ2GSPePfZDjTdeg92iiuupcJY+m/pJZy5c
+ vZzBl0RSqbYZu+vBxiT59RqMMP7WaQEDmlpXKP63Xkobux3VsixpYb+wTB4N+tFQzDXK
+ ngGyZJGlT768bdCpNokJE3n4WphuV+pKXp2AVj/Y4PFRP7mxlaSJ4/56gsKJFRY9p5Ux
+ qtiw==
+X-Gm-Message-State: APjAAAVcbMS0Jai9Lzq7qHa23ShR4sXTNQY/l6r6VMRhORDUWVYCf9Cp
+ 3/IWqC4qq1HWFn7KnzjIzrEglw==
+X-Google-Smtp-Source: APXvYqw0FKw200XiMULFd5Py9JxtXGaMTZc+CwuyFGd8KR6CqMPQe9hjhCvI5Ix31kUBUi/8D01W3w==
+X-Received: by 2002:a81:a414:: with SMTP id b20mr25269935ywh.278.1557282025269; 
+ Tue, 07 May 2019 19:20:25 -0700 (PDT)
 Received: from localhost.localdomain (li931-65.members.linode.com.
  [45.56.113.65])
- by smtp.gmail.com with ESMTPSA id s4sm1168116yws.48.2019.05.07.19.20.11
+ by smtp.gmail.com with ESMTPSA id s4sm1168116yws.48.2019.05.07.19.20.18
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 07 May 2019 19:20:17 -0700 (PDT)
+ Tue, 07 May 2019 19:20:24 -0700 (PDT)
 From: Leo Yan <leo.yan@linaro.org>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Suzuki K Poulose <suzuki.poulose@arm.com>,
@@ -73,23 +73,22 @@ To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Chunyan Zhang <zhang.lyra@gmail.com>, linux-arm-kernel@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-msm@vger.kernel.org
-Subject: [PATCH v2 05/11] ARM: dts: vexpress-v2p-ca15_a7: Update coresight DT
- bindings
-Date: Wed,  8 May 2019 10:18:56 +0800
-Message-Id: <20190508021902.10358-6-leo.yan@linaro.org>
+Subject: [PATCH v2 06/11] ARM: dts: qcom-msm8974: Update coresight DT bindings
+Date: Wed,  8 May 2019 10:18:57 +0800
+Message-Id: <20190508021902.10358-7-leo.yan@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190508021902.10358-1-leo.yan@linaro.org>
 References: <20190508021902.10358-1-leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_192019_511136_BBDFABE2 
-X-CRM114-Status: GOOD (  14.52  )
+X-CRM114-CacheID: sfid-20190507_192026_607505_6339FB4B 
+X-CRM114-Status: GOOD (  14.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -121,41 +120,49 @@ CoreSight DT bindings have been updated, thus the old compatible strings
 are obsolete and the drivers will report warning if DTS uses these
 obsolete strings.
 
-This patch switches to the new bindings for CoreSight dynamic funnel and
-static replicator, so can dismiss warning during initialisation.
+This patch switches to the new bindings for CoreSight dynamic funnel,
+so can dismiss warning during initialisation.
 
-Cc: Liviu Dudau <liviu.dudau@arm.com>
-Cc: Sudeep Holla <sudeep.holla@arm.com>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Cc: Andy Gross <agross@kernel.org>
+Cc: David Brown <david.brown@linaro.org>
 Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
 Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 ---
- arch/arm/boot/dts/vexpress-v2p-ca15_a7.dts | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm/boot/dts/qcom-msm8974.dtsi | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm/boot/dts/vexpress-v2p-ca15_a7.dts b/arch/arm/boot/dts/vexpress-v2p-ca15_a7.dts
-index 00cd9f5bef2e..164c904c9992 100644
---- a/arch/arm/boot/dts/vexpress-v2p-ca15_a7.dts
-+++ b/arch/arm/boot/dts/vexpress-v2p-ca15_a7.dts
-@@ -440,7 +440,7 @@
- 		/* non-configurable replicators don't show up on the
- 		 * AMBA bus.  As such no need to add "arm,primecell".
- 		 */
--		compatible = "arm,coresight-replicator";
-+		compatible = "arm,coresight-static-replicator";
+diff --git a/arch/arm/boot/dts/qcom-msm8974.dtsi b/arch/arm/boot/dts/qcom-msm8974.dtsi
+index 45b5c8ef0374..272ebea20a5f 100644
+--- a/arch/arm/boot/dts/qcom-msm8974.dtsi
++++ b/arch/arm/boot/dts/qcom-msm8974.dtsi
+@@ -897,7 +897,7 @@
+ 		};
  
- 		out-ports {
- 			#address-cells = <1>;
-@@ -471,7 +471,7 @@
- 	};
+ 		funnel@fc31b000 {
+-			compatible = "arm,coresight-funnel", "arm,primecell";
++			compatible = "arm,coresight-dynamic-funnel", "arm,primecell";
+ 			reg = <0xfc31b000 0x1000>;
  
- 	funnel@20040000 {
--		compatible = "arm,coresight-funnel", "arm,primecell";
-+		compatible = "arm,coresight-dynamic-funnel", "arm,primecell";
- 		reg = <0 0x20040000 0 0x1000>;
+ 			clocks = <&rpmcc RPM_SMD_QDSS_CLK>, <&rpmcc RPM_SMD_QDSS_A_CLK>;
+@@ -931,7 +931,7 @@
+ 		};
  
- 		clocks = <&oscclk6a>;
+ 		funnel@fc31a000 {
+-			compatible = "arm,coresight-funnel", "arm,primecell";
++			compatible = "arm,coresight-dynamic-funnel", "arm,primecell";
+ 			reg = <0xfc31a000 0x1000>;
+ 
+ 			clocks = <&rpmcc RPM_SMD_QDSS_CLK>, <&rpmcc RPM_SMD_QDSS_A_CLK>;
+@@ -969,7 +969,7 @@
+ 		};
+ 
+ 		funnel@fc345000 { /* KPSS funnel only 4 inputs are used */
+-			compatible = "arm,coresight-funnel", "arm,primecell";
++			compatible = "arm,coresight-dynamic-funnel", "arm,primecell";
+ 			reg = <0xfc345000 0x1000>;
+ 
+ 			clocks = <&rpmcc RPM_SMD_QDSS_CLK>, <&rpmcc RPM_SMD_QDSS_A_CLK>;
 -- 
 2.17.1
 
