@@ -2,99 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 090E11809A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 21:40:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0016180CF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 22:04:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1yGKmtjs7ev1Z5U2eDVpj4zO3WU/QcsKbO/x5t7qyQA=; b=mzmfW3CNC217ld
-	defmIxtTZjSwmCFkrh6ZpIznW61GyBu9ufoNVyv/Rhi0bnl8TDb7AmgWRQKIMT+n4K9s83emvP9An
-	PKlay3bpSBF6hN5EvnRSrc53J/cCPq2d76zUeEF7KLds9olK2C7pif772nY0PGjYRyGTtlq3v41XW
-	cdnsgF9FqjDYq6qCOpVlg0ODW99IbOpbEaKZMoBqVq97liM7u9ynu+iORcLpTk4BlNeZ0Xg9KFFH0
-	P3vOQFemGOHHKBOF6UM/+yqI/PUV4jXLbG8TVU5y3fmOKidLk1mSrjW7UOCXe85uScWJdBgiuG3PY
-	8afeBDTTVLJ0UN9i53dA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=AUdIgA0XPXnI6VoIyzhIQ6Kmn/TxQP6vLHZSPiLtp74=; b=HSfg/ukitw5behnonczQFBBkp
+	dQgH9n/yv4qMrW7SEXSk88gzIHUYFNK5kLm5u8wIRoxMYorWDB9wwZwvkQAOOdA1IjGs88dlY9J5h
+	UUt0rv2nDkEcZ3dmA+rXK+oaDGexAIhlgB4NoYjwpXYlgeybMbFUKfJn9fdyZDKYykSUlWBG2Zgar
+	CJPpuZHdyJneXAESa0g0ZlcT2tncmc4QYHkA5kJrI2jtbRS10F3yAr3WiVA2kAAC0rcpVyrsTpHnD
+	cu+cwEyo+KgicZqRLYyEb9JiNAkHeIGMIjuDVtGGI7X0S/17Pff132J/Hjb+MrwsU0j6t7AP6Orct
+	viwjDznhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOSQb-0002qL-Ho; Wed, 08 May 2019 19:40:33 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOSQT-0002pm-BV
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 19:40:26 +0000
-Received: by mail-pg1-x544.google.com with SMTP id z16so10582165pgv.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 May 2019 12:40:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=7Xc+7OcJpMvDCLjFgyfFFHfxL3+Nwu8VrHOrlj3FvEg=;
- b=gA0wLPNq/n/8ixJaFO0KfTJuXx0bYSFib4d8PRnYnRoRWIlBAqZtQfqpPUrVQUkMw0
- yp6z42kaNOFUQFtgv+ObJmrn0ovteqmXR1lhOeNT2hFBhPPbEb56uXPQ9tlzK14DRgbO
- HvGP8PCjcsfrz4Cx9F7R/HboeKP6jcQLP30Y4Ua0bMOCV1dKSxsuR1WKHFjts+qExDvp
- QcW6CUnLtEC1xOeUCnqerVZ3fbVVQjCzPYtvBkQzFX0zmUUSf1M01g++Bl2NeJcxKN6j
- o0itCM8jpOn/80DmGTBVMaW3DnVu/hZ3qHU1yg6CCW3hGvpOIfKuHzizSbW+MQf2ASnD
- Z8yA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=7Xc+7OcJpMvDCLjFgyfFFHfxL3+Nwu8VrHOrlj3FvEg=;
- b=bFeFoWuSmdCWvr4bZsssj+XI7A2I+RXKlZHnH5cVW/uwTWck/btcxtNuQ+0mWEVjPg
- KAHvsHTVVCmxpE10D9UiN49nWQJUD40YKh/ofgabpLq4XegZWhrsejTEsPzVJR+JC8GD
- ShrBFUopVuYCLeCwUkJnDZ8BkOVXVbnEyrqtH6Wh07fW1l65aoCVZwFhC2jX6oEJOMg6
- pPrcKFOkvpmu2bsBrBVUvLsM1TKMxsbPUTg/jsuKG+k6CeArW3ZNxdln7P+/KFVz1sUV
- SbHeik+RY5Y/5wZebwfPVyb6hUPeLtwd8mQq2zVCmPHLWcwZVGe5Ed6Dr/0R898IRMHW
- vokg==
-X-Gm-Message-State: APjAAAXE7Mb4BPaY0bmuuyHfVAQPNEoFI60D9IXne6O31pCzqtNnEM+R
- IQwCMt0pzMl3MRoydEkPZtQ=
-X-Google-Smtp-Source: APXvYqy+Mps/PyObzV+AuLgHZJTJg7RaPtGqFSmI758A8f++3nmdl5bdmN6yqa/mgHxnHrytM0TiuQ==
-X-Received: by 2002:a63:1048:: with SMTP id 8mr49167502pgq.70.1557344424885;
- Wed, 08 May 2019 12:40:24 -0700 (PDT)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id t7sm41031pfa.42.2019.05.08.12.40.23
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 08 May 2019 12:40:23 -0700 (PDT)
-Date: Wed, 8 May 2019 12:40:22 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: [PATCH v4 2/2] hwmon: scmi: Scale values to target desired HWMON
- units
-Message-ID: <20190508194022.GA28200@roeck-us.net>
-References: <20190508170035.19671-1-f.fainelli@gmail.com>
- <20190508170035.19671-3-f.fainelli@gmail.com>
- <20190508183244.GA25133@roeck-us.net>
- <258aec23-055b-61c2-c0f6-2ff1abc006cd@gmail.com>
+	id 1hOSne-0001PO-25; Wed, 08 May 2019 20:04:22 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hOSnW-0001O3-C6
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 20:04:15 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 44555374;
+ Wed,  8 May 2019 13:04:11 -0700 (PDT)
+Received: from [192.168.100.241] (usa-sjc-mx-foss1.foss.arm.com
+ [217.140.101.70])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3B3CD3F575;
+ Wed,  8 May 2019 13:04:10 -0700 (PDT)
+Subject: Re: [PATCH v3 4/5] arm_pmu: acpi: spe: Add initial MADT/SPE probing
+To: John Garry <john.garry@huawei.com>, linux-arm-kernel@lists.infradead.org
+References: <20190503232407.37195-1-jeremy.linton@arm.com>
+ <20190503232407.37195-5-jeremy.linton@arm.com>
+ <dbb1312e-a2fb-4d75-03dd-bbaabdb647b4@huawei.com>
+From: Jeremy Linton <jeremy.linton@arm.com>
+Message-ID: <c42e3d8a-51fa-ea0c-6733-0e133050cdfe@arm.com>
+Date: Wed, 8 May 2019 15:04:02 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.4.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <258aec23-055b-61c2-c0f6-2ff1abc006cd@gmail.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <dbb1312e-a2fb-4d75-03dd-bbaabdb647b4@huawei.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_124025_396541_512F603F 
-X-CRM114-Status: GOOD (  18.99  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190508_130414_426821_BA876117 
+X-CRM114-Status: GOOD (  28.67  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
- 0.1 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -106,107 +65,252 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:HARDWARE MONITORING" <linux-hwmon@vger.kernel.org>,
- Jean Delvare <jdelvare@suse.com>, linux-kernel@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, Sudeep Holla <sudeep.holla@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, will.deacon@arm.com,
+ sudeep.holla@arm.com, rjw@rjwysocki.net, linuxarm@huawei.com,
+ linux-acpi@vger.kernel.org, catalin.marinas@arm.com, lenb@kernel.org
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="windows-1252"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 08, 2019 at 11:34:50AM -0700, Florian Fainelli wrote:
-> On 5/8/19 11:32 AM, Guenter Roeck wrote:
-> > Hi Florian,
-> > 
-> > On Wed, May 08, 2019 at 10:00:35AM -0700, Florian Fainelli wrote:
-> >> If the SCMI firmware implementation is reporting values in a scale that
-> >> is different from the HWMON units, we need to scale up or down the value
-> >> according to how far appart they are.
-> >>
-> >> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
-> >> ---
-> >>  drivers/hwmon/scmi-hwmon.c | 46 ++++++++++++++++++++++++++++++++++++++
-> >>  1 file changed, 46 insertions(+)
-> >>
-> >> diff --git a/drivers/hwmon/scmi-hwmon.c b/drivers/hwmon/scmi-hwmon.c
-> >> index a80183a488c5..4399372e2131 100644
-> >> --- a/drivers/hwmon/scmi-hwmon.c
-> >> +++ b/drivers/hwmon/scmi-hwmon.c
-> >> @@ -7,6 +7,7 @@
-> >>   */
-> >>  
-> >>  #include <linux/hwmon.h>
-> >> +#include <linux/limits.h>
-> >>  #include <linux/module.h>
-> >>  #include <linux/scmi_protocol.h>
-> >>  #include <linux/slab.h>
-> >> @@ -18,6 +19,47 @@ struct scmi_sensors {
-> >>  	const struct scmi_sensor_info **info[hwmon_max];
-> >>  };
-> >>  
-> >> +static inline u64 __pow10(u8 x)
-> >> +{
-> >> +	u64 r = 1;
-> >> +
-> >> +	while (x--)
-> >> +		r *= 10;
-> >> +
-> >> +	return r;
-> >> +}
-> >> +
-> >> +static int scmi_hwmon_scale(const struct scmi_sensor_info *sensor, u64 *value)
-> >> +{
-> >> +	s8 scale = sensor->scale;
-> >> +	u64 f;
-> >> +
-> >> +	switch (sensor->type) {
-> >> +	case TEMPERATURE_C:
-> >> +	case VOLTAGE:
-> >> +	case CURRENT:
-> >> +		scale += 3;
-> >> +		break;
-> >> +	case POWER:
-> >> +	case ENERGY:
-> >> +		scale += 6;
-> >> +		break;
-> >> +	default:
-> >> +		break;
-> >> +	}
-> >> +
-> >> +	f = __pow10(abs(scale));
-> >> +	if (f == U64_MAX)
-> >> +		return -E2BIG;
-> > 
-> > Unfortunately that is not how integer overflows work.
-> > 
-> > A test program with increasing values of scale reports:
-> > 
-> > 0: 1
-> > ...
-> > 18: 1000000000000000000
-> > 19: 10000000000000000000
-> > 20: 7766279631452241920
-> > 21: 3875820019684212736
-> > 22: 1864712049423024128
-> > 23: 200376420520689664
-> > 24: 2003764205206896640
-> > ...
-> > 61: 11529215046068469760
-> > 62: 4611686018427387904
-> > 63: 9223372036854775808
-> > 64: 0
-> > ...
-> > 
-> > You'll have to check for abs(scale) > 19 if you want to report overflows.
-> 
-> Yes silly me, my test program was flawed, thanks for pointing out that.
-> You are okay with returning E2BIG when we overflow?
+Hi,
 
-Yes.
+Thanks for taking a look at this,
 
-Thanks,
-Guenter
+On 5/8/19 6:18 AM, John Garry wrote:
+e> On 04/05/2019 00:24, Jeremy Linton wrote:
+>> ACPI 6.3 adds additional fields to the MADT GICC
+>> structure to describe SPE PPI's. We pick these out
+>> of the cached reference to the madt_gicc structure
+>> similarly to the core PMU code. We then create a platform
+>> device referring to the IRQ and let the user/module loader
+>> decide whether to load the SPE driver.
+>>
+>> Signed-off-by: Jeremy Linton <jeremy.linton@arm.com>
+>> ---
+>> =A0arch/arm64/include/asm/acpi.h |=A0 3 ++
+>> =A0drivers/perf/Kconfig=A0=A0=A0=A0=A0=A0=A0=A0=A0 |=A0 5 +++
+>> =A0drivers/perf/arm_pmu_acpi.c=A0=A0 | 76 ++++++++++++++++++++++++++++++=
++++++
+>> =A0include/linux/perf/arm_pmu.h=A0 |=A0 2 +
+>> =A04 files changed, 86 insertions(+)
+>>
+>> diff --git a/arch/arm64/include/asm/acpi.h =
+
+>> b/arch/arm64/include/asm/acpi.h
+>> index 7628efbe6c12..d10399b9f998 100644
+>> --- a/arch/arm64/include/asm/acpi.h
+>> +++ b/arch/arm64/include/asm/acpi.h
+>> @@ -41,6 +41,9 @@
+>> =A0=A0=A0=A0 (!(entry) || (entry)->header.length < ACPI_MADT_GICC_MIN_LE=
+NGTH || \
+>> =A0=A0=A0=A0 (unsigned long)(entry) + (entry)->header.length > (end))
+>>
+>> +#define ACPI_MADT_GICC_SPE=A0 (ACPI_OFFSET(struct =
+
+>> acpi_madt_generic_interrupt, \
+>> +=A0=A0=A0 spe_interrupt) + sizeof(u16))
+>> +
+>> =A0/* Basic configuration for ACPI */
+>> =A0#ifdef=A0=A0=A0 CONFIG_ACPI
+>> =A0pgprot_t __acpi_get_mem_attribute(phys_addr_t addr);
+>> diff --git a/drivers/perf/Kconfig b/drivers/perf/Kconfig
+>> index af9bc178495d..bc2647c64c9d 100644
+>> --- a/drivers/perf/Kconfig
+>> +++ b/drivers/perf/Kconfig
+>> @@ -52,6 +52,11 @@ config ARM_PMU_ACPI
+>> =A0=A0=A0=A0 depends on ARM_PMU && ACPI
+>> =A0=A0=A0=A0 def_bool y
+>>
+>> +config ARM_SPE_ACPI
+> =
+
+> Is it possible to just use this check in arm_pmu_acpi.c instead, to =
+
+> avoid introducing another config here:
+> =
+
+> if defined(CONFIG_ARM_SPE_PMU)
+
+I'm sure it works, if this is preferred, sure..
+
+
+> =
+
+>> +=A0=A0=A0 depends on ARM_PMU_ACPI && ARM_SPE_PMU
+>> +=A0=A0=A0 def_bool y
+>> +
+>> +
+> =
+
+> nit: extra line
+> =
+
+>> =A0config ARM_DSU_PMU
+>> =A0=A0=A0=A0 tristate "ARM DynamIQ Shared Unit (DSU) PMU"
+>> =A0=A0=A0=A0 depends on ARM64
+>> diff --git a/drivers/perf/arm_pmu_acpi.c b/drivers/perf/arm_pmu_acpi.c
+>> index 0f197516d708..b0244e1e8c91 100644
+>> --- a/drivers/perf/arm_pmu_acpi.c
+>> +++ b/drivers/perf/arm_pmu_acpi.c
+>> @@ -74,6 +74,80 @@ static void arm_pmu_acpi_unregister_irq(int cpu)
+>> =A0=A0=A0=A0 acpi_unregister_gsi(gsi);
+>> =A0}
+>>
+>> +#ifdef CONFIG_ARM_SPE_ACPI
+>> +static struct resource spe_resources[] =3D {
+>> +=A0=A0=A0 {
+>> +=A0=A0=A0=A0=A0=A0=A0 /* irq */
+>> +=A0=A0=A0=A0=A0=A0=A0 .flags=A0=A0=A0=A0=A0=A0=A0=A0=A0 =3D IORESOURCE_=
+IRQ,
+>> +=A0=A0=A0 }
+>> +};
+>> +
+>> +static struct platform_device spe_dev =3D {
+>> +=A0=A0=A0 .name =3D ARMV8_SPE_PDEV_NAME,
+>> +=A0=A0=A0 .id =3D -1,
+>> +=A0=A0=A0 .resource =3D spe_resources,
+>> +=A0=A0=A0 .num_resources =3D ARRAY_SIZE(spe_resources)
+>> +};
+>> +
+>> +/*
+>> + * For lack of a better place, hook the normal PMU MADT walk
+>> + * and create a SPE device if we detect a recent MADT with
+>> + * a homogeneous PPI mapping.
+>> + */
+>> +static int arm_spe_acpi_register_device(void)
+>> +{
+>> +=A0=A0=A0 int cpu, ret, irq;
+>> +=A0=A0=A0 int hetid;
+>  > nit: not sure why you use multiple lines here
+
+Functional grouping, but I should probably re-arrange them...
+
+
+> =
+
+>> +=A0=A0=A0 u16 gsi =3D 0;
+>> +=A0=A0=A0 bool first =3D true;
+>> +
+> =
+
+> nit: extra line, and gicc could be declared within the loop in which =
+
+> it's used to limit scope.
+> =
+
+>> +=A0=A0=A0 struct acpi_madt_generic_interrupt *gicc;
+>> +
+>> +=A0=A0=A0 /*
+>> +=A0=A0=A0=A0 * sanity check all the GICC tables for the same interrupt =
+number
+>> +=A0=A0=A0=A0 * for now we only support homogeneous ACPI/SPE machines.
+>> +=A0=A0=A0=A0 */
+>> +=A0=A0=A0 for_each_possible_cpu(cpu) {
+>> +=A0=A0=A0=A0=A0=A0=A0 gicc =3D acpi_cpu_get_madt_gicc(cpu);
+>> +
+>> +=A0=A0=A0=A0=A0=A0=A0 if (gicc->header.length < ACPI_MADT_GICC_SPE)
+>> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 return -ENODEV;
+>> +=A0=A0=A0=A0=A0=A0=A0 if (first) {
+>> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 gsi =3D gicc->spe_interrupt;
+>> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (!gsi)
+>> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 return -ENODEV;
+>> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 hetid =3D find_acpi_cpu_topology_hete=
+ro_id(cpu);
+>> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 first =3D false;
+>> +=A0=A0=A0=A0=A0=A0=A0 } else if ((gsi !=3D gicc->spe_interrupt) ||
+>> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 (hetid !=3D find_acpi_cpu_to=
+pology_hetero_id(cpu))) {
+>> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 pr_warn("ACPI: SPE must be homogeneou=
+s\n");
+>> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 return -EINVAL;
+>> +=A0=A0=A0=A0=A0=A0=A0 }
+>> +=A0=A0=A0 }
+>> +
+>> +=A0=A0=A0 irq =3D acpi_register_gsi(NULL, gsi, ACPI_LEVEL_SENSITIVE,
+>> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 ACPI_ACTIVE_HIGH);
+>> +=A0=A0=A0 if (irq < 0) {
+> =
+
+> is irq =3D=3D 0 a valid Linux IRQ number? From checking =
+
+> irq_create_fw_spec_mapping(), it does not seem to be.
+
+I think this is a bit of a trick question, acpi_register_gsi's =
+
+commented/implementations/etc seem to assume that 0 may be a valid =
+
+interrupt, for example
+
+"
+  * Returns: a valid linux IRQ number on success
+  *          -EINVAL on failure
+"
+
+And various pieces of code have >=3D0  valid IRQ checks. So... I don't =
+
+think its a problem written this way. It leaves the door open for a =
+
+possible 0 despite that likely not being a valid interrupt.. :)
+
+
+> =
+
+>> +=A0=A0=A0=A0=A0=A0=A0 pr_warn("ACPI: SPE Unable to register interrupt: =
+%d\n", gsi);
+>> +=A0=A0=A0=A0=A0=A0=A0 return irq;
+>> +=A0=A0=A0 }
+>> +
+>> +=A0=A0=A0 spe_resources[0].start =3D irq;
+>> +=A0=A0=A0 ret =3D platform_device_register(&spe_dev);
+>> +=A0=A0=A0 if (ret < 0) {
+>> +=A0=A0=A0=A0=A0=A0=A0 pr_warn("ACPI: SPE: Unable to register device\n");
+>> +=A0=A0=A0=A0=A0=A0=A0 acpi_unregister_gsi(gsi);
+>> +=A0=A0=A0 }
+>> +
+>> +=A0=A0=A0 return ret;
+>> +}
+>> +#else
+>> +static inline int arm_spe_acpi_register_device(void)
+>> +{
+>> +=A0=A0=A0 return -ENODEV;
+>> +}
+>> +#endif /* CONFIG_ARM_SPE_ACPI */
+>> +
+>> =A0static int arm_pmu_acpi_parse_irqs(void)
+>> =A0{
+>> =A0=A0=A0=A0 int irq, cpu, irq_cpu, err;
+>> @@ -279,6 +353,8 @@ static int arm_pmu_acpi_init(void)
+>> =A0=A0=A0=A0 if (acpi_disabled)
+>> =A0=A0=A0=A0=A0=A0=A0=A0 return 0;
+>>
+>> +=A0=A0=A0 arm_spe_acpi_register_device(); /* failures are expected */
+>> +
+>> =A0=A0=A0=A0 ret =3D arm_pmu_acpi_parse_irqs();
+>> =A0=A0=A0=A0 if (ret)
+>> =A0=A0=A0=A0=A0=A0=A0=A0 return ret;
+>> diff --git a/include/linux/perf/arm_pmu.h b/include/linux/perf/arm_pmu.h
+>> index 4641e850b204..784bc58f165a 100644
+>> --- a/include/linux/perf/arm_pmu.h
+>> +++ b/include/linux/perf/arm_pmu.h
+>> @@ -175,4 +175,6 @@ void armpmu_free_irq(int irq, int cpu);
+>>
+>> =A0#endif /* CONFIG_ARM_PMU */
+>>
+>> +#define ARMV8_SPE_PDEV_NAME "arm,spe-v1"
+>> +
+>> =A0#endif /* __ARM_PMU_H__ */
+>>
+> =
+
+> Thanks!
+> =
+
+> =
+
+> =
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
