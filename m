@@ -2,105 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E72B1748D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 11:06:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 988B917512
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 11:24:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uLcZsgcOMlIumitUZoxY6ycM9jZxPY8KtjF0KwiqUAI=; b=dPK62q+HVOGGVz
-	sspYuHh3YLVhyLK2ekIoQLqX0lZ/+W5HrP1DLz8ZHK+fdvcImblTOA9mXA3dIVP3KtlmCyjjBfz4l
-	bqjUmEKIwDe7OQdOO0XlD4nRZarV65HRcdmJvU/rprQ5gRDnx/+MgPus6JNEIs0aq4XzUKvFAdPIC
-	hxdOkx3299T2WTsSt0rtvZdEpcr0SvistlJPBlsi4DbEXZz4pk+7QOaDIMWY8fdrWJ+13IszfbKIY
-	f8wneShneozgt1G5Bq4oFRVwYljB376UOxlAYfUAzNYt1LhfafpG+bI2Uhu6lUP+YtWrrVeJoPuV0
-	U7R0S/0GEIGt5Ii+j9Lw==;
+	References:List-Owner; bh=u83YscJFPs+J1CYfRuAXT1iMkdkyfiu6L+x1FfQPQJg=; b=UxG
+	+rWYdwOpH3/JOeKipEF5OtcakqzpYl/JAbZD8v9ichUd8Ya7jfO1Gz3UOK9ik2VPGm1l6U7fIGqCr
+	otQPcNjjJXNIz/zpRqhDAEhuYGtfXuD5cs4dLPC07sZ5dVDpg8/KqaborxvVXkPT6zCn51Tw4XQhu
+	EQ8MZrEVZeyhKR8Qk/6k6wUzjk4ZVLQNiBrQE2tCveRiBNdRHQjCAb3Ourq1TbvcsIMWTVoQ8GviE
+	j8h29p28EQHV5671Fn6nA773rQbYGW365snM/i4cGPhDqGS6/xwuW+84faeSuuaPcd9xlNq1cqDEO
+	tBdsU6hnCO9tdtE+weJ1qIfNXPQdXNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOIWu-0007w7-PS; Wed, 08 May 2019 09:06:24 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1hOIo6-00078f-Mh; Wed, 08 May 2019 09:24:10 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOIWo-0007vY-2U
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 09:06:19 +0000
-Received: by mail-ed1-x543.google.com with SMTP id b8so21347537edm.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 May 2019 02:06:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=sender:date:from:to:cc:subject:message-id:mail-followup-to
- :references:mime-version:content-disposition
- :content-transfer-encoding:in-reply-to:user-agent;
- bh=ZCByRjUdoltM6JQS2wK/k1Vsg/2ECYjryZKrL53UB1A=;
- b=cAzcttZx8IOcmQDqtJutN0W3TZIg84Kt+H8yqc/dtHNn73Y2pzR4uGqqCerk+xxpRK
- kCgJj/0Cr/9osHXLk0jMGb0DbsYQmdwOxkCRSgnYBTOS4elaRx1CcurT+vvHJOsLuOZf
- kJPxniGaN7IRwAIl1yJA3kUC4nDvoPbGXpO0o=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :mail-followup-to:references:mime-version:content-disposition
- :content-transfer-encoding:in-reply-to:user-agent;
- bh=ZCByRjUdoltM6JQS2wK/k1Vsg/2ECYjryZKrL53UB1A=;
- b=IChb6QZQ/42V6hxMu/j86K2qM3bSxrRtCBHlpdeGRN3J/lVzwuS18UmI9t6ktU2Odj
- 3LhUWOhnnTdbprlZDLwf0YwI7ZH9CvKSIruXRie3T1qI5hOB19UGEkaBDZut/tVu6Yln
- 3iV7fZfewkPPeYkNdOTFYsUBz2owP6RLXM8qaKG4J/L52WzY115aV2r0S6bvxS8v4FSB
- e2UkHZsDAX75PCIPoifaAX8qY4JlmGKeWlS3mYDu1IV9mJQk7uSSrsc8YXkQpqUx/GKA
- e7Z1QEE2JSHoOys4s/GbllnMh/pIS4kQGVJMn/BCAl5TK633GKhJXDinLyyilZTAtMS+
- Hvvw==
-X-Gm-Message-State: APjAAAWvQEtUABOFKSANlKGacQLvZcfeUsFxwjaBx1e+GfpxQ9SZhEL5
- q7BydevcUs6l4zeDZs/BEgEkpw==
-X-Google-Smtp-Source: APXvYqyhIyJzQJ2/WQmKoGSeee8pS6Iu8b2u59hMI6uOyjAOYUPnEY7pFFD0PgsSnAjiyZEjRhbMSQ==
-X-Received: by 2002:a17:906:a48:: with SMTP id
- x8mr3642206ejf.247.1557306376650; 
- Wed, 08 May 2019 02:06:16 -0700 (PDT)
-Received: from phenom.ffwll.local ([2a02:168:569e:0:3106:d637:d723:e855])
- by smtp.gmail.com with ESMTPSA id f44sm4982723eda.73.2019.05.08.02.06.15
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 08 May 2019 02:06:15 -0700 (PDT)
-Date: Wed, 8 May 2019 11:06:12 +0200
-From: Daniel Vetter <daniel@ffwll.ch>
-To: Sam Ravnborg <sam@ravnborg.org>
-Subject: Re: [PATCH RE-RESEND 1/2] drm/panel: Add support for Armadeus ST0700
- Adapt
-Message-ID: <20190508090612.GT17751@phenom.ffwll.local>
-Mail-Followup-To: Sam Ravnborg <sam@ravnborg.org>,
- Fabio Estevam <festevam@gmail.com>,
- Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, 
- David Airlie <airlied@linux.ie>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- DRI mailing list <dri-devel@lists.freedesktop.org>,
- Rob Herring <robh+dt@kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- stable <stable@vger.kernel.org>,
- =?iso-8859-1?Q?S=E9bastien?= Szymanski <sebastien.szymanski@armadeus.com>,
- Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-References: <20190507152713.27494-1-sebastien.szymanski@armadeus.com>
- <CAOMZO5B2nMsVNO6O_D+YTSjux=-DjNPGxhkEi3AQquOZVODumA@mail.gmail.com>
- <20190507161950.GA24879@ravnborg.org>
- <20190508083303.GR17751@phenom.ffwll.local>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190508083303.GR17751@phenom.ffwll.local>
-X-Operating-System: Linux phenom 4.14.0-3-amd64 
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1hOInz-00078H-5M; Wed, 08 May 2019 09:24:05 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+ List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
+ List-Archive; bh=gXJ1mcvnfd2Lr4CrzMcsy+xEMcAnrSJHRAZiquY3mjg=; b=lnZ0uiyuXjmV
+ cTb7XBg4vRrnA8RPiKD5d9635w6YGUCJ/CdS7YsfVQ8NsJYiGA28b6YqKxdwlULwjDWPZrHsSMeZl
+ PkftqRGTKymYkYpRuhwcMd3Mk/zsthh1Kcy+6wKBCrvyYFdQ3hfwbY++5p3Iq0QiR/IZwgpvIe4Ek
+ csjkw=;
+Received: from [61.199.190.11] (helo=finisterre.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hOInt-0007jg-7R; Wed, 08 May 2019 09:23:58 +0000
+Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
+ id 0A5F2440034; Wed,  8 May 2019 10:08:54 +0100 (BST)
+From: Mark Brown <broonie@kernel.org>
+To: Martin Sperl <kernel@martin.sperl.org>
+Subject: Applied "spi: bcm2835: add driver stats to debugfs" to the spi tree
+In-Reply-To: <20190423201513.8073-7-kernel@martin.sperl.org>
+X-Patchwork-Hint: ignore
+Message-Id: <20190508090854.0A5F2440034@finisterre.sirena.org.uk>
+Date: Wed,  8 May 2019 10:08:53 +0100 (BST)
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_020618_112602_D880B2C3 
-X-CRM114-Status: GOOD (  17.92  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190508_022403_354034_52959A92 
+X-CRM114-Status: GOOD (  18.73  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.1 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -117,67 +73,208 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, David Airlie <airlied@linux.ie>,
- Shawn Guo <shawnguo@kernel.org>, linux-kernel <linux-kernel@vger.kernel.org>,
- DRI mailing list <dri-devel@lists.freedesktop.org>,
- Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- stable <stable@vger.kernel.org>, Fabio Estevam <festevam@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Stefan Wahren <stefan.wahren@i2se.com>, linux-spi@vger.kernel.org,
+ Eric Anholt <eric@anholt.net>, Mark Brown <broonie@kernel.org>,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 08, 2019 at 10:33:03AM +0200, Daniel Vetter wrote:
-> On Tue, May 07, 2019 at 06:19:50PM +0200, Sam Ravnborg wrote:
-> > Hi Fabio
-> > =
+The patch
 
-> > On Tue, May 07, 2019 at 12:33:39PM -0300, Fabio Estevam wrote:
-> > > [Adding Sam, who is helping to review/collect panel-simple patches]
-> > > =
+   spi: bcm2835: add driver stats to debugfs
 
-> > > On Tue, May 7, 2019 at 12:27 PM S=E9bastien Szymanski
-> > > <sebastien.szymanski@armadeus.com> wrote:
-> > > >
-> > > > This patch adds support for the Armadeus ST0700 Adapt. It comes wit=
-h a
-> > > > Santek ST0700I5Y-RBSLW 7.0" WVGA (800x480) TFT and an adapter board=
- so
-> > > > that it can be connected on the TFT header of Armadeus Dev boards.
-> > > >
-> > > > Cc: stable@vger.kernel.org # v4.19
-> > > > Reviewed-by: Rob Herring <robh@kernel.org>
-> > > > Signed-off-by: S=E9bastien Szymanski <sebastien.szymanski@armadeus.=
-com>
-> > Reviewed-by: Sam Ravnborg <sam@ravnborg.org>
-> > =
+has been applied to the spi tree at
 
-> > If you wil lresend the patch I can apply it.
-> > I have lost the original mail.
-> =
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.3
 
-> Usually patchwork should have it already (and you can pipe the raw
-> patchwork mbox into dim apply), but somehow it's not there either.
-> Not sure why, sometimes this is because mails are stuck in moderation,
-> sometimes because people do interesting things with their mails (e.g. smtp
-> servers mangling formatting).
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
 
-patchwork was just a bit slow, it's there now:
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
 
-https://patchwork.freedesktop.org/series/60408/
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
 
-Cheers, Daniel
--- =
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
 
-Daniel Vetter
-Software Engineer, Intel Corporation
-http://blog.ffwll.ch
+Thanks,
+Mark
+
+From 154f7da56f1ecba42021d550c9e8432ac8d32c26 Mon Sep 17 00:00:00 2001
+From: Martin Sperl <kernel@martin.sperl.org>
+Date: Tue, 23 Apr 2019 20:15:13 +0000
+Subject: [PATCH] spi: bcm2835: add driver stats to debugfs
+
+To estimate efficiency add statistics on transfer types
+(polling, interrupt and dma) used to debugfs.
+
+Signed-off-by: Martin Sperl <kernel@martin.sperl.org>
+
+Changelog:
+  V1 -> V2: applied feedback by Stefan Wahren
+            reorganized patchset
+	    added extra rational, descriptions
+	    fixed compile issue when CONFIG_DEBUG_FS is unset
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ drivers/spi/spi-bcm2835.c | 74 +++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 74 insertions(+)
+
+diff --git a/drivers/spi/spi-bcm2835.c b/drivers/spi/spi-bcm2835.c
+index 3230d37fa89a..eb67da697ef5 100644
+--- a/drivers/spi/spi-bcm2835.c
++++ b/drivers/spi/spi-bcm2835.c
+@@ -22,6 +22,7 @@
+ 
+ #include <linux/clk.h>
+ #include <linux/completion.h>
++#include <linux/debugfs.h>
+ #include <linux/delay.h>
+ #include <linux/dma-mapping.h>
+ #include <linux/dmaengine.h>
+@@ -101,6 +102,15 @@ MODULE_PARM_DESC(polling_limit_us,
+  *	length is not a multiple of 4 (to overcome hardware limitation)
+  * @tx_spillover: whether @tx_prologue spills over to second TX sglist entry
+  * @dma_pending: whether a DMA transfer is in progress
++ * @debugfs_dir: the debugfs directory - neede to remove debugfs when
++ *      unloading the module
++ * @count_transfer_polling: count of how often polling mode is used
++ * @count_transfer_irq: count of how often interrupt mode is used
++ * @count_transfer_irq_after_polling: count of how often we fall back to
++ *      interrupt mode after starting in polling mode.
++ *      These are counted as well in @count_transfer_polling and
++ *      @count_transfer_irq
++ * @count_transfer_dma: count how often dma mode is used
+  */
+ struct bcm2835_spi {
+ 	void __iomem *regs;
+@@ -115,8 +125,55 @@ struct bcm2835_spi {
+ 	int rx_prologue;
+ 	unsigned int tx_spillover;
+ 	unsigned int dma_pending;
++
++	struct dentry *debugfs_dir;
++	u64 count_transfer_polling;
++	u64 count_transfer_irq;
++	u64 count_transfer_irq_after_polling;
++	u64 count_transfer_dma;
+ };
+ 
++#if defined(CONFIG_DEBUG_FS)
++static void bcm2835_debugfs_create(struct bcm2835_spi *bs,
++				   const char *dname)
++{
++	char name[64];
++	struct dentry *dir;
++
++	/* get full name */
++	snprintf(name, sizeof(name), "spi-bcm2835-%s", dname);
++
++	/* the base directory */
++	dir = debugfs_create_dir(name, NULL);
++	bs->debugfs_dir = dir;
++
++	/* the counters */
++	debugfs_create_u64("count_transfer_polling", 0444, dir,
++			   &bs->count_transfer_polling);
++	debugfs_create_u64("count_transfer_irq", 0444, dir,
++			   &bs->count_transfer_irq);
++	debugfs_create_u64("count_transfer_irq_after_polling", 0444, dir,
++			   &bs->count_transfer_irq_after_polling);
++	debugfs_create_u64("count_transfer_dma", 0444, dir,
++			   &bs->count_transfer_dma);
++}
++
++static void bcm2835_debugfs_remove(struct bcm2835_spi *bs)
++{
++	debugfs_remove_recursive(bs->debugfs_dir);
++	bs->debugfs_dir = NULL;
++}
++#else
++static void bcm2835_debugfs_create(struct bcm2835_spi *bs,
++				   const char *dname)
++{
++}
++
++static void bcm2835_debugfs_remove(struct bcm2835_spi *bs)
++{
++}
++#endif /* CONFIG_DEBUG_FS */
++
+ static inline u32 bcm2835_rd(struct bcm2835_spi *bs, unsigned reg)
+ {
+ 	return readl(bs->regs + reg);
+@@ -320,6 +377,9 @@ static int bcm2835_spi_transfer_one_irq(struct spi_master *master,
+ {
+ 	struct bcm2835_spi *bs = spi_master_get_devdata(master);
+ 
++	/* update usage statistics */
++	bs->count_transfer_irq++;
++
+ 	/*
+ 	 * Enable HW block, but with interrupts still disabled.
+ 	 * Otherwise the empty TX FIFO would immediately trigger an interrupt.
+@@ -564,6 +624,9 @@ static int bcm2835_spi_transfer_one_dma(struct spi_master *master,
+ 	struct bcm2835_spi *bs = spi_master_get_devdata(master);
+ 	int ret;
+ 
++	/* update usage statistics */
++	bs->count_transfer_dma++;
++
+ 	/*
+ 	 * Transfer first few bytes without DMA if length of first TX or RX
+ 	 * sglist entry is not a multiple of 4 bytes (hardware limitation).
+@@ -706,6 +769,9 @@ static int bcm2835_spi_transfer_one_poll(struct spi_master *master,
+ 	struct bcm2835_spi *bs = spi_master_get_devdata(master);
+ 	unsigned long timeout;
+ 
++	/* update usage statistics */
++	bs->count_transfer_polling++;
++
+ 	/* enable HW block without interrupts */
+ 	bcm2835_wr(bs, BCM2835_SPI_CS, cs | BCM2835_SPI_CS_TA);
+ 
+@@ -735,6 +801,10 @@ static int bcm2835_spi_transfer_one_poll(struct spi_master *master,
+ 					    jiffies - timeout,
+ 					    bs->tx_len, bs->rx_len);
+ 			/* fall back to interrupt mode */
++
++			/* update usage statistics */
++			bs->count_transfer_irq_after_polling++;
++
+ 			return bcm2835_spi_transfer_one_irq(master, spi,
+ 							    tfr, cs, false);
+ 		}
+@@ -982,6 +1052,8 @@ static int bcm2835_spi_probe(struct platform_device *pdev)
+ 		goto out_clk_disable;
+ 	}
+ 
++	bcm2835_debugfs_create(bs, dev_name(&pdev->dev));
++
+ 	return 0;
+ 
+ out_clk_disable:
+@@ -996,6 +1068,8 @@ static int bcm2835_spi_remove(struct platform_device *pdev)
+ 	struct spi_master *master = platform_get_drvdata(pdev);
+ 	struct bcm2835_spi *bs = spi_master_get_devdata(master);
+ 
++	bcm2835_debugfs_remove(bs);
++
+ 	/* Clear FIFOs, and disable the HW block */
+ 	bcm2835_wr(bs, BCM2835_SPI_CS,
+ 		   BCM2835_SPI_CS_CLEAR_RX | BCM2835_SPI_CS_CLEAR_TX);
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
