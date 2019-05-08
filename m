@@ -2,90 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2136D17CED
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 17:15:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 014D517D91
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 17:54:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FKmPFrBrHfVyitEFn4ygOMkZ5nxclRUN12olY3vGdPM=; b=kakm/yxcESlgHJ
-	UCqy0TVQGU91dv6webHzh0cpHgiqHmkQI9CkAZKv3uLM6GxAu+3v0gq5/za24SQu2TWSjA3rrHKve
-	W0qTeR1thh+tV4+dxRy+PUzmTf3f3SlExBXIVu0GZP6fpgLnhIzIK1bL+v0v+sV7xBIzwkczEOpGh
-	fwu+2GD22PcQaqJVH1C6us/rSiFHLFrbqpLgelx0fYY9oLqT0puZl5Bh9Cq/IicYT/mZjxZE42I6f
-	08+OvJZKTPQALgAazKcW/yJ6I/3fwTg6eSHT+ef526GzkfYOo95Nk1oFkgrl6HBIatUbm8VI3XblW
-	6dMnonW9p3uFfEMdao5w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=n954OxJqsSUOz9OxW/404i/3womJaHAz50Lxwj3oIF8=; b=DBV7xcUAUSOILS
+	G0PuvT/bC1qxHTQKmLVBJVA2CtMJwcz3z08anBu7Nd5nPsudjliDgJd+PBX4TVXIMf2VIDXniWdXd
+	i4yQgVu7wLK05Zxw1h/W0lJ0DI/q760SHW+iRYaqu9ka8gT5RXvbWOW/sYokIkLQW5OK818mg5K0I
+	oJEyApKtc2eAxmxEos5mEvn0ThaaBs60PLRFto42S5+4cLSVOIeLgjAUD+AvFT/0mTYAXhGGbRbds
+	GRCPBSdUiBlb1BH8qNzuoMUwsVY79epkHg6+brD1slWwD/r6QrHIY65P8jww3mjSUAnvmbu2W8GGh
+	UX/DAxf2fEkSRhPqlc+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOOI8-0000pw-KC; Wed, 08 May 2019 15:15:32 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1hOOtI-0003pq-GY; Wed, 08 May 2019 15:53:56 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOOI0-0000nk-9E
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 15:15:25 +0000
-Received: by mail-io1-xd43.google.com with SMTP id a17so9241807iot.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 May 2019 08:15:23 -0700 (PDT)
+ id 1hOOtA-0003oV-DW; Wed, 08 May 2019 15:53:50 +0000
+Received: by mail-wr1-x442.google.com with SMTP id o4so27897386wra.3;
+ Wed, 08 May 2019 08:53:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=+JvC1TwFB/yeFp3szSBzEe5PaSFdNgPtLmVR0CVhzV0=;
- b=P520ai87ain/12F06dWOpKLegIs9pHmj77TJiLVqWBksGuwmnPQ9oHIcIZkCTzgAYb
- yNm1ZULEFwZbwyb2HZJily30k7XvqR6MFsA+kxux4sros9GHsvowioklLxW7axy7P7dq
- pJZp8Utphzr3M/MpDWIWA4FrqVjB54/fOd0UzqEP60pU3PtVXv0fLongNxylqw7T6Eok
- TBVSz10u6hfEKibtFv/WqbWC29L3TFuznnev4IKeKgkRD1X/O9lvn6cFdBy7Y0CEuMHX
- 3pTjaPeJ4fv5KxL5fQujz3kBfpZkT300C/OAe1s3XdFNxn/EbkdKkw3xpU6IbdYVf9dG
- iEfg==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=/INLHFLoO3fwx8sE75gtH7ePrD+/xqNv4SqcqLzKke8=;
+ b=GQmxEZhssi+c6wCO0ryHOulQS9xtfLbea9bWWK3dnWvZa1Mr2LayNbiBL//0MiXoGR
+ QvkuGYnR5H06nWZPMiGl/Er6W0EVzKZWGW8lURQRfQUfixDOOy7loSZ5fP1FnPlFzprJ
+ 8Wsr4/99zcCql7GKJRwPZmXvvVA0MUCG9PBEppYJqoBq5l6O3RX9VJU6XjYTEBC2c4Ul
+ 771AipqXZZ01pvfx3O8ZdqY0wze0k31qsdzDy6tcHFTSle4CjV4u2fUAavAudvmi6ngA
+ WcIgemZm1zxjwXmhB+7e3WNbtaPpcKwa4Obmeo8+5DtqmFg2KstIrkkKiHyB8M1CSrDo
+ GQHA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=+JvC1TwFB/yeFp3szSBzEe5PaSFdNgPtLmVR0CVhzV0=;
- b=ePmhbJg/2eavXDTZS+QmXkRIudRm/azwRJ/EIpa3wBpm3am8S5AN/NjGRFx8rQWAx7
- LuYdEfrZAdbZohVltaRfLUoFcO9u8G/A/Zx8qaEoF0X+e+go6wigxeryZYWWRiGNB9Xd
- dYRpLOQU44IGXMUKs8BTTDkqKiOSxtv97nySgGHMI9a9IVj12nPRb/waox9t5ZiRYkbo
- iOsM5m6B5oC43vwkCwi9UMHDCQi6gqt98SWLmi1Px4tKiTd5zjV1GZmSypcNk+4U8/0d
- M+H0aYyCgK/RWXK6WXhzE+EIlVDnBMWUiK+ODruZUDGathazh7aJncoTKf7+qXgyCs0O
- dvPg==
-X-Gm-Message-State: APjAAAXMkFHB8pzR9i7YknSjmv5yKsZG18nIy1c5k+ei+GES9uroFDP2
- QIGoC5u7XfEc596GYIrTYOaRjBBC
-X-Google-Smtp-Source: APXvYqyRBRQRNRoAgWDbktnpSDjj6gYnZ8joNI/amECzhKI8MWPpKHG0KCjghyCQaRwWnHb5TZWcQQ==
-X-Received: by 2002:a05:6602:2247:: with SMTP id
- o7mr665200ioo.156.1557328522424; 
- Wed, 08 May 2019 08:15:22 -0700 (PDT)
-Received: from [192.168.2.145] (ppp94-29-35-107.pppoe.spdop.ru. [94.29.35.107])
- by smtp.googlemail.com with ESMTPSA id 81sm1298939itv.23.2019.05.08.08.15.18
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=/INLHFLoO3fwx8sE75gtH7ePrD+/xqNv4SqcqLzKke8=;
+ b=G5/CN4OPiFwWLGydIcN1rOL5AwYsrSCJ2rM4C1DrEVrFlAdlXXVtXEcAtTlGDcwHEC
+ kF37/1O5ePr5ppgW5GfR58ypc65sUDXVRYjPi7y/eGn7cgEU9iSwJ4dtxHQveDxv0xxk
+ 7FgEatCmsTfAZhNZVjdqZoHRiFdMYObdM3vyP+wJdJsYoSBCQjupLxhnbXUWD2mO8F64
+ culGkxdbbCen6USG19u2MLL5xoTw3MlZpGWs3YRAhfJaJ9umK3whlUXuHEcb1dE0bI98
+ 8kbvkc1h32Q6wQQ46tacwYREVWwm4rLc6QaaiAoX0hKWlERs41pFmNdovH2q+vaca5M8
+ fxPA==
+X-Gm-Message-State: APjAAAUDzyW3U3X5/iun+v7sU4t/0vMz7xC2uaByJNuQhqkkN57/QabB
+ czElfL9/xeAxyfkpw+mZmmI=
+X-Google-Smtp-Source: APXvYqyuKISPo+x4BFl9nEqc/t4WkE6l5uUP6rQxJIgo0rWfg1qBLWT64oRs+vPdbL/TkD99TG/c6w==
+X-Received: by 2002:adf:edc8:: with SMTP id v8mr28669098wro.206.1557330824343; 
+ Wed, 08 May 2019 08:53:44 -0700 (PDT)
+Received: from Red ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
+ by smtp.googlemail.com with ESMTPSA id c10sm36912386wrd.69.2019.05.08.08.53.43
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 08 May 2019 08:15:21 -0700 (PDT)
-Subject: Re: [PATCH 2/8] soc: tegra: fuse: Change to the correct
- __dma_request_channel() prototype
-To: Baolin Wang <baolin.wang@linaro.org>, dan.j.williams@intel.com,
- vkoul@kernel.org
-References: <cover.1557206859.git.baolin.wang@linaro.org>
- <1ddb1abe8722154dd546d265d5c4536480a24a87.1557206859.git.baolin.wang@linaro.org>
-From: Dmitry Osipenko <digetx@gmail.com>
-Message-ID: <8746a913-0014-7036-7fab-4e0dfab04e1b@gmail.com>
-Date: Wed, 8 May 2019 18:15:17 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ Wed, 08 May 2019 08:53:43 -0700 (PDT)
+Date: Wed, 8 May 2019 17:53:41 +0200
+From: Corentin Labbe <clabbe.montjoie@gmail.com>
+To: Loys Ollivier <lollivier@baylibre.com>
+Subject: Re: [RESEND PATCH] gnss: get serial speed from subdrivers
+Message-ID: <20190508155341.GA1605@Red>
+References: <1557322788-10403-1-git-send-email-lollivier@baylibre.com>
 MIME-Version: 1.0
-In-Reply-To: <1ddb1abe8722154dd546d265d5c4536480a24a87.1557206859.git.baolin.wang@linaro.org>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <1557322788-10403-1-git-send-email-lollivier@baylibre.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_081524_351300_4439B36C 
-X-CRM114-Status: GOOD (  16.61  )
+X-CRM114-CacheID: sfid-20190508_085348_670260_FB96D3D2 
+X-CRM114-Status: GOOD (  19.87  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (digetx[at]gmail.com)
+ provider (clabbe.montjoie[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -104,38 +96,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jroedel@suse.de, vincent.guittot@linaro.org, Zubair.Kakakhel@imgtec.com,
- dmaengine@vger.kernel.org, festevam@gmail.com, s.hauer@pengutronix.de,
- linux-kernel@vger.kernel.org, jonathanh@nvidia.com,
- wsa+renesas@sang-engineering.com, thierry.reding@gmail.com, linux-imx@nxp.com,
- kernel@pengutronix.de, linux-tegra@vger.kernel.org, shawnguo@kernel.org,
+Cc: Johan Hovold <johan@kernel.org>, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Colin Ian King <colin.king@canonical.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MDcuMDUuMjAxOSA5OjA5LCBCYW9saW4gV2FuZyDQv9C40YjQtdGCOgo+IFNpbmNlIHdlJ3ZlIGlu
-dHJvZHVjZWQgb25lIGRldmljZSBub2RlIHBhcmFtZXRlciBmb3IgX19kbWFfcmVxdWVzdF9jaGFu
-bmVsKCksCj4gdGh1cyBjaGFuZ2UgdG8gdGhlIGNvcnJlY3QgZnVuY3Rpb24gcHJvdG90eXBlLgo+
-IAo+IFNpZ25lZC1vZmYtYnk6IEJhb2xpbiBXYW5nIDxiYW9saW4ud2FuZ0BsaW5hcm8ub3JnPgo+
-IC0tLQo+ICBkcml2ZXJzL3NvYy90ZWdyYS9mdXNlL2Z1c2UtdGVncmEyMC5jIHwgICAgMiArLQo+
-ICAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKyksIDEgZGVsZXRpb24oLSkKPiAKPiBkaWZm
-IC0tZ2l0IGEvZHJpdmVycy9zb2MvdGVncmEvZnVzZS9mdXNlLXRlZ3JhMjAuYyBiL2RyaXZlcnMv
-c29jL3RlZ3JhL2Z1c2UvZnVzZS10ZWdyYTIwLmMKPiBpbmRleCA0OWZmMDE3Li5lMjU3MWI2IDEw
-MDY0NAo+IC0tLSBhL2RyaXZlcnMvc29jL3RlZ3JhL2Z1c2UvZnVzZS10ZWdyYTIwLmMKPiArKysg
-Yi9kcml2ZXJzL3NvYy90ZWdyYS9mdXNlL2Z1c2UtdGVncmEyMC5jCj4gQEAgLTExMCw3ICsxMTAs
-NyBAQCBzdGF0aWMgaW50IHRlZ3JhMjBfZnVzZV9wcm9iZShzdHJ1Y3QgdGVncmFfZnVzZSAqZnVz
-ZSkKPiAgCWRtYV9jYXBfemVybyhtYXNrKTsKPiAgCWRtYV9jYXBfc2V0KERNQV9TTEFWRSwgbWFz
-ayk7Cj4gIAo+IC0JZnVzZS0+YXBiZG1hLmNoYW4gPSBfX2RtYV9yZXF1ZXN0X2NoYW5uZWwoJm1h
-c2ssIGRtYV9maWx0ZXIsIE5VTEwpOwo+ICsJZnVzZS0+YXBiZG1hLmNoYW4gPSBfX2RtYV9yZXF1
-ZXN0X2NoYW5uZWwoJm1hc2ssIGRtYV9maWx0ZXIsIE5VTEwsIE5VTEwpOwo+ICAJaWYgKCFmdXNl
-LT5hcGJkbWEuY2hhbikKPiAgCQlyZXR1cm4gLUVQUk9CRV9ERUZFUjsKPiAgCj4gCgoxKSBLZXJu
-ZWwgc2hvdWxkIGJlIGtlcHQgYmlzZWN0J2FibGUgYnkgbm90IGhhdmluZyBpbnRlcm1lZGlhdGUg
-cGF0Y2hlcwp0aGF0IGJyZWFrIGNvbXBpbGF0aW9uLiBIZW5jZSB5b3Ugc2hvdWxkIHNxdWFzaCB0
-aGUgY2hhbmdlcyBpbnRvIGEKc2luZ2xlIHBhdGNoLgoKMikgQmV0dGVyIHRvIHJlcGxhY2UgX19k
-bWFfcmVxdWVzdF9jaGFubmVsKCkgd2l0aCBkbWFfcmVxdWVzdF9jaGFubmVsKCkKc2luY2UgdGhl
-eSBhcmUgZXF1YWwuCgotLSAKRG1pdHJ5CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0t
-a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Wed, May 08, 2019 at 03:39:48PM +0200, Loys Ollivier wrote:
+> The default serial speed was hardcoded in the code.
+> Rename current-speed to default-speed.
+> Add a function parameter that lets the subdrivers specify their
+> default speed.
+> If not specified fallback to the device-tree default-speed.
+> 
+> Signed-off-by: Loys Ollivier <lollivier@baylibre.com>
+> ---
+> Hello,
+> 
+> This patch moves the currently hardcoded, default serial speed
+> to the subdrivers.
+> If the default speed is not specified by the subdriver then it is read
+> from the device tree.
+> 
+> Cheers,
+> Loys
+> 
+>  drivers/gnss/mtk.c    |  6 +++++-
+>  drivers/gnss/serial.c | 21 +++++++++++++--------
+>  drivers/gnss/serial.h |  3 ++-
+>  drivers/gnss/ubx.c    |  3 ++-
+>  4 files changed, 22 insertions(+), 11 deletions(-)
+> 
+> diff --git a/drivers/gnss/mtk.c b/drivers/gnss/mtk.c
+> index d1fc55560daf..a1a89f0cc75c 100644
+> --- a/drivers/gnss/mtk.c
+> +++ b/drivers/gnss/mtk.c
+> @@ -16,6 +16,10 @@
+>  
+>  #include "serial.h"
+>  
+> +static uint serial_speed = 9600; /* Serial speed (baud rate) */
+> +module_param(serial_speed, uint, 0644);
+> +MODULE_PARM_DESC(serial_speed, "Serial baud rate (bit/s), (default = 9600)");
+> +
+>  struct mtk_data {
+>  	struct regulator *vbackup;
+>  	struct regulator *vcc;
+> @@ -69,7 +73,7 @@ static int mtk_probe(struct serdev_device *serdev)
+>  	struct mtk_data *data;
+>  	int ret;
+>  
+> -	gserial = gnss_serial_allocate(serdev, sizeof(*data));
+> +	gserial = gnss_serial_allocate(serdev, sizeof(*data), serial_speed);
+>  	if (IS_ERR(gserial)) {
+>  		ret = PTR_ERR(gserial);
+>  		return ret;
+> diff --git a/drivers/gnss/serial.c b/drivers/gnss/serial.c
+> index def64b36d994..706fc5b46811 100644
+> --- a/drivers/gnss/serial.c
+> +++ b/drivers/gnss/serial.c
+> @@ -103,17 +103,13 @@ static int gnss_serial_set_power(struct gnss_serial *gserial,
+>  	return gserial->ops->set_power(gserial, state);
+>  }
+>  
+> -/*
+> - * FIXME: need to provide subdriver defaults or separate dt parsing from
+> - * allocation.
+> - */
+>  static int gnss_serial_parse_dt(struct serdev_device *serdev)
+>  {
+>  	struct gnss_serial *gserial = serdev_device_get_drvdata(serdev);
+>  	struct device_node *node = serdev->dev.of_node;
+> -	u32 speed = 4800;
+> +	uint speed;
+>  
+> -	of_property_read_u32(node, "current-speed", &speed);
+> +	of_property_read_u32(node, "default-speed", &speed);
+
+Hello
+
+of_property_read_u32 use u32, so no reason to use uint instead.
+
+Regards
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
