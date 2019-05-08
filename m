@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 115151761B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 12:36:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 069DB1761F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 12:36:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I8HCKAvz+1jHdz/C8nhRAfMtRsKlrbzMr+2iKo2v2So=; b=JGIhrv7c98BQft
-	olb+qk8C6K1PukqZ8rQKF1FS+2w6OZPKGDUuq5dq7G7FqBR1RECbWnhG4OHD118uw5V7jVFHdTzzo
-	cAfRxK1nYyF5jp8efBkxlHOl86SHTrcI4EMM6fQQ9mnro3CccEi3sFk0V5Kzup1i1bgviqg3PnmNd
-	P3Od8ObFu0WAZ33+T5gU4Etx7ETubjCwerzyfb/YtO2l5A3YzL38CQ/dVekO3nAkwUlSeh8ClqEdh
-	cUZ/C9ufmgFwjsVS0HK8+YYyao/PWQXHEStCD5H0RwXhONPCQuqQGo9wlZdV9+FHuB25BHJ3trORO
-	v5HJCzLyOjyPGzjvcRcw==;
+	List-Owner; bh=jxkwUe/dIWrA8/qKks3wnbUmqU5i/PHN6r3tvyJ6kfY=; b=STrMw5UTuJ4XA+
+	W1zZoFQlVcO1INdc7yqr16l6zxyAzrqW0Yt4A1190CL04baAN3bxU3n8mAYcvxn30sazi1wcJXBdq
+	LR6fSlvgyakhYFYjYWMuCFX/XovEg2yQ2dUaR1bVuwBLgHh49gLoCQSRxavN7p99GVE7F4bmvZIlq
+	u/RFF1GFuPlEpsJyz3qvsefeIxbYJHZ0ScAcfqIHx8tBSvcUV6XKwJCx8IS7UXMc3dxgF6v97eN9R
+	Gy7jaqOz4UkzMBHCSr2/i/vqOeD22KcshtnDqoRvt7ByY1ILhVsozbmjoFOC1mCSW3oJfIX0/gb7N
+	A2XytYdUwmK2uob1KQ3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOJva-0001Nt-A3; Wed, 08 May 2019 10:35:58 +0000
+	id 1hOJvj-0001Z4-B4; Wed, 08 May 2019 10:36:07 +0000
 Received: from mail-eopbgr130059.outbound.protection.outlook.com
  ([40.107.13.59] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOJvB-0000yC-OX
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 10:35:37 +0000
+ id 1hOJvG-0000yC-4i
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 10:35:43 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=4JDZ1ndfxZ/LGMLKjgHn4vd5N+Bi7zALvX8htPO3b/k=;
- b=CEqzag+G05m6MBVR59LmeC/N+X/6AoS4WJitk8nwCykn2CUVMKWJ/H21+7fYOODkU3V9oLdJkMCkehEKKXyFNRBTSFUNVxkpk44JwNmIfE+aOGVCoPSEi9EzJ95m3lJUVFrRgccRHSJGxrjRDkqIsW4wKG7xr4OPfMs23ZOFqAI=
+ bh=4B9htAaDGUQ7lU1VuL1ilAsP5SxQSsXz3AVv8b1ZTvw=;
+ b=atvd/wF8BZfy9GkuuD8zSUalEbDl91t8S1KoLWUWT16UHKsZr8RV+M18g2/UrWksELaXbhYiVErTtYqtsu3KCFdsN6ufZk73SWa2dUQPU4hFwIdc9gLRvVG+oXNFGB9J3hcsykMxDQxi7cuqY6LX1O3pw3H0746N6SPmsoRyIC8=
 Received: from AM0PR04MB4865.eurprd04.prod.outlook.com (20.176.215.158) by
  AM0PR04MB4962.eurprd04.prod.outlook.com (20.177.41.148) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1856.12; Wed, 8 May 2019 10:35:31 +0000
+ 15.20.1856.12; Wed, 8 May 2019 10:35:34 +0000
 Received: from AM0PR04MB4865.eurprd04.prod.outlook.com
  ([fe80::f496:84c1:30b5:43be]) by AM0PR04MB4865.eurprd04.prod.outlook.com
  ([fe80::f496:84c1:30b5:43be%7]) with mapi id 15.20.1856.012; Wed, 8 May 2019
- 10:35:31 +0000
+ 10:35:33 +0000
 From: Wen He <wen.he_1@nxp.com>
 To: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  "linux-arm-kernel@lists.infradead.org"
  <linux-arm-kernel@lists.infradead.org>, "devicetree@vger.kernel.org"
  <devicetree@vger.kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
  "robh+dt@kernel.org" <robh+dt@kernel.org>
-Subject: [v1 3/4] arm64: ls1028aqds: Add support DP nodes for LS1028AQDS
-Thread-Topic: [v1 3/4] arm64: ls1028aqds: Add support DP nodes for LS1028AQDS
-Thread-Index: AQHVBYnCrlf8Tn/pH0e2gIr+L++74A==
-Date: Wed, 8 May 2019 10:35:30 +0000
-Message-ID: <20190508103703.40885-3-wen.he_1@nxp.com>
+Subject: [v1 4/4] arm64: ls1028ardb: Add support DP nodes for LS1028ARDB
+Thread-Topic: [v1 4/4] arm64: ls1028ardb: Add support DP nodes for LS1028ARDB
+Thread-Index: AQHVBYnEtul/Ag/Mmk2CN4LHECJtLQ==
+Date: Wed, 8 May 2019 10:35:33 +0000
+Message-ID: <20190508103703.40885-4-wen.he_1@nxp.com>
 References: <20190508103703.40885-1-wen.he_1@nxp.com>
 In-Reply-To: <20190508103703.40885-1-wen.he_1@nxp.com>
 Accept-Language: en-US, zh-CN
@@ -62,13 +62,13 @@ x-ms-exchange-messagesentrepresentingtype: 1
 x-mailer: git-send-email 2.17.1
 x-originating-ip: [119.31.174.73]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 27612a90-6f86-4705-5f04-08d6d3a0e4bc
+x-ms-office365-filtering-correlation-id: 6e47d627-4b23-45d5-13bf-08d6d3a0e680
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
  SRVR:AM0PR04MB4962; 
 x-ms-traffictypediagnostic: AM0PR04MB4962:
-x-microsoft-antispam-prvs: <AM0PR04MB4962889C9B661D9B7F5F8FF4E2320@AM0PR04MB4962.eurprd04.prod.outlook.com>
+x-microsoft-antispam-prvs: <AM0PR04MB4962EA01F6D71F865C2CE7E1E2320@AM0PR04MB4962.eurprd04.prod.outlook.com>
 x-ms-oob-tlc-oobclassifiers: OLM:4941;
 x-forefront-prvs: 0031A0FFAF
 x-forefront-antispam-report: SFV:NSPM;
@@ -79,18 +79,18 @@ x-forefront-antispam-report: SFV:NSPM;
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: TwWt+Wvx9k8J70dnqBjNTk0Zq4f6cwtdHHQhRiGoqB6Ka/ziwNuVTjcnOnq5qn74FVX2A/KoUoYDS6vPH3n/U5Rw2oLH6Guuu1S75BIhKYkzzJtkCynQDynj8Vhn7dSTkYo+g9tri0/53Cmdy97toPs98rHc3evBH7r0u5ed4/gm+y7cskR2F+fc6ETJB6B0R4UGaEpvXPOUzsvVoAvOQN3mGGXp6Lnl6nBT7juf37ArN2KK8vHGR8jQZhNKFDVSap7zN6LuYLGo4ijhTBkkg4YCOHoPrqGbnFRSyxKaBNP4tWES9pkvzdx9Ou4d5nUI4FNBrT0OP19dSsZsEhIhhYNcci6yWF3HquX99S1Rn37s/pVeGHPOjhSR6Vj2yiuY916jjBAvf1V7GB3Vl9vaWq4kUSvzjy5oh3i8obQmGF8=
+x-microsoft-antispam-message-info: Rgo+CEcM4ufHO3Ad3LbY/hvOXc8cwrm2obxHhbiR4Cdff3/w6btTPTGEoVTIqM16SXvmbJ6uuSXagRfvwEpt+FPBZUFbN+yh2a2F3fwTLRGFvryC6H4nS6gM/862G2d/mUzOUJH+78YxppISOoWWXk28IuYdYoF4qYHcadjlO06kqUO97b446eklerEX0QD9KQwkbYQMWtGhtlWEYhHdSDnMVY6ng40el23SvpC/mS+Iswm05KpvYDEAZzh4JVrAycysCHZwhlse70LcxPP/Fdc2I+TIbFmtxnv6+JmstZQ24vvwn3M3j+UFtaafqDdzUcHecn2Yz0BNAMbOJrPB8ApChWay65ADAYiby9r6fBm7jZSQk4fAR/krQsehyNOB8Iyobiqc+BSJMfOgnBj4D0tD6X+UGLiH5jrNjs6RSs8=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 27612a90-6f86-4705-5f04-08d6d3a0e4bc
-X-MS-Exchange-CrossTenant-originalarrivaltime: 08 May 2019 10:35:30.9409 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6e47d627-4b23-45d5-13bf-08d6d3a0e680
+X-MS-Exchange-CrossTenant-originalarrivaltime: 08 May 2019 10:35:33.9182 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4962
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_033534_324532_B6EDCB1E 
-X-CRM114-Status: GOOD (  11.16  )
+X-CRM114-CacheID: sfid-20190508_033538_676346_EC93BD04 
+X-CRM114-Status: GOOD (  11.06  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -124,8 +124,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch add HDP PHY Controller related nodes on the LS1028AQDS.
-Now LS1028AQDS on DP has following features:
+This patch add HDP PHY Controller related nodes on the LS1028ARDB.
+Now LS1028ARDB on DP has following features:
 - Supports 4 dp lane channel and lane mapping is 1-0-3-2.
 - By default, the pixel link rate value's 27Mhz.
 - By default, support the resoluions are 4k@60,1080p@60,720p@60,
@@ -136,15 +136,15 @@ resoluions by written in the node 'resoluion'.
 Signed-off-by: Alison Wang <alison.wang@nxp.com>
 Signed-off-by: Wen He <wen.he_1@nxp.com>
 ---
- arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts | 12 ++++++++++++
+ arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts | 12 ++++++++++++
  1 file changed, 12 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
-index b359068d9605..c8a92d4c4964 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
-@@ -153,3 +153,15 @@
- &sai1 {
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
+index f9c272fb0738..513b0e37ea13 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
+@@ -151,3 +151,15 @@
+ &sai4 {
  	status = "okay";
  };
 +
