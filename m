@@ -2,98 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D5FE31756C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 11:47:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E0BE1758C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 12:00:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kanPwX/KhV3wyoKMY9ZIT8ORbZcJoqvZdrcTh+ULK+c=; b=PXr/aandNf32sJ
-	5opfZuZ1ejruNblEFP6eDoE/krVrFDLcFCGFINhi+0D+asXdX/qkTWkDf5EF8veCS4vIa23oBZK3K
-	/YZL6uPgo+5vZncV30IHITQ1DZ0XAxgFTSNZT1MJr4JtzoxFvggGgdnoAittasxmZg77cHVaj4Dpx
-	06Ud2MHWFdDQUStfYRDzoBLYfnHVPv0U+aPnQaVj+/+l8GnYV/KlKadvfXh6xw6kpjXMU5jwFdb/d
-	UnEorSeRuaBKLxUXdBD+TEuPOWVX6n2GkALoqjde0fRfjuI4GU+erE/0o8MGSUeygSPC02l7vMnZQ
-	1hTRC0+vjC574F1M7YQw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=06uwmRikRZEkL4jhy4RLQ8DHKVdfi+NZLlRFPAmYuv4=; b=gL/K/C7DMzK7z5
+	Ee6tSQxTv4kadgQoqKVkIUQWg6lIm6CQE6RxpuCiGQeSBfx027I/KeIp3/iMGj+4StVbgZZpaeR2l
+	MQG5Vjd8SGFjMgUQMaMPurK5Fa7xEoaQxXsuYdeu+bkaIRyjF/Kvc/pL7m0Qv0cAEgSFSE7fXfO2A
+	HUqZLOC5LHbO2nrQi8KI3bad5+qDKPcHBfVyiI8rsFi8guXT8DwulKIVeO+XI+tPjSjpfFMluK+xD
+	RBSWL4PmiKIufp/bU8alMlSWdu2leWJMIuwvWGpNSCI8W1F/HJDxNNuUUkRb/MD3nb99ETWIsUCPn
+	OvhrNUxN4iO2lfEBiCLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOJB1-0007a8-RC; Wed, 08 May 2019 09:47:51 +0000
-Received: from mail-eopbgr150043.outbound.protection.outlook.com
- ([40.107.15.43] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+	id 1hOJNG-00048Q-G8; Wed, 08 May 2019 10:00:30 +0000
+Received: from mail-ve1eur03on0609.outbound.protection.outlook.com
+ ([2a01:111:f400:fe09::609]
+ helo=EUR03-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOJAv-0007ZF-1z
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 09:47:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
+ id 1hOJN9-0003vl-21
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 10:00:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=MYKSw8E3S3YAcBWxSFu4j7WStB3i2e/0mj4lpwSvJ58=;
- b=RDKS6WCpPv13kq+kVmnYdXH3VrZ5+IQMYhXC2A59w5WrA5dzlXMTOa0rI1DouXMNz3zwxpTGjTUijLRTMgDk20hN/TYSb8lbuAZS2viyxsUzXspKd+HRtzCfzjXU9FjmR7CY/LKORWtkZRaa/fq1cawVbaKYr/AsQav0sQtV5Iw=
-Received: from VI1PR04MB4543.eurprd04.prod.outlook.com (20.177.55.90) by
- VI1PR04MB4462.eurprd04.prod.outlook.com (20.177.53.94) with Microsoft SMTP
+ bh=zuyGBdsvb1ZSS+ut8oGSo82qb7LY29W3sX+054MBzfY=;
+ b=kDsPDxEfQwnS8mRzufWBPldwgaHOWafZYgzRxoGk6QLxilVT02C0sxH4xT/tUDVFwugGnNth3Ca6K/t98m2o9r1ViEinXXr47vGv6Y1i/3J6f5Nn10g3SjyEMs9nUiK/runqUbEqdddTHovLiy8C9/zBmqh3Pki7sSxGPd4Sd/I=
+Received: from AM0PR04MB4865.eurprd04.prod.outlook.com (20.176.215.158) by
+ AM0PR04MB6083.eurprd04.prod.outlook.com (20.179.34.143) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1856.11; Wed, 8 May 2019 09:47:38 +0000
-Received: from VI1PR04MB4543.eurprd04.prod.outlook.com
- ([fe80::5d07:911b:18e1:1525]) by VI1PR04MB4543.eurprd04.prod.outlook.com
- ([fe80::5d07:911b:18e1:1525%4]) with mapi id 15.20.1856.012; Wed, 8 May 2019
- 09:47:38 +0000
-From: Robin Gong <yibin.gong@nxp.com>
-To: Rob Herring <robh@kernel.org>
-Subject: RE: [EXT] Re: [PATCH v3 10/14] dt-bindings: dma: imx-sdma: add
- i.mx6ul/6sx  compatible name
-Thread-Topic: [EXT] Re: [PATCH v3 10/14] dt-bindings: dma: imx-sdma: add
- i.mx6ul/6sx  compatible name
-Thread-Index: AQHVBPXDrkhn+7eeekK+EpnqoHxjf6Zg+QNg
-Date: Wed, 8 May 2019 09:47:38 +0000
-Message-ID: <VI1PR04MB45434F10FA0AC88AFE2DB09489320@VI1PR04MB4543.eurprd04.prod.outlook.com>
-References: <1557249513-4903-1-git-send-email-yibin.gong@nxp.com>
- <1557249513-4903-11-git-send-email-yibin.gong@nxp.com>
- <20190507165601.GA17194@bogus>
-In-Reply-To: <20190507165601.GA17194@bogus>
-Accept-Language: en-US
+ 15.20.1856.11; Wed, 8 May 2019 10:00:11 +0000
+Received: from AM0PR04MB4865.eurprd04.prod.outlook.com
+ ([fe80::f496:84c1:30b5:43be]) by AM0PR04MB4865.eurprd04.prod.outlook.com
+ ([fe80::f496:84c1:30b5:43be%7]) with mapi id 15.20.1856.012; Wed, 8 May 2019
+ 10:00:11 +0000
+From: Wen He <wen.he_1@nxp.com>
+To: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>
+Subject: [v1 1/4] dt-bindings: display: Add DT bindings for LS1028A HDP-TX PHY.
+Thread-Topic: [v1 1/4] dt-bindings: display: Add DT bindings for LS1028A
+ HDP-TX PHY.
+Thread-Index: AQHVBYTTSfT/ttgrPkqRu69OGY9k8w==
+Date: Wed, 8 May 2019 10:00:11 +0000
+Message-ID: <20190508100136.7009-1-wen.he_1@nxp.com>
+Accept-Language: en-US, zh-CN
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
+x-clientproxiedby: HK0P153CA0043.APCP153.PROD.OUTLOOK.COM
+ (2603:1096:203:17::31) To AM0PR04MB4865.eurprd04.prod.outlook.com
+ (2603:10a6:208:c4::30)
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=yibin.gong@nxp.com; 
-x-originating-ip: [119.31.174.66]
+ smtp.mailfrom=wen.he_1@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-mailer: git-send-email 2.17.1
+x-originating-ip: [119.31.174.73]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: bc0548f4-333e-4519-fe07-08d6d39a34f4
+x-ms-office365-filtering-correlation-id: 92b5c72a-581c-4e5c-eabb-08d6d39bf585
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR04MB4462; 
-x-ms-traffictypediagnostic: VI1PR04MB4462:
-x-microsoft-antispam-prvs: <VI1PR04MB446223DD4B9BE9D881B73A7089320@VI1PR04MB4462.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7691;
+ SRVR:AM0PR04MB6083; 
+x-ms-traffictypediagnostic: AM0PR04MB6083:
+x-microsoft-antispam-prvs: <AM0PR04MB60839490159B6DB4B91717FEE2320@AM0PR04MB6083.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:5236;
 x-forefront-prvs: 0031A0FFAF
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(346002)(39860400002)(396003)(376002)(366004)(189003)(199004)(8676002)(81156014)(81166006)(53936002)(71190400001)(4326008)(76176011)(102836004)(66066001)(8936002)(7696005)(6506007)(5660300002)(446003)(256004)(11346002)(478600001)(476003)(25786009)(6916009)(14454004)(486006)(6116002)(4744005)(3846002)(305945005)(66946007)(73956011)(76116006)(66476007)(7416002)(9686003)(71200400001)(54906003)(68736007)(86362001)(33656002)(2906002)(26005)(186003)(99286004)(229853002)(66556008)(6436002)(52536014)(64756008)(74316002)(66446008)(7736002)(6246003)(316002)(55016002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB4462;
- H:VI1PR04MB4543.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
+ SFS:(10009020)(396003)(346002)(39860400002)(376002)(136003)(366004)(199004)(189003)(476003)(14454004)(316002)(2201001)(256004)(86362001)(14444005)(4326008)(478600001)(305945005)(8936002)(25786009)(102836004)(2906002)(66446008)(66476007)(73956011)(66556008)(64756008)(66946007)(6486002)(71200400001)(81156014)(36756003)(81166006)(66066001)(8676002)(71190400001)(53936002)(6506007)(386003)(5660300002)(54906003)(3846002)(99286004)(6116002)(52116002)(486006)(110136005)(6436002)(2616005)(68736007)(7736002)(2501003)(50226002)(1076003)(186003)(26005)(6512007);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6083;
+ H:AM0PR04MB4865.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: +Yl8u/xWF8nmY5CuTOD0yrKFVHCLe7vxfUCGAyUOGsf7dq9JERyXEW3j1sNgFd47DfPRADxiG3i+vCaha6weSAI+wsXp4Ok4XNR/WjZlrPUj87wQr3s8sH+0xLg6nRENpb2bCh0SwVo6DXImMpIMYJHYjXAkpgGHOEKUnv1lc5caD1vhNGnol3GzQteqbxv48IfgxzjBebinFO8De5yrcsgFp58KzAW2vLdBCuQwA1CgGgY06zJrEXw//E94ZcL17iyxfK2MlaQbFQZYbj1y0K+m6frfZ3fk1u7FUXiYxpfwz85C9BYj8oRn3NlLRxVVqS6Bb7lWiFJAVqmqzIKFg/vjJu/3OoiiN5HE7gYPzBE5MqPHn+tVA+E2Mq32ZAHHxOQ1LR9hKPI5cCJqqHfh9vqYD9Fy17XDrOPPWLSuZ3M=
+x-microsoft-antispam-message-info: cVyPtA4MdK222TgXRGlD6wa4U/akQ/4EFhDxVZ6BBEMH+8XuH591YPLyhsLoFAmxxhGLRiQjZHqBBH6Bc4UAimSyGnjBrC3/xTheqg4Xg28M1ZJ4nBhsyx1X+CG2Hv4URKP+5aODZOG5bxaCwnSRSUojtmI5Dz205xDz9eVAXZuyx+0YEixSGraZEjsOPWogUVf+Pu7zou+D0VW6w1tiNMzVCMXseYZxLSNPnzsHliOJ5+ZWG7zcXHEJ4eRFW/W/sDaZDqDRtgQzVDKqGUJQVswNLZBVHn/3F43bT52ocxQadAJi9zkWolsvfU4fGIPV+CerVbUS8dvrjtVtSBBObfQ3BS0Ffjh4UnoshVmQ/MlaXDScYUwideRviR+x8VG/1NSiBY0B5WA71uJ2nXk7iiBtdCEn6Msz/eBlM3G5p4Y=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: bc0548f4-333e-4519-fe07-08d6d39a34f4
-X-MS-Exchange-CrossTenant-originalarrivaltime: 08 May 2019 09:47:38.5528 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 92b5c72a-581c-4e5c-eabb-08d6d39bf585
+X-MS-Exchange-CrossTenant-originalarrivaltime: 08 May 2019 10:00:11.4848 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB4462
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6083
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_024745_095558_140AD51A 
-X-CRM114-Status: GOOD (  13.62  )
+X-CRM114-CacheID: sfid-20190508_030023_176922_839F3BCB 
+X-CRM114-Status: GOOD (  12.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.15.43 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [2a01:111:f400:fe09:0:0:0:609 listed in]
+ [list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -113,46 +118,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "plyatov@gmail.com" <plyatov@gmail.com>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
- "vkoul@kernel.org" <vkoul@kernel.org>,
- "broonie@kernel.org" <broonie@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
- "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
- "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
+Cc: Wen He <wen.he_1@nxp.com>, Leo Li <leoyang.li@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> On Wed, 8 May 2019 09:16:38 +0000, Rob Herring wrote:
-> On Tue, 7 May 2019 09:16:38 +0000, Robin Gong wrote:
-> > Add i.mx6ul and i.mx6sx compatible name.
-> >
-> > Signed-off-by: Robin Gong <yibin.gong@nxp.com>
-> > ---
-> >  Documentation/devicetree/bindings/dma/fsl-imx-sdma.txt | 2 ++
-> >  1 file changed, 2 insertions(+)
-> >
-> 
-> Please add Acked-by/Reviewed-by tags when posting new versions. However,
-> there's no need to repost patches *only* to add the tags. The upstream
-> maintainer will do that for acks received on the version they apply.
-Sorry, no tags and no comments get from V2 for this patch. Just resend the whole
-patch set for v3 since other comments addressed from other patch. 
-> 
-> If a tag was not added on purpose, please state why and what changed.
+Add DT bindings documentmation for the HDP-TX PHY controller. The describes
+which could be found on NXP Layerscape ls1028a platform.
+
+Signed-off-by: Wen He <wen.he_1@nxp.com>
+---
+ .../devicetree/bindings/display/fsl,hdp.txt   | 56 +++++++++++++++++++
+ 1 file changed, 56 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/display/fsl,hdp.txt
+
+diff --git a/Documentation/devicetree/bindings/display/fsl,hdp.txt b/Documentation/devicetree/bindings/display/fsl,hdp.txt
+new file mode 100644
+index 000000000000..36b5687a1261
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/fsl,hdp.txt
+@@ -0,0 +1,56 @@
++NXP Layerscpae ls1028a HDP-TX PHY Controller
++============================================
++
++The following bindings describe the Cadence HDP TX PHY on ls1028a that
++offer multi-protocol support of standars such as eDP and Displayport,
++supports for 25-600MHz pixel clock and up to 4k2k at 60MHz resolution.
++The HDP transmitter is a Cadence HDP TX controller IP with a companion
++PHY IP.
++
++Required properties:
++  - compatible:   Should be "fsl,ls1028a-dp" for ls1028a.
++  - reg:          Physical base address and size of the block of registers used
++  by the processor.
++  - interrupts:   HDP hotplug in/out detect interrupt number
++  - clocks:       A list of phandle + clock-specifier pairs, one for each entry
++  in 'clock-names'
++  - clock-names:  A list of clock names. It should contain:
++      - "clk_ipg": inter-Integrated circuit clock
++      - "clk_core": for the Main Display TX controller clock
++      - "clk_pxl": for the pixel clock feeding the output PLL of the processor
++      - "clk_pxl_mux": for the high PerfPLL bypass clock
++      - "clk_pxl_link": for the link rate pixel clock
++      - "clk_apb": for the APB interface clock
++      - "clk_vif": for the Video pixel clock
++
++Required sub-nodes:
++  - port: The HDP connection to an encoder output port. The connection
++    is modelled using the OF graph bindings specified in
++    Documentation/devicetree/bindings/graph.txt
++
++
++Example:
++
++/ {
++        ...
++
++	hdp: display@f200000 {
++                compatible = "fsl,ls1028a-dp";
++		reg = <0x0 0xf1f0000 0x0 0xffff>,
++		    <0x0 0xf200000 0x0 0xfffff>;
++                interrupts = <0 221 IRQ_TYPE_LEVEL_HIGH>;
++		clocks = <&sysclk>, <&hdpclk>, <&dpclk>,
++                         <&dpclk>, <&dpclk>, <&pclk>, <&dpclk>;
++		clock-names = "clk_ipg", "clk_core", "clk_pxl",
++                              "clk_pxl_mux", "clk_pxl_link", "clk_apb",
++                              "clk_vif";
++
++		port {
++			dp1_output: endpoint {
++				remote-endpoint = <&dp0_input>;
++			};
++		};
++        };
++
++        ...
++};
+-- 
+2.17.1
 
 _______________________________________________
 linux-arm-kernel mailing list
