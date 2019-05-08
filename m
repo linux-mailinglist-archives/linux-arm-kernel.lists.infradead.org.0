@@ -2,109 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 967951729B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 09:31:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 521BD1716C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 08:23:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
-	References:In-Reply-To:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=EmV1fUVjrkx9dGtkb5qf8i1tWgsVc6L0o7ydJGGv/8M=; b=C84m3SQGrq61ani1lxq2blzm4w
-	FU0E53dpayXEHMmzeVXeDSSQsxjEW7vP2ZLPGL3RMNuQPZ7nAw/XM3X+KKVEjbsSZ2eJ7bTNLPdrS
-	sYoY8bSkcLBPhViK/fn8LOHeCXFhekIHIFWhvB4k3AkvbmXECpTQ07/iZrDbbQzfwd4uDbHHx8AME
-	r75O9rdjiRITW1dDfuOmxTwp1ZaM+Lzsjtqb3skt5Hcs9VlYEouVoNPQIB2ATRr4dMKvIan9usub9
-	oro1txDrXFRDmRR8MMjr3KnGOw9c3icNNfyThPolJyyX1dbZISkMJ7xyp9OgNZZbN2DG0ziEhDUSU
-	94QQqFjA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=h/yfdre/SzMM0LTxQb7uWD/gRzCN080r3RYHb3Xmt3E=; b=ntGmybNrvGnrEe
+	3bVJdgZKex/DHMQ0nQZP4AeduoWaaFfR5UcHPRxUFjMU6Flo0XVNg8jwwsdwzhdD/1gRMushfq4hq
+	0UiNT+ttNIIw2z6XFHXS+k9ydK3Id7uPReK9Y+cy7BwoNwHu7xMAxhWXhEnf7Pu3lb5hlv8cMJZNj
+	KfzC89t4Aw95tmAbcJM1BNvDsQFYicXZDrGRzK6euuwzCT3cChm5uT/bx76yx2xKruEAP9xVJZkhD
+	3dIkg5K+fN11OnutOODgm7IRfiYkS+9fRRF8dUAnM0xXKtbBEZnf1onT+nEceP/1H0vz3BvZN7wu8
+	3qycWmxd3OF2ouyxbMmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOH2h-0001BL-Lq; Wed, 08 May 2019 07:31:07 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hOFzR-0004Rx-AN; Wed, 08 May 2019 06:23:41 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOH2b-00019S-Db
- for linux-arm-kernel@bombadil.infradead.org; Wed, 08 May 2019 07:31:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Message-Id:References:In-Reply-To:Date:
- Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=bKEkXuUB0aT6OqT4IPvc1dAm0vfoKxIg4G5OqzwkthI=; b=RPAIkVL8iH3V8TsM8HC+oniux
- +cZzNAesyOHzlhWkpJiIbWx9DhOV5RMqq6U7XL9Q9fUThz1bqAu40+/sAmwVxjmfN29xbHY8l+8xc
- EmYrpxjjPOGM4VOIwVUg1BK7XB6nJVRKwnMTFjb/w4RJiGK1Zfkc08JvZmBEoQbRrvjIITQPSbgMm
- 0V/wt5UadzUN348HYBRG9SrgvZ2LpsagEY1NEtOYvvV/d+EE6DN1/VSYpPvQfxaCRZSqw4pLlv+7a
- S3XC+Vo37nBnqJ73kxw8+ikIAdr3m9OoWFygMKSYm65xHkQQh394pZ/Wgh+Phd3lQxW828Zqy4ijB
- TVj1hmU+w==;
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
- by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOFuL-0002f3-SW
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 06:18:26 +0000
-Received: from pps.filterd (m0098416.ppops.net [127.0.0.1])
- by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x486Gmqa169598
- for <linux-arm-kernel@lists.infradead.org>; Wed, 8 May 2019 02:18:25 -0400
-Received: from e06smtp07.uk.ibm.com (e06smtp07.uk.ibm.com [195.75.94.103])
- by mx0b-001b2d01.pphosted.com with ESMTP id 2sbnyjgq5e-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Wed, 08 May 2019 02:18:24 -0400
-Received: from localhost
- by e06smtp07.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-arm-kernel@lists.infradead.org> from <rppt@linux.ibm.com>;
- Wed, 8 May 2019 07:18:22 +0100
-Received: from b06cxnps4074.portsmouth.uk.ibm.com (9.149.109.196)
- by e06smtp07.uk.ibm.com (192.168.101.137) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Wed, 8 May 2019 07:18:13 +0100
-Received: from d06av21.portsmouth.uk.ibm.com (d06av21.portsmouth.uk.ibm.com
- [9.149.105.232])
- by b06cxnps4074.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x486ICnC48693404
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 8 May 2019 06:18:12 GMT
-Received: from d06av21.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 0FC5252051;
- Wed,  8 May 2019 06:18:12 +0000 (GMT)
-Received: from rapoport-lnx (unknown [9.148.8.112])
- by d06av21.portsmouth.uk.ibm.com (Postfix) with ESMTPS id C2D5252057;
- Wed,  8 May 2019 06:18:08 +0000 (GMT)
-Received: by rapoport-lnx (sSMTP sendmail emulation);
- Wed, 08 May 2019 09:18:08 +0300
-From: Mike Rapoport <rppt@linux.ibm.com>
-To: Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH v2 14/14] unicore32: switch to generic version of pte
- allocation
-Date: Wed,  8 May 2019 09:17:11 +0300
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1557296232-15361-1-git-send-email-rppt@linux.ibm.com>
-References: <1557296232-15361-1-git-send-email-rppt@linux.ibm.com>
-X-TM-AS-GCONF: 00
-x-cbid: 19050806-0028-0000-0000-0000036B6E67
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19050806-0029-0000-0000-0000242AEA29
-Message-Id: <1557296232-15361-15-git-send-email-rppt@linux.ibm.com>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-08_05:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=2 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=746 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1810050000 definitions=main-1905080040
+ id 1hOFzK-0004Re-Aa
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 06:23:35 +0000
+Received: by mail-wr1-x442.google.com with SMTP id c5so293773wrs.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 07 May 2019 23:23:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=ZwBzr8t2c5//Qv+vOM+zb95AmHVIIGSZXeL3Vx6exVA=;
+ b=vrBcJWBcO/7Ca/wCszwmavvuoj/LUQTTspcBW80sF2q5NXECfCj1CYpRR0Ymh86esM
+ wC5aqb6fneiaVB+DVT2+HxGNfDWa3GtkT1kH9mbTPsOL3+lG/aW69GuQ/pTbcH5g4MUh
+ CabAQreSIZguHDS2GWNSs2NwST7dPUFl3eYZiVq5WFVK5lZH8czZyfNtyeMQstVgUxeO
+ KpK6T8VKiwhONHMv++TL35cIY3w/Gi1lbyxywlaxz7DiyTOyHS5ZC26Y9IxP3igvil1k
+ Km0rcqRB7vfy4uuB7sU+5XYskfOilw+t/cgTJF5i25utVk0ZPQJwOfRsdw75mHPF4RSM
+ M+1w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=ZwBzr8t2c5//Qv+vOM+zb95AmHVIIGSZXeL3Vx6exVA=;
+ b=bNtR7RiCafxQFB1q9vB8UpAP+2GWAHRqmlR7d9NgC3JKH9uhXU8SMtbt6bzMWzA87u
+ 4r0jqRL7dzCcwenaj6aeyEov4HTOr9nmsW+zztYFuawOK+Xb41rmuuKAgQnjAktTw2GZ
+ e0AIjr/03DKZTdJRwewKvMEnBYJXk7ZX5pGjFI3Xqq0qQpaoHu+YQdvQceE/0XD/Snnd
+ 4A8RofEImNb6kDX8/9R3sa+UfQnww8/eFIamuFbBeQafh2+HuRr2QN7ARfkIusLVg2tS
+ AHYIIrxNfF9/toeuIEhFK+hOwbzhtA0AfMz/adxq4UBz7tor7yDHLOBajy+HCCPn80DG
+ sYnQ==
+X-Gm-Message-State: APjAAAUsUrRS4jDijI+8JYjzFfpnFl5v5mFIo6bvojX3k4mTPofAIz4h
+ 4C6SmDOfqJpp4U4fyd/h5eDIPg==
+X-Google-Smtp-Source: APXvYqyXAkfBLVqlYoyJPdjpjDrpRcXI6/fi/QgJCYsn/IaX8rp3yx2DcxxSO3Hdqj0BOr9Mlvh+HA==
+X-Received: by 2002:adf:e390:: with SMTP id e16mr2475754wrm.321.1557296611983; 
+ Tue, 07 May 2019 23:23:31 -0700 (PDT)
+Received: from dell ([2.27.167.43])
+ by smtp.gmail.com with ESMTPSA id b10sm1835950wme.25.2019.05.07.23.23.31
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 07 May 2019 23:23:31 -0700 (PDT)
+Date: Wed, 8 May 2019 07:23:28 +0100
+From: Lee Jones <lee.jones@linaro.org>
+To: Claudiu.Beznea@microchip.com
+Subject: Re: [RESEND][PATCH v3 0/6] add LCD support for SAM9X60
+Message-ID: <20190508062328.GD7627@dell>
+References: <1556195748-11106-1-git-send-email-claudiu.beznea@microchip.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1556195748-11106-1-git-send-email-claudiu.beznea@microchip.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_021826_020306_DEC269CF 
-X-CRM114-Status: GOOD (  27.79  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.7 points)
+X-CRM114-CacheID: sfid-20190507_232334_377805_3C7502E7 
+X-CRM114-Status: UNSURE (   9.84  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -116,124 +98,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Michal Hocko <mhocko@suse.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Palmer Dabbelt <palmer@sifive.com>, linux-mips@vger.kernel.org,
- linux-mm@kvack.org, Guo Ren <guoren@kernel.org>, linux-hexagon@vger.kernel.org,
- linux-riscv@lists.infradead.org, linux-arch@vger.kernel.org,
- Michael Ellerman <mpe@ellerman.id.au>, Helge Deller <deller@gmx.de>,
- x86@kernel.org, Russell King <linux@armlinux.org.uk>,
- Matthew Wilcox <willy@infradead.org>, Mike Rapoport <rppt@linux.ibm.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>, Matt Turner <mattst88@gmail.com>,
- Sam Creasey <sammy@sammy.net>, Arnd Bergmann <arnd@arndb.de>,
- Anshuman Khandual <anshuman.khandual@arm.com>, linux-um@lists.infradead.org,
- Richard Weinberger <richard@nod.at>, linux-m68k@lists.linux-m68k.org,
- Greentime Hu <green.hu@gmail.com>, nios2-dev@lists.rocketboards.org,
- Guan Xuetao <gxt@pku.edu.cn>, linux-arm-kernel@lists.infradead.org,
- linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
- Richard Kuo <rkuo@codeaurora.org>, Paul Burton <paul.burton@mips.com>,
- linux-alpha@vger.kernel.org, Ley Foon Tan <lftan@altera.com>,
- linuxppc-dev@lists.ozlabs.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-pwm@vger.kernel.org, alexandre.belloni@bootlin.com,
+ bbrezillon@kernel.org, airlied@linux.ie, dri-devel@lists.freedesktop.org,
+ linux-kernel@vger.kernel.org, Ludovic.Desroches@microchip.com,
+ thierry.reding@gmail.com, daniel@ffwll.ch,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Replace __get_free_page() and alloc_pages() calls with the generic
-__pte_alloc_one_kernel() and __pte_alloc_one().
-
-There is no functional change for the kernel PTE allocation.
-
-The difference for the user PTEs, is that the clear_pte_table() is now
-called after pgtable_page_ctor() and the addition of __GFP_ACCOUNT to the
-GFP flags.
-
-The pte_free() and pte_free_kernel() versions are identical to the generic
-ones and can be simply dropped.
-
-Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
----
- arch/unicore32/include/asm/pgalloc.h | 36 ++++++++----------------------------
- 1 file changed, 8 insertions(+), 28 deletions(-)
-
-diff --git a/arch/unicore32/include/asm/pgalloc.h b/arch/unicore32/include/asm/pgalloc.h
-index 7cceabe..dd09af6 100644
---- a/arch/unicore32/include/asm/pgalloc.h
-+++ b/arch/unicore32/include/asm/pgalloc.h
-@@ -17,6 +17,10 @@
- #include <asm/cacheflush.h>
- #include <asm/tlbflush.h>
- 
-+#define __HAVE_ARCH_PTE_ALLOC_ONE_KERNEL
-+#define __HAVE_ARCH_PTE_ALLOC_ONE
-+#include <asm-generic/pgalloc.h>
-+
- #define check_pgt_cache()		do { } while (0)
- 
- #define _PAGE_USER_TABLE	(PMD_TYPE_TABLE | PMD_PRESENT)
-@@ -28,17 +32,14 @@ extern void free_pgd_slow(struct mm_struct *mm, pgd_t *pgd);
- #define pgd_alloc(mm)			get_pgd_slow(mm)
- #define pgd_free(mm, pgd)		free_pgd_slow(mm, pgd)
- 
--#define PGALLOC_GFP	(GFP_KERNEL | __GFP_ZERO)
--
- /*
-  * Allocate one PTE table.
-  */
- static inline pte_t *
- pte_alloc_one_kernel(struct mm_struct *mm)
- {
--	pte_t *pte;
-+	pte_t *pte = __pte_alloc_one_kernel(mm);
- 
--	pte = (pte_t *)__get_free_page(PGALLOC_GFP);
- 	if (pte)
- 		clean_dcache_area(pte, PTRS_PER_PTE * sizeof(pte_t));
- 
-@@ -50,35 +51,14 @@ pte_alloc_one(struct mm_struct *mm)
- {
- 	struct page *pte;
- 
--	pte = alloc_pages(PGALLOC_GFP, 0);
-+	pte = __pte_alloc_one(mm, GFP_PGTABLE_USER);
- 	if (!pte)
- 		return NULL;
--	if (!PageHighMem(pte)) {
--		void *page = page_address(pte);
--		clean_dcache_area(page, PTRS_PER_PTE * sizeof(pte_t));
--	}
--	if (!pgtable_page_ctor(pte)) {
--		__free_page(pte);
--	}
--
-+	if (!PageHighMem(pte))
-+		clean_pte_table(page_address(pte));
- 	return pte;
- }
- 
--/*
-- * Free one PTE table.
-- */
--static inline void pte_free_kernel(struct mm_struct *mm, pte_t *pte)
--{
--	if (pte)
--		free_page((unsigned long)pte);
--}
--
--static inline void pte_free(struct mm_struct *mm, pgtable_t pte)
--{
--	pgtable_page_dtor(pte);
--	__free_page(pte);
--}
--
- static inline void __pmd_populate(pmd_t *pmdp, unsigned long pmdval)
- {
- 	set_pmd(pmdp, __pmd(pmdval));
--- 
-2.7.4
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+PiAgZHJpdmVycy9ncHUvZHJtL2F0bWVsLWhsY2RjL2F0bWVsX2hsY2RjX2NydGMuYyAgfCAgMTgg
+KystLQo+ICBkcml2ZXJzL2dwdS9kcm0vYXRtZWwtaGxjZGMvYXRtZWxfaGxjZGNfZGMuYyAgICB8
+IDEyMCArKysrKysrKysrKysrKysrKysrKysrKy0KPiAgZHJpdmVycy9ncHUvZHJtL2F0bWVsLWhs
+Y2RjL2F0bWVsX2hsY2RjX2RjLmggICAgfCAgIDIgKwo+ICBkcml2ZXJzL2dwdS9kcm0vYXRtZWwt
+aGxjZGMvYXRtZWxfaGxjZGNfcGxhbmUuYyB8ICAgMiArLQo+ICBkcml2ZXJzL3B3bS9wd20tYXRt
+ZWwtaGxjZGMuYyAgICAgICAgICAgICAgICAgICB8ICAgMSArCj4gIDUgZmlsZXMgY2hhbmdlZCwg
+MTMyIGluc2VydGlvbnMoKyksIDExIGRlbGV0aW9ucygtKQoKTm90IHN1cmUgd2h5IEkgYW0gcmVj
+ZWl2aW5nIHRoaXMgc2V0LgoKQ291bGQgeW91IHBsZWFzZSBkcm9wIG1lIGZyb20gZnV0dXJlIHN1
+Ym1pc3Npb25zLgoKLS0gCkxlZSBKb25lcyBb5p2O55C85pavXQpMaW5hcm8gU2VydmljZXMgVGVj
+aG5pY2FsIExlYWQKTGluYXJvLm9yZyDilIIgT3BlbiBzb3VyY2Ugc29mdHdhcmUgZm9yIEFSTSBT
+b0NzCkZvbGxvdyBMaW5hcm86IEZhY2Vib29rIHwgVHdpdHRlciB8IEJsb2cKCl9fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
+bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
