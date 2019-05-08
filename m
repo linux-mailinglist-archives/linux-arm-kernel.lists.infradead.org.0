@@ -2,63 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B6631746E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 11:02:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E72B1748D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 11:06:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
-	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=JkOBoTWKsktlcMIUkHXQbPgdedeAXMHDo5l644N9G24=; b=C4t
-	achOYLqKtL0tB+DHGPfbTU0yshpHY2NYaLTo0nXxI+AbSV7iMgdaFmGXu0JyiaQMgpTC4/I/EajUq
-	lGsMEmObTxxXpwRSpQtzg2wIB8TNZlJblVVVhLOJvj3+iCmLgKL+asXKdcB0vMG4KnPnfVoMQ6KC7
-	kkDZxOIlJXvri67/URehg9MSXXdfaHtHMVrLnrPQIVpfcM3LeCSUg9JDaAktB7kIl9sBpHvDtRZZr
-	fPVovdefaAXkTHt0qm6C3niqz4hVVAD5n8wX4NYtzgElAuf+d4lqJ+7MR0I43upjJ5ibWJefk/ihH
-	TZU1p41taJMZBsi5MveNwP1aiwsssAA==;
+	List-Owner; bh=uLcZsgcOMlIumitUZoxY6ycM9jZxPY8KtjF0KwiqUAI=; b=dPK62q+HVOGGVz
+	sspYuHh3YLVhyLK2ekIoQLqX0lZ/+W5HrP1DLz8ZHK+fdvcImblTOA9mXA3dIVP3KtlmCyjjBfz4l
+	bqjUmEKIwDe7OQdOO0XlD4nRZarV65HRcdmJvU/rprQ5gRDnx/+MgPus6JNEIs0aq4XzUKvFAdPIC
+	hxdOkx3299T2WTsSt0rtvZdEpcr0SvistlJPBlsi4DbEXZz4pk+7QOaDIMWY8fdrWJ+13IszfbKIY
+	f8wneShneozgt1G5Bq4oFRVwYljB376UOxlAYfUAzNYt1LhfafpG+bI2Uhu6lUP+YtWrrVeJoPuV0
+	U7R0S/0GEIGt5Ii+j9Lw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOISj-0005Oh-H5; Wed, 08 May 2019 09:02:05 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1hOIWu-0007w7-PS; Wed, 08 May 2019 09:06:24 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOISX-0005HE-Od
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 09:01:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
- Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
- List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=/1N9JZp2JQsf9CYYNCJzOBAG67m4fbIhB/j22kK9mlU=; b=PMUHRco9ZAMJ
- 38hTtA/ioeQf5v4aZJ/dE3UGilVQgss3i5QRQwZwIYgUfSCb7Drtnv/0acH33nuYndnBHSQeN811R
- Ov2FHO86pAeBRnnNvgGjK5Qci4MJlHdRdfd6r0oyduBsctknWhT2R29R5PywS5Quf3r7ErPNOC5jV
- CfovM=;
-Received: from [61.199.190.11] (helo=finisterre.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hOISN-0007dj-1b; Wed, 08 May 2019 09:01:43 +0000
-Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
- id 165F0440039; Wed,  8 May 2019 10:01:30 +0100 (BST)
-From: Mark Brown <broonie@kernel.org>
-To: Olivier Moysan <olivier.moysan@st.com>
-Subject: Applied "ASoC: stm32: i2s: update pcm hardware constraints" to the
- asoc tree
-In-Reply-To: <1557147252-18679-2-git-send-email-olivier.moysan@st.com>
-X-Patchwork-Hint: ignore
-Message-Id: <20190508090130.165F0440039@finisterre.sirena.org.uk>
-Date: Wed,  8 May 2019 10:01:30 +0100 (BST)
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+ id 1hOIWo-0007vY-2U
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 09:06:19 +0000
+Received: by mail-ed1-x543.google.com with SMTP id b8so21347537edm.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 08 May 2019 02:06:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
+ h=sender:date:from:to:cc:subject:message-id:mail-followup-to
+ :references:mime-version:content-disposition
+ :content-transfer-encoding:in-reply-to:user-agent;
+ bh=ZCByRjUdoltM6JQS2wK/k1Vsg/2ECYjryZKrL53UB1A=;
+ b=cAzcttZx8IOcmQDqtJutN0W3TZIg84Kt+H8yqc/dtHNn73Y2pzR4uGqqCerk+xxpRK
+ kCgJj/0Cr/9osHXLk0jMGb0DbsYQmdwOxkCRSgnYBTOS4elaRx1CcurT+vvHJOsLuOZf
+ kJPxniGaN7IRwAIl1yJA3kUC4nDvoPbGXpO0o=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :mail-followup-to:references:mime-version:content-disposition
+ :content-transfer-encoding:in-reply-to:user-agent;
+ bh=ZCByRjUdoltM6JQS2wK/k1Vsg/2ECYjryZKrL53UB1A=;
+ b=IChb6QZQ/42V6hxMu/j86K2qM3bSxrRtCBHlpdeGRN3J/lVzwuS18UmI9t6ktU2Odj
+ 3LhUWOhnnTdbprlZDLwf0YwI7ZH9CvKSIruXRie3T1qI5hOB19UGEkaBDZut/tVu6Yln
+ 3iV7fZfewkPPeYkNdOTFYsUBz2owP6RLXM8qaKG4J/L52WzY115aV2r0S6bvxS8v4FSB
+ e2UkHZsDAX75PCIPoifaAX8qY4JlmGKeWlS3mYDu1IV9mJQk7uSSrsc8YXkQpqUx/GKA
+ e7Z1QEE2JSHoOys4s/GbllnMh/pIS4kQGVJMn/BCAl5TK633GKhJXDinLyyilZTAtMS+
+ Hvvw==
+X-Gm-Message-State: APjAAAWvQEtUABOFKSANlKGacQLvZcfeUsFxwjaBx1e+GfpxQ9SZhEL5
+ q7BydevcUs6l4zeDZs/BEgEkpw==
+X-Google-Smtp-Source: APXvYqyhIyJzQJ2/WQmKoGSeee8pS6Iu8b2u59hMI6uOyjAOYUPnEY7pFFD0PgsSnAjiyZEjRhbMSQ==
+X-Received: by 2002:a17:906:a48:: with SMTP id
+ x8mr3642206ejf.247.1557306376650; 
+ Wed, 08 May 2019 02:06:16 -0700 (PDT)
+Received: from phenom.ffwll.local ([2a02:168:569e:0:3106:d637:d723:e855])
+ by smtp.gmail.com with ESMTPSA id f44sm4982723eda.73.2019.05.08.02.06.15
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 08 May 2019 02:06:15 -0700 (PDT)
+Date: Wed, 8 May 2019 11:06:12 +0200
+From: Daniel Vetter <daniel@ffwll.ch>
+To: Sam Ravnborg <sam@ravnborg.org>
+Subject: Re: [PATCH RE-RESEND 1/2] drm/panel: Add support for Armadeus ST0700
+ Adapt
+Message-ID: <20190508090612.GT17751@phenom.ffwll.local>
+Mail-Followup-To: Sam Ravnborg <sam@ravnborg.org>,
+ Fabio Estevam <festevam@gmail.com>,
+ Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, 
+ David Airlie <airlied@linux.ie>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ DRI mailing list <dri-devel@lists.freedesktop.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ stable <stable@vger.kernel.org>,
+ =?iso-8859-1?Q?S=E9bastien?= Szymanski <sebastien.szymanski@armadeus.com>,
+ Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+References: <20190507152713.27494-1-sebastien.szymanski@armadeus.com>
+ <CAOMZO5B2nMsVNO6O_D+YTSjux=-DjNPGxhkEi3AQquOZVODumA@mail.gmail.com>
+ <20190507161950.GA24879@ravnborg.org>
+ <20190508083303.GR17751@phenom.ffwll.local>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190508083303.GR17751@phenom.ffwll.local>
+X-Operating-System: Linux phenom 4.14.0-3-amd64 
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_020154_245347_0F32AD7E 
-X-CRM114-Status: GOOD (  14.78  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190508_020618_112602_D880B2C3 
+X-CRM114-Status: GOOD (  17.92  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.1 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -75,78 +117,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, olivier.moysan@st.com, alexandre.torgue@st.com,
- tiwai@suse.com, arnaud.pouliquen@st.com, lgirdwood@gmail.com,
- linux-kernel@vger.kernel.org, Mark Brown <broonie@kernel.org>,
- mcoquelin.stm32@gmail.com, perex@perex.cz,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- benjamin.gaignard@st.com
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, David Airlie <airlied@linux.ie>,
+ Shawn Guo <shawnguo@kernel.org>, linux-kernel <linux-kernel@vger.kernel.org>,
+ DRI mailing list <dri-devel@lists.freedesktop.org>,
+ Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ stable <stable@vger.kernel.org>, Fabio Estevam <festevam@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch
+On Wed, May 08, 2019 at 10:33:03AM +0200, Daniel Vetter wrote:
+> On Tue, May 07, 2019 at 06:19:50PM +0200, Sam Ravnborg wrote:
+> > Hi Fabio
+> > =
 
-   ASoC: stm32: i2s: update pcm hardware constraints
+> > On Tue, May 07, 2019 at 12:33:39PM -0300, Fabio Estevam wrote:
+> > > [Adding Sam, who is helping to review/collect panel-simple patches]
+> > > =
 
-has been applied to the asoc tree at
+> > > On Tue, May 7, 2019 at 12:27 PM S=E9bastien Szymanski
+> > > <sebastien.szymanski@armadeus.com> wrote:
+> > > >
+> > > > This patch adds support for the Armadeus ST0700 Adapt. It comes wit=
+h a
+> > > > Santek ST0700I5Y-RBSLW 7.0" WVGA (800x480) TFT and an adapter board=
+ so
+> > > > that it can be connected on the TFT header of Armadeus Dev boards.
+> > > >
+> > > > Cc: stable@vger.kernel.org # v4.19
+> > > > Reviewed-by: Rob Herring <robh@kernel.org>
+> > > > Signed-off-by: S=E9bastien Szymanski <sebastien.szymanski@armadeus.=
+com>
+> > Reviewed-by: Sam Ravnborg <sam@ravnborg.org>
+> > =
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.2
+> > If you wil lresend the patch I can apply it.
+> > I have lost the original mail.
+> =
 
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
+> Usually patchwork should have it already (and you can pipe the raw
+> patchwork mbox into dim apply), but somehow it's not there either.
+> Not sure why, sometimes this is because mails are stuck in moderation,
+> sometimes because people do interesting things with their mails (e.g. smtp
+> servers mangling formatting).
 
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
+patchwork was just a bit slow, it's there now:
 
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
+https://patchwork.freedesktop.org/series/60408/
 
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
+Cheers, Daniel
+-- =
 
-Thanks,
-Mark
-
-From 4fc19fffaaf87335aafaeb059a561ef91aa6031c Mon Sep 17 00:00:00 2001
-From: Olivier Moysan <olivier.moysan@st.com>
-Date: Mon, 6 May 2019 14:54:11 +0200
-Subject: [PATCH] ASoC: stm32: i2s: update pcm hardware constraints
-
-- Set period minimum size. Ensure at least 5ms period
-up to 48kHz/16 bits to prevent underrun/overrun.
-- Remove MDMA constraints on period maximum size and
-set period maximum to half the buffer maximum size.
-
-Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- sound/soc/stm/stm32_i2s.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/sound/soc/stm/stm32_i2s.c b/sound/soc/stm/stm32_i2s.c
-index 97d5e9901a0e..8ee697ff1f86 100644
---- a/sound/soc/stm/stm32_i2s.c
-+++ b/sound/soc/stm/stm32_i2s.c
-@@ -731,7 +731,8 @@ static const struct snd_soc_dai_ops stm32_i2s_pcm_dai_ops = {
- static const struct snd_pcm_hardware stm32_i2s_pcm_hw = {
- 	.info = SNDRV_PCM_INFO_INTERLEAVED | SNDRV_PCM_INFO_MMAP,
- 	.buffer_bytes_max = 8 * PAGE_SIZE,
--	.period_bytes_max = 2048,
-+	.period_bytes_min = 1024,
-+	.period_bytes_max = 4 * PAGE_SIZE,
- 	.periods_min = 2,
- 	.periods_max = 8,
- };
--- 
-2.20.1
-
+Daniel Vetter
+Software Engineer, Intel Corporation
+http://blog.ffwll.ch
 
 _______________________________________________
 linux-arm-kernel mailing list
