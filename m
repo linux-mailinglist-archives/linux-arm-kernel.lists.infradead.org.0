@@ -2,58 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0016180CF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 22:04:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1BEED180D3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 22:08:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=AUdIgA0XPXnI6VoIyzhIQ6Kmn/TxQP6vLHZSPiLtp74=; b=HSfg/ukitw5behnonczQFBBkp
-	dQgH9n/yv4qMrW7SEXSk88gzIHUYFNK5kLm5u8wIRoxMYorWDB9wwZwvkQAOOdA1IjGs88dlY9J5h
-	UUt0rv2nDkEcZ3dmA+rXK+oaDGexAIhlgB4NoYjwpXYlgeybMbFUKfJn9fdyZDKYykSUlWBG2Zgar
-	CJPpuZHdyJneXAESa0g0ZlcT2tncmc4QYHkA5kJrI2jtbRS10F3yAr3WiVA2kAAC0rcpVyrsTpHnD
-	cu+cwEyo+KgicZqRLYyEb9JiNAkHeIGMIjuDVtGGI7X0S/17Pff132J/Hjb+MrwsU0j6t7AP6Orct
-	viwjDznhg==;
+	 bh=K3ySUR0GONXjTPTD7jE4bXi4AM79E35inBMLSOymBbY=; b=drfBidKX5lttvU9C7PzWRAXZh
+	HhsZ8ta0ErWOcUPfGEIlz9b6DpgdC4P3Sk9kyykNQJW4V53Ty6S7uX89CcSvIsS0JnYJkSId4Z/x5
+	9QTXOiNHBqFNxa0/qNJ9wC3pj7W5vrQ31U9IYowl3sJddTi/azHM8k1TwEV8JTdWea7zQtvC8LMes
+	jsG+D4wQVReJfCfG6Mb1izmH1JxGkXLa423FJeBtXvxbF4hsEiWDf/CYOOOY65sLOcPkUCtU0fc0T
+	oPtyDamOGdoNa1JpWEUDk6EO4xhHIhEUe7Vdm365GkkcdixrYkoR+cYcS17tsaKv3h1VyrdZRf9+C
+	WH8YgA39A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOSne-0001PO-25; Wed, 08 May 2019 20:04:22 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOSnW-0001O3-C6
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 20:04:15 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 44555374;
- Wed,  8 May 2019 13:04:11 -0700 (PDT)
-Received: from [192.168.100.241] (usa-sjc-mx-foss1.foss.arm.com
- [217.140.101.70])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3B3CD3F575;
- Wed,  8 May 2019 13:04:10 -0700 (PDT)
-Subject: Re: [PATCH v3 4/5] arm_pmu: acpi: spe: Add initial MADT/SPE probing
-To: John Garry <john.garry@huawei.com>, linux-arm-kernel@lists.infradead.org
-References: <20190503232407.37195-1-jeremy.linton@arm.com>
- <20190503232407.37195-5-jeremy.linton@arm.com>
- <dbb1312e-a2fb-4d75-03dd-bbaabdb647b4@huawei.com>
-From: Jeremy Linton <jeremy.linton@arm.com>
-Message-ID: <c42e3d8a-51fa-ea0c-6733-0e133050cdfe@arm.com>
-Date: Wed, 8 May 2019 15:04:02 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
+	id 1hOSrY-00030m-AV; Wed, 08 May 2019 20:08:24 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hOSrQ-00030P-UQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 20:08:18 +0000
+Received: by mail-wm1-x342.google.com with SMTP id o189so188301wmb.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 08 May 2019 13:08:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=XHPdkWRxQaTT0W2poXD/4Nd9Euk4dE5H/Tw5WQByqrs=;
+ b=VjfFf6n2EMQeUpdmdrN17Tg4L+m36EugLxPu3MTfpAnBFMUTGrr/dgi4CbRcoSLEca
+ iQo9hMnl+o5qMLPSmnbeJM9dH1qPTcVCjnPwNRz4564/EOWF3dleVGEdkqjZ+XGQSML4
+ UIRbaGDg/MJRhBYmRP58M+3SGIgrRug6qKSB9i1ZCBvWWZYYtJlnix9O1d2Lb7vw+4Tq
+ PbjsZ21y4uCv/N9EtwtpxbavUmmmCIVXlssaGG3kpmzCykoo44mJHVrmJU5BQIFLbe4z
+ 7dwjyT27Yks1hCR6zxjVZ4bCvNxPHFCjWBXI5AkYIe6/U+KHe/nXKyvsCDtCU9zZyGkY
+ T+dA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=XHPdkWRxQaTT0W2poXD/4Nd9Euk4dE5H/Tw5WQByqrs=;
+ b=ZgY2mNl2ETl73LItrSMLkLTtvDR+BV9/Ge3yDYffkI2EJrvVHP1vy5Vlb38omk2/rw
+ Rl8LyftkVIn3Z5z+T84VIjqZSUzD+Cx1YmqLVdxfDGiqKZJ7ml15Klkx63NByv2nicbB
+ Dvywid/2ga1FXd09r5SW5y6topUewi4iuRqP55DqnyJVudPyo5Kph2AJV54iTpRu5/6z
+ pE1ubNxANWadCb2h5Y7MjNp3aTqmORTc1zXgd1V0gwYaV/2LB7FZtHxGwv1D72QroHS6
+ oAUoZkI0yiFdWwIOJMD9l4Pu71KH0XxpxORmNglO4A18nt07ZRcr7HYEK3fnnTKCkJUt
+ UIhw==
+X-Gm-Message-State: APjAAAWz/revFD3J4ZdAML5Uu6J9+vu8/6jaZhHkcWCWC1FnUwbYrf/Q
+ MxzSkFxdrkpViy9bKuD5+TY=
+X-Google-Smtp-Source: APXvYqyUywHaW97+LZaAN4d+xvJAjyUCjd6ncE9980ICZWBpFnOyJ+tp8I1twvpZPzHnQJnGbUfKxA==
+X-Received: by 2002:a1c:1c8:: with SMTP id 191mr41764wmb.101.1557346094643;
+ Wed, 08 May 2019 13:08:14 -0700 (PDT)
+Received: from ?IPv6:2a02:8071:6a3:700:484e:b84e:2cd2:80c0?
+ ([2a02:8071:6a3:700:484e:b84e:2cd2:80c0])
+ by smtp.gmail.com with ESMTPSA id o4sm4186961wmc.38.2019.05.08.13.08.13
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 08 May 2019 13:08:13 -0700 (PDT)
+Subject: Re: [PATCH] arm: socfpga: execute cold reboot by default
+To: Dinh Nguyen <dinguyen@kernel.org>
+References: <20190503091507.6159-1-simon.k.r.goldschmidt@gmail.com>
+ <fd18f55e-2e18-44a3-7e76-e5e59984b729@kernel.org>
+From: Simon Goldschmidt <simon.k.r.goldschmidt@gmail.com>
+Message-ID: <078b9c11-f4b1-0767-bebc-daa4de37b2be@gmail.com>
+Date: Wed, 8 May 2019 22:07:33 +0200
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <dbb1312e-a2fb-4d75-03dd-bbaabdb647b4@huawei.com>
+In-Reply-To: <fd18f55e-2e18-44a3-7e76-e5e59984b729@kernel.org>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_130414_426821_BA876117 
-X-CRM114-Status: GOOD (  28.67  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190508_130817_007722_F4CC63B5 
+X-CRM114-Status: GOOD (  20.48  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (simon.k.r.goldschmidt[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -65,252 +102,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, will.deacon@arm.com,
- sudeep.holla@arm.com, rjw@rjwysocki.net, linuxarm@huawei.com,
- linux-acpi@vger.kernel.org, catalin.marinas@arm.com, lenb@kernel.org
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset="windows-1252"; Format="flowed"
+Cc: Marek Vasut <marek.vasut@gmail.com>,
+ Dalon Westergreen <dalon.westergreen@linux.intel.com>,
+ Russell King <linux@armlinux.org.uk>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-Thanks for taking a look at this,
-
-On 5/8/19 6:18 AM, John Garry wrote:
-e> On 04/05/2019 00:24, Jeremy Linton wrote:
->> ACPI 6.3 adds additional fields to the MADT GICC
->> structure to describe SPE PPI's. We pick these out
->> of the cached reference to the madt_gicc structure
->> similarly to the core PMU code. We then create a platform
->> device referring to the IRQ and let the user/module loader
->> decide whether to load the SPE driver.
+Am 08.05.2019 um 03:37 schrieb Dinh Nguyen:
+> 
+> 
+> On 5/3/19 4:15 AM, Simon Goldschmidt wrote:
+>> This changes system reboot for socfpga to issue a cold reboot by
+>> default instead of a warm reboot.
 >>
->> Signed-off-by: Jeremy Linton <jeremy.linton@arm.com>
+>> Warm reboot can still be used by setting reboot_mode to
+>> REBOOT_WARM (e.g. via kernel command line 'reboot='), but this
+>> patch ensures cold reboot is issued for both REBOOT_COLD and
+>> REBOOT_HARD.
+>>
+>> Also, cold reboot is more fail safe than warm reboot has some
+>> issues at least fo CSEL=0 and BSEL=qspi, where the boot rom does
+>> not set the qspi clock to a valid range.
+>>
+>> Signed-off-by: Simon Goldschmidt <simon.k.r.goldschmidt@gmail.com>
 >> ---
->> =A0arch/arm64/include/asm/acpi.h |=A0 3 ++
->> =A0drivers/perf/Kconfig=A0=A0=A0=A0=A0=A0=A0=A0=A0 |=A0 5 +++
->> =A0drivers/perf/arm_pmu_acpi.c=A0=A0 | 76 ++++++++++++++++++++++++++++++=
-+++++
->> =A0include/linux/perf/arm_pmu.h=A0 |=A0 2 +
->> =A04 files changed, 86 insertions(+)
 >>
->> diff --git a/arch/arm64/include/asm/acpi.h =
-
->> b/arch/arm64/include/asm/acpi.h
->> index 7628efbe6c12..d10399b9f998 100644
->> --- a/arch/arm64/include/asm/acpi.h
->> +++ b/arch/arm64/include/asm/acpi.h
->> @@ -41,6 +41,9 @@
->> =A0=A0=A0=A0 (!(entry) || (entry)->header.length < ACPI_MADT_GICC_MIN_LE=
-NGTH || \
->> =A0=A0=A0=A0 (unsigned long)(entry) + (entry)->header.length > (end))
+>> See discussion in this thread on the u-boot ML:
+>> https://lists.denx.de/pipermail/u-boot/2019-April/367463.html
+>> ---
+>>   arch/arm/mach-socfpga/socfpga.c | 12 ++++++------
+>>   1 file changed, 6 insertions(+), 6 deletions(-)
 >>
->> +#define ACPI_MADT_GICC_SPE=A0 (ACPI_OFFSET(struct =
-
->> acpi_madt_generic_interrupt, \
->> +=A0=A0=A0 spe_interrupt) + sizeof(u16))
->> +
->> =A0/* Basic configuration for ACPI */
->> =A0#ifdef=A0=A0=A0 CONFIG_ACPI
->> =A0pgprot_t __acpi_get_mem_attribute(phys_addr_t addr);
->> diff --git a/drivers/perf/Kconfig b/drivers/perf/Kconfig
->> index af9bc178495d..bc2647c64c9d 100644
->> --- a/drivers/perf/Kconfig
->> +++ b/drivers/perf/Kconfig
->> @@ -52,6 +52,11 @@ config ARM_PMU_ACPI
->> =A0=A0=A0=A0 depends on ARM_PMU && ACPI
->> =A0=A0=A0=A0 def_bool y
+>> diff --git a/arch/arm/mach-socfpga/socfpga.c b/arch/arm/mach-socfpga/socfpga.c
+>> index 816da0eb6..6abfbf140 100644
+>> --- a/arch/arm/mach-socfpga/socfpga.c
+>> +++ b/arch/arm/mach-socfpga/socfpga.c
+>> @@ -85,10 +85,10 @@ static void socfpga_cyclone5_restart(enum reboot_mode mode, const char *cmd)
+>>   
+>>   	temp = readl(rst_manager_base_addr + SOCFPGA_RSTMGR_CTRL);
+>>   
+>> -	if (mode == REBOOT_HARD)
+>> -		temp |= RSTMGR_CTRL_SWCOLDRSTREQ;
+>> -	else
+>> +	if (mode == REBOOT_WARM)
+>>   		temp |= RSTMGR_CTRL_SWWARMRSTREQ;
+>> +	else
+>> +		temp |= RSTMGR_CTRL_SWCOLDRSTREQ;
+>>   	writel(temp, rst_manager_base_addr + SOCFPGA_RSTMGR_CTRL);
+>>   }
+>>   
+>> @@ -98,10 +98,10 @@ static void socfpga_arria10_restart(enum reboot_mode mode, const char *cmd)
+>>   
+>>   	temp = readl(rst_manager_base_addr + SOCFPGA_A10_RSTMGR_CTRL);
+>>   
+>> -	if (mode == REBOOT_HARD)
+>> -		temp |= RSTMGR_CTRL_SWCOLDRSTREQ;
+>> -	else
+>> +	if (mode == REBOOT_WARM)
+>>   		temp |= RSTMGR_CTRL_SWWARMRSTREQ;
+>> +	else
+>> +		temp |= RSTMGR_CTRL_SWCOLDRSTREQ;
+>>   	writel(temp, rst_manager_base_addr + SOCFPGA_A10_RSTMGR_CTRL);
+>>   }
+>>   
 >>
->> +config ARM_SPE_ACPI
-> =
+> 
+> Applied, thanks! I think this patch needs to get back-ported into stable
+> kernel version as well, right?
 
-> Is it possible to just use this check in arm_pmu_acpi.c instead, to =
+Well, it's certainly wrong as it was.
 
-> avoid introducing another config here:
-> =
+But as I saw myself, switching from warm to cold reset might have some 
+implications that would at least in some configurations require changes 
+to existing configurations to keep the board booting.
 
-> if defined(CONFIG_ARM_SPE_PMU)
+So while this certainly fixes a bug (warm reboot is executed instead of 
+cold reboot like standard/requested), I don't know what's the standard 
+procedure for a backport regarding fix vs. breaking boards.
 
-I'm sure it works, if this is preferred, sure..
-
-
-> =
-
->> +=A0=A0=A0 depends on ARM_PMU_ACPI && ARM_SPE_PMU
->> +=A0=A0=A0 def_bool y
->> +
->> +
-> =
-
-> nit: extra line
-> =
-
->> =A0config ARM_DSU_PMU
->> =A0=A0=A0=A0 tristate "ARM DynamIQ Shared Unit (DSU) PMU"
->> =A0=A0=A0=A0 depends on ARM64
->> diff --git a/drivers/perf/arm_pmu_acpi.c b/drivers/perf/arm_pmu_acpi.c
->> index 0f197516d708..b0244e1e8c91 100644
->> --- a/drivers/perf/arm_pmu_acpi.c
->> +++ b/drivers/perf/arm_pmu_acpi.c
->> @@ -74,6 +74,80 @@ static void arm_pmu_acpi_unregister_irq(int cpu)
->> =A0=A0=A0=A0 acpi_unregister_gsi(gsi);
->> =A0}
->>
->> +#ifdef CONFIG_ARM_SPE_ACPI
->> +static struct resource spe_resources[] =3D {
->> +=A0=A0=A0 {
->> +=A0=A0=A0=A0=A0=A0=A0 /* irq */
->> +=A0=A0=A0=A0=A0=A0=A0 .flags=A0=A0=A0=A0=A0=A0=A0=A0=A0 =3D IORESOURCE_=
-IRQ,
->> +=A0=A0=A0 }
->> +};
->> +
->> +static struct platform_device spe_dev =3D {
->> +=A0=A0=A0 .name =3D ARMV8_SPE_PDEV_NAME,
->> +=A0=A0=A0 .id =3D -1,
->> +=A0=A0=A0 .resource =3D spe_resources,
->> +=A0=A0=A0 .num_resources =3D ARRAY_SIZE(spe_resources)
->> +};
->> +
->> +/*
->> + * For lack of a better place, hook the normal PMU MADT walk
->> + * and create a SPE device if we detect a recent MADT with
->> + * a homogeneous PPI mapping.
->> + */
->> +static int arm_spe_acpi_register_device(void)
->> +{
->> +=A0=A0=A0 int cpu, ret, irq;
->> +=A0=A0=A0 int hetid;
->  > nit: not sure why you use multiple lines here
-
-Functional grouping, but I should probably re-arrange them...
-
-
-> =
-
->> +=A0=A0=A0 u16 gsi =3D 0;
->> +=A0=A0=A0 bool first =3D true;
->> +
-> =
-
-> nit: extra line, and gicc could be declared within the loop in which =
-
-> it's used to limit scope.
-> =
-
->> +=A0=A0=A0 struct acpi_madt_generic_interrupt *gicc;
->> +
->> +=A0=A0=A0 /*
->> +=A0=A0=A0=A0 * sanity check all the GICC tables for the same interrupt =
-number
->> +=A0=A0=A0=A0 * for now we only support homogeneous ACPI/SPE machines.
->> +=A0=A0=A0=A0 */
->> +=A0=A0=A0 for_each_possible_cpu(cpu) {
->> +=A0=A0=A0=A0=A0=A0=A0 gicc =3D acpi_cpu_get_madt_gicc(cpu);
->> +
->> +=A0=A0=A0=A0=A0=A0=A0 if (gicc->header.length < ACPI_MADT_GICC_SPE)
->> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 return -ENODEV;
->> +=A0=A0=A0=A0=A0=A0=A0 if (first) {
->> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 gsi =3D gicc->spe_interrupt;
->> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (!gsi)
->> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 return -ENODEV;
->> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 hetid =3D find_acpi_cpu_topology_hete=
-ro_id(cpu);
->> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 first =3D false;
->> +=A0=A0=A0=A0=A0=A0=A0 } else if ((gsi !=3D gicc->spe_interrupt) ||
->> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 (hetid !=3D find_acpi_cpu_to=
-pology_hetero_id(cpu))) {
->> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 pr_warn("ACPI: SPE must be homogeneou=
-s\n");
->> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 return -EINVAL;
->> +=A0=A0=A0=A0=A0=A0=A0 }
->> +=A0=A0=A0 }
->> +
->> +=A0=A0=A0 irq =3D acpi_register_gsi(NULL, gsi, ACPI_LEVEL_SENSITIVE,
->> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 ACPI_ACTIVE_HIGH);
->> +=A0=A0=A0 if (irq < 0) {
-> =
-
-> is irq =3D=3D 0 a valid Linux IRQ number? From checking =
-
-> irq_create_fw_spec_mapping(), it does not seem to be.
-
-I think this is a bit of a trick question, acpi_register_gsi's =
-
-commented/implementations/etc seem to assume that 0 may be a valid =
-
-interrupt, for example
-
-"
-  * Returns: a valid linux IRQ number on success
-  *          -EINVAL on failure
-"
-
-And various pieces of code have >=3D0  valid IRQ checks. So... I don't =
-
-think its a problem written this way. It leaves the door open for a =
-
-possible 0 despite that likely not being a valid interrupt.. :)
-
-
-> =
-
->> +=A0=A0=A0=A0=A0=A0=A0 pr_warn("ACPI: SPE Unable to register interrupt: =
-%d\n", gsi);
->> +=A0=A0=A0=A0=A0=A0=A0 return irq;
->> +=A0=A0=A0 }
->> +
->> +=A0=A0=A0 spe_resources[0].start =3D irq;
->> +=A0=A0=A0 ret =3D platform_device_register(&spe_dev);
->> +=A0=A0=A0 if (ret < 0) {
->> +=A0=A0=A0=A0=A0=A0=A0 pr_warn("ACPI: SPE: Unable to register device\n");
->> +=A0=A0=A0=A0=A0=A0=A0 acpi_unregister_gsi(gsi);
->> +=A0=A0=A0 }
->> +
->> +=A0=A0=A0 return ret;
->> +}
->> +#else
->> +static inline int arm_spe_acpi_register_device(void)
->> +{
->> +=A0=A0=A0 return -ENODEV;
->> +}
->> +#endif /* CONFIG_ARM_SPE_ACPI */
->> +
->> =A0static int arm_pmu_acpi_parse_irqs(void)
->> =A0{
->> =A0=A0=A0=A0 int irq, cpu, irq_cpu, err;
->> @@ -279,6 +353,8 @@ static int arm_pmu_acpi_init(void)
->> =A0=A0=A0=A0 if (acpi_disabled)
->> =A0=A0=A0=A0=A0=A0=A0=A0 return 0;
->>
->> +=A0=A0=A0 arm_spe_acpi_register_device(); /* failures are expected */
->> +
->> =A0=A0=A0=A0 ret =3D arm_pmu_acpi_parse_irqs();
->> =A0=A0=A0=A0 if (ret)
->> =A0=A0=A0=A0=A0=A0=A0=A0 return ret;
->> diff --git a/include/linux/perf/arm_pmu.h b/include/linux/perf/arm_pmu.h
->> index 4641e850b204..784bc58f165a 100644
->> --- a/include/linux/perf/arm_pmu.h
->> +++ b/include/linux/perf/arm_pmu.h
->> @@ -175,4 +175,6 @@ void armpmu_free_irq(int irq, int cpu);
->>
->> =A0#endif /* CONFIG_ARM_PMU */
->>
->> +#define ARMV8_SPE_PDEV_NAME "arm,spe-v1"
->> +
->> =A0#endif /* __ARM_PMU_H__ */
->>
-> =
-
-> Thanks!
-> =
-
-> =
-
-> =
-
-
+Regards,
+Simon
 
 _______________________________________________
 linux-arm-kernel mailing list
