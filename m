@@ -2,107 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF91D179CA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 14:54:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A40BC17A09
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 15:11:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5pfguWCx4g+G4KwTZpBkr4gpq/JsnfXKQ0rhf49OlVU=; b=n+6ifU0RIg5j2a
-	VbjQM//IpS6GXZA2qpOSYSEojAXeqr98m8rtUO7PIirnKUMBtLxLCXrj0oHEvoQD0hAZRBYg/Srtd
-	HZQnPPhmfCaPSfz+dWL/vWyCWc/sHbDedkY+xjxMNrg9rDiR5JbzH5ff/iayPv4bISdg9g3jnOC7q
-	nQoowwRfueiw1HRqrIJV+kIwO4pAFz/GCmYRGb4nLLginV+3iQc28xYdrPVVEY/KOLJnOyUkZnxJo
-	Gv6dKzoaGlIRsabPGA9+BHfqA1VwV49mqw+mXJhfvdEJgpjRkcx5aULU7HKSMIhu3pS/74IzXcLZU
-	nZAXmwyAxGNo+7xf1/vQ==;
+	List-Owner; bh=URLTDKbM6zRxVlnwVHzA4fiCpD0mELEvU3isKDB/8vE=; b=mkUnkATHzk1ckg
+	VR4Y3X/LSb/Y+/iUkr/fIGecwejqy5WtJCYF6mP7gnhCeAliKCc+5ATPoCp1sPX/LuKgok9tR4xRo
+	Ic8CwIiSYV4+tIFtU4BRuW16JZ/ciM9IVakkVM1fgbG2OnaW995KZyLY5pkOeKeicid0efOpbnWGq
+	IyLgbGC+yrEgK2DYeT1HiElWQOGGgHFoGtaRpKAvNOvhHWNaITQCjrwpBoNcIDtUJxDFp1xHz+alM
+	vD9FTPiP0wDCa1/vK5eNaVHMDEJJ+GNQYrCjn3l7lsiYlg/aQEvhSrx5dNvXeVZq1ghwosRBhpk/Y
+	xDs9bStQwdbBoWQOWc0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOM65-0004QN-7o; Wed, 08 May 2019 12:54:57 +0000
-Received: from mail-eopbgr130041.outbound.protection.outlook.com
- ([40.107.13.41] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1hOMMS-0001gY-4N; Wed, 08 May 2019 13:11:52 +0000
+Received: from mga01.intel.com ([192.55.52.88])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOM5x-0004PY-CI
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 12:54:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=O0NtTvNvySWbtEwMFp5UBOxqQqU1xTGuOUsVYeq98Yo=;
- b=dptP6K6j+8bMue49s8HO7OTS0qv8ZVYk70lS5F3xf4TWRiX8/dK0cPwSENRD7b8SG6ZbiUOeaFSXV+5Nh5SzhL5QL8LhKP0NRkymmf0rkl1j0F7ckQTwdZGp9ED4YFdeEXWAIEYKvdAQmNnPS3JvKr5aGHCR3rTy37qFScnwNf8=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB5457.eurprd04.prod.outlook.com (20.178.113.147) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1856.14; Wed, 8 May 2019 12:54:45 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::3173:24:d401:2378]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::3173:24:d401:2378%6]) with mapi id 15.20.1856.012; Wed, 8 May 2019
- 12:54:45 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: Aisheng Dong <aisheng.dong@nxp.com>, "robh+dt@kernel.org"
- <robh+dt@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "festevam@gmail.com"
- <festevam@gmail.com>
-Subject: RE: [PATCH V2 2/4] nvmem: imx: add i.MX8 nvmem driver
-Thread-Topic: [PATCH V2 2/4] nvmem: imx: add i.MX8 nvmem driver
-Thread-Index: AQHVBUmUyhPYZQPb306ccqN8amt06aZhHNiAgAARt+A=
-Date: Wed, 8 May 2019 12:54:45 +0000
-Message-ID: <AM0PR04MB448107E13218D6C17C0ACAD488320@AM0PR04MB4481.eurprd04.prod.outlook.com>
-References: <20190508030927.16668-1-peng.fan@nxp.com>
- <20190508030927.16668-2-peng.fan@nxp.com>
- <AM0PR04MB4211796D47D5AB4A2F98102F80320@AM0PR04MB4211.eurprd04.prod.outlook.com>
-In-Reply-To: <AM0PR04MB4211796D47D5AB4A2F98102F80320@AM0PR04MB4211.eurprd04.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-originating-ip: [119.31.174.68]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: caef7c58-c24d-4072-8117-08d6d3b458a9
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB5457; 
-x-ms-traffictypediagnostic: AM0PR04MB5457:
-x-microsoft-antispam-prvs: <AM0PR04MB545716AFA3567283B08E75F488320@AM0PR04MB5457.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
-x-forefront-prvs: 0031A0FFAF
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(346002)(376002)(396003)(39860400002)(136003)(366004)(189003)(199004)(7416002)(11346002)(53936002)(7736002)(446003)(68736007)(476003)(8936002)(8676002)(81156014)(44832011)(25786009)(14444005)(256004)(81166006)(26005)(102836004)(6506007)(305945005)(6246003)(229853002)(5660300002)(186003)(6116002)(71200400001)(71190400001)(74316002)(14454004)(3846002)(486006)(2906002)(478600001)(4326008)(76176011)(54906003)(73956011)(52536014)(66446008)(66476007)(2501003)(76116006)(55016002)(9686003)(66556008)(66946007)(99286004)(316002)(110136005)(7696005)(64756008)(66066001)(86362001)(2201001)(33656002)(6436002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5457;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: Vn2L9QYIEZ0GsI4W6yM+MOdYtqX8uyt665l9KlvR9jhUtpkGqD50NDWvTaZIxppFubkwaU/fkcEYrAHNTci3K+dJjWUbf479DfQbzWXXOhws/ScX7yF27KVQKXMcJiuGsdHcmWKAW2M/dfMyiocC7uAWYt9tJqMoKFo7gJU3AkbbZOjsf8RJMzAbPXQAKk8dvKnOhKKEitihrPoR4mZSZu4f3rhJOk1cOjG6Oiu+Tan2ZpdFu2HpphZaxDmT6WZ7VA5YUEdYQOBd/3eSuI/MZ+qkaJUa3ueqiOifbC0xGATxbaXonfkj3BW0FeEHjFzn/UU5IfyjGcLna11Ibn/3ypv1yPqLTLfLBEK4cyWR0n1VVp3N7AI/AFkWrU1SigSpS3ZoDSHv06d+8CXiAjMnafifqaYlp8pRqIbGAQqkZhE=
+ id 1hOMML-0001fP-91; Wed, 08 May 2019 13:11:46 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from orsmga001.jf.intel.com ([10.7.209.18])
+ by fmsmga101.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 08 May 2019 06:11:37 -0700
+X-ExtLoop1: 1
+Received: from smile.fi.intel.com (HELO smile) ([10.237.72.86])
+ by orsmga001.jf.intel.com with ESMTP; 08 May 2019 06:11:29 -0700
+Received: from andy by smile with local (Exim 4.92)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1hOMM4-0000is-79; Wed, 08 May 2019 16:11:28 +0300
+Date: Wed, 8 May 2019 16:11:28 +0300
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Alexandru Ardelean <alexandru.ardelean@analog.com>
+Subject: Re: [PATCH 03/16] lib,treewide: add new match_string() helper/macro
+Message-ID: <20190508131128.GL9224@smile.fi.intel.com>
+References: <20190508112842.11654-1-alexandru.ardelean@analog.com>
+ <20190508112842.11654-5-alexandru.ardelean@analog.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: caef7c58-c24d-4072-8117-08d6d3b458a9
-X-MS-Exchange-CrossTenant-originalarrivaltime: 08 May 2019 12:54:45.3911 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5457
+Content-Disposition: inline
+In-Reply-To: <20190508112842.11654-5-alexandru.ardelean@analog.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_055449_852586_FC3B195E 
-X-CRM114-Status: GOOD (  28.58  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190508_061145_333766_3CD668C0 
+X-CRM114-Status: GOOD (  19.98  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.13.41 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.88 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -114,313 +67,283 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- "van.freenix@gmail.com" <van.freenix@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-fbdev@vger.kernel.org, kvm@vger.kernel.org, linux-pci@vger.kernel.org,
+ alsa-devel@alsa-project.org, dri-devel@lists.freedesktop.org,
+ linux-ide@vger.kernel.org, linux-mtd@lists.infradead.org,
+ linux-clk@vger.kernel.org, devel@driverdev.osuosl.org,
+ linux-rockchip@lists.infradead.org, linux-mmc@vger.kernel.org,
+ linux-pm@vger.kernel.org, intel-gfx@lists.freedesktop.org,
+ linux-gpio@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
+ linux-tegra@vger.kernel.org, cgroups@vger.kernel.org,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-mm@kvack.org, netdev@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-security-module@vger.kernel.org, gregkh@linuxfoundation.org,
+ linux-integrity@vger.kernel.org, linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Aisheng,
+On Wed, May 08, 2019 at 02:28:29PM +0300, Alexandru Ardelean wrote:
+> This change re-introduces `match_string()` as a macro that uses
+> ARRAY_SIZE() to compute the size of the array.
+> The macro is added in all the places that do
+> `match_string(_a, ARRAY_SIZE(_a), s)`, since the change is pretty
+> straightforward.
 
-> Subject: RE: [PATCH V2 2/4] nvmem: imx: add i.MX8 nvmem driver
-> 
-> > From: Peng Fan
-> > Sent: Wednesday, May 8, 2019 10:56 AM
-> >
-> > This patch adds i.MX8 nvmem ocotp driver to access fuse via RPC to
-> > i.MX8 system controller.
-> >
-> > Cc: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
-> > Cc: Shawn Guo <shawnguo@kernel.org>
-> > Cc: Sascha Hauer <s.hauer@pengutronix.de>
-> > Cc: Pengutronix Kernel Team <kernel@pengutronix.de>
-> > Cc: Fabio Estevam <festevam@gmail.com>
-> > Cc: NXP Linux Team <linux-imx@nxp.com>
-> > Cc: linux-arm-kernel@lists.infradead.org
-> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> > ---
-> >
-> > V2:
-> >  Add "scu" or "SCU", Add imx_sc_misc_otp_fuse_read, minor fixes
-> >
-> >  drivers/nvmem/Kconfig         |   7 ++
-> >  drivers/nvmem/Makefile        |   2 +
-> >  drivers/nvmem/imx-ocotp-scu.c | 170
-> > ++++++++++++++++++++++++++++++++++++++++++
-> >  3 files changed, 179 insertions(+)
-> >  create mode 100644 drivers/nvmem/imx-ocotp-scu.c
-> >
-> > diff --git a/drivers/nvmem/Kconfig b/drivers/nvmem/Kconfig index
-> > 530d570724c9..79afe44195a1 100644
-> > --- a/drivers/nvmem/Kconfig
-> > +++ b/drivers/nvmem/Kconfig
-> > @@ -36,6 +36,13 @@ config NVMEM_IMX_OCOTP
-> >  	  This driver can also be built as a module. If so, the module
-> >  	  will be called nvmem-imx-ocotp.
-> >
-> > +config NVMEM_IMX_OCOTP_SCU
-> > +	tristate "i.MX8 SCU On-Chip OTP Controller support"
-> > +	depends on IMX_SCU
-> > +	help
-> > +	  This is a driver for the SCU On-Chip OTP Controller (OCOTP)
-> > +	  available on i.MX8 SoCs.
-> > +
-> >  config NVMEM_LPC18XX_EEPROM
-> >  	tristate "NXP LPC18XX EEPROM Memory Support"
-> >  	depends on ARCH_LPC18XX || COMPILE_TEST diff --git
-> > a/drivers/nvmem/Makefile b/drivers/nvmem/Makefile index
-> > 2ece8ffffdda..30d653d34e57 100644
-> > --- a/drivers/nvmem/Makefile
-> > +++ b/drivers/nvmem/Makefile
-> > @@ -13,6 +13,8 @@ obj-$(CONFIG_NVMEM_IMX_IIM)	+=
-> > nvmem-imx-iim.o
-> >  nvmem-imx-iim-y			:= imx-iim.o
-> >  obj-$(CONFIG_NVMEM_IMX_OCOTP)	+= nvmem-imx-ocotp.o
-> >  nvmem-imx-ocotp-y		:= imx-ocotp.o
-> > +obj-$(CONFIG_NVMEM_IMX_OCOTP_SCU)	+= nvmem-imx-ocotp-scu.o
-> > +nvmem-imx-ocotp-scu-y		:= imx-ocotp-scu.o
-> >  obj-$(CONFIG_NVMEM_LPC18XX_EEPROM)	+=
-> > nvmem_lpc18xx_eeprom.o
-> >  nvmem_lpc18xx_eeprom-y	:= lpc18xx_eeprom.o
-> >  obj-$(CONFIG_NVMEM_LPC18XX_OTP)	+= nvmem_lpc18xx_otp.o
-> > diff --git a/drivers/nvmem/imx-ocotp-scu.c
-> > b/drivers/nvmem/imx-ocotp-scu.c new file mode 100644 index
-> > 000000000000..038e744c8588
-> > --- /dev/null
-> > +++ b/drivers/nvmem/imx-ocotp-scu.c
-> > @@ -0,0 +1,170 @@
-> > +// SPDX-License-Identifier: GPL-2.0+
-> > +/*
-> > + * i.MX8 OCOTP fusebox driver
-> > + *
-> > + * Copyright 2019 NXP
-> > + *
-> > + * Peng Fan <peng.fan@nxp.com>
-> > + */
-> > +
-> > +#include <linux/firmware/imx/sci.h>
-> > +#include <linux/module.h>
-> > +#include <linux/nvmem-provider.h>
-> > +#include <linux/of_device.h>
-> > +#include <linux/platform_device.h>
-> > +#include <linux/slab.h>
-> > +
-> > +enum ocotp_devtype {
-> > +	IMX8QXP,
-> > +};
-> > +
-> > +struct ocotp_devtype_data {
-> > +	int devtype;
-> > +	int nregs;
-> > +};
-> > +
-> > +struct ocotp_priv {
-> > +	struct device *dev;
-> > +	const struct ocotp_devtype_data *data;
-> > +	struct imx_sc_ipc *nvmem_ipc;
-> > +};
-> > +
-> > +struct imx_sc_msg_req_misc_fuse_read {
-> > +	struct imx_sc_rpc_msg hdr;
-> > +	u32 word;
-> > +} __packed;
-> > +
-> > +struct imx_sc_msg_resp_misc_fuse_read {
-> > +	struct imx_sc_rpc_msg hdr;
-> > +	u32 val;
-> > +} __packed;
-> > +
-> 
-> How about
-> struct imx_sc_msg_misc_fuse_read {
-> 	struct imx_sc_rpc_msg hdr;
-> 	union {
-> 		u32 word;
-> 		u32 val;
-> 	} data;
-> } __packed;
-
-Then no need union, just "word" is ok here.
-Fix in V3.
+Can you split include/linux/ change from the rest?
 
 > 
-> Then we can save one struct and convert.
+> Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
+> ---
+>  drivers/clk/bcm/clk-bcm2835.c                    | 4 +---
+>  drivers/gpio/gpiolib-of.c                        | 2 +-
+>  drivers/gpu/drm/i915/intel_pipe_crc.c            | 2 +-
+>  drivers/mfd/omap-usb-host.c                      | 2 +-
+>  drivers/net/wireless/intel/iwlwifi/mvm/debugfs.c | 2 +-
+>  drivers/pci/pcie/aer.c                           | 2 +-
+>  drivers/usb/common/common.c                      | 4 ++--
+>  drivers/usb/typec/class.c                        | 8 +++-----
+>  drivers/usb/typec/tps6598x.c                     | 2 +-
+>  drivers/vfio/vfio.c                              | 4 +---
+>  include/linux/string.h                           | 9 +++++++++
+>  sound/firewire/oxfw/oxfw.c                       | 2 +-
+>  sound/soc/codecs/max98088.c                      | 2 +-
+>  sound/soc/codecs/max98095.c                      | 2 +-
+>  14 files changed, 25 insertions(+), 22 deletions(-)
 > 
-> > +static struct ocotp_devtype_data imx8qxp_data = {
-> > +	.devtype = IMX8QXP,
-> > +	.nregs = 800,
-> > +};
-> > +
-> > +static int imx_sc_misc_otp_fuse_read(struct imx_sc_ipc *ipc, u32 word,
-> > +				     u32 *val)
-> > +{
-> > +	struct imx_sc_msg_req_misc_fuse_read msg;
-> > +	struct imx_sc_msg_resp_misc_fuse_read *resp;
-> > +	struct imx_sc_rpc_msg *hdr = &msg.hdr;
-> > +	int ret;
-> > +
-> > +	hdr->ver = IMX_SC_RPC_VERSION;
-> > +	hdr->svc = (uint8_t)IMX_SC_RPC_SVC_MISC;
-> > +	hdr->func = (uint8_t)IMX_SC_MISC_FUNC_OTP_FUSE_READ;
+> diff --git a/drivers/clk/bcm/clk-bcm2835.c b/drivers/clk/bcm/clk-bcm2835.c
+> index a775f6a1f717..1ab388590ead 100644
+> --- a/drivers/clk/bcm/clk-bcm2835.c
+> +++ b/drivers/clk/bcm/clk-bcm2835.c
+> @@ -1390,9 +1390,7 @@ static struct clk_hw *bcm2835_register_clock(struct bcm2835_cprman *cprman,
+>  	for (i = 0; i < data->num_mux_parents; i++) {
+>  		parents[i] = data->parents[i];
+>  
+> -		ret = __match_string(cprman_parent_names,
+> -				     ARRAY_SIZE(cprman_parent_names),
+> -				     parents[i]);
+> +		ret = match_string(cprman_parent_names, parents[i]);
+>  		if (ret >= 0)
+>  			parents[i] = cprman->real_parent_names[ret];
+>  	}
+> diff --git a/drivers/gpio/gpiolib-of.c b/drivers/gpio/gpiolib-of.c
+> index 27d6f04ab58e..71e886869d78 100644
+> --- a/drivers/gpio/gpiolib-of.c
+> +++ b/drivers/gpio/gpiolib-of.c
+> @@ -279,7 +279,7 @@ static struct gpio_desc *of_find_regulator_gpio(struct device *dev, const char *
+>  	if (!con_id)
+>  		return ERR_PTR(-ENOENT);
+>  
+> -	i = __match_string(whitelist, ARRAY_SIZE(whitelist), con_id);
+> +	i = match_string(whitelist, con_id);
+>  	if (i < 0)
+>  		return ERR_PTR(-ENOENT);
+>  
+> diff --git a/drivers/gpu/drm/i915/intel_pipe_crc.c b/drivers/gpu/drm/i915/intel_pipe_crc.c
+> index 286fad1f0e08..6fc4f3d3d1f6 100644
+> --- a/drivers/gpu/drm/i915/intel_pipe_crc.c
+> +++ b/drivers/gpu/drm/i915/intel_pipe_crc.c
+> @@ -449,7 +449,7 @@ display_crc_ctl_parse_source(const char *buf, enum intel_pipe_crc_source *s)
+>  		return 0;
+>  	}
+>  
+> -	i = __match_string(pipe_crc_sources, ARRAY_SIZE(pipe_crc_sources), buf);
+> +	i = match_string(pipe_crc_sources, buf);
+>  	if (i < 0)
+>  		return i;
+>  
+> diff --git a/drivers/mfd/omap-usb-host.c b/drivers/mfd/omap-usb-host.c
+> index 9aaacb5bdb26..53dff34c0afc 100644
+> --- a/drivers/mfd/omap-usb-host.c
+> +++ b/drivers/mfd/omap-usb-host.c
+> @@ -509,7 +509,7 @@ static int usbhs_omap_get_dt_pdata(struct device *dev,
+>  			continue;
+>  
+>  		/* get 'enum usbhs_omap_port_mode' from port mode string */
+> -		ret = __match_string(port_modes, ARRAY_SIZE(port_modes), mode);
+> +		ret = match_string(port_modes, mode);
+>  		if (ret < 0) {
+>  			dev_warn(dev, "Invalid port%d-mode \"%s\" in device tree\n",
+>  					i, mode);
+> diff --git a/drivers/net/wireless/intel/iwlwifi/mvm/debugfs.c b/drivers/net/wireless/intel/iwlwifi/mvm/debugfs.c
+> index 59ce3ff35553..778b4dfd8b75 100644
+> --- a/drivers/net/wireless/intel/iwlwifi/mvm/debugfs.c
+> +++ b/drivers/net/wireless/intel/iwlwifi/mvm/debugfs.c
+> @@ -667,7 +667,7 @@ iwl_dbgfs_bt_force_ant_write(struct iwl_mvm *mvm, char *buf,
+>  	};
+>  	int ret, bt_force_ant_mode;
+>  
+> -	ret = __match_string(modes_str, ARRAY_SIZE(modes_str), buf);
+> +	ret = match_string(modes_str, buf);
+>  	if (ret < 0)
+>  		return ret;
+>  
+> diff --git a/drivers/pci/pcie/aer.c b/drivers/pci/pcie/aer.c
+> index 41a0773a1cbc..2278caba109c 100644
+> --- a/drivers/pci/pcie/aer.c
+> +++ b/drivers/pci/pcie/aer.c
+> @@ -203,7 +203,7 @@ void pcie_ecrc_get_policy(char *str)
+>  {
+>  	int i;
+>  
+> -	i = __match_string(ecrc_policy_str, ARRAY_SIZE(ecrc_policy_str), str);
+> +	i = match_string(ecrc_policy_str, str);
+>  	if (i < 0)
+>  		return;
+>  
+> diff --git a/drivers/usb/common/common.c b/drivers/usb/common/common.c
+> index bca0c404c6ca..5a651d311d38 100644
+> --- a/drivers/usb/common/common.c
+> +++ b/drivers/usb/common/common.c
+> @@ -68,7 +68,7 @@ enum usb_device_speed usb_get_maximum_speed(struct device *dev)
+>  	if (ret < 0)
+>  		return USB_SPEED_UNKNOWN;
+>  
+> -	ret = __match_string(speed_names, ARRAY_SIZE(speed_names), maximum_speed);
+> +	ret = match_string(speed_names, maximum_speed);
+>  
+>  	return (ret < 0) ? USB_SPEED_UNKNOWN : ret;
+>  }
+> @@ -106,7 +106,7 @@ static enum usb_dr_mode usb_get_dr_mode_from_string(const char *str)
+>  {
+>  	int ret;
+>  
+> -	ret = __match_string(usb_dr_modes, ARRAY_SIZE(usb_dr_modes), str);
+> +	ret = match_string(usb_dr_modes, str);
+>  	return (ret < 0) ? USB_DR_MODE_UNKNOWN : ret;
+>  }
+>  
+> diff --git a/drivers/usb/typec/class.c b/drivers/usb/typec/class.c
+> index 4abc5a76ec51..38ac776cba8a 100644
+> --- a/drivers/usb/typec/class.c
+> +++ b/drivers/usb/typec/class.c
+> @@ -1409,8 +1409,7 @@ EXPORT_SYMBOL_GPL(typec_set_pwr_opmode);
+>   */
+>  int typec_find_port_power_role(const char *name)
+>  {
+> -	return __match_string(typec_port_power_roles,
+> -			      ARRAY_SIZE(typec_port_power_roles), name);
+> +	return match_string(typec_port_power_roles, name);
+>  }
+>  EXPORT_SYMBOL_GPL(typec_find_port_power_role);
+>  
+> @@ -1424,7 +1423,7 @@ EXPORT_SYMBOL_GPL(typec_find_port_power_role);
+>   */
+>  int typec_find_power_role(const char *name)
+>  {
+> -	return __match_string(typec_roles, ARRAY_SIZE(typec_roles), name);
+> +	return match_string(typec_roles, name);
+>  }
+>  EXPORT_SYMBOL_GPL(typec_find_power_role);
+>  
+> @@ -1438,8 +1437,7 @@ EXPORT_SYMBOL_GPL(typec_find_power_role);
+>   */
+>  int typec_find_port_data_role(const char *name)
+>  {
+> -	return __match_string(typec_port_data_roles,
+> -			      ARRAY_SIZE(typec_port_data_roles), name);
+> +	return match_string(typec_port_data_roles, name);
+>  }
+>  EXPORT_SYMBOL_GPL(typec_find_port_data_role);
+>  
+> diff --git a/drivers/usb/typec/tps6598x.c b/drivers/usb/typec/tps6598x.c
+> index 0389e4391faf..0c4e47868590 100644
+> --- a/drivers/usb/typec/tps6598x.c
+> +++ b/drivers/usb/typec/tps6598x.c
+> @@ -423,7 +423,7 @@ static int tps6598x_check_mode(struct tps6598x *tps)
+>  	if (ret)
+>  		return ret;
+>  
+> -	switch (__match_string(modes, ARRAY_SIZE(modes), mode)) {
+> +	switch (match_string(modes, mode)) {
+>  	case TPS_MODE_APP:
+>  		return 0;
+>  	case TPS_MODE_BOOT:
+> diff --git a/drivers/vfio/vfio.c b/drivers/vfio/vfio.c
+> index b31585ecf48f..fe8283d3781b 100644
+> --- a/drivers/vfio/vfio.c
+> +++ b/drivers/vfio/vfio.c
+> @@ -637,9 +637,7 @@ static bool vfio_dev_whitelisted(struct device *dev, struct device_driver *drv)
+>  			return true;
+>  	}
+>  
+> -	return __match_string(vfio_driver_whitelist,
+> -			      ARRAY_SIZE(vfio_driver_whitelist),
+> -			      drv->name) >= 0;
+> +	return match_string(vfio_driver_whitelist, drv->name) >= 0;
+>  }
+>  
+>  /*
+> diff --git a/include/linux/string.h b/include/linux/string.h
+> index 531d04308ff9..07e9f89088df 100644
+> --- a/include/linux/string.h
+> +++ b/include/linux/string.h
+> @@ -194,6 +194,15 @@ static inline int strtobool(const char *s, bool *res)
+>  int __match_string(const char * const *array, size_t n, const char *string);
+>  int __sysfs_match_string(const char * const *array, size_t n, const char *s);
+>  
+> +/**
+> + * match_string - matches given string in an array
+> + * @_a: array of strings
+> + * @_s: string to match with
+> + *
+> + * Helper for __match_string(). Calculates the size of @a automatically.
+> + */
+> +#define match_string(_a, _s) __match_string(_a, ARRAY_SIZE(_a), _s)
+> +
+>  /**
+>   * sysfs_match_string - matches given string in an array
+>   * @_a: array of strings
+> diff --git a/sound/firewire/oxfw/oxfw.c b/sound/firewire/oxfw/oxfw.c
+> index 9ec5316f3bb5..433fc84c4f90 100644
+> --- a/sound/firewire/oxfw/oxfw.c
+> +++ b/sound/firewire/oxfw/oxfw.c
+> @@ -57,7 +57,7 @@ static bool detect_loud_models(struct fw_unit *unit)
+>  	if (err < 0)
+>  		return false;
+>  
+> -	return __match_string(models, ARRAY_SIZE(models), model) >= 0;
+> +	return match_string(models, model) >= 0;
+>  }
+>  
+>  static int name_card(struct snd_oxfw *oxfw)
+> diff --git a/sound/soc/codecs/max98088.c b/sound/soc/codecs/max98088.c
+> index 3ef743075bda..911ffe84c37e 100644
+> --- a/sound/soc/codecs/max98088.c
+> +++ b/sound/soc/codecs/max98088.c
+> @@ -1405,7 +1405,7 @@ static int max98088_get_channel(struct snd_soc_component *component, const char
+>  {
+>  	int ret;
+>  
+> -	ret = __match_string(eq_mode_name, ARRAY_SIZE(eq_mode_name), name);
+> +	ret = match_string(eq_mode_name, name);
+>  	if (ret < 0)
+>  		dev_err(component->dev, "Bad EQ channel name '%s'\n", name);
+>  	return ret;
+> diff --git a/sound/soc/codecs/max98095.c b/sound/soc/codecs/max98095.c
+> index cd69916d5dcb..d182d45d0c83 100644
+> --- a/sound/soc/codecs/max98095.c
+> +++ b/sound/soc/codecs/max98095.c
+> @@ -1636,7 +1636,7 @@ static int max98095_get_bq_channel(struct snd_soc_component *component,
+>  {
+>  	int ret;
+>  
+> -	ret = __match_string(bq_mode_name, ARRAY_SIZE(bq_mode_name), name);
+> +	ret = match_string(bq_mode_name, name);
+>  	if (ret < 0)
+>  		dev_err(component->dev, "Bad biquad channel name '%s'\n", name);
+>  	return ret;
+> -- 
+> 2.17.1
 > 
-> Pls drop the unnecessary type conversion.
 
-Ok.
+-- 
+With Best Regards,
+Andy Shevchenko
 
-> 
-> > +	hdr->size = 2;
-> > +
-> > +	msg.word = word;
-> > +
-> > +	ret = imx_scu_call_rpc(ipc, &msg, true);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	resp = (struct imx_sc_msg_resp_misc_fuse_read *)&msg;
-> > +	if (val != NULL)
-> 
-> Drop this unnecessary check
 
-ok.
-
-> 
-> > +		*val = resp->val;
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int imx_scu_ocotp_read(void *context, unsigned int offset,
-> > +			      void *val, size_t bytes)
-> > +{
-> > +	struct ocotp_priv *priv = context;
-> > +	u32 count, index, num_bytes;
-> > +	u32 *buf;
-> > +	void *p;
-> > +	int i, ret;
-> > +
-> > +	index = offset >> 2;
-> > +	num_bytes = round_up((offset % 4) + bytes, 4);
-> > +	count = num_bytes >> 2;
-> > +
-> > +	if (count > (priv->data->nregs - index))
-> > +		count = priv->data->nregs - index;
-> > +
-> > +	p = kzalloc(num_bytes, GFP_KERNEL);
-> > +	if (!p)
-> > +		return -ENOMEM;
-> > +
-> > +	buf = p;
-> > +
-> > +	for (i = index; i < (index + count); i++) {
-> > +		if (priv->data->devtype == IMX8QXP) {
-> > +			if ((i > 271) && (i < 544)) {
-> > +				*(u32 *)buf = 0;
-> 
-> Still need convert?
-
-Will drop the convert.
-
-> 
-> > +				buf += 4;
-> 
-> I'm not sure this is right
-> Shouldn't it be buf++ ?
-
-You are right. Forget the fix the hole part.
-
-> 
-> > +				continue;
-> > +			}
-> > +		}
-> > +
-> > +		ret = imx_sc_misc_otp_fuse_read(priv->nvmem_ipc, i, buf);
-> > +		if (ret) {
-> > +			kfree(p);
-> > +			return ret;
-> > +		}
-> > +		buf++;
-> > +	}
-> > +
-> > +	memcpy(val, p + offset % 4, bytes);
-> 
-> Is there a build warning?
-> I wonder a more safe way maybe:
-> memcpy(val, (u8 *)p + offset % 4, byptes);
-
-I did not meet issue. Fix in v3.
-
-Thanks,
-Peng.
-
-> 
-> Regards
-> Dong Aisheng
-> 
-> > +
-> > +	kfree(p);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static struct nvmem_config imx_scu_ocotp_nvmem_config = {
-> > +	.name = "imx-scu-ocotp",
-> > +	.read_only = true,
-> > +	.word_size = 4,
-> > +	.stride = 1,
-> > +	.owner = THIS_MODULE,
-> > +	.reg_read = imx_scu_ocotp_read,
-> > +};
-> > +
-> > +static const struct of_device_id imx_scu_ocotp_dt_ids[] = {
-> > +	{ .compatible = "fsl,imx8qxp-scu-ocotp", (void *)&imx8qxp_data },
-> > +	{ },
-> > +};
-> > +MODULE_DEVICE_TABLE(of, imx_scu_ocotp_dt_ids);
-> > +
-> > +static int imx_scu_ocotp_probe(struct platform_device *pdev) {
-> > +	struct device *dev = &pdev->dev;
-> > +	struct ocotp_priv *priv;
-> > +	struct nvmem_device *nvmem;
-> > +	int ret;
-> > +
-> > +	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-> > +	if (!priv)
-> > +		return -ENOMEM;
-> > +
-> > +	ret = imx_scu_get_handle(&priv->nvmem_ipc);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	priv->data = of_device_get_match_data(dev);
-> > +	priv->dev = dev;
-> > +	imx_scu_ocotp_nvmem_config.size = 4 * priv->data->nregs;
-> > +	imx_scu_ocotp_nvmem_config.dev = dev;
-> > +	imx_scu_ocotp_nvmem_config.priv = priv;
-> > +	nvmem = devm_nvmem_register(dev, &imx_scu_ocotp_nvmem_config);
-> > +
-> > +	return PTR_ERR_OR_ZERO(nvmem);
-> > +}
-> > +
-> > +static struct platform_driver imx_scu_ocotp_driver = {
-> > +	.probe	= imx_scu_ocotp_probe,
-> > +	.driver = {
-> > +		.name	= "imx_scu_ocotp",
-> > +		.of_match_table = imx_scu_ocotp_dt_ids,
-> > +	},
-> > +};
-> > +module_platform_driver(imx_scu_ocotp_driver);
-> > +
-> > +MODULE_AUTHOR("Peng Fan <peng.fan@nxp.com>");
-> > +MODULE_DESCRIPTION("i.MX8 SCU OCOTP fuse box driver");
-> > +MODULE_LICENSE("GPL v2");
-> > --
-> > 2.16.4
 
 _______________________________________________
 linux-arm-kernel mailing list
