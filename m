@@ -2,83 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB6B418286
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 01:06:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6C4C18295
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 01:10:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jc8yf3ybuitvtm/qp7VxJG83MsefFog0hIHVkD+PCKk=; b=gG8aUUHHv9i/q8
-	PyoUzx1ec4ch2mYDZeS01SbWVVkn8o+kRfFEjf5Fpi4tKNdlew5iDqyeB6um043DsMTVC+NFQA9h+
-	njKs6ppo29vR5I75iwSaC+QOuQ7voxfpv+0EWY7ZE36Z5ODfwfKIgmCA9iqGLAxqday1pRItCibNP
-	0SCvkcafH2mb2FcBY93oXAPYvtiBkPdfqmRqvfsQrtF7vmtnkWFDZiiWmJTINqAaVuarxNZDKmanq
-	KazvyWnIDaeYY07U5QbWymF5lgnqttYDHf783G6q2v4Yjjz2sR021EfZiN014iTyddFGr3UCZlkIu
-	ABDE6S/KMuG3nHS1jpcQ==;
+	List-Owner; bh=nliQhoSm47tWGGry89oTFMvTTLEoJBsVTFdEqyaSZvo=; b=ENz82euoSyyymX
+	rDEeqyo9xdK0PIcvInPr08eaoO7SY1lowuKYGpmhy1k5g1lD35CWmZlPAV0KalD/2saB0a4OnZ9m6
+	0Z5CmptF/6Ac5I1pwMEdwTocXfabCoMTf9W1uoeW8+MYEX/WyRlm0i8Wg6FeYS35dOppNzkO8o6Al
+	jPxfa/J/n2WZVuFGzyxNi686veMlDr33zcSPuciYxKuJDj613Q/uviKnW1mMnpIaewvVR20vZhEVT
+	iRdUgOLbtj8iVBnZgHv9pyj8QV1jxXYA6YITHjaJ53MMb0lpX3TRaE81W9s6ao/8SJkT1wUi3LEtb
+	1Sm2RrUtMvjxUyHEAM4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOVdc-0001RY-GS; Wed, 08 May 2019 23:06:12 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hOVi8-00035U-UI; Wed, 08 May 2019 23:10:52 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOVdS-0001Oz-9c
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 23:06:03 +0000
-Received: by mail-pf1-x442.google.com with SMTP id c6so210173pfa.10
+ id 1hOVi1-00034L-9P
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 23:10:46 +0000
+Received: by mail-pg1-x544.google.com with SMTP id j26so151807pgl.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 May 2019 16:06:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=t70/GD4+TaRx0FldKygqFoHbNhYk6zrpT7AiFIAmSv8=;
- b=Fri/TeXVgYyjnZIznu8q6N0IGTnkTrWQ18au3lSfnWfTG2ZkiTI61O2C5RTAOwTbzh
- OdpGEjCviMHWxMXYyIZlCsQjhEELlWLfMl8Sc/p56Dx+j9VsCBaaYQBnnH66PliOTrmZ
- mDi3GShJzoUAch6DLpF6CSaLmHpU47T9SDG4vywGULaiGbndDQeseshOQq2oaIK1xnIa
- 7DfVK8J85+hcEOgz4faGuxCOPYX+0C6wIcwG2YjqvxUs09Xy5YmVO5dsYRTlE1euOtH5
- H4sANH12QAmjf4yiYG76OG+ixN+EPk9jSUGf+8UiGYbxBgvkGyjKJTbWx+44piU+4cmf
- Xqyw==
+ Wed, 08 May 2019 16:10:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=+LJ0Cn1Gl3738/eaWlowVBGhukI/6ESTOQgJ9l5ewls=;
+ b=emG0HjPmMtIxbDy1mRJavqqP+Ml3Y914i4uRgoQIRwviNF54fnhl5HayKi3NJRzygJ
+ dIyFgllAOMeHEtGNWSbXpJYStZqnj6WUtST5tTTIBTlXhYZlFnTnpEZ6lvdbvkTFUXKq
+ hAMx7By6W8m+cWdFA0Ej6EPmp9lksdcrS3uw6kBXsCE1ATMOCP7Gp9XEakgYxzgbxOTl
+ vWzMvH+C6UwCjjFdgxJ9Ze1m405zXBdAyzfzCE9JV+XZ3D0AgDM2RAWe/RWkklhNxOvW
+ sCYe1hGlKD8B11I6+kfKT0s+hmal9qhM2haJtC0Bz0jtFyCMSQ3lg0dVgnLKzhtDEJc4
+ grMg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=t70/GD4+TaRx0FldKygqFoHbNhYk6zrpT7AiFIAmSv8=;
- b=LGTXkIPqIPG6NbYaDK1HiVKrGD1m8oFS/qN78SOp9c49SpMO7VRfBRQ/9vK1M73v6F
- 30zFI9M/75J5DSqwy+mu33avoPxGZLxCpSzo4F7mnImB3Uo0yflhzJSUQfBG5PYsnZMA
- mBV3WW5YiemAtytMYABzH1z+/YEkqnS7zFQ9Q4IgPzpPgu1GOBMPZ2uWRx3jJWKSlKBf
- HrItW9mwyTOB6EI55h+dkrOhHGhQ/QksNcpwXFCR7v4ipgkjRqTDRck0A5qwDWeFwHzH
- hvhTyqpl0uR1TUyNQRVTcSElWB03tPGC+S6VCrYOLEGltKOxoqCkHgyVC3l2aSO7vlek
- K1HA==
-X-Gm-Message-State: APjAAAXd92sjSzByYhCk2OMKt8+zVB6H7kw3W4+w93BaRe5urwk3lYkf
- kFUSfefRggmaeO7HqV2pi0mAsw==
-X-Google-Smtp-Source: APXvYqzyTGl8pYlwhBLIqpAgx01vbZZrXGfIdb6DXQWdcD9rkNEl4DqkLmLEqp06fO3s5T37XBQMnQ==
-X-Received: by 2002:a65:6490:: with SMTP id e16mr938694pgv.13.1557356761644;
- Wed, 08 May 2019 16:06:01 -0700 (PDT)
-Received: from localhost ([2601:602:9200:a1a5:a864:57af:5348:a6ea])
- by smtp.googlemail.com with ESMTPSA id 63sm385693pfu.95.2019.05.08.16.06.00
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=+LJ0Cn1Gl3738/eaWlowVBGhukI/6ESTOQgJ9l5ewls=;
+ b=kQ/f4pObK8J4cdeEm/Bs6iDcN01X/QHlP5SSpf9m6BWudSFtLrpwpPiKSR5qEaMtXr
+ df0yjAZSw8aKSgsUdDVgUw8DjmKrPEBe+pPwK44+qaelkDdSiwfffzYrbJK3zVTNVXbd
+ KgL0s/OGXKeaF92btofFbYkZh0TFKGoe2gNNCXDkWMemrLWYSaDFN8Df3Q+xgAPB6niE
+ lSf26GLWPav/C89JDnAz1K2S+7I3goPdLfcncJvtOjKIKeLDtIx954tXJ6asl6q7U/pb
+ lT751TB6fkuZXwkEzcTfNyOOf+eSHYyXAxVS4ADHoA94imtUYs4KY8Rj1Y3z4EZ7INQG
+ /+JQ==
+X-Gm-Message-State: APjAAAWF/ab7AJuJ61uujzZ+FRpiQ+sXHZZLdaKbBrF8g4K/hQmEjBep
+ nixddf0lUddiA4S6W/uK76g=
+X-Google-Smtp-Source: APXvYqwuQNwbOiDiZ2cfsPquiOdg62y/kOwmhRURMa7Q5QSdhFbfEdDCJIe7hUK4HDFz2wpB9NOLOQ==
+X-Received: by 2002:a65:49c7:: with SMTP id t7mr996240pgs.324.1557357044045;
+ Wed, 08 May 2019 16:10:44 -0700 (PDT)
+Received: from localhost ([2601:640:0:ebed:19d3:11c4:475e:3daa])
+ by smtp.gmail.com with ESMTPSA id w38sm287165pgk.90.2019.05.08.16.10.43
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 08 May 2019 16:06:00 -0700 (PDT)
-From: Kevin Hilman <khilman@baylibre.com>
-To: Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH 0/3] arm64: meson-g12a: Add Infrared Decoder support
-In-Reply-To: <20190412100518.24470-1-narmstrong@baylibre.com>
-References: <20190412100518.24470-1-narmstrong@baylibre.com>
-Date: Wed, 08 May 2019 16:05:59 -0700
-Message-ID: <7hy33gh7hk.fsf@baylibre.com>
+ Wed, 08 May 2019 16:10:43 -0700 (PDT)
+Date: Wed, 8 May 2019 16:10:35 -0700
+From: Yury Norov <yury.norov@gmail.com>
+To: Yury Norov <ynorov@caviumnetworks.com>
+Subject: Re: [PATCH v9 00/24] ILP32 for ARM64
+Message-ID: <20190508231035.GB14091@yury-thinkpad>
+References: <20180516081910.10067-1-ynorov@caviumnetworks.com>
+ <20190508225900.GA14091@yury-thinkpad>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190508225900.GA14091@yury-thinkpad>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_160602_338224_F8177222 
-X-CRM114-Status: UNSURE (   7.80  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190508_161045_405063_ACF22502 
+X-CRM114-Status: GOOD (  14.97  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (yury.norov[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -91,22 +99,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: baylibre-upstreaming@groups.io, linux-amlogic@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Neil Armstrong <narmstrong@baylibre.com>
+Cc: linux-doc@vger.kernel.org, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Yury Norov <yury.norov@gmail.com>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
+ Joseph Myers <joseph@codesourcery.com>, linux-arch@vger.kernel.org,
+ Steve Ellcey <sellcey@caviumnetworks.com>, Yury Norov <ynorov@marvell.com>,
+ Prasun Kapoor <Prasun.Kapoor@caviumnetworks.com>,
+ Andreas Schwab <schwab@suse.de>, Alexander Graf <agraf@suse.de>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Bamvor Zhangjian <bamv2005@gmail.com>, Dave Martin <Dave.Martin@arm.com>,
+ Adam Borowski <kilobyte@angband.pl>,
+ Manuel Montezelo <manuel.montezelo@gmail.com>,
+ James Hogan <james.hogan@imgtec.com>, Chris Metcalf <cmetcalf@mellanox.com>,
+ Arnd Bergmann <arnd@arndb.de>, Andrew Pinski <pinskia@gmail.com>,
+ Lin Yongting <linyongting@huawei.com>, Alexey Klimov <klimov.linux@gmail.com>,
+ Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Maxim Kuvyrkov <maxim.kuvyrkov@linaro.org>,
+ Florian Weimer <fweimer@redhat.com>, linux-api@vger.kernel.org,
+ Nathan_Lynch <Nathan_Lynch@mentor.com>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.gcc@googlemail.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ "David S . Miller" <davem@davemloft.net>,
+ Christoph Muellner <christoph.muellner@theobroma-systems.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Neil Armstrong <narmstrong@baylibre.com> writes:
+On Wed, May 08, 2019 at 03:59:00PM -0700, Yury Norov wrote:
+> Hi all,
+> 
+> On Wed, May 16, 2018 at 11:18:45AM +0300, Yury Norov wrote:
+> > This series enables AARCH64 with ILP32 mode.
+> > 
+> > As supporting work, it introduces ARCH_32BIT_OFF_T configuration
+> > option that is enabled for existing 32-bit architectures but disabled
+> > for new arches (so 64-bit off_t userspace type is used by new userspace).
+> > Also it deprecates getrlimit and setrlimit syscalls prior to prlimit64.
+> > 
+> > Based on kernel v4.16. Tested with LTP, glibc testsuite, trinity, lmbench,
+> > CPUSpec.
+> > 
+> > This series on github: 
+> > https://github.com/norov/linux/tree/ilp32-4.16
+> > Linaro toolchain:
+> > http://snapshots.linaro.org/components/toolchain/binaries/7.3-2018.04-rc1/aarch64-linux-gnu_ilp32/
+> > Debian repo:
+> > http://people.linaro.org/~wookey/ilp32/
+> > OpenSUSE repo:
+> > https://build.opensuse.org/project/show/devel:ARM:Factory:Contrib:ILP32
+> 
+> This is the 5.1-based version.
+> Changes comparing to 5.0:
+>  - drop arch patches that has been taken upstream:
+>    80d7da1cac62 asm-generic: Drop getrlimit and setrlimit syscalls from default list
+>    942fa985e9f1 32-bit userspace ABI: introduce ARCH_32BIT_OFF_T config option
+>    0d0216c03a7a compat ABI: use non-compat openat and open_by_handle_at variants
+>  - in include/linux/thread_bits.h define current_thread_info() prior to
+>    inclusion of asm/thread_info.h, to avoid circullar dependencies (thread: move
+>    thread bits accessors to separated file);
+>  - enable old IPC interfaces for ilp32, according to mainline changes
+>    (arm64: ilp32: introduce syscall table for ILP32).
 
-> Add Infrared Decoder support for the Amlogic G12A and enable it on the
-> X96 Max and U200 Reference Design boards.
+Missed link:
+https://github.com/norov/linux/tree/ilp32-5.1
 
-Queued for v5.3 (branch: v5.3/dt64)
-
-Kevin
+> 
+> Thanks,
+> Yury
 
 _______________________________________________
 linux-arm-kernel mailing list
