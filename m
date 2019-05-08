@@ -2,146 +2,108 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4AF1F17864
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 13:35:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A429517869
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 13:36:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mi9lxmrdYG/ajDycS427x+Dx73MRIRhy8mdGGTrQPbY=; b=XI2fVnCsPlK7d3
-	G0gDfmBdgHkfAtFbiENupOZgEJN6SRU6hWpDErEvrHnzdg+reYinE2aXEX0EPk8vxNsxUjKQLASvV
-	jVIEHsR8rm2PnR+tDlh7kfKp+GEh5FD8MwQvu5ShpzZBe9/UvuOoTbKunQ74SYjWTdQpSS9RcR0q4
-	sWEgcPPywkbtOwjHZK7M2wkQv/8UzwOrbIdrBa5W8sKstbVBnuJkIaznd7kCR7B+cESthvBFztUfK
-	zKsOE4Q1v/dQAxP7BM9kSowXaMOBQJyd5Tj/X21NoZXCHBjJgDQO/3qSw0yLRnh0+/4KjXrHEvrMA
-	RF+itUa/awat6wYIlMWA==;
+	List-Owner; bh=vFDnDBsRi0rUmm1IIuP/b0dY+Fk+3RgruVnTj800ado=; b=dZFoj8VWYfondX
+	qnTNFAhrzIBcuF39PHzhOaJHpe9GRAWp71mXIhCj5y6IEmkKgUclHgHxxA8lRttxjAENC1fy+3PpJ
+	hSY1Za25Wd3Y0jh4iJO6guNOrlEYnclNCUbNE79u6G5tq/b1DB9yTOHDyADMnT37YVjLnz9LzmE0m
+	F6DhheSvTG7jHuJYEvnEb4lYn8MdztC2Tum8zaKuNeQjyW1gsx8WN8NdmX23JuXNkNVIogdeS7H0b
+	gUOpWx6PcYpr/K0HOUyVBrIL+CbLKXNso4MrmvXP1SrA6e131s3nYDUaOVJXPETEh9GMi6FgWOiye
+	S5X0fb9/O3k0R7gcfpSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOKrJ-0007Ph-9c; Wed, 08 May 2019 11:35:37 +0000
-Received: from mail-eopbgr740051.outbound.protection.outlook.com
- ([40.107.74.51] helo=NAM01-BN3-obe.outbound.protection.outlook.com)
+	id 1hOKrm-00081l-CU; Wed, 08 May 2019 11:36:06 +0000
+Received: from mail-eopbgr130050.outbound.protection.outlook.com
+ ([40.107.13.50] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOKnD-0001GV-OJ; Wed, 08 May 2019 11:32:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=analog.onmicrosoft.com; s=selector1-analog-com;
+ id 1hOKqX-0005M5-Kq
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 11:35:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5znCPRPKBRTF+JsmgIj6aBz2AD2vefu9H7uU0wxS3Bk=;
- b=ST5Z/dIpKXaTMbKZaXyicKhHdXlzGRr2cvNr4QiUG7GY+t2c8tYrS8HUzZk7zoQX2Sqwe4wEAPF+A8JRA7yBnsNWwHplIEFbWx98uHp1nu1y/AQc7kTAAlpBLD/QdcBgnMXwfvYN222CXVA7LOxKe+AxnGT9uWSdnYuXbWlIovg=
-Received: from BN3PR03CA0101.namprd03.prod.outlook.com (2603:10b6:400:4::19)
- by DM2PR03MB559.namprd03.prod.outlook.com (2a01:111:e400:241d::28) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1856.12; Wed, 8 May
- 2019 11:31:18 +0000
-Received: from BL2NAM02FT039.eop-nam02.prod.protection.outlook.com
- (104.47.38.57) by BN3PR03CA0101.outlook.office365.com (10.174.66.19) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1878.21 via Frontend
- Transport; Wed, 8 May 2019 11:31:17 +0000
-Authentication-Results: spf=pass (sender IP is 137.71.25.55)
- smtp.mailfrom=analog.com; linuxfoundation.org; dkim=none (message not signed)
- header.d=none;linuxfoundation.org; dmarc=bestguesspass action=none
- header.from=analog.com;
-Received-SPF: Pass (protection.outlook.com: domain of analog.com designates
- 137.71.25.55 as permitted sender) receiver=protection.outlook.com;
- client-ip=137.71.25.55; helo=nwd2mta1.analog.com;
-Received: from nwd2mta1.analog.com (137.71.25.55) by
- BL2NAM02FT039.mail.protection.outlook.com (10.152.77.152) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.1856.11
- via Frontend Transport; Wed, 8 May 2019 11:31:17 +0000
-Received: from NWD2HUBCAS7.ad.analog.com (nwd2hubcas7.ad.analog.com
- [10.64.69.107])
- by nwd2mta1.analog.com (8.13.8/8.13.8) with ESMTP id x48BVHaS024094
- (version=TLSv1/SSLv3 cipher=AES256-SHA bits=256 verify=OK);
- Wed, 8 May 2019 04:31:17 -0700
-Received: from NWD2MBX7.ad.analog.com ([fe80::190e:f9c1:9a22:9663]) by
- NWD2HUBCAS7.ad.analog.com ([fe80::595b:ced1:cc03:539d%12]) with mapi id
- 14.03.0415.000; Wed, 8 May 2019 07:31:17 -0400
-From: "Ardelean, Alexandru" <alexandru.Ardelean@analog.com>
-To: "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-ide@vger.kernel.org" <linux-ide@vger.kernel.org>,
- "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "cgroups@vger.kernel.org" <cgroups@vger.kernel.org>,
- "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>, "linux-mm@kvack.org"
- <linux-mm@kvack.org>, "linux-omap@vger.kernel.org"
- <linux-omap@vger.kernel.org>, "linux-gpio@vger.kernel.org"
- <linux-gpio@vger.kernel.org>, "linux-security-module@vger.kernel.org"
- <linux-security-module@vger.kernel.org>, "devel@driverdev.osuosl.org"
- <devel@driverdev.osuosl.org>, "linux-integrity@vger.kernel.org"
- <linux-integrity@vger.kernel.org>, "linux-fbdev@vger.kernel.org"
- <linux-fbdev@vger.kernel.org>, "dri-devel@lists.freedesktop.org"
- <dri-devel@lists.freedesktop.org>, "linux-rpi-kernel@lists.infradead.org"
- <linux-rpi-kernel@lists.infradead.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "netdev@vger.kernel.org"
- <netdev@vger.kernel.org>, "alsa-devel@alsa-project.org"
- <alsa-devel@alsa-project.org>, "linux-rockchip@lists.infradead.org"
- <linux-rockchip@lists.infradead.org>, "linux-clk@vger.kernel.org"
- <linux-clk@vger.kernel.org>, "linux-pci@vger.kernel.org"
- <linux-pci@vger.kernel.org>, "linux-wireless@vger.kernel.org"
- <linux-wireless@vger.kernel.org>, "linux-mtd@lists.infradead.org"
- <linux-mtd@lists.infradead.org>, "linux-tegra@vger.kernel.org"
- <linux-tegra@vger.kernel.org>
-Subject: Re: [PATCH 01/16] lib: fix match_string() helper on -1 array size
-Thread-Topic: [PATCH 01/16] lib: fix match_string() helper on -1 array size
-Thread-Index: AQHVBZFHmipnRagpkkSQZ3QUXGEfCKZhWwOA
-Date: Wed, 8 May 2019 11:31:15 +0000
-Message-ID: <c8cfa5dbdfc0b0665d1b48f37ba57c3ec1233197.camel@analog.com>
-References: <20190508112842.11654-1-alexandru.ardelean@analog.com>
- <20190508112842.11654-2-alexandru.ardelean@analog.com>
-In-Reply-To: <20190508112842.11654-2-alexandru.ardelean@analog.com>
-Accept-Language: en-US
+ bh=qB1SbsCmwkm1HmMj2DG+JXsqDZA1DYn00mvMYZU3xHI=;
+ b=evzsZiJE2s+9DRbcRlsES1P8K6El8TkjL2r9LTCjn5JVV9kVEFZmvfVi3ilHQUhBkyPZJMB/9rv7RTr2DwZtaYG5Lw3Z1+Wnp28ghXvahD1XSnTJONXHXkXtZItF+WcSk5KmkYNtRZX/xxWKyCj/z7S9LxNn0r5S4HYL81BA1f0=
+Received: from AM0PR04MB4353.eurprd04.prod.outlook.com (52.134.125.146) by
+ AM0PR04MB4657.eurprd04.prod.outlook.com (52.135.150.158) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1856.11; Wed, 8 May 2019 11:34:41 +0000
+Received: from AM0PR04MB4353.eurprd04.prod.outlook.com
+ ([fe80::e4fe:fbdc:448b:c8a6]) by AM0PR04MB4353.eurprd04.prod.outlook.com
+ ([fe80::e4fe:fbdc:448b:c8a6%7]) with mapi id 15.20.1856.012; Wed, 8 May 2019
+ 11:34:41 +0000
+From: Chuanhua Han <chuanhua.han@nxp.com>
+To: Sascha Hauer <s.hauer@pengutronix.de>
+Subject: RE: [EXT] Re: [PATCH 1/2] i2c: imx: I2C Driver doesn't consider
+ I2C_IPGCLK_SEL RCW bit when using ls1046a SoC
+Thread-Topic: [EXT] Re: [PATCH 1/2] i2c: imx: I2C Driver doesn't consider
+ I2C_IPGCLK_SEL RCW bit when using ls1046a SoC
+Thread-Index: AQHU/w+WtXmB7zSh+EKM7NDEvi24aqZUqIWAgAYQEbCAAwZvgIADZGxA
+Date: Wed, 8 May 2019 11:34:41 +0000
+Message-ID: <AM0PR04MB43534A9B1A146DEFA929844C97320@AM0PR04MB4353.eurprd04.prod.outlook.com>
+References: <20190430044719.30720-1-chuanhua.han@nxp.com>
+ <20190430125043.weqwzim4gpsvtkfe@pengutronix.de>
+ <AM6PR04MB43571B8D52C1FE9ED20DBA1D97360@AM6PR04MB4357.eurprd04.prod.outlook.com>
+ <20190506073735.ctzybytamu44pbvv@pengutronix.de>
+In-Reply-To: <20190506073735.ctzybytamu44pbvv@pengutronix.de>
+Accept-Language: zh-CN, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-originating-ip: [10.50.1.244]
-x-adiroutedonprem: True
-Content-ID: <BE083E2328EDB84B98DBA67ED168014A@analog.com>
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=chuanhua.han@nxp.com; 
+x-originating-ip: [92.121.36.198]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: f2774356-d24b-405f-a43c-08d6d3a9290f
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB4657; 
+x-ms-traffictypediagnostic: AM0PR04MB4657:
+x-ms-exchange-purlcount: 1
+x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+x-microsoft-antispam-prvs: <AM0PR04MB465735DDBB1B93142F4C5EE397320@AM0PR04MB4657.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:747;
+x-forefront-prvs: 0031A0FFAF
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(376002)(396003)(346002)(39860400002)(366004)(136003)(13464003)(189003)(199004)(478600001)(4326008)(25786009)(14454004)(71200400001)(8936002)(6436002)(71190400001)(966005)(81166006)(81156014)(8676002)(2906002)(316002)(54906003)(52536014)(256004)(55016002)(14444005)(86362001)(66556008)(9686003)(11346002)(66446008)(6246003)(446003)(26005)(64756008)(44832011)(229853002)(186003)(76116006)(66946007)(73956011)(6306002)(66476007)(53936002)(486006)(476003)(7736002)(305945005)(7416002)(74316002)(68736007)(53546011)(102836004)(6916009)(45080400002)(33656002)(6506007)(7696005)(99286004)(76176011)(3846002)(6116002)(5660300002)(66066001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4657;
+ H:AM0PR04MB4353.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: L8pshLA4qyjLcTIECishv4+tIlUcsPz/5pwFiU8cS9jaFvsa3UgtXBOMXd7ZZxW0OV2z7D3bNMfBQYs7NruIHqwgunb/+zZC8T45h++HKFWVF4CdfsgH0wdPHQ9SlWR1ZhdP89Zg6k/ka7VKZ64Q1hwrDFpAvWQ2lsZQief2gmlK6+Z66MdfxNy0ZxQCpemnfWCj0sNRBtjwMbSvsXHdFNDNT8JEjUpXAPFioEUF5FLOFEN9nD5uVJ/Tfr/ODY5M5/MOhZGkr6NznNPltXEiQ77pS444W2h/V/FnDtCvjewAWF9c3Qx4iCDy36fsqWjDIh87BuT51FzUEvab4dW4bYAD4i8LrvSQMosJCUDl9aPqILVF1WVOoBKoJmslIo2rrmtAxYcpLORJV8rLyptTQNP51OMVsSqW1fyNadwKxOc=
 MIME-Version: 1.0
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:137.71.25.55; IPV:NLI; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(1496009)(346002)(396003)(136003)(376002)(39860400002)(2980300002)(199004)(189003)(316002)(476003)(118296001)(6116002)(446003)(11346002)(47776003)(86362001)(356004)(336012)(7736002)(54906003)(7696005)(426003)(436003)(23676004)(76176011)(2201001)(50466002)(106002)(8676002)(186003)(305945005)(7636002)(26005)(126002)(102836004)(2501003)(7416002)(110136005)(2486003)(2616005)(6246003)(486006)(229853002)(3846002)(8936002)(4326008)(36756003)(14444005)(14454004)(478600001)(2906002)(246002)(70586007)(70206006)(5660300002)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM2PR03MB559; H:nwd2mta1.analog.com; FPR:;
- SPF:Pass; LANG:en; PTR:nwd2mail10.analog.com; A:1; MX:1; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 02c3a8a0-d0c1-4c80-7ddc-08d6d3a8afc4
-X-Microsoft-Antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4709054)(2017052603328)(7193020);
- SRVR:DM2PR03MB559; 
-X-MS-TrafficTypeDiagnostic: DM2PR03MB559:
-X-Microsoft-Antispam-PRVS: <DM2PR03MB559A4A2108CED3746037F44F9320@DM2PR03MB559.namprd03.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:8273;
-X-Forefront-PRVS: 0031A0FFAF
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info: i1sZYo6+MPS+6/7XgMeGmPbqVIlaaoyZKrXQV6LiPzw6/R3K/eQZlAf95MbvTFj8RMJWP0II8lSInFCoIulDFlCx/JsNMygVVJ8q/LRE3z17s0tpdivj0+b/UasOcUpBHIp3OQfHj2kaVyCS2BeUcnIF5LWbo+8vDRMk7TLK+H8tp8dbpETe3ScxHUYDc/wd8D9/9BbnuLxjBKjEY4u7N/823NDi/QpVZP4q5veHEW/X50PKJ719D70vsHOHlWnIvzgNsRQbuw/2iNQHJ6hMflZpi8FSBrssSpTJWXoBQ62jnwr7L3xJJTrS49pFG12Vg/fkREnj1kwJSBIkhC1aiEA+1Nhy/J5FlWq9cKCtZDZjNHFsY8zmnAX59M+MVqQAkGrEfd0btkJOD7ftl06mPopshHrrs1UdWTFfMEXIMS0=
-X-OriginatorOrg: analog.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 May 2019 11:31:17.5189 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 02c3a8a0-d0c1-4c80-7ddc-08d6d3a8afc4
-X-MS-Exchange-CrossTenant-Id: eaa689b4-8f87-40e0-9c6f-7228de4d754a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=eaa689b4-8f87-40e0-9c6f-7228de4d754a; Ip=[137.71.25.55];
- Helo=[nwd2mta1.analog.com]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM2PR03MB559
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: f2774356-d24b-405f-a43c-08d6d3a9290f
+X-MS-Exchange-CrossTenant-originalarrivaltime: 08 May 2019 11:34:41.0579 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4657
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_043124_245123_F2CA809C 
-X-CRM114-Status: GOOD (  19.27  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190508_043450_106838_6EBF49AD 
+X-CRM114-Status: GOOD (  22.59  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.74.51 listed in list.dnswl.org]
+ no trust [40.107.13.50 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -154,60 +116,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "andriy.shevchenko@linux.intel.com" <andriy.shevchenko@linux.intel.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Sumit Batra <sumit.batra@nxp.com>, "eha@deif.com" <eha@deif.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>,
+ "wsa+renesas@sang-engineering.com" <wsa+renesas@sang-engineering.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
+ "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
+ "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
+ "linux@rempel-privat.de" <linux@rempel-privat.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "peda@axentia.se" <peda@axentia.se>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ dl-linux-imx <linux-imx@nxp.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2019-05-08 at 14:28 +0300, Alexandru Ardelean wrote:
-> The documentation the `_match_string()` helper mentions that `n`
-> should be:
->  * @n: number of strings in the array or -1 for NULL terminated arrays
-> 
-> The behavior of the function is different, in the sense that it exits on
-> the first NULL element in the array, regardless of whether `n` is -1 or a
-> positive number.
-> 
-> This patch changes the behavior, to exit the loop when a NULL element is
-> found and n == -1. Essentially, this aligns the behavior with the
-> doc-string.
-> 
-> There are currently many users of `match_string()`, and so, in order to
-> go
-> through them, the next patches in the series will focus on doing some
-> cosmetic changes, which are aimed at grouping the users of
-> `match_string()`.
-> 
-
-This is the duplicate & should be dropped.
-Sorry for this.
-
-> Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
-> ---
->  lib/string.c | 5 ++++-
->  1 file changed, 4 insertions(+), 1 deletion(-)
-> 
-> diff --git a/lib/string.c b/lib/string.c
-> index 3ab861c1a857..76edb7bf76cb 100644
-> --- a/lib/string.c
-> +++ b/lib/string.c
-> @@ -648,8 +648,11 @@ int match_string(const char * const *array, size_t
-> n, const char *string)
->  
->  	for (index = 0; index < n; index++) {
->  		item = array[index];
-> -		if (!item)
-> +		if (!item) {
-> +			if (n != (size_t)-1)
-> +				continue;
->  			break;
-> +		}
->  		if (!strcmp(item, string))
->  			return index;
->  	}
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+DQoNCj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0NCj4gRnJvbTogU2FzY2hhIEhhdWVyIDxz
+LmhhdWVyQHBlbmd1dHJvbml4LmRlPg0KPiBTZW50OiAyMDE55bm0NeaciDbml6UgMTU6MzgNCj4g
+VG86IENodWFuaHVhIEhhbiA8Y2h1YW5odWEuaGFuQG54cC5jb20+DQo+IENjOiBzaGF3bmd1b0Br
+ZXJuZWwub3JnOyBMZW8gTGkgPGxlb3lhbmcubGlAbnhwLmNvbT47IHJvYmgrZHRAa2VybmVsLm9y
+ZzsNCj4gbWFyay5ydXRsYW5kQGFybS5jb207IGxpbnV4LWtlcm5lbEB2Z2VyLmtlcm5lbC5vcmc7
+DQo+IGxpbnV4LWkyY0B2Z2VyLmtlcm5lbC5vcmc7IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
+cmFkZWFkLm9yZzsNCj4gZGV2aWNldHJlZUB2Z2VyLmtlcm5lbC5vcmc7IGZlc3RldmFtQGdtYWls
+LmNvbTsgZGwtbGludXgtaW14DQo+IDxsaW51eC1pbXhAbnhwLmNvbT47IHdzYStyZW5lc2FzQHNh
+bmctZW5naW5lZXJpbmcuY29tOw0KPiB1LmtsZWluZS1rb2VuaWdAcGVuZ3V0cm9uaXguZGU7IGVo
+YUBkZWlmLmNvbTsgbGludXhAcmVtcGVsLXByaXZhdC5kZTsNCj4gbC5zdGFjaEBwZW5ndXRyb25p
+eC5kZTsgcGVkYUBheGVudGlhLnNlOyBTdW1pdCBCYXRyYQ0KPiA8c3VtaXQuYmF0cmFAbnhwLmNv
+bT4NCj4gU3ViamVjdDogUmU6IFtFWFRdIFJlOiBbUEFUQ0ggMS8yXSBpMmM6IGlteDogSTJDIERy
+aXZlciBkb2Vzbid0IGNvbnNpZGVyDQo+IEkyQ19JUEdDTEtfU0VMIFJDVyBiaXQgd2hlbiB1c2lu
+ZyBsczEwNDZhIFNvQw0KPiANCj4gQ2F1dGlvbjogRVhUIEVtYWlsDQo+IA0KPiBPbiBTYXQsIE1h
+eSAwNCwgMjAxOSBhdCAwOToyODo0OEFNICswMDAwLCBDaHVhbmh1YSBIYW4gd3JvdGU6DQo+ID4N
+Cj4gPg0KPiA+ID4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0NCj4gPiA+IEZyb206IFNhc2No
+YSBIYXVlciA8cy5oYXVlckBwZW5ndXRyb25peC5kZT4NCj4gPiA+IFNlbnQ6IDIwMTnlubQ05pyI
+MzDml6UgMjA6NTENCj4gPiA+IFRvOiBDaHVhbmh1YSBIYW4gPGNodWFuaHVhLmhhbkBueHAuY29t
+Pg0KPiA+ID4gQ2M6IHNoYXduZ3VvQGtlcm5lbC5vcmc7IExlbyBMaSA8bGVveWFuZy5saUBueHAu
+Y29tPjsNCj4gPiA+IHJvYmgrZHRAa2VybmVsLm9yZzsgbWFyay5ydXRsYW5kQGFybS5jb207DQo+
+ID4gPiBsaW51eC1rZXJuZWxAdmdlci5rZXJuZWwub3JnOyBsaW51eC1pMmNAdmdlci5rZXJuZWwu
+b3JnOw0KPiA+ID4gbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnOw0KPiA+ID4g
+ZGV2aWNldHJlZUB2Z2VyLmtlcm5lbC5vcmc7IGZlc3RldmFtQGdtYWlsLmNvbTsgZGwtbGludXgt
+aW14DQo+ID4gPiA8bGludXgtaW14QG54cC5jb20+OyB3c2ErcmVuZXNhc0BzYW5nLWVuZ2luZWVy
+aW5nLmNvbTsNCj4gPiA+IHUua2xlaW5lLWtvZW5pZ0BwZW5ndXRyb25peC5kZTsgZWhhQGRlaWYu
+Y29tOw0KPiA+ID4gbGludXhAcmVtcGVsLXByaXZhdC5kZTsgbC5zdGFjaEBwZW5ndXRyb25peC5k
+ZTsgcGVkYUBheGVudGlhLnNlOw0KPiA+ID4gU3VtaXQgQmF0cmEgPHN1bWl0LmJhdHJhQG54cC5j
+b20+DQo+ID4gPiBTdWJqZWN0OiBbRVhUXSBSZTogW1BBVENIIDEvMl0gaTJjOiBpbXg6IEkyQyBE
+cml2ZXIgZG9lc24ndCBjb25zaWRlcg0KPiA+ID4gSTJDX0lQR0NMS19TRUwgUkNXIGJpdCB3aGVu
+IHVzaW5nIGxzMTA0NmEgU29DDQo+ID4gPg0KPiA+ID4gQ2F1dGlvbjogRVhUIEVtYWlsDQo+ID4g
+Pg0KPiA+ID4gT24gVHVlLCBBcHIgMzAsIDIwMTkgYXQgMTI6NDc6MThQTSArMDgwMCwgQ2h1YW5o
+dWEgSGFuIHdyb3RlOg0KPiA+ID4gPiBUaGUgY3VycmVudCBrZXJuZWwgZHJpdmVyIGRvZXMgbm90
+IGNvbnNpZGVyIEkyQ19JUEdDTEtfU0VMICg0MjQNCj4gPiA+ID4gYml0IG9mDQo+ID4gPiA+IFJD
+VykgaW4gZGVjaWRpbmcgIGkyY19jbGtfcmF0ZSBpbiBmdW5jdGlvbiBpMmNfaW14X3NldF9jbGso
+KSB7IDANCj4gPiA+ID4gUGxhdGZvcm0gY2xvY2svNCwgMSBQbGF0Zm9ybSBjbG9jay8yfS4NCj4g
+PiA+ID4NCj4gPiA+ID4gV2hlbiB1c2luZyBsczEwNDZhIFNvQywgdGhpcyBwb3B1bGF0ZXMgaW5j
+b3JyZWN0IHZhbHVlIGluIElCRkQNCj4gPiA+ID4gcmVnaXN0ZXIgaWYgSTJDX0lQR0NMS19TRUwg
+PSAwLCB3aGljaCBnZW5lcmF0ZXMgaGFsZiBvZiB0aGUgZGVzaXJlZCBDbG9jay4NCj4gPiA+ID4N
+Cj4gPiA+ID4gVGhlcmVmb3JlLCBpZiBsczEwNDZhIFNvQyBpcyB1c2VkLCB3ZSBuZWVkIHRvIHNl
+dCB0aGUgaTJjIGNsb2NrDQo+ID4gPiA+IGFjY29yZGluZyB0byB0aGUgY29ycmVzcG9uZGluZyBS
+Q1cuDQo+ID4gPg0KPiA+ID4gU28gdGhlIGNsb2NrIGRyaXZlciByZXBvcnRzIHRoZSB3cm9uZyBj
+bG9jay4gUGxlYXNlIGZpeCB0aGUgY2xvY2sgZHJpdmVyIHRoZW4uDQo+ID4gTm8sIHRoaXMgaXMg
+YSBwcm9ibGVtIHdpdGggdGhlIGkyYyBkcml2ZXIuIEl0IGlzIG5vdCBhIHByb2JsZW0gd2l0aA0K
+PiA+IHRoZSBjbG9jayBkcml2ZXIsIHNvIHRoZSBpMmMgZHJpdmVyIG5lZWRzIHRvIGJlIG1vZGlm
+aWVkLg0KPiANCj4gU28gaG93IGRvZXMgdGhpcyBSQ1cgYml0IGdldCBldmFsdWF0ZWQ/IA0KQWNj
+b3JkaW5nIHRvIHRoZSByZWZlcmVuY2UgbWFudWFsDQo+IG9ubHkgb25lIGNsb2NrIGdvZXMgdG8g
+dGhlIGkyYyBtb2R1bGUgKGRlc2NyaWJlZCBhcyAxLzIgUGxhdGZvcm0NCj4gQ2xvY2spIGFuZCB0
+aGUgaTJjIG1vZHVsZSBvbmx5IHRha2VzIG9uZSBjbG9jay4gU28gaXQgc2VlbXMgdGhlcmUgbXVz
+dCBiZSBhIC8yDQo+IGRpdmlkZXIgc29tZXdoZXJlLCBlaXRoZXIgaW4gZWFjaCBpMmMgbW9kdWxl
+IG9yIHNvbWV3aGVyZSBvdXRzaWRlLiBDYW4geW91cg0KPiBJQyBndXlzIHRlbGwgeW91IHdoZXJl
+IGl0IGlzPw0KSSBuZWVkIHRvIGNvbmZpcm0gdGhpcyB3aXRoIHRoZSBJQyB0ZWFtDQo+IA0KPiBP
+bmUgcmVhc29uIEkgc3VnZ2VzdGVkIHRoZSBjbG9jayBkcml2ZXIgaXMgdGhhdCB0aGUgY2xvY2sg
+ZHJpdmVyIGNvbnRhaW5zIFNvQw0KPiBzcGVjaWZpYyBjb2RlIGFscmVhZHksIHNvIGl0IHNob3Vs
+ZCBiZSBlYXNpZXIgdG8gaW50ZWdyYXRlIHRoZXJlLg0KSXQgc2VlbXMgaW5hcHByb3ByaWF0ZSB0
+byBwdXQgdGhlIGNsb2NrIGZyZXF1ZW5jeSBkaXZpc2lvbiBtb2RpZmljYXRpb24gb2YgaTJjIGlu
+IHRoZSBjbG9jayBkcml2ZXIsDQpiZWNhdXNlIHRoZSBjbG9jayBkcml2ZXIgaXMgZm9yIGFsbCBJ
+UCBhbmQgaXMgYSB1bml2ZXJzYWwgY29kZSwgc28gSSB0aGluayBpdCBpcyBiZXR0ZXIgdG8gbW9k
+aWZ5IHRoZSBjbG9jayBpbiB0aGUgSVAgZHJpdmVyLg0KPiANCj4gU2FzY2hhDQo+IA0KPiANCj4g
+LS0NCj4gUGVuZ3V0cm9uaXggZS5LLiAgICAgICAgICAgICAgICAgICAgICAgICAgIHwNCj4gfA0K
+PiBJbmR1c3RyaWFsIExpbnV4IFNvbHV0aW9ucyAgICAgICAgICAgICAgICAgfA0KPiBodHRwczov
+L2V1cjAxLnNhZmVsaW5rcy5wcm90ZWN0aW9uLm91dGxvb2suY29tLz91cmw9aHR0cCUzQSUyRiUy
+Rnd3dy5wZQ0KPiBuZ3V0cm9uaXguZGUlMkYmYW1wO2RhdGE9MDIlN0MwMSU3Q2NodWFuaHVhLmhh
+biU0MG54cC5jb20lN0NiMmQNCj4gNDY4MDY5OWM0NDhlODUxNDMwOGQ2ZDFmNWJmODIlN0M2ODZl
+YTFkM2JjMmI0YzZmYTkyY2Q5OWM1YzMwMTYzDQo+IDUlN0MwJTdDMCU3QzYzNjkyNzI1MDc0MzUx
+NjU2MyZhbXA7c2RhdGE9cEZkQ2JpRFhFJTJGRGxsMDFYOU5qDQo+IEhnM1NDRHBFQ3pncnI4TUx0
+WUJkS0g1YyUzRCZhbXA7cmVzZXJ2ZWQ9MCAgfA0KPiBQZWluZXIgU3RyLiA2LTgsIDMxMTM3IEhp
+bGRlc2hlaW0sIEdlcm1hbnkgfCBQaG9uZTogKzQ5LTUxMjEtMjA2OTE3LTANCj4gfA0KPiBBbXRz
+Z2VyaWNodCBIaWxkZXNoZWltLCBIUkEgMjY4NiAgICAgICAgICAgfCBGYXg6DQo+ICs0OS01MTIx
+LTIwNjkxNy01NTU1IHwNCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LWFybS1rZXJuZWwK
