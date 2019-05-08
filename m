@@ -2,94 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 495D917F88
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 20:10:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7FBBF17FBC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 20:20:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3P+Z35NGDwaw2QGG9hGHzlHC3udBQmwvC8i2P083tq8=; b=YdFmED7NoRii64
-	fyEsj/U9WSv/tukj7Vf4QgkpcEqzoftPO1KDyKkXlDlDq1qLp9IhCXVGgMp7UZKzmnJ4CEqBCjVlQ
-	maqYyDVQmfAJ7sSITgsLnAWZm4ojzyCQAskIKu/FY0F/t52ac+zffW1FOCZG+BgL2SsaXKE59MP6L
-	obbrvn5kUyQzbgHxHmm1hg81b3br0wJcR/By6DLzzyxRWdys09qpDs7CrDOoYZGPP+RWK8WiDEk2u
-	2OWnKKSUc0lLC8ilmFIn6V7EoGDQiu3YnNNvWc0g6tX0XBhv//VpOqS78X9piGlQ6b1LTI4h7NOcq
-	ebb/do/MYqNrqdxpwDHQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YfH0piIWOAsB7m4ItCpzT+JZmCRo/Y2YoMQfEkVkugE=; b=meUlg1gF2Lk8tP
+	pQmu77vn2NysEGwG5QHSh22y4FR2e5U73udPUWxAHyk+5HNcbqXD7W3OV4PPquP1cHjxXDkJnC4eM
+	xT/NVNpfrQG4FQ5weh2w2nHIuYjR/gDJfjgejN0c0F+qfbG9qIP/ozGhf0mtNe8QPV5lJKsnw/jEw
+	UcQHywx59A1jKYfAAR33woAyZ+pgVC1FzpcJ+ZU6Asd3rAtszAr+ejf5EOzq+9Mn8UjqaAMjDfL9A
+	YWdkI6BieIra+XhRpB9ZqdRYQJH7zSUh7PZwUKLyErq6x2Ycmqqf4WV35y77oBvh2Rmixx2kn0AWZ
+	dmXoVUvhZLxP9aqB+s1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOR1U-0003Y6-81; Wed, 08 May 2019 18:10:32 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOR1N-0003WT-5U
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 18:10:26 +0000
-Received: by mail-pl1-x642.google.com with SMTP id d3so6274674plj.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 May 2019 11:10:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=5zLWZfJCoIg5TeUT0Jt2rwSpfAhD7R9q7eCYI7YHf40=;
- b=Tm2N3nQ5R4MhS+8rDGVu/boYYfOVT9eIZUs60lgVugsa12xyjFshqIWhczZyFQwzYF
- Ym9H3mmMhQzLUib+TUxO5mS0LpNapV2Zy81WXsYoFwNV+rdA6rOEnixV+TXKtAggW5lK
- QDSEMsjaxPVnY6u3e/z7047pG6rP96Ay9RL1uwxSRF/22zO+7kd1MqxLXfdrrhPThSRA
- mY7VHAWoPNgVv22UCIzmgaNRexxreIebf/jobba8vTVTF9A1vGdOTUvINtIZ8Ly5Xsib
- JDr4j9KfbpUyW4/2fktvOOqSl8/YIGfpKUC/87WCEwPw7Dh3+HZrmyWQrHn3UotZRAP4
- vOjw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=5zLWZfJCoIg5TeUT0Jt2rwSpfAhD7R9q7eCYI7YHf40=;
- b=GWbIt3x6NTiBf0NuD8sEMJ8hfDI9P5RHDInFX2RampG0hysJmLwScr54jmCLlMTOje
- 5wEYMkRx5ZdTRmIk1NQuV/9TVbTQdxkE8M6T9aWVgiLM0k7zPc601+HLNGBJjXP8y7n3
- AmdbKxe4ORsIFojQdcvP53VQooTxdIJFyUSmtJ0jl28+UgWUGE1mxs8yIKtHFJmhs+R8
- Q7r9d4d62I4TgohvulYAzvYgf5KgvpG/wI3wGfvke9WTDVShKGmeNneYJFZgSAl3OfOR
- KmLKLpkBagg5KSrHvpztxxAbTLZTsHMOo+KcbyefNRodDcctACH8J/ACyjKyOWfZds9x
- /wTQ==
-X-Gm-Message-State: APjAAAVBTomQr89fHsTfP3oeWp1kXoYZJVhxzG1r6VB2EzDwtAz4XyT6
- pw7HfCPUf7vnGINFQ4lBraQ=
-X-Google-Smtp-Source: APXvYqx2Wb4CB0KCpVy419mUcctEXRtv9dVAdNA+TWZj7LlWHc7EV1/KC6TAZsJVn2A5r991XqqT8A==
-X-Received: by 2002:a17:902:5ac9:: with SMTP id
- g9mr14087995plm.134.1557339023983; 
- Wed, 08 May 2019 11:10:23 -0700 (PDT)
-Received: from Asurada-Nvidia.nvidia.com (thunderhill.nvidia.com.
- [216.228.112.22])
- by smtp.gmail.com with ESMTPSA id j189sm31400665pfc.72.2019.05.08.11.10.22
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 08 May 2019 11:10:23 -0700 (PDT)
-Date: Wed, 8 May 2019 11:08:53 -0700
-From: Nicolin Chen <nicoleotsuka@gmail.com>
-To: Christoph Hellwig <hch@lst.de>
-Subject: Re: [PATCH v2 0/2] Optimize dma_*_from_contiguous calls
-Message-ID: <20190508180852.GA2298@Asurada-Nvidia.nvidia.com>
-References: <20190506223334.1834-1-nicoleotsuka@gmail.com>
- <20190508125254.GA26785@lst.de>
+	id 1hORAd-0005U2-F9; Wed, 08 May 2019 18:19:59 +0000
+Received: from muru.com ([72.249.23.125])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hORAV-0005T4-Tx
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 18:19:53 +0000
+Received: from hillo.muru.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTP id B8153809F;
+ Wed,  8 May 2019 18:20:05 +0000 (UTC)
+From: Tony Lindgren <tony@atomide.com>
+To: Linus Walleij <linus.walleij@linaro.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>
+Subject: [PATCH] gpio: gpio-omap: Fix lost edge wake-up interrupts
+Date: Wed,  8 May 2019 11:19:39 -0700
+Message-Id: <20190508181939.1990-1-tony@atomide.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190508125254.GA26785@lst.de>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_111025_234248_F804C703 
-X-CRM114-Status: GOOD (  10.21  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190508_111952_008321_E6983D62 
+X-CRM114-Status: UNSURE (   8.43  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (nicoleotsuka[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ no trust [72.249.23.125 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -101,26 +56,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: chris@zankel.net, linux-xtensa@linux-xtensa.org, keescook@chromium.org,
- sfr@canb.auug.org.au, tony@atomide.com, catalin.marinas@arm.com,
- joro@8bytes.org, will.deacon@arm.com, linux@armlinux.org.uk,
- iommu@lists.linux-foundation.org, linux-kernel@vger.kernel.org,
- jcmvbkbc@gmail.com, wsa+renesas@sang-engineering.com, iamjoonsoo.kim@lge.com,
- akpm@linux-foundation.org, treding@nvidia.com, robin.murphy@arm.com,
- dwmw2@infradead.org, linux-arm-kernel@lists.infradead.org,
- m.szyprowski@samsung.com
+Cc: Tero Kristo <t-kristo@ti.com>, Grygorii Strashko <grygorii.strashko@ti.com>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>, Keerthy <j-keerthy@ti.com>,
+ Peter Ujfalusi <peter.ujfalusi@ti.com>, linux-gpio@vger.kernel.org,
+ Russell King <rmk+kernel@armlinux.org.uk>,
+ Ladislav Michl <ladis@linux-mips.org>, linux-omap@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 08, 2019 at 02:52:54PM +0200, Christoph Hellwig wrote:
-> modulo a trivial comment typo I found this looks fine to me.  I plan
-> to apply it with that fixed up around -rc2 time when I open the
-> dma mapping tree opens for the the 5.3 merge window, unless someone
-> finds an issue until then.
+If an edge interrupt triggers while entering idle just before we save
+GPIO datain register to saved_datain, the triggered GPIO will not be
+noticed on wake-up. This is because the saved_datain and GPIO datain
+are the same. Let's fix this by ignoring any pending edge interrupts
+in saved_datain.
 
-Thanks for the help all the way.
+This can be somewhat easily reproduced by pinging an idle system with
+smsc911x Ethernet interface configured IRQ_TYPE_EDGE_FALLING. At some
+point the smsc911x interrupts will just stop triggering.
+
+Note that in the long run we may be able to cancel entering idle by
+returning an error in gpio_omap_cpu_notifier(). But let's fix the bug
+first.
+
+Also note that because of the recent clean-up efforts this patch does
+not apply directly to older kernels. This does fix a long term issue
+though, and can be backported as needed.
+
+Cc: Aaro Koskinen <aaro.koskinen@iki.fi>
+Cc: Grygorii Strashko <grygorii.strashko@ti.com>
+Cc: Keerthy <j-keerthy@ti.com>
+Cc: Ladislav Michl <ladis@linux-mips.org>
+Cc: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Cc: Russell King <rmk+kernel@armlinux.org.uk>
+Cc: Tero Kristo <t-kristo@ti.com>
+Signed-off-by: Tony Lindgren <tony@atomide.com>
+---
+ drivers/gpio/gpio-omap.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/drivers/gpio/gpio-omap.c b/drivers/gpio/gpio-omap.c
+--- a/drivers/gpio/gpio-omap.c
++++ b/drivers/gpio/gpio-omap.c
+@@ -1279,7 +1279,14 @@ static void omap_gpio_idle(struct gpio_bank *bank, bool may_lose_context)
+ 	void __iomem *base = bank->base;
+ 	u32 nowake;
+ 
++	/*
++	 * Save datain register to trigger edge interrupts on unidle for GPIOS
++	 * that are not wake-up capable. Ignore any enabled_non_wakeup_gpios
++	 * that may have just triggered as we're entering idle. Otherwise unidle
++	 * will not notice them.
++	 */
+ 	bank->saved_datain = readl_relaxed(base + bank->regs->datain);
++	bank->saved_datain |= bank->enabled_non_wakeup_gpios;
+ 
+ 	if (!bank->enabled_non_wakeup_gpios)
+ 		goto update_gpio_context_count;
+-- 
+2.21.0
 
 _______________________________________________
 linux-arm-kernel mailing list
