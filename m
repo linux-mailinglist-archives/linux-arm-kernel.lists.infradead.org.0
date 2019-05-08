@@ -2,64 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C23C917091
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 07:51:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E2E41709F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 07:56:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NkygozMD/Oa+jttkDn+tJS4afgaSekvHvJd4C5oA3wc=; b=CEyn/PCNudr4Qt
-	p0QIeI5ibI/uPUEDlCAxOZ03xfgah8nTuq1QMuEXfr3oQlVrpMxDGR5ICxsQSWkUkVlR4PgqOBBtT
-	FzYLMUqP7ysy2FSNgE5QFOhMv1oyg0BMPA19kvzDTWlB7wxO2H+U7J/S01IfVw++ZRAHg1MBYu8Jo
-	ERgIFdkqcMsYq7JuSArGR//I/89glfEUhlfW8I3WzaWvzcePS+f65tqYbtOuVrNWDixlxHii7Rtp0
-	drq9Eqh6RMc2wMdheyb1dABGoYSG4FGp48AyAxFsW/6ZLBlYDLFx/6onGCVTd+hse8IdMV53znsnz
-	R6ttJfUMcW78sGNW3Seg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vZVTJJCGbTOr5yn4x/ZHFs8XQqpO6U5imkwTHrwT49U=; b=lV4LQpyVobZPzs
+	HDR27GZmLgLE6YuRBVP/xQ9MPLb+qdouq/rtX6dUITWVc0lL7SejP9ZuCXE1vMtwJOaT/G31R6pvR
+	Ct1ZQUWqcB/uSI3w/mNCYNMZunAbBJlGWDBX6Lc0KKPjyApRpTu8/TReYxczGmTGmGZR/VXyS7I+4
+	+Za1HXA74wEomwj8N6o7JaSiQyDSRtIS3odF59ucZkJoaLbDXOsegSOjsSfvx7p5Z6UxbVYatldkn
+	vVGo8RDYi7YqgkQi9hM6j+AUgeWIJwZ2zx0U11UeJ0AxLUdbi6CB4rZgeHOmKZsmOFtzIIKswlVa+
+	pFdKvoglQ3sAfN6QL1cA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOFU8-0007dW-1k; Wed, 08 May 2019 05:51:20 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hOFZX-0001Vu-Hn; Wed, 08 May 2019 05:56:55 +0000
+Received: from mga18.intel.com ([134.134.136.126])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOFU0-0007c0-FA; Wed, 08 May 2019 05:51:13 +0000
-X-UUID: c5e83878b8d646e28cd0efec35af08c0-20190507
-X-UUID: c5e83878b8d646e28cd0efec35af08c0-20190507
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1388450064; Tue, 07 May 2019 21:50:59 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 7 May 2019 22:50:58 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 8 May 2019 13:50:49 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 8 May 2019 13:50:48 +0800
-Message-ID: <1557294648.3936.17.camel@mtksdaap41>
-Subject: Re: [PATCH v5 09/12] soc: mediatek: cmdq: add polling function
-From: CK Hu <ck.hu@mediatek.com>
-To: Bibby Hsieh <bibby.hsieh@mediatek.com>
-Date: Wed, 8 May 2019 13:50:48 +0800
-In-Reply-To: <20190507081355.52630-10-bibby.hsieh@mediatek.com>
-References: <20190507081355.52630-1-bibby.hsieh@mediatek.com>
- <20190507081355.52630-10-bibby.hsieh@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hOFZP-0001Ub-RJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 05:56:49 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga001.fm.intel.com ([10.253.24.23])
+ by orsmga106.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 07 May 2019 22:56:46 -0700
+X-ExtLoop1: 1
+Received: from ahunter-desktop.fi.intel.com (HELO [10.237.72.198])
+ ([10.237.72.198])
+ by fmsmga001.fm.intel.com with ESMTP; 07 May 2019 22:56:43 -0700
+Subject: Re: [PATCH 2/2] mmc: sdhci-iproc: Set NO_HISPD bit to fix HS50 data
+ hold time problem
+To: Scott Branden <scott.branden@broadcom.com>,
+ Ulf Hansson <ulf.hansson@linaro.org>, Ray Jui <rjui@broadcom.com>,
+ Scott Branden <sbranden@broadcom.com>, Stefan Wahren <stefan.wahren@i2se.com>
+References: <20190506170115.10840-1-scott.branden@broadcom.com>
+ <20190506170115.10840-3-scott.branden@broadcom.com>
+ <673b3d25-0256-9cd7-c89a-673546e69f3a@intel.com>
+ <293b4f12-c74f-35fe-80d7-fdb25405e499@broadcom.com>
+From: Adrian Hunter <adrian.hunter@intel.com>
+Organization: Intel Finland Oy, Registered Address: PL 281, 00181 Helsinki,
+ Business Identity Code: 0357606 - 4, Domiciled in Helsinki
+Message-ID: <1c091a34-b678-af8b-fb15-89aca485d3b0@intel.com>
+Date: Wed, 8 May 2019 08:56:36 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 98A27776C78C6B6C388C0D3DF352BFE56658EAC7DA54A74740E94190632AAACE2000:8
-X-MTK: N
+In-Reply-To: <293b4f12-c74f-35fe-80d7-fdb25405e499@broadcom.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_225112_514960_8C39BF08 
-X-CRM114-Status: GOOD (  18.02  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190507_225647_933253_73EAD119 
+X-CRM114-Status: GOOD (  24.69  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.126 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -71,120 +73,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, srv_heupstream@mediatek.com,
- kendrick.hsu@mediatek.com, Daoyuan Huang <daoyuan.huang@mediatek.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Jassi Brar <jassisinghbrar@gmail.com>,
- linux-kernel@vger.kernel.org, Daniel Kurtz <djkurtz@chromium.org>,
- Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>, YT
- Shen <yt.shen@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Houlong Wei <houlong.wei@mediatek.com>,
- Sascha Hauer <kernel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Jiaguang Zhang <jiaguang.zhang@mediatek.com>,
- Frederic Chen <Frederic.Chen@mediatek.com>,
- linux-arm-kernel@lists.infradead.org, ginny.chen@mediatek.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-mmc@vger.kernel.org, Trac Hoang <trac.hoang@broadcom.com>,
+ BCM Kernel Feedback <bcm-kernel-feedback-list@broadcom.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Bibby:
-
-On Tue, 2019-05-07 at 16:13 +0800, Bibby Hsieh wrote:
-> add polling function in cmdq helper functions
-
-Reviewed-by: CK Hu <ck.hu@mediatek.com>
-
-> 
-> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
-> ---
->  drivers/soc/mediatek/mtk-cmdq-helper.c   | 29 ++++++++++++++++++++++++
->  include/linux/mailbox/mtk-cmdq-mailbox.h |  1 +
->  include/linux/soc/mediatek/mtk-cmdq.h    | 15 ++++++++++++
->  3 files changed, 45 insertions(+)
-> 
-> diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> index 17ee8196fb3d..716f8c4f207b 100644
-> --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
-> +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> @@ -220,6 +220,34 @@ int cmdq_pkt_clear_event(struct cmdq_pkt *pkt, u16 event)
->  }
->  EXPORT_SYMBOL(cmdq_pkt_clear_event);
->  
-> +int cmdq_pkt_poll(struct cmdq_pkt *pkt, u8 subsys,
-> +		  u16 offset, u32 value, u32 mask)
-> +{
-> +	struct cmdq_instruction *inst;
-> +
-> +	if (mask != 0xffffffff) {
-> +		inst = cmdq_pkt_append_command(pkt);
-> +		if (!inst)
-> +			return -ENOMEM;
-> +
-> +		inst->op = CMDQ_CODE_MASK;
-> +		inst->value = ~mask;
-> +		offset = offset | 0x1;
-> +	}
-> +
-> +	inst = cmdq_pkt_append_command(pkt);
-> +	if (!inst)
-> +		return -ENOMEM;
-> +
-> +	inst->op = CMDQ_CODE_POLL;
-> +	inst->value = value;
-> +	inst->offset = offset;
-> +	inst->subsys = subsys;
-> +
-> +	return 0;
-> +}
-> +EXPORT_SYMBOL(cmdq_pkt_poll);
-> +
->  static int cmdq_pkt_finalize(struct cmdq_pkt *pkt)
->  {
->  	struct cmdq_instruction *inst;
-> diff --git a/include/linux/mailbox/mtk-cmdq-mailbox.h b/include/linux/mailbox/mtk-cmdq-mailbox.h
-> index f21801d32a3a..1dfd5ed5c8c5 100644
-> --- a/include/linux/mailbox/mtk-cmdq-mailbox.h
-> +++ b/include/linux/mailbox/mtk-cmdq-mailbox.h
-> @@ -46,6 +46,7 @@
->  enum cmdq_code {
->  	CMDQ_CODE_MASK = 0x02,
->  	CMDQ_CODE_WRITE = 0x04,
-> +	CMDQ_CODE_POLL = 0x08,
->  	CMDQ_CODE_JUMP = 0x10,
->  	CMDQ_CODE_WFE = 0x20,
->  	CMDQ_CODE_EOC = 0x40,
-> diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
-> index 52f69c8db8de..0651a0bffa54 100644
-> --- a/include/linux/soc/mediatek/mtk-cmdq.h
-> +++ b/include/linux/soc/mediatek/mtk-cmdq.h
-> @@ -99,6 +99,21 @@ int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u16 event);
->   */
->  int cmdq_pkt_clear_event(struct cmdq_pkt *pkt, u16 event);
->  
-> +/**
-> + * cmdq_pkt_poll() - Append polling command to the CMDQ packet, ask GCE to
-> + *		     execute an instruction that wait for a specified hardware
-> + *		     register to check for the value. All GCE hardware
-> + *		     threads will be blocked by this instruction.
-> + * @pkt:	the CMDQ packet
-> + * @subsys:	the CMDQ sub system code
-> + * @offset:	register offset from CMDQ sub system
-> + * @value:	the specified target register value
-> + * @mask:	the specified target register mask
-> + *
-> + * Return: 0 for success; else the error code is returned
-> + */
-> +int cmdq_pkt_poll(struct cmdq_pkt *pkt, u8 subsys,
-> +		  u16 offset, u32 value, u32 mask);
->  /**
->   * cmdq_pkt_flush_async() - trigger CMDQ to asynchronously execute the CMDQ
->   *                          packet and call back at the end of done packet
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gOC8wNS8xOSAxOjQ2IEFNLCBTY290dCBCcmFuZGVuIHdyb3RlOgo+IEhpIEFkcmlhbiwKPiAK
+PiBPbiAyMDE5LTA1LTA2IDExOjMxIHAubS4sIEFkcmlhbiBIdW50ZXIgd3JvdGU6Cj4+IE9uIDYv
+MDUvMTkgODowMSBQTSwgU2NvdHQgQnJhbmRlbiB3cm90ZToKPj4+IEZyb206IFRyYWMgSG9hbmcg
+PHRyYWMuaG9hbmdAYnJvYWRjb20uY29tPgo+Pj4KPj4+IFRoZSBpcHJvYyBob3N0IGVNTUMvU0Qg
+Y29udHJvbGxlciBob2xkIHRpbWUgZG9lcyBub3QgbWVldCB0aGUKPj4+IHNwZWNpZmljYXRpb24g
+aW4gdGhlIEhTNTAgbW9kZS7CoCBUaGlzIHByb2JsZW0gY2FuIGJlIG1pdGlnYXRlZAo+Pj4gYnkg
+ZGlzYWJsaW5nIHRoZSBISVNQRCBiaXQ7IHRodXMgZm9yY2luZyB0aGUgY29udHJvbGxlciBvdXRw
+dXQKPj4+IGRhdGEgdG8gYmUgZHJpdmVuIG9uIHRoZSBmYWxsaW5nIGNsb2NrIGVkZ2VzIHJhdGhl
+ciB0aGFuIHRoZQo+Pj4gcmlzaW5nIGNsb2NrIGVkZ2VzLgo+Pj4KPj4+IEZpeGVzOiBmNWY5Njhm
+MjM3MWMgKCJtbWM6IHNkaGNpLWlwcm9jOiBzdXBwcmVzcyBzcHVyaW91cyBpbnRlcnJ1cHQgd2l0
+aAo+Pj4gTXVsdGlibG9jayByZWFkIikKPj4gSXMgdGhpcyBmaXhlcyB0YWcgY29ycmVjdCwgYmVj
+YXVzZSBpdCBkb2Vzbid0IHNlZW0gcmVsYXRlZC7CoCBNYXliZSBleHBsYWluCj4+IHRoYXQgaW4g
+dGhlIGNvbW1pdCBtZXNzYWdlLgo+IAo+IEkgY2hvc2UgdGhpcyB0YWcgdG8gYXNzaXN0IHN0YWJs
+ZSBrZXJuZWwgbWFpbnRhaW5lcnMgc28gdGhhdCB0aGUgY2hhbmdlIGRvZXMKPiBub3QgcHJvZHVj
+ZSBtZXJnZSBjb25mbGljdHMgYmFja3BvcnRpbmcgdG8gb2xkZXIga2VybmVsIHZlcnNpb25zLgo+
+IAo+IEluIHJlYWxpdHksIHRoZSB0aW1pbmcgYnVnIGV4aXN0ZWQgc2luY2UgdGhlIGRyaXZlciB3
+YXMgZmlyc3QgaW50cm9kdWNlZCBidXQKPiB0aGVyZSBpcyBubyBuZWVkIGZvciB0aGlzIGRyaXZl
+ciB0byBiZSBzdXBwb3J0ZWQgaW4ga2VybmVsIHZlcnNpb25zIHRoYXQgb2xkLgoKWW91IGRvbid0
+IG5lZWQgdG8gdXNlIHRoZSBGaXhlcyB0YWcgZm9yIHRoYXQuICBZb3UgY2FuIHB1dCBpdCBvbiB0
+aGUgQ2MgbGluZQplLmcuCgpDYzogc3RhYmxlQHZnZXIua2VybmVsLm9yZyAjIHY0LjEyKwoKPiBE
+byB5b3Ugd2FudCBtZSB0byBhZGQgc3VjaCB0byB0aGUgY29tbWl0IG1lc3NhZ2U/CgpZZXMgcGxl
+YXNlLgoKPiAKPj4KPj4+IFNpZ25lZC1vZmYtYnk6IFRyYWMgSG9hbmcgPHRyYWMuaG9hbmdAYnJv
+YWRjb20uY29tPgo+Pj4gU2lnbmVkLW9mZi1ieTogU2NvdHQgQnJhbmRlbiA8c2NvdHQuYnJhbmRl
+bkBicm9hZGNvbS5jb20+Cj4+PiAtLS0KPj4+IMKgIGRyaXZlcnMvbW1jL2hvc3Qvc2RoY2ktaXBy
+b2MuYyB8IDMgKystCj4+PiDCoCAxIGZpbGUgY2hhbmdlZCwgMiBpbnNlcnRpb25zKCspLCAxIGRl
+bGV0aW9uKC0pCj4+Pgo+Pj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvbW1jL2hvc3Qvc2RoY2ktaXBy
+b2MuYyBiL2RyaXZlcnMvbW1jL2hvc3Qvc2RoY2ktaXByb2MuYwo+Pj4gaW5kZXggOWQ0MDcxYzQx
+Yzk0Li4yZmViNGVmMzIwMzUgMTAwNjQ0Cj4+PiAtLS0gYS9kcml2ZXJzL21tYy9ob3N0L3NkaGNp
+LWlwcm9jLmMKPj4+ICsrKyBiL2RyaXZlcnMvbW1jL2hvc3Qvc2RoY2ktaXByb2MuYwo+Pj4gQEAg
+LTIyMCw3ICsyMjAsOCBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IHNkaGNpX2lwcm9jX2RhdGEKPj4+
+IGlwcm9jX2N5Z251c19kYXRhID0gewo+Pj4gwqAgwqAgc3RhdGljIGNvbnN0IHN0cnVjdCBzZGhj
+aV9wbHRmbV9kYXRhIHNkaGNpX2lwcm9jX3BsdGZtX2RhdGEgPSB7Cj4+PiDCoMKgwqDCoMKgIC5x
+dWlya3MgPSBTREhDSV9RVUlSS19EQVRBX1RJTUVPVVRfVVNFU19TRENMSyB8Cj4+PiAtwqDCoMKg
+wqDCoMKgwqDCoMKgIFNESENJX1FVSVJLX01VTFRJQkxPQ0tfUkVBRF9BQ01EMTIsCj4+PiArwqDC
+oMKgwqDCoMKgwqDCoMKgIFNESENJX1FVSVJLX01VTFRJQkxPQ0tfUkVBRF9BQ01EMTIgfAo+Pj4g
+K8KgwqDCoMKgwqDCoMKgwqDCoCBTREhDSV9RVUlSS19OT19ISVNQRF9CSVQsCj4+PiDCoMKgwqDC
+oMKgIC5xdWlya3MyID0gU0RIQ0lfUVVJUksyX0FDTUQyM19CUk9LRU4sCj4+PiDCoMKgwqDCoMKg
+IC5vcHMgPSAmc2RoY2lfaXByb2Nfb3BzLAo+Pj4gwqAgfTsKPj4+Cj4gCgoKX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWls
+aW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
+cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
