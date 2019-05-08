@@ -2,81 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAC4C16FD2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 06:08:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4934F17042
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 07:02:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YG3xiMUDT/c5K8+Org22JU5KE+ZX3Zcx3moZV+MNgck=; b=OJ2LnZjxg5BAMb
-	c1dtqi0XmyLo5Dx66kbr9+s0NngjKTMQAkmagjO3eYvGnohyDY+XCgdO/qQ5/2/DA+5R5DAZ97OiC
-	/k1b9UW5ng5Vi0KsJAHte+ewfLXhwTY76hadGOspF9C+tPDcLveIgfQAi2HT4RPYPN2KQ7Jn70ZOo
-	fPiPKZtUXqnoeeRdbQXYf6XnAQbcT+r2qsDw8t2s5mKvSrObbyy9f8vdcp/3sI9zVGnwC8Snu3421
-	BIY3Q/mt61nZ6ENXM2NayRZN3M4//i4HbC86w0layikgaLbcypkRw9FGb07BkgHn0HxBwFIIwgcI3
-	lZ7a1ZBxe+lyrrfrL4Ow==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=NE+5EKs6h/cM9bGAVgjzcgNWUlDq/XWtJW/EDkqfreM=; b=bavFVM9nEJwxgj4bWTGvzHtD6
+	3iQjPVi3RN6XFiPq0HbX/CWxCJqGR77eVTugkszVL0HP0EvM6UoF2jQoZQX1a/yChNNM+bAU3Dddo
+	+nPBJ3LCjzvgkrlWTnoXMadd3QYCYO++M8xQeBDou8oB/y0qnQQ5sz6jzHjB62WMLBXNx4gEWqhmV
+	IGp/prmYdaCVwZMXGdwkgiJZd2AFJEhxGE5GE6pgPGIJaHjBcnYdK2168CxcmQg1LaG1lF305CrjS
+	iKjSSZtbwE7TQlU84i+HYzTL4ispiDlV1a4mA3dtvlUiTpZBYoiVZNDPNp3tog0Jiq4iaZO5LQoPI
+	3nLPh4Pkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hODso-0000VV-S7; Wed, 08 May 2019 04:08:42 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1hOEiK-0007gz-VR; Wed, 08 May 2019 05:01:56 +0000
+Received: from ozlabs.org ([2401:3900:2:1::2])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hODsg-0000Ug-Qr
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 04:08:36 +0000
-Received: by mail-qt1-x844.google.com with SMTP id c13so21698183qtn.8
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 May 2019 21:08:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=yWv0q/m4CXezpbIlYfskiZo9emgFBrM3RwTHD33KBco=;
- b=kVKVo365dv38tjyldZmSX4x+Gspo1e9OHAtatit3DPIngDXLiouFZhBbwxWfVK/oy9
- 9wtAKu2Va6gUaMEQ3PQVQMPOev3ZlUBZq4wb+aJNnCNGofPOK2hZFUbPqi26RSZmJpHG
- 1Q4n64GatxtWH1Pv+cmP5qnFg55BYBEkVbzCo=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=yWv0q/m4CXezpbIlYfskiZo9emgFBrM3RwTHD33KBco=;
- b=DYsfFAideyqcTzbl/Cnj5t2VSXVtEtg+UH+TJ9J8sxdvZn6Tp1Z3bLB5/BKvDJMnSA
- zwHb8HmWHYyMzbS8TSTgC3QvLc8JxgzWiTScpbUpsH+n/AzRECszKVolJ3iEbRmpoQLH
- rcgWdnslg4GClf70vbdTGIM9LB+i3DOf0torFXlWoaSDI32N7BvOylM3ILkVNSz0v6gt
- U1C8UkFfjfo9AfJqHy4EI0iVbv+UBynyCc6Lr0OQFVFOD2wxq514UhMuqPfFZbbDvtcf
- LC0SK+o5IQB/yeSOCJ5QL3uoVCqUozub4f8tRVAL9viRi+D+J0/nQ69jCQFj0Aa39T14
- k0Sw==
-X-Gm-Message-State: APjAAAXEQoE96kZG0zeNKyHNnXwA5lIi4Jgj5mqGzdEOTBoHOgfY3Vhp
- sTl5lzRl3x2/zQSWJXxx9xJjWJAnxtzC607LyGyazw==
-X-Google-Smtp-Source: APXvYqxxxSmkf9PLSz/RDL1+3qpHbxikmXEsEiHYdT0nA1jOcbmVTTLhIDmlXHumkunAFeJn7KLh/deR6khriZKWfRQ=
-X-Received: by 2002:ad4:534b:: with SMTP id v11mr29123667qvs.31.1557288510019; 
- Tue, 07 May 2019 21:08:30 -0700 (PDT)
+ id 1hOEiD-0007g7-QE
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 05:01:51 +0000
+Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by mail.ozlabs.org (Postfix) with ESMTPSA id 44zPTP4n8fz9s3q;
+ Wed,  8 May 2019 15:01:45 +1000 (AEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
+ s=201702; t=1557291706;
+ bh=2wFeY+1zSkdLN8J5QkMn2NTFMPwSkJhfzJkMsHGAhg8=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=MbZldME4VSRQhUqOX8H1vyFMArsZRiympEmfZR5JqeMMEXzsiXvq9MSSq1WgWBsIQ
+ zI9/uu/XaUqPUfj3Hbv7yn2GhYcBZF/LJB5K/g1/5ECu/cnkCl3JpqV1Il45GHRB8L
+ 6Hlo3ZYwUm3OW2xCPitzbDIBZxBiw7l/t7eY6Ko+jFciFpRKELnzaOh+mCLObtnT+D
+ ZKZODQfmJA3Eualj/DayCgY6lcZICFFaFPmjkAZJQtSdPWSyAAB6Bm7hlIjz7QdU0r
+ dyFYCQegn90xOdYS147MXhdMk0YHHBIt4VbsvITsoZMKXSj+YI/c5rfM5gox18Ua3s
+ 3qUOAzrGKOcrA==
+Date: Wed, 8 May 2019 15:01:44 +1000
+From: Stephen Rothwell <sfr@canb.auug.org.au>
+To: Arnd Bergmann <arnd@arndb.de>, Olof Johansson <olof@lixom.net>, ARM
+ <linux-arm-kernel@lists.infradead.org>
+Subject: Re: linux-next: manual merge of the char-misc tree with the arm-soc
+ tree
+Message-ID: <20190508150144.76426cfd@canb.auug.org.au>
+In-Reply-To: <20190430174051.038c77c8@canb.auug.org.au>
+References: <20190430174051.038c77c8@canb.auug.org.au>
 MIME-Version: 1.0
-References: <20190507045433.542-1-hsinyi@chromium.org>
- <CAL_Jsq+rGeFKAPVmPvv_Z+G=BppKUK-tEUphBajZVxFtbRBJvQ@mail.gmail.com>
-In-Reply-To: <CAL_Jsq+rGeFKAPVmPvv_Z+G=BppKUK-tEUphBajZVxFtbRBJvQ@mail.gmail.com>
-From: Hsin-Yi Wang <hsinyi@chromium.org>
-Date: Wed, 8 May 2019 12:08:03 +0800
-Message-ID: <CAJMQK-iVhScf0ybZ85kqP0B5_QPoYZ9PZt35jHRUh8FNHKvu7w@mail.gmail.com>
-Subject: Re: [PATCH] arm64: add support for rng-seed
-To: Rob Herring <robh+dt@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_210834_874871_0923DEA3 
-X-CRM114-Status: GOOD (  27.78  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190507_220150_377415_BE31BC1B 
+X-CRM114-Status: GOOD (  17.68  )
+X-Spam-Score: -2.4 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
- [list.dnswl.org]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -88,169 +77,141 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Architecture Mailman List <boot-architecture@lists.linaro.org>,
- Michal Hocko <mhocko@suse.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Mike Rapoport <rppt@linux.ibm.com>, James Morse <james.morse@arm.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Stephen Boyd <swboyd@chromium.org>,
- Frank Rowand <frowand.list@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Greg KH <greg@kroah.com>,
+ Linux Next Mailing List <linux-next@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Patrick Venture <venture@google.com>
+Content-Type: multipart/mixed; boundary="===============7639689441526229718=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 8, 2019 at 3:47 AM Rob Herring <robh+dt@kernel.org> wrote:
+--===============7639689441526229718==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+ boundary="Sig_/8cPpKA4fRiq1UK1fHbuMCvQ"; protocol="application/pgp-signature"
+
+--Sig_/8cPpKA4fRiq1UK1fHbuMCvQ
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
+
+Hi all,
+
+On Tue, 30 Apr 2019 17:40:51 +1000 Stephen Rothwell <sfr@canb.auug.org.au> =
+wrote:
 >
-> +boot-architecture list as there was some discussion about this IIRC.
->
-> On Mon, May 6, 2019 at 11:54 PM Hsin-Yi Wang <hsinyi@chromium.org> wrote:
-> >
-> > Introducing a chosen node, rng-seed, which is an 64 bytes entropy
-> > that can be passed to kernel called very early to increase device
-> > randomness. Bootloader should provide this entropy and the value is
-> > read from /chosen/rng-seed in DT.
-> >
-> > Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
-> >
-> > ---
-> >  Documentation/devicetree/bindings/chosen.txt | 14 +++++++++
->
-> Actually, this file has been converted to json-schema and lives
-> here[1]. I need to remove this one (or leave it with a reference to
-> the new one).
->
-> >  arch/arm64/kernel/setup.c                    |  2 ++
-> >  drivers/of/fdt.c                             | 33 ++++++++++++++++++++
-> >  include/linux/of_fdt.h                       |  1 +
-> >  4 files changed, 50 insertions(+)
-> >
-> > diff --git a/Documentation/devicetree/bindings/chosen.txt b/Documentation/devicetree/bindings/chosen.txt
-> > index 45e79172a646..bfd360691650 100644
-> > --- a/Documentation/devicetree/bindings/chosen.txt
-> > +++ b/Documentation/devicetree/bindings/chosen.txt
-> > @@ -28,6 +28,20 @@ mode) when EFI_RNG_PROTOCOL is supported, it will be overwritten by
-> >  the Linux EFI stub (which will populate the property itself, using
-> >  EFI_RNG_PROTOCOL).
-> >
-> > +rng-seed
-> > +-----------
-> > +
-> > +This property served as an entropy to add device randomness. It is parsed
-> > +as a 64 byte value, e.g.
->
-> Why only 64-bytes?
-We can also not specify size and read what bootloader can provide.
->
-> > +
-> > +/ {
-> > +       chosen {
-> > +               rng-seed = <0x31951b3c 0xc9fab3a5 0xffdf1660 ...>
-> > +       };
-> > +};
-> > +
-> > +This random value should be provided by bootloader.
-> > +
-> >  stdout-path
-> >  -----------
-> >
-> > diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
-> > index 413d566405d1..ade4261516dd 100644
-> > --- a/arch/arm64/kernel/setup.c
-> > +++ b/arch/arm64/kernel/setup.c
-> > @@ -292,6 +292,8 @@ void __init setup_arch(char **cmdline_p)
-> >         early_fixmap_init();
-> >         early_ioremap_init();
-> >
-> > +       early_init_dt_rng_seed(__fdt_pointer);
-> > +
->
-> I'm trying to reduce or eliminate all these early_init_dt_* calls.
->
-> Why is this arch specific and why can't this be done after
-> unflattening? It doesn't look like add_device_randomness() needs
-> anything early.
-Currently unflattening is called after setup_machine_fdt(), which
-called fixmap_remap_fdt() //__fixmap_remap_fdt(dt_phys, &size,
-PAGE_KERNEL_RO), and we can't modify DT after that since it's read
-only. But we need to clear (eg. write 0 to it) the rng-seed after
-reading from DT.
->
-> >         setup_machine_fdt(__fdt_pointer);
-> >
-> >         parse_early_param();
-> > diff --git a/drivers/of/fdt.c b/drivers/of/fdt.c
-> > index de893c9616a1..74e2c0c80b91 100644
-> > --- a/drivers/of/fdt.c
-> > +++ b/drivers/of/fdt.c
-> > @@ -22,6 +22,7 @@
-> >  #include <linux/slab.h>
-> >  #include <linux/libfdt.h>
-> >  #include <linux/debugfs.h>
-> > +#include <linux/random.h>
-> >  #include <linux/serial_core.h>
-> >  #include <linux/sysfs.h>
-> >
-> > @@ -1117,6 +1118,38 @@ int __init early_init_dt_scan_chosen(unsigned long node, const char *uname,
-> >         return 1;
-> >  }
-> >
-> > +extern void *__init __fixmap_remap_fdt(phys_addr_t dt_phys, int *size,
-> > +                                      pgprot_t prot);
-> > +
-> > +void __init early_init_dt_rng_seed(u64 dt_phys)
-> > +{
-> > +       void *fdt;
-> > +       int node, size, i;
-> > +       fdt64_t *prop;
-> > +       u64 rng_seed[8];
-> > +
-> > +       fdt = __fixmap_remap_fdt(dt_phys, &size, PAGE_KERNEL);
-> > +       if (!fdt)
-> > +               return;
-> > +
-> > +       node = fdt_path_offset(fdt, "/chosen");
-> > +       if (node < 0)
-> > +               return;
-> > +
-> > +       prop = fdt_getprop_w(fdt, node, "rng-seed", &size);
-> > +       if (!prop || size != sizeof(u64) * 8)
-> > +               return;
-> > +
-> > +       for (i = 0; i < 8; i++) {
-> > +               rng_seed[i] = fdt64_to_cpu(*(prop + i));
-> > +               /* clear seed so it won't be found. */
-> > +               *(prop + i) = 0;
-> > +       }
-> > +       add_device_randomness(rng_seed, size);
-> > +
-> > +       return;
-> > +}
-> > +
-> >  #ifndef MIN_MEMBLOCK_ADDR
-> >  #define MIN_MEMBLOCK_ADDR      __pa(PAGE_OFFSET)
-> >  #endif
-> > diff --git a/include/linux/of_fdt.h b/include/linux/of_fdt.h
-> > index a713e5d156d8..a4548dd6351e 100644
-> > --- a/include/linux/of_fdt.h
-> > +++ b/include/linux/of_fdt.h
-> > @@ -71,6 +71,7 @@ extern uint32_t of_get_flat_dt_phandle(unsigned long node);
-> >
-> >  extern int early_init_dt_scan_chosen(unsigned long node, const char *uname,
-> >                                      int depth, void *data);
-> > +extern void early_init_dt_rng_seed(u64 dt_phys);
-> >  extern int early_init_dt_scan_memory(unsigned long node, const char *uname,
-> >                                      int depth, void *data);
-> >  extern int early_init_dt_scan_chosen_stdout(void);
-> > --
-> > 2.20.1
-> >
+> Today's linux-next merge of the char-misc tree got conflicts in:
+>=20
+>   drivers/misc/Kconfig
+>   drivers/misc/Makefile
+>=20
+> between commit:
+>=20
+>   524feb799408 ("soc: add aspeed folder and misc drivers")
+>=20
+> from the arm-soc tree and commit:
+>=20
+>   01c60dcea9f7 ("drivers/misc: Add Aspeed P2A control driver")
+>=20
+> from the char-misc tree.
+>=20
+> I fixed it up (see below - though the additions probably want to be
+> moved as in the arm-soc commit) and can carry the fix as necessary.
+> This is now fixed as far as linux-next is concerned, but any non
+> trivial conflicts should be mentioned to your upstream maintainer when
+> your tree is submitted for merging.  You may also want to consider
+> cooperating with the maintainer of the conflicting tree to minimise any
+> particularly complex conflicts.
+>=20
+> --=20
+> Cheers,
+> Stephen Rothwell
+>=20
+> diff --cc drivers/misc/Kconfig
+> index b80cb6af0cb4,3209ee020b15..000000000000
+> --- a/drivers/misc/Kconfig
+> +++ b/drivers/misc/Kconfig
+> @@@ -496,6 -496,30 +496,14 @@@ config VEXPRESS_SYSCF
+>   	  bus. System Configuration interface is one of the possible means
+>   	  of generating transactions on this bus.
+>  =20
+> + config ASPEED_P2A_CTRL
+> + 	depends on (ARCH_ASPEED || COMPILE_TEST) && REGMAP && MFD_SYSCON
+> + 	tristate "Aspeed ast2400/2500 HOST P2A VGA MMIO to BMC bridge control"
+> + 	help
+> + 	  Control Aspeed ast2400/2500 HOST P2A VGA MMIO to BMC mappings through
+> + 	  ioctl()s, the driver also provides an interface for userspace mappin=
+gs to
+> + 	  a pre-defined region.
+> +=20
+>  -config ASPEED_LPC_CTRL
+>  -	depends on (ARCH_ASPEED || COMPILE_TEST) && REGMAP && MFD_SYSCON
+>  -	tristate "Aspeed ast2400/2500 HOST LPC to BMC bridge control"
+>  -	---help---
+>  -	  Control Aspeed ast2400/2500 HOST LPC to BMC mappings through
+>  -	  ioctl()s, the driver also provides a read/write interface to a BMC r=
+am
+>  -	  region where the host LPC read/write region can be buffered.
+>  -
+>  -config ASPEED_LPC_SNOOP
+>  -	tristate "Aspeed ast2500 HOST LPC snoop support"
+>  -	depends on (ARCH_ASPEED || COMPILE_TEST) && REGMAP && MFD_SYSCON
+>  -	help
+>  -	  Provides a driver to control the LPC snoop interface which
+>  -	  allows the BMC to listen on and save the data written by
+>  -	  the host to an arbitrary LPC I/O port.
+>  -
+>   config PCI_ENDPOINT_TEST
+>   	depends on PCI
+>   	select CRC32
+> diff --cc drivers/misc/Makefile
+> index b9affcdaa3d6,c36239573a5c..000000000000
+> --- a/drivers/misc/Makefile
+> +++ b/drivers/misc/Makefile
+> @@@ -54,6 -54,9 +54,7 @@@ obj-$(CONFIG_GENWQE)		+=3D genwqe
+>   obj-$(CONFIG_ECHO)		+=3D echo/
+>   obj-$(CONFIG_VEXPRESS_SYSCFG)	+=3D vexpress-syscfg.o
+>   obj-$(CONFIG_CXL_BASE)		+=3D cxl/
+>  -obj-$(CONFIG_ASPEED_LPC_CTRL)	+=3D aspeed-lpc-ctrl.o
+>  -obj-$(CONFIG_ASPEED_LPC_SNOOP)	+=3D aspeed-lpc-snoop.o
+> + obj-$(CONFIG_ASPEED_P2A_CTRL)	+=3D aspeed-p2a-ctrl.o
+>   obj-$(CONFIG_PCI_ENDPOINT_TEST)	+=3D pci_endpoint_test.o
+>   obj-$(CONFIG_OCXL)		+=3D ocxl/
+>   obj-y				+=3D cardreader/
+
+This is now a conflict between the arm-soc tree and Linus' tree.
+
+--=20
+Cheers,
+Stephen Rothwell
+
+--Sig_/8cPpKA4fRiq1UK1fHbuMCvQ
+Content-Type: application/pgp-signature
+Content-Description: OpenPGP digital signature
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAlzSYrgACgkQAVBC80lX
+0GxcaQf/cAZtLueodL+eLkGlJ1HPgreyNpVRFcXvPPG43uF6ReydrQ10G+3wr5Kx
+wE0lN7G+HXU0IUCTNAHTL0ygsl5RfAaMdxjQpDRfkcb88e/ynTLUtMjU5dDEQUaE
+4TR2M48ZAz3rWAeqQSikGztYKfpXY47CLOlQHpKL8qPo2+baV1ThpzveIjiRH5rG
+TBhLOqvFCp9wOsT/TJRPscEAtCUVjg/23YfuR60tkDydyNdkA8n3Ai5z1MhR3fgs
+9uZBDrj2OTXCViIUajZItgKiFhZqFZr2fWgbLfRQaTP4UYSDqPIOgg3lWk+8CCeS
+v5lVoUssXIA1HnhBCWQIN0hvxhECuQ==
+=WsjF
+-----END PGP SIGNATURE-----
+
+--Sig_/8cPpKA4fRiq1UK1fHbuMCvQ--
+
+
+--===============7639689441526229718==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7639689441526229718==--
+
