@@ -2,52 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2601D178F0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 13:56:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39C131794C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 14:22:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=2vGKSPwwkc4NvE10IUmfgerd0WNvr9o9ARcS6w+0pBk=; b=ENL
-	pnUKIyS6rOSYsQKSjy2ERsMKzQHuUQLZbWgP45kCgDzQXn9BE+kYVNz0GF4pJt41wvbgwhSQPQrDG
-	2yL9dDhIFknISQPs9+2clo+6REwlvj9tx4ncoKgd2X8WQgcbO1BBVxyMXe+JEWYY88iWGLvzyEsN5
-	IzG3nvgLSZB37WU9j+hhnOMna/ruYp4CFOEuXuDhtKzgmre/EhGrFxH7joz9cWKI9IYNQJ91PtnGu
-	4c2jPuD43PYSWSI37utkn6kPapadxBLpnvinGlUQYG6Sk5KqiUPEM4hwFLZNDxu5SLp1kcL+gCme1
-	bhs95uJZvjJIVFv7LedsH1+okJpYkfg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9+e3m74N7ddPCxDTNn1AXexim7fC2X09b1Lk+2VnjrI=; b=cov6GuW93l0C54
+	pobFYOvM6lHA2v6yHplXrXMLSyZ/ZPsBId5INieswVvgWGJxr4tgvGarOp3Q8T9zkSrUQ2q/wPpnW
+	//EjSRyiZ94EQ1NRYCVvTNqGgm8mTHtfr//BVzeWljdPqmxsY6ZY+zjSyf5aDqPN8Eih6hQNIYTZt
+	0pZ7iOr6Nl551NGLFp3BVjv25dlNPFz1jaj+jBzP2VIAuPQcwiay57hvRiB0vGeBnL4FP58fp/j7c
+	ZVwtVJAOnj8HaBBBT5fLEgWUjFYymRBaix6B45a4pKnHLeB0YD0Sl/nMPU+1Xck1Yl4VfgYBrwDEx
+	6nO+EEqm7//HeVPDaKNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOLBS-0002IL-NV; Wed, 08 May 2019 11:56:26 +0000
-Received: from kirsty.vergenet.net ([202.4.237.240])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOLBK-0002Hp-QT
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 11:56:21 +0000
-Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
- by kirsty.vergenet.net (Postfix) with ESMTPA id 0FA9425BE05;
- Wed,  8 May 2019 21:56:15 +1000 (AEST)
-Received: by reginn.horms.nl (Postfix, from userid 7100)
- id 138099403E0; Wed,  8 May 2019 13:56:13 +0200 (CEST)
-From: Simon Horman <horms+renesas@verge.net.au>
-To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH v2] arm64: dts: renesas: r8a7795: Create thermal zone to
- support IPA
-Date: Wed,  8 May 2019 13:56:05 +0200
-Message-Id: <20190508115605.13726-1-horms+renesas@verge.net.au>
-X-Mailer: git-send-email 2.11.0
+	id 1hOLaQ-00022l-AB; Wed, 08 May 2019 12:22:14 +0000
+Received: from aserp2130.oracle.com ([141.146.126.79])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hOLa9-0001ss-HM; Wed, 08 May 2019 12:21:59 +0000
+Received: from pps.filterd (aserp2130.oracle.com [127.0.0.1])
+ by aserp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x48CJBEV086953;
+ Wed, 8 May 2019 12:20:31 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=corp-2018-07-02;
+ bh=Vy0vJPC+R/qK4BTy9W8k2EK+1DkuBwwYmX4Im7RV/1I=;
+ b=rwrtMH5vFY76MnriFuwWJRty7cv6d48ndLvoH9qa0iSpe18cQhaRn84K+EEAZ1el4f/y
+ JYXzNPHiRG6Um3c2LeXmrh0vIUgokB68rrApoaQDWIhQiq3xdWk5gSEBW5t2CsNm+NQD
+ vMj6o0elaMb6F0MU58KC4FWtRSn89CRe22TBfRL7zCGITD8/HSnJoDvmL6xh8b//HGVN
+ 0/+i+9yb5Er16ot7xGaUWYdgVLnSKYTBDh5U+VgaaiAGanyy3YqtlO3+pRPaxxQxAHqK
+ Taf9LSC6aD/fmeyve7zi016PT3fCR2HgfwqDVjH/4iBaBbfLBHPj+ptzQwZZXQN8uHEa Qg== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by aserp2130.oracle.com with ESMTP id 2s94b63etg-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 08 May 2019 12:20:31 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x48CJL8V107697;
+ Wed, 8 May 2019 12:20:30 GMT
+Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
+ by userp3020.oracle.com with ESMTP id 2s94ag20en-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 08 May 2019 12:20:30 +0000
+Received: from abhmp0022.oracle.com (abhmp0022.oracle.com [141.146.116.28])
+ by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x48CKNew007185;
+ Wed, 8 May 2019 12:20:24 GMT
+Received: from kadam (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Wed, 08 May 2019 05:20:22 -0700
+Date: Wed, 8 May 2019 15:20:10 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: Alexandru Ardelean <alexandru.ardelean@analog.com>
+Subject: Re: [PATCH 09/16] mmc: sdhci-xenon: use new match_string()
+ helper/macro
+Message-ID: <20190508122010.GC21059@kadam>
+References: <20190508112842.11654-1-alexandru.ardelean@analog.com>
+ <20190508112842.11654-11-alexandru.ardelean@analog.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190508112842.11654-11-alexandru.ardelean@analog.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Proofpoint-Virus-Version: vendor=nai engine=5900 definitions=9250
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=644
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1905080079
+X-Proofpoint-Virus-Version: vendor=nai engine=5900 definitions=9250
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=665 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
+ definitions=main-1905080079
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_045619_162378_F8C2C31A 
-X-CRM114-Status: GOOD (  11.93  )
-X-Spam-Score: -2.2 (--)
+X-CRM114-CacheID: sfid-20190508_052157_667010_FB3488EA 
+X-CRM114-Status: GOOD (  10.63  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [202.4.237.240 listed in list.dnswl.org]
+ medium trust [141.146.126.79 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -59,183 +111,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yoshihiro Kaneko <ykaneko0929@gmail.com>,
- Magnus Damm <magnus.damm@gmail.com>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: linux-fbdev@vger.kernel.org, kvm@vger.kernel.org, linux-pci@vger.kernel.org,
+ alsa-devel@alsa-project.org, dri-devel@lists.freedesktop.org,
+ linux-ide@vger.kernel.org, linux-mtd@lists.infradead.org,
+ linux-clk@vger.kernel.org, devel@driverdev.osuosl.org,
+ andriy.shevchenko@linux.intel.com, linux-rockchip@lists.infradead.org,
+ linux-mmc@vger.kernel.org, linux-pm@vger.kernel.org,
+ intel-gfx@lists.freedesktop.org, linux-gpio@vger.kernel.org,
+ linux-rpi-kernel@lists.infradead.org, linux-tegra@vger.kernel.org,
+ cgroups@vger.kernel.org, linux-omap@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
+ netdev@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-security-module@vger.kernel.org, gregkh@linuxfoundation.org,
+ linux-integrity@vger.kernel.org, linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Dien Pham <dien.pham.ry@renesas.com>
+On Wed, May 08, 2019 at 02:28:35PM +0300, Alexandru Ardelean wrote:
+> -static const char * const phy_types[] = {
+> -	"emmc 5.0 phy",
+> -	"emmc 5.1 phy"
+> -};
+> -
+>  enum xenon_phy_type_enum {
+>  	EMMC_5_0_PHY,
+>  	EMMC_5_1_PHY,
+>  	NR_PHY_TYPES
 
-Setup a thermal zone driven by SoC temperature sensor.
-Create passive trip points and bind them to CPUFreq cooling
-device that supports power extension.
+There is no need for NR_PHY_TYPES now so you could remove that as well.
 
-In R-Car Gen3, IPA is supported for only one channel
- (on H3/M3/M3N board, it is channel THS3). Reason:
-  Currently, IPA controls base on only CPU temperature.
-  And only one thermal channel is assembled closest
-  CPU cores is selected as target of IPA.
-  If other channels are used, IPA controlling is not properly.
-
-The device supports 5 cooling states which can be categorised as follows:
-
-0 & 1) boost (clocking up)
-2)     default
-3 & 4) cooling (clocking down)
-
-Currently the thermal framework assumes that the default is the minimum,
-or in other words there is no provision for handling boost states.
-So this patch only describes the upper 3 states, default and cooling.
-
-A single cooling device is described for all A57 CPUs as this
-reflects that physically there is only one cooling device present.
-
-This patch improves on an earlier version by:
-
-* Omitting cooling-max-level and cooling-min-level properties which
-  are no longer present in mainline as of v4.17
-* Removing an unused trip-point0 node sub-property from the trips
-  property.
-* Using cooling-device indexes such that maximum refers to maximum cooling
-  rather than the inverse.
-
-The long signed-off by chain below reflects many revisions, mainly
-internal, that this patch has been through.
-
-Signed-off-by: Keita Kobayashi <keita.kobayashi.ym@renesas.com>
-Signed-off-by: Gaku Inami <gaku.inami.xw@bp.renesas.com>
-Signed-off-by: Hien Dang <hien.dang.eb@rvc.renesas.com>
-Signed-off-by: An Huynh <an.huynh.uj@rvc.renesas.com>
-Signed-off-by: Takeshi Kihara <takeshi.kihara.df@renesas.com>
-Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
-Signed-off-by: Simon Horman <simon.horman@netronome.com>
----
- arch/arm64/boot/dts/renesas/r8a7795.dtsi | 54 ++++++++++----------------------
- 1 file changed, 17 insertions(+), 37 deletions(-)
-
-diff --git a/arch/arm64/boot/dts/renesas/r8a7795.dtsi b/arch/arm64/boot/dts/renesas/r8a7795.dtsi
-index abeac3059383..41111dcf80ae 100644
---- a/arch/arm64/boot/dts/renesas/r8a7795.dtsi
-+++ b/arch/arm64/boot/dts/renesas/r8a7795.dtsi
-@@ -155,6 +155,7 @@
- 			power-domains = <&sysc R8A7795_PD_CA57_CPU0>;
- 			next-level-cache = <&L2_CA57>;
- 			enable-method = "psci";
-+			dynamic-power-coefficient = <854>;
- 			clocks = <&cpg CPG_CORE R8A7795_CLK_Z>;
- 			operating-points-v2 = <&cluster0_opp>;
- 			capacity-dmips-mhz = <1024>;
-@@ -207,6 +208,8 @@
- 			power-domains = <&sysc R8A7795_PD_CA53_CPU0>;
- 			next-level-cache = <&L2_CA53>;
- 			enable-method = "psci";
-+			#cooling-cells = <2>;
-+			dynamic-power-coefficient = <277>;
- 			clocks = <&cpg CPG_CORE R8A7795_CLK_Z2>;
- 			operating-points-v2 = <&cluster1_opp>;
- 			capacity-dmips-mhz = <535>;
-@@ -3098,58 +3101,30 @@
- 			polling-delay-passive = <250>;
- 			polling-delay = <1000>;
- 			thermal-sensors = <&tsc 0>;
-+			sustainable-power = <6313>;
- 
- 			trips {
--				sensor1_passive: sensor1-passive {
--					temperature = <95000>;
--					hysteresis = <1000>;
--					type = "passive";
--				};
- 				sensor1_crit: sensor1-crit {
- 					temperature = <120000>;
- 					hysteresis = <1000>;
- 					type = "critical";
- 				};
- 			};
--
--			cooling-maps {
--				map0 {
--					trip = <&sensor1_passive>;
--					cooling-device = <&a57_0 4 4>,
--							 <&a57_1 4 4>,
--							 <&a57_2 4 4>,
--							 <&a57_3 4 4>;
--				};
--			};
- 		};
- 
- 		sensor_thermal2: sensor-thermal2 {
- 			polling-delay-passive = <250>;
- 			polling-delay = <1000>;
- 			thermal-sensors = <&tsc 1>;
-+			sustainable-power = <6313>;
- 
- 			trips {
--				sensor2_passive: sensor2-passive {
--					temperature = <95000>;
--					hysteresis = <1000>;
--					type = "passive";
--				};
- 				sensor2_crit: sensor2-crit {
- 					temperature = <120000>;
- 					hysteresis = <1000>;
- 					type = "critical";
- 				};
- 			};
--
--			cooling-maps {
--				map0 {
--					trip = <&sensor2_passive>;
--					cooling-device = <&a57_0 4 4>,
--							 <&a57_1 4 4>,
--							 <&a57_2 4 4>,
--							 <&a57_3 4 4>;
--				};
--			};
- 		};
- 
- 		sensor_thermal3: sensor-thermal3 {
-@@ -3158,11 +3133,12 @@
- 			thermal-sensors = <&tsc 2>;
- 
- 			trips {
--				sensor3_passive: sensor3-passive {
--					temperature = <95000>;
-+				target: trip-point1 {
-+					temperature = <100000>;
- 					hysteresis = <1000>;
- 					type = "passive";
- 				};
-+
- 				sensor3_crit: sensor3-crit {
- 					temperature = <120000>;
- 					hysteresis = <1000>;
-@@ -3172,11 +3148,15 @@
- 
- 			cooling-maps {
- 				map0 {
--					trip = <&sensor3_passive>;
--					cooling-device = <&a57_0 4 4>,
--							 <&a57_1 4 4>,
--							 <&a57_2 4 4>,
--							 <&a57_3 4 4>;
-+					trip = <&target>;
-+					cooling-device = <&a57_0 2 4>;
-+					contribution = <1024>;
-+				};
-+
-+				map1 {
-+					trip = <&target>;
-+					cooling-device = <&a53_0 0 2>;
-+					contribution = <1024>;
- 				};
- 			};
- 		};
--- 
-2.11.0
+regards,
+dan carpenter
 
 
 _______________________________________________
