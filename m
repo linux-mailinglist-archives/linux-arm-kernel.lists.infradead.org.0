@@ -2,64 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B11016FA8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 05:47:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F60116FB6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 05:54:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=YCuMI5NpwVnnCh79E88dgOGKEvFnJSL8SiBg4I2M6TM=; b=kbmj59uXQ0flZ3HNbyKiAv4Ls
-	d/kbGqYqzbR7+2mxdUK1oRX0gQJEcdXVPmErS0W/xsAgt20SESw8BmHvhAOHLl3NOY2MV7E3mMWg8
-	wSEe2BYXoJyaRAg0ToYTKEZE2LDM4wk8mr0nRL5tLVlh4qhHZAOk/LP3h9AjuKYIBKjNBKNY8Z8Vq
-	wKYUIjQWv3O7J81if3hHICsnQNtUkF80CHgPVFO0PPi7WCkbWSmSSxsP2GhFXMKyPI9ENBD2xxS28
-	VYLxLxsg9sdcX6DoleUj8eRqXqHG1hTG/T+uoW9L6zvDhSNl8VU09MF5qSnMNYZ751nPR4ygSZ9Cz
-	k2hewHxHw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1EzU8HW+NJ/Cn1pEF3F8fuHcVf1bSpyZk1lm+eV2Ffo=; b=f8Xk5yFWjtYkZd
+	K4xBkNcWTsXeSzoYobmQS7eUTehNCV3IXKUtmt4YADMoAwqnvFJPKG7Z7q4paJujxe8ON3TgSrhu5
+	3sFywPg6/6OVvJUczV6YF0gh4BDosP32IUh6nbHMF7jy8zEQnEeL1w/gs2Nx1IVRW420BnC/tOvG4
+	aDxCFWkEYH3fKheOgETjBZjojdFY9wu8Tsytb0Hqo37qC+ziKuJqZ5AREtPqUBU0287s9p++BcYiB
+	rQ3CQfpjQFYcamdCM6+BIdBIT9thVRNLOWAuTI43KMykzgD2Fk3ky0C6CWZC3aBvhmnm7UlZ7nx+P
+	tSqQAxwb3HmMEkxQHgqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hODYT-0002Pl-AA; Wed, 08 May 2019 03:47:41 +0000
-Received: from ozlabs.org ([203.11.71.1])
+	id 1hODeo-00049o-Sz; Wed, 08 May 2019 03:54:14 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hODYL-0002OW-Kk
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 03:47:35 +0000
-Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by mail.ozlabs.org (Postfix) with ESMTPSA id 44zMqh2nGWz9s4V;
- Wed,  8 May 2019 13:47:28 +1000 (AEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
- s=201702; t=1557287248;
- bh=R1RqJ1ImOmpys8/DGBYwmYPTH8oCYtZjVOwBbuB7jEg=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=rcQmVEaiSda2Xu6lLzFzzHBWm6Ly4ljbqFB9dSb34KN7oZCP4G4cInaXdIkaecogB
- Ec35BSUvBnsBEnx59nCKjtaz4bVOYFxfbKQ4ZDXOGKqlX/RgiV58nfqTqphvckmyir
- MfYuZtVsAwJMYJpAPy8DAUZia/Xxyjx5HARPiD0cVejOWBKPRit7V5UFDDssu5JpzH
- pt+dr9vfpOMrqaRs8CT/17yqmoBYJVp6KDuElRuMrjokxP9SjtgXEkCEenrA1mq76W
- w+s55lXw+BxS205Uv2mgZyjlKxFehkQ0O40iAtmwBxw55WGFadFnlVta2Wqhjat1ra
- lcmuau1aiFlHQ==
-Date: Wed, 8 May 2019 13:47:27 +1000
-From: Stephen Rothwell <sfr@canb.auug.org.au>
-To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>, ARM
- <linux-arm-kernel@lists.infradead.org>
-Subject: Re: linux-next: manual merge of the staging tree with the imx-mxs tree
-Message-ID: <20190508134727.7ca1e390@canb.auug.org.au>
-In-Reply-To: <20190412144921.3a152478@canb.auug.org.au>
-References: <20190412144921.3a152478@canb.auug.org.au>
+ id 1hODeh-00049J-Le
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 03:54:09 +0000
+Received: by mail-pf1-x443.google.com with SMTP id e24so9745597pfi.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 07 May 2019 20:54:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=cVIqQuQhPNK8bauPkhz1EwiDMHC+lDayWMP+2CUUfv0=;
+ b=DhU6DoiKidW/7p6JsZv10IZ/XDAWdrhdxkMqTcB+c0Qdhxwatdtvd57A02FxSV/pyX
+ mCHLQyV0CgIToWefPLues8oVW5cmhEMZEjFHmJ9BJHdneraVo3PGQRhMfpB+eEKRKH3u
+ HzA/4I5+nmpMdFakyMCTX//lwuxC7Xcp+Z+TJ11hYWfMQQLswPAzrusv2hQlhdxPVudn
+ faH4mp2I3YnSMUD2S3Pj0lXxdMLkRPBNnC+SE7Qes1Cvs4hjO01b+h25Qge4pzDTs72W
+ 1nYxvEYOrjOQJcUb/TL8lJodz1/EZVenBG+XNl7pV132kvdLBsfBsYmXeOr2xaL9erUW
+ T5qA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=cVIqQuQhPNK8bauPkhz1EwiDMHC+lDayWMP+2CUUfv0=;
+ b=XsLWA51bTdHv36DgXU9zjKx0O9jrPj0rM+IMrg/YIN2HpW65OYU6Ud5XiJdOdg71oy
+ Wi9CLLAAPip7pOPYuZXzNmmyJO9wFyFrpzdkpfQ5ZgK+DaMhiFzO4ycTn9po5ivn3fgc
+ TXmtCXe1Q72RmxK+IkrY3SZKZtTlZSxlnZuAFdKbTA/VODleVO8V2EkRAeUUBTMacqpr
+ MPd2yuXLn+6IJ3OMmH3R51Q3voKiVqP51Q+X2YcHoU89Rzulz6GIiYozT3wTn370Zykz
+ H2Q18KgyDGjqQYOo/ysTXYVtK8pvQ7DAUepNR2mz0aUB86qtZEDv9sGQ/pzjzzFi51C7
+ f7/g==
+X-Gm-Message-State: APjAAAUA+oN1Nj9rUyc9rXb7dOFvf8erL910c2iO75GBbdjTkW28paK0
+ h8NV0i/YBGX+B1vprWPkYoG6zg==
+X-Google-Smtp-Source: APXvYqxfvhpxtDtzrYT9I5+J5woyqtPOqke43/sMpYFxgaxbSBZA6lUQ9FQDpN6Smn0aLtYKbbTrZg==
+X-Received: by 2002:a63:360e:: with SMTP id d14mr44517659pga.188.1557287646303; 
+ Tue, 07 May 2019 20:54:06 -0700 (PDT)
+Received: from localhost ([122.172.118.99])
+ by smtp.gmail.com with ESMTPSA id 13sm18559568pfi.172.2019.05.07.20.54.03
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 07 May 2019 20:54:04 -0700 (PDT)
+Date: Wed, 8 May 2019 09:24:02 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Subject: Re: [PATCH v3 1/4] cpufreq: Add imx-cpufreq-dt driver
+Message-ID: <20190508035402.7pbikzpkzxxesmlw@vireshk-i7>
+References: <cover.1557236799.git.leonard.crestez@nxp.com>
+ <607242a278a4532d0b4285e0fb56abfd5767fdd1.1557236799.git.leonard.crestez@nxp.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <607242a278a4532d0b4285e0fb56abfd5767fdd1.1557236799.git.leonard.crestez@nxp.com>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_204734_048527_011BDAFE 
-X-CRM114-Status: GOOD (  12.00  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190507_205407_715247_82F4BD43 
+X-CRM114-Status: GOOD (  18.43  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [203.11.71.1 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -76,103 +97,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Greg KH <greg@kroah.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Jonathan =?UTF-8?B?TmV1c2Now6Rm?= =?UTF-8?B?ZXI=?= <j.neuschaefer@gmx.net>,
- Linux Next Mailing List <linux-next@vger.kernel.org>,
- Robert Yang <decatf@gmail.com>, Jonathan Cameron <Jonathan.Cameron@huawei.com>,
- Shawn Guo <shawn.guo@linaro.org>
-Content-Type: multipart/mixed; boundary="===============3193948733833077230=="
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Mark Rutland <mark.rutland@arm.com>,
+ Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, Rob Herring <robh+dt@kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>, Lucas Stach <l.stach@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Jacky Bai <ping.bai@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============3193948733833077230==
-Content-Type: multipart/signed; micalg=pgp-sha256;
- boundary="Sig_/1V1pV/zWcmIrgm4TFnFSdey"; protocol="application/pgp-signature"
+On 07-05-19, 13:52, Leonard Crestez wrote:
+> Right now in upstream imx8m cpufreq support just lists a common subset
+> of OPPs because the higher ones should only be attempted after checking
+> speed grading in fuses.
+> 
+> Add a small driver which checks speed grading from nvmem cells before
+> registering cpufreq-dt.
+> 
+> This driver allows unlocking all frequencies for imx8mm and imx8mq and
+> could be applied to other chips like imx7d
+> 
+> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> 
+> ---
+>  drivers/cpufreq/Kconfig.arm          | 10 +++
+>  drivers/cpufreq/Makefile             |  1 +
+>  drivers/cpufreq/cpufreq-dt-platdev.c |  3 +
+>  drivers/cpufreq/imx-cpufreq-dt.c     | 96 ++++++++++++++++++++++++++++
+>  drivers/soc/imx/soc-imx8.c           |  3 +
+>  5 files changed, 113 insertions(+)
+>  create mode 100644 drivers/cpufreq/imx-cpufreq-dt.c
+> 
+> diff --git a/drivers/cpufreq/Kconfig.arm b/drivers/cpufreq/Kconfig.arm
+> index 179a1d302f48..78ed9ef49e68 100644
+> --- a/drivers/cpufreq/Kconfig.arm
+> +++ b/drivers/cpufreq/Kconfig.arm
+> @@ -90,10 +90,20 @@ config ARM_IMX6Q_CPUFREQ
+>  	help
+>  	  This adds cpufreq driver support for Freescale i.MX6 series SoCs.
+>  
+>  	  If in doubt, say N.
+>  
+> +config ARM_IMX_CPUFREQ_DT
+> +	tristate "Freescale i.MX8M cpufreq support"
+> +	depends on ARCH_MXC && CPUFREQ_DT
+> +	default m if ARCH_MXC && CPUFREQ_DT
 
---Sig_/1V1pV/zWcmIrgm4TFnFSdey
-Content-Type: text/plain; charset=US-ASCII
-Content-Transfer-Encoding: quoted-printable
+As I said in the previous version, the if block above is redundant and
+not required.
 
-Hi all,
+> +	help
+> +	  This adds cpufreq driver support for Freescale i.MX8M series SoCs,
+> +	  based on cpufreq-dt.
+> +
+> +	  If in doubt, say N.
 
-On Fri, 12 Apr 2019 14:49:21 +1000 Stephen Rothwell <sfr@canb.auug.org.au> =
-wrote:
->
-> Today's linux-next merge of the staging tree got a conflict in:
->=20
->   Documentation/devicetree/bindings/vendor-prefixes.txt
->=20
-> between commit:
->=20
->   189733b0a7e4 ("dt-bindings: Add vendor prefix for Rakuten Kobo, Inc.")
->=20
-> from the imx-mxs tree and commit:
->=20
->   2e5cee6c7622 ("dt-bindings: Add vendor prefix for Kionix, Inc.")
->=20
-> from the staging tree.
->=20
-> I fixed it up (see below) and can carry the fix as necessary. This
-> is now fixed as far as linux-next is concerned, but any non trivial
-> conflicts should be mentioned to your upstream maintainer when your tree
-> is submitted for merging.  You may also want to consider cooperating
-> with the maintainer of the conflicting tree to minimise any particularly
-> complex conflicts.
->=20
-> --=20
-> Cheers,
-> Stephen Rothwell
->=20
-> diff --cc Documentation/devicetree/bindings/vendor-prefixes.txt
-> index 5f2b185a04e6,93753f447c20..000000000000
-> --- a/Documentation/devicetree/bindings/vendor-prefixes.txt
-> +++ b/Documentation/devicetree/bindings/vendor-prefixes.txt
-> @@@ -211,7 -210,7 +211,8 @@@ kiebackpeter    Kieback & Peter Gmb
->   kinetic Kinetic Technologies
->   kingdisplay	King & Display Technology Co., Ltd.
->   kingnovel	Kingnovel Technology Co., Ltd.
-> + kionix	Kionix, Inc.
->  +kobo	Rakuten Kobo Inc.
->   koe	Kaohsiung Opto-Electronics Inc.
->   kosagi	Sutajio Ko-Usagi PTE Ltd.
->   kyo	Kyocera Corporation
-
-This is now a conflict between the arm-soc tree and Linus' tree.
-
---=20
-Cheers,
-Stephen Rothwell
-
---Sig_/1V1pV/zWcmIrgm4TFnFSdey
-Content-Type: application/pgp-signature
-Content-Description: OpenPGP digital signature
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAlzSUU8ACgkQAVBC80lX
-0GwTPAf/cEVh8RWOnK9RS7qYoOibc+Ud8w21cx8GoOiArXG95S1BgP+HUekZMS/m
-gy13w1VEqM1L391i+d/lrBuEQR/D5dQCXkIF6DzjBqmSUZ2X4D6y9IIFjXde5+21
-Fq8F0bShBq8XI4zKbaUGT5BpbEEq/7Z+PU63tPL5jTuIdoA4666mMRUFPhcCoHj4
-ajRQORxZsEdLv6MsTGQ6LLnTcfzbPMKT/B2M/aPFp8NolcHIvSt2lk+HjOeD5MJo
-ltA1BMt6Tgwguq44o9IZIMGrfMwVYZNm3fY55zc8+jINsj+Ysb7gsLGAjwbEvQHB
-PSrvQNm/09DAs+ziVUOhB3/uGroe9A==
-=cTIR
------END PGP SIGNATURE-----
-
---Sig_/1V1pV/zWcmIrgm4TFnFSdey--
-
-
---===============3193948733833077230==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3193948733833077230==--
-
