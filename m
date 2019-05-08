@@ -2,81 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E56C417AD3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 15:40:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 543F917B45
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 16:04:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=m3vmq4zisCLGyfDrjALntkDSQT7pkhvqlDAkY8jIBMo=; b=T7w
-	b8Wn8xNNzKUTna5oOVJD1ad+RsPI6USwARCCnNCCaYHXeFPCc1qaY8wPSUZ39TeQkap0pyR38bAjQ
-	drQFHwMEKMVKVQMOSjhoDkvxoVdaw5rcEfV/Uc67KhWvX7nkPVOmEn+q3hvqYrTCZL5s28JFsH8sj
-	6C5TX7lng9CtmXw/0iGsR2yqQdVcQ77Vdd7mEEuwb6MtbOUB1uJOUWKTmMoYM/lhQPkVfcIxiZn/S
-	rUzclVdWxTLiGEnOXafVzxh3clF1Dq2W+REPrbJDprgvJjE7goKYvCmvTGfm50/nXuftF9sYZcA1w
-	q8GFVm/8jvT2c++G+0boc4ZcCv/H+zQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UUZWh5tBaOkLYJqY814pa1EIAf4+gglcOH7ujLMdoe4=; b=JQlp8Frf0qKhJY
+	8KU2MC4SWJRK8rb+O1AwMFTrV5kcftd7/kfYY9wiOGSu3IHgyKDVVJXLCm1vSICUV0cyDDVUioImY
+	lTWiULT0N1J7f6xEH3GN1t+rxJPcqyiEIhryVr581r+Ni4cXy0WGiLt0sLG2rsRyKMHZYLJATqU0d
+	EuIEyouQ7TWsAxoPVqHcDtJLHVyg+ppd1uRLQitBkl2cCzSiPLCGQUUbXLG+4FtF7NuwpxSgryZTy
+	RCmD/wPcUVpWiPS8wHARxq7qLZWMCSdVXs7+QQ65CoGBfe6yjhi0dECSo+MFiYRfreViAH8VVFTZ3
+	bKSa+xkQS3OsHOVdeiKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOMnq-0003r7-Dv; Wed, 08 May 2019 13:40:10 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hONBO-0003hy-4I; Wed, 08 May 2019 14:04:30 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOMnf-0003mH-6h
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 13:40:01 +0000
-Received: by mail-wm1-x341.google.com with SMTP id m20so1950660wmg.1
+ id 1hONBH-0003he-8H
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 14:04:24 +0000
+Received: from mail-qk1-f173.google.com (mail-qk1-f173.google.com
+ [209.85.222.173])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id BF45C216F4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 May 2019 06:39:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id;
- bh=p0DIC9RoOTp6SzQmmO8Edvcsn7tr0urB+LYy5B+wiis=;
- b=kiAi5r4hnzo2DMsXy9EeVN564hgsEzALAvkBuFWKjvCsjTiPNXJubqo4k9Nom946/w
- FzWDLuiFoWejHVJ1Xw54rZVeGj0JhSLkHWRL2u6rMLvKlnOTX+1TX06G/BptEkqCSHl7
- CEvdAF0VrlLnqvoTm6wd85Md7LHejrWWzh4ICC/7hqS/Cx31XqIPyPXT0enZbvF9OCCD
- 6ha+lhi0ptpWGlhOadaA3HEpenAjNVibEp5AYK7tJ/FcaVV3njwL4AUGcaA9+mDvYR3X
- 2IkLUnqfy3xam3MmQL/+wWcGQrqDNrV8Hn4KwIrWmpQXusif34TXjc7EtoNUALGrApaj
- PAgw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=p0DIC9RoOTp6SzQmmO8Edvcsn7tr0urB+LYy5B+wiis=;
- b=bS8wB2gYDxJMqVheCpkH5qNvzx03e5xe7Fw6oN21u4TB6jbqjIfJvLrZDtuq03zJA5
- mXTd6J3Hvk6BNKyzkvXmCxpCaL8/pTmD4U9OWvAR42Er/VtoCjM9FrLrVsnB8gCxFWMe
- qmbH/kzSDuhVNIuXUnl4F1Uer92BkX7uTag6w9UFJOHvGOGMdxMfdiVX/DxWJrHCuFKh
- Ic81EyiQinWS6msGTCIJ8Oz/I6+gA5dY0LAf52Mm/SUQZeA/Btb/Cw4E3Bv2GhM8XOSY
- KWaqJoEfDGRwvQ+KXfjTUJ6xK6UfZsk1bgzaBUq5ORHAQgTSJDASoXyW0pwLihSbFa/M
- 32Og==
-X-Gm-Message-State: APjAAAUCas7LwIXHCjz+WF2wxHJCNbaWeD0dqpQXs5rWAg4JxuBi5jEZ
- vttAG4joALx6vGSc4lr6X/PXdg==
-X-Google-Smtp-Source: APXvYqztyBWRZRTM8YEZX/QDkF5TkOozNVED+JH3xbn0pn6zJMQtLN5K+O70+NmUkBxM3lB1H59mKw==
-X-Received: by 2002:a1c:7f97:: with SMTP id a145mr3226937wmd.139.1557322796137; 
- Wed, 08 May 2019 06:39:56 -0700 (PDT)
-Received: from loys-ubuntu-BY1835A49200471.thefacebook.com
- ([2620:10d:c092:180::1:3d10])
- by smtp.googlemail.com with ESMTPSA id 19sm1633060wmf.44.2019.05.08.06.39.54
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Wed, 08 May 2019 06:39:55 -0700 (PDT)
-From: Loys Ollivier <lollivier@baylibre.com>
-To: Johan Hovold <johan@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [RESEND PATCH] gnss: get serial speed from subdrivers
-Date: Wed,  8 May 2019 15:39:48 +0200
-Message-Id: <1557322788-10403-1-git-send-email-lollivier@baylibre.com>
-X-Mailer: git-send-email 2.7.4
+ Wed,  8 May 2019 14:04:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1557324262;
+ bh=KlTf0lMaCe47EgBjCnPByj4hDErmqmcJfE6SdzLc12M=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=2buYcneBmgQ5V4Iw6o/K3ZrNV0b77ofTlHXyAj0b4jQdn9AtpAzSTjEwoAqk1h+gT
+ ueccm04t06vQFNAXTBQ+YbLu1GfVVzYoBQuoRJdtEiSMwzKRKD8Oe//WdpKM+50KYZ
+ 3ke6V30/bQeBnbleUiNNiV6w6lxABp63FSReE2gM=
+Received: by mail-qk1-f173.google.com with SMTP id c15so3262360qkl.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 08 May 2019 07:04:22 -0700 (PDT)
+X-Gm-Message-State: APjAAAWoRt+FUhDOyB5LeKjfVZw/yOeLbyzoXnLyZ1yHd/m40eWt+3RX
+ JdxHf7jQ2YF0Z9F8T8JSJX1STua/RtwSHwA5pA==
+X-Google-Smtp-Source: APXvYqwcHIVFkIoGCXVZq2f5fTsv1WzR50s06Zc88lHoMFN67drmKMqTiFVbYH/8xeLwoA2P5feUPfU7TuRdlEMoJ30=
+X-Received: by 2002:a37:4711:: with SMTP id u17mr29663919qka.326.1557324261976; 
+ Wed, 08 May 2019 07:04:21 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190507045433.542-1-hsinyi@chromium.org>
+ <CAL_Jsq+rGeFKAPVmPvv_Z+G=BppKUK-tEUphBajZVxFtbRBJvQ@mail.gmail.com>
+ <CAJMQK-iVhScf0ybZ85kqP0B5_QPoYZ9PZt35jHRUh8FNHKvu7w@mail.gmail.com>
+In-Reply-To: <CAJMQK-iVhScf0ybZ85kqP0B5_QPoYZ9PZt35jHRUh8FNHKvu7w@mail.gmail.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Wed, 8 May 2019 09:04:10 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqJZ+mOnrLWt0Cpo_Ybr_ohxwWom1qiyV8_EFocULde7=Q@mail.gmail.com>
+Message-ID: <CAL_JsqJZ+mOnrLWt0Cpo_Ybr_ohxwWom1qiyV8_EFocULde7=Q@mail.gmail.com>
+Subject: Re: [PATCH] arm64: add support for rng-seed
+To: Hsin-Yi Wang <hsinyi@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_063959_255541_9C2040B3 
-X-CRM114-Status: GOOD (  16.01  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190508_070423_330197_17EC74B7 
+X-CRM114-Status: GOOD (  29.19  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -88,149 +86,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Colin Ian King <colin.king@canonical.com>,
- Loys Ollivier <lollivier@baylibre.com>, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Architecture Mailman List <boot-architecture@lists.linaro.org>,
+ Michal Hocko <mhocko@suse.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Mike Rapoport <rppt@linux.ibm.com>, James Morse <james.morse@arm.com>,
+ Andrew Murray <andrew.murray@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Stephen Boyd <swboyd@chromium.org>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The default serial speed was hardcoded in the code.
-Rename current-speed to default-speed.
-Add a function parameter that lets the subdrivers specify their
-default speed.
-If not specified fallback to the device-tree default-speed.
+On Tue, May 7, 2019 at 11:08 PM Hsin-Yi Wang <hsinyi@chromium.org> wrote:
+>
+> On Wed, May 8, 2019 at 3:47 AM Rob Herring <robh+dt@kernel.org> wrote:
+> >
+> > +boot-architecture list as there was some discussion about this IIRC.
+> >
+> > On Mon, May 6, 2019 at 11:54 PM Hsin-Yi Wang <hsinyi@chromium.org> wrote:
+> > >
+> > > Introducing a chosen node, rng-seed, which is an 64 bytes entropy
+> > > that can be passed to kernel called very early to increase device
+> > > randomness. Bootloader should provide this entropy and the value is
+> > > read from /chosen/rng-seed in DT.
+> > >
+> > > Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
+> > >
+> > > ---
+> > >  Documentation/devicetree/bindings/chosen.txt | 14 +++++++++
+> >
+> > Actually, this file has been converted to json-schema and lives
+> > here[1]. I need to remove this one (or leave it with a reference to
+> > the new one).
+> >
+> > >  arch/arm64/kernel/setup.c                    |  2 ++
+> > >  drivers/of/fdt.c                             | 33 ++++++++++++++++++++
+> > >  include/linux/of_fdt.h                       |  1 +
+> > >  4 files changed, 50 insertions(+)
+> > >
+> > > diff --git a/Documentation/devicetree/bindings/chosen.txt b/Documentation/devicetree/bindings/chosen.txt
+> > > index 45e79172a646..bfd360691650 100644
+> > > --- a/Documentation/devicetree/bindings/chosen.txt
+> > > +++ b/Documentation/devicetree/bindings/chosen.txt
+> > > @@ -28,6 +28,20 @@ mode) when EFI_RNG_PROTOCOL is supported, it will be overwritten by
+> > >  the Linux EFI stub (which will populate the property itself, using
+> > >  EFI_RNG_PROTOCOL).
+> > >
+> > > +rng-seed
+> > > +-----------
+> > > +
+> > > +This property served as an entropy to add device randomness. It is parsed
+> > > +as a 64 byte value, e.g.
+> >
+> > Why only 64-bytes?
+> We can also not specify size and read what bootloader can provide.
+> >
+> > > +
+> > > +/ {
+> > > +       chosen {
+> > > +               rng-seed = <0x31951b3c 0xc9fab3a5 0xffdf1660 ...>
+> > > +       };
+> > > +};
+> > > +
+> > > +This random value should be provided by bootloader.
+> > > +
+> > >  stdout-path
+> > >  -----------
+> > >
+> > > diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
+> > > index 413d566405d1..ade4261516dd 100644
+> > > --- a/arch/arm64/kernel/setup.c
+> > > +++ b/arch/arm64/kernel/setup.c
+> > > @@ -292,6 +292,8 @@ void __init setup_arch(char **cmdline_p)
+> > >         early_fixmap_init();
+> > >         early_ioremap_init();
+> > >
+> > > +       early_init_dt_rng_seed(__fdt_pointer);
+> > > +
+> >
+> > I'm trying to reduce or eliminate all these early_init_dt_* calls.
+> >
+> > Why is this arch specific and why can't this be done after
+> > unflattening? It doesn't look like add_device_randomness() needs
+> > anything early.
+> Currently unflattening is called after setup_machine_fdt(), which
+> called fixmap_remap_fdt() //__fixmap_remap_fdt(dt_phys, &size,
+> PAGE_KERNEL_RO), and we can't modify DT after that since it's read
+> only. But we need to clear (eg. write 0 to it) the rng-seed after
+> reading from DT.
 
-Signed-off-by: Loys Ollivier <lollivier@baylibre.com>
----
-Hello,
+Why do you need to clear it? That wasn't necessary for kaslr-seed.
 
-This patch moves the currently hardcoded, default serial speed
-to the subdrivers.
-If the default speed is not specified by the subdriver then it is read
-from the device tree.
+Why not change the mapping to RW? It would be nice if this worked on
+more than one arch.
 
-Cheers,
-Loys
-
- drivers/gnss/mtk.c    |  6 +++++-
- drivers/gnss/serial.c | 21 +++++++++++++--------
- drivers/gnss/serial.h |  3 ++-
- drivers/gnss/ubx.c    |  3 ++-
- 4 files changed, 22 insertions(+), 11 deletions(-)
-
-diff --git a/drivers/gnss/mtk.c b/drivers/gnss/mtk.c
-index d1fc55560daf..a1a89f0cc75c 100644
---- a/drivers/gnss/mtk.c
-+++ b/drivers/gnss/mtk.c
-@@ -16,6 +16,10 @@
- 
- #include "serial.h"
- 
-+static uint serial_speed = 9600; /* Serial speed (baud rate) */
-+module_param(serial_speed, uint, 0644);
-+MODULE_PARM_DESC(serial_speed, "Serial baud rate (bit/s), (default = 9600)");
-+
- struct mtk_data {
- 	struct regulator *vbackup;
- 	struct regulator *vcc;
-@@ -69,7 +73,7 @@ static int mtk_probe(struct serdev_device *serdev)
- 	struct mtk_data *data;
- 	int ret;
- 
--	gserial = gnss_serial_allocate(serdev, sizeof(*data));
-+	gserial = gnss_serial_allocate(serdev, sizeof(*data), serial_speed);
- 	if (IS_ERR(gserial)) {
- 		ret = PTR_ERR(gserial);
- 		return ret;
-diff --git a/drivers/gnss/serial.c b/drivers/gnss/serial.c
-index def64b36d994..706fc5b46811 100644
---- a/drivers/gnss/serial.c
-+++ b/drivers/gnss/serial.c
-@@ -103,17 +103,13 @@ static int gnss_serial_set_power(struct gnss_serial *gserial,
- 	return gserial->ops->set_power(gserial, state);
- }
- 
--/*
-- * FIXME: need to provide subdriver defaults or separate dt parsing from
-- * allocation.
-- */
- static int gnss_serial_parse_dt(struct serdev_device *serdev)
- {
- 	struct gnss_serial *gserial = serdev_device_get_drvdata(serdev);
- 	struct device_node *node = serdev->dev.of_node;
--	u32 speed = 4800;
-+	uint speed;
- 
--	of_property_read_u32(node, "current-speed", &speed);
-+	of_property_read_u32(node, "default-speed", &speed);
- 
- 	gserial->speed = speed;
- 
-@@ -121,7 +117,8 @@ static int gnss_serial_parse_dt(struct serdev_device *serdev)
- }
- 
- struct gnss_serial *gnss_serial_allocate(struct serdev_device *serdev,
--						size_t data_size)
-+					 size_t data_size,
-+					 uint serial_speed)
- {
- 	struct gnss_serial *gserial;
- 	struct gnss_device *gdev;
-@@ -146,10 +143,18 @@ struct gnss_serial *gnss_serial_allocate(struct serdev_device *serdev,
- 	serdev_device_set_drvdata(serdev, gserial);
- 	serdev_device_set_client_ops(serdev, &gnss_serial_serdev_ops);
- 
--	ret = gnss_serial_parse_dt(serdev);
-+	/* Serial speed provided by subdriver takes precedence over dt*/
-+	if (!serial_speed)
-+		ret = gnss_serial_parse_dt(serdev);
-+	else
-+		gserial->speed = serial_speed;
-+
- 	if (ret)
- 		goto err_put_device;
- 
-+	if (!gserial->speed)
-+		return -EINVAL;
-+
- 	return gserial;
- 
- err_put_device:
-diff --git a/drivers/gnss/serial.h b/drivers/gnss/serial.h
-index 980ffdc86c2a..29212b57a739 100644
---- a/drivers/gnss/serial.h
-+++ b/drivers/gnss/serial.h
-@@ -33,7 +33,8 @@ struct gnss_serial_ops {
- extern const struct dev_pm_ops gnss_serial_pm_ops;
- 
- struct gnss_serial *gnss_serial_allocate(struct serdev_device *gserial,
--						size_t data_size);
-+					 size_t data_size,
-+					 uint serial_speed);
- void gnss_serial_free(struct gnss_serial *gserial);
- 
- int gnss_serial_register(struct gnss_serial *gserial);
-diff --git a/drivers/gnss/ubx.c b/drivers/gnss/ubx.c
-index 7b05bc40532e..26a278c7e2fd 100644
---- a/drivers/gnss/ubx.c
-+++ b/drivers/gnss/ubx.c
-@@ -68,8 +68,9 @@ static int ubx_probe(struct serdev_device *serdev)
- 	struct gnss_serial *gserial;
- 	struct ubx_data *data;
- 	int ret;
-+	uint speed = 4800;
- 
--	gserial = gnss_serial_allocate(serdev, sizeof(*data));
-+	gserial = gnss_serial_allocate(serdev, sizeof(*data), speed);
- 	if (IS_ERR(gserial)) {
- 		ret = PTR_ERR(gserial);
- 		return ret;
--- 
-2.7.4
-
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
