@@ -2,109 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A429517869
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 13:36:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA683178C7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 13:49:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vFDnDBsRi0rUmm1IIuP/b0dY+Fk+3RgruVnTj800ado=; b=dZFoj8VWYfondX
-	qnTNFAhrzIBcuF39PHzhOaJHpe9GRAWp71mXIhCj5y6IEmkKgUclHgHxxA8lRttxjAENC1fy+3PpJ
-	hSY1Za25Wd3Y0jh4iJO6guNOrlEYnclNCUbNE79u6G5tq/b1DB9yTOHDyADMnT37YVjLnz9LzmE0m
-	F6DhheSvTG7jHuJYEvnEb4lYn8MdztC2Tum8zaKuNeQjyW1gsx8WN8NdmX23JuXNkNVIogdeS7H0b
-	gUOpWx6PcYpr/K0HOUyVBrIL+CbLKXNso4MrmvXP1SrA6e131s3nYDUaOVJXPETEh9GMi6FgWOiye
-	S5X0fb9/O3k0R7gcfpSA==;
+	List-Owner; bh=bQVvS5yzzheJEHHVK3A0NpxVEpJo914dzC66zo8S7FA=; b=I5PSAGAIH4peDr
+	yMM6wPEyMryfOUD8LJJ1MeEtKS09DkS8U++Wixp2DLlsD8DQg9zxCcJyn0NBdx8K9SvuiWzXwTNmP
+	fgEMyVX04ptlafuUsYWyvaZLyskpQ+okHPWlv7LVRzdOE+RRhSJDnQMnO0dP+34bjP3Ihw3sosFNR
+	PeL52XN9IFqO6VZMsRY8voMPhjVmFaZnp96A5MQJj84JrLUFEnnFQml9YqY0uEzCKL5AAO8WNqAKi
+	ybX6ISU6+4jZi60tBXMYWv05TuO1mw3vzX6pxYNDQX5V2PpUVxPKNDHmU/qAUZKDjc5oajU+0auSA
+	O6rsPVpfpeWnL5RZciVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOKrm-00081l-CU; Wed, 08 May 2019 11:36:06 +0000
-Received: from mail-eopbgr130050.outbound.protection.outlook.com
- ([40.107.13.50] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1hOL4a-0006XL-6M; Wed, 08 May 2019 11:49:20 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOKqX-0005M5-Kq
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 11:35:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=qB1SbsCmwkm1HmMj2DG+JXsqDZA1DYn00mvMYZU3xHI=;
- b=evzsZiJE2s+9DRbcRlsES1P8K6El8TkjL2r9LTCjn5JVV9kVEFZmvfVi3ilHQUhBkyPZJMB/9rv7RTr2DwZtaYG5Lw3Z1+Wnp28ghXvahD1XSnTJONXHXkXtZItF+WcSk5KmkYNtRZX/xxWKyCj/z7S9LxNn0r5S4HYL81BA1f0=
-Received: from AM0PR04MB4353.eurprd04.prod.outlook.com (52.134.125.146) by
- AM0PR04MB4657.eurprd04.prod.outlook.com (52.135.150.158) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1856.11; Wed, 8 May 2019 11:34:41 +0000
-Received: from AM0PR04MB4353.eurprd04.prod.outlook.com
- ([fe80::e4fe:fbdc:448b:c8a6]) by AM0PR04MB4353.eurprd04.prod.outlook.com
- ([fe80::e4fe:fbdc:448b:c8a6%7]) with mapi id 15.20.1856.012; Wed, 8 May 2019
- 11:34:41 +0000
-From: Chuanhua Han <chuanhua.han@nxp.com>
-To: Sascha Hauer <s.hauer@pengutronix.de>
-Subject: RE: [EXT] Re: [PATCH 1/2] i2c: imx: I2C Driver doesn't consider
- I2C_IPGCLK_SEL RCW bit when using ls1046a SoC
-Thread-Topic: [EXT] Re: [PATCH 1/2] i2c: imx: I2C Driver doesn't consider
- I2C_IPGCLK_SEL RCW bit when using ls1046a SoC
-Thread-Index: AQHU/w+WtXmB7zSh+EKM7NDEvi24aqZUqIWAgAYQEbCAAwZvgIADZGxA
-Date: Wed, 8 May 2019 11:34:41 +0000
-Message-ID: <AM0PR04MB43534A9B1A146DEFA929844C97320@AM0PR04MB4353.eurprd04.prod.outlook.com>
-References: <20190430044719.30720-1-chuanhua.han@nxp.com>
- <20190430125043.weqwzim4gpsvtkfe@pengutronix.de>
- <AM6PR04MB43571B8D52C1FE9ED20DBA1D97360@AM6PR04MB4357.eurprd04.prod.outlook.com>
- <20190506073735.ctzybytamu44pbvv@pengutronix.de>
-In-Reply-To: <20190506073735.ctzybytamu44pbvv@pengutronix.de>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=chuanhua.han@nxp.com; 
-x-originating-ip: [92.121.36.198]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: f2774356-d24b-405f-a43c-08d6d3a9290f
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB4657; 
-x-ms-traffictypediagnostic: AM0PR04MB4657:
-x-ms-exchange-purlcount: 1
-x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-x-microsoft-antispam-prvs: <AM0PR04MB465735DDBB1B93142F4C5EE397320@AM0PR04MB4657.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:747;
-x-forefront-prvs: 0031A0FFAF
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(376002)(396003)(346002)(39860400002)(366004)(136003)(13464003)(189003)(199004)(478600001)(4326008)(25786009)(14454004)(71200400001)(8936002)(6436002)(71190400001)(966005)(81166006)(81156014)(8676002)(2906002)(316002)(54906003)(52536014)(256004)(55016002)(14444005)(86362001)(66556008)(9686003)(11346002)(66446008)(6246003)(446003)(26005)(64756008)(44832011)(229853002)(186003)(76116006)(66946007)(73956011)(6306002)(66476007)(53936002)(486006)(476003)(7736002)(305945005)(7416002)(74316002)(68736007)(53546011)(102836004)(6916009)(45080400002)(33656002)(6506007)(7696005)(99286004)(76176011)(3846002)(6116002)(5660300002)(66066001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4657;
- H:AM0PR04MB4353.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: L8pshLA4qyjLcTIECishv4+tIlUcsPz/5pwFiU8cS9jaFvsa3UgtXBOMXd7ZZxW0OV2z7D3bNMfBQYs7NruIHqwgunb/+zZC8T45h++HKFWVF4CdfsgH0wdPHQ9SlWR1ZhdP89Zg6k/ka7VKZ64Q1hwrDFpAvWQ2lsZQief2gmlK6+Z66MdfxNy0ZxQCpemnfWCj0sNRBtjwMbSvsXHdFNDNT8JEjUpXAPFioEUF5FLOFEN9nD5uVJ/Tfr/ODY5M5/MOhZGkr6NznNPltXEiQ77pS444W2h/V/FnDtCvjewAWF9c3Qx4iCDy36fsqWjDIh87BuT51FzUEvab4dW4bYAD4i8LrvSQMosJCUDl9aPqILVF1WVOoBKoJmslIo2rrmtAxYcpLORJV8rLyptTQNP51OMVsSqW1fyNadwKxOc=
+ id 1hOL45-00063e-0w
+ for linux-arm-kernel@bombadil.infradead.org; Wed, 08 May 2019 11:48:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=pdO81VETnFTYDFzyuJTwpRlD6LHRt0F6UvCGdTldp/U=; b=NdGYAfFJ57g1jYxrSHAJOrew6
+ OPzvUgmYkcBSZQ1JVB5I99VM6S6ynvVnaTZwu9RNNcSBwJ6YElPpG/kgJPeE/6kbNgg/oZzISD9Yo
+ 7gIGDcsUEdOvLU3KwdDSi5ND3AuWAe3zV12yiuaqkhTqqVhHvUgEpLxD4cd0PFhnB2XrWAjxRTBe2
+ UGmi3rO2vK3U6d1VenD7PWZ1nZHMClqjQ6mRJvKE4ZpINyckNujFPRxVeXRaRIYeJPjGDfgoEWWG8
+ 7jPoUnt3d8Vwy4E+vL/+BZbPwI05i95pAy5TAbfTRe/cBqaa76PQiSNW85VgcuscGGP2X5ySXyEeZ
+ 03WFsCpbQ==;
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by merlin.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hOKrB-0006On-Un
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 11:35:31 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8B549341;
+ Wed,  8 May 2019 04:35:27 -0700 (PDT)
+Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 10CC43FBF8;
+ Wed,  8 May 2019 04:35:25 -0700 (PDT)
+Date: Wed, 8 May 2019 12:35:19 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [PATCH v3 0/2] hwmon: scmi: Scale values to target desired HWMON
+ units
+Message-ID: <20190508113452.GA27209@e107155-lin>
+References: <20190507230917.21659-1-f.fainelli@gmail.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f2774356-d24b-405f-a43c-08d6d3a9290f
-X-MS-Exchange-CrossTenant-originalarrivaltime: 08 May 2019 11:34:41.0579 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4657
+Content-Disposition: inline
+In-Reply-To: <20190507230917.21659-1-f.fainelli@gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_043450_106838_6EBF49AD 
-X-CRM114-Status: GOOD (  22.59  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+X-CRM114-CacheID: sfid-20190508_073530_098268_B036E3DC 
+X-CRM114-Status: GOOD (  15.56  )
+X-Spam-Score: -5.0 (-----)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.13.50 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -116,96 +79,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Sumit Batra <sumit.batra@nxp.com>, "eha@deif.com" <eha@deif.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>,
- "wsa+renesas@sang-engineering.com" <wsa+renesas@sang-engineering.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
- "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
- "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
- "linux@rempel-privat.de" <linux@rempel-privat.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "peda@axentia.se" <peda@axentia.se>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- dl-linux-imx <linux-imx@nxp.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "open list:HARDWARE MONITORING" <linux-hwmon@vger.kernel.org>,
+ Jean Delvare <jdelvare@suse.com>, linux-kernel@vger.kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, Guenter Roeck <linux@roeck-us.net>,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DQoNCj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0NCj4gRnJvbTogU2FzY2hhIEhhdWVyIDxz
-LmhhdWVyQHBlbmd1dHJvbml4LmRlPg0KPiBTZW50OiAyMDE55bm0NeaciDbml6UgMTU6MzgNCj4g
-VG86IENodWFuaHVhIEhhbiA8Y2h1YW5odWEuaGFuQG54cC5jb20+DQo+IENjOiBzaGF3bmd1b0Br
-ZXJuZWwub3JnOyBMZW8gTGkgPGxlb3lhbmcubGlAbnhwLmNvbT47IHJvYmgrZHRAa2VybmVsLm9y
-ZzsNCj4gbWFyay5ydXRsYW5kQGFybS5jb207IGxpbnV4LWtlcm5lbEB2Z2VyLmtlcm5lbC5vcmc7
-DQo+IGxpbnV4LWkyY0B2Z2VyLmtlcm5lbC5vcmc7IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
-cmFkZWFkLm9yZzsNCj4gZGV2aWNldHJlZUB2Z2VyLmtlcm5lbC5vcmc7IGZlc3RldmFtQGdtYWls
-LmNvbTsgZGwtbGludXgtaW14DQo+IDxsaW51eC1pbXhAbnhwLmNvbT47IHdzYStyZW5lc2FzQHNh
-bmctZW5naW5lZXJpbmcuY29tOw0KPiB1LmtsZWluZS1rb2VuaWdAcGVuZ3V0cm9uaXguZGU7IGVo
-YUBkZWlmLmNvbTsgbGludXhAcmVtcGVsLXByaXZhdC5kZTsNCj4gbC5zdGFjaEBwZW5ndXRyb25p
-eC5kZTsgcGVkYUBheGVudGlhLnNlOyBTdW1pdCBCYXRyYQ0KPiA8c3VtaXQuYmF0cmFAbnhwLmNv
-bT4NCj4gU3ViamVjdDogUmU6IFtFWFRdIFJlOiBbUEFUQ0ggMS8yXSBpMmM6IGlteDogSTJDIERy
-aXZlciBkb2Vzbid0IGNvbnNpZGVyDQo+IEkyQ19JUEdDTEtfU0VMIFJDVyBiaXQgd2hlbiB1c2lu
-ZyBsczEwNDZhIFNvQw0KPiANCj4gQ2F1dGlvbjogRVhUIEVtYWlsDQo+IA0KPiBPbiBTYXQsIE1h
-eSAwNCwgMjAxOSBhdCAwOToyODo0OEFNICswMDAwLCBDaHVhbmh1YSBIYW4gd3JvdGU6DQo+ID4N
-Cj4gPg0KPiA+ID4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0NCj4gPiA+IEZyb206IFNhc2No
-YSBIYXVlciA8cy5oYXVlckBwZW5ndXRyb25peC5kZT4NCj4gPiA+IFNlbnQ6IDIwMTnlubQ05pyI
-MzDml6UgMjA6NTENCj4gPiA+IFRvOiBDaHVhbmh1YSBIYW4gPGNodWFuaHVhLmhhbkBueHAuY29t
-Pg0KPiA+ID4gQ2M6IHNoYXduZ3VvQGtlcm5lbC5vcmc7IExlbyBMaSA8bGVveWFuZy5saUBueHAu
-Y29tPjsNCj4gPiA+IHJvYmgrZHRAa2VybmVsLm9yZzsgbWFyay5ydXRsYW5kQGFybS5jb207DQo+
-ID4gPiBsaW51eC1rZXJuZWxAdmdlci5rZXJuZWwub3JnOyBsaW51eC1pMmNAdmdlci5rZXJuZWwu
-b3JnOw0KPiA+ID4gbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnOw0KPiA+ID4g
-ZGV2aWNldHJlZUB2Z2VyLmtlcm5lbC5vcmc7IGZlc3RldmFtQGdtYWlsLmNvbTsgZGwtbGludXgt
-aW14DQo+ID4gPiA8bGludXgtaW14QG54cC5jb20+OyB3c2ErcmVuZXNhc0BzYW5nLWVuZ2luZWVy
-aW5nLmNvbTsNCj4gPiA+IHUua2xlaW5lLWtvZW5pZ0BwZW5ndXRyb25peC5kZTsgZWhhQGRlaWYu
-Y29tOw0KPiA+ID4gbGludXhAcmVtcGVsLXByaXZhdC5kZTsgbC5zdGFjaEBwZW5ndXRyb25peC5k
-ZTsgcGVkYUBheGVudGlhLnNlOw0KPiA+ID4gU3VtaXQgQmF0cmEgPHN1bWl0LmJhdHJhQG54cC5j
-b20+DQo+ID4gPiBTdWJqZWN0OiBbRVhUXSBSZTogW1BBVENIIDEvMl0gaTJjOiBpbXg6IEkyQyBE
-cml2ZXIgZG9lc24ndCBjb25zaWRlcg0KPiA+ID4gSTJDX0lQR0NMS19TRUwgUkNXIGJpdCB3aGVu
-IHVzaW5nIGxzMTA0NmEgU29DDQo+ID4gPg0KPiA+ID4gQ2F1dGlvbjogRVhUIEVtYWlsDQo+ID4g
-Pg0KPiA+ID4gT24gVHVlLCBBcHIgMzAsIDIwMTkgYXQgMTI6NDc6MThQTSArMDgwMCwgQ2h1YW5o
-dWEgSGFuIHdyb3RlOg0KPiA+ID4gPiBUaGUgY3VycmVudCBrZXJuZWwgZHJpdmVyIGRvZXMgbm90
-IGNvbnNpZGVyIEkyQ19JUEdDTEtfU0VMICg0MjQNCj4gPiA+ID4gYml0IG9mDQo+ID4gPiA+IFJD
-VykgaW4gZGVjaWRpbmcgIGkyY19jbGtfcmF0ZSBpbiBmdW5jdGlvbiBpMmNfaW14X3NldF9jbGso
-KSB7IDANCj4gPiA+ID4gUGxhdGZvcm0gY2xvY2svNCwgMSBQbGF0Zm9ybSBjbG9jay8yfS4NCj4g
-PiA+ID4NCj4gPiA+ID4gV2hlbiB1c2luZyBsczEwNDZhIFNvQywgdGhpcyBwb3B1bGF0ZXMgaW5j
-b3JyZWN0IHZhbHVlIGluIElCRkQNCj4gPiA+ID4gcmVnaXN0ZXIgaWYgSTJDX0lQR0NMS19TRUwg
-PSAwLCB3aGljaCBnZW5lcmF0ZXMgaGFsZiBvZiB0aGUgZGVzaXJlZCBDbG9jay4NCj4gPiA+ID4N
-Cj4gPiA+ID4gVGhlcmVmb3JlLCBpZiBsczEwNDZhIFNvQyBpcyB1c2VkLCB3ZSBuZWVkIHRvIHNl
-dCB0aGUgaTJjIGNsb2NrDQo+ID4gPiA+IGFjY29yZGluZyB0byB0aGUgY29ycmVzcG9uZGluZyBS
-Q1cuDQo+ID4gPg0KPiA+ID4gU28gdGhlIGNsb2NrIGRyaXZlciByZXBvcnRzIHRoZSB3cm9uZyBj
-bG9jay4gUGxlYXNlIGZpeCB0aGUgY2xvY2sgZHJpdmVyIHRoZW4uDQo+ID4gTm8sIHRoaXMgaXMg
-YSBwcm9ibGVtIHdpdGggdGhlIGkyYyBkcml2ZXIuIEl0IGlzIG5vdCBhIHByb2JsZW0gd2l0aA0K
-PiA+IHRoZSBjbG9jayBkcml2ZXIsIHNvIHRoZSBpMmMgZHJpdmVyIG5lZWRzIHRvIGJlIG1vZGlm
-aWVkLg0KPiANCj4gU28gaG93IGRvZXMgdGhpcyBSQ1cgYml0IGdldCBldmFsdWF0ZWQ/IA0KQWNj
-b3JkaW5nIHRvIHRoZSByZWZlcmVuY2UgbWFudWFsDQo+IG9ubHkgb25lIGNsb2NrIGdvZXMgdG8g
-dGhlIGkyYyBtb2R1bGUgKGRlc2NyaWJlZCBhcyAxLzIgUGxhdGZvcm0NCj4gQ2xvY2spIGFuZCB0
-aGUgaTJjIG1vZHVsZSBvbmx5IHRha2VzIG9uZSBjbG9jay4gU28gaXQgc2VlbXMgdGhlcmUgbXVz
-dCBiZSBhIC8yDQo+IGRpdmlkZXIgc29tZXdoZXJlLCBlaXRoZXIgaW4gZWFjaCBpMmMgbW9kdWxl
-IG9yIHNvbWV3aGVyZSBvdXRzaWRlLiBDYW4geW91cg0KPiBJQyBndXlzIHRlbGwgeW91IHdoZXJl
-IGl0IGlzPw0KSSBuZWVkIHRvIGNvbmZpcm0gdGhpcyB3aXRoIHRoZSBJQyB0ZWFtDQo+IA0KPiBP
-bmUgcmVhc29uIEkgc3VnZ2VzdGVkIHRoZSBjbG9jayBkcml2ZXIgaXMgdGhhdCB0aGUgY2xvY2sg
-ZHJpdmVyIGNvbnRhaW5zIFNvQw0KPiBzcGVjaWZpYyBjb2RlIGFscmVhZHksIHNvIGl0IHNob3Vs
-ZCBiZSBlYXNpZXIgdG8gaW50ZWdyYXRlIHRoZXJlLg0KSXQgc2VlbXMgaW5hcHByb3ByaWF0ZSB0
-byBwdXQgdGhlIGNsb2NrIGZyZXF1ZW5jeSBkaXZpc2lvbiBtb2RpZmljYXRpb24gb2YgaTJjIGlu
-IHRoZSBjbG9jayBkcml2ZXIsDQpiZWNhdXNlIHRoZSBjbG9jayBkcml2ZXIgaXMgZm9yIGFsbCBJ
-UCBhbmQgaXMgYSB1bml2ZXJzYWwgY29kZSwgc28gSSB0aGluayBpdCBpcyBiZXR0ZXIgdG8gbW9k
-aWZ5IHRoZSBjbG9jayBpbiB0aGUgSVAgZHJpdmVyLg0KPiANCj4gU2FzY2hhDQo+IA0KPiANCj4g
-LS0NCj4gUGVuZ3V0cm9uaXggZS5LLiAgICAgICAgICAgICAgICAgICAgICAgICAgIHwNCj4gfA0K
-PiBJbmR1c3RyaWFsIExpbnV4IFNvbHV0aW9ucyAgICAgICAgICAgICAgICAgfA0KPiBodHRwczov
-L2V1cjAxLnNhZmVsaW5rcy5wcm90ZWN0aW9uLm91dGxvb2suY29tLz91cmw9aHR0cCUzQSUyRiUy
-Rnd3dy5wZQ0KPiBuZ3V0cm9uaXguZGUlMkYmYW1wO2RhdGE9MDIlN0MwMSU3Q2NodWFuaHVhLmhh
-biU0MG54cC5jb20lN0NiMmQNCj4gNDY4MDY5OWM0NDhlODUxNDMwOGQ2ZDFmNWJmODIlN0M2ODZl
-YTFkM2JjMmI0YzZmYTkyY2Q5OWM1YzMwMTYzDQo+IDUlN0MwJTdDMCU3QzYzNjkyNzI1MDc0MzUx
-NjU2MyZhbXA7c2RhdGE9cEZkQ2JpRFhFJTJGRGxsMDFYOU5qDQo+IEhnM1NDRHBFQ3pncnI4TUx0
-WUJkS0g1YyUzRCZhbXA7cmVzZXJ2ZWQ9MCAgfA0KPiBQZWluZXIgU3RyLiA2LTgsIDMxMTM3IEhp
-bGRlc2hlaW0sIEdlcm1hbnkgfCBQaG9uZTogKzQ5LTUxMjEtMjA2OTE3LTANCj4gfA0KPiBBbXRz
-Z2VyaWNodCBIaWxkZXNoZWltLCBIUkEgMjY4NiAgICAgICAgICAgfCBGYXg6DQo+ICs0OS01MTIx
-LTIwNjkxNy01NTU1IHwNCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Tue, May 07, 2019 at 04:09:15PM -0700, Florian Fainelli wrote:
+> Hi Sudeep, Guenter,
+> 
+> This patch series adds support for scaling SCMI sensor values read from
+> firmware. Sudeep, let me know if you think we should be treating scale
+> == 0 as a special value to preserve some firmware compatibility (not
+> that this would be desired).
+
+So are we providing raw values from sensors.c and handling conversion
+in hwmon layer ? I was thinking of just providing converted values
+to hwmon just in case if the scaling thing change in future with
+newer versions of SCMI. I am fine either way, just trying to keep
+hwmon-scmi simpler. I will check if scale = 0 needs to be treated as
+special(I don't think so, but will read the spec)
+
+--
+Regards,
+Sudeep
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
