@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B730017198
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 08:30:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6908B17154
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 08:19:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,75 +11,78 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:In-Reply-To:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=yxSDJeScAZH2RhLs5SAnGo3kEl67NXQq1SQfJ4dSgYc=; b=m2IUYZzn9xHskPiUJmPQRKTBpj
-	tcdsNAh/xqQvJPFw6eMD/iX2nONIjBllkG2bzfG391stghalhTvAjTYRcO0Fl4d+2bk7cZgE6Fmdj
-	Xa1cRuzLQxloeBoyYQHJdql8+BYiCplvkEmPKEGVUp/rKxJzggJh6Pm5+yySuQvQBG2zVenIQ6d9J
-	Dmmg5sGV3QwVga3Xt2jpuga+VNXXcaY7oWoDXxNOuQcDjQlU4Ad4dIJyOmhHdV+gpvNM2KKsYeB1P
-	XJn4d6eq0/3cMEJeG6FTRXIFjLinxUG77bbuQ5vhNnoFOSVsK/00C3k2hEjcgeCBvmx+jSPMh6ygF
-	IDnp583Q==;
+	bh=a+9lKLDvptQZvg2+ItpiLn/5N5XitaFKwz2XnZRA18Y=; b=ox1mDnRJTISq1Sj0NSF6O4XCsw
+	81UZzp/pWGvWC73PC7P7oVzCmbL+CVZsHGO9EwLfO6rcuR68Px+5ZItAWD2kCvyuE2Lg6sg+k/ZPg
+	A8TQvM9xDcMMenqlXR48BifOibER6+F7uaZjmFxubaC+fp498j18jBf9MenCYAQVycRetxw9tshNX
+	c7dDoI0jmX2ASk1lGSQkU6N3atGRfbWiU4yS4TOcgW2VJF7XSu22NLBjxvz9zI8RxQk3Cf3TPBS0b
+	MVQQMCEKXEUqU2UMYwfwdbtTSlbXevF8EXXsr04PN6y/1Ji74GXYz/c28b6F8fWtflBe9EQxJZxnS
+	wBdr+qJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOG5r-0008JM-SG; Wed, 08 May 2019 06:30:19 +0000
+	id 1hOFvV-0002Fr-1c; Wed, 08 May 2019 06:19:37 +0000
 Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
  helo=mx0a-001b2d01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOFtx-0000LU-Ay
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 06:18:20 +0000
-Received: from pps.filterd (m0098417.ppops.net [127.0.0.1])
+ id 1hOFu0-0000Pj-4Q
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 06:18:30 +0000
+Received: from pps.filterd (m0098421.ppops.net [127.0.0.1])
  by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x486GbEv072805
- for <linux-arm-kernel@lists.infradead.org>; Wed, 8 May 2019 02:18:00 -0400
-Received: from e06smtp03.uk.ibm.com (e06smtp03.uk.ibm.com [195.75.94.99])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2sbp870dfc-1
+ x486GWoa075949
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 8 May 2019 02:18:03 -0400
+Received: from e06smtp07.uk.ibm.com (e06smtp07.uk.ibm.com [195.75.94.103])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2sbqa5x3xe-1
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Wed, 08 May 2019 02:18:00 -0400
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 08 May 2019 02:18:02 -0400
 Received: from localhost
- by e06smtp03.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ by e06smtp07.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
  Violators will be prosecuted
  for <linux-arm-kernel@lists.infradead.org> from <rppt@linux.ibm.com>;
- Wed, 8 May 2019 07:17:58 +0100
-Received: from b06cxnps4075.portsmouth.uk.ibm.com (9.149.109.197)
- by e06smtp03.uk.ibm.com (192.168.101.133) with IBM ESMTP SMTP Gateway:
+ Wed, 8 May 2019 07:18:00 +0100
+Received: from b06cxnps4076.portsmouth.uk.ibm.com (9.149.109.198)
+ by e06smtp07.uk.ibm.com (192.168.101.137) with IBM ESMTP SMTP Gateway:
  Authorized Use Only! Violators will be prosecuted; 
  (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Wed, 8 May 2019 07:17:49 +0100
-Received: from d06av21.portsmouth.uk.ibm.com (d06av21.portsmouth.uk.ibm.com
- [9.149.105.232])
- by b06cxnps4075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x486Hmp335127468
+ Wed, 8 May 2019 07:17:53 +0100
+Received: from d06av23.portsmouth.uk.ibm.com (d06av23.portsmouth.uk.ibm.com
+ [9.149.105.59])
+ by b06cxnps4076.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x486HqZd51970112
  (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 8 May 2019 06:17:48 GMT
-Received: from d06av21.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 5DD2752050;
- Wed,  8 May 2019 06:17:48 +0000 (GMT)
+ Wed, 8 May 2019 06:17:52 GMT
+Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 5B44EA4057;
+ Wed,  8 May 2019 06:17:52 +0000 (GMT)
+Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 142CDA405B;
+ Wed,  8 May 2019 06:17:49 +0000 (GMT)
 Received: from rapoport-lnx (unknown [9.148.8.112])
- by d06av21.portsmouth.uk.ibm.com (Postfix) with ESMTPS id 2163652074;
- Wed,  8 May 2019 06:17:45 +0000 (GMT)
+ by d06av23.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
+ Wed,  8 May 2019 06:17:48 +0000 (GMT)
 Received: by rapoport-lnx (sSMTP sendmail emulation);
- Wed, 08 May 2019 09:17:44 +0300
+ Wed, 08 May 2019 09:17:48 +0300
 From: Mike Rapoport <rppt@linux.ibm.com>
 To: Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH v2 08/14] mips: switch to generic version of pte allocation
-Date: Wed,  8 May 2019 09:17:05 +0300
+Subject: [PATCH v2 09/14] nds32: switch to generic version of pte allocation
+Date: Wed,  8 May 2019 09:17:06 +0300
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1557296232-15361-1-git-send-email-rppt@linux.ibm.com>
 References: <1557296232-15361-1-git-send-email-rppt@linux.ibm.com>
 X-TM-AS-GCONF: 00
-x-cbid: 19050806-0012-0000-0000-000003196C54
+x-cbid: 19050806-0028-0000-0000-0000036B6E5C
 X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19050806-0013-0000-0000-00002151EC5C
-Message-Id: <1557296232-15361-9-git-send-email-rppt@linux.ibm.com>
+x-cbparentid: 19050806-0029-0000-0000-0000242AEA24
+Message-Id: <1557296232-15361-10-git-send-email-rppt@linux.ibm.com>
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2019-05-08_05:, , signatures=0
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
  priorityscore=1501
  malwarescore=0 suspectscore=2 phishscore=0 bulkscore=0 spamscore=0
  clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=855 adultscore=0 classifier=spam adjust=0 reason=mlx
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
  scancount=1 engine=8.0.1-1810050000 definitions=main-1905080040
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_231802_112916_747A169E 
-X-CRM114-Status: GOOD (  25.92  )
+X-CRM114-CacheID: sfid-20190507_231804_951846_7D7D83E1 
+X-CRM114-Status: GOOD (  26.57  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -122,83 +125,87 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MIPS allocates kernel PTE pages with
+The nds32 implementation of pte_alloc_one_kernel() differs from the generic
+in the use of __GFP_RETRY_MAYFAIL flag, which is removed after the
+conversion.
 
-	__get_free_pages(GFP_KERNEL | __GFP_ZERO, PTE_ORDER)
+The nds32 version of pte_alloc_one() missed the call to pgtable_page_ctor()
+and also used __GFP_RETRY_MAYFAIL. Switching it to use generic
+__pte_alloc_one() for the PTE page allocation ensures that page table
+constructor is run and the user page tables are allocated with
+__GFP_ACCOUNT.
 
-and user PTE pages with
+The conversion to the generic version of pte_free_kernel() removes the NULL
+check for pte.
 
-	pte = alloc_pages(GFP_KERNEL, PTE_ORDER)
-
-and then uses clear_highpage(pte) to zero out the allocated page for the
-user page tables.
-
-The PTE_ORDER is hardwired to zero, which makes MIPS implementation almost
-identical to the generic one.
-
-Switch MIPS to the generic version that does exactly the same thing for the
-kernel page tables and adds __GFP_ACCOUNT for the user PTEs.
-
-The pte_free_kernel() and pte_free() versions on mips are identical to the
-generic ones and can be simply dropped.
+The pte_free() version on nds32 is identical to the generic one and can be
+simply dropped.
 
 Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
-Acked-by: Paul Burton <paul.burton@mips.com>
 ---
- arch/mips/include/asm/pgalloc.h | 33 ++-------------------------------
- 1 file changed, 2 insertions(+), 31 deletions(-)
+ arch/nds32/include/asm/pgalloc.h | 31 ++++---------------------------
+ 1 file changed, 4 insertions(+), 27 deletions(-)
 
-diff --git a/arch/mips/include/asm/pgalloc.h b/arch/mips/include/asm/pgalloc.h
-index 27808d9..aa16b85 100644
---- a/arch/mips/include/asm/pgalloc.h
-+++ b/arch/mips/include/asm/pgalloc.h
-@@ -13,6 +13,8 @@
- #include <linux/mm.h>
- #include <linux/sched.h>
+diff --git a/arch/nds32/include/asm/pgalloc.h b/arch/nds32/include/asm/pgalloc.h
+index 3c5fee5..954696c 100644
+--- a/arch/nds32/include/asm/pgalloc.h
++++ b/arch/nds32/include/asm/pgalloc.h
+@@ -9,6 +9,9 @@
+ #include <asm/tlbflush.h>
+ #include <asm/proc-fns.h>
  
++#define __HAVE_ARCH_PTE_ALLOC_ONE
 +#include <asm-generic/pgalloc.h>	/* for pte_{alloc,free}_one */
 +
- static inline void pmd_populate_kernel(struct mm_struct *mm, pmd_t *pmd,
- 	pte_t *pte)
- {
-@@ -50,37 +52,6 @@ static inline void pgd_free(struct mm_struct *mm, pgd_t *pgd)
- 	free_pages((unsigned long)pgd, PGD_ORDER);
- }
+ /*
+  * Since we have only two-level page tables, these are trivial
+  */
+@@ -22,22 +25,11 @@ extern void pgd_free(struct mm_struct *mm, pgd_t * pgd);
+ 
+ #define check_pgt_cache()		do { } while (0)
  
 -static inline pte_t *pte_alloc_one_kernel(struct mm_struct *mm)
 -{
--	return (pte_t *)__get_free_pages(GFP_KERNEL | __GFP_ZERO, PTE_ORDER);
--}
+-	pte_t *pte;
 -
--static inline struct page *pte_alloc_one(struct mm_struct *mm)
--{
--	struct page *pte;
+-	pte =
+-	    (pte_t *) __get_free_page(GFP_KERNEL | __GFP_RETRY_MAYFAIL |
+-				      __GFP_ZERO);
 -
--	pte = alloc_pages(GFP_KERNEL, PTE_ORDER);
--	if (!pte)
--		return NULL;
--	clear_highpage(pte);
--	if (!pgtable_page_ctor(pte)) {
--		__free_page(pte);
--		return NULL;
--	}
 -	return pte;
 -}
 -
--static inline void pte_free_kernel(struct mm_struct *mm, pte_t *pte)
+ static inline pgtable_t pte_alloc_one(struct mm_struct *mm)
+ {
+ 	pgtable_t pte;
+ 
+-	pte = alloc_pages(GFP_KERNEL | __GFP_RETRY_MAYFAIL | __GFP_ZERO, 0);
++	pte = __pte_alloc_one(mm, GFP_PGTABLE_USER);
+ 	if (pte)
+ 		cpu_dcache_wb_page((unsigned long)page_address(pte));
+ 
+@@ -45,21 +37,6 @@ static inline pgtable_t pte_alloc_one(struct mm_struct *mm)
+ }
+ 
+ /*
+- * Free one PTE table.
+- */
+-static inline void pte_free_kernel(struct mm_struct *mm, pte_t * pte)
 -{
--	free_pages((unsigned long)pte, PTE_ORDER);
+-	if (pte) {
+-		free_page((unsigned long)pte);
+-	}
 -}
 -
 -static inline void pte_free(struct mm_struct *mm, pgtable_t pte)
 -{
--	pgtable_page_dtor(pte);
--	__free_pages(pte, PTE_ORDER);
+-	__free_page(pte);
 -}
 -
- #define __pte_free_tlb(tlb,pte,address)			\
- do {							\
- 	pgtable_page_dtor(pte);				\
+-/*
+  * Populate the pmdp entry with a pointer to the pte.  This pmd is part
+  * of the mm address space.
+  *
 -- 
 2.7.4
 
