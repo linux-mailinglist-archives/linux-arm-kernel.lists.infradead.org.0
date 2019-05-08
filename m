@@ -2,119 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A743716F1B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 04:39:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CDF116F07
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 04:21:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=h5Uf6exs8ZmXVsA/hRXIG/+Ap+SftVYU69yAFChYS9E=; b=TppRWswNfh54mldZlmck3TTUbr
-	zzAoU5Ft1/gbV9EdVRTlraEulAGiQg4UVq40OO1aEGdObfoNv7IcZAUUOuDi1CSEvoReyfiwFl6Hb
-	nPz7RmT8opCaMEVkqhgdr+UNjPzElp9/cP1Z/Hn8AZ1f5cWTz8K7Sn0CuDa2FSHkt1T4UHqp6zpsM
-	chcOLvMBbO+TUw2HbDx/cNopXdt8misTkpiUd1+mqdWCOH0MUsJVQB9BEuSlts25r+9sUz5OD+aQF
-	EtzWeNwvR4WdezGsirAQv6EjFhk4weMJ5jHpGampfPnIpVK7HfKc3WsV1FAn/RxN5zEUH1kfYEYl4
-	n7D5zRbQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pW8IUdyDP6C4vmKQlnWhRXstHgMaXzIT3CTURlmZSdo=; b=NewLpNHKn3ifYp
+	CsFUVf5O3zQ+a2//QD/8xQ0cMP/Ux/txStJQg3bPYE68FRuoDUZROaHo3k36wGfdNqU2Cn7Iv2nb5
+	nKrBfPHPyevm6nKi/xl8p9gQL8EvewwZ3KNxWqMpRKRRn9wnHVxRcjzwvZ2z8Icjqqumk1eX2CoLi
+	tmjoD5c3PyzFdfcGTTDQaQ0NE63VKCujtXMQgM8FbNmeeTYRYTvc3FW5ZQym3vevwN2+fT4gHP3ll
+	JuuzatZVAER4I/PNYK02y3ZNptN96qg3+yxacjUsiplomKKfoLJQV/o2Pw+a31F37htLCYsE4mefp
+	ao6X5w2S8yZvKHPAbqWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOCUd-0003A1-0s; Wed, 08 May 2019 02:39:39 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1hOCD2-0006DL-W1; Wed, 08 May 2019 02:21:29 +0000
+Received: from mail-db5eur03on0610.outbound.protection.outlook.com
+ ([2a01:111:f400:fe0a::610]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOCUR-0002zj-Cy
- for linux-arm-kernel@bombadil.infradead.org; Wed, 08 May 2019 02:39:27 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=References:In-Reply-To:Message-Id:Date:
- Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=VT/DoumIOruXiAt+IEfHVTj8xFMF06dsPV76vTKLKmU=; b=Qg3l3skO3XlT8w19rZIUjBpdo
- mVmtOidPHebdj1VbcUmxlwoHO+5DI+BjOU29+R2hifD/PSzNbij6qqQFA87rrM8R8nhQFAMMzAJit
- u0yBzFpcVXbA65JN9ZFGjC8m96MyAj7EWYrRjP2Bm866SrryJ6Tlx7+gLP2QbWHsnm4I6JoD/CqnL
- ToPZVw8rfE7kMYEMLtteqRwkMwpnZNpJZ1BbatpWz2K+bOAOFzPiGqwJ2ApntHNZ0oM0vE85BCqIH
- DdRhuHkkys9tckfR4tVJClime0myLZ4GYGSjU6Y0TxyB5XOu6dnsvl71K3BE6Wh6to+PPDHU3aWUv
- tE68gJOAg==;
-Received: from mail-yw1-xc42.google.com ([2607:f8b0:4864:20::c42])
- by casper.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOCCd-0008W1-Ee
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 02:21:05 +0000
-Received: by mail-yw1-xc42.google.com with SMTP id 18so10172245ywe.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 07 May 2019 19:21:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=VT/DoumIOruXiAt+IEfHVTj8xFMF06dsPV76vTKLKmU=;
- b=qIQj7mU4c7YJHHe7BHgZEUYGBUP8UfrrrZBbYdGM5Yu+nz6qHXQGamhEyeAGJrzMJ9
- 3gl8WGLMdi3K4E4XsP8ft4URWKos/ny2JcrGqYZcBd90V+IfE4RpP28jyXsIZ+wDbVpZ
- sLWdTy+6Q6P96HNODOJIlLlCDRoFLonAdzVThLDnR2hShGvXw6aRh8HRhyPtoIEWmms3
- OY5Dc8BO/PrYgDGwP3JAfuXxgZeQvYQAgv7NYNxIU6nWHrIl3KJf56MWOJ7PX91e2Kn2
- Erpnd30Fb/uVAnXAp3vpywTsDvqCZKUg0agcDNdzQOSl3OPlWni+s0jYRalouzi03tDj
- ufXw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=VT/DoumIOruXiAt+IEfHVTj8xFMF06dsPV76vTKLKmU=;
- b=n+rffIwDWBB+WvZlISz5eAE03RufWYBVN2I146JSFOhZrKDiUUXaAm5LDe1XdVqZww
- X6OlLj5JiR1dEwDkY2oDEb1fb2CERdwn/Tc1yHI1E02piEx6pHpVaNF74SYajKgzX26U
- 40FeWSDvP2RQXBFDs2sYABOCPom4ovBC+0B0nnAiLWidmAFtGtY+gGakDyzlDOwx7LqR
- 9uMQLZA5Hn8+l1ChzuQ7uZp3ZeD9caVTgMnNlEmqKuSqEgdFWzVXiz2s5WobpWJ6F6zY
- J1JgZV/tP8nHljivpJFhIvUdNfzCwdaLmCm0SiN1tSXf7g1yyTLL5+FU8GBdW43WJrpf
- om7A==
-X-Gm-Message-State: APjAAAWlaP5YYobjDRjvCyUMCLd7FbMa191TLu2a3x1WzXTM08ER51/R
- 1SimKy4FdgN46TuT3dk7lisbYA==
-X-Google-Smtp-Source: APXvYqwUV2PSsioGsTEJtGNisNfeTjMAt5+acFaEPT1kWqqPlXnSGAxrpT/5JBTWNkf7gyrMX5zVZw==
-X-Received: by 2002:a81:6d87:: with SMTP id
- i129mr20367881ywc.424.1557282061711; 
- Tue, 07 May 2019 19:21:01 -0700 (PDT)
-Received: from localhost.localdomain (li931-65.members.linode.com.
- [45.56.113.65])
- by smtp.gmail.com with ESMTPSA id s4sm1168116yws.48.2019.05.07.19.20.54
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 07 May 2019 19:21:01 -0700 (PDT)
-From: Leo Yan <leo.yan@linaro.org>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Mike Leach <mike.leach@linaro.org>, Wei Xu <xuwei5@hisilicon.com>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
- Andy Gross <agross@kernel.org>, David Brown <david.brown@linaro.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Liviu Dudau <liviu.dudau@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Orson Zhai <orsonzhai@gmail.com>, Baolin Wang <baolin.wang@linaro.org>,
- Chunyan Zhang <zhang.lyra@gmail.com>, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-msm@vger.kernel.org
-Subject: [PATCH v2 11/11] arm64: dts: sc9860: Update coresight DT bindings
-Date: Wed,  8 May 2019 10:19:02 +0800
-Message-Id: <20190508021902.10358-12-leo.yan@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190508021902.10358-1-leo.yan@linaro.org>
-References: <20190508021902.10358-1-leo.yan@linaro.org>
+ id 1hOCC9-00059A-CS
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 02:20:56 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=SkGu+ZAj2f8A42LZtes4F3XRje7/QFYPujJaRohJHtc=;
+ b=aEfbEoDO72RTzxodq2sfJ717gTxVmSJfIM08BBgo90pWIHEZKuTIf0eO6llpQgdoGTaIjiqBbEX8jyrTIWc65BHmazXe8WKP1vvAwCAv9J93kDk5SU8C2ul68syw7gi0r6IxP6EAVc+ltRryF9i0AUQn7mQdY7ZAzbSrADyzRwc=
+Received: from AM5PR0402MB2865.eurprd04.prod.outlook.com (10.175.44.16) by
+ AM5PR0402MB2707.eurprd04.prod.outlook.com (10.175.39.17) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1856.11; Wed, 8 May 2019 02:20:30 +0000
+Received: from AM5PR0402MB2865.eurprd04.prod.outlook.com
+ ([fe80::d8ed:b418:4ee9:a51]) by AM5PR0402MB2865.eurprd04.prod.outlook.com
+ ([fe80::d8ed:b418:4ee9:a51%9]) with mapi id 15.20.1856.012; Wed, 8 May 2019
+ 02:20:30 +0000
+From: Ran Wang <ran.wang_1@nxp.com>
+To: Rob Herring <robh@kernel.org>
+Subject: RE: [PATCH v2] arm64: dts: ls1028a: Add USB dt nodes
+Thread-Topic: [PATCH v2] arm64: dts: ls1028a: Add USB dt nodes
+Thread-Index: AQHU+/SBIFirjMEfrESTZvW0Hl61haZW+m4AgAhvTQCAAIVkAIAAnZJg
+Date: Wed, 8 May 2019 02:20:30 +0000
+Message-ID: <AM5PR0402MB286549DC56A28B010CE711D6F1320@AM5PR0402MB2865.eurprd04.prod.outlook.com>
+References: <20190426055558.44544-1-ran.wang_1@nxp.com>
+ <20190501235410.GA25492@bogus>
+ <AM5PR0402MB286539A070BDEEDFC3304F0EF1310@AM5PR0402MB2865.eurprd04.prod.outlook.com>
+ <CAL_Jsq+tmUCjZw7ybhKTGg0NNfc+JsOQ30vArfHzdw14XoWm5A@mail.gmail.com>
+In-Reply-To: <CAL_Jsq+tmUCjZw7ybhKTGg0NNfc+JsOQ30vArfHzdw14XoWm5A@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=ran.wang_1@nxp.com; 
+x-originating-ip: [92.121.36.197]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 4c646c35-1039-4651-a251-08d6d35bbe3a
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:AM5PR0402MB2707; 
+x-ms-traffictypediagnostic: AM5PR0402MB2707:
+x-microsoft-antispam-prvs: <AM5PR0402MB2707620F4F12985109DF16EEF1320@AM5PR0402MB2707.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6790;
+x-forefront-prvs: 0031A0FFAF
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(366004)(136003)(376002)(396003)(39860400002)(346002)(199004)(189003)(71200400001)(8936002)(7736002)(305945005)(486006)(68736007)(102836004)(476003)(446003)(11346002)(81166006)(81156014)(8676002)(52536014)(66476007)(186003)(55016002)(66446008)(66946007)(229853002)(6916009)(76116006)(26005)(73956011)(66556008)(64756008)(14444005)(256004)(6436002)(66066001)(316002)(54906003)(9686003)(6246003)(53936002)(71190400001)(86362001)(74316002)(4326008)(33656002)(25786009)(3846002)(6116002)(7696005)(5660300002)(6506007)(53546011)(99286004)(478600001)(76176011)(2906002)(14454004);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM5PR0402MB2707;
+ H:AM5PR0402MB2865.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: RUgc7oUaOD01uyeURvkwMrKyBioa9MDGSsor94PyvFY+652UTchl1WjuzqAYl8sWkvLWViK5nz1IEcnf3IolhiB+eqHVjLdIMX8hja8VE1eWMrUHSBi1crt+DUCPaSb8sgnM7SXCvCDl3YcGp9tVoW/TcVbOog2KkOWp6mPLzyyaUyJnag4Pt9l6KUzlQC66TrD9fcETPGTE0eCNjFTEJ1YmwLc11L4sK/DAABREzNJzhvwLjxKlTkTBVfax0xENHvF7dW3FkSTa1tqVPgF0KVL0u8h0iIGF/L1tWD+vXx9nkkTlP9RrnY2ekaSsnu3QIgljSKbA6Ca6pJsJDkOiWWUE0Ijxkxwyl6Mv5NQ6E6nD+NMP0+696Lkc75bI8PBIxveskZDgdvJJmJ+aewQr8agch1SeW4Jdr9ayYNyEffk=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4c646c35-1039-4651-a251-08d6d35bbe3a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 08 May 2019 02:20:30.4710 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM5PR0402MB2707
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_032103_527879_845E9D20 
-X-CRM114-Status: GOOD (  15.55  )
+X-CRM114-CacheID: sfid-20190507_192033_846682_4A0FA3FB 
+X-CRM114-Status: GOOD (  19.72  )
 X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.2 points, 5.0 required)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c42 listed in]
+ no trust [2a01:111:f400:fe0a:0:0:0:610 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -126,73 +114,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chunyan Zhang <zhang.chunyan@linaro.org>, Leo Yan <leo.yan@linaro.org>
-MIME-Version: 1.0
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Leo Li <leoyang.li@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CoreSight DT bindings have been updated, thus the old compatible strings
-are obsolete and the drivers will report warning if DTS uses these
-obsolete strings.
+Hi Rob,
 
-This patch switches to the new bindings for CoreSight dynamic funnel,
-so can dismiss warning during initialisation.
+On Wednesday, May 08, 2019 00:40, Rob Herring wrote:
+> 
+> On Tue, May 7, 2019 at 3:48 AM Ran Wang <ran.wang_1@nxp.com> wrote:
+> >
+> > Hi Rob,
+> >
+> > On Thursday, May 02, 2019 07:54 Rob Herring wrote:
+> > >
+> > > On Fri, Apr 26, 2019 at 05:54:26AM +0000, Ran Wang wrote:
+> > > > This patch adds USB dt nodes for LS1028A.
+> > > >
+> > > > Signed-off-by: Ran Wang <ran.wang_1@nxp.com>
+> > > > ---
+> > > > Changes in v2:
+> > > >   - Rename node from usb3@... to usb@... to meet DTSpec
+> > > >
+> > > >  arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi |   20
+> > > ++++++++++++++++++++
+> > > >  1 files changed, 20 insertions(+), 0 deletions(-)
+> > > >
+> > > > diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+> > > b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+> > > > index 8dd3501..188cfb8 100644
+> > > > --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+> > > > +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+> > > > @@ -144,6 +144,26 @@
+> > > >                     clocks = <&sysclk>;
+> > > >             };
+> > > >
+> > > > +           usb0:usb@3100000 {
+> > >                      ^ space needed
+> >
+> > Yes, will update this in next version.
+> >
+> > > > +                   compatible= "snps,dwc3";
+> > >
+> > > Needs an SoC specific compatible.
+> >
+> > Do you mean change compatible to "snps,dwc3", "fsl,ls1028a-dwc3" ?
+> 
+> Well, that's the wrong order, but yes.
 
-Cc: Chunyan Zhang <zhang.chunyan@linaro.org>
-Cc: Orson Zhai <orsonzhai@gmail.com>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
-Signed-off-by: Leo Yan <leo.yan@linaro.org>
-Acked-by: Chunyan Zhang <zhang.chunyan@linaro.org>
----
- arch/arm64/boot/dts/sprd/sc9860.dtsi | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+OK, will update this.
+ 
+> > As I know, so far there is no SoC specific programming for this IP, so
+> > do you think it's still necessary to add it?
+> 
+> Yes. All the bugs and quirks are discovered already?
 
-diff --git a/arch/arm64/boot/dts/sprd/sc9860.dtsi b/arch/arm64/boot/dts/sprd/sc9860.dtsi
-index b25d19977170..e27eb3ed1d47 100644
---- a/arch/arm64/boot/dts/sprd/sc9860.dtsi
-+++ b/arch/arm64/boot/dts/sprd/sc9860.dtsi
-@@ -300,7 +300,7 @@
- 		};
- 
- 		funnel@10001000 { /* SoC Funnel */
--			compatible = "arm,coresight-funnel", "arm,primecell";
-+			compatible = "arm,coresight-dynamic-funnel", "arm,primecell";
- 			reg = <0 0x10001000 0 0x1000>;
- 			clocks = <&ext_26m>;
- 			clock-names = "apb_pclk";
-@@ -367,7 +367,7 @@
- 		};
- 
- 		funnel@11001000 { /* Cluster0 Funnel */
--			compatible = "arm,coresight-funnel", "arm,primecell";
-+			compatible = "arm,coresight-dynamic-funnel", "arm,primecell";
- 			reg = <0 0x11001000 0 0x1000>;
- 			clocks = <&ext_26m>;
- 			clock-names = "apb_pclk";
-@@ -415,7 +415,7 @@
- 		};
- 
- 		funnel@11002000 { /* Cluster1 Funnel */
--			compatible = "arm,coresight-funnel", "arm,primecell";
-+			compatible = "arm,coresight-dynamic-funnel", "arm,primecell";
- 			reg = <0 0x11002000 0 0x1000>;
- 			clocks = <&ext_26m>;
- 			clock-names = "apb_pclk";
-@@ -513,7 +513,7 @@
- 		};
- 
- 		funnel@11005000 { /* Main Funnel */
--			compatible = "arm,coresight-funnel", "arm,primecell";
-+			compatible = "arm,coresight-dynamic-funnel", "arm,primecell";
- 			reg = <0 0x11005000 0 0x1000>;
- 			clocks = <&ext_26m>;
- 			clock-names = "apb_pclk";
--- 
-2.17.1
+Yes, so far I don't receive any SoC specific defect report, I think it's fine.
+ Will work out next version patch, thanks for your time.
 
+Regards,
+Ran
 
 _______________________________________________
 linux-arm-kernel mailing list
