@@ -2,79 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2DF21807F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 21:35:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 090E11809A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 21:40:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=52bf1mM7DjJ1/f1oD7lB+h10l0u9k3kWc7qnKm0BADo=; b=QqgWTon/ZEhA4o
-	BllxnpQ1/jlkd8yVvm+HWPNN5hvjWTNNK97xB6biaIOCpHKeX4SKz0I8JONQ0Gze95tD5Rx+HRlRj
-	J52BTFOwqrXO0qStdemXwBC0KZBTa1uJD1ReL1O2BZIQo+J3y33bGWTS9MxZ4LD2pn1J+TvQ7DzPU
-	aLhUo3KQpxQyj2gzrDq1AYaqiTksn3XXaa/EBL4dSlSzDMBklihTab/uWt5J2doyGj9U2/SfKOZz2
-	22ZnyL+THizkz21S75hI5LItLB6hcJBHMwk37XtaHH0UuTFc+n7/JUWqAu9JrEIV7RJY1aNTgz5t0
-	4DgCim6TRmhIlhSwJFCQ==;
+	List-Owner; bh=1yGKmtjs7ev1Z5U2eDVpj4zO3WU/QcsKbO/x5t7qyQA=; b=mzmfW3CNC217ld
+	defmIxtTZjSwmCFkrh6ZpIznW61GyBu9ufoNVyv/Rhi0bnl8TDb7AmgWRQKIMT+n4K9s83emvP9An
+	PKlay3bpSBF6hN5EvnRSrc53J/cCPq2d76zUeEF7KLds9olK2C7pif772nY0PGjYRyGTtlq3v41XW
+	cdnsgF9FqjDYq6qCOpVlg0ODW99IbOpbEaKZMoBqVq97liM7u9ynu+iORcLpTk4BlNeZ0Xg9KFFH0
+	P3vOQFemGOHHKBOF6UM/+yqI/PUV4jXLbG8TVU5y3fmOKidLk1mSrjW7UOCXe85uScWJdBgiuG3PY
+	8afeBDTTVLJ0UN9i53dA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOSLj-0000z2-8X; Wed, 08 May 2019 19:35:31 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hOSQb-0002qL-Ho; Wed, 08 May 2019 19:40:33 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOSLd-0000yW-Ac
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 19:35:26 +0000
-Received: from mail-qt1-f170.google.com (mail-qt1-f170.google.com
- [209.85.160.170])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5AB942089E
+ id 1hOSQT-0002pm-BV
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 19:40:26 +0000
+Received: by mail-pg1-x544.google.com with SMTP id z16so10582165pgv.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed,  8 May 2019 19:35:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1557344123;
- bh=mphS1ZN+kXNeKFWy1pdoLamsdXu3KBM/8iy2Ccq1Jww=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=Qis8XcF09odtVtYH48hq892KgXbEy2WFYjgITzLgPd/MhviV3TODGnumc5xgy4zz1
- Dl93P6CJHOMqwvU4+fWCNgxaqCsADXphF/ii+5AYJrk7PyfyGe0oDXYj0EmBVX21Fc
- BvhILC//l4J2vSVC4rCVjprIovyUqdXFlelxVU54=
-Received: by mail-qt1-f170.google.com with SMTP id j53so5527472qta.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 May 2019 12:35:23 -0700 (PDT)
-X-Gm-Message-State: APjAAAXXvw9g3D9STm3zvy92SKIPnUXr7MErFyuyWH9HS2mT1TSN2sOu
- Gt4KSWdDtIehxE143e21ax2zPSbF4ZXfQATyGg==
-X-Google-Smtp-Source: APXvYqwTXK9BQC3/v8jqMr3QUXehY36ghelKZ/C7r+S4saAFToONVr37WTIeh/DAe2dCDHllum/rv91d81sXjmRd9Dc=
-X-Received: by 2002:aed:306c:: with SMTP id 99mr32486801qte.38.1557344122609; 
- Wed, 08 May 2019 12:35:22 -0700 (PDT)
+ Wed, 08 May 2019 12:40:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=7Xc+7OcJpMvDCLjFgyfFFHfxL3+Nwu8VrHOrlj3FvEg=;
+ b=gA0wLPNq/n/8ixJaFO0KfTJuXx0bYSFib4d8PRnYnRoRWIlBAqZtQfqpPUrVQUkMw0
+ yp6z42kaNOFUQFtgv+ObJmrn0ovteqmXR1lhOeNT2hFBhPPbEb56uXPQ9tlzK14DRgbO
+ HvGP8PCjcsfrz4Cx9F7R/HboeKP6jcQLP30Y4Ua0bMOCV1dKSxsuR1WKHFjts+qExDvp
+ QcW6CUnLtEC1xOeUCnqerVZ3fbVVQjCzPYtvBkQzFX0zmUUSf1M01g++Bl2NeJcxKN6j
+ o0itCM8jpOn/80DmGTBVMaW3DnVu/hZ3qHU1yg6CCW3hGvpOIfKuHzizSbW+MQf2ASnD
+ Z8yA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=7Xc+7OcJpMvDCLjFgyfFFHfxL3+Nwu8VrHOrlj3FvEg=;
+ b=bFeFoWuSmdCWvr4bZsssj+XI7A2I+RXKlZHnH5cVW/uwTWck/btcxtNuQ+0mWEVjPg
+ KAHvsHTVVCmxpE10D9UiN49nWQJUD40YKh/ofgabpLq4XegZWhrsejTEsPzVJR+JC8GD
+ ShrBFUopVuYCLeCwUkJnDZ8BkOVXVbnEyrqtH6Wh07fW1l65aoCVZwFhC2jX6oEJOMg6
+ pPrcKFOkvpmu2bsBrBVUvLsM1TKMxsbPUTg/jsuKG+k6CeArW3ZNxdln7P+/KFVz1sUV
+ SbHeik+RY5Y/5wZebwfPVyb6hUPeLtwd8mQq2zVCmPHLWcwZVGe5Ed6Dr/0R898IRMHW
+ vokg==
+X-Gm-Message-State: APjAAAXE7Mb4BPaY0bmuuyHfVAQPNEoFI60D9IXne6O31pCzqtNnEM+R
+ IQwCMt0pzMl3MRoydEkPZtQ=
+X-Google-Smtp-Source: APXvYqy+Mps/PyObzV+AuLgHZJTJg7RaPtGqFSmI758A8f++3nmdl5bdmN6yqa/mgHxnHrytM0TiuQ==
+X-Received: by 2002:a63:1048:: with SMTP id 8mr49167502pgq.70.1557344424885;
+ Wed, 08 May 2019 12:40:24 -0700 (PDT)
+Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id t7sm41031pfa.42.2019.05.08.12.40.23
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 08 May 2019 12:40:23 -0700 (PDT)
+Date: Wed, 8 May 2019 12:40:22 -0700
+From: Guenter Roeck <linux@roeck-us.net>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [PATCH v4 2/2] hwmon: scmi: Scale values to target desired HWMON
+ units
+Message-ID: <20190508194022.GA28200@roeck-us.net>
+References: <20190508170035.19671-1-f.fainelli@gmail.com>
+ <20190508170035.19671-3-f.fainelli@gmail.com>
+ <20190508183244.GA25133@roeck-us.net>
+ <258aec23-055b-61c2-c0f6-2ff1abc006cd@gmail.com>
 MIME-Version: 1.0
-References: <dc84c7e9ce272109052f553a5e050bfe1a09e9d6.1557252411.git-series.maxime.ripard@bootlin.com>
- <d9afb19c32f8b9b2c40c8d4c0c3df74bff0ccf35.1557252411.git-series.maxime.ripard@bootlin.com>
-In-Reply-To: <d9afb19c32f8b9b2c40c8d4c0c3df74bff0ccf35.1557252411.git-series.maxime.ripard@bootlin.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Wed, 8 May 2019 14:35:10 -0500
-X-Gmail-Original-Message-ID: <CAL_Jsq+iLmzti5TX-TUU3PN4taC66UMqHMk-aKTjZKt1kVRtMQ@mail.gmail.com>
-Message-ID: <CAL_Jsq+iLmzti5TX-TUU3PN4taC66UMqHMk-aKTjZKt1kVRtMQ@mail.gmail.com>
-Subject: Re: [PATCH v2 2/2] dt-bindings: sound: sun4i-spdif: Document that the
- RX channel can be missing
-To: Maxime Ripard <maxime.ripard@bootlin.com>
+Content-Disposition: inline
+In-Reply-To: <258aec23-055b-61c2-c0f6-2ff1abc006cd@gmail.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_123525_399505_B1C94D1D 
-X-CRM114-Status: GOOD (  21.70  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190508_124025_396541_512F603F 
+X-CRM114-Status: GOOD (  18.99  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (groeck7[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (groeck7[at]gmail.com)
+ 0.1 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -86,112 +106,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Linux-ALSA <alsa-devel@alsa-project.org>, Liam Girdwood <lgirdwood@gmail.com>,
- Chen-Yu Tsai <wens@csie.org>, Mark Brown <broonie@kernel.org>,
- Frank Rowand <frowand.list@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: "open list:HARDWARE MONITORING" <linux-hwmon@vger.kernel.org>,
+ Jean Delvare <jdelvare@suse.com>, linux-kernel@vger.kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, Sudeep Holla <sudeep.holla@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 7, 2019 at 1:07 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
->
-> The H3 and compatibles controllers don't have any reception capabilities,
-> even though it was never documented as such in the binding before.
->
-> Therefore, on those controllers, we don't have the option to set an RX DMA
-> channel.
->
-> This was already done in the DTSI, but the binding itself was never
-> updated. Let's add a special case in the schemas.
->
-> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
->
-> ---
->
-> Changes from v1:
->   - switch to a draft7 conditional
-> ---
->  Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml | 45 ++++++++++++++++++++++++++++++++++++---------
->  1 file changed, 36 insertions(+), 9 deletions(-)
->
-> diff --git a/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml b/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml
-> index 5698e5de5e31..8f1bc1a1af96 100644
-> --- a/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml
-> +++ b/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml
-> @@ -44,15 +44,8 @@ properties:
->        - const: apb
->        - const: spdif
->
-> -  dmas:
-> -    items:
-> -      - description: RX DMA Channel
-> -      - description: TX DMA Channel
-> -
-> -  dma-names:
-> -    items:
-> -      - const: rx
-> -      - const: tx
-> +  dmas: true
-> +  dma-names: true
->
->    resets:
->      maxItems: 1
-> @@ -70,6 +63,40 @@ allOf:
->        required:
->          - resets
->
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: allwinner,sun8i-h3-spdif
-> +
-> +    then:
-> +      properties:
-> +        dmas:
-> +          maxItems: 1
+On Wed, May 08, 2019 at 11:34:50AM -0700, Florian Fainelli wrote:
+> On 5/8/19 11:32 AM, Guenter Roeck wrote:
+> > Hi Florian,
+> > 
+> > On Wed, May 08, 2019 at 10:00:35AM -0700, Florian Fainelli wrote:
+> >> If the SCMI firmware implementation is reporting values in a scale that
+> >> is different from the HWMON units, we need to scale up or down the value
+> >> according to how far appart they are.
+> >>
+> >> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+> >> ---
+> >>  drivers/hwmon/scmi-hwmon.c | 46 ++++++++++++++++++++++++++++++++++++++
+> >>  1 file changed, 46 insertions(+)
+> >>
+> >> diff --git a/drivers/hwmon/scmi-hwmon.c b/drivers/hwmon/scmi-hwmon.c
+> >> index a80183a488c5..4399372e2131 100644
+> >> --- a/drivers/hwmon/scmi-hwmon.c
+> >> +++ b/drivers/hwmon/scmi-hwmon.c
+> >> @@ -7,6 +7,7 @@
+> >>   */
+> >>  
+> >>  #include <linux/hwmon.h>
+> >> +#include <linux/limits.h>
+> >>  #include <linux/module.h>
+> >>  #include <linux/scmi_protocol.h>
+> >>  #include <linux/slab.h>
+> >> @@ -18,6 +19,47 @@ struct scmi_sensors {
+> >>  	const struct scmi_sensor_info **info[hwmon_max];
+> >>  };
+> >>  
+> >> +static inline u64 __pow10(u8 x)
+> >> +{
+> >> +	u64 r = 1;
+> >> +
+> >> +	while (x--)
+> >> +		r *= 10;
+> >> +
+> >> +	return r;
+> >> +}
+> >> +
+> >> +static int scmi_hwmon_scale(const struct scmi_sensor_info *sensor, u64 *value)
+> >> +{
+> >> +	s8 scale = sensor->scale;
+> >> +	u64 f;
+> >> +
+> >> +	switch (sensor->type) {
+> >> +	case TEMPERATURE_C:
+> >> +	case VOLTAGE:
+> >> +	case CURRENT:
+> >> +		scale += 3;
+> >> +		break;
+> >> +	case POWER:
+> >> +	case ENERGY:
+> >> +		scale += 6;
+> >> +		break;
+> >> +	default:
+> >> +		break;
+> >> +	}
+> >> +
+> >> +	f = __pow10(abs(scale));
+> >> +	if (f == U64_MAX)
+> >> +		return -E2BIG;
+> > 
+> > Unfortunately that is not how integer overflows work.
+> > 
+> > A test program with increasing values of scale reports:
+> > 
+> > 0: 1
+> > ...
+> > 18: 1000000000000000000
+> > 19: 10000000000000000000
+> > 20: 7766279631452241920
+> > 21: 3875820019684212736
+> > 22: 1864712049423024128
+> > 23: 200376420520689664
+> > 24: 2003764205206896640
+> > ...
+> > 61: 11529215046068469760
+> > 62: 4611686018427387904
+> > 63: 9223372036854775808
+> > 64: 0
+> > ...
+> > 
+> > You'll have to check for abs(scale) > 19 if you want to report overflows.
+> 
+> Yes silly me, my test program was flawed, thanks for pointing out that.
+> You are okay with returning E2BIG when we overflow?
 
-In this and below, these should get added automatically by
-fixup_schema. If not present, we set minItems/maxItems to the size of
-the items list. It look like you added support for that, so left over
-from before you addressed that for if/then/else?
+Yes.
 
-> +          items:
-> +            - description: RX DMA Channel
-
-s/RX/TX/
-
-> +
-> +        dma-names:
-> +          maxItems: 1
-> +          items:
-> +            - const: tx
-> +
-> +    else:
-> +      properties:
-> +        dmas:
-> +          minItems: 2
-> +          maxItems: 2
-> +          items:
-> +            - description: RX DMA Channel
-> +            - description: TX DMA Channel
-> +
-> +        dma-names:
-> +          minItems: 2
-> +          maxItems: 2
-> +          items:
-> +            - const: rx
-> +            - const: tx
-
-I'm really on the fence whether it's worth it to add all this just add
-the restrictions based on the compatible. I guess with copy-n-paste
-this would be a common error.
-
-Rob
+Thanks,
+Guenter
 
 _______________________________________________
 linux-arm-kernel mailing list
