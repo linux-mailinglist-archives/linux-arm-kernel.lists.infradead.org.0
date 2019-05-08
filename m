@@ -2,68 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A4BE174B5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 11:10:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0627D174E2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 11:18:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
-	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=WO6WPj1y5R3zv+ZSIb7GQ8NRQMZsT65/R1siiK2pcec=; b=V1a
-	XVHw2O6jvtPyB1ew7HHc36Usw0lzGIU3MiOB81PtupVrhfig6GFbzxcBLVQjoGshV99U5tETHU2Fn
-	1V9NggLAq6aT5Rcbw5NzqVPgvslLF3AqJvghbOI0KvWJr76Z5+19M7/iZIDXEZ+IWYx4pra2tpBN9
-	wrfMHCcs2EB8hx0HZj/gkkXR5MDMYXQwAGW7c+BdmNRcMI+Ua8tAOxOoQ4kTsmJdAvuUeLw2/l043
-	c2bAdzSdCv3IGjhKqcogE375NDQ0Y9mhkUIQ0Gw52ySOuhIocqnIlqJOzlYscRnwWinxzR7Ttzrv1
-	3HIUzjNCCcn6tdwisT+dqU0KkUkZCJQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=EXvke+gqSWlbcZjTs5ORPtkfVQYoZvhFMqMY3JgvIaI=; b=QpiejJbCv9lMHV
+	ZC+7jic3PCEZ2/0vg7Mp1xFKi2gjhNHHIx/NK8tqLNZAWMt6L5anvLiDgin+7gXwfcx/ae5h0E/9/
+	a62yvGmAEdvmyreeofWfUYtfXbd2Uq8JAtDDcE8nPnr3AQ0NrZTq/mGVI5x1TAbDJBRq/oEv6FZdo
+	OxafKn9IHOD9ArDJxIAdMtT4f2Xh1+pn+pzff3gVxTZ7pp2CadXrvE18gf3MBtoudcP3giH4S0tyk
+	V+6MaO5SRoI6QJ/s0h8psJYbVWi+CyZk+SiWfIGxuaXlGWqHuHoxA9Aui6jp5wzsrmC8MltkGzZd8
+	IdQ5BLe/d1XIKoIhXD8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOIar-0002M1-9y; Wed, 08 May 2019 09:10:30 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1hOIiL-00053C-Gl; Wed, 08 May 2019 09:18:13 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOIZt-00009l-B8
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 09:09:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
- Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
- List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=DXt5IntGctC+H7tmN7EBvL0ioZYMHBlAhEaJOHxOk2M=; b=QripnkRtQHYP
- 1MfCqvkWjIjF3ZxOPKirO+fKlNxWj81QKDx5JRCVqQF5UK07eADTWpy8uMv8yW2BTfBWtvLajWO1u
- rND8Pl20qN9DfjbWtXvCcCi5luE/BldIqfXVopiaJa+lGkJkDMNpwVDUDFcjA8JBErXU2b++/wnRd
- AGkaI=;
-Received: from [61.199.190.11] (helo=finisterre.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hOIZl-0007gS-A6; Wed, 08 May 2019 09:09:24 +0000
-Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
- id B7CB344003F; Wed,  8 May 2019 10:08:57 +0100 (BST)
-From: Mark Brown <broonie@kernel.org>
-To: Radu Pirea <radu_nicolae.pirea@upb.ro>
-Subject: Applied "dt-bindings: mfd: atmel-usart: add DMA bindings for USART in
- SPI mode" to the spi tree
-In-Reply-To: <20190505180646.1442-2-radu_nicolae.pirea@upb.ro>
-X-Patchwork-Hint: ignore
-Message-Id: <20190508090857.B7CB344003F@finisterre.sirena.org.uk>
-Date: Wed,  8 May 2019 10:08:57 +0100 (BST)
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+ id 1hOIiC-00051k-Re; Wed, 08 May 2019 09:18:06 +0000
+X-UUID: e605acce96724c3c83d5ce7c6f942697-20190508
+X-UUID: e605acce96724c3c83d5ce7c6f942697-20190508
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1996166909; Wed, 08 May 2019 01:17:59 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 8 May 2019 02:17:57 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 8 May 2019 17:17:55 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 8 May 2019 17:17:54 +0800
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Rob Herring <robh+dt@kernel.org>
+Subject: [v3 PATCH] dt-binding: usb: add usb-role-switch property
+Date: Wed, 8 May 2019 17:17:44 +0800
+Message-ID: <c3596e996c9ab39c6b9bc14b93309244c4a55014.1557306151.git.chunfeng.yun@mediatek.com>
+X-Mailer: git-send-email 1.7.9.5
+MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_020929_876732_FFF62826 
-X-CRM114-Status: GOOD (  18.07  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190508_021804_896649_3E843FF5 
+X-CRM114-Status: UNSURE (   9.74  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.1 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -76,108 +69,68 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Richard Genoud <richard.genoud@gmail.com>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-spi@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Mark Brown <broonie@kernel.org>, Lee Jones <lee.jones@linaro.org>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>, Felipe
+ Balbi <felipe.balbi@linux.intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org, Yu
+ Chen <chenyu56@huawei.com>, linux-kernel@vger.kernel.org,
+ Biju Das <biju.das@bp.renesas.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ linux-mediatek@lists.infradead.org, Min Guo <min.guo@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch
+Add a property usb-role-switch to tell the driver that use
+USB Role Switch framework to handle the role switch,
+it's useful when the driver has already supported other ways,
+such as extcon framework etc.
 
-   dt-bindings: mfd: atmel-usart: add DMA bindings for USART in SPI mode
-
-has been applied to the spi tree at
-
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.3
-
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
-
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
-
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
-
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
-
-Thanks,
-Mark
-
-From f7b99e5948e6be8b850eecbb2de1986d26a76b36 Mon Sep 17 00:00:00 2001
-From: Radu Pirea <radu_nicolae.pirea@upb.ro>
-Date: Sun, 5 May 2019 21:06:45 +0300
-Subject: [PATCH] dt-bindings: mfd: atmel-usart: add DMA bindings for USART in
- SPI mode
-
-The bindings for DMA are now common for both drivers of the USART
-IP.
-
-The node given as an example for USART in SPI mode has been updated in
-order to include DMA bindings.
-
-Signed-off-by: Radu Pirea <radu_nicolae.pirea@upb.ro>
-Signed-off-by: Mark Brown <broonie@kernel.org>
+Cc: Biju Das <biju.das@bp.renesas.com>
+Cc: Yu Chen <chenyu56@huawei.com>
+Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 ---
- .../devicetree/bindings/mfd/atmel-usart.txt   | 20 ++++++++++++++-----
- 1 file changed, 15 insertions(+), 5 deletions(-)
+v3:
+    add property type, modify description suggested by Heikki
 
-diff --git a/Documentation/devicetree/bindings/mfd/atmel-usart.txt b/Documentation/devicetree/bindings/mfd/atmel-usart.txt
-index 7f0cd72f47d2..699fd3c9ace8 100644
---- a/Documentation/devicetree/bindings/mfd/atmel-usart.txt
-+++ b/Documentation/devicetree/bindings/mfd/atmel-usart.txt
-@@ -17,17 +17,24 @@ Required properties for USART in SPI mode:
- - cs-gpios: chipselects (internal cs not supported)
- - atmel,usart-mode : Must be <AT91_USART_MODE_SPI> (found in dt-bindings/mfd/at91-usart.h)
+v2:
+    describe it in terms of h/w functionality suggested by Rob
+
+v1:
+    the property is discussed in:
+    [v2,2/7] dt-bindings: usb: renesas_usb3: add usb-role-switch property
+    https://patchwork.kernel.org/patch/10852497/
+
+    Mediatek and Hisilicon also try to use it:
+    [v4,3/6] dt-bindings: usb: mtu3: add properties about USB Role Switch
+    https://patchwork.kernel.org/patch/10918385/
+    [v4,6/6] usb: mtu3: register a USB Role Switch for dual role mode
+    https://patchwork.kernel.org/patch/10918367/
+
+    [v6,10/13] usb: dwc3: Registering a role switch in the DRD code
+    https://patchwork.kernel.org/patch/10909981/
+---
+ Documentation/devicetree/bindings/usb/generic.txt | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/usb/generic.txt b/Documentation/devicetree/bindings/usb/generic.txt
+index 0a74ab8dfdc2..cf5a1ad456e6 100644
+--- a/Documentation/devicetree/bindings/usb/generic.txt
++++ b/Documentation/devicetree/bindings/usb/generic.txt
+@@ -30,6 +30,10 @@ Optional properties:
+ 			optional for OTG device.
+  - adp-disable: tells OTG controllers we want to disable OTG ADP, ADP is
+ 			optional for OTG device.
++ - usb-role-switch: boolean, indicates that the device is capable of assigning
++			the USB data role (USB host or USB device) for a given
++			USB connector, such as Type-C, Type-B(micro).
++			see connector/usb-connector.txt.
  
-+Optional properties in serial and SPI mode:
-+- dma bindings for dma transfer:
-+	- dmas: DMA specifier, consisting of a phandle to DMA controller node,
-+		memory peripheral interface and USART DMA channel ID, FIFO configuration.
-+		The order of DMA channels is fixed. The first DMA channel must be TX
-+		associated channel and the second one must be RX associated channel.
-+		Refer to dma.txt and atmel-dma.txt for details.
-+	- dma-names: "tx" for TX channel.
-+		     "rx" for RX channel.
-+		     The order of dma-names is also fixed. The first name must be "tx"
-+		     and the second one must be "rx" as in the examples below.
-+
- Optional properties in serial mode:
- - atmel,use-dma-rx: use of PDC or DMA for receiving data
- - atmel,use-dma-tx: use of PDC or DMA for transmitting data
- - {rts,cts,dtr,dsr,rng,dcd}-gpios: specify a GPIO for RTS/CTS/DTR/DSR/RI/DCD line respectively.
-   It will use specified PIO instead of the peripheral function pin for the USART feature.
-   If unsure, don't specify this property.
--- add dma bindings for dma transfer:
--	- dmas: DMA specifier, consisting of a phandle to DMA controller node,
--		memory peripheral interface and USART DMA channel ID, FIFO configuration.
--		Refer to dma.txt and atmel-dma.txt for details.
--	- dma-names: "rx" for RX channel, "tx" for TX channel.
- - atmel,fifo-size: maximum number of data the RX and TX FIFOs can store for FIFO
-   capable USARTs.
- - rs485-rts-delay, rs485-rx-during-tx, linux,rs485-enabled-at-boot-time: see rs485.txt
-@@ -81,5 +88,8 @@ Example:
- 		interrupts = <12 IRQ_TYPE_LEVEL_HIGH 5>;
- 		clocks = <&usart0_clk>;
- 		clock-names = "usart";
-+		dmas = <&dma0 2 AT91_DMA_CFG_PER_ID(3)>,
-+		       <&dma0 2 (AT91_DMA_CFG_PER_ID(4) | AT91_DMA_CFG_FIFOCFG_ASAP)>;
-+		dma-names = "tx", "rx";
- 		cs-gpios = <&pioB 3 0>;
- 	};
+ This is an attribute to a USB controller such as:
+ 
 -- 
-2.20.1
+2.21.0
 
 
 _______________________________________________
