@@ -2,76 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36E48172A0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 09:33:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B476C172A6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 09:33:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=F9CdxqPf2fbwcxlW3cfEkr8jjcrzpR15HwXdvFHH0cM=; b=AmovMXqP2We+tg
-	igMERmTK8qxD/OJ2MHE41+UEM1aZAnYRRg9+8zZYD+6kSh0sbajB677dTCpiG2/0Z/pCOPTGXHf0X
-	oGqFqhVx8S9gROf1Oj4pamD1UnjHCy7FvvJTIQv6uMHUM/y02HAMrE9+DCr4Xv7nt8ltm1X20wXm1
-	/Q0Df2b2B9mAv62wBf1Df7IFvc4jU53MlzclrqGYjUVSsoH7pH5Z5IB/Wvuy1GFANQ3ViSi+nqB/v
-	TnX9ZpmPKcNRBJnJbNK4gWE4Y1DEA2WYtWdQA+9EUPi11wC2ZPmKcBzYRAegJc69Fz7ilFARE8kYb
-	EYcATDzJrdlMcXbsidcA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bBC1+IOwQNHCgwCIYJD/3tk9u4MaorLliA7hcp/X6JE=; b=FoAiH4DYkjBtFD
+	zNpn6LuvmJHh7gMhf6lMMAclS4Z4+9Z/IARG1hZvGDLIumI1Um+FJ4dUs3pllgy5Q8SpyhpBSdYM5
+	CAgWtM/G2oYRwjLEODa11mNw5bPcyBKYR1optFjZ6ktrxHz26yG2yhXcv45oNAzIQP8IcmyUoZ38U
+	WtbOvp+MEFJlJTHkFWRiEPkYHu7mypfvQWI536yd6uVlwcdjmf5TPh5XpBbQ1bdG8b22uWUPunJaa
+	bcb2KAWO4sXwGxrWIoPkPVUDmw5FyZ592oLH4BeIsQnlkqfVCEUicFmt6zDqUsikRRXXg+9+0EOnP
+	KxIoZodBFs1YGji7XPuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOH5G-0001X8-5G; Wed, 08 May 2019 07:33:46 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hOH5R-0001hC-AM; Wed, 08 May 2019 07:33:57 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOH58-0001Vf-Am
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 07:33:39 +0000
-Received: by mail-pg1-x541.google.com with SMTP id j26so9660710pgl.5
+ id 1hOH5A-0001WB-4d
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 07:33:41 +0000
+Received: by mail-pf1-x442.google.com with SMTP id y13so10030979pfm.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 May 2019 00:33:37 -0700 (PDT)
+ Wed, 08 May 2019 00:33:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=cXDSUoWLJ80ofU9SNBABTlyG/UyP3q/4EzPOKhLgxHM=;
- b=JAI6ShQFH5LPrZX4xP0iFXDlDAd4VN4ubLGwY2TwHwEtFJ4qd+UKB0kAFNMmlDUy3/
- 9k6f03F08QS2BDgt/s4UrtkxIbFJsaLs76mX9jjd5fOIsOuNzAivPbnD08UX7gb3Jgqw
- 1ldBY+aY6kti87kHKpHzxW5ZMzbT0SLV3Eitc=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=gYFoR4O/xJAOVdtzf1KO84jqKZdhkztW34riW/9p2p8=;
+ b=R9/XG+XeN3PX0hPVPayizUpipfNj3Nty3nKih/eJLptpZmg0sKXL/78jJxpaObgd4F
+ gn31yG/jV8baGAHB2a71oLwUehdb5yWcz53evRbE3koaBHGOpYv3IYon7P8OT+kqhsBi
+ YwJBUX6kOHsrqeLts1KKXgIQaJksLkTxDe6lQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=cXDSUoWLJ80ofU9SNBABTlyG/UyP3q/4EzPOKhLgxHM=;
- b=tIF3znWLVeWDQ8MGU3I2QFNybPAmjZQvTP64vFs+sNRTqZL81LoDWyZoHeUhGfElp3
- STu7ZE/8BJpt5UXd7eYH+mwSr7RILQcehrp+/grI3a7D7ndVrxNGacy49zZkqHsyUL2J
- yDz1qRwPDL8+IeOV5I3DAzfeS73qE8imPtXPvuaIKbDjTkPp+RRXh8flCujup0BLWT4A
- 7ibp9MzuZ4+1duIUEsiRLmLgUh3UHAGI5zlcG54iH4KIVkXdHC89RC0XdjG5m5dRWZ/r
- D/xvm2hf6LZlOzq7EdJBZhS8CrVvuef2d0PXrpGyfJo2nH/AHON+anBFdWWGc5ax7UXu
- qLGg==
-X-Gm-Message-State: APjAAAVPm3IUk3iq7iQRfuUUv6OvvexOYzzDiN8VEDdeBsloarRDVV62
- Yx0GXn4ZD9Rr4NblJOWCCY52OA==
-X-Google-Smtp-Source: APXvYqwZZ1j+Kgl5thN1AhwfMfoLsny+ZI4X49uRTCohf76ophHTPd+CXngETV9CgnXsMhUfkhp3zg==
-X-Received: by 2002:a62:1897:: with SMTP id 145mr47430119pfy.122.1557300817134; 
- Wed, 08 May 2019 00:33:37 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=gYFoR4O/xJAOVdtzf1KO84jqKZdhkztW34riW/9p2p8=;
+ b=mtqfXFS9gS0bJchHBtVYSVT5eg+bU0+opFOG979F3KxjxhSLcyIuoTfCyyDvbjAl8i
+ rxRTO4QEaDJ0dkghtPrcKRC7outaRFBbT+XepYhxG6IU36r8B67f3mg+PScEVl/McIdf
+ RMLsvEDy7vj5SDLbhaJnpPAiZlrpV9EtF2YCbGE++Olz/w0YszleufASMnJKt3NJj3io
+ oo/ePBD1ynt5tagvcGHa1zKOgNIpjrN4pmrjkNf0ZXoctGXVOJFLGAWHjajjlD3FLOmG
+ 22stASujuWNhaToMCZFPx+1pC1TXexUrI0v/a1YSCHX+sxed2q4OxRMqEyVtwdhtmLi1
+ 4D5A==
+X-Gm-Message-State: APjAAAVfYxREGOnwmVjasxu6eQhZKvp3AunGWUxUJdY5de4eu+3MwFkj
+ U5S/OlZ275IAC7OCIDcZVZwQhQ==
+X-Google-Smtp-Source: APXvYqwYR+C8pIy/mW/ntjAU5hcB/QYRY8s1HZ9+YEZj2WlaNk6OmhMsHTxoUDB0Wpphy383/FAE0g==
+X-Received: by 2002:aa7:980e:: with SMTP id e14mr46827749pfl.142.1557300819483; 
+ Wed, 08 May 2019 00:33:39 -0700 (PDT)
 Received: from drinkcat2.tpe.corp.google.com
  ([2401:fa00:1:b:d8b7:33af:adcb:b648])
- by smtp.gmail.com with ESMTPSA id n26sm29539047pfi.165.2019.05.08.00.33.34
+ by smtp.gmail.com with ESMTPSA id n26sm29539047pfi.165.2019.05.08.00.33.37
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 08 May 2019 00:33:36 -0700 (PDT)
+ Wed, 08 May 2019 00:33:38 -0700 (PDT)
 From: Nicolas Boichat <drinkcat@chromium.org>
 To: linux-mediatek@lists.infradead.org
-Subject: [PATCH v2 0/2] pinctrl: mediatek: mt8183: Add support for wake sources
-Date: Wed,  8 May 2019 15:33:29 +0800
-Message-Id: <20190508073331.27475-1-drinkcat@chromium.org>
+Subject: [PATCH v2 1/2] pinctrl: mediatek: Add pm_ops to pinctrl-paris
+Date: Wed,  8 May 2019 15:33:30 +0800
+Message-Id: <20190508073331.27475-2-drinkcat@chromium.org>
 X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
+In-Reply-To: <20190508073331.27475-1-drinkcat@chromium.org>
+References: <20190508073331.27475-1-drinkcat@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_003338_399543_78330007 
-X-CRM114-Status: UNSURE (   9.58  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190508_003340_178856_261E36E8 
+X-CRM114-Status: GOOD (  11.89  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -103,25 +104,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds support for wake sources in pinctrl-mtk-common-v2, and
-pinctrl-mt8183. Without this patch, all interrupts that are left
-enabled on suspend act as wake sources (and wake sources without
-interrupt enabled do not).
+pinctrl variants that include pinctrl-paris.h (and not
+pinctrl-mtk-common.h) also need to use pm_ops to setup
+wake mask properly, so copy over the pm_ops from common
+to paris variant.
 
-Changes since v1:
- - Move changes from mtk-common-v2 to mtk-pinctrl-paris, as
-   recommended by Sean, to keep better separation between eint
-   and pinctrl-common features.
+It is not easy to merge the 2 copies (or move
+mtk_eint_suspend/resume to mtk-eint.c), as we need to
+dereference pctrl->eint, and struct mtk_pinctrl *pctl has a
+different structure definition for v1 and v2 (which is
+what paris variant uses).
 
-Nicolas Boichat (2):
-  pinctrl: mediatek: Add pm_ops to pinctrl-paris
-  pinctrl: mediatek: mt8183: Add mtk_pinctrl_paris_pm_ops
+Signed-off-by: Nicolas Boichat <drinkcat@chromium.org>
+---
+ drivers/pinctrl/mediatek/pinctrl-paris.c | 19 +++++++++++++++++++
+ drivers/pinctrl/mediatek/pinctrl-paris.h |  2 ++
+ 2 files changed, 21 insertions(+)
 
- drivers/pinctrl/mediatek/pinctrl-mt8183.c |  1 +
- drivers/pinctrl/mediatek/pinctrl-paris.c  | 19 +++++++++++++++++++
- drivers/pinctrl/mediatek/pinctrl-paris.h  |  2 ++
- 3 files changed, 22 insertions(+)
-
+diff --git a/drivers/pinctrl/mediatek/pinctrl-paris.c b/drivers/pinctrl/mediatek/pinctrl-paris.c
+index d3b34e9a7507ec6..923264d0e9ef2c5 100644
+--- a/drivers/pinctrl/mediatek/pinctrl-paris.c
++++ b/drivers/pinctrl/mediatek/pinctrl-paris.c
+@@ -926,3 +926,22 @@ int mtk_paris_pinctrl_probe(struct platform_device *pdev,
+ 
+ 	return 0;
+ }
++
++static int mtk_paris_pinctrl_suspend(struct device *device)
++{
++	struct mtk_pinctrl *pctl = dev_get_drvdata(device);
++
++	return mtk_eint_do_suspend(pctl->eint);
++}
++
++static int mtk_paris_pinctrl_resume(struct device *device)
++{
++	struct mtk_pinctrl *pctl = dev_get_drvdata(device);
++
++	return mtk_eint_do_resume(pctl->eint);
++}
++
++const struct dev_pm_ops mtk_paris_pinctrl_pm_ops = {
++	.suspend_noirq = mtk_paris_pinctrl_suspend,
++	.resume_noirq = mtk_paris_pinctrl_resume,
++};
+diff --git a/drivers/pinctrl/mediatek/pinctrl-paris.h b/drivers/pinctrl/mediatek/pinctrl-paris.h
+index 37146caa667d8c8..3d43771074e6de0 100644
+--- a/drivers/pinctrl/mediatek/pinctrl-paris.h
++++ b/drivers/pinctrl/mediatek/pinctrl-paris.h
+@@ -60,4 +60,6 @@
+ int mtk_paris_pinctrl_probe(struct platform_device *pdev,
+ 			    const struct mtk_pin_soc *soc);
+ 
++extern const struct dev_pm_ops mtk_paris_pinctrl_pm_ops;
++
+ #endif /* __PINCTRL_PARIS_H */
 -- 
 2.21.0.1020.gf2820cf01a-goog
 
