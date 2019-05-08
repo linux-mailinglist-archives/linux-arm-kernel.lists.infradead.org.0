@@ -2,109 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9603F1725E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 09:12:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3934517266
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 09:12:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2fPv+ZUtDHqhhgkzerz1/mJAXKhUr/JR5GnuYDwiSgo=; b=sPRD/EnW7PHHWk
-	UUfz+cl/cm7iDUMOjWB0sVWhrlMGyFaOLagAlCAyXzjEc0X9nI1ntfvXsfycTDC4+fLtTZentRSoa
-	5aW/CG6WSkMr7/xxngsaA04X+GpZItsBhgcUwZGtzPp62GMivBaHc2wMexqwcKtNTJei+nj+HmLnZ
-	nLDwFMtkNTLfRTcNzeIr0MPt7bU6YZNmM85g9GwtNIOBJFlcPKBKinLQLr3PgBkj9uXrOzm3fT6hc
-	58/WOduYhPWIVqRfiQ3N6cEwfU9pY3gvUawetp3jPdtpc1QL0rIImrfuSF5oW7vjcdtebEv5TUEs5
-	6ms3qYMeJzmpPuCAQTvQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=t6q/oHqPQsn+w2YQV1u4LCL1boc13pq7woo+4PtsSqk=; b=D4GwqefUhHGmv6
+	KWik0WGEi66W7fu32+fx6UTuMlm9SNtOGtLVYKPyz9n0kShSwOUT184vCMG+fNM15XSymjpvSMmXe
+	TFIDmTKg6NQUGv7pAhJyJ0eUWN9o+ln8Vm4FxcZd1ZTJaJ2SCpp/FGgn/LYLY6Ye3A6jK7YenoTRA
+	r/jwHtTStP2PBCRB95cx947IzqgJVMKXuTG8GXmLviUUqFI/0JI8SxL1tqtyCP6XGfjZKwpf6PlUl
+	YU6WNzknnGLUW+jlEv8ahhuVYITs3Lvk87FxIvjRbH5qWauZslcPcaiCBbbX0rhHWGzFlRvXFOtpg
+	vXBaWXCH7gY2r+aO4GVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOGkA-0001uH-Dd; Wed, 08 May 2019 07:11:58 +0000
-Received: from mail-eopbgr00058.outbound.protection.outlook.com ([40.107.0.58]
- helo=EUR02-AM5-obe.outbound.protection.outlook.com)
+	id 1hOGku-0002IO-VB; Wed, 08 May 2019 07:12:45 +0000
+Received: from smtp73.ord1d.emailsrvr.com ([184.106.54.73])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOGjN-0001EK-Ed
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 07:11:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=zMBYeBvoDFWlwL+euvJuE2ZOhwCxJzeEnpQcYcB8Y0A=;
- b=Pc4y9kXU51p7Uhra0oAhaW9Do+R42uzOq2/KBNtZ4Ebi0LdVQf1DqXvGaNjQrse25kue31f3ePtfsYKxEr4Qtn6WO8s7pXbu/s/ZHuhp+lPU5WiSxoExZCicMFh3ew+0hWDJO762jYbAwnQhq7dO+d0NuMGLjky9Iistz3MpNwE=
-Received: from VI1PR0402MB3357.eurprd04.prod.outlook.com (52.134.1.18) by
- VI1PR0402MB3695.eurprd04.prod.outlook.com (52.134.15.25) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1856.15; Wed, 8 May 2019 07:10:57 +0000
-Received: from VI1PR0402MB3357.eurprd04.prod.outlook.com
- ([fe80::c16b:662d:9299:6be6]) by VI1PR0402MB3357.eurprd04.prod.outlook.com
- ([fe80::c16b:662d:9299:6be6%6]) with mapi id 15.20.1856.012; Wed, 8 May 2019
- 07:10:57 +0000
-From: Daniel Baluta <daniel.baluta@nxp.com>
-To: "shawnguo@kernel.org" <shawnguo@kernel.org>
-Subject: [RESEND PATCH v3 2/2] arm64: dts: imx8mm-evk: Enable audio codec
- wm8524
-Thread-Topic: [RESEND PATCH v3 2/2] arm64: dts: imx8mm-evk: Enable audio codec
- wm8524
-Thread-Index: AQHVBW0u0JkdMhhi00WHh+rKnsTJfA==
-Date: Wed, 8 May 2019 07:10:56 +0000
-Message-ID: <20190508071032.31808-3-daniel.baluta@nxp.com>
-References: <20190508071032.31808-1-daniel.baluta@nxp.com>
-In-Reply-To: <20190508071032.31808-1-daniel.baluta@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: VI1PR07CA0278.eurprd07.prod.outlook.com
- (2603:10a6:803:b4::45) To VI1PR0402MB3357.eurprd04.prod.outlook.com
- (2603:10a6:803:2::18)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=daniel.baluta@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: git-send-email 2.17.1
-x-originating-ip: [89.37.124.34]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 7b2b80e5-54a0-4c9f-0f4b-08d6d38450bd
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR0402MB3695; 
-x-ms-traffictypediagnostic: VI1PR0402MB3695:
-x-microsoft-antispam-prvs: <VI1PR0402MB3695283BEBBA26F63C34C663F9320@VI1PR0402MB3695.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:873;
-x-forefront-prvs: 0031A0FFAF
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(366004)(376002)(136003)(39860400002)(346002)(199004)(189003)(1730700003)(81156014)(14444005)(11346002)(256004)(71190400001)(6916009)(6116002)(3846002)(36756003)(2906002)(25786009)(66066001)(8936002)(44832011)(486006)(186003)(316002)(71200400001)(305945005)(478600001)(7736002)(7416002)(50226002)(2616005)(5660300002)(26005)(476003)(6486002)(5640700003)(2351001)(14454004)(66476007)(66556008)(64756008)(66446008)(2501003)(446003)(6436002)(8676002)(81166006)(53936002)(86362001)(6506007)(386003)(102836004)(52116002)(73956011)(68736007)(6512007)(54906003)(99286004)(66946007)(1076003)(76176011)(4326008)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0402MB3695;
- H:VI1PR0402MB3357.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 185I0e4YC0OHCFlDh/6QBxpaE+5pUYwhFJhLfclfirx8HNObJX07xo+IY03+VQ6dNNoZaTNmQ17VGdmhjqnbEvV6KmtyqvDxkVVk3IC5Qan6jKVpNyFoTlS7NeHhyrDz9zK4RJcL7G+4X0DjHEEpvMkbIv3BlE5HL+LCpzX21tXPdlZ23p3Sc6ZcfdwsIGFEwo+cEc3HqVCZPeag1wYLKnOaBnbURAfpVjXoSrGNqGuXbmvPPDtLomf1mCR+s/0qYklB4I52NZc+5ZYfvX17kb528m6NtipUZwS5jRMsNlRjv/prwMNKh1laxE1d/GIgfAaGBNCuRQspn2mqVqeDqRVsIa9uyFeROIfXLLkxumF6dmS+fZ1GILbdwhT8lzateWgJr35mgAw/sP3O8q/9a8PDY6EHLupsid0woms2s5k=
+ id 1hOGkn-0002Hx-Ju; Wed, 08 May 2019 07:12:39 +0000
+Received: from smtp2.relay.ord1d.emailsrvr.com (localhost [127.0.0.1])
+ by smtp2.relay.ord1d.emailsrvr.com (SMTP Server) with ESMTP id E6CFA40061;
+ Wed,  8 May 2019 03:12:35 -0400 (EDT)
+X-SMTPDoctor-Processed: csmtpprox beta
+Received: from smtp2.relay.ord1d.emailsrvr.com (localhost [127.0.0.1])
+ by smtp2.relay.ord1d.emailsrvr.com (SMTP Server) with ESMTP id DAA7640097;
+ Wed,  8 May 2019 03:12:35 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=g001.emailsrvr.com;
+ s=20190322-9u7zjiwi; t=1557299555;
+ bh=0UT1g5udqWYt7UQuFsO4627lVQkb2FxISM2LEaSTIkE=;
+ h=From:To:Subject:Date:From;
+ b=ByCnQF3Gc6zJTS034FCb/PujgDtETuWvhpm3jU6QI2gH9yV9NB1T5FY1MBEcd9r3i
+ LXDWyDVaP2j1f3GOXuGGBOg8fX5jbPTPBckzzj6wSuOHsHOUTASk9BME72+wlUHSmF
+ Ljt4p7clP+E5cryOSe778sURT1dlate12hsxMlnA=
+X-Auth-ID: mcdermj@xenotropic.com
+Received: by smtp2.relay.ord1d.emailsrvr.com (Authenticated sender:
+ mcdermj-AT-xenotropic.com) with ESMTPSA id B77DD40061; 
+ Wed,  8 May 2019 03:12:34 -0400 (EDT)
+X-Sender-Id: mcdermj@xenotropic.com
+Received: from commune.xenotropic.com (c-73-96-52-102.hsd1.or.comcast.net
+ [73.96.52.102]) (using TLSv1.2 with cipher DHE-RSA-AES128-GCM-SHA256)
+ by 0.0.0.0:25 (trex/5.7.12); Wed, 08 May 2019 03:12:35 -0400
+From: Annaliese McDermond <nh6z@nh6z.net>
+To: eric@anholt.net, stefan.wahren@i2se.com, f.fainelli@gmail.com,
+ wsa@the-dreams.de, swarren@wwwdotorg.org, linux-i2c@vger.kernel.org,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2] i2c: bcm2835: Model Divider in CCF
+Date: Wed,  8 May 2019 00:12:27 -0700
+Message-Id: <20190508071227.18609-1-nh6z@nh6z.net>
+X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7b2b80e5-54a0-4c9f-0f4b-08d6d38450bd
-X-MS-Exchange-CrossTenant-originalarrivaltime: 08 May 2019 07:10:56.6287 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0402MB3695
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_001109_886240_E3CF71FF 
-X-CRM114-Status: GOOD (  11.69  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190508_001237_757320_0C5CB28C 
+X-CRM114-Status: GOOD (  18.61  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.0.58 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ no trust [184.106.54.73 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -116,129 +78,289 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Aisheng Dong <aisheng.dong@nxp.com>, Peng Fan <peng.fan@nxp.com>,
- Anson Huang <anson.huang@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "m.felsch@pengutronix.de" <m.felsch@pengutronix.de>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>, "S.j. Wang" <shengjiu.wang@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: team@nwdigitalradio.com, Annaliese McDermond <nh6z@nh6z.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-i.MX8MM has one wm8524 audio codec connected with
-SAI3 digital audio interface.
+Model the I2C bus clock divider as a part of the Core Clock Framework.
+Primarily this removes the clk_get_rate() call from each transfer.
+This call causes problems for slave drivers that themselves have
+internal clock components that are controlled by an I2C interface.
+When the slave's internal clock component is prepared, the prepare
+lock is obtained, and it makes calls to the I2C subsystem to
+command the hardware to activate the clock.  In order to perform
+the I2C transfer, this driver sets the divider, which requires
+it to get the parent clock rate, which it does with clk_get_rate().
+Unfortunately, this function will try to take the clock prepare
+lock, which is already held by the slave's internal clock calls
+creating a deadlock.
 
-This patch uses simple-card machine driver in order
-to enable wm8524 codec.
+Modeling the divider in the CCF natively removes this dependency
+and the divider value is only set upon changing the bus clock
+frequency or changes in the parent clock that cascade down to this
+divisor.  This obviates the need to set the divider with every
+transfer and avoids the deadlock described above.  It also should
+provide better clock debugging and save a few cycles on each
+transfer due to not having to recalcuate the divider value.
 
-We need to set:
-	* SAI3 pinctrl configuration
-	* codec reset gpio pinctrl configuration
-	* clock hierarchy
-	* codec node
-	* simple-card configuration
-
-Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
+Signed-off-by: Annaliese McDermond <nh6z@nh6z.net>
 ---
- arch/arm64/boot/dts/freescale/imx8mm-evk.dts | 55 ++++++++++++++++++++
- 1 file changed, 55 insertions(+)
+Changes in v2:
+ - Remove empty whitespace between declarations
+ - Preserve comment regarding register rounding
+ - Consolodate declarations and initial assignments
+ - Return proper error pointer from bcm2835_i2c_register_div()
+ - Properly handle return value from bcm2835_i2c_register_div()
+   in bcm2835_i2c_probe()
+ - Refactor divider calulation code into separate function
+ - Use clk_set_rate_exclusive() to ensure the clock is not
+   modified by other consumers
+ - Deregister clock in bcm2835_i2c_remove() to properly clean up
+   after ourselves
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-index 2d5d89475b76..7c578d8762b9 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-+++ b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-@@ -37,6 +37,37 @@
- 		gpio = <&gpio2 19 GPIO_ACTIVE_HIGH>;
- 		enable-active-high;
- 	};
-+
-+	wm8524: audio-codec {
-+		#sound-dai-cells = <0>;
-+		compatible = "wlf,wm8524";
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_gpio_wlf>;
-+		wlf,mute-gpios = <&gpio5 21 GPIO_ACTIVE_LOW>;
-+	};
-+
-+	sound-wm8524 {
-+		compatible = "simple-audio-card";
-+		simple-audio-card,name = "wm8524-audio";
-+		simple-audio-card,format = "i2s";
-+		simple-audio-card,frame-master = <&cpudai>;
-+		simple-audio-card,bitclock-master = <&cpudai>;
-+		simple-audio-card,widgets =
-+			"Line", "Left Line Out Jack",
-+			"Line", "Right Line Out Jack";
-+		simple-audio-card,routing =
-+			"Left Line Out Jack", "LINEVOUTL",
-+			"Right Line Out Jack", "LINEVOUTR";
-+
-+		cpudai: simple-audio-card,cpu {
-+			sound-dai = <&sai3>;
-+		};
-+
-+		simple-audio-card,codec {
-+			sound-dai = <&wm8524>;
-+			clocks = <&clk IMX8MM_CLK_SAI3_ROOT>;
-+		};
-+	};
- };
+ drivers/i2c/busses/i2c-bcm2835.c | 144 ++++++++++++++++++++++++-------
+ 1 file changed, 113 insertions(+), 31 deletions(-)
+
+diff --git a/drivers/i2c/busses/i2c-bcm2835.c b/drivers/i2c/busses/i2c-bcm2835.c
+index d2fbb4bb4a43..e66e569b8f09 100644
+--- a/drivers/i2c/busses/i2c-bcm2835.c
++++ b/drivers/i2c/busses/i2c-bcm2835.c
+@@ -4,6 +4,8 @@
+  */
  
- &fec1 {
-@@ -61,6 +92,15 @@
- 	};
- };
+ #include <linux/clk.h>
++#include <linux/clkdev.h>
++#include <linux/clk-provider.h>
+ #include <linux/completion.h>
+ #include <linux/err.h>
+ #include <linux/i2c.h>
+@@ -51,9 +53,7 @@
+ struct bcm2835_i2c_dev {
+ 	struct device *dev;
+ 	void __iomem *regs;
+-	struct clk *clk;
+ 	int irq;
+-	u32 bus_clk_rate;
+ 	struct i2c_adapter adapter;
+ 	struct completion completion;
+ 	struct i2c_msg *curr_msg;
+@@ -74,12 +74,17 @@ static inline u32 bcm2835_i2c_readl(struct bcm2835_i2c_dev *i2c_dev, u32 reg)
+ 	return readl(i2c_dev->regs + reg);
+ }
  
-+&sai3 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_sai3>;
-+	assigned-clocks = <&clk IMX8MM_CLK_SAI3>;
-+	assigned-clock-parents = <&clk IMX8MM_AUDIO_PLL1_OUT>;
-+	assigned-clock-rates = <24576000>;
-+	status = "okay";
+-static int bcm2835_i2c_set_divider(struct bcm2835_i2c_dev *i2c_dev)
++#define to_clk_bcm2835_i2c(_hw) container_of(_hw, struct clk_bcm2835_i2c, hw)
++struct clk_bcm2835_i2c {
++	struct clk_hw hw;
++	struct bcm2835_i2c_dev *i2c_dev;
 +};
 +
- &uart2 { /* console */
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_uart2>;
-@@ -124,12 +164,27 @@
- 		>;
- 	};
++static int clk_bcm2835_i2c_calc_divider(unsigned long rate,
++				unsigned long parent_rate)
+ {
+-	u32 divider, redl, fedl;
++	u32 divider = DIV_ROUND_UP(parent_rate, rate);
  
-+	pinctrl_gpio_wlf: gpiowlfgrp {
-+		fsl,pins = <
-+			MX8MM_IOMUXC_I2C4_SDA_GPIO5_IO21        0xd6
-+		>;
-+	};
-+
- 	pinctrl_reg_usdhc2_vmmc: regusdhc2vmmc {
- 		fsl,pins = <
- 			MX8MM_IOMUXC_SD2_RESET_B_GPIO2_IO19	0x41
- 		>;
- 	};
+-	divider = DIV_ROUND_UP(clk_get_rate(i2c_dev->clk),
+-			       i2c_dev->bus_clk_rate);
+ 	/*
+ 	 * Per the datasheet, the register is always interpreted as an even
+ 	 * number, by rounding down. In other words, the LSB is ignored. So,
+@@ -88,12 +93,23 @@ static int bcm2835_i2c_set_divider(struct bcm2835_i2c_dev *i2c_dev)
+ 	if (divider & 1)
+ 		divider++;
+ 	if ((divider < BCM2835_I2C_CDIV_MIN) ||
+-	    (divider > BCM2835_I2C_CDIV_MAX)) {
+-		dev_err_ratelimited(i2c_dev->dev, "Invalid clock-frequency\n");
++	    (divider > BCM2835_I2C_CDIV_MAX))
+ 		return -EINVAL;
+-	}
  
-+	pinctrl_sai3: sai3grp {
-+		fsl,pins = <
-+			MX8MM_IOMUXC_SAI3_TXFS_SAI3_TX_SYNC     0xd6
-+			MX8MM_IOMUXC_SAI3_TXC_SAI3_TX_BCLK      0xd6
-+			MX8MM_IOMUXC_SAI3_MCLK_SAI3_MCLK        0xd6
-+			MX8MM_IOMUXC_SAI3_TXD_SAI3_TX_DATA0     0xd6
-+		>;
-+	};
+-	bcm2835_i2c_writel(i2c_dev, BCM2835_I2C_DIV, divider);
++	return divider;
++}
 +
- 	pinctrl_uart2: uart2grp {
- 		fsl,pins = <
- 			MX8MM_IOMUXC_UART2_RXD_UART2_DCE_RX	0x140
++static int clk_bcm2835_i2c_set_rate(struct clk_hw *hw, unsigned long rate,
++				unsigned long parent_rate)
++{
++	struct clk_bcm2835_i2c *div = to_clk_bcm2835_i2c(hw);
++	u32 redl, fedl;
++	u32 divider = clk_bcm2835_i2c_calc_divider(rate, parent_rate);
++
++	if (divider == -EINVAL)
++		return -EINVAL;
++
++	bcm2835_i2c_writel(div->i2c_dev, BCM2835_I2C_DIV, divider);
+ 
+ 	/*
+ 	 * Number of core clocks to wait after falling edge before
+@@ -108,12 +124,60 @@ static int bcm2835_i2c_set_divider(struct bcm2835_i2c_dev *i2c_dev)
+ 	 */
+ 	redl = max(divider / 4, 1u);
+ 
+-	bcm2835_i2c_writel(i2c_dev, BCM2835_I2C_DEL,
++	bcm2835_i2c_writel(div->i2c_dev, BCM2835_I2C_DEL,
+ 			   (fedl << BCM2835_I2C_FEDL_SHIFT) |
+ 			   (redl << BCM2835_I2C_REDL_SHIFT));
+ 	return 0;
+ }
+ 
++static long clk_bcm2835_i2c_round_rate(struct clk_hw *hw, unsigned long rate,
++				unsigned long *parent_rate)
++{
++	u32 divider = clk_bcm2835_i2c_calc_divider(rate, *parent_rate);
++
++	return DIV_ROUND_UP(*parent_rate, divider);
++}
++
++static unsigned long clk_bcm2835_i2c_recalc_rate(struct clk_hw *hw,
++						unsigned long parent_rate)
++{
++	struct clk_bcm2835_i2c *div = to_clk_bcm2835_i2c(hw);
++	u32 divider = bcm2835_i2c_readl(div->i2c_dev, BCM2835_I2C_DIV);
++
++	return DIV_ROUND_UP(parent_rate, divider);
++}
++
++static const struct clk_ops clk_bcm2835_i2c_ops = {
++	.set_rate = clk_bcm2835_i2c_set_rate,
++	.round_rate = clk_bcm2835_i2c_round_rate,
++	.recalc_rate = clk_bcm2835_i2c_recalc_rate,
++};
++
++static struct clk *bcm2835_i2c_register_div(struct device *dev,
++					const char *mclk_name,
++					struct bcm2835_i2c_dev *i2c_dev)
++{
++	struct clk_init_data init;
++	struct clk_bcm2835_i2c *priv;
++	const char *devname = dev_name(dev);
++
++	init.ops = &clk_bcm2835_i2c_ops;
++	init.name = "bcm2835-i2c";
++	init.parent_names = (const char* []) { mclk_name };
++	init.num_parents = 1;
++	init.flags = 0;
++
++	priv = devm_kzalloc(dev, sizeof(struct clk_bcm2835_i2c), GFP_KERNEL);
++	if (priv == NULL)
++		return ERR_PTR(-ENOMEM);
++
++	priv->hw.init = &init;
++	priv->i2c_dev = i2c_dev;
++
++	clk_hw_register_clkdev(&priv->hw, init.name, devname);
++	return devm_clk_register(dev, &priv->hw);
++}
++
+ static void bcm2835_fill_txfifo(struct bcm2835_i2c_dev *i2c_dev)
+ {
+ 	u32 val;
+@@ -271,7 +335,7 @@ static int bcm2835_i2c_xfer(struct i2c_adapter *adap, struct i2c_msg msgs[],
+ {
+ 	struct bcm2835_i2c_dev *i2c_dev = i2c_get_adapdata(adap);
+ 	unsigned long time_left;
+-	int i, ret;
++	int i;
+ 
+ 	for (i = 0; i < (num - 1); i++)
+ 		if (msgs[i].flags & I2C_M_RD) {
+@@ -280,10 +344,6 @@ static int bcm2835_i2c_xfer(struct i2c_adapter *adap, struct i2c_msg msgs[],
+ 			return -EOPNOTSUPP;
+ 		}
+ 
+-	ret = bcm2835_i2c_set_divider(i2c_dev);
+-	if (ret)
+-		return ret;
+-
+ 	i2c_dev->curr_msg = msgs;
+ 	i2c_dev->num_msgs = num;
+ 	reinit_completion(&i2c_dev->completion);
+@@ -338,6 +398,9 @@ static int bcm2835_i2c_probe(struct platform_device *pdev)
+ 	struct resource *mem, *irq;
+ 	int ret;
+ 	struct i2c_adapter *adap;
++	const char *mclk_name;
++	struct clk *bus_clk;
++	u32 bus_clk_rate;
+ 
+ 	i2c_dev = devm_kzalloc(&pdev->dev, sizeof(*i2c_dev), GFP_KERNEL);
+ 	if (!i2c_dev)
+@@ -351,21 +414,6 @@ static int bcm2835_i2c_probe(struct platform_device *pdev)
+ 	if (IS_ERR(i2c_dev->regs))
+ 		return PTR_ERR(i2c_dev->regs);
+ 
+-	i2c_dev->clk = devm_clk_get(&pdev->dev, NULL);
+-	if (IS_ERR(i2c_dev->clk)) {
+-		if (PTR_ERR(i2c_dev->clk) != -EPROBE_DEFER)
+-			dev_err(&pdev->dev, "Could not get clock\n");
+-		return PTR_ERR(i2c_dev->clk);
+-	}
+-
+-	ret = of_property_read_u32(pdev->dev.of_node, "clock-frequency",
+-				   &i2c_dev->bus_clk_rate);
+-	if (ret < 0) {
+-		dev_warn(&pdev->dev,
+-			 "Could not read clock-frequency property\n");
+-		i2c_dev->bus_clk_rate = 100000;
+-	}
+-
+ 	irq = platform_get_resource(pdev, IORESOURCE_IRQ, 0);
+ 	if (!irq) {
+ 		dev_err(&pdev->dev, "No IRQ resource\n");
+@@ -380,6 +428,35 @@ static int bcm2835_i2c_probe(struct platform_device *pdev)
+ 		return -ENODEV;
+ 	}
+ 
++	mclk_name = of_clk_get_parent_name(pdev->dev.of_node, 0);
++
++	bus_clk = bcm2835_i2c_register_div(&pdev->dev, mclk_name, i2c_dev);
++
++	if (IS_ERR(bus_clk)) {
++		dev_err(&pdev->dev, "Could not register clock\n");
++		return PTR_ERR(bus_clk);
++	}
++
++	ret = of_property_read_u32(pdev->dev.of_node, "clock-frequency",
++				   &bus_clk_rate);
++	if (ret < 0) {
++		dev_warn(&pdev->dev,
++			 "Could not read clock-frequency property\n");
++		bus_clk_rate = 100000;
++	}
++
++	ret = clk_set_rate_exclusive(bus_clk, bus_clk_rate);
++	if (ret < 0) {
++		dev_err(&pdev->dev, "Could not set clock frequency\n");
++		return ret;
++	}
++
++	ret = clk_prepare_enable(bus_clk);
++	if (ret) {
++		dev_err(&pdev->dev, "Couldn't prepare clock");
++		return ret;
++	}
++
+ 	adap = &i2c_dev->adapter;
+ 	i2c_set_adapdata(adap, i2c_dev);
+ 	adap->owner = THIS_MODULE;
+@@ -402,6 +479,11 @@ static int bcm2835_i2c_probe(struct platform_device *pdev)
+ static int bcm2835_i2c_remove(struct platform_device *pdev)
+ {
+ 	struct bcm2835_i2c_dev *i2c_dev = platform_get_drvdata(pdev);
++	struct clk *bus_clk = devm_clk_get(i2c_dev->dev, "bcm2835-i2c");
++
++	clk_rate_exclusive_put(bus_clk);
++	clk_disable_unprepare(bus_clk);
++	devm_clk_unregister(i2c_dev->dev, bus_clk);
+ 
+ 	free_irq(i2c_dev->irq, i2c_dev);
+ 	i2c_del_adapter(&i2c_dev->adapter);
 -- 
-2.17.1
+2.19.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
