@@ -2,43 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BC8017840
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 13:34:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52A2617898
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 13:45:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GyX3ei5Afo0YVOrteCqIeY7DFQPvwFufyTdzEPsmaYg=; b=cgZj3i3vH0YO6v
-	p7r4OSrd4JZXUwEEoFYhe6JnRiKyztiUjkh7r2L1hoq7DM8Lamx1MFooieBmlMiCi5ynCPGcnvrdd
-	oTr+0iifgv7VLk+SdfCJKgJANviyDcKSFEawx7vNSp3xJ1DgD7EVATdKZCrIHo5lw9pf2EOE1ubDL
-	QnN/utI/28XMhXe3QNQ+8h3JHuAMSDRCskuREVvwi+J3OLztGx0lnroMmHjVXgwaT8JiLcwhXVs3w
-	a5GB7eJfYkIN9sDhq/GtUFS2+ZH5pnRc8lngU5XTHSKwgqmDvm+Sd7iZdzQ6sfP7i85QR3vkan7Aj
-	xbb4FIlBPH/0TILwMAbQ==;
+	List-Owner; bh=eTe6lDwrmrzuILU/2bO5zhESwZfip9/W2zT2iiNvQ3o=; b=W3SMSDT6lcY30M
+	WSLcEYPPNcsohoZixS+OkS1Y2aNCk8qTz10G+HX5AicpgTGtovzsnAl0sKgyAw3Rr1Ynqw6mf/MkM
+	n/0lvUFug1Zz/VtKzayA1ZNCObFVVaq5xiF+xG2jcVtX6OTrLA1MlrZ8yIbc6RVLoZvJFa4Wh3HtL
+	MGR/xaamCoWokpsdjY4vtemjFdm+zwtb+MSNb31XDmarhSkpJIeBywlaz4AlV9PoJHB4GWgnnmrYZ
+	jaANzrhyQjVYFqz/PhLWCXwszYuFruoRLB4L6jMBrC/bPJZcV3JzyQLbLLJb1ZjQasDuNedxZRMRr
+	VN8EXNPDCe36lUKgnr+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOKqS-0005C2-NC; Wed, 08 May 2019 11:34:44 +0000
-Received: from mail-by2nam03on061c.outbound.protection.outlook.com
- ([2a01:111:f400:fe4a::61c]
- helo=NAM03-BY2-obe.outbound.protection.outlook.com)
+	id 1hOL14-00045z-3T; Wed, 08 May 2019 11:45:42 +0000
+Received: from mail-eopbgr710084.outbound.protection.outlook.com
+ ([40.107.71.84] helo=NAM05-BY2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOKmg-0000d2-QY; Wed, 08 May 2019 11:31:19 +0000
+ id 1hOKmh-0000eZ-5A; Wed, 08 May 2019 11:31:24 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=analog.onmicrosoft.com; s=selector1-analog-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=1pGxpqtswe0uDTJtCA9b8Plg8X12C8ZZ/KC5tO0ZuVQ=;
- b=uLO3LXwdd1BWamWiK4r+Hw5jvJyCV00LM1cyhqNBKocozKsQvw+ovIXID7g91gMIvPgSp0VMC7EhKj6CA5gnlmoJcz4HY1qoPHGRgatiggRcisFhgTqP51Zl+L8WhLodnCQ/qLq5WxXaZ64lgglcD6lX1+C8qGWvddWXlxnm3bA=
-Received: from CY4PR03CA0098.namprd03.prod.outlook.com (2603:10b6:910:4d::39)
- by BN3PR03MB2259.namprd03.prod.outlook.com (2a01:111:e400:7bba::20)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1856.12; Wed, 8 May
- 2019 11:30:44 +0000
-Received: from SN1NAM02FT012.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e44::207) by CY4PR03CA0098.outlook.office365.com
- (2603:10b6:910:4d::39) with Microsoft SMTP Server (version=TLS1_2,
+ bh=BLP6T3LmL+xu1pWFiHVPh/xRUsA/EQBeKdqIkqvb8tM=;
+ b=Mou+jErBJvl2+qbFwKpdjFrX8nTbxuMm9kAbp3zHsAZA2Yu/30Qn/WM6TRbbZNSO3b9THY/Eb/sEps9xXwDLMCKhkT2e6gE563qV3pa7GK6VRH3DCP3ZsKscgA/XT3bvkTHMyfFdjW8irkfZ8FepYUe+nSBapiK9qv/M4/AWiaI=
+Received: from CY1PR03CA0020.namprd03.prod.outlook.com (2603:10b6:600::30) by
+ DM5PR03MB3131.namprd03.prod.outlook.com (2603:10b6:4:3c::28) with
+ Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1878.20; Wed, 8 May 2019 11:30:48 +0000
+Received: from BL2NAM02FT016.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e46::201) by CY1PR03CA0020.outlook.office365.com
+ (2603:10b6:600::30) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1878.20 via Frontend
- Transport; Wed, 8 May 2019 11:30:44 +0000
+ Transport; Wed, 8 May 2019 11:30:48 +0000
 Authentication-Results: spf=pass (sender IP is 137.71.25.55)
  smtp.mailfrom=analog.com; lists.freedesktop.org; dkim=none (message not
  signed) header.d=none;lists.freedesktop.org; dmarc=bestguesspass action=none
@@ -47,17 +46,17 @@ Received-SPF: Pass (protection.outlook.com: domain of analog.com designates
  137.71.25.55 as permitted sender) receiver=protection.outlook.com;
  client-ip=137.71.25.55; helo=nwd2mta1.analog.com;
 Received: from nwd2mta1.analog.com (137.71.25.55) by
- SN1NAM02FT012.mail.protection.outlook.com (10.152.72.95) with Microsoft SMTP
+ BL2NAM02FT016.mail.protection.outlook.com (10.152.77.171) with Microsoft SMTP
  Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.1856.11
- via Frontend Transport; Wed, 8 May 2019 11:30:43 +0000
+ via Frontend Transport; Wed, 8 May 2019 11:30:48 +0000
 Received: from NWD2HUBCAS7.ad.analog.com (nwd2hubcas7.ad.analog.com
  [10.64.69.107])
- by nwd2mta1.analog.com (8.13.8/8.13.8) with ESMTP id x48BUgbC023898
+ by nwd2mta1.analog.com (8.13.8/8.13.8) with ESMTP id x48BUlYi023920
  (version=TLSv1/SSLv3 cipher=AES256-SHA bits=256 verify=OK);
- Wed, 8 May 2019 04:30:42 -0700
+ Wed, 8 May 2019 04:30:47 -0700
 Received: from saturn.analog.com (10.50.1.244) by NWD2HUBCAS7.ad.analog.com
  (10.64.69.107) with Microsoft SMTP Server id 14.3.408.0; Wed, 8 May 2019
- 07:30:42 -0400
+ 07:30:47 -0400
 From: Alexandru Ardelean <alexandru.ardelean@analog.com>
 To: <linuxppc-dev@lists.ozlabs.org>, <linux-kernel@vger.kernel.org>,
  <linux-ide@vger.kernel.org>, <linux-clk@vger.kernel.org>,
@@ -73,9 +72,9 @@ To: <linuxppc-dev@lists.ozlabs.org>, <linux-kernel@vger.kernel.org>,
  <linux-mtd@lists.infradead.org>, <cgroups@vger.kernel.org>,
  <linux-mm@kvack.org>, <linux-security-module@vger.kernel.org>,
  <linux-integrity@vger.kernel.org>, <alsa-devel@alsa-project.org>
-Subject: [PATCH 15/16] video: fbdev: pxafb: use new match_string() helper/macro
-Date: Wed, 8 May 2019 14:28:41 +0300
-Message-ID: <20190508112842.11654-17-alexandru.ardelean@analog.com>
+Subject: [PATCH 16/16] sched: debug: use new match_string() helper/macro
+Date: Wed, 8 May 2019 14:28:42 +0300
+Message-ID: <20190508112842.11654-18-alexandru.ardelean@analog.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190508112842.11654-1-alexandru.ardelean@analog.com>
 References: <20190508112842.11654-1-alexandru.ardelean@analog.com>
@@ -85,36 +84,38 @@ X-EOPAttributedMessage: 0
 X-MS-Office365-Filtering-HT: Tenant
 X-Forefront-Antispam-Report: CIP:137.71.25.55; IPV:NLI; CTRY:US; EFV:NLI;
  SFV:NSPM;
- SFS:(10009020)(1496009)(136003)(396003)(346002)(376002)(39860400002)(2980300002)(199004)(189003)(50466002)(2906002)(426003)(478600001)(126002)(2441003)(2616005)(476003)(51416003)(26005)(8936002)(7696005)(48376002)(77096007)(186003)(50226002)(7416002)(246002)(47776003)(356004)(11346002)(36756003)(70586007)(70206006)(8676002)(446003)(336012)(16586007)(2201001)(76176011)(1076003)(86362001)(4326008)(107886003)(486006)(5660300002)(44832011)(106002)(305945005)(110136005)(316002)(54906003)(7636002)(53416004)(921003)(83996005)(2101003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BN3PR03MB2259; H:nwd2mta1.analog.com; FPR:;
+ SFS:(10009020)(1496009)(346002)(376002)(396003)(39860400002)(136003)(2980300002)(199004)(189003)(50226002)(246002)(8936002)(8676002)(5660300002)(70586007)(70206006)(14444005)(76176011)(426003)(336012)(51416003)(7696005)(4744005)(356004)(6666004)(1076003)(44832011)(476003)(2616005)(11346002)(446003)(126002)(486006)(16586007)(316002)(106002)(54906003)(110136005)(77096007)(26005)(186003)(86362001)(50466002)(478600001)(2201001)(47776003)(7416002)(305945005)(7636002)(48376002)(2441003)(53416004)(4326008)(36756003)(107886003)(2906002)(921003)(2101003)(83996005)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR03MB3131; H:nwd2mta1.analog.com; FPR:;
  SPF:Pass; LANG:en; PTR:nwd2mail10.analog.com; A:1; MX:1; 
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 19467b0d-82a0-4414-fd3d-08d6d3a89be6
+X-MS-Office365-Filtering-Correlation-Id: 4f9efdca-1ab7-457f-8e86-08d6d3a89e43
 X-Microsoft-Antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4709054)(2017052603328);
- SRVR:BN3PR03MB2259; 
-X-MS-TrafficTypeDiagnostic: BN3PR03MB2259:
-X-Microsoft-Antispam-PRVS: <BN3PR03MB2259B45DC5D8696943CC04CAF9320@BN3PR03MB2259.namprd03.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:120;
+ SRVR:DM5PR03MB3131; 
+X-MS-TrafficTypeDiagnostic: DM5PR03MB3131:
+X-Microsoft-Antispam-PRVS: <DM5PR03MB3131EB1D4A0233D6F2CF2FE9F9320@DM5PR03MB3131.namprd03.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:883;
 X-Forefront-PRVS: 0031A0FFAF
 X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info: ica2HYRZM4fdZtkxNTO9Gb+CKac0B/LUwaOW4nL6nYW79SYpz0JOGfZuZgqcdALu4tIifExiLGAs6sD77WVSTjIN3M+20mtkK8wI+pBL9/p1PoBSKfZAmfP2KGJVvCgSEHf32wy3PDodr1lg8Yuu8eqBBpgNfg053BOMOeCaI7HFr/B1OJTsQBX/ceRy48at5Iy5hIl80/NoESGq+ZAk5cvin1INqYY3Mb1qILEP4XIZVdGoHNJeTgIM/V0FqkN7/zCsxIYOu/80TBgJdrmS/t2+/MSfdRVyy3pcjddO6858KbsH4xUnc6kYGOjPaFpLAaL+RTif6KsJe22eNbSvhw8CkJVq6PtH4EXETBQCnvcVhQzisGb4TvfZgmQsWRjNXcqE9FtzT+5/kc2FZNz3c0T+2Bori5rG0j1zDojL+ig=
+X-Microsoft-Antispam-Message-Info: y8JtZs2HotEuJXogFzCnWR8K541Bt2KfbZWELew5MD4nlAPku+wmdwLi/TmhK+Wakt+fvbaRFSoxotZgnMV2hufk93HL+wHu08VeIYZzAB8IoqoQv2Dvs3lnVRZh37jPq6JDJZ09fXCNHxrzaMP2dKCDMykwclc7f8Vhdsv9Hmgt6QzYljQnwVIuzcGFye7kiyk0f3KKDWznos08NxFijPl+LUMHPWnvzQlXV/iO2H1CI51TvTwttNaST8OKKWnz5OXJBqxgbJS4Kly1RQeBnhEZ3a2yJ66lTxZm6OcLmRETP89L/aXGIMwvdEBcgXHdYhM7+eUMfrZ8P6irgud1tsflo5a0tQjULWcYbJoGX3011swPClTsa1cpteMxSluefGhuVRdEo64cyvpiEdovYVJn9rugc71z/Ws3tZEK/Xg=
 X-OriginatorOrg: analog.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 May 2019 11:30:43.2658 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 19467b0d-82a0-4414-fd3d-08d6d3a89be6
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 May 2019 11:30:48.0826 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4f9efdca-1ab7-457f-8e86-08d6d3a89e43
 X-MS-Exchange-CrossTenant-Id: eaa689b4-8f87-40e0-9c6f-7228de4d754a
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=eaa689b4-8f87-40e0-9c6f-7228de4d754a; Ip=[137.71.25.55];
  Helo=[nwd2mta1.analog.com]
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN3PR03MB2259
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR03MB3131
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_043051_281157_2E51C07F 
-X-CRM114-Status: GOOD (  10.17  )
+X-CRM114-CacheID: sfid-20190508_043051_579253_9A0A75B5 
+X-CRM114-Status: GOOD (  11.67  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.71.84 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -139,40 +140,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The `lcd_types` array is a static array of strings.
+The `sched_feat_names` array is a static array of strings.
 Using match_string() (which computes the array size via ARRAY_SIZE())
 is possible.
 
-This reduces the array by 1 element, since the NULL (at the end of the
-array) is no longer needed.
+The change is mostly cosmetic.
+No functionality change.
 
 Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
 ---
- drivers/video/fbdev/pxafb.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ kernel/sched/debug.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/video/fbdev/pxafb.c b/drivers/video/fbdev/pxafb.c
-index 0025781e6e1e..e657a04f5b1d 100644
---- a/drivers/video/fbdev/pxafb.c
-+++ b/drivers/video/fbdev/pxafb.c
-@@ -2114,7 +2114,7 @@ static void pxafb_check_options(struct device *dev, struct pxafb_mach_info *inf)
- #if defined(CONFIG_OF)
- static const char * const lcd_types[] = {
- 	"unknown", "mono-stn", "mono-dstn", "color-stn", "color-dstn",
--	"color-tft", "smart-panel", NULL
-+	"color-tft", "smart-panel"
- };
+diff --git a/kernel/sched/debug.c b/kernel/sched/debug.c
+index b0efc5fe641e..6d5f370bdfde 100644
+--- a/kernel/sched/debug.c
++++ b/kernel/sched/debug.c
+@@ -111,7 +111,7 @@ static int sched_feat_set(char *cmp)
+ 		cmp += 3;
+ 	}
  
- static int of_get_pxafb_display(struct device *dev, struct device_node *disp,
-@@ -2129,7 +2129,7 @@ static int of_get_pxafb_display(struct device *dev, struct device_node *disp,
- 	if (ret)
- 		s = "color-tft";
- 
--	i = __match_string(lcd_types, -1, s);
-+	i = match_string(lcd_types, s);
- 	if (i < 0) {
- 		dev_err(dev, "lcd-type %s is unknown\n", s);
+-	i = __match_string(sched_feat_names, __SCHED_FEAT_NR, cmp);
++	i = match_string(sched_feat_names, cmp);
+ 	if (i < 0)
  		return i;
+ 
 -- 
 2.17.1
 
