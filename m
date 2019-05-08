@@ -2,93 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACEDB17BC8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 16:44:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6C4217CCD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 17:06:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U/k53zzPCkyykyfrYIQ4978hdwN1cRvspiyeUTH6aa8=; b=UA+MeaUxZmwsnN
-	lb5tSR427ZK6TthOY3RvEhxSz1i4G/WJAxbGwHCG/at4JqKZr/CRRKioZ6nHdzi+uKerd7x2r+fbW
-	x403oLd2IvURJurmOj8AoQxGdPLp8fIkZUEJyglGWRZ9lqmKo94XqZuSy5XhstWkM4bIAjIJNbWPx
-	7l982mk2fQr7hX2B0NolKt4TzDIheHsipZWOnk6Xej/IpuyGHn8GueXOG055qqp3TUSdx2dXTONBs
-	dqiT6PtWN0wFwCQdSzN5+391QQBBBvP4sp1e/NJEG4kqMnBf54koB2dFuLh4uqyu2uFuVqXzFDt2u
-	pSWULRt9C4IboAEeokgw==;
+	List-Owner; bh=IbUH5iiYgqPQWFoZ9esRKA6V7rWvd+GoJXVEguL4BSo=; b=qFfEcci3R5sxRa
+	nd7KHUas9/zSSoJ5+DNIKgyHNw1j7AYBmiHvgrVOSmIjyCz6DEXKHku/NpyIWmZnnPhveZa2jr+/m
+	UVi22E/44B3Qnpm6Gy06baOXbF+M0c+mAR7f4U0nZifdBA2vyK9y9igch7rAJ4itaSa8+4m8gjjxC
+	Jo/OZIc/02JHrtYDIpkjVRcGFLAAiy0oxN9fAyNfL47l3dpN8sIenNvq/73uy0rfhlGH0yKqFj2Ow
+	2MsnSlluV3cKLAOnwph2rmVvR+ohrr27bSzXR1vCPIvYlI02K7WAZZ6z88ykguX059uKGOZOuJEEc
+	F/4BGvtPbk626E2s4Wlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hONo6-0005Pr-CQ; Wed, 08 May 2019 14:44:30 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1hOO9H-0005y0-Cs; Wed, 08 May 2019 15:06:23 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hONnz-0005PM-4D
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 14:44:25 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x48EfRWK016745; Wed, 8 May 2019 16:44:12 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=ujx99i/SdmhJJY/rTfyjZ25oaMJTjnJ2T2B83DEfQao=;
- b=NDBJhGUrF+5cuInlJHlGw+Wa11TeVKy9sCKxakUcQg4M/gC07uoIxkT24K1/ylLXCY5k
- Wqkzt57AQ4QQIWbdeDTm64k50D83HpQnavgmO3DPW3lFsa43MPtwtayz9mF9D0q6vOea
- Cv2pYd5EDB78dz4AIOFkcw3UEc1gqZcvm1DrQJfcuWPdA+G59vhtndIXoHLbKyIC9h2d
- 0gjVQ+9DE8jS5lMkO35E8SA8A8VboazvOKB1Nl+eAUmASF8V5MofiqFSZz50jFA9fMOP
- Zfo6w4OdapO7LKAhrAa18JXran0E0YZ3FWsA3nNZK/0kg5Jqs6zDVyLeVp+csBDU6TcD Vw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2s94c3qnkd-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Wed, 08 May 2019 16:44:12 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 0476338;
- Wed,  8 May 2019 14:44:10 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id C010028CA;
- Wed,  8 May 2019 14:44:10 +0000 (GMT)
-Received: from SFHDAG3NODE2.st.com (10.75.127.8) by SFHDAG3NODE1.st.com
- (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 8 May
- 2019 16:44:10 +0200
-Received: from SFHDAG3NODE2.st.com ([fe80::b82f:1ce:8854:5b96]) by
- SFHDAG3NODE2.st.com ([fe80::b82f:1ce:8854:5b96%20]) with mapi id
- 15.00.1347.000; Wed, 8 May 2019 16:44:10 +0200
-From: Amelie DELAUNAY <amelie.delaunay@st.com>
-To: Lee Jones <lee.jones@linaro.org>
-Subject: Re: [PATCH v5 2/9] mfd: Add ST Multi-Function eXpander (STMFX) core
- driver
-Thread-Topic: [PATCH v5 2/9] mfd: Add ST Multi-Function eXpander (STMFX) core
- driver
-Thread-Index: AQHU7qVAy3Bds8UGv0OmxPFvTsiQh6Zg82kAgABmwoA=
-Date: Wed, 8 May 2019 14:44:10 +0000
-Message-ID: <697597b2-088d-9ffb-54bd-e50b3ca8c012@st.com>
-References: <1554794651-6874-1-git-send-email-amelie.delaunay@st.com>
- <1554794651-6874-3-git-send-email-amelie.delaunay@st.com>
- <20190508083622.GE3995@dell>
-In-Reply-To: <20190508083622.GE3995@dell>
-Accept-Language: fr-FR, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.44]
-Content-ID: <AA71AC5806FEE94686A2708FB6B887B8@st.com>
+ id 1hOO9A-0005xT-6d
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 15:06:17 +0000
+Received: by mail-qk1-x743.google.com with SMTP id c1so3313014qkk.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 08 May 2019 08:06:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=oDzDsVMU+LJr7Vip7FUWGFjPTFwrPecpVC+p71dwHL0=;
+ b=YyvjUF7kcpOEi0nE6dzVsg/gcQTmv5N8+kMHVneU2YA724wvUKi6bG88nc2ddw8bwh
+ xQWEOtv1wgEx0039HHBmyRo0mYya6XFQesGUURR537siA2xMVgsISqv6MqgcHvOE01gZ
+ WUTtn0x8U7/FWPvWp3kHk1dWp4H/CicnYmdTA=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=oDzDsVMU+LJr7Vip7FUWGFjPTFwrPecpVC+p71dwHL0=;
+ b=DePRynVLavihBBB2tSZPElHoDvhCcyAITDwfqH8FUiOyFYbIZYt4gqBDvX50VD9WWw
+ jRwv0zYHlUZEAXygdwryOMLsaLPwjgpHyzeAET0UlFUEYSyQTWH7Y/zx4t+w/N8Be2OF
+ gB+hbX62EbFUDKFhPLCQajrQHpX92xsIUi7MQaxFnxY0c1/uH3XeJZi6XxE/lBMyVsNw
+ oBbOSev5tUmMjhfvGnCVXbSCCkmexRBQGwA+ZL2eCxCGsZzMeVKrxB8uTRS75HaS/Aqe
+ 9B4aItT6vv3Wi6S+WF0bhMOVz+ufgwd7/l7TfCKoIcAdMV5P67evkSX1ipPRLVmdtbec
+ v7kg==
+X-Gm-Message-State: APjAAAViI1s0N203i807fb8mTurpyN79AII194Esw/uioDZ46Yb6Hxo8
+ 5HKpCLIEy5oB8UryI6BTEBaKmtIp2v25BuYnkSw/7Q==
+X-Google-Smtp-Source: APXvYqzKF9hpiQ7++7G8HoeOWq1DqYNKoDcAsjHDKXSfNfIFkZYm1Ylb5eOULOWWNB0JjrIWx70mQF4jn2aNPXQtqnc=
+X-Received: by 2002:a05:620a:16c3:: with SMTP id
+ a3mr6908351qkn.222.1557327974036; 
+ Wed, 08 May 2019 08:06:14 -0700 (PDT)
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-08_08:, , signatures=0
+References: <20190507045433.542-1-hsinyi@chromium.org>
+ <CAL_Jsq+rGeFKAPVmPvv_Z+G=BppKUK-tEUphBajZVxFtbRBJvQ@mail.gmail.com>
+ <CAJMQK-iVhScf0ybZ85kqP0B5_QPoYZ9PZt35jHRUh8FNHKvu7w@mail.gmail.com>
+ <CAL_JsqJZ+mOnrLWt0Cpo_Ybr_ohxwWom1qiyV8_EFocULde7=Q@mail.gmail.com>
+In-Reply-To: <CAL_JsqJZ+mOnrLWt0Cpo_Ybr_ohxwWom1qiyV8_EFocULde7=Q@mail.gmail.com>
+From: Hsin-Yi Wang <hsinyi@chromium.org>
+Date: Wed, 8 May 2019 23:05:47 +0800
+Message-ID: <CAJMQK-jjzYwX3NZAKJ-8ypjcN75o-ZX4iOVD=84JecEd4qV1bA@mail.gmail.com>
+Subject: Re: [PATCH] arm64: add support for rng-seed
+To: Rob Herring <robh+dt@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_074423_614077_B832E1B0 
-X-CRM114-Status: GOOD (  26.55  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190508_080616_269088_BB674516 
+X-CRM114-Status: GOOD (  30.10  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -97,6 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -108,233 +91,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Alexandre TORGUE <alexandre.torgue@st.com>,
- Linus Walleij <linus.walleij@linaro.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Architecture Mailman List <boot-architecture@lists.linaro.org>,
+ Michal Hocko <mhocko@suse.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+ Mike Rapoport <rppt@linux.ibm.com>, James Morse <james.morse@arm.com>,
+ Andrew Murray <andrew.murray@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Stephen Boyd <swboyd@chromium.org>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/8/19 10:36 AM, Lee Jones wrote:
-> On Tue, 09 Apr 2019, Amelie Delaunay wrote:
-> 
->> STMicroelectronics Multi-Function eXpander (STMFX) is a slave controller
->> using I2C for communication with the main MCU. Main features are:
->> - 16 fast GPIOs individually configurable in input/output
->> - 8 alternate GPIOs individually configurable in input/output when other
->> STMFX functions are not used
->> - Main MCU IDD measurement
->> - Resistive touchscreen controller
->>
->> Signed-off-by: Amelie Delaunay <amelie.delaunay@st.com>
->> ---
->>   drivers/mfd/Kconfig       |  13 ++
->>   drivers/mfd/Makefile      |   2 +-
->>   drivers/mfd/stmfx.c       | 566 ++++++++++++++++++++++++++++++++++++++++++++++
->>   include/linux/mfd/stmfx.h | 123 ++++++++++
->>   4 files changed, 703 insertions(+), 1 deletion(-)
->>   create mode 100644 drivers/mfd/stmfx.c
->>   create mode 100644 include/linux/mfd/stmfx.h
->>
->> diff --git a/drivers/mfd/Kconfig b/drivers/mfd/Kconfig
->> index 3443f1a..9783e18 100644
->> --- a/drivers/mfd/Kconfig
->> +++ b/drivers/mfd/Kconfig
->> @@ -1907,6 +1907,19 @@ config MFD_STPMIC1
->>   	  To compile this driver as a module, choose M here: the
->>   	  module will be called stpmic1.
->>   
->> +config MFD_STMFX
->> +	tristate "Support for STMicroelectronics Multi-Function eXpander (STMFX)"
->> +	depends on I2C
->> +	depends on OF || COMPILE_TEST
->> +	select MFD_CORE
->> +	select REGMAP_I2C
->> +	help
->> +	  Support for the STMicroelectronics Multi-Function eXpander.
->> +
->> +	  This driver provides common support for accessing the device,
->> +	  additional drivers must be enabled in order to use the functionality
->> +	  of the device.
->> +
->>   menu "Multimedia Capabilities Port drivers"
->>   	depends on ARCH_SA1100
->>   
->> diff --git a/drivers/mfd/Makefile b/drivers/mfd/Makefile
->> index b4569ed7..614eea8 100644
->> --- a/drivers/mfd/Makefile
->> +++ b/drivers/mfd/Makefile
->> @@ -246,4 +246,4 @@ obj-$(CONFIG_MFD_MXS_LRADC)     += mxs-lradc.o
->>   obj-$(CONFIG_MFD_SC27XX_PMIC)	+= sprd-sc27xx-spi.o
->>   obj-$(CONFIG_RAVE_SP_CORE)	+= rave-sp.o
->>   obj-$(CONFIG_MFD_ROHM_BD718XX)	+= rohm-bd718x7.o
->> -
->> +obj-$(CONFIG_MFD_STMFX) 	+= stmfx.o
->> diff --git a/drivers/mfd/stmfx.c b/drivers/mfd/stmfx.c
->> new file mode 100644
->> index 0000000..59f0a03
->> --- /dev/null
->> +++ b/drivers/mfd/stmfx.c
->> @@ -0,0 +1,566 @@
->> +// SPDX-License-Identifier: GPL-2.0
->> +/*
->> + * Driver for STMicroelectronics Multi-Function eXpander (STMFX) core
->> + *
->> + * Copyright (C) 2019 STMicroelectronics
->> + * Author(s): Amelie Delaunay <amelie.delaunay@st.com>.
->> + */
->> +#include <linux/bitfield.h>
->> +#include <linux/i2c.h>
->> +#include <linux/interrupt.h>
->> +#include <linux/irq.h>
->> +#include <linux/mfd/core.h>
->> +#include <linux/mfd/stmfx.h>
->> +#include <linux/module.h>
->> +#include <linux/regulator/consumer.h>
-> 
-> [...]
-> 
->> +static int stmfx_chip_init(struct i2c_client *client)
->> +{
->> +	struct stmfx *stmfx = i2c_get_clientdata(client);
->> +	u32 id;
->> +	u8 version[2];
->> +	int ret;
->> +
->> +	stmfx->vdd = devm_regulator_get_optional(&client->dev, "vdd");
->> +	if (IS_ERR(stmfx->vdd)) {
->> +		ret = PTR_ERR(stmfx->vdd);
->> +		if (ret != -ENODEV) {
->> +			if (ret != -EPROBE_DEFER)
->> +				dev_err(&client->dev,
->> +					"Can't get VDD regulator:%d\n", ret);
->> +			return ret;
->> +		}
-> 
-> Any reason you've decided to stick with this 3-layer nested if instead
-> of going with my suggestion?
-> 
+On Wed, May 8, 2019 at 10:04 PM Rob Herring <robh+dt@kernel.org> wrote:
+>
+> On Tue, May 7, 2019 at 11:08 PM Hsin-Yi Wang <hsinyi@chromium.org> wrote:
+> >
+> > On Wed, May 8, 2019 at 3:47 AM Rob Herring <robh+dt@kernel.org> wrote:
+> > >
+> > > +boot-architecture list as there was some discussion about this IIRC.
+> > >
+> > > On Mon, May 6, 2019 at 11:54 PM Hsin-Yi Wang <hsinyi@chromium.org> wrote:
+> > > >
+> > > > Introducing a chosen node, rng-seed, which is an 64 bytes entropy
+> > > > that can be passed to kernel called very early to increase device
+> > > > randomness. Bootloader should provide this entropy and the value is
+> > > > read from /chosen/rng-seed in DT.
+> > > >
+> > > > Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
+> > > >
+> > > > ---
+> > > >  Documentation/devicetree/bindings/chosen.txt | 14 +++++++++
+> > >
+> > > Actually, this file has been converted to json-schema and lives
+> > > here[1]. I need to remove this one (or leave it with a reference to
+> > > the new one).
+> > >
+> > > >  arch/arm64/kernel/setup.c                    |  2 ++
+> > > >  drivers/of/fdt.c                             | 33 ++++++++++++++++++++
+> > > >  include/linux/of_fdt.h                       |  1 +
+> > > >  4 files changed, 50 insertions(+)
+> > > >
+> > > > diff --git a/Documentation/devicetree/bindings/chosen.txt b/Documentation/devicetree/bindings/chosen.txt
+> > > > index 45e79172a646..bfd360691650 100644
+> > > > --- a/Documentation/devicetree/bindings/chosen.txt
+> > > > +++ b/Documentation/devicetree/bindings/chosen.txt
+> > > > @@ -28,6 +28,20 @@ mode) when EFI_RNG_PROTOCOL is supported, it will be overwritten by
+> > > >  the Linux EFI stub (which will populate the property itself, using
+> > > >  EFI_RNG_PROTOCOL).
+> > > >
+> > > > +rng-seed
+> > > > +-----------
+> > > > +
+> > > > +This property served as an entropy to add device randomness. It is parsed
+> > > > +as a 64 byte value, e.g.
+> > >
+> > > Why only 64-bytes?
+> > We can also not specify size and read what bootloader can provide.
+> > >
+> > > > +
+> > > > +/ {
+> > > > +       chosen {
+> > > > +               rng-seed = <0x31951b3c 0xc9fab3a5 0xffdf1660 ...>
+> > > > +       };
+> > > > +};
+> > > > +
+> > > > +This random value should be provided by bootloader.
+> > > > +
+> > > >  stdout-path
+> > > >  -----------
+> > > >
+> > > > diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
+> > > > index 413d566405d1..ade4261516dd 100644
+> > > > --- a/arch/arm64/kernel/setup.c
+> > > > +++ b/arch/arm64/kernel/setup.c
+> > > > @@ -292,6 +292,8 @@ void __init setup_arch(char **cmdline_p)
+> > > >         early_fixmap_init();
+> > > >         early_ioremap_init();
+> > > >
+> > > > +       early_init_dt_rng_seed(__fdt_pointer);
+> > > > +
+> > >
+> > > I'm trying to reduce or eliminate all these early_init_dt_* calls.
+> > >
+> > > Why is this arch specific and why can't this be done after
+> > > unflattening? It doesn't look like add_device_randomness() needs
+> > > anything early.
+> > Currently unflattening is called after setup_machine_fdt(), which
+> > called fixmap_remap_fdt() //__fixmap_remap_fdt(dt_phys, &size,
+> > PAGE_KERNEL_RO), and we can't modify DT after that since it's read
+> > only. But we need to clear (eg. write 0 to it) the rng-seed after
+> > reading from DT.
+>
+> Why do you need to clear it? That wasn't necessary for kaslr-seed.
+I think it's for security purpose. If we know the random seed, it's
+more likely we can predict randomness.
+Currently on arm64, kaslr-seed will be wiped out (in
+arch/arm64/kernel/kaslr.c#get_kaslr_seed(), it's set to 0) so we can't
+read from sysfs (eg. /sys/firmware/devicetree/.../kaslr-seed)
+I'm not sure on other arch if it will be wiped out.
+>
+> Why not change the mapping to RW? It would be nice if this worked on
+> more than one arch.
+>
+> Rob
 
-Sorry, I didn't see your suggestion. I'll go with it in v6.
-
->> +	} else {
->> +		ret = regulator_enable(stmfx->vdd);
->> +		if (ret) {
->> +			dev_err(&client->dev, "VDD enable failed: %d\n", ret);
->> +			return ret;
->> +		}
->> +	}
-> 
-> [...]
-> 
->> +#ifdef CONFIG_PM_SLEEP
->> +static int stmfx_backup_regs(struct stmfx *stmfx)
->> +{
->> +	int ret;
->> +
->> +	ret = regmap_raw_read(stmfx->map, STMFX_REG_SYS_CTRL,
->> +			      &stmfx->bkp_sysctrl, sizeof(stmfx->bkp_sysctrl));
->> +	if (ret)
->> +		return ret;
->> +
->> +	ret = regmap_raw_read(stmfx->map, STMFX_REG_IRQ_OUT_PIN,
->> +			      &stmfx->bkp_irqoutpin,
->> +			      sizeof(stmfx->bkp_irqoutpin));
->> +	if (ret)
->> +		return ret;
->> +
->> +	return 0;
->> +}
->> +
->> +static int stmfx_restore_regs(struct stmfx *stmfx)
->> +{
->> +	int ret;
->> +
->> +	ret = regmap_raw_write(stmfx->map, STMFX_REG_SYS_CTRL,
->> +			       &stmfx->bkp_sysctrl, sizeof(stmfx->bkp_sysctrl));
->> +	if (ret)
->> +		return ret;
->> +
->> +	ret = regmap_raw_write(stmfx->map, STMFX_REG_IRQ_OUT_PIN,
->> +			       &stmfx->bkp_irqoutpin,
->> +			       sizeof(stmfx->bkp_irqoutpin));
->> +	if (ret)
->> +		return ret;
->> +
->> +	ret = regmap_raw_write(stmfx->map, STMFX_REG_IRQ_SRC_EN,
->> +			       &stmfx->irq_src, sizeof(stmfx->irq_src));
->> +	if (ret)
->> +		return ret;
->> +
->> +	return 0;
->> +}
->> +
->> +static int stmfx_suspend(struct device *dev)
->> +{
->> +	struct stmfx *stmfx = dev_get_drvdata(dev);
->> +	int ret;
->> +
->> +	ret = stmfx_backup_regs(stmfx);
->> +	if (ret) {
->> +		dev_err(stmfx->dev, "Registers backup failure\n");
->> +		return ret;
->> +	}
-> 
-> This doesn't need to be an extra function.  You're just adding more
-> lines of code for no real gain in reusability/readability.
-> 
-
-I used a separate function to have only one dev_err in case of 
-backup/restore failure.
-But anyway, I'll drop backup/restore functions and put the code in 
-suspend/resume.
-
->> +	if (!IS_ERR(stmfx->vdd)) {
->> +		ret = regulator_disable(stmfx->vdd);
->> +		if (ret)
->> +			return ret;
->> +	}
->> +
->> +	return 0;
->> +}
->> +
->> +static int stmfx_resume(struct device *dev)
->> +{
->> +	struct stmfx *stmfx = dev_get_drvdata(dev);
->> +	int ret;
->> +
->> +	if (!IS_ERR(stmfx->vdd)) {
->> +		ret = regulator_enable(stmfx->vdd);
->> +		if (ret) {
->> +			dev_err(stmfx->dev,
->> +				"VDD enable failed: %d\n", ret);
->> +			return ret;
->> +		}
->> +	}
->> +
->> +	ret = stmfx_restore_regs(stmfx);
->> +	if (ret) {
->> +		dev_err(stmfx->dev, "Registers restoration failure\n");
->> +		return ret;
->> +	}
-> 
-> This doesn't need to be an extra function.  You're just adding more
-> lines of code for no real gain in reusability/readability.
-> 
->> +	return 0;
->> +}
->> +#endif
-> 
-> [...]
-> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
