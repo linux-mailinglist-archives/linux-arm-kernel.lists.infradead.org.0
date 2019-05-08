@@ -2,104 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6636616EAD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 03:37:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE2E516EE0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  8 May 2019 04:19:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0731GuBwr/CeGa0W8rJYa7N5N4Ijoyyqm1xM7isSfBA=; b=RfcfknFCC9n5Z/
-	0If36GxNU1BJ8QkYbs2XkZ1PbX+mF79JSPYVuz3NCLX8+8na5lxwD3m1OmswC9o7fY6cC+VOXzWpj
-	gOz2SjZ+eUy3uQ6632FE9H/jxFDvhZQkC8GPatTXyvvCFSM8fafrAxkyLQRvdm4sQo0kpBWPLvAc3
-	m4U/acXWtoozaKp86eokj/SkTJ6UQmuUmDYcSBAfVBuhcJyBglq3VtEVw5q/5F0M2CD7MjcUzscO0
-	+x/ujBBTKUFkN/chBvin3Aeq0uwwbF2aIW31e4tJAAeiujj6LffrZ69GhS4l8Az2oBNqqnGDAuGi+
-	MCb2EPIzPGVT0fTdKUjg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=EytuhC9RLTU30E7JWXyMwhcxnZq1OrOFMPn2MxWP18E=; b=HEd
+	SvTSdRAN+1jflZ7rY3ZLJlcxuqgsfInGWtX1e4iYpVisYIzgFulvzSk1GHXWkuqk0BhUAvtz0BnRQ
+	+UtM0/wowPpHZj8M+6oytwIGLLmilCu2Uowdw36qV/qylvWRmjh7h41cVY3zIWzBtfEFZZaSxs0Rq
+	kkLTRkIjwMxpvwbBfnISuIWsiHTpGWSaugcpSOQRklQdD1ES+cq+x/aYK59o9/RK9oroCFSu/QJKR
+	e7361aMxIroVNQ1QEj5w5gDscE574C7okSLKo+IjpHCbDOH8MzOmuvQ9w104Yxv7I/w30vH/iVq5k
+	uoo3nn2sg4OdLccPQqzv9/xTz7wYlKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOBWL-0000AC-Lv; Wed, 08 May 2019 01:37:21 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hOCBV-00039R-K0; Wed, 08 May 2019 02:19:53 +0000
+Received: from mail-yw1-xc41.google.com ([2607:f8b0:4864:20::c41])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOBWD-00009s-VD
- for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 01:37:15 +0000
-Received: from [192.168.1.28] (cpe-70-114-128-244.austin.res.rr.com
- [70.114.128.244])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E532D20C01;
- Wed,  8 May 2019 01:37:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1557279433;
- bh=nUeURLDoq/94ixtT/gyxJp0aYcD0k3mphoGOepMXMfQ=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=SD63jVK3NqXULbC7n5aEKt5NwynYwiO8gNICPJbBGT+S+A8UVy8oLhgfKJzeBoogP
- O7PtH4s8j+yj5XxwsRi1dGWRLumnztsQ6JJ8unIfAccHdHe996ly8yJG/qk7IIqheL
- hGJJwbHXk5CQVqKrAJFxttuQzGb6kT3SjlUdiRYM=
-Subject: Re: [PATCH] arm: socfpga: execute cold reboot by default
-To: Simon Goldschmidt <simon.k.r.goldschmidt@gmail.com>
-References: <20190503091507.6159-1-simon.k.r.goldschmidt@gmail.com>
-From: Dinh Nguyen <dinguyen@kernel.org>
-Openpgp: preference=signencrypt
-Autocrypt: addr=dinguyen@kernel.org; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <fd18f55e-2e18-44a3-7e76-e5e59984b729@kernel.org>
-Date: Tue, 7 May 2019 20:37:11 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <20190503091507.6159-1-simon.k.r.goldschmidt@gmail.com>
-Content-Language: en-US
+ id 1hOCBM-00038V-Ip
+ for linux-arm-kernel@lists.infradead.org; Wed, 08 May 2019 02:19:47 +0000
+Received: by mail-yw1-xc41.google.com with SMTP id n76so6352396ywd.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 07 May 2019 19:19:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=53Jboj1jRgFvMb4WzHp98oy3I5nfTVXEAchn1y2EzOc=;
+ b=RBlup3KPFNcyrB9ylm1qkvs0cblxy6flpxA0OYqN53KJ8PIAYu8bo8D+/x/2pvQsmM
+ dl4wfuL8b02ODRM/SfXQfikr08d923wAv0kjMs9VhtlTv4EQiORgx3Rxhbwu9XcyWbHE
+ mj0pse0+S5xQSdjyolPLlxWnNr4H+2+Jnopz28QnJz9ijG2nGcc4nXu1G7Nv9QoiIeo3
+ L8i+OFgfTReIrAy3/4ipDRegLIPRsI3twnwK1LFJ5480U8fjuXKeZnCUwamHV9ZcDWbn
+ OOw6DkQabvzVU9g9iQdPeluo3AWax/6Oxwan60wUvw95otfaUHekxnGsvNrLXPgH0/6P
+ diaw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=53Jboj1jRgFvMb4WzHp98oy3I5nfTVXEAchn1y2EzOc=;
+ b=MRA+1HCzaBh3P12/6BUoGfBR/XpxU1t2DJTNc7DaTx4AZ9ZODfcpSXPJaHxGaPf/ul
+ 5zV7XSMclJCpRkBYMX5UJE/kZx2bPaoH3sNOlBvcwLBfSy4Q7Ws2UMWwqzia/X8B3wg2
+ DTE4t+7RYlV8WPh4VYHCO1/oZavBkMZ+MwBdnQazLQ34eMZwSdkHunKeR0cnXmpwKDxu
+ UKMZtXDs2tjU3QzvrXxPsj+yOLUBBI+I76Kl+068Gqodr5/Q3QUzKFgqfj5xN5WpawCW
+ V+rgJ0b8YcT/UIwQCdGqaqG2I/SEOV46cuSbqNmQGCmrtdR9mUKSCOWOJg9yF0p+xLNp
+ 0eVw==
+X-Gm-Message-State: APjAAAV0wB03tYBgrkJoXPnCs0xysQSVNdEGuHurlziq6Y7HkDinIMgp
+ oaTY+UnntKPJJyK1XpNhuQt71w==
+X-Google-Smtp-Source: APXvYqxIefpB6QOxsv5208c4eOzk2H+HjQbDo2jovyEHJ5xfkrhRDkweBqtP1NwPjRT6lpkVusJgxw==
+X-Received: by 2002:a25:542:: with SMTP id 63mr23605669ybf.331.1557281980950; 
+ Tue, 07 May 2019 19:19:40 -0700 (PDT)
+Received: from localhost.localdomain (li931-65.members.linode.com.
+ [45.56.113.65])
+ by smtp.gmail.com with ESMTPSA id s4sm1168116yws.48.2019.05.07.19.19.31
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 07 May 2019 19:19:39 -0700 (PDT)
+From: Leo Yan <leo.yan@linaro.org>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Mike Leach <mike.leach@linaro.org>, Wei Xu <xuwei5@hisilicon.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Andy Gross <agross@kernel.org>, David Brown <david.brown@linaro.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Liviu Dudau <liviu.dudau@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Orson Zhai <orsonzhai@gmail.com>, Baolin Wang <baolin.wang@linaro.org>,
+ Chunyan Zhang <zhang.lyra@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org
+Subject: [PATCH v2 00/11] dts: Update DT bindings for CoreSight replicator and
+ funnel
+Date: Wed,  8 May 2019 10:18:51 +0800
+Message-Id: <20190508021902.10358-1-leo.yan@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_183714_041714_5BE00DD5 
-X-CRM114-Status: GOOD (  20.78  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190507_191944_623589_EA6AAF38 
+X-CRM114-Status: GOOD (  15.90  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -108,7 +95,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -120,77 +106,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marek.vasut@gmail.com>,
- Dalon Westergreen <dalon.westergreen@linux.intel.com>,
- Russell King <linux@armlinux.org.uk>, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: Andrew Lunn <andrew@lunn.ch>, Guodong Xu <guodong.xu@linaro.org>,
+ Chunyan Zhang <zhang.chunyan@linaro.org>,
+ Haojian Zhuang <haojian.zhuang@linaro.org>, Leo Yan <leo.yan@linaro.org>,
+ Zhangfei Gao <zhangfei.gao@linaro.org>, Lee Jones <lee.jones@linaro.org>,
+ Chris Healy <cphealy@gmail.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Since the DT bindings consolidatoins for CoreSight replicator and funnel
+is ready for kernel v5.2 merge window [1], this patch set is to update
+the related CoreSight DT bindings for platforms; IIUC, this patch set
+will be safe for merging into kernel v5.2 because the dependency
+patches in [1] will be landed into mainline kernel v5.2 cycle.
+
+In this patch set, it tries to update below two compatible strings to
+the latest strings:
+
+  s/"arm,coresight-replicator"/"arm,coresight-static-replicator"
+  s/"arm,coresight-funnel"/"arm,coresight-dynamic-funnel"
+
+Please note, some platforms have two continuous patches, one is for
+updating static replicator compatible string and another is for dynamic
+funnel change; and other platforms have only one patch since it only
+needs to change for dynamic funnel.
+
+Avoid to introduce merging confliction, I rebased this patch set on
+linux-next branch with last commit fcdb095ad001 ("Add linux-next
+specific files for 20190506").
+
+This patch set has been tested on Arm Juno and Hikey620 boards, other
+platforms are only compilation passing.
+
+P.s. when use scirpt/checkpatch.pl, it reports the warnings as below. I
+think we can ignore this warnings for this patch set, please review if
+this makes sense for you.
+
+WARNING: line over 80 characters
+#29: FILE: arch/arm/boot/dts/imx7s.dtsi:178:
++                       compatible = "arm,coresight-dynamic-funnel", "arm,primecell";
+
+[1] https://archive.armlinux.org.uk/lurker/message/20190412.102734.2afbb29a.en.html
+
+== Changes for v2 ==
+* Add explanation for the change in the commit logs. (Fabio)
+* Merge the separate patches for funnel and replicator per DTS into
+  a single patch. (Suzuki)
 
 
-On 5/3/19 4:15 AM, Simon Goldschmidt wrote:
-> This changes system reboot for socfpga to issue a cold reboot by
-> default instead of a warm reboot.
-> 
-> Warm reboot can still be used by setting reboot_mode to
-> REBOOT_WARM (e.g. via kernel command line 'reboot='), but this
-> patch ensures cold reboot is issued for both REBOOT_COLD and
-> REBOOT_HARD.
-> 
-> Also, cold reboot is more fail safe than warm reboot has some
-> issues at least fo CSEL=0 and BSEL=qspi, where the boot rom does
-> not set the qspi clock to a valid range.
-> 
-> Signed-off-by: Simon Goldschmidt <simon.k.r.goldschmidt@gmail.com>
-> ---
-> 
-> See discussion in this thread on the u-boot ML:
-> https://lists.denx.de/pipermail/u-boot/2019-April/367463.html
-> ---
->  arch/arm/mach-socfpga/socfpga.c | 12 ++++++------
->  1 file changed, 6 insertions(+), 6 deletions(-)
-> 
-> diff --git a/arch/arm/mach-socfpga/socfpga.c b/arch/arm/mach-socfpga/socfpga.c
-> index 816da0eb6..6abfbf140 100644
-> --- a/arch/arm/mach-socfpga/socfpga.c
-> +++ b/arch/arm/mach-socfpga/socfpga.c
-> @@ -85,10 +85,10 @@ static void socfpga_cyclone5_restart(enum reboot_mode mode, const char *cmd)
->  
->  	temp = readl(rst_manager_base_addr + SOCFPGA_RSTMGR_CTRL);
->  
-> -	if (mode == REBOOT_HARD)
-> -		temp |= RSTMGR_CTRL_SWCOLDRSTREQ;
-> -	else
-> +	if (mode == REBOOT_WARM)
->  		temp |= RSTMGR_CTRL_SWWARMRSTREQ;
-> +	else
-> +		temp |= RSTMGR_CTRL_SWCOLDRSTREQ;
->  	writel(temp, rst_manager_base_addr + SOCFPGA_RSTMGR_CTRL);
->  }
->  
-> @@ -98,10 +98,10 @@ static void socfpga_arria10_restart(enum reboot_mode mode, const char *cmd)
->  
->  	temp = readl(rst_manager_base_addr + SOCFPGA_A10_RSTMGR_CTRL);
->  
-> -	if (mode == REBOOT_HARD)
-> -		temp |= RSTMGR_CTRL_SWCOLDRSTREQ;
-> -	else
-> +	if (mode == REBOOT_WARM)
->  		temp |= RSTMGR_CTRL_SWWARMRSTREQ;
-> +	else
-> +		temp |= RSTMGR_CTRL_SWCOLDRSTREQ;
->  	writel(temp, rst_manager_base_addr + SOCFPGA_A10_RSTMGR_CTRL);
->  }
->  
-> 
+Cc: Rob Herring <robh+dt@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+Cc: Liviu Dudau <liviu.dudau@arm.com>
+Cc: Sudeep Holla <sudeep.holla@arm.com>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Cc: Wei Xu <xuwei5@hisilicon.com>
+Cc: Guodong Xu <guodong.xu@linaro.org>
+Cc: Zhangfei Gao <zhangfei.gao@linaro.org>
+Cc: Haojian Zhuang <haojian.zhuang@linaro.org>
+Cc: Shawn Guo <shawnguo@kernel.org>
+Cc: Chris Healy <cphealy@gmail.com>
+Cc: Andrew Lunn <andrew@lunn.ch>
+Cc: Fabio Estevam <festevam@gmail.com>
+Cc: Sascha Hauer <s.hauer@pengutronix.de>
+Cc: Andy Gross <agross@kernel.org>
+Cc: David Brown <david.brown@linaro.org>
+Cc: Linus Walleij <linus.walleij@linaro.org>
+Cc: Lee Jones <lee.jones@linaro.org>
+Cc: Chunyan Zhang <zhang.chunyan@linaro.org>
+Cc: Orson Zhai <orsonzhai@gmail.com>
+Cc: Baolin Wang <baolin.wang@linaro.org>
 
-Applied, thanks! I think this patch needs to get back-ported into stable
-kernel version as well, right?
 
-Dinh
+Leo Yan (11):
+  ARM: dts: hip04: Update coresight DT bindings
+  ARM: dts: imx7s: Update coresight DT bindings
+  ARM: dts: qcom-apq8064: Update coresight DT bindings
+  ARM: dts: ste: Update coresight DT bindings
+  ARM: dts: vexpress-v2p-ca15_a7: Update coresight DT bindings
+  ARM: dts: qcom-msm8974: Update coresight DT bindings
+  arm64: dts: hi6220: Update coresight DT bindings
+  arm64: dts: juno: Update coresight DT bindings
+  arm64: dts: qcom-msm8916: Update coresight DT bindings
+  arm64: dts: sc9836: Update coresight DT bindings
+  arm64: dts: sc9860: Update coresight DT bindings
+
+ arch/arm/boot/dts/hip04.dtsi                   | 18 +++++++++---------
+ arch/arm/boot/dts/imx7s.dtsi                   |  6 +++---
+ arch/arm/boot/dts/qcom-apq8064.dtsi            |  4 ++--
+ arch/arm/boot/dts/qcom-msm8974.dtsi            |  6 +++---
+ arch/arm/boot/dts/ste-dbx5x0.dtsi              |  4 ++--
+ arch/arm/boot/dts/vexpress-v2p-ca15_a7.dts     |  4 ++--
+ arch/arm64/boot/dts/arm/juno-base.dtsi         |  6 +++---
+ arch/arm64/boot/dts/arm/juno-cs-r1r2.dtsi      |  4 ++--
+ .../boot/dts/hisilicon/hi6220-coresight.dtsi   |  6 +++---
+ arch/arm64/boot/dts/qcom/msm8916.dtsi          |  4 ++--
+ arch/arm64/boot/dts/sprd/sc9836.dtsi           |  2 +-
+ arch/arm64/boot/dts/sprd/sc9860.dtsi           |  8 ++++----
+ 12 files changed, 36 insertions(+), 36 deletions(-)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
