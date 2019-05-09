@@ -2,54 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BC24186B3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 10:22:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB8AA186FD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 10:47:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oHWqU+4reYTH3B1hS7gh+elZRWx+UIoKV2hXPd91yIo=; b=BSrY20GsD2QEfn
-	AsZfA0nDzq1tUZ1L0pvJRAlvEXmPZa+ioUTl0fBzynkyMfM4j+1DCHFVcPbLhtKonSmEeB8Hpq9wB
-	B+YCGoOIZTwR1So6OlB5C/cWEO5yYq29r2XKS2GTx14KO7uWUcwtGHB+qigVgXfZgMKZAsjwin5zq
-	Luu16mYrfLXpz3D2uHWuWv6DB3csWwjGvHm2d91YfR75jSyGKMcbAEXLhWrxCPui7aWGVwVxXltNg
-	PRiBNY4xp6FWAwIfYS4085RUdlv+teGIbhbZ5h9/FbadmcVHG8UwSz/uaaB6nqrQhBVIBqOMCTmn8
-	C1rVl+gTH1gsRJXdC1eA==;
+	List-Owner; bh=hFKiG4HbrDaH6j+YLOtE1VExAEXd96tA3v0yWYM8jgI=; b=TK1GkGR7ezjTFD
+	2YGRR+1xBcdHhn0abT3rkdjAntV5leKOVVTCnnBjmnl9ztZikcjfc2cnI4rgOjHC59ZVQb96Lpfuk
+	ZToQ8+JjwFXuBwVfN9mwNqflEkPXXKAo5wjvDRdlJ9/7OQTX0Fogs1bcgis9/LOI1MK6NitaX3EMx
+	xG8gVWUVto9tbqe4EgTQA/AbsBDBUKdT8AzKzWv1M12u+dOSy0YLV8i3x2MVU2JnjYHC215SUuSQE
+	FKq4+R2ZaKAsR8pboBN+ks3jHv6Xn0wGRa+BaeB/W9M2qbnL+u3RaXI3+EiCEOSzK4ofurdxjqJPG
+	IhOywUiDrPKIj2hQvwLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOeJY-0002hl-AW; Thu, 09 May 2019 08:22:04 +0000
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+	id 1hOei9-00035o-BA; Thu, 09 May 2019 08:47:29 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOeJ7-0002UE-EP
- for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 08:21:39 +0000
-X-Originating-IP: 90.88.28.253
-Received: from localhost (aaubervilliers-681-1-86-253.w90-88.abo.wanadoo.fr
- [90.88.28.253]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id C3EDC1BF211;
- Thu,  9 May 2019 08:21:25 +0000 (UTC)
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>, Mark Rutland <mark.rutland@arm.com>,
- Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
- Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: [PATCH 2/2] dt-bindings: mmc: sun4i: Add YAML schemas
-Date: Thu,  9 May 2019 10:21:21 +0200
-Message-Id: <dd2d6911777b18ada7addb109332ff81372163bc.1557389988.git-series.maxime.ripard@bootlin.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <68d3fb999d16e49696e832e1d1a6bcd7b76a6e8d.1557389988.git-series.maxime.ripard@bootlin.com>
-References: <68d3fb999d16e49696e832e1d1a6bcd7b76a6e8d.1557389988.git-series.maxime.ripard@bootlin.com>
+ id 1hOegq-0002sV-1z; Thu, 09 May 2019 08:46:10 +0000
+Received: from we0048.dip.tu-dresden.de ([141.76.176.48] helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1hOege-00020Z-Rr; Thu, 09 May 2019 10:45:56 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: Douglas Anderson <dianders@chromium.org>
+Subject: Re: [PATCH] clk: rockchip: Slightly more accurate math in
+ rockchip_mmc_get_phase()
+Date: Thu, 09 May 2019 10:45:56 +0200
+Message-ID: <1830378.zUSKOufHgj@phil>
+In-Reply-To: <20190507205742.50835-1-dianders@chromium.org>
+References: <20190507205742.50835-1-dianders@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_012137_990244_CAE75A98 
-X-CRM114-Status: GOOD (  13.83  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190509_014608_357154_2E943922 
+X-CRM114-Status: GOOD (  14.55  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.201 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -61,187 +54,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-mmc@vger.kernel.org,
+Cc: hal@halemmerich.com, amstan@chromium.org, Stephen Boyd <sboyd@kernel.org>,
+ Shawn Lin <shawn.lin@rock-chips.com>, linux-kernel@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Michael Turquette <mturquette@baylibre.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Switch the DT binding to a YAML schema to enable the DT validation.
+Am Dienstag, 7. Mai 2019, 22:57:42 CEST schrieb Douglas Anderson:
+> There's a bit of math in rockchip_mmc_get_phase() to calculate the
+> "fine delay".  This math boils down to:
+> 
+>  PSECS_PER_SEC = 1000000000000.
+>  ROCKCHIP_MMC_DELAY_ELEMENT_PSEC = 60
+>  card_clk * ROCKCHIP_MMC_DELAY_ELEMENT_PSEC * 360 * x / PSECS_PER_SEC
+> 
+> ...but we do it in pieces to avoid overflowing 32-bits.  Right now we
+> overdo it a little bit, though, and end up getting less accurate math
+> than we could.  Right now we do:
+> 
+>  DIV_ROUND_CLOSEST((card_clk / 1000000) *
+>                    (ROCKCHIP_MMC_DELAY_ELEMENT_PSEC / 10) *
+>                    (360 / 10) *
+> 		   delay_num,
+> 		   PSECS_PER_SEC / 1000000 / 10 / 10)
+> 
+> This is non-ideal because:
+> A) The pins on Rockchip SoCs are rated to go at most 150 MHz, so the
+>    max card clock is 150 MHz.  Even ignoring this the maximum SD card
+>    clock (for SDR104) would be 208 MHz.  This means you can decrease
+>    your division by 100x and still not overflow:
+>      hex(208000000 / 10000 * 6 * 36 * 0xff) == 0x44497200
+> B) On many Rockchip SoCs we end up with a card clock that is actually
+>    148500000 because we parent off the 297 MHz PLL.  That means the
+>    math we're actually doing today is less than ideal.  Specifically:
+>    148500000 / 1000000 = 148
+> 
+> Let's fix the math to be slightly more accurate.
+> 
+> NOTE: no known problems are fixed by this.  It was found simply by
+> code inspection.  If you want to see the difference between the old
+> and the new on a 148.5 MHz clock, this python can help:
+> 
+>   old = [x for x in
+>          (int(round(148 * 6 * 36 * x / 10000.)) for x in range(256))
+> 	 if x < 90]
+>   new = [x for x in
+>          (int(round(1485 * 6 * 36 * x / 100000.)) for x in range(256))
+> 	 if x < 90]
+> 
+> The only differences are:
+>   delay_num=17 54=>55
+>   delay_num=22 70=>71
+>   delay_num=27 86=>87
+> 
+> Signed-off-by: Douglas Anderson <dianders@chromium.org>
 
-Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
----
- Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml | 98 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
- Documentation/devicetree/bindings/mmc/sunxi-mmc.txt                | 52 +--------------------------------------
- 2 files changed, 98 insertions(+), 52 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml
- delete mode 100644 Documentation/devicetree/bindings/mmc/sunxi-mmc.txt
+gave this a spin on multiple socs and all of them still detected a hs200-
+card, so I've applied that for 5.3
 
-diff --git a/Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml b/Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml
-new file mode 100644
-index 000000000000..df0280edef97
---- /dev/null
-+++ b/Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml
-@@ -0,0 +1,98 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/mmc/allwinner,sun4i-a10-mmc.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Allwinner A10 MMC Controller Device Tree Bindings
-+
-+allOf:
-+  - $ref: "mmc-controller.yaml"
-+
-+maintainers:
-+  - Chen-Yu Tsai <wens@csie.org>
-+  - Maxime Ripard <maxime.ripard@bootlin.com>
-+
-+properties:
-+  "#address-cells": true
-+  "#size-cells": true
-+
-+  compatible:
-+    oneOf:
-+      - const: allwinner,sun4i-a10-mmc
-+      - const: allwinner,sun5i-a13-mmc
-+      - const: allwinner,sun7i-a20-mmc
-+      - const: allwinner,sun8i-a83t-emmc
-+      - const: allwinner,sun9i-a80-mmc
-+      - const: allwinner,sun50i-a64-emmc
-+      - const: allwinner,sun50i-a64-mmc
-+      - items:
-+          - const: allwinner,sun8i-a83t-mmc
-+          - const: allwinner,sun7i-a20-mmc
-+      - items:
-+          - const: allwinner,sun50i-h6-emmc
-+          - const: allwinner,sun50i-a64-emmc
-+      - items:
-+          - const: allwinner,sun50i-h6-mmc
-+          - const: allwinner,sun50i-a64-mmc
-+      - items:
-+          - const: allwinner,sun8i-r40-emmc
-+          - const: allwinner,sun50i-a64-emmc
-+      - items:
-+          - const: allwinner,sun8i-r40-mmc
-+          - const: allwinner,sun50i-a64-mmc
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    minItems: 2
-+    maxItems: 4
-+    items:
-+      - description: Bus Clock
-+      - description: Module Clock
-+      - description: Output Clock
-+      - description: Sample Clock
-+
-+  clock-names:
-+    minItems: 2
-+    maxItems: 4
-+    items:
-+      - const: ahb
-+      - const: mmc
-+      - const: output
-+      - const: sample
-+
-+  resets:
-+    maxItems: 1
-+
-+  reset-names:
-+    const: ahb
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+
-+examples:
-+  - |
-+    mmc0: mmc@1c0f000 {
-+        compatible = "allwinner,sun5i-a13-mmc";
-+        reg = <0x01c0f000 0x1000>;
-+        clocks = <&ahb_gates 8>, <&mmc0_clk>;
-+        clock-names = "ahb", "mmc";
-+        interrupts = <32>;
-+        bus-width = <4>;
-+        cd-gpios = <&pio 7 1 0>;
-+    };
-+
-+# FIXME: We should set it, but it would report all the generic
-+# properties as additional properties.
-+# additionalProperties: false
-+
-+...
-diff --git a/Documentation/devicetree/bindings/mmc/sunxi-mmc.txt b/Documentation/devicetree/bindings/mmc/sunxi-mmc.txt
-deleted file mode 100644
-index e9cb3ec5e502..000000000000
---- a/Documentation/devicetree/bindings/mmc/sunxi-mmc.txt
-+++ /dev/null
-@@ -1,52 +0,0 @@
--* Allwinner sunxi MMC controller
--
--The highspeed MMC host controller on Allwinner SoCs provides an interface
--for MMC, SD and SDIO types of memory cards.
--
--Supported maximum speeds are the ones of the eMMC standard 4.5 as well
--as the speed of SD standard 3.0.
--Absolute maximum transfer rate is 200MB/s
--
--Required properties:
-- - compatible : should be one of:
--   * "allwinner,sun4i-a10-mmc"
--   * "allwinner,sun5i-a13-mmc"
--   * "allwinner,sun7i-a20-mmc"
--   * "allwinner,sun8i-a83t-emmc"
--   * "allwinner,sun9i-a80-mmc"
--   * "allwinner,sun50i-a64-emmc"
--   * "allwinner,sun50i-a64-mmc"
--   * "allwinner,sun50i-h6-emmc", "allwinner.sun50i-a64-emmc"
--   * "allwinner,sun50i-h6-mmc", "allwinner.sun50i-a64-mmc"
-- - reg : mmc controller base registers
-- - clocks : a list with 4 phandle + clock specifier pairs
-- - clock-names : must contain "ahb", "mmc", "output" and "sample"
-- - interrupts : mmc controller interrupt
--
--Optional properties:
-- - resets : phandle + reset specifier pair
-- - reset-names : must contain "ahb"
-- - for cd, bus-width and additional generic mmc parameters
--   please refer to mmc.txt within this directory
--
--Examples:
--	- Within .dtsi:
--	mmc0: mmc@1c0f000 {
--		compatible = "allwinner,sun5i-a13-mmc";
--		reg = <0x01c0f000 0x1000>;
--		clocks = <&ahb_gates 8>, <&mmc0_clk>, <&mmc0_output_clk>, <&mmc0_sample_clk>;
--		clock-names = "ahb", "mod", "output", "sample";
--		interrupts = <0 32 4>;
--		status = "disabled";
--	};
--
--	- Within dts:
--	mmc0: mmc@1c0f000 {
--		pinctrl-names = "default", "default";
--		pinctrl-0 = <&mmc0_pins_a>;
--		pinctrl-1 = <&mmc0_cd_pin_reference_design>;
--		bus-width = <4>;
--		cd-gpios = <&pio 7 1 0>; /* PH1 */
--		cd-inverted;
--		status = "okay";
--	};
--- 
-git-series 0.9.1
+Thanks
+Heiko
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
