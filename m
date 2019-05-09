@@ -2,75 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31E241845B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 06:23:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 009A318491
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 06:35:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=DSXnmt2Q8XRgAFNRcLPqDH1w3fVtDo+jsyuGGIUsS0s=; b=lxv
-	54ftVMybJnX1qut7r9fPK+lvPcQIwV0l3xrKTytuXSpnwSpEJh0+mc8MoZsTxyj6S3eTkNUOYHHpS
-	LqEfSJOpR+K3MwVlCEXIFHcpjIZrTajTE3eiGIq0aKZqvM6N3TX/C1S4Cfi52zk/9W7H4weHsfSn1
-	VB9Es/evPVRtVzCGtV3HgMv1hmWhNjfJrL7fnm016ONxyaQkIDcXWIOUUtQMuTzA/UaN10FOqePDL
-	0+WP4zFblL6+htY8XF82FDfyHCGCtbpN2QKo5DAEX3Lfw/EkjBcW+BCChTxBk80z1v2Sk6Fd/HR3H
-	+bO8TsfA0Goj+givNhfPBQIhmrFCz8w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=y84anffgccOl6hlraFWIpQCE+N13RbeRM7U8oFsXBlE=; b=HXuUzvGbIdG/Lq
+	nMGmC+y40e40YKLa59J+h1h+4f5SPbSvtBheqcdtmHww9FKbKEGKILNxHbANXSJdXRFTA7XunGaTt
+	49GfLULdSQfP5q68OvvbNMoKnOwP69DuHbOSxRQl7sXGk6LZyyI/yHjgIpTEldwicGXUyJwp4WmIe
+	OHTCv7HMMTrMu5WAB7vWKFKtQlISGbzX9KdnPvQKxZm8uYhTm3wNcDZjIHFMONyHK9na87qlBUZ46
+	QMz539x7WI4CtynF5O6GQUb/s6jfDt4RCa7YlyXQZH4kvYm59aIwNPds5V51TcJpowBMfQBLJ/pTt
+	nYr+0MOHsfjyATDzGytA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOab5-0005iT-Sd; Thu, 09 May 2019 04:23:55 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1hOamZ-0001gd-Qy; Thu, 09 May 2019 04:35:47 +0000
+Received: from mail-eopbgr140071.outbound.protection.outlook.com
+ ([40.107.14.71] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOaax-0005i5-UR
- for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 04:23:49 +0000
-Received: by mail-pg1-x544.google.com with SMTP id c13so521285pgt.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 May 2019 21:23:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=rcSJ7jMxGzSyHBuvTtybXntBxEii0S3igF/TJN9iQIM=;
- b=OgWLtWdzXyiFLfdZWXjU6oUQyEbWzNrIBgpaNF2imc3orAYhSfxENDT/pQIrWt2LXs
- lX4jIbDxCZeAURP5vw1tPE/9VkATES4l2airRsgDJDa1SHhMhVNvkZjQOW4yTDoizpVt
- zpxsvy1YPBHntCWQtWgdf6xw/LOHPo+EdfZn8=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=rcSJ7jMxGzSyHBuvTtybXntBxEii0S3igF/TJN9iQIM=;
- b=EPdLlXLLM10No9HGvXa0xY93B4UazEx+y/ZPnyhf3IU15ALIOsTbDYHmnrWsTA/MuB
- HMIsae6QD+//Wn+3j0sK5foXZoo4gRQfVzArJG7V+pt2DwbpMy2gZflSuFoyOG50+wJ1
- sgo1AvUUKh7Abr/KvEsGm3ZivrfAuo1FNYivJg34nFCtWApC2vjL5JzaMtZkI1CyANfV
- Rb9rAAWyvbeTxK8+oVXdUllLlSpOZYWo9eLIw4XNiIFOociUTvqqYvdix6+UgofqE6P0
- 51JZgWXlhRipTC2dioPhFd3VFaNyvwPLHigLpCpO3uw8fhk+EOrJpQVhKN/cnInKZnbM
- f6gg==
-X-Gm-Message-State: APjAAAV2W3/yxqPu1r0yZIy5+MpcR4stqRC5yGpZsEhe0pShSBc+XpMi
- MHb/PYMiqyrZHSjjY1bbSftPog==
-X-Google-Smtp-Source: APXvYqwpelRZDsRfFPpgs0RyfRJ//3WYRBNMvrKAp2Xdj+PZigfjMW7TqYieOosXHwh4cqCL7lawQw==
-X-Received: by 2002:a65:64d9:: with SMTP id t25mr2813367pgv.130.1557375826686; 
- Wed, 08 May 2019 21:23:46 -0700 (PDT)
-Received: from rayagonda.dhcp.broadcom.net ([192.19.234.250])
- by smtp.gmail.com with ESMTPSA id l65sm1313352pfb.7.2019.05.08.21.23.43
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Wed, 08 May 2019 21:23:45 -0700 (PDT)
-From: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
-To: Wolfram Sang <wsa@the-dreams.de>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH 1/1] i2c: iproc: Add multi byte read-write support for slave
- mode
-Date: Thu,  9 May 2019 09:51:48 +0530
-Message-Id: <1557375708-14830-1-git-send-email-rayagonda.kokatanur@broadcom.com>
-X-Mailer: git-send-email 1.9.1
+ id 1hOamQ-0001gA-SP
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 04:35:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=j1AbEwA7uFCYEkK5k9EIlcgc/vFWjMsPX96cDB4Ob0Q=;
+ b=AH21/DI8JRCyAtZYEmytGo2yVomYd3GgIpAffhHsxyL5XkuI3xnzZ8WM/M09337/voB6c+vY9e7GJkfeglR60jmubzG4AkSZrCILOw9DD82Ffj7Jc8/RlQw8lR9vZEH9BTpmNnm/sxXktsM1IvRfg333SVuKBiRHyZNTQpfuPzk=
+Received: from AM6PR04MB4629.eurprd04.prod.outlook.com (20.177.38.28) by
+ AM6PR04MB4760.eurprd04.prod.outlook.com (20.177.32.213) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1878.21; Thu, 9 May 2019 04:35:33 +0000
+Received: from AM6PR04MB4629.eurprd04.prod.outlook.com
+ ([fe80::909a:bfcb:89aa:cdb7]) by AM6PR04MB4629.eurprd04.prod.outlook.com
+ ([fe80::909a:bfcb:89aa:cdb7%4]) with mapi id 15.20.1856.012; Thu, 9 May 2019
+ 04:35:33 +0000
+From: Sumit Batra <sumit.batra@nxp.com>
+To: Chuanhua Han <chuanhua.han@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>
+Subject: RE: [EXT] Re: [PATCH 1/2] i2c: imx: I2C Driver doesn't consider
+ I2C_IPGCLK_SEL RCW bit when using ls1046a SoC
+Thread-Topic: [EXT] Re: [PATCH 1/2] i2c: imx: I2C Driver doesn't consider
+ I2C_IPGCLK_SEL RCW bit when using ls1046a SoC
+Thread-Index: AQHU/w+WxhNHqUrORkaLbPX64iAO0KZUqIWAgAYQ6QCAAwWXgIADZuiAgAEXrjA=
+Date: Thu, 9 May 2019 04:35:33 +0000
+Message-ID: <AM6PR04MB4629DEDAAA6559EBBD20E974EF330@AM6PR04MB4629.eurprd04.prod.outlook.com>
+References: <20190430044719.30720-1-chuanhua.han@nxp.com>
+ <20190430125043.weqwzim4gpsvtkfe@pengutronix.de>
+ <AM6PR04MB43571B8D52C1FE9ED20DBA1D97360@AM6PR04MB4357.eurprd04.prod.outlook.com>
+ <20190506073735.ctzybytamu44pbvv@pengutronix.de>
+ <AM0PR04MB43534A9B1A146DEFA929844C97320@AM0PR04MB4353.eurprd04.prod.outlook.com>
+In-Reply-To: <AM0PR04MB43534A9B1A146DEFA929844C97320@AM0PR04MB4353.eurprd04.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=sumit.batra@nxp.com; 
+x-originating-ip: [92.120.0.6]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 7f6bbcc0-7d4c-4d2b-6d93-08d6d437c63e
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:AM6PR04MB4760; 
+x-ms-traffictypediagnostic: AM6PR04MB4760:
+x-ms-exchange-purlcount: 1
+x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+x-microsoft-antispam-prvs: <AM6PR04MB47606942347F2A32A2519891EF330@AM6PR04MB4760.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1247;
+x-forefront-prvs: 003245E729
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(136003)(346002)(39860400002)(376002)(396003)(366004)(189003)(199004)(13464003)(86362001)(66066001)(76176011)(6506007)(53936002)(6246003)(74316002)(71200400001)(71190400001)(68736007)(14454004)(478600001)(966005)(45080400002)(54906003)(110136005)(99286004)(7696005)(102836004)(4326008)(7416002)(476003)(26005)(64756008)(73956011)(66946007)(33656002)(66446008)(66476007)(66556008)(53546011)(6436002)(55016002)(446003)(11346002)(8936002)(25786009)(486006)(76116006)(316002)(186003)(44832011)(52536014)(5660300002)(14444005)(229853002)(2906002)(81166006)(81156014)(8676002)(256004)(3846002)(6116002)(305945005)(7736002)(6306002)(9686003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR04MB4760;
+ H:AM6PR04MB4629.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: dOe1pKxfy9zFCEsqDmzmwFmnT0m8yL15q4rBRTjYpFxRyIyueWkLDdmg89bzMXQqbs6HpsvDWoytGmt2JK7mK86GFJUCuMGTdxyJfQ5fNB3gKBX0UzLB+yEm+8Tr1R0tTxT95d7GyflZoYkshqQdapX9snHX6LE+Fw9MJxwRaO6kbUgWYc6Bbsp+ti/3jn6QVRgurpmgPiigfuZDs4XHsgDNj0RMr5889zgtEsXbH59Y8ROkqDOIucC7D3IABsJ8O7aS4CEFWFpULgMsaM9WWj/vLeUD6YAxrLntwHKLz4CPqbefz0RXhchS+bLr/bipLNr3Os61hcnwht5EVHf2d/NKMCVNnc+MLDkJh4BDra2u6E2UA5996LocS7miu0zGt5GLfd3lgF/CSzwZteAnNDwsTT0gmlg4K+3Nv6PUWN4=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7f6bbcc0-7d4c-4d2b-6d93-08d6d437c63e
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 May 2019 04:35:33.2642 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB4760
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_212347_989906_8496ED9F 
-X-CRM114-Status: GOOD (  17.80  )
+X-CRM114-CacheID: sfid-20190508_213538_981232_89B70452 
+X-CRM114-Status: GOOD (  26.73  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
+ no trust [40.107.14.71 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -78,7 +106,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -90,212 +117,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Srinath Mannam <srinath.mannam@broadcom.com>,
- Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>,
- linux-kernel@vger.kernel.org, Ray Jui <ray.jui@broadcom.com>,
- linux-i2c@vger.kernel.org, Michael Cheng <ccheng@broadcom.com>,
- bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "eha@deif.com" <eha@deif.com>, "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>,
+ "wsa+renesas@sang-engineering.com" <wsa+renesas@sang-engineering.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
+ "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
+ "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
+ "linux@rempel-privat.de" <linux@rempel-privat.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "peda@axentia.se" <peda@axentia.se>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ dl-linux-imx <linux-imx@nxp.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add multiple byte read-write support for slave mode.
-
-Signed-off-by: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
-Signed-off-by: Srinath Mannam <srinath.mannam@broadcom.com>
----
- drivers/i2c/busses/i2c-bcm-iproc.c | 117 +++++++++++++++++--------------------
- 1 file changed, 53 insertions(+), 64 deletions(-)
-
-diff --git a/drivers/i2c/busses/i2c-bcm-iproc.c b/drivers/i2c/busses/i2c-bcm-iproc.c
-index a845b8d..2c7f145 100644
---- a/drivers/i2c/busses/i2c-bcm-iproc.c
-+++ b/drivers/i2c/busses/i2c-bcm-iproc.c
-@@ -165,12 +165,6 @@ enum i2c_slave_read_status {
- 	I2C_SLAVE_RX_END,
- };
- 
--enum i2c_slave_xfer_dir {
--	I2C_SLAVE_DIR_READ = 0,
--	I2C_SLAVE_DIR_WRITE,
--	I2C_SLAVE_DIR_NONE,
--};
--
- enum bus_speed_index {
- 	I2C_SPD_100K = 0,
- 	I2C_SPD_400K,
-@@ -203,7 +197,6 @@ struct bcm_iproc_i2c_dev {
- 	struct i2c_msg *msg;
- 
- 	struct i2c_client *slave;
--	enum i2c_slave_xfer_dir xfer_dir;
- 
- 	/* bytes that have been transferred */
- 	unsigned int tx_bytes;
-@@ -219,7 +212,8 @@ struct bcm_iproc_i2c_dev {
- 		| BIT(IS_M_RX_THLD_SHIFT))
- 
- #define ISR_MASK_SLAVE (BIT(IS_S_START_BUSY_SHIFT)\
--		| BIT(IS_S_RX_EVENT_SHIFT) | BIT(IS_S_RD_EVENT_SHIFT))
-+		| BIT(IS_S_RX_EVENT_SHIFT) | BIT(IS_S_RD_EVENT_SHIFT)\
-+		| BIT(IS_S_TX_UNDERRUN_SHIFT))
- 
- static int bcm_iproc_i2c_reg_slave(struct i2c_client *slave);
- static int bcm_iproc_i2c_unreg_slave(struct i2c_client *slave);
-@@ -297,15 +291,11 @@ static void bcm_iproc_i2c_slave_init(
- 	/* clear all pending slave interrupts */
- 	iproc_i2c_wr_reg(iproc_i2c, IS_OFFSET, ISR_MASK_SLAVE);
- 
--	/* Enable interrupt register for any READ event */
--	val = BIT(IE_S_RD_EVENT_SHIFT);
- 	/* Enable interrupt register to indicate a valid byte in receive fifo */
--	val |= BIT(IE_S_RX_EVENT_SHIFT);
-+	val = BIT(IE_S_RX_EVENT_SHIFT);
- 	/* Enable interrupt register for the Slave BUSY command */
- 	val |= BIT(IE_S_START_BUSY_SHIFT);
- 	iproc_i2c_wr_reg(iproc_i2c, IE_OFFSET, val);
--
--	iproc_i2c->xfer_dir = I2C_SLAVE_DIR_NONE;
- }
- 
- static void bcm_iproc_i2c_check_slave_status(
-@@ -314,8 +304,11 @@ static void bcm_iproc_i2c_check_slave_status(
- 	u32 val;
- 
- 	val = iproc_i2c_rd_reg(iproc_i2c, S_CMD_OFFSET);
--	val = (val >> S_CMD_STATUS_SHIFT) & S_CMD_STATUS_MASK;
-+	/* status is valid only when START_BUSY is cleared after it was set */
-+	if (val & BIT(S_CMD_START_BUSY_SHIFT))
-+		return;
- 
-+	val = (val >> S_CMD_STATUS_SHIFT) & S_CMD_STATUS_MASK;
- 	if (val == S_CMD_STATUS_TIMEOUT) {
- 		dev_err(iproc_i2c->device, "slave random stretch time timeout\n");
- 
-@@ -327,70 +320,66 @@ static void bcm_iproc_i2c_check_slave_status(
- }
- 
- static bool bcm_iproc_i2c_slave_isr(struct bcm_iproc_i2c_dev *iproc_i2c,
--				u32 status)
-+				    u32 status)
- {
--	u8 value;
- 	u32 val;
--	u32 rd_status;
--	u32 tmp;
-+	u8 value, rx_status;
- 
--	/* Start of transaction. check address and populate the direction */
--	if (iproc_i2c->xfer_dir == I2C_SLAVE_DIR_NONE) {
--		tmp = iproc_i2c_rd_reg(iproc_i2c, S_RX_OFFSET);
--		rd_status = (tmp >> S_RX_STATUS_SHIFT) & S_RX_STATUS_MASK;
--		/* This condition checks whether the request is a new request */
--		if (((rd_status == I2C_SLAVE_RX_START) &&
--			(status & BIT(IS_S_RX_EVENT_SHIFT))) ||
--			((rd_status == I2C_SLAVE_RX_END) &&
--			(status & BIT(IS_S_RD_EVENT_SHIFT)))) {
--
--			/* Last bit is W/R bit.
--			 * If 1 then its a read request(by master).
--			 */
--			iproc_i2c->xfer_dir = tmp & SLAVE_READ_WRITE_BIT_MASK;
--			if (iproc_i2c->xfer_dir == I2C_SLAVE_DIR_WRITE)
--				i2c_slave_event(iproc_i2c->slave,
--					I2C_SLAVE_READ_REQUESTED, &value);
--			else
--				i2c_slave_event(iproc_i2c->slave,
-+	/* Slave RX byte receive */
-+	if (status & BIT(IS_S_RX_EVENT_SHIFT)) {
-+		val = iproc_i2c_rd_reg(iproc_i2c, S_RX_OFFSET);
-+		rx_status = (val >> S_RX_STATUS_SHIFT) & S_RX_STATUS_MASK;
-+		if (rx_status == I2C_SLAVE_RX_START) {
-+			/* Start of SMBUS for Master write */
-+			i2c_slave_event(iproc_i2c->slave,
- 					I2C_SLAVE_WRITE_REQUESTED, &value);
--		}
--	}
- 
--	/* read request from master */
--	if ((status & BIT(IS_S_RD_EVENT_SHIFT)) &&
--		(iproc_i2c->xfer_dir == I2C_SLAVE_DIR_WRITE)) {
--		i2c_slave_event(iproc_i2c->slave,
--			I2C_SLAVE_READ_PROCESSED, &value);
--		iproc_i2c_wr_reg(iproc_i2c, S_TX_OFFSET, value);
-+			val = iproc_i2c_rd_reg(iproc_i2c, S_RX_OFFSET);
-+			value = (u8)((val >> S_RX_DATA_SHIFT) & S_RX_DATA_MASK);
-+			i2c_slave_event(iproc_i2c->slave,
-+					I2C_SLAVE_WRITE_RECEIVED, &value);
-+		} else if (status & BIT(IS_S_RD_EVENT_SHIFT)) {
-+			/* Start of SMBUS for Master Read */
-+			i2c_slave_event(iproc_i2c->slave,
-+					I2C_SLAVE_READ_REQUESTED, &value);
-+			iproc_i2c_wr_reg(iproc_i2c, S_TX_OFFSET, value);
- 
--		val = BIT(S_CMD_START_BUSY_SHIFT);
--		iproc_i2c_wr_reg(iproc_i2c, S_CMD_OFFSET, val);
--	}
-+			val = BIT(S_CMD_START_BUSY_SHIFT);
-+			iproc_i2c_wr_reg(iproc_i2c, S_CMD_OFFSET, val);
- 
--	/* write request from master */
--	if ((status & BIT(IS_S_RX_EVENT_SHIFT)) &&
--		(iproc_i2c->xfer_dir == I2C_SLAVE_DIR_READ)) {
--		val = iproc_i2c_rd_reg(iproc_i2c, S_RX_OFFSET);
--		/* Its a write request by Master to Slave.
--		 * We read data present in receive FIFO
--		 */
--		value = (u8)((val >> S_RX_DATA_SHIFT) & S_RX_DATA_MASK);
-+			/*
-+			 * Enable interrupt for TX FIFO becomes empty and
-+			 * less than PKT_LENGTH bytes were output on the SMBUS
-+			 */
-+			val = iproc_i2c_rd_reg(iproc_i2c, IE_OFFSET);
-+			val |= BIT(IE_S_TX_UNDERRUN_SHIFT);
-+			iproc_i2c_wr_reg(iproc_i2c, IE_OFFSET, val);
-+		} else {
-+			/* Master write other than start */
-+			value = (u8)((val >> S_RX_DATA_SHIFT) & S_RX_DATA_MASK);
-+			i2c_slave_event(iproc_i2c->slave,
-+					I2C_SLAVE_WRITE_RECEIVED, &value);
-+		}
-+	} else if (status & BIT(IS_S_TX_UNDERRUN_SHIFT)) {
-+		/* Master read other than start */
- 		i2c_slave_event(iproc_i2c->slave,
--			I2C_SLAVE_WRITE_RECEIVED, &value);
--
--		/* check the status for the last byte of the transaction */
--		rd_status = (val >> S_RX_STATUS_SHIFT) & S_RX_STATUS_MASK;
--		if (rd_status == I2C_SLAVE_RX_END)
--			iproc_i2c->xfer_dir = I2C_SLAVE_DIR_NONE;
-+				I2C_SLAVE_READ_PROCESSED, &value);
- 
--		dev_dbg(iproc_i2c->device, "\nread value = 0x%x\n", value);
-+		iproc_i2c_wr_reg(iproc_i2c, S_TX_OFFSET, value);
-+		val = BIT(S_CMD_START_BUSY_SHIFT);
-+		iproc_i2c_wr_reg(iproc_i2c, S_CMD_OFFSET, val);
- 	}
- 
- 	/* Stop */
- 	if (status & BIT(IS_S_START_BUSY_SHIFT)) {
- 		i2c_slave_event(iproc_i2c->slave, I2C_SLAVE_STOP, &value);
--		iproc_i2c->xfer_dir = I2C_SLAVE_DIR_NONE;
-+		/*
-+		 * Enable interrupt for TX FIFO becomes empty and
-+		 * less than PKT_LENGTH bytes were output on the SMBUS
-+		 */
-+		val = iproc_i2c_rd_reg(iproc_i2c, IE_OFFSET);
-+		val &= ~BIT(IE_S_TX_UNDERRUN_SHIFT);
-+		iproc_i2c_wr_reg(iproc_i2c, IE_OFFSET, val);
- 	}
- 
- 	/* clear interrupt status */
--- 
-1.9.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgU2FzY2hhLA0KUGxlYXNlIGNoZWNrIG15IGNvbW1lbnQNCg0KLS0tLS1PcmlnaW5hbCBNZXNz
+YWdlLS0tLS0NCkZyb206IENodWFuaHVhIEhhbiANClNlbnQ6IFdlZG5lc2RheSwgTWF5IDgsIDIw
+MTkgNTowNSBQTQ0KVG86IFNhc2NoYSBIYXVlciA8cy5oYXVlckBwZW5ndXRyb25peC5kZT4NCkNj
+OiBzaGF3bmd1b0BrZXJuZWwub3JnOyBMZW8gTGkgPGxlb3lhbmcubGlAbnhwLmNvbT47IHJvYmgr
+ZHRAa2VybmVsLm9yZzsgbWFyay5ydXRsYW5kQGFybS5jb207IGxpbnV4LWtlcm5lbEB2Z2VyLmtl
+cm5lbC5vcmc7IGxpbnV4LWkyY0B2Z2VyLmtlcm5lbC5vcmc7IGxpbnV4LWFybS1rZXJuZWxAbGlz
+dHMuaW5mcmFkZWFkLm9yZzsgZGV2aWNldHJlZUB2Z2VyLmtlcm5lbC5vcmc7IGZlc3RldmFtQGdt
+YWlsLmNvbTsgZGwtbGludXgtaW14IDxsaW51eC1pbXhAbnhwLmNvbT47IHdzYStyZW5lc2FzQHNh
+bmctZW5naW5lZXJpbmcuY29tOyB1LmtsZWluZS1rb2VuaWdAcGVuZ3V0cm9uaXguZGU7IGVoYUBk
+ZWlmLmNvbTsgbGludXhAcmVtcGVsLXByaXZhdC5kZTsgbC5zdGFjaEBwZW5ndXRyb25peC5kZTsg
+cGVkYUBheGVudGlhLnNlOyBTdW1pdCBCYXRyYSA8c3VtaXQuYmF0cmFAbnhwLmNvbT4NClN1Ympl
+Y3Q6IFJFOiBbRVhUXSBSZTogW1BBVENIIDEvMl0gaTJjOiBpbXg6IEkyQyBEcml2ZXIgZG9lc24n
+dCBjb25zaWRlciBJMkNfSVBHQ0xLX1NFTCBSQ1cgYml0IHdoZW4gdXNpbmcgbHMxMDQ2YSBTb0MN
+Cg0KDQoNCj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0NCj4gRnJvbTogU2FzY2hhIEhhdWVy
+IDxzLmhhdWVyQHBlbmd1dHJvbml4LmRlPg0KPiBTZW50OiAyMDE55bm0NeaciDbml6UgMTU6MzgN
+Cj4gVG86IENodWFuaHVhIEhhbiA8Y2h1YW5odWEuaGFuQG54cC5jb20+DQo+IENjOiBzaGF3bmd1
+b0BrZXJuZWwub3JnOyBMZW8gTGkgPGxlb3lhbmcubGlAbnhwLmNvbT47IA0KPiByb2JoK2R0QGtl
+cm5lbC5vcmc7IG1hcmsucnV0bGFuZEBhcm0uY29tOyANCj4gbGludXgta2VybmVsQHZnZXIua2Vy
+bmVsLm9yZzsgbGludXgtaTJjQHZnZXIua2VybmVsLm9yZzsgDQo+IGxpbnV4LWFybS1rZXJuZWxA
+bGlzdHMuaW5mcmFkZWFkLm9yZzsNCj4gZGV2aWNldHJlZUB2Z2VyLmtlcm5lbC5vcmc7IGZlc3Rl
+dmFtQGdtYWlsLmNvbTsgZGwtbGludXgtaW14IA0KPiA8bGludXgtaW14QG54cC5jb20+OyB3c2Er
+cmVuZXNhc0BzYW5nLWVuZ2luZWVyaW5nLmNvbTsgDQo+IHUua2xlaW5lLWtvZW5pZ0BwZW5ndXRy
+b25peC5kZTsgZWhhQGRlaWYuY29tOyBsaW51eEByZW1wZWwtcHJpdmF0LmRlOyANCj4gbC5zdGFj
+aEBwZW5ndXRyb25peC5kZTsgcGVkYUBheGVudGlhLnNlOyBTdW1pdCBCYXRyYSANCj4gPHN1bWl0
+LmJhdHJhQG54cC5jb20+DQo+IFN1YmplY3Q6IFJlOiBbRVhUXSBSZTogW1BBVENIIDEvMl0gaTJj
+OiBpbXg6IEkyQyBEcml2ZXIgZG9lc24ndCANCj4gY29uc2lkZXIgSTJDX0lQR0NMS19TRUwgUkNX
+IGJpdCB3aGVuIHVzaW5nIGxzMTA0NmEgU29DDQo+IA0KPiBDYXV0aW9uOiBFWFQgRW1haWwNCj4g
+DQo+IE9uIFNhdCwgTWF5IDA0LCAyMDE5IGF0IDA5OjI4OjQ4QU0gKzAwMDAsIENodWFuaHVhIEhh
+biB3cm90ZToNCj4gPg0KPiA+DQo+ID4gPiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQ0KPiA+
+ID4gRnJvbTogU2FzY2hhIEhhdWVyIDxzLmhhdWVyQHBlbmd1dHJvbml4LmRlPg0KPiA+ID4gU2Vu
+dDogMjAxOeW5tDTmnIgzMOaXpSAyMDo1MQ0KPiA+ID4gVG86IENodWFuaHVhIEhhbiA8Y2h1YW5o
+dWEuaGFuQG54cC5jb20+DQo+ID4gPiBDYzogc2hhd25ndW9Aa2VybmVsLm9yZzsgTGVvIExpIDxs
+ZW95YW5nLmxpQG54cC5jb20+Ow0KPiA+ID4gcm9iaCtkdEBrZXJuZWwub3JnOyBtYXJrLnJ1dGxh
+bmRAYXJtLmNvbTsNCj4gPiA+IGxpbnV4LWtlcm5lbEB2Z2VyLmtlcm5lbC5vcmc7IGxpbnV4LWky
+Y0B2Z2VyLmtlcm5lbC5vcmc7IA0KPiA+ID4gbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRl
+YWQub3JnOw0KPiA+ID4gZGV2aWNldHJlZUB2Z2VyLmtlcm5lbC5vcmc7IGZlc3RldmFtQGdtYWls
+LmNvbTsgZGwtbGludXgtaW14IA0KPiA+ID4gPGxpbnV4LWlteEBueHAuY29tPjsgd3NhK3JlbmVz
+YXNAc2FuZy1lbmdpbmVlcmluZy5jb207IA0KPiA+ID4gdS5rbGVpbmUta29lbmlnQHBlbmd1dHJv
+bml4LmRlOyBlaGFAZGVpZi5jb207IA0KPiA+ID4gbGludXhAcmVtcGVsLXByaXZhdC5kZTsgbC5z
+dGFjaEBwZW5ndXRyb25peC5kZTsgcGVkYUBheGVudGlhLnNlOyANCj4gPiA+IFN1bWl0IEJhdHJh
+IDxzdW1pdC5iYXRyYUBueHAuY29tPg0KPiA+ID4gU3ViamVjdDogW0VYVF0gUmU6IFtQQVRDSCAx
+LzJdIGkyYzogaW14OiBJMkMgRHJpdmVyIGRvZXNuJ3QgDQo+ID4gPiBjb25zaWRlciBJMkNfSVBH
+Q0xLX1NFTCBSQ1cgYml0IHdoZW4gdXNpbmcgbHMxMDQ2YSBTb0MNCj4gPiA+DQo+ID4gPiBDYXV0
+aW9uOiBFWFQgRW1haWwNCj4gPiA+DQo+ID4gPiBPbiBUdWUsIEFwciAzMCwgMjAxOSBhdCAxMjo0
+NzoxOFBNICswODAwLCBDaHVhbmh1YSBIYW4gd3JvdGU6DQo+ID4gPiA+IFRoZSBjdXJyZW50IGtl
+cm5lbCBkcml2ZXIgZG9lcyBub3QgY29uc2lkZXIgSTJDX0lQR0NMS19TRUwgKDQyNCANCj4gPiA+
+ID4gYml0IG9mDQo+ID4gPiA+IFJDVykgaW4gZGVjaWRpbmcgIGkyY19jbGtfcmF0ZSBpbiBmdW5j
+dGlvbiBpMmNfaW14X3NldF9jbGsoKSB7IDAgDQo+ID4gPiA+IFBsYXRmb3JtIGNsb2NrLzQsIDEg
+UGxhdGZvcm0gY2xvY2svMn0uDQo+ID4gPiA+DQo+ID4gPiA+IFdoZW4gdXNpbmcgbHMxMDQ2YSBT
+b0MsIHRoaXMgcG9wdWxhdGVzIGluY29ycmVjdCB2YWx1ZSBpbiBJQkZEIA0KPiA+ID4gPiByZWdp
+c3RlciBpZiBJMkNfSVBHQ0xLX1NFTCA9IDAsIHdoaWNoIGdlbmVyYXRlcyBoYWxmIG9mIHRoZSBk
+ZXNpcmVkIENsb2NrLg0KPiA+ID4gPg0KPiA+ID4gPiBUaGVyZWZvcmUsIGlmIGxzMTA0NmEgU29D
+IGlzIHVzZWQsIHdlIG5lZWQgdG8gc2V0IHRoZSBpMmMgY2xvY2sgDQo+ID4gPiA+IGFjY29yZGlu
+ZyB0byB0aGUgY29ycmVzcG9uZGluZyBSQ1cuDQo+ID4gPg0KPiA+ID4gU28gdGhlIGNsb2NrIGRy
+aXZlciByZXBvcnRzIHRoZSB3cm9uZyBjbG9jay4gUGxlYXNlIGZpeCB0aGUgY2xvY2sgZHJpdmVy
+IHRoZW4uDQo+ID4gTm8sIHRoaXMgaXMgYSBwcm9ibGVtIHdpdGggdGhlIGkyYyBkcml2ZXIuIEl0
+IGlzIG5vdCBhIHByb2JsZW0gd2l0aCANCj4gPiB0aGUgY2xvY2sgZHJpdmVyLCBzbyB0aGUgaTJj
+IGRyaXZlciBuZWVkcyB0byBiZSBtb2RpZmllZC4NCj4gDQo+IFNvIGhvdyBkb2VzIHRoaXMgUkNX
+IGJpdCBnZXQgZXZhbHVhdGVkPyANCkFjY29yZGluZyB0byB0aGUgcmVmZXJlbmNlIG1hbnVhbA0K
+PiBvbmx5IG9uZSBjbG9jayBnb2VzIHRvIHRoZSBpMmMgbW9kdWxlIChkZXNjcmliZWQgYXMgMS8y
+IFBsYXRmb3JtDQo+IENsb2NrKSBhbmQgdGhlIGkyYyBtb2R1bGUgb25seSB0YWtlcyBvbmUgY2xv
+Y2suIFNvIGl0IHNlZW1zIHRoZXJlIG11c3QgDQo+IGJlIGEgLzIgZGl2aWRlciBzb21ld2hlcmUs
+IGVpdGhlciBpbiBlYWNoIGkyYyBtb2R1bGUgb3Igc29tZXdoZXJlIA0KPiBvdXRzaWRlLiBDYW4g
+eW91ciBJQyBndXlzIHRlbGwgeW91IHdoZXJlIGl0IGlzPw0KSSBuZWVkIHRvIGNvbmZpcm0gdGhp
+cyB3aXRoIHRoZSBJQyB0ZWFtDQpbU3VtaXQgQmF0cmFdIFRoZXJlIGFyZSAyIHBsYWNlcyB3aGVy
+ZSBjbG9jayBkaXZpc2lvbiB0YWtlcyBwbGFjZSAtDQogICAgICAgICAgICAgIDEpIFRoZXJlIGlz
+IGEgY2xvY2sgZGl2aWRlciBvdXRzaWRlIG9mIEkyQyBibG9jaywgd2hpY2ggbWFrZXMgdGhlIGNs
+b2NrIHJlYWNoaW5nIEkyQyBtb2R1bGUgYXMgLSBQbGF0Zm9ybSBDbG9jay8yDQoJMikgVGhlcmUg
+aXMgYW5vdGhlciBjbG9jayBkaXZpZGVyIHdoaWNoIHNwZWNpZmljYWxseSBkaXZpZGVzIHRoZSBj
+bG9jayB0byB0aGUgSTJDIGJsb2NrLCBiYXNlZCBvbiBSQ1cgYml0IDQyNCAoaWYgNDI0dGggYml0
+IGlzIDAgdGhlbiB0aGUgYmF1ZCBjbG9jayBzb3VyY2UgaXMgUGxhdGZvcm0gQ2xvY2svNCwgaWYg
+NDI0dGggYml0IGlzIDEgdGhlbiBpdCByZW1haW5zIFBsYXRmb3JtIENsb2NrLzIpDQogICAgICAg
+ICAgICAgIDMpIE5vdyBiYXNlZCBvbiB0aGUgd2hhdCBpcyB0aGUgZGVzaXJlZCBTQ0wgdmFsdWUg
+KDEwMEtIeiBldGMpIGFuZCB0aGUgY2xvY2sgd2hpY2ggaXMgcmVjZWl2ZWQgYnkgSTJDIGJsb2Nr
+LCB0aGVyZSBpcyBhIGNhbGN1bGF0aW9uIHRoYXQgZ29lcyBvbiBpbnNpZGUgdGhlIEkyQyBkcml2
+ZXIgbW9kdWxlIHdoaWNoIGlzIHVzZWQgdG8gbWFwIGEgdmFsdWUgaW4gdGhpcyBpbXhfaTJjX2Ns
+a19kaXYgdGFibGUuDQogICAgICAgICAgICAgICAgICBUaGlzIHZhbHVlIGlzIHVzZWQgdG8gcHJv
+Z3JhbSB0aGUgSU1YX0kyQ19JRkRSIHJlZ2lzdGVyIG9mIHRoZSBJMkMgYmxvY2suIE5vdyBpZiB3
+ZSBkb24ndCBjb25zaWRlciB0aGUgUkNXIGJpdCA0MjQgaW4gb3VyIEkyQyBkcml2ZXIgY2FsY3Vs
+YXRpb24gdGhlbiB0aGUgSU1YX0kyQ19JRkRSIHZhbHVlIHRoYXQgZ2V0cyBzZXQgbWFrZXMgU0NM
+IGhhbGYgb2Ygd2hhdCBpcyBkZXNpcmVkIGJ5IHRoZSB1c2VyLg0KICAgICAgICAgICAgICAgICAg
+VGhpcyBpcyBiZWNhdXNlIGlmIHlvdSBtYWtlIHRoZSBSQ1cgNDI0dGggYml0IGFzIDAgdGhlbiBh
+bnlob3cgSTJDIGJsb2NrIChoYXJkd2FyZSkgd2lsbCByZWNlaXZlIFBsYXRmb3JtIENsb2NrLzQs
+IGJ1dCB0aGUgZHJpdmVyIChzaW5jZSBpdCBoYXMgbm90IGNvbnNpZGVyZWQgdGhpcyBiaXQpIHdp
+bGwgY29uc2lkZXIgaXQgYXMgUGxhdGZvcm0gQ2xvY2svMiBzbyBpdCdsbCBwcm9ncmFtIGEgYmln
+Z2VyIGRpdmlkZXIgZnJvbSAgICAgdGhlIGlteF9pMmNfY2xrX2RpdiB0YWJsZQkJDQo+IA0KPiBP
+bmUgcmVhc29uIEkgc3VnZ2VzdGVkIHRoZSBjbG9jayBkcml2ZXIgaXMgdGhhdCB0aGUgY2xvY2sg
+ZHJpdmVyIA0KPiBjb250YWlucyBTb0Mgc3BlY2lmaWMgY29kZSBhbHJlYWR5LCBzbyBpdCBzaG91
+bGQgYmUgZWFzaWVyIHRvIGludGVncmF0ZSB0aGVyZS4NCkl0IHNlZW1zIGluYXBwcm9wcmlhdGUg
+dG8gcHV0IHRoZSBjbG9jayBmcmVxdWVuY3kgZGl2aXNpb24gbW9kaWZpY2F0aW9uIG9mIGkyYyBp
+biB0aGUgY2xvY2sgZHJpdmVyLCBiZWNhdXNlIHRoZSBjbG9jayBkcml2ZXIgaXMgZm9yIGFsbCBJ
+UCBhbmQgaXMgYSB1bml2ZXJzYWwgY29kZSwgc28gSSB0aGluayBpdCBpcyBiZXR0ZXIgdG8gbW9k
+aWZ5IHRoZSBjbG9jayBpbiB0aGUgSVAgZHJpdmVyLg0KPiANCj4gU2FzY2hhDQo+IA0KPiANCj4g
+LS0NCj4gUGVuZ3V0cm9uaXggZS5LLiAgICAgICAgICAgICAgICAgICAgICAgICAgIHwNCj4gfA0K
+PiBJbmR1c3RyaWFsIExpbnV4IFNvbHV0aW9ucyAgICAgICAgICAgICAgICAgfA0KPiBodHRwczov
+L2V1cjAxLnNhZmVsaW5rcy5wcm90ZWN0aW9uLm91dGxvb2suY29tLz91cmw9aHR0cCUzQSUyRiUy
+Rnd3dy5wDQo+IGUgbmd1dHJvbml4LmRlJTJGJmFtcDtkYXRhPTAyJTdDMDElN0NjaHVhbmh1YS5o
+YW4lNDBueHAuY29tJTdDYjJkDQo+IDQ2ODA2OTljNDQ4ZTg1MTQzMDhkNmQxZjViZjgyJTdDNjg2
+ZWExZDNiYzJiNGM2ZmE5MmNkOTljNWMzMDE2Mw0KPiA1JTdDMCU3QzAlN0M2MzY5MjcyNTA3NDM1
+MTY1NjMmYW1wO3NkYXRhPXBGZENiaURYRSUyRkRsbDAxWDlOag0KPiBIZzNTQ0RwRUN6Z3JyOE1M
+dFlCZEtINWMlM0QmYW1wO3Jlc2VydmVkPTAgIHwgUGVpbmVyIFN0ci4gNi04LCAzMTEzNyANCj4g
+SGlsZGVzaGVpbSwgR2VybWFueSB8IFBob25lOiArNDktNTEyMS0yMDY5MTctMA0KPiB8DQo+IEFt
+dHNnZXJpY2h0IEhpbGRlc2hlaW0sIEhSQSAyNjg2ICAgICAgICAgICB8IEZheDoNCj4gKzQ5LTUx
+MjEtMjA2OTE3LTU1NTUgfA0KX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
