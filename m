@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39E6C193F4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 23:01:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76E5B193F5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 23:02:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,68 +11,69 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=+D+4XlfUrp+IhM3164wscgklQG7w1CiTIZJ1h7pENW0=; b=X6ZH+z/xYsAJ5x9CYgYemhKWbB
-	Wn1dhOBGhI/foSQKowgXt6Wei9zeM0vQ1sy/UmRf5qB0yUS+hYTOuvas7nGys6cMxtHFMa4OohIk8
-	VipcSyI7lewl9PYOiFnyIT8JUATypFSw+15KgYzsMIIQyHBCRpQQfbnnjxJi6juPxH6liZsPhbGl3
-	S8pbPH6qd2gGxVdf9s1fulSAm9LsdEA5p8TsuhOdx4t0R00uYqgjm1h55pjq/88vY+2OALccQLe0d
-	Us0ejmEbzZAUV65fKytabpeEnra0jUKPTExUDnA9PPkVggTib1+JkK0enB7UrfOSg6A1q5X7A+TNd
-	f/9V4ziA==;
+	bh=Wu+t90OyKaZ4eoiA8Q54VCh7UC5I6Cn0bypUxKemOIk=; b=uoeIZVz3xPzKgVe1woOCOoHAvi
+	6nQ+scuonJH4+VvRhtrd+cBLTnGKgYqrazjQdxlXNs1GA34Btas2JQM7xfVrV4346xdaq68KylJ64
+	6ynXtqllQIWYfezyfP1jCzcLI4ODchHt8R7KSdw4/1kQN7wpxra4y3XcpIdENw5hJ1l6XhrtBmCne
+	A33L/YcSS0eH4vk0MuUtK1soNZsnK4ApHPzHWlrQvz1OREoWYkowDHRD9BJioVd+OjXFqVBooI/a8
+	LYQ7x+gov5PwGZFsAWThyaMScEV4144WPkoCEoVQWiUzi2kGKkNu87kSUtp3BNPTkcVIMQXEBoeSD
+	K/lmdf4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOqAo-0003iZ-A2; Thu, 09 May 2019 21:01:50 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hOqB1-000427-9P; Thu, 09 May 2019 21:02:03 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOqAN-0003KM-C3; Thu, 09 May 2019 21:01:26 +0000
-Received: by mail-pl1-x644.google.com with SMTP id a59so1717014pla.5;
- Thu, 09 May 2019 14:01:23 -0700 (PDT)
+ id 1hOqAP-0003Mq-CF; Thu, 09 May 2019 21:01:29 +0000
+Received: by mail-pl1-x643.google.com with SMTP id b3so1713988plr.7;
+ Thu, 09 May 2019 14:01:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=MSJ4xqUm9vrKGdI4mtkTYOHlvZbHUnqDBUPly/F4wuQ=;
- b=VbXUipzv50tdvMoMxdrUTgpcDcs34w51583wOCbZx5EJFh7Xd77s+q29KSaW/yS7g6
- JNxwi/WnVdjh8pUPCUgV11QhmHxVm80pZh4OVtep3YHZLRd203cfRDrOYRF9BMuAS14J
- /S/EneJHu+RnuRGuDOToccv2aHYe54l5LvbN6f82wjbvn54k2/j8ttYQoS/I4lH6h19e
- 38MNG/HClLzYyMxdnOlHOctn9iCYaTi7OqgjmZC72NEVvc+7KKz9DIfDC0GJunFVPh4A
- Kp09m4HYTwdo2j0AZl6EQKr/BAlfL/834LoBlfpc4niflErnXXU/iD8ZowHd/gOVGbf3
- I0eQ==
+ bh=XIfv0w8R9hbMpIkYecRyvbKImnAIaPLF4+t0eBmtucc=;
+ b=eicyC2LYjnQM70p4GVW8AY2eMq2ucpBRLYd8qbc6RiNh7HpQ+14/Imu7oCe49giLcz
+ OsQs4iFWp1m2yWVTc9GJxU0BX1mZt9QFFP/uKk2rNpjj2WK/PHPgUsz95JyOdh8DkPO9
+ 68TuxjHgop54Tp3vJ3Pr2DD/xvW6b+a5UYYQ9wuznYgD00LtCRJgQ1+c2R1H+4l7hw20
+ MexlNgZRhdzMQszkqV95NLYZnslJCDDG5TbQ2DvwqWxIZXJjBJEzLC3KsIzDlzE87mI5
+ gRG+kqvBlZLFW1WcEKgtqB/7HD85ZuUERRV9G5KNHIgQTkzv/3dSnB+oCs5b/H1e3AqV
+ k8Lg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=MSJ4xqUm9vrKGdI4mtkTYOHlvZbHUnqDBUPly/F4wuQ=;
- b=CIOhXxR73MCIMMkAxtGjuUZrfVkAl3PiBCUk9XpLnpHQ4i14dRYEd5vDh41iD7idL/
- fnurDvB3XX9Y+sUmHHwEe6XGf1GaBPN3MnD32CLxtbOidDjqqMQTOboAmHnLTHCxcnMf
- qxfsvOC0HTExU1OaAHJ9EqmmuapJNrsCzr0mv9V89BbNE/FVG7DnHE3GSA4Ij57fwLmO
- Ei5OCbrUvsRAkajJ7ZyxULsKZusgubAI8og9fBU2kjEKdrMc1smogD0J3DdOWzgu+DC6
- UK5DSnF3GlFOu5bLhVirXI2pn7nLdFNHcn/ebgoOEDOWCeevKUKiD65hWVEmYzZC4ehN
- ppiA==
-X-Gm-Message-State: APjAAAUvRTl9XTgIsxUQD1bm1DjOQl6eDHtHSvvvkc6KoArINnDYIUvI
- jnKo0QHJnp+S2+IcQTtQ1w08+niY
-X-Google-Smtp-Source: APXvYqzeZd/pZ43yTx99GwwYFgQ+ou7UuhYXuksIA98japswJFhif//e+t0t5Uj11uv//Zcv5bgqIA==
-X-Received: by 2002:a17:902:e091:: with SMTP id
- cb17mr8039710plb.222.1557435682568; 
- Thu, 09 May 2019 14:01:22 -0700 (PDT)
+ bh=XIfv0w8R9hbMpIkYecRyvbKImnAIaPLF4+t0eBmtucc=;
+ b=dxI8vORSVXlZMYej0t/LXg09VWw+4TJv87q1sdYdVw/sM1Gu/ggJGRBeFc4ITHBvW5
+ mUeF07ol04segF/BWCsrPRx0+1dWif9IT9IEylKQy3kf4izVLvAELMhtAL1PPKt8rx5J
+ FbmFaF6DHodEow3O1GhtKo/1c9iTCLcJ36K0SRqDIJe7XWR0HqFU1bMnby6diPZ2EwsJ
+ NPKMeDiva60/vBp2anVIE9o1WY7pA3Qtq61IjEbxz/qaYBeUn1AwyOQkI+iH9PToUYZR
+ QgTbXIntmSUEQkXP0utW3VvASpfKOcET0jc6yWfCdX319csU5nvF04PXlgnGcoih1Dti
+ 20aA==
+X-Gm-Message-State: APjAAAWNPhuwKLxTPxi+UtWRclYZXSIi78gxaqMMOv+4Y/QgJm4D4kzW
+ dH9DSrSyyFy+Xk93IMhfrwXzcKAt
+X-Google-Smtp-Source: APXvYqwcw7GiVnjrYj1XiTQi0Bq0hzC69oqOsJ7LlYVQptq7h8VhaR08IPnOqeMHrT9EEpuiPK89Cg==
+X-Received: by 2002:a17:902:9a83:: with SMTP id
+ w3mr8129940plp.241.1557435684380; 
+ Thu, 09 May 2019 14:01:24 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.250])
- by smtp.gmail.com with ESMTPSA id d15sm10989209pfm.186.2019.05.09.14.01.20
+ by smtp.gmail.com with ESMTPSA id d15sm10989209pfm.186.2019.05.09.14.01.22
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 09 May 2019 14:01:21 -0700 (PDT)
+ Thu, 09 May 2019 14:01:23 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/3] pinctrl: bcm: Allow PINCTRL_BCM2835 for ARCH_BRCMSTB
-Date: Thu,  9 May 2019 13:59:54 -0700
-Message-Id: <20190509205955.27842-3-f.fainelli@gmail.com>
+Subject: [PATCH 3/3] pinctrl: bcm2835: bcm7211: Add support for 7211 pull-up
+ functionality
+Date: Thu,  9 May 2019 13:59:55 -0700
+Message-Id: <20190509205955.27842-4-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190509205955.27842-1-f.fainelli@gmail.com>
 References: <20190509205955.27842-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_140123_656563_E2F1FEBB 
-X-CRM114-Status: GOOD (  14.50  )
+X-CRM114-CacheID: sfid-20190509_140125_625781_4B0693D4 
+X-CRM114-Status: GOOD (  21.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -99,57 +100,179 @@ Cc: Mark Rutland <mark.rutland@arm.com>, Stefan Wahren <stefan.wahren@i2se.com>,
  Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
  Matheus Castello <matheus@castello.eng.br>, Ray Jui <rjui@broadcom.com>,
  Linus Walleij <linus.walleij@linaro.org>, Al Cooper <alcooperx@gmail.com>,
- open list <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Lukas Wunner <lukas@wunner.de>, open list <linux-kernel@vger.kernel.org>,
  Eric Anholt <eric@anholt.net>,
  "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Doug Berger <opendmb@gmail.com>,
+ <devicetree@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
  "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
  <bcm-kernel-feedback-list@broadcom.com>,
  "moderated list:BROADCOM BCM2835 ARM ARCHITECTURE"
  <linux-rpi-kernel@lists.infradead.org>,
  "open list:PIN CONTROL SUBSYSTEM" <linux-gpio@vger.kernel.org>,
  =?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <rafal@milecki.pl>,
- Lukas Wunner <lukas@wunner.de>, Nathan Chancellor <natechancellor@gmail.com>
+ Doug Berger <opendmb@gmail.com>, Nathan Chancellor <natechancellor@gmail.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Doug Berger <opendmb@gmail.com>
+From: Al Cooper <alcooperx@gmail.com>
 
-ARCH_BRCMSTB needs to use the BCM2835 pin controller for chips
-like BCM7211 which adopted that pin controller for GPIO. This
-commit makes the option menu configurable with default enabled
-for ARCH_BRCMSTB and ARCH_BCM2835.
+The 7211 has a new way of selecting the pull-up/pull-down setting
+for a GPIO pin. The registers used for the bcm2837, GP_PUD and
+GP_PUDCLKn0, are no longer connected. A new set of registers,
+GP_GPIO_PUP_PDN_CNTRL_REGx must be used. This commit will add
+a new compatible string "brcm,bcm7211-gpio" and the kernel
+driver will use it to select which method is used to select
+pull-up/pull-down.
 
-Signed-off-by: Doug Berger <opendmb@gmail.com>
+Signed-off-by: Al Cooper <alcooperx@gmail.com>
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- drivers/pinctrl/bcm/Kconfig | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+ drivers/pinctrl/bcm/pinctrl-bcm2835.c | 85 +++++++++++++++++++++++++--
+ 1 file changed, 80 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/pinctrl/bcm/Kconfig b/drivers/pinctrl/bcm/Kconfig
-index c8575399d6f7..c57f1d9259d8 100644
---- a/drivers/pinctrl/bcm/Kconfig
-+++ b/drivers/pinctrl/bcm/Kconfig
-@@ -17,11 +17,15 @@ config PINCTRL_BCM281XX
- 	  framework.  GPIO is provided by a separate GPIO driver.
+diff --git a/drivers/pinctrl/bcm/pinctrl-bcm2835.c b/drivers/pinctrl/bcm/pinctrl-bcm2835.c
+index 183d1ffe6a75..35d9f9593000 100644
+--- a/drivers/pinctrl/bcm/pinctrl-bcm2835.c
++++ b/drivers/pinctrl/bcm/pinctrl-bcm2835.c
+@@ -57,15 +57,26 @@
+ #define GPAFEN0		0x88	/* Pin Async Falling Edge Detect */
+ #define GPPUD		0x94	/* Pin Pull-up/down Enable */
+ #define GPPUDCLK0	0x98	/* Pin Pull-up/down Enable Clock */
++#define GP_GPIO_PUP_PDN_CNTRL_REG0 0xe4 /* 7211 Pin Pull-up/down select */
  
- config PINCTRL_BCM2835
--	bool
-+	bool "Broadcom BCM2835 GPIO (with PINCONF) driver"
-+	depends on ARCH_BCM2835 || ARCH_BRCMSTB || COMPILE_TEST
- 	select PINMUX
- 	select PINCONF
- 	select GENERIC_PINCONF
- 	select GPIOLIB_IRQCHIP
-+	default ARCH_BCM2835 || ARCH_BRCMSTB
-+	help
-+	   Say Y here to enable the Broadcom BCM2835 GPIO driver.
+ #define FSEL_REG(p)		(GPFSEL0 + (((p) / 10) * 4))
+ #define FSEL_SHIFT(p)		(((p) % 10) * 3)
+ #define GPIO_REG_OFFSET(p)	((p) / 32)
+ #define GPIO_REG_SHIFT(p)	((p) % 32)
  
- config PINCTRL_IPROC_GPIO
- 	bool "Broadcom iProc GPIO (with PINCONF) driver"
++#define PUD_7211_MASK		0x3
++#define PUD_7211_REG_OFFSET(p)	((p) / 16)
++#define PUD_7211_REG_SHIFT(p)	(((p) % 16) * 2)
++
+ /* argument: bcm2835_pinconf_pull */
+ #define BCM2835_PINCONF_PARAM_PULL	(PIN_CONFIG_END + 1)
+ 
++enum bcm7211_pinconf_pull {
++	BCM7211_PINCONFIG_PULL_NONE,
++	BCM7211_PINCONFIG_PULL_UP,
++	BCM7211_PINCONFIG_PULL_DOWN,
++};
++
+ struct bcm2835_pinctrl {
+ 	struct device *dev;
+ 	void __iomem *base;
+@@ -975,6 +986,55 @@ static const struct pinconf_ops bcm2835_pinconf_ops = {
+ 	.pin_config_set = bcm2835_pinconf_set,
+ };
+ 
++static int bcm7211_pinconf_set(struct pinctrl_dev *pctldev,
++			       unsigned int pin, unsigned long *configs,
++			       unsigned int num_configs)
++{
++	struct bcm2835_pinctrl *pc = pinctrl_dev_get_drvdata(pctldev);
++	u32 param, arg;
++	u32 shifter;
++	u32 value;
++	u32 off;
++	int i;
++
++	for (i = 0; i < num_configs; i++) {
++		param = pinconf_to_config_param(configs[i]);
++		if (param != BCM2835_PINCONF_PARAM_PULL)
++			return -EINVAL;
++		arg = pinconf_to_config_argument(configs[i]);
++
++		/* convert to 7211 value */
++		switch (arg) {
++		case PIN_CONFIG_BIAS_DISABLE:
++			arg = BCM7211_PINCONFIG_PULL_NONE;
++			break;
++		case PIN_CONFIG_BIAS_PULL_DOWN:
++			arg = BCM7211_PINCONFIG_PULL_DOWN;
++			break;
++		case PIN_CONFIG_BIAS_PULL_UP:
++			arg = BCM7211_PINCONFIG_PULL_UP;
++			break;
++		}
++
++		off = PUD_7211_REG_OFFSET(pin);
++		shifter = PUD_7211_REG_SHIFT(pin);
++
++		value = bcm2835_gpio_rd(pc, GP_GPIO_PUP_PDN_CNTRL_REG0 +
++					(off * 4));
++		value &= ~(PUD_7211_MASK << shifter);
++		value |= (arg << shifter);
++		bcm2835_gpio_wr(pc, GP_GPIO_PUP_PDN_CNTRL_REG0 + (off * 4),
++				value);
++	} /* for each config */
++
++	return 0;
++}
++
++static const struct pinconf_ops bcm7211_pinconf_ops = {
++	.pin_config_get = bcm2835_pinconf_get,
++	.pin_config_set = bcm7211_pinconf_set,
++};
++
+ static struct pinctrl_desc bcm2835_pinctrl_desc = {
+ 	.name = MODULE_NAME,
+ 	.pins = bcm2835_gpio_pins,
+@@ -990,6 +1050,18 @@ static struct pinctrl_gpio_range bcm2835_pinctrl_gpio_range = {
+ 	.npins = BCM2835_NUM_GPIOS,
+ };
+ 
++static const struct of_device_id bcm2835_pinctrl_match[] = {
++	{
++		.compatible = "brcm,bcm2835-gpio",
++		.data = &bcm2835_pinconf_ops,
++	},
++	{
++		.compatible = "brcm,bcm7211-gpio",
++		.data = &bcm7211_pinconf_ops,
++	},
++	{}
++};
++
+ static int bcm2835_pinctrl_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+@@ -997,6 +1069,8 @@ static int bcm2835_pinctrl_probe(struct platform_device *pdev)
+ 	struct bcm2835_pinctrl *pc;
+ 	struct resource iomem;
+ 	int err, i;
++	const struct of_device_id *match;
++
+ 	BUILD_BUG_ON(ARRAY_SIZE(bcm2835_gpio_pins) != BCM2835_NUM_GPIOS);
+ 	BUILD_BUG_ON(ARRAY_SIZE(bcm2835_gpio_groups) != BCM2835_NUM_GPIOS);
+ 
+@@ -1073,6 +1147,12 @@ static int bcm2835_pinctrl_probe(struct platform_device *pdev)
+ 					     bcm2835_gpio_irq_handler);
+ 	}
+ 
++	match = of_match_node(bcm2835_pinctrl_match, pdev->dev.of_node);
++	if (match) {
++		bcm2835_pinctrl_desc.confops =
++			(const struct pinconf_ops *)match->data;
++	}
++
+ 	pc->pctl_dev = devm_pinctrl_register(dev, &bcm2835_pinctrl_desc, pc);
+ 	if (IS_ERR(pc->pctl_dev)) {
+ 		gpiochip_remove(&pc->gpio_chip);
+@@ -1087,11 +1167,6 @@ static int bcm2835_pinctrl_probe(struct platform_device *pdev)
+ 	return 0;
+ }
+ 
+-static const struct of_device_id bcm2835_pinctrl_match[] = {
+-	{ .compatible = "brcm,bcm2835-gpio" },
+-	{}
+-};
+-
+ static struct platform_driver bcm2835_pinctrl_driver = {
+ 	.probe = bcm2835_pinctrl_probe,
+ 	.driver = {
 -- 
 2.17.1
 
