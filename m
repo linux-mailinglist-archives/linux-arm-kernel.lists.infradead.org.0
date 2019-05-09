@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 752B318EEC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 19:24:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7782F18EED
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 19:25:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,72 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=A3aP/l9g8ao/zWzSAAclKbJLBNpfYKcRLomqcKiwu1A=; b=LtLX2IfaCCrgI5nfRyKwxTGe3n
-	Y7varW5CMHe4O6BPPTPvxZ9aKw0D2sxpFVApuBhtuxnVWzW/peRvDEGaNSznE3Nv/WRaf6bvY0O0C
-	A+Uuh5Yok4b0TQAWCQ/NYNZ33FN+ibbiVAAaMUBhk/oHAMklWK79w35BvJ3tmphF9wZBcNJA6ATbJ
-	b5jbiUQHUFjh04Cx+f8yTVQLtrziEpQWwUbZDHXODBNkMk8+Z3X1dvCICPO4YLnfLNP7W1K03NHLK
-	OlLJ+ZJRW6Qf8S48XQTsBeOLQr+Q7TfCoUr0NqUDFaHSzDC6b1vveCdm+sw2DjaocaKUZ3P2haSXT
-	IW1RlNsg==;
+	bh=wzVWjL9UqbWQvwzpnOgPhsbZZvG4NxsBQYOPpYa4eRk=; b=tMv2hxOP6lAV1d05732yVenDz+
+	ceJIksYGUk4miEtkXqf2DyzkBjFFAG9OKdypXLBvIdaXGXRAICwzjkhBFbf8tktvmMth+Cav3abbv
+	rXbW/3eLPhVxzbBacQ2q3DLyH2OF4cyKMfKD/PMXlr/QawHeLQ+aRY675oz/qsCsKTbs9OAAvTR93
+	FXN1TmE+9RA5hoJ5SkEj9ntYhSHjC3RF9JUikD7OQNoudEpa+qONFO2jwFh8hDHA9tc9kLmlCwGZO
+	LCoGOk0/uwXpOkuHCURPO7r4UuP22sgCFT82d4B5i/wRUjczKe9W2D3/TBuPDfED2bNpebTapy9ZE
+	ILtQvylA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOmmt-00085C-SV; Thu, 09 May 2019 17:24:55 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hOmn9-0008KH-Dh; Thu, 09 May 2019 17:25:11 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOmmc-0007vP-4W
- for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 17:24:39 +0000
-Received: by mail-pg1-x543.google.com with SMTP id d31so1545988pgl.7
+ id 1hOmme-0007wK-FV
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 17:24:42 +0000
+Received: by mail-pf1-x444.google.com with SMTP id s11so1647202pfm.12
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 May 2019 10:24:37 -0700 (PDT)
+ Thu, 09 May 2019 10:24:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=cPBzyUAV50pAnZfXXI85W0FJrR1AmwGO+3Mm+J5Ler8=;
- b=KZymrmgNoadDcCwAw9QgPOqaSR0OLrD5V49mAh1uQt0GgJ3kfSscqL6ofV06PDPlwW
- 7JIc+kGuIJRjIpOrvb6N2dADvTRctPUm5ttHOPJ1QG1d5TZIv7631WzfeC7gBsCMTlN1
- fbPaM6gs/seQ3JgTCfuCXd2U0Uj505rmkAGeo=
+ bh=Wx8gaoHC5MOYV389XtnYNdY7stPe/BwS11WRGJ3X0jU=;
+ b=NLbenTRuAo/KwttyYdSfiYeHTl8s02uccdxHkJwJLM2aY7TwvWQqlzRs0z8yANQP8R
+ khMAKyxuFZJpgqgeNYGcHLqu5JE1xjX9RHiBh3YBz9oyDSgkjkxUuCIXX01cR7/10nQI
+ rodbcT1oFhD5khMY98DrmTSlWUYOKTkyTYnlE=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=cPBzyUAV50pAnZfXXI85W0FJrR1AmwGO+3Mm+J5Ler8=;
- b=qOfOY/Dul10I3Hag7XqjO4wbrAUNi3SW1bnMAFVIFcpxFcojGbhpBmQZDCV2mxUNHM
- 8b0q7tWWHNp/jLSj5LExgWgDKtZboEX6b2199iDi/q1gRoht57N3EMjBCXA+9G7wM6Xs
- yTv+LHjDJvJBp18KBAe0B95xCelpuM0R2BcV+HNi0oL9A+wItFJ34H/2DoB0GBjTWNl+
- x64p6wkclicdWJVqH4RA9d9YAXJTHKcLAEv+L3OlUJ3d2kNDkczzJ0SDX6rqTbutC4jZ
- brJ+HPUqxpZeA97xMi7sigjFT00iV0IZ3oalCUSki9ZUhIqBU8YDGIZeLIGh+0tUAaB5
- OlhQ==
-X-Gm-Message-State: APjAAAUyIJ6iAdADKDDr4KUAqomKnRmiXPQI0W8Vg9O/y2PdWuLp3LPc
- A3QfudGnDYKaECn8O5MC0uMo4A==
-X-Google-Smtp-Source: APXvYqwltYnMRdytoyt+Gakgvt9eaNw+HtE2WFlXBJvXLOllj4Xdxq3+5a4BOoOCJ7GUUv5cjQ6L4w==
-X-Received: by 2002:a62:3892:: with SMTP id f140mr6877728pfa.128.1557422677403; 
- Thu, 09 May 2019 10:24:37 -0700 (PDT)
+ bh=Wx8gaoHC5MOYV389XtnYNdY7stPe/BwS11WRGJ3X0jU=;
+ b=M6KMyj2L3LgGgJbQpNdH7osgF2acprZenDa4yyx9j1kcYDZmWcBNTWBBHXDGt0Y6CO
+ KBlSvSmJwFsgWJR8WjfiurFaA+D+oxINhveVW0uEn1uGAA4D198Ip9oHyym7taq2QB02
+ FGfzsR9q69q4ZhBVSnN0lLnzt3kh6DiQ7hex93dya9r+tbIbBCYFDwSd0/omuvEVigEX
+ cancmEOCo8Hq31UVSqPu+lqCUnqIKbaDfoIFU/KRSDX391uK5Em0bxVL0GTscd2kMbTG
+ MdLVijSEwRc5zhObhjiJyRxfkf/Hm9z2iotG42gd/YS4pdOZ9Qok4Wx7slXaaA8T5Vgs
+ Hb6w==
+X-Gm-Message-State: APjAAAWwbfl3gvFn7DgN4b1wwb78bGR/dHaBxt9lMywhRKpnWyHUfHQY
+ QZMJc2eb6QPYx4cQwxlD4W262g==
+X-Google-Smtp-Source: APXvYqwYqy8L9x/EoYgEU/4wY9WEr7lylwmLPU9640H1GKytWxa+mGBeQ/ZgM4Ryo2yw8qrfa7yERw==
+X-Received: by 2002:aa7:9116:: with SMTP id 22mr6898551pfh.165.1557422679753; 
+ Thu, 09 May 2019 10:24:39 -0700 (PDT)
 Received: from lbrmn-lnxub113.broadcom.net ([192.19.228.250])
- by smtp.gmail.com with ESMTPSA id m8sm3989699pgn.59.2019.05.09.10.24.35
+ by smtp.gmail.com with ESMTPSA id m8sm3989699pgn.59.2019.05.09.10.24.37
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 09 May 2019 10:24:36 -0700 (PDT)
+ Thu, 09 May 2019 10:24:39 -0700 (PDT)
 From: Scott Branden <scott.branden@broadcom.com>
 To: Adrian Hunter <adrian.hunter@intel.com>,
  Ulf Hansson <ulf.hansson@linaro.org>, Ray Jui <rjui@broadcom.com>,
  Scott Branden <sbranden@broadcom.com>,
  Stefan Wahren <stefan.wahren@i2se.com>
-Subject: [PATCH v3 1/2] mmc: sdhci-iproc: cygnus: Set NO_HISPD bit to fix HS50
- data hold time problem
-Date: Thu,  9 May 2019 10:24:26 -0700
-Message-Id: <20190509172427.17835-2-scott.branden@broadcom.com>
+Subject: [PATCH v3 2/2] mmc: sdhci-iproc: Set NO_HISPD bit to fix HS50 data
+ hold time problem
+Date: Thu,  9 May 2019 10:24:27 -0700
+Message-Id: <20190509172427.17835-3-scott.branden@broadcom.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190509172427.17835-1-scott.branden@broadcom.com>
 References: <20190509172427.17835-1-scott.branden@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_102438_172985_CB0C7B25 
-X-CRM114-Status: GOOD (  18.81  )
+X-CRM114-CacheID: sfid-20190509_102440_731524_561970DF 
+X-CRM114-Status: GOOD (  17.92  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -110,12 +110,10 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 From: Trac Hoang <trac.hoang@broadcom.com>
 
 The iproc host eMMC/SD controller hold time does not meet the
-specification in the HS50 mode. This problem can be mitigated
+specification in the HS50 mode.  This problem can be mitigated
 by disabling the HISPD bit; thus forcing the controller output
 data to be driven on the falling clock edges rather than the
 rising clock edges.
-
-This change applies only to the Cygnus platform.
 
 Stable tag (v4.12+) chosen to assist stable kernel maintainers so that
 the change does not produce merge conflicts backporting to older kernel
@@ -132,18 +130,18 @@ Acked-by: Adrian Hunter <adrian.hunter@intel.com>
  1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/mmc/host/sdhci-iproc.c b/drivers/mmc/host/sdhci-iproc.c
-index 9d12c06c7fd6..9d4071c41c94 100644
+index 9d4071c41c94..2feb4ef32035 100644
 --- a/drivers/mmc/host/sdhci-iproc.c
 +++ b/drivers/mmc/host/sdhci-iproc.c
-@@ -196,7 +196,8 @@ static const struct sdhci_ops sdhci_iproc_32only_ops = {
- };
+@@ -220,7 +220,8 @@ static const struct sdhci_iproc_data iproc_cygnus_data = {
  
- static const struct sdhci_pltfm_data sdhci_iproc_cygnus_pltfm_data = {
--	.quirks = SDHCI_QUIRK_DATA_TIMEOUT_USES_SDCLK,
-+	.quirks = SDHCI_QUIRK_DATA_TIMEOUT_USES_SDCLK |
+ static const struct sdhci_pltfm_data sdhci_iproc_pltfm_data = {
+ 	.quirks = SDHCI_QUIRK_DATA_TIMEOUT_USES_SDCLK |
+-		  SDHCI_QUIRK_MULTIBLOCK_READ_ACMD12,
++		  SDHCI_QUIRK_MULTIBLOCK_READ_ACMD12 |
 +		  SDHCI_QUIRK_NO_HISPD_BIT,
- 	.quirks2 = SDHCI_QUIRK2_ACMD23_BROKEN | SDHCI_QUIRK2_HOST_OFF_CARD_ON,
- 	.ops = &sdhci_iproc_32only_ops,
+ 	.quirks2 = SDHCI_QUIRK2_ACMD23_BROKEN,
+ 	.ops = &sdhci_iproc_ops,
  };
 -- 
 2.17.1
