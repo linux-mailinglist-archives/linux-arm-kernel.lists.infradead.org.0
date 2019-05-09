@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1054C187E1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 11:41:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C2FE1880F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 11:58:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A22+gN28RbX8InkMvlipq9GF9/7LswyHjjDle1zrwfo=; b=s7oNq1VvVZWMDv
-	Xa46vQwdIq8ZnVKnsbPzhD60ESONFfNlL+KX+QxU9xPIN3jxWtw8wiCVBvM6Aol2BEpGH2bcJ0kAE
-	+L5pVhovpGCLVkpH8cTYSLLdQey/bo0uzFjzfThUYEya49zs/liUKGWfkiyFCi5hdBYNGUsBa7aTT
-	+/UD5seLOb270V9TJ8dIWRlh6EIBZ9I2aqgxOgQLn2H5qmbtaZrQz7fCH/nFxzDIbfzVZ2gRID4SE
-	PUfSP1UIN0W1o3Q82QtwkaMQNLwlBoURDDurrLzsc/JF89wxtVb66jO2GEeo86MJ6eSYbOcScXjGN
-	koFu3rUQ+Its+kr8o6Gw==;
+	List-Owner; bh=Jc2oynQBUXkXkalAy1Cnp3AD9MPRI8jlkyjnAgR7TAI=; b=Be26B25ivh9jH2
+	SEGvF8fWoJgPRxJv13deKs+8v1240268hzJZTllgjMMrjkDz1zpfTLV8hKTbyKYP0LN0YTl2wsTYl
+	OYdIlrusdDIUP2kRbCpNNw26PcZ0g2rfE3brjpxJcBUZ//S2wwwmJ2KyNZsaCmJZ6EmsesG71QhDH
+	xqVkVQ5tbCjMRGcSgGnFVf3gf6Rc5kvuneYYuPt9XJiWH2src2IA/1ZDgJRRXZx/fkEMgo5RbfQyY
+	Qx/Z9h6R1mpcQ/pnQrlSjliijcJxjPuVLygP0bCxloKJQIaPp4MauFQjCnNNlr7jMcCdtY6iCFcLm
+	GdWPMkLGgsIP2hoV7kFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOfY6-0002Fo-4d; Thu, 09 May 2019 09:41:10 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
+	id 1hOfoV-0007zg-32; Thu, 09 May 2019 09:58:07 +0000
+Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOfXp-0002F6-Ns
- for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 09:40:55 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E2805374;
- Thu,  9 May 2019 02:40:51 -0700 (PDT)
-Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2150C3F575;
- Thu,  9 May 2019 02:40:49 -0700 (PDT)
-Date: Thu, 9 May 2019 10:40:44 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Prasad Sodagudi <psodagud@codeaurora.org>
-Subject: Re: [PATCH] kernel/panic: Use SYSTEM_RESET2 command for warm reset
-Message-ID: <20190509094021.GA8239@e107155-lin>
-References: <ce0b66f5d00e760f87ddeeacbc40b956@codeaurora.org>
- <1557366432-352469-1-git-send-email-psodagud@codeaurora.org>
+ id 1hOfoJ-0007zJ-2A
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 09:57:56 +0000
+Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
+ by kirsty.vergenet.net (Postfix) with ESMTPA id DFD1F25AEBF;
+ Thu,  9 May 2019 19:57:51 +1000 (AEST)
+Received: by reginn.horms.nl (Postfix, from userid 7100)
+ id D94149403F2; Thu,  9 May 2019 11:57:49 +0200 (CEST)
+Date: Thu, 9 May 2019 11:57:49 +0200
+From: Simon Horman <horms@verge.net.au>
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+Subject: Re: [PATCH v2] arm64: dts: renesas: r8a7795: Create thermal zone to
+ support IPA
+Message-ID: <20190509095749.23b2jnvfks4enkpt@verge.net.au>
+References: <20190508115605.13726-1-horms+renesas@verge.net.au>
+ <CAMuHMdX3YW0NaDXvN1WjWeNrCH366LALa3UT41REqAHNJk-9JA@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1557366432-352469-1-git-send-email-psodagud@codeaurora.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <CAMuHMdX3YW0NaDXvN1WjWeNrCH366LALa3UT41REqAHNJk-9JA@mail.gmail.com>
+Organisation: Horms Solutions BV
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_024053_787220_04630166 
-X-CRM114-Status: GOOD (  17.17  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190509_025755_263052_942D8B96 
+X-CRM114-Status: GOOD (  14.24  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [202.4.237.240 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -63,74 +63,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, julien.thierry@arm.com,
- catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- Sudeep Holla <sudeep.holla@arm.com>, akpm@linux-foundation.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Yoshihiro Kaneko <ykaneko0929@gmail.com>, Magnus Damm <magnus.damm@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 08, 2019 at 06:47:12PM -0700, Prasad Sodagudi wrote:
-> Some platforms may need warm reboot support when kernel crashed
-> for post mortem analysis instead of cold reboot. So use config
-> CONFIG_WARM_REBOOT_ON_PANIC and SYSTEM_RESET2 psci command
-> support for warm reset.
->
-
-Please drop all the references to PSCI and SYSTEM_RESET2 including
-in subject. This is more generic and PSCIv1.1 with SYSTEM_RESET2 can
-make use of it.
-
-> Signed-off-by: Prasad Sodagudi <psodagud@codeaurora.org>
-> ---
->  kernel/panic.c    |  4 ++++
->  lib/Kconfig.debug | 10 ++++++++++
->  2 files changed, 14 insertions(+)
+On Wed, May 08, 2019 at 03:20:03PM +0200, Geert Uytterhoeven wrote:
+> Hi Simon,
 > 
-> diff --git a/kernel/panic.c b/kernel/panic.c
-> index c1fcaad..6ab6675 100644
-> --- a/kernel/panic.c
-> +++ b/kernel/panic.c
-> @@ -198,6 +198,10 @@ void panic(const char *fmt, ...)
->  
->  	console_verbose();
->  	bust_spinlocks(1);
-> +#ifdef CONFIG_WARM_REBOOT_ON_PANIC
-> +	/* Configure for warm reboot instead of cold reboot. */
-> +	reboot_mode = REBOOT_WARM;
-> +#endif
->  	va_start(args, fmt);
->  	len = vscnprintf(buf, sizeof(buf), fmt, args);
->  	va_end(args);
-> diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
-> index d695ec1..2a727d8 100644
-> --- a/lib/Kconfig.debug
-> +++ b/lib/Kconfig.debug
-> @@ -1000,6 +1000,16 @@ config PANIC_TIMEOUT
->  	  value n > 0 will wait n seconds before rebooting, while a timeout
->  	  value n < 0 will reboot immediately.
->  
-> +config WARM_REBOOT_ON_PANIC
-> +	bool "Warm reboot instead of cold reboot for panic"
-> +	default n
-> +	help
-> +	  Some vendor platform may need warm reboot instead of cold reboot
-> +	  for debugging. Before vendor specific power off driver is
-> +	  probed, platform always gets cold reset. By setting Y here and
-> +	  support for PSCI V1.1 is present from firmware, platform would
-> +	  get warm reset instead of cold reset.
-> +
+> Thanks for your patch!
+> 
+> On Wed, May 8, 2019 at 1:56 PM Simon Horman <horms+renesas@verge.net.au> wrote:
 
-Ditto here, drop PSCI reference. Since it's being pushed as generic
-solution, expecting anyone reading this to understand what is this PSCI
-makes no sense and may be even confusing.
+...
 
---
-Regards,
-Sudeep
+> 
+> > --- a/arch/arm64/boot/dts/renesas/r8a7795.dtsi
+> > +++ b/arch/arm64/boot/dts/renesas/r8a7795.dtsi
+> > @@ -155,6 +155,7 @@
+> >                         power-domains = <&sysc R8A7795_PD_CA57_CPU0>;
+> >                         next-level-cache = <&L2_CA57>;
+> >                         enable-method = "psci";
+> > +                       dynamic-power-coefficient = <854>;
+> 
+> The dynamic-power-coefficient property is a property of the CPU,
+> documented in Documentation/devicetree/bindings/arm/cpus.yaml,
+> and not directly related to thermal zones.
+> 
+> Hence I think its addition should be done in a separate patch.
 
+Sure, can do. Should the coefficient be added to each CPU or only
+to a57_0 and a53_0, as is the case in this patch?
+
+I assume the latter because the A53 coefficient applies to all A53 cores
+and likewise for A57.
+
+> >                         clocks = <&cpg CPG_CORE R8A7795_CLK_Z>;
+> >                         operating-points-v2 = <&cluster0_opp>;
+> >                         capacity-dmips-mhz = <1024>;
+> > @@ -207,6 +208,8 @@
+> >                         power-domains = <&sysc R8A7795_PD_CA53_CPU0>;
+> >                         next-level-cache = <&L2_CA53>;
+> >                         enable-method = "psci";
+> > +                       #cooling-cells = <2>;
+> > +                       dynamic-power-coefficient = <277>;
+> 
+> Likewise.
+> 
+> >                         clocks = <&cpg CPG_CORE R8A7795_CLK_Z2>;
+> >                         operating-points-v2 = <&cluster1_opp>;
+> >                         capacity-dmips-mhz = <535>;
+> 
+> Gr{oetje,eeting}s,
+> 
+>                         Geert
+> 
+> -- 
+> Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+> 
+> In personal conversations with technical people, I call myself a hacker. But
+> when I'm talking to journalists I just say "programmer" or something like that.
+>                                 -- Linus Torvalds
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
