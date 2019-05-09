@@ -2,79 +2,119 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B25E1834C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 03:44:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BCAAE1834B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 03:44:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xfSRNRSF6XFvS2Zw7eOBWZM0AuMHpR+TDBgKLB+rotk=; b=jSzZghiq95Ha9v
-	FVE6gzd1CXk8xiXBl8km8Chi71QvNkR42PdxlXG92fN2Bxo0lHn9EtiaHn30FWVs9mSJEjMoG8xFd
-	onVKO7s36bGDsK2l9G+llIqez8TCoryDLeGRPnzIiWdbE9MVLNDVMSvEnSt0XIpjXxE+y5OFG1N+f
-	TQjxLWj/BOkd+nM7h3Z0cb6q+POh7TxzWnoUVkyeV4uMn6S++6Hn2S6rL5/uil8RkyHvviC+fH+pV
-	mbOWoIixgpTn43+kacYQ7e4d99pteT+Dr9jOHF1ubvYOPEUP0+WhH1zq8rLJwMyzuqKY8M1yp4ivt
-	SQH++RINTz/gSn0730vQ==;
+	List-Owner; bh=ghZFYMxdgQOapBixpqLtzgnjC/vrgOWlstb4NUyib3s=; b=o41eeTqkBF53S3
+	Xjeebb0193rYwftP1RSsjTEhDqY+kgXm+RkX8O3+6G+MRE9dT5EpkeczmVc0T6Te4jjpve0b2YRYV
+	AkCM9mjOgnnkcIeHsPh99tD2Z8FB6rME6MP9dx9OYbvsdGFghT1WWpluNaDPhRpo/1tKasxNWD6Xh
+	JuGh2jYOWx0svtYq5K3osQrdETCvZOsstBRWqD9NyhFClp2APTi5bfyvc2K26m8TCaebQa5+edJSG
+	zMuOLtI+Pbbv5TQFvELqTRWtbKz9xVBhl5RT2ZEI68cc6HlrQvvHlKyFiZp7Jd1wX6bOMBNkn2fNf
+	u2MX0Oicgmv0/7QjsBTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOY72-0008EV-VB; Thu, 09 May 2019 01:44:44 +0000
-Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
+	id 1hOY6t-00088A-8C; Thu, 09 May 2019 01:44:35 +0000
+Received: from mail-eopbgr50088.outbound.protection.outlook.com ([40.107.5.88]
+ helo=EUR03-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOY6m-00087H-2V
+ id 1hOY6l-00087F-C5
  for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 01:44:29 +0000
-Received: by mail-oi1-x241.google.com with SMTP id u3so644138oic.12
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 May 2019 18:44:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=QSowrtvBxHuy+9EtWeAofxxOlDhK9Glv13XxPGgRs0g=;
- b=FTGotLa6Bju72vqFYtTwvrZTvNQYiOOMZ8o54hYAiqK0uOAsAPU6VON80aO9vkjLYa
- 3p36iyGFyGMmdjmtWezMbuNGmm4PJZc7fgr4OxSLHOoXPBTIpg7sCURZt1/+XMeYKRBR
- NGTKH6iXjpRw5d3JMYy9oQ3EtG87RB7qukZhTndr+vz7FUeOQKjWGooGsi73ybtKST9J
- FwJbyJmujVUKKizeBjDd4ax7kwcNa2SInbgwCc0gYSRif97Lmpo4JHO9kOyF5dPD0THU
- WoFQdJk0wAxMYuWmVJY7aOrQppqlhYN3ghgKHjohHV1AMNO+bWx0fwuSn+a8d4VUM2Yd
- Qs1A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=QSowrtvBxHuy+9EtWeAofxxOlDhK9Glv13XxPGgRs0g=;
- b=IKmLuz/kWbhm/ZfBuOJpqLl2LQDM8ftkA7F6OyTR8Q2baS4EBwC+u9n0jOol4F3HdF
- 15LVoqXwzh6Nrov21/zikpbSoyIjjRjHPAKktNS7sVK6QkVuJAZZ9/IJ4mCuxQcNB0kk
- ESQBut6NlK0eZkYFBzG/5+x3PwIU+46SlqE37UJRy+5Eq8aD8ieo9o2rxAqdBn+CyM8x
- F/jDAhmotFrRwgrUCutgffmrX9sxgYy+lByBOoSZCqag7VmDVzrJd3uULI18A17RCVNA
- p/82I0S15B+kcYYjr34PWx0wjKSu9DXxMq69ft/3VW5cIfzETvfret4AGqnXzZUdXK8h
- yKPA==
-X-Gm-Message-State: APjAAAUUS7IyDYebLFVBK47cqOuGybxSWNL7HacsZpXnQBABmDuSzPlA
- R9DV3r/GPQLlDt4U0k4RGL0rnE3ClbPyabIabNqwmw==
-X-Google-Smtp-Source: APXvYqzeAfiNSljb+terykWDGmzDf8vkicYkCQIEsAaSxE2qpBV2t5nSNufIAYmBBr/EXFEAH0HCtdLqIeY8uZ0KA/A=
-X-Received: by 2002:aca:61c3:: with SMTP id v186mr569894oib.27.1557366266348; 
- Wed, 08 May 2019 18:44:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=k9ELYKSBiXWdzpFWHHWDuQIQFqmUUCVacw447iKxdOU=;
+ b=PGGS4Ypwt+s71aHzPuxrNLTmOr4Pdb1dI07ms2tKFWhCFX1NvDQWT9R6X6PANWHfZIPEW19nEeLUupwfgmsxZS0+ZIrQi9SBSEMWzdhp51IaYIZrrdzl32YocSXa+D0zQaNfwVa+/LIRsiqehLci6pTKIrwmkUwq8wIni2W6YzM=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3929.eurprd04.prod.outlook.com (52.134.70.31) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1878.20; Thu, 9 May 2019 01:44:22 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::d035:3bd0:a56a:189d]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::d035:3bd0:a56a:189d%2]) with mapi id 15.20.1878.022; Thu, 9 May 2019
+ 01:44:22 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Anson Huang <anson.huang@nxp.com>, "robh+dt@kernel.org"
+ <robh+dt@kernel.org>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
+ <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>, "catalin.marinas@arm.com"
+ <catalin.marinas@arm.com>, "will.deacon@arm.com" <will.deacon@arm.com>,
+ "rui.zhang@intel.com" <rui.zhang@intel.com>, "edubezval@gmail.com"
+ <edubezval@gmail.com>, "daniel.lezcano@linaro.org"
+ <daniel.lezcano@linaro.org>, Aisheng Dong <aisheng.dong@nxp.com>,
+ "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>, Daniel Baluta
+ <daniel.baluta@nxp.com>, Peng Fan <peng.fan@nxp.com>, "heiko@sntech.de"
+ <heiko@sntech.de>, "horms+renesas@verge.net.au" <horms+renesas@verge.net.au>, 
+ "agross@kernel.org" <agross@kernel.org>, "olof@lixom.net" <olof@lixom.net>,
+ "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
+ "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
+ "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
+ "marc.w.gonzalez@free.fr" <marc.w.gonzalez@free.fr>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-pm@vger.kernel.org"
+ <linux-pm@vger.kernel.org>
+Subject: RE: [PATCH V12 3/5] thermal: imx_sc: add i.MX system controller
+ thermal support
+Thread-Topic: [PATCH V12 3/5] thermal: imx_sc: add i.MX system controller
+ thermal support
+Thread-Index: AQHU9AOc8iXKmYQeMUm4+FbUnbYclKZiKWGA
+Date: Thu, 9 May 2019 01:44:22 +0000
+Message-ID: <DB3PR0402MB3916791537B7C3C85B13A22BF5330@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1555384609-7030-1-git-send-email-Anson.Huang@nxp.com>
+ <1555384609-7030-3-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1555384609-7030-3-git-send-email-Anson.Huang@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: cb208fb9-95d1-464a-079d-08d6d41fdc19
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:DB3PR0402MB3929; 
+x-ms-traffictypediagnostic: DB3PR0402MB3929:
+x-microsoft-antispam-prvs: <DB3PR0402MB39292EE51B69545540F21EAFF5330@DB3PR0402MB3929.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3044;
+x-forefront-prvs: 003245E729
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(136003)(366004)(39860400002)(376002)(346002)(396003)(189003)(199004)(13464003)(5660300002)(316002)(52536014)(7696005)(99286004)(229853002)(478600001)(76176011)(68736007)(8936002)(102836004)(11346002)(53546011)(476003)(446003)(9686003)(81156014)(44832011)(55016002)(81166006)(33656002)(53936002)(73956011)(8676002)(2501003)(486006)(26005)(6436002)(76116006)(66946007)(64756008)(66446008)(66476007)(66556008)(110136005)(14454004)(86362001)(4326008)(66066001)(6246003)(25786009)(186003)(2201001)(6506007)(2906002)(7736002)(305945005)(7416002)(256004)(71200400001)(71190400001)(3846002)(6116002)(74316002)(921003)(1121003)(15866825006);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3929;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 4J6dnRLo50SdI3GYGrlskzQ5kZnI3ARVO+AohaY9TvLUjG58H7tD1T9htMCzA8R30Px1J2W2w4Iqf7QmNiaqYyipvr16zio8H96MG+BYh0MxXH7MDozeD79b9NdAHhbTtXnjjjBsHaldk2iZK+iVbbVQP/34X/HQkROA+hCOFIxwZQLFfisgPbHNA0XJ+ZK2/dFBJE0D6Td0twhQdJaBlcsGpB5vExiEP+HSKR46FdIcrqy6FdPRy58sOkxWm2GnWomerxQIg+VY8aEGRyttwoghG6wzZjKnfqsliVrKw+Sa+Ia/VNYG6uYcO8/VzlbQyGi8J2OBzpIq3J47ArVqS7IjHMv+YW8NEF71Izk2NDyJWVLICvs1Owykh3WwUOvCaYY/sEx0MiXnRsx74gqyivVpfz1ccVZQzvT1aX+IAVA=
 MIME-Version: 1.0
-References: <cover.1557206859.git.baolin.wang@linaro.org>
- <1ddb1abe8722154dd546d265d5c4536480a24a87.1557206859.git.baolin.wang@linaro.org>
- <8746a913-0014-7036-7fab-4e0dfab04e1b@gmail.com>
-In-Reply-To: <8746a913-0014-7036-7fab-4e0dfab04e1b@gmail.com>
-From: Baolin Wang <baolin.wang@linaro.org>
-Date: Thu, 9 May 2019 09:44:15 +0800
-Message-ID: <CAMz4kuJaP2UGiqCRrRX=cwwyqfnmiJ0CG-BXBkTpwKE825xKsQ@mail.gmail.com>
-Subject: Re: [PATCH 2/8] soc: tegra: fuse: Change to the correct
- __dma_request_channel() prototype
-To: Dmitry Osipenko <digetx@gmail.com>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: cb208fb9-95d1-464a-079d-08d6d41fdc19
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 May 2019 01:44:22.0475 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3929
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_184428_117201_4066F82C 
-X-CRM114-Status: GOOD (  15.61  )
+X-CRM114-CacheID: sfid-20190508_184427_574464_7659D848 
+X-CRM114-Status: GOOD (  25.10  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ no trust [40.107.5.88 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -93,46 +133,245 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jroedel@suse.de, Vincent Guittot <vincent.guittot@linaro.org>,
- Zubair.Kakakhel@imgtec.com, dmaengine@vger.kernel.org, festevam@gmail.com,
- s.hauer@pengutronix.de, LKML <linux-kernel@vger.kernel.org>,
- Jon Hunter <jonathanh@nvidia.com>,
- Wolfram Sang <wsa+renesas@sang-engineering.com>, Vinod Koul <vkoul@kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>, linux-imx@nxp.com,
- kernel@pengutronix.de, linux-tegra@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, Shawn Guo <shawnguo@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: dl-linux-imx <linux-imx@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCA4IE1heSAyMDE5IGF0IDIzOjE1LCBEbWl0cnkgT3NpcGVua28gPGRpZ2V0eEBnbWFp
-bC5jb20+IHdyb3RlOgo+Cj4gMDcuMDUuMjAxOSA5OjA5LCBCYW9saW4gV2FuZyDQv9C40YjQtdGC
-Ogo+ID4gU2luY2Ugd2UndmUgaW50cm9kdWNlZCBvbmUgZGV2aWNlIG5vZGUgcGFyYW1ldGVyIGZv
-ciBfX2RtYV9yZXF1ZXN0X2NoYW5uZWwoKSwKPiA+IHRodXMgY2hhbmdlIHRvIHRoZSBjb3JyZWN0
-IGZ1bmN0aW9uIHByb3RvdHlwZS4KPiA+Cj4gPiBTaWduZWQtb2ZmLWJ5OiBCYW9saW4gV2FuZyA8
-YmFvbGluLndhbmdAbGluYXJvLm9yZz4KPiA+IC0tLQo+ID4gIGRyaXZlcnMvc29jL3RlZ3JhL2Z1
-c2UvZnVzZS10ZWdyYTIwLmMgfCAgICAyICstCj4gPiAgMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0
-aW9uKCspLCAxIGRlbGV0aW9uKC0pCj4gPgo+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvc29jL3Rl
-Z3JhL2Z1c2UvZnVzZS10ZWdyYTIwLmMgYi9kcml2ZXJzL3NvYy90ZWdyYS9mdXNlL2Z1c2UtdGVn
-cmEyMC5jCj4gPiBpbmRleCA0OWZmMDE3Li5lMjU3MWI2IDEwMDY0NAo+ID4gLS0tIGEvZHJpdmVy
-cy9zb2MvdGVncmEvZnVzZS9mdXNlLXRlZ3JhMjAuYwo+ID4gKysrIGIvZHJpdmVycy9zb2MvdGVn
-cmEvZnVzZS9mdXNlLXRlZ3JhMjAuYwo+ID4gQEAgLTExMCw3ICsxMTAsNyBAQCBzdGF0aWMgaW50
-IHRlZ3JhMjBfZnVzZV9wcm9iZShzdHJ1Y3QgdGVncmFfZnVzZSAqZnVzZSkKPiA+ICAgICAgIGRt
-YV9jYXBfemVybyhtYXNrKTsKPiA+ICAgICAgIGRtYV9jYXBfc2V0KERNQV9TTEFWRSwgbWFzayk7
-Cj4gPgo+ID4gLSAgICAgZnVzZS0+YXBiZG1hLmNoYW4gPSBfX2RtYV9yZXF1ZXN0X2NoYW5uZWwo
-Jm1hc2ssIGRtYV9maWx0ZXIsIE5VTEwpOwo+ID4gKyAgICAgZnVzZS0+YXBiZG1hLmNoYW4gPSBf
-X2RtYV9yZXF1ZXN0X2NoYW5uZWwoJm1hc2ssIGRtYV9maWx0ZXIsIE5VTEwsIE5VTEwpOwo+ID4g
-ICAgICAgaWYgKCFmdXNlLT5hcGJkbWEuY2hhbikKPiA+ICAgICAgICAgICAgICAgcmV0dXJuIC1F
-UFJPQkVfREVGRVI7Cj4gPgo+ID4KPgo+IDEpIEtlcm5lbCBzaG91bGQgYmUga2VwdCBiaXNlY3Qn
-YWJsZSBieSBub3QgaGF2aW5nIGludGVybWVkaWF0ZSBwYXRjaGVzCj4gdGhhdCBicmVhayBjb21w
-aWxhdGlvbi4gSGVuY2UgeW91IHNob3VsZCBzcXVhc2ggdGhlIGNoYW5nZXMgaW50byBhCj4gc2lu
-Z2xlIHBhdGNoLgo+Cj4gMikgQmV0dGVyIHRvIHJlcGxhY2UgX19kbWFfcmVxdWVzdF9jaGFubmVs
-KCkgd2l0aCBkbWFfcmVxdWVzdF9jaGFubmVsKCkKPiBzaW5jZSB0aGV5IGFyZSBlcXVhbC4KCkdv
-b2QgcG9pbnQuIEknbGwgY2hhbmdlIHRvIHVzZSBkbWFfcmVxdWVzdF9jaGFubmVsKCkgaW4gbmV4
-dCB2ZXJzaW9uCmlmIG5vIG90aGVyIG9iamVjdGlvbnMuIFRoYW5rcy4KCi0tIApCYW9saW4gV2Fu
-ZwpCZXN0IFJlZ2FyZHMKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL2xpbnV4LWFybS1rZXJuZWwK
+Ping...
+
+> -----Original Message-----
+> From: Anson Huang [mailto:Anson.Huang@nxp.com]
+> Sent: Tuesday, April 16, 2019 11:22 AM
+> To: robh+dt@kernel.org; mark.rutland@arm.com; shawnguo@kernel.org;
+> s.hauer@pengutronix.de; kernel@pengutronix.de; festevam@gmail.com;
+> catalin.marinas@arm.com; will.deacon@arm.com; rui.zhang@intel.com;
+> edubezval@gmail.com; daniel.lezcano@linaro.org; Aisheng Dong
+> <aisheng.dong@nxp.com>; ulf.hansson@linaro.org; Daniel Baluta
+> <daniel.baluta@nxp.com>; Peng Fan <peng.fan@nxp.com>;
+> heiko@sntech.de; horms+renesas@verge.net.au; agross@kernel.org;
+> olof@lixom.net; bjorn.andersson@linaro.org; jagan@amarulasolutions.com;
+> enric.balletbo@collabora.com; marc.w.gonzalez@free.fr;
+> devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; linux-arm-
+> kernel@lists.infradead.org; linux-pm@vger.kernel.org
+> Cc: dl-linux-imx <linux-imx@nxp.com>
+> Subject: [PATCH V12 3/5] thermal: imx_sc: add i.MX system controller
+> thermal support
+> 
+> i.MX8QXP is an ARMv8 SoC which has a Cortex-M4 system controller inside,
+> the system controller is in charge of controlling power, clock and thermal
+> sensors etc..
+> 
+> This patch adds i.MX system controller thermal driver support, Linux kernel
+> has to communicate with system controller via MU (message unit) IPC to get
+> each thermal sensor's temperature, it supports multiple sensors which are
+> passed from device tree, please see the binding doc for details.
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+> Changes since V11:
+> 	- move the API of getting thermal zone sensor ID to of-thermal.c as
+> generic API;
+> 	- remove unnecessary __packed.
+> ---
+>  drivers/thermal/Kconfig          |  11 ++++
+>  drivers/thermal/Makefile         |   1 +
+>  drivers/thermal/imx_sc_thermal.c | 137
+> +++++++++++++++++++++++++++++++++++++++
+>  3 files changed, 149 insertions(+)
+>  create mode 100644 drivers/thermal/imx_sc_thermal.c
+> 
+> diff --git a/drivers/thermal/Kconfig b/drivers/thermal/Kconfig index
+> 653aa27..4e4fa7e 100644
+> --- a/drivers/thermal/Kconfig
+> +++ b/drivers/thermal/Kconfig
+> @@ -223,6 +223,17 @@ config IMX_THERMAL
+>  	  cpufreq is used as the cooling device to throttle CPUs when the
+>  	  passive trip is crossed.
+> 
+> +config IMX_SC_THERMAL
+> +	tristate "Temperature sensor driver for NXP i.MX SoCs with System
+> Controller"
+> +	depends on (ARCH_MXC && IMX_SCU) || COMPILE_TEST
+> +	depends on OF
+> +	help
+> +	  Support for Temperature Monitor (TEMPMON) found on NXP i.MX
+> SoCs with
+> +	  system controller inside, Linux kernel has to communicate with
+> system
+> +	  controller via MU (message unit) IPC to get temperature from
+> thermal
+> +	  sensor. It supports one critical trip point and one
+> +	  passive trip point for each thermal sensor.
+> +
+>  config MAX77620_THERMAL
+>  	tristate "Temperature sensor driver for Maxim MAX77620 PMIC"
+>  	depends on MFD_MAX77620
+> diff --git a/drivers/thermal/Makefile b/drivers/thermal/Makefile index
+> 486d682..4062627 100644
+> --- a/drivers/thermal/Makefile
+> +++ b/drivers/thermal/Makefile
+> @@ -40,6 +40,7 @@ obj-$(CONFIG_DB8500_THERMAL)	+=
+> db8500_thermal.o
+>  obj-$(CONFIG_ARMADA_THERMAL)	+= armada_thermal.o
+>  obj-$(CONFIG_TANGO_THERMAL)	+= tango_thermal.o
+>  obj-$(CONFIG_IMX_THERMAL)	+= imx_thermal.o
+> +obj-$(CONFIG_IMX_SC_THERMAL)	+= imx_sc_thermal.o
+>  obj-$(CONFIG_MAX77620_THERMAL)	+= max77620_thermal.o
+>  obj-$(CONFIG_QORIQ_THERMAL)	+= qoriq_thermal.o
+>  obj-$(CONFIG_DA9062_THERMAL)	+= da9062-thermal.o
+> diff --git a/drivers/thermal/imx_sc_thermal.c
+> b/drivers/thermal/imx_sc_thermal.c
+> new file mode 100644
+> index 0000000..dcf16fc
+> --- /dev/null
+> +++ b/drivers/thermal/imx_sc_thermal.c
+> @@ -0,0 +1,137 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * Copyright 2018-2019 NXP.
+> + */
+> +
+> +#include <linux/err.h>
+> +#include <linux/firmware/imx/sci.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/of_device.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/slab.h>
+> +#include <linux/thermal.h>
+> +
+> +#include "thermal_core.h"
+> +
+> +#define IMX_SC_MISC_FUNC_GET_TEMP	13
+> +#define IMX_SC_C_TEMP			0
+> +
+> +static struct imx_sc_ipc *thermal_ipc_handle;
+> +
+> +struct imx_sc_sensor {
+> +	struct thermal_zone_device *tzd;
+> +	u32 resource_id;
+> +};
+> +
+> +struct req_get_temp {
+> +	u16 resource_id;
+> +	u8 type;
+> +} __packed;
+> +
+> +struct resp_get_temp {
+> +	u16 celsius;
+> +	u8 tenths;
+> +} __packed;
+> +
+> +struct imx_sc_msg_misc_get_temp {
+> +	struct imx_sc_rpc_msg hdr;
+> +	union {
+> +		struct req_get_temp req;
+> +		struct resp_get_temp resp;
+> +	} data;
+> +};
+> +
+> +static int imx_sc_thermal_get_temp(void *data, int *temp) {
+> +	struct imx_sc_msg_misc_get_temp msg;
+> +	struct imx_sc_rpc_msg *hdr = &msg.hdr;
+> +	struct imx_sc_sensor *sensor = data;
+> +	int ret;
+> +
+> +	msg.data.req.resource_id = sensor->resource_id;
+> +	msg.data.req.type = IMX_SC_C_TEMP;
+> +
+> +	hdr->ver = IMX_SC_RPC_VERSION;
+> +	hdr->svc = IMX_SC_RPC_SVC_MISC;
+> +	hdr->func = IMX_SC_MISC_FUNC_GET_TEMP;
+> +	hdr->size = 2;
+> +
+> +	ret = imx_scu_call_rpc(thermal_ipc_handle, &msg, true);
+> +	if (ret) {
+> +		pr_err("read temp sensor %d failed, ret %d\n",
+> +			sensor->resource_id, ret);
+> +		return ret;
+> +	}
+> +
+> +	*temp = msg.data.resp.celsius * 1000 + msg.data.resp.tenths * 100;
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct thermal_zone_of_device_ops imx_sc_thermal_ops = {
+> +	.get_temp = imx_sc_thermal_get_temp,
+> +};
+> +
+> +static int imx_sc_thermal_probe(struct platform_device *pdev) {
+> +	struct device_node *np, *child;
+> +	int ret;
+> +
+> +	ret = imx_scu_get_handle(&thermal_ipc_handle);
+> +	if (ret)
+> +		return ret;
+> +
+> +	np = of_find_node_by_name(NULL, "thermal-zones");
+> +	if (!np)
+> +		return -ENODEV;
+> +
+> +	for_each_available_child_of_node(np, child) {
+> +		struct of_phandle_args sensor_specs;
+> +		struct imx_sc_sensor *sensor =
+> +			devm_kzalloc(&pdev->dev, sizeof(*sensor),
+> GFP_KERNEL);
+> +		if (!sensor)
+> +			return -ENOMEM;
+> +
+> +		ret = thermal_zone_of_get_sensor_id(child,
+> +						    &sensor_specs,
+> +						    &sensor->resource_id);
+> +		if (ret < 0) {
+> +			dev_err(&pdev->dev,
+> +				"failed to get valid sensor resource id: %d\n",
+> +				ret);
+> +			break;
+> +		}
+> +
+> +		sensor->tzd =
+> devm_thermal_zone_of_sensor_register(&pdev->dev,
+> +								   sensor-
+> >resource_id,
+> +								   sensor,
+> +
+> &imx_sc_thermal_ops);
+> +		if (IS_ERR(sensor->tzd)) {
+> +			dev_err(&pdev->dev, "failed to register thermal
+> zone\n");
+> +			ret = PTR_ERR(sensor->tzd);
+> +			break;
+> +		}
+> +	}
+> +
+> +	return ret;
+> +}
+> +
+> +static const struct of_device_id imx_sc_thermal_table[] = {
+> +	{ .compatible = "fsl,imx-sc-thermal", },
+> +	{}
+> +};
+> +MODULE_DEVICE_TABLE(of, imx_sc_thermal_table);
+> +
+> +static struct platform_driver imx_sc_thermal_driver = {
+> +		.probe = imx_sc_thermal_probe,
+> +		.driver = {
+> +			.name = "imx-sc-thermal",
+> +			.of_match_table = imx_sc_thermal_table,
+> +		},
+> +};
+> +module_platform_driver(imx_sc_thermal_driver);
+> +
+> +MODULE_AUTHOR("Anson Huang <Anson.Huang@nxp.com>");
+> +MODULE_DESCRIPTION("Thermal driver for NXP i.MX SoCs with system
+> +controller"); MODULE_LICENSE("GPL v2");
+> --
+> 2.7.4
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
