@@ -2,65 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E3751844E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 06:08:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 31E241845B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 06:23:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=DSXnmt2Q8XRgAFNRcLPqDH1w3fVtDo+jsyuGGIUsS0s=; b=CqU
-	IWyvpSevIL7m4MSfrJ8EgtIdJzW58wzF+jFDgkhXHDwEnYaaS68eUCqhM2Xe6bik0sYDqGy8uAqzy
-	hjaPweO44hlBKzxhlH7W204Z8MbGhnZol938bfrEbIE7UwziQFlNW4hG5hy1NNmU8FGEmMPiphbmc
-	V03eO6nQAbHxsDCAP2Gx/cxJLfWo6bSwSd8DC39DWZhhqP2g7j56WoWPG/VQY31DU9lCZc/wWSlfR
-	CqtkxAgd7HjxkcVDtJPnJgmKDtWhMx6sUttjEfXjqfvsosv2UH2j9wEK5ZHRqcixSvJ+QIjMqvjyD
-	LysZaoyLBH6lAUIwJhio1okUkn3heyg==;
+	References:List-Owner; bh=DSXnmt2Q8XRgAFNRcLPqDH1w3fVtDo+jsyuGGIUsS0s=; b=lxv
+	54ftVMybJnX1qut7r9fPK+lvPcQIwV0l3xrKTytuXSpnwSpEJh0+mc8MoZsTxyj6S3eTkNUOYHHpS
+	LqEfSJOpR+K3MwVlCEXIFHcpjIZrTajTE3eiGIq0aKZqvM6N3TX/C1S4Cfi52zk/9W7H4weHsfSn1
+	VB9Es/evPVRtVzCGtV3HgMv1hmWhNjfJrL7fnm016ONxyaQkIDcXWIOUUtQMuTzA/UaN10FOqePDL
+	0+WP4zFblL6+htY8XF82FDfyHCGCtbpN2QKo5DAEX3Lfw/EkjBcW+BCChTxBk80z1v2Sk6Fd/HR3H
+	+bO8TsfA0Goj+givNhfPBQIhmrFCz8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOaLi-0001Ly-GN; Thu, 09 May 2019 04:08:02 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1hOab5-0005iT-Sd; Thu, 09 May 2019 04:23:55 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOaLa-0001LX-TT
- for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 04:07:56 +0000
-Received: by mail-ed1-x543.google.com with SMTP id b8so718313edm.11
+ id 1hOaax-0005i5-UR
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 04:23:49 +0000
+Received: by mail-pg1-x544.google.com with SMTP id c13so521285pgt.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 08 May 2019 21:07:52 -0700 (PDT)
+ Wed, 08 May 2019 21:23:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
  h=from:to:cc:subject:date:message-id;
  bh=rcSJ7jMxGzSyHBuvTtybXntBxEii0S3igF/TJN9iQIM=;
- b=QPVRsbDGwbwOKduzLxNA/St9KZmC5Ae8sNTu9LmM5AJtu04sEiBz5fJHFNo9UD7hEs
- 8G3lxwQrInn/dkSYjdxreFZgNxIeYPSNjMEBtRQywrH2lwnTRpD0jktriN4AEzzrKN6Y
- /kzkwF2nNfxFDwopA0LPJWgKdvEgYnlRe74bw=
+ b=OgWLtWdzXyiFLfdZWXjU6oUQyEbWzNrIBgpaNF2imc3orAYhSfxENDT/pQIrWt2LXs
+ lX4jIbDxCZeAURP5vw1tPE/9VkATES4l2airRsgDJDa1SHhMhVNvkZjQOW4yTDoizpVt
+ zpxsvy1YPBHntCWQtWgdf6xw/LOHPo+EdfZn8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id;
  bh=rcSJ7jMxGzSyHBuvTtybXntBxEii0S3igF/TJN9iQIM=;
- b=iS+QVshciZcoEMr7sv/iQFmWN3GXn3fHau/ZrnKBAscY4wD4MXITqDESYT2FoNCdyP
- 8dyx6rb6H8Y4YIe+bBnxSjZDJ23GIVTxRwtp2tEWWjPmkgULwBTUXtK6J2UpmIcGObIM
- DwymtlDBweL62k3hZ3iehcXYcTA/e9WxheaTLOWTBj28x9fhUIb+QlEtPzBKDSoiRRzc
- CUjaAC3eCyKptHWIcKRpbntzLXC8oMT2ZnrT/fHjT7ASqHhtlNshQYE59CwMftP1Acx5
- zfh2dMnLRjItwI/bHdBrIub24EIRSJ1nmXl51cJP5hN/MGnoyHF6vG+g/DRx539/IzlB
- HnjA==
-X-Gm-Message-State: APjAAAXS8jAEszeyiz03ZkvcCuJvt2CzEWiVXkQLRY/Kok8uRT4pADfg
- M14uEIjnVclQUj8cKQsDDkbxpg==
-X-Google-Smtp-Source: APXvYqxcOrc5gd9eDfHxiUPAuBj3NuxKGu9eRVP6WLM+z/Zwia0Xcd911wSrmY3vokbdinZ67Lp8+w==
-X-Received: by 2002:a50:930e:: with SMTP id m14mr1438356eda.93.1557374870816; 
- Wed, 08 May 2019 21:07:50 -0700 (PDT)
+ b=EPdLlXLLM10No9HGvXa0xY93B4UazEx+y/ZPnyhf3IU15ALIOsTbDYHmnrWsTA/MuB
+ HMIsae6QD+//Wn+3j0sK5foXZoo4gRQfVzArJG7V+pt2DwbpMy2gZflSuFoyOG50+wJ1
+ sgo1AvUUKh7Abr/KvEsGm3ZivrfAuo1FNYivJg34nFCtWApC2vjL5JzaMtZkI1CyANfV
+ Rb9rAAWyvbeTxK8+oVXdUllLlSpOZYWo9eLIw4XNiIFOociUTvqqYvdix6+UgofqE6P0
+ 51JZgWXlhRipTC2dioPhFd3VFaNyvwPLHigLpCpO3uw8fhk+EOrJpQVhKN/cnInKZnbM
+ f6gg==
+X-Gm-Message-State: APjAAAV2W3/yxqPu1r0yZIy5+MpcR4stqRC5yGpZsEhe0pShSBc+XpMi
+ MHb/PYMiqyrZHSjjY1bbSftPog==
+X-Google-Smtp-Source: APXvYqwpelRZDsRfFPpgs0RyfRJ//3WYRBNMvrKAp2Xdj+PZigfjMW7TqYieOosXHwh4cqCL7lawQw==
+X-Received: by 2002:a65:64d9:: with SMTP id t25mr2813367pgv.130.1557375826686; 
+ Wed, 08 May 2019 21:23:46 -0700 (PDT)
 Received: from rayagonda.dhcp.broadcom.net ([192.19.234.250])
- by smtp.gmail.com with ESMTPSA id a61sm257424edf.8.2019.05.08.21.07.45
+ by smtp.gmail.com with ESMTPSA id l65sm1313352pfb.7.2019.05.08.21.23.43
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Wed, 08 May 2019 21:07:49 -0700 (PDT)
+ Wed, 08 May 2019 21:23:45 -0700 (PDT)
 From: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
 To: Wolfram Sang <wsa@the-dreams.de>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>
 Subject: [PATCH 1/1] i2c: iproc: Add multi byte read-write support for slave
  mode
-Date: Thu,  9 May 2019 09:35:17 +0530
-Message-Id: <1557374717-14603-1-git-send-email-rayagonda.kokatanur@broadcom.com>
+Date: Thu,  9 May 2019 09:51:48 +0530
+Message-Id: <1557375708-14830-1-git-send-email-rayagonda.kokatanur@broadcom.com>
 X-Mailer: git-send-email 1.9.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_210754_957953_201113F0 
+X-CRM114-CacheID: sfid-20190508_212347_989906_8496ED9F 
 X-CRM114-Status: GOOD (  17.80  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -68,7 +68,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
