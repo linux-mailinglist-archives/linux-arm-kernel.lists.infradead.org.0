@@ -2,73 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CAABA187D1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 11:33:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A79A187D6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 11:34:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1NIlSE74VZMgS0RcxMotFu1ZnZ6/P6+fPvmXDF+mkjE=; b=kTZQqGIJhzoovl
-	wqeQBJMPg8bHRQ7P4nV0QQkJir/yCqybAj3NR+avHhWc1VYpWgOuZA4nMCgiGaHkt6slxr6rx01/2
-	xtBv6x3kBvo51Ge7J8qjs1QyjfFgjrVhYaadds56fTxqnn2okIe5TFezsJjCQjAkxkKhqARmk2t+u
-	Np1UVbkfddTBfE5d4HzxdyleBs/Dfnim8+3z1Sv8Qqdl3nyvtkzjOiFQWWjVitu2QQ0iXUPFYo/9Q
-	ZB7XSQNj9HZX4nroHM1/W+ngnTT2ajU0PnEOiEcDyFSoP5zdH+Xbba3YSUvdC7BEGnBJFKU6Mq6vF
-	7eGJ9rsnBSoy3Fm6wMEg==;
+	List-Owner; bh=iRrzmNf5bcbaUTf5y7tXy6K9wyMk8kbJGXpDIPayqKs=; b=EYUY1zuwKxI6Jr
+	r3sjgVBsFhhml9dGBbpLtYZLUs5DYgiDrLjzm6uIR50Did5Y91kSgo9qOmnvnj0lLsHw/3y2nGzBn
+	IeQKkswqO4acryR1mJ/OTbk9d7CnI1Z9JiyUJqGbVowCFHlp2KoJoYe3fvCf7HdmFD4wtGiar4Wvf
+	kiyo+gtgKQNrikscCcLsgiqB4GjHvX0nom7dEfBNCU1aoXwzNjRJtdRUjgY3sGBVri+S1ibk41PY0
+	dTHba231JOhXA3sWgGeQlG8OIWZnv0D4osBUKeJ8NJ/mE94k2HUjo+YDqyei6xTsGYYhnFS4vgPll
+	uPOPaht3bhPDVgNRKK9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOfQq-0006rd-Bs; Thu, 09 May 2019 09:33:40 +0000
-Received: from mail-vk1-xa42.google.com ([2607:f8b0:4864:20::a42])
+	id 1hOfR8-00076t-H2; Thu, 09 May 2019 09:33:58 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOfQb-0006qw-4M
- for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 09:33:26 +0000
-Received: by mail-vk1-xa42.google.com with SMTP id d74so429515vka.3
+ id 1hOfQi-0006wo-1v
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 09:33:33 +0000
+Received: by mail-wm1-x342.google.com with SMTP id j187so2273094wmj.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 May 2019 02:33:23 -0700 (PDT)
+ Thu, 09 May 2019 02:33:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=BjNhpWRs8f71yrAy3RgUQYa6ESreaTDpHDF1kJYFLi4=;
- b=KqSPRhDS3nRo6SLQ0wCjG0lGUyZOeVoZJ2tjzg1y89vGU86T/aglOfWjN70bV/PozK
- SAQdDSt46ucXZgJcYI6xYNd4nFSG3cVQgB9iMZzfJNa6xQHrZU54uFOofmTVvvGkCslG
- EuCVUYEKIrKT8zWq2ATAwg+uYKnBlO9FvOxNEbeiNlJPDQGtHBnNNkae9Yb7U4mf8+A0
- nUFznRgVCbXsfBW0qnQORreJPuSBrxVMUYohEHe/gMaq0Plod8r+j1aRgNCbAuzIJKpJ
- isFey/3STdqpSu7IJb0l+4UQADxf2l5/vKY43R4EPnXXLbuWjsvVfRs5YVzFw/GSo1NB
- 2oag==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=SyRgRxtjdMJpbsjK9vjm2B3TwSm8QJJ2pjmdSOpbmps=;
+ b=AauaUrfm2cnOW6SNDfuMRv0+hlgU2BgvMMo5qTYqMWmgv0tM2Y605oJ9MDb6GCKkyr
+ xxLZDhgFvVAUlAqzhZZgGwA2pJ050Cg3c+g34asToSOFZ08TE2qbNZLS3DeuykRS59oz
+ 8+wg3JumczxfcDO7Pl6qu7oRNbTm/41lIdyzvY1NkLggKzIkIhVByv0CcEtkutzoETEX
+ NxstvI4XTnL3mAERfoDswn2CPdQJx+hVe0gJm0AM6FQHrltYCRVbW5fJLJS4w4cxHgzg
+ ACVVbtk5SuzhgRFF6Z67DPh3S/iQNyWj0leAwGWeu9gnUt6RivRWexcjB7HEr88L+o0d
+ BWvg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=BjNhpWRs8f71yrAy3RgUQYa6ESreaTDpHDF1kJYFLi4=;
- b=P6VU2DLg/4uixGJA5njBPnZ+XQnbZg85FDZ+ZPdjsbsblQFB9H+GKVlEeBOqLskDQw
- cPaldP01QHs7oZx03+vpJ9GFuubsAqZjV+q9nQgmJ1ZvNT8cFlYtnIqyBM5+NPkCmr5N
- fNCSJXXqOODE9UFVouiteoAXaRUWrCp3LWvO8Y7roAJjvNfqnhrj3K5kd+wwouvR/Bxx
- 1ajp+qFmg4wMSjz9NEgsGlYSh5GaY1K6J0XsLrjEYzSscOQI/Rsugo6x3ptWH1Cj/2h3
- TmgruY8Vg1Jr+13hLzrueEO67ef97i7luiAsAc12HSWNIeYzhsOa8fWj7zCjTUSk9Mrx
- 7Vcw==
-X-Gm-Message-State: APjAAAXpde1nOowqU37+Dy/ETGb9egpMYPO7/QmxcFzSuli6NVBfWBH0
- 576/aOrw51wppBbaG8wPiw4UPkO9PedHJYXlVR5ptg==
-X-Google-Smtp-Source: APXvYqw6L3/4Ch+tH/DhayP44e50T5LigFBZhZJZQfM8xmm5TYt/0B4S7cFMoCH6vW3b0Xni4ybNxsJKxGoH6NVT8pU=
-X-Received: by 2002:a1f:2d90:: with SMTP id t138mr1110666vkt.14.1557394402774; 
- Thu, 09 May 2019 02:33:22 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=SyRgRxtjdMJpbsjK9vjm2B3TwSm8QJJ2pjmdSOpbmps=;
+ b=brVUe0wybOIno2N/9sn7OniEyRXX+9q4YT1MjxLeyg6p9BViCabb49U4uEJhayyS7d
+ 506m8bJEO6pyO9iZ4vY62+yi/hd0H9mYPHBMEJaWAqWqAgO9deFud3/O3uCIElnXj/YJ
+ 6zabPdMkFDsYbl0eIB7pN67fHbn1uaE3wdFsEiwGlpJhDGHbKz10/zVyusOZDjfjq6if
+ kaRpl0IicpBXQoaNl7EVAKr3/2r+Wpj+hT4NqjaqATpplynxpW+BqLUq0Nt/qCNf8ChU
+ sX+JIY+6A+YyMK3hOKuozspxsd/AxB0n3bsEiDRShLAPAQwyUYqt2/GXDnXwd5ZNBDWI
+ Qv6w==
+X-Gm-Message-State: APjAAAUfytl8w6uJQj4WY5/fcLKqa8J4YsEGpdpj58/5GlmDoj86yURb
+ 1drzCwA4xb1Ua26Va6/TAqAzOQ==
+X-Google-Smtp-Source: APXvYqzWxiSGBE8sUUva3+DpZ/awGVFeFFPJtZu5iHJoO63RJCNa28okuodpAuszCvvYsv8zSHsUTA==
+X-Received: by 2002:a1c:f111:: with SMTP id p17mr1919584wmh.62.1557394409462; 
+ Thu, 09 May 2019 02:33:29 -0700 (PDT)
+Received: from dell ([2.27.167.43])
+ by smtp.gmail.com with ESMTPSA id j131sm4430911wmb.9.2019.05.09.02.33.27
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 09 May 2019 02:33:28 -0700 (PDT)
+Date: Thu, 9 May 2019 10:33:26 +0100
+From: Lee Jones <lee.jones@linaro.org>
+To: Amelie Delaunay <amelie.delaunay@st.com>
+Subject: Re: [PATCH v6 1/9] dt-bindings: mfd: Add ST Multi-Function eXpander
+ (STMFX) core bindings
+Message-ID: <20190509093326.GV31645@dell>
+References: <1557392336-28239-1-git-send-email-amelie.delaunay@st.com>
+ <1557392336-28239-2-git-send-email-amelie.delaunay@st.com>
 MIME-Version: 1.0
-References: <1557310449-30450-1-git-send-email-sumit.garg@linaro.org>
-In-Reply-To: <1557310449-30450-1-git-send-email-sumit.garg@linaro.org>
-From: Sumit Garg <sumit.garg@linaro.org>
-Date: Thu, 9 May 2019 15:03:11 +0530
-Message-ID: <CAFA6WYMPKxwxzbU=CFYLw83kpXP9LwMQ3-N-hp2NyExhs_HjSQ@mail.gmail.com>
-Subject: Re: [PATCH] MAINTAINERS: Add mailing list for the TEE subsystem
-To: Jens Wiklander <jens.wiklander@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <1557392336-28239-2-git-send-email-amelie.delaunay@st.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_023325_173572_66F50355 
-X-CRM114-Status: GOOD (  14.33  )
+X-CRM114-CacheID: sfid-20190509_023332_198508_5382B83A 
+X-CRM114-Status: GOOD (  11.74  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a42 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -89,62 +99,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tee-dev@lists.linaro.org, Daniel Thompson <daniel.thompson@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
+ linux-gpio@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 8 May 2019 at 15:44, Sumit Garg <sumit.garg@linaro.org> wrote:
->
-> Add a mailing list for patch reviews and discussions related to TEE
-> subsystem.
->
-> Signed-off-by: Sumit Garg <sumit.garg@linaro.org>
-
-I forgot to include following tag as this change was suggested by Daniel. So:
-
-Suggested-by: Daniel Thompson <daniel.thompson@linaro.org>
-
--Sumit
-
-> ---
->  MAINTAINERS | 3 +++
->  1 file changed, 3 insertions(+)
->
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 920a0a1..c05dff7 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -11556,11 +11556,13 @@ F:    drivers/scsi/st.h
->
->  OP-TEE DRIVER
->  M:     Jens Wiklander <jens.wiklander@linaro.org>
-> +L:     tee-dev@lists.linaro.org
->  S:     Maintained
->  F:     drivers/tee/optee/
->
->  OP-TEE RANDOM NUMBER GENERATOR (RNG) DRIVER
->  M:     Sumit Garg <sumit.garg@linaro.org>
-> +L:     tee-dev@lists.linaro.org
->  S:     Maintained
->  F:     drivers/char/hw_random/optee-rng.c
->
-> @@ -15312,6 +15314,7 @@ F:      include/media/i2c/tw9910.h
->
->  TEE SUBSYSTEM
->  M:     Jens Wiklander <jens.wiklander@linaro.org>
-> +L:     tee-dev@lists.linaro.org
->  S:     Maintained
->  F:     include/linux/tee_drv.h
->  F:     include/uapi/linux/tee.h
-> --
-> 2.7.4
->
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVGh1LCAwOSBNYXkgMjAxOSwgQW1lbGllIERlbGF1bmF5IHdyb3RlOgoKPiBUaGlzIHBhdGNo
+IGFkZHMgZG9jdW1lbnRhdGlvbiBvZiBkZXZpY2UgdHJlZSBiaW5kaW5ncyBmb3IgdGhlCj4gU1RN
+aWNyb2VsZWN0cm9uaWNzIE11bHRpLUZ1bmN0aW9uIGVYcGFuZGVyIChTVE1GWCkgTUZEIGNvcmUu
+Cj4gCj4gU2lnbmVkLW9mZi1ieTogQW1lbGllIERlbGF1bmF5IDxhbWVsaWUuZGVsYXVuYXlAc3Qu
+Y29tPgo+IFJldmlld2VkLWJ5OiBMaW51cyBXYWxsZWlqIDxsaW51cy53YWxsZWlqQGxpbmFyby5v
+cmc+Cj4gUmV2aWV3ZWQtYnk6IFJvYiBIZXJyaW5nIDxyb2JoQGtlcm5lbC5vcmc+Cj4gQWNrZWQt
+Zm9yLU1GRC1ieTogTGVlIEpvbmVzIDxsZWUuam9uZXNAbGluYXJvLm9yZz4KPiAtLS0KPiAgRG9j
+dW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL21mZC9zdG1meC50eHQgfCAyOCArKysrKysr
+KysrKysrKysrKysrKysrKysrCj4gIDEgZmlsZSBjaGFuZ2VkLCAyOCBpbnNlcnRpb25zKCspCj4g
+IGNyZWF0ZSBtb2RlIDEwMDY0NCBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvbWZk
+L3N0bWZ4LnR4dAoKQXBwbGllZCwgdGhhbmtzLgoKLS0gCkxlZSBKb25lcyBb5p2O55C85pavXQpM
+aW5hcm8gU2VydmljZXMgVGVjaG5pY2FsIExlYWQKTGluYXJvLm9yZyDilIIgT3BlbiBzb3VyY2Ug
+c29mdHdhcmUgZm9yIEFSTSBTb0NzCkZvbGxvdyBMaW5hcm86IEZhY2Vib29rIHwgVHdpdHRlciB8
+IEJsb2cKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxp
+bnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
+LWFybS1rZXJuZWwK
