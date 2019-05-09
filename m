@@ -2,99 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A06D18764
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 11:04:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9474187A6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 11:24:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=Z6Q0TvwLPqUwzbAyWDkZSLbSoF5Qjv3ig1NOTJXO8Wk=; b=u1pm3ox2XHDUAU
-	EVXnBAXhYkk2wdHPE89+/Tq6XBmnHqViQXnQxn2jS8Gqqqe66acjJuIJpDSMLjzJU9PaAwJu8+Zwz
-	0wU9ul5Q1qjZKoHerr1lD3OFkFC/RGZx0taSsjcCXbMmH2/Nkg5ZJYFAGuV0Ix5MP24hBv1K+tgvx
-	hrFEv2gdiySZ1S/rQ92nCamBJfSqYYJ7wXlBu/GoOI+4j9+DfF0jBw9gh+BMm0glP2vzn5UPq+BNs
-	K4PRyH/soFKoUE62brrPqmIuR8onzmFMTkMiI0S3p7QIqhrdZTjJ/Dnb1yn7oneYmyFNHQGi+u5Bu
-	Ve97NyOHtkxWn3lnFxvw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=U4um+zI5tmAAcmE0WPADbBqQChH+qPiFvQiPTzDJrUI=; b=BdG6LPD9wLYRNv
+	fQ2TqbFanZieByJLnSN4nUbjXrlZgjuRXarJPX+UDxXbOIVHK79UsV80Z8P9jqdEO1j8zW4QJrMiE
+	UW/g7hKYqnjnoBZ0MeX5WwXph2hCxAdbUPHarVkvt3N/H5gpSFLtCGnyAVJCSSJCKehJ1VwBb3R6C
+	Z7LmAYWy7Dv/oc4zvlsrE8MXGgf9Dxfe+9I14/+b80usjHhom8XqwApmju2HUtQ3sCzFXF+Sm7hzw
+	i3qIDM/ugBRmgo+TnQr/0YZxOxeUoMzpLBcJ1Br8848HrxKlAnMRM9P4sQ7aC9V3mlHeEjOMjji5W
+	wdrhXxpZHzBZpcwqnDFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOeyS-0003Pu-LV; Thu, 09 May 2019 09:04:20 +0000
-Received: from mail-eopbgr50081.outbound.protection.outlook.com ([40.107.5.81]
- helo=EUR03-VE1-obe.outbound.protection.outlook.com)
+	id 1hOfHV-00035G-2J; Thu, 09 May 2019 09:24:01 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOeyC-0003Ow-84
- for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 09:04:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HvJEZvcf+/zKQ9BGas0DqEcVVrbh1g65utD51tDgLKk=;
- b=mFvhM2nQ5d4nR1OZ/i33zpQVpUzO2fEHfIzcB9g5J5AKTS4WeUuoVCd6zng2GYE/hIeLbqbGBbisDI1bXJuIlpd/j92I9Qsnl8lVflPkkbpXQXl8wnVQoQumBUbArF28YBkhmUdfY/QH1CLBL7AmOdB8xbdnpmGeWaYYQbkaYJE=
-Received: from AM0PR04MB6434.eurprd04.prod.outlook.com (20.179.252.215) by
- AM0PR04MB4276.eurprd04.prod.outlook.com (52.134.91.150) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1856.12; Thu, 9 May 2019 09:03:57 +0000
-Received: from AM0PR04MB6434.eurprd04.prod.outlook.com
- ([fe80::19be:75a:9fe:7cec]) by AM0PR04MB6434.eurprd04.prod.outlook.com
- ([fe80::19be:75a:9fe:7cec%7]) with mapi id 15.20.1878.019; Thu, 9 May 2019
- 09:03:57 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Viresh Kumar <viresh.kumar@linaro.org>
+ id 1hOfHA-00031d-Ei
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 09:23:41 +0000
+Received: by mail-pf1-x441.google.com with SMTP id s11so988597pfm.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 09 May 2019 02:23:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=qMvKlIPlrNL8Lr3tsJwCK+5Y/oer0uCBV35dDO8Zkrk=;
+ b=NIb2WRlPHYJaY9APSYPOmpC5vacCSIV3cMrBiWQ3B/dHkyFxJvA/UfHvbpyMUbKDCz
+ gsufdXoTyBDhCnJyNmutfJSncarmM/zS6n0dbQA8l6odxlzRq6vvgDBAcaAz4Y3CprJ+
+ TYr/norj9dDW0G+uGhWb6id+gMBiW4Yp7jk8QLbjv4shl0/JdOjGCOqDJNr8kIkjJeP1
+ To4l6DWyIZpgoDAKXVGV5D4hssD0JJYO28tTGbBiN/ICU9cfY4dgv8JvNeoZ6fIExqES
+ oR/gnsa/+UMi1JMtVbQ/VajewNslieyh6+0dGBjIeIsRQmQZfmJPyHm8JRhUAoudd9N1
+ fwiw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=qMvKlIPlrNL8Lr3tsJwCK+5Y/oer0uCBV35dDO8Zkrk=;
+ b=Ynn/I11WK0csXtfZzkXaC4Z9S9Z0Kk9OpYcqyWrmDfO7z/G7WmxPnUTibIcLObQzJy
+ L+hLrxULKz1T2ayHMk0r3sjV2b0o3sJdPpFMfHQ1OEHmF0oFxzChuKbs65rir77Xm0H6
+ DCAWDpnMH7qcYIWcJygACwIjBdpIUn0c/B4l33hE+OkxHpVhg6tF3m3GgDfTo029Wkq1
+ k2jMm7GypqECCH1B1a4G9Ofs8Z6WKN6cvuqm6YTQ6mnjtzWn6yCe6dJY7RVD6QZnI7Ll
+ /+ZD8VydI6TNe9ZgfODBRoqY8mPUTx6hS5thVb+vbdbKqGXspMEkBdzpyG0R4Qwm504x
+ aC+w==
+X-Gm-Message-State: APjAAAUvT0yOfrm7ud+By4Dp2GT/E9hNuFokuQdVtJ8BJIb3ZCCekmIw
+ Bqfvxvo6go1T/h/twiagvbfC1A==
+X-Google-Smtp-Source: APXvYqypzpGZwMmGq/H4pQzwC/KWTbyJwztPpSpuLhtDasGDGxwbvdZQyeDTYFPbKi+URMbMIDz2NA==
+X-Received: by 2002:a63:5608:: with SMTP id k8mr3998732pgb.393.1557393819018; 
+ Thu, 09 May 2019 02:23:39 -0700 (PDT)
+Received: from localhost ([122.172.118.99])
+ by smtp.gmail.com with ESMTPSA id 124sm2897822pfe.124.2019.05.09.02.23.37
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 09 May 2019 02:23:38 -0700 (PDT)
+Date: Thu, 9 May 2019 14:53:36 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Leonard Crestez <leonard.crestez@nxp.com>
 Subject: Re: [PATCH v3 1/4] cpufreq: Add imx-cpufreq-dt driver
-Thread-Topic: [PATCH v3 1/4] cpufreq: Add imx-cpufreq-dt driver
-Thread-Index: AQHVBNwYbcAcEPdpgkaJW0PvBwINFA==
-Date: Thu, 9 May 2019 09:03:57 +0000
-Message-ID: <AM0PR04MB64349B11B2A914F705B6D302EE330@AM0PR04MB6434.eurprd04.prod.outlook.com>
+Message-ID: <20190509092336.jw54pzq7i7gzcuky@vireshk-i7>
 References: <cover.1557236799.git.leonard.crestez@nxp.com>
  <607242a278a4532d0b4285e0fb56abfd5767fdd1.1557236799.git.leonard.crestez@nxp.com>
  <20190508035402.7pbikzpkzxxesmlw@vireshk-i7>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [95.76.3.64]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 71a42e18-3478-429c-edb6-08d6d45d4536
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB4276; 
-x-ms-traffictypediagnostic: AM0PR04MB4276:
-x-microsoft-antispam-prvs: <AM0PR04MB42761E359C3148878C04EA10EE330@AM0PR04MB4276.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1468;
-x-forefront-prvs: 003245E729
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(376002)(346002)(366004)(39860400002)(396003)(199004)(189003)(66556008)(66946007)(64756008)(66446008)(73956011)(66476007)(8936002)(68736007)(486006)(446003)(102836004)(52536014)(44832011)(7696005)(6506007)(26005)(76176011)(476003)(186003)(74316002)(53546011)(4744005)(99286004)(54906003)(33656002)(256004)(25786009)(71190400001)(55016002)(71200400001)(6436002)(6916009)(6246003)(7736002)(2906002)(53936002)(5660300002)(66066001)(3846002)(6116002)(316002)(8676002)(91956017)(86362001)(76116006)(81156014)(81166006)(14454004)(305945005)(478600001)(229853002)(4326008)(9686003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4276;
- H:AM0PR04MB6434.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: cnCCRj2TTFaxyOUTmxMW9/zuFaHrZlAb41wy8eShKBt4t9QV+/6XLNfrWjUDnMEk/3zBh3ux5ceNSeqeJqxllXcbBMneKVlV4Iu13niCPn8wQlRWevUNpEAh8U2zVMqJFNP4aNrz0nLgbpXaswllvYhcnznVS0IzzFGp0M3kwgj1jvYpf5bOQPjrHCMT8Syi7udl8M2oXaGGGiDWDkR7FRUepWnQ8nJByAuxPfht7F7DSTiuoVZsd3UVyKGZcqrtj2bCpT2Oav+pKMdXhBo+GCzZDVK1L2p78p0gqShOw2HFyDgF1OFBZs2n1H2nwnUZnJ+32B2JJ3aSf0F5SsZP4bZJb9pNsSfMkDL8wQFcTNfsutXyXs74of/vrcZ0f0SIUpYJy2t4ZyJ7EGCdj0GtaRwku6rUSkUwPUPLoL9cEfk=
+ <AM0PR04MB64349B11B2A914F705B6D302EE330@AM0PR04MB6434.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 71a42e18-3478-429c-edb6-08d6d45d4536
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 May 2019 09:03:57.6649 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4276
+Content-Disposition: inline
+In-Reply-To: <AM0PR04MB64349B11B2A914F705B6D302EE330@AM0PR04MB6434.eurprd04.prod.outlook.com>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_020404_546578_471FC225 
-X-CRM114-Status: UNSURE (   7.46  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20190509_022340_568780_49B03971 
+X-CRM114-Status: GOOD (  13.28  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.5.81 listed in list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [95.76.3.64 listed in dnsbl.sorbs.net]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -116,8 +102,8 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Aisheng Dong <aisheng.dong@nxp.com>, Mark Rutland <mark.rutland@arm.com>,
  Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
  "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>, "Rafael J.
- Wysocki" <rjw@rjwysocki.net>, Rob Herring <robh+dt@kernel.org>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, Rob Herring <robh+dt@kernel.org>,
  dl-linux-imx <linux-imx@nxp.com>,
  "kernel@pengutronix.de" <kernel@pengutronix.de>,
  Fabio Estevam <fabio.estevam@nxp.com>, Lucas Stach <l.stach@pengutronix.de>,
@@ -128,25 +114,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/8/2019 6:54 AM, Viresh Kumar wrote:
-> On 07-05-19, 13:52, Leonard Crestez wrote:
-
->> +config ARM_IMX_CPUFREQ_DT
->> +	tristate "Freescale i.MX8M cpufreq support"
->> +	depends on ARCH_MXC && CPUFREQ_DT
->> +	default m if ARCH_MXC && CPUFREQ_DT
+On 09-05-19, 09:03, Leonard Crestez wrote:
+> On 5/8/2019 6:54 AM, Viresh Kumar wrote:
+> > On 07-05-19, 13:52, Leonard Crestez wrote:
 > 
-> As I said in the previous version, the if block above is redundant and
-> not required.
+> >> +config ARM_IMX_CPUFREQ_DT
+> >> +	tristate "Freescale i.MX8M cpufreq support"
+> >> +	depends on ARCH_MXC && CPUFREQ_DT
+> >> +	default m if ARCH_MXC && CPUFREQ_DT
+> > 
+> > As I said in the previous version, the if block above is redundant and
+> > not required.
+> 
+> Sorry, I misread and thought you were referring to () rather than what's 
+> inside.
+> 
+> Is "default m" otherwise OK? It's a reasonable implication of ARCH_MXC
 
-Sorry, I misread and thought you were referring to () rather than what's 
-inside.
+I think it would be better to keep it disabled by default and so
+removing the line all together would be a good option.
 
-Is "default m" otherwise OK? It's a reasonable implication of ARCH_MXC
-
---
-Regards,
-Leonard
+-- 
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
