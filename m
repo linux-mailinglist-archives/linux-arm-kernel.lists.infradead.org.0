@@ -2,75 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CCEF19368
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 22:30:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D2B119369
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 22:30:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=gdmdiTBioFW99UAhQxgcVIKSnE9CJ1IhtadxNuNPDF0=; b=NQ8
-	E7jdLF0ZzbHRPvN25zOHGG2oxY7U+lkG3q7f+pMd4wrF+FGP/Bz7r7SAP4wyT+Zz0UC2gShy/WAeY
-	MNXDwciW+GDM6h35fRwu+Bu0DGngRnf5fWWHseDouWbc2OkkVKhBz3ftOqbIRmLUKkQkybnllJOre
-	mmtD/qk88deciFGPhugnRzgTlA7CM6wRps6XrsdCxzGLKWVqMOCUaPtJSXrWdMbeH/23lk+C/vbGq
-	KJirFfAXxmcFOHpaaC1NrFM5/oXaA8OP67XTy8UDldFozR5gQp0WGlDcr9EWTr/Iq4jl8H1qXzb9j
-	d6IFpZojOmlV4ZB37tQ4TJtTXp9/Lag==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=slx4vRgAV3fVdkrmFzd/jbXkAfymt7py1s4XQaydXXU=; b=nN0lDv/c3sfEWoW6TN/P2Zc9Ol
+	LIpwgMYN4DT5JMTSytyy8vQ/hY7qhbbsJfD73NYytUqYJ+pV76wDiJGVfna/I5TVoYavv9SHJ1RYm
+	7GgzJWdp195mPGPgtJM5xOmz4b/tbXMmo/yFo61G38sbsaHUdwUNeQC6sJtFKbJ1we4Saft2nzAYt
+	9S2zGdVHdTV0cCb/0Aa9n7hp3FUbZ26Ss5XiQkHb26WMutb8hOIVO/CMW8CwUtouq24q3PyaoG/HB
+	jQJdsdq8ELmw99aJpl+Gjm6i3qGWORS7boWgVMa3z88Oq+Mn+8GfFGIZOS7EuLtIlw0nMlcJ7vlsJ
+	PV5Q5clw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOpgH-0008Qf-8u; Thu, 09 May 2019 20:30:17 +0000
-Received: from mail-yw1-xc41.google.com ([2607:f8b0:4864:20::c41])
+	id 1hOpgR-00007X-Tr; Thu, 09 May 2019 20:30:27 +0000
+Received: from mail-yw1-xc42.google.com ([2607:f8b0:4864:20::c42])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOpgA-0008KV-92
- for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 20:30:11 +0000
-Received: by mail-yw1-xc41.google.com with SMTP id a130so2897318ywe.13
+ id 1hOpgB-0008Pl-P8
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 20:30:13 +0000
+Received: by mail-yw1-xc42.google.com with SMTP id e74so2903903ywe.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 May 2019 13:30:08 -0700 (PDT)
+ Thu, 09 May 2019 13:30:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=4Uc1sxWlZenzjNtw/v4Bu0vw6ThmoS5rTB+EikbKMzw=;
- b=g0xmpFiIyYDNtnP8/cR+PuL+UNRGGblsJgGR0K8vdvAZrBMnyWKNYLS0wwM/ZbaeyN
- 54df6yMCkkZ+zVvQwuPDCaHQ0vO1qgsZPoLeZV9d/vNJkXdz5Jzak9cjocWm7tsLddHG
- sdR14VQ0GlXDvDnM0YMQo8jOc3c2V2KVmDbVEd/GNksGjBgWqsgTG1Mgprf0cLnm162s
- OuNWgFHVmY9/YfW11U8qxVgwgRFpxeufexjKccS8OrWFY+nOtUdiwPCREAqoZbTESVl9
- fwas8BeS3epJXxPT3tP3AG2dPgNoBUUP/OHi7kP9tM+ckVoUU2g41G9JAw7JdgvQuIYe
- Jr3g==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=s82+opXHpmp64Nz4MPGFV0t/BAuzu71N7INCBgfaQTY=;
+ b=K5bD6V37E1rdQ5p1wr2nXyvqaLA0XYp2KfF6z7BOX3FuTRXXoR6e8NuS/cQreCmBjl
+ mvNn8xBdXpj8mnVaxAG+DjKzqSM3+CgFa3daukKCoxorjoHJAQ/n3lCm1sf8uAFxBjY/
+ zsSnzn1stvCG6VL06lr9oqVCGlx4Bd8weSpaeA2Ot4KeXBKT3BsLlslMy40HopsWTQeF
+ lRanxQVrzvQ1h9Lv3iRH53K89tDuLmMlzUvtIRIHcLl5tvgW2oQp4XB1Pj+YRhjYCv4G
+ wNIrovNokoFmBaLAjrLjxWOYI+Oe0oU/zDMDyWckXjCj5NhX8GKIRCjoG/3oXFA2V2DU
+ PKWg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=4Uc1sxWlZenzjNtw/v4Bu0vw6ThmoS5rTB+EikbKMzw=;
- b=Mr40ZVpNTiF6IRP7tuEdX4knhL5eOuDeZj5BXGr3I4ahdisjixwENUZ8E8jeH5JtWG
- Om6Zbh581AWH4NJpW+ipv9MEGwWMYjziEizt5Zg8GEz+m3BFvTpj0ba6NWp3zCixxQx9
- xGT2CHm5c8dBktX6c6aet32uIp6aLkEQMumB7/gIsHt8lVBEcv1IUSAkbGgyWoVwBT1j
- 5spu+H+0Z8OvLjzV4XcC20pisTVqxCGwWSW+NzFmvFTUak6kN0LQx9zHTwrzSfn/uzNv
- 0kYg04AGceNmFzmgzvVgdbDp5iOW4QlA8xiJdSSHUsDppmkwiuKZROtV2g0s77s412BH
- 2Pog==
-X-Gm-Message-State: APjAAAXdKOy/P9q/4Wu3pVJIVeUZPHvQpUXzl05hNhLH5aHMftf8Vj+q
- voR1Yh9QvzyRl+n8TiExc5GphFAD
-X-Google-Smtp-Source: APXvYqzy38NnSBuSt1HdIcLK+5diag01BsVcL6xGPpIwXjbp51WMU2vzQXUWPwyJKxLRIno94pgVLg==
-X-Received: by 2002:a81:48b:: with SMTP id 133mr1684226ywe.11.1557433807088;
- Thu, 09 May 2019 13:30:07 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=s82+opXHpmp64Nz4MPGFV0t/BAuzu71N7INCBgfaQTY=;
+ b=EtSHamxp3Rc5tTIFraXuODLh2WVto6eThhsC1mcvvn+EzXG/BaWHNJP0CLwfmcQ+pI
+ 0d2bV1HiDjx/LYjErioDg66hDuUwuAVksqZPsolgNmlHWNkEmrTMWDVH1g5XbCQr+kgl
+ ytrRHUM6iJxEhT+LbvuorzdMdQUhnYuPPcS404/0pA47fwgttLrsm5FmUfvKKO471weQ
+ rqoNzYSn2Y828hCYtpK5aeW1UqZxx/NYyQyy/ithgVL5zb1f+hOFjmyAcC0JZKTA421X
+ RPwU6Seki4ZsNGR/DqpYqLOt9OwmFeA8JilswO5k4rbcFEVbc0kg4EZG4tV5aJL4UALH
+ lUKA==
+X-Gm-Message-State: APjAAAVstG5VgMVjebECpxAED9HxGYrly4SAv4EzkEZiB0u+abphCoCf
+ cBZ7g0ScaeoyD4d64S/3PuxtxXr4
+X-Google-Smtp-Source: APXvYqycsKBXgzsG4nnPFWn4Y3kSf1S0adpWyhRFkOVyDdZohaHIFPUuOT/xwTEGFXuWaKefbgo/NQ==
+X-Received: by 2002:a81:9850:: with SMTP id p77mr3445959ywg.176.1557433809152; 
+ Thu, 09 May 2019 13:30:09 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.250])
- by smtp.gmail.com with ESMTPSA id u6sm896150ywl.71.2019.05.09.13.30.04
+ by smtp.gmail.com with ESMTPSA id u6sm896150ywl.71.2019.05.09.13.30.07
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 09 May 2019 13:30:05 -0700 (PDT)
+ Thu, 09 May 2019 13:30:08 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 0/2] clk: bcm: Allow CLK_BCM2835 for ARCH_BRCMSTB
-Date: Thu,  9 May 2019 13:29:54 -0700
-Message-Id: <20190509202956.6320-1-f.fainelli@gmail.com>
+Subject: [PATCH 1/2] clk: bcm: Make BCM2835 clock drivers selectable
+Date: Thu,  9 May 2019 13:29:55 -0700
+Message-Id: <20190509202956.6320-2-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190509202956.6320-1-f.fainelli@gmail.com>
+References: <20190509202956.6320-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_133010_319661_731E627A 
-X-CRM114-Status: UNSURE (   9.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190509_133011_816718_8A3A8DD1 
+X-CRM114-Status: GOOD (  12.74  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c42 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -104,22 +107,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Stephen,
+Make the BCM2835 clock driver selectable by other
+architectures/platforms. ARCH_BRCMSTB will be selecting that driver in
+the next commit since new chips like 7211 use the same CPRMAN clock
+controller that this driver supports.
 
-This small patch series allows making use of the CLK_BCM2835 driver(s)
-on ARCH_BRCMSTB since we have newer chips that make use of the CPRMAN
-block that this driver supports.
-
-Thanks!
-
-Florian Fainelli (2):
-  clk: bcm: Make BCM2835 clock drivers selectable
-  clk: bcm: Allow CLK_BCM2835 for ARCH_BRCMSTB
-
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+---
  drivers/clk/bcm/Kconfig  | 9 +++++++++
  drivers/clk/bcm/Makefile | 4 ++--
  2 files changed, 11 insertions(+), 2 deletions(-)
 
+diff --git a/drivers/clk/bcm/Kconfig b/drivers/clk/bcm/Kconfig
+index 4c4bd85f707c..0b873e23f128 100644
+--- a/drivers/clk/bcm/Kconfig
++++ b/drivers/clk/bcm/Kconfig
+@@ -1,3 +1,12 @@
++config CLK_BCM2835
++	bool "Broadcom BCM2835 clock support"
++	depends on ARCH_BCM2835 || COMPILE_TEST
++	depends on COMMON_CLK
++	default ARCH_BCM2835
++	help
++	  Enable common clock framework support for Broadcom BCM2835
++	  SoCs.
++
+ config CLK_BCM_63XX
+ 	bool "Broadcom BCM63xx clock support"
+ 	depends on ARCH_BCM_63XX || COMPILE_TEST
+diff --git a/drivers/clk/bcm/Makefile b/drivers/clk/bcm/Makefile
+index 002661d39128..e924f25bc6c8 100644
+--- a/drivers/clk/bcm/Makefile
++++ b/drivers/clk/bcm/Makefile
+@@ -5,8 +5,8 @@ obj-$(CONFIG_CLK_BCM_KONA)	+= clk-kona-setup.o
+ obj-$(CONFIG_CLK_BCM_KONA)	+= clk-bcm281xx.o
+ obj-$(CONFIG_CLK_BCM_KONA)	+= clk-bcm21664.o
+ obj-$(CONFIG_COMMON_CLK_IPROC)	+= clk-iproc-armpll.o clk-iproc-pll.o clk-iproc-asiu.o
+-obj-$(CONFIG_ARCH_BCM2835)	+= clk-bcm2835.o
+-obj-$(CONFIG_ARCH_BCM2835)	+= clk-bcm2835-aux.o
++obj-$(CONFIG_CLK_BCM2835)	+= clk-bcm2835.o
++obj-$(CONFIG_CLK_BCM2835)	+= clk-bcm2835-aux.o
+ obj-$(CONFIG_ARCH_BCM_53573)	+= clk-bcm53573-ilp.o
+ obj-$(CONFIG_CLK_BCM_CYGNUS)	+= clk-cygnus.o
+ obj-$(CONFIG_CLK_BCM_HR2)	+= clk-hr2.o
 -- 
 2.17.1
 
