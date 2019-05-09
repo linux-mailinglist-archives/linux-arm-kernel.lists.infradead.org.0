@@ -2,74 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A70851881B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 12:01:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EDFBD1886C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 12:36:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3PRHZoeiway7Imv8qgPjkHQ4rcp+gYmYOiVHhVylxds=; b=qxFyp6yHQOO1PS
-	Znzve2Uf3Its7kzuVpJL91euosTYmPxLQ3b+kzYb6LiU8++qXnXhCxfut6GfOTLCCtf5fsVM10DiK
-	Mn0NrcpAQ/KwKTNrpj3QshHdUS7V0hnXZd4FWHBEIsM1F94nUECn8wFy2WwMQ5vvZh64pQ8mv/exY
-	IigpxSLONZZ+wFhzuHDtPHkUhuSzv1KMpIVK1C+nKmGg0rYqmgk7UdzStW+41F0xdTXbVhthjryiN
-	3URRJ9w6ii2naEnnbSDgtyEs//eXuVwHFcBXPSHSZflYI1J5oswmdsiYhxIFwWb9liy8h6kn/QooS
-	QbMddvQ7cc7bKNiNpcuw==;
+	List-Owner; bh=Qx5+HlRtR1fMZFa1cWHHLMh1nlCOdtpwnxFKWYn41+Y=; b=ubui9ytBKdeAPv
+	zE16S2A7R/TxjWQydTFhAdPZsqrQv6buTc3IEbO6k/Vtub820RwsNJ7iK0VzgKlEkHNG34BmmId4W
+	tDYAriob651Le1mfo5rfhRKYnwNr3HwzEdMkfu3aWpQac2Hz/ICS9c+OrLXPqWxXbhdK94iu9jyJ1
+	44CKTyVkU7CpvzjjuG+o9feHX1SNw8ulRGN4uP3uhthrOu32d4ND04vOUgoXedm3eI8LFJfor9gCq
+	59o2ISw2wk94NB6snRm/74ZSJIf8wcZXGw3zJw30y/xdgN2zeFY115D5dI6PF3CAVHCjDx5i8pEQp
+	qR+x/UVo4KsOG6EUBqYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOfrk-0001RJ-Pe; Thu, 09 May 2019 10:01:28 +0000
-Received: from mail-vs1-f67.google.com ([209.85.217.67])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOfrV-0001Qq-Ic
- for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 10:01:17 +0000
-Received: by mail-vs1-f67.google.com with SMTP id g127so1030687vsd.6
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 May 2019 03:01:13 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=DHaRkQ/2vn/U1UsP9TEsDMsu9/0P83T+ZbmCHCRIAYY=;
- b=dA5hbhuJqF99/DHmNi15P0BEy4X+9+EefEhvtjJky0+Ld0VouJjwbFyU+qwQQi3NL2
- NmgXiKEh+C/sA98hZTx5uyBm5gd5nMCHEJo3aXfTQaxFWQh+fkNclKl1aMcwzVnOqu4R
- 0FdBIXUPqhpyr0Vsjy0QIwh4xJ0rSE7vDuCH969yGM+R+EW5h0HZ7pb3gLZ+J6D0dBwF
- GmxNn7ol1YBqP1fJC4F+fiRGWKmV8HutiMiacSMVX5zfeIWOi03rkC0jz0ITpl0FhiLM
- DzzOsBZEM5D1swDENGHr2EckMksp6XhrQc8FV5vdSsb+fv0iCRYfch5ufyLWJvUflWDt
- bJTA==
-X-Gm-Message-State: APjAAAUK2TYXTHi341kbGZstdx9v9tGIXgHWDGY/4tS1ryZdQpUhfnC3
- IjqNP7R0nmY6xFyhv3RlZSvtgHAzLi6jDXMiJgk=
-X-Google-Smtp-Source: APXvYqxkrBMDoQgl94Xq+EJrYL2SnG8siN7hmwEIbaivmkhjCTkqvNZX7XKZj4XQuWMLvqLnvAh96qBvcWcCdX8klx0=
-X-Received: by 2002:a67:ba11:: with SMTP id l17mr1799664vsn.166.1557396072144; 
- Thu, 09 May 2019 03:01:12 -0700 (PDT)
+	id 1hOgPM-0004cZ-EZ; Thu, 09 May 2019 10:36:12 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hOgPF-0004cB-VK
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 10:36:07 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7715DA78;
+ Thu,  9 May 2019 03:36:04 -0700 (PDT)
+Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EBFAE3F238;
+ Thu,  9 May 2019 03:36:01 -0700 (PDT)
+Date: Thu, 9 May 2019 11:35:59 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Will Deacon <will.deacon@arm.com>
+Subject: Re: [PATCH v3 0/5] arm64: SPE ACPI enablement
+Message-ID: <20190509103559.GB8239@e107155-lin>
+References: <20190503232407.37195-1-jeremy.linton@arm.com>
+ <5eaa1607-4bf0-a320-e9cf-2d51eca912c6@huawei.com>
+ <82032e5b-0cb5-e48f-ab51-ba5d5f9dceec@arm.com>
+ <819de863-92ff-51c5-9c35-880db4f6a922@huawei.com>
+ <20190508165149.GB21553@e107155-lin>
+ <20190509092810.GC2667@brain-police>
 MIME-Version: 1.0
-References: <20190508115605.13726-1-horms+renesas@verge.net.au>
- <CAMuHMdX3YW0NaDXvN1WjWeNrCH366LALa3UT41REqAHNJk-9JA@mail.gmail.com>
- <20190509095749.23b2jnvfks4enkpt@verge.net.au>
-In-Reply-To: <20190509095749.23b2jnvfks4enkpt@verge.net.au>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Thu, 9 May 2019 12:00:59 +0200
-Message-ID: <CAMuHMdWG4o4EJ3WK1tFqGvQGvTDpSrA-i=fOZ9nJm9eihvJxtg@mail.gmail.com>
-Subject: Re: [PATCH v2] arm64: dts: renesas: r8a7795: Create thermal zone to
- support IPA
-To: Simon Horman <horms@verge.net.au>
+Content-Disposition: inline
+In-Reply-To: <20190509092810.GC2667@brain-police>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_030113_613968_FDC99FC8 
-X-CRM114-Status: GOOD (  15.31  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190509_033606_021221_6EFE7DEF 
+X-CRM114-Status: GOOD (  31.44  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.217.67 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -81,67 +66,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Yoshihiro Kaneko <ykaneko0929@gmail.com>, Magnus Damm <magnus.damm@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ catalin.marinas@arm.com, john.garry@huawei.com, rjw@rjwysocki.net,
+ linuxarm@huawei.com, Jeremy Linton <jeremy.linton@arm.com>,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-acpi@vger.kernel.org,
+ Hongbo Yao <yaohongbo@huawei.com>, Hanjun Guo <guohanjun@huawei.com>,
+ linux-arm-kernel@lists.infradead.org, lenb@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Simon,
-
-On Thu, May 9, 2019 at 11:57 AM Simon Horman <horms@verge.net.au> wrote:
-> On Wed, May 08, 2019 at 03:20:03PM +0200, Geert Uytterhoeven wrote:
-> > On Wed, May 8, 2019 at 1:56 PM Simon Horman <horms+renesas@verge.net.au> wrote:
-> > > --- a/arch/arm64/boot/dts/renesas/r8a7795.dtsi
-> > > +++ b/arch/arm64/boot/dts/renesas/r8a7795.dtsi
-> > > @@ -155,6 +155,7 @@
-> > >                         power-domains = <&sysc R8A7795_PD_CA57_CPU0>;
-> > >                         next-level-cache = <&L2_CA57>;
-> > >                         enable-method = "psci";
-> > > +                       dynamic-power-coefficient = <854>;
-> >
-> > The dynamic-power-coefficient property is a property of the CPU,
-> > documented in Documentation/devicetree/bindings/arm/cpus.yaml,
-> > and not directly related to thermal zones.
-> >
-> > Hence I think its addition should be done in a separate patch.
+On Thu, May 09, 2019 at 10:28:11AM +0100, Will Deacon wrote:
+> On Wed, May 08, 2019 at 05:51:49PM +0100, Sudeep Holla wrote:
+> > On Wed, May 08, 2019 at 05:35:51PM +0800, Hanjun Guo wrote:
+> > > +Cc Alexander.
+> > >
+> > > On 2019/5/8 1:58, Jeremy Linton wrote:
+> > > > Hi,
+> > > >
+> > > > On 5/4/19 6:06 AM, Hanjun Guo wrote:
+> > > >> Hi Jeremy, Mark,
+> > > >>
+> > > >> On 2019/5/4 7:24, Jeremy Linton wrote:
+> > > >>> This patch series enables the Arm Statistical Profiling
+> > > >>> Extension (SPE) on ACPI platforms.
+> > > >>>
+> > > >>> This is possible because ACPI 6.3 uses a previously
+> > > >>> reserved field in the MADT to store the SPE interrupt
+> > > >>> number, similarly to how the normal PMU is described.
+> > > >>> If a consistent valid interrupt exists across all the
+> > > >>> cores in the system, a platform device is registered.
+> > > >>> That then triggers the SPE module, which runs as normal.
+> > > >>>
+> > > >>> We also add the ability to parse the PPTT for IDENTICAL
+> > > >>> cores. We then use this to sanity check the single SPE
+> > > >>> device we create. This creates a bit of a problem with
+> > > >>> respect to the specification though. The specification
+> > > >>> says that its legal for multiple tree's to exist in the
+> > > >>> PPTT. We handle this fine, but what happens in the
+> > > >>> case of multiple tree's is that the lack of a common
+> > > >>> node with IDENTICAL set forces us to assume that there
+> > > >>> are multiple non-IDENTICAL cores in the machine.
+> > > >>
+> > > >> Adding this patch set on top of latest mainline kernel,
+> > > >> and tested on D06 which has the SPE feature, in boot message
+> > > >> shows it was probed successfully:
+> > > >>
+> > > >> arm_spe_pmu arm,spe-v1: probed for CPUs 0-95 [max_record_sz 128, align 4, features 0x7]
+> > > >>
+> > > >> but when I test it with spe events such as
+> > > >>
+> > > >> perf record -c 1024 -e arm_spe_0/branch_filter=0/ -o spe ls
+> > > >>
+> > > >> it fails with:
+> > > >> failed to mmap with 12 (Cannot allocate memory),
+> > > >>
+> > > >> Confirmed that patch [0] is merged and other perf events are working
+> > > >> fine.
+> > > >
+> > > > Its pretty easy to get into the weeds with this driver, does it work with examples like:
+> > > >
+> > > > https://lkml.org/lkml/2018/1/14/122
+> > >
+> > > No, not work at all.
+> > >
+> > > SPE works on 5.0, but not work after 5.1-rc1, bisected to this commit:
+> > >
+> > > 5768402fd9c6 perf/ring_buffer: Use high order allocations for AUX buffers optimistically
+> > >
+> > 
+> > Indeed this patch breaks SPE. As mentioned in the patch, it uses high
+> > order allocations for AUX buffers and SPE PMU setup_aux explicitly
+> > fails with the warning "unexpected high-order page for auxbuf!" if
+> > it encounters one.
+> > 
+> > I don't know the intention of that check in SPE. Will ?
+> 
+> Since SPE uses virtual addressing, we don't really care about the underlying
+> page layout so there's no need to use higher-order allocations. I suppose we
+> could theoretically map them at the pmd level in some cases, but ignoring
+> them should also be harmless and I suspect you can delete the check.
 >
-> Sure, can do. Should the coefficient be added to each CPU or only
-> to a57_0 and a53_0, as is the case in this patch?
+
+Yes, I did a quick look to see if we can do that, but couldn't find a clue.
+Not sure if that's any optimisation, we can use order from page_private
+and set the values accordingly ?
+
+> Does the patch below fix the problem?
 >
-> I assume the latter because the A53 coefficient applies to all A53 cores
-> and likewise for A57.
 
-The latter, I think.
+Yes it should help, I tried exactly the same thing yesterday and it does
+fix the issue.
 
-> > >                         clocks = <&cpg CPG_CORE R8A7795_CLK_Z>;
-> > >                         operating-points-v2 = <&cluster0_opp>;
-> > >                         capacity-dmips-mhz = <1024>;
-> > > @@ -207,6 +208,8 @@
-> > >                         power-domains = <&sysc R8A7795_PD_CA53_CPU0>;
-> > >                         next-level-cache = <&L2_CA53>;
-> > >                         enable-method = "psci";
-> > > +                       #cooling-cells = <2>;
-> > > +                       dynamic-power-coefficient = <277>;
-> >
-> > Likewise.
-> >
-> > >                         clocks = <&cpg CPG_CORE R8A7795_CLK_Z2>;
-> > >                         operating-points-v2 = <&cluster1_opp>;
-> > >                         capacity-dmips-mhz = <535>;
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
