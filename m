@@ -2,57 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE5DA18CC7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 17:16:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 158FE18D02
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 17:32:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1ntQB63YKzG8H0uSw9VssgqrHO/I6GjeZOTP32f1o7c=; b=Detl5mZyj4qzNR
-	P398T/NYP+U1yOJ9+uuf2clfKdJ9vhXL1hB1wwWo+SIdZfwkkKDJCarQIwNyzaJ19VgX7O9f5zbee
-	Hr77Ee2AvtZGfWCIuQTy6bIQXiyFYmnbInB/NU/XxOn3wZrs07MLltDkpcemiNplPf0tYgzfJNxYQ
-	r3Vw95ovLg5SKbQSeNNmHg0ABUTxoctOrGTjmOF1nSx6GUw7GMamrpaG1zoEgmiVAV+ESe8C4cqTo
-	4zyv/dUe4ZdSOYq8r2QuZ2G79je1NdGittEwxf1n8PBwt3PS/1air4Fal7ZflWoU0y7s14WHQqEHq
-	2xd6HsbFUkS3VJqX+m4g==;
+	List-Owner; bh=6Eze+FvYFoV7wF21FZHJAeJDp0z7REgIsdM+qqyNpF8=; b=fCai61LflpkxwA
+	FFNQ6EZEpNJn+A3d9MHES+4sGaYesD8+IM9Mz40DqLD20Ygj+BzFhy19Z6nRmqZEfMb+PaFrNiIcX
+	PSBxYMNJmgWSTlzDwRIppV06TeZ5LUGNbI2OdvpHdonEtV7zLe0eUc71eod2H8CkwEfuPGk1C5Swj
+	Nd6YaYPARLMQ9p192ma3829muZDXTNVt4ZgZBNcVXokP+vwefaKsC3RO7n6tpe3dx7eXr+9oOwut1
+	icocq06GwzLOoqk5w1PSa1Fiubkzir56sj1FAIAwZyAQGwIzzEwIYNJcXELJkdQR1QG3+BzHgulCA
+	PCbz1ylO7CzUbQKAZw4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOkmi-0000WB-C0; Thu, 09 May 2019 15:16:36 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOkmb-0000J9-3h
- for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 15:16:31 +0000
-Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id F276B41CE563CF9AD641;
- Thu,  9 May 2019 23:16:08 +0800 (CST)
-Received: from huawei.com (10.184.227.228) by DGGEMS410-HUB.china.huawei.com
- (10.3.19.210) with Microsoft SMTP Server id 14.3.439.0; Thu, 9 May 2019
- 23:16:01 +0800
-From: Wang Hai <wanghai26@huawei.com>
-To: <alexander.shishkin@linux.intel.com>, <mcoquelin.stm32@gmail.com>,
- <alexandre.torgue@st.com>
-Subject: [PATCH] stm class: fix possible double-free in
- stm_source_register_device()
-Date: Thu, 9 May 2019 23:14:24 +0800
-Message-ID: <20190509151424.31612-1-wanghai26@huawei.com>
-X-Mailer: git-send-email 2.10.2.windows.1
+	id 1hOl24-0005Zi-KQ; Thu, 09 May 2019 15:32:28 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hOl1w-0005Ym-RX
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 15:32:22 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 41C56374;
+ Thu,  9 May 2019 08:32:19 -0700 (PDT)
+Received: from e119886-lin.cambridge.arm.com (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A556D3F6C4;
+ Thu,  9 May 2019 08:32:17 -0700 (PDT)
+From: Andrew Murray <andrew.murray@arm.com>
+To: Christoffer Dall <christoffer.dall@arm.com>,
+ Marc Zyngier <marc.zyngier@arm.com>
+Subject: [PATCH v6 0/5] KVM: arm/arm64: add support for chained counters
+Date: Thu,  9 May 2019 16:32:07 +0100
+Message-Id: <20190509153212.24187-1-andrew.murray@arm.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-X-Originating-IP: [10.184.227.228]
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_081629_908241_C9C0A81F 
-X-CRM114-Status: UNSURE (   8.77  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190509_083220_903943_F9BC8960 
+X-CRM114-Status: GOOD (  14.06  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -64,106 +59,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wanghai26@huawei.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: Suzuki K Pouloze <suzuki.poulose@arm.com>,
+ James Morse <james.morse@arm.com>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, Julien Thierry <julien.thierry@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Syzkaller report this:
+ARMv8 provides support for chained PMU counters, where an event type
+of 0x001E is set for odd-numbered counters, the event counter will
+increment by one for each overflow of the preceding even-numbered
+counter. Let's emulate this in KVM by creating a 64 bit perf counter
+when a user chains two emulated counters together.
 
-BUG: KASAN: double-free or invalid-free in stm_source_register_device+0x137/0x2b0 [stm_core]
+Testing has been performed by hard-coding hwc->sample_period in
+__hw_perf_event_init (arm_pmu.c) to a small value, this results in
+regular overflows (for non sampling events). The following command
+was then used to measure chained and non-chained instruction cycles:
 
-CPU: 1 PID: 6763 Comm: syz-executor.0 Tainted: G         C        5.0.0+ #5
-Hardware name: QEMU Standard PC (i440FX + PIIX, 1996),
-BIOS 1.10.2-1ubuntu1 04/01/2014
-Call Trace:
- __dump_stack lib/dump_stack.c:77 [inline]
- dump_stack+0xa9/0x10e lib/dump_stack.c:113
- print_address_description+0x65/0x270 mm/kasan/report.c:187
- kasan_report_invalid_free+0x60/0xa0 mm/kasan/report.c:278
- __kasan_slab_free+0x159/0x180 mm/kasan/common.c:438
- slab_free_hook mm/slub.c:1429 [inline]
- slab_free_freelist_hook mm/slub.c:1456 [inline]
- slab_free mm/slub.c:3003 [inline]
- kfree+0xe1/0x270 mm/slub.c:3955
- stm_source_register_device+0x137/0x2b0 [stm_core]
- do_one_initcall+0xbc/0x47d init/main.c:887
- do_init_module+0x1b5/0x547 kernel/module.c:3456
- load_module+0x6405/0x8c10 kernel/module.c:3804
- __do_sys_finit_module+0x162/0x190 kernel/module.c:3898
- do_syscall_64+0x9f/0x450 arch/x86/entry/common.c:290
- entry_SYSCALL_64_after_hwframe+0x49/0xbe
+perf stat -e armv8_pmuv3/long=1,inst_retired/u \
+          -e armv8_pmuv3/long=0,inst_retired/u dd if=/dev/zero bs=1M \
+          count=10 | gzip > /dev/null
 
-Allocated by task 6763:
- set_track mm/kasan/common.c:87 [inline]
- __kasan_kmalloc.constprop.3+0xa0/0xd0 mm/kasan/common.c:497
- stm_source_register_device+0x5c/0x2b0 [stm_core]
- do_one_initcall+0xbc/0x47d init/main.c:887
- do_init_module+0x1b5/0x547 kernel/module.c:3456
- load_module+0x6405/0x8c10 kernel/module.c:3804
- __do_sys_finit_module+0x162/0x190 kernel/module.c:3898
- do_syscall_64+0x9f/0x450 arch/x86/entry/common.c:290
- entry_SYSCALL_64_after_hwframe+0x49/0xbe
+The reported values were identical (and for non-chained was in the
+same ballpark when running on a kernel without this patchset). Debug
+was added to verify that the guest received overflow interrupts for
+the chain counter.
 
-Freed by task 6763:
- set_track mm/kasan/common.c:87 [inline]
- __kasan_slab_free+0x130/0x180 mm/kasan/common.c:459
- slab_free_hook mm/slub.c:1429 [inline]
- slab_free_freelist_hook mm/slub.c:1456 [inline]
- slab_free mm/slub.c:3003 [inline]
- kfree+0xe1/0x270 mm/slub.c:3955
- device_release+0x78/0x200 drivers/base/core.c:1064
- kobject_cleanup lib/kobject.c:662 [inline]
- kobject_release lib/kobject.c:691 [inline]
- kref_put include/linux/kref.h:67 [inline]
- kobject_put+0x2a8/0x400 lib/kobject.c:708
- put_device+0x1c/0x30 drivers/base/core.c:2205
- stm_source_register_device+0x12f/0x2b0 [stm_core]
- do_one_initcall+0xbc/0x47d init/main.c:887
- do_init_module+0x1b5/0x547 kernel/module.c:3456
- load_module+0x6405/0x8c10 kernel/module.c:3804
- __do_sys_finit_module+0x162/0x190 kernel/module.c:3898
- do_syscall_64+0x9f/0x450 arch/x86/entry/common.c:290
- entry_SYSCALL_64_after_hwframe+0x49/0xbe
+For chained events we only support generating an overflow interrupt
+on the high counter. We use the attributes of the low counter to
+determine the attributes of the perf event.
 
-int stm_source_register_device(){
-	...
-    src->dev.release = stm_source_device_release;
-	...
-    err:
-         put_device(&src->dev);
-         kfree(src);
+Changes since v5:
 
-         return err;
-}
-In the error handling path of stm_source_register_device
-Put_device() causes stm_source_device_release->kfree(src) to be
-called. So calling kfree(src) again will cause double free
+ - Use kvm_pmu_pmc_is_high_counter instead of open coding
 
-Fixes: 7bd1d4093c2f ("stm class: Introduce an abstraction for System Trace Module devices")
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Signed-off-by: Wang Hai <wanghai26@huawei.com>
----
- drivers/hwtracing/stm/core.c | 1 -
- 1 file changed, 1 deletion(-)
+ - Rename kvm_pmu_event_is_chained to kvm_pmu_idx_has_chain_evtype
 
-diff --git a/drivers/hwtracing/stm/core.c b/drivers/hwtracing/stm/core.c
-index e55b902560de..181e7ff1ec4f 100644
---- a/drivers/hwtracing/stm/core.c
-+++ b/drivers/hwtracing/stm/core.c
-@@ -1276,7 +1276,6 @@ int stm_source_register_device(struct device *parent,
- 
- err:
- 	put_device(&src->dev);
--	kfree(src);
- 
- 	return err;
- }
+ - Use kvm_pmu_get_canonical_pmc only where needed and reintroduce
+   the kvm_pmu_{set, get}_perf_event functions
+
+ - Drop masking of counter in kvm_pmu_get_pair_counter_value
+
+ - Only initialise pmc once in kvm_pmu_create_perf_event and other
+   minor changes.
+
+Changes since v4:
+
+ - Track pairs of chained counters with a bitmap instead of using
+   a struct kvm_pmc_pair.
+
+ - Rebase onto kvmarm/queue
+
+Changes since v3:
+
+ - Simplify approach by not creating events lazily and by introducing
+   a struct kvm_pmc_pair to represent the relationship between
+   adjacent counters.
+
+ - Rebase onto v5.1-rc2
+
+Changes since v2:
+
+ - Rebased onto v5.0-rc7
+
+ - Add check for cycle counter in correct patch
+
+ - Minor style, naming and comment changes
+
+ - Extract armv8pmu_evtype_is_chain from arch/arm64/kernel/perf_event.c
+   into a common header that KVM can use
+
+Changes since v1:
+
+ - Rename kvm_pmu_{enable,disable}_counter to reflect that they can
+   operate on multiple counters at once and use these functions where
+   possible
+
+ - Fix bugs with overflow handing, kvm_pmu_get_counter_value did not
+   take into consideration the perf counter value overflowing the low
+   counter
+
+ - Ensure PMCCFILTR_EL0 is used when operating on the cycle counter
+
+ - Rename kvm_pmu_reenable_enabled_{pair, single} and similar
+
+ - Always create perf event disabled to simplify logic elsewhere
+
+ - Move PMCNTENSET_EL0 test to kvm_pmu_enable_counter_mask
+
+
+Andrew Murray (5):
+  KVM: arm/arm64: rename kvm_pmu_{enable/disable}_counter functions
+  KVM: arm/arm64: extract duplicated code to own function
+  KVM: arm/arm64: re-create event when setting counter value
+  arm64: perf: extract chain helper into header
+  KVM: arm/arm64: support chained PMU counters
+
+ arch/arm64/include/asm/perf_event.h |   5 +
+ arch/arm64/kernel/perf_event.c      |   2 +-
+ arch/arm64/kvm/sys_regs.c           |   4 +-
+ include/kvm/arm_pmu.h               |  10 +-
+ virt/kvm/arm/pmu.c                  | 366 +++++++++++++++++++++++-----
+ 5 files changed, 316 insertions(+), 71 deletions(-)
+
 -- 
-2.17.1
-
+2.21.0
 
 
 _______________________________________________
