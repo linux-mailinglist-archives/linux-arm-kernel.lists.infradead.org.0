@@ -2,69 +2,132 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D3B8184C6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 07:15:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE0AD18512
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 08:06:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lObbQ9S5iKLEkrCkL7H8aSn5m4pywEYifv+0bj5kfeM=; b=ElyWWU3+pxoC61
-	XYJEGte+qsHRCmiNnVSwnmyg4q1VhTl5DwjIizk5Dy/DNKWay9mrsDjXg/7VOELlv70ZBSEhho2b9
-	W19b02/zAqPoUJgkoG1+eAYbjgb3AqpubHmd9BYqqYo3MVg1r18u+q4+kARDTxXs41NRQCERuqk6w
-	98jpkZWCdhs6n4fykfcGjpcnyKYytF07n8LIE1a2p88RjnGJz8UuSbPMQBCPiDcAn/LiSOWyjqIMD
-	cHDloEBSI9l6tfu6b27WmWryKeXXVAcLRvfF2TMjgJ2pr+hkXn/5itHqWdqdYial+oMasdS2QRqLM
-	Nf9aWN3AHRXvEbMUvg8Q==;
+	List-Owner; bh=iuGOEr009fKY+ukH67JryDQaIpRl43OOtKKUcyyL+EI=; b=Sh5vFjKTVe9uka
+	NVUZ29rQxm+ve3elxBWGspt23HdXybwIol0Bd8DuYoRQQkZKVxh2LxZk4g7Qak9rFfvvwyKuzAdr+
+	jDMI2enAmGpN5PKrH0hyfu4BzuE+1hSoXkaMnC+87nqqdzeREvaZZH1698NSrrwPsjIAdqkHW0HyI
+	KMK0g2eqFzuudzvAvDO96sQWJKIcn5hwvoQc7QOcBLG0KI5yFPo2D1ugGvliSxORTFAwo+Xp5rbPs
+	fw5A9JUEm03G1uIpzxE7SHUtd80cie4+WChzMAWrnAMhebr/1WZjmfIXhwr3+4PYgQhO2HEkMwSbp
+	NnIkRWXsKHPouq/BqLSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hObOe-0006au-S3; Thu, 09 May 2019 05:15:08 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1hOcCS-0005m9-Bj; Thu, 09 May 2019 06:06:36 +0000
+Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hObOU-0006ak-An
- for linux-arm-kernel@bombadil.infradead.org; Thu, 09 May 2019 05:14:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
- MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=/42cwvZ83L36schii218iPAMEFpvzAi7FRkDYOWYekw=; b=n31kdk8PnlVFeQahbZ7iuQS/D6
- S6DgIDC52pdQG6/h1rkmI2OY2ObL5kgUqKxBmgF2boXdLQFUvjXezM2U0og1pfmK17jy2NE7OL89H
- jQavlXkI2P1m7tCHn9pXroXRpXYf5UVhZ6NntlkORcr5eQ7+L5W5mH9BgZoKH1aR+Oa5jk6cZ5w1t
- JHBMssJ8h2BiSKAxIyt9WE32q49LasdqANfl+VNjfh2IEm7Z7ZJtFz6uv8rFBjTEW8kZUs5qeWM5M
- gMgzjWoUStYGWHww9HhKaObVGtvieKsgcRdd6gZHP8UoEJuaXAYotH/BX2JILvuImepdDErl6Bn3A
- 1tgTT4Mg==;
-Received: from relay12.mail.gandi.net ([217.70.178.232])
- by casper.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hObOR-0001Fs-1T
- for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 05:14:56 +0000
-Received: from bootlin.com (lfbn-tou-1-417-253.w86-206.abo.wanadoo.fr
- [86.206.242.253])
- (Authenticated sender: maxime.chevallier@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id 2CD8F200003;
- Thu,  9 May 2019 05:14:09 +0000 (UTC)
-Date: Thu, 9 May 2019 07:14:08 +0200
-From: Maxime Chevallier <maxime.chevallier@bootlin.com>
-To: Jakub Kicinski <jakub.kicinski@netronome.com>
-Subject: Re: [PATCH net] net: mvpp2: cls: Add missing NETIF_F_NTUPLE flag
-Message-ID: <20190509071408.23eae42a@bootlin.com>
-In-Reply-To: <20190507102803.09fcb56c@cakuba.hsd1.ca.comcast.net>
-References: <20190507123635.17782-1-maxime.chevallier@bootlin.com>
- <20190507102803.09fcb56c@cakuba.hsd1.ca.comcast.net>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1hOcBq-0005lg-5b
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 06:06:00 +0000
+Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
+ Eugen.Hristev@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Eugen.Hristev@microchip.com";
+ x-sender="Eugen.Hristev@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa6.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Eugen.Hristev@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa6.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Eugen.Hristev@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+X-IronPort-AV: E=Sophos;i="5.60,448,1549954800"; d="scan'208";a="29738518"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa6.microchip.iphmx.com with ESMTP/TLS/DHE-RSA-AES256-SHA;
+ 08 May 2019 23:05:56 -0700
+Received: from NAM05-BY2-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.76.106) with Microsoft SMTP Server (TLS)
+ id 14.3.352.0; Wed, 8 May 2019 23:05:53 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector1-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=+nm1JMbpmGdWJCF3Ve/sJh27Ed620DPL4MeIriGZU+E=;
+ b=dzedssQZfo1hUlze28U5oQsLoHFI7p6GmQP+mJ+opha5ov8L6sot2TBpwaC6uDZV4o8nW1Oxzes1qCbCpg7VkmwYfh05vbFj0aRtapXNl0ae66uUFHCAHaPorEjIYZEF3My+q8YRjnHOfpkA/11GYdyv/Rhpm8fFFoYFBC9BHvk=
+Received: from DM5PR11MB1242.namprd11.prod.outlook.com (10.168.108.8) by
+ DM5PR11MB0027.namprd11.prod.outlook.com (10.164.155.33) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1856.10; Thu, 9 May 2019 06:04:51 +0000
+Received: from DM5PR11MB1242.namprd11.prod.outlook.com
+ ([fe80::e0e3:1d51:9e3e:6dc]) by DM5PR11MB1242.namprd11.prod.outlook.com
+ ([fe80::e0e3:1d51:9e3e:6dc%3]) with mapi id 15.20.1856.012; Thu, 9 May 2019
+ 06:04:51 +0000
+From: <Eugen.Hristev@microchip.com>
+To: <linux@roeck-us.net>
+Subject: Re: [PATCH] watchdog: sama5d4: fix WDD value to be always set to max
+Thread-Topic: [PATCH] watchdog: sama5d4: fix WDD value to be always set to max
+Thread-Index: AQHVBahu/JHAOFdIPEa7ks2ptdaG2qZhbGKAgADhN4A=
+Date: Thu, 9 May 2019 06:04:51 +0000
+Message-ID: <5fa08492-a2c1-0ebb-9399-4aa6519c358e@microchip.com>
+References: <1557324535-9050-1-git-send-email-eugen.hristev@microchip.com>
+ <20190508163405.GB5495@roeck-us.net>
+In-Reply-To: <20190508163405.GB5495@roeck-us.net>
+Accept-Language: ro-RO, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: VI1PR08CA0120.eurprd08.prod.outlook.com
+ (2603:10a6:800:d4::22) To DM5PR11MB1242.namprd11.prod.outlook.com
+ (2603:10b6:3:14::8)
+x-ms-exchange-messagesentrepresentingtype: 1
+x-tagtoolbar-keys: D20190509090009158
+x-originating-ip: [94.177.32.154]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 475a828b-78d8-4cf9-678e-08d6d4443fcb
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(2017052603328)(7193020);
+ SRVR:DM5PR11MB0027; 
+x-ms-traffictypediagnostic: DM5PR11MB0027:
+x-microsoft-antispam-prvs: <DM5PR11MB002786C7BE93EA91D932E2E2E8330@DM5PR11MB0027.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 003245E729
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(396003)(346002)(136003)(376002)(39860400002)(366004)(199004)(189003)(53936002)(31686004)(6246003)(478600001)(446003)(72206003)(2906002)(76176011)(102836004)(53546011)(73956011)(6506007)(386003)(26005)(6486002)(186003)(68736007)(4326008)(11346002)(5660300002)(66556008)(64756008)(66946007)(66476007)(66446008)(25786009)(6116002)(6512007)(486006)(3846002)(86362001)(14454004)(81156014)(81166006)(6436002)(71190400001)(8676002)(71200400001)(316002)(8936002)(7736002)(31696002)(66066001)(54906003)(6916009)(305945005)(476003)(52116002)(2616005)(99286004)(229853002)(256004)(36756003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR11MB0027;
+ H:DM5PR11MB1242.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: g3wj3NydAmygsxt9/IOt/Z7kzvCkfLbvQx20pVyJXxj1uV50MrlG0KSqpoCnAJiLp9VlNMekGtpcmPT/w1omxG48idL+mHs93McWIEa5BWa1ahDwRcyXRKahlqDiTEOQSCR/9XArugp+E+E827xoeI1z9HH2AJCaZ+I3OHe3lQMIbhcb281PEU+O3EG/7TYOTjM1FZ8/jxCuFs/AraqYEIQh8cvtIJ/tMctyGdEyv2TBAOQ3SuzDTM0o72/YrjAIqfZ7DtPPUg2e8PX5Lf6WBEhVNAkefX1m0U+JL+zeyWcWhPw7rRtE4nch0zECbmVvO4Z2bpRCXt2q1DnpIyuMhf1KmoiETLg++4e6WnBstANFJzLymm2NOuBcURP1jwrWbO6pq33BuWmjvPRDe3SLKJSpBDeSthuPGsq9rHr1l0s=
+Content-ID: <7CBDBF6FD9780E489D1CE63BD08C6BEF@namprd11.prod.outlook.com>
 MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: 475a828b-78d8-4cf9-678e-08d6d4443fcb
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 May 2019 06:04:51.5715 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR11MB0027
+X-OriginatorOrg: microchip.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_061455_109647_0B8D60DE 
-X-CRM114-Status: GOOD (  11.01  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.7 points, 5.0 required)
+X-CRM114-CacheID: sfid-20190508_230558_638498_21E7C567 
+X-CRM114-Status: GOOD (  16.28  )
+X-Spam-Score: -2.3 (--)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.154.253 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -76,43 +139,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Antoine Tenart <antoine.tenart@bootlin.com>, netdev@vger.kernel.org,
- gregory.clement@bootlin.com, linux-kernel@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>, nadavh@marvell.com,
- thomas.petazzoni@bootlin.com, miquel.raynal@bootlin.com, stefanc@marvell.com,
- mw@semihalf.com, davem@davemloft.net, linux-arm-kernel@lists.infradead.org
+Cc: linux-watchdog@vger.kernel.org, wim@linux-watchdog.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Jakub, David,
 
-On Tue, 7 May 2019 10:28:03 -0700
-Jakub Kicinski <jakub.kicinski@netronome.com> wrote:
 
->> -	if (mvpp22_rss_is_supported())
->> +	if (mvpp22_rss_is_supported()) {
->>  		dev->hw_features |= NETIF_F_RXHASH;
->> +		dev->features |= NETIF_F_NTUPLE;  
->
->Hm, why not in hw_features?
+On 08.05.2019 19:34, Guenter Roeck wrote:
+> On Wed, May 08, 2019 at 02:15:03PM +0000, Eugen.Hristev@microchip.com wrote:
+>> From: Eugen Hristev <eugen.hristev@microchip.com>
+>>
+>> WDD value must be always set to max (0xFFF) otherwise the hardware
+>> block will reset the board on the first ping of the watchdog.
+>>
+> Not sure why setting WDD to the same value as WDV would do that,
+> but on the other side it looks like setting WDD to anything but
+> the maximum doesn't add any value either, so
 
-Because as of today, there's nothing implemented to disable
-classification offload in the driver, so the feature can't be toggled.
+It's a hardware issue.
+Normally, setting a WDD lower would allow the system for a little time 
+to print out something, before the inevitable reset happens...
+In our case, setting WDD lower than max would not allow a single 
+watchdog feed, as the first attempt to write the CR would trigger the reset.
+This bug was not obvious because the driver was always setting both WDD 
+and WDV to max... until timeout-sec property came up in DT which changes 
+this.
 
-Is this an issue ? Sorry if I'm doing this wrong, but I didn't see any
-indication that this feature has to be host-writeable.
-
-I can make so that it's toggle-able, but it's not as straightforward as
-we would think, since the classifier is also used for RSS (so, we can't
-just disable the classifier as a whole, we would have to invalidate
-each registered flow).
-
-Thanks,
-
-Maxime
-
+Eugen
+> 
+> Reviewed-by: Guenter Roeck <linux@roeck-us.net>
+> 
+> Guenter
+> 
+>> Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
+>> ---
+>>   drivers/watchdog/sama5d4_wdt.c | 4 +---
+>>   1 file changed, 1 insertion(+), 3 deletions(-)
+>>
+>> diff --git a/drivers/watchdog/sama5d4_wdt.c b/drivers/watchdog/sama5d4_wdt.c
+>> index 1e93c1b..d495336 100644
+>> --- a/drivers/watchdog/sama5d4_wdt.c
+>> +++ b/drivers/watchdog/sama5d4_wdt.c
+>> @@ -111,9 +111,7 @@ static int sama5d4_wdt_set_timeout(struct watchdog_device *wdd,
+>>   	u32 value = WDT_SEC2TICKS(timeout);
+>>   
+>>   	wdt->mr &= ~AT91_WDT_WDV;
+>> -	wdt->mr &= ~AT91_WDT_WDD;
+>>   	wdt->mr |= AT91_WDT_SET_WDV(value);
+>> -	wdt->mr |= AT91_WDT_SET_WDD(value);
+>>   
+>>   	/*
+>>   	 * WDDIS has to be 0 when updating WDD/WDV. The datasheet states: When
+>> @@ -251,7 +249,7 @@ static int sama5d4_wdt_probe(struct platform_device *pdev)
+>>   
+>>   	timeout = WDT_SEC2TICKS(wdd->timeout);
+>>   
+>> -	wdt->mr |= AT91_WDT_SET_WDD(timeout);
+>> +	wdt->mr |= AT91_WDT_SET_WDD(WDT_SEC2TICKS(MAX_WDT_TIMEOUT));
+>>   	wdt->mr |= AT91_WDT_SET_WDV(timeout);
+>>   
+>>   	ret = sama5d4_wdt_init(wdt);
+>> -- 
+>> 2.7.4
+>>
+> 
+> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
