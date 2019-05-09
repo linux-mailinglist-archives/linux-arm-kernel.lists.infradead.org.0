@@ -2,59 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 840DF187BD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 11:28:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CAABA187D1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 11:33:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/UmGkClQLFbsfLFk278kHtoy/1ESXsaM8FEoyMOAw+E=; b=XN/d2BF5Xmt127
-	zqNaRrJ8YYZf+SsadjIdwXlDrmrtmn3XGND7OL/udTz0YYxhochKt5G39O9CjBELZF9axKuSDVv8L
-	F4U/BpJuJuMZcvcgBRTaok5BR+0KfoL6WHktbSQNmq972E/NPj7mxIFVv2A5fo1KE385KrEoAys6h
-	EQOEyjRlEEEZquccSQlgIQLHE5AAVScp19BSXmRAI2ATG2YDKbw8ZmvD2kPEtJSZCeO901kkTTrV+
-	PHuSA7Md2m3CRbwUybuwRN7RwR1GxWlNZ9JtoEYnU9yJq9HpGWwMpW8gTTvm6i7Ibo2vSdZxXv85A
-	sz9tHyQFL5PLjEW51bdA==;
+	List-Owner; bh=1NIlSE74VZMgS0RcxMotFu1ZnZ6/P6+fPvmXDF+mkjE=; b=kTZQqGIJhzoovl
+	wqeQBJMPg8bHRQ7P4nV0QQkJir/yCqybAj3NR+avHhWc1VYpWgOuZA4nMCgiGaHkt6slxr6rx01/2
+	xtBv6x3kBvo51Ge7J8qjs1QyjfFgjrVhYaadds56fTxqnn2okIe5TFezsJjCQjAkxkKhqARmk2t+u
+	Np1UVbkfddTBfE5d4HzxdyleBs/Dfnim8+3z1Sv8Qqdl3nyvtkzjOiFQWWjVitu2QQ0iXUPFYo/9Q
+	ZB7XSQNj9HZX4nroHM1/W+ngnTT2ajU0PnEOiEcDyFSoP5zdH+Xbba3YSUvdC7BEGnBJFKU6Mq6vF
+	7eGJ9rsnBSoy3Fm6wMEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOfLz-00052N-1v; Thu, 09 May 2019 09:28:39 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOfLj-00051r-NP
- for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 09:28:25 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 60260374;
- Thu,  9 May 2019 02:28:21 -0700 (PDT)
-Received: from brain-police (usa-sjc-mx-foss1.foss.arm.com [217.140.101.70])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2B72A3F575;
- Thu,  9 May 2019 02:28:17 -0700 (PDT)
-Date: Thu, 9 May 2019 10:28:11 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: Sudeep Holla <sudeep.holla@arm.com>
-Subject: Re: [PATCH v3 0/5] arm64: SPE ACPI enablement
-Message-ID: <20190509092810.GC2667@brain-police>
-References: <20190503232407.37195-1-jeremy.linton@arm.com>
- <5eaa1607-4bf0-a320-e9cf-2d51eca912c6@huawei.com>
- <82032e5b-0cb5-e48f-ab51-ba5d5f9dceec@arm.com>
- <819de863-92ff-51c5-9c35-880db4f6a922@huawei.com>
- <20190508165149.GB21553@e107155-lin>
+	id 1hOfQq-0006rd-Bs; Thu, 09 May 2019 09:33:40 +0000
+Received: from mail-vk1-xa42.google.com ([2607:f8b0:4864:20::a42])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hOfQb-0006qw-4M
+ for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 09:33:26 +0000
+Received: by mail-vk1-xa42.google.com with SMTP id d74so429515vka.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 09 May 2019 02:33:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=BjNhpWRs8f71yrAy3RgUQYa6ESreaTDpHDF1kJYFLi4=;
+ b=KqSPRhDS3nRo6SLQ0wCjG0lGUyZOeVoZJ2tjzg1y89vGU86T/aglOfWjN70bV/PozK
+ SAQdDSt46ucXZgJcYI6xYNd4nFSG3cVQgB9iMZzfJNa6xQHrZU54uFOofmTVvvGkCslG
+ EuCVUYEKIrKT8zWq2ATAwg+uYKnBlO9FvOxNEbeiNlJPDQGtHBnNNkae9Yb7U4mf8+A0
+ nUFznRgVCbXsfBW0qnQORreJPuSBrxVMUYohEHe/gMaq0Plod8r+j1aRgNCbAuzIJKpJ
+ isFey/3STdqpSu7IJb0l+4UQADxf2l5/vKY43R4EPnXXLbuWjsvVfRs5YVzFw/GSo1NB
+ 2oag==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=BjNhpWRs8f71yrAy3RgUQYa6ESreaTDpHDF1kJYFLi4=;
+ b=P6VU2DLg/4uixGJA5njBPnZ+XQnbZg85FDZ+ZPdjsbsblQFB9H+GKVlEeBOqLskDQw
+ cPaldP01QHs7oZx03+vpJ9GFuubsAqZjV+q9nQgmJ1ZvNT8cFlYtnIqyBM5+NPkCmr5N
+ fNCSJXXqOODE9UFVouiteoAXaRUWrCp3LWvO8Y7roAJjvNfqnhrj3K5kd+wwouvR/Bxx
+ 1ajp+qFmg4wMSjz9NEgsGlYSh5GaY1K6J0XsLrjEYzSscOQI/Rsugo6x3ptWH1Cj/2h3
+ TmgruY8Vg1Jr+13hLzrueEO67ef97i7luiAsAc12HSWNIeYzhsOa8fWj7zCjTUSk9Mrx
+ 7Vcw==
+X-Gm-Message-State: APjAAAXpde1nOowqU37+Dy/ETGb9egpMYPO7/QmxcFzSuli6NVBfWBH0
+ 576/aOrw51wppBbaG8wPiw4UPkO9PedHJYXlVR5ptg==
+X-Google-Smtp-Source: APXvYqw6L3/4Ch+tH/DhayP44e50T5LigFBZhZJZQfM8xmm5TYt/0B4S7cFMoCH6vW3b0Xni4ybNxsJKxGoH6NVT8pU=
+X-Received: by 2002:a1f:2d90:: with SMTP id t138mr1110666vkt.14.1557394402774; 
+ Thu, 09 May 2019 02:33:22 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190508165149.GB21553@e107155-lin>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <1557310449-30450-1-git-send-email-sumit.garg@linaro.org>
+In-Reply-To: <1557310449-30450-1-git-send-email-sumit.garg@linaro.org>
+From: Sumit Garg <sumit.garg@linaro.org>
+Date: Thu, 9 May 2019 15:03:11 +0530
+Message-ID: <CAFA6WYMPKxwxzbU=CFYLw83kpXP9LwMQ3-N-hp2NyExhs_HjSQ@mail.gmail.com>
+Subject: Re: [PATCH] MAINTAINERS: Add mailing list for the TEE subsystem
+To: Jens Wiklander <jens.wiklander@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_022823_773610_71A1A995 
-X-CRM114-Status: GOOD (  31.80  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190509_023325_173572_66F50355 
+X-CRM114-Status: GOOD (  14.33  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:a42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -66,116 +89,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- catalin.marinas@arm.com, john.garry@huawei.com, rjw@rjwysocki.net,
- linuxarm@huawei.com, Jeremy Linton <jeremy.linton@arm.com>,
- linux-acpi@vger.kernel.org, Hongbo Yao <yaohongbo@huawei.com>,
- Hanjun Guo <guohanjun@huawei.com>, linux-arm-kernel@lists.infradead.org,
- lenb@kernel.org
+Cc: tee-dev@lists.linaro.org, Daniel Thompson <daniel.thompson@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 08, 2019 at 05:51:49PM +0100, Sudeep Holla wrote:
-> On Wed, May 08, 2019 at 05:35:51PM +0800, Hanjun Guo wrote:
-> > +Cc Alexander.
-> >
-> > On 2019/5/8 1:58, Jeremy Linton wrote:
-> > > Hi,
-> > >
-> > > On 5/4/19 6:06 AM, Hanjun Guo wrote:
-> > >> Hi Jeremy, Mark,
-> > >>
-> > >> On 2019/5/4 7:24, Jeremy Linton wrote:
-> > >>> This patch series enables the Arm Statistical Profiling
-> > >>> Extension (SPE) on ACPI platforms.
-> > >>>
-> > >>> This is possible because ACPI 6.3 uses a previously
-> > >>> reserved field in the MADT to store the SPE interrupt
-> > >>> number, similarly to how the normal PMU is described.
-> > >>> If a consistent valid interrupt exists across all the
-> > >>> cores in the system, a platform device is registered.
-> > >>> That then triggers the SPE module, which runs as normal.
-> > >>>
-> > >>> We also add the ability to parse the PPTT for IDENTICAL
-> > >>> cores. We then use this to sanity check the single SPE
-> > >>> device we create. This creates a bit of a problem with
-> > >>> respect to the specification though. The specification
-> > >>> says that its legal for multiple tree's to exist in the
-> > >>> PPTT. We handle this fine, but what happens in the
-> > >>> case of multiple tree's is that the lack of a common
-> > >>> node with IDENTICAL set forces us to assume that there
-> > >>> are multiple non-IDENTICAL cores in the machine.
-> > >>
-> > >> Adding this patch set on top of latest mainline kernel,
-> > >> and tested on D06 which has the SPE feature, in boot message
-> > >> shows it was probed successfully:
-> > >>
-> > >> arm_spe_pmu arm,spe-v1: probed for CPUs 0-95 [max_record_sz 128, align 4, features 0x7]
-> > >>
-> > >> but when I test it with spe events such as
-> > >>
-> > >> perf record -c 1024 -e arm_spe_0/branch_filter=0/ -o spe ls
-> > >>
-> > >> it fails with:
-> > >> failed to mmap with 12 (Cannot allocate memory),
-> > >>
-> > >> Confirmed that patch [0] is merged and other perf events are working
-> > >> fine.
-> > >
-> > > Its pretty easy to get into the weeds with this driver, does it work with examples like:
-> > >
-> > > https://lkml.org/lkml/2018/1/14/122
-> >
-> > No, not work at all.
-> >
-> > SPE works on 5.0, but not work after 5.1-rc1, bisected to this commit:
-> >
-> > 5768402fd9c6 perf/ring_buffer: Use high order allocations for AUX buffers optimistically
-> >
-> 
-> Indeed this patch breaks SPE. As mentioned in the patch, it uses high
-> order allocations for AUX buffers and SPE PMU setup_aux explicitly
-> fails with the warning "unexpected high-order page for auxbuf!" if
-> it encounters one.
-> 
-> I don't know the intention of that check in SPE. Will ?
+On Wed, 8 May 2019 at 15:44, Sumit Garg <sumit.garg@linaro.org> wrote:
+>
+> Add a mailing list for patch reviews and discussions related to TEE
+> subsystem.
+>
+> Signed-off-by: Sumit Garg <sumit.garg@linaro.org>
 
-Since SPE uses virtual addressing, we don't really care about the underlying
-page layout so there's no need to use higher-order allocations. I suppose we
-could theoretically map them at the pmd level in some cases, but ignoring
-them should also be harmless and I suspect you can delete the check.
+I forgot to include following tag as this change was suggested by Daniel. So:
 
-Does the patch below fix the problem?
+Suggested-by: Daniel Thompson <daniel.thompson@linaro.org>
 
-Will
+-Sumit
 
---->8
-
-diff --git a/drivers/perf/arm_spe_pmu.c b/drivers/perf/arm_spe_pmu.c
-index 7cb766dafe85..e120f933412a 100644
---- a/drivers/perf/arm_spe_pmu.c
-+++ b/drivers/perf/arm_spe_pmu.c
-@@ -855,16 +855,8 @@ static void *arm_spe_pmu_setup_aux(struct perf_event *event, void **pages,
- 	if (!pglist)
- 		goto out_free_buf;
- 
--	for (i = 0; i < nr_pages; ++i) {
--		struct page *page = virt_to_page(pages[i]);
--
--		if (PagePrivate(page)) {
--			pr_warn("unexpected high-order page for auxbuf!");
--			goto out_free_pglist;
--		}
--
-+	for (i = 0; i < nr_pages; ++i)
- 		pglist[i] = virt_to_page(pages[i]);
--	}
- 
- 	buf->base = vmap(pglist, nr_pages, VM_MAP, PAGE_KERNEL);
- 	if (!buf->base)
+> ---
+>  MAINTAINERS | 3 +++
+>  1 file changed, 3 insertions(+)
+>
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index 920a0a1..c05dff7 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -11556,11 +11556,13 @@ F:    drivers/scsi/st.h
+>
+>  OP-TEE DRIVER
+>  M:     Jens Wiklander <jens.wiklander@linaro.org>
+> +L:     tee-dev@lists.linaro.org
+>  S:     Maintained
+>  F:     drivers/tee/optee/
+>
+>  OP-TEE RANDOM NUMBER GENERATOR (RNG) DRIVER
+>  M:     Sumit Garg <sumit.garg@linaro.org>
+> +L:     tee-dev@lists.linaro.org
+>  S:     Maintained
+>  F:     drivers/char/hw_random/optee-rng.c
+>
+> @@ -15312,6 +15314,7 @@ F:      include/media/i2c/tw9910.h
+>
+>  TEE SUBSYSTEM
+>  M:     Jens Wiklander <jens.wiklander@linaro.org>
+> +L:     tee-dev@lists.linaro.org
+>  S:     Maintained
+>  F:     include/linux/tee_drv.h
+>  F:     include/uapi/linux/tee.h
+> --
+> 2.7.4
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
