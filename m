@@ -2,86 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C204F18F87
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 19:44:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C295F1905C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  9 May 2019 20:44:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zqlwJsLBsQZyDpv/NbET+wMam7BHAp1XFf4ZUIkUgHs=; b=dmZbvkTgqxd69j
-	E8G6trUVxWyYrPduq6iMsMND16auyhQ3WJtBUR6JstjBr07oQ3FxPO039E6lMgTqQL2BJWAmUWjdx
-	0SBmdnJnjBsLjNyT9k0yzBWYfdIXPTdP4vfw6SieKLoB2gUMLVdPu20c26q3+3jtfQ5AC0V3OZNUi
-	Ek5R1x4U3kfUx1um5GHHygbthjbXdpLQ2n0cjCHG6rlwp5duCUaiYMVjkjdPRUH8+/Mnf7gw/q4j7
-	sZC2IDcHCj8YsxCLkXxYL+QFBj4lQIS93ptUfQUHjrhQLVycsaT5+WgmPxWhEIPAMuFXUyoHGzcVw
-	30f0bVwv/vI0aPS//QaQ==;
+	List-Owner; bh=rEBSn7zJKdfJFufILBbnCkwPdnMvsqv6CwbgDzzDqkc=; b=f4dnFcvnGvX/3A
+	+iaDWeoYuTCjX/29SjSSBJlNu+mHDXziTLXGizUvgR7KqJ0ElEBR9zbJplVw35fMFb6SePvHUGdvl
+	ecagbZyQEKKmSyaK0AOU6a02v/55c+rZwf/jl3s5/q20sKEFV2bqwoXK1eZTTX8/bsjQd6MyCgXdG
+	qSNaDrURl+D+EyWqZ1oxVaIAVaBZeciI/4LMTJxQbHrFAwz3+sCuHqssv15DfiVqk2fD+cCFJ7wjZ
+	bgzfEj/sZLvg8H+wpqEwBAutQNvbzx6zND9gQ/Q+1HR92pcMBSLDgv2kT2CF71wnjb3vvKEYoKeTY
+	yJl3PFCilFVK0ursRsCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOn5m-00077O-4S; Thu, 09 May 2019 17:44:26 +0000
-Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
+	id 1hOo1g-0002Yz-6I; Thu, 09 May 2019 18:44:16 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOn5f-00076Q-E1
- for linux-arm-kernel@lists.infradead.org; Thu, 09 May 2019 17:44:20 +0000
-Received: by mail-qt1-x842.google.com with SMTP id f24so3458879qtk.11
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 09 May 2019 10:44:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=netronome-com.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:in-reply-to:references
- :organization:mime-version:content-transfer-encoding;
- bh=KjRnhmT+ofw1ihG6SycN5lJ13JxUfKm8g8u5Be8I8Jo=;
- b=uomjopXeSyPp4+goRblIzyFYhPJ4zmqIOy56TpYceJvIpwT+rnmxd9HvpB/krKNKfs
- Sv7vRlWipz1gRLd4JQSrQFlGcHUymmpXxVsvz8AQOolH3GZZWnO3JYdrKy67o49WarrQ
- j4PlArhgDzW2JME7TDKzTzj8yQgigREEUYs8uQgrylFHubqZEHi308YKXKyY4vlwMCO9
- eaUAcAiekxEjD1foayuBNpnqmn/N/xLyJ/P6bBXntqUh5Qw7XmgGERmrA1DojqAvclNR
- GQ7ZtGL2bAgKWPMfYfGqIGGiE0vM3hia6lZzus1/oSZQzlX2Y+u9lrSolLW9HTrNbL31
- ObVQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:in-reply-to
- :references:organization:mime-version:content-transfer-encoding;
- bh=KjRnhmT+ofw1ihG6SycN5lJ13JxUfKm8g8u5Be8I8Jo=;
- b=ORm+VjGS4xkxiWSX82r5JiiD8BBhAueETu8iwlGaMp0SwflRDg5aXrs4+c0mb3kvpX
- W0FYdPDIMUg3Gjhqx5HtvW7UgfmW6rlUedQO+dM02DCmG5D177bnqmYpSNou4S39RCC5
- uWm72ndzlgASnASSe+qsh4xmcRmPlcpHj+iRQCl6AfxDHynY0dAPeDunC5G2vvFw77ze
- lOih7RAjmZ3sRRd233c7jkwOGq9LIdwJvhkCXVvF35EwLEtU3X/VlGuUVHu2qyy6rlud
- 5VCG9S/E+5Pw1pkO3U7RWXk7Rwx5VDcM5jFgebkUwskpEXC8xaOAYGVVvGo016WEZXvv
- blIg==
-X-Gm-Message-State: APjAAAX/Qv11sBYTVOz3mqXfHFUv9TRiZbW2TNSBZtJR3HuH/b1tW1yk
- YSbj/eE6IllvKNi0zpxjdFTIgQ==
-X-Google-Smtp-Source: APXvYqy8pkXWNSmKg05Fcgu3sFtOScfyZSiZFqRa0Emtapg8Z3/pjH8icrBXOqxj9qzj8Kyny9y/AQ==
-X-Received: by 2002:ac8:2aa4:: with SMTP id b33mr5014097qta.127.1557423856714; 
- Thu, 09 May 2019 10:44:16 -0700 (PDT)
-Received: from cakuba.hsd1.ca.comcast.net ([66.60.152.14])
- by smtp.gmail.com with ESMTPSA id k65sm1545538qkc.79.2019.05.09.10.44.15
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 09 May 2019 10:44:16 -0700 (PDT)
-Date: Thu, 9 May 2019 10:44:03 -0700
-From: Jakub Kicinski <jakub.kicinski@netronome.com>
-To: Maxime Chevallier <maxime.chevallier@bootlin.com>
-Subject: Re: [PATCH net] net: mvpp2: cls: Add missing NETIF_F_NTUPLE flag
-Message-ID: <20190509104403.64c9c45b@cakuba.hsd1.ca.comcast.net>
-In-Reply-To: <20190509071408.23eae42a@bootlin.com>
-References: <20190507123635.17782-1-maxime.chevallier@bootlin.com>
- <20190507102803.09fcb56c@cakuba.hsd1.ca.comcast.net>
- <20190509071408.23eae42a@bootlin.com>
-Organization: Netronome Systems, Ltd.
+ id 1hOo1X-0002YA-RD; Thu, 09 May 2019 18:44:10 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DD1D02182B;
+ Thu,  9 May 2019 18:44:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1557427447;
+ bh=IMwpLaU7gYGHD0ENoQFEavG1anlK5ZDetiYNVj2a3Ig=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=gsWjKSuhGv7ZLhEyKWShBdIyEUN5EmdWrL80+E59B9lD3GxmYTTedLy2P1cjOM95X
+ UXBqmzXbcmlr0BSw15MGnIobmcOFrKVTzeGGaZxYfasbouxlnTEfE7dJ22d/MS2MAa
+ BR6tT5N/0pC1V0JDBlzQMMnR1J4Ue8IS1XN3L728=
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH 4.9 14/28] drm/mediatek: fix possible object reference leak
+Date: Thu,  9 May 2019 20:42:06 +0200
+Message-Id: <20190509181253.142746342@linuxfoundation.org>
+X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190509181247.647767531@linuxfoundation.org>
+References: <20190509181247.647767531@linuxfoundation.org>
+User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_104419_474464_2E6F5F71 
-X-CRM114-Status: GOOD (  15.68  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190509_114407_902220_C14F5FB6 
+X-CRM114-Status: GOOD (  11.01  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,51 +71,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Antoine Tenart <antoine.tenart@bootlin.com>, netdev@vger.kernel.org,
- gregory.clement@bootlin.com, linux-kernel@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>, nadavh@marvell.com,
- thomas.petazzoni@bootlin.com, miquel.raynal@bootlin.com, stefanc@marvell.com,
- mw@semihalf.com, davem@davemloft.net, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ David Airlie <airlied@linux.ie>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, stable@vger.kernel.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ dri-devel@lists.freedesktop.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ CK Hu <ck.hu@mediatek.com>, Wen Yang <wen.yang99@zte.com.cn>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 9 May 2019 07:14:08 +0200, Maxime Chevallier wrote:
-> Hello Jakub, David,
-> 
-> On Tue, 7 May 2019 10:28:03 -0700
-> Jakub Kicinski <jakub.kicinski@netronome.com> wrote:
-> 
-> >> -	if (mvpp22_rss_is_supported())
-> >> +	if (mvpp22_rss_is_supported()) {
-> >>  		dev->hw_features |= NETIF_F_RXHASH;
-> >> +		dev->features |= NETIF_F_NTUPLE;    
-> >
-> >Hm, why not in hw_features?  
-> 
-> Because as of today, there's nothing implemented to disable
-> classification offload in the driver, so the feature can't be toggled.
-> 
-> Is this an issue ? Sorry if I'm doing this wrong, but I didn't see any
-> indication that this feature has to be host-writeable.
+[ Upstream commit 2ae2c3316fb77dcf64275d011596b60104c45426 ]
 
-No I don't think it's an issue, I was expecting you'd flush all the
-filters when feature is disabled (remove them entirely), I didn't
-expect that to be too hard.
+The call to of_parse_phandle returns a node pointer with refcount
+incremented thus it must be explicitly decremented after the last
+usage.
 
-> I can make so that it's toggle-able, but it's not as straightforward as
-> we would think, since the classifier is also used for RSS (so, we can't
-> just disable the classifier as a whole, we would have to invalidate
-> each registered flow).
+Detected by coccinelle with the following warnings:
+drivers/gpu/drm/mediatek/mtk_hdmi.c:1521:2-8: ERROR: missing of_node_put; acquired a node pointer with refcount incremented on line 1509, but without a corresponding object release within this function.
+drivers/gpu/drm/mediatek/mtk_hdmi.c:1524:1-7: ERROR: missing of_node_put; acquired a node pointer with refcount incremented on line 1509, but without a corresponding object release within this function.
 
-Ack, I don't think disabling the hardware components is required.
-Just remove the existing filters, and don't allow new ones.  
-But no strong feelings here, feel free to repost with:
+Signed-off-by: Wen Yang <wen.yang99@zte.com.cn>
+Cc: CK Hu <ck.hu@mediatek.com>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>
+Cc: David Airlie <airlied@linux.ie>
+Cc: Daniel Vetter <daniel@ffwll.ch>
+Cc: Matthias Brugger <matthias.bgg@gmail.com>
+Cc: dri-devel@lists.freedesktop.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-mediatek@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+Signed-off-by: CK Hu <ck.hu@mediatek.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/gpu/drm/mediatek/mtk_hdmi.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-Acked-by: Jakub Kicinski <jakub.kicinski@netronome.com>
+diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi.c b/drivers/gpu/drm/mediatek/mtk_hdmi.c
+index 200f75e1d6198..e7a6651ceeab1 100644
+--- a/drivers/gpu/drm/mediatek/mtk_hdmi.c
++++ b/drivers/gpu/drm/mediatek/mtk_hdmi.c
+@@ -1528,6 +1528,7 @@ static int mtk_hdmi_dt_parse_pdata(struct mtk_hdmi *hdmi,
+ 	of_node_put(remote);
+ 
+ 	hdmi->ddc_adpt = of_find_i2c_adapter_by_node(i2c_np);
++	of_node_put(i2c_np);
+ 	if (!hdmi->ddc_adpt) {
+ 		dev_err(dev, "Failed to get ddc i2c adapter by node\n");
+ 		return -EINVAL;
+-- 
+2.20.1
 
-if flushing the filters is too much hassle.
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
