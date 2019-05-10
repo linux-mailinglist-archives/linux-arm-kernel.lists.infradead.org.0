@@ -2,107 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68CF619731
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 05:41:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9416B19748
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 06:00:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Type:In-Reply-To:References:Message-ID:Date:Subject:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+GuF9tS+AeYHYOiNm/ojJe8DWeylCivubhvk0fkGwYI=; b=FwbqQEsxrtIoRbfVuuqQTn/06
-	ZaysvSA8WeEPkClQ5mE7TJkLTLW5+2Py2Na/eCgbeUh/5+Md4LpOQBd4bQQQu4DThlt9q9FU6u5GN
-	0J1eBLkYlMVwVidFBLJn4yCORmKxk64qwY4E6I4YW2bM1kuxTdEMuyJKvIkObgw2B/BACnMKLIIIK
-	k2sqJpa3A+KiwtiEBZZdiPKmHxcv+j0+fAHaL8dE9Dy4AxUQ3o2iAohGZqMe8WHzw5/Yoz9+Y6o3b
-	BGQejZJoYJORSKT0XqHCBS0c76UjRf12OV5zu6Wqo0jGtxyN2l/CoVqS83cf8q1DAnLh6jXVrRvsr
-	xCEhkWIkQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=sd7nvbjlQRQ1PTvcJ7+wz0/v+sdWHeZ/NunIjfB0ClA=; b=CXN6176rriLbNv
+	/rDhh984vwb1X+6DxVJiAet6xbjolBOFaHPPkhU5gUhLVjrQzRspwwGlvDmmVFJ5bILpwWo8/PEbL
+	Ol4TTa5gpGOeUnU0V5Kjje1pcrs/gsKTYYr9QWjUgYq9gND1LaXRCklvQjvbB+3g8DkkEGCFM9OX/
+	+h/nnMXgcBjUhYQ8U8kc+FL1Lq/FteoosrcasbJgdyu4lOsaNi7xg6qvTFhG4URqVanOSG2EgQc68
+	TNCRWyjIB/4hORmbxU8SvS7ERvNP7r62i1Jdro/Y58Ux6Zz4mUzn/dcsevujgQcvW7o61N2GOYVel
+	jTJWP52caMKvPy1h+Kfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOwPH-0000JG-7g; Fri, 10 May 2019 03:41:11 +0000
-Received: from mail-eopbgr10085.outbound.protection.outlook.com ([40.107.1.85]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1hOwi7-00068S-Cq; Fri, 10 May 2019 04:00:39 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOwP9-0000Il-Hb
- for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 03:41:05 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=yXuh5Qj14BjpcB2GXfmw3N38LGxLDvlDFZae48cTw18=;
- b=LKLMS5fMD8qCyO1psjlQ8B96cvZwPmnpJP0TQfcMrBHHIJ4VpQloC8M/Fq7+gwfxsIZLmviwXmC41XQS96XKuAwDIzXfVfJTk8l7a3es9XJrvqAWl5/EKxSnP34exFuCDz3muMbA6qrnr+1t7rPISQZTcZWyCVO2UAlPcgfJ6yw=
-Received: from VI1PR04MB4333.eurprd04.prod.outlook.com (52.134.122.155) by
- VI1PR04MB6239.eurprd04.prod.outlook.com (20.179.24.76) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1856.11; Fri, 10 May 2019 03:40:57 +0000
-Received: from VI1PR04MB4333.eurprd04.prod.outlook.com
- ([fe80::3ca0:86a9:eb1:a8c2]) by VI1PR04MB4333.eurprd04.prod.outlook.com
- ([fe80::3ca0:86a9:eb1:a8c2%4]) with mapi id 15.20.1878.022; Fri, 10 May 2019
- 03:40:57 +0000
-From: Andy Tang <andy.tang@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: RE: [EXT] Re: [PATCH v6] arm64: dts: ls1088a: add one more thermal
- zone node
-Thread-Topic: [EXT] Re: [PATCH v6] arm64: dts: ls1088a: add one more thermal
- zone node
-Thread-Index: AQHU+XzmCgrzkjA8mUWSxshg4ZOzYKZjybwAgAADYUA=
-Date: Fri, 10 May 2019 03:40:57 +0000
-Message-ID: <VI1PR04MB4333D24227603D1497BA3CB9F30C0@VI1PR04MB4333.eurprd04.prod.outlook.com>
-References: <20190423022507.34969-1-andy.tang@nxp.com>
- <20190510031335.GD15856@dragon>
-In-Reply-To: <20190510031335.GD15856@dragon>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: yes
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=andy.tang@nxp.com; 
-x-originating-ip: [119.31.174.73]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: afcfd707-12f0-4472-a763-08d6d4f94fe9
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(49563074)(7193020);
- SRVR:VI1PR04MB6239; 
-x-ms-traffictypediagnostic: VI1PR04MB6239:
-x-microsoft-antispam-prvs: <VI1PR04MB6239B2886C016E9F7BE3FB98F30C0@VI1PR04MB6239.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
-x-forefront-prvs: 0033AAD26D
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(346002)(136003)(396003)(366004)(376002)(39860400002)(189003)(13464003)(199004)(3846002)(229853002)(54906003)(25786009)(9686003)(7696005)(53936002)(86362001)(55016002)(64756008)(4326008)(186003)(256004)(2906002)(6916009)(26005)(7736002)(316002)(6246003)(66946007)(5660300002)(76116006)(73956011)(66616009)(66476007)(66556008)(66446008)(14454004)(52536014)(6116002)(99936001)(6436002)(102836004)(8676002)(53546011)(6506007)(74316002)(81156014)(305945005)(81166006)(446003)(33656002)(76176011)(11346002)(44832011)(66066001)(99286004)(68736007)(71190400001)(8936002)(71200400001)(478600001)(7416002)(476003)(486006);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB6239;
- H:VI1PR04MB4333.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: xqtXHAt1jcr0h3xj+Dl7bCEdX9N4uWboe9ifepFyRAUTUIJkaOOrAGAIKSKhcVnF2249jTPpI7SKtWwShLWedofk9BKSBHvIrihhcaNFEQZB6D+jxvcmXeID+eyZl57jS2HEtItU6tqnAIUwgZK2mz8EF4s4kqnAt9Ax53QfFNtvqF/EzegzayNdEcGakH9/bYTpZbLXtUXNUu52bvhm5/xAFFKl4mriBc5gAvVxGnSst2DlU2EoVRikGKX7NtePkw87qnzZpNuySo4f/6tV3fit7C+5dAsKVuN5HObaoO8jyJBd1Ht70AqolxmfTTfG/44f7OjHv7EEtQMUKeVznJ2fMBfI68fJVzRqkWyL7AHAMjmzA1ZMH0GgqAL0vsmldoOYwy+ypaDzDaPl/wlBRWx+Q0RwpGJJiqyB8ee3IOQ=
-Content-Type: multipart/mixed;
- boundary="_002_VI1PR04MB4333D24227603D1497BA3CB9F30C0VI1PR04MB4333eurp_"
+ id 1hOwi0-00067z-0h
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 04:00:33 +0000
+Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 449428E409AA2E2FDA63;
+ Fri, 10 May 2019 12:00:25 +0800 (CST)
+Received: from localhost (10.177.31.96) by DGGEMS405-HUB.china.huawei.com
+ (10.3.19.205) with Microsoft SMTP Server id 14.3.439.0; Fri, 10 May 2019
+ 12:00:17 +0800
+From: YueHaibing <yuehaibing@huawei.com>
+To: <catalin.marinas@arm.com>, <will.deacon@arm.com>, <marc.zyngier@arm.com>, 
+ <lokeshvutla@ti.com>, <tony@atomide.com>
+Subject: [PATCH] arm64: arch_k3: Fix kconfig dependency warning
+Date: Fri, 10 May 2019 11:52:55 +0800
+Message-ID: <20190510035255.27568-1-yuehaibing@huawei.com>
+X-Mailer: git-send-email 2.10.2.windows.1
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: afcfd707-12f0-4472-a763-08d6d4f94fe9
-X-MS-Exchange-CrossTenant-originalarrivaltime: 10 May 2019 03:40:57.1061 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB6239
+X-Originating-IP: [10.177.31.96]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_204103_757876_A474CCF2 
-X-CRM114-Status: GOOD (  20.71  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190509_210032_280432_0594CAC0 
+X-CRM114-Status: UNSURE (   7.82  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.85 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -114,238 +63,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>, "edubezval@gmail.com" <edubezval@gmail.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "rui.zhang@intel.com" <rui.zhang@intel.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: YueHaibing <yuehaibing@huawei.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---_002_VI1PR04MB4333D24227603D1497BA3CB9F30C0VI1PR04MB4333eurp_
-Content-Type: text/plain; charset="gb2312"
-Content-Transfer-Encoding: base64
+Fix Kbuild warning when SOC_TI is not set
 
-PiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQ0KPiBGcm9tOiBTaGF3biBHdW8gPHNoYXduZ3Vv
-QGtlcm5lbC5vcmc+DQo+IFNlbnQ6IDIwMTnE6jXUwjEwyNUgMTE6MTQNCj4gVG86IEFuZHkgVGFu
-ZyA8YW5keS50YW5nQG54cC5jb20+DQo+IENjOiBMZW8gTGkgPGxlb3lhbmcubGlAbnhwLmNvbT47
-IHJvYmgrZHRAa2VybmVsLm9yZzsNCj4gbWFyay5ydXRsYW5kQGFybS5jb207IGxpbnV4LWFybS1r
-ZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZzsNCj4gZGV2aWNldHJlZUB2Z2VyLmtlcm5lbC5vcmc7
-IGxpbnV4LWtlcm5lbEB2Z2VyLmtlcm5lbC5vcmc7DQo+IGxpbnV4LXBtQHZnZXIua2VybmVsLm9y
-ZzsgZGFuaWVsLmxlemNhbm9AbGluYXJvLm9yZzsgcnVpLnpoYW5nQGludGVsLmNvbTsNCj4gZWR1
-YmV6dmFsQGdtYWlsLmNvbQ0KPiBTdWJqZWN0OiBbRVhUXSBSZTogW1BBVENIIHY2XSBhcm02NDog
-ZHRzOiBsczEwODhhOiBhZGQgb25lIG1vcmUgdGhlcm1hbA0KPiB6b25lIG5vZGUNCj4gDQo+IENh
-dXRpb246IEVYVCBFbWFpbA0KPiANCj4gT24gVHVlLCBBcHIgMjMsIDIwMTkgYXQgMTA6MjU6MDdB
-TSArMDgwMCwgWXVhbnRpYW4gVGFuZyB3cm90ZToNCj4gPiBMczEwODhhIGhhcyAyIHRoZXJtYWwg
-c2Vuc29ycywgY29yZSBjbHVzdGVyIGFuZCBTb0MgcGxhdGZvcm0uIENvcmUNCj4gPiBjbHVzdGVy
-IHNlbnNvciBpcyB1c2VkIHRvIG1vbml0b3IgdGhlIHRlbXBlcmF0dXJlIG9mIGNvcmUgYW5kIFNv
-Qw0KPiA+IHBsYXRmb3JtIGlzIGZvciBwbGF0Zm9ybS4gVGhlIGN1cnJlbnQgZHRzIG9ubHkgc3Vw
-cG9ydCB0aGUgZmlyc3Qgc2Vuc29yLg0KPiA+IFRoaXMgcGF0Y2ggYWRkcyB0aGUgc2Vjb25kIHNl
-bnNvciBub2RlIHRvIGR0cyB0byBlbmFibGUgaXQuDQo+ID4NCj4gPiBTaWduZWQtb2ZmLWJ5OiBZ
-dWFudGlhbiBUYW5nIDxhbmR5LnRhbmdAbnhwLmNvbT4NCj4gPiAtLS0NCj4gPiB2NjoNCj4gPiAg
-ICAgICAgIC0gYWRkIGNvb2xpbmcgZGV2aWNlIG1hcCB0byBjcHUwLTcgaW4gcGxhdGZvcm0gbm9k
-ZS4NCkkgbGlrZSB0byBleHBsYWluIGEgbGl0dGxlLiBJIHRoaW5rIGl0IG1ha2VzIHNlbnNlIHRo
-YXQgbXVsdGlwbGUgdGhlcm1hbCB6b25lIG1hcCB0byBzYW1lIGNvb2xpbmcgZGV2aWNlLiANCklu
-IHRoaXMgd2F5LCBubyBtYXR0ZXIgd2hpY2ggdGhlcm1hbCB6b25lIHJhaXNlcyBhIHRlbXAgYWxh
-cm0sIGl0IGNhbiBjYWxsIGNvb2xpbmcgZGV2aWNlIHRvIGNoaWxsIG91dC4NCkkgYWxzbyBhc2tl
-ZCBjcHVmcmVxIG1haW50YWluZXIgYWJvdXQgdGhlIGNvb2xpbmcgbWFwIGlzc3VlLCBoZSB0aGlu
-ayBpdCB3b3VsZCBiZSBmaW5lLg0KSSBoYXZlIHRlc3RlZCBhbmQgbm8gaXNzdWUgZm91bmQuIA0K
-DQpEYW5pZWwsIHdoYXQncyB5b3VyIHRob3VnaHQ/DQoNClRoYW5rcywNCkFuZHkNCj4gDQo+IEBE
-YW5pZWwsIGFyZSB5b3UgZmluZSB3aXRoIHRoaXMgdmVyc2lvbj8NCj4gDQo+IFNoYXduDQo=
+WARNING: unmet direct dependencies detected for TI_SCI_INTA_IRQCHIP
+  Depends on [n]: TI_SCI_PROTOCOL [=y] && SOC_TI [=n]
+  Selected by [y]:
+  - ARCH_K3 [=y]
 
---_002_VI1PR04MB4333D24227603D1497BA3CB9F30C0VI1PR04MB4333eurp_
-Content-Type: message/rfc822
-Content-Disposition: attachment;
-	creation-date="Fri, 10 May 2019 03:40:54 GMT";
-	modification-date="Fri, 10 May 2019 03:40:54 GMT"
+Fixes: 009669e74813 ("arm64: arch_k3: Enable interrupt controller drivers")
+Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+---
+ arch/arm64/Kconfig.platforms | 1 +
+ 1 file changed, 1 insertion(+)
 
-Received: from VI1PR04MB4333.eurprd04.prod.outlook.com (2603:10a6:803:15::45)
- by VI1PR04MB4333.eurprd04.prod.outlook.com with HTTPS via
- VI1PR0102CA0104.EURPRD01.PROD.EXCHANGELABS.COM; Mon, 22 Apr 2019 08:13:29
- +0000
-Received: from AM6PR0402CA0030.eurprd04.prod.outlook.com (2603:10a6:209::43)
- by VI1PR04MB4333.eurprd04.prod.outlook.com (2603:10a6:803:49::27) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1813.12; Mon, 22 Apr
- 2019 08:13:29 +0000
-Received: from VE1EUR01FT043.eop-EUR01.prod.protection.outlook.com
- (2a01:111:f400:7e01::205) by AM6PR0402CA0030.outlook.office365.com
- (2603:10a6:209::43) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1813.12 via Frontend
- Transport; Mon, 22 Apr 2019 08:13:28 +0000
-Received: from mail-pg1-f180.google.com (209.85.215.180) by
- VE1EUR01FT043.mail.protection.outlook.com (10.152.3.151) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA) id
- 15.20.1771.16 via Frontend Transport; Mon, 22 Apr 2019 08:13:28 +0000
-Received: by mail-pg1-f180.google.com with SMTP id e6so5514342pgc.4
-        for <andy.tang@nxp.com>; Mon, 22 Apr 2019 01:13:28 -0700 (PDT)
-Received: from localhost ([122.166.139.136])
-        by smtp.gmail.com with ESMTPSA id b128sm15015624pga.50.2019.04.22.01.13.24
-        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
-        Mon, 22 Apr 2019 01:13:25 -0700 (PDT)
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Andy Tang <andy.tang@nxp.com>
-Subject: [EXT] Re: Ask for help about cooling device map
-Thread-Topic: [EXT] Re: Ask for help about cooling device map
-Thread-Index: AdT4u6shVhjIu6UxTEaSdrTYxYKoAQAJ5W6A
-Date: Mon, 22 Apr 2019 08:13:23 +0000
-Message-ID: <20190422081323.lkgwbso36sshafbf@vireshk-i7>
-References:  <VI1PR04MB43334F646A71A0575CAB7C03F3220@VI1PR04MB4333.eurprd04.prod.outlook.com>
-In-Reply-To:  <VI1PR04MB43334F646A71A0575CAB7C03F3220@VI1PR04MB4333.eurprd04.prod.outlook.com>
-Content-Language: en-US
-X-MS-Exchange-Organization-AuthSource:  VE1EUR01FT043.eop-EUR01.prod.protection.outlook.com
-X-MS-Has-Attach: 
-X-MS-Exchange-Organization-Network-Message-Id:  e685b2e4-38d5-4f3e-b0cd-08d6c6fa66c9
-X-MS-TNEF-Correlator: 
-X-MS-Exchange-Organization-RecordReviewCfmType: 0
-received-spf: Pass (protection.outlook.com: domain of linaro.org designates
- 209.85.215.180 as permitted sender) receiver=protection.outlook.com;
- client-ip=209.85.215.180; helo=mail-pg1-f180.google.com;
-x-ms-exchange-organization-originalclientipaddress: 209.85.215.180
-x-ms-exchange-organization-originalserveripaddress: 10.152.3.151
-x-ms-publictraffictype: Email
-X-Microsoft-Antispam-Mailbox-Delivery:  ucf:1;jmr:0;ex:0;auth:0;dest:C;OFR:CustomRules;ENG:(20160514016)(750119)(520011016)(944506303)(944626516);
-X-Microsoft-Antispam-Message-Info:  =?us-ascii?Q?IbWP+c9O+B6xVhT+Nzx+QQOFw37IxId7KMmLg5XkKnN0UZY+LRHixBr4k6ay?=
- =?us-ascii?Q?8klLBBs4IqVSHqKdI9Xq5V7xMGCgW3CNvW8tkpplDb4VsjxCyDGmKIAkoIPE?=
- =?us-ascii?Q?YSIxEOCm/JWUYI7XrEJ1UxCuUxbLcrFVgs3WQctdNTv1FPLgH5ngyB4E9CkT?=
- =?us-ascii?Q?lZV3hD2v9OgLMJav2GkXvM+bJ0dGbkZY6ain6aKoY5DYOYeG+u/XRiIJjhb0?=
- =?us-ascii?Q?drymRxUrfnObNRnZwoWaJnOWuD0aJPnbo13XLrwRBYiiyUgvqRVjs5/YwUAE?=
- =?us-ascii?Q?NgjhOliSjF37rVlJ22yQbn2rjei/3QR/6LblMk1eYplxLizfcO3PDWCbUvcr?=
- =?us-ascii?Q?hHDqS5Dfs79vX8ZeFTyX3/L4wwojIxcdhxCMfwxbhS84yzzsGE8nLSMjH/xy?=
- =?us-ascii?Q?jEso6Zcoqt0gZERJW0tQHdJPdHSjuoHsKCI9F7kQN5Aq4esRHIFuboTIwV+o?=
- =?us-ascii?Q?zkjYhhpdfi95/mevCIVTusbE98WCzptjkbgibsuqrWnXBmEL7EwZRR01NJM/?=
- =?us-ascii?Q?5vcYI7JYQW9f3VpYHweFFfrI3KLeBQIQ0R2YQlAnmkRINP7V/cjbDhIyTUIb?=
- =?us-ascii?Q?qf4dZZyCThobYSTzvM2Qrq3Qn5+rzkM9KhiaKGdsJnKMqa5A4sGUULARN+LS?=
- =?us-ascii?Q?BBruYhhb5LBmE+Ot+Ufpm5zsRpQ/EHoeNF5gDoyi0begjfrO4q7zBUgE+kgl?=
- =?us-ascii?Q?A4CCkY97vzK0MsMseSVk2RFnKoSuWXPRvtuFFz9sHafvzacykaTzBFY3CNBh?=
- =?us-ascii?Q?j1k23MQ5WWrwDQcnPIHEDxUnqPuQ09Uo4sTJ695V/8JUot5GbeUhd8Lx7TjQ?=
- =?us-ascii?Q?AVORaPHo09Cxa5dWGSkP5gxhEVUvbjU9KOL6duZibv1LcYs2SLG511EQZy8R?=
- =?us-ascii?Q?XbT12CpGrAFkn/bl9B74l/E0X3NtStdtImf1YgfAZRQ32Zz7dbI8i6tM3Tbd?=
- =?us-ascii?Q?XQ83l/yeLuqfG55DFkyskAAUyJQK8Llt8XXtVqnQtQbKufXP9MkMnWqPkJR/?=
- =?us-ascii?Q?Cbx9IhILi1DxB0AncZ9c58SzrdNYH2DZBxFgM9vgVZId/ABi0G1aLe6fxGve?=
- =?us-ascii?Q?mTRBKwwMTAQ7rHehsJ6Gj2beHN39QaXZsHu+HagX9e4wrlYYT1Pklt9jfPu5?=
- =?us-ascii?Q?JCcTabNxG1FU?=
-Content-Type: text/plain; charset="us-ascii"
-Content-ID: <BD189B44EDC1F8428EC76FB0AAE2E1FC@eurprd04.prod.outlook.com>
-Content-Transfer-Encoding: quoted-printable
-MIME-Version: 1.0
-
-WARNING: This email was created outside of NXP. DO NOT CLICK links or attac=
-hments unless you recognize the sender and know the content is safe.
+diff --git a/arch/arm64/Kconfig.platforms b/arch/arm64/Kconfig.platforms
+index 42eca65..9d1292f 100644
+--- a/arch/arm64/Kconfig.platforms
++++ b/arch/arm64/Kconfig.platforms
+@@ -88,6 +88,7 @@ config ARCH_K3
+ 	bool "Texas Instruments Inc. K3 multicore SoC architecture"
+ 	select PM_GENERIC_DOMAINS if PM
+ 	select MAILBOX
++	select SOC_TI
+ 	select TI_MESSAGE_MANAGER
+ 	select TI_SCI_PROTOCOL
+ 	select TI_SCI_INTR_IRQCHIP
+-- 
+2.7.4
 
 
-
-On 22-04-19, 07:09, Andy Tang wrote:
-> Hi Viresh,
->
-> Sorry to bother you. I have a question, hope I can get you help.
-> Here it is:
->
-> I want to add multiple "Thermal Zone" support in dts ( driver is ready).
-> The final dts looks like below:
->
->         thermal-zones {
->                 cpu_thermal: cpu-thermal {
->                         polling-delay-passive =3D <1000>;
->                         polling-delay =3D <5000>;
->                         thermal-sensors =3D <&tmu 0>;
->
->                         trips {
->                                 ccu_alert: ccu-alert {
->                                         temperature =3D <85000>;
->                                         hysteresis =3D <2000>;
->                                         type =3D "passive";
->                                 };
->                                 ccu_crit: ccu-crit {
->                                         temperature =3D <95000>;
->                                         hysteresis =3D <2000>;
->                                         type =3D "critical";
->                         cooling-maps {
->                                 map0 {
->                                         trip =3D <&ccu_alert>;
->                                         cooling-device =3D
->                                                 <&cpu0 THERMAL_NO_LIMIT T=
-HERMAL_NO_LIMIT>,
->                                                 <&cpu1 THERMAL_NO_LIMIT T=
-HERMAL_NO_LIMIT>,
->                                                 <&cpu2 THERMAL_NO_LIMIT T=
-HERMAL_NO_LIMIT>,
->                                                 <&cpu3 THERMAL_NO_LIMIT T=
-HERMAL_NO_LIMIT>,
->                                                 <&cpu4 THERMAL_NO_LIMIT T=
-HERMAL_NO_LIMIT>,
->                                                 <&cpu5 THERMAL_NO_LIMIT T=
-HERMAL_NO_LIMIT>,
->                                                 <&cpu6 THERMAL_NO_LIMIT T=
-HERMAL_NO_LIMIT>,
->                                                 <&cpu7 THERMAL_NO_LIMIT T=
-HERMAL_NO_LIMIT>;
->                                 };
->                         };
->                 };
->                 platform {
->                         polling-delay-passive =3D <1000>;
->                         polling-delay =3D <5000>;
->                         thermal-sensors =3D <&tmu 1>;
->                         trips {
->                                 plt_alert: plt-alert {
->                                         temperature =3D <85000>;
->                                         hysteresis =3D <2000>;
->                                         type =3D "passive";
->                         };
->                                 plt_crit: plt-crit {
->                                         temperature =3D <95000>;
->                                         hysteresis =3D <2000>;
->                                         type =3D "critical";
->                                 };
->                         };
->                         cooling-maps {
->                                 map0 {
->                                         trip =3D <&plt_alert>;
->                                         cooling-device =3D
->                                                 <&cpu0 THERMAL_NO_LIMIT T=
-HERMAL_NO_LIMIT>,
->                                                 <&cpu1 THERMAL_NO_LIMIT T=
-HERMAL_NO_LIMIT>,
->                                                 <&cpu2 THERMAL_NO_LIMIT T=
-HERMAL_NO_LIMIT>,
->                                                 <&cpu3 THERMAL_NO_LIMIT T=
-HERMAL_NO_LIMIT>,
->                                                 <&cpu4 THERMAL_NO_LIMIT T=
-HERMAL_NO_LIMIT>,
->                                                 <&cpu5 THERMAL_NO_LIMIT T=
-HERMAL_NO_LIMIT>,
->                                                 <&cpu6 THERMAL_NO_LIMIT T=
-HERMAL_NO_LIMIT>,
->                                                 <&cpu7 THERMAL_NO_LIMIT T=
-HERMAL_NO_LIMIT>;
->                         }
-> }
->
-> Here we have 2 thermal zones, but both map cpu0-7 as cooling device.  I h=
-ave tested and didn't find any issues.
-> My query is: is it allowed to map same device as "cooling device" to more=
- than one "thermal zone"?
-
-That should be fine IMO.
-
---
-viresh
-
---_002_VI1PR04MB4333D24227603D1497BA3CB9F30C0VI1PR04MB4333eurp_
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---_002_VI1PR04MB4333D24227603D1497BA3CB9F30C0VI1PR04MB4333eurp_--
-
