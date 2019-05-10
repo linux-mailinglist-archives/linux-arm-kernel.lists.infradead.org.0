@@ -2,79 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 874A11990E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 09:38:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B197619918
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 09:42:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k5xGxYnjIhqnft4YEv0rqwr4P4ddbBiJgxL9+ffgzLg=; b=nkln2uy1jnN3xg
-	ZKtlbNJn+glKk0pDxoSCeFSfjOgE810xHXy7UDTrXmm5DiGBEkFctmYzshHYK3YrKQGVboj7BjsVE
-	DAJpWM6BCuoy4OeUjxG+oWgUWloVjIC2hLXq/tb8r7Y6UaeLooAUyrWOlFBZuWcpdyDc95gmh7K65
-	jQPc97pbjb4FnAwWaQxn3PFAi/jC/fC7+SuJpHHPs7Z7iTSDh4DLcaD/9KjW6LrLPWqSwF7K725dn
-	Y5CzsSEms1EUHb1GVrWzfvyUIGMCoTgbkRa4yDqcvMa6ZlbxJo/1gH7kf9jk6pkBGNoXTKvYWCXhU
-	azDzAnAuYxmCAF/WXvKA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=z29dNytgKzx7RacEVEOJgQsGvxrLHVPA+NnphLjRgmg=; b=dSL+UhENFf+7gK
+	sSQs3Rwd9oXq3tdSs8TxmVTJ5RsWJhZoV0MMD3bH7ev8dBK3TU0sRwl08XEQ2mBSzqZYohGr9L6Gg
+	BnxM4S4HLgu1xg61b6K9MeMb0QE3+OypjrTS6RCe9DLNEf+B7YZ/C3jwruqtys7du07ea1nQSFbTN
+	gdvQoW4DWMWQSU2jL8EkaSW41gtFyYmJEH/HA01IEqW+MkGQPNPJmqu84XzjlBx2I51mupn3eMZO/
+	dZR8ej2xA7a0nmBi0y5sq2QKK2tj+7IBgW83PhVHsOvI3x7OKHYbj02N4F+Y0Y7D8B81orBE8Yzel
+	M9bG+hVqY7c+Nh7soIKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP06Y-0002CL-2k; Fri, 10 May 2019 07:38:06 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1hP0B4-0003sv-OZ; Fri, 10 May 2019 07:42:46 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP06Q-0002BU-Gt
- for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 07:37:59 +0000
-Received: by mail-qk1-x743.google.com with SMTP id n68so505601qka.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 May 2019 00:37:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=YPIdmEziEMHUxazGM82nUeKFs82CMeVb0svBlAIM9mc=;
- b=YOQP0dtsuHdYUa3VJGsw06uyx6HBDRcu7CqZFjC6R74X5SCqFH/fbolbZ4NikUGBOB
- 01VRHlTKWDTKyNcqr0mx3OXaYA78NK/XUYGPfVgakaCkbsccPVHl+QvhvJFgRCvxbuDG
- KJ3D9BUxmIMQh16Ljn7fZFKLA8Vj0mFGbYJho=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=YPIdmEziEMHUxazGM82nUeKFs82CMeVb0svBlAIM9mc=;
- b=lP+1dsaA7HpS7LftgbxE/ZkyDKBB7ixYgUy/i7eVf7Rp9q4LD2RBtN8Gh+PuXuT9cM
- 4baESDYwp84zXPYW+p4V/oKObAKEHvsZRny4CFC9vlZ/H5UGWXLdb6/md9Y0fZYHERDE
- S+BgevaQk9KpgBjAqxxEpx/5x3Tcypel5/vYiaSjQVNVBj0OVDVrC85duMBwwTXI/5fR
- 3uvkVbkQ1YLkQ3WBUtK3cG7ZqwZ/HCjTFyTL4V+tYeKJMkUsrxzYWL5qUUmYRHXnTegm
- Y/1PacRby2C/VZw6OjwXlWbCPJ1uTKRsqDXPlKO0Yidd83LJ0gAJZiumZwBi/g2Tpg8E
- 8lpA==
-X-Gm-Message-State: APjAAAVEBpptbaau83S8IRHunAAaFxy/okcUYrGiKTDmQAcoxHolOLSq
- 7+1Fg6CkRJXENZrOV1f+kAa1LNJMfuefC4rYEGU6Ow==
-X-Google-Smtp-Source: APXvYqw0oTMu+CovlvxeRY9ocZTmZNLydi0JE63J09a1MhVGCcjf777Api8V4IshlZIMqAkICDBwoldY3iKTtUIQcho=
-X-Received: by 2002:a05:620a:1585:: with SMTP id
- d5mr7444463qkk.212.1557473876989; 
- Fri, 10 May 2019 00:37:56 -0700 (PDT)
+ id 1hP0Ax-0003rX-Gq
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 07:42:41 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x4A7cYSq028701; Fri, 10 May 2019 09:42:37 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=N1v+zxTZE44tr6xZHlbxMHCvWy6h3ciCGaY/rbHViTk=;
+ b=a3QCQoY3R8nEO8Y32dWwA5wH5/dpmNaO2RWr6VTmU7jIFh7vyzTNByjPUx4/8sSFFo0v
+ dUAUkMCoQ7Abuptg4YLoUf7Icw2NDODJs4UH/o7Sy+whdv7qTsWtYUJvBQgkz0BYx2kl
+ yih3y6T17fxLnL96mLWfALBw7a/4WvR9ANOzySz1AZgK6NdWOiUFodUIepPWGnFuwoZw
+ PowJnbuKFkqqrGk+c+oFRxSf79vCD3VmlIaHsVPsjCDda7jWNU06NduMlwo5R8vThEIM
+ UspZc+xoPOeUAJ5XTEARNg+F0eSZ26/Vy9nqcOFPiLDgQUDYnyPhabkKjyc94GYy6sZU KA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2sc9s4gpn3-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Fri, 10 May 2019 09:42:37 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 07FFA3A;
+ Fri, 10 May 2019 07:42:35 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id B752A15AD;
+ Fri, 10 May 2019 07:42:35 +0000 (GMT)
+Received: from localhost (10.75.127.46) by SFHDAG3NODE2.st.com (10.75.127.8)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 10 May 2019 09:42:35
+ +0200
+From: Alexandre Torgue <alexandre.torgue@st.com>
+To: Linus Walleij <linus.walleij@linaro.org>, Maxime Coquelin
+ <mcoquelin.stm32@gmail.com>
+Subject: [PATCH 0/2] pinctrl: stm32: add suspend/resume management
+Date: Fri, 10 May 2019 09:42:28 +0200
+Message-ID: <1557474150-19618-1-git-send-email-alexandre.torgue@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-References: <20190507045433.542-1-hsinyi@chromium.org>
- <CAL_Jsq+rGeFKAPVmPvv_Z+G=BppKUK-tEUphBajZVxFtbRBJvQ@mail.gmail.com>
- <CAJMQK-iVhScf0ybZ85kqP0B5_QPoYZ9PZt35jHRUh8FNHKvu7w@mail.gmail.com>
- <CAL_JsqJZ+mOnrLWt0Cpo_Ybr_ohxwWom1qiyV8_EFocULde7=Q@mail.gmail.com>
- <CAJMQK-jjzYwX3NZAKJ-8ypjcN75o-ZX4iOVD=84JecEd4qV1bA@mail.gmail.com>
- <CAL_JsqLnmedF5cJYH+91U2Q_WX755O8TQs6Ue9mqtEiFKcjGWQ@mail.gmail.com>
- <CAJMQK-hJUG855+TqX=droOjUfb-MKnU0n0FYtr_SW2KByKAW1w@mail.gmail.com>
- <36fab640-b98e-9781-f96f-0ed988a71077@rasmusvillemoes.dk>
-In-Reply-To: <36fab640-b98e-9781-f96f-0ed988a71077@rasmusvillemoes.dk>
-From: Hsin-Yi Wang <hsinyi@chromium.org>
-Date: Fri, 10 May 2019 15:37:31 +0800
-Message-ID: <CAJMQK-hpA7rkaznW2REYbO=6rOvEMfJOvo6xxPkNb9o1VNUqTA@mail.gmail.com>
-Subject: Re: [PATCH] arm64: add support for rng-seed
-To: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG7NODE1.st.com (10.75.127.19) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-05-09_02:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_003758_589044_CD7E8013 
-X-CRM114-Status: GOOD (  16.35  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190510_004239_890909_665F5119 
+X-CRM114-Status: GOOD (  10.32  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -83,7 +80,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,86 +91,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Architecture Mailman List <boot-architecture@lists.linaro.org>,
- Michal Hocko <mhocko@suse.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Mike Rapoport <rppt@linux.ibm.com>, Rob Herring <robh+dt@kernel.org>,
- James Morse <james.morse@arm.com>, Andrew Murray <andrew.murray@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Stephen Boyd <swboyd@chromium.org>,
- Frank Rowand <frowand.list@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: linux-gpio@vger.kernel.org, alexandre.torgue@st.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-stm32@st-md-mailman.stormreply.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 10, 2019 at 2:14 PM Rasmus Villemoes
-<linux@rasmusvillemoes.dk> wrote:
+During power sequence, GPIO hardware registers could be lost if the power
+supply is switched off. Each device using pinctrl API is in charge of
+managing pins during suspend/resume sequences. But for pins used as gpio or
+irq stm32 pinctrl driver has to save the hardware configuration.
+Each register will be saved at runtime and restored during resume sequence.
 
-> So, why not just have the bootloader add whatever entropy it has via the
-> commandline, which already gets mixed in? That requires no kernel
-> changes, and works for all architectures.
->
-> If anything, perhaps instead of just adding gobbledygook=abc123, make an
-> official command line parameter (there was talk about this at some
-> point), and have the kernel overwrite the value with xxx so it's not
-> visible in /proc/cmdline.
->
-> Rasmus
+Regards
+Alex
 
-For some arch, besides commandline, we also need to overwrite bootargs
-in fdt, otherwise it's still visible by
-/sys/firmware/devicetree/base/chosen/bootargs for example.
 
-Originally planned to land v2 as
+Alexandre Torgue (2):
+  pinctrl: stm32: add suspend/resume management
+  pinctrl: stm32: Enable suspend/resume for stm32mp157c SoC
 
-diff --git a/drivers/of/fdt.c b/drivers/of/fdt.c
-index de893c9616a1..96ea5eba9dd5 100644
---- a/drivers/of/fdt.c
-+++ b/drivers/of/fdt.c
-@@ -24,6 +24,7 @@
- #include <linux/debugfs.h>
- #include <linux/serial_core.h>
- #include <linux/sysfs.h>
-+#include <linux/random.h>
+ drivers/pinctrl/stm32/pinctrl-stm32.c      | 132 +++++++++++++++++++++++++++++
+ drivers/pinctrl/stm32/pinctrl-stm32.h      |   2 +
+ drivers/pinctrl/stm32/pinctrl-stm32mp157.c |   5 ++
+ 3 files changed, 139 insertions(+)
 
- #include <asm/setup.h>  /* for COMMAND_LINE_SIZE */
- #include <asm/page.h>
-@@ -1079,6 +1080,7 @@ int __init early_init_dt_scan_chosen(unsigned
-long node, const char *uname,
- {
-        int l;
-        const char *p;
-+       const void *rng_seed;
+-- 
+2.7.4
 
-        pr_debug("search \"chosen\", depth: %d, uname: %s\n", depth, uname);
-
-@@ -1113,6 +1115,15 @@ int __init early_init_dt_scan_chosen(unsigned
-long node, const char *uname,
-
-        pr_debug("Command line is: %s\n", (char*)data);
-
-+       rng_seed = of_get_flat_dt_prop(node, "rng-seed", &l);
-+       if (!rng_seed || l == 0)
-+               return 1;
-+
-+       /* try to clear seed so it won't be found. */
-+        fdt_nop_property(initial_boot_params, node, "rng-seed");
-+
-+        add_device_randomness(rng_seed, l);
-+
-        /* break now */
-        return 1;
- }
-
-(For arm64 RW/RO issue, it will be done in other patch.)
-
-If we add parameter into commandline, I think we probably also need to
-do similar changes here since there are fdt related overwrite.
 
 _______________________________________________
 linux-arm-kernel mailing list
