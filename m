@@ -2,69 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C20ED19938
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 09:53:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6EB7219956
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 10:12:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Tv+YfFZ5ShNhJpSJmE58gaik2JLPoYGpH3n4AwhxAmw=; b=KBkSgc09vIYRBU
-	EHmRL6zLih8PWuhIIl4tQNufYlGJ9hKIU9in6474I0XhBxgWbp5QA9JYEgOjPBjZ61EHSmMBWmwtb
-	UqdxpMosavr8B1tMx/EkQ1HW3ZkFnTENGJ+wn9KnVczYySoqAE1iOqnh7p6bHSLpNEYptii++sE8i
-	GZ1KGDdL9GGwFW4H4WFqNnUzB05PILYih4dhpC5pKOuURDO1lf/tK2UKNPE1ZnR+H2A0WUSHSrZ2Q
-	53RuRIkjC4//kZhU8EXF73Y/GK4FKc4o2ympWovdZekfMAxPPtjMgsYy5HTSaVrCr1uHOmuaoQXc9
-	HDQ1zAl94uF+RJrxSHug==;
+	List-Owner; bh=KZLmT3XmXmg3KtUb1IxagbuAgicuPu0VTjERttVy6n4=; b=VdfPg06Wfy0su5
+	mL9TFJSTCmTJeo6MN9GlI5bEwKP6hjJuFbvUfhoVv1MIWxx/hUUFVZBQGGGFTIPuZfZaoaM+5JXQn
+	n0iIlvVxDW+YoBqXMdtelft9aWNk6hBCIbm0bEQtLzMbxoT1PdTVRivNyokym9JkV8HJMnAe6eQcC
+	CRlq5rjzpbId9VcuCIhCsPsckHS7BebBQQMXzwy5ahITFXY2lXIW0gZ758UR1cdcTHm/y8jQvAP2x
+	BMuRSgJjSwr3NpJuPSpVX9VN6giSib1AyTsHyv/rZrz9H0ptU+phioVcwWKpJjxbp5Icx1YyntCTG
+	OVPsxUq7q4oUFHg2DCzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP0L3-0008Li-US; Fri, 10 May 2019 07:53:05 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hP0dx-0006kw-Si; Fri, 10 May 2019 08:12:37 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP0Kv-0008LJ-PL
- for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 07:52:59 +0000
-Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AF63F217D6;
- Fri, 10 May 2019 07:52:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1557474777;
- bh=dfJ5cDE8S6aFtBlS+mbYcZdo0hkC30M9EBxUWXrn1MU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=JowxXFCRc7htA27Yf9LmkUfNifx6blVId8ug9OItw3EigQK61RjsPcrHUZ1LNdRii
- ssl0bwd74wNDos4dA1+m1ZOzFnL3r2waSDSeQsfIJQVUzQYf6Y4KjiPRw+9AsZ+rx0
- Q6Tu6TC76fZ0d0o98pXWt1z0plAj5As7HNPyTQYw=
-Date: Fri, 10 May 2019 15:52:33 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH v2] soc/imx: Read imx8mm soc revision from anatop
-Message-ID: <20190510075232.GH15856@dragon>
-References: <95ae35956d5488989833e2287f3c6fef55ba2aa8.1556212347.git.leonard.crestez@nxp.com>
+ id 1hP0dq-0006jL-DP
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 08:12:31 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 1A2D1AF41;
+ Fri, 10 May 2019 08:12:26 +0000 (UTC)
+Date: Fri, 10 May 2019 10:12:24 +0200
+From: Jean Delvare <jdelvare@suse.de>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [PATCH] i2c: Allow selecting BCM2835 I2C controllers on
+ ARCH_BRCMSTB
+Message-ID: <20190510101224.3cd5d0f9@endymion>
+In-Reply-To: <20190509210438.28223-1-f.fainelli@gmail.com>
+References: <20190509210438.28223-1-f.fainelli@gmail.com>
+Organization: SUSE Linux
+X-Mailer: Claws Mail 3.13.2 (GTK+ 2.24.31; x86_64-suse-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <95ae35956d5488989833e2287f3c6fef55ba2aa8.1556212347.git.leonard.crestez@nxp.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_005258_042135_2A184C90 
-X-CRM114-Status: UNSURE (   8.55  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190510_011230_597454_52036BB5 
+X-CRM114-Status: GOOD (  15.94  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -76,27 +60,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
- Anson Huang <anson.huang@nxp.com>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Vignesh R <vigneshr@ti.com>, Ajay Gupta <ajayg@nvidia.com>,
+ Wolfram Sang <wsa@the-dreams.de>, Eddie James <eajames@linux.vnet.ibm.com>,
+ Kamal Dasu <kdasu.kdev@gmail.com>, linux-kernel@vger.kernel.org,
+ Elie Morisse <syniurge@gmail.com>,
+ Jarkko Nikula <jarkko.nikula@linux.intel.com>, linux-i2c@vger.kernel.org,
+ Karthikeyan Ramasubramanian <kramasub@codeaurora.org>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Juergen Fitschen <jfi@ssv-embedded.de>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 25, 2019 at 05:17:39PM +0000, Leonard Crestez wrote:
-> Like on imx6/7 we can read version information from a register in
-> anatop, and in the same format.
+On Thu,  9 May 2019 14:04:36 -0700, Florian Fainelli wrote:
+> From: Kamal Dasu <kdasu.kdev@gmail.com>
 > 
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> ARCH_BRCMSTB platforms have the BCM2835 I2C controllers, allow
+> selecting the i2c-bcm2835 driver on such platforms.
+> 
+> Signed-off-by: Kamal Dasu <kdasu.kdev@gmail.com>
+> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+> ---
+>  drivers/i2c/busses/Kconfig | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/i2c/busses/Kconfig b/drivers/i2c/busses/Kconfig
+> index 26186439db6b..7277c1051ca2 100644
+> --- a/drivers/i2c/busses/Kconfig
+> +++ b/drivers/i2c/busses/Kconfig
+> @@ -435,7 +435,7 @@ config I2C_AXXIA
+>  
+>  config I2C_BCM2835
+>  	tristate "Broadcom BCM2835 I2C controller"
+> -	depends on ARCH_BCM2835
+> +	depends on ARCH_BCM2835 || ARCH_BRCMSTB
+>  	help
+>  	  If you say yes to this option, support will be included for the
+>  	  BCM2835 I2C controller.
 
-I do not apply patch using base64 encoding.
+Reviewed-by: Jean Delvare <jdelvare@suse.de>
 
-BTW, we use format 'soc: imx: ' than 'soc/imx: ' for prefix.
-
-Shawn
+Thanks,
+-- 
+Jean Delvare
+SUSE L3 Support
 
 _______________________________________________
 linux-arm-kernel mailing list
