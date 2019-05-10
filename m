@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 181191A24A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 19:32:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0E501A250
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 19:32:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=U+zG9aqbqObYK0PbtYXv4rTMDjTLzW2NLSX+VhQRC0Q=; b=p0HscyMpRygYs8W9jXOU23w+KT
-	/K9iHj1Xwo+d5dkS4afgHFoiL35MZGVZvpyy4WUcRxGEggWtSDZGT1/Q4D8YK0QGppmRHKKSAHmbF
-	6YQHAOU8rXI/1lRBaOmRueYfAJ/S0j94JRsPz1wjzdpi3p7ZfQC/qQoKR3D0/mTBJZq+W4KE6gMAX
-	sqcraxIBsl/Ug0AMI/04hEXojJ0BuxtrpuOWGGrLXfOydrF9azhRv/qkYx+MdqIdTXkiSxsoOyrDl
-	65ZZx0Fe9hdf57IrjkVBfnGH1n32Q6/o1Y5CghwJfVNFWQ39pKgarXHWeVD/fZnZlp3mwS2P07xcI
-	CAvBWK1A==;
+	bh=S8fYRKUyef+ix6bf45vtVAWEks49gdRHYXY26r0zUrI=; b=UDaAXV9LgoOebjNLgKEyWpZvxt
+	Jlxnci/y1g9dbqzAtGTDRyGJSjNoUbCXpwLEggtcFvWY7DT4qA/kb7R4R11YxdrElIcpFD3u3LpML
+	k7AjEp/bz8TtDUHOXwF7316+lUG2FS2fdRlnDwJEGWSynA7bRmt9KUOdP3NvRX0mU/6uvNFcfH7hf
+	0P9kdUHNkn+81L1++MPJ9uvGZO3pAwg0mX8Ouu+V+yxxI7dtQi9AM8N7ngZkNc3DLY6nEmTGo6LJd
+	5S8asvKK+LQscW/MiKofeuj46Bp0qvkGilQD4v8OkBdA0xQ0YV+ej8HmLvuhiptIX6L5dXF8nEAMU
+	KdCXMGGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP9NQ-0008Eg-T8; Fri, 10 May 2019 17:32:08 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1hP9Nb-0008N5-Tw; Fri, 10 May 2019 17:32:19 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP9NI-0008DV-3W
- for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 17:32:01 +0000
-Received: by mail-ed1-x543.google.com with SMTP id w33so6099329edb.10
+ id 1hP9NN-0008FA-F2
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 17:32:07 +0000
+Received: by mail-ed1-x541.google.com with SMTP id b8so6103622edm.11
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 May 2019 10:31:58 -0700 (PDT)
+ Fri, 10 May 2019 10:32:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=w7FukaSOWmU1MZzQqS+AmxHZTAQNw2SrsDsc9k5kRs0=;
- b=qYzl9fLUzXiEcDEudYYZG9z4EZzyB0fYZl4wq9mDCOi5OFRQiD0vtS7yehPbo7lCbI
- UC988nHKI4i+dJI6WNij5/63TbO4pVnAXWTLklylRyFefzKmNQdMJV6Qe3tfy8nKysV2
- Aqv2+guc+GqFEtY68R5BmfH0ZTURhyoHUL3TuoB9pWtVHOJAtisz3iwkyIl0xckxXy3v
- B+PJ4qWr+iBFwl3fsX5wydly9fxxLRoD6HucLGxAeVCLSy1ThUwuwIfbYoJruY3kEZfH
- A1JvDtzTSXf6JBBYvergPvsZOVdZbDgK8f2+baIbvdaU7jd03u6VqIEtGxJWj6rm3DRi
- ViAg==
+ bh=7fV4hVAmAbFHfY0I1yQlpwpkvQ7JKHa98NLgnJBiZDY=;
+ b=LknVoO4tUQQjtIggBo/z1KGMKMS9lVmlRSLDduxaz2IEGKOAGot/nDYmGVDJqPEFjB
+ LI3cDUwXpOPOTn04X5/Qd5m1rLMbLyf7gRWIb4WTlS1/sonhA2fRyp4UbZPNyKPyiNRx
+ o1JRrS7aWOwvpiiQX/86zQJ+1/gIx1sIyU856MVVv0ETgz4wLsQgmvClhOA8jAb5G2kZ
+ E3o60yNHm1eIBc2WoGcEghCpDdemPiqLcJ+/Yb6SUQ3Gf9OphElXCgpVhpW42a0FiUew
+ 7jeTPuFsICH9sQmVBXYbtZMjbc9P+Y5MzoBGCAeXYFWGhxoSnMey4yNGAvBrQPhBkl0U
+ Gfiw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=w7FukaSOWmU1MZzQqS+AmxHZTAQNw2SrsDsc9k5kRs0=;
- b=sJR58m0s7cxW2XxH8fiikx19EUT3CMJI50Je/UUUwjP3bJjKtMtZX4KJtQXjNSYf+q
- GCsi020lsRmCgiCixn9xroToa3iMfOYYnuZFr1wT3/EzXqxNowY6FMUEwJZ0EON7ua3p
- msviduXsVr9yCq32iHuJUqlYsKzCQKrc0pnq23RFR0nZTFCRemHa0gdL9ZEdOs8ea+DR
- D6k4ivm9hYXeRdxYkSjuuUN0gBIQZ43eZlShxWG2QDj8lyjRiPy7R++7PciSiL4sBbmG
- SFWqHINxfGc9WSlU7I/f4uWkcxAZmxMKTVt4CRLVomkhw8FzWWgGzt3Fmb1hh1gCj5C1
- N7vQ==
-X-Gm-Message-State: APjAAAVsB6JPZ6XvEh0fS5/3eJyFXmLY5D2r9w5U4s8CoZ/+lysEDAvS
- ayFI+wXuXxQmTgPIgKZXEJg=
-X-Google-Smtp-Source: APXvYqxA/71Z6cfoww2mIZJyYH2jEGbUgRiMBIJC+7SOpG/Sa9uTAE+AGJ6aHz6MVd7YP755lBdqTQ==
-X-Received: by 2002:a17:906:3955:: with SMTP id
- g21mr9629259eje.61.1557509517569; 
- Fri, 10 May 2019 10:31:57 -0700 (PDT)
+ bh=7fV4hVAmAbFHfY0I1yQlpwpkvQ7JKHa98NLgnJBiZDY=;
+ b=nTaaV0S3svCLS2EzB+Z6q03EtGBBvP3wpViPV5TpQC9WzSA3LKXH0enppkFHF1cKDK
+ 3eyTd0Kk2mRLeCvN9S1ePEIacqxBPsPRNCdar5i3Hm9sw1bZpEpgZ3K6ci3BZ6YAOt09
+ tZbJhonhayzkqnMaUzBdFODXkY+AL1tW/vIfaIBMUUBw5P/CzVDznAF+gNMZwOk9edJZ
+ oukYXiSoPuMZIJB28/2UgTB55jP45K+n1o032FM6eUAUPMg5lUp7pSxWu2XxOjsFuCAt
+ o6EyKWuu2NlmLC8503dFiXnqf4/1vVt4KwEFSB15Z1PGxZNpS4qM12ZUybJp6cPRvW2f
+ FSQQ==
+X-Gm-Message-State: APjAAAUL3FQ201su8Dn1XHSsj+OWDQgc116OxQ+fevoXhpgcHNct3rsi
+ tRGvIz3X1emlsKoMhnDhl25Vixm5
+X-Google-Smtp-Source: APXvYqwRhkB3mljJJBOeVkEFqSYiYAhAJbm6CP/YaoYopxarV4lEGAnieQB3w+eNnM5by0z1/qEGVQ==
+X-Received: by 2002:a17:906:cd27:: with SMTP id
+ oz39mr3292112ejb.73.1557509523669; 
+ Fri, 10 May 2019 10:32:03 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.250])
- by smtp.gmail.com with ESMTPSA id v16sm1599567edm.56.2019.05.10.10.31.54
+ by smtp.gmail.com with ESMTPSA id v16sm1599567edm.56.2019.05.10.10.32.00
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 10 May 2019 10:31:56 -0700 (PDT)
+ Fri, 10 May 2019 10:32:03 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 1/2] dt-bindings: rng: Document BCM7211 RNG compatible string
-Date: Fri, 10 May 2019 10:31:10 -0700
-Message-Id: <20190510173112.2196-2-f.fainelli@gmail.com>
+Subject: [PATCH 2/2] hwrng: iproc-rng200: Add support for 7211
+Date: Fri, 10 May 2019 10:31:11 -0700
+Message-Id: <20190510173112.2196-3-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190510173112.2196-1-f.fainelli@gmail.com>
 References: <20190510173112.2196-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_103200_148967_FB6BDB82 
-X-CRM114-Status: GOOD (  12.76  )
+X-CRM114-CacheID: sfid-20190510_103205_590286_A8D86088 
+X-CRM114-Status: GOOD (  14.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (f.fainelli[at]gmail.com)
@@ -97,14 +97,12 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: stefan.wahren@i2se.com, Mark Rutland <mark.rutland@arm.com>,
- Florian Fainelli <f.fainelli@gmail.com>, herbert@gondor.apana.org.au,
- Scott Branden <sbranden@broadcom.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Ray Jui <rjui@broadcom.com>,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- linux-crypto@vger.kernel.org, mpm@selenic.com,
- "moderated list:BROADCOM IPROC ARM ARCHITECTURE"
+Cc: stefan.wahren@i2se.com, Florian Fainelli <f.fainelli@gmail.com>,
+ herbert@gondor.apana.org.au, Arnd Bergmann <arnd@arndb.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com, linux-crypto@vger.kernel.org,
+ mpm@selenic.com, "moderated list:BROADCOM IPROC ARM ARCHITECTURE"
  <linux-arm-kernel@lists.infradead.org>, wahrenst@gmx.net
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
@@ -112,25 +110,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-BCM7211 features a RNG200 block, document its compatible string.
+BCM7211 features a RNG200 hardware random number generator block, add
+support for this chip by matching the chip-specific compatible string.
 
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- Documentation/devicetree/bindings/rng/brcm,iproc-rng200.txt | 1 +
+ drivers/char/hw_random/iproc-rng200.c | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/rng/brcm,iproc-rng200.txt b/Documentation/devicetree/bindings/rng/brcm,iproc-rng200.txt
-index 0014da9145af..c223e54452da 100644
---- a/Documentation/devicetree/bindings/rng/brcm,iproc-rng200.txt
-+++ b/Documentation/devicetree/bindings/rng/brcm,iproc-rng200.txt
-@@ -2,6 +2,7 @@ HWRNG support for the iproc-rng200 driver
+diff --git a/drivers/char/hw_random/iproc-rng200.c b/drivers/char/hw_random/iproc-rng200.c
+index 8b5a20b35293..92be1c0ab99f 100644
+--- a/drivers/char/hw_random/iproc-rng200.c
++++ b/drivers/char/hw_random/iproc-rng200.c
+@@ -220,6 +220,7 @@ static int iproc_rng200_probe(struct platform_device *pdev)
+ }
  
- Required properties:
- - compatible : Must be one of:
-+	       "brcm,bcm7211-rng200"
- 	       "brcm,bcm7278-rng200"
- 	       "brcm,iproc-rng200"
- - reg : base address and size of control register block
+ static const struct of_device_id iproc_rng200_of_match[] = {
++	{ .compatible = "brcm,bcm7211-rng200", },
+ 	{ .compatible = "brcm,bcm7278-rng200", },
+ 	{ .compatible = "brcm,iproc-rng200", },
+ 	{},
 -- 
 2.17.1
 
