@@ -2,86 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27F2B19CAB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 13:30:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F422219CCB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 13:36:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=YWbf94kutoo1Jx4eQISBOGR/mutv6/tAj1XJYF10mC8=; b=YNV7/ha5EXTcen2T6Nw06N7at3
-	sIgw3Rm+WjxeuP1SUlBZk8pFJU7WWoN4kUfGMDX4bqfYp/5LFW1F5ExKDwqS/tGVWwcIKxqW+ED7Z
-	uDsce7tK4SbP6g+aFr0/U0xlHRlVfzY/KmP3BabhfDfYTfnyKU/ANKiTV3CIwUtDxjyoqRQexy2Ol
-	jCCZ8J8gp29b0xjUWpztPfwKKvMKKhBtAUYQ+PQ2cj63EC6rJhkxHfMFCGMLOUY/DRV0iqTTQLOPs
-	eeE2GM8NF91dxbQXUhp+urCLZiagkYc8a13BvhhfMiFL6l7zal+meZk/8hSRIbiMQA1SL5z8FVYHE
-	49HnbKLQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=b726Hzy1d5cWNavCYlErR5dqrP+vNKNIvHsk2hRiU2g=; b=GiU1qJ6pFS9Ux4
+	j4QxRyh9glTtyy1vqK87KhVhSCB+jSTOxZeJIrXVNyGvWdRZ8ZaenrZ9Za/ideWUqfrCsSgL1Krf1
+	g+nklQchycZcrI8ffjQdp9RFD65akJaUuoZ5MbYElAxw4Us0xAAo7+FbYSuLVglFUAbdDyBDrcP1T
+	j4N4yWmQK9aC2Bv4WvWO+Lsv8K9/qqaw2HG/rLfdr9nbjOZMLtokEEZprFIxZngL4WyQosFPAyzla
+	NwWnuEN8CU4V5rlrG2NqlcCid2F/8cKkplFyBjKogLP3tzNR2m4mY0WCDQx91hpKT7m7ckfnR9tt2
+	RMELVJmChrBml1lpqEfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP3jG-00032E-J9; Fri, 10 May 2019 11:30:18 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hP3ok-0005PM-6T; Fri, 10 May 2019 11:35:58 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP3iv-0002DK-AD
- for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 11:29:59 +0000
-Received: by mail-pg1-x541.google.com with SMTP id c13so2909119pgt.1
+ id 1hP3od-0005OO-3l
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 11:35:52 +0000
+Received: by mail-wm1-x343.google.com with SMTP id f204so1717084wme.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 May 2019 04:29:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :in-reply-to:references;
- bh=3omjhH7TbR3FmFs5TtPgVwPetLA6H87w8Ypx7qlc/xQ=;
- b=HoRmKH63l7C7FzvYpQKh9CZ7kohym54pLp7tXuBRX+GWRJfziLnjDDh+iRDQO9D9ee
- L4gUVGETEU2esvl0g5q9h3bRgSsop0fGsD0JpUSAmANdczdGmY6DncD+TdxbG83VSLOB
- ECMSRiDOXP/Qvyj9HQXFZqa4yto5zcrr+/ckIp8uh6ttN53QE3GNGRsdrEOGhUKa9tN6
- cpDhWAifzey2GtZ4GhvpKvoMeoyVVNA+uQAOJfdNMJAJKf91DdZ6OPg+2ndEz9dgdFSr
- HMdKg/UDzXCfEyHxEksgJUnkPpgp9Z2LWM6luP+ICipwxa3FyktPtwlvuTTzOwiY+Lzi
- QKbw==
+ Fri, 10 May 2019 04:35:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=WVtavxktsvcfzds2bAOB46VNLZJyLrZtioJAPLe0Ozs=;
+ b=daSjT3yJtyeyqMaSesyKdsRBRJPSNauqi+f5P15u/9b5JsoCHVK4KaishNwNkK7DK9
+ tLmB2QQeBqi+R3nY/8SyiqeQGcpRxcJNTfm5cnDUwiHPmAOisdH4gbjvkn9WX2YUYre+
+ JBf9dPEGKXvX5WRVh+vOiZ3UIRyfPMwzQ0kyJcaqdbDtApN6Yel4j6MNsbdDU69c6boa
+ +5TlXzwS9/ZvzjVtgOFIVyqwCmpHsS2Dns/bXzIb/T0JNAXjCeEGRXe69Sk7d5Lr3xKK
+ c8CQ+Zvb4hMkAdViQsZDD2aIctxPJWBV8eSTDun+ggGAzFhXRk2riIhmfEn2Ds0Fo4cb
+ Ndzg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:in-reply-to:references;
- bh=3omjhH7TbR3FmFs5TtPgVwPetLA6H87w8Ypx7qlc/xQ=;
- b=itcIa5NSZpu43PXfBST9S6XB1OQ3h7Ea0eUc13PGsWppJuiGX/rjsv7nCm9dW5Q2oI
- 05/u8rIoZ/2kAPuNAvpTU508kfFdzrdnk6IPpwHQvQNi+JzXtLWyh4LhRRrQsK8+Q/Cz
- OlIl5AluTGfHEeRk7mHl9FQ9Az3TYCEJnhz5zVAmZuVDrDh32e8MwePHCtvV3b5nxFP6
- 9bUFH0ITAUCl9uIamMcdGLBXH0M+BR44+EMY7wAfiEM6iF1yDxY9hD7RT1X8yZTuwoDa
- 8wWihca3lOr4/abZM479UC2q3eqM/8T5szwTFd/+ZSdLCtoGJYOq+1dp6CvQKOEPOtRB
- xCAQ==
-X-Gm-Message-State: APjAAAXna15fy7DvHHOh51wp4ktra0BBeOKQWqTI3qo1ODJ/QA1gT7tu
- f/Y2bHH6IJZyTZMyBJ4AaULpVQ==
-X-Google-Smtp-Source: APXvYqzNyy7bxRrQ7l94JGdi1xN/ExFPIGkh1mhDP9vdWj+8z618L0x1+xHqlUuds8ama1WOaBRHOA==
-X-Received: by 2002:aa7:820c:: with SMTP id k12mr13044777pfi.177.1557487796788; 
- Fri, 10 May 2019 04:29:56 -0700 (PDT)
-Received: from localhost ([103.8.150.7])
- by smtp.gmail.com with ESMTPSA id s137sm2854428pfc.119.2019.05.10.04.29.55
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=WVtavxktsvcfzds2bAOB46VNLZJyLrZtioJAPLe0Ozs=;
+ b=cNqMlOsd9r4x7XSyEpOKMBT0DbOq49U6qCV9bklnypNOZsqdi6hKN87ZyfVaYZagWo
+ xxtHFdJzD83zq3OekgfKsaq4SmNzj0O0ITrYBgQcnAyJ3rZGVIWgBQwcQExYQIdoGN/u
+ Pa8H5nOMtk3o+n7tTyuFPW69UZjArrpDHYJPsho/LmmsVDLxTKcHjF2NxhnjbwuP0o9+
+ rmtyDXIvG2ndlvRrv5aBcOxyhhPJdkgflTU1heQU79MQZE599Bm271Onhp8+PGW89N1b
+ BF0UNj7X1Xd0H+K/LA88wmd2+45M621+qhCs1IqB6sALOXgfj62/6eTi7CKeKAchGU0y
+ SbGw==
+X-Gm-Message-State: APjAAAVT7okPnIAYz4iSAPyk2rPdjpXLOVOiZHVLDbBuBRtT6RhsH0K+
+ GYoSNtMzPPLQW2LDv65Cr5Q=
+X-Google-Smtp-Source: APXvYqxIl5YxwEiNv+9XsVPD1du4j0KAH4NCQGOy9NrM5U6GL42V8pHWj/PgZcmBaXjEIXmD4P20vg==
+X-Received: by 2002:a1c:e90f:: with SMTP id q15mr6988180wmc.1.1557488149088;
+ Fri, 10 May 2019 04:35:49 -0700 (PDT)
+Received: from localhost (p2E5BEF36.dip0.t-ipconnect.de. [46.91.239.54])
+ by smtp.gmail.com with ESMTPSA id v17sm3239623wmc.30.2019.05.10.04.35.47
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 10 May 2019 04:29:56 -0700 (PDT)
-From: Amit Kucheria <amit.kucheria@linaro.org>
-To: linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- bjorn.andersson@linaro.org, andy.gross@linaro.org,
- David Brown <david.brown@linaro.org>, Li Yang <leoyang.li@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCHv1 1/8] arm64: dts: Fix various entry-method properties to
- reflect documentation
-Date: Fri, 10 May 2019 16:59:39 +0530
-Message-Id: <ab5bad0258e455ef84059b749ca9e79f311b5e3c.1557486950.git.amit.kucheria@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <cover.1557486950.git.amit.kucheria@linaro.org>
-References: <cover.1557486950.git.amit.kucheria@linaro.org>
-In-Reply-To: <cover.1557486950.git.amit.kucheria@linaro.org>
-References: <cover.1557486950.git.amit.kucheria@linaro.org>
+ Fri, 10 May 2019 04:35:48 -0700 (PDT)
+From: Thierry Reding <thierry.reding@gmail.com>
+To: arm@kernel.org
+Subject: [GIT PULL 1/3] bus/tegra: Fixes for v5.2-rc1
+Date: Fri, 10 May 2019 13:35:44 +0200
+Message-Id: <20190510113546.15698-1-thierry.reding@gmail.com>
+X-Mailer: git-send-email 2.21.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_042957_578548_E1A3E494 
-X-CRM114-Status: GOOD (  12.72  )
+X-CRM114-CacheID: sfid-20190510_043551_182552_5F51A2BF 
+X-CRM114-Status: GOOD (  10.25  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (thierry.reding[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -101,44 +95,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Sudeep Holla <sudeep.holla@arm.com>
-MIME-Version: 1.0
+Cc: linux-tegra@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Jon Hunter <jonathanh@nvidia.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The idle-states binding documentation[1] mentions that the
-'entry-method' property is required on 64-bit platforms and must be set
-to "psci".
+Hi ARM SoC maintainers,
 
-We fixed up all uses of the entry-method property in
-commit e9880240e4f4 ("arm64: dts: Fix various entry-method properties to
-reflect documentation"). But a new one has appeared. Fix it up.
+The following changes since commit 1427736e64c3a8b513cd984332f596055a7ca196:
 
-Cc: Sudeep Holla <sudeep.holla@arm.com>
-Signed-off-by: Amit Kucheria <amit.kucheria@linaro.org>
----
- arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+  bus: tegra-aconnect: add system sleep callbacks (2019-03-28 17:26:14 +0100)
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-index 2896bbcfa3bb..42e7822a0227 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-@@ -51,7 +51,7 @@
- 		 * PSCI node is not added default, U-boot will add missing
- 		 * parts if it determines to use PSCI.
- 		 */
--		entry-method = "arm,psci";
-+		entry-method = "psci";
- 
- 		CPU_PH20: cpu-ph20 {
- 			compatible = "arm,idle-state";
--- 
-2.17.1
+are available in the Git repository at:
 
+  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.2-bus-fixes
+
+for you to fetch changes up to 6d6165603e162e3d391f35853a4ab232ab0db064:
+
+  amba: tegra-ahb: Mark PM functions as __maybe_unused (2019-05-08 14:40:39 +0200)
+
+Thanks,
+Thierry
+
+----------------------------------------------------------------
+bus/tegra: Fixes for v5.2-rc1
+
+This contains a single fix for a potential PM-related build issue.
+
+----------------------------------------------------------------
+Arnd Bergmann (1):
+      amba: tegra-ahb: Mark PM functions as __maybe_unused
+
+ drivers/amba/tegra-ahb.c | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
