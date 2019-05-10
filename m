@@ -2,72 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B0211991F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 09:43:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 084AB19925
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 09:43:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lm31GTW8x+oMUlEA930x3YOYB/EYGaByebA2/H/+uTQ=; b=ugJhQDkoi+a0tJ
-	BbkaR888vtOmTq8zEfwj76nthVCy74FZ3s5sqxGJLnwKdeXvZvWp5fsrshIC+Ng0CdFVmxkGM1vF6
-	Uq/ogtN3SlYF49Xejbgql7UORafgrCnj3aXjPapDhX8qpUX2NyVgabe2FnddtqdQQZviHxclL7/P0
-	DKGvfaMTuGwHeiZ+Gm4ib/j5ISWREkAqE4jiwRzPeUn8EfpsjcfrmIp0086xFNbl6ldwKUiz/HL6c
-	/zxaMZRBdVB3TSv5IjgumO6DMBEj6ifwLwkl861iljaPEnENwPVa1nAiQm2LMsv/Ofij67Nr2p5v8
-	0aWmplArL3l1htKsUpdQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=XwTqZSvS+vuUOr6mk/2OC5dQ9Bc8BJwsGDWycAfz16E=; b=hKlBliqoXm7Shj
+	PP5B2JNTsEs8LEQB/lsibuzb8smjHs4GRXTt3FH3taNl7awZQ52UFsywhVrVflvfMqQjwTbKeAfcy
+	9XWfuuCjkycEsJW1MxeYjzxIUdRmjucCbaMtS4iH4TB/gr1+vKUtwFhA8RSGnQUL5EPZnuOePSiYa
+	26d1HBVK2iVHojL7CKOszC0fWyGlsP/qlMTz8/wo0DBmBz8MyJ4alFuZbCCLfp8gUKHujdtmkUNz3
+	4OS78ZgwmUI2oLyArUDkZm6uVg/XBRhSjs7r8A8mUCcXXta10W0mpNfQ6bBwix1iNnMuXVmE/928F
+	rkqepvbHQad7P7tp/kKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP0BQ-0004G1-PG; Fri, 10 May 2019 07:43:08 +0000
+	id 1hP0Bk-0004fg-HE; Fri, 10 May 2019 07:43:28 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP0Ay-0003rt-3z
- for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 07:42:42 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ id 1hP0BP-0004RF-SI
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 07:43:19 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
  by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x4A7cWJe028672; Fri, 10 May 2019 09:42:38 +0200
+ x4A7gCkn028382; Fri, 10 May 2019 09:43:06 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=Q4CttDSeHlGs3NyMtzY/R45bn2jdu2ftuKzuZpOJ83E=;
- b=lhNNj13PJ8w6uEjIvetr4ONcJ5zGcFiLzeeEtym0o5IxMHTBS2FCLdhS2GbTtLYck3CL
- hXMv1hp2RwH0N8GXywkZPgbhNgLrQddNjHYhKL9jea1id2YGjfbNfIqH6jpSxicGn6bS
- XZzk/JxOpheseE5PiRMuges+urbv3NZji9r3RaDmkJauOhEaAAHWVDkz1iMBRmqARBtL
- jmm7lzlCvbAoxEmZTw/8btxLzwOmgtE4tIp8xX3xK9nnti2sisZBtMXV21pN/4lxU4ry
- W5KjYrVDYpeHwOPUskASybPKzyDenH1tliEuBQyvV98pW2czd3e/x2LZ4gH4tPXmWOu6 ZA== 
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=8I2N6G3vO9y9aZ71WM6kdoKYNSOsW+23DY/TOYHKYeA=;
+ b=oTSHYknBEu/ctOQkiI3lUJ+GlBPI+wnUXrAbpXXlVNUcxi4Lv2HqD3HZlnl5qWXPs/4T
+ b1zI2oGg9K0/YnZeXfcBXRWrFnlvreqcag84iYulSNy4Y5wAs6chqbJm3olqxhvrwT7p
+ hGEw2YRlJVlwiXp9MF4UeWtUgj9/vUh0k7EBrRPEAmlx6pvajYf0RlBIPSHWywx2T1+C
+ TBH7Quc3fY97feXkyKND+uf8uOsEcaMHtCzWsPxIHUbZBAHs48Dr58IyAGrY0VR6CofJ
+ aoBoE9MrVv0EQ38EH5gIYnbAT6IhLvjqTsB/IreO+x8krXLLB4nAf6TvKtzjqKjq5MZu Ag== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2sc9s4gpn7-1
+ by mx08-00178001.pphosted.com with ESMTP id 2scfv2pya9-1
  (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Fri, 10 May 2019 09:42:38 +0200
+ Fri, 10 May 2019 09:43:06 +0200
 Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 69EEC3A;
- Fri, 10 May 2019 07:42:37 +0000 (GMT)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 92B7D31;
+ Fri, 10 May 2019 07:43:04 +0000 (GMT)
 Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 44F6315AB;
- Fri, 10 May 2019 07:42:37 +0000 (GMT)
-Received: from localhost (10.75.127.47) by SFHDAG3NODE2.st.com (10.75.127.8)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 10 May 2019 09:42:36
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 73B2D15B0;
+ Fri, 10 May 2019 07:43:04 +0000 (GMT)
+Received: from localhost (10.75.127.44) by SFHDAG3NODE2.st.com (10.75.127.8)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 10 May 2019 09:43:04
  +0200
 From: Alexandre Torgue <alexandre.torgue@st.com>
 To: Linus Walleij <linus.walleij@linaro.org>, Maxime Coquelin
  <mcoquelin.stm32@gmail.com>
-Subject: [PATCH 2/2] pinctrl: stm32: Enable suspend/resume for stm32mp157c SoC
-Date: Fri, 10 May 2019 09:42:30 +0200
-Message-ID: <1557474150-19618-3-git-send-email-alexandre.torgue@st.com>
+Subject: [PATCH] pinctrl: stm32: add lock mechanism for irqmux selection
+Date: Fri, 10 May 2019 09:43:03 +0200
+Message-ID: <1557474183-19719-1-git-send-email-alexandre.torgue@st.com>
 X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1557474150-19618-1-git-send-email-alexandre.torgue@st.com>
-References: <1557474150-19618-1-git-send-email-alexandre.torgue@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG5NODE1.st.com (10.75.127.13) To SFHDAG3NODE2.st.com
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG3NODE2.st.com
  (10.75.127.8)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2019-05-09_02:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_004240_454178_31E8309E 
-X-CRM114-Status: GOOD (  11.39  )
+X-CRM114-CacheID: sfid-20190510_004308_649115_FEDFB66A 
+X-CRM114-Status: GOOD (  16.39  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -102,30 +99,103 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Apply suspend/resume management for stm32mp157c MPU.
+GPIOs are split between several banks (A, B, ...) and each bank can have
+up to 16 lines. Those GPIOs could be used as interrupt lines thanks to
+exti lines. As there are only 16 exti lines, a mux is used to select which
+gpio line is connected to which exti line. Mapping is done as follow:
+
+-A0, B0, C0.. -->exti_line_0 (X0 selected by mux_0)
+-A1, B1, C1.. -->exti_line_1 (X1 selected by mux_1)
+...
+
+This patch adds a protection to avoid overriding on mux_n for exti_line_n.
 
 Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
 
-diff --git a/drivers/pinctrl/stm32/pinctrl-stm32mp157.c b/drivers/pinctrl/stm32/pinctrl-stm32mp157.c
-index 320544f..2ccb99d 100644
---- a/drivers/pinctrl/stm32/pinctrl-stm32mp157.c
-+++ b/drivers/pinctrl/stm32/pinctrl-stm32mp157.c
-@@ -2342,11 +2342,16 @@ static const struct of_device_id stm32mp157_pctrl_match[] = {
- 	{ }
+diff --git a/drivers/pinctrl/stm32/pinctrl-stm32.c b/drivers/pinctrl/stm32/pinctrl-stm32.c
+index 2317ccf..99e4149 100644
+--- a/drivers/pinctrl/stm32/pinctrl-stm32.c
++++ b/drivers/pinctrl/stm32/pinctrl-stm32.c
+@@ -98,6 +98,8 @@ struct stm32_pinctrl {
+ 	struct stm32_desc_pin *pins;
+ 	u32 npins;
+ 	u32 pkg;
++	u16 irqmux_map;
++	spinlock_t irqmux_lock;
  };
  
-+static const struct dev_pm_ops stm32_pinctrl_dev_pm_ops = {
-+	 SET_LATE_SYSTEM_SLEEP_PM_OPS(NULL, stm32_pinctrl_resume)
-+};
+ static inline int stm32_gpio_pin(int gpio)
+@@ -307,9 +309,53 @@ static int stm32_gpio_domain_activate(struct irq_domain *d,
+ {
+ 	struct stm32_gpio_bank *bank = d->host_data;
+ 	struct stm32_pinctrl *pctl = dev_get_drvdata(bank->gpio_chip.parent);
++	unsigned long flags;
++	int ret = 0;
 +
- static struct platform_driver stm32mp157_pinctrl_driver = {
- 	.probe = stm32_pctl_probe,
- 	.driver = {
- 		.name = "stm32mp157-pinctrl",
- 		.of_match_table = stm32mp157_pctrl_match,
-+		.pm = &stm32_pinctrl_dev_pm_ops,
- 	},
++	/*
++	 * gpio irq mux is shared between several banks, a lock has to be done
++	 * to avoid overriding.
++	 */
++	spin_lock_irqsave(&pctl->irqmux_lock, flags);
++	if (pctl->hwlock)
++		ret = hwspin_lock_timeout(pctl->hwlock, HWSPINLOCK_TIMEOUT);
++
++	if (ret) {
++		dev_err(pctl->dev, "Can't get hwspinlock\n");
++		goto unlock;
++	}
++
++	if (pctl->irqmux_map & BIT(irq_data->hwirq)) {
++		dev_err(pctl->dev, "irq line %ld already requested.\n",
++			irq_data->hwirq);
++		ret = -EBUSY;
++		if (pctl->hwlock)
++			hwspin_unlock(pctl->hwlock);
++		goto unlock;
++	} else {
++		pctl->irqmux_map |= BIT(irq_data->hwirq);
++	}
+ 
+ 	regmap_field_write(pctl->irqmux[irq_data->hwirq], bank->bank_ioport_nr);
+-	return 0;
++
++	if (pctl->hwlock)
++		hwspin_unlock(pctl->hwlock);
++
++unlock:
++	spin_unlock_irqrestore(&pctl->irqmux_lock, flags);
++	return ret;
++}
++
++static void stm32_gpio_domain_deactivate(struct irq_domain *d,
++					 struct irq_data *irq_data)
++{
++	struct stm32_gpio_bank *bank = d->host_data;
++	struct stm32_pinctrl *pctl = dev_get_drvdata(bank->gpio_chip.parent);
++	unsigned long flags;
++
++	spin_lock_irqsave(&pctl->irqmux_lock, flags);
++	pctl->irqmux_map &= ~BIT(irq_data->hwirq);
++	spin_unlock_irqrestore(&pctl->irqmux_lock, flags);
+ }
+ 
+ static int stm32_gpio_domain_alloc(struct irq_domain *d,
+@@ -338,6 +384,7 @@ static const struct irq_domain_ops stm32_gpio_domain_ops = {
+ 	.alloc          = stm32_gpio_domain_alloc,
+ 	.free           = irq_domain_free_irqs_common,
+ 	.activate	= stm32_gpio_domain_activate,
++	.deactivate	= stm32_gpio_domain_deactivate,
  };
+ 
+ /* Pinctrl functions */
+@@ -1290,6 +1337,8 @@ int stm32_pctl_probe(struct platform_device *pdev)
+ 		pctl->hwlock = hwspin_lock_request_specific(hwlock_id);
+ 	}
+ 
++	spin_lock_init(&pctl->irqmux_lock);
++
+ 	pctl->dev = dev;
+ 	pctl->match_data = match->data;
  
 -- 
 2.7.4
