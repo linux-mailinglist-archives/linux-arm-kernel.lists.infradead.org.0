@@ -2,52 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20E5119B1B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 12:14:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A2EB19B23
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 12:14:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=psxS+6SdNn6bdYv5hDCHEad/cHurO7D3ba7woDfGwog=; b=WL1sjokqnPnr7A
-	+y446A40uqWCnrwmAihtrODmN1wd8/V/nGhl+ITQ1sFD9AiUd1zTcXWiTwqHWdKeFLC08sRe+j5Iy
-	av/mYwLDjYetwX3+jq0Ln/fmaga7RPnlLyTUqFpcZ3zBn5jL4ymLoovmz60A5LMv3/kxvCMgxH7S0
-	U23nYwNOK6Q5nCP6+0LpfXzAW5OFyXVzuFPdqihTSBuGKAlW9RJR60N/K1fEjnr1fXvx/TYSBVVAO
-	J7Rtfhn3jBAOZiKTWwi7CMTyLNgfQNg3wzYeZObVj8aXl7e3F3IjxlCnyrK/l5BcbKnd8UfNsPhMo
-	O5aUsZe9W7xlkY46RIlw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9bq3Agn4qWi1YxBUk+DJdLYezZki3nSwW4tVTvjYbSw=; b=I4+KGYyUkEjl0Z
+	VYg8JdaX0cL7sbF3u7K9boWHRDtn+MwUkAHaQKgRLFxGm0UHDmnWtj2jwWsKynZVa/F2D8EG54wY0
+	tPvZeTTlP/YVmS+v128G+tGGMl3rri9OrWAS3DsHEynb2Wj7FfZkQBrxX0dIOs6i3+00KzdgH1IdU
+	LQGOwgeitzd5Gs5jUykewqr/XRGD3hxVedcTd5HIILvOoXDqtmkHDDxm7JPaLEA7uCr/RiZIHvVuV
+	q+AcjA/IJHTDfM0hQUCcpbnf2kuE/KVSuFCa5kclDBosVcpQDqx/N0pTV7UnErM3t2uYR2fT1rnx0
+	E6Cip6rMKbn6byyVx6ig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP2Xg-0003mh-OM; Fri, 10 May 2019 10:14:16 +0000
+	id 1hP2Xr-0003vG-Fm; Fri, 10 May 2019 10:14:27 +0000
 Received: from mail-ve1eur02on0609.outbound.protection.outlook.com
  ([2a01:111:f400:fe06::609]
  helo=EUR02-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP2XZ-0003lL-4m
- for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 10:14:10 +0000
+ id 1hP2Xb-0003lL-87
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 10:14:12 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=JXZZvRgob1QWlWConVzgUn9IBqkwBT2in/JqBYa13OY=;
- b=FwHzAIWbhfR2aYeKMQ6pb28/WLiHfTTP4+VINOpUHhbpdxFK0nVMs1tk08MlmVlRkml+5SDxq9VAb+q8oNxMGL/deKnHRhjPI3jvkPGve7/YY+mqdlWxgDkDZ1FcMCWKqcDDp+WAHF0lkgIFRPm73+XZ/MV2UmDYBVm1kRwJok0=
+ bh=3GUngS2hc2MDcjwsXSY7apOViN88QRoNo13FDkhjFwc=;
+ b=dbiRoDRo4nsbNnUMwPUfzA05CCQIEDM1FVTs37n0sYveaVSZjjLNiR/8I8QynW4tiXtADnaW8fQdjId/VHDPJ0JO8rv1ENJSfGaTiXlQiL92obkcP6RI0qT54z71Zs6SFpH6VChJCWInNaXi8t2s8RpyszLb6kCYMQvp+/emxgQ=
 Received: from VI1PR04MB4543.eurprd04.prod.outlook.com (20.177.55.90) by
  VI1PR04MB3007.eurprd04.prod.outlook.com (10.170.228.141) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1856.12; Fri, 10 May 2019 10:14:03 +0000
+ 15.20.1856.12; Fri, 10 May 2019 10:14:08 +0000
 Received: from VI1PR04MB4543.eurprd04.prod.outlook.com
  ([fe80::d85b:d2:194c:2b94]) by VI1PR04MB4543.eurprd04.prod.outlook.com
  ([fe80::d85b:d2:194c:2b94%4]) with mapi id 15.20.1878.022; Fri, 10 May 2019
- 10:14:03 +0000
+ 10:14:08 +0000
 From: Robin Gong <yibin.gong@nxp.com>
 To: "robh@kernel.org" <robh@kernel.org>, "shawnguo@kernel.org"
  <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "festevam@gmail.com" <festevam@gmail.com>, "mark.rutland@arm.com"
  <mark.rutland@arm.com>, "vkoul@kernel.org" <vkoul@kernel.org>,
  "dan.j.williams@intel.com" <dan.j.williams@intel.com>
-Subject: [PATCH v1 0/6] add edma2 for i.mx7ulp
-Thread-Topic: [PATCH v1 0/6] add edma2 for i.mx7ulp
-Thread-Index: AQHVBxkYfOJpUoG7C02l/BlvpbIORA==
-Date: Fri, 10 May 2019 10:14:03 +0000
-Message-ID: <1557512248-8440-1-git-send-email-yibin.gong@nxp.com>
+Subject: [PATCH v1 1/6] dmaengine: fsl-edma: add dmamux_nr for next version
+Thread-Topic: [PATCH v1 1/6] dmaengine: fsl-edma: add dmamux_nr for next
+ version
+Thread-Index: AQHVBxka2g2zuT0EHUW4nsjDLiNmZw==
+Date: Fri, 10 May 2019 10:14:08 +0000
+Message-ID: <1557512248-8440-2-git-send-email-yibin.gong@nxp.com>
+References: <1557512248-8440-1-git-send-email-yibin.gong@nxp.com>
+In-Reply-To: <1557512248-8440-1-git-send-email-yibin.gong@nxp.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -61,35 +64,35 @@ authentication-results: spf=none (sender IP is )
 x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [119.31.174.66]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 234a5fff-bd76-4f8c-a171-08d6d5303a62
+x-ms-office365-filtering-correlation-id: 88802fee-e01f-40ef-39f8-08d6d5303d2f
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
  SRVR:VI1PR04MB3007; 
 x-ms-traffictypediagnostic: VI1PR04MB3007:
-x-microsoft-antispam-prvs: <VI1PR04MB30079A5982BFFAF38D2EE789890C0@VI1PR04MB3007.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6430;
+x-microsoft-antispam-prvs: <VI1PR04MB3007746342C2DAB05F3CB4AD890C0@VI1PR04MB3007.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2201;
 x-forefront-prvs: 0033AAD26D
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(376002)(136003)(39860400002)(396003)(346002)(366004)(199004)(189003)(14454004)(2201001)(110136005)(54906003)(478600001)(2501003)(8936002)(8676002)(81166006)(81156014)(50226002)(316002)(86362001)(66066001)(25786009)(7416002)(53936002)(4326008)(36756003)(7736002)(71200400001)(2616005)(71190400001)(66946007)(14444005)(256004)(486006)(2906002)(186003)(26005)(102836004)(476003)(5660300002)(3846002)(6486002)(6116002)(52116002)(6506007)(386003)(68736007)(305945005)(66476007)(66556008)(64756008)(66446008)(73956011)(99286004)(6436002)(6512007);
+ SFS:(10009020)(376002)(136003)(39860400002)(396003)(346002)(366004)(199004)(189003)(14454004)(2201001)(110136005)(54906003)(478600001)(2501003)(8936002)(8676002)(81166006)(81156014)(50226002)(316002)(86362001)(66066001)(25786009)(7416002)(53936002)(4326008)(36756003)(7736002)(71200400001)(2616005)(71190400001)(446003)(11346002)(66946007)(256004)(486006)(2906002)(186003)(26005)(102836004)(476003)(5660300002)(3846002)(6486002)(6116002)(76176011)(52116002)(6506007)(386003)(68736007)(305945005)(66476007)(66556008)(64756008)(66446008)(73956011)(99286004)(6436002)(6512007);
  DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB3007;
  H:VI1PR04MB4543.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: M/X5Jioj0FC7wVI2mWILq7BOkgG3LrH5xXZibV/IoWZ+BJrrru0KAI8kU42dofn3D8POs1ow6j3z5MgFnuGsX7hZbkmXKn+T5pm38cSHAQVxTZwV6DaX4CzRrBC2FZUGpabT410eodHfqQY/pxVuGknyLu7Rg7t+mXCvZvbm/hg+V5yOeVptNp3I4V58DtWBCRHm7Hx7Bacb08dRr8rmzfu1xyQKr/LmEm40FWuEzN2qpDoVi62xFOjb+EAaGA9XVeTo8kfavKOa0amlYNrSR115V20QnDDTM5/pO/B4BR+all8Our+j3zUlSSFjO5I7C0sHxVviG0kjUE6pmwA386WBfqgG6E12l2K5adpsV1um4sqSdpnE3eSK0HFHmWYx+Az3WES7+oeSXvlPKjE5PaJS5kg2oWISLYHwX75y8a8=
+x-microsoft-antispam-message-info: cEYtqknFcTg6iv/EyGTuNRIn3i3/tYkJ5JEjO974ySgChUqPmeItcx+Qk5efdEXKWh84Hfg88lnSnJK1dyHuyUFNQhO7T8fMpMrrPMnPEIpupOCF+7ctUkHpfbV73Y2scuuI4YGk3XZbH2geQx3qHUDhgYreiovTkUbcWAevD56tC8EH5HP/+MqBNoutv+goJ+f3+OxNKoKafA7ClcFJR5YVjCgm4rCt4sYpkzf2mlhAKeuHAzVRat85cmFgpOaVMrALYcePaQJCaP49kXuw07BrsvidWnRBpkMQMlUUrCsqbNz4HIZdkAcCWnCHEuhQPkF4jXdB8yS61QcLbT5ifH/xhk7vCoDtDnBRXAUCNZQMEOGZ9zNf9g6Ztv4TlKxkQhWs8VAvkCr1BDB6kowRftQsHQbHg9yYt8oCwp+IqFk=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 234a5fff-bd76-4f8c-a171-08d6d5303a62
-X-MS-Exchange-CrossTenant-originalarrivaltime: 10 May 2019 10:14:03.9186 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 88802fee-e01f-40ef-39f8-08d6d5303d2f
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 May 2019 10:14:08.3367 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB3007
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_031409_258660_F77702EC 
-X-CRM114-Status: GOOD (  12.41  )
+X-CRM114-CacheID: sfid-20190510_031411_290869_914B7CF5 
+X-CRM114-Status: GOOD (  16.33  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -129,38 +132,85 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-  This patch set add new version of edma for i.mx7ulp, the main changes
-are as belows:
-  1. only one dmamux.
-  2. another clock dma_clk except dmamux clk.
-  3. 16 independent interrupts instead of only one interrupt for
-all channels.
-  For the first change, need modify fsl-edma-common.c and mcf-edma,
-so create the first two patches to prepare without any function
-impact.
-  For the third change, need request single irq for every channel with
-the legacy handler. But actually 2 dma channels share one interrupt(16
-channel interrupts, but 32 channels.),ch0/ch16,ch1/ch17... For now, just
-simply request irq without IRQF_SHARED flag, since 16 channels are enough
-on i.mx7ulp whose M4 domain own some peripherals.
+Next version of edma such as edmav2 on i.mx7ulp has only one dmamux.
+Add dmamux_nr instead of static macro define 'DMAMUX_NR'. No any
+function change here.
 
-Robin Gong (6):
-  dmaengine: fsl-edma: add dmamux_nr for next version
-  dmaengine: mcf-edma: update to 'dmamux_nr'
-  dmaengine: fsl-edma-common: move dmamux register to another single
-    function
-  dmaengine: fsl-edma: add i.mx7ulp edma2 version support
-  dt-bindings: dma: fsl-edma: add new i.mx7ulp-edma
-  ARM: dts: imx7ulp: add edma device node
+Signed-off-by: Robin Gong <yibin.gong@nxp.com>
+---
+ drivers/dma/fsl-edma-common.h |  1 +
+ drivers/dma/fsl-edma.c        | 11 ++++++-----
+ 2 files changed, 7 insertions(+), 5 deletions(-)
 
- Documentation/devicetree/bindings/dma/fsl-edma.txt | 44 ++++++++++--
- arch/arm/boot/dts/imx7ulp.dtsi                     | 28 ++++++++
- drivers/dma/fsl-edma-common.c                      | 34 +++++++--
- drivers/dma/fsl-edma-common.h                      |  4 ++
- drivers/dma/fsl-edma.c                             | 80 ++++++++++++++++++++--
- drivers/dma/mcf-edma.c                             |  1 +
- 6 files changed, 176 insertions(+), 15 deletions(-)
-
+diff --git a/drivers/dma/fsl-edma-common.h b/drivers/dma/fsl-edma-common.h
+index c53f76e..21a9cfd 100644
+--- a/drivers/dma/fsl-edma-common.h
++++ b/drivers/dma/fsl-edma-common.h
+@@ -145,6 +145,7 @@ struct fsl_edma_engine {
+ 	void __iomem		*membase;
+ 	void __iomem		*muxbase[DMAMUX_NR];
+ 	struct clk		*muxclk[DMAMUX_NR];
++	u32			dmamux_nr;
+ 	struct mutex		fsl_edma_mutex;
+ 	u32			n_chans;
+ 	int			txirq;
+diff --git a/drivers/dma/fsl-edma.c b/drivers/dma/fsl-edma.c
+index d641ef8..7b65ef4 100644
+--- a/drivers/dma/fsl-edma.c
++++ b/drivers/dma/fsl-edma.c
+@@ -96,7 +96,7 @@ static struct dma_chan *fsl_edma_xlate(struct of_phandle_args *dma_spec,
+ 	struct fsl_edma_engine *fsl_edma = ofdma->of_dma_data;
+ 	struct dma_chan *chan, *_chan;
+ 	struct fsl_edma_chan *fsl_chan;
+-	unsigned long chans_per_mux = fsl_edma->n_chans / DMAMUX_NR;
++	unsigned long chans_per_mux = fsl_edma->n_chans / fsl_edma->dmamux_nr;
+ 
+ 	if (dma_spec->args_count != 2)
+ 		return NULL;
+@@ -206,6 +206,7 @@ static int fsl_edma_probe(struct platform_device *pdev)
+ 		return -ENOMEM;
+ 
+ 	fsl_edma->version = v1;
++	fsl_edma->dmamux_nr = DMAMUX_NR;
+ 	fsl_edma->n_chans = chans;
+ 	mutex_init(&fsl_edma->fsl_edma_mutex);
+ 
+@@ -217,7 +218,7 @@ static int fsl_edma_probe(struct platform_device *pdev)
+ 	fsl_edma_setup_regs(fsl_edma);
+ 	regs = &fsl_edma->regs;
+ 
+-	for (i = 0; i < DMAMUX_NR; i++) {
++	for (i = 0; i < fsl_edma->dmamux_nr; i++) {
+ 		char clkname[32];
+ 
+ 		res = platform_get_resource(pdev, IORESOURCE_MEM, 1 + i);
+@@ -295,7 +296,7 @@ static int fsl_edma_probe(struct platform_device *pdev)
+ 	if (ret) {
+ 		dev_err(&pdev->dev,
+ 			"Can't register Freescale eDMA engine. (%d)\n", ret);
+-		fsl_disable_clocks(fsl_edma, DMAMUX_NR);
++		fsl_disable_clocks(fsl_edma, fsl_edma->dmamux_nr);
+ 		return ret;
+ 	}
+ 
+@@ -304,7 +305,7 @@ static int fsl_edma_probe(struct platform_device *pdev)
+ 		dev_err(&pdev->dev,
+ 			"Can't register Freescale eDMA of_dma. (%d)\n", ret);
+ 		dma_async_device_unregister(&fsl_edma->dma_dev);
+-		fsl_disable_clocks(fsl_edma, DMAMUX_NR);
++		fsl_disable_clocks(fsl_edma, fsl_edma->dmamux_nr);
+ 		return ret;
+ 	}
+ 
+@@ -323,7 +324,7 @@ static int fsl_edma_remove(struct platform_device *pdev)
+ 	fsl_edma_cleanup_vchan(&fsl_edma->dma_dev);
+ 	of_dma_controller_free(np);
+ 	dma_async_device_unregister(&fsl_edma->dma_dev);
+-	fsl_disable_clocks(fsl_edma, DMAMUX_NR);
++	fsl_disable_clocks(fsl_edma, fsl_edma->dmamux_nr);
+ 
+ 	return 0;
+ }
 -- 
 2.7.4
 
