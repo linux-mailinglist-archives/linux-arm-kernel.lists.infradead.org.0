@@ -2,84 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 558251A001
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 17:19:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DCBF51A06D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 17:45:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+LKC05twcJLc8J3Qd2jtZZNLmVD6LSaINRFZiaac4Gw=; b=YR+7/UzgvWjyxD
-	zcCvE8a0h3Mpsj2gBIqE+9PWYusYPO7r9co3oYfj7psBCORglBwfGQtbxcPs+xzEYxvddX5yZVA/A
-	1LIC52VjLadug7mMIKsKL9g4Z1HoboQjtQVpZgk2pY7LakYzwUpD/w+kQGR2grlNQG5mhJo5WRuq5
-	EeNaJ0TUHvX5czx0QWy1BJ2lCriPsnx4TZ2Xn3ylQ2G6+elqj7kE8FKmHU9o0CPUE0pErWeAmTDR9
-	WVn1PDP+1lwmur23eQ7f9gCfDAe/rmzPGZi/T433ByCNHSCqWMh5Y9v2ml11DgFIfNzONSqXEpsrX
-	F70s5/OCsEYRi7GjUtwQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KO9gJLWAhKuFJHXKMPka/qwTjf84wMEfHWH9zJGWn84=; b=sbCysUS5hWOq1H
+	nWLnJlnfYbJDO8BEFkHkm3+ucm9qaDDspXKoKNJZhujI86odQQ8ihZ40K/jkkFkc0xx5raEIbNPzm
+	HrgiZkHV7raNBehRVhQEM3d5CP9bI3TTmj+JFuo+YXEgQS6kR9kqy5jYBVY8wKwC7R6BHnonhVsIC
+	/pwh6ZlFq4xIiGxXnI2wzG5d01Dg0Zm0gS8lIj0+FoQXiAEk2r8xhJjvmC9aA4qYR8e6mLpib1VFi
+	6VBicsT3okB+OeuIj2mvL5/othkJdob3caduiceXObglqMM3MZoiqem4tZR6YHM42OgahDIxhUvsk
+	gk5ACVFtZgvII+k4xLFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP7Iz-0003yd-PP; Fri, 10 May 2019 15:19:25 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hP7iY-000699-SK; Fri, 10 May 2019 15:45:50 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP7Ir-0003y9-SK
- for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 15:19:19 +0000
-Received: by mail-wm1-x341.google.com with SMTP id j187so7934772wmj.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 May 2019 08:19:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=hfI45TE1I5uwK0Bfe/252jb7t90fCE1bIelVOQNQaUM=;
- b=hTSM6nL3NXhJDSGIenedVMXQCAahPRhCKQONbsUCkgElASVaWCoXoB/enwAMkt3HnW
- 9yW7IpAGGEd/XrkSdUn70qhMdE7GjAlOnzRjg9V0B9RBCLHYdS1lagxRofNG4pBt4BoQ
- wxZtYN8A6k++tmlCAieXsGtjdnbtAm1xxlgrZyPrhQUAUmf9LQV/JlHzGLnGGIUTJiE/
- RfrnhNIItnQj4F/hWUel5GJxlmSnfvE8SmepuANJA1AgPYAZ+ww99Wr2IKK2iEMyG7qS
- WvhC3oaML3ks38p9YEBQQ7k2aT9F+QNw6j1UP3Q296UMFRpJJ6/wKAVIHkKOfq8/gm89
- soJw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=hfI45TE1I5uwK0Bfe/252jb7t90fCE1bIelVOQNQaUM=;
- b=jp7cKzHeZq8elBi98M2UWaznGLs6tk2542qahYpVRbX4V2an9uPxHybk+g0x+nw6K3
- 9+iscOT5qg6sQivqB0Fje9kg6xlVcaJ3HGsKVpTnW0p2gzmibdnaPJiWbIrQ/6nujM5W
- Q7aeat7yS0Q+zYalEbDT0QcjSa4JpIYyslk3XabDUq6XJ6V0bR94QCwX3MfFeIUHDThL
- 0zhkb/BbB5rgYolR1O//NjecVJzRlveNCpAl6Rt9lMFQC8q2lU7p7e4vtx2Re6GdYFhu
- Xo1nvAWGDfl3HsvOj2PVFh13ppMsw7X3zp/yg946ASzWW7DoOeD9I3sCrngUhSutWHxT
- T39Q==
-X-Gm-Message-State: APjAAAVhgOQy9lPoIni2V4v2pB1eRpHz9/iw3z371cybr+KHgxd1JOjc
- uTa3gwUjZKTElt3uzXQl5abMsA==
-X-Google-Smtp-Source: APXvYqybXr+vcsOtoC6cNdTKe08GTN1LUn7gnJpq13Ga3bAoBaeBpdNLmgGY1GT+GtndyMTjIbD3zg==
-X-Received: by 2002:a1c:a008:: with SMTP id j8mr7652413wme.73.1557501556269;
- Fri, 10 May 2019 08:19:16 -0700 (PDT)
-Received: from dell ([2.27.167.43])
- by smtp.gmail.com with ESMTPSA id c131sm6807619wma.31.2019.05.10.08.19.14
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 10 May 2019 08:19:15 -0700 (PDT)
-Date: Fri, 10 May 2019 16:19:12 +0100
-From: Lee Jones <lee.jones@linaro.org>
-To: Amelie Delaunay <amelie.delaunay@st.com>
-Subject: [GIT PULL v2] Immutable branch between MFD and Pinctrl due for the
- v5.2 merge window
-Message-ID: <20190510151912.GB4319@dell>
-References: <1557392336-28239-1-git-send-email-amelie.delaunay@st.com>
- <20190510072314.GC7321@dell> <20190510151556.GA4319@dell>
+ id 1hP7iQ-00068I-H2
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 15:45:45 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x4AFRMrc029079; Fri, 10 May 2019 17:45:29 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=EDgWPk87oXg8YzV/4F3uiVhPZFZ4rv/kb1qOckXHwGM=;
+ b=Y2K9EEVGq+tebiaiBvUZHMXqFqfWcldSosAX82+yaCvwWCsHSb3rddjodYSlqs8kThiV
+ JLzAFZxeXEq+w6PtSPJtJN09CbWTO5SvjPRJ+TDGT/8aeWNPJ+Z5X4eSqCNyyZDT6pQE
+ MOinOB281F0tKKISu+zqwellC2OC2zSpjPOrAD24vEC1SL76YLfBF4oWWsENxpdhp1XH
+ hx59lupxH8lKbBssRi7ALnPAxsbrFUlzQMKxgWM+ehghSMlIMUaE5b18Cd6IGqxicvhO
+ 7MzqTmMItuhvpOIDB97anLnB2eA/ry52s+SbdJNAYzlzWNzTVDAQqIMUkKxgTH7ffC3k vA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2sc9s4kas1-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Fri, 10 May 2019 17:45:28 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3AE4831;
+ Fri, 10 May 2019 15:45:28 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D19592945;
+ Fri, 10 May 2019 15:45:27 +0000 (GMT)
+Received: from localhost (10.75.127.44) by SFHDAG3NODE2.st.com (10.75.127.8)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 10 May 2019 17:45:27
+ +0200
+From: Alexandre Torgue <alexandre.torgue@st.com>
+To: Maxime Coquelin <mcoquelin.stm32@gmail.com>, Linus Walleij
+ <linus.walleij@linaro.org>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
+ <mark.rutland@arm.com>
+Subject: [PATCH v2] dt-bindings: pinctrl: Convert stm32 pinctrl bindings to
+ json-schema
+Date: Fri, 10 May 2019 17:45:26 +0200
+Message-ID: <1557503126-3025-1-git-send-email-alexandre.torgue@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190510151556.GA4319@dell>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG3NODE3.st.com (10.75.127.9) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-05-09_02:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_081917_977572_336A2E81 
-X-CRM114-Status: GOOD (  14.65  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190510_084542_892197_68424112 
+X-CRM114-Status: GOOD (  22.38  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -99,56 +93,520 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
- linux-gpio@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
  linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Q2hhbmdlIG9mIHN1YmplY3QgbGluZSB0byB2MjoKCioqIENvbnRhaW5zIGZpeCBmb3IgaTM4NiBi
-dWlsZCBicmVha2FnZSAqKgoKRW5qb3khCgpUaGUgZm9sbG93aW5nIGNoYW5nZXMgc2luY2UgY29t
-bWl0IGU5M2M5Yzk5YTYyOWM2MTgzN2Q1YTdmYzIxMjBjZDJiNmM3MGRiZGQ6CgogIExpbnV4IDUu
-MSAoMjAxOS0wNS0wNSAxNzo0Mjo1OCAtMDcwMCkKCmFyZSBhdmFpbGFibGUgaW4gdGhlIEdpdCBy
-ZXBvc2l0b3J5IGF0OgoKICBnaXQ6Ly9naXQua2VybmVsLm9yZy9wdWIvc2NtL2xpbnV4L2tlcm5l
-bC9naXQvbGVlL21mZC5naXQgdGFncy9pYi1tZmQtcGluY3RybC12NS4yLTEKCmZvciB5b3UgdG8g
-ZmV0Y2ggY2hhbmdlcyB1cCB0byA5YWYyZGU3NjU3ZjVhNTJmOWUxNWFlYmI2ZjkzNDhmOWI4ZjI1
-MGE2OgoKICBwaW5jdHJsOiBLY29uZmlnOiBGaXggU1RNRlggR1BJTyBleHBhbmRlciBQaW5jdHJs
-L0dQSU8gZHJpdmVyIGRlcGVuZGVuY2llcyAoMjAxOS0wNS0xMCAxNjowOTo1NiArMDEwMCkKCi0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0KSW1tdXRhYmxlIGJyYW5jaCBiZXR3ZWVuIE1GRCBhbmQgUGluY3RybCBkdWUgZm9yIHRo
-ZSB2NS4yIG1lcmdlIHdpbmRvdwoKQ29udGFpbnMgZml4IGZvciBpMzg2IGJ1aWxkIGJyZWFrYWdl
-CgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tCkFtZWxpZSBEZWxhdW5heSAoNSk6CiAgICAgIGR0LWJpbmRpbmdzOiBtZmQ6IEFk
-ZCBTVCBNdWx0aS1GdW5jdGlvbiBlWHBhbmRlciAoU1RNRlgpIGNvcmUgYmluZGluZ3MKICAgICAg
-bWZkOiBBZGQgU1QgTXVsdGktRnVuY3Rpb24gZVhwYW5kZXIgKFNUTUZYKSBjb3JlIGRyaXZlcgog
-ICAgICBkdC1iaW5kaW5nczogcGluY3RybDogZG9jdW1lbnQgdGhlIFNUTUZYIHBpbmN0cmwgYmlu
-ZGluZ3MKICAgICAgcGluY3RybDogQWRkIFNUTUZYIEdQSU8gZXhwYW5kZXIgUGluY3RybC9HUElP
-IGRyaXZlcgogICAgICBwaW5jdHJsOiBLY29uZmlnOiBGaXggU1RNRlggR1BJTyBleHBhbmRlciBQ
-aW5jdHJsL0dQSU8gZHJpdmVyIGRlcGVuZGVuY2llcwoKIERvY3VtZW50YXRpb24vZGV2aWNldHJl
-ZS9iaW5kaW5ncy9tZmQvc3RtZngudHh0ICAgIHwgIDI4ICsKIC4uLi9kZXZpY2V0cmVlL2JpbmRp
-bmdzL3BpbmN0cmwvcGluY3RybC1zdG1meC50eHQgIHwgMTE2ICsrKwogZHJpdmVycy9tZmQvS2Nv
-bmZpZyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgMTMgKwogZHJpdmVycy9tZmQv
-TWFrZWZpbGUgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgIDIgKy0KIGRyaXZlcnMv
-bWZkL3N0bWZ4LmMgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgNTQ1ICsrKysrKysr
-KysrKysrCiBkcml2ZXJzL3BpbmN0cmwvS2NvbmZpZyAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICB8ICAxNCArCiBkcml2ZXJzL3BpbmN0cmwvTWFrZWZpbGUgICAgICAgICAgICAgICAgICAgICAg
-ICAgICB8ICAgMSArCiBkcml2ZXJzL3BpbmN0cmwvcGluY3RybC1zdG1meC5jICAgICAgICAgICAg
-ICAgICAgICB8IDgyMCArKysrKysrKysrKysrKysrKysrKysKIGluY2x1ZGUvbGludXgvbWZkL3N0
-bWZ4LmggICAgICAgICAgICAgICAgICAgICAgICAgIHwgMTIzICsrKysKIDkgZmlsZXMgY2hhbmdl
-ZCwgMTY2MSBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCiBjcmVhdGUgbW9kZSAxMDA2NDQg
-RG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL21mZC9zdG1meC50eHQKIGNyZWF0ZSBt
-b2RlIDEwMDY0NCBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGluY3RybC9waW5j
-dHJsLXN0bWZ4LnR4dAogY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvbWZkL3N0bWZ4LmMKIGNy
-ZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL3BpbmN0cmwvcGluY3RybC1zdG1meC5jCiBjcmVhdGUg
-bW9kZSAxMDA2NDQgaW5jbHVkZS9saW51eC9tZmQvc3RtZnguaAoKLS0gCkxlZSBKb25lcyBb5p2O
-55C85pavXQpMaW5hcm8gU2VydmljZXMgVGVjaG5pY2FsIExlYWQKTGluYXJvLm9yZyDilIIgT3Bl
-biBzb3VyY2Ugc29mdHdhcmUgZm9yIEFSTSBTb0NzCkZvbGxvdyBMaW5hcm86IEZhY2Vib29rIHwg
-VHdpdHRlciB8IEJsb2cKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL2xpbnV4LWFybS1rZXJuZWwK
+Convert the STM32 pinctrl binding to DT schema format using json-schema.
+
+Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
+---
+
+Hi,
+
+First pacth to convert DT bindings file (here pinctrl STM32) to json-schema
+in order to take advantage of devicetree validation tool for STM32.
+
+Changes since v1:
+ - Fix errors reported by Rob.
+
+
+regards
+Alex
+
+diff --git a/Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.txt b/Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.txt
+deleted file mode 100644
+index 0016925..0000000
+--- a/Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.txt
++++ /dev/null
+@@ -1,208 +0,0 @@
+-* STM32 GPIO and Pin Mux/Config controller
+-
+-STMicroelectronics's STM32 MCUs intregrate a GPIO and Pin mux/config hardware
+-controller. It controls the input/output settings on the available pins and
+-also provides ability to multiplex and configure the output of various on-chip
+-controllers onto these pads.
+-
+-Pin controller node:
+-Required properies:
+- - compatible: value should be one of the following:
+-   "st,stm32f429-pinctrl"
+-   "st,stm32f469-pinctrl"
+-   "st,stm32f746-pinctrl"
+-   "st,stm32f769-pinctrl"
+-   "st,stm32h743-pinctrl"
+-   "st,stm32mp157-pinctrl"
+-   "st,stm32mp157-z-pinctrl"
+- - #address-cells: The value of this property must be 1
+- - #size-cells	: The value of this property must be 1
+- - ranges	: defines mapping between pin controller node (parent) to
+-   gpio-bank node (children).
+- - pins-are-numbered: Specify the subnodes are using numbered pinmux to
+-   specify pins.
+-
+-GPIO controller/bank node:
+-Required properties:
+- - gpio-controller : Indicates this device is a GPIO controller
+- - #gpio-cells	  : Should be two.
+-			The first cell is the pin number
+-			The second one is the polarity:
+-				- 0 for active high
+-				- 1 for active low
+- - reg		  : The gpio address range, relative to the pinctrl range
+- - clocks	  : clock that drives this bank
+- - st,bank-name	  : Should be a name string for this bank as specified in
+-   the datasheet
+-
+-Optional properties:
+- - reset:	  : Reference to the reset controller
+- - st,syscfg: Should be phandle/offset/mask.
+-	-The phandle to the syscon node which includes IRQ mux selection register.
+-	-The offset of the IRQ mux selection register
+-	-The field mask of IRQ mux, needed if different of 0xf.
+- - gpio-ranges: Define a dedicated mapping between a pin-controller and
+-   a gpio controller. Format is <&phandle a b c> with:
+-	-(phandle): phandle of pin-controller.
+-	-(a): gpio base offset in range.
+-	-(b): pin base offset in range.
+-	-(c): gpio count in range
+-   This entry has to be used either if there are holes inside a bank:
+-	GPIOB0/B1/B2/B14/B15 (see example 2)
+-   or if banks are not contiguous:
+-	GPIOA/B/C/E...
+-   NOTE: If "gpio-ranges" is used for a gpio controller, all gpio-controller
+-   have to use a "gpio-ranges" entry.
+-   More details in Documentation/devicetree/bindings/gpio/gpio.txt.
+- - st,bank-ioport: should correspond to the EXTI IOport selection (EXTI line
+-   used to select GPIOs as interrupts).
+- - hwlocks: reference to a phandle of a hardware spinlock provider node.
+- - st,package: Indicates the SOC package used.
+-   More details in include/dt-bindings/pinctrl/stm32-pinfunc.h
+-
+-Example 1:
+-#include <dt-bindings/pinctrl/stm32f429-pinfunc.h>
+-...
+-
+-	pin-controller {
+-		#address-cells = <1>;
+-		#size-cells = <1>;
+-		compatible = "st,stm32f429-pinctrl";
+-		ranges = <0 0x40020000 0x3000>;
+-		pins-are-numbered;
+-
+-		gpioa: gpio@40020000 {
+-			gpio-controller;
+-			#gpio-cells = <2>;
+-			reg = <0x0 0x400>;
+-			resets = <&reset_ahb1 0>;
+-			st,bank-name = "GPIOA";
+-		};
+-		...
+-		pin-functions nodes follow...
+-	};
+-
+-Example 2:
+-#include <dt-bindings/pinctrl/stm32f429-pinfunc.h>
+-...
+-
+-	pinctrl: pin-controller {
+-		#address-cells = <1>;
+-		#size-cells = <1>;
+-		compatible = "st,stm32f429-pinctrl";
+-		ranges = <0 0x40020000 0x3000>;
+-		pins-are-numbered;
+-
+-		gpioa: gpio@40020000 {
+-			gpio-controller;
+-			#gpio-cells = <2>;
+-			reg = <0x0 0x400>;
+-			resets = <&reset_ahb1 0>;
+-			st,bank-name = "GPIOA";
+-			gpio-ranges = <&pinctrl 0 0 16>;
+-		};
+-
+-		gpiob: gpio@40020400 {
+-			gpio-controller;
+-			#gpio-cells = <2>;
+-			reg = <0x0 0x400>;
+-			resets = <&reset_ahb1 0>;
+-			st,bank-name = "GPIOB";
+-			ngpios = 4;
+-			gpio-ranges = <&pinctrl 0 16 3>,
+-				      <&pinctrl 14 30 2>;
+-		};
+-
+-
+-		...
+-		pin-functions nodes follow...
+-	};
+-
+-
+-Contents of function subnode node:
+-----------------------------------
+-Subnode format
+-A pinctrl node should contain at least one subnode representing the
+-pinctrl group available on the machine. Each subnode will list the
+-pins it needs, and how they should be configured, with regard to muxer
+-configuration, pullups, drive, output high/low and output speed.
+-
+-    node {
+-	pinmux = <PIN_NUMBER_PINMUX>;
+-	GENERIC_PINCONFIG;
+-    };
+-
+-Required properties:
+-- pinmux: integer array, represents gpio pin number and mux setting.
+-  Supported pin number and mux varies for different SoCs, and are defined in
+-  dt-bindings/pinctrl/<soc>-pinfunc.h directly.
+-  These defines are calculated as:
+-    ((port * 16 + line) << 8) | function
+-  With:
+-    - port: The gpio port index (PA = 0, PB = 1, ..., PK = 11)
+-    - line: The line offset within the port (PA0 = 0, PA1 = 1, ..., PA15 = 15)
+-    - function: The function number, can be:
+-      * 0 : GPIO
+-      * 1 : Alternate Function 0
+-      * 2 : Alternate Function 1
+-      * 3 : Alternate Function 2
+-      * ...
+-      * 16 : Alternate Function 15
+-      * 17 : Analog
+-
+-  To simplify the usage, macro is available to generate "pinmux" field.
+-  This macro is available here:
+-    - include/dt-bindings/pinctrl/stm32-pinfunc.h
+-
+-  Some examples of using macro:
+-    /* GPIO A9 set as alernate function 2 */
+-    ... {
+-		pinmux = <STM32_PINMUX('A', 9, AF2)>;
+-    };
+-    /* GPIO A9 set as GPIO  */
+-    ... {
+-		pinmux = <STM32_PINMUX('A', 9, GPIO)>;
+-    };
+-    /* GPIO A9 set as analog */
+-    ... {
+-		pinmux = <STM32_PINMUX('A', 9, ANALOG)>;
+-    };
+-
+-Optional properties:
+-- GENERIC_PINCONFIG: is the generic pinconfig options to use.
+-  Available options are:
+-   - bias-disable,
+-   - bias-pull-down,
+-   - bias-pull-up,
+-   - drive-push-pull,
+-   - drive-open-drain,
+-   - output-low
+-   - output-high
+-   - slew-rate = <x>, with x being:
+-       < 0 > : Low speed
+-       < 1 > : Medium speed
+-       < 2 > : Fast speed
+-       < 3 > : High speed
+-
+-Example:
+-
+-pin-controller {
+-...
+-	usart1_pins_a: usart1@0 {
+-		pins1 {
+-			pinmux = <STM32_PINMUX('A', 9, AF7)>;
+-			bias-disable;
+-			drive-push-pull;
+-			slew-rate = <0>;
+-		};
+-		pins2 {
+-			pinmux = <STM32_PINMUX('A', 10, AF7)>;
+-			bias-disable;
+-		};
+-	};
+-};
+-
+-&usart1 {
+-	pinctrl-0 = <&usart1_pins_a>;
+-	pinctrl-names = "default";
+-};
+diff --git a/Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml b/Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml
+new file mode 100644
+index 0000000..06c4b66
+--- /dev/null
++++ b/Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml
+@@ -0,0 +1,264 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++# Copyright (C) STMicroelectronics 2019.
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/pinctrl/st,stm32-pinctrl.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: STM32 GPIO and Pin Mux/Config controller
++
++maintainers:
++  - Alexandre TORGUE <alexandre.torgue@st.com>
++
++description: |
++  STMicroelectronics's STM32 MCUs intregrate a GPIO and Pin mux/config hardware
++  controller. It controls the input/output settings on the available pins and
++  also provides ability to multiplex and configure the output of various
++  on-chip controllers onto these pads.
++
++properties:
++  compatible:
++    enum:
++      - st,stm32f429-pinctrl
++      - st,stm32f469-pinctrl
++      - st,stm32f746-pinctrl
++      - st,stm32f769-pinctrl
++      - st,stm32h743-pinctrl
++      - st,stm32mp157-pinctrl
++      - st,stm32mp157-z-pinctrl
++
++  '#address-cells':
++    const: 1
++  '#size-cells':
++    const: 1
++
++  ranges: true
++  pins-are-numbered: true
++  hwlocks: true
++
++  st,syscfg:
++    $ref: "/schemas/types.yaml#/definitions/phandle-array"
++    description: Should be phandle/offset/mask
++    items:
++      - description: Phandle to the syscon node which includes IRQ mux selection.
++      - description: The offset of the IRQ mux selection register.
++      - description: The field mask of IRQ mux, needed if different of 0xf.
++
++  st,package:
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint32
++      - enum: [1, 2, 4, 8]
++    description:
++     Indicates the SOC package used.
++     More details in include/dt-bindings/pinctrl/stm32-pinfunc.h
++
++
++patternProperties:
++  '^gpio@[0-9a-f]*$':
++    properties:
++      gpio-controller: true
++      '#gpio-cells':
++        const: 2
++
++      reg:
++        maxItems: 1
++      clocks:
++        maxItems: 1
++      reset:
++        minItems: 1
++        maxItems: 1
++      gpio-ranges:
++        minItems: 1
++        maxItems: 16
++      ngpios:
++        description:
++          Number of available gpios in a bank.
++        minimum: 1
++        maximum: 16
++
++      st,bank-name:
++        allOf:
++          - $ref: "/schemas/types.yaml#/definitions/string"
++          - enum:
++            - GPIOA
++            - GPIOB
++            - GPIOC
++            - GPIOD
++            - GPIOE
++            - GPIOF
++            - GPIOG
++            - GPIOH
++            - GPIOI
++            - GPIOJ
++            - GPIOK
++            - GPIOZ
++        description:
++          Should be a name string for this bank as specified in the datasheet.
++
++      st,bank-ioport:
++        allOf:
++          - $ref: "/schemas/types.yaml#/definitions/uint32"
++          - minimum: 0
++          - maximum: 11
++
++        description:
++          Should correspond to the EXTI IOport selection (EXTI line used
++          to select GPIOs as interrupts).
++
++    required:
++      - gpio-controller
++      - '#gpio-cells'
++      - reg
++      - clocks
++      - st,bank-name
++
++  '-[0-9]*$':
++    patternProperties:
++      '^pins':
++        description: |
++          A pinctrl node should contain at least one subnode representing the
++          pinctrl group available on the machine. Each subnode will list the
++          pins it needs, and how they should be configured, with regard to muxer
++          configuration, pullups, drive, output high/low and output speed.
++        properties:
++          pinmux:
++            allOf:
++              - $ref: "/schemas/types.yaml#/definitions/uint32-array"
++            description: |
++              Integer array, represents gpio pin number and mux setting.
++              Supported pin number and mux varies for different SoCs, and are
++              defined in dt-bindings/pinctrl/<soc>-pinfunc.h directly.
++              These defines are calculated as: ((port * 16 + line) << 8) | function
++              With:
++              - port: The gpio port index (PA = 0, PB = 1, ..., PK = 11)
++              - line: The line offset within the port (PA0 = 0, PA1 = 1, ..., PA15 = 15)
++              - function: The function number, can be:
++              * 0 : GPIO
++              * 1 : Alternate Function 0
++              * 2 : Alternate Function 1
++              * 3 : Alternate Function 2
++              * ...
++              * 16 : Alternate Function 15
++              * 17 : Analog
++              To simplify the usage, macro is available to generate "pinmux" field.
++              This macro is available here:
++                - include/dt-bindings/pinctrl/stm32-pinfunc.h
++              Some examples of using macro:
++               /* GPIO A9 set as alernate function 2 */
++               ... {
++                          pinmux = <STM32_PINMUX('A', 9, AF2)>;
++               };
++               /* GPIO A9 set as GPIO  */
++               ... {
++                          pinmux = <STM32_PINMUX('A', 9, GPIO)>;
++               };
++               /* GPIO A9 set as analog */
++               ... {
++                          pinmux = <STM32_PINMUX('A', 9, ANALOG)>;
++               };
++
++          bias-disable:
++            type: boolean
++          bias-pull-down:
++            type: boolean
++          bias-pull-up:
++            type: boolean
++          drive-push-pull:
++            type: boolean
++          drive-open-drain:
++            type: boolean
++          output-low:
++            type: boolean
++          output-high:
++            type: boolean
++          slew-rate:
++            description: |
++              0: Low speed
++              1: Medium speed
++              2: Fast speed
++              3: High speed
++            allOf:
++              - $ref: /schemas/types.yaml#/definitions/uint32
++              - enum: [0, 1, 2, 3]
++
++        required:
++          - pinmux
++
++required:
++  - compatible
++  - '#address-cells'
++  - '#size-cells'
++  - ranges
++  - pins-are-numbered
++
++examples:
++  - |
++    #include <dt-bindings/pinctrl/stm32-pinfunc.h>
++    //Example 1
++      pinctrl@40020000 {
++              #address-cells = <1>;
++              #size-cells = <1>;
++              compatible = "st,stm32f429-pinctrl";
++              ranges = <0 0x40020000 0x3000>;
++              pins-are-numbered;
++
++              gpioa: gpio@0 {
++                      gpio-controller;
++                      #gpio-cells = <2>;
++                      reg = <0x0 0x400>;
++                      resets = <&reset_ahb1 0>;
++                      st,bank-name = "GPIOA";
++              };
++       };
++
++    //Example 2 (using gpio-ranges)
++      pinctrl@50020000 {
++              #address-cells = <1>;
++              #size-cells = <1>;
++              compatible = "st,stm32f429-pinctrl";
++              ranges = <0 0x50020000 0x3000>;
++              pins-are-numbered;
++
++              gpiob: gpio@1000 {
++                      gpio-controller;
++                      #gpio-cells = <2>;
++                      reg = <0x1000 0x400>;
++                      resets = <&reset_ahb1 0>;
++                      st,bank-name = "GPIOB";
++                      gpio-ranges = <&pinctrl 0 0 16>;
++              };
++
++              gpioc: gpio@2000 {
++                      gpio-controller;
++                      #gpio-cells = <2>;
++                      reg = <0x2000 0x400>;
++                      resets = <&reset_ahb1 0>;
++                      st,bank-name = "GPIOC";
++                      ngpios = <5>;
++                      gpio-ranges = <&pinctrl 0 16 3>,
++                                    <&pinctrl 14 30 2>;
++              };
++      };
++
++    //Example 3 pin groups
++      pinctrl@60020000 {
++        usart1_pins_a: usart1-0 {
++                pins1 {
++                        pinmux = <STM32_PINMUX('A', 9, AF7)>;
++                        bias-disable;
++                        drive-push-pull;
++                        slew-rate = <0>;
++                };
++                pins2 {
++                        pinmux = <STM32_PINMUX('A', 10, AF7)>;
++                        bias-disable;
++                };
++        };
++    };
++
++    usart1 {
++                pinctrl-0 = <&usart1_pins_a>;
++                pinctrl-names = "default";
++    };
++
++...
+-- 
+2.7.4
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
