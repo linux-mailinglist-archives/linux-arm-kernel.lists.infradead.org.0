@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77BB9196FE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 05:14:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD8C319704
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 05:19:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2grOlYsIDYJgNYShJz6UWI14aEBk8jysfnkDB4dulgg=; b=AYBedDJs1CidVp
-	cOYu42IGBAiQ9FirItgUf2+nWfjS6aSmXKS/wNyaGMPn0gRPdK9R1vBdq00KNoGYWdH8ktcYGcSOl
-	655Y9iGyWdCI3huuJwPtr6UFhDV+8kSf6+i/bZWmVCfRULxKCJHG5ypF2shAY9je+eum8R4ItAu5r
-	cFFr/C5LuR5b2Uu9H4sj5iHj1dmJ9IvjDWxEm7Be15G0u3BmzlDO7XkubVD1jyC1Z1gjfA0hD93jr
-	wnt0WATPKxwaXhvAxs7/5c09DJuPqODsqiicBhdf8t7tz/bYjFyDUxL183JLkNNa5PsI1Y3c9v3QH
-	jz9a9gjFihm6Zm7ZE6PQ==;
+	List-Owner; bh=dB1gwwlhPKyXuZbljAO0m3RL3ezDSWaLqonduOzR+0U=; b=EKSzIaqFuy/6Vb
+	2m34mvcKSN3UHPiLfR/Flo54bpJ9bHUx3eMRzW7UDxis+YACinSmBpw19ZCdUhlXfQcCA6UPILdxG
+	saGJ+6eVPpNhrWbaifDCiN9CuiJ2UtZARhWf3VdGcKxuUUKIVpqyYoDh6IdozCPRPH/s2Eh7iGRo2
+	kkdjkymF3vmmcbmO3+NpzhNL7SeoTDVOk4XybhBjTI7svtOZi2t7t4aznXSGdIBmhIyMWi9bT4Z8Y
+	uzcOaD4G21kPZaGhxRKqjiKr9OIG2e8p05wTlEERD6W0D2swb0q93GxMp9jSCooTEcVjBhm3u0IMc
+	1VE/qn2/yrDoIr6+45/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOvz9-0005wJ-6D; Fri, 10 May 2019 03:14:11 +0000
+	id 1hOw4Q-0007jv-Td; Fri, 10 May 2019 03:19:38 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOvz2-0005vq-0f
- for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 03:14:05 +0000
+ id 1hOw4J-0007jS-LW
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 03:19:33 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 76C59217F5;
- Fri, 10 May 2019 03:13:57 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id CC8E5217F5;
+ Fri, 10 May 2019 03:19:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1557458043;
- bh=Me/LxFKe1rQvXPzpBV6nH7nKus0qycnHR7nb6hzQVSU=;
+ s=default; t=1557458371;
+ bh=fLdUr+OSyOmILZVsa8SLTruQQJwvO3j8O8Mlk6xWtck=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=dfDKU6DLzbaj7nJsJ9YzxT/mogyhpy25UZrsVMgewkxqTKelApcrY/2w8iYkQlMi6
- cRMqg0MvtxcYqw4herffvnM4QUPG7KOGGUh3KP/7KGSD+8eKa4KD5hutdkO9LkL77c
- oifiMBGiknn5vEL571uoP0XctApqFVfe5wDKQCII=
-Date: Fri, 10 May 2019 11:13:36 +0800
+ b=w1azHgxEpImpoYGQ/8Lm7Iso+Deq9V43vpIvoqItQITv9vDEUdW6KddNbj2gcoKqw
+ IX5v7X17MFgHYA+ECeJ3A8g/FFPa90Ty6LogwaI1vk10TOQof6GUKjrF1t34JaxJbq
+ X3ydEaT++UsAyCeM1NeWZBm/efQ2u27trFojl0c8=
+Date: Fri, 10 May 2019 11:19:07 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Yuantian Tang <andy.tang@nxp.com>
-Subject: Re: [PATCH v6] arm64: dts: ls1088a: add one more thermal zone node
-Message-ID: <20190510031335.GD15856@dragon>
-References: <20190423022507.34969-1-andy.tang@nxp.com>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Subject: Re: [PATCH v2] arm64: dts: imx8mm-evk: Add BD71847 PMIC
+Message-ID: <20190510031905.GE15856@dragon>
+References: <d809d10676011d1d35c3f78fe3e0ec47b73398d6.1556028030.git.leonard.crestez@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190423022507.34969-1-andy.tang@nxp.com>
+In-Reply-To: <d809d10676011d1d35c3f78fe3e0ec47b73398d6.1556028030.git.leonard.crestez@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_201404_078313_06431EF8 
-X-CRM114-Status: GOOD (  10.00  )
+X-CRM114-CacheID: sfid-20190509_201931_740940_33A956D1 
+X-CRM114-Status: GOOD (  18.50  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -75,29 +75,220 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
- daniel.lezcano@linaro.org, linux-kernel@vger.kernel.org, leoyang.li@nxp.com,
- edubezval@gmail.com, robh+dt@kernel.org, rui.zhang@intel.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>, Robin Gong <yibin.gong@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 23, 2019 at 10:25:07AM +0800, Yuantian Tang wrote:
-> Ls1088a has 2 thermal sensors, core cluster and SoC platform. Core cluster
-> sensor is used to monitor the temperature of core and SoC platform is for
-> platform. The current dts only support the first sensor.
-> This patch adds the second sensor node to dts to enable it.
+On Tue, Apr 23, 2019 at 02:16:48PM +0000, Leonard Crestez wrote:
+> The BUCK2 regulator is used for cpufreq voltage control, otherwise
+> configuration is mostly static.
 > 
-> Signed-off-by: Yuantian Tang <andy.tang@nxp.com>
+> This uses the newly-implemented rohm,reset-snvs-powered property to
+> properly handle the SNVS state of imx8mm.
+> 
+> Between BD71837 and BD71847 the BUCK3/4 regulators were removed but
+> datasheet and board schematics kept the names for BUCK5/6/7/8. The
+> driver however renumbered 5/6/7/8 to 3/4/5/6. Use the names from DT
+> bindings and add comments to signal this.
+> 
+> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> Acked-By: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
+> 
 > ---
-> v6:
->         - add cooling device map to cpu0-7 in platform node.
+>  arch/arm64/boot/dts/freescale/imx8mm-evk.dts | 131 +++++++++++++++++++
+>  1 file changed, 131 insertions(+)
+> 
+> Changes since v1:
+>  - Move compatible property first
+>  - Remove address/size numbering from regulators list
+> Link: https://marc.info/?l=linux-clk&m=155530430429151&w=2
+> 
+> Other imx8mm cpufreq patches in that series already accepted.
+> 
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
+> index 2d5d89475b76..623254786c2d 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
+> +++ b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
+> @@ -37,10 +37,14 @@
+>  		gpio = <&gpio2 19 GPIO_ACTIVE_HIGH>;
+>  		enable-active-high;
+>  	};
+>  };
+>  
+> +&A53_0 {
+> +	cpu-supply = <&buck2_reg>;
+> +};
+> +
+>  &fec1 {
+>  	pinctrl-names = "default";
+>  	pinctrl-0 = <&pinctrl_fec1>;
+>  	phy-mode = "rgmii-id";
+>  	phy-handle = <&ethphy0>;
+> @@ -93,10 +97,124 @@
+>  	pinctrl-0 = <&pinctrl_wdog>;
+>  	fsl,ext-reset-output;
+>  	status = "okay";
+>  };
+>  
+> +&i2c1 {
+> +	clock-frequency = <400000>;
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_i2c1>;
+> +	status = "okay";
+> +
+> +	pmic@4b {
+> +		compatible = "rohm,bd71847";
+> +		reg = <0x4b>;
+> +		pinctrl-0 = <&pinctrl_pmic>;
+> +		interrupt-parent = <&gpio1>;
+> +		interrupts = <3 GPIO_ACTIVE_LOW>;
+> +		rohm,reset-snvs-powered;
+> +
+> +		regulators {
+> +			buck1_reg: BUCK1 {
+> +				regulator-compatible = "BUCK1";
 
-@Daniel, are you fine with this version?
+bindings/regulator/regulator.txt says that regulator-compatible is a
+deprecated property.
 
 Shawn
+
+> +				regulator-min-microvolt = <700000>;
+> +				regulator-max-microvolt = <1300000>;
+> +				regulator-boot-on;
+> +				regulator-always-on;
+> +				regulator-ramp-delay = <1250>;
+> +			};
+> +
+> +			buck2_reg: BUCK2 {
+> +				regulator-compatible = "BUCK2";
+> +				regulator-min-microvolt = <700000>;
+> +				regulator-max-microvolt = <1300000>;
+> +				regulator-boot-on;
+> +				regulator-always-on;
+> +				regulator-ramp-delay = <1250>;
+> +				rohm,dvs-run-voltage = <1000000>;
+> +				rohm,dvs-idle-voltage = <900000>;
+> +			};
+> +
+> +			buck3_reg: BUCK3 {
+> +				// BUCK5 in datasheet
+> +				regulator-compatible = "BUCK3";
+> +				regulator-min-microvolt = <700000>;
+> +				regulator-max-microvolt = <1350000>;
+> +				regulator-boot-on;
+> +				regulator-always-on;
+> +			};
+> +
+> +			buck4_reg: BUCK4 {
+> +				// BUCK6 in datasheet
+> +				regulator-compatible = "BUCK4";
+> +				regulator-min-microvolt = <3000000>;
+> +				regulator-max-microvolt = <3300000>;
+> +				regulator-boot-on;
+> +				regulator-always-on;
+> +			};
+> +
+> +			buck5_reg: BUCK5 {
+> +				// BUCK7 in datasheet
+> +				regulator-compatible = "BUCK5";
+> +				regulator-min-microvolt = <1605000>;
+> +				regulator-max-microvolt = <1995000>;
+> +				regulator-boot-on;
+> +				regulator-always-on;
+> +			};
+> +
+> +			buck6_reg: BUCK6 {
+> +				// BUCK8 in datasheet
+> +				regulator-compatible = "BUCK6";
+> +				regulator-min-microvolt = <800000>;
+> +				regulator-max-microvolt = <1400000>;
+> +				regulator-boot-on;
+> +				regulator-always-on;
+> +			};
+> +
+> +			ldo1_reg: LDO1 {
+> +				regulator-compatible = "LDO1";
+> +				regulator-min-microvolt = <3000000>;
+> +				regulator-max-microvolt = <3300000>;
+> +				regulator-boot-on;
+> +				regulator-always-on;
+> +			};
+> +
+> +			ldo2_reg: LDO2 {
+> +				regulator-compatible = "LDO2";
+> +				regulator-min-microvolt = <900000>;
+> +				regulator-max-microvolt = <900000>;
+> +				regulator-boot-on;
+> +				regulator-always-on;
+> +			};
+> +
+> +			ldo3_reg: LDO3 {
+> +				regulator-compatible = "LDO3";
+> +				regulator-min-microvolt = <1800000>;
+> +				regulator-max-microvolt = <3300000>;
+> +				regulator-boot-on;
+> +				regulator-always-on;
+> +			};
+> +
+> +			ldo4_reg: LDO4 {
+> +				regulator-compatible = "LDO4";
+> +				regulator-min-microvolt = <900000>;
+> +				regulator-max-microvolt = <1800000>;
+> +				regulator-boot-on;
+> +				regulator-always-on;
+> +			};
+> +
+> +			ldo6_reg: LDO6 {
+> +				regulator-compatible = "LDO6";
+> +				regulator-min-microvolt = <900000>;
+> +				regulator-max-microvolt = <1800000>;
+> +				regulator-boot-on;
+> +				regulator-always-on;
+> +			};
+> +		};
+> +	};
+> +};
+> +
+>  &iomuxc {
+>  	pinctrl-names = "default";
+>  
+>  	pinctrl_fec1: fec1grp {
+>  		fsl,pins = <
+> @@ -122,10 +240,23 @@
+>  		fsl,pins = <
+>  			MX8MM_IOMUXC_NAND_READY_B_GPIO3_IO16	0x19
+>  		>;
+>  	};
+>  
+> +	pinctrl_i2c1: i2c1grp {
+> +		fsl,pins = <
+> +			MX8MM_IOMUXC_I2C1_SCL_I2C1_SCL			0x400001c3
+> +			MX8MM_IOMUXC_I2C1_SDA_I2C1_SDA			0x400001c3
+> +		>;
+> +	};
+> +
+> +	pinctrl_pmic: pmicirq {
+> +		fsl,pins = <
+> +			MX8MM_IOMUXC_GPIO1_IO03_GPIO1_IO3		0x41
+> +		>;
+> +	};
+> +
+>  	pinctrl_reg_usdhc2_vmmc: regusdhc2vmmc {
+>  		fsl,pins = <
+>  			MX8MM_IOMUXC_SD2_RESET_B_GPIO2_IO19	0x41
+>  		>;
+>  	};
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
