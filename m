@@ -2,58 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED2F019BC5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 12:38:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B83519BFA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 12:52:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Ahiq09plkTl/WOw/ToYv5mRxZsAUxEnPHB97LCrPuxM=; b=W/Y/RBW3XwcJbwEhRmaPid8bN
-	MajYN8fkU/DaqAdyULgnmLCc2NIWc9LqCqc3x8E92JQi/deJ4PPYLuTIB78Acn0ZUY5wKweR7HU24
-	Jgb3hFjJrq0wJrW3g/qLqPRkE49+WyK0HD7qwB7F3HNjljgNwFQcCUyAruBBPzK/wxG3rVq7/EOx2
-	HPv2rrbeSA5TXREglrPruzAcmSF5UyjvLnliVPSooSODeKyyzMxMk3vocoPTfOTjbVMpFzbsaCfY3
-	mMKr+R7aCGjZfywfnyGDD8k6qUiy6/OajlH72JOq8XdFUL4SBLNpOb2f+tOyKDclLbGM2HIvgWySr
-	ZF93uMUZA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lb1Y8ZbA/GzV6ZcvRDRMeXcpslneQ4ZvEstgH7WMRPE=; b=oOiSHsKyV0F8uM
+	D3GF5PZoU7yaJIDnzKei72kC6bpd0mhun4snbdeBuR/P4SPmYikmK5VlW1zIEAK+67OAIzE2/aJAr
+	49abdYh2BhZyL0Wev8cjScXLo+rgErPbjp5JUiogAZ7bH02C1rTFVz2bD7B27nIxI2+oHsTVZ+Cq6
+	daDZxdQZqRTM37bmztDPe3Y45pifejPwLLQxR1n9c3sBK0Fe8hYSjZtvZT7lC8VxXXXjcp8r4BnnW
+	FMSTj3+7zN96YchRzKN65HidnAkXsvJlt+D6cqpcCm2zczDHTnV82GgIcDa1+d+6FiSWknrIVXq1q
+	4kQxF7PEgvoURti+wxmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP2vI-0007vz-Iw; Fri, 10 May 2019 10:38:40 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP2vB-0007vD-Ka
- for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 10:38:34 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A6C88374;
- Fri, 10 May 2019 03:38:30 -0700 (PDT)
-Received: from [10.1.196.75] (e110467-lin.cambridge.arm.com [10.1.196.75])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A42723F738;
- Fri, 10 May 2019 03:38:29 -0700 (PDT)
-Subject: Re: [PATCH 1/4] coresight: tmc-etr: Do not call smp_processor_id()
- from preemptible
-To: Suzuki K Poulose <suzuki.poulose@arm.com>, mathieu.poirier@linaro.org
-References: <1557480663-16759-1-git-send-email-suzuki.poulose@arm.com>
- <1557480663-16759-2-git-send-email-suzuki.poulose@arm.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <319d4d63-326b-9bb5-6a24-f7aa8ec549f9@arm.com>
-Date: Fri, 10 May 2019 11:38:28 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hP391-0004PX-6R; Fri, 10 May 2019 10:52:51 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hP38s-0004P2-Q6; Fri, 10 May 2019 10:52:45 +0000
+X-UUID: 30c735ff41764845b9d268fb03d62726-20190510
+X-UUID: 30c735ff41764845b9d268fb03d62726-20190510
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <michael.kao@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1400839241; Fri, 10 May 2019 02:52:33 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 10 May 2019 03:52:31 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 10 May 2019 18:52:17 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 10 May 2019 18:52:17 +0800
+Message-ID: <1557485537.29634.27.camel@mtksdccf07>
+Subject: Re: [PATCH 1/8] arm64: dts: mt8183: add thermal zone node
+From: Michael Kao <michael.kao@mediatek.com>
+To: Daniel Lezcano <daniel.lezcano@linaro.org>
+Date: Fri, 10 May 2019 18:52:17 +0800
+In-Reply-To: <1557318215.29634.7.camel@mtksdccf07>
+References: <1556793795-25204-1-git-send-email-michael.kao@mediatek.com>
+ <1556793795-25204-2-git-send-email-michael.kao@mediatek.com>
+ <CAJMQK-isJf6f+OubbCdoXs8L2cup=rm3Z8Mr7Q26QshMP-0wxA@mail.gmail.com>
+ <20190503164651.GB40515@google.com>
+ <c6cf6170-331d-8ffc-d272-e5d8ee648eda@linaro.org>
+ <1557318215.29634.7.camel@mtksdccf07>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-In-Reply-To: <1557480663-16759-2-git-send-email-suzuki.poulose@arm.com>
-Content-Language: en-GB
+X-TM-SNTS-SMTP: A4A157953A4D2C6FE6E207CD9DAB29D1F5B9618804D49103BC12AA9BB5CBB1172000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_033833_680726_D93965CA 
-X-CRM114-Status: GOOD (  21.33  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190510_035242_848378_494BC126 
+X-CRM114-Status: GOOD (  30.33  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -65,76 +75,158 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: coresight@lists.linaro.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, jamesjj.liao@mediatek.com,
+ devicetree@vger.kernel.org, louis.yu@mediatek.com, roger.lu@mediatek.com,
+ linux-pm@vger.kernel.org, dawei.chien@mediatek.com,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Eduardo Valentin <edubezval@gmail.com>, fan.chen@mediatek.com,
+ Matthias Kaehlcke <mka@chromium.org>, linux-mediatek@lists.infradead.org,
+ hsinyi@chromium.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Zhang Rui <rui.zhang@intel.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Suzuki,
-
-On 10/05/2019 10:31, Suzuki K Poulose wrote:
-> Instead of using smp_processor_id() to figure out the node,
-> use the numa_node_id() for the current CPU node to avoid
-> splats like :
+On Wed, 2019-05-08 at 20:23 +0800, Michael Kao wrote:
+> On Mon, 2019-05-06 at 12:43 +0200, Daniel Lezcano wrote:
+> > On 03/05/2019 18:46, Matthias Kaehlcke wrote:
+> > > Hi,
+> > > 
+> > > On Fri, May 03, 2019 at 04:03:58PM +0800, Hsin-Yi Wang wrote:
+> > >> On Thu, May 2, 2019 at 10:43 AM michael.kao <michael.kao@mediatek.com> wrote:
+> > >>>
+> > >>> Add thermal zone node to Mediatek MT8183 dts file.
+> > >>>
+> > >>> Signed-off-by: Michael Kao <michael.kao@mediatek.com>
+> > >>> ---
+> > >>>  arch/arm64/boot/dts/mediatek/mt8183.dtsi | 64 ++++++++++++++++++++++++++++++++
+> > >>>  1 file changed, 64 insertions(+)
+> > >>>
+> > >>> diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+> > >>> index 926df75..b92116f 100644
+> > >>> --- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+> > >>> +++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+> > >>> @@ -334,6 +334,67 @@
+> > >>>                         status = "disabled";
+> > >>>                 };
+> > >>>
+> > >>> +               thermal: thermal@1100b000 {
+> > >>> +                       #thermal-sensor-cells = <1>;
+> > >>> +                       compatible = "mediatek,mt8183-thermal";
+> > >>> +                       reg = <0 0x1100b000 0 0x1000>;
+> > >>> +                       interrupts = <0 76 IRQ_TYPE_LEVEL_LOW>;
+> > >>> +                       clocks = <&infracfg CLK_INFRA_THERM>,
+> > >>> +                                <&infracfg CLK_INFRA_AUXADC>;
+> > >>> +                       clock-names = "therm", "auxadc";
+> > >>> +                       resets = <&infracfg  MT8183_INFRACFG_AO_THERM_SW_RST>;
+> > >>> +                       mediatek,auxadc = <&auxadc>;
+> > >>> +                       mediatek,apmixedsys = <&apmixedsys>;
+> > >>> +                       mediatek,hw-reset-temp = <117000>;
+> > >>> +                       nvmem-cells = <&thermal_calibration>;
+> > >>> +                       nvmem-cell-names = "calibration-data";
+> > >>> +               };
+> > >>> +
+> > >>> +               thermal-zones {
+> > >>> +                       cpu_thermal: cpu_thermal {
+> > >>> +                               polling-delay-passive = <1000>;
+> > >>> +                               polling-delay = <1000>;
+> > >>> +
+> > >>> +                               thermal-sensors = <&thermal 0>;
+> > >>> +                               sustainable-power = <1500>;
+> > >>> +                       };
+> > >>> +
+> > >>> +                       tzts1: tzts1 {
+> > >>> +                               polling-delay-passive = <1000>;
+> > >>> +                               polling-delay = <1000>;
+> > >>> +                               thermal-sensors = <&thermal 1>;
+> > >> Is sustainable-power required for tzts? Though it's an optional
+> > >> property, kernel would have warning:
+> > >> [    0.631556] thermal thermal_zone1: power_allocator:
+> > >> sustainable_power will be estimated
+> > >> [    0.639586] thermal thermal_zone2: power_allocator:
+> > >> sustainable_power will be estimated
+> > >> [    0.647611] thermal thermal_zone3: power_allocator:
+> > >> sustainable_power will be estimated
+> > >> [    0.655635] thermal thermal_zone4: power_allocator:
+> > >> sustainable_power will be estimated
+> > >> [    0.663658] thermal thermal_zone5: power_allocator:
+> > >> sustainable_power will be estimated
+> > >> if no sustainable-power assigned.
+> > > 
+> > > The property is indeed optional, if it isn't specified IPA will use
+> > > the sum of the minimum power of all 'power actors' of the zone as
+> > > estimate (see estimate_sustainable_power()). This may lead to overly
+> > > agressive throttling, since the nominal sustainable power will always
+> > > be <= the requested power.
+> > > 
+> > > In my understanding the sustainable power may varies between devices,
+> > > even for the same SoC. One could have all the hardware crammed into a
+> > > tiny plastic enclosure (e.g. ASUS Chromebit), another might have a
+> > > laptop form factor and a metal enclosure (e.g. ASUS C201). Both
+> > > examples are based on an Rockchip rk3288, but they have completely
+> > > different thermal behavior, and would likely have different values for
+> > > 'sustainable-power'.
+> > > 
+> > > In this sense I tend to consider 'sustainable-power' more a device,
+> > > than a SoC property. You could specify a 'reasonable' value as a
+> > > starting point, but it will likely not be optimal for all or even most
+> > > devices. The warning might even be useful for device makers by
+> > > indicating them that there is room for tweaking.
+> > 
+> > 
+> > The sustainable power is the power dissipated by the devices belonging
+> > to the thermal zone at the given trip temperature.
+> > 
+> > With the power numbers and the cooling devices, the IPA will change the
+> > states of the cooling devices to leverage the dissipated power to the
+> > sustainable power.
+> > 
+> > The contribution is the cooling effect of the cooling device.
+> > 
+> > However, the IPA is limited to one thermal zone and the cooling device
+> > is the cpu cooling device. There is the devfreq cooling device but as
+> > the graphic driver is not upstream, it is found in the android tree only
+> > for the moment.
+> > 
+> > As you mentioned the sustainable power can vary depending on the form
+> > factor and the production process for the same SoC (they can go to
+> > higher frequencies thus dissipate more power). That is the reason why we
+> > split the DT per SoC and we override the values on a per SoC version basis.
+> > 
+> > You can have a look the rk3399.dtsi and their variant for experimental
+> > board (*-rock960.dts) and the chromebook version (*-gru-kevin.dts).
+> > 
+> > Do you want a empiric procedure to find out the sustainable power ?
+> > 
+> > 
+> > 
+> OK, I will add the cooling map. But the tzts1 ~ tzts6 don't need to binding cooler.
+> The "cpu_thermal" is max value of tzts1 ~tzts6. And cpu_thermal bind
+> cooler with IPA. tzts1~6 don't need to add cooler. So, do I just add
+> cooling map without any binding any cooling-cell?
 > 
->   BUG: using smp_processor_id() in preemptible [00000000] code: perf/1743
->   caller is alloc_etr_buf.isra.6+0x80/0xa0
->   CPU: 1 PID: 1743 Comm: perf Not tainted 5.1.0-rc6-147786-g116841e #344
->   Hardware name: ARM LTD ARM Juno Development Platform/ARM Juno Development Platform, BIOS EDK II Feb  1 2019
->    Call trace:
->     dump_backtrace+0x0/0x150
->     show_stack+0x14/0x20
->     dump_stack+0x9c/0xc4
->     debug_smp_processor_id+0x10c/0x110
->     alloc_etr_buf.isra.6+0x80/0xa0
->     tmc_alloc_etr_buffer+0x12c/0x1f0
->     etm_setup_aux+0x1c4/0x230
->     rb_alloc_aux+0x1b8/0x2b8
->     perf_mmap+0x35c/0x478
->     mmap_region+0x34c/0x4f0
->     do_mmap+0x2d8/0x418
->     vm_mmap_pgoff+0xd0/0xf8
->     ksys_mmap_pgoff+0x88/0xf8
->     __arm64_sys_mmap+0x28/0x38
->     el0_svc_handler+0xd8/0x138
->     el0_svc+0x8/0xc
+> I think thermal framework will add estimated sustainable power. Maybe I
+> should add by myself. What's procedure do you recommend to find
+> sustainable power?
 > 
-> Fixes: 855ab61c16bf70b646 ("coresight: tmc-etr: Refactor function tmc_etr_setup_perf_buf()")
-> Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
-> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> ---
->   drivers/hwtracing/coresight/coresight-tmc-etr.c | 6 ++----
->   1 file changed, 2 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-> index 793639f..cae9d8a 100644
-> --- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
-> +++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-> @@ -1323,13 +1323,11 @@ static struct etr_perf_buffer *
->   tmc_etr_setup_perf_buf(struct tmc_drvdata *drvdata, struct perf_event *event,
->   		       int nr_pages, void **pages, bool snapshot)
->   {
-> -	int node, cpu = event->cpu;
-> +	int node;
->   	struct etr_buf *etr_buf;
->   	struct etr_perf_buffer *etr_perf;
->   
-> -	if (cpu == -1)
-> -		cpu = smp_processor_id();
-> -	node = cpu_to_node(cpu);
-> +	node = (event->cpu == -1) ? numa_node_id() : cpu_to_node(event->cpu);
+The tzts1~6 are just thermal sensor in the 8183 SoC,
+The purpose of adding the six thermal is to support svs driver to read
+thermal sensor in the SoC.
+https://patchwork.kernel.org/patch/10923289/
 
-If cpu == -1 represents a "don't care" scenario, it might be clearer to 
-just use NUMA_NO_NODE instead, and let the allocator handle it.
+The IPA cooling SoC will be applied by cpu_thermal which is the max
+sensor value of tzts1~6.
+In Document/devicetree/binding/thermal/thermal.txt, I find the statement
+that the trip and cooling-map is required for thermal zone.
+If we don't set trip and cooling map, it will set disable mode
+"tz->mode = THERMAL_DEVICE_DISABLED"
+in the drivers/thermal/of-thermal.c
+But it still work to read the temperature of thermal zone.
+And we don't need to let these thermal zone to bind cooler.
+So, we use these way to provide temperature node for svs to read
+temperature by thermal_zone_get_zone_by_name only.
 
-Robin.
-
->   
->   	etr_perf = kzalloc_node(sizeof(*etr_perf), GFP_KERNEL, node);
->   	if (!etr_perf)
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
