@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 803F619CCC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 13:36:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CB4819CCF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 13:36:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vzFoEhBWb9Z1Ee7nWcWSdJ5WsWf5vFzIL3af8SUUhLs=; b=ON/E4v5/zoClgr
-	b47aLLD/pBU2fSdFTGfvkB7OUh+6mkvD/r1bt3dOiuOYcFPskg+cTpQcJmOW8qo+uWFM9ypvVAqo5
-	uSQSbe2PkjZjK0wdBoaiX1UyJnb1W7OxVlUGCKGILWmu093AKwOT8nxOu2UPQ0q5ZUuvXbwwH/X5I
-	4Z4MBq7fugrboCrKTDh2KEze4SII1x3OrM9Fxf2H736rjX0URLiAuNv3U7WwHZuMO4Ns5RylAIPzv
-	30A8Kz1LmijXLyj3eVb3pFk/pzYqtaaz/25kMnoS611PRnJcLiIQQ6mhxTSPwZaIVtEaT6KXIrVRc
-	nj4LZDjovo4oV5YLLLnA==;
+	List-Owner; bh=VQYqva71KzYJSHT0SQ525sJNkOjkHJb1Vnpe3vP1QjY=; b=UtXry4RU1uQ1G3
+	Oqr4T+6Op5g8CYN/mu99mNDqp2n1Ptq8i7lXkF4yXLKMtMhITD8uv3OS1T1EgmmC4RMiREO2KPteS
+	jg0v3IzL1GkzsCJdjte2I8svTy8SnEawaq7kRnanyMI6jCzt6WXD0xqNKd52/zThGNZExdz1Z/lF5
+	EO1hAyXHL2pLZ26M9VrlOMYsksOrtq2n3rF60gcZJMVV2ekquE0l4OKlhCT8XG39ze25RQSwlFt6b
+	JIFG73i0tRpL4MtH0tkkh0HEUlq8RAwKar5pQQ7+CgaYENkyASIzUKkqLuH3m7LTo+RrbXNSVFPo5
+	db8IPm3ijeoKL9uQbc2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP3ow-0005an-Kz; Fri, 10 May 2019 11:36:10 +0000
-Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
+	id 1hP3p7-0005m9-LV; Fri, 10 May 2019 11:36:21 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP3oe-0005OR-7V
- for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 11:35:53 +0000
-Received: by mail-wr1-x432.google.com with SMTP id d12so7465450wrm.8
+ id 1hP3of-0005Ot-JX
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 11:35:55 +0000
+Received: by mail-wr1-x441.google.com with SMTP id s15so7442150wra.12
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 May 2019 04:35:51 -0700 (PDT)
+ Fri, 10 May 2019 04:35:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=//iVBOOHc9TqM1L3co+mOMGbYMsc6+9X4iK1zTDPBHc=;
- b=kbnyW3OeD2h2N5VTb+twEh/EtyCC5kEin8Rr5H8WKQ+jb7u4SZA3JE0D1L/FYgicw8
- 9jMKdz6iZ6z70XVduliH722/B/SusXP2TK11kgJ+XeiPYgv12OZkPmVHFNw3bsVCusVD
- ZUftcLl6I74XCtUH0MwmkEljTTpnARFTVaxJt81qoT6lyHLbx3HIiYvJtO/YGHka4zKs
- v2NXecYHP280i5nX9BpmWbBmj48Y1GZEGaOoOvcqr8LA6iLf40bOz8YFZHrEU0/0r1n8
- cChmetZP4qwt4x78aPELgCPUvpnnH/rH0THObRMjhD8NOnQ2jqKMODPPNcc50hIqmz7X
- KPcg==
+ bh=frMaHLtTVcuAjNsj7WkDlL1XY2jsGu/I2uG5ctoh5gA=;
+ b=Px0U9D9pEbVq/5gvJ9oo3XEOJrt8sFkwHxHVlbqUNhxJbeQBY/3yP40mhojVl+gpgi
+ vBfjHjCLADRiMWyfDl4oUlX1OFU/4faYbxbCmgH2cyFVnsaRAjmz/1SOqj7LsueE7GXp
+ NllniShPrftrRES5rrxIbtrvPns76H5YEu6Iu5ce0LnUqZvOYcEgaCIBNbhk8nXCoF2j
+ fQJqubBpBpFa10BRHBqyDWELIQam4x9TCUhEgsBHmVcafyn+hbT2mR9ZM2oGl8VKqG6w
+ IWjcs28CFrOYq7nUqsOFwj74UKHqLOOTy37V43VKR1wrHaeb7fXyb15y4LlgQb2ZlKgU
+ Nysw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=//iVBOOHc9TqM1L3co+mOMGbYMsc6+9X4iK1zTDPBHc=;
- b=g+MCE5Ka0gKg1OgYUoALXO/3wvxwxfDvw9XBWACimWV1KzYsi5CEKYZ1wxULqliWb+
- Jip9EnobXOcUAUY6f/W+RLpxYYqnEOHq8hU59V3e1rby23Qy1dHiGO2Z4p6pGT6nkACn
- gCBMfQ52YEflKwh5ZBkJyfSWzTPOvBPSpKdHH3HP40nzYjzlMTJ4sl7tMzDkeYF0jDut
- 8NidZAs5ctjxJTXj780jK+8RmBidXOF/WbWz5g5xwM2nmKSk5la0YwjBb9DT6U0HJkDh
- ykozJhXXHVUz3GmzCWBOEPHjOFxUzLf1YAGF4EeCC6eP8VIpY/KSNu8udJ7HJX2pvRcU
- FRew==
-X-Gm-Message-State: APjAAAXH+QoPt2eB9N1eigZo5qmRFq9vSYIbsl2RD+/VCwDYo7ipxlAc
- rYJ5L+MNkdLVJKB5fIXiW0o=
-X-Google-Smtp-Source: APXvYqzqR3dalAxAD4FQFC9rRf4MAqkKoi4x7exNR7vV1/72Son/ThfafFYEEMdEXnWpGTbFeAT/ZA==
-X-Received: by 2002:adf:e44b:: with SMTP id t11mr7552779wrm.151.1557488150525; 
- Fri, 10 May 2019 04:35:50 -0700 (PDT)
+ bh=frMaHLtTVcuAjNsj7WkDlL1XY2jsGu/I2uG5ctoh5gA=;
+ b=ub72VBY8Auc8wuUjni1Coi41qAPscwPjoQxClAs4VNnbP5UaWb9VevKNNmX4Atb5mZ
+ h9FJH+YkWfyu2FuC6LmTArGEdT/mxKWjRNkUuzY5WK5R+LSVKRFN6SxlDpAAsnV6RcnZ
+ n3wFXPEYci2x+9yy/6JNhexcvxl4hfssOMcsMsGBgANwAFnLT04RWzCAEVJfRoaQofGu
+ w3F0nH17Vv/LgndL0ndqFGitHb1j57R4AFNclbr1PPVI0+aDRxDyYfIHu1DpM64xrJZe
+ CArYDonOIm1SFQTsgVP3rBPEfaqaEDxd8mp56Kk6jOj0T5ViuKDl5TmZgDOO/Tz/u7xd
+ hL0g==
+X-Gm-Message-State: APjAAAWZiIbCs9Lj29+MIgcKUJuTwAEgVkc5X0Rdr58eBQFdqMpm1cWE
+ wI3aoKY4PQuPWcBS+X9wTjc=
+X-Google-Smtp-Source: APXvYqymwHDZ4aqfYbTTNgpiU1guU4StpI08Kfg1JNbrZAJrlOIjlG9XYDjkLh1+Dx6Sb+OoP1OGfA==
+X-Received: by 2002:adf:fc8f:: with SMTP id g15mr7766060wrr.122.1557488151914; 
+ Fri, 10 May 2019 04:35:51 -0700 (PDT)
 Received: from localhost (p2E5BEF36.dip0.t-ipconnect.de. [46.91.239.54])
- by smtp.gmail.com with ESMTPSA id b8sm4407759wrr.64.2019.05.10.04.35.49
+ by smtp.gmail.com with ESMTPSA id v189sm8080721wma.3.2019.05.10.04.35.51
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 10 May 2019 04:35:50 -0700 (PDT)
+ Fri, 10 May 2019 04:35:51 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: arm@kernel.org
-Subject: [GIT PULL 2/3] arm64: tegra: Core fixes for v5.2-rc1
-Date: Fri, 10 May 2019 13:35:45 +0200
-Message-Id: <20190510113546.15698-2-thierry.reding@gmail.com>
+Subject: [GIT PULL 3/3] arm64: tegra: Device tree fixes for v5.2-rc1
+Date: Fri, 10 May 2019 13:35:46 +0200
+Message-Id: <20190510113546.15698-3-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190510113546.15698-1-thierry.reding@gmail.com>
 References: <20190510113546.15698-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_043552_265902_C00B5E67 
-X-CRM114-Status: GOOD (  12.25  )
+X-CRM114-CacheID: sfid-20190510_043553_639382_D1EB081A 
+X-CRM114-Status: GOOD (  13.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:432 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (thierry.reding[at]gmail.com)
@@ -106,33 +106,44 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi ARM SoC maintainers,
 
-The following changes since commit 9e98c678c2d6ae3a17cb2de55d17f69dddaa231b:
+The following changes since commit 2f03e39b5bfe41f3a0d9a8b01231e7e5045cb9c4:
 
-  Linux 5.1-rc1 (2019-03-17 14:22:26 -0700)
+  arm64: tegra: Remove regulator hacks on Jetson TX2 (2019-04-17 16:48:44 +0200)
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.2-arm64-soc-fixes
+  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.2-arm64-dt-fixes
 
-for you to fetch changes up to 2e988a83874b689f9e095cf60b40f1a8aff6731a:
+for you to fetch changes up to 7278358407be770130b6b72567c1b5831c6eef28:
 
-  arm64: tegra: Select ARM_GIC_PM (2019-05-08 14:41:25 +0200)
+  arm64: tegra: Disable XUSB support on Jetson TX2 (2019-05-08 14:42:57 +0200)
 
 Thanks,
 Thierry
 
 ----------------------------------------------------------------
-arm64: tegra: Core fixes for v5.2-rc1
+arm64: tegra: Device tree fixes for v5.2-rc1
 
-This enables the ARM_GIC_PM driver by default for Tegra in order to
-increase build coverage.
+This contains one patch to disable the recently added XUSB support on
+Jetson TX2 which is reported to cause boot and CPU hotplug failures in
+some cases and doesn't allow the core power rail to be switched off.
+
+Furthermore there are some changes to enable IOMMU support on more
+devices. This is needed in order to prevent these devices from breaking
+with the policy change in the ARM SMMU driver to break insecure devices
+that is currently headed for v5.2.
 
 ----------------------------------------------------------------
-Sameer Pujar (1):
-      arm64: tegra: Select ARM_GIC_PM
+Jonathan Hunter (1):
+      arm64: tegra: Fix insecure SMMU users for Tegra186
 
- arch/arm64/Kconfig.platforms | 1 +
- 1 file changed, 1 insertion(+)
+Thierry Reding (2):
+      arm64: tegra: Enable SMMU translation for PCI on Tegra186
+      arm64: tegra: Disable XUSB support on Jetson TX2
+
+ arch/arm64/boot/dts/nvidia/tegra186-p2771-0000.dts | 4 ++--
+ arch/arm64/boot/dts/nvidia/tegra186.dtsi           | 7 +++++++
+ 2 files changed, 9 insertions(+), 2 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
