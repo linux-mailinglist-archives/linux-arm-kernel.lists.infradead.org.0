@@ -2,56 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 898C119E19
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 15:27:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18A3F19E21
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 15:27:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MrPTNVEHOmyHOkRW4DQri1S94clj7+KDPgilUxJDw2I=; b=kvfeudL77fXpIS
-	9GJUceWg0BBw6J5Hrtq6GO+OnA6HJbPNdnMybOD99ozcupHBlrLWmr1ioSsjc5CFlivNFnhYkXkpV
-	uaVAIn+/6+K/n//Qgm1wOcOlZadl3OnZs9ulzz0j911RIpGKl7fyrWVidpWB8RgpYUoCdv1TuvdgP
-	FC8jF+WzMA2J+DXkL6PKggQo+fb3B1yCFPoORE/xqCHSlSLN5Gfc414gY11fdGv7Ow1Vb3nY7TrYM
-	O/rxf03uv7iYwPaqYC8mRPLCvVcc+7eJOcWFJFSImo5PLVH/VAunGIM/Nd0kE8r6nuNmFbLlhkexf
-	OaNmY+QfFzuNFnnlIwDg==;
+	List-Owner; bh=atgXALj1Q+G9vQRO+b0U8JiDzpQiPFUODmj460/MGw4=; b=Kb7dYQSpl7rspd
+	D6K0umIa7FTC7Xg1RoI58rA2VIFbXtx7xeybccKa/X0xQbD7aHAU499bhHBPnLlce0x5xiHSOGsYi
+	3/DA8748RgQW+XGntXbwFY5tLWXNpUG9RUYmo1I0R/ss21tEGnOE8GMLSKAwD2M2pslseGrZW32aL
+	7LLnIRteTA9lOF/pTQEARRUg7EGJNkOjc4ZME85+rFtfjCNZsFZSJSSsPQgTA+oc1ogPfIUsVSYYD
+	mNnasHzBtriqXVhSK/StkA1ldBML9YIeiIhC9WHbNIlqDIm8TMAJE9zqq6jF0M/iPwfDtJDG/vt5z
+	ntXj7KTR1ykgSe45E+WA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP5YY-0001d2-Qe; Fri, 10 May 2019 13:27:22 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP5YP-0001ca-7v
- for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 13:27:14 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A4759374;
- Fri, 10 May 2019 06:27:08 -0700 (PDT)
-Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 937253F575;
- Fri, 10 May 2019 06:27:07 -0700 (PDT)
-Date: Fri, 10 May 2019 14:26:59 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Hillf Danton <hdanton@sina.com>
-Subject: Re: [patch] arm64: assembler: Update the yield NEON comment
-Message-ID: <20190510132651.GA28398@e103592.cambridge.arm.com>
-References: <177247.865216003-sendEmail@laptop-0p1i5f25>
+	id 1hP5Z3-0002EX-JV; Fri, 10 May 2019 13:27:53 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hP5YU-0001d1-3z; Fri, 10 May 2019 13:27:23 +0000
+X-UUID: 6f9a28d8478740a8bbab601701f55e01-20190510
+X-UUID: 6f9a28d8478740a8bbab601701f55e01-20190510
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <michael.kao@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 121745635; Fri, 10 May 2019 05:27:14 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 10 May 2019 06:27:12 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 10 May 2019 21:27:10 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Fri, 10 May 2019 21:27:10 +0800
+From: michael.kao <michael.kao@mediatek.com>
+To: Zhang Rui <rui.zhang@intel.com>, Eduardo Valentin <edubezval@gmail.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Rob Herring <robh+dt@kernel.org>, 
+ Mark Rutland <mark.rutland@arm.com>, Matthias Brugger
+ <matthias.bgg@gmail.com>, <hsinyi@chromium.org>
+Subject: [PATCH v2 2/8] arm64: dts: mt8183: add/update dynamic power
+ coefficients
+Date: Fri, 10 May 2019 21:27:00 +0800
+Message-ID: <1557494826-6044-3-git-send-email-michael.kao@mediatek.com>
+X-Mailer: git-send-email 1.9.1
+In-Reply-To: <1557494826-6044-1-git-send-email-michael.kao@mediatek.com>
+References: <1557494826-6044-1-git-send-email-michael.kao@mediatek.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <177247.865216003-sendEmail@laptop-0p1i5f25>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_062713_295226_6B7E6494 
-X-CRM114-Status: GOOD (  25.51  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190510_062718_396387_6A5F2E88 
+X-CRM114-Status: UNSURE (   8.23  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,91 +74,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>, Will Deacon <will.deacon@arm.com>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Cc: devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, "michael.kao" <michael.kao@mediatek.com>,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 09, 2019 at 03:01:43PM +0000, Hillf Danton wrote:
+Add dynamic power coefficients for all cores and update those of
+CPU0 and CPU4.
 
-Your mailer did something funny here and send a multipart MIME message.
+Signed-off-by: Michael.Kao <michael.kao@mediatek.com>
+---
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-If in doubt, use git send-email.
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+index 52ad47e..8f9fd9a 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+@@ -58,6 +58,7 @@
+ 			compatible = "arm,cortex-a53";
+ 			reg = <0x000>;
+ 			enable-method = "psci";
++			dynamic-power-coefficient = <84>;
+ 		};
+ 
+ 		cpu1: cpu@1 {
+@@ -65,6 +66,7 @@
+ 			compatible = "arm,cortex-a53";
+ 			reg = <0x001>;
+ 			enable-method = "psci";
++			dynamic-power-coefficient = <84>;
+ 		};
+ 
+ 		cpu2: cpu@2 {
+@@ -72,6 +74,7 @@
+ 			compatible = "arm,cortex-a53";
+ 			reg = <0x002>;
+ 			enable-method = "psci";
++			dynamic-power-coefficient = <84>;
+ 		};
+ 
+ 		cpu3: cpu@3 {
+@@ -79,6 +82,7 @@
+ 			compatible = "arm,cortex-a53";
+ 			reg = <0x003>;
+ 			enable-method = "psci";
++			dynamic-power-coefficient = <84>;
+ 		};
+ 
+ 		cpu4: cpu@100 {
+@@ -86,6 +90,7 @@
+ 			compatible = "arm,cortex-a73";
+ 			reg = <0x100>;
+ 			enable-method = "psci";
++			dynamic-power-coefficient = <211>;
+ 		};
+ 
+ 		cpu5: cpu@101 {
+@@ -93,6 +98,7 @@
+ 			compatible = "arm,cortex-a73";
+ 			reg = <0x101>;
+ 			enable-method = "psci";
++			dynamic-power-coefficient = <211>;
+ 		};
+ 
+ 		cpu6: cpu@102 {
+@@ -100,6 +106,7 @@
+ 			compatible = "arm,cortex-a73";
+ 			reg = <0x102>;
+ 			enable-method = "psci";
++			dynamic-power-coefficient = <211>;
+ 		};
+ 
+ 		cpu7: cpu@103 {
+@@ -107,6 +114,7 @@
+ 			compatible = "arm,cortex-a73";
+ 			reg = <0x103>;
+ 			enable-method = "psci";
++			dynamic-power-coefficient = <211>;
+ 		};
+ 	};
+ 
+-- 
+2.6.4
 
-> The comment was a bit misleading when it was created in commit 24534b3511, and
-> deserves a tweak like,
-> 
-> - * - Check whether the preempt count is exactly 1, in which case disabling
-> - *   preemption once will make the task preemptible. If this is not the case,
-> + * - Check whether the preempt count is exactly 1, in which case decrementing
-> + *   preempt count once will make the task preemptible. If this is not the case,
-> 
-> then code fix was added in commit 7faa313f05 with the comment left behind untouched.
-> 
-> It no longer matches the code now, so fix it. It is changed along the original
-> direction as much as I can, though simply deleting the relevant block looks fine.
-> 
-> And finally a question remains: is it needed to decrement preempt count before
-> invoking kernel_neon_end() in which preempt_enable() is put at the end?
-
-Nit: please follow the recommendations in
-Documentation/process/submitting-patches.rst regarding formatting commit
-messages.
-
-(Or run scripts/checkpatch.pl.)
-
-> 
-> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> Cc: Dave Martin <Dave.Martin@arm.com>
-> Cc: Will Deacon <will.deacon@arm.com>
-> Cc: Peter Zijlstra <peterz@infradead.org>
-> Signed-off-by: Hillf Danton <hdanton@sina.com>
-> ---
->  arch/arm64/include/asm/assembler.h | 10 +++-------
->  1 file changed, 3 insertions(+), 7 deletions(-)
-> 
-> diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
-> index c5308d0..8518a7b 100644
-> --- a/arch/arm64/include/asm/assembler.h
-> +++ b/arch/arm64/include/asm/assembler.h
-> @@ -713,13 +713,9 @@ USER(\label, ic	ivau, \tmp2)			// invalidate I line PoU
->   * Note that the patchup code does not support assembler directives that change
->   * the output section, any use of such directives is undefined.
->   *
-> - * The yield itself consists of the following:
-> - * - Check whether the preempt count is exactly 1, in which case disabling
-> - *   preemption once will make the task preemptible. If this is not the case,
-> - *   yielding is pointless.
-> - * - Check whether TIF_NEED_RESCHED is set, and if so, disable and re-enable
-> - *   kernel mode NEON (which will trigger a reschedule), and branch to the
-> - *   yield fixup code.
-> + * The yield itself decrements the preempt count and if count hits zero, disable
-> + * and re-enable kernel mode NEON (which will trigger a reschedule), and branch
-> + * to the yield fixup code.
-
-Good spot -- the original comment is definitely wrong: disabling
-preemption certainly shouldn't make the task preemptible!
-
-So, I'm certainly in favour of fixing that.
-
-Your new text doesn't look right, though: AFAICT commit 7faa313f05
-didn't intentionally change the behaviour here.  It looks to me like
-the preempt count (i.e., current_thread_info()->preempt) is not
-decremented by this code: the value is read and the subtraction is done
-for comparison purposes, but no value is stored back.
-
-This is intentional, because the the code needs to do some cleanup
-before preemption can be enabled for real: the call to kernel_neon_end
-does both of those jobs.
-
-Or did I miss something?
-
-Cheers
----Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
