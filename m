@@ -2,53 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0B1F19DB6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 15:00:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 708A319DB8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 15:00:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sUsb9DXqHNeyp0eju2XJkY8qUTfR2kD7PmL6/5rOhuM=; b=dsPpcCymvqipUA
-	+GFEX6PXHmwhZHIayTNamMFL4cqJfYsY2/snHvrhVY1uZes/F/llva3MuplnR+yyvwVkCtr6WkwBH
-	kDcrELeGgDE+gs6BJAizCnNz8n9BS21otjvkPInNSov3eyd3MwGBvxo+dNceXbD3khEWN9sa/dw+/
-	E0a6MjFkzjuWOFMZcYTMBX9mAa5S/+6sCfkIISz94aGU1X/Kkk9C4APIjoyXuZjh37+grtNhq4l/b
-	LnEhYWgqzJdefXhXVeHwDI7UiOLtNO7sM+u34k1Xm1cqqhEKWBiuEGpNfPAddDgK9P6jUcEXcj9Gt
-	DtiuukTV3hWSwHs0DrXg==;
+	List-Owner; bh=i8TK8YXs1F4Ewom10clpLnVf1XEK6N2z0Gdtx3S+27A=; b=jYZquA/B9t0OqW
+	ju34IiEfa1i/SGlK6c+HBFluA27YCTOiBn3N93QX0kR+PTYQf1VtEJKgZ38yx1yeyqadfLmaAALJe
+	eqOp6F2tlYmmMxcMm3lB3thHsLmR7MXOdJLTV52joiHxHJ2ourcEZz4wy6kcftL5rbXIo2wwdr+bX
+	ax8qtG8ts4NbcvPkCLOV/gxWcqZNxatYD4xG1csNfVytS69yHtxIQsGtRr6j4Wfe45MP5nDYaR80E
+	+3e3ZnYjcge31iXcqc2wmyCNfBN4Nqwfkvnnn4xBeGBIrW8kqJbTpHKPabpQIG/x3uSDymlfxRBtY
+	St2Yy2l5NkrGwi5/wY6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP58l-00070k-RG; Fri, 10 May 2019 13:00:43 +0000
+	id 1hP58x-0007DI-TH; Fri, 10 May 2019 13:00:55 +0000
 Received: from mail-eopbgr80045.outbound.protection.outlook.com ([40.107.8.45]
  helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP58P-0006YL-6O
- for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 13:00:22 +0000
+ id 1hP58Q-0006YL-Vs
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 13:00:29 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=yRml9qHeUybwjVvDkrkmE4+yRQEMwTXvfEj3NpjvetQ=;
- b=bFvUA0zUwC+T2Hdszdr2rEqaFgFlvcXrMTyw5PgP1JgOLArbpdcuyKg7I48CMHPUY9zHEnFUFAyOL9B14o7h8ytPudvXB3TDPBTjlQn6a0fzac41yYWlP6VJaUYUqWfDHMcAz/kjuyE95JDz/TuDTDLhs4zRQNhDWg6CtM1zPgU=
+ bh=nXGTsfK8kPy9o65RDbYgSMufyodGvQAlB88bQfwOaBs=;
+ b=srWXc6SVX6U2+CffdhjqUL094FZMeOtopszHo+mwl4fB99Z3D7erJbti9LzFM/ldiQghzmN79VO8wpN4/r8Oivfq+/xwzDIXruqTJVNgn9kEoZ0/Q+zNi16GnOiCuJTMXH4ZuDiSpR1pIPtJWPY47Y+TQ/sVK3/nRzDocUX6x7Q=
 Received: from AM6PR04MB5032.eurprd04.prod.outlook.com (20.177.34.92) by
  AM6PR04MB6229.eurprd04.prod.outlook.com (20.179.7.80) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1878.21; Fri, 10 May 2019 13:00:17 +0000
+ 15.20.1878.21; Fri, 10 May 2019 13:00:21 +0000
 Received: from AM6PR04MB5032.eurprd04.prod.outlook.com
  ([fe80::15c1:586e:553c:3cda]) by AM6PR04MB5032.eurprd04.prod.outlook.com
  ([fe80::15c1:586e:553c:3cda%6]) with mapi id 15.20.1856.016; Fri, 10 May 2019
- 13:00:17 +0000
+ 13:00:21 +0000
 From: Pramod Kumar <pramod.kumar_1@nxp.com>
 To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
  <mark.rutland@arm.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
  "manivannan.sadhasivam@linaro.org" <manivannan.sadhasivam@linaro.org>,
  Aisheng Dong <aisheng.dong@nxp.com>, "Michal.Vokac@ysoft.com"
  <Michal.Vokac@ysoft.com>, Leo Li <leoyang.li@nxp.com>
-Subject: [PATCH v2 1/3] dt-bindings: arm: nxp: Add device tree binding for
- ls1046a-frwy board
-Thread-Topic: [PATCH v2 1/3] dt-bindings: arm: nxp: Add device tree binding
- for ls1046a-frwy board
-Thread-Index: AQHVBzBQyKO0W8hcaUmvSLfUo3GWlw==
-Date: Fri, 10 May 2019 13:00:17 +0000
-Message-ID: <20190510130207.14330-2-pramod.kumar_1@nxp.com>
+Subject: [PATCH v2 2/3] arm64: dts: nxp: add ls1046a-frwy board support
+Thread-Topic: [PATCH v2 2/3] arm64: dts: nxp: add ls1046a-frwy board support
+Thread-Index: AQHVBzBTKlCYQU+P6USHvschCL9MIQ==
+Date: Fri, 10 May 2019 13:00:20 +0000
+Message-ID: <20190510130207.14330-3-pramod.kumar_1@nxp.com>
 References: <20190510130207.14330-1-pramod.kumar_1@nxp.com>
 In-Reply-To: <20190510130207.14330-1-pramod.kumar_1@nxp.com>
 Accept-Language: en-US
@@ -64,35 +62,35 @@ authentication-results: spf=none (sender IP is )
 x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [92.120.1.70]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: bc116f59-11ea-4d49-bb2c-08d6d54772f7
+x-ms-office365-filtering-correlation-id: 4c911007-8975-48ab-751d-08d6d547754c
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
  SRVR:AM6PR04MB6229; 
 x-ms-traffictypediagnostic: AM6PR04MB6229:
-x-microsoft-antispam-prvs: <AM6PR04MB62296054D9D2C8A3A8FC2345F60C0@AM6PR04MB6229.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1227;
+x-microsoft-antispam-prvs: <AM6PR04MB622955D743C9CEAF14107BA7F60C0@AM6PR04MB6229.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1775;
 x-forefront-prvs: 0033AAD26D
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(136003)(376002)(346002)(39860400002)(366004)(199004)(189003)(11346002)(2501003)(476003)(446003)(73956011)(66556008)(2906002)(66946007)(66476007)(64756008)(25786009)(50226002)(2616005)(486006)(14454004)(8936002)(478600001)(68736007)(66446008)(186003)(52116002)(76176011)(99286004)(5660300002)(6636002)(26005)(102836004)(386003)(6506007)(6486002)(6436002)(4326008)(3846002)(6116002)(2201001)(305945005)(66066001)(256004)(6512007)(71190400001)(53936002)(71200400001)(110136005)(86362001)(54906003)(36756003)(7736002)(316002)(81156014)(8676002)(4744005)(81166006)(1076003);
+ SFS:(10009020)(396003)(136003)(376002)(346002)(39860400002)(366004)(199004)(189003)(11346002)(2501003)(476003)(446003)(73956011)(66556008)(2906002)(66946007)(66476007)(64756008)(25786009)(50226002)(2616005)(486006)(14454004)(8936002)(478600001)(68736007)(66446008)(186003)(52116002)(76176011)(99286004)(5660300002)(6636002)(26005)(102836004)(386003)(6506007)(6486002)(6436002)(4326008)(3846002)(6116002)(2201001)(305945005)(66066001)(256004)(6512007)(71190400001)(53936002)(71200400001)(110136005)(86362001)(54906003)(36756003)(7736002)(316002)(81156014)(8676002)(81166006)(1076003);
  DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR04MB6229;
  H:AM6PR04MB5032.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: Ti+zAgeFPtkjma4+L/joNcolr0f0cOgs+khJfBkRuS9MZ8Q/Sa8cF6L+ONNsuI74AU5fr9ESzWfV+f30luTxCnokQrT18one8PFqisa4bWW8UOMawu0pNigcRdoGDf5phjxDn42uDsWA7B5NC5niJ4T12VqncxBNPf1u+AabNYWAfqpwN+bh2AdCvIkZTB2X0Bjt8hWjspv+R6uKdQ7IMJMP7eO8KvpLJWtKA60iC70NBaJrVOXm9T//BHCvdWbTevaSqOh59wjqnXT8+5TIPYy8hjr7rF3ohzlWMVNU63loE0H3o9COHCRr1hL0QvmY06hzaZRm1gDaTMMW/SVxLTomieog2CR/7uau/XNfCTwGkn/ibTaA1VtJkjfvrNLxsQ79EN1S+oWaeKyI7ejEhsx1o89WSWIzGge35P9g+/k=
+x-microsoft-antispam-message-info: cNQsFaVf69CeGs+fiv5s6IBggUvfzDkdjEQJkbWgOLnswLbz78QzTVW5SqYLB6mH9YZtGNZwS1XnUNuuBSl7MWKJbr5CXK0JHP/s/nD/llZOY8pCqYJO/s9F8UioBL2t9zbKM/LY7OmlvlHGMsHLYdMVCuVtkFCKmoMW13V7ZcnG3nhbS72kB4mTHZ4EC4AM0ldmZAFIMFZJFfA7AKUAX0VnV58lgEi7ayT+ozO7e2DMqx64beNgYOjMAGzgAzOFr0kSsWZveiP0EtfM4XOh1DgZIPnoKWGhRYAINPEVHm/RE6CRkNeSETUzmEuD0M+AgoxTXF9cXtyxYArnzj3U4qNC0sTTNSyBO0NAeVfwxxPdX9g45hEhFtJBjhCtmkftaKnnpC+614naZWrA2zb5WQ86iQirlYpr3GsdMQhhAW8=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: bc116f59-11ea-4d49-bb2c-08d6d54772f7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 10 May 2019 13:00:17.1969 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4c911007-8975-48ab-751d-08d6d547754c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 May 2019 13:00:20.9855 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB6229
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_060021_253042_B3C50550 
-X-CRM114-Status: GOOD (  11.71  )
+X-CRM114-CacheID: sfid-20190510_060023_458670_6976612D 
+X-CRM114-Status: GOOD (  15.42  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -129,27 +127,193 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add "fsl,ls1046a-frwy" bindings for ls1046afrwy board based on ls1046a SoC
+ls1046afrwy board is based on nxp ls1046a SoC.
+Board support's 4GB ddr memory, i2c, microSD card,
+serial console,qspi nor flash,ifc nand flash,qsgmii network interface,
+usb 3.0 and serdes interface to support two x1gen3 pcie interface.
 
 Signed-off-by: Vabhav Sharma <vabhav.sharma@nxp.com>
 Signed-off-by: Pramod Kumar <pramod.kumar_1@nxp.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
 ---
- Documentation/devicetree/bindings/arm/fsl.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm64/boot/dts/freescale/Makefile        |   1 +
+ .../boot/dts/freescale/fsl-ls1046a-frwy.dts   | 156 ++++++++++++++++++
+ 2 files changed, 157 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/freescale/fsl-ls1046a-frwy.dts
 
-diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
-index 7e2cd6ad26bd..873999bf4a43 100644
---- a/Documentation/devicetree/bindings/arm/fsl.yaml
-+++ b/Documentation/devicetree/bindings/arm/fsl.yaml
-@@ -205,6 +205,7 @@ properties:
-           - enum:
-               - fsl,ls1046a-qds
-               - fsl,ls1046a-rdb
-+              - fsl,ls1046a-frwy
-           - const: fsl,ls1046a
- 
-       - description: LS1088A based Boards
+diff --git a/arch/arm64/boot/dts/freescale/Makefile b/arch/arm64/boot/dts/freescale/Makefile
+index 13604e558dc1..84ff6995b41e 100644
+--- a/arch/arm64/boot/dts/freescale/Makefile
++++ b/arch/arm64/boot/dts/freescale/Makefile
+@@ -8,6 +8,7 @@ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1028a-qds.dtb
+ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1028a-rdb.dtb
+ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1043a-qds.dtb
+ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1043a-rdb.dtb
++dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1046a-frwy.dtb
+ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1046a-qds.dtb
+ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1046a-rdb.dtb
+ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1088a-qds.dtb
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1046a-frwy.dts b/arch/arm64/boot/dts/freescale/fsl-ls1046a-frwy.dts
+new file mode 100644
+index 000000000000..de0d19c02944
+--- /dev/null
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1046a-frwy.dts
+@@ -0,0 +1,156 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * Device Tree Include file for Freescale Layerscape-1046A family SoC.
++ *
++ * Copyright 2019 NXP.
++ *
++ */
++
++/dts-v1/;
++
++#include "fsl-ls1046a.dtsi"
++
++/ {
++	model = "LS1046A FRWY Board";
++	compatible = "fsl,ls1046a-frwy", "fsl,ls1046a";
++
++	aliases {
++		serial0 = &duart0;
++		serial1 = &duart1;
++		serial2 = &duart2;
++		serial3 = &duart3;
++	};
++
++	chosen {
++		stdout-path = "serial0:115200n8";
++	};
++
++	sb_3v3: regulator-sb3v3 {
++		compatible = "regulator-fixed";
++		regulator-name = "LT8642SEV-3.3V";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++		regulator-boot-on;
++		regulator-always-on;
++	};
++};
++
++&duart0 {
++	status = "okay";
++};
++
++&duart1 {
++	status = "okay";
++};
++
++&duart2 {
++	status = "okay";
++};
++
++&duart3 {
++	status = "okay";
++};
++
++&i2c0 {
++	status = "okay";
++
++	i2c-mux@77 {
++		compatible = "nxp,pca9546";
++		reg = <0x77>;
++		#address-cells = <1>;
++		#size-cells = <0>;
++		i2c-mux-never-disable;
++
++		i2c@0 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <0>;
++
++			eeprom@52 {
++				compatible = "atmel,24c512";
++				reg = <0x52>;
++			};
++
++			eeprom@53 {
++				compatible = "atmel,24c512";
++				reg = <0x53>;
++			};
++
++			power-monitor@40 {
++				compatible = "ti,ina220";
++				reg = <0x40>;
++				shunt-resistor = <1000>;
++			};
++
++			rtc@51 {
++				compatible = "nxp,pcf2129";
++				reg = <0x51>;
++			};
++
++			temperature-sensor@4c {
++				compatible = "nxp,sa56004";
++				reg = <0x4c>;
++				vcc-supply = <&sb_3v3>;
++			};
++
++		};
++	};
++};
++
++&ifc {
++	#address-cells = <2>;
++	#size-cells = <1>;
++	/* NAND Flash */
++	ranges = <0x0 0x0 0x0 0x7e800000 0x00010000>;
++	status = "okay";
++
++	nand@0,0 {
++		compatible = "fsl,ifc-nand";
++		#address-cells = <1>;
++		#size-cells = <1>;
++		reg = <0x0 0x0 0x10000>;
++	};
++
++};
++
++#include "fsl-ls1046-post.dtsi"
++
++&fman0 {
++	ethernet@e0000 {
++		phy-handle = <&qsgmii_phy4>;
++		phy-connection-type = "qsgmii";
++	};
++
++	ethernet@e8000 {
++		phy-handle = <&qsgmii_phy2>;
++		phy-connection-type = "qsgmii";
++	};
++
++	ethernet@ea000 {
++		phy-handle = <&qsgmii_phy1>;
++		phy-connection-type = "qsgmii";
++	};
++
++	ethernet@f2000 {
++		phy-handle = <&qsgmii_phy3>;
++		phy-connection-type = "qsgmii";
++	};
++
++	mdio@fd000 {
++		qsgmii_phy1: ethernet-phy@1c {
++			reg = <0x1c>;
++		};
++
++		qsgmii_phy2: ethernet-phy@1d {
++			reg = <0x1d>;
++		};
++
++		qsgmii_phy3: ethernet-phy@1e {
++			reg = <0x1e>;
++		};
++
++		qsgmii_phy4: ethernet-phy@1f {
++			reg = <0x1f>;
++		};
++	};
++};
 -- 
 2.17.1
 
