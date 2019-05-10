@@ -2,71 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 738EC19C11
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 12:58:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E25319C2B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 13:05:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eOXaDgFi48qaP4rSStSvtkbOYS+t3Ge0qt9CK/WUgnw=; b=ZfEtNjM7wk/JNi
-	svDXZ3sStrgzAnrg6rgkuoBIjSHr9wili83r9THVzLmXexX8G3wvX24y4VcvpLnoFWAwqaQ3SJWfM
-	+dLcz5HRHV6BJzf0OZMaLnSl54IVrRE0ZUw4yvCZBap/1C94lgpHeIxRZkR8MsqQvk+gIftteHxOz
-	6H7mOVJh5BLcTl2xgWNruUJpvA6Yyk135jaUij5UqeMQj8CKLeM88d097MCBzukKdPCbew0578zOL
-	LtlypQse+yS7bF1GsfGfEGoZL4kSkKaJSMZHWMnLnB0/Co8TNhzlZbZA+eJNStxwIrw4gQLkPje45
-	1Xg8jPQJI+FkCIejpLKA==;
+	List-Owner; bh=MfXvnQU8gKKJMUJRrn39rFiNaP/9iCXTd3GKLooIKlc=; b=tO+BzpJ2XLudqJ
+	M5N6zO34/G7Ev0VVI0DJs1mfT+H7e4g+ZQ7daoU2v6yiMJ5a99S/IlGTgWovSSHlXsUL1RDAFnxMb
+	rCWIgg876B7Zhx2awmm/SioBxp7itsld2abNq8+NKGjUeBsdN7+iBqaFNBZeXnShgvIuFrPeEkZAu
+	Mo1KA3ctqUnghwyUaFp8pyfrXL9nHpuLt2ortE1HWnJzzk+kseEWGlLCC/L46rVx1ivamtsT1bLZi
+	bIGkavt/iMcCfqEyow8HTPLK7rxBCHB1v9XHPJuRo9j5A8v/ykN9MN7Y88Re/h63Gem+3/xjyEM4i
+	kW0tosDvLNtB2IbEohag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP3Eo-0006Jq-Nq; Fri, 10 May 2019 10:58:50 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hP3Le-0001py-JY; Fri, 10 May 2019 11:05:54 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP3Ei-0006Jf-1J
- for linux-arm-kernel@bombadil.infradead.org; Fri, 10 May 2019 10:58:44 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=FuLaL7b+d0KEUzreiHse8idkfuoe0utUY8D/RiLC+V4=; b=XbPDexAGXxTugoZoXC6iIEQ8u
- TrX9laQwFOUvWo2JkzlRUtYurhr9dCBC/emRf4B/1+UFwxWQrZUHgZoipytQcUDVUwIFevwIhIVe+
- O83sWxtjGwdC+o63XkNcgStMHuHVhgwyfZ38Ied7bgctsl18PhsEOSioiMsloR62uUHUHGamRRWMW
- 06o4tJQU+W+QdsqvguV7yL6o0DfZnyWWGM4GazB3aCuFTtKRztDN6MIWdoxoau8RTbVJ9P9oax36k
- f5Z4q51ym2OAZDysu/34VjF1rUbWZhpwjk5L5n9bhLHQeIlTHk8/uHzIrtxqDzSjNuMOEATQFl0AY
- DbSpPrw9Q==;
-Received: from relay2-d.mail.gandi.net ([217.70.183.194])
- by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP3Ee-00055D-6n
- for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 10:58:41 +0000
-X-Originating-IP: 90.89.68.76
-Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
- (Authenticated sender: maxime.ripard@bootlin.com)
- by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 45FF94000B;
- Fri, 10 May 2019 10:58:00 +0000 (UTC)
-Date: Fri, 10 May 2019 12:57:59 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Rob Herring <robh+dt@kernel.org>
-Subject: Re: [PATCH 1/2] dt-bindings: mmc: Add YAML schemas for the generic
- MMC options
-Message-ID: <20190510105759.z2ob5tl4ovn2ctdo@flea>
-References: <68d3fb999d16e49696e832e1d1a6bcd7b76a6e8d.1557389988.git-series.maxime.ripard@bootlin.com>
- <CAL_JsqJi0iwM61anziC-cHXp0PL2AEtXiWFCLn943vTxK5eeig@mail.gmail.com>
+ id 1hP3Kq-0008T7-MQ; Fri, 10 May 2019 11:05:06 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x4AAx1NB144244;
+ Fri, 10 May 2019 11:03:44 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=corp-2018-07-02;
+ bh=CfM0QyoiD2lceMf/MJC3mMjfCfXAd2/bfEOAWv0cJ2Q=;
+ b=D51Bv0We8QTowc99zvTCIJuTCbSCXoc9B56Z8ExvQIyI9tdem+W93bgyBgMXVwunZ8pv
+ 4kxXOENcN94heTpPe2HdMrlJB2T3qCmEYwsZdQFLCZzVl7iwnIcB0+tOsj8a33pcDZ2b
+ apaVZ8tiLXNzMfnoXrAtpjl+jnRLf4c9KQWuZg+PnEEgt/vdDBqRhVHpu/5TuzfI6BfK
+ fi+8tUJU/aJFGtgdSqiKUrW3X2rQyYClgjiNr0e4R6bCAQx6tWNkz5Uq/nnWCSvgOzQY
+ +Vw2Uu/Wf73/Oj/IUlLw1hBGhDnT3dAWjKij3V31FPg//vP2lgc79WQPCO9s4WRRuFde AQ== 
+Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
+ by userp2130.oracle.com with ESMTP id 2s94bggas0-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 10 May 2019 11:03:44 +0000
+Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
+ by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x4AB16kE183844;
+ Fri, 10 May 2019 11:01:43 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by aserp3030.oracle.com with ESMTP id 2scpy66rqg-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 10 May 2019 11:01:43 +0000
+Received: from abhmp0020.oracle.com (abhmp0020.oracle.com [141.146.116.26])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x4AB1WHN021937;
+ Fri, 10 May 2019 11:01:32 GMT
+Received: from kadam (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Fri, 10 May 2019 04:01:31 -0700
+Date: Fri, 10 May 2019 14:01:17 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: "Ardelean, Alexandru" <alexandru.Ardelean@analog.com>
+Subject: Re: [PATCH 09/16] mmc: sdhci-xenon: use new match_string()
+ helper/macro
+Message-ID: <20190510110116.GB18105@kadam>
+References: <20190508112842.11654-1-alexandru.ardelean@analog.com>
+ <20190508112842.11654-11-alexandru.ardelean@analog.com>
+ <20190508122010.GC21059@kadam>
+ <2ec6812d6bf2f33860c7c816c641167a31eb2ed6.camel@analog.com>
+ <31be52eb1a1abbc99a24729f5c65619235cb201f.camel@analog.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAL_JsqJi0iwM61anziC-cHXp0PL2AEtXiWFCLn943vTxK5eeig@mail.gmail.com>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <31be52eb1a1abbc99a24729f5c65619235cb201f.camel@analog.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Proofpoint-Virus-Version: vendor=nai engine=5900 definitions=9252
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=764
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1905100078
+X-Proofpoint-Virus-Version: vendor=nai engine=5900 definitions=9252
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=796 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
+ definitions=main-1905100078
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_065840_353740_943D7474 
-X-CRM114-Status: GOOD (  11.24  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.7 points)
+X-CRM114-CacheID: sfid-20190510_040504_878068_4A541E62 
+X-CRM114-Status: GOOD (  21.16  )
+X-Spam-Score: -2.5 (--)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.194 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.86 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -78,37 +114,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Ulf Hansson <ulf.hansson@linaro.org>, linux-mmc <linux-mmc@vger.kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Frank Rowand <frowand.list@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: "linux-fbdev@vger.kernel.org" <linux-fbdev@vger.kernel.org>,
+ "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "linux-ide@vger.kernel.org" <linux-ide@vger.kernel.org>,
+ "linux-mtd@lists.infradead.org" <linux-mtd@lists.infradead.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "devel@driverdev.osuosl.org" <devel@driverdev.osuosl.org>,
+ "andriy.shevchenko@linux.intel.com" <andriy.shevchenko@linux.intel.com>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "linux-rpi-kernel@lists.infradead.org" <linux-rpi-kernel@lists.infradead.org>,
+ "linux-tegra@vger.kernel.org" <linux-tegra@vger.kernel.org>,
+ "cgroups@vger.kernel.org" <cgroups@vger.kernel.org>,
+ "linux-omap@vger.kernel.org" <linux-omap@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-mm@kvack.org" <linux-mm@kvack.org>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-security-module@vger.kernel.org"
+ <linux-security-module@vger.kernel.org>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-integrity@vger.kernel.org" <linux-integrity@vger.kernel.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
+On Fri, May 10, 2019 at 09:13:26AM +0000, Ardelean, Alexandru wrote:
+> On Wed, 2019-05-08 at 16:26 +0300, Alexandru Ardelean wrote:
+> > On Wed, 2019-05-08 at 15:20 +0300, Dan Carpenter wrote:
+> > > 
+> > > 
+> > > On Wed, May 08, 2019 at 02:28:35PM +0300, Alexandru Ardelean wrote:
+> > > > -static const char * const phy_types[] = {
+> > > > -     "emmc 5.0 phy",
+> > > > -     "emmc 5.1 phy"
+> > > > -};
+> > > > -
+> > > >  enum xenon_phy_type_enum {
+> > > >       EMMC_5_0_PHY,
+> > > >       EMMC_5_1_PHY,
+> > > >       NR_PHY_TYPES
+> > > 
+> > > There is no need for NR_PHY_TYPES now so you could remove that as well.
+> > > 
+> > 
+> > I thought the same.
+> > The only reason to keep NR_PHY_TYPES, is for potential future patches,
+> > where it would be just 1 addition
+> > 
+> >  enum xenon_phy_type_enum {
+> >       EMMC_5_0_PHY,
+> >       EMMC_5_1_PHY,
+> > +      EMMC_5_2_PHY,
+> >       NR_PHY_TYPES
+> >   }
+> > 
+> > Depending on style/preference of how to do enums (allow comma on last
+> > enum
+> > or not allow comma on last enum value), adding new enum values woudl be 2
+> > additions + 1 deletion lines.
+> > 
+> >  enum xenon_phy_type_enum {
+> >       EMMC_5_0_PHY,
+> > -      EMMC_5_1_PHY
+> > +      EMM
+> > C_5_1_PHY,
+> > +      EMMC_5_2_PHY
+> >  }
+> > 
+> > Either way (leave NR_PHY_TYPES or remove NR_PHY_TYPES) is fine from my
+> > side.
+> > 
+> 
+> Preference on this ?
+> If no objection [nobody insists] I would keep.
+> 
+> I don't feel strongly about it [dropping NR_PHY_TYPES or not].
 
-On Thu, May 09, 2019 at 11:45:26AM -0500, Rob Herring wrote:
-> > +dependencies:
-> > +  cd-inverted: [ cd-gpios ]
->
-> The note (which you dropped) says 'cd-inverted' applies for built-in CD too.
->
-> At least that is what I take "Polarity of dedicated pins can be
-> specified, using *-inverted properties." to mean.
+If you end up resending the series could you remove it, but if not then
+it's not worth it.
 
-Indeed, my bad. i guess we should probably keep that note. How are we
-supposed to keep a note that would apply to multiple properties? In
-the global description?
+regards,
+dan carpenter
 
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
