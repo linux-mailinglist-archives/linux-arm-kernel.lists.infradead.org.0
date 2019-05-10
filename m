@@ -2,69 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8292919B5C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 12:16:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FF0019B61
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 12:17:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qAt0QLbdnQpSBDJ7XghmEDBPdxx4ru1wiBMVR5nAHMM=; b=T5B4TPnhiqHn8K
-	Q06vyVPRLTxT2Xtz9JSkt5NgbFHC8r4+QPT2teW6lJgRfekejPsOr38k1klxlk/v6WGY5dehJpHzS
-	MmW2qxAbAkweqZw5Mvww53tsoORk7i4W4W8djbIxvZa3S18GcAh5DkkTOOxLz6f9GG/eDAqHVKin1
-	uEO3v4pA/IJ1M6VzkYDdO3vxUjRnhZsgDm2SFf77jhuJk9Pe/ZMfuZdcqSk3W74AzJl1UgsIZvs7H
-	zx7iPdzJQNY8OchhXIDaNUnWwYT9trYaQO/mT5r65Zinh0uiIbK2eJbhnE1/89QsyCyw0Ow+Nzgy4
-	PCxbyoXjCToYMYE77tTQ==;
+	List-Owner; bh=8LExoEneGJS9R+f0EoaNOWcx5gSRyYifexneJbmzSu4=; b=mIUOVBLEuvTI3b
+	4F683dWzfhKezDbrRuIM2agcvW++IhVghSU0v1ApKbEt61ZmtXit4N/McI1rv6PMGj1hRV0YYFvMM
+	22Ef1HXbRKROiGPHTsRA2IkC7oZfL+9yUjOGVpxq4z5nwHJTbgt/zdslh5VovOAQOrqzpMwakDmo0
+	liNSKkZdpuHmSRVWgfeXDnQ91VAuGCeGN1BHFYVEv70AO62S6jvhsVh7aJSmKc1JttKGUoxplZiv0
+	VHRotJUvNdJ+jrRyuahjc/voPkmIPoP/EEaAgjCaLo3m7T9MWNlvHKdjy5Oxl5rhJmw0HaMXG20c3
+	+3zxV1rqJ5SKtzx0HHrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP2a6-0007mc-0Q; Fri, 10 May 2019 10:16:46 +0000
+	id 1hP2ab-0008KA-D6; Fri, 10 May 2019 10:17:17 +0000
 Received: from gate2.alliedtelesis.co.nz ([202.36.163.20])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP2ZN-00071Z-8m
- for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 10:16:03 +0000
+ id 1hP2ZS-0006rQ-91
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 10:16:09 +0000
 Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (Client did not present a certificate)
- by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 9DB38891B4;
+ by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 38EB7891B3;
  Fri, 10 May 2019 22:15:42 +1200 (NZST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
  s=mail181024; t=1557483342;
- bh=4OLVZQh53iXKtLLmwSmr18eV9kz/TJeO6GB9Jr4lc7g=;
+ bh=cBmgtWPtR8bm2vfMAsIZOxpjTEg5yj09yLAca0bGPtA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References;
- b=g+OG4BbNld37+OseeBSvzeWL9gBjklRMWNNoBB8a3PmSJfFNsxC0aBkkpPd+iNXCM
- ExNMkqVA79qk5Twrsil0zYkBrPjLyvV/pqQ37QuyS+FTwFrKxiesHI2HfmuUnldJ1f
- oaZ25jGMYzzJv5TL4OSNcvBxRJchdunk44bPiXCM57hFgpVVHdOAhvJM9ylrGqIF7P
- A0ADs/1h5LwaPPRFcvxkhdd++TAXf9ySpER/mHtxLI2XGgNXnMtjarooGzUPAyeH36
- LCqCLuxVwJUdr2Bjog0X5smhF6O4nME/+Q1etliaR2L2j/9J+B/vRC3ipzFh1wMKaV
- 1tTEGBRdvJANA==
+ b=09oJrTYjER+pQU8gRPvy7tUl7QtuvRCzYfjZI+XRQpmGnwsExS9DIBEi0gv9DN7rR
+ C8TkNpK0HF4fD/ulmEiECSPHHPVZw2FP1tm/dk5B2ijW/mr4ULmNnuJjVgUcIJAkwb
+ sf0jVWpXe808cMTuN9lXBpdVX9vJBF/HIdHGpglK8KWYulyYwF1yb5BYyW0Ta1ki65
+ C42MNvkt6UNJ7u0k5RcGk+okqm+nNJStLoU8cwgFMSlU/e47s9tVXZKl2Swc2qeVEP
+ mgamgeshHUi1byda7+PwznsbhMjNIIB47DD9+KnzTSUqUJdYyE+trUuKU1rWEzegjH
+ 4TRBaMJJo7+ew==
 Received: from smtp (Not Verified[10.32.16.33]) by mmarshal3.atlnz.lc with
  Trustwave SEG (v7, 5, 8, 10121)
- id <B5cd54f4c0003>; Fri, 10 May 2019 22:15:41 +1200
+ id <B5cd54f4c0004>; Fri, 10 May 2019 22:15:41 +1200
 Received: from chrisp-dl.ws.atlnz.lc (chrisp-dl.ws.atlnz.lc [10.33.22.30])
- by smtp (Postfix) with ESMTP id EDD3213EF97;
- Fri, 10 May 2019 22:15:39 +1200 (NZST)
+ by smtp (Postfix) with ESMTP id 155B313EF9C;
+ Fri, 10 May 2019 22:15:40 +1200 (NZST)
 Received: by chrisp-dl.ws.atlnz.lc (Postfix, from userid 1030)
- id 82B4D1E1D5B; Fri, 10 May 2019 22:15:39 +1200 (NZST)
+ id 9E7871E1D5B; Fri, 10 May 2019 22:15:39 +1200 (NZST)
 From: Chris Packham <chris.packham@alliedtelesis.co.nz>
 To: linux@armlinux.org.uk, bp@alien8.de, mark.rutland@arm.com,
  robh+dt@kernel.org, mchehab@kernel.org, james.morse@arm.com,
  jlu@pengutronix.de, gregory.clement@bootlin.com
-Subject: [PATCH v8 3/9] ARM: aurora-l2: add defines for parity and ECC
- registers
-Date: Fri, 10 May 2019 22:15:30 +1200
-Message-Id: <20190510101536.6724-4-chris.packham@alliedtelesis.co.nz>
+Subject: [PATCH v8 4/9] ARM: l2x0: support parity-enable/disable on aurora
+Date: Fri, 10 May 2019 22:15:31 +1200
+Message-Id: <20190510101536.6724-5-chris.packham@alliedtelesis.co.nz>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190510101536.6724-1-chris.packham@alliedtelesis.co.nz>
 References: <20190510101536.6724-1-chris.packham@alliedtelesis.co.nz>
 MIME-Version: 1.0
 x-atlnz-ls: pat
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_031602_054305_A6BC51E1 
-X-CRM114-Status: GOOD (  10.19  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20190510_031606_965541_6AE29E1E 
+X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
@@ -78,7 +78,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -99,84 +98,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jan Luebbe <jlu@pengutronix.de>
+The aurora cache on the Marvell Armada-XP SoC supports the same tag
+parity features as the other l2x0 cache implementations.
 
-These defines will be used by subsequent patches to add support for the
-parity check and error correction functionality in the Aurora L2 cache
-controller.
-
-Signed-off-by: Jan Luebbe <jlu@pengutronix.de>
 Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
+[jlu@pengutronix.de: use aurora specific define AURORA_ACR_PARITY_EN]
+Signed-off-by: Jan Luebbe <jlu@pengutronix.de>
 ---
- .../include/asm/hardware/cache-aurora-l2.h    | 48 +++++++++++++++++++
- 1 file changed, 48 insertions(+)
+ arch/arm/mm/cache-l2x0.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-diff --git a/arch/arm/include/asm/hardware/cache-aurora-l2.h b/arch/arm/include/asm/hardware/cache-aurora-l2.h
-index dc5c479ec4c3..39769ffa0051 100644
---- a/arch/arm/include/asm/hardware/cache-aurora-l2.h
-+++ b/arch/arm/include/asm/hardware/cache-aurora-l2.h
-@@ -31,6 +31,9 @@
- #define AURORA_ACR_REPLACEMENT_TYPE_SEMIPLRU \
- 	(3 << AURORA_ACR_REPLACEMENT_OFFSET)
+diff --git a/arch/arm/mm/cache-l2x0.c b/arch/arm/mm/cache-l2x0.c
+index 7d2d2a3c67d0..b70bee74750d 100644
+--- a/arch/arm/mm/cache-l2x0.c
++++ b/arch/arm/mm/cache-l2x0.c
+@@ -1505,6 +1505,13 @@ static void __init aurora_of_parse(const struct device_node *np,
+ 		mask |= AURORA_ACR_FORCE_WRITE_POLICY_MASK;
+ 	}
  
-+#define AURORA_ACR_PARITY_EN	(1 << 21)
-+#define AURORA_ACR_ECC_EN	(1 << 20)
++	if (of_property_read_bool(np, "arm,parity-enable")) {
++		mask |= AURORA_ACR_PARITY_EN;
++		val |= AURORA_ACR_PARITY_EN;
++	} else if (of_property_read_bool(np, "arm,parity-disable")) {
++		mask |= AURORA_ACR_PARITY_EN;
++	}
 +
- #define AURORA_ACR_FORCE_WRITE_POLICY_OFFSET	0
- #define AURORA_ACR_FORCE_WRITE_POLICY_MASK	\
- 	(0x3 << AURORA_ACR_FORCE_WRITE_POLICY_OFFSET)
-@@ -41,6 +44,51 @@
- #define AURORA_ACR_FORCE_WRITE_THRO_POLICY	\
- 	(2 << AURORA_ACR_FORCE_WRITE_POLICY_OFFSET)
- 
-+#define AURORA_ERR_CNT_REG          0x600
-+#define AURORA_ERR_ATTR_CAP_REG     0x608
-+#define AURORA_ERR_ADDR_CAP_REG     0x60c
-+#define AURORA_ERR_WAY_CAP_REG      0x610
-+#define AURORA_ERR_INJECT_CTL_REG   0x614
-+#define AURORA_ERR_INJECT_MASK_REG  0x618
-+
-+#define AURORA_ERR_CNT_CLR_OFFSET         31
-+#define AURORA_ERR_CNT_CLR		   \
-+	(0x1 << AURORA_ERR_CNT_CLR_OFFSET)
-+#define AURORA_ERR_CNT_UE_OFFSET          16
-+#define AURORA_ERR_CNT_UE_MASK             \
-+	(0x7fff << AURORA_ERR_CNT_UE_OFFSET)
-+#define AURORA_ERR_CNT_CE_OFFSET           0
-+#define AURORA_ERR_CNT_CE_MASK             \
-+	(0xffff << AURORA_ERR_CNT_CE_OFFSET)
-+
-+#define AURORA_ERR_ATTR_SRC_OFF           16
-+#define AURORA_ERR_ATTR_SRC_MSK            \
-+	(0x7 << AURORA_ERR_ATTR_SRC_OFF)
-+#define AURORA_ERR_ATTR_TXN_OFF           12
-+#define AURORA_ERR_ATTR_TXN_MSK            \
-+	(0xf << AURORA_ERR_ATTR_TXN_OFF)
-+#define AURORA_ERR_ATTR_ERR_OFF            8
-+#define AURORA_ERR_ATTR_ERR_MSK            \
-+	(0x3 << AURORA_ERR_ATTR_ERR_OFF)
-+#define AURORA_ERR_ATTR_CAP_VALID_OFF      0
-+#define AURORA_ERR_ATTR_CAP_VALID          \
-+	(0x1 << AURORA_ERR_ATTR_CAP_VALID_OFF)
-+
-+#define AURORA_ERR_ADDR_CAP_ADDR_MASK 0xffffffe0
-+
-+#define AURORA_ERR_WAY_IDX_OFF             8
-+#define AURORA_ERR_WAY_IDX_MSK             \
-+	(0xfff << AURORA_ERR_WAY_IDX_OFF)
-+#define AURORA_ERR_WAY_CAP_WAY_OFFSET      1
-+#define AURORA_ERR_WAY_CAP_WAY_MASK        \
-+	(0xf << AURORA_ERR_WAY_CAP_WAY_OFFSET)
-+
-+#define AURORA_ERR_INJECT_CTL_ADDR_MASK 0xfffffff0
-+#define AURORA_ERR_ATTR_TXN_OFF   12
-+#define AURORA_ERR_INJECT_CTL_EN_MASK          0x3
-+#define AURORA_ERR_INJECT_CTL_EN_PARITY        0x2
-+#define AURORA_ERR_INJECT_CTL_EN_ECC           0x1
-+
- #define AURORA_MAX_RANGE_SIZE	1024
- 
- #define AURORA_WAY_SIZE_SHIFT	2
+ 	*aux_val &= ~mask;
+ 	*aux_val |= val;
+ 	*aux_mask &= ~mask;
 -- 
 2.21.0
 
