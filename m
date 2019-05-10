@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D12819716
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 05:28:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF2361971B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 05:29:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eKr8iOwYanOvgEq5LF8rKrSH2edO3IMk/qQrS56DTyI=; b=FJjGXYVeJ5Zr1U
-	pKi2hKxdTzlQQfwuqWMZ0SQMF4zWVR+G+OTbeKa7vIezcEZk2TQ1EpZo9W4i4Wi82GcyK25R2rOlv
-	jmccVah2V7jSZfB0Ejjm5nW7xZF0GbTtcxAoY2jRo90GRglzy9vN4XlA8Fk/vi0bKV22RRtkzUc2c
-	BJsLOG7KOvReZXAqvJ5+luyGFEepY5b/fTB4M9aY2zchBPr00pHa1lleGu6hVqpHsiUwN3tRW+S8e
-	HPPbatHD3IyiduDoeVqFpFbUuuNu9tg2J2NdhcLX3PQmpmapeVGDEbzQ6sTDVqBs8cX7kDPay7Mei
-	TtOefFLLI2X7dbhEjiaQ==;
+	List-Owner; bh=nnZIeY0uaVoFBPz4W92sF9qFwPo603yUxr5Vp4sG0EE=; b=M5HIf1MtCIDCds
+	zmBCgJNUpwnCeSQ/P/p2pbS9FShk0RL7lZrbcNdNkVwIPKFF2OBw6d5u+j/3xTHzjmq4AsNW7D9Bd
+	zIbZeDxal0AnYodWJPN80XLm93zqX2V+q7aBa5qwOoI6v2443f9CGqB+mYYzK3nam+AZvbcoQNUPP
+	KaTAe1woIvSxNwZdQ+GhFREoypXlsoYkYqz2nMpo8BAPNi0p/rxcg67zMHPWLaMpbTwL2NinUa79f
+	pFVdQ7FmVhkkLaNMOk5VZSKgMv9DIDc7LK5Bg4ZPp6tl5JdWUippPJe6LmHBQMefAL9KKhEe+auqS
+	oJ6mRlhh6beU02WguPzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOwCq-0003Bu-En; Fri, 10 May 2019 03:28:20 +0000
+	id 1hOwEI-0003Y7-Pn; Fri, 10 May 2019 03:29:50 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOwCh-0003A8-34
- for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 03:28:12 +0000
+ id 1hOwEA-0003Xc-TU
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 03:29:44 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DA6B72084A;
- Fri, 10 May 2019 03:28:06 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2A3D52084A;
+ Fri, 10 May 2019 03:29:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1557458890;
- bh=Vodgijw9WRizuu9THwepTbSoYZ8ws+bZYRW+EAXnc5s=;
+ s=default; t=1557458982;
+ bh=ubGfRjTtDMEutzD5VqoWgK8VhK2vlpDqI8+UnRha5SI=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=gQpZsDQDPDNB4zpoaSbm0NrOEyRfw2BQLvhe1PjydIwKZj65kqZXgWsw8o0buW1SP
- qA7AIiOu8aTFMaRuFPZMTSpwX0ALZV0FNkNcpKYDLLFLaxZN7IURhqLgVhG0YvCASL
- M3y79cQxl7bCd9d4nQQL/rqut2Nvy1btGirdopHg=
-Date: Fri, 10 May 2019 11:27:47 +0800
+ b=lfEVBJIPxj5OqTJIYVykGxHqfqsiW4IffIXD4X/iesRS7gg14kkT95ElXmWpLuJrE
+ dKBQEeUCE4PLO/t8hgW942KJ0TQeAbyyYp4faHLc2BZiECtanuh9GS9nnrqpqa3nGa
+ flImr4Vb4LVaOoa8LfdsNx98mHJWMCdp4NwWuVFg=
+Date: Fri, 10 May 2019 11:29:18 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH] clk: imx6sll: Fix mispelling uart4_serial as serail
-Message-ID: <20190510032746.GF15856@dragon>
-References: <8776296d079b3b4d67d4421656238757a8ad373d.1556046082.git.leonard.crestez@nxp.com>
+To: Anson Huang <anson.huang@nxp.com>
+Subject: Re: [PATCH] ARM: imx_v6_v7_defconfig: Enable CONFIG_THERMAL_STATISTICS
+Message-ID: <20190510032917.GG15856@dragon>
+References: <1556076113-4593-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <8776296d079b3b4d67d4421656238757a8ad373d.1556046082.git.leonard.crestez@nxp.com>
+In-Reply-To: <1556076113-4593-1-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_202811_150849_B279ADE8 
-X-CRM114-Status: GOOD (  16.99  )
+X-CRM114-CacheID: sfid-20190509_202942_974924_F6CDC7F2 
+X-CRM114-Status: UNSURE (   8.83  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -75,55 +76,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+Cc: Robin Gong <yibin.gong@nxp.com>,
+ "otavio@ossystems.com.br" <otavio@ossystems.com.br>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "jan.tuerk@emtrion.com" <jan.tuerk@emtrion.com>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  dl-linux-imx <linux-imx@nxp.com>,
  "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 23, 2019 at 07:05:08PM +0000, Leonard Crestez wrote:
-> This looks like a copy-paste error. This string is not referenced
-> anywhere so it's safe to rename it.
+On Wed, Apr 24, 2019 at 03:27:13AM +0000, Anson Huang wrote:
+> Enable CONFIG_THERMAL_STATISTICS to extend the sysfs interface
+> for thermal cooling devices and expose some useful statistics.
 > 
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-I see this keep coming, so have to ask you to fix your patch sender.
-The base64 encoding makes it very difficult to apply patch.  I have done
-manual applying for your patches a couple of times, and I thought that's
-just accident.  It seems not.  Please fix and resend. 
+I don't apply patch using base64 encoding.
 
 Shawn
-
-> ---
->  drivers/clk/imx/clk-imx6sll.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/clk/imx/clk-imx6sll.c b/drivers/clk/imx/clk-imx6sll.c
-> index 3bd2044cf25c..9def76df0879 100644
-> --- a/drivers/clk/imx/clk-imx6sll.c
-> +++ b/drivers/clk/imx/clk-imx6sll.c
-> @@ -266,11 +266,11 @@ static void __init imx6sll_clocks_init(struct device_node *ccm_node)
->  	clks[IMX6SLL_CLK_EPIT1]		= imx_clk_gate2("epit1",	"perclk", base + 0x6c, 12);
->  	clks[IMX6SLL_CLK_EPIT2]		= imx_clk_gate2("epit2",	"perclk", base + 0x6c, 14);
->  	clks[IMX6SLL_CLK_GPT_BUS]	= imx_clk_gate2("gpt1_bus",	"perclk", base + 0x6c, 20);
->  	clks[IMX6SLL_CLK_GPT_SERIAL]	= imx_clk_gate2("gpt1_serial",	"perclk", base + 0x6c, 22);
->  	clks[IMX6SLL_CLK_UART4_IPG]	= imx_clk_gate2("uart4_ipg",	"ipg", base + 0x6c, 24);
-> -	clks[IMX6SLL_CLK_UART4_SERIAL]	= imx_clk_gate2("uart4_serail",	"uart_podf", base + 0x6c, 24);
-> +	clks[IMX6SLL_CLK_UART4_SERIAL]	= imx_clk_gate2("uart4_serial",	"uart_podf", base + 0x6c, 24);
->  	clks[IMX6SLL_CLK_GPIO1]		= imx_clk_gate2("gpio1",	"ipg", base + 0x6c, 26);
->  	clks[IMX6SLL_CLK_GPIO5]		= imx_clk_gate2("gpio5",	"ipg", base + 0x6c, 30);
->  
->  	/* CCGR2 */
->  	clks[IMX6SLL_CLK_GPIO6]		= imx_clk_gate2("gpio6",	"ipg",    base + 0x70, 0);
-> -- 
-> 2.17.1
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
