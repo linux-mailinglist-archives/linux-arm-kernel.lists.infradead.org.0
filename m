@@ -2,70 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 439EB19B3F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 12:16:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8292919B5C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 12:16:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yDblzwVmgXC0WOQJUjxVVUSQUMAtd1xKOr49N/pSe6U=; b=QVt0ZKRJYwSOzl
-	fFhciO9oMvRCNX9MlT8IGZUC00tAMPDcaQQ1FJjrIkMYqtsguhvmHx9l75kXACmagjofPudyukiTr
-	1+r0um8HvW3/LKKn53fRzUttUIcJHNXakOxzKZq4hWU0V89NMyVZK0z5jo+4nWY9FFIzxK2YCRBiT
-	71FXvk6DZlByMC2rm/csF8j0v3M7kOqvDVViJwUnfeUayriU0c1SqKMQKiDfDIjyPj8qd6FvYnhy8
-	I7/q3aXDQW5jHKLJtPi2DHiP0DFx80gRP2nkcq4x5y6AlAOGPHW50iehnAZCAx8ViXoayP7uKHE3a
-	Ppippegqyxuq1PQifIgw==;
+	List-Owner; bh=qAt0QLbdnQpSBDJ7XghmEDBPdxx4ru1wiBMVR5nAHMM=; b=T5B4TPnhiqHn8K
+	Q06vyVPRLTxT2Xtz9JSkt5NgbFHC8r4+QPT2teW6lJgRfekejPsOr38k1klxlk/v6WGY5dehJpHzS
+	MmW2qxAbAkweqZw5Mvww53tsoORk7i4W4W8djbIxvZa3S18GcAh5DkkTOOxLz6f9GG/eDAqHVKin1
+	uEO3v4pA/IJ1M6VzkYDdO3vxUjRnhZsgDm2SFf77jhuJk9Pe/ZMfuZdcqSk3W74AzJl1UgsIZvs7H
+	zx7iPdzJQNY8OchhXIDaNUnWwYT9trYaQO/mT5r65Zinh0uiIbK2eJbhnE1/89QsyCyw0Ow+Nzgy4
+	PCxbyoXjCToYMYE77tTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP2Zk-0007Jn-9h; Fri, 10 May 2019 10:16:24 +0000
-Received: from gate2.alliedtelesis.co.nz ([2001:df5:b000:5::4])
+	id 1hP2a6-0007mc-0Q; Fri, 10 May 2019 10:16:46 +0000
+Received: from gate2.alliedtelesis.co.nz ([202.36.163.20])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP2ZI-0006rF-Bf
- for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 10:16:00 +0000
+ id 1hP2ZN-00071Z-8m
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 10:16:03 +0000
 Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (Client did not present a certificate)
- by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 4F167891B0;
- Fri, 10 May 2019 22:15:41 +1200 (NZST)
+ by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 9DB38891B4;
+ Fri, 10 May 2019 22:15:42 +1200 (NZST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
- s=mail181024; t=1557483341;
- bh=v9Aw/YaE6GdbUbtrxy0F2tvVWbTIe52/yaBuyQsceOk=;
+ s=mail181024; t=1557483342;
+ bh=4OLVZQh53iXKtLLmwSmr18eV9kz/TJeO6GB9Jr4lc7g=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References;
- b=wb2zQMJieaPnL/5Jpr6mqs1Owe21amgzlyuUkdTX0d9kkMmbOdzlVnwgfGdVHk+BM
- 518LQ1vOSalblu+bDNvgQYiNFzUOXte4HGGywCR4C+m4OvafK3w7j0uv9uh5vKl9Si
- x/4lksomABVYvJ8vVh8sHBdxz1H5SkQU5ATGVe7D2IPJ2V3k/KJAk8WOMucBCzHQMj
- NKLjqznwLCm3CTtjdP/dY3uGEWrHjpZlpaKYNB7w1JLBdY37920z4blX9YajE2JfmE
- Oz05pAVG4dKiskt2xquRPQ4JJGyMWYYB2Cqg+lmGIOyBgRlEj2ZNIQiIWoPu55QSY9
- fkplyi7w3zf7g==
+ b=g+OG4BbNld37+OseeBSvzeWL9gBjklRMWNNoBB8a3PmSJfFNsxC0aBkkpPd+iNXCM
+ ExNMkqVA79qk5Twrsil0zYkBrPjLyvV/pqQ37QuyS+FTwFrKxiesHI2HfmuUnldJ1f
+ oaZ25jGMYzzJv5TL4OSNcvBxRJchdunk44bPiXCM57hFgpVVHdOAhvJM9ylrGqIF7P
+ A0ADs/1h5LwaPPRFcvxkhdd++TAXf9ySpER/mHtxLI2XGgNXnMtjarooGzUPAyeH36
+ LCqCLuxVwJUdr2Bjog0X5smhF6O4nME/+Q1etliaR2L2j/9J+B/vRC3ipzFh1wMKaV
+ 1tTEGBRdvJANA==
 Received: from smtp (Not Verified[10.32.16.33]) by mmarshal3.atlnz.lc with
  Trustwave SEG (v7, 5, 8, 10121)
- id <B5cd54f4c0002>; Fri, 10 May 2019 22:15:41 +1200
+ id <B5cd54f4c0003>; Fri, 10 May 2019 22:15:41 +1200
 Received: from chrisp-dl.ws.atlnz.lc (chrisp-dl.ws.atlnz.lc [10.33.22.30])
- by smtp (Postfix) with ESMTP id D1D8A13EF8C;
+ by smtp (Postfix) with ESMTP id EDD3213EF97;
  Fri, 10 May 2019 22:15:39 +1200 (NZST)
 Received: by chrisp-dl.ws.atlnz.lc (Postfix, from userid 1030)
- id 66CA71E1D5B; Fri, 10 May 2019 22:15:39 +1200 (NZST)
+ id 82B4D1E1D5B; Fri, 10 May 2019 22:15:39 +1200 (NZST)
 From: Chris Packham <chris.packham@alliedtelesis.co.nz>
 To: linux@armlinux.org.uk, bp@alien8.de, mark.rutland@arm.com,
  robh+dt@kernel.org, mchehab@kernel.org, james.morse@arm.com,
  jlu@pengutronix.de, gregory.clement@bootlin.com
-Subject: [PATCH v8 2/9] ARM: aurora-l2: add prefix to MAX_RANGE_SIZE
-Date: Fri, 10 May 2019 22:15:29 +1200
-Message-Id: <20190510101536.6724-3-chris.packham@alliedtelesis.co.nz>
+Subject: [PATCH v8 3/9] ARM: aurora-l2: add defines for parity and ECC
+ registers
+Date: Fri, 10 May 2019 22:15:30 +1200
+Message-Id: <20190510101536.6724-4-chris.packham@alliedtelesis.co.nz>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190510101536.6724-1-chris.packham@alliedtelesis.co.nz>
 References: <20190510101536.6724-1-chris.packham@alliedtelesis.co.nz>
 MIME-Version: 1.0
 x-atlnz-ls: pat
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_031556_857518_DD73A3CA 
-X-CRM114-Status: GOOD (  12.84  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190510_031602_054305_A6BC51E1 
+X-CRM114-Status: GOOD (  10.19  )
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [202.36.163.20 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -75,6 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -86,10 +90,10 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+Cc: devicetree@vger.kernel.org,
  Chris Packham <chris.packham@alliedtelesis.co.nz>,
- Gregory CLEMENT <gregory.clement@free-electrons.com>,
- linux-arm-kernel@lists.infradead.org, linux-edac@vger.kernel.org
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-edac@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -97,44 +101,82 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Jan Luebbe <jlu@pengutronix.de>
 
-The macro name is too generic, so add a AURORA_ prefix.
+These defines will be used by subsequent patches to add support for the
+parity check and error correction functionality in the Aurora L2 cache
+controller.
 
 Signed-off-by: Jan Luebbe <jlu@pengutronix.de>
-Reviewed-by: Gregory CLEMENT <gregory.clement@free-electrons.com>
 Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
 ---
- arch/arm/include/asm/hardware/cache-aurora-l2.h | 2 +-
- arch/arm/mm/cache-l2x0.c                        | 4 ++--
- 2 files changed, 3 insertions(+), 3 deletions(-)
+ .../include/asm/hardware/cache-aurora-l2.h    | 48 +++++++++++++++++++
+ 1 file changed, 48 insertions(+)
 
 diff --git a/arch/arm/include/asm/hardware/cache-aurora-l2.h b/arch/arm/include/asm/hardware/cache-aurora-l2.h
-index c86124769831..dc5c479ec4c3 100644
+index dc5c479ec4c3..39769ffa0051 100644
 --- a/arch/arm/include/asm/hardware/cache-aurora-l2.h
 +++ b/arch/arm/include/asm/hardware/cache-aurora-l2.h
-@@ -41,7 +41,7 @@
+@@ -31,6 +31,9 @@
+ #define AURORA_ACR_REPLACEMENT_TYPE_SEMIPLRU \
+ 	(3 << AURORA_ACR_REPLACEMENT_OFFSET)
+ 
++#define AURORA_ACR_PARITY_EN	(1 << 21)
++#define AURORA_ACR_ECC_EN	(1 << 20)
++
+ #define AURORA_ACR_FORCE_WRITE_POLICY_OFFSET	0
+ #define AURORA_ACR_FORCE_WRITE_POLICY_MASK	\
+ 	(0x3 << AURORA_ACR_FORCE_WRITE_POLICY_OFFSET)
+@@ -41,6 +44,51 @@
  #define AURORA_ACR_FORCE_WRITE_THRO_POLICY	\
  	(2 << AURORA_ACR_FORCE_WRITE_POLICY_OFFSET)
  
--#define MAX_RANGE_SIZE		1024
-+#define AURORA_MAX_RANGE_SIZE	1024
++#define AURORA_ERR_CNT_REG          0x600
++#define AURORA_ERR_ATTR_CAP_REG     0x608
++#define AURORA_ERR_ADDR_CAP_REG     0x60c
++#define AURORA_ERR_WAY_CAP_REG      0x610
++#define AURORA_ERR_INJECT_CTL_REG   0x614
++#define AURORA_ERR_INJECT_MASK_REG  0x618
++
++#define AURORA_ERR_CNT_CLR_OFFSET         31
++#define AURORA_ERR_CNT_CLR		   \
++	(0x1 << AURORA_ERR_CNT_CLR_OFFSET)
++#define AURORA_ERR_CNT_UE_OFFSET          16
++#define AURORA_ERR_CNT_UE_MASK             \
++	(0x7fff << AURORA_ERR_CNT_UE_OFFSET)
++#define AURORA_ERR_CNT_CE_OFFSET           0
++#define AURORA_ERR_CNT_CE_MASK             \
++	(0xffff << AURORA_ERR_CNT_CE_OFFSET)
++
++#define AURORA_ERR_ATTR_SRC_OFF           16
++#define AURORA_ERR_ATTR_SRC_MSK            \
++	(0x7 << AURORA_ERR_ATTR_SRC_OFF)
++#define AURORA_ERR_ATTR_TXN_OFF           12
++#define AURORA_ERR_ATTR_TXN_MSK            \
++	(0xf << AURORA_ERR_ATTR_TXN_OFF)
++#define AURORA_ERR_ATTR_ERR_OFF            8
++#define AURORA_ERR_ATTR_ERR_MSK            \
++	(0x3 << AURORA_ERR_ATTR_ERR_OFF)
++#define AURORA_ERR_ATTR_CAP_VALID_OFF      0
++#define AURORA_ERR_ATTR_CAP_VALID          \
++	(0x1 << AURORA_ERR_ATTR_CAP_VALID_OFF)
++
++#define AURORA_ERR_ADDR_CAP_ADDR_MASK 0xffffffe0
++
++#define AURORA_ERR_WAY_IDX_OFF             8
++#define AURORA_ERR_WAY_IDX_MSK             \
++	(0xfff << AURORA_ERR_WAY_IDX_OFF)
++#define AURORA_ERR_WAY_CAP_WAY_OFFSET      1
++#define AURORA_ERR_WAY_CAP_WAY_MASK        \
++	(0xf << AURORA_ERR_WAY_CAP_WAY_OFFSET)
++
++#define AURORA_ERR_INJECT_CTL_ADDR_MASK 0xfffffff0
++#define AURORA_ERR_ATTR_TXN_OFF   12
++#define AURORA_ERR_INJECT_CTL_EN_MASK          0x3
++#define AURORA_ERR_INJECT_CTL_EN_PARITY        0x2
++#define AURORA_ERR_INJECT_CTL_EN_ECC           0x1
++
+ #define AURORA_MAX_RANGE_SIZE	1024
  
  #define AURORA_WAY_SIZE_SHIFT	2
- 
-diff --git a/arch/arm/mm/cache-l2x0.c b/arch/arm/mm/cache-l2x0.c
-index a00d6f7fd34c..7d2d2a3c67d0 100644
---- a/arch/arm/mm/cache-l2x0.c
-+++ b/arch/arm/mm/cache-l2x0.c
-@@ -1364,8 +1364,8 @@ static unsigned long aurora_range_end(unsigned long start, unsigned long end)
- 	 * since cache range operations stall the CPU pipeline
- 	 * until completion.
- 	 */
--	if (end > start + MAX_RANGE_SIZE)
--		end = start + MAX_RANGE_SIZE;
-+	if (end > start + AURORA_MAX_RANGE_SIZE)
-+		end = start + AURORA_MAX_RANGE_SIZE;
- 
- 	/*
- 	 * Cache range operations can't straddle a page boundary.
 -- 
 2.21.0
 
