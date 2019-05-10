@@ -2,76 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 084AB19925
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 09:43:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A01319931
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 09:51:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XwTqZSvS+vuUOr6mk/2OC5dQ9Bc8BJwsGDWycAfz16E=; b=hKlBliqoXm7Shj
-	PP5B2JNTsEs8LEQB/lsibuzb8smjHs4GRXTt3FH3taNl7awZQ52UFsywhVrVflvfMqQjwTbKeAfcy
-	9XWfuuCjkycEsJW1MxeYjzxIUdRmjucCbaMtS4iH4TB/gr1+vKUtwFhA8RSGnQUL5EPZnuOePSiYa
-	26d1HBVK2iVHojL7CKOszC0fWyGlsP/qlMTz8/wo0DBmBz8MyJ4alFuZbCCLfp8gUKHujdtmkUNz3
-	4OS78ZgwmUI2oLyArUDkZm6uVg/XBRhSjs7r8A8mUCcXXta10W0mpNfQ6bBwix1iNnMuXVmE/928F
-	rkqepvbHQad7P7tp/kKg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7NyvBClxhYlIkOV/VzM0yOF3wpAG0K/tjSI4fyCM2uA=; b=ZgJ8Nk6e9leZQ1
+	k7PgwsrZTGNsG7J7bOQ5Ca+YlKqYYCOe+HchjqZKAztuE/h4jnjZZweB581nk1GI9ZxwfuJyV8+0p
+	my88UY9rfTYNKXFOkNgDqXPTtlAxyRkFzZg0GtqAnyubFM5YH2NEyehcWuAQ17zq30YYeuakUqteT
+	r7xqLURosUNFU6omU289aDhStCnTDs3aSzMCT5EBq18laVtxfyr2CvECEubDe+LXBf4LmbWNhoXWy
+	17kcwYoBzUBhe0SYiKM4ejntiCE3jfM5DNuukyShelPXIxVYix7/80VPlE1VOTMzr7DxO2VpoIqJ4
+	mj4mlWo1Jtm3zIbvg7+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP0Bk-0004fg-HE; Fri, 10 May 2019 07:43:28 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1hP0JO-00080g-In; Fri, 10 May 2019 07:51:22 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP0BP-0004RF-SI
- for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 07:43:19 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x4A7gCkn028382; Fri, 10 May 2019 09:43:06 +0200
+ id 1hP0JG-000800-De
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 07:51:16 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x4A7ke2e019336; Fri, 10 May 2019 09:51:04 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=8I2N6G3vO9y9aZ71WM6kdoKYNSOsW+23DY/TOYHKYeA=;
- b=oTSHYknBEu/ctOQkiI3lUJ+GlBPI+wnUXrAbpXXlVNUcxi4Lv2HqD3HZlnl5qWXPs/4T
- b1zI2oGg9K0/YnZeXfcBXRWrFnlvreqcag84iYulSNy4Y5wAs6chqbJm3olqxhvrwT7p
- hGEw2YRlJVlwiXp9MF4UeWtUgj9/vUh0k7EBrRPEAmlx6pvajYf0RlBIPSHWywx2T1+C
- TBH7Quc3fY97feXkyKND+uf8uOsEcaMHtCzWsPxIHUbZBAHs48Dr58IyAGrY0VR6CofJ
- aoBoE9MrVv0EQ38EH5gIYnbAT6IhLvjqTsB/IreO+x8krXLLB4nAf6TvKtzjqKjq5MZu Ag== 
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=nmDxg4+93XGhQH+CBc6pkLSbg19CIe1swFbFgCL8ynY=;
+ b=uR/72ikBnHLXDX5yi8jl/nbg4R6bAWIlVXcz+WyWuipKJP7UA4+VROg3MFgElPvXKUu+
+ PrAexkTBVIP4hZvUSn3QFTiBL/0r8aRlUL33o9THxXKlkhyz5LuG668SvRR2d77uRgYR
+ M/rENVvB5J8brAwKB4ZCsUnECND3xm58KDJtaUdq4jzUIj+R90IbaWrTd51J6ZryrrdQ
+ OEDsDGHUo3K8vAu7mCrb8bwT1NIpnrAZyXoj7ylz1ceOibnGzdXqbSCOlkxgiaGKw7Hp
+ G1CYGHSnbQ1RR4cAl9bndfPzGH7buA5hNwhCCSQAnJ/wXMwyg6CBKYzauGASOmzG6XEN LQ== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2scfv2pya9-1
+ by mx07-00178001.pphosted.com with ESMTP id 2scdjp7fum-1
  (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Fri, 10 May 2019 09:43:06 +0200
+ Fri, 10 May 2019 09:51:04 +0200
 Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 92B7D31;
- Fri, 10 May 2019 07:43:04 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 73B2D15B0;
- Fri, 10 May 2019 07:43:04 +0000 (GMT)
-Received: from localhost (10.75.127.44) by SFHDAG3NODE2.st.com (10.75.127.8)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 10 May 2019 09:43:04
- +0200
-From: Alexandre Torgue <alexandre.torgue@st.com>
-To: Linus Walleij <linus.walleij@linaro.org>, Maxime Coquelin
- <mcoquelin.stm32@gmail.com>
-Subject: [PATCH] pinctrl: stm32: add lock mechanism for irqmux selection
-Date: Fri, 10 May 2019 09:43:03 +0200
-Message-ID: <1557474183-19719-1-git-send-email-alexandre.torgue@st.com>
-X-Mailer: git-send-email 2.7.4
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 9800A3D;
+ Fri, 10 May 2019 07:51:03 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 10EFC15CE;
+ Fri, 10 May 2019 07:51:02 +0000 (GMT)
+Received: from [10.48.0.167] (10.75.127.44) by SFHDAG5NODE3.st.com
+ (10.75.127.15) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 10 May
+ 2019 09:51:02 +0200
+Subject: Re: [RESEND PATCH v5 0/3] Add PM support to STM32 LP Timer drivers
+To: <thierry.reding@gmail.com>
+References: <1555580267-29299-1-git-send-email-fabrice.gasnier@st.com>
+From: Fabrice Gasnier <fabrice.gasnier@st.com>
+Message-ID: <45e934af-d677-d7d4-09ea-3ed01872dab6@st.com>
+Date: Fri, 10 May 2019 09:51:01 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <1555580267-29299-1-git-send-email-fabrice.gasnier@st.com>
+Content-Language: en-US
 X-Originating-IP: [10.75.127.44]
-X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG3NODE2.st.com
- (10.75.127.8)
+X-ClientProxiedBy: SFHDAG1NODE1.st.com (10.75.127.1) To SFHDAG5NODE3.st.com
+ (10.75.127.15)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2019-05-09_02:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_004308_649115_FEDFB66A 
-X-CRM114-Status: GOOD (  16.39  )
+X-CRM114-CacheID: sfid-20190510_005114_752544_046412E3 
+X-CRM114-Status: GOOD (  20.42  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -91,115 +94,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-gpio@vger.kernel.org, alexandre.torgue@st.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-stm32@st-md-mailman.stormreply.com
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
+ Loic PALLARDY <loic.pallardy@st.com>, tduszyns@gmail.com,
+ Mark Brown <broonie@kernel.org>, linux-kernel@vger.kernel.org,
+ linux-pwm@vger.kernel.org, robh+dt@kernel.org, mcoquelin.stm32@gmail.com,
+ u.kleine-koenig@pengutronix.de, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-GPIOs are split between several banks (A, B, ...) and each bank can have
-up to 16 lines. Those GPIOs could be used as interrupt lines thanks to
-exti lines. As there are only 16 exti lines, a mux is used to select which
-gpio line is connected to which exti line. Mapping is done as follow:
+On 4/18/19 11:37 AM, Fabrice Gasnier wrote:
+> This patch series adds power management support for STM32 LP Timer:
+> - PWM driver
+> - Document the pinctrl states for sleep mode
+> 
+> It also adds device link between the PWM consumer and the PWM provider.
+> This allows proper sequencing for suspend/resume (e.g. user will likely
+> do a pwm_disable() before the PWM provider suspend executes), see [1].
+> 
+> [1] https://lkml.org/lkml/2019/2/5/770
+> 
 
--A0, B0, C0.. -->exti_line_0 (X0 selected by mux_0)
--A1, B1, C1.. -->exti_line_1 (X1 selected by mux_1)
-...
+Hi Thierry,
 
-This patch adds a protection to avoid overriding on mux_n for exti_line_n.
+Please let me know if you have some more comments on this series. It's
+been under review since quite some time now.
 
-Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
+Thanks in advance,
+Best Regards,
+Fabrice
 
-diff --git a/drivers/pinctrl/stm32/pinctrl-stm32.c b/drivers/pinctrl/stm32/pinctrl-stm32.c
-index 2317ccf..99e4149 100644
---- a/drivers/pinctrl/stm32/pinctrl-stm32.c
-+++ b/drivers/pinctrl/stm32/pinctrl-stm32.c
-@@ -98,6 +98,8 @@ struct stm32_pinctrl {
- 	struct stm32_desc_pin *pins;
- 	u32 npins;
- 	u32 pkg;
-+	u16 irqmux_map;
-+	spinlock_t irqmux_lock;
- };
- 
- static inline int stm32_gpio_pin(int gpio)
-@@ -307,9 +309,53 @@ static int stm32_gpio_domain_activate(struct irq_domain *d,
- {
- 	struct stm32_gpio_bank *bank = d->host_data;
- 	struct stm32_pinctrl *pctl = dev_get_drvdata(bank->gpio_chip.parent);
-+	unsigned long flags;
-+	int ret = 0;
-+
-+	/*
-+	 * gpio irq mux is shared between several banks, a lock has to be done
-+	 * to avoid overriding.
-+	 */
-+	spin_lock_irqsave(&pctl->irqmux_lock, flags);
-+	if (pctl->hwlock)
-+		ret = hwspin_lock_timeout(pctl->hwlock, HWSPINLOCK_TIMEOUT);
-+
-+	if (ret) {
-+		dev_err(pctl->dev, "Can't get hwspinlock\n");
-+		goto unlock;
-+	}
-+
-+	if (pctl->irqmux_map & BIT(irq_data->hwirq)) {
-+		dev_err(pctl->dev, "irq line %ld already requested.\n",
-+			irq_data->hwirq);
-+		ret = -EBUSY;
-+		if (pctl->hwlock)
-+			hwspin_unlock(pctl->hwlock);
-+		goto unlock;
-+	} else {
-+		pctl->irqmux_map |= BIT(irq_data->hwirq);
-+	}
- 
- 	regmap_field_write(pctl->irqmux[irq_data->hwirq], bank->bank_ioport_nr);
--	return 0;
-+
-+	if (pctl->hwlock)
-+		hwspin_unlock(pctl->hwlock);
-+
-+unlock:
-+	spin_unlock_irqrestore(&pctl->irqmux_lock, flags);
-+	return ret;
-+}
-+
-+static void stm32_gpio_domain_deactivate(struct irq_domain *d,
-+					 struct irq_data *irq_data)
-+{
-+	struct stm32_gpio_bank *bank = d->host_data;
-+	struct stm32_pinctrl *pctl = dev_get_drvdata(bank->gpio_chip.parent);
-+	unsigned long flags;
-+
-+	spin_lock_irqsave(&pctl->irqmux_lock, flags);
-+	pctl->irqmux_map &= ~BIT(irq_data->hwirq);
-+	spin_unlock_irqrestore(&pctl->irqmux_lock, flags);
- }
- 
- static int stm32_gpio_domain_alloc(struct irq_domain *d,
-@@ -338,6 +384,7 @@ static const struct irq_domain_ops stm32_gpio_domain_ops = {
- 	.alloc          = stm32_gpio_domain_alloc,
- 	.free           = irq_domain_free_irqs_common,
- 	.activate	= stm32_gpio_domain_activate,
-+	.deactivate	= stm32_gpio_domain_deactivate,
- };
- 
- /* Pinctrl functions */
-@@ -1290,6 +1337,8 @@ int stm32_pctl_probe(struct platform_device *pdev)
- 		pctl->hwlock = hwspin_lock_request_specific(hwlock_id);
- 	}
- 
-+	spin_lock_init(&pctl->irqmux_lock);
-+
- 	pctl->dev = dev;
- 	pctl->match_data = match->data;
- 
--- 
-2.7.4
-
+> ---
+> resend v5:
+> - update collected acks
+> 
+> Changes in v5:
+> - improve a warning message, fix a style issue.
+> 
+> Changes in v4:
+> - improve error handling when adding the PWM consumer device link.
+> 
+> Changes in v3:
+> - Move the device_link_add() call to of_pwm_get() as discussed with Uwe.
+> 
+> Changes in v2:
+> - Don't disable PWM channel in PWM provider: rather refuse to suspend
+>   and report an error as suggested by Uwe and Thierry.
+> - Add patch 3/3 to propose device link addition.
+> - No updates for STM32 LP Timer IIO driver. Patches can be send separately.
+> 
+> Fabrice Gasnier (3):
+>   dt-bindings: pwm-stm32-lp: document pinctrl sleep state
+>   pwm: stm32-lp: Add power management support
+>   pwm: core: add consumer device link
+> 
+>  .../devicetree/bindings/pwm/pwm-stm32-lp.txt       |  9 ++--
+>  drivers/pwm/core.c                                 | 50 ++++++++++++++++++++--
+>  drivers/pwm/pwm-stm32-lp.c                         | 25 +++++++++++
+>  include/linux/pwm.h                                |  6 ++-
+>  4 files changed, 82 insertions(+), 8 deletions(-)
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
