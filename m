@@ -2,54 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD63519B95
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 12:26:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED2F019BC5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 12:38:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZLooCgqoJ33tHdMTcAjrK0hknqG6v5EPOxW8jM89WSc=; b=U8/jaZhBofrTkn
-	Ijo9/McN3e6SBEn97W+Jox6vUtSQFlRUoz45RvMMl1GLlmafyHxZUv3MAoy/V5E8BdpMGL4XhmZh/
-	BOloRPjL/pYqKVXGz1K2KW5WIE2nvdnL7cCSLt7sz2NYSBU864/mgzzeW+EdofU86tA1ab1huQMMO
-	PjwV4bYT5uEMR33QeUuwbjJJbKbaFWLK/n1HJlEmTkBqMsJ7HD7hEWfWJrdVeuUYQ0bY+V+UKEclQ
-	cj950N45mjJHkV5MSTHLx6HRNpKn5lG4CZC49ZzqX219xNYNL+QyGP+sFGkzztmrmkz0LGNLLvoNE
-	jzYxEwhrj3hsKRSgR6dA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Ahiq09plkTl/WOw/ToYv5mRxZsAUxEnPHB97LCrPuxM=; b=W/Y/RBW3XwcJbwEhRmaPid8bN
+	MajYN8fkU/DaqAdyULgnmLCc2NIWc9LqCqc3x8E92JQi/deJ4PPYLuTIB78Acn0ZUY5wKweR7HU24
+	Jgb3hFjJrq0wJrW3g/qLqPRkE49+WyK0HD7qwB7F3HNjljgNwFQcCUyAruBBPzK/wxG3rVq7/EOx2
+	HPv2rrbeSA5TXREglrPruzAcmSF5UyjvLnliVPSooSODeKyyzMxMk3vocoPTfOTjbVMpFzbsaCfY3
+	mMKr+R7aCGjZfywfnyGDD8k6qUiy6/OajlH72JOq8XdFUL4SBLNpOb2f+tOyKDclLbGM2HIvgWySr
+	ZF93uMUZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP2jr-0004BQ-Of; Fri, 10 May 2019 10:26:51 +0000
-Received: from relay12.mail.gandi.net ([217.70.178.232])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP2jk-00049y-46
- for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 10:26:45 +0000
-Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
- (Authenticated sender: maxime.ripard@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id DF1B520001C;
- Fri, 10 May 2019 10:26:28 +0000 (UTC)
-Date: Fri, 10 May 2019 12:26:28 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Rob Herring <robh+dt@kernel.org>
-Subject: Re: [PATCH v2 2/2] dt-bindings: sound: sun4i-spdif: Document that
- the RX channel can be missing
-Message-ID: <20190510102628.u344cqe7sftuamfg@flea>
-References: <dc84c7e9ce272109052f553a5e050bfe1a09e9d6.1557252411.git-series.maxime.ripard@bootlin.com>
- <d9afb19c32f8b9b2c40c8d4c0c3df74bff0ccf35.1557252411.git-series.maxime.ripard@bootlin.com>
- <CAL_Jsq+iLmzti5TX-TUU3PN4taC66UMqHMk-aKTjZKt1kVRtMQ@mail.gmail.com>
+	id 1hP2vI-0007vz-Iw; Fri, 10 May 2019 10:38:40 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hP2vB-0007vD-Ka
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 10:38:34 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A6C88374;
+ Fri, 10 May 2019 03:38:30 -0700 (PDT)
+Received: from [10.1.196.75] (e110467-lin.cambridge.arm.com [10.1.196.75])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A42723F738;
+ Fri, 10 May 2019 03:38:29 -0700 (PDT)
+Subject: Re: [PATCH 1/4] coresight: tmc-etr: Do not call smp_processor_id()
+ from preemptible
+To: Suzuki K Poulose <suzuki.poulose@arm.com>, mathieu.poirier@linaro.org
+References: <1557480663-16759-1-git-send-email-suzuki.poulose@arm.com>
+ <1557480663-16759-2-git-send-email-suzuki.poulose@arm.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <319d4d63-326b-9bb5-6a24-f7aa8ec549f9@arm.com>
+Date: Fri, 10 May 2019 11:38:28 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAL_Jsq+iLmzti5TX-TUU3PN4taC66UMqHMk-aKTjZKt1kVRtMQ@mail.gmail.com>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <1557480663-16759-2-git-send-email-suzuki.poulose@arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_032644_318312_23081CB5 
-X-CRM114-Status: GOOD (  15.10  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190510_033833_680726_D93965CA 
+X-CRM114-Status: GOOD (  21.33  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -62,87 +65,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Linux-ALSA <alsa-devel@alsa-project.org>, Liam Girdwood <lgirdwood@gmail.com>,
- Chen-Yu Tsai <wens@csie.org>, Mark Brown <broonie@kernel.org>,
- Frank Rowand <frowand.list@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: coresight@lists.linaro.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
+Hi Suzuki,
 
-On Wed, May 08, 2019 at 02:35:10PM -0500, Rob Herring wrote:
-> > +  - if:
-> > +      properties:
-> > +        compatible:
-> > +          contains:
-> > +            const: allwinner,sun8i-h3-spdif
-> > +
-> > +    then:
-> > +      properties:
-> > +        dmas:
-> > +          maxItems: 1
->
-> In this and below, these should get added automatically by
-> fixup_schema. If not present, we set minItems/maxItems to the size of
-> the items list. It look like you added support for that, so left over
-> from before you addressed that for if/then/else?
+On 10/05/2019 10:31, Suzuki K Poulose wrote:
+> Instead of using smp_processor_id() to figure out the node,
+> use the numa_node_id() for the current CPU node to avoid
+> splats like :
+> 
+>   BUG: using smp_processor_id() in preemptible [00000000] code: perf/1743
+>   caller is alloc_etr_buf.isra.6+0x80/0xa0
+>   CPU: 1 PID: 1743 Comm: perf Not tainted 5.1.0-rc6-147786-g116841e #344
+>   Hardware name: ARM LTD ARM Juno Development Platform/ARM Juno Development Platform, BIOS EDK II Feb  1 2019
+>    Call trace:
+>     dump_backtrace+0x0/0x150
+>     show_stack+0x14/0x20
+>     dump_stack+0x9c/0xc4
+>     debug_smp_processor_id+0x10c/0x110
+>     alloc_etr_buf.isra.6+0x80/0xa0
+>     tmc_alloc_etr_buffer+0x12c/0x1f0
+>     etm_setup_aux+0x1c4/0x230
+>     rb_alloc_aux+0x1b8/0x2b8
+>     perf_mmap+0x35c/0x478
+>     mmap_region+0x34c/0x4f0
+>     do_mmap+0x2d8/0x418
+>     vm_mmap_pgoff+0xd0/0xf8
+>     ksys_mmap_pgoff+0x88/0xf8
+>     __arm64_sys_mmap+0x28/0x38
+>     el0_svc_handler+0xd8/0x138
+>     el0_svc+0x8/0xc
+> 
+> Fixes: 855ab61c16bf70b646 ("coresight: tmc-etr: Refactor function tmc_etr_setup_perf_buf()")
+> Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+> ---
+>   drivers/hwtracing/coresight/coresight-tmc-etr.c | 6 ++----
+>   1 file changed, 2 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
+> index 793639f..cae9d8a 100644
+> --- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
+> +++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
+> @@ -1323,13 +1323,11 @@ static struct etr_perf_buffer *
+>   tmc_etr_setup_perf_buf(struct tmc_drvdata *drvdata, struct perf_event *event,
+>   		       int nr_pages, void **pages, bool snapshot)
+>   {
+> -	int node, cpu = event->cpu;
+> +	int node;
+>   	struct etr_buf *etr_buf;
+>   	struct etr_perf_buffer *etr_perf;
+>   
+> -	if (cpu == -1)
+> -		cpu = smp_processor_id();
+> -	node = cpu_to_node(cpu);
+> +	node = (event->cpu == -1) ? numa_node_id() : cpu_to_node(event->cpu);
 
-Sorry, I should have brought that up in the pull request.
+If cpu == -1 represents a "don't care" scenario, it might be clearer to 
+just use NUMA_NO_NODE instead, and let the allocator handle it.
 
-It seems that it's still necessary when using allOf, otherwise the
-schema won't match
+Robin.
 
-Maybe there's something more to fix when using allOf?
-
-> > +          items:
-> > +            - description: RX DMA Channel
->
-> s/RX/TX/
->
-> > +
-> > +        dma-names:
-> > +          maxItems: 1
-> > +          items:
-> > +            - const: tx
-> > +
-> > +    else:
-> > +      properties:
-> > +        dmas:
-> > +          minItems: 2
-> > +          maxItems: 2
-> > +          items:
-> > +            - description: RX DMA Channel
-> > +            - description: TX DMA Channel
-> > +
-> > +        dma-names:
-> > +          minItems: 2
-> > +          maxItems: 2
-> > +          items:
-> > +            - const: rx
-> > +            - const: tx
->
-> I'm really on the fence whether it's worth it to add all this just add
-> the restrictions based on the compatible. I guess with copy-n-paste
-> this would be a common error.
-
-Converting most of the bindings to the schemas has shown that (at
-least in our case), we've been pretty bad at keeping the documentation
-up to date with that kind of information.
-
-Adding that kind of construct at least has the benefit to actively
-enforce that the documentation is complete.
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+>   
+>   	etr_perf = kzalloc_node(sizeof(*etr_perf), GFP_KERNEL, node);
+>   	if (!etr_perf)
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
