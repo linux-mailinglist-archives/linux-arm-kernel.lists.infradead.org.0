@@ -2,55 +2,118 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C642819D1F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 14:18:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 062BB19D25
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 14:23:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=6LLPmGoToR9pYEBu2ohgzjQv0HGrGUrLjqQp51X1174=; b=VUb
-	C/vo6cksII907qlY1q95iD7ZRc11vHq4gXKnCDIzgooBlRbwrZKaTvBbyFUV06e4Anq+AKsMzKKkf
-	hoL6qvPIHUL12MqpCGy1nLlBvQJHLxPyLrpMcgUh7/eRu6r9P3+uDryCIrh/unS+fN6FuGbte5naZ
-	qmzAaEfD/WA7bU6JGGXJRVOwn3coKOvpZf2ZDfBCDgw1XmxSUsAOdpEiV0QbyMHJthHrUqqWAfzAm
-	5k2zu9hIQaUIU0caYVsHxiXgIOmy+yX+aG8mXbtSPKU48AuyJQB5ecxTSUS8vhwfaIklpjITwMaSl
-	h4XUQfRQnvjgpcqOhb0IoNflJW6CAxw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zVSYJEwqgUftGEmQ3cecAHVldjEiZzm97urE1k6JRNQ=; b=Om+JZHKqkNnq+l
+	gHXnFLx1Mo1ai+ohUDBnktLe1/j3rlv2ZAJEG3dTe4z1q8OTFL3T21EJZkjeuetk9qQ41nL4yY+Xf
+	mUBZDthqVOHiWlzkQORzkh5NvqMxvfukrCrJxS9dPySN+xP6Cd3E7CWkGCJYQEmK8Z3olZJfYjq2h
+	7IOM0Spr3PI8/4ctGcREMlTrmVUYZfFDdbZMPMst0BrAoEd3+IXu9uwXeWOLX1Yrv6Id6cEqNQRuP
+	UJtLdwxOBd/woW9aI94AL74OUw7yFBBygXjm3bZlk5tGQnleasOcdxb8d7lj3+zt36B4oACjLjCXc
+	k/2l0EyRKghicsXVllSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP4U0-0006WP-14; Fri, 10 May 2019 12:18:36 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hP4Z7-0008Ng-6R; Fri, 10 May 2019 12:23:53 +0000
+Received: from mail-eopbgr50088.outbound.protection.outlook.com ([40.107.5.88]
+ helo=EUR03-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP4Ts-0006VK-Sd
- for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 12:18:31 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id BC7E71A0169;
- Fri, 10 May 2019 14:18:25 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id AF61F1A003A;
- Fri, 10 May 2019 14:18:25 +0200 (CEST)
-Received: from jana.ea.freescale.net (gw_auto.ea.freescale.net [10.171.94.100])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 2E915205ED;
- Fri, 10 May 2019 14:18:25 +0200 (CEST)
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH v3] arm64: dts: imx8mm-evk: Add BD71847 PMIC
-Date: Fri, 10 May 2019 15:18:22 +0300
-Message-Id: <04a79ff9811691cb365bfcaf3f0b250706bce295.1557490424.git.leonard.crestez@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1hP4Z0-0008NC-KW
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 12:23:48 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=47VyM5IIrni7gGQiqmFicQJhymnzHX6UsANSagCiw8I=;
+ b=FlmlGncgysB636DPY3KuGJ181FGRwPb286kyDYNb8fKVomqecO6KXO/TP1XNGGivSs5k2Dn13UhLtuZoEwL2QXx3cXwojcf6vPLfqC1JEHobskVLd7t8t+cPNZ9NQj3RYpGzC4YOdLtCe2nfI+P0GwEMy/9/QpnjKH2pq1HmvNY=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3676.eurprd04.prod.outlook.com (52.134.70.138) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1878.22; Fri, 10 May 2019 12:23:42 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::d035:3bd0:a56a:189d]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::d035:3bd0:a56a:189d%2]) with mapi id 15.20.1878.022; Fri, 10 May 2019
+ 12:23:42 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: "linux@armlinux.org.uk" <linux@armlinux.org.uk>, "shawnguo@kernel.org"
+ <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>, "festevam@gmail.com"
+ <festevam@gmail.com>, "otavio@ossystems.com.br" <otavio@ossystems.com.br>,
+ Leonard Crestez <leonard.crestez@nxp.com>, "schnitzeltony@gmail.com"
+ <schnitzeltony@gmail.com>, "u.kleine-koenig@pengutronix.de"
+ <u.kleine-koenig@pengutronix.de>, "jan.tuerk@emtrion.com"
+ <jan.tuerk@emtrion.com>, Robin Gong <yibin.gong@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: [PATCH RESEND] ARM: imx_v6_v7_defconfig: Enable
+ CONFIG_THERMAL_STATISTICS
+Thread-Topic: [PATCH RESEND] ARM: imx_v6_v7_defconfig: Enable
+ CONFIG_THERMAL_STATISTICS
+Thread-Index: AQHVBys0pgK+lXcoZEiiNPClktUsIw==
+Date: Fri, 10 May 2019 12:23:42 +0000
+Message-ID: <1557490722-21657-1-git-send-email-Anson.Huang@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.7.4
+x-clientproxiedby: HK0P153CA0041.APCP153.PROD.OUTLOOK.COM
+ (2603:1096:203:17::29) To DB3PR0402MB3916.eurprd04.prod.outlook.com
+ (2603:10a6:8:10::18)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 31c58436-945e-44dd-1554-08d6d54256f0
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:DB3PR0402MB3676; 
+x-ms-traffictypediagnostic: DB3PR0402MB3676:
+x-microsoft-antispam-prvs: <DB3PR0402MB367666D21B105115E2E74F3BF50C0@DB3PR0402MB3676.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3826;
+x-forefront-prvs: 0033AAD26D
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(376002)(136003)(346002)(39860400002)(396003)(366004)(199004)(189003)(7416002)(53936002)(4744005)(81156014)(36756003)(6512007)(186003)(2906002)(6116002)(14454004)(3846002)(6506007)(386003)(256004)(486006)(5660300002)(2501003)(2616005)(476003)(102836004)(26005)(66066001)(99286004)(8936002)(110136005)(50226002)(68736007)(478600001)(52116002)(2201001)(81166006)(8676002)(25786009)(6486002)(6436002)(305945005)(4326008)(7736002)(73956011)(316002)(71190400001)(71200400001)(66946007)(66476007)(66556008)(64756008)(66446008)(86362001)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3676;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: wT2IXin/uio7WxC3PLP0a/XEPawSTJ9v0ohdbJ5lPc7bfw7CsJtqHtVR8LzcdWndpJBLLoI+hKUvhWWNh4L7FuvsGtANGaj7uK6350B/70oFOmhfqDkKnCDVb2Ltg30ogiNmZ9tNyL718uBubq4JmxkV7rGu4+QjRhZLIIoM9oRRiKUmr3LICeuBsSXpcutNr5JpcUgg8EWtbxtT/ys31dDd368YEuPDiZqp8gvT40/R+6y4zwu/3PRn+n8hmEVTd+YKSV+/r6yLgG2ed2TFxvGYIMbY0fuKn+qL5l4tikkHFkQDs/4TqrCCygAhY19O8iTAd7or5EhXbzu8QaUM1yw3GhqiJMuuuQq9399PJYjPSphl+7i8Gfa5/e+KnRlf5KaHSBURwRTVOADU2n6DhmbnTc2UsvEsdL25JH5p5BM=
+Content-ID: <7C0940655F6B3F449B316FA894F688D8@eurprd04.prod.outlook.com>
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 31c58436-945e-44dd-1554-08d6d54256f0
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 May 2019 12:23:42.6789 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3676
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_051829_301181_7C7277B5 
-X-CRM114-Status: GOOD (  10.32  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190510_052346_753786_168BBFFB 
+X-CRM114-Status: GOOD (  10.78  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.5.88 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -62,217 +125,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Dong Aisheng <aisheng.dong@nxp.com>,
- devicetree@vger.kernel.org, Angus Ainslie <angus@akkea.ca>,
- Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>,
- Rob Herring <robh+dt@kernel.org>, linux-imx@nxp.com, kernel@pengutronix.de,
- Fabio Estevam <fabio.estevam@nxp.com>, Robin Gong <yibin.gong@nxp.com>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The BUCK2 regulator is used for cpufreq voltage control, otherwise
-configuration is mostly static.
+Enable CONFIG_THERMAL_STATISTICS to extend the sysfs interface
+for thermal cooling devices and expose some useful statistics.
 
-This uses the newly-implemented rohm,reset-snvs-powered property to
-properly handle the SNVS state of imx8mm.
-
-Between BD71837 and BD71847 the BUCK3/4 regulators were removed but
-datasheet and board schematics kept the names for BUCK5/6/7/8. The
-driver however renumbered 5/6/7/8 to 3/4/5/6. Use the names from DT
-bindings and add comments to signal this.
-
-Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-Acked-By: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
-
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
-I apologize for sending base64 in the past, it's caused by IT policy but I
-found a workaround and hopefully this arrives in plain-text as intended.
+no change, just fix the base64 encoding issue.
+---
+ arch/arm/configs/imx_v6_v7_defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-Changes since v2:
- - Replace regulator-compatible with regulator-name (Shawn)
-Link to v2: https://patchwork.kernel.org/patch/10913177/
-
-Changes since v1:
- - Move compatible property first
- - Remove address/size numbering from regulators list
-Link to v1: https://marc.info/?l=linux-clk&m=155530430429151&w=2
-
- arch/arm64/boot/dts/freescale/imx8mm-evk.dts | 131 +++++++++++++++++++++++++++
- 1 file changed, 131 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-index 2d5d89475b76..f8ff0a4b8961 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-+++ b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-@@ -37,10 +37,14 @@
- 		gpio = <&gpio2 19 GPIO_ACTIVE_HIGH>;
- 		enable-active-high;
- 	};
- };
- 
-+&A53_0 {
-+	cpu-supply = <&buck2_reg>;
-+};
-+
- &fec1 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_fec1>;
- 	phy-mode = "rgmii-id";
- 	phy-handle = <&ethphy0>;
-@@ -93,10 +97,124 @@
- 	pinctrl-0 = <&pinctrl_wdog>;
- 	fsl,ext-reset-output;
- 	status = "okay";
- };
- 
-+&i2c1 {
-+	clock-frequency = <400000>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_i2c1>;
-+	status = "okay";
-+
-+	pmic@4b {
-+		compatible = "rohm,bd71847";
-+		reg = <0x4b>;
-+		pinctrl-0 = <&pinctrl_pmic>;
-+		interrupt-parent = <&gpio1>;
-+		interrupts = <3 GPIO_ACTIVE_LOW>;
-+		rohm,reset-snvs-powered;
-+
-+		regulators {
-+			buck1_reg: BUCK1 {
-+				regulator-name = "BUCK1";
-+				regulator-min-microvolt = <700000>;
-+				regulator-max-microvolt = <1300000>;
-+				regulator-boot-on;
-+				regulator-always-on;
-+				regulator-ramp-delay = <1250>;
-+			};
-+
-+			buck2_reg: BUCK2 {
-+				regulator-name = "BUCK2";
-+				regulator-min-microvolt = <700000>;
-+				regulator-max-microvolt = <1300000>;
-+				regulator-boot-on;
-+				regulator-always-on;
-+				regulator-ramp-delay = <1250>;
-+				rohm,dvs-run-voltage = <1000000>;
-+				rohm,dvs-idle-voltage = <900000>;
-+			};
-+
-+			buck3_reg: BUCK3 {
-+				// BUCK5 in datasheet
-+				regulator-name = "BUCK3";
-+				regulator-min-microvolt = <700000>;
-+				regulator-max-microvolt = <1350000>;
-+				regulator-boot-on;
-+				regulator-always-on;
-+			};
-+
-+			buck4_reg: BUCK4 {
-+				// BUCK6 in datasheet
-+				regulator-name = "BUCK4";
-+				regulator-min-microvolt = <3000000>;
-+				regulator-max-microvolt = <3300000>;
-+				regulator-boot-on;
-+				regulator-always-on;
-+			};
-+
-+			buck5_reg: BUCK5 {
-+				// BUCK7 in datasheet
-+				regulator-name = "BUCK5";
-+				regulator-min-microvolt = <1605000>;
-+				regulator-max-microvolt = <1995000>;
-+				regulator-boot-on;
-+				regulator-always-on;
-+			};
-+
-+			buck6_reg: BUCK6 {
-+				// BUCK8 in datasheet
-+				regulator-name = "BUCK6";
-+				regulator-min-microvolt = <800000>;
-+				regulator-max-microvolt = <1400000>;
-+				regulator-boot-on;
-+				regulator-always-on;
-+			};
-+
-+			ldo1_reg: LDO1 {
-+				regulator-name = "LDO1";
-+				regulator-min-microvolt = <3000000>;
-+				regulator-max-microvolt = <3300000>;
-+				regulator-boot-on;
-+				regulator-always-on;
-+			};
-+
-+			ldo2_reg: LDO2 {
-+				regulator-name = "LDO2";
-+				regulator-min-microvolt = <900000>;
-+				regulator-max-microvolt = <900000>;
-+				regulator-boot-on;
-+				regulator-always-on;
-+			};
-+
-+			ldo3_reg: LDO3 {
-+				regulator-name = "LDO3";
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <3300000>;
-+				regulator-boot-on;
-+				regulator-always-on;
-+			};
-+
-+			ldo4_reg: LDO4 {
-+				regulator-name = "LDO4";
-+				regulator-min-microvolt = <900000>;
-+				regulator-max-microvolt = <1800000>;
-+				regulator-boot-on;
-+				regulator-always-on;
-+			};
-+
-+			ldo6_reg: LDO6 {
-+				regulator-name = "LDO6";
-+				regulator-min-microvolt = <900000>;
-+				regulator-max-microvolt = <1800000>;
-+				regulator-boot-on;
-+				regulator-always-on;
-+			};
-+		};
-+	};
-+};
-+
- &iomuxc {
- 	pinctrl-names = "default";
- 
- 	pinctrl_fec1: fec1grp {
- 		fsl,pins = <
-@@ -122,10 +240,23 @@
- 		fsl,pins = <
- 			MX8MM_IOMUXC_NAND_READY_B_GPIO3_IO16	0x19
- 		>;
- 	};
- 
-+	pinctrl_i2c1: i2c1grp {
-+		fsl,pins = <
-+			MX8MM_IOMUXC_I2C1_SCL_I2C1_SCL			0x400001c3
-+			MX8MM_IOMUXC_I2C1_SDA_I2C1_SDA			0x400001c3
-+		>;
-+	};
-+
-+	pinctrl_pmic: pmicirq {
-+		fsl,pins = <
-+			MX8MM_IOMUXC_GPIO1_IO03_GPIO1_IO3		0x41
-+		>;
-+	};
-+
- 	pinctrl_reg_usdhc2_vmmc: regusdhc2vmmc {
- 		fsl,pins = <
- 			MX8MM_IOMUXC_SD2_RESET_B_GPIO2_IO19	0x41
- 		>;
- 	};
+diff --git a/arch/arm/configs/imx_v6_v7_defconfig b/arch/arm/configs/imx_v6_v7_defconfig
+index 765003a..ea387cb 100644
+--- a/arch/arm/configs/imx_v6_v7_defconfig
++++ b/arch/arm/configs/imx_v6_v7_defconfig
+@@ -225,6 +225,7 @@ CONFIG_POWER_SUPPLY=y
+ CONFIG_SENSORS_MC13783_ADC=y
+ CONFIG_SENSORS_GPIO_FAN=y
+ CONFIG_SENSORS_IIO_HWMON=y
++CONFIG_THERMAL_STATISTICS=y
+ CONFIG_THERMAL_WRITABLE_TRIPS=y
+ CONFIG_CPU_THERMAL=y
+ CONFIG_IMX_THERMAL=y
 -- 
 2.7.4
 
