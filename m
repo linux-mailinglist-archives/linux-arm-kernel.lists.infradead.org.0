@@ -2,86 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51C5719852
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 08:21:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA0CC19895
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 08:48:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=oy/CSsGpAqQ61hfQ6wMTXBgCslKtWrN74j/tp9t4EWM=; b=V7xeOkolfjW7ZZW0HGyy6JLsz
-	W2dtUrGz0/a2872FteX+CVpmygX1Dd5FZUP/SmfyNDHBUteR93bZt5rt9YygSUdG/ntEjb8nZdDu6
-	eGTSRngp0lNcORCvhqAm59lBdYmTfwhDpXtBn01UJsW1Jrnur+6eBTM1MTowolVvF0JIrtjqAQemX
-	JkQT7G1unE3cE3NIalNkJH2QBQ4fpyU9Mp6WZ4TDEVSsn3Zyt35qe6OL9w0IhTsZS91K+6T82gkVL
-	5VjVf4oxrcLgXYzkDYRhgooNfY9/2bwc1bMonjmLNQZKEwVxPCWOakfFbbEHjyiPyarwhEbkpX8g9
-	qBujScMQQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cfjedmvwVVz8CIrN8J67Seq8I9+lHcM8rV5evfJ/Xac=; b=i28AmTd72mq3R2
+	4qrSiStXtvdBI44gYj2Pz5+wrXPKYZIKzXaKhYpgA1g1vrMIDtMLi7IGM9trTHra1toG4KbmuSnYF
+	Paps0CeVXPu8MAV+kH1NxCadUDgtIX8uHJ3Sf+uxCPGvpsK+66Hrkb/8dicX0EmR3sBqZvHDd+HOt
+	9BMevPvcWevJqy0DNS8/H7fP8j379BHmY4NBy53ZSpMv2wG4zBJDkkz2ahuazIkyxtvYBn27zpJiM
+	qWCiBM3PUSYZyPMeoyHNsHg3hL2T1Y512UgAcsHgh9iQhMQPcymB0T9VUFO++p1PakxeRQkJ4B0m7
+	xp7RJLxxtXQeO2o23juQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOyue-0008Od-5B; Fri, 10 May 2019 06:21:44 +0000
-Received: from hqemgate15.nvidia.com ([216.228.121.64])
+	id 1hOzKw-000179-I4; Fri, 10 May 2019 06:48:54 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOyuU-0008OD-Si
- for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 06:21:36 +0000
-Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate15.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5cd518480000>; Thu, 09 May 2019 23:20:56 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate101.nvidia.com (PGP Universal service);
- Thu, 09 May 2019 23:21:33 -0700
-X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Thu, 09 May 2019 23:21:33 -0700
-Received: from [10.24.47.55] (10.124.1.5) by HQMAIL101.nvidia.com
- (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 10 May
- 2019 06:21:27 +0000
-Subject: RE: [PATCH V5 03/16] PCI: Export pcie_bus_config symbol
-To: Thierry Reding <thierry.reding@gmail.com>
-References: <20190424052004.6270-1-vidyas@nvidia.com>
- <20190424052004.6270-4-vidyas@nvidia.com> <20190503110732.GC32400@ulmo>
-X-Nvconfidentiality: public
-From: Vidya Sagar <vidyas@nvidia.com>
-Message-ID: <80616ff5-d7a5-84a4-a71b-569e340d128c@nvidia.com>
-Date: Fri, 10 May 2019 11:51:24 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hOzKo-00016N-Vg; Fri, 10 May 2019 06:48:49 +0000
+X-UUID: 706175521b4b436b941bfc19678885fe-20190509
+X-UUID: 706175521b4b436b941bfc19678885fe-20190509
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1839853325; Thu, 09 May 2019 22:48:40 -0800
+Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 9 May 2019 23:48:38 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 10 May 2019 14:48:30 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 10 May 2019 14:48:30 +0800
+Message-ID: <1557470910.20990.7.camel@mtksdaap41>
+Subject: Re: [PATCH v5 04/12] dt-binding: gce: add binding for gce event
+ property
+From: CK Hu <ck.hu@mediatek.com>
+To: Bibby Hsieh <bibby.hsieh@mediatek.com>
+Date: Fri, 10 May 2019 14:48:30 +0800
+In-Reply-To: <1557458857.29102.1.camel@mtksdaap41>
+References: <20190507081355.52630-1-bibby.hsieh@mediatek.com>
+ <20190507081355.52630-5-bibby.hsieh@mediatek.com>
+ <1557292247.3936.5.camel@mtksdaap41> <1557458857.29102.1.camel@mtksdaap41>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <20190503110732.GC32400@ulmo>
-X-Originating-IP: [10.124.1.5]
-X-ClientProxiedBy: HQMAIL108.nvidia.com (172.18.146.13) To
- HQMAIL101.nvidia.com (172.20.187.10)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1557469257; bh=24uok8Emgfq8JqLYEmA9il4vmwDxuvY2qeXLWgy1Ux8=;
- h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
- Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
- X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=VGPaDZPU6RodfRcYpWevyox/CweWPCBp2FZ9famAhFSxmUmLYCqoxomnKy3VUay8+
- BzMmFoE5yCRMN4THPY6r8HObhAtdLkjZ1FFvmHhAh5NDKaq5SmDigH/E0+PxNknxjN
- GAb9d7nnGvIWMUWovvD2NALS935C9Af05oRJyiGb+x0saF9s4ch+FkwJ8nOeM6UF5n
- bbycgvMnkvjCQW2ElsYBymdx5+RWWDbQn2NuFwb6Hxk3tG0mTb1cT/u+bcyPH5ahrP
- wOnRr+ELEdu/+/RZEAJuMkkjUhagK8PK5+gy2jJqkJxdjOf1B3F31MaTnpYKmsCmMI
- WmQxUames0JFQ==
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_232134_942361_80F8DE06 
-X-CRM114-Status: GOOD (  24.20  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190509_234847_028848_3DD6BD9F 
+X-CRM114-Status: GOOD (  21.85  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.64 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,114 +72,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>,
- Mikko Perttunen <mperttunen@nvidia.com>,
- Manikanta Maddireddy <mmaddireddy@nvidia.com>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Krishna Thota <kthota@nvidia.com>, "kishon@ti.com" <kishon@ti.com>,
- "linux-tegra@vger.kernel.org" <linux-tegra@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "gustavo.pimentel@synopsys.com" <gustavo.pimentel@synopsys.com>,
- "jingoohan1@gmail.com" <jingoohan1@gmail.com>,
- "bhelgaas@google.com" <bhelgaas@google.com>,
- Jonathan Hunter <jonathanh@nvidia.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "sagar.tv@gmail.com" <sagar.tv@gmail.com>
+Cc: devicetree@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, srv_heupstream@mediatek.com,
+ kendrick.hsu@mediatek.com, Daoyuan Huang <daoyuan.huang@mediatek.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Jassi Brar <jassisinghbrar@gmail.com>,
+ linux-kernel@vger.kernel.org, Daniel Kurtz <djkurtz@chromium.org>,
+ Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>, YT
+ Shen <yt.shen@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Houlong Wei <houlong.wei@mediatek.com>,
+ Sascha Hauer <kernel@pengutronix.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Jiaguang Zhang <jiaguang.zhang@mediatek.com>,
+ Frederic Chen <Frederic.Chen@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org, ginny.chen@mediatek.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi, Bibby:
 
+On Fri, 2019-05-10 at 11:27 +0800, Bibby Hsieh wrote:
+> Hi, CK,
+> 
+> On Wed, 2019-05-08 at 13:10 +0800, CK Hu wrote:
+> > Hi, Bibby:
+> > 
+> > On Tue, 2019-05-07 at 16:13 +0800, Bibby Hsieh wrote:
+> > > Client hardware would send event to GCE hardware,
+> > > mediatek,gce-event-names and mediatek,gce-events
+> > > can be used to present the event.
+> > > 
+> > > Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> > > ---
+> > >  Documentation/devicetree/bindings/mailbox/mtk-gce.txt | 9 +++++++--
+> > >  1 file changed, 7 insertions(+), 2 deletions(-)
+> > > 
+> > > diff --git a/Documentation/devicetree/bindings/mailbox/mtk-gce.txt b/Documentation/devicetree/bindings/mailbox/mtk-gce.txt
+> > > index 8fd9479bc9f6..76491f194c56 100644
+> > > --- a/Documentation/devicetree/bindings/mailbox/mtk-gce.txt
+> > > +++ b/Documentation/devicetree/bindings/mailbox/mtk-gce.txt
+> > > @@ -35,6 +35,9 @@ Required properties for a client device:
+> > >  Optional propertier for a client device:
+> > >  - mediatek,gce-client-reg: u32, specify the sub-system id which is corresponding
+> > >    to the register address.
+> > > +- mediatek,gce-event-names: the event name can be defined by user.
+> > 
+> > gce-event is like an interrupt from client hardware to GCE hardware, we
+> > do not give a name to an interrupt, so do we need to give a name for
+> > gce-event?
+> > 
+> 
+> Yes, we need to know the name of gce-ecent.
+> The name can help users to figure out the problems when GCE meet the
+> event time out errors.
 
-> -----Original Message-----
-> From: linux-pci-owner@vger.kernel.org <linux-pci-owner@vger.kernel.org> On
-> Behalf Of Thierry Reding
-> Sent: Friday, May 3, 2019 4:38 PM
-> To: Vidya Sagar <vidyas@nvidia.com>
-> Cc: lorenzo.pieralisi@arm.com; bhelgaas@google.com; robh+dt@kernel.org;
-> mark.rutland@arm.com; Jonathan Hunter <jonathanh@nvidia.com>;
-> kishon@ti.com; catalin.marinas@arm.com; will.deacon@arm.com;
-> jingoohan1@gmail.com; gustavo.pimentel@synopsys.com; Mikko Perttunen
-> <mperttunen@nvidia.com>; linux-pci@vger.kernel.org;
-> devicetree@vger.kernel.org; linux-tegra@vger.kernel.org; linux-
-> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; Krishna Thota
-> <kthota@nvidia.com>; Manikanta Maddireddy <mmaddireddy@nvidia.com>;
-> sagar.tv@gmail.com
-> Subject: Re: [PATCH V5 03/16] PCI: Export pcie_bus_config symbol
-> 
-> On Wed, Apr 24, 2019 at 10:49:51AM +0530, Vidya Sagar wrote:
-> > Export pcie_bus_config to enable host controller drivers setting it to
-> > a specific configuration be able to build as loadable modules
-> >
-> > Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
-> > ---
-> > Changes since [v4]:
-> > * None
-> >
-> > Changes since [v3]:
-> > * None
-> >
-> > Changes since [v2]:
-> > * None
-> >
-> > Changes since [v1]:
-> > * This is a new patch in v2 series
-> >
-> >  drivers/pci/pci.c | 1 +
-> >  1 file changed, 1 insertion(+)
-> 
-> It doesn't look to me like this is something that host controller drivers are
-> supposed to change. This is set via the pci kernel command- line parameter,
-> meaning it's a way of tuning the system configuration.
-> Drivers should not be allowed to override this after the fact.
-> 
-> Why do we need to set this?
-Here is the reason I'm doing it.
-First things first, Tegra194 supports MPS up to 256 bytes.
-Assume there are two endpoints with MPS supported up to
-a) 128 bytes (Ex:- Realtek NIC with 8168 controller)
-b) 256 bytes (Ex:- Kingston NVMe drive)
-Now, leaving "pcie_bus_config" untouched in the driver sets it to
-PCIE_BUS_DEFAULT by default. With this setting, for both (a) and (b),
-MPS is set to 128, which means, even though Tegra194 supports 256 MPS, it is not
-set to 256 even in case of (b) thereby not using RP's 256 MPS feature.
-If I explicitly set pcie_bus_config=PCIE_BUS_PERFORMACE in the code, then 256 MPS is set when
-(b) is connected, but when (a) is connected, for root port MPS 256 is set and for
-endpoint MPS 128 is set, because of which root port tries to send packets with 256
-payload that breaks functionality of Realtek NIC card.
-The best option I've found out is that when I set 256 in PCI_EXP_DEVCTL of root port
-explicitly before link up and use pcie_bus_config=PCIE_BUS_SAFE, then, I get the best of both
-PCIE_BUS_DEFAULT and PCIE_BUS_PERFORMANCE i.e. with (a) connected, MPS is set to 128 in both RP
-and EP and with (b) connected, MPS is set to 256 in both RP and EP.
+For debug, driver does not need this information. In your example, The
+event 'CMDQ_EVENT_MDP_RDMA0_SOF' is used by rdma driver. I think rdma
+driver should know why it need this event (it want to know whether 'rdma
+is starting to work (SOF)'), so when this event is time out, rdma driver
+should know what is timeout (it knows RDMA_SOF is timeout).
 
-So, is it like, pcie_bus_config shouldn't be set to anything explicitly in the driver and depending on the
-platform and what is connected to root port, kernel parameter can be passed with appropriate setting?
+Regards,
+CK
 
 > 
-> Thierry
 > 
-> > diff --git a/drivers/pci/pci.c b/drivers/pci/pci.c index
-> > f5ff01dc4b13..731f78508601 100644
-> > --- a/drivers/pci/pci.c
-> > +++ b/drivers/pci/pci.c
-> > @@ -94,6 +94,7 @@ unsigned long pci_hotplug_mem_size =
-> > DEFAULT_HOTPLUG_MEM_SIZE;  unsigned long pci_hotplug_bus_size =
-> > DEFAULT_HOTPLUG_BUS_SIZE;
-> >
-> >  enum pcie_bus_config_types pcie_bus_config = PCIE_BUS_DEFAULT;
-> > +EXPORT_SYMBOL_GPL(pcie_bus_config);
-> >
-> >  /*
-> >   * The default CLS is used if arch didn't set CLS explicitly and not
-> > --
-> > 2.17.1
-> >
+> > Regards,
+> > CK
+> > 
+> > > +- mediatek,gce-events: u32, the event number defined in
+> > > +  'dt-bindings/gce/mt8173-gce.h' or 'dt-binding/gce/mt8183-gce.h'.
+> > >  
+> > >  Some vaules of properties are defined in 'dt-bindings/gce/mt8173-gce.h'
+> > >  or 'dt-binding/gce/mt8183-gce.h'. Such as sub-system ids, thread priority, event ids.
+> > > @@ -57,8 +60,10 @@ Example for a client device:
+> > >  		compatible = "mediatek,mt8173-mmsys";
+> > >  		mboxes = <&gce 0 CMDQ_THR_PRIO_LOWEST 1>,
+> > >  			 <&gce 1 CMDQ_THR_PRIO_LOWEST 1>;
+> > > -		mutex-event-eof = <CMDQ_EVENT_MUTEX0_STREAM_EOF
+> > > -				CMDQ_EVENT_MUTEX1_STREAM_EOF>;
+> > > +		mediatek,gce-event-names = "rdma0_sof",
+> > > +					   "rsz0_sof";
+> > > +		mediatek,gce-events = <CMDQ_EVENT_MDP_RDMA0_SOF>,
+> > > +				      <CMDQ_EVENT_MDP_RSZ0_SOF>;
+> > >  		mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x3000 0x1000>,
+> > >  					  <&gce SUBSYS_1401XXXX 0x2000 0x100>;
+> > >  		...
+> > 
+> > 
+> 
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
