@@ -2,56 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9416B19748
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 06:00:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29A9D19788
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 10 May 2019 06:27:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=sd7nvbjlQRQ1PTvcJ7+wz0/v+sdWHeZ/NunIjfB0ClA=; b=CXN6176rriLbNv
-	/rDhh984vwb1X+6DxVJiAet6xbjolBOFaHPPkhU5gUhLVjrQzRspwwGlvDmmVFJ5bILpwWo8/PEbL
-	Ol4TTa5gpGOeUnU0V5Kjje1pcrs/gsKTYYr9QWjUgYq9gND1LaXRCklvQjvbB+3g8DkkEGCFM9OX/
-	+h/nnMXgcBjUhYQ8U8kc+FL1Lq/FteoosrcasbJgdyu4lOsaNi7xg6qvTFhG4URqVanOSG2EgQc68
-	TNCRWyjIB/4hORmbxU8SvS7ERvNP7r62i1Jdro/Y58Ux6Zz4mUzn/dcsevujgQcvW7o61N2GOYVel
-	jTJWP52caMKvPy1h+Kfg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4FAGhmoRpM+gmhrOzYhy112k4AeW9f6oG6SQSHSAK2Q=; b=B+EACPDX6TLjay
+	otL9fieqObkIFCpZHkxFwQ8fSAv+SKqa6acb37mGC0oceRIdSF7mrIJnFJLFQ7ZzlTKJhsbfEkJNv
+	G/lZwvnTQYtT8UQnGIMQT1Nbk8kJNLKnqKUTgvTzmHgiYXIZYe6XQIyP3UVsWbV6x/qIUD0/f3BB+
+	zc00MPBQUc8VfA0I3UC1EyDxcbCdHuj/eqTYwXJWfrTqI/BVr4VSkjIeVxCJOwOyr6AiTlkateGyP
+	XQnPga3x7H/SsyEjIxr6XM0B47/uzSjBDvBNdarBh46iVhKYM3kT0b7DsXOIXGUQ5LJKiAdFrwv9Q
+	FZXrYidJZGKrQIcPVQKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOwi7-00068S-Cq; Fri, 10 May 2019 04:00:39 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1hOx8E-0005TQ-IR; Fri, 10 May 2019 04:27:38 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOwi0-00067z-0h
- for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 04:00:33 +0000
-Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 449428E409AA2E2FDA63;
- Fri, 10 May 2019 12:00:25 +0800 (CST)
-Received: from localhost (10.177.31.96) by DGGEMS405-HUB.china.huawei.com
- (10.3.19.205) with Microsoft SMTP Server id 14.3.439.0; Fri, 10 May 2019
- 12:00:17 +0800
-From: YueHaibing <yuehaibing@huawei.com>
-To: <catalin.marinas@arm.com>, <will.deacon@arm.com>, <marc.zyngier@arm.com>, 
- <lokeshvutla@ti.com>, <tony@atomide.com>
-Subject: [PATCH] arm64: arch_k3: Fix kconfig dependency warning
-Date: Fri, 10 May 2019 11:52:55 +0800
-Message-ID: <20190510035255.27568-1-yuehaibing@huawei.com>
-X-Mailer: git-send-email 2.10.2.windows.1
+ id 1hOx87-0005SZ-Ly
+ for linux-arm-kernel@lists.infradead.org; Fri, 10 May 2019 04:27:33 +0000
+Received: by mail-qt1-x844.google.com with SMTP id d13so5156718qth.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 09 May 2019 21:27:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ngq08Wlyg2H31lwwSV/j8xQrFKwzvO2qP6ztkd7Nr28=;
+ b=fuMNIjVG7c7hl9TqmLZaCgk9uw8zCqNkHPHTQf2dgfrBbILw0WaZg9/92di/69XTYw
+ mEL0Bk2U3l/9dTL8S03K1TeKwNrvGPhaqPYYhh6U9R3UWp9e00qH5XiAYyvKTbK2nCU3
+ sS43C8EHGgEYjTPYiSnIPhJod4FG7Rk+TYhGI=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ngq08Wlyg2H31lwwSV/j8xQrFKwzvO2qP6ztkd7Nr28=;
+ b=ebDfBuGYVIP2GyHAvwGvByIWwGw55Qe/53pMVfUMnnkHIXnMSLP8ipE1FdblimJFIB
+ u4s2tb2AHlvVTVWA6vYDGSNscT897HyxQW8AZwknsfnBxz4R1GZqxZNXZIoGv9GFe95j
+ wvdqbPDAepidyEB9LO6FmiRRYTicKv4fnW4rofNcSiZAiXDjbswe1iH4bi+upUM4dqUx
+ BzBe2r+IWOCOfy8bc7NqWkJ3iOWdypxVzb5GdsNXAzeTnAcGPGO4WYE8kmfP8o5Ux2Hw
+ THoxqmWRxT/3dYZr74F1NXU+SrfhQlr6yr3V1XtQrOP56mzLw2D35pmHWZ4RnqSCpPfl
+ L6lA==
+X-Gm-Message-State: APjAAAX3uAzfwXVZVWLRIWtGQMA0d91I9I6VEbbeWbhbqlQyT6bzqa3T
+ 08JQ+6pvyOnbo1VStux/Ncf3CWwqY+pKD+/F6m3y0A==
+X-Google-Smtp-Source: APXvYqwwzIn/YJ/0P0Vb+0s8M37PUufsc0Gp9hafSnPJ9qzKi2oOspaUm7VkSvnkEjICaSYyxOJsDM038OFvfuU0Nho=
+X-Received: by 2002:a0c:d985:: with SMTP id y5mr7230641qvj.80.1557462448871;
+ Thu, 09 May 2019 21:27:28 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [10.177.31.96]
-X-CFilter-Loop: Reflected
+References: <20190507045433.542-1-hsinyi@chromium.org>
+ <CAL_Jsq+rGeFKAPVmPvv_Z+G=BppKUK-tEUphBajZVxFtbRBJvQ@mail.gmail.com>
+In-Reply-To: <CAL_Jsq+rGeFKAPVmPvv_Z+G=BppKUK-tEUphBajZVxFtbRBJvQ@mail.gmail.com>
+From: Hsin-Yi Wang <hsinyi@chromium.org>
+Date: Fri, 10 May 2019 12:27:02 +0800
+Message-ID: <CAJMQK-i-0RgdQEniqaKubdjF-dpd1JOCWy7DOPDfN33EqgL5iA@mail.gmail.com>
+Subject: Re: [PATCH] arm64: add support for rng-seed
+To: Rob Herring <robh+dt@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_210032_280432_0594CAC0 
-X-CRM114-Status: UNSURE (   7.82  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190509_212731_741973_D1366208 
+X-CRM114-Status: GOOD (  12.71  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,42 +88,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: YueHaibing <yuehaibing@huawei.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Architecture Mailman List <boot-architecture@lists.linaro.org>,
+ Michal Hocko <mhocko@suse.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Mike Rapoport <rppt@linux.ibm.com>, James Morse <james.morse@arm.com>,
+ Andrew Murray <andrew.murray@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Stephen Boyd <swboyd@chromium.org>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix Kbuild warning when SOC_TI is not set
+On Wed, May 8, 2019 at 3:47 AM Rob Herring <robh+dt@kernel.org> wrote:
 
-WARNING: unmet direct dependencies detected for TI_SCI_INTA_IRQCHIP
-  Depends on [n]: TI_SCI_PROTOCOL [=y] && SOC_TI [=n]
-  Selected by [y]:
-  - ARCH_K3 [=y]
+> >  Documentation/devicetree/bindings/chosen.txt | 14 +++++++++
+>
+> Actually, this file has been converted to json-schema and lives
+> here[1]. I need to remove this one (or leave it with a reference to
+> the new one).
+>
 
-Fixes: 009669e74813 ("arm64: arch_k3: Enable interrupt controller drivers")
-Signed-off-by: YueHaibing <yuehaibing@huawei.com>
----
- arch/arm64/Kconfig.platforms | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/arch/arm64/Kconfig.platforms b/arch/arm64/Kconfig.platforms
-index 42eca65..9d1292f 100644
---- a/arch/arm64/Kconfig.platforms
-+++ b/arch/arm64/Kconfig.platforms
-@@ -88,6 +88,7 @@ config ARCH_K3
- 	bool "Texas Instruments Inc. K3 multicore SoC architecture"
- 	select PM_GENERIC_DOMAINS if PM
- 	select MAILBOX
-+	select SOC_TI
- 	select TI_MESSAGE_MANAGER
- 	select TI_SCI_PROTOCOL
- 	select TI_SCI_INTR_IRQCHIP
--- 
-2.7.4
-
-
+Hi Rob,
+I can't find where the new document is. Can you help point it again? Thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
