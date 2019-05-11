@@ -2,81 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8ABD1A623
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 May 2019 03:24:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 542181A64C
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 May 2019 04:31:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=04PPbcFizd5yuMOeXeRi/zj6QWP3G8757MPMGJyJ2Zk=; b=XTjmZfX/soPY+O
-	2k7AYlgSaqJ0R8v7rt89kI5R7nPc2Eh9rdj4zckZSZSSWTVxzueOJxWMUCS8p3OwrDBlQ4EiaMg57
-	LEVf1XWi1giwgDkEvkMDOkI6VahQKECspcpfIoVXIGV5+eovvfRuQVrAIhdyTTYpMyqUtM+4IsCBW
-	Lgr6Pukm/j0RwVoEvaXPcCX29UYWQonme224d4P51l6FYOQrgzqSwfLh+J/TIZxAXPnUECo0BDHtE
-	jTYTpN3VOW7phXrgoqjhZBADqEG/Cm0sA6QM5WS9jgLW+HdA7PhnXKESWGXFqsF5jkjhygbdvA3Fy
-	/80KGjxJ+kjVxA3pZFcw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TKUweaMtKa7lvqoF0NY5a+eN0RqzgPQuzR6Qev+eAbU=; b=RwEUqGxDHsLBnH
+	sUpTPtV31vpm+d8WQ7WbotfR44cJWjCuKAi2eOQQQHgdwdpkNuxZTY2bHaAnHIE6/Btq8/srlWYCG
+	sInYoW4QcdKG3fYLe7u0fPYUZR7E2sBQ2d7UDf55MQ++Ij/EP4F9TnNRmz8xo1QQoVhB/HFtPBwKC
+	ogINiCi7zXlehxfajI6QP6xqYp5/l5yG7QFIvbaiqbLnYjEYW9JILNSoOOVL9U/kDsZog7nz86DvA
+	BOg8ceLy5Tn9WHhuQfYdDz+QWtYWsenFYZK53oWakHbpeQYm34/mP8IIRCXF0B1h/GThvGdS2x6qc
+	NVpba+30pg/nNq0pvl4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPGjy-0002J4-GL; Sat, 11 May 2019 01:23:54 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1hPHnO-0008C0-9t; Sat, 11 May 2019 02:31:30 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPGjr-0002IM-QC
- for linux-arm-kernel@lists.infradead.org; Sat, 11 May 2019 01:23:49 +0000
-Received: by mail-ed1-x542.google.com with SMTP id p26so7590289edr.2
+ id 1hPHnG-0008Ao-2S
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 May 2019 02:31:24 +0000
+Received: by mail-qt1-x843.google.com with SMTP id o7so8896735qtp.4
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 May 2019 18:23:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=8Sy6IJVq4VJSGNsCncCOevfEMVkxJ4DdVxf3Fz7dO1o=;
- b=rnMpbkIZV4iQ4uC1XfVbzikGIDK3Y+X7xhPA0psUZYD05UE/Dqd5RuIMhOxiYAFKqn
- uKs3xy3l40Rp4PJym3z08kOPIuHzjGzk2tezFv6qMlcYGEncR0+Y7n0whFx+kDsCB6Tb
- Z49SYnDW8VehUpLEXctnUsWYHTGT++65Lp23fGWAICCifApmLlteKtlNTK2oFp3mQ6lH
- ikukBB6HUN+zaBVSvGe1nLUw/HbhQ8ruWgpsy/T66ozOwjE5ykYJtuGBAtvUAPDllIxf
- /gCI9y5LGU9tCSG/+V5w754Nbb8UPqwBMl1/pqEk1U0JYG6UXtn9r/cJGpKeIlOC2zyt
- q7HQ==
+ Fri, 10 May 2019 19:31:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=QkHid6lisLXvpmq0JMNlVb1recKQukJ7PuauuXWUQBw=;
+ b=CFYwUdlb6kDt1NhEEjrC0A0nuRHWn/prCx1A1kIqu1GhRZfmdY8bgahc02/X19llbd
+ fvxssMqrQQ6Z/4ELAilm0gKIZ0OkiTljAKrePdvGDo8GmzBW4bSQ+Pk9F/xHwraaTGug
+ hP27VQvggJlYqYGyMP2FvkeRHxg3gYVJdXK60=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=8Sy6IJVq4VJSGNsCncCOevfEMVkxJ4DdVxf3Fz7dO1o=;
- b=hDlTrQzhjPetErs8Ce71NJMLERufq8OoCVHKlB09WgWLF5a4ljDIB22UbpbeGcdc+F
- BtzcZGiXRe8dqX8953Y6gGezVBBKUNS78FvlC8OpqNYav8T/BWKJFG62s+hmcBr07D/L
- S3VRlRGwR/h7/oPtHWeCz62PVN6BwY7jESD9hoMlX/1KkFjn3vNmk+UduzQKK+KHHM/3
- 6xqk9IJDfQ0el77cHt37D83VdPqU6Bdj0BfkgFTxq6E/JRZQxp2lmB0q5zgrwbBLCC8f
- mjrPbr44e5opsv0c/SVyKWnPkliY/QIju+iX0iQ/DMGgTjBVt6xFK7sl4XJqSr1fW6Uu
- mCxQ==
-X-Gm-Message-State: APjAAAXiYJ2fnnMTG3K1Z4NCU7/z0hZkge0t3r6vqz3/qj8cVBRyEVFJ
- SU3Y++ewDqIJCsk12wmJJ48=
-X-Google-Smtp-Source: APXvYqx0DjxzxMiJASMnY3yXqVa1UNYgM9oYsPoKMw+8rRXJ93TwPZ8R959C69MGa/Os41aCsPmcww==
-X-Received: by 2002:a50:b3a4:: with SMTP id s33mr14924192edd.112.1557537824828; 
- Fri, 10 May 2019 18:23:44 -0700 (PDT)
-Received: from localhost.localdomain ([2a01:4f9:2b:2b84::2])
- by smtp.gmail.com with ESMTPSA id r3sm941779ejb.88.2019.05.10.18.23.43
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 10 May 2019 18:23:44 -0700 (PDT)
-From: Nathan Chancellor <natechancellor@gmail.com>
-To: Amelie Delaunay <amelie.delaunay@st.com>, Lee Jones <lee.jones@linaro.org>
-Subject: [PATCH] mfd: stmfx: Fix macro definition spelling
-Date: Fri, 10 May 2019 18:23:01 -0700
-Message-Id: <20190511012301.2661-1-natechancellor@gmail.com>
-X-Mailer: git-send-email 2.21.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=QkHid6lisLXvpmq0JMNlVb1recKQukJ7PuauuXWUQBw=;
+ b=gEKg8KqjsGTdWnu/hcCekKxIpEXg/ibdhKD5m06fvSSrTkZKCGExGBxK/Y0TEjQnlH
+ O5CiELBL+gmy52MGkNV1Q/2fmFdxkk+y2DZHHx1ctxs8nM4noeXBb0zZ2ABFnldslhjV
+ Mzgwm1DnM/mDU4RgA4AhR2N+zo1JFzOO8Ry63npmrysJ4t58or1brsyRQv2jSI8o9lrA
+ 44mqvT50w/NjNvqMhVRbPrsbJblE8t25ZSYKTpdf+0JXHfqfjhRLI79VCeSeXAF4777y
+ qTmu7LwxFGaxDOXo4BtGANOZi0nIBbC1ph8FduJoodioV8twdmDRDn5T9Psu9vjssjIQ
+ 5V7A==
+X-Gm-Message-State: APjAAAVxamdfW7jHswlR829wRYzAChfu/GSx8sZJlszu+yI7x0WlZ0jO
+ 9ntaih1ra6dYEo9q+7tIPEGYjO2WoFDuwRfy2RGGgQ==
+X-Google-Smtp-Source: APXvYqyW5OpnvPwOyXp+1b/92lREfPpRtf9W5zCWsq24yemetlTdNNphRPH6NE7SW8/mCSyxiaqF+3PgsW4V3IWGCTA=
+X-Received: by 2002:a0c:ee28:: with SMTP id l8mr11862487qvs.67.1557541879585; 
+ Fri, 10 May 2019 19:31:19 -0700 (PDT)
 MIME-Version: 1.0
-X-Patchwork-Bot: notify
+References: <1556793795-25204-1-git-send-email-michael.kao@mediatek.com>
+ <1556793795-25204-8-git-send-email-michael.kao@mediatek.com>
+In-Reply-To: <1556793795-25204-8-git-send-email-michael.kao@mediatek.com>
+From: Nicolas Boichat <drinkcat@chromium.org>
+Date: Sat, 11 May 2019 11:31:08 +0900
+Message-ID: <CANMq1KBna0V2X3_CNQrcH==WVLs7oY=GvFGzEbWS91-oZCLKTQ@mail.gmail.com>
+Subject: Re: [PATCH 7/8] thermal: mediatek: add another get_temp ops for
+ thermal sensors
+To: "michael.kao" <michael.kao@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_182347_872440_C34AE472 
-X-CRM114-Status: GOOD (  10.79  )
+X-CRM114-CacheID: sfid-20190510_193122_149621_97FEDFBD 
+X-CRM114-Status: GOOD (  23.79  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (natechancellor[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -85,6 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,46 +89,192 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
- clang-built-linux@googlegroups.com,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Nathan Chancellor <natechancellor@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, James Liao <jamesjj.liao@mediatek.com>,
+ devicetree@vger.kernel.org, louis.yu@mediatek.com, dawei.chien@mediatek.com,
+ linux-pm@vger.kernel.org, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ roger.lu@mediatek.com, lkml <linux-kernel@vger.kernel.org>,
+ Eduardo Valentin <edubezval@gmail.com>, Fan Chen <fan.chen@mediatek.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Hsin-Yi Wang <hsinyi@chromium.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Zhang Rui <rui.zhang@intel.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Clang warns:
+On Thu, May 2, 2019 at 7:45 PM michael.kao <michael.kao@mediatek.com> wrote:
+>
+> From: Michael Kao <michael.kao@mediatek.com>
+>
+> Provide thermal zone to read thermal sensor
+> in the SoC. We can read all the thermal sensors
+> value in the SoC by the node /sys/class/thermal/
+>
+> Signed-off-by: Michael Kao <michael.kao@mediatek.com>
+> ---
+>  drivers/thermal/mtk_thermal.c | 68 ++++++++++++++++++++++++++++++++++++++-----
+>  1 file changed, 60 insertions(+), 8 deletions(-)
+>
+> diff --git a/drivers/thermal/mtk_thermal.c b/drivers/thermal/mtk_thermal.c
+> index cb41e46..d5c78b0 100644
+> --- a/drivers/thermal/mtk_thermal.c
+> +++ b/drivers/thermal/mtk_thermal.c
+> @@ -230,6 +230,11 @@ enum {
+>
+>  struct mtk_thermal;
+>
+> +struct mtk_thermal_zone {
+> +       struct mtk_thermal *mt;
+> +       int id;
+> +};
+> +
+>  struct thermal_bank_cfg {
+>         unsigned int num_sensors;
+>         const int *sensors;
+> @@ -612,7 +617,7 @@ static int mtk_thermal_bank_temperature(struct mtk_thermal_bank *bank)
+>                  * not immediately shut down.
+>                  */
+>                 if (temp > 200000)
+> -                       temp = 0;
+> +                       temp = -EACCES;
 
-In file included from drivers/mfd/stmfx.c:13:
-include/linux/mfd/stmfx.h:7:9: warning: 'MFD_STMFX_H' is used as a
-header guard here, followed by #define of a different macro
-[-Wheader-guard]
+EACCES/permission denied doesn't really seem to be the right error
+code here. Maybe EAGAIN?
 
-Fixes: 06252ade9156 ("mfd: Add ST Multi-Function eXpander (STMFX) core driver")
-Link: https://github.com/ClangBuiltLinux/linux/issues/475
-Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
----
- include/linux/mfd/stmfx.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+>
+>                 if (temp > max)
+>                         max = temp;
+> @@ -623,7 +628,8 @@ static int mtk_thermal_bank_temperature(struct mtk_thermal_bank *bank)
+>
+>  static int mtk_read_temp(void *data, int *temperature)
+>  {
+> -       struct mtk_thermal *mt = data;
+> +       struct mtk_thermal_zone *tz = data;
+> +       struct mtk_thermal *mt = tz->mt;
+>         int i;
+>         int tempmax = INT_MIN;
+>
+> @@ -636,16 +642,48 @@ static int mtk_read_temp(void *data, int *temperature)
+>
+>                 mtk_thermal_put_bank(bank);
+>         }
+> -
 
-diff --git a/include/linux/mfd/stmfx.h b/include/linux/mfd/stmfx.h
-index d890595b89b6..3c67983678ec 100644
---- a/include/linux/mfd/stmfx.h
-+++ b/include/linux/mfd/stmfx.h
-@@ -5,7 +5,7 @@
-  */
- 
- #ifndef MFD_STMFX_H
--#define MFX_STMFX_H
-+#define MFD_STMFX_H
- 
- #include <linux/regmap.h>
- 
--- 
-2.21.0
+I'd drop that change.
 
+>         *temperature = tempmax;
+>
+>         return 0;
+>  }
+>
+> +static int mtk_read_sensor_temp(void *data, int *temperature)
+> +{
+> +       struct mtk_thermal_zone *tz = data;
+> +       struct mtk_thermal *mt = tz->mt;
+> +       const struct mtk_thermal_data *conf = mt->conf;
+> +       int id = tz->id - 1;
+> +       int temp = INT_MIN;
+
+No need to initialize temp.
+
+> +       u32 raw;
+> +
+> +       if (id < 0)
+> +               return  -EACCES;
+
+EINVAL?
+
+> +
+> +       raw = readl(mt->thermal_base + conf->msr[id]);
+> +
+> +       temp = raw_to_mcelsius(mt, id, raw);
+> +
+> +       /*
+> +        * The first read of a sensor often contains very high bogus
+> +        * temperature value. Filter these out so that the system does
+> +        * not immediately shut down.
+> +        */
+> +
+
+nit: Drop this blank line
+
+> +       if (temp > 200000)
+> +               return  -EACCES;
+
+Again, EAGAIN, maybe?
+
+> +
+> +       *temperature = temp;
+> +       return 0;
+> +}
+> +
+>  static const struct thermal_zone_of_device_ops mtk_thermal_ops = {
+>         .get_temp = mtk_read_temp,
+>  };
+>
+> +static const struct thermal_zone_of_device_ops mtk_thermal_sensor_ops = {
+> +       .get_temp = mtk_read_sensor_temp,
+> +};
+> +
+>  static void mtk_thermal_init_bank(struct mtk_thermal *mt, int num,
+>                                   u32 apmixed_phys_base, u32 auxadc_phys_base,
+>                                   int ctrl_id)
+> @@ -878,6 +916,7 @@ static int mtk_thermal_probe(struct platform_device *pdev)
+>         struct resource *res;
+>         u64 auxadc_phys_base, apmixed_phys_base;
+>         struct thermal_zone_device *tzdev;
+> +       struct mtk_thermal_zone *tz;
+>
+>         mt = devm_kzalloc(&pdev->dev, sizeof(*mt), GFP_KERNEL);
+>         if (!mt)
+> @@ -959,11 +998,24 @@ static int mtk_thermal_probe(struct platform_device *pdev)
+>
+>         platform_set_drvdata(pdev, mt);
+>
+> -       tzdev = devm_thermal_zone_of_sensor_register(&pdev->dev, 0, mt,
+> -                                                    &mtk_thermal_ops);
+> -       if (IS_ERR(tzdev)) {
+> -               ret = PTR_ERR(tzdev);
+> -               goto err_disable_clk_peri_therm;
+> +       for (i = 0; i < mt->conf->num_sensors + 1; i++) {
+> +               tz = kmalloc(sizeof(*tz), GFP_KERNEL);
+
+Are we leaking this pointer? Should this be devm_kmalloc?
+
+> +               if (!tz)
+> +                       return -ENOMEM;
+> +
+> +               tz->mt = mt;
+> +               tz->id = i;
+> +
+> +               tzdev = devm_thermal_zone_of_sensor_register(&pdev->dev, i,
+> +                               tz, (i == 0) ?
+> +                               &mtk_thermal_ops : &mtk_thermal_sensor_ops);
+> +
+> +               if (IS_ERR(tzdev)) {
+> +                       if (IS_ERR(tzdev) != -EACCES) {
+
+Why would EACCES ever happen? AFAICT
+devm_thermal_zone_of_sensor_register does not actually try to read the
+temperature value? Or does the error come from somewhere else?
+
+> +                               ret = PTR_ERR(tzdev);
+> +                               goto err_disable_clk_peri_therm;
+> +                       }
+> +               }
+>         }
+>
+>         return 0;
+> --
+> 1.9.1
+>
+>
+> _______________________________________________
+> Linux-mediatek mailing list
+> Linux-mediatek@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-mediatek
 
 _______________________________________________
 linux-arm-kernel mailing list
