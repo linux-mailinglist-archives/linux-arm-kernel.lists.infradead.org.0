@@ -2,84 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3339F1A6B5
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 May 2019 07:16:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 711CF1A712
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 May 2019 09:33:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4KADKIUhmven50huwwY6Oo6y10Oj948ahaSx7Lgu304=; b=jBmhSEc2MBmRlo
-	npfKBEveutqtKXH/bOPYPKUYdyf+HyZkaDAj9wGoP3c/UYbNCUHaZsA7t7zubhTavsihwx8Qs/Tsk
-	ptey2CA9J2Fzrke46XEXCDBpHGphOE7McGZaW7O4d/q6WsDBl5Q04D7CjXdqWUDbono4hdN/VsOvD
-	i2kyCChLPpiIhfmQ07alsJ4OoJxdRLI3Y+ogeoV7opv1Ty0SV+e3J8PyutpidCPnOWQvoH9bI5BB4
-	h+CZYPY82b7Fj4GjWrENo/LQxVC8MkJMlXQ2om6QunXDsB7ajm0rHalDX9Qv2SEMzEKL7SOxvYRNc
-	3QCiKGKDyF26wMIOVz2A==;
+	List-Owner; bh=06ds3GiqgPigK8RJj5CvIuu6FSwWwJMxml4QUBTfvYY=; b=qhiXcA99Nc2Bdr
+	LDyYaHkSIJ9gxJHB1MPLtzKRa2gMZ7tvv1XYU6aOT5563zBsnkt3kybWRJvhJwG5unjwsub2KR96l
+	2HAYvdl8VM3vpwt60MrExU00k9ARZcft64lXuEBC1I4U/yEhndyadOp4rHOIgAbDlvvBBKAB/LZMC
+	Ct6m/S2+faYK/3Ihnm9yLkxMP3OuY+FPNAPY7mk1a/V2Rbxn+jtdgJsEkixzJObUv3ikSg1Le34cG
+	SvGW6uRfkBABGcjuYYfHXhk3d80ods1KHnR+x2mfFjfiGZp8Ap68eGUfdjpSPKjBIkiAV+A3VpMjU
+	bhuXPSOQzS7wk4jz+zTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPKNN-0005vq-ET; Sat, 11 May 2019 05:16:49 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1hPMVA-0005pR-RZ; Sat, 11 May 2019 07:33:00 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPKNF-0005v3-62
- for linux-arm-kernel@lists.infradead.org; Sat, 11 May 2019 05:16:42 +0000
-Received: by mail-lf1-x143.google.com with SMTP id n134so5525013lfn.11
+ id 1hPMV0-0005p1-AY
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 May 2019 07:32:51 +0000
+Received: by mail-pg1-x541.google.com with SMTP id t187so4092668pgb.13
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 10 May 2019 22:16:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=RubaYD8lmKjs7mOc/w46zB7MTkNoz0PuGk8avcCv1n8=;
- b=KnpNi/ucLh6IWYYptTfkL/B8kBD2j4ymE2Yi5Zbg9F8XKW89fK0cdBydRylStUBQ6F
- eT0qJceyDrRupFQj6FZWqgAUOg977uKXNdeLKNbfXrBfw2BbAJR3hXX4VcbxcsD/482k
- W5tB8xSluxW3w2q2ZVxYLI/XHcbj2aYKEsP9DPOE6ip/2RWzyKVxLcdTFB0gk6Y4FLT8
- O7mIyG7miRN40jOk5dyuN9quiQP6sPGEeAPs4/h5gHG9B8q/gz1x+vH0438pEkLrSQCr
- iMc/2OeX5AqWTYaAtM+8WxliqQn2Q46xIXIoMUfCVNbp+7CriHhh3x7QWmA4946Bya1d
- rUuw==
+ Sat, 11 May 2019 00:32:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=+ksfCNh+4KH9uw/jweW2n7UtifV0NBPC440whlqdjmk=;
+ b=yPwuS4OrCRmR/SZ4XA+yJynBW2t33nTOHgfHNOgVptqFSAsT+kSCeDnmWOAYYbjGA9
+ O+qQW4zMu5aB2V5ZkOeUsLtQNYNSSoWrYTpzneGRymnLhV2oXAqoGY8npWNSALxl2cRF
+ QUGhoWTQXV5/LzAzIjwgFc79XGscAIJ7sHlkBcD6wksHiZqWG3ljnIm1mxvYJb4at1xG
+ LoIbf3j1WAfGvzyiAHrKt3W2vI2kukGfCR4dJHb9RcRH6eqdMqxVStJOekPVtMV+EmI+
+ PT6GYEsr9hw7OI1GLVn/mLLma0aX6Imw8f3HXDwHvSn/bv/H+/kD5w/h5CBMB0nAxj8n
+ a3xQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=RubaYD8lmKjs7mOc/w46zB7MTkNoz0PuGk8avcCv1n8=;
- b=rd96pIKTpbhKciLsBKtrOcihsz4WvRWO4LUuJKRN5xdXrMPmcIbXA4PMYr08uSGc6B
- QG56IgfHoX6leThI7D5aaWsy5wF8IrflNIEwdgTAHGiLRy1b8zwikNpD/cW2RVKjiq80
- s+If/G+CK2CjeOvCpL1ab7GDqOmCYIKavwVL2Dz+JMGgc00jjo7q8D16k/iLdwdAArWq
- FrAd8jzXVexMSAGgmbEFwCHYrC9g/+ZzPDURLKolDqaQij+xiCupzufC28WxAIl6Xlx6
- ozrnDJkjTICjG8tNzNmHR7Cyn2ge+AxwikJ17cRrwPVpoMwtqUFrKdiw+P7NCMJCbNu4
- jyAA==
-X-Gm-Message-State: APjAAAVo8Gqgoa7o4YtlgEiNoZfDgU/5dfl4ztbfR4REByJuA131+Y52
- K8yuI2DHOGYejiELggMyLgsKeGW2kIPWMq7Ec1E=
-X-Google-Smtp-Source: APXvYqzINuOJuvge+HOzITNLiJ0az8yid3Ry6I90eMiHeFr1Pgol9IDFg9QvWgBzNQC5mPuWXYIYhwXXmRz3yvdxBe0=
-X-Received: by 2002:a19:ca0e:: with SMTP id a14mr7824921lfg.3.1557551796422;
- Fri, 10 May 2019 22:16:36 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=+ksfCNh+4KH9uw/jweW2n7UtifV0NBPC440whlqdjmk=;
+ b=A5e9dqGUrdAdn0trid+5aTLx57k5hXeJMfuERXHxiSuvUOZlAyJk5IK09l2PsGSRte
+ +8tfUwaf+9jTu2xSjX6g4dHTEjzwmDrNXSMmGfVR5Da061D4z4P8jSSMjogNmsCIcw4I
+ jiLu+j329UPmmvZU2lMvoJD6rC6eCsZkf1SR9uvHEj3VMzsTmg+xc26m412Y2fgcooru
+ haqW5sg42oW9CajyDYgWA2g5HfW2R3r4UNaH6vKOhprXBLfnomshi84gS3T8VdG6Bcf7
+ bpdD+fmKJRq5TutCsAIMq56/ZMemM/HlN00KWhFEmsI1Hlosg6PJywmbuF6Zw2b1UcTt
+ +fDg==
+X-Gm-Message-State: APjAAAU1xvoVVOi5viTo+b7TURIibhT8MevYuojDAYr27cz+Mxhimfhh
+ 4G2IZk8/2dGEMRNez5tfzrSoEof68/xewSuG
+X-Google-Smtp-Source: APXvYqxCM/mSGf1Lq9R+GZu4xviXjinW1khK2m/EVD/8a2VUj0IxiuFO3E/nZFmOZRwK1K4qF1NkYQ==
+X-Received: by 2002:a63:9d83:: with SMTP id
+ i125mr14164953pgd.229.1557559968195; 
+ Sat, 11 May 2019 00:32:48 -0700 (PDT)
+Received: from leoy-ThinkPad-X240s (li253-4.members.linode.com.
+ [173.255.243.4])
+ by smtp.gmail.com with ESMTPSA id q17sm21668798pfi.185.2019.05.11.00.32.39
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Sat, 11 May 2019 00:32:47 -0700 (PDT)
+Date: Sat, 11 May 2019 15:32:29 +0800
+From: Leo Yan <leo.yan@linaro.org>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+Subject: Re: [PATCH 5/5] docs: coresight: Document snapshot mode
+Message-ID: <20190511073229.GA18064@leoy-ThinkPad-X240s>
+References: <20190501175052.29667-1-mathieu.poirier@linaro.org>
+ <20190501175052.29667-6-mathieu.poirier@linaro.org>
 MIME-Version: 1.0
-References: <5cd642e1.1c69fb81.4ee83.327d@mx.google.com>
-In-Reply-To: <5cd642e1.1c69fb81.4ee83.327d@mx.google.com>
-From: Souptick Joarder <jrdr.linux@gmail.com>
-Date: Sat, 11 May 2019 10:46:24 +0530
-Message-ID: <CAFqt6zZLxvXrT4Oky6F3oWa2g8LWhowUL6tz3H8XeBeDnO0y9w@mail.gmail.com>
-Subject: Re: [PATCH] mm: Remove duplicate headers
-To: Sabyasachi Gupta <sabyasachi.linux@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20190501175052.29667-6-mathieu.poirier@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_221641_256872_3FB7796B 
-X-CRM114-Status: GOOD (  12.54  )
+X-CRM114-CacheID: sfid-20190511_003250_428045_F8A77A3E 
+X-CRM114-Status: GOOD (  14.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jrdr.linux[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -91,52 +99,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Rothwell <sfr@canb.auug.org.au>,
- Russell King - ARM Linux <linux@armlinux.org.uk>, rostedt@goodmis.org,
- linux-kernel@vger.kernel.org, rppt@linux.vnet.ibm.com,
- Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org, changbin.du@gmail.com
+Cc: corbet@lwn.net, alexander.shishkin@linux.intel.com,
+ coresight@lists.linaro.org, suzuki.poulose@arm.com, acme@kernel.org,
+ peterz@infradead.org, mingo@redhat.com, mike.leach@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, May 11, 2019 at 9:04 AM Sabyasachi Gupta
-<sabyasachi.linux@gmail.com> wrote:
->
-> Remove asm/sections.h and asm/fixmap.h which are included more than once
->
-> Signed-off-by: Sabyasachi Gupta <sabyasachi.linux@gmail.com>
+On Wed, May 01, 2019 at 11:50:52AM -0600, Mathieu Poirier wrote:
 
-Acked-by: Souptick Joarder <jrdr.linux@gmail.com>
+[...]
 
-> ---
->  arch/arm/mm/mmu.c | 2 --
->  1 file changed, 2 deletions(-)
->
-> diff --git a/arch/arm/mm/mmu.c b/arch/arm/mm/mmu.c
-> index fcded2c..29035f4 100644
-> --- a/arch/arm/mm/mmu.c
-> +++ b/arch/arm/mm/mmu.c
-> @@ -23,7 +23,6 @@
->  #include <asm/sections.h>
->  #include <asm/cachetype.h>
->  #include <asm/fixmap.h>
-> -#include <asm/sections.h>
->  #include <asm/setup.h>
->  #include <asm/smp_plat.h>
->  #include <asm/tlb.h>
-> @@ -36,7 +35,6 @@
->  #include <asm/mach/arch.h>
->  #include <asm/mach/map.h>
->  #include <asm/mach/pci.h>
-> -#include <asm/fixmap.h>
->
->  #include "fault.h"
->  #include "mm.h"
-> --
-> 2.7.4
->
+> +2.2) Snapshot mode:
+> +
+> +Using perf's built-in snapshot mode with CoreSight tracers is supported - to
+> +do so the '-S' command line option needs to be specified.  Since current sink
+> +devices are used in double-buffer mode when operated from the perf interface,
+> +the size of the perf ring buffer needs to be adjusted to match the size of the
+> +buffer used by the CoreSight sinks.  From the perf command line it is possible
+> +to specify the number of pages to use for a session using the '-m,X' option,
+> +where X is the amount of pages.
+> +
+> +The system memory buffer used by ETR devices is automatically adjusted
+> +to match the size of the perf ring buffer and as such does not need to be
+> +modified on the perf command line.  For ETB and ETF devices the perf ring
+> +buffer size need to be adjusted to match the size of the internal buffer.
+> +
+> +The following examples assume a system page size of 4096 byte:
+> +
+> +	# cat /sys/bus/coresight/devices/20010000.etb/mgmt/rdp
+> +	0x2000
+> +	# perf record -e cs_etm/@20010000.etf/ -S -m,8 --per-thread $APP
+
+In this case it shows the usage for etb, thus should:
+s/20010000.etf/20010000.etb/
+
+BTW, the user needs to convert the rdp to byte size with multiplying 4,
+it's good to explain for this in the doc or give related info in the
+driver warning log.
+
+Thanks,
+Leo Yan
+
+> +	# cat /sys/bus/coresight/devices/20010000.etf/buffer_size
+> +	0x10000
+> +	# perf record -e cs_etm/@20010000.etf/ -S -m,16 --per-thread $APP
+> +
+> +	# perf record -e cs_etm/@20070000.etr/ -S --per-thread $APP
+> +
+> +Once an application is launched trace snapshot are collected by sending the
+> +USR2 message to the process being monitored:
+> +
+> +	# perf record -e cs_etm/@20070000.etr/ -S --per-thread $APP &
+> +	[1] 14808
+> +	# kill -USR2 14808
+> +	...
+> +	...
+> +	# kill -USR2 14808
+> +	...
+> +	...
+> +	# kill 14808
+
+> +
+>  
+>  How to use the STM module
+>  -------------------------
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
