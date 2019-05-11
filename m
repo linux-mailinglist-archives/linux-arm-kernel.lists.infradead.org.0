@@ -2,65 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 848711A8E7
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 May 2019 19:48:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 414F21A8FD
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 May 2019 20:12:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Tlmee8iELJbV0jOLLUzqoBLpI0tdylW2zagp8yhUfmQ=; b=Dk/UufoMh9laalqejtIzvhxG6
-	VAT7J3O2ixyy6KBsZS6RQ4sduPP1kb9BvXOVZ/Pp8qippo2k1FXishjOtRc/g8nWvZq6DflNO8J3N
-	nhvXbmvGU+1JdvttS/X82zAljJHPFMkkFQxNjMOPVX+07QhFn4VImO7BtaUYZ62f22LvxzX8izOdY
-	llhyUGVg7jDTz5ERbOB35mVUb1eCxRWTvPQJNfyCcP/+ahZ+wIA9veWfYhEJ80uwhUUovDfb+24kJ
-	BrS1jAAvPWvfBEcYLfSVwRG1iO+67heaRrKJ9ysK0VTOjrEhPT3JUYoC5CkfbR+1CBg7870ki5CoA
-	vtoAos4ZA==;
+	 bh=pW/t48l2lcvvxHPVY2QkoxWEIIHnT0n+DKIROnyHFOc=; b=pQfWhI2pnNrsh7vTgPoxZEcR0
+	zyofiEuJsFqq8+ojo5lfiaytIAkP6g6AZz8Rklcetr8IDjU5/CvKPjUH1AIrM/FZ/ULyY8o16KvDu
+	q/4IeFPqVMYVUW55NYWfZIhAX2efv202Rs9HbxniFC6CicGe4SR0UQQpbJ7Q6yDwQdZ87p5gzGV+H
+	UQQ4IY1Dim2EsuFJ/kDN1USzF1Z0N+xN0vJEjf4Gm0D/+XLsH/fC7Spo4W2k1sKg7bLeRtlzcl6MW
+	KyKMGVx/v/iLZ5XHTEUmfYRozRPtJJUeEr97OQMGnVBcSd3kIiqsRb4rckb/0TzizLDbx8TIfuFKS
+	IQnqUCd5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPW79-0002zf-8P; Sat, 11 May 2019 17:48:51 +0000
-Received: from node.akkea.ca ([192.155.83.177])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPW72-0002yu-0D
- for linux-arm-kernel@lists.infradead.org; Sat, 11 May 2019 17:48:45 +0000
-Received: by node.akkea.ca (Postfix, from userid 33)
- id AC2D44E204D; Sat, 11 May 2019 17:48:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=akkea.ca; s=mail;
- t=1557596922; bh=lJqKVF9Utmeexu4/9PvbN0VcjTxvy2f//T2aaSg+rQk=;
- h=To:Subject:Date:From:Cc:In-Reply-To:References;
- b=mqU4v4a7n3qhR1GBajJI64EU2VrEK899V7D8wNt+0UF7FUr+tRSioFeo7WwfF/aev
- zX/TozE2AkN+VikUSexxn9QbObQPov88Rxb4wfHTAhBv6xKpn8gKrN8tmD3gg5aUlU
- FBdw4uNcr7yuXYMBpet3bm+l3CxUrLtao2L3Md8c=
-To: Fabio Estevam <festevam@gmail.com>
-Subject: Re: [PATCH v8 1/3] arm64: dts: fsl: librem5: Add a device tree for
- the Librem5 devkit
-X-PHP-Originating-Script: 1000:rcube.php
+	id 1hPWTs-0002Rq-AW; Sat, 11 May 2019 18:12:20 +0000
+Received: from mutluit.com ([82.211.8.197])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hPWTk-0002RM-Sg
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 May 2019 18:12:15 +0000
+Received: from [127.0.0.1] (s2.mutluit.com [82.211.8.197]:40136)
+ by mutluit.com (s2.mutluit.com [82.211.8.197]:50025) with ESMTP ([XMail 1.27
+ ESMTP Server])
+ id <S16FACAA> for <linux-arm-kernel@lists.infradead.org> from <um@mutluit.com>;
+ Sat, 11 May 2019 14:12:07 -0400
+Subject: Re: [RFC PATCH] drivers: ata: ahci_sunxi: Increased SATA/AHCI DMA
+ TX/RX FIFOs
+To: Stefan Monnier <monnier@iro.umontreal.ca>, linux-ide@vger.kernel.org
+References: <20190510192550.17458-1-um@mutluit.com>
+ <jwvk1ex6rvb.fsf-monnier+gmane.comp.hardware.netbook.arm.sunxi@gnu.org>
+From: "U.Mutlu" <um@mutluit.com>
+Organization: mutluit.com
+Message-ID: <5CD71077.1020100@mutluit.com>
+Date: Sat, 11 May 2019 20:12:07 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:40.0) Gecko/20100101
+ Firefox/40.0 SeaMonkey/2.37a1
 MIME-Version: 1.0
-Date: Sat, 11 May 2019 10:48:42 -0700
-From: Angus Ainslie <angus@akkea.ca>
-In-Reply-To: <CAOMZO5APMf+iuJuqXCrMNX0Ud73iANXvEs+Y59iH+g6tuMX++Q@mail.gmail.com>
-References: <20190501225719.3257-1-angus@akkea.ca>
- <20190501225719.3257-2-angus@akkea.ca>
- <CAOMZO5APMf+iuJuqXCrMNX0Ud73iANXvEs+Y59iH+g6tuMX++Q@mail.gmail.com>
-Message-ID: <592c6d80582d0571bc49cfaa114adc83@www.akkea.ca>
-X-Sender: angus@akkea.ca
-User-Agent: Roundcube Webmail/1.1.3
+In-Reply-To: <jwvk1ex6rvb.fsf-monnier+gmane.comp.hardware.netbook.arm.sunxi@gnu.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190511_104844_087869_71AB155D 
-X-CRM114-Status: GOOD (  12.45  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190511_111213_243751_34F062D7 
+X-CRM114-Status: UNSURE (   8.21  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 TVD_RCVD_SPACE_BRACKET No description available.
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -72,93 +64,123 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE
- BINDINGS" <devicetree@vger.kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, "moderated list:ARM/FREESCALE IMX /
- MXC ARM ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>
+Cc: u-boot@lists.denx.de, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Fabio,
+Stefan Monnier wrote on 05/11/2019 03:37 PM:
+>> Increasing the SATA/AHCI DMA TX/RX FIFOs (P0DMACR.TXTS and .RXTS) from
+>> default 0x0 each to 0x3 each gives a write performance boost of 120MB/s
+>> from lame 36MB/s to 45MB/s previously. Read performance is about 200MB/s
+>> [tested on SSD using dd bs=4K count=512K].
+>
+> Such a simple patch to fix such a long-standing performance problem that
+> everyone [ well, apparently not quite everyone ] assumed was a hardware
+> limitation...
+>
+> And yet, April 1st is long gone.
+>
+> Is it really for real?
 
-On 2019-05-11 08:34, Fabio Estevam wrote:
-> Hi Angus,
-> 
-> This looks good. Only minor issues:
-> 
-> On Wed, May 1, 2019 at 7:57 PM Angus Ainslie (Purism) <angus@akkea.ca> 
-> wrote:
->> +++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
->> @@ -0,0 +1,823 @@
->> +/* SPDX-License-Identifier: GPL-2.0+
-> 
-> This should be
-> // SPDX-License-Identifier: GPL-2.0+
-> 
-> as pointed out by checkpatch.
-> 
->> +       reg_1v8_p: regulator-1V8-P {
-> 
-> Maybe lowercase instead?
-> 
+Yes, it's indeed real, Stefan; really no April 1st joke.  :-)
 
-Ok, I'll fix those 2.
+As you indicated, this problem of slow SATA write-speed
+with these small devices lasts now for more than 5 years.
+This patch finally solves the problem.
 
->> +       wifi_pwr_en: wifi-en {
->> +               compatible = "regulator-fixed";
->> +               pinctrl-names = "default";
->> +               pinctrl-0 = <&pinctrl_wifi_pwr_en>;
->> +               regulator-name = "WIFI_EN";
->> +               regulator-min-microvolt = <3300000>;
->> +               regulator-max-microvolt = <3300000>;
->> +               gpio = <&gpio3 5 GPIO_ACTIVE_HIGH>;
->> +               enable-active-high;
->> +               regulator-always-on;
-> 
-> Do you really needs all these regulators to be 'regulator-always-on'?
-> 
+On my test device (BPI-R1) the optimum blocksize seems to be 12K
+as it then gives even 129 MB/s write speed.
 
-Unfortunately yes.
+Here are some test results with different blocksizes, all giving
+a write speed of 125 to 129 MB/s:
 
->> +&i2c1 {
->> +       clock-frequency = <400000>;
-> 
-> Maybe you could use 100kHz instead in order to avoid the problem
-> described by the following i.MX8M erratum:
-> 
-> e7805: I2C: When the I2C clock speed is configured for 400 kHz, the
-> SCL low period violates the I2C spec of 1.3 uS min
-> https://www.nxp.com/docs/en/errata/IMX8MDQLQ_1N14W.pdf
-> 
+time sh -c "dd if=/dev/zero of=test.tmp bs=$bs count=$count conv=fdatasync"
 
-I discovered this a few days ago.
 
-https://source.puri.sm/angus.ainslie/linux-next/commit/10c9d9e55aba0e179166001b9292e37a37bfe0ea
+------------ bs=8K / count=256K / 1 ------------------
+262144+0 records in
+262144+0 records out
+2147483648 bytes (2.1 GB) copied, 16.9237 s, 127 MB/s
 
-You're right 100kHz is a better choice.
+real	0m16.935s
+user	0m0.388s
+sys	0m15.777s
 
->> +&usdhc2 {
->> +       pinctrl-names = "default", "state_100mhz", "state_200mhz";
->> +       pinctrl-0 = <&pinctrl_usdhc2>;
->> +       pinctrl-1 = <&pinctrl_usdhc2_100mhz>;
->> +       pinctrl-2 = <&pinctrl_usdhc2_200mhz>;
->> +       bus-width = <4>;
->> +       vmmc-supply = <&reg_usdhc2_vmmc>;
->> +       power-supply = <&wifi_pwr_en>;
->> +
-> 
-> Unneeded blank line.
+------------ bs=8K / count=256K / 2 ------------------
+262144+0 records in
+262144+0 records out
+2147483648 bytes (2.1 GB) copied, 16.9916 s, 126 MB/s
 
-I'll fix it for the next rev.
+real	0m17.973s
+user	0m0.326s
+sys	0m16.806s
 
-Thanks
-Angus
+------------ bs=8K / count=256K / 3 ------------------
+262144+0 records in
+262144+0 records out
+2147483648 bytes (2.1 GB) copied, 17.0085 s, 126 MB/s
+
+real	0m17.993s
+user	0m0.442s
+sys	0m16.588s
+
+------------ bs=12K / count=171K / 1 ------------------
+175104+0 records in
+175104+0 records out
+2151677952 bytes (2.2 GB) copied, 16.8474 s, 128 MB/s
+
+real	0m16.860s
+user	0m0.205s
+sys	0m15.705s
+
+------------ bs=12K / count=171K / 2 ------------------
+175104+0 records in
+175104+0 records out
+2151677952 bytes (2.2 GB) copied, 16.6934 s, 129 MB/s
+
+real	0m17.669s
+user	0m0.227s
+sys	0m16.355s
+
+------------ bs=12K / count=171K / 3 ------------------
+175104+0 records in
+175104+0 records out
+2151677952 bytes (2.2 GB) copied, 16.6684 s, 129 MB/s
+
+real	0m17.654s
+user	0m0.388s
+sys	0m16.118s
+
+------------ bs=16K / count=128K / 1 ------------------
+131072+0 records in
+131072+0 records out
+2147483648 bytes (2.1 GB) copied, 17.1845 s, 125 MB/s
+
+real	0m17.200s
+user	0m0.251s
+sys	0m16.060s
+
+------------ bs=16K / count=128K / 2 ------------------
+131072+0 records in
+131072+0 records out
+2147483648 bytes (2.1 GB) copied, 16.9221 s, 127 MB/s
+
+real	0m17.902s
+user	0m0.170s
+sys	0m16.763s
+
+------------ bs=16K / count=128K / 3 ------------------
+131072+0 records in
+131072+0 records out
+2147483648 bytes (2.1 GB) copied, 16.8845 s, 127 MB/s
+
+real	0m17.868s
+user	0m0.167s
+sys	0m16.736s
+
 
 
 _______________________________________________
