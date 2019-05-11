@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 79D941A76E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 May 2019 12:09:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 567AA1A774
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 May 2019 12:09:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oyc55EjhTkDgGJfjsyjkwwl3L5NfhteIRh4bvkABENs=; b=bobEgXjYz/3UEW
-	0YgSdPOiMrnIh4AV959tpeSynuKStIgPycO+H9hOtnt4IIu2IL+oC4xfdQJl5em2af6GMCJ9Tq1PB
-	Y6FpZeMLiAng9ZcRLNouRIdOXnacIDHFFfD+l7YlSBNdQu08j8P1FZrXfUeM9OouQE476dyX3uwa7
-	rXO0KSNinW4aZdI2P7zNeGyK85vH7Z6RWpxmbqZZs2b7JPi35JuI1QkMGMLEwgCiJPg1C++mM4kSd
-	0gjjFAb4Ob3GVWTJp5lrKOShawLMvMJwhVrt9UkYEKuidUsc1dHzED/afqxCktWTgMBd8cm2UnVHh
-	maVpqOI29v3N5ffpeMmA==;
+	List-Owner; bh=NbvbyaX37h9u2JMmx/N3BQDKJyXr1Fc1x/cwT1PRFjY=; b=LHtCs6om5g6mUt
+	q+27YaVsODODwYZ3DrgiK3uOAB63hBInDTcE69jhrtssf1izpscSPfFmzAl3tnUk+4Vo0INuQEM4D
+	eEOaDcvOipEECsSR8mVmPcMfbMjIsXZpWIpI+aqi8mIor3Z9vZa2y+GQ3ZK0MzdbRgqqbf16/+Yve
+	sWTveAohuLRQV7tT6rXAFtQqevhFLpfknznMIHW26+0Un1fUwRYpaaURLdMypTu7deIgE96N0+C3F
+	/HbmFKrZPcr13flA5zU9pYWqPF1kEsL9wAPvLo1KscF0Vu1nZwXvdlYzk+Iw+P7bQlcuq+0BBTovc
+	pny+5tQAQ9OFdc9qXcMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPOwE-0002EX-KA; Sat, 11 May 2019 10:09:06 +0000
+	id 1hPOwy-0002xj-Vu; Sat, 11 May 2019 10:09:53 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPOvn-0001l8-Fr
- for linux-arm-kernel@lists.infradead.org; Sat, 11 May 2019 10:08:47 +0000
+ id 1hPOwl-0002wS-QA
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 May 2019 10:09:44 +0000
 Received: from archlinux (cpc91196-cmbg18-2-0-cust659.5-4.cable.virginm.net
  [81.96.234.148])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DBB3E217D6;
- Sat, 11 May 2019 10:08:35 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3222F208C0;
+ Sat, 11 May 2019 10:09:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1557569319;
- bh=SsM1ofarQZfVphiOzN1Muff7BbA5Z1fF8eufyrWWeQI=;
+ s=default; t=1557569379;
+ bh=lhbK+i4DBoD29MQ6wtvmJNog/VnQ3v6fvRLB/M5EOzU=;
  h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=HAXe6MeobDUFP7WvrCs1xsgjUoGOeAmEG9RNlbuH+Ab7ZuTAzxqpPSMxZdkfT5wtQ
- aQsGa/YmucANFbQql6kff84p7mospL8kV8nxz1TrQyR+xpNWlZI8bFaiPCfeDi02Hb
- VoB5x2tTwt28/2zhixssWI4f11DWdWK3ai+hQEbw=
-Date: Sat, 11 May 2019 11:08:32 +0100
+ b=oei5RmKiBXQGpIfBoODyvkMH3Rlv1lT4YNkPlGO2ptQBZivYPlEuyQx8YjtPUZS6i
+ iXIoeC5eRrfnmuwXrd5bR+wBSOAbn6wYyAqk9m24sEiQZ/0gH6ahxe1FsVc3DG5ozQ
+ Hi7BGigEBpeLiiMlv9riVkNxOrjujUsBVb+8sUOE=
+Date: Sat, 11 May 2019 11:09:32 +0100
 From: Jonathan Cameron <jic23@kernel.org>
 To: Philippe Schenker <dev@pschenker.ch>
-Subject: Re: [PATCH 2/5] iio: stmpe-adc: Reinit completion struct on begin
- conversion
-Message-ID: <20190511110832.24f58e4a@archlinux>
-In-Reply-To: <20190507143615.28477-2-dev@pschenker.ch>
+Subject: Re: [PATCH 3/5] iio: stmpe-adc: Enable all stmpe-adc interrupts
+ just once
+Message-ID: <20190511110932.75b2b186@archlinux>
+In-Reply-To: <20190507143615.28477-3-dev@pschenker.ch>
 References: <20190507143615.28477-1-dev@pschenker.ch>
- <20190507143615.28477-2-dev@pschenker.ch>
+ <20190507143615.28477-3-dev@pschenker.ch>
 X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190511_030839_943053_0725F311 
-X-CRM114-Status: GOOD (  17.29  )
+X-CRM114-CacheID: sfid-20190511_030939_968221_30D102E9 
+X-CRM114-Status: GOOD (  15.53  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -93,31 +93,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue,  7 May 2019 16:36:12 +0200
+On Tue,  7 May 2019 16:36:13 +0200
 Philippe Schenker <dev@pschenker.ch> wrote:
 
 > From: Philippe Schenker <philippe.schenker@toradex.com>
 > 
-> In some cases, the wait_completion got interrupted. This caused the
-> error-handling to mutex_unlock the function. The before turned on
-> interrupt then got called anyway. In the ISR then completion() was
-> called causing wrong adc-values returned in a following adc-readout.
+> This commit will enable the interrupts of all channels handled by this
+> driver only once in the probe function.
 > 
-> Reinitialise completion struct to make sure the counter is zero
-> when beginning a new adc-conversion.
+> This will improve performance because one byte less has to be written over
+> i2c on each read out of the adc. On the fastest ADC mode this will improve
+> read out speed by 15%.
 > 
 > Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
-Hi Philippe, 
-
-To me this looks like a fix that we should consider applying to stable.
-However, as it is in the middle of this series I'm not going to take
-it via the fast route (during rc's). If people want to backport it
-they will have to wait until after the next merge window.
-If anyone has an urgent need, then shout in the next week and I'll
-pull this version out and we can restructure the set.
-
-Applied to the togreg branch of iio.git and pushed out as testing
-for the autobuilders to play with it.
+Applied to the togreg branch of iio.git and pushed out as testing for
+the autobuilders to play with it.
 
 Thanks,
 
@@ -125,31 +115,33 @@ Jonathan
 
 > ---
 > 
->  drivers/iio/adc/stmpe-adc.c | 4 ++++
->  1 file changed, 4 insertions(+)
+>  drivers/iio/adc/stmpe-adc.c | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
 > 
 > diff --git a/drivers/iio/adc/stmpe-adc.c b/drivers/iio/adc/stmpe-adc.c
-> index 9ec338ba3440..b3872eb37293 100644
+> index b3872eb37293..82b43e4522b6 100644
 > --- a/drivers/iio/adc/stmpe-adc.c
 > +++ b/drivers/iio/adc/stmpe-adc.c
-> @@ -65,6 +65,8 @@ static int stmpe_read_voltage(struct stmpe_adc *info,
+> @@ -74,9 +74,6 @@ static int stmpe_read_voltage(struct stmpe_adc *info,
+>  		return -EINVAL;
+>  	}
 >  
->  	mutex_lock(&info->lock);
+> -	stmpe_reg_write(info->stmpe, STMPE_REG_ADC_INT_EN,
+> -			STMPE_ADC_CH(info->channel));
+> -
+>  	stmpe_reg_write(info->stmpe, STMPE_REG_ADC_CAPT,
+>  			STMPE_ADC_CH(info->channel));
 >  
-> +	reinit_completion(&info->completion);
+> @@ -336,6 +333,9 @@ static int stmpe_adc_probe(struct platform_device *pdev)
+>  	if (ret)
+>  		return ret;
+>  
+> +	stmpe_reg_write(info->stmpe, STMPE_REG_ADC_INT_EN,
+> +			~(norequest_mask & 0xFF));
 > +
->  	info->channel = (u8)chan->channel;
+>  	return devm_iio_device_register(&pdev->dev, indio_dev);
+>  }
 >  
->  	if (info->channel > STMPE_ADC_LAST_NR) {
-> @@ -105,6 +107,8 @@ static int stmpe_read_temp(struct stmpe_adc *info,
->  
->  	mutex_lock(&info->lock);
->  
-> +	reinit_completion(&info->completion);
-> +
->  	info->channel = (u8)chan->channel;
->  
->  	if (info->channel != STMPE_TEMP_CHANNEL) {
 
 
 _______________________________________________
