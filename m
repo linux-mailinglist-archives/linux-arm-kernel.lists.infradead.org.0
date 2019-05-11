@@ -2,61 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A96F1A78D
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 May 2019 12:24:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A92A1A7FC
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 May 2019 15:31:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Vb0qfFDOVn2S8FUGGqkGVVNVYEMB+xR89pZQYOqyvxM=; b=XqKSMs0ppAYaJF
-	+HOIA26KoMb2eszFReSMxYS2vRz6lp4KKiGHa6QyAayn+DbaIrmK3Bqy0espC6oUESPaqizm66JyZ
-	ojRSvq6YWUA4fOdtNLT3wE9kYSsVUOW75/vIxtS6C8vy5Z0XFVtKg33F6WzTpZ4STcHP8E1HE2wLh
-	F6oHMJ/3eJdkvefpxNEV9yYu2XZXBRoOMsU3D3a5DwipeqZebOYvHzHc3xRcUJjHvsrwDWIxoAe0v
-	Mg0cCmVcF96YgaiTBls+zhE3v282NpZ+m8Zohh7+5NTz74KFQPX0TXIH6PqOkZOLjz3+6Ll/z4pQA
-	GvNNq86JuKimk5+EzcQQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qIsQJRyt0ilatnKRg5MhX2ZF5Bn3EXgjJYVyzMZ/xDk=; b=dhrBtKptVlKGF6
+	tTvkRPJTBZmQuOhkom1REsKIJiR+QEWfGCy9Myj5Lgp4CtRIddBcxsx37Mfxu5g6EyMyMb2N/8Fe7
+	v4Y3/g+MkwUQlGRNacO417lDlraBZ6GNGqFGmZD2/qSPnJZXjRuTg2Wm+DFy7Vxk2qgtxHqXG5qTs
+	shiPFxuwDyuDIx/jaOOCYE/Ldsv/0YRvAgowgXBkybW8qnW81e9OrxpeaeePgw075xk41h5fIPD0w
+	FVV/pFVzIebTNaQK2dtdFOyi0EAfluKz2xt+RE6J5wudwGV4dh7miBVe6Rx+YTXa75C/Z9yvzhFMo
+	o42A5pZRv98IoDIVN9pA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPPBN-0007ve-4S; Sat, 11 May 2019 10:24:45 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hPS6O-0007so-5W; Sat, 11 May 2019 13:31:48 +0000
+Received: from nbd.name ([2a01:4f8:221:3d45::2])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPPBE-0007vD-Gt
- for linux-arm-kernel@lists.infradead.org; Sat, 11 May 2019 10:24:37 +0000
-Received: from archlinux (cpc91196-cmbg18-2-0-cust659.5-4.cable.virginm.net
- [81.96.234.148])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BE1E62173B;
- Sat, 11 May 2019 10:24:32 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1557570276;
- bh=Ol9ib5bihEYIjrd1c8mt+AxCWFeb4Ti7BaHuwJkxvQA=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=v4U603/bLabnldrLM6MOiPNDVz7DK0r/MC9QoaiSqqorwz+ySd4TjrJKypZ3+bF9s
- Oi7pE83vuWve+W8K6qopE3LO/K10MtfkVM1TJXht3uXte67oWPnpF2vxXDyky7JEUN
- So9eLCXfDPm7MdKyCanuDsLdFHH6/rXp2DvYpyD8=
-Date: Sat, 11 May 2019 11:24:29 +0100
-From: Jonathan Cameron <jic23@kernel.org>
-To: Philippe Schenker <dev@pschenker.ch>
-Subject: Re: [PATCH 5/5] iio: stmpe-adc: Reset possible interrupts
-Message-ID: <20190511112429.25ddd84d@archlinux>
-In-Reply-To: <20190507143615.28477-5-dev@pschenker.ch>
-References: <20190507143615.28477-1-dev@pschenker.ch>
- <20190507143615.28477-5-dev@pschenker.ch>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1hPS6F-0007rd-Ik; Sat, 11 May 2019 13:31:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
+ s=20160729; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=s/AZSOJdvUNU5yPgVGE8CutgVSk3rVEECA+FUX1RXDw=; b=Pd1sGj7GJ++06en9Qla/DwHFxy
+ jLRvRo7YD1PLcTj+xmf05M9cwjo+4FcZ8NBQiPoKTy329QTs17V3Z0FKNcZqtO6LkJxqD53I5GqPI
+ 9rE89PBKHg/+YTcurS0k0iwItGOB+DHzRpNf0v4lvL2d8/J8yisH54Pez4SM6mvY8Qto=;
+Received: from p54ae9c89.dip0.t-ipconnect.de ([84.174.156.137] helo=nf.local)
+ by ds12 with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ (Exim 4.89) (envelope-from <nbd@nbd.name>)
+ id 1hPS6B-00028f-17; Sat, 11 May 2019 15:31:35 +0200
+Subject: Re: [PATCH][next] mt76: fix less than zero check on a u8 variable
+To: Colin King <colin.king@canonical.com>, Roy Luo <royluo@google.com>,
+ Kalle Valo <kvalo@codeaurora.org>, "David S . Miller" <davem@davemloft.net>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-wireless@vger.kernel.org,
+ netdev@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org
+References: <20190505213135.3895-1-colin.king@canonical.com>
+From: Felix Fietkau <nbd@nbd.name>
+Openpgp: preference=signencrypt
+Autocrypt: addr=nbd@nbd.name; prefer-encrypt=mutual; keydata=
+ mQGiBEah5CcRBADIY7pu4LIv3jBlyQ/2u87iIZGe6f0f8pyB4UjzfJNXhJb8JylYYRzIOSxh
+ ExKsdLCnJqsG1PY1mqTtoG8sONpwsHr2oJ4itjcGHfn5NJSUGTbtbbxLro13tHkGFCoCr4Z5
+ Pv+XRgiANSpYlIigiMbOkide6wbggQK32tC20QxUIwCg4k6dtV/4kwEeiOUfErq00TVqIiEE
+ AKcUi4taOuh/PQWx/Ujjl/P1LfJXqLKRPa8PwD4j2yjoc9l+7LptSxJThL9KSu6gtXQjcoR2
+ vCK0OeYJhgO4kYMI78h1TSaxmtImEAnjFPYJYVsxrhay92jisYc7z5R/76AaELfF6RCjjGeP
+ wdalulG+erWju710Bif7E1yjYVWeA/9Wd1lsOmx6uwwYgNqoFtcAunDaMKi9xVQW18FsUusM
+ TdRvTZLBpoUAy+MajAL+R73TwLq3LnKpIcCwftyQXK5pEDKq57OhxJVv1Q8XkA9Dn1SBOjNB
+ l25vJDFAT9ntp9THeDD2fv15yk4EKpWhu4H00/YX8KkhFsrtUs69+vZQwbQcRmVsaXggRmll
+ dGthdSA8bmJkQG5iZC5uYW1lPohgBBMRAgAgBQJGoeQnAhsjBgsJCAcDAgQVAggDBBYCAwEC
+ HgECF4AACgkQ130UHQKnbvXsvgCgjsAIIOsY7xZ8VcSm7NABpi91yTMAniMMmH7FRenEAYMa
+ VrwYTIThkTlQuQINBEah5FQQCACMIep/hTzgPZ9HbCTKm9xN4bZX0JjrqjFem1Nxf3MBM5vN
+ CYGBn8F4sGIzPmLhl4xFeq3k5irVg/YvxSDbQN6NJv8o+tP6zsMeWX2JjtV0P4aDIN1pK2/w
+ VxcicArw0VYdv2ZCarccFBgH2a6GjswqlCqVM3gNIMI8ikzenKcso8YErGGiKYeMEZLwHaxE
+ Y7mTPuOTrWL8uWWRL5mVjhZEVvDez6em/OYvzBwbkhImrryF29e3Po2cfY2n7EKjjr3/141K
+ DHBBdgXlPNfDwROnA5ugjjEBjwkwBQqPpDA7AYPvpHh5vLbZnVGu5CwG7NAsrb2isRmjYoqk
+ wu++3117AAMFB/9S0Sj7qFFQcD4laADVsabTpNNpaV4wAgVTRHKV/kC9luItzwDnUcsZUPdQ
+ f3MueRJ3jIHU0UmRBG3uQftqbZJj3ikhnfvyLmkCNe+/hXhPu9sGvXyi2D4vszICvc1KL4RD
+ aLSrOsROx22eZ26KqcW4ny7+va2FnvjsZgI8h4sDmaLzKczVRIiLITiMpLFEU/VoSv0m1F4B
+ FtRgoiyjFzigWG0MsTdAN6FJzGh4mWWGIlE7o5JraNhnTd+yTUIPtw3ym6l8P+gbvfoZida0
+ TspgwBWLnXQvP5EDvlZnNaKa/3oBes6z0QdaSOwZCRA3QSLHBwtgUsrT6RxRSweLrcabiEkE
+ GBECAAkFAkah5FQCGwwACgkQ130UHQKnbvW2GgCfTKx80VvCR/PvsUlrvdOLsIgeRGAAn1ee
+ RjMaxwtSdaCKMw3j33ZbsWS4
+Message-ID: <a0d21c98-9421-547f-6dd9-5153812107e5@nbd.name>
+Date: Sat, 11 May 2019 15:31:34 +0200
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
+ Gecko/20100101 Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <20190505213135.3895-1-colin.king@canonical.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190511_032436_582496_7CED96A7 
-X-CRM114-Status: GOOD (  16.98  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190511_063139_775876_919E2738 
+X-CRM114-Status: GOOD (  10.29  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -64,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -76,73 +100,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Lars-Peter Clausen <lars@metafoo.de>,
- Max Krummenacher <max.krummenacher@toradex.com>,
- Philippe Schenker <philippe.schenker@toradex.com>, linux-iio@vger.kernel.org,
- linux-kernel@vger.kernel.org, Stefan Agner <stefan@agner.ch>,
- Marcel Ziswiler <marcel.ziswiler@toradex.com>,
- David Laight <David.Laight@ACULAB.COM>,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Hartmut Knaack <knaack.h@gmx.de>,
- Lee Jones <lee.jones@linaro.org>, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org,
- Alexandre Torgue <alexandre.torgue@st.com>
+Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue,  7 May 2019 16:36:15 +0200
-Philippe Schenker <dev@pschenker.ch> wrote:
-
-> From: Philippe Schenker <philippe.schenker@toradex.com>
+On 2019-05-05 23:31, Colin King wrote:
+> From: Colin Ian King <colin.king@canonical.com>
 > 
-> Clear any interrupt that still is on the device on every channel
-> this driver is activated for in probe and specific channels in
-> the timeout handler.
+> The signed return from the call to get_omac_idx is being assigned to the
+> u8 variable mac_idx and then checked for a negative error condition
+> which is always going to be false. Fix this by assigning the return to
+> the int variable ret and checking this instead.
 > 
-> Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
-I'm never particularly clean on blanket resets as they do tend to
-hide bugs. However, the probe one is something that would happen anyway
-if there was a 'reset' function.
+> Addresses-Coverity: ("Unsigned compared against 0")
+> Fixes: 04b8e65922f6 ("mt76: add mac80211 driver for MT7615 PCIe-based chipsets")
+> Signed-off-by: Colin Ian King <colin.king@canonical.com>
+Already fixed by a similar patch by Dan Carpenter.
 
-Applied to the togreg branch of iio.git and pushed out as testing
-for the autobuilders to play with it.
-
-Thanks,
-
-Jonathan
-
-> 
-> ---
-> 
->  drivers/iio/adc/stmpe-adc.c | 5 +++++
->  1 file changed, 5 insertions(+)
-> 
-> diff --git a/drivers/iio/adc/stmpe-adc.c b/drivers/iio/adc/stmpe-adc.c
-> index cc752a47444c..a5990e9f2c80 100644
-> --- a/drivers/iio/adc/stmpe-adc.c
-> +++ b/drivers/iio/adc/stmpe-adc.c
-> @@ -80,6 +80,8 @@ static int stmpe_read_voltage(struct stmpe_adc *info,
->  	ret = wait_for_completion_timeout(&info->completion, STMPE_ADC_TIMEOUT);
->  
->  	if (ret <= 0) {
-> +		stmpe_reg_write(info->stmpe, STMPE_REG_ADC_INT_STA,
-> +				STMPE_ADC_CH(info->channel));
->  		mutex_unlock(&info->lock);
->  		return -ETIMEDOUT;
->  	}
-> @@ -326,6 +328,9 @@ static int stmpe_adc_probe(struct platform_device *pdev)
->  	stmpe_reg_write(info->stmpe, STMPE_REG_ADC_INT_EN,
->  			~(norequest_mask & 0xFF));
->  
-> +	stmpe_reg_write(info->stmpe, STMPE_REG_ADC_INT_STA,
-> +			~(norequest_mask & 0xFF));
-> +
->  	return devm_iio_device_register(&pdev->dev, indio_dev);
->  }
->  
-
+- Felix
 
 _______________________________________________
 linux-arm-kernel mailing list
