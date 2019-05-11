@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 567AA1A774
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 May 2019 12:09:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3511B1A782
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 May 2019 12:16:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NbvbyaX37h9u2JMmx/N3BQDKJyXr1Fc1x/cwT1PRFjY=; b=LHtCs6om5g6mUt
-	q+27YaVsODODwYZ3DrgiK3uOAB63hBInDTcE69jhrtssf1izpscSPfFmzAl3tnUk+4Vo0INuQEM4D
-	eEOaDcvOipEECsSR8mVmPcMfbMjIsXZpWIpI+aqi8mIor3Z9vZa2y+GQ3ZK0MzdbRgqqbf16/+Yve
-	sWTveAohuLRQV7tT6rXAFtQqevhFLpfknznMIHW26+0Un1fUwRYpaaURLdMypTu7deIgE96N0+C3F
-	/HbmFKrZPcr13flA5zU9pYWqPF1kEsL9wAPvLo1KscF0Vu1nZwXvdlYzk+Iw+P7bQlcuq+0BBTovc
-	pny+5tQAQ9OFdc9qXcMQ==;
+	List-Owner; bh=SsqBy6O+veK5GkXXUVdLRjnyF/zY6htr1EQgx+1Pp3M=; b=IM/HZW55wSsSAp
+	Hw9GN/fkkPrNCkLlFid078pP7h9omDa01uBNpalA6goGk92ibwdil6SmwImCHdxNk4jUFJ8leSyyB
+	Qv0UcBwAzfDw3wXHJCdvBDfHqCabpW130+b/jF+JvQo8GVwKiPFTfkq6+xMr6ZBBy67PYnTWZEmOt
+	1Fp0uP+m2BRYcqP3AtAGr8DLKdjaMLThMgjjFj6cte3VdD6kcxJw3n3/7rNe5DKY3kjB40FHAIXsV
+	hyB3RGBmPGqxD0vWsAFfKpqHMGrqdag9DO65L63erE3s2l2AlQvRoAJ4Wz680Z2TduALF0vSrpKdV
+	cqn8N4Np4A5Q8Y9FJWCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPOwy-0002xj-Vu; Sat, 11 May 2019 10:09:53 +0000
+	id 1hPP2x-0005ta-3w; Sat, 11 May 2019 10:16:03 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPOwl-0002wS-QA
- for linux-arm-kernel@lists.infradead.org; Sat, 11 May 2019 10:09:44 +0000
+ id 1hPP2p-0005tH-V5
+ for linux-arm-kernel@lists.infradead.org; Sat, 11 May 2019 10:15:57 +0000
 Received: from archlinux (cpc91196-cmbg18-2-0-cust659.5-4.cable.virginm.net
  [81.96.234.148])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3222F208C0;
- Sat, 11 May 2019 10:09:36 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7916D208C0;
+ Sat, 11 May 2019 10:15:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1557569379;
- bh=lhbK+i4DBoD29MQ6wtvmJNog/VnQ3v6fvRLB/M5EOzU=;
+ s=default; t=1557569755;
+ bh=GVjvzUgaZO5L08Vrif/Gj4NVQZ3V+nUBXORBy/xPtl0=;
  h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=oei5RmKiBXQGpIfBoODyvkMH3Rlv1lT4YNkPlGO2ptQBZivYPlEuyQx8YjtPUZS6i
- iXIoeC5eRrfnmuwXrd5bR+wBSOAbn6wYyAqk9m24sEiQZ/0gH6ahxe1FsVc3DG5ozQ
- Hi7BGigEBpeLiiMlv9riVkNxOrjujUsBVb+8sUOE=
-Date: Sat, 11 May 2019 11:09:32 +0100
+ b=VGf7UATU+wbNMZj8Vn2IfAkAO93ECqaYnkNM0nI0ktDg20F/OWYS4d5STB4IPid8V
+ bJwGWBld4bljFXZoG2vYlPdfr6JILEOLGCkmixATxgCYkevjNLgQrSVoWQqRtQa9mJ
+ m7Z56V8aACpmRetJEsb5WCM9t/TRbG56GmxM5S4k=
+Date: Sat, 11 May 2019 11:15:48 +0100
 From: Jonathan Cameron <jic23@kernel.org>
 To: Philippe Schenker <dev@pschenker.ch>
-Subject: Re: [PATCH 3/5] iio: stmpe-adc: Enable all stmpe-adc interrupts
- just once
-Message-ID: <20190511110932.75b2b186@archlinux>
-In-Reply-To: <20190507143615.28477-3-dev@pschenker.ch>
+Subject: Re: [PATCH 4/5] iio: stmpe-adc: Use wait_for_completion_timeout
+Message-ID: <20190511111548.504948ae@archlinux>
+In-Reply-To: <20190507143615.28477-4-dev@pschenker.ch>
 References: <20190507143615.28477-1-dev@pschenker.ch>
- <20190507143615.28477-3-dev@pschenker.ch>
+ <20190507143615.28477-4-dev@pschenker.ch>
 X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190511_030939_968221_30D102E9 
-X-CRM114-Status: GOOD (  15.53  )
+X-CRM114-CacheID: sfid-20190511_031556_036695_4540E34F 
+X-CRM114-Status: GOOD (  17.77  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -93,55 +92,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue,  7 May 2019 16:36:13 +0200
+On Tue,  7 May 2019 16:36:14 +0200
 Philippe Schenker <dev@pschenker.ch> wrote:
 
 > From: Philippe Schenker <philippe.schenker@toradex.com>
 > 
-> This commit will enable the interrupts of all channels handled by this
-> driver only once in the probe function.
+> Use wait_for_completion_timeout instead of
+> wait_for_completion_interuptible_timeout.
 > 
-> This will improve performance because one byte less has to be written over
-> i2c on each read out of the adc. On the fastest ADC mode this will improve
-> read out speed by 15%.
+> The interruptible variant gets constantly interrupted if a user
+> program is compiled with the -pg option.
+> The killable variant was not used due to the fact that a second
+> program, reading on this device, that gets killed is then also killing
+> that wait.
 > 
 > Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
-Applied to the togreg branch of iio.git and pushed out as testing for
-the autobuilders to play with it.
+Hi Phillippe
+
+This one clashed a little bit with our earlier patch to remove the
+unnecessary assignment.  I've applied it by hand but please check it.
+
+Applied to the togreg branch of iio.git and pushed out as testing
+for the autobuilders to play with it.
 
 Thanks,
 
 Jonathan
-
 > ---
 > 
->  drivers/iio/adc/stmpe-adc.c | 6 +++---
->  1 file changed, 3 insertions(+), 3 deletions(-)
+>  drivers/iio/adc/stmpe-adc.c | 18 ++++--------------
+>  1 file changed, 4 insertions(+), 14 deletions(-)
 > 
 > diff --git a/drivers/iio/adc/stmpe-adc.c b/drivers/iio/adc/stmpe-adc.c
-> index b3872eb37293..82b43e4522b6 100644
+> index 82b43e4522b6..cc752a47444c 100644
 > --- a/drivers/iio/adc/stmpe-adc.c
 > +++ b/drivers/iio/adc/stmpe-adc.c
-> @@ -74,9 +74,6 @@ static int stmpe_read_voltage(struct stmpe_adc *info,
->  		return -EINVAL;
->  	}
->  
-> -	stmpe_reg_write(info->stmpe, STMPE_REG_ADC_INT_EN,
-> -			STMPE_ADC_CH(info->channel));
-> -
+> @@ -77,17 +77,11 @@ static int stmpe_read_voltage(struct stmpe_adc *info,
 >  	stmpe_reg_write(info->stmpe, STMPE_REG_ADC_CAPT,
 >  			STMPE_ADC_CH(info->channel));
 >  
-> @@ -336,6 +333,9 @@ static int stmpe_adc_probe(struct platform_device *pdev)
->  	if (ret)
->  		return ret;
+> -	*val = info->value;
+> -
+> -	ret = wait_for_completion_interruptible_timeout
+> -		(&info->completion, STMPE_ADC_TIMEOUT);
+> +	ret = wait_for_completion_timeout(&info->completion, STMPE_ADC_TIMEOUT);
 >  
-> +	stmpe_reg_write(info->stmpe, STMPE_REG_ADC_INT_EN,
-> +			~(norequest_mask & 0xFF));
-> +
->  	return devm_iio_device_register(&pdev->dev, indio_dev);
->  }
+>  	if (ret <= 0) {
+>  		mutex_unlock(&info->lock);
+> -		if (ret == 0)
+> -			return -ETIMEDOUT;
+> -		else
+> -			return ret;
+> +		return -ETIMEDOUT;
+>  	}
 >  
+>  	*val = info->value;
+> @@ -116,15 +110,11 @@ static int stmpe_read_temp(struct stmpe_adc *info,
+>  	stmpe_reg_write(info->stmpe, STMPE_REG_TEMP_CTRL,
+>  			STMPE_START_ONE_TEMP_CONV);
+>  
+> -	ret = wait_for_completion_interruptible_timeout
+> -		(&info->completion, STMPE_ADC_TIMEOUT);
+> +	ret = wait_for_completion_timeout(&info->completion, STMPE_ADC_TIMEOUT);
+>  
+>  	if (ret <= 0) {
+>  		mutex_unlock(&info->lock);
+> -		if (ret == 0)
+> -			return -ETIMEDOUT;
+> -		else
+> -			return ret;
+> +		return -ETIMEDOUT;
+>  	}
+>  
+>  	/*
 
 
 _______________________________________________
