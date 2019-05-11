@@ -2,78 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D304D1A87B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 May 2019 18:40:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37C6A1A8E3
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 May 2019 19:46:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vCI2uFE6Haj7FwH0Af63f1higJcR+q74GwmLhCA3EJs=; b=BSdPj6wmXPjLPS
-	SJocgQAvhddpvJqaePTCawmNNT1pLdyuiVshTmWKlBPXZEufj6NOjRdlI/A4Yl408xv+Y5yLek13a
-	gch/J2EC/bq3sRM/Zf68zZ1qo9RHFz2Y3HrwhjE2HUFTOjuRvh5Bl71AdJ1zCE+6Gkf2tZdaBhqgz
-	IQws5INRjAouof4z4COeQp2+nho5AXYrS/wWQCu3XGaKe2eEQSWCGWChTXyNEOQmNAU+bgJCubamu
-	37c0AjnkcQj3ybvIgVlExBEwFIbfryqysZ/Og0/sLxWLdZ/k2V819cDkIGrqVaxBWDNDFa+9rUnHr
-	1UeSdqD/nyTYw8qzR+1w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ul65u5lgN4TNsUwyQEKTYATfLEyJVLWUlglVvkiQ3EY=; b=LpAarZfQelCsBi
+	aAnBF64NZ5hQFSQPrzbuedtcwiaDTMpnKUf/p49DD/AVI1iAafSy/4w5f+fWu8bey+j5n04jZuvpM
+	cQJDR7qtyl0eY02UY3rMD3uCcSUrgcyzILcCoB1a/JO0emNnVceJdWZVCWh05fceeQZhFI7AAAbol
+	zLvQJu28KVaQytlKwntwQdGqs4dqHwnj1m9KAri5CRTL+5T8c1rmGqbbYe4kXL1B02Myds2WZYu70
+	Y/x6IKxF7Lv4It67zIV/rs+b3bdDb/1FnHfpImJY4q4NpH4qivKlLQb3/xA7nFI9NNg9EAFGBw4Z0
+	aqhnE64/cGv7vpbX8yLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPV2e-00058W-5y; Sat, 11 May 2019 16:40:08 +0000
-Received: from mail-yw1-xc41.google.com ([2607:f8b0:4864:20::c41])
+	id 1hPW4K-0002fJ-Jn; Sat, 11 May 2019 17:45:56 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPV2S-00057n-Tz
- for linux-arm-kernel@lists.infradead.org; Sat, 11 May 2019 16:39:58 +0000
-Received: by mail-yw1-xc41.google.com with SMTP id w18so7323884ywa.12
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 11 May 2019 09:39:51 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=cjY3Gi3PUp53aoD3Q4Ldyp9wbi6dZLozT0FvDch+7/I=;
- b=F21w5ckIZPkwVLLoInsNZ9dA+EtE3H0nvwGZWdrSk6cUqXpWBpFPnRtfy4HVcpVHSI
- VYSbgDV19avxyE+1HKdMq5CQpHN0frNrNtat+d5R3qTDyoei/cJJ3KXh2bdRqH4PyePL
- WtJjjsTpeFyn5i6jL9up2W0jnhwwIuI/DDi4extrCrsW2JCfPs45so0JJ80qjtQRJLfY
- rcQb2M9zy9iFECemeOXL+xRoyBI5HTt+7y3X1ed/Z7mMvNiQ4p8ZSluIJC9iTM3cFvKl
- bqg/2RaUqLtmTv25WlZbffbxxTGBldV5IOsPmi0FSshe8c4TBCd4BYrSnrmuDz0oVjqL
- mW/A==
+ id 1hPW4C-0002eJ-C8; Sat, 11 May 2019 17:45:49 +0000
+Received: by mail-wm1-x342.google.com with SMTP id y2so10211863wmi.5;
+ Sat, 11 May 2019 10:45:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=92ZA36IfdaOtsZw80t2M4+MXEzMldpioQlWAUTdSiyM=;
+ b=GNZ67HorQfYfzNJYPsTQiKiEZ1u9f9aUoZ/E1qQniEFWPFzxEhxkB6iTFfKGLmCiNV
+ 9wViPgp4PdVYAeU7i5PBjtHyBLZ1Qas6ehl9CBX7rmqCWHbwdRg88AK9ej6MlF2NH7Jr
+ FTrgMkhTdZUsvtmgGToQXOQh3i/VFjtjMM7SMUFQk+LO8naQb2HJx46EPKteI/Ksk3U6
+ M+0gr59EHZTEqmqajUq3dF+JLvcdmH5f2eN8YZ+cVX3mz7xvo9u4XvB1aM+CFjoSPRnQ
+ iKZ/zjq6j9vzEVscp7nT6rilo4X4L2g7oCVPrajeaP4ZIPpsW9MoBYclI5vndvwtFWj4
+ lF0A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=cjY3Gi3PUp53aoD3Q4Ldyp9wbi6dZLozT0FvDch+7/I=;
- b=CsbKahE4AcA/W+O+AvMer59o70dU+dRkXJognigUzl06yRyJPcKzGjdMLHOjmblBFm
- vAqdvoT6X0s5GplsW7IDIUH0KgYi/i2QqNGtUMaJLIez1tqnmCE2SzhyrqAq8lT//o+7
- gZpXUv6C+BcTVjukb//p+mY1qKAchn4YiXPGuGZV7yr94ObM339bCfjX7/SzSlJyN4TW
- J4qLWuFd26TQbt4Q5yPpsPiW8AtC7Loxr2kJ7J3p1BAYTekUwkDbhJ5tXeWkyAslbclj
- NGzY05T1AXf7u7rj34R2BzKNnoDAHtm/zyAA/shoyQ7fkPxBYtbWGEGM0h3sxnLt5GZk
- EiIQ==
-X-Gm-Message-State: APjAAAVW61K5BeBXi5AsuHi5mPyXOd0v8yeLCxF/mJ7grAY05QAwp7du
- WIyG3mS7VCD2BJBO5kZ1fnfF1AjYQRqXywJy5yM=
-X-Google-Smtp-Source: APXvYqxDFe1vJo1pQCJPxkbL9SV4OT2qMXaYt0E9Lp32loF8V0v7A6o769xLglSXr6GAMZE7lGYiUpsvSkyOpJEH6V0=
-X-Received: by 2002:a81:4850:: with SMTP id v77mr9327334ywa.264.1557592790807; 
- Sat, 11 May 2019 09:39:50 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=92ZA36IfdaOtsZw80t2M4+MXEzMldpioQlWAUTdSiyM=;
+ b=NjFZo9CitH1roUJyfsmXh1g4xnfZzC59oOXElOiHZJ77R57VotXw0kDsDYf3mRFMMw
+ 6zafxwqdg73eYLWwmly6t0RcwzHRD0g/XYycyOB7BmPeYdX2y07isOcg8XRCQ8w4q3Gz
+ kFXMDh4kr4L89QHmN+gUMyezm+pYnYlnEMcVQdh00OHiutmxQX9T07DtGBBLIhZUBBkk
+ rurMUYgWwUL/N2B67Wy6xLd/Cmt+Yp9+Rc2LZ2MLFSuGUcUM9h/soVESxBegkuYCQx1b
+ yrCPOBRnqO0y0Dp3jFNt7KQOf5JvFnf8Z1tfO1t3G+tQF/xaVPw0tpaopFcbJn7zR5cE
+ MPzw==
+X-Gm-Message-State: APjAAAXA2LsXzNyczeXkoTI6Z02Tm0BymZ04F+URdDDF2TtlwL68uONQ
+ y/6LYO9aQqzQSvYzJYqNUKE=
+X-Google-Smtp-Source: APXvYqyBv+xZzZ9rpWv+EUHwPoSsPYeaBjz1deSYDtLsTCx/vqUrbrwe8U8OOTlcrUM78XGzTpDYMw==
+X-Received: by 2002:a05:600c:2248:: with SMTP id
+ a8mr11140164wmm.75.1557596746018; 
+ Sat, 11 May 2019 10:45:46 -0700 (PDT)
+Received: from blackbox.darklights.net
+ (p200300F133C8AD0059E186517133DF77.dip0.t-ipconnect.de.
+ [2003:f1:33c8:ad00:59e1:8651:7133:df77])
+ by smtp.googlemail.com with ESMTPSA id
+ h188sm10309538wmf.48.2019.05.11.10.45.44
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sat, 11 May 2019 10:45:45 -0700 (PDT)
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+To: khilman@baylibre.com,
+	linux-amlogic@lists.infradead.org
+Subject: [PATCH] arm64: dts: amlogic: remove ethernet-phy-idAAAA.BBBB
+ compatible strings
+Date: Sat, 11 May 2019 19:45:34 +0200
+Message-Id: <20190511174534.2403-1-martin.blumenstingl@googlemail.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-References: <20190417173031.9920-1-peron.clem@gmail.com>
-In-Reply-To: <20190417173031.9920-1-peron.clem@gmail.com>
-From: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
-Date: Sat, 11 May 2019 18:39:39 +0200
-Message-ID: <CAJiuCccu_wfgio9wUcOCP0o4XPRgQOvTOZS8St7mV88TAdwaRg@mail.gmail.com>
-Subject: Re: [PATCH v3 0/8] Allwinner H6 Mali GPU support
-To: Rob Herring <robh+dt@kernel.org>, Maxime Ripard <maxime.ripard@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190511_093956_969013_B5619D0A 
-X-CRM114-Status: GOOD (  15.00  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190511_104548_438582_02DE6E70 
+X-CRM114-Status: GOOD (  12.97  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (peron.clem[at]gmail.com)
+ provider (martin.blumenstingl[at]googlemail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -81,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,46 +100,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ jbrunet@baylibre.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgTWF4aW1lLAoKSXMgdGhpcyBzZXJpZXMgb2sgZm9yIHlvdSA/CgpUaGFua3MsCkNsZW1lbnQK
-Ck9uIFdlZCwgMTcgQXByIDIwMTkgYXQgMTk6MzAsIENsw6ltZW50IFDDqXJvbiA8cGVyb24uY2xl
-bUBnbWFpbC5jb20+IHdyb3RlOgo+Cj4gSGksCj4KPiBUaGUgQWxsd2lubmVyIEg2IGhhcyBhIE1h
-bGktVDcyMCBNUDIuIFRoZSBkcml2ZXJzIGFyZQo+IG91dC1vZi10cmVlIHNvIHRoaXMgc2VyaWVz
-IG9ubHkgaW50cm9kdWNlIHRoZSBkdC1iaW5kaW5ncy4KPgo+IFRoZSBmaXJzdCBwYXRjaCBpcyBm
-cm9tIE5laWwgQW1zdHJvbmcgYW5kIGhhcyBiZWVuIGFscmVhZHkKPiBtZXJnZWQgaW4gbGludXgt
-YW1sb2dpYy4gSXQgaXMgcmVxdWlyZWQgZm9yIHRoaXMgc2VyaWVzLgo+Cj4gVGhlIHNlY29uZCBw
-YXRjaCBpcyBmcm9tIEljZW5vd3kgWmhlbmcgd2hlcmUgSSBjaGFuZ2VkIHRoZQo+IG9yZGVyIGhh
-cyByZXF1aXJlZCBieSBSb2IgSGVycmluZy4KPiBTZWU6IGh0dHBzOi8vcGF0Y2h3b3JrLmtlcm5l
-bC5vcmcvcGF0Y2gvMTA2OTk4MjkvCj4KPiBUaGFua3MsCj4gQ2xlbWVudAo+Cj4gQ2hhbmdlcyBp
-biB2MyAoVGhhbmtzIHRvIE1heGltZSBSaXBhcmQpOgo+ICAtIFJlYXV0aG9yIEljZW5vd3kgZm9y
-IGhlciBwYXRoCj4KPiBDaGFuZ2VzIGluIHYyIChUaGFua3MgdG8gTWF4aW1lIFJpcGFyZCk6Cj4g
-IC0gRHJvcCBHUFUgT1BQIFRhYmxlCj4gIC0gQWRkIGNsb2NrcyBhbmQgY2xvY2stbmFtZXMgaW4g
-cmVxdWlyZWQKPgo+IENsw6ltZW50IFDDqXJvbiAoNik6Cj4gICBkdC1iaW5kaW5nczogZ3B1OiBt
-YWxpLW1pZGdhcmQ6IEFkZCBoNiBtYWxpIGdwdSBjb21wYXRpYmxlCj4gICBhcm02NDogZHRzOiBh
-bGx3aW5uZXI6IEFkZCBBUk0gTWFsaSBHUFUgbm9kZSBmb3IgSDYKPiAgIGFybTY0OiBkdHM6IGFs
-bHdpbm5lcjogQWRkIG1hbGkgR1BVIHN1cHBseSBmb3IgUGluZSBINjQKPiAgIGFybTY0OiBkdHM6
-IGFsbHdpbm5lcjogQWRkIG1hbGkgR1BVIHN1cHBseSBmb3IgQmVlbGluayBHUzEKPiAgIGFybTY0
-OiBkdHM6IGFsbHdpbm5lcjogQWRkIG1hbGkgR1BVIHN1cHBseSBmb3IgT3JhbmdlUGkgQm9hcmRz
-Cj4gICBhcm02NDogZHRzOiBhbGx3aW5uZXI6IEFkZCBtYWxpIEdQVSBzdXBwbHkgZm9yIE9yYW5n
-ZVBpIDMKPgo+IEljZW5vd3kgWmhlbmcgKDEpOgo+ICAgZHQtYmluZGluZ3M6IGdwdTogbWFsaS1t
-aWRnYXJkOiBBZGQgYnVzIGNsb2NrIGJpbmRpbmdzCj4KPiBOZWlsIEFybXN0cm9uZyAoMSk6Cj4g
-ICBkdC1iaW5kaW5nczogZ3B1OiBtYWxpLW1pZGdhcmQ6IEFkZCByZXNldHMgcHJvcGVydHkKPgo+
-ICAuLi4vYmluZGluZ3MvZ3B1L2FybSxtYWxpLW1pZGdhcmQudHh0ICAgICAgICAgfCAyNyArKysr
-KysrKysrKysrKysrKysrCj4gIC4uLi9kdHMvYWxsd2lubmVyL3N1bjUwaS1oNi1iZWVsaW5rLWdz
-MS5kdHMgICB8ICA1ICsrKysKPiAgLi4uL2R0cy9hbGx3aW5uZXIvc3VuNTBpLWg2LW9yYW5nZXBp
-LTMuZHRzICAgIHwgIDUgKysrKwo+ICAuLi4vZHRzL2FsbHdpbm5lci9zdW41MGktaDYtb3Jhbmdl
-cGkuZHRzaSAgICAgfCAgNSArKysrCj4gIC4uLi9ib290L2R0cy9hbGx3aW5uZXIvc3VuNTBpLWg2
-LXBpbmUtaDY0LmR0cyB8ICA1ICsrKysKPiAgYXJjaC9hcm02NC9ib290L2R0cy9hbGx3aW5uZXIv
-c3VuNTBpLWg2LmR0c2kgIHwgMTQgKysrKysrKysrKwo+ICA2IGZpbGVzIGNoYW5nZWQsIDYxIGlu
-c2VydGlvbnMoKykKPgo+IC0tCj4gMi4xNy4xCj4KCl9fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4
-LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9y
-Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+The Ethernet PHY documentation
+(Documentation/devicetree/bindings/net/phy.txt) states that:
+  If the PHY reports an incorrect ID (or none at all) then the
+  "compatible" list may contain an entry with the correct PHY ID in the
+  form: "ethernet-phy-idAAAA.BBBB"
+
+An older version of the documentation suggested that the compatible
+string can be used when the PHY ID is known.
+
+Remove the ethernet-phy-id compatible string and add a comment with the
+PHY ID instead.
+This is a no-op on boards which are shipped with the PHY that was
+listed (= all known cases). However, if a board manufacturer decides to
+ship a different PHY we will now load and use the correct driver because
+we ask the PHY to identify itself.
+
+Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+---
+ arch/arm64/boot/dts/amlogic/meson-gxl-s905d-p230.dts | 2 +-
+ arch/arm64/boot/dts/amlogic/meson-gxm-nexbox-a1.dts  | 2 +-
+ arch/arm64/boot/dts/amlogic/meson-gxm-q200.dts       | 2 +-
+ arch/arm64/boot/dts/amlogic/meson-gxm-rbox-pro.dts   | 2 +-
+ 4 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-p230.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-p230.dts
+index 0c8e8305b1f3..767b1763a612 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-p230.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-p230.dts
+@@ -81,7 +81,7 @@
+ 
+ &external_mdio {
+ 	external_phy: ethernet-phy@0 {
+-		compatible = "ethernet-phy-id001c.c916", "ethernet-phy-ieee802.3-c22";
++		/* Realtek RTL8211F (0x001cc916) */
+ 		reg = <0>;
+ 		max-speed = <1000>;
+ 		interrupt-parent = <&gpio_intc>;
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxm-nexbox-a1.dts b/arch/arm64/boot/dts/amlogic/meson-gxm-nexbox-a1.dts
+index 8acfd40090d2..a99c1ba3131c 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxm-nexbox-a1.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxm-nexbox-a1.dts
+@@ -111,7 +111,7 @@
+ 
+ &external_mdio {
+ 	external_phy: ethernet-phy@0 {
+-		compatible = "ethernet-phy-id001c.c916", "ethernet-phy-ieee802.3-c22";
++		/* Realtek RTL8211F (0x001cc916) */
+ 		reg = <0>;
+ 		max-speed = <1000>;
+ 	};
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxm-q200.dts b/arch/arm64/boot/dts/amlogic/meson-gxm-q200.dts
+index 73d656e4aade..8939c0fc5b62 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxm-q200.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxm-q200.dts
+@@ -63,7 +63,7 @@
+ 
+ &external_mdio {
+ 	external_phy: ethernet-phy@0 {
+-		compatible = "ethernet-phy-id001c.c916", "ethernet-phy-ieee802.3-c22";
++		/* Realtek RTL8211F (0x001cc916) */
+ 		reg = <0>;
+ 		max-speed = <1000>;
+ 		interrupt-parent = <&gpio_intc>;
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxm-rbox-pro.dts b/arch/arm64/boot/dts/amlogic/meson-gxm-rbox-pro.dts
+index 7fa20a8ede17..acb4aaf9b956 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxm-rbox-pro.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxm-rbox-pro.dts
+@@ -113,7 +113,7 @@
+ 
+ &external_mdio {
+ 	external_phy: ethernet-phy@0 {
+-		compatible = "ethernet-phy-id001c.c916", "ethernet-phy-ieee802.3-c22";
++		/* Realtek RTL8211F (0x001cc916) */
+ 		reg = <0>;
+ 		max-speed = <1000>;
+ 	};
+-- 
+2.21.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
