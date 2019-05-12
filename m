@@ -2,66 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9AE41AE5C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 00:40:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D99441AE69
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 01:28:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IRRE8yu4SEaancK0bSBZxzRmNBgSAfgVqq3nUjuetjo=; b=Zyusw6FdcLNBu1
-	+4O0BQ5YgjhwHTaQVDc0/LUUSrVu2txm8Q3LwnEAoalrv0Wh4BKwFjrh7w4No/18RQOQ+4uY4VjR5
-	WQ5vlCywfa9MvOd1ZVXwoClZUFWGV0LlgmRR0pQZagKq+Uj140Qh1G8kgWTsF2LE7TnwPHXswj05c
-	BLgaoxOP7l5IstJ561R7HMqsEVieelISNPEijyVsT2teqQ2tizVVFOR+1APqzLWQp6nPSQj5Eooin
-	t3vZrNN+ezHCBV+oQf3DkN4uaOAaMhA6SVdHGn/C2dskVhBVr4votdZCXC9kplr5MTYCyWzoGFDnV
-	iPbDL0191rfJn62+5nNQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=9ANGdWmXQrdO/Qiauy35XhgTAhAyxc2SzyWnCuileiA=; b=sK+ENzI3+ynUcrygH5+cHaU4J
+	bigoXiP66oQZtZ3mPdlLJ80DuMt+d/tfe2WsUqQXfT04uU2DaAZcM9MlJISYbca857fdJItqVfAhm
+	6uehaCDIa/bpi4RMF6MD3LGMl+aFoINXfo3f33XpuBh6TWbCDSM9z8siGtgJbILQY+5v2nZouRScT
+	PAqo/wkK11D5zbb6n2dkAoyrbcYcJdX9y5feR7zTXnUer6JBK9dSWgLhfl6rZzSnLg8B+JMW7bArp
+	cHtLVYoGg3ikqtJ2XyuzGSWjfXmoTPq6pRaOob1PMS/xbFyC8mNwMPJJXSdWhtbiKq2PQ6UBODMM5
+	vMeC3HimQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPx8d-0005Dq-DG; Sun, 12 May 2019 22:40:11 +0000
-Received: from vps.xff.cz ([195.181.215.36])
+	id 1hPxtT-0002we-CA; Sun, 12 May 2019 23:28:35 +0000
+Received: from bilbo.ozlabs.org ([2401:3900:2:1::2] helo=ozlabs.org)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPx8Q-00053j-Fp
- for linux-arm-kernel@lists.infradead.org; Sun, 12 May 2019 22:40:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1557700796; bh=4dvAP9xhVtVOsBt9SghI6QQI6gvQN6dXQLc9agBeNxA=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=fu5YpMX93v1eM/19Xz31Wf1Tm3LBCGSp+CS4jsY97cYcSk1GbpDCWP2/s1wW6GO+X
- a+8bPgaubFV/90BYEqUgg5cbHB9w5TrhtZdLrOCCkNYUog9eZs9wWWi+2e9/rNIiLN
- RC0F8AVcekdbVIUzhvFtBKaypGg17h5i2Hb/owMs=
-Date: Mon, 13 May 2019 00:39:55 +0200
-From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
-To: Yangtao Li <tiny.windzz@gmail.com>
-Subject: Re: [PATCH 2/3] thermal: sun50i: add thermal driver for h6
-Message-ID: <20190512223955.6lhclj6jr2akmsdx@core.my.home>
-Mail-Followup-To: Yangtao Li <tiny.windzz@gmail.com>, rui.zhang@intel.com,
- edubezval@gmail.com, daniel.lezcano@linaro.org, robh+dt@kernel.org,
- mark.rutland@arm.com, maxime.ripard@bootlin.com, wens@csie.org,
- catalin.marinas@arm.com, will.deacon@arm.com, davem@davemloft.net,
- mchehab+samsung@kernel.org, gregkh@linuxfoundation.org,
- Jonathan.Cameron@huawei.com, nicolas.ferre@microchip.com,
- paulmck@linux.ibm.com, andy.gross@linaro.org, olof@lixom.net,
- bjorn.andersson@linaro.org, jagan@amarulasolutions.com,
- marc.w.gonzalez@free.fr, stefan.wahren@i2se.com,
- enric.balletbo@collabora.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-pm@vger.kernel.org
-References: <20190512082614.9045-1-tiny.windzz@gmail.com>
- <20190512082614.9045-3-tiny.windzz@gmail.com>
+ id 1hPxtL-0002ve-PC
+ for linux-arm-kernel@lists.infradead.org; Sun, 12 May 2019 23:28:29 +0000
+Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by mail.ozlabs.org (Postfix) with ESMTPSA id 452KrG1Hc0z9s6w;
+ Mon, 13 May 2019 09:28:14 +1000 (AEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
+ s=201702; t=1557703698;
+ bh=ATL4kHU382WX2z7ErWNR+vsPla44tUhrsoFXnbXw2Y0=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=cr4qdUKrwnwRXUpL3BoLaRJnZZ5FdthHRGxDrERn6sxYAdpbik9HKok9T97dRU+gc
+ 1VKWXDLvsjROpY4ltlIBLN467BG0yaqhy8yH/kV+5YuuHj9m1XF6lDu5G3wrXhMxtP
+ TTqWEv5BizCJbP/8ncjynWtKJ48XvXxqEyIq/C3SmtsZrLOBG5xntJm9vLXjpbgr0d
+ A6Z/2QexU79acLgesUQ5ikzgllSy7EiRItm5/78u1m17lLW1IUCJ0BKt6T2u1AtYVO
+ skxi4ZUHN22lbtt2W2PLDqEGEM2rWoIc5PrQhXPST5e7CUnQBvJGtQPxC/oGBvT4RU
+ WAN4r0Y4i1NCg==
+Date: Mon, 13 May 2019 09:28:06 +1000
+From: Stephen Rothwell <sfr@canb.auug.org.au>
+To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>, ARM
+ <linux-arm-kernel@lists.infradead.org>
+Subject: Re: linux-next: manual merge of the input tree with the arm-soc tree
+Message-ID: <20190513092756.0eb03c72@canb.auug.org.au>
+In-Reply-To: <20190501134054.4271616e@canb.auug.org.au>
+References: <20190501134054.4271616e@canb.auug.org.au>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190512082614.9045-3-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190512_153958_873656_31FC66CC 
-X-CRM114-Status: GOOD (  31.80  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190512_162828_307613_22C0919B 
+X-CRM114-Status: GOOD (  12.90  )
+X-Spam-Score: -2.4 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -78,487 +76,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, maxime.ripard@bootlin.com, catalin.marinas@arm.com,
- will.deacon@arm.com, bjorn.andersson@linaro.org, mchehab+samsung@kernel.org,
- paulmck@linux.ibm.com, stefan.wahren@i2se.com, daniel.lezcano@linaro.org,
- wens@csie.org, jagan@amarulasolutions.com, andy.gross@linaro.org,
- rui.zhang@intel.com, devicetree@vger.kernel.org, marc.w.gonzalez@free.fr,
- edubezval@gmail.com, olof@lixom.net, robh+dt@kernel.org,
- Jonathan.Cameron@huawei.com, linux-arm-kernel@lists.infradead.org,
- gregkh@linuxfoundation.org, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, enric.balletbo@collabora.com,
- davem@davemloft.net
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Maxime Ripard <maxime.ripard@bootlin.com>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux Next Mailing List <linux-next@vger.kernel.org>,
+ =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>,
+ Jeff LaBundy <jeff@labundy.com>
+Content-Type: multipart/mixed; boundary="===============7113961194153549302=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, May 12, 2019 at 04:26:13AM -0400, Yangtao Li wrote:
-> This patch adds the support for allwinner thermal sensor, within
-> allwinner SoC. It will register sensors for thermal framework
-> and use device tree to bind cooling device.
-> 
-> Based on driver code found here:
-> https://megous.com/git/linux and https://github.com/Allwinner-Homlet/H6-BSP4.9-linux
-> 
-> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
-> ---
->  MAINTAINERS                      |   7 +
->  drivers/thermal/Kconfig          |  14 ++
->  drivers/thermal/Makefile         |   1 +
->  drivers/thermal/sun50i_thermal.c | 357 +++++++++++++++++++++++++++++++
->  4 files changed, 379 insertions(+)
->  create mode 100644 drivers/thermal/sun50i_thermal.c
-> 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 3c65228e93c5..8da56582e72a 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -674,6 +674,13 @@ L:	linux-crypto@vger.kernel.org
->  S:	Maintained
->  F:	drivers/crypto/sunxi-ss/
->  
-> +ALLWINNER THERMAL DRIVER
-> +M:	Yangtao Li <tiny.windzz@gmail.com>
-> +L:	linux-pm@vger.kernel.org
-> +S:	Maintained
-> +F:	Documentation/devicetree/bindings/thermal/sun50i-thermal.txt
-> +F:	drivers/thermal/sun50i_thermal.c
-> +
->  ALLWINNER VPU DRIVER
->  M:	Maxime Ripard <maxime.ripard@bootlin.com>
->  M:	Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> diff --git a/drivers/thermal/Kconfig b/drivers/thermal/Kconfig
-> index 653aa27a25a4..2a8d1c98c6ca 100644
-> --- a/drivers/thermal/Kconfig
-> +++ b/drivers/thermal/Kconfig
-> @@ -252,6 +252,20 @@ config SPEAR_THERMAL
->  	  Enable this to plug the SPEAr thermal sensor driver into the Linux
->  	  thermal framework.
->  
-> +config SUN50I_THERMAL
-> +	tristate "Allwinner sun50i thermal driver"
-> +	depends on ARCH_SUNXI || COMPILE_TEST
-> +	depends on HAS_IOMEM
-> +	depends on NVMEM
-> +	depends on OF
-> +	depends on RESET_CONTROLLER
-> +	help
-> +	  Support for the sun50i thermal sensor driver into the Linux thermal
-> +	  framework.
-> +
-> +	  To compile this driver as a module, choose M here: the
-> +	  module will be called sun50i-thermal.
-> +
->  config ROCKCHIP_THERMAL
->  	tristate "Rockchip thermal driver"
->  	depends on ARCH_ROCKCHIP || COMPILE_TEST
-> diff --git a/drivers/thermal/Makefile b/drivers/thermal/Makefile
-> index 486d682be047..a09b30b90003 100644
-> --- a/drivers/thermal/Makefile
-> +++ b/drivers/thermal/Makefile
-> @@ -30,6 +30,7 @@ thermal_sys-$(CONFIG_DEVFREQ_THERMAL) += devfreq_cooling.o
->  # platform thermal drivers
->  obj-y				+= broadcom/
->  obj-$(CONFIG_SPEAR_THERMAL)	+= spear_thermal.o
-> +obj-$(CONFIG_SUN50I_THERMAL)	+= sun50i_thermal.o
->  obj-$(CONFIG_ROCKCHIP_THERMAL)	+= rockchip_thermal.o
->  obj-$(CONFIG_RCAR_THERMAL)	+= rcar_thermal.o
->  obj-$(CONFIG_RCAR_GEN3_THERMAL)	+= rcar_gen3_thermal.o
-> diff --git a/drivers/thermal/sun50i_thermal.c b/drivers/thermal/sun50i_thermal.c
-> new file mode 100644
-> index 000000000000..3bdb3677b3d4
-> --- /dev/null
-> +++ b/drivers/thermal/sun50i_thermal.c
-> @@ -0,0 +1,357 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Thermal sensor driver for Allwinner SOC
-> + * Copyright (C) 2019 Yangtao Li
-> + *
-> + * Based on the work of Icenowy Zheng <icenowy@aosc.io>
-> + * Based on the work of Ondrej Jirman <megous@megous.com>
-> + * Based on the work of Josef Gajdusek <atx@atx.name>
-> + */
-> +
-> +#include <linux/clk.h>
-> +#include <linux/device.h>
-> +#include <linux/module.h>
-> +#include <linux/nvmem-consumer.h>
-> +#include <linux/of_device.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/regmap.h>
-> +#include <linux/reset.h>
-> +#include <linux/slab.h>
-> +#include <linux/thermal.h>
-> +
-> +#define MAX_SENSOR_NUM	4
-> +
-> +#define FT_TEMP_MASK				GENMASK(11, 0)
-> +#define TEMP_CALIB_MASK				GENMASK(11, 0)
-> +#define TEMP_TO_REG				672
-> +#define CALIBRATE_DEFAULT			0x800
-> +
-> +#define SUN50I_THS_CTRL0			0x00
-> +#define SUN50I_H6_THS_ENABLE			0x04
-> +#define SUN50I_H6_THS_PC			0x08
-> +#define SUN50I_H6_THS_MFC			0x30
-> +#define SUN50I_H6_TEMP_CALIB			0xa0
-> +#define SUN50I_H6_TEMP_DATA			0xc0
-> +
-> +#define SUN50I_THS_CTRL0_T_ACQ(x)		((GENMASK(15, 0) & (x)) << 16)
-> +#define SUN50I_THS_FILTER_EN			BIT(2)
-> +#define SUN50I_THS_FILTER_TYPE(x)		(GENMASK(1, 0) & (x))
-> +#define SUN50I_H6_THS_PC_TEMP_PERIOD(x)		((GENMASK(19, 0) & (x)) << 12)
-> +
-> +/* millidegree celsius */
-> +#define SUN50I_H6_FT_DEVIATION			7000
-> +
-> +struct tsens_device;
-> +
-> +struct tsensor {
-> +	struct tsens_device		*tmdev;
-> +	struct thermal_zone_device	*tzd;
-> +	int				id;
-> +};
-> +
-> +struct sun50i_thermal_chip {
-> +	int	sensor_num;
-> +	int	offset;
-> +	int	scale;
-> +	int	ft_deviation;
-> +	int	temp_calib_base;
-> +	int	temp_data_base;
-> +	int	(*enable)(struct tsens_device *tmdev);
-> +	int	(*disable)(struct tsens_device *tmdev);
-> +};
-> +
-> +
-> +struct tsens_device {
-> +	const struct sun50i_thermal_chip	*chip;
-> +	struct device				*dev;
-> +	struct regmap				*regmap;
-> +	struct reset_control			*reset;
-> +	struct clk				*bus_clk;
-> +	struct tsensor				sensor[MAX_SENSOR_NUM];
-> +};
-> +
-> +/* Temp Unit: millidegree Celsius */
-> +static int tsens_reg2temp(struct tsens_device *tmdev,
-> +			      int reg)
-> +{
-> +	return (reg + tmdev->chip->offset) * tmdev->chip->scale;
-> +}
-> +
-> +static int tsens_get_temp(void *data, int *temp)
-> +{
-> +	struct tsensor *s = data;
-> +	struct tsens_device *tmdev = s->tmdev;
-> +	int val;
-> +
-> +	regmap_read(tmdev->regmap, tmdev->chip->temp_data_base +
-> +		    0x4 * s->id, &val);
-> +
-> +	if (unlikely(val == 0))
-> +		return -EBUSY;
-> +
-> +	*temp = tsens_reg2temp(tmdev, val);
-> +	if (tmdev->chip->ft_deviation)
-> +		*temp += tmdev->chip->ft_deviation;
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct thermal_zone_of_device_ops tsens_ops = {
-> +	.get_temp = tsens_get_temp,
-> +};
-> +
-> +static const struct regmap_config config = {
-> +	.reg_bits = 32,
-> +	.val_bits = 32,
-> +	.reg_stride = 4,
-> +	.fast_io = true,
-> +};
-> +
-> +static int tsens_init(struct tsens_device *tmdev)
-> +{
-> +	struct device *dev = tmdev->dev;
-> +	struct platform_device *pdev = to_platform_device(dev);
-> +	struct resource *mem;
-> +	void __iomem *base;
-> +
-> +	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> +	base = devm_ioremap_resource(dev, mem);
-> +	if (IS_ERR(base))
-> +		return PTR_ERR(base);
-> +
-> +	tmdev->regmap = devm_regmap_init_mmio_clk(dev, "bus",
-> +						  base,
-> +						  &config);
-> +	if (IS_ERR(tmdev->regmap))
-> +		return PTR_ERR(tmdev->regmap);
-> +
-> +	tmdev->reset = devm_reset_control_get(dev, "bus");
-> +	if (IS_ERR(tmdev->reset))
-> +		return PTR_ERR(tmdev->reset);
-> +
-> +	tmdev->bus_clk = devm_clk_get(&pdev->dev, "bus");
-> +	if (IS_ERR(tmdev->bus_clk))
-> +		return PTR_ERR(tmdev->bus_clk);
-> +
-> +	return 0;
-> +}
-> +
-> +/*
-> + * Even if the external calibration data stored in sid is not accessible,
-> + * the THS hardware can still work, although the data won't be so accurate.
-> + * The default value of calibration register is 0x800 for every sensor,
-> + * and the calibration value is usually 0x7xx or 0x8xx, so they won't be
-> + * away from the default value for a lot.
-> + *
-> + * So here we do not return error if the calibartion data is
-> + * not available, except the probe needs deferring.
-> + */
-> +static int tsens_calibrate(struct tsens_device *tmdev)
-> +{
-> +	struct nvmem_cell *calcell;
-> +	struct device *dev = tmdev->dev;
-> +	u16 *caldata;
-> +	size_t callen;
-> +	int ft_temp;
-> +	int i = 0;
-> +
-> +	calcell = devm_nvmem_cell_get(dev, "calib");
-> +	if (IS_ERR(calcell)) {
-> +		if (PTR_ERR(calcell) == -EPROBE_DEFER)
-> +			return -EPROBE_DEFER;
-> +
-> +		goto out;
-> +	}
-> +
-> +	caldata = nvmem_cell_read(calcell, &callen);
-> +	if (IS_ERR(caldata))
-> +		goto out;
-> +
-> +	if (!caldata[0] || callen < 2 + 2 * tmdev->chip->sensor_num)
-> +		goto out_free;
-> +
-> +	/*
-> +	 * The calbration data on H6 is stored as temperature-value
-> +	 * pair when being filled at factory test stage.
-> +	 * The unit of stored FT temperature is 0.1 degreee celusis.
-> +	 */
-> +	ft_temp = caldata[0] & FT_TEMP_MASK;
-> +
-> +	for (; i < tmdev->chip->sensor_num; i++) {
-> +		int reg = (int)caldata[i + 1];
-> +		int sensor_temp = tsens_reg2temp(tmdev, reg);
-> +		int delta, cdata, calib_offest;
-> +
-> +		/*
-> +		 * To calculate the calibration value:
-> +		 *
-> +		 * X(in Celsius) = Ts - ft_temp
-> +		 * delta = X * 10000 / TEMP_TO_REG
-> +		 * cdata = CALIBRATE_DEFAULT - delta
-> +		 *
-> +		 * cdata: calibration value
-> +		 */
-> +		delta = (sensor_temp - ft_temp * 100) * 10 / TEMP_TO_REG;
-> +		cdata = CALIBRATE_DEFAULT - delta;
-> +		if (cdata & ~TEMP_CALIB_MASK) {
-> +			dev_warn(dev, "sensor%d calibration value error", i);
-> +
-> +			continue;
-> +		}
-> +
-> +		calib_offest = tmdev->chip->temp_calib_base + (i / 2) * 0x4;
-> +
-> +		if (i % 2) {
-> +			int val;
-> +
-> +			regmap_read(tmdev->regmap, calib_offest, &val);
-> +			val = (val & TEMP_CALIB_MASK) | (cdata << 16);
-> +			regmap_write(tmdev->regmap, calib_offest, val);
-> +		} else
-> +			regmap_write(tmdev->regmap, calib_offest, cdata);
-> +	}
-> +
-> +out_free:
-> +	kfree(caldata);
-> +out:
-> +	return 0;
-> +}
-> +
-> +static int tsens_register(struct tsens_device *tmdev)
-> +{
-> +	struct thermal_zone_device *tzd;
-> +	int i = 0;
-> +
-> +	for (; i < tmdev->chip->sensor_num; i++) {
-> +		tmdev->sensor[i].tmdev = tmdev;
-> +		tmdev->sensor[i].id = i;
-> +		tmdev->sensor[i].tzd = devm_thermal_zone_of_sensor_register(
-> +					tmdev->dev, i, &tmdev->sensor[i],
-> +					&tsens_ops);
-> +		if (IS_ERR(tmdev->sensor[i].tzd))
-> +			return PTR_ERR(tzd);
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static int tsens_probe(struct platform_device *pdev)
-> +{
-> +	struct tsens_device *tmdev;
-> +	struct device *dev = &pdev->dev;
-> +	int ret;
-> +
-> +	tmdev = devm_kzalloc(dev, sizeof(*tmdev), GFP_KERNEL);
-> +	if (!tmdev)
-> +		return -ENOMEM;
-> +
-> +	tmdev->dev = dev;
-> +	tmdev->chip = of_device_get_match_data(&pdev->dev);
-> +	if (!tmdev->chip)
-> +		return -EINVAL;
-> +
-> +	ret = tsens_init(tmdev);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = tsens_register(tmdev);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = tmdev->chip->enable(tmdev);
-> +	if (ret)
-> +		return ret;
-> +
-> +	platform_set_drvdata(pdev, tmdev);
-> +
-> +	return ret;
-> +}
-> +
-> +static int tsens_remove(struct platform_device *pdev)
-> +{
-> +	struct tsens_device *tmdev = platform_get_drvdata(pdev);
-> +
-> +	tmdev->chip->disable(tmdev);
-> +
-> +	return 0;
-> +}
-> +
-> +static int sun50i_thermal_enable(struct tsens_device *tmdev)
-> +{
-> +	int ret, val;
-> +
-> +	ret = reset_control_deassert(tmdev->reset);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = clk_prepare_enable(tmdev->bus_clk);
-> +	if (ret)
-> +		goto assert_reset;
-> +
-> +	ret = tsens_calibrate(tmdev);
-> +	if (ret)
-> +		return ret;
-> +
-> +	/*
-> +	 * clkin = 24MHz
-> +	 * T acquire = clkin / (SUN50I_THS_CTRL0_T_ACQ + 1)
-> +	 *           = 20us
-> +	 */
-> +	regmap_write(tmdev->regmap, SUN50I_THS_CTRL0,
-> +		     SUN50I_THS_CTRL0_T_ACQ(479));
-> +	/* average over 4 samples */
-> +	regmap_write(tmdev->regmap, SUN50I_H6_THS_MFC,
-> +		     SUN50I_THS_FILTER_EN |
-> +		     SUN50I_THS_FILTER_TYPE(1));
-> +	/* period = (SUN50I_H6_THS_PC_TEMP_PERIOD + 1) * 4096 / clkin; ~10ms */
-> +	regmap_write(tmdev->regmap, SUN50I_H6_THS_PC,
-> +		     SUN50I_H6_THS_PC_TEMP_PERIOD(58));
+--===============7113961194153549302==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+ boundary="Sig_/1Ut8vlM/tSGq=IsIjYTN6gG"; protocol="application/pgp-signature"
 
-Also this math is not all that clear:
+--Sig_/1Ut8vlM/tSGq=IsIjYTN6gG
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
 
-  period = (SUN50I_H6_THS_PC_TEMP_PERIOD + 1) * 4096 / clkin; ~10ms
+Hi all,
 
-SUN50I_H6_THS_PC_TEMP_PERIOD is a macro with an argument. So how does
-this work?
+On Wed, 1 May 2019 13:40:54 +1000 Stephen Rothwell <sfr@canb.auug.org.au> w=
+rote:
+>
+> Today's linux-next merge of the input tree got a conflict in:
+>=20
+>   Documentation/devicetree/bindings/vendor-prefixes.txt
+>=20
+> between commit:
+>=20
+>   2c98d9e47533 ("dt-bindings: vendor-prefixes: add AZW")
+>=20
+> from the arm-soc tree and commit:
+>=20
+>   7b5bb55d0dad ("Input: add support for Azoteq IQS550/572/525")
+>=20
+> from the input tree.
+>=20
+> I fixed it up (see below) and can carry the fix as necessary. This
+> is now fixed as far as linux-next is concerned, but any non trivial
+> conflicts should be mentioned to your upstream maintainer when your tree
+> is submitted for merging.  You may also want to consider cooperating
+> with the maintainer of the conflicting tree to minimise any particularly
+> complex conflicts.
+>=20
+> --=20
+> Cheers,
+> Stephen Rothwell
+>=20
+> diff --cc Documentation/devicetree/bindings/vendor-prefixes.txt
+> index 5f2b185a04e6,51f99549161e..000000000000
+> --- a/Documentation/devicetree/bindings/vendor-prefixes.txt
+> +++ b/Documentation/devicetree/bindings/vendor-prefixes.txt
+> @@@ -54,7 -53,7 +54,8 @@@ avic	Shanghai AVIC Optoelectronics Co.
+>   avnet	Avnet, Inc.
+>   axentia	Axentia Technologies AB
+>   axis	Axis Communications AB
+> + azoteq	Azoteq (Pty) Ltd
+>  +azw     Shenzhen AZW Technology Co., Ltd.
+>   bananapi BIPAI KEJI LIMITED
+>   bhf	Beckhoff Automation GmbH & Co. KG
+>   bitmain	Bitmain Technologies
 
-Also, related to this, I've noticed that you removed the interrupt
-processing from the original driver. Without that you have to make sure
-that OF contains non-zero polling-delay and polling-delay-passive.
+Thie is now a conflict between the arm-soc tree and Linus' tree.
 
-Nonzero values are necessary for enabling polling mode of the tz core,
-otherwise tz core will not read values periodically from your driver.
+--=20
+Cheers,
+Stephen Rothwell
 
-You should documment it in the DT bindings, too. Or keep the interrupt
-handling for THS.
+--Sig_/1Ut8vlM/tSGq=IsIjYTN6gG
+Content-Type: application/pgp-signature
+Content-Description: OpenPGP digital signature
 
-regards,
-	o.
+-----BEGIN PGP SIGNATURE-----
 
-> +	/* enable sensor */
-> +	val = GENMASK(tmdev->chip->sensor_num - 1, 0);
-> +	regmap_write(tmdev->regmap, SUN50I_H6_THS_ENABLE, val);
-> +
-> +	return 0;
-> +
-> +assert_reset:
-> +	reset_control_assert(tmdev->reset);
-> +
-> +	return ret;
-> +}
-> +
-> +static int sun50i_thermal_disable(struct tsens_device *tmdev)
-> +{
-> +	clk_disable_unprepare(tmdev->bus_clk);
-> +	reset_control_assert(tmdev->reset);
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct sun50i_thermal_chip sun50i_h6_ths = {
-> +	.sensor_num = 2,
-> +	.offset = -2794,
-> +	.scale = -67,
-> +	.ft_deviation = SUN50I_H6_FT_DEVIATION,
-> +	.temp_calib_base = SUN50I_H6_TEMP_CALIB,
-> +	.temp_data_base = SUN50I_H6_TEMP_DATA,
-> +	.enable = sun50i_thermal_enable,
-> +	.disable = sun50i_thermal_disable,
-> +};
-> +
-> +static const struct of_device_id of_tsens_match[] = {
-> +	{ .compatible = "allwinner,sun50i-h6-ths", .data = &sun50i_h6_ths },
-> +	{ /* sentinel */ },
-> +};
-> +MODULE_DEVICE_TABLE(of, of_tsens_match);
-> +
-> +static struct platform_driver tsens_driver = {
-> +	.probe = tsens_probe,
-> +	.remove = tsens_remove,
-> +	.driver = {
-> +		.name = "sun50i-thermal",
-> +		.of_match_table = of_tsens_match,
-> +	},
-> +};
-> +module_platform_driver(tsens_driver);
-> +
-> +MODULE_DESCRIPTION("Thermal sensor driver for Allwinner SOC");
-> +MODULE_LICENSE("GPL v2");
-> -- 
-> 2.17.0
-> 
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAlzYrAYACgkQAVBC80lX
+0GxLUgf/TPvpX9Qyf51e5o+3yuVhTPB/uirCiqJYU1bRIO1fKDPYvNJR9p0jvYQk
+UKK0tj7AbhRaAsHumme0mXwU5fc5QYX0/XpQrtL/CVHxk7ua1FmtFIwDcI3bFY48
+Tub91jqGMQSJtg8KdPHC5vs/B/6xf/YmLO6PBItiaQtiktN2ZAI3B4erVt4lij55
++/Yx3J5Qg735hUCpAM1FaK3swlHGCIOgl9c20xHlu75u59osFIpEAqeaD1tCHrqi
+9sPGAFX8y/VtDfbPtVt1PS6TXLAttDWimk+MbntOJ7EctgbVcVZ1Ayf4A6nIZ7ou
+RzsPGMCTB930djEoKWqmEKMVRs4J1g==
+=JkKI
+-----END PGP SIGNATURE-----
+
+--Sig_/1Ut8vlM/tSGq=IsIjYTN6gG--
+
+
+--===============7113961194153549302==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7113961194153549302==--
+
