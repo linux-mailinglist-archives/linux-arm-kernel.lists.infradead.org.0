@@ -2,38 +2,38 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39AD11AE51
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 00:16:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9AE41AE5C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 00:40:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=swJNw9+ecR1UNn0Po0dpDRA3WuDlMmaupxTcd/gPtWU=; b=f5356J4Bfa8fho
-	RF6gidtN1FL3W5pH5W1XmMKpXu0Yqlabjgi5sqqzP2ITOprEi8H2SxpU23vPZNosumef5/yPCBRqa
-	zhySj007F7MdBvFSTE3zHkvr8wcyZbUONj85C9w3r8wU8G6M2mJKdsjiKYmAxbNa+TkdBkT4zbbzG
-	XpCBEnON89RyqrzYa6ZzjmRkVVgnca4i9RLOkoYciitjH9uBcMRBoZjBDCkEP41QKsJqVCBBpzHmv
-	6p1BY3clSg/XyNCGcl0HGImugXuGrtATZu9MnXv1FoGCy3Aw6vVoEXhOAO31BOGZs7JP1O1D9apcR
-	57QHsbKw9WnfDlVGuKUg==;
+	List-Owner; bh=IRRE8yu4SEaancK0bSBZxzRmNBgSAfgVqq3nUjuetjo=; b=Zyusw6FdcLNBu1
+	+4O0BQ5YgjhwHTaQVDc0/LUUSrVu2txm8Q3LwnEAoalrv0Wh4BKwFjrh7w4No/18RQOQ+4uY4VjR5
+	WQ5vlCywfa9MvOd1ZVXwoClZUFWGV0LlgmRR0pQZagKq+Uj140Qh1G8kgWTsF2LE7TnwPHXswj05c
+	BLgaoxOP7l5IstJ561R7HMqsEVieelISNPEijyVsT2teqQ2tizVVFOR+1APqzLWQp6nPSQj5Eooin
+	t3vZrNN+ezHCBV+oQf3DkN4uaOAaMhA6SVdHGn/C2dskVhBVr4votdZCXC9kplr5MTYCyWzoGFDnV
+	iPbDL0191rfJn62+5nNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPwld-0006iq-7i; Sun, 12 May 2019 22:16:25 +0000
+	id 1hPx8d-0005Dq-DG; Sun, 12 May 2019 22:40:11 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPwlU-0006iU-LD
- for linux-arm-kernel@lists.infradead.org; Sun, 12 May 2019 22:16:19 +0000
+ id 1hPx8Q-00053j-Fp
+ for linux-arm-kernel@lists.infradead.org; Sun, 12 May 2019 22:40:00 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1557699373; bh=P3samiJb5f84CMqzlj9sz7yN/KHtJtZ5NVmbGPI/Co4=;
+ t=1557700796; bh=4dvAP9xhVtVOsBt9SghI6QQI6gvQN6dXQLc9agBeNxA=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=n//o1REl3n3dLCsXhP5ADRiUtT8PReyA6Vnx3XZOR/otrY+1IGwcwfowxCWrLEEz1
- Rrfk76mRNzQyzPQA+4KvB5tpudEUAyDDbjDV+99wmRx0NQ2RJGaMdcMojPDeDov1dv
- q/WibJp12f+iHu3EImQemMYG+i+gme7OrHCIhIqU=
-Date: Mon, 13 May 2019 00:16:12 +0200
+ b=fu5YpMX93v1eM/19Xz31Wf1Tm3LBCGSp+CS4jsY97cYcSk1GbpDCWP2/s1wW6GO+X
+ a+8bPgaubFV/90BYEqUgg5cbHB9w5TrhtZdLrOCCkNYUog9eZs9wWWi+2e9/rNIiLN
+ RC0F8AVcekdbVIUzhvFtBKaypGg17h5i2Hb/owMs=
+Date: Mon, 13 May 2019 00:39:55 +0200
 From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
 To: Yangtao Li <tiny.windzz@gmail.com>
 Subject: Re: [PATCH 2/3] thermal: sun50i: add thermal driver for h6
-Message-ID: <20190512221612.ubmknvim4utnqpl4@core.my.home>
+Message-ID: <20190512223955.6lhclj6jr2akmsdx@core.my.home>
 Mail-Followup-To: Yangtao Li <tiny.windzz@gmail.com>, rui.zhang@intel.com,
  edubezval@gmail.com, daniel.lezcano@linaro.org, robh+dt@kernel.org,
  mark.rutland@arm.com, maxime.ripard@bootlin.com, wens@csie.org,
@@ -52,8 +52,8 @@ MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20190512082614.9045-3-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190512_151617_193629_8CFD493D 
-X-CRM114-Status: GOOD (  23.31  )
+X-CRM114-CacheID: sfid-20190512_153958_873656_31FC66CC 
+X-CRM114-Status: GOOD (  31.80  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -93,9 +93,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Yangtao,
-
 On Sun, May 12, 2019 at 04:26:13AM -0400, Yangtao Li wrote:
+> This patch adds the support for allwinner thermal sensor, within
+> allwinner SoC. It will register sensors for thermal framework
+> and use device tree to bind cooling device.
+> 
+> Based on driver code found here:
+> https://megous.com/git/linux and https://github.com/Allwinner-Homlet/H6-BSP4.9-linux
+> 
+> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+> ---
+>  MAINTAINERS                      |   7 +
+>  drivers/thermal/Kconfig          |  14 ++
+>  drivers/thermal/Makefile         |   1 +
+>  drivers/thermal/sun50i_thermal.c | 357 +++++++++++++++++++++++++++++++
+>  4 files changed, 379 insertions(+)
+>  create mode 100644 drivers/thermal/sun50i_thermal.c
+> 
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index 3c65228e93c5..8da56582e72a 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -674,6 +674,13 @@ L:	linux-crypto@vger.kernel.org
+>  S:	Maintained
+>  F:	drivers/crypto/sunxi-ss/
+>  
+> +ALLWINNER THERMAL DRIVER
+> +M:	Yangtao Li <tiny.windzz@gmail.com>
+> +L:	linux-pm@vger.kernel.org
+> +S:	Maintained
+> +F:	Documentation/devicetree/bindings/thermal/sun50i-thermal.txt
+> +F:	drivers/thermal/sun50i_thermal.c
+> +
+>  ALLWINNER VPU DRIVER
+>  M:	Maxime Ripard <maxime.ripard@bootlin.com>
+>  M:	Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> diff --git a/drivers/thermal/Kconfig b/drivers/thermal/Kconfig
+> index 653aa27a25a4..2a8d1c98c6ca 100644
+> --- a/drivers/thermal/Kconfig
+> +++ b/drivers/thermal/Kconfig
+> @@ -252,6 +252,20 @@ config SPEAR_THERMAL
+>  	  Enable this to plug the SPEAr thermal sensor driver into the Linux
+>  	  thermal framework.
+>  
+> +config SUN50I_THERMAL
+> +	tristate "Allwinner sun50i thermal driver"
+> +	depends on ARCH_SUNXI || COMPILE_TEST
+> +	depends on HAS_IOMEM
+> +	depends on NVMEM
+> +	depends on OF
+> +	depends on RESET_CONTROLLER
+> +	help
+> +	  Support for the sun50i thermal sensor driver into the Linux thermal
+> +	  framework.
+> +
+> +	  To compile this driver as a module, choose M here: the
+> +	  module will be called sun50i-thermal.
+> +
+>  config ROCKCHIP_THERMAL
+>  	tristate "Rockchip thermal driver"
+>  	depends on ARCH_ROCKCHIP || COMPILE_TEST
+> diff --git a/drivers/thermal/Makefile b/drivers/thermal/Makefile
+> index 486d682be047..a09b30b90003 100644
+> --- a/drivers/thermal/Makefile
+> +++ b/drivers/thermal/Makefile
+> @@ -30,6 +30,7 @@ thermal_sys-$(CONFIG_DEVFREQ_THERMAL) += devfreq_cooling.o
+>  # platform thermal drivers
+>  obj-y				+= broadcom/
+>  obj-$(CONFIG_SPEAR_THERMAL)	+= spear_thermal.o
+> +obj-$(CONFIG_SUN50I_THERMAL)	+= sun50i_thermal.o
+>  obj-$(CONFIG_ROCKCHIP_THERMAL)	+= rockchip_thermal.o
+>  obj-$(CONFIG_RCAR_THERMAL)	+= rcar_thermal.o
+>  obj-$(CONFIG_RCAR_GEN3_THERMAL)	+= rcar_gen3_thermal.o
 > diff --git a/drivers/thermal/sun50i_thermal.c b/drivers/thermal/sun50i_thermal.c
 > new file mode 100644
 > index 000000000000..3bdb3677b3d4
@@ -177,15 +246,6 @@ On Sun, May 12, 2019 at 04:26:13AM -0400, Yangtao Li wrote:
 > +/* Temp Unit: millidegree Celsius */
 > +static int tsens_reg2temp(struct tsens_device *tmdev,
 > +			      int reg)
-
-Please name all functions so that they are more clearly identifiable
-in stack traces as belonging to this driver. For example:
-
-  sun8i_ths_reg2temp
-
-The same applies for all tsens_* functions below. tsens_* is too
-generic.
-
 > +{
 > +	return (reg + tmdev->chip->offset) * tmdev->chip->scale;
 > +}
@@ -288,9 +348,6 @@ generic.
 > +	 * pair when being filled at factory test stage.
 > +	 * The unit of stored FT temperature is 0.1 degreee celusis.
 > +	 */
-
-Please describe the calibration data layout more clearly.
-
 > +	ft_temp = caldata[0] & FT_TEMP_MASK;
 > +
 > +	for (; i < tmdev->chip->sensor_num; i++) {
@@ -311,13 +368,12 @@ Please describe the calibration data layout more clearly.
 > +		cdata = CALIBRATE_DEFAULT - delta;
 > +		if (cdata & ~TEMP_CALIB_MASK) {
 > +			dev_warn(dev, "sensor%d calibration value error", i);
-
-Please use a more descriptive error message. What error is this?
-
+> +
 > +			continue;
 > +		}
 > +
 > +		calib_offest = tmdev->chip->temp_calib_base + (i / 2) * 0x4;
+> +
 > +		if (i % 2) {
 > +			int val;
 > +
@@ -374,9 +430,7 @@ Please use a more descriptive error message. What error is this?
 > +	ret = tsens_register(tmdev);
 > +	if (ret)
 > +		return ret;
-
-Why split this out of probe into separate functions?
-
+> +
 > +	ret = tmdev->chip->enable(tmdev);
 > +	if (ret)
 > +		return ret;
@@ -410,17 +464,7 @@ Why split this out of probe into separate functions?
 > +	ret = tsens_calibrate(tmdev);
 > +	if (ret)
 > +		return ret;
-
-If this fails (it may likely fail with EPROBE_DEFER) you are leaving reset
-deasserted, and clock enabled.
-
-Overall, I think, reset/clock management and nvmem reading will be common
-to all the HW variants, so it doesn't make much sense splitting it out
-of probe into separate functions, and makes it more error prone.
-
-thank you and regards,
-	o.
-
+> +
 > +	/*
 > +	 * clkin = 24MHz
 > +	 * T acquire = clkin / (SUN50I_THS_CTRL0_T_ACQ + 1)
@@ -435,6 +479,27 @@ thank you and regards,
 > +	/* period = (SUN50I_H6_THS_PC_TEMP_PERIOD + 1) * 4096 / clkin; ~10ms */
 > +	regmap_write(tmdev->regmap, SUN50I_H6_THS_PC,
 > +		     SUN50I_H6_THS_PC_TEMP_PERIOD(58));
+
+Also this math is not all that clear:
+
+  period = (SUN50I_H6_THS_PC_TEMP_PERIOD + 1) * 4096 / clkin; ~10ms
+
+SUN50I_H6_THS_PC_TEMP_PERIOD is a macro with an argument. So how does
+this work?
+
+Also, related to this, I've noticed that you removed the interrupt
+processing from the original driver. Without that you have to make sure
+that OF contains non-zero polling-delay and polling-delay-passive.
+
+Nonzero values are necessary for enabling polling mode of the tz core,
+otherwise tz core will not read values periodically from your driver.
+
+You should documment it in the DT bindings, too. Or keep the interrupt
+handling for THS.
+
+regards,
+	o.
+
 > +	/* enable sensor */
 > +	val = GENMASK(tmdev->chip->sensor_num - 1, 0);
 > +	regmap_write(tmdev->regmap, SUN50I_H6_THS_ENABLE, val);
