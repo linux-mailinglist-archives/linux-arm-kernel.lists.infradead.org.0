@@ -2,104 +2,110 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 588801AB3F
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 May 2019 10:38:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 378ED1AB51
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 May 2019 10:51:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
 	:Subject:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=iR13OXG74W/ufEHcMTwtreuqIwL/XS2HCRv4J+QVy0I=; b=sJBjUqCo/EeKEP
-	i47YzoTZZF5ZWd+XxqNX3M0qKYgHUgkgTXysVbd7NagcD71/1IcSiUB42RhCAKf3IpnrqfHfc9QpM
-	6j408iV+ZConvgBv0N1eB0zw5EreGJABY8G+6hHgIuNJmMx1Qo5F2kTYifFPU2ZJxRiqwtR6+GeeQ
-	Xlu97gIiHpleUOOdWLufFW6mapZvr2jZZL5YIdIndJj+ySXQesxND92hhXxC8jiOoEGcGTKVMgncG
-	7Fh6G9M3D+lJvE1I0Xkb2CNZz7ffSNmWrbI+AMrjp/gFVytXsHieEDodvsLJeq3ujMRHlIpBIYUib
-	BHCR3R4C80fvfYL5GTvg==;
+	List-Owner; bh=PiammAhS7nSK6epu4ccmhckz6j/leSlwOXoOMV9j5tE=; b=dAijlN1RJXBYRo
+	p+9cfPk/fDirOQtF+Uc340VIAF+vy5rFNMSgcLwBnZccEubnUphKK3k9wQP1Usqd9dNBRsocIUhWO
+	kTRbtnc44pKA0VGS4bg6Gl0Fpq1QuYhjnOo78p4OJUxuMW8TWJXzTyvOF5L9TEfY4amEB7eM8/PAz
+	p/062St3aAzUA3kXrV0oBPsXUOf5r7tKneAI4Tuy/Cs/a5GM50FV3WgHOcye+7K1OMpNkpO8SG/Kn
+	K1+24vAOUC7juxMGA8Wp1vadyweuqP5YU7kF9KTiGJhyW/67pmSXts0U9xmosjWTRxFPVRZ3yXkDh
+	blc85fklQtFrZD7SAR8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPk0C-0004sd-K9; Sun, 12 May 2019 08:38:36 +0000
-Received: from mail-eopbgr70042.outbound.protection.outlook.com ([40.107.7.42]
+	id 1hPkCe-0000zT-Ie; Sun, 12 May 2019 08:51:28 +0000
+Received: from mail-eopbgr70041.outbound.protection.outlook.com ([40.107.7.41]
  helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPk04-0004rz-VW
- for linux-arm-kernel@lists.infradead.org; Sun, 12 May 2019 08:38:30 +0000
+ id 1hPkCW-0000z8-Qw
+ for linux-arm-kernel@lists.infradead.org; Sun, 12 May 2019 08:51:22 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=nZToeyy/VbKu85ClC/RMpd8GpTvydWxW9CqYxhqmVOA=;
- b=iakjAbjLKm6xsMbXdIVfGVtBpS8AsVus0NDtJBEDrD4r8SXSgb5N4OSckpr62YMKh3JT1kCWNVZGdYufXloOs2Hd83hbXI8031T+ESBeosYtzMjj+xaJz+TUhBx78K4x8gEsw5mD3vUtcaeybUCf91Z+f6IzuhYBzQy4tqVb8TU=
+ bh=TDJ/qW6lbDzjrjMOB+Uej4+nV7CPKZuwtBnkVpbpyOI=;
+ b=DwgfIf3/MDhUYp/tVMrqf7XFIjt149QtQLnh3XcgAHQNrrHF0iOR+zlQa71Ncr9c/l33dUvUKTcR9iRzu2MsjQyp/XmmzNldikDy1hkzzDKGegKh9kbAWxtXPZGBl0b8WnC9AqQyydzvWPvu+4bIZF8d8p3s0cD3g6/cgHcoWQ8=
 Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3899.eurprd04.prod.outlook.com (52.134.71.154) with Microsoft SMTP
+ DB3PR0402MB3739.eurprd04.prod.outlook.com (52.134.67.22) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1878.22; Sun, 12 May 2019 08:38:23 +0000
+ 15.20.1878.21; Sun, 12 May 2019 08:51:15 +0000
 Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
  ([fe80::d035:3bd0:a56a:189d]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
  ([fe80::d035:3bd0:a56a:189d%2]) with mapi id 15.20.1878.022; Sun, 12 May 2019
- 08:38:23 +0000
+ 08:51:15 +0000
 From: Anson Huang <anson.huang@nxp.com>
-To: "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
- <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>, Aisheng Dong
- <aisheng.dong@nxp.com>, "linux-arm-kernel@lists.infradead.org"
+To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
+ <mark.rutland@arm.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
+ <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>, "otavio@ossystems.com.br"
+ <otavio@ossystems.com.br>, Leonard Crestez <leonard.crestez@nxp.com>,
+ "schnitzeltony@gmail.com" <schnitzeltony@gmail.com>,
+ "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
+ "jan.tuerk@emtrion.com" <jan.tuerk@emtrion.com>, Robin Gong
+ <yibin.gong@nxp.com>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
  <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
  <linux-kernel@vger.kernel.org>
-Subject: [PATCH RESEND] firmware: imx: SCU irq should ONLY be enabled after
- SCU IPC is ready
-Thread-Topic: [PATCH RESEND] firmware: imx: SCU irq should ONLY be enabled
- after SCU IPC is ready
-Thread-Index: AQHVCJ4Ptwa9h9gYOEacqXJaiRkUag==
-Date: Sun, 12 May 2019 08:38:22 +0000
-Message-ID: <1557650002-10565-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V12 RESEND 1/3] ARM: imx_v6_v7_defconfig: Add TPM PWM support
+ by default
+Thread-Topic: [PATCH V12 RESEND 1/3] ARM: imx_v6_v7_defconfig: Add TPM PWM
+ support by default
+Thread-Index: AQHVCJ/ba2U9z0dY2k6pxI/P2DhoFA==
+Date: Sun, 12 May 2019 08:51:15 +0000
+Message-ID: <1557650772-11973-1-git-send-email-Anson.Huang@nxp.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 x-mailer: git-send-email 2.7.4
-x-clientproxiedby: HK2PR06CA0024.apcprd06.prod.outlook.com
- (2603:1096:202:2e::36) To DB3PR0402MB3916.eurprd04.prod.outlook.com
+x-clientproxiedby: HK2PR03CA0043.apcprd03.prod.outlook.com
+ (2603:1096:202:17::13) To DB3PR0402MB3916.eurprd04.prod.outlook.com
  (2603:10a6:8:10::18)
 authentication-results: spf=none (sender IP is )
  smtp.mailfrom=anson.huang@nxp.com; 
 x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [119.31.174.66]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: cf69ddd5-5667-4ed3-af71-08d6d6b53173
+x-ms-office365-filtering-correlation-id: b553a5ba-b060-4ace-8b11-08d6d6b6fddf
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3899; 
-x-ms-traffictypediagnostic: DB3PR0402MB3899:
-x-microsoft-antispam-prvs: <DB3PR0402MB3899831FA7034745F64F6C67F50E0@DB3PR0402MB3899.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4714;
+ SRVR:DB3PR0402MB3739; 
+x-ms-traffictypediagnostic: DB3PR0402MB3739:
+x-ms-exchange-purlcount: 1
+x-microsoft-antispam-prvs: <DB3PR0402MB37396650EA1D2665169013CEF50E0@DB3PR0402MB3739.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2150;
 x-forefront-prvs: 0035B15214
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(376002)(39860400002)(396003)(136003)(366004)(346002)(199004)(189003)(25786009)(66476007)(66556008)(486006)(66446008)(8676002)(64756008)(2616005)(476003)(73956011)(4326008)(14454004)(8936002)(50226002)(66946007)(6512007)(53936002)(2201001)(26005)(102836004)(71190400001)(86362001)(71200400001)(7736002)(6506007)(478600001)(386003)(81166006)(81156014)(305945005)(2906002)(316002)(6116002)(110136005)(3846002)(66066001)(5024004)(256004)(5660300002)(68736007)(36756003)(186003)(2501003)(99286004)(6436002)(52116002)(6486002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3899;
+ SFS:(10009020)(366004)(39860400002)(136003)(346002)(396003)(376002)(199004)(189003)(966005)(36756003)(186003)(66556008)(476003)(66446008)(66946007)(66476007)(64756008)(486006)(14454004)(2501003)(66066001)(2906002)(2616005)(256004)(73956011)(478600001)(4326008)(3846002)(6116002)(25786009)(26005)(102836004)(6436002)(7736002)(305945005)(53936002)(6506007)(386003)(6486002)(6512007)(6306002)(7416002)(2201001)(86362001)(4744005)(316002)(110136005)(68736007)(81156014)(81166006)(8676002)(8936002)(50226002)(71190400001)(71200400001)(52116002)(99286004)(5660300002)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3739;
  H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 3/50CWsn+iDxOHpl7J4VNNfvgd0PFRmHLuuEcZcSTKT8zRyHW1nunXH+t8fdn1jXFlFuvkqwTb8PmGx+8IeOPCouVFZO23DHj1ye7Do7Bicp/2CofyLDmnGIe0LzeXFvjdT/uJQH5XfUcX39jJvCKVWgWDJxdSBLqglnD6pzNjNOXYfe49jWZJS88FluK/S2cd+kAwmdJi0+2K+n9dGufBqYqWFuMR1iNBMHYZw+13IxN7ZLxOa/tmRkXsKnJ2xbGiV38dXWAvesaIsmDw5ASVzo1s1GIxGK0nDVo7dsimz7dlQTUmbFCo2Vj559FwHoXB7BjUT4mvS6SyWVTNy+KQbBdEawKk4P452Fe7ufy5XcFgwQJXSNCfiXu9PMQgqDGGYXp/TQsXoAMydUBDjr0h3Qke/TqkBp5dpqZllLoec=
-Content-ID: <43778D673E641949BC90A47382C53AA7@eurprd04.prod.outlook.com>
+x-microsoft-antispam-message-info: uOXkVo64ZCmRcSVwKHFXssUjheR3ubvA3CfMc75m1hs5vZ+zMDy661YrnknEVvn8cKTVZVuzhR6cZ6t/En7qf7ScJ8phaj92FLKSA15TfVwW+rm2q8HY09knzpce91cCJX31h9VjUNiqpcGDKizpy42dtacZxE4i9+1jaRirlA+G2qqTV0Yum5vCWGRxAnV1Cv1mUlpxaeQq4hMh9oJm9oZcLvT0bZC3T/dMDlsXH7Q3vmXqIE27N0+BUFpUTcclv0UwpVpWlm9nVNrmQdDmaO4mzDbKwSPR0qHIKeqjK0L+zh/KpM8hDc+QU9EJ/A0ZQsVpZEpOTOQagnJtGzeHfK9PnLwJM92EQyhnO/kYSOLVwFfnQKkqwRD6N199nOlZEzmVagvecUU7g7dVy6dEdWx4KGAkFN920ZBm9TAWlB0=
+Content-ID: <920B8BDFCC09454ABCA20E7BFC63ED42@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: cf69ddd5-5667-4ed3-af71-08d6d6b53173
-X-MS-Exchange-CrossTenant-originalarrivaltime: 12 May 2019 08:38:22.9855 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: b553a5ba-b060-4ace-8b11-08d6d6b6fddf
+X-MS-Exchange-CrossTenant-originalarrivaltime: 12 May 2019 08:51:15.7445 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3899
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3739
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190512_013829_088872_3C1C4568 
-X-CRM114-Status: GOOD (  10.79  )
+X-CRM114-CacheID: sfid-20190512_015120_870992_0821BC4D 
+X-CRM114-Status: GOOD (  10.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.7.42 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -109,6 +115,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.7.41 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -126,78 +134,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The imx_scu_irq_group_enable() is normally called during module driver
-probe phase to enable SCU group irq, if SCU IPC is NOT ready, below
-dump will show out:
+Select CONFIG_PWM_IMX_TPM by default to support i.MX7ULP
+TPM PWM.
 
-[    0.933001] Hardware name: Freescale i.MX8QXP MEK (DT)
-[    0.938129] pstate: 60000005 (nZCv daif -PAN -UAO)
-[    0.942907] pc : imx_scu_call_rpc+0x114/0x158
-[    0.947251] lr : imx_scu_irq_group_enable+0x74/0xc4
-[    0.952113] sp : ffff00001005bae0
-[    0.955415] x29: ffff00001005bae0 x28: ffff0000111bb0a0
-[    0.960712] x27: ffff00001140b000 x26: ffff00001111068c
-[    0.966011] x25: ffff0000111bb100 x24: 0000000000000000
-[    0.971311] x23: ffff0000113d9cd8 x22: 0000000000000001
-[    0.976610] x21: 0000000000000001 x20: ffff80083b51a410
-[    0.981909] x19: ffff000011259000 x18: 0000000000000480
-[    0.987209] x17: 000000000023ffb8 x16: 0000000000000010
-[    0.992508] x15: 000000000000023f x14: ffffffffffffffff
-[    0.997807] x13: 0000000000000018 x12: 0000000000000030
-[    1.003107] x11: 0000000000000003 x10: 0101010101010101
-[    1.008406] x9 : ffffffffffffffff x8 : 7f7f7f7f7f7f7f7f
-[    1.013706] x7 : fefefeff646c606d x6 : 0000000000000000
-[    1.019005] x5 : ffff0000112596c8 x4 : 0000000000000008
-[    1.024304] x3 : 0000000000000003 x2 : 0000000000000001
-[    1.029604] x1 : ffff00001005bb58 x0 : 0000000000000000
-[    1.034905] Call trace:
-[    1.037341]  imx_scu_call_rpc+0x114/0x158
-[    1.041334]  imx_scu_irq_group_enable+0x74/0xc4
-[    1.045856]  imx_sc_wdt_probe+0x24/0x150
-[    1.049766]  platform_drv_probe+0x4c/0xb0
-[    1.053762]  really_probe+0x1f8/0x2c8
-[    1.057407]  driver_probe_device+0x58/0xfc
-[    1.061490]  device_driver_attach+0x68/0x70
-[    1.065660]  __driver_attach+0x94/0xdc
-[    1.069397]  bus_for_each_dev+0x64/0xc0
-[    1.073220]  driver_attach+0x20/0x28
-[    1.076782]  bus_add_driver+0x148/0x1fc
-[    1.080601]  driver_register+0x68/0x120
-[    1.084424]  __platform_driver_register+0x4c/0x54
-[    1.089120]  imx_sc_wdt_driver_init+0x18/0x20
-[    1.093463]  do_one_initcall+0x58/0x1b8
-[    1.097287]  kernel_init_freeable+0x1cc/0x288
-[    1.101630]  kernel_init+0x10/0x100
-[    1.105101]  ret_from_fork+0x10/0x18
-[    1.108669] ---[ end trace 9e03302114457de9 ]---
-[    1.113296] enable irq failed, group 1, mask 1, ret -22
-
-To avoid such scenario, return -EPROBE_DEFER in imx_scu_irq_group_enable()
-API if SCU IPC is NOT ready, then module driver which calls this API
-in probe phase will defer probe after SCU IPC ready.
-
-Fixes: 851826c7566e ("firmware: imx: enable imx scu general irq function")
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
-No code change, just resend the patch with correct encoding.
+No change change, just resend the patch with correct encoding for patch series:
+https://patchwork.kernel.org/patch/10937147/
 ---
- drivers/firmware/imx/imx-scu-irq.c | 3 +++
- 1 file changed, 3 insertions(+)
+ arch/arm/configs/imx_v6_v7_defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/firmware/imx/imx-scu-irq.c b/drivers/firmware/imx/imx-scu-irq.c
-index 043833a..687121f 100644
---- a/drivers/firmware/imx/imx-scu-irq.c
-+++ b/drivers/firmware/imx/imx-scu-irq.c
-@@ -100,6 +100,9 @@ int imx_scu_irq_group_enable(u8 group, u32 mask, u8 enable)
- 	struct imx_sc_rpc_msg *hdr = &msg.hdr;
- 	int ret;
- 
-+	if (!imx_sc_irq_ipc_handle)
-+		return -EPROBE_DEFER;
-+
- 	hdr->ver = IMX_SC_RPC_VERSION;
- 	hdr->svc = IMX_SC_RPC_SVC_IRQ;
- 	hdr->func = IMX_SC_IRQ_FUNC_ENABLE;
+diff --git a/arch/arm/configs/imx_v6_v7_defconfig b/arch/arm/configs/imx_v6_v7_defconfig
+index ea387cb..cee7c61 100644
+--- a/arch/arm/configs/imx_v6_v7_defconfig
++++ b/arch/arm/configs/imx_v6_v7_defconfig
+@@ -402,6 +402,7 @@ CONFIG_MPL3115=y
+ CONFIG_PWM=y
+ CONFIG_PWM_FSL_FTM=y
+ CONFIG_PWM_IMX27=y
++CONFIG_PWM_IMX_TPM=y
+ CONFIG_NVMEM_IMX_OCOTP=y
+ CONFIG_NVMEM_VF610_OCOTP=y
+ CONFIG_TEE=y
 -- 
 2.7.4
 
