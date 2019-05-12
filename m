@@ -2,69 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D5BC81ADCE
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 May 2019 20:41:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BDEB01ADD3
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 May 2019 20:42:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hQZkHRBwsMlGkS2zwjszJKz+JItJuzVcIyQvSxrbkAo=; b=f5mSj7cNkgeL7X
-	t3PkeGhFnm7velT0yWWCiSPVK/8+smnWbDvQy4nThit+tid+apGi7F+CUOsu5kPpG+yOwF7kxRO5r
-	UrMB0DwQN3AG0xMCA+fDPvMIzZeqH/6sLDwVDTBckJBY0Q8ccKUhXZ64jeNx9ThgwnlqmPiFuvAAo
-	/mcXVhv0FqhSQpdIMXSn/Ft9C982Ay6ciP0NNrHVzHQhQ5tbNJbvJq4nktFyLitJBV8YrWcipmque
-	777qJ1qsa8fHl0i5ESkQqX0XC4YIXQaf4iUI7g231wDqWEbN2O9iP8EbDNmDQSNNLl43Waee2YE74
-	wxI704SoBplPggAgYB1Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=L+oBgshsd/zQY3WJH/mHKSI06aVI57kjH/lwW8sRoWo=; b=TIJpxlHHdLVJFz
+	mjAWTfJMWo6RrTrGX2QtvzhOWZZ4Dy1/m2u7GbE6nuIGsoW7/dWNWQyboej7EQZmdov+lB9bw2Iz9
+	oRW2fPF4sMCFKom6mvt1VPkteqNOXN5YGO3BN4g4TRXsIHhutMm+x23L6Igg5UGU2wL+2lC5FLDVV
+	gdumjR6VjXYtt/r92VtaBAN+sqDMSnIve9Kf7l55TSc1AdQz/tS8uPtgOQ2v0g4La1DCOa2hWB0tV
+	Ci3eq1hYHpBOb5tM2VLMPZPNYNELKmroDbBtO41HNTxoEy+rfqOLZQlnDfTtMUCo7FKT6QnoYyRMm
+	yNsVJd6ChPEty4EzOHOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPtQ0-0007sc-4Y; Sun, 12 May 2019 18:41:52 +0000
+	id 1hPtQC-00084H-Fs; Sun, 12 May 2019 18:42:04 +0000
 Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPtPr-0007s1-QO
- for linux-arm-kernel@lists.infradead.org; Sun, 12 May 2019 18:41:46 +0000
-Received: by mail-pg1-x543.google.com with SMTP id t187so5545954pgb.13
+ id 1hPtPv-0007sf-Bv
+ for linux-arm-kernel@lists.infradead.org; Sun, 12 May 2019 18:41:48 +0000
+Received: by mail-pg1-x543.google.com with SMTP id j26so5562980pgl.5
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 12 May 2019 11:41:42 -0700 (PDT)
+ Sun, 12 May 2019 11:41:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=e+4FJQrwxfW4iQ3D++ujgHoZ7fSNJSGSWELuM5mxXM0=;
- b=OFAoMYrjTKSrSw68dDWRRAa8d060sQJaewjsrrmuYlw7o0UTzedLE5cjsvyGvG6/lj
- XFe19ijnnSaSUUsxtTUcmuztKzK4FrkBnPr61fwbecvFpT8FD+xEs/TTVE3mTrT4M214
- GmkpotVhxepcWmHthgsbOF67lJkSrkiHKb8rM=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=McU3A/Y2+KH8KsiZ+LTp3qJ8zWb4gZuzV4pCEGTBglg=;
+ b=SVFjdqYSyAPhETD5SmYAsNRKu3Wf4F+fbW/+KnD9toKXS3ehMbEWA4cauoMEyZxVM3
+ W2/GPER2Zd9IkEVZf4W6g+lCw7bp/90c1izCMNumL1PsfyDh3Gl4sCCtp3yuJGmOxFrt
+ ZpuHyTiZqAZYxxZSvyBL74T/y6FkIJ8C9XDws=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=e+4FJQrwxfW4iQ3D++ujgHoZ7fSNJSGSWELuM5mxXM0=;
- b=KrLt9+1onSDRve9kTKAE/6DCT9Yc/yQ05wzpj/NCR6KnWJ5ta2DEs5u1etxC13BDdX
- gZLFC66gfSYtXQrw0Rp3A2oUWRnpv2tgbXNhAzOSD1HIFS54Ng7XOln9fhxQulnzvpyd
- e16PPYUlU4KqGd2E3plt4fXeA/jT3Vp4ZmohviePhmEPPAlyS+4fD7v+GRXnZGZkKeXC
- rnPO63rEqeBAc+s51uDDb3NmCSz9B6VQ+GAHF9+M2h3y62T+cE7a92DCfsExSTkyQg8d
- 24Kws3+opysaoy3dThAB0NvB0zTi/I+xwtkNzb4uyNRPryRCrzDfc9bMflaxzEAfgb6e
- C0Lw==
-X-Gm-Message-State: APjAAAVTS9n6yNQDNvBE8c1O2gZHYsy/cVlxJ0QwkyT2m2XpoRmfm/Rd
- K5Q7x4Ydpwxw6PnOqbF0dvFxuQ==
-X-Google-Smtp-Source: APXvYqxEjNVOEFw39liUe55Z6S+XNfP2Rf4kINCXCoKeJYUK6ImMO8g8xjL8UwoLXVRCynFgk9TW7A==
-X-Received: by 2002:a63:4346:: with SMTP id q67mr26842320pga.241.1557686502441; 
- Sun, 12 May 2019 11:41:42 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=McU3A/Y2+KH8KsiZ+LTp3qJ8zWb4gZuzV4pCEGTBglg=;
+ b=YV/ZnfxEt1V4nsw8MY95wlbzNYaQoT3y5Qw8xnZbN08J0EQ3qM3QntfwphBuBZmkq0
+ gLCwaJSYsJD68y8WbI5L90frNtJl4j5zLQjfDhUsJYCchpkOVA8NRe8WXX3u2Nn2BTdl
+ D/6Vc8kNIJnOxxQhYjA3JfNMnkt0jTAWtfrWzhJ5GXLpnlp96r/AxFNtDeg4fuCYxk/D
+ bg2YM0C++u+D2VnuwBoPoLqhuFhpL4Qa8CDCiCHzSFVmdglo8pLN9G0vW+2tZ1i6KDla
+ PjO1tLuNfVPK6uifwiDQ7X+5LEPyt4s4Fq2vdQIK8UQRJx2SwOct9g495TfGVcXGN2CA
+ msuw==
+X-Gm-Message-State: APjAAAVkaWxtdP5xbZ1IoWk2wZiFW5wYI40+yRLyaZ1G1BLet4/fDUoY
+ IoLujO8Af4WmhymcKGIU/OhzlQ==
+X-Google-Smtp-Source: APXvYqymxOYGSIxI7rUWYYOmlL1YU/UTYVdKySGM7lGUdp7qmHIxhsd9GhZCn1HJuCfA9pBG34sdAQ==
+X-Received: by 2002:a63:f754:: with SMTP id f20mr26935381pgk.162.1557686506891; 
+ Sun, 12 May 2019 11:41:46 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.185.144])
- by smtp.gmail.com with ESMTPSA id 37sm11041291pgn.21.2019.05.12.11.41.37
+ by smtp.gmail.com with ESMTPSA id 37sm11041291pgn.21.2019.05.12.11.41.42
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 12 May 2019 11:41:42 -0700 (PDT)
+ Sun, 12 May 2019 11:41:46 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Maxime Ripard <maxime.ripard@bootlin.com>, David Airlie <airlied@linux.ie>,
  Daniel Vetter <daniel@ffwll.ch>, Chen-Yu Tsai <wens@csie.org>
-Subject: [PATCH v10 0/2] drm/sun4i: sun6i_mipi_dsi: Fixes/updates
-Date: Mon, 13 May 2019 00:11:25 +0530
-Message-Id: <20190512184128.13720-1-jagan@amarulasolutions.com>
+Subject: [PATCH v10 1/2] drm/sun4i: sun6i_mipi_dsi: Fix hsync_porch overflow
+Date: Mon, 13 May 2019 00:11:26 +0530
+Message-Id: <20190512184128.13720-2-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
+In-Reply-To: <20190512184128.13720-1-jagan@amarulasolutions.com>
+References: <20190512184128.13720-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190512_114144_318534_C5910EAC 
-X-CRM114-Status: GOOD (  10.33  )
+X-CRM114-CacheID: sfid-20190512_114147_445535_961D7C85 
+X-CRM114-Status: GOOD (  13.86  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -101,56 +103,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is v10 for the previous series[1] and few pathes are dropped
-as part of this series since it would require separate rework same
-will send in separately or another series.
+Loop N1 instruction delay for burst mode devices are computed
+based on horizontal sync and porch timing values.
 
-Changes for v10:
-- rebased on linux-next
-- dropped few patches
-- add 150 multiplication on hsync_porch
-Changes for v9:
-- rebase on drm-misc
-- update commit messages
-- add hsync_porch overflow patch
-Changes for v8:
-- rebase on master
-- rework on commit messages
-- rework video start delay
-- include drq changes from previous version
-Changes for v7:
-- rebase on master
-- collect Merlijn Wajer Tested-by credits.
-Changes for v6:
-- fixed all burst mode patches as per previous version comments
-- rebase on master
-- update proper commit message
-- dropped unneeded comments
-- order the patches that make review easy
-Changes for v5, v4, v3, v2:
-- use existing driver code construct for hblk computation
-- create separate function for vblk computation 
-- cleanup commit messages
-- update proper commit messages
-- fixed checkpatch warnings/errors
-- use proper return value for tcon0 probe
-- add logic to get tcon0 divider values
-- simplify timings code to support burst mode
-- fix drq computation return values
-- rebase on master
+The current driver is using u16 type for computing this hsync_porch
+value, which would failed to fit within the u16 type for large sync
+and porch timings devices. This would result in hsync_porch overflow
+and eventually computed wrong instruction delay value.
 
-[1] https://patchwork.kernel.org/cover/10837163/
+Example, timings, where it produces the overflow
+{
+	.hdisplay       = 1080,
+	.hsync_start    = 1080 + 408,
+        .hsync_end      = 1080 + 408 + 4,
+        .htotal         = 1080 + 408 + 4 + 38,
+}
 
-Any inputs?
-Jagan.
+It reproduces the desired delay value 65487 but the correct working
+value should be 7.
 
-Jagan Teki (2):
-  drm/sun4i: sun6i_mipi_dsi: Fix hsync_porch overflow
-  drm/sun4i: sun6i_mipi_dsi: Support DSI GENERIC_SHORT_WRITE_2 transfer
+So, Fix it by computing hsync_porch value separately with u32 type.
 
- drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+Fixes: 1c1a7aa3663c ("drm/sun4i: dsi: Add burst support")
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+---
+ drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
+diff --git a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
+index 6ff585055a07..bfa7e2b146df 100644
+--- a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
++++ b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
+@@ -457,8 +457,9 @@ static void sun6i_dsi_setup_inst_loop(struct sun6i_dsi *dsi,
+ 	u16 delay = 50 - 1;
+ 
+ 	if (device->mode_flags & MIPI_DSI_MODE_VIDEO_BURST) {
+-		delay = (mode->htotal - mode->hdisplay) * 150;
+-		delay /= (mode->clock / 1000) * 8;
++		u32 hsync_porch = (mode->htotal - mode->hdisplay) * 150;
++
++		delay = (hsync_porch / ((mode->clock / 1000) * 8));
+ 		delay -= 50;
+ 	}
+ 
 -- 
 2.18.0.321.gffc6fa0e3
 
