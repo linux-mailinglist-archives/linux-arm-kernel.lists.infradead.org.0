@@ -2,88 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0EADB1AD06
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 May 2019 18:22:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0840E1AD88
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 May 2019 19:41:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gY3j+Svd7p9jKbFdh7nNEJu3JhM1MKqvogJSVc0hA90=; b=juetGsyGe4KShj
-	d58Lsv2Uds6mUhM4LjxK8/919XYOyU3mj9+Kno12Xx2NGBdumj3jYg+aNfowUCnsEfZKeNcuMYZjX
-	63gNUjYqz09TYFcZel3xWq/3i7fSzjzH25XzX+RXn31bL8lyHzS87eukXfoM3/pjKrW4Lk9Qbvb+j
-	Bgy5xEb5nR0H9hjGXsghHMn5LUQyuU5h+FvdWK7tVRDOzfcjRRTIKfX38idqmOnFyMdyuqyIyh7oH
-	NchKDLR00AsluctfzSem3+GayVPiX8Gr5PacfLe0Y14qLuqjEMUwXP599peqt0Yqqs0V5j51v4HEv
-	Hvg0TkublP1WZ6RlipyQ==;
+	List-Owner; bh=Jig4POAIGDVFfP1Q+qjtiMjL5Yat+ku+mgT3HKFO7Rc=; b=sofjlaPqmVc38C
+	CXuNzpp5iAMn5mFclf1rbcWO+DGDYNNzBYsGn4HpMFwLKpB3b2gbpZ3+XGiC7qPm1ENFBTexireFj
+	Y+I/g82c5hrPYUBoCokqbjRMmnkJ+cj5zPT1hRK6nhWZHleH0Mw8M7z4Ooz3jLTYQyDf2M6lWqG45
+	L5CYD84LpofK2ACNX074vQVO1QlyntdVsrqzFx6/YCTmTsMn+4RRYISLrLHIJD9LllKEVSSUFM/Ys
+	SWaMQH/1Ir8fu8wS6VnRa7r8yCrzyvRF5b/oPjLxxadL7ReKXXR0kFG4dRgmaNtrcAfEPQewVOcVr
+	tdVJ7GBL7ST1yT18u+Ew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPrEg-0001pL-97; Sun, 12 May 2019 16:22:02 +0000
-Received: from mail-yw1-xc44.google.com ([2607:f8b0:4864:20::c44])
+	id 1hPsTA-0004LD-19; Sun, 12 May 2019 17:41:04 +0000
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPrEY-0001op-R1
- for linux-arm-kernel@lists.infradead.org; Sun, 12 May 2019 16:21:56 +0000
-Received: by mail-yw1-xc44.google.com with SMTP id q185so9002063ywe.3
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 12 May 2019 09:21:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=TOPJGf99fx0pIuOa+mJLeJHDiEC2gaE8jhCKyZCcUYU=;
- b=D0bMqPOl4KMcE9yx9c0zLUrHutpFINUmjGtVdQwOhcFMKLh1eDITT83+DZ25CEChIx
- cIpD0dEmtcmrdmMP7+LJUsz2vnPcnFDxJy7PBddd0PloInxmr726ei01S8Zdhe6XfYnF
- lUl5GGnR001qDO0aj28ohQF0xpGFNioODJXmbpwJC/FNx+5dzMcopw+pc08esWoFURTo
- Ep3XnGSXfyYhBm6gdDhrtm15nBQ/P4d1+scTJd5ob+uQHF/5VK+RZCCY1WbbFDfouSug
- +VQFps53+03j7moT7D60lkq62vF6DdyZ1FkWnaZjQdQjhQSPYirAdgenuHBKT+6zYDkC
- H29w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=TOPJGf99fx0pIuOa+mJLeJHDiEC2gaE8jhCKyZCcUYU=;
- b=O9MSJPV47NHx/UqgDha6itooo129H6LuAyQmboFNweXOjG+6BFCYzwM5U5cQH8RXL9
- clAhf4xCnyWZEpdQmnVXkQhOvte0nYDHQaZJPeJS80Ea4KBUWPMDMWld4b5XcW4txb9j
- AB8z3mPkOly/EcfFvFRjxJFsZl25VomOIDTl9Is1YYrK8nIQk/sWWDW4k87jHwCQ9jUy
- kOq2Xxk58pBCE4Mp39+yy2Mni3bf1ipWsH1pyZauHhoqMApqrrmhqfoGjL/NjKryCws6
- CVF4+Y0tmxJ7aqB0kqLboP5+K36eMhe02qPO1d+kTNwFvK9see3rFwblrY7JKJGLjd8H
- SvWg==
-X-Gm-Message-State: APjAAAX4jSawGtZOT//5fx6UBLLAJ9CHC+HrNmLToHZ+RW6H1zdYLagI
- fxmKb2/i/WMXX1LJwh2MrzV5HTdwAcDJM+/Bvyg=
-X-Google-Smtp-Source: APXvYqwtIuH+K3gJStYpXRvCVBSpG8W4+socFkjdKI35G3vVDr7miYiNKjYklCbALO9LrhbwRk7Vf60kj7nVrDXDyTg=
-X-Received: by 2002:a25:e89:: with SMTP id 131mr10899859ybo.416.1557678112340; 
- Sun, 12 May 2019 09:21:52 -0700 (PDT)
+ id 1hPsT1-0004Ku-JC
+ for linux-arm-kernel@lists.infradead.org; Sun, 12 May 2019 17:40:57 +0000
+X-Originating-IP: 46.193.9.130
+Received: from localhost (cust-west-pareq2-46-193-9-130.wb.wifirst.net
+ [46.193.9.130]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 9D7A3C0006;
+ Sun, 12 May 2019 17:40:34 +0000 (UTC)
+Date: Sun, 12 May 2019 19:40:33 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: "U.Mutlu" <um@mutluit.com>
+Subject: Re: [RFC PATCH] drivers: ata: ahci_sunxi: Increased SATA/AHCI DMA
+ TX/RX FIFOs
+Message-ID: <20190512174033.znvtaa5yvhpcmnna@flea>
+References: <20190510192550.17458-1-um@mutluit.com>
+ <20190512121245.l3cvg4std6yanwix@flea>
+ <5CD844F3.5080103@mutluit.com>
 MIME-Version: 1.0
-References: <20190417173031.9920-1-peron.clem@gmail.com>
- <CAJiuCccu_wfgio9wUcOCP0o4XPRgQOvTOZS8St7mV88TAdwaRg@mail.gmail.com>
- <20190512134509.vcduqbkmnvpkbmkb@flea>
-In-Reply-To: <20190512134509.vcduqbkmnvpkbmkb@flea>
-From: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
-Date: Sun, 12 May 2019 18:21:41 +0200
-Message-ID: <CAJiuCcdE5rvOicAKSGBKPgJ7Q1LVV2aKZobhZXtTJ8Jufr=C8A@mail.gmail.com>
-Subject: Re: [PATCH v3 0/8] Allwinner H6 Mali GPU support
-To: Maxime Ripard <maxime.ripard@bootlin.com>
+Content-Disposition: inline
+In-Reply-To: <5CD844F3.5080103@mutluit.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190512_092154_900144_FF4F8A8C 
-X-CRM114-Status: GOOD (  12.30  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190512_104055_935129_B5EABBF8 
+X-CRM114-Status: GOOD (  24.46  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c44 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.198 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (peron.clem[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.198 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,24 +65,126 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- linux-sunxi <linux-sunxi@googlegroups.com>, Rob Herring <robh+dt@kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Jens Axboe <axboe@kernel.dk>, Mark Rutland <mark.rutland@arm.com>,
+ Hans de Goede <hdegoede@redhat.com>, u-boot@lists.denx.de,
+ Oliver Schinagl <oliver@schinagl.nl>, Andre Przywara <andre.przywara@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-sunxi@googlegroups.com,
+ FUKAUMI Naoki <naobsd@gmail.com>, linux-kernel@vger.kernel.org,
+ linux-ide@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ Jagan Teki <jagan@amarulasolutions.com>,
+ Pablo Greco <pgreco@centosproject.org>, linux-amarula@amarulasolutions.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgpPbiBTdW4sIDEyIE1heSAyMDE5IGF0IDE1OjQ1LCBNYXhpbWUgUmlwYXJkIDxtYXhpbWUu
-cmlwYXJkQGJvb3RsaW4uY29tPiB3cm90ZToKPgo+IE9uIFNhdCwgTWF5IDExLCAyMDE5IGF0IDA2
-OjM5OjM5UE0gKzAyMDAsIENsw6ltZW50IFDDqXJvbiB3cm90ZToKPiA+IEhpIE1heGltZSwKPiA+
-Cj4gPiBJcyB0aGlzIHNlcmllcyBvayBmb3IgeW91ID8KPgo+IEknbSBub3QgdGhlIG1haW50YWlu
-ZXIgb2YgdGhhdCBiaW5kaW5nLCBzbyBJJ2QgbmVlZCBhIGFjayBmcm9tIHdob2V2ZXIKPiB0aGF0
-IGlzLgoKSW5kZWVkLCBJIHdpbGwgY29sbGVjdCBSb2IgSC4gcmV2aWV3ZWQgYW5kIHJlc2VudCB3
-aXRoIHRoZSBjb3JyZWN0IG1haW50YWluZXIuCgpSZWdhcmRzLApDbGVtZW50Cgo+Cj4gTWF4aW1l
-Cj4KPiAtLQo+IE1heGltZSBSaXBhcmQsIEJvb3RsaW4KPiBFbWJlZGRlZCBMaW51eCBhbmQgS2Vy
-bmVsIGVuZ2luZWVyaW5nCj4gaHR0cHM6Ly9ib290bGluLmNvbQoKX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
-c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi,
+
+On Sun, May 12, 2019 at 06:08:19PM +0200, U.Mutlu wrote:
+> Hi Maxime & Others,
+>
+> what follows is a somewhat lengthy technical story behind this patch;
+> you can just skip it and jump to the end.
+>
+>
+> As can be seen in the ahci_sunxi.c, the port used in this patch
+> is this one (32bit):
+>   #define AHCI_P0DMACR    0x0170
+> It's a so called "Vendor Specific Port" according to the SATA/AHCI specs by Intel.
+> The data behind it is actually a struct, consisting of 4 fields,
+> each 4bits long, plus a 16bits long field that is marked as Reserved
+> in secondary literature (see below):
+>
+> struct AHCI_P0DMACR_t
+> {
+>   unsigned TXTS  : 4,
+>            RXTS  : 4,
+>            TXABL : 4,
+>            RXABL : 4,
+>            Res1  : 16;
+> };
+>
+> This struct is just my creation for my own tests as it's not part of the
+> driver source. The patch touches only the first 2 fields: TXTS and RXTS.
+>
+> See this similar product documentation by Texas Instruments for the above struct:
+> https://www.ti.com/lit/ug/sprugj8c/sprugj8c.pdf
+> TMS320C674x/OMAP-L1x Processor, Serial ATA (SATA) Controller, User's Guide,
+> Literature Number: SPRUGJ8C, March 2011,
+> Page 68, Chapter 4.33 "Port DMA Control Register (P0DMACR)"
+>
+> The above TI document describes the two fields as follows:
+>
+> TXTS:
+>   Transmit Transaction Size (TX_TRANSACTION_SIZE). This field defines the
+> DMA transaction size in
+>   DWORDs for transmit (system bus read, device write) operation. [...]
+>
+> RXTS:
+>   Receive Transaction Size (RX_TRANSACTION_SIZE). This field defines the
+> Port DMA transaction size
+>   in DWORDs for receive (system bus write, device read) operation. [...]
+>
+>
+> So, in my patch the fields TXTS and RXTS are set to 3 each.
+> Without the patch, these fields seem to have some random content
+> (I'vee seen 5 and 6, 4 and 4, and 0 and 0 on different devices),
+> as the previous code doesn't touch these 2 fields (ie. these two fields
+> are not within the used old mask of 0xff00; cf. ahci_sunxi.c, function
+> ahci_sunxi_start_engine(...)).
+>
+>
+> Some background story in my hunt for obtaining product documentation:
+>
+> I couldn't find any product documentation for the SATA/AHCI
+> in these SoCs by Allwinner Technology (allwinnertech.com),
+> unlike with such products from other such companies.
+>
+> I asked Allwinner, but they just said that the A20 of my SBC
+> would (allegedly) no more be actual and that the support for it
+> has ended (but this statement somehow cannot be true as the
+> A20 SoC is still continued being marketed at their website).
+> They instead sent me a bunch of really irrelevant PDFs which have
+> nothing to do with SATA/AHCI.
+>
+> So, the company Allwinner Technology unfortunately was not cooperative
+> to provide me information on their SATA/AHCI-implementation in their SoCs :-(
+> Even the ports used in the actual ahci_sunxi.c in the linux tree are undocumented;
+> it is even commented with "/* This magic is from the original code */"
+> and below it many ports are used for which no documentation is available,
+> or at least I couldn't find any on the Internet. And the initial programmer
+> in 2014 and prior was Daniel Wang (danielwang@allwinnertech.com),
+> but email to that address bounces.
+>
+> So, I was forced to research secondary literature from other vendors
+> like Texas Instruments (thanks TI !) and Intel, and also studying
+> very old source codes in the old Linux repositories (as it differs
+> much from the current version) going back to the year 2014, and had
+> to do many (blind) experiments until I found this solution.
+>
+> The above given User's Guide by Texas Instruments (and their such
+> documents for their newer such products) helped me much to find the solution.
+> It's of course not really the correct documentation for the Allwinner SoCs,
+> but still better than nothing.
+>
+> If I only had the right documentation, then I for sure could try
+> to further improve that already achieved result by this patch,
+> as with SATA-II upto 300 MiB/s is possible.
+>
+>
+> Yes, I'll resend the patch with some appropriate comments.
+
+That's awesome research and explanation, thanks! :)
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
