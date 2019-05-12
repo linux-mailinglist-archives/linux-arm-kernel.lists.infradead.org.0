@@ -2,93 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 470B21AE01
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 May 2019 21:43:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6ECD91AE30
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 May 2019 23:00:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4/p0IgV95bmZjYaftXBqBYvbWJS3ldxmy+3Gc9EX3cI=; b=BZetV0Y5EmfsgE
-	MslYBPapahWucr1NnZAcKpGMI5dlubypA7clumG6DKbMJxG0TuxK+38FiuiSnylqKNL025fy+/ZMU
-	KZnRLyrqa5djxItV3lTbI5i7PYpVJ2AD9AkpFrZIQJ8PTbdjjAUxFNA6QJHyLRSUCfBi4y0oi6y+l
-	npJBNuWsnjm+cHqKY0hKy4DC3hGJkSGLx037nYso30WD+fVgenQG4jh8jpiO2z88ZLY0xYkYAPz+P
-	gDGfIT1VDlviALW0cKjC/75KEyg5QboDXLmiK1Ib92pNEn3Hq8ZPgQFh5UQ6Z2rwecBfA3zcL1gdb
-	nVcGhhmUeqE1afoogp3w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=8iJ76gfddo6H0jd5nzFGoH+4vTqITNGfQbEitIYI73k=; b=IJu
+	ogeGP2E2yyEF1VtkR7kv08WxcGIOQkXNuqEd2WpnHGsBiaqqNR1z1WR6LRyVDa8vUmAYoynAkIubh
+	bsWv2J3GYshqhQYx6uI7Xwf+/ty78rTXi5rUUiRJeQRJNdpBK7bononqRclpVL8NTR+1G4iwDUICW
+	QxuHRGbPlMkP6XTe5Cm9V89PsWO88ozpHKa21nXrnJhHonjoEdgSDhCTq0Z90khcg4jXmN4jkWutB
+	WZUZdtMTLvAc3peVCtCHlKzLnmrv69DT3uUTZa7MAho0RrywiziCiPvrCliomDg3zh1fE7XbSori0
+	3ektRlarzGjxhKko3b+Ob5HBkOtXulQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPuNi-0003G3-PE; Sun, 12 May 2019 19:43:34 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPuNO-0002y5-Cu; Sun, 12 May 2019 19:43:15 +0000
-Received: by mail-wm1-x341.google.com with SMTP id f204so6316152wme.0;
- Sun, 12 May 2019 12:43:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=AqfzzZgYh773xcVhaI6uUR4lAMlHwzAkWA/UkOzUZ64=;
- b=D7EZkZWpd252npUWFhFf2WXhLBZPNYbIIOokNB+eEc385EcmLuDkq/0rM76ytoIXDr
- /IK0+sF2f3Kq+kT3hmPV72GWZQcj3u0QMXdzOgIX3XpNA7ZQpALbltmFzMKv4XQiLK2H
- c1U3v4RL7KyYKkQrVi63+MaDyF9d1Fz60n5I45HUiwBAlRQbCJe8QXCmj7UX8GUzoFek
- daRr9vIwh/67yncmj95i022mp8xph+BoaQoYH3oG34oxJkM7tdK9/vnNfZxjwDCBMxJJ
- bhL2X2He7dHlJSZbLupQWgPQx1EHHRGMLuNJZG7HrF/DYnzx36uAHq5E0EnUvPeFyRCe
- e9+g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=AqfzzZgYh773xcVhaI6uUR4lAMlHwzAkWA/UkOzUZ64=;
- b=UTzrI4IZdaxTUeb6XuPn7NhScei4YMLb7KMV+1NT6llNvOShvEzgsqvCajv1WOfSKw
- 1bAUWyVTsTA7VC22DzW/cWS2a55SsOPZrgfbX+1FSSPhXa+Qz/XgGIDRzZUHLAadce2A
- 9Fdt7iYPVamQ6x/FD8yPM4b5MCWDA/NjybwgQeOqly0/04yMgLVRETHGjTgC2NoHDlKG
- fPztxLpY/W1MU3F/bH34f+bIfzs9S1V1yZ3EUrqh/0V1Bhxh+vE6izW52aomn7nutjyA
- dqOeGlIDnv4nqBmfpYeoUQpajGR/sc7MecRXot6RN19o12a0gEJmjPHmuUiGBe0FwM5O
- pULA==
-X-Gm-Message-State: APjAAAUp6tmu2quvaAK4XBUhjRIahRBkso+fC5UeQrDp2MYajWUyWfUk
- XnFc0tCUa2IjwllDKDVhDRk990/px4U=
-X-Google-Smtp-Source: APXvYqxst1IMmq0aCd4wGUOWu4F2rwedBjwlTWWdXmF/1nnjuBDeUJsPP7ROf9mWcgMxqv5G7bnQ2g==
-X-Received: by 2002:a1c:ba87:: with SMTP id k129mr1518472wmf.132.1557690192455; 
- Sun, 12 May 2019 12:43:12 -0700 (PDT)
-Received: from blackbox.darklights.net
- (p200300F133C8AD00ECBE9107EA8EB108.dip0.t-ipconnect.de.
- [2003:f1:33c8:ad00:ecbe:9107:ea8e:b108])
- by smtp.googlemail.com with ESMTPSA id r23sm13685178wmh.29.2019.05.12.12.43.11
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 12 May 2019 12:43:11 -0700 (PDT)
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-To: linux-amlogic@lists.infradead.org, narmstrong@baylibre.com,
- jbrunet@baylibre.com
-Subject: [PATCH 1/1] clk: meson: meson8b: fix a typo in the VPU parent names
- array variable
-Date: Sun, 12 May 2019 21:43:00 +0200
-Message-Id: <20190512194300.7445-2-martin.blumenstingl@googlemail.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190512194300.7445-1-martin.blumenstingl@googlemail.com>
-References: <20190512194300.7445-1-martin.blumenstingl@googlemail.com>
-MIME-Version: 1.0
+	id 1hPvaJ-00011e-Am; Sun, 12 May 2019 21:00:39 +0000
+Received: from mutluit.com ([82.211.8.197])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hPvaC-00010e-23
+ for linux-arm-kernel@lists.infradead.org; Sun, 12 May 2019 21:00:34 +0000
+Received: from c22-local.mutluit.com (ip4d155212.dynamic.kabel-deutschland.de
+ [77.21.82.18]:31290)
+ by mutluit.com (s2.mutluit.com [82.211.8.197]:25) with ESMTP ([XMail 1.27
+ ESMTP Server])
+ id <S16FAD18> for <linux-arm-kernel@lists.infradead.org> from <um@mutluit.com>;
+ Sun, 12 May 2019 17:00:24 -0400
+From: Uenal Mutlu <um@mutluit.com>
+To: Jens Axboe <axboe@kernel.dk>, Maxime Ripard <maxime.ripard@bootlin.com>,
+ Chen-Yu Tsai <wens@csie.org>, linux-ide@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [RFC PATCH v2 RESEND] drivers: ata: ahci_sunxi: Increased SATA/AHCI
+ DMA TX/RX FIFOs
+Date: Sun, 12 May 2019 22:59:54 +0200
+Message-Id: <20190512205954.18435-1-um@mutluit.com>
+X-Mailer: git-send-email 2.11.0
+X-Patchwork-Bot: notify
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190512_124314_437279_45102758 
-X-CRM114-Status: GOOD (  12.68  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190512_140032_421851_7FB9D3C3 
+X-CRM114-Status: GOOD (  12.44  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ 0.0 TVD_RCVD_SPACE_BRACKET No description available.
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -100,61 +61,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sboyd@kernel.org, mturquette@baylibre.com, linux-kernel@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Uenal Mutlu <um@mutluit.com>,
+ Oliver Schinagl <oliver@schinagl.nl>, Andre Przywara <andre.przywara@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Pablo Greco <pgreco@centosproject.org>, FUKAUMI Naoki <naobsd@gmail.com>,
+ Hans de Goede <hdegoede@redhat.com>, linux-sunxi@googlegroups.com,
+ Jagan Teki <jagan@amarulasolutions.com>, linux-amarula@amarulasolutions.com,
+ Stefan Monnier <monnier@iro.umontreal.ca>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The variable which holds the parent names for the VPU clocks has a typo
-in it. Fix this typo to make the variable naming in the driver
-consistent. No functional changes.
+Increasing the SATA/AHCI DMA TX/RX FIFOs (P0DMACR.TXTS and .RXTS, ie.
+TX_TRANSACTION_SIZE and RX_TRANSACTION_SIZE) from default 0x0 each
+to 0x3 each, gives a write performance boost of 120 MiB/s to 132 MiB/s
+from lame 36 MiB/s to 45 MiB/s previously.
+Read performance is about 200 MiB/s.
+[tested on SSD using dd bs=2K/4K/8K/12K/16K/24K/32K: peak-perf at 12K].
 
-Fixes: 41785ce562491d ("clk: meson: meson8b: add the VPU clock trees")
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Tested on the Banana Pi R1 (aka Lamobo R1) and Banana Pi M1 SBCs
+with Allwinner A20 32bit-SoCs (ARMv7-a / arm-linux-gnueabihf).
+These devices are RaspberryPi-like small devices.
+
+This problem of slow SATA write-speed with these small devices lasts now
+for more than 5 years. Many commentators throughout the years wrongly
+assumed the slow write speed was a hardware limitation. This patch finally
+solves the problem, which in fact was just a hard-to-fix software problem
+(b/c of lack of documentation by the SoC-maker Allwinner Technology).
+
+RFC: Since more than about 25 similar SBC/SoC models do use the
+ahci_sunxi driver, users are encouraged to test it on all the
+affected boards and give feedback.
+
+Lists of the affected sunxi and other boards and SoCs with SATA using
+the ahci_sunxi driver:
+  $ grep -i -e "^&ahci" arch/arm/boot/dts/sun*dts
+  and http://linux-sunxi.org/SATA#Devices_with_SATA_ports
+  See also http://linux-sunxi.org/Category:Devices_with_SATA_port
+
+Patch v2:
+  - Commented the patch in-place in ahci_sunxi.c
+  - With bs=12K and no conv=... passed to dd, the write performance
+    rises further to 132 MiB/s
+  - Changed MB/s to MiB/s
+  - Posted the story behind the patch:
+    http://lkml.iu.edu/hypermail/linux/kernel/1905.1/03506.html
+  - Posted a dd test script to find optimal bs, and some results:
+    https://bit.ly/2YoOzEM
+
+Patch v1:
+  - States bs=4K for dd and a write performance of 120 MiB/s
+
+Signed-off-by: Uenal Mutlu <um@mutluit.com>
 ---
- drivers/clk/meson/meson8b.c | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
+ drivers/ata/ahci_sunxi.c | 47 +++++++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 45 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/clk/meson/meson8b.c b/drivers/clk/meson/meson8b.c
-index 37cf0f01bb5d..62cd3a7f1f65 100644
---- a/drivers/clk/meson/meson8b.c
-+++ b/drivers/clk/meson/meson8b.c
-@@ -1761,7 +1761,7 @@ static struct clk_regmap meson8m2_gp_pll = {
- 	},
- };
+diff --git a/drivers/ata/ahci_sunxi.c b/drivers/ata/ahci_sunxi.c
+index 911710643305..ed19f19808c5 100644
+--- a/drivers/ata/ahci_sunxi.c
++++ b/drivers/ata/ahci_sunxi.c
+@@ -157,8 +157,51 @@ static void ahci_sunxi_start_engine(struct ata_port *ap)
+ 	void __iomem *port_mmio = ahci_port_base(ap);
+ 	struct ahci_host_priv *hpriv = ap->host->private_data;
  
--static const char * const mmeson8b_vpu_0_1_parent_names[] = {
-+static const char * const meson8b_vpu_0_1_parent_names[] = {
- 	"fclk_div4", "fclk_div3", "fclk_div5", "fclk_div7"
- };
+-	/* Setup DMA before DMA start */
+-	sunxi_clrsetbits(hpriv->mmio + AHCI_P0DMACR, 0x0000ff00, 0x00004400);
++	/* Setup DMA before DMA start
++	 *
++	 * NOTE: A similar SoC with SATA/AHCI by Texas Instruments documents
++	 *   this Vendor Specific Port (P0DMACR, aka PxDMACR) in its
++	 *   User's Guide document (TMS320C674x/OMAP-L1x Processor
++	 *   Serial ATA (SATA) Controller, Literature Number: SPRUGJ8C,
++	 *   March 2011, Chapter 4.33 Port DMA Control Register (P0DMACR),
++	 *   p.68, https://www.ti.com/lit/ug/sprugj8c/sprugj8c.pdf)
++	 *   as equivalent to the following struct:
++	 *
++	 *   struct AHCI_P0DMACR_t
++	 *     {
++	 *       unsigned TXTS     : 4,
++	 *                RXTS     : 4,
++	 *                TXABL    : 4,
++	 *                RXABL    : 4,
++	 *                Reserved : 16;
++	 *     };
++	 *
++	 *   TXTS: Transmit Transaction Size (TX_TRANSACTION_SIZE).
++	 *     This field defines the DMA transaction size in DWORDs for
++	 *     transmit (system bus read, device write) operation. [...]
++	 *
++	 *   RXTS: Receive Transaction Size (RX_TRANSACTION_SIZE).
++	 *     This field defines the Port DMA transaction size in DWORDs
++	 *     for receive (system bus write, device read) operation. [...]
++	 *
++	 *   TXABL: Transmit Burst Limit.
++	 *     This field allows software to limit the VBUSP master read
++	 *     burst size. [...]
++	 *
++	 *   RXABL: Receive Burst Limit.
++	 *     Allows software to limit the VBUSP master write burst
++	 *     size. [...]
++	 *
++	 *   Reserved: Reserved.
++	 *
++	 *
++	 * NOTE: According to the above document, the following alternative
++	 *   to the code below could perhaps be a better option
++	 *   (or preparation) for possible further improvements later:
++	 *     sunxi_clrsetbits(hpriv->mmio + AHCI_P0DMACR, 0x0000ffff,
++	 *		0x00000033);
++	 */
++	sunxi_clrsetbits(hpriv->mmio + AHCI_P0DMACR, 0x0000ffff, 0x00004433);
  
-@@ -1778,8 +1778,8 @@ static struct clk_regmap meson8b_vpu_0_sel = {
- 	.hw.init = &(struct clk_init_data){
- 		.name = "vpu_0_sel",
- 		.ops = &clk_regmap_mux_ops,
--		.parent_names = mmeson8b_vpu_0_1_parent_names,
--		.num_parents = ARRAY_SIZE(mmeson8b_vpu_0_1_parent_names),
-+		.parent_names = meson8b_vpu_0_1_parent_names,
-+		.num_parents = ARRAY_SIZE(meson8b_vpu_0_1_parent_names),
- 		.flags = CLK_SET_RATE_PARENT,
- 	},
- };
-@@ -1837,8 +1837,8 @@ static struct clk_regmap meson8b_vpu_1_sel = {
- 	.hw.init = &(struct clk_init_data){
- 		.name = "vpu_1_sel",
- 		.ops = &clk_regmap_mux_ops,
--		.parent_names = mmeson8b_vpu_0_1_parent_names,
--		.num_parents = ARRAY_SIZE(mmeson8b_vpu_0_1_parent_names),
-+		.parent_names = meson8b_vpu_0_1_parent_names,
-+		.num_parents = ARRAY_SIZE(meson8b_vpu_0_1_parent_names),
- 		.flags = CLK_SET_RATE_PARENT,
- 	},
- };
+ 	/* Start DMA */
+ 	sunxi_setbits(port_mmio + PORT_CMD, PORT_CMD_START);
 -- 
-2.21.0
+2.11.0
 
 
 _______________________________________________
