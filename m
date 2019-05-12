@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D45D1A9DD
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 May 2019 03:10:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF0E11A9DF
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 May 2019 03:11:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rxrKfgFSRMnAXFT9W6b2fQBF0WL+ABbQArkzVWu48wY=; b=lgOlOyuUDUyOqY
-	nu0ihAdl8N5sT7pR+YJGDa0ihM3CLkLn1ng8ROwBGPr2a32IrRDS+CawkXPw4YKaHdM6q7lHgXgUN
-	CPndjDz7O/Tu+VsCjMSJSmpy+nxrUpBMFwf0qM4bYjx23b8J/cuszecOr/HN6b7GwgaQDsIR1yavP
-	W/YiDJTkIZF3WDGIxDE2plZ9Gx+dizulxeFgqGgGX/USW+nwW+uPk3d+c9Ve6dTjUDfotXwqa7xyE
-	WfOFA8OJbpyPB2QLdoFhPu/qac1oxSajDlQS13dPc3lgaEeEmeVv1w/cBhrMaP8IxzHwAK6nKR65F
-	LvrTpHPTpGUao6c53KJg==;
+	List-Owner; bh=QzzeGa0KZwTuIYO9yPEGnMCjTvdEZpHHPvodhpkLmPo=; b=asDDoqsp5I3z1U
+	cnv8Aqykf2ljmnq4cTwBON5VJKxX6M+a/xjoUDa1QhlzPiYriaR4n2trgB2oFiel7onFLuoXkcuX1
+	oUbuUAQNGIFEuk7AGEjuVr8D9BggCHKCGeFLbYOkxWoVV2nx+2TGilVPsjJB6RI6rUonShm9oWxvJ
+	PKJ0R4blA2upPLThpHsCoXtx1QfGofemlVElqsbKTk7QE5Q+2GXugxUhKGzHMOiDu03z1yWWJfIuG
+	ZtoYWUJXD5A9EbhHkeOLZcctUB6nZUq/Gxqo7vTUf18ZUVRDRtpNN+Fo9p2CEr4oZ2QhQZ2ojERD8
+	DtHwxlJhAQuckCOTzYmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPd0q-0000VF-Lg; Sun, 12 May 2019 01:10:48 +0000
+	id 1hPd1S-0000ka-AG; Sun, 12 May 2019 01:11:26 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPd0i-0000Us-U1
- for linux-arm-kernel@lists.infradead.org; Sun, 12 May 2019 01:10:42 +0000
+ id 1hPd1L-0000kE-9z
+ for linux-arm-kernel@lists.infradead.org; Sun, 12 May 2019 01:11:20 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 41C622146F;
- Sun, 12 May 2019 01:10:35 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9CA242146F;
+ Sun, 12 May 2019 01:11:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1557623440;
- bh=RWaalJ8Tf6DtlXzEk0oSOzhtIpzEEkzuQkE+7wQA0SE=;
+ s=default; t=1557623479;
+ bh=iG8fgnEYMhqAKMijlWzlWDLzsbg1bOrP7g8QIT+TX6Q=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=WK4JB9O3G7litIKaqLekPmCsgvcnhkxATFM2us4gJrcowGnthqRGjmaA92sS5i17a
- bkKUjxPoVSzJzy8UVV9q6Y/zKzsDHQTkrVXAMhNTN+7v0vYrKA+Y3ehHo7xPOYZDwC
- rgcreIbQu++0fvra8PX5JN8QVxBwE4vEHFW7lWSA=
-Date: Sun, 12 May 2019 09:10:11 +0800
+ b=UP512JCupvKJXhpAAHUrLqbcKYJBnSHi906QHDT3AFBiERRthFoE1lzL8vaMgthS/
+ 7q4XJmeWlMSslBJckcrop4E5j9pNnsMwULvSXtujhMF0K5n/feC9abJ73v9+JOgoHI
+ iGVr0XfYdP9URiJsYX0qvF74SRcYbUFUfNAPR+xY=
+Date: Sun, 12 May 2019 09:10:48 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Anson Huang <anson.huang@nxp.com>
-Subject: Re: [PATCH RESEND] ARM: imx_v6_v7_defconfig: Enable
- CONFIG_THERMAL_STATISTICS
-Message-ID: <20190512011009.GJ15856@dragon>
-References: <1557490722-21657-1-git-send-email-Anson.Huang@nxp.com>
+Subject: Re: [PATCH] ARM: imx_v6_v7_defconfig: Enable CONFIG_THERMAL_STATISTICS
+Message-ID: <20190512011047.GK15856@dragon>
+References: <1556076113-4593-1-git-send-email-Anson.Huang@nxp.com>
+ <20190510032917.GG15856@dragon>
+ <DB3PR0402MB391661070B9F664C9E9577B0F50C0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <DB3PR0402MB39167B660667C2322E7787E2F50C0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1557490722-21657-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <DB3PR0402MB39167B660667C2322E7787E2F50C0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190511_181040_985137_A48F4EA3 
-X-CRM114-Status: UNSURE (   8.27  )
+X-CRM114-CacheID: sfid-20190511_181119_360436_788F2CAD 
+X-CRM114-Status: UNSURE (   8.62  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -78,7 +80,6 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Robin Gong <yibin.gong@nxp.com>,
- "schnitzeltony@gmail.com" <schnitzeltony@gmail.com>,
  "otavio@ossystems.com.br" <otavio@ossystems.com.br>,
  "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "jan.tuerk@emtrion.com" <jan.tuerk@emtrion.com>,
@@ -95,13 +96,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 10, 2019 at 12:23:42PM +0000, Anson Huang wrote:
-> Enable CONFIG_THERMAL_STATISTICS to extend the sysfs interface
-> for thermal cooling devices and expose some useful statistics.
+On Fri, May 10, 2019 at 12:27:18PM +0000, Anson Huang wrote:
+> Hi, Shawn
+> 	I have resent this patch with "Content-Transfer-Encoding: quoted-printable", can you check if you can apply the patch correctly, if yes, please let me know and I will resend all patches maintained by you with this encoding type. Patch: https://patchwork.kernel.org/patch/10938725/
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-Applied, thanks.
+Yes, it worked.  Thanks.
+
+Shawn
 
 _______________________________________________
 linux-arm-kernel mailing list
