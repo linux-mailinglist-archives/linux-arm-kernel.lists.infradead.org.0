@@ -2,116 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66D821AB59
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 May 2019 10:51:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1169D1AB60
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 May 2019 10:57:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NRfCHSKd59K6tmOpBm06EI0ha4xh7nAfw8k6G2Pb+wA=; b=fQnBmoy5CoIQBC
-	XayG+Mf8Sl/M/98f7DXewOF6bqGI0hQZYPm3NgE/wdHJV7sUpTH8ufLGt0Kmx6MKWfexmdWEag9v+
-	CECwRpZUzp9wmIN9Wna8tEit5V0qvLTY7dU56CPmuDhFAdbMHi3k4w0696dBvhgiYPAm5GOxCRIz4
-	VBWzhWClEHxnuqEQTJetr8hZWbrqBBGI5RCXVn2GZ60VuI1UYbsg5jOuJSKgvdP3N8vv5yUfATSn6
-	QZbkTNlTR7jWlMSKAIXUo8KiWx1wT/cY5PWOWxkBTMEn2Zb6GcHk/57nt7DPmk324GOfNMZ64tT8C
-	+MPE4yo1F18saDwJ4RRg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nX6jKAkexDMajqxyqqH9ZZOqV3IMo/ANVKjghYMIdFA=; b=d+Qy/BGGEf1j+8
+	Fal/jOoHmnWKKZv2wQzXhMhOKU3SvyPG1x4ThgZVmafr9yhplyMqS20cP+rn7V3Us6d7nL7hrzYMb
+	t2KhASVZWLY5fQAXH5+5HdWMazTGwBwY24gbpio381skYDpUVa8zl3QPujGiSS0/CCmJdSOb0yygk
+	y5oZGv8nC278td3i5n2npb2fvowWkLUvynyOJteJXXen1/fyp9H5eBokr/YSCrEC8sOBnYRceW4OY
+	uwS9K3T0Vx2bP2ZpwvhTmF4etOFRisEOfuWe5KVyP88Mz0LumzxJJze9TVtSjqh5aST4v+BqY+waA
+	R4kJkS1xgZ6I2sZFmRig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPkD4-0001Ur-R2; Sun, 12 May 2019 08:51:54 +0000
-Received: from mail-he1eur04on0628.outbound.protection.outlook.com
- ([2a01:111:f400:fe0d::628]
- helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+	id 1hPkIY-0003Iy-QT; Sun, 12 May 2019 08:57:34 +0000
+Received: from mail-eopbgr130077.outbound.protection.outlook.com
+ ([40.107.13.77] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPkCg-00016D-Lo
- for linux-arm-kernel@lists.infradead.org; Sun, 12 May 2019 08:51:35 +0000
+ id 1hPkIR-0003IJ-Ei
+ for linux-arm-kernel@lists.infradead.org; Sun, 12 May 2019 08:57:28 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=bGslpQFdmzOYZRuc+QNNiZRY7s/vagV8QZ1N93vi+F8=;
- b=Wd83byaOuHYsunzn68kIiML666zRsA+LY+mRL6/Aornym5vzZXS9AR7NBTItYzp2lMGZg2I+MVi1qHWR+f2I3uFZM2QSLntgLWUEnc+P+j/d4N9zIO538OakhC3eeWdvIfDc7oZlBd2KUAEhB3367RpbrDtPx4D0yDOydsE/4CI=
+ bh=jzJpsZXPD9zD/JA0xH5Wy3U6IfLBo8uuPbcPUcgS0nE=;
+ b=NStWGiXvaiT3KaiUYN21JoaGIfvS8aTNHZHmv+8qJT/U0wjc0YSH6Xl6r0AxWIGrqxNFcA2ZiMu1WCFGSGdFmiRPxblQcjQEhjdA3FkKdez++CKurNheC9/flPJ8YW85tC49SW/JP2udvevDdJEXLv1FXnOFNycXyjecL0iaJFQ=
 Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3739.eurprd04.prod.outlook.com (52.134.67.22) with Microsoft SMTP
+ DB3PR0402MB3802.eurprd04.prod.outlook.com (52.134.71.150) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1878.21; Sun, 12 May 2019 08:51:27 +0000
+ 15.20.1878.24; Sun, 12 May 2019 08:57:16 +0000
 Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
  ([fe80::d035:3bd0:a56a:189d]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
  ([fe80::d035:3bd0:a56a:189d%2]) with mapi id 15.20.1878.022; Sun, 12 May 2019
- 08:51:26 +0000
+ 08:57:16 +0000
 From: Anson Huang <anson.huang@nxp.com>
 To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
  <mark.rutland@arm.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
  "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
  <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
- "linux@armlinux.org.uk" <linux@armlinux.org.uk>, "otavio@ossystems.com.br"
- <otavio@ossystems.com.br>, Leonard Crestez <leonard.crestez@nxp.com>,
- "schnitzeltony@gmail.com" <schnitzeltony@gmail.com>,
- "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
- "jan.tuerk@emtrion.com" <jan.tuerk@emtrion.com>, Robin Gong
- <yibin.gong@nxp.com>, "devicetree@vger.kernel.org"
- <devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
  <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
  <linux-kernel@vger.kernel.org>
-Subject: [PATCH V12 RESEND 3/3] ARM: dts: imx7ulp-evk: Add backlight support
-Thread-Topic: [PATCH V12 RESEND 3/3] ARM: dts: imx7ulp-evk: Add backlight
- support
-Thread-Index: AQHVCJ/ifLY3OCW5U06j5yvB8ikP1A==
-Date: Sun, 12 May 2019 08:51:26 +0000
-Message-ID: <1557650772-11973-3-git-send-email-Anson.Huang@nxp.com>
-References: <1557650772-11973-1-git-send-email-Anson.Huang@nxp.com>
-In-Reply-To: <1557650772-11973-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH RESEND] ARM: dts: imx6ul: add clock-frequency to CPU node
+Thread-Topic: [PATCH RESEND] ARM: dts: imx6ul: add clock-frequency to CPU node
+Thread-Index: AQHVCKCyUPBMYq44Sky2cK4SYDJN/A==
+Date: Sun, 12 May 2019 08:57:16 +0000
+Message-ID: <1557651135-12109-1-git-send-email-Anson.Huang@nxp.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 x-mailer: git-send-email 2.7.4
-x-clientproxiedby: HK2PR03CA0043.apcprd03.prod.outlook.com
- (2603:1096:202:17::13) To DB3PR0402MB3916.eurprd04.prod.outlook.com
+x-clientproxiedby: HK2PR04CA0051.apcprd04.prod.outlook.com
+ (2603:1096:202:14::19) To DB3PR0402MB3916.eurprd04.prod.outlook.com
  (2603:10a6:8:10::18)
 authentication-results: spf=none (sender IP is )
  smtp.mailfrom=anson.huang@nxp.com; 
 x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [119.31.174.66]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 8c3c56eb-55dc-4af4-7d0c-08d6d6b70499
+x-ms-office365-filtering-correlation-id: 60e347f6-f58f-4d82-b69c-08d6d6b7d523
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3739; 
-x-ms-traffictypediagnostic: DB3PR0402MB3739:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <DB3PR0402MB37398F6CA3EB3708DDFBD30BF50E0@DB3PR0402MB3739.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1850;
+ SRVR:DB3PR0402MB3802; 
+x-ms-traffictypediagnostic: DB3PR0402MB3802:
+x-microsoft-antispam-prvs: <DB3PR0402MB38020B9E60A964B912090DE5F50E0@DB3PR0402MB3802.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1388;
 x-forefront-prvs: 0035B15214
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(39860400002)(136003)(346002)(396003)(376002)(199004)(189003)(966005)(36756003)(186003)(66556008)(476003)(66446008)(66946007)(66476007)(64756008)(486006)(14454004)(2501003)(66066001)(2906002)(446003)(11346002)(2616005)(256004)(73956011)(478600001)(4326008)(3846002)(6116002)(25786009)(26005)(102836004)(6436002)(7736002)(305945005)(53936002)(6506007)(386003)(6486002)(6512007)(6306002)(7416002)(2201001)(86362001)(316002)(110136005)(68736007)(81156014)(81166006)(8676002)(8936002)(50226002)(71190400001)(71200400001)(52116002)(99286004)(76176011)(5660300002)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3739;
+ SFS:(10009020)(39860400002)(136003)(366004)(396003)(346002)(376002)(199004)(189003)(66556008)(66476007)(66946007)(73956011)(8936002)(256004)(14444005)(36756003)(305945005)(66446008)(64756008)(6512007)(478600001)(110136005)(2201001)(5660300002)(14454004)(4326008)(8676002)(6436002)(81156014)(81166006)(25786009)(68736007)(6486002)(53936002)(50226002)(71200400001)(7736002)(71190400001)(476003)(2616005)(486006)(6116002)(386003)(6506007)(52116002)(26005)(2906002)(316002)(186003)(102836004)(3846002)(86362001)(99286004)(66066001)(2501003)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3802;
  H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: dhiESdXTu8Ftw+LsE+GsZ1laEoSS7gKEptq5uv7jdt92rqinb0L+oqUWnnIRsQVeNIxCeON3nKh136rT9fjrGGdznKjLCnpM2wDsZ+L/DvVG1Kiv8wJdwMJGYKtGHzCpqepgaSkPeDIZlfeyiKxKWtxyfmXBr62X3QtcO+u5rtGT4s2ZgeXCRe5jPefwVHa26WV6t2UDBzDH61grdPuyxnxMaDPrLlnxHI5cRQ5EL9f9jims34QZB8zyQzzt8DFGS78iV4zDPjZC8kBq9ABkthTFXjsnU+dh1BiKyPuNgJr284f+Wr1C4VKZinilr2CFgXYTfZlXdm+xjPX12/nIooTECDrb8RJslyzCWpMQ/XGMRzDXN0nOtOWsLTx2/eDAENNK6WM2jAu8CiIgPZxouANERICpLt+tCbFR91i9byA=
-Content-ID: <46EA10C9A2A34249BA4FC94771FDA5F5@eurprd04.prod.outlook.com>
+x-microsoft-antispam-message-info: v8wSCxpeejuUb87JKiEDhDQE+XZ1ekFwg3bvwv5LXOActHtaP8PiyMahQnWjpBCdkLTylSK/pUDXEQ2ya6iWDwTWCnoqu4EUsjSrq7hndryoheHB2qm4bPsmwAbWUZRJg9/X9Z5baQYhhbJ7qbGlGMCCFQs/C8CPv7WINwN1URt8pkIWbHLdTMOa4pbFvqH0x83seIi2eLTVDMYm3UEnr49/KFLE/Oe+efhRzR1V2gQPCCPFALaiptjch8VJKVxXUf1rWZPnnMg+Mx2CILDDLz0dOLs/f5MPXHJ2JvUfW90HNnapEvcrN2p1qd3+jmATLofD1xeAT/B/vfwjeZO3RTXr8MMtzFuZ06m83EXvuVMa12kFAQnxTEzbjJwVNzIj5PUv4BSBsZQ1Bkq99opWTSeb+1pvjRWZKfrSWF/QvRk=
+Content-ID: <6D9007DE5A2E53489B735BE3A21E20B6@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8c3c56eb-55dc-4af4-7d0c-08d6d6b70499
-X-MS-Exchange-CrossTenant-originalarrivaltime: 12 May 2019 08:51:26.8914 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 60e347f6-f58f-4d82-b69c-08d6d6b7d523
+X-MS-Exchange-CrossTenant-originalarrivaltime: 12 May 2019 08:57:16.8434 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3739
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3802
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190512_015131_358224_63A591DE 
-X-CRM114-Status: GOOD (  12.09  )
+X-CRM114-CacheID: sfid-20190512_015727_498245_90E38A39 
+X-CRM114-Status: GOOD (  11.19  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe0d:0:0:0:628 listed in]
- [list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ no trust [40.107.13.77 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -137,61 +126,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds i.MX7ULP EVK board MIPI-DSI backlight support.
+Add clock-frequency property to CPU node. Avoids warnings like
+"/cpus/cpu@0 missing clock-frequency property" for "arm,cortex-a7".
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
-No change change, just resend the patch with correct encoding for patch series:
-https://patchwork.kernel.org/patch/10937147/
+No code change, just resend patch using correct encoding.
 ---
- arch/arm/boot/dts/imx7ulp-evk.dts | 20 ++++++++++++++++++++
- 1 file changed, 20 insertions(+)
+ arch/arm/boot/dts/imx6ul.dtsi  | 1 +
+ arch/arm/boot/dts/imx6ull.dtsi | 1 +
+ 2 files changed, 2 insertions(+)
 
-diff --git a/arch/arm/boot/dts/imx7ulp-evk.dts b/arch/arm/boot/dts/imx7ulp-evk.dts
-index a09026a..59f094e 100644
---- a/arch/arm/boot/dts/imx7ulp-evk.dts
-+++ b/arch/arm/boot/dts/imx7ulp-evk.dts
-@@ -22,6 +22,14 @@
- 		reg = <0x60000000 0x40000000>;
- 	};
+diff --git a/arch/arm/boot/dts/imx6ul.dtsi b/arch/arm/boot/dts/imx6ul.dtsi
+index bbf010c..fc388b8 100644
+--- a/arch/arm/boot/dts/imx6ul.dtsi
++++ b/arch/arm/boot/dts/imx6ul.dtsi
+@@ -59,6 +59,7 @@
+ 			compatible = "arm,cortex-a7";
+ 			device_type = "cpu";
+ 			reg = <0>;
++			clock-frequency = <696000000>;
+ 			clock-latency = <61036>; /* two CLK32 periods */
+ 			#cooling-cells = <2>;
+ 			operating-points = <
+diff --git a/arch/arm/boot/dts/imx6ull.dtsi b/arch/arm/boot/dts/imx6ull.dtsi
+index 22e4a30..727b92f 100644
+--- a/arch/arm/boot/dts/imx6ull.dtsi
++++ b/arch/arm/boot/dts/imx6ull.dtsi
+@@ -12,6 +12,7 @@
+ /delete-node/ &crypto;
  
-+	backlight {
-+		compatible = "pwm-backlight";
-+		pwms = <&tpm4 1 50000 0>;
-+		brightness-levels = <0 20 25 30 35 40 100>;
-+		default-brightness-level = <6>;
-+		status = "okay";
-+	};
-+
- 	reg_vsd_3v3: regulator-vsd-3v3 {
- 		compatible = "regulator-fixed";
- 		regulator-name = "VSD_3V3";
-@@ -40,6 +48,12 @@
- 	status = "okay";
- };
- 
-+&tpm4 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_pwm0>;
-+	status = "okay";
-+};
-+
- &usdhc0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_usdhc0>;
-@@ -57,6 +71,12 @@
- 		bias-pull-up;
- 	};
- 
-+	pinctrl_pwm0: pwm0grp {
-+		fsl,pins = <
-+			IMX7ULP_PAD_PTF2__TPM4_CH1	0x2
-+		>;
-+	};
-+
- 	pinctrl_usdhc0: usdhc0grp {
- 		fsl,pins = <
- 			IMX7ULP_PAD_PTD1__SDHC0_CMD	0x43
+ &cpu0 {
++	clock-frequency = <900000000>;
+ 	operating-points = <
+ 		/* kHz	uV */
+ 		900000	1275000
 -- 
 2.7.4
 
