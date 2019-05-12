@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B4451ABF9
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 May 2019 14:13:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 344561AC5E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 May 2019 15:25:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tmctTJ7oEtaTRB8Ec2SwUe1MeVHawScbFIFHH0+Jx3s=; b=CMZ9WMYEfh82Xl
-	HzhJWE1bMk0epdsguNmxUaKlAog/OqHL5XZtB9HkXUtZAjSUZChgx09VOir3i5TAn7PYG2iRmE8Nf
-	+ugnzT/cv+RfABFsYaM+AQjQpzciHbO2TDRMs4zIzkUpm5+gbsfMO8KFFJOdreGsqMBIxLJHE28th
-	kPc9GyiVcLvy55ZsHxRj0wD9OEvtu6lgPVCe/ht3MC833HdxwEAVyBJu73MVQOz5k2K9R2Bx/Gciq
-	hcTzovyVlZuOeSSGuVWO8j4E00zh+gESiVxpPobZHeZ+kkFGi6a3djWByIFhrvsK+b9zCo+bylYRl
-	tGJdwJoZoIQyGran7uQw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=u1haEiBXr/hvGmuVVyrGcmwv/L0w6Sx6eSGmHaeX5UU=; b=cjkdaUbWYtG8FjKcIoNUvE8Ba
+	OErXJfJkoGpiD/gif1PBK6fZV5IS14upPh/zRMLe5FJ6OKXAbQjP+C3gl1/uCBi3Lfmvf3cx6UIPS
+	YqY4gRrLUTVs7Hm8TaE+83VN5C0lF0+3YDNnt05VRi+NjPHj4UoR4JPK0d4+lHfeBa8FzWuGoSlIF
+	IwyJ+b/Pvs3MxGRH2Pxs+yomhHUHbxDA3Ru1stCx9GbijdavIDvmraIZbljXUe2XaqMPl91pPs/ez
+	HjSS4H0z94dlGQ5EGAxoUP1JujNy3Zk159q7AXYEspUB+h/hmnfq7alzLL/m3eEh/i+2WEjxM8U5Z
+	tyvdkFwig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPnLx-0004dH-1W; Sun, 12 May 2019 12:13:17 +0000
-Received: from relay5-d.mail.gandi.net ([217.70.183.197])
+	id 1hPoTj-0001Tj-Ij; Sun, 12 May 2019 13:25:23 +0000
+Received: from relay2-d.mail.gandi.net ([217.70.183.194])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPnLo-0004cq-7y
- for linux-arm-kernel@lists.infradead.org; Sun, 12 May 2019 12:13:10 +0000
+ id 1hPoTd-0001TO-67
+ for linux-arm-kernel@lists.infradead.org; Sun, 12 May 2019 13:25:18 +0000
 X-Originating-IP: 109.190.253.16
 Received: from localhost (unknown [109.190.253.16])
  (Authenticated sender: maxime.ripard@bootlin.com)
- by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 2A98E1C0004;
- Sun, 12 May 2019 12:12:46 +0000 (UTC)
-Date: Sun, 12 May 2019 14:12:45 +0200
+ by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id C6F5140008;
+ Sun, 12 May 2019 13:25:08 +0000 (UTC)
+Date: Sun, 12 May 2019 15:25:05 +0200
 From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Uenal Mutlu <um@mutluit.com>
-Subject: Re: [RFC PATCH] drivers: ata: ahci_sunxi: Increased SATA/AHCI DMA
- TX/RX FIFOs
-Message-ID: <20190512121245.l3cvg4std6yanwix@flea>
-References: <20190510192550.17458-1-um@mutluit.com>
+To: Yangtao Li <tiny.windzz@gmail.com>
+Subject: Re: [PATCH] iio: adc: sun4i-gpadc-iio convert to SPDX license tags
+Message-ID: <20190512132505.q2j2tpplw3gkl245@flea>
+References: <20190512083241.9191-1-tiny.windzz@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190510192550.17458-1-um@mutluit.com>
+In-Reply-To: <20190512083241.9191-1-tiny.windzz@gmail.com>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190512_051308_433312_8B839CF6 
-X-CRM114-Status: GOOD (  16.95  )
+X-CRM114-CacheID: sfid-20190512_062517_375711_8B6A038F 
+X-CRM114-Status: UNSURE (   7.70  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.197 listed in list.dnswl.org]
+ low trust [217.70.183.194 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -61,58 +60,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jens Axboe <axboe@kernel.dk>, Mark Rutland <mark.rutland@arm.com>,
- Hans de Goede <hdegoede@redhat.com>, u-boot@lists.denx.de,
- Oliver Schinagl <oliver@schinagl.nl>, Andre Przywara <andre.przywara@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>, linux-sunxi@googlegroups.com,
- FUKAUMI Naoki <naobsd@gmail.com>, linux-kernel@vger.kernel.org,
- linux-ide@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- Jagan Teki <jagan@amarulasolutions.com>,
- Pablo Greco <pgreco@centosproject.org>, linux-amarula@amarulasolutions.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: lars@metafoo.de, linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ wens@csie.org, linux-arm-kernel@lists.infradead.org, pmeerw@pmeerw.net,
+ knaack.h@gmx.de, jic23@kernel.org
+Content-Type: multipart/mixed; boundary="===============6339939830254467441=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
 
-On Fri, May 10, 2019 at 09:25:50PM +0200, Uenal Mutlu wrote:
-> Increasing the SATA/AHCI DMA TX/RX FIFOs (P0DMACR.TXTS and .RXTS) from
-> default 0x0 each to 0x3 each gives a write performance boost of 120MB/s
-> from lame 36MB/s to 45MB/s previously. Read performance is about 200MB/s
-> [tested on SSD using dd bs=4K count=512K].
->
-> Tested on the Banana Pi R1 (aka Lamobo R1) and Banana Pi M1 SBCs
-> with Allwinner A20 32bit-SoCs (ARMv7-a / arm-linux-gnueabihf).
-> These devices are RaspberryPi-like small devices.
->
-> RFC: Since more than about 25 similar SBC/SoC models do use the
-> ahci_sunxi driver, users are encouraged to test it on all the
-> affected boards and give feedback.
->
-> List of the affected sunxi and other boards and SoCs with SATA using
-> the ahci_sunxi driver:
->   $ grep -i -e "^&ahci" arch/arm/boot/dts/sun*dts
->   and http://linux-sunxi.org/Category:Devices_with_SATA_port
->
-> Signed-off-by: Uenal Mutlu <um@mutluit.com>
-> ---
->  drivers/ata/ahci_sunxi.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/drivers/ata/ahci_sunxi.c b/drivers/ata/ahci_sunxi.c
-> index 911710643305..257986431c79 100644
-> --- a/drivers/ata/ahci_sunxi.c
-> +++ b/drivers/ata/ahci_sunxi.c
-> @@ -158,7 +158,7 @@ static void ahci_sunxi_start_engine(struct ata_port *ap)
->  	struct ahci_host_priv *hpriv = ap->host->private_data;
->
->  	/* Setup DMA before DMA start */
-> -	sunxi_clrsetbits(hpriv->mmio + AHCI_P0DMACR, 0x0000ff00, 0x00004400);
-> +	sunxi_clrsetbits(hpriv->mmio + AHCI_P0DMACR, 0x0000ffff, 0x00004433);
+--===============6339939830254467441==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="r45nxtjq6bbedfpy"
+Content-Disposition: inline
 
-Having comments / defines here would be great, once fixed:
+
+--r45nxtjq6bbedfpy
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Sun, May 12, 2019 at 04:32:41AM -0400, Yangtao Li wrote:
+> Updates license to use SPDX-License-Identifier.
+>
+> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+
 Acked-by: Maxime Ripard <maxime.ripard@bootlin.com>
 
 Maxime
@@ -122,7 +92,30 @@ Maxime Ripard, Bootlin
 Embedded Linux and Kernel engineering
 https://bootlin.com
 
+--r45nxtjq6bbedfpy
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXNgesQAKCRDj7w1vZxhR
+xcjOAP9r3jIxAaeBedbK1lNtwUVJhDwYJmSLXo22a+SEIaWaBwD+O5b/Wbdo2Hul
+2l7e2K9QVB9OYOxZswJmxSnTFfTS4wk=
+=ZHDz
+-----END PGP SIGNATURE-----
+
+--r45nxtjq6bbedfpy--
+
+
+--===============6339939830254467441==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6339939830254467441==--
+
