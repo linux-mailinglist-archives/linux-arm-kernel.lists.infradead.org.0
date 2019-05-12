@@ -2,65 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B50B1AADB
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 May 2019 08:01:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C8A11AD4A
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 May 2019 19:06:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7UH9lU7DV1IubN+H0f7FjrMsdvNTKIzmtkHgIzz7pKw=; b=cY8rzt+ItOQCbc
-	C6po2uiHLL5VyOp9iT3J2e4L5ZUoMn59VQldKHfbu18N8pSDBWYh5Kte4Low1mGuy7P7seGk6mque
-	xPudmDY+auB99mlSDBkZKXW1VYzdYNwWxEXK7/uxYZOIFCjQPcd6uXJaXnAQzN/AXbONqBL9XLqcO
-	GIXJY8OmYzEvi0ES5XJieBLiVJFGLDN//IOGEUY1p0B28ZWsvDxb8yTXHwnEsKg4vpJ6/MYxJewch
-	JD/hwjLLAVEs3riDivg0wTFTm68avuO//mXHdgxe+95DmCL/1R86xC1h6dwxMZUHrhKUSveJXgqlT
-	93acCv1Q6NcfZ0mX3Paw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=F4LCHPU2Pup+rj6Evt5P106RFrxJva+ekSFS5oFUX6w=; b=fwLUax5rTY+3MzqFDbfThZyFj
+	xhmkcq1HA22qjR04aAwEfBvGK7yr+yIWEaWRQKmiDqYcP5Fnjxiy0/UHwg43tv+0slWLdoP9eOwZZ
+	UV8hiXQcDJ0MinDWU6X6Pp8OxR94EsppLu3oHA9MQANAsgb1Odse82TolLTLDIWnlVTvOAaW76FVP
+	5cnMM6cgySOlXY3ga7axU7f7nCBQY8/X2N/6DKVhB31q1o5Elf9NNzZaFmvtwUHkZ4IgX+7P0h3Ta
+	RwOLw7atVgfknKrC2Ji0AG7qgw4OLOzSp+w5aJLdpHV4Wo3qss6sa4GY45QW/c2z9CMu/OIH7yZaX
+	Iz0LbWYNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPhXi-0006bD-Dq; Sun, 12 May 2019 06:01:02 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hPrvA-0008Tl-HQ; Sun, 12 May 2019 17:05:56 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPhXZ-0006ZY-28; Sun, 12 May 2019 06:00:54 +0000
-X-UUID: a0c9adc13147490f8c15986e3cc5ceff-20190511
-X-UUID: a0c9adc13147490f8c15986e3cc5ceff-20190511
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <louis.kuo@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1811880101; Sat, 11 May 2019 22:00:32 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sat, 11 May 2019 23:00:31 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 12 May 2019 14:00:19 +0800
-Received: from mtkslt306.mediatek.inc (10.21.14.136) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Sun, 12 May 2019 14:00:19 +0800
-From: Louis Kuo <louis.kuo@mediatek.com>
-To: <hans.verkuil@cisco.com>, <laurent.pinchart+renesas@ideasonboard.com>,
- <tfiga@chromium.org>, <keiichiw@chromium.org>, <matthias.bgg@gmail.com>,
- <mchehab@kernel.org>
-Subject: [RFC PATCH V2 4/4] dts: arm64: mt8183: Add sensor interface nodes
-Date: Sun, 12 May 2019 14:00:05 +0800
-Message-ID: <20190512060005.5444-5-louis.kuo@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20190512060005.5444-1-louis.kuo@mediatek.com>
-References: <20190512060005.5444-1-louis.kuo@mediatek.com>
+ id 1hPrv1-0008PD-Jl
+ for linux-arm-kernel@lists.infradead.org; Sun, 12 May 2019 17:05:48 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=u2q75OsSvN0gs9+vI+HKmu1j+P1UgVapAAD+9M7rxxI=; b=RuxoE3LAX9keebSda6rl0E4YX
+ sdxnYM8dMd4Ld7j/AwvO/B+7D1m64BAgXVoOolJHM/VlPKUO6H0ZBzN61/Mke/pSijUeyaJHLkeOK
+ IL8uhxAbGX1K/eFMLrbtvOGWovUjthTKAsJHoZFS1Bge0Ral8dhc1EGCs6utORIACiX0A=;
+Received: from [81.145.206.43] (helo=finisterre.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hPruu-00044c-8K; Sun, 12 May 2019 17:05:40 +0000
+Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
+ id F412C440036; Sun, 12 May 2019 08:52:23 +0100 (BST)
+Date: Sun, 12 May 2019 16:52:23 +0900
+From: Mark Brown <broonie@kernel.org>
+To: Lee Jones <lee.jones@linaro.org>
+Subject: Re: Applied "dt-bindings: mfd: atmel-usart: add DMA bindings for
+ USART in SPI mode" to the spi tree
+Message-ID: <20190512075223.GF21483@sirena.org.uk>
+References: <20190505180646.1442-2-radu_nicolae.pirea@upb.ro>
+ <20190508090857.B7CB344003F@finisterre.sirena.org.uk>
+ <20190508105105.GN3995@dell>
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20190508105105.GN3995@dell>
+X-Cookie: HOST SYSTEM RESPONDING, PROBABLY UP...
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190511_230053_107380_1A71B4DD 
-X-CRM114-Status: UNSURE (   7.92  )
+X-CRM114-CacheID: sfid-20190512_100547_794874_96ECD914 
+X-CRM114-Status: UNSURE (   9.36  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 1.1 DATE_IN_PAST_06_12     Date: is 6 to 12 hours before Received: date
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -72,75 +80,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Sean.Cheng@mediatek.com, Rynn.Wu@mediatek.com,
- srv_heupstream@mediatek.com, holmes.chiou@mediatek.com,
- Jerry-ch.Chen@mediatek.com, jungo.lin@mediatek.com, sj.huang@mediatek.com,
- yuzhao@chromium.org, linux-mediatek@lists.infradead.org, zwisler@chromium.org,
- Louis Kuo <louis.kuo@mediatek.com>, christie.yu@mediatek.com,
- frederic.chen@mediatek.com, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Richard Genoud <richard.genoud@gmail.com>,
+ Radu Pirea <radu_nicolae.pirea@upb.ro>, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============4413205073397469885=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add nodes for Mediatek's sensor interface device. Sensor interface module
-embedded in Mediatek SOCs, works as a HW camera interface controller
-intended for image and data transmission between cameras and host devices.
 
-Signed-off-by: Louis Kuo <louis.kuo@mediatek.com>
----
- arch/arm64/boot/dts/mediatek/mt8183.dtsi | 34 ++++++++++++++++++++++++
- 1 file changed, 34 insertions(+)
+--===============4413205073397469885==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="xkXJwpr35CY/Lc3I"
+Content-Disposition: inline
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-index c3a516e63141..2fe97e8544ad 100644
---- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-+++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-@@ -474,4 +474,38 @@
- 			#clock-cells = <1>;
- 		};
- 	};
-+
-+	seninf: seninf@1a040000 {
-+		compatible = "mediatek,mt8183-seninf";
-+		reg = <0 0x1a040000 0 0x8000>,
-+		      <0 0x11C80000 0 0x6000>;
-+		reg-names = "base_reg", "rx_reg";
-+		interrupts = <GIC_SPI 251 IRQ_TYPE_LEVEL_LOW>;
-+		power-domains = <&scpsys MT8183_POWER_DOMAIN_CAM>;
-+		clocks =
-+			<&camsys CLK_CAM_SENINF>,
-+			<&topckgen CLK_TOP_MUX_SENINF>;
-+		clock-names =
-+			"CLK_CAM_SENINF", "CLK_TOP_MUX_SENINF";
-+		status = "disabled";
-+		ports {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			port@0 {
-+				reg = <0>;
-+				mipi_in_cam0: endpoint@0 {
-+					reg = <0>;
-+					data-lanes = <1 3>;
-+				};
-+			};
-+
-+			port@1 {
-+				reg = <1>;
-+				mipi_in_cam1: endpoint@0 {
-+					reg = <1>;
-+					data-lanes = <1 3>;
-+				};
-+			};
-+		};
-+	};
- };
--- 
-2.18.0
 
+--xkXJwpr35CY/Lc3I
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Wed, May 08, 2019 at 11:51:05AM +0100, Lee Jones wrote:
+> > Signed-off-by: Mark Brown <broonie@kernel.org>
+> > ---
+> >  .../devicetree/bindings/mfd/atmel-usart.txt   | 20 ++++++++++++++-----
+
+> Interesting!
+
+For some reason the bindings for the SPI function got put in the MFD
+directory, dunno why.
+
+--xkXJwpr35CY/Lc3I
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAlzX0LcACgkQJNaLcl1U
+h9DQCwf/WFhMZtcust0DuMCXriQ8faNSLBTBaf77XBUl0FDL66Uge3k6OO/5RP3h
+8hEh7TTviJw3VCcryu1ee9kRNUVdBqdiSHEzb18Q2gDfGmmGrJWGzj59B/47NUjz
+e5enUWORH2PLwGFNmZ81Ay2w2DUvN1UPDHKcCWX1/fbJBxBkzRYiCLjZAOMh9QE6
+QEKjmRIJmVnvgNYeSoz5DNo+++PUKxZYX2IN0JN9oX7LtPdjN9UL4HegW+3xflrB
+IVi2Am4CNMwDCNlMDHrkdClRKmEmAlDRU3kWxlUDLezIKbA3LAiFhQ9nuXyC+Q7e
+Ncn36/FFn/CtfjbD1EWLwGhBGQGoGw==
+=A/JO
+-----END PGP SIGNATURE-----
+
+--xkXJwpr35CY/Lc3I--
+
+
+--===============4413205073397469885==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4413205073397469885==--
+
