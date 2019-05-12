@@ -2,61 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16D851A975
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 11 May 2019 22:50:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8B631A9D7
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 12 May 2019 03:08:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:
-	Subject:From:To:Date:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=tZol1/gV0hcv6+mTE4EeD1ss7DQZNBGcpDLpOzm36xg=; b=J+0U2Xc9wowlMl
-	jWHpe2iCMABlLbPF3HHgPx1XpwpKj2GGDJCmTrPurBK5UutW8QbGwUo1ZFiELAB+ztpIunBCnvcxy
-	Yo4FBfhmC+LpCBZs31yD7PDsmyxmlJa1z0OTTNjyi//dhv5tWX9OfjupNweB75rvgYAlhhiQ6D8br
-	pN1t1KE1kbaeleS6reiWJMvDTG7QZ+O936pFhozAj6Q/7cBzH3QKtjjwi6CN013LE57PD1UjbEqGv
-	8GjBraEhy+l6jTdjnXx4arYQ6xe+Zd2B7spfayl9/ugbpIPye8hJZvkI0weLhka6VLCXe7rqvTzYh
-	YdV0CpSndNmL4F6W2S+w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HcL4uuOC0IjSsRzJ4vlIRjgKM3URSXsZsFe9QjdppdQ=; b=D0X21gwVVi6ihN
+	Q//EPHgWyyjRrxiPC/xjI8X3NO9hj872nkVlqsIgzD7lBDExRKsFdB2aaVr5jCvR9umqQxBgcexm5
+	mixAoQDjIx4UxrdXo2bvFmYIXwhHbAvLEcM8UxLYP2ZtN5qso8BxD7jVU6skKxMP/CefaIyr8UxZL
+	k6AjIets3x6HAoZYMakIXkPjQy7BvuajtJkGjiZOcx1WP2FqdoJE1RlfqyKa5toBTWlEja8eFwHYc
+	tT8jUcI9Nz1pYqZ9xKh8L4TBs21cOnWb4Ei42QDclF7OICPlWxOKd+Cwptd3bau5cX1i0itaGU2Rv
+	cR9x1O2ZnFk9LL3T04kA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPYwU-0005md-Ve; Sat, 11 May 2019 20:50:03 +0000
-Received: from mail4.protonmail.ch ([185.70.40.27])
+	id 1hPcyX-0007PQ-HX; Sun, 12 May 2019 01:08:25 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPYwL-0005lq-M1
- for linux-arm-kernel@lists.infradead.org; Sat, 11 May 2019 20:49:56 +0000
-Date: Sat, 11 May 2019 20:49:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=protonmail.com;
- s=default; t=1557607787;
- bh=MxsDWggys2dskHCU5PWyuUf8L5ocabzHRB0JVzjm0/0=;
- h=Date:To:From:Cc:Reply-To:Subject:Feedback-ID:From;
- b=p49itp4ZM6YkvDcAOfsUotB9LGIphD1fpdeYQWq+vEL6M7Z2GqAjT+7JbJS4sepba
- TrAgqGLM30PETZpsGG8+o88YqmulUKwpBJw3k4G8rFpxgvasFr3h+qj6mXRW+eBARh
- z2yt6ljniJCWcquWykU8HaKIW+VoQ2jluC+6vqHk=
-To: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>
-From: Bob <pigiron@protonmail.com>
-Subject: arm64: dts: meson: Boot failure with using eMMC
-Message-ID: <7yaiVYWS-VlbP5H6BTXnSiNE_w6ZJQRMX8DjxBa7gDLaZ4PoWFPg_CZkd9EU0-UVVuGvpxrlTJR1_6i64BP7eSb3XZdCV9vv3NFhHsmifA8=@protonmail.com>
-Feedback-ID: C9LuG3VnvxsVE-NK__4mgtHQkVUBjoNZAKT1UPY69jR3O3SjppQt3FTXk4t40ZQ2rrvuZCw-kRM7a0ytDe7Whg==:Ext:ProtonMail
+ id 1hPcyP-0007Ou-79
+ for linux-arm-kernel@lists.infradead.org; Sun, 12 May 2019 01:08:19 +0000
+Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 155A02146F;
+ Sun, 12 May 2019 01:08:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1557623294;
+ bh=Z20a2po9n0851wFxAetxwi00fSX8OGtNnWeHUQ+viUY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=aBsu6jau4BSb6ujciX9JSmcnzYaqVmNgIBMag2Z7REg2VJnDuCv4DQOnS3zJsFqB0
+ 2277gl0TuPc8Ytz6Mc+yv+GopwLA+LjcmLntSAwjXYsmfDoc8jPSDPJxe18Qs4Vt32
+ I+jQsjDVTl+wtLuK4YmK0+0ZFgxesyRDUgA5n78s=
+Date: Sun, 12 May 2019 09:07:42 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH] clk: imx6sll: Fix mispelling uart4_serial as serail
+Message-ID: <20190512010741.GI15856@dragon>
+References: <8776296d079b3b4d67d4421656238757a8ad373d.1556046082.git.leonard.crestez@nxp.com>
+ <20190510032746.GF15856@dragon>
+ <155750984356.14659.16650159344577092731@swboyd.mtv.corp.google.com>
 MIME-Version: 1.0
-X-Spam-Status: No, score=-1.2 required=7.0 tests=ALL_TRUSTED,DKIM_SIGNED,
- DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_FROM autolearn=ham
- autolearn_force=no version=3.4.2
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.protonmail.ch
+Content-Disposition: inline
+In-Reply-To: <155750984356.14659.16650159344577092731@swboyd.mtv.corp.google.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190511_134954_347554_79E47B81 
-X-CRM114-Status: UNSURE (   8.88  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190511_180817_278121_61EACBD1 
+X-CRM114-Status: GOOD (  13.78  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.70.40.27 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pigiron[at]protonmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -64,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -75,44 +77,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: Bob <pigiron@protonmail.com>
-Cc: "linux-amlogic@lists.infradead.org" <linux-amlogic@lists.infradead.org>
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
+ Michael Turquette <mturquette@baylibre.com>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Even though I come with a problem, I first want to thank you folks for all
-that you do. It's much appreciated.
+On Fri, May 10, 2019 at 10:37:23AM -0700, Stephen Boyd wrote:
+> Quoting Shawn Guo (2019-05-09 20:27:47)
+> > On Tue, Apr 23, 2019 at 07:05:08PM +0000, Leonard Crestez wrote:
+> > > This looks like a copy-paste error. This string is not referenced
+> > > anywhere so it's safe to rename it.
+> > > 
+> > > Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> > 
+> > I see this keep coming, so have to ask you to fix your patch sender.
+> > The base64 encoding makes it very difficult to apply patch.  I have done
+> > manual applying for your patches a couple of times, and I thought that's
+> > just accident.  It seems not.  Please fix and resend. 
+> > 
+> 
+> I already applied this one. Sorry, forgot to send the email.
 
-So on to the problem. I've got an Odroid C2 (meson-gxbb) with an eMMC chip
-that Ameridroid claims to be an "eMMC Version 4.5 - HS200 interface with
-8bit DDR mode from Samsung".
+No problem.  Thanks for notification.
 
-I run the Arch Linux "mainline" kernel and it had been working well. But when
-I upgraded the kernel from 4.20 to 5.0 it failed to boot when UBoot couldn't
-mount the root filesystem, so it dropped into it's shell. Using an USB serial
-dongle, I noticed that none of the usual /dev/mmcblk* files were created.
-
-I saved the failing boot output from the USB dongle, downgraded back to the
-4.20 kernel, and now it booted successfully. When I compared the good/bad
-dongle outputs it seems that the first error messages were:
-
-   [2.790141] meson-gx-mmc d0074000.mmc: no support for card's volts
-       (snip)
-   [2.799730] mmc0: error -22 whilst initialising MMC card
-
-I then did a bunch of "git bisect" compiles on Linus' "vanilla" kernel from his
-git tree and ultimately it pointed to commit:
-
-   arm64: dts: meson: disable pad bias for mmc pinmuxes
-   96a13691c1ddfafc301d1ee451d91fc2cca48d27
-
-Sure enough, when I now revert that commit in /boot/dtbs/amlogic/meson-gxbb-
-odroidc2.dtb on the latest shipping 5.1 kernel, it boots successfully. That
-same 5.1 kernel fails to boot with the same error messages when that commit
-is engaged.
-
+Shawn
 
 _______________________________________________
 linux-arm-kernel mailing list
