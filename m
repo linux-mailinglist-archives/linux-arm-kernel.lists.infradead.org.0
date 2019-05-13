@@ -2,78 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86BC71AFC6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 07:07:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A15391AFCE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 07:08:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NWB66Yjxn7upaUAVPrwJo5Ui29Dqvgp9YC5xbvJnvd8=; b=iDRO+bfAwvzq08
-	F87+s8nzRiPwK9kiFC519ZZiAVrbhIsHFfINJo7IUxhYzzpaxJdh2r3Nk7vBo1GlORthoN+kGAyxX
-	+ymJ4ho6Vrl+7NeYLIA9yIqDYe6AfUKIa/mGeKRUH+SJJ+fXPKyJ0uEzpwkIouxNOlbMFLqbndOnI
-	6lqcY5ETfBIyzDznQOSjGF9jBVMFwhawFhzoAMXuPLKigN2KVPlU74Mq22BUxpJFVLIwMQgcxOgbg
-	6cE4miySHsWgJ8P+ASn2lHXsKgsAtOSbLZRotYdHDY93/+49ZqVTv8OZBsPVgH3tYQM3ICfZ+AH9P
-	cr5nCaZfBbdSpBerFixg==;
+	List-Owner; bh=Yd8+rGHZg8MTY9DTUkX48Q5JomoNHDV/3tYppaf0M1Q=; b=qf5AhZK6L8eNEc
+	ECvlovmtPLh4QoCYtgRgbKgZl4v2CtllMMI3TqBL7ZrEDa1PFX4qrqwuxPw5WL4mAu8a+dme0r0EL
+	6UyEOzm0n7lAZhgpo/0xrmGy6sKP3Wi8T4o0Hn9hAjQbFk9h4KQrBsKrhbnSiQUesy47BVFX+CUOy
+	EnBSj6h1ldwGycsEEg+zErv/Zoo1Ud7p1aNXvVtORyiBMc7/NHSaKGkIXa4mm9j5kYe55wk1MDSgq
+	7l11jNSAicL5pyvpUiX/zIKdZsVr0CghBIr/qQ7cKEkf7KE7IR8IAL8GdumKJfBfGAZbkLtF6YX6n
+	yO5RPIoty5DEuaFk4itQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQ3Bp-0007Qj-GV; Mon, 13 May 2019 05:07:53 +0000
-Received: from hqemgate16.nvidia.com ([216.228.121.65])
+	id 1hQ3C6-0007jt-6Y; Mon, 13 May 2019 05:08:10 +0000
+Received: from hqemgate15.nvidia.com ([216.228.121.64])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQ3BM-00071F-MF
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 05:07:34 +0000
-Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5cd8fb880000>; Sun, 12 May 2019 22:07:20 -0700
+ id 1hQ3BV-0007CJ-H3
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 05:07:43 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate15.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5cd8fb6e0000>; Sun, 12 May 2019 22:06:54 -0700
 Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate102.nvidia.com (PGP Universal service);
- Sun, 12 May 2019 22:07:24 -0700
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Sun, 12 May 2019 22:07:33 -0700
 X-PGP-Universal: processed;
- by hqpgpgate102.nvidia.com on Sun, 12 May 2019 22:07:24 -0700
-Received: from HQMAIL103.nvidia.com (172.20.187.11) by HQMAIL101.nvidia.com
- (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 13 May
- 2019 05:07:24 +0000
-Received: from hqnvemgw01.nvidia.com (172.20.150.20) by HQMAIL103.nvidia.com
- (172.20.187.11) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
- Transport; Mon, 13 May 2019 05:07:23 +0000
+ by hqpgpgate101.nvidia.com on Sun, 12 May 2019 22:07:33 -0700
+Received: from HQMAIL104.nvidia.com (172.18.146.11) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 13 May
+ 2019 05:07:32 +0000
+Received: from hqnvemgw01.nvidia.com (172.20.150.20) by HQMAIL104.nvidia.com
+ (172.18.146.11) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
+ Transport; Mon, 13 May 2019 05:07:32 +0000
 Received: from vidyas-desktop.nvidia.com (Not Verified[10.24.37.38]) by
  hqnvemgw01.nvidia.com with Trustwave SEG (v7, 5, 8, 10121)
- id <B5cd8fb870002>; Sun, 12 May 2019 22:07:23 -0700
+ id <B5cd8fb900002>; Sun, 12 May 2019 22:07:32 -0700
 From: Vidya Sagar <vidyas@nvidia.com>
 To: <lorenzo.pieralisi@arm.com>, <bhelgaas@google.com>, <robh+dt@kernel.org>, 
  <mark.rutland@arm.com>, <thierry.reding@gmail.com>, <jonathanh@nvidia.com>,
  <kishon@ti.com>, <catalin.marinas@arm.com>, <will.deacon@arm.com>,
  <jingoohan1@gmail.com>, <gustavo.pimentel@synopsys.com>
-Subject: [PATCH V6 05/15] PCI: dwc: Add ext config space capability search API
-Date: Mon, 13 May 2019 10:36:16 +0530
-Message-ID: <20190513050626.14991-6-vidyas@nvidia.com>
+Subject: [PATCH V6 06/15] dt-bindings: PCI: designware: Add binding for CDM
+ register check
+Date: Mon, 13 May 2019 10:36:17 +0530
+Message-ID: <20190513050626.14991-7-vidyas@nvidia.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190513050626.14991-1-vidyas@nvidia.com>
 References: <20190513050626.14991-1-vidyas@nvidia.com>
 X-NVConfidentiality: public
 MIME-Version: 1.0
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1557724040; bh=neXvVKHqBfaOl/O5LInxyONqsHBu0T7HOa4cRzKZG2Q=;
+ t=1557724014; bh=NO1V7hy69M1l86eftXXblUGWCyFz5SeORTZoyttrAs4=;
  h=X-PGP-Universal:From:To:CC:Subject:Date:Message-ID:X-Mailer:
  In-Reply-To:References:X-NVConfidentiality:MIME-Version:
  Content-Type;
- b=RhixiPS+0LcesN8W+SkTswQaj/Pp/8Y+MjghMZr3FAign+bblYcrCaxR+DWM1M/Rt
- lLp2LQrDQFCUtk09p+jL04+ZGjHzfGUvhuL1MtYDWvLmR02+Kyb3E816S9xS6N6s/X
- Kmp0ev1aOyYYT3PiJqkT2cWDmzMa+AxJm1xHGXciNI6/nQsUhnrqyjzNGjqd53Kr/e
- z8aftFhhmz5xf+p6HI8PibDTNaMpkwT/wQ4s6qZhddMyFYuq2X2m8VGcqwf5UjYMD2
- 2l0KHJl1+6/h5xHXkn9ncGze5a3H7H+5gILmtpCbH9SUxQNjoKUlhymF6owX3LhJKV
- 2zELPTKLk++7A==
+ b=ID3sVoxlGC6t0L0OM+w2+X/KogLu7AU/GLjrcjtT2UWccR9eLdFrWC0Atv4+Yr890
+ eMMw5jVd51QI8+gazcc5tmL92lTfdon/zlylZLAkZMqWqeONaFYaP5Yu2DPD+HwRTN
+ cjq9ISMCHGQ0IEqxYslOFYm1bGlI9jU7V0jk9iiX7JHtEOQ6/ZIC0VTMNSqcFcYar3
+ BqVmEXzkE6dz/zvkpgDAJUe3LXCbl4UvGgSYCGzLDhjKzazz887JCzyvF94XFB7zvI
+ COfqVwKKP6rXYZAtWcrxgT4lD1GOUBzSYKRMfXHquZygcaHxL92eXjruINWkXCbTrb
+ Cq042rq+PfDdQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190512_220725_043026_3DC73E74 
-X-CRM114-Status: GOOD (  10.88  )
+X-CRM114-CacheID: sfid-20190512_220733_741188_8D3CDEC5 
+X-CRM114-Status: UNSURE (   7.82  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.65 listed in list.dnswl.org]
+ high trust [216.228.121.64 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -104,11 +106,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add extended configuration space capability search API using struct dw_pcie *
-pointer
+Add support to enable CDM (Configuration Dependent Module) registers check
+for any data corruption. CDM registers include standard PCIe configuration
+space registers, Port Logic registers and iATU and DMA registers.
+Refer Section S.4 of Synopsys DesignWare Cores PCI Express Controller Databook
+Version 4.90a
 
 Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
-Acked-by: Gustavo Pimentel <gustavo.pimentel@synopsys.com>
 ---
 Changes since [v5]:
 * None
@@ -120,79 +124,31 @@ Changes since [v3]:
 * None
 
 Changes since [v2]:
-* None
+* Changed flag name from 'cdm-check' to 'enable-cdm-check'
+* Added info about Port Logic and DMA registers being part of CDM
 
 Changes since [v1]:
 * This is a new patch in v2 series
 
- drivers/pci/controller/dwc/pcie-designware.c | 41 ++++++++++++++++++++
- drivers/pci/controller/dwc/pcie-designware.h |  1 +
- 2 files changed, 42 insertions(+)
+ Documentation/devicetree/bindings/pci/designware-pcie.txt | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/drivers/pci/controller/dwc/pcie-designware.c b/drivers/pci/controller/dwc/pcie-designware.c
-index 4a00889a9504..e46d19f61c9c 100644
---- a/drivers/pci/controller/dwc/pcie-designware.c
-+++ b/drivers/pci/controller/dwc/pcie-designware.c
-@@ -53,6 +53,47 @@ u8 dw_pcie_find_capability(struct dw_pcie *pci, u8 cap)
- 	return __dw_pcie_find_next_cap(pci, next_cap_ptr, cap);
- }
- 
-+static int dw_pcie_find_next_ext_capability(struct dw_pcie *pci, int start,
-+					    int cap)
-+{
-+	u32 header;
-+	int ttl;
-+	int pos = PCI_CFG_SPACE_SIZE;
-+
-+	/* minimum 8 bytes per capability */
-+	ttl = (PCI_CFG_SPACE_EXP_SIZE - PCI_CFG_SPACE_SIZE) / 8;
-+
-+	if (start)
-+		pos = start;
-+
-+	header = dw_pcie_readl_dbi(pci, pos);
-+	/*
-+	 * If we have no capabilities, this is indicated by cap ID,
-+	 * cap version and next pointer all being 0.
-+	 */
-+	if (header == 0)
-+		return 0;
-+
-+	while (ttl-- > 0) {
-+		if (PCI_EXT_CAP_ID(header) == cap && pos != start)
-+			return pos;
-+
-+		pos = PCI_EXT_CAP_NEXT(header);
-+		if (pos < PCI_CFG_SPACE_SIZE)
-+			break;
-+
-+		header = dw_pcie_readl_dbi(pci, pos);
-+	}
-+
-+	return 0;
-+}
-+
-+int dw_pcie_find_ext_capability(struct dw_pcie *pci, int cap)
-+{
-+	return dw_pcie_find_next_ext_capability(pci, 0, cap);
-+}
-+EXPORT_SYMBOL_GPL(dw_pcie_find_ext_capability);
-+
- int dw_pcie_read(void __iomem *addr, int size, u32 *val)
- {
- 	if (!IS_ALIGNED((uintptr_t)addr, size)) {
-diff --git a/drivers/pci/controller/dwc/pcie-designware.h b/drivers/pci/controller/dwc/pcie-designware.h
-index 6cb978132469..fff284098117 100644
---- a/drivers/pci/controller/dwc/pcie-designware.h
-+++ b/drivers/pci/controller/dwc/pcie-designware.h
-@@ -252,6 +252,7 @@ struct dw_pcie {
- 		container_of((endpoint), struct dw_pcie, ep)
- 
- u8 dw_pcie_find_capability(struct dw_pcie *pci, u8 cap);
-+int dw_pcie_find_ext_capability(struct dw_pcie *pci, int cap);
- 
- int dw_pcie_read(void __iomem *addr, int size, u32 *val);
- int dw_pcie_write(void __iomem *addr, int size, u32 val);
+diff --git a/Documentation/devicetree/bindings/pci/designware-pcie.txt b/Documentation/devicetree/bindings/pci/designware-pcie.txt
+index 5561a1c060d0..85b872c42a9f 100644
+--- a/Documentation/devicetree/bindings/pci/designware-pcie.txt
++++ b/Documentation/devicetree/bindings/pci/designware-pcie.txt
+@@ -34,6 +34,11 @@ Optional properties:
+ - clock-names: Must include the following entries:
+ 	- "pcie"
+ 	- "pcie_bus"
++- enable-cdm-check: This is a boolean property and if present enables
++   automatic checking of CDM (Configuration Dependent Module) registers
++   for data corruption. CDM registers include standard PCIe configuration
++   space registers, Port Logic registers, DMA and iATU (internal Address
++   Translation Unit) registers.
+ RC mode:
+ - num-viewport: number of view ports configured in hardware. If a platform
+   does not specify it, the driver assumes 2.
 -- 
 2.17.1
 
