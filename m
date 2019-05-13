@@ -2,69 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF25E1BC9A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 20:05:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27E201BCAE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 20:08:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cOnHaZmH8RYozJNYGZwLc4fuxE7oYXu0HXEkZ059buU=; b=UQWjMWiOVxRUL3
-	Kv5VBHEA+7yBjIAS5HoaDLcRiqWP3j3g40tquitiwfXSnoMacogoicpp5uWGZUKlpBpy/FLc3EU4i
-	Dq2ENjBglqlsrubic3YDvd2P81ZikrZ6o8dnFBjvf3tEZoW0ZUcvBMJoOpZ9jV3sJgp47UBbq1noa
-	jaZuhi0YeA2O0jmOHyka3sChkXl2hP+JFCyS8aqcaPqKfaPWjuslWpunP/Ef505esGFS5X74kjTM2
-	8oQfVo2hB83mJ+FwXZ9RRKbo7YqpBToNAAQ+erWwrL+uXVA7qKm2vrVGy3iOn09CDRz2sEgYzIEII
-	hbxp6EzWLocroKildmyA==;
+	List-Owner; bh=XTo8BCgH6NBqmgbEOtgYncNNx9e8rz45GhqJzLJ+6yo=; b=XUMNs2OHBIvbOB
+	TKhqPHvhLKx4KGrDyxcmQTJ4fEIeNmnvZtuz7WoyOiiGQuvg3kXnVXvVUQ5IT6lkuCf/jMivd37gl
+	TGiKnLjKHnyHC3DXLQcah0kntuAPHaJ/rrUJ/ArldC2vBK6vJxVOw7DNPH9uR1IZv0SP/qXzsJ/UD
+	idrBglRY0GcJHhTSU6Ar2hE2RqOkgq35GQdg9BVOojDrugrXJxpxgf4YGP7looB6kITqiNRhXOnrL
+	4ezsI3qnN5wQNZDpU6Fw/iECzfW8NC0/cMPq4Yysch/b1DKIBC3ORJiMy/hYRduPCmLSx88rokCia
+	7TN3Gus5UPUVrH/cj7uA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQFJz-0004Vl-92; Mon, 13 May 2019 18:05:07 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hQFNB-00068r-Ek; Mon, 13 May 2019 18:08:25 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQFJo-0004VP-IR
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 18:04:57 +0000
-Received: by mail-wr1-x441.google.com with SMTP id v11so16337467wru.5
+ id 1hQFN4-00067i-Iu
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 18:08:20 +0000
+Received: by mail-pf1-x443.google.com with SMTP id c6so7601758pfa.10
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 May 2019 11:04:55 -0700 (PDT)
+ Mon, 13 May 2019 11:08:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=4ShfiSHZNiNvaog9lGofhsvzN9PjIHcO6bJwZMd5dm4=;
- b=ah9G/JAAh9QSKb+xD+yCYFrE4FWXvb+tVkcazfNzSJBLYvzhjfxtRrQBv4ipnulXfH
- ARm5Jk4HEhdlboQ9eXRZqSIsqt13LlD2Rte6TRHoR7dZs8N3+Egc6/ExCEDG32aWzpWy
- HN6cJJvS7OqHWUoD3ZHmNMBc39JoYjdm0W2rH3V6Y4rR65q7z1kkEL4ujgBVcN3hp2X4
- coZxPUFmwVdKXgApvxqffyptfV5EsRiuKl0ra2oKVGzN3x8Ct0XiyuuTJnWTAyeAUVQZ
- qCpVEzNIm+ge2LS+PXV95LXpT/UudGPuc/+bbl5mzXochgpjP222yo1u+uoVVYn9et5w
- saCA==
+ bh=K0BaD+NrsEh6+hhl5e1yZHn+BVnxa67K8vY88TbvNJM=;
+ b=QrB8vVaaptehZaZgybS2apIM8RnqwIdA59VpdzinxguI8ffuSqGjVg8xmJzUmV6+FT
+ 12jnx+QgPV8cq7M6+ZS4IlLGWTLbf1ZhyYemKANFPdAhnRgebC+urnqJyr3Tq20NWItD
+ pbZJkqYDHWh7lJ6Vug5xxlgt/0NeLtEd/Hwv0678XLZMbiw+H75Fq3elpWRyOGGrxRSx
+ N3Qz2jQ32GjYZQLkwxfLr8yUX02kQuSxanLvWhZ+8hUKUE7SdDx0Ia+jA1BAKyYWFtp1
+ AyVEXXVcu3pL4s/35uAxttbjqdr2WxuqRwcsezomAbn6YbY0VXG8xnQrmALtnmb5XaWL
+ 4ydA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=4ShfiSHZNiNvaog9lGofhsvzN9PjIHcO6bJwZMd5dm4=;
- b=O+hEwjuWS7LtJ11FQZ58ovrKla8KRwQb4QomhxZJ6xAThso5VkNP4t4F/SVQ3tZHDA
- JYeK5fSXgmogMCU9EkuvVDEp7Dtksndc/KRb4ingo3jjbVx9PRy2Oml/h49wo9Fjb7g/
- sb90cIGiS9eAAf1E5aZYbwslimVURioe2Y26GlvkHP7Udzj5m0xEN1siTV1Cx31W8bIy
- dInGqFHGzp3Z/ggEYQTcCjEPAS+Ap6ZjIn3+vpvjD2oBZkXpTVgMJ0iCdZQ2R2EfDBq6
- jp1OF5uL5c2fI1UVSUe7gVwxbwaA2S5ILcUTMhor7jXdoow8ynsvEb180z2+k5RhpOgk
- HBBg==
-X-Gm-Message-State: APjAAAVQVt1TQt6wuDUhDvSsEde5c6u1osqLgwin9VgTXYH0GusCMuVX
- 63MEtBXcuVsVgcBQfxaYPwlUy9JN
-X-Google-Smtp-Source: APXvYqx64l6tyJ12+qIM+shSMPHdlGF3If68zQAcZMb9rC/EAv8bRYuwjAa+1aUfYV9HhOsHLk0FHg==
-X-Received: by 2002:adf:eb44:: with SMTP id u4mr18728854wrn.83.1557770694373; 
- Mon, 13 May 2019 11:04:54 -0700 (PDT)
+ bh=K0BaD+NrsEh6+hhl5e1yZHn+BVnxa67K8vY88TbvNJM=;
+ b=Wg5ibIR+Xw1++/uUj20cwVAaPmpmTDJ4OP7lgz7Cyvixd9iCvCTHpQFZD2hkiogoDO
+ ifTdwtH6t+UsY78dcreUJ1Njxkl9MUDA7NY6Fh28ScbGjRhSSARHx6Iu0/NwVWcKaQG5
+ n1Klf6uuMr4NsLrD6xQ9AyN9d5cp8eimsxMl58Ewqyp0Em/DiWpGYTRqQVSQoJK+Q4sS
+ qfBRHWGCqksm8ecP8vFUexOXYieNIleNa+GiCAVMaI77kEiOlO2PHapNwNtmpq3Bk2tF
+ NbuQXxiIWqdUtjSiWikbnX+lOyx04bEuJZoWPxTDZwxDpFM5D3e/BTjdGgoe3LSyU4+X
+ YR/Q==
+X-Gm-Message-State: APjAAAVKpWZMb7+Fm1oZAG4stP7KW/i6pNGCg0VdL0wxkYoJwy8NYAsc
+ ibqY9YT0y9QDaQ+YIOiK6kQ=
+X-Google-Smtp-Source: APXvYqxn0l6/CgwXpYvR4Nbn89HJXwYqJMaCPTe98ufia9AUWVIIULF+8wRsh0ib7MhFq0JOU0bz4A==
+X-Received: by 2002:a65:64d9:: with SMTP id t25mr32707208pgv.130.1557770895525; 
+ Mon, 13 May 2019 11:08:15 -0700 (PDT)
 Received: from [10.67.49.52] ([192.19.223.250])
- by smtp.googlemail.com with ESMTPSA id 88sm15824276wrc.33.2019.05.13.11.04.51
+ by smtp.googlemail.com with ESMTPSA id 85sm6683279pgb.52.2019.05.13.11.08.13
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 13 May 2019 11:04:53 -0700 (PDT)
-Subject: Re: [PATCH] perf vendor events arm64: Map Brahma-B53 CPUID to
- cortex-a53 events
-To: Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>
-References: <20190405165047.15847-1-f.fainelli@gmail.com>
- <20190408162607.GB7872@fuggles.cambridge.arm.com>
- <46ac3066-fa55-9fb8-dd54-32fb702030cb@gmail.com>
- <20190502235725.GB22982@kernel.org>
+ Mon, 13 May 2019 11:08:14 -0700 (PDT)
+Subject: Re: [PATCH] soc: bcm: brcmstb: biuctrl: Register writes require a
+ barrier
+To: Florian Fainelli <f.fainelli@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <20190510194633.9761-1-f.fainelli@gmail.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
@@ -121,23 +119,23 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
  6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9Za0Dx0yyp44iD1OvHtkEI
  M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <60f367b4-1c5b-0778-eaa6-1a78d58f33a1@gmail.com>
-Date: Mon, 13 May 2019 11:04:49 -0700
+Message-ID: <515cc83b-51a3-025d-c9dd-b97db05bd558@gmail.com>
+Date: Mon, 13 May 2019 11:08:13 -0700
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190502235725.GB22982@kernel.org>
+In-Reply-To: <20190510194633.9761-1-f.fainelli@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_110456_638914_9C9DE05D 
-X-CRM114-Status: GOOD (  16.70  )
+X-CRM114-CacheID: sfid-20190513_110818_625958_D3252E12 
+X-CRM114-Status: GOOD (  14.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (f.fainelli[at]gmail.com)
@@ -160,53 +158,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, bcm-kernel-feedback-list@broadcom.com,
- Namhyung Kim <namhyung@kernel.org>, Jiri Olsa <jolsa@redhat.com>,
- "moderated list:ARM PMU PROFILING AND DEBUGGING"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Brian Norris <computersforpeace@gmail.com>,
+ "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
+ <bcm-kernel-feedback-list@broadcom.com>,
+ open list <linux-kernel@vger.kernel.org>,
+ Gregory Fong <gregory.0xf0@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/2/19 4:57 PM, Arnaldo Carvalho de Melo wrote:
-> Em Thu, May 02, 2019 at 02:28:02PM -0700, Florian Fainelli escreveu:
->> On 4/8/19 9:26 AM, Will Deacon wrote:
->>> On Fri, Apr 05, 2019 at 09:50:47AM -0700, Florian Fainelli wrote:
->>>> Broadcom's Brahma-B53 CPUs support the same type of events that the
->>>> Cortex-A53 supports, recognize its CPUID and map it to the cortex-a53
->>>> events.
->>>>
->>>> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
->>>> ---
->>>>  tools/perf/pmu-events/arch/arm64/mapfile.csv | 1 +
->>>>  1 file changed, 1 insertion(+)
->>>>
->>>> diff --git a/tools/perf/pmu-events/arch/arm64/mapfile.csv b/tools/perf/pmu-events/arch/arm64/mapfile.csv
->>>> index 59cd8604b0bd..e97c12484bc6 100644
->>>> --- a/tools/perf/pmu-events/arch/arm64/mapfile.csv
->>>> +++ b/tools/perf/pmu-events/arch/arm64/mapfile.csv
->>>> @@ -13,6 +13,7 @@
->>>>  #
->>>>  #Family-model,Version,Filename,EventType
->>>>  0x00000000410fd03[[:xdigit:]],v1,arm/cortex-a53,core
->>>> +0x00000000420f100[[:xdigit:]],v1,arm/cortex-a53,core
->>>>  0x00000000420f5160,v1,cavium/thunderx2,core
->>>>  0x00000000430f0af0,v1,cavium/thunderx2,core
->>>>  0x00000000480fd010,v1,hisilicon/hip08,core
->>>
->>> Acked-by: Will Deacon <will.deacon@arm.com>
->>
->> Thanks! Can this be picked up?
+On 5/10/19 12:46 PM, Florian Fainelli wrote:
+> The BIUCTRL register writes require that a data barrier be inserted
+> after comitting the write to the register for the block to latch in the
+> recently written values. Reads have no such requirement and are not
+> changed.
 > 
-> Thanks, applied to perf/core.
+> Fixes: 34642650e5bc ("soc: Move brcmstb to bcm/brcmstb")
+> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 
-Thanks, I don't seem to be able to find it being pushed out to that tree
-or in linux-next.
+Applied to drivers/fixes, thanks!
 -- 
 Florian
 
