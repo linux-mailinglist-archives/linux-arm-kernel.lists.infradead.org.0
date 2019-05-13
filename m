@@ -2,59 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DDF31B914
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 16:51:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E6981B940
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 16:56:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xqho3fkEgq0xhFYUW+Dyopg8rjTw0Hoql86nA/XYO+s=; b=ifZiluKEDydkuG
-	Gy6QVc2a+1rlgzHhA79RXp57Jx1IujKd7E5WUNav9st6nNLmaB5F+vFdfODT8cWYpt+ZETtbqI7fZ
-	VMUOdTOjYEOMW5bX/af7ZNBAYg4vfB5YX4cnZXmzeVbf7NkkKakqjU6pYXESKYYtEn90F0Tz2BTwk
-	kBuOEhKiRMcwxMJsksSUpFOpbs88A107dx52NvGI0M3oYQCMXxxRAfgdVOx9lR4M++IB86fbr8D89
-	NVBwBCEhiu1+Rddu3YZ4e8ZSpWk0eAegcZzH43dQgDRJmJjFQo2pnlPMf4Xzf4UudGPfYW/1NfBzp
-	1/YYscXWjgF3xl9RR0qQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=GC+XzEoXieCpcPHZYe+coTkUT3lfL1i0FqDcJ/JTp1g=; b=Wp0
+	SwK9FYbr2N2UH/m8Bsl24g7OnnbCUT5MJr4aLkUegNqIXi+K5hGCTkO9GZRU0TCrr3015Z+N2OjqR
+	zCifNaUHMTdCxt9UgxLPVh+BUJsY4Id3JmOLXVpCvqp77X4+g6icmyMylAb/wJefDgPPyy8SWovYO
+	BqCSRQvU20+VclrxvG4YWxbbLk1c8fPxyuAqbAV63seDNuIuXFIO6VQeuBi6d5VjaqF0Zg2K9Ylkc
+	RS9uz7SOXSPNJCmMWui8epF0vwgcRfTwGdHqZRLXYl31jafGvTh1Q6+z2R7zEuZh8gC+NiM0YLLIG
+	ECu8PyAwYo0xNP2WxnPfzRFnXyhLoSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQCIP-00030a-JO; Mon, 13 May 2019 14:51:17 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	id 1hQCNA-0005Lr-MT; Mon, 13 May 2019 14:56:12 +0000
+Received: from node.akkea.ca ([192.155.83.177])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQCIJ-0002zg-13; Mon, 13 May 2019 14:51:12 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id 3F90D1FF44;
- Mon, 13 May 2019 16:51:05 +0200 (CEST)
-Received: from [192.168.108.49] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id 0834A1FF2B;
- Mon, 13 May 2019 16:51:05 +0200 (CEST)
-Subject: Re: [PATCH v1 0/3] scsi: ufs: add error handlings of auto-hibern8
-To: Stanley Chu <stanley.chu@mediatek.com>, linux-scsi@vger.kernel.org,
- martin.petersen@oracle.com, avri.altman@wdc.com, alim.akhtar@samsung.com,
- pedrom.sousa@synopsys.com
-References: <1557758186-18706-1-git-send-email-stanley.chu@mediatek.com>
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Message-ID: <55818bc4-d464-bb35-25bb-9ef87af8224e@free.fr>
-Date: Mon, 13 May 2019 16:51:04 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <1557758186-18706-1-git-send-email-stanley.chu@mediatek.com>
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Mon May 13 16:51:05 2019 +0200 (CEST)
+ id 1hQCMr-00059a-Us
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 14:55:55 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by node.akkea.ca (Postfix) with ESMTP id B52964E2051;
+ Mon, 13 May 2019 14:55:50 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=akkea.ca; s=mail;
+ t=1557759350; bh=OOUM+cZt3N1O8ifnVoGjz7TsndlomzrMemNmnvMhK2E=;
+ h=From:To:Cc:Subject:Date;
+ b=ZaICwk+Z5Vwzoz5RWBjQlFETaFJLgWRLCfM3fr5fm0pdG2d4NmVNuTCg5oGBvyoOn
+ kkh+MoA/LIxTfLpXQpBm28TZqFGVsvujgMXl37WEP4hANtc/2G0d+MeClJ8RXGKqbn
+ FqnefmjKixeLVaoUQfvmtJkQzkeyGXrH4P0dg9HA=
+X-Virus-Scanned: Debian amavisd-new at mail.akkea.ca
+Received: from node.akkea.ca ([127.0.0.1])
+ by localhost (mail.akkea.ca [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id USx-Vvek2F9m; Mon, 13 May 2019 14:55:49 +0000 (UTC)
+Received: from midas.localdomain (S0106788a2041785e.gv.shawcable.net
+ [70.66.86.75])
+ by node.akkea.ca (Postfix) with ESMTPSA id 15DD94E204B;
+ Mon, 13 May 2019 14:55:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=akkea.ca; s=mail;
+ t=1557759349; bh=OOUM+cZt3N1O8ifnVoGjz7TsndlomzrMemNmnvMhK2E=;
+ h=From:To:Cc:Subject:Date;
+ b=C21yMHCOjAsIVj3LJoksLIrYrY8yLDfs8XUPC1rCqBNqf8HXzxdVLNXH0c7ndRH06
+ sq6WiErAE96iNmDimIJsOTzUAZOoGPLq/3thiQ5ZVvB3U4wAo19VbkoMbrN1Inj680
+ 0JTggLqe2LB8CQ1/yJ7YFHCMbqNGSXoHtQ9oezjs=
+From: "Angus Ainslie (Purism)" <angus@akkea.ca>
+To: angus.ainslie@puri.sm
+Subject: [PATCH v9 0/3] Add support for the Purism Librem5 devkit
+Date: Mon, 13 May 2019 07:55:36 -0700
+Message-Id: <20190513145539.28174-1-angus@akkea.ca>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_075111_219041_87648832 
-X-CRM114-Status: GOOD (  10.44  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190513_075554_105888_80BE59F8 
+X-CRM114-Status: GOOD (  11.38  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marc.w.gonzalez[at]free.fr)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -66,55 +79,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, evgreen@chromium.org, subhashj@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- vivek.gautam@codeaurora.org, matthias.bgg@gmail.com, sayalil@codeaurora.org,
- linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "Angus Ainslie \(Purism\)" <angus@akkea.ca>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 13/05/2019 16:36, Stanley Chu wrote:
+The Librem5 devkit is based on the imx8mq from NXP. This is a default
+devicetree to boot the board to a command prompt.
 
-> Currently auto-hibern8 is activated if host supports
-> auto-hibern8 capability. However no error handlings are existed thus
-> this feature is kind of risky.
+Changes since v8:
 
-This last sentence is not very idiomatic.
+Fixed license comment.
+Changed regulators to all lower case.
+Changed clock frequency for NXP errata e7805.
+Dropped blank line.
 
-I would suggest:
-"However, error-handling is not implemented, which makes the feature
-somewhat risky."
+Changes since v7:
 
-> If "Hibernate Enter" or "Hibernate Exit" fail happens
+More regulators always on for USB.
+Add vbus regulator.
+Drop vbat regulator.
+Replace legacy "gpio-key,wakeup" with "wakeup-source".
+Add vbus-supply to get rid of warning
+imx8mq-usb-phy 382f0040.usb-phy: 382f0040.usb-phy supply vbus not found, using dummy regulator
 
-I would suggest:
-If either "Hibernate Enter" or "Hibernate Exit" fail during ...
+Changes since v6:
 
-> during auto-hibern8 flow, the corresponding interrupt
-> "UIC_HIBERNATE_ENTER" or "UIC_HIBERNATE_EXIT" shall be raised
-> according to UFS specification.
-> 
-> This patch adds auto-hibern8 error handlings:
+Dropped unused regulators.
+Fix regulator phandles case.
+Dropped extra whitespace.
 
-error-handling
+Changes since v5:
 
-> - Monitor "Hibernate Enter" and "Hibernate Exit" interrupts after
->   auto-hibern8 feature is activated.
+Added reviewed-by tags.
+Moved USB port links to USB controller node.
 
-I just want to take this opportunity to ask a rhetorical question.
+Changes since v4:
 
-Who in the Great Heavens thought it would be a good idea to call the
-feature "auto-hibern8" ?
+Compiled against linux-next next-20190415.
+Added imx8mq to the arm yaml file.
+Re-arrange regulator nodes to drop undefined supplies.
+Additional ordering for aesthetics.
+Split some long lines.
+Added lots of blank lines.
+Moved pinctl muxes to where they are used.
+Cleaned out reg defintions from regulator nodes.
 
-Was it really worth it to save 2 characters by writing "8" instead
-of "ate" ?
+Changes since v3:
 
-This bugs me so much that I just might send a patch to fix it up.
+Freshly sorted and pressed nodes.
+Change the backlight to an interpolated scale.
+Dropped i2c2.
+Dropped devkit version number to match debian MR.
 
-Regards.
+Changes since v2:
+
+Fixed incorrect phy-supply for the fsl-fec.
+Dropped unused regulator property.
+Fixup Makefile for linux-next.
+
+Changes since v1:
+
+Dropped config file.
+Updated the board compatible label.
+Changed node names to follow naming conventions.
+Added a more complete regulator hierachy.
+Removed unused nodes.
+Removed unknown devices.
+Fixed comment style.
+Dropped undocumented properties.
+
+Angus Ainslie (Purism) (3):
+  arm64: dts: fsl: librem5: Add a device tree for the Librem5 devkit
+  dt-bindings: Add an entry for Purism SPC
+  dt-bindings: arm: fsl: Add the imx8mq boards
+
+ .../devicetree/bindings/arm/fsl.yaml          |   7 +
+ .../devicetree/bindings/vendor-prefixes.txt   |   1 +
+ arch/arm64/boot/dts/freescale/Makefile        |   1 +
+ .../dts/freescale/imx8mq-librem5-devkit.dts   | 821 ++++++++++++++++++
+ 4 files changed, 830 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
