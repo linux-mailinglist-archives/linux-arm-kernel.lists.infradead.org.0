@@ -2,79 +2,118 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 336661BE63
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 22:13:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5F951BE80
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 22:19:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0JMRlua4cczoxjCkSzB5+YY6gmELS9MtCQbURwjI3Yo=; b=FqnDr/Thrc+t3n
-	5QUqG4AIy3aM7X+Kx9B20HTozBiZNEuPK/Ab0ZmOQjvas72eUkynBcbT9bj9lf3x8FzCsIiCeMqnM
-	nRl2e7tVcEy4xl8ZEEI+fLc2NJvjh1hl2JiH8qPWRlt1/cBNmV7Fn4cHeOo+6fdc+/H7cK9nGWSey
-	fvgD7CK8+ZjSD2Db+SH3904LrpXXgDgRDR0UHcITuh7uFl6vdJK1E3eqRptU5ddJ9tnQVwHp+3EQb
-	H5tTC3mL+dF725es4fNhhaEu5cxS0u0CYj04ZAIHn4Y0l7ulK5g+YGrIypKaTzM7Q8Q20XH5jgvyb
-	5OTmMDia+3aNsnPXDEIA==;
+	List-Owner; bh=kFZ34CEf71XOa5d9JSsx2Nfs7tSNtbwozOaBCBdGXpM=; b=ssDOqOXxucrrpr
+	x9XxMjyvLNCTBsarGAhgBji7bg+3OZJ/q8HvKBLM2L6Vtd/g8gDas9hsQFVYeU9E9I7XUdROOpirp
+	MX/XzzmWzegOCrj5ilyTEFReKxm0xTsaozTvCPTQgRX4mbNAJpDDvkAx0lGt65gfjEeRwlZEhVgz3
+	lsJ9KFHypHgFi0LmSeor11sr6op9G8a/V+yLMPq8smZmjCuTiqBEdd2pXRgfy7+VCSOxcnEGSN8bo
+	t1KbU3MXINtOe5QYlEiE0Mv070wDfCbiCvaaGbglYts5P7PlrxEgZ70GIv2nYzrdd/K0UCNFQz+ZM
+	tLdHTmNWVnMD0E21qfDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQHJl-0004dg-7O; Mon, 13 May 2019 20:13:01 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1hQHQ5-0006No-Q5; Mon, 13 May 2019 20:19:33 +0000
+Received: from mx0b-0016f401.pphosted.com ([67.231.156.173])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQHJd-0004dM-Rl
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 20:12:55 +0000
-Received: by mail-io1-xd42.google.com with SMTP id g16so11119835iom.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 May 2019 13:12:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=3h+qDpyjcVnfO7OEpbf5yuyujTS7iKeHk+36x1kfdwk=;
- b=GQJuxgDjq5R4+SjzmA4m/9ki1MdBMr6zR5PPoLH0AKFRo+iAwYv2Ow8bAdZcGXf+Tv
- eP5d1nAKO/0h2sagpHB+Ma9nQo4Qbs/flKbq/+PuukmPfwkIBBcI4oEtYkaCeh+mtzrL
- fwP7WwHdB/EOrV978Ds8LZkr2reaz63yFmTt54RM0DkSp6tPagBq39iI9NdrEq0KTrR3
- qJU5+eAvLJL0Hx2tww0/tQ5l5G88CdXI1Q6BZZUwVnOTCPVNp+79geBl11TyqPUAd9nI
- iMPua1Qf4b2QnCec6F5t9v8DF46dJDdG/XAfypeIGqUhmCPpkbpIumCeDhl28AzSp8YS
- t9Uw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=3h+qDpyjcVnfO7OEpbf5yuyujTS7iKeHk+36x1kfdwk=;
- b=SggpvRaQfZdrfcBCw+qbLqNBlN5se4bACbSL40LqRKybs3GyYw+pKQPGw74QsfyStv
- HN2HiHGHKZ5LGL9yz3ug48gDtfWl859+1Il9q0gyglYfG/wOTaQ54KZ2ifjc02oH0WiI
- i6f1HbTAUOk2xhOKyokZZgIf8/9gGlSk+5NT/vRVvHuZjMBgNiAiIHQ1cjbUqtX+dJgJ
- z8hI1JKIxdmOsR4X4NgvSdcCS8cnkygHYQErVz4Q/Nj29Sbc5bA39smKyDMvDfzCbD+f
- qdIOVnGHkLznqeUmJTQFvd3cpH0paT7vjG69vwaWdEcDmYmfQyT7uMmJFTpaTpWpfdYa
- k6yQ==
-X-Gm-Message-State: APjAAAU32da7GANIz+OvFEWGIy9eGAeqwxrAd+0YTDiejyuPgjPOtCYM
- x+zm2mt59Zvi1S6HlvGw1bIHwPP9l4XCH0xplEGeOBmr
-X-Google-Smtp-Source: APXvYqyF97JLoLB2k4AvwZmbzw37f2tqH372MIMBt6biwly5tvnDFNSLc/w+Yyk30a9lxbOdpBDGEiaJBaH5nxYG+pc=
-X-Received: by 2002:a6b:5814:: with SMTP id m20mr16941675iob.293.1557778373035; 
- Mon, 13 May 2019 13:12:53 -0700 (PDT)
+ id 1hQHPx-0006NR-Dy
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 20:19:27 +0000
+Received: from pps.filterd (m0045851.ppops.net [127.0.0.1])
+ by mx0b-0016f401.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x4DKADuB012076; Mon, 13 May 2019 13:16:53 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
+ h=from : to : cc :
+ subject : date : message-id : references : in-reply-to : content-type :
+ content-transfer-encoding : mime-version; s=pfpt0818;
+ bh=8FSlz0GjC3PdOKK/ewJnq9q1qVk9z6fQdSQDgDPLZOs=;
+ b=v8h8SgiZTm2Mrf3UKe715rKamNihd4Ywk9LCgclviNg51vqDvK8/3RvWaC5xJq+FRnyJ
+ VlqRytZQWSER0seoEEL3JJD9lpESnkfSKDRe2nQuJIx0PM7wVgmeh9JiSRUcerIss9TM
+ +wOxxxMGugafn9Am/EVOMhDTDnOQMTxgtVE2Oy8tIx3lyJTtuvEj8OPoxKJbgrPQU1uY
+ l7xm5n/tUP6amIn1e+ILLBU96cT0FYJC9wJ2Jr8UCq1nYp9d4jZd3WdMakJmbzirH5/g
+ 8SoY4yb7Dg39sBTj6an/Of82bbjH88cGICYQHOl3ITxmVKklZL1xCsZ1CgHwpMcJ/vk3 7Q== 
+Received: from sc-exch02.marvell.com ([199.233.58.182])
+ by mx0b-0016f401.pphosted.com with ESMTP id 2sf9xchp6t-11
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
+ Mon, 13 May 2019 13:16:52 -0700
+Received: from SC-EXCH02.marvell.com (10.93.176.82) by SC-EXCH02.marvell.com
+ (10.93.176.82) with Microsoft SMTP Server (TLS) id 15.0.1367.3; Mon, 13 May
+ 2019 13:16:22 -0700
+Received: from NAM05-CO1-obe.outbound.protection.outlook.com (104.47.48.53) by
+ SC-EXCH02.marvell.com (10.93.176.82) with Microsoft SMTP Server
+ (TLS) id
+ 15.0.1367.3 via Frontend Transport; Mon, 13 May 2019 13:16:22 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=marvell.onmicrosoft.com; s=selector1-marvell-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=8FSlz0GjC3PdOKK/ewJnq9q1qVk9z6fQdSQDgDPLZOs=;
+ b=dks3mxVUhOA91QILnn063NP916tvQ50FO0HuSlFouxKiM2NmHe7/J61cDuzv86U7wkwlelrnvjMwDWsUX1IDt6L0iNX5Na+Irjq3DZhlvQF+7dyI92gtqo9kCjQBhuOQidaPvHhQhrT4ciRIFbufee94Py6FAGmZEH68TyVdL5w=
+Received: from MN2PR18MB3086.namprd18.prod.outlook.com (20.179.21.74) by
+ MN2PR18MB3328.namprd18.prod.outlook.com (10.255.238.17) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1878.21; Mon, 13 May 2019 20:16:18 +0000
+Received: from MN2PR18MB3086.namprd18.prod.outlook.com
+ ([fe80::9407:14a6:29bf:d683]) by MN2PR18MB3086.namprd18.prod.outlook.com
+ ([fe80::9407:14a6:29bf:d683%7]) with mapi id 15.20.1878.024; Mon, 13 May 2019
+ 20:16:18 +0000
+From: Yuri Norov <ynorov@marvell.com>
+To: Andreas Schwab <schwab@suse.de>, Yury Norov <yury.norov@gmail.com>,
+ "ltp@lists.linux.it" <ltp@lists.linux.it>
+Subject: Re: [EXT] Re: [PATCH v9 00/24] ILP32 for ARM64
+Thread-Topic: [EXT] Re: [PATCH v9 00/24] ILP32 for ARM64
+Thread-Index: AQHUhpjH9to/8IYtJ0GO80mU13Jv5KZi1g0AgAbuLc2AAL0yKQ==
+Date: Mon, 13 May 2019 20:16:17 +0000
+Message-ID: <MN2PR18MB30865B950D85C6463EB0E1D4CB0F0@MN2PR18MB3086.namprd18.prod.outlook.com>
+References: <20180516081910.10067-1-ynorov@caviumnetworks.com>
+ <20190508225900.GA14091@yury-thinkpad>,<mvmtvdyoi33.fsf@suse.de>
+In-Reply-To: <mvmtvdyoi33.fsf@suse.de>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [2601:640:9:8937:19d3:11c4:475e:3daa]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: d63a7e5a-30b5-4c72-6c2e-08d6d7dfdb8f
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(2017052603328)(7193020);
+ SRVR:MN2PR18MB3328; 
+x-ms-traffictypediagnostic: MN2PR18MB3328:
+x-microsoft-antispam-prvs: <MN2PR18MB332863E675D3AFB0F5BEF1F1CB0F0@MN2PR18MB3328.namprd18.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:826;
+x-forefront-prvs: 0036736630
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(396003)(376002)(366004)(136003)(39860400002)(346002)(199004)(189003)(55016002)(25786009)(9686003)(6246003)(316002)(64756008)(66556008)(66476007)(6116002)(66946007)(66446008)(76176011)(2501003)(7736002)(86362001)(73956011)(186003)(2906002)(476003)(76116006)(486006)(11346002)(4326008)(52536014)(446003)(46003)(229853002)(305945005)(99286004)(5660300002)(8936002)(68736007)(33656002)(8676002)(74316002)(6506007)(53936002)(4744005)(81166006)(7406005)(7416002)(7696005)(81156014)(6436002)(71200400001)(478600001)(102836004)(71190400001)(14454004)(54906003)(110136005)(14444005)(256004);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR18MB3328;
+ H:MN2PR18MB3086.namprd18.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: marvell.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 0BNA/4lGkwI/JlW9pnyosBaPDm721604g/Nf3FAJ0B/ROE9Hupn8TalOe1n6tAYKBDim/zKvwaubRL4labxcw8SscgAKrkz3NAY9IT8pwPQqCdoIhfvxdC+p0d7UMmZonRhz5O8qSt1NR37x5d6Q8ksZX5WcNMnR+FBN4iTbjqkO6PhExPk0DpVNmBzaE5FftIenOPUYMIbxzHe+bvHEQgZxHBjiHME+aFmfMpdmjDJ7+3xkWh51b+veSpXfSdLSW14XLPVYo20s6/c9dCbye7Yi/6xmMC76lhS2Vcnth7hRgBiwxiFiiWt3eswxlQ7+vdjDsya1CQjzCICCMUDKcv5hH32IXVRrkcJSS5MlhwGHZQiizlXIjUtGK7HABrJhnjUva8d8aP1ahEBGQ5CFagk/HuznHKSSaQ/sGRRSgHg=
 MIME-Version: 1.0
-References: <20190501175052.29667-1-mathieu.poirier@linaro.org>
- <20190501175052.29667-6-mathieu.poirier@linaro.org>
- <20190511073229.GA18064@leoy-ThinkPad-X240s>
- <77e437ed-99b2-670e-7e29-33be584f2bd0@arm.com>
- <20190513111615.GA32010@leoy-ThinkPad-X240s>
- <CANLsYkwq39ZS65KvHPjJoyPiHzd7vqB2A7j=ZhFeMHfWazLz5Q@mail.gmail.com>
-In-Reply-To: <CANLsYkwq39ZS65KvHPjJoyPiHzd7vqB2A7j=ZhFeMHfWazLz5Q@mail.gmail.com>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Mon, 13 May 2019 14:12:42 -0600
-Message-ID: <CANLsYkwNJKQD8e6SvH7QOtvhekLbP5VqGs+2CRP3fEwvMrPH9A@mail.gmail.com>
-Subject: Re: [PATCH 5/5] docs: coresight: Document snapshot mode
-To: Leo Yan <leo.yan@linaro.org>
+X-MS-Exchange-CrossTenant-Network-Message-Id: d63a7e5a-30b5-4c72-6c2e-08d6d7dfdb8f
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 May 2019 20:16:17.9821 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 70e1fb47-1155-421d-87fc-2e58f638b6e0
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR18MB3328
+X-OriginatorOrg: marvell.com
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-05-13_12:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_131253_903155_603E478E 
-X-CRM114-Status: GOOD (  23.85  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190513_131925_639774_1848A586 
+X-CRM114-Status: GOOD (  11.51  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [67.231.156.173 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -94,103 +133,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jon Corbet <corbet@lwn.net>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Coresight ML <coresight@lists.linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- Peter Zijlstra <peterz@infradead.org>, Ingo Molnar <mingo@redhat.com>,
- Mike Leach <Mike.leach@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>,
+ Yury Norov <ynorov@caviumnetworks.com>, Philipp
+ Tomsich <philipp.tomsich@theobroma-systems.com>,
+ Joseph Myers <joseph@codesourcery.com>,
+ "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
+ Steve Ellcey <sellcey@caviumnetworks.com>,
+ Prasun Kapoor <Prasun.Kapoor@caviumnetworks.com>, Alexander
+ Graf <agraf@suse.de>, Bamvor Zhangjian <bamv2005@gmail.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>, Dave Martin <Dave.Martin@arm.com>,
+ Adam Borowski <kilobyte@angband.pl>, Manuel
+ Montezelo <manuel.montezelo@gmail.com>, James Hogan <james.hogan@imgtec.com>,
+ Chris Metcalf <cmetcalf@mellanox.com>, Arnd Bergmann <arnd@arndb.de>,
+ Andrew Pinski <pinskia@gmail.com>, Lin Yongting <linyongting@huawei.com>,
+ Alexey Klimov <klimov.linux@gmail.com>, Mark Brown <broonie@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Maxim Kuvyrkov <maxim.kuvyrkov@linaro.org>, Florian
+ Weimer <fweimer@redhat.com>,
+ "linux-api@vger.kernel.org" <linux-api@vger.kernel.org>,
+ Nathan_Lynch <Nathan_Lynch@mentor.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.gcc@googlemail.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ "David S . Miller" <davem@davemloft.net>,
+ Christoph Muellner <christoph.muellner@theobroma-systems.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 13 May 2019 at 14:01, Mathieu Poirier
-<mathieu.poirier@linaro.org> wrote:
->
-> On Mon, 13 May 2019 at 05:16, Leo Yan <leo.yan@linaro.org> wrote:
-> >
-> > Hi Suzuki,
-> >
-> > On Mon, May 13, 2019 at 09:37:01AM +0100, Suzuki K Poulose wrote:
-> > > Hi,
-> > >
-> > > On 11/05/2019 08:32, Leo Yan wrote:
-> > > > On Wed, May 01, 2019 at 11:50:52AM -0600, Mathieu Poirier wrote:
-> > > >
-> > > > [...]
-> > > >
-> > > > > +2.2) Snapshot mode:
-> > > > > +
-> > > > > +Using perf's built-in snapshot mode with CoreSight tracers is supported - to
-> > > > > +do so the '-S' command line option needs to be specified.  Since current sink
-> > > > > +devices are used in double-buffer mode when operated from the perf interface,
-> > > > > +the size of the perf ring buffer needs to be adjusted to match the size of the
-> > > > > +buffer used by the CoreSight sinks.  From the perf command line it is possible
-> > > > > +to specify the number of pages to use for a session using the '-m,X' option,
-> > > > > +where X is the amount of pages.
-> > > > > +
-> > > > > +The system memory buffer used by ETR devices is automatically adjusted
-> > > > > +to match the size of the perf ring buffer and as such does not need to be
-> > > > > +modified on the perf command line.  For ETB and ETF devices the perf ring
-> > > > > +buffer size need to be adjusted to match the size of the internal buffer.
-> > > > > +
-> > > > > +The following examples assume a system page size of 4096 byte:
-> > > > > +
-> > > > > + # cat /sys/bus/coresight/devices/20010000.etb/mgmt/rdp
-> > > > > + 0x2000
-> > > > > + # perf record -e cs_etm/@20010000.etf/ -S -m,8 --per-thread $APP
-> > > >
-> > > > In this case it shows the usage for etb, thus should:
-> > > > s/20010000.etf/20010000.etb/
-> > > >
-> > > > BTW, the user needs to convert the rdp to byte size with multiplying 4,
-> > > > it's good to explain for this in the doc or give related info in the
-> > > > driver warning log.
-> > >
-> > > If at all we want to match the aux space size with that of the device buffer,
-> > > I recommend exposing this via a new "buf_pages" attribute under the sysfs to
-> > > help the user.
-> >
-> > Agree, I also saw you suggested in another email.  Using "buf_pages"
-> > is directive and consistent for different sink devices.
->
-> I've been thinking about this.  Both ETR and ETF have a 'buffer_size"
-> entry in sysfs and ETB does not.  The first thing I suggest is to add
-> a "buffer_size" entry to the ETB driver so that all sink devices look
-> the same.  From there enhance the current information carried by
-> "buffer_size" to include pages. For example:
->
-> $cat 20070000.etr/buffer_size
-> 0x100000 0x100
->
-> $ cat 20010000.etf/buffer_size
-> 0x10000 0x10
->
-> $ cat 20010000.etb/buffer_size
-> 0x8000 0x8
->
-> That way we have the information we need without adding more entries
-> to sysfs - all we need to do is update the documentation (which we'd
-> have to do anyway).  Let me know what you think.
++ ltp@lists.linux.it
 
-What I did forget to mention is that my next revision of the feature
-does not mandate to make the ring buffer match the size of the
-internal buffer memories.  The above reply was in the context of
-letting users know how to make the size of the buffers match should
-they want to.  But so far I haven't found a use case where doing so
-would be beneficial.
+> There is a problem with the stack size accounting during execve when
+> there is no stack limit:
+>
+> $ ulimit -s
+> 8192
+> $ ./hello.ilp32 
+> Hello World!
+> $ ulimit -s unlimited
+> $ ./hello.ilp32 
+> Segmentation fault
+> $ strace ./hello.ilp32 
+> execve("./hello.ilp32", ["./hello.ilp32"], 0xfffff10548f0 /* 77 vars */) = -1 ENOMEM (Cannot allocate memory)
+> +++ killed by SIGSEGV +++
+> Segmentation fault (core dumped)
+>
+> Andreas.
 
->
-> Mathieu
->
->
-> >
-> > Thanks,
-> > Leo Yan
-
+Thanks Andreas, I will take a look. Do we have such test in LTP?
+    
+Yury
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
