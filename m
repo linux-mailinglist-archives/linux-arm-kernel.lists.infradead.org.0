@@ -2,63 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 383461B1F2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 10:36:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66EEA1B1F6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 10:37:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1Na+ju63To2tDBdsUUmQmHjvhsaeOVwtMPtnBuqVw6s=; b=CeTGn8jndhWbYK
-	FyZwZxOTqUUQeplMWzl24lLVGdV6adajPZqXxBUPYRNJ0gh/yUZpwbUdJgi8FmolXzYTY8SrGlc2o
-	ZzfAxjU4CO9JCuJpbD9ac9SH6aG2wx/kuysHxBwOwVtV1EWdI1elM9bLXdstfCFjQ5W4Nr2rivdqP
-	H/GA+vp9cu67c16TR5aa0FIMWCru6Ra02xn6D7kxHawFQ7l5SYS4VxXBWvLCw7083+BTxqI2RcnYS
-	vjABWLBYVxA8z1BYVpNqPfkNm3Jgy/h6mJhFhjiP2cZG4hqqD5p0wbZzAl8sHksfDYT7yrVMqTHY8
-	wuNNOvnL297yGBghEW0g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=tsyRJuMoKMZHnqUhYtlKPv5uh4KeDl459tVRtCo96MU=; b=sj86FxnyI5KzNRhYa5TVaW7oN
+	9WAJEdxRt3LnPHXR6YQRQ5BbJ9vrGUlz1pW9Hn7A47DHXKBt7ZBYG4IQwep4+2w4zfQnrqIRgRkIg
+	hjKP/8Wsi9FSokbbpz8sQYlb1phoMNcEHayW8KW8FvqgoCJi3zYzV7jzfZURNDPZXeYH/wF/HH1ar
+	wW1kfP3I7OrT4U6bQfsn0N9/+7FIBCLJ68NdT/Qcya4yAEhxHXQGgSu35hXiVIjD6SVELFbL8ic0M
+	KtdL+RP5frUI7C0sYqA7aOfXXDu+xu2LX/EkUyOJLdMs9DS80XitxEx/lh3DD92q2M50HJ5eg5hMl
+	hZnYf9A1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQ6R6-0004PO-8d; Mon, 13 May 2019 08:35:52 +0000
-Received: from lb2-smtp-cloud8.xs4all.net ([194.109.24.25])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQ6Qx-0004Oe-DU; Mon, 13 May 2019 08:35:45 +0000
-Received: from [192.168.2.10] ([46.9.252.75])
- by smtp-cloud8.xs4all.net with ESMTPA
- id Q6Qqhi3v70YQeQ6QthcMlO; Mon, 13 May 2019 10:35:40 +0200
-Subject: Re: [RFC, V2, 06/11] media: platform: Add Mediatek ISP P1 image & meta
- formats
-To: Jungo Lin <jungo.lin@mediatek.com>, tfiga@chromium.org,
- hans.verkuil@cisco.com, laurent.pinchart+renesas@ideasonboard.com,
- matthias.bgg@gmail.com, mchehab@kernel.org
-References: <Jungo Lin <jungo.lin@mediatek.com>
- <20190510015755.51495-7-jungo.lin@mediatek.com>
-From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <5aad30f8-04b0-e3f1-e1d1-def349fd2974@xs4all.nl>
-Date: Mon, 13 May 2019 10:35:36 +0200
+	id 1hQ6SQ-0004le-Q2; Mon, 13 May 2019 08:37:14 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hQ6SK-0004lC-8C
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 08:37:09 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AC848341;
+ Mon, 13 May 2019 01:37:05 -0700 (PDT)
+Received: from [10.1.196.93] (en101.cambridge.arm.com [10.1.196.93])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D6FB63F7B7;
+ Mon, 13 May 2019 01:37:03 -0700 (PDT)
+Subject: Re: [PATCH 5/5] docs: coresight: Document snapshot mode
+To: leo.yan@linaro.org, mathieu.poirier@linaro.org
+References: <20190501175052.29667-1-mathieu.poirier@linaro.org>
+ <20190501175052.29667-6-mathieu.poirier@linaro.org>
+ <20190511073229.GA18064@leoy-ThinkPad-X240s>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+Message-ID: <77e437ed-99b2-670e-7e29-33be584f2bd0@arm.com>
+Date: Mon, 13 May 2019 09:37:01 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190510015755.51495-7-jungo.lin@mediatek.com>
+In-Reply-To: <20190511073229.GA18064@leoy-ThinkPad-X240s>
 Content-Language: en-US
-X-CMAE-Envelope: MS4wfKjl+7SPK/J+2MK4GsV/OD790bNQlW19JYOKfRUnbuiA8rujxLk8gGYl+z3KpIf/mZfcUQ/QXXxXNi+TMglWyOToTnPvs7ewHyiHQXf59jZkHESwYFHd
- +kRKwIXD4pBeO2zEGaWNf5pCOec4H7+swakENaOzy9STrP2TYWRvf2Z7nYwgcZEg9ssHFHuq1TvD7jiuvBQLe2C7pnAC4BFC1z1o/fL9ZRWZTC3TXVol2QOg
- /7FGd8bmxXfnhblBakSB3UU8XqPptYatsjWyW1YSyEyul/ICFqpK9Lgrrga2MBBIasSWK79LzWno9j0ESHftme1vL+UgAqjX+J6fWV7rrV8HcuSiliGvPoun
- Hrm4JlLWWLfIpiFCtiiqJT0ZdjGhfJEYMLR03dhwbNsTGZuuL4RRPik7Vx6UiC2U/TVoh0ZG8MaDkJIQbzJmdOo/BSJVfGG7IyH4zUMuO0w5Tudw/oJRh3wc
- VzwPgDNunUEXRkSPJ7p2QTGpiTe4Wx+pg1RoHzvA1TTrsVDzXR06FeLKjaRLyT3npAThsSLK73PrrOiJhpF++5NdwGIde6H2s0AIdUWp7HQGFyYI+7UL9Wfj
- 8z2zvjKgQXpDSHDKLE6/GRzxbnTXYzp87mfPb8op4Q039JR3Aq7q2bUllXlOW0oufratzQdO42yP6422pm4p0WnJcJHUlyQZDey8USGilYuFRBOT8MjC9b43
- R55LirBBHyyB78/4fvE2Me7YaZlzOSsaJgNLFSc0lF6SjkkDZpvqXs2FISvZnZJJ1P1VSe65numnGeQFo9zSeWwltuZhdNGLH0UVQQcGVD5o7uvm6W+yOKXe
- JkoIXL0Cpp+3Ew9bWZ6zEOP3XmKduNr7tA8r1BSfxvBWOPHmz+qU3lV5nVcQGrdGVmXs3P8nuAvbsJv3kH8HnjpXUkYgp3C/YbCCEOZNdg3IzelSfDwSyjke
- 6od2ZhftMIiwnnH2TbOrnW4U+jR5sjc9vTs5tX+NYco145CEzzpJFAyOu0ViFXunWtr5KysxiGNoC06ICrWv9Qbz7eI=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_013543_619331_CA66A20D 
-X-CRM114-Status: GOOD (  13.06  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190513_013708_297394_CA8857AA 
+X-CRM114-Status: GOOD (  18.57  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.25 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -71,78 +65,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: shik@chromium.org, devicetree@vger.kernel.org, Sean.Cheng@mediatek.com,
- suleiman@chromium.org, Rynn.Wu@mediatek.com, srv_heupstream@mediatek.com,
- ryan.yu@mediatek.com, Jerry-ch.Chen@mediatek.com, frankie.chiu@mediatek.com,
- sj.huang@mediatek.com, yuzhao@chromium.org, linux-mediatek@lists.infradead.org,
- seraph.huang@mediatek.com, zwisler@chromium.org, christie.yu@mediatek.com,
- frederic.chen@mediatek.com, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: corbet@lwn.net, alexander.shishkin@linux.intel.com,
+ coresight@lists.linaro.org, acme@kernel.org, peterz@infradead.org,
+ mingo@redhat.com, Mike.leach@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/10/19 3:57 AM, Jungo Lin wrote:
-> Add packed/unpacked/full-g bayer format with 8/10/12/14 bit
-> for image output. Add Pass 1 (P1) specific meta formats for
-> parameter processing and 3A/other statistics.
+Hi,
 
-These pixel formats will need to be documented in Documentation/media/uapi/v4l/pixfmt-<something>.rst.
-
+On 11/05/2019 08:32, Leo Yan wrote:
+> On Wed, May 01, 2019 at 11:50:52AM -0600, Mathieu Poirier wrote:
 > 
-> Signed-off-by: Jungo Lin <jungo.lin@mediatek.com>
-> ---
->  include/uapi/linux/videodev2.h | 20 ++++++++++++++++++++
->  1 file changed, 20 insertions(+)
+> [...]
 > 
-> diff --git a/include/uapi/linux/videodev2.h b/include/uapi/linux/videodev2.h
-> index 1db220da3bcc..b79046d2d812 100644
-> --- a/include/uapi/linux/videodev2.h
-> +++ b/include/uapi/linux/videodev2.h
-> @@ -711,6 +711,20 @@ struct v4l2_pix_format {
->  #define V4L2_PIX_FMT_IPU3_SGRBG10	v4l2_fourcc('i', 'p', '3', 'G') /* IPU3 packed 10-bit GRBG bayer */
->  #define V4L2_PIX_FMT_IPU3_SRGGB10	v4l2_fourcc('i', 'p', '3', 'r') /* IPU3 packed 10-bit RGGB bayer */
->  
-> +/* Vendor specific - Mediatek ISP compressed formats */
-> +#define V4L2_PIX_FMT_MTISP_U8	v4l2_fourcc('M', 'T', 'U', '8') /* Unpacked bayer format, 16-bit */
-> +#define V4L2_PIX_FMT_MTISP_U10  v4l2_fourcc('M', 'T', 'U', 'A') /* Unpacked bayer format, 16-bit */
-> +#define V4L2_PIX_FMT_MTISP_U12  v4l2_fourcc('M', 'T', 'U', 'C') /* Unpacked bayer format, 16-bit */
-> +#define V4L2_PIX_FMT_MTISP_U14  v4l2_fourcc('M', 'T', 'U', 'E') /* Unpacked bayer format, 16-bit */
-> +#define V4L2_PIX_FMT_MTISP_B8	v4l2_fourcc('M', 'T', 'B', '8') /* Packed   bayer format,  8-bit */
-> +#define V4L2_PIX_FMT_MTISP_B10  v4l2_fourcc('M', 'T', 'B', 'A') /* Packed   bayer format, 10-bit */
-> +#define V4L2_PIX_FMT_MTISP_B12  v4l2_fourcc('M', 'T', 'B', 'C') /* Packed   bayer format, 12-bit */
-> +#define V4L2_PIX_FMT_MTISP_B14  v4l2_fourcc('M', 'T', 'B', 'E') /* Packed   bayer format, 14-bit */
-> +#define V4L2_PIX_FMT_MTISP_F8	v4l2_fourcc('M', 'T', 'F', '8') /* Full-G   bayer format,  8-bit */
-> +#define V4L2_PIX_FMT_MTISP_F10  v4l2_fourcc('M', 'T', 'F', 'A') /* Full-G   bayer format, 10-bit */
-> +#define V4L2_PIX_FMT_MTISP_F12  v4l2_fourcc('M', 'T', 'F', 'C') /* Full-G   bayer format, 12-bit */
-> +#define V4L2_PIX_FMT_MTISP_F14  v4l2_fourcc('M', 'T', 'F', 'E') /* Full-G   bayer format, 14-bit */
+>> +2.2) Snapshot mode:
+>> +
+>> +Using perf's built-in snapshot mode with CoreSight tracers is supported - to
+>> +do so the '-S' command line option needs to be specified.  Since current sink
+>> +devices are used in double-buffer mode when operated from the perf interface,
+>> +the size of the perf ring buffer needs to be adjusted to match the size of the
+>> +buffer used by the CoreSight sinks.  From the perf command line it is possible
+>> +to specify the number of pages to use for a session using the '-m,X' option,
+>> +where X is the amount of pages.
+>> +
+>> +The system memory buffer used by ETR devices is automatically adjusted
+>> +to match the size of the perf ring buffer and as such does not need to be
+>> +modified on the perf command line.  For ETB and ETF devices the perf ring
+>> +buffer size need to be adjusted to match the size of the internal buffer.
+>> +
+>> +The following examples assume a system page size of 4096 byte:
+>> +
+>> +	# cat /sys/bus/coresight/devices/20010000.etb/mgmt/rdp
+>> +	0x2000
+>> +	# perf record -e cs_etm/@20010000.etf/ -S -m,8 --per-thread $APP
+> 
+> In this case it shows the usage for etb, thus should:
+> s/20010000.etf/20010000.etb/
+> 
+> BTW, the user needs to convert the rdp to byte size with multiplying 4,
+> it's good to explain for this in the doc or give related info in the
+> driver warning log.
 
-Are these all compressed formats? What sort of compression is used? Can software unpack it,
-or this is meant to be fed to other mediatek hardware blocks?
+If at all we want to match the aux space size with that of the device buffer,
+I recommend exposing this via a new "buf_pages" attribute under the sysfs to
+help the user.
 
-> +
->  /* SDR formats - used only for Software Defined Radio devices */
->  #define V4L2_SDR_FMT_CU8          v4l2_fourcc('C', 'U', '0', '8') /* IQ u8 */
->  #define V4L2_SDR_FMT_CU16LE       v4l2_fourcc('C', 'U', '1', '6') /* IQ u16le */
-> @@ -732,6 +746,12 @@ struct v4l2_pix_format {
->  #define V4L2_META_FMT_VSP1_HGT    v4l2_fourcc('V', 'S', 'P', 'T') /* R-Car VSP1 2-D Histogram */
->  #define V4L2_META_FMT_UVC         v4l2_fourcc('U', 'V', 'C', 'H') /* UVC Payload Header metadata */
->  #define V4L2_META_FMT_D4XX        v4l2_fourcc('D', '4', 'X', 'X') /* D4XX Payload Header metadata */
-> +/* Vendor specific - Mediatek ISP parameters for firmware */
-> +#define V4L2_META_FMT_MTISP_PARAMS v4l2_fourcc('M', 'T', 'f', 'p') /* ISP tuning parameters */
-> +#define V4L2_META_FMT_MTISP_3A	   v4l2_fourcc('M', 'T', 'f', 'a') /* AE/AWB histogram */
-> +#define V4L2_META_FMT_MTISP_AF	   v4l2_fourcc('M', 'T', 'f', 'f') /* AF histogram */
-> +#define V4L2_META_FMT_MTISP_LCS	   v4l2_fourcc('M', 'T', 'f', 'c') /* Local contrast enhanced statistics */
-> +#define V4L2_META_FMT_MTISP_LMV	   v4l2_fourcc('M', 'T', 'f', 'm') /* Local motion vector histogram */
-
-The documentation for these meta formats either needs to point to
-freely available mediatek documentation (i.e. no NDA needed), or it
-has to be documented in a header or in the pixelformat documentation.
-
-Regards,
-
-	Hans
+Cheers
+Suzuki
 
 _______________________________________________
 linux-arm-kernel mailing list
