@@ -2,70 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E82001BD80
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 20:54:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FEA91BDAF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 21:22:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RlKznrUQnHbcEoSDF4LYuI85Hg29ajhrb8tSzHu5oLA=; b=pSmoNy5KuVLu91
-	34B6rRleejRupqt9S/jhqNTzZ6exrBd74hFlnw6n+GGwPKoniNR9bNGopISvX/poyamTaZ25Pqn9j
-	vNm0rBKIpuF1twSYdTrG40PEMMSTtLOqxQnnkv+DwSR8Ku5/2JStWWrQWz5AEsWbKhRm8HYZnXQTf
-	0eqdkASGE9CuY2D3pZfK63Bny571BH0P/zrJyPZ/jur946a5eThVw9NqSJMDeLpkzISGZvAGoQosC
-	kG1KaJdJ87LMeN96NVxqbWErbBUeGo93qgmQuDhir33dexglu0AS14tUGyjzHc6Kis9as6UvA2hFd
-	g5wG5vi78suKGSBE4Fig==;
+	List-Owner; bh=B0su+j00gWxBrx80/i9Uq15/O3dbNL4kHVbExDbPtlQ=; b=tRSEF/M9ySZ+Wr
+	Ppvp69v0JCUZX5PdJKWq7GdIpSfbzuoUxpH+akOnNzjtDOSa28yfG9xffBDopAMMXk8CAj8wVsLQJ
+	n6LXSUqa1Q/jT4QPsDcwpnQewB1dpCy8ioT0ilfnXzmEVpYI3DzJHOIfm35N1kR9Svrom91N6uzku
+	CBEKpQYQoFXmy2SPL1ob4Q0kLmatPZKfuysZCAF7+j6FAqVkqhFQmI402jQUcyLvOlYDJMz4ZaYwP
+	6s6ABB1YR4LgUfBywfdm2kEYn1v3W4aIbo6Z+5KzOOE0KdKCbSmRLze4xMsRrrauK1hElSpzhWYuh
+	3Nzn08uS/BqOdekabZrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQG5V-0006zn-Ac; Mon, 13 May 2019 18:54:13 +0000
-Received: from smtprelay0240.hostedemail.com ([216.40.44.240]
- helo=smtprelay.hostedemail.com)
+	id 1hQGWw-0000a0-2Y; Mon, 13 May 2019 19:22:34 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQG5O-0006zT-M8
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 18:54:08 +0000
-Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
- [216.40.38.60])
- by smtprelay02.hostedemail.com (Postfix) with ESMTP id B8E03C1DCBC;
- Mon, 13 May 2019 18:53:47 +0000 (UTC)
-X-Session-Marker: 6A6F6540706572636865732E636F6D
-X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com,
- :::::::::::::::::::::::::,
- RULES_HIT:41:355:379:599:800:960:966:973:988:989:1260:1277:1311:1313:1314:1345:1359:1431:1437:1515:1516:1518:1534:1541:1593:1594:1711:1730:1747:1777:1792:2196:2198:2199:2200:2393:2553:2559:2562:2691:2731:2828:3138:3139:3140:3141:3142:3352:3622:3865:3867:3868:3871:3872:3873:4321:4385:4605:5007:6119:6742:10004:10400:10848:11232:11657:11658:11914:12043:12555:12740:12760:12895:13069:13215:13229:13311:13357:13439:14096:14097:14181:14659:14721:21080:21451:21627:30054:30090:30091,
- 0,
- RBL:23.242.196.136:@perches.com:.lbl8.mailshell.net-62.8.0.180 64.201.201.201,
- CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none, DomainCache:0,
- MSF:not bulk, SPF:fn, MSBL:0, DNSBL:neutral, Custom_rules:0:0:0, LFtime:29,
- LUA_SUMMARY:none
-X-HE-Tag: fly77_5b0af3af8b416
-X-Filterd-Recvd-Size: 2641
-Received: from XPS-9350.home (cpe-23-242-196-136.socal.res.rr.com
- [23.242.196.136]) (Authenticated sender: joe@perches.com)
- by omf06.hostedemail.com (Postfix) with ESMTPA;
- Mon, 13 May 2019 18:53:45 +0000 (UTC)
-Message-ID: <ea3792fdc90c2d37dd8a889c173c94d743b7b583.camel@perches.com>
-Subject: Re: [PATCH v10 1/4] MAINTAINERS: add an entry for for arm64 imx 
- devicetrees
-From: Joe Perches <joe@perches.com>
-To: Angus Ainslie <angus@akkea.ca>, Fabio Estevam <festevam@gmail.com>
-Date: Mon, 13 May 2019 11:53:44 -0700
-In-Reply-To: <e61562bfc80e25bf233ae7fd7b032f83@www.akkea.ca>
-References: <20190513174057.4410-1-angus@akkea.ca>
- <20190513174057.4410-2-angus@akkea.ca>
- <CAOMZO5BaQnrDOYogzgpmCExjB+uhYQ8SsxBiMWrSB-1KRtgeVQ@mail.gmail.com>
- <e61562bfc80e25bf233ae7fd7b032f83@www.akkea.ca>
-User-Agent: Evolution 3.30.1-1build1 
-Mime-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_115406_799384_F8A6476D 
-X-CRM114-Status: GOOD (  12.83  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.40.44.240 listed in list.dnswl.org]
+ id 1hQGWq-0000Zt-Fd
+ for linux-arm-kernel@bombadil.infradead.org; Mon, 13 May 2019 19:22:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=IDW+SWgrzfGK/r1Yzo1GqZUV1GP7IXHMx2pAT0TmT2A=; b=qofL8PaOKVEg0XXfHMvYhqL0F
+ +AAVd6VMrWJB5RhmYaEHrsi3L+Q3BEFHheUmy2TviBeIqoDIc1Y6dIAaxcdUK1BrPIYdWeX/Ehyke
+ SAFE5h5RwPUnCnm1rXtgI8CE57S8TL4hSNu84DLHNHB5BRIXdy+RB0x+CdY9Fq1VyCcS7hZ+6/Q4g
+ JqpgvaqIBT4CIhh4XmtTLr3wzDuxXZXLwIJFYKy+81HnIbMSxKoGJ1aAeh2DKmm4sAc6scllOjmTU
+ 2gXLKD+r+kWoIoDhQlnAK0tewn2uAICl3dzOHD59fFtbmFmHVZZUlW8tP1kfKtpv/unjvro7+hQAg
+ bgP9ApaKg==;
+Received: from [190.15.121.82] (helo=quaco.ghostprotocols.net)
+ by merlin.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hQGWo-0000zp-8L; Mon, 13 May 2019 19:22:26 +0000
+Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
+ id 5BC31403AD; Mon, 13 May 2019 16:22:24 -0300 (-03)
+Date: Mon, 13 May 2019 16:22:24 -0300
+From: Arnaldo Carvalho de Melo <acme@kernel.org>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [PATCH] perf vendor events arm64: Map Brahma-B53 CPUID to
+ cortex-a53 events
+Message-ID: <20190513192224.GA2470@kernel.org>
+References: <20190405165047.15847-1-f.fainelli@gmail.com>
+ <20190408162607.GB7872@fuggles.cambridge.arm.com>
+ <46ac3066-fa55-9fb8-dd54-32fb702030cb@gmail.com>
+ <20190502235725.GB22982@kernel.org>
+ <60f367b4-1c5b-0778-eaa6-1a78d58f33a1@gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <60f367b4-1c5b-0778-eaa6-1a78d58f33a1@gmail.com>
+X-Url: http://acmel.wordpress.com
+User-Agent: Mutt/1.11.3 (2019-02-01)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -77,53 +67,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, "open list:OPEN FIRMWARE AND
- FLATTENED DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel <linux-kernel@vger.kernel.org>, Li Yang <leoyang.li@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, angus.ainslie@puri.sm,
- Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+Cc: Mark Rutland <mark.rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>,
+ linux-kernel@vger.kernel.org,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, bcm-kernel-feedback-list@broadcom.com,
+ Namhyung Kim <namhyung@kernel.org>, Jiri Olsa <jolsa@redhat.com>,
+ "moderated list:ARM PMU PROFILING AND DEBUGGING"
  <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2019-05-13 at 11:48 -0700, Angus Ainslie wrote:
-> On 2019-05-13 11:01, Fabio Estevam wrote:
-> > On Mon, May 13, 2019 at 2:41 PM Angus Ainslie (Purism) <angus@akkea.ca> 
-> > wrote:
-> > > Add an explicit reference to imx* devicetrees
-> > > 
-> > > Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
-> > > ---
-> > >  MAINTAINERS | 1 +
-> > >  1 file changed, 1 insertion(+)
-> > > 
-> > > diff --git a/MAINTAINERS b/MAINTAINERS
-> > > index 7707c28628b9..0871a21a5bbb 100644
-> > > --- a/MAINTAINERS
-> > > +++ b/MAINTAINERS
-> > > @@ -1648,6 +1648,7 @@ T:        git 
-> > > git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git
-> > >  F:     arch/arm/boot/dts/ls1021a*
-> > >  F:     arch/arm64/boot/dts/freescale/fsl-*
-> > >  F:     arch/arm64/boot/dts/freescale/qoriq-*
-> > > +F:     arch/arm64/boot/dts/freescale/imx*
-> > 
-> > No, please put this entry under ARM/FREESCALE IMX / MXC ARM 
-> > ARCHITECTURE
-> > 
-> 
-> I believe order is important. Would you like it before or after the "N:" 
-> entries ? Or just as the last entry.
+Em Mon, May 13, 2019 at 11:04:49AM -0700, Florian Fainelli escreveu:
+> On 5/2/19 4:57 PM, Arnaldo Carvalho de Melo wrote:
+> > Em Thu, May 02, 2019 at 02:28:02PM -0700, Florian Fainelli escreveu:
+> >> On 4/8/19 9:26 AM, Will Deacon wrote:
+> >>> Acked-by: Will Deacon <will.deacon@arm.com>
 
-Order is not important, but I prefer the
-N: entries after the X: and F: entries.
+> >> Thanks! Can this be picked up?
 
+> > Thanks, applied to perf/core.
 
+> Thanks, I don't seem to be able to find it being pushed out to that tree
+> or in linux-next.
+
+What tree? acme/perf/core? That is the one I referred to, have you
+looked instead at tip/perf/core? That one still doesn't have it, as I
+was in LSFMM/BPF and then vacation and haven't pushed that to Ingo yet,
+look at:
+
+https://git.kernel.org/pub/scm/linux/kernel/git/acme/linux.git/commit/?h=perf/core&id=c0c410e9c4f36972c393a4cc61368d92feb23d67
+
+I can remove it and wait for your resubmit addressing the issues
+discussed in that other message, ok?
+
+- Arnaldo
 
 _______________________________________________
 linux-arm-kernel mailing list
