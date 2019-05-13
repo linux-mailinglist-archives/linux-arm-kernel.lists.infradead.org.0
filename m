@@ -2,81 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D0D81BF79
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 00:30:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E9A91BF84
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 00:33:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-ID:To:Subject:From:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6JXdemdLGVbTA15YqYndNgNwxqQ9lVnfOvt1JPvSTU8=; b=AQH1ElZ1yaixK+
-	sqZPD7YI9Bk1GPLbjQMj1BBPsQevJWz8xMPOGyaCTjSVrBlptgtW+DJVd1osTzC57eFx+IR1b7oB2
-	3pwTTNkKiudpH6/3gE6Or53LHmX+p/eTLcXiQnaM/npLneBNi8G6jx1Y6Y3vPv6Oe86mVevKg4+kZ
-	H2eWLigPrHRL/t6yT/DDro6v1ty8wfs/sJBJTzQJ0mbZFxW0MFLMA3naVkXlFjKgNuxEY7YZdzeXW
-	XVthe3Q8eJAWryTuPTfWwf9ybWBDFe5P9jth1AHI7c3doUEXhhQvT9IqqqsmLcKriNIfitxcalN1M
-	xkZeD6wKsyo4+wpYMvPw==;
+	List-Owner; bh=n6eryPqVsbM5F0rLOqYhR5snSFSk7poRBVwjhPn31QY=; b=BFQM0gg5OfzdOa
+	93p6HeSfp1iFe0+YLdD5Feo9lNpL3Z3VSvQASZidOBdHZQYQm3kuMgCkQ9gv/3aCz0fLrfjE1HTrN
+	chyeKo+h/uPsvrXu+ZSQxWBQZ5H58oKnaM/uDq3Njb2tQUFr21cPkwFsqdvJK3W1c04vIuIeVJCth
+	4L+Suh8jpoUgAvzMt2FbQuArCMnDkXqUtMvGJD9GJWeV7mYBi3LZ6IKagATVvzNK1LcC+nnc9tK0h
+	Y/gudlkfE+SXKGg8Oo2HFttbWlw4AJjIHEu93IxaVP8GWMhJ82KT+EIEjNLqiTcqSS4LQuscaRkRq
+	fgnGv62HhqF9iOSUoQ0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQJSS-00029v-Re; Mon, 13 May 2019 22:30:08 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hQJVz-0003oc-RX; Mon, 13 May 2019 22:33:47 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQJSH-00028y-AZ
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 22:29:58 +0000
-Received: by mail-pl1-x643.google.com with SMTP id b3so7171806plr.7
+ id 1hQJVt-0003oI-8d
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 22:33:42 +0000
+Received: by mail-pg1-x543.google.com with SMTP id i21so7479225pgi.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 May 2019 15:29:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:content-transfer-encoding:in-reply-to:references:from
- :subject:cc:to:message-id:user-agent:date;
- bh=ETQhQAaaEpynYwTuUBGU6E1kF1yOq255ZbmhFrac2JY=;
- b=lCF4YE1X1gC3tjBCZVAp3rx/olsWV+J0XAb6jJx7FkuG9YOdGM/BbF8eJHo/allGDv
- Xza4Bszn9mZYOtgpPYXpRbmXa0YiZXqUmAIf+TdTK41cPnxeyXgD1nTVhOEyntS6On/y
- dZSHK3jML6Vc39MREPTHKjqPL4lmey9RcItFE=
+ Mon, 13 May 2019 15:33:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=NvQvgfEGSLgUqO5Q9NdIyP63IIoIQn87HFDmXmj0MKc=;
+ b=ZvfH0arew0ocZDDdoYxHlTfwpsvBkycRrF4g9K2oR08xEh1FrVl57VdAJJPkME+NMp
+ CnltQ+dNfL78uYuw773bZ1MdSrn3fv/MV6zbZvj3N9ahhVZG/VdCLzStnA6T3j4NBURi
+ BIYZ6UKCrpcJOGmOeXM4aLeuR6egOfZ7e72aNGaARNzGiXP3tC0ieJTVKF0NR3DWo/C8
+ 4NKcza9dATpUs139NFOpiFCb2D1Y3A4s4x+7A3PuetpM8acbqIHEUNhTSXiGjdefUBvA
+ QjLPBp4VWIXBKUObrYthE/FqVekPSDll7Ppwg5t08ouGxRZlZ2q0WCXL6Ri/j5GYkrPR
+ 6FUw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:content-transfer-encoding
- :in-reply-to:references:from:subject:cc:to:message-id:user-agent
- :date;
- bh=ETQhQAaaEpynYwTuUBGU6E1kF1yOq255ZbmhFrac2JY=;
- b=n4e8QCAYUK1J7H3e0QWLtvv6TUTiafXAWGkKZUqrckDR0JiDI+LzM5LohoXW3hMQrC
- lvyKhYUBEhxYHKKzCLCmDTL5WO+OrTcS4zbWpw2EZPq49UI3KTEUXcjbFErPcneZqLey
- cNJ27b3V/BTBJOcfteCZfq59l7GC1KQ/sL+Pb7sA3xqHg0fGIoNfbS4SqUu4paFNHXUd
- eYUHCTUBmXmdAnbVTrQMJH+5HdeDwCIaHa3gYaK61UzjkS01HvwEiB/f6siy57FPN2zs
- B0VFw5jlNnIam3eyylFPO9Ap9+zu46fEChYo/cmB4n5xSWXuvdLx1kZeSpwBybqooTG0
- fezA==
-X-Gm-Message-State: APjAAAVWlFV1o/Mt0vJ/eGDI0q8Um+plj/D/rcI99eofsKobdriKkNaB
- gBG8tGir3FkQx78M/rje8h+2fA==
-X-Google-Smtp-Source: APXvYqySS1GyiV5EFWAvvxpDWM4HKOFcG2K2g8mylOnrI7fyLakxzGwBsPFhohtLtxgeH0oftSnzmQ==
-X-Received: by 2002:a17:902:f096:: with SMTP id
- go22mr35230296plb.49.1557786594965; 
- Mon, 13 May 2019 15:29:54 -0700 (PDT)
-Received: from localhost ([2620:15c:202:1:fa53:7765:582b:82b9])
- by smtp.gmail.com with ESMTPSA id f87sm21668997pff.56.2019.05.13.15.29.53
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=NvQvgfEGSLgUqO5Q9NdIyP63IIoIQn87HFDmXmj0MKc=;
+ b=HhyPmJVa6xVfryI/6Gz1sdGo+JzuYI7Yr8zh+MWkNDVM/zYQ7llahJjDK95a2V5IM+
+ F74gjPoknrI2AsLt2r1Y8518K3XRlMbLWUXMhJjYes10QL5rV7sMciuyneEV/T0QIAhd
+ LtwZh3LgzDs+vCeK4cn0/MnROitI4Eio/oCVYGMiXVduF9/HY5VkdB+QZ6K1z5O75Bpk
+ AN5Xja6nToDmhPJVfEz3zsXuDChGl2HABAQWjv4PQSfsWoYSpp3II2YwnVNTG267mepN
+ DWy0mrHjaVzrCj+lePoA6Z8k51R1V0ljETK7ASyf+98h8QQBkwgwtal3m3m8Pib7Z2ZM
+ XFaw==
+X-Gm-Message-State: APjAAAXteCe7vgeyGZJJqeXbtTMSZ/lFCV+oI5VqjksRuchx543WAD+W
+ AVbKoikrF6L1eg1DMzWeYDqZTg==
+X-Google-Smtp-Source: APXvYqxPHzPRhlNAh7fHXKNAPmAkVKGQ4nrfmtUr2JNvkogfwiYQFup8yN7ZBuVfBdEZjih2EbKnLg==
+X-Received: by 2002:a63:7552:: with SMTP id f18mr32376239pgn.234.1557786820042; 
+ Mon, 13 May 2019 15:33:40 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id q20sm24595819pgq.66.2019.05.13.15.33.38
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 13 May 2019 15:29:54 -0700 (PDT)
+ Mon, 13 May 2019 15:33:39 -0700 (PDT)
+Date: Mon, 13 May 2019 16:33:37 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: [PATCH v3 29/30] coresight: acpi: Support for AMBA components
+Message-ID: <20190513223337.GG16162@xps15>
+References: <1557226378-10131-1-git-send-email-suzuki.poulose@arm.com>
+ <1557226378-10131-30-git-send-email-suzuki.poulose@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20190429035515.73611-3-drinkcat@chromium.org>
-References: <20190429035515.73611-1-drinkcat@chromium.org>
- <20190429035515.73611-3-drinkcat@chromium.org>
-From: Stephen Boyd <swboyd@chromium.org>
-Subject: Re: [PATCH 2/2] pinctrl: mediatek: Update cur_mask in mask/mask ops
-To: Nicolas Boichat <drinkcat@chromium.org>, linux-mediatek@lists.infradead.org
-Message-ID: <155778659317.14659.136626364818483852@swboyd.mtv.corp.google.com>
-User-Agent: alot/0.8
-Date: Mon, 13 May 2019 15:29:53 -0700
+Content-Disposition: inline
+In-Reply-To: <1557226378-10131-30-git-send-email-suzuki.poulose@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_152957_386632_B2754218 
-X-CRM114-Status: GOOD (  14.88  )
+X-CRM114-CacheID: sfid-20190513_153341_329629_E844B890 
+X-CRM114-Status: GOOD (  14.70  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -84,7 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,72 +97,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chuanjia Liu <Chuanjia.Liu@mediatek.com>,
- Linus Walleij <linus.walleij@linaro.org>, Sean Wang <sean.wang@kernel.org>,
- linux-kernel@vger.kernel.org, evgreen@chromium.org, linux-gpio@vger.kernel.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
+Cc: coresight@lists.linaro.org, rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Nicolas Boichat (2019-04-28 20:55:15)
-> During suspend/resume, mtk_eint_mask may be called while
-> wake_mask is active. For example, this happens if a wake-source
-> with an active interrupt handler wakes the system:
-> irq/pm.c:irq_pm_check_wakeup would disable the interrupt, so
-> that it can be handled later on in the resume flow.
+On Tue, May 07, 2019 at 11:52:56AM +0100, Suzuki K Poulose wrote:
+> All AMBA devices are handled via ACPI AMBA scan notifier
+> infrastructure. The platform devices get the ACPI id
+> added to their driver.
 > 
-> However, this may happen before mtk_eint_do_resume is called:
-> in this case, wake_mask is loaded, and cur_mask is restored
-> from an older copy, re-enabling the interrupt, and causing
-> an interrupt storm (especially for level interrupts).
+> Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>
+> Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+> ---
+>  drivers/acpi/acpi_amba.c | 9 +++++++++
+>  1 file changed, 9 insertions(+)
 > 
-> Instead, we just record mask/unmask changes in cur_mask. This
-> also avoids the need to read the current mask in eint_do_suspend,
-> and we can remove mtk_eint_chip_read_mask function.
+> diff --git a/drivers/acpi/acpi_amba.c b/drivers/acpi/acpi_amba.c
+> index 7f77c07..eef5a69 100644
+> --- a/drivers/acpi/acpi_amba.c
+> +++ b/drivers/acpi/acpi_amba.c
+> @@ -24,6 +24,15 @@
+>  
+>  static const struct acpi_device_id amba_id_list[] = {
+>  	{"ARMH0061", 0}, /* PL061 GPIO Device */
+> +	{"ARMHC500", 0}, /* ARM CoreSight ETM4x */
+> +	{"ARMHC501", 0}, /* ARM CoreSight ETR */
+> +	{"ARMHC502", 0}, /* ARM CoreSight STM */
+> +	{"ARMHC503", 0}, /* ARM CoreSight Debug */
+> +	{"ARMHC979", 0}, /* ARM CoreSight TPIU */
+> +	{"ARMHC97C", 0}, /* ARM CoreSight SoC-400 TMC, SoC-600 ETF/ETB */
+> +	{"ARMHC98D", 0}, /* ARM CoreSight Dynamic Replicator */
+> +	{"ARMHC9CA", 0}, /* ARM CoreSight CATU */
+> +	{"ARMHC9FF", 0}, /* ARM CoreSight Funnel */
+>  	{"", 0},
+
+Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+
+>  };
+>  
+> -- 
+> 2.7.4
 > 
-> Signed-off-by: Nicolas Boichat <drinkcat@chromium.org>
-
-It looks an awful lot like you should just use IRQCHIP_MASK_ON_SUSPEND
-here. Isn't that what's happening? All non-wake irqs should be masked at
-the hardware level so they can't cause a wakeup during suspend and on
-resume they can be unmasked?
-
-> diff --git a/drivers/pinctrl/mediatek/mtk-eint.c b/drivers/pinctrl/mediatek/mtk-eint.c
-> index 737385e86beb807..7e526bcf5e0b55c 100644
-> --- a/drivers/pinctrl/mediatek/mtk-eint.c
-> +++ b/drivers/pinctrl/mediatek/mtk-eint.c
-> @@ -113,6 +113,8 @@ static void mtk_eint_mask(struct irq_data *d)
->         void __iomem *reg = mtk_eint_get_offset(eint, d->hwirq,
->                                                 eint->regs->mask_set);
->  
-> +       eint->cur_mask[d->hwirq >> 5] &= ~mask;
-> +
->         writel(mask, reg);
->  }
->  
-> @@ -123,6 +125,8 @@ static void mtk_eint_unmask(struct irq_data *d)
->         void __iomem *reg = mtk_eint_get_offset(eint, d->hwirq,
->                                                 eint->regs->mask_clr);
->  
-> +       eint->cur_mask[d->hwirq >> 5] |= mask;
-> +
->         writel(mask, reg);
->  
->         if (eint->dual_edge[d->hwirq])
-> @@ -384,7 +375,6 @@ static void mtk_eint_irq_handler(struct irq_desc *desc)
->  
->  int mtk_eint_do_suspend(struct mtk_eint *eint)
->  {
-> -       mtk_eint_chip_read_mask(eint, eint->base, eint->cur_mask);
->         mtk_eint_chip_write_mask(eint, eint->base, eint->wake_mask);
->  
-
-
-This alone looks like, write out the mask to only allow wake interrupts.
-
 
 _______________________________________________
 linux-arm-kernel mailing list
