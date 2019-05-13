@@ -2,48 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E1921B4BC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 13:17:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4389E1B4B7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 13:16:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zEcbGGvJUE02xnOZ8c+qtdjUlai5te+4PuxHrE0d+lc=; b=oV5zD2nG7g1blU
-	ZVLiBgUuZCqvQSgDE3b4J/0ZrKOIVyjzFDpkryOFR6BxuQM9jp21pKYaQCgbHiyBQYbVuPzu7tCCw
-	7w9hz95BE/F4aPvG2xyI3sG6LuHBtHuEGFYo3kxFYCoU1rfEW9NxXJQvjghMu153XKFf/Z6tz9tYr
-	80Z1Q9eO0l3V2ZZgV0qoiBU7TP3qabRUoFJydxZMZc54MP1IF0PyfjNjAlj1RPrQml/STwcW/YxYf
-	AlMtdvfDSR0buJSkDeJ/n2FyacPx3uOExvDFS0wNtkikVXU9ZO0etHyQgLC/I4dh5kesu/OjrH/1s
-	+eJzTE0iK0iHJo2FB5Hg==;
+	List-Owner; bh=gBo1logl/V1CU9ipoHJk/rzPIlMCQiUoIt/IezszufM=; b=ssdCdNJ7hcKySC
+	a3SX8a6+JA06Rxj1Au3ouUX0XEFQ6x8mKdKtxjAlFemfZ1sS9198034DBjdhFURTquPcacifsqj3w
+	+OzoM/0apnrWyMMAfWDrtBVbf9Tt7gD02DZSRhAsK3FeNZBKNA2j9kCGI3FQcsG68uoyb0pxolOnv
+	N//mZKkN36jqbkHX5JHTiCaHIfZslid4KKhmYgk6YEk/tfuGbLiaD/Y3lkvp/MczOnJ6gq8rI3al5
+	QVXxBi2JtzKofY1W1InEvMMAn872yil64TnC1RTsVU5EUwYfUz8xrgkG0gmL35MhVi50aHAZwUIwf
+	5iA02bHEV+JcBn+ZkfCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQ8wz-00038v-7a; Mon, 13 May 2019 11:16:57 +0000
+	id 1hQ8wa-0002hu-PV; Mon, 13 May 2019 11:16:32 +0000
 Received: from mail-eopbgr60095.outbound.protection.outlook.com ([40.107.6.95]
  helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQ8vV-00006d-CO
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 11:15:30 +0000
+ id 1hQ8va-00006d-IN
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 11:15:47 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=prevas.se; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=hFXFaYxZbDf4YVKZ2AuPrr15Glit1zEkKAeApbr5ys0=;
- b=bH6O7GUIk0a6YuBfsMyJb+HX88KimZLLAxKOsJ8vhs4JqRPD2IfddEkgGnIRfPDg+XfepG3uCE0vi3/3hdazZMScX5f/gKqPnb/eON79SJsLN0gxryE3zelbKV4FE7R91CmSNpdvdzQ1128BURsZTJFbXvZSbWasz/x4Ld3L9w8=
+ bh=FLwTavdf2f5v45DlX8rnErmRk2XNba9+SN9MfIcFeaE=;
+ b=rBowXL4LjvL0wsugji/KKaNyLowGb8DUWweNcuEJbTrJlVIyZ31flCrdaz9H6EJRcu/9ixDtmaaNeBzOKVH0fD2xg2Hbx5GzJkOi4PkVgvY5LcCpIhLqxGF5UU6pqzvd01PwAb0Au6oTQKoaJukTxZFEHobl3DNoP21hXBC6Qjs=
 Received: from VI1PR10MB2672.EURPRD10.PROD.OUTLOOK.COM (20.178.126.212) by
  VI1PR10MB1950.EURPRD10.PROD.OUTLOOK.COM (52.134.27.154) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1878.24; Mon, 13 May 2019 11:15:00 +0000
+ 15.20.1878.24; Mon, 13 May 2019 11:15:01 +0000
 Received: from VI1PR10MB2672.EURPRD10.PROD.OUTLOOK.COM
  ([fe80::48b8:9cff:182:f3d8]) by VI1PR10MB2672.EURPRD10.PROD.OUTLOOK.COM
  ([fe80::48b8:9cff:182:f3d8%2]) with mapi id 15.20.1878.024; Mon, 13 May 2019
- 11:15:00 +0000
+ 11:15:01 +0000
 From: Rasmus Villemoes <rasmus.villemoes@prevas.dk>
 To: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, Qiang Zhao
  <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>
-Subject: [PATCH v3 5/6] soc/fsl/qe: qe.c: support fsl,qe-snums property
-Thread-Topic: [PATCH v3 5/6] soc/fsl/qe: qe.c: support fsl,qe-snums property
-Thread-Index: AQHVCX0azViUEmjOIE6yA42BiGSQgw==
-Date: Mon, 13 May 2019 11:15:00 +0000
-Message-ID: <20190513111442.25724-6-rasmus.villemoes@prevas.dk>
+Subject: [PATCH v3 6/6] soc/fsl/qe: qe.c: fold qe_get_num_of_snums into
+ qe_snums_init
+Thread-Topic: [PATCH v3 6/6] soc/fsl/qe: qe.c: fold qe_get_num_of_snums into
+ qe_snums_init
+Thread-Index: AQHVCX0bEKLJFUyWYkaQDXSFkv+0GA==
+Date: Mon, 13 May 2019 11:15:01 +0000
+Message-ID: <20190513111442.25724-7-rasmus.villemoes@prevas.dk>
 References: <20190501092841.9026-1-rasmus.villemoes@prevas.dk>
  <20190513111442.25724-1-rasmus.villemoes@prevas.dk>
 In-Reply-To: <20190513111442.25724-1-rasmus.villemoes@prevas.dk>
@@ -60,34 +62,34 @@ x-ms-exchange-messagesentrepresentingtype: 1
 x-mailer: git-send-email 2.20.1
 x-originating-ip: [81.216.59.226]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: ba6d851b-b994-4ae2-98d2-08d6d7943d20
+x-ms-office365-filtering-correlation-id: 2c56ed77-12be-4613-dc27-08d6d7943df2
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(2017052603328)(7193020);
  SRVR:VI1PR10MB1950; 
 x-ms-traffictypediagnostic: VI1PR10MB1950:
-x-microsoft-antispam-prvs: <VI1PR10MB19505FC88D4C475383E4A8F38A0F0@VI1PR10MB1950.EURPRD10.PROD.OUTLOOK.COM>
-x-ms-oob-tlc-oobclassifiers: OLM:2399;
+x-microsoft-antispam-prvs: <VI1PR10MB195082C259840BA14E2193578A0F0@VI1PR10MB1950.EURPRD10.PROD.OUTLOOK.COM>
+x-ms-oob-tlc-oobclassifiers: OLM:2449;
 x-forefront-prvs: 0036736630
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(346002)(39850400004)(366004)(376002)(136003)(396003)(189003)(199004)(6512007)(66066001)(53936002)(107886003)(52116002)(68736007)(256004)(71200400001)(71190400001)(76176011)(6436002)(478600001)(6486002)(1076003)(36756003)(5660300002)(72206003)(74482002)(446003)(81156014)(8676002)(14454004)(99286004)(2501003)(66946007)(66476007)(66556008)(64756008)(66446008)(73956011)(54906003)(11346002)(2616005)(42882007)(476003)(81166006)(44832011)(50226002)(486006)(8936002)(110136005)(8976002)(6116002)(7416002)(316002)(3846002)(2906002)(305945005)(7736002)(186003)(25786009)(102836004)(6506007)(386003)(4326008)(26005)(142933001);
+ SFS:(10019020)(979002)(346002)(39850400004)(366004)(376002)(136003)(396003)(189003)(199004)(6512007)(66066001)(53936002)(107886003)(52116002)(68736007)(256004)(71200400001)(71190400001)(76176011)(6436002)(478600001)(6486002)(1076003)(36756003)(5660300002)(72206003)(74482002)(446003)(81156014)(8676002)(14454004)(99286004)(2501003)(66946007)(66476007)(66556008)(64756008)(66446008)(73956011)(54906003)(11346002)(2616005)(42882007)(476003)(81166006)(44832011)(50226002)(486006)(8936002)(110136005)(8976002)(6116002)(7416002)(316002)(3846002)(2906002)(305945005)(7736002)(186003)(25786009)(102836004)(6506007)(386003)(4326008)(26005)(969003)(989001)(999001)(1009001)(1019001);
  DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR10MB1950;
  H:VI1PR10MB2672.EURPRD10.PROD.OUTLOOK.COM; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: prevas.se does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: uJp8v4HOR+DW0xmeKxRc1EOdLFAgYrI0AEqNoNqyhOG6PqFo7qwAU3dytXRXzDPBn4f2FN1iOVNasjvZIY9V65dZyPX+my2KzNnvBdT33X8Km364xW7ISus11ZKTSpAPXmuNKEQUzwfnKukCLd+6y6+3g9P6c5dE0lkM6gMZPp4hBkrwt9nHAeVlU8a6E5t1C4g8HrOr/CsCYxQykV+2E2sNOmKy5m59d50Ugyu0PIm0uKOe8pNLG8xkSYTu8QoYBsLjXlSrVW4z8Nm/5rHOVu+kWRnWe4vwOmJXjLfLY8bWHAcEa5t9S4ctYwE+cjPIsAKXrj8RydZJDOF7q+mFCr+xloUwAiwEOHWlxeJAA3nilTOPHV1iyBRLkhT4AsXe/JtWPgF7AxpTI/ZRuDwDVEOyJjjX5vy57prB1D9QIss=
+x-microsoft-antispam-message-info: ae+KoThFXl+AYG5NmiAhCz+jvu73ZiG+fI5e2PZj362uALr9ieKBFc7kPC9sPKMqAAt97IM1457BPaeqr1JD2hZJcuR4TsJ8e8f/SqyOCmhXubQ1/+SYTpzQFV0Fj3avEBHDAKOwXLwk4FXfFHA7eZjWycEw4gjZJ0gh1Aky1Ul4HUnUi2MX8/+H0+VQ16LnMPzB5wpI6wLpoIXKgUujMbbxXRGl62cIzXiPuQKfEfVjD8d8jWQMIOj+REd9EHLG3EIuW9TAK9G2ZDOqbepmQoxCiE+7N09T4bQAonsVXsXiVS5/9rqrSgt3IRqDxkRyleRt+lSOZQO8wm2OomWvj5GThA3DOdbXIY8lLLgOUW1pBeR11aqBWHr8I4XcFofRqT2IdNoiMsQk3nAqN2V8733YYOMVlvhEaeHzd45jC4Q=
 MIME-Version: 1.0
 X-OriginatorOrg: prevas.dk
-X-MS-Exchange-CrossTenant-Network-Message-Id: ba6d851b-b994-4ae2-98d2-08d6d7943d20
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 May 2019 11:15:00.2763 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2c56ed77-12be-4613-dc27-08d6d7943df2
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 May 2019 11:15:01.7434 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: d350cf71-778d-4780-88f5-071a4cb1ed61
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR10MB1950
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_041526_097946_4BFB125F 
-X-CRM114-Status: GOOD (  15.16  )
+X-CRM114-CacheID: sfid-20190513_041531_184052_036F343B 
+X-CRM114-Status: GOOD (  18.59  )
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.1 points)
@@ -128,62 +130,99 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add driver support for the newly introduced fsl,qe-snums property.
+The comment "No QE ever has fewer than 28 SNUMs" is false; e.g. the
+MPC8309 has 14. The code path returning -EINVAL is also a recipe for
+instant disaster, since the caller (qe_snums_init) uncritically
+assigns the return value to the unsigned qe_num_of_snum, and would
+thus proceed to attempt to copy 4GB from snum_init_46[] to the snum[]
+array.
 
-Conveniently, of_property_read_variable_u8_array does exactly what we
-need: If the property fsl,qe-snums is found (and has an allowed size),
-the array of values get copied to snums, and the return value is the
-number of snums - we cannot assign directly to num_of_snums, since we
-need to check whether the return value is negative.
+So fold the handling of the legacy fsl,qe-num-snums into
+qe_snums_init, and make sure we do not end up using the snum_init_46
+array in cases other than the two where we know it makes sense.
 
 Reviewed-by: Christophe Leroy <christophe.leroy@c-s.fr>
 Reviewed-by: Qiang Zhao <qiang.zhao@nxp.com>
 Signed-off-by: Rasmus Villemoes <rasmus.villemoes@prevas.dk>
 ---
- drivers/soc/fsl/qe/qe.c | 16 ++++++++++++++--
- 1 file changed, 14 insertions(+), 2 deletions(-)
+ drivers/soc/fsl/qe/qe.c | 46 ++++++++++++++---------------------------
+ 1 file changed, 16 insertions(+), 30 deletions(-)
 
 diff --git a/drivers/soc/fsl/qe/qe.c b/drivers/soc/fsl/qe/qe.c
-index 4b444846d590..1d27187b251c 100644
+index 1d27187b251c..852060caff24 100644
 --- a/drivers/soc/fsl/qe/qe.c
 +++ b/drivers/soc/fsl/qe/qe.c
-@@ -283,7 +283,6 @@ EXPORT_SYMBOL(qe_clock_source);
-  */
- static void qe_snums_init(void)
- {
--	int i;
- 	static const u8 snum_init_76[] = {
- 		0x04, 0x05, 0x0C, 0x0D, 0x14, 0x15, 0x1C, 0x1D,
- 		0x24, 0x25, 0x2C, 0x2D, 0x34, 0x35, 0x88, 0x89,
-@@ -304,7 +303,21 @@ static void qe_snums_init(void)
- 		0x28, 0x29, 0x38, 0x39, 0x48, 0x49, 0x58, 0x59,
- 		0x68, 0x69, 0x78, 0x79, 0x80, 0x81,
- 	};
-+	struct device_node *qe;
- 	const u8 *snum_init;
-+	int i;
-+
-+	bitmap_zero(snum_state, QE_NUM_OF_SNUM);
-+	qe = qe_get_device_node();
-+	if (qe) {
-+		i = of_property_read_variable_u8_array(qe, "fsl,qe-snums",
-+						       snums, 1, QE_NUM_OF_SNUM);
+@@ -308,24 +308,33 @@ static void qe_snums_init(void)
+ 	int i;
+ 
+ 	bitmap_zero(snum_state, QE_NUM_OF_SNUM);
++	qe_num_of_snum = 28; /* The default number of snum for threads is 28 */
+ 	qe = qe_get_device_node();
+ 	if (qe) {
+ 		i = of_property_read_variable_u8_array(qe, "fsl,qe-snums",
+ 						       snums, 1, QE_NUM_OF_SNUM);
+-		of_node_put(qe);
+ 		if (i > 0) {
++			of_node_put(qe);
+ 			qe_num_of_snum = i;
+ 			return;
+ 		}
++		/*
++		 * Fall back to legacy binding of using the value of
++		 * fsl,qe-num-snums to choose one of the static arrays
++		 * above.
++		 */
++		of_property_read_u32(qe, "fsl,qe-num-snums", &qe_num_of_snum);
 +		of_node_put(qe);
-+		if (i > 0) {
-+			qe_num_of_snum = i;
-+			return;
-+		}
-+	}
+ 	}
  
- 	qe_num_of_snum = qe_get_num_of_snums();
- 
-@@ -313,7 +326,6 @@ static void qe_snums_init(void)
- 	else
+-	qe_num_of_snum = qe_get_num_of_snums();
+-
+-	if (qe_num_of_snum == 76)
++	if (qe_num_of_snum == 76) {
+ 		snum_init = snum_init_76;
+-	else
++	} else if (qe_num_of_snum == 28 || qe_num_of_snum == 46) {
  		snum_init = snum_init_46;
- 
--	bitmap_zero(snum_state, QE_NUM_OF_SNUM);
+-
++	} else {
++		pr_err("QE: unsupported value of fsl,qe-num-snums: %u\n", qe_num_of_snum);
++		return;
++	}
  	memcpy(snums, snum_init, qe_num_of_snum);
  }
+ 
+@@ -642,30 +651,7 @@ EXPORT_SYMBOL(qe_get_num_of_risc);
+ 
+ unsigned int qe_get_num_of_snums(void)
+ {
+-	struct device_node *qe;
+-	int size;
+-	unsigned int num_of_snums;
+-	const u32 *prop;
+-
+-	num_of_snums = 28; /* The default number of snum for threads is 28 */
+-	qe = qe_get_device_node();
+-	if (!qe)
+-		return num_of_snums;
+-
+-	prop = of_get_property(qe, "fsl,qe-num-snums", &size);
+-	if (prop && size == sizeof(*prop)) {
+-		num_of_snums = *prop;
+-		if ((num_of_snums < 28) || (num_of_snums > QE_NUM_OF_SNUM)) {
+-			/* No QE ever has fewer than 28 SNUMs */
+-			pr_err("QE: number of snum is invalid\n");
+-			of_node_put(qe);
+-			return -EINVAL;
+-		}
+-	}
+-
+-	of_node_put(qe);
+-
+-	return num_of_snums;
++	return qe_num_of_snum;
+ }
+ EXPORT_SYMBOL(qe_get_num_of_snums);
  
 -- 
 2.20.1
