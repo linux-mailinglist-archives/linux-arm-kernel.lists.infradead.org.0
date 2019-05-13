@@ -2,51 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 785AA1B12E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 09:31:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64C701B131
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 09:31:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=c3nkEI+Z8gbWqFnb3pGbuuTkO1Cme9JBvFQfJnfRyG8=; b=L5IYEYby/S8uUl
-	pmm2nCmij/8PdMLnz6YhWjBy6Hs4BWJhrGFT/Z9NHzkhF/gTeK9QqP52REQukZWGeMR5uAcutvKUi
-	PF3ofuGbhYhtHCErPx9y4bnkDdxMLtjI6Ci4PxsnUFA0i++43feFcmhgZEwxtKfHaMiKAXMFTHZCP
-	86KC1h72aKiSKvo0fNR5M4lgWpDn6nGpbPmChuIyVR0WP8iTIFIiR0rgLgTn0/SzXkTU9dfprnavJ
-	QC9RRwjH6W0yZvCer62rCxiI3DQGM6eP1gGNbD0As8JSxyQM78vashe6COo23LiwJHcXmVMcp75Ci
-	ZJknlY74tVnvI8NzlCvA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kL6+uN/APDgFkk4gG9KUtt8/cC/WlGfB3PJJT7NH9QU=; b=s6nuTZ6m+XpdQb
+	T6MPn6Wq5igOFPTBAY9u1bvT/NzXy1p8bpjpBY7gqsCr+dnT5I/cEqhSTxtex0WVSmkZY9tGwJ4if
+	fteHVFeUw42c7SKK1B4PSv3KxFI5Sc80zrZLLkMBaIM+5Uh/Pa8ZLPjf+KE4TLrRdjRH+gr41u2c8
+	r09cT7b65P4obYyZuMwBFyRd60fSXrkUE37XATIPd0+B218jotiMbYijJNzzxGRNjp78p9/PO8h2L
+	Up8foF3eDu/zdAZ5qMWRo14q5j+M70Ni96ozZpoDpPUl/ReSh3vHuzUyhBz8yFDPsGOc68KKaMT4d
+	HBo/Ge1BzsuWNTz+fpLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQ5QI-0002s5-04; Mon, 13 May 2019 07:30:58 +0000
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+	id 1hQ5QX-00036U-In; Mon, 13 May 2019 07:31:13 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQ5QA-0002qz-8e
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 07:30:51 +0000
-X-Originating-IP: 90.88.28.253
-Received: from mc-bl-xps13.lan
- (aaubervilliers-681-1-86-253.w90-88.abo.wanadoo.fr [90.88.28.253])
- (Authenticated sender: maxime.chevallier@bootlin.com)
- by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id 94B8F1BF208;
- Mon, 13 May 2019 07:30:33 +0000 (UTC)
-From: Maxime Chevallier <maxime.chevallier@bootlin.com>
-To: davem@davemloft.net
-Subject: [PATCH net v2] net: mvpp2: cls: Add missing NETIF_F_NTUPLE flag
-Date: Mon, 13 May 2019 09:30:33 +0200
-Message-Id: <20190513073033.15015-1-maxime.chevallier@bootlin.com>
-X-Mailer: git-send-email 2.20.1
+ id 1hQ5QN-00033k-Uk
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 07:31:06 +0000
+Received: by mail-wr1-x444.google.com with SMTP id d9so5591624wrx.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 13 May 2019 00:31:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=kGPFbW+hAp4ZfBjUVrsplA4gJ28xyqGrAsYk0A4f3dY=;
+ b=lz8fzQ6Gz+asmdxNLtzFcLWkBMrUdSBHelD85bth92l8kTB4hxwCgTqu5/B25eVF5v
+ S+B9UiRacIiIjM3Idn833UGwVqpeRUS3e0B6vNsdQnia96Pfnom2j64c6+iPu5PbVFNj
+ SyjW4RRVfI8090bOQV3veOlJTBmYKuFaQ8BFp1xhZmc81mgnOF9ywaXeDGQDd7Ifun5m
+ U1jw3oz3YobaiK3auuebmGI+u6/RAbT7iSYsE0GKGDxnXZIkSpQaE2LD3qNBPno7ingJ
+ 1UWVvnlbiXytARZGAgQ5zf8hd7nqLFnizIleWswizIMTQXWTK4hK19EN2XuZIeQ9rr29
+ I0UA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=kGPFbW+hAp4ZfBjUVrsplA4gJ28xyqGrAsYk0A4f3dY=;
+ b=r4ZORXlbqC6ayShqAkbBvNienp+7HkcVAfRBVIUwgYLu7Sm7UksWoREGmNfBs1uhuy
+ jwEVmqz27eS48nNK5LEBVpUqQpDRaYXdsyvfjKtcn4MKD9H3nplgQefPqrs4H5oTps00
+ YWhV3mPJNiYI40i7yqnF+vS35ulzIGTwNfn6Asc/f7VEIPeNsXygqZOCdYQQI66V8sVi
+ kfkR9P+c+xP5K+wov5uTFYsT/ZEKgSOnT2s3SJmSW26hn8G72B1GJkcQ/nET4TuhGLtz
+ 1IVw8mQ4ZfJLfxK0ASIE+MrCrP60ulWZUGkkpBrXG1VgFgvr+zjMQAKbDjjd0C9KXTyP
+ c1NQ==
+X-Gm-Message-State: APjAAAXFKUJAVt0DvHcMEdxcbcoWSwWRxkvIjowtoQxRGQ6adalvinYs
+ BtOoVDrfA5LvozoQ9e2U+wpBEg==
+X-Google-Smtp-Source: APXvYqzX49vkFGCT6QTfo03i3mfS7qcl2HtkeUZpVM7cWYP9Z4ZY6HQkd2M1j6oCG52utv6rjLNS+Q==
+X-Received: by 2002:adf:b3d1:: with SMTP id x17mr16024449wrd.31.1557732661790; 
+ Mon, 13 May 2019 00:31:01 -0700 (PDT)
+Received: from dell ([2.27.167.43])
+ by smtp.gmail.com with ESMTPSA id h14sm993503wrt.11.2019.05.13.00.31.00
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 13 May 2019 00:31:01 -0700 (PDT)
+Date: Mon, 13 May 2019 08:30:59 +0100
+From: Lee Jones <lee.jones@linaro.org>
+To: Nathan Chancellor <natechancellor@gmail.com>
+Subject: Re: [PATCH] mfd: stmfx: Fix macro definition spelling
+Message-ID: <20190513073059.GH4319@dell>
+References: <20190511012301.2661-1-natechancellor@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190511012301.2661-1-natechancellor@gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_003050_453041_FCB2D495 
-X-CRM114-Status: GOOD (  12.08  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190513_003104_010782_62FA1859 
+X-CRM114-Status: GOOD (  11.84  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.201 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -58,56 +97,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jakub Kicinski <jakub.kicinski@netronome.com>,
- Antoine Tenart <antoine.tenart@bootlin.com>, netdev@vger.kernel.org,
- gregory.clement@bootlin.com, linux-kernel@vger.kernel.org,
- Maxime Chevallier <maxime.chevallier@bootlin.com>, nadavh@marvell.com,
- linux-arm-kernel@lists.infradead.org, thomas.petazzoni@bootlin.com,
- miquel.raynal@bootlin.com, stefanc@marvell.com, mw@semihalf.com,
- Russell King <linux@armlinux.org.uk>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Amelie Delaunay <amelie.delaunay@st.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ clang-built-linux@googlegroups.com,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that the mvpp2 driver supports classification offloading, we must
-add the NETIF_F_NTUPLE to the features list.
-
-Since the current code doesn't allow disabling the feature, we don't set
-the flag in dev->hw_features.
-
-Fixes: 90b509b39ac9 ("net: mvpp2: cls: Add Classification offload support")
-Reported-by: Jakub Kicinski <jakub.kicinski@netronome.com>
-Acked-by: Jakub Kicinski <jakub.kicinski@netronome.com>
-Signed-off-by: Maxime Chevallier <maxime.chevallier@bootlin.com>
----
-V2: Rebased on latest -net, added Jakub's Ack, gave more details in the
-    commit log about not adding the flag in hw_features.
-
- drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c b/drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c
-index 56d43d9b43ef..d38952eb7aa9 100644
---- a/drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c
-+++ b/drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c
-@@ -5058,8 +5058,10 @@ static int mvpp2_port_probe(struct platform_device *pdev,
- 	dev->hw_features |= features | NETIF_F_RXCSUM | NETIF_F_GRO |
- 			    NETIF_F_HW_VLAN_CTAG_FILTER;
- 
--	if (mvpp22_rss_is_supported())
-+	if (mvpp22_rss_is_supported()) {
- 		dev->hw_features |= NETIF_F_RXHASH;
-+		dev->features |= NETIF_F_NTUPLE;
-+	}
- 
- 	if (port->pool_long->id == MVPP2_BM_JUMBO && port->id != 0) {
- 		dev->features &= ~(NETIF_F_IP_CSUM | NETIF_F_IPV6_CSUM);
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gRnJpLCAxMCBNYXkgMjAxOSwgTmF0aGFuIENoYW5jZWxsb3Igd3JvdGU6Cgo+IENsYW5nIHdh
+cm5zOgo+IAo+IEluIGZpbGUgaW5jbHVkZWQgZnJvbSBkcml2ZXJzL21mZC9zdG1meC5jOjEzOgo+
+IGluY2x1ZGUvbGludXgvbWZkL3N0bWZ4Lmg6Nzo5OiB3YXJuaW5nOiAnTUZEX1NUTUZYX0gnIGlz
+IHVzZWQgYXMgYQo+IGhlYWRlciBndWFyZCBoZXJlLCBmb2xsb3dlZCBieSAjZGVmaW5lIG9mIGEg
+ZGlmZmVyZW50IG1hY3JvCj4gWy1XaGVhZGVyLWd1YXJkXQo+IAo+IEZpeGVzOiAwNjI1MmFkZTkx
+NTYgKCJtZmQ6IEFkZCBTVCBNdWx0aS1GdW5jdGlvbiBlWHBhbmRlciAoU1RNRlgpIGNvcmUgZHJp
+dmVyIikKPiBMaW5rOiBodHRwczovL2dpdGh1Yi5jb20vQ2xhbmdCdWlsdExpbnV4L2xpbnV4L2lz
+c3Vlcy80NzUKPiBTaWduZWQtb2ZmLWJ5OiBOYXRoYW4gQ2hhbmNlbGxvciA8bmF0ZWNoYW5jZWxs
+b3JAZ21haWwuY29tPgo+IC0tLQo+ICBpbmNsdWRlL2xpbnV4L21mZC9zdG1meC5oIHwgMiArLQo+
+ICAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKyksIDEgZGVsZXRpb24oLSkKCkFwcGxpZWQs
+IHRoYW5rcy4KCi0tIApMZWUgSm9uZXMgW+adjueQvOaWr10KTGluYXJvIFNlcnZpY2VzIFRlY2hu
+aWNhbCBMZWFkCkxpbmFyby5vcmcg4pSCIE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBBUk0gU29D
+cwpGb2xsb3cgTGluYXJvOiBGYWNlYm9vayB8IFR3aXR0ZXIgfCBCbG9nCgpfX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
+bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
