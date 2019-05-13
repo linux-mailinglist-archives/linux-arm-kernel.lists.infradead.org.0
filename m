@@ -2,108 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D58D1BD1C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 20:21:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C610E1BD47
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 20:37:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gA0NhZj36O3PQrGv6t4oH4f2d88+LRnlhhV5AKdp3lU=; b=IQCxvO5UQEcs0B
-	YlObSCZRgi8cFcp/RYRdpKbYhcba4W/F2V4BHf1ZxdYuCh824s60Z9e39bLGQ3WD9lC7bCk3eWFOs
-	bXzYKRqdfovB5JFN7ADKxaNjqKXmPXMbn4NF6FGTFBGPtu+gBLAxDcH73aXUoWKuoehUNcx7wK7WJ
-	SI9rdTW5nGrlTNmx9yjSPXGJisq2sObMVNgW8h5UTLl6KPzDWq63cybddkZQm2nw+1hOjSiZdQ01R
-	t/au6xYf3Mqk6hLB+0Lzg01MV9+gqzU1qKmpZAs6mCWFPyuZtVhj8m/5+ukoyiuev4b5T4MFkSoMp
-	Mohw1nPBK7QgEWIDBBhA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sDdtwB3zf0tKKnNLHcmW2YV90X654ackeFgLGbcg+s0=; b=Z/i9KNnL0zih3m
+	IV7JpuJIenHMkRu6hxjpg0weEFWtum3lX50TbClDsMKoqZV5GnLQ5J3WvluTu10ozLWg41Oxu+Qhq
+	1ouFnf7cwLZlW55z55+v5Wy5z+/illsitB8ph2GmeY2vumyxqdJZwgZxC/M5mzy/8hUainEzlafJT
+	Bsg2Q53P0+OL5q6sOQOh+gyrrFMUtCcNtYaD6uM7aIaVEi0i1vsJoUr/0OfzJbFhDp1eeg8afGpXG
+	7t3W9xhLnyG3zDASXvP4gOR5EVBB9KUi2ZBBG6TI0nrhs3kUA1DHmJXfsFyC03CHXS0zZI3hOWLID
+	mS/kSw6ub4XV64lOqq9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQFa5-0003Y1-4Z; Mon, 13 May 2019 18:21:45 +0000
-Received: from mail-eopbgr730054.outbound.protection.outlook.com
- ([40.107.73.54] helo=NAM05-DM3-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQFZw-0003Wx-JM; Mon, 13 May 2019 18:21:37 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=micron.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8z+Mn+lb73jmCGFVT1Pk/z//+SLoGgNMe99zjJuR7Q8=;
- b=sK3HLb3cuMqVBE9El25ZGrDXGs/TS4n/FZylNfxPHNz3so9rU8hBeQh33WEzuBnrqp1esAIqYryOK/NnSvupWiMuuZFfXYdzU+ovwScyjPO/sPEhcCjocMx5bNKcrCW38IMpzcrxcYhDN/huxxtQmwrNdn2xKNPN4ul7h88pPjg=
-Received: from BN7PR08MB5684.namprd08.prod.outlook.com (20.176.31.141) by
- BN7PR08MB5537.namprd08.prod.outlook.com (20.176.29.80) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1878.25; Mon, 13 May 2019 18:21:23 +0000
-Received: from BN7PR08MB5684.namprd08.prod.outlook.com
- ([fe80::8d6c:f350:4859:e532]) by BN7PR08MB5684.namprd08.prod.outlook.com
- ([fe80::8d6c:f350:4859:e532%4]) with mapi id 15.20.1878.024; Mon, 13 May 2019
- 18:21:23 +0000
-From: "Bean Huo (beanhuo)" <beanhuo@micron.com>
-To: Stanley Chu <stanley.chu@mediatek.com>, "linux-scsi@vger.kernel.org"
- <linux-scsi@vger.kernel.org>, "martin.petersen@oracle.com"
- <martin.petersen@oracle.com>, "avri.altman@wdc.com" <avri.altman@wdc.com>,
- "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
- "pedrom.sousa@synopsys.com" <pedrom.sousa@synopsys.com>
-Subject: RE: [EXT] [PATCH v1 2/3] scsi: ufs: add error handling of auto-hibern8
-Thread-Topic: [EXT] [PATCH v1 2/3] scsi: ufs: add error handling of
- auto-hibern8
-Thread-Index: AQHVCZlJG8f+B7maOUSAPf/KvWjoI6ZpV6KQ
-Date: Mon, 13 May 2019 18:21:23 +0000
-Message-ID: <BN7PR08MB568438668FC7C90A1284F53DDB0F0@BN7PR08MB5684.namprd08.prod.outlook.com>
-References: <1557758186-18706-1-git-send-email-stanley.chu@mediatek.com>
- <1557758186-18706-3-git-send-email-stanley.chu@mediatek.com>
-In-Reply-To: <1557758186-18706-3-git-send-email-stanley.chu@mediatek.com>
-Accept-Language: en-150, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=beanhuo@micron.com; 
-x-originating-ip: [165.225.80.131]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 5e905364-6b9e-4550-d84d-08d6d7cfce30
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(7168020)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(2017052603328)(7193020);
- SRVR:BN7PR08MB5537; 
-x-ms-traffictypediagnostic: BN7PR08MB5537:|BN7PR08MB5537:
-x-microsoft-antispam-prvs: <BN7PR08MB553757C2B02303588760BB9EDB0F0@BN7PR08MB5537.namprd08.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4714;
-x-forefront-prvs: 0036736630
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(39860400002)(136003)(376002)(346002)(396003)(199004)(189003)(110136005)(99286004)(54906003)(229853002)(73956011)(9686003)(256004)(74316002)(66556008)(14444005)(66476007)(64756008)(66946007)(66446008)(2201001)(5660300002)(7416002)(4744005)(86362001)(7696005)(6506007)(76176011)(76116006)(4326008)(3846002)(6116002)(53936002)(66066001)(81166006)(81156014)(25786009)(102836004)(316002)(55016002)(8676002)(486006)(71200400001)(6436002)(52536014)(71190400001)(14454004)(55236004)(33656002)(11346002)(476003)(305945005)(2501003)(2906002)(68736007)(186003)(7736002)(446003)(8936002)(26005)(6246003)(478600001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BN7PR08MB5537;
- H:BN7PR08MB5684.namprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: micron.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 6A+z/BY7l3S1p8EMS/pDKFxtSp1S5N3L524N7fxBTRSZtpBL8ni0j6/BsDr1sy/RiY2qP5Gvo/2L/qYDvEx/PWg/fYNyQ6TG+/NZHVYeIXTz1GtmmZjGFKlkuLU5MyNpucxPWYgnR8CS2Il3koCZpdKvgrO04zoz07MORhN2C8/W7hLmI31PqqQpoodEhIaVtOt1Gm/0VYvQ2jKscAkeXITG940YgrysBSUNCd1lPa6rYBhWFF/YQBl1VA5G7IfCbUyQr61zJ9nlWXydACmC8vwRWodfpBhyfvkr5OSA7pneMXZxMWJQ8NrWHIsMJPFSeKRRI2+wKMa2r0I3nrvwJUH1r653QyGCIvSTsDbJYL/E/KwwZj3Gh1ir7CsYz7NFCxs5/3bfnyW4xz2NPsr19B63ePQgPDt2rpmzvBzxTlw=
+	id 1hQFpU-0000pq-Q8; Mon, 13 May 2019 18:37:40 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hQFpN-0000p5-GX
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 18:37:35 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 653B480D;
+ Mon, 13 May 2019 11:37:31 -0700 (PDT)
+Received: from [10.1.196.129] (ostrya.cambridge.arm.com [10.1.196.129])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0AE043F6C4;
+ Mon, 13 May 2019 11:37:29 -0700 (PDT)
+Subject: Re: [RFC] iommu: arm-smmu: stall support
+To: Rob Clark <robdclark@gmail.com>
+References: <20170914194444.32551-1-robdclark@gmail.com>
+ <20170919123038.GF8398@8bytes.org>
+ <CAF6AEGuutkqjrWk4jagE=p-NwHgxdiPZjjsaFsfwtczK568j+A@mail.gmail.com>
+ <20170922090204.GJ8398@8bytes.org>
+ <32e3ab2c-a996-c805-2a0d-a2e85deb3a50@arm.com>
+ <CAF6AEGuepdKo1Ob2jW66UhYXOTAqOMc3C-XKsK3Rze1QdLobLw@mail.gmail.com>
+From: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
+Message-ID: <571e825d-7f54-2da4-adc0-6b6ac6dae459@arm.com>
+Date: Mon, 13 May 2019 19:37:08 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-OriginatorOrg: micron.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5e905364-6b9e-4550-d84d-08d6d7cfce30
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 May 2019 18:21:23.5594 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: f38a5ecd-2813-4862-b11b-ac1d563c806f
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN7PR08MB5537
+In-Reply-To: <CAF6AEGuepdKo1Ob2jW66UhYXOTAqOMc3C-XKsK3Rze1QdLobLw@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_112136_696147_88908890 
-X-CRM114-Status: UNSURE (   4.89  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190513_113733_577293_1F3BB139 
+X-CRM114-Status: GOOD (  32.58  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.73.54 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -115,39 +67,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "marc.w.gonzalez@free.fr" <marc.w.gonzalez@free.fr>,
- "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
- "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
- "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
- "evgreen@chromium.org" <evgreen@chromium.org>,
- "subhashj@codeaurora.org" <subhashj@codeaurora.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
- "vivek.gautam@codeaurora.org" <vivek.gautam@codeaurora.org>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "sayalil@codeaurora.org" <sayalil@codeaurora.org>,
+Cc: "jacob.jun.pan@linux.intel.com" <jacob.jun.pan@linux.intel.com>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Will Deacon <Will.Deacon@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "eric.auger@redhat.com" <eric.auger@redhat.com>,
+ "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Stanley
+Hi Rob,
 
->+
->+static inline bool ufshcd_is_auto_hibern8_error(struct ufs_hba *hba,
->+						u32 intr_mask)
->+{
->+	return (ufshcd_is_auto_hibern8_supported(hba) &&
->+		!hba->uic_async_done &&
+On 10/05/2019 19:23, Rob Clark wrote:
+> On Fri, Sep 22, 2017 at 2:58 AM Jean-Philippe Brucker
+> <jean-philippe.brucker@arm.com> wrote:
+>>
+>> On 22/09/17 10:02, Joerg Roedel wrote:
+>>> On Tue, Sep 19, 2017 at 10:23:43AM -0400, Rob Clark wrote:
+>>>> I would like to decide in the IRQ whether or not to queue work or not,
+>>>> because when we get a gpu fault, we tend to get 1000's of gpu faults
+>>>> all at once (and I really only need to handle the first one).  I
+>>>> suppose that could also be achieved by having a special return value
+>>>> from the fault handler to say "call me again from a wq"..
+>>>>
+>>>> Note that in the drm driver I already have a suitable wq to queue the
+>>>> work, so it really doesn't buy me anything to have the iommu driver
+>>>> toss things off to a wq for me.  Might be a different situation for
+>>>> other drivers (but I guess mostly other drivers are using iommu API
+>>>> indirectly via dma-mapping?)
+>>>
+>>> Okay, so since you are the only user for now, we don't need a
+>>> work-queue. But I still want the ->resume call-back to be hidden in the
+>>> iommu code and not be exposed to users.
+>>>
+>>> We already have per-domain fault-handlers, so the best solution for now
+>>> is to call ->resume from report_iommu_fault() when the fault-handler
+>>> returns a special value.
+>>
+>> The problem is that report_iommu_fault is called from IRQ context by the
+>> SMMU driver, so the device driver callback cannot sleep.
+>>
+>> So if the device driver needs to be able to sleep between fault report and
+>> resume, as I understand Rob needs for writing debugfs, we can either:
+>>
+>> * call report_iommu_fault from higher up, in a thread or workqueue.
+>> * split the fault reporting as this patch proposes. The exact same
+>>   mechanism is needed for the vSVM work by Intel: in order to inject fault
+>>   into the guest, they would like to have an atomic notifier registered by
+>>   VFIO for passing down the Page Request, and a new function in the IOMMU
+>>   API to resume/complete the fault.
+>>
+> 
+> So I was thinking about this topic again.. I would still like to get
+> some sort of async resume so that I can wire up GPU cmdstream/state
+> logging on iommu fault (without locally resurrecting and rebasing this
+> patch and drm/msm side changes each time I need to debug iommu
+> faults)..
 
-Here check if uic_async_done is NULL, no big problem so far, but not safe enough.
-How about setting a flag in ufshcd_auto_hibern8_enable(),
+We've been working on the new fault reporting API with Jacob and Eric,
+and I intend to send it out soon. It is supposed to be used for
+reporting faults to guests via VFIO, handling page faults via mm, and
+also reporting events directly to device drivers. Please let us know
+what works and what doesn't in your case
 
-I concern about how to compatible with auto_hibern8 disabled condition.
+The most recent version of the patches is at
+http://www.linux-arm.org/git?p=linux-jpb.git;a=shortlog;h=refs/heads/sva/api
+(git://www.linux-arm.org/linux-jpb.git branch sva/api). Hopefully on the
+list sometimes next week, I'll add you on Cc.
 
+In particular, see commits
+	iommu: Introduce device fault data
+	iommu: Introduce device fault report API
+	iommu: Add recoverable fault reporting
 
-//Bean
+The device driver calls iommu_register_device_fault_handler(dev, cb,
+data). To report a fault, the SMMU driver calls
+iommu_report_device_fault(dev, fault). This calls into the device driver
+directly, there isn't any workqueue. If the fault is recoverable (the
+SMMU driver set type IOMMU_FAULT_PAGE_REQ rather than
+IOMMU_FAULT_DMA_UNRECOV), the device driver calls iommu_page_response()
+once it has dealt with the fault (after sleeping if it needs to). This
+invokes the SMMU driver's resume callback.
+
+At the moment we use mutexes, so iommu_report_device_fault() can only be
+called from an IRQ thread, which is incompatible with the current SMMUv2
+driver. Either we need to switch the SMMUv2 driver to an IRQ thread, or
+rework the fault handler to be called from an IRQ handler. The reporting
+also has to be per device rather than per domain, and I'm not sure if
+the SMMUv2 driver can deal with this.
+
+> 
+> And I do still prefer the fault cb in irq (or not requiring it in
+> wq)..  but on thinking about it, the two ideas aren't entirely
+> conflicting, ie. add some flags either when we register handler[1], or
+> they could be handled thru domain_set_attr, like:
+> 
+>  _EXPLICIT_RESUME - iommu API user calls iommu_domain_resume(),
+> potentialy from wq/thread after fault handler returns
+>  _HANDLER_SLEEPS  - iommu core handles the wq, and calls ops->resume()
+> internally
+> 
+> In both cases, from the iommu driver PoV it just implements
+> iommu_ops::resume().. in first case it is called via iommu user either
+> from the fault handler or at some point later (ie. wq or thread).
+> 
+> I don't particularly need the _HANDLER_SLEEPS case (unless I can't
+> convince anyone that iommu_domamin_resume() called from outside iommu
+> core is a good idea).. so probably I wouldn't wire up the wq plumbing
+> for the _HANDLER_SLEEPS case unless someone really wanted me to.
+> 
+> Since there are more iommu drivers, than places that register fault
+> handlers, I like the idea that in either case, from the driver PoV, it
+> is just implementing the resume callback.
+> 
+> [1] currently I only see a few places where fault handlers are
+> registered, so changing iommu_set_fault_handler() is really not much
+> churn
+
+At the moment we're keeping the new fault reporting mechanism separate
+from iommu_set_fault_handler()/report_iommu_fault(), to ease the transition.
+
+Thanks,
+Jean
 
 _______________________________________________
 linux-arm-kernel mailing list
