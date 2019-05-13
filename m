@@ -2,87 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33F331B375
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 11:58:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD9A61B37B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 11:59:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uNYxC/oqpbY2jHP7CKoCMYoLVw/Xd1IejOe8sm+wAf0=; b=n6L65BgKPRIhhl
-	L5QsJFI07dt6Ykb5200fJ2Ok4vLpnVX/GEv67Vx+vTBh3UQ+aFPsKC1HkCUBE5LJClhhPgni3SrRc
-	pksi4yWVAJ1y+/MFc5hrbiCr4+HKAZNksthRlxQYej5hO4Jzhck42hwb1+Rx4yAL2fkm+F4+Uss15
-	FXnqGE3Ln4yBYpGEs9oJngkKczQ9EhF4Dy5eo55OmrN6HcQ3EFehssDuMkwdJrBRKObZloN2oyzMn
-	6d9wM9QwIbqrAEVhwFeVgYsU9jfLhcsR5+yQdDa+OLDUllhaauAOgp4UDulkDu5FKgBytiJrWJO2C
-	1d1lfagCgFWjRLTPxKCw==;
+	List-Owner; bh=5u+6U9m5rWCTepEUIZt7ePaDCcLp639SbJnEUEdlIR4=; b=jqV6Pfk8vIIArs
+	WrlhAOrzJtpK1bSmyDNWBlyUxEpMjmrCCTI0BcGsko7UAglCRyE6GtGMGT8vLjCTaTD6MTQ004YOj
+	3FbGAV7yvlpRmEvyj8YNve253Bkoev29fZxCDL5LAoGU9awFV7AzHxGK1FFeSGN0UCfIwluLNceyu
+	N4NakyJKEZhWiyW2uiqUbXjh7MA8aGAE+vDzkDGZs8OuGlB1ItyTs39CkhAzSuco3re4jEj835JQH
+	gLktNJP1p87tkRnJuvKTwO73QKjj9TRV/MhCVwJd4XAWoBchcWh5grLxd0E5vNZL2xb4ZH2DiqHDB
+	DtFQfrN3FY7cKq+r5ZwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQ7jT-0005P1-Bd; Mon, 13 May 2019 09:58:55 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hQ7kC-0005kE-IZ; Mon, 13 May 2019 09:59:40 +0000
+Received: from relay12.mail.gandi.net ([217.70.178.232])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQ7jK-0005No-Nk
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 09:58:48 +0000
-Received: by mail-wm1-x342.google.com with SMTP id o189so13205740wmb.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 May 2019 02:58:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=message-id:subject:from:to:cc:date:in-reply-to:references
- :user-agent:mime-version:content-transfer-encoding;
- bh=7fofqNxbQms2+HwADe45aBmqLLu1PHLRYhgcawTMF5w=;
- b=rQAsUxmbSNHpYELYa3AtXHTF6H7uSGcX5KB+iChn/ZAVb0g/ZeOTsHlGShNFrlLZCe
- MsGrQZSIoDohYhzAiN9zHefJuQ5UgARlg4i7PumliY2Ge/B+uuz2yxm4lx+2PH1nPhFd
- kz0upbi1NVh8VVQR8YwOl1lPPbTijccu4HH8iqIcIFEOO4EqbwOzIWHP8adzzInNZXn/
- kuAX1Q5CaEfBLhfUEaQ52E3Np48thKKulmTGe1LYKuWltClc9Orvk4xYcSD5R3NMxUmx
- y6aenVmacBl2X1KO/9TB2i9lVBm8KpUU2ffcGwU/Gd6pzJoVfpOvfp1ivTELyYNTXI1H
- e4XA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:subject:from:to:cc:date:in-reply-to
- :references:user-agent:mime-version:content-transfer-encoding;
- bh=7fofqNxbQms2+HwADe45aBmqLLu1PHLRYhgcawTMF5w=;
- b=uW05JWjlzBXzq9j6Jjy4X7SmeWBADnUAb5evTWh3UTYcqaTym9UFq4tcRLsv9T6Z3d
- 2gKCd7ewKruiCo0yZ1Rr/JwvQhsHx2WlxuuOYttuaNLDWK1QP6V6KZlh5bVX4ACEbp5I
- eK+x7DjL8ZmiZtm4FF9jjke64RUB3XoVAGLzCJM8zZG0oBlAQMcfUMKxbERzEwBrmuTq
- MjAm4z6jwt3G5bg4CEEsCHAmBLB/2CLLg727dgrkxKq1I9oyUEc0XO75F1mS9Z3af0Y2
- GmTk0S+Y6nPiVWX+NW9eZEMse3PPLteWr9LoY2SrvMeUP/zgOfymbKBJmnPGCkBwnQxB
- QKhA==
-X-Gm-Message-State: APjAAAUGaN6CPkC1N5mqYiAqO0psLwOsbqoszZ5Jp2awXDTEj8N26pxa
- 8+gEPGqpRTnEGdmSFzg2I9S4Ag==
-X-Google-Smtp-Source: APXvYqyYDFbeqT3rRqew9EDTgcLF2uXw3708KjlbLJNd9je1Y3K8HdRrkDcoqgCgDXK3+kEnUnabKw==
-X-Received: by 2002:a1c:f205:: with SMTP id s5mr14236365wmc.131.1557741525070; 
- Mon, 13 May 2019 02:58:45 -0700 (PDT)
-Received: from boomer.baylibre.com
- (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id c130sm29316546wmf.47.2019.05.13.02.58.43
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 13 May 2019 02:58:44 -0700 (PDT)
-Message-ID: <24b8cd2eb2879378ca0cac6ddfd9c5cae68699bc.camel@baylibre.com>
-Subject: Re: [PATCH 0/3] mmc: meson-gx: add ddr-access-quirk support
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Neil Armstrong <narmstrong@baylibre.com>, ulf.hansson@linaro.org, 
- khilman@baylibre.com
-Date: Mon, 13 May 2019 11:58:43 +0200
-In-Reply-To: <20190513091548.16674-1-narmstrong@baylibre.com>
-References: <20190513091548.16674-1-narmstrong@baylibre.com>
-User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
+ id 1hQ7k5-0005js-4T
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 09:59:34 +0000
+Received: from localhost (unknown [80.215.106.0])
+ (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id 5012F200006;
+ Mon, 13 May 2019 09:59:16 +0000 (UTC)
+Date: Mon, 13 May 2019 11:59:16 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Uenal Mutlu <um@mutluit.com>
+Subject: Re: [RFC PATCH v2 RESEND] drivers: ata: ahci_sunxi: Increased
+ SATA/AHCI DMA TX/RX FIFOs
+Message-ID: <20190513095916.yyjdtueeefkf4v4b@flea>
+References: <20190512205954.18435-1-um@mutluit.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190512205954.18435-1-um@mutluit.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_025846_774077_743949EE 
-X-CRM114-Status: GOOD (  18.81  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190513_025933_327941_35AB2EB5 
+X-CRM114-Status: GOOD (  16.55  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.232 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,51 +60,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: baylibre-upstreaming@groups.io, linux-amlogic@lists.infradead.org,
- linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Jens Axboe <axboe@kernel.dk>, Mark Rutland <mark.rutland@arm.com>,
+ Hans de Goede <hdegoede@redhat.com>, Oliver Schinagl <oliver@schinagl.nl>,
+ Andre Przywara <andre.przywara@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-sunxi@googlegroups.com,
+ FUKAUMI Naoki <naobsd@gmail.com>, linux-kernel@vger.kernel.org,
+ linux-ide@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ Jagan Teki <jagan@amarulasolutions.com>,
+ Pablo Greco <pgreco@centosproject.org>, linux-amarula@amarulasolutions.com,
+ linux-arm-kernel@lists.infradead.org,
+ Stefan Monnier <monnier@iro.umontreal.ca>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2019-05-13 at 11:15 +0200, Neil Armstrong wrote:
-> On the Amlogic G12A SoC family, (only) the SDIO controller fails to access
-> the data from DDR, leading to a broken controller.
-> 
-> Add the amlogic,ddr-access-quirk property so signal this particular
-> controller has this bug and needs a quirk to work properly.
-> 
-> But each MMC controller has 1,5KiB of SRAM after the registers, that can
-> be used as bounce buffer to avoid direct DDR access from the integrated
-> DMAs (this SRAM may be used by the boot ROM when DDR is not yet initialized).
-> 
-> The quirk is to disable the chained descriptor for this controller, and
-> use this SRAM memory zone as buffer for the bounce buffer fallback mode.
-> 
-> The performance hit hasn't been evaluated, but the fix has been tested
-> using a WiFi AP6398S SDIO module, and the iperf3 Bandwidth measurement gave
-> 55.2 Mbits/sec over a 63 Hours long test, with the SDIO ios set as High-Speed
-> at 50MHz clock. It gave around 170 Mbits/sec as SDR104 and 200MHz clock.
+Hi,
 
-These numbers looks to be limited by the MMC bandwidth of the related modes.
-So, if the SRAM quirk introduce a penalty for the controller, it does not appear
-to be a limiting factor, AFAICT.
+On Sun, May 12, 2019 at 10:59:54PM +0200, Uenal Mutlu wrote:
+> Increasing the SATA/AHCI DMA TX/RX FIFOs (P0DMACR.TXTS and .RXTS, ie.
+> TX_TRANSACTION_SIZE and RX_TRANSACTION_SIZE) from default 0x0 each
+> to 0x3 each, gives a write performance boost of 120 MiB/s to 132 MiB/s
+> from lame 36 MiB/s to 45 MiB/s previously.
+> Read performance is about 200 MiB/s.
+> [tested on SSD using dd bs=2K/4K/8K/12K/16K/24K/32K: peak-perf at 12K].
+>
+> Tested on the Banana Pi R1 (aka Lamobo R1) and Banana Pi M1 SBCs
+> with Allwinner A20 32bit-SoCs (ARMv7-a / arm-linux-gnueabihf).
+> These devices are RaspberryPi-like small devices.
+>
+> This problem of slow SATA write-speed with these small devices lasts now
+> for more than 5 years. Many commentators throughout the years wrongly
+> assumed the slow write speed was a hardware limitation. This patch finally
+> solves the problem, which in fact was just a hard-to-fix software problem
+> (b/c of lack of documentation by the SoC-maker Allwinner Technology).
+>
+> RFC: Since more than about 25 similar SBC/SoC models do use the
+> ahci_sunxi driver, users are encouraged to test it on all the
+> affected boards and give feedback.
+>
+> Lists of the affected sunxi and other boards and SoCs with SATA using
+> the ahci_sunxi driver:
+>   $ grep -i -e "^&ahci" arch/arm/boot/dts/sun*dts
+>   and http://linux-sunxi.org/SATA#Devices_with_SATA_ports
+>   See also http://linux-sunxi.org/Category:Devices_with_SATA_port
+>
+> Patch v2:
+>   - Commented the patch in-place in ahci_sunxi.c
+>   - With bs=12K and no conv=... passed to dd, the write performance
+>     rises further to 132 MiB/s
+>   - Changed MB/s to MiB/s
+>   - Posted the story behind the patch:
+>     http://lkml.iu.edu/hypermail/linux/kernel/1905.1/03506.html
+>   - Posted a dd test script to find optimal bs, and some results:
+>     https://bit.ly/2YoOzEM
+>
+> Patch v1:
+>   - States bs=4K for dd and a write performance of 120 MiB/s
+>
+> Signed-off-by: Uenal Mutlu <um@mutluit.com>
 
-> 
-> Neil Armstrong (3):
->   dt-bindings: mmc: meson-gx: add ddr-access-quirk property
->   mmc: meson-gx: add ddr-access-quirk
->   arm64: dts: meson-g12a: add ddr-access-quirk property to SDIO
->     controller
-> 
->  .../bindings/mmc/amlogic,meson-gx.txt         |  4 ++
->  arch/arm64/boot/dts/amlogic/meson-g12a.dtsi   |  1 +
->  drivers/mmc/host/meson-gx-mmc.c               | 65 +++++++++++++++----
->  3 files changed, 57 insertions(+), 13 deletions(-)
-> 
+Acked-by: Maxime Ripard <maxime.ripard@bootlin.com>
 
+Just a minor nitpick though, the part starting with RFC: and with the
+version changelog should be after the --- below so that it doesn't get
+applied as part of the commit log.
 
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
