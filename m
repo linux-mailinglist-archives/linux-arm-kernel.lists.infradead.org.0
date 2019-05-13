@@ -2,92 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A26B1AF40
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 05:59:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 229521AF4B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 06:19:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6Q/zyMmE3L8psu3tyZY5QqM2zQvrqcxfTAjDZoA2aZc=; b=Z5pEp7OdjOWoDs
-	+Q/hXSJoJ9lgOLkLy1561dsvWoIqMfBxzZv5cq8uXW6IVHdfZzvd0e4NgdOejVXZWLBoQKVUrO2nx
-	/RsTeg2Eib7BpEuE6Y7cK3tX0Y4yM366gNC8L+lOwMP8nEkrqeXHdI/47TNLvqSFFcw6L3fOkoakl
-	bF290QcEYtHraaX3y8BB+9ljOPB1IMq/ynKQQ4F4KLlUSlwttAEj9/yYKOiqiRc/QXTcMqx/f+O3a
-	M25OHUU6WinSy/Ws2JQPvsoQn9Qg4SyEDfVirpvaJaTNw8YDeA1UhlPk7F9FFCQ5uKgAhzqSOb3+D
-	fd8cahmYecQZmzhQJueQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hHUwqhebRdD0VVyxAQ4iYqr1vMXw/RJ14dE+8gTFx6o=; b=ERA40Y3zsGko+C
+	0ZaS6+d2lTXte9huSqQ/TG1Vjt40NrqifHykJpXw3Qu3UsddQ6gaUiOQ1c/jsc+jwEW11c7Na9VG5
+	ztDEpua5mdOlkiMm065G9JZ478VHmA+XMdDP5UnUxut1wOGJHwTYyy89S1FsY04LCI4zTz0UWbDMM
+	ckobEbXySqe20OLzj1RoGhlM3hoo+hMYZiy+RGrCuZ7CvLL58nuSQewUt8Y8TS2NBnBNhjq24s1S4
+	9fr837vB1Y6zCX74VNhQJ0g35lLLzB8/NrDr13n6Z78LADUzvmQTQOHSxlEM3re/ld7Ym+rnG9i8B
+	iPkskZtitfdrc0PCQHGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQ27o-00034X-PI; Mon, 13 May 2019 03:59:40 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hQ2QS-0000ZS-8X; Mon, 13 May 2019 04:18:56 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQ27Y-0002xf-MF
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 03:59:26 +0000
-Received: by mail-pl1-x644.google.com with SMTP id n8so5739894plp.10
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 12 May 2019 20:59:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=F9QBOZtjHD3cvSHL8seit1ng6gf/KXanf0uSnR0dfOI=;
- b=Xsc1FqfBOwy8bGWszVKy9eKAwN5fabSOCsyoyESVpaOJllyh8NWqBLwEigRo5L6Gtn
- wnb/SLFTaPG3x0thYFka1ag/hw90I2iQSYo1tCuJb0mYPJNTIYFSg5syIRtkVDnh0+Ks
- hv4eR4HqATvnVpOU7qQDzFp08ohYrnZgo+qG0ePDL/DHYcKUBRYk3SXaW+QN1woNIJwP
- EXajKe5rRQyjIAHLrHRsi/XrFzAZoUdydcKzsAmBD92wZUZHl8ZXTuymRneC32JNt1Fy
- 5mSmrZ/GgTiyehLHkwbi1YgJeNTUe+5fhjZYdGLnyQFK+czO+4hqdpQKehFWymF2giup
- 215Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=F9QBOZtjHD3cvSHL8seit1ng6gf/KXanf0uSnR0dfOI=;
- b=BQqbDKjNqGRWiFfUaDe7ul8QsU4x/K98MtpKslA867beyNr4hsLplknvqy1ApD6GXW
- M7Ilo4Cm3f19CXwNngMdd8rZ5IXt3dUJL5YqyjiS16lQzWle7ykXbX+Q1h7UuJkvM6wC
- wboj3zyc8+VMUNdDWrWp11ciBLBjaWQvgjme6P6SaR1OjVhV4KanUI9DuLZmwAT67fjb
- +m5+NjSBFsWsVlZD6UH0YzTw+bGITIBICUoeKKyj5E/hVQSfdPPlaTiRup4fQoeLaBFS
- 6bqR7sj6E1p/He9D/X+Gp+1xMyMH8Q0b6aksYHAJ6U4Y28e8Wkm6fj9mK1rhOTeDyDYi
- qqNA==
-X-Gm-Message-State: APjAAAXqkjLjc3w3aXQ2W2/3SkZfIiizwqh5dycWpPXokZIFa2CmWEC/
- IIOAHbfj2xzytDVe9hHZ/vY=
-X-Google-Smtp-Source: APXvYqyNX8YPKfwxKwTXESwWJea0905IwBlPHwMrvpJrp5+E3xFtZK2791xVKS08UbaHHZOStnse3g==
-X-Received: by 2002:a17:902:a405:: with SMTP id
- p5mr23101195plq.51.1557719963804; 
- Sun, 12 May 2019 20:59:23 -0700 (PDT)
-Received: from localhost.lan (c-24-22-235-96.hsd1.wa.comcast.net.
- [24.22.235.96])
- by smtp.gmail.com with ESMTPSA id i17sm16042496pfo.103.2019.05.12.20.59.22
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 12 May 2019 20:59:23 -0700 (PDT)
-From: Andrey Smirnov <andrew.smirnov@gmail.com>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH 2/2] ARM: dts: vf610-zii-dev: Add QSPI node
-Date: Sun, 12 May 2019 20:59:09 -0700
-Message-Id: <20190513035909.30460-2-andrew.smirnov@gmail.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190513035909.30460-1-andrew.smirnov@gmail.com>
-References: <20190513035909.30460-1-andrew.smirnov@gmail.com>
+ id 1hQ2QK-0000Z0-O9
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 04:18:50 +0000
+Received: from DGGEMS403-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 8E3DD6189E32D9974D90;
+ Mon, 13 May 2019 12:18:33 +0800 (CST)
+Received: from HGHY2Y004646261.china.huawei.com (10.184.12.158) by
+ DGGEMS403-HUB.china.huawei.com (10.3.19.203) with Microsoft SMTP Server id
+ 14.3.439.0; Mon, 13 May 2019 12:18:23 +0800
+From: Zenghui Yu <yuzenghui@huawei.com>
+To: <marc.zyngier@arm.com>, <andre.przywara@arm.com>, <eric.auger@redhat.com>, 
+ <drjones@redhat.com>
+Subject: [RFC PATCH] irqchip/gic-v3: Correct the usage of GICD_CTLR's RWP field
+Date: Mon, 13 May 2019 04:15:54 +0000
+Message-ID: <1557720954-6592-1-git-send-email-yuzenghui@huawei.com>
+X-Mailer: git-send-email 2.6.4.windows.1
 MIME-Version: 1.0
+X-Originating-IP: [10.184.12.158]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190512_205924_727224_E0FB3160 
-X-CRM114-Status: GOOD (  14.12  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190512_211849_014949_78D9C117 
+X-CRM114-Status: GOOD (  12.52  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (andrew.smirnov[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -99,96 +62,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Andrey Smirnov <andrew.smirnov@gmail.com>,
- linux-kernel@vger.kernel.org, Chris Healy <cphealy@gmail.com>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: jason@lakedaemon.net, linux-kernel@vger.kernel.org,
+ Zenghui Yu <yuzenghui@huawei.com>, wanghaibin.wang@huawei.com,
+ tglx@linutronix.de, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Both rev C and rev B of the board come with two QSPI-NOR chips
-attached to the SoC. Add DT code describing all of this.
+As per ARM IHI 0069D, GICD_CTLR's RWP field tracks updates to:
 
-Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
-Cc: Shawn Guo <shawnguo@kernel.org>
-Cc: Chris Healy <cphealy@gmail.com>
-Cc: Andrew Lunn <andrew@lunn.ch>
-Cc: Fabio Estevam <festevam@gmail.com>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
+	GICD_CTLR's Group Enable bits, for transitions from 1 to 0 only
+	GICD_CTLR's ARE bits, E1NWF bit and DS bit (if we have)
+	GICD_ICENABLER<n>
+
+We seemed use this field in an inappropriate way, somewhere in the
+GIC-v3 driver. For some examples:
+
+In gic_set_affinity(), if the interrupt was not enabled, we only need
+to write GICD_IROUTER<n> with the appropriate mpidr value. Updates to
+GICD_IROUTER will not be tracked by RWP field, and we can remove the
+unnecessary RWP waiting.
+
+In gic_dist_init(), we "Enable distributor with ARE, Group1" by writing
+to GICD_CTLR, and we should use gic_dist_wait_for_rwp() here.
+
+These two are obvious cases, and there are some other cases where we don't
+need to do RWP waiting, such as in gic_configure_irq() and gic_poke_irq().
+But too many modifications makes me not confident. It's hard for me to say
+whether this patch is doing the right thing and how does the RWP waiting
+affect the system, thus RFC.
+
+Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
 ---
- arch/arm/boot/dts/vf610-zii-dev.dtsi | 48 ++++++++++++++++++++++++----
- 1 file changed, 42 insertions(+), 6 deletions(-)
+ drivers/irqchip/irq-gic-v3.c | 8 ++------
+ 1 file changed, 2 insertions(+), 6 deletions(-)
 
-diff --git a/arch/arm/boot/dts/vf610-zii-dev.dtsi b/arch/arm/boot/dts/vf610-zii-dev.dtsi
-index 5246c75e848c..f63a470f78ce 100644
---- a/arch/arm/boot/dts/vf610-zii-dev.dtsi
-+++ b/arch/arm/boot/dts/vf610-zii-dev.dtsi
-@@ -177,6 +177,36 @@
- 	status = "okay";
- };
+diff --git a/drivers/irqchip/irq-gic-v3.c b/drivers/irqchip/irq-gic-v3.c
+index 15e55d3..8d63950 100644
+--- a/drivers/irqchip/irq-gic-v3.c
++++ b/drivers/irqchip/irq-gic-v3.c
+@@ -600,6 +600,7 @@ static void __init gic_dist_init(void)
+ 	/* Enable distributor with ARE, Group1 */
+ 	writel_relaxed(GICD_CTLR_ARE_NS | GICD_CTLR_ENABLE_G1A | GICD_CTLR_ENABLE_G1,
+ 		       base + GICD_CTLR);
++	gic_dist_wait_for_rwp();
  
-+&qspi0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_qspi0>;
-+	status = "okay";
-+
-+	/*
-+	 * Attached MT25QL02 can go up to 90Mhz in DTR and 166 in SDR
-+	 * modes, so we limit spi-max-frequency to 90Mhz
-+	 */
-+	flash@0 {
-+		compatible = "jedec,spi-nor";
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		spi-max-frequency = <90000000>;
-+		spi-rx-bus-width = <4>;
-+		reg = <0>;
-+		m25p,fast-read;
-+	};
-+
-+	flash@2 {
-+		compatible = "jedec,spi-nor";
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		spi-max-frequency = <90000000>;
-+		spi-rx-bus-width = <4>;
-+		reg = <2>;
-+		m25p,fast-read;
-+	};
-+};
-+
- &uart0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_uart0>;
-@@ -360,12 +390,18 @@
+ 	/*
+ 	 * Set all global interrupts to the boot CPU only. ARE must be
+@@ -986,14 +987,9 @@ static int gic_set_affinity(struct irq_data *d, const struct cpumask *mask_val,
  
- 	pinctrl_qspi0: qspi0grp {
- 		fsl,pins = <
--			VF610_PAD_PTD7__QSPI0_B_QSCK	0x31c3
--			VF610_PAD_PTD8__QSPI0_B_CS0	0x31ff
--			VF610_PAD_PTD9__QSPI0_B_DATA3	0x31c3
--			VF610_PAD_PTD10__QSPI0_B_DATA2	0x31c3
--			VF610_PAD_PTD11__QSPI0_B_DATA1	0x31c3
--			VF610_PAD_PTD12__QSPI0_B_DATA0	0x31c3
-+			VF610_PAD_PTD0__QSPI0_A_QSCK	0x38c2
-+			VF610_PAD_PTD1__QSPI0_A_CS0	0x38c2
-+			VF610_PAD_PTD2__QSPI0_A_DATA3	0x38c3
-+			VF610_PAD_PTD3__QSPI0_A_DATA2	0x38c3
-+			VF610_PAD_PTD4__QSPI0_A_DATA1	0x38c3
-+			VF610_PAD_PTD5__QSPI0_A_DATA0	0x38c3
-+			VF610_PAD_PTD7__QSPI0_B_QSCK	0x38c2
-+			VF610_PAD_PTD8__QSPI0_B_CS0	0x38c2
-+			VF610_PAD_PTD9__QSPI0_B_DATA3	0x38c3
-+			VF610_PAD_PTD10__QSPI0_B_DATA2	0x38c3
-+			VF610_PAD_PTD11__QSPI0_B_DATA1	0x38c3
-+			VF610_PAD_PTD12__QSPI0_B_DATA0	0x38c3
- 		>;
- 	};
+ 	gic_write_irouter(val, reg);
+ 
+-	/*
+-	 * If the interrupt was enabled, enabled it again. Otherwise,
+-	 * just wait for the distributor to have digested our changes.
+-	 */
++	/* If the interrupt was enabled, enabled it again. */
+ 	if (enabled)
+ 		gic_unmask_irq(d);
+-	else
+-		gic_dist_wait_for_rwp();
+ 
+ 	irq_data_update_effective_affinity(d, cpumask_of(cpu));
  
 -- 
-2.21.0
+1.8.3.1
+
 
 
 _______________________________________________
