@@ -2,57 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ABA7A1BBA5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 19:18:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E41781BBAD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 19:19:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fHq7aFIp3jakSsSM5j6ragz3Adsg2rt9BzskdPe5TpQ=; b=JvREe3lOgV7NSv
-	NCzo4SOwKcJZMZe5g+ncBwVR52MnasEpx+lbAFH+DspGxJ2WC9rmWBjMLKi8P/fqoJEpjSNV5D+jE
-	Bzg+bmQjO7T7SWTsfwe6QyqpTWSE7/IBfJToN1O+LghrXkbvBCOvUWYp+Oee6KWNOL+Nnyzg5eI2o
-	1vIyVaJS6oEGeCxHy2L0kDOwygp+C6EQHpiHVqWiKTgl7Wpgdgu0Ue7ZkRPYOFTDQemrXg0CIrOek
-	AgI+uiF2iLrLEUPs60pvQ22BuzmqBqt62TCwNuYEXsJrSzUZYmMIbB8a3HHNt8h/81tV9dpg9VDA8
-	PCeXkgydKnYwsW05gObw==;
+	List-Owner; bh=VLKR9iJ0pITP4D6QP4C245rpyVuxfcEQG+D3IY+gHG0=; b=AAuqvhfFFWiFTb
+	s2O1GLPLu18xV3G61QMgLABn9DMujEEhmTZCwjf6txJbCOrBF8aRO+PpfkteOQTnraxQqNuUQ9d9N
+	3/+e0KsjkIjvvDjKDnSZzA0OmEhhMN3o5IS5s1nZbUxg1DQLCgQBrOcFpnO3BsesHTJwP+PWxn9Lv
+	Ar+1n+oKmiwnS9WtecAIT1lNgrCWDrOG426RqAQ+rc3pMHexF2REOFAs72CceHTSo9Fu2g7TG2ocs
+	03XB4zvmqI87xY6Iyv8QDpYt2pYHdK78ZnliBGuvpJbs14R3qczajv2KqIlBfqOs13b6ZB4Euo57k
+	RIsa/Kei9d7ZcYjZ3Ftg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQEbF-0001Uh-E4; Mon, 13 May 2019 17:18:53 +0000
-Received: from relay1.mentorg.com ([192.94.38.131])
+	id 1hQEbt-0001ns-5z; Mon, 13 May 2019 17:19:33 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQEb6-0001U5-QK
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 17:18:46 +0000
-Received: from svr-orw-mbx-01.mgc.mentorg.com ([147.34.90.201])
- by relay1.mentorg.com with esmtps (TLSv1.2:ECDHE-RSA-AES256-SHA384:256)
- id 1hQEat-0003zZ-7u from George_Davis@mentor.com ;
- Mon, 13 May 2019 10:18:31 -0700
-Received: from localhost (147.34.91.1) by svr-orw-mbx-01.mgc.mentorg.com
- (147.34.90.201) with Microsoft SMTP Server (TLS) id 15.0.1320.4; Mon, 13 May
- 2019 10:18:28 -0700
-Date: Mon, 13 May 2019 13:18:27 -0400
-From: "George G. Davis" <george_davis@mentor.com>
-To: Fabio Estevam <festevam@gmail.com>, <stable@vger.kernel.org>
-Subject: Re: [PATCH v3] ARM: dts: imx: Fix the AR803X phy-mode
-Message-ID: <20190513171826.GA18591@mam-gdavis-lt>
-References: <20190403221241.4753-1-festevam@gmail.com>
+ id 1hQEbm-0001mx-3I
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 17:19:27 +0000
+Received: by mail-ot1-f66.google.com with SMTP id g8so12495993otl.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 13 May 2019 10:19:24 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=gxg55zJpNlVm2nYvWvCM959D+KA++JweeXldKs1l7XI=;
+ b=fWXNSn2654pJgKQgcj0xgqwcpgVwjrbvtnVgO+TJfPASDLkJ6SPwF9mxA2FbsKIPDd
+ YJ3PORsOjMMPmkWFtvJhIb5c2DwbgyoDwY7fgbQ7A0jUljC6CqwpKI6Fkx39nUem1A/a
+ q3r0/SHOA4Nv1PrYQagQmscvmWkZixtQ7BaSjEcERNHyetan9HVxHvRJ8a+wj4xegCFd
+ EZ8txwV/vBtyJgXp0SM//xtsO42U4aonYD19vlfVo4gWY0WhkaFdLvbyP+bkI7i+kURi
+ BwHdgJHKWFJghd9UwFLnquQXRYjN1HP4C0qitRrFJRhNSQTYQT9iXbHcRav/tTj+6vRI
+ DP1Q==
+X-Gm-Message-State: APjAAAUg+RyiynPCC3ebjXZfn5SLPv33Fz0upQl6QisFWOP7828H94Hc
+ wpATN6m20rk0y8rDhELAjg==
+X-Google-Smtp-Source: APXvYqx7PhGUwDZEi+8Vj6jS0VwAlzO0fyOLufMf85clsIBI268PujGqMZ25iGzjREBsER4YemD1fg==
+X-Received: by 2002:a05:6830:11ce:: with SMTP id
+ v14mr15390493otq.184.1557767964113; 
+ Mon, 13 May 2019 10:19:24 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id g84sm5482087oia.31.2019.05.13.10.19.22
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 13 May 2019 10:19:23 -0700 (PDT)
+Date: Mon, 13 May 2019 12:19:22 -0500
+From: Rob Herring <robh@kernel.org>
+To: Fabien Dessenne <fabien.dessenne@st.com>
+Subject: Re: [PATCH v3 2/8] dt-bindings: remoteproc: add bindings for stm32
+ remote processor driver
+Message-ID: <20190513171922.GA25458@bogus>
+References: <1556784606-3016-1-git-send-email-fabien.dessenne@st.com>
+ <1556784606-3016-3-git-send-email-fabien.dessenne@st.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190403221241.4753-1-festevam@gmail.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-ClientProxiedBy: svr-orw-mbx-03.mgc.mentorg.com (147.34.90.203) To
- svr-orw-mbx-01.mgc.mentorg.com (147.34.90.201)
+In-Reply-To: <1556784606-3016-3-git-send-email-fabien.dessenne@st.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_101844_874743_A657156F 
-X-CRM114-Status: GOOD (  21.24  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190513_101926_144533_31B32942 
+X-CRM114-Status: GOOD (  23.05  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [192.94.38.131 listed in list.dnswl.org]
+ no trust [209.85.210.66 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -64,258 +93,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andrew@lunn.ch, baruch@tkos.co.il, aford173@gmail.com,
- ken.lin@advantech.com, smoch@web.de, stwiss.opensource@diasemi.com,
- linux-imx@nxp.com, kernel@pengutronix.de,
- Marc Kleine-Budde <mkl@pengutronix.de>, shawnguo@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Ohad Ben-Cohen <ohad@wizery.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Loic Pallardy <loic.pallardy@st.com>, devicetree@vger.kernel.org,
+ Arnaud Pouliquen <arnaud.pouliquen@st.com>, linux-remoteproc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Ludovic Barre <ludovic.barre@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ Benjamin Gaignard <benjamin.gaignard@st.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
-
-On Wed, Apr 03, 2019 at 07:12:41PM -0300, Fabio Estevam wrote:
-> Commit 6d4cd041f0af ("net: phy: at803x: disable delay only for RGMII mode")
-> exposed an issue on imx DTS files using AR8031/AR8035 PHYs.
+On Thu, May 02, 2019 at 10:10:00AM +0200, Fabien Dessenne wrote:
+> Add the device tree bindings document for the stm32 remoteproc devices.
 > 
-> The end result is that the boards can no longer obtain an IP address
-> via UDHCP, for example.
-> 
-> Quoting Andrew Lunn:
-> 
-> "The problem here is, all the DTs were broken since day 0. However,
-> because the PHY driver was also broken, nobody noticed and it
-> worked. Now that the PHY driver has been fixed, all the bugs in the
-> DTs now become an issue"
-> 
-> To fix this problem, the phy-mode property needs to be "rgmii-id",  which
-> has the following meaning as per 
-> Documentation/devicetree/bindings/net/ethernet.txt:
-> 
-> "RGMII with internal RX and TX delays provided by the PHY, the MAC should
-> not add the RX or TX delays in this case)"
-> 
-> Tested on imx6-sabresd, imx6sx-sdb and imx7d-pico boards with
-> successfully restored networking.
-> 
-> Based on the initial submission from Steve Twiss for the
-> imx6qdl-sabresd.
-> 
-> Signed-off-by: Fabio Estevam <festevam@gmail.com>
-> Tested-by: Baruch Siach <baruch@tkos.co.il>
-> Tested-by: Soeren Moch <smoch@web.de>
-> Tested-by: Steve Twiss <stwiss.opensource@diasemi.com>
-> Tested-by: Adam Thomson <Adam.Thomson@diasemi.com>
-> Signed-off-by: Steve Twiss <stwiss.opensource@diasemi.com>
-> Tested-by: Marc Kleine-Budde <mkl@pengutronix.de>
-> Signed-off-by: Marc Kleine-Budde <mkl@pengutronix.de>
+> Signed-off-by: Fabien Dessenne <fabien.dessenne@st.com>
 > ---
-> Changes since v2:
-> - Also fixed imx6q-ba16
-> - Removed stable tag as it does not apply cleanly on older
-> stable trees. I can manually generate versions for stable
-> trees after this one hits mainline.
-
-Please add this commit to the v5.1.x stable queue to resolve NFS root breakage
-in v5.1. I can confirm that it applies cleanly to v5.1.1 and resolves NFS root
-breakage that occurs on i.MX6 boards in v5.1.x, tested on imx6q-sabreauto.dts
-and imx6q-sabresd.dts. Although the fix should be backported to pre-v5.1.x
-stable series as well, it does not cause problems for pre-v5.1 but results in
-NFS root breakage for v5.1.x.
-
-TIA!
-
+>  .../devicetree/bindings/remoteproc/stm32-rproc.txt | 63 ++++++++++++++++++++++
+>  1 file changed, 63 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/remoteproc/stm32-rproc.txt
 > 
->  arch/arm/boot/dts/imx6-logicpd-baseboard.dtsi | 2 +-
->  arch/arm/boot/dts/imx6dl-riotboard.dts        | 2 +-
->  arch/arm/boot/dts/imx6q-ba16.dtsi             | 2 +-
->  arch/arm/boot/dts/imx6q-marsboard.dts         | 2 +-
->  arch/arm/boot/dts/imx6q-tbs2910.dts           | 2 +-
->  arch/arm/boot/dts/imx6qdl-apf6.dtsi           | 2 +-
->  arch/arm/boot/dts/imx6qdl-sabreauto.dtsi      | 2 +-
->  arch/arm/boot/dts/imx6qdl-sabresd.dtsi        | 2 +-
->  arch/arm/boot/dts/imx6qdl-sr-som.dtsi         | 2 +-
->  arch/arm/boot/dts/imx6qdl-wandboard.dtsi      | 2 +-
->  arch/arm/boot/dts/imx6sx-sabreauto.dts        | 2 +-
->  arch/arm/boot/dts/imx6sx-sdb.dtsi             | 2 +-
->  arch/arm/boot/dts/imx7d-pico.dtsi             | 2 +-
->  13 files changed, 13 insertions(+), 13 deletions(-)
-> 
-> diff --git a/arch/arm/boot/dts/imx6-logicpd-baseboard.dtsi b/arch/arm/boot/dts/imx6-logicpd-baseboard.dtsi
-> index fb01fa6e4224..3cae139e6396 100644
-> --- a/arch/arm/boot/dts/imx6-logicpd-baseboard.dtsi
-> +++ b/arch/arm/boot/dts/imx6-logicpd-baseboard.dtsi
-> @@ -216,7 +216,7 @@
->  &fec {
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_enet>;
-> -	phy-mode = "rgmii";
-> +	phy-mode = "rgmii-id";
->  	phy-reset-duration = <10>;
->  	phy-reset-gpios = <&gpio1 24 GPIO_ACTIVE_LOW>;
->  	phy-supply = <&reg_enet>;
-> diff --git a/arch/arm/boot/dts/imx6dl-riotboard.dts b/arch/arm/boot/dts/imx6dl-riotboard.dts
-> index 65c184bb8fb0..d9de49efa802 100644
-> --- a/arch/arm/boot/dts/imx6dl-riotboard.dts
-> +++ b/arch/arm/boot/dts/imx6dl-riotboard.dts
-> @@ -92,7 +92,7 @@
->  &fec {
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_enet>;
-> -	phy-mode = "rgmii";
-> +	phy-mode = "rgmii-id";
->  	phy-reset-gpios = <&gpio3 31 GPIO_ACTIVE_LOW>;
->  	interrupts-extended = <&gpio1 6 IRQ_TYPE_LEVEL_HIGH>,
->  			      <&intc 0 119 IRQ_TYPE_LEVEL_HIGH>;
-> diff --git a/arch/arm/boot/dts/imx6q-ba16.dtsi b/arch/arm/boot/dts/imx6q-ba16.dtsi
-> index adc9455e42c7..37c63402157b 100644
-> --- a/arch/arm/boot/dts/imx6q-ba16.dtsi
-> +++ b/arch/arm/boot/dts/imx6q-ba16.dtsi
-> @@ -171,7 +171,7 @@
->  &fec {
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_enet>;
-> -	phy-mode = "rgmii";
-> +	phy-mode = "rgmii-id";
->  	status = "okay";
->  };
->  
-> diff --git a/arch/arm/boot/dts/imx6q-marsboard.dts b/arch/arm/boot/dts/imx6q-marsboard.dts
-> index d8ccb533b6b7..84b30bd6908f 100644
-> --- a/arch/arm/boot/dts/imx6q-marsboard.dts
-> +++ b/arch/arm/boot/dts/imx6q-marsboard.dts
-> @@ -110,7 +110,7 @@
->  &fec {
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_enet>;
-> -	phy-mode = "rgmii";
-> +	phy-mode = "rgmii-id";
->  	phy-reset-gpios = <&gpio3 31 GPIO_ACTIVE_LOW>;
->  	status = "okay";
->  };
-> diff --git a/arch/arm/boot/dts/imx6q-tbs2910.dts b/arch/arm/boot/dts/imx6q-tbs2910.dts
-> index 2ce8399a10ba..bfff87ce2e1f 100644
-> --- a/arch/arm/boot/dts/imx6q-tbs2910.dts
-> +++ b/arch/arm/boot/dts/imx6q-tbs2910.dts
-> @@ -98,7 +98,7 @@
->  &fec {
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_enet>;
-> -	phy-mode = "rgmii";
-> +	phy-mode = "rgmii-id";
->  	phy-reset-gpios = <&gpio1 25 GPIO_ACTIVE_LOW>;
->  	status = "okay";
->  };
-> diff --git a/arch/arm/boot/dts/imx6qdl-apf6.dtsi b/arch/arm/boot/dts/imx6qdl-apf6.dtsi
-> index 1ebf29f43a24..4738c3c1ab50 100644
-> --- a/arch/arm/boot/dts/imx6qdl-apf6.dtsi
-> +++ b/arch/arm/boot/dts/imx6qdl-apf6.dtsi
-> @@ -51,7 +51,7 @@
->  &fec {
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_enet>;
-> -	phy-mode = "rgmii";
-> +	phy-mode = "rgmii-id";
->  	phy-reset-duration = <10>;
->  	phy-reset-gpios = <&gpio1 24 GPIO_ACTIVE_LOW>;
->  	status = "okay";
-> diff --git a/arch/arm/boot/dts/imx6qdl-sabreauto.dtsi b/arch/arm/boot/dts/imx6qdl-sabreauto.dtsi
-> index 1280de50a984..f3404dd10537 100644
-> --- a/arch/arm/boot/dts/imx6qdl-sabreauto.dtsi
-> +++ b/arch/arm/boot/dts/imx6qdl-sabreauto.dtsi
-> @@ -292,7 +292,7 @@
->  &fec {
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_enet>;
-> -	phy-mode = "rgmii";
-> +	phy-mode = "rgmii-id";
->  	interrupts-extended = <&gpio1 6 IRQ_TYPE_LEVEL_HIGH>,
->  			      <&intc 0 119 IRQ_TYPE_LEVEL_HIGH>;
->  	fsl,err006687-workaround-present;
-> diff --git a/arch/arm/boot/dts/imx6qdl-sabresd.dtsi b/arch/arm/boot/dts/imx6qdl-sabresd.dtsi
-> index a0705066ccba..185fb17a3500 100644
-> --- a/arch/arm/boot/dts/imx6qdl-sabresd.dtsi
-> +++ b/arch/arm/boot/dts/imx6qdl-sabresd.dtsi
-> @@ -202,7 +202,7 @@
->  &fec {
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_enet>;
-> -	phy-mode = "rgmii";
-> +	phy-mode = "rgmii-id";
->  	phy-reset-gpios = <&gpio1 25 GPIO_ACTIVE_LOW>;
->  	status = "okay";
->  };
-> diff --git a/arch/arm/boot/dts/imx6qdl-sr-som.dtsi b/arch/arm/boot/dts/imx6qdl-sr-som.dtsi
-> index 4ccb7afc4b35..6d7f6b9035bc 100644
-> --- a/arch/arm/boot/dts/imx6qdl-sr-som.dtsi
-> +++ b/arch/arm/boot/dts/imx6qdl-sr-som.dtsi
-> @@ -53,7 +53,7 @@
->  &fec {
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_microsom_enet_ar8035>;
-> -	phy-mode = "rgmii";
-> +	phy-mode = "rgmii-id";
->  	phy-reset-duration = <2>;
->  	phy-reset-gpios = <&gpio4 15 GPIO_ACTIVE_LOW>;
->  	status = "okay";
-> diff --git a/arch/arm/boot/dts/imx6qdl-wandboard.dtsi b/arch/arm/boot/dts/imx6qdl-wandboard.dtsi
-> index b7d5fb421404..50d9a989e06a 100644
-> --- a/arch/arm/boot/dts/imx6qdl-wandboard.dtsi
-> +++ b/arch/arm/boot/dts/imx6qdl-wandboard.dtsi
-> @@ -224,7 +224,7 @@
->  &fec {
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_enet>;
-> -	phy-mode = "rgmii";
-> +	phy-mode = "rgmii-id";
->  	phy-reset-gpios = <&gpio3 29 GPIO_ACTIVE_LOW>;
->  	interrupts-extended = <&gpio1 6 IRQ_TYPE_LEVEL_HIGH>,
->  			      <&intc 0 119 IRQ_TYPE_LEVEL_HIGH>;
-> diff --git a/arch/arm/boot/dts/imx6sx-sabreauto.dts b/arch/arm/boot/dts/imx6sx-sabreauto.dts
-> index b0ee324afe58..315044ccd65f 100644
-> --- a/arch/arm/boot/dts/imx6sx-sabreauto.dts
-> +++ b/arch/arm/boot/dts/imx6sx-sabreauto.dts
-> @@ -75,7 +75,7 @@
->  &fec1 {
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_enet1>;
-> -	phy-mode = "rgmii";
-> +	phy-mode = "rgmii-id";
->  	phy-handle = <&ethphy1>;
->  	fsl,magic-packet;
->  	status = "okay";
-> diff --git a/arch/arm/boot/dts/imx6sx-sdb.dtsi b/arch/arm/boot/dts/imx6sx-sdb.dtsi
-> index 08ede56c3f10..f6972deb5e39 100644
-> --- a/arch/arm/boot/dts/imx6sx-sdb.dtsi
-> +++ b/arch/arm/boot/dts/imx6sx-sdb.dtsi
-> @@ -191,7 +191,7 @@
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_enet1>;
->  	phy-supply = <&reg_enet_3v3>;
-> -	phy-mode = "rgmii";
-> +	phy-mode = "rgmii-id";
->  	phy-handle = <&ethphy1>;
->  	phy-reset-gpios = <&gpio2 7 GPIO_ACTIVE_LOW>;
->  	status = "okay";
-> diff --git a/arch/arm/boot/dts/imx7d-pico.dtsi b/arch/arm/boot/dts/imx7d-pico.dtsi
-> index 3fd595a71202..6f50ebf31a0a 100644
-> --- a/arch/arm/boot/dts/imx7d-pico.dtsi
-> +++ b/arch/arm/boot/dts/imx7d-pico.dtsi
-> @@ -92,7 +92,7 @@
->  			  <&clks IMX7D_ENET1_TIME_ROOT_CLK>;
->  	assigned-clock-parents = <&clks IMX7D_PLL_ENET_MAIN_100M_CLK>;
->  	assigned-clock-rates = <0>, <100000000>;
-> -	phy-mode = "rgmii";
-> +	phy-mode = "rgmii-id";
->  	phy-handle = <&ethphy0>;
->  	fsl,magic-packet;
->  	phy-reset-gpios = <&gpio6 11 GPIO_ACTIVE_LOW>;
+> diff --git a/Documentation/devicetree/bindings/remoteproc/stm32-rproc.txt b/Documentation/devicetree/bindings/remoteproc/stm32-rproc.txt
+> new file mode 100644
+> index 0000000..a495757
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/remoteproc/stm32-rproc.txt
+> @@ -0,0 +1,63 @@
+> +STMicroelectronics STM32 Remoteproc
+> +-----------------------------------
+> +This document defines the binding for the remoteproc component that loads and
+> +boots firmwares on the ST32MP family chipset.
+> +
+> +Required properties:
+> +- compatible:	Must be "st,stm32mp1-m4"
+> +- reg:		Address ranges of the RETRAM and MCU SRAM memories used by the
+> +		remote processor.
+> +- resets:	Reference to a reset controller asserting the remote processor.
+> +- st,syscfg-holdboot: Reference to the system configuration which holds the
+> +		remote processor reset hold boot
+> +	1st cell: phandle of syscon block
+> +	2nd cell: register offset containing the hold boot setting
+> +	3rd cell: register bitmask for the hold boot field
+> +- st,syscfg-tz: Reference to the system configuration which holds the RCC trust
+> +		zone mode
+> +	1st cell: phandle to syscon block
+> +	2nd cell: register offset containing the RCC trust zone mode setting
+> +	3rd cell: register bitmask for the RCC trust zone mode bit
+> +
+> +Optional properties:
+> +- interrupts:	Should contain the watchdog interrupt
+> +- mboxes:	This property is required only if the rpmsg/virtio functionality
+> +		is used. List of phandle and mailbox channel specifiers:
+> +		- a channel (a) used to communicate through virtqueues with the
+> +		  remote proc.
+> +		  Bi-directional channel:
+> +		      - from local to remote = send message
+> +		      - from remote to local = send message ack
+> +		- a channel (b) working the opposite direction of channel (a)
+> +		- a channel (c) used by the local proc to notify the remote proc
+> +		  that it is about to be shut down.
+> +		  Unidirectional channel:
+> +		      - from local to remote, where ACK from the remote means
+> +		        that it is ready for shutdown
+> +- mbox-names:	This property is required if the mboxes property is used.
+> +		- must be "vq0" for channel (a)
+> +		- must be "vq1" for channel (b)
+> +		- must be "shutdown" for channel (c)
+> +- memory-region: List of phandles to the reserved memory regions associated with
+> +		the remoteproc device. This is variable and describes the
+> +		memories shared with the remote processor (eg: remoteproc
+> +		firmware and carveouts, rpmsg vrings, ...).
+> +		(see ../reserved-memory/reserved-memory.txt)
+> +- st,syscfg-pdds: Reference to the system configuration which holds the remote
+> +		processor deep sleep setting
+> +	1st cell: phandle to syscon block
+> +	2nd cell: register offset containing the deep sleep setting
+> +	3rd cell: register bitmask for the deep sleep bit
+> +- st,auto_boot:	If defined, when remoteproc is probed, it loads the default
+> +		firmware and starts the remote processor.
 
--- 
-Regards,
-George
+s/_/-/
+
+> +
+> +Example:
+> +	m4_rproc: m4@38000000 {
+> +		compatible = "st,stm32mp1-m4";
+> +		reg = <0x00000000 0x10000>,
+
+Doesn't match the unit-address.
+
+> +		      <0x10000000 0x40000>,
+> +		      <0x30000000 0x40000>;
+> +		resets = <&rcc MCU_R>;
+> +		st,syscfg-holdboot = <&rcc 0x10C 0x1>;
+> +		st,syscfg-tz = <&rcc 0x000 0x1>;
+> +	};
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
