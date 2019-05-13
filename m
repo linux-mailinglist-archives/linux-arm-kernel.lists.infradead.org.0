@@ -2,60 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0752C1B05C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 08:32:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED74B1B080
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 08:49:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=HvBwSvH5ZyYh7zelfKhxzaIcCcWZs0FwqXTmmlQ/fLQ=; b=NsOZ4mMH6qnVgQ
-	h6FILuy+2gXe0qVOdOmjBXpzOhrK9aBoq1M8pTZVtDX7NmPFMJ0WDj3xlbpf727e8cVLxtWtuVM8Z
-	Tyuut7zshir7wa8z7TAnuWAGKJTqOjpAMRBLQZrDpbvehYYbVqzklzAh+pdF0SPv75ZLMxeDYY0tT
-	jCvJinU9ONStar5YUjQI1nEf4oBwzIyC4r0IF2UFTByPOvglKW2mFv2FuWgGQYFDYo4hAN7eCmgws
-	aNT36OCbUfTBm4DUKfJASTDcFHygUBjc2goHBRuF581gjFf2vtYZmqjK0FSp0veh1AQ2hA7CIAQMi
-	lvrUWWsMxkHjBQjkGkfA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ACnGYYHOFBpFDccxUFPuRGWkZIikHAMV5F5o622/s8w=; b=itC1igEn/8SYHs
+	xglvlMOZy1pXrIy78P1QCC13GtGxkpB09RUchqroKF6WG5VLzGz5/SsKOl6JeI8gdwdbxDlKM+AOj
+	wfTavItCGEx1grRQZzCZKec3xOn1G+sex9Eg+DR0ukpjCr0q43lJcNV5q1hhpCvD3PH9lAAczNSwe
+	DUeGXKv1xnLutijjY9SyrH2MAdTGXFe5tv5lma8ho8tGG3oDxcScav0l8MiS6yYqyKmQMPJG0qlW9
+	Eb3BXJBgSdQYTtyN0VNC2YpnBcXjeeratQvc3f+GKU0jyTaeAXLC32eCuJE4PxMdKOHonCBly45hT
+	84O2JR8OBSLRSSJNfTmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQ4Vg-0005Df-Ne; Mon, 13 May 2019 06:32:28 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1hQ4mM-0002AD-I2; Mon, 13 May 2019 06:49:42 +0000
+Received: from mout.kundenserver.de ([212.227.17.13])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQ4VZ-0005Cl-8o
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 06:32:23 +0000
-Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 4339F9940403AE8FA378;
- Mon, 13 May 2019 14:32:09 +0800 (CST)
-Received: from ros.huawei.com (10.143.28.118) by
- DGGEMS410-HUB.china.huawei.com (10.3.19.210) with Microsoft SMTP Server id
- 14.3.439.0; Mon, 13 May 2019 14:32:00 +0800
-From: Dongjiu Geng <gengdongjiu@huawei.com>
-To: <christoffer.dall@arm.com>, <marc.zyngier@arm.com>,
- <peter.maydell@linaro.org>, <james.morse@arm.com>, <rkrcmar@redhat.com>,
- <corbet@lwn.net>, <catalin.marinas@arm.com>, <will.deacon@arm.com>,
- <kvm@vger.kernel.org>, <linux-doc@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <kvmarm@lists.cs.columbia.edu>
-Subject: [RFC PATCH V2] kvm: arm64: export memory error recovery capability to
- user space
-Date: Sun, 12 May 2019 23:28:37 -0700
-Message-ID: <1557728917-49079-1-git-send-email-gengdongjiu@huawei.com>
-X-Mailer: git-send-email 2.7.4
+ id 1hQ4mF-00029b-8O; Mon, 13 May 2019 06:49:36 +0000
+Received: from [192.168.178.187] ([109.104.40.7]) by mrelayeu.kundenserver.de
+ (mreue109 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1MD9Kp-1hYdLQ1ZJ3-00985K; Mon, 13 May 2019 08:49:17 +0200
+Subject: Re: [PATCH] staging: vc04_services: bcm2835-camera: remove redundant
+ assignment to variable ret
+To: Colin King <colin.king@canonical.com>, Eric Anholt <eric@anholt.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
+ Scott Branden <sbranden@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, devel@driverdev.osuosl.org
+References: <20190511134813.5645-1-colin.king@canonical.com>
+From: Stefan Wahren <stefan.wahren@i2se.com>
+Message-ID: <5fd5c89a-4bd0-1d2d-f027-819fe954bd5f@i2se.com>
+Date: Mon, 13 May 2019 08:49:15 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-Originating-IP: [10.143.28.118]
-X-CFilter-Loop: Reflected
+In-Reply-To: <20190511134813.5645-1-colin.king@canonical.com>
+Content-Language: en-US
+X-Provags-ID: V03:K1:6gjO/x7pdDWHJchMfTFoYpMrc2jCJwMLYflU4Gu8ajN8J46umg6
+ aMe2yCTYt5dfh5L90OffWgr+De4ZEbH7zWOzULis8Wg7jHu11WCzgZWtKNKPAptARDx0oJ0
+ onjJagH2RY6NH+NAetYiMMsie9qoyv3MvH4KUKzjZocbDIdCRjsjk1SFU/5wxaBPr4iNuWQ
+ hQtDghl6UxoBPf6cQUayg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:ATE5Qe06IYI=:LutzhZvoFJqtjnVznCcyii
+ tuxoWieuRi4pbG6k9Au0IJ9Ub5XgOXfj1MY0QsBkBbMXSbDvguUogyLLnjeSwNGOsWeOMjvSM
+ 8AkIDckWw+Udpaq5coHqFCoxBKcqTR7tymRibv5jN5rdQTe4mOvO6FD6Cxvt5xk9taq/JjZJn
+ jrCvrFs1sK6T9EdG8v0Adu8/TbKi8+UV9AvAIDXtJsnDHMeen1p5PYYLP3xRp86bo2osT0NzL
+ gjEeHhxxREkPSAG3zyCYMeiMMgdOtvFpoiT6gStg5XSWBLCinF8NVQh91n/7yl/bddj2JjWGI
+ 8fmMZFsL4MKtdLf4SBPlvPfx26E8QaGGPnL5CVeqqT8v7UsY2PpUyh05QtzsXlem2TNnGYdtH
+ /b7eub9w1KSlYIAhLVUN41vJBSQGjgKWIgUav2Aim1M4Dw7uND/9bidkmVIKu3A3z4lY3OQoZ
+ rDIu0sAWbt8ZzTOf3H2ERZPU0gDkDtxPV602BDNE2JIIIdO0+iThd7fQntiBQXFljbxxLj6ZY
+ SdEZ1f6CfX5ji1ZM3gHrlI/hMwZXuB+NOPfSOzXYSAgLOPhbU2wXA6d5Vw+g5A4k+zvp79plc
+ ZilfIzGQj5RS7eD1od8LSX00t9D0pz+yL1Ue+1Xvs/ALaEkzKRnnV/oo6RcUd4VeZ6MvUlMiD
+ 1akkc4W8Sn/78m4OlWg088rvmNW8BJ9j+uUosZe0QQWCqFvYXJ9YTIICv0weU9AAR/pn8B25i
+ R7N7C825vhSBDGmX7QLdXGT7S6Vx3XH2oT5Ig3b8K9XyfNS5TXKSbguR/3Y=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190512_233221_541692_6749C594 
-X-CRM114-Status: GOOD (  10.48  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190512_234935_608317_E5F75FF2 
+X-CRM114-Status: GOOD (  12.68  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -67,82 +81,22 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: zhengxiang9@huawei.com, gengdongjiu@huawei.com
+Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When user space do memory recovery, it will check whether KVM and
-guest support the error recovery, only when both of them support,
-user space will do the error recovery. This patch exports this
-capability of KVM to user space.
-
-Cc: Peter Maydell <peter.maydell@linaro.org>
-Signed-off-by: Dongjiu Geng <gengdongjiu@huawei.com>
----
-v1->v2:
-1. check whether host support memory failure instead of RAS capability
-   https://patchwork.kernel.org/patch/10730827/
-
-v1:
-1. User space needs to check this capability of host is suggested by Peter[1],
-this patch as RFC tag because user space patches are still under review,
-so this kernel patch is firstly sent out for review.
-
-[1]: https://patchwork.codeaurora.org/patch/652261/
----
- Documentation/virtual/kvm/api.txt | 9 +++++++++
- arch/arm64/kvm/reset.c            | 3 +++
- include/uapi/linux/kvm.h          | 1 +
- 3 files changed, 13 insertions(+)
-
-diff --git a/Documentation/virtual/kvm/api.txt b/Documentation/virtual/kvm/api.txt
-index cd209f7..822a57b 100644
---- a/Documentation/virtual/kvm/api.txt
-+++ b/Documentation/virtual/kvm/api.txt
-@@ -4895,3 +4895,12 @@ Architectures: x86
- This capability indicates that KVM supports paravirtualized Hyper-V IPI send
- hypercalls:
- HvCallSendSyntheticClusterIpi, HvCallSendSyntheticClusterIpiEx.
-+
-+8.21 KVM_CAP_ARM_MEMORY_ERROR_RECOVERY
-+
-+Architectures: arm, arm64
-+
-+This capability indicates that guest memory error can be detected by the host which
-+supports the error recovery. When user space do recovery, such as QEMU, it will
-+check whether host and guest all support memory error recovery, only when both of them
-+support, user space will do the error recovery.
-diff --git a/arch/arm64/kvm/reset.c b/arch/arm64/kvm/reset.c
-index b72a3dd..b6e3986 100644
---- a/arch/arm64/kvm/reset.c
-+++ b/arch/arm64/kvm/reset.c
-@@ -84,6 +84,9 @@ int kvm_arch_vm_ioctl_check_extension(struct kvm *kvm, long ext)
- 	case KVM_CAP_ARM_INJECT_SERROR_ESR:
- 		r = cpus_have_const_cap(ARM64_HAS_RAS_EXTN);
- 		break;
-+	case KVM_CAP_ARM_MEMORY_ERROR_RECOVERY:
-+		r= IS_ENABLED(CONFIG_MEMORY_FAILURE);
-+		break;
- 	case KVM_CAP_SET_GUEST_DEBUG:
- 	case KVM_CAP_VCPU_ATTRIBUTES:
- 		r = 1;
-diff --git a/include/uapi/linux/kvm.h b/include/uapi/linux/kvm.h
-index 2b7a652..3b19580 100644
---- a/include/uapi/linux/kvm.h
-+++ b/include/uapi/linux/kvm.h
-@@ -975,6 +975,7 @@ struct kvm_ppc_resize_hpt {
- #define KVM_CAP_HYPERV_ENLIGHTENED_VMCS 163
- #define KVM_CAP_EXCEPTION_PAYLOAD 164
- #define KVM_CAP_ARM_VM_IPA_SIZE 165
-+#define KVM_CAP_ARM_MEMORY_ERROR_RECOVERY 166
- 
- #ifdef KVM_CAP_IRQ_ROUTING
- 
--- 
-2.7.4
-
+On 11.05.19 15:48, Colin King wrote:
+> From: Colin Ian King <colin.king@canonical.com>
+>
+> The variable ret is being initialized however this is never read and later
+> it is being reassigned to a new value. The initialization is redundant and
+> hence can be removed.
+>
+> Addresses-Coverity: ("Unused Value")
+> Signed-off-by: Colin Ian King <colin.king@canonical.com>
+Acked-by: Stefan Wahren <stefan.wahren@i2se.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
