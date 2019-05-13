@@ -2,75 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2778F1AEA1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 02:39:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50BF51AED8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 04:23:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W1W2Lfbr+rit67uZEu4KtldofwgYisAsCHlQGH+XUIE=; b=u2Nv4NpBHyUjDJ
-	H0otfc2dP3J9kmq1gVeJyBFq3Rcnm9EGeqR3HJYJNQVWPKwXrinzM6FCoDn4b4opKxrCfNf5Pe0Cm
-	AbT9/l+yxiPLV7NrkurdQeIvSB8n5AcgFIHviC4ZqTTFGXW4hxPDZVeim0rO09cLcdusKjj8GuxSo
-	rgOp7Eerg2//T4hwezQ1jY0E88xRBJX4tL5xvc+Bz3E+CETNQT7CAvvWa12EBAfisYa/WPqeVisso
-	cDK2yJFFIt2tQr47aWZhhFGFh0LhjxPzPmWRWreeRHUtV+HJMf81Do5iGF0J0zs8KYjCO2mJxHVd+
-	HT/THPwVEWFymloiVUJw==;
+	List-Owner; bh=jfeCD0d4qMvTSp0rGvPvLSVBWGd+nr/9uBPGf/7+iFg=; b=F4AR04mpBatmBV
+	fXYRXtlWR+7XY1oLRhv8WTPJLT3kvZTocAASX2U0uHI9Tz7BhN8TxhAesP2Rpse6lWXYVILi5NXHg
+	DzdHg3I59H3JVrAM1wFh1vxVCqmIEJF/pbAwMIxRxBu4wyCPXXsAcoOnc+dLAVAo1S0kZLyqvqiSr
+	022s7TRJkAKZC8D74OJrP7MLd7QHtCCxrdpphJgIJ/5oc5WIG6QvwOIqnbCu0WmmM+m0zIuzyMoPX
+	/ffh77duMdk6D1Tb5Jy/4lCQqXxAoZN/lgZyPiC63qUzWCid7JHvSPPvTw188Hgai3RqnapzNESIH
+	i6t6aWrjrEKaWJcV2tIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPz02-0007lt-PN; Mon, 13 May 2019 00:39:26 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hQ0cW-0007dL-L8; Mon, 13 May 2019 02:23:16 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPyzt-0007hE-Qw
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 00:39:19 +0000
-Received: by mail-pf1-x444.google.com with SMTP id y11so6195929pfm.13
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 12 May 2019 17:39:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=jbMbvlKHRDKPF33fkDdqZosCX8TlLi6L2lIp8AEgfEI=;
- b=ahcAC2+7tRqSmf9Sq99vuJtmBgerjrkeU5hvbO9VJcojV+ouWXEK2WeqLWILjwlbdt
- Wi53Y/OQI6YLkTJgy3lPLJJPk5CF8eddpc9pRhuK7JQ+wEabCM8KLJhCp5aFSUa4RvWI
- Qlz1Lwoz3OiB7nRfGUHgjdqktnzFo+efzXEbk=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=jbMbvlKHRDKPF33fkDdqZosCX8TlLi6L2lIp8AEgfEI=;
- b=HDZWJhj0/ythqbyTZ7GZp1l5Lf9INR4VL47w28Lvh6ebQT4pwgDq1ZtnX2x4fdcFuv
- 5SPLzCaWH2ALbMFld4SI8qfYnhPpZT3DO8WHnC/6CK1/Wf8TBFSvyzv+u+7qS0mkoC5p
- V6vwE3h+0O8kAr9Zkpm9GrfX+8aFuKhMchdI5Xcdz6J4FmSdAtwj4He1d8aAL/7KXz/e
- I7gTROGsTtEMQNHWDnJJbRy9/4lPRqsIBSC1+BBIbChOb5jMSBRAmR8YIY5VobQ6+bJL
- /4+VSxq9CUVur3OGnorPe3Icf58RpANW2eV3xmf/fptL62ZXN2wstB5l0IMDgWqWT8u6
- lxFw==
-X-Gm-Message-State: APjAAAXohlDrXrAby5sruuK+bNLR0jF+ZoU2JIEDc/jcptRAYpY2zdez
- tLfk5+A7Rw+oHagGs9TCNyJFhe3D1Ws=
-X-Google-Smtp-Source: APXvYqwvJ+s42h/ZoVPUfChayYtwKVcwlby7x/lX5fwmShnyI1xrkZYSHRWHIJyOpTadffshc3b6qg==
-X-Received: by 2002:a63:3dcf:: with SMTP id k198mr28317089pga.60.1557707956264; 
- Sun, 12 May 2019 17:39:16 -0700 (PDT)
-Received: from hsinyi-z840.tpe.corp.google.com
- ([2401:fa00:1:10:b852:bd51:9305:4261])
- by smtp.gmail.com with ESMTPSA id a9sm14619577pgw.72.2019.05.12.17.39.12
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Sun, 12 May 2019 17:39:15 -0700 (PDT)
-From: Hsin-Yi Wang <hsinyi@chromium.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 2/2] amr64: map FDT as RW for early_init_dt_scan()
-Date: Mon, 13 May 2019 08:38:19 +0800
-Message-Id: <20190513003819.356-2-hsinyi@chromium.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190513003819.356-1-hsinyi@chromium.org>
-References: <20190513003819.356-1-hsinyi@chromium.org>
+ id 1hQ0cP-0007cy-UN
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 02:23:11 +0000
+Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0DA9C20879;
+ Mon, 13 May 2019 02:23:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1557714188;
+ bh=wPmdNDDmDeMcDq4UPXlESBwTLYnhR866lL7F4b+Io/k=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=qD9TjAfynEKJk+HMyKNd8JEtD0nblsMPYCkbtrN6NLbGdmMwy3lmyvC5ks03yHmle
+ BwMreLXlB2oBWd0b8AIjrr0n+WEAq5cjDJ4NF0YtPB+V56zA9D2P3OAwd2eYHLllSB
+ lfQ78Z0oyCpTXmVVSAqTAPlLYUBJ8EG7k+F+blvg=
+Date: Mon, 13 May 2019 10:22:36 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
+Subject: Re: [PATCH v2] arm64: dts: imx8mq: Add a node for irqsteer
+Message-ID: <20190513022235.GQ15856@dragon>
+References: <72b64db0a3ae682d1c6f435fecf7876de2f57bc3.1556644355.git.agx@sigxcpu.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <72b64db0a3ae682d1c6f435fecf7876de2f57bc3.1556644355.git.agx@sigxcpu.org>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190512_173917_902258_D3A4D344 
-X-CRM114-Status: GOOD (  15.63  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190512_192310_070058_F452C00E 
+X-CRM114-Status: UNSURE (   9.75  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -79,9 +64,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -95,62 +77,27 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- boot-architecture@lists.linaro.org, Michal Hocko <mhocko@suse.com>,
- Kees Cook <keescook@chromium.org>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>, linux-kernel@vger.kernel.org,
- Will Deacon <will.deacon@arm.com>, Stephen Boyd <swboyd@chromium.org>,
- Miles Chen <miles.chen@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- James Morse <james.morse@arm.com>, Hsin-Yi Wang <hsinyi@chromium.org>,
- Andrew Murray <andrew.murray@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Mike Rapoport <rppt@linux.ibm.com>,
- Frank Rowand <frowand.list@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Abel Vesa <abel.vesa@nxp.com>, Carlo Caione <ccaione@baylibre.com>,
+ Daniel Baluta <daniel.baluta@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "Angus Ainslie \(Purism\)" <angus@akkea.ca>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Lucas Stach <l.stach@pengutronix.de>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently in arm64, FDT is mapped to RO before it's passed to
-early_init_dt_scan(). However, there might be some code that needs
-to modify FDT during init. Map FDT to RW until unflatten DT.
+On Tue, Apr 30, 2019 at 07:15:55PM +0200, Guido G=FCnther wrote:
+> Add a node for the irqsteer interrupt controller found on the iMX8MQ
+> SoC.
+> =
 
-Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
----
- arch/arm64/kernel/setup.c | 9 ++++++++-
- 1 file changed, 8 insertions(+), 1 deletion(-)
+> Signed-off-by: Guido G=FCnther <agx@sigxcpu.org>
+> Reviewed-by: Lucas Stach <l.stach@pengutronix.de>
 
-diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
-index 413d566405d1..08b22c1e72a9 100644
---- a/arch/arm64/kernel/setup.c
-+++ b/arch/arm64/kernel/setup.c
-@@ -179,9 +179,13 @@ static void __init smp_build_mpidr_hash(void)
- 		pr_warn("Large number of MPIDR hash buckets detected\n");
- }
- 
-+extern void *__init __fixmap_remap_fdt(phys_addr_t dt_phys, int *size,
-+				       pgprot_t prot);
-+
- static void __init setup_machine_fdt(phys_addr_t dt_phys)
- {
--	void *dt_virt = fixmap_remap_fdt(dt_phys);
-+	int size;
-+	void *dt_virt = __fixmap_remap_fdt(dt_phys, &size, PAGE_KERNEL);
- 	const char *name;
- 
- 	if (!dt_virt || !early_init_dt_scan(dt_virt)) {
-@@ -320,6 +324,9 @@ void __init setup_arch(char **cmdline_p)
- 	/* Parse the ACPI tables for possible boot-time configuration */
- 	acpi_boot_table_init();
- 
-+	/* remap fdt to RO */
-+	fixmap_remap_fdt(__fdt_pointer);
-+
- 	if (acpi_disabled)
- 		unflatten_device_tree();
- 
--- 
-2.20.1
-
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
