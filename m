@@ -2,110 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C9481B022
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 08:03:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99D961B02A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 08:21:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+diAkqj0kUFCw7D5ssrlDAs+PwA91n/iyIxqnD6sSTM=; b=s0/pi6J1VFQMeO
-	z8uI+SEBqWlXZWfwwHFVvxnl8HqMcrVebtjPCg/jvTQySRtancfshCSdRZeje4tO3Jrhs3OCbcnmO
-	IRs951L5zkG8YE3yEbsGriLslzg57mEHnslUrfkYhFXwhugiQ/FPtH48UwL5IGcQl3AEfU5uPNMTJ
-	AjBcZf2D143MGZaFiVTpdXC2Z0XmaeA1kIMU1U4S7m7NNpYekmXkX/3IpAch0KSiLOKwokVQSQBNe
-	19AbF6nrSg4c1EKaRRmf7HL7qUzS2iugN1CtPB+hvODyg9DcJcmBBR3p96ESHeMgmm0GVJlKEceek
-	WUTlnb9wDNwUXBV24djw==;
+	List-Owner; bh=BxW7Hwvzs5hTF+EeNRM4VeHnvPVTX6RYDlktsbv5P2g=; b=FJAymVEjJ4tLSh
+	09ztsC0Lcy3sYLG7JyGoBYSG0vE+mZQRyc+LOiYJtihZ0aPcnrCuN4bRAA99d4kQDIsRt+MeuTHo/
+	cmuE00zqmdTNx270cUHCEjx5HqeVkkYhckenE9EUQeE0uXnbSz/ZGVxsiRlaYEjgkc8GZ1nQQRUrs
+	w0EzstKx6gz6jtJNw6gHWwqehD0dJzFYqrCE2gc0tMg0VJtG0jh4NusTbGfzsR2PNyvppZWAwK2Hl
+	BUOGo3kzyje1Hh16BpZONIEMtPBJmgwyc3m0no8CFj8pjnx59YhtnAjoaRfpbf9oaoOg1VktraQK4
+	Bu4HhmMpphodhrBQXCsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQ43X-0002xy-IL; Mon, 13 May 2019 06:03:23 +0000
-Received: from mail-eopbgr130078.outbound.protection.outlook.com
- ([40.107.13.78] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1hQ4Ke-0000va-KO; Mon, 13 May 2019 06:21:04 +0000
+Received: from mail-vs1-f66.google.com ([209.85.217.66])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQ435-0002Uf-O1
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 06:02:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ABHmtw39zTfJb3ZO5p9ireZvQG6VKZx4muSUv+l+5dQ=;
- b=V0pYeihgIqS0cjSVaMVP17xUatMoamUylOggFBJVAy2MW/lZPQILy0V42Ryp1JwQHh0UZAFgg6/tXA5Sp7JqTKxm9FcaeDVjK8uH3MGhrSJ6PGcOKzc5RUCB43c5kzg/zZbor6HZPy4hMBucWEFHXTukJkQEg1MhZE2BoUPuHhk=
-Received: from VI1PR0401MB2496.eurprd04.prod.outlook.com (10.168.65.10) by
- VI1PR0401MB2654.eurprd04.prod.outlook.com (10.168.66.14) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1878.20; Mon, 13 May 2019 06:02:49 +0000
-Received: from VI1PR0401MB2496.eurprd04.prod.outlook.com
- ([fe80::5e3:7122:7d0e:7fb7]) by VI1PR0401MB2496.eurprd04.prod.outlook.com
- ([fe80::5e3:7122:7d0e:7fb7%3]) with mapi id 15.20.1878.024; Mon, 13 May 2019
- 06:02:49 +0000
-From: Pankaj Bansal <pankaj.bansal@nxp.com>
-To: Wolfgang Grandegger <wg@grandegger.com>, Marc Kleine-Budde
- <mkl@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>, Leo Li
- <leoyang.li@nxp.com>
-Subject: [PATCH 2/2] arm64: dts: fsl: ls1028a: add flexcan node
-Thread-Topic: [PATCH 2/2] arm64: dts: fsl: ls1028a: add flexcan node
-Thread-Index: AQHVCVF+qxXKE0JBqU+wKSOu6xIvOg==
-Date: Mon, 13 May 2019 06:02:49 +0000
-Message-ID: <20190513112612.11036-3-pankaj.bansal@nxp.com>
-References: <20190513112612.11036-1-pankaj.bansal@nxp.com>
-In-Reply-To: <20190513112612.11036-1-pankaj.bansal@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: BMXPR01CA0096.INDPRD01.PROD.OUTLOOK.COM
- (2603:1096:b00:54::36) To VI1PR0401MB2496.eurprd04.prod.outlook.com
- (2603:10a6:800:56::10)
-x-mailer: git-send-email 2.17.1
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=pankaj.bansal@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [92.120.1.69]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 85610163-11db-4c63-91c5-08d6d768a0c6
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR0401MB2654; 
-x-ms-traffictypediagnostic: VI1PR0401MB2654:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <VI1PR0401MB2654C323607FD592A3F8C7C4F10F0@VI1PR0401MB2654.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3631;
-x-forefront-prvs: 0036736630
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(376002)(396003)(39860400002)(136003)(366004)(346002)(199004)(189003)(53936002)(86362001)(316002)(386003)(6506007)(1076003)(6486002)(6306002)(6512007)(99286004)(76176011)(44832011)(5660300002)(8676002)(8936002)(81156014)(68736007)(54906003)(110136005)(81166006)(71200400001)(71190400001)(50226002)(52116002)(2616005)(478600001)(66066001)(446003)(73956011)(186003)(476003)(256004)(14444005)(966005)(11346002)(66556008)(2906002)(14454004)(66446008)(66946007)(66476007)(486006)(36756003)(64756008)(6636002)(26005)(3846002)(25786009)(6116002)(7736002)(6436002)(305945005)(102836004)(4326008);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0401MB2654;
- H:VI1PR0401MB2496.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: k4+Kfxd/eXzTVO6kCSkAxAaDUQT6Fx6lpUyZdqtukGWogIjpExGpIuONMv1LwaabajLOw2NbZU0yczSha18ZfuNxbAGXfecJpJejjFSmCspa+G12vqJG3gEdP6jTLOE5AYbF07DYY3/FupYghNJn9Xf0qPDglSl5qaYWXLE79PirtATzSoGW/urJPTCHyJTEf0/EDDwGAQe2MIdRQY7HWekvP86P2JD6R3ygYWyMZgf/DWyLE2EyRII9OGr1HEVhAtXl1kc5PNKNCOQTD2ad0cjH8xrIQTJ0N5gPLS465+FJyINbd2l92xMjFtTQSIg0KmyjqpTks6D5AjFEF3eu1cBUjxo2bBJ9GWUJwTitsJVSusu4n2ae+z+xjq8u+nMhlTax/DtwjK8LVVWuXZJ0ewkWxXW2/5TyaguuU55ozEY=
+ id 1hQ4KY-0000v4-3B
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 06:20:59 +0000
+Received: by mail-vs1-f66.google.com with SMTP id q13so2425969vso.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 12 May 2019 23:20:57 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=4z6TOqQd7xpUAzupjuOesaFbYODxlU8r51j/bIYSpok=;
+ b=eh3qaM8of/SltWFrTho5OiCysORWryMDKZ6w+o/0gXHBn2q/eNsgY92IelYqWHo1At
+ AlgaC2mkik9Scd8+ibMnTzYgTW2+HkXmANq3AQfqspbyUOIaQlgIbQ3Wr5nEzZD0eHaT
+ Xj5mpvp1/6iGAO1JCxYOUNYmH/jb5pN53QoRUm+MBIavEWzij0FK1pX2qoDJvCKKz5HO
+ /AW6uwalqhUj9pWzRnYQ7JpNZKJ+Pat9WK0+iR0uP1fYOBB80kxn2zY1seD9VOci3TVj
+ SqHlW4XCp7p5ggjX9yEoxHHEKVmXEBdlWpDCYvJCuCH77h5ScIyJ4+AwSAQIhSspkQqY
+ kCYg==
+X-Gm-Message-State: APjAAAXcr2vO6eZjhbOuUqmN9r/XKQ80pXGhczUwhGM3NNyjxplDdpjy
+ FWk9F2VVvTSZLDNRhx09JrJu6HMD5lwRwRX2ho8=
+X-Google-Smtp-Source: APXvYqxIAjBs3bKYcwXUWTPBFDzX+ggIz6zeo1JRjSWp3eQ1BVWFfT1xGSTKey2SXbg2CaCuuovHzHUjRzlkEAHRzZ8=
+X-Received: by 2002:a67:7c93:: with SMTP id x141mr5085007vsc.96.1557728456522; 
+ Sun, 12 May 2019 23:20:56 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 85610163-11db-4c63-91c5-08d6d768a0c6
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 May 2019 06:02:49.6434 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0401MB2654
+References: <20190512114105.41792-1-yuehaibing@huawei.com>
+In-Reply-To: <20190512114105.41792-1-yuehaibing@huawei.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 13 May 2019 08:20:45 +0200
+Message-ID: <CAMuHMdVEEuvNLQeMGuuK9vp+w8AA2dHe8UnJ1XfPzUFarLQdTA@mail.gmail.com>
+Subject: Re: [PATCH] ARM: mm: remove unused variables
+To: YueHaibing <yuehaibing@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190512_230256_010827_1F7C92A0 
-X-CRM114-Status: GOOD (  12.64  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190512_232058_131652_C349136B 
+X-CRM114-Status: GOOD (  11.00  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.13.78 listed in list.dnswl.org]
+ no trust [209.85.217.66 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -117,137 +78,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Pankaj Bansal <pankaj.bansal@nxp.com>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "linux-can@vger.kernel.org" <linux-can@vger.kernel.org>
+Cc: Kees Cook <keescook@chromium.org>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Russell King <linux@armlinux.org.uk>,
+ Andrew Morton <akpm@linux-foundation.org>, Mike Rapoport <rppt@linux.ibm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add flexcan node in LS1028A SOC file as well as in QDS and RDB files.
-The device tree bindings used can be referred from
-Documentation/devicetree/bindings/net/can/fsl-flexcan.txt
+On Sun, May 12, 2019 at 1:48 PM YueHaibing <yuehaibing@huawei.com> wrote:
+> Fix gcc warnings:
+>
+> arch/arm/mm/init.c: In function 'mem_init':
+> arch/arm/mm/init.c:456:13: warning: unused variable 'itcm_end' [-Wunused-variable]
+>   extern u32 itcm_end;
+>              ^
+> arch/arm/mm/init.c:455:13: warning: unused variable 'dtcm_end' [-Wunused-variable]
+>   extern u32 dtcm_end;
+>              ^
+>
+> They are not used any more since
+> commit 1c31d4e96b8c ("ARM: 8820/1: mm: Stop printing the virtual memory layout")
 
-Signed-off-by: Pankaj Bansal <pankaj.bansal@nxp.com>
----
+Thanks! Sorry for missing that.
 
-Notes (dts):
-    Dependencies:
-    - https://www.spinics.net/lists/linux-can/msg01562.html
+> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 
- .../boot/dts/freescale/fsl-ls1028a-qds.dts   | 10 +++++++-
- .../boot/dts/freescale/fsl-ls1028a-rdb.dts   | 18 +++++++++++++-
- .../boot/dts/freescale/fsl-ls1028a.dtsi      | 22 +++++++++++++++++-
- 3 files changed, 47 insertions(+), 3 deletions(-)
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
-index 14c79f4691ea..c1895be5d523 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
-@@ -2,7 +2,7 @@
- /*
-  * Device Tree file for NXP LS1028A QDS Board.
-  *
-- * Copyright 2018 NXP
-+ * Copyright 2018-2019 NXP
-  *
-  * Harninder Rai <harninder.rai@nxp.com>
-  *
-@@ -34,6 +34,14 @@
- 	};
- };
- 
-+&can0 {
-+	status = "okay";
-+};
-+
-+&can1 {
-+	status = "okay";
-+};
-+
- &duart0 {
- 	status = "okay";
- };
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
-index f86b054a74ae..7dc75d584ada 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
-@@ -2,7 +2,7 @@
- /*
-  * Device Tree file for NXP LS1028A RDB Board.
-  *
-- * Copyright 2018 NXP
-+ * Copyright 2018-2019 NXP
-  *
-  * Harninder Rai <harninder.rai@nxp.com>
-  *
-@@ -64,6 +64,22 @@
- 	};
- };
- 
-+&can0 {
-+	status = "okay";
-+
-+	can-transceiver {
-+		max-bitrate = <5000000>;
-+	};
-+};
-+
-+&can1 {
-+	status = "okay";
-+
-+	can-transceiver {
-+		max-bitrate = <5000000>;
-+	};
-+};
-+
- &duart0 {
- 	status = "okay";
- };
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-index 2896bbcfa3bb..016121e86d4d 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-@@ -2,7 +2,7 @@
- /*
-  * Device Tree Include file for NXP Layerscape-1028A family SoC.
-  *
-- * Copyright 2018 NXP
-+ * Copyright 2018-2019 NXP
-  *
-  * Harninder Rai <harninder.rai@nxp.com>
-  *
-@@ -219,6 +219,26 @@
- 			status = "disabled";
- 		};
- 
-+		can0: can@2180000 {
-+			compatible = "fsl,ls1028ar1-flexcan",
-+				     "fsl,lx2160ar1-flexcan";
-+			reg = <0x0 0x2180000 0x0 0x10000>;
-+			interrupts = <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&sysclk>, <&clockgen 4 1>;
-+			clock-names = "ipg", "per";
-+			status = "disabled";
-+		};
-+
-+		can1: can@2190000 {
-+			compatible = "fsl,ls1028ar1-flexcan",
-+				     "fsl,lx2160ar1-flexcan";
-+			reg = <0x0 0x2190000 0x0 0x10000>;
-+			interrupts = <GIC_SPI 22 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&sysclk>, <&clockgen 4 1>;
-+			clock-names = "ipg", "per";
-+			status = "disabled";
-+		};
-+
- 		duart0: serial@21c0500 {
- 			compatible = "fsl,ns16550", "ns16550a";
- 			reg = <0x00 0x21c0500 0x0 0x100>;
+Gr{oetje,eeting}s,
+
+                        Geert
+
 -- 
-2.17.1
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
