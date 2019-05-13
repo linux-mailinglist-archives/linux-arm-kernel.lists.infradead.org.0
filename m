@@ -2,87 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DC3E1B836
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 16:22:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C101D1B849
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 16:25:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2ZuNaLKE8rV+t0Q+AwURFhSo56/PDALAgNFYs84ErkM=; b=S2bcxk6lV/Gsmy
-	2zsNoRmJachMWeoSkpES/hUn2ronO5uFxFxvDtzl+AaZ9n+ksvlrTAMDfowxHqhdA6R7xB1O7GqSO
-	iRXbTMhwo8WiHYbOmHW++LHHzdyNxPB+qR4rE0WzIKVJAIp7UCWaGDyUMMc2XqK/3PnVHHWphzhx8
-	x9+ZZlK6s2PHCUVs9DY/UehTUzJcQjepW10lfgupniT0Fe98+gXe6EEWzcVA3gnM0dXM9QKAqx+L8
-	vbBzZ4UOTkl74ljD9L5yPu9TkBOYVXfXtQb7JiPMbfqbxd/DmaXQGJOw6gJoQ4121PhJ7CukBa5oY
-	CBpWKahkv5aEmUyHnB2w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=VkMtdWYKvqBKk3e5nsb2oSCQ7/i6ILGNJ9G30WzfwwM=; b=dhR
+	lLF1HS0z1Iw8ATlWJrNkYsB5lzCXeRq6NWJoiKGDnyFP0DzEsmK8hk/hM5gfqKJVzfbS20UAKtrWR
+	KFChW9BQjSSUmMlejAZlogUQCUraRP0z9dmMb2vrsMxdFfoUTB+Kpcabq0VPGrjaNwIU72gjW9tG7
+	M69LjSV96H16B4wLhIQYo/CgMH1OHxHf4o4xaqVBr9UpqOcFNzwGKuaIISjuIriyhfWAbrrPMoRpL
+	sg+5X4JcQE17YkDdpau1e8zp6RQpsDbiai9Qv/vnFqJTXU8xo9ERq/qCyehQ1+EH+JWRWZ4ArzP5v
+	brG6fmI4tEB1dTuBRGj+WXa3B/Ccm2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQBq2-0006BB-7E; Mon, 13 May 2019 14:21:58 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQBpq-00068z-KW
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 14:21:50 +0000
-Received: by mail-wr1-x443.google.com with SMTP id w8so13074807wrl.6
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 May 2019 07:21:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=cSguXg1ULNsLVeUlyV/JBYC1DyTsN/aiCX3xWl5lL/w=;
- b=jleNO/Cdfykym1Iv62B4ZMzaeTMBfgLnbRfEOuZTYHQdFwoD/fE3Nu1uIO83bTuCb0
- WufTyu79QjpzY5s5s1Orw+T6OkXimC1WGuD0yHItW1LPMoPvqskys5DxO8pNyTC4ETUn
- 89Ywwrps4NBIRn5o/0NOl6bzkn3fmWkCmrYM3/Grojkmqb4lW1xowhu96CezF4gLiK/1
- pDJQJQvPFq6JEytsSw8z70jl3Aeprsh4UCVcEIAsKpgSj9R8c3+d/jI7Jk6plZr47VhM
- Mb/gptNd4QJJZk6wUuG2U8eo6Ut7BoGxnUESQsUaQv5y5S+4390RDYWn7yytT4L9H7BN
- VSuw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=cSguXg1ULNsLVeUlyV/JBYC1DyTsN/aiCX3xWl5lL/w=;
- b=O2hC0aL/vMzGOlkAMECTPzs0ST8qOH1cjnjPZ0KExY/FsZWngpz4jIV8q3oda5uMT8
- SOIWPs1yFP5nwpEeeebd7u4r/oLaKn0HIfureeNRTPY5b1ZsUzYVyUyzi6A8Rjt6N6O5
- j61l6l5GiWMokCFiSn4c6UmVoIGO22ytPk3gV3tnv+B3aGsb6QUg0G3agCkBuFtg87eY
- ptLDPAfCqP+SGrR+Q5x2tpLBlv5+6tw4xrlmCO1PCGwN39nWsQs3VrMiAuejLYftAId8
- V4Ob2J4vkWfhpMNo54oKdqD6k9KC+oA2pc5exir3ngzkPyQzRgWdK6PATKZ6Z9aLEQdt
- yq7w==
-X-Gm-Message-State: APjAAAWoByhTtSzQDfi9l/ori+xAswF1HVNoHlqpy9PRrI01tfr/YojP
- VmfuTxjTOIgBOURcI5/xeoFc9w==
-X-Google-Smtp-Source: APXvYqyb7jvJZ+9TFKgT7DkyliaCtl4ZcjeYhYQ5a7ehr+YjdueGGPUKUKqqrkwlDWYC3gJx5sgcgQ==
-X-Received: by 2002:adf:aa0a:: with SMTP id p10mr8675758wrd.125.1557757305028; 
- Mon, 13 May 2019 07:21:45 -0700 (PDT)
-Received: from localhost.localdomain
- (aputeaux-684-1-11-31.w90-86.abo.wanadoo.fr. [90.86.214.31])
- by smtp.gmail.com with ESMTPSA id v184sm21133615wma.6.2019.05.13.07.21.44
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 13 May 2019 07:21:44 -0700 (PDT)
-From: Fabien Parent <fparent@baylibre.com>
-To: dmitry.torokhov@gmail.com, robh+dt@kernel.org, mark.rutland@arm.com,
- matthias.bgg@gmail.com
-Subject: [PATCH 2/2] input: keyboard: mtk-pmic-keys: add MT6392 support
-Date: Mon, 13 May 2019 16:21:20 +0200
-Message-Id: <20190513142120.6527-2-fparent@baylibre.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190513142120.6527-1-fparent@baylibre.com>
-References: <20190513142120.6527-1-fparent@baylibre.com>
-MIME-Version: 1.0
+	id 1hQBt7-0006y7-7e; Mon, 13 May 2019 14:25:09 +0000
+Received: from mutluit.com ([82.211.8.197])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hQBsm-0006sz-Hf
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 14:24:51 +0000
+Received: from c22-local.mutluit.com (ip4d155212.dynamic.kabel-deutschland.de
+ [77.21.82.18]:58476)
+ by mutluit.com (s2.mutluit.com [82.211.8.197]:25) with ESMTP ([XMail 1.27
+ ESMTP Server])
+ id <S16FAD6A> for <linux-arm-kernel@lists.infradead.org> from <um@mutluit.com>;
+ Mon, 13 May 2019 10:24:41 -0400
+From: Uenal Mutlu <um@mutluit.com>
+To: Jens Axboe <axboe@kernel.dk>, Maxime Ripard <maxime.ripard@bootlin.com>,
+ Chen-Yu Tsai <wens@csie.org>, linux-ide@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH v3] drivers: ata: ahci_sunxi: Increased SATA/AHCI DMA TX/RX
+ FIFOs
+Date: Mon, 13 May 2019 16:24:10 +0200
+Message-Id: <20190513142410.9299-1-um@mutluit.com>
+X-Mailer: git-send-email 2.11.0
+X-Patchwork-Bot: notify
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_072148_974616_7E153ADE 
-X-CRM114-Status: GOOD (  12.74  )
+X-CRM114-CacheID: sfid-20190513_072449_032044_164B56F7 
+X-CRM114-Status: GOOD (  12.14  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ 0.0 TVD_RCVD_SPACE_BRACKET No description available.
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,62 +61,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- Fabien Parent <fparent@baylibre.com>, linux-mediatek@lists.infradead.org,
- linux-input@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Uenal Mutlu <um@mutluit.com>,
+ Oliver Schinagl <oliver@schinagl.nl>, Andre Przywara <andre.przywara@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Pablo Greco <pgreco@centosproject.org>, FUKAUMI Naoki <naobsd@gmail.com>,
+ Hans de Goede <hdegoede@redhat.com>, linux-sunxi@googlegroups.com,
+ Jagan Teki <jagan@amarulasolutions.com>, linux-amarula@amarulasolutions.com,
+ Stefan Monnier <monnier@iro.umontreal.ca>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for MT6392 PMIC's keys.
+Increasing the SATA/AHCI DMA TX/RX FIFOs (P0DMACR.TXTS and .RXTS, ie.
+TX_TRANSACTION_SIZE and RX_TRANSACTION_SIZE) from default 0x0 each
+to 0x3 each, gives a write performance boost of 120 MiB/s to 132 MiB/s
+from lame 36 MiB/s to 45 MiB/s previously.
+Read performance is above 200 MiB/s.
+[tested on SSD using dd bs=4K/8K/12K/16K/20K/24K/32K: peak-perf at 12K]
 
-Signed-off-by: Fabien Parent <fparent@baylibre.com>
+Tested on the SBCs Banana Pi R1 (aka Lamobo R1) and Banana Pi M1 which
+are based on the Allwinner A20 32bit-SoC (ARMv7-a / arm-linux-gnueabihf).
+These devices are RaspberryPi-like small devices.
+
+This problem of slow SATA write-speed with these small devices lasts
+for about 7 years now (beginning with the A10 SoC). Many commentators
+throughout the years wrongly assumed the slow write speed was a
+hardware limitation. This patch finally solves the problem, which
+in fact was just a hard-to-find software problem due to lack of
+SATA/AHCI documentation by the SoC-maker Allwinner Technology.
+
+Lists of the affected sunxi and other boards and SoCs with SATA using
+the ahci_sunxi driver:
+  $ grep -i -e "^&ahci" arch/arm/boot/dts/sun*dts
+  and http://linux-sunxi.org/SATA#Devices_with_SATA_ports
+  See also http://linux-sunxi.org/Category:Devices_with_SATA_port
+
+Acked-by: Maxime Ripard <maxime.ripard@bootlin.com>
+Reviewed-by: Hans de Goede <hdegoede@redhat.com>
+Signed-off-by: Uenal Mutlu <um@mutluit.com>
 ---
- drivers/input/keyboard/mtk-pmic-keys.c | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
 
-diff --git a/drivers/input/keyboard/mtk-pmic-keys.c b/drivers/input/keyboard/mtk-pmic-keys.c
-index 8e6ebab05ab4..aaf68cbf7e5b 100644
---- a/drivers/input/keyboard/mtk-pmic-keys.c
-+++ b/drivers/input/keyboard/mtk-pmic-keys.c
-@@ -18,6 +18,7 @@
- #include <linux/interrupt.h>
- #include <linux/kernel.h>
- #include <linux/mfd/mt6323/registers.h>
-+#include <linux/mfd/mt6392/registers.h>
- #include <linux/mfd/mt6397/core.h>
- #include <linux/mfd/mt6397/registers.h>
- #include <linux/module.h>
-@@ -83,6 +84,16 @@ static const struct mtk_pmic_regs mt6323_regs = {
- 	.pmic_rst_reg = MT6323_TOP_RST_MISC,
- };
+v3:
+  * Removed RFC from Subject line, and also the explicit call for RFC
+    in the text, thereby submitting the patch for official merging.
+
+v2:
+  * Commented the patch in-place in ahci_sunxi.c
+  * With bs=12K and no conv=... passed to dd, the write performance
+    rises further to 132 MiB/s
+  * Changed MB/s to MiB/s
+  * Posted the story behind the patch:
+    http://lkml.iu.edu/hypermail/linux/kernel/1905.1/03506.html
+  * Posted a dd test script to find optimal bs, and some results:
+    https://bit.ly/2YoOzEM
+
+v1:
+  * States bs=4K for dd and a write performance of 120 MiB/s
+---
+ drivers/ata/ahci_sunxi.c | 47 +++++++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 45 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/ata/ahci_sunxi.c b/drivers/ata/ahci_sunxi.c
+index 911710643305..018186a39a69 100644
+--- a/drivers/ata/ahci_sunxi.c
++++ b/drivers/ata/ahci_sunxi.c
+@@ -157,8 +157,51 @@ static void ahci_sunxi_start_engine(struct ata_port *ap)
+ 	void __iomem *port_mmio = ahci_port_base(ap);
+ 	struct ahci_host_priv *hpriv = ap->host->private_data;
  
-+static const struct mtk_pmic_regs mt6392_regs = {
-+	.keys_regs[MTK_PMIC_PWRKEY_INDEX] =
-+		MTK_PMIC_KEYS_REGS(MT6392_CHRSTATUS,
-+		0x2, MT6392_INT_MISC_CON, 0x10),
-+	.keys_regs[MTK_PMIC_HOMEKEY_INDEX] =
-+		MTK_PMIC_KEYS_REGS(MT6392_CHRSTATUS,
-+		0x4, MT6392_INT_MISC_CON, 0x8),
-+	.pmic_rst_reg = MT6392_TOP_RST_MISC,
-+};
-+
- struct mtk_pmic_keys_info {
- 	struct mtk_pmic_keys *keys;
- 	const struct mtk_pmic_keys_regs *regs;
-@@ -238,6 +249,9 @@ static const struct of_device_id of_mtk_pmic_keys_match_tbl[] = {
- 	}, {
- 		.compatible = "mediatek,mt6323-keys",
- 		.data = &mt6323_regs,
-+	}, {
-+		.compatible = "mediatek,mt6392-keys",
-+		.data = &mt6392_regs,
- 	}, {
- 		/* sentinel */
- 	}
+-	/* Setup DMA before DMA start */
+-	sunxi_clrsetbits(hpriv->mmio + AHCI_P0DMACR, 0x0000ff00, 0x00004400);
++	/* Setup DMA before DMA start
++	 *
++	 * NOTE: A similar SoC with SATA/AHCI by Texas Instruments documents
++	 *   this Vendor Specific Port (P0DMACR, aka PxDMACR) in its
++	 *   User's Guide document (TMS320C674x/OMAP-L1x Processor
++	 *   Serial ATA (SATA) Controller, Literature Number: SPRUGJ8C,
++	 *   March 2011, Chapter 4.33 Port DMA Control Register (P0DMACR),
++	 *   p.68, https://www.ti.com/lit/ug/sprugj8c/sprugj8c.pdf)
++	 *   as equivalent to the following struct:
++	 *
++	 *   struct AHCI_P0DMACR_t
++	 *   {
++	 *     unsigned TXTS     : 4;
++	 *     unsigned RXTS     : 4;
++	 *     unsigned TXABL    : 4;
++	 *     unsigned RXABL    : 4;
++	 *     unsigned Reserved : 16;
++	 *   };
++	 *
++	 *   TXTS: Transmit Transaction Size (TX_TRANSACTION_SIZE).
++	 *     This field defines the DMA transaction size in DWORDs for
++	 *     transmit (system bus read, device write) operation. [...]
++	 *
++	 *   RXTS: Receive Transaction Size (RX_TRANSACTION_SIZE).
++	 *     This field defines the Port DMA transaction size in DWORDs
++	 *     for receive (system bus write, device read) operation. [...]
++	 *
++	 *   TXABL: Transmit Burst Limit.
++	 *     This field allows software to limit the VBUSP master read
++	 *     burst size. [...]
++	 *
++	 *   RXABL: Receive Burst Limit.
++	 *     Allows software to limit the VBUSP master write burst
++	 *     size. [...]
++	 *
++	 *   Reserved: Reserved.
++	 *
++	 *
++	 * NOTE: According to the above document, the following alternative
++	 *   to the code below could perhaps be a better option
++	 *   (or preparation) for possible further improvements later:
++	 *     sunxi_clrsetbits(hpriv->mmio + AHCI_P0DMACR, 0x0000ffff,
++	 *		0x00000033);
++	 */
++	sunxi_clrsetbits(hpriv->mmio + AHCI_P0DMACR, 0x0000ffff, 0x00004433);
+ 
+ 	/* Start DMA */
+ 	sunxi_setbits(port_mmio + PORT_CMD, PORT_CMD_START);
 -- 
-2.20.1
+2.11.0
 
 
 _______________________________________________
