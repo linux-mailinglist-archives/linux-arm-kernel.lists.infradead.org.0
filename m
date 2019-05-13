@@ -2,76 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A02D1BEAD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 22:25:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 84E281BEAE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 22:25:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=xQkIZ5oQ2t00PVXbgfkqAd0AbvNlpzCAFN1chbCtt6U=; b=Qj0
-	CkmDbXGw24T2d+6FSTjhXss1JgPh77krpk9MpSQJgSjMYJy1Hdc4FT3L4D7+LDuDIudxfxVNcVRHC
-	oUXA0frHRnK7VGVyly3fcjkKRFvUQ96HqnWGUDHZPEVYQFGmVdL/2Wbl6QAHR/DTuGc+HQQ8Yhye0
-	wOhuldjoK1H0gmwR17P8lCu5FR/T8VnYL/miNhVvueGKlw3+J6Q+veaIaOrJ4U3x+XJkrJXbySnS+
-	x9UiMcbTKE3UUgO7QroqUhpVZBaRMpKlwfLAPZBXmJrXCsuEo+HouQVmBWurr70kJOv+nsfIC27Dc
-	MSvgu4CXGmf9s74E0mhdiP4I1WrW56A==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=LowTFxF34AxtzualGITy2cgs5j1ZrYGCyI/PoLPck50=; b=tVNs3TosGnj7n+Gt/Q7HwE8JCI
+	1YC9c2hqx7sjpG5h4c3Pr42mjGj/lOTQQ2WA8T9KGeVPAp7vte9ga2g2aO60E3JxwVSTgRvHr9RUa
+	vCxiJevxUSD7adxDCVkx6RvMe7ulgp+fALw0jf5MUzeTKBGNYHSjJsM1qezXnqh9zDQeoBidRQn6p
+	7y3y+vRn6IDDIkTqfAsqMVu/VB6zgXrj85aQKPjNQyTD2gjs26V+Z0IqiQxJ2PQEwoBbZSC06jlX4
+	IfmS6zzeN0ihzHwhLblkGRw9uu3tHLlg5kY/Vomqn9RVFW6kG4TOAvZtw2scdH8RaWtXdzuh5j5X9
+	wUIAHEAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQHW4-0002l0-DJ; Mon, 13 May 2019 20:25:44 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1hQHWF-0002x8-0i; Mon, 13 May 2019 20:25:55 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQHVv-0002kW-SF
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 20:25:37 +0000
-Received: by mail-ed1-x543.google.com with SMTP id p27so19410003eda.1
+ id 1hQHVz-0002kv-5B
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 20:25:41 +0000
+Received: by mail-ed1-x541.google.com with SMTP id l25so19374168eda.9
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 May 2019 13:25:35 -0700 (PDT)
+ Mon, 13 May 2019 13:25:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=Er9e77I7AjeKoDkXcYi3wcJKFOWUoBq85CSzzlD7DBA=;
- b=trLVViIX/rrypZR2cLvz2Vn/RDXBrVxloNLYKr1/roYOiSNqZDub96DBFEJ7xzzvAN
- FXdO2HTRdjkIjaZuvjAz8HfUEtSLCcbuAsbreIinoQWejV2BfgrYCZBh76zcGytFsKPc
- 6O8YWFbDlY9wSRet3m9tajA0vCwxkhoMUuwj/PFoGj02585WGuy3QvQ5BY8R4fOcLpTL
- 8CaDx/Igyovv6r6IOGhSKuuW9omx8UJl+lx0mfv9z5TnARVN1FlkytRrSxCsCWgjkWsN
- McFOWl+lvcyCBME/dGRvl+4QMN/eL1Wu3/wn62kob875Pzi9C2jFkxDpT+5Gsy0LlXH7
- +k1w==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=uCn6Vke4138+U/7e0Ka6YzQApQ9tmuWJ2ESUL37eTFU=;
+ b=pqs2RSzEhP5MBiCHoHgf+86ImGMZ3WraDlEInb+07mjAKyFHIzTkqxXTlob3Dd3D6I
+ Nt49GRdfJSPTx1/nmcireXaAgmgM8lfVNJA8lVkhDnhk0qo0cGnNJRjVBRhBirxnH0V0
+ +OfGMF/usK3qNjfKdDk93gN9EfM7+6yX8aANjsDSFAENGZ/y9/j3wQvxeBAhEHaG21FP
+ /DXaXSOwIqJ6GyErL15Z6MILIIREE+0bNPDJWxmpm5p5Xzfn1eJsxh6XNPm57nNZLi05
+ lCTGVM6N9WJyaRstesmOAIzoK7Qssyptvk5XsR65Cz16dyk5dqJU+qErNIm0PEfxedR3
+ 5ogw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=Er9e77I7AjeKoDkXcYi3wcJKFOWUoBq85CSzzlD7DBA=;
- b=j1zDxPxffNTrTV+groTApJsrcZeBTGOTNVnM16wuYwtyXpgL/e9ea3cItrM3V0OcYJ
- REIHgzLPAaNkB3EokskUCM6RzTHKv7gnW+3JcCYyqAnIFEE7CgYpDJpLgzpRhuFOSuNK
- F0++aDiWWmEdvdpGMr9HDp05XNf82uiOxTG3BHtQjHQ9t03UD2iktjrRGNw5cEzeov3e
- hdnGTjV7ubxHfYKfTNQFeoejSa3OY6k93ayHOXEPHdkQiLSRUh4T82D4CQ9F8agZsLFX
- 0tUInNAmcJ6N6d/w9WGX4xOjWwR6nZ+eqep67QQBrkOIsnHg+nI0I7j+A82SF80LrK4H
- 4fsQ==
-X-Gm-Message-State: APjAAAXKXKF+5DAr3LIv2ubA/ExCAG0woNdJPA0uRIjjcuR+xuBwGZt0
- +/jKlW08pMhWz4qaVhQhpEs=
-X-Google-Smtp-Source: APXvYqz4eD/+kOge9iORr/87hGa3M3O7voVJN8UIpwxmy9HoXa0SkKbXKbG8oU6BZ7KBfAc0z1x0kw==
-X-Received: by 2002:a17:906:2542:: with SMTP id
- j2mr24117404ejb.217.1557779134001; 
- Mon, 13 May 2019 13:25:34 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=uCn6Vke4138+U/7e0Ka6YzQApQ9tmuWJ2ESUL37eTFU=;
+ b=WMx7Lrcm/kUNHf1995olSMbhJcNGq0rw4opDWU8SYKKlZPeeAw4kxgnGrfsho7bFYK
+ MZZBt2pESOwk8LyisoorqW2WX6BbI9uJ04xBRNVHOwoZcKSc9yPQN20x06QUjdlcK+6z
+ 3FSoRzeSPSFN35oG9z9R0Ll4T2OsyANXBcP0ltyOo3YjN40B+zbtFYMPJ+XEZocCE0CH
+ hwbndNJAXCEpsUQF4qp1F+oueHR4XFK6DyhQPhppUM7N20ccOEqmk5ppcO6F52zf+Opb
+ v+28hhIuJXPGbpnQUwEsNjxtcN7SauDgpOxXr1DzhFusWkzNEaBWDxQJyRVos7ZDI20K
+ EUKw==
+X-Gm-Message-State: APjAAAVuL2OnDHjjO/6yUWegH4JksSOx9rJ7518T6CvGNkaUv4sL0n6a
+ hqk7CvvH9E2CiLJDk4YwwsZ5vzPn
+X-Google-Smtp-Source: APXvYqwrQW7c83VHP6phdIgpO5+USwxpcAIbC39zOef3nLeX0cdU8cbPKNu7dnwAqDNh919K8mmJUA==
+X-Received: by 2002:a50:b4f7:: with SMTP id x52mr32788267edd.190.1557779137464; 
+ Mon, 13 May 2019 13:25:37 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.250])
- by smtp.gmail.com with ESMTPSA id k37sm4036076edb.11.2019.05.13.13.25.30
+ by smtp.gmail.com with ESMTPSA id k37sm4036076edb.11.2019.05.13.13.25.34
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 13 May 2019 13:25:33 -0700 (PDT)
+ Mon, 13 May 2019 13:25:36 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v2 0/3] perf vendor events arm64: support for Brahma-B53,
- Cortex-A57/A72
-Date: Mon, 13 May 2019 13:25:19 -0700
-Message-Id: <20190513202522.9050-1-f.fainelli@gmail.com>
+Subject: [PATCH v2 1/3] perf vendor events arm64: Remove [[:xdigit:]] wildcard
+Date: Mon, 13 May 2019 13:25:20 -0700
+Message-Id: <20190513202522.9050-2-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190513202522.9050-1-f.fainelli@gmail.com>
+References: <20190513202522.9050-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_132535_934936_1B8C436E 
-X-CRM114-Status: GOOD (  11.10  )
+X-CRM114-CacheID: sfid-20190513_132539_332381_93B0DDB2 
+X-CRM114-Status: GOOD (  14.19  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (f.fainelli[at]gmail.com)
@@ -111,22 +113,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+ARM64's implementation of get_cpuidr_str() masks out the revision bits
+[3:0] while reading the CPU identifier, there is no need for the
+[[:xdigit:]] wildcard.
 
-Based on discussion about the last patch, it turned out that we can
-remove the [[:xdigit:]] wildcard entirely since get_cpuid_str() strips
-the revision bits anyway.
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+---
+ tools/perf/pmu-events/arch/arm64/mapfile.csv | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Florian Fainelli (3):
-  perf vendor events arm64: Remove [[:xdigit:]] wildcard
-  perf vendor events arm64: Map Brahma-B53 CPUID to cortex-a53 events
-  perf vendor events arm64: Add Cortex-A57 and Cortex-A72 events
-
- .../arm/cortex-a57-a72/core-imp-def.json      | 179 ++++++++++++++++++
- tools/perf/pmu-events/arch/arm64/mapfile.csv  |   5 +-
- 2 files changed, 183 insertions(+), 1 deletion(-)
- create mode 100644 tools/perf/pmu-events/arch/arm64/arm/cortex-a57-a72/core-imp-def.json
-
+diff --git a/tools/perf/pmu-events/arch/arm64/mapfile.csv b/tools/perf/pmu-events/arch/arm64/mapfile.csv
+index 59cd8604b0bd..da5ff2204bf6 100644
+--- a/tools/perf/pmu-events/arch/arm64/mapfile.csv
++++ b/tools/perf/pmu-events/arch/arm64/mapfile.csv
+@@ -12,7 +12,7 @@
+ #
+ #
+ #Family-model,Version,Filename,EventType
+-0x00000000410fd03[[:xdigit:]],v1,arm/cortex-a53,core
++0x00000000410fd030,v1,arm/cortex-a53,core
+ 0x00000000420f5160,v1,cavium/thunderx2,core
+ 0x00000000430f0af0,v1,cavium/thunderx2,core
+ 0x00000000480fd010,v1,hisilicon/hip08,core
 -- 
 2.17.1
 
