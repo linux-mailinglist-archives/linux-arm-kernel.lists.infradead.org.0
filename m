@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7EAC1BDDD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 21:26:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 610F01BDE1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 21:26:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,73 +11,73 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=H4Q+wwDYZzPMayQ0d8u4SDWktG+rkkUchoXqn0Ba2Gs=; b=GDpXZXCFAaH+huAUN3U+tKqpin
-	v6Bjd5R3Ls6IP+Cp2/mjzNveDSlQNvf0M3HXmkvrJhkJCHD3gHIyRGpuS+KgdRGawAC9/qGZ0hhCJ
-	rczD87x9YkXe7ByGoE3eKLJ/r+NZb5diupynKZnNlbivzFo96wJEUu3abttQPYaYs+v/Wdq0d9Gty
-	r/TbdEfv4LNsedSicOd8Br90nCusPGXn7+kLJcWfZZOzaL+3+RxkGhB9mNcBGXHHv+1HHLb7Mw3LT
-	DdenHJiJccwBaofch/fTL0RJ1SJFYN5csB+ImWL/orBBg8uzoLhXt0Po71dJqzpaVOpdcHz/iZ+HM
-	JViFS8vg==;
+	bh=Yn8VGG8kcnAtO0PsbYKcX369+IoM8uvSx6tIHaR0cEE=; b=CRWTvPjGKS2NXj7S63W+VrGzJl
+	S3ti/8UG5si7ZSwGwLv6m+XPJTN7/lK77DviUe6XRSEgjRWcck++5ORzVUKPeXp+PFxzkhaTI/y5q
+	Tfc/XTypcNu+bMvieNzA97YGanGvgCB1CoHPjWf+SdU8yc04NAp41N6lXFNv8PWUNmEpMMLwquFUr
+	kGpSAAr67m75itoxGUl4W2PLOEUbNVcHDfpHuA+bq09lh3RZka2IJSgw81vgMGDU5WizeSchw4G26
+	cRbsAs1+fV/uTo70x3CTK2e6rhhY5tOLVixqoT2uHeZq1RtWtwDg+gKaoYGnRKeihmHsKWYBZFfhF
+	3jUAxJgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQGaN-0005fw-Pi; Mon, 13 May 2019 19:26:07 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1hQGam-0006DM-EH; Mon, 13 May 2019 19:26:32 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQGXt-0001LC-Ed
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 19:23:50 +0000
-Received: by mail-lj1-x241.google.com with SMTP id d15so12062721ljc.7
+ id 1hQGXv-0001NW-5D
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 19:24:00 +0000
+Received: by mail-lj1-x244.google.com with SMTP id e13so12044685ljl.11
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 May 2019 12:23:33 -0700 (PDT)
+ Mon, 13 May 2019 12:23:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=5L3+w8hUR6giXqb5Tz84iJ3SS/PuntIOYwjCkJwPh9s=;
- b=nuEds6uqvSvhzFgPN0xx4WrLj+8Aq5wMne2aRP4Hl30ysRHF3JwffRDwh2I/w4NkhA
- ruqtjGmeavnUC5G6t1+5vD7jYhWzIibj7v8eKj+D5BqywqtbMj4VlBzc5f+oeCC7YVZr
- gMQJv7sBlyWAqagmqVCdQx6ievkrgzxp6P6VXhi+yjAzjEClLL/IUaPqLF+XdiUzD+wB
- PoZRlnXLRxkuWULBDbbLIts79BiF1YdM5kTUelzfYB3F6IWAddBJ1onCo4N+i653uveS
- lhlUL6q4MSOpQOYlAnyDByOwere/dmOdnrZOjhSfSGK/7nMJMIUGdCEIfOTBMbYwDCev
- MmjA==
+ bh=WrUBlQWQzfbgrdk7klxniFTaW91XaiQj55o38mlFd9s=;
+ b=sPy1xWvat53hABQ29ElA2SDvZnqfRV5oZCv6u9/BoxR2ZPqFXvyAG3a5TqRkJY1a78
+ ViroHIx+ON0jQRU/3UrEYHgnwsRgfEfK1eI6rvzBvxBl01A+l0VD3RNQr/pCLeiGgll5
+ oZk8WImmrSosBLIL5WDY5HKxk6DoQYAY3hOyay9Zaekc0Qx48OBqfoEIU9LOQbcuUzO9
+ y21fdWLhr9sVngZjVbZUtziI2z+WwnXK05qOJ7jaN6FqE68r4gmG+pebrx9IRchSta0X
+ VzfAclg9EtvAhwIfrDB0k8yyetyh5giqMkUfQdSjeFYl6oWMRIbrHygy50HEN/rtT2Ov
+ JANw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=5L3+w8hUR6giXqb5Tz84iJ3SS/PuntIOYwjCkJwPh9s=;
- b=lsUMIsVYEg8kMaR78mC/yzcWa1kkz6pDgiMaOII7s5rI/hvNBMYH9Gw5VoiVSoMJTZ
- nuVIdSCwj/fV//ifDErFUSm7J5IAr3tna30aJz4Lo4ve1XvTb8/iMH4w0qw50K/+IN5Z
- nwEaix85CVmtLlJTtMwQpbcKmnEDw6P+5Wr7K/8RK7PODBjSv0b60E9b3VvePjNsTW4G
- qVWmZN7mpmAuUUeC/9rjm0M+BvT/lX6E0sto0TjQwtvb3xTzgPip1yLVksaO5g4aRGIX
- Wy0SDB9V5ZBDuv7gcD/Zhbg8tfDGC1tNGkNrIzUCGPrcScpiDz9iktiZULWQyANtLjoR
- INWQ==
-X-Gm-Message-State: APjAAAUbqC/WL56o+3EBc/x/eqqgBAepUgqfIbMkbF7DCN1hC8CzKTye
- lgRkRqp9P+M7fQXrKsLEi/Xt0w==
-X-Google-Smtp-Source: APXvYqwhviRoSbMrrPulC15a2Em5gq4bwlntBmk6fP/23jtstN9Z1J324DMrQRo3VkPOVmz3QA57og==
-X-Received: by 2002:a2e:9141:: with SMTP id q1mr14833265ljg.84.1557775411722; 
- Mon, 13 May 2019 12:23:31 -0700 (PDT)
+ bh=WrUBlQWQzfbgrdk7klxniFTaW91XaiQj55o38mlFd9s=;
+ b=No+GxlAm/vI1zG4ProVS+tdQq+yFZfMSOWjMFOIczenQEqiRq5KJxg3X8lhtFlaRAR
+ QAXsof2LncsbBMZ8sGm9q39zVCXSowXRcQGqOTL8OFr4nRfkyqwf35zTgappFjuHOPY4
+ RqPybMqoI6JnDeZrAnk0/d6vG3C9awf2i+ueBsIg9KBb10jzihQQKOA7C5hGUoq/4hK2
+ QRI3DAMsv5NSdj9slN/Q3rbZOCvKZxKP7m8sKxskDu2gEseV3W0AfYfQMWwcsQk3geat
+ MFSYBhwTxZK930KHL6kec2OSxbE0hGkb1Ehame7jYcb2lkQ2namYj3WTiCP1OdYCV45l
+ gjLA==
+X-Gm-Message-State: APjAAAXMRBoeKQkF72TlDhgLiXKC3EmIrEb3SrLsUWuLSuBqPZpDJr5h
+ w0POuUFETfF03HmCRrPxwJoLNg==
+X-Google-Smtp-Source: APXvYqwd8hFjFHeIWZMZf2tJMuRrNt9YuVmMQEmung/qTBri+UbFr4ziejpMmn/ZiqWmeUdPeQNSbw==
+X-Received: by 2002:a2e:2b58:: with SMTP id q85mr14768159lje.179.1557775413538; 
+ Mon, 13 May 2019 12:23:33 -0700 (PDT)
 Received: from localhost.localdomain (h-158-174-22-210.NA.cust.bahnhof.se.
  [158.174.22.210])
- by smtp.gmail.com with ESMTPSA id q21sm3449365lfa.84.2019.05.13.12.23.29
+ by smtp.gmail.com with ESMTPSA id q21sm3449365lfa.84.2019.05.13.12.23.31
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 13 May 2019 12:23:31 -0700 (PDT)
+ Mon, 13 May 2019 12:23:32 -0700 (PDT)
 From: Ulf Hansson <ulf.hansson@linaro.org>
 To: Sudeep Holla <sudeep.holla@arm.com>,
  Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
  Mark Rutland <mark.rutland@arm.com>, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 14/18] drivers: firmware: psci: Manage runtime PM in the idle
- path for CPUs
-Date: Mon, 13 May 2019 21:22:56 +0200
-Message-Id: <20190513192300.653-15-ulf.hansson@linaro.org>
+Subject: [PATCH 15/18] drivers: firmware: psci: Support CPU hotplug for the
+ hierarchical model
+Date: Mon, 13 May 2019 21:22:57 +0200
+Message-Id: <20190513192300.653-16-ulf.hansson@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190513192300.653-1-ulf.hansson@linaro.org>
 References: <20190513192300.653-1-ulf.hansson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_122333_930368_F64BCB4F 
-X-CRM114-Status: GOOD (  18.30  )
+X-CRM114-CacheID: sfid-20190513_122335_497177_4A3E0CA3 
+X-CRM114-Status: GOOD (  17.85  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -117,92 +117,120 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When the hierarchical CPU topology layout is used in DT, let's allow the
-CPU to be power managed through its PM domain, via deploying runtime PM
-support.
+When the hierarchical CPU topology is used and when a CPU has been put
+offline (hotplug), that same CPU prevents its PM domain and thus also
+potential master PM domains, from being powered off. This is because genpd
+observes the CPU's attached device as being active from a runtime PM point
+of view.
 
-To know for which idle states runtime PM reference counting is needed,
-let's store the index of deepest idle state for the CPU, in a per CPU
-variable. This allows psci_cpu_suspend_enter() to compare this index with
-the requested idle state index and then act accordingly.
+To deal with this, let's decrease the runtime PM usage count by calling
+pm_runtime_put_sync_suspend() of the attached struct device when putting
+the CPU offline. Consequentially, we must then increase the runtime PM
+usage count, while putting the CPU online again.
 
 Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
 ---
 
 Changes:
-	- Simplify the code by using the new per CPU struct, that stores the
-	  needed struct device*.
+	- Use get_logical_index() to find the CPU number.
+	- Verify that a corresponding struct device* has been attached to the
+	  PM domain before doing runtime PM refrence counting.
+	- Clear the domain state when the CPU goes offline, to start fresh.
+	- Move code to internal helper functions and move them inside
+	  "ifdef CONFIG_CPU_IDLE.
 
 ---
- drivers/firmware/psci/psci.c | 22 ++++++++++++++++++++--
- 1 file changed, 20 insertions(+), 2 deletions(-)
+ drivers/firmware/psci/psci.c | 47 +++++++++++++++++++++++++++++++++++-
+ 1 file changed, 46 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/firmware/psci/psci.c b/drivers/firmware/psci/psci.c
-index 54e23d4ed0ea..2c4157d3a616 100644
+index 2c4157d3a616..5ad93c3694b5 100644
 --- a/drivers/firmware/psci/psci.c
 +++ b/drivers/firmware/psci/psci.c
-@@ -20,6 +20,7 @@
+@@ -15,6 +15,7 @@
+ 
+ #include <linux/acpi.h>
+ #include <linux/arm-smccc.h>
++#include <linux/cpu.h>
+ #include <linux/cpuidle.h>
+ #include <linux/errno.h>
  #include <linux/linkage.h>
- #include <linux/of.h>
- #include <linux/pm.h>
-+#include <linux/pm_runtime.h>
- #include <linux/printk.h>
- #include <linux/psci.h>
- #include <linux/reboot.h>
-@@ -298,6 +299,7 @@ static int __init psci_features(u32 psci_func_id)
+@@ -93,6 +94,9 @@ static u32 psci_function_id[PSCI_FN_MAX];
+ static u32 psci_cpu_suspend_feature;
+ static bool psci_system_reset2_supported;
  
- struct psci_cpuidle_data {
- 	u32 *psci_states;
-+	u32 rpm_state_id;
- 	struct device *dev;
- };
- 
-@@ -385,6 +387,7 @@ static int psci_dt_cpu_init_idle(struct cpuidle_driver *drv,
- 			goto free_mem;
- 
- 		data->dev = dev;
-+		data->rpm_state_id = drv->state_count - 1;
- 	}
- 
- 	/* Idle states parsed correctly, store them in the per-cpu struct. */
-@@ -481,8 +484,11 @@ static int psci_suspend_finisher(unsigned long index)
- int psci_cpu_suspend_enter(unsigned long index)
++static void psci_cpuidle_cpu_off(void);
++static void psci_cpuidle_cpu_on(unsigned long cpuid);
++
+ static inline bool psci_has_ext_power_state(void)
  {
- 	int ret;
--	u32 *state = __this_cpu_read(psci_cpuidle_data.psci_states);
--	u32 composite_state = state[index - 1] | psci_get_domain_state();
-+	struct psci_cpuidle_data *data = this_cpu_ptr(&psci_cpuidle_data);
-+	u32 *states = data->psci_states;
-+	struct device *dev = data->dev;
-+	bool runtime_pm = (dev && data->rpm_state_id == index);
-+	u32 composite_state;
+ 	return psci_cpu_suspend_feature &
+@@ -188,6 +192,8 @@ static int psci_cpu_off(u32 state)
+ 	int err;
+ 	u32 fn;
  
- 	/*
- 	 * idle state index 0 corresponds to wfi, should never be called
-@@ -491,11 +497,23 @@ int psci_cpu_suspend_enter(unsigned long index)
- 	if (WARN_ON_ONCE(!index))
- 		return -EINVAL;
++	psci_cpuidle_cpu_off();
++
+ 	fn = psci_function_id[PSCI_FN_CPU_OFF];
+ 	err = invoke_psci_fn(fn, state, 0, 0);
+ 	return psci_to_linux_errno(err);
+@@ -200,7 +206,13 @@ static int psci_cpu_on(unsigned long cpuid, unsigned long entry_point)
  
+ 	fn = psci_function_id[PSCI_FN_CPU_ON];
+ 	err = invoke_psci_fn(fn, cpuid, entry_point, 0);
+-	return psci_to_linux_errno(err);
++	err = psci_to_linux_errno(err);
++	if (err)
++		return err;
++
++	psci_cpuidle_cpu_on(cpuid);
++
++	return 0;
+ }
+ 
+ static int psci_migrate(unsigned long cpuid)
+@@ -540,8 +552,41 @@ static int __init _psci_dt_topology_init(struct device_node *np)
+ 
+ 	return ret;
+ }
++
++static void psci_cpuidle_cpu_off(void)
++{
++	struct device *dev = __this_cpu_read(psci_cpuidle_data.dev);
++
 +	/*
-+	 * Do runtime PM if we are using the hierarchical CPU toplogy, but only
-+	 * when cpuidle have selected the deepest idle state for the CPU.
++	 * Drop the runtime PM usage count if the CPU has been attached to a
++	 * CPU PM domain. This is needed to, for example, not prevent other
++	 * master domains in the hierarchy to remain powered on.
 +	 */
-+	if (runtime_pm)
++	if (dev)
 +		pm_runtime_put_sync_suspend(dev);
++}
 +
-+	composite_state = states[index - 1] | psci_get_domain_state();
++static void psci_cpuidle_cpu_on(unsigned long cpuid)
++{
++	struct device *dev;
++	int cpu;
 +
- 	if (!psci_power_state_loses_context(composite_state))
- 		ret = psci_ops.cpu_suspend(composite_state, 0);
- 	else
- 		ret = cpu_suspend(index, psci_suspend_finisher);
- 
-+	if (runtime_pm)
++	if (!psci_dt_topology)
++		return;
++
++	cpu = get_logical_index(cpuid);
++	if (cpu < 0)
++		return;
++
++	dev = per_cpu(psci_cpuidle_data.dev, cpu);
++	if (dev)
 +		pm_runtime_get_sync(dev);
++}
 +
- 	/* Clear the domain state to start fresh when back from idle. */
- 	psci_set_domain_state(0);
+ #else
+ static inline int _psci_dt_topology_init(struct device_node *np) { return 0; }
++static void psci_cpuidle_cpu_off(void) {}
++static void psci_cpuidle_cpu_on(unsigned long cpuid) {}
+ #endif
  
+ static int psci_system_suspend(unsigned long unused)
 -- 
 2.17.1
 
