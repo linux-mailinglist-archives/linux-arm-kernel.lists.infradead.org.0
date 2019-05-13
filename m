@@ -2,82 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F29E11AFF2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 07:10:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 763C71B000
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 07:32:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2S6a5r+N3KDbOH2Jv7gdZj/hzLRdAIM5rXfARcyvQpI=; b=ptxMLf+ctlqbhD
-	b+i2uebTtKZzNI8rXvbUgGKcJVNr/G6wP1jZJovsLMtp9QTMnL8HCIljQGFc7TB2Jf1e3FsPUBE9v
-	o3Ik0cY5m/HfWp5MiWNVh1vh+YG6UYutBlcgnZrNnSZ7CsrwQigj1+RDgKPW6lTewCoof9RXL8KLD
-	p6fyH1CBR0vx7vStbC2Oe7bMKNPrAs+FfxhYQwhgpIQxpNpx98WXCyjVibDjjx+4DKiFzYSR1lT2w
-	M6YXt3qRcFalmvwAtGcyGwHWUII8veI7QnWTx1Z9IoFxWfcgVRl+ClaKXpI5s7rE97eMWefQ8YYrv
-	5cWNGQpfDqWwzlX5YqWg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ciDTerFaHyLiopUBRwC1XLiaGwLlEsunJY0+esZnyl8=; b=LlsiZSDRIXia8z
+	9ddfHqXUar+/C5hohPdFJ8RMVzGvbmqfOU2DMAp6ZcRsyWOvShtdD2qO8FMJU8/JIxgevLn0coGNm
+	nBQC8xWe4k2HhnhJyxrakwmpQiwNmNrgyiIh/9U4KPMiUQxbkK7ZrRqROb9Tky675DAjOw27RpMve
+	nNyXlwI+hc2heBvoR0G7I3u15a8eFN1oD9EMGqJf73V5Uvzb5cFpSxgelCilNUFkQpAkLJsANFGqs
+	JsiwyNADvczVl0srh6vVEHvvn4OF2ReDMiAvRGFiF84grNpT0QTGQAneeoaJHJ1reiRaRhnCs4BQF
+	VRaj8Y48qyPTMNWZG7qA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQ3EA-0001qp-Uk; Mon, 13 May 2019 05:10:18 +0000
-Received: from hqemgate15.nvidia.com ([216.228.121.64])
+	id 1hQ3ZV-0000Vj-Cv; Mon, 13 May 2019 05:32:21 +0000
+Received: from mail-eopbgr80078.outbound.protection.outlook.com ([40.107.8.78]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQ3D7-0000nh-ES
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 05:09:39 +0000
-Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate15.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5cd8fbd20000>; Sun, 12 May 2019 22:08:34 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate102.nvidia.com (PGP Universal service);
- Sun, 12 May 2019 22:09:13 -0700
-X-PGP-Universal: processed;
- by hqpgpgate102.nvidia.com on Sun, 12 May 2019 22:09:13 -0700
-Received: from HQMAIL110.nvidia.com (172.18.146.15) by HQMAIL104.nvidia.com
- (172.18.146.11) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 13 May
- 2019 05:09:12 +0000
-Received: from HQMAIL104.nvidia.com (172.18.146.11) by hqmail110.nvidia.com
- (172.18.146.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 13 May
- 2019 05:08:57 +0000
-Received: from hqnvemgw01.nvidia.com (172.20.150.20) by HQMAIL104.nvidia.com
- (172.18.146.11) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
- Transport; Mon, 13 May 2019 05:08:57 +0000
-Received: from vidyas-desktop.nvidia.com (Not Verified[10.24.37.38]) by
- hqnvemgw01.nvidia.com with Trustwave SEG (v7, 5, 8, 10121)
- id <B5cd8fbe50000>; Sun, 12 May 2019 22:08:57 -0700
-From: Vidya Sagar <vidyas@nvidia.com>
-To: <lorenzo.pieralisi@arm.com>, <bhelgaas@google.com>, <robh+dt@kernel.org>, 
- <mark.rutland@arm.com>, <thierry.reding@gmail.com>, <jonathanh@nvidia.com>,
- <kishon@ti.com>, <catalin.marinas@arm.com>, <will.deacon@arm.com>,
- <jingoohan1@gmail.com>, <gustavo.pimentel@synopsys.com>
-Subject: [PATCH V6 15/15] arm64: Add Tegra194 PCIe driver to defconfig
-Date: Mon, 13 May 2019 10:36:26 +0530
-Message-ID: <20190513050626.14991-16-vidyas@nvidia.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190513050626.14991-1-vidyas@nvidia.com>
-References: <20190513050626.14991-1-vidyas@nvidia.com>
-X-NVConfidentiality: public
+ id 1hQ3ZN-0000Uz-K4
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 05:32:15 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ObFyiP1qiiCBXrAk80o80SkGnTFgkA8Z/9BPbwfEPug=;
+ b=WEwiHFWMqQfu9X0Nu6JW+wapW599T9SAycq8pMlxLeMZL5dsQGZl8q9URBWekTqqTukci1jDPn+QKmA0LP45k930Em4KDOqt0X8oEMH319rwRoQSmoksM78wQEg6r7E4R6mMy8Uqs53uIdbRTn/DQ0TXtfHseBOfpzqxbCyEVCk=
+Received: from AM0PR04MB6434.eurprd04.prod.outlook.com (20.179.252.215) by
+ AM0PR04MB4881.eurprd04.prod.outlook.com (20.177.40.88) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1878.24; Mon, 13 May 2019 05:32:07 +0000
+Received: from AM0PR04MB6434.eurprd04.prod.outlook.com
+ ([fe80::19be:75a:9fe:7cec]) by AM0PR04MB6434.eurprd04.prod.outlook.com
+ ([fe80::19be:75a:9fe:7cec%7]) with mapi id 15.20.1878.024; Mon, 13 May 2019
+ 05:32:07 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Jacky Bai <ping.bai@nxp.com>, Stephen Boyd <sboyd@kernel.org>, Shawn Guo
+ <shawnguo@kernel.org>
+Subject: [PATCH 1/2] clk: imx8mm: Mark dram_apb critical
+Thread-Topic: [PATCH 1/2] clk: imx8mm: Mark dram_apb critical
+Thread-Index: AQHVCU00unSS8OoySUuU9eBOMvjcrw==
+Date: Mon, 13 May 2019 05:32:07 +0000
+Message-ID: <61a5cad23ad56a2aed96f3bdbf7c67df25e0bd6b.1557725494.git.leonard.crestez@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [89.37.124.34]
+x-mailer: git-send-email 2.17.1
+x-clientproxiedby: LO2P265CA0125.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:600:9f::17) To AM0PR04MB6434.eurprd04.prod.outlook.com
+ (2603:10a6:208:16c::23)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: c1d2eb8c-8f30-47aa-4c17-08d6d76456cb
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB4881; 
+x-ms-traffictypediagnostic: AM0PR04MB4881:
+x-microsoft-antispam-prvs: <AM0PR04MB4881198C0EE65C56E9E6AFB6EE0F0@AM0PR04MB4881.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1923;
+x-forefront-prvs: 0036736630
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(346002)(376002)(39860400002)(136003)(366004)(396003)(199004)(189003)(305945005)(6436002)(66066001)(14444005)(256004)(2906002)(52116002)(71190400001)(25786009)(71200400001)(102836004)(54906003)(6486002)(110136005)(53936002)(386003)(316002)(86362001)(68736007)(4326008)(6512007)(478600001)(5660300002)(6506007)(99286004)(7736002)(26005)(118296001)(186003)(50226002)(6116002)(8936002)(3846002)(486006)(476003)(2616005)(8676002)(73956011)(14454004)(36756003)(44832011)(64756008)(66476007)(66556008)(81156014)(81166006)(66446008)(66946007)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4881;
+ H:AM0PR04MB6434.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: nt5MvoyMigCMFswL0/ROWyZOHxSESFYtngjgavnySGKn93x48hAQeB53FwketjHFsHQTUi/SsSuovFksNtJJNGm2F48xsSPvedAzyb9tFWHbpanXVO4tuMRGLKewMi3NlM+WLAMDo72YRHndlANVI43PuQ+Cc59j2n8NwgK+XBIWJP4nKlTyDFxclHUcm+y0gXQfRs3TC0bxwYz9rpsxcrG/1Duoeuu7p2SASWY7Ov9ZmcrXkNdlexObfXfHHRNJyTYNrh1GMoGtRHfDl3X93AKJQ4jfzir2nwQN4gKDl6qlDn30o7tk38MQFQU07RHZaq9XqAYZZH3PL9y8ui8L2sF8i9XljmX6Tpgb8tPpjinbhaevziwUosqYjt4wq+Nza+CR5Ld8hM0wzmwhKBjab1yRNfQqGwZbmYW/4vE5lok=
+Content-ID: <BE2849F329DEDF4B849E611DD86696BE@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1557724114; bh=TG1BO7VjWyZ5GG8pPCGHN1pvhx441wUV7iT3GFGGVbE=;
- h=X-PGP-Universal:From:To:CC:Subject:Date:Message-ID:X-Mailer:
- In-Reply-To:References:X-NVConfidentiality:MIME-Version:
- Content-Type;
- b=lxRRozX6pBepVMJOJ273eLYdxlNbaE2qE4eyFw9LbUQAtp5akRJYtv6zQcvbfgd2a
- sZ5lVAbOitsfPF5sh57N6+WjnXnEycVPpi2BelrWx7CqJBsBekmEL77FEb74PfdmKi
- 68nKGMgDKhCOS+f4LDi9p7GboXDE+J7WyDBKmauapQ1Of9wb3uv6g4DMPq1+ZBwrfD
- 05ivXGeLMVcZ5wiQWvToEGG9Ba1+/DWZC9strw71hT7qw7OdqPDVlWg5UtOSi+Z9xb
- mFZj3A0EjlvChWvYVbOTvgtczbT145QuBSLVfIJ7H8esA3ONUN4vj7FLkCJ6tfrWF3
- svrsymJypc8Ng==
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: c1d2eb8c-8f30-47aa-4c17-08d6d76456cb
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 May 2019 05:32:07.7636 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4881
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190512_220914_019409_88AF84B1 
-X-CRM114-Status: UNSURE (   6.99  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190512_223213_761172_014C33E0 
+X-CRM114-Status: GOOD (  12.28  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.64 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.8.78 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -87,7 +103,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -99,50 +114,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, mmaddireddy@nvidia.com, kthota@nvidia.com,
- linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org, mperttunen@nvidia.com,
- linux-tegra@vger.kernel.org, vidyas@nvidia.com,
- linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
+ Anson Huang <anson.huang@nxp.com>, Michael Turquette <mturquette@baylibre.com>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add PCIe host controller driver for DesignWare core based
-PCIe controller IP present in Tegra194.
+This clock is used for dram operations inside TF-A and must be kept
+enabled for features such as suspend/resume dram retention and busfreq
+to work.
 
-Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
+This is required for imx8mm suspend to work with NXP branch of TF-A.
+There is an equivalent clk on imx8mq and it's always been marked as
+critical in upstream.
+
+Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 ---
-Changes since [v5]:
-* None
+ drivers/clk/imx/clk-imx8mm.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Changes since [v4]:
-* None
-
-Changes since [v3]:
-* None
-
-Changes since [v2]:
-* None
-
-Changes since [v1]:
-* Changed CONFIG_PCIE_TEGRA194 from 'y' to 'm'
-
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index c12c505dd24f..57097c2dd67d 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -195,6 +195,7 @@ CONFIG_PCIE_QCOM=y
- CONFIG_PCIE_ARMADA_8K=y
- CONFIG_PCIE_KIRIN=y
- CONFIG_PCIE_HISI_STB=y
-+CONFIG_PCIE_TEGRA194=m
- CONFIG_UEVENT_HELPER_PATH="/sbin/hotplug"
- CONFIG_DEVTMPFS=y
- CONFIG_DEVTMPFS_MOUNT=y
+diff --git a/drivers/clk/imx/clk-imx8mm.c b/drivers/clk/imx/clk-imx8mm.c
+index 1ef8438e3d6d..fbb61c2f12d0 100644
+--- a/drivers/clk/imx/clk-imx8mm.c
++++ b/drivers/clk/imx/clk-imx8mm.c
+@@ -521,11 +521,11 @@ static int __init imx8mm_clocks_init(struct device_node *ccm_node)
+ 	clks[IMX8MM_CLK_IPG_ROOT] = imx_clk_divider2("ipg_root", "ahb", base + 0x9080, 0, 1);
+ 	clks[IMX8MM_CLK_IPG_AUDIO_ROOT] = imx_clk_divider2("ipg_audio_root", "audio_ahb", base + 0x9180, 0, 1);
+ 
+ 	/* IP */
+ 	clks[IMX8MM_CLK_DRAM_ALT] = imx8m_clk_composite("dram_alt", imx8mm_dram_alt_sels, base + 0xa000);
+-	clks[IMX8MM_CLK_DRAM_APB] = imx8m_clk_composite("dram_apb", imx8mm_dram_apb_sels, base + 0xa080);
++	clks[IMX8MM_CLK_DRAM_APB] = imx8m_clk_composite_critical("dram_apb", imx8mm_dram_apb_sels, base + 0xa080);
+ 	clks[IMX8MM_CLK_VPU_G1] = imx8m_clk_composite("vpu_g1", imx8mm_vpu_g1_sels, base + 0xa100);
+ 	clks[IMX8MM_CLK_VPU_G2] = imx8m_clk_composite("vpu_g2", imx8mm_vpu_g2_sels, base + 0xa180);
+ 	clks[IMX8MM_CLK_DISP_DTRC] = imx8m_clk_composite("disp_dtrc", imx8mm_disp_dtrc_sels, base + 0xa200);
+ 	clks[IMX8MM_CLK_DISP_DC8000] = imx8m_clk_composite("disp_dc8000", imx8mm_disp_dc8000_sels, base + 0xa280);
+ 	clks[IMX8MM_CLK_PCIE1_CTRL] = imx8m_clk_composite("pcie1_ctrl", imx8mm_pcie1_ctrl_sels, base + 0xa300);
 -- 
 2.17.1
 
