@@ -2,71 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A0CC1AFAA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 07:06:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 398D51AFAE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 07:07:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NEh8/JXCCt48kQnF6lUuyxN6ehlDyoGkz79I5yqsbp0=; b=qtgTXPBAPZ5zhA
-	Qrmhxvfd6DtNqpkrdnXibO520KyRHd7jgOOcFgkB8N2L1rVtyv010+6/y3jFQWXJroJpyLsUpw5xZ
-	xeu8Q2zu44nFzwxzRnjolejmhaxPRWunyGFx8gGZ8vkWIOr8o9t864wgmqvGzPka6ZjJOHBX0ShrC
-	NxcWEZJ3KQ7YLatGXKiLFI2Ty3KFzOIkeKQd0REeWskvRMgoDrOTFSWF8vks7QXaJK3ExXqwdSmf+
-	StBLlwoQ+M0y9SX6/w/1Nx7br+y3RDSR4FdTJ4ZUI1+F/0p3jnY2wC06rX/CD3oVaLzXNEFnjU6ad
-	3dx8Aw/NxBKPcKZEPVLw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZV96/j0DHTiRDrZ96iEptzQGOg6/OVcNFxJqNyvS56w=; b=hbrWOyYo9vANQl
+	c2BRfj4zqVyNVowW47gCmDE6jLcfFmcAYoFzf/HBx4otNxaelikn0D12E8xhQzlBh3Bndx1hNfTUR
+	dashCW0bzUT5GkTx+oaFJJHphN0JWVsx18Lb1D0Lw+cBR7c+TBeuznsyxkhp8Ryy8FzMi3IbNLIO4
+	XedIY889fcCy6/ShB0SVU5s5Kv5q/YME2bu7NPE9bEMUwP+UDS/cP9SpeGVnYWwiSVSlyNieta0Ob
+	WFayG3vvFtvVDdzeaDV500sPxRSAmX8vQVJsCGn8ymuOkuvxtAkqhsd/8uZFVNJUizje+wCGABxr0
+	KuKb9hhNd+UfZor/w8VA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQ3Am-0006BX-TS; Mon, 13 May 2019 05:06:48 +0000
+	id 1hQ3Az-0006JK-Op; Mon, 13 May 2019 05:07:01 +0000
 Received: from hqemgate14.nvidia.com ([216.228.121.143])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQ3Af-0006AU-DW
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 05:06:43 +0000
+ id 1hQ3Aj-0006By-Vk
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 05:06:47 +0000
 Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
  hqemgate14.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5cd8fb630000>; Sun, 12 May 2019 22:06:43 -0700
+ id <B5cd8fb6c0000>; Sun, 12 May 2019 22:06:52 -0700
 Received: from hqmail.nvidia.com ([172.20.161.6])
  by hqpgpgate102.nvidia.com (PGP Universal service);
- Sun, 12 May 2019 22:06:36 -0700
+ Sun, 12 May 2019 22:06:45 -0700
 X-PGP-Universal: processed;
- by hqpgpgate102.nvidia.com on Sun, 12 May 2019 22:06:36 -0700
-Received: from HQMAIL110.nvidia.com (172.18.146.15) by HQMAIL101.nvidia.com
- (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 13 May
- 2019 05:06:35 +0000
-Received: from HQMAIL104.nvidia.com (172.18.146.11) by hqmail110.nvidia.com
- (172.18.146.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 13 May
- 2019 05:06:35 +0000
-Received: from hqnvemgw01.nvidia.com (172.20.150.20) by HQMAIL104.nvidia.com
- (172.18.146.11) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
- Transport; Mon, 13 May 2019 05:06:35 +0000
+ by hqpgpgate102.nvidia.com on Sun, 12 May 2019 22:06:45 -0700
+Received: from HQMAIL106.nvidia.com (172.18.146.12) by HQMAIL104.nvidia.com
+ (172.18.146.11) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 13 May
+ 2019 05:06:45 +0000
+Received: from hqnvemgw01.nvidia.com (172.20.150.20) by HQMAIL106.nvidia.com
+ (172.18.146.12) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
+ Transport; Mon, 13 May 2019 05:06:45 +0000
 Received: from vidyas-desktop.nvidia.com (Not Verified[10.24.37.38]) by
  hqnvemgw01.nvidia.com with Trustwave SEG (v7, 5, 8, 10121)
- id <B5cd8fb560000>; Sun, 12 May 2019 22:06:35 -0700
+ id <B5cd8fb600000>; Sun, 12 May 2019 22:06:44 -0700
 From: Vidya Sagar <vidyas@nvidia.com>
 To: <lorenzo.pieralisi@arm.com>, <bhelgaas@google.com>, <robh+dt@kernel.org>, 
  <mark.rutland@arm.com>, <thierry.reding@gmail.com>, <jonathanh@nvidia.com>,
  <kishon@ti.com>, <catalin.marinas@arm.com>, <will.deacon@arm.com>,
  <jingoohan1@gmail.com>, <gustavo.pimentel@synopsys.com>
-Subject: [PATCH V6 00/15] Add Tegra194 PCIe support
-Date: Mon, 13 May 2019 10:36:11 +0530
-Message-ID: <20190513050626.14991-1-vidyas@nvidia.com>
+Subject: [PATCH V6 01/15] PCI: Add #defines for some of PCIe spec r4.0 features
+Date: Mon, 13 May 2019 10:36:12 +0530
+Message-ID: <20190513050626.14991-2-vidyas@nvidia.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190513050626.14991-1-vidyas@nvidia.com>
+References: <20190513050626.14991-1-vidyas@nvidia.com>
 X-NVConfidentiality: public
 MIME-Version: 1.0
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1557724003; bh=xWG0V3ZMuvtipmob5YakqMZyzY8swTAv30VFsQpP3I8=;
+ t=1557724012; bh=B+ly8da5c7ecckzbl85Ymjq/tIzhKHv9dmVrX4Mi1wg=;
  h=X-PGP-Universal:From:To:CC:Subject:Date:Message-ID:X-Mailer:
- X-NVConfidentiality:MIME-Version:Content-Type;
- b=Ro9kxymc+d+a7iywykkyLsrnMz10BNzDA8iKRaN39i1gMRj7dkhRW3Ea1uD/jKh2G
- tdn3ochyLaGfW+X8C1RVbcM3OEQyWCOngpsH/RJOFu3Nc3LCHCR/NoUs//kP+Y9nI/
- J//soip8X2gQ4yFk9cYKY1WCMbrwS95ivxVOwDyv4Tk8HNRgTiUmX0pOKysGH7BBlu
- oMcjLR0+Rzw+SzhfgbsJCBZn7LHaBnhHFhV+CuDUInxjHSPb/zjFQbOlSMmBA2md53
- mKc+uZ2Wkh0Xjk01U7QhX2uYoBqmMxYSNJCvbY+iaD/XhahoshzH1aVH4OwpDOnJJk
- MV9qCG0gBpvhA==
+ In-Reply-To:References:X-NVConfidentiality:MIME-Version:
+ Content-Type;
+ b=Bb+mn0jM2+qEoYNjB3UZp7CuK3XcLRhmwQJHsjfzils+c3amVAA7pWP6VRIbQJr8m
+ 31WTXwqJSpAhtV2V3HIU6F/k18gxKOJHb8wXFEODbfipcCKcyCA8vGT3k67IoC3uqj
+ 5DC+LTGJCBsXTWEnBQj00MVRTwbE/2RUpNrrfQ3iRkiPsePlOcvBO1XmbhfIItWT+D
+ hSEkAEQ6SRcTEsNwaooX0/MXPZeO+aGuAok8Eo+/iY8iE7Eq80Uw5Y7022nGqSBv9Z
+ YCT3ioIoycqEC6sZtBKwG0l7qR/YWe6vGQIZLSS0x5SJewb/U2+NCFGqFwmyqlEM4N
+ RxVkcHPHijBfQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190512_220641_473032_88305360 
-X-CRM114-Status: GOOD (  11.71  )
+X-CRM114-CacheID: sfid-20190512_220646_162755_7F5EA0A4 
+X-CRM114-Status: UNSURE (   7.57  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -104,103 +105,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Tegra194 has six PCIe controllers based on Synopsys DesignWare core.
-There are two Universal PHY (UPHY) blocks with each supporting 12(HSIO:
-Hisg Speed IO) and 8(NVHS: NVIDIA High Speed) lanes respectively.
-Controllers:0~4 use UPHY lanes from HSIO brick whereas Controller:5 uses
-UPHY lanes from NVHS brick. Lane mapping in HSIO UPHY brick to each PCIe
-controller (0~4) is controlled in XBAR module by BPMP-FW. Since PCIe
-core has PIPE interface, a glue module called PIPE-to-UPHY (P2U) is used
-to connect each UPHY lane (applicable to both HSIO and NVHS UPHY bricks)
-to PCIe controller
-This patch series
-- Adds support for P2U PHY driver
-- Adds support for PCIe host controller
-- Adds device tree nodes each PCIe controllers
-- Enables nodes applicable to p2972-0000 platform
-- Adds helper APIs in Designware core driver to get capability regs offset
-- Adds defines for new feature registers of PCIe spec revision 4
-- Makes changes in DesignWare core driver to get Tegra194 PCIe working
+Add #defines only for the Data Link Feature and Physical Layer 16.0 GT/s
+features.
 
-Testing done on P2972-0000 platform
-- Able to get PCIe link up with on-board Marvel eSATA controller
-- Able to get PCIe link up with NVMe cards connected to M.2 Key-M slot
-- Able to do data transfers with both SATA drives and NVMe cards
-
-Note
-- Enabling x8 slot on P2972-0000 platform requires pinmux driver for Tegra194.
-  It is being worked on currently and hence Controller:5 (i.e. x8 slot) is
-  disabled in this patch series. A future patch series would enable this.
-- This series is based on top of the following series
-  Jisheng's patches to add support to .remove() in Designware sub-system
-  https://patchwork.kernel.org/project/linux-pci/list/?series=98559
-  (Jisheng's patches are now accepted and applied for v5.2)
-  My patches made on top of Jisheng's patches to export various symbols
-  https://patchwork.kernel.org/project/linux-pci/list/?series=101259
-
+Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
+Reviewed-by: Thierry Reding <treding@nvidia.com>
+---
 Changes since [v5]:
-* Removed patch that exports pcie_bus_config symbol
-* Took care of review comments from Thierry and Rob
+* None
 
 Changes since [v4]:
-* Removed redundant APIs in pcie-designware-ep.c file after moving them
-  to pcie-designware.c file based on Bjorn's review comments
+* None
 
 Changes since [v3]:
-* Rebased on top of linux-next top of the tree
-* Addressed Gustavo's comments and added his Ack for some of the changes.
+* None
 
 Changes since [v2]:
-* Addressed review comments from Thierry
+* Updated commit message and description to explicitly mention that defines are
+  added only for some of the features and not all.
 
 Changes since [v1]:
-* Addressed review comments from Bjorn, Thierry, Jonathan, Rob & Kishon
-* Added more patches in v2 series
+* None
 
-Vidya Sagar (15):
-  PCI: Add #defines for some of PCIe spec r4.0 features
-  PCI/PME: Export pcie_pme_disable_msi() & pcie_pme_no_msi() APIs
-  PCI: dwc: Perform dbi regs write lock towards the end
-  PCI: dwc: Move config space capability search API
-  PCI: dwc: Add ext config space capability search API
-  dt-bindings: PCI: designware: Add binding for CDM register check
-  PCI: dwc: Add support to enable CDM register check
-  dt-bindings: Add PCIe supports-clkreq property
-  dt-bindings: PCI: tegra: Add device tree support for Tegra194
-  dt-bindings: PHY: P2U: Add Tegra194 P2U block
-  arm64: tegra: Add P2U and PCIe controller nodes to Tegra194 DT
-  arm64: tegra: Enable PCIe slots in P2972-0000 board
-  phy: tegra: Add PCIe PIPE2UPHY support
-  PCI: tegra: Add Tegra194 PCIe support
-  arm64: Add Tegra194 PCIe driver to defconfig
+ include/uapi/linux/pci_regs.h | 22 +++++++++++++++++++++-
+ 1 file changed, 21 insertions(+), 1 deletion(-)
 
- .../bindings/pci/designware-pcie.txt          |    5 +
- .../bindings/pci/nvidia,tegra194-pcie.txt     |  164 ++
- Documentation/devicetree/bindings/pci/pci.txt |    5 +
- .../bindings/phy/phy-tegra194-p2u.txt         |   28 +
- .../arm64/boot/dts/nvidia/tegra194-p2888.dtsi |    2 +-
- .../boot/dts/nvidia/tegra194-p2972-0000.dts   |   41 +
- arch/arm64/boot/dts/nvidia/tegra194.dtsi      |  449 +++++
- arch/arm64/configs/defconfig                  |    1 +
- drivers/pci/controller/dwc/Kconfig            |   10 +
- drivers/pci/controller/dwc/Makefile           |    1 +
- .../pci/controller/dwc/pcie-designware-ep.c   |   37 +-
- .../pci/controller/dwc/pcie-designware-host.c |   14 +-
- drivers/pci/controller/dwc/pcie-designware.c  |   87 +
- drivers/pci/controller/dwc/pcie-designware.h  |   12 +
- drivers/pci/controller/dwc/pcie-tegra194.c    | 1678 +++++++++++++++++
- drivers/pci/pcie/pme.c                        |   14 +-
- drivers/pci/pcie/portdrv.h                    |   14 +-
- drivers/phy/tegra/Kconfig                     |    7 +
- drivers/phy/tegra/Makefile                    |    1 +
- drivers/phy/tegra/pcie-p2u-tegra194.c         |  109 ++
- include/uapi/linux/pci_regs.h                 |   22 +-
- 21 files changed, 2645 insertions(+), 56 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.txt
- create mode 100644 Documentation/devicetree/bindings/phy/phy-tegra194-p2u.txt
- create mode 100644 drivers/pci/controller/dwc/pcie-tegra194.c
- create mode 100644 drivers/phy/tegra/pcie-p2u-tegra194.c
-
+diff --git a/include/uapi/linux/pci_regs.h b/include/uapi/linux/pci_regs.h
+index 27164769d184..95a1eeb22f49 100644
+--- a/include/uapi/linux/pci_regs.h
++++ b/include/uapi/linux/pci_regs.h
+@@ -709,7 +709,9 @@
+ #define PCI_EXT_CAP_ID_DPC	0x1D	/* Downstream Port Containment */
+ #define PCI_EXT_CAP_ID_L1SS	0x1E	/* L1 PM Substates */
+ #define PCI_EXT_CAP_ID_PTM	0x1F	/* Precision Time Measurement */
+-#define PCI_EXT_CAP_ID_MAX	PCI_EXT_CAP_ID_PTM
++#define PCI_EXT_CAP_ID_DLF	0x25	/* Data Link Feature */
++#define PCI_EXT_CAP_ID_PL	0x26	/* Physical Layer 16.0 GT/s */
++#define PCI_EXT_CAP_ID_MAX	PCI_EXT_CAP_ID_PL
+ 
+ #define PCI_EXT_CAP_DSN_SIZEOF	12
+ #define PCI_EXT_CAP_MCAST_ENDPOINT_SIZEOF 40
+@@ -1049,4 +1051,22 @@
+ #define  PCI_L1SS_CTL1_LTR_L12_TH_SCALE	0xe0000000  /* LTR_L1.2_THRESHOLD_Scale */
+ #define PCI_L1SS_CTL2		0x0c	/* Control 2 Register */
+ 
++/* Data Link Feature */
++#define PCI_DLF_CAP		0x04	/* Capabilities Register */
++#define  PCI_DLF_LOCAL_DLF_SUP_MASK	0x007fffff  /* Local Data Link Feature Supported */
++#define  PCI_DLF_EXCHANGE_ENABLE	0x80000000  /* Data Link Feature Exchange Enable */
++#define PCI_DLF_STS		0x08	/* Status Register */
++#define  PCI_DLF_REMOTE_DLF_SUP_MASK	0x007fffff  /* Remote Data Link Feature Supported */
++#define  PCI_DLF_REMOTE_DLF_SUP_VALID	0x80000000  /* Remote Data Link Feature Support Valid */
++
++/* Physical Layer 16.0 GT/s */
++#define PCI_PL_16GT_CAP		0x04	/* Capabilities Register */
++#define PCI_PL_16GT_CTRL	0x08	/* Control Register */
++#define PCI_PL_16GT_STS		0x0c	/* Status Register */
++#define PCI_PL_16GT_LDPM_STS	0x10	/* Local Data Parity Mismatch Status Register */
++#define PCI_PL_16GT_FRDPM_STS	0x14	/* First Retimer Data Parity Mismatch Status Register */
++#define PCI_PL_16GT_SRDPM_STS	0x18	/* Second Retimer Data Parity Mismatch Status Register */
++#define PCI_PL_16GT_RSVD	0x1C	/* Reserved */
++#define PCI_PL_16GT_LE_CTRL	0x20	/* Lane Equalization Control Register */
++
+ #endif /* LINUX_PCI_REGS_H */
 -- 
 2.17.1
 
