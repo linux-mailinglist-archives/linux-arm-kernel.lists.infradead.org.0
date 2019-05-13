@@ -2,78 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 192071AF1B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 05:24:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71F611AF3F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 05:59:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jux7poM8zBTIZhma7AuOD44CjJw5tnZHJVhoUplFmUw=; b=WWPh/B40pn5XMS
-	ovGaEJrUqko8vDZNxtmbAcv94ETFSVX93+h4iTm6SXGFr6i0uxWPdtQGCT64BO11Ux2iV8Q7qDZUH
-	ByWa41+aOjVfxJMi3VZ8CysCjagScdX9MI+g6GHp6ecsSI3lkEPK+BSRObindK5KAyu8NfVXcxYKZ
-	7IxNf+nQRdspXVTmfIgJdtZFVvZ/MVKIfRwvbayXghyhe/1A6s5a4H+gq1VZc20jDsbnDGpDGryGG
-	pl9LxKQaNHd9RjqVpG/LfC+eRY+Hj/j/ZH2nP8haodx26FOQrBJiie16n+6+96BryUhVizf4jQcfg
-	yomceCUik3ZXkgnrHcAg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=gH3e9s5ZvZV8V23zwLjw21cjFHZ2vZwXUao/pz14E/k=; b=GgCQXTjWv4cAbv
+	XUNYXPNuitSkuvqs1VIKRLN+/njloI9r4pB5vt192K/k6WTB7HpV2ZiaE5Bmifgy+v5J6dTBZLzkj
+	alPFCI53Iyt+NhFe8044rNWe9N86XZ0N0mt3vzta/lb3e5ldHzw3iJVpJ4XQiZ4UnQ9uC0foNefa8
+	r2K5nmZ0UW8KZM6brqZx1cTHp5IV1IymIXKNdXsOwqyV3iU46rDxDHWhGEBPFe50NuvT4NvJnnRxt
+	jWTQFTjgAqw0x7Oe23sFuUPDUv8aIpW/oveXOiLTDvTGqYaI45aVUn+SWF6aLQelFLAExiHW+xirO
+	fuI05kQwmSVZy6Klp0XQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQ1ZO-0000qC-F3; Mon, 13 May 2019 03:24:06 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1hQ27f-0002yK-3Q; Mon, 13 May 2019 03:59:31 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQ1ZI-0000pq-A3
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 03:24:01 +0000
-Received: by mail-lj1-x242.google.com with SMTP id j24so8741263ljg.1
+ id 1hQ27Y-0002xd-FZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 03:59:25 +0000
+Received: by mail-pf1-x442.google.com with SMTP id y2so974503pfg.5
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 12 May 2019 20:23:59 -0700 (PDT)
+ Sun, 12 May 2019 20:59:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=wfoMnU1B5MwsGgUobBUJ9DN4Ws8VJ5pzaMDc3Fb2GBA=;
- b=rrOw31zwjhDHCFNWNtO9LFKRbgxlbOMBNdz3cVZpOip1OQg7z+h7XtrwBpmuI0UVfW
- /jY37VLT58EpAaJLnQ1VlB7/rVFKbssVgPQ3SSM7zpCxkvyU9C5ACF7vbzTVp0VGADGL
- mXlRSPjzLrsLDxXR6eZtuKR/zNEMTZ/GElGkxAYXvR6xxIw/XHZBNGxWW0xpr+o4Y2tM
- TN3ePkz3q1ED3QkhG02k0IWHB/zuh/7cMqIxgoI8HZNlF47uZec9Yx1HkYgyw9/nm/Xy
- jmqsYGRRv8064lLLFeYHcMj+kS8AHuPqFLUouJQspeF3FgDFeq14L9f7vdPboW3LT2nI
- 9dHQ==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=T/UMdXUy+/44jsihjFncGu0LlYxKfRmwGK/u/aG6gy8=;
+ b=D4CoZCzw46wJhjAybuMT63XKBWH3byPbtxhQmXYVCReu7aSxN7P2einVcm1kJLa5Gi
+ fMXdsGNhHAY2vESdnGgRukqHkjw4fDD/kXtfS/SZ1VO3ZC4XZfOB/t1Zp2UGUrpFiGPO
+ NM2B4rgJDiic0UrR0q/52DlZPLmLrwoqjcOPJYZtrdBLspbL24oqk6Rg3LHzYktRtJY8
+ mbZ/5lIJJ6Npp3MeFIcpzM/DjZUEam94oE4DFlJRMtJ6df+O2uqXHo27SvWMJGtjCrVy
+ Apf2Jbe9IdhJO49mRrQTKlHL59f8nV1QchHQPo8nGPRkzkmyCvPGdEQGUZUXDE23X2gK
+ KcsQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=wfoMnU1B5MwsGgUobBUJ9DN4Ws8VJ5pzaMDc3Fb2GBA=;
- b=blYaGqImAGkDJFsyRYd4h0d4maxwN0n42FuO1onSi6Ndjpd+UbDTxno7/qbDgtotIV
- d+H6X0x2FY4bmAW6f3uBJhCeC4aW/PVPNP+OjLOB+zmBpwxVF4uPfpiLISEsjSmQMNsm
- VdESX4xEiX0BzgIK0kpuYAVBD/OxrbKQr3i5Z6ieEhSpqIqsWTCrwbK4u3LhRvVKRf+M
- aOuGfek5/SBIg4WHM075Tk/LDhImvsXSHBvhGgiG8AXPQBOn9C2er9BZ+sBMFJsmrPvI
- qA3DxTR1FAqRJ+f+B2Bg6rgLKm0difukYXeil/3qKXcwLZ6pOpedF/t/0oSJWGiWq90x
- zbdw==
-X-Gm-Message-State: APjAAAWobJloKj01ZUFIQ3cN/Ty5iX1Eq1v7l0DUOoV5P7ONxtgqSh/o
- hYZHItGWCoAFXrtMqjYW72Jar9Wm2XEEqSwdqG0=
-X-Google-Smtp-Source: APXvYqyEYmZGdxeGvqmk/S+pXokxfY1UVIYswy62bNye9U+5nX7dOppPE2nWqsDi7wfjoY1PVMXSd9YfVNq64B9BLcQ=
-X-Received: by 2002:a2e:994:: with SMTP id 142mr4150099ljj.192.1557717838459; 
- Sun, 12 May 2019 20:23:58 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=T/UMdXUy+/44jsihjFncGu0LlYxKfRmwGK/u/aG6gy8=;
+ b=LAEMvrJvs0twbumss/Na1NGDsizccq0O4W5UbCVuZFBeH+dWCWgmso7Su9cg2NoRyu
+ 7WwSS5ZbVaOul89/gDtz6NNSlvQPsxMNAV0OuTUHxNXyzC09QrrdVDQILpce0rhkNSIq
+ LEeCPxdBVXDlnTWsPXMiR3fo2vLENEvZhc9gLMx/Uo3Q5tFzdeQA2ZhEYF9FZHDm0zv8
+ JZ8WCFnLAH0+AeHmWb/T0nnzsItR/9qZfOhfvPIDqUhk/xdQmMbda2xPbNLkmpFmT/pI
+ QwAHelatqmm6OG4V0sv0xD0SR5G69olX+VQraWsnWZ1/sfJ6BcbUYTlHMyjH/C6rM8aA
+ G/Ug==
+X-Gm-Message-State: APjAAAUGuaLRvpvCY+jhhI/NRjictFXdVZpFzN0rZwJgQ6kF12mh0UOg
+ MZcjZ4fwna6hYFzaNaapjsw=
+X-Google-Smtp-Source: APXvYqyTijGyvIuRdI382Hw/nI2S9C2DPKA1QDQ+pl8IgiEEBjnhjYIvo7+z9vdBC8w9CHbxtDO49g==
+X-Received: by 2002:a63:f703:: with SMTP id x3mr27941129pgh.394.1557719962682; 
+ Sun, 12 May 2019 20:59:22 -0700 (PDT)
+Received: from localhost.lan (c-24-22-235-96.hsd1.wa.comcast.net.
+ [24.22.235.96])
+ by smtp.gmail.com with ESMTPSA id i17sm16042496pfo.103.2019.05.12.20.59.21
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Sun, 12 May 2019 20:59:21 -0700 (PDT)
+From: Andrey Smirnov <andrew.smirnov@gmail.com>
+To: Shawn Guo <shawnguo@kernel.org>
+Subject: [PATCH 1/2] ARM: dts: vf610-zii-dev: Fix incorrect UART2 pin
+ assignment
+Date: Sun, 12 May 2019 20:59:08 -0700
+Message-Id: <20190513035909.30460-1-andrew.smirnov@gmail.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-References: <1557716049-22744-1-git-send-email-Anson.Huang@nxp.com>
-In-Reply-To: <1557716049-22744-1-git-send-email-Anson.Huang@nxp.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Mon, 13 May 2019 00:23:52 -0300
-Message-ID: <CAOMZO5DKBGYgri7swrbqWZ_j8TfTUsiPivnYPvN2X3GvGcTNrA@mail.gmail.com>
-Subject: Re: [PATCH RESEND 1/2] soc: imx: Add SCU SoC info driver support
-To: Anson Huang <anson.huang@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190512_202400_368448_6F454FB7 
-X-CRM114-Status: UNSURE (   8.21  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190512_205924_547100_0341468D 
+X-CRM114-Status: GOOD (  11.57  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
+ provider (andrew.smirnov[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -92,39 +97,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "maxime.ripard@bootlin.com" <maxime.ripard@bootlin.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
- Leonard Crestez <leonard.crestez@nxp.com>, "robh@kernel.org" <robh@kernel.org>,
- Abel Vesa <abel.vesa@nxp.com>, "agross@kernel.org" <agross@kernel.org>,
- "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
- dl-linux-imx <linux-imx@nxp.com>,
- "marc.w.gonzalez@free.fr" <marc.w.gonzalez@free.fr>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "olof@lixom.net" <olof@lixom.net>,
- "horms+renesas@verge.net.au" <horms+renesas@verge.net.au>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "dinguyen@kernel.org" <dinguyen@kernel.org>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
+Cc: Andrew Lunn <andrew@lunn.ch>, Andrey Smirnov <andrew.smirnov@gmail.com>,
+ linux-kernel@vger.kernel.org, Chris Healy <cphealy@gmail.com>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, May 12, 2019 at 11:59 PM Anson Huang <anson.huang@nxp.com> wrote:
+UART2 is connected to PTD22/23, not PTD0/1. Fix corresponding pinmux
+node.
 
-> +       soc_dev = soc_device_register(soc_dev_attr);
-> +       if (IS_ERR(soc_dev)) {
-> +               kfree(soc_dev_attr->revision);
-> +               return -ENODEV;
+Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
+Cc: Shawn Guo <shawnguo@kernel.org>
+Cc: Chris Healy <cphealy@gmail.com>
+Cc: Andrew Lunn <andrew@lunn.ch>
+Cc: Fabio Estevam <festevam@gmail.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+---
+ arch/arm/boot/dts/vf610-zii-dev.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-This should return PTR_ERR(soc_dev) instead.
+diff --git a/arch/arm/boot/dts/vf610-zii-dev.dtsi b/arch/arm/boot/dts/vf610-zii-dev.dtsi
+index 2d1e9b3203fa..5246c75e848c 100644
+--- a/arch/arm/boot/dts/vf610-zii-dev.dtsi
++++ b/arch/arm/boot/dts/vf610-zii-dev.dtsi
+@@ -385,8 +385,8 @@
+ 
+ 	pinctrl_uart2: uart2grp {
+ 		fsl,pins = <
+-			VF610_PAD_PTD0__UART2_TX	0x21a2
+-			VF610_PAD_PTD1__UART2_RX	0x21a1
++			VF610_PAD_PTD23__UART2_TX	0x21a2
++			VF610_PAD_PTD22__UART2_RX	0x21a1
+ 		>;
+ 	};
+ 
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
