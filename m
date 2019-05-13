@@ -2,60 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C610E1BD47
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 20:37:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 921DF1BD57
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 20:39:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sDdtwB3zf0tKKnNLHcmW2YV90X654ackeFgLGbcg+s0=; b=Z/i9KNnL0zih3m
-	IV7JpuJIenHMkRu6hxjpg0weEFWtum3lX50TbClDsMKoqZV5GnLQ5J3WvluTu10ozLWg41Oxu+Qhq
-	1ouFnf7cwLZlW55z55+v5Wy5z+/illsitB8ph2GmeY2vumyxqdJZwgZxC/M5mzy/8hUainEzlafJT
-	Bsg2Q53P0+OL5q6sOQOh+gyrrFMUtCcNtYaD6uM7aIaVEi0i1vsJoUr/0OfzJbFhDp1eeg8afGpXG
-	7t3W9xhLnyG3zDASXvP4gOR5EVBB9KUi2ZBBG6TI0nrhs3kUA1DHmJXfsFyC03CHXS0zZI3hOWLID
-	mS/kSw6ub4XV64lOqq9g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=g2gvu49NaEPHEm8uySQd0QlO0JYO9F02QdKqv557PlU=; b=SYc/B+3zQ4rAL6
+	DT/W5oVBdfliwJ8JKK3cdJBXIacqM7Oy60sCGvG5F0Wqejf9oBmGLT4osnCMCIAy8YWkwC4z1m3EX
+	baH5ZJ1yduK2Bj3vK62DU9YrSUnywQgxhQv3lWFl4Dy2Qt6exfviRP5tLNzjC5J3w3XbZzaVyOrLr
+	CmS+UpOGQMiFFtPKDJDpIqT+R8ecEiMkYSf9nCvFNmyTc/HHSmDsAaxAss+I8t8pMWaT1tVeXt7nI
+	H27wb2VzthxPou0IuJF7xAH70+f+dE8F/QQ03YhTtC/tNhC6mBSSb/yNIMMzTfo0K4Tk3qrlrA4Ws
+	fQn+VOUsKg9wDmSlBT7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQFpU-0000pq-Q8; Mon, 13 May 2019 18:37:40 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQFpN-0000p5-GX
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 18:37:35 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 653B480D;
- Mon, 13 May 2019 11:37:31 -0700 (PDT)
-Received: from [10.1.196.129] (ostrya.cambridge.arm.com [10.1.196.129])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0AE043F6C4;
- Mon, 13 May 2019 11:37:29 -0700 (PDT)
-Subject: Re: [RFC] iommu: arm-smmu: stall support
-To: Rob Clark <robdclark@gmail.com>
-References: <20170914194444.32551-1-robdclark@gmail.com>
- <20170919123038.GF8398@8bytes.org>
- <CAF6AEGuutkqjrWk4jagE=p-NwHgxdiPZjjsaFsfwtczK568j+A@mail.gmail.com>
- <20170922090204.GJ8398@8bytes.org>
- <32e3ab2c-a996-c805-2a0d-a2e85deb3a50@arm.com>
- <CAF6AEGuepdKo1Ob2jW66UhYXOTAqOMc3C-XKsK3Rze1QdLobLw@mail.gmail.com>
-From: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-Message-ID: <571e825d-7f54-2da4-adc0-6b6ac6dae459@arm.com>
-Date: Mon, 13 May 2019 19:37:08 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hQFrL-0001jU-Ok; Mon, 13 May 2019 18:39:35 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hQFrE-0001gT-5F
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 18:39:29 +0000
+Received: by mail-pl1-x643.google.com with SMTP id b3so6900195plr.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 13 May 2019 11:39:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=OHoX7oCDIxtnl3NxtTVvKViiqkZglgOas/g1Rubunpw=;
+ b=ZWZUGjjawgSeblVhgOyDlCAGehMU/Z0twGz6rujUUg+RLiCUzlrAnTLFcPy3TgWvfU
+ Fd0UT+okOXosraWP4hGiz8yB04ZmpU2BsxQRd46mO6PNoqx9TsGDiJEtV4lxbPJ36ex/
+ undy3vtilTIBNn4Y4yuefGrOfxV+XQhh2dKnvDf9hnscJrHAnjVSeALFFT+AMWCW4Y9h
+ Jhu6wF0JwP2e1KmW5KLrnrbFPn19cVSLTD1kKx3wOx8Ofp+KpQZsBdtHK9Ql00vuWihH
+ LExnK/hNrae/YOtkyv7dzAx+3QR52XAF+I8RMbJoQndRs6tFofXaU4Z4yETkZJkd1BhX
+ e9sw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=OHoX7oCDIxtnl3NxtTVvKViiqkZglgOas/g1Rubunpw=;
+ b=TBiueIQQN775nFMtsQKYHGaDzpAX5d98cmz5Ga3aSc8H4OM4X24gK59kt/D2fB476n
+ KwCNt8ie+WlOepJr8H3xPw7h9DwLJkxfu5cN50hSIv4B351YtCo8Fth++tFyB++cxqid
+ BapAkC8l0f8sQnq57Mudlqd9DE9VcADEF5EigqjFb4ILrI4oWN1wl5Dn2E100FZcm8oj
+ YkjN9/sQ+YW24ttbWuDuMwO4a3Lmn2GITSjwQhH+FZjStcXfzGaHC46yx026J01ZYwKg
+ +n+73fKL/mv5NcYa8ndCUIG0ujK6L/biuMcosAYoAHrWZ5w82bOeGKtqxMwbJcAd9PcY
+ ZIMg==
+X-Gm-Message-State: APjAAAVlFp2Fb1erWGDmf7h/CfdM7gdfx1E/To+itZMJ5JhvcTKu6e16
+ jePaWRH+E9XkBUwcFzNipoZ2CQ==
+X-Google-Smtp-Source: APXvYqynr2g6ljNTN5TU7b36goVbopwPwI4vVSq9IFQfsOzsCc5jpeiEx5UIY/EXqC5dgrtP7joR6w==
+X-Received: by 2002:a17:902:2de4:: with SMTP id
+ p91mr16401267plb.300.1557772766932; 
+ Mon, 13 May 2019 11:39:26 -0700 (PDT)
+Received: from tuxbook-pro (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id b23sm5116335pfi.6.2019.05.13.11.39.25
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 13 May 2019 11:39:26 -0700 (PDT)
+Date: Mon, 13 May 2019 11:39:47 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Amit Kucheria <amit.kucheria@linaro.org>
+Subject: Re: [PATCHv1 1/8] arm64: dts: Fix various entry-method properties to
+ reflect documentation
+Message-ID: <20190513183947.GJ2085@tuxbook-pro>
+References: <cover.1557486950.git.amit.kucheria@linaro.org>
+ <ab5bad0258e455ef84059b749ca9e79f311b5e3c.1557486950.git.amit.kucheria@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <CAF6AEGuepdKo1Ob2jW66UhYXOTAqOMc3C-XKsK3Rze1QdLobLw@mail.gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <ab5bad0258e455ef84059b749ca9e79f311b5e3c.1557486950.git.amit.kucheria@linaro.org>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_113733_577293_1F3BB139 
-X-CRM114-Status: GOOD (  32.58  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190513_113928_215686_C703A58B 
+X-CRM114-Status: GOOD (  17.56  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -67,131 +100,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "jacob.jun.pan@linux.intel.com" <jacob.jun.pan@linux.intel.com>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Will Deacon <Will.Deacon@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "eric.auger@redhat.com" <eric.auger@redhat.com>,
- "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
+ David Brown <david.brown@linaro.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ andy.gross@linaro.org, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
+On Fri 10 May 04:29 PDT 2019, Amit Kucheria wrote:
 
-On 10/05/2019 19:23, Rob Clark wrote:
-> On Fri, Sep 22, 2017 at 2:58 AM Jean-Philippe Brucker
-> <jean-philippe.brucker@arm.com> wrote:
->>
->> On 22/09/17 10:02, Joerg Roedel wrote:
->>> On Tue, Sep 19, 2017 at 10:23:43AM -0400, Rob Clark wrote:
->>>> I would like to decide in the IRQ whether or not to queue work or not,
->>>> because when we get a gpu fault, we tend to get 1000's of gpu faults
->>>> all at once (and I really only need to handle the first one).  I
->>>> suppose that could also be achieved by having a special return value
->>>> from the fault handler to say "call me again from a wq"..
->>>>
->>>> Note that in the drm driver I already have a suitable wq to queue the
->>>> work, so it really doesn't buy me anything to have the iommu driver
->>>> toss things off to a wq for me.  Might be a different situation for
->>>> other drivers (but I guess mostly other drivers are using iommu API
->>>> indirectly via dma-mapping?)
->>>
->>> Okay, so since you are the only user for now, we don't need a
->>> work-queue. But I still want the ->resume call-back to be hidden in the
->>> iommu code and not be exposed to users.
->>>
->>> We already have per-domain fault-handlers, so the best solution for now
->>> is to call ->resume from report_iommu_fault() when the fault-handler
->>> returns a special value.
->>
->> The problem is that report_iommu_fault is called from IRQ context by the
->> SMMU driver, so the device driver callback cannot sleep.
->>
->> So if the device driver needs to be able to sleep between fault report and
->> resume, as I understand Rob needs for writing debugfs, we can either:
->>
->> * call report_iommu_fault from higher up, in a thread or workqueue.
->> * split the fault reporting as this patch proposes. The exact same
->>   mechanism is needed for the vSVM work by Intel: in order to inject fault
->>   into the guest, they would like to have an atomic notifier registered by
->>   VFIO for passing down the Page Request, and a new function in the IOMMU
->>   API to resume/complete the fault.
->>
+Subject indicates pluralism, but this fixes a specific platform
+(board?). I think you should update that.
+
+> The idle-states binding documentation[1] mentions that the
+> 'entry-method' property is required on 64-bit platforms and must be set
+> to "psci".
 > 
-> So I was thinking about this topic again.. I would still like to get
-> some sort of async resume so that I can wire up GPU cmdstream/state
-> logging on iommu fault (without locally resurrecting and rebasing this
-> patch and drm/msm side changes each time I need to debug iommu
-> faults)..
-
-We've been working on the new fault reporting API with Jacob and Eric,
-and I intend to send it out soon. It is supposed to be used for
-reporting faults to guests via VFIO, handling page faults via mm, and
-also reporting events directly to device drivers. Please let us know
-what works and what doesn't in your case
-
-The most recent version of the patches is at
-http://www.linux-arm.org/git?p=linux-jpb.git;a=shortlog;h=refs/heads/sva/api
-(git://www.linux-arm.org/linux-jpb.git branch sva/api). Hopefully on the
-list sometimes next week, I'll add you on Cc.
-
-In particular, see commits
-	iommu: Introduce device fault data
-	iommu: Introduce device fault report API
-	iommu: Add recoverable fault reporting
-
-The device driver calls iommu_register_device_fault_handler(dev, cb,
-data). To report a fault, the SMMU driver calls
-iommu_report_device_fault(dev, fault). This calls into the device driver
-directly, there isn't any workqueue. If the fault is recoverable (the
-SMMU driver set type IOMMU_FAULT_PAGE_REQ rather than
-IOMMU_FAULT_DMA_UNRECOV), the device driver calls iommu_page_response()
-once it has dealt with the fault (after sleeping if it needs to). This
-invokes the SMMU driver's resume callback.
-
-At the moment we use mutexes, so iommu_report_device_fault() can only be
-called from an IRQ thread, which is incompatible with the current SMMUv2
-driver. Either we need to switch the SMMUv2 driver to an IRQ thread, or
-rework the fault handler to be called from an IRQ handler. The reporting
-also has to be per device rather than per domain, and I'm not sure if
-the SMMUv2 driver can deal with this.
-
+> We fixed up all uses of the entry-method property in
+> commit e9880240e4f4 ("arm64: dts: Fix various entry-method properties to
+> reflect documentation"). But a new one has appeared. Fix it up.
 > 
-> And I do still prefer the fault cb in irq (or not requiring it in
-> wq)..  but on thinking about it, the two ideas aren't entirely
-> conflicting, ie. add some flags either when we register handler[1], or
-> they could be handled thru domain_set_attr, like:
-> 
->  _EXPLICIT_RESUME - iommu API user calls iommu_domain_resume(),
-> potentialy from wq/thread after fault handler returns
->  _HANDLER_SLEEPS  - iommu core handles the wq, and calls ops->resume()
-> internally
-> 
-> In both cases, from the iommu driver PoV it just implements
-> iommu_ops::resume().. in first case it is called via iommu user either
-> from the fault handler or at some point later (ie. wq or thread).
-> 
-> I don't particularly need the _HANDLER_SLEEPS case (unless I can't
-> convince anyone that iommu_domamin_resume() called from outside iommu
-> core is a good idea).. so probably I wouldn't wire up the wq plumbing
-> for the _HANDLER_SLEEPS case unless someone really wanted me to.
-> 
-> Since there are more iommu drivers, than places that register fault
-> handlers, I like the idea that in either case, from the driver PoV, it
-> is just implementing the resume callback.
-> 
-> [1] currently I only see a few places where fault handlers are
-> registered, so changing iommu_set_fault_handler() is really not much
-> churn
+> Cc: Sudeep Holla <sudeep.holla@arm.com>
 
-At the moment we're keeping the new fault reporting mechanism separate
-from iommu_set_fault_handler()/report_iommu_fault(), to ease the transition.
+The message looks good though, so with a new subject you have my:
 
-Thanks,
-Jean
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+
+Regards,
+Bjorn
+
+> Signed-off-by: Amit Kucheria <amit.kucheria@linaro.org>
+> ---
+>  arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+> index 2896bbcfa3bb..42e7822a0227 100644
+> --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+> @@ -51,7 +51,7 @@
+>  		 * PSCI node is not added default, U-boot will add missing
+>  		 * parts if it determines to use PSCI.
+>  		 */
+> -		entry-method = "arm,psci";
+> +		entry-method = "psci";
+>  
+>  		CPU_PH20: cpu-ph20 {
+>  			compatible = "arm,idle-state";
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
