@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 610F01BDE1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 21:26:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38E471BDCD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 21:25:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,82 +11,98 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Yn8VGG8kcnAtO0PsbYKcX369+IoM8uvSx6tIHaR0cEE=; b=CRWTvPjGKS2NXj7S63W+VrGzJl
-	S3ti/8UG5si7ZSwGwLv6m+XPJTN7/lK77DviUe6XRSEgjRWcck++5ORzVUKPeXp+PFxzkhaTI/y5q
-	Tfc/XTypcNu+bMvieNzA97YGanGvgCB1CoHPjWf+SdU8yc04NAp41N6lXFNv8PWUNmEpMMLwquFUr
-	kGpSAAr67m75itoxGUl4W2PLOEUbNVcHDfpHuA+bq09lh3RZka2IJSgw81vgMGDU5WizeSchw4G26
-	cRbsAs1+fV/uTo70x3CTK2e6rhhY5tOLVixqoT2uHeZq1RtWtwDg+gKaoYGnRKeihmHsKWYBZFfhF
-	3jUAxJgg==;
+	bh=r/6302iXQW/pHZaB3loPAAWx2sAt7oUn9QSPYY9zfBc=; b=o8DnufzB05Xn6UA8GjTylZnHqo
+	YUO8n2igj0lz7hHySg0fZT8eHm1IqyOJDRCZpXVlCep3kwqbUSSqXv0KtH8CwGuE633WUO4LLFNe4
+	7vd4Bezc+T/FptNHp3WbQNCdtMCg9tpqwTXQtsu1yhfp/NihBc3mCUr47lfpWRlxuedp2qK8wksmZ
+	Ng6kgmDqICLQbH8oXiQp5h+NlsvBkWLDzurRj0GQS1jwiX9/6Z8qsW7WAkUn5eZKhI1q+p15ZA/Ll
+	B3JgAeJiL4d+YDWMiEkEroPkVO58KKKYfpBqKQoD71enZt26Jc7BxJJF9LoSEMxfCzdOtyFVG1Yau
+	wGuz7vIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQGam-0006DM-EH; Mon, 13 May 2019 19:26:32 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1hQGZs-0004zs-ST; Mon, 13 May 2019 19:25:36 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQGXv-0001NW-5D
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 19:24:00 +0000
-Received: by mail-lj1-x244.google.com with SMTP id e13so12044685ljl.11
+ id 1hQGY3-0001Z0-J2
+ for linux-arm-kernel@bombadil.infradead.org; Mon, 13 May 2019 19:23:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=References:In-Reply-To:Message-Id:Date:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=FS9Zs+3LWO+O30HH4l9Kk8Vdize9BSzeQBpadzl2HYA=; b=VOJx8lPrfz9B2SSORVz9X/o+y
+ GmwqOmG4yPV7Ndc037zu51ouDZPchubGZca6uQ3gXmAuUbKwbbrmxgNVez3uQ7DrI79kq+GT+mOCN
+ 0nQ1Fhafgj1vo/yPqnNzwDRZuIeEIHJDIZmBC54jXs8QE1E5MJkuBTFt/RNOtXOCekSeoy9guDI+9
+ +zH5J0pAfAZKJHQN6QOnQb+wJjg2aY7aeoiAFN1FBlIvs003LAySaKrZGPYla38qjWsvaI8frh/aE
+ r5im0SHdtNsuWPCdqSIB77z1yXwNHUyTg86AwYEKPqIk92qYIz3VAwrYcVFo+8m14sLiCbW/gEEj5
+ QaXbIoNbw==;
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+ by casper.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hQGY0-0004Ic-5n
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 19:23:42 +0000
+Received: by mail-lf1-x142.google.com with SMTP id y19so9930035lfy.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 May 2019 12:23:35 -0700 (PDT)
+ Mon, 13 May 2019 12:23:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=WrUBlQWQzfbgrdk7klxniFTaW91XaiQj55o38mlFd9s=;
- b=sPy1xWvat53hABQ29ElA2SDvZnqfRV5oZCv6u9/BoxR2ZPqFXvyAG3a5TqRkJY1a78
- ViroHIx+ON0jQRU/3UrEYHgnwsRgfEfK1eI6rvzBvxBl01A+l0VD3RNQr/pCLeiGgll5
- oZk8WImmrSosBLIL5WDY5HKxk6DoQYAY3hOyay9Zaekc0Qx48OBqfoEIU9LOQbcuUzO9
- y21fdWLhr9sVngZjVbZUtziI2z+WwnXK05qOJ7jaN6FqE68r4gmG+pebrx9IRchSta0X
- VzfAclg9EtvAhwIfrDB0k8yyetyh5giqMkUfQdSjeFYl6oWMRIbrHygy50HEN/rtT2Ov
- JANw==
+ bh=FS9Zs+3LWO+O30HH4l9Kk8Vdize9BSzeQBpadzl2HYA=;
+ b=t15nWHPmFlGF4Hk/qXkWtGd6P4khoapB58QJFxrQ0ZNQUXmlHvGcZXvn8hgr3rc7X+
+ eE/ASRA8k1AQG0DdZLyF3FiUVQKz9AjKmneEG4iuBy5DWguCj44rHUGww8VoLC14kkpV
+ TAmsE70nTuh+vkyVTcFflq1Ihtv15Gjs6lN28RnAdyk6YEKe1sk82sQKEFoOgzZS1j0g
+ ppmAaYnj4FwI7sFWE7rhWAusai9maT6zhjqYzXhVMTt9rwMyhTPogRZF82iPBQdLTLL8
+ e41snlmZNXFO0Bqj9yPBVHA/mzxQ87IGeFK04GazkTYlofyN2rCzQMCISOTnU4Ay1zIY
+ C4YA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=WrUBlQWQzfbgrdk7klxniFTaW91XaiQj55o38mlFd9s=;
- b=No+GxlAm/vI1zG4ProVS+tdQq+yFZfMSOWjMFOIczenQEqiRq5KJxg3X8lhtFlaRAR
- QAXsof2LncsbBMZ8sGm9q39zVCXSowXRcQGqOTL8OFr4nRfkyqwf35zTgappFjuHOPY4
- RqPybMqoI6JnDeZrAnk0/d6vG3C9awf2i+ueBsIg9KBb10jzihQQKOA7C5hGUoq/4hK2
- QRI3DAMsv5NSdj9slN/Q3rbZOCvKZxKP7m8sKxskDu2gEseV3W0AfYfQMWwcsQk3geat
- MFSYBhwTxZK930KHL6kec2OSxbE0hGkb1Ehame7jYcb2lkQ2namYj3WTiCP1OdYCV45l
- gjLA==
-X-Gm-Message-State: APjAAAXMRBoeKQkF72TlDhgLiXKC3EmIrEb3SrLsUWuLSuBqPZpDJr5h
- w0POuUFETfF03HmCRrPxwJoLNg==
-X-Google-Smtp-Source: APXvYqwd8hFjFHeIWZMZf2tJMuRrNt9YuVmMQEmung/qTBri+UbFr4ziejpMmn/ZiqWmeUdPeQNSbw==
-X-Received: by 2002:a2e:2b58:: with SMTP id q85mr14768159lje.179.1557775413538; 
- Mon, 13 May 2019 12:23:33 -0700 (PDT)
+ bh=FS9Zs+3LWO+O30HH4l9Kk8Vdize9BSzeQBpadzl2HYA=;
+ b=Tfsune+8SFYm5AYWRD15KvXeqL2BEXrqfo53H/77U7KjtW+Iwv37wjNhXXdpoWFZCh
+ 1ZPsdsuKeVCBTDPOBy/+q6xCDfaMF67HG+sdJqApyt6sL7Xji+S+dsVfrwIAyyl0i4FP
+ TobLveLzBumQ06MloUnHLOoxoQ5/237eY7IYQP4IaUJK0iGcpwMjclQnlmQSLQ2YUz0N
+ ViqePzIbbBxq5rc6z967vcq5ejcUBzYDGoLLUjslCGo6qQZey3Q7bqqFlkJbihitipbH
+ qP87p2wBWygdZC8cLW7KK59Cb718AbgXqT90DCfWLet0Eoh0RitQXdRfzkqG+gdMiC53
+ nquQ==
+X-Gm-Message-State: APjAAAWciyH0wxBh7vg27uYCLWMVfieeIMbUZEVrBaS3fLZBVYKVH8/W
+ FqHT8aDxFQwBbdrIG4gQihti4Q==
+X-Google-Smtp-Source: APXvYqwf7I+vqyV1oY+DdOoP8eb7s+6VlIHVgf1KVMJaduN8GSRO4HLl7ruL91VI1qfgG8O6PtC3NA==
+X-Received: by 2002:a19:ae14:: with SMTP id f20mr14035921lfc.49.1557775415444; 
+ Mon, 13 May 2019 12:23:35 -0700 (PDT)
 Received: from localhost.localdomain (h-158-174-22-210.NA.cust.bahnhof.se.
  [158.174.22.210])
- by smtp.gmail.com with ESMTPSA id q21sm3449365lfa.84.2019.05.13.12.23.31
+ by smtp.gmail.com with ESMTPSA id q21sm3449365lfa.84.2019.05.13.12.23.33
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 13 May 2019 12:23:32 -0700 (PDT)
+ Mon, 13 May 2019 12:23:34 -0700 (PDT)
 From: Ulf Hansson <ulf.hansson@linaro.org>
 To: Sudeep Holla <sudeep.holla@arm.com>,
  Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
  Mark Rutland <mark.rutland@arm.com>, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 15/18] drivers: firmware: psci: Support CPU hotplug for the
- hierarchical model
-Date: Mon, 13 May 2019 21:22:57 +0200
-Message-Id: <20190513192300.653-16-ulf.hansson@linaro.org>
+Subject: [PATCH 16/18] arm64: kernel: Respect the hierarchical CPU topology in
+ DT for PSCI
+Date: Mon, 13 May 2019 21:22:58 +0200
+Message-Id: <20190513192300.653-17-ulf.hansson@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190513192300.653-1-ulf.hansson@linaro.org>
 References: <20190513192300.653-1-ulf.hansson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_122335_497177_4A3E0CA3 
-X-CRM114-Status: GOOD (  17.85  )
+X-CRM114-CacheID: sfid-20190513_202340_231159_C6E4B2E2 
+X-CRM114-Status: GOOD (  13.52  )
 X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -98,7 +114,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>,
+Cc: Will Deacon <will.deacon@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
  Vincent Guittot <vincent.guittot@linaro.org>,
  Geert Uytterhoeven <geert+renesas@glider.be>,
  Kevin Hilman <khilman@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
@@ -110,127 +126,47 @@ Cc: Ulf Hansson <ulf.hansson@linaro.org>,
  Lina Iyer <ilina@codeaurora.org>, linux-arm-msm@vger.kernel.org,
  Niklas Cassel <niklas.cassel@linaro.org>,
  Souvik Chakravarty <souvik.chakravarty@arm.com>,
- "Raju P . L . S . S . S . N" <rplsssn@codeaurora.org>
+ "Raju P . L . S . S . S . N" <rplsssn@codeaurora.org>,
+ Lina Iyer <lina.iyer@linaro.org>, Catalin Marinas <catalin.marinas@arm.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When the hierarchical CPU topology is used and when a CPU has been put
-offline (hotplug), that same CPU prevents its PM domain and thus also
-potential master PM domains, from being powered off. This is because genpd
-observes the CPU's attached device as being active from a runtime PM point
-of view.
+To let the PSCI driver parse for the hierarchical CPU topology in DT and
+thus potentially initiate the corresponding PM domain data structures,
+let's call psci_dt_topology_init() from the existing topology_init()
+subsys_initcall.
 
-To deal with this, let's decrease the runtime PM usage count by calling
-pm_runtime_put_sync_suspend() of the attached struct device when putting
-the CPU offline. Consequentially, we must then increase the runtime PM
-usage count, while putting the CPU online again.
-
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will.deacon@arm.com>
+Co-developed-by: Lina Iyer <lina.iyer@linaro.org>
+Signed-off-by: Lina Iyer <lina.iyer@linaro.org>
 Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
 ---
 
 Changes:
-	- Use get_logical_index() to find the CPU number.
-	- Verify that a corresponding struct device* has been attached to the
-	  PM domain before doing runtime PM refrence counting.
-	- Clear the domain state when the CPU goes offline, to start fresh.
-	- Move code to internal helper functions and move them inside
-	  "ifdef CONFIG_CPU_IDLE.
+	- None.
 
 ---
- drivers/firmware/psci/psci.c | 47 +++++++++++++++++++++++++++++++++++-
- 1 file changed, 46 insertions(+), 1 deletion(-)
+ arch/arm64/kernel/setup.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/firmware/psci/psci.c b/drivers/firmware/psci/psci.c
-index 2c4157d3a616..5ad93c3694b5 100644
---- a/drivers/firmware/psci/psci.c
-+++ b/drivers/firmware/psci/psci.c
-@@ -15,6 +15,7 @@
- 
- #include <linux/acpi.h>
- #include <linux/arm-smccc.h>
-+#include <linux/cpu.h>
- #include <linux/cpuidle.h>
- #include <linux/errno.h>
- #include <linux/linkage.h>
-@@ -93,6 +94,9 @@ static u32 psci_function_id[PSCI_FN_MAX];
- static u32 psci_cpu_suspend_feature;
- static bool psci_system_reset2_supported;
- 
-+static void psci_cpuidle_cpu_off(void);
-+static void psci_cpuidle_cpu_on(unsigned long cpuid);
-+
- static inline bool psci_has_ext_power_state(void)
+diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
+index 413d566405d1..f1559223c55b 100644
+--- a/arch/arm64/kernel/setup.c
++++ b/arch/arm64/kernel/setup.c
+@@ -367,6 +367,9 @@ static int __init topology_init(void)
  {
- 	return psci_cpu_suspend_feature &
-@@ -188,6 +192,8 @@ static int psci_cpu_off(u32 state)
- 	int err;
- 	u32 fn;
+ 	int i;
  
-+	psci_cpuidle_cpu_off();
++	if (acpi_disabled)
++		psci_dt_topology_init();
 +
- 	fn = psci_function_id[PSCI_FN_CPU_OFF];
- 	err = invoke_psci_fn(fn, state, 0, 0);
- 	return psci_to_linux_errno(err);
-@@ -200,7 +206,13 @@ static int psci_cpu_on(unsigned long cpuid, unsigned long entry_point)
+ 	for_each_online_node(i)
+ 		register_one_node(i);
  
- 	fn = psci_function_id[PSCI_FN_CPU_ON];
- 	err = invoke_psci_fn(fn, cpuid, entry_point, 0);
--	return psci_to_linux_errno(err);
-+	err = psci_to_linux_errno(err);
-+	if (err)
-+		return err;
-+
-+	psci_cpuidle_cpu_on(cpuid);
-+
-+	return 0;
- }
- 
- static int psci_migrate(unsigned long cpuid)
-@@ -540,8 +552,41 @@ static int __init _psci_dt_topology_init(struct device_node *np)
- 
- 	return ret;
- }
-+
-+static void psci_cpuidle_cpu_off(void)
-+{
-+	struct device *dev = __this_cpu_read(psci_cpuidle_data.dev);
-+
-+	/*
-+	 * Drop the runtime PM usage count if the CPU has been attached to a
-+	 * CPU PM domain. This is needed to, for example, not prevent other
-+	 * master domains in the hierarchy to remain powered on.
-+	 */
-+	if (dev)
-+		pm_runtime_put_sync_suspend(dev);
-+}
-+
-+static void psci_cpuidle_cpu_on(unsigned long cpuid)
-+{
-+	struct device *dev;
-+	int cpu;
-+
-+	if (!psci_dt_topology)
-+		return;
-+
-+	cpu = get_logical_index(cpuid);
-+	if (cpu < 0)
-+		return;
-+
-+	dev = per_cpu(psci_cpuidle_data.dev, cpu);
-+	if (dev)
-+		pm_runtime_get_sync(dev);
-+}
-+
- #else
- static inline int _psci_dt_topology_init(struct device_node *np) { return 0; }
-+static void psci_cpuidle_cpu_off(void) {}
-+static void psci_cpuidle_cpu_on(unsigned long cpuid) {}
- #endif
- 
- static int psci_system_suspend(unsigned long unused)
 -- 
 2.17.1
 
