@@ -2,50 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA5E11B49E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 13:15:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC38B1B4A9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 13:15:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W1BkGpnipSZHxE99QM5Asp4ymY3UwCSk4mgg00Q8qKU=; b=hHcXiT+8moMTy0
-	1pUHsoneIS3ZhgcJ7e0THNaUTH1UvAva8iWOE5eltCRlkR9/vuaXJ/ZEzUVbouKJy3Vn+O8yL28Me
-	Xihmkbp/lj3x4x817i2ltj8RrmwDVL6gtv9dICNyd7v7kNqionJ2nfjOXaW7vL2WDiikHSkSssssW
-	QtDyqZI+pAFdS5TLnzwdjuchfJ0ruzeyQRotDRdv5Y2szSzN/j6X6AKnvYAKKLlvZH8zV+7rQZipy
-	vT54ywisyjFB6ABpyAJ7URG/DZPn7gmA6yXWwHKruUxTnXbLLRV90rKj2NDbT9v6+FWjw7UBFb1Lk
-	aPVx+I8WqyzcunLZhe/w==;
+	List-Owner; bh=WO6gtgHVZPJMGIKvYnGOn5gDAiEBvv8qzk/SsEYaZ+Y=; b=NWTJB/WLbhs9zA
+	YpjeQoHcau6N5VMDYjNqcMYPlEf2dIpNdNue/TTPg3X1BFS+kU305ves2PHgulWL7NDCxGG763ZUd
+	4yyqVobl2EeOKdlrGwVDwhVA7CooqgxLZIcoNrYdCdm/YyL1FZkrFVL/RPuuGa6mKlZc0WakKgvQ/
+	/1LI/fHutbqLKgYBoxZ+B1MzkOHer+s2fNgFfCmid1+1nRYBJ96pNhG9OfYkTNaLUu3jCFehlSWxR
+	OvM3RBPEXgKc2Jh/8dmF19V7JCIS7NNL71LE/HKkYGbzKowyjcWB2DS9B2J+c8brCqEhC+08e9d4/
+	XWzwumhr5bVvo+hjDpHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQ8vU-0001Zn-0y; Mon, 13 May 2019 11:15:24 +0000
+	id 1hQ8ve-0001kq-RN; Mon, 13 May 2019 11:15:34 +0000
 Received: from mail-eopbgr60095.outbound.protection.outlook.com ([40.107.6.95]
  helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQ8v5-00006d-TP
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 11:15:01 +0000
+ id 1hQ8v8-00006d-5k
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 11:15:03 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=prevas.se; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=/kcHpFzImfoNHIcaIfYWaLi2EfOhtgckMgFGWSQYoh4=;
- b=eKYL0sMAFYqiYQvh7KLk6lccVmsE277AG0CTOLMIkLsPGabM6m5rH3h6TWKzeX5qq3qeBV7EgyOLRDZNfhhS3qCzyW5zY5aQUW2RPAVWwvCLT6LKmoePuCML/ky7drjSib/mXdSxuaNPMNyCTLMLB+AZFCasi2ZckurdUa78vMI=
+ bh=D+8Kgzm9ZzUSGh/sqgH4zHXiaGOchvRxgwWj8JNneO4=;
+ b=l9vGglx1dMIFFOzP3xDXscmFb78V0HBmIDxPULOjiEke9vVogpJYFcyPbK/0xtyK6Y2/Cj0Ge6A/kCgPlvYW0aA8Sq344+gbPk5hQsENDP4LrNm2HfQ1sr6EKu4JDt6MPlVg/RXMx9LKSNUmPPrB/yMLIesPp6r5YtmVByWYSVg=
 Received: from VI1PR10MB2672.EURPRD10.PROD.OUTLOOK.COM (20.178.126.212) by
  VI1PR10MB1950.EURPRD10.PROD.OUTLOOK.COM (52.134.27.154) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1878.24; Mon, 13 May 2019 11:14:53 +0000
+ 15.20.1878.24; Mon, 13 May 2019 11:14:54 +0000
 Received: from VI1PR10MB2672.EURPRD10.PROD.OUTLOOK.COM
  ([fe80::48b8:9cff:182:f3d8]) by VI1PR10MB2672.EURPRD10.PROD.OUTLOOK.COM
  ([fe80::48b8:9cff:182:f3d8%2]) with mapi id 15.20.1878.024; Mon, 13 May 2019
- 11:14:53 +0000
+ 11:14:54 +0000
 From: Rasmus Villemoes <rasmus.villemoes@prevas.dk>
 To: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, Qiang Zhao
  <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>
-Subject: [PATCH v3 0/6] soc/fsl/qe: cleanups and new DT binding
-Thread-Topic: [PATCH v3 0/6] soc/fsl/qe: cleanups and new DT binding
-Thread-Index: AQHVCX0WBepWBUryR0K8DhsVu6ZcHg==
-Date: Mon, 13 May 2019 11:14:53 +0000
-Message-ID: <20190513111442.25724-1-rasmus.villemoes@prevas.dk>
+Subject: [PATCH v3 1/6] soc/fsl/qe: qe.c: drop useless static qualifier
+Thread-Topic: [PATCH v3 1/6] soc/fsl/qe: qe.c: drop useless static qualifier
+Thread-Index: AQHVCX0XqWweYTTW4Ui0pvWYzLl4aw==
+Date: Mon, 13 May 2019 11:14:54 +0000
+Message-ID: <20190513111442.25724-2-rasmus.villemoes@prevas.dk>
 References: <20190501092841.9026-1-rasmus.villemoes@prevas.dk>
-In-Reply-To: <20190501092841.9026-1-rasmus.villemoes@prevas.dk>
+ <20190513111442.25724-1-rasmus.villemoes@prevas.dk>
+In-Reply-To: <20190513111442.25724-1-rasmus.villemoes@prevas.dk>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -59,34 +60,34 @@ x-ms-exchange-messagesentrepresentingtype: 1
 x-mailer: git-send-email 2.20.1
 x-originating-ip: [81.216.59.226]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: db736e27-86cd-4627-fdc9-08d6d79438e3
+x-ms-office365-filtering-correlation-id: d8673d95-778f-4240-5171-08d6d79439c2
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(2017052603328)(7193020);
  SRVR:VI1PR10MB1950; 
 x-ms-traffictypediagnostic: VI1PR10MB1950:
-x-microsoft-antispam-prvs: <VI1PR10MB1950E6433CE689170FAD58DA8A0F0@VI1PR10MB1950.EURPRD10.PROD.OUTLOOK.COM>
-x-ms-oob-tlc-oobclassifiers: OLM:923;
+x-microsoft-antispam-prvs: <VI1PR10MB1950EE05FF8094316F0C181E8A0F0@VI1PR10MB1950.EURPRD10.PROD.OUTLOOK.COM>
+x-ms-oob-tlc-oobclassifiers: OLM:497;
 x-forefront-prvs: 0036736630
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(346002)(39850400004)(366004)(376002)(136003)(396003)(189003)(199004)(6512007)(66066001)(53936002)(107886003)(52116002)(68736007)(256004)(14444005)(71200400001)(71190400001)(76176011)(6436002)(478600001)(6486002)(1076003)(36756003)(5660300002)(72206003)(74482002)(446003)(81156014)(8676002)(14454004)(99286004)(2501003)(66946007)(66476007)(66556008)(64756008)(66446008)(73956011)(54906003)(11346002)(2616005)(42882007)(476003)(81166006)(44832011)(50226002)(486006)(8936002)(110136005)(8976002)(6116002)(7416002)(316002)(3846002)(2906002)(305945005)(7736002)(186003)(25786009)(102836004)(6506007)(386003)(4326008)(26005);
+ SFS:(10019020)(346002)(39850400004)(366004)(376002)(136003)(396003)(189003)(199004)(6512007)(66066001)(53936002)(107886003)(52116002)(68736007)(256004)(14444005)(71200400001)(71190400001)(76176011)(6436002)(478600001)(4744005)(6486002)(1076003)(36756003)(5660300002)(72206003)(74482002)(446003)(81156014)(8676002)(14454004)(99286004)(2501003)(66946007)(66476007)(66556008)(64756008)(66446008)(73956011)(54906003)(11346002)(2616005)(42882007)(476003)(81166006)(44832011)(50226002)(486006)(8936002)(110136005)(8976002)(6116002)(7416002)(316002)(3846002)(2906002)(305945005)(7736002)(186003)(25786009)(102836004)(6506007)(386003)(4326008)(26005);
  DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR10MB1950;
  H:VI1PR10MB2672.EURPRD10.PROD.OUTLOOK.COM; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: prevas.se does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: jQu9YgVtAYsCkN/Qj4KuvkVoAe31ZHNAN6ekniNKrtEHDR8HJlpMPJz/YgwkCu1ecqNYNyQQnKxGU0cKVK00+zUnQZtU9uxS1JbAuAC8GRCmWeAFjUPt41j4C8Gp9ZNlgUh99vPixRT6017TxAJG9rN9nX1/P0Bbkx15/sS6ekYTEYIZHUzBASCfY2Wo3ACQ53xHhj7ux0tS8tp3v1Cn0KUmWZeG4pggVUekRv0eVlnKBywdSUJXucGpGyFIOQwWQOnVaLf5AwUw6mXXW+vMrX4B4f+o0hC2SVIOs8dx/FzeczETVoqt/8QLNw/vlj+Iiy1RUI3/BrjrZKiIoWUM+mdey7/V89R69/iQlh2juWqE2OCDzn+xydavZzu27XouUNY+OLuHKSFo/4ELsXDk48Xk5LlasnbS+ARPVPU2wMA=
+x-microsoft-antispam-message-info: fbA/ERyrEYvUSXkEukIoMKq5Xr5HmpRlg9OAIUuBpj4wDPD/Vb1S0rAJVJ2ezzoe+5K30sKDDcQuY7a9stY7FDsBAisT0Kui9kC/o3AtVh/jm+3TvY75+jDxsZt7mwoB5SqHT+Kth1nWjNILh+Tj2gLv2A9HlIQ85ZXTsyw9kyzxQd0oS6c2cUFKRPTWjux0Xdmiz16hvH5tJW3j+aa3Lo7xfWN4z3/z5gk1qh8cwBtJraaPeSh5baHxHJErxXe6iZiiSxjo1PQuBiDAs8n6PA6hg8xAX3oip1c91bW/3Kzf4FI2SlrJ6aszBC+Icipu4HmaMMqYQC+9D15un4ROFzl5VThzA7zSbOsb1YMFSK+grsvpGNq7R9gabnXvOwM5ojMRpLIpqTN0RzklYuknZeEqOYxFHOEKjGPDnnGlByo=
 MIME-Version: 1.0
 X-OriginatorOrg: prevas.dk
-X-MS-Exchange-CrossTenant-Network-Message-Id: db736e27-86cd-4627-fdc9-08d6d79438e3
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 May 2019 11:14:53.2363 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: d8673d95-778f-4240-5171-08d6d79439c2
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 May 2019 11:14:54.6923 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: d350cf71-778d-4780-88f5-071a4cb1ed61
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR10MB1950
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_041500_068992_06E7717F 
-X-CRM114-Status: GOOD (  12.04  )
+X-CRM114-CacheID: sfid-20190513_041502_238423_0F9708FB 
+X-CRM114-Status: GOOD (  12.11  )
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.1 points)
@@ -127,40 +128,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This small series consists of some small cleanups and simplifications
-of the QUICC engine driver, and introduces a new DT binding that makes
-it much easier to support other variants of the QUICC engine IP block
-that appears in the wild: There's no reason to expect in general that
-the number of valid SNUMs uniquely determines the set of such, so it's
-better to simply let the device tree specify the values (and,
-implicitly via the array length, also the count).
+The local variable snum_init has no reason to have static storage duration.
 
-Which tree should this go through?
+Reviewed-by: Christophe Leroy <christophe.leroy@c-s.fr>
+Reviewed-by: Qiang Zhao <qiang.zhao@nxp.com>
+Signed-off-by: Rasmus Villemoes <rasmus.villemoes@prevas.dk>
+---
+ drivers/soc/fsl/qe/qe.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-v3:
-- Move example from commit log into binding document (adapting to
-  MPC8360 which the existing example pertains to).
-- Add more review tags.
-- Fix minor style issue.
-
-v2:
-- Address comments from Christophe Leroy
-- Add his Reviewed-by to 1/6 and 3/6
-- Split DT binding update to separate patch as per
-  Documentation/devicetree/bindings/submitting-patches.txt
-
-Rasmus Villemoes (6):
-  soc/fsl/qe: qe.c: drop useless static qualifier
-  soc/fsl/qe: qe.c: reduce static memory footprint by 1.7K
-  soc/fsl/qe: qe.c: introduce qe_get_device_node helper
-  dt-bindings: soc/fsl: qe: document new fsl,qe-snums binding
-  soc/fsl/qe: qe.c: support fsl,qe-snums property
-  soc/fsl/qe: qe.c: fold qe_get_num_of_snums into qe_snums_init
-
- .../devicetree/bindings/soc/fsl/cpm_qe/qe.txt |  13 +-
- drivers/soc/fsl/qe/qe.c                       | 163 +++++++-----------
- 2 files changed, 77 insertions(+), 99 deletions(-)
-
+diff --git a/drivers/soc/fsl/qe/qe.c b/drivers/soc/fsl/qe/qe.c
+index 612d9c551be5..855373deb746 100644
+--- a/drivers/soc/fsl/qe/qe.c
++++ b/drivers/soc/fsl/qe/qe.c
+@@ -306,7 +306,7 @@ static void qe_snums_init(void)
+ 		0x28, 0x29, 0x38, 0x39, 0x48, 0x49, 0x58, 0x59,
+ 		0x68, 0x69, 0x78, 0x79, 0x80, 0x81,
+ 	};
+-	static const u8 *snum_init;
++	const u8 *snum_init;
+ 
+ 	qe_num_of_snum = qe_get_num_of_snums();
+ 
 -- 
 2.20.1
 
