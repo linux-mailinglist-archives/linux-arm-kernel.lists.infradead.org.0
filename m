@@ -2,56 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7BA561BB19
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 18:38:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C7641BB1F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 18:40:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C9tW3w08sF7yRj4efieVMoLKSNoIPh5bmcG3zc4Hqyo=; b=kdoQdlVevUFYFx
-	7j7De49LJ3zUf08YNkTxywSEbAnpIAbQkfUG6Pjcnx/AouTrgM15kQXA0rFPuw9YDyf/XbXnOfhsR
-	GoqbJFUiMIROtvR1X9yXYcveWgPauIOVwOlTVH1OZ33fUitZmVGvO5+vyeQt73pumduR3o3xVny8I
-	o+fv4xyST97ejfUonh5SlASp2n+KN1QvTRZEyMZ4ITIVe+Buai+1nOtAV6omS4/d+m8TxHZB7yG54
-	Xe0vFWgiBw/grZ7H1kYR4t5OmOcUreFZkAhMe7JamT8HQ+NFNQXBI/BhMbUOd66Ui8keUBHG+RMnW
-	fE5tYUezpFv4zt0HCGwA==;
+	List-Owner; bh=kjOMv7ppEjFQWXpSijCbaqgFEUbjNUNMFqBQL+1Ls7c=; b=p+/+7fg7hFTzKA
+	Y6w/PK2R7L9U7Mk83vf74RrPENLYRRPSIP4t7ctL9xPSj3UOAtxjkubvvRLf+KGWmfQchZQQTOEUy
+	xiHMjx4dzjeHWHX/oCOcYCOR9rIQDETDpdZHIGVusW7082fAxW3UXDcg2+fSiiTAdO1SBODHm5lue
+	WUsw6qBBivspkMMPGhuZnIsLtWYxPkJNbN5JwVw0kOJxSstf5ioXDfT7qy6sLXCf2MdZ9x6hrhrwo
+	lprnWDr3cjPgaSIlvRhIjH1dh6UST0kWfTG9cvwXSGeFSmVhkXWjUouzux3RaQqPyx9X8Dw4ZP6ob
+	OKfBApTzf47AGUBKNIlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQDy5-0001Wz-VW; Mon, 13 May 2019 16:38:25 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQDxy-0001Wa-AW
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 16:38:19 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B8E80341;
- Mon, 13 May 2019 09:38:16 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A893E3F71E;
- Mon, 13 May 2019 09:38:15 -0700 (PDT)
-Date: Mon, 13 May 2019 17:38:13 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: Dave Martin <Dave.Martin@arm.com>
-Subject: Re: [patch] arm64: assembler: Update the yield NEON comment
-Message-ID: <20190513163813.GC10754@fuggles.cambridge.arm.com>
-References: <198595.152792649-sendEmail@laptop-0p1i5f25>
- <20190513085624.GB28398@e103592.cambridge.arm.com>
+	id 1hQDzn-0001xO-MM; Mon, 13 May 2019 16:40:11 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hQDzb-0001pO-IL
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 16:40:01 +0000
+Received: by mail-pl1-x643.google.com with SMTP id b3so6747762plr.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 13 May 2019 09:39:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=kOTTXWGUHuT21t+7qiQOMKOu3sooS1XgCOsDWRfKZzw=;
+ b=rwFeYzyeBYmhvYRb28twRjfM2uqimkH1LwpNv/ABMxe4OuCR03MtHaSjYN4CIElAYB
+ XKjTMDfrFJwvYs0H+op8Yh9wRBF1ZoLmWJGBTU//mU2ngNhc/AyCabNdsB/ZYiXs9FGa
+ i4X8ncUQkUGOASf4DMpGC9tjWItlJvfyYM2BMmKhjyEUXZlXaE1rAo4feXC+LUeVHBKQ
+ qhSY6Q33CaK4lG+g60Oc8ZBa1nkVrdsSpCK83F3YhsLe6mI0nSC6QLJpgMFiyQBQddbM
+ ZmS2WKndKdWQr8FnnQ9ahJZSew9wP5MkxUR9/8ceosIOGVbXQ7MKgmWKyQRI3CWahmhW
+ 0nSw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=kOTTXWGUHuT21t+7qiQOMKOu3sooS1XgCOsDWRfKZzw=;
+ b=bXkGSOd2Rmv1lgSJVAgrvoXetDbPIPKTK0ryIQJ+pkZbigxFAllsYZ4lO/amTj5nJl
+ Eza6CKpmDXJqoKuLnXNgePjcxcSPB+X14n1XCj8BiOiOraP1qxDZrdDVKBj7ieqdckyw
+ TaHNkQjwT4XJhJhMcitHCpdvV5szIiWBpsyLumN5O0gBhYsLgEAPPX5LHM23ahItcTOE
+ p2JkksT6hdJMKzIbLgUXLYj/etMhpbC8bEuWwgCQKElI/AwCmlkbtNNeOIZHmIAZMIeH
+ SCB93iaPbBSCgIr2K687XzCv2jqiGO/esO1M5UUQgJqi+YyowE8APLIEUxIMmpjV1jWT
+ YeUg==
+X-Gm-Message-State: APjAAAV5w5rRRUZNgP0rRySRG7TG9Ae65kgbq4JwY28IakFyvO5yZ/u/
+ I4rD8GDZYhxg8NzqjT5jWxltMQ==
+X-Google-Smtp-Source: APXvYqx8yWVsi0Ilg1gccIEygTNSek0fwg0zfl3bgL4s+2u7ExqHw3toQiRM3AMKO6hlr7GzDoRo4A==
+X-Received: by 2002:a17:902:650f:: with SMTP id
+ b15mr8839625plk.11.1557765598857; 
+ Mon, 13 May 2019 09:39:58 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id v64sm19047504pfv.106.2019.05.13.09.39.57
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 13 May 2019 09:39:58 -0700 (PDT)
+Date: Mon, 13 May 2019 10:39:56 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: [PATCH v3 16/30] coresight: Introduce generic platform data helper
+Message-ID: <20190513163956.GB16162@xps15>
+References: <1557226378-10131-1-git-send-email-suzuki.poulose@arm.com>
+ <1557226378-10131-17-git-send-email-suzuki.poulose@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190513085624.GB28398@e103592.cambridge.arm.com>
-User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
+In-Reply-To: <1557226378-10131-17-git-send-email-suzuki.poulose@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_093818_374693_35E35D74 
-X-CRM114-Status: GOOD (  26.00  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190513_093959_613343_6AA6A012 
+X-CRM114-Status: GOOD (  22.56  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,89 +98,385 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>, Hillf Danton <hdanton@sina.com>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Cc: coresight@lists.linaro.org, rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 13, 2019 at 09:56:26AM +0100, Dave Martin wrote:
-> On Sat, May 11, 2019 at 09:48:40AM +0100, Hillf Danton wrote:
-> > > On Thu, May 09, 2019, Dave Martin wrote:
-> > > > On Thu, May 09, 2019 at 03:01:43PM +0000, Hillf Danton wrote:
-> > > 
-> > [...]
-> > 
-> > > >   *
-> > > > - * The yield itself consists of the following:
-> > > > - * - Check whether the preempt count is exactly 1, in which case disabling
-> > > > - *   preemption once will make the task preemptible. If this is not the case,
-> > > > - *   yielding is pointless.
-> > > > - * - Check whether TIF_NEED_RESCHED is set, and if so, disable and re-enable
-> > > > - *   kernel mode NEON (which will trigger a reschedule), and branch to the
-> > > > - *   yield fixup code.
-> > > > + * The yield itself decrements the preempt count and if count hits zero, disable
-> > > > + * and re-enable kernel mode NEON (which will trigger a reschedule), and branch
-> > > > + * to the yield fixup code.
-> > > 
-> > > Good spot -- the original comment is definitely wrong: disabling
-> > > preemption certainly shouldn't make the task preemptible!
-> > > 
-> > > So, I'm certainly in favour of fixing that.
-> > > 
-> > > Your new text doesn't look right, though: AFAICT commit 7faa313f05
-> > > didn't intentionally change the behaviour here.  It looks to me like
-> > > the preempt count (i.e., current_thread_info()->preempt) is not
-> > > decremented by this code: the value is read and the subtraction is done
-> > > for comparison purposes, but no value is stored back.
-> > > 
-> > Got it, thanks.
-> > 
-> > > This is intentional, because the the code needs to do some cleanup
-> > > before preemption can be enabled for real: the call to kernel_neon_end
-> > > does both of those jobs.
-> > > 
-> > > Or did I miss something?
-> > > 
-> > No, you didn't, Sir.
-> > 
-> > And I try again with log message updated and comment text corrected.
-> > 
-> > Hillf
-> > ----------------->8-----------------------------------------------------------
-> > From: Hillf Danton <hdanton@sina.com>
-> > Subject: [patch] arm64: assembler: Update the yield NEON comment
-> > 
-> > The comment for specifying preempt count check was incorrect in commit
-> > 24534b3511, and deserves a tiny tweak like the following for instance.
-> > 
-> > - * - Check whether the preempt count is exactly 1, in which case disabling
-> > - *   preemption once will make the task preemptible. If this is not the case,
-> > + * - Check whether the preempt count is exactly 1, in which case decrementing
-> > + *   preempt count once will make the task preemptible. If this is not the case,
-> > 
-> > Then checking of TIF_NEED_RESCHED was removed in commit 7faa313f05, with the
-> > comment left behind untouched.
+On Tue, May 07, 2019 at 11:52:43AM +0100, Suzuki K Poulose wrote:
+> So far we have hard coded the DT platform parsing code in
+> every driver. Introduce generic helper to parse the information
+> provided by the firmware in a platform agnostic manner, in preparation
+> for the ACPI support.
 > 
-> Hmm, you're right here, I hadn't fully understood the context of that
-> commit.
+> Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+> ---
+> Changes since v2:
+>  - Use int error code for of_get_coresight_platform_data() [Mathieu]
+> ---
+>  drivers/hwtracing/coresight/coresight-catu.c       | 13 ++---
+>  drivers/hwtracing/coresight/coresight-etb10.c      | 11 ++--
+>  drivers/hwtracing/coresight/coresight-etm3x.c      | 12 ++---
+>  drivers/hwtracing/coresight/coresight-etm4x.c      | 11 ++--
+>  drivers/hwtracing/coresight/coresight-funnel.c     | 11 ++--
+>  drivers/hwtracing/coresight/coresight-platform.c   | 58 ++++++++++++++++------
+>  drivers/hwtracing/coresight/coresight-replicator.c | 11 ++--
+>  drivers/hwtracing/coresight/coresight-stm.c        | 11 ++--
+>  drivers/hwtracing/coresight/coresight-tmc.c        | 13 ++---
+>  drivers/hwtracing/coresight/coresight-tpiu.c       | 11 ++--
+>  include/linux/coresight.h                          |  7 +--
+>  11 files changed, 83 insertions(+), 86 deletions(-)
 > 
-> Will, Ard, can you comment on the rationale for that?  The commit
-> message says nothing explicit about why the TIF_NEED_RESCHED check went
-> away: it's now checked as part of the preempt count, right?
+> diff --git a/drivers/hwtracing/coresight/coresight-catu.c b/drivers/hwtracing/coresight/coresight-catu.c
+> index 63109c9..799ba1d 100644
+> --- a/drivers/hwtracing/coresight/coresight-catu.c
+> +++ b/drivers/hwtracing/coresight/coresight-catu.c
+> @@ -503,17 +503,14 @@ static int catu_probe(struct amba_device *adev, const struct amba_id *id)
+>  	struct coresight_desc catu_desc;
+>  	struct coresight_platform_data *pdata = NULL;
+>  	struct device *dev = &adev->dev;
+> -	struct device_node *np = dev->of_node;
+>  	void __iomem *base;
+>  
+> -	if (np) {
+> -		pdata = of_get_coresight_platform_data(dev, np);
+> -		if (IS_ERR(pdata)) {
+> -			ret = PTR_ERR(pdata);
+> -			goto out;
+> -		}
+> -		dev->platform_data = pdata;
+> +	pdata = coresight_get_platform_data(dev);
+> +	if (IS_ERR(pdata)) {
+> +		ret = PTR_ERR(pdata);
+> +		goto out;
+>  	}
+> +	dev->platform_data = pdata;
+>  
+>  	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
+>  	if (!drvdata) {
+> diff --git a/drivers/hwtracing/coresight/coresight-etb10.c b/drivers/hwtracing/coresight/coresight-etb10.c
+> index 3b333fb..612f1e9 100644
+> --- a/drivers/hwtracing/coresight/coresight-etb10.c
+> +++ b/drivers/hwtracing/coresight/coresight-etb10.c
+> @@ -725,14 +725,11 @@ static int etb_probe(struct amba_device *adev, const struct amba_id *id)
+>  	struct etb_drvdata *drvdata;
+>  	struct resource *res = &adev->res;
+>  	struct coresight_desc desc = { 0 };
+> -	struct device_node *np = adev->dev.of_node;
+>  
+> -	if (np) {
+> -		pdata = of_get_coresight_platform_data(dev, np);
+> -		if (IS_ERR(pdata))
+> -			return PTR_ERR(pdata);
+> -		adev->dev.platform_data = pdata;
+> -	}
+> +	pdata = coresight_get_platform_data(dev);
+> +	if (IS_ERR(pdata))
+> +		return PTR_ERR(pdata);
+> +	adev->dev.platform_data = pdata;
+>  
+>  	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
+>  	if (!drvdata)
+> diff --git a/drivers/hwtracing/coresight/coresight-etm3x.c b/drivers/hwtracing/coresight/coresight-etm3x.c
+> index fa2f141..fa2164f 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm3x.c
+> +++ b/drivers/hwtracing/coresight/coresight-etm3x.c
+> @@ -790,20 +790,16 @@ static int etm_probe(struct amba_device *adev, const struct amba_id *id)
+>  	struct etm_drvdata *drvdata;
+>  	struct resource *res = &adev->res;
+>  	struct coresight_desc desc = { 0 };
+> -	struct device_node *np = adev->dev.of_node;
+>  
+>  	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
+>  	if (!drvdata)
+>  		return -ENOMEM;
+>  
+> -	if (np) {
+> -		pdata = of_get_coresight_platform_data(dev, np);
+> -		if (IS_ERR(pdata))
+> -			return PTR_ERR(pdata);
+> -
+> -		adev->dev.platform_data = pdata;
+> -	}
+> +	pdata = coresight_get_platform_data(dev);
+> +	if (IS_ERR(pdata))
+> +		return PTR_ERR(pdata);
+>  
+> +	adev->dev.platform_data = pdata;
+>  	drvdata->use_cp14 = fwnode_property_read_bool(dev->fwnode, "arm,cp14");
+>  	dev_set_drvdata(dev, drvdata);
+>  
+> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+> index 77d1d83..4355b2e 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm4x.c
+> +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+> @@ -1084,18 +1084,15 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
+>  	struct etmv4_drvdata *drvdata;
+>  	struct resource *res = &adev->res;
+>  	struct coresight_desc desc = { 0 };
+> -	struct device_node *np = adev->dev.of_node;
+>  
+>  	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
+>  	if (!drvdata)
+>  		return -ENOMEM;
+>  
+> -	if (np) {
+> -		pdata = of_get_coresight_platform_data(dev, np);
+> -		if (IS_ERR(pdata))
+> -			return PTR_ERR(pdata);
+> -		adev->dev.platform_data = pdata;
+> -	}
+> +	pdata = coresight_get_platform_data(dev);
+> +	if (IS_ERR(pdata))
+> +		return PTR_ERR(pdata);
+> +	adev->dev.platform_data = pdata;
+>  
+>  	dev_set_drvdata(dev, drvdata);
+>  
+> diff --git a/drivers/hwtracing/coresight/coresight-funnel.c b/drivers/hwtracing/coresight/coresight-funnel.c
+> index 3423042..fc033fd 100644
+> --- a/drivers/hwtracing/coresight/coresight-funnel.c
+> +++ b/drivers/hwtracing/coresight/coresight-funnel.c
+> @@ -187,14 +187,11 @@ static int funnel_probe(struct device *dev, struct resource *res)
+>  	struct coresight_platform_data *pdata = NULL;
+>  	struct funnel_drvdata *drvdata;
+>  	struct coresight_desc desc = { 0 };
+> -	struct device_node *np = dev->of_node;
+>  
+> -	if (np) {
+> -		pdata = of_get_coresight_platform_data(dev, np);
+> -		if (IS_ERR(pdata))
+> -			return PTR_ERR(pdata);
+> -		dev->platform_data = pdata;
+> -	}
+> +	pdata = coresight_get_platform_data(dev);
+> +	if (IS_ERR(pdata))
+> +		return PTR_ERR(pdata);
+> +	dev->platform_data = pdata;
+>  
+>  	if (is_of_node(dev_fwnode(dev)) &&
+>  	    of_device_is_compatible(dev->of_node, "arm,coresight-funnel"))
+> diff --git a/drivers/hwtracing/coresight/coresight-platform.c b/drivers/hwtracing/coresight/coresight-platform.c
+> index 4c31299..5d78f4f 100644
+> --- a/drivers/hwtracing/coresight/coresight-platform.c
+> +++ b/drivers/hwtracing/coresight/coresight-platform.c
+> @@ -230,23 +230,16 @@ static int of_coresight_parse_endpoint(struct device *dev,
+>  	return ret;
+>  }
+>  
+> -struct coresight_platform_data *
+> -of_get_coresight_platform_data(struct device *dev,
+> -			       const struct device_node *node)
+> +static int of_get_coresight_platform_data(struct device *dev,
+> +					  struct coresight_platform_data *pdata)
+>  {
+>  	int ret = 0;
+> -	struct coresight_platform_data *pdata;
+>  	struct coresight_connection *conn;
+>  	struct device_node *ep = NULL;
+>  	const struct device_node *parent = NULL;
+>  	bool legacy_binding = false;
+> +	struct device_node *node = dev->of_node;
+>  
+> -	pdata = devm_kzalloc(dev, sizeof(*pdata), GFP_KERNEL);
+> -	if (!pdata)
+> -		return ERR_PTR(-ENOMEM);
+> -
+> -	/* Use device name as sysfs handle */
+> -	pdata->name = dev_name(dev);
+>  	pdata->cpu = of_coresight_get_cpu(node);
+>  
+>  	/* Get the number of input and output port for this component */
+> @@ -254,11 +247,11 @@ of_get_coresight_platform_data(struct device *dev,
+>  
+>  	/* If there are no output connections, we are done */
+>  	if (!pdata->nr_outport)
+> -		return pdata;
+> +		return 0;
+>  
+>  	ret = coresight_alloc_conns(dev, pdata);
+>  	if (ret)
+> -		return ERR_PTR(ret);
+> +		return ret;
+>  
+>  	parent = of_coresight_get_output_ports_node(node);
+>  	/*
+> @@ -292,11 +285,46 @@ of_get_coresight_platform_data(struct device *dev,
+>  		case 0:
+>  			break;
+>  		default:
+> -			return ERR_PTR(ret);
+> +			return ret;
+>  		}
+>  	}
+>  
+> -	return pdata;
+> +	return 0;
+> +}
+> +#else
+> +static inline int
+> +of_get_coresight_platform_data(struct device *dev,
+> +			       struct coresight_platform_data *pdata)
+> +{
+> +	return -ENOENT;
+>  }
+> -EXPORT_SYMBOL_GPL(of_get_coresight_platform_data);
+>  #endif
+> +
+> +struct coresight_platform_data *
+> +coresight_get_platform_data(struct device *dev)
+> +{
+> +	int ret = -ENOENT;
+> +	struct coresight_platform_data *pdata;
+> +	struct fwnode_handle *fwnode = dev_fwnode(dev);
+> +
+> +	if (IS_ERR_OR_NULL(fwnode))
+> +		goto error;
+> +
+> +	pdata = devm_kzalloc(dev, sizeof(*pdata), GFP_KERNEL);
+> +	if (!pdata) {
+> +		ret = -ENOMEM;
+> +		goto error;
+> +	}
+> +
+> +	/* Use device name as sysfs handle */
+> +	pdata->name = dev_name(dev);
+> +
+> +	if (is_of_node(fwnode))
+> +		ret = of_get_coresight_platform_data(dev, pdata);
+> +
+> +	if (!ret)
+> +		return pdata;
+> +error:
+> +	return ERR_PTR(ret);
+> +}
+> +EXPORT_SYMBOL_GPL(coresight_get_platform_data);
+> diff --git a/drivers/hwtracing/coresight/coresight-replicator.c b/drivers/hwtracing/coresight/coresight-replicator.c
+> index 7e05145..054b335 100644
+> --- a/drivers/hwtracing/coresight/coresight-replicator.c
+> +++ b/drivers/hwtracing/coresight/coresight-replicator.c
+> @@ -177,15 +177,12 @@ static int replicator_probe(struct device *dev, struct resource *res)
+>  	struct coresight_platform_data *pdata = NULL;
+>  	struct replicator_drvdata *drvdata;
+>  	struct coresight_desc desc = { 0 };
+> -	struct device_node *np = dev->of_node;
+>  	void __iomem *base;
+>  
+> -	if (np) {
+> -		pdata = of_get_coresight_platform_data(dev, np);
+> -		if (IS_ERR(pdata))
+> -			return PTR_ERR(pdata);
+> -		dev->platform_data = pdata;
+> -	}
+> +	pdata = coresight_get_platform_data(dev);
+> +	if (IS_ERR(pdata))
+> +		return PTR_ERR(pdata);
+> +	dev->platform_data = pdata;
+>  
+>  	if (is_of_node(dev_fwnode(dev)) &&
+>  	    of_device_is_compatible(dev->of_node, "arm,coresight-replicator"))
+> diff --git a/drivers/hwtracing/coresight/coresight-stm.c b/drivers/hwtracing/coresight/coresight-stm.c
+> index 3992a35..9faa1ed 100644
+> --- a/drivers/hwtracing/coresight/coresight-stm.c
+> +++ b/drivers/hwtracing/coresight/coresight-stm.c
+> @@ -809,14 +809,11 @@ static int stm_probe(struct amba_device *adev, const struct amba_id *id)
+>  	struct resource ch_res;
+>  	size_t bitmap_size;
+>  	struct coresight_desc desc = { 0 };
+> -	struct device_node *np = adev->dev.of_node;
+>  
+> -	if (np) {
+> -		pdata = of_get_coresight_platform_data(dev, np);
+> -		if (IS_ERR(pdata))
+> -			return PTR_ERR(pdata);
+> -		adev->dev.platform_data = pdata;
+> -	}
+> +	pdata = coresight_get_platform_data(dev);
+> +	if (IS_ERR(pdata))
+> +		return PTR_ERR(pdata);
+> +	adev->dev.platform_data = pdata;
+>  	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
+>  	if (!drvdata)
+>  		return -ENOMEM;
+> diff --git a/drivers/hwtracing/coresight/coresight-tmc.c b/drivers/hwtracing/coresight/coresight-tmc.c
+> index 9c5e615..be0bd98 100644
+> --- a/drivers/hwtracing/coresight/coresight-tmc.c
+> +++ b/drivers/hwtracing/coresight/coresight-tmc.c
+> @@ -397,16 +397,13 @@ static int tmc_probe(struct amba_device *adev, const struct amba_id *id)
+>  	struct tmc_drvdata *drvdata;
+>  	struct resource *res = &adev->res;
+>  	struct coresight_desc desc = { 0 };
+> -	struct device_node *np = adev->dev.of_node;
+>  
+> -	if (np) {
+> -		pdata = of_get_coresight_platform_data(dev, np);
+> -		if (IS_ERR(pdata)) {
+> -			ret = PTR_ERR(pdata);
+> -			goto out;
+> -		}
+> -		adev->dev.platform_data = pdata;
+> +	pdata = coresight_get_platform_data(dev);
+> +	if (IS_ERR(pdata)) {
+> +		ret = PTR_ERR(pdata);
+> +		goto out;
+>  	}
+> +	adev->dev.platform_data = pdata;
+>  
+>  	ret = -ENOMEM;
+>  	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
+> diff --git a/drivers/hwtracing/coresight/coresight-tpiu.c b/drivers/hwtracing/coresight/coresight-tpiu.c
+> index 4dd3e7f..aec0ed7 100644
+> --- a/drivers/hwtracing/coresight/coresight-tpiu.c
+> +++ b/drivers/hwtracing/coresight/coresight-tpiu.c
+> @@ -124,14 +124,11 @@ static int tpiu_probe(struct amba_device *adev, const struct amba_id *id)
+>  	struct tpiu_drvdata *drvdata;
+>  	struct resource *res = &adev->res;
+>  	struct coresight_desc desc = { 0 };
+> -	struct device_node *np = adev->dev.of_node;
+>  
+> -	if (np) {
+> -		pdata = of_get_coresight_platform_data(dev, np);
+> -		if (IS_ERR(pdata))
+> -			return PTR_ERR(pdata);
+> -		adev->dev.platform_data = pdata;
+> -	}
+> +	pdata = coresight_get_platform_data(dev);
+> +	if (IS_ERR(pdata))
+> +		return PTR_ERR(pdata);
+> +	dev->platform_data = pdata;
+>  
+>  	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
+>  	if (!drvdata)
+> diff --git a/include/linux/coresight.h b/include/linux/coresight.h
+> index 62a520d..e2b95e0 100644
+> --- a/include/linux/coresight.h
+> +++ b/include/linux/coresight.h
+> @@ -294,14 +294,11 @@ static inline void coresight_disclaim_device_unlocked(void __iomem *base) {}
+>  
+>  #ifdef CONFIG_OF
+>  extern int of_coresight_get_cpu(const struct device_node *node);
+> -extern struct coresight_platform_data *
+> -of_get_coresight_platform_data(struct device *dev,
+> -			       const struct device_node *node);
+>  #else
+>  static inline int of_coresight_get_cpu(const struct device_node *node)
+>  { return 0; }
+> -static inline struct coresight_platform_data *of_get_coresight_platform_data(
+> -	struct device *dev, const struct device_node *node) { return NULL; }
+>  #endif
+>  
+> +struct coresight_platform_data *coresight_get_platform_data(struct device *dev);
+> +
+>  #endif
 
-Yes. The value of !need_resched is stored adjacent to the preempt count,
-which is why 7faa313f05ca ("arm64: preempt: Fix big-endian when checking
-preempt count in assembly") can load both of the variables using a single
-64-bit LDR instruction.
+Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 
-So we continue to check both the preempt count and the need_resched flag,
-as before.
-
-Will
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
