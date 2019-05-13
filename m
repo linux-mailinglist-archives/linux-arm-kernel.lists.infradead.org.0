@@ -2,63 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C95D11B4EF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 13:31:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 688171B4FA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 13:32:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=35wAzsJLrBQEdwAU0e48WwS/aKZdcRcs2HxsPVCPS5Y=; b=NjzbefJKswUwI2
-	essIQUGblYth8tU8t0KlEsw8jA14JgaNgvT0tIDa+1ZyeWuZpzIIKDoBTDQzNH+TT7hbzbuJh+23a
-	HtHMrJzwvpvMezXpGzinBPW1GZtt0FEldAxudS0pKG+eQV3ZXHJ2RCGrGb7lAFoPxo52s8EuyadPx
-	S9HFOYAUBZiG+w3LhHqhYAQbwQoMQMbLqllKSQaYlLI3qh2uMxO/a594x9Ika0ff/oVkIggpm+JeJ
-	oazTe6uP3f+lJWot/kBF9wntB0cZfowmFSDtDaBUzaaH/G4MZAPFBLq1LAJzQWWH9ejgJPe7qDMSN
-	eOMICtMWtqx4Sk0TY2wQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:In-Reply-To:To:Subject:
+	From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:List-Owner;
+	 bh=5VHY6uU+P4WBDv+4n24FklWCDV/2PcNXHVPTWTOTrsg=; b=GaiVOTiSs2L6EXCrXfeOQJSFb
+	VY7P+deqW3zMtuCYlHWQEC4enF9MtBJQxvc8rwgfVjeeIlyTpoHnS6VIIR89ZPFPnyfWrQlEqsaTe
+	XtcUePT0q+tprvP1GMaHCRP62vs0j8MbBnSvBoHcx07bAw3b9vJkCzRUsOi9yrfIGkQ1I292bxk7A
+	tn9fJi3HmNfNsg18lS7u76bjO2z6Yfmf0oOxj73wN585ivtX1eN8B7hq2iXYfKMB6q5RUY2Wf7Nrf
+	1fau9oNh8Sifqo/RsgoU//trbvuXgkv7PEMs3VfSNUJjxgPhktaveFWP/jIIjSa/G66klYL/aEcJi
+	Jls9wZIcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQ9BJ-0001hS-Vm; Mon, 13 May 2019 11:31:45 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQ9BC-0001gW-JH
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 11:31:39 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7EEAA374;
- Mon, 13 May 2019 04:31:36 -0700 (PDT)
-Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EDCB63F703;
- Mon, 13 May 2019 04:31:33 -0700 (PDT)
-Date: Mon, 13 May 2019 12:31:27 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Will Deacon <will.deacon@arm.com>
-Subject: Re: [PATCH v3 0/5] arm64: SPE ACPI enablement
-Message-ID: <20190513113127.GA10384@e107155-lin>
-References: <20190503232407.37195-1-jeremy.linton@arm.com>
- <5eaa1607-4bf0-a320-e9cf-2d51eca912c6@huawei.com>
- <82032e5b-0cb5-e48f-ab51-ba5d5f9dceec@arm.com>
- <819de863-92ff-51c5-9c35-880db4f6a922@huawei.com>
- <20190508165149.GB21553@e107155-lin>
- <20190509092810.GC2667@brain-police>
- <20190509103559.GB8239@e107155-lin>
- <20190509141350.GF8239@e107155-lin>
- <20190513105631.GB6711@fuggles.cambridge.arm.com>
+	id 1hQ9CR-00020h-SK; Mon, 13 May 2019 11:32:55 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hQ9CJ-0001zo-Bn
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 11:32:48 +0000
+Received: by mail-pf1-x441.google.com with SMTP id z28so7076998pfk.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 13 May 2019 04:32:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=zaltys-org.20150623.gappssmtp.com; s=20150623;
+ h=from:subject:to:cc:in-reply-to:message-id:date:user-agent
+ :mime-version:content-transfer-encoding:content-language;
+ bh=oW2OGfo2kmTLuf4Kc5CGIE4FQWJunf5Se7PBzqxMT+k=;
+ b=QyMS1KkvVFMpgE8NWSvXdmK/oaHre2INuuntPie9HgV+miKlaRnV1PjPxBWhMwbA7Z
+ mvnM8/inBQ015PcrGGYELYZXcPIWZoEra7stEA33UbOdFDDqtafe3k0xWiL4xDMZfN14
+ oRgt0iFijQzgyJ7ipOWy8U4tPQYbqUhL8ZaEf3dYxSxdlacM2ix2wCyYRU9Hrvo5msIR
+ /PSDuzWF6cuZaqs0QEXOXSPx9jqBz/8kW0DKR0vP4TjoL/bOG5vAgTdKCTdDZO8UaZ4+
+ y8XSBnFPLCsmt9FbYFpuVEER9KiWJ5AmZdE/vwaD2c3yewD02JewIBif9h1kaLakn6ys
+ 82XQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:subject:to:cc:in-reply-to:message-id:date
+ :user-agent:mime-version:content-transfer-encoding:content-language;
+ bh=oW2OGfo2kmTLuf4Kc5CGIE4FQWJunf5Se7PBzqxMT+k=;
+ b=tsSD1omTaeHgtcmn3NIYYQth80TEcTXusZBpSB0QG+vZZFKv+DYAhtvA0gPY8NfGeK
+ hSE9g+6c4B8sW2pQEGVLteVfZ0oPHLwjvGNbtr+XFOxCqpG+oPzUW3zZYaJ4jEzMBxTL
+ V/eZPskqHftdW70YNrQeBEDK78pGkK0p/okWgyMX4hU8qKU2faiT8p2GnkWLVGjdaxAf
+ j0BOFTX9IoVbPQvDtX6GDeGI2cM+Fcc49qHIp/UW3vlOri7+brfajzA8Fyq9+sO8O7tK
+ +4icPShuZHOaTKrPsTaKLK6WD2i0cVYO7l5ZtkQW1YPI7n5k/oZ10ih1/b3BDQkzkfr6
+ BeTA==
+X-Gm-Message-State: APjAAAU1j92k8ao/Pb80TB62V7e6IALmIwwDUF/m8HHY0jnYaTuVCkkG
+ mjtsJUnLWq07fGzu8dpoOTCTUA==
+X-Google-Smtp-Source: APXvYqxmZhyuK0mcNDMhg97F7hXXFjrF+5Xi3FPN/3a4oxJ4C/VPadqCq4QSeE7IoTblppgKCkskFw==
+X-Received: by 2002:a63:7989:: with SMTP id
+ u131mr21610419pgc.180.1557747164024; 
+ Mon, 13 May 2019 04:32:44 -0700 (PDT)
+Received: from [172.28.0.10] (122-59-127-127-fibre.sparkbb.co.nz.
+ [122.59.127.127])
+ by smtp.googlemail.com with ESMTPSA id r9sm19107632pfc.173.2019.05.13.04.32.40
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 13 May 2019 04:32:43 -0700 (PDT)
+From: James Grant <jamesg@zaltys.org>
+Subject: Re: [PATCH 0/5] usb: gadget: udc: lpc32xx: add stotg04 phy support
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Felipe Balbi <balbi@kernel.org>, Vladimir Zapolskiy <vz@mleia.com>
+In-Reply-To: <20190409120908.12079-1-alexandre.belloni@bootlin.com>
+Message-ID: <efaaff85-ac39-f0e2-e042-7d6fd0c59054@zaltys.org>
+Date: Mon, 13 May 2019 23:32:38 +1200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190513105631.GB6711@fuggles.cambridge.arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+Content-Language: en-AU
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_043138_648240_551E1D7C 
-X-CRM114-Status: GOOD (  25.01  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190513_043247_537163_E1FF3606 
+X-CRM114-Status: GOOD (  12.34  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -70,85 +96,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- catalin.marinas@arm.com, john.garry@huawei.com, rjw@rjwysocki.net,
- linuxarm@huawei.com, Jeremy Linton <jeremy.linton@arm.com>,
- Sudeep Holla <sudeep.holla@arm.com>, linux-acpi@vger.kernel.org,
- Hongbo Yao <yaohongbo@huawei.com>, Hanjun Guo <guohanjun@huawei.com>,
- linux-arm-kernel@lists.infradead.org, lenb@kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Sylvain Lemieux <slemieux.tyco@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 13, 2019 at 11:56:31AM +0100, Will Deacon wrote:
-> Hi Sudeep,
-> 
-> On Thu, May 09, 2019 at 03:13:50PM +0100, Sudeep Holla wrote:
-> > On Thu, May 09, 2019 at 11:35:59AM +0100, Sudeep Holla wrote:
-> > > On Thu, May 09, 2019 at 10:28:11AM +0100, Will Deacon wrote:
-> > 
-> > [...]
-> > 
-> > > >
-> > > > Since SPE uses virtual addressing, we don't really care about the underlying
-> > > > page layout so there's no need to use higher-order allocations. I suppose we
-> > > > could theoretically map them at the pmd level in some cases, but ignoring
-> > > > them should also be harmless and I suspect you can delete the check.
-> > > >
-> > >
-> > > Yes, I did a quick look to see if we can do that, but couldn't find a clue.
-> > > Not sure if that's any optimisation, we can use order from page_private
-> > > and set the values accordingly ?
-> > >
-> > And I forgot to add the diff that I mentioned above, something like the
-> > patch below.
-> > 
-> > Regards,
-> > Sudeep
-> > 
-> > -->8
-> > 
-> > diff --git i/drivers/perf/arm_spe_pmu.c w/drivers/perf/arm_spe_pmu.c
-> > index 7cb766dafe85..45cd62517080 100644
-> > --- i/drivers/perf/arm_spe_pmu.c
-> > +++ w/drivers/perf/arm_spe_pmu.c
-> > @@ -827,7 +827,7 @@ static void arm_spe_pmu_read(struct perf_event *event)
-> >  static void *arm_spe_pmu_setup_aux(struct perf_event *event, void **pages,
-> >  				   int nr_pages, bool snapshot)
-> >  {
-> > -	int i, cpu = event->cpu;
-> > +	int i, j, cpu = event->cpu;
-> >  	struct page **pglist;
-> >  	struct arm_spe_pmu_buf *buf;
-> >  
-> > @@ -859,11 +859,12 @@ static void *arm_spe_pmu_setup_aux(struct perf_event *event, void **pages,
-> >  		struct page *page = virt_to_page(pages[i]);
-> >  
-> >  		if (PagePrivate(page)) {
-> > -			pr_warn("unexpected high-order page for auxbuf!");
-> > -			goto out_free_pglist;
-> > +			for (j = 0; j < 1 << page_private(page); j++)
-> > +				pglist[i + j] = page++;
-> > +			i += j - 1;
-> > +		} else {
-> > +			pglist[i] = page;
-> 
-> Hmm. Given that vmap() doesn't do anything special for high-order pages
-> and rb_alloc_aux()/rb_alloc_aux_page() already split the allocation up
-> for the page array, what does your change accomplish on top of that?
-> 
+Tested with a board containing LPC3250 SOC and STOTG04 PHY by using 
+serial gadget.
 
-Not much, instead of computing page ptr for each page using virt_to_page,
-we jump pointers automatically for all the pages that are private.
+Needed patch "[PATCH] usb: gadget: udc: lpc32xx: allocate descriptor 
+with GFP_ATOMIC" also.
 
-page_private(page) holds the order. i.e. for 2MB high order allocation
-we can skip calling virt_to_page for 511 pages that are contiguous.
+Tested-by: James Grant <jamesg@zaltys.org>
 
---
 Regards,
-Sudeep
+James Grant.
+
+On 09/04/2019 14:09, Alexandre Belloni Wrote:
+> Hi,
+>
+> This series starts to clean up the lpc32xx udc driver and also repairs
+> interrupt handling so hotplugging actually works. The design I tested
+> that on uses an stotg04 instead of the usual isp1301 so support for that
+> is also added.
+>
+> A bit more work is needed to get the RNDIS gadget driver to work.
+>
+> Alexandre Belloni (5):
+>    usb: gadget: udc: lpc32xx: simplify probe
+>    usb: gadget: udc: lpc32xx: simplify vbus handling
+>    usb: gadget: udc: lpc32xx: properly setup phy interrupts
+>    usb: gadget: udc: lpc32xx: add support for stotg04 phy
+>    usb: gadget: udc: lpc32xx: rework interrupt handling
+>
+>   drivers/usb/gadget/udc/lpc32xx_udc.c | 167 +++++++++++----------------
+>   1 file changed, 66 insertions(+), 101 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
