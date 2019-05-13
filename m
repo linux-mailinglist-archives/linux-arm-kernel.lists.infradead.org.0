@@ -2,82 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BCDDD1B99A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 17:10:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B5A31B99E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 17:11:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2eh2PUHq0hUDMqfp7H55eWGsBIYisyICZyxDwKnfcwg=; b=KsArKef/F/E35D
-	n/tebYFF9CUq6RfGP7vJY+MKjWijBLNR6/ko0KTjjA0B2tZGQf3ZHDdPOWqZTRRkzBNBF4DcfEUgM
-	DI2qwxPH5eydyRTY+/5VW4rMLPrNUKCsxsqiXjxT3uIzFWH7djplBfzBnjgXD+wpMgju5MLznO67N
-	TYPQkC0CiwuKFln5OSP4ISLXTOftgmYlmdErla2TvuBZG+S3+0x67Pkf4h8KRw7uuiYdBvHa2Mrlb
-	3iotsOBEH2b+viGZ+5Z447Dg4ciB+semk/i4GR6fliOfBdAoZHf/YLaS791oMYEt/BLiMA4qlJD27
-	PJ/woEHhHmwyLOUXtTIA==;
+	List-Owner; bh=3ihnmOHpMB6fP0CKD2ualleA/2rl/KE1x8Ku6/NMdsY=; b=tUHhCGP9HdxSLL
+	XeCNDlM5TNuQTvtY1p/5zrPKvFozaHUgzPAJsC+gEbuilCbEAnOk6lAhruJtS+x6BidCZriFvlfJS
+	1NREY0+wZky75pY1/o5m1BBqSGk3MerVQuXsn+rZB0afEx9AFL4SyVCGFT8qyJz67/IKhI1CtH6n6
+	bui0wYdSqKa43k1pHSsrQUGEAlafk80B8p5zZwmRJ94m2iiZ7ncOyW1m0adNG4HhM6/oDzxvNWUrE
+	ExqjQP22g+75A2IdhbdPi3bXDSqHa2o51r02esaNehsDCruNneUMVE4MgxFxtarTwCnhBZcTr48wT
+	1jkPSfiTAatb5y4PikWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQCbJ-0004Tg-9c; Mon, 13 May 2019 15:10:49 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1hQCcC-0004lF-8L; Mon, 13 May 2019 15:11:44 +0000
+Received: from smtprelay0231.hostedemail.com ([216.40.44.231]
+ helo=smtprelay.hostedemail.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQCbB-0004Sz-6Q
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 15:10:42 +0000
-Received: by mail-ot1-f67.google.com with SMTP id f23so12051746otl.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 May 2019 08:10:40 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=mrlBNb20gXfjogJL/vTxD9cKe2qkJA2/o6bt1fHbzvs=;
- b=cM5mE5ohN9C/7gZPRUeUcoyW0gU+Glis/zpcZI6CmAve5grVYnax7QRrB+r1vx3hlN
- tTK3wCqF3mNiA40jHhMRWCOSpSIOHDdyI2TKeSQhTbCWMakrL7JFJ+Mdd8Pbt8YA6mKN
- b6vVCn/ynKlOQc48ksZmgH3u7PtypTLBl7pRa7P0/3gX2Oz9okPlycd/9hDArbSy/j1X
- YeIQfneI3Tyx0HuZ7IYhTACN17RAscc85rUTwYdvj0bsuFuTOs+5sS7CV2j563GFMXPN
- G3XuQWwxulj2vHj+tL9/xg91Fkn2tebRer77OM8BltggIjdJTkjXd0TsqaOmBrhO5eMm
- Dfmw==
-X-Gm-Message-State: APjAAAVn7coVSyXrj+G0DjfkKwKl+IDqOP/YjvHWxSahzjqVnm2ZSs3g
- UkWSTsCz3ruV66VPz1D4qQ==
-X-Google-Smtp-Source: APXvYqz9+00kzCXfTWCaYUMHUIJW4CqyQSVc0SoytOVsa8luLWoZm8aaMTmTn2waEWJZVCnDKf4BTw==
-X-Received: by 2002:a9d:4a98:: with SMTP id i24mr1395692otf.199.1557760240114; 
- Mon, 13 May 2019 08:10:40 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id 64sm5294507oth.47.2019.05.13.08.10.39
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 13 May 2019 08:10:39 -0700 (PDT)
-Date: Mon, 13 May 2019 10:10:38 -0500
-From: Rob Herring <robh@kernel.org>
-To: Vidya Sagar <vidyas@nvidia.com>
-Subject: Re: [PATCH V6 06/15] dt-bindings: PCI: designware: Add binding for
- CDM register check
-Message-ID: <20190513151038.GA30653@bogus>
-References: <20190513050626.14991-1-vidyas@nvidia.com>
- <20190513050626.14991-7-vidyas@nvidia.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190513050626.14991-7-vidyas@nvidia.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1hQCc4-0004kb-5N
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 15:11:37 +0000
+Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
+ [216.40.38.60])
+ by smtprelay04.hostedemail.com (Postfix) with ESMTP id 84F98180A8859;
+ Mon, 13 May 2019 15:11:32 +0000 (UTC)
+X-Session-Marker: 6A6F6540706572636865732E636F6D
+X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com,
+ :::::::::::::::::::::::,
+ RULES_HIT:41:355:379:599:966:973:988:989:1260:1277:1311:1313:1314:1345:1359:1437:1515:1516:1518:1534:1538:1568:1593:1594:1711:1714:1730:1747:1777:1792:2196:2199:2393:2559:2562:2828:3138:3139:3140:3141:3142:3622:3865:3866:3867:3868:3870:3871:4321:4385:5007:6119:10004:10400:10848:11232:11657:11658:11914:12043:12555:12740:12760:12895:13069:13255:13311:13357:13439:14181:14659:14721:21080:21627:21740:30054:30091,
+ 0,
+ RBL:23.242.196.136:@perches.com:.lbl8.mailshell.net-62.14.0.180 64.201.201.201,
+ CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none, DomainCache:0,
+ MSF:not bulk, SPF:fn, MSBL:0, DNSBL:neutral, Custom_rules:0:0:0, LFtime:40,
+ LUA_SUMMARY:none
+X-HE-Tag: toy82_2a4704a514822
+X-Filterd-Recvd-Size: 1704
+Received: from XPS-9350 (cpe-23-242-196-136.socal.res.rr.com [23.242.196.136])
+ (Authenticated sender: joe@perches.com)
+ by omf07.hostedemail.com (Postfix) with ESMTPA;
+ Mon, 13 May 2019 15:11:30 +0000 (UTC)
+Message-ID: <0f355f524122cb4dd6388431495a9d182e3ed9d6.camel@perches.com>
+Subject: Re: [PATCH v9 1/3] arm64: dts: fsl: librem5: Add a device tree for
+ the Librem5 devkit
+From: Joe Perches <joe@perches.com>
+To: "Angus Ainslie (Purism)" <angus@akkea.ca>, angus.ainslie@puri.sm
+Date: Mon, 13 May 2019 08:11:29 -0700
+In-Reply-To: <20190513145539.28174-2-angus@akkea.ca>
+References: <20190513145539.28174-1-angus@akkea.ca>
+ <20190513145539.28174-2-angus@akkea.ca>
+User-Agent: Evolution 3.30.1-1build1 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_081041_230450_FE2EE74A 
-X-CRM114-Status: GOOD (  16.61  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190513_081136_272821_9E9CD5BB 
+X-CRM114-Status: UNSURE (   9.95  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ no trust [216.40.44.231 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -89,68 +76,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
- mperttunen@nvidia.com, mmaddireddy@nvidia.com, linux-pci@vger.kernel.org,
- catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- kthota@nvidia.com, kishon@ti.com, linux-tegra@vger.kernel.org,
- thierry.reding@gmail.com, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
- bhelgaas@google.com, jonathanh@nvidia.com,
- linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 13, 2019 at 10:36:17AM +0530, Vidya Sagar wrote:
-> Add support to enable CDM (Configuration Dependent Module) registers check
-> for any data corruption. CDM registers include standard PCIe configuration
-> space registers, Port Logic registers and iATU and DMA registers.
-> Refer Section S.4 of Synopsys DesignWare Cores PCI Express Controller Databook
-> Version 4.90a
-> 
-> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
-> ---
-> Changes since [v5]:
-> * None
-> 
-> Changes since [v4]:
-> * None
-> 
-> Changes since [v3]:
-> * None
-> 
-> Changes since [v2]:
-> * Changed flag name from 'cdm-check' to 'enable-cdm-check'
-> * Added info about Port Logic and DMA registers being part of CDM
-> 
-> Changes since [v1]:
-> * This is a new patch in v2 series
-> 
->  Documentation/devicetree/bindings/pci/designware-pcie.txt | 5 +++++
->  1 file changed, 5 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/pci/designware-pcie.txt b/Documentation/devicetree/bindings/pci/designware-pcie.txt
-> index 5561a1c060d0..85b872c42a9f 100644
-> --- a/Documentation/devicetree/bindings/pci/designware-pcie.txt
-> +++ b/Documentation/devicetree/bindings/pci/designware-pcie.txt
-> @@ -34,6 +34,11 @@ Optional properties:
->  - clock-names: Must include the following entries:
->  	- "pcie"
->  	- "pcie_bus"
-> +- enable-cdm-check: This is a boolean property and if present enables
-> +   automatic checking of CDM (Configuration Dependent Module) registers
-> +   for data corruption. CDM registers include standard PCIe configuration
-> +   space registers, Port Logic registers, DMA and iATU (internal Address
-> +   Translation Unit) registers.
+On Mon, 2019-05-13 at 07:55 -0700, Angus Ainslie (Purism) wrote:
+> This is for the development kit board for the Librem 5. The current level
+> of support yields a working console and is able to boot userspace from
+> the network or eMMC.
+[]
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
+> new file mode 100644
 
-snps,enable-cdm-check
+Perhaps add an entry in the MAINTAINERS file for this
+.dts file similar to other freescale boards?
 
->  RC mode:
->  - num-viewport: number of view ports configured in hardware. If a platform
->    does not specify it, the driver assumes 2.
-> -- 
-> 2.17.1
-> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
