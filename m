@@ -2,85 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C266B1BC2E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 19:48:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 816A61BC32
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 19:48:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nCRuwj1eJlYBrHdlewzCGHsmOa5VLNCsWWeGLzd6dEg=; b=Jp+LfeAzZdgI8t
-	q4vEAhUPjb1AD5LBblqTKDedGwHPuqyLXKR1iUFGrj3jpNJleBt3Lx/nhk2q9WwrBrWSkR4kVc/iJ
-	9g3BWo35zCkWuViX7tV8zaaxp6Mog5vqMAEm9E315xHVrsRXIc4CyaOgCcZ4JMFXESrDhdwcP3EgG
-	iOyhSY6A9X/jmzSyNKFObbdzr28gNau12M7VXI8zfJFHjFP8zQaSQILQuK+cTL1a7MF/4NpN5uYCk
-	DjsNbezI7rpES0U4LibbkM2XNa/vVvHzcLRpW+qx4+gakAEhx+NZWOP610gTGMMjsO45KxyAgvkT0
-	qGcVg+VNGVAeW5UsWpuw==;
+	List-Owner; bh=fgIpGQ6Un44ps0XsSKzycB+phjgQwikNTnSkjWtlXLQ=; b=YdVUOOLEyeJXL3
+	WuOyCv0Zm5VOlnd/zeaUvzC/X1EDPYzdFroyFyhrX+wHFCCo61X2vka/civViKMguZzh1301TUCMZ
+	GcTOII4XoWez66Kmpc3J1IRoiUYLQKcpyjRRtt8b7rVeF77a64M5qb1wQ1ut9nUZBNUaGqzDoQnWz
+	pgPU5Gvs2ErM+mnzfJkuoV/WXM0GsFAKlXivxFI6xpywt9nDjwLv58Nf9rJ4IGeiobyvILQJfXmN2
+	3nDi5ywnUruNVxabmnfXTGn4zXzYyi8koy9WEL60HynB67oTPdZ8XBQkSbQstAm5Ji4pujOi1/9gW
+	lCMVhvAb/ZBAOMwhs/wQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQF3N-00069i-W2; Mon, 13 May 2019 17:47:58 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hQF3y-0006Rn-DF; Mon, 13 May 2019 17:48:34 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQF3E-00067b-Kl
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 17:47:50 +0000
-Received: by mail-pl1-x642.google.com with SMTP id f12so4809642plt.8
+ id 1hQF3m-0006QP-S6
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 17:48:27 +0000
+Received: by mail-ot1-f67.google.com with SMTP id r10so11864856otd.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 May 2019 10:47:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=7ftcbU8JnQmvm8sGh32+gWVqyGisGkp05zvI/Os1BUA=;
- b=aG5v8TAA+1qIp67dGGOJ7ud6fKmC9NYGNER2ymFATsKxSw7VEJIAcZr2RhZ15fOE+B
- xM9aXfO+Ft7I1MfUm4KhUZu+IaQTsAEf0ZUgfzyXoJqmDOKfJe66+f8zw4AuubJ+or27
- ufNo6pYKwNT8Q2CQZo2VhJrv8HJ0BChKp1IwSD51GT5N3nyfqhziSRmyrdLi7fiCHqsO
- j3XOAMVG4Yp4wboAfnQSKvQq9UFhKNB3o2DaThW4zr3zp8xLy/YYiycKAQjGpm/IhWaZ
- ofn9Dn3m2QyeTutPItizv/1Me+LzhsVv7veUC9Qx4hrZZ1nCfKt/wt9RPLbvy6vlzNwK
- N55Q==
+ Mon, 13 May 2019 10:48:22 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=7ftcbU8JnQmvm8sGh32+gWVqyGisGkp05zvI/Os1BUA=;
- b=L3qxh8Epe8rO7rZl45bpLQ9cZB7cKbaDzWUgvKb1PpO+qg11o7yQILJKVVNTSzPqiM
- qqHzUX8BGpdOJu3AKmVgMN19oc/TNPJfqxZK8ONcViiogBpeLRB3HWAIrIgWIgzs9Ix5
- 6o/SweX5sFm2fKwrB2ywdbIUNtrSE8dYRosbNED2ckzUErXigKnl23WVS8L0QLZ6rB17
- CMaCBLuKcRrYG8VFrYq2MLbmtbKp2LrNUT1nputq3vQl0+mtZw8yPwsm94KGKcD5eUqb
- L3mEKhEJ1ZotFTtfyjXSvLFGvaN0vQSMhNI2Qu4p/ED55jtgRd2Txem2SMP55ibwnc6/
- qEig==
-X-Gm-Message-State: APjAAAUZCzV70Dz2NpjAF8dIsxbZKGPqUNySUPg2GJKXx6T2mQagT+jr
- KGy1ZAv6i8kZfeUKvQ8yO7ROEA==
-X-Google-Smtp-Source: APXvYqykzOc6H2gQfaH2tmKL5VMylfiYXvxqcBKK0+ieVzRpKiH1CsSkvAVqvM2zkJDtRZ1QN5T4tw==
-X-Received: by 2002:a17:902:e708:: with SMTP id
- co8mr32206427plb.141.1557769667349; 
- Mon, 13 May 2019 10:47:47 -0700 (PDT)
-Received: from localhost ([2601:602:9200:a1a5:fd66:a9bc:7c2c:636a])
- by smtp.googlemail.com with ESMTPSA id w12sm14856903pgp.51.2019.05.13.10.47.46
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=gkHpJzWFAksIMv+VI682dKhDhr4Fbw0OiglBoy3hzNs=;
+ b=Imu3BR9McKHdRYY7axtsFAlRDInldupfH8DCpculmFxB6urEFlsaVPkv7AZsN6tHwq
+ 3rKKEJHnt4lOtr4TltmBazXXgIJQgyfYLmsenH6lo4VTFKv8mjlIi8VFQGNZhVMRkI7k
+ hyna5pT9IC7pToXZrpKufJ/+iqWwsvd0Y9LXc1/rVwxbScXLkPOOAsIvS9aDoL9CyL6Y
+ 43ch2yLZKheEhxMOAIp+Ru+btIi0JLh1cfELSqTdh/D6O8lQyHLnE7s1qxySIINXXr7n
+ 5pZ46qgxYWFIBBOSlYHN5VEgAaCYsui+MlgHOU7C6G3p7Mh6AUQBCzx9Y67tntVJ/Qs/
+ hZQg==
+X-Gm-Message-State: APjAAAUG64qt9we4czecOn9ThXEqHbKfOYLRFbN5M6a+XeSQwmJx6tTO
+ Bdl6wjcRI+0QiR+1OBEDmw==
+X-Google-Smtp-Source: APXvYqyDNm+2TRXIedzOkppCtpoGAVu0Y//bfN1IBeyWcv0SwaLYFxVbDIaB5w/V3N+DpWu8gG67sA==
+X-Received: by 2002:a05:6830:164e:: with SMTP id
+ h14mr17428711otr.321.1557769701976; 
+ Mon, 13 May 2019 10:48:21 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id e9sm6164134otf.48.2019.05.13.10.48.20
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 13 May 2019 10:47:46 -0700 (PDT)
-From: Kevin Hilman <khilman@baylibre.com>
-To: Neil Armstrong <narmstrong@baylibre.com>, ulf.hansson@linaro.org
-Subject: Re: [PATCH 2/3] mmc: meson-gx: add ddr-access-quirk
-In-Reply-To: <20190513091548.16674-3-narmstrong@baylibre.com>
-References: <20190513091548.16674-1-narmstrong@baylibre.com>
- <20190513091548.16674-3-narmstrong@baylibre.com>
-Date: Mon, 13 May 2019 10:47:45 -0700
-Message-ID: <7hd0kmckla.fsf@baylibre.com>
+ Mon, 13 May 2019 10:48:20 -0700 (PDT)
+Date: Mon, 13 May 2019 12:48:20 -0500
+From: Rob Herring <robh@kernel.org>
+To: Claudiu.Beznea@microchip.com
+Subject: Re: [PATCH v3 3/4] dt-bindings: clk: at91: add bindings for
+ SAM9X60's  slow clock controller
+Message-ID: <20190513174820.GA16840@bogus>
+References: <1557487388-32098-1-git-send-email-claudiu.beznea@microchip.com>
+ <1557487388-32098-4-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1557487388-32098-4-git-send-email-claudiu.beznea@microchip.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_104748_828855_BFB79C84 
-X-CRM114-Status: GOOD (  12.97  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190513_104826_261004_182154E1 
+X-CRM114-Status: GOOD (  12.86  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -92,35 +90,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>, baylibre-upstreaming@groups.io,
- linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ alexandre.belloni@bootlin.com, sboyd@kernel.org, mturquette@baylibre.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, Claudiu.Beznea@microchip.com,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Neil Armstrong <narmstrong@baylibre.com> writes:
+On Fri, 10 May 2019 11:23:35 +0000, <Claudiu.Beznea@microchip.com> wrote:
+> From: Claudiu Beznea <claudiu.beznea@microchip.com>
+> 
+> Add bindings for SAM9X60's slow clock controller.
+> 
+> Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
+> ---
+> 
+> Hi Rob,
+> 
+> I didn't added your Reviewed-by tag to this version since I changed
+> the driver with regards to clock-cells DT binding (and I though you
+> may want to comment on this).
+> 
+> Thank you,
+> Claudiu Beznea
+> 
+>  Documentation/devicetree/bindings/clock/at91-clock.txt | 7 ++++---
+>  1 file changed, 4 insertions(+), 3 deletions(-)
+> 
 
-> On the Amlogic G12A SoC family, (only) the SDIO controller fails to access
-> the data from DDR, leading to a broken controller.
->
-> But each MMC controller has 1,5KiB of SRAM after the registers, that can
-> be used as bounce buffer to avoid direct DDR access from the integrated
-> DMAs (this SRAM may be used by the boot ROM when DDR is not yet initialized).
->
-> The quirk is to disable the chained descriptor for this controller, and
-> use this SRAM memory zone as buffer for the bounce buffer fallback mode.
->
-> The performance hit hasn't been evaluated, but the fix has been tested
-> using a WiFi AP6398S SDIO module, and the iperf3 Bandwidth measurement gave
-> 55.2 Mbits/sec over a 63 Hours long test, with the SDIO ios set as High-Speed
-> at 50MHz clock. It gave 170 Mbits/sec as SDR104 and 200MHz clock.
->
-> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-
-Reviewed-by: Kevin Hilman <khilman@baylibre.com>
-
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
