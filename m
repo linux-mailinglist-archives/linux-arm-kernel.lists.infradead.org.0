@@ -2,83 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C7641BB1F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 18:40:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE3041BB25
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 18:40:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kjOMv7ppEjFQWXpSijCbaqgFEUbjNUNMFqBQL+1Ls7c=; b=p+/+7fg7hFTzKA
-	Y6w/PK2R7L9U7Mk83vf74RrPENLYRRPSIP4t7ctL9xPSj3UOAtxjkubvvRLf+KGWmfQchZQQTOEUy
-	xiHMjx4dzjeHWHX/oCOcYCOR9rIQDETDpdZHIGVusW7082fAxW3UXDcg2+fSiiTAdO1SBODHm5lue
-	WUsw6qBBivspkMMPGhuZnIsLtWYxPkJNbN5JwVw0kOJxSstf5ioXDfT7qy6sLXCf2MdZ9x6hrhrwo
-	lprnWDr3cjPgaSIlvRhIjH1dh6UST0kWfTG9cvwXSGeFSmVhkXWjUouzux3RaQqPyx9X8Dw4ZP6ob
-	OKfBApTzf47AGUBKNIlQ==;
+	List-Owner; bh=zTLW7mb+mmO2vxCAUHQB6yi1cznl82YYJyQnwFniOrc=; b=BcUJZu3C3eLFof
+	7Pjv9XiIjEisGY6vnZS1ngWzDALNzd0TJTvps7FFRxgXR2hEhRPq4GHeN3Xu07xjwvEN5mWuFhjkM
+	eJMA8zyCbYlti1jSJ+FU3uZszXaG2cNnXnbU8ca/U9GCSgMu2q5GNzRt1TyPkx05e8vfdRff5Zrgo
+	PPfn3DsXnlPX4bdQBs5PqUBrBqsdxsQdqPX9sfDoz6s2txCarwmK8jlsoC8aeHlOkyWpy0yE9OibS
+	N7HtBRp3UZ/aaBt1GhY0SnstCzHN1zaNt0OBW5545tfeF8R1q7pGvk9AF2oDMLvydahwD7PIq3QtQ
+	432w+dXGeODtHfZ8+/zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQDzn-0001xO-MM; Mon, 13 May 2019 16:40:11 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hQE0O-0003bc-4d; Mon, 13 May 2019 16:40:48 +0000
+Received: from mail-eopbgr820074.outbound.protection.outlook.com
+ ([40.107.82.74] helo=NAM01-SN1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQDzb-0001pO-IL
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 16:40:01 +0000
-Received: by mail-pl1-x643.google.com with SMTP id b3so6747762plr.7
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 13 May 2019 09:39:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=kOTTXWGUHuT21t+7qiQOMKOu3sooS1XgCOsDWRfKZzw=;
- b=rwFeYzyeBYmhvYRb28twRjfM2uqimkH1LwpNv/ABMxe4OuCR03MtHaSjYN4CIElAYB
- XKjTMDfrFJwvYs0H+op8Yh9wRBF1ZoLmWJGBTU//mU2ngNhc/AyCabNdsB/ZYiXs9FGa
- i4X8ncUQkUGOASf4DMpGC9tjWItlJvfyYM2BMmKhjyEUXZlXaE1rAo4feXC+LUeVHBKQ
- qhSY6Q33CaK4lG+g60Oc8ZBa1nkVrdsSpCK83F3YhsLe6mI0nSC6QLJpgMFiyQBQddbM
- ZmS2WKndKdWQr8FnnQ9ahJZSew9wP5MkxUR9/8ceosIOGVbXQ7MKgmWKyQRI3CWahmhW
- 0nSw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=kOTTXWGUHuT21t+7qiQOMKOu3sooS1XgCOsDWRfKZzw=;
- b=bXkGSOd2Rmv1lgSJVAgrvoXetDbPIPKTK0ryIQJ+pkZbigxFAllsYZ4lO/amTj5nJl
- Eza6CKpmDXJqoKuLnXNgePjcxcSPB+X14n1XCj8BiOiOraP1qxDZrdDVKBj7ieqdckyw
- TaHNkQjwT4XJhJhMcitHCpdvV5szIiWBpsyLumN5O0gBhYsLgEAPPX5LHM23ahItcTOE
- p2JkksT6hdJMKzIbLgUXLYj/etMhpbC8bEuWwgCQKElI/AwCmlkbtNNeOIZHmIAZMIeH
- SCB93iaPbBSCgIr2K687XzCv2jqiGO/esO1M5UUQgJqi+YyowE8APLIEUxIMmpjV1jWT
- YeUg==
-X-Gm-Message-State: APjAAAV5w5rRRUZNgP0rRySRG7TG9Ae65kgbq4JwY28IakFyvO5yZ/u/
- I4rD8GDZYhxg8NzqjT5jWxltMQ==
-X-Google-Smtp-Source: APXvYqx8yWVsi0Ilg1gccIEygTNSek0fwg0zfl3bgL4s+2u7ExqHw3toQiRM3AMKO6hlr7GzDoRo4A==
-X-Received: by 2002:a17:902:650f:: with SMTP id
- b15mr8839625plk.11.1557765598857; 
- Mon, 13 May 2019 09:39:58 -0700 (PDT)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id v64sm19047504pfv.106.2019.05.13.09.39.57
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 13 May 2019 09:39:58 -0700 (PDT)
-Date: Mon, 13 May 2019 10:39:56 -0600
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Suzuki K Poulose <suzuki.poulose@arm.com>
-Subject: Re: [PATCH v3 16/30] coresight: Introduce generic platform data helper
-Message-ID: <20190513163956.GB16162@xps15>
-References: <1557226378-10131-1-git-send-email-suzuki.poulose@arm.com>
- <1557226378-10131-17-git-send-email-suzuki.poulose@arm.com>
+ id 1hQE0E-0003aG-W3
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 16:40:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=infinera.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=l/iAmHKB5HOp50e9yMvGnt3MYRpcQk4vsw0oVUTgzCg=;
+ b=FraIFcYEJvDnrAxURCgaoLh6K0bdqFU9bbUoYXTFO8YTOWXgP2NvjH+/mWdnr3ZTxXC+3EJ+3vAlHjexMbuHCmyIWNJah0/3c9esERJMsIWu9ESxTLXZ9iDUIvejUwoOAYz/11VRVGbgVOKFjht7duleQ0vXyO7ffRjq5coK7Wk=
+Received: from BN8PR10MB3540.namprd10.prod.outlook.com (20.179.78.205) by
+ BN8PR10MB3219.namprd10.prod.outlook.com (20.179.138.17) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1878.25; Mon, 13 May 2019 16:40:37 +0000
+Received: from BN8PR10MB3540.namprd10.prod.outlook.com
+ ([fe80::24c5:ea68:cff3:4a16]) by BN8PR10MB3540.namprd10.prod.outlook.com
+ ([fe80::24c5:ea68:cff3:4a16%7]) with mapi id 15.20.1878.024; Mon, 13 May 2019
+ 16:40:37 +0000
+From: Joakim Tjernlund <Joakim.Tjernlund@infinera.com>
+To: "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "leoyang.li@nxp.com" <leoyang.li@nxp.com>,
+ "roy.pledge@nxp.com" <roy.pledge@nxp.com>
+Subject: Re: [PATCH v1 4/8] soc/fsl/qbman: Use index when accessing device
+ tree properties
+Thread-Topic: [PATCH v1 4/8] soc/fsl/qbman: Use index when accessing device
+ tree properties
+Thread-Index: AQHVCadY7pF1Pe9lUE2omDuEjFRsAaZpQd6A
+Date: Mon, 13 May 2019 16:40:36 +0000
+Message-ID: <1afd837287cebccfc1dd68365870d0f5d1cf27f7.camel@infinera.com>
+References: <1557763756-24118-1-git-send-email-roy.pledge@nxp.com>
+ <1557763756-24118-5-git-send-email-roy.pledge@nxp.com>
+In-Reply-To: <1557763756-24118-5-git-send-email-roy.pledge@nxp.com>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Joakim.Tjernlund@infinera.com; 
+x-originating-ip: [88.131.87.201]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: fe32ae2f-f61f-4c12-e2ba-08d6d7c1ba1b
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(2017052603328)(7193020);
+ SRVR:BN8PR10MB3219; 
+x-ms-traffictypediagnostic: BN8PR10MB3219:
+x-microsoft-antispam-prvs: <BN8PR10MB32191C4D15B5F73E163563E4F40F0@BN8PR10MB3219.namprd10.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 0036736630
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(39860400002)(376002)(136003)(346002)(366004)(396003)(189003)(199004)(4326008)(7736002)(256004)(102836004)(6246003)(6436002)(73956011)(6486002)(76116006)(66946007)(66556008)(64756008)(66446008)(66476007)(2501003)(2906002)(6506007)(91956017)(81156014)(229853002)(8676002)(81166006)(8936002)(71190400001)(71200400001)(36756003)(6116002)(3846002)(118296001)(5660300002)(53936002)(110136005)(478600001)(72206003)(486006)(4744005)(6512007)(54906003)(14454004)(2201001)(186003)(26005)(11346002)(476003)(2616005)(68736007)(446003)(316002)(86362001)(66066001)(99286004)(25786009)(305945005)(14444005)(76176011);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BN8PR10MB3219;
+ H:BN8PR10MB3540.namprd10.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: infinera.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: YGMhfspaPplJ+Kut85Y/tVRjWe+YPzHNvLIKD/8FyHlovAoozvlAhEpkVWmAIR9R/Jfz18sG3PHNPC30ePg1bMIk7NheUaOhHJ3jgzXdsBv2gUSVw3Fd7B5rBHg6FIWjEBhxHy7emw4vyqqFYe6dePSxMnDRJkzVVXwp1nZ6V3wPOeGxYFK+RZB/807Zs+eGW/PUra+jX+gFjhbSzjhRms+7BmYbIiQipZosmcdA1qK+1g1PerqcvFcwyRcITLjEYZeuYx1GBSFuZjjSN9pz6nR90f2dT0NyTlUH2ZP9Ua5h9qe/0+yx5DCaZtyCqj5sup0RYuO8TzfzMuvs6fenkt6+h4ojfWWFOcRlDlVCpTAirZJHH+MFw366X64WCdSLmkfQAshIBntVIsDjmb4tT/pf+OggP6DLBSuTq65P2Dk=
+Content-ID: <30C6854288C3D8458564DBB4CDD4EDB4@namprd10.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1557226378-10131-17-git-send-email-suzuki.poulose@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-OriginatorOrg: infinera.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: fe32ae2f-f61f-4c12-e2ba-08d6d7c1ba1b
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 May 2019 16:40:36.9214 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 285643de-5f5b-4b03-a153-0ae2dc8aaf77
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN8PR10MB3219
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_093959_613343_6AA6A012 
-X-CRM114-Status: GOOD (  22.56  )
+X-CRM114-CacheID: sfid-20190513_094039_110702_97DE6534 
+X-CRM114-Status: GOOD (  17.71  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
+ no trust [40.107.82.74 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -98,383 +117,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: coresight@lists.linaro.org, rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "laurentiu.tudor@nxp.com" <laurentiu.tudor@nxp.com>,
+ "madalin.bucur@nxp.com" <madalin.bucur@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 07, 2019 at 11:52:43AM +0100, Suzuki K Poulose wrote:
-> So far we have hard coded the DT platform parsing code in
-> every driver. Introduce generic helper to parse the information
-> provided by the firmware in a platform agnostic manner, in preparation
-> for the ACPI support.
+On Mon, 2019-05-13 at 16:09 +0000, Roy Pledge wrote:
 > 
-> Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
-> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> ---
-> Changes since v2:
->  - Use int error code for of_get_coresight_platform_data() [Mathieu]
-> ---
->  drivers/hwtracing/coresight/coresight-catu.c       | 13 ++---
->  drivers/hwtracing/coresight/coresight-etb10.c      | 11 ++--
->  drivers/hwtracing/coresight/coresight-etm3x.c      | 12 ++---
->  drivers/hwtracing/coresight/coresight-etm4x.c      | 11 ++--
->  drivers/hwtracing/coresight/coresight-funnel.c     | 11 ++--
->  drivers/hwtracing/coresight/coresight-platform.c   | 58 ++++++++++++++++------
->  drivers/hwtracing/coresight/coresight-replicator.c | 11 ++--
->  drivers/hwtracing/coresight/coresight-stm.c        | 11 ++--
->  drivers/hwtracing/coresight/coresight-tmc.c        | 13 ++---
->  drivers/hwtracing/coresight/coresight-tpiu.c       | 11 ++--
->  include/linux/coresight.h                          |  7 +--
->  11 files changed, 83 insertions(+), 86 deletions(-)
+> The index value should be passed to the of_parse_phandle()
+> function to ensure the correct property is read.
+
+Is this a bug fix? Maybe for stable too?
+
+ Jocke
+
 > 
-> diff --git a/drivers/hwtracing/coresight/coresight-catu.c b/drivers/hwtracing/coresight/coresight-catu.c
-> index 63109c9..799ba1d 100644
-> --- a/drivers/hwtracing/coresight/coresight-catu.c
-> +++ b/drivers/hwtracing/coresight/coresight-catu.c
-> @@ -503,17 +503,14 @@ static int catu_probe(struct amba_device *adev, const struct amba_id *id)
->  	struct coresight_desc catu_desc;
->  	struct coresight_platform_data *pdata = NULL;
->  	struct device *dev = &adev->dev;
-> -	struct device_node *np = dev->of_node;
->  	void __iomem *base;
->  
-> -	if (np) {
-> -		pdata = of_get_coresight_platform_data(dev, np);
-> -		if (IS_ERR(pdata)) {
-> -			ret = PTR_ERR(pdata);
-> -			goto out;
-> -		}
-> -		dev->platform_data = pdata;
-> +	pdata = coresight_get_platform_data(dev);
-> +	if (IS_ERR(pdata)) {
-> +		ret = PTR_ERR(pdata);
-> +		goto out;
->  	}
-> +	dev->platform_data = pdata;
->  
->  	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
->  	if (!drvdata) {
-> diff --git a/drivers/hwtracing/coresight/coresight-etb10.c b/drivers/hwtracing/coresight/coresight-etb10.c
-> index 3b333fb..612f1e9 100644
-> --- a/drivers/hwtracing/coresight/coresight-etb10.c
-> +++ b/drivers/hwtracing/coresight/coresight-etb10.c
-> @@ -725,14 +725,11 @@ static int etb_probe(struct amba_device *adev, const struct amba_id *id)
->  	struct etb_drvdata *drvdata;
->  	struct resource *res = &adev->res;
->  	struct coresight_desc desc = { 0 };
-> -	struct device_node *np = adev->dev.of_node;
->  
-> -	if (np) {
-> -		pdata = of_get_coresight_platform_data(dev, np);
-> -		if (IS_ERR(pdata))
-> -			return PTR_ERR(pdata);
-> -		adev->dev.platform_data = pdata;
-> -	}
-> +	pdata = coresight_get_platform_data(dev);
-> +	if (IS_ERR(pdata))
-> +		return PTR_ERR(pdata);
-> +	adev->dev.platform_data = pdata;
->  
->  	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
->  	if (!drvdata)
-> diff --git a/drivers/hwtracing/coresight/coresight-etm3x.c b/drivers/hwtracing/coresight/coresight-etm3x.c
-> index fa2f141..fa2164f 100644
-> --- a/drivers/hwtracing/coresight/coresight-etm3x.c
-> +++ b/drivers/hwtracing/coresight/coresight-etm3x.c
-> @@ -790,20 +790,16 @@ static int etm_probe(struct amba_device *adev, const struct amba_id *id)
->  	struct etm_drvdata *drvdata;
->  	struct resource *res = &adev->res;
->  	struct coresight_desc desc = { 0 };
-> -	struct device_node *np = adev->dev.of_node;
->  
->  	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
->  	if (!drvdata)
->  		return -ENOMEM;
->  
-> -	if (np) {
-> -		pdata = of_get_coresight_platform_data(dev, np);
-> -		if (IS_ERR(pdata))
-> -			return PTR_ERR(pdata);
-> -
-> -		adev->dev.platform_data = pdata;
-> -	}
-> +	pdata = coresight_get_platform_data(dev);
-> +	if (IS_ERR(pdata))
-> +		return PTR_ERR(pdata);
->  
-> +	adev->dev.platform_data = pdata;
->  	drvdata->use_cp14 = fwnode_property_read_bool(dev->fwnode, "arm,cp14");
->  	dev_set_drvdata(dev, drvdata);
->  
-> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-> index 77d1d83..4355b2e 100644
-> --- a/drivers/hwtracing/coresight/coresight-etm4x.c
-> +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-> @@ -1084,18 +1084,15 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
->  	struct etmv4_drvdata *drvdata;
->  	struct resource *res = &adev->res;
->  	struct coresight_desc desc = { 0 };
-> -	struct device_node *np = adev->dev.of_node;
->  
->  	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
->  	if (!drvdata)
->  		return -ENOMEM;
->  
-> -	if (np) {
-> -		pdata = of_get_coresight_platform_data(dev, np);
-> -		if (IS_ERR(pdata))
-> -			return PTR_ERR(pdata);
-> -		adev->dev.platform_data = pdata;
-> -	}
-> +	pdata = coresight_get_platform_data(dev);
-> +	if (IS_ERR(pdata))
-> +		return PTR_ERR(pdata);
-> +	adev->dev.platform_data = pdata;
->  
->  	dev_set_drvdata(dev, drvdata);
->  
-> diff --git a/drivers/hwtracing/coresight/coresight-funnel.c b/drivers/hwtracing/coresight/coresight-funnel.c
-> index 3423042..fc033fd 100644
-> --- a/drivers/hwtracing/coresight/coresight-funnel.c
-> +++ b/drivers/hwtracing/coresight/coresight-funnel.c
-> @@ -187,14 +187,11 @@ static int funnel_probe(struct device *dev, struct resource *res)
->  	struct coresight_platform_data *pdata = NULL;
->  	struct funnel_drvdata *drvdata;
->  	struct coresight_desc desc = { 0 };
-> -	struct device_node *np = dev->of_node;
->  
-> -	if (np) {
-> -		pdata = of_get_coresight_platform_data(dev, np);
-> -		if (IS_ERR(pdata))
-> -			return PTR_ERR(pdata);
-> -		dev->platform_data = pdata;
-> -	}
-> +	pdata = coresight_get_platform_data(dev);
-> +	if (IS_ERR(pdata))
-> +		return PTR_ERR(pdata);
-> +	dev->platform_data = pdata;
->  
->  	if (is_of_node(dev_fwnode(dev)) &&
->  	    of_device_is_compatible(dev->of_node, "arm,coresight-funnel"))
-> diff --git a/drivers/hwtracing/coresight/coresight-platform.c b/drivers/hwtracing/coresight/coresight-platform.c
-> index 4c31299..5d78f4f 100644
-> --- a/drivers/hwtracing/coresight/coresight-platform.c
-> +++ b/drivers/hwtracing/coresight/coresight-platform.c
-> @@ -230,23 +230,16 @@ static int of_coresight_parse_endpoint(struct device *dev,
->  	return ret;
->  }
->  
-> -struct coresight_platform_data *
-> -of_get_coresight_platform_data(struct device *dev,
-> -			       const struct device_node *node)
-> +static int of_get_coresight_platform_data(struct device *dev,
-> +					  struct coresight_platform_data *pdata)
->  {
->  	int ret = 0;
-> -	struct coresight_platform_data *pdata;
->  	struct coresight_connection *conn;
->  	struct device_node *ep = NULL;
->  	const struct device_node *parent = NULL;
->  	bool legacy_binding = false;
-> +	struct device_node *node = dev->of_node;
->  
-> -	pdata = devm_kzalloc(dev, sizeof(*pdata), GFP_KERNEL);
-> -	if (!pdata)
-> -		return ERR_PTR(-ENOMEM);
-> -
-> -	/* Use device name as sysfs handle */
-> -	pdata->name = dev_name(dev);
->  	pdata->cpu = of_coresight_get_cpu(node);
->  
->  	/* Get the number of input and output port for this component */
-> @@ -254,11 +247,11 @@ of_get_coresight_platform_data(struct device *dev,
->  
->  	/* If there are no output connections, we are done */
->  	if (!pdata->nr_outport)
-> -		return pdata;
-> +		return 0;
->  
->  	ret = coresight_alloc_conns(dev, pdata);
->  	if (ret)
-> -		return ERR_PTR(ret);
-> +		return ret;
->  
->  	parent = of_coresight_get_output_ports_node(node);
->  	/*
-> @@ -292,11 +285,46 @@ of_get_coresight_platform_data(struct device *dev,
->  		case 0:
->  			break;
->  		default:
-> -			return ERR_PTR(ret);
-> +			return ret;
->  		}
->  	}
->  
-> -	return pdata;
-> +	return 0;
-> +}
-> +#else
-> +static inline int
-> +of_get_coresight_platform_data(struct device *dev,
-> +			       struct coresight_platform_data *pdata)
-> +{
-> +	return -ENOENT;
->  }
-> -EXPORT_SYMBOL_GPL(of_get_coresight_platform_data);
->  #endif
-> +
-> +struct coresight_platform_data *
-> +coresight_get_platform_data(struct device *dev)
-> +{
-> +	int ret = -ENOENT;
-> +	struct coresight_platform_data *pdata;
-> +	struct fwnode_handle *fwnode = dev_fwnode(dev);
-> +
-> +	if (IS_ERR_OR_NULL(fwnode))
-> +		goto error;
-> +
-> +	pdata = devm_kzalloc(dev, sizeof(*pdata), GFP_KERNEL);
-> +	if (!pdata) {
-> +		ret = -ENOMEM;
-> +		goto error;
-> +	}
-> +
-> +	/* Use device name as sysfs handle */
-> +	pdata->name = dev_name(dev);
-> +
-> +	if (is_of_node(fwnode))
-> +		ret = of_get_coresight_platform_data(dev, pdata);
-> +
-> +	if (!ret)
-> +		return pdata;
-> +error:
-> +	return ERR_PTR(ret);
-> +}
-> +EXPORT_SYMBOL_GPL(coresight_get_platform_data);
-> diff --git a/drivers/hwtracing/coresight/coresight-replicator.c b/drivers/hwtracing/coresight/coresight-replicator.c
-> index 7e05145..054b335 100644
-> --- a/drivers/hwtracing/coresight/coresight-replicator.c
-> +++ b/drivers/hwtracing/coresight/coresight-replicator.c
-> @@ -177,15 +177,12 @@ static int replicator_probe(struct device *dev, struct resource *res)
->  	struct coresight_platform_data *pdata = NULL;
->  	struct replicator_drvdata *drvdata;
->  	struct coresight_desc desc = { 0 };
-> -	struct device_node *np = dev->of_node;
->  	void __iomem *base;
->  
-> -	if (np) {
-> -		pdata = of_get_coresight_platform_data(dev, np);
-> -		if (IS_ERR(pdata))
-> -			return PTR_ERR(pdata);
-> -		dev->platform_data = pdata;
-> -	}
-> +	pdata = coresight_get_platform_data(dev);
-> +	if (IS_ERR(pdata))
-> +		return PTR_ERR(pdata);
-> +	dev->platform_data = pdata;
->  
->  	if (is_of_node(dev_fwnode(dev)) &&
->  	    of_device_is_compatible(dev->of_node, "arm,coresight-replicator"))
-> diff --git a/drivers/hwtracing/coresight/coresight-stm.c b/drivers/hwtracing/coresight/coresight-stm.c
-> index 3992a35..9faa1ed 100644
-> --- a/drivers/hwtracing/coresight/coresight-stm.c
-> +++ b/drivers/hwtracing/coresight/coresight-stm.c
-> @@ -809,14 +809,11 @@ static int stm_probe(struct amba_device *adev, const struct amba_id *id)
->  	struct resource ch_res;
->  	size_t bitmap_size;
->  	struct coresight_desc desc = { 0 };
-> -	struct device_node *np = adev->dev.of_node;
->  
-> -	if (np) {
-> -		pdata = of_get_coresight_platform_data(dev, np);
-> -		if (IS_ERR(pdata))
-> -			return PTR_ERR(pdata);
-> -		adev->dev.platform_data = pdata;
-> -	}
-> +	pdata = coresight_get_platform_data(dev);
-> +	if (IS_ERR(pdata))
-> +		return PTR_ERR(pdata);
-> +	adev->dev.platform_data = pdata;
->  	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
->  	if (!drvdata)
->  		return -ENOMEM;
-> diff --git a/drivers/hwtracing/coresight/coresight-tmc.c b/drivers/hwtracing/coresight/coresight-tmc.c
-> index 9c5e615..be0bd98 100644
-> --- a/drivers/hwtracing/coresight/coresight-tmc.c
-> +++ b/drivers/hwtracing/coresight/coresight-tmc.c
-> @@ -397,16 +397,13 @@ static int tmc_probe(struct amba_device *adev, const struct amba_id *id)
->  	struct tmc_drvdata *drvdata;
->  	struct resource *res = &adev->res;
->  	struct coresight_desc desc = { 0 };
-> -	struct device_node *np = adev->dev.of_node;
->  
-> -	if (np) {
-> -		pdata = of_get_coresight_platform_data(dev, np);
-> -		if (IS_ERR(pdata)) {
-> -			ret = PTR_ERR(pdata);
-> -			goto out;
-> -		}
-> -		adev->dev.platform_data = pdata;
-> +	pdata = coresight_get_platform_data(dev);
-> +	if (IS_ERR(pdata)) {
-> +		ret = PTR_ERR(pdata);
-> +		goto out;
->  	}
-> +	adev->dev.platform_data = pdata;
->  
->  	ret = -ENOMEM;
->  	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
-> diff --git a/drivers/hwtracing/coresight/coresight-tpiu.c b/drivers/hwtracing/coresight/coresight-tpiu.c
-> index 4dd3e7f..aec0ed7 100644
-> --- a/drivers/hwtracing/coresight/coresight-tpiu.c
-> +++ b/drivers/hwtracing/coresight/coresight-tpiu.c
-> @@ -124,14 +124,11 @@ static int tpiu_probe(struct amba_device *adev, const struct amba_id *id)
->  	struct tpiu_drvdata *drvdata;
->  	struct resource *res = &adev->res;
->  	struct coresight_desc desc = { 0 };
-> -	struct device_node *np = adev->dev.of_node;
->  
-> -	if (np) {
-> -		pdata = of_get_coresight_platform_data(dev, np);
-> -		if (IS_ERR(pdata))
-> -			return PTR_ERR(pdata);
-> -		adev->dev.platform_data = pdata;
-> -	}
-> +	pdata = coresight_get_platform_data(dev);
-> +	if (IS_ERR(pdata))
-> +		return PTR_ERR(pdata);
-> +	dev->platform_data = pdata;
->  
->  	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
->  	if (!drvdata)
-> diff --git a/include/linux/coresight.h b/include/linux/coresight.h
-> index 62a520d..e2b95e0 100644
-> --- a/include/linux/coresight.h
-> +++ b/include/linux/coresight.h
-> @@ -294,14 +294,11 @@ static inline void coresight_disclaim_device_unlocked(void __iomem *base) {}
->  
->  #ifdef CONFIG_OF
->  extern int of_coresight_get_cpu(const struct device_node *node);
-> -extern struct coresight_platform_data *
-> -of_get_coresight_platform_data(struct device *dev,
-> -			       const struct device_node *node);
->  #else
->  static inline int of_coresight_get_cpu(const struct device_node *node)
->  { return 0; }
-> -static inline struct coresight_platform_data *of_get_coresight_platform_data(
-> -	struct device *dev, const struct device_node *node) { return NULL; }
->  #endif
->  
-> +struct coresight_platform_data *coresight_get_platform_data(struct device *dev);
-> +
->  #endif
-
-Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-
-> -- 
+> Signed-off-by: Roy Pledge <roy.pledge@nxp.com>
+> ---
+>  drivers/soc/fsl/qbman/dpaa_sys.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/soc/fsl/qbman/dpaa_sys.c b/drivers/soc/fsl/qbman/dpaa_sys.c
+> index 3e0a7f3..0b901a8 100644
+> --- a/drivers/soc/fsl/qbman/dpaa_sys.c
+> +++ b/drivers/soc/fsl/qbman/dpaa_sys.c
+> @@ -49,7 +49,7 @@ int qbman_init_private_mem(struct device *dev, int idx, dma_addr_t *addr,
+>                         idx, ret);
+>                 return -ENODEV;
+>         }
+> -       mem_node = of_parse_phandle(dev->of_node, "memory-region", 0);
+> +       mem_node = of_parse_phandle(dev->of_node, "memory-region", idx);
+>         if (mem_node) {
+>                 ret = of_property_read_u64(mem_node, "size", &size64);
+>                 if (ret) {
+> --
 > 2.7.4
 > 
 
