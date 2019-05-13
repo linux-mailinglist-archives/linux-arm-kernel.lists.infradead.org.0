@@ -2,109 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C87341B1D0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 10:22:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C08531B1DC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 10:26:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=neuA8BpmD9jhdfrn3CWrECihu6PcJ68lvM92fX3Yl/M=; b=dS59ewIejYfczQ
-	TSP54r1t/mqgvuQhQrHZMQborPU9f77QBRDrVAOGuA3CzML0hzJGZGNzsfCuxHdLJf81hcvdoSzNu
-	oMLv35zjd+wzZ+4KZob9kM94LRsDk56UjJZ3/jLiRRsOm1JvW2MwVoBcJB2zboO2icxMh7NJQVZo6
-	F0IfYOD6AS1hFi7/iG3coYHmvBeHmIgE/QFVK1vjFLeb879PBeOefstjyiLfxg1k9MdPr7yvEC1UW
-	sS5FLYvbFtV6tDkBiNj7OuASLAaUKP6UikusIOAJPFr49C7pJIFlLJOyWaSoP7FeqF+bqYdt11qra
-	7zZNRVGdMFHpXfIrgrQQ==;
+	List-Owner; bh=pJPRtXt3OAVWiZo5htEfHpfLMby2S7tDSTq7Phgnm0o=; b=ADI3avo80V6q6K
+	eGBNYabojJqA1GPMMZ1q7mGe0FyqWTzMSeYMpA8M4++UERf9wW9wFyOkjafCP+UvvnxpUji9Wuk+Q
+	GwT51FRmlotrPWg7PtyI8k4NRMPO27r9kFerluR3B6KY38icj19mZzFW9JzmXRcBhdrKAE/0S9VV1
+	f25kqEPE97ZUL74O6EW8SWVHWOejcoQA/B2rYdvXrl62vYw/GQN7v/m5H6jqTzviKA7LoaK/7hlAT
+	IW12Ncqt3c5+tbkS0qQZWAe6b/jF4Gg+MVldB0Efr7OyKv/hMl1iDKqjeKihCMP8ZZDfmARFr7czs
+	s1NHckR4bEtwkF8YxaAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQ6E5-000791-LZ; Mon, 13 May 2019 08:22:25 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQ6Dx-00078c-D8
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 08:22:18 +0000
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 545A33082E24;
- Mon, 13 May 2019 08:22:16 +0000 (UTC)
-Received: from [10.36.117.84] (ovpn-117-84.ams2.redhat.com [10.36.117.84])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 6E67017500;
- Mon, 13 May 2019 08:22:12 +0000 (UTC)
-Subject: Re: [PATCH V2 0/2] arm64/mm: Enable memory hot remove
-To: Anshuman Khandual <anshuman.khandual@arm.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-mm@kvack.org, akpm@linux-foundation.org, will.deacon@arm.com,
- catalin.marinas@arm.com
-References: <1555221553-18845-1-git-send-email-anshuman.khandual@arm.com>
-From: David Hildenbrand <david@redhat.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
- 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
- SE+xAvmumFBY
-Organization: Red Hat GmbH
-Message-ID: <bbfc6ede-01b2-2331-112e-fa28bc2591fb@redhat.com>
-Date: Mon, 13 May 2019 10:22:11 +0200
+	id 1hQ6IA-0000SC-H6; Mon, 13 May 2019 08:26:38 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hQ6I0-0000RG-Aw
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 08:26:29 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A027D341;
+ Mon, 13 May 2019 01:26:24 -0700 (PDT)
+Received: from [10.1.197.45] (e112298-lin.cambridge.arm.com [10.1.197.45])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D72493F720;
+ Mon, 13 May 2019 01:26:19 -0700 (PDT)
+Subject: Re: [PATCH 1/3] arm64: Add pseudo NMI support of GICv3 SGIs
+To: Wei Li <liwei391@huawei.com>, catalin.marinas@arm.com,
+ will.deacon@arm.com, marc.zyngier@arm.com, tglx@linutronix.de,
+ jason@lakedaemon.net
+References: <20190506082542.11357-1-liwei391@huawei.com>
+ <20190506082542.11357-2-liwei391@huawei.com>
+From: Julien Thierry <julien.thierry@arm.com>
+Message-ID: <8e14c373-baed-a2f8-872d-2bf30d1cfe31@arm.com>
+Date: Mon, 13 May 2019 09:26:16 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ Thunderbird/60.2.1
 MIME-Version: 1.0
-In-Reply-To: <1555221553-18845-1-git-send-email-anshuman.khandual@arm.com>
+In-Reply-To: <20190506082542.11357-2-liwei391@huawei.com>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.46]); Mon, 13 May 2019 08:22:16 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_012217_482865_FF69B078 
-X-CRM114-Status: GOOD (  18.46  )
+X-CRM114-CacheID: sfid-20190513_012628_385559_C600E13A 
+X-CRM114-Status: GOOD (  29.03  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -117,66 +66,199 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, mhocko@suse.com, ira.weiny@intel.com,
- robin.murphy@arm.com, cai@lca.pw, logang@deltatee.com, james.morse@arm.com,
- cpandya@codeaurora.org, arunks@codeaurora.org, dan.j.williams@intel.com,
- mgorman@techsingularity.net, osalvador@suse.de
+Cc: daniel.thompson@linaro.org, lorenzo.pieralisi@arm.com, steve.capper@arm.com,
+ Suzuki.Poulose@arm.com, linux-kernel@vger.kernel.org, james.morse@arm.com,
+ sudeep.holla@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 14.04.19 07:59, Anshuman Khandual wrote:
-> This series enables memory hot remove on arm64 after fixing a memblock
-> removal ordering problem in generic __remove_memory(). This is based
-> on the following arm64 working tree.
-> 
-> git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git for-next/core
-> 
-> Testing:
-> 
-> Tested hot remove on arm64 for all 4K, 16K, 64K page config options with
-> all possible VA_BITS and PGTABLE_LEVELS combinations. Build tested on non
-> arm64 platforms.
-> 
-> Changes in V2:
-> 
-> - Added all received review and ack tags
-> - Split the series from ZONE_DEVICE enablement for better review
-> 
-> - Moved memblock re-order patch to the front as per Robin Murphy
-> - Updated commit message on memblock re-order patch per Michal Hocko
-> 
-> - Dropped [pmd|pud]_large() definitions
-> - Used existing [pmd|pud]_sect() instead of earlier [pmd|pud]_large()
-> - Removed __meminit and __ref tags as per Oscar Salvador
-> - Dropped unnecessary 'ret' init in arch_add_memory() per Robin Murphy
-> - Skipped calling into pgtable_page_dtor() for linear mapping page table
->   pages and updated all relevant functions
-> 
-> Changes in V1: (https://lkml.org/lkml/2019/4/3/28)
-> 
-> Anshuman Khandual (2):
->   mm/hotplug: Reorder arch_remove_memory() call in __remove_memory()
->   arm64/mm: Enable memory hot remove
-> 
->  arch/arm64/Kconfig               |   3 +
->  arch/arm64/include/asm/pgtable.h |   2 +
->  arch/arm64/mm/mmu.c              | 221 ++++++++++++++++++++++++++++++++++++++-
->  mm/memory_hotplug.c              |   3 +-
->  4 files changed, 225 insertions(+), 4 deletions(-)
-> 
+Hi Wei,
 
-What's the progress of this series? I'll need arch_remove_memory() for
-the series
+On 06/05/2019 09:25, Wei Li wrote:
+> Currently, only PPIs and SPIs can be set as NMIs. IPIs being currently
+> hardcoded IRQ numbers, there isn't a generic interface to set SGIs as NMI
+> for now.
+> 
+> In this patch, we do:
+> 1. Add an interface for setting priority of SGIs.
+> 2. Export GICD_INT_NMI_PRI for setting priority of SGIs as NMI.
+> 3. Move the gic_enable_nmi_support() earlier to make the gic_supports_nmi()
+> check works in gic_cpu_init().
+> 
+> Signed-off-by: Wei Li <liwei391@huawei.com>
+> Cc: Julien Thierry <julien.thierry@arm.com>
+> ---
+>  arch/arm64/include/asm/smp.h           |  2 ++
+>  arch/arm64/kernel/smp.c                |  4 +++
+>  drivers/irqchip/irq-gic-v3.c           | 46 +++++++++++++++++++++-----
+>  include/linux/irqchip/arm-gic-common.h |  1 +
+>  include/linux/irqchip/arm-gic-v3.h     |  1 +
+>  5 files changed, 45 insertions(+), 9 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/smp.h b/arch/arm64/include/asm/smp.h
+> index 18553f399e08..84d7ea073d84 100644
+> --- a/arch/arm64/include/asm/smp.h
+> +++ b/arch/arm64/include/asm/smp.h
+> @@ -158,6 +158,8 @@ bool cpus_are_stuck_in_kernel(void);
+>  extern void crash_smp_send_stop(void);
+>  extern bool smp_crash_stop_failed(void);
+>  
+> +extern void ipi_gic_nmi_setup(void __iomem *base);
+> +
+>  #endif /* ifndef __ASSEMBLY__ */
+>  
+>  #endif /* ifndef __ASM_SMP_H */
+> diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
+> index 824de7038967..bd8fdf6fcd8e 100644
+> --- a/arch/arm64/kernel/smp.c
+> +++ b/arch/arm64/kernel/smp.c
+> @@ -1067,3 +1067,7 @@ bool cpus_are_stuck_in_kernel(void)
+>  
+>  	return !!cpus_stuck_in_kernel || smp_spin_tables;
+>  }
+> +
+> +void ipi_gic_nmi_setup(void __iomem *base)
+> +{
+> +}
+> diff --git a/drivers/irqchip/irq-gic-v3.c b/drivers/irqchip/irq-gic-v3.c
+> index 15e55d327505..394aa5668dd6 100644
+> --- a/drivers/irqchip/irq-gic-v3.c
+> +++ b/drivers/irqchip/irq-gic-v3.c
+> @@ -42,8 +42,6 @@
+>  
+>  #include "irq-gic-common.h"
+>  
+> -#define GICD_INT_NMI_PRI	(GICD_INT_DEF_PRI & ~0x80)
+> -
+>  #define FLAGS_WORKAROUND_GICR_WAKER_MSM8996	(1ULL << 0)
+>  
+>  struct redist_region {
+> @@ -324,6 +322,23 @@ static int gic_irq_get_irqchip_state(struct irq_data *d,
+>  	return 0;
+>  }
+>  
+> +void gic_sgi_set_prio(void __iomem *base, u32 irqnr, u8 prio)
+> +{
+> +	u32 val, offset;
+> +
+> +	offset = GICR_IPRIORITYR0 + ((irqnr / 4) * 4);
+> +
+> +	/*
+> +	 * Using writeb here may cause hardware error on some CPUs,
+> +	 * aovid this quirk by using writel.
+> +	 */
+> +	val = readl_relaxed(base + offset);
+> +	val &= ~(0xff << ((irqnr % 4) * 8));
+> +	val |= prio << ((irqnr % 4) * 8);
+> +
+> +	writel_relaxed(val, base + offset);
+> +}
+> +
+>  static void gic_irq_set_prio(struct irq_data *d, u8 prio)
+>  {
+>  	void __iomem *base = gic_dist_base(d);
+> @@ -474,6 +489,16 @@ static inline void gic_handle_nmi(u32 irqnr, struct pt_regs *regs)
+>  {
+>  	int err;
+>  
+> +	if (unlikely(irqnr < 16)) {
+> +		gic_write_eoir(irqnr);
+> +		if (static_branch_likely(&supports_deactivate_key))
+> +			gic_write_dir(irqnr);
+> +#ifdef CONFIG_SMP
+> +		handle_IPI(irqnr, regs);
+> +#endif
+> +		return;
+> +	}
+> +
+>  	if (static_branch_likely(&supports_deactivate_key))
+>  		gic_write_eoir(irqnr);
+>  	/*
+> @@ -859,6 +884,9 @@ static void gic_cpu_init(void)
+>  
+>  	gic_cpu_config(rbase, gic_redist_wait_for_rwp);
+>  
+> +	if (gic_supports_nmi())
+> +		ipi_gic_nmi_setup(rbase);
+> +
+>  	/* initialise system registers */
+>  	gic_cpu_sys_reg_init();
+>  }
+> @@ -1335,6 +1363,13 @@ static int __init gic_init_bases(void __iomem *dist_base,
+>  
+>  	gic_update_vlpi_properties();
+>  
+> +	if (gic_prio_masking_enabled()) {
+> +		if (!gic_has_group0() || gic_dist_security_disabled())
+> +			gic_enable_nmi_support();
+> +		else
+> +			pr_warn("SCR_EL3.FIQ is cleared, cannot enable use of pseudo-NMIs\n");
+> +	}
+> +
+>  	gic_smp_init();
+>  	gic_dist_init();
+>  	gic_cpu_init();
+> @@ -1345,13 +1380,6 @@ static int __init gic_init_bases(void __iomem *dist_base,
+>  		its_cpu_init();
+>  	}
+>  
+> -	if (gic_prio_masking_enabled()) {
+> -		if (!gic_has_group0() || gic_dist_security_disabled())
+> -			gic_enable_nmi_support();
+> -		else
+> -			pr_warn("SCR_EL3.FIQ is cleared, cannot enable use of pseudo-NMIs\n");
+> -	}
+> -
+>  	return 0;
+>  
+>  out_free:
+> diff --git a/include/linux/irqchip/arm-gic-common.h b/include/linux/irqchip/arm-gic-common.h
+> index 9a1a479a2bf4..d8c973295179 100644
+> --- a/include/linux/irqchip/arm-gic-common.h
+> +++ b/include/linux/irqchip/arm-gic-common.h
+> @@ -18,6 +18,7 @@
+>  					(GICD_INT_DEF_PRI << 16) |\
+>  					(GICD_INT_DEF_PRI << 8) |\
+>  					GICD_INT_DEF_PRI)
+> +#define GICD_INT_NMI_PRI	(GICD_INT_DEF_PRI & ~0x80)
+>  
+>  enum gic_type {
+>  	GIC_V2,
+> diff --git a/include/linux/irqchip/arm-gic-v3.h b/include/linux/irqchip/arm-gic-v3.h
+> index c848a7cc502e..dc1c418229e7 100644
+> --- a/include/linux/irqchip/arm-gic-v3.h
+> +++ b/include/linux/irqchip/arm-gic-v3.h
+> @@ -606,6 +606,7 @@ int its_cpu_init(void);
+>  int its_init(struct fwnode_handle *handle, struct rdists *rdists,
+>  	     struct irq_domain *domain);
+>  int mbi_init(struct fwnode_handle *fwnode, struct irq_domain *parent);
+> +void gic_sgi_set_prio(void __iomem *base, u32 irqnr, u8 prio);
 
-[PATCH v2 0/8] mm/memory_hotplug: Factor out memory block device handling
+This is a bit too generic to expose (even if it is not visible to modules):
 
--- 
+- Callers of this function should have at least a way to check whether
+the interrupt is enabled and, if it is, a way to disable it before
+modifying its priority
+
+- Even if the name contains "sgi", nothing is preventing from using this
+to modify priority of PPIs and SPIs if irqnr >= 16.
+
+- The caller can give any priority it wants when there are only two
+priorities the GICv3 driver correctly handles correctly. Whatever gets
+exposed outside of the driver should only allow to switch between those
+two priorities.
+
+
+A cleaner way to do what your series tries to achieve might be to have
+arm64 IPI use the kernel IRQ allocation API so it can reuse what was
+done for NMIs.
 
 Thanks,
 
-David / dhildenb
+-- 
+Julien Thierry
 
 _______________________________________________
 linux-arm-kernel mailing list
