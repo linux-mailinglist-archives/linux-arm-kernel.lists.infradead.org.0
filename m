@@ -2,109 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C03CE1B478
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 13:02:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1E0A1B490
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 13 May 2019 13:12:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B/Nw0G02QHKdB/gxiJu34tVO5RNmxM7fnYrdinDvSXs=; b=FxXyu+6Q5hohYQ
-	VexhKPl4fZbRyJ10/Fn62pEQ9ZpSSrOp24er5ZCFCpXiW/FLLd83RB0iGfgGPd0lu4IKtfpI2yZmh
-	AdD3yvld8fnA0HxlvplllZ2+qu8uhp6SKb2PksN76i/qUokSSQ8B/5Ly5Mqyh3PNpYhp2UyuQI0wV
-	XmWbQsKU9vHCh2pKSA7QL5/yw0tMH+5mZHvX1fKHmAktADlqg05BlPRUIobG9nAf2Ey+zLDf23q9y
-	ilPJNAtUZjxzLS9UBCfwgJ0siQNJoFySM3wy09MNWGRflbXIeNrbiNlbGdSK0ogiXHAgKVpfy92zt
-	vyezEegwqYHHQDmxRvJg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VBI4zulzTovEkiek/wBQkEzMnmikqL1SniexOKzhENk=; b=i+2vg1NYnpjYpk
+	76luDKZ/HjtE+ZiZpWOuilppUt8OZIlyrnJmzior57e5D9SKeCuad592xoyVcb30f9MaUpYKo23RH
+	3g6ZS2V151BcmBGMWsdmjNqa9Qj8tOpIusa33/mftewH/zwgcRGJhdImntCOaePYpZq6a9U+q475J
+	XGhktrtZ3Vqb4kErrcqYVeWyBesrBW4jYRul2X1AxAk6Wb4lJdAk5R9xgbx8PumPfAKZI8KH2M9o/
+	Zmfvahk+8tlhGIR6ThNqyhW0YiZndTtL6A3mUlsFoly3Uj+dsZ/kXH4s7c+RBNp34I1hYZLCTN28i
+	AOMof3FjmwvxLzhuuWog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQ8jO-0004R6-5Q; Mon, 13 May 2019 11:02:54 +0000
-Received: from mail-eopbgr50069.outbound.protection.outlook.com ([40.107.5.69]
- helo=EUR03-VE1-obe.outbound.protection.outlook.com)
+	id 1hQ8sa-0007tD-Pt; Mon, 13 May 2019 11:12:24 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQ8iQ-0003Eg-Rz
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 11:01:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3Cx0bgctgEXYbjy4gBgf9QWZa7SV4VtfnyHnIrnTQh0=;
- b=TbW+D7Pp3F5gKRiHPrG2ndyHaGAfo0sJ2YtHaSSkkk335JAFRjbF69vnkGLJZeSylwp5Y7Kn5pA66hh4f2RbsF4RvkmKj4UJHlD9YI6CLyAjbnbF2rMY/IcC5VNI843wEjN/iFeE8dZ/l+4Ud+m1RpeX73De4AzdLc6hBU0a8qU=
-Received: from AM0PR04MB6434.eurprd04.prod.outlook.com (20.179.252.215) by
- AM0PR04MB5138.eurprd04.prod.outlook.com (52.134.89.95) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1878.24; Mon, 13 May 2019 11:01:44 +0000
-Received: from AM0PR04MB6434.eurprd04.prod.outlook.com
- ([fe80::19be:75a:9fe:7cec]) by AM0PR04MB6434.eurprd04.prod.outlook.com
- ([fe80::19be:75a:9fe:7cec%7]) with mapi id 15.20.1878.024; Mon, 13 May 2019
- 11:01:44 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Viresh Kumar <viresh.kumar@linaro.org>, Shawn Guo <shawnguo@kernel.org>,
- Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v4 5/5] arm64: defconfig: ARM_IMX_CPUFREQ_DT=m
-Thread-Topic: [PATCH v4 5/5] arm64: defconfig: ARM_IMX_CPUFREQ_DT=m
-Thread-Index: AQHVCXtA1txXIhOUHEmpa7nxgpAz0Q==
-Date: Mon, 13 May 2019 11:01:44 +0000
-Message-ID: <675eb0dd54855126ea6f70804c84372d386878bb.1557742902.git.leonard.crestez@nxp.com>
-References: <cover.1557742902.git.leonard.crestez@nxp.com>
-In-Reply-To: <cover.1557742902.git.leonard.crestez@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [89.37.124.34]
-x-mailer: git-send-email 2.17.1
-x-clientproxiedby: VI1PR04CA0134.eurprd04.prod.outlook.com
- (2603:10a6:803:f0::32) To AM0PR04MB6434.eurprd04.prod.outlook.com
- (2603:10a6:208:16c::23)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 3db0faf0-b8a4-4a55-ee9a-08d6d79262b4
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB5138; 
-x-ms-traffictypediagnostic: AM0PR04MB5138:
-x-microsoft-antispam-prvs: <AM0PR04MB513861F03F637FE758353CB7EE0F0@AM0PR04MB5138.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:372;
-x-forefront-prvs: 0036736630
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(39860400002)(396003)(346002)(376002)(366004)(136003)(189003)(199004)(7736002)(2906002)(44832011)(99286004)(36756003)(6512007)(53936002)(54906003)(110136005)(476003)(2616005)(4326008)(52116002)(446003)(256004)(486006)(6116002)(3846002)(76176011)(11346002)(66066001)(8676002)(81156014)(81166006)(478600001)(118296001)(102836004)(7416002)(14454004)(4744005)(68736007)(5660300002)(50226002)(8936002)(6486002)(25786009)(66446008)(64756008)(66556008)(66476007)(71190400001)(71200400001)(86362001)(6436002)(6506007)(386003)(66946007)(73956011)(316002)(26005)(305945005)(186003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5138;
- H:AM0PR04MB6434.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: ELtU0rMzQAlTxaSOWRiN7gvZWL9yNCk7Hxc1Cn1wVdUzYgpMRFGs8S3jNxEM/EDlxVLW+L8FX7gFHW9IMvFaBp/9JaV7+CYJhQ2DTLpdZ08N45r6Iij3RrGAW13adh0WfZl2DNfAehAP4k2tri38nbJNQyH+OB6lYSpcA14Jf/E/qn7lcPPna87l6igpZrBTY+oqS8YqeWJxuvV/L2ybYjETPWwbVsb6xGiS35l3B2NsikL8zookMn14+91pXF/BVJ6t3gnxJR4G7/4sSPYgRVd3Qn3mv1J2ia4RnbhvlB/TddWV/F/doSIcoaB70zLV3zbpRgzYDrMLYxa4T7TOHJ1sbqB/bLxH/ksWgHsyI6qI2yXzG9ITfg4FWUTcvrKocAoyuARLN0Q4kmysJdVlhzwa0oLsRIN/SHAaxsGBEa4=
-Content-ID: <49351519BAF31D4AAE7459C4FB211EC2@eurprd04.prod.outlook.com>
+ id 1hQ8sS-0007rh-RV
+ for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 11:12:18 +0000
+Received: from DGGEMS412-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 2AE843B18879504E3740;
+ Mon, 13 May 2019 19:12:06 +0800 (CST)
+Received: from [127.0.0.1] (10.177.223.23) by DGGEMS412-HUB.china.huawei.com
+ (10.3.19.212) with Microsoft SMTP Server id 14.3.439.0; Mon, 13 May 2019
+ 19:11:57 +0800
+Subject: Re: [PATCH v3 0/5] arm64: SPE ACPI enablement
+To: Sudeep Holla <sudeep.holla@arm.com>, Will Deacon <will.deacon@arm.com>
+References: <20190503232407.37195-1-jeremy.linton@arm.com>
+ <5eaa1607-4bf0-a320-e9cf-2d51eca912c6@huawei.com>
+ <82032e5b-0cb5-e48f-ab51-ba5d5f9dceec@arm.com>
+ <819de863-92ff-51c5-9c35-880db4f6a922@huawei.com>
+ <20190508165149.GB21553@e107155-lin> <20190509092810.GC2667@brain-police>
+ <20190509103559.GB8239@e107155-lin>
+From: Hanjun Guo <guohanjun@huawei.com>
+Message-ID: <c70b242a-9c6c-aaee-d60a-1114d9bfb666@huawei.com>
+Date: Mon, 13 May 2019 19:10:56 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
+ Thunderbird/52.5.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3db0faf0-b8a4-4a55-ee9a-08d6d79262b4
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 May 2019 11:01:44.3653 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5138
+In-Reply-To: <20190509103559.GB8239@e107155-lin>
+Content-Language: en-US
+X-Originating-IP: [10.177.223.23]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_040155_181965_D31AD1A3 
-X-CRM114-Status: GOOD (  11.15  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190513_041217_114932_BB128AAB 
+X-CRM114-Status: GOOD (  18.32  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.5.69 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -116,47 +70,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Aisheng Dong <aisheng.dong@nxp.com>,
- Jacky Bai <ping.bai@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>, Lucas Stach <l.stach@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Abel Vesa <abel.vesa@nxp.com>
+Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, Alexander
+ Shishkin <alexander.shishkin@linux.intel.com>, catalin.marinas@arm.com,
+ john.garry@huawei.com, rjw@rjwysocki.net, linuxarm@huawei.com,
+ Jeremy Linton <jeremy.linton@arm.com>, linux-acpi@vger.kernel.org,
+ Hongbo Yao <yaohongbo@huawei.com>, linux-arm-kernel@lists.infradead.org,
+ lenb@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For imx8m we need a separate small driver to read "speed grading"
-information from fuses and determine which OPPs are supported.
+On 2019/5/9 18:35, Sudeep Holla wrote:
+> On Thu, May 09, 2019 at 10:28:11AM +0100, Will Deacon wrote:
+>> On Wed, May 08, 2019 at 05:51:49PM +0100, Sudeep Holla wrote:
+>>> On Wed, May 08, 2019 at 05:35:51PM +0800, Hanjun Guo wrote:
+[...]
+>>>>>>
+>>>>>> Adding this patch set on top of latest mainline kernel,
+>>>>>> and tested on D06 which has the SPE feature, in boot message
+>>>>>> shows it was probed successfully:
+>>>>>>
+>>>>>> arm_spe_pmu arm,spe-v1: probed for CPUs 0-95 [max_record_sz 128, align 4, features 0x7]
+>>>>>>
+>>>>>> but when I test it with spe events such as
+>>>>>>
+>>>>>> perf record -c 1024 -e arm_spe_0/branch_filter=0/ -o spe ls
+>>>>>>
+>>>>>> it fails with:
+>>>>>> failed to mmap with 12 (Cannot allocate memory),
+>>>>>>
+>>>>>> Confirmed that patch [0] is merged and other perf events are working
+>>>>>> fine.
+>>>>>
+>>>>> Its pretty easy to get into the weeds with this driver, does it work with examples like:
+>>>>>
+>>>>> https://lkml.org/lkml/2018/1/14/122
+>>>>
+>>>> No, not work at all.
+>>>>
+>>>> SPE works on 5.0, but not work after 5.1-rc1, bisected to this commit:
+>>>>
+>>>> 5768402fd9c6 perf/ring_buffer: Use high order allocations for AUX buffers optimistically
+>>>>
+>>>
+>>> Indeed this patch breaks SPE. As mentioned in the patch, it uses high
+>>> order allocations for AUX buffers and SPE PMU setup_aux explicitly
+>>> fails with the warning "unexpected high-order page for auxbuf!" if
+>>> it encounters one.
+>>>
+>>> I don't know the intention of that check in SPE. Will ?
+>>
+>> Since SPE uses virtual addressing, we don't really care about the underlying
+>> page layout so there's no need to use higher-order allocations. I suppose we
+>> could theoretically map them at the pmd level in some cases, but ignoring
+>> them should also be harmless and I suspect you can delete the check.
+>>
+> 
+> Yes, I did a quick look to see if we can do that, but couldn't find a clue.
+> Not sure if that's any optimisation, we can use order from page_private
+> and set the values accordingly ?
+> 
+>> Does the patch below fix the problem?
+>>
+> 
+> Yes it should help, I tried exactly the same thing yesterday and it does
+> fix the issue.
 
-Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
----
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
+Works for me too, thank you Sudeep and Will for looking into this issue.
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index df756468eacc..8202b940f263 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -80,10 +80,11 @@ CONFIG_CPU_FREQ_GOV_CONSERVATIVE=m
- CONFIG_CPU_FREQ_GOV_SCHEDUTIL=y
- CONFIG_CPUFREQ_DT=y
- CONFIG_ACPI_CPPC_CPUFREQ=m
- CONFIG_ARM_ARMADA_37XX_CPUFREQ=y
- CONFIG_ARM_SCPI_CPUFREQ=y
-+CONFIG_ARM_IMX_CPUFREQ_DT=m
- CONFIG_ARM_TEGRA186_CPUFREQ=y
- CONFIG_ARM_SCPI_PROTOCOL=y
- CONFIG_RASPBERRYPI_FIRMWARE=y
- CONFIG_INTEL_STRATIX10_SERVICE=y
- CONFIG_EFI_CAPSULE_LOADER=y
--- 
-2.17.1
+Best Regards
+Hanjun
 
 
 _______________________________________________
