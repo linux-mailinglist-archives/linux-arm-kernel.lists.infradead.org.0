@@ -2,84 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 884921CE6F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 19:58:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D912D1CEB7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 20:12:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8Hx1va2/57B1ImT8lf4wBQerDpT7UpddOl9kEAU9VxI=; b=u5/zrj6HK/Jnj5
-	bqXstwtWKWkxWL8aSuMhyUjBOMoYopDxvgzdOKSbVkCmdUFsCPJC2Bt/bflVu4bvuCbdfnnMYdaF6
-	Df4EUBr5Mpz27mPiFKolcNL7dqr5yBIdvwtFcpYUtvBZcFAurKhV/41eDGsLeodlxVL2m5wrnhoKI
-	bF20mTZMI5FOYtKz+Q7ffxo77Kl1V+j2FIhu3nS2VpVb7+qFva0Hphan/BFjRJOm8zVU5OUMbXyxI
-	Glvyx/x/64iNwgE3FZGpvzIzEWS/2EDsAX/2z2w7kujAIPSb3oyYuherzVw7zbnJDWwslsSy2RD/Y
-	gQcWJqaw2tWvDKM+t0CQ==;
+	List-Owner; bh=bPl2V7u24CDYW8HLiezyowwPDTihJMbChTlPYLz/7qI=; b=nVzKeUnKMNQSkx
+	AewBNQlBqwHsX8EXlR3B8wLZgLWB4loh5iDK7CANPqU/YZqy35MRhmo7zkuFkj75ktJE55t6A6mfw
+	is0CzlgWJtvEbS42W1TeUEcUxLqEPNe1dy7YdhVkIYYmYwKuMZcgtry4gehkiEy1ocka0629lZMAe
+	HPQ4O/PMW0bKhvnPZbHm+l6usBzwMAn+0UjWaeh7oqTGVJ2K1UnSYK7uP7Cj8Xsk0sWuDAoB2ywRA
+	Ovw2VY1eKWP9teosv23Jr1EQv4k3C/BgAr4E4jQSaiA3Lhxo7nWiij2ot4j7LXRa2ncmhlLeHtTHV
+	g644czO+a97r14RRZY1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQbh0-0001BH-TK; Tue, 14 May 2019 17:58:22 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1hQbuj-0005Zq-QC; Tue, 14 May 2019 18:12:33 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQbgq-00019J-Ck; Tue, 14 May 2019 17:58:14 +0000
-Received: by mail-oi1-x243.google.com with SMTP id k9so12801282oig.9;
- Tue, 14 May 2019 10:58:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=dbgR9sIIi020lB4uMc6drG+hzB7QuAOCTK+0TBCg8Cc=;
- b=kz2jzjhPKbEnQayS8dgCy5rubRTQIqMh2n4HuPMUyO1VSNt3vJVG3lRGzuhbsI7p3E
- n5/wGiKy0e9r4F73sN9EtnuBGim238QQ5IXF5Kg2gjaXohTQqng7UWygNuC1ygsw4VxO
- M+8UD/VB0e1f5gHNJ5O+jT/vi6m/8R5TT1B1SR0/EbOy5+baCCimbQfw+Ouljrb9YPGu
- 625otuoxIyGC/IELiz1fY+/4lN6Eb0wqhrrG9xleiIuzj7FxDFLVYYI8nlUC3sT+Hwjz
- KX51hfprCqpxSkRn/DY8eE8dlw9qG4vCtS4Wli4x7zRqP6P0Rw2srvdyHRSt6iYncg3/
- uT6w==
+ id 1hQbuc-0005Yu-5T; Tue, 14 May 2019 18:12:27 +0000
+Received: by mail-oi1-f194.google.com with SMTP id w144so7341182oie.12;
+ Tue, 14 May 2019 11:12:23 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=dbgR9sIIi020lB4uMc6drG+hzB7QuAOCTK+0TBCg8Cc=;
- b=cQY+DJ5ouK1PiRXtog+U11ha+df9ReAwEnVnhUkRNrKP5sniDGAOGp9SzoQ4nys5sS
- PEWUlm4ZUfuFYAqPu1nUeZN8uBjr0BhNrIiM4K0uwZ2+t5NuVSRMHZA9WKdT8vx2tA4b
- xXdr4sqwz6s/s15yhU+IoR0W9WJxPPYgUU3wCuJWHIJisOmSfjd+w9oNQ7EsZZfPAbcH
- Pu5gdM/2HXcuLf/YLfPpvjDgE70DEm2gsUJ/3QRqICbGZ4g67BjSFEULndW5ZIWzve56
- FXniYC8l1LSOLEIj1Sbz+QLWS4eukJhOgl9z4dRZ54VrsNNevqdc9RGG41/bJfDppWUq
- +7lQ==
-X-Gm-Message-State: APjAAAUb8898d1oBtnFNxfsHnRvVqu0pvjZO6vj0O7XmF3JIbdZavYcG
- cykOLn2ofTe6nJL87c91tuNvEgdZddJK5ZlOrLg=
-X-Google-Smtp-Source: APXvYqysSJO7wFng5taFNsIZOMTqAUX0pN7PyrW8jgVBQnbRhhf71UhUYZKIQp8b0gAYrWujo+I5sI1OdRoLfcqfyqo=
-X-Received: by 2002:aca:5b06:: with SMTP id p6mr3946699oib.129.1557856691277; 
- Tue, 14 May 2019 10:58:11 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=7MKXOx72GnJK4OThTbg/Yq9n8A27D1pwO48w3mZxGik=;
+ b=bsjX3qmZCqxun82DSBfzFC+DVY/yiWI1RjI+Fi14mbr+BkyCV1ILxYR0B6tS+wuluY
+ q4F9FUv95N8b0XScGNRr6rD/5SdxNpr9FxTc9NX547JftTBsINhAUQP6zT3yWnMnQudD
+ twW3cOMtJ96OYjU/G3m5PXL0GZ/dR4XMO1mamdYhgYOVugTBF2NozfqGeZhBr8+rEQV1
+ fraKfB2LWYTT75ollopHqj6nmhCJRUxDQjgOQxOZLZTo0PixBJUdSYaK4sHO+YtWm+hd
+ Ljfpf6gdxK9yknUl9ocV7mEYqbrfOquBSW9VjTe2iDfYfI/OXvozeGl6yziL5MNEY/2J
+ 7utg==
+X-Gm-Message-State: APjAAAV/JDdumaIdo5SV52hDclZEmgHbyCkGPo9CZkK86+rMKVpjiPoz
+ HdZIp+ZRrFDCk+UKSsQfDSJdbLM=
+X-Google-Smtp-Source: APXvYqy19Xjq9sGP3TMfrsYa+PbNh1BafjhPi5bE6IL4JiP7WIz0dF4SnI69FmgshwGuUtHZQI4Byg==
+X-Received: by 2002:aca:5d86:: with SMTP id r128mr3690918oib.135.1557857542852; 
+ Tue, 14 May 2019 11:12:22 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id q25sm6355192otl.60.2019.05.14.11.12.18
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 14 May 2019 11:12:22 -0700 (PDT)
+Date: Tue, 14 May 2019 13:12:04 -0500
+From: Rob Herring <robh@kernel.org>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Subject: Re: [PATCH v5 2/6] dt-bindings: usb: add binding for Type-B GPIO
+ connector driver
+Message-ID: <20190514181204.GA13949@bogus>
+References: <1557823643-8616-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1557823643-8616-3-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
-References: <20190513091548.16674-1-narmstrong@baylibre.com>
- <20190513091548.16674-3-narmstrong@baylibre.com>
-In-Reply-To: <20190513091548.16674-3-narmstrong@baylibre.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Tue, 14 May 2019 19:58:00 +0200
-Message-ID: <CAFBinCAMoNDnxoQA9XHKy0Xo9MduxD1CvQXOeLZQ3zZ4ViWm7A@mail.gmail.com>
-Subject: Re: [PATCH 2/3] mmc: meson-gx: add ddr-access-quirk
-To: Neil Armstrong <narmstrong@baylibre.com>
+Content-Disposition: inline
+In-Reply-To: <1557823643-8616-3-git-send-email-chunfeng.yun@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_105812_496791_01CB4A9D 
-X-CRM114-Status: GOOD (  13.72  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190514_111226_222365_64D2870B 
+X-CRM114-Status: GOOD (  20.85  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ provider (robherring2[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.194 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -91,63 +87,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ulf.hansson@linaro.org, baylibre-upstreaming@groups.io,
- khilman@baylibre.com, linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Hans de Goede <hdegoede@redhat.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Biju Das <biju.das@bp.renesas.com>,
+ Badhri Jagan Sridharan <badhri@google.com>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>,
+ linux-mediatek@lists.infradead.org, Min Guo <min.guo@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
+ linux-arm-kernel@lists.infradead.org, Li Jun <jun.li@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Neil,
+On Tue, May 14, 2019 at 04:47:19PM +0800, Chunfeng Yun wrote:
+> It's used to support dual role switch via GPIO when use Type-B
+> receptacle, typically the USB ID pin is connected to an input
+> GPIO pin
+> 
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> ---
+> v5 changes:
+>  1. treat type-B connector as child device of USB controller's, but not
+>     as a separate virtual device, suggested by Rob
+>  2. put connector's port node under connector node, suggested by Rob
+> 
+> v4 no changes
+> 
+> v3 changes:
+>  1. treat type-B connector as a virtual device, but not child device of
+>     USB controller's
+> 
+> v2 changes:
+>   1. new patch to make binding clear suggested by Hans
+> ---
+>  .../bindings/usb/typeb-conn-gpio.txt          | 42 +++++++++++++++++++
+>  1 file changed, 42 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/usb/typeb-conn-gpio.txt
+> 
+> diff --git a/Documentation/devicetree/bindings/usb/typeb-conn-gpio.txt b/Documentation/devicetree/bindings/usb/typeb-conn-gpio.txt
+> new file mode 100644
+> index 000000000000..20dd3499a348
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/usb/typeb-conn-gpio.txt
+> @@ -0,0 +1,42 @@
+> +USB Type-B GPIO Connector
+> +
+> +This is used to switch dual role mode from the USB ID pin connected to
+> +an input GPIO pin.
+> +
+> +Required properties:
+> +- compatible : should include "linux,typeb-conn-gpio" and "usb-b-connector".
 
-On Mon, May 13, 2019 at 11:16 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
-[...]
-> @@ -1158,15 +1183,27 @@ static int meson_mmc_probe(struct platform_device *pdev)
->          */
->         mmc->caps2 &= ~MMC_CAP2_HS400;
->
-> -       /* data bounce buffer */
-> -       host->bounce_buf_size = mmc->max_req_size;
-> -       host->bounce_buf =
-> -               dma_alloc_coherent(host->dev, host->bounce_buf_size,
-> -                                  &host->bounce_dma_addr, GFP_KERNEL);
-> -       if (host->bounce_buf == NULL) {
-> -               dev_err(host->dev, "Unable to map allocate DMA bounce buffer.\n");
-> -               ret = -ENOMEM;
-> -               goto err_free_irq;
-> +       if (host->ddr_access_quirk) {
-> +               /*
-> +                * The MMC Controller embeds 1,5KiB of internal SRAM
-> +                * that can be used to be used as bounce buffer.
-> +                * In the case of the G12A SDIO controller, use these
-> +                * instead of the DDR memory
-> +                */
-> +               host->bounce_buf_size = SD_EMMC_SRAM_DATA_BUF_LEN;
-> +               host->bounce_buf = host->regs + SD_EMMC_SRAM_DATA_BUF_OFF;
-> +               host->bounce_dma_addr = res->start + SD_EMMC_SRAM_DATA_BUF_OFF;
-I'm curious: why do you need to set bounce_dma_addr in this case?
+I don't think we need "linux,typeb-conn-gpio". A driver can decide to 
+handle GPIO lines if they present or we assume the parent device handles 
+ID and/or Vbus if they are not present.
 
-> +       } else {
-> +               /* data bounce buffer */
-> +               host->bounce_buf_size = mmc->max_req_size;
-> +               host->bounce_buf =
-> +                       dma_alloc_coherent(host->dev, host->bounce_buf_size,
-> +                                          &host->bounce_dma_addr, GFP_KERNEL);
-> +               if (host->bounce_buf == NULL) {
-> +                       dev_err(host->dev, "Unable to map allocate DMA bounce buffer.\n");
-> +                       ret = -ENOMEM;
-> +                       goto err_free_irq;
-> +               }
->         }
->
->         host->descs = dma_alloc_coherent(host->dev, SD_EMMC_DESC_BUF_LEN,
-if host->descs cannot be allocated then you need to conditionally skip
-dma_free_coherent for the bounce buffer in the goto err_bounce_buf
-case a few lines below (just like you did in meson_mmc_remove)
+> +- id-gpios, vbus-gpios : either one of them must be present, and both
+> +	can be present as well.
 
+Please clarify that vbus-gpios is an input to sense Vbus presence as an 
+output it should be modelled as a regulator only.
 
-Martin
+These should be added to usb-connector.txt.
+
+The result of all this is you don't need this file. Just additions to 
+usb-connector.txt.
+
+> +- vbus-supply : can be present if needed when supports dual role mode or
+> +	host mode.
+> +	see connector/usb-connector.txt
+> +
+> +Sub-nodes:
+> +- port : should be present.
+> +	see graph.txt
+> +
+> +Example:
+> +
+> +&mtu3 {
+> +	status = "okay";
+
+Don't show status in examples.
+
+> +
+> +	connector {
+> +		compatible = "linux,typeb-conn-gpio", "usb-b-connector";
+> +		label = "micro-USB";
+> +		type = "micro";
+> +		id-gpios = <&pio 12 GPIO_ACTIVE_HIGH>;
+> +		vbus-supply = <&usb_p0_vbus>;
+> +
+> +		port {
+> +			bconn_ep: endpoint@0 {
+> +				remote-endpoint = <&usb_role_sw>;
+> +			};
+> +		};
+> +	};
+> +
+> +	port {
+> +		usb_role_sw: endpoint@0 {
+> +			remote-endpoint = <&bconn_ep>;
+> +		};
+> +	};
+
+When the host controller is the parent of the connector, you don't need 
+the graph unless you're describing the alternate modes in Type-C.
+
+> +};
+> -- 
+> 2.21.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
