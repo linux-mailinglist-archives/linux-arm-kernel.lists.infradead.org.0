@@ -2,87 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8ADD1C634
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 11:36:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75FBB1C6A3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 12:07:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F+lf4fP5lJMsdYsc2BIZ9S+NVwrdmHBZ9+3XzWAuh/M=; b=oMrQZfVUZ6DMop
-	QQsKGSmUvkwkf7h5lADlWHFSMrH1suZfHyfwTRBt73Rr/CwOs2uuyS8UHAfZLxhD0sKqAgSRwMcin
-	9MF9pc3RqeE1JAg1CXe0c1MKSsNLabrkwh6MWKolNif2CSU5q0n6I3AA8LSnQBEzNRgd9OcVlmyYU
-	duiUU0PmNaPjdI95uJghSOT3e42FYTLLbIOZx9/tSyPs1/Yxg17ntqj/wrpN1+D+cMbMLNhT1N/1I
-	TE1lkN6+5j6GgQ4SmNoqiMjhdL42UXI4L7NxqVp7kOiq7V4a0JMBlKaAKBzP2fBNjt1wsFeEVgGa4
-	stUsPdzrBCt9EK1vAHfg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oz5aYmJ7rhqmUMhcijidkb59HT0+bZ2bSzTZdymxyDk=; b=ZfDQ3ZhJTAxVwS
+	YEIBXR1RoqUmcrkROD/0uGHLaqernFG/+pOhbok19s0kaH7uGySAA6zqPy2mKJ9K1FxW1PcOirKwS
+	yOJHd0E9kiMh0IqMqnNkLy+NMEe1OnvchxjtDrw6PEArBWikOjLSqDhXDmATmEL4Hj1DU15JfSWNr
+	11w52vq5lNzOh0zPlKb5PmKYBq/6EkG+1m0vwqINktfvvsUtSevr+zx/xjg3ieo/kVdpR4oZkRp09
+	pfwl4RXAFpK/EoTmMmU8HJYG9cBw9WF3ytyTyJAJ4UaqNyccoFxgi1vB1LDje9WPJsPsK7EYl+Wy9
+	ESi9cd6iHeknGxl0gEeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQTrd-0007K4-Kn; Tue, 14 May 2019 09:36:49 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1hQUKt-0000oh-4K; Tue, 14 May 2019 10:07:03 +0000
+Received: from aserp2130.oracle.com ([141.146.126.79])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQTr8-0006rQ-SG
- for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 09:36:21 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x4E9WgDo021984; Tue, 14 May 2019 11:36:13 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : subject :
- date : message-id : in-reply-to : references : mime-version : content-type
- : content-transfer-encoding; s=STMicroelectronics;
- bh=p4KJTrB20tDL7D759q2SgCgcwhHiCq4+y8XxWZe2CVk=;
- b=JH+JrhXM2KRQ1Gy7PMP6OgN9+bDXQhVScvsY8CtqFQa4/pReFbAbIWv59MpEbL1bFscA
- twt3rcTyGOI7g3hDTXH4N3KBxRn53lJUbQo5xABuJeMtc1f7dmwmLNLtlnhZFnf6fIJe
- FlRsxXMnCp48TSUo/s5ERsH9on8TaElDjpIRhqC+kwV0hLyMEbiwnLENKwKnw+nHBPVd
- aL7G6+FQpBcbeEBUq6MkchoSuGbcwRpRdG6GuVgD9nQRKJzzjAcVjPdE2Ieil5zav3OI
- WMbR3kH13Caaxz0dgmwYsnz08XkGtNS6MvX0WnNc0shFmcCt66Sl2tvNvbrkdHXEiUc4 rQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2sdm5u01m8-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Tue, 14 May 2019 11:36:13 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id BE70D34;
- Tue, 14 May 2019 09:36:12 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas21.st.com [10.75.90.44])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 9D4F6179A;
- Tue, 14 May 2019 09:36:12 +0000 (GMT)
-Received: from SAFEX1HUBCAS24.st.com (10.75.90.95) by SAFEX1HUBCAS21.st.com
- (10.75.90.44) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 14 May
- 2019 11:36:12 +0200
-Received: from localhost (10.201.23.97) by webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 14 May 2019 11:36:11
- +0200
-From: =?UTF-8?q?Yannick=20Fertr=C3=A9?= <yannick.fertre@st.com>
-To: Yannick Fertre <yannick.fertre@st.com>, Philippe Cornu
- <philippe.cornu@st.com>, Benjamin Gaignard <benjamin.gaignard@st.com>,
- Vincent Abriou <vincent.abriou@st.com>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- <dri-devel@lists.freedesktop.org>,
- <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH v4 2/2] drm/stm: dsi: add regulator support
-Date: Tue, 14 May 2019 11:35:56 +0200
-Message-ID: <1557826556-10079-3-git-send-email-yannick.fertre@st.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1557826556-10079-1-git-send-email-yannick.fertre@st.com>
-References: <1557826556-10079-1-git-send-email-yannick.fertre@st.com>
+ id 1hQUKl-0000oH-Nh
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 10:06:57 +0000
+Received: from pps.filterd (aserp2130.oracle.com [127.0.0.1])
+ by aserp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x4E9x2a5140802;
+ Tue, 14 May 2019 10:06:50 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : mime-version : content-type; s=corp-2018-07-02;
+ bh=riAB10GmF3JQLurW/6kz3EsMdlw943oN7kVaiqQGf6Q=;
+ b=hbhoxtjlfFNyf20MCt22LKsc6us8aHajvyEGA+Tl+eaLpBK40UVBugzb/hMq6fxtz9uW
+ 7Tqlr/cpZtDw4+SEIqxF5Hp2RUL0h0gsLO83jTUR0fBmhlvxm8taVpEy4WIcvAOwZaf6
+ 21sCijBkw9FgYya39TsHtW2ehlL/E2doou6oE+E6vUZ2GDM/DUBGowIu90iKBJFEMVjo
+ 5ijcEZzwPpU2QYaSFbWhZLDYBhrgYFG7OAmGtG3hyNvGPPiYDOX3NPbfrHvthOHiMwm8
+ NinH9JepJbG6UmA6vKpyu6ckgiTuyXoZoNMIk1j7ewjDMIT79qmnARjhtD1yhN0jyOR/ 6g== 
+Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
+ by aserp2130.oracle.com with ESMTP id 2sdkwdn1fh-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 14 May 2019 10:06:50 +0000
+Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
+ by aserp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x4EA4Oo0087838;
+ Tue, 14 May 2019 10:04:49 GMT
+Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
+ by aserp3020.oracle.com with ESMTP id 2se0tw2dkh-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 14 May 2019 10:04:49 +0000
+Received: from abhmp0006.oracle.com (abhmp0006.oracle.com [141.146.116.12])
+ by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x4EA4mjH026873;
+ Tue, 14 May 2019 10:04:49 GMT
+Received: from mwanda (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Tue, 14 May 2019 03:04:48 -0700
+Date: Tue, 14 May 2019 13:04:42 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: wens@csie.org
+Subject: [bug report] ARM: sun9i: smp: Support CPU/cluster power down and
+ hotplugging for cpu1~7
+Message-ID: <20190514100442.GA31718@mwanda>
 MIME-Version: 1.0
-X-Originating-IP: [10.201.23.97]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-14_06:, , signatures=0
+Content-Disposition: inline
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Proofpoint-Virus-Version: vendor=nai engine=5900 definitions=9256
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=1
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1905140073
+X-Proofpoint-Virus-Version: vendor=nai engine=5900 definitions=9256
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=1 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
+ definitions=main-1905140073
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_023619_202824_CB283E7E 
-X-CRM114-Status: GOOD (  16.95  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190514_030655_862750_C5858984 
+X-CRM114-Status: GOOD (  14.47  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [141.146.126.79 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -90,6 +94,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -101,82 +108,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QWRkIHN1cHBvcnQgb2YgcmVndWxhdG9yIGZvciB0aGUgcGh5IHBhcnQgb2YgdGhlIERTSQpjb250
-cm9sbGVyLgoKU2lnbmVkLW9mZi1ieTogWWFubmljayBGZXJ0csOpIDx5YW5uaWNrLmZlcnRyZUBz
-dC5jb20+CkFja2VkLWJ5OiBQaGlsaXBwZSBDb3JudSA8cGhpbGlwcGUuY29ybnVAc3QuY29tPgot
-LS0KIGRyaXZlcnMvZ3B1L2RybS9zdG0vZHdfbWlwaV9kc2ktc3RtLmMgfCA2MCArKysrKysrKysr
-KysrKysrKysrKysrKysrKysrLS0tLS0tLQogMSBmaWxlIGNoYW5nZWQsIDQ5IGluc2VydGlvbnMo
-KyksIDExIGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9zdG0vZHdf
-bWlwaV9kc2ktc3RtLmMgYi9kcml2ZXJzL2dwdS9kcm0vc3RtL2R3X21pcGlfZHNpLXN0bS5jCmlu
-ZGV4IDFiZWY3M2UuLmQ4ZTRhMTQgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvZ3B1L2RybS9zdG0vZHdf
-bWlwaV9kc2ktc3RtLmMKKysrIGIvZHJpdmVycy9ncHUvZHJtL3N0bS9kd19taXBpX2RzaS1zdG0u
-YwpAQCAtOSw2ICs5LDcgQEAKICNpbmNsdWRlIDxsaW51eC9jbGsuaD4KICNpbmNsdWRlIDxsaW51
-eC9pb3BvbGwuaD4KICNpbmNsdWRlIDxsaW51eC9tb2R1bGUuaD4KKyNpbmNsdWRlIDxsaW51eC9y
-ZWd1bGF0b3IvY29uc3VtZXIuaD4KICNpbmNsdWRlIDxkcm0vZHJtUC5oPgogI2luY2x1ZGUgPGRy
-bS9kcm1fbWlwaV9kc2kuaD4KICNpbmNsdWRlIDxkcm0vYnJpZGdlL2R3X21pcGlfZHNpLmg+CkBA
-IC03Niw2ICs3Nyw3IEBAIHN0cnVjdCBkd19taXBpX2RzaV9zdG0gewogCXUzMiBod192ZXJzaW9u
-OwogCWludCBsYW5lX21pbl9rYnBzOwogCWludCBsYW5lX21heF9rYnBzOworCXN0cnVjdCByZWd1
-bGF0b3IgKnZkZF9zdXBwbHk7CiB9OwogCiBzdGF0aWMgaW5saW5lIHZvaWQgZHNpX3dyaXRlKHN0
-cnVjdCBkd19taXBpX2RzaV9zdG0gKmRzaSwgdTMyIHJlZywgdTMyIHZhbCkKQEAgLTMxNCwyMSAr
-MzE2LDM2IEBAIHN0YXRpYyBpbnQgZHdfbWlwaV9kc2lfc3RtX3Byb2JlKHN0cnVjdCBwbGF0Zm9y
-bV9kZXZpY2UgKnBkZXYpCiAJcmVzID0gcGxhdGZvcm1fZ2V0X3Jlc291cmNlKHBkZXYsIElPUkVT
-T1VSQ0VfTUVNLCAwKTsKIAlkc2ktPmJhc2UgPSBkZXZtX2lvcmVtYXBfcmVzb3VyY2UoZGV2LCBy
-ZXMpOwogCWlmIChJU19FUlIoZHNpLT5iYXNlKSkgewotCQlEUk1fRVJST1IoIlVuYWJsZSB0byBn
-ZXQgZHNpIHJlZ2lzdGVyc1xuIik7Ci0JCXJldHVybiBQVFJfRVJSKGRzaS0+YmFzZSk7CisJCXJl
-dCA9IFBUUl9FUlIoZHNpLT5iYXNlKTsKKwkJRFJNX0VSUk9SKCJVbmFibGUgdG8gZ2V0IGRzaSBy
-ZWdpc3RlcnMgJWRcbiIsIHJldCk7CisJCXJldHVybiByZXQ7CisJfQorCisJZHNpLT52ZGRfc3Vw
-cGx5ID0gZGV2bV9yZWd1bGF0b3JfZ2V0KGRldiwgInBoeS1kc2kiKTsKKwlpZiAoSVNfRVJSKGRz
-aS0+dmRkX3N1cHBseSkpIHsKKwkJcmV0ID0gUFRSX0VSUihkc2ktPnZkZF9zdXBwbHkpOworCQlp
-ZiAocmV0ICE9IC1FUFJPQkVfREVGRVIpCisJCQlEUk1fRVJST1IoIkZhaWxlZCB0byByZXF1ZXN0
-IHJlZ3VsYXRvcjogJWRcbiIsIHJldCk7CisJCXJldHVybiByZXQ7CisJfQorCisJcmV0ID0gcmVn
-dWxhdG9yX2VuYWJsZShkc2ktPnZkZF9zdXBwbHkpOworCWlmIChyZXQpIHsKKwkJRFJNX0VSUk9S
-KCJGYWlsZWQgdG8gZW5hYmxlIHJlZ3VsYXRvcjogJWRcbiIsIHJldCk7CisJCXJldHVybiByZXQ7
-CiAJfQogCiAJZHNpLT5wbGxyZWZfY2xrID0gZGV2bV9jbGtfZ2V0KGRldiwgInJlZiIpOwogCWlm
-IChJU19FUlIoZHNpLT5wbGxyZWZfY2xrKSkgewogCQlyZXQgPSBQVFJfRVJSKGRzaS0+cGxscmVm
-X2Nsayk7Ci0JCWRldl9lcnIoZGV2LCAiVW5hYmxlIHRvIGdldCBwbGwgcmVmZXJlbmNlIGNsb2Nr
-OiAlZFxuIiwgcmV0KTsKLQkJcmV0dXJuIHJldDsKKwkJRFJNX0VSUk9SKCJVbmFibGUgdG8gZ2V0
-IHBsbCByZWZlcmVuY2UgY2xvY2s6ICVkXG4iLCByZXQpOworCQlnb3RvIGVycl9jbGtfZ2V0Owog
-CX0KIAogCXJldCA9IGNsa19wcmVwYXJlX2VuYWJsZShkc2ktPnBsbHJlZl9jbGspOwogCWlmIChy
-ZXQpIHsKLQkJZGV2X2VycihkZXYsICIlczogRmFpbGVkIHRvIGVuYWJsZSBwbGxyZWZfY2xrXG4i
-LCBfX2Z1bmNfXyk7Ci0JCXJldHVybiByZXQ7CisJCURSTV9FUlJPUigiRmFpbGVkIHRvIGVuYWJs
-ZSBwbGxyZWZfY2xrOiAlZFxuIiwgcmV0KTsKKwkJZ290byBlcnJfY2xrX2dldDsKIAl9CiAKIAlk
-d19taXBpX2RzaV9zdG1fcGxhdF9kYXRhLmJhc2UgPSBkc2ktPmJhc2U7CkBAIC0zMzgsMjAgKzM1
-NSwyOCBAQCBzdGF0aWMgaW50IGR3X21pcGlfZHNpX3N0bV9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1f
-ZGV2aWNlICpwZGV2KQogCiAJZHNpLT5kc2kgPSBkd19taXBpX2RzaV9wcm9iZShwZGV2LCAmZHdf
-bWlwaV9kc2lfc3RtX3BsYXRfZGF0YSk7CiAJaWYgKElTX0VSUihkc2ktPmRzaSkpIHsKLQkJRFJN
-X0VSUk9SKCJGYWlsZWQgdG8gaW5pdGlhbGl6ZSBtaXBpIGRzaSBob3N0XG4iKTsKLQkJY2xrX2Rp
-c2FibGVfdW5wcmVwYXJlKGRzaS0+cGxscmVmX2Nsayk7Ci0JCXJldHVybiBQVFJfRVJSKGRzaS0+
-ZHNpKTsKKwkJcmV0ID0gUFRSX0VSUihkc2ktPmRzaSk7CisJCURSTV9FUlJPUigiRmFpbGVkIHRv
-IGluaXRpYWxpemUgbWlwaSBkc2kgaG9zdDogJWRcbiIsIHJldCk7CisJCWdvdG8gZXJyX2RzaV9w
-cm9iZTsKIAl9CiAKIAlyZXR1cm4gMDsKKworZXJyX2RzaV9wcm9iZToKKwljbGtfZGlzYWJsZV91
-bnByZXBhcmUoZHNpLT5wbGxyZWZfY2xrKTsKK2Vycl9jbGtfZ2V0OgorCXJlZ3VsYXRvcl9kaXNh
-YmxlKGRzaS0+dmRkX3N1cHBseSk7CisKKwlyZXR1cm4gcmV0OwogfQogCiBzdGF0aWMgaW50IGR3
-X21pcGlfZHNpX3N0bV9yZW1vdmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKIHsKIAlz
-dHJ1Y3QgZHdfbWlwaV9kc2lfc3RtICpkc2kgPSBwbGF0Zm9ybV9nZXRfZHJ2ZGF0YShwZGV2KTsK
-IAotCWNsa19kaXNhYmxlX3VucHJlcGFyZShkc2ktPnBsbHJlZl9jbGspOwogCWR3X21pcGlfZHNp
-X3JlbW92ZShkc2ktPmRzaSk7CisJY2xrX2Rpc2FibGVfdW5wcmVwYXJlKGRzaS0+cGxscmVmX2Ns
-ayk7CisJcmVndWxhdG9yX2Rpc2FibGUoZHNpLT52ZGRfc3VwcGx5KTsKIAogCXJldHVybiAwOwog
-fQpAQCAtMzYzLDYgKzM4OCw3IEBAIHN0YXRpYyBpbnQgX19tYXliZV91bnVzZWQgZHdfbWlwaV9k
-c2lfc3RtX3N1c3BlbmQoc3RydWN0IGRldmljZSAqZGV2KQogCURSTV9ERUJVR19EUklWRVIoIlxu
-Iik7CiAKIAljbGtfZGlzYWJsZV91bnByZXBhcmUoZHNpLT5wbGxyZWZfY2xrKTsKKwlyZWd1bGF0
-b3JfZGlzYWJsZShkc2ktPnZkZF9zdXBwbHkpOwogCiAJcmV0dXJuIDA7CiB9CkBAIC0zNzAsMTAg
-KzM5NiwyMiBAQCBzdGF0aWMgaW50IF9fbWF5YmVfdW51c2VkIGR3X21pcGlfZHNpX3N0bV9zdXNw
-ZW5kKHN0cnVjdCBkZXZpY2UgKmRldikKIHN0YXRpYyBpbnQgX19tYXliZV91bnVzZWQgZHdfbWlw
-aV9kc2lfc3RtX3Jlc3VtZShzdHJ1Y3QgZGV2aWNlICpkZXYpCiB7CiAJc3RydWN0IGR3X21pcGlf
-ZHNpX3N0bSAqZHNpID0gZHdfbWlwaV9kc2lfc3RtX3BsYXRfZGF0YS5wcml2X2RhdGE7CisJaW50
-IHJldDsKIAogCURSTV9ERUJVR19EUklWRVIoIlxuIik7CiAKLQljbGtfcHJlcGFyZV9lbmFibGUo
-ZHNpLT5wbGxyZWZfY2xrKTsKKwlyZXQgPSByZWd1bGF0b3JfZW5hYmxlKGRzaS0+dmRkX3N1cHBs
-eSk7CisJaWYgKHJldCkgeworCQlEUk1fRVJST1IoIkZhaWxlZCB0byBlbmFibGUgcmVndWxhdG9y
-OiAlZFxuIiwgcmV0KTsKKwkJcmV0dXJuIHJldDsKKwl9CisKKwlyZXQgPSBjbGtfcHJlcGFyZV9l
-bmFibGUoZHNpLT5wbGxyZWZfY2xrKTsKKwlpZiAocmV0KSB7CisJCXJlZ3VsYXRvcl9kaXNhYmxl
-KGRzaS0+dmRkX3N1cHBseSk7CisJCURSTV9FUlJPUigiRmFpbGVkIHRvIGVuYWJsZSBwbGxyZWZf
-Y2xrOiAlZFxuIiwgcmV0KTsKKwkJcmV0dXJuIHJldDsKKwl9CiAKIAlyZXR1cm4gMDsKIH0KLS0g
-CjIuNy40CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
-bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
-YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
-dXgtYXJtLWtlcm5lbAo=
+Hello Chen-Yu Tsai,
+
+The patch 7cbea6327e76: "ARM: sun9i: smp: Support CPU/cluster power
+down and hotplugging for cpu1~7" from Jan 17, 2018, leads to the
+following static checker warning:
+
+	arch/arm/mach-sunxi/mc_smp.c:581 sunxi_mc_smp_cpu_kill()
+	error: scheduling with locks held: 'spin_lock:boot_lock'
+
+arch/arm/mach-sunxi/mc_smp.c
+   546          /* wait for CPU core to die and enter WFI */
+   547          count = TIMEOUT_USEC / POLL_USEC;
+   548          spin_lock_irq(&boot_lock);
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+Atomic context.
+
+   549          for (tries = 0; tries < count; tries++) {
+   550                  spin_unlock_irq(&boot_lock);
+   551                  usleep_range(POLL_USEC / 2, POLL_USEC);
+   552                  spin_lock_irq(&boot_lock);
+   553  
+   554                  /*
+   555                   * If the user turns off a bunch of cores at the same
+   556                   * time, the kernel might call cpu_kill before some of
+   557                   * them are ready. This is because boot_lock serializes
+   558                   * both cpu_die and cpu_kill callbacks. Either one could
+   559                   * run first. We should wait for cpu_die to complete.
+   560                   */
+   561                  if (sunxi_mc_smp_cpu_table[cluster][cpu])
+   562                          continue;
+   563  
+   564                  reg = readl(cpucfg_base + CPUCFG_CX_STATUS(cluster));
+   565                  if (reg & CPUCFG_CX_STATUS_STANDBYWFI(cpu))
+   566                          break;
+   567          }
+   568  
+   569          if (tries >= count) {
+   570                  ret = ETIMEDOUT;
+   571                  goto out;
+   572          }
+   573  
+   574          /* power down CPU core */
+   575          sunxi_cpu_powerdown(cpu, cluster);
+   576  
+   577          if (!sunxi_mc_smp_cluster_is_down(cluster))
+   578                  goto out;
+   579  
+   580          /* wait for cluster L2 WFI */
+   581          ret = readl_poll_timeout(cpucfg_base + CPUCFG_CX_STATUS(cluster), reg,
+   582                                   reg & CPUCFG_CX_STATUS_STANDBYWFIL2,
+   583                                   POLL_USEC, TIMEOUT_USEC);
+                                         ^^^^^^^^^
+This is 100.  Use zero instead to avoid sleeping?
+
+   584          if (ret) {
+   585                  /*
+   586                   * Ignore timeout on the cluster. Leaving the cluster on
+   587                   * will not affect system execution, just use a bit more
+   588                   * power. But returning an error here will only confuse
+   589                   * the user as the CPU has already been shutdown.
+   590                   */
+   591                  ret = 0;
+   592                  goto out;
+   593          }
+   594  
+   595          /* Power down cluster */
+   596          sunxi_cluster_powerdown(cluster);
+   597  
+   598  out:
+   599          spin_unlock_irq(&boot_lock);
+                                 ^^^^^^^^^
+   600          pr_debug("%s: cluster %u cpu %u powerdown: %d\n",
+   601                   __func__, cluster, cpu, ret);
+   602          return !ret;
+   603  }
+
+
+regards,
+dan carpenter
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
