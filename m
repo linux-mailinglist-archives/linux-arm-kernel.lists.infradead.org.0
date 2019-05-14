@@ -2,37 +2,37 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4253F1C322
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 08:17:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4E101C2E2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 08:14:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GAlitG3rSrlV10rHWDwDiWINQPi/UI/6VLRCsNs1a9E=; b=CmHlBStOq/C5J2
-	LXkrMWoMNNrrnMvDz9A8nyc8mBi6GmZcB5H8XIA8AhAfF3pviEbFZM3HtFsH7hPklB5+vVnrMPz8L
-	jjI5kD/TwEmaTB5ZGqcyswHmIZHZEVXCtdJTLgjUdhDSOZ/UT3La6xxPepRo63AG8XWEvDi4KT1ma
-	sMVYUn1h+T+njqI9j6x9Yh587YfhYDtfNmro+DhR5xSBxb+S5iTtAgwqsWEDHtK70Vz+/rRWZPzOx
-	U9yAanhmZA4AzHruLXmT8AytYv8oeA8K2gbAm+8TQ5X1FyyTXVEwh1VdQ1vD7da3x4vATiv0RMAyP
-	nAzrrtcOTDBgqgkGk2Mg==;
+	List-Owner; bh=KrIL7Oex6d12gGJP2HqUmlkun1TiYoLhpGOBRkZJ824=; b=jm6IIiW4SOWnNa
+	bGr92QpAPw6In09UqxwqqjRBJfg4Nxy4Iiyq96U6fls5x0GTiSsW9E3ffcZIMOfGVyYsHCje6QJvp
+	THYEb8xEe2so0dOZ6Nu1a/NDkXernDUEMlVpBQnElgdMwf9ADSW1/vDJiPcxVHZYAamy+LGWfXibe
+	9DcVALVNMQ9nWUHSpIadM66NieNXKRDupD0HRwNH3XfqaaBNXT+FpE7xsnkqxY2XirFGgO3lOOR1P
+	JNoXz3ieRwEiG8USyfGcLV/X/kc+qo+zIvFNS7ojCPEHaeNpQjrkN518SmRf3Nr3V2Biysffu2pwy
+	637uDdi9txAXdPKZ91jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQQkJ-0003lh-Je; Tue, 14 May 2019 06:17:03 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hQQhZ-0007SM-G1; Tue, 14 May 2019 06:14:13 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQQhf-0007QT-V4; Tue, 14 May 2019 06:14:26 +0000
-X-UUID: 39c7a978693a43eca904fa0efebdd368-20190513
-X-UUID: 39c7a978693a43eca904fa0efebdd368-20190513
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ id 1hQQhQ-0007Q7-7Y; Tue, 14 May 2019 06:14:05 +0000
+X-UUID: c802257ec1b84bfca77c1d02a7bc5753-20190513
+X-UUID: c802257ec1b84bfca77c1d02a7bc5753-20190513
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <stu.hsieh@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 27969667; Mon, 13 May 2019 22:14:05 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 13 May 2019 23:14:04 -0700
+ with ESMTP id 1339345992; Mon, 13 May 2019 22:13:57 -0800
+Received: from mtkmbs03n1.mediatek.inc (172.21.101.181) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 13 May 2019 23:13:56 -0700
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ mtkmbs03n1.mediatek.inc (172.21.101.181) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Tue, 14 May 2019 14:13:54 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
@@ -40,18 +40,17 @@ Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
 From: Stu Hsieh <stu.hsieh@mediatek.com>
 To: Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
  <robh+dt@kernel.org>, CK Hu <ck.hu@mediatek.com>
-Subject: [PATCH v3 06/13] [media] mtk-mipicsi: add function to support SerDes
- for link number
-Date: Tue, 14 May 2019 14:13:43 +0800
-Message-ID: <1557814430-9675-7-git-send-email-stu.hsieh@mediatek.com>
+Subject: [PATCH v3 07/13] [media] mtk-mipicsi: enable/disable ana clk
+Date: Tue, 14 May 2019 14:13:44 +0800
+Message-ID: <1557814430-9675-8-git-send-email-stu.hsieh@mediatek.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1557814430-9675-1-git-send-email-stu.hsieh@mediatek.com>
 References: <1557814430-9675-1-git-send-email-stu.hsieh@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_231420_392038_4A0EE1BC 
-X-CRM114-Status: GOOD (  15.05  )
+X-CRM114-CacheID: sfid-20190513_231404_272638_9E4B4858 
+X-CRM114-Status: GOOD (  11.86  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -81,121 +80,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch add function to support SerDes for link number.
-
-Mt2712 can server at most four camera link for each mipicsi port.
-Therefore, driver need to know how many camera link in SerDes and
-set the mipicsi HW to serve.
+This patch enable/disable ana clk when power on/off
 
 Signed-off-by: Stu Hsieh <stu.hsieh@mediatek.com>
 ---
- .../media/platform/mtk-mipicsi/mtk_mipicsi.c  | 65 +++++++++++++++++++
- 1 file changed, 65 insertions(+)
+ .../media/platform/mtk-mipicsi/mtk_mipicsi.c  | 39 +++++++++++++++++++
+ 1 file changed, 39 insertions(+)
 
 diff --git a/drivers/media/platform/mtk-mipicsi/mtk_mipicsi.c b/drivers/media/platform/mtk-mipicsi/mtk_mipicsi.c
-index 920848e965e3..117eb1939014 100644
+index 117eb1939014..f9123765ebbd 100644
 --- a/drivers/media/platform/mtk-mipicsi/mtk_mipicsi.c
 +++ b/drivers/media/platform/mtk-mipicsi/mtk_mipicsi.c
-@@ -53,6 +53,8 @@
- #define MIPICSI_COMMON_CLK 2
- #define MTK_CAMDMA_MAX_NUM 4U
- #define MIPICSI_CLK (MIPICSI_COMMON_CLK + MTK_CAMDMA_MAX_NUM)
-+#define MAX_DES_LINK 4U
-+#define SUBDEV_LINK_REG 0x49
- #define MAX_SUPPORT_WIDTH             4096U
- #define MAX_SUPPORT_HEIGHT            4096U
- #define MAX_BUFFER_NUM                  32U
-@@ -103,6 +105,8 @@
- #define IMGO_STRIDE					0x238
- #define DMA_FRAME_HEADER_EN				0xE00
- 
-+#define SerDes_support 1
-+
- /* buffer for one video frame */
- struct mtk_mipicsi_buf {
- 	struct list_head queue;
-@@ -127,6 +131,8 @@ struct mtk_mipicsi_dev {
- 	spinlock_t		queue_lock;
- 	struct mtk_mipicsi_buf	cam_buf[MAX_BUFFER_NUM];
- 	bool streamon;
-+	unsigned int link;
-+	u8 link_reg_val;
- 	unsigned long enqueue_cnt;
- 	char drv_name[16];
- 	u32 id;
-@@ -146,6 +152,64 @@ struct mtk_mipicsi_dev {
+@@ -152,6 +152,41 @@ struct mtk_mipicsi_dev {
  		V4L2_MBUS_PCLK_SAMPLE_FALLING |	\
  		V4L2_MBUS_DATA_ACTIVE_HIGH)
  
-+static int get_subdev_register(const struct soc_camera_device *icd,
-+	struct v4l2_dbg_register *reg)
++static void mtk_mipicsi_ana_clk_enable(void __iomem *base, bool enable)
 +{
-+	struct v4l2_subdev *sd = soc_camera_to_subdev(icd);
-+	int ret = 0;
-+
-+	reg->match.type = V4L2_CHIP_MATCH_SUBDEV;
-+	reg->match.addr = 0;
-+	ret = v4l2_subdev_call(sd, core, g_register, reg);
-+	if (ret != 2) {
-+		dev_err(icd->parent, "mipicsi get des register 0x%llx fail, ret=%d\n",
-+			reg->reg, ret);
-+		return -EIO;
++	if (enable) {
++		writel(1UL | readl(base + MIPI_RX_ANA00_CSI),
++			base + MIPI_RX_ANA00_CSI);
++		writel(1UL | readl(base + MIPI_RX_ANA04_CSI),
++			base + MIPI_RX_ANA04_CSI);
++		writel(1UL | readl(base + MIPI_RX_ANA08_CSI),
++			base + MIPI_RX_ANA08_CSI);
++		writel(1UL | readl(base + MIPI_RX_ANA0C_CSI),
++			base + MIPI_RX_ANA0C_CSI);
++		writel(1UL | readl(base + MIPI_RX_ANA10_CSI),
++			base + MIPI_RX_ANA10_CSI);
++		writel(1UL | readl(base + MIPI_RX_ANA20_CSI),
++			base + MIPI_RX_ANA20_CSI);
++		writel(1UL | readl(base + MIPI_RX_ANA24_CSI),
++			base + MIPI_RX_ANA24_CSI);
++	} else {
++		writel(~1UL & readl(base + MIPI_RX_ANA00_CSI),
++			base + MIPI_RX_ANA00_CSI);
++		writel(~1UL & readl(base + MIPI_RX_ANA04_CSI),
++			base + MIPI_RX_ANA04_CSI);
++		writel(~1UL & readl(base + MIPI_RX_ANA08_CSI),
++			base + MIPI_RX_ANA08_CSI);
++		writel(~1UL & readl(base + MIPI_RX_ANA0C_CSI),
++			base + MIPI_RX_ANA0C_CSI);
++		writel(~1UL & readl(base + MIPI_RX_ANA10_CSI),
++			base + MIPI_RX_ANA10_CSI);
++		writel(~1UL & readl(base + MIPI_RX_ANA20_CSI),
++			base + MIPI_RX_ANA20_CSI);
++		writel(~1UL & readl(base + MIPI_RX_ANA24_CSI),
++			base + MIPI_RX_ANA24_CSI);
 +	}
-+
-+	dev_info(icd->parent, "read DES [reg/val/ret] is [0x%llx/0x%llx/%d]\n",
-+		reg->reg, reg->val, ret);
-+	return ret;
 +}
 +
-+static int get_subdev_link(const struct soc_camera_device *icd,
-+	unsigned int *link, u8 *link_reg_val)
-+{
-+	struct v4l2_dbg_register reg;
-+	int ret = 0;
-+	unsigned int index = 0U;
-+	*link_reg_val = 0x0U;
-+
-+	if (SerDes_support == 0) {
-+		*link = 1;
-+		*link_reg_val = 0x1;
-+		dev_info(icd->parent, "subdev not support SerDes\n");
-+		return 0;
-+	}
-+
-+	if (link == NULL)
-+		return -EINVAL;
-+
-+	memset(&reg, 0, sizeof(reg));
-+	/*get camera link number*/
-+	reg.reg = SUBDEV_LINK_REG;
-+	ret = get_subdev_register(icd, &reg);
-+	if (ret < 0)
-+		return ret;
-+
-+	*link = 0U;
-+	for (index = 0U; index < MAX_DES_LINK; ++index) {
-+		if ((reg.val & 0x01U) == 0x01U) {
-+			*link += 1U;
-+			*link_reg_val |= (0x01U << index);
-+		}
-+		reg.val >>= 1U;
-+	}
-+
-+	dev_info(icd->parent, "%u camera linked to sub device\n", *link);
-+	return 0;
-+}
-+
- static u32 get_bytesperline(const u32 fmt, const u32 width)
+ static int get_subdev_register(const struct soc_camera_device *icd,
+ 	struct v4l2_dbg_register *reg)
  {
- 	u32 bytesperline = 0;
-@@ -177,6 +241,7 @@ static int mtk_mipicsi_add_device(struct soc_camera_device *icd)
- 	u32 height;
- 	u32 fmt;
+@@ -776,6 +811,8 @@ static int mtk_mipicsi_pm_suspend(struct device *dev)
+ 	for (i = 0; i < mipicsi->clk_num; ++i)
+ 		clk_disable_unprepare(mipicsi->clk[i]);
  
-+	(void)get_subdev_link(icd, &mipicsi->link, &mipicsi->link_reg_val);
- 	/* Get width/height info from subdev. Then use them to set register */
- 	ret = v4l2_subdev_call(sd, pad, get_fmt, NULL, &format);
- 	if (ret < 0) {
++	mtk_mipicsi_ana_clk_enable(mipicsi->ana, false);
++
+ 	if (mipicsi->larb_pdev != NULL)
+ 		mtk_smi_larb_put(mipicsi->larb_pdev);
+ 
+@@ -811,6 +848,8 @@ static int mtk_mipicsi_pm_resume(struct device *dev)
+ 			return ret;
+ 	}
+ 
++	mtk_mipicsi_ana_clk_enable(mipicsi->ana, true);
++
+ 	/* enable digtal clock */
+ 	for (i = 0; i < mipicsi->clk_num; ++i)
+ 		(void)clk_prepare_enable(mipicsi->clk[i]);
 -- 
 2.18.0
 
