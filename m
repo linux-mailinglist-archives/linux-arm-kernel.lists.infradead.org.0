@@ -2,73 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E833E1CF69
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 20:51:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1B9C1CF36
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 20:39:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:From:To:
-	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=y8O9t6kgF0kfc3LVgmOISYUcXr3+eHflB6PaPlUrxYk=; b=G/jsEgmuZ9p0EQ
-	lOFB0Tab+pRKI0h/fDS3YNM2ei+Jv7JqoRzFhrDymh5mQWyfKAu1k5xEQW1c7K2v4EwBlDg7iij5O
-	LMJhN5CsiVfmJnSWRmIS9b9/SVgA0/OkoyCtnkyAkTBwocc7VFxnGCVC8/llmMlo7p18Xb+qEyGtk
-	6sf2P6SgzijIJpYFuZr8ox+hsCPJr3Jf2vbJKlLCaljTQeTS9haZW5uN9qianJTikySzxCcxT6YWv
-	JxSVfDA5vq+1K3sI5DnXnbatjjq5LGnWEnnrBQQPqmiQCN8hi2nO04k1OpYhA3ld9Q1uxW7ZuRaFE
-	jTzP6M6MSMlxIj9UAXkw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=x+ubcDJSi91aLf6VUoeBUrXPrpRn4LVgJwK2ppNUDsY=; b=KP9D6G1ZZidunT
+	5NN8NjXcjEoCTqu0Z8wkAuy24xUz+zqG3gZch8NwlnSWz1cQpbO3Nc0WVOi4q41U7jN42gKQElm3w
+	JqCYEST7yv/bYq1v3L5yiqkYAfQdLv6ThUOxowz/Ql7V5GUWa9C6YXPyxxubFJFENUqbYME/Ojsd6
+	A5RfifJxoh4c5nleKY/I1ym++loKRaltNvp4EkIzAY2HGcfIBnk1Ldm+U1O4gBeYPlyh7F0RhPvO8
+	CTMeEZP64yj61C4vnVa1jypu4YzewVynHzrPLYt5hKQN9xNYPnK+pPWLqZkxw+fp1rIETM5jysN0c
+	Dng9VaQRSkgHiQZMp/tA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQcWn-0004VK-71; Tue, 14 May 2019 18:51:53 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hQcKX-0006gF-DN; Tue, 14 May 2019 18:39:13 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQcWe-0004V1-Uz
- for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 18:51:47 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2A33420881;
- Tue, 14 May 2019 18:51:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1557859904;
- bh=VGp6G7WBo75TIjlb/MR2z2MnnjmhZTgWCXdktMbfxXI=;
- h=Subject:To:Cc:From:Date:From;
- b=DjoDOKY5DVPW7HD0SKMXn7l29ElKvqsr0yntPGOQPFV1FZBNU6k6LJaTbL1+FL8qU
- mEZhbFftMZklsXnTpFipgiKnbXTdxDL077C9B2XCa9oIrkKreZMEtWG8epIrPHA22b
- Dbr1uzvb+vChEGUNduTtsq8mMpcY0YeNgQD0IpsU=
-Subject: Patch "x86/speculation: Support 'mitigations=' cmdline option" has
- been added to the 4.4-stable tree
-To: 6616d0ae169308516cfdf5216bedd169f8a8291b.1555085500.git.jpoimboe@redhat.com,
- aarcange@redhat.com, ben@decadent.org.uk, benh@kernel.crashing.org,
- bp@alien8.de, catalin.marinas@arm.com, gregkh@linuxfoundation.org,
- heiko.carstens@de.ibm.com, hpa@zytor.com, jcm@redhat.com, jikos@kernel.org,
- jkosina@suse.cz, jpoimboe@redhat.com, linux-arm-kernel@lists.infradead.org,
- linuxppc-dev@lists.ozlabs.org, longman@redhat.com, luto@kernel.org,
- mpe@ellerman.id.au, pauld@redhat.com, paulus@samba.org, peterz@infradead.org,
- rdunlap@infradead.org, schwidefsky@de.ibm.com, steven.price@arm.com,
- tglx@linutronix.de, torvalds@linux-foundation.org, tyhicks@canonical.com,
- will.deacon@arm.com
-From: <gregkh@linuxfoundation.org>
-Date: Tue, 14 May 2019 20:30:41 +0200
-Message-ID: <1557858641110224@kroah.com>
+ id 1hQcKP-0006fj-TK
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 18:39:07 +0000
+Received: by mail-ed1-x543.google.com with SMTP id w11so319369edl.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 14 May 2019 11:39:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=zbQPQaaby+KlyxId7O5QJocsqofQF1fdS7ooQBqTlW8=;
+ b=CCj6ARw9oyqJuC5ug0nu+zWpYTTdWJ6wJMtW9rF0/8KKRyAKJ2CYcWp1lYtf/nbIdZ
+ iXFtrn9BO5wDu4sDeyyWkyrktH0y9kNNBMgXPcSiWMC7yRPjXQF6rSx/MrNgFlVGWOaw
+ /zMU2CM/l7YHa1oSzX8g198XzkUmC2+xA4PMcJJ9yDkXeE/R1ZVCU9O2k3Bn51Hdr73D
+ valCo0p7kxQjsJ3FgAReWUp16OnJmpN6y4gO3VHnpAqXTxnbHUgZVjpXC3sNn12b36mc
+ yKr25r1yXucKTSm/IuCFKHuwNrUI6Bw01Bp91kfYI+FalBk9vUnivZWuVuylm/eyeJCO
+ hMEA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=zbQPQaaby+KlyxId7O5QJocsqofQF1fdS7ooQBqTlW8=;
+ b=I1JYJ+Y0XAk1Cz41uIwpHbOwu9eRMvNTi5R6P0bJmcJCYZ+tW8MlK/d5pO1LT9cWnW
+ kY+//5LOl43JhJ+3msWu+kYL3N0zcvSUP6rb8zeJJOhHQz26hek14ipypNt8QLp52sVB
+ pmR1sCAPkj7NzrIbSouH7zpai+ZeshzNxiJIYHXVa0CvI9dh+Jb7JIiooWWMZSxIP13E
+ eiTC0hlL1c97mSFA9NRNKBKztS8NBNReY6HbzDSYgXJcpssyaNL4WExgCpKmqT0o76Ps
+ gHnQGkX1X8Fv1hKkjRzKxEnNVKrNKVe8fHw7fqOvE5OENWmwlYehwJGiOtRcnA5zBTlG
+ CJjw==
+X-Gm-Message-State: APjAAAUs7UDUZL+GmqaLEyR7INsfQzFtXqp3ap6iFIAbD5yWZgN0Mxeh
+ gC6Gl/BWlKnyAAe1YM+JSvg=
+X-Google-Smtp-Source: APXvYqy0qvzGEjq1y48Okv+3jHOz8HFzZ2WmeJBsHys55evhDE3EUT9InoSURjcnwGMUN9OwBSov7Q==
+X-Received: by 2002:a50:fd0a:: with SMTP id i10mr37752734eds.117.1557859143820; 
+ Tue, 14 May 2019 11:39:03 -0700 (PDT)
+Received: from archlinux-i9 ([2a01:4f9:2b:2b84::2])
+ by smtp.gmail.com with ESMTPSA id p52sm4738334eda.79.2019.05.14.11.39.02
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 14 May 2019 11:39:02 -0700 (PDT)
+Date: Tue, 14 May 2019 11:39:00 -0700
+From: Nathan Chancellor <natechancellor@gmail.com>
+To: Lee Jones <lee.jones@linaro.org>
+Subject: Re: [PATCH] mfd: stmfx: Fix macro definition spelling
+Message-ID: <20190514183900.GA7559@archlinux-i9>
+References: <20190511012301.2661-1-natechancellor@gmail.com>
+ <20190513073059.GH4319@dell>
 MIME-Version: 1.0
-X-stable: commit
-X-Patchwork-Hint: ignore 
+Content-Disposition: inline
+In-Reply-To: <20190513073059.GH4319@dell>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_115145_037556_AD69C3D9 
-X-CRM114-Status: GOOD (  15.17  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190514_113905_972655_E8507871 
+X-CRM114-Status: GOOD (  13.76  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (natechancellor[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -80,205 +100,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: stable-commits@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Amelie Delaunay <amelie.delaunay@st.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ clang-built-linux@googlegroups.com,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-This is a note to let you know that I've just added the patch titled
-
-    x86/speculation: Support 'mitigations=' cmdline option
-
-to the 4.4-stable tree which can be found at:
-    http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
-
-The filename of the patch is:
-     x86-speculation-support-mitigations-cmdline-option.patch
-and it can be found in the queue-4.4 subdirectory.
-
-If you, or anyone else, feels it should not be added to the stable tree,
-please let <stable@vger.kernel.org> know about it.
-
-
-From foo@baz Tue 14 May 2019 08:29:35 PM CEST
-From: Josh Poimboeuf <jpoimboe@redhat.com>
-Date: Fri, 12 Apr 2019 15:39:29 -0500
-Subject: x86/speculation: Support 'mitigations=' cmdline option
-
-From: Josh Poimboeuf <jpoimboe@redhat.com>
-
-commit d68be4c4d31295ff6ae34a8ddfaa4c1a8ff42812 upstream.
-
-Configure x86 runtime CPU speculation bug mitigations in accordance with
-the 'mitigations=' cmdline option.  This affects Meltdown, Spectre v2,
-Speculative Store Bypass, and L1TF.
-
-The default behavior is unchanged.
-
-Signed-off-by: Josh Poimboeuf <jpoimboe@redhat.com>
-Signed-off-by: Thomas Gleixner <tglx@linutronix.de>
-Tested-by: Jiri Kosina <jkosina@suse.cz> (on x86)
-Reviewed-by: Jiri Kosina <jkosina@suse.cz>
-Cc: Borislav Petkov <bp@alien8.de>
-Cc: "H . Peter Anvin" <hpa@zytor.com>
-Cc: Andy Lutomirski <luto@kernel.org>
-Cc: Peter Zijlstra <peterz@infradead.org>
-Cc: Jiri Kosina <jikos@kernel.org>
-Cc: Waiman Long <longman@redhat.com>
-Cc: Andrea Arcangeli <aarcange@redhat.com>
-Cc: Jon Masters <jcm@redhat.com>
-Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-Cc: Paul Mackerras <paulus@samba.org>
-Cc: Michael Ellerman <mpe@ellerman.id.au>
-Cc: linuxppc-dev@lists.ozlabs.org
-Cc: Martin Schwidefsky <schwidefsky@de.ibm.com>
-Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
-Cc: linux-s390@vger.kernel.org
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will.deacon@arm.com>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-arch@vger.kernel.org
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: Tyler Hicks <tyhicks@canonical.com>
-Cc: Linus Torvalds <torvalds@linux-foundation.org>
-Cc: Randy Dunlap <rdunlap@infradead.org>
-Cc: Steven Price <steven.price@arm.com>
-Cc: Phil Auld <pauld@redhat.com>
-Link: https://lkml.kernel.org/r/6616d0ae169308516cfdf5216bedd169f8a8291b.1555085500.git.jpoimboe@redhat.com
-[bwh: Backported to 4.4:
- - Drop the auto,nosmt option and the l1tf mitigation selection, which we can't
-   support
- - Adjust filenames, context]
-Signed-off-by: Ben Hutchings <ben@decadent.org.uk>
-Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
----
- Documentation/kernel-parameters.txt |   14 +++++++++-----
- arch/x86/kernel/cpu/bugs.c          |    6 ++++--
- arch/x86/mm/kaiser.c                |    4 +++-
- 3 files changed, 16 insertions(+), 8 deletions(-)
-
---- a/Documentation/kernel-parameters.txt
-+++ b/Documentation/kernel-parameters.txt
-@@ -2174,15 +2174,19 @@ bytes respectively. Such letter suffixes
- 			http://repo.or.cz/w/linux-2.6/mini2440.git
- 
- 	mitigations=
--			Control optional mitigations for CPU vulnerabilities.
--			This is a set of curated, arch-independent options, each
--			of which is an aggregation of existing arch-specific
--			options.
-+			[X86] Control optional mitigations for CPU
-+			vulnerabilities.  This is a set of curated,
-+			arch-independent options, each of which is an
-+			aggregation of existing arch-specific options.
- 
- 			off
- 				Disable all optional CPU mitigations.  This
- 				improves system performance, but it may also
- 				expose users to several CPU vulnerabilities.
-+				Equivalent to: nopti [X86]
-+					       nospectre_v2 [X86]
-+					       spectre_v2_user=off [X86]
-+					       spec_store_bypass_disable=off [X86]
- 
- 			auto (default)
- 				Mitigate all CPU vulnerabilities, but leave SMT
-@@ -2190,7 +2194,7 @@ bytes respectively. Such letter suffixes
- 				users who don't want to be surprised by SMT
- 				getting disabled across kernel upgrades, or who
- 				have other ways of avoiding SMT-based attacks.
--				This is the default behavior.
-+				Equivalent to: (default behavior)
- 
- 	mminit_loglevel=
- 			[KNL] When CONFIG_DEBUG_MEMORY_INIT is set, this
---- a/arch/x86/kernel/cpu/bugs.c
-+++ b/arch/x86/kernel/cpu/bugs.c
-@@ -479,7 +479,8 @@ static enum spectre_v2_mitigation_cmd __
- 	char arg[20];
- 	int ret, i;
- 
--	if (cmdline_find_option_bool(boot_command_line, "nospectre_v2"))
-+	if (cmdline_find_option_bool(boot_command_line, "nospectre_v2") ||
-+	    cpu_mitigations_off())
- 		return SPECTRE_V2_CMD_NONE;
- 
- 	ret = cmdline_find_option(boot_command_line, "spectre_v2", arg, sizeof(arg));
-@@ -743,7 +744,8 @@ static enum ssb_mitigation_cmd __init ss
- 	char arg[20];
- 	int ret, i;
- 
--	if (cmdline_find_option_bool(boot_command_line, "nospec_store_bypass_disable")) {
-+	if (cmdline_find_option_bool(boot_command_line, "nospec_store_bypass_disable") ||
-+	    cpu_mitigations_off()) {
- 		return SPEC_STORE_BYPASS_CMD_NONE;
- 	} else {
- 		ret = cmdline_find_option(boot_command_line, "spec_store_bypass_disable",
---- a/arch/x86/mm/kaiser.c
-+++ b/arch/x86/mm/kaiser.c
-@@ -10,6 +10,7 @@
- #include <linux/mm.h>
- #include <linux/uaccess.h>
- #include <linux/ftrace.h>
-+#include <linux/cpu.h>
- 
- #undef pr_fmt
- #define pr_fmt(fmt)     "Kernel/User page tables isolation: " fmt
-@@ -297,7 +298,8 @@ void __init kaiser_check_boottime_disabl
- 			goto skip;
- 	}
- 
--	if (cmdline_find_option_bool(boot_command_line, "nopti"))
-+	if (cmdline_find_option_bool(boot_command_line, "nopti") ||
-+	    cpu_mitigations_off())
- 		goto disable;
- 
- skip:
-
-
-Patches currently in stable-queue which might be from jpoimboe@redhat.com are
-
-queue-4.4/x86-speculation-mds-fix-documentation-typo.patch
-queue-4.4/x86-speculation-mds-add-mitigations-support-for-mds.patch
-queue-4.4/x86-speculation-rework-smt-state-change.patch
-queue-4.4/cpu-speculation-add-mitigations-cmdline-option.patch
-queue-4.4/x86-speculation-mds-fix-comment.patch
-queue-4.4/x86-speculation-reorder-the-spec_v2-code.patch
-queue-4.4/x86-speculation-add-prctl-control-for-indirect-branch-speculation.patch
-queue-4.4/x86-speculation-provide-ibpb-always-command-line-options.patch
-queue-4.4/x86-kconfig-select-sched_smt-if-smp-enabled.patch
-queue-4.4/x86-speculation-mds-add-smt-warning-message.patch
-queue-4.4/x86-process-consolidate-and-simplify-switch_to_xtra-code.patch
-queue-4.4/x86-speculation-reorganize-speculation-control-msrs-update.patch
-queue-4.4/x86-speculation-update-the-tif_ssbd-comment.patch
-queue-4.4/x86-speculation-propagate-information-about-rsb-filling-mitigation-to-sysfs.patch
-queue-4.4/x86-speculation-unify-conditional-spectre-v2-print-functions.patch
-queue-4.4/x86-speculation-disable-stibp-when-enhanced-ibrs-is-in-use.patch
-queue-4.4/x86-speculation-rename-ssbd-update-functions.patch
-queue-4.4/x86-speculation-enable-prctl-mode-for-spectre_v2_user.patch
-queue-4.4/x86-speculation-mark-string-arrays-const-correctly.patch
-queue-4.4/x86-speculation-move-arch_smt_update-call-to-after-mitigation-decisions.patch
-queue-4.4/x86-speculation-add-seccomp-spectre-v2-user-space-protection-mode.patch
-queue-4.4/x86-speculation-clean-up-spectre_v2_parse_cmdline.patch
-queue-4.4/x86-mm-use-write_once-when-setting-ptes.patch
-queue-4.4/x86-speculation-apply-ibpb-more-strictly-to-avoid-cross-process-data-leak.patch
-queue-4.4/x86-speculation-add-command-line-control-for-indirect-branch-speculation.patch
-queue-4.4/x86-speculation-move-stipb-ibpb-string-conditionals-out-of-cpu_show_common.patch
-queue-4.4/x86-speculation-support-mitigations-cmdline-option.patch
-queue-4.4/x86-speculation-remove-unnecessary-ret-variable-in-cpu_show_common.patch
-queue-4.4/x86-speculation-prepare-for-per-task-indirect-branch-speculation-control.patch
-queue-4.4/x86-speculation-avoid-__switch_to_xtra-calls.patch
-queue-4.4/x86-speculation-mds-print-smt-vulnerable-on-msbds-with-mitigations-off.patch
-queue-4.4/x86-speculation-split-out-tif-update.patch
-queue-4.4/x86-speculation-prepare-for-conditional-ibpb-in-switch_mm.patch
-queue-4.4/x86-speculation-prepare-arch_smt_update-for-prctl-mode.patch
-queue-4.4/x86-speculation-enable-cross-hyperthread-spectre-v2-stibp-mitigation.patch
-queue-4.4/x86-speculataion-mark-command-line-parser-data-__initdata.patch
-queue-4.4/x86-speculation-prevent-stale-spec_ctrl-msr-content.patch
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gTW9uLCBNYXkgMTMsIDIwMTkgYXQgMDg6MzA6NTlBTSArMDEwMCwgTGVlIEpvbmVzIHdyb3Rl
+Ogo+IE9uIEZyaSwgMTAgTWF5IDIwMTksIE5hdGhhbiBDaGFuY2VsbG9yIHdyb3RlOgo+IAo+ID4g
+Q2xhbmcgd2FybnM6Cj4gPiAKPiA+IEluIGZpbGUgaW5jbHVkZWQgZnJvbSBkcml2ZXJzL21mZC9z
+dG1meC5jOjEzOgo+ID4gaW5jbHVkZS9saW51eC9tZmQvc3RtZnguaDo3Ojk6IHdhcm5pbmc6ICdN
+RkRfU1RNRlhfSCcgaXMgdXNlZCBhcyBhCj4gPiBoZWFkZXIgZ3VhcmQgaGVyZSwgZm9sbG93ZWQg
+YnkgI2RlZmluZSBvZiBhIGRpZmZlcmVudCBtYWNybwo+ID4gWy1XaGVhZGVyLWd1YXJkXQo+ID4g
+Cj4gPiBGaXhlczogMDYyNTJhZGU5MTU2ICgibWZkOiBBZGQgU1QgTXVsdGktRnVuY3Rpb24gZVhw
+YW5kZXIgKFNUTUZYKSBjb3JlIGRyaXZlciIpCj4gPiBMaW5rOiBodHRwczovL2dpdGh1Yi5jb20v
+Q2xhbmdCdWlsdExpbnV4L2xpbnV4L2lzc3Vlcy80NzUKPiA+IFNpZ25lZC1vZmYtYnk6IE5hdGhh
+biBDaGFuY2VsbG9yIDxuYXRlY2hhbmNlbGxvckBnbWFpbC5jb20+Cj4gPiAtLS0KPiA+ICBpbmNs
+dWRlL2xpbnV4L21mZC9zdG1meC5oIHwgMiArLQo+ID4gIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2Vy
+dGlvbigrKSwgMSBkZWxldGlvbigtKQo+IAo+IEFwcGxpZWQsIHRoYW5rcy4KPiAKPiAtLSAKPiBM
+ZWUgSm9uZXMgW+adjueQvOaWr10KPiBMaW5hcm8gU2VydmljZXMgVGVjaG5pY2FsIExlYWQKPiBM
+aW5hcm8ub3JnIOKUgiBPcGVuIHNvdXJjZSBzb2Z0d2FyZSBmb3IgQVJNIFNvQ3MKPiBGb2xsb3cg
+TGluYXJvOiBGYWNlYm9vayB8IFR3aXR0ZXIgfCBCbG9nCgpIaSBMZWUsCgpUaGFua3MgZm9yIHBp
+Y2tpbmcgaXQgdXAuIEl0IHNlZW1zIHRoaXMgZGlkbid0IG1ha2UgaXQgaW50byB5b3VyIE1GRApw
+dWxsIHJlcXVlc3QgZm9yIDUuMiwgd2FzIHRoYXQgaW50ZW50aW9uYWw/IEl0IHdvdWxkIGJlIG5p
+Y2UgdG8gYXZvaWQKdGhpcyB3YXJuaW5nLgoKVGhhbmtzLApOYXRoYW4KCl9fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
+ZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
+aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
