@@ -2,54 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E5F5E1C10B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 05:38:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7A9B1C0FB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 05:37:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xn7ciaCooG7D2otSpwGlDZxo+jKmYk+DunbegT9ixvQ=; b=iAoD6B/kb1FQXH
-	qfEkEcEh3U+BqJIz6BbTrGqbliDb5dWe/XbvMJMtlw8e/FdLZ0dFkkFZhFu/4af7EQ5ZXXdGn8ZZq
-	EW4feSiuqZG4MUfli1DjTNszg1eukoF7AkJ1s+xiV9a0s/cfyQNLLod72erKABhVWu+T6MajeUok+
-	NdQ4XUv5w+zNbXn1wK4BGd1NHrlj7lNN7s+2LeU9iq1iFGk3X3pRZRLY2VgEjQcncBhm+Khoy/s+Z
-	EMFJev7laB3GdtwfhCASryUZvkCGh+IgLl+errNpVh4gUOMX1F+fYVqO6OZKBCKEENL0XothvYuSs
-	12KQFKs0+PoajFWHYnoA==;
+	List-Owner; bh=HlS85LBAaUqD0ghyHQMQSZDsUeyOcEuWi3E7PQfAe20=; b=KlURp4jOrJhf9r
+	kdl0JDoaJTBhX4zWzSphACk2gU3NIge28X3zj7oZfNilpcyb7YmDQSpTs8RIPHcCv0F8XqXosnRzU
+	XDvBp//IoAUecMNyZqL9izOj7L7JwxA4FlbWEw7itvY4fJwVHIoO3g4aXT78EPG2P8Iw5xJphi8DD
+	+xYX1r5fwCj512gqakwAx8sVolfzk0+bN+V+WEjuTnjXhwkhDOLMx6SdIzw0byR4os8AOuN6jCSH1
+	DaCda/3TqbMTFZ0o1KR7z+TVQbsZoKuJuqKg49ODVRheZ9037826LYAHfOcLoi5D06VrFP6aQMOwz
+	xdZ8hGaJuLkVgxTqWOIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQOH8-0001cS-Ny; Tue, 14 May 2019 03:38:46 +0000
+	id 1hQOGD-0000RB-QN; Tue, 14 May 2019 03:37:49 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQOG7-0000QJ-Bh; Tue, 14 May 2019 03:37:44 +0000
-X-UUID: 401ec8e3c0114533a5e911abcbe4be28-20190513
-X-UUID: 401ec8e3c0114533a5e911abcbe4be28-20190513
+ id 1hQOG5-0000Q6-Jk; Tue, 14 May 2019 03:37:42 +0000
+X-UUID: 03dc0c80edee493d93577d440a651e08-20190513
+X-UUID: 03dc0c80edee493d93577d440a651e08-20190513
 Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
  (envelope-from <biao.huang@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 709349432; Mon, 13 May 2019 19:37:33 -0800
+ with ESMTP id 1846621950; Mon, 13 May 2019 19:37:33 -0800
 Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
  MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Mon, 13 May 2019 20:37:32 -0700
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
  mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 14 May 2019 11:37:30 +0800
+ 15.0.1395.4; Tue, 14 May 2019 11:37:31 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 14 May 2019 11:37:30 +0800
+ Transport; Tue, 14 May 2019 11:37:31 +0800
 From: Biao Huang <biao.huang@mediatek.com>
 To: Jose Abreu <joabreu@synopsys.com>
-Subject: [v3, PATCH 2/4] net: stmmac: fix csr_clk can't be zero issue
-Date: Tue, 14 May 2019 11:37:24 +0800
-Message-ID: <1557805046-306-3-git-send-email-biao.huang@mediatek.com>
+Subject: [v3, PATCH 3/4] net: stmmac: write the modified value back to
+ MTL_OPERATION_MODE
+Date: Tue, 14 May 2019 11:37:25 +0800
+Message-ID: <1557805046-306-4-git-send-email-biao.huang@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
 In-Reply-To: <1557805046-306-1-git-send-email-biao.huang@mediatek.com>
 References: <1557805046-306-1-git-send-email-biao.huang@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_203743_396756_AFC078AD 
-X-CRM114-Status: GOOD (  11.76  )
+X-CRM114-CacheID: sfid-20190513_203741_655953_E07E8E10 
+X-CRM114-Status: UNSURE (   8.45  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -82,52 +84,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The specific clk_csr value can be zero, and
-stmmac_clk is necessary for MDC clock which can be set dynamically.
-So, change the condition from plat->clk_csr to plat->stmmac_clk to
-fix clk_csr can't be zero issue.
+The value of MTL_OPERATION_MODE is modified, and should
+be write back to the register.
 
-Fixes: cd7201f477b9 ("stmmac: MDC clock dynamically based on the csr clock input")
+Fixes: d0a9c9f9c6d0 ("net: stmmac: configure mtl rx and tx algorithms")
 Signed-off-by: Biao Huang <biao.huang@mediatek.com>
 ---
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c  |    6 +++---
- .../net/ethernet/stmicro/stmmac/stmmac_platform.c  |    5 ++++-
- 2 files changed, 7 insertions(+), 4 deletions(-)
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c |    2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index 906f2be..a905b63 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -4374,10 +4374,10 @@ int stmmac_dvr_probe(struct device *device,
- 	 * set the MDC clock dynamically according to the csr actual
- 	 * clock input.
- 	 */
--	if (!priv->plat->clk_csr)
--		stmmac_clk_csr_set(priv);
--	else
-+	if (priv->plat->clk_csr >= 0)
- 		priv->clk_csr = priv->plat->clk_csr;
-+	else
-+		stmmac_clk_csr_set(priv);
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
+index 7e5d5db..b4bb562 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
+@@ -192,6 +192,8 @@ static void dwmac4_prog_mtl_tx_algorithms(struct mac_device_info *hw,
+ 	default:
+ 		break;
+ 	}
++
++	writel(value, ioaddr + MTL_OPERATION_MODE);
+ }
  
- 	stmmac_check_pcs_mode(priv);
- 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
-index 3031f2b..f45bfbe 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
-@@ -408,7 +408,10 @@ struct plat_stmmacenet_data *
- 	/* Default to phy auto-detection */
- 	plat->phy_addr = -1;
- 
--	/* Get clk_csr from device tree */
-+	/* Default to get clk_csr from stmmac_clk_crs_set(),
-+	 * or get clk_csr from device tree.
-+	 */
-+	plat->clk_csr = -1;
- 	of_property_read_u32(np, "clk_csr", &plat->clk_csr);
- 
- 	/* "snps,phy-addr" is not a standard property. Mark it as deprecated
+ static void dwmac4_set_mtl_tx_queue_weight(struct mac_device_info *hw,
 -- 
 1.7.9.5
 
