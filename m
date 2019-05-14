@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C0B01CEF5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 20:21:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BC791CEF6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 20:21:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r6HJ5qdFCu9dHoHLKDBcVjL2iFI739nL4BxmLzUi4EM=; b=PlYntv3UI4cAvf
-	X/OgA5ek4vBc0hlnNSb5MBaICGrdc5pgS2sLgtHUO4+Yo+zuLlIQggStmBNGixgkBzpHjdi9wz+Kz
-	lTdOsInUCdBCIHC6Usw3wR/4a5s2hIsy/Ak9zmit83tGOTV+MT8mt3Jf8IdnIPHq+yyAAlpSh/g0h
-	qIYwHI+eSJ/35x/QQLZZkjg137oPCTSSnR5BpBk+8tfz6sPrIUBlBXQ1F4hp57vFXaxYuFcRypk0o
-	DRxscZ5XuzDn5hrZpbCvILN8r0sBkmBq5RYf9LAYqipZ74OzQZSuT6JBsgGy5o2G0BOgoZmcOxCFz
-	AqepcH0p6jV1CpKu0N7A==;
+	List-Owner; bh=TZGQBVlNmF3WFLzaPHwXm4EV1ZFO8Bx5lZKgcoTcgrc=; b=ARCPmYjFVwG9uY
+	4ECAoTtY1+wt0wnM6vJl21JHXqikb2VPyMjhCvSTxzTYV8LXxuB1+v5hXtVyfrl8x1/ATTcEm9+oZ
+	/IxCA+GEE3X/KW15c4OMT7tjWHAEbpE5szHINhDyQz3khd2JpzLtPxxPPOjA9U24fSij8TIXwil0+
+	zGs5tKQy9dIGGC8QyaI5m8OIKHd+ev+WOT5adkRoAWbnfWsXAW+CCiqXRGqZmOMA0gAo626aobPrV
+	HkpWVCl6DJM8032+E7ViZtbhGy+Z++WdEsArvWX5oHArp2XQouV/w1BVLurO0efXsStaKcnrT5ESX
+	aDzOxJW6lKGY4Djw48jQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQc2n-000122-SX; Tue, 14 May 2019 18:20:53 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1hQc33-0001Ig-KD; Tue, 14 May 2019 18:21:09 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQc2f-000102-EN
- for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 18:20:46 +0000
-Received: by mail-ot1-f67.google.com with SMTP id n14so9239162otk.2
+ id 1hQc2t-0001Fc-Re
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 18:21:03 +0000
+Received: by mail-oi1-f195.google.com with SMTP id r136so12869293oie.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 May 2019 11:20:45 -0700 (PDT)
+ Tue, 14 May 2019 11:20:59 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=OKJTOSFDQe74oP+wcypIqwl6MFEVGiVBSsqYDDAQDPc=;
- b=W+7MRqziMh/gb5YN5QZZ3bvHe8r52bOi/2hqieP3jSGDGiZZjHMWq/2AL6PrLbDmCA
- No5Uhqy5TSU5AiYNB17ksr+6lGU3a/YYTDYQq59jADMeZ85VVBsWwqnubKrK8kJ2VM2f
- MnnSqFGVWsBhZiZl53HWbejJb6jDX+0/4WjTZYlmEzGpEgL03YspRYVYAqW7xoFhNLSG
- 0njpMF75sybFfeyfSzGZ9SFGANKV4mY6xCYk5i7pnb+fPN+TtK29bIsz8MxIvtWcZUQg
- nPWV596u2fO1fbxZskZ+BMDswMx8Z7h/mCPnuyUIJ02XvQVdGO64i5b2i8/wtZJp12lO
- nDyw==
-X-Gm-Message-State: APjAAAXlnIofx72iSRx/iZjmJQ6HbIyKkk3mXYJRFQssQz2vBMSOHrhw
- cbX0fvyuPIHJmxJvuqj6qA==
-X-Google-Smtp-Source: APXvYqwo5lRcs0PbbSdUqX0bwV+G31tQy4bJg/f5bK9hHGr5zRLHyV6p4NyvX9B3ICaQkkJ2BwjMkQ==
-X-Received: by 2002:a9d:66c3:: with SMTP id t3mr22211827otm.80.1557858044189; 
- Tue, 14 May 2019 11:20:44 -0700 (PDT)
+ bh=Pw9JQbzKS0a4HXNL7Bkj2dhXDflsHMPuLdGRZTT4jqU=;
+ b=IdRe4iLfIvZ89nxUhGZIqviY5ospILBgY+T6xe+OM9X49W0a2w4jEnbNWQrvyEBJfg
+ ky/cmcvM9JWdt4Ntj9AGMPiCcRkmxpedFkpSy1KHw+49ClROGUHjz0wrJIRX+5Ao2DjU
+ oUh0HtvtAlTB/qytWQWrILheE45Y8u6alXhf70BEiwvNM+FT2Asnltn8TXxWo9xD5Z7H
+ +mXmk6a6/Mk5rOFYjX/SVsiM2PPcW3BfPOTvDdrARZZa6YK4BWzLs+gw/kUHUN+qx8Wj
+ +nFVZIZGApNtNKSHJ/mCqto0p49RjH9zkbzwl5CU4dQCSOcJXCYKesQ1pmBk6HCTaRI0
+ 0PPA==
+X-Gm-Message-State: APjAAAVB0cycK6r5IPkDI3/K169wUmjPTZPgAftOsVycmxoh1YTNB/qw
+ wLzr+FZMX78MJPAnt+H85w==
+X-Google-Smtp-Source: APXvYqxZeCsZUomLSIAJ/MyTJbnDCD5r2MgFiIhPMfVTTg2CPXMGsQkk5wZZ/VGWG2FzDkYqmDF21Q==
+X-Received: by 2002:aca:7297:: with SMTP id p145mr4065474oic.87.1557858058769; 
+ Tue, 14 May 2019 11:20:58 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id x64sm6771926oia.32.2019.05.14.11.20.43
+ by smtp.gmail.com with ESMTPSA id n95sm4392204otn.73.2019.05.14.11.20.58
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 14 May 2019 11:20:43 -0700 (PDT)
-Date: Tue, 14 May 2019 13:20:42 -0500
+ Tue, 14 May 2019 11:20:58 -0700 (PDT)
+Date: Tue, 14 May 2019 13:20:57 -0500
 From: Rob Herring <robh@kernel.org>
 To: Fabien Dessenne <fabien.dessenne@st.com>
-Subject: Re: [PATCH v4 1/8] dt-bindings: stm32: add bindings for ML-AHB
- interconnect
-Message-ID: <20190514182042.GA26928@bogus>
+Subject: Re: [PATCH v4 2/8] dt-bindings: remoteproc: add bindings for stm32
+ remote processor driver
+Message-ID: <20190514182057.GA27475@bogus>
 References: <1557822423-22658-1-git-send-email-fabien.dessenne@st.com>
- <1557822423-22658-2-git-send-email-fabien.dessenne@st.com>
+ <1557822423-22658-3-git-send-email-fabien.dessenne@st.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1557822423-22658-2-git-send-email-fabien.dessenne@st.com>
+In-Reply-To: <1557822423-22658-3-git-send-email-fabien.dessenne@st.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_112045_614443_1DD052F5 
-X-CRM114-Status: GOOD (  10.45  )
+X-CRM114-CacheID: sfid-20190514_112100_012701_8A8EC467 
+X-CRM114-Status: GOOD (  10.79  )
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
+ no trust [209.85.167.195 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
@@ -76,6 +76,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  in digit (robherring2[at]gmail.com)
  0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -104,14 +106,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 14 May 2019 10:26:56 +0200, Fabien Dessenne wrote:
-> Document the ML-AHB interconnect for stm32 SoCs.
+On Tue, 14 May 2019 10:26:57 +0200, Fabien Dessenne wrote:
+> Add the device tree bindings document for the stm32 remoteproc devices.
 > 
 > Signed-off-by: Fabien Dessenne <fabien.dessenne@st.com>
 > ---
->  .../devicetree/bindings/arm/stm32/mlahb.txt        | 37 ++++++++++++++++++++++
->  1 file changed, 37 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/arm/stm32/mlahb.txt
+>  .../devicetree/bindings/remoteproc/stm32-rproc.txt | 63 ++++++++++++++++++++++
+>  1 file changed, 63 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/remoteproc/stm32-rproc.txt
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
