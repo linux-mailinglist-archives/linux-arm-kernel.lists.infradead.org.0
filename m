@@ -2,89 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CDA91C567
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 10:53:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61EC91C56A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 10:53:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dRAVyrvklihmvtjVxo8gJv/9m7cR+G2priBDk0NQx00=; b=a+UGcxbmGqx3KF
-	6MBu2YvoStYewjx/LYC4ah7FI4dQHwqGdWRe4RZ5OjE/GQoI0jt6LaWV6hmn6w8wQTKYS0YaNwkJ/
-	h3K8hPB9m23B2SpESJ2RxyCA8vi2Fk1wjjqJoxCxrtv2ur0Zw0dAK5nVLVaiiBKbuY7Ck5CP60wDA
-	HTxkUqO1dv84AsWQFBzOa2NZVfgreDdr3ndRLSF6j0TP+XSyNtsMC4K+e7CcQ5sCbNekB4YMoJDSJ
-	XiXqusufAZhf+p9hY8lzdnmwJLn7lqul8ComYGrfWfCls4ILE44bWtl+wBCZZhsnpwlP5z1eKyEj9
-	qPmPdE2z4DE93Tm3gTBw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=aMVGKjmAeBxjiyu+LKxk2rWI2BtPex+Xq6Unz0lhNi4=; b=tCy
+	jbKZ/R3HOEH046ztcWiBhSe4IpWaOQnmjUP2rJhytfrsw/2+7D7koTt0dlTJWtiqm7NF5dzVFfFuq
+	SoIsPni4+0KXX+2WU/BDiTY/Qs+LNb+diEiWSpqQxdccMywsoeQ7uL0w0DkKQgdBEzKwlESNJ6oob
+	AqO+ai1/TDkC7Ynfwv0kAeFT9+lk2uLV/oM6WPDZjmiuYTfD5QITe6gMqCAGkV+SvXQ5u4Jg42B+o
+	5kIgOozhSy8GG+Jou+vW4w1Xuutv6sD4IZWFTdH1EL1Avz8TorQ1g4ca7xRR299gzgIg3yZa2GZYe
+	CJZ9MXmlWdhsdpFJGP3oDEytOlfkoVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQTBC-0003i2-Go; Tue, 14 May 2019 08:52:58 +0000
-Received: from esa5.microchip.iphmx.com ([216.71.150.166])
+	id 1hQTBr-0003yM-4W; Tue, 14 May 2019 08:53:39 +0000
+Received: from andre.telenet-ops.be ([2a02:1800:120:4::f00:15])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQTB4-0003ha-Vz
- for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 08:52:52 +0000
-Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
- Ludovic.Desroches@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="Ludovic.Desroches@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa5.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa5.microchip.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-X-IronPort-AV: E=Sophos;i="5.60,468,1549954800"; d="scan'208";a="31386410"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa5.microchip.iphmx.com with ESMTP/TLS/DHE-RSA-AES256-SHA;
- 14 May 2019 01:52:45 -0700
-Received: from localhost (10.10.76.4) by chn-sv-exch02.mchp-main.com
- (10.10.76.38) with Microsoft SMTP Server id 14.3.352.0; Tue, 14 May 2019
- 01:52:42 -0700
-Date: Tue, 14 May 2019 10:52:09 +0200
-From: Ludovic Desroches <ludovic.desroches@microchip.com>
-To: Eugen Hristev - M18282 <Eugen.Hristev@microchip.com>
-Subject: Re: [PATCH] i2c: at91: handle TXRDY interrupt spam
-Message-ID: <20190514085209.pud5sqrxn2zjrqix@M43218.corp.atmel.com>
-Mail-Followup-To: Eugen Hristev - M18282 <Eugen.Hristev@microchip.com>,
- Raag Jadav <raagjadav@gmail.com>,
- "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, 
- "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>
-References: <1556005008-6318-1-git-send-email-raagjadav@gmail.com>
- <20190429090005.f6ydghzu5n5yruav@M43218.corp.atmel.com>
- <20190429223332.GA3908@pc>
- <20190502140116.rim72idpgvq4h4vc@M43218.corp.atmel.com>
- <20190503235851.GA4242@pc>
- <408ff580-3633-f510-4223-50064f93024a@microchip.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <408ff580-3633-f510-4223-50064f93024a@microchip.com>
-User-Agent: NeoMutt/20180716
+ id 1hQTBi-0003xh-Hi
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 08:53:32 +0000
+Received: from ramsan ([84.194.111.163]) by andre.telenet-ops.be with bizsmtp
+ id C8tJ2000i3XaVaC018tJqu; Tue, 14 May 2019 10:53:20 +0200
+Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1hQTBW-0000EN-Kf; Tue, 14 May 2019 10:53:18 +0200
+Received: from geert by rox.of.borg with local (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1hQTBW-0004fH-J4; Tue, 14 May 2019 10:53:18 +0200
+From: Geert Uytterhoeven <geert+renesas@glider.be>
+To: Linus Walleij <linus.walleij@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH] dt-bindings: arm-boards: Update pointer to ARM CPU bindings
+Date: Tue, 14 May 2019 10:53:16 +0200
+Message-Id: <20190514085316.17883-1-geert+renesas@glider.be>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_015251_037368_3EA954E9 
-X-CRM114-Status: GOOD (  35.35  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190514_015330_959832_73F3FBC8 
+X-CRM114-Status: UNSURE (   9.22  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.150.166 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a02:1800:120:4:0:0:f00:15 listed in]
+ [list.dnswl.org]
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,200 +63,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Raag Jadav <raagjadav@gmail.com>,
- "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>
+Cc: devicetree@vger.kernel.org, Geert Uytterhoeven <geert+renesas@glider.be>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 06, 2019 at 10:19:01AM +0200, Eugen Hristev - M18282 wrote:
-> 
-> 
-> On 04.05.2019 02:58, Raag Jadav wrote:
-> 
-> > On Thu, May 02, 2019 at 04:01:16PM +0200, Ludovic Desroches wrote:
-> >> On Tue, Apr 30, 2019 at 04:03:32AM +0530, Raag Jadav wrote:
-> >>> External E-Mail
-> >>>
-> >>>
-> >>> On Mon, Apr 29, 2019 at 11:00:05AM +0200, Ludovic Desroches wrote:
-> >>>> Hello Raag,
-> >>>>
-> >>>> On Tue, Apr 23, 2019 at 01:06:48PM +0530, Raag Jadav wrote:
-> >>>>> External E-Mail
-> >>>>>
-> >>>>>
-> >>>>> Performing i2c write operation while SDA or SCL line is held
-> >>>>> or grounded by slave device, we go into infinite at91_twi_write_next_byte
-> >>>>> loop with TXRDY interrupt spam.
-> >>>>
-> >>>> Sorry but I am not sure to have the full picture, the controller is in
-> >>>> slave or master mode?
-> >>>>
-> >>>> SVREAD is only used in slave mode. When SVREAD is set, it means that a read
-> >>>> access is performed and your issue concerns the write operation.
-> >>>>
-> >>>> Regards
-> >>>>
-> >>>> Ludovic
-> >>>
-> >>> Yes, even though the datasheet suggests that SVREAD is irrelevant in master mode,
-> >>> TXRDY and SVREAD are the only ones being set in status register upon reproducing the issue.
-> >>> Couldn't think of a better way to handle such strange behaviour.
-> >>> Any suggestions would be appreciated.
-> >>
-> >> I have the confirmation that you can't rely on the SVREAD flag when in
-> >> master mode. This flag should always have the same value.
-> >>
-> >> I am trying to understand what could lead to your situation. Can you
-> >> give me more details. What kind of device it is? What does lead to this
-> >> situation? Does it happen randomly or not?
-> > 
-> > One of the sama5d2 based board I worked on, was having trouble complete its boot
-> > because of a faulty i2c device, which was randomly holding down the SDA line
-> > on i2c write operation, not allowing the controller to complete its transmission,
-> > causing a massive TXRDY interrupt spam, ultimately hanging the processor.
-> > 
-> > Another strange observation was that SVREAD was being set in the status register
-> > along with TXRDY, every time I reproduced the issue.
-> > You can reproduce it by simply grounding the SDA line and performing i2c write
-> > on the bus.
-> > 
-> > Note that NACK, LOCK or TXCOMP are never set as the transmission never completes.
-> > I'm not sure why slave bits are being set in master mode,
-> > but it's been working reliably for me.
-> > 
-> > This patch doesn't recover the SDA line. It just prevents the processor from
-> > getting hanged in case of i2c bus lockup.
-> 
-> Hello,
-> 
-> I have noticed the same hanging at some points... In my case it is 
-> because of this patch:
-> 
-> commit e8f39e9fc0e0b7bce24922da925af820bacb8ef8
-> Author: David Engraf <david.engraf@sysgo.com>
-> Date:   Thu Apr 26 11:53:14 2018 +0200
-> 
+The ARM CPU DT bindings were converted from plain text to YAML, but not
+all referrers were updated.
 
-Good to know.
+Fixes: 672951cbd1b70a9e ("dt-bindings: arm: Convert cpu binding to json-schema")
+Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+---
+ Documentation/devicetree/bindings/arm/arm-boards | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-> 
-> diff --git a/drivers/i2c/busses/i2c-at91.c b/drivers/i2c/busses/i2c-at91.c
-> index bfd1fdf..3f3e8b3 100644
-> --- a/drivers/i2c/busses/i2c-at91.c
-> +++ b/drivers/i2c/busses/i2c-at91.c
-> @@ -518,8 +518,16 @@ static irqreturn_t atmel_twi_interrupt(int irq, 
-> void *dev_id)
->           * the RXRDY interrupt first in order to not keep garbage data 
-> in the
->           * Receive Holding Register for the next transfer.
->           */
-> -       if (irqstatus & AT91_TWI_RXRDY)
-> -               at91_twi_read_next_byte(dev);
-> +       if (irqstatus & AT91_TWI_RXRDY) {
-> +               /*
-> +                * Read all available bytes at once by polling RXRDY 
-> usable w/
-> +                * and w/o FIFO. With FIFO enabled we could also read 
-> RXFL and
-> +                * avoid polling RXRDY.
-> +                */
-> +               do {
-> +                       at91_twi_read_next_byte(dev);
-> +               } while (at91_twi_read(dev, AT91_TWI_SR) & AT91_TWI_RXRDY);
-> +       }
-> 
-> 
-> In my opinion having a do/while with an exit condition relying solely on 
-> a bit read from hardware is unacceptable in IRQ context - kernel can 
-> hang here.
-> A timeout would be a solution...
+diff --git a/Documentation/devicetree/bindings/arm/arm-boards b/Documentation/devicetree/bindings/arm/arm-boards
+index b6e810c2781a4ec8..ed51c1f4657c0b26 100644
+--- a/Documentation/devicetree/bindings/arm/arm-boards
++++ b/Documentation/devicetree/bindings/arm/arm-boards
+@@ -199,7 +199,7 @@ The description for the board must include:
+      A detailed description of the bindings used for "psci" nodes is present
+      in the psci.txt file.
+    - a "cpus" node describing the available cores and their associated
+-     "enable-method"s. For more details see cpus.txt file.
++     "enable-method"s. For more details see cpus.yaml file.
+ 
+ Example:
+ 
+-- 
+2.17.1
 
-You're right with a faulty hardware it can lead to disaster. As you
-mentionned issues with this patch, the end of loop condition is not good
-as it can stay true indefinitely.
-
-For sure a timeout is a solution but its value can be controversial.
-Maybe there is a better combination of flags to check in the status
-register. I'll see this point too.
-
-Regards
-
-Ludovic
-
-> 
-> For me, reverting this patch solves hanging issues.
-> 
-> Hope this helps,
-> 
-> Eugen
-> 
-> > 
-> > Cheers,
-> > Raag
-> > 
-> >>
-> >> Regards
-> >>
-> >> Ludovic
-> >>
-> >>>
-> >>> Cheers,
-> >>> Raag
-> >>>
-> >>>>
-> >>>>>
-> >>>>> Signed-off-by: Raag Jadav <raagjadav@gmail.com>
-> >>>>> ---
-> >>>>>   drivers/i2c/busses/i2c-at91.c | 6 +++++-
-> >>>>>   1 file changed, 5 insertions(+), 1 deletion(-)
-> >>>>>
-> >>>>> diff --git a/drivers/i2c/busses/i2c-at91.c b/drivers/i2c/busses/i2c-at91.c
-> >>>>> index 3f3e8b3..b2f5fdb 100644
-> >>>>> --- a/drivers/i2c/busses/i2c-at91.c
-> >>>>> +++ b/drivers/i2c/busses/i2c-at91.c
-> >>>>> @@ -72,6 +72,7 @@
-> >>>>>   #define	AT91_TWI_TXCOMP		BIT(0)	/* Transmission Complete */
-> >>>>>   #define	AT91_TWI_RXRDY		BIT(1)	/* Receive Holding Register Ready */
-> >>>>>   #define	AT91_TWI_TXRDY		BIT(2)	/* Transmit Holding Register Ready */
-> >>>>> +#define	AT91_TWI_SVREAD		BIT(3)	/* Slave Read */
-> >>>>>   #define	AT91_TWI_OVRE		BIT(6)	/* Overrun Error */
-> >>>>>   #define	AT91_TWI_UNRE		BIT(7)	/* Underrun Error */
-> >>>>>   #define	AT91_TWI_NACK		BIT(8)	/* Not Acknowledged */
-> >>>>> @@ -571,7 +572,10 @@ static irqreturn_t atmel_twi_interrupt(int irq, void *dev_id)
-> >>>>>   		at91_disable_twi_interrupts(dev);
-> >>>>>   		complete(&dev->cmd_complete);
-> >>>>>   	} else if (irqstatus & AT91_TWI_TXRDY) {
-> >>>>> -		at91_twi_write_next_byte(dev);
-> >>>>> +		if ((status & AT91_TWI_SVREAD) && (dev->buf_len == 0))
-> >>>>> +			at91_twi_write(dev, AT91_TWI_IDR, AT91_TWI_TXRDY);
-> >>>>> +		else
-> >>>>> +			at91_twi_write_next_byte(dev);
-> >>>>>   	}
-> >>>>>   
-> >>>>>   	/* catch error flags */
-> >>>>> -- 
-> >>>>> 2.7.4
-> >>>>>
-> >>>>>
-> >>>
-> >>> _______________________________________________
-> >>> linux-arm-kernel mailing list
-> >>> linux-arm-kernel@lists.infradead.org
-> >>> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> >>>
-> > 
-> > _______________________________________________
-> > linux-arm-kernel mailing list
-> > linux-arm-kernel@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> > 
-> > 
 
 _______________________________________________
 linux-arm-kernel mailing list
