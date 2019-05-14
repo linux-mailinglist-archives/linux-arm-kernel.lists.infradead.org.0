@@ -2,89 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E949D1CC63
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 18:02:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DD681CC66
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 18:02:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=bJgQvjqHZOE8/EN55e+dVG0Ob14bflvA/l3efsIPh+g=; b=oYu
-	rPabMXjATtmi5YZI45E6lZ3ZPPonkFNQakAV5yoaLDnth9sntWkZN8tVBFVbkUCtrG0iQfTN+EVGD
-	bAlzHpDAX/rWvTW6EwYkgOUTEThRkpNSiAiwhyxLnQif/ZSfFsN0iijxWqCWm5iAGhugOvS7Uwxtx
-	azcQF4baKHryyN49fe0qJJyI5Dfh1UAaMyhhTG/u/oale5WzjdwyEUL6D9+ufJ9Qn0yvaUYmxF+L4
-	VlmozP3oTkr7CmN5rJoypPXE9ZOsGw6iVLzcl8gmA2+ea5U39+6tbZEgaSb5LQh+cTA04hMGiuU82
-	ftsbFOn+TTTf9pbb1A8pvUPnTZJBxEw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	In-Reply-To:List-Owner; bh=/0JLX1JcBo25iWbIlOEUFc7UFEu5JUV+JIyzYUZmj+A=; b=YE
+	xyCvq5MHeyYA11ugSSLqAAU67bNn0Ct71nUWEh6OeELwX5FPihX0Or/c56KcadHZ1scmKo3J3tCOY
+	Ub8qaUZPl+3+dzfkJUuNMY6NnxtgHr5MPFQmat90bL1Qq20y7kYA41ld91XnIqgSyGg+5ZZgMceOP
+	8RqOee5FrtCcr7bWwYrgFbpYBnBWxW7g9k1Qe+9CvbZGpcPKCGdSCs1qOXVojUDXRpJz72RhgPvia
+	ntIJ6QEs4z/alWzBnW2x18vvMKw7MFJyVl+J6t/o+M/VAuy5opwdjzu3NScoi7kYGHeIuN+kM7mgA
+	7JQPOvBwN2qwRH1tjPzxblLbsViUE0jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQZsk-0000Ol-3z; Tue, 14 May 2019 16:02:22 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1hQZtI-0000fL-11; Tue, 14 May 2019 16:02:56 +0000
+Received: from verein.lst.de ([213.95.11.211] helo=newverein.lst.de)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQZsd-0000OC-F8; Tue, 14 May 2019 16:02:16 +0000
-Received: by mail-ot1-x344.google.com with SMTP id r7so11250928otn.6;
- Tue, 14 May 2019 09:02:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=fSlgTFf8KtNta0rz8mLnXIN4jROdf8xysWOhaMNIqEU=;
- b=L9fBlpGqioNOmCkpRrttVJlWrp0wN+k9YLzpMu3TCyxWwKwuMOSUIxOcQoirY8iWBn
- viwTYQJ/CEYk91rd87TzX91kvczkZ/gVat7F1NLQdS7yC9JLlHMb4g15VavvKWeRzTiU
- aPPZc/OQtewTBuA4NmxgyV8U45sViu1PJD6egI+K1mOD77SlGApQ14wz3se/bbBZtvxT
- GTLp+pc1O1mcvhyqRhtSBUzjkJ1RUGl/5nKLRflIpGfRvMqVNmh1n3wd4BVU0COJyw1l
- R2f7JjTS2SRmbMrQmE3YINq/uKjmt3odgA2Sh9JCE+T/Qa2zF/TOczLow0J1feB2aMjq
- 5/5A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=fSlgTFf8KtNta0rz8mLnXIN4jROdf8xysWOhaMNIqEU=;
- b=mnLm7dI31UchP++xOnnGjGabD3oKXuyNmt0iDSHl8ijlg4JocuK2mq2NLMYQEDQuf8
- Kv4UO58eohUNHc+0TuSIKjTaRswzG6ADxEQBo91DvsYTD5PIH+5F/ZFATlsp0IKvsJx/
- R5nt/suhffpfmG9njAEe6Kg6diAuKDU+scT7HJj/qtGl47RKda558DGHCaw4JjUugt5l
- kWGU4o3SmzD4QIMng8fGh5sidXdBmWCGncCWSRn3jFVVatSNilAxmuKCa/mTBurnRT2e
- blNDZtS+FBobPtipgN8s8aaOJcAk2fQ5mx/9XLYCC78T3o03S5x8rLkSo//1xuCsy2o3
- zeag==
-X-Gm-Message-State: APjAAAWyIN3MV8nXY0F9F5WLOKWAAt/qjHuGkHIomN/ysv++22atWPHn
- Rk7Xm/4+2t+Q82Px1b2uTm4=
-X-Google-Smtp-Source: APXvYqwss0BQEuHxOP2EKdRXu7b8gJYo7DvkW8SNjwnJuhVOSUneVcogIiRmPHKex4Qqqzc22fHN7A==
-X-Received: by 2002:a05:6830:1097:: with SMTP id
- y23mr188736oto.108.1557849733699; 
- Tue, 14 May 2019 09:02:13 -0700 (PDT)
-Received: from madhuleo ([2605:6000:1023:606d:fc47:9acf:eddd:8a77])
- by smtp.gmail.com with ESMTPSA id m20sm6498783otq.30.2019.05.14.09.02.12
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 14 May 2019 09:02:12 -0700 (PDT)
-From: Madhumitha Prabakaran <madhumithabiw@gmail.com>
-To: eric@anholt.net, stefan.wahren@i2se.com, gregkh@linuxfoundation.org,
- f.fainelli@gmail.com, rjui@broadcom.com, sbranden@broadcom.com,
- bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- devel@driverdev.osuosl.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] Staging: vc04_services: Fix kernel type 'u32' over 'uint32_t'
-Date: Tue, 14 May 2019 11:02:07 -0500
-Message-Id: <20190514160207.11573-1-madhumithabiw@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ id 1hQZtA-0000el-CA
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 16:02:49 +0000
+Received: by newverein.lst.de (Postfix, from userid 2005)
+ id AB0D368B20; Tue, 14 May 2019 18:02:25 +0200 (CEST)
+From: Torsten Duwe <duwe@lst.de>
+To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
+ Archit Taneja <architt@codeaurora.org>,
+ Andrzej Hajda <a.hajda@samsung.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Icenowy Zheng <icenowy@aosc.io>, Sean Paul <seanpaul@chromium.org>,
+ Vasily Khoruzhick <anarsoul@gmail.com>, Harald Geyer <harald@ccbib.org>
+Subject: [PATCH 1/4] arm64: DTS: allwinner: a64: Add pinmux for RGB666 LCD
+References: <20190514155911.6C0AC68B05@newverein.lst.de>
+Message-Id: <20190514160225.AB0D368B20@newverein.lst.de>
+Date: Tue, 14 May 2019 18:02:25 +0200 (CEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_090215_509899_E11E48D3 
-X-CRM114-Status: UNSURE (   9.40  )
+X-CRM114-CacheID: sfid-20190514_090248_557001_582CA9AB 
+X-CRM114-Status: UNSURE (   8.78  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (madhumithabiw[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ no trust [213.95.11.211 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,46 +61,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Madhumitha Prabakaran <madhumithabiw@gmail.com>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix the warning issued by checkpatch
-Prefer kernel type 'u32' over 'uint32_t'
+From: Icenowy Zheng <icenowy@aosc.io>
 
-Signed-off-by: Madhumitha Prabakaran <madhumithabiw@gmail.com>
+Allwinner A64's TCON0 can output RGB666 LCD signal.
+
+Add its pinmux.
+
+Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
+Signed-off-by: Torsten Duwe <duwe@suse.de>
 ---
- drivers/staging/vc04_services/bcm2835-camera/mmal-msg.h | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/staging/vc04_services/bcm2835-camera/mmal-msg.h b/drivers/staging/vc04_services/bcm2835-camera/mmal-msg.h
-index d1c57edbe2b8..90793c9f9a0f 100644
---- a/drivers/staging/vc04_services/bcm2835-camera/mmal-msg.h
-+++ b/drivers/staging/vc04_services/bcm2835-camera/mmal-msg.h
-@@ -309,7 +309,7 @@ struct mmal_msg_port_parameter_set {
- 	u32 port_handle;      /* port */
- 	u32 id;     /* Parameter ID  */
- 	u32 size;      /* Parameter size */
--	uint32_t value[MMAL_WORKER_PORT_PARAMETER_SPACE];
-+	u32 value[MMAL_WORKER_PORT_PARAMETER_SPACE];
- };
- 
- struct mmal_msg_port_parameter_set_reply {
-@@ -331,7 +331,7 @@ struct mmal_msg_port_parameter_get_reply {
- 	u32 status;           /* Status of mmal_port_parameter_get call */
- 	u32 id;     /* Parameter ID  */
- 	u32 size;      /* Parameter size */
--	uint32_t value[MMAL_WORKER_PORT_PARAMETER_SPACE];
-+	u32 value[MMAL_WORKER_PORT_PARAMETER_SPACE];
- };
- 
- /* event messages */
--- 
-2.17.1
+originally: patchwork.kernel.org/patch/10814179
 
+Almost trivial, and obviously correct.
+I added the /omit-if-no-ref/.
+
+---
+ arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+index 2abb335145a6..a8bbee84e7da 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+@@ -559,6 +559,16 @@
+ 				function = "i2c1";
+ 			};
+
++			/omit-if-no-ref/
++			lcd_rgb666_pins: lcd-rgb666 {
++				pins = "PD0", "PD1", "PD2", "PD3", "PD4",
++				       "PD5", "PD6", "PD7", "PD8", "PD9",
++				       "PD10", "PD11", "PD12", "PD13",
++				       "PD14", "PD15", "PD16", "PD17",
++				       "PD18", "PD19", "PD20", "PD21";
++				function = "lcd0";
++			};
++
+ 			mmc0_pins: mmc0-pins {
+ 				pins = "PF0", "PF1", "PF2", "PF3",
+ 				       "PF4", "PF5";
 
 _______________________________________________
 linux-arm-kernel mailing list
