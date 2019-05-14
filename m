@@ -2,103 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE5AD1C191
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 06:51:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FA511C19C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 06:57:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tip2hf4eTRMx3KP+yR4xbJTUQ9JTdqCMYe1kmYx248E=; b=LjFg5mL4v4rdz0
-	ahiibVl5FCH4nYDUEqdknCy4MHScEHe1YY9rvvlGegjrYjHRuU9cYKIVk8FmTqncuRE4G6TrBbJuy
-	reC8PgLokUywMfC56D072QznMyE4VhLBSyRxxQIeuXh/BEoUd8aTnCgxpOYXk+jUhSpMQ/wqapVuQ
-	kKp1XFAqs2g60Kv2hgiAkJz5+kDlLKeG+dj2UrLFC8L466pbe40iM/+Z4lLOE3RRaw/yaMeKLrNtR
-	Rj/Dr0Wp5E2PacCAjKsDZ/Fg3SOFGwqUlAwRYwxgIz8uZMvd2AfIdurnXGYaHS58NqiQd6Xr88ZSv
-	8WwBYCtlTfayunwSDRmg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=bz37pDlKJmlD2PNCCykK1roWZOssF3PeiSDxAyIz+1U=; b=IW+NVnOyUXPdHf
+	n8NE5NH7pT3ezPIru6wWOHlsBZ8jxmy3PS7lIFUQw10DafUNKgQY0pPdmrW+QeGEHB5x4Y5kjGTc6
+	jqtGy9RfmP+sKG5hRK6fOnIFS8/4O7I6baxPbm13poe1tFNoc3NhGEtWzekF8OVMjPcGR+9hIe3po
+	eW8YYO1LBivaFF6axDuYjVBPaMf6al0a/HpY488YnlrsikUB5MTQapd9ucnpBKoOZK9SDeKCu57OM
+	jaoSAAInXakridVDirnJZtCVtf5cm6Mc6WWrBH48+9wjzO8Nqx+caukdIYVFi3AdQBykRhk/oOyLG
+	VyZ5gItN1kSHI6X4ZT9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQPPr-00042P-2E; Tue, 14 May 2019 04:51:51 +0000
-Received: from mail-eopbgr720079.outbound.protection.outlook.com
- ([40.107.72.79] helo=NAM05-CO1-obe.outbound.protection.outlook.com)
+	id 1hQPVK-0005cK-Io; Tue, 14 May 2019 04:57:30 +0000
+Received: from mail-eopbgr10043.outbound.protection.outlook.com ([40.107.1.43]
+ helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQPPi-00041x-Br
- for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 04:51:44 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=infinera.com;
- s=selector2;
+ id 1hQPVC-0005be-NA
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 04:57:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ahY3PwDdvXvvZ3EwGRlFE5BFyjFOgSVg0fQHVXgQfc4=;
- b=ZMoyB01O2yYs7tKRHoQDbos461ACh2JQZZ6EJHApFP5EF0cVOmpy5soxX7NePP53R1/4gqai40ieFLp1DJhA2RC8SCd1Uriq+/Fttt4LntvJ+En81Lrp7UiZeX9u+yzQn+Ox3QBeKp02kOs/9YZYUMJJh8H/sGNJEDLIe51Oo7Q=
-Received: from BYAPR10MB3541.namprd10.prod.outlook.com (20.179.62.206) by
- BYAPR10MB2648.namprd10.prod.outlook.com (52.135.217.23) with Microsoft SMTP
+ bh=BqZZaUK8JGU40021vzGXy6vggv81RjTCBm81fC9w7+g=;
+ b=ftwWKH/6Un+k0q0cohA7YvMzs9rKVno9XZ15z+Z7fR0CZhPm/7stdlRoCqkpJy4pJRIDig/w9UBd5wBtRkVO6wEA+Bn/Ba+f/Qtz4Q0PUbwv6T6a9jCEsC9hngfEglvCwxb9v4jzzd5GVzL1iwsUsO2wd1h2PDXYRVum/c3t2DE=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3722.eurprd04.prod.outlook.com (52.134.70.141) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1878.22; Tue, 14 May 2019 04:51:36 +0000
-Received: from BYAPR10MB3541.namprd10.prod.outlook.com
- ([fe80::bda3:184c:7f59:f7ab]) by BYAPR10MB3541.namprd10.prod.outlook.com
- ([fe80::bda3:184c:7f59:f7ab%7]) with mapi id 15.20.1878.024; Tue, 14 May 2019
- 04:51:35 +0000
-From: Joakim Tjernlund <Joakim.Tjernlund@infinera.com>
-To: "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "linux-arm-kernel@lists.infradead.org"
+ 15.20.1878.25; Tue, 14 May 2019 04:57:17 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::d035:3bd0:a56a:189d]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::d035:3bd0:a56a:189d%2]) with mapi id 15.20.1900.010; Tue, 14 May 2019
+ 04:57:17 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
+ <mark.rutland@arm.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
+ <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>, Aisheng
+ Dong <aisheng.dong@nxp.com>, Daniel Baluta <daniel.baluta@nxp.com>, Peng Fan
+ <peng.fan@nxp.com>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
  <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>, "leoyang.li@nxp.com" <leoyang.li@nxp.com>,
- "roy.pledge@nxp.com" <roy.pledge@nxp.com>
-Subject: Re: [PATCH v1 4/8] soc/fsl/qbman: Use index when accessing device
- tree properties
-Thread-Topic: [PATCH v1 4/8] soc/fsl/qbman: Use index when accessing device
- tree properties
-Thread-Index: AQHVCadY7pF1Pe9lUE2omDuEjFRsAaZqDhiA
-Date: Tue, 14 May 2019 04:51:35 +0000
-Message-ID: <6c97a9105fe35d2afdcd2e481d109521c7acb235.camel@infinera.com>
-References: <1557763756-24118-1-git-send-email-roy.pledge@nxp.com>
- <1557763756-24118-5-git-send-email-roy.pledge@nxp.com>
- <1afd837287cebccfc1dd68365870d0f5d1cf27f7.camel@infinera.com>
- <DB6PR0402MB27278B23001A8965AE493CE3860F0@DB6PR0402MB2727.eurprd04.prod.outlook.com>
-In-Reply-To: <DB6PR0402MB27278B23001A8965AE493CE3860F0@DB6PR0402MB2727.eurprd04.prod.outlook.com>
-Accept-Language: en-GB, en-US
+ <linux-kernel@vger.kernel.org>
+Subject: [PATCH] arm64: dts: imx8qxp: Add gpio alias
+Thread-Topic: [PATCH] arm64: dts: imx8qxp: Add gpio alias
+Thread-Index: AQHVChGBhvqur/npCUCFDgMod6JPUg==
+Date: Tue, 14 May 2019 04:57:17 +0000
+Message-ID: <1557809536-749-1-git-send-email-Anson.Huang@nxp.com>
+Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.7.4
+x-clientproxiedby: HK2PR02CA0168.apcprd02.prod.outlook.com
+ (2603:1096:201:1f::28) To DB3PR0402MB3916.eurprd04.prod.outlook.com
+ (2603:10a6:8:10::18)
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Joakim.Tjernlund@infinera.com; 
-x-originating-ip: [88.131.87.201]
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.66]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 686b4a25-3963-426e-adf7-08d6d827d80d
+x-ms-office365-filtering-correlation-id: 79b7cc21-1006-45d1-b4ae-08d6d828a33f
+x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(2017052603328)(7193020);
- SRVR:BYAPR10MB2648; 
-x-ms-traffictypediagnostic: BYAPR10MB2648:
-x-microsoft-antispam-prvs: <BYAPR10MB26482D13BAFCC20A2997174BF4080@BYAPR10MB2648.namprd10.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:DB3PR0402MB3722; 
+x-ms-traffictypediagnostic: DB3PR0402MB3722:
+x-microsoft-antispam-prvs: <DB3PR0402MB3722ECA51717CAF4450D4B68F5080@DB3PR0402MB3722.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:843;
 x-forefront-prvs: 0037FD6480
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(376002)(39860400002)(346002)(396003)(366004)(189003)(199004)(486006)(2201001)(53936002)(66476007)(110136005)(446003)(54906003)(11346002)(14454004)(66066001)(66446008)(118296001)(8676002)(66556008)(2616005)(91956017)(73956011)(76116006)(476003)(66946007)(64756008)(86362001)(5660300002)(6512007)(2906002)(6436002)(36756003)(229853002)(53546011)(71190400001)(102836004)(71200400001)(186003)(5024004)(76176011)(256004)(8936002)(26005)(81166006)(14444005)(7736002)(6246003)(99286004)(316002)(478600001)(305945005)(25786009)(68736007)(4326008)(2501003)(6506007)(6486002)(72206003)(6116002)(3846002)(81156014);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR10MB2648;
- H:BYAPR10MB3541.namprd10.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ SFS:(10009020)(136003)(366004)(396003)(376002)(39860400002)(346002)(189003)(199004)(52116002)(68736007)(305945005)(316002)(3846002)(6116002)(102836004)(6486002)(8676002)(4326008)(86362001)(6436002)(26005)(2201001)(186003)(71190400001)(6512007)(386003)(6506007)(50226002)(53936002)(5660300002)(71200400001)(110136005)(36756003)(66066001)(8936002)(256004)(2501003)(478600001)(486006)(25786009)(66946007)(66476007)(73956011)(66556008)(81166006)(81156014)(2616005)(64756008)(4744005)(66446008)(99286004)(476003)(2906002)(14454004)(7736002)(32563001)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3722;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: infinera.com does not designate
+received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 4PRavAMl7Zjm13s/FrQqJX8g8RklWNI5dUJIyjva8xPZVYu94PyTLe5txwL+8DTjzrL/jWG7BPQXam2qAsnN0aZ4pzTyqHl9xHuiYYLl6Gb7bNCcKPcUYXA1zqWJ3udoh6YoJuQsIW+sBuwE+k286mmhRzTpSdBAARtKubYS46lLziZqFC3+hjKzdlyydeyT8gz5znlWHNwc/d9LEjAf/dM8a6VapntTeDyNt3aOOYPjfAAG5ihcG79jzQHUIwagiTypDhrUZqQqFGSsAVBF2uWcO+CxtmutVEge5bznGYH56uCvtBc2VOWFqwfUwaRLH6ZYN0l7bVyWufPniGE+GTE8ypnWi56f3zAs2ALhokyzthWz2iM7K7GSSF/1YS5BN9rtcucJcHyOkjFS7/gv1I7Crhn+4zxCIKM0k5DzUtY=
-Content-ID: <1FCAA9E0AEB788468E4FCE14DAE4DCAD@namprd10.prod.outlook.com>
+x-microsoft-antispam-message-info: 4V8l0N/tg7DNLYiE7mVV/BrQS6P/XfjaCRPKEiCPUPIx6Hovr/uO6zTZmIKJObRWKk1u6l/J6hRz7lx4zkIQb99//+nW/ndTDLSR7OqI7hxlVN+8RD2O9iESlqnULLYFQjfGcNk+Egf31Z2CTGCQu8aQlRjAHwIpsVJlN/jj1rGcTb6i5u5VXvl6ZZPuX/B6hLdnrF+Bm8IPn+RDNjMFK1cKaLcmHYBc2rA4WPCLE7kjIPR/+tsER3QflsjF1RDqPzhoAq0USPwywlRFmKwm4AcnJeJ7+1ZaowNAIvH2qe9pPkv6N9FdakspsPQTQkP8YPjpruI6jVopCMprY9xSkWaKaUhyf99Gn5U7eVsvq7razdVvxWQekzsySwoP+RON91OfNJCJyzu4Wy6tN5QDlvlWInq7SWbBM5RgzjzvmGs=
+Content-ID: <14512C07EAFE424A98EC3DACC8F6E91C@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-X-OriginatorOrg: infinera.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 686b4a25-3963-426e-adf7-08d6d827d80d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 14 May 2019 04:51:35.6904 (UTC)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 79b7cc21-1006-45d1-b4ae-08d6d828a33f
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 May 2019 04:57:17.5571 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 285643de-5f5b-4b03-a153-0ae2dc8aaf77
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR10MB2648
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3722
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_215142_502035_F4828FE8 
-X-CRM114-Status: GOOD (  22.20  )
+X-CRM114-CacheID: sfid-20190513_215722_862966_3105915A 
+X-CRM114-Status: GOOD (  10.52  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.72.79 listed in list.dnswl.org]
+ no trust [40.107.1.43 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -119,52 +121,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "laurentiu.tudor@nxp.com" <laurentiu.tudor@nxp.com>,
- "madalin.bucur@nxp.com" <madalin.bucur@nxp.com>
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2019-05-13 at 17:40 +0000, Roy Pledge wrote:
-> CAUTION: This email originated from outside of the organization. Do not click links or open attachments unless you recognize the sender and know the content is safe.
-> 
-> 
-> On 5/13/2019 12:40 PM, Joakim Tjernlund wrote:
-> > On Mon, 2019-05-13 at 16:09 +0000, Roy Pledge wrote:
-> > > The index value should be passed to the of_parse_phandle()
-> > > function to ensure the correct property is read.
-> > Is this a bug fix? Maybe for stable too?
-> > 
-> >  Jocke
-> Yes this could go to stable.  I will include stable@vger.kernel.org when
-> I send the next version.
+Add i.MX8QXP GPIO alias for kernel GPIO driver usage.
 
-I think you need to send this patch separately then. The whole series cannot go to stable.
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+ arch/arm64/boot/dts/freescale/imx8qxp.dtsi | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
- Jocke
+diff --git a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
+index b17c22e..923705e 100644
+--- a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
+@@ -22,6 +22,14 @@
+ 		mmc2 = &usdhc3;
+ 		serial0 = &adma_lpuart0;
+ 		mu1 = &lsio_mu1;
++		gpio0 = &lsio_gpio0;
++		gpio1 = &lsio_gpio1;
++		gpio2 = &lsio_gpio2;
++		gpio3 = &lsio_gpio3;
++		gpio4 = &lsio_gpio4;
++		gpio5 = &lsio_gpio5;
++		gpio6 = &lsio_gpio6;
++		gpio7 = &lsio_gpio7;
+ 	};
+ 
+ 	cpus {
+-- 
+2.7.4
 
-> > > Signed-off-by: Roy Pledge <roy.pledge@nxp.com>
-> > > ---
-> > >  drivers/soc/fsl/qbman/dpaa_sys.c | 2 +-
-> > >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > > 
-> > > diff --git a/drivers/soc/fsl/qbman/dpaa_sys.c b/drivers/soc/fsl/qbman/dpaa_sys.c
-> > > index 3e0a7f3..0b901a8 100644
-> > > --- a/drivers/soc/fsl/qbman/dpaa_sys.c
-> > > +++ b/drivers/soc/fsl/qbman/dpaa_sys.c
-> > > @@ -49,7 +49,7 @@ int qbman_init_private_mem(struct device *dev, int idx, dma_addr_t *addr,
-> > >                         idx, ret);
-> > >                 return -ENODEV;
-> > >         }
-> > > -       mem_node = of_parse_phandle(dev->of_node, "memory-region", 0);
-> > > +       mem_node = of_parse_phandle(dev->of_node, "memory-region", idx);
-> > >         if (mem_node) {
-> > >                 ret = of_property_read_u64(mem_node, "size", &size64);
-> > >                 if (ret) {
-> > > --
-> > > 2.7.4
-> > > 
 
 _______________________________________________
 linux-arm-kernel mailing list
