@@ -2,43 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA5641C5D3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 11:16:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74A591C5E2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 11:20:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wmLiItEDGXL0J48KjbFIbHS4oWrPF9YjYEejXFd1fac=; b=jDTRDeTWRIVOPt
-	dUomldNsiGSfyeG3VSAJ0eSskT5JWfklKkRPHEsTDMVKMXW9ofS4J++nKoFd2omtfMyMFcxlJVYmX
-	IFWaSrWY9Cx8pyPdxYVCx6v0FMnebLa22X5hhFrZxoEJ3Z6Wp9JfIR+NBLvE75f1gR1gM0tzt7DfV
-	yR8LGGm5jc91xVwf2YA55RN1+8FOH1I5NsV9F733c705RZS64k6Y1q+vYvzZ0oqSEVmesmXOM2QgZ
-	UNEdwoxXL2hhjoJnEVi9umlej6blMCPIii0PfSB+8RQiNz48QEvwB/0JNo2ee3/gJJTyl9VsgBaXo
-	t8vbAAkpC4BI20YDUBxA==;
+	List-Owner; bh=7vW8i1Kqfxq2FhFUXYEAZC6n6D8ku6vWwK3xbJ3MzEs=; b=cUGF2sawtApdGN
+	chOnxjob+LNhuxBjv0jz8u/6MNy79h6SH5HroXZGrl/XW7rNqY5M8+GdJ1IPVC0br7msKZI5zzqdV
+	FKGx5ZrotJ+zXnCq8y3FemtG76YFrZU/Nm+dv3MaiREU2R3e0DPIyrpBkeANwNoT2lcJt5uiBmV/K
+	kF73MIVsbXt2DorWVm96jElcV8VjHBgAJYEGzf6c69cBXRP3NuxEcPtmmvIg0Pb3nkrHvOYCXut6t
+	ilBEqt/JBYiquotk2bbEhcFlNTTFiw80Am/DJEf1VM7R5C0hfpZQAdmh2JBNMIbCsaw7LVFYijITP
+	pHko6vJB8JRRXq/YB+Uw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQTY3-00079T-70; Tue, 14 May 2019 09:16:35 +0000
+	id 1hQTbz-0000j2-AI; Tue, 14 May 2019 09:20:39 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQTXr-00073B-DE
- for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 09:16:26 +0000
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
+ id 1hQTbp-0000iF-Vy
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 09:20:31 +0000
+Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
+ [10.5.11.15])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id BDFCB308FC22;
- Tue, 14 May 2019 09:16:22 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id 6ECD95945C;
+ Tue, 14 May 2019 09:20:29 +0000 (UTC)
 Received: from [10.36.117.118] (ovpn-117-118.ams2.redhat.com [10.36.117.118])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 2D8555D964;
- Tue, 14 May 2019 09:16:18 +0000 (UTC)
-Subject: Re: [PATCH V3 2/4] arm64/mm: Hold memory hotplug lock while walking
- for kernel page table dump
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 045625D6A6;
+ Tue, 14 May 2019 09:20:25 +0000 (UTC)
+Subject: Re: [PATCH V3 3/4] arm64/mm: Inhibit huge-vmap with ptdump
 To: Anshuman Khandual <anshuman.khandual@arm.com>,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  akpm@linux-foundation.org, catalin.marinas@arm.com, will.deacon@arm.com
 References: <1557824407-19092-1-git-send-email-anshuman.khandual@arm.com>
- <1557824407-19092-3-git-send-email-anshuman.khandual@arm.com>
+ <1557824407-19092-4-git-send-email-anshuman.khandual@arm.com>
 From: David Hildenbrand <david@redhat.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
@@ -85,19 +84,19 @@ Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
  +8Umfre0Xt4713VxMygW0PnQt5aSQdMD58jHFxTk092mU+yIHj5LeYgvwSgZN4airXk5yRXl
  SE+xAvmumFBY
 Organization: Red Hat GmbH
-Message-ID: <fa03a392-a764-8935-15a9-05cc5ea0230d@redhat.com>
-Date: Tue, 14 May 2019 11:16:18 +0200
+Message-ID: <ad42eae0-29e1-8f09-a9ce-c36d2fd2e8e7@redhat.com>
+Date: Tue, 14 May 2019 11:20:25 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <1557824407-19092-3-git-send-email-anshuman.khandual@arm.com>
+In-Reply-To: <1557824407-19092-4-git-send-email-anshuman.khandual@arm.com>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
 X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.43]); Tue, 14 May 2019 09:16:22 +0000 (UTC)
+ (mx1.redhat.com [10.5.110.39]); Tue, 14 May 2019 09:20:29 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_021623_866423_97480C2B 
-X-CRM114-Status: GOOD (  24.45  )
+X-CRM114-CacheID: sfid-20190514_022030_064463_F2F2A3AB 
+X-CRM114-Status: GOOD (  28.99  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -128,48 +127,79 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 14.05.19 11:00, Anshuman Khandual wrote:
-> The arm64 pagetable dump code can race with concurrent modification of the
-> kernel page tables. When a leaf entries are modified concurrently, the dump
-> code may log stale or inconsistent information for a VA range, but this is
-> otherwise not harmful.
+> From: Mark Rutland <mark.rutland@arm.com>
 > 
-> When intermediate levels of table are freed, the dump code will continue to
-> use memory which has been freed and potentially reallocated for another
-> purpose. In such cases, the dump code may dereference bogus addressses,
-> leading to a number of potential problems.
+> The arm64 ptdump code can race with concurrent modification of the
+> kernel page tables. At the time this was added, this was sound as:
 > 
-> Intermediate levels of table may by freed during memory hot-remove, or when
-> installing a huge mapping in the vmalloc region. To avoid racing with these
-> cases, take the memory hotplug lock when walking the kernel page table.
+> * Modifications to leaf entries could result in stale information being
+>   logged, but would not result in a functional problem.
 > 
+> * Boot time modifications to non-leaf entries (e.g. freeing of initmem)
+>   were performed when the ptdump code cannot be invoked.
+> 
+> * At runtime, modifications to non-leaf entries only occurred in the
+>   vmalloc region, and these were strictly additive, as intermediate
+>   entries were never freed.
+> 
+> However, since commit:
+> 
+>   commit 324420bf91f6 ("arm64: add support for ioremap() block mappings")
+> 
+> ... it has been possible to create huge mappings in the vmalloc area at
+> runtime, and as part of this existing intermediate levels of table my be
+> removed and freed.
+> 
+> It's possible for the ptdump code to race with this, and continue to
+> walk tables which have been freed (and potentially poisoned or
+> reallocated). As a result of this, the ptdump code may dereference bogus
+> addresses, which could be fatal.
+> 
+> Since huge-vmap is a TLB and memory optimization, we can disable it when
+> the runtime ptdump code is in use to avoid this problem.
+
+I wonder if there is another way to protect from such a race happening.
+(IOW, a lock). But as you say, it's a debug feature, so this is an easy fix.
+
+Looks good to me (with limited arm64 code insight :) )
+
+> 
+> Fixes: 324420bf91f60582 ("arm64: add support for ioremap() block mappings")
+> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
 > Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will.deacon@arm.com>
 > ---
->  arch/arm64/mm/ptdump_debugfs.c | 3 +++
->  1 file changed, 3 insertions(+)
+>  arch/arm64/mm/mmu.c | 11 ++++++++---
+>  1 file changed, 8 insertions(+), 3 deletions(-)
 > 
-> diff --git a/arch/arm64/mm/ptdump_debugfs.c b/arch/arm64/mm/ptdump_debugfs.c
-> index 064163f..80171d1 100644
-> --- a/arch/arm64/mm/ptdump_debugfs.c
-> +++ b/arch/arm64/mm/ptdump_debugfs.c
-> @@ -7,7 +7,10 @@
->  static int ptdump_show(struct seq_file *m, void *v)
+> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+> index ef82312..37a902c 100644
+> --- a/arch/arm64/mm/mmu.c
+> +++ b/arch/arm64/mm/mmu.c
+> @@ -955,13 +955,18 @@ void *__init fixmap_remap_fdt(phys_addr_t dt_phys)
+>  
+>  int __init arch_ioremap_pud_supported(void)
 >  {
->  	struct ptdump_info *info = m->private;
-> +
-> +	get_online_mems();
-
-The name of that function is somewhat stale now, it used to refer to
-online/offlining of pages only. The underlying lock is the
-mem_hotplug_lock. Maybe we should rename that function some day ...
-
->  	ptdump_walk_pgd(m, info);
-> +	put_online_mems();
->  	return 0;
-
-Acked-by: David Hildenbrand <david@redhat.com>
-
+> -	/* only 4k granule supports level 1 block mappings */
+> -	return IS_ENABLED(CONFIG_ARM64_4K_PAGES);
+> +	/*
+> +	 * Only 4k granule supports level 1 block mappings.
+> +	 * SW table walks can't handle removal of intermediate entries.
+> +	 */
+> +	return IS_ENABLED(CONFIG_ARM64_4K_PAGES) &&
+> +	       !IS_ENABLED(CONFIG_ARM64_PTDUMP_DEBUGFS);
 >  }
->  DEFINE_SHOW_ATTRIBUTE(ptdump);
+>  
+>  int __init arch_ioremap_pmd_supported(void)
+>  {
+> -	return 1;
+> +	/* See arch_ioremap_pud_supported() */
+> +	return !IS_ENABLED(CONFIG_ARM64_PTDUMP_DEBUGFS);
+>  }
+>  
+>  int pud_set_huge(pud_t *pudp, phys_addr_t phys, pgprot_t prot)
 > 
 
 
