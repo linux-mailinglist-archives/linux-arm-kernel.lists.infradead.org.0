@@ -2,83 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B5DA1D01A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 21:41:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C30691D027
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 21:46:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=FrDGJxrPTolm2LmYX4qIhYLKSsSe91euIg3U/Kq3bhg=; b=noDeQ58AFwvCAb+p8mE0GLDZ8B
-	Ym4tDMvkEZ/9/wcTunFrQxYHR+2mirHD4sxX7tVbdv4brv+Rbnff6yX5twRZD+v09gUCeCE6OMZe0
-	ooeD6suBZBQ9vLcCDDn9nn/lkMFG0dHYuLI8jX3lEFcfqudj1IAOX4ITnKCCMmL0WH9a6iGO6iTqM
-	VtvODzsDChOrhWmhN8e7eIQo4mtoXFqZ2bQ02HlgfFRn3nU+eqhP3u3qjfyKI3ipX3mljh99hvBl2
-	8CIxqY8J3eGfZTxLpawVk8bvydwyObl+3hCkin4iOizmSPhQmNTmVyIyWp28pUF5T2ulw/Jp2zLy1
-	hgHNBkrQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qMcsuT9MHFLLdgbeiB6HL6oyfsO8JhB7TkStdKc9RTc=; b=m1JPkekeM3ywgO
+	pRpvfXpNBavNIMBSsJFSMX0sAwlNylsvpqbDZsltiV0mGI5qgCMrPXMZsb2DpflBnnfoSKSWr8Np/
+	khTLdyDC0iAcN/RX7S4GsorX0LlvYnaOXFlJMn5u/FcjSdrVEfFTEuTcEkzGfS2n5a4ESMqHDpJ1/
+	YgvG5GLq4C3+zIlTH0V4R2a4CUlAx/V8iVkrPRnnN/WcAoCv75dVG/HXlzUTD9NdQNavACpcry2fZ
+	TZaAzQYpwpr5/CKLuIw57Z42+8TL8x0BZA1/X3QQfE/T0ZAPRaieJMavlmiaKJFsIhxgW9fORK9HL
+	u3Gzq0F03Gmg++tN3xwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQdIu-0007d8-TA; Tue, 14 May 2019 19:41:36 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hQdNJ-0000uH-Oe; Tue, 14 May 2019 19:46:09 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQdHp-0006KF-4N
- for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 19:40:33 +0000
-Received: by mail-pl1-x642.google.com with SMTP id n8so93213plp.10
+ id 1hQdNC-0000tw-6u
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 19:46:03 +0000
+Received: by mail-ed1-x542.google.com with SMTP id a8so583989edx.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 May 2019 12:40:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Ia/ySUxJkS3+hSIVLq78ZfkCxtyaJMeE+VOuGmqDALw=;
- b=qUgM2GWnBZEb56b7w82k9bjLgD8urRgngidn8AER1w1Gw2/lSjB83lCYdwMaaUHjJn
- djkg5WlBoXvr0H/jLM48sGThCCfdo0ABClOCASoheI1EMgdcC/ZucBK+WBfZyojuqh9l
- 2w80vOvVpIw8LJc6ffk71cR+oSNotsgHsPXdcj2rc2sKgCHkQKYj/WOQHAnGLTWxhMpj
- UsfKdjIxguoVWXYvEFC5KVabKhyQcRru6tr24nw9jTjgs/qEbCKHf3ZTxUwN3gTxeSkl
- 34b+EfoS2O+UHNGwqqjymJwu/0h87Xayy10/zw8JJ6ROcwm6ECDkTIFp5HdSQwS7uEI7
- 9tJA==
+ Tue, 14 May 2019 12:46:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=SNWKhmqL1RfT8Ocb1OCe8VtXVVSNF6ph0Xhv4SOWB40=;
+ b=CvOC26sX0Xespaa+PiqBMpVSVDalmpu07UNwcKEhcgmeP2TDr0wk6JF8RLwrn+q8XC
+ tTzs0QE62dfTI68neDTbRlFyFY08xmW0ApwLtoG9MHfKXaTM9op4nNTlAisylxHhICqs
+ Zn9bOWMTQWRFqK3iuLsX3ufb/cQ8OIaOscTRNoDTMK6SUPK8xlD5hPKhe737Gv5WMP/e
+ 8OYFSvpKd5U5A0a7Z5XGR9K3Vzlps8Dd7wEJNK5oGDkIPOgzbRRGDQKBHp39ynhfOUkj
+ l0bxU5MA6DYnwb8//D2+Cw6tEhpXw8TMIh0ozArYTv8mAz9lJiTsa0Bb6Fjt4rYaf4Mu
+ Yx4w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=Ia/ySUxJkS3+hSIVLq78ZfkCxtyaJMeE+VOuGmqDALw=;
- b=NvXNfK2lAfgUafO0N2uJ4OXWDpIAzyx7Bu4f5b36IERr6bkkGiLU8mXM7Jcj90uLwv
- WCuLT7eurGnj3vXcYZa7obBbr/7CdHwF1NUWGNjZSB/aDSAor8NHbk3aHGuAklCewnIx
- 6I/sxEmC09iBr70PsWldt1hXutGxqlkrTrErKjMhXpBA5tgk8ovbYEDyVqUaIK7dVEbr
- fOSCsrXuYCxlmbKLNOqr6h+FIlSADYKII209kzcW6ON2I79nvit/zpa+X4r0Hli85R0N
- PseWTsgWe/SHaqZ4X/d431+Ga7poExOuRu4QRXmweEgmHwhB5Y2H4n3DpE82iTLochZy
- evpQ==
-X-Gm-Message-State: APjAAAWzQa8jZGRp6QUtDKjn/l7o8XnqYaQS6YPPgg1zatUjAKr3YV5r
- KuF+2ytxkWXfM3Wx0Ko2BGMLbQgued0=
-X-Google-Smtp-Source: APXvYqyF1VnSiyFI3hyzpwKsDCwRgFp6cjiTx8SBby6RvC8Uoul668rWaG0PyrdbWrfTqp5UzSlY4Q==
-X-Received: by 2002:a17:902:5c5:: with SMTP id
- f63mr38408813plf.327.1557862827979; 
- Tue, 14 May 2019 12:40:27 -0700 (PDT)
-Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
- [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id w66sm5791196pfb.47.2019.05.14.12.40.26
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 14 May 2019 12:40:27 -0700 (PDT)
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V2 6/6] perf tools: Properly set the value of 'old' and 'head'
- in snapshot mode
-Date: Tue, 14 May 2019 13:40:18 -0600
-Message-Id: <20190514194018.23420-7-mathieu.poirier@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190514194018.23420-1-mathieu.poirier@linaro.org>
-References: <20190514194018.23420-1-mathieu.poirier@linaro.org>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=SNWKhmqL1RfT8Ocb1OCe8VtXVVSNF6ph0Xhv4SOWB40=;
+ b=fFlYeRCyekWPmC4yYHraHLTGKf0SfLVfjCvt+gNaNP2vZxp9xDDaiksrc677oaQjpe
+ vN+iLxsDhRkLdhnQG0Ty01nOKX1SOqT6HbuLpx999qSSvaif7seDnuvF1abPgAFMuVb+
+ 2BNczg1FQigUmPtD8IKlCZiOM9aiK4ba+mfuXKGfQAh/+Wxx8EUqyDCfqZhzqLqG9Z49
+ lGqCpVISTiqcEJ9U/a4lOCFFWAMv/eRZ3Uwj+w0ybItoBwy/jaT2L7xXPDZsYfz/n+Me
+ 7ffDa206yujutsASCJbigu6Nzt47VN2pam4ktAFwS0O4iyffY2Hf1h1T/aYyf9avwQ5e
+ RB3A==
+X-Gm-Message-State: APjAAAW8+d1vOPLBXFP/SnzTDQzdJMF3kekUuqoD/n4el/gI5uicrtWd
+ sJkvmnvDBegq8fwN0gO7bIU=
+X-Google-Smtp-Source: APXvYqzqsM6YxhwDwuwnA/BDNBMRsL7Bv72pN9sp+FWRDWg10cTe5/0GsN+ZRTKbAmaakhT/NWUJZA==
+X-Received: by 2002:a50:9b10:: with SMTP id o16mr37943864edi.229.1557863160506; 
+ Tue, 14 May 2019 12:46:00 -0700 (PDT)
+Received: from archlinux-i9 ([2a01:4f9:2b:2b84::2])
+ by smtp.gmail.com with ESMTPSA id x49sm4911383edm.25.2019.05.14.12.45.59
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 14 May 2019 12:45:59 -0700 (PDT)
+Date: Tue, 14 May 2019 12:45:57 -0700
+From: Nathan Chancellor <natechancellor@gmail.com>
+To: Lee Jones <lee.jones@linaro.org>
+Subject: Re: [PATCH] mfd: stmfx: Fix macro definition spelling
+Message-ID: <20190514194557.GA12421@archlinux-i9>
+References: <20190511012301.2661-1-natechancellor@gmail.com>
+ <20190513073059.GH4319@dell> <20190514183900.GA7559@archlinux-i9>
+ <20190514185404.GP4319@dell>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190514185404.GP4319@dell>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_124029_530781_DA7F2C8C 
-X-CRM114-Status: GOOD (  22.55  )
+X-CRM114-CacheID: sfid-20190514_124602_274723_6068EB42 
+X-CRM114-Status: GOOD (  18.02  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (natechancellor[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -97,184 +101,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: suzuki.poulose@arm.com, alexander.shishkin@linux.intel.com,
- coresight@lists.linaro.org, acme@kernel.org, peterz@infradead.org,
- mingo@redhat.com, leo.yan@linaro.org, mike.leach@linaro.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Amelie Delaunay <amelie.delaunay@st.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ clang-built-linux@googlegroups.com,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds the necessay intelligence to properly compute the value
-of 'old' and 'head' when operating in snapshot mode.  That way we can get
-the latest information in the AUX buffer and be compatible with the
-generic AUX ring buffer mechanic.
-
-Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
----
- tools/perf/arch/arm/util/cs-etm.c | 124 ++++++++++++++++++++++++++++--
- 1 file changed, 119 insertions(+), 5 deletions(-)
-
-diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
-index 911426721170..3734e3fd18f8 100644
---- a/tools/perf/arch/arm/util/cs-etm.c
-+++ b/tools/perf/arch/arm/util/cs-etm.c
-@@ -31,6 +31,8 @@ struct cs_etm_recording {
- 	struct auxtrace_record	itr;
- 	struct perf_pmu		*cs_etm_pmu;
- 	struct perf_evlist	*evlist;
-+	int			wrapped_cnt;
-+	bool			*wrapped;
- 	bool			snapshot_mode;
- 	size_t			snapshot_size;
- };
-@@ -536,16 +538,126 @@ static int cs_etm_info_fill(struct auxtrace_record *itr,
- 	return 0;
- }
- 
--static int cs_etm_find_snapshot(struct auxtrace_record *itr __maybe_unused,
-+static int cs_etm_alloc_wrapped_array(struct cs_etm_recording *ptr, int idx)
-+{
-+	bool *wrapped;
-+	int cnt = ptr->wrapped_cnt;
-+
-+	/* Make @ptr->wrapped as big as @idx */
-+	while (cnt <= idx)
-+		cnt++;
-+
-+	/* Free'ed in cs_etm_recording_free() */
-+	wrapped = reallocarray(ptr->wrapped, cnt, sizeof(bool));
-+	if (!wrapped)
-+		return -ENOMEM;
-+
-+	ptr->wrapped_cnt = cnt;
-+	ptr->wrapped = wrapped;
-+
-+	return 0;
-+}
-+
-+static bool cs_etm_buffer_has_wrapped(unsigned char *buffer,
-+				      size_t buffer_size, u64 head)
-+{
-+	u64 i, watermark;
-+	u64 *buf = (u64 *)buffer;
-+	size_t buf_size = buffer_size;
-+
-+	/*
-+	 * We want to look the very last 512 byte (chosen arbitrarily) in
-+	 * the ring buffer.
-+	 */
-+	watermark = buf_size - 512;
-+
-+	/*
-+	 * @head is continuously increasing - if its value is equal or greater
-+	 * than the size of the ring buffer, it has wrapped around.
-+	 */
-+	if (head >= buffer_size)
-+		return true;
-+
-+	/*
-+	 * The value of @head is somewhere within the size of the ring buffer.
-+	 * This can be that there hasn't been enough data to fill the ring
-+	 * buffer yet or the trace time was so long that @head has numerically
-+	 * wrapped around.  To find we need to check if we have data at the very
-+	 * end of the ring buffer.  We can reliably do this because mmap'ed
-+	 * pages are zeroed out and there is a fresh mapping with every new
-+	 * session.
-+	 */
-+
-+	/* @head is less than 512 byte from the end of the ring buffer */
-+	if (head > watermark)
-+		watermark = head;
-+
-+	/*
-+	 * Speed things up by using 64 bit transactions (see "u64 *buf" above)
-+	 */
-+	watermark >>= 3;
-+	buf_size >>= 3;
-+
-+	/*
-+	 * If we find trace data at the end of the ring buffer, @head has
-+	 * been there and has numerically wrapped around at least once.
-+	 */
-+	for (i = watermark; i < buf_size; i++)
-+		if (buf[i])
-+			return true;
-+
-+	return false;
-+}
-+
-+static int cs_etm_find_snapshot(struct auxtrace_record *itr,
- 				int idx, struct auxtrace_mmap *mm,
--				unsigned char *data __maybe_unused,
-+				unsigned char *data,
- 				u64 *head, u64 *old)
- {
--	pr_debug3("%s: mmap index %d old head %zu new head %zu size %zu\n",
-+	int err;
-+	bool wrapped;
-+	struct cs_etm_recording *ptr =
-+			container_of(itr, struct cs_etm_recording, itr);
-+
-+	/*
-+	 * Allocate memory to keep track of wrapping if this is the first
-+	 * time we deal with this *mm.
-+	 */
-+	if (idx >= ptr->wrapped_cnt) {
-+		err = cs_etm_alloc_wrapped_array(ptr, idx);
-+		if (err)
-+			return err;
-+	}
-+
-+	/*
-+	 * Check to see if *head has wrapped around.  If it hasn't only the
-+	 * amount of data between *head and *old is snapshot'ed to avoid
-+	 * bloating the perf.data file with zeros.  But as soon as *head has
-+	 * wrapped around the entire size of the AUX ring buffer it taken.
-+	 */
-+	wrapped = ptr->wrapped[idx];
-+	if (!wrapped && cs_etm_buffer_has_wrapped(data, mm->len, *head)) {
-+		wrapped = true;
-+		ptr->wrapped[idx] = true;
-+	}
-+
-+	pr_debug3("%s: mmap index %d old head %lx new head %lx size %lx\n",
- 		  __func__, idx, (size_t)*old, (size_t)*head, mm->len);
- 
--	*old = *head;
--	*head += mm->len;
-+	/* No wrap has occurred, we can just use *head and *old. */
-+	if (!wrapped)
-+		return 0;
-+
-+	/*
-+	 * *head has wrapped around - adjust *head and *old to pickup the
-+	 * entire content of the AUX buffer.
-+	 */
-+	if (*head >= mm->len) {
-+		*old = *head - mm->len;
-+	} else {
-+		*head += mm->len;
-+		*old = *head - mm->len;
-+	}
- 
- 	return 0;
- }
-@@ -586,6 +698,8 @@ static void cs_etm_recording_free(struct auxtrace_record *itr)
- {
- 	struct cs_etm_recording *ptr =
- 			container_of(itr, struct cs_etm_recording, itr);
-+
-+	zfree(&ptr->wrapped);
- 	free(ptr);
- }
- 
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCBNYXkgMTQsIDIwMTkgYXQgMDc6NTQ6MDRQTSArMDEwMCwgTGVlIEpvbmVzIHdyb3Rl
+Ogo+IE9uIFR1ZSwgMTQgTWF5IDIwMTksIE5hdGhhbiBDaGFuY2VsbG9yIHdyb3RlOgo+IAo+ID4g
+T24gTW9uLCBNYXkgMTMsIDIwMTkgYXQgMDg6MzA6NTlBTSArMDEwMCwgTGVlIEpvbmVzIHdyb3Rl
+Ogo+ID4gPiBPbiBGcmksIDEwIE1heSAyMDE5LCBOYXRoYW4gQ2hhbmNlbGxvciB3cm90ZToKPiA+
+ID4gCj4gPiA+ID4gQ2xhbmcgd2FybnM6Cj4gPiA+ID4gCj4gPiA+ID4gSW4gZmlsZSBpbmNsdWRl
+ZCBmcm9tIGRyaXZlcnMvbWZkL3N0bWZ4LmM6MTM6Cj4gPiA+ID4gaW5jbHVkZS9saW51eC9tZmQv
+c3RtZnguaDo3Ojk6IHdhcm5pbmc6ICdNRkRfU1RNRlhfSCcgaXMgdXNlZCBhcyBhCj4gPiA+ID4g
+aGVhZGVyIGd1YXJkIGhlcmUsIGZvbGxvd2VkIGJ5ICNkZWZpbmUgb2YgYSBkaWZmZXJlbnQgbWFj
+cm8KPiA+ID4gPiBbLVdoZWFkZXItZ3VhcmRdCj4gPiA+ID4gCj4gPiA+ID4gRml4ZXM6IDA2MjUy
+YWRlOTE1NiAoIm1mZDogQWRkIFNUIE11bHRpLUZ1bmN0aW9uIGVYcGFuZGVyIChTVE1GWCkgY29y
+ZSBkcml2ZXIiKQo+ID4gPiA+IExpbms6IGh0dHBzOi8vZ2l0aHViLmNvbS9DbGFuZ0J1aWx0TGlu
+dXgvbGludXgvaXNzdWVzLzQ3NQo+ID4gPiA+IFNpZ25lZC1vZmYtYnk6IE5hdGhhbiBDaGFuY2Vs
+bG9yIDxuYXRlY2hhbmNlbGxvckBnbWFpbC5jb20+Cj4gPiA+ID4gLS0tCj4gPiA+ID4gIGluY2x1
+ZGUvbGludXgvbWZkL3N0bWZ4LmggfCAyICstCj4gPiA+ID4gIDEgZmlsZSBjaGFuZ2VkLCAxIGlu
+c2VydGlvbigrKSwgMSBkZWxldGlvbigtKQo+ID4gPiAKPiA+ID4gQXBwbGllZCwgdGhhbmtzLgo+
+ID4gPiAKPiA+IAo+ID4gSGkgTGVlLAo+ID4gCj4gPiBUaGFua3MgZm9yIHBpY2tpbmcgaXQgdXAu
+IEl0IHNlZW1zIHRoaXMgZGlkbid0IG1ha2UgaXQgaW50byB5b3VyIE1GRAo+ID4gcHVsbCByZXF1
+ZXN0IGZvciA1LjIsIHdhcyB0aGF0IGludGVudGlvbmFsPyBJdCB3b3VsZCBiZSBuaWNlIHRvIGF2
+b2lkCj4gPiB0aGlzIHdhcm5pbmcuCj4gCj4gSG1tLi4uIG5vIGl0IHdhcyBub3QgaW50ZW50aW9u
+YWwuICBOb3Qgc3VyZSB3aGF0IGhhcHBlbmVkIHRoZXJlLgo+IAo+IEkgd2lsbCBwaWNrIGl0IHVw
+IGZvciB0aGUgLXJjcy4KPiAKPiAtLSAKPiBMZWUgSm9uZXMgW+adjueQvOaWr10KPiBMaW5hcm8g
+U2VydmljZXMgVGVjaG5pY2FsIExlYWQKPiBMaW5hcm8ub3JnIOKUgiBPcGVuIHNvdXJjZSBzb2Z0
+d2FyZSBmb3IgQVJNIFNvQ3MKPiBGb2xsb3cgTGluYXJvOiBGYWNlYm9vayB8IFR3aXR0ZXIgfCBC
+bG9nCgpUaGFuayB5b3UsIEkgYXBwcmVjaWF0ZSBpdCEKCk5hdGhhbgoKX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
+IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
