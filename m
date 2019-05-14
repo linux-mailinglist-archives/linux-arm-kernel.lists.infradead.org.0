@@ -2,86 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 828C71C4E4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 10:28:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D48C01C51F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 10:39:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5A27zOMJlOs4o0/JdhNTYwn2qeJDnXn+cBHLQ0xkxUw=; b=ZajKnPRZzD9qtu
-	9dgdcRxHMtxSRTbPCc3W+VIUFbQmw1W/40nllEcsYxQA6Gc2NNZ0nikq6MwrvcoGADk3jUMM/G4XN
-	EZQ7ZjfxdUeBMH8H0FBzEXOpAcOljBLkWcEcQUrn9uIhNDX5+R458q8WfKvBR6pw6kai7VVcJlsdU
-	bShc1Y/FZMGgt9FTOV85i0sZvqIsOYdPWxv5+9H8MLkvqshRfMwgAHTZ7SA0qfoBNdiGWahFUXIVO
-	KHtMkz97twPPzbPcEQ3Igtz1WdaqCm/NwkVmtoo8WpefDlSMyDmfKFk6IqCFLYgJUEMokpRKh+g1Y
-	4aizlskxs9FVWTJhHAcQ==;
+	List-Owner; bh=IVVytFe3Id8gYXZmnOedlBkI51cvccE2Chwde6zu+jI=; b=jJ4NyUMR7DfQqp
+	Tt98nunVjqana2oJZB3pybdWtxT5rC9WA3lWHbys5WFNYwTQkE9XjuXB4Ujce8Mmg+U3THFlj0ao5
+	cSEZO7mNOb8xz2aGy/9W06OJ1LUzPUAFAolC6y5j2HU9uOnLFSoSg+MCusObnjsVbY+QaK+TzvN8z
+	gaNo4/bnZ+SBXsuGFxZ0ehvhYdeiKKimi9IhtzGhLatMMByCOAnmV8+hDinebIOaURgkymqtulNgh
+	0v/eohH3MS63vq3dfVMu9uLsphUsQgnkdGYCq82WBSipYFxBGMkTlf0ze3kxTBb5hRM/snWhp1XWc
+	lRrhFqHgixhDC/wowxPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQSnM-00069P-1u; Tue, 14 May 2019 08:28:20 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1hQSxr-000404-RO; Tue, 14 May 2019 08:39:11 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQSmQ-000521-KV
- for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 08:27:32 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x4E8Q9dW029565; Tue, 14 May 2019 10:27:17 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=Qcbov99m1lkaIUfnuX86RHd5PLWtt8rqoo5dDBx7OIc=;
- b=m1K4JyBF9G3LpGo1bTOXreixgG0vtt4K5/6kWYXSKY42v6Y90iaKW3mCRhoE9xG7Fi5A
- /JcNcgwzfcuXVAvxMM0ESAsykAOZIZAtF5qCQqpU4317PjECjoRcS4SV25xlzodEl3cm
- tExaCwvUX691f9qThMlcoiflqvr+0PJ76uv7F1Vw9lFuqd+3CVZ3aebI0ljbKoGIjjC2
- VqK0fUACd2beFiJJKA92KXACjn5p4E+VoagU5sVdHKANt1dG8kFYgI0ewMjYkPrjyosl
- DceUd9C/q9tilNMFMqXmOP0+zrdIle2fnnyIJGRfPjuMRKDOprtCopJO6nwKiE54pP8p Ig== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2sdkuyqnns-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Tue, 14 May 2019 10:27:17 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D5C8E34;
- Tue, 14 May 2019 08:27:16 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas21.st.com [10.75.90.44])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 8F87A1551;
- Tue, 14 May 2019 08:27:16 +0000 (GMT)
-Received: from SAFEX1HUBCAS23.st.com (10.75.90.47) by SAFEX1HUBCAS21.st.com
- (10.75.90.44) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 14 May
- 2019 10:27:16 +0200
-Received: from localhost (10.201.23.25) by webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 14 May 2019 10:27:16
- +0200
-From: Fabien Dessenne <fabien.dessenne@st.com>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, Alexandre Torgue
- <alexandre.torgue@st.com>, Ohad Ben-Cohen <ohad@wizery.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, <devicetree@vger.kernel.org>,
- <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- <linux-remoteproc@vger.kernel.org>
-Subject: [PATCH v4 8/8] ARM: dts: stm32: enable m4 coprocessor support on
- STM32MP157a-dk1
-Date: Tue, 14 May 2019 10:27:03 +0200
-Message-ID: <1557822423-22658-9-git-send-email-fabien.dessenne@st.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1557822423-22658-1-git-send-email-fabien.dessenne@st.com>
-References: <1557822423-22658-1-git-send-email-fabien.dessenne@st.com>
+ id 1hQSxk-0003zj-Ev
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 08:39:05 +0000
+Received: by mail-ed1-x543.google.com with SMTP id a8so21678419edx.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 14 May 2019 01:39:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=RVI9iWgc55Qe0q3tLtvRyel7wrcIN68nuDWX5YnzBtc=;
+ b=F15QTDXnjQ7h1JnwI/L/yLlLHNZz3LU5SuAP4NtoAxncLb9P+u6MXb0HOEomLvKrBX
+ 3R9ouMCzZJj6s16y+Np4CXsnPFiAOlSVa8xYckHTSa1HLBClfVhbUguAPcjWoqOvWPuv
+ tV5M9+7jxZSHo1moP4c4ra1XRQeRyuTrJn4kI8khIhUhF/EpSRRo3Atj1lPHAgnIHylm
+ wvMtnm6MJ/nMjug4ihZ4d+//xf/pNpsXyGoDbE6mlzji05xNaUfGMsL3JaqClUCqmqTC
+ o/nyt/ObxuovlVXJDhYwxJroRLP1vPfKnMjW35G99l4PLkfjN/A6jJj1l8dvl/9C2oAg
+ Dd5g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=RVI9iWgc55Qe0q3tLtvRyel7wrcIN68nuDWX5YnzBtc=;
+ b=hb1bM9jEVLc/YFjfpJVptgIT/zz1Rl/yvswcnkq+GkRQ1SO3yKHcpsfm3wItxn2KsP
+ pn5HqHReRO/1SXA6CwO2mXaAHLxmwVLcmzM1IWEjLdyLWikyHlX0U1Gz8/ccjs2J8Hd4
+ PAsTu8yp5o+o+Oml8RPFeES5GVU8xlYMIyUrPLYteVYG2kFTa9CYXU+mPm6VW/FzayJ1
+ 7VhYST3iNn12MSJPU9m/CiCts4fBR+WQtkZAFeyqr9iL00mtn5IbZ1QQfRdizCSWYUzc
+ AQcRS1DhIYX8EP7gZelRFS6omu7BOlfbofFplGiwIOnBeietqHmwQ/vXgqERYP+UeOY5
+ wp4A==
+X-Gm-Message-State: APjAAAXMneG6BjMovbsmk1fOeIqQsydhLcaVw3P6bGsCSzU1y2PcrFlU
+ 8zZj3OqSA5dmyZfyaUs1Mrzf1vzDwH7AyI/uXxI=
+X-Google-Smtp-Source: APXvYqzsuyJYkvShd5DlSehIbVnkw3GSm4SjUrW2ugHXKkw4JHSYr09nLMugB2wNXgGzymTdiBIdkaEWk1hFz8jrH1w=
+X-Received: by 2002:a50:9441:: with SMTP id q1mr34683894eda.101.1557823142649; 
+ Tue, 14 May 2019 01:39:02 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [10.201.23.25]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-14_05:, , signatures=0
+References: <1557716049-22744-1-git-send-email-Anson.Huang@nxp.com>
+ <CAEnQRZDSTuUMrc9AC1S2zfo0PdQ-v35GmNrf70Zoasid_XMJzw@mail.gmail.com>
+ <DB3PR0402MB3916A46BFFE5E6F3D4832A33F50F0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+In-Reply-To: <DB3PR0402MB3916A46BFFE5E6F3D4832A33F50F0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+From: Daniel Baluta <daniel.baluta@gmail.com>
+Date: Tue, 14 May 2019 11:38:51 +0300
+Message-ID: <CAEnQRZB0fs2g=h4pq97t+E9U9LOxSafYhx07Xia_J+snjqefEw@mail.gmail.com>
+Subject: Re: [PATCH RESEND 1/2] soc: imx: Add SCU SoC info driver support
+To: Anson Huang <anson.huang@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_012723_780425_C957848E 
-X-CRM114-Status: GOOD (  14.19  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190514_013904_502698_104877D0 
+X-CRM114-Status: GOOD (  14.95  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (daniel.baluta[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -100,46 +93,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ludovic
- Barre <ludovic.barre@st.com>, Arnaud Pouliquen <arnaud.pouliquen@st.com>,
- Loic Pallardy <loic.pallardy@st.com>, Fabien Dessenne <fabien.dessenne@st.com>,
- Benjamin Gaignard <benjamin.gaignard@st.com>
+Cc: "maxime.ripard@bootlin.com" <maxime.ripard@bootlin.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>, "robh@kernel.org" <robh@kernel.org>,
+ Abel Vesa <abel.vesa@nxp.com>, "agross@kernel.org" <agross@kernel.org>,
+ "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "marc.w.gonzalez@free.fr" <marc.w.gonzalez@free.fr>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "olof@lixom.net" <olof@lixom.net>,
+ "horms+renesas@verge.net.au" <horms+renesas@verge.net.au>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Aisheng Dong <aisheng.dong@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "dinguyen@kernel.org" <dinguyen@kernel.org>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable m4 coprocessor for STM32MP157a-dk1 board.
+On Tue, May 14, 2019 at 2:34 AM Anson Huang <anson.huang@nxp.com> wrote:
+>
+> Hi, Daniel
+>
+> > -----Original Message-----
+> > From: Daniel Baluta [mailto:daniel.baluta@gmail.com]
+> > Sent: Monday, May 13, 2019 10:30 PM
+> > To: Anson Huang <anson.huang@nxp.com>
+> > Cc: catalin.marinas@arm.com; will.deacon@arm.com;
+> > shawnguo@kernel.org; s.hauer@pengutronix.de; kernel@pengutronix.de;
+> > festevam@gmail.com; maxime.ripard@bootlin.com; agross@kernel.org;
+> > olof@lixom.net; horms+renesas@verge.net.au;
+> > jagan@amarulasolutions.com; bjorn.andersson@linaro.org; Leonard Crestez
+> > <leonard.crestez@nxp.com>; marc.w.gonzalez@free.fr;
+> > dinguyen@kernel.org; enric.balletbo@collabora.com; Aisheng Dong
+> > <aisheng.dong@nxp.com>; robh@kernel.org; Abel Vesa
+> > <abel.vesa@nxp.com>; l.stach@pengutronix.de; linux-arm-
+> > kernel@lists.infradead.org; linux-kernel@vger.kernel.org; dl-linux-imx
+> > <linux-imx@nxp.com>; Daniel Baluta <daniel.baluta@nxp.com>
+> > Subject: Re: [PATCH RESEND 1/2] soc: imx: Add SCU SoC info driver support
+> >
+> > <snip>
+> >
+> > > +
+> > > +static u32 imx8qxp_soc_revision(void) {
+> > > +       struct imx_sc_msg_misc_get_soc_id msg;
+> > > +       struct imx_sc_rpc_msg *hdr = &msg.hdr;
+> > > +       u32 rev = 0;
+> > > +       int ret;
+> > > +
+> > > +       hdr->ver = IMX_SC_RPC_VERSION;
+> > > +       hdr->svc = IMX_SC_RPC_SVC_MISC;
+> > > +       hdr->func = IMX_SC_MISC_FUNC_GET_CONTROL;
+> > > +       hdr->size = 3;
+> > > +
+> > > +       msg.data.send.control = IMX_SC_C_ID;
+> > > +       msg.data.send.resource = IMX_SC_R_SYSTEM;
+> > > +
+> > > +       ret = imx_scu_call_rpc(soc_ipc_handle, &msg, true);
+> > > +       if (ret) {
+> > > +               dev_err(&imx_scu_soc_pdev->dev,
+> > > +                       "get soc info failed, ret %d\n", ret);
+> > > +               return rev;
+> >
+> > So you return 0 (rev  = 0) here in case of error? This doesn't seem to be right.
+> > Maybe return ret?
+>
+> This is intentional, similar with current i.MX8MQ soc info driver, when getting revision
+> failed, just return 0 as revision info and it will show "unknown" in sysfs.
 
-Signed-off-by: Fabien Dessenne <fabien.dessenne@st.com>
----
- arch/arm/boot/dts/stm32mp157a-dk1.dts | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+Ok, I understand. Lets make this clear from the source code.
 
-diff --git a/arch/arm/boot/dts/stm32mp157a-dk1.dts b/arch/arm/boot/dts/stm32mp157a-dk1.dts
-index 26ce8de..da64ee2 100644
---- a/arch/arm/boot/dts/stm32mp157a-dk1.dts
-+++ b/arch/arm/boot/dts/stm32mp157a-dk1.dts
-@@ -116,6 +116,16 @@
- 	status = "okay";
- };
- 
-+&m4_rproc {
-+	memory-region = <&retram>, <&mcuram>, <&mcuram2>, <&vdev0vring0>,
-+			<&vdev0vring1>, <&vdev0buffer>;
-+	mboxes = <&ipcc 0>, <&ipcc 1>, <&ipcc 2>;
-+	mbox-names = "vq0", "vq1", "shutdown";
-+	interrupt-parent = <&exti>;
-+	interrupts = <68 1>;
-+	status = "okay";
-+};
-+
- &rng1 {
- 	status = "okay";
- };
--- 
-2.7.4
-
+   ret = imx_scu_call_rpc(soc_ipc_handle, &msg, true);
++       if (ret) {
++               dev_err(&imx_scu_soc_pdev->dev,
++                       "get soc info failed, ret %d\n", ret);
+                /* returning 0 means getting revision failed */
++               return 0;
++       }
 
 _______________________________________________
 linux-arm-kernel mailing list
