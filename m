@@ -2,63 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 532C11D09C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 22:28:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 122301D09F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 22:28:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u4W16M//9nfVH9ETNw23EG2LBkArsfBgPWo/8BZg6iw=; b=Bo4C4krC+gtxab
-	12xQ5uR5koDaLphD+IU87opybChqjt9J9lKJ7YPuhY9IlUp2cq7LXyyO6tWix8hvb0oIl40Y24ujr
-	rNM9nIF4AjBFkIJg2qS0MrQYk0O9dK8R/oe0C9Zj0/9oOjBuWa4EA9C7ajQetsOiOtTNov316ABZK
-	rzz6rONZgqpQQWquyAeqgDVrHMtQGssp3l7ul3kYPxJhdwlvgKZ77Q8bYJVQ/kI0EFV3EA2iGPayY
-	0YZVvEwZzWcddcoBK9x9OeJ+nr61rmmAEp0CVWitopKxZfl9letLm+4hQ1LX1eU5WJrwFRo6QAbWJ
-	dV/aM5g3kkh0mzYjukGw==;
+	List-Owner; bh=obXcA8pYpINFUnJpu3z6iYC2nHSZ71/Jv+MPYSApKLU=; b=TXYlXOpdWDeqVU
+	llwHTTzBrc4j2wnffVoEUsEXbulmcwGxJ7bRKFym8APdaum3o2sLr3TT0Wncp6ecz1GRA6T2IJXBK
+	wpqOZvIHx8KtgsbU2Wp0sSD443+mElhM6x3fLoM/ZaOHNwWyKzFpfzcKgLXznYqbEOD5J32sVqnvr
+	39s3MHnc6p5ZFravnU3wI6sFDPTHUxAvkHvV0mC3b3W+3iIIQ8+1FT5F+QuzBIoVCsTo/PBhMIloB
+	gcN4mZ+on0qawMeHxH9xIjYY8Ki2ZVMajAVXP+rERPurF2id4pdf1E1/tNzPcLvxHLZLDzefv+HY+
+	A0qOvwgE6w4SOnAdqRkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQe1m-0007d5-GN; Tue, 14 May 2019 20:27:58 +0000
+	id 1hQe26-0007uk-Pf; Tue, 14 May 2019 20:28:18 +0000
 Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQe1e-0007cd-W8; Tue, 14 May 2019 20:27:52 +0000
-Received: by mail-oi1-f196.google.com with SMTP id y10so111934oia.8;
- Tue, 14 May 2019 13:27:50 -0700 (PDT)
+ id 1hQe1z-0007tm-3O; Tue, 14 May 2019 20:28:12 +0000
+Received: by mail-oi1-f196.google.com with SMTP id f4so130883oib.4;
+ Tue, 14 May 2019 13:28:11 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Kw0/GP3EsXZW6LUJqBkxGevYhmRsqd6LBUlMlUibiPE=;
- b=gYNMsN1pb3QZEjCxQsjBRvMQxfGX9aA9uCMXwd7HS232tOz4KRTsvnDWk0wflDVMBI
- EWvjhfhzossl/4eAMkTfIgSGP2+u+cBXrdZQLaE4zhOmbmzl9RuYemfjZhzeF4U8Zceg
- P7ULf1g2AaDFNr6oLC1qLmLo53RNirrMYidnd3JNWVdGgO99gQAlAfX6een8dm2EtM1W
- jijimjuKnbiCKHCSBAGw591KI+H1wgtKEmCUv0G+VNUiXiALaO8CR663QKriGAoHB38o
- pCbhAejJh9/bajutJ33rBUeCs7IiXubwMItrsc7+y2SGr5j4LvtQO/IrJZG1Of09Rd3d
- ETPA==
-X-Gm-Message-State: APjAAAWgkv/L7ksyZGh+uvnuvSjB1juqcbR4CRgMaeN7jZ4GrKGGFLGF
- RjQre1LE4mIy7ZykG9+qiA==
-X-Google-Smtp-Source: APXvYqw4vGKzCpOYn9dsgcfrTdEK0JiPQpO/Z6fOg7WvWNBNYtbCoCO+0Sl62db46/ol9PDe98J5yw==
-X-Received: by 2002:aca:c6c2:: with SMTP id w185mr4183258oif.104.1557865670120; 
- Tue, 14 May 2019 13:27:50 -0700 (PDT)
+ bh=/xEQhRe1Pra6YVRpwyMFKIovwszsqjuMIre3+73jdVw=;
+ b=il7PAuYsI6dTqjYeKuGDLbsaDk638EwtNaNjyFTAp4T8gLypcboV3DlO5kN0XxBdkK
+ Z3f59JH7Po3Twxjef4qud9Gtd8WVm2Ou0pf4AojCHu1v723g05jtcI3QmuVcbNwaNRyW
+ Qos19dK9rVV7ZBOslZWFZV+3xlXIaPsJ7zWj2UCZU8L535CxtarIHy/dSae7vyab0qLC
+ /BxDPrEzo1EcUv9xSAolNt++m/RCZwkzkZqEo51hsFwoNInWWmEdc2vAQYk3Vwx3x7DI
+ fqxpQdoBF8j16RHoaIL8dM+c1GlQFdhv+Vonsr6hOVwu0dxnxElTTF6bZ1cdjMM+jVRm
+ oNmw==
+X-Gm-Message-State: APjAAAVf0MBJkjz+nfIn9Ju9bZobfDWqPdliPUC+1Ol1Qe+CiTSYP12K
+ OD0ytAVk/iYzJADWn5Mq0g==
+X-Google-Smtp-Source: APXvYqwH5J0KSSwtut0OTNe86vsNzvw9QHm7hI902PxNhh3qNuE4E8bI0xQtbTD5Y+FzANVluP7iug==
+X-Received: by 2002:aca:aa8b:: with SMTP id t133mr4038437oie.101.1557865690412; 
+ Tue, 14 May 2019 13:28:10 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id m63sm6521698otc.76.2019.05.14.13.27.49
+ by smtp.gmail.com with ESMTPSA id g3sm6652578oif.25.2019.05.14.13.28.09
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 14 May 2019 13:27:49 -0700 (PDT)
-Date: Tue, 14 May 2019 15:27:48 -0500
+ Tue, 14 May 2019 13:28:09 -0700 (PDT)
+Date: Tue, 14 May 2019 15:28:08 -0500
 From: Rob Herring <robh@kernel.org>
 To: Fabien Parent <fparent@baylibre.com>
-Subject: Re: [PATCH v2 1/5] dt-bindings: regulator: add support for MT6392
-Message-ID: <20190514202748.GA20452@bogus>
+Subject: Re: [PATCH v2 3/5] dt-bindings: mfd: mt6397: Add bindings for MT6392
+ PMIC
+Message-ID: <20190514202808.GA21263@bogus>
 References: <20190513161026.31308-1-fparent@baylibre.com>
- <20190513161026.31308-2-fparent@baylibre.com>
+ <20190513161026.31308-4-fparent@baylibre.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190513161026.31308-2-fparent@baylibre.com>
+In-Reply-To: <20190513161026.31308-4-fparent@baylibre.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_132751_032875_4C6C04DF 
-X-CRM114-Status: GOOD (  10.81  )
+X-CRM114-CacheID: sfid-20190514_132811_137369_02443AB7 
+X-CRM114-Status: GOOD (  10.07  )
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.3 points)
@@ -66,6 +67,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [209.85.167.196 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
@@ -73,8 +76,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  in digit (robherring2[at]gmail.com)
  0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -97,21 +98,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 13 May 2019 18:10:22 +0200, Fabien Parent wrote:
-> Add binding documentation of the regulator for MT6392 SoCs.
+On Mon, 13 May 2019 18:10:24 +0200, Fabien Parent wrote:
+> Add the currently supported bindings for the MT6392 PMIC.
 > 
 > Signed-off-by: Fabien Parent <fparent@baylibre.com>
 > ---
 > 
-> v2:
-> 	* Use 'pmic' as node name for the pmic.
-> 	* Use 'regulators' as node name for the regulators
-> 	* use dash instead of underscore for regulator's node names.
+> V2:
+> 	* New patch
 > 
 > ---
->  .../bindings/regulator/mt6392-regulator.txt   | 220 ++++++++++++++++++
->  1 file changed, 220 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/regulator/mt6392-regulator.txt
+>  Documentation/devicetree/bindings/mfd/mt6397.txt | 12 ++++++++++--
+>  1 file changed, 10 insertions(+), 2 deletions(-)
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
