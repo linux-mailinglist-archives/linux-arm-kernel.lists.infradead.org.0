@@ -2,56 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87E511C31B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 08:16:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 493E91C348
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 08:30:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kbIly+1W/b2gvEmIdGZDLLe6zcvU02RfzbUpD033kLY=; b=BpRcxJgE2XWI+V
-	4F5y5Y4X+GAoD3lzTaa8CVOv0wEQnMA8IOAa6xYLChW7sixGWJDo3Q4fITDG7VcFGS9FJc0jqraRK
-	IAMXxQPWHN4grFvIC7R2tnPorHTSe5+9x+W/x05APGg9bVxAZ8hzbXC9iva9JT1pmXN4x4lOLog3N
-	0qAOlVI69b0rOlpFaBc5P01Mk/AQ1Jvtn3bZhAPVV8QGsQrlBg3Jt9F/BwHHPFWF/GWZnJgfdlJUV
-	lG7A3Je0/mYuJA+do2PXgUs3CsIQZYcFcaCy9ytf/gnUBNC9tL6T9Ve5kV0Qb34XfXFD8OdUyUE8D
-	MgoQzG9JC0HLrIUq+PZw==;
+	List-Owner; bh=zei7SAGDNzd9VlHnebGror+f737G/8M60lvwvewyl6M=; b=NsFF+r2JWazlkB
+	sAWzo5xq69lQJRS571dxcqsvCoFT/HQx/TqW14rUn8Yttd9ouONCnJQqJlq7T/9smjybWW42hmb+J
+	HV91Hs1xtjpkgPiKZd9A69SREzrPgcOgqsnVkB/2QwPqf63zXd/xMJVInV1y22VvmpzSCrkyz1Nyz
+	LVvgN+EbA/+OlSYA6h4EZ8mt4V+EXaxF/nouZV1TLltqAJOaLj7x/1ZQ052lQjf2cbCys8RCNU2VN
+	06u4JkKn6yDOkOfvggxdJG3jNnZBdn2D4FoEj4JiNifT0ZEFszPd0qm6s/fahkaHBEng4TCPyWVuQ
+	9uOSr4wC/mTGGbJwvWlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQQjk-00030Y-QU; Tue, 14 May 2019 06:16:28 +0000
+	id 1hQQxg-0001YH-D4; Tue, 14 May 2019 06:30:52 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQQhg-0007aY-A8; Tue, 14 May 2019 06:14:30 +0000
-X-UUID: da697a08f2dd48a1bd44f97581f2efdd-20190513
-X-UUID: da697a08f2dd48a1bd44f97581f2efdd-20190513
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <stu.hsieh@mediatek.com>)
+ id 1hQQxY-0001Xk-Ot; Tue, 14 May 2019 06:30:46 +0000
+X-UUID: 983045a5dc6443d3aa55d30c9272fd79-20190513
+X-UUID: 983045a5dc6443d3aa55d30c9272fd79-20190513
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <jungo.lin@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 663067508; Mon, 13 May 2019 22:14:04 -0800
-Received: from mtkmbs03n2.mediatek.inc (172.21.101.182) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 13 May 2019 23:14:02 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs03n2.mediatek.inc (172.21.101.182) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 14 May 2019 14:13:56 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Tue, 14 May 2019 14:13:55 +0800
-From: Stu Hsieh <stu.hsieh@mediatek.com>
-To: Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, CK Hu <ck.hu@mediatek.com>
-Subject: [PATCH v3 13/13] [media] mtk-mipicsi: add debugfs for mipicsi driver
-Date: Tue, 14 May 2019 14:13:50 +0800
-Message-ID: <1557814430-9675-14-git-send-email-stu.hsieh@mediatek.com>
-X-Mailer: git-send-email 1.9.1
-In-Reply-To: <1557814430-9675-1-git-send-email-stu.hsieh@mediatek.com>
-References: <1557814430-9675-1-git-send-email-stu.hsieh@mediatek.com>
+ with ESMTP id 771424853; Mon, 13 May 2019 22:23:24 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 13 May 2019 23:23:23 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 14 May 2019 14:23:15 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 14 May 2019 14:23:15 +0800
+Message-ID: <1557814995.8395.7.camel@mtksdccf07>
+Subject: Re: [RFC,V2,07/11] media: platform: Add Mediatek ISP P1 private
+ control
+From: Jungo Lin <jungo.lin@mediatek.com>
+To: Hans Verkuil <hverkuil@xs4all.nl>
+Date: Tue, 14 May 2019 14:23:15 +0800
+In-Reply-To: <49a8ba54-aba4-1915-6732-987a58e8bd3c@xs4all.nl>
+References: <Jungo Lin <jungo.lin@mediatek.com>
+ <20190510015755.51495-8-jungo.lin@mediatek.com>
+ <49a8ba54-aba4-1915-6732-987a58e8bd3c@xs4all.nl>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: CDF3EB988DABE039B2641AA95D6392CF9BF315A6D47140D27D15623F11EF166C2000:8
+X-TM-SNTS-SMTP: A6C92AFC9AF8422C6BA4AE83C062E28003A7DB75F6F8AE730D763C6854F5A3F72000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_231421_116950_71BE4B10 
-X-CRM114-Status: GOOD (  13.99  )
+X-CRM114-CacheID: sfid-20190513_233044_819346_AED9982A 
+X-CRM114-Status: GOOD (  31.94  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,150 +73,300 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, Stu Hsieh <stu.hsieh@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: ryan.yu@mediatek.com, frankie.chiu@mediatek.com,
+ laurent.pinchart+renesas@ideasonboard.com, Rynn.Wu@mediatek.com,
+ suleiman@chromium.org, Jerry-ch.Chen@mediatek.com, frederic.chen@mediatek.com,
+ seraph.huang@mediatek.com, linux-media@vger.kernel.org,
+ devicetree@vger.kernel.org, zwisler@chromium.org, shik@chromium.org,
+ yuzhao@chromium.org, linux-mediatek@lists.infradead.org,
+ matthias.bgg@gmail.com, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, Sean.Cheng@mediatek.com,
+ srv_heupstream@mediatek.com, sj.huang@mediatek.com, tfiga@chromium.org,
+ christie.yu@mediatek.com, Sakari Ailus <sakari.ailus@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch add debugfs for mipicsi driver.
+Hi Hans,
 
-Signed-off-by: Stu Hsieh <stu.hsieh@mediatek.com>
----
- .../media/platform/mtk-mipicsi/mtk_mipicsi.c  | 65 +++++++++++++++++++
- 1 file changed, 65 insertions(+)
+Thank you for your comments.
 
-diff --git a/drivers/media/platform/mtk-mipicsi/mtk_mipicsi.c b/drivers/media/platform/mtk-mipicsi/mtk_mipicsi.c
-index c1cbeb3c60e1..b6abd5a35752 100644
---- a/drivers/media/platform/mtk-mipicsi/mtk_mipicsi.c
-+++ b/drivers/media/platform/mtk-mipicsi/mtk_mipicsi.c
-@@ -49,6 +49,7 @@
- #include <soc/mediatek/smi.h>
- #include <linux/regmap.h>
- #include <linux/mfd/syscon.h>
-+#include <linux/debugfs.h>
- 
- #define MTK_MIPICSI_DRV_NAME "mtk-mipicsi"
- #define MTK_PLATFORM_STR "platform:mt2712"
-@@ -83,6 +84,7 @@
- #define SENINF_NCSI2_INT_EN				0xB0
- #define SENINF_NCSI2_INT_STATUS				0xB4
- #define SENINF_NCSI2_DBG_SEL				0xB8
-+#define SENINF_NCSI2_DBG_PORT				0xBC
- #define SENINF_NCSI2_HSRX_DBG				0xD8
- #define SENINF_NCSI2_DI					0xDC
- #define SENINF_NCSI2_DI_CTRL				0xE4
-@@ -92,6 +94,7 @@
- #define SENINF_TOP_MUX					0x08
- 
- #define SENINF_MUX_CTRL					0x00
-+#define SENINF_MUX_DEBUG_2				0x14
- 
- #define CAMSV_MODULE_EN					0x10
- #define CAMSV_FMT_SEL					0x14
-@@ -114,6 +117,7 @@
- #define DMA_FRAME_HEADER_EN				0xE00
- 
- #define SerDes_support 1
-+#define CONFIG_DEBUG_FS 1
- 
- static int mtk_mipicsi_dbg_level;
- #define mtk_mipicsi_dbg(level, fmt, args...)				 \
-@@ -165,6 +169,9 @@ struct mtk_mipicsi_dev {
- 	u32 width;
- 	u32 height;
- 	u32 bytesperline;
-+#ifdef CONFIG_DEBUG_FS
-+	struct dentry *mtk_mipicsi_debugfs;
-+#endif
- };
- 
- static const struct soc_mbus_lookup mtk_mipicsi_formats[] = {
-@@ -220,6 +227,49 @@ static const struct soc_mbus_lookup mtk_mipicsi_formats[] = {
- 		V4L2_MBUS_PCLK_SAMPLE_FALLING |	\
- 		V4L2_MBUS_DATA_ACTIVE_HIGH)
- 
-+#ifdef CONFIG_DEBUG_FS
-+static ssize_t mtk_mipicsi_debug_read(struct file *file, char __user *user_buf,
-+			      size_t count, loff_t *ppos)
-+{
-+	struct device *dev = file->private_data;
-+	struct soc_camera_host *soc_host = to_soc_camera_host(dev);
-+	struct mtk_mipicsi_dev *mipicsi = soc_host->priv;
-+	u32 int_val;
-+	u32 dbg_port;
-+	u32 cnt_val;
-+	u32 hcnt;
-+	u32 vcnt;
-+	char buf[256];
-+	char cnt_info[150];
-+	int i;
-+
-+	int_val = readl(mipicsi->seninf + SENINF_NCSI2_INT_STATUS);
-+	dbg_port = readl(mipicsi->seninf + SENINF_NCSI2_DBG_PORT);
-+	memset(buf, 0, sizeof(buf));
-+	snprintf(buf, sizeof(buf), "%s\nSENINF_NCSI2_INT_STATUS: 0x%X\n"
-+		"SENINF_NCSI2_DBG_PORT: 0x%X\n",
-+		dev_name(dev), int_val, dbg_port);
-+
-+	for (i = 0; i < mipicsi->camsv_num; ++i) {
-+		cnt_val = readl(mipicsi->seninf_mux[i] + SENINF_MUX_DEBUG_2);
-+		hcnt = (cnt_val >> 16) & 0xFFFF;
-+		vcnt = cnt_val & 0xFFFF;
-+		memset(cnt_info, 0, sizeof(cnt_info));
-+		snprintf(cnt_info, sizeof(cnt_info),
-+			"HCNT[%d]: 0x%X\n"
-+			"VCNT[%d]: 0x%X\n",
-+			i, hcnt, i, vcnt);
-+		strcat(buf, cnt_info);
-+	}
-+
-+	return simple_read_from_buffer(user_buf, count, ppos, buf, strlen(buf));
-+}
-+static const struct file_operations mtk_mipicsi_debug_fops = {
-+	.open = simple_open,
-+	.read = mtk_mipicsi_debug_read,
-+};
-+#endif /* CONFIG_DEBUG_FS */
-+
- static void mtk_mipicsi_ana_clk_enable(void __iomem *base, bool enable)
- {
- 	if (enable) {
-@@ -1521,6 +1571,16 @@ static int mtk_mipicsi_probe(struct platform_device *pdev)
- 		goto clean;
- 	}
- 
-+#ifdef CONFIG_DEBUG_FS
-+	mipicsi->mtk_mipicsi_debugfs =
-+		debugfs_create_file(mipicsi->drv_name, 0444, NULL,
-+			(void *)(&pdev->dev), &mtk_mipicsi_debug_fops);
-+	if (mipicsi->mtk_mipicsi_debugfs == NULL) {
-+		dev_err(&pdev->dev, "debugfs_create_file fail\n");
-+		goto clean;
-+	}
-+#endif
-+
- 	dev_set_drvdata(&pdev->dev, mipicsi);
- 
- 	dev_info(&pdev->dev, "probe done\n");
-@@ -1535,6 +1595,11 @@ static int mtk_mipicsi_remove(struct platform_device *pdev)
- {
- 	struct soc_camera_host *soc_host = to_soc_camera_host(&pdev->dev);
- 
-+#ifdef CONFIG_DEBUG_FS
-+	struct mtk_mipicsi_dev *mipicsi = soc_host->priv;
-+
-+	debugfs_remove(mipicsi->mtk_mipicsi_debugfs);
-+#endif
- 	soc_camera_host_unregister(soc_host);
- 	pm_runtime_disable(&pdev->dev);
- 
--- 
-2.18.0
+On Mon, 2019-05-13 at 10:46 +0200, Hans Verkuil wrote:
+> On 5/10/19 3:58 AM, Jungo Lin wrote:
+> > Reserved Mediatek ISP P1 private control number with 16.
+> > Moreover, add two private controls for ISP P1 user space
+> > usage.
+> > 
+> > 1. V4L2_CID_PRIVATE_GET_BIN_INFO
+> > - Provide the image output width & height in case
+> > camera binning mode is enabled.
+> > 
+> > 2. V4L2_CID_PRIVATE_RAW_PATH
+> > - Export the path control of the main stream to user space.
+> > One is pure raw and the other is processing raw.
+> > The default image path is pure raw.
+> > 
+> > Signed-off-by: Jungo Lin <jungo.lin@mediatek.com>
+> > ---
+> >  .../mtk-isp/isp_50/cam/mtk_cam-ctrl.c         | 133 ++++++++++++++++++
+> >  .../mtk-isp/isp_50/cam/mtk_cam-ctrl.h         |  32 +++++
+> >  include/uapi/linux/v4l2-controls.h            |   4 +
+> >  3 files changed, 169 insertions(+)
+> >  create mode 100644 drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-ctrl.c
+> >  create mode 100644 drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-ctrl.h
+> > 
+> > diff --git a/drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-ctrl.c b/drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-ctrl.c
+> > new file mode 100644
+> > index 000000000000..520adbe367ed
+> > --- /dev/null
+> > +++ b/drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-ctrl.c
+> > @@ -0,0 +1,133 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +/*
+> > + * Copyright (c) 2018 MediaTek Inc.
+> > + * Author: Ryan Yu <ryan.yu@mediatek.com>
+> > + *
+> > + * This program is free software; you can redistribute it and/or modify
+> > + * it under the terms of the GNU General Public License version 2 as
+> > + * published by the Free Software Foundation.
+> > + *
+> > + * This program is distributed in the hope that it will be useful,
+> > + * but WITHOUT ANY WARRANTY; without even the implied warranty of
+> > + * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+> > + * GNU General Public License for more details.
+> > + */
+> 
+> Don't combine both SPDX and a license text. Just use the SPDX.
+> 
+> I see it being used elsewhere as well, so I won't repeat myself.
+> 
+
+Ok, we will revise the license declaration and only keep SPDX license
+only as below in all files.
+
+// SPDX-License-Identifier: GPL-2.0
+//
+// Copyright (c) 2019 MediaTek Inc.
+
+> > +
+> > +#include <linux/device.h>
+> > +#include <linux/platform_device.h>
+> > +#include "mtk_cam-dev.h"
+> > +#include "mtk_cam-ctrl.h"
+> > +#include "mtk_cam.h"
+> > +
+> > +static int handle_ctrl_get_bin_info(struct v4l2_ctrl *ctrl)
+> > +{
+> > +	struct mtk_cam_dev *cam_dev = ctrl->priv;
+> > +	const unsigned int idx = MTK_CAM_P1_MAIN_STREAM_OUT;
+> > +	struct v4l2_format *imgo_fmt = &cam_dev->mem2mem2_nodes[idx].vdev_fmt;
+> > +	unsigned int width, height;
+> > +
+> > +	width = imgo_fmt->fmt.pix_mp.width;
+> > +	height = imgo_fmt->fmt.pix_mp.height;
+> > +
+> > +	dev_dbg(&cam_dev->pdev->dev, "Get bin info w*h:%d*%d",
+> > +		width, height);
+> > +
+> > +	ctrl->val = (width << 16) | height;
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int handle_ctrl_get_raw_path(struct v4l2_ctrl *ctrl)
+> > +{
+> > +	struct mtk_cam_dev *cam_dev = ctrl->priv;
+> > +	struct isp_p1_device *p1_dev = get_p1_device(&cam_dev->pdev->dev);
+> > +
+> > +	ctrl->val = p1_dev->isp_ctx.isp_raw_path;
+> > +
+> > +	dev_dbg(&cam_dev->pdev->dev, "Get raw path:%d", ctrl->val);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int handle_ctrl_set_raw_path(struct v4l2_ctrl *ctrl)
+> > +{
+> > +	struct mtk_cam_dev *cam_dev = ctrl->priv;
+> > +	struct isp_p1_device *p1_dev = get_p1_device(&cam_dev->pdev->dev);
+> > +
+> > +	p1_dev->isp_ctx.isp_raw_path = ctrl->val;
+> > +	dev_dbg(&cam_dev->pdev->dev, "Set raw path:%d", ctrl->val);
+> > +	return 0;
+> > +}
+> > +
+> > +static int mtk_cam_dev_g_ctrl(struct v4l2_ctrl *ctrl)
+> > +{
+> > +	switch (ctrl->id) {
+> > +	case V4L2_CID_PRIVATE_GET_BIN_INFO:
+> > +		handle_ctrl_get_bin_info(ctrl);
+> > +		break;
+> > +	case V4L2_CID_PRIVATE_RAW_PATH:
+> > +		handle_ctrl_get_raw_path(ctrl);
+> > +		break;
+> > +	default:
+> > +		return -EINVAL;
+> > +	}
+> > +	return 0;
+> > +}
+> > +
+> > +static int mtk_cam_dev_s_ctrl(struct v4l2_ctrl *ctrl)
+> > +{
+> > +	switch (ctrl->id) {
+> > +	case V4L2_CID_PRIVATE_RAW_PATH:
+> > +		return handle_ctrl_set_raw_path(ctrl);
+> > +	default:
+> > +		return -EINVAL;
+> > +	}
+> > +}
+> > +
+> > +static const struct v4l2_ctrl_ops mtk_cam_dev_ctrl_ops = {
+> > +	.g_volatile_ctrl = mtk_cam_dev_g_ctrl,
+> > +	.s_ctrl = mtk_cam_dev_s_ctrl,
+> > +};
+> > +
+> > +struct v4l2_ctrl_config mtk_cam_controls[] = {
+> > +	{
+> > +	.ops = &mtk_cam_dev_ctrl_ops,
+> > +	.id = V4L2_CID_PRIVATE_GET_BIN_INFO,
+> 
+> Don't use "PRIVATE" in the name. I'd replace that with MTK to indicate
+> that this is mediatek-specific. Same for the next control below.
+> 
+
+We will adopt your suggestion and revise these naming in the next patch.
+
+> > +	.name = "MTK CAM GET BIN INFO",
+> > +	.type = V4L2_CTRL_TYPE_INTEGER,
+> > +	.min = (IMG_MIN_WIDTH << 16) | IMG_MIN_HEIGHT,
+> > +	.max = (IMG_MAX_WIDTH << 16) | IMG_MAX_HEIGHT,
+> > +	.step = 1,
+> > +	.def = (IMG_MAX_WIDTH << 16) | IMG_MAX_HEIGHT,
+> > +	.flags = V4L2_CTRL_FLAG_READ_ONLY | V4L2_CTRL_FLAG_VOLATILE,
+> 
+> Don't mix width and height. I recommend splitting this into two controls.
+> 
+> Sakari might have an opinion on this as well.
+> 
+
+Ok, we will split this control into different two controls for width &
+height usage.  
+
+> > +	},
+> > +	{
+> > +	.ops = &mtk_cam_dev_ctrl_ops,
+> > +	.id = V4L2_CID_PRIVATE_RAW_PATH,
+> > +	.name = "MTK CAM RAW PATH",
+> > +	.type = V4L2_CTRL_TYPE_BOOLEAN,
+> > +	.min = 0,
+> > +	.max = 1,
+> > +	.step = 1,
+> > +	.def = 1,
+> > +	},
+> 
+> RAW_PATH is a very vague name. If it is 0, then it is pure raw, and if it
+> is 1, then it is 'processing raw'? If so, call it "Processing Raw".
+> 
+> Although you have to describe in the header or here what that means.
+> 
+> Private controls should be well documented.
+
+Yes, you are right. We will rename this control to
+V4L2_CID_MTK_PROCESSING_RAW and describes its usage in detail.
+
+> 
+> > +};
+> > +
+> > +int mtk_cam_ctrl_init(struct mtk_cam_dev *cam_dev,
+> > +		      struct v4l2_ctrl_handler *hdl)
+> > +{
+> > +	unsigned int i;
+> > +
+> > +	/* Initialized HW controls, allow V4L2_CID_MTK_CAM_MAX ctrls */
+> > +	v4l2_ctrl_handler_init(hdl, V4L2_CID_MTK_CAM_MAX);
+> > +	if (hdl->error) {
+> > +		v4l2_ctrl_handler_free(hdl);
+> > +		return hdl->error;
+> > +	}
+> > +
+> > +	for (i = 0; i < ARRAY_SIZE(mtk_cam_controls); i++)
+> > +		v4l2_ctrl_new_custom(hdl, &mtk_cam_controls[i], cam_dev);
+> > +
+> > +	dev_dbg(&cam_dev->pdev->dev, "%s done", __func__);
+> > +	return 0;
+> > +}
+> > diff --git a/drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-ctrl.h b/drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-ctrl.h
+> > new file mode 100644
+> > index 000000000000..74a6538c81ac
+> > --- /dev/null
+> > +++ b/drivers/media/platform/mtk-isp/isp_50/cam/mtk_cam-ctrl.h
+> > @@ -0,0 +1,32 @@
+> > +/* SPDX-License-Identifier: GPL-2.0 */
+> > +/*
+> > + * Copyright (c) 2018 MediaTek Inc.
+> > + * Author: Ryan Yu <ryan.yu@mediatek.com>
+> > + *
+> > + * This program is free software; you can redistribute it and/or modify
+> > + * it under the terms of the GNU General Public License version 2 as
+> > + * published by the Free Software Foundation.
+> > + *
+> > + * This program is distributed in the hope that it will be useful,
+> > + * but WITHOUT ANY WARRANTY; without even the implied warranty of
+> > + * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+> > + * GNU General Public License for more details.
+> > + */
+> > +
+> > +#ifndef __MTK_CAM_CTRL_H__
+> > +#define __MTK_CAM_CTRL_H__
+> > +
+> > +#include <media/v4l2-ctrls.h>
+> > +
+> > +#define V4L2_CID_MTK_CAM_PRIVATE_CAM  V4L2_CID_USER_MTK_CAM_BASE
+> > +#define V4L2_CID_PRIVATE_GET_BIN_INFO \
+> > +	(V4L2_CID_MTK_CAM_PRIVATE_CAM + 1)
+> > +#define V4L2_CID_PRIVATE_RAW_PATH \
+> > +	(V4L2_CID_MTK_CAM_PRIVATE_CAM + 2)
+> 
+> These last two defines can be on a single line.
+> 
+> They need to be documented in the header.
+> 
+
+Ok, we will pay attenuation on this.
+We will provide the detail information of these controls in next patch.
+
+> > +
+> > +#define V4L2_CID_MTK_CAM_MAX	16
+> > +
+> > +int mtk_cam_ctrl_init(struct mtk_cam_dev *cam_dev,
+> > +		      struct v4l2_ctrl_handler *hdl);
+> > +
+> > +#endif /* __MTK_CAM_CTRL_H__ */
+> > diff --git a/include/uapi/linux/v4l2-controls.h b/include/uapi/linux/v4l2-controls.h
+> > index 06479f2fb3ae..cbe8f5f7782b 100644
+> > --- a/include/uapi/linux/v4l2-controls.h
+> > +++ b/include/uapi/linux/v4l2-controls.h
+> > @@ -192,6 +192,10 @@ enum v4l2_colorfx {
+> >   * We reserve 16 controls for this driver. */
+> >  #define V4L2_CID_USER_IMX_BASE			(V4L2_CID_USER_BASE + 0x10b0)
+> >  
+> > +/* The base for the mediatek ISP Pass 1 driver controls */
+> > +/* We reserve 16 controls for this driver. */
+> > +#define V4L2_CID_USER_MTK_CAM_BASE		(V4L2_CID_USER_BASE + 0x10c0)
+> > +
+> >  /* MPEG-class control IDs */
+> >  /* The MPEG controls are applicable to all codec controls
+> >   * and the 'MPEG' part of the define is historical */
+> > 
+> 
+> Regards,
+> 
+> 	Hans
+
+Best regards,
+
+Jungo
 
 
 _______________________________________________
