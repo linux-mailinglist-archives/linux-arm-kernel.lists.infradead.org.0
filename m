@@ -2,54 +2,111 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F2D61C58B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 11:01:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E5F61C5A2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 11:05:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=vSMckPpAO4PDalYbfAYa93aygh1V+4AkuefJq+nWHdI=; b=eNYL93Y+PXfdrq1SiwpAlIF28x
-	yRzIT6ht/tHmcRd2M22Vffq4Ry0APLmoZfafrdDkyfKMdhASj1iPyaGv1WU8PUNTRh6FDxjEsT/rU
-	iSr7Ib1y78Y9IpvW15gfXYlOJ7aYfVfQ26gnOfgy+gIRl9WkHAXcScT64KAD0RTEeDUguaqsfNHJI
-	FUJ3Sna2OsnSojBskhv92kJSVP/8SoB4s4VM+pb/sFI7MnZo8iPIe0Tzb+1wAkk0SmnCvc+qhrRHg
-	wTTcvGcD/Zll1ehreDvX3GDLUlIemdnuXhROj6TTxU1EbkPffkTbsqu9td7yOZqlEA5YWlz3L0gfd
-	80D0kRqA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eSlwG0AFk50ALKi1J/RNfSEIMNkNBYfZ9VEEdSGm5tM=; b=VHnkaW1weC5HGu
+	/KjEQdgfoCG1Y3pi9Rlu5F6C8DLCUpe6AlmVBLWIOTv3Cs9PKiGrgLb7/BxI470IFRa3DsZNvGxJb
+	JGHB7U6iLudnfkv4Qt4kccQmqb1MpgGNO7GS1lnsM/F2+l8ZAKy28DvWHVCuHXbpky/KiiRyNdT+6
+	Z5w00+gSEWQ18Xk/EMi3Vd4YI5zNYLmEpaSNdTcv9NtV+emyYJJsdVRdLvkfHy8B9IihhGeyuNeZj
+	h+KBpatNPdsx7je4oxFInD6quMP0uCU9yNSu05whNtxd2RRQy9g5/d5BFJFb0a2K1SDwpDT+oPfS5
+	SDeZsoDyL1eMlYCc1kuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQTJ9-0000IU-OD; Tue, 14 May 2019 09:01:11 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQTIg-0008Km-SG
- for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 09:00:50 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 47C4B374;
- Tue, 14 May 2019 02:00:42 -0700 (PDT)
-Received: from p8cg001049571a15.arm.com (unknown [10.163.1.137])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 56FB23F71E;
- Tue, 14 May 2019 02:00:34 -0700 (PDT)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	id 1hQTNQ-0002O7-QG; Tue, 14 May 2019 09:05:36 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hQTNJ-0002NQ-L3
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 09:05:31 +0000
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 76463305AC91;
+ Tue, 14 May 2019 09:05:25 +0000 (UTC)
+Received: from [10.36.117.118] (ovpn-117-118.ams2.redhat.com [10.36.117.118])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 814E4608A6;
+ Tue, 14 May 2019 09:05:16 +0000 (UTC)
+Subject: Re: [PATCH V3 1/4] mm/hotplug: Reorder arch_remove_memory() call in
+ __remove_memory()
+To: Anshuman Khandual <anshuman.khandual@arm.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  akpm@linux-foundation.org, catalin.marinas@arm.com, will.deacon@arm.com
-Subject: [PATCH V3 4/4] arm64/mm: Enable memory hot remove
-Date: Tue, 14 May 2019 14:30:07 +0530
-Message-Id: <1557824407-19092-5-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1557824407-19092-1-git-send-email-anshuman.khandual@arm.com>
 References: <1557824407-19092-1-git-send-email-anshuman.khandual@arm.com>
+ <1557824407-19092-2-git-send-email-anshuman.khandual@arm.com>
+From: David Hildenbrand <david@redhat.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
+ 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
+ SE+xAvmumFBY
+Organization: Red Hat GmbH
+Message-ID: <1f43d480-0335-c9ed-8778-a4a2b18e8398@redhat.com>
+Date: Tue, 14 May 2019 11:05:15 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <1557824407-19092-2-git-send-email-anshuman.khandual@arm.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.46]); Tue, 14 May 2019 09:05:28 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_020043_581988_163FF46C 
-X-CRM114-Status: GOOD (  17.13  )
+X-CRM114-CacheID: sfid-20190514_020529_731187_E2081CCA 
+X-CRM114-Status: GOOD (  24.84  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -62,308 +119,114 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: mark.rutland@arm.com, mhocko@suse.com, ira.weiny@intel.com,
- david@redhat.com, robin.murphy@arm.com, cai@lca.pw, logang@deltatee.com,
- james.morse@arm.com, cpandya@codeaurora.org, arunks@codeaurora.org,
- dan.j.williams@intel.com, mgorman@techsingularity.net, osalvador@suse.de
-MIME-Version: 1.0
+ robin.murphy@arm.com, cai@lca.pw, logang@deltatee.com, james.morse@arm.com,
+ cpandya@codeaurora.org, arunks@codeaurora.org, dan.j.williams@intel.com,
+ mgorman@techsingularity.net, osalvador@suse.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Memory removal from an arch perspective involves tearing down two different
-kernel based mappings i.e vmemmap and linear while releasing related page
-table and any mapped pages allocated for given physical memory range to be
-removed.
+On 14.05.19 11:00, Anshuman Khandual wrote:
+> Memory hot remove uses get_nid_for_pfn() while tearing down linked sysfs
+> entries between memory block and node. It first checks pfn validity with
+> pfn_valid_within() before fetching nid. With CONFIG_HOLES_IN_ZONE config
+> (arm64 has this enabled) pfn_valid_within() calls pfn_valid().
+> 
+> pfn_valid() is an arch implementation on arm64 (CONFIG_HAVE_ARCH_PFN_VALID)
+> which scans all mapped memblock regions with memblock_is_map_memory(). This
+> creates a problem in memory hot remove path which has already removed given
+> memory range from memory block with memblock_[remove|free] before arriving
+> at unregister_mem_sect_under_nodes(). Hence get_nid_for_pfn() returns -1
+> skipping subsequent sysfs_remove_link() calls leaving node <-> memory block
+> sysfs entries as is. Subsequent memory add operation hits BUG_ON() because
+> of existing sysfs entries.
+> 
+> [   62.007176] NUMA: Unknown node for memory at 0x680000000, assuming node 0
+> [   62.052517] ------------[ cut here ]------------
+> [   62.053211] kernel BUG at mm/memory_hotplug.c:1143!
+> [   62.053868] Internal error: Oops - BUG: 0 [#1] PREEMPT SMP
+> [   62.054589] Modules linked in:
+> [   62.054999] CPU: 19 PID: 3275 Comm: bash Not tainted 5.1.0-rc2-00004-g28cea40b2683 #41
+> [   62.056274] Hardware name: linux,dummy-virt (DT)
+> [   62.057166] pstate: 40400005 (nZcv daif +PAN -UAO)
+> [   62.058083] pc : add_memory_resource+0x1cc/0x1d8
+> [   62.058961] lr : add_memory_resource+0x10c/0x1d8
+> [   62.059842] sp : ffff0000168b3ce0
+> [   62.060477] x29: ffff0000168b3ce0 x28: ffff8005db546c00
+> [   62.061501] x27: 0000000000000000 x26: 0000000000000000
+> [   62.062509] x25: ffff0000111ef000 x24: ffff0000111ef5d0
+> [   62.063520] x23: 0000000000000000 x22: 00000006bfffffff
+> [   62.064540] x21: 00000000ffffffef x20: 00000000006c0000
+> [   62.065558] x19: 0000000000680000 x18: 0000000000000024
+> [   62.066566] x17: 0000000000000000 x16: 0000000000000000
+> [   62.067579] x15: ffffffffffffffff x14: ffff8005e412e890
+> [   62.068588] x13: ffff8005d6b105d8 x12: 0000000000000000
+> [   62.069610] x11: ffff8005d6b10490 x10: 0000000000000040
+> [   62.070615] x9 : ffff8005e412e898 x8 : ffff8005e412e890
+> [   62.071631] x7 : ffff8005d6b105d8 x6 : ffff8005db546c00
+> [   62.072640] x5 : 0000000000000001 x4 : 0000000000000002
+> [   62.073654] x3 : ffff8005d7049480 x2 : 0000000000000002
+> [   62.074666] x1 : 0000000000000003 x0 : 00000000ffffffef
+> [   62.075685] Process bash (pid: 3275, stack limit = 0x00000000d754280f)
+> [   62.076930] Call trace:
+> [   62.077411]  add_memory_resource+0x1cc/0x1d8
+> [   62.078227]  __add_memory+0x70/0xa8
+> [   62.078901]  probe_store+0xa4/0xc8
+> [   62.079561]  dev_attr_store+0x18/0x28
+> [   62.080270]  sysfs_kf_write+0x40/0x58
+> [   62.080992]  kernfs_fop_write+0xcc/0x1d8
+> [   62.081744]  __vfs_write+0x18/0x40
+> [   62.082400]  vfs_write+0xa4/0x1b0
+> [   62.083037]  ksys_write+0x5c/0xc0
+> [   62.083681]  __arm64_sys_write+0x18/0x20
+> [   62.084432]  el0_svc_handler+0x88/0x100
+> [   62.085177]  el0_svc+0x8/0xc
+> 
+> Re-ordering arch_remove_memory() with memblock_[free|remove] solves the
+> problem on arm64 as pfn_valid() behaves correctly and returns positive
+> as memblock for the address range still exists. arch_remove_memory()
+> removes applicable memory sections from zone with __remove_pages() and
+> tears down kernel linear mapping. Removing memblock regions afterwards
+> is safe because there is no other memblock (bootmem) allocator user that
+> late. So nobody is going to allocate from the removed range just to blow
+> up later. Also nobody should be using the bootmem allocated range else
+> we wouldn't allow to remove it. So reordering is indeed safe.
+> 
+> Acked-by: Michal Hocko <mhocko@suse.com>
+> Reviewed-by: David Hildenbrand <david@redhat.com>
+> Reviewed-by: Oscar Salvador <osalvador@suse.de>
+> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+> ---
+>  mm/memory_hotplug.c | 3 +--
+>  1 file changed, 1 insertion(+), 2 deletions(-)
+> 
+> diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
+> index 0082d69..71d0d79 100644
+> --- a/mm/memory_hotplug.c
+> +++ b/mm/memory_hotplug.c
+> @@ -1872,11 +1872,10 @@ void __ref __remove_memory(int nid, u64 start, u64 size)
+>  
+>  	/* remove memmap entry */
+>  	firmware_map_remove(start, start + size, "System RAM");
+> +	arch_remove_memory(nid, start, size, NULL);
+>  	memblock_free(start, size);
+>  	memblock_remove(start, size);
+>  
+> -	arch_remove_memory(nid, start, size, NULL);
+> -
+>  	try_offline_node(nid);
+>  
+>  	mem_hotplug_done();
+> 
 
-Define a common kernel page table tear down helper remove_pagetable() which
-can be used to unmap given kernel virtual address range. In effect it can
-tear down both vmemap or kernel linear mappings. This new helper is called
-from both vmemamp_free() and ___remove_pgd_mapping() during memory removal.
+I think you have to rebase this patch to -next (and soon to linus master).
 
-For linear mapping there are no actual allocated pages which are mapped to
-create the translation. Any pfn on a given entry is derived from physical
-address (__va(PA) --> PA) whose linear translation is to be created. They
-need not be freed as they were never allocated in the first place. But for
-vmemmap which is a real virtual mapping (like vmalloc) physical pages are
-allocated either from buddy or memblock which get mapped in the kernel page
-table. These allocated and mapped pages need to be freed during translation
-tear down. But page table pages need to be freed in both these cases.
-
-These mappings need to be differentiated while deciding if a mapped page at
-any level i.e [pte|pmd|pud]_page() should be freed or not. Callers for the
-mapping tear down process should pass on 'sparse_vmap' variable identifying
-kernel vmemmap mappings.
-
-While here update arch_add_mempory() to handle __add_pages() failures by
-just unmapping recently added kernel linear mapping. Now enable memory hot
-remove on arm64 platforms by default with ARCH_ENABLE_MEMORY_HOTREMOVE.
-
-This implementation is overall inspired from kernel page table tear down
-procedure on X86 architecture.
-
-Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
----
- arch/arm64/Kconfig  |   3 +
- arch/arm64/mm/mmu.c | 204 +++++++++++++++++++++++++++++++++++++++++++++++++++-
- 2 files changed, 205 insertions(+), 2 deletions(-)
-
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 1c0cb51..bb4e571 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -268,6 +268,9 @@ config HAVE_GENERIC_GUP
- config ARCH_ENABLE_MEMORY_HOTPLUG
- 	def_bool y
- 
-+config ARCH_ENABLE_MEMORY_HOTREMOVE
-+	def_bool y
-+
- config SMP
- 	def_bool y
- 
-diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-index 37a902c..bd2d003 100644
---- a/arch/arm64/mm/mmu.c
-+++ b/arch/arm64/mm/mmu.c
-@@ -733,6 +733,177 @@ int kern_addr_valid(unsigned long addr)
- 
- 	return pfn_valid(pte_pfn(pte));
- }
-+
-+#ifdef CONFIG_MEMORY_HOTPLUG
-+static void free_hotplug_page_range(struct page *page, ssize_t size)
-+{
-+	WARN_ON(PageReserved(page));
-+	free_pages((unsigned long)page_address(page), get_order(size));
-+}
-+
-+static void free_hotplug_pgtable_page(struct page *page)
-+{
-+	free_hotplug_page_range(page, PAGE_SIZE);
-+}
-+
-+static void free_pte_table(pte_t *ptep, pmd_t *pmdp, unsigned long addr)
-+{
-+	struct page *page;
-+	int i;
-+
-+	for (i = 0; i < PTRS_PER_PTE; i++) {
-+		if (!pte_none(ptep[i]))
-+			return;
-+	}
-+
-+	page = pmd_page(*pmdp);
-+	pmd_clear(pmdp);
-+	__flush_tlb_kernel_pgtable(addr);
-+	free_hotplug_pgtable_page(page);
-+}
-+
-+#if (CONFIG_PGTABLE_LEVELS > 2)
-+static void free_pmd_table(pmd_t *pmdp, pud_t *pudp, unsigned long addr)
-+{
-+	struct page *page;
-+	int i;
-+
-+	for (i = 0; i < PTRS_PER_PMD; i++) {
-+		if (!pmd_none(pmdp[i]))
-+			return;
-+	}
-+
-+	page = pud_page(*pudp);
-+	pud_clear(pudp);
-+	__flush_tlb_kernel_pgtable(addr);
-+	free_hotplug_pgtable_page(page);
-+}
-+#else
-+static void free_pmd_table(pmd_t *pmdp, pud_t *pudp, unsigned long addr) { }
-+#endif
-+
-+#if (CONFIG_PGTABLE_LEVELS > 3)
-+static void free_pud_table(pud_t *pudp, pgd_t *pgdp, unsigned long addr)
-+{
-+	struct page *page;
-+	int i;
-+
-+	for (i = 0; i < PTRS_PER_PUD; i++) {
-+		if (!pud_none(pudp[i]))
-+			return;
-+	}
-+
-+	page = pgd_page(*pgdp);
-+	pgd_clear(pgdp);
-+	__flush_tlb_kernel_pgtable(addr);
-+	free_hotplug_pgtable_page(page);
-+}
-+#else
-+static void free_pud_table(pud_t *pudp, pgd_t *pgdp, unsigned long addr) { }
-+#endif
-+
-+static void
-+remove_pte_table(pmd_t *pmdp, unsigned long addr,
-+			unsigned long end, bool sparse_vmap)
-+{
-+	struct page *page;
-+	pte_t *ptep;
-+	unsigned long start = addr;
-+
-+	for (; addr < end; addr += PAGE_SIZE) {
-+		ptep = pte_offset_kernel(pmdp, addr);
-+		if (!pte_present(*ptep))
-+			continue;
-+
-+		if (sparse_vmap) {
-+			page = pte_page(READ_ONCE(*ptep));
-+			free_hotplug_page_range(page, PAGE_SIZE);
-+		}
-+		pte_clear(&init_mm, addr, ptep);
-+	}
-+	flush_tlb_kernel_range(start, end);
-+}
-+
-+static void
-+remove_pmd_table(pud_t *pudp, unsigned long addr,
-+			unsigned long end, bool sparse_vmap)
-+{
-+	unsigned long next;
-+	struct page *page;
-+	pte_t *ptep_base;
-+	pmd_t *pmdp;
-+
-+	for (; addr < end; addr = next) {
-+		next = pmd_addr_end(addr, end);
-+		pmdp = pmd_offset(pudp, addr);
-+		if (!pmd_present(*pmdp))
-+			continue;
-+
-+		if (pmd_sect(*pmdp)) {
-+			if (sparse_vmap) {
-+				page = pmd_page(READ_ONCE(*pmdp));
-+				free_hotplug_page_range(page, PMD_SIZE);
-+			}
-+			pmd_clear(pmdp);
-+			continue;
-+		}
-+		ptep_base = pte_offset_kernel(pmdp, 0UL);
-+		remove_pte_table(pmdp, addr, next, sparse_vmap);
-+		free_pte_table(ptep_base, pmdp, addr);
-+	}
-+}
-+
-+static void
-+remove_pud_table(pgd_t *pgdp, unsigned long addr,
-+			unsigned long end, bool sparse_vmap)
-+{
-+	unsigned long next;
-+	struct page *page;
-+	pmd_t *pmdp_base;
-+	pud_t *pudp;
-+
-+	for (; addr < end; addr = next) {
-+		next = pud_addr_end(addr, end);
-+		pudp = pud_offset(pgdp, addr);
-+		if (!pud_present(*pudp))
-+			continue;
-+
-+		if (pud_sect(*pudp)) {
-+			if (sparse_vmap) {
-+				page = pud_page(READ_ONCE(*pudp));
-+				free_hotplug_page_range(page, PUD_SIZE);
-+			}
-+			pud_clear(pudp);
-+			continue;
-+		}
-+		pmdp_base = pmd_offset(pudp, 0UL);
-+		remove_pmd_table(pudp, addr, next, sparse_vmap);
-+		free_pmd_table(pmdp_base, pudp, addr);
-+	}
-+}
-+
-+static void
-+remove_pagetable(unsigned long start, unsigned long end, bool sparse_vmap)
-+{
-+	unsigned long addr, next;
-+	pud_t *pudp_base;
-+	pgd_t *pgdp;
-+
-+	spin_lock(&init_mm.page_table_lock);
-+	for (addr = start; addr < end; addr = next) {
-+		next = pgd_addr_end(addr, end);
-+		pgdp = pgd_offset_k(addr);
-+		if (!pgd_present(*pgdp))
-+			continue;
-+
-+		pudp_base = pud_offset(pgdp, 0UL);
-+		remove_pud_table(pgdp, addr, next, sparse_vmap);
-+		free_pud_table(pudp_base, pgdp, addr);
-+	}
-+	spin_unlock(&init_mm.page_table_lock);
-+}
-+#endif
-+
- #ifdef CONFIG_SPARSEMEM_VMEMMAP
- #if !ARM64_SWAPPER_USES_SECTION_MAPS
- int __meminit vmemmap_populate(unsigned long start, unsigned long end, int node,
-@@ -780,6 +951,9 @@ int __meminit vmemmap_populate(unsigned long start, unsigned long end, int node,
- void vmemmap_free(unsigned long start, unsigned long end,
- 		struct vmem_altmap *altmap)
- {
-+#ifdef CONFIG_MEMORY_HOTPLUG
-+	remove_pagetable(start, end, true);
-+#endif
- }
- #endif	/* CONFIG_SPARSEMEM_VMEMMAP */
- 
-@@ -1070,10 +1244,16 @@ int p4d_free_pud_page(p4d_t *p4d, unsigned long addr)
- }
- 
- #ifdef CONFIG_MEMORY_HOTPLUG
-+static void __remove_pgd_mapping(pgd_t *pgdir, unsigned long start, u64 size)
-+{
-+	WARN_ON(pgdir != init_mm.pgd);
-+	remove_pagetable(start, start + size, false);
-+}
-+
- int arch_add_memory(int nid, u64 start, u64 size, struct vmem_altmap *altmap,
- 		    bool want_memblock)
- {
--	int flags = 0;
-+	int ret, flags = 0;
- 
- 	if (rodata_full || debug_pagealloc_enabled())
- 		flags = NO_BLOCK_MAPPINGS | NO_CONT_MAPPINGS;
-@@ -1081,7 +1261,27 @@ int arch_add_memory(int nid, u64 start, u64 size, struct vmem_altmap *altmap,
- 	__create_pgd_mapping(swapper_pg_dir, start, __phys_to_virt(start),
- 			     size, PAGE_KERNEL, __pgd_pgtable_alloc, flags);
- 
--	return __add_pages(nid, start >> PAGE_SHIFT, size >> PAGE_SHIFT,
-+	ret = __add_pages(nid, start >> PAGE_SHIFT, size >> PAGE_SHIFT,
- 			   altmap, want_memblock);
-+	if (ret)
-+		__remove_pgd_mapping(swapper_pg_dir,
-+					__phys_to_virt(start), size);
-+	return ret;
- }
-+
-+#ifdef CONFIG_MEMORY_HOTREMOVE
-+int arch_remove_memory(int nid, u64 start, u64 size, struct vmem_altmap *altmap)
-+{
-+	unsigned long start_pfn = start >> PAGE_SHIFT;
-+	unsigned long nr_pages = size >> PAGE_SHIFT;
-+	struct zone *zone = page_zone(pfn_to_page(start_pfn));
-+	int ret = 0;
-+
-+	ret = __remove_pages(zone, start_pfn, nr_pages, altmap);
-+	if (!ret)
-+		__remove_pgd_mapping(swapper_pg_dir,
-+					__phys_to_virt(start), size);
-+	return ret;
-+}
-+#endif
- #endif
 -- 
-2.7.4
 
+Thanks,
+
+David / dhildenb
 
 _______________________________________________
 linux-arm-kernel mailing list
