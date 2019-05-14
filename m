@@ -2,60 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A69D1CB04
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 16:56:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6FE521CBA7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 17:17:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+9ZhxBDmWoNMUdZ2MWxLVeRJ4n6Nb7ynjpqvQmhJudQ=; b=oFe8Ig/6awuuHD
-	fMJNGDo4rMdu7A5KkMeN7ev06RuGmvdbGkilcjhVv2zodVgWwS3U50FNd4LLxsEuhwerH0w9i7y0L
-	m8f+4iY3Vv2v9gR/EaAjj3bUYCKKMAdNGWtmQSE5oCqjyTqph1ktPrVMx3dXvzm69ElrARF5Yve3d
-	VYkcw0IoMzBsfD0x320LEy1TAuQjG8o/AGjGHzitWYCiANCxaq2eQHyCEm/hSis4hJJP1YjOA3eRn
-	LHsuXENLPJ5DLDGrlzgwDIVaH5zJBfW0o/qYa5KseVleSON/qK+8qtriuNZBm+sBbgc6+WVmxkPqj
-	9Jcs3L8mkyAs0diZc5gg==;
+	List-Owner; bh=w4YK4eYVX5oAu1Itd2qJhrTyyWa9oNAXQdJtb/+TxVQ=; b=W0+42m2ymFz94c
+	ILiKiHy2VjGqm6qB6bbLvNmPsqzXoZmCsHl183SP8II8d8vToD98r8kLLlal6ES7H8q0Rz2MGlPxV
+	9qxiv+OGsKuFRIYcQG2NzKHuWJFxI7yl1cpvLhwoSj45C3CTs4wwv7U6upmk+o9D0c+AoNBiwfdtG
+	hRGk0v8iYGSkb056HbrbXbGsWcDMB79qN6HwQTADN5K8cy2ktF82pOTmftBFy5CvUrZeWB0qCEzGm
+	M+4bS6FNQW6paRjbmS2bhm5nNmm7dSUvCzsAXYtgsZtSvLiequR8oUWWdu5PAKeGNyHTYhbJy9YVl
+	QErsxPeyvopl+eayGeHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQYqS-0008FA-Bi; Tue, 14 May 2019 14:55:56 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQYqK-0008Dk-FZ
- for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 14:55:49 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B9D80374;
- Tue, 14 May 2019 07:55:45 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 823343F703;
- Tue, 14 May 2019 07:55:43 -0700 (PDT)
-Date: Tue, 14 May 2019 15:55:41 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: Zhi Li <lznuaa@gmail.com>
-Subject: Re: [PATCH V12 2/4] drivers/perf: imx_ddr: Add ddr performance
- counter support
-Message-ID: <20190514145541.GC2825@fuggles.cambridge.arm.com>
-References: <1556736193-29411-1-git-send-email-Frank.Li@nxp.com>
- <1556736193-29411-2-git-send-email-Frank.Li@nxp.com>
- <CAHQ1cqGszjTZ+kSTeqHjoZ-QPKd6f1Afn+00-haJy_dJY4X4+g@mail.gmail.com>
- <CAHrpEqQKyH0+vXJfWf0fuUDvQnSCKjrBmU8megsUWX1mHdbfrw@mail.gmail.com>
+	id 1hQZBY-0007On-Me; Tue, 14 May 2019 15:17:44 +0000
+Received: from mail-yw1-xc41.google.com ([2607:f8b0:4864:20::c41])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hQZBR-0007Nz-Ik
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 15:17:39 +0000
+Received: by mail-yw1-xc41.google.com with SMTP id a130so14243312ywe.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 14 May 2019 08:17:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=XlpJYHLmPG7Uggd9+oaIZ1OeCPKgknlGwcKeYgcPgps=;
+ b=dmpRF7RZxloSc1IpirAVs4uHNLPmixu1h5DGL0kn80zjR4NMuvwbzk04I71iyTq+I6
+ FFq4icPffkFrDE80DZkTbIEQCePFMc6rrKjiDUKR2yLzjDDytq3bmNcVsvDM4YW+CNgz
+ uh+dqa4DzyxtUGio4Fzqq7gmif5BzLB2GD3La6kHR6PqSV8Jh38XdxUXeygbQJkkyz8V
+ pMx1cxToi+sqCT0rMD5tgdgdT7YAYp9JAD8Ama+b8XJW5XO4LWLh0vYiEtHW60/m4NRb
+ FlkhmS5dSRhK2bO96CC0vcQwG/KLBjyZbG4F2bclAP8r1VMdbOAfq01Px1CG3FiVoVTU
+ jTlw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=XlpJYHLmPG7Uggd9+oaIZ1OeCPKgknlGwcKeYgcPgps=;
+ b=aODDw+JpXYbntEhNRxjpUTAGmlGFtp8WuYgPFUOlENPGXThQ0qRTsE9bWE1puKUnY8
+ nhIQd8rySm7r3bJCjMew6pfl3drUtJw9clkROxW4HiSaD/Fnz+SzmJNsc91bacswkSLb
+ MEGk/tNF9h+JGPT1str7/zj4YYhxPrvt1rpIOBYjYMKJXSxbMbdVCfsxkE43qOxXKd9W
+ vDgsiZyOK9PuksI1s9RUPj1Y+GqKrZbeV9zN57HxQFSv9EALttZ+QKvctvUG9r1DaJMZ
+ FpClGRNmtTVQGYIQLQz1L8T5jz6/jQTZjkmje2rRF80oykVjz4i7xuxFuX01bNWKQkAr
+ 0OWg==
+X-Gm-Message-State: APjAAAUR5LznDY1X5qktxOI7VdHdwFCoXJG2IUDNZ5tRGtG39uPIR/YX
+ YcVKgEqjWFEI4i71yz4wEFZzE1YZ/gAwMJLlzKY=
+X-Google-Smtp-Source: APXvYqxEriT2XkWrsa7sMupzbhPrCGn4wsQkd2YWnSKAQ8Mjc/v1DzNBx9GbGA3XQKwGm9ujepe0XUdZIaO+zUVSBaE=
+X-Received: by 2002:a25:9b88:: with SMTP id v8mr17000341ybo.153.1557847055669; 
+ Tue, 14 May 2019 08:17:35 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAHrpEqQKyH0+vXJfWf0fuUDvQnSCKjrBmU8megsUWX1mHdbfrw@mail.gmail.com>
-User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
+References: <20190512174608.10083-1-peron.clem@gmail.com>
+ <20190513151405.GW17751@phenom.ffwll.local>
+ <de50a9da-669f-ab25-2ef2-5ffb90f8ee03@baylibre.com>
+In-Reply-To: <de50a9da-669f-ab25-2ef2-5ffb90f8ee03@baylibre.com>
+From: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Date: Tue, 14 May 2019 17:17:24 +0200
+Message-ID: <CAJiuCccuEw0BK6MwROR+XUDvu8AJTmZ5tu=pYwZbGAuvO31pgg@mail.gmail.com>
+Subject: Re: [PATCH v4 0/8] Allwinner H6 Mali GPU support
+To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_075548_532215_14FCACF3 
-X-CRM114-Status: GOOD (  14.43  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190514_081737_621145_BB64AAD7 
+X-CRM114-Status: GOOD (  24.13  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (peron.clem[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -67,90 +95,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Aisheng Dong <aisheng.dong@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Andrey Smirnov <andrew.smirnov@gmail.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, Frank Li <frank.li@nxp.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, David Airlie <airlied@linux.ie>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 14, 2019 at 08:53:18AM -0500, Zhi Li wrote:
-> On Tue, May 7, 2019 at 2:30 PM Andrey Smirnov <andrew.smirnov@gmail.com> wrote:
-> >
-> > On Wed, May 1, 2019 at 11:43 AM Frank Li <frank.li@nxp.com> wrote:
-> > >
-> > > Add ddr performance monitor support for iMX8QXP
-> > >
-> > > There are 4 counters for ddr perfomance events.
-> > > counter 0 is dedicated for cycles.
-> > > you choose any up to 3 no cycles events.
-> > >
-> > > for example:
-> > >
-> > > perf stat -a -e imx8_ddr0/read-cycles/,imx8_ddr0/write-cycles/,imx8_ddr0/precharge/ ls
-> > > perf stat -a -e imx8_ddr0/cycles/,imx8_ddr0/read-access/,imx8_ddr0/write-access/ ls
-> > >
-> > > Support below events.
-> > >
-> > >   imx8_ddr0/activate/                                     [Kernel PMU event]
-> > >   imx8_ddr0/axid-read/                                    [Kernel PMU event]
-> > >   imx8_ddr0/axid-write/                                   [Kernel PMU event]
-> > >   imx8_ddr0/cycles/                                       [Kernel PMU event]
-> > >   imx8_ddr0/hp-read-credit-cnt/                           [Kernel PMU event]
-> > >   imx8_ddr0/hp-read/                                      [Kernel PMU event]
-> > >   imx8_ddr0/hp-req-nodcredit/                             [Kernel PMU event]
-> > >   imx8_ddr0/hp-xact-credit/                               [Kernel PMU event]
-> > >   imx8_ddr0/load-mode/                                    [Kernel PMU event]
-> > >   imx8_ddr0/lp-read-credit-cnt/                           [Kernel PMU event]
-> > >   imx8_ddr0/lp-req-nocredit/                              [Kernel PMU event]
-> > >   imx8_ddr0/lp-xact-credit/                               [Kernel PMU event]
-> > >   imx8_ddr0/mwr/                                          [Kernel PMU event]
-> > >   imx8_ddr0/precharge/                                    [Kernel PMU event]
-> > >   imx8_ddr0/raw-hazard/                                   [Kernel PMU event]
-> > >   imx8_ddr0/read-access/                                  [Kernel PMU event]
-> > >   imx8_ddr0/read-activate/                                [Kernel PMU event]
-> > >   imx8_ddr0/read-command/                                 [Kernel PMU event]
-> > >   imx8_ddr0/read-cycles/                                  [Kernel PMU event]
-> > >   imx8_ddr0/read-modify-write-command/                    [Kernel PMU event]
-> > >   imx8_ddr0/read-queue-depth/                             [Kernel PMU event]
-> > >   imx8_ddr0/read-write-transition/                        [Kernel PMU event]
-> > >   imx8_ddr0/read/                                         [Kernel PMU event]
-> > >   imx8_ddr0/refresh/                                      [Kernel PMU event]
-> > >   imx8_ddr0/selfresh/                                     [Kernel PMU event]
-> > >   imx8_ddr0/wr-xact-credit/                               [Kernel PMU event]
-> > >   imx8_ddr0/write-access/                                 [Kernel PMU event]
-> > >   imx8_ddr0/write-command/                                [Kernel PMU event]
-> > >   imx8_ddr0/write-credit-cnt/                             [Kernel PMU event]
-> > >   imx8_ddr0/write-cycles/                                 [Kernel PMU event]
-> > >   imx8_ddr0/write-queue-depth/                            [Kernel PMU event]
-> > >   imx8_ddr0/write/
-> > >
-> > > Signed-off-by: Frank Li <Frank.Li@nxp.com>
-> >
-> > Don't really have anything to suggest, that I already haven't. LGTM, so:
-> >
-> > Reviewed-by: Andrey Smirnov <andrew.smirnov@gmail.com>
-> 
-> 
-> Will Deacon:
->             Is it okay to pick up these patches?  Andrey always acked.
-
-It's the merge window at the moment, so it's too late for 5.2. I'll have a
-look at these in a couple of weeks as candidates for 5.3.
-
-Thanks,
-
-Will
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgpPbiBUdWUsIDE0IE1heSAyMDE5IGF0IDEyOjI5LCBOZWlsIEFybXN0cm9uZyA8bmFybXN0
+cm9uZ0BiYXlsaWJyZS5jb20+IHdyb3RlOgo+Cj4gSGksCj4KPiBPbiAxMy8wNS8yMDE5IDE3OjE0
+LCBEYW5pZWwgVmV0dGVyIHdyb3RlOgo+ID4gT24gU3VuLCBNYXkgMTIsIDIwMTkgYXQgMDc6NDY6
+MDBQTSArMDIwMCwgcGVyb24uY2xlbUBnbWFpbC5jb20gd3JvdGU6Cj4gPj4gRnJvbTogQ2zDqW1l
+bnQgUMOpcm9uIDxwZXJvbi5jbGVtQGdtYWlsLmNvbT4KPiA+Pgo+ID4+IEhpLAo+ID4+Cj4gPj4g
+VGhlIEFsbHdpbm5lciBINiBoYXMgYSBNYWxpLVQ3MjAgTVAyLiBUaGUgZHJpdmVycyBhcmUKPiA+
+PiBvdXQtb2YtdHJlZSBzbyB0aGlzIHNlcmllcyBvbmx5IGludHJvZHVjZSB0aGUgZHQtYmluZGlu
+Z3MuCj4gPgo+ID4gV2UgZG8gaGF2ZSBhbiBpbi10cmVlIG1pZGdhcmQgZHJpdmVyIG5vdyAoc2lu
+Y2UgNS4yKS4gRG9lcyB0aGlzIHN0dWZmIHdvcmsKPiA+IHRvZ2V0aGVyIHdpdGggeW91ciBkdCBj
+aGFuZ2VzIGhlcmU/Cj4KPiBObywgYnV0IGl0IHNob3VsZCBiZSBlYXN5IHRvIGFkZC4KSSB3aWxs
+IGdpdmUgaXQgYSB0cnkgYW5kIGxldCB5b3Uga25vdy4KCj4KPiBDbMOpbWVudCwgbm8gbmVlZCB0
+byByZXNlbmQgdGhlIGZpcnN0IHBhdGNoLCBpdCdzIG5vdyBvbgo+IGxpbnVzIG1hc3Rlci4KT2sK
+ClRoYW5rcywKQ2xlbWVudAoKPgo+IENvdWxkIHlvdSBhbHNvIGFkZCBzdXBwb3J0IGZvciB0aGUg
+YnVzIGNsb2NrIGluIHBhbmZyb3N0Cj4gaW4gdGhlIHNhbWUgcGF0Y2hzZXQgc2luY2UgaXQncyBh
+bHNvIG9uIG1hc3RlciBub3cgPwo+Cj4gTmVpbAo+Cj4gPiAtRGFuaWVsCj4gPgo+ID4+IFRoZSBm
+aXJzdCBwYXRjaCBpcyBmcm9tIE5laWwgQW1zdHJvbmcgYW5kIGhhcyBiZWVuIGFscmVhZHkKPiA+
+PiBtZXJnZWQgaW4gbGludXgtYW1sb2dpYy4gSXQgaXMgcmVxdWlyZWQgZm9yIHRoaXMgc2VyaWVz
+Lgo+ID4+Cj4gPj4gVGhlIHNlY29uZCBwYXRjaCBpcyBmcm9tIEljZW5vd3kgWmhlbmcgd2hlcmUg
+SSBjaGFuZ2VkIHRoZQo+ID4+IG9yZGVyIGhhcyByZXF1aXJlZCBieSBSb2IgSGVycmluZy4KPiA+
+PiBTZWU6IGh0dHBzOi8vcGF0Y2h3b3JrLmtlcm5lbC5vcmcvcGF0Y2gvMTA2OTk4MjkvCj4gPj4K
+PiA+PiBUaGFua3MsCj4gPj4gQ2zDqW1lbnQKPiA+Pgo+ID4+IENoYW5nZXMgaW4gdjQ6Cj4gPj4g
+IC0gQWRkIFJvYiBIZXJyaW5nIHJldmlld2VkLWJ5IHRhZwo+ID4+ICAtIFJlc2VudCB3aXRoIGNv
+cnJlY3QgTWFpbnRhaW5lcnMKPiA+Pgo+ID4+IENoYW5nZXMgaW4gdjMgKFRoYW5rcyB0byBNYXhp
+bWUgUmlwYXJkKToKPiA+PiAgLSBSZWF1dGhvciBJY2Vub3d5IGZvciBoZXIgcGF0Y2gKPiA+Pgo+
+ID4+IENoYW5nZXMgaW4gdjIgKFRoYW5rcyB0byBNYXhpbWUgUmlwYXJkKToKPiA+PiAgLSBEcm9w
+IEdQVSBPUFAgVGFibGUKPiA+PiAgLSBBZGQgY2xvY2tzIGFuZCBjbG9jay1uYW1lcyBpbiByZXF1
+aXJlZAo+ID4+Cj4gPj4gQ2zDqW1lbnQgUMOpcm9uICg2KToKPiA+PiAgIGR0LWJpbmRpbmdzOiBn
+cHU6IG1hbGktbWlkZ2FyZDogQWRkIEg2IG1hbGkgZ3B1IGNvbXBhdGlibGUKPiA+PiAgIGFybTY0
+OiBkdHM6IGFsbHdpbm5lcjogQWRkIEFSTSBNYWxpIEdQVSBub2RlIGZvciBINgo+ID4+ICAgYXJt
+NjQ6IGR0czogYWxsd2lubmVyOiBBZGQgbWFsaSBHUFUgc3VwcGx5IGZvciBQaW5lIEg2NAo+ID4+
+ICAgYXJtNjQ6IGR0czogYWxsd2lubmVyOiBBZGQgbWFsaSBHUFUgc3VwcGx5IGZvciBCZWVsaW5r
+IEdTMQo+ID4+ICAgYXJtNjQ6IGR0czogYWxsd2lubmVyOiBBZGQgbWFsaSBHUFUgc3VwcGx5IGZv
+ciBPcmFuZ2VQaSBCb2FyZHMKPiA+PiAgIGFybTY0OiBkdHM6IGFsbHdpbm5lcjogQWRkIG1hbGkg
+R1BVIHN1cHBseSBmb3IgT3JhbmdlUGkgMwo+ID4+Cj4gPj4gSWNlbm93eSBaaGVuZyAoMSk6Cj4g
+Pj4gICBkdC1iaW5kaW5nczogZ3B1OiBhZGQgYnVzIGNsb2NrIGZvciBNYWxpIE1pZGdhcmQgR1BV
+cwo+ID4+Cj4gPj4gTmVpbCBBcm1zdHJvbmcgKDEpOgo+ID4+ICAgZHQtYmluZGluZ3M6IGdwdTog
+bWFsaS1taWRnYXJkOiBBZGQgcmVzZXRzIHByb3BlcnR5Cj4gPj4KPiA+PiAgLi4uL2JpbmRpbmdz
+L2dwdS9hcm0sbWFsaS1taWRnYXJkLnR4dCAgICAgICAgIHwgMjcgKysrKysrKysrKysrKysrKysr
+Kwo+ID4+ICAuLi4vZHRzL2FsbHdpbm5lci9zdW41MGktaDYtYmVlbGluay1nczEuZHRzICAgfCAg
+NSArKysrCj4gPj4gIC4uLi9kdHMvYWxsd2lubmVyL3N1bjUwaS1oNi1vcmFuZ2VwaS0zLmR0cyAg
+ICB8ICA1ICsrKysKPiA+PiAgLi4uL2R0cy9hbGx3aW5uZXIvc3VuNTBpLWg2LW9yYW5nZXBpLmR0
+c2kgICAgIHwgIDUgKysrKwo+ID4+ICAuLi4vYm9vdC9kdHMvYWxsd2lubmVyL3N1bjUwaS1oNi1w
+aW5lLWg2NC5kdHMgfCAgNSArKysrCj4gPj4gIGFyY2gvYXJtNjQvYm9vdC9kdHMvYWxsd2lubmVy
+L3N1bjUwaS1oNi5kdHNpICB8IDE0ICsrKysrKysrKysKPiA+PiAgNiBmaWxlcyBjaGFuZ2VkLCA2
+MSBpbnNlcnRpb25zKCspCj4gPj4KPiA+PiAtLQo+ID4+IDIuMTcuMQo+ID4+Cj4gPgo+CgpfX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
+bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
+cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
+Cg==
