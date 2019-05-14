@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E93E1D014
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 21:40:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94B981D016
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 21:41:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=zJVJqR0qsk9Cyvm+CBwRx2K6mjDtojIfm+7oPEl7eOk=; b=BmU/9k6ZMh9Y2KJEsDWmNgaO4Y
-	c3sZn9KwI6kxEzloIJWTwnFr4AIjkaa0EVCJfHyIJb+hgaUw//56S523OURcwvL9m44jT6BhjbhxK
-	Wg48qq3gRso3hXqhxFPQ1IUZQHq/2mg3hjTa+iDC6mHtEJgG1m2ywB0xMvJWG3CQsCZjTeH7jLe/P
-	WGbV4w5J4SSewbbi7xcepBUVw2RnvjCLp/Fkn5bUvqM1+EYMwkKD9rXmJDzmmGuemOJPrf0wEbJqB
-	/ELqwcNdmUZ91vkctx7ZU7CrVoEYafUAlMtLgWZb1gyIM7sNKeSUpoTXaWH7vl3BHPM+Ti1SErXOc
-	lVpJ69AQ==;
+	bh=J0Khitkirf5GxFLFfBxqNelz1q8r19yumkNU04NVMmQ=; b=Jm/s5Zwl3Sg/fMbpO8gfQWzMc2
+	Am2knOHMKU5NUAYQBgq2Reby4j4bY7PtllZ693i3rcavALU2a+LYCYCjPyR1tLhT5h9uqQDoOyq3q
+	Khn1+0JSr9m+nhtDVvxXUb91AyzWzaKruw/F0kVNSjClynepNU7vhvDZ18q3LL9NmyiJzn/aLYpRO
+	mdEB6f5wgHNAp7+wUUuIMTCL/89/cAwwzZ7gZ69tLWnD+ib9ByLn1LPwP8RzdZbbqPaG0CpGTLBHb
+	7FBPxFdzqPidQW1D/bF0QMWiGzuksSzO2q00YWXpThSTIzYTGGK1w26xWBQn4fSR/uMq+U1yCxgud
+	M4luagDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQdIE-0006ie-Na; Tue, 14 May 2019 19:40:54 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1hQdIP-0006xV-0G; Tue, 14 May 2019 19:41:05 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQdHj-0006Fx-RL
- for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 19:40:25 +0000
-Received: by mail-pg1-x544.google.com with SMTP id d31so70145pgl.7
+ id 1hQdHl-0006GN-3N
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 19:40:26 +0000
+Received: by mail-pl1-x641.google.com with SMTP id c5so91387pll.11
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 May 2019 12:40:23 -0700 (PDT)
+ Tue, 14 May 2019 12:40:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=+AhN3Bvjm6iExjpvfnaKjLZ6Hur3GYpc1/lk5q3y4p0=;
- b=ffGExovUSLhtcOKqbyTXzRlHzMpyVLs5ai0l4CZ8LqjMkSlA3Ln6kWmowCiuhEs8h9
- WgcJLKyZhJ+z8JA2XpxMxxvNnoxZkw2mJ87u0CoLKHJ0kCSge9GVUomZqvUnlLYXd6zM
- OZnLv8FCLugHEnkH9wni60vjwz6D7sgS6ZII4ML5eiZ+soWJBBlBMJwa0UsIkEtCc4bo
- pcCuaW2MEAzib9wTFRNcQKO63HctbFqv0Iph0nOh+1otPV9LwFo3ITIjESLvjuz+o5hq
- KRH0Gax1S8Lx7K+t7cxQGfCMGU80Kr4ioxHFCq4zBIgs9sCHF6KmFtMAbjYjSRsQQ8TM
- Zijg==
+ bh=cMypeu62+O4d2QQyEv5D1H2MRXYlgCP4kYc0ttWa7FU=;
+ b=JuInKa9BA8nX08TPGghqjluce0xuM9Ra/gvISgsbbNXkIN0szR8TAWCEezVYz1SlCw
+ XmZgZwKLIyoDw6wpylHWySLVnVNd/oHnI3mHpYrSD+0eMoFvD/2oOltW1Tr4Z/MPCoB+
+ oDLhh7JWgRMl/YjAiAZjGOPnoMQ1AuYIAXo2MZIPWuISZ0fwoeQhGpFgLB6XoaWZyqB9
+ 7M+ul91cdOYMUbLlbGXPG7M4lbgtjGr1k31Fq6e+WFII8ka4xlm87+/y6IpOQYD6x0Qc
+ Nu45dwXLt0hQnPGJ74GsWlMotaNmZmHo6PPW0BPLgu8f9kqBYdtP+6nmEQePiZrTAmDm
+ pCBQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=+AhN3Bvjm6iExjpvfnaKjLZ6Hur3GYpc1/lk5q3y4p0=;
- b=p6jW8HRhgtzQRfXNlO4uLc60Sl7sjTPi69D8v3EEGrZ9uevWH9jGiV7FgICJXlcnDc
- DJuwJlrn0Mm6iUZXk34IHbteSNHzKgso3s47eRihF/67xrFJGiUs4PXb31L9PmmavNMC
- 5RMMUOehS7brx5B5JCl3X72KICsGzvM53+fVe4o/2qVacOeYY6Aori39ypo0xLpQl9Pp
- CBf4hpSd9dGriIMfn+/eW8jPWEc8Xz7OnPTtBGarGBGxIqAWohvyhOMF9u+SUpa4qyc1
- 8A/KADmH4pI/Eqh+cyViSZ/WP9Ou5IAN2Nc/xVARsKYMfiqk0hanW0gu9ircYApg1bV9
- tnOg==
-X-Gm-Message-State: APjAAAUBPPyztNZaunLhKkmsYncY/uzwv9i3Ke+6Jz8GaI38z36rKKTy
- 4Ef086ARcMeU5fXXLphCtCGhBmp2KFo=
-X-Google-Smtp-Source: APXvYqxQnuHPyiJxOcjfiMT2ToXf2Pynp+AgagCoPx9qjPtyO3u2zh0otNBTtQ68qiBpNENECDlU1g==
-X-Received: by 2002:a65:624f:: with SMTP id q15mr40053183pgv.436.1557862823074; 
- Tue, 14 May 2019 12:40:23 -0700 (PDT)
+ bh=cMypeu62+O4d2QQyEv5D1H2MRXYlgCP4kYc0ttWa7FU=;
+ b=RCLkzGtElMO7vpBCEPhj83TPwgIFCQT5AyZ6mLVFF43BVuKlpSArTTWog769Wqdu0G
+ a8lS4uCLkWHYTDfKN94d3y6osuCkkxYO0AZaQ3VCfst6vAjaNxm7gmuM6wy9IO+b4Rnr
+ dyZafmQyJlEG6VRcrGcLATu+ggrNJ4ENqoeOcRO9EJxqhCEtzVcGFOOIGnu0ki+pKeHt
+ Xe9XcqPqBxUyZf2m0tYlWE/eFJ1MKydDdlpZDC7BGzcLytcVNywQBGN8E5vfS8puXj6j
+ xVCVbTTSIxt0dhpPYsdsph5ztXtj8zRwKOvUeF5e9StR43voDaXdE8zxwgNzvlkJEvDv
+ 8kBg==
+X-Gm-Message-State: APjAAAXs4Yd7umHlTX1MAVNqKZovcBro1vGNHUiwIiPy9Kb55q2Pevnr
+ LgvIwbPYQwdVFqeB4YV34hS6XckCQsw=
+X-Google-Smtp-Source: APXvYqyW4JZffl68wHTIwJqUFBCZKdQ1h1s1FVDOvj2vyVA+bR+jiEOFxbpqvPl4LneRm1ltl2Q5fw==
+X-Received: by 2002:a17:902:42:: with SMTP id 60mr39788701pla.79.1557862824173; 
+ Tue, 14 May 2019 12:40:24 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id w66sm5791196pfb.47.2019.05.14.12.40.22
+ by smtp.gmail.com with ESMTPSA id w66sm5791196pfb.47.2019.05.14.12.40.23
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 14 May 2019 12:40:22 -0700 (PDT)
+ Tue, 14 May 2019 12:40:23 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V2 2/6] coresight: tmc-etr: Properly set AUX buffer head in
+Subject: [PATCH V2 3/6] coresight: tmc-etf: Properly set AUX buffer head in
  snapshot mode
-Date: Tue, 14 May 2019 13:40:14 -0600
-Message-Id: <20190514194018.23420-3-mathieu.poirier@linaro.org>
+Date: Tue, 14 May 2019 13:40:15 -0600
+Message-Id: <20190514194018.23420-4-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190514194018.23420-1-mathieu.poirier@linaro.org>
 References: <20190514194018.23420-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_124023_880324_348ABE60 
-X-CRM114-Status: GOOD (  13.66  )
+X-CRM114-CacheID: sfid-20190514_124025_136499_2F33BFAD 
+X-CRM114-Status: GOOD (  14.34  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -112,33 +112,34 @@ to access.
 
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-tmc-etr.c | 11 +++++------
- 1 file changed, 5 insertions(+), 6 deletions(-)
+ drivers/hwtracing/coresight/coresight-tmc-etf.c | 14 +++++++++-----
+ 1 file changed, 9 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-index df6e4b0b84e9..cc8401c76c39 100644
---- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
-+++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-@@ -1501,14 +1501,13 @@ tmc_update_etr_buffer(struct coresight_device *csdev,
- 	tmc_etr_sync_perf_buffer(etr_perf);
+diff --git a/drivers/hwtracing/coresight/coresight-tmc-etf.c b/drivers/hwtracing/coresight/coresight-tmc-etf.c
+index 2527b5d3b65e..d026bd04a6af 100644
+--- a/drivers/hwtracing/coresight/coresight-tmc-etf.c
++++ b/drivers/hwtracing/coresight/coresight-tmc-etf.c
+@@ -542,11 +542,15 @@ static unsigned long tmc_update_etf_buffer(struct coresight_device *csdev,
+ 		}
+ 	}
  
- 	/*
--	 * Update handle->head in snapshot mode. Also update the size to the
--	 * hardware buffer size if there was an overflow.
+-	/* In snapshot mode we have to update the head */
+-	if (buf->snapshot) {
+-		handle->head = (cur * PAGE_SIZE) + offset;
+-		to_read = buf->nr_pages << PAGE_SHIFT;
+-	}
++	/*
 +	 * In snapshot mode we simply increment the head by the number of byte
 +	 * that were written.  User space function  cs_etm_find_snapshot() will
 +	 * figure out how many bytes to get from the AUX buffer based on the
 +	 * position of the head.
- 	 */
--	if (etr_perf->snapshot) {
-+	if (etr_perf->snapshot)
- 		handle->head += size;
--		if (etr_buf->full)
--			size = etr_buf->size;
--	}
- 
- 	lost |= etr_buf->full;
++	 */
++	if (buf->snapshot)
++		handle->head += to_read;
++
+ 	CS_LOCK(drvdata->base);
  out:
+ 	spin_unlock_irqrestore(&drvdata->spinlock, flags);
 -- 
 2.17.1
 
