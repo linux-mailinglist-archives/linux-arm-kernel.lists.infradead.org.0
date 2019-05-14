@@ -2,105 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75AD11C52B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 10:46:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A40DC1C537
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 10:47:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=87IlyidR7yaf+Frre0BEeYyQGYg0lobfZy2OS6aeAL0=; b=ILJAqbOczdyQHK
-	bsBLjXcQR4OiK6B96tMeMbyV/zA+iRV4p/gesJksAOsOK9XUuNUNYKqbI1263mzAOCLHMk4CuSlbQ
-	jXd4bFHfRpI5TP7LXthr8MfJMRlHMQhnSfUtpjhfu8M7POXGkMk4R0xabGJnvwTv0jwtwDCES4GO1
-	O7ja/zwMw8r2LINGw9OAIq3zyzrqtcWNml5rnmk5YDZueQZb0/+grXh636KMicbMS/7zWkf4CRy/p
-	yq9C2UC50TTWPrfI73eRsttcJ0W8B2xZrTBr8rxnhSAJvWBJmCsqg/yD+U4yda3EKVLp2S61Rm+fc
-	ycqwK4MrLxklgEg37O+Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KRtx1TSjDgvIFcZT0FsZ8X5tYfkprME5WNgX3RJw0/Q=; b=T/Orn43/YhWfFN
+	hDtMTt3e3UC0D96POYoTRd6swtdMxyFrKgjR/ZJShxe/u4Az0KKkLPIQOwJsHWcNqGZ3ZLuFR6qq9
+	u9Vvun17su+vBofWqU7ws54m1cvdushNOT0ZQHCEwh2Z5KzUtXO+TI0TfqBfHJ7IETl3DapEK6O1f
+	muA5rma51T4oOFns5Y3cKpPAdcg4cOnMMB+3HbCwVcWJxPo5JdJ67gpCuQdqf2yKVLUfNWfqnKa0Z
+	7dj9zfrqqZ73YPdn+h/EsnjLk+gqOBgjufhZkTqNpjhEQW1h7OcEtaHCdxDpI9sMmvQhhzyUY08aL
+	ww5xljwgCtqRYVVA/pnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQT4Y-0007eW-O1; Tue, 14 May 2019 08:46:06 +0000
-Received: from mail-eopbgr30046.outbound.protection.outlook.com ([40.107.3.46]
- helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+	id 1hQT6J-0008BD-76; Tue, 14 May 2019 08:47:55 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQT4R-0007e5-1k
- for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 08:46:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Nnx3HLvpY+SYB1SFaSAsRKBv07rHpXbxw/n8NpTlID8=;
- b=fRSStEGRO0iWliTG/nTCtSUitYOl3P9Ca1R9bakPCWT/7W0TMJA+/jXC0Nx811BWsoaKqj94i+u5mQahs9SivPvQHhkSl8/qUC2vgVC8Trgbfsf3VtjG/iePMYjpIO43h3NpqOOZ4YDiGlTKumH8xA7L05DqDHE6dh6DGzwi0ME=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3867.eurprd04.prod.outlook.com (52.134.65.148) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1878.25; Tue, 14 May 2019 08:45:55 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::d035:3bd0:a56a:189d]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::d035:3bd0:a56a:189d%2]) with mapi id 15.20.1900.010; Tue, 14 May 2019
- 08:45:55 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Daniel Baluta <daniel.baluta@gmail.com>
-Subject: RE: [PATCH RESEND 1/2] soc: imx: Add SCU SoC info driver support
-Thread-Topic: [PATCH RESEND 1/2] soc: imx: Add SCU SoC info driver support
-Thread-Index: AQHVCTfaYqtO/eSQ1UCSJJ4U0eiBlKZpHh8AgACXn+CAAJi7gIAAActg
-Date: Tue, 14 May 2019 08:45:55 +0000
-Message-ID: <DB3PR0402MB39162FD34C212598380B530CF5080@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1557716049-22744-1-git-send-email-Anson.Huang@nxp.com>
- <CAEnQRZDSTuUMrc9AC1S2zfo0PdQ-v35GmNrf70Zoasid_XMJzw@mail.gmail.com>
- <DB3PR0402MB3916A46BFFE5E6F3D4832A33F50F0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
- <CAEnQRZB0fs2g=h4pq97t+E9U9LOxSafYhx07Xia_J+snjqefEw@mail.gmail.com>
-In-Reply-To: <CAEnQRZB0fs2g=h4pq97t+E9U9LOxSafYhx07Xia_J+snjqefEw@mail.gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [183.192.18.129]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 3a4aa5c0-460e-42d7-df51-08d6d848946c
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3867; 
-x-ms-traffictypediagnostic: DB3PR0402MB3867:
-x-microsoft-antispam-prvs: <DB3PR0402MB38676002DD267965F806EEE4F5080@DB3PR0402MB3867.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:293;
-x-forefront-prvs: 0037FD6480
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(346002)(376002)(366004)(39860400002)(136003)(199004)(189003)(13464003)(54906003)(99286004)(316002)(6916009)(25786009)(81166006)(81156014)(4326008)(8676002)(8936002)(55016002)(71190400001)(71200400001)(66066001)(52536014)(33656002)(68736007)(5660300002)(53936002)(229853002)(66446008)(76116006)(6436002)(66556008)(66476007)(66946007)(256004)(478600001)(53546011)(7736002)(14454004)(74316002)(9686003)(6506007)(26005)(305945005)(186003)(102836004)(44832011)(2906002)(6116002)(11346002)(3846002)(76176011)(7696005)(7416002)(6246003)(486006)(476003)(64756008)(86362001)(73956011)(446003)(15866825006);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3867;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: /5BwR22dF8296OduRE6hP/+AcfSiD0DxDhcyzXLmhvN72Jhut72sum760PzANEeeBaL5NU8sYoe1BrjUpTeV81tMzRGuVzCsKYJA13CX2ctCrCse4Fiu625lnMcR6VGTTAD05DYxo3dZ1E4medwgtUX4flx6/4G+PGEwGu94TcxRZnZU1+u+K47EHknkvsocXlCQOCf8M5JBIUjqIApE/QfKOjNwxdkuDGqoYOF2FyiWZFLLai5HF3aNENSqB5Vr12ZnwTgCd7KKCQasyMl33mqT4FNR24ROUJdrC7c8rDB+yhaR+Ag85fe4yhIZ7z8q/x6jjlZgLBafR++BrakIYMK6BS6Dtt+fmvzIsoTOvH+Ilr8k0Ez5AaOcvpV5/LlEp8CessTeas65WB9QeLXXgTGh1IuoYT/vUTAvFNRQo5k=
+ id 1hQT5z-0007w8-9G; Tue, 14 May 2019 08:47:36 +0000
+X-UUID: 99d9c8058832417e9909f5832e914bc0-20190514
+X-UUID: 99d9c8058832417e9909f5832e914bc0-20190514
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1342006092; Tue, 14 May 2019 00:47:30 -0800
+Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 14 May 2019 01:47:29 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ MTKMBS31N2.mediatek.inc (172.27.4.87) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 14 May 2019 16:47:26 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 14 May 2019 16:47:24 +0800
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Rob Herring <robh+dt@kernel.org>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>, Heikki Krogerus
+ <heikki.krogerus@linux.intel.com>
+Subject: [v5 PATCH 0/6] add USB Type-B GPIO connector driver
+Date: Tue, 14 May 2019 16:47:17 +0800
+Message-ID: <1557823643-8616-1-git-send-email-chunfeng.yun@mediatek.com>
+X-Mailer: git-send-email 1.7.9.5
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3a4aa5c0-460e-42d7-df51-08d6d848946c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 14 May 2019 08:45:55.7230 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3867
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_014559_167737_2583945B 
-X-CRM114-Status: GOOD (  16.86  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190514_014735_325568_7C045805 
+X-CRM114-Status: GOOD (  13.49  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.46 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -112,121 +69,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "maxime.ripard@bootlin.com" <maxime.ripard@bootlin.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>, "robh@kernel.org" <robh@kernel.org>,
- Abel Vesa <abel.vesa@nxp.com>, "agross@kernel.org" <agross@kernel.org>,
- "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
- dl-linux-imx <linux-imx@nxp.com>,
- "marc.w.gonzalez@free.fr" <marc.w.gonzalez@free.fr>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "olof@lixom.net" <olof@lixom.net>,
- "horms+renesas@verge.net.au" <horms+renesas@verge.net.au>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "dinguyen@kernel.org" <dinguyen@kernel.org>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Hans de Goede <hdegoede@redhat.com>,
+ Badhri Jagan Sridharan <badhri@google.com>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Biju Das <biju.das@bp.renesas.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>,
+ linux-mediatek@lists.infradead.org, Min Guo <min.guo@mediatek.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Adam
+ Thomson <Adam.Thomson.Opensource@diasemi.com>,
+ linux-arm-kernel@lists.infradead.org, Li Jun <jun.li@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Because the USB Connector is introduced and the requirement of
+usb-connector.txt binding, the old way using extcon to support
+USB Dual-Role switch is now deprecated, meanwhile there is no
+available common driver when use Type-B connector, typically
+using an input GPIO to detect USB ID pin.
+This patch series introduce a Type-B GPIO connector driver and try
+to replace the function provided by extcon-usb-gpio driver.
 
+v5 changes:
+  1. remove linux/of.h and put usb_role_switch when error happens,
+     suggested by Biju
+  2. treat Type-B connector as USB controller's child, but not as
+     a virtual device, suggested by Rob
+  3. provide and use generic property "usb-role-switch", see [1],
+     suggested by Rob
 
-> -----Original Message-----
-> From: Daniel Baluta [mailto:daniel.baluta@gmail.com]
-> Sent: Tuesday, May 14, 2019 4:39 PM
-> To: Anson Huang <anson.huang@nxp.com>
-> Cc: catalin.marinas@arm.com; will.deacon@arm.com;
-> shawnguo@kernel.org; s.hauer@pengutronix.de; kernel@pengutronix.de;
-> festevam@gmail.com; maxime.ripard@bootlin.com; agross@kernel.org;
-> olof@lixom.net; horms+renesas@verge.net.au;
-> jagan@amarulasolutions.com; bjorn.andersson@linaro.org; Leonard Crestez
-> <leonard.crestez@nxp.com>; marc.w.gonzalez@free.fr;
-> dinguyen@kernel.org; enric.balletbo@collabora.com; Aisheng Dong
-> <aisheng.dong@nxp.com>; robh@kernel.org; Abel Vesa
-> <abel.vesa@nxp.com>; l.stach@pengutronix.de; linux-arm-
-> kernel@lists.infradead.org; linux-kernel@vger.kernel.org; dl-linux-imx
-> <linux-imx@nxp.com>; Daniel Baluta <daniel.baluta@nxp.com>
-> Subject: Re: [PATCH RESEND 1/2] soc: imx: Add SCU SoC info driver support
-> 
-> On Tue, May 14, 2019 at 2:34 AM Anson Huang <anson.huang@nxp.com>
-> wrote:
-> >
-> > Hi, Daniel
-> >
-> > > -----Original Message-----
-> > > From: Daniel Baluta [mailto:daniel.baluta@gmail.com]
-> > > Sent: Monday, May 13, 2019 10:30 PM
-> > > To: Anson Huang <anson.huang@nxp.com>
-> > > Cc: catalin.marinas@arm.com; will.deacon@arm.com;
-> > > shawnguo@kernel.org; s.hauer@pengutronix.de;
-> kernel@pengutronix.de;
-> > > festevam@gmail.com; maxime.ripard@bootlin.com; agross@kernel.org;
-> > > olof@lixom.net; horms+renesas@verge.net.au;
-> > > jagan@amarulasolutions.com; bjorn.andersson@linaro.org; Leonard
-> > > Crestez <leonard.crestez@nxp.com>; marc.w.gonzalez@free.fr;
-> > > dinguyen@kernel.org; enric.balletbo@collabora.com; Aisheng Dong
-> > > <aisheng.dong@nxp.com>; robh@kernel.org; Abel Vesa
-> > > <abel.vesa@nxp.com>; l.stach@pengutronix.de; linux-arm-
-> > > kernel@lists.infradead.org; linux-kernel@vger.kernel.org;
-> > > dl-linux-imx <linux-imx@nxp.com>; Daniel Baluta
-> > > <daniel.baluta@nxp.com>
-> > > Subject: Re: [PATCH RESEND 1/2] soc: imx: Add SCU SoC info driver
-> > > support
-> > >
-> > > <snip>
-> > >
-> > > > +
-> > > > +static u32 imx8qxp_soc_revision(void) {
-> > > > +       struct imx_sc_msg_misc_get_soc_id msg;
-> > > > +       struct imx_sc_rpc_msg *hdr = &msg.hdr;
-> > > > +       u32 rev = 0;
-> > > > +       int ret;
-> > > > +
-> > > > +       hdr->ver = IMX_SC_RPC_VERSION;
-> > > > +       hdr->svc = IMX_SC_RPC_SVC_MISC;
-> > > > +       hdr->func = IMX_SC_MISC_FUNC_GET_CONTROL;
-> > > > +       hdr->size = 3;
-> > > > +
-> > > > +       msg.data.send.control = IMX_SC_C_ID;
-> > > > +       msg.data.send.resource = IMX_SC_R_SYSTEM;
-> > > > +
-> > > > +       ret = imx_scu_call_rpc(soc_ipc_handle, &msg, true);
-> > > > +       if (ret) {
-> > > > +               dev_err(&imx_scu_soc_pdev->dev,
-> > > > +                       "get soc info failed, ret %d\n", ret);
-> > > > +               return rev;
-> > >
-> > > So you return 0 (rev  = 0) here in case of error? This doesn't seem to be
-> right.
-> > > Maybe return ret?
-> >
-> > This is intentional, similar with current i.MX8MQ soc info driver,
-> > when getting revision failed, just return 0 as revision info and it will show
-> "unknown" in sysfs.
-> 
-> Ok, I understand. Lets make this clear from the source code.
-> 
->    ret = imx_scu_call_rpc(soc_ipc_handle, &msg, true);
-> +       if (ret) {
-> +               dev_err(&imx_scu_soc_pdev->dev,
-> +                       "get soc info failed, ret %d\n", ret);
->                 /* returning 0 means getting revision failed */
-> +               return 0;
-> +       }
+Note: this series still depends on [2]
 
-OK, will add a comment in V2.
+[1]: [v3] dt-binding: usb: add usb-role-switch property
+      https://patchwork.kernel.org/patch/10934835/
+[2]: [v6,08/13] usb: roles: Introduce stubs for the exiting functions in role.h
+      https://patchwork.kernel.org/patch/10909971/
 
-Anson.
+v4 changes:
+  1. use switch_fwnode_match() to find fwnode suggested by Heikki
+  2. assign fwnode member of usb_role_switch struct suggested by Heikki
+  3. make [4/6] depend on [2]
+  3. remove linux/gpio.h suggested by Linus
+  4. put node when error happens
+
+  [4/6] usb: roles: add API to get usb_role_switch by node
+  [2] [v6,08/13] usb: roles: Introduce stubs for the exiting functions in role.h
+    https://patchwork.kernel.org/patch/10909971/
+
+v3 changes:
+  1. add GPIO direction, and use fixed-regulator for GPIO controlled
+    VBUS regulator suggested by Rob;
+  2. rebuild fwnode_usb_role_switch_get() suggested by Andy and Heikki
+  3. treat the type-B connector as a virtual device;
+  4. change file name of driver again
+  5. select USB_ROLE_SWITCH in mtu3/Kconfig suggested by Heikki
+  6. rename ssusb_mode_manual_switch() to ssusb_mode_switch()
+
+v2 changes:
+ 1. make binding clear, and add a extra compatible suggested by Hans
+
+Chunfeng Yun (6):
+  dt-bindings: connector: add optional properties for Type-B
+  dt-bindings: usb: add binding for Type-B GPIO connector driver
+  dt-bindings: usb: mtu3: add properties about USB Role Switch
+  usb: roles: add API to get usb_role_switch by node
+  usb: roles: add USB Type-B GPIO connector driver
+  usb: mtu3: register a USB Role Switch for dual role mode
+
+ .../bindings/connector/usb-connector.txt      |  14 +
+ .../devicetree/bindings/usb/mediatek,mtu3.txt |  10 +
+ .../bindings/usb/typeb-conn-gpio.txt          |  42 +++
+ drivers/usb/mtu3/Kconfig                      |   1 +
+ drivers/usb/mtu3/mtu3.h                       |   5 +
+ drivers/usb/mtu3/mtu3_debugfs.c               |   4 +-
+ drivers/usb/mtu3/mtu3_dr.c                    |  48 ++-
+ drivers/usb/mtu3/mtu3_dr.h                    |   6 +-
+ drivers/usb/mtu3/mtu3_plat.c                  |   3 +-
+ drivers/usb/roles/Kconfig                     |  11 +
+ drivers/usb/roles/Makefile                    |   1 +
+ drivers/usb/roles/class.c                     |  24 ++
+ drivers/usb/roles/typeb-conn-gpio.c           | 295 ++++++++++++++++++
+ include/linux/usb/role.h                      |   8 +
+ 14 files changed, 465 insertions(+), 7 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/usb/typeb-conn-gpio.txt
+ create mode 100644 drivers/usb/roles/typeb-conn-gpio.c
+
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
