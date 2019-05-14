@@ -2,95 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 542E21BFD9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 01:34:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DFABD1C032
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 02:45:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D2LQ7e37hzNLSEThuxqfIKT6uh2qo7Zl6FMEA3CCwH4=; b=Vhs1wL7DvD2cdn
-	1yYN9uVS4DEh7dw9NvPr+qdR+zpRtQmROhn+MUWv9aFkSbY+5W+aG94LMPTuJrmdMrzzZ6+Yg6iG/
-	GZ0FQXJO8jO00gszDjCx1O4vxrRgNEC8vePbUkNECB0hojpraz2L7WBgvoVhqmn7w2bbCPnSG0f34
-	N2ajHgf3Bk4mTaoqhkTdc0ErQECC0qCHGTXbFRPYzqujsVcUeEKlSb56k4xhXHnuVy1wWO0+QfQ3U
-	XkcqTHGYCxIB81xDNn7F7XKHIby+X3B+lr/3i7WJdFJtEtUin0DbMxc5JemDMwduvIyhtT8sF6SIX
-	S0OAreXiMZ9BKWQ4BK5Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=OZGo+mA0UIJ79bZqnZFLFY85tFBpwERdD+RIrJMxYEU=; b=fKYNDvCZHX9JDv+qNijLplrMb
+	fv09c6w1LYUD0QL1NLOHN6jJAbXRQtsQV87VodIsQnuK28vZbJ+j965CRMZYVV7mF3YZbfHIOhFpI
+	PQq++3rA1/IItjo0iSTWW5lJPAxLDVxVVhuPKR9xWf3cYcEFy1RwUt/A/qAu+izkME9gZYZYEwyLz
+	0EBKXMmaY6JM6+AX2yC+9Q06DCr3iNhOyLrUYNG8gtgGvwjzsVKzj0doMbaR1P87KVZmrDYWY87PF
+	0RsI1PNZETcPnq9B9gsT5I5gJh08S3caYUVkUgjrg6zArVMnzxiTRF66O91BzK54Q1jm5obG27Zvr
+	2T4P+/goA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQKSf-0006bD-V0; Mon, 13 May 2019 23:34:25 +0000
-Received: from mail-eopbgr30083.outbound.protection.outlook.com ([40.107.3.83]
- helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+	id 1hQLZl-0003S3-4L; Tue, 14 May 2019 00:45:49 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQKSX-0006an-Vn
- for linux-arm-kernel@lists.infradead.org; Mon, 13 May 2019 23:34:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Ivm63irdRJqw1B0UFl9vceTxhPPPFVUSmI9sdgJODZE=;
- b=QW39YRQIIjZw9+k+JSfb4nHP29JZCdAVp/VObEKKqL194N/UMbojPo2CawhknuDyB5XkWCEtI6EmYwriguZQDEHBUfjDgfI3IqidX1FLH2RW69Rs2fJTqN+7HjpFHxhrOy1o97VaR4ZWGDveGqu7glf917AXw3UxKqTzTl4+arU=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3835.eurprd04.prod.outlook.com (52.134.65.158) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1878.22; Mon, 13 May 2019 23:34:13 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::d035:3bd0:a56a:189d]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::d035:3bd0:a56a:189d%2]) with mapi id 15.20.1900.010; Mon, 13 May 2019
- 23:34:13 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Daniel Baluta <daniel.baluta@gmail.com>
-Subject: RE: [PATCH RESEND 1/2] soc: imx: Add SCU SoC info driver support
-Thread-Topic: [PATCH RESEND 1/2] soc: imx: Add SCU SoC info driver support
-Thread-Index: AQHVCTfaYqtO/eSQ1UCSJJ4U0eiBlKZpHh8AgACXn+A=
-Date: Mon, 13 May 2019 23:34:12 +0000
-Message-ID: <DB3PR0402MB3916A46BFFE5E6F3D4832A33F50F0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1557716049-22744-1-git-send-email-Anson.Huang@nxp.com>
- <CAEnQRZDSTuUMrc9AC1S2zfo0PdQ-v35GmNrf70Zoasid_XMJzw@mail.gmail.com>
-In-Reply-To: <CAEnQRZDSTuUMrc9AC1S2zfo0PdQ-v35GmNrf70Zoasid_XMJzw@mail.gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.68]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 1aa44f39-9874-46b3-46e1-08d6d7fb8196
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3835; 
-x-ms-traffictypediagnostic: DB3PR0402MB3835:
-x-microsoft-antispam-prvs: <DB3PR0402MB3835373BD12968D5CC89C398F50F0@DB3PR0402MB3835.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3173;
-x-forefront-prvs: 0036736630
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(39860400002)(346002)(376002)(366004)(396003)(13464003)(199004)(189003)(7736002)(52536014)(71190400001)(81156014)(71200400001)(74316002)(6246003)(5660300002)(14454004)(44832011)(6506007)(53546011)(6116002)(3846002)(102836004)(256004)(8936002)(478600001)(8676002)(86362001)(76176011)(4326008)(7696005)(25786009)(33656002)(66066001)(6436002)(186003)(9686003)(55016002)(99286004)(305945005)(2906002)(6916009)(26005)(486006)(54906003)(11346002)(446003)(476003)(81166006)(66446008)(64756008)(66556008)(66476007)(73956011)(76116006)(53936002)(229853002)(66946007)(316002)(7416002)(68736007)(15866825006);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3835;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: YmSGZMdPXcAhbVm2Jbf/Rt0BD0lgzXpkgmYMGuZ0ssf3ZCRRxNbZs4VNkcA0FxQbpgpNpUAoFXbmUmGNjVb53FFz6PlmOFP8hV88Su1QAme/mXpo4Df97ucqYLH8SY2h36TmzStcmAzVv27sC+QVRVwlCwL4TM3fd2a+UCspj08DYNV0L6CMoJUFEp0dzlRb5bvzjSqgTpDT9dt+FMOpqXMX3YRGYBmvfNyWBxVsa/BA8oJSCnrQlduVc7p9yDiTqhcOB1Eombc4VZts2rQA6hOy+1fLeaAlNpc/EAW8I8zeyrVibETpEFTD8EEoUrY0Q424PIB8W/CyTHUwNgVL8ljW6kDXowpd1xlVjY76jyeJkzwNGtlfvelV0hFqtnqf+uPA41Lgf2vfGjafB3gMKOcvov7+voij9KxfBQnpiGA=
+ id 1hQLZe-0003Rj-Ne
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 00:45:44 +0000
+Received: from localhost (c-73-47-72-35.hsd1.nh.comcast.net [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 22DC22168B;
+ Tue, 14 May 2019 00:45:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1557794741;
+ bh=2dlFT5AfiE3crXCJA7cmneM0Ha+jZ7zu6pQo81eyP/c=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=UwPjuifrrPf4cd6uE/oE3jx5E0lMlLQCc7cV0BuarSJbDS90SopjgwZq9XUND0NBS
+ I5ZLblUD2UWVFgCRxGulCLNeOBiu8p65CSAg9lOA3eibhICHlbTb25R1BbT5ES5ucj
+ J0B66x/Cn93E9PO8huT8sm7hl8dKIwevyuoqrRqs=
+Date: Mon, 13 May 2019 20:45:39 -0400
+From: Sasha Levin <sashal@kernel.org>
+To: "George G. Davis" <george_davis@mentor.com>
+Subject: Re: [PATCH v3] ARM: dts: imx: Fix the AR803X phy-mode
+Message-ID: <20190514004539.GG11972@sasha-vm>
+References: <20190403221241.4753-1-festevam@gmail.com>
+ <20190513171826.GA18591@mam-gdavis-lt>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1aa44f39-9874-46b3-46e1-08d6d7fb8196
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 May 2019 23:34:12.7924 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3835
+Content-Disposition: inline
+In-Reply-To: <20190513171826.GA18591@mam-gdavis-lt>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_163418_126135_6ADBF067 
-X-CRM114-Status: GOOD (  12.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190513_174542_791892_B3377395 
+X-CRM114-Status: GOOD (  13.85  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.83 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -99,6 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -110,83 +76,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "maxime.ripard@bootlin.com" <maxime.ripard@bootlin.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>, "robh@kernel.org" <robh@kernel.org>,
- Abel Vesa <abel.vesa@nxp.com>, "agross@kernel.org" <agross@kernel.org>,
- "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
- dl-linux-imx <linux-imx@nxp.com>,
- "marc.w.gonzalez@free.fr" <marc.w.gonzalez@free.fr>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "olof@lixom.net" <olof@lixom.net>,
- "horms+renesas@verge.net.au" <horms+renesas@verge.net.au>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "dinguyen@kernel.org" <dinguyen@kernel.org>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
-Content-Type: text/plain; charset="us-ascii"
+Cc: andrew@lunn.ch, baruch@tkos.co.il, Fabio Estevam <festevam@gmail.com>,
+ ken.lin@advantech.com, stable@vger.kernel.org, smoch@web.de,
+ stwiss.opensource@diasemi.com, linux-imx@nxp.com, kernel@pengutronix.de,
+ aford173@gmail.com, Marc Kleine-Budde <mkl@pengutronix.de>,
+ shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Daniel
+On Mon, May 13, 2019 at 01:18:27PM -0400, George G. Davis wrote:
+>Hello,
+>
+>On Wed, Apr 03, 2019 at 07:12:41PM -0300, Fabio Estevam wrote:
+>> Commit 6d4cd041f0af ("net: phy: at803x: disable delay only for RGMII mode")
+>> exposed an issue on imx DTS files using AR8031/AR8035 PHYs.
+>>
+>> The end result is that the boards can no longer obtain an IP address
+>> via UDHCP, for example.
+>>
+>> Quoting Andrew Lunn:
+>>
+>> "The problem here is, all the DTs were broken since day 0. However,
+>> because the PHY driver was also broken, nobody noticed and it
+>> worked. Now that the PHY driver has been fixed, all the bugs in the
+>> DTs now become an issue"
+>>
+>> To fix this problem, the phy-mode property needs to be "rgmii-id",  which
+>> has the following meaning as per
+>> Documentation/devicetree/bindings/net/ethernet.txt:
+>>
+>> "RGMII with internal RX and TX delays provided by the PHY, the MAC should
+>> not add the RX or TX delays in this case)"
+>>
+>> Tested on imx6-sabresd, imx6sx-sdb and imx7d-pico boards with
+>> successfully restored networking.
+>>
+>> Based on the initial submission from Steve Twiss for the
+>> imx6qdl-sabresd.
+>>
+>> Signed-off-by: Fabio Estevam <festevam@gmail.com>
+>> Tested-by: Baruch Siach <baruch@tkos.co.il>
+>> Tested-by: Soeren Moch <smoch@web.de>
+>> Tested-by: Steve Twiss <stwiss.opensource@diasemi.com>
+>> Tested-by: Adam Thomson <Adam.Thomson@diasemi.com>
+>> Signed-off-by: Steve Twiss <stwiss.opensource@diasemi.com>
+>> Tested-by: Marc Kleine-Budde <mkl@pengutronix.de>
+>> Signed-off-by: Marc Kleine-Budde <mkl@pengutronix.de>
+>> ---
+>> Changes since v2:
+>> - Also fixed imx6q-ba16
+>> - Removed stable tag as it does not apply cleanly on older
+>> stable trees. I can manually generate versions for stable
+>> trees after this one hits mainline.
+>
+>Please add this commit to the v5.1.x stable queue to resolve NFS root breakage
+>in v5.1. I can confirm that it applies cleanly to v5.1.1 and resolves NFS root
+>breakage that occurs on i.MX6 boards in v5.1.x, tested on imx6q-sabreauto.dts
+>and imx6q-sabresd.dts. Although the fix should be backported to pre-v5.1.x
+>stable series as well, it does not cause problems for pre-v5.1 but results in
+>NFS root breakage for v5.1.x.
 
-> -----Original Message-----
-> From: Daniel Baluta [mailto:daniel.baluta@gmail.com]
-> Sent: Monday, May 13, 2019 10:30 PM
-> To: Anson Huang <anson.huang@nxp.com>
-> Cc: catalin.marinas@arm.com; will.deacon@arm.com;
-> shawnguo@kernel.org; s.hauer@pengutronix.de; kernel@pengutronix.de;
-> festevam@gmail.com; maxime.ripard@bootlin.com; agross@kernel.org;
-> olof@lixom.net; horms+renesas@verge.net.au;
-> jagan@amarulasolutions.com; bjorn.andersson@linaro.org; Leonard Crestez
-> <leonard.crestez@nxp.com>; marc.w.gonzalez@free.fr;
-> dinguyen@kernel.org; enric.balletbo@collabora.com; Aisheng Dong
-> <aisheng.dong@nxp.com>; robh@kernel.org; Abel Vesa
-> <abel.vesa@nxp.com>; l.stach@pengutronix.de; linux-arm-
-> kernel@lists.infradead.org; linux-kernel@vger.kernel.org; dl-linux-imx
-> <linux-imx@nxp.com>; Daniel Baluta <daniel.baluta@nxp.com>
-> Subject: Re: [PATCH RESEND 1/2] soc: imx: Add SCU SoC info driver support
-> 
-> <snip>
-> 
-> > +
-> > +static u32 imx8qxp_soc_revision(void) {
-> > +       struct imx_sc_msg_misc_get_soc_id msg;
-> > +       struct imx_sc_rpc_msg *hdr = &msg.hdr;
-> > +       u32 rev = 0;
-> > +       int ret;
-> > +
-> > +       hdr->ver = IMX_SC_RPC_VERSION;
-> > +       hdr->svc = IMX_SC_RPC_SVC_MISC;
-> > +       hdr->func = IMX_SC_MISC_FUNC_GET_CONTROL;
-> > +       hdr->size = 3;
-> > +
-> > +       msg.data.send.control = IMX_SC_C_ID;
-> > +       msg.data.send.resource = IMX_SC_R_SYSTEM;
-> > +
-> > +       ret = imx_scu_call_rpc(soc_ipc_handle, &msg, true);
-> > +       if (ret) {
-> > +               dev_err(&imx_scu_soc_pdev->dev,
-> > +                       "get soc info failed, ret %d\n", ret);
-> > +               return rev;
-> 
-> So you return 0 (rev  = 0) here in case of error? This doesn't seem to be right.
-> Maybe return ret?
+What's the commit id in Linus's tree? I don't see it.
 
-This is intentional, similar with current i.MX8MQ soc info driver, when getting revision
-failed, just return 0 as revision info and it will show "unknown" in sysfs.
-
+--
 Thanks,
-Anson.
+Sasha
 
 _______________________________________________
 linux-arm-kernel mailing list
