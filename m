@@ -2,61 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27F041C817
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 14:01:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F1B561C83D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 14:11:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=HaejVu7/k+wVArygP/hNWUcb6hzbQluPYaPhYfNrnAo=; b=Gn707usAAhiFjVe7gvBzBmyte
-	0668njsR5Rwo5PGBa63CdPCvosSuMPInkCeJvqlxFy7wmUd+q3vW3p38RzsNRn4l7Rsnv09ND+U+c
-	YCUBHVFL3zf06YrimZLitrqOGInF/ePq6DY/bsqJmslMYEGT/10D+PK8Jpfx0w1FPO/9VnAY0PV4F
-	3YVzNvzIlV9Tg6vOzB+6zZP7kLzvNq8/x5f8/Qowfzefdb+Tpo+4oKM2Q5Uf8yGLT9wKVR9ynrBd+
-	NAoVNmVzBhO2oG6fU0HZBegmS0SToqb9YqPH1c/8A+1WWmuTxyMR7uLtRyWamEUQDdLoJMIdlpKb0
-	JgiKvw/+g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=d0DiPxhO322jYvRflv9aooTX5Hzmn1fKRmbaACesmas=; b=SZhXoDbpgns9c1
+	EDcu/bFEkh9VzcqkKtmGRKL3xL4t3ok54qPDdhHu9kr4HCXC3pnSkpvik7hcgJsxEGns+L3yBnafM
+	rSnlr6P5Uqsz8Wy3Fsyby/rI6qGa8c0L6GJQ6q55GefitRa50q+jg4gMscXKrfLpP4XPT/Bw3jfr9
+	Lc69+DFbEEEt8iJaE2Kb9Fae9J4onACQXgoXGp1VTlfqTAmjC7o454LIwedcuQUEjVDLgsEo64QVE
+	+vL+m6C+73T8ObGJWyWwbLpdH+VB/JowEFNQ1tRiWQ86Foe3rEvkeHR15LS3n3r2r3gqcNaEz+39/
+	csvmdjK6QhZZ5f+G4lTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQW7d-0007rI-1G; Tue, 14 May 2019 12:01:29 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQW7V-0007qc-5T
- for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 12:01:22 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 812F1341;
- Tue, 14 May 2019 05:01:18 -0700 (PDT)
-Received: from [10.1.196.75] (e110467-lin.cambridge.arm.com [10.1.196.75])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0F0373F71E;
- Tue, 14 May 2019 05:01:15 -0700 (PDT)
-Subject: Re: [PATCH v2 3/5] arm64: Fix incorrect irqflag restore for priority
- masking
-To: Julien Thierry <julien.thierry@arm.com>,
- Marc Zyngier <marc.zyngier@arm.com>, linux-arm-kernel@lists.infradead.org
-References: <1556553607-46531-1-git-send-email-julien.thierry@arm.com>
- <1556553607-46531-4-git-send-email-julien.thierry@arm.com>
- <2b023ba4-b95b-f823-4635-6a75deef5386@arm.com>
- <1739c8ac-9073-798f-ed0b-0dc617c195d6@arm.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <5e8a85f5-c837-3ce8-5830-f3ae7897e326@arm.com>
-Date: Tue, 14 May 2019 13:01:14 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hQWHI-0003jR-9E; Tue, 14 May 2019 12:11:28 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hQWHA-0003j4-2u
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 12:11:21 +0000
+Received: by mail-lj1-x241.google.com with SMTP id w1so11507618ljw.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 14 May 2019 05:11:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=xwOS1hzgbCLV88HRNfIXCZXPk8aRseYYJHwjVmpku60=;
+ b=WLGAGYI/lsh3qlNbXp6ZFi2+tVp/nQaV8BtS3JbUZfScc+SEBHqZuPJxi3xzXeRMa6
+ R4EKhKOA30OrwduY8JyC3vnauUcCETO3hwTMveZgkSJfK4vM0tE7JJAA/U0+tOuoRlqb
+ T4o4n7scg2xPsBlsSEthBzktGJyIsDssNVnqk0Kg9xkWSvn58MOmu0yKHOeD/GsvnFhw
+ DpJ2c+e2p0es0luLIQZ8H8GTlt99BojMW2KbOdbre39xgAsA6VpXYfnE9D1ESFPtG2iF
+ OVZ/o4Rr6TbWr/dqekLBU/L+uyiS7j+w3/6X2w9zJVOvtshAwaQD/41veCgltkqsE8dr
+ aaNQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=xwOS1hzgbCLV88HRNfIXCZXPk8aRseYYJHwjVmpku60=;
+ b=dZNRaeJQq/GYea+ad2XYssjaC2JzBV5Ny9KeHs5oMXBRDo3Z5sextL3kz8rxCCUJH6
+ OHao24B13Bt+bcZupcyt7X5Fcz0YP2nb6Bhdgg89xt60Qz578c4lwr1wRUhdDXmzRs64
+ hzl4jlFxlztXes740cu9GNKHpHKoXu0IeWAiAald9BF1U0z5rKnoA5iFn9RG80wgGBDw
+ AUEhcQqGZ/XKuVGK02s0iFyl7wbncM9B7sARCdPlqgp+s7nJWYbfWVCgQVFmVqsYOzfr
+ 89IVoIJiFPRnaoVL1IZ9b8CxJB0gLd2kMSz0R0SwPmUN4fZu9HjTtMFKISZQbsi30KRz
+ p3uA==
+X-Gm-Message-State: APjAAAVtXQd3GaBIOPCHka6DCm4ke2V0FbUIlgR3aXXkjRvQZPTlNzMz
+ VDJIP4ZK7jPUf8TxKiUcVyI2KdKcbDnsV1pXjSo=
+X-Google-Smtp-Source: APXvYqz922Pjth6m9YPMDJaRHS9rKrGlawZltoDw+Zqi3FXHg5u+1GpSm19dPKxGsL27UQjrAOKLjEWA4a83bwYn96I=
+X-Received: by 2002:a2e:9b46:: with SMTP id o6mr15663026ljj.76.1557835877288; 
+ Tue, 14 May 2019 05:11:17 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <1739c8ac-9073-798f-ed0b-0dc617c195d6@arm.com>
-Content-Language: en-GB
+References: <20190513140259.17525-1-festevam@gmail.com>
+ <1557756459.3997.4.camel@pengutronix.de>
+In-Reply-To: <1557756459.3997.4.camel@pengutronix.de>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Tue, 14 May 2019 09:11:14 -0300
+Message-ID: <CAOMZO5BEq6gRvUCWtfn2MN9bRx8Dzm4311Q+Ak7-wiBj9fwo+A@mail.gmail.com>
+Subject: Re: [PATCH] arm64: dts: imx8mq-zii-ultra: Operate I2C at 100kHz
+To: Lucas Stach <l.stach@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_050121_212139_7DCD307E 
-X-CRM114-Status: GOOD (  22.77  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190514_051120_155855_678E74A4 
+X-CRM114-Status: UNSURE (   8.04  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -68,62 +93,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Suzuki K Pouloze <suzuki.poulose@arm.com>,
- catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- rostedt@goodmis.org, Christoffer Dall <christoffer.dall@arm.com>,
- james.morse@arm.com, Oleg Nesterov <oleg@redhat.com>, yuzenghui@huawei.com,
- wanghaibin.wang@huawei.com, liwei391@huawei.com
+Cc: Sascha Hauer <kernel@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>,
+ Chris Healy <cphealy@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, NXP Linux Team <linux-imx@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 14/05/2019 10:25, Julien Thierry wrote:
-[...]
->>> +static inline int arch_irqs_disabled_flags(unsigned long flags)
->>> +{
->>> +	int res;
->>> +
->>> +	asm volatile(ALTERNATIVE(
->>> +		"and	%w0, %w1, #" __stringify(PSR_I_BIT) "\n"
->>> +		"nop",
->>> +		"cmp	%w1, #" __stringify(GIC_PRIO_IRQON) "\n"
->>> +		"cset	%w0, ne",
->>> +		ARM64_HAS_IRQ_PRIO_MASKING)
->>> +		: "=&r" (res)
->>> +		: "r" ((int) flags)
->>> +		: "memory");
->>
->> I wonder if this should have "cc" as part of the clobber list.
-> 
-> Is there any special semantic to "cc" on arm64? All I can find is that
-> in the general case it indicates that it is modifying the "flags" register.
-> 
-> Is your suggestion only for the PMR case? Or is it something that we
-> should add regardless of PMR?
-> The latter makes sense to me, but for the former, I fail to understand
-> why this should affect only PMR.
+Hi Lucas,
 
-The PMR case really ought to have have a cc clobber, because who knows 
-what this may end up inlined into, and compilers can get pretty 
-aggressive with instruction scheduling in ways which leave a live value 
-in CPSR across sizeable chunks of other code. It's true that the non-PMR 
-case doesn't need it, but the surrounding code still needs to be 
-generated to accommodate both possible versions of the alternative. From 
-the look of the rest of the patch, the existing pseudo-NMI code has this 
-bug in a few places.
+On Mon, May 13, 2019 at 11:07 AM Lucas Stach <l.stach@pengutronix.de> wrote:
 
-Technically you could omit it when ARM64_PSEUDO_NMI is configured out 
-entirely, but at that point you may as well omit the whole alternative 
-as well. It's probably not worth the bother unless it proves to have a 
-significant impact on codegen overall. On which note the memory clobber 
-also seems superfluous either way :/
+> Does this fix a real bug? The same issue is present with the i.MX6 I2C
 
-That said, now that I've been looking at it for this long, if the aim is 
-just to create a zero/nonzero value then couldn't the PMR case just be 
-"eor %w0, %w1, #GIC_PRIO_IRQON" and avoid the need for clobbers at all?
+Not really, just trying to be on the safe side.
 
-Robin.
+> controllers, but we are still running a lot of i2c busses on i.MX6
+> based boards at 400kHz, with no issues whatsoever.
+
+Ok, so let's keep it at 400kHz then.
+
+Regards,
+
+Fabio Estevam
 
 _______________________________________________
 linux-arm-kernel mailing list
