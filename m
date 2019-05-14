@@ -2,85 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 941931C523
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 10:43:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75AD11C52B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 10:46:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L9J9VhkApvXCUUqRZ8FIDEY3tYo8XLIncUYRI37+8dc=; b=UKV5VEbOl3UA3X
-	JjCwVx06SMKnXGcaqPTeSnYOf3by0ikhcVnZx0GXQKr2tC5Zwyb+DvPaNAAfcoinl9GvS+Opdj0OJ
-	8HU8voBM8xPOok5yytbjTo+OzQhZFhPgIGQlhtZaA3MWTMnQA/00Sz/y3YsRQkYryWm7PDESCxWSP
-	6NiyvL2rUkdxEh/lrIHXbcf3z/KMEom18CJXF08F94ln7XqEUwdb859kcuaV8qI99N2HrmqdVhkbw
-	5KeGb2tSgSKQY+pHgGDjdWvbz3prsw5Kx7J5p1EkXfMs0gK6zPBVazrDjQYsTJXeyRFcV0PMDOhFX
-	i1nQYzAwxbHoYsC+AYcA==;
+	List-Owner; bh=87IlyidR7yaf+Frre0BEeYyQGYg0lobfZy2OS6aeAL0=; b=ILJAqbOczdyQHK
+	bsBLjXcQR4OiK6B96tMeMbyV/zA+iRV4p/gesJksAOsOK9XUuNUNYKqbI1263mzAOCLHMk4CuSlbQ
+	jXd4bFHfRpI5TP7LXthr8MfJMRlHMQhnSfUtpjhfu8M7POXGkMk4R0xabGJnvwTv0jwtwDCES4GO1
+	O7ja/zwMw8r2LINGw9OAIq3zyzrqtcWNml5rnmk5YDZueQZb0/+grXh636KMicbMS/7zWkf4CRy/p
+	yq9C2UC50TTWPrfI73eRsttcJ0W8B2xZrTBr8rxnhSAJvWBJmCsqg/yD+U4yda3EKVLp2S61Rm+fc
+	ycqwK4MrLxklgEg37O+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQT2B-0005rU-PF; Tue, 14 May 2019 08:43:39 +0000
-Received: from esa3.microchip.iphmx.com ([68.232.153.233])
+	id 1hQT4Y-0007eW-O1; Tue, 14 May 2019 08:46:06 +0000
+Received: from mail-eopbgr30046.outbound.protection.outlook.com ([40.107.3.46]
+ helo=EUR03-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQT22-0005r1-9j
- for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 08:43:33 +0000
-Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
- Ludovic.Desroches@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="Ludovic.Desroches@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa3.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa3.microchip.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-X-IronPort-AV: E=Sophos;i="5.60,468,1549954800"; d="scan'208";a="33227185"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa3.microchip.iphmx.com with ESMTP/TLS/DHE-RSA-AES256-SHA;
- 14 May 2019 01:43:28 -0700
-Received: from localhost (10.10.76.4) by chn-sv-exch02.mchp-main.com
- (10.10.76.38) with Microsoft SMTP Server id 14.3.352.0; Tue, 14 May 2019
- 01:43:28 -0700
-Date: Tue, 14 May 2019 10:42:54 +0200
-From: Ludovic Desroches <ludovic.desroches@microchip.com>
-To: Raag Jadav <raagjadav@gmail.com>
-Subject: Re: [PATCH] i2c: at91: handle TXRDY interrupt spam
-Message-ID: <20190514084254.zc526whem6yxfu7l@M43218.corp.atmel.com>
-Mail-Followup-To: Raag Jadav <raagjadav@gmail.com>,
- linux-kernel@vger.kernel.org, alexandre.belloni@bootlin.com,
- linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-References: <1556005008-6318-1-git-send-email-raagjadav@gmail.com>
- <20190429090005.f6ydghzu5n5yruav@M43218.corp.atmel.com>
- <20190429223332.GA3908@pc>
- <20190502140116.rim72idpgvq4h4vc@M43218.corp.atmel.com>
- <20190503235851.GA4242@pc>
+ id 1hQT4R-0007e5-1k
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 08:46:00 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Nnx3HLvpY+SYB1SFaSAsRKBv07rHpXbxw/n8NpTlID8=;
+ b=fRSStEGRO0iWliTG/nTCtSUitYOl3P9Ca1R9bakPCWT/7W0TMJA+/jXC0Nx811BWsoaKqj94i+u5mQahs9SivPvQHhkSl8/qUC2vgVC8Trgbfsf3VtjG/iePMYjpIO43h3NpqOOZ4YDiGlTKumH8xA7L05DqDHE6dh6DGzwi0ME=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3867.eurprd04.prod.outlook.com (52.134.65.148) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1878.25; Tue, 14 May 2019 08:45:55 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::d035:3bd0:a56a:189d]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::d035:3bd0:a56a:189d%2]) with mapi id 15.20.1900.010; Tue, 14 May 2019
+ 08:45:55 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Daniel Baluta <daniel.baluta@gmail.com>
+Subject: RE: [PATCH RESEND 1/2] soc: imx: Add SCU SoC info driver support
+Thread-Topic: [PATCH RESEND 1/2] soc: imx: Add SCU SoC info driver support
+Thread-Index: AQHVCTfaYqtO/eSQ1UCSJJ4U0eiBlKZpHh8AgACXn+CAAJi7gIAAActg
+Date: Tue, 14 May 2019 08:45:55 +0000
+Message-ID: <DB3PR0402MB39162FD34C212598380B530CF5080@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1557716049-22744-1-git-send-email-Anson.Huang@nxp.com>
+ <CAEnQRZDSTuUMrc9AC1S2zfo0PdQ-v35GmNrf70Zoasid_XMJzw@mail.gmail.com>
+ <DB3PR0402MB3916A46BFFE5E6F3D4832A33F50F0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <CAEnQRZB0fs2g=h4pq97t+E9U9LOxSafYhx07Xia_J+snjqefEw@mail.gmail.com>
+In-Reply-To: <CAEnQRZB0fs2g=h4pq97t+E9U9LOxSafYhx07Xia_J+snjqefEw@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [183.192.18.129]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 3a4aa5c0-460e-42d7-df51-08d6d848946c
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:DB3PR0402MB3867; 
+x-ms-traffictypediagnostic: DB3PR0402MB3867:
+x-microsoft-antispam-prvs: <DB3PR0402MB38676002DD267965F806EEE4F5080@DB3PR0402MB3867.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:293;
+x-forefront-prvs: 0037FD6480
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(396003)(346002)(376002)(366004)(39860400002)(136003)(199004)(189003)(13464003)(54906003)(99286004)(316002)(6916009)(25786009)(81166006)(81156014)(4326008)(8676002)(8936002)(55016002)(71190400001)(71200400001)(66066001)(52536014)(33656002)(68736007)(5660300002)(53936002)(229853002)(66446008)(76116006)(6436002)(66556008)(66476007)(66946007)(256004)(478600001)(53546011)(7736002)(14454004)(74316002)(9686003)(6506007)(26005)(305945005)(186003)(102836004)(44832011)(2906002)(6116002)(11346002)(3846002)(76176011)(7696005)(7416002)(6246003)(486006)(476003)(64756008)(86362001)(73956011)(446003)(15866825006);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3867;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: /5BwR22dF8296OduRE6hP/+AcfSiD0DxDhcyzXLmhvN72Jhut72sum760PzANEeeBaL5NU8sYoe1BrjUpTeV81tMzRGuVzCsKYJA13CX2ctCrCse4Fiu625lnMcR6VGTTAD05DYxo3dZ1E4medwgtUX4flx6/4G+PGEwGu94TcxRZnZU1+u+K47EHknkvsocXlCQOCf8M5JBIUjqIApE/QfKOjNwxdkuDGqoYOF2FyiWZFLLai5HF3aNENSqB5Vr12ZnwTgCd7KKCQasyMl33mqT4FNR24ROUJdrC7c8rDB+yhaR+Ag85fe4yhIZ7z8q/x6jjlZgLBafR++BrakIYMK6BS6Dtt+fmvzIsoTOvH+Ilr8k0Ez5AaOcvpV5/LlEp8CessTeas65WB9QeLXXgTGh1IuoYT/vUTAvFNRQo5k=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190503235851.GA4242@pc>
-User-Agent: NeoMutt/20180716
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3a4aa5c0-460e-42d7-df51-08d6d848946c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 May 2019 08:45:55.7230 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3867
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_014330_347345_A0DCB8F6 
-X-CRM114-Status: GOOD (  29.01  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190514_014559_167737_2583945B 
+X-CRM114-Status: GOOD (  16.86  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.153.233 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.3.46 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -92,130 +112,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-i2c@vger.kernel.org
+Cc: "maxime.ripard@bootlin.com" <maxime.ripard@bootlin.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>, "robh@kernel.org" <robh@kernel.org>,
+ Abel Vesa <abel.vesa@nxp.com>, "agross@kernel.org" <agross@kernel.org>,
+ "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "marc.w.gonzalez@free.fr" <marc.w.gonzalez@free.fr>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "olof@lixom.net" <olof@lixom.net>,
+ "horms+renesas@verge.net.au" <horms+renesas@verge.net.au>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Aisheng Dong <aisheng.dong@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "dinguyen@kernel.org" <dinguyen@kernel.org>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, May 04, 2019 at 05:28:51AM +0530, Raag Jadav wrote:
-> On Thu, May 02, 2019 at 04:01:16PM +0200, Ludovic Desroches wrote:
-> > On Tue, Apr 30, 2019 at 04:03:32AM +0530, Raag Jadav wrote:
-> > > External E-Mail
-> > > 
-> > > 
-> > > On Mon, Apr 29, 2019 at 11:00:05AM +0200, Ludovic Desroches wrote:
-> > > > Hello Raag,
-> > > > 
-> > > > On Tue, Apr 23, 2019 at 01:06:48PM +0530, Raag Jadav wrote:
-> > > > > External E-Mail
-> > > > > 
-> > > > > 
-> > > > > Performing i2c write operation while SDA or SCL line is held
-> > > > > or grounded by slave device, we go into infinite at91_twi_write_next_byte
-> > > > > loop with TXRDY interrupt spam.
-> > > > 
-> > > > Sorry but I am not sure to have the full picture, the controller is in
-> > > > slave or master mode?
-> > > > 
-> > > > SVREAD is only used in slave mode. When SVREAD is set, it means that a read
-> > > > access is performed and your issue concerns the write operation.
-> > > > 
-> > > > Regards
-> > > > 
-> > > > Ludovic
-> > > 
-> > > Yes, even though the datasheet suggests that SVREAD is irrelevant in master mode,
-> > > TXRDY and SVREAD are the only ones being set in status register upon reproducing the issue.
-> > > Couldn't think of a better way to handle such strange behaviour.
-> > > Any suggestions would be appreciated.
-> > 
-> > I have the confirmation that you can't rely on the SVREAD flag when in
-> > master mode. This flag should always have the same value.
-> > 
-> > I am trying to understand what could lead to your situation. Can you
-> > give me more details. What kind of device it is? What does lead to this
-> > situation? Does it happen randomly or not?
-> 
-> One of the sama5d2 based board I worked on, was having trouble complete its boot
-> because of a faulty i2c device, which was randomly holding down the SDA line
-> on i2c write operation, not allowing the controller to complete its transmission,
-> causing a massive TXRDY interrupt spam, ultimately hanging the processor.
-> 
-> Another strange observation was that SVREAD was being set in the status register
-> along with TXRDY, every time I reproduced the issue.
-> You can reproduce it by simply grounding the SDA line and performing i2c write
-> on the bus.
 
-Thanks for the details, I'll discussed it with hw guys but expect some
-dealy as I'll be off next 2 weeks.
 
-Regards
+> -----Original Message-----
+> From: Daniel Baluta [mailto:daniel.baluta@gmail.com]
+> Sent: Tuesday, May 14, 2019 4:39 PM
+> To: Anson Huang <anson.huang@nxp.com>
+> Cc: catalin.marinas@arm.com; will.deacon@arm.com;
+> shawnguo@kernel.org; s.hauer@pengutronix.de; kernel@pengutronix.de;
+> festevam@gmail.com; maxime.ripard@bootlin.com; agross@kernel.org;
+> olof@lixom.net; horms+renesas@verge.net.au;
+> jagan@amarulasolutions.com; bjorn.andersson@linaro.org; Leonard Crestez
+> <leonard.crestez@nxp.com>; marc.w.gonzalez@free.fr;
+> dinguyen@kernel.org; enric.balletbo@collabora.com; Aisheng Dong
+> <aisheng.dong@nxp.com>; robh@kernel.org; Abel Vesa
+> <abel.vesa@nxp.com>; l.stach@pengutronix.de; linux-arm-
+> kernel@lists.infradead.org; linux-kernel@vger.kernel.org; dl-linux-imx
+> <linux-imx@nxp.com>; Daniel Baluta <daniel.baluta@nxp.com>
+> Subject: Re: [PATCH RESEND 1/2] soc: imx: Add SCU SoC info driver support
+> 
+> On Tue, May 14, 2019 at 2:34 AM Anson Huang <anson.huang@nxp.com>
+> wrote:
+> >
+> > Hi, Daniel
+> >
+> > > -----Original Message-----
+> > > From: Daniel Baluta [mailto:daniel.baluta@gmail.com]
+> > > Sent: Monday, May 13, 2019 10:30 PM
+> > > To: Anson Huang <anson.huang@nxp.com>
+> > > Cc: catalin.marinas@arm.com; will.deacon@arm.com;
+> > > shawnguo@kernel.org; s.hauer@pengutronix.de;
+> kernel@pengutronix.de;
+> > > festevam@gmail.com; maxime.ripard@bootlin.com; agross@kernel.org;
+> > > olof@lixom.net; horms+renesas@verge.net.au;
+> > > jagan@amarulasolutions.com; bjorn.andersson@linaro.org; Leonard
+> > > Crestez <leonard.crestez@nxp.com>; marc.w.gonzalez@free.fr;
+> > > dinguyen@kernel.org; enric.balletbo@collabora.com; Aisheng Dong
+> > > <aisheng.dong@nxp.com>; robh@kernel.org; Abel Vesa
+> > > <abel.vesa@nxp.com>; l.stach@pengutronix.de; linux-arm-
+> > > kernel@lists.infradead.org; linux-kernel@vger.kernel.org;
+> > > dl-linux-imx <linux-imx@nxp.com>; Daniel Baluta
+> > > <daniel.baluta@nxp.com>
+> > > Subject: Re: [PATCH RESEND 1/2] soc: imx: Add SCU SoC info driver
+> > > support
+> > >
+> > > <snip>
+> > >
+> > > > +
+> > > > +static u32 imx8qxp_soc_revision(void) {
+> > > > +       struct imx_sc_msg_misc_get_soc_id msg;
+> > > > +       struct imx_sc_rpc_msg *hdr = &msg.hdr;
+> > > > +       u32 rev = 0;
+> > > > +       int ret;
+> > > > +
+> > > > +       hdr->ver = IMX_SC_RPC_VERSION;
+> > > > +       hdr->svc = IMX_SC_RPC_SVC_MISC;
+> > > > +       hdr->func = IMX_SC_MISC_FUNC_GET_CONTROL;
+> > > > +       hdr->size = 3;
+> > > > +
+> > > > +       msg.data.send.control = IMX_SC_C_ID;
+> > > > +       msg.data.send.resource = IMX_SC_R_SYSTEM;
+> > > > +
+> > > > +       ret = imx_scu_call_rpc(soc_ipc_handle, &msg, true);
+> > > > +       if (ret) {
+> > > > +               dev_err(&imx_scu_soc_pdev->dev,
+> > > > +                       "get soc info failed, ret %d\n", ret);
+> > > > +               return rev;
+> > >
+> > > So you return 0 (rev  = 0) here in case of error? This doesn't seem to be
+> right.
+> > > Maybe return ret?
+> >
+> > This is intentional, similar with current i.MX8MQ soc info driver,
+> > when getting revision failed, just return 0 as revision info and it will show
+> "unknown" in sysfs.
+> 
+> Ok, I understand. Lets make this clear from the source code.
+> 
+>    ret = imx_scu_call_rpc(soc_ipc_handle, &msg, true);
+> +       if (ret) {
+> +               dev_err(&imx_scu_soc_pdev->dev,
+> +                       "get soc info failed, ret %d\n", ret);
+>                 /* returning 0 means getting revision failed */
+> +               return 0;
+> +       }
 
-Ludovic
+OK, will add a comment in V2.
 
-> 
-> Note that NACK, LOCK or TXCOMP are never set as the transmission never completes.
-> I'm not sure why slave bits are being set in master mode,
-> but it's been working reliably for me.
-> 
-> This patch doesn't recover the SDA line. It just prevents the processor from
-> getting hanged in case of i2c bus lockup.
-> 
-> Cheers,
-> Raag
-> 
-> > 
-> > Regards
-> > 
-> > Ludovic
-> > 
-> > > 
-> > > Cheers,
-> > > Raag
-> > > 
-> > > > 
-> > > > > 
-> > > > > Signed-off-by: Raag Jadav <raagjadav@gmail.com>
-> > > > > ---
-> > > > >  drivers/i2c/busses/i2c-at91.c | 6 +++++-
-> > > > >  1 file changed, 5 insertions(+), 1 deletion(-)
-> > > > > 
-> > > > > diff --git a/drivers/i2c/busses/i2c-at91.c b/drivers/i2c/busses/i2c-at91.c
-> > > > > index 3f3e8b3..b2f5fdb 100644
-> > > > > --- a/drivers/i2c/busses/i2c-at91.c
-> > > > > +++ b/drivers/i2c/busses/i2c-at91.c
-> > > > > @@ -72,6 +72,7 @@
-> > > > >  #define	AT91_TWI_TXCOMP		BIT(0)	/* Transmission Complete */
-> > > > >  #define	AT91_TWI_RXRDY		BIT(1)	/* Receive Holding Register Ready */
-> > > > >  #define	AT91_TWI_TXRDY		BIT(2)	/* Transmit Holding Register Ready */
-> > > > > +#define	AT91_TWI_SVREAD		BIT(3)	/* Slave Read */
-> > > > >  #define	AT91_TWI_OVRE		BIT(6)	/* Overrun Error */
-> > > > >  #define	AT91_TWI_UNRE		BIT(7)	/* Underrun Error */
-> > > > >  #define	AT91_TWI_NACK		BIT(8)	/* Not Acknowledged */
-> > > > > @@ -571,7 +572,10 @@ static irqreturn_t atmel_twi_interrupt(int irq, void *dev_id)
-> > > > >  		at91_disable_twi_interrupts(dev);
-> > > > >  		complete(&dev->cmd_complete);
-> > > > >  	} else if (irqstatus & AT91_TWI_TXRDY) {
-> > > > > -		at91_twi_write_next_byte(dev);
-> > > > > +		if ((status & AT91_TWI_SVREAD) && (dev->buf_len == 0))
-> > > > > +			at91_twi_write(dev, AT91_TWI_IDR, AT91_TWI_TXRDY);
-> > > > > +		else
-> > > > > +			at91_twi_write_next_byte(dev);
-> > > > >  	}
-> > > > >  
-> > > > >  	/* catch error flags */
-> > > > > -- 
-> > > > > 2.7.4
-> > > > > 
-> > > > > 
-> > > 
-> > > _______________________________________________
-> > > linux-arm-kernel mailing list
-> > > linux-arm-kernel@lists.infradead.org
-> > > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> > > 
+Anson.
 
 _______________________________________________
 linux-arm-kernel mailing list
