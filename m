@@ -2,87 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 008541C99D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 15:54:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FE2C1C9AB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 15:56:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ejn+t7UpPbmMESmEstYZrn6EAsjWvM7/SPlN7UKRx3o=; b=n61qEay1WFxNZG
-	NW8JZ/Pkcp9RxKr9cdgHndjJlCqFNvR+dxS2OLaqFJIu1Y27jXs/mgaqIs/Sveh9rosMEB/FSDKYU
-	GOZj0L9Ud1FHSstjkKz45BTC3S7GQ0zdpcdmLInJ/wmCw5jc9Kh4QYbHhIr8j4vcwSzKbvaxZj4sT
-	scmMKI38gaJbeqjKLstxv9zT0CKQO6fGxuDBtstvAAmIdjPJalys+iy8lObzd2BJNOchLTFLFrdJ8
-	wY3Rc2umO0iHX9g1aKZDvSjNgijKHx1ScOMRN53JHP2iM2ZgDH9kY9wwS5sHfY8wWmwOzYxN0SHzH
-	iP5lzJcB3oU7Gyi/yDTQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=EMqzRwG9TEEMuFA+v39SgqP2+n2VRuDIGaHUbwBfTeY=; b=irFG80QjzDsjkV
+	Qu3BA0NfM5/VeFq6YR+DhFyivclXiSdDzVhpV8ieUqZB/iomipOCA+j/FyrmwZDXA6SibflbZ08l1
+	TRVmsPjnTxTJiQDdhIMr7Fu6Zzh6JZzkPl3vIgH7Xy+hw3noc9hkBxGJcDz9Qwq/MWGDUnNgfFar9
+	whkZZQ7VkXLqQqP9XqlLhzr2ZQf/psEoob0gY6jFeCpHnmYtgMTJ18n8jAaGC3aySzk+f/rjvuSgF
+	qlDpt6KOrXzv7wykBKEbkh3OgV8H8DA/CfC6oz/vnkKzopTp2WeX6UmimSJjNN99GV5/oRVny6ROm
+	UpxTqJ9VnF5SN33lcbhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQXsX-00077y-6L; Tue, 14 May 2019 13:54:01 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1hQXuw-0000u3-Jt; Tue, 14 May 2019 13:56:30 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQXs4-00077P-N5
- for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 13:53:35 +0000
-Received: by mail-pg1-x544.google.com with SMTP id i21so8662337pgi.12
+ id 1hQXuk-0000r4-1o
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 13:56:20 +0000
+Received: by mail-wr1-x442.google.com with SMTP id c5so19304055wrs.11
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 May 2019 06:53:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Jeotp7Heip4dnruP6DGPSPY/W6nF7ymegBBCN5wTIlU=;
- b=Sd67dS3i4Vk43Yf8j2OebGjA9rAyfZqeUsIB2kwpkmOCaXY2TftHMUbd+fk49PbyZW
- AIVLNaIwuVXo8ZP0Ku6v8L3aZbxLCPjRPf/gjZDjbgWMr3YWu2kmOqjbbPlyWlhX8ers
- 7CcIHW9aaxdY2zijxE8JXXdjVsTFUnd00v6WKh8Z9faRuwAn192pgusg9uoaRDXtrycZ
- Z7tV3JOHKwJka4BPVdbbOX4gUivZv7mNJsDJWIGsrgQBe30WNYCLVZd3Cb9RumBK41tc
- p2GzpI80CCtqthjwuCS3LCjQ5VxXnsuoEwQGa237Sfe5eXHI3g8wJ0nSBDk3jRgTiTGi
- SZPw==
+ Tue, 14 May 2019 06:56:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=JrFvYsL9fwlu+wGRvMZUzKBLdClu5UnEjuCYqxgFHo4=;
+ b=vRhN6OyptonXD2qpAiv7fRpzH/Ey0Db5kx/NZfg1Kas+20VHEBpr9O8wu2ZC5W+Uya
+ jonjVyjvIIJs63re8xNvmuoukPLdZlQFi7eR3FYItubTHemeWP3jmdBa4DQ1xeoa4jTc
+ IjwXweOM8SekW6uNNR2NR9A6HNvJpeM3XTAAC5zzWHCSPBI4d/4lcguokMUGFyht4fGS
+ CeXVTzfsuWsmjla0GQv9xh4eDpLAuq9J3Jc+DvmuWcjSr416xctmDNrBoCETaLKeIduP
+ WoZhltnk1pKvfsFnZwp+cgHNL+T6nhY7miF8XanwWT8SMgSirhenrbHcdXh3ZgB2YWvE
+ ZQ2w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Jeotp7Heip4dnruP6DGPSPY/W6nF7ymegBBCN5wTIlU=;
- b=Y+md8TkhU9FMcuBC8keHFpn/ZAl+7E+5LaDgWXcXUsFJiBQaTlc+FxAL8dV3JOMcMy
- l8DgCEk7hZpPfTEiuDxfl9vn78GyG4wNLdQ7UZ70rkebGiA6VyS4d/IcKymhrW0XzoQP
- AYg90KlFuVXzzn7C/T8vpZzGxeV7HLFKadY4GwNmZPCW7Ni7/vZCkoKcMzyahWAm3pog
- Qdj+Nn1kaX7avXL/wqeR4j9adtLXd8AJms5bSDBtEFzj+0A5INli8GSlgCBTaKdhqqQq
- VUPJ361QM6tJZUkPeOIQxRDX82VIh/c6Sm4vtUJFLEsZXcFc4pitVQPdSkcBLusWlope
- UR6g==
-X-Gm-Message-State: APjAAAVyrjdRk2/zcQGHOievb4l6IcLkQBlaJOm3bpeF11xWFHbWSET2
- OvUB6z0oTV9vfDfEcgmdWAW5rp+UKx5sQarwUBI=
-X-Google-Smtp-Source: APXvYqzHGXExVdY/ST91xyM3HuzysOYT6a1rFOewbkmNb38UQVV/ZlY8dEj7uu8g4ljHTZO8Y1xseNaC2WOmr9kE20s=
-X-Received: by 2002:a65:5785:: with SMTP id b5mr1701922pgr.252.1557842010563; 
- Tue, 14 May 2019 06:53:30 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=JrFvYsL9fwlu+wGRvMZUzKBLdClu5UnEjuCYqxgFHo4=;
+ b=K2suxhWAJk9GMoghkm4oJumq8U2hplN+fD49Vj8eOJTQEDqrI9lLAm/ARQcy8xk8TG
+ 0Jv4L43Xm05p30Flr28zv7WTpVhKamf7mms4LH1nhJ8LCA4Ra5ZzjWf8q0gilWZBvFId
+ xQARqFNhQiIanxi7p44rMAvk3pOWGtLyC0NTnqqcOCISs7tNAxQehL9/yAWuShwTPKhV
+ JzmpyRaD+GA5mTs6ynhLszpJJZCqlZ/NrQvzwfKjIA3/Hv58utluDmPmbz+jnzCZbpTW
+ VSA/ZxKz9RHVKELYJqtWE9ldOC10aW9EtfaCh55j4uN3PCNLAGmKQi/sNAmc7zDR+PbF
+ SNXA==
+X-Gm-Message-State: APjAAAVmqSnSB3CFd+QyDVC3ckqwuFGH9D9eILmML+Zn94PJrXwyfwXJ
+ 8lXfXIuV2VNcEHF2gMcOMbWQ0A==
+X-Google-Smtp-Source: APXvYqzGuTXOH1T/sqT7pwkrQAZzOpjyGHiQ0wi7lNh6MTK1fPtvzgs991odG+29VIdC3rEdzIW6mA==
+X-Received: by 2002:adf:cc8e:: with SMTP id p14mr6585441wrj.82.1557842176332; 
+ Tue, 14 May 2019 06:56:16 -0700 (PDT)
+Received: from mjourdan-pc.numericable.fr (abo-99-183-68.mtp.modulonet.fr.
+ [85.68.183.99])
+ by smtp.gmail.com with ESMTPSA id d72sm1375764wmd.12.2019.05.14.06.56.15
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 14 May 2019 06:56:15 -0700 (PDT)
+From: Maxime Jourdan <mjourdan@baylibre.com>
+To: Mauro Carvalho Chehab <mchehab@kernel.org>
+Subject: [PATCH v6 0/4] Add Amlogic video decoder driver
+Date: Tue, 14 May 2019 15:56:08 +0200
+Message-Id: <20190514135612.30822-1-mjourdan@baylibre.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-References: <1556736193-29411-1-git-send-email-Frank.Li@nxp.com>
- <1556736193-29411-2-git-send-email-Frank.Li@nxp.com>
- <CAHQ1cqGszjTZ+kSTeqHjoZ-QPKd6f1Afn+00-haJy_dJY4X4+g@mail.gmail.com>
-In-Reply-To: <CAHQ1cqGszjTZ+kSTeqHjoZ-QPKd6f1Afn+00-haJy_dJY4X4+g@mail.gmail.com>
-From: Zhi Li <lznuaa@gmail.com>
-Date: Tue, 14 May 2019 08:53:18 -0500
-Message-ID: <CAHrpEqQKyH0+vXJfWf0fuUDvQnSCKjrBmU8megsUWX1mHdbfrw@mail.gmail.com>
-Subject: Re: [PATCH V12 2/4] drivers/perf: imx_ddr: Add ddr performance
- counter support
-To: Andrey Smirnov <andrew.smirnov@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_065333_082304_5F2BCBAD 
-X-CRM114-Status: GOOD (  25.66  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190514_065618_236286_76C53487 
+X-CRM114-Status: GOOD (  21.55  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (lznuaa[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,756 +91,272 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Aisheng Dong <aisheng.dong@nxp.com>, "festevam@gmail.com" <festevam@gmail.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Frank Li <frank.li@nxp.com>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Maxime Jourdan <mjourdan@baylibre.com>, devicetree@vger.kernel.org,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>, linux-kernel@vger.kernel.org,
+ Hans Verkuil <hans.verkuil@cisco.com>, linux-amlogic@lists.infradead.org,
+ linux-media@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 7, 2019 at 2:30 PM Andrey Smirnov <andrew.smirnov@gmail.com> wrote:
->
-> On Wed, May 1, 2019 at 11:43 AM Frank Li <frank.li@nxp.com> wrote:
-> >
-> > Add ddr performance monitor support for iMX8QXP
-> >
-> > There are 4 counters for ddr perfomance events.
-> > counter 0 is dedicated for cycles.
-> > you choose any up to 3 no cycles events.
-> >
-> > for example:
-> >
-> > perf stat -a -e imx8_ddr0/read-cycles/,imx8_ddr0/write-cycles/,imx8_ddr0/precharge/ ls
-> > perf stat -a -e imx8_ddr0/cycles/,imx8_ddr0/read-access/,imx8_ddr0/write-access/ ls
-> >
-> > Support below events.
-> >
-> >   imx8_ddr0/activate/                                     [Kernel PMU event]
-> >   imx8_ddr0/axid-read/                                    [Kernel PMU event]
-> >   imx8_ddr0/axid-write/                                   [Kernel PMU event]
-> >   imx8_ddr0/cycles/                                       [Kernel PMU event]
-> >   imx8_ddr0/hp-read-credit-cnt/                           [Kernel PMU event]
-> >   imx8_ddr0/hp-read/                                      [Kernel PMU event]
-> >   imx8_ddr0/hp-req-nodcredit/                             [Kernel PMU event]
-> >   imx8_ddr0/hp-xact-credit/                               [Kernel PMU event]
-> >   imx8_ddr0/load-mode/                                    [Kernel PMU event]
-> >   imx8_ddr0/lp-read-credit-cnt/                           [Kernel PMU event]
-> >   imx8_ddr0/lp-req-nocredit/                              [Kernel PMU event]
-> >   imx8_ddr0/lp-xact-credit/                               [Kernel PMU event]
-> >   imx8_ddr0/mwr/                                          [Kernel PMU event]
-> >   imx8_ddr0/precharge/                                    [Kernel PMU event]
-> >   imx8_ddr0/raw-hazard/                                   [Kernel PMU event]
-> >   imx8_ddr0/read-access/                                  [Kernel PMU event]
-> >   imx8_ddr0/read-activate/                                [Kernel PMU event]
-> >   imx8_ddr0/read-command/                                 [Kernel PMU event]
-> >   imx8_ddr0/read-cycles/                                  [Kernel PMU event]
-> >   imx8_ddr0/read-modify-write-command/                    [Kernel PMU event]
-> >   imx8_ddr0/read-queue-depth/                             [Kernel PMU event]
-> >   imx8_ddr0/read-write-transition/                        [Kernel PMU event]
-> >   imx8_ddr0/read/                                         [Kernel PMU event]
-> >   imx8_ddr0/refresh/                                      [Kernel PMU event]
-> >   imx8_ddr0/selfresh/                                     [Kernel PMU event]
-> >   imx8_ddr0/wr-xact-credit/                               [Kernel PMU event]
-> >   imx8_ddr0/write-access/                                 [Kernel PMU event]
-> >   imx8_ddr0/write-command/                                [Kernel PMU event]
-> >   imx8_ddr0/write-credit-cnt/                             [Kernel PMU event]
-> >   imx8_ddr0/write-cycles/                                 [Kernel PMU event]
-> >   imx8_ddr0/write-queue-depth/                            [Kernel PMU event]
-> >   imx8_ddr0/write/
-> >
-> > Signed-off-by: Frank Li <Frank.Li@nxp.com>
->
-> Don't really have anything to suggest, that I already haven't. LGTM, so:
->
-> Reviewed-by: Andrey Smirnov <andrew.smirnov@gmail.com>
+Hi everyone,
+
+[V6] Good news, the firmware situation is resolved. We have received a
+redistributable license from Amlogic and the firmwares have been merged
+in linux-firmware[5].
+
+[V5] It's been a while since the last patch series regarding the Amlogic
+video decoder. Unfortunately, the firmware licensing situation is still
+on hold as we await communication from Amlogic. As such, we do not have
+the firmwares in linux-firmware yet.
+I decided to push the V5 anyway, as changes were starting to pile up.
+
+This patch series adds support for the Amlogic video decoder,
+as well as the corresponding dt bindings for GXBB/GXL/GXM chips.
+
+It features decoding for the following formats:
+- MPEG 1
+- MPEG 2
+
+The following formats will be added in future patches:
+- MJPEG
+- MPEG 4 (incl. Xvid, H.263)
+- H.264
+- HEVC (incl. 10-bit)
+- VP9 (incl. 10-bit)
+
+The code was made in such a way to allow easy inclusion of those formats
+in the future.
+
+The decoder is single instance.
+
+Files:
+ - vdec.c handles the V4L2 M2M logic
+ - esparser.c manages the hardware bitstream parser
+ - vdec_helpers.c provides helpers to DONE the dst buffers as well as
+ various common code used by the codecs
+ - vdec_1.c manages the VDEC_1 block of the vdec IP
+ - vdec_ctrls.c handles the V4L2 controls exposed by the driver
+ - codec_mpeg12.c enables decoding for MPEG 1/2.
+ - vdec_platform.c links codec units with vdec units
+ (e.g vdec_1 with codec_mpeg12) and lists all the available
+ src/dst formats and requirements (max width/height, etc.),
+ per compatible chip.
+
+It was tested primarily with ffmpeg's v4l2-m2m implementation. For instance:
+$ ffmpeg -c:v mpeg2_v4l2m2m -i sample_mpeg2.mkv -f rawvideo out.nv12
+
+The v4l2-compliance results are available below the patch diff.
+
+Changes since v5 [4]:
+ - Rebased against media_tree (fixes conflict with platform/meson/Makefile
+ following the meson CEC driver updates)
+
+Changes since v4 [3]:
+ - Updated for 5.1: 
+  - cropcap -> g_pixelaspect
+  - dma_zalloc_coherent -> dma_alloc_coherent
+ - enum_framesizes: changed from STEPWISE to CONTINUOUS, as suggested by Hans
+ - Reintroduced support for CREATE_BUFS. It was a driver bug where I wasn't
+ accounting for the amount of buffers created this way (only buffers created
+ via REQBUFS were).
+ - Added the patch introducing V4L2_FMT_FLAG_FIXED_RESOLUTION to the V4L2
+ framework, needed as MPEG2 on Amlogic hardware only supports a fixed
+ resolution during a decode session.
+ - Added support for events and V4L2_EVENT_SOURCE_CHANGE, as it is now checked
+ by v4l2-compliance for stateful decoders. I was planning on introducing this
+ for codecs that actually use it (H264, HEVC..), but it doesn't hurt to have
+ this in the initial commit.
+ - Added support for controls, mainly V4L2_CID_MIN_BUFFERS_FOR_CAPTURE
+
+Changes since v3 [2]:
+ - strlcpy -> strscpy
+ - queue_setup: account for existing buffers when clamping *num_buffers
+ - removed support for CREATE_BUFS. This caused issues with gstreamer and allowed
+ userspace to alloc more buffers than the decoder can handle in its fixed list.
+ So for now we just disable it and only allow allocating via REQBUFS.
+ - rebased & tested with 4.20-rc1
+
+Changes since v2 [1]:
+ - Override capture queue's min_buffers_needed in queue_setup
+ The HW needs the full buffer list to be available when doing start_streaming
+ - Fix the draining sequence
+ The blob that we write to the ESPARSER to trigger drain is codec-dependent.
+ The one that was sent in v1 is specific to H.264 and isn't guaranteed to
+ trigger drain for MPEG2. For the latter, a simple MPEG2 EOS code
+ should be sent to the ESPARSER instead.
+ - Slight enhancements to the way we do vififo offset<=>timestamp matching
+
+Changes since v1 [0]:
+ - use named interrupts in the bindings
+ - rewrite description in the bindings doc
+ - don't include the dts changes in the patch series
+ - fill the vb2 queues locks
+ - fill the video_device lock
+ - use helpers for wait_prepare and wait_finish vb2_ops
+ - remove unnecessary usleep in between esparser writes.
+ Extensive testing of every codec on GXBB/GXL didn't reveal
+ any fails without it, so just remove it.
+ - compile v4l2_compliance inside the git repo
+ - Check for plane number/plane size to pass the latest v4l2-compliance test
+ - Moved the single instance check (returning -EBUSY) to start/stop streaming
+ The check was previously in queue_setup but there was no great location to
+ clear it except for .close().
+ - Slight rework of the way CAPTURE frames are timestamped for better accuracy
+ - Implement PAR reporting via VIDIOC_CROPCAP
+
+[5] https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/commit/?id=e04cc56d0e6b6ff05924ff88fdba1a438ee7d3c8
+[4] https://patchwork.kernel.org/cover/10879959/
+[3] https://patchwork.kernel.org/cover/10669875/
+[2] https://lore.kernel.org/patchwork/cover/993093/
+[1] https://patchwork.kernel.org/cover/10595803/
+[0] https://patchwork.kernel.org/cover/10583391/
+
+Maxime Jourdan (4):
+  dt-bindings: media: add Amlogic Video Decoder Bindings
+  media: videodev2: add V4L2_FMT_FLAG_FIXED_RESOLUTION
+  media: meson: add v4l2 m2m video decoder driver
+  MAINTAINERS: Add meson video decoder
+
+ .../bindings/media/amlogic,vdec.txt           |   71 ++
+ .../media/uapi/v4l/vidioc-enum-fmt.rst        |    6 +
+ MAINTAINERS                                   |    8 +
+ drivers/media/platform/Kconfig                |   10 +
+ drivers/media/platform/meson/Makefile         |    1 +
+ drivers/media/platform/meson/vdec/Makefile    |    8 +
+ .../media/platform/meson/vdec/codec_mpeg12.c  |  209 ++++
+ .../media/platform/meson/vdec/codec_mpeg12.h  |   14 +
+ drivers/media/platform/meson/vdec/dos_regs.h  |   98 ++
+ drivers/media/platform/meson/vdec/esparser.c  |  323 +++++
+ drivers/media/platform/meson/vdec/esparser.h  |   32 +
+ drivers/media/platform/meson/vdec/vdec.c      | 1071 +++++++++++++++++
+ drivers/media/platform/meson/vdec/vdec.h      |  265 ++++
+ drivers/media/platform/meson/vdec/vdec_1.c    |  229 ++++
+ drivers/media/platform/meson/vdec/vdec_1.h    |   14 +
+ .../media/platform/meson/vdec/vdec_ctrls.c    |   51 +
+ .../media/platform/meson/vdec/vdec_ctrls.h    |   14 +
+ .../media/platform/meson/vdec/vdec_helpers.c  |  441 +++++++
+ .../media/platform/meson/vdec/vdec_helpers.h  |   80 ++
+ .../media/platform/meson/vdec/vdec_platform.c |  107 ++
+ .../media/platform/meson/vdec/vdec_platform.h |   30 +
+ include/uapi/linux/videodev2.h                |    5 +-
+ 22 files changed, 3085 insertions(+), 2 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/media/amlogic,vdec.txt
+ create mode 100644 drivers/media/platform/meson/vdec/Makefile
+ create mode 100644 drivers/media/platform/meson/vdec/codec_mpeg12.c
+ create mode 100644 drivers/media/platform/meson/vdec/codec_mpeg12.h
+ create mode 100644 drivers/media/platform/meson/vdec/dos_regs.h
+ create mode 100644 drivers/media/platform/meson/vdec/esparser.c
+ create mode 100644 drivers/media/platform/meson/vdec/esparser.h
+ create mode 100644 drivers/media/platform/meson/vdec/vdec.c
+ create mode 100644 drivers/media/platform/meson/vdec/vdec.h
+ create mode 100644 drivers/media/platform/meson/vdec/vdec_1.c
+ create mode 100644 drivers/media/platform/meson/vdec/vdec_1.h
+ create mode 100644 drivers/media/platform/meson/vdec/vdec_ctrls.c
+ create mode 100644 drivers/media/platform/meson/vdec/vdec_ctrls.h
+ create mode 100644 drivers/media/platform/meson/vdec/vdec_helpers.c
+ create mode 100644 drivers/media/platform/meson/vdec/vdec_helpers.h
+ create mode 100644 drivers/media/platform/meson/vdec/vdec_platform.c
+ create mode 100644 drivers/media/platform/meson/vdec/vdec_platform.h
 
 
-Will Deacon:
-            Is it okay to pick up these patches?  Andrey always acked.
+root@libretech-cc:~# v4l2-compliance -d /dev/video0 
+v4l2-compliance SHA: 40fd5611c5176137c80616f6ee93b36f0d88f2d5, 64 bits
 
-best regards
-Frank Li
+Compliance test for meson-vdec device /dev/video0:
 
->
->
-> > ---
-> >
-> > Notes:
-> >     Change from v11 to v12
-> >     * change name from imx_ddr to imx8_ddr
-> >
-> >     Change from v10 to v11
-> >      * using devm_platform_ioremap_resource
-> >      * using help macro IMX8_DDR_PMU_EVENT_ATTR
-> >
-> >     Change from v9 to v10
-> >      * use name imx8_ddr_perf_pmu
-> >      * cpuhp_setup_state_multi use DDR_PERF_DEV_NAME
-> >      * config: 0-7
-> >      * use read_relaxed() at ddr_perf_read_counter
-> >      * add .capabilities = PERF_PMU_CAP_NO_EXCLUDE
-> >      * raname ddr_perf_event_start to ddr_perf_counter_enable
-> >      * use FIELD_PREP
-> >      * write 0 to disalbe counter at ddr_perf_event_enable
-> >      * update hwc->state
-> >      * remove local64_set at ddr_perf_event_add
-> >      * move perf_pmu_register after irq_register to simplfy err handle
-> >
-> >     No change from v8 to v9
-> >
-> >     Change from v7 to v8
-> >      * remove unused define
-> >      * change total_events to active_events, change active_events to events
-> >      * remove flags,
-> >      * fix multi line comments code sytle
-> >      * add pmu_enable\disable function
-> >      * disable event at irq handle
-> >      * remove counter check at ddr_perf_free_counter
-> >      * remove pmu->irq check
-> >      * add group check
-> >
-> >     Change from v6 to v7
-> >      * added irq affinity handle, ref arm-ccn.c
-> >      * added IRQF_NOBALANCING | IRQF_NO_THREAD
-> >      * added ida_simple_remove at failure path
-> >
-> >     Change from v5 to v6
-> >      * fix insmod\rmmod problem
-> >      * remove randunt register read at irq handle
-> >      * change u32 irq to int
-> >      * devm_request_irq use default flags.
-> >
-> >     Change from v4 to v5
-> >      * Remove AXI ID filter function
-> >
-> >     Change from v3 to v4
-> >      * Change FSL_IMX8_DDR_PERF to FSL_IMX8_DDR_PMU
-> >      * sort include
-> >      * remove struct fsl_ddr_devtype_data
-> >      * Added comment need disable control first
-> >      * Added comment about must enable cycle counter
-> >      * Added macro for EVENT_AXI_READ, remove hardcode 0x41 and 0x42
-> >      * Added comment about cycle counter is fastest one
-> >
-> >     Change from v2 to v3
-> >      * remove kfree
-> >
-> >     Change from V1 to V2
-> >      * update Kconfig by use i.MX8 instead of i.MX8 QXP
-> >      * remove gpl statememnt since SPDX tag
-> >      * use dev_kzalloc
-> >      * use dev_err
-> >      * commit message show axi_read 0x41\axi_write 0x42
-> >      * commit message show cycles must be enabled
-> >      * Irq only issue at cycles overflow
-> >      * use NUM_COUNTER
-> >      * use devm_request_irq
-> >      * add hotplug callback to handle context migration
-> >
-> >  drivers/perf/Kconfig             |   7 +
-> >  drivers/perf/Makefile            |   1 +
-> >  drivers/perf/fsl_imx8_ddr_perf.c | 552 +++++++++++++++++++++++++++++++++++++++
-> >  3 files changed, 560 insertions(+)
-> >  create mode 100644 drivers/perf/fsl_imx8_ddr_perf.c
-> >
-> > diff --git a/drivers/perf/Kconfig b/drivers/perf/Kconfig
-> > index a94e586..9bc3785 100644
-> > --- a/drivers/perf/Kconfig
-> > +++ b/drivers/perf/Kconfig
-> > @@ -70,6 +70,13 @@ config ARM_DSU_PMU
-> >           system, control logic. The PMU allows counting various events related
-> >           to DSU.
-> >
-> > +config FSL_IMX8_DDR_PMU
-> > +       tristate "Freescale i.MX8 DDR perf monitor"
-> > +       depends on ARCH_MXC
-> > +         help
-> > +         Provides support for ddr perfomance monitor in i.MX8. Provide memory
-> > +         througput information.
-> > +
-> >  config HISI_PMU
-> >         bool "HiSilicon SoC PMU"
-> >         depends on ARM64 && ACPI
-> > diff --git a/drivers/perf/Makefile b/drivers/perf/Makefile
-> > index 3048994..2ebb4de 100644
-> > --- a/drivers/perf/Makefile
-> > +++ b/drivers/perf/Makefile
-> > @@ -5,6 +5,7 @@ obj-$(CONFIG_ARM_DSU_PMU) += arm_dsu_pmu.o
-> >  obj-$(CONFIG_ARM_PMU) += arm_pmu.o arm_pmu_platform.o
-> >  obj-$(CONFIG_ARM_PMU_ACPI) += arm_pmu_acpi.o
-> >  obj-$(CONFIG_ARM_SMMU_V3_PMU) += arm_smmuv3_pmu.o
-> > +obj-$(CONFIG_FSL_IMX8_DDR_PMU) += fsl_imx8_ddr_perf.o
-> >  obj-$(CONFIG_HISI_PMU) += hisilicon/
-> >  obj-$(CONFIG_QCOM_L2_PMU)      += qcom_l2_pmu.o
-> >  obj-$(CONFIG_QCOM_L3_PMU) += qcom_l3_pmu.o
-> > diff --git a/drivers/perf/fsl_imx8_ddr_perf.c b/drivers/perf/fsl_imx8_ddr_perf.c
-> > new file mode 100644
-> > index 0000000..15b0772
-> > --- /dev/null
-> > +++ b/drivers/perf/fsl_imx8_ddr_perf.c
-> > @@ -0,0 +1,552 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Copyright 2017 NXP
-> > + * Copyright 2016 Freescale Semiconductor, Inc.
-> > + */
-> > +
-> > +#include <linux/bitfield.h>
-> > +#include <linux/init.h>
-> > +#include <linux/interrupt.h>
-> > +#include <linux/io.h>
-> > +#include <linux/module.h>
-> > +#include <linux/of.h>
-> > +#include <linux/of_address.h>
-> > +#include <linux/of_device.h>
-> > +#include <linux/of_irq.h>
-> > +#include <linux/perf_event.h>
-> > +#include <linux/slab.h>
-> > +
-> > +#define COUNTER_CNTL           0x0
-> > +#define COUNTER_READ           0x20
-> > +
-> > +#define COUNTER_DPCR1          0x30
-> > +
-> > +#define CNTL_OVER              0x1
-> > +#define CNTL_CLEAR             0x2
-> > +#define CNTL_EN                        0x4
-> > +#define CNTL_EN_MASK           0xFFFFFFFB
-> > +#define CNTL_CLEAR_MASK                0xFFFFFFFD
-> > +#define CNTL_OVER_MASK         0xFFFFFFFE
-> > +
-> > +#define CNTL_CSV_SHIFT         24
-> > +#define CNTL_CSV_MASK          (0xFF << CNTL_CSV_SHIFT)
-> > +
-> > +#define EVENT_CYCLES_ID                0
-> > +#define EVENT_CYCLES_COUNTER   0
-> > +#define NUM_COUNTERS           4
-> > +
-> > +#define to_ddr_pmu(p)          container_of(p, struct ddr_pmu, pmu)
-> > +
-> > +#define DDR_PERF_DEV_NAME      "imx8_ddr_perf_pmu"
-> > +
-> > +static DEFINE_IDA(ddr_ida);
-> > +
-> > +static const struct of_device_id imx_ddr_pmu_dt_ids[] = {
-> > +       { .compatible = "fsl,imx8-ddr-pmu",},
-> > +       { .compatible = "fsl,imx8m-ddr-pmu",},
-> > +       { /* sentinel */ }
-> > +};
-> > +
-> > +struct ddr_pmu {
-> > +       struct pmu pmu;
-> > +       void __iomem *base;
-> > +       unsigned int cpu;
-> > +       struct  hlist_node node;
-> > +       struct  device *dev;
-> > +       struct perf_event *events[NUM_COUNTERS];
-> > +       int active_events;
-> > +       enum cpuhp_state cpuhp_state;
-> > +       int irq;
-> > +       int id;
-> > +};
-> > +
-> > +static ssize_t ddr_perf_cpumask_show(struct device *dev,
-> > +                               struct device_attribute *attr, char *buf)
-> > +{
-> > +       struct ddr_pmu *pmu = dev_get_drvdata(dev);
-> > +
-> > +       return cpumap_print_to_pagebuf(true, buf, cpumask_of(pmu->cpu));
-> > +}
-> > +
-> > +static struct device_attribute ddr_perf_cpumask_attr =
-> > +       __ATTR(cpumask, 0444, ddr_perf_cpumask_show, NULL);
-> > +
-> > +static struct attribute *ddr_perf_cpumask_attrs[] = {
-> > +       &ddr_perf_cpumask_attr.attr,
-> > +       NULL,
-> > +};
-> > +
-> > +static struct attribute_group ddr_perf_cpumask_attr_group = {
-> > +       .attrs = ddr_perf_cpumask_attrs,
-> > +};
-> > +
-> > +static ssize_t
-> > +ddr_pmu_event_show(struct device *dev, struct device_attribute *attr,
-> > +                  char *page)
-> > +{
-> > +       struct perf_pmu_events_attr *pmu_attr;
-> > +
-> > +       pmu_attr = container_of(attr, struct perf_pmu_events_attr, attr);
-> > +       return sprintf(page, "event=0x%02llx\n", pmu_attr->id);
-> > +}
-> > +
-> > +#define IMX8_DDR_PMU_EVENT_ATTR(_name, _id)                            \
-> > +       (&((struct perf_pmu_events_attr[]) {                            \
-> > +               { .attr = __ATTR(_name, 0444, ddr_pmu_event_show, NULL),\
-> > +                 .id = _id, }                                          \
-> > +       })[0].attr.attr)
-> > +
-> > +static struct attribute *ddr_perf_events_attrs[] = {
-> > +       IMX8_DDR_PMU_EVENT_ATTR(cycles, EVENT_CYCLES_ID),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(selfresh, 0x01),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(read-accesses, 0x04),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(write-accesses, 0x05),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(read-queue-depth, 0x08),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(write-queue-depth, 0x09),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(lp-read-credit-cnt, 0x10),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(hp-read-credit-cnt, 0x11),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(write-credit-cnt, 0x12),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(read-command, 0x20),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(write-command, 0x21),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(read-modify-write-command, 0x22),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(hp-read, 0x23),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(hp-req-nocredit, 0x24),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(hp-xact-credit, 0x25),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(lp-req-nocredit, 0x26),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(lp-xact-credit, 0x27),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(wr-xact-credit, 0x29),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(read-cycles, 0x2a),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(write-cycles, 0x2b),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(read-write-transition, 0x30),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(precharge, 0x31),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(activate, 0x32),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(load-mode, 0x33),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(perf-mwr, 0x34),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(read, 0x35),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(read-activate, 0x36),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(refresh, 0x37),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(write, 0x38),
-> > +       IMX8_DDR_PMU_EVENT_ATTR(raw-hazard, 0x39),
-> > +       NULL,
-> > +};
-> > +
-> > +static struct attribute_group ddr_perf_events_attr_group = {
-> > +       .name = "events",
-> > +       .attrs = ddr_perf_events_attrs,
-> > +};
-> > +
-> > +PMU_FORMAT_ATTR(event, "config:0-7");
-> > +
-> > +static struct attribute *ddr_perf_format_attrs[] = {
-> > +       &format_attr_event.attr,
-> > +       NULL,
-> > +};
-> > +
-> > +static struct attribute_group ddr_perf_format_attr_group = {
-> > +       .name = "format",
-> > +       .attrs = ddr_perf_format_attrs,
-> > +};
-> > +
-> > +static const struct attribute_group *attr_groups[] = {
-> > +       &ddr_perf_events_attr_group,
-> > +       &ddr_perf_format_attr_group,
-> > +       &ddr_perf_cpumask_attr_group,
-> > +       NULL,
-> > +};
-> > +
-> > +static u32 ddr_perf_alloc_counter(struct ddr_pmu *pmu, int event)
-> > +{
-> > +       int i;
-> > +
-> > +       /*
-> > +        * Always map cycle event to counter 0
-> > +        * Cycles counter is dedicated for cycle event
-> > +        * can't used for the other events
-> > +        */
-> > +       if (event == EVENT_CYCLES_ID) {
-> > +               if (pmu->events[EVENT_CYCLES_COUNTER] == NULL)
-> > +                       return EVENT_CYCLES_COUNTER;
-> > +               else
-> > +                       return -ENOENT;
-> > +       }
-> > +
-> > +       for (i = 1; i < NUM_COUNTERS; i++) {
-> > +               if (pmu->events[i] == NULL)
-> > +                       return i;
-> > +       }
-> > +
-> > +       return -ENOENT;
-> > +}
-> > +
-> > +static void ddr_perf_free_counter(struct ddr_pmu *pmu, int counter)
-> > +{
-> > +       pmu->events[counter] = NULL;
-> > +}
-> > +
-> > +static u32 ddr_perf_read_counter(struct ddr_pmu *pmu, int counter)
-> > +{
-> > +       return readl_relaxed(pmu->base + COUNTER_READ + counter * 4);
-> > +}
-> > +
-> > +static int ddr_perf_event_init(struct perf_event *event)
-> > +{
-> > +       struct ddr_pmu *pmu = to_ddr_pmu(event->pmu);
-> > +       struct hw_perf_event *hwc = &event->hw;
-> > +       struct perf_event *sibling;
-> > +
-> > +       if (event->attr.type != event->pmu->type)
-> > +               return -ENOENT;
-> > +
-> > +       if (is_sampling_event(event) || event->attach_state & PERF_ATTACH_TASK)
-> > +               return -EOPNOTSUPP;
-> > +
-> > +       if (event->cpu < 0) {
-> > +               dev_warn(pmu->dev, "Can't provide per-task data!\n");
-> > +               return -EOPNOTSUPP;
-> > +       }
-> > +
-> > +       /*
-> > +        * We must NOT create groups containing mixed PMUs, although software
-> > +        * events are acceptable (for example to create a CCN group
-> > +        * periodically read when a hrtimer aka cpu-clock leader triggers).
-> > +        */
-> > +       if (event->group_leader->pmu != event->pmu &&
-> > +                       !is_software_event(event->group_leader))
-> > +               return -EINVAL;
-> > +
-> > +       for_each_sibling_event(sibling, event->group_leader) {
-> > +               if (sibling->pmu != event->pmu &&
-> > +                               !is_software_event(sibling))
-> > +                       return -EINVAL;
-> > +       }
-> > +
-> > +       event->cpu = pmu->cpu;
-> > +       hwc->idx = -1;
-> > +
-> > +       return 0;
-> > +}
-> > +
-> > +
-> > +static void ddr_perf_event_update(struct perf_event *event)
-> > +{
-> > +       struct ddr_pmu *pmu = to_ddr_pmu(event->pmu);
-> > +       struct hw_perf_event *hwc = &event->hw;
-> > +       u64 delta, prev_raw_count, new_raw_count;
-> > +       int counter = hwc->idx;
-> > +
-> > +       do {
-> > +               prev_raw_count = local64_read(&hwc->prev_count);
-> > +               new_raw_count = ddr_perf_read_counter(pmu, counter);
-> > +       } while (local64_cmpxchg(&hwc->prev_count, prev_raw_count,
-> > +                       new_raw_count) != prev_raw_count);
-> > +
-> > +       delta = (new_raw_count - prev_raw_count) & 0xFFFFFFFF;
-> > +
-> > +       local64_add(delta, &event->count);
-> > +}
-> > +
-> > +static void ddr_perf_counter_enable(struct ddr_pmu *pmu, int config,
-> > +                                 int counter, bool enable)
-> > +{
-> > +       u8 reg = counter * 4 + COUNTER_CNTL;
-> > +       int val;
-> > +
-> > +       if (enable) {
-> > +               /*
-> > +                * must disable first, then enable again
-> > +                * otherwise, cycle counter will not work
-> > +                * if previous state is enabled.
-> > +                */
-> > +               writel(0, pmu->base + reg);
-> > +               val = CNTL_EN | CNTL_CLEAR;
-> > +               val |= FIELD_PREP(CNTL_CSV_MASK, config);
-> > +               writel(val, pmu->base + reg);
-> > +       } else {
-> > +               /* Disable counter */
-> > +               writel(0, pmu->base + reg);
-> > +       }
-> > +}
-> > +
-> > +static void ddr_perf_event_start(struct perf_event *event, int flags)
-> > +{
-> > +       struct ddr_pmu *pmu = to_ddr_pmu(event->pmu);
-> > +       struct hw_perf_event *hwc = &event->hw;
-> > +       int counter = hwc->idx;
-> > +
-> > +       local64_set(&hwc->prev_count, 0);
-> > +
-> > +       ddr_perf_counter_enable(pmu, event->attr.config, counter, true);
-> > +
-> > +       hwc->state = 0;
-> > +}
-> > +
-> > +static int ddr_perf_event_add(struct perf_event *event, int flags)
-> > +{
-> > +       struct ddr_pmu *pmu = to_ddr_pmu(event->pmu);
-> > +       struct hw_perf_event *hwc = &event->hw;
-> > +       int counter;
-> > +       int cfg = event->attr.config;
-> > +
-> > +       counter = ddr_perf_alloc_counter(pmu, cfg);
-> > +       if (counter < 0) {
-> > +               dev_dbg(pmu->dev, "There are not enough counters\n");
-> > +               return -EOPNOTSUPP;
-> > +       }
-> > +
-> > +       pmu->events[counter] = event;
-> > +       pmu->active_events++;
-> > +       hwc->idx = counter;
-> > +
-> > +       hwc->state |= PERF_HES_STOPPED;
-> > +
-> > +       if (flags & PERF_EF_START)
-> > +               ddr_perf_event_start(event, flags);
-> > +
-> > +       return 0;
-> > +}
-> > +
-> > +static void ddr_perf_event_stop(struct perf_event *event, int flags)
-> > +{
-> > +       struct ddr_pmu *pmu = to_ddr_pmu(event->pmu);
-> > +       struct hw_perf_event *hwc = &event->hw;
-> > +       int counter = hwc->idx;
-> > +
-> > +       ddr_perf_counter_enable(pmu, event->attr.config, counter, false);
-> > +       ddr_perf_event_update(event);
-> > +
-> > +       hwc->state |= PERF_HES_STOPPED;
-> > +}
-> > +
-> > +static void ddr_perf_event_del(struct perf_event *event, int flags)
-> > +{
-> > +       struct ddr_pmu *pmu = to_ddr_pmu(event->pmu);
-> > +       struct hw_perf_event *hwc = &event->hw;
-> > +       int counter = hwc->idx;
-> > +
-> > +       ddr_perf_event_stop(event, PERF_EF_UPDATE);
-> > +
-> > +       ddr_perf_free_counter(pmu, counter);
-> > +       pmu->active_events--;
-> > +       hwc->idx = -1;
-> > +}
-> > +
-> > +static void ddr_perf_pmu_enable(struct pmu *pmu)
-> > +{
-> > +       struct ddr_pmu *ddr_pmu = to_ddr_pmu(pmu);
-> > +
-> > +       /* enable cycle counter if cycle is not active event list */
-> > +       if (ddr_pmu->events[EVENT_CYCLES_COUNTER] == NULL)
-> > +               ddr_perf_counter_enable(ddr_pmu,
-> > +                                     EVENT_CYCLES_ID,
-> > +                                     EVENT_CYCLES_COUNTER,
-> > +                                     true);
-> > +}
-> > +
-> > +static void ddr_perf_pmu_disable(struct pmu *pmu)
-> > +{
-> > +       struct ddr_pmu *ddr_pmu = to_ddr_pmu(pmu);
-> > +
-> > +       if (ddr_pmu->events[EVENT_CYCLES_COUNTER] == NULL)
-> > +               ddr_perf_counter_enable(ddr_pmu,
-> > +                                     EVENT_CYCLES_ID,
-> > +                                     EVENT_CYCLES_COUNTER,
-> > +                                     false);
-> > +}
-> > +
-> > +static int ddr_perf_init(struct ddr_pmu *pmu, void __iomem *base,
-> > +                        struct device *dev)
-> > +{
-> > +       *pmu = (struct ddr_pmu) {
-> > +               .pmu = (struct pmu) {
-> > +                       .capabilities = PERF_PMU_CAP_NO_EXCLUDE,
-> > +                       .task_ctx_nr = perf_invalid_context,
-> > +                       .attr_groups = attr_groups,
-> > +                       .event_init  = ddr_perf_event_init,
-> > +                       .add         = ddr_perf_event_add,
-> > +                       .del         = ddr_perf_event_del,
-> > +                       .start       = ddr_perf_event_start,
-> > +                       .stop        = ddr_perf_event_stop,
-> > +                       .read        = ddr_perf_event_update,
-> > +                       .pmu_enable  = ddr_perf_pmu_enable,
-> > +                       .pmu_disable = ddr_perf_pmu_disable,
-> > +               },
-> > +               .base = base,
-> > +               .dev = dev,
-> > +       };
-> > +
-> > +       pmu->id = ida_simple_get(&ddr_ida, 0, 0, GFP_KERNEL);
-> > +       return pmu->id;
-> > +}
-> > +
-> > +static irqreturn_t ddr_perf_irq_handler(int irq, void *p)
-> > +{
-> > +       int i;
-> > +       struct ddr_pmu *pmu = (struct ddr_pmu *) p;
-> > +       struct perf_event *event, *cycle_event = NULL;
-> > +
-> > +       /* all counter will stop if cycle counter disabled */
-> > +       ddr_perf_counter_enable(pmu,
-> > +                             EVENT_CYCLES_ID,
-> > +                             EVENT_CYCLES_COUNTER,
-> > +                             false);
-> > +       /*
-> > +        * When the cycle counter overflows, all counters are stopped,
-> > +        * and an IRQ is raised. If any other counter overflows, it
-> > +        * continues counting, and no IRQ is raised.
-> > +        *
-> > +        * Cycles occur at least 4 times as often as other events, so we
-> > +        * can update all events on a cycle counter overflow and not
-> > +        * lose events.
-> > +        *
-> > +        */
-> > +       for (i = 0; i < NUM_COUNTERS; i++) {
-> > +
-> > +               if (!pmu->events[i])
-> > +                       continue;
-> > +
-> > +               event = pmu->events[i];
-> > +
-> > +               ddr_perf_event_update(event);
-> > +
-> > +               if (event->hw.idx == EVENT_CYCLES_COUNTER)
-> > +                       cycle_event = event;
-> > +       }
-> > +
-> > +       ddr_perf_counter_enable(pmu,
-> > +                             EVENT_CYCLES_ID,
-> > +                             EVENT_CYCLES_COUNTER,
-> > +                             true);
-> > +       if (cycle_event)
-> > +               ddr_perf_event_update(cycle_event);
-> > +
-> > +       return IRQ_HANDLED;
-> > +}
-> > +
-> > +static int ddr_perf_offline_cpu(unsigned int cpu, struct hlist_node *node)
-> > +{
-> > +       struct ddr_pmu *pmu = hlist_entry_safe(node, struct ddr_pmu, node);
-> > +       int target;
-> > +
-> > +       if (cpu != pmu->cpu)
-> > +               return 0;
-> > +
-> > +       target = cpumask_any_but(cpu_online_mask, cpu);
-> > +       if (target >= nr_cpu_ids)
-> > +               return 0;
-> > +
-> > +       perf_pmu_migrate_context(&pmu->pmu, cpu, target);
-> > +       pmu->cpu = target;
-> > +
-> > +       WARN_ON(irq_set_affinity_hint(pmu->irq, cpumask_of(pmu->cpu)));
-> > +
-> > +       return 0;
-> > +}
-> > +
-> > +static int ddr_perf_probe(struct platform_device *pdev)
-> > +{
-> > +       struct ddr_pmu *pmu;
-> > +       struct device_node *np;
-> > +       void __iomem *base;
-> > +       char *name;
-> > +       int num;
-> > +       int ret;
-> > +       int irq;
-> > +
-> > +       base = devm_platform_ioremap_resource(pdev, 0);
-> > +       if (IS_ERR(base))
-> > +               return PTR_ERR(base);
-> > +
-> > +       np = pdev->dev.of_node;
-> > +
-> > +       pmu = devm_kzalloc(&pdev->dev, sizeof(*pmu), GFP_KERNEL);
-> > +       if (!pmu)
-> > +               return -ENOMEM;
-> > +
-> > +       num = ddr_perf_init(pmu, base, &pdev->dev);
-> > +
-> > +       platform_set_drvdata(pdev, pmu);
-> > +
-> > +       name = devm_kasprintf(&pdev->dev, GFP_KERNEL, "imx8_ddr%d", num);
-> > +       if (!name)
-> > +               return -ENOMEM;
-> > +
-> > +       pmu->cpu = raw_smp_processor_id();
-> > +       ret = cpuhp_setup_state_multi(CPUHP_AP_ONLINE_DYN,
-> > +                                     DDR_PERF_DEV_NAME,
-> > +                                     NULL,
-> > +                                     ddr_perf_offline_cpu);
-> > +
-> > +       if (ret < 0) {
-> > +               dev_err(&pdev->dev, "cpuhp_setup_state_multi failed\n");
-> > +               goto ddr_perf_err;
-> > +       }
-> > +
-> > +       pmu->cpuhp_state = ret;
-> > +
-> > +       /* Register the pmu instance for cpu hotplug */
-> > +       cpuhp_state_add_instance_nocalls(pmu->cpuhp_state, &pmu->node);
-> > +
-> > +       /* Request irq */
-> > +       irq = of_irq_get(np, 0);
-> > +       if (irq < 0) {
-> > +               dev_err(&pdev->dev, "Failed to get irq: %d", irq);
-> > +               ret = irq;
-> > +               goto ddr_perf_err;
-> > +       }
-> > +
-> > +       ret = devm_request_irq(&pdev->dev, irq,
-> > +                                       ddr_perf_irq_handler,
-> > +                                       IRQF_NOBALANCING | IRQF_NO_THREAD,
-> > +                                       DDR_PERF_DEV_NAME,
-> > +                                       pmu);
-> > +       if (ret < 0) {
-> > +               dev_err(&pdev->dev, "Request irq failed: %d", ret);
-> > +               goto ddr_perf_err;
-> > +       }
-> > +
-> > +       pmu->irq = irq;
-> > +       ret = irq_set_affinity_hint(pmu->irq, cpumask_of(pmu->cpu));
-> > +       if (ret) {
-> > +               dev_err(pmu->dev, "Failed to set interrupt affinity!\n");
-> > +               goto ddr_perf_err;
-> > +       }
-> > +
-> > +       ret = perf_pmu_register(&pmu->pmu, name, -1);
-> > +       if (ret)
-> > +               goto ddr_perf_err;
-> > +
-> > +       return 0;
-> > +
-> > +ddr_perf_err:
-> > +       if (pmu->cpuhp_state)
-> > +               cpuhp_state_remove_instance_nocalls(pmu->cpuhp_state, &pmu->node);
-> > +
-> > +       ida_simple_remove(&ddr_ida, pmu->id);
-> > +       dev_warn(&pdev->dev, "i.MX8 DDR Perf PMU failed (%d), disabled\n", ret);
-> > +       return ret;
-> > +}
-> > +
-> > +static int ddr_perf_remove(struct platform_device *pdev)
-> > +{
-> > +       struct ddr_pmu *pmu = platform_get_drvdata(pdev);
-> > +
-> > +       cpuhp_state_remove_instance_nocalls(pmu->cpuhp_state, &pmu->node);
-> > +       irq_set_affinity_hint(pmu->irq, NULL);
-> > +
-> > +       perf_pmu_unregister(&pmu->pmu);
-> > +
-> > +       ida_simple_remove(&ddr_ida, pmu->id);
-> > +       return 0;
-> > +}
-> > +
-> > +static struct platform_driver imx_ddr_pmu_driver = {
-> > +       .driver         = {
-> > +               .name   = "imx-ddr-pmu",
-> > +               .of_match_table = imx_ddr_pmu_dt_ids,
-> > +       },
-> > +       .probe          = ddr_perf_probe,
-> > +       .remove         = ddr_perf_remove,
-> > +};
-> > +
-> > +module_platform_driver(imx_ddr_pmu_driver);
-> > +MODULE_LICENSE("GPL v2");
-> > --
-> > 2.5.2
-> >
+Driver Info:
+        Driver name      : meson-vdec
+        Card type        : Amlogic Video Decoder
+        Bus info         : platform:meson-vdec
+        Driver version   : 5.1.0
+        Capabilities     : 0x84204000
+                Video Memory-to-Memory Multiplanar
+                Streaming
+                Extended Pix Format
+                Device Capabilities
+        Device Caps      : 0x04204000
+                Video Memory-to-Memory Multiplanar
+                Streaming
+                Extended Pix Format
+        Detected Stateful Decoder
+
+Required ioctls:
+        test VIDIOC_QUERYCAP: OK
+
+Allow for multiple opens:
+        test second /dev/video0 open: OK
+        test VIDIOC_QUERYCAP: OK
+        test VIDIOC_G/S_PRIORITY: OK
+        test for unlimited opens: OK
+
+Debug ioctls:
+        test VIDIOC_DBG_G/S_REGISTER: OK (Not Supported)
+        test VIDIOC_LOG_STATUS: OK (Not Supported)
+
+Input ioctls:
+        test VIDIOC_G/S_TUNER/ENUM_FREQ_BANDS: OK (Not Supported)
+        test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
+        test VIDIOC_S_HW_FREQ_SEEK: OK (Not Supported)
+        test VIDIOC_ENUMAUDIO: OK (Not Supported)
+        test VIDIOC_G/S/ENUMINPUT: OK (Not Supported)
+        test VIDIOC_G/S_AUDIO: OK (Not Supported)
+        Inputs: 0 Audio Inputs: 0 Tuners: 0
+
+Output ioctls:
+        test VIDIOC_G/S_MODULATOR: OK (Not Supported)
+        test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
+        test VIDIOC_ENUMAUDOUT: OK (Not Supported)
+        test VIDIOC_G/S/ENUMOUTPUT: OK (Not Supported)
+        test VIDIOC_G/S_AUDOUT: OK (Not Supported)
+        Outputs: 0 Audio Outputs: 0 Modulators: 0
+
+Input/Output configuration ioctls:
+        test VIDIOC_ENUM/G/S/QUERY_STD: OK (Not Supported)
+        test VIDIOC_ENUM/G/S/QUERY_DV_TIMINGS: OK (Not Supported)
+        test VIDIOC_DV_TIMINGS_CAP: OK (Not Supported)
+        test VIDIOC_G/S_EDID: OK (Not Supported)
+
+Control ioctls:
+        test VIDIOC_QUERY_EXT_CTRL/QUERYMENU: OK
+        test VIDIOC_QUERYCTRL: OK
+        test VIDIOC_G/S_CTRL: OK
+        test VIDIOC_G/S/TRY_EXT_CTRLS: OK
+        test VIDIOC_(UN)SUBSCRIBE_EVENT/DQEVENT: OK
+        test VIDIOC_G/S_JPEGCOMP: OK (Not Supported)
+        Standard Controls: 2 Private Controls: 0
+
+Format ioctls:
+        test VIDIOC_ENUM_FMT/FRAMESIZES/FRAMEINTERVALS: OK
+        test VIDIOC_G/S_PARM: OK (Not Supported)
+        test VIDIOC_G_FBUF: OK (Not Supported)
+        test VIDIOC_G_FMT: OK
+        test VIDIOC_TRY_FMT: OK
+        test VIDIOC_S_FMT: OK
+        test VIDIOC_G_SLICED_VBI_CAP: OK (Not Supported)
+        test Cropping: OK (Not Supported)
+        test Composing: OK (Not Supported)
+        test Scaling: OK
+
+Codec ioctls:
+        test VIDIOC_(TRY_)ENCODER_CMD: OK (Not Supported)
+        test VIDIOC_G_ENC_INDEX: OK (Not Supported)
+        test VIDIOC_(TRY_)DECODER_CMD: OK
+
+Buffer ioctls:
+        test VIDIOC_REQBUFS/CREATE_BUFS/QUERYBUF: OK
+        test VIDIOC_EXPBUF: OK
+        test Requests: OK (Not Supported)
+
+Total for meson-vdec device /dev/video0: 44, Succeeded: 44, Failed: 0, Warnings: 0
+
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
