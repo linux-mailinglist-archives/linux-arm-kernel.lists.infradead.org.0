@@ -2,80 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 449E41CFDF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 21:28:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B6301D000
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 21:34:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/dExiX7FOOUJruG98WlrSY4qEqb7nkKWCw8qQBXqQXI=; b=tusmXaGdMOraW2
-	gpNoINGRZ0/wlXErFJnb6TdI7fQuImvPXTcpvGoC11VQFxIQG81MQ/vqr+wDXqeVR2nCFVmoohcCW
-	MVzxXmmIQPa5RlJCkIEeUsg8tH+c94xxVxg5Llx+wWWbSrF6EThEYAfVCzC3qzOlAi/LnFb8e94Yp
-	6sdqvvCpSj+RAgrDXLEn0YlEE7/O7G/Z7jDInMonrwlMbMPPaqgl3dfvCH9oB5iyYwU8iCgknAo3C
-	8h/NgiNbbH1kcf97H3O8464ADyq4wVKcKAZTcs/yaPaH49Sf15elG5c5NLNLqRMzn0/fza2nUyziH
-	aUchEOBkGOZNh3ctyjxQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=4vRvBU/p/6rTPMLieLm5teUhPMV1xZdrXa22BQEBLOM=; b=I47THTzMvGxifb
+	Ri/fvpp5NKd4ymmUOYpDmEoi9pS8as3smOo9+9qvZhG8tronJrNYaf7evEL9w4VWZF61vGi0E4oVT
+	DX+vmcCSyBc4psBuRToHTAYfyNktSZQ01YUSkg13NQFYZDzZVBCw2mr0hQexT4c3qy60XcRnz5eD6
+	ahjm+vetKYPXn+WkqXaGCCzXNl3AFZHjP5RJCqUMD2WI8bLDNyv6/7FT4KgBtOCSofyYzjlfnUXrY
+	dbH+FXxcluLAplAmbecZOfq82872ippoGJGtGFrAckBYaOdIqtNSXjk3xhKqrm0VzmUfry8RFuGUA
+	qt1SzhpgPvJehgsmRZeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQd63-0000tT-IA; Tue, 14 May 2019 19:28:19 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1hQdBw-0002kH-TU; Tue, 14 May 2019 19:34:24 +0000
+Received: from mail-eopbgr30052.outbound.protection.outlook.com ([40.107.3.52]
+ helo=EUR03-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQd5w-0000sb-1g; Tue, 14 May 2019 19:28:13 +0000
-Received: by mail-ot1-f67.google.com with SMTP id u11so5943638otq.7;
- Tue, 14 May 2019 12:28:08 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=6guL+gsRRdFgD/vbMcouXTpctp515ym8MFo367/IsYI=;
- b=Me6v69C23UWyKEcNAbdEJO+yW/tGSlwYedriQanidwwqtb8uEuzDJlDcSxL+WRqqTL
- Tv0J6mwny2EBiZ9UREFuXe2zF+ehpdNl9rEZZsPhjho31icvbdqzJ4oj24J34vsXgpTL
- TQh83Hkx4tJUXFu9xxmD8hi6h1n5wji7HSQw+clFkTLhwNeTbw9C3WxJLiktFNUp6Xjg
- RQ3370189YY8E9X9v/cVrNtT1F5n5eNn389tVzSQC7EGrXgeJEOl561pA+kD+RbgZsxZ
- KwutVeLlLg6JCjhI00W9gdvHJclddzxRoyEhxYW1hc3hbkXxeJk6jsyz6AXU/EqoNLlH
- UcfQ==
-X-Gm-Message-State: APjAAAWoPC20Lk8Be5840Vs1gX0i1mzYixR0rvyIeol9swYGCqAWV/Gj
- Zs06+quGHrNeYlovbUdXiw==
-X-Google-Smtp-Source: APXvYqzyZC245V0LNnDn7RBEDPgVXsCYD9n7cuZSuXUT9DCdxNCo/SfksSuwpVn2D9oIv/Gggi50ng==
-X-Received: by 2002:a9d:4d02:: with SMTP id n2mr169374otf.332.1557862087618;
- Tue, 14 May 2019 12:28:07 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id a2sm3731953otf.50.2019.05.14.12.28.06
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 14 May 2019 12:28:06 -0700 (PDT)
-Date: Tue, 14 May 2019 14:28:06 -0500
-From: Rob Herring <robh@kernel.org>
-To: Stu Hsieh <stu.hsieh@mediatek.com>
-Subject: Re: [PATCH v3 01/13] dt-bindings: media: Add binding for MT2712
- MIPI-CSI2
-Message-ID: <20190514192806.GA13654@bogus>
-References: <1557814430-9675-1-git-send-email-stu.hsieh@mediatek.com>
- <1557814430-9675-2-git-send-email-stu.hsieh@mediatek.com>
+ id 1hQdBn-0002fd-IL
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 19:34:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=wjlb1F565UolY8iB+CdaT0Fa4CFl8wrCMHACaEWawDs=;
+ b=bGKa/Zt6Sz7T74NDy+M+hswY82qqEPoAjVZvPpqiwrxr+vZ8typ90hPdF6lMB3jODIZP3V/FAZdvyFO5tQfj1bsXnPzUhfOwnYgduNBszDUQdUWm89jBqr8G/JLE99e051Cd7qToyTBYDdcMjEbGs1qMdQP2mSNxhPniuDmDJCU=
+Received: from AM0PR04MB6434.eurprd04.prod.outlook.com (20.179.252.215) by
+ AM0PR04MB4034.eurprd04.prod.outlook.com (52.134.124.150) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1878.24; Tue, 14 May 2019 19:34:10 +0000
+Received: from AM0PR04MB6434.eurprd04.prod.outlook.com
+ ([fe80::19be:75a:9fe:7cec]) by AM0PR04MB6434.eurprd04.prod.outlook.com
+ ([fe80::19be:75a:9fe:7cec%7]) with mapi id 15.20.1900.010; Tue, 14 May 2019
+ 19:34:10 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Alexandre Bailon <abailon@baylibre.com>, Jacky Bai <ping.bai@nxp.com>
+Subject: Re: [RFC PATCH 0/3] Add support of busfreq
+Thread-Topic: [RFC PATCH 0/3] Add support of busfreq
+Thread-Index: AQHU2dO+g7FtRU5+MUaLzLMJn01eLA==
+Date: Tue, 14 May 2019 19:34:10 +0000
+Message-ID: <AM0PR04MB643434FB6A26B4D70F52F350EE080@AM0PR04MB6434.eurprd04.prod.outlook.com>
+References: <20190313193408.23740-1-abailon@baylibre.com>
+ <CAEG3pNA+U1tw4sWq9i2cTni6QKQkLyd3qyZXd2i8M7WFDF4ZsQ@mail.gmail.com>
+ <8af96425-a6f5-0114-7abb-c2a67b952e1b@baylibre.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [89.37.124.34]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 6b581bec-232e-4e02-5246-08d6d8a3234f
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB4034; 
+x-ms-traffictypediagnostic: AM0PR04MB4034:
+x-microsoft-antispam-prvs: <AM0PR04MB40348DFC8A9DAE6AA1C15C4CEE080@AM0PR04MB4034.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 0037FD6480
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(39860400002)(366004)(136003)(376002)(396003)(346002)(189003)(199004)(446003)(316002)(110136005)(54906003)(74316002)(33656002)(71200400001)(71190400001)(4326008)(66946007)(25786009)(55016002)(68736007)(7696005)(476003)(86362001)(99286004)(486006)(9686003)(6506007)(53546011)(44832011)(76176011)(7416002)(6636002)(305945005)(26005)(229853002)(186003)(6436002)(66066001)(478600001)(14454004)(256004)(8936002)(52536014)(6246003)(53936002)(102836004)(5660300002)(8676002)(81156014)(73956011)(91956017)(66476007)(64756008)(81166006)(66556008)(66446008)(14444005)(76116006)(7736002)(6116002)(3846002)(2906002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4034;
+ H:AM0PR04MB6434.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: wPqGYTShWwbwZBwFTLFsyajA5OR4p+TDB+/sPgqTbWldVAU55kzWd/FsnmjqDj29B7mcV3piCEBXmb4L3BGkWV8yhjE+SnyHgmR1RJkBeXailv1EcAWX7VB4vFHMdYjtBknpFyGCOwWrrhQoaAXvczwoRggYroF0QaeSqgPfvM5MRI9jzU0GtUEM+8Qtr/IwHVNEXYfOld9zJgKXSv2memqlOI+Kco3fQqS6pBya23bN7DQ/dYK4bx/5N+V5bwyp3KyqHnOazRkH52AIfZz6fg/UsgLUC/wGjl0ILFpkQFifgHaHaAjCKK8ZY8Hlelf8J/G8cmazdLLkmyCDnXhmFXzk7VCC0DQwZxT5yW7AGbYOKCiexvjMFXKfarVNZS4f/XVdXQrg2wfzvhZ4isXkKrs7dJmgO7V3JVcUohS278s=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1557814430-9675-2-git-send-email-stu.hsieh@mediatek.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6b581bec-232e-4e02-5246-08d6d8a3234f
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 May 2019 19:34:10.2224 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4034
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_122812_094174_CD905B2E 
-X-CRM114-Status: GOOD (  20.54  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190514_123415_752803_64FD726F 
+X-CRM114-Status: GOOD (  14.25  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
+ no trust [40.107.3.52 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -87,215 +110,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- CK Hu <ck.hu@mediatek.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ Linux PM list <linux-pm@vger.kernel.org>, Emilio Lopez <emilio@elopez.com.ar>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Carlo Caione <ccaione@baylibre.com>, Stephen Boyd <sboyd@codeaurora.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-clk <linux-clk@vger.kernel.org>, Zening Wang <zening.wang@nxp.com>,
+ Hans de Goede <hdegoede@redhat.com>, dl-linux-imx <linux-imx@nxp.com>,
+ Patrick Titiano <ptitiano@baylibre.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Georgi Djakov <georgi.djakov@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 14, 2019 at 02:13:38PM +0800, Stu Hsieh wrote:
-> Add MIPI-CSI2 dt-binding for Mediatek MT2712 SoC
+On 15.03.2019 18:55, Alexandre Bailon wrote:
+>> On Wed, Mar 13, 2019 at 12:33 PM Alexandre Bailon <abailon@baylibre.com> wrote:
+
+>>> As exemple, this series implements busfreq for i.MX8MM whose
+>>> upstreaming is in progress. Because this relies on ATF to
+>>> do the frequency scaling, it won't be hard make it work.
+>>
+>> It's not clear to me whether this series actual scales the dram
+>> frequency based on what you said above. Is it just theoretical or do
+>> you have it working with a pile of out-of-tree patches? Would be good
+>> to include that pile of patches in your integration branch that I
+>> suggested above.
+
+> The current series only introduce busfreq generic driver, and the
+> busfreq driver for the imx8mm.
+> As is, the imx8mm driver will just be loaded, but do nothing because
+> none of the drivers have been updated to request bandwidth using the
+> interconnect framework.
 > 
-> Signed-off-by: Stu Hsieh <stu.hsieh@mediatek.com>
-> ---
->  .../bindings/media/mediatek-mipicsi-camsv.txt | 53 ++++++++++++++++++
->  .../media/mediatek-mipicsi-common.txt         | 19 +++++++
->  .../bindings/media/mediatek-mipicsi.txt       | 54 +++++++++++++++++++
->  3 files changed, 126 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/media/mediatek-mipicsi-camsv.txt
->  create mode 100644 Documentation/devicetree/bindings/media/mediatek-mipicsi-common.txt
->  create mode 100644 Documentation/devicetree/bindings/media/mediatek-mipicsi.txt
-> 
-> diff --git a/Documentation/devicetree/bindings/media/mediatek-mipicsi-camsv.txt b/Documentation/devicetree/bindings/media/mediatek-mipicsi-camsv.txt
-> new file mode 100644
-> index 000000000000..5f34974f12ac
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/media/mediatek-mipicsi-camsv.txt
-> @@ -0,0 +1,53 @@
-> +* Mediatek MIPI-CSI2 receiver camsv
-> +
-> +Mediatek MIPI-CSI2 receiver camsv transfer data to DRAM in Mediatek SoCs
-> +
-> +Required properties:
+> My intent was to sent a first draft o busfreq, to get some feedback,
+> before to send a more complete, and fully functional series.
 
-compatible?
+It's been a while since this was first posted and imx8mm now boots fine 
+in linux-next. Is there a more up-to-date WIP branch somewhere? 
+Otherwise I can try to hack this series into a bootable form.
 
-> +- reg : physical base address of the mipicsi receiver registers and length of
-> +  memory mapped region.
+ > In addition, the current clock driver of imx8mm doesn't allow dram
+ > frequency scaling, so if busfreq driver tries, it will fail (should be
+ > harmless because any other clocks should restored to their previous
+ > rate).
 
-How many regions? Looks like 2.
+I'm confused about this. In NXP tree the actual DRAM switch is done 
+inside ATF via SIP calls and involves corralling all CPUs. Do you want 
+an "dram" clk which wraps the SIP calls required to changing dram 
+frequency and root switching etc?
 
-> +- clocks: device clocks, see
-> +  Documentation/devicetree/bindings/clock/clock-bindings.txt for details.
-> +- interrupts : interrupt number to the interrupt controller.
-> +
-> +Example:
-> +	seninf1_mux_camsv0: seninf_mux_camsv@15002100 {
+I've been looking at the busfreq implementation in the NXP tree and 
+refactoring just the "dram freq switch" behind a clk might work nicely.
 
-Node names should be generic.
+This would be similar to the imx_cpu clk used for cpufreq-dt and it 
+might even be possible to upstream this separately from the rest of 
+busfreq logic dealing with device requests.
 
-mipi-csi@...
 
-Or maybe not as that's the last block...
+I haven't done a very careful review but I noticed you're not using the 
+OPP framework and instead redefined everything? It's not clear why.
 
-> +		reg = <0 0x15002120 0 0x40>,
-> +		      <0 0x15004000 0 0x1000>;
-> +		clocks = <&imgsys CLK_IMG_CAM_SV_EN>;
-> +		interrupts = <GIC_SPI 222 IRQ_TYPE_LEVEL_LOW>;
-> +	};
-> +
-> +	seninf2_mux_camsv1: seninf_mux_camsv@15002500 {
-> +		reg = <0 0x15002520 0 0x40>,
-> +		      <0 0x15005000 0 0x1000>;
-> +		clocks = <&imgsys CLK_IMG_CAM_SV_EN>;
-> +		interrupts = <GIC_SPI 223 IRQ_TYPE_LEVEL_LOW>;
-> +	};
-> +
-> +	seninf3_mux_camsv2: seninf_mux_camsv@15002900 {
-> +		reg = <0 0x15002920 0 0x40>,
-> +		      <0 0x15006000 0 0x1000>;
-> +		clocks = <&imgsys CLK_IMG_CAM_SV1_EN>;
-> +		interrupts = <GIC_SPI 268 IRQ_TYPE_LEVEL_LOW>;
-> +	};
-> +
-> +	seninf4_mux_camsv3: seninf_mux_camsv@15002D00 {
-> +		reg = <0 0x15002D20 0 0x40>,
-> +		      <0 0x15007000 0 0x1000>;
-> +		clocks = <&imgsys CLK_IMG_CAM_SV1_EN>;
-> +		interrupts = <GIC_SPI 269 IRQ_TYPE_LEVEL_LOW>;
-> +	};
-> +
-> +	seninf5_mux_camsv4: seninf_mux_camsv@15003100 {
-> +		reg = <0 0x15003120 0 0x40>,
-> +		      <0 0x15008000 0 0x1000>;
-> +		clocks = <&imgsys CLK_IMG_CAM_SV2_EN>;
-> +		interrupts = <GIC_SPI 270 IRQ_TYPE_LEVEL_LOW>;
-> +	};
-> +
-> +	seninf6_mux_camsv5: seninf_mux_camsv@15003500 {
-> +		reg = <0 0x15003520 0 0x40>,
-> +		      <0 0x15009000 0 0x1000>;
-> +		clocks = <&imgsys CLK_IMG_CAM_SV2_EN>;
-> +		interrupts = <GIC_SPI 271 IRQ_TYPE_LEVEL_LOW>;
-> +	};
-> diff --git a/Documentation/devicetree/bindings/media/mediatek-mipicsi-common.txt b/Documentation/devicetree/bindings/media/mediatek-mipicsi-common.txt
-> new file mode 100644
-> index 000000000000..a67c744b75f0
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/media/mediatek-mipicsi-common.txt
-> @@ -0,0 +1,19 @@
-> +* Mediatek MIPI-CSI2 receiver common
-> +
-> +Mediatek MIPI-CSI2 receiver is the MIPI Signal capture hardware present in Mediatek SoCs
-> +
-> +Required properties:
-> +- compatible: should be "mediatek,mt2712-mipicsi-common"
-> +- reg : physical base address of the mipicsi receiver registers and length of
-> +  memory mapped region.
-> +- clocks: device clocks, see
-> +  Documentation/devicetree/bindings/clock/clock-bindings.txt for details.
-> +
-> +
-> +Example:
-> +	mipicsi: mipicsi@15002000 {
-> +		compatible = "mediatek,mt2712-mipicsi-common", "syscon";
-> +		reg = <0 0x15002000 0 0x10>;
-> +		clocks = <&imgsys CLK_IMG_SENINF_CAM_EN>,
-> +			 <&imgsys CLK_IMG_SENINF_SCAM_EN>;
-> +	};
-> diff --git a/Documentation/devicetree/bindings/media/mediatek-mipicsi.txt b/Documentation/devicetree/bindings/media/mediatek-mipicsi.txt
-> new file mode 100644
-> index 000000000000..24741ed62b25
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/media/mediatek-mipicsi.txt
-> @@ -0,0 +1,54 @@
-> +* Mediatek MIPI-CSI2 receiver
-> +
-> +Mediatek MIPI-CSI2 receiver is the MIPI Signal capture hardware present in Mediatek SoCs
-
-What's the difference with this and the prior block? Same text...
-
-> +
-> +Required properties:
-> +- compatible: should be "mediatek,mt2712-mipicsi"
-> +- reg : physical base address of the mipicsi receiver registers and length of
-> +  memory mapped region.
-> +- power-domains: a phandle to the power domain, see
-> +  Documentation/devicetree/bindings/power/power_domain.txt for details.
-> +- mediatek,larb: must contain the local arbiters in the current Socs, see
-> +  Documentation/devicetree/bindings/memory-controllers/mediatek,smi-larb.txt
-> +  for details.
-> +- iommus: should point to the respective IOMMU block with master port as
-> +  argument, see Documentation/devicetree/bindings/iommu/mediatek,iommu.txt
-> +  for details.
-> +- mediatek,seninf_mux_camsv: seninf_mux_camsv the data go through of the mipicsi port
-
-s/_/-/
-
-How many entries? Needs a reference to the binding doc. 
-
-> +- mediatek,mipicsiid: the id of the mipicsi port
-
-If this is for the 'mediatek,mipicsi' block, then just make the id a 
-cell value in the 'mediatek,mipicsi' prop.
-
-> +- mediatek,mipicsi: the common component of the two mipicsi port
-> +
-> +Example:
-
-I'd prefer one complete example showing all 3 components in this file 
-rather than piecemeal.
-
-> +	mipicsi0: mipicsi@10217000 {
-> +		compatible = "mediatek,mt2712-mipicsi";
-> +		mediatek,mipicsi = <&mipicsi>;
-> +		iommus = <&iommu0 M4U_PORT_CAM_DMA0>,
-> +			 <&iommu0 M4U_PORT_CAM_DMA1>;
-> +		mediatek,larb = <&larb2>;
-> +		power-domains = <&scpsys MT2712_POWER_DOMAIN_ISP>;
-> +
-> +		mediatek,seninf_mux_camsv = <&seninf1_mux_camsv0
-> +					     &seninf2_mux_camsv1
-> +					     &seninf3_mux_camsv2
-> +					     &seninf4_mux_camsv3>;
-> +		reg = <0 0x10217000 0 0x60>,
-> +		      <0 0x15002100 0 0x4>,
-> +		      <0 0x15002300 0 0x100>;
-> +		mediatek,mipicsiid = <0>;
-> +		status="disabled";
-
-Don't should status in examples.
-
-> +	};
-> +
-> +	mipicsi1: mipicsi@10218000 {
-
-This example doesn't add anything.
-
-> +		compatible = "mediatek,mt2712-mipicsi";
-> +		mediatek,mipicsi = <&mipicsi>;
-> +		iommus = <&iommu0 M4U_PORT_CAM_DMA2>;
-> +		mediatek,larb = <&larb2>;
-> +		power-domains = <&scpsys MT2712_POWER_DOMAIN_ISP>;
-> +		mediatek,seninf_mux_camsv = <&seninf5_mux_camsv4
-> +					     &seninf6_mux_camsv5>;
-> +		reg = <0 0x10218000 0 0x60>,
-> +		      <0 0x15002500 0 0x4>,
-> +		      <0 0x15002700 0 0x100>;
-> +		mediatek,mipicsiid = <1>;
-> +		status="disabled";
-> +	};
-> \ No newline at end of file
-
-Fix this...
-
-> -- 
-> 2.18.0
-> 
+--
+Regards,
+Leonard
 
 _______________________________________________
 linux-arm-kernel mailing list
