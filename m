@@ -2,73 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9996C1CDB9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 19:14:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCE701CDC8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 19:17:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:From:To:
-	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=A77q33DmD+86wDEKBlwktzIt6a9MqBXQA930TcR+Op0=; b=t4SeB7XgtGyaby
-	5mL+9XrHwGnQE3N6Z88m1Nmd7aakx2VcywnkdD2Fy5wDehyKSdDxVOulfTh+lAZihZDV0291sKr0C
-	rHNsrhKhyou/LgbM8fzgATyzKxzfIdeFN117WyDAotzV+SLGcmzBdCuL4z1Svh52dJuW4Ify3HdeG
-	0uwmV+G8OXjDu/QJ3n2otFlEcDR6rXeDMru6GI3dqsR7rTkuk3dRyEa/OsgWpaTzqW26P3fOBQN54
-	QVX1PdP6LKZ8QI1+xZpUiNPxRggfrYldjdo3YM84AAW3fndtBhK8jObDnB5sdSzg9YGQ/BqDZaqSI
-	7aOsLTjjujmlEB0YBXMA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AtDPK4bVR9edzQW5gPpHDNGAE1ZIV2bIeMG2ZUvOO+8=; b=eN1mkeBC9DcfR7
+	ZAMvbqsjHxaQko96YaDqzkR3RjFwSIlCwc8zD1fCsREA62E2k91BrHfjP/az7v1fVneA55xyyGJPT
+	a28kWhvOjSZ1yo4FDyw0YPxzMZLfGs2GrZPvUY1o9D/oDs0bRYWNOFpw0lTVrfGiM0ffKPn6NSaxq
+	LpGPwe2hL5sezLB532h5ur4K1L+/FASy2GTAqFkCufe6zcupX0nmmejQbA4F2q7qvJnR0XAHIwFyM
+	rUWoxf36beys4gUG6ijzlV4aCZYMKtpFGlC2SegXKrutpbQhZv+SoEfd3nSZp1+m6JYJVLqDpfdyT
+	Za0JjPLjGU7L4LWxV/ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQb0b-0007Ds-JN; Tue, 14 May 2019 17:14:33 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hQb3M-0000u7-Tr; Tue, 14 May 2019 17:17:24 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQb0G-0006z3-8d
- for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 17:14:15 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 78A2F20578;
- Tue, 14 May 2019 17:14:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1557854052;
- bh=3P6sxOvETPD96s1YvHYryOml9n7tG5msfcNUTIrzo8U=;
- h=Subject:To:Cc:From:Date:From;
- b=ErGgTNX0LC5NMb1NMuyAvzHoERARf5v5imFwIWD9phSOk7i/v30qdhn1zzh5YtJWJ
- bbxE/CeL/+92H6cNwOZMbq0TI838MEa5i0Jl6f5dgkr9gP308jXOu/IRGjvzkMGlRi
- 7lSU9gi/2/DigZgk3hK4uhLs2vtJWBcwZ3xurzBw=
-Subject: Patch "[PATCH 23/27] s390/speculation: Support 'mitigations=' cmdline
- option" has been added to the 5.1-stable tree
-To: aarcange@redhat.com, benh@kernel.crashing.org, bp@alien8.de,
- catalin.marinas@arm.com,
- e4a161805458a5ec88812aac0307ae3908a030fc.1555085500.git.jpoimboe@redhat.com,
- gregkh@linuxfoundation.org, heiko.carstens@de.ibm.com, hpa@zytor.com,
- jcm@redhat.com, jikos@kernel.org, jkosina@suse.cz, jpoimboe@redhat.com,
- linux-arm-kernel@lists.infradead.org, linuxppc-dev@lists.ozlabs.org,
- longman@redhat.com, luto@kernel.org, mpe@ellerman.id.au, pauld@redhat.com,
- paulus@samba.org, peterz@infradead.org, rdunlap@infradead.org,
- schwidefsky@de.ibm.com, steven.price@arm.com, tglx@linutronix.de,
- torvalds@linux-foundation.org, tyhicks@canonical.com, will.deacon@arm.com
-From: <gregkh@linuxfoundation.org>
-Date: Tue, 14 May 2019 19:06:20 +0200
-Message-ID: <155785358010470@kroah.com>
+ id 1hQb3F-0000tQ-Dv
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 17:17:19 +0000
+Received: by mail-ed1-x542.google.com with SMTP id f37so23863338edb.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 14 May 2019 10:17:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=+l9zz6eaN2LIJhz1rmWgTZAN4kH+dDR0HBMwscHakxY=;
+ b=Vw8j1EhC/hirGyhd//mhklJ3dK/9R4/rkLaiCq33qN9mZBdK+h9CeuGckVuTAQj4r8
+ Lroza3lMGmp3StHW3eBjXChsbcS6EzT+k4q+eonRhUVGbJfcGNxpvbT9O2BDNZ0+AOX9
+ m4AAe84sX022No4bgqg0cFpzvHd5AN7eSJj3oinlXew9tzYa2COSvYh7cs9sOrhvyivV
+ Io/sNSNXcrdWcax24GCRqP5/Crhy3g3lIl7bs4HUgNiVaFKD/wG2LeXJu7F943s/cwD0
+ HWQdaWMKasSQOWas0lKqMo36mGXP4HzFwMOV/QttYVTHapA6zmuvvFGGuApY99YCJvjT
+ 4BWA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=+l9zz6eaN2LIJhz1rmWgTZAN4kH+dDR0HBMwscHakxY=;
+ b=cz/l5W7gSUdlME138/PHuE/iXO2nsSQJXWs/TYrYiF/XmboaIMXs2hZGGvME8JR/kH
+ oT1ML0mhy/2Z3PEOHmD6w3DDHL0khSfvP0/e8QRp4SNbntPXVaL1+WG6CYA4kjxd9MQ6
+ VzWIDqmx7T7rZqnJRITdlGcj/DViIbGpxKYABYLYD4L/nytfl2LtdbGiZFJ9GbY7h8+E
+ 4VSZXI42JHonkw7GKRkvjTTDFf7DsjqRsjc7I1H+AZ0HyvpiVgIG7xXRWBbN1boCoFbN
+ txPmsrDYHsrVcZlEFbyXmEHCs3xmfUpqqm70Cl3Mgz+ZDOH7PL6VWdIYLClcuw/xt8on
+ AW8g==
+X-Gm-Message-State: APjAAAUFU/4yZ0YotA9dK6VLf5H5gyeJdqoU+aTlxqpVdDxoeksr3qDo
+ 5aAehh9NyXT6C3fJexWat0AL187mpWE5GSeXeFdnfzPL
+X-Google-Smtp-Source: APXvYqwmXirTESmlcC78TECRFWo44J6KJt1h6qI1PBjPpoXbbJP1T2BFjs/mfGdnb1QLBUyu3TedlIxXhIoLHR0QlWs=
+X-Received: by 2002:a17:907:20a6:: with SMTP id
+ pw6mr11778381ejb.113.1557854234894; 
+ Tue, 14 May 2019 10:17:14 -0700 (PDT)
 MIME-Version: 1.0
-X-stable: commit
-X-Patchwork-Hint: ignore 
+References: <20170914194444.32551-1-robdclark@gmail.com>
+ <20170919123038.GF8398@8bytes.org>
+ <CAF6AEGuutkqjrWk4jagE=p-NwHgxdiPZjjsaFsfwtczK568j+A@mail.gmail.com>
+ <20170922090204.GJ8398@8bytes.org>
+ <32e3ab2c-a996-c805-2a0d-a2e85deb3a50@arm.com>
+ <CAF6AEGuepdKo1Ob2jW66UhYXOTAqOMc3C-XKsK3Rze1QdLobLw@mail.gmail.com>
+ <571e825d-7f54-2da4-adc0-6b6ac6dae459@arm.com>
+ <CAF6AEGtJRYvSLw+Cc6XaHEN58Ne2_StTojN9_e6+aJZSfX_dVg@mail.gmail.com>
+ <6f7fb139-5117-d89e-0caa-bd34ea9b6ff3@arm.com>
+In-Reply-To: <6f7fb139-5117-d89e-0caa-bd34ea9b6ff3@arm.com>
+From: Rob Clark <robdclark@gmail.com>
+Date: Tue, 14 May 2019 10:17:03 -0700
+Message-ID: <CAF6AEGuxGAjqpZBKQvmyHTr7fPU9yKYLf1CfB_TMzKDiXptjzg@mail.gmail.com>
+Subject: Re: [RFC] iommu: arm-smmu: stall support
+To: Robin Murphy <robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_101412_345505_FA9A2D2D 
-X-CRM114-Status: GOOD (  15.25  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190514_101717_496697_889B7B86 
+X-CRM114-Status: GOOD (  39.62  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robdclark[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -80,139 +100,155 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: stable-commits@vger.kernel.org
+Cc: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Will Deacon <Will.Deacon@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, May 14, 2019 at 3:24 AM Robin Murphy <robin.murphy@arm.com> wrote:
+>
+> On 14/05/2019 02:54, Rob Clark wrote:
+> > On Mon, May 13, 2019 at 11:37 AM Jean-Philippe Brucker
+> > <jean-philippe.brucker@arm.com> wrote:
+> >>
+> >> Hi Rob,
+> >>
+> >> On 10/05/2019 19:23, Rob Clark wrote:
+> >>> On Fri, Sep 22, 2017 at 2:58 AM Jean-Philippe Brucker
+> >>> <jean-philippe.brucker@arm.com> wrote:
+> >>>>
+> >>>> On 22/09/17 10:02, Joerg Roedel wrote:
+> >>>>> On Tue, Sep 19, 2017 at 10:23:43AM -0400, Rob Clark wrote:
+> >>>>>> I would like to decide in the IRQ whether or not to queue work or not,
+> >>>>>> because when we get a gpu fault, we tend to get 1000's of gpu faults
+> >>>>>> all at once (and I really only need to handle the first one).  I
+> >>>>>> suppose that could also be achieved by having a special return value
+> >>>>>> from the fault handler to say "call me again from a wq"..
+> >>>>>>
+> >>>>>> Note that in the drm driver I already have a suitable wq to queue the
+> >>>>>> work, so it really doesn't buy me anything to have the iommu driver
+> >>>>>> toss things off to a wq for me.  Might be a different situation for
+> >>>>>> other drivers (but I guess mostly other drivers are using iommu API
+> >>>>>> indirectly via dma-mapping?)
+> >>>>>
+> >>>>> Okay, so since you are the only user for now, we don't need a
+> >>>>> work-queue. But I still want the ->resume call-back to be hidden in the
+> >>>>> iommu code and not be exposed to users.
+> >>>>>
+> >>>>> We already have per-domain fault-handlers, so the best solution for now
+> >>>>> is to call ->resume from report_iommu_fault() when the fault-handler
+> >>>>> returns a special value.
+> >>>>
+> >>>> The problem is that report_iommu_fault is called from IRQ context by the
+> >>>> SMMU driver, so the device driver callback cannot sleep.
+> >>>>
+> >>>> So if the device driver needs to be able to sleep between fault report and
+> >>>> resume, as I understand Rob needs for writing debugfs, we can either:
+> >>>>
+> >>>> * call report_iommu_fault from higher up, in a thread or workqueue.
+> >>>> * split the fault reporting as this patch proposes. The exact same
+> >>>>    mechanism is needed for the vSVM work by Intel: in order to inject fault
+> >>>>    into the guest, they would like to have an atomic notifier registered by
+> >>>>    VFIO for passing down the Page Request, and a new function in the IOMMU
+> >>>>    API to resume/complete the fault.
+> >>>>
+> >>>
+> >>> So I was thinking about this topic again.. I would still like to get
+> >>> some sort of async resume so that I can wire up GPU cmdstream/state
+> >>> logging on iommu fault (without locally resurrecting and rebasing this
+> >>> patch and drm/msm side changes each time I need to debug iommu
+> >>> faults)..
+> >>
+> >> We've been working on the new fault reporting API with Jacob and Eric,
+> >> and I intend to send it out soon. It is supposed to be used for
+> >> reporting faults to guests via VFIO, handling page faults via mm, and
+> >> also reporting events directly to device drivers. Please let us know
+> >> what works and what doesn't in your case
+> >>
+> >> The most recent version of the patches is at
+> >> http://www.linux-arm.org/git?p=linux-jpb.git;a=shortlog;h=refs/heads/sva/api
+> >> (git://www.linux-arm.org/linux-jpb.git branch sva/api). Hopefully on the
+> >> list sometimes next week, I'll add you on Cc.
+> >>
+> >> In particular, see commits
+> >>          iommu: Introduce device fault data
+> >>          iommu: Introduce device fault report API
+> >>          iommu: Add recoverable fault reporting
+> >>
+> >> The device driver calls iommu_register_device_fault_handler(dev, cb,
+> >> data). To report a fault, the SMMU driver calls
+> >> iommu_report_device_fault(dev, fault). This calls into the device driver
+> >> directly, there isn't any workqueue. If the fault is recoverable (the
+> >> SMMU driver set type IOMMU_FAULT_PAGE_REQ rather than
+> >> IOMMU_FAULT_DMA_UNRECOV), the device driver calls iommu_page_response()
+> >> once it has dealt with the fault (after sleeping if it needs to). This
+> >> invokes the SMMU driver's resume callback.
+> >
+> > Ok, this sounds at a high level similar to my earlier RFC, in that
+> > resume is split (and that was the main thing I was interested in).
+> > And it does solve one thing I was struggling with, namely that when
+> > the domain is created it doesn't know which iommu device it will be
+> > attached to (given that at least the original arm-smmu.c driver cannot
+> > support stall in all cases)..
+> >
+> > For GPU translation faults, I also don't really need to know if the
+> > faulting translation is stalled until the callback (I mainly want to
+> > not bother to snapshot GPU state if it is not stalled, because in that
+> > case the data we snapshot is unlikely to be related to the fault if
+> > the translation is not stalled).
+> >
+> >> At the moment we use mutexes, so iommu_report_device_fault() can only be
+> >> called from an IRQ thread, which is incompatible with the current SMMUv2
+> >> driver. Either we need to switch the SMMUv2 driver to an IRQ thread, or
+> >> rework the fault handler to be called from an IRQ handler. The reporting
+> >> also has to be per device rather than per domain, and I'm not sure if
+> >> the SMMUv2 driver can deal with this.
+> >
+> > I'll take a closer look at the branch and try to formulate some plan
+> > to add v2 support for this.
+>
+> What's fun is that we should be able to identify a stream ID for most
+> context faults *except* translation faults...
+>
+> We've considered threaded IRQs before, and IIRC the problem with doing
+> it at the architectural level is that in some cases the fault interrupt
+> can only be deasserted by actually resuming/terminating the stalled
+> transaction.
+>
+> > For my cases, the GPU always has it's own iommu device, while display
+> > and other blocks share an apps_smmu.. although this sort of
+> > functionality isn't really required outside of the GPU.. but I'll have
+> > to think a bit about how we can support both cases in the single v2
+> > driver.
+>
+> With the above said, I am in the middle of a big refactoring[1] to allow
+> everyone's imp-def stuff to coexist nicely, so ultimately if qcom
+> implementations can guarantee the appropriate hardware behaviour then
+> they can have their own interrupt handlers to accommodate this.
+>
 
-This is a note to let you know that I've just added the patch titled
+Ok, maybe I'll hold off a bit and work on other things, to avoid feet stomping..
 
-    [PATCH 23/27] s390/speculation: Support 'mitigations=' cmdline option
+I don't suppose you have thoughts about split pagetables, which is one
+of the things we want for implementing per-context pagetables?  I
+suppose that is less of an impl thing and more an architecture thing,
+but maybe no one on other implementations wants this?
 
-to the 5.1-stable tree which can be found at:
-    http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
-
-The filename of the patch is:
-     0023-s390-speculation-Support-mitigations-cmdline-option.patch
-and it can be found in the queue-5.1 subdirectory.
-
-If you, or anyone else, feels it should not be added to the stable tree,
-please let <stable@vger.kernel.org> know about it.
+BR,
+-R
 
 
-From e6d932f77faa0f3f1430f083f74792cd391b1ada Mon Sep 17 00:00:00 2001
-From: Josh Poimboeuf <jpoimboe@redhat.com>
-Date: Fri, 12 Apr 2019 15:39:31 -0500
-Subject: [PATCH 23/27] s390/speculation: Support 'mitigations=' cmdline option
-
-commit 0336e04a6520bdaefdb0769d2a70084fa52e81ed upstream
-
-Configure s390 runtime CPU speculation bug mitigations in accordance
-with the 'mitigations=' cmdline option.  This affects Spectre v1 and
-Spectre v2.
-
-The default behavior is unchanged.
-
-Signed-off-by: Josh Poimboeuf <jpoimboe@redhat.com>
-Signed-off-by: Thomas Gleixner <tglx@linutronix.de>
-Tested-by: Jiri Kosina <jkosina@suse.cz> (on x86)
-Reviewed-by: Jiri Kosina <jkosina@suse.cz>
-Cc: Borislav Petkov <bp@alien8.de>
-Cc: "H . Peter Anvin" <hpa@zytor.com>
-Cc: Andy Lutomirski <luto@kernel.org>
-Cc: Peter Zijlstra <peterz@infradead.org>
-Cc: Jiri Kosina <jikos@kernel.org>
-Cc: Waiman Long <longman@redhat.com>
-Cc: Andrea Arcangeli <aarcange@redhat.com>
-Cc: Jon Masters <jcm@redhat.com>
-Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-Cc: Paul Mackerras <paulus@samba.org>
-Cc: Michael Ellerman <mpe@ellerman.id.au>
-Cc: linuxppc-dev@lists.ozlabs.org
-Cc: Martin Schwidefsky <schwidefsky@de.ibm.com>
-Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
-Cc: linux-s390@vger.kernel.org
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will.deacon@arm.com>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-arch@vger.kernel.org
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: Tyler Hicks <tyhicks@canonical.com>
-Cc: Linus Torvalds <torvalds@linux-foundation.org>
-Cc: Randy Dunlap <rdunlap@infradead.org>
-Cc: Steven Price <steven.price@arm.com>
-Cc: Phil Auld <pauld@redhat.com>
-Link: https://lkml.kernel.org/r/e4a161805458a5ec88812aac0307ae3908a030fc.1555085500.git.jpoimboe@redhat.com
-Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
----
- Documentation/admin-guide/kernel-parameters.txt | 5 +++--
- arch/s390/kernel/nospec-branch.c                | 3 ++-
- 2 files changed, 5 insertions(+), 3 deletions(-)
-
-diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index 3294030d7f57..2bf137f97902 100644
---- a/Documentation/admin-guide/kernel-parameters.txt
-+++ b/Documentation/admin-guide/kernel-parameters.txt
-@@ -2571,7 +2571,7 @@
- 			http://repo.or.cz/w/linux-2.6/mini2440.git
- 
- 	mitigations=
--			[X86,PPC] Control optional mitigations for CPU
-+			[X86,PPC,S390] Control optional mitigations for CPU
- 			vulnerabilities.  This is a set of curated,
- 			arch-independent options, each of which is an
- 			aggregation of existing arch-specific options.
-@@ -2582,7 +2582,8 @@
- 				expose users to several CPU vulnerabilities.
- 				Equivalent to: nopti [X86,PPC]
- 					       nospectre_v1 [PPC]
--					       nospectre_v2 [X86,PPC]
-+					       nobp=0 [S390]
-+					       nospectre_v2 [X86,PPC,S390]
- 					       spectre_v2_user=off [X86]
- 					       spec_store_bypass_disable=off [X86,PPC]
- 					       l1tf=off [X86]
-diff --git a/arch/s390/kernel/nospec-branch.c b/arch/s390/kernel/nospec-branch.c
-index bdddaae96559..649135cbedd5 100644
---- a/arch/s390/kernel/nospec-branch.c
-+++ b/arch/s390/kernel/nospec-branch.c
-@@ -1,6 +1,7 @@
- // SPDX-License-Identifier: GPL-2.0
- #include <linux/module.h>
- #include <linux/device.h>
-+#include <linux/cpu.h>
- #include <asm/nospec-branch.h>
- 
- static int __init nobp_setup_early(char *str)
-@@ -58,7 +59,7 @@ early_param("nospectre_v2", nospectre_v2_setup_early);
- 
- void __init nospec_auto_detect(void)
- {
--	if (test_facility(156)) {
-+	if (test_facility(156) || cpu_mitigations_off()) {
- 		/*
- 		 * The machine supports etokens.
- 		 * Disable expolines and disable nobp.
--- 
-2.21.0
-
-
-
-Patches currently in stable-queue which might be from jpoimboe@redhat.com are
-
-queue-5.1/0019-x86-speculation-mds-Print-SMT-vulnerable-on-MSBDS-wi.patch
-queue-5.1/0016-x86-speculation-Move-arch_smt_update-call-to-after-m.patch
-queue-5.1/0024-x86-speculation-mds-Add-mitigations-support-for-MDS.patch
-queue-5.1/0021-x86-speculation-Support-mitigations-cmdline-option.patch
-queue-5.1/0022-powerpc-speculation-Support-mitigations-cmdline-opti.patch
-queue-5.1/0020-cpu-speculation-Add-mitigations-cmdline-option.patch
-queue-5.1/0023-s390-speculation-Support-mitigations-cmdline-option.patch
-queue-5.1/0015-x86-speculation-mds-Add-mds-full-nosmt-cmdline-optio.patch
-queue-5.1/0027-x86-speculation-mds-Fix-documentation-typo.patch
-queue-5.1/0017-x86-speculation-mds-Add-SMT-warning-message.patch
-queue-5.1/0018-x86-speculation-mds-Fix-comment.patch
+> Robin.
+>
+> [1]
+> http://linux-arm.org/git?p=linux-rm.git;a=shortlog;h=refs/heads/iommu/smmu-impl
+> - note that this is very, very WIP right now
 
 _______________________________________________
 linux-arm-kernel mailing list
