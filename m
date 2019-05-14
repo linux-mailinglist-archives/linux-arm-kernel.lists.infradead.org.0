@@ -2,49 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E3CE1C3F2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 09:38:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A5681C3F9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 09:38:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=kSTzJCzGB0+vWbxjLgqL+Kkvpem17muqhn0ysb3inC4=; b=oHsWtPZfrOzac8
-	1zQCzuDU3CWPrvb7qiHN4/4mbOR10O3epWrJpgNiA0mwN3m+9wUx0XtLM6JSaRXLbkZ7H3sXE1SKE
-	rKku0Xx84RSIoxbBZtzT+icRIHCnWp2Jolz2WxgDxt4ll4IUGe5MRR/O3ESzDRU4bQo/0uRtLIB6L
-	dUJE/gVnMfR0txfN2vZJgFMfDTMv2eBITjlOI/1KK/fVuD4GdURrSZbxb98CuHgSvajblZ897l8ai
-	YL/G5JwS1jQeTNXcS8CDsft20V/Zin97XItHatsOM5VxmG8KZVzsm9LxvTjrIck39rxRrdzeeIqbf
-	S79mVvfTckPJpuSobcJg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+kF0HbrW+Geu8IjiK8XbGTQWq5e7bRe2pGvtN+hoWAY=; b=jSvwJVXUKdS+dv
+	4v3TQY5Fwm0Ss1LZDJplfKesw0F02d/hq8X9cp7p5w27gq9YZS/NoLxtH25zZazQN+8ly5iRYZdgz
+	YwY3Die5u2QGepGjKWadk4wbzaJYtluKKk4nwNIMGZQs5I3efXAY3/X3Cdw7/qAHb+v/beUDjDUG/
+	R3QEW/ts5yH52ps9rrOXodAuPlA2O5OzCYGWAXOSHRc7snqz8FjvtIWUpRiC9+ZYDWg2Md7qdLj+L
+	mJQwe+1XI7Z8lhMHhn6F9RSMbCPz4ySUJvARjE9tZu/yGQ9S9nYToIuwKNsGe/XkhOS3gXbBNb6wb
+	sRKCGNcaIommxC1b1Tkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQS0p-0007jA-6n; Tue, 14 May 2019 07:38:11 +0000
-Received: from mail-he1eur02on0627.outbound.protection.outlook.com
- ([2a01:111:f400:fe05::627]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1hQS10-0007r1-9O; Tue, 14 May 2019 07:38:22 +0000
+Received: from mail-eopbgr70043.outbound.protection.outlook.com ([40.107.7.43]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQS0f-0007i6-Da
- for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 07:38:04 +0000
+ id 1hQS0i-0007iP-EZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 07:38:05 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=rvq2TFR85utQEG+69MB357yelCSgp/xfao7wGoP3n+M=;
- b=ImHHby4+8/11atKq1NWN3vtf03n07thxz4EMa+T0IC9zd3GhzwFtgp3N/+3ncBRqY7wuXVbg0YtIw+v1FLysDiOD/osVaW2Q5bwVCZdv0y4LQxm8KFD3sO4MOkB9CwJHUlR0l6NR/KYaC3h1vBY5ruFHpzX1H8E/QMqyruqArM4=
+ bh=nvhjJwPJQAmt6osV58d0ZPm+fi0QlH40uyS1LvKq4OA=;
+ b=C/PnVRX7jMcHyY1Sm0kpTzHMbvl3/KZQEoX/NsvbxC39P3FrdEuzT9biNFTLy2mUs0lwZFNMp7OL5NRnde3jTicLv4OUHZD+bdhyrd45K/Y0vMHhFe4ndHzJ3Zg0ze9GBrebn8GNUfS7E+F857p/FWj4xgUCv3jgatBWZBprWGY=
 Received: from VI1PR04MB5327.eurprd04.prod.outlook.com (20.177.52.16) by
- VI1PR04MB6175.eurprd04.prod.outlook.com (20.179.27.206) with Microsoft SMTP
+ VI1PR04MB5392.eurprd04.prod.outlook.com (20.178.120.210) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1900.16; Tue, 14 May 2019 07:37:55 +0000
+ 15.20.1900.16; Tue, 14 May 2019 07:37:59 +0000
 Received: from VI1PR04MB5327.eurprd04.prod.outlook.com
  ([fe80::4923:8ad8:62c1:3e61]) by VI1PR04MB5327.eurprd04.prod.outlook.com
  ([fe80::4923:8ad8:62c1:3e61%5]) with mapi id 15.20.1878.024; Tue, 14 May 2019
- 07:37:55 +0000
+ 07:37:59 +0000
 From: Peter Chen <peter.chen@nxp.com>
 To: "shawnguo@kernel.org" <shawnguo@kernel.org>, "balbi@kernel.org"
  <balbi@kernel.org>
-Subject: [PATCH v2 0/8] Add imx7ulp USBOTG1 support
-Thread-Topic: [PATCH v2 0/8] Add imx7ulp USBOTG1 support
-Thread-Index: AQHVCifx0TKqr8yYC0ySFoHZ6w0yuA==
-Date: Tue, 14 May 2019 07:37:55 +0000
-Message-ID: <20190514073529.29505-1-peter.chen@nxp.com>
+Subject: [PATCH v2 1/8] doc: dt-binding: mxs-usb-phy: add compatible for 7ulp
+Thread-Topic: [PATCH v2 1/8] doc: dt-binding: mxs-usb-phy: add compatible for
+ 7ulp
+Thread-Index: AQHVCif0oaNedQipEk+Q4CDINsOA4A==
+Date: Tue, 14 May 2019 07:37:59 +0000
+Message-ID: <20190514073529.29505-2-peter.chen@nxp.com>
+References: <20190514073529.29505-1-peter.chen@nxp.com>
+In-Reply-To: <20190514073529.29505-1-peter.chen@nxp.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -58,46 +60,45 @@ authentication-results: spf=none (sender IP is )
 x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [119.31.174.66]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 61aec09b-a52f-4e96-5090-08d6d83f13fd
+x-ms-office365-filtering-correlation-id: f57f3d8a-7a4b-43c1-530f-08d6d83f1689
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR04MB6175; 
-x-ms-traffictypediagnostic: VI1PR04MB6175:
-x-microsoft-antispam-prvs: <VI1PR04MB61754C3AC4E3D28E567DCE4C8B080@VI1PR04MB6175.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
+ SRVR:VI1PR04MB5392; 
+x-ms-traffictypediagnostic: VI1PR04MB5392:
+x-microsoft-antispam-prvs: <VI1PR04MB53921E5EF7178F1B594BEF918B080@VI1PR04MB5392.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1079;
 x-forefront-prvs: 0037FD6480
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(39860400002)(346002)(376002)(136003)(396003)(366004)(199004)(189003)(5660300002)(68736007)(99286004)(52116002)(8676002)(66066001)(2501003)(50226002)(256004)(1076003)(110136005)(54906003)(36756003)(14454004)(478600001)(81166006)(81156014)(8936002)(66556008)(66476007)(6486002)(64756008)(66446008)(2906002)(73956011)(6506007)(305945005)(7736002)(102836004)(386003)(6436002)(6512007)(26005)(66946007)(316002)(86362001)(44832011)(486006)(71200400001)(71190400001)(6116002)(4326008)(25786009)(476003)(2616005)(3846002)(186003)(53936002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB6175;
+ SFS:(10009020)(366004)(396003)(136003)(376002)(346002)(39860400002)(189003)(199004)(386003)(6506007)(102836004)(7736002)(305945005)(6436002)(66946007)(26005)(316002)(6512007)(73956011)(6486002)(66446008)(64756008)(66556008)(66476007)(76176011)(11346002)(446003)(2906002)(476003)(2616005)(25786009)(4326008)(3846002)(53936002)(186003)(486006)(44832011)(86362001)(6116002)(71190400001)(71200400001)(50226002)(256004)(66066001)(2501003)(4744005)(1076003)(5660300002)(68736007)(8676002)(52116002)(99286004)(14454004)(36756003)(478600001)(8936002)(81156014)(81166006)(110136005)(54906003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5392;
  H:VI1PR04MB5327.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
+ PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: to3ONCWZ0qcY+apsfxbWkf5j+gbvT3wQXrObFdvBgrriOYFFgK1xodHRB5Dpd0vQE0PPYk+w9yHnQqmfCuTGOENHj6sB/2ZGvkz7ihzD9PvUP1KR9tr/HZd3ZdhnrzbvF9W/dV6PpUsroOpGgAPrJ+cp3Vh0YiEBsTUWeZK4D00RJFlf/2frQ5qassb+mG7nQIEHuJEWpDM1UxdaF6HTPbeTm3hrzBlgot6sBQHr1BAJI4wYFe5pWcNAhoFi7srQ0Ht9SrWa4b8YF9U+laUWarhbKzZd7QEo2TycbOdMnQ9iutWOd8y4I6cgvlGQVShkTE5/1aorO24ZBvFbqx7uG8QPhI4Y6KOigOlMtLTph9N1xqBES/KbqJBE4nBh8zsrP6yIlFia0O3+RSFye3s29kIFM34zLriB2FlmaENTu7w=
-Content-ID: <3B08FC2360D3334EA24FCE0F10B21354@eurprd04.prod.outlook.com>
+x-microsoft-antispam-message-info: /Luzuwk5IGfW+xv5JTKPYSmAw5rPkZOQi59PCeFJr3Vw/r8y/5fUz/+KSR9QnDQDDlDuhXLuKm+JUfDdXDhfn3VCGAVUWfgIkPt5qnwhpcGOXnMRm0kOSDCPWhPFcdcEJkuC1vvbVPv/stRq/bhYI1KxH0EhzltCpJ7hW+2JR72fAgTHOTYBv8/5WlDPV/STrUPZO2Nxdx887AIzBulwbg2wsJJZOIX8uf8YLvT6ZX+r3W109fDvoq1ySlBP8XQNwyN6F2HTaSIdeJ8qQSp4EVYY5V7cMiWeD6rcF4hiKo47vDRjduVuEMiXgYJ7ZF38s9T0AXeXEbxjJjGBFDI+wfWmXR6CbVEpOYDULnFSEz3hbUQvQO4a1/MmCINFg7SytMkEYDO+bYHSjYCfgYd+OX37oFWNAf1uUtJOztE0FaA=
+Content-ID: <E46D016D49C7C94F816436B461741B6D@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 61aec09b-a52f-4e96-5090-08d6d83f13fd
-X-MS-Exchange-CrossTenant-originalarrivaltime: 14 May 2019 07:37:55.2033 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: f57f3d8a-7a4b-43c1-530f-08d6d83f1689
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 May 2019 07:37:59.7385 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB6175
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5392
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_003801_577481_8522EA61 
-X-CRM114-Status: GOOD (  11.70  )
+X-CRM114-CacheID: sfid-20190514_003804_485491_DB9CBED2 
+X-CRM114-Status: GOOD (  11.59  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe05:0:0:0:627 listed in]
- [list.dnswl.org]
+ no trust [40.107.7.43 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -129,39 +130,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Changes for v2:
-- Use common 'phys' property [Patch 6/8]
-- Add the last patch that "fsl,usbphy" phandle is not mandatory now
-[Patch 8/8]
-- Add Reviewed-by from Rob.
+Add compatible for 7ulp USB PHY.
 
-There is a dual-role USB controller at imx7ulp, we add support for it
-in this patch set, and the dual-role function is tested at imx7ulp-evk
-board.
+Reviewed-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Peter Chen <peter.chen@nxp.com>
+---
+ Documentation/devicetree/bindings/phy/mxs-usb-phy.txt | 1 +
+ 1 file changed, 1 insertion(+)
 
-Thanks.
-
-Peter Chen (8):
-  doc: dt-binding: mxs-usb-phy: add compatible for 7ulp
-  usb: phy: phy-mxs-usb: add imx7ulp support
-  doc: dt-binding: ci-hdrc-usb2: add compatible string for imx7ulp
-  doc: dt-binding: usbmisc-imx: add compatible string for imx7ulp
-  usb: chipidea: imx: add imx7ulp support
-  ARM: dts: imx7ulp: add imx7ulp USBOTG1 support
-  ARM: dts: imx7ulp-evk: enable USBOTG1 support
-  usb: chipidea: imx: "fsl,usbphy" phandle is not mandatory now
-
- .../devicetree/bindings/phy/mxs-usb-phy.txt        |  1 +
- .../devicetree/bindings/usb/ci-hdrc-usb2.txt       |  1 +
- .../devicetree/bindings/usb/usbmisc-imx.txt        |  1 +
- arch/arm/boot/dts/imx7ulp-evk.dts                  | 35 ++++++++++
- arch/arm/boot/dts/imx7ulp.dtsi                     | 31 +++++++++
- drivers/usb/chipidea/ci_hdrc_imx.c                 | 33 +++++++++-
- drivers/usb/chipidea/usbmisc_imx.c                 |  4 ++
- drivers/usb/phy/phy-mxs-usb.c                      | 76 +++++++++++++++++++++-
- include/linux/usb/chipidea.h                       |  1 +
- 9 files changed, 179 insertions(+), 4 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/phy/mxs-usb-phy.txt b/Documentation/devicetree/bindings/phy/mxs-usb-phy.txt
+index 6ac98b3b5f57..32da8d17759a 100644
+--- a/Documentation/devicetree/bindings/phy/mxs-usb-phy.txt
++++ b/Documentation/devicetree/bindings/phy/mxs-usb-phy.txt
+@@ -7,6 +7,7 @@ Required properties:
+ 	* "fsl,imx6sl-usbphy" for imx6sl
+ 	* "fsl,vf610-usbphy" for Vybrid vf610
+ 	* "fsl,imx6sx-usbphy" for imx6sx
++	* "fsl,imx7ulp-usbphy" for imx7ulp
+   "fsl,imx23-usbphy" is still a fallback for other strings
+ - reg: Should contain registers location and length
+ - interrupts: Should contain phy interrupt
 -- 
 2.14.1
 
