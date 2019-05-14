@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 235C61C4C6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 10:27:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E1F681C4C7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 14 May 2019 10:27:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P87y1UwHa4AYACM1DOh7ruER+MrfviV9DHYVev0bAAM=; b=MfSyn7lLlpUSXh
-	im2sjAj7bkZdFx4sBBYRI4DH8Q6mDnTLFAORPG8kGrjhCyM0DVDFgaFyR6S0BSRF9CWL+ZurDt3Ci
-	12HQnkfjMSPjVwLJuknJqAoBK37Fvdh0pZGyrfAdqeZipG2p/uyl8Z6mrIG4oyHJCJugy7TD/gnik
-	260PnCLErzKuopKgVSTre6E9+j9373y79UGMZL/dmUNT6AxMcm32lse9WVSgX+6U3BNSNVgyi4XI7
-	fO6KBeU52yhqxdL3ch3IOnBcV61JgGbcec4Gz9M4wwMUszluWaRt1IcXqEo2FP4rRlBoToBh0n6ub
-	pWamt7o4FC7xcRFzuuiw==;
+	List-Owner; bh=/KNqKDm5QTS/RkSnQPJn4jZSF2ojytpGnKKtTGS4HeY=; b=ZyySU4pdeP7w0L
+	qExTemgzwaGl769hfAc0Xyt4yyPrxJPbObLIip8NBwVRQ/YTGnqZO5FenKvisuEw44Md8Y3s2t0yz
+	Z7PSJeucZZzXSBnk4nR2hgmzMz0sTYw2NS4sTumWlh7KAFAZLFKh95FWChEmTDKsnRGlADfnAV0q/
+	XNqiieTBRod4I1AFx5qkWZQRnFErrtknLVOKCQWzVPX/DLAiZbPclogJa4U7lDgNNACGG3lVzJ7ge
+	Jh3RsbYz7zCcC/1zAeGkegNLK5A7mhPjNC3JcV1i/pHf+U1YHsRSoWtBmtFG1ZXdHKwjEXvzvcLGn
+	jfdG3HnBIgismvzHq8zQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQSmg-0005Fd-OE; Tue, 14 May 2019 08:27:38 +0000
+	id 1hQSmt-0005Rd-M8; Tue, 14 May 2019 08:27:51 +0000
 Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQSmJ-0004qE-LO
+ id 1hQSmK-0004rz-93
  for linux-arm-kernel@lists.infradead.org; Tue, 14 May 2019 08:27:28 +0000
 Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x4E8Q8xq029562; Tue, 14 May 2019 10:27:09 +0200
+ x4E8Q9Ds029568; Tue, 14 May 2019 10:27:10 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=ug1rZBb4tp1QfVGX2K2LUauv8v7kBPMYnK+aqeqOCBA=;
- b=1eEmFBvmFp2Kt7iCklqkRaGZECElRyWYDZQKUavC/hkOrkWqInyOfUJ4V3EfoGkQunUO
- mzyEcMfs6zP80CO1aLv0H90K/en9L/uuuEbjsmMCDX1IGEKBwWmPz4a/tD6kCSlw/BlO
- /JChmB/bESSdhZXKh1u18gMzat0TS6ArSsMrP33vT/8t+oBWMM4uztUwrDRXqObDxZ+/
- Y5HuDFYCxKUi8080cfGbKPJ5T7JK555Yx5341xPf0+LX09oxsts7jga1BnZPYcq87IW2
- PAkYqbM16UoKoHYLlUbGt9cWXCUCHTLNg+k759GiW7pDH57hU2ZqD40/X/L2FWw4eru+ gg== 
+ bh=hTa76nRNRMkv1ckIc9VVEOKQQcki8xxfiPP+Sm6Rw5E=;
+ b=MaFg+t0u7M5BzxABiLyT70EPJG4ERisibtvW7Zy/Fyi+uqdE/Ah+KCMGZAzdCFdyqoOp
+ m14OO5ipEnGIMd+YEk+MXPOhl8sqvhQWymQi9XnnzOt5GXkNrjEs9qc+LAfGXdUmJ7Eg
+ JdSw+W9twMMuD0Dwy43FP+q18PrWvo+3H76Pru2epe5rZPxCgKV7gJOhaNkK7Mem1iWg
+ Z1c8dQglTGUQDFBuJtC/3JiQjxbcHlS77QOQHGA+eQt613BcUvnMPPsXkSzYOjb1vSYH
+ CgJyL/3RkrB/t8uPVTSJaXPkuxSLAE0yaMkYdYyAN31MNemCfuhVmqjO9ixr64mVBLTW CQ== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2sdkuyqnmr-1
+ by mx07-00178001.pphosted.com with ESMTP id 2sdkuyqnn0-1
  (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Tue, 14 May 2019 10:27:09 +0200
+ Tue, 14 May 2019 10:27:10 +0200
 Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id CC3643F;
- Tue, 14 May 2019 08:27:08 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas24.st.com [10.75.90.94])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 9666A1550;
- Tue, 14 May 2019 08:27:08 +0000 (GMT)
-Received: from SAFEX1HUBCAS23.st.com (10.75.90.47) by Safex1hubcas24.st.com
- (10.75.90.94) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 14 May
- 2019 10:27:08 +0200
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id A2F4B34;
+ Tue, 14 May 2019 08:27:09 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 79B091551;
+ Tue, 14 May 2019 08:27:09 +0000 (GMT)
+Received: from SAFEX1HUBCAS23.st.com (10.75.90.47) by Safex1hubcas22.st.com
+ (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 14 May
+ 2019 10:27:09 +0200
 Received: from localhost (10.201.23.25) by webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 14 May 2019 10:27:07
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 14 May 2019 10:27:09
  +0200
 From: Fabien Dessenne <fabien.dessenne@st.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
@@ -60,10 +60,10 @@ To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  <linux-stm32@st-md-mailman.stormreply.com>,
  <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
  <linux-remoteproc@vger.kernel.org>
-Subject: [PATCH v4 1/8] dt-bindings: stm32: add bindings for ML-AHB
- interconnect
-Date: Tue, 14 May 2019 10:26:56 +0200
-Message-ID: <1557822423-22658-2-git-send-email-fabien.dessenne@st.com>
+Subject: [PATCH v4 2/8] dt-bindings: remoteproc: add bindings for stm32 remote
+ processor driver
+Date: Tue, 14 May 2019 10:26:57 +0200
+Message-ID: <1557822423-22658-3-git-send-email-fabien.dessenne@st.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1557822423-22658-1-git-send-email-fabien.dessenne@st.com>
 References: <1557822423-22658-1-git-send-email-fabien.dessenne@st.com>
@@ -72,8 +72,8 @@ X-Originating-IP: [10.201.23.25]
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2019-05-14_05:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_012717_073308_CECDD067 
-X-CRM114-Status: GOOD (  14.73  )
+X-CRM114-CacheID: sfid-20190514_012717_239110_20A4FA81 
+X-CRM114-Status: GOOD (  18.87  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -109,57 +109,83 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Document the ML-AHB interconnect for stm32 SoCs.
+Add the device tree bindings document for the stm32 remoteproc devices.
 
 Signed-off-by: Fabien Dessenne <fabien.dessenne@st.com>
 ---
- .../devicetree/bindings/arm/stm32/mlahb.txt        | 37 ++++++++++++++++++++++
- 1 file changed, 37 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/arm/stm32/mlahb.txt
+ .../devicetree/bindings/remoteproc/stm32-rproc.txt | 63 ++++++++++++++++++++++
+ 1 file changed, 63 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/remoteproc/stm32-rproc.txt
 
-diff --git a/Documentation/devicetree/bindings/arm/stm32/mlahb.txt b/Documentation/devicetree/bindings/arm/stm32/mlahb.txt
+diff --git a/Documentation/devicetree/bindings/remoteproc/stm32-rproc.txt b/Documentation/devicetree/bindings/remoteproc/stm32-rproc.txt
 new file mode 100644
-index 0000000..25307aa
+index 0000000..5fa915a
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/arm/stm32/mlahb.txt
-@@ -0,0 +1,37 @@
-+ML-AHB interconnect bindings
-+
-+These bindings describe the STM32 SoCs ML-AHB interconnect bus which connects
-+a Cortex-M subsystem with dedicated memories.
-+The MCU SRAM and RETRAM memory parts can be accessed through different addresses
-+(see "RAM aliases" in [1]) using different buses (see [2]) : balancing the
-+Cortex-M firmware accesses among those ports allows to tune the system
-+performance.
-+
-+[1]: https://www.st.com/resource/en/reference_manual/dm00327659.pdf
-+[2]: https://wiki.st.com/stm32mpu/wiki/STM32MP15_RAM_mapping
++++ b/Documentation/devicetree/bindings/remoteproc/stm32-rproc.txt
+@@ -0,0 +1,63 @@
++STMicroelectronics STM32 Remoteproc
++-----------------------------------
++This document defines the binding for the remoteproc component that loads and
++boots firmwares on the ST32MP family chipset.
 +
 +Required properties:
-+- compatible: should be "simple-bus"
-+- dma-ranges: describes memory addresses translation between the local CPU and
-+	   the remote Cortex-M processor. Each memory region, is declared with
-+	   3 parameters:
-+		 - param 1: device base address (Cortex-M processor address)
-+		 - param 2: physical base address (local CPU address)
-+		 - param 3: size of the memory region.
++- compatible:	Must be "st,stm32mp1-m4"
++- reg:		Address ranges of the RETRAM and MCU SRAM memories used by the
++		remote processor.
++- resets:	Reference to a reset controller asserting the remote processor.
++- st,syscfg-holdboot: Reference to the system configuration which holds the
++		remote processor reset hold boot
++	1st cell: phandle of syscon block
++	2nd cell: register offset containing the hold boot setting
++	3rd cell: register bitmask for the hold boot field
++- st,syscfg-tz: Reference to the system configuration which holds the RCC trust
++		zone mode
++	1st cell: phandle to syscon block
++	2nd cell: register offset containing the RCC trust zone mode setting
++	3rd cell: register bitmask for the RCC trust zone mode bit
 +
-+The Cortex-M remote processor accessed via the mlahb interconnect is described
-+by a child node.
++Optional properties:
++- interrupts:	Should contain the watchdog interrupt
++- mboxes:	This property is required only if the rpmsg/virtio functionality
++		is used. List of phandle and mailbox channel specifiers:
++		- a channel (a) used to communicate through virtqueues with the
++		  remote proc.
++		  Bi-directional channel:
++		      - from local to remote = send message
++		      - from remote to local = send message ack
++		- a channel (b) working the opposite direction of channel (a)
++		- a channel (c) used by the local proc to notify the remote proc
++		  that it is about to be shut down.
++		  Unidirectional channel:
++		      - from local to remote, where ACK from the remote means
++		        that it is ready for shutdown
++- mbox-names:	This property is required if the mboxes property is used.
++		- must be "vq0" for channel (a)
++		- must be "vq1" for channel (b)
++		- must be "shutdown" for channel (c)
++- memory-region: List of phandles to the reserved memory regions associated with
++		the remoteproc device. This is variable and describes the
++		memories shared with the remote processor (eg: remoteproc
++		firmware and carveouts, rpmsg vrings, ...).
++		(see ../reserved-memory/reserved-memory.txt)
++- st,syscfg-pdds: Reference to the system configuration which holds the remote
++		processor deep sleep setting
++	1st cell: phandle to syscon block
++	2nd cell: register offset containing the deep sleep setting
++	3rd cell: register bitmask for the deep sleep bit
++- st,auto-boot:	If defined, when remoteproc is probed, it loads the default
++		firmware and starts the remote processor.
 +
 +Example:
-+mlahb {
-+	compatible = "simple-bus";
-+	#address-cells = <1>;
-+	#size-cells = <1>;
-+	dma-ranges = <0x00000000 0x38000000 0x10000>,
-+		     <0x10000000 0x10000000 0x60000>,
-+		     <0x30000000 0x30000000 0x60000>;
-+
 +	m4_rproc: m4@10000000 {
-+		...
++		compatible = "st,stm32mp1-m4";
++		reg = <0x10000000 0x40000>,
++		      <0x30000000 0x40000>,
++		      <0x38000000 0x10000>;
++		resets = <&rcc MCU_R>;
++		st,syscfg-holdboot = <&rcc 0x10C 0x1>;
++		st,syscfg-tz = <&rcc 0x000 0x1>;
 +	};
-+};
 -- 
 2.7.4
 
