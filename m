@@ -2,51 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA9AF1E971
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 09:53:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 413CF1E976
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 09:53:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ahr8CMA03Dh7XXgkdbHDvkJAvDzWOFOFjkCBrzslOKs=; b=JrE+0iRumUWyTs
-	QV/Pw9/puCA5xM3t03B0X74VxIb2qyLh2phNGKN+DYibbo8hChnc1xzJfrkRNU5+H7uxWYsYZhUu0
-	yQ3s01K9ud8ctsdQlsm6++7jkDE3WFeVW9Pq1652zE7i4afVYcLvxDHZpukx82YQ8SYrszvapbto5
-	WMmHDOvvTruO+7cjR2uMWTDnKKfjCU8FEpi+ea4P+nEMQX0tO/w30TshvKx8U6yjb/hVvGvrnOmYc
-	Mk2gj8JDubzeLfrHDzEVqxBhGpSUTvDPedM0Ou+GdFfG8aBqekfP7RYKwytNNy20tdZt5Py2TgJbo
-	oNSiO4SHMJAXkXsOu3XQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5RSIv+59EfHKPzh4ecYvfioXMWIvQF35bj2d49rSoBY=; b=Q4sgDPIjw2/WOy
+	/uuK7MefeXflT9UjE5KQ8DaHDaUohcQSKPaUTWEpJik30ochP6JLuh/9owPS36776LiVrwgfzpx4O
+	WM5DhlEHq2/r7cgZQOCyXO+aqeSt2IlsrHDwJeEG/OS3tUdk2QV2iPmz3KXuHr1LiII1rc9wqPRq6
+	nxlOupsIXeRzqSUICDZNB0pWhi/UPLkiRr6iNqf9Jy3RUSH4t7wp2AIB2ZJ5KsEvgS138sUJ+Vcud
+	818mfLfaFvycsF8zC2Cxhgb/wTNdvUnZ2ohY4w1B56EYCziCSjo04dGpMaFq7rVLl2zAh4BE720GF
+	Sew0va9gc4n1bUOv3+pw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQojI-0005A1-Lw; Wed, 15 May 2019 07:53:36 +0000
-Received: from mail-he1eur02on061a.outbound.protection.outlook.com
- ([2a01:111:f400:fe05::61a]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1hQojU-0005JJ-PJ; Wed, 15 May 2019 07:53:48 +0000
+Received: from mail-eopbgr00087.outbound.protection.outlook.com ([40.107.0.87]
+ helo=EUR02-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQojB-00058Z-Mh
- for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 07:53:31 +0000
+ id 1hQojD-00058w-Do
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 07:53:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3RHNfrQxWyqSDLZR872gbfoJOD0gu1pFD9KgCEZ4/ms=;
- b=W+pee1OOh76b55NJhFiC1HG3vCDzKIT2GiEIyeiYhs0ZVVJkKys0Z9wek8e7/FG5FkDrF3V9eX6cDyyM1AB5qbHgMIz/dAtR/Wwz7v8a6jZaGwlohKZWXLXMGKtqLAWZzNqKqx61UnvrRJyiBkT31DwVX5XEHoYupotppHeHIP0=
+ bh=Qfw7tIirkwCnRpnfsoTwEOAubjFw3Zu2rG9tnNmnNkw=;
+ b=W2KaMfNU79AUzzD4BuoN50gdx9ccXb12frws7P38JjziK41O7tJbaWKea/nYcmV5JtuAgAlBCGON2xLv8KEY+JurLDRxgpdN0AsDDDg5c7yvQoo4YpdmAgE/TgKlfbUck8ytvj7Dbca3vpWro2W5/G4Evzl7+tzPugeklYkoYbI=
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB6067.eurprd04.prod.outlook.com (20.179.32.202) with Microsoft SMTP
+ AM0PR04MB4644.eurprd04.prod.outlook.com (52.135.149.138) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1878.22; Wed, 15 May 2019 07:53:23 +0000
+ 15.20.1878.24; Wed, 15 May 2019 07:53:28 +0000
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::3173:24:d401:2378]) by AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::3173:24:d401:2378%6]) with mapi id 15.20.1878.024; Wed, 15 May 2019
- 07:53:23 +0000
+ 07:53:28 +0000
 From: Peng Fan <peng.fan@nxp.com>
 To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "shawnguo@kernel.org"
  <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "festevam@gmail.com" <festevam@gmail.com>, Aisheng Dong
  <aisheng.dong@nxp.com>
-Subject: [PATCH V3 1/4] dt-bindings: fsl: scu: add ocotp binding
-Thread-Topic: [PATCH V3 1/4] dt-bindings: fsl: scu: add ocotp binding
-Thread-Index: AQHVCvNFnuiFecqWJ06/DpqJTtk4vg==
-Date: Wed, 15 May 2019 07:53:23 +0000
-Message-ID: <20190515080703.19147-1-peng.fan@nxp.com>
+Subject: [PATCH V3 2/4] nvmem: imx: add i.MX8 nvmem driver
+Thread-Topic: [PATCH V3 2/4] nvmem: imx: add i.MX8 nvmem driver
+Thread-Index: AQHVCvNIvY47qD01X0W2BY2Hg3O+1g==
+Date: Wed, 15 May 2019 07:53:27 +0000
+Message-ID: <20190515080703.19147-2-peng.fan@nxp.com>
+References: <20190515080703.19147-1-peng.fan@nxp.com>
+In-Reply-To: <20190515080703.19147-1-peng.fan@nxp.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -60,42 +61,44 @@ authentication-results: spf=none (sender IP is )
 x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [119.31.174.71]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: aa01d7c9-d6e8-4a8e-a117-08d6d90a67bd
+x-ms-office365-filtering-correlation-id: 2315de07-dec2-4f29-121f-08d6d90a6a5f
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB6067; 
-x-ms-traffictypediagnostic: AM0PR04MB6067:
-x-microsoft-antispam-prvs: <AM0PR04MB606775AF19028758DF9DB7BA88090@AM0PR04MB6067.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4941;
+ SRVR:AM0PR04MB4644; 
+x-ms-traffictypediagnostic: AM0PR04MB4644:
+x-microsoft-antispam-prvs: <AM0PR04MB4644FE14AE82D912A1E474C788090@AM0PR04MB4644.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4714;
 x-forefront-prvs: 0038DE95A2
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(39860400002)(366004)(136003)(346002)(396003)(376002)(189003)(199004)(66946007)(73956011)(71190400001)(71200400001)(2501003)(66476007)(64756008)(81166006)(66556008)(256004)(2906002)(66446008)(53936002)(305945005)(186003)(102836004)(26005)(6512007)(7416002)(4326008)(7736002)(6116002)(3846002)(36756003)(66066001)(81156014)(8676002)(8936002)(44832011)(110136005)(316002)(50226002)(6636002)(25786009)(2616005)(478600001)(486006)(476003)(6436002)(6486002)(54906003)(1076003)(99286004)(52116002)(86362001)(386003)(6506007)(68736007)(14454004)(2201001)(5660300002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6067;
+ SFS:(10009020)(376002)(136003)(366004)(39860400002)(396003)(346002)(199004)(189003)(99286004)(54906003)(256004)(110136005)(50226002)(478600001)(8936002)(14454004)(14444005)(2501003)(66066001)(71190400001)(71200400001)(52116002)(102836004)(53936002)(7736002)(4326008)(305945005)(6506007)(81156014)(386003)(81166006)(25786009)(8676002)(6636002)(66476007)(66446008)(64756008)(76176011)(66946007)(73956011)(66556008)(486006)(3846002)(44832011)(476003)(6512007)(6436002)(2616005)(446003)(11346002)(68736007)(6486002)(186003)(7416002)(2906002)(6116002)(316002)(1076003)(36756003)(26005)(86362001)(5660300002)(2201001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4644;
  H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
+ PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: w6bKufeR6+K0D6i2I1oAKqmSy/xLyy8FMRHcnyTLIU4nuBKf25/Mo1hmr1+NgXppJRuMd6p7TABpqpVHRHPovOe11PgRCZMgTNjsKQCTqmSIXWPsmKcvhtHyfpkiF4IcqZwQp6RiMH+NB9ZuzWhS2jjaPciKMk5+OodkhHnVprwVgs4NEl9BpVPPALg3+Vylh2e7N+4aUOfU71qshwjvKuUM33Z1fVMUCg5aSAlZr3zff8rM9EtSJX7+ul5/3fpRO9g3G1wmkQIPXqngIaJIMIW0JYUm8mmBUk6m4Rwmvo5ChffKgDNannyqeoWbvUAni7iaw4woYS5BhAwayULs7PcV8UxeIhKQquCAcvtOHbDZlUd6/x270ogcrivxKRIWlRHt19i2Xhqsw4Q0ozuUO9c9+MpS2gKnqzkK+yNKJss=
+x-microsoft-antispam-message-info: LTAjgpv9ks9OlynULbxkgMaR7I3CclG+/T+wFz+B/OaBGqN7NWmYlFquuU6mlpojSIK3nUhbK5k9YWjEHDLq7Lj1CvYT8Sbr6Gcdtvrcv+dcOh4GVaWbyh1P/Q3rYUqGxAK4x8lSV/0enYg08gQMNxsmrud/Vc5qv6bKywnlrHi4Te612ov+/OgJf7N1QV0j5mh2kpXJdUffPcn2vhjc7SykmO9Cdrxu1qdHT22mLfBOatP3z/mB8FcVlL4hvr4w0USULxHttqRDJIT3PkwnqspNN3dlVPaTsikZhozXDaqJndNXvLp9wk3bnYvapK2FkxfDnFWCJ7f5DvKMVO0n3pT8LuM88YZrFb9hMVdrLDRLweiGncFZ7LCSHx1g+VN+eiZozfv+S1Wa6QFZydlBdp54hr8IsJrFTflmpY7XcB0=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: aa01d7c9-d6e8-4a8e-a117-08d6d90a67bd
-X-MS-Exchange-CrossTenant-originalarrivaltime: 15 May 2019 07:53:23.6213 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2315de07-dec2-4f29-121f-08d6d90a6a5f
+X-MS-Exchange-CrossTenant-originalarrivaltime: 15 May 2019 07:53:27.9588 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6067
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4644
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_005329_850508_7DAF4CF5 
-X-CRM114-Status: GOOD (  11.61  )
+X-CRM114-CacheID: sfid-20190515_005331_466519_ADA080AC 
+X-CRM114-Status: GOOD (  19.10  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.0.87 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -103,9 +106,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe05:0:0:0:61a listed in]
- [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -117,84 +117,245 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Peng Fan <peng.fan@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>,
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Peng Fan <peng.fan@nxp.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
  dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
  "van.freenix@gmail.com" <van.freenix@gmail.com>,
- Ulf Hansson <ulf.hansson@linaro.org>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-NXP i.MX8QXP is an ARMv8 SoC with a Cortex-M4 core inside as
-system controller(SCU), the ocotp controller is being controlled
-by the SCU, so Linux need use RPC to SCU for ocotp handling. This
-patch adds binding doc for i.MX8 SCU OCOTP driver.
+This patch adds i.MX8 nvmem ocotp driver to access fuse via
+RPC to i.MX8 system controller.
 
-Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
 Cc: Shawn Guo <shawnguo@kernel.org>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>
-Cc: Stephen Boyd <sboyd@kernel.org>
-Cc: Anson Huang <anson.huang@nxp.com>
-Cc: devicetree@vger.kernel.org
-Reviewed-by: Rob Herring <robh@kernel.org>
-Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
+Cc: Sascha Hauer <s.hauer@pengutronix.de>
+Cc: Pengutronix Kernel Team <kernel@pengutronix.de>
+Cc: Fabio Estevam <festevam@gmail.com>
+Cc: NXP Linux Team <linux-imx@nxp.com>
+Cc: linux-arm-kernel@lists.infradead.org
 Signed-off-by: Peng Fan <peng.fan@nxp.com>
 ---
 
 V3:
- Add R-b tag
+ Use imx_sc_msg_misc_fuse_read for req/resp
+ Drop uneccessary check
+ Drop the unnecessary type conversion
+ Minor fixes according to v2 comments
+
 V2:
- Move OCOTP to end, add example, add "scu"
+ Add "scu" or "SCU", Add imx_sc_misc_otp_fuse_read, minor fixes
 
- .../devicetree/bindings/arm/freescale/fsl,scu.txt  | 22 ++++++++++++++++++++++
- 1 file changed, 22 insertions(+)
+ drivers/nvmem/Kconfig         |   7 ++
+ drivers/nvmem/Makefile        |   2 +
+ drivers/nvmem/imx-ocotp-scu.c | 161 ++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 170 insertions(+)
+ create mode 100644 drivers/nvmem/imx-ocotp-scu.c
 
-diff --git a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-index 5d7dbabbb784..f378922906f6 100644
---- a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-+++ b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-@@ -133,6 +133,18 @@ RTC bindings based on SCU Message Protocol
- Required properties:
- - compatible: should be "fsl,imx8qxp-sc-rtc";
+diff --git a/drivers/nvmem/Kconfig b/drivers/nvmem/Kconfig
+index 530d570724c9..79afe44195a1 100644
+--- a/drivers/nvmem/Kconfig
++++ b/drivers/nvmem/Kconfig
+@@ -36,6 +36,13 @@ config NVMEM_IMX_OCOTP
+ 	  This driver can also be built as a module. If so, the module
+ 	  will be called nvmem-imx-ocotp.
  
-+OCOTP bindings based on SCU Message Protocol
-+------------------------------------------------------------
-+Required properties:
-+- compatible:		Should be "fsl,imx8qxp-scu-ocotp"
-+- #address-cells:	Must be 1. Contains byte index
-+- #size-cells:		Must be 1. Contains byte length
++config NVMEM_IMX_OCOTP_SCU
++	tristate "i.MX8 SCU On-Chip OTP Controller support"
++	depends on IMX_SCU
++	help
++	  This is a driver for the SCU On-Chip OTP Controller (OCOTP)
++	  available on i.MX8 SoCs.
 +
-+Optional Child nodes:
+ config NVMEM_LPC18XX_EEPROM
+ 	tristate "NXP LPC18XX EEPROM Memory Support"
+ 	depends on ARCH_LPC18XX || COMPILE_TEST
+diff --git a/drivers/nvmem/Makefile b/drivers/nvmem/Makefile
+index 2ece8ffffdda..30d653d34e57 100644
+--- a/drivers/nvmem/Makefile
++++ b/drivers/nvmem/Makefile
+@@ -13,6 +13,8 @@ obj-$(CONFIG_NVMEM_IMX_IIM)	+= nvmem-imx-iim.o
+ nvmem-imx-iim-y			:= imx-iim.o
+ obj-$(CONFIG_NVMEM_IMX_OCOTP)	+= nvmem-imx-ocotp.o
+ nvmem-imx-ocotp-y		:= imx-ocotp.o
++obj-$(CONFIG_NVMEM_IMX_OCOTP_SCU)	+= nvmem-imx-ocotp-scu.o
++nvmem-imx-ocotp-scu-y		:= imx-ocotp-scu.o
+ obj-$(CONFIG_NVMEM_LPC18XX_EEPROM)	+= nvmem_lpc18xx_eeprom.o
+ nvmem_lpc18xx_eeprom-y	:= lpc18xx_eeprom.o
+ obj-$(CONFIG_NVMEM_LPC18XX_OTP)	+= nvmem_lpc18xx_otp.o
+diff --git a/drivers/nvmem/imx-ocotp-scu.c b/drivers/nvmem/imx-ocotp-scu.c
+new file mode 100644
+index 000000000000..d9dc482ecb2f
+--- /dev/null
++++ b/drivers/nvmem/imx-ocotp-scu.c
+@@ -0,0 +1,161 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * i.MX8 OCOTP fusebox driver
++ *
++ * Copyright 2019 NXP
++ *
++ * Peng Fan <peng.fan@nxp.com>
++ */
 +
-+- Data cells of ocotp:
-+  Detailed bindings are described in bindings/nvmem/nvmem.txt
++#include <linux/firmware/imx/sci.h>
++#include <linux/module.h>
++#include <linux/nvmem-provider.h>
++#include <linux/of_device.h>
++#include <linux/platform_device.h>
++#include <linux/slab.h>
 +
- Example (imx8qxp):
- -------------
- aliases {
-@@ -177,6 +189,16 @@ firmware {
- 			...
- 		};
- 
-+		ocotp: imx8qx-ocotp {
-+			compatible = "fsl,imx8qxp-scu-ocotp";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
++enum ocotp_devtype {
++	IMX8QXP,
++};
 +
-+			fec_mac0: mac@2c4 {
-+				reg = <0x2c4 8>;
-+			};
-+		};
++struct ocotp_devtype_data {
++	int devtype;
++	int nregs;
++};
 +
- 		pd: imx8qx-pd {
- 			compatible = "fsl,imx8qxp-scu-pd", "fsl,scu-pd";
- 			#power-domain-cells = <1>;
++struct ocotp_priv {
++	struct device *dev;
++	const struct ocotp_devtype_data *data;
++	struct imx_sc_ipc *nvmem_ipc;
++};
++
++struct imx_sc_msg_misc_fuse_read {
++	struct imx_sc_rpc_msg hdr;
++	u32 word;
++} __packed;
++
++static struct ocotp_devtype_data imx8qxp_data = {
++	.devtype = IMX8QXP,
++	.nregs = 800,
++};
++
++static int imx_sc_misc_otp_fuse_read(struct imx_sc_ipc *ipc, u32 word,
++				     u32 *val)
++{
++	struct imx_sc_msg_misc_fuse_read msg;
++	struct imx_sc_rpc_msg *hdr = &msg.hdr;
++	int ret;
++
++	hdr->ver = IMX_SC_RPC_VERSION;
++	hdr->svc = IMX_SC_RPC_SVC_MISC;
++	hdr->func = IMX_SC_MISC_FUNC_OTP_FUSE_READ;
++	hdr->size = 2;
++
++	msg.word = word;
++
++	ret = imx_scu_call_rpc(ipc, &msg, true);
++	if (ret)
++		return ret;
++
++	*val = msg.word;
++
++	return 0;
++}
++
++static int imx_scu_ocotp_read(void *context, unsigned int offset,
++			      void *val, size_t bytes)
++{
++	struct ocotp_priv *priv = context;
++	u32 count, index, num_bytes;
++	u32 *buf;
++	void *p;
++	int i, ret;
++
++	index = offset >> 2;
++	num_bytes = round_up((offset % 4) + bytes, 4);
++	count = num_bytes >> 2;
++
++	if (count > (priv->data->nregs - index))
++		count = priv->data->nregs - index;
++
++	p = kzalloc(num_bytes, GFP_KERNEL);
++	if (!p)
++		return -ENOMEM;
++
++	buf = p;
++
++	for (i = index; i < (index + count); i++) {
++		if (priv->data->devtype == IMX8QXP) {
++			if ((i > 271) && (i < 544)) {
++				*buf++ = 0;
++				continue;
++			}
++		}
++
++		ret = imx_sc_misc_otp_fuse_read(priv->nvmem_ipc, i, buf);
++		if (ret) {
++			kfree(p);
++			return ret;
++		}
++		buf++;
++	}
++
++	memcpy(val, (u8 *)p + offset % 4, bytes);
++
++	kfree(p);
++
++	return 0;
++}
++
++static struct nvmem_config imx_scu_ocotp_nvmem_config = {
++	.name = "imx-scu-ocotp",
++	.read_only = true,
++	.word_size = 4,
++	.stride = 1,
++	.owner = THIS_MODULE,
++	.reg_read = imx_scu_ocotp_read,
++};
++
++static const struct of_device_id imx_scu_ocotp_dt_ids[] = {
++	{ .compatible = "fsl,imx8qxp-scu-ocotp", (void *)&imx8qxp_data },
++	{ },
++};
++MODULE_DEVICE_TABLE(of, imx_scu_ocotp_dt_ids);
++
++static int imx_scu_ocotp_probe(struct platform_device *pdev)
++{
++	struct device *dev = &pdev->dev;
++	struct ocotp_priv *priv;
++	struct nvmem_device *nvmem;
++	int ret;
++
++	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
++	if (!priv)
++		return -ENOMEM;
++
++	ret = imx_scu_get_handle(&priv->nvmem_ipc);
++	if (ret)
++		return ret;
++
++	priv->data = of_device_get_match_data(dev);
++	priv->dev = dev;
++	imx_scu_ocotp_nvmem_config.size = 4 * priv->data->nregs;
++	imx_scu_ocotp_nvmem_config.dev = dev;
++	imx_scu_ocotp_nvmem_config.priv = priv;
++	nvmem = devm_nvmem_register(dev, &imx_scu_ocotp_nvmem_config);
++
++	return PTR_ERR_OR_ZERO(nvmem);
++}
++
++static struct platform_driver imx_scu_ocotp_driver = {
++	.probe	= imx_scu_ocotp_probe,
++	.driver = {
++		.name	= "imx_scu_ocotp",
++		.of_match_table = imx_scu_ocotp_dt_ids,
++	},
++};
++module_platform_driver(imx_scu_ocotp_driver);
++
++MODULE_AUTHOR("Peng Fan <peng.fan@nxp.com>");
++MODULE_DESCRIPTION("i.MX8 SCU OCOTP fuse box driver");
++MODULE_LICENSE("GPL v2");
 -- 
 2.16.4
 
