@@ -2,72 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 629231FB3E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 21:48:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CAFB61FB5B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 22:04:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ymuCq+sJERNze9sTwJAZnnuOshjPZ7SAFg18eXLY+Q8=; b=K0GxSRQIBqWcek
-	3N3aQqg7lfTD+Xh44PwEv6cuYAZRhwtH7Tbxn+O/GWNbSpuQvf3PJ8lU6aSuLAmU5ASiArWfClXSa
-	i5aWCe3IFg/y+i11UsKybT08tbvKgk/EpUSUhT0rcRlW0Fjpwtj7OwTX2R078Ssw2cCteQkxCIecF
-	EboowZkEpaMaETHg+HFTjXrTUw1YrGHOWvyGJa/oTeHN7TwB2dQ6syxQF9IBPL1S1KRO25L76V/br
-	L1St6m1syabUfZcH5Ktr6Vrg12PxprSFtO3TMW0qy2pOTmWiV45rm78qKZYBKKdn5mQ7pWB/JNDOr
-	6fV6iIJEuG4iWlGF6c9w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8qoApGj1hAxp0uEwhNN07MQfbgG4A7rfBEgJdW6hrl4=; b=S/u0S5+iCQxIwC
+	ubDd1bD4iFfMNvSpqAevoTEjJlTYSc5X03kXRgHI1ZYi9gCEtgv5DOJN8mYyw5Q4oMtSMDygGlc6u
+	I7AlIdL/qAwg1p9WeNYgTIL9MEJ7t6snosNtvZnmXvqBF5dPmW85olrH0tLw/PGYd3B2XWWcBrI2c
+	RDAeWWcCa3DZ6DwCGtP3QPnhWV1dcmYJRwZ1Wg8bvttObUVgfDMKxSUT2vwjVAawDz5buZqKIDsXF
+	C0GgkC51AmdUEN0Bd0RfbC5+L+jWnHm+AqkJRcXEZLQYRjoAVSkCXVzVmNqh7fAUvnaVcIGrwe0S6
+	j2Y10fo8IJU5AVOn14wQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQztF-0001Ys-Oj; Wed, 15 May 2019 19:48:37 +0000
-Received: from mail-qt1-f194.google.com ([209.85.160.194])
+	id 1hR08x-0007XP-I9; Wed, 15 May 2019 20:04:51 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQzt8-0001Y6-PW
- for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 19:48:32 +0000
-Received: by mail-qt1-f194.google.com with SMTP id a17so1177258qth.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 May 2019 12:48:30 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=1XzA8KKXnG7IsFptuBpManSyTGyPz388NMXv8Lq1udo=;
- b=THMr2mXzCoWq+wwhwMTKKmGv9ux6nd8ZmspkJZsy/8k7r9GcG6oIcmGfDHFxDYhzh+
- tqmZJ8GPnwEkQp1BWm6lq/R5AG81bW7JOBJmVE4jDpTZNlxIWm7K/j86wx/40+BotTcW
- 6srkmVSG6JdLuVaHuyYFr4ZXpAe4rOynn0uuY+89ueUkv8L4xRCvyMAqnU6C7lT7pNVQ
- B+QhmfmGs1/brWX9C6DBwwVw0mRC6RaI4W3DbbWr1MP06r8Qut6UKmjfOUjAMYjIy4Be
- eh+n6P4ysJSEfYfnrTm8QKTQvZfSJSPp9sF+GsdNUsGjLZEsaRe6+vqmS0UKPkqcnEDp
- 959w==
-X-Gm-Message-State: APjAAAWgfZ33aNkE8p4+yDpusjqUqMP2wSHn1baXkFhSjzu92PA6czeF
- KuD3X043o4rTVWqUt+z/eD5HrA==
-X-Google-Smtp-Source: APXvYqw+OcaWJBOGF7NwWvMvQF3ur2OZsWCF9fQK3IcjgqNnKRnAdaqprpAmOs7XYKyf8hLi6JhjHA==
-X-Received: by 2002:a0c:819d:: with SMTP id 29mr33540697qvd.123.1557949709246; 
- Wed, 15 May 2019 12:48:29 -0700 (PDT)
-Received: from labbott-redhat.redhat.com ([2601:602:9800:dae6::e443])
- by smtp.gmail.com with ESMTPSA id s17sm1903957qke.60.2019.05.15.12.48.28
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 15 May 2019 12:48:28 -0700 (PDT)
-From: Laura Abbott <labbott@redhat.com>
-To: Masahiro Yamada <yamada.masahiro@socionext.com>,
- Will Deacon <will.deacon@arm.com>
-Subject: [PATCH] arm64: vdso: Explicitly add build-id option
-Date: Wed, 15 May 2019 12:48:24 -0700
-Message-Id: <20190515194824.5641-1-labbott@redhat.com>
-X-Mailer: git-send-email 2.21.0
+ id 1hR08n-0007T8-FZ; Wed, 15 May 2019 20:04:43 +0000
+Received: from ip5f5a6320.dynamic.kabel-deutschland.de ([95.90.99.32]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1hR08h-0000bv-3f; Wed, 15 May 2019 22:04:35 +0200
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Douglas Anderson <dianders@chromium.org>
+Subject: Re: [PATCH 2/2] drm/rockchip: dw_hdmi: Handle suspend/resume
+Date: Wed, 15 May 2019 22:04:34 +0200
+Message-ID: <16767939.RRcxLiLXmc@diego>
+In-Reply-To: <20190502223808.185180-2-dianders@chromium.org>
+References: <20190502223808.185180-1-dianders@chromium.org>
+ <20190502223808.185180-2-dianders@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_124830_831810_9191B50D 
-X-CRM114-Status: GOOD (  10.02  )
+X-CRM114-CacheID: sfid-20190515_130441_724426_B36BDAF6 
+X-CRM114-Status: UNSURE (   8.84  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.194 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.194 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -79,37 +56,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Laura Abbott <labbott@redhat.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-rockchip@lists.infradead.org, David Airlie <airlied@linux.ie>,
+ Neil Armstrong <narmstrong@baylibre.com>, Sandy Huang <hjc@rock-chips.com>,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ Andrzej Hajda <a.hajda@samsung.com>, mka@chromium.org,
+ Sean Paul <seanpaul@chromium.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Commit 691efbedc60d ("arm64: vdso: use $(LD) instead of $(CC) to
-link VDSO") switched to using LD explicitly. The --build-id option
-needs to be passed explicitly, similar to x86. Add this option.
+Am Freitag, 3. Mai 2019, 00:38:08 CEST schrieb Douglas Anderson:
+> On Rockchip rk3288-based Chromebooks when you do a suspend/resume
+> cycle:
+> 
+> 1. You lose the ability to detect an HDMI device being plugged in.
+> 
+> 2. If you're using the i2c bus built in to dw_hdmi then it stops
+> working.
+> 
+> Let's call the core dw-hdmi's suspend/resume functions to restore
+> things.
+> 
+> NOTE: in downstream Chrome OS (based on kernel 3.14) we used the
+> "late/early" versions of suspend/resume because we found that the VOP
+> was sometimes resuming before dw_hdmi and then calling into us before
+> we were fully resumed.  For now I have gone back to the normal
+> suspend/resume because I can't reproduce the problems.
+> 
+> Signed-off-by: Douglas Anderson <dianders@chromium.org>
 
-Fixes: 691efbedc60d ("arm64: vdso: use $(LD) instead of $(CC) to link VDSO")
-Signed-off-by: Laura Abbott <labbott@redhat.com>
----
- arch/arm64/kernel/vdso/Makefile | 1 +
- 1 file changed, 1 insertion(+)
+Reviewed-by: Heiko Stuebner <heiko@sntech.de>
 
-diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
-index 744b9dbaba03..ca209103cd06 100644
---- a/arch/arm64/kernel/vdso/Makefile
-+++ b/arch/arm64/kernel/vdso/Makefile
-@@ -13,6 +13,7 @@ targets := $(obj-vdso) vdso.so vdso.so.dbg
- obj-vdso := $(addprefix $(obj)/, $(obj-vdso))
- 
- ldflags-y := -shared -nostdlib -soname=linux-vdso.so.1 \
-+		$(call ld-option, --build-id) \
- 		$(call ld-option, --hash-style=sysv) -n -T
- 
- # Disable gcov profiling for VDSO code
--- 
-2.21.0
+
 
 
 _______________________________________________
