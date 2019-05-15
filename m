@@ -2,98 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CC7C1E7C6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 07:01:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D09FC1E7CE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 07:06:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
-	References:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f2t96bxwox6yVXYEdTmvERHUaScX/X4Du01wGanciTc=; b=ogrzkwpmG5pgKc
-	WceKknoW/Jk3+fqv4JlbpJAqQDIwKNnjIHYJ2JOWd5Hfe1+Bgur5iYKqLWZrRAqGYWmeQ+/Q9mJS6
-	2SAbV7W1GxfONyYIPNp3n9QZSDAHxw5eywZUMaUiH2EoeBEXxSX8JXeL1962B38UqLo2aosWlAi9H
-	r9mSiJdq8Mgc1gSOcIHNB8my/8oeNwxfKiQ4/Ys1HcYmwh9spfhJfcHvxPV6ITgqzJm89JUi8cbwR
-	IiXyDfGxFBJixpqQFnr1wQFmnMmUafqdiiVeFSrvZCKMO1KXC2FBH25+A6UcGoPnfI/SNRE/lbTJs
-	KhIA+GDMtf43rRFtGjxQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=clbiTtcv/9CxFAJhsbZpVfBWFaf+5qBlFN2RVrAELk8=; b=QiF44/NZA8Ov9pvqraHGw7+XL
+	1w+Fcuc6bRCVkB31c5A9LIai644xFSDaIsHOnkdxU2aCr7MVwJ8K8BvHzuQXR4Pi+i8Y0RTrlNoHo
+	t/aKHt7+1FI5MYDOrssxP72RWqEqM9fjusBQAqIU0rUl+daMWpCA+d1BNUDk5/g61GPSrlFAndCcG
+	oOOtZPpTO6XDg19D803wXzbNDpBl3T7L3pJbOwP0RqELoLM6Nqz6aHtFwlzQFDLA48ebcCaxtbwYJ
+	WLF905N3ZRue5ql3CSkK+CjPLRtrX1aKds+iYJ9SyCM548Mhd0GgdS8I9iVoFbSsKCmutCwWZzMvv
+	YDYWLE0gA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQm2e-00068Q-Mv; Wed, 15 May 2019 05:01:24 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1hQm7o-0007g7-0O; Wed, 15 May 2019 05:06:44 +0000
+Received: from mail-pl1-f193.google.com ([209.85.214.193])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQm2W-00067O-FC
- for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 05:01:18 +0000
-Received: from pps.filterd (m0098417.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x4F4vS1G128219
- for <linux-arm-kernel@lists.infradead.org>; Wed, 15 May 2019 01:01:12 -0400
-Received: from e06smtp07.uk.ibm.com (e06smtp07.uk.ibm.com [195.75.94.103])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2sg926q4ks-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Wed, 15 May 2019 01:01:12 -0400
-Received: from localhost
- by e06smtp07.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-arm-kernel@lists.infradead.org> from <rppt@linux.ibm.com>;
- Wed, 15 May 2019 06:01:10 +0100
-Received: from b06cxnps4076.portsmouth.uk.ibm.com (9.149.109.198)
- by e06smtp07.uk.ibm.com (192.168.101.137) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Wed, 15 May 2019 06:01:03 +0100
-Received: from d06av23.portsmouth.uk.ibm.com (d06av23.portsmouth.uk.ibm.com
- [9.149.105.59])
- by b06cxnps4076.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x4F512xp42795236
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 15 May 2019 05:01:02 GMT
-Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 8CD14A4057;
- Wed, 15 May 2019 05:01:02 +0000 (GMT)
-Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 36EDBA406E;
- Wed, 15 May 2019 05:01:01 +0000 (GMT)
-Received: from rapoport-lnx (unknown [9.148.8.112])
- by d06av23.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
- Wed, 15 May 2019 05:01:01 +0000 (GMT)
-Date: Wed, 15 May 2019 08:00:59 +0300
-From: Mike Rapoport <rppt@linux.ibm.com>
-To: Stephen Boyd <swboyd@chromium.org>
-Subject: Re: [PATCH v2 2/2] amr64: map FDT as RW for early_init_dt_scan()
-References: <20190513003819.356-1-hsinyi@chromium.org>
- <20190513003819.356-2-hsinyi@chromium.org>
- <20190513085853.GB9271@rapoport-lnx>
- <CAJMQK-hKrU2J0_uGe3eO_JTNwM=HRkXbDx2u45izcdD7wqwGeQ@mail.gmail.com>
- <155786794318.14659.2925897827978978040@swboyd.mtv.corp.google.com>
+ id 1hQm7f-0007f4-EX
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 05:06:38 +0000
+Received: by mail-pl1-f193.google.com with SMTP id p15so721409pll.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 14 May 2019 22:06:34 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=+qom0Qn6LwXg8UJkqiMrz8BQabBvoo+xpSl9SHnkWOY=;
+ b=TNOO3lsQ0wAT9tdpf46JyuEghO66mPp4nm1aA91sxKzSwaQaOKSq63/cZlQVHzs3or
+ 1sjFnnzWZ0/egPMxJ6T5j0oeSJ3GeknEw2sHcB6yAXO0RNefbQMD7mnwBIc3aHXNXJo5
+ 0rdZXHxuIm8Ks83wJu5zXAkMweb70mHqlGByjYkJTddujK9TTURhsBeeDq1FlY6R/ZQY
+ cvkZ71Vh7+AcXgVtWjos6qK306wtqyExOjpY+OFIV+90KcLvMQFnIMlvzcTXfgnkw7gA
+ sosGugxhj276m7mXSaOoxl8aQSulq+NP5MbZilTscjhWQPHvhjvDV6X2hYPvFDdcJHWn
+ HO4Q==
+X-Gm-Message-State: APjAAAX+2yXSkksuVwoIov1bqaPEQvYYQXBt5GmQumknFkSxPEx5shkk
+ WCZb+ElLEMDh6DJAFESqS6bq+A==
+X-Google-Smtp-Source: APXvYqydcRf68wup3tmXCJXop6KI1ZxTGUxdyH6wtMYn4HOqUMhx5MO0r5tKJnQQFTgrfoAnruhVow==
+X-Received: by 2002:a17:902:2e83:: with SMTP id
+ r3mr26825633plb.139.1557896794167; 
+ Tue, 14 May 2019 22:06:34 -0700 (PDT)
+Received: from localhost.localdomain ([106.215.121.117])
+ by smtp.gmail.com with ESMTPSA id v81sm1354825pfa.16.2019.05.14.22.06.26
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 14 May 2019 22:06:32 -0700 (PDT)
+Subject: Re: [PATCH 0/4] support reserving crashkernel above 4G on arm64 kdump
+To: Chen Zhou <chenzhou10@huawei.com>, catalin.marinas@arm.com,
+ will.deacon@arm.com, akpm@linux-foundation.org, ard.biesheuvel@linaro.org,
+ rppt@linux.ibm.com, tglx@linutronix.de, mingo@redhat.com, bp@alien8.de,
+ ebiederm@xmission.com
+References: <20190507035058.63992-1-chenzhou10@huawei.com>
+From: Bhupesh Sharma <bhsharma@redhat.com>
+Message-ID: <a9d017d0-82d3-3e5f-4af2-4c611393106d@redhat.com>
+Date: Wed, 15 May 2019 10:36:24 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.2.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <155786794318.14659.2925897827978978040@swboyd.mtv.corp.google.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-TM-AS-GCONF: 00
-x-cbid: 19051505-0028-0000-0000-0000036DCC02
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19051505-0029-0000-0000-0000242D606A
-Message-Id: <20190515050059.GA4081@rapoport-lnx>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-15_05:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1810050000 definitions=main-1905150031
+In-Reply-To: <20190507035058.63992-1-chenzhou10@huawei.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_220116_634891_BFD39BAC 
-X-CRM114-Status: GOOD (  32.58  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190514_220635_484328_14FD04B0 
+X-CRM114-Status: GOOD (  24.17  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.214.193 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.214.193 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -105,76 +87,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Architecture Mailman List <boot-architecture@lists.linaro.org>,
- Michal Hocko <mhocko@suse.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>, linux-kernel@vger.kernel.org,
- Will Deacon <will.deacon@arm.com>, Miles Chen <miles.chen@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>, James Morse <james.morse@arm.com>,
- Hsin-Yi Wang <hsinyi@chromium.org>, Andrew Murray <andrew.murray@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Frank Rowand <frowand.list@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: wangkefeng.wang@huawei.com, takahiro.akashi@linaro.org,
+ "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org, horms@verge.net.au,
+ Bhupesh SHARMA <bhupesh.linux@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 14, 2019 at 02:05:43PM -0700, Stephen Boyd wrote:
-> Quoting Hsin-Yi Wang (2019-05-13 04:14:32)
-> > On Mon, May 13, 2019 at 4:59 PM Mike Rapoport <rppt@linux.ibm.com> wrote:
-> > 
-> > >
-> > > This makes the fdt mapped without the call to meblock_reserve(fdt) which
-> > > makes the fdt memory available for memblock allocations.
-> > >
-> > > Chances that is will be actually allocated are small, but you know, things
-> > > happen.
-> > >
-> > > IMHO, instead of calling directly __fixmap_remap_fdt() it would be better
-> > > to add pgprot parameter to fixmap_remap_fdt(). Then here and in kaslr.c it
-> > > can be called with PAGE_KERNEL and below with PAGE_KERNEL_RO.
-> > >
-> > > There is no problem to call memblock_reserve() for the same area twice,
-> > > it's essentially a NOP.
-> > >
-> > Thanks for the suggestion. Will update fixmap_remap_fdt() in next patch.
-> > 
-> > However, I tested on some arm64 platform, if we also call
-> > memblock_reserve() in kaslr.c, would cause warning[1] when
-> > memblock_reserve() is called again in setup_machine_fdt(). The warning
-> > comes from https://elixir.bootlin.com/linux/latest/source/mm/memblock.c#L601
-> > ```
-> > if (type->regions[0].size == 0) {
-> >   WARN_ON(type->cnt != 1 || type->total_size);
-> >   ...
-> > ```
-> > 
-> > Call memblock_reserve() multiple times after setup_machine_fdt()
-> > doesn't have such warning though.
-> > 
-> > I didn't trace the real reason causing this. But in this case, maybe
-> > don't call memblock_reserve() in kaslr?
-> > 
++Cc kexec-list.
+
+Hi Chen,
+
+I think we are still in the quiet period of the merge cycle, but this is 
+a change which will be useful for systems like HPE Apollo where we are 
+looking at reserving crashkernel across a larger range.
+
+Some comments inline and in respective patch threads..
+
+On 05/07/2019 09:20 AM, Chen Zhou wrote:
+> This patch series enable reserving crashkernel on high memory in arm64.
+
+Please fix the patch subject, it should be v5.
+Also please Cc the kexec-list (kexec@lists.infradead.org) for future 
+versions to allow wider review of the patchset.
+
+> We use crashkernel=X to reserve crashkernel below 4G, which will fail
+> when there is no enough memory. Currently, crashkernel=Y@X can be used
+> to reserve crashkernel above 4G, in this case, if swiotlb or DMA buffers
+> are requierd, capture kernel will boot failure because of no low memory.
+
+... ^^ required
+
+s/capture kernel will boot failure because of no low memory./capture 
+kernel boot will fail because there is no low memory available for 
+allocation.
+
+> When crashkernel is reserved above 4G in memory, kernel should reserve
+> some amount of low memory for swiotlb and some DMA buffers. So there may
+> be two crash kernel regions, one is below 4G, the other is above 4G. Then
+> Crash dump kernel reads more than one crash kernel regions via a dtb
+> property under node /chosen,
+> linux,usable-memory-range = <BASE1 SIZE1 [BASE2 SIZE2]>.
+
+Please use consistent naming for the second kernel, better to use crash 
+dump kernel.
+
+I have tested this on my HPE Apollo machine and with 
+crashkernel=886M,high syntax, I can get the board to reserve a larger 
+memory range for the crashkernel (i.e. 886M):
+
+# dmesg | grep -i crash
+[    0.000000] kexec_core: Reserving 256MB of low memory at 3560MB for 
+crashkernel (System low RAM: 2029MB)
+[    0.000000] crashkernel reserved: 0x0000000bc5a00000 - 
+0x0000000bfd000000 (886 MB)
+
+kexec/kdump can also work also work fine on the board.
+
+So, with the changes suggested in this cover letter and individual 
+patches, please feel free to add:
+
+Reviewed-and-Tested-by: Bhupesh Sharma <bhsharma@redhat.com>
+
+Thanks,
+Bhupesh
+
+> Besides, we need to modify kexec-tools:
+>    arm64: support more than one crash kernel regions(see [1])
 > 
-> Why not just have fixmap_remap_fdt() that maps it as RW and reserves
-> memblock once, and then call __fixmap_remap_fdt() with RO after
-> early_init_dt_scan() or unflatten_device_tree() is called? Why the
-> desire to call memblock_reserve() twice or even three times?
-
-There's no desire to call memblock_reserve() twice. It's just that leaving
-the call for it in kaslr rather than in setup_arch() may end up with
-unreserved FDT because kaslr was disabled or even compiled out.
-
-I've suggested to use fixmap_remap_fdt() everywhere because IMHO this
-improves readability and allows to un-export __fixmap_remap_fdt().
-
--- 
-Sincerely yours,
-Mike.
+> I post this patch series about one month ago. The previous changes and
+> discussions can be retrived from:
+> 
+> Changes since [v4]
+> - reimplement memblock_cap_memory_ranges for multiple ranges by Mike.
+> 
+> Changes since [v3]
+> - Add memblock_cap_memory_ranges back for multiple ranges.
+> - Fix some compiling warnings.
+> 
+> Changes since [v2]
+> - Split patch "arm64: kdump: support reserving crashkernel above 4G" as
+>    two. Put "move reserve_crashkernel_low() into kexec_core.c" in a separate
+>    patch.
+> 
+> Changes since [v1]:
+> - Move common reserve_crashkernel_low() code into kernel/kexec_core.c.
+> - Remove memblock_cap_memory_ranges() i added in v1 and implement that
+>    in fdt_enforce_memory_region().
+>    There are at most two crash kernel regions, for two crash kernel regions
+>    case, we cap the memory range [min(regs[*].start), max(regs[*].end)]
+>    and then remove the memory range in the middle.
+> 
+> [1]: http://lists.infradead.org/pipermail/kexec/2019-April/022792.html
+> [v1]: https://lkml.org/lkml/2019/4/2/1174
+> [v2]: https://lkml.org/lkml/2019/4/9/86
+> [v3]: https://lkml.org/lkml/2019/4/9/306
+> [v4]: https://lkml.org/lkml/2019/4/15/273
+> 
+> Chen Zhou (3):
+>    x86: kdump: move reserve_crashkernel_low() into kexec_core.c
+>    arm64: kdump: support reserving crashkernel above 4G
+>    kdump: update Documentation about crashkernel on arm64
+> 
+> Mike Rapoport (1):
+>    memblock: extend memblock_cap_memory_range to multiple ranges
+> 
+>   Documentation/admin-guide/kernel-parameters.txt |  6 +--
+>   arch/arm64/include/asm/kexec.h                  |  3 ++
+>   arch/arm64/kernel/setup.c                       |  3 ++
+>   arch/arm64/mm/init.c                            | 72 +++++++++++++++++++------
+>   arch/x86/include/asm/kexec.h                    |  3 ++
+>   arch/x86/kernel/setup.c                         | 66 +++--------------------
+>   include/linux/kexec.h                           |  5 ++
+>   include/linux/memblock.h                        |  2 +-
+>   kernel/kexec_core.c                             | 56 +++++++++++++++++++
+>   mm/memblock.c                                   | 44 +++++++--------
+>   10 files changed, 157 insertions(+), 103 deletions(-)
+> 
 
 
 _______________________________________________
