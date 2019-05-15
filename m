@@ -2,78 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F1C21EA0E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 10:24:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 824001EA14
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 10:25:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7YBH/StDXDaVPyuIOPO6512XnMK78L7KVwl5Bvl/9Q4=; b=lygX6ehedQICgl
-	RVQdr2RepA7mehrZXlC25/iFp7whLV0OTwT4x7NZHO6VpAr9+9XZMUcHHG1APCk02uZKP/WYdEDN2
-	L/O6ljUlsrJH0TiVlm0jqoTqM+AeKwJSKfnNzMbWWBiJRBsOk/pZlh0lD1ow/Vz0IQV4Uzs+vrjMj
-	mhNm8Hkmw+wpZQ4hIYSMM1ItGv+APxl1L+gcSIwQZKnqLgEqSNTV8vdWxUn7naPbX9CHuaZUZT0Cz
-	Zf7eHYK6vuLP4PcGtfRvOh8GD+6WDAgbc0TGAKyB2Ik9jEh1D336R2KrSctuSHg6QaNO6EQgH42Tr
-	W6cGEMW/DwEZJXeM8YqQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3/HyfktfIkooq3E/VPUuVJ4EX2MEOfGI64C4uuE+Jcc=; b=BKLDaFRqxyF47C
+	8UVRBAGn2V8OQoY27iyivsZKYZdPSEK6Hlds4fEk0pN6ANcS8AxfifFhN6jdQ81PeCK0w8OUoyNoc
+	PVtzbryX6TYh4IYoT074LSz0Hcr22HzGDex/s60M+geHA7JZNMeirI+KPf+PRLXhGXkqj17Emz0gb
+	45nx9NHALGEVY8ihnFRjr8Iu1foKA6d677zpsR2uZu+22CHz0JDZYynmUTe9tQBe5KGGmV1dyJNUK
+	+ykb8et/45NlNqCSB95bySA3s8W61zhafMNFdQnMUHBTFSBYrj5TBq5W1ifvPGEGUk7FZscs+fiwT
+	PmoIViDL/+NalVjM9+pQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQpCl-0000Dh-9s; Wed, 15 May 2019 08:24:03 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hQpEB-0001dK-O9; Wed, 15 May 2019 08:25:31 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQpCH-0008Fd-IO
- for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 08:23:35 +0000
-Received: by mail-wr1-x441.google.com with SMTP id c5so1563770wrs.11
+ id 1hQpDu-0001cb-Iq
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 08:25:17 +0000
+Received: by mail-wr1-x442.google.com with SMTP id s17so1614094wru.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 May 2019 01:23:32 -0700 (PDT)
+ Wed, 15 May 2019 01:25:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=p7UfUoQHdw2V5T9OO4cQVjr7I+4K0hfjSDR08/46NM8=;
- b=JC6JGU/R5mOXdJnFMhHg9NhRrwjnm9/rq3d0NNAv8tm1qyeK4yIS8VFjmNXISdFTzc
- fGZzqtAKXwKFac0gFgiZXEqme9KgtGgepWpAZj+yhHPWdvQLj+lzANnWRy/cSXRQgxQl
- GQtgi135wmcDG8au3xgNbrRsNJt39/zUx+62UX+zRkZM/LaF5Ke9bLTqDSRF1Gb+h9wW
- ZVP0qNW30wCv5gjNQnuM9QMFko5v+O1VRLZsFZHnUDy9Sqin7ZUT9SuNgONbuhJt9uCN
- 9zN1aRLQ55opZWibPHxKzKe2PXBItE7xF/BCoGEzKX5ueYMNAkNA78i2ZhLNS2iYyHkF
- IQlA==
+ h=subject:to:cc:references:from:openpgp:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=1RJ4wJraO0JKEEKi7q0XAZAfeNAA5nMmUuCn84Wyo+M=;
+ b=FQcA4CgwUYbJJKI4XTcXfFC8PdZW9xysNz0dCBghlkQVjZyYgj2ux99SundzoibPt9
+ +9dx6lcIUSPlegcuL+YZoEhhFO9JqT20RmdSC0+NmG/ni1M4OTZCl30n8eLkqcT5+IBg
+ K2U+7kLWBI9oo4EBBdvatpF8221D/RSxfgCql3lg7CzERLJpccy8gy8g+eSBbtnGaPd1
+ 90kiWobbMBL+Zwz2gOSGY2TpsQXlbexLoQ5cIvFPytfBTPMxC69eZX1aY+Q09DzvDKac
+ 43c9qxVhcjg21LJzQEw2Vf6VfJ0J+vdTRoGhya9fEc6eV6YILbj3wMb8vI3J01HRmf3Y
+ UZKw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=p7UfUoQHdw2V5T9OO4cQVjr7I+4K0hfjSDR08/46NM8=;
- b=TF6PQRcxAbk8X5mBr2JY4AA1hvrF83X71o7x2BNffwKyEjtUyMFcOvIgPAdWkJeFJv
- nIKWx8h3Qx4QfD2JACmN4lTIUA9gltNDNBVVN4ddpPE/CmdH1lIIE3EufEXox4LSdpeN
- SsoXyfNQWbObPzCfjgdHLkUoox69QeZkYci1wfaJzYMr90xQCRVrqBiUCRNcNEgPfJv1
- 2B+3mNjhYRjn9TGKj5OaxFVy5ua9KDgaDlhTL/YaclmU4MiYcw9Exja9mpEItlnKvpKz
- BbEpXMTutw751jj6xCUMvpJIea/oENHoziAQw1um843IPf5t7QqDtVbUFgGnJQCzbTZT
- xSjw==
-X-Gm-Message-State: APjAAAXpJyaZsk9wnq4TpZzv3KeZlL2oZ9ybvG1BL3XJNutjtl7V4Tsa
- jPOrnPM8soAqj83n0Rx4Wg1GpnLn
-X-Google-Smtp-Source: APXvYqz91y91dnV4ymzUsPIk3oy6/2Qv8YL1PsZz/LsOBy8zoFbWLf+WGENcF7zET4VwvFgZtqyK0Q==
-X-Received: by 2002:a5d:658f:: with SMTP id q15mr14507822wru.213.1557908611333; 
- Wed, 15 May 2019 01:23:31 -0700 (PDT)
-Received: from kurokawa.lan (ip-86-49-110-70.net.upcbroadband.cz.
+ bh=1RJ4wJraO0JKEEKi7q0XAZAfeNAA5nMmUuCn84Wyo+M=;
+ b=OpIZnLRVa7KKqqkrT0pYwTxD0yFSRTkd+1+x2+TSO9nKTBGZlttZPaLR+08auHmmQX
+ YW5rPr23sE3PKbdrqsS+t1uY7m1EMJx0lhd2QEims+V6uQknjnWlc/5F2+ZM9mS+wz8K
+ 7lwpiMQX9clv9Yf8zWwgAQVDPuvsEUJdO0/QrT288piNDa6ZYx8b5a31VTfkP5Bu+ucn
+ EKlX3TDktFscaAbxWvdQzIyo0YzvxFnccJT+zLAm8Fxy9X8i2DdPrmXP9Krx7kAaSZ6n
+ yI0NBu8AbZUILXVW3SkKNhaLhU30SiCklcwxNE8iEWgBif82nq1//UEmXslQM6VK243m
+ 9w1Q==
+X-Gm-Message-State: APjAAAVEFINGmjD0pl8ND7nngdZsTGWhHxlbYnh0lAKtlWTthG2Lf9hg
+ naKboacrIKUuQM98z6wfbbU=
+X-Google-Smtp-Source: APXvYqxbfmImKl0PFsy8mOvTN8YOoICMxG0cTOqHUJtK7C18xUApX0Xl5Bw9RVCz3xS1U9v2fpsG/A==
+X-Received: by 2002:adf:dfc4:: with SMTP id q4mr21494130wrn.201.1557908712873; 
+ Wed, 15 May 2019 01:25:12 -0700 (PDT)
+Received: from [192.168.1.4] (ip-86-49-110-70.net.upcbroadband.cz.
  [86.49.110.70])
- by smtp.gmail.com with ESMTPSA id o8sm1970678wra.4.2019.05.15.01.23.30
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 15 May 2019 01:23:30 -0700 (PDT)
-From: marek.vasut@gmail.com
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V2] ARM: dts: r8a779x: Configure PMIC IRQ pinmux
-Date: Wed, 15 May 2019 10:23:26 +0200
-Message-Id: <20190515082326.6449-1-marek.vasut@gmail.com>
-X-Mailer: git-send-email 2.20.1
+ by smtp.gmail.com with ESMTPSA id v184sm1849944wma.6.2019.05.15.01.25.11
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Wed, 15 May 2019 01:25:11 -0700 (PDT)
+Subject: Re: [PATCH] ARM: dts: r8a779x: Configure PMIC IRQ pinmux
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+References: <20190502140634.4529-1-marek.vasut@gmail.com>
+ <CAMuHMdVGAq1XgSohBjc8i4c_o-N-yWGedS_LLS_Apr4Bx10xGQ@mail.gmail.com>
+ <fa79e656-d71a-6f3d-21a5-8acac72e20f0@gmail.com>
+ <CAMuHMdXrK7CMhBjFXAYX4wUPK=4Q2LpBCu+65-t5Y7-VjEBsog@mail.gmail.com>
+From: Marek Vasut <marek.vasut@gmail.com>
+Openpgp: preference=signencrypt
+Message-ID: <b0dd348d-2a14-96d4-da19-3984dfe1bbeb@gmail.com>
+Date: Wed, 15 May 2019 10:25:10 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <CAMuHMdXrK7CMhBjFXAYX4wUPK=4Q2LpBCu+65-t5Y7-VjEBsog@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_012333_634367_BD0A6A44 
-X-CRM114-Status: GOOD (  13.95  )
+X-CRM114-CacheID: sfid-20190515_012514_792917_3DEC2D24 
+X-CRM114-Status: GOOD (  18.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -96,191 +105,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-renesas-soc@vger.kernel.org,
+Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
  Simon Horman <horms+renesas@verge.net.au>,
  Geert Uytterhoeven <geert+renesas@glider.be>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
  Marek Vasut <marek.vasut+renesas@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Marek Vasut <marek.vasut+renesas@gmail.com>
+On 5/3/19 8:13 PM, Geert Uytterhoeven wrote:
+> Hi Marek,
 
-The PMIC IRQ line pin multiplexing configuration is missing from the DTs.
-Since the line is configured correctly by default, the system works fine.
-However, add the IRQ line pin multiplexing configuration for completeness.
+Hi,
 
-Signed-off-by: Marek Vasut <marek.vasut+renesas@gmail.com>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>
-Cc: Simon Horman <horms+renesas@verge.net.au>
-Cc: linux-renesas-soc@vger.kernel.org
-To: linux-arm-kernel@lists.infradead.org
----
-V2: Move the pin control node from iic3 controller to pmic on 7792 Blanche,
-    since there's only one PMIC on that board.
----
- arch/arm/boot/dts/r8a7790-lager.dts   | 7 +++++++
- arch/arm/boot/dts/r8a7790-stout.dts   | 7 ++++++-
- arch/arm/boot/dts/r8a7791-koelsch.dts | 7 +++++++
- arch/arm/boot/dts/r8a7791-porter.dts  | 7 +++++++
- arch/arm/boot/dts/r8a7792-blanche.dts | 7 +++++++
- arch/arm/boot/dts/r8a7793-gose.dts    | 7 +++++++
- 6 files changed, 41 insertions(+), 1 deletion(-)
+> On Fri, May 3, 2019 at 5:18 PM Marek Vasut <marek.vasut@gmail.com> wrote:
+>> On 5/3/19 2:36 PM, Geert Uytterhoeven wrote:
+>>>>  &rwdt {
+>>>> @@ -309,6 +314,8 @@
+>>>>  };
+>>>>
+>>>>  &iic3 {
+>>>> +       pinctrl-names = "default";
+>>>> +       pinctrl-0 = <&pmic_irq_pins>;
+>>>
+>>> Given Blanche has a single device connected to irq2, I think it makes
+>>> sense to move the pinctrl properties to the pmic node below.
+>>
+>> It makes blanche somehow inconsistent with the other boards, but if you
+>> insist ... ?
+> 
+> Typically the pinctrl properties are part of the device node that uses them.
+> For the other boards, that's not possible, as they are shared by all PMIC
+> nodes. Hence the other boards are the exceptions, actually ;-)
+> 
+> Note that for multi-PMIC boards, adding the pinctrl properties to a single
+> PMIC node won't work, as that would break:
+>   1. The case where the driver for that PMIC is not compiled in,
+>   2. The R-Car Gen2 regulator quirk.
 
-diff --git a/arch/arm/boot/dts/r8a7790-lager.dts b/arch/arm/boot/dts/r8a7790-lager.dts
-index 7b9508e83d46..d637b9727808 100644
---- a/arch/arm/boot/dts/r8a7790-lager.dts
-+++ b/arch/arm/boot/dts/r8a7790-lager.dts
-@@ -423,6 +423,8 @@
- 	 */
- 	i2cpwr: i2c-13 {
- 		compatible = "i2c-demux-pinctrl";
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pmic_irq_pins>;
- 		i2c-parent = <&iic3>, <&i2c3>;
- 		i2c-bus-name = "i2c-pwr";
- 		#address-cells = <1>;
-@@ -615,6 +617,11 @@
- 		function = "iic3";
- 	};
- 
-+	pmic_irq_pins: pmicirq {
-+		groups = "intc_irq2";
-+		function = "intc";
-+	};
-+
- 	hsusb_pins: hsusb {
- 		groups = "usb0_ovc_vbus";
- 		function = "usb0";
-diff --git a/arch/arm/boot/dts/r8a7790-stout.dts b/arch/arm/boot/dts/r8a7790-stout.dts
-index 7a7d3b84d1a6..ad68e6034b43 100644
---- a/arch/arm/boot/dts/r8a7790-stout.dts
-+++ b/arch/arm/boot/dts/r8a7790-stout.dts
-@@ -179,6 +179,11 @@
- 		function = "iic3";
- 	};
- 
-+	pmic_irq_pins: pmicirq {
-+		groups = "intc_irq2";
-+		function = "intc";
-+	};
-+
- 	usb0_pins: usb0 {
- 		groups = "usb0";
- 		function = "usb0";
-@@ -317,7 +322,7 @@
- 
- &iic3 {
- 	pinctrl-names = "default";
--	pinctrl-0 = <&iic3_pins>;
-+	pinctrl-0 = <&iic3_pins &pmic_irq_pins>;
- 	status = "okay";
- 
- 	pmic@58 {
-diff --git a/arch/arm/boot/dts/r8a7791-koelsch.dts b/arch/arm/boot/dts/r8a7791-koelsch.dts
-index e6580aa0cea3..a116bfc11f0b 100644
---- a/arch/arm/boot/dts/r8a7791-koelsch.dts
-+++ b/arch/arm/boot/dts/r8a7791-koelsch.dts
-@@ -540,6 +540,11 @@
- 		function = "intc";
- 	};
- 
-+	pmic_irq_pins: pmicirq {
-+		groups = "intc_irq2";
-+		function = "intc";
-+	};
-+
- 	sdhi0_pins: sd0 {
- 		groups = "sdhi0_data4", "sdhi0_ctrl";
- 		function = "sdhi0";
-@@ -776,6 +781,8 @@
- };
- 
- &i2c6 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pmic_irq_pins>;
- 	status = "okay";
- 	clock-frequency = <100000>;
- 
-diff --git a/arch/arm/boot/dts/r8a7791-porter.dts b/arch/arm/boot/dts/r8a7791-porter.dts
-index fefdf8238bbe..e08d257f5d0c 100644
---- a/arch/arm/boot/dts/r8a7791-porter.dts
-+++ b/arch/arm/boot/dts/r8a7791-porter.dts
-@@ -228,6 +228,11 @@
- 		function = "intc";
- 	};
- 
-+	pmic_irq_pins: pmicirq {
-+		groups = "intc_irq2";
-+		function = "intc";
-+	};
-+
- 	sdhi0_pins: sd0 {
- 		groups = "sdhi0_data4", "sdhi0_ctrl";
- 		function = "sdhi0";
-@@ -373,6 +378,8 @@
- };
- 
- &i2c6 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pmic_irq_pins>;
- 	status = "okay";
- 	clock-frequency = <100000>;
- 
-diff --git a/arch/arm/boot/dts/r8a7792-blanche.dts b/arch/arm/boot/dts/r8a7792-blanche.dts
-index b6fa80c3b07e..b7af14de7c8e 100644
---- a/arch/arm/boot/dts/r8a7792-blanche.dts
-+++ b/arch/arm/boot/dts/r8a7792-blanche.dts
-@@ -234,6 +234,11 @@
- 		groups = "du1_rgb666", "du1_sync", "du1_disp";
- 		function = "du1";
- 	};
-+
-+	pmic_irq_pins: pmicirq {
-+		groups = "intc_irq2";
-+		function = "intc";
-+	};
- };
- 
- &rwdt {
-@@ -314,6 +319,8 @@
- 	pmic@58 {
- 		compatible = "dlg,da9063";
- 		reg = <0x58>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pmic_irq_pins>;
- 		interrupt-parent = <&irqc>;
- 		interrupts = <2 IRQ_TYPE_LEVEL_LOW>;
- 		interrupt-controller;
-diff --git a/arch/arm/boot/dts/r8a7793-gose.dts b/arch/arm/boot/dts/r8a7793-gose.dts
-index f51601af89a2..9984ebf06695 100644
---- a/arch/arm/boot/dts/r8a7793-gose.dts
-+++ b/arch/arm/boot/dts/r8a7793-gose.dts
-@@ -514,6 +514,11 @@
- 		function = "intc";
- 	};
- 
-+	pmic_irq_pins: pmicirq {
-+		groups = "intc_irq2";
-+		function = "intc";
-+	};
-+
- 	sdhi0_pins: sd0 {
- 		groups = "sdhi0_data4", "sdhi0_ctrl";
- 		function = "sdhi0";
-@@ -711,6 +716,8 @@
- };
- 
- &i2c6 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pmic_irq_pins>;
- 	status = "okay";
- 	clock-frequency = <100000>;
- 
+Well it wouldn't work because it's shared by two PMICs and thus two
+driver instances in the first place.
+
 -- 
-2.20.1
-
+Best regards,
+Marek Vasut
 
 _______________________________________________
 linux-arm-kernel mailing list
