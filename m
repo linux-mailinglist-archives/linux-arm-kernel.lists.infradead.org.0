@@ -2,98 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D85B1EDCD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 13:14:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C0DE81EF75
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 13:35:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vulZ2j4Yjzw46KtGxRUnxYsXz8LBMul/8rBASamOl8Y=; b=SGKQUjAaqBH7Cc
-	TQH9Arsg7NIZH5ChT3LW+E7WruviM9lSHVCUWShlMRj1ZZgS9lJaDqTK3NlVpZBsweCxY4hJN/H9y
-	5pX3O1RTAkk2hkS9B7tvrpfjuHg86FmWxFf+bkhgc7IlwU+YAalPHYVu1UClSRAWRIT2e74NgiFZT
-	lWY6tptiTWPNIRS5lc+ES70c+92A2ANmyNZfxWNW0smuQrpME1riqANAioD7S4wBqzBPPlsQnDpXe
-	gPsEh2zRzvbqcBTO3NRRvgK+KOREqG+RZIcoVK9LJmHriyqYzypguiOy0oQvIGF9t4gBstcW1x0/X
-	aIBhs+TWRz/+Q8TjZxYQ==;
+	List-Owner; bh=Z31bLIS2kGT6QH/URO+izU25hhc1q1m596SMwXtoP3w=; b=gwdZkkKtUGQus6
+	tJjAcW7trq+4HBtYDg8hgS4vWNkWFtUSgIVV9O8lIhW6e2gfPAh/8Ckc10YgSA70N+9ESfS950mwj
+	hUhdNKG6Db2/Kzdx1Ymrc0EakaRhbXo3K6ZAGkmKF1lUH1ppWIVjTxI8bF/bRrZZgvhPGCpnKWpbD
+	+Ju9FUbG6Xys1Mzxty67MWI6yQTykurm1HKGZrY9/OTe3/HwZb8cl4ngpwlUi/+q664EedZiyop88
+	IoFMEKo+UZbLue0r9ae2MHwPz/JE1Bd5GTLyNCYq0couXaXr/YLNquRvoeq0MmvdxtuQ/UjyZnzUP
+	H6GQMuHFsY2mbp8rgQRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQrrY-0001Bl-Ve; Wed, 15 May 2019 11:14:20 +0000
-Received: from mail-eopbgr70049.outbound.protection.outlook.com ([40.107.7.49]
- helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+	id 1hQsBw-0002SL-D0; Wed, 15 May 2019 11:35:24 +0000
+Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQrrO-00017n-Ts
- for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 11:14:12 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=i7BGuuaGOnQc9nBqNlL/Om1S/Ms76Y+ujewO4AU7h2c=;
- b=oXaVrloNKQ4B8a2I5UPJZs9OAGKZWNSYKb+MySAEp257/SnMykcRmTOXCIObO426o+mn66tFJ3O4Zc9aWthmE99yfiGLak6dahylkh1S3uW1wa5yt4OLNHGbK7cSAIf/3LioXrQpe3/J+akKVnNJ8sCE0A/gMGuTZpkdHzawuDQ=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3673.eurprd04.prod.outlook.com (52.134.70.22) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1900.16; Wed, 15 May 2019 11:14:06 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::d035:3bd0:a56a:189d]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::d035:3bd0:a56a:189d%2]) with mapi id 15.20.1900.010; Wed, 15 May 2019
- 11:14:06 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Leonard Crestez <leonard.crestez@nxp.com>, "shawnguo@kernel.org"
- <shawnguo@kernel.org>, "sboyd@kernel.org" <sboyd@kernel.org>, Jacky Bai
- <ping.bai@nxp.com>
-Subject: RE: [PATCH 1/3] dt-bindings: clock: imx8mm: Add SNVS clock
-Thread-Topic: [PATCH 1/3] dt-bindings: clock: imx8mm: Add SNVS clock
-Thread-Index: AQHVCr2yrHCSJQGcuE+Cdq63vYcty6ZsCLIA
-Date: Wed, 15 May 2019 11:14:05 +0000
-Message-ID: <DB3PR0402MB39164F45F288EB251D5C10F4F5090@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1557883490-22360-1-git-send-email-Anson.Huang@nxp.com>
- <AM0PR04MB6434DFD7728BD5B105EF2A31EE090@AM0PR04MB6434.eurprd04.prod.outlook.com>
-In-Reply-To: <AM0PR04MB6434DFD7728BD5B105EF2A31EE090@AM0PR04MB6434.eurprd04.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.68]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 70ea0596-93f0-4071-98ff-08d6d92671c4
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3673; 
-x-ms-traffictypediagnostic: DB3PR0402MB3673:
-x-ms-exchange-purlcount: 2
-x-microsoft-antispam-prvs: <DB3PR0402MB367364FD467C714C023798CAF5090@DB3PR0402MB3673.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7691;
-x-forefront-prvs: 0038DE95A2
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(39860400002)(376002)(396003)(136003)(346002)(13464003)(199004)(189003)(76116006)(66556008)(64756008)(66446008)(52536014)(66476007)(66946007)(68736007)(7736002)(81166006)(446003)(305945005)(11346002)(8676002)(81156014)(66066001)(476003)(102836004)(6116002)(3846002)(44832011)(4326008)(256004)(25786009)(53546011)(6506007)(14444005)(186003)(26005)(76176011)(486006)(6636002)(71200400001)(71190400001)(7696005)(110136005)(54906003)(14454004)(2501003)(99286004)(7416002)(316002)(2906002)(6436002)(53936002)(966005)(2201001)(73956011)(33656002)(86362001)(478600001)(5660300002)(8936002)(6246003)(55016002)(229853002)(74316002)(6306002)(9686003)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3673;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: Ln/s82RfGRvJbVZsY8XVAE9J5rY+MqCGo7Kg/II+VlSWJoik8QFFlOg06ZmHTQBrE78gT03hdfGCtQ4GiZhTQpg9kXw94z2wulqRKs4v0Lr3dBad7ODoLteNGqG2rctbIgMwIdAqUufgabytKPMrKKSrEK/B+39TgMoLM4FbGJmIu+5+E3aIe6ZeTXE55TXUKcez1LWgh8EZQVjXVRlOY47nVj/08iFTnlqbaB8BFP92Cgx6ttxUFrRMJojgIUvlgFVD1tBhaNm1uevoNYY2EG0MGeOSK+GoJXadS3DQPkdFjU3BSASu0Alh4IksJkZd2L5JjZ/8qk9QURwEi22QKnuF4yEbUVJePQb/2rMrLJAikZEoJjshgMbNtes+r07txCcx7IgXMtDg1r5vqEq8el4vKCzIvuAiY3GHTdgV6xM=
+ id 1hQsBm-0002OZ-O4
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 11:35:16 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id q64so1468315vsd.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 15 May 2019 04:35:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ZWqAGCI5yMJx23kt3Mfd3kN55xmuwLQAWVG8F0xyeaE=;
+ b=H8I82c784m0jGWAdSgfv70xt5W/e2W1AydqnX4HmVv/TyjugE8NKbcb1hozMQxpxXA
+ 2DMvnzUlpl5Z1ddBvv2j5+QHYXWqvRQEFmf36SjeHZ6L+5iZOIw1vd3+5EkGfiyLlQ9i
+ 15zeYIjV3z+qqaNh0MOrCDWQbxw713gfubMr5pupFHsP8XOl4YSYRWbcAC8N06GjUEU/
+ Lr96fSdftzVvoCVyjH52mglkTzdVXx8RxOwGFH0TnFCIwyZWT+XGaNw5B6DHuoZzAiUW
+ BKddH9aLOjw/edqV2fNVOwoMJ1m+Nq21PbvSIoFwQbfjNBmlfngrPtntXUGB2/yrjQI+
+ r0FQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ZWqAGCI5yMJx23kt3Mfd3kN55xmuwLQAWVG8F0xyeaE=;
+ b=uanJ/QXbA7HEQEmLBaEeFL2Vy4ul8z3MZrRTqjddPFAIy9VjK2WPpQb+Qz7Ox87Neq
+ xEopH2+Qninbr8vlZ17lVCpwAhmRG6QI51b/iZ6OQen0E5+2XyqE6ruSLHfxFt5zhcf7
+ Zdg1dteSXkTzYOsLHW0/iIKRfDTRnNnXHau1Z1/MYFaL1n/UDOXuSYgflh5E7E8+4jNh
+ 89qZAmsullVOaQu8Z0fn7fRqSbpBB5XnE2D1MalbKYCshesKbgca+sy3vVzK4ej8eYvD
+ MEvflMt3io5Gthb2wNp+28ifvyCGrgXNrh+4FXpzJaKURnpKl9J7L+m5cxC8lKt4C8Gl
+ ZXrg==
+X-Gm-Message-State: APjAAAWprsKMEoTP+mNJPTLf3gaOWfGWWWfRwJEr77fT1T5kYjgPxR51
+ wKfj/02R4+kNkgc4DRyLaqRHP11bNlpXzT+kh8zf5g==
+X-Google-Smtp-Source: APXvYqxP1+Bj5N0OGQvJ0bEb5lturNgpY8085Ucz8PC4rk0LP/xJeG6jujlA3rtCO12XfPL7fW5CNb2hO4LJ6tng7NA=
+X-Received: by 2002:a67:c987:: with SMTP id y7mr20082008vsk.35.1557920111662; 
+ Wed, 15 May 2019 04:35:11 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 70ea0596-93f0-4071-98ff-08d6d92671c4
-X-MS-Exchange-CrossTenant-originalarrivaltime: 15 May 2019 11:14:05.9137 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3673
+References: <20190513091548.16674-1-narmstrong@baylibre.com>
+ <20190513091548.16674-3-narmstrong@baylibre.com>
+In-Reply-To: <20190513091548.16674-3-narmstrong@baylibre.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Wed, 15 May 2019 13:34:35 +0200
+Message-ID: <CAPDyKFp-mU-pCcwGUkL8B5YfhXamHtTcRHe8eX9SNupMxr-kgg@mail.gmail.com>
+Subject: Re: [PATCH 2/3] mmc: meson-gx: add ddr-access-quirk
+To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_041410_968636_2AE84AB7 
-X-CRM114-Status: GOOD (  13.54  )
+X-CRM114-CacheID: sfid-20190515_043514_782980_718D0653 
+X-CRM114-Status: GOOD (  31.52  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.7.49 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -113,60 +90,187 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Abel Vesa <abel.vesa@nxp.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "mturquette@baylibre.com" <mturquette@baylibre.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: baylibre-upstreaming@groups.io, Kevin Hilman <khilman@baylibre.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Leonard
+On Mon, 13 May 2019 at 11:16, Neil Armstrong <narmstrong@baylibre.com> wrote:
+>
+> On the Amlogic G12A SoC family, (only) the SDIO controller fails to access
+> the data from DDR, leading to a broken controller.
 
-> -----Original Message-----
-> From: Leonard Crestez
-> Sent: Wednesday, May 15, 2019 6:18 PM
-> To: Anson Huang <anson.huang@nxp.com>; shawnguo@kernel.org;
-> sboyd@kernel.org; Jacky Bai <ping.bai@nxp.com>
-> Cc: robh+dt@kernel.org; mark.rutland@arm.com; s.hauer@pengutronix.de;
-> kernel@pengutronix.de; festevam@gmail.com; mturquette@baylibre.com;
-> devicetree@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-
-> kernel@vger.kernel.org; linux-clk@vger.kernel.org; dl-linux-imx <linux-
-> imx@nxp.com>; Abel Vesa <abel.vesa@nxp.com>
-> Subject: Re: [PATCH 1/3] dt-bindings: clock: imx8mm: Add SNVS clock
-> 
-> On 15.05.2019 04:29, Anson Huang wrote:
-> > Add macro for the SNVS clock of the i.MX8MM.
-> >
-> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > ---
-> > This patch is based on patch:
-> > https://patchwork.kernel.org/patch/10939997/
-> 
-> Numbering also conflicts with one of my patches:
-> 
-> https://patchwork.kernel.org/patch/10940303/
-> 
-> The conflict is easy to resolve but I don't mind resending if your patches get
-> accepted first. If should probably resend anyway to also add gic clk to 8mq.
+Could you possibly make it more clear that this is about the internal
+DMA support in the controller that is broken?
 
-Thanks, I did NOT notice this, feel free if want me to resend the patch set, both
-the GPIO clock and SNVS clock patch series.
+Did you consider to use the controller without using the DMA mode? Is
+that possible?
 
-Thanks,
-Anson.
-> 
-> For series:
-> 
-> Reviewed-by: Leonard Crestez <leonard.crestez@nxp.com>
+>
+> But each MMC controller has 1,5KiB of SRAM after the registers, that can
+> be used as bounce buffer to avoid direct DDR access from the integrated
+> DMAs (this SRAM may be used by the boot ROM when DDR is not yet initialized).
+
+I think "DDR" is a confusing terminology, that goes for the DT binding
+as well. What about using "DRAM" instead?
+
+In any case, using the SRAM seems like it could work. However, just so
+I get this right, it solely dedicated to the SDIO controller or may
+someone else also try to use it?
+
+>
+> The quirk is to disable the chained descriptor for this controller, and
+> use this SRAM memory zone as buffer for the bounce buffer fallback mode.
+>
+> The performance hit hasn't been evaluated, but the fix has been tested
+> using a WiFi AP6398S SDIO module, and the iperf3 Bandwidth measurement gave
+> 55.2 Mbits/sec over a 63 Hours long test, with the SDIO ios set as High-Speed
+> at 50MHz clock. It gave 170 Mbits/sec as SDR104 and 200MHz clock.
+
+If possible to not use DMA, it would be interesting to compare numbers. :-)
+
+>
+> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+> ---
+>  drivers/mmc/host/meson-gx-mmc.c | 65 ++++++++++++++++++++++++++-------
+>  1 file changed, 52 insertions(+), 13 deletions(-)
+>
+> diff --git a/drivers/mmc/host/meson-gx-mmc.c b/drivers/mmc/host/meson-gx-mmc.c
+> index c5a8af4ca76b..6ef465304052 100644
+> --- a/drivers/mmc/host/meson-gx-mmc.c
+> +++ b/drivers/mmc/host/meson-gx-mmc.c
+> @@ -129,6 +129,9 @@
+>  #define SD_EMMC_TXD 0x94
+>  #define SD_EMMC_LAST_REG SD_EMMC_TXD
+>
+> +#define SD_EMMC_SRAM_DATA_BUF_LEN 1536
+> +#define SD_EMMC_SRAM_DATA_BUF_OFF 0x200
+> +
+>  #define SD_EMMC_CFG_BLK_SIZE 512 /* internal buffer max: 512 bytes */
+>  #define SD_EMMC_CFG_RESP_TIMEOUT 256 /* in clock cycles */
+>  #define SD_EMMC_CMD_TIMEOUT 1024 /* in ms */
+> @@ -168,6 +171,8 @@ struct meson_host {
+>         unsigned long req_rate;
+>         bool ddr;
+>
+> +       bool ddr_access_quirk;
+> +
+>         struct pinctrl *pinctrl;
+>         struct pinctrl_state *pins_default;
+>         struct pinctrl_state *pins_clk_gate;
+> @@ -232,11 +237,20 @@ static struct mmc_command *meson_mmc_get_next_command(struct mmc_command *cmd)
+>  static void meson_mmc_get_transfer_mode(struct mmc_host *mmc,
+>                                         struct mmc_request *mrq)
+>  {
+> +       struct meson_host *host = mmc_priv(mmc);
+>         struct mmc_data *data = mrq->data;
+>         struct scatterlist *sg;
+>         int i;
+>         bool use_desc_chain_mode = true;
+>
+> +       /*
+> +        * When Controller DMA cannot directly access DDR memory, disable
+> +        * support for Chain Mode to directly use the internal SRAM using
+> +        * the bounce buffer mode.
+> +        */
+> +       if (host->ddr_access_quirk)
+> +               return;
+> +
+>         /*
+>          * Broken SDIO with AP6255-based WiFi on Khadas VIM Pro has been
+>          * reported. For some strange reason this occurs in descriptor
+> @@ -1049,6 +1063,10 @@ static int meson_mmc_probe(struct platform_device *pdev)
+>         host->dev = &pdev->dev;
+>         dev_set_drvdata(&pdev->dev, host);
+>
+> +       /* The G12A SDIO Controller needs an SRAM bounce buffer */
+> +       host->ddr_access_quirk = device_property_read_bool(&pdev->dev,
+> +                                       "amlogic,ddr-access-quirk");
+> +
+>         /* Get regulators and the supported OCR mask */
+>         host->vqmmc_enabled = false;
+>         ret = mmc_regulator_get_supply(mmc);
+> @@ -1146,9 +1164,16 @@ static int meson_mmc_probe(struct platform_device *pdev)
+>                 goto err_init_clk;
+>
+>         mmc->caps |= MMC_CAP_CMD23;
+> -       mmc->max_blk_count = CMD_CFG_LENGTH_MASK;
+> +       if (host->ddr_access_quirk) {
+> +               /* Limit to the available sram memory */
+> +               mmc->max_segs = SD_EMMC_SRAM_DATA_BUF_LEN / mmc->max_blk_size;
+> +               mmc->max_blk_count = mmc->max_segs;
+> +       } else {
+> +               mmc->max_blk_count = CMD_CFG_LENGTH_MASK;
+> +               mmc->max_segs = SD_EMMC_DESC_BUF_LEN /
+> +                               sizeof(struct sd_emmc_desc);
+> +       }
+>         mmc->max_req_size = mmc->max_blk_count * mmc->max_blk_size;
+> -       mmc->max_segs = SD_EMMC_DESC_BUF_LEN / sizeof(struct sd_emmc_desc);
+>         mmc->max_seg_size = mmc->max_req_size;
+>
+>         /*
+> @@ -1158,15 +1183,27 @@ static int meson_mmc_probe(struct platform_device *pdev)
+>          */
+>         mmc->caps2 &= ~MMC_CAP2_HS400;
+>
+> -       /* data bounce buffer */
+> -       host->bounce_buf_size = mmc->max_req_size;
+> -       host->bounce_buf =
+> -               dma_alloc_coherent(host->dev, host->bounce_buf_size,
+> -                                  &host->bounce_dma_addr, GFP_KERNEL);
+> -       if (host->bounce_buf == NULL) {
+> -               dev_err(host->dev, "Unable to map allocate DMA bounce buffer.\n");
+> -               ret = -ENOMEM;
+> -               goto err_free_irq;
+> +       if (host->ddr_access_quirk) {
+> +               /*
+> +                * The MMC Controller embeds 1,5KiB of internal SRAM
+> +                * that can be used to be used as bounce buffer.
+> +                * In the case of the G12A SDIO controller, use these
+> +                * instead of the DDR memory
+> +                */
+> +               host->bounce_buf_size = SD_EMMC_SRAM_DATA_BUF_LEN;
+> +               host->bounce_buf = host->regs + SD_EMMC_SRAM_DATA_BUF_OFF;
+> +               host->bounce_dma_addr = res->start + SD_EMMC_SRAM_DATA_BUF_OFF;
+> +       } else {
+> +               /* data bounce buffer */
+> +               host->bounce_buf_size = mmc->max_req_size;
+> +               host->bounce_buf =
+> +                       dma_alloc_coherent(host->dev, host->bounce_buf_size,
+> +                                          &host->bounce_dma_addr, GFP_KERNEL);
+> +               if (host->bounce_buf == NULL) {
+> +                       dev_err(host->dev, "Unable to map allocate DMA bounce buffer.\n");
+> +                       ret = -ENOMEM;
+> +                       goto err_free_irq;
+> +               }
+>         }
+>
+>         host->descs = dma_alloc_coherent(host->dev, SD_EMMC_DESC_BUF_LEN,
+> @@ -1208,8 +1245,10 @@ static int meson_mmc_remove(struct platform_device *pdev)
+>
+>         dma_free_coherent(host->dev, SD_EMMC_DESC_BUF_LEN,
+>                           host->descs, host->descs_dma_addr);
+> -       dma_free_coherent(host->dev, host->bounce_buf_size,
+> -                         host->bounce_buf, host->bounce_dma_addr);
+> +
+> +       if (!host->ddr_access_quirk)
+> +               dma_free_coherent(host->dev, host->bounce_buf_size,
+> +                                 host->bounce_buf, host->bounce_dma_addr);
+>
+>         clk_disable_unprepare(host->mmc_clk);
+>         clk_disable_unprepare(host->core_clk);
+> --
+> 2.21.0
+>
+
+Kind regards
+Uffe
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
