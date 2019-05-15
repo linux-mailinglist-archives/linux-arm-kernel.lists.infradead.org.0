@@ -2,85 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E69A71F689
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 16:29:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD8071F6B5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 16:39:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t/KDNa2KLCRwgu0YIEi405f1Q/EkSxlnfCufcBMO5tA=; b=AQAO6ZbxrMSikA
-	q1jR+kN/w51Q1rYXdcrlrH6vhqvlMHhJpMMxw1dvgRRLBNtW6sU04HXTr/D0z6I1EQONBoN1J2UkC
-	qRMjK6gooP57tT4lVcGUtLPQVil8EImKeDoKvx7AAX1NoMa4yBTfo/ae/xHn1/24g075Y+VtJpM4H
-	mqZPSjHiMyCPx1w1IEd6O7uxpkyNDu1gnMTs9r/UCKuTFWFizX5g7U+RlGrX4ZawEa+Hh2Upa1rsq
-	pDTLK/uWshVFxGDPn7D2OGm/pJQoLQS1+w0YZLTFw1Fzp/2RsmpoOLQan5RpxFhjdSbZ+eME5VT80
-	x8u9eCOqK93lmezdu2hA==;
+	List-Owner; bh=3k3X8LTDYz9cbfiEk3nUCxsZph0ZKzH5peTC8FL3PKI=; b=AFIIXjHG2X2L9S
+	H0L+/Ox0t91/kX/v7sAlDz1xqWOMS6zHpc63LXCnGsj3NFDcGemBXm+JIpecr82e5WygCazO7B45D
+	4GngQ4dj15O845V7vYZW6zuQVqnd+jIEk1iU3wUKiEjDKj+pIFBplCfncVoPR++ngpXrdXPGgQ1EL
+	NG8xveqVwYTzBB8KscH0GhyUn3vUWL6wFyr0HHAptg8DqkYeF+dirkhWsmY7Ox7vfgjO9qURMDqc8
+	7hG5c0E0yIcPXlVWhtV6iOHqL21zpg4OSlsxjeGur5xP0rsz/9lpILG6CwF4Mo2T3IBb8Czo/ZM9L
+	7b518AAWsukQacJzf62g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQuu7-0000KE-ER; Wed, 15 May 2019 14:29:11 +0000
-Received: from mail-it1-x142.google.com ([2607:f8b0:4864:20::142])
+	id 1hQv4K-00044l-Oi; Wed, 15 May 2019 14:39:44 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQutz-0000Jf-Hc
- for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 14:29:05 +0000
-Received: by mail-it1-x142.google.com with SMTP id e184so459667ite.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 May 2019 07:29:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=zcom2KmrR2zu/9zS7N5rXR3cLv7Skvz7iuMfQede9gI=;
- b=yVpxpdx0E3TY+24uVOIOpyaaNCAIQ0mXFMdRwC7ThOBNFVpjG6CJPGtU1Qqy2H245j
- fLz2QOnoMcW+F5p5v8PrQg3JOj0/JuOE+uYe1s1g0pCNepkvtGg4bBiQtel8GOkw1mxm
- eviMIgQ9LIqD7NR9GZxKEhXkbUNtz7GS6H7d3BXQmdq6FBkRq4T2ZFj/GLwpshB8WHHu
- E164hqhuLp1iDrxl/fkr/HZnSdxs48GKTdI/m6PkPRzcA0/S8merm6bkpLUBHzXtG/Em
- c4XF+bCc9ikEid4SsydIz1lNFGlsMaf2/wQQwSSsH9b3pyE1sia0eqSE7TprNxE3fZBf
- hdsA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=zcom2KmrR2zu/9zS7N5rXR3cLv7Skvz7iuMfQede9gI=;
- b=GMWfTl1FBD9HRsmuGynXmiyUzd2NyJYbfNLX8qudNOexQqR5mGcxM0WNHlzoyeLyeg
- xNcA9sC224lQKVR+vN/YKG1H2Q4WnokcJ7zhlVqLVyKgbcAfWJqZSuWYcE96q8qhBfvu
- 6BoFfF3uukugruMvCMhzwJaEeY3UW8SDKR2kGqhumASouvTUvxqAyy+dq4I4BFfUGEHV
- yAGxBfloXdVQyLJIufzxjwULHJElV9nxa/4O7QD9FNHPc1JIxRBezFdn7rH9P9AQM+Ql
- wEb3DGND05NKfisaLN2UXip3Eysvy+Kid6Ev0TLqwtIgqNko7OSGo3ouMQ/4oHynIDsP
- i6Dw==
-X-Gm-Message-State: APjAAAUeQmVrUJSOjhyObJAXctSDetVKJIALIERUPtcW+g9lHKLEfKi7
- 7hPnppTO/LH4ZalkI/NR6ztuk9hTPb0PvUSg/F/nNQ==
-X-Google-Smtp-Source: APXvYqwXfDXiDVk4I3GMZR3VcEv0ClkcPeGMTqbJNYkQPOng+dqOKHfZjv78OMayKbKjZDCMLspBZ76UnbemqZlRV0s=
-X-Received: by 2002:a02:80e:: with SMTP id 14mr27462714jac.71.1557930539583;
- Wed, 15 May 2019 07:28:59 -0700 (PDT)
+ id 1hQv48-00042Z-Vw
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 14:39:38 +0000
+Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
+ [10.5.11.15])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 0BF1451471;
+ Wed, 15 May 2019 14:39:11 +0000 (UTC)
+Received: from dhcp-27-174.brq.redhat.com (unknown [10.43.17.159])
+ by smtp.corp.redhat.com (Postfix) with SMTP id 7F2A15D706;
+ Wed, 15 May 2019 14:39:01 +0000 (UTC)
+Received: by dhcp-27-174.brq.redhat.com (nbSMTP-1.00) for uid 1000
+ oleg@redhat.com; Wed, 15 May 2019 16:39:08 +0200 (CEST)
+Date: Wed, 15 May 2019 16:38:58 +0200
+From: Oleg Nesterov <oleg@redhat.com>
+To: Christian Brauner <christian@brauner.io>
+Subject: Re: [PATCH 1/2] pid: add pidfd_open()
+Message-ID: <20190515143857.GB18892@redhat.com>
+References: <20190515100400.3450-1-christian@brauner.io>
 MIME-Version: 1.0
-References: <20190514194018.23420-1-mathieu.poirier@linaro.org>
- <20190514194018.23420-2-mathieu.poirier@linaro.org>
- <657f1851-2a97-4efd-6532-fbcb1c927e88@arm.com>
-In-Reply-To: <657f1851-2a97-4efd-6532-fbcb1c927e88@arm.com>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Wed, 15 May 2019 08:28:48 -0600
-Message-ID: <CANLsYkwGyazUAB5Xs1PFn+sgT78c7DBqc6VDDPr4iBYx_Os+Ng@mail.gmail.com>
-Subject: Re: [PATCH V2 1/6] coresight: etb10: Properly set AUX buffer head in
- snapshot mode
-To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Content-Disposition: inline
+In-Reply-To: <20190515100400.3450-1-christian@brauner.io>
+User-Agent: Mutt/1.5.24 (2015-08-30)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.39]); Wed, 15 May 2019 14:39:26 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_072903_623187_98647D56 
-X-CRM114-Status: GOOD (  21.76  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190515_073933_043741_C7874458 
+X-CRM114-Status: GOOD (  11.48  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -92,78 +70,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Coresight ML <coresight@lists.linaro.org>,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- Peter Zijlstra <peterz@infradead.org>, Ingo Molnar <mingo@redhat.com>,
- Leo Yan <leo.yan@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Mike Leach <mike.leach@linaro.org>
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ linux-mips@vger.kernel.org, dhowells@redhat.com,
+ linux-kselftest@vger.kernel.org, sparclinux@vger.kernel.org,
+ linux-api@vger.kernel.org, elena.reshetova@intel.com,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ linux-xtensa@linux-xtensa.org, keescook@chromium.org, arnd@arndb.de,
+ jannh@google.com, linux-m68k@lists.linux-m68k.org, viro@zeniv.linux.org.uk,
+ luto@kernel.org, tglx@linutronix.de, linux-arm-kernel@lists.infradead.org,
+ linux-parisc@vger.kernel.org, cyphar@cyphar.com, torvalds@linux-foundation.org,
+ linux-kernel@vger.kernel.org, luto@amacapital.net, ebiederm@xmission.com,
+ linux-alpha@vger.kernel.org, akpm@linux-foundation.org,
+ linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Good day Suzuki,
+On 05/15, Christian Brauner wrote:
+>
+> +SYSCALL_DEFINE2(pidfd_open, pid_t, pid, unsigned int, flags)
+> +{
+> +	int fd, ret;
+> +	struct pid *p;
+> +	struct task_struct *tsk;
+> +
+> +	if (flags)
+> +		return -EINVAL;
+> +
+> +	if (pid <= 0)
+> +		return -EINVAL;
+> +
+> +	p = find_get_pid(pid);
+> +	if (!p)
+> +		return -ESRCH;
+> +
+> +	rcu_read_lock();
+> +	tsk = pid_task(p, PIDTYPE_PID);
 
-On Wed, 15 May 2019 at 03:45, Suzuki K Poulose <suzuki.poulose@arm.com> wrote:
->
-> Hi Mathieu,
->
-> On 14/05/2019 20:40, Mathieu Poirier wrote:
-> > Unify amongst sink drivers how the AUX ring buffer head is communicated
-> > to user space.  That way the same algorithm in cs_etm_find_snapshot()
->
-> I would leave the userspace tool's function name out of the commit description
-> and the comment below. We could instead say: "That way the same algorithm can be
-> used by the userspace tool to determine the position and the size of the latest
-> snapshot data."
+You do not need find_get_pid() before rcu_lock and put_pid() at the end.
+You can just do find_vpid() under rcu_read_lock().
 
-I purposely added the name of the function there so that people can
-quickly find it and avoid any misunderstanding about the code in
-question.  But I also have the same information as a comment in the
-code, which should be sufficient.  I'll fix it.
+> +	if (!tsk)
+> +		ret = -ESRCH;
+> +	else if (unlikely(!thread_group_leader(tsk)))
+> +		ret = -EINVAL;
 
->
-> > can be used to determine where the latest data is and how much of it
-> > to access.
-> >
-> > Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> > ---
-> >   drivers/hwtracing/coresight/coresight-etb10.c | 13 +++++++------
-> >   1 file changed, 7 insertions(+), 6 deletions(-)
-> >
-> > diff --git a/drivers/hwtracing/coresight/coresight-etb10.c b/drivers/hwtracing/coresight/coresight-etb10.c
-> > index 4ee4c80a4354..60e753b1768d 100644
-> > --- a/drivers/hwtracing/coresight/coresight-etb10.c
-> > +++ b/drivers/hwtracing/coresight/coresight-etb10.c
-> > @@ -548,13 +548,14 @@ static unsigned long etb_update_buffer(struct coresight_device *csdev,
-> >       writel_relaxed(0x0, drvdata->base + ETB_RAM_WRITE_POINTER);
-> >
-> >       /*
-> > -      * In snapshot mode we have to update the handle->head to point
-> > -      * to the new location.
-> > +      * In snapshot mode we simply increment the head by the number of byte
-> > +      * that were written.  User space function  cs_etm_find_snapshot() will
-> > +      * figure out how many bytes to get from the AUX buffer based on the
-> > +      * position of the head.
-> >        */
-> > -     if (buf->snapshot) {
-> > -             handle->head = (cur * PAGE_SIZE) + offset;
-> > -             to_read = buf->nr_pages << PAGE_SHIFT;
-> > -     }
-> > +     if (buf->snapshot)
-> > +             handle->head += to_read;
-> > +
-> >       __etb_enable_hw(drvdata);
-> >       CS_LOCK(drvdata->base);
-> >   out:
->
-> Otherwise:
->
-> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+it seems that you can do a single check
 
-Is this for all the kernel space patches or just this one?
+	tsk = pid_task(p, PIDTYPE_TGID);
+	if (!tsk)
+		ret = -ESRCH;
+
+this even looks more correct if we race with exec changing the leader.
+
+Oleg.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
