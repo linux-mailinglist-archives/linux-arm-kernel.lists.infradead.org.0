@@ -2,94 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 230001FA31
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 20:44:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4D001FA5B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 21:14:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xC/jaWBHBjpgWmnQTZmtnAaRTCfSV12/nlGr4SYibMk=; b=VFKNMrQnvmmn5e
-	VHPECQL4hbiWC+4cqg67rnJE6+yvBcQkmXO8rKNVrfrL77MkEffcIey5zqGo7/XMXYS6gbNqwlPI8
-	sFpDC2UtjeBsDGF0JDiF8pp42HclpHKBOX82HaJCb6WgMk1DI+RpkpBT/Gg6F6+eYUu6HuqNS/Vwh
-	IGEHCGGEpmbmCI8kd174G04sG/AMYcU34kNKcdZOtXmiQF0i9bZiKk/xPRRhgQUsQZbRCZSiDPzJ9
-	Hdh4ebvGZaf7mvfw8H86Fk91U2ca07R8haHUf2LvQqs+bp/CewpXkvFWo4WAaNe4zLtxszqybJK4i
-	8tizU77YcfjwolZ7BZfQ==;
+	List-Owner; bh=2Q9zokZYgkaeNrdolIfmwVuDALrAV7QJbY/VIWmUCQ0=; b=uavdZJqSapksoZ
+	ODS6rKOI6ynJVu+ZDDhOp23596Pvz9/xrsHTs5fR+0zMkv9Ze0BIbLLc5laQZYftzWAfzvih7z7WH
+	BFtjM50XoWCwzRil0BupdguajxNmSaC9nLEGim73HKx6425IeoKPXc3VL7mp5wrbM13Nq5VtUMqQJ
+	DHVw6sU8jZtDTUOrpzm2A8Fxq31wufFOCI+2HcAN7uoS0kB5hSD75NiF0E8WfO0Zxl3fQuv5d2H3r
+	g3w13YWK324B8ZcNomz9x6/8wRe6rAfSZf0r0G8BdFG3Ld+qJr5xQWIVhDQy+H3WTVscEizFfpw07
+	cQ3Ucw0+l2SuX9SQpVUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQysh-0002b4-PA; Wed, 15 May 2019 18:43:59 +0000
-Received: from mail-vk1-xa41.google.com ([2607:f8b0:4864:20::a41])
+	id 1hQzLt-0006Ev-Vi; Wed, 15 May 2019 19:14:09 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQysZ-0002RC-I2
- for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 18:43:52 +0000
-Received: by mail-vk1-xa41.google.com with SMTP id v140so295976vkd.7
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 May 2019 11:43:51 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=vNECGk8CnSY+BUMqx/A6sNJnXy1K+tE5/+q6NrpNAeg=;
- b=BQ9VXLFElWFzf7izK1ym/zFCq1WxsSoI7IZR/etFVJ3c6xH3PwVo3az6lB+MkUP/Gj
- PxZMwkXe1rl5EjO3Kxfks/TZY3oYrwLodR/8iZJr/9CDD59tWt7jhU4zsZs0BYYwMRNN
- Iey0Dt7PXFPRad8sX/uvZhi1xQzvN9Br//u9s=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=vNECGk8CnSY+BUMqx/A6sNJnXy1K+tE5/+q6NrpNAeg=;
- b=gzyAKPmRkowOFZ2qAvRRTI88anU+nLutidpuTnkJDQZGwPf5q9KTyS5HZnKcjIZKwO
- yfY/Jdm/U6CmUWop6T2YKW94doWxKnuA13acE4UKeQac8JQ/VtQ6KddLXB3tWaVVpp7f
- 2vlTbcNLLxaauKyx6zFkeBsZr+3+SoNiE/L8V0WBVH80hlrNrF8uQGB5FMFCNlg4fmw3
- h8RX5tuGiH/nLvtS0XE4mHH8aYvjxC6qc9u0lB2L8A+6FKeQp6MeHALYgUQogq9tMNL6
- f1/iPSE7+7Hty7m4PNGciJndgwL+CecwfdS/dsZbyu8JRnQQdwv6vc7EfBiWe2pw8GpI
- aTNw==
-X-Gm-Message-State: APjAAAUfN1amKmdEO1Yz9pueq/99VIIpHF3ymrldQWsPEkJ8lk9Q+nDS
- gwWlNFBWy+g+jkPJdPHfbL/OqmZBz/M=
-X-Google-Smtp-Source: APXvYqxESCS6YvJtis+JVYLWjUJOvLHnP5lvGMURd9c5yZ2FOmoRv1GWXJ13zKBAtOaHmGvFd0lZpA==
-X-Received: by 2002:ac5:c7bb:: with SMTP id d27mr19484857vkn.79.1557945830037; 
- Wed, 15 May 2019 11:43:50 -0700 (PDT)
-Received: from mail-ua1-f47.google.com (mail-ua1-f47.google.com.
- [209.85.222.47])
- by smtp.gmail.com with ESMTPSA id b2sm1062179vkf.16.2019.05.15.11.43.41
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Wed, 15 May 2019 11:43:41 -0700 (PDT)
-Received: by mail-ua1-f47.google.com with SMTP id t18so262479uar.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 May 2019 11:43:41 -0700 (PDT)
-X-Received: by 2002:ab0:2692:: with SMTP id t18mr5386901uao.106.1557945821179; 
- Wed, 15 May 2019 11:43:41 -0700 (PDT)
+ id 1hQzLo-0006Eo-8c
+ for linux-arm-kernel@bombadil.infradead.org; Wed, 15 May 2019 19:14:04 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=53jwncdE+8A+JQgg3NikodLCsu8d8vFjeH3Gfxt1LY8=; b=YFQFQcEsb+FRqKsrCTI9uXcro
+ np9h/pKXrVVmG6ZlUntlNbKb2EJJ7meeQzIh/jfKq2UihaCGldYhUWTgq1IbuyVkaKwXY/KnTYyrD
+ m9O1B2nEj2ECDH0V9yNCHl3ayRaiP9P8ATpCl8DhTq8GtLp1DVXVKfffVRggmbN8vqpEQ1JXjyj2f
+ dDy4X8M9UncCpp3i1zYv/sGdBcCF95JqHwymIA6+u0A5bmZGhzdkala6bIZ3DS8PTNzcGEIuJz7s0
+ GVg33cybatDucCpx+3Wdad+4+2OZvUx4kMAw1SARYCaHFSWXv0Be4kdA4pTrKBguiANP2ZpJ/0IPD
+ wqANAYTbw==;
+Received: from [179.97.35.11] (helo=quaco.ghostprotocols.net)
+ by merlin.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hQzLm-0002pn-3x; Wed, 15 May 2019 19:14:02 +0000
+Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
+ id 916C0404A1; Wed, 15 May 2019 16:13:59 -0300 (-03)
+Date: Wed, 15 May 2019 16:13:59 -0300
+From: Arnaldo Carvalho de Melo <acme@kernel.org>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [PATCH v2 0/3] perf vendor events arm64: support for Brahma-B53, 
+ Cortex-A57/A72
+Message-ID: <20190515191359.GD23162@kernel.org>
+References: <20190513202522.9050-1-f.fainelli@gmail.com>
 MIME-Version: 1.0
-References: <20190424162827.5297-1-mka@chromium.org>
- <CAD=FV=W+QGLmhEaqGc-=wNFzmaCr_f4rb5e8KQ4ZmeRaNi_xCw@mail.gmail.com>
-In-Reply-To: <CAD=FV=W+QGLmhEaqGc-=wNFzmaCr_f4rb5e8KQ4ZmeRaNi_xCw@mail.gmail.com>
-From: Doug Anderson <dianders@chromium.org>
-Date: Wed, 15 May 2019 11:43:28 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=WQ-yAeB_xU5UVHGWgsC=a9t_CtN9bHvZnoxkfuA9=zGw@mail.gmail.com>
-Message-ID: <CAD=FV=WQ-yAeB_xU5UVHGWgsC=a9t_CtN9bHvZnoxkfuA9=zGw@mail.gmail.com>
-Subject: Re: [PATCH] ARM: dts: rockchip: Add #cooling-cells entry for rk3288
- GPU
-To: Matthias Kaehlcke <mka@chromium.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_114351_622767_6A2B6F66 
-X-CRM114-Status: GOOD (  22.16  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a41 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+Content-Disposition: inline
+In-Reply-To: <20190513202522.9050-1-f.fainelli@gmail.com>
+X-Url: http://acmel.wordpress.com
+User-Agent: Mutt/1.11.3 (2019-02-01)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -101,64 +63,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, LKML <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, John Garry <john.garry@huawei.com>,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>,
+ Ganapatrao Kulkarni <ganapatrao.kulkarni@cavium.com>,
+ Namhyung Kim <namhyung@kernel.org>,
+ Sean V Kelley <seanvk.dev@oregontracks.org>, Jiri Olsa <jolsa@redhat.com>,
+ "moderated list:ARM PMU PROFILING AND DEBUGGING"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Em Mon, May 13, 2019 at 01:25:19PM -0700, Florian Fainelli escreveu:
+> Hi all,
+> 
+> Based on discussion about the last patch, it turned out that we can
+> remove the [[:xdigit:]] wildcard entirely since get_cpuid_str() strips
+> the revision bits anyway.
 
-On Wed, May 15, 2019 at 10:59 AM Doug Anderson <dianders@chromium.org> wrote:
+Thanks, applied.
 
-> Hi,
->
-> On Wed, Apr 24, 2019 at 9:28 AM Matthias Kaehlcke <mka@chromium.org> wrote:
->
-> > The Mali GPU of the rk3288 can be used as cooling device, add
-> > a #cooling-cells entry for it.
-> >
-> > Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
-> > ---
-> >  arch/arm/boot/dts/rk3288.dtsi | 1 +
-> >  1 file changed, 1 insertion(+)
-> >
-> > diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
-> > index ca7d52daa8fb..767e62908a6e 100644
-> > --- a/arch/arm/boot/dts/rk3288.dtsi
-> > +++ b/arch/arm/boot/dts/rk3288.dtsi
-> > @@ -1275,6 +1275,7 @@
-> >                 interrupt-names = "job", "mmu", "gpu";
-> >                 clocks = <&cru ACLK_GPU>;
-> >                 operating-points-v2 = <&gpu_opp_table>;
-> > +               #cooling-cells = <2>; /* min followed by max */
-> >                 power-domains = <&power RK3288_PD_GPU>;
-> >                 status = "disabled";
-> >         };
->
-> Seems like a good idea to me.  Presumably we should also add this to
-> the bindings?
->
-> Reviewed-by: Douglas Anderson <dianders@chromium.org>
-
-I guess we could now also do a follow-up CL that starts using the GPU
-as a cooling device.  Presumably it's still OK to specify this and it
-will just be ignored if there's no GPU driver?  It's a little funny
-because the upstream device tree uses the CPU to cool things down if
-the GPU temperature sensor trips.  Downstream uses the GPU to cool
-down the GPU.  ...though, of course, it's not really all that simple
-since everything is packed in so tightly.
-
-The other case that sticks as a sore thumb is the upstream
-"rk3288-veyron-mickey" where all the comments still talk about the GPU
-cooling but we have only the CPU cooling actually in the device tree.
-:-)
-
--Doug
+- Arnaldo
 
 _______________________________________________
 linux-arm-kernel mailing list
