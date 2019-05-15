@@ -2,81 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61C031F727
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 17:09:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 527AF1F72B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 17:09:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OgJrhYZRGUp+Ol/0HfW1/lU0npdCYlRDbUT4xsAHf1w=; b=TYzxWmtY13KFf7
-	Z8C+MhwCzztYG/PfswGUKdojZ0/GtLoRtglP032/sklO3Qa9+WKNzXQDuwooX4Vjj0i9yvpJaH+Zz
-	sbxYZcMOPAaSdH7XDVbBBBgFSaHfNHVCFtd7W7Ci/WGn5Y8WNRd1oiCbstGGWFb27Un4Ut+ZJmcfS
-	j9LIMRCoIFLx88eXXuhECiax8Cb1+q3R0sBCCgM5O5+FxryAHCofVK9F7kCJpLJ+BDPZ/IApI9wfw
-	UnOGim59hjuO1i3FF0C03UfdNtYw3WfZo866NZmJQ9BbijXuC5t8Ypaw4oPr4WQOP4M3d5Le0Qqpn
-	CLDy6jkxM6zs/Q87gndg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qB/cYZiZC8lnF2pZEGKYxh+5dGOMpfM1cBTAr2pvkGk=; b=P1jmstRqlPZSkh
+	9bmr6VpaOvS341POof+C00BVLQDWUraAZ6bVZ2ki1ItiQrE0jPgw3SoF4IUTRLBdk7TBkrG738zIt
+	KzMbCBiM2xR+cbbE+Le7LEQsIglEDo0M9ea9VxfmagVm5nJ/QAJz6M0MORvbPedbJTEiAaItvatiR
+	MQDTUcXjsivnfIBx9l6hMVEC1QjPOOSh29xvPPREP/xrbW+6GTWH87x69pZ3H5C4c83uAyq74Ku5G
+	xX+XQEsrjJTF5HIEfQJMHc4IRWwEi3vuMEDGAz3ZCnxEkU2sQ7uMAuMmlvUGGqeY2R+Y4WU0EHlH0
+	/+4tfDUJQH8JVZKpVJyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQvXB-0006Hn-49; Wed, 15 May 2019 15:09:33 +0000
-Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
+	id 1hQvXP-0006Uc-A3; Wed, 15 May 2019 15:09:47 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQvX4-0006Gx-9X
- for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 15:09:27 +0000
-Received: by mail-oi1-x242.google.com with SMTP id m204so48509oib.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 May 2019 08:09:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=FzdAY9eNLFH6q18HeEB4S9VM37pJLDSHQjylPsT3TbY=;
- b=MjJ+LF+8pBMZJmrf/PUQGYzx6jkAIvZXVOaDkwDUy9j8LjnckyRKVimNt3qRpZ7QXs
- odt09gcUESirFG4LKGWD8wrs44NwvpmYA2lxf+ihQ7feGSSECN829NXz97xTZk1YqWok
- 35/lGba1azoqDEabJk9bWsU7/bkhsjO9nkRYDhC0oT9sbfj+MNtAHSqEKLAJhOF3S6Rs
- R+rUWZGYA0dVjK3uQ9i1dVZfPXcCRFzlBj3LZ2YdHmMedSaa4kOtX9v0QZ8SKRLyhu7Z
- yvA1skM2zKLs6y+yPy3x/+CSXqODR2VRcyLDYU2/3JhylYVvTFrpq49h0oyAJEL7ENkN
- jPtQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=FzdAY9eNLFH6q18HeEB4S9VM37pJLDSHQjylPsT3TbY=;
- b=exJW5jK9JdTQWufhw1C7NsjiySggmO4SWGEiFpnNWIJMA6C6ti4cvCoQEWFG2JTjSO
- fZL3mUUOzOk4LlKFlZlQq4vjrwdBkgZtdQTNcRmvGpQYpdgDS0qASggNt9Zbsv3Dvgri
- 0iuQbJhg6ioPgGyvg74YFJn2xGmRtbuKccUFNTLhMJFxRLwjRKmLax+095QeMUN61ZSN
- qZVEkXYqOsGppMNwRpg1etVA+vkZsODOs957NwH2yCA+C3Qf1vOKQxXrwPhCs+2G0Ywl
- VSYqr5fxDOQbzvjR9ZqBFMxAnK5PMjCmcV0YAcct/bVLfU8v/8LwIb2nRU78DZmYC+l9
- j+0w==
-X-Gm-Message-State: APjAAAVVAv/LvqeNVVeG5+N/fqJxq2caNvJmZeGhqu+WVIpOYuWQ/NyS
- qxkdMeCBio9kP5caFoksFH7fByylrJTwfCTz2Ac=
-X-Google-Smtp-Source: APXvYqx2op3tX9A4P1hZwzw0eFhbk5CfYg0Tbl3ieHQEQJwA11MZzaowFPPO1ZfSsj+7d5NaD8TUBJpiL4dsKvwOW9o=
-X-Received: by 2002:aca:240d:: with SMTP id n13mr6735433oic.145.1557932964018; 
- Wed, 15 May 2019 08:09:24 -0700 (PDT)
+ id 1hQvXE-0006Hm-7p
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 15:09:38 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x4FF8Atg026402; Wed, 15 May 2019 17:09:27 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=9sDHCBobyGwN5zX9QrGG4fMjtEr0teqvHD1XBP671OE=;
+ b=vs8iIGizAr8EZcpEPvULzixNjpcbcuSJOC5vtbzzWdw7a0/5BZYjzGufuG8RfIzQcBw1
+ uGIh2sEdKRSCj8W2h1bxTJC7ajb3KG4CRqba25GHYF67xZoovwvHFGRuMH//dvE0NPup
+ ShlIpJeh5pqDYMW67fGQchXaKv4qgMe1++YWb4qxSTkcJ6YZF9f16fQWw9fzMKVN+4uI
+ WgGvTacKmjS4EoHLSV/iBUKNiZCr/hTK9BvTpDTPxnvwz2SlKbVd/ZdpE4xvFfJpkSEj
+ lx2bDETNO4RKcA3AbAsCvydmgwwD6rM/QzvQK6FmTLVv8mTEeTkcODHBJiya0gQEWC+c 3Q== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2sdn9g1m3w-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Wed, 15 May 2019 17:09:27 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 51BC238;
+ Wed, 15 May 2019 15:09:24 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 2E6EF29E7;
+ Wed, 15 May 2019 15:09:24 +0000 (GMT)
+Received: from localhost (10.75.127.45) by SFHDAG5NODE3.st.com (10.75.127.15)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2;
+ Wed, 15 May 2019 17:09:23 +0200
+From: Fabrice Gasnier <fabrice.gasnier@st.com>
+To: <wsa@the-dreams.de>, <pierre-yves.mordret@st.com>
+Subject: [PATCH] i2c: i2c-stm32f7: fix the get_irq error cases
+Date: Wed, 15 May 2019 17:09:09 +0200
+Message-ID: <1557932949-15912-1-git-send-email-fabrice.gasnier@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-References: <20190514155911.6C0AC68B05@newverein.lst.de>
- <20190514160241.9EAC768C7B@newverein.lst.de>
- <CA+E=qVfuKBzWK7dpM_eabjU8mLdzOw3zCnYk6Tc1oXdavH7CNA@mail.gmail.com>
- <20190515093141.41016b11@blackhole.lan>
-In-Reply-To: <20190515093141.41016b11@blackhole.lan>
-From: Vasily Khoruzhick <anarsoul@gmail.com>
-Date: Wed, 15 May 2019 08:08:57 -0700
-Message-ID: <CA+E=qVf6K_0T0x2Hsfp6EDqM-ok6xiAzeZPvp6SRg0yt010pKA@mail.gmail.com>
-Subject: Re: [PATCH 4/4] arm64: DTS: allwinner: a64: enable ANX6345 bridge on
- Teres-I
-To: Torsten Duwe <duwe@lst.de>
+X-Originating-IP: [10.75.127.45]
+X-ClientProxiedBy: SFHDAG7NODE1.st.com (10.75.127.19) To SFHDAG5NODE3.st.com
+ (10.75.127.15)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-05-15_10:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_080926_362224_0C449E2B 
-X-CRM114-Status: GOOD (  20.45  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190515_080936_745186_0B030C84 
+X-CRM114-Status: GOOD (  16.32  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (anarsoul[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -95,80 +90,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Andrzej Hajda <a.hajda@samsung.com>,
- David Airlie <airlied@linux.ie>, linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
- Sean Paul <seanpaul@chromium.org>,
- arm-linux <linux-arm-kernel@lists.infradead.org>,
- Icenowy Zheng <icenowy@aosc.io>
+Cc: alexandre.torgue@st.com, linux-kernel@vger.kernel.org,
+ linux-i2c@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 15, 2019 at 12:32 AM Torsten Duwe <duwe@lst.de> wrote:
->
-> On Tue, 14 May 2019 10:48:40 -0700
-> Vasily Khoruzhick <anarsoul@gmail.com> wrote:
->
-> > > +       anx6345: anx6345@38 {
-> > > +               compatible = "analogix,anx6345";
-> > > +               reg = <0x38>;
-> > > +               reset-gpios = <&pio 3 24 GPIO_ACTIVE_LOW>; /* PD24
-> > > */
-> > > +               dvdd25-supply = <&reg_dldo2>;
-> > > +               dvdd12-supply = <&reg_dldo3>;
-> > > +
-> > > +               port {
-> > > +                       anx6345_in: endpoint {
-> > > +                               remote-endpoint =
-> > > <&tcon0_out_anx6345>;
-> > > +                       };
-> > > +               };
-> >
-> > It doesn't comply with bindings document. You need to add out endpoint
->
-> It does comply with the bindings. The ports are all optional.
-> As far as DT is concerned, the signal path ends here. This is also the
-> final component _required_ to get the Linux kernel DRI up and running.
+During probe, return the "get_irq" error value instead of -EINVAL which
+allows the driver to be deferred probed if needed.
+Fix also the case where of_irq_get() returns a negative value.
+Note :
+On failure of_irq_get() returns 0 or a negative value while
+platform_get_irq() returns a negative value.
 
-Ugh, then bindings should be fixed. It's not optional. It may work if
-bootloader enables power for you, but it won't if you disable display
-driver in u-boot.
+Fixes: aeb068c57214 ("i2c: i2c-stm32f7: add driver")
 
-> > as well, and to do so you need to add bindings for eDP connector first
-> > and then implement panel driver.
-> > See Rob's suggestions here: http://patchwork.ozlabs.org/patch/1042593/
->
-> Well, one *could* extend the hardware description down to the actual
-> panel if necessary, but on the Teres-I it is not. I assume the panel
-> they ship provides proper EDID to the anx6345, because the display
-> works fine here with this DT.
+Signed-off-by: Fabien Dessenne <fabien.dessenne@st.com>
+Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+---
+ drivers/i2c/busses/i2c-stm32f7.c | 26 ++++++++++++++------------
+ 1 file changed, 14 insertions(+), 12 deletions(-)
 
-I guess you're testing it with older version of anx6345. Newer version
-that supports power management [1] needs startup delay for panel.
-Another issue that you're seeing is that backlight is not disabled on
-DPMS events. All in all, you need to describe panel in dts.
+diff --git a/drivers/i2c/busses/i2c-stm32f7.c b/drivers/i2c/busses/i2c-stm32f7.c
+index 4284fc9..14fb105 100644
+--- a/drivers/i2c/busses/i2c-stm32f7.c
++++ b/drivers/i2c/busses/i2c-stm32f7.c
+@@ -25,7 +25,6 @@
+ #include <linux/module.h>
+ #include <linux/of.h>
+ #include <linux/of_address.h>
+-#include <linux/of_irq.h>
+ #include <linux/of_platform.h>
+ #include <linux/platform_device.h>
+ #include <linux/pinctrl/consumer.h>
+@@ -1812,15 +1811,14 @@ static struct i2c_algorithm stm32f7_i2c_algo = {
+ 
+ static int stm32f7_i2c_probe(struct platform_device *pdev)
+ {
+-	struct device_node *np = pdev->dev.of_node;
+ 	struct stm32f7_i2c_dev *i2c_dev;
+ 	const struct stm32f7_i2c_setup *setup;
+ 	struct resource *res;
+-	u32 irq_error, irq_event, clk_rate, rise_time, fall_time;
++	u32 clk_rate, rise_time, fall_time;
+ 	struct i2c_adapter *adap;
+ 	struct reset_control *rst;
+ 	dma_addr_t phy_addr;
+-	int ret;
++	int irq_error, irq_event, ret;
+ 
+ 	i2c_dev = devm_kzalloc(&pdev->dev, sizeof(*i2c_dev), GFP_KERNEL);
+ 	if (!i2c_dev)
+@@ -1832,16 +1830,20 @@ static int stm32f7_i2c_probe(struct platform_device *pdev)
+ 		return PTR_ERR(i2c_dev->base);
+ 	phy_addr = (dma_addr_t)res->start;
+ 
+-	irq_event = irq_of_parse_and_map(np, 0);
+-	if (!irq_event) {
+-		dev_err(&pdev->dev, "IRQ event missing or invalid\n");
+-		return -EINVAL;
++	irq_event = platform_get_irq(pdev, 0);
++	if (irq_event < 0) {
++		if (irq_event != -EPROBE_DEFER)
++			dev_err(&pdev->dev, "Failed to get IRQ event: %d\n",
++				irq_event);
++		return irq_event;
+ 	}
+ 
+-	irq_error = irq_of_parse_and_map(np, 1);
+-	if (!irq_error) {
+-		dev_err(&pdev->dev, "IRQ error missing or invalid\n");
+-		return -EINVAL;
++	irq_error = platform_get_irq(pdev, 1);
++	if (irq_error < 0) {
++		if (irq_error != -EPROBE_DEFER)
++			dev_err(&pdev->dev, "Failed to get IRQ error: %d\n",
++				irq_error);
++		return irq_error;
+ 	}
+ 
+ 	i2c_dev->clk = devm_clk_get(&pdev->dev, NULL);
+-- 
+2.7.4
 
-[1] https://github.com/anarsoul/linux-2.6/commit/2fbf9c242419c8bda698e8331a02d4312143ae2c
-
-
-> Do I understand this correctly that the (3 different?) pinebook panels
-> are not that easy to handle? I try to include the pinebook wherever
-> possible, just because it's so similar, but here I'm a bit lost, so I
-> had to omit these parts.
->
-> Should I also have added a Tested-by: ? ;-)
-
-I don't have Teres, so I haven't tested these.
-
->
->         Torsten
 
 _______________________________________________
 linux-arm-kernel mailing list
