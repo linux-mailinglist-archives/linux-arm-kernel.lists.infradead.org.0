@@ -2,80 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 105911E7D3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 07:16:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C4211E813
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 07:57:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=vL4Rt+DQ9BwhGmfwvgZ7pVuBNY2VC9ZUiZE8uFN9C8o=; b=eu40E9wCDO0Bgg3Vv6hww46Mv
-	zdz1i0qM8q0eiyjgO0xGHE6omP3eY0bTwr4VhqiUfFVu2W3vpodmEHD3i+M7aKDeRNt/YJ1qeMMAq
-	Zx59+z2EFeFKiQP/Ykcdnpq8T2FrR04xt/sHL4lct35bbpyrFds83NxDakpUijyCt9oFZcxrLhB/W
-	RMVR3AF8DEsO7sNtnFT+zq7RbxlPMREsi85LKA04sJidwxYY+OBmGvPIpzEVb0s2M3iA0ys3y05IF
-	bOAo5NpjpSVh3cRF01Eseoq6i/I6DtcU+IBeDD8ABtcm0fOcv0/iEJEzNdhBw3KWBkE6Auiyuu02U
-	octLUM7sQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=5Q9bijJ/ViwhvdFPh1fKE3NdpfR5jsnc7137HL1q+f8=; b=BFH
+	3OcfO0BeUudSs7QqASZmMUo5X34ceNaZMC1D7GWVJhlWXjz+YnbfEbUhcUiv6PoCBJjajK1yq33d9
+	6+id1y48o5rA0k85/Tt1FtIb7HXTgKEQr2XMMPo3vJVyMGoG4gvGRLxTdkdPkUU2Lops3dFyq3uuC
+	QmIzGgEXSp00W7e5eyzoNBjyHXBd8i5R8ih/ctpmAE9S/88zWAITDIAnvAiicc7n6kfKqGUDJ4+Xi
+	k6YJzjY+x3SgyvqbLQ6h/jOOeRFM+AHdga3+w3Bz/1q0GJQCHpYeHn+K27h+y1lVuVrJVeUytjJeI
+	TN2yUV4s0VwLrYhBSbzq/3KVCBwjXJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQmHB-0002UP-LJ; Wed, 15 May 2019 05:16:25 +0000
-Received: from mail-pf1-f193.google.com ([209.85.210.193])
+	id 1hQmuK-0006Xt-T9; Wed, 15 May 2019 05:56:52 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQmH4-0002Tk-B3
- for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 05:16:19 +0000
-Received: by mail-pf1-f193.google.com with SMTP id z26so721027pfg.6
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 14 May 2019 22:16:16 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=CaPoBfwvfHYoUlv6FfiwdTonkmXQ3Vz27zElYB+X6NY=;
- b=fAi7VFsvGUlO7/vKJ8WhnahGi9WxgYiCT86bDbUG5L+BHzHr1hl+7+z+hx6o8ilzje
- 8qwt93fd0UE1Vz1sf06Ag/crzRl8+ciLYeDKL7gnfSg4uOwODnQojAtV4j0aBEXlEtCT
- R66slj8d5M8WQX0Gur8tDz9FS6RxySE86TZIYEi7RGGFV6vcr6RrUzGOMjsXJ+2FLm8t
- O6Afg36ddzgoWnadwGUPvXnmj+6ZJbDpZUN/QHKEOBS5mEFigUTXPPEfEGxMYCugum73
- WlWeLzvl18LHcsCMmGs81PHPz3el/HO+w1nq64wARY3QD4wxlWHDOb6Z/4Suda+fAJO7
- xfIw==
-X-Gm-Message-State: APjAAAV5BzZfhdK5ApUop/DgYG+Kzri5OudNs4bFoIY4QFI0aJSg4j5a
- pL6jsaUrAkDBprBX6b7NzISJ2w==
-X-Google-Smtp-Source: APXvYqy7c4aMXqBtV8RsQz37cPVhnwGAI6b96xSjxoKpUb2R5qSgsCxWAkkxEB8uTYJPawwWOM0xxw==
-X-Received: by 2002:a63:d4c:: with SMTP id 12mr28791554pgn.30.1557897374744;
- Tue, 14 May 2019 22:16:14 -0700 (PDT)
-Received: from localhost.localdomain ([106.215.121.117])
- by smtp.gmail.com with ESMTPSA id 135sm1321765pfb.97.2019.05.14.22.16.07
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 14 May 2019 22:16:13 -0700 (PDT)
-Subject: Re: [PATCH 4/4] kdump: update Documentation about crashkernel on arm64
-To: Chen Zhou <chenzhou10@huawei.com>, catalin.marinas@arm.com,
- will.deacon@arm.com, akpm@linux-foundation.org, ard.biesheuvel@linaro.org,
- rppt@linux.ibm.com, tglx@linutronix.de, mingo@redhat.com, bp@alien8.de,
- ebiederm@xmission.com
-References: <20190507035058.63992-1-chenzhou10@huawei.com>
- <20190507035058.63992-5-chenzhou10@huawei.com>
-From: Bhupesh Sharma <bhsharma@redhat.com>
-Message-ID: <de5b827f-5db2-2280-b848-c5c887b9bb58@redhat.com>
-Date: Wed, 15 May 2019 10:46:05 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.2.1
-MIME-Version: 1.0
-In-Reply-To: <20190507035058.63992-5-chenzhou10@huawei.com>
-Content-Language: en-US
+ id 1hQmuC-0006XF-Ky
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 05:56:47 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 136EC1A00D6;
+ Wed, 15 May 2019 07:56:40 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B23CE1A0035;
+ Wed, 15 May 2019 07:56:36 +0200 (CEST)
+Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 1F251402C8;
+ Wed, 15 May 2019 13:56:32 +0800 (SGT)
+From: Ran Wang <ran.wang_1@nxp.com>
+To: Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH] arm64: dts: lx2160a: Enable usb3-lpm-capable for usb3 node
+Date: Wed, 15 May 2019 13:58:28 +0800
+Message-Id: <20190515055828.33331-1-ran.wang_1@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_221618_386861_AAD45C3E 
-X-CRM114-Status: GOOD (  22.18  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190514_225644_880186_1341AC6B 
+X-CRM114-Status: UNSURE (   7.48  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.193 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.193 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -87,72 +64,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wangkefeng.wang@huawei.com, takahiro.akashi@linaro.org,
- "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
- linux-kernel@vger.kernel.org, linux-mm@kvack.org, horms@verge.net.au,
- Bhupesh SHARMA <bhupesh.linux@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Ran Wang <ran.wang_1@nxp.com>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 05/07/2019 09:20 AM, Chen Zhou wrote:
-> Now we support crashkernel=X,[high,low] on arm64, update the
-> Documentation.
-> 
-> Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
-> ---
->   Documentation/admin-guide/kernel-parameters.txt | 6 +++---
->   1 file changed, 3 insertions(+), 3 deletions(-)
-> 
-> diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-> index 268b10a..03a08aa 100644
-> --- a/Documentation/admin-guide/kernel-parameters.txt
-> +++ b/Documentation/admin-guide/kernel-parameters.txt
-> @@ -705,7 +705,7 @@
->   			memory region [offset, offset + size] for that kernel
->   			image. If '@offset' is omitted, then a suitable offset
->   			is selected automatically.
-> -			[KNL, x86_64] select a region under 4G first, and
-> +			[KNL, x86_64, arm64] select a region under 4G first, and
->   			fall back to reserve region above 4G when '@offset'
->   			hasn't been specified.
->   			See Documentation/kdump/kdump.txt for further details.
-> @@ -718,14 +718,14 @@
->   			Documentation/kdump/kdump.txt for an example.
->   
->   	crashkernel=size[KMG],high
-> -			[KNL, x86_64] range could be above 4G. Allow kernel
-> +			[KNL, x86_64, arm64] range could be above 4G. Allow kernel
->   			to allocate physical memory region from top, so could
->   			be above 4G if system have more than 4G ram installed.
->   			Otherwise memory region will be allocated below 4G, if
->   			available.
->   			It will be ignored if crashkernel=X is specified.
->   	crashkernel=size[KMG],low
-> -			[KNL, x86_64] range under 4G. When crashkernel=X,high
-> +			[KNL, x86_64, arm64] range under 4G. When crashkernel=X,high
->   			is passed, kernel could allocate physical memory region
->   			above 4G, that cause second kernel crash on system
->   			that require some amount of low memory, e.g. swiotlb
-> 
+Enable USB3 HW LPM feature for lx2160a and active patch for
+snps erratum A-010131. It will disable U1/U2 temperary when
+initiate U3 request.
 
-IMO, it is a good time to update 'Documentation/kdump/kdump.txt' with 
-this patchset itself for both x86_64 and arm64, where we still specify 
-only the old format for 'crashkernel' boot-argument:
+Signed-off-by: Ran Wang <ran.wang_1@nxp.com>
+---
+Depend on: https://lore.kernel.org/patchwork/patch/870134/
 
-Section: Boot into System Kernel
-          =======================
+ arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi |    4 ++++
+ 1 files changed, 4 insertions(+), 0 deletions(-)
 
-On arm64, use "crashkernel=Y[@X]".  Note that the start address of
-the kernel, X if explicitly specified, must be aligned to 2MiB (0x200000).
-...
+diff --git a/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi b/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
+index 125a8cc..0073df3 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
++++ b/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
+@@ -696,6 +696,8 @@
+ 			interrupts = <GIC_SPI 80 IRQ_TYPE_LEVEL_HIGH>;
+ 			dr_mode = "host";
+ 			snps,quirk-frame-length-adjustment = <0x20>;
++			usb3-lpm-capable;
++			snps,dis-u1u2-when-u3-quirk;
+ 			snps,dis_rxdet_inp3_quirk;
+ 			snps,incr-burst-type-adjustment = <1>, <4>, <8>, <16>;
+ 			status = "disabled";
+@@ -707,6 +709,8 @@
+ 			interrupts = <GIC_SPI 81 IRQ_TYPE_LEVEL_HIGH>;
+ 			dr_mode = "host";
+ 			snps,quirk-frame-length-adjustment = <0x20>;
++			usb3-lpm-capable;
++			snps,dis-u1u2-when-u3-quirk;
+ 			snps,dis_rxdet_inp3_quirk;
+ 			snps,incr-burst-type-adjustment = <1>, <4>, <8>, <16>;
+ 			status = "disabled";
+-- 
+1.7.1
 
-We can update this to add the new crashkernel=size[KMG],low or 
-crashkernel=size[KMG],high format as well.
-
-Thanks,
-Bhupesh
 
 _______________________________________________
 linux-arm-kernel mailing list
