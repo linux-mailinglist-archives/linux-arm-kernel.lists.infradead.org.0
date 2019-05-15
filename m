@@ -2,91 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA3891F772
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 17:27:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3E801F775
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 17:28:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=st1yrxYYfdE1wrRMAnk58Pym1/TQ0kzqfk+7Ydi6HaM=; b=L0P9HvC0PXhDmM
-	CnKruD8oBUrw25ZpyyqTlgUAbTz2tdlvF1yjIRSvGTZwOu1EpbwlUbbnb3w/JTrWtO0p1ZFLl/s72
-	3XoLXQ3gvIoPB/MSEVNoXrdtQVShE0hKCTKJXq9/ZFYmkgTt9f9SodGxuz2q3HtfYbP7jh3YeDmdu
-	pJO9v2LifgpEfZcZ/VFCOgWLZGjXCs+x+NlVvta5jhKebpnuJjLNn2XTcee8LeAX7TAtCfapaOsd0
-	UBW++rm3FXmsZQyl4il2m0rZkAZvylYDIuMpZoSHhNpaD1kjrr93A6pt3HQY9Z6wftyCF2s/rzRMi
-	pRzFoSwphYyBaUSlj0Xw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2K7bt3fY9orVJFfSiGSEmgEFO7F1jALv5X68I3cjA80=; b=BRQHxlGevK8AXE
+	9pAXRF9LziaX/zEXCPH57e2AjUcn4oZbRpwGo1A808vqEq8OYbh6SpcKqzFckXa+XYHPZhGwINa1R
+	FI/6oD/oHKuyRvSV4fjfRrLtaEWIrbnnLsQBFHdzDZl8aUTUfVFMHczcDbsgKsDo/BQLX7GqCuNOL
+	a7Ba/kBOSEI1O/h0DDWUqm5iIbsEmZO1MZYYwsK+8VyQA/suf3bC2D9FGm475h0ubUMCki2vfF3JW
+	wlNPfjBJBOqULlo4oYB8C/LeTY9tII3KXpvviqQb52peINlkkR31i6Jkti/FyE3HG6RntU8MtwWS4
+	g2J9oeS5Upx15Osn796A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQvo5-0005VJ-2s; Wed, 15 May 2019 15:27:01 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1hQvp9-0005mO-73; Wed, 15 May 2019 15:28:07 +0000
+Received: from forward102p.mail.yandex.net ([77.88.28.102])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQvnx-0005Uv-Ug
- for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 15:26:55 +0000
-Received: by mail-lj1-x242.google.com with SMTP id h21so126621ljk.13
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 May 2019 08:26:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=6cBL5aTouL63mlEBJPFj1RGOe1dEBWdZshtStEgjyl4=;
- b=gQ5b5R0cTyTWOhDTjkP9WO0SWdB1A53z3VCrlhsLBS0+PRh7ovvr7QE8jfIgbzMWIg
- XpS+7U2Z5d2Xh3UxCBnJ/QDrt9ec6JQtiWybb37FBDCxIQJswkqHxWln2/z/mQYEVdLF
- /B+UTIlz+mu5uVm7uD+KHp5GDQz5N27xHw6Ty+QAjcR+zhoPcIwJY+PVEAX60Yjgu0hM
- JK9Ez/wN4v/uqTQqB2qI2lBMrJV5LRXqDo4JMvgCROiLJT3R5aXOmuasJLVFB480uW8L
- SThd3R3Ti+TrxWDvdiRGRZL0WD9EFHWExxoFcZn9i/nXMguyXnRvknWFKmuo9/H1Ktoa
- bTtA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=6cBL5aTouL63mlEBJPFj1RGOe1dEBWdZshtStEgjyl4=;
- b=WbHFnpe0YivQqPYGGLpS6Tk6kMxvNddB2hKmW9kBUA2mMfSw0Sryk277nK04z97Xd8
- tqmqyzz0rOSiXSZgPRmuaxb/PzFLqEvKKDw3fd9SInhSTZUZ7x9ayAHZtVnpPHfuJNGo
- j5Xz586X+XwSHmiBXYa5Q4AW/NaJK+02HrJfkU23yaI8vI6J/gty1Fc/MLuucI8Z9sRN
- 8GOaq8yMGdi/a+8I+Hx/u4wUJToRRYW3ZA8bgrQitYfLRKAuGfIhrtB/wlryO9OOHE4a
- aNNBCoO6WDzf9to14MxajdI/glT3X4fPh96GFZFIvSIBTjMqxbFV9Y+QylGAENKP5Q02
- p89Q==
-X-Gm-Message-State: APjAAAWnEdqfHBZLXBs7fDxEC/WHIBNRd9N5LOVlZ/D89CYDc/Cw6IJ6
- lElv7MSZl7h0SvZ9BemZYXW9qnqX
-X-Google-Smtp-Source: APXvYqx1eXNFS/yKESjwI/+dMTt/Mzw77h/fGs13ul8A07QCq74RGyhn5/lFO1hjsM3brXCAP4ghWQ==
-X-Received: by 2002:a2e:8644:: with SMTP id i4mr7583980ljj.0.1557934011892;
- Wed, 15 May 2019 08:26:51 -0700 (PDT)
-Received: from [192.168.2.145] (ppp94-29-35-107.pppoe.spdop.ru. [94.29.35.107])
- by smtp.googlemail.com with ESMTPSA id k81sm399103ljb.77.2019.05.15.08.26.50
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 15 May 2019 08:26:51 -0700 (PDT)
-Subject: Re: [PATCH V3 5/8] memory: tegra: Add EMC scaling support code for
- Tegra210
-To: Joseph Lo <josephl@nvidia.com>, Thierry Reding
- <thierry.reding@gmail.com>, Peter De Schrijver <pdeschrijver@nvidia.com>,
- Jonathan Hunter <jonathanh@nvidia.com>, Rob Herring <robh+dt@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>
-References: <20190510084719.18902-1-josephl@nvidia.com>
- <20190510084719.18902-6-josephl@nvidia.com>
-From: Dmitry Osipenko <digetx@gmail.com>
-Message-ID: <6a42ff62-44fe-c420-7645-d57ecc1defaa@gmail.com>
-Date: Wed, 15 May 2019 18:26:50 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hQvp1-0005m5-Fx
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 15:28:02 +0000
+Received: from mxback6j.mail.yandex.net (mxback6j.mail.yandex.net
+ [IPv6:2a02:6b8:0:1619::10f])
+ by forward102p.mail.yandex.net (Yandex) with ESMTP id 4FBBC1D40BDA;
+ Wed, 15 May 2019 18:27:54 +0300 (MSK)
+Received: from smtp4o.mail.yandex.net (smtp4o.mail.yandex.net
+ [2a02:6b8:0:1a2d::28])
+ by mxback6j.mail.yandex.net (nwsmtp/Yandex) with ESMTP id kDVHURfUA6-Rq4Wx0eM; 
+ Wed, 15 May 2019 18:27:54 +0300
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=emlid.com; s=mail;
+ t=1557934074; bh=C9/4v9tZ0QA/I8UwQ8+Wr54uQ98kB7tY2rAZlSGmGYI=;
+ h=In-Reply-To:Subject:Cc:To:From:References:Date:Message-ID;
+ b=tnQRMJznuo5R16cq/Ov8sa/PaVK+rORZKkA1sQYsDu0o7peSJuugenAiGPWBPUrlS
+ Up1xPKTEoZMWy/XFlbCRjS95GmR1jY25LEe2yKUe4L0eJJOe3RT4ubBCE7e+4TGmF3
+ VJRm9s/M6jk8QSmFGD3aS7F7dR37uzC5JOsQ8wj4=
+Authentication-Results: mxback6j.mail.yandex.net; dkim=pass header.i=@emlid.com
+Received: by smtp4o.mail.yandex.net (nwsmtp/Yandex) with ESMTPSA id
+ biQI4DmMhu-Ro3qG95V; Wed, 15 May 2019 18:27:50 +0300
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (Client certificate not present)
+Date: Wed, 15 May 2019 18:27:49 +0300
+From: Georgii Staroselskii <georgii.staroselskii@emlid.com>
+To: Maxime Ripard <maxime.ripard@bootlin.com>
+Subject: Re: [PATCH] ASoC: sun4i-codec: fix first delay on Speaker
+Message-ID: <20190515152749.GA2241@softcrasher>
+References: <1557925120-31498-1-git-send-email-georgii.staroselskii@emlid.com>
+ <20190515135813.5y72f2h526yjkncy@flea>
 MIME-Version: 1.0
-In-Reply-To: <20190510084719.18902-6-josephl@nvidia.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190515135813.5y72f2h526yjkncy@flea>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_082653_985801_5377BA3E 
-X-CRM114-Status: GOOD (  14.08  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190515_082759_958746_5BBBCB40 
+X-CRM114-Status: GOOD (  26.09  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [77.88.28.102 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (digetx[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -105,27 +82,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-tegra@vger.kernel.org, devicetree@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: alsa-devel@alsa-project.org, dannym@scratchpost.org, tiwai@suse.com,
+ lgirdwood@gmail.com, wens@csie.org, broonie@kernel.org, perex@perex.cz,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MTAuMDUuMjAxOSAxMTo0NywgSm9zZXBoIExvINC/0LjRiNC10YI6Cj4gVGhpcyBwYXRjaCBhZGRz
-IHRoZSByZXF1aXJlZCBBUElzIGFuZCB2YXJpYWJsZXMgZm9yIHRoZSBFTUMgc2NhbGluZwo+IHNl
-cXVlbmNlIGNvZGUgb24gVGVncmEyMTAuCj4gCj4gQmFzZWQgb24gdGhlIHdvcmsgb2YgUGV0ZXIg
-RGUgU2NocmlqdmVyIDxwZGVzY2hyaWp2ZXJAbnZpZGlhLmNvbT4uCj4gCj4gU2lnbmVkLW9mZi1i
-eTogSm9zZXBoIExvIDxqb3NlcGhsQG52aWRpYS5jb20+Cj4gLS0tCgo+ICsKPiArdm9pZCBkb19j
-bG9ja19jaGFuZ2Uoc3RydWN0IHRlZ3JhX2VtYyAqZW1jLCB1MzIgY2xrc3JjKQo+ICt7Cj4gKwlp
-bnQgZXJyOwo+ICsKPiArCW1jX3JlYWRsKGVtYy0+bWMsIE1DX0VNRU1fQURSX0NGRyk7Cj4gKwll
-bWNfcmVhZGwoZW1jLCBFTUNfSU5UU1RBVFVTKTsKPiArCj4gKwl0ZWdyYTIxMF9jbGtfZW1jX3Vw
-ZGF0ZV9zZXR0aW5nKGNsa3NyYyk7Cj4gKwo+ICsJZXJyID0gd2FpdF9mb3JfdXBkYXRlKGVtYywg
-RU1DX0lOVFNUQVRVUywKPiArCQkJICAgICAgRU1DX0lOVFNUQVRVU19DTEtDSEFOR0VfQ09NUExF
-VEUsIHRydWUsIFJFR19FTUMpOwo+ICsJaWYgKGVycikgewo+ICsJCXByX2VycigiJXM6IGNsb2Nr
-IGNoYW5nZSBjb21wbGV0aW9uIGVycm9yOiAlZCIsIF9fZnVuY19fLCBlcnIpOwo+ICsJCVdBUk5f
-T04oMSk7Cj4gKwl9CgpFdGhlciBXQVJOKGVyciwgLi4uKSBvciBkZXZfd2Fybiwgb3IganVzdCBk
-ZXZfZXJyLgoKLS0gCkRtaXRyeQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5l
-bEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
-bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Wed, May 15, 2019 at 03:58:13PM +0200, Maxime Ripard wrote:
+Hi!
+
+> Hi,
+> 
+> On Wed, May 15, 2019 at 03:58:40PM +0300, Georgii Staroselskii wrote:
+> > This commit fixes the same issue as bf14da7 but for another codepath.
+> > The issue can be triggered by having Speaker in codec audio routing.
+> 
+> Mentionning what "the issue" is in the commit log would be great.
+> 
+
+Sure, will do.
+
+> > &codec {
+> >         allwinner,pa-gpios = <&r_pio 0 11 GPIO_ACTIVE_HIGH>; /* PL11 */
+> >         allwinner,audio-routing =
+> >                 "Speaker", "LINEOUT";
+> >
+> >         status = "okay";
+> > }
+> >
+> > Signed-off-by: Georgii Staroselskii <georgii.staroselskii@emlid.com>
+> > ---
+> >  sound/soc/sunxi/sun4i-codec.c | 9 +++++++++
+> >  1 file changed, 9 insertions(+)
+> >
+> > diff --git a/sound/soc/sunxi/sun4i-codec.c b/sound/soc/sunxi/sun4i-codec.c
+> > index 15d08e3..e0099519 100644
+> > --- a/sound/soc/sunxi/sun4i-codec.c
+> > +++ b/sound/soc/sunxi/sun4i-codec.c
+> > @@ -1329,6 +1329,15 @@ static int sun4i_codec_spk_event(struct snd_soc_dapm_widget *w,
+> >  	gpiod_set_value_cansleep(scodec->gpio_pa,
+> >  				 !!SND_SOC_DAPM_EVENT_ON(event));
+> >
+> > +	if (SND_SOC_DAPM_EVENT_ON(event)) {
+> > +		/*
+> > +		 * Need a delay to have the amplifier up. 700ms seems the best
+> > +		 * compromise between the time to let the amplifier up and the
+> > +		 * time not to feel this delay while playing a sound.
+> > +		 */
+> > +		msleep(700);
+> > +	}
+> > +
+> 
+> Since this is an external amplifier, I guess they would have different
+> warm-up time depending on the exact part being used?
+> 
+
+I guess I might've used Speaker wrong and bumped into an existing issue.
+The issue first arose when I needed to connect a speaker and use a mute
+GPIO pin to toggle it. I bumped into the lag similar to the one that has
+been fixed in bf14da7. The word "amplifier" here in my comments might be wrong 
+and misleding. Sorry for that. I just measured the latency on the speaker I'm
+using and it is well under 1ms so this is the Allwinner DAC that is
+pushing the data with a lag. Or some other thing, I'm not sure.
+
+I want to stress again that I might've experienced the issue because
+I was abusing "Speaker" routing. I basically just needed the analog 
+audio stream and mute GPIO handling done automatically.
+
+bf14da7 made me think that this is some hardware Allwinner issue that
+needs to be fixed here. And well, it did fix the problem.
+
+> If so, we should use a property and set it on a per-board basis.
+> 
+
+There might be a use case for that but this issue seems to be orthogonal
+to this.
+
+> Maxime
+> 
+> --
+> Maxime Ripard, Bootlin
+> Embedded Linux and Kernel engineering
+> https://bootlin.com
+
+Best regards,
+Georgii Staroselskii
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
