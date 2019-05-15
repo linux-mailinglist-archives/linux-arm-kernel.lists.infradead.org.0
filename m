@@ -2,54 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D65FC1F907
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 18:59:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71E791F933
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 19:15:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4+y3Oc6awkUxROX+BRGgxkfyZpjBLge332YSU3cfqxQ=; b=Uaq+SheWnyiYS4
-	VlAbTBcZKLUPmwZbV/onPZXO2O/fqAcQ87IEpZTM2M9lg3RaGJcIdCMlze8gJHgNiQJ33+4eeznzt
-	g9+ZR08q06AuJfGW9K7EjMfe0aHT9i8FrnXlayb5TmLU05fyPl8pAXHKkihJ2hWTGlFekOrD0kzjf
-	CQwK4ON70FWBSTp5SFjuqrz6nhwoOzTiG6+N7UdQDkbwhyQ5jGXPKTcMpTIDG65pDTSP6PARyrGJP
-	/mUdbj49vlK0elK88Dh+iNqT1iaULC0OdCPEen639hiOID8KKHrmxXAh3zF4tRB195rPd21D+r5T5
-	DKVc1xuFzJXAmsTNkn1Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=cOQ3SjnGgv4gBct3y09qmaMCXdlAdQ4zQsEyO2qGPUc=; b=gCg
+	xNhBBmAl6OoRfgiKo6xsd+JOLKYalTkoDtirZyUU0K6/HIkWVZOEsjGNL3sjOYD4NZ3sp6pBhv+1Q
+	8ZVYR/VmsIBVo/X1mKk3yzvrGONItJZsJpaO0+pb6Ig7XxRsNVYNpGanL8FfbYAptMWmmF/DsH1Du
+	VNmWcMMq5WxwcgXrBo5wH8PaGbH79QPTxVGsu77t71XCBUM7jCOlYPJlunEfFptozYxcxA+pl9D2f
+	EO8UCAXZ+c/QxUBX8gTLKDBXciUlG95Hi+oo1WzA5NSln6GUzECGdQvEjlCDtYXyt5jQXtpyebj/I
+	+DJURsTE8CS/hCSqLT82TkhU2cLJHug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQxF5-0006Ie-Js; Wed, 15 May 2019 16:58:59 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1hQxUp-0004Zy-D8; Wed, 15 May 2019 17:15:15 +0000
+Received: from mout.gmx.net ([212.227.15.15])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQxEx-0006Hr-Kp
- for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 16:58:53 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id CCF40ADAB;
- Wed, 15 May 2019 16:58:48 +0000 (UTC)
-Date: Wed, 15 May 2019 18:58:47 +0200
-From: Michal Hocko <mhocko@kernel.org>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH V3 2/4] arm64/mm: Hold memory hotplug lock while walking
- for kernel page table dump
-Message-ID: <20190515165847.GH16651@dhcp22.suse.cz>
-References: <1557824407-19092-1-git-send-email-anshuman.khandual@arm.com>
- <1557824407-19092-3-git-send-email-anshuman.khandual@arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1557824407-19092-3-git-send-email-anshuman.khandual@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1hQxUg-0003hP-Se; Wed, 15 May 2019 17:15:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1557940479;
+ bh=Nr3h1+y4CIbQ5dWtN97akntOP5NuL28h1LY/fjhmquw=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
+ b=ID2evJrKjBHz2LRgYwhzkqjNSXgc7MPS7EZUthir6++AV2j7lGqyxlsIOx26/YbR7
+ iVZ50S/QsjenlSTUW/Ro7nLYnyvVps5tmNhlVf3+ChsdcJh0/pZx68mtyuPyeFxX66
+ /TRGT4n9xSczVFHd3P9Ddww1ZsBybI7Isll8Mb+s=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from localhost.localdomain ([37.4.249.144]) by mail.gmx.com
+ (mrgmx005 [212.227.17.190]) with ESMTPSA (Nemesis) id
+ 1MDywo-1hYhFD37Cu-009vYa; Wed, 15 May 2019 19:14:39 +0200
+From: Stefan Wahren <wahrenst@gmx.net>
+To: Wim Van Sebroeck <wim@linux-watchdog.org>,
+ Guenter Roeck <linux@roeck-us.net>,
+ Florian Fainelli <f.fainelli@gmail.com>, Eric Anholt <eric@anholt.net>
+Subject: [PATCH] watchdog: bcm2835_wdt: Fix module autoload
+Date: Wed, 15 May 2019 19:14:18 +0200
+Message-Id: <1557940458-8661-1-git-send-email-wahrenst@gmx.net>
+X-Mailer: git-send-email 2.7.4
+X-Provags-ID: V03:K1:TsA9YOEJPGxTelJ7VCsYWR6sqtVxZ1Z1wLmBOSBPmP0CX8mJ/wl
+ +GerF/0Gn3JfN0MnZEm3GV/JWHngw4KbzIghCRPSaynzprPuHwrhFFxMoWphAOjAE/biPmC
+ 2uYNpdA1BurCxRjjDMEGwDgih2xMAPmr9H3xiKcIelOrBjDCh30fb76JQYM2Xe0ATikuZpH
+ 4Xes11UA5xa6OibOVpXLg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:4GIwKZnNH0U=:FqJ0Y9sew2VI1/fkNpFIRZ
+ OVsbFWGC76tApBT9treKz2zgyGuby6mpyFKxHwDp9CgHGfv+zBjzMEpAM98ilYpgEjLLA0CP+
+ o0P9bnDQxnLi/TXxlvaY99S8zH1/TaBVNln7d4pguhb/fv6vahPlrXizql0SCOGpeOrLZJ6r9
+ 29JLpPGg9A8s6PGEkbhKRy4+drIXGQ9pZMtz2P0dlc1Jh5PeeoLtl3AtalJYscf4OuaVvNqwm
+ tqhJTz9s6VuW5IG90y0qxWjOZAJLXgKnBTZ8P8UYD+08rbVd9XdSZsUQQkGEhhIjdihseHAV5
+ e3iZDCYRNeKdIP8cN4FoAY04JnztxEYc1+79g7ETJsW/cqc/tAn0QJasaMVgWpJ4frS2zwLkG
+ Er0syyXsbrTfb5znc0zUq7WfabjQFWSnBuaY3erSLaKlwfgHz9V5Pb1UhhXrm0aQoDT053Jq6
+ ok/+zHsu4WqwyhBBjVHkLQJxdq7EcYYFgcLh1KWC8tSJmf4z683Nozc60WN5U68GSLBEeRKwX
+ EabEgeosjbEt4iLsX4HvfuONcrlEgAYJ90uznJO9o/k5ZtP7T72mEPNcLHiC5/Zyz275nG95b
+ fB1q6+H7aVwW+CPo3F4KT74Ycqns18ve32TyLnJrHtp08cI81GgEPAOo1PcOAV11CET/IT/KN
+ 8tKRT4tQoAa+nticuPFB43cKC/2NLZ0RSBNL7bkyjztTWCzOdjaTCiucrUT690wduXnQjawWC
+ txGCx9bIRInXBucs+jgV1KUgKQtEA/lZ9EUB7TiNrCypnrQFKS+n/HPRIXxCXzg81ggk4dBpj
+ 5JdNn4IUX5F94zKRMWnHEDHtDJkVtUz0lrmj/CJpIv1cEVA1zJQNSDsOnxIwmTo6Quxc7zCRR
+ Ft2z0WHw6MK6c+MFS05ukWcC+x68Lm5/oNYIbtiPzFRCmSqh36nvrBSmhZOavE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_095851_830914_9E751F8F 
-X-CRM114-Status: GOOD (  12.21  )
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20190515_101507_300598_1A5555DF 
+X-CRM114-Status: UNSURE (   9.56  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.15.15 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -61,43 +92,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, ira.weiny@intel.com, david@redhat.com,
- catalin.marinas@arm.com, cai@lca.pw, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, logang@deltatee.com, james.morse@arm.com,
- cpandya@codeaurora.org, arunks@codeaurora.org, akpm@linux-foundation.org,
- osalvador@suse.de, mgorman@techsingularity.net, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org, robin.murphy@arm.com
+Cc: linux-watchdog@vger.kernel.org, Scott Branden <sbranden@broadcom.com>,
+ Ray Jui <rjui@broadcom.com>, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Stefan Wahren <wahrenst@gmx.net>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue 14-05-19 14:30:05, Anshuman Khandual wrote:
-> The arm64 pagetable dump code can race with concurrent modification of the
-> kernel page tables. When a leaf entries are modified concurrently, the dump
-> code may log stale or inconsistent information for a VA range, but this is
-> otherwise not harmful.
-> 
-> When intermediate levels of table are freed, the dump code will continue to
-> use memory which has been freed and potentially reallocated for another
-> purpose. In such cases, the dump code may dereference bogus addressses,
-> leading to a number of potential problems.
-> 
-> Intermediate levels of table may by freed during memory hot-remove, or when
-> installing a huge mapping in the vmalloc region. To avoid racing with these
-> cases, take the memory hotplug lock when walking the kernel page table.
+The commit 5e6acc3e678e ("bcm2835-pm: Move bcm2835-watchdog's DT probe
+to an MFD.") broke module autoloading on Raspberry Pi. So add a
+module alias this fix this.
 
-Why is this a problem only on arm64 and why do we even care for debugfs?
-Does anybody rely on this thing to be reliable? Do we even need it? Who
-is using the file?
+Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+---
+ drivers/watchdog/bcm2835_wdt.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-I am asking because I would really love to make mem hotplug locking less
-scattered outside of the core MM than more. Most users simply shouldn't
-care. Pfn walkers should rely on pfn_to_online_page.
+diff --git a/drivers/watchdog/bcm2835_wdt.c b/drivers/watchdog/bcm2835_wdt.c
+index 1834524..c7695a0 100644
+--- a/drivers/watchdog/bcm2835_wdt.c
++++ b/drivers/watchdog/bcm2835_wdt.c
+@@ -241,6 +241,7 @@ module_param(nowayout, bool, 0);
+ MODULE_PARM_DESC(nowayout, "Watchdog cannot be stopped once started (default="
+ 				__MODULE_STRING(WATCHDOG_NOWAYOUT) ")");
 
--- 
-Michal Hocko
-SUSE Labs
++MODULE_ALIAS("platform:bcm2835-wdt");
+ MODULE_AUTHOR("Lubomir Rintel <lkundrak@v3.sk>");
+ MODULE_DESCRIPTION("Driver for Broadcom BCM2835 watchdog timer");
+ MODULE_LICENSE("GPL");
+--
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
