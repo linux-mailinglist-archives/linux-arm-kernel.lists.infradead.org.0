@@ -2,70 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19FF31F4A8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 14:43:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E17E1F4AC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 14:44:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kcTRjthcydepaW6ASoJAhqIUkWDR15m/zsZwfVjF8Q4=; b=CvznAa1LHDkHCH
-	YqebzsqZF383MPBFHEyyMz16SdQNlsraFFkshKGG0YHAqL+IZ1Oc/yyJO4DfnRBeDDXBsvQEQ+RfE
-	D2bvsrnYDVkmq65VD3ocO6ygjxtduZWY9hf5Y/ptqN3yhzE/gOh8eJDjddmx1qSVv0rLgiIuWMB51
-	oUPCnaDFdESblHsD/be4XatF5wy3Xw2qIc8D2OIzo6asR1KlcmLZIlTUDcIti30q2J0BIa+/H7baZ
-	z4fbwE0cjuvz6zR135vJUBIN60Ld+xqCtP8agK2ubvpPe5SpnDn9bsq9hLx0DbkTwudJcfV2knl18
-	htC2OFPDrajUB8dNmBqg==;
+	List-Owner; bh=F5O32AgNmCbpb0KcHNlh46UdWuzQHzDEYDj4/A3kQVU=; b=R4MdpVpfE+BELL
+	MqycnlKc4hY1Q5fqIChncyKAcv9tCry32J8jdUmMr1Jar28GeaicRtDHx0C1aN/XN92DPwJ3yrRkS
+	3Q5GkLWNYR1xS8VbbIeYXTfgupfbFYZL8DBCK/1AT6Qw2hoBqEv0qyVjDUsxjBoZmHZafaNsZLIgX
+	rDQBLNb59BGgIiwMuKobuv9xbKCIsYT3axMx/OI7xQPp5G9U+jR077XoRJ8V9G90WZSGJlYaEvI3I
+	ZJi3HKAiiytBG8gKtbrevakoB2M7qYXHnJlvKk7nvBdGfgahjRrpbngoTi6gi7dfqj6M8ZrNrftU5
+	H6GyHNBw28eyvkQVfh2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQtG4-00067G-RC; Wed, 15 May 2019 12:43:44 +0000
+	id 1hQtGR-0006Sr-PS; Wed, 15 May 2019 12:44:07 +0000
 Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQtFv-00065n-Ei
- for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 12:43:37 +0000
-Received: by mail-wm1-x342.google.com with SMTP id h11so2323272wmb.5
+ id 1hQtGJ-0006S4-N2
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 12:44:01 +0000
+Received: by mail-wm1-x342.google.com with SMTP id f204so2536132wme.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 May 2019 05:43:34 -0700 (PDT)
+ Wed, 15 May 2019 05:43:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=4+IPfXtr/zyvyJnFlkcNs+aGHAhvx9CNBUaI7wPMn/Y=;
- b=miSv11/VhHwHpj5KtpDC83uSn/eO4WLTb3ghRqc6ARq0NoClLBdszZkbjukN7SYfNe
- d0fWys1vXT92ASwZ531lhb3BulFKdM5tV88PJ+D+IXbQBMIpEie2NGD35W+6llDxj9hh
- sCSrepOh0ApoS0u/KeJtQu8vHwcMQ2/qRjKLJuSrjZcXnAnRUrT2qfbZoDZG+Xp9LxU+
- Wip+iFbXsmtNnZMaZ42uIBmdwlJmHbDlHRLknkBhAS85J4FbukuzykK+Qxiloqgqj3oC
- N3ySEkI55v7W+7B6yLIPXNtrSFGJ3kBpTN1HNcA9WGdczgwqpTDp1ykx0z7oa2YHNmrU
- DDKw==
+ bh=OfM7ijotsCqaMVBFakfOlB9DZSSL0wb+cjLTAAbAZ5w=;
+ b=g8W9uJoJH56yLVkzqL123jcq8h4ias/Ft3h68FPaN+g6J2+JChGlyD7GgC6XN6gnMO
+ 6IGX0AR8UsKEpITv9nf58KFxwBdPwq5vmFZrSHMg4aLpw+j1g8zvEdqdaa/s/cK8C45S
+ PGJjWmlSO8BBjcBu0bbgtFWkqv7sIa7WI/ikiCaNlu0+q3jfCwpDhxbufbnx63OyJaqH
+ 0uH9HGk7JVRK/LNUeWP0xC3B2d0cABSGbwS9cFoHbK8ZG/w/Voyxst8vSclyrdmCjUZI
+ Pb7/jXpHVqhz+Cz93Cu3Xj10Hl/LNLH6NWyOIX3CQ3EEDoR3vFOeoVKGI7rwvNvNvuP5
+ JRDA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=4+IPfXtr/zyvyJnFlkcNs+aGHAhvx9CNBUaI7wPMn/Y=;
- b=CnJqayR0V5YSODER4igE2kcYNCz3YCUDab8sKy0bQSOaw3065EOPpiUD6KKk1YaCF2
- QHC4uizXz2fk+szPkfvlpQGmiwNZTavBXwL3ObTwny5schm/CWkmWnajL8hLSD8kJdGK
- sMInxO2J3J87szTkcOYSU6U0cNhImp5jIag+O67TwI5cN3bYtA0b4NoWvna48/vqPkT+
- qGKxMi13+sUP8dBx1bLzprRr0I0m8NctcbvkxOqDdv35bd8PoonQGqMbucpPqp3Wl7KA
- 5/c6FDEVu/Q7W8GMe+lE63UYqGr9KTCiV3ryTtzCZcuMM09Dp0Rk6oBolSqEu5kxO7zp
- ip9w==
-X-Gm-Message-State: APjAAAUV3vm+q4nf9+4zCGq2pOtcan4V+J++C2h+AxRntZddfEw5tUoF
- 5lnzl9CsgBau0xIb7bMXU5I290brBSzpWA==
-X-Google-Smtp-Source: APXvYqwcAtFQNnpA4Km7/VhuhxKrqL/yR65nCDu9j8fTBkz9a1rKkCHIGFGTjSxCXjAHuNJI2zEcgQ==
-X-Received: by 2002:a1c:a9d4:: with SMTP id s203mr22532861wme.27.1557924213042; 
- Wed, 15 May 2019 05:43:33 -0700 (PDT)
+ bh=OfM7ijotsCqaMVBFakfOlB9DZSSL0wb+cjLTAAbAZ5w=;
+ b=Jh7taXJBYfpZ8/XzFP+dt1ij2gSv3HlWtX9nmAcDDWUnXWDEBR/Zr4G7wjZZ2Be34J
+ UCYRB+Bq4yAWz4QCsw5lsZfB7vxnnXTCnxcTbi+7zZXa24b9vcYhJW1qhrN0JQ76EEQb
+ vq9NZtiIpJ1mMC5LS1ysJ/KUUcAY7rrlhdKNlV6XWhF7RmpBTJdstTIccnTmkLBwRKnF
+ q+Ei2Q09Kpx3j8szOnkpfqzQQwhKkrMsHYMxWg9QdB1fcrAPqrVWndb/h10tPs0UsA8T
+ VTlcPjL8i5UX3uLNF2q6iVW4Rl2SgOoj1xRQmNhhb6wfRceOeDxPHfwvaCHDKPgi1i2U
+ 4m9Q==
+X-Gm-Message-State: APjAAAX8yMlrip/cmkKj52Nn2TR1L/m7NjohBrREtSz8Z0hQjEW5ugO6
+ WRWd9d3+Pdoj+vUyvH2Lf48Tlg==
+X-Google-Smtp-Source: APXvYqxD9DLNNA/khUrSelD+Cne01trgO+5EaVkXO7n4DkDrB4sqxzDzEQdFqZEBxcy2gXn+O0rAJA==
+X-Received: by 2002:a05:600c:217:: with SMTP id
+ 23mr9075359wmi.115.1557924238264; 
+ Wed, 15 May 2019 05:43:58 -0700 (PDT)
 Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
  [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id k67sm2459834wmb.34.2019.05.15.05.43.31
+ by smtp.gmail.com with ESMTPSA id r14sm2075025wrm.21.2019.05.15.05.43.57
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 15 May 2019 05:43:32 -0700 (PDT)
+ Wed, 15 May 2019 05:43:57 -0700 (PDT)
 Subject: Re: [PATCH 1/3] dt-bindings: mmc: meson-gx: add ddr-access-quirk
  property
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>
 References: <20190513091548.16674-1-narmstrong@baylibre.com>
  <20190513091548.16674-2-narmstrong@baylibre.com>
- <CAFBinCAhTeywLZRBhcX_myktU9k4_YcjsjgCeTHEkP7SX8JCMQ@mail.gmail.com>
+ <CAPDyKFr9HVLNpqncs6YhGvqPdXCk6mtVSPVcWDvmnrKiNB+ACQ@mail.gmail.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -118,16 +119,16 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <9615cdb8-0a7e-fd39-45f0-79fdc7c0441c@baylibre.com>
-Date: Wed, 15 May 2019 14:43:31 +0200
+Message-ID: <9a5d0be0-00de-2ced-de20-000c0b12b3c8@baylibre.com>
+Date: Wed, 15 May 2019 14:43:56 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <CAFBinCAhTeywLZRBhcX_myktU9k4_YcjsjgCeTHEkP7SX8JCMQ@mail.gmail.com>
+In-Reply-To: <CAPDyKFr9HVLNpqncs6YhGvqPdXCk6mtVSPVcWDvmnrKiNB+ACQ@mail.gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_054335_494814_30104108 
-X-CRM114-Status: GOOD (  19.00  )
+X-CRM114-CacheID: sfid-20190515_054359_756747_23F5F3AF 
+X-CRM114-Status: GOOD (  19.55  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -151,19 +152,19 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, ulf.hansson@linaro.org,
- baylibre-upstreaming@groups.io, khilman@baylibre.com,
- linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: DTML <devicetree@vger.kernel.org>, baylibre-upstreaming@groups.io,
+ Kevin Hilman <khilman@baylibre.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 14/05/2019 19:50, Martin Blumenstingl wrote:
-> Hi Neil,
-> 
-> On Mon, May 13, 2019 at 11:16 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
+On 15/05/2019 13:37, Ulf Hansson wrote:
+> On Mon, 13 May 2019 at 11:16, Neil Armstrong <narmstrong@baylibre.com> wrote:
 >>
 >> On the Amlogic G12A SoC family, (only) the SDIO controller has a bug which
 >> makes any DDR access from the MMC controller fail.
@@ -172,8 +173,6 @@ On 14/05/2019 19:50, Martin Blumenstingl wrote:
 >> controller has this bug and needs a quirk to work properly.
 >>
 >> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-> Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-> 
 >> ---
 >>  Documentation/devicetree/bindings/mmc/amlogic,meson-gx.txt | 4 ++++
 >>  1 file changed, 4 insertions(+)
@@ -189,20 +188,28 @@ On 14/05/2019 19:50, Martin Blumenstingl wrote:
 >> +Optional properties:
 >> +- amlogic,ddr-access-quirk: set when HW cannot access the DDR memory, like on
 >> +  the G12A SDIO controller.
-> (I believe we cannot use a standard property like "dma-ranges" to
-> disable DMA access)
-> personally I prefer "amlogic,no-direct-memory-access" or
-> "amlogic,no-ddr-access", but if Rob is happy with the current naming
-> then I'm happy as well
+> 
+> As stated on the other patch, may I suggest to use DRAM instead of DDR.
 
-I have no preference, I can change it easily,
-
-Neil
+Indeed, may be more accurate.
 
 > 
+> Moreover, please mention that this is about the internal DMA support
+> of the controller.
+
+Ok
+
 > 
-> Regards
-> Martin
+>> +
+>>  Example:
+>>
+>>         sd_emmc_a: mmc@70000 {
+>> --
+>> 2.21.0
+>>
+> 
+> Kind regards
+> Uffe
 > 
 
 
