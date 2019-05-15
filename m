@@ -2,82 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FE8A1F9EC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 20:26:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CAFE21F9FB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 20:30:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K3Y1x+IM/FLEViW/YPMIMnccePPBZ9J7X1NQtZ6J1hY=; b=o1Wn9PSzZQEYqW
-	4+LaPVcA3M9u1vZQmUfXgbvPrwoQCQmmVQcNuzKGCjQY4FPWunR939o0dSMukfdX2NQcW9KozVI9J
-	93CqfqjZL1VqP+Qqo3nC2yBE5CAONlYqX+0rmJlfAZJ4tDNZfcMDQ6/3btmL8u6hsELssXXqnA3cz
-	oMiJJ8sQvqKl7iE03os7oS0zhoi4dEk6COtJdqcEDi+RZdM/T7CaD8+ENG49sfktpbS7qRFViY1ia
-	0qT3hmRp7VX3PnhMPTZpx077QCLcHY7O4rmtNKkRi9q5+gBHuRPzcnma7ow5CgEg/SJuX/ghwwTXE
-	yvQgE5TbF6UFlKSmNEhw==;
+	List-Owner; bh=DdbfNtMKWswzG4iFuSoTo07nWHn/dacAGjnCYChiZlw=; b=uzDo3K4gvqf/XE
+	pLapNCnkVW+PB0/zBlNlgOLQNVj0drPGsOdpfaUSNL3dn8O4BoVxikvxMLT1VCwyd84kRsMH8Kddf
+	RZ3Pq+Y0XapCxKQ3l1VPxedb9OXxFieTWP3ewgRC2bdgHaX+SnCM0ibf2W0T00en+7KbqFiDztM1O
+	Yjw8V/GcXpehUkxk2NxrvsV0Ekri7pQ0K6qb9gfrOuoAgVyBIVQoevyu1G7Azwobflj6IWUQsYUEl
+	yK88eYpPNjOYKZP/OKpE8I5K6RW/7rRG0Nf3kHvADWZ8FSSUX6QPRUsGsucKDs6ehm1ApnSgFEvKD
+	eAgmoWLiA+vWZJpwQHfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQybn-0001sT-3O; Wed, 15 May 2019 18:26:31 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1hQyfk-0003gh-Ru; Wed, 15 May 2019 18:30:36 +0000
+Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQybM-0001WO-MA
- for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 18:26:07 +0000
-Received: by mail-qk1-x743.google.com with SMTP id d10so628010qko.4
+ id 1hQyfb-0003ev-Ny
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 18:30:28 +0000
+Received: by mail-ua1-x944.google.com with SMTP id 94so247419uam.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 May 2019 11:26:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=jFj8dh23g2idvSds2JYPP7kaIEok3DfVq0OP/6qEkjo=;
- b=BmVVmLPDeF0Gh1VuUSf55t4gi1/UnkJVNXU6pn3dvbTIbUr3GxfpIKRwrHu4flb3CG
- HTKZuXRN+BVDiyYtSqmjpKwFx3Bh00cbTfGG6bOcV9qX9VXnAILuUU7Y1v/0ih30no4w
- 8gkbCH9MFy4Y544krG1rk/QqQmJeKFeOLst+j5q9VQIiRN27xsFJ3otCgPv3RlMQEUIZ
- tR1VE2Wrv4wzsnARmTsh7skwOd7YDlTtR5DagCMfo4NlY4yXpzS/Dz30DtgVtj6H4Oec
- JHh86xeV6tAR1Pj/JSY/zUj4zCxOeWJdikDAe/3NxIhDClKJf0UhbFttr3IzSE4bHCBi
- kSaA==
+ Wed, 15 May 2019 11:30:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=x1GsAM8bhdilQ74FwqzJHpjAIW1mRUZnatlHpEToBDY=;
+ b=QxhYWoPZ+1PlCeInJqiH5EdtHpzqJylxhCJeEIF6Jo3c2n26Xg9zJvIAjyi21FRb1E
+ shfVV0sjHTkIk+XT0LuVrMEHJjAIGk1WL7tVbohxb8T16rinc4xS01nUc4/e6KTE5MTA
+ PeT9fUG9BtVkJC9XKXysA0q0GuB+i28ib1IbA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=jFj8dh23g2idvSds2JYPP7kaIEok3DfVq0OP/6qEkjo=;
- b=fUp9lRKYYZPh3DVBMtNlo646Mck7jDlCiqkZoF3bIWQH/81mjORze0USQ/id8E88DJ
- ZflFKhoUXAT0Qu3GkjkgwCq18apl9Fq6yS9WOP3MqyqO8hZjZ/hIUU8CX5xdGphguAdz
- geO3JqpqjmdIIEsQh78J6x1hsBmVIXYGyApr7q3Geg0uhuJIpD3SWPW2WF6/cjdZtoRk
- 74XNvihuyZ1SviHnL/MFPJajqeUlKe2crgclGa/lMe8LO6tQsM3YSCjfd7yylCAFKVz6
- xhxaGfFGg2v494k1u82Clj2uCKnO80W2VPkObS//GTgj+2EeVrEbKU7bFaU7iQRm1dGY
- j9kA==
-X-Gm-Message-State: APjAAAV9+2067RIdcGS2QuQzOgHuVQBx8UELNOei5z2m6MpFxbG42uuR
- fjj9odTzA6mys3gPLoES9StYbQ==
-X-Google-Smtp-Source: APXvYqx5lu/OaoclV0DLdEX2WJ5Nw8BWbL4Pl6MEnRYhtodr67RdCqsBRDyDKxOX/wdl9ukhI9O9Wg==
-X-Received: by 2002:a05:620a:3:: with SMTP id j3mr17330454qki.95.1557944763567; 
- Wed, 15 May 2019 11:26:03 -0700 (PDT)
-Received: from localhost ([2620:0:1013:11:89c6:2139:5435:371d])
- by smtp.gmail.com with ESMTPSA id h17sm1372773qkk.13.2019.05.15.11.26.02
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 15 May 2019 11:26:03 -0700 (PDT)
-Date: Wed, 15 May 2019 14:26:02 -0400
-From: Sean Paul <sean@poorly.run>
-To: Douglas Anderson <dianders@chromium.org>
-Subject: Re: [PATCH 5/5] ARM: dts: rockchip: Add HDMI i2c unwedging for
- rk3288-veyron
-Message-ID: <20190515182602.GY17077@art_vandelay>
-References: <20190502225336.206885-1-dianders@chromium.org>
- <20190502225336.206885-5-dianders@chromium.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=x1GsAM8bhdilQ74FwqzJHpjAIW1mRUZnatlHpEToBDY=;
+ b=IFbFK1yimkUASL+BCXRBQzU6271luwf6DI2Jt2/J+9UG38g+GGGWxgR34iYLjg82Se
+ 6hVeiuAaluodUSMdxvT6OdcVT0pCPrFIEfEJeukDkgjEtV0d0iBKxoaZgyyGZ61ie059
+ rWpin48sCgCyovKsNuLKVlQK19e48T1WKrEMYfEnHwJwvFpNZbG/gLM+qjWago85BsXU
+ y5UzVlKxjWeZDrqMYQYrahzyZEz9Qh+IJf5JxEjSvuyJ8kpnKywOOtn0cxMPjg+sPS8x
+ ohL7IlCcjgx63FZh5aPDSOQhZHgOAWW5t+ipG+k5U/YNBbeses2M/Y+Mmr71YKwUx70m
+ LwYA==
+X-Gm-Message-State: APjAAAVOsI8i6HcW+aYpyRV5GVeamPt9OdDJbo4TQaSvXZVQSYbbhtoZ
+ evPVRqzPqcHaZmqPhS0N4PsCGBE+jNI=
+X-Google-Smtp-Source: APXvYqx42Or8HfAqo3IGQJN7qVHRaqHT47F9LjXfrfRTaoD3QficohCNt16xV1nt+IbAE73qdIKTVQ==
+X-Received: by 2002:ab0:4893:: with SMTP id x19mr21369926uac.5.1557945026473; 
+ Wed, 15 May 2019 11:30:26 -0700 (PDT)
+Received: from mail-vs1-f48.google.com (mail-vs1-f48.google.com.
+ [209.85.217.48])
+ by smtp.gmail.com with ESMTPSA id v141sm3036794vsc.8.2019.05.15.11.30.24
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Wed, 15 May 2019 11:30:24 -0700 (PDT)
+Received: by mail-vs1-f48.google.com with SMTP id j184so555400vsd.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 15 May 2019 11:30:24 -0700 (PDT)
+X-Received: by 2002:a67:79ca:: with SMTP id u193mr20058967vsc.20.1557945024176; 
+ Wed, 15 May 2019 11:30:24 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190502225336.206885-5-dianders@chromium.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190515153127.24626-1-mka@chromium.org>
+ <20190515153127.24626-2-mka@chromium.org>
+In-Reply-To: <20190515153127.24626-2-mka@chromium.org>
+From: Doug Anderson <dianders@chromium.org>
+Date: Wed, 15 May 2019 11:30:12 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=XgoG5hiT=vAhNtUF4iVj1-Lmj7S5tvk86ehxB1uUZyxw@mail.gmail.com>
+Message-ID: <CAD=FV=XgoG5hiT=vAhNtUF4iVj1-Lmj7S5tvk86ehxB1uUZyxw@mail.gmail.com>
+Subject: Re: [PATCH 2/2] ARM: dts: raise GPU trip point temperature for speedy
+ to 80 degC
+To: Matthias Kaehlcke <mka@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_112604_759658_C99F0729 
-X-CRM114-Status: GOOD (  17.73  )
+X-CRM114-CacheID: sfid-20190515_113027_775613_5B6C802F 
+X-CRM114-Status: GOOD (  17.02  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -87,6 +90,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -99,53 +103,37 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org,
- Neil Armstrong <narmstrong@baylibre.com>, Sandy Huang <hjc@rock-chips.com>,
- linux-kernel@vger.kernel.org, Andrzej Hajda <a.hajda@samsung.com>,
- Rob Herring <robh+dt@kernel.org>, Sean Paul <seanpaul@chromium.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, mka@chromium.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Heiko Stuebner <heiko@sntech.de>, LKML <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 02, 2019 at 03:53:36PM -0700, Douglas Anderson wrote:
-> Veyron uses the builtin i2c controller that's part of dw-hdmi.  Hook
-> up the unwedging feature.
-> 
-> Signed-off-by: Douglas Anderson <dianders@chromium.org>
-
-Reviewed-by: Sean Paul <sean@poorly.run>
-
-> ---
-> 
->  arch/arm/boot/dts/rk3288-veyron.dtsi | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm/boot/dts/rk3288-veyron.dtsi b/arch/arm/boot/dts/rk3288-veyron.dtsi
-> index e1bee663d2c5..340b276b6333 100644
-> --- a/arch/arm/boot/dts/rk3288-veyron.dtsi
-> +++ b/arch/arm/boot/dts/rk3288-veyron.dtsi
-> @@ -163,8 +163,9 @@
->  };
->  
->  &hdmi {
-> -	pinctrl-names = "default";
-> +	pinctrl-names = "default", "unwedge";
->  	pinctrl-0 = <&hdmi_ddc>;
-> +	pinctrl-1 = <&hdmi_ddc_unwedge>;
->  	status = "okay";
->  };
->  
-> -- 
-> 2.21.0.1020.gf2820cf01a-goog
-> 
-
--- 
-Sean Paul, Software Engineer, Google / Chromium OS
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgpPbiBXZWQsIE1heSAxNSwgMjAxOSBhdCA4OjMxIEFNIE1hdHRoaWFzIEthZWhsY2tlIDxt
+a2FAY2hyb21pdW0ub3JnPiB3cm90ZToKCj4gUmFpc2UgdGhlIHRlbXBlcmF0dXJlIG9mIHRoZSBH
+UFUgdGhlcm1hbCB0cmlwIHBvaW50IGZvciBzcGVlZHkKPiB0byA4MMKwQy4gVGhpcyBpcyB0aGUg
+dmFsdWUgdXNlZCBieSB0aGUgZG93bnN0cmVhbSBDaHJvbWUgT1MgMy4xNAo+IGtlcm5lbCwgdGhl
+ICdvZmZpY2lhbCcga2VybmVsIGZvciBzcGVlZHkuCj4KPiBTaWduZWQtb2ZmLWJ5OiBNYXR0aGlh
+cyBLYWVobGNrZSA8bWthQGNocm9taXVtLm9yZz4KPiAtLS0KPiAgYXJjaC9hcm0vYm9vdC9kdHMv
+cmszMjg4LXZleXJvbi1zcGVlZHkuZHRzIHwgNCArKysrCj4gIDEgZmlsZSBjaGFuZ2VkLCA0IGlu
+c2VydGlvbnMoKykKPgo+IGRpZmYgLS1naXQgYS9hcmNoL2FybS9ib290L2R0cy9yazMyODgtdmV5
+cm9uLXNwZWVkeS5kdHMgYi9hcmNoL2FybS9ib290L2R0cy9yazMyODgtdmV5cm9uLXNwZWVkeS5k
+dHMKPiBpbmRleCAyYWM4NzQ4YTNhMGMuLjM5NGE5NjQ4ZmFlZSAxMDA2NDQKPiAtLS0gYS9hcmNo
+L2FybS9ib290L2R0cy9yazMyODgtdmV5cm9uLXNwZWVkeS5kdHMKPiArKysgYi9hcmNoL2FybS9i
+b290L2R0cy9yazMyODgtdmV5cm9uLXNwZWVkeS5kdHMKPiBAQCAtNjQsNiArNjQsMTAgQEAKPiAg
+ICAgICAgIHRlbXBlcmF0dXJlID0gPDcwMDAwPjsKPiAgfTsKPgo+ICsmZ3B1X2FsZXJ0MCB7Cj4g
+KyAgICAgICB0ZW1wZXJhdHVyZSA9IDw4MDAwMD47Cj4gK307Cj4gKwo+ICAmZWRwIHsKClNpbWls
+YXIgY29tbWVudHMgdG8gcGF0Y2ggc2V0ICMxIGFib3V0IHNvcnQgb3JkZXJpbmcuCgouLi5JJ2xs
+IGFsc28gbm90aWNlIHRoYXQgaWYgd2UgZG8gZW5kIHVwIHNldHRpbmcgdGhlICJjcml0aWNhbCIg
+dG8gMTAwCkMgZm9yIG1vc3Qgb2YgdmV5cm9uIHRoZW4gSSBndWVzcyB3ZSdsbCBoYXZlIHRvIHN3
+aXRjaCBpdCBiYWNrIHRvIDkwIEMKaGVyZSBmb3Igc3BlZWR5IHRvIG1hdGNoIGRvd25zdHJlYW0/
+ICBNYXliZSB0aGF0J3MgYW4gYXJndW1lbnQgZm9yCmRvaW5nIGl0IGluIHRoaXMgcGF0Y2hzZXQg
+c28gd2UgZG9uJ3QgZm9yZ2V0PyAgSSdtIHNvbWV3aGF0IGFtYXplZAp0aGF0IGRvd25zdHJlYW0g
+aGFzIG9ubHkgMTAgQyBiZXR3ZWVuICJhbGVydCIgYW5kICdjcml0aWNhbCIgZm9yIEdQVQpmb3Ig
+c3BlZWR5LCBidXQgSSBndWVzcyBpdCdzIE9LPwoKLURvdWcKCl9fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
+CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
+ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
