@@ -2,85 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A63D1EBBB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 12:05:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A05EE1EBBD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 12:05:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i3WzOw3OJu1t1SKOqz5hqCbVdrmGx6LDGnC3HriI/f0=; b=R6fci8aO1Cj94R
-	jW91P98pGwVv1/hZsRL7N0vBuXV6S7fbYdV7KvLm+nUeGtD7EUb3FrHKj4oILd8eK3oURnwxASXPr
-	caDBZM+xg6WS8kY2m9c16jY3cLC+1BQY4Pr2BgVJT3N4wZZYsUzf//NQFEL4u1a4/64upFw3HcAQr
-	yEcJRzVoKT2WhzYRVsNanDbrPrC3EXFWUQySx173HU9okTnvr0rc9Ke5TONH9JkzaNoagmA33icc3
-	Bkhnc6rNPXxsML5G5ttbxlqFiHQPpAFImwK9rE2Mb3pbgRDb1lTMJ3gVDAtMRVdjo/lrroJ3wl1Fd
-	7SVnlg8strbqz4Am8bNA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=1Jn6/eP9GP131t2cnHO2NO752WvbXPrF5Jf02G+6E90=; b=JdcQ/8yw34nXHi
+	HfM80Ljf7WMhq3kcSgqWSlMleglCt+RXN2oz/XnryPicf+h1xBn5gDtCPQadNMpKEEC3XSnCHKw9j
+	txDxC0kfhjaGOz13czVvMuVsJ3+p+uxpMwFYt2A/IZSabXKepgapqHcZyiD+Vy6bVdnObKnLBfHUB
+	J+Rltj7t37RSY9J10KxBIfpqKQi/FsJQK/zVwTrRmpKzenP5QaM/98C71j6+qreKJVyiCnCrM3YH4
+	UN8wwKy8RGNymrAJG724k3XdiIpgo3a8uEwbz/zc4/A5/QGX+F3yryZUyS8U/2Edti8hzkhnt3hSQ
+	CDuz4E9+d34Gz6CrGiNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQqmS-0001pn-Tu; Wed, 15 May 2019 10:05:00 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1hQqml-0002eI-TP; Wed, 15 May 2019 10:05:19 +0000
+Received: from mail-vi1eur04on0622.outbound.protection.outlook.com
+ ([2a01:111:f400:fe0e::622]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQqm6-0001a5-PD
- for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 10:04:40 +0000
-Received: by mail-ed1-x544.google.com with SMTP id w37so3332280edw.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 May 2019 03:04:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=brauner.io; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=ge9TRjktRVrVnqZ1iKeaxbfy+4/gA1DaXxLhSva2Pzo=;
- b=V2IoDNXoO/tu4YP46eZWZIx8mjzPhScOJUiediP/JD8yu9tDCuMkDzTLMczg+YzL1i
- 8h2maTsgCDWSFCTCfU7iElO2lDQNz25OK2rLpUjDuXn/InO53AUIxsKPAWZBZHQBnkrY
- AylmGI44jvziO7CBVaOiSNrjQugCrPeFW/qMRQoUVqpO2tl+/0kLGYKgu+87muoF6SIN
- MFzNwXd7/30/fH3HAQmJ/WwjziGXeplBLLVcWSfq2WKVF3S/Ioic1nkUHLKFgoQ6jJCX
- K0CUmtSRSotosjbWq4lR1Rb3W3WdkgrHbqgOTbcxCjBqn46ScWwnVsssoWObRRQFq4Fq
- owXw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=ge9TRjktRVrVnqZ1iKeaxbfy+4/gA1DaXxLhSva2Pzo=;
- b=CTD/HsPbLE4rkAR5uyRD2do+WJc16U4A0rWDLjOFAOomSy6kjBmE2rchIhOT9bwict
- 09u2dnqpJ1MzucZp0kguJZ7dFjwtRrHtZf6lnQwbsaCkjySxYzyi8Rdy60z5Op8tt1dy
- /aIN+K1JQqKMOEpxSDwaacvuzkUgOAMMf20JyZ+BFQgn/960K6cbeG+q9NH6qXOTevIE
- FNY2f61ZvcBxuMpwAdmhMurMF3hy7IU0qXSpbkz+sDZqEHFLEvq7ksOfmvpzOhkG1Vq6
- 9mASI/aAnfyni9BnU7TeLQauQst2rLJwSeXfCj0I1x2dCwmfvSfwuuHt4zs1TGKB+E6X
- NbRA==
-X-Gm-Message-State: APjAAAWJ3ympR+i77T8A8bF+5ihePabNvxmm/lH6h1FF7cuwTd4ArlN0
- aa7GaahWE8dBBckvKBc66yB0ZA==
-X-Google-Smtp-Source: APXvYqzYgU+hAC+Brc4ebmK6tMsQUeItKnvEVlDVIv4My6oi+2rwZ3pVrIyeOkkPgIu/faKmW7m32w==
-X-Received: by 2002:a17:906:4f8e:: with SMTP id
- o14mr31438316eju.168.1557914677041; 
- Wed, 15 May 2019 03:04:37 -0700 (PDT)
-Received: from localhost.localdomain
- ([2a02:8109:9cc0:6dac:cd8f:f6e9:1b84:bbb1])
- by smtp.gmail.com with ESMTPSA id i33sm642763ede.47.2019.05.15.03.04.34
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 15 May 2019 03:04:36 -0700 (PDT)
-From: Christian Brauner <christian@brauner.io>
-To: jannh@google.com, oleg@redhat.com, viro@zeniv.linux.org.uk,
- torvalds@linux-foundation.org, linux-kernel@vger.kernel.org, arnd@arndb.de,
- dhowells@redhat.com
-Subject: [PATCH 2/2] tests: add pidfd_open() tests
-Date: Wed, 15 May 2019 12:04:00 +0200
-Message-Id: <20190515100400.3450-2-christian@brauner.io>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190515100400.3450-1-christian@brauner.io>
-References: <20190515100400.3450-1-christian@brauner.io>
+ id 1hQqmJ-0001mZ-1L
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 10:04:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=sm2X//WPXOIgD5UW/K/WAjv2L76gLqUFtG3NSJhdqLY=;
+ b=Mn4zWIIoM4a2at+hWHmy9qriRlUKed+NYgG5SedLvMisPKBjxgCHILC/VPr3tLTLpj2zQnHozv8/uDfVru754RgLLRTR/FMtg7N4X0hSQTrSZiUGdIvdicbMYoeg4PwcSlWSH7vOoaZU0T7HKyS2iSYLMGTswTl7lYPF0WR2CNw=
+Received: from AM0PR04MB6434.eurprd04.prod.outlook.com (20.179.252.215) by
+ AM0PR04MB4801.eurprd04.prod.outlook.com (20.177.41.155) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1878.25; Wed, 15 May 2019 10:04:46 +0000
+Received: from AM0PR04MB6434.eurprd04.prod.outlook.com
+ ([fe80::19be:75a:9fe:7cec]) by AM0PR04MB6434.eurprd04.prod.outlook.com
+ ([fe80::19be:75a:9fe:7cec%7]) with mapi id 15.20.1900.010; Wed, 15 May 2019
+ 10:04:46 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Anson Huang <anson.huang@nxp.com>
+Subject: Re: [PATCH V2 1/2] soc: imx: Add SCU SoC info driver support
+Thread-Topic: [PATCH V2 1/2] soc: imx: Add SCU SoC info driver support
+Thread-Index: AQHVCvixb1MFrIDHlECOalYM+lyDeQ==
+Date: Wed, 15 May 2019 10:04:46 +0000
+Message-ID: <AM0PR04MB6434C2BCE2116836CFC0FEBFEE090@AM0PR04MB6434.eurprd04.prod.outlook.com>
+References: <1557908823-11349-1-git-send-email-Anson.Huang@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [89.37.124.34]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: e9c69b43-db63-4003-37d1-08d6d91cc2ba
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB4801; 
+x-ms-traffictypediagnostic: AM0PR04MB4801:
+x-microsoft-antispam-prvs: <AM0PR04MB480156536BF4DAA6805F45BAEE090@AM0PR04MB4801.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4125;
+x-forefront-prvs: 0038DE95A2
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(39860400002)(346002)(396003)(136003)(376002)(366004)(189003)(199004)(44832011)(486006)(66476007)(66556008)(53936002)(66066001)(5660300002)(6862004)(229853002)(73956011)(66446008)(64756008)(91956017)(76116006)(52536014)(99286004)(476003)(66946007)(478600001)(7696005)(14454004)(316002)(86362001)(76176011)(4744005)(446003)(102836004)(6116002)(8676002)(2906002)(71190400001)(186003)(14444005)(6506007)(53546011)(26005)(256004)(55016002)(9686003)(54906003)(3846002)(6636002)(4326008)(33656002)(6246003)(6436002)(305945005)(71200400001)(7736002)(81156014)(74316002)(81166006)(25786009)(8936002)(68736007)(7416002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4801;
+ H:AM0PR04MB6434.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: y/ThbNd0wWXL7H2R4+RjpW0YsbGv8HGlcSfPA1sydRKGglH2TBBVqXpoeTvbrNw85ApwzaQu3KgLSlvsZIgCjH8k3SJNciRvyKCuFijM8wN316RjllItPd1wgnuRuZ9HaUZRjS0hqWydR+xQVP3guhdMaSseLfuFSTXCwdUP7eOzYJu/JKJqEOT2oQasUWkz0NQ6qIvhLc/E5Yy49cGihE51W01XQt6pm36DiXu6XSQCgi6iiDFJvTn1S6cYWMsBaq234YaXDLz9ddbKa7s0f1agfrQVkldkhoCJPf/rH8f/S33njOqLiDbh6vwjw7d6fucwZtFuwfrmeeWSK+lbTMAtiLaEOCajkbK29ORMN0BHCV+U8xasMzUoMB7IEmC8FHGkuLO8q0zTxf/HO7gOZXRudTWpj7lcXdonIYTBaWE=
 MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e9c69b43-db63-4003-37d1-08d6d91cc2ba
+X-MS-Exchange-CrossTenant-originalarrivaltime: 15 May 2019 10:04:46.7000 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4801
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_030438_820618_CED05457 
-X-CRM114-Status: GOOD (  24.84  )
+X-CRM114-CacheID: sfid-20190515_030451_084926_96BB0A94 
+X-CRM114-Status: UNSURE (   9.24  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ no trust [2a01:111:f400:fe0e:0:0:0:622 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -99,380 +111,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- linux-mips@vger.kernel.org, linux-kselftest@vger.kernel.org,
- sparclinux@vger.kernel.org, elena.reshetova@intel.com,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Christian Brauner <christian@brauner.io>,
- "Michael Kerrisk \(man-pages\)" <mtk.manpages@gmail.com>,
- linux-xtensa@linux-xtensa.org, keescook@chromium.org,
- linux-m68k@lists.linux-m68k.org, luto@kernel.org, tglx@linutronix.de,
- linux-arm-kernel@lists.infradead.org, linux-parisc@vger.kernel.org,
- linux-api@vger.kernel.org, cyphar@cyphar.com, luto@amacapital.net,
- ebiederm@xmission.com, linux-alpha@vger.kernel.org, akpm@linux-foundation.org,
- linuxppc-dev@lists.ozlabs.org
+Cc: "maxime.ripard@bootlin.com" <maxime.ripard@bootlin.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
+ "festevam@gmail.com" <festevam@gmail.com>, "robh@kernel.org" <robh@kernel.org>,
+ Abel Vesa <abel.vesa@nxp.com>, "agross@kernel.org" <agross@kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
+ "marc.w.gonzalez@free.fr" <marc.w.gonzalez@free.fr>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "olof@lixom.net" <olof@lixom.net>,
+ "horms+renesas@verge.net.au" <horms+renesas@verge.net.au>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Aisheng Dong <aisheng.dong@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "dinguyen@kernel.org" <dinguyen@kernel.org>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds testing for the new pidfd_open() syscalls. Specifically, we test:
-- that no invalid flags can be passed to pidfd_open()
-- that no invalid pid can be passed to pidfd_open()
-- that a pidfd can be retrieved with pidfd_open()
-- that the retrieved pidfd references the correct pid
+On 15.05.2019 11:32, Anson Huang wrote:
+> Add i.MX SCU SoC info driver to support i.MX8QXP SoC, introduce
+> driver dependency into Kconfig as CONFIG_IMX_SCU must be
+> selected to support i.MX SCU SoC driver, also need to use
+> platform driver model to make sure IMX_SCU driver is probed
+> before i.MX SCU SoC driver.
+> 
+> With this patch, SoC info can be read from sysfs:
 
-Signed-off-by: Christian Brauner <christian@brauner.io>
-Cc: Arnd Bergmann <arnd@arndb.de>
-Cc: "Eric W. Biederman" <ebiederm@xmission.com>
-Cc: Kees Cook <keescook@chromium.org>
-Cc: Thomas Gleixner <tglx@linutronix.de>
-Cc: Jann Horn <jannh@google.com>
-Cc: David Howells <dhowells@redhat.com>
-Cc: "Michael Kerrisk (man-pages)" <mtk.manpages@gmail.com>
-Cc: Andy Lutomirsky <luto@kernel.org>
-Cc: Andrew Morton <akpm@linux-foundation.org>
-Cc: Oleg Nesterov <oleg@redhat.com>
-Cc: Aleksa Sarai <cyphar@cyphar.com>
-Cc: Linus Torvalds <torvalds@linux-foundation.org>
-Cc: Al Viro <viro@zeniv.linux.org.uk>
-Cc: linux-api@vger.kernel.org
----
- tools/testing/selftests/pidfd/Makefile        |   2 +-
- tools/testing/selftests/pidfd/pidfd.h         |  57 ++++++
- .../testing/selftests/pidfd/pidfd_open_test.c | 170 ++++++++++++++++++
- tools/testing/selftests/pidfd/pidfd_test.c    |  41 +----
- 4 files changed, 229 insertions(+), 41 deletions(-)
- create mode 100644 tools/testing/selftests/pidfd/pidfd.h
- create mode 100644 tools/testing/selftests/pidfd/pidfd_open_test.c
+> +	id = of_match_node(imx_scu_soc_match, root);
+> +	if (!id) {
+> +		of_node_put(root);
+> +		return -ENODEV;
+> +	}
 
-diff --git a/tools/testing/selftests/pidfd/Makefile b/tools/testing/selftests/pidfd/Makefile
-index deaf8073bc06..b36c0be70848 100644
---- a/tools/testing/selftests/pidfd/Makefile
-+++ b/tools/testing/selftests/pidfd/Makefile
-@@ -1,6 +1,6 @@
- CFLAGS += -g -I../../../../usr/include/
- 
--TEST_GEN_PROGS := pidfd_test
-+TEST_GEN_PROGS := pidfd_test pidfd_open_test
- 
- include ../lib.mk
- 
-diff --git a/tools/testing/selftests/pidfd/pidfd.h b/tools/testing/selftests/pidfd/pidfd.h
-new file mode 100644
-index 000000000000..8452e910463f
---- /dev/null
-+++ b/tools/testing/selftests/pidfd/pidfd.h
-@@ -0,0 +1,57 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+
-+#ifndef __PIDFD_H
-+#define __PIDFD_H
-+
-+#define _GNU_SOURCE
-+#include <errno.h>
-+#include <fcntl.h>
-+#include <sched.h>
-+#include <signal.h>
-+#include <stdio.h>
-+#include <stdlib.h>
-+#include <string.h>
-+#include <syscall.h>
-+#include <sys/mount.h>
-+
-+#include "../kselftest.h"
-+
-+/*
-+ * The kernel reserves 300 pids via RESERVED_PIDS in kernel/pid.c
-+ * That means, when it wraps around any pid < 300 will be skipped.
-+ * So we need to use a pid > 300 in order to test recycling.
-+ */
-+#define PID_RECYCLE 1000
-+
-+/*
-+ * Define a few custom error codes for the child process to clearly indicate
-+ * what is happening. This way we can tell the difference between a system
-+ * error, a test error, etc.
-+ */
-+#define PIDFD_PASS 0
-+#define PIDFD_FAIL 1
-+#define PIDFD_ERROR 2
-+#define PIDFD_SKIP 3
-+#define PIDFD_XFAIL 4
-+
-+int wait_for_pid(pid_t pid)
-+{
-+	int status, ret;
-+
-+again:
-+	ret = waitpid(pid, &status, 0);
-+	if (ret == -1) {
-+		if (errno == EINTR)
-+			goto again;
-+
-+		return -1;
-+	}
-+
-+	if (!WIFEXITED(status))
-+		return -1;
-+
-+	return WEXITSTATUS(status);
-+}
-+
-+
-+#endif /* __PIDFD_H */
-diff --git a/tools/testing/selftests/pidfd/pidfd_open_test.c b/tools/testing/selftests/pidfd/pidfd_open_test.c
-new file mode 100644
-index 000000000000..9b073c1ac618
---- /dev/null
-+++ b/tools/testing/selftests/pidfd/pidfd_open_test.c
-@@ -0,0 +1,170 @@
-+// SPDX-License-Identifier: GPL-2.0
-+
-+#define _GNU_SOURCE
-+#include <errno.h>
-+#include <fcntl.h>
-+#include <inttypes.h>
-+#include <limits.h>
-+#include <linux/types.h>
-+#include <linux/wait.h>
-+#include <sched.h>
-+#include <signal.h>
-+#include <stdbool.h>
-+#include <stdio.h>
-+#include <stdlib.h>
-+#include <string.h>
-+#include <syscall.h>
-+#include <sys/mount.h>
-+#include <sys/prctl.h>
-+#include <sys/wait.h>
-+#include <unistd.h>
-+
-+#include "pidfd.h"
-+#include "../kselftest.h"
-+
-+static inline int sys_pidfd_open(pid_t pid, unsigned int flags)
-+{
-+	return syscall(__NR_pidfd_open, pid, flags);
-+}
-+
-+static int safe_int(const char *numstr, int *converted)
-+{
-+	char *err = NULL;
-+	long sli;
-+
-+	errno = 0;
-+	sli = strtol(numstr, &err, 0);
-+	if (errno == ERANGE && (sli == LONG_MAX || sli == LONG_MIN))
-+		return -ERANGE;
-+
-+	if (errno != 0 && sli == 0)
-+		return -EINVAL;
-+
-+	if (err == numstr || *err != '\0')
-+		return -EINVAL;
-+
-+	if (sli > INT_MAX || sli < INT_MIN)
-+		return -ERANGE;
-+
-+	*converted = (int)sli;
-+	return 0;
-+}
-+
-+static int char_left_gc(const char *buffer, size_t len)
-+{
-+	size_t i;
-+
-+	for (i = 0; i < len; i++) {
-+		if (buffer[i] == ' ' ||
-+		    buffer[i] == '\t')
-+			continue;
-+
-+		return i;
-+	}
-+
-+	return 0;
-+}
-+
-+static int char_right_gc(const char *buffer, size_t len)
-+{
-+	int i;
-+
-+	for (i = len - 1; i >= 0; i--) {
-+		if (buffer[i] == ' '  ||
-+		    buffer[i] == '\t' ||
-+		    buffer[i] == '\n' ||
-+		    buffer[i] == '\0')
-+			continue;
-+
-+		return i + 1;
-+	}
-+
-+	return 0;
-+}
-+
-+static char *trim_whitespace_in_place(char *buffer)
-+{
-+	buffer += char_left_gc(buffer, strlen(buffer));
-+	buffer[char_right_gc(buffer, strlen(buffer))] = '\0';
-+	return buffer;
-+}
-+
-+static pid_t get_pid_from_fdinfo_file(int pidfd, const char *key, size_t keylen)
-+{
-+	int ret;
-+	char path[512];
-+	FILE *f;
-+	size_t n = 0;
-+	pid_t result = -1;
-+	char *line = NULL;
-+
-+	snprintf(path, sizeof(path), "/proc/self/fdinfo/%d", pidfd);
-+
-+	f = fopen(path, "re");
-+	if (!f)
-+		return -1;
-+
-+	while (getline(&line, &n, f) != -1) {
-+		char *numstr;
-+
-+		if (strncmp(line, key, keylen))
-+			continue;
-+
-+		numstr = trim_whitespace_in_place(line + 4);
-+		ret = safe_int(numstr, &result);
-+		if (ret < 0)
-+			goto out;
-+
-+		break;
-+	}
-+
-+out:
-+	free(line);
-+	fclose(f);
-+	return result;
-+}
-+
-+int main(int argc, char **argv)
-+{
-+	int pidfd = -1, ret = 1;
-+	pid_t pid;
-+
-+	pidfd = sys_pidfd_open(-1, 0);
-+	if (pidfd >= 0) {
-+		ksft_print_msg(
-+			"%s - succeeded to open pidfd for invalid pid -1\n",
-+			strerror(errno));
-+		goto on_error;
-+	}
-+	ksft_test_result_pass("do not allow invalid pid test: passed\n");
-+	ksft_inc_pass_cnt();
-+
-+	pidfd = sys_pidfd_open(getpid(), 1);
-+	if (pidfd >= 0) {
-+		ksft_print_msg(
-+			"%s - succeeded to open pidfd with invalid flag value specified\n",
-+			strerror(errno));
-+		goto on_error;
-+	}
-+	ksft_test_result_pass("do not allow invalid flag test: passed\n");
-+	ksft_inc_pass_cnt();
-+
-+	pidfd = sys_pidfd_open(getpid(), 0);
-+	if (pidfd < 0) {
-+		ksft_print_msg("%s - failed to open pidfd\n", strerror(errno));
-+		goto on_error;
-+	}
-+	ksft_test_result_pass("open a new pidfd test: passed\n");
-+	ksft_inc_pass_cnt();
-+
-+	pid = get_pid_from_fdinfo_file(pidfd, "Pid:", sizeof("Pid:") - 1);
-+	ksft_print_msg("pidfd %d refers to process with pid %d\n", pidfd, pid);
-+
-+	ret = 0;
-+
-+on_error:
-+	if (pidfd >= 0)
-+		close(pidfd);
-+
-+	return !ret ? ksft_exit_pass() : ksft_exit_fail();
-+}
-diff --git a/tools/testing/selftests/pidfd/pidfd_test.c b/tools/testing/selftests/pidfd/pidfd_test.c
-index d59378a93782..f01de87249c9 100644
---- a/tools/testing/selftests/pidfd/pidfd_test.c
-+++ b/tools/testing/selftests/pidfd/pidfd_test.c
-@@ -14,6 +14,7 @@
- #include <sys/wait.h>
- #include <unistd.h>
- 
-+#include "pidfd.h"
- #include "../kselftest.h"
- 
- static inline int sys_pidfd_send_signal(int pidfd, int sig, siginfo_t *info,
-@@ -62,28 +63,6 @@ static int test_pidfd_send_signal_simple_success(void)
- 	return 0;
- }
- 
--static int wait_for_pid(pid_t pid)
--{
--	int status, ret;
--
--again:
--	ret = waitpid(pid, &status, 0);
--	if (ret == -1) {
--		if (errno == EINTR)
--			goto again;
--
--		return -1;
--	}
--
--	if (ret != pid)
--		goto again;
--
--	if (!WIFEXITED(status))
--		return -1;
--
--	return WEXITSTATUS(status);
--}
--
- static int test_pidfd_send_signal_exited_fail(void)
- {
- 	int pidfd, ret, saved_errno;
-@@ -128,13 +107,6 @@ static int test_pidfd_send_signal_exited_fail(void)
- 	return 0;
- }
- 
--/*
-- * The kernel reserves 300 pids via RESERVED_PIDS in kernel/pid.c
-- * That means, when it wraps around any pid < 300 will be skipped.
-- * So we need to use a pid > 300 in order to test recycling.
-- */
--#define PID_RECYCLE 1000
--
- /*
-  * Maximum number of cycles we allow. This is equivalent to PID_MAX_DEFAULT.
-  * If users set a higher limit or we have cycled PIDFD_MAX_DEFAULT number of
-@@ -143,17 +115,6 @@ static int test_pidfd_send_signal_exited_fail(void)
-  */
- #define PIDFD_MAX_DEFAULT 0x8000
- 
--/*
-- * Define a few custom error codes for the child process to clearly indicate
-- * what is happening. This way we can tell the difference between a system
-- * error, a test error, etc.
-- */
--#define PIDFD_PASS 0
--#define PIDFD_FAIL 1
--#define PIDFD_ERROR 2
--#define PIDFD_SKIP 3
--#define PIDFD_XFAIL 4
--
- static int test_pidfd_send_signal_recycled_pid_fail(void)
- {
- 	int i, ret;
--- 
-2.21.0
+Perhaps this check should be moved from imx_scu_soc_probe to 
+imx_scu_soc_init? As far as I can tell this "probe" function will be 
+attempted on all SOCs (even non-imx). Better to check if we're on a 
+SCU-based soc early and avoid temporary allocations.
 
+> +module_init(imx_scu_soc_init);
+> +module_exit(imx_scu_soc_exit);
+
+Please don't make this a module
+
+--
+Regards,
+Leonard
 
 _______________________________________________
 linux-arm-kernel mailing list
