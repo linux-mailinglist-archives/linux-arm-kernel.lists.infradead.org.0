@@ -2,56 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CDA71F0F0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 13:49:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DB531F10B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 13:54:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LpOU/p3Z73Qjzhhm5wVOaHVXxiYaRLi12GapEdOWj+o=; b=ZBZ0e8wA6vltx4
-	5s1lreFI/DBVRGKALiELeumEIjFmE02EET3Usxjazdt/+T/Myzn6xJhwXhkzeHfNuWk0y+mjHZ211
-	STywYRKV/ZWdbP8B+uf73QpzCI6E+7HoVHBJEbLJ1sjHzTc9oZ5eFJVB79KdeedxwET4e+ju78L6p
-	YRCPUHL6kAVZ82hcSlx0XZdmBNw4qOzSAXBVeiesn/od9rkoYAjLvfFinIAVcq781tfPzgOmG032f
-	Z3KEaOkhOYlJSOcjqPbagDmzQ7G9aYNxQumcGWOseKZZP0HfpoKHmsUtJIkPSzhrWN0qRQut8DDnn
-	2k8RVfv3WpN7m+xIQDsA==;
+	List-Owner; bh=fj/6MFgGhUyyWuxYYcQJ7hrHg7smBQ/R9NWQz6Gt4yI=; b=b8MVlDCT46MzXJ
+	P8tIVtLybSsw8w4WaBOtNUHEGh/dyLYMMUuZmsFeAMpovkI8eukChw3mrmRVYkWn12ZBJ45MtfCtS
+	oard8a95DqtJjnrpjv4QD7N2tfjlms4ijs8GZdBekfyIDqBYLTvawLETskV6D68CitQOaI7IPQE3D
+	079bKrOtwkbqLCETVxlRr7xnASV5pFOLPOvlLiQ4fblhdiIHJ1r5WmEE+sDyjYBq/SEYxU0UNQ97+
+	ApDhVmwfeDkZFOQlwCXeQVaB4Uk3c532qjnZFh83x/tHwXo7GslHYt1BJFIpsm9BhcPidOKhufh8t
+	Jm4+SBAKlOM0akWZp4qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQsPW-00006Y-MW; Wed, 15 May 2019 11:49:26 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQsPO-00005q-HT
- for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 11:49:20 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3F25980D;
- Wed, 15 May 2019 04:49:17 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4A7DC3F71E;
- Wed, 15 May 2019 04:49:14 -0700 (PDT)
-Date: Wed, 15 May 2019 12:49:11 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH V3 4/4] arm64/mm: Enable memory hot remove
-Message-ID: <20190515114911.GC23983@lakrids.cambridge.arm.com>
-References: <1557824407-19092-1-git-send-email-anshuman.khandual@arm.com>
- <1557824407-19092-5-git-send-email-anshuman.khandual@arm.com>
+	id 1hQsTw-0001sH-Nu; Wed, 15 May 2019 11:54:00 +0000
+Received: from mail-vk1-xa43.google.com ([2607:f8b0:4864:20::a43])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hQsTp-0001rq-NZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 11:53:55 +0000
+Received: by mail-vk1-xa43.google.com with SMTP id l199so673956vke.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 15 May 2019 04:53:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=XqTiQWMIUKTMvV3HGe2FXr2QXLkNPTKOj2lPv0DODS0=;
+ b=L44WaYKFencKFL0aLRS4NaNaiepcTeSneyqE/eagATEjv28G/XY8rdrsINJYIQTZ92
+ +PAtHPEVh8jR6qiTWKFFfSP1YkX7lU1GpVic60govDCk0GD9r4cJ91O5J6R1ASoGkJiU
+ pwD0pXq8TRFRlQS5+wFTsIeGJMUFygr0Z/efTjq8sjfpv/HlMMDxuYSkqsFMm5CRpwm1
+ HLqUJbTGo7MXb67aLZ0NYqUVwWM/iGnfiWnM954ZKFJk9wjWdFEtfhfXNzRPB2YT4cX3
+ 77AwPyaxeHAs+IgiexzVRguxuEPOP+ojlb2p4XdTHLUFutHRjAJsb04tpSMsrNmvvuQP
+ EpxA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=XqTiQWMIUKTMvV3HGe2FXr2QXLkNPTKOj2lPv0DODS0=;
+ b=L6eEU2RtUearW/W0+WVfvz0MzfXF2uxuxWuyN2uFrM40ngyAw9r2mP8E4yV7rjMq59
+ HRxJokmH8t2AeZsnADHEKABMx8W/RyyqTpT2ctDG0OKapgkjsOOLRCMwoRuecsrukt4B
+ k1XBGKYJ8bHrltfgstx+RtmbX0BNFskGDgzQorhHQNhuhG2FqRjLi/z2PzI0KKdKI+7W
+ f3g8oAWn5KfplF5ksyAdv3K5cJWmqYikiAUlb7CQodWQM69bw0wMXD4dpcyQwahWlmNu
+ sihFmlqT1rFn3AJubw1fYWi1B+c1LgwnbrDjxtPkmiQfzXuqipwOy3yytvYjOZ8H6MZ9
+ vytA==
+X-Gm-Message-State: APjAAAWgbPTJpgjvTiTo5FgU+kDO/JJZZf8g1US90dMBpxOcRkFr8MRB
+ bUrasJuiT3e+n8wnNMYGii0xYzOXYoCtb9CufKjvcw==
+X-Google-Smtp-Source: APXvYqxLLXp4CbKZ5K2cHxrvSLCedDsciD24l4vc3t7NCOi6h5PckPFbTpLuj6YsLGx3RyREW/4BoB33n9It563S1oQ=
+X-Received: by 2002:a1f:6e4d:: with SMTP id j74mr888394vkc.36.1557921232169;
+ Wed, 15 May 2019 04:53:52 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1557824407-19092-5-git-send-email-anshuman.khandual@arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+References: <20190509172427.17835-1-scott.branden@broadcom.com>
+In-Reply-To: <20190509172427.17835-1-scott.branden@broadcom.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Wed, 15 May 2019 13:53:16 +0200
+Message-ID: <CAPDyKFrmTEkknnmU22xuKaoG1=SbU2MfQANPmtV0wcF1xKaguA@mail.gmail.com>
+Subject: Re: [PATCH v3 0/2] mmc: sdhci-iproc: fixes for HS50 data hold time
+To: Scott Branden <scott.branden@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_044918_595427_3C6B52F4 
-X-CRM114-Status: GOOD (  24.72  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190515_045353_782846_7D7D54F6 
+X-CRM114-Status: GOOD (  15.81  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:a43 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,186 +89,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: cai@lca.pw, mhocko@suse.com, ira.weiny@intel.com, david@redhat.com,
- catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- logang@deltatee.com, james.morse@arm.com, cpandya@codeaurora.org,
- arunks@codeaurora.org, akpm@linux-foundation.org, osalvador@suse.de,
- mgorman@techsingularity.net, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org, robin.murphy@arm.com
+Cc: Stefan Wahren <stefan.wahren@i2se.com>,
+ Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ BCM Kernel Feedback <bcm-kernel-feedback-list@broadcom.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Anshuman,
+On Thu, 9 May 2019 at 19:24, Scott Branden <scott.branden@broadcom.com> wrote:
+>
+> This patch series fixes data hold timing issues for various sdhci-iproc
+> ip blocks that do not meet the HS50 data hold time.  NO_HISPD bit is set
+> in quirks.
+>
+> Changes from v2:
+>  - Added info to commit message as to stable tag selection decision
+>    as per Adrian Hunter
+>
+> Changes from v1:
+>  - Change fixes tag to Cc: stable@vger.kernel.org to specify version
+>    to backport to
+>
+> Trac Hoang (2):
+>   mmc: sdhci-iproc: cygnus: Set NO_HISPD bit to fix HS50 data hold time
+>     problem
+>   mmc: sdhci-iproc: Set NO_HISPD bit to fix HS50 data hold time problem
+>
+>  drivers/mmc/host/sdhci-iproc.c | 6 ++++--
+>  1 file changed, 4 insertions(+), 2 deletions(-)
+>
+> --
+> 2.17.1
+>
 
-On Tue, May 14, 2019 at 02:30:07PM +0530, Anshuman Khandual wrote:
-> Memory removal from an arch perspective involves tearing down two different
-> kernel based mappings i.e vmemmap and linear while releasing related page
-> table and any mapped pages allocated for given physical memory range to be
-> removed.
-> 
-> Define a common kernel page table tear down helper remove_pagetable() which
-> can be used to unmap given kernel virtual address range. In effect it can
-> tear down both vmemap or kernel linear mappings. This new helper is called
-> from both vmemamp_free() and ___remove_pgd_mapping() during memory removal.
-> 
-> For linear mapping there are no actual allocated pages which are mapped to
-> create the translation. Any pfn on a given entry is derived from physical
-> address (__va(PA) --> PA) whose linear translation is to be created. They
-> need not be freed as they were never allocated in the first place. But for
-> vmemmap which is a real virtual mapping (like vmalloc) physical pages are
-> allocated either from buddy or memblock which get mapped in the kernel page
-> table. These allocated and mapped pages need to be freed during translation
-> tear down. But page table pages need to be freed in both these cases.
+Applied for fixes, thanks!
 
-As previously discussed, we should only hot-remove memory which was
-hot-added, so we shouldn't encounter memory allocated from memblock.
-
-> These mappings need to be differentiated while deciding if a mapped page at
-> any level i.e [pte|pmd|pud]_page() should be freed or not. Callers for the
-> mapping tear down process should pass on 'sparse_vmap' variable identifying
-> kernel vmemmap mappings.
-
-I think that you can simplify the paragraphs above down to:
-
-  The arch code for hot-remove must tear down portions of the linear map
-  and vmemmap corresponding to memory being removed. In both cases the
-  page tables mapping these regions must be freed, and when sparse
-  vmemmap is in use the memory backing the vmemmap must also be freed.
-
-  This patch adds a new remove_pagetable() helper which can be used to
-  tear down either region, and calls it from vmemmap_free() and
-  ___remove_pgd_mapping(). The sparse_vmap argument determines whether
-  the backing memory will be freed.
-
-Could you add a paragraph describing when we can encounter partial
-tables (for which we need the p??_none() checks? IIUC that's not just
-for cleaning up a failed hot-add, and it would be good to call that out.
-
-> While here update arch_add_mempory() to handle __add_pages() failures by
-> just unmapping recently added kernel linear mapping. Now enable memory hot
-> remove on arm64 platforms by default with ARCH_ENABLE_MEMORY_HOTREMOVE.
-
-Nit: s/arch_add_mempory/arch_add_memory/.
-
-[...]
-
-> +#if (CONFIG_PGTABLE_LEVELS > 2)
-> +static void free_pmd_table(pmd_t *pmdp, pud_t *pudp, unsigned long addr)
-> +{
-> +	struct page *page;
-> +	int i;
-> +
-> +	for (i = 0; i < PTRS_PER_PMD; i++) {
-> +		if (!pmd_none(pmdp[i]))
-> +			return;
-> +	}
-> +
-> +	page = pud_page(*pudp);
-> +	pud_clear(pudp);
-> +	__flush_tlb_kernel_pgtable(addr);
-> +	free_hotplug_pgtable_page(page);
-> +}
-> +#else
-> +static void free_pmd_table(pmd_t *pmdp, pud_t *pudp, unsigned long addr) { }
-> +#endif
-
-Can we fold the check in and remove the ifdeferry? e.g.
-
-static void free_pmd_table(pmd_t *pmdp, pud_t *pudp, unsigned long addr)
-{
-	struct page *page;
-	int i;
-
-	if (CONFIG_PGTABLE_LEVELS <= 2)
-		return;
-	
-	...
-}
-
-... that would ensure that we always got build coverage here, and
-minimize duplication. We do similar in map_kernel() and
-early_fixmap_init() today.
-
-Likewise for the other levels.
-
-For arm64, the general policy is to use READ_ONCE() when reading a page
-table entry (even if not strictly necessary), so please do so
-consistently.
-
-[...]
-
-> +static void
-> +remove_pte_table(pmd_t *pmdp, unsigned long addr,
-> +			unsigned long end, bool sparse_vmap)
-> +{
-> +	struct page *page;
-> +	pte_t *ptep;
-> +	unsigned long start = addr;
-> +
-> +	for (; addr < end; addr += PAGE_SIZE) {
-> +		ptep = pte_offset_kernel(pmdp, addr);
-> +		if (!pte_present(*ptep))
-> +			continue;
-> +
-> +		if (sparse_vmap) {
-> +			page = pte_page(READ_ONCE(*ptep));
-> +			free_hotplug_page_range(page, PAGE_SIZE);
-> +		}
-> +		pte_clear(&init_mm, addr, ptep);
-> +	}
-> +	flush_tlb_kernel_range(start, end);
-> +}
-
-Please use a temporary pte variable here, e.g.
-
-static void remove_pte_table(pmd_t *pmdp, unsigned long addr,
-			     unsigned long end, bool sparse_vmap)
-{
-	unsigned long start = addr;
-	struct page *page;
-	pte_t *ptep, pte;
-
-	for (; addr < end; addr += PAGE_SIZE) {
-		ptep = pte_offset_kernel(pmdp, addr);
-		pte = READ_ONCE(*ptep);
-
-		if (!pte_present(pte))
-			continue;
-		
-		if (sparse_vmap) {
-			page = pte_page(pte);
-			free_hotplug_page_range(page, PAGE_SIZE);
-		}
-
-		pte_clear(&init_mm, addr, ptep);
-	}
-
-	flush_tlb_kernel_range(start, end);
-}
-
-Likewise for the other levels.
-
-[...]
-
-> +static void
-> +remove_pagetable(unsigned long start, unsigned long end, bool sparse_vmap)
-> +{
-> +	unsigned long addr, next;
-> +	pud_t *pudp_base;
-> +	pgd_t *pgdp;
-> +
-> +	spin_lock(&init_mm.page_table_lock);
-
-It would be good to explain why we need to take the ptl here.
-
-IIUC that shouldn't be necessary for the linear map. Am I mistaken?
-
-Is there a specific race when tearing down the vmemmap?
-
-Thanks,
-Mark.
+Kind regards
+Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
