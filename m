@@ -2,60 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20AFD1F8DC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 18:43:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D65FC1F907
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 18:59:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fpBXbxPXJ/wabf8W0JUcnTFiRxQhCOLMj4Ute+aVizg=; b=bdANAfUxZsNd7a
-	1GD9JdlgIw51Ks2xzn8qSO5vBWBqnhOqAVqIB+LpGvZHUcOXxgd2Vhcsn07nJXTog6tm0w7Mc/tr3
-	EBXvyDbB0IPpwj64uMi6Gs7B+fRB9L8JRSvChp4DT84u+K7djfa3s9z+ePwg6tW1Cl9mhsTbGpVCg
-	p2/gyy9w6mQOrIbmgYruq2Qoyg771VkDjr3YBKn6q89Dx7JljafNo8ypq3KUlCIkeCqbSOVIPyAwj
-	TZoqWtOUUjHeU4tPt5rII+tSvjlqEQr+zzCTAFVvu1tsYWLr3nobsJRAetOIXIVCurAgr/xL++DOG
-	RapEkmDsK6I6w9j+F8Ew==;
+	List-Owner; bh=4+y3Oc6awkUxROX+BRGgxkfyZpjBLge332YSU3cfqxQ=; b=Uaq+SheWnyiYS4
+	VlAbTBcZKLUPmwZbV/onPZXO2O/fqAcQ87IEpZTM2M9lg3RaGJcIdCMlze8gJHgNiQJ33+4eeznzt
+	g9+ZR08q06AuJfGW9K7EjMfe0aHT9i8FrnXlayb5TmLU05fyPl8pAXHKkihJ2hWTGlFekOrD0kzjf
+	CQwK4ON70FWBSTp5SFjuqrz6nhwoOzTiG6+N7UdQDkbwhyQ5jGXPKTcMpTIDG65pDTSP6PARyrGJP
+	/mUdbj49vlK0elK88Dh+iNqT1iaULC0OdCPEen639hiOID8KKHrmxXAh3zF4tRB195rPd21D+r5T5
+	DKVc1xuFzJXAmsTNkn1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQx0C-0007kJ-6I; Wed, 15 May 2019 16:43:36 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQx03-0007jz-R5
- for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 16:43:29 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 31B9B80D;
- Wed, 15 May 2019 09:43:27 -0700 (PDT)
-Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
- [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 870C83F703;
- Wed, 15 May 2019 09:43:25 -0700 (PDT)
-Date: Wed, 15 May 2019 17:41:10 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH RESEND] ACPI/IORT: Fix build error when IOMMU_SUPPORT
- disabled
-Message-ID: <20190515164110.GA22536@e121166-lin.cambridge.arm.com>
-References: <20190515033406.79020-1-wangkefeng.wang@huawei.com>
- <20190515034253.79348-1-wangkefeng.wang@huawei.com>
- <20190515101534.GF24357@fuggles.cambridge.arm.com>
- <20190515120652.GA27269@e121166-lin.cambridge.arm.com>
- <a7efd571-d82e-1d8f-147f-3bf8d1152d0d@arm.com>
+	id 1hQxF5-0006Ie-Js; Wed, 15 May 2019 16:58:59 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hQxEx-0006Hr-Kp
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 16:58:53 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id CCF40ADAB;
+ Wed, 15 May 2019 16:58:48 +0000 (UTC)
+Date: Wed, 15 May 2019 18:58:47 +0200
+From: Michal Hocko <mhocko@kernel.org>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH V3 2/4] arm64/mm: Hold memory hotplug lock while walking
+ for kernel page table dump
+Message-ID: <20190515165847.GH16651@dhcp22.suse.cz>
+References: <1557824407-19092-1-git-send-email-anshuman.khandual@arm.com>
+ <1557824407-19092-3-git-send-email-anshuman.khandual@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <a7efd571-d82e-1d8f-147f-3bf8d1152d0d@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <1557824407-19092-3-git-send-email-anshuman.khandual@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_094327_887174_FF1F4711 
-X-CRM114-Status: GOOD (  22.91  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190515_095851_830914_9E751F8F 
+X-CRM114-Status: GOOD (  12.21  )
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -67,91 +61,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kefeng Wang <wangkefeng.wang@huawei.com>, Hulk Robot <hulkci@huawei.com>,
- Jean-Philippe Brucker <jean-philippe.brucker@arm.com>, joro@8bytes.org,
- Will Deacon <will.deacon@arm.com>, linux-acpi@vger.kernel.org,
- guohanjun@huawei.com, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, ira.weiny@intel.com, david@redhat.com,
+ catalin.marinas@arm.com, cai@lca.pw, will.deacon@arm.com,
+ linux-kernel@vger.kernel.org, logang@deltatee.com, james.morse@arm.com,
+ cpandya@codeaurora.org, arunks@codeaurora.org, akpm@linux-foundation.org,
+ osalvador@suse.de, mgorman@techsingularity.net, dan.j.williams@intel.com,
+ linux-arm-kernel@lists.infradead.org, robin.murphy@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 15, 2019 at 01:46:28PM +0100, Robin Murphy wrote:
-> On 15/05/2019 13:06, Lorenzo Pieralisi wrote:
-> > [+Joerg, Robin]
-> > 
-> > On Wed, May 15, 2019 at 11:15:34AM +0100, Will Deacon wrote:
-> > > On Wed, May 15, 2019 at 11:42:53AM +0800, Kefeng Wang wrote:
-> > > > drivers/acpi/arm64/iort.c: In function iort_iommu_configure:
-> > > > drivers/acpi/arm64/iort.c:1079:21: error: struct iommu_fwspec has no member named flags
-> > > >      dev->iommu_fwspec->flags |= IOMMU_FWSPEC_PCI_RC_ATS;
-> > > >                       ^~
-> > > > drivers/acpi/arm64/iort.c:1079:32: error: IOMMU_FWSPEC_PCI_RC_ATS
-> > > > undeclared (first use in this function)
-> > > >      dev->iommu_fwspec->flags |= IOMMU_FWSPEC_PCI_RC_ATS;
-> > > >                                  ^~~~~~~~~~~~~~~~~~~~~~~
-> > > > drivers/acpi/arm64/iort.c:1079:32: note: each undeclared identifier is reported only once for each function it appears in
-> > > > 
-> > > > If IOMMU_SUPPORT not enabled, struct iommu_fwspec without members and
-> > > > IOMMU_FWSPEC_PCI_RC_ATS not defined, add new iommu_fwspec_set_ats_flags()
-> > > > to set IOMMU_FWSPEC_PCI_RC_ATS flags to solve build error.
-> > > > 
-> > > > Cc: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-> > > > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> > > > Cc: Will Deacon <will.deacon@arm.com>
-> > > > Reported-by: Hulk Robot <hulkci@huawei.com>
-> > > 
-> > > What's this "Hulk Robot"? Does it report things publicly?
-> > 
-> > AFAIK it is Huawei CI system, I had some doubts about leaving
-> > that tag for other patches I dealt with, I am not sure it is
-> > really useful (other than giving Hulk some credit).
-> > 
-> > > Anyway, I can pick this up if Lorenzo acks it.
-> > 
-> > Actually I think we should compile out iort_iommu_configure() for
-> > !IOMMU_SUPPORT unless I am missing something, so that we are
-> > removing this source of errors.
+On Tue 14-05-19 14:30:05, Anshuman Khandual wrote:
+> The arm64 pagetable dump code can race with concurrent modification of the
+> kernel page tables. When a leaf entries are modified concurrently, the dump
+> code may log stale or inconsistent information for a VA range, but this is
+> otherwise not harmful.
 > 
-> Indeed, much as I like the compile coverage of not having things #ifdefed
-> out in general, this particular case seems like a fairly atypical
-> configuration so I'm not sure all the extra fluff of struct accessors is
-> really worth it.
-
-Ok, I will send a patch shortly to address this issue, if Kefeng
-does not object I will drop the CI bot as reporter and add him
-instead.
-
-Thanks,
-Lorenzo
-
+> When intermediate levels of table are freed, the dump code will continue to
+> use memory which has been freed and potentially reallocated for another
+> purpose. In such cases, the dump code may dereference bogus addressses,
+> leading to a number of potential problems.
 > 
-> Robin.
-> 
-> > If that does not cut it, for this patch:
-> > 
-> > iommu_fwspec_set_ats_flags() should be iommu_fwspec_set_ats_flag()
-> > 
-> > The commit log should be fixed (it is pretty weird to start with the
-> > build error and then explain it):
-> > 
-> > "If IOMMU_SUPPORT is not enabled, struct iommu_fwspec is an empty
-> > struct and IOMMU_FWSPEC_PCI_RC_ATS is not defined, resulting in
-> > the following build error:
-> > 
-> > drivers/acpi/arm64/iort.c: In function iort_iommu_configure:
-> > drivers/acpi/arm64/iort.c:1079:21: error: struct iommu_fwspec has no member named flags
-> >      dev->iommu_fwspec->flags |= IOMMU_FWSPEC_PCI_RC_ATS;
-> >                       ^~
-> > drivers/acpi/arm64/iort.c:1079:32: error: IOMMU_FWSPEC_PCI_RC_ATS
-> > undeclared (first use in this function)
-> >      dev->iommu_fwspec->flags |= IOMMU_FWSPEC_PCI_RC_ATS;
-> >                                  ^~~~~~~~~~~~~~~~~~~~~~~
-> > drivers/acpi/arm64/iort.c:1079:32: note: each undeclared identifier is reported only once for each function it appears in
-> > 
-> > Add a iommu_fwspec_set_ats_flag() helper function (that is an empty
-> > stub on !IOMMU_SUPPORT) to fix it."
-> > 
+> Intermediate levels of table may by freed during memory hot-remove, or when
+> installing a huge mapping in the vmalloc region. To avoid racing with these
+> cases, take the memory hotplug lock when walking the kernel page table.
+
+Why is this a problem only on arm64 and why do we even care for debugfs?
+Does anybody rely on this thing to be reliable? Do we even need it? Who
+is using the file?
+
+I am asking because I would really love to make mem hotplug locking less
+scattered outside of the core MM than more. Most users simply shouldn't
+care. Pfn walkers should rely on pfn_to_online_page.
+
+-- 
+Michal Hocko
+SUSE Labs
 
 _______________________________________________
 linux-arm-kernel mailing list
