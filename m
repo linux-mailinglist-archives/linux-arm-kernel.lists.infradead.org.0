@@ -2,62 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D025A1F77D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 17:30:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFB751F786
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 17:30:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Date:To:From:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2PCzJaMtu1uG+y9fVdrRAsJXuCaJgkMFbgVSAXC6Yzw=; b=AbfiBfyHsMNfRz
-	TMZKTGCx8v6TbJwZRtbzBEPrj8j5AOpweNT+eW7NKaT2Ot15/0Wbi6FUMf3iG8Hpl4zlohmPaU0Jq
-	x3kbp1IpFdwHC7kL5arWtDsDVI9qY9SDg3/VYTLkLb7vY0MYHhZbBcubgnuGydc4//rUsZhpSCcPF
-	YTk383h71zsyo/KX6pOmCfjvyvV8UDLOLezgaqkk37ltlphs+5jS28oxw6aufQJIxa2X7OOlQmlJy
-	eEpwPAcVdW1s/r92dtRlWu2aQ6d2jtSI3UFvandOHu5qGM02S3xOHiJ2m7sLXqBvhIROjA/wqDN+g
-	29OdmAF3k0R4ikIqgFdw==;
+	List-Owner; bh=mMhjfMOW1CDmbxosPBU6BuFfUVm76Rd2mp8kGhySImc=; b=iyy50QqO33HFFe
+	XUvwngdVhUoCWgQ/lGTn2mAmcGo7Lz2VNYWNL5abaiEtXt7vWesjVg22MLOhgVvoWony7g6VY+ES7
+	DazJ3TF87Dr5sbftT6qu43XRi7rbUXzuBkttI+ZYhZktYNN1rMAk3xAXoN/x7TAkaHuohusIFlxdr
+	YmqU2MYL3aW2pgCvd9RrAWAe3WY+DLUiCqXdDOgu4TU2AHGiHdewkqm4fC7Sa4RtyLrzh8ui5qdMg
+	TohwjiqbP891gFJ3cujkq7BE3UZUA7WP5IwoAaT+Z6Sf7qseiG+j1EE5JbyHGHBUpx1bg5TphZ2QO
+	6EBTX04NToECh1FjDaWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQvrb-0007FA-KC; Wed, 15 May 2019 15:30:39 +0000
-Received: from [2001:bc8:3541:100::1] (helo=ou.quest-ce.net)
+	id 1hQvrs-0007VE-VU; Wed, 15 May 2019 15:30:57 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQvrT-0007Eg-NF
- for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 15:30:33 +0000
-Received: from [2a01:e35:39f2:1220:2452:dd6c:fe2f:be2c] (helo=opteyam2)
- by ou.quest-ce.net with esmtpsa (TLS1.1:RSA_AES_256_CBC_SHA1:256)
- (Exim 4.80) (envelope-from <ydroneaud@opteya.com>)
- id 1hQvqH-0005C0-ER; Wed, 15 May 2019 17:29:17 +0200
-Message-ID: <7afb23699142a3a15f06afde43506458a58614a6.camel@opteya.com>
-From: Yann Droneaud <ydroneaud@opteya.com>
-To: Christian Brauner <christian@brauner.io>
-Date: Wed, 15 May 2019 17:29:16 +0200
-In-Reply-To: <20190515141634.lrc5ynllcmjr64mn@brauner.io>
-References: <20190515100400.3450-1-christian@brauner.io>
- <4c5ae46657e1931a832def5645db61eb0bf1accd.camel@opteya.com>
- <20190515141634.lrc5ynllcmjr64mn@brauner.io>
-Organization: OPTEYA
-User-Agent: Evolution 3.32.2 (3.32.2-1.fc30) 
-MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2a01:e35:39f2:1220:2452:dd6c:fe2f:be2c
-X-SA-Exim-Mail-From: ydroneaud@opteya.com
-X-Spam-Checker-Version: SpamAssassin 3.3.2 (2011-06-06) on ou.quest-ce.net
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.9 required=5.0 tests=ALL_TRUSTED,BAYES_00
- autolearn=ham version=3.3.2
+ id 1hQvrk-0007TQ-0I
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 15:30:49 +0000
+Received: by mail-ed1-x542.google.com with SMTP id w33so373630edb.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 15 May 2019 08:30:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=brauner.io; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=aA/9xJj7LTMF1BWw8aRur3CJhiNYxnU3NsvAQ/tm1xk=;
+ b=cVOJomieev/iQakiPOTryvyjScY68JwrcjZ9tnp9aeBqv3wRx4Edk6Zam5C4dpe1lU
+ ogJ1bz/0uxayIY+dTGNRsGRKQE6a7udSOJYX/3GGdfJsVPiUlo9NIVE5wtEn+5hBwiSU
+ gwP9J1DGbHYliH8LbuzUv/B66fmaNK+5+P4Nf0pkHXalxp2DHQe3TjDimH0gP6oUwq5l
+ okb7EvO9DMTE9eTKyMdqlLNyrY47JfXoH49cTCN0H2L4KRmjYeMaDxi5FvoPvo3asXpV
+ 5VjgjpZVUupeOdTmVGMkhRg4ZLi1nCgbsXBRTgk7m9FRnUbqV0616Vj7CPnf3pkdvUzD
+ ZpUg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=aA/9xJj7LTMF1BWw8aRur3CJhiNYxnU3NsvAQ/tm1xk=;
+ b=AASIXWpHooOOnxTNEFwIHuQBtmvd/yj0hFxDcFqPJscIEI6MWC+lN/ekwuFqYobQwf
+ bCn0DvASjoLydWYSd6TLQAOr0/Ugt4TxIRR23ZQweZ7L2pbCA6wSWwTaM6jGiYi7VTE7
+ /OPP6bG2iPNQdJocfgzhFKJoxFGBWPdw1tuQ/n+ETAqbs64oyGCuTHUNBuTBt1X4ORpH
+ cS0W4xd3WgDdHXlLCXmAZbMEX0wqxeQq6SL7xUBBsta19bG/QFDHjOByU/Hc+QJfs+d9
+ S3AvcEuefiotSr7q8fOryfVv6yqYAJ4Acnm5tn1nIWec81QMcLCaI2NwVkcHbr1q4CJg
+ WLwQ==
+X-Gm-Message-State: APjAAAXmQnZTAoCBCrad6WzQTXsTbqJI6rgShilbxUJKwuuJESQZMtCR
+ E1bsXozJszmjhR2kFejTAWWH5A==
+X-Google-Smtp-Source: APXvYqw0QCYB7YlBSERFfTRieSPZ+dY7tEzUwoL9QiWp8tjx2MbhTffXtauytMVbchs42mNvhzDMIw==
+X-Received: by 2002:a50:99ca:: with SMTP id n10mr44141540edb.279.1557934246270; 
+ Wed, 15 May 2019 08:30:46 -0700 (PDT)
+Received: from brauner.io ([193.96.224.243])
+ by smtp.gmail.com with ESMTPSA id d4sm924077edk.46.2019.05.15.08.30.43
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Wed, 15 May 2019 08:30:45 -0700 (PDT)
+Date: Wed, 15 May 2019 17:30:42 +0200
+From: Christian Brauner <christian@brauner.io>
+To: Oleg Nesterov <oleg@redhat.com>
 Subject: Re: [PATCH 1/2] pid: add pidfd_open()
-X-SA-Exim-Version: 4.2.1 (built Mon, 26 Dec 2011 16:24:06 +0000)
-X-SA-Exim-Scanned: Yes (on ou.quest-ce.net)
+Message-ID: <20190515153041.cshzaj7xhf2p4zv7@brauner.io>
+References: <20190515100400.3450-1-christian@brauner.io>
+ <20190515143857.GB18892@redhat.com>
+ <20190515144927.f2yxyi6w6lhn3xx7@brauner.io>
+ <20190515151912.GE18892@redhat.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190515151912.GE18892@redhat.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_083031_896693_92D15F90 
-X-CRM114-Status: GOOD (  23.58  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20190515_083048_089124_AE3B0773 
+X-CRM114-Status: GOOD (  18.31  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -70,82 +100,72 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- linux-kernel@vger.kernel.org, dhowells@redhat.com,
+ linux-mips@vger.kernel.org, dhowells@redhat.com,
  linux-kselftest@vger.kernel.org, sparclinux@vger.kernel.org,
  linux-api@vger.kernel.org, elena.reshetova@intel.com,
  linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
  linux-xtensa@linux-xtensa.org, keescook@chromium.org, arnd@arndb.de,
  jannh@google.com, linux-m68k@lists.linux-m68k.org, viro@zeniv.linux.org.uk,
- luto@kernel.org, oleg@redhat.com, tglx@linutronix.de,
- linux-arm-kernel@lists.infradead.org, linux-parisc@vger.kernel.org,
- cyphar@cyphar.com, torvalds@linux-foundation.org, linux-mips@vger.kernel.org,
- luto@amacapital.net, ebiederm@xmission.com, linux-alpha@vger.kernel.org,
- akpm@linux-foundation.org, linuxppc-dev@lists.ozlabs.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ luto@kernel.org, tglx@linutronix.de, linux-arm-kernel@lists.infradead.org,
+ linux-parisc@vger.kernel.org, cyphar@cyphar.com, torvalds@linux-foundation.org,
+ linux-kernel@vger.kernel.org, luto@amacapital.net, ebiederm@xmission.com,
+ linux-alpha@vger.kernel.org, akpm@linux-foundation.org,
+ linuxppc-dev@lists.ozlabs.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgpMZSBtZXJjcmVkaSAxNSBtYWkgMjAxOSDDoCAxNjoxNiArMDIwMCwgQ2hyaXN0aWFuIEJy
-YXVuZXIgYSDDqWNyaXQgOgo+IE9uIFdlZCwgTWF5IDE1LCAyMDE5IGF0IDA0OjAwOjIwUE0gKzAy
-MDAsIFlhbm4gRHJvbmVhdWQgd3JvdGU6Cj4gPiBMZSBtZXJjcmVkaSAxNSBtYWkgMjAxOSDDoCAx
-MjowMyArMDIwMCwgQ2hyaXN0aWFuIEJyYXVuZXIgYSDDqWNyaXQgOgo+ID4gPiBkaWZmIC0tZ2l0
-IGEva2VybmVsL3BpZC5jIGIva2VybmVsL3BpZC5jCj4gPiA+IGluZGV4IDIwODgxNTk4YmRmYS4u
-MjM3ZDE4ZDZlY2I4IDEwMDY0NAo+ID4gPiAtLS0gYS9rZXJuZWwvcGlkLmMKPiA+ID4gKysrIGIv
-a2VybmVsL3BpZC5jCj4gPiA+IEBAIC00NTEsNiArNDUyLDUzIEBAIHN0cnVjdCBwaWQgKmZpbmRf
-Z2VfcGlkKGludCBuciwgc3RydWN0Cj4gPiA+IHBpZF9uYW1lc3BhY2UgKm5zKQo+ID4gPiAgCXJl
-dHVybiBpZHJfZ2V0X25leHQoJm5zLT5pZHIsICZucik7Cj4gPiA+ICB9Cj4gPiA+ICAKPiA+ID4g
-Ky8qKgo+ID4gPiArICogcGlkZmRfb3BlbigpIC0gT3BlbiBuZXcgcGlkIGZpbGUgZGVzY3JpcHRv
-ci4KPiA+ID4gKyAqCj4gPiA+ICsgKiBAcGlkOiAgIHBpZCBmb3Igd2hpY2ggdG8gcmV0cmlldmUg
-YSBwaWRmZAo+ID4gPiArICogQGZsYWdzOiBmbGFncyB0byBwYXNzCj4gPiA+ICsgKgo+ID4gPiAr
-ICogVGhpcyBjcmVhdGVzIGEgbmV3IHBpZCBmaWxlIGRlc2NyaXB0b3Igd2l0aCB0aGUgT19DTE9F
-WEVDIGZsYWcgc2V0IGZvcgo+ID4gPiArICogdGhlIHByb2Nlc3MgaWRlbnRpZmllZCBieSBAcGlk
-LiBDdXJyZW50bHksIHRoZSBwcm9jZXNzIGlkZW50aWZpZWQgYnkKPiA+ID4gKyAqIEBwaWQgbXVz
-dCBiZSBhIHRocmVhZC1ncm91cCBsZWFkZXIuIFRoaXMgcmVzdHJpY3Rpb24gY3VycmVudGx5IGV4
-aXN0cwo+ID4gPiArICogZm9yIGFsbCBhc3BlY3RzIG9mIHBpZGZkcyBpbmNsdWRpbmcgcGlkZmQg
-Y3JlYXRpb24gKENMT05FX1BJREZEIGNhbm5vdAo+ID4gPiArICogYmUgdXNlZCB3aXRoIENMT05F
-X1RIUkVBRCkgYW5kIHBpZGZkIHBvbGxpbmcgKG9ubHkgc3VwcG9ydHMgdGhyZWFkIGdyb3VwCj4g
-PiA+ICsgKiBsZWFkZXJzKS4KPiA+ID4gKyAqCj4gPiAKPiA+IFdvdWxkIGl0IGJlIHBvc3NpYmxl
-IHRvIGNyZWF0ZSBmaWxlIGRlc2NyaXB0b3Igd2l0aCAicmVzdHJpY3RlZCIKPiA+IG9wZXJhdGlv
-biA/Cj4gPiAKPiA+IC0gT19SRE9OTFk6IHdhaXRpbmcgZm9yIHByb2Nlc3MgY29tcGxldGlvbiBh
-bGxvd2VkIChmb3IgZXhhbXBsZSkKPiA+IC0gT19XUk9OTFk6IHNlbmRpbmcgcHJvY2VzcyBzaWdu
-YWwgYWxsb3dlZAo+IAo+IFllcywgc29tZXRoaW5nIGxpa2UgdGhpcyBpcyBsaWtlbHkgZ29pbmcg
-dG8gYmUgcG9zc2libGUgaW4gdGhlIGZ1dHVyZS4KPiBXZSBoYWQgZGlzY3Vzc2lvbiBhcm91bmQg
-dGhpcy4gQnV0IG1hcHBpbmcgdGhpcyB0byBPX1JET05MWSBhbmQgT19XUk9OTFkKPiBpcyBub3Qg
-dGhlIHJpZ2h0IG1vZGVsLiBJdCBtYWtlcyBtb3JlIHNlbnNlIHRvIGhhdmUgc3BlY2lhbGl6ZWQg
-ZmxhZ3MKPiB0aGF0IHJlc3RyaWN0IGFjdGlvbnMuCgpZZXMsIGRlZGljYXRlZCBmbGFncyBhcmUg
-dGhlIHdheSB0byBnby4gSSd2ZSB1c2VkIHRoZSBvbGQgb3BlbigpIGZsYWdzCmhlcmUgYXMgZXhh
-bXBsZXMgYXMgYW4gZWNobyBvZiB0aGUgT19DTE9FWEVDIGZsYWcgdXNlZCBpbiB0aGUgY29tbWVu
-dC4KCj4gPiBGb3IgZXhhbXBsZSwgYSBwcm9jZXNzIGNvdWxkIHNlbmQgb3ZlciBhIFVuaXggc29j
-a2V0IGEgcHJvY2VzcyBhIHBpZGZkLAo+ID4gYWxsb3dpbmcgdGhpcyB0byBvbmx5IHdhaXQgZm9y
-IGNvbXBsZXRpb24sIGJ1dCBub3Qgc2VuZGluZyBzaWduYWwgPwo+ID4gCj4gPiBJIHNlZSB0aGUg
-cGVybWlzc2lvbiBjaGVjayBpcyBub3QgZG9uZSBpbiBwaWRmZF9vcGVuKCksIHNvIHdoYXQgcHJl
-dmVudAo+ID4gYSB1c2VyIGZyb20gc2VuZGluZyBhIHNpZ25hbCB0byBhbm90aGVyIHVzZXIgb3du
-ZWQgcHJvY2VzcyA/Cj4gCj4gVGhhdCdzIHN1cHBvc2VkIHRvIGJlIHBvc3NpYmxlLiBZb3UgY2Fu
-IGRvIHRoZSBzYW1lIHJpZ2h0IG5vdyBhbHJlYWR5Cj4gd2l0aCBwaWRzLiBUb29scyBsaWtlIExN
-SyBuZWVkIHRoaXMgcHJvYmFibHkgdmVyeSBtdWNoLgo+IFBlcm1pc3Npb24gY2hlY2tpbmcgZm9y
-IHNpZ25hbHMgaXMgZG9uZSBhdCBzZW5kIHRpbWUgcmlnaHQgbm93Lgo+IEFuZCBpZiB5b3UgY2Fu
-J3Qgc2lnbmFsIHZpYSBhIHBpZCB5b3UgY2FuJ3Qgc2lnbmFsIHZpYSBhIHBpZGZkIGFzCj4gdGhl
-eSdyZSBib3RoIHN1YmplY3QgdG8gdGhlIHNhbWUgcGVybWlzc2lvbnMgY2hlY2tzLgo+IAoKSSB3
-b3VsZCBoYXZlIGV4cGVjdCBpdCB0byBiZWhhdmUgbGlrZSBtb3N0IG90aGVyIGZpbGUgZGVzY3Jp
-cHRvciwKcGVybWlzc2lvbiBjaGVjayBkb25lIGF0IG9wZW5pbmcgdGltZSwgd2hpY2ggYWxsb3cg
-bW9yZSBwcml2aWxlZ2VkCnByb2Nlc3MgdG8gb3BlbiB0aGUgZmlsZSBkZXNjcmlwdG9yLCB0aGVu
-IHBhc3MgaXQgdG8gYSBsZXNzIHByaXZpbGVnZWQKcHJvY2Vzcywgb3IgY2hhbmdlIGl0cyBvd24g
-cHJpdmlsZWdlZCB3aXRoIHNldHVpZCgpIGFuZCBzdWNoLiBUaGVuIHRoZQpsZXNzIHByaXZpbGVn
-ZWQgcHJvY2VzcyBjYW4gYWN0IG9uIGJlaGFsZiBvZiB0aGUgcHJpdmlsZWdlZCBwcm9jZXNzCnRo
-cm91Z2ggdGhlIGZpbGUgZGVzY3JpcHRvci4KCj4gPiBJZiBpdCdzIGluIHBpZGZkX3NlbmRfc2ln
-bmFsKCksIHRoZW4sIHBhc3NpbmcgdGhlIHNvY2tldCB0aHJvdWdoCj4gPiBTQ01fUklHSFQgd29u
-J3QgYmUgdXNlZnVsIGlmIHRoZSB0YXJnZXQgcHJvY2VzcyBpcyBub3Qgb3duZWQgYnkgdGhlCj4g
-PiBzYW1lIHVzZXIsIG9yIHJvb3QuCj4gPiAKCklmIHRoZSBwZXJtaXNzaW9uIGNoZWNrIGlzIGRv
-bmUgYXQgc2VuZGluZyB0aW1lLCB0aGUgc2NlbmFyaW8gYWJvdmUKY2FzZSBjYW5ub3QgYmUgaW1w
-bGVtZW50ZWQuCgpTZW5kaW5nIGEgcGlkZmQgdGhyb3VnaCBTQ01fUklHSFQgaXMgb25seSB1c2Vm
-dWwgaWYgdGhlIHJlY2VpdmVyCnByb2Nlc3MgaXMgZXF1YWxseSBvciBtb3JlIHByaXZpbGVnZWQg
-dGhhbiB0aGUgc2VuZGVyIHRoZW4uCgpGb3IgaXNvbGF0aW9uIHB1cnBvc2UsIEkgd291bGQgaGF2
-ZSBleHBlY3QgdG8gYmUgYWJsZSB0byBnaXZlIGEgcmlnaHQKdG8gc2VuZCBhIHNpZ25hbCB0byBh
-IGhpZ2hseSBwcml2aWxlZ2VkIHByb2Nlc3MgYSBzcGVjaWZpYyBsZXNzCnByaXZpbGVnZWQgcHJv
-Y2VzcyB0aG91Z2ggVW5peCBzb2NrZXQuCgpCdXQgSSBjYW4ndCBjb21lIHVwIHdpdGggYSBzcGVj
-aWZpYyB1c2UgY2FzZS4gU28gSSBkdW5uby4KClJlZ2FyZHMuCgotLSAKWWFubiBEcm9uZWF1ZApP
-UFRFWUEKCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
-bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
-YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
-dXgtYXJtLWtlcm5lbAo=
+On Wed, May 15, 2019 at 05:19:13PM +0200, Oleg Nesterov wrote:
+> On 05/15, Christian Brauner wrote:
+> >
+> > On Wed, May 15, 2019 at 04:38:58PM +0200, Oleg Nesterov wrote:
+> > >
+> > > it seems that you can do a single check
+> > >
+> > > 	tsk = pid_task(p, PIDTYPE_TGID);
+> > > 	if (!tsk)
+> > > 		ret = -ESRCH;
+> > >
+> > > this even looks more correct if we race with exec changing the leader.
+> >
+> > The logic here being that you can only reach the thread_group leader
+> > from struct pid if PIDTYPE_PID == PIDTYPE_TGID for this struct pid?
+> 
+> Not exactly... it is not that PIDTYPE_PID == PIDTYPE_TGID for this pid,
+> struct pid has no "type" or something like this.
+> 
+> The logic is that pid->tasks[PIDTYPE_XXX] is the list of task which use
+> this pid as "XXX" type.
+> 
+> For example, clone(CLONE_THREAD) creates a pid which has a single non-
+> empty list, pid->tasks[PIDTYPE_PID]. This pid can't be used as TGID or
+> SID.
+> 
+> So if pid_task(PIDTYPE_TGID) returns non-NULL we know that this pid was
+> used for a group-leader, see copy_process() which does
+
+Ah, this was what I was asking myself when I worked on thread-specific
+signal sending. This clarifies quite a lot of things!
+
+Though I wonder how one reliably gets a the PGID or SID from a
+PIDTYPE_PID.
+
+> 
+> 	if (thread_group_leader(p))
+> 		attach_pid(p, PIDTYPE_TGID);
+> 
+> 
+> If we race with exec which changes the leader pid_task(TGID) can return
+> the old leader. We do not care, but this means that we should not check
+> thread_group_leader().
+
+Nice!
+
+Thank you, Oleg! :)
+Christian
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
