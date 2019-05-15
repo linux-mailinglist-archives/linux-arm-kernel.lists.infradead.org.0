@@ -2,57 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 851001EADE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 11:22:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2C091EB0B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 11:36:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A0SEV4qYUhj0Rx3nSyI3Q2Lz7K6f5N/Zl5DMRLNCNc8=; b=stglMSQ2m0p62h
-	0the6Fv1PXmmjKYF7Fnnf77+ca4WZKsfaRtWZ4cxNP5yHhQ5B0xf9V7Oj/XSrVCsIdEjCqjnZeYkk
-	acSSAOO0rxyq4mIPdSes+uCAwPzM0IfTyPXOTkLKJKJ/opR1himerRbuIVTgpjjdwwEGVSYEYe3X9
-	OcecHEzvWOJqoX1dIQiOEHhWXiBO4S51jCZPi3B1ztX7em85wZfsNfIDZiEc7Sj3OMynV9ICcXpxe
-	ZN4Qa5N7im+jp3vnxxcYaO1J9UgOmhiBQ28+6PcdeTYUPzMOgEFcij4A6QbXvC+F8oMctTl5xeRE5
-	3mCKNqdTkvZ5X0M9b9ew==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0cEeYr1wET1teOgKHYjEulloWOImRfAbqUGJjpzEIP0=; b=cmUMS9IZSC7I6a
+	1OLj1tuOz6M8PGXCLw3xqrBtoaDp5vCOuw+YMjoy8DLameuZ3Py4aDyKIaewHLD9X9ob1eOAf8cAq
+	wbT4kLu0+UvJWiKp+7Jc7HhK1pHIf054zEkpfBkd4YryaXl2kCK3oA7au0IRTlwzxOPdAk26R0fF/
+	IHwgPF3e4pUXzFMNTe1OIr5Bk08zzOeLBtYit/ILRaUtU3hjAmleTDyUybBmnr8qiQMBLpg8yWVGZ
+	88hEa5I13DUx79jqfy3rbqend05Ay3PTfCGLudIgR2YAd+WzROd+Kl2Ska6hVZlvrZGLc5bab3rg0
+	S0wpxVBGJh47wv6X1g+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQq7j-00009R-LD; Wed, 15 May 2019 09:22:55 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQq7c-000096-Rr
- for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 09:22:50 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6C126341;
- Wed, 15 May 2019 02:22:48 -0700 (PDT)
-Received: from queper01-lin (queper01-lin.cambridge.arm.com [10.1.195.48])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DBFCF3F703;
- Wed, 15 May 2019 02:22:45 -0700 (PDT)
-Date: Wed, 15 May 2019 10:22:44 +0100
-From: Quentin Perret <quentin.perret@arm.com>
-To: Daniel Lezcano <daniel.lezcano@linaro.org>
-Subject: Re: [PATCH v4 1/3] arm64: defconfig: Enable CONFIG_ENERGY_MODEL
-Message-ID: <20190515092242.azcracudtdnruwnz@queper01-lin>
-References: <20190515082318.7993-1-quentin.perret@arm.com>
- <20190515082318.7993-2-quentin.perret@arm.com>
- <2f598ea3-752d-0f1d-fd33-f07cda3b7bd0@linaro.org>
+	id 1hQqLF-0005WG-N6; Wed, 15 May 2019 09:36:53 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hQqL8-0005Uu-8U; Wed, 15 May 2019 09:36:47 +0000
+X-UUID: c3531e7867784dcb8caca4fe612b4db2-20190515
+X-UUID: c3531e7867784dcb8caca4fe612b4db2-20190515
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1225086256; Wed, 15 May 2019 01:36:37 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 15 May 2019 02:36:36 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 15 May 2019 17:36:33 +0800
+Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Wed, 15 May 2019 17:36:33 +0800
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
+ <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <pedrom.sousa@synopsys.com>
+Subject: [PATCH v2 0/3] scsi: ufs: Add error handling of Auto-Hibernate
+Date: Wed, 15 May 2019 17:36:25 +0800
+Message-ID: <1557912988-26758-1-git-send-email-stanley.chu@mediatek.com>
+X-Mailer: git-send-email 1.7.9.5
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <2f598ea3-752d-0f1d-fd33-f07cda3b7bd0@linaro.org>
-User-Agent: NeoMutt/20171215
+X-TM-SNTS-SMTP: 6FFEA0CCF754E31D9D5A4690B8170BC47254F360FB07BE0B3B5CFDB1B23F76FA2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_022248_901637_4145CD66 
-X-CRM114-Status: GOOD (  14.33  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190515_023646_305548_6EE1D40A 
+X-CRM114-Status: UNSURE (   6.16  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -64,40 +70,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pm@vger.kernel.org, viresh.kumar@linaro.org, amit.kachhap@gmail.com,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org, will.deacon@arm.com,
- edubezval@gmail.com, mka@chromium.org, catalin.marinas@arm.com,
- rui.zhang@intel.com, javi.merino@kernel.org, ionela.voinescu@arm.com,
- dietmar.eggemann@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: marc.w.gonzalez@free.fr, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
+ kuohong.wang@mediatek.com, evgreen@chromium.org,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ matthias.bgg@gmail.com, Stanley Chu <stanley.chu@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wednesday 15 May 2019 at 10:46:09 (+0200), Daniel Lezcano wrote:
-> On 15/05/2019 10:23, Quentin Perret wrote:
-> > The recently introduced Energy Model (EM) framework manages power cost
-> > tables for the CPUs of the system. Its only user right now is the
-> > scheduler, in the context of Energy Aware Scheduling (EAS).
-> > 
-> > However, the EM framework also offers a generic infrastructure that
-> > could replace subsystem-specific implementations of the same concepts,
-> > as this is the case in the thermal framework.
-> > 
-> > So, in order to prepare the migration of the thermal subsystem to use
-> > the EM framework, enable it in the default arm64 defconfig, which is the
-> > most commonly used architecture for IPA. This will also compile-in all
-> > of the EAS code, although it won't be enabled by default -- EAS requires
-> > to use the 'schedutil' CPUFreq governor while arm64 defaults to
-> > 'performance'.
-> > 
-> > Acked-by: Viresh Kumar <viresh.kumar@linaro.org>
-> > Signed-off-by: Quentin Perret <quentin.perret@arm.com>
-> 
-> Acked-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+Currently auto-hibernate is activated if host supports
+auto-hibern8 capability. However error-handling is not implemented,
+which makes the feature somewhat risky.
 
-Thanks !
-Quentin
+If either "Hibernate Enter" or "Hibernate Exit" fail during
+auto-hibernate flow, the corresponding interrupt
+"UIC_HIBERNATE_ENTER" or "UIC_HIBERNATE_EXIT" shall be raised
+according to UFS specification.
+
+This patch adds auto-hibernate error-handling:
+
+- Monitor "Hibernate Enter" and "Hibernate Exit" interrupts after
+  auto-hibernate feature is activated.
+
+- If fail happens, trigger error-handling just like "manual-hibernate"
+  fail and apply the same recovery flow: schedule UFS error handler in
+  ufshcd_check_errors(), and then do host reset and restore
+  in UFS error handler.
+
+v2:
+ - Fix sentences in commit message (Marc Gonzalez)
+ - Make "Auto-Hibernate" error detection more precise (Bean Huo)
+
+Stanley Chu (3):
+  scsi: ufs: Do not overwrite Auto-Hibernate timer
+  scsi: ufs: Add error-handling of Auto-Hibernate
+  scsi: ufs: Use re-factored Auto-Hibernate function
+
+ drivers/scsi/ufs/ufshcd.c | 33 ++++++++++++++++++++++++++++++++-
+ drivers/scsi/ufs/ufshcd.h |  5 +++++
+ drivers/scsi/ufs/ufshci.h |  3 +++
+ 3 files changed, 40 insertions(+), 1 deletion(-)
+
+-- 
+2.18.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
