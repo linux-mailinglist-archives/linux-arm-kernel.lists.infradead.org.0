@@ -2,77 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C40F1F796
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 17:31:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 018701F79D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 17:32:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LphLUljcMj53/t7HqvqiUjDTTnn0JXK8v4/8CMLFBV0=; b=fhBhj+toErc/bZ
-	vn9uZf6F1wN4nFhXhiCHB34rOGfj5Ti8I8P9y/IiyD6mOTwZAZnv7M9290Qa0MG0LSMkITTxT+nND
-	p2xKEyQBuZXHZFrcAKPjcrQ+AoKpgqMh7CBL+DBDoTll4bt9ntUXYGkQvZrUP6tE5oS1tFaMJEAXG
-	Jyn60V3KAGdSGSDty4dINbruLIWMHXQIb/GTxMTQaMKdS6Flm0uvRt4cVdx7Z8BEMM5y2hjF3eURL
-	rEFbUjegeG6Guqt2ksR2ixCUkgWAc2rkaD3ADyl2yBjarSBjkMawkqMjz6J5lMKU/Juo4xK1+Ydht
-	INFW5V45rrASBFGScHyg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6wWI5JYn3MTH5JBQfaW5UAgo96LEAjOSR2RJSqjoUqw=; b=VbW34CUR3XTsZf
+	Ej8WhROfO/+w02ar56rl+1CSUQeXmfG3Vz52hV8BucQUZ0gGmr7AH1PVbDpxEKlb1/NhoCQDEUAM3
+	QqVDIsGwwV1fMLJtfgwZ/JkEoghgNKAMInEQ9G68rNCskianx9fVJ5exvGsg+oTHAYIXlXOyKJt6x
+	ThRVi5wsHb/atHtMLi6GO27ntcIF7rLJ3KP0ybO+iyEVJYXkNJQWyFdoRo9uI/e2DU6WUZv0zIkwk
+	BDHQWhq/W83qR0pKF/szheSjLkoUpNoMwxQcwv5/U8MGVQRbRYn0S/LmV7wqdhfbKrRJYOqPsWsP6
+	bm8MshLm5+IoDrsDJYLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQvsf-0007o9-VI; Wed, 15 May 2019 15:31:45 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hQvsx-00089F-Bc; Wed, 15 May 2019 15:32:03 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQvsV-0007md-Rj
- for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 15:31:39 +0000
-Received: by mail-pl1-x641.google.com with SMTP id p15so53357pll.4
+ id 1hQvsX-0007mg-9k
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 15:31:41 +0000
+Received: by mail-pf1-x441.google.com with SMTP id z28so173680pfk.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 May 2019 08:31:35 -0700 (PDT)
+ Wed, 15 May 2019 08:31:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=N3PFiqZYr2ENWnUsVIDRAvDI9vPaKjuSp1u756KP9Zc=;
- b=j/97p16K6USW9gvsVhnnSbeJKIGOU2uRr7jmAEgKinUYFiWyG93vD7TP1OavOB43ii
- x0SPgsjsCnTt3YLr7odjlnWViICJu2ezBCI5wFhCe/tkhjv0T7I1+3kFjyP4mvx8hQZo
- 3xrjDpWFqq5Y56WcevT7zGob4l8tm/ffewKBQ=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=SQsgM6LD4OGmyb9zuec5UbAtvnTOoKL54DBY7H0uK1U=;
+ b=daAtSqCJ/oTaEYkG59u3o7jjY8qmxpZRWzhLXKwEHrXH/u26lAXnoFPkn/uCG/Sl6k
+ UwbWWhR3FdnriNAjE2O7MvVmW1YSlkjnNGHYNQZXSckOluh1bP7799pE5M5xRw+A+4aZ
+ ZTEZR3k7vhKDR6vgJEFTaz+4TP7QaLtvPz+jk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=N3PFiqZYr2ENWnUsVIDRAvDI9vPaKjuSp1u756KP9Zc=;
- b=aH1Tde0WGmZH/8pUTI+wyodMcLWfRY+9nZQWEjnXWoG9574CUDN1nTtbJ8gl2tehyr
- DiPJvxExJ9Nhr4zMPSmKcsvUQcya4nvg4OR4Pel6eiCeUXd+XvfvMjcNbMpVMB1eoPdU
- 9yjX9NoFRXZt0OIvTk4AHIcSQ5712mHcjfGcEiBV/4rUPTAm5FlEc9iq5Q8kpfVigSyh
- BJVTM+ohqtiXLzjYAV972IyomWMgJkyn2DHIF9ia99Gaese2RkCIHVmU84MNFQzFXEdS
- lgLbooDvqQ4wHCqMvPMqBaxRUy1dYBHooCWKLJ5JZktVNgfXadcHrcLIWfiVSZQ+D0S+
- 5eJQ==
-X-Gm-Message-State: APjAAAVnXT5utt2qh8pXWEl9XjrB6Prf+gumPoIkw0z8JQhmFUX0tyVC
- ShQFbvXLoEc8OaLGfA8ANE7T4w==
-X-Google-Smtp-Source: APXvYqwpHJFwd0RE9EmEOM2wbZSpYfXI5Ha19P2vHpWhNU4WtqcFTMR9WH76eVdT2labGFxPVWZPRQ==
-X-Received: by 2002:a17:902:e683:: with SMTP id
- cn3mr21744646plb.86.1557934294758; 
- Wed, 15 May 2019 08:31:34 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=SQsgM6LD4OGmyb9zuec5UbAtvnTOoKL54DBY7H0uK1U=;
+ b=LK5yYynj4Z7B5+KT7gXbhr1p4p3YpY9eiFH+3F/x3QU5IL0Jpq0DCUGFIjwPleomux
+ yF38EU5jh6wu5RcvyLXSFRVPQl9b/NQcM2wTL6wVCfIUK4tCyyDXsBBUynllmjsdpEUO
+ L/LodginiqXt0V1lN/DnmYlBlrgysPf9sazLjuB6swFOXnk/gg3048GvcbY7vaJ+Dblp
+ pMQhxmP6wNbyHW15+Cdh9reOSdED0Su3zxBcOUzgvHZ2KgyKbCz1XPVWpfOthkcNppQv
+ EDr4kV73XIC7qGSyM/bdacutc0rv+Jv03mnCDzEyu2Ih7lwX+iUYFffhloOUeuUbETb9
+ ibjQ==
+X-Gm-Message-State: APjAAAWCeUayqTi0yIFgNdRsZi8FrJWIU29H/jTyAJcNSIcZdpgVVMQA
+ luOXIJXGuxtAg5GZw0twTRKZAA==
+X-Google-Smtp-Source: APXvYqxOUzLo/if+h9XIHzCEFeYe9LeIRDutH5jCNlO5xeuGnD6kyzTn/1KEjr7JOey3ewert2okdQ==
+X-Received: by 2002:a62:164f:: with SMTP id 76mr48532016pfw.172.1557934296145; 
+ Wed, 15 May 2019 08:31:36 -0700 (PDT)
 Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
- by smtp.gmail.com with ESMTPSA id c189sm5260671pfg.46.2019.05.15.08.31.33
+ by smtp.gmail.com with ESMTPSA id e24sm3792704pgl.94.2019.05.15.08.31.35
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 15 May 2019 08:31:34 -0700 (PDT)
+ Wed, 15 May 2019 08:31:35 -0700 (PDT)
 From: Matthias Kaehlcke <mka@chromium.org>
 To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH 1/2] dts: rockchip: raise GPU trip point temperature for
- veyron to 72.5 degC
-Date: Wed, 15 May 2019 08:31:26 -0700
-Message-Id: <20190515153127.24626-1-mka@chromium.org>
+Subject: [PATCH 2/2] ARM: dts: raise GPU trip point temperature for speedy to
+ 80 degC
+Date: Wed, 15 May 2019 08:31:27 -0700
+Message-Id: <20190515153127.24626-2-mka@chromium.org>
 X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
+In-Reply-To: <20190515153127.24626-1-mka@chromium.org>
+References: <20190515153127.24626-1-mka@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_083137_348702_00941A2F 
-X-CRM114-Status: GOOD (  11.47  )
+X-CRM114-CacheID: sfid-20190515_083138_618250_CC883502 
+X-CRM114-Status: GOOD (  11.40  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -97,43 +98,25 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: devicetree@vger.kernel.org, Douglas Anderson <dianders@chromium.org>,
  linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
  Matthias Kaehlcke <mka@chromium.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This value matches what is used by the downstream Chrome OS 3.14
-kernel, the 'official' kernel for veyron devices.
-
-Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
----
- arch/arm/boot/dts/rk3288-veyron.dtsi | 8 ++++++++
- 1 file changed, 8 insertions(+)
-
-diff --git a/arch/arm/boot/dts/rk3288-veyron.dtsi b/arch/arm/boot/dts/rk3288-veyron.dtsi
-index 1252522392c7..169da06e1c09 100644
---- a/arch/arm/boot/dts/rk3288-veyron.dtsi
-+++ b/arch/arm/boot/dts/rk3288-veyron.dtsi
-@@ -446,6 +446,14 @@
- 	status = "okay";
- };
- 
-+&gpu_thermal {
-+	trips {
-+		gpu_alert0: gpu_alert0 {
-+			temperature = <72500>; /* millicelsius */
-+		};
-+	};
-+};
-+
- &pinctrl {
- 	pinctrl-names = "default", "sleep";
- 	pinctrl-0 = <
--- 
-2.21.0.1020.gf2820cf01a-goog
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+UmFpc2UgdGhlIHRlbXBlcmF0dXJlIG9mIHRoZSBHUFUgdGhlcm1hbCB0cmlwIHBvaW50IGZvciBz
+cGVlZHkKdG8gODDCsEMuIFRoaXMgaXMgdGhlIHZhbHVlIHVzZWQgYnkgdGhlIGRvd25zdHJlYW0g
+Q2hyb21lIE9TIDMuMTQKa2VybmVsLCB0aGUgJ29mZmljaWFsJyBrZXJuZWwgZm9yIHNwZWVkeS4K
+ClNpZ25lZC1vZmYtYnk6IE1hdHRoaWFzIEthZWhsY2tlIDxta2FAY2hyb21pdW0ub3JnPgotLS0K
+IGFyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC12ZXlyb24tc3BlZWR5LmR0cyB8IDQgKysrKwogMSBm
+aWxlIGNoYW5nZWQsIDQgaW5zZXJ0aW9ucygrKQoKZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3Qv
+ZHRzL3JrMzI4OC12ZXlyb24tc3BlZWR5LmR0cyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC12
+ZXlyb24tc3BlZWR5LmR0cwppbmRleCAyYWM4NzQ4YTNhMGMuLjM5NGE5NjQ4ZmFlZSAxMDA2NDQK
+LS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXZleXJvbi1zcGVlZHkuZHRzCisrKyBiL2Fy
+Y2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC12ZXlyb24tc3BlZWR5LmR0cwpAQCAtNjQsNiArNjQsMTAg
+QEAKIAl0ZW1wZXJhdHVyZSA9IDw3MDAwMD47CiB9OwogCismZ3B1X2FsZXJ0MCB7CisJdGVtcGVy
+YXR1cmUgPSA8ODAwMDA+OworfTsKKwogJmVkcCB7CiAJL2RlbGV0ZS1wcm9wZXJ0eS9waW5jdHJs
+LW5hbWVzOwogCS9kZWxldGUtcHJvcGVydHkvcGluY3RybC0wOwotLSAKMi4yMS4wLjEwMjAuZ2Yy
+ODIwY2YwMWEtZ29vZwoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LWFybS1rZXJuZWwK
