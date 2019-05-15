@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 803CC1E728
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 05:34:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42BA61E73E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 05:59:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z44qFezybJdFOfAsfHNqLRy+EyKJ7tUjeyLr0QFLnpA=; b=jblhOWq+pPql0L
-	ojdHZ8cJ6PeUtKWAoblxCayO+rZUh9Kp5D9wTPjRnBe557PMFOXXs1HcQK8zxUDpS0WqL6ETuhKxr
-	mT9HSmIoteQDv9zsNz3CfTx5jTdo79d+qJLWbP2AnmMxHH2JtIubFCQYKmNnMbZVxlkfown3rfBhX
-	h90TvhbdTQM1ARorOKnG24/rwcNqLNqWcbNvXupclyZq0GrwW6pWlTemkPdl9z5uIQvwJdOQ4+d5Y
-	pMpthNIuTJVG0AUqIsj59IpGOnR4+teexL5CQBCrS7saNaeReFJ/pUu2v/tObEL+lR0elasJRyAX4
-	TRiK59GBIjsWVDOibtDg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Cy8lJThRT30PNIDn2e+RBjiffe3jDIEiPQHBCjrTM10=; b=bWI
+	mGy/lRSd3SQCBMXRd3MCqkZurEH/dcQDUO4ynZYcoWG4C1jM9U582w8BjHtHFwe9oFnBswmyJMC8h
+	qOSwU0n0xF5pllSw1B9m91xZ0I1xrzSkaKpdhcdE9A8nRSfa6yUTeShSpqWDv73/1pqFxuY0hT8jG
+	v54K9c+wYR7+jKu2sVQRvqhDLS65NLRZSOpeW2eLlBXcGUsdzvAEBfwybibXH9ozXYZeaxcVU4wNN
+	9WJLarTpCO7ZevyBxQee0wTzVqzZMED2z3fBzHfNrUpG8FCF9r3Q0IDgPdGdp1U9Mwy2CnRwQwMm1
+	IRpoN1FDY0bQ/BKyxKdCW4Y6cWU6Ilw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQkgD-00041z-IJ; Wed, 15 May 2019 03:34:09 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1hQl4T-0003Vn-Cc; Wed, 15 May 2019 03:59:13 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQkg5-00041f-LK
- for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 03:34:03 +0000
-Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id CBFBD7F6CF26B9D058A2;
- Wed, 15 May 2019 11:33:55 +0800 (CST)
-Received: from localhost.localdomain.localdomain (10.175.113.25) by
- DGGEMS405-HUB.china.huawei.com (10.3.19.205) with Microsoft SMTP Server id
- 14.3.439.0; Wed, 15 May 2019 11:33:46 +0800
-From: Kefeng Wang <wangkefeng.wang@huawei.com>
-To: <linux-acpi@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>
-Subject: [PATCH RESEND] ACPI/IORT: Fix build error when IOMMU_SUPPORT disabled
-Date: Wed, 15 May 2019 11:42:53 +0800
-Message-ID: <20190515034253.79348-1-wangkefeng.wang@huawei.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190515033406.79020-1-wangkefeng.wang@huawei.com>
-References: <20190515033406.79020-1-wangkefeng.wang@huawei.com>
-MIME-Version: 1.0
-X-Originating-IP: [10.175.113.25]
-X-CFilter-Loop: Reflected
+ id 1hQl4L-0003VJ-S9
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 03:59:07 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A068A1A0170;
+ Wed, 15 May 2019 05:59:03 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id EE9DC1A00B9;
+ Wed, 15 May 2019 05:58:57 +0200 (CEST)
+Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id B762540302;
+ Wed, 15 May 2019 11:58:50 +0800 (SGT)
+From: Yinbo Zhu <yinbo.zhu@nxp.com>
+To: Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>
+Subject: [PATCH v2] arm64: dts: ls1028a: Add esdhc node in dts
+Date: Wed, 15 May 2019 12:00:46 +0800
+Message-Id: <20190515040046.9230-1-yinbo.zhu@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_203401_924120_0DBDF1F1 
-X-CRM114-Status: GOOD (  10.99  )
+X-CRM114-CacheID: sfid-20190514_205906_049801_0B76C3E5 
+X-CRM114-Status: GOOD (  10.75  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,83 +63,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kefeng Wang <wangkefeng.wang@huawei.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Jean-Philippe Brucker <jean-philippe.brucker@arm.com>,
- Will Deacon <will.deacon@arm.com>, Hulk Robot <hulkci@huawei.com>,
- guohanjun@huawei.com
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Ashish Kumar <Ashish.Kumar@nxp.com>, linux-mmc@vger.kernel.org,
+ xiaobo.xie@nxp.com, linux-kernel@vger.kernel.org, yangbo.lu@nxp.com,
+ yinbo.zhu@nxp.com, jiafei.pan@nxp.com, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-drivers/acpi/arm64/iort.c: In function iort_iommu_configure:
-drivers/acpi/arm64/iort.c:1079:21: error: struct iommu_fwspec has no member named flags
-    dev->iommu_fwspec->flags |= IOMMU_FWSPEC_PCI_RC_ATS;
-                     ^~
-drivers/acpi/arm64/iort.c:1079:32: error: IOMMU_FWSPEC_PCI_RC_ATS
-undeclared (first use in this function)
-    dev->iommu_fwspec->flags |= IOMMU_FWSPEC_PCI_RC_ATS;
-                                ^~~~~~~~~~~~~~~~~~~~~~~
-drivers/acpi/arm64/iort.c:1079:32: note: each undeclared identifier is reported only once for each function it appears in
+From: Ashish Kumar <Ashish.Kumar@nxp.com>
 
-If IOMMU_SUPPORT not enabled, struct iommu_fwspec without members and
-IOMMU_FWSPEC_PCI_RC_ATS not defined, add new iommu_fwspec_set_ats_flags()
-to set IOMMU_FWSPEC_PCI_RC_ATS flags to solve build error.
+This patch is to add esdhc node and enable SD UHS-I,
+eMMC HS200 for ls1028ardb/ls1028aqds board.
 
-Cc: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Cc: Will Deacon <will.deacon@arm.com>
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Fixes: 5702ee24182f ("ACPI/IORT: Check ATS capability in root complex nodes")
-Signed-off-by: Kefeng Wang <wangkefeng.wang@huawei.com>
+Signed-off-by: Ashish Kumar <Ashish.Kumar@nxp.com>
+Signed-off-by: Yangbo Lu <yangbo.lu@nxp.com>
+Signed-off-by: Yinbo Zhu <yinbo.zhu@nxp.com>
 ---
- drivers/acpi/arm64/iort.c | 2 +-
- include/linux/iommu.h     | 9 +++++++++
- 2 files changed, 10 insertions(+), 1 deletion(-)
+Change in v2:
+		Update the patch title
+		Add a commont in dts code
 
-diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
-index 9058cb084b91..4ccf0dd99852 100644
---- a/drivers/acpi/arm64/iort.c
-+++ b/drivers/acpi/arm64/iort.c
-@@ -1076,7 +1076,7 @@ const struct iommu_ops *iort_iommu_configure(struct device *dev)
- 					     iort_pci_iommu_init, &info);
+ arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts |    8 ++++++
+ arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts |   13 ++++++++++
+ arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi    |   27 +++++++++++++++++++++
+ 3 files changed, 48 insertions(+), 0 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
+index 14c79f4..180e5d2 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
+@@ -42,6 +42,14 @@
+ 	status = "okay";
+ };
  
- 		if (!err && iort_pci_rc_supports_ats(node))
--			dev->iommu_fwspec->flags |= IOMMU_FWSPEC_PCI_RC_ATS;
-+			iommu_fwspec_set_ats_flags(dev);
- 	} else {
- 		int i = 0;
- 
-diff --git a/include/linux/iommu.h b/include/linux/iommu.h
-index a815cf6f6f47..0a84556c0eb6 100644
---- a/include/linux/iommu.h
-+++ b/include/linux/iommu.h
-@@ -479,6 +479,11 @@ static inline void dev_iommu_fwspec_set(struct device *dev,
- 	dev->iommu_fwspec = fwspec;
- }
- 
-+static inline void iommu_fwspec_set_ats_flags(struct device *dev)
-+{
-+	dev->iommu_fwspec->flags |= IOMMU_FWSPEC_PCI_RC_ATS;
-+}
++&esdhc {
++	status = "okay";
++};
 +
- int iommu_probe_device(struct device *dev);
- void iommu_release_device(struct device *dev);
- 
-@@ -770,6 +775,10 @@ static inline void iommu_fwspec_free(struct device *dev)
- {
- }
- 
-+static inline void iommu_fwspec_set_ats_flags(struct device *dev)
-+{
-+}
++&esdhc1 {
++	status = "okay";
++};
 +
- static inline int iommu_fwspec_add_ids(struct device *dev, u32 *ids,
- 				       int num_ids)
- {
+ &i2c0 {
+ 	status = "okay";
+ 
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
+index f86b054..1bfaf42 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
+@@ -30,6 +30,19 @@
+ 	};
+ };
+ 
++&esdhc {
++	status = "okay";
++	sd-uhs-sdr104;
++	sd-uhs-sdr50;
++	sd-uhs-sdr25;
++	sd-uhs-sdr12;
++	};
++
++&esdhc1 {
++	status = "okay";
++	mmc-hs200-1_8v;
++	};
++
+ &i2c0 {
+ 	status = "okay";
+ 
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+index 2896bbc..5c7546f 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+@@ -274,6 +274,33 @@
+ 			status = "disabled";
+ 		};
+ 
++		esdhc: esdhc@2140000 {
++			compatible = "fsl,ls1028a-esdhc", "fsl,esdhc";
++			reg = <0x0 0x2140000 0x0 0x10000>;
++			interrupts = <0 28 0x4>; /* Level high type */
++			clock-frequency = <0>; /* fixed up by bootloader */
++			clocks = <&clockgen 2 1>;
++			voltage-ranges = <1800 1800 3300 3300>;
++			sdhci,auto-cmd12;
++			little-endian;
++			bus-width = <4>;
++			status = "disabled";
++		};
++
++		esdhc1: esdhc@2150000 {
++			compatible = "fsl,ls1028a-esdhc", "fsl,esdhc";
++			reg = <0x0 0x2150000 0x0 0x10000>;
++			interrupts = <0 63 0x4>; /* Level high type */
++			clock-frequency = <0>; /* fixed up by bootloader */
++			clocks = <&clockgen 2 1>;
++			voltage-ranges = <1800 1800 3300 3300>;
++			sdhci,auto-cmd12;
++			broken-cd;
++			little-endian;
++			bus-width = <4>;
++			status = "disabled";
++		};
++
+ 		sata: sata@3200000 {
+ 			compatible = "fsl,ls1028a-ahci";
+ 			reg = <0x0 0x3200000 0x0 0x10000>,
 -- 
-2.20.1
+1.7.1
 
 
 _______________________________________________
