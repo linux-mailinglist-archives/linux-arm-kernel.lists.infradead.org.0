@@ -2,48 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C4211E813
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 07:57:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F24E1E81B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 08:03:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=5Q9bijJ/ViwhvdFPh1fKE3NdpfR5jsnc7137HL1q+f8=; b=BFH
-	3OcfO0BeUudSs7QqASZmMUo5X34ceNaZMC1D7GWVJhlWXjz+YnbfEbUhcUiv6PoCBJjajK1yq33d9
-	6+id1y48o5rA0k85/Tt1FtIb7HXTgKEQr2XMMPo3vJVyMGoG4gvGRLxTdkdPkUU2Lops3dFyq3uuC
-	QmIzGgEXSp00W7e5eyzoNBjyHXBd8i5R8ih/ctpmAE9S/88zWAITDIAnvAiicc7n6kfKqGUDJ4+Xi
-	k6YJzjY+x3SgyvqbLQ6h/jOOeRFM+AHdga3+w3Bz/1q0GJQCHpYeHn+K27h+y1lVuVrJVeUytjJeI
-	TN2yUV4s0VwLrYhBSbzq/3KVCBwjXJA==;
+	References:List-Owner; bh=5Q9bijJ/ViwhvdFPh1fKE3NdpfR5jsnc7137HL1q+f8=; b=juN
+	Yn5PkPVKnppfmCquu6TeBWYZpX4ilnIXbw+Nf/AESN7YREjpd17PYt9ZNliI+Nwci3fDfIqEKLaAd
+	0r3dhwfnWRs/fXsWA6MQuG9WQi5y0iw70XRQi4lUfOGGF0+2uW1K4zdADkD03pMs1qdMZLIEjykLv
+	3cv9zaIi2EOR1zU/tpUWodjmInnmP2YqRasqISVOdFEnSvT2iFlPPo/GzcLED3jQizPv2ICou16/B
+	/SMzNNKU0595ql0qNby4DwNBIrNejlry0nOIjkFcUrIl9xOMb0u6P4KHVUxRV/3fumZtssiwaddMi
+	8NjEkGPWY8HhBGTvjqnEGqU1pKdSymA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQmuK-0006Xt-T9; Wed, 15 May 2019 05:56:52 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hQn0J-0000Fc-RO; Wed, 15 May 2019 06:03:03 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQmuC-0006XF-Ky
- for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 05:56:47 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 136EC1A00D6;
- Wed, 15 May 2019 07:56:40 +0200 (CEST)
+ id 1hQn0C-0000Eq-5R
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 06:02:57 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id B8162200196;
+ Wed, 15 May 2019 08:02:50 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B23CE1A0035;
- Wed, 15 May 2019 07:56:36 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 0463B200012;
+ Wed, 15 May 2019 08:02:47 +0200 (CEST)
 Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 1F251402C8;
- Wed, 15 May 2019 13:56:32 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 064C24029A;
+ Wed, 15 May 2019 14:02:41 +0800 (SGT)
 From: Ran Wang <ran.wang_1@nxp.com>
 To: Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH] arm64: dts: lx2160a: Enable usb3-lpm-capable for usb3 node
-Date: Wed, 15 May 2019 13:58:28 +0800
-Message-Id: <20190515055828.33331-1-ran.wang_1@nxp.com>
+Subject: [RESEND][PATCH] arm64: dts: lx2160a: Enable usb3-lpm-capable for usb3
+ node
+Date: Wed, 15 May 2019 14:04:34 +0800
+Message-Id: <20190515060434.33581-1-ran.wang_1@nxp.com>
 X-Mailer: git-send-email 2.17.1
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_225644_880186_1341AC6B 
-X-CRM114-Status: UNSURE (   7.48  )
+X-CRM114-CacheID: sfid-20190514_230256_347643_30DC7890 
+X-CRM114-Status: UNSURE (   7.24  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -51,7 +52,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -65,7 +66,7 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: devicetree@vger.kernel.org, Ran Wang <ran.wang_1@nxp.com>,
- linux-arm-kernel@lists.infradead.org
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
