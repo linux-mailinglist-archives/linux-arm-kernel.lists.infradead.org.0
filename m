@@ -2,55 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 380341ED6D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 13:10:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 405861EDA6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 13:12:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0DWWg29GTd06cXOB0FAWQtYVl73KudrEB7Lx5YByb10=; b=SaQVQ+vHDUDQ6x
-	5L1GHXt1OEEgw6Ea6ohkxFgFuUSASnKQuF/tRHNZ9jKlbo7J1XyJ/os0tntKcGohqg8ScKEpq14KH
-	VRxhtTPKAT4+reT5cRz88J3civ5YCuuEtunzRHKDoxrxacNrzUxxWis7HBzgv/TOs7VnpsaesaSGh
-	7w2ENhx34NTVMnbb4aHsifONQ6LuQ13lkWVqPkJDEGmPdP3AxF05qNrrAL/8vGE2BHBEIoT5c15rc
-	Dyz93dQsJltmplIjVWj9uCwWaGWNgw0SSMGwqluJzZRfBuI9BSltJBQaUI900q8rtDjP6gO9mkH50
-	fDSP6Rn2TpJ32K71oQ7A==;
+	List-Owner; bh=xgW/v+Nb/vs4SgBqlM0gXaSROKovHonexndhs0UahU0=; b=nZ8WLEZ+la6jzV
+	hoIxjhWt2785J17A0/PUwfuVYbL8JSh9p/z/3Eu/tOEC3QhtOyEcXui9WSQmq75vAV4Z7soDh6LNQ
+	njFyelWEjRXy/nbQiUE4QltGa+ITfwFFaZ2a+MO7oHvnHQkz9nZLxvLP0IZEtnozfqs/FpDQlbS+M
+	Ebx/hVJXgdnvq92nKVHFZL/pZz7GWxkFmeC5JUQx6ERdJlCdl9zyD3vDr6Ba2dLmR3fgm2UqKCQCs
+	euKWYXr2/YJSjrDzqrnWfrFI6P7hS50m3Qmce9i4ol3tcIpihHsKqSau4gs4sr70JQnbCxNKG5q//
+	1iP+2DI2QIPsv+pX+MjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQrnO-0006kB-Pg; Wed, 15 May 2019 11:10:02 +0000
+	id 1hQrpp-0000FW-Ud; Wed, 15 May 2019 11:12:33 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQrnE-0006jl-Ca
- for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 11:09:54 +0000
+ id 1hQrph-0000Ee-Gd
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 11:12:27 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9BF0C20843;
- Wed, 15 May 2019 11:09:51 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B560420644;
+ Wed, 15 May 2019 11:12:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1557918592;
- bh=JbPRabLIMrTvWdkn5zLLgPu/FCNDuIM6k0f73dNLetE=;
+ s=default; t=1557918745;
+ bh=JlkSNfWB5CXyq0ERJMelWM8ac/C1kds6pM/n61D6YHA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=kNA4xfyOThsK3VpryKIMa7jh4tPXKqEnprUBb9JmyC43O5x61N2oeW3onxP64PUvC
- 2wkXzZ3jbgrdNo3yddpGMnmm4Xa4Cu8nOpghXv3gajrai+juinmlA3006K6lyZJUcR
- oMlAJdoWyumrmlu0roYlOJiLX62EZI8P+nvxU1EU=
+ b=IMmm/1/LDDHYRP9kQYqRgKdI3NGFjLJjNJVn2Dpe7rMJyJ2DS5n/RzsGY4QBNiig2
+ ZlLZtNwQ0Ev3sAHNQsl1SvJnVswTHCx0IAEcA2I7gZB+rwNq7nlifR136gRIquO+iL
+ X3Zn6VNLoyvnt+Q/UAXABieCEW7nkWRz7rCJEZXA=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 4.4 190/266] locking/atomics,
- asm-generic: Move some macros from <linux/bitops.h> to a new
- <linux/bits.h> file
-Date: Wed, 15 May 2019 12:54:57 +0200
-Message-Id: <20190515090729.368808952@linuxfoundation.org>
+Subject: [PATCH 4.4 247/266] cpu/speculation: Add mitigations= cmdline option
+Date: Wed, 15 May 2019 12:55:54 +0200
+Message-Id: <20190515090731.364702401@linuxfoundation.org>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190515090722.696531131@linuxfoundation.org>
 References: <20190515090722.696531131@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_040952_457322_123BB8F6 
-X-CRM114-Status: GOOD (  12.99  )
+X-CRM114-CacheID: sfid-20190515_041225_583763_2F852BD5 
+X-CRM114-Status: GOOD (  14.33  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -74,108 +72,174 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ben Hutchings <ben@decadent.org.uk>,
- "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Will Deacon <will.deacon@arm.com>, stable@vger.kernel.org,
- yamada.masahiro@socionext.com, Thomas Gleixner <tglx@linutronix.de>,
- Linus Torvalds <torvalds@linux-foundation.org>, Ingo Molnar <mingo@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Paul Mackerras <paulus@samba.org>,
+ "H . Peter Anvin" <hpa@zytor.com>, Andrea Arcangeli <aarcange@redhat.com>,
+ linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
+ Steven Price <steven.price@arm.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>, Jon Masters <jcm@redhat.com>,
+ Waiman Long <longman@redhat.com>, Ben Hutchings <ben@decadent.org.uk>,
+ linux-arch@vger.kernel.org, Will Deacon <will.deacon@arm.com>,
+ Jiri Kosina <jikos@kernel.org>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, Josh Poimboeuf <jpoimboe@redhat.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Phil Auld <pauld@redhat.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Randy Dunlap <rdunlap@infradead.org>, stable@vger.kernel.org,
+ Tyler Hicks <tyhicks@canonical.com>, Jiri Kosina <jkosina@suse.cz>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>, linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Will Deacon <will.deacon@arm.com>
+From: Josh Poimboeuf <jpoimboe@redhat.com>
 
-commit 8bd9cb51daac89337295b6f037b0486911e1b408 upstream.
+commit 98af8452945c55652de68536afdde3b520fec429 upstream.
 
-In preparation for implementing the asm-generic atomic bitops in terms
-of atomic_long_*(), we need to prevent <asm/atomic.h> implementations from
-pulling in <linux/bitops.h>. A common reason for this include is for the
-BITS_PER_BYTE definition, so move this and some other BIT() and masking
-macros into a new header file, <linux/bits.h>.
+Keeping track of the number of mitigations for all the CPU speculation
+bugs has become overwhelming for many users.  It's getting more and more
+complicated to decide which mitigations are needed for a given
+architecture.  Complicating matters is the fact that each arch tends to
+have its own custom way to mitigate the same vulnerability.
 
-Signed-off-by: Will Deacon <will.deacon@arm.com>
-Acked-by: Peter Zijlstra (Intel) <peterz@infradead.org>
-Cc: Linus Torvalds <torvalds@linux-foundation.org>
-Cc: Peter Zijlstra <peterz@infradead.org>
-Cc: Thomas Gleixner <tglx@linutronix.de>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: yamada.masahiro@socionext.com
-Link: https://lore.kernel.org/lkml/1529412794-17720-4-git-send-email-will.deacon@arm.com
-Signed-off-by: Ingo Molnar <mingo@kernel.org>
+Most users fall into a few basic categories:
+
+a) they want all mitigations off;
+
+b) they want all reasonable mitigations on, with SMT enabled even if
+   it's vulnerable; or
+
+c) they want all reasonable mitigations on, with SMT disabled if
+   vulnerable.
+
+Define a set of curated, arch-independent options, each of which is an
+aggregation of existing options:
+
+- mitigations=off: Disable all mitigations.
+
+- mitigations=auto: [default] Enable all the default mitigations, but
+  leave SMT enabled, even if it's vulnerable.
+
+- mitigations=auto,nosmt: Enable all the default mitigations, disabling
+  SMT if needed by a mitigation.
+
+Currently, these options are placeholders which don't actually do
+anything.  They will be fleshed out in upcoming patches.
+
+Signed-off-by: Josh Poimboeuf <jpoimboe@redhat.com>
 Signed-off-by: Thomas Gleixner <tglx@linutronix.de>
+Tested-by: Jiri Kosina <jkosina@suse.cz> (on x86)
+Reviewed-by: Jiri Kosina <jkosina@suse.cz>
+Cc: Borislav Petkov <bp@alien8.de>
+Cc: "H . Peter Anvin" <hpa@zytor.com>
+Cc: Andy Lutomirski <luto@kernel.org>
+Cc: Peter Zijlstra <peterz@infradead.org>
+Cc: Jiri Kosina <jikos@kernel.org>
+Cc: Waiman Long <longman@redhat.com>
+Cc: Andrea Arcangeli <aarcange@redhat.com>
+Cc: Jon Masters <jcm@redhat.com>
+Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+Cc: Paul Mackerras <paulus@samba.org>
+Cc: Michael Ellerman <mpe@ellerman.id.au>
+Cc: linuxppc-dev@lists.ozlabs.org
+Cc: Martin Schwidefsky <schwidefsky@de.ibm.com>
+Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
+Cc: linux-s390@vger.kernel.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will.deacon@arm.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-arch@vger.kernel.org
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: Tyler Hicks <tyhicks@canonical.com>
+Cc: Linus Torvalds <torvalds@linux-foundation.org>
+Cc: Randy Dunlap <rdunlap@infradead.org>
+Cc: Steven Price <steven.price@arm.com>
+Cc: Phil Auld <pauld@redhat.com>
+Link: https://lkml.kernel.org/r/b07a8ef9b7c5055c3a4637c87d07c296d5016fe0.1555085500.git.jpoimboe@redhat.com
+[bwh: Backported to 4.4:
+ - Drop the auto,nosmt option which we can't support
+ - Adjust filename]
 Signed-off-by: Ben Hutchings <ben@decadent.org.uk>
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 ---
- include/linux/bitops.h |   22 +---------------------
- include/linux/bits.h   |   26 ++++++++++++++++++++++++++
- 2 files changed, 27 insertions(+), 21 deletions(-)
- create mode 100644 include/linux/bits.h
+ Documentation/kernel-parameters.txt |   19 +++++++++++++++++++
+ include/linux/cpu.h                 |   17 +++++++++++++++++
+ kernel/cpu.c                        |   13 +++++++++++++
+ 3 files changed, 49 insertions(+)
 
---- a/include/linux/bitops.h
-+++ b/include/linux/bitops.h
-@@ -1,29 +1,9 @@
- #ifndef _LINUX_BITOPS_H
- #define _LINUX_BITOPS_H
- #include <asm/types.h>
-+#include <linux/bits.h>
+--- a/Documentation/kernel-parameters.txt
++++ b/Documentation/kernel-parameters.txt
+@@ -2173,6 +2173,25 @@ bytes respectively. Such letter suffixes
+ 			in the "bleeding edge" mini2440 support kernel at
+ 			http://repo.or.cz/w/linux-2.6/mini2440.git
  
--#ifdef	__KERNEL__
--#define BIT(nr)			(1UL << (nr))
--#define BIT_ULL(nr)		(1ULL << (nr))
--#define BIT_MASK(nr)		(1UL << ((nr) % BITS_PER_LONG))
--#define BIT_WORD(nr)		((nr) / BITS_PER_LONG)
--#define BIT_ULL_MASK(nr)	(1ULL << ((nr) % BITS_PER_LONG_LONG))
--#define BIT_ULL_WORD(nr)	((nr) / BITS_PER_LONG_LONG)
--#define BITS_PER_BYTE		8
- #define BITS_TO_LONGS(nr)	DIV_ROUND_UP(nr, BITS_PER_BYTE * sizeof(long))
--#endif
--
--/*
-- * Create a contiguous bitmask starting at bit position @l and ending at
-- * position @h. For example
-- * GENMASK_ULL(39, 21) gives us the 64bit vector 0x000000ffffe00000.
-- */
--#define GENMASK(h, l) \
--	(((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
--
--#define GENMASK_ULL(h, l) \
--	(((~0ULL) - (1ULL << (l)) + 1) & \
--	 (~0ULL >> (BITS_PER_LONG_LONG - 1 - (h))))
++	mitigations=
++			Control optional mitigations for CPU vulnerabilities.
++			This is a set of curated, arch-independent options, each
++			of which is an aggregation of existing arch-specific
++			options.
++
++			off
++				Disable all optional CPU mitigations.  This
++				improves system performance, but it may also
++				expose users to several CPU vulnerabilities.
++
++			auto (default)
++				Mitigate all CPU vulnerabilities, but leave SMT
++				enabled, even if it's vulnerable.  This is for
++				users who don't want to be surprised by SMT
++				getting disabled across kernel upgrades, or who
++				have other ways of avoiding SMT-based attacks.
++				This is the default behavior.
++
+ 	mminit_loglevel=
+ 			[KNL] When CONFIG_DEBUG_MEMORY_INIT is set, this
+ 			parameter allows control of the logging verbosity for
+--- a/include/linux/cpu.h
++++ b/include/linux/cpu.h
+@@ -296,4 +296,21 @@ bool cpu_wait_death(unsigned int cpu, in
+ bool cpu_report_death(void);
+ #endif /* #ifdef CONFIG_HOTPLUG_CPU */
  
- extern unsigned int __sw_hweight8(unsigned int w);
- extern unsigned int __sw_hweight16(unsigned int w);
---- /dev/null
-+++ b/include/linux/bits.h
-@@ -0,0 +1,26 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef __LINUX_BITS_H
-+#define __LINUX_BITS_H
-+#include <asm/bitsperlong.h>
-+
-+#define BIT(nr)			(1UL << (nr))
-+#define BIT_ULL(nr)		(1ULL << (nr))
-+#define BIT_MASK(nr)		(1UL << ((nr) % BITS_PER_LONG))
-+#define BIT_WORD(nr)		((nr) / BITS_PER_LONG)
-+#define BIT_ULL_MASK(nr)	(1ULL << ((nr) % BITS_PER_LONG_LONG))
-+#define BIT_ULL_WORD(nr)	((nr) / BITS_PER_LONG_LONG)
-+#define BITS_PER_BYTE		8
-+
 +/*
-+ * Create a contiguous bitmask starting at bit position @l and ending at
-+ * position @h. For example
-+ * GENMASK_ULL(39, 21) gives us the 64bit vector 0x000000ffffe00000.
++ * These are used for a global "mitigations=" cmdline option for toggling
++ * optional CPU mitigations.
 + */
-+#define GENMASK(h, l) \
-+	(((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
++enum cpu_mitigations {
++	CPU_MITIGATIONS_OFF,
++	CPU_MITIGATIONS_AUTO,
++};
 +
-+#define GENMASK_ULL(h, l) \
-+	(((~0ULL) - (1ULL << (l)) + 1) & \
-+	 (~0ULL >> (BITS_PER_LONG_LONG - 1 - (h))))
++extern enum cpu_mitigations cpu_mitigations;
 +
-+#endif	/* __LINUX_BITS_H */
++/* mitigations=off */
++static inline bool cpu_mitigations_off(void)
++{
++	return cpu_mitigations == CPU_MITIGATIONS_OFF;
++}
++
+ #endif /* _LINUX_CPU_H_ */
+--- a/kernel/cpu.c
++++ b/kernel/cpu.c
+@@ -842,3 +842,16 @@ void init_cpu_online(const struct cpumas
+ {
+ 	cpumask_copy(to_cpumask(cpu_online_bits), src);
+ }
++
++enum cpu_mitigations cpu_mitigations = CPU_MITIGATIONS_AUTO;
++
++static int __init mitigations_parse_cmdline(char *arg)
++{
++	if (!strcmp(arg, "off"))
++		cpu_mitigations = CPU_MITIGATIONS_OFF;
++	else if (!strcmp(arg, "auto"))
++		cpu_mitigations = CPU_MITIGATIONS_AUTO;
++
++	return 0;
++}
++early_param("mitigations", mitigations_parse_cmdline);
 
 
 
