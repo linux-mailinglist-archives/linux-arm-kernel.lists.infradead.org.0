@@ -2,65 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 861E11F4FE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 15:04:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04B021F54C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 15 May 2019 15:18:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RYR1486ViETENPF4RDRpO8gjHCA5y8GPCHwtEQW11Wc=; b=n1K55mkkf4YOYm
-	Wr4J3n5T2eMgdvFGzM1WhcXjiuEGekCVVutQ98QUtpcD0i6sJBigm9e1ftVpb+svV2lQyCGC+WRGa
-	Ew8DTf0jgS4v7l5oyjK4OGSP9Zx0UJ3E5rIgQM0flJGQXUPoXDagG6np7LMlJyiyyzhmpiYlBfFm5
-	ASPRRnlXhP0lCrh3sAosK6Y7pnebBFn79LcIfpQT/qKervHHB4gTp8g7cb6XhfmLN2VEfj+flC4dj
-	3BVPXO/AK59vFUaN96ZFa9K+TuKcXpBRPuHXMcJCsomfHLw2mX4kwjl5WmrZ0S9DFJ186zVxs+1dY
-	eUk7P3P89WcHsZgWAhHg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tTw+HKTFl1cxa/21SHgOfFbHXuXnYKxavoNJvBuh7D0=; b=sCHzgB9J/Dh3G8
+	AwntVRjAJweSuBjfSLF/VcfRDmj3UNMHzoKWSlIo++ors5ZSkwBT2t1swSzALi8xj1RJ9BZLHXs/Q
+	GOaNSfm+Qwv5n0k1nQsGfpmXfpP1JdlhVH2ZUcWgLvrk9dKemkhhMK7Nm9Z09HYTxc/JIpplqazaE
+	eJ1dnq8w3pIkcMXhhkQj/23AcCpYQcTWZZNHixfKk7CdKMXiw7hy3ih3IUImdxDJwcSeQvOD8gI3e
+	I+hbdbDJTQDSY6Qu4XG0umDWTRbx8Zg1BbPckYIOdG/d0kq5iJ+2ZNnfSbnWnA/PP1XRmb8+DJdYY
+	qMH8XF4jH5D6IP5Q28yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQtZf-0006Dk-74; Wed, 15 May 2019 13:03:59 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hQtnC-0002Xq-Oa; Wed, 15 May 2019 13:17:58 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQtZX-0006BX-ND; Wed, 15 May 2019 13:03:52 +0000
-X-UUID: b56ee797ae074005ab817fb6286cdca0-20190515
-X-UUID: b56ee797ae074005ab817fb6286cdca0-20190515
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <jungo.lin@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1162092976; Wed, 15 May 2019 05:02:58 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 15 May 2019 06:02:57 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 15 May 2019 21:02:55 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 15 May 2019 21:02:55 +0800
-Message-ID: <1557925375.5721.7.camel@mtksdccf07>
-Subject: Re: [RFC,V2,01/11] dt-bindings: mt8183: Add binding for ISP Pass 1
- reserved memory
-From: Jungo Lin <jungo.lin@mediatek.com>
-To: Rob Herring <robh@kernel.org>
-Date: Wed, 15 May 2019 21:02:55 +0800
-In-Reply-To: <20190514195052.GA3314@bogus>
-References: <jungo.lin@mediatek.com>
- <20190510015755.51495-2-jungo.lin@mediatek.com>
- <20190514195052.GA3314@bogus>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1hQtn0-0002VA-0i
+ for linux-arm-kernel@lists.infradead.org; Wed, 15 May 2019 13:17:47 +0000
+Received: by mail-wm1-x342.google.com with SMTP id j187so4696767wma.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 15 May 2019 06:17:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=IBIWbSPpc7j2EgIiZbpjBgwSCzEoaoZA6IHHGeyqm0k=;
+ b=MHYcqecCUI/xmN0B4JbfnX7hMUbiXLCSV1mF6rl8tZ2E/n8Dqwl7RFPMQb7BsxJ6Xr
+ kXLbgqR52m/LoSaW6Wmuv+5/eAqFgWZF1kMc/Rd4879C6I95vL8neWipC4GRZqAVr3Pj
+ zYUjZ/FA2xA7QVXfrgynvf+6HEClV+jOcEuav7LiVpqlKa+HNg2QYp5mSpeYRYzqB6lo
+ yuR09cbQFJx5C6/7VhsCQ34CfnrVtre6Nc5j/ou1EZdnJfE9mmq7obbZ0chFH6D/rSp1
+ 81DX849ZUfUsN9Q+u0yj2LzxxfQCcM83++Pl3VJOh1S1BaUxAGliBMtJo+5pFLceJ/fR
+ ZMHQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=IBIWbSPpc7j2EgIiZbpjBgwSCzEoaoZA6IHHGeyqm0k=;
+ b=fIuba1SRnZlH2zOQgxYeBFvS6zAG0MQusr2fuSn5DZkjHgAQQAvr3ONX5JZp2vhXz8
+ u3pyBbtptmdcIQkCnxTaYFkCD4MybpWXvScMRDC+q4l5yWKWTT4ARGj4uYLc26n5XFWr
+ 0yDcZuESuXRrjcLYo5LGEgtdvbJnHCwTXzQIAlT9mu1OzJzPti8uvmoakPibMhwq+cc5
+ gMfKhGrLKb80crkE9nnXnZKs55e1Ajfr3ssrjd27Sqfguw50MIPZzhTZ6COS/CVxWvRs
+ J6tKbQcD+dIentWgYBM2ymTUEaR0jJDEQI8ggmYtNBh43R08zkxM0BTGR5WKB1SnV8WF
+ sJBw==
+X-Gm-Message-State: APjAAAXhydFqwKIDRMcaYfC+JtVSyfekBJ6QHfyJOxlmLFJZKIvMxqAM
+ ET4kt+e8tfRP8pj3PjE+Eb/x/w==
+X-Google-Smtp-Source: APXvYqztV9ij0IVX8p1xv1SzUN1LERXsJ9a/GZbNdSp+jRn1j2plcZZjBsrB44VGoOhLMEphD5XOIQ==
+X-Received: by 2002:a1c:80c3:: with SMTP id b186mr21232039wmd.43.1557926264158; 
+ Wed, 15 May 2019 06:17:44 -0700 (PDT)
+Received: from localhost.localdomain
+ (aputeaux-684-1-11-31.w90-86.abo.wanadoo.fr. [90.86.214.31])
+ by smtp.gmail.com with ESMTPSA id f10sm3268583wrg.24.2019.05.15.06.17.43
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Wed, 15 May 2019 06:17:43 -0700 (PDT)
+From: Fabien Parent <fparent@baylibre.com>
+To: robh+dt@kernel.org,
+	mark.rutland@arm.com,
+	matthias.bgg@gmail.com
+Subject: [PATCH v3 0/5] mt6392: Add support for MediaTek MT6392 PMIC
+Date: Wed, 15 May 2019 15:17:36 +0200
+Message-Id: <20190515131741.17294-1-fparent@baylibre.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_060351_765794_115D3814 
-X-CRM114-Status: GOOD (  11.84  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190515_061746_061957_5D4A6800 
+X-CRM114-Status: GOOD (  12.40  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -72,49 +93,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ryan.yu@mediatek.com, frankie.chiu@mediatek.com,
- laurent.pinchart+renesas@ideasonboard.com, Rynn.Wu@mediatek.com,
- suleiman@chromium.org, Jerry-ch.Chen@mediatek.com, hans.verkuil@cisco.com,
- frederic.chen@mediatek.com, seraph.huang@mediatek.com,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org, shik@chromium.org,
- yuzhao@chromium.org, linux-mediatek@lists.infradead.org,
- matthias.bgg@gmail.com, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, Sean.Cheng@mediatek.com,
- srv_heupstream@mediatek.com, sj.huang@mediatek.com, tfiga@chromium.org,
- christie.yu@mediatek.com, zwisler@chromium.org
+Cc: devicetree@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Fabien Parent <fparent@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob:
+This patch series aims at bringing support for the MediaTek MT6392 PMIC. This
+PMIC is used on the MT8516 Pumpkin board.
 
-Thanks for your comments.
+This patch series adds support for the following features:
+ * PMIC keys
+ * regulator
+ * RTC
 
-On Tue, 2019-05-14 at 14:50 -0500, Rob Herring wrote:
-> On Fri, May 10, 2019 at 09:57:47AM +0800, Jungo Lin wrote:
-> > This patch adds the binding for describing the reserved
-> > shared memory used to exchange ISP configuration and tuning
-> > data between the co-processor and Pass 1 (P1) unit of the
-> > camera ISP system on Mediatek SoCs.
-> > 
-> > Signed-off-by: Jungo Lin <jungo.lin@mediatek.com>
-> > ---
-> >  .../mediatek,reserve-memory-cam-smem.txt      | 42 +++++++++++++++++++
-> >  1 file changed, 42 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/reserved-memory/mediatek,reserve-memory-cam-smem.txt
-> 
-> See my comments on the other 2 camera related reserved-memory bindings.
-> 
+Fabien Parent (5):
+  dt-bindings: regulator: add support for MT6392
+  regulator: mt6392: Add support for MT6392 regulator
+  dt-bindings: mfd: mt6397: Add bindings for MT6392 PMIC
+  mfd: mt6397: Add support for MT6392 pmic
+  arm64: dts: mt6392: Add PMIC mt6392 dtsi
 
-Ok, we will align DIP & FD drivers's implementation.
+ .../devicetree/bindings/mfd/mt6397.txt        |  12 +-
+ .../bindings/regulator/mt6392-regulator.txt   | 220 ++++++++
+ arch/arm64/boot/dts/mediatek/mt6392.dtsi      | 208 ++++++++
+ drivers/mfd/mt6397-core.c                     |  55 ++
+ drivers/regulator/Kconfig                     |   9 +
+ drivers/regulator/Makefile                    |   1 +
+ drivers/regulator/mt6392-regulator.c          | 490 ++++++++++++++++++
+ include/linux/mfd/mt6392/core.h               |  42 ++
+ include/linux/mfd/mt6392/registers.h          | 487 +++++++++++++++++
+ include/linux/regulator/mt6392-regulator.h    |  40 ++
+ 10 files changed, 1562 insertions(+), 2 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/regulator/mt6392-regulator.txt
+ create mode 100644 arch/arm64/boot/dts/mediatek/mt6392.dtsi
+ create mode 100644 drivers/regulator/mt6392-regulator.c
+ create mode 100644 include/linux/mfd/mt6392/core.h
+ create mode 100644 include/linux/mfd/mt6392/registers.h
+ create mode 100644 include/linux/regulator/mt6392-regulator.h
 
-Best regards,
-
-Jungo
-
-> Rob
-
+-- 
+2.20.1
 
 
 _______________________________________________
