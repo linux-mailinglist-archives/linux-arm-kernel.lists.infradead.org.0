@@ -2,65 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4208720A97
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 17:03:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 20FFE20AAC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 17:06:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=EuDAXcIv9hxnjtSrTWmo9S+WnQw5t/oilKm97IOB1Wk=; b=DOuv3AYJRGprBKHkW6QxDLsnI
-	PNBcQIYR0DFqh/dsVf0xYlmp02rdpE4BZtc7pYmEy/+tdZsUgdrhP4CffHYU4ga+qZnNvTfbu0I/W
-	rgztMfqFjXV4M1lxij21753oe1hFhp4h7eIhCnH0s7dV4Rg5tIjt2keuJYhpWhfoy6G1/rQ079hvk
-	XfWL08asFDrRSgRZuk831ptPcL75V+S9aqABSaQvQSgPPq+U6bsODd2cqq5aIrhrbbFXrP0b2+GIM
-	wmygyd0Uk6aSLCQKbHyuobBVISY6K82rGChR5Mk74wcmr05qhr3wdqZRJPXSmGrAKTlktYD38GgWd
-	j55ZwoeZA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ogoRiIBqpS7xp4S7qa87v9l9fxLyKah+nRJX3cJ8KDQ=; b=giEUMsyoUgPp8a
+	6IMKFaYl/CTp31IalP7L6dO1PcOtUEOHpDQ+dyU2jS/Kbzas897lyZCjI8MmiE5JLUlfLo9RFs/ng
+	4xieI3t8IcGh9XuqJ/W3MbPyQl6YzAEnLsQlUTeLBGcgVrMFLCMaoMa479NVoe/N+SCBWmfc5uzNM
+	7JdNKF7MK7DKoYRWCqNsO0ravRa7qsYAdCkKuWF2SjPuBFU65VzewuEjPLTajRVwY1+35VCnUG/Ya
+	CusVvPQWz1Cmyla134uDM5lmg71NHDGJEFqGIU9hNaF5Mv30xgC+iGNPEApCsg5wQ2nMYOmt45QZt
+	ROiyeMCNwZNDzQsZVmKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRHuj-0001aJ-Of; Thu, 16 May 2019 15:03:21 +0000
-Received: from relay12.mail.gandi.net ([217.70.178.232])
+	id 1hRHxn-0003DC-7Q; Thu, 16 May 2019 15:06:31 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRHuc-0001ZD-59
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 15:03:15 +0000
-Received: from localhost (unknown [80.215.79.199])
- (Authenticated sender: maxime.ripard@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id 1129E200018;
- Thu, 16 May 2019 15:02:52 +0000 (UTC)
-Date: Thu, 16 May 2019 17:02:52 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Yangtao Li <tiny.windzz@gmail.com>, mark.rutland@arm.com,
- daniel.lezcano@linaro.org, catalin.marinas@arm.com,
- will.deacon@arm.com, bjorn.andersson@linaro.org,
- mchehab+samsung@kernel.org, paulmck@linux.ibm.com,
- stefan.wahren@i2se.com, linux-pm@vger.kernel.org, wens@csie.org,
- jagan@amarulasolutions.com, andy.gross@linaro.org,
- rui.zhang@intel.com, devicetree@vger.kernel.org,
- marc.w.gonzalez@free.fr, edubezval@gmail.com,
- enric.balletbo@collabora.com, robh+dt@kernel.org,
- Jonathan.Cameron@huawei.com, linux-arm-kernel@lists.infradead.org,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
- olof@lixom.net, davem@davemloft.net
-Subject: Re: [PATCH 2/3] thermal: sun50i: add thermal driver for h6
-Message-ID: <20190516150252.hf4u3bloo37chy6q@flea>
-References: <20190512082614.9045-1-tiny.windzz@gmail.com>
- <20190512082614.9045-3-tiny.windzz@gmail.com>
- <20190512133930.t5txssl7mou2gljt@flea>
- <20190512214128.qjyys3vfpwdiacib@core.my.home>
+ id 1hRHxf-0003CO-86
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 15:06:24 +0000
+Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
+ [10.5.11.14])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 4A40137EEB;
+ Thu, 16 May 2019 15:06:20 +0000 (UTC)
+Received: from dhcp-27-174.brq.redhat.com (unknown [10.43.17.159])
+ by smtp.corp.redhat.com (Postfix) with SMTP id 213925D9CD;
+ Thu, 16 May 2019 15:06:13 +0000 (UTC)
+Received: by dhcp-27-174.brq.redhat.com (nbSMTP-1.00) for uid 1000
+ oleg@redhat.com; Thu, 16 May 2019 17:06:19 +0200 (CEST)
+Date: Thu, 16 May 2019 17:06:12 +0200
+From: Oleg Nesterov <oleg@redhat.com>
+To: Aleksa Sarai <cyphar@cyphar.com>
+Subject: Re: [PATCH v1 1/2] pid: add pidfd_open()
+Message-ID: <20190516150611.GC22564@redhat.com>
+References: <20190516135944.7205-1-christian@brauner.io>
+ <20190516142659.GB22564@redhat.com>
+ <20190516145607.j43xyj26k6l5vmbd@yavin>
 MIME-Version: 1.0
-In-Reply-To: <20190512214128.qjyys3vfpwdiacib@core.my.home>
-User-Agent: NeoMutt/20180716
+Content-Disposition: inline
+In-Reply-To: <20190516145607.j43xyj26k6l5vmbd@yavin>
+User-Agent: Mutt/1.5.24 (2015-08-30)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.29]); Thu, 16 May 2019 15:06:21 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_080314_350186_E6FD1A0D 
-X-CRM114-Status: GOOD (  12.51  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190516_080623_308585_342EA777 
+X-CRM114-Status: GOOD (  13.43  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -73,88 +72,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3394848345004997554=="
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ linux-mips@vger.kernel.org, dhowells@redhat.com, joel@joelfernandes.org,
+ linux-kselftest@vger.kernel.org, sparclinux@vger.kernel.org,
+ linux-api@vger.kernel.org, elena.reshetova@intel.com,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org, dancol@google.com,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Christian Brauner <christian@brauner.io>, serge@hallyn.com,
+ linux-xtensa@linux-xtensa.org, keescook@chromium.org, arnd@arndb.de,
+ jannh@google.com, linux-m68k@lists.linux-m68k.org, viro@zeniv.linux.org.uk,
+ luto@kernel.org, tglx@linutronix.de, linux-arm-kernel@lists.infradead.org,
+ linux-parisc@vger.kernel.org, torvalds@linux-foundation.org,
+ linux-kernel@vger.kernel.org, luto@amacapital.net, ebiederm@xmission.com,
+ linux-alpha@vger.kernel.org, akpm@linux-foundation.org,
+ linuxppc-dev@lists.ozlabs.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============3394848345004997554==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="7vj27y3kfhi2ktlo"
-Content-Disposition: inline
-
-
---7vj27y3kfhi2ktlo
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-On Sun, May 12, 2019 at 11:41:28PM +0200, Ond=C5=99ej Jirman wrote:
-> > > +static int tsens_get_temp(void *data, int *temp)
-> > > +{
-> > > +	struct tsensor *s =3D data;
-> > > +	struct tsens_device *tmdev =3D s->tmdev;
-> > > +	int val;
-> > > +
-> > > +	regmap_read(tmdev->regmap, tmdev->chip->temp_data_base +
-> > > +		    0x4 * s->id, &val);
-> > > +
-> > > +	if (unlikely(val =3D=3D 0))
-> > > +		return -EBUSY;
+On 05/17, Aleksa Sarai wrote:
+>
+> On 2019-05-16, Oleg Nesterov <oleg@redhat.com> wrote:
+> > On 05/16, Christian Brauner wrote:
+> > >
+> > > With the introduction of pidfds through CLONE_PIDFD it is possible to
+> > > created pidfds at process creation time.
 > >
-> > I'm not sure why a val equals to 0 would be associated with EBUSY?
+> > Now I am wondering why do we need CLONE_PIDFD, you can just do
+> >
+> > 	pid = fork();
+> > 	pidfd_open(pid);
 >
-> Thermal zone driver can (will) call get_temp before we got the
-> first interrupt and the thermal data. In that case val will be 0.
->
-> Resulting in:
->
->  (val + offset) * scale =3D (-2794) * -67 =3D 187198
->
-> 187=C2=B0C and immediate shutdown during boot - based on cirtical
-> temperature being reached.
->
-> Busy here means, get_temp does not yet have data. Thermal zone
-> driver just reports any error to dmesg output.
+> While the race window would be exceptionally short, there is the
+> possibility that the child will die
 
-Ah, that makes sense.
+Yes,
 
-I guess if we're switching to an interrupt-based driver, then we can
-just use a waitqueue, or is get_temp supposed to be atomic?
+> and their pid will be recycled
+> before you do pidfd_open().
 
-Maxime
+No.
 
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+Unless the caller's sub-thread does wait() before pidfd_open(), of course.
+Or unless you do signal(SIGCHILD, SIG_IGN).
 
---7vj27y3kfhi2ktlo
-Content-Type: application/pgp-signature; name="signature.asc"
+Oleg.
 
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXN17nAAKCRDj7w1vZxhR
-xZVgAQDEhhE/FQspXxx58VLtzI/e0Kz9gZa92QnGGjDbVWxBTwEA1iAzA+XGbDtR
-1TM7/Hc1lwDV+qLHJYnbwcFfq+6XBAg=
-=qzgC
------END PGP SIGNATURE-----
-
---7vj27y3kfhi2ktlo--
-
-
---===============3394848345004997554==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3394848345004997554==--
-
