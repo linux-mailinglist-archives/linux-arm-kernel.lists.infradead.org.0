@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23B2720057
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 09:30:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 730C22004E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 09:29:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,21 +11,21 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=dcR4470CbeYtm9sPjVOsL0DxAWBCPFIfwlcw5RjdMSc=; b=QpJGrwqPz0Izn4hgcqIBB1wm+5
-	NAEvIWU13aRZ9IEUEhpyNuO9/5oSYDSR+zvA08qOaBN6mKDyvW5WA53Gsp/i5LzATlK++68pkmjs9
-	e5XswwNu17RVOma+O4pF7hyd8KV3hEvAwDzzaNrLeCsqiXq5XLh8Eg23BN/S3jAGG0vW8yWmCjTJx
-	E3Fwezmc7yCNvWb6wqLeXFpUQSonngx0RQEwhTSkwspMRN7mo9cLogEqM3yxzHXYKnAOPF5OF/xsZ
-	rx4EkMdBesYZbSirJ9enXyKeo8gBpljHkfOruYdmkhSA7YeMKsNloMdjQV0NnAwVGjqMs/3tAoPoD
-	4tBgG9jA==;
+	bh=kke2Cv0wVSuOT6Qmu8If3DK2zAzsLcs2P+QYriDuIqA=; b=lwZfwHld5E8PqSXjv17Aff5Aov
+	0260sVRUz7R9xQg5mBcZ+D8ukoOQ1RCixVcRigq0JiVcTf1pJHLBQvYQ/Ni+lwx6Np/9jjWKs86Ov
+	7jBT6E4h2PUBhbonrLDV//n+FDGS+rhNoFfPYbHKnvOyzw3Y6tAC66ov/MgQlpEZGNOTdtNxdvcLn
+	QLCG26ORANaRqSthOX//ZZi78DELsw0HCEjCpkSBXkRM8bMtsRSDhzXInk329oLYEkLv8ZaHANx3O
+	1awEzxcEGkoIB+/yx8k67Aixcf8XdcWuEyat04IIcaEHqKCK3xRdjbsidYcJVM98MO9idbHV1xU/Q
+	MAuiEeTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRAqQ-0001Vi-Hp; Thu, 16 May 2019 07:30:26 +0000
-Received: from regular1.263xmail.com ([211.150.70.196])
+	id 1hRApk-0008AM-2r; Thu, 16 May 2019 07:29:44 +0000
+Received: from regular1.263xmail.com ([211.150.70.199])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRApC-0007Zq-5y; Thu, 16 May 2019 07:29:12 +0000
+ id 1hRApC-0007Zu-Cs; Thu, 16 May 2019 07:29:12 +0000
 Received: from zhangqing?rock-chips.com (unknown [192.168.167.227])
- by regular1.263xmail.com (Postfix) with ESMTP id B67CC8AA;
- Thu, 16 May 2019 15:29:02 +0800 (CST)
+ by regular1.263xmail.com (Postfix) with ESMTP id 14919480;
+ Thu, 16 May 2019 15:29:05 +0800 (CST)
 X-263anti-spam: KSV:0;BIG:0;
 X-MAIL-GRAY: 0
 X-MAIL-DELIVERY: 1
@@ -37,9 +37,9 @@ X-ANTISPAM-LEVEL: 2
 Received: from localhost.localdomain (unknown [58.22.7.114])
  by smtp.263.net (postfix) whith ESMTP id
  P7747T139724561819392S1557991736066321_; 
- Thu, 16 May 2019 15:29:02 +0800 (CST)
+ Thu, 16 May 2019 15:29:04 +0800 (CST)
 X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <2148eaae9c4abcde01f5eb8d8c275f3c>
+X-UNIQUE-TAG: <b6bac51f72b68c8368201b9daa357380>
 X-RL-SENDER: zhangqing@rock-chips.com
 X-SENDER: zhangqing@rock-chips.com
 X-LOGIN-NAME: zhangqing@rock-chips.com
@@ -49,16 +49,15 @@ X-ATTACHMENT-NUM: 0
 X-DNS-TYPE: 0
 From: Elaine Zhang <zhangqing@rock-chips.com>
 To: heiko@sntech.de
-Subject: [PATCH v2 2/6] clk: rockchip: fix up the frac clk get rate error
-Date: Thu, 16 May 2019 15:28:52 +0800
-Message-Id: <1557991736-13580-3-git-send-email-zhangqing@rock-chips.com>
+Subject: [PATCH v2 3/6] clk: rockchip: add a COMPOSITE_DIV_OFFSET clock-type
+Date: Thu, 16 May 2019 15:28:53 +0800
+Message-Id: <1557991736-13580-4-git-send-email-zhangqing@rock-chips.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1557991736-13580-1-git-send-email-zhangqing@rock-chips.com>
 References: <1557991736-13580-1-git-send-email-zhangqing@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_002910_378120_BDCAD576 
-X-CRM114-Status: UNSURE (   9.94  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190516_002910_742858_BB044060 
+X-CRM114-Status: GOOD (  10.83  )
 X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.5 points)
@@ -81,54 +80,102 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: huangtao@rock-chips.com, xxx@rock-chips.com, xf@rock-chips.com,
  sboyd@kernel.org, mturquette@baylibre.com,
  Elaine Zhang <zhangqing@rock-chips.com>, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+ linux-rockchip@lists.infradead.org, Finley Xiao <finley.xiao@rock-chips.com>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-support fractional divider with only one level parent clock
+From: Finley Xiao <finley.xiao@rock-chips.com>
 
+The div offset of some clocks are different from their mux offset
+and the COMPOSITE clock-type require that div and mux offset are
+the same, so add a new COMPOSITE_DIV_OFFSET clock-type to handle that.
+
+Signed-off-by: Finley Xiao <finley.xiao@rock-chips.com>
 Signed-off-by: Elaine Zhang <zhangqing@rock-chips.com>
 ---
- drivers/clk/rockchip/clk.c | 19 ++++++++++++-------
- 1 file changed, 12 insertions(+), 7 deletions(-)
+ drivers/clk/rockchip/clk.c |  9 ++++++---
+ drivers/clk/rockchip/clk.h | 23 +++++++++++++++++++++++
+ 2 files changed, 29 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/clk/rockchip/clk.c b/drivers/clk/rockchip/clk.c
-index e04bf300ea0a..0256a99f06f3 100644
+index 0256a99f06f3..0a8a694a41ab 100644
 --- a/drivers/clk/rockchip/clk.c
 +++ b/drivers/clk/rockchip/clk.c
-@@ -195,16 +195,21 @@ static void rockchip_fractional_approximation(struct clk_hw *hw,
- 	if (((rate * 20 > p_rate) && (p_rate % rate != 0)) ||
- 	    (fd->max_prate && fd->max_prate < p_rate)) {
- 		p_parent = clk_hw_get_parent(clk_hw_get_parent(hw));
--		p_parent_rate = clk_hw_get_rate(p_parent);
--		*parent_rate = p_parent_rate;
--		if (fd->max_prate && p_parent_rate > fd->max_prate) {
--			div = DIV_ROUND_UP(p_parent_rate, fd->max_prate);
--			*parent_rate = p_parent_rate / div;
-+		if (!p_parent) {
-+			*parent_rate = p_rate;
-+		} else {
-+			p_parent_rate = clk_hw_get_rate(p_parent);
-+			*parent_rate = p_parent_rate;
-+			if (fd->max_prate && p_parent_rate > fd->max_prate) {
-+				div = DIV_ROUND_UP(p_parent_rate,
-+						   fd->max_prate);
-+				*parent_rate = p_parent_rate / div;
-+			}
+@@ -46,7 +46,7 @@ static struct clk *rockchip_clk_register_branch(const char *name,
+ 		const char *const *parent_names, u8 num_parents,
+ 		void __iomem *base,
+ 		int muxdiv_offset, u8 mux_shift, u8 mux_width, u8 mux_flags,
+-		u8 div_shift, u8 div_width, u8 div_flags,
++		int div_offset, u8 div_shift, u8 div_width, u8 div_flags,
+ 		struct clk_div_table *div_table, int gate_offset,
+ 		u8 gate_shift, u8 gate_flags, unsigned long flags,
+ 		spinlock_t *lock)
+@@ -95,7 +95,10 @@ static struct clk *rockchip_clk_register_branch(const char *name,
  		}
  
- 		if (*parent_rate < rate * 20) {
--			pr_err("%s parent_rate(%ld) is low than rate(%ld)*20, fractional div is not allowed\n",
--			       clk_hw_get_name(hw), *parent_rate, rate);
-+			pr_warn("%s p_rate(%ld) is low than rate(%ld)*20, use integer or half-div\n",
-+				clk_hw_get_name(hw), *parent_rate, rate);
- 			*m = 0;
- 			*n = 1;
- 			return;
+ 		div->flags = div_flags;
+-		div->reg = base + muxdiv_offset;
++		if (div_offset)
++			div->reg = base + div_offset;
++		else
++			div->reg = base + muxdiv_offset;
+ 		div->shift = div_shift;
+ 		div->width = div_width;
+ 		div->lock = lock;
+@@ -536,7 +539,7 @@ void __init rockchip_clk_register_branches(
+ 				ctx->reg_base, list->muxdiv_offset,
+ 				list->mux_shift,
+ 				list->mux_width, list->mux_flags,
+-				list->div_shift, list->div_width,
++				list->div_offset, list->div_shift, list->div_width,
+ 				list->div_flags, list->div_table,
+ 				list->gate_offset, list->gate_shift,
+ 				list->gate_flags, flags, &ctx->lock);
+diff --git a/drivers/clk/rockchip/clk.h b/drivers/clk/rockchip/clk.h
+index 3c827ec0965c..20200a707611 100644
+--- a/drivers/clk/rockchip/clk.h
++++ b/drivers/clk/rockchip/clk.h
+@@ -407,6 +407,7 @@ struct rockchip_clk_branch {
+ 	u8				mux_shift;
+ 	u8				mux_width;
+ 	u8				mux_flags;
++	int				div_offset;
+ 	u8				div_shift;
+ 	u8				div_width;
+ 	u8				div_flags;
+@@ -439,6 +440,28 @@ struct rockchip_clk_branch {
+ 		.gate_flags	= gf,				\
+ 	}
+ 
++#define COMPOSITE_DIV_OFFSET(_id, cname, pnames, f, mo, ms, mw,	\
++			     mf, do, ds, dw, df, go, gs, gf)	\
++	{							\
++		.id		= _id,				\
++		.branch_type	= branch_composite,		\
++		.name		= cname,			\
++		.parent_names	= pnames,			\
++		.num_parents	= ARRAY_SIZE(pnames),		\
++		.flags		= f,				\
++		.muxdiv_offset	= mo,				\
++		.mux_shift	= ms,				\
++		.mux_width	= mw,				\
++		.mux_flags	= mf,				\
++		.div_offset	= do,				\
++		.div_shift	= ds,				\
++		.div_width	= dw,				\
++		.div_flags	= df,				\
++		.gate_offset	= go,				\
++		.gate_shift	= gs,				\
++		.gate_flags	= gf,				\
++	}
++
+ #define COMPOSITE_NOMUX(_id, cname, pname, f, mo, ds, dw, df,	\
+ 			go, gs, gf)				\
+ 	{							\
 -- 
 1.9.1
 
