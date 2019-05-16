@@ -2,65 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C06FD201BC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 10:53:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F522201C4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 10:54:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jYl7+Y30trs9Sklcik42bt44PsAUzszzX0/UovOFLtY=; b=anIKlDgcfy+s/6
-	21Uv1elDjcjRrE+fMU6bZJiNFaDp/S5TaKhbsBUTvH+PK9T6aVCdjDk9X0Kx9GxY0Jn2LdJR+25JL
-	7ydgIhw3w7ytw/9xlppjytLWlbm/fO++mAOQ8aDN5bVVUDioOijgcSRgd5DqFIK6hl4SMQna9iaeb
-	0FchL9LxX3wyeZcgLf8mmeuAXMjK0AWp2+Qq1vgiLnA5ZPdrGV49M11PqmujoMJe4RgRmSkZrQzCw
-	Bq1vT2rLDyBlX/3kcmXZfjkn1SD84aduZxVr3KyPpm+RpbSqwvLIF68BDMtOiFxu+723IKK1cVkh0
-	f9cC7pvNcuKYu4Xq3bmA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=DwpFGMdN2AU9WAAqkN2aSN2MDfWucpomRc9Bq2eqADg=; b=iF7FGSv6kdTgkVgXVQApLS+Lw
+	OhsbC2aAjq0wCj0uJBBP3FRHU+TO4UYSN1qIWLqUfZWSnRcMDyZiTtyL5S9wFq/bobeKOIBBmgn+G
+	idd1Vy8cli0GIj86vCuQC1UBRGulq1tYxIWBdP2Am2kJ0ogMNSj2Rmo14ELgLMouyL7jGWNLyIRmw
+	+ege2diuIKgfuRbdHqizQjK+6wHrwHM4x+OHbMUVLFEAGr14WZ+tZeiTQIL8wNCzz7mwEuHqtItSW
+	EsBzg9tD2fvRsNM6dpXQlyF6a1mHVcEEL6CJXZfBWCizBIUe97lMO1oL/24P9PlQ6S2GD/U8CItDv
+	tOHnw89/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRC8e-0000fI-03; Thu, 16 May 2019 08:53:20 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	id 1hRC9x-0001EZ-QA; Thu, 16 May 2019 08:54:41 +0000
+Received: from relay9-d.mail.gandi.net ([217.70.183.199])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRC8V-0000eB-Ur
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 08:53:13 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id 0644F20189;
- Thu, 16 May 2019 10:53:06 +0200 (CEST)
-Received: from [192.168.108.49] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id E828620466;
- Thu, 16 May 2019 10:53:05 +0200 (CEST)
-Subject: Re: [PATCH V12 3/5] thermal: imx_sc: add i.MX system controller
- thermal support
-To: Anson Huang <anson.huang@nxp.com>
-References: <1555384609-7030-1-git-send-email-Anson.Huang@nxp.com>
- <1555384609-7030-3-git-send-email-Anson.Huang@nxp.com>
- <DB3PR0402MB3916791537B7C3C85B13A22BF5330@DB3PR0402MB3916.eurprd04.prod.outlook.com>
- <DB3PR0402MB3916BDD870608F0CAC76DB3FF50A0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Message-ID: <aa2f08f4-9a8d-c3f4-db3e-f08d6ce6a2e8@free.fr>
-Date: Thu, 16 May 2019 10:53:05 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hRC9q-0001Cd-1m
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 08:54:35 +0000
+X-Originating-IP: 80.215.246.107
+Received: from localhost (unknown [80.215.246.107])
+ (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id D086CFF807;
+ Thu, 16 May 2019 08:54:17 +0000 (UTC)
+Date: Thu, 16 May 2019 10:54:16 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Torsten Duwe <duwe@lst.de>
+Subject: Re: [PATCH 1/4] arm64: DTS: allwinner: a64: Add pinmux for RGB666 LCD
+Message-ID: <20190516085416.qfrbylku7226rub6@flea>
+References: <20190514155911.6C0AC68B05@newverein.lst.de>
+ <20190514160225.AB0D368B20@newverein.lst.de>
 MIME-Version: 1.0
-In-Reply-To: <DB3PR0402MB3916BDD870608F0CAC76DB3FF50A0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Thu May 16 10:53:06 2019 +0200 (CEST)
+In-Reply-To: <20190514160225.AB0D368B20@newverein.lst.de>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_015312_138375_31B38CD7 
-X-CRM114-Status: UNSURE (   6.33  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190516_015434_240025_5D6CC7A9 
+X-CRM114-Status: GOOD (  15.72  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marc.w.gonzalez[at]free.fr)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.199 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -72,23 +61,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Archit Taneja <architt@codeaurora.org>, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Andrzej Hajda <a.hajda@samsung.com>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
+ Sean Paul <seanpaul@chromium.org>, linux-arm-kernel@lists.infradead.org,
+ Icenowy Zheng <icenowy@aosc.io>
+Content-Type: multipart/mixed; boundary="===============5484534434290031417=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 16/05/2019, Anson Huang wrote: Ping...
-On  9/05/2019, Anson Huang wrote: Ping...
 
-Hello,
+--===============5484534434290031417==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="h2fn4argqt45zmoa"
+Content-Disposition: inline
 
-FWIW, between May 5 and May 19 is the merge window for Linux 5.2
-Most maintainers have low(er) review bandwidth during merge windows.
 
-Regards.
+--h2fn4argqt45zmoa
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Tue, May 14, 2019 at 06:02:25PM +0200, Torsten Duwe wrote:
+> From: Icenowy Zheng <icenowy@aosc.io>
+>
+> Allwinner A64's TCON0 can output RGB666 LCD signal.
+>
+> Add its pinmux.
+>
+> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+> Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
+> Signed-off-by: Torsten Duwe <duwe@suse.de>
+> ---
+>
+> originally: patchwork.kernel.org/patch/10814179
+>
+> Almost trivial, and obviously correct.
+> I added the /omit-if-no-ref/.
+>
+> ---
+>  arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 9 +++++++++
+>  1 file changed, 9 insertions(+)
+>
+> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+> index 2abb335145a6..a8bbee84e7da 100644
+> --- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+> +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+> @@ -559,6 +559,16 @@
+>  				function = "i2c1";
+>  			};
+>
+> +			/omit-if-no-ref/
+> +			lcd_rgb666_pins: lcd-rgb666 {
+
+This should have the -pins suffix
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--h2fn4argqt45zmoa
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXN0lOAAKCRDj7w1vZxhR
+xfczAP949KD6LxwvBpLAV424mzw9jhUzLgBNJAOIYxQ1QQ2afAEAqHyh7A4+J2EV
+4OxzrWJXa/IL7TiTlQCvFyhQrynH+AI=
+=R8dD
+-----END PGP SIGNATURE-----
+
+--h2fn4argqt45zmoa--
+
+
+--===============5484534434290031417==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5484534434290031417==--
+
