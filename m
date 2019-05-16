@@ -2,72 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8740C20738
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 14:48:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 13ADE20756
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 14:54:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uTVLi/OIyiqgoxiSGDOI4akfSkaciMxZLKIANlwyckk=; b=cdH0Of/kQfmF9a
-	4TeXpTiL5Ft9E4jC4t8YImjStenMLUX3K84WoaIoNIXVG7ecN6lElwaOnaLqhBlXLmEGQtO9JWXPE
-	phmZf0CE+ln80sgvnUlXrtnQGP1rzobJjoNIWyTfYljwfEh+jnpncXPLPw+O1HhDU9+0TcvwZSIlN
-	NlYnn3YMMNXQrvBCYe/Z8kgELi9ibWz/PUcQU76hoOfrRj7gUrfJR8aGnlVGP2NUbsjapXFRFBhgo
-	6bVjXqyNWYEmZxB2SogK62RF+7sgb37nJtQHl9gRnkkjwRDJDWhoN3agc/ypTq0+mTr6rJleNp7G/
-	nOtqAbgNoeKaJkndmw2g==;
+	List-Owner; bh=+EUBfbr1mJwHXQ0USdE1EpHUR4ZRGW6R+YtwYugMt2g=; b=EwasWzPq5Cmfr3
+	spTBcuxpYa+1d7Wr8d5p0lTRxVdOdDWYgzQ3NUCFgds6XE8K5mWSRz9dG+tws5tYRlNX1IEsCBmq3
+	FXe1bKN8BAZ9/KfX39HIjklx3RgNTzja0QdNC76L6KdrZBEVM8GpfIp2alG4qsRYsEC5AZkLiaRkb
+	GOud4nIRLr91yrrRd6TDF9Co4KOQKvgMviO5ePyDjMO3wvocymnT+rZdLMutYi0xtHlnqKblx4eCV
+	KYHL1X9q2vZ033u9seoTekfIToci4rNM/M0A8ThsuSeYLSZxaDKX6Bq1TDaD+cDX66QgbQdvCe7W6
+	Hyc2EfnRUFASBHKDzrRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRFne-0001OC-5U; Thu, 16 May 2019 12:47:54 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1hRFtg-0003dg-Tx; Thu, 16 May 2019 12:54:08 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRFnV-0001N0-Ku
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 12:47:47 +0000
-Received: by mail-qk1-x743.google.com with SMTP id c15so2150578qkl.2
+ id 1hRFtZ-0003cz-BU
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 12:54:02 +0000
+Received: by mail-lj1-x241.google.com with SMTP id z1so3003487ljb.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 May 2019 05:47:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ Thu, 16 May 2019 05:54:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=W184LUt3OLZpc35GbIgyfbdRWYWzS470rOoUrNJBmxU=;
- b=TRma6EWmVqtTh6oyWeOyXuXYl+5HLkiD+FLBf6YYv1n3LTrxOJcXtDjC9qMNgWV3IM
- 9/L3ct4DLiJQOWk/6Vr+Zcmy4GqUrvJkXz80l5T6lMeDYVdK+B2rz9KW/QoYjrG5fcXu
- dYY57kMN4S4l7szDwWKXb9Qsvi5JOUOtVT/i4=
+ :cc; bh=is+vcG0UlA2yzmtL4LYYh2ozUEoTSqklk60p4mnMQ04=;
+ b=MFfg5EGV3WlcVRL7t42mRGuevg4Dw6jHWVPGT2WaA9U+imkG3qz/ByB3JShhUb2NxO
+ IAAzMFCyoy1azLf5+Q4ThwNIqn4V0/PTTLPDCOt+U7xefvG3qkOt5zG0uB9cx/TNHXE6
+ 2+ED85Si4JXqF+cr/iQMckJ2lj+Pl65K1fgbeFkbbY1jSDmv1lN3C2eF4DTCsBjz/Zcb
+ 18XkqFVHEYMISKb44tLwMqYKXX9k0mqKfX0i8c6MUWXkuRuMDiTmBFpo8tV0Vx9Wtcb5
+ z9tSgHWa/o0DMzx/TanVLPgRTSHg6HXiBkz+H2H7PQT21r5iYkCS8Z79gfZowJCaFo/z
+ EWyg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=W184LUt3OLZpc35GbIgyfbdRWYWzS470rOoUrNJBmxU=;
- b=UrB/G9eJKh9Si/IHeJ8Z4Al3W5vOHAkQFrXKvyZdRf0u/3fu3sYP78GjmS4ZcUuctt
- Fqsff6NZafHec9zkieh7DWrR46HDshhyxeG8NzHCirYFYuDUcDXmeZGZmLFC0rnAOOd8
- 8giOIW1IrKNcbil54/GyCRlucq5xAvODPl1dvO5ic6ezLPwUFdoUkyUDgwEKb0SGs/xz
- ifSPG8oEOF+tHQ2qBRSqKklDsVkgZUVh5F4zoJTcRG7lLRMjYznI7anm1jjY9oz7c1Ww
- UX3s9/5x/sZDD2SPk+9rt3jLLl56xhhxdOmU3JEQSP2J4mdZemTzaCCTbkC3JgcwBhjN
- fJug==
-X-Gm-Message-State: APjAAAXj4vJWbh7zYUYiuxBL+KMe5gOS0QY0Y4W0AjrRB95F4Y8v2Zv1
- jachqDwSfKrlDPANpcuAE+J8I+og7ugKcKUg6jL/Ig==
-X-Google-Smtp-Source: APXvYqybed54iK4vV+PN2Aj3PjQ2Py6dcAunCb38T+fR74fZCjJqmxhGgna5I/pOr2f8Y6E05PAXezd/gE5bKfmgw6I=
-X-Received: by 2002:ae9:f818:: with SMTP id x24mr37963214qkh.329.1558010863680; 
- Thu, 16 May 2019 05:47:43 -0700 (PDT)
+ bh=is+vcG0UlA2yzmtL4LYYh2ozUEoTSqklk60p4mnMQ04=;
+ b=sp5Hvi8BU3tLI2wv5P09xt/KkUvIl6eGC7aTodQ6Jw0fwNWeyvYN6lirnDV2vi3iJN
+ 6cQ2C6qdoun651TLznQhi52nbU7P6anLf6IamPqFrs+KC1JQLu34A2zbko5awb+P2VcR
+ xYPqJ7nT2cpVQQfR4OaTEqpAum42M0aWzT//LLvzEuH7s5LsQ7HDA9lt/03nnsrVjsgC
+ fYcRhI2igDf7hy3KYXqbXu5HFjGh0FxE/zupMX+Xud7kQ112CIIf/FAJrY8xsNU8nfK6
+ RII7U3wxd2643nwQW99TnKEfv2LbiS+7jNNAupVfegtmZRF7zM0pGrnZdD8ZW/JbnLOV
+ xl/w==
+X-Gm-Message-State: APjAAAXvptQ1KaEtg/5hS35pqHTKs48V09BNrcUhts/Z1QY7Alh+/S5j
+ auJZtd76e6+wIZmVqpvbM15Or82w5thKKkb74q7sCA==
+X-Google-Smtp-Source: APXvYqwLJEUqsa8XfBzAuJKLBahg71QpFWWEysf/pHtQkxsQuNW8z5xmBuXwRIog/cBAbIfM7m/qozW3wQZmt//QoVw=
+X-Received: by 2002:a2e:9a4f:: with SMTP id k15mr19599643ljj.159.1558011239510; 
+ Thu, 16 May 2019 05:53:59 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190508073331.27475-1-drinkcat@chromium.org>
- <CACRpkdZb73vNyepcfjzEGAopc7BBxde_N1wxn7PSJ3aGC0=Gig@mail.gmail.com>
-In-Reply-To: <CACRpkdZb73vNyepcfjzEGAopc7BBxde_N1wxn7PSJ3aGC0=Gig@mail.gmail.com>
-From: Nicolas Boichat <drinkcat@chromium.org>
-Date: Thu, 16 May 2019 20:47:32 +0800
-Message-ID: <CANMq1KAOeuDCZEvV2A18nUts3WP2MbhUpY7gQ+vk0oTOz8TRQA@mail.gmail.com>
-Subject: Re: [PATCH v2 0/2] pinctrl: mediatek: mt8183: Add support for wake
- sources
-To: Linus Walleij <linus.walleij@linaro.org>
+References: <20190508021902.10358-1-leo.yan@linaro.org>
+ <20190508021902.10358-5-leo.yan@linaro.org>
+In-Reply-To: <20190508021902.10358-5-leo.yan@linaro.org>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Thu, 16 May 2019 14:53:48 +0200
+Message-ID: <CACRpkda4aEfgW6e7EfqC=FE_=QzKi5UTDLLzHEryQ6kpcKYzVg@mail.gmail.com>
+Subject: Re: [PATCH v2 04/11] ARM: dts: ste: Update coresight DT bindings
+To: Leo Yan <leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_054745_712068_56536847 
-X-CRM114-Status: GOOD (  19.11  )
+X-CRM114-CacheID: sfid-20190516_055401_396186_D4F648C6 
+X-CRM114-Status: GOOD (  11.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -78,7 +80,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -90,58 +91,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chuanjia Liu <Chuanjia.Liu@mediatek.com>, Sean Wang <sean.wang@kernel.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Liviu Dudau <liviu.dudau@arm.com>,
+ David Brown <david.brown@linaro.org>, Fabio Estevam <festevam@gmail.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Chunyan Zhang <zhang.lyra@gmail.com>, Wei Xu <xuwei5@hisilicon.com>,
+ Andy Gross <agross@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Orson Zhai <orsonzhai@gmail.com>, Mike Leach <mike.leach@linaro.org>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ MSM <linux-arm-msm@vger.kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Rob Herring <robh+dt@kernel.org>, Lee Jones <lee.jones@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Baolin Wang <baolin.wang@linaro.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Evan Green <evgreen@chromium.org>, Stephen Boyd <swboyd@chromium.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Sudeep Holla <sudeep.holla@arm.com>, Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 16, 2019 at 7:55 PM Linus Walleij <linus.walleij@linaro.org> wrote:
+On Wed, May 8, 2019 at 4:20 AM Leo Yan <leo.yan@linaro.org> wrote:
+
+> CoreSight DT bindings have been updated, thus the old compatible strings
+> are obsolete and the drivers will report warning if DTS uses these
+> obsolete strings.
 >
-> On Wed, May 8, 2019 at 9:33 AM Nicolas Boichat <drinkcat@chromium.org> wrote:
+> This patch switches to the new bindings for CoreSight dynamic funnel and
+> static replicator, so can dismiss warning during initialisation.
 >
-> > This adds support for wake sources in pinctrl-mtk-common-v2, and
-> > pinctrl-mt8183. Without this patch, all interrupts that are left
-> > enabled on suspend act as wake sources (and wake sources without
-> > interrupt enabled do not).
-> >
-> > Changes since v1:
-> >  - Move changes from mtk-common-v2 to mtk-pinctrl-paris, as
-> >    recommended by Sean, to keep better separation between eint
-> >    and pinctrl-common features.
-> >
-> > Nicolas Boichat (2):
-> >   pinctrl: mediatek: Add pm_ops to pinctrl-paris
-> >   pinctrl: mediatek: mt8183: Add mtk_pinctrl_paris_pm_ops
->
-> All seems to look fair to me, but I need some official ACK from
-> Sean on these.
->
-> I see there is some discussion on a related patch set which
-> also has two patches so I am a but confused how mature the
-> two patch sets are? Are they at all related?
+> Cc: Linus Walleij <linus.walleij@linaro.org>
+> Cc: Lee Jones <lee.jones@linaro.org>
+> Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+> Signed-off-by: Leo Yan <leo.yan@linaro.org>
 
-They are somewhat related, but I don't think this depends on the other series.
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 
-This series adds support for wake on mt8183, and makes it similar to,
-say, mt8173.
+Will I need to carry this patch or will you send it to ARM SoC?
 
-The other patch series fixes issues that affect all mtk pinctrl
-variants (i.e. I think mt8173 pinctrl on current mainline has similar
-issues). It's not impossible that the answer to the other series is
-that we need to refactor code, but in that case, if we merge this
-first, we'd just have to clean up one more pinctrl variant.
-
-Thanks,
-
-> Yours,
-> Linus Walleij
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
