@@ -2,51 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9EE7220D36
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 18:40:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E17B320D37
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 18:41:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
 	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UjJg2UTv0gIyjPkiQkGDQypmhXdQFActgWMXwwwIH2s=; b=RYHWfKH2ai7VBr
-	nv9Pd5ZwE3n+si6YjOC+1EwZ4SSKjerwpSWKHDj3oPJ/sa+39ohdIitAdR9o1j8Qmk4FqRH29IFV3
-	NUg0SyiZJwqkEYyKlwcsTKLzsWaMY18rslW9MSDsBSTQY486bfFJbpBknD2YPBKXn44/GXBcOaEOM
-	8ZK2zYwWZy2/+qoj7OiFTm8ZXy9GvXT7KdfVIHGxWZ1z5fDsT+5bRmiw71zdlygP6C/c9XFn/IBF6
-	+/eMX7oHcBBWeWhi6JCDh7lvH317bUUqX84S0M8cyIEPsVLjO2JrKHz2ekxuxTHPw9w3m9DSRVWiw
-	18A5EviQaahE+sCqyNgA==;
+	List-Owner; bh=wRZ383U9L0LAN7ea/EqearwA2ZwEQTu1KD1a5Q1n6kQ=; b=JUpnZZSISKdKjv
+	ySfhwnv/EUhG/5FB7hSw1yBZQ9vj09ntVRS+K4r2ggSzBINac3TL3iAIhFlM8sc1Icg+DTr0kLkgs
+	KE5YizMfRnVZp56FdHfoSMF3UJH0aixw30fEdbyAZqC8ZHPe9gYrcAHmC1ZIrYz4qJQtyzlh9rTst
+	EK7fOMU1W/BOSNPfQUW9YmqVyWJpaS8WYz17eSkSAAfyKLJEaH/1LmdUFTG6gmTkbGaiaWG1P4Bhy
+	AJjH3KWrxoXC4Uv6HcFUxXcYC/p/om74zHj5bf+co7/u5b66PsQtXDCghsXxrbu1fOJ8PJcjNbUyj
+	APvuKmZzc+YZHc7ryIPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRJR8-0007NN-1y; Thu, 16 May 2019 16:40:54 +0000
+	id 1hRJRK-0007d1-4m; Thu, 16 May 2019 16:41:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRJQd-0006vq-4D
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 16:40:24 +0000
-Subject: Re: [GIT PULL 2/4] ARM: Device-tree updates
+ id 1hRJQe-0006wr-FP
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 16:40:26 +0000
+Subject: Re: [GIT PULL 4/4] ARM: SoC defconfig updates
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558024822;
- bh=diPG/wYZRblNeco845yvy3MdskkEV1mrEDjxhZdWF/Q=;
+ s=default; t=1558024824;
+ bh=HSbXc+dslqbRehQvNmd6HvHCAtZzf9jaMx5NK/KADaE=;
  h=From:In-Reply-To:References:Date:To:Cc:From;
- b=tTiHgOksxhTXhEyLcbkgZQ7+t3ho8NwUjxgVaPlbAxbZHgyP+Mj57nVRkfwgxJZ4c
- /KNC5aZdfi/vqmIt1EKTRr/2Khxz3/QoK0Q1pPsblVDmzcAucfXfqseBm5/6ndeVne
- GJRnlObpkrq1C7asVhj3neRc0UMHau7XwU+bMFVI=
+ b=wBswkt7Neh0jKdBkv9e7AMTs9m9373qrNw7FMNEJtwy3cfG02kKgVx/hMFyzIJ2+1
+ EJ2878m7YaxNyl8qVLS0evKn5DTjO2bCP5mxWvNuL2HFdk411aDmYQUM9B3h19V+AU
+ rxEcC9etJlQ2Mgi3dzDAhu8QHo7+pnMibZNICbLI=
 From: pr-tracker-bot@kernel.org
-In-Reply-To: <20190516064304.24057-3-olof@lixom.net>
+In-Reply-To: <20190516064304.24057-5-olof@lixom.net>
 References: <20190516064304.24057-1-olof@lixom.net>
- <20190516064304.24057-3-olof@lixom.net>
+ <20190516064304.24057-5-olof@lixom.net>
 X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
-X-PR-Tracked-Message-Id: <20190516064304.24057-3-olof@lixom.net>
-X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git tags/armsoc-dt
-X-PR-Tracked-Commit-Id: 6cbc4d88ad208d6f5b9567bac2fff038e1bbfa77
+X-PR-Tracked-Message-Id: <20190516064304.24057-5-olof@lixom.net>
+X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git
+ tags/armsoc-defconfig
+X-PR-Tracked-Commit-Id: 85200317b324924be3bc72b7bfcce219020ced9c
 X-PR-Merge-Tree: torvalds/linux.git
 X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: e8a1d70117116c8d96c266f0b99e931717670eaf
-Message-Id: <155802482286.32664.11718862132617630801.pr-tracker-bot@kernel.org>
-Date: Thu, 16 May 2019 16:40:22 +0000
+X-PR-Merge-Commit-Id: ab02888e39212af2d1dddc565cd67192548b9fd8
+Message-Id: <155802482418.32664.15280046775737034960.pr-tracker-bot@kernel.org>
+Date: Thu, 16 May 2019 16:40:24 +0000
 To: Olof Johansson <olof@lixom.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_094023_184303_C337A825 
+X-CRM114-CacheID: sfid-20190516_094024_754515_D3268611 
 X-CRM114-Status: UNSURE (   1.81  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
@@ -86,12 +87,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The pull request you sent on Wed, 15 May 2019 23:43:02 -0700:
+The pull request you sent on Wed, 15 May 2019 23:43:04 -0700:
 
-> git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git tags/armsoc-dt
+> git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git tags/armsoc-defconfig
 
 has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/e8a1d70117116c8d96c266f0b99e931717670eaf
+https://git.kernel.org/torvalds/c/ab02888e39212af2d1dddc565cd67192548b9fd8
 
 Thank you!
 
