@@ -2,85 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9568620742
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 14:49:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8740C20738
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 14:48:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Tq3bk8Z6/e1VW09Nu7PXEvSiHxH1qanZw3xJ8Uu6XCY=; b=t1b
-	W/YzmSXDd3Ci8lyaIkLVQK+J8qikHmWqmlY/SYmT0dMeSeCzRVv/ppUYr+lLmyurTEa7tDYLOvl0e
-	ECu47O0GgSIe2RwdoAT/3lEEPfdGUl1J1hmqQfZnhRftEstdwXyWsFRxI+GSFBt7JcMWvtVnHEr9R
-	jhOxastEAywe5hmFeIVZLPBIR5M23KbNcYzi9d7J8WdPwUzD+bW6YgpfbaazWfkxEb7dZejMxkGfA
-	f8T9rKiBRpab36ZjHSTnT2/i9Q/sh9Icf1rZa2zgV58H9mZQi78ukdlXLvXgSxtiLStG6wpKeXt3P
-	Pzrr9AIiGX06yt5u26hmKM0DHiQtpfw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uTVLi/OIyiqgoxiSGDOI4akfSkaciMxZLKIANlwyckk=; b=cdH0Of/kQfmF9a
+	4TeXpTiL5Ft9E4jC4t8YImjStenMLUX3K84WoaIoNIXVG7ecN6lElwaOnaLqhBlXLmEGQtO9JWXPE
+	phmZf0CE+ln80sgvnUlXrtnQGP1rzobJjoNIWyTfYljwfEh+jnpncXPLPw+O1HhDU9+0TcvwZSIlN
+	NlYnn3YMMNXQrvBCYe/Z8kgELi9ibWz/PUcQU76hoOfrRj7gUrfJR8aGnlVGP2NUbsjapXFRFBhgo
+	6bVjXqyNWYEmZxB2SogK62RF+7sgb37nJtQHl9gRnkkjwRDJDWhoN3agc/ypTq0+mTr6rJleNp7G/
+	nOtqAbgNoeKaJkndmw2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRFoy-0001hh-Vq; Thu, 16 May 2019 12:49:17 +0000
-Received: from outgoing14.flk.host-h.net ([197.242.87.48])
+	id 1hRFne-0001OC-5U; Thu, 16 May 2019 12:47:54 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRFoo-0001gq-Lw; Thu, 16 May 2019 12:49:09 +0000
-Received: from www31.flk1.host-h.net ([188.40.1.173])
- by antispam4-flk1.host-h.net with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.89)
- (envelope-from <justin.swartz@risingedge.co.za>)
- id 1hRFoc-0008Ba-7W; Thu, 16 May 2019 14:48:55 +0200
-Received: from [130.255.73.16] (helo=v01.28459.vpscontrol.net)
- by www31.flk1.host-h.net with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.84_2)
- (envelope-from <justin.swartz@risingedge.co.za>)
- id 1hRFoX-000550-Js; Thu, 16 May 2019 14:48:49 +0200
-From: Justin Swartz <justin.swartz@risingedge.co.za>
-To: Michael Turquette <mturquette@baylibre.com>,
- Stephen Boyd <sboyd@kernel.org>, Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH] drivers/clk/rockchip/clk-rk3228.c: add 1.464GHz clock rate
-Date: Thu, 16 May 2019 12:44:36 +0000
-Message-Id: <20190516124437.4906-1-justin.swartz@risingedge.co.za>
-X-Mailer: git-send-email 2.11.0
-X-Authenticated-Sender: justin.swartz@risingedge.co.za
-X-Virus-Scanned: Clear (ClamAV 0.100.3/25451/Thu May 16 09:59:51 2019)
-X-Originating-IP: 188.40.1.173
-X-SpamExperts-Domain: risingedge.co.za
-X-SpamExperts-Username: 
-Authentication-Results: host-h.net;
- auth=pass (login) smtp.auth=@risingedge.co.za
-X-SpamExperts-Outgoing-Class: ham
-X-SpamExperts-Outgoing-Evidence: SB/global_tokens (0.00896517575494)
-X-Recommended-Action: accept
-X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0fbJ1LThpDP3PaEa+mzHFASpSDasLI4SayDByyq9LIhVyO1UfNdFVadD
- 4Wekg4mMmETNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3K7uDjV/sFUXQr+CDrNQuIHgQg
- mAX8Bxy/iUu0ThNZg0h/RxVysY5Ye6+GGw0VqdJD7ren9RtRNyYim5e3GD8LGfWrcbYvelpuN/Pk
- qhBpvAyWwieZyauFYqHkIbFa+ipFJdVl2Qo16OdG/SgJyrKdw0Znvotuy3L4aSJjqFExmwGwvf6h
- PQx0fYKjNC9VXDo4KyWWo0k/XI0fGv8bNm7IfazUKrTRmPfW13HBdTouyUQiTqTLnMPwSR2klzqa
- C1hRfn6HuUe9L0a5vwf8PHac6dlnibl3vcBqVmvQB4A18afqaqkE9y2tELrbSfbpenEpmH6eQvWp
- DWTULXV1jJ5bfceEJeNruLKdflVX7oFNsdF5bKhCA9a8IVosfxGBTbadg2lBMt3xu9nbye2CdJLN
- jSo1M+TSg3TNDI3/M5s9/ot3ko3rrae7IifWc6pL546YUVQwaYLh3di89W/ji5iahyCgJgyv93tC
- 61cbiLYl3RCqADG/Ryndzp4OfbK7c6EqHwlqvaI+zok/BsKQK4gft4+8sY8CNaDDoRMm0CGce/fp
- WUXurEbGCiZ0ePvZjCuJdbYb9IXfYGRpVS/0hA4Mwkg/wxsjmSXwdCAtc5U5IMGqr3wBwEeX6Ai5
- 5FPRpzhbYqsuNEW45+y/2kiUpWy9c957+6R4kroQiAThpzOdFqFvbdRuq0FZjQOwDKXnhaC6dkwF
- 9ybSMhHO+IPM0C985aNe1vwE2plJLdOGZ2rsAWflnmUXwJv1R9bnj+xoJG4VbeMz329ug19D+AX+
- zbkDEwtZIltLJVY6CFz3MnUtwYrRjdK3JtbOY4V5u4SqNrbdxyGLEIoLEuuC4P/fyEEgA3CnflZn
- bjDB2+RGRgaXth2/9YEbMsGSn6owqJN0kS7MUpAEhFoAxikOdx3ALFboD0vMokt+4lO8Qp33tUy6
- u+ztjUSMb/XuWI+kpQSOtXwGn8ttztpqwHsOJJ90zNCwBTwJWw42swm4bO6gacpMpzJ5RNWFoIkg
- vLC7uMZSLKkLPlzqsPnNmrTFfBI+gCHkFgyh9jAE9PwtDurXCCybWAnihjA708Lg3Y2gXyaf+rIt
- vvthbyiMZOAfvJjwL84MO4Vozqbzv/NmqBexmg1oMlu3UCyNNO7qENlLqkRemjF1A1q3g0ZrubFa
- n/xi+AGXOIO97ttnHrPmGyC6rR21+9c=
-X-Report-Abuse-To: spam@antispammaster.host-h.net
+ id 1hRFnV-0001N0-Ku
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 12:47:47 +0000
+Received: by mail-qk1-x743.google.com with SMTP id c15so2150578qkl.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 May 2019 05:47:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=W184LUt3OLZpc35GbIgyfbdRWYWzS470rOoUrNJBmxU=;
+ b=TRma6EWmVqtTh6oyWeOyXuXYl+5HLkiD+FLBf6YYv1n3LTrxOJcXtDjC9qMNgWV3IM
+ 9/L3ct4DLiJQOWk/6Vr+Zcmy4GqUrvJkXz80l5T6lMeDYVdK+B2rz9KW/QoYjrG5fcXu
+ dYY57kMN4S4l7szDwWKXb9Qsvi5JOUOtVT/i4=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=W184LUt3OLZpc35GbIgyfbdRWYWzS470rOoUrNJBmxU=;
+ b=UrB/G9eJKh9Si/IHeJ8Z4Al3W5vOHAkQFrXKvyZdRf0u/3fu3sYP78GjmS4ZcUuctt
+ Fqsff6NZafHec9zkieh7DWrR46HDshhyxeG8NzHCirYFYuDUcDXmeZGZmLFC0rnAOOd8
+ 8giOIW1IrKNcbil54/GyCRlucq5xAvODPl1dvO5ic6ezLPwUFdoUkyUDgwEKb0SGs/xz
+ ifSPG8oEOF+tHQ2qBRSqKklDsVkgZUVh5F4zoJTcRG7lLRMjYznI7anm1jjY9oz7c1Ww
+ UX3s9/5x/sZDD2SPk+9rt3jLLl56xhhxdOmU3JEQSP2J4mdZemTzaCCTbkC3JgcwBhjN
+ fJug==
+X-Gm-Message-State: APjAAAXj4vJWbh7zYUYiuxBL+KMe5gOS0QY0Y4W0AjrRB95F4Y8v2Zv1
+ jachqDwSfKrlDPANpcuAE+J8I+og7ugKcKUg6jL/Ig==
+X-Google-Smtp-Source: APXvYqybed54iK4vV+PN2Aj3PjQ2Py6dcAunCb38T+fR74fZCjJqmxhGgna5I/pOr2f8Y6E05PAXezd/gE5bKfmgw6I=
+X-Received: by 2002:ae9:f818:: with SMTP id x24mr37963214qkh.329.1558010863680; 
+ Thu, 16 May 2019 05:47:43 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190508073331.27475-1-drinkcat@chromium.org>
+ <CACRpkdZb73vNyepcfjzEGAopc7BBxde_N1wxn7PSJ3aGC0=Gig@mail.gmail.com>
+In-Reply-To: <CACRpkdZb73vNyepcfjzEGAopc7BBxde_N1wxn7PSJ3aGC0=Gig@mail.gmail.com>
+From: Nicolas Boichat <drinkcat@chromium.org>
+Date: Thu, 16 May 2019 20:47:32 +0800
+Message-ID: <CANMq1KAOeuDCZEvV2A18nUts3WP2MbhUpY7gQ+vk0oTOz8TRQA@mail.gmail.com>
+Subject: Re: [PATCH v2 0/2] pinctrl: mediatek: mt8183: Add support for wake
+ sources
+To: Linus Walleij <linus.walleij@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_054906_719546_7FAFB83A 
-X-CRM114-Status: UNSURE (   8.82  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190516_054745_712068_56536847 
+X-CRM114-Status: GOOD (  19.11  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [197.242.87.48 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -92,37 +90,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org,
- Justin Swartz <justin.swartz@risingedge.co.za>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-MIME-Version: 1.0
+Cc: Chuanjia Liu <Chuanjia.Liu@mediatek.com>, Sean Wang <sean.wang@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Evan Green <evgreen@chromium.org>, Stephen Boyd <swboyd@chromium.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add missing 1.464GHz clock rate to rk3228_cpuclk_rates[]
+On Thu, May 16, 2019 at 7:55 PM Linus Walleij <linus.walleij@linaro.org> wrote:
+>
+> On Wed, May 8, 2019 at 9:33 AM Nicolas Boichat <drinkcat@chromium.org> wrote:
+>
+> > This adds support for wake sources in pinctrl-mtk-common-v2, and
+> > pinctrl-mt8183. Without this patch, all interrupts that are left
+> > enabled on suspend act as wake sources (and wake sources without
+> > interrupt enabled do not).
+> >
+> > Changes since v1:
+> >  - Move changes from mtk-common-v2 to mtk-pinctrl-paris, as
+> >    recommended by Sean, to keep better separation between eint
+> >    and pinctrl-common features.
+> >
+> > Nicolas Boichat (2):
+> >   pinctrl: mediatek: Add pm_ops to pinctrl-paris
+> >   pinctrl: mediatek: mt8183: Add mtk_pinctrl_paris_pm_ops
+>
+> All seems to look fair to me, but I need some official ACK from
+> Sean on these.
+>
+> I see there is some discussion on a related patch set which
+> also has two patches so I am a but confused how mature the
+> two patch sets are? Are they at all related?
 
-Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
----
- drivers/clk/rockchip/clk-rk3228.c | 1 +
- 1 file changed, 1 insertion(+)
+They are somewhat related, but I don't think this depends on the other series.
 
-diff --git a/drivers/clk/rockchip/clk-rk3228.c b/drivers/clk/rockchip/clk-rk3228.c
-index 7af48184b..b85730565 100644
---- a/drivers/clk/rockchip/clk-rk3228.c
-+++ b/drivers/clk/rockchip/clk-rk3228.c
-@@ -109,6 +109,7 @@ static struct rockchip_cpuclk_rate_table rk3228_cpuclk_rates[] __initdata = {
- 	RK3228_CPUCLK_RATE(1608000000, 1, 7),
- 	RK3228_CPUCLK_RATE(1512000000, 1, 7),
- 	RK3228_CPUCLK_RATE(1488000000, 1, 5),
-+	RK3228_CPUCLK_RATE(1464000000, 1, 5),
- 	RK3228_CPUCLK_RATE(1416000000, 1, 5),
- 	RK3228_CPUCLK_RATE(1392000000, 1, 5),
- 	RK3228_CPUCLK_RATE(1296000000, 1, 5),
--- 
-2.11.0
+This series adds support for wake on mt8183, and makes it similar to,
+say, mt8173.
 
+The other patch series fixes issues that affect all mtk pinctrl
+variants (i.e. I think mt8173 pinctrl on current mainline has similar
+issues). It's not impossible that the answer to the other series is
+that we need to refactor code, but in that case, if we merge this
+first, we'd just have to clean up one more pinctrl variant.
+
+Thanks,
+
+> Yours,
+> Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
