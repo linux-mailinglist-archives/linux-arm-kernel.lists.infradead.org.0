@@ -2,97 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 226B620CD5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 18:21:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7544720CEA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 18:27:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TZ8Z3ODHL81DbYkCNULiEMkKSqum7N8ZhJVyGpyfyGI=; b=dcDv7nQnCJzyPU
-	x7G7CrTvuXHZSxuxHSNmMFNIQYYbKow+XXhJZ2toWoSybylr8mgIochiZ0Gwotyxc4Tdld298f1aB
-	kac0QvJP5LhCC1RBc22DWT9VxGfFGfyPPXrdSX6QfB0OGBNJb+X4v9wwXvtgZgGjaKuVDdUMnalqd
-	ynI81Mk5vZR6N4a8ubtc1Cu9zWaUX3kGMN54nTedw4enk2h/OvhQy/pIlYZOy+CPjgHHQitv92kjW
-	t/yJvVm++z1GxTj4ZEkZU+u4X2p8JCrA19hJAt+lu86PPceLciwVpuGW7mnxotvA+sEhb9k8Twv0K
-	q6lw0mqlSmLUDBjKESTA==;
+	List-Owner; bh=GOk8oI+ggRVV3CD0Jc5c+mPCCwFdGwCqKZztG0klMOw=; b=TOE3w6rPlgMxQ1
+	RhRONQqsU0tEA+CD9zbYcu1L26GbVNNPa3vpllK0nvqUV8HLY5JI1Jiwk441bQ19grs2RsVx8zX5Y
+	cc3nQvWDswrvGk1P4ZHXePpPlgb9VlX1Xlw/4z7dIgtIA7AerVGiRLssCvVu1jpwuUtUskoauEQKs
+	4p/R8TxyV3sQYN+uTJ/tno3K5e7iPtHPtpkPb2qv2bw5AgqRleLAUc5wuNNKGVcKOC60Picn+eZ6w
+	EMtTTw/X+SMmOLdyQ9+DRdT1dyFN3YnfudlP1I0yvItTsvSAFHg6wKC3TR5HRk5ujB+q0zj8zwFLc
+	3owjxjw5kp+QjqSvVuig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRJ7w-0005Fe-Ik; Thu, 16 May 2019 16:21:04 +0000
-Received: from mail-it1-x141.google.com ([2607:f8b0:4864:20::141])
+	id 1hRJDv-0007TE-81; Thu, 16 May 2019 16:27:15 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRJ7m-0005EA-J3
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 16:20:56 +0000
-Received: by mail-it1-x141.google.com with SMTP id q65so7121695itg.2
+ id 1hRJDn-0007Sn-36
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 16:27:08 +0000
+Received: by mail-lj1-x242.google.com with SMTP id h11so2319358ljb.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 May 2019 09:20:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
- h=date:from:to:cc:subject:in-reply-to:message-id:references
- :user-agent:mime-version;
- bh=hMLpDS1jKcs2MyhRFTjl19/qN34wfJls1Iu1HUS9Vz4=;
- b=JPlM3LzE1hWtQkAOdAG30RK6qrwfJt24cV6Tw561ErU5FLecTW3IJkI6+ODGvIZMTc
- KiQirom5P0jlRWDvHHOffWmD25hm0jeVgWo5hBvk7sEyFzI/qhdOZhPGdezYCT9b156+
- jTW4mfIW24KZ8HRP7TD/RnZaa5W6uiWphjYAI+UkstYvMlIC5+Csp/uxWTfNZpYmkCGr
- gGixL8nHlLxDf8MP67nVga1rn24eyQUefjdNODtyYE9Xtpee+CQLsnr6abx237wAcU2N
- ruuJy6rgatmV90J8s8h+2YB86NpA7KlTn8nOJBlXtmFFc3qEVNO+KgfV4yVMDgcFI/2s
- 3DdQ==
+ Thu, 16 May 2019 09:27:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=linux-foundation.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=CJn+s1/9iwnST3l6oaCFH3Pabu3jpALwTCNZgnOPKSk=;
+ b=RbIOcHhbe/wAJnhmE+X0+jqRT3pY8KcZzvhJF5Lg9TwQ8gVf3VLYKAsRoqwWTQp4qX
+ GNwZxaLxD1imdCwMmdAyJyfUGNksYji2fm0afsXvot60M+nvGFT0cP+SGpPpRIIjwh3a
+ zRlK4oU9gZLMtkC00ta8Onnj2sYvjd9PLdIOI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
- :references:user-agent:mime-version;
- bh=hMLpDS1jKcs2MyhRFTjl19/qN34wfJls1Iu1HUS9Vz4=;
- b=HcmyaIZmno/AjRWpofF2FNafzxgIdiK375t2M8LqBoumM8H80JCTQ0l+P9b+J3YA7N
- vRxZmcLWTORUJN5K0Kno/I9k2yyccxgaQVzZp63BEgabMQtmcwBT96evYCLoSFzbop1r
- 9mwPUJNTlErjWK/m2ZKFEFPWuilo57JgxUNwXawcMDh8blynNEjK+hUgU6TMGhougSZp
- uymzjWNAjPPjg44x9uhZAQyalat5YCXTX72Q+pkbs+zo9Km6MEEIhU6yFWXvMC0GuUWr
- orrXWXBLoBPnRG+bvvaKjNO/HXCbj1IlPmqPYj9Xo18jW8xgOksvupSsp8z8t+a3LobR
- I6AA==
-X-Gm-Message-State: APjAAAUt2WmAgD2c3wmiizro668HpGo3z3aX/ZE/lPU42u1fuaS6s91Z
- juaLDwDjRjaS2ALtc+kv99wYeQ==
-X-Google-Smtp-Source: APXvYqyMYLQHH8q9zmIFP9JOmOSxSC2ZmZMq4gXVNXN+eM4JSY3bwaceLZVoS0swTPIkyrPmuKyxdQ==
-X-Received: by 2002:a02:95aa:: with SMTP id b39mr32673541jai.45.1558023651411; 
- Thu, 16 May 2019 09:20:51 -0700 (PDT)
-Received: from localhost (c-73-95-159-87.hsd1.co.comcast.net. [73.95.159.87])
- by smtp.gmail.com with ESMTPSA id
- 25sm1819099iof.37.2019.05.16.09.20.50
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 16 May 2019 09:20:50 -0700 (PDT)
-Date: Thu, 16 May 2019 09:20:49 -0700 (PDT)
-From: Paul Walmsley <paul.walmsley@sifive.com>
-X-X-Sender: paulw@viisi.sifive.com
-To: Atish Patra <atish.patra@wdc.com>
-Subject: Re: [v2 PATCH] RISC-V: Add a PE/COFF compliant Image header.
-In-Reply-To: <bb7f36bd-d614-b235-7100-3d965f92afc8@wdc.com>
-Message-ID: <alpine.DEB.2.21.9999.1905160833030.9104@viisi.sifive.com>
-References: <20190501195607.32553-1-atish.patra@wdc.com>
- <alpine.DEB.2.21.9999.1905131522370.21198@viisi.sifive.com>
- <a498967c-cdc8-637a-340b-202d216c5360@wdc.com>
- <alpine.DEB.2.21.9999.1905131704371.21198@viisi.sifive.com>
- <a3eb8e32-5344-801e-03ef-98107ed13130@wdc.com>
- <alpine.DEB.2.21.9999.1905131735450.21198@viisi.sifive.com>
- <bb7f36bd-d614-b235-7100-3d965f92afc8@wdc.com>
-User-Agent: Alpine 2.21.9999 (DEB 301 2018-08-15)
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=CJn+s1/9iwnST3l6oaCFH3Pabu3jpALwTCNZgnOPKSk=;
+ b=InMZELYRX53SNeuxrO9LqNfU8pe98YXLlqXnNwwvQGNGJmlWdCln7s7D5g2bSYGH44
+ l/9SJgVqKALN8Sd+3K2gXjAi8CkOHK0m2uMyWK24ftpIweOhN9SzONrXW0VnNFBm0QWY
+ abiKZA2X8RofGsDmr2QJWObucg7Qk7SZVOTThTfOqQoXsLJCFGe5CfJSrlyrEUi803Ss
+ a4S+GW18ja0L9ddgA0k475lCYQ5nRfoJifmEny73ZkPE3uoCJVk9WyttXSGZfqkcSLfX
+ 1Y41yl7jcyDP8Mj3dHqf/3POz7IPo80G8R6LaiAMAguoLmWaSqRDNwpG7ZYO46EzaREh
+ OVaQ==
+X-Gm-Message-State: APjAAAUwO3KMOYIBB5T13+6cLVj04eYwMMZ65AQZmOQkC+RmpYi965NS
+ tB6EYoE40eI6mCXQ7RmDkqHWl4pPoAU=
+X-Google-Smtp-Source: APXvYqzpeinNxRN0afRVLVY6Rm1QFMVselX13ZE4W9qo7HDQ6w9y2+1dqTQpoq4jwEK8GPuBOaf9og==
+X-Received: by 2002:a2e:9e14:: with SMTP id e20mr9444533ljk.172.1558024024662; 
+ Thu, 16 May 2019 09:27:04 -0700 (PDT)
+Received: from mail-lf1-f46.google.com (mail-lf1-f46.google.com.
+ [209.85.167.46])
+ by smtp.gmail.com with ESMTPSA id h2sm1048265lfm.17.2019.05.16.09.27.03
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 16 May 2019 09:27:04 -0700 (PDT)
+Received: by mail-lf1-f46.google.com with SMTP id q17so3142454lfo.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 May 2019 09:27:03 -0700 (PDT)
+X-Received: by 2002:ac2:5212:: with SMTP id a18mr25173004lfl.166.1558024022880; 
+ Thu, 16 May 2019 09:27:02 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190516064304.24057-1-olof@lixom.net>
+ <20190516064304.24057-4-olof@lixom.net>
+In-Reply-To: <20190516064304.24057-4-olof@lixom.net>
+From: Linus Torvalds <torvalds@linux-foundation.org>
+Date: Thu, 16 May 2019 09:26:46 -0700
+X-Gmail-Original-Message-ID: <CAHk-=whb-KituxcvM6ZPuXqyPX+rJENb8cnGCPbGE9pyqwOmXA@mail.gmail.com>
+Message-ID: <CAHk-=whb-KituxcvM6ZPuXqyPX+rJENb8cnGCPbGE9pyqwOmXA@mail.gmail.com>
+Subject: Re: [GIT PULL 3/4] ARM: SoC-related driver updates
+To: Olof Johansson <olof@lixom.net>, Patrick Venture <venture@google.com>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_092054_640640_E14D8342 
-X-CRM114-Status: GOOD (  30.57  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190516_092707_137167_E7E26CE1 
+X-CRM114-Status: GOOD (  18.01  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -104,147 +102,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>, trini@konsulko.com,
- Albert Ou <aou@eecs.berkeley.edu>, catalin.marinas@arm.com,
- Anup Patel <anup@brainfault.org>, Palmer Dabbelt <palmer@sifive.com>,
- will.deacon@arm.com,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Zong Li <zong@andestech.com>, marek.vasut@gmail.com,
- Paul Walmsley <paul.walmsley@sifive.com>,
- "merker@debian.org" <merker@debian.org>,
- "linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: ARM SoC <arm@kernel.org>,
+ Linux List Kernel Mailing <linux-kernel@vger.kernel.org>,
+ "linux-alpha@vger.kernel.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-+ ARM64 maintainers, Tom, Marek
+On Wed, May 15, 2019 at 11:43 PM Olof Johansson <olof@lixom.net> wrote:
+>
+> Various driver updates for platforms and a couple of the small driver
+> subsystems we merge through our tree:
 
-Hi Atish,
+Hmm. This moved the aspeed drivers from drivers/misc to
+drivers/soc/aspeed (in commit 524feb799408 "soc: add aspeed folder and
+misc drivers"), but in the meantime we also had a new aspeed soc
+driver added (in commit 01c60dcea9f7 "drivers/misc: Add Aspeed P2A
+control driver").
 
-On Mon, 13 May 2019, Atish Patra wrote:
+I ended up resolving that "conflict" by moving the new aspeed P2A
+control driver to be with the other aspeed drivers too. That seemed to
+be the cleanest model.
 
-> On 5/13/19 5:40 PM, Paul Walmsley wrote:
-> > On Mon, 13 May 2019, Atish Patra wrote:
-> > > On 5/13/19 5:09 PM, Paul Walmsley wrote:
-> > > 
-> > > > What are the semantics of those reserved fields?
-> > > 
-> > > +struct riscv_image_header {
-> > > +	u32 code0;
-> > > +	u32 code1;
-> > > +	u64 text_offset;
-> > > +	u64 image_size;
-> > > +	u64 res1;
-> > > +	u64 res2;
-> > > +	u64 res3;
-> > > +	u64 magic;
-> > > +	u32 res4; ---> We can use this for versioning when required
-> > > +	u32 res5; ---> This is reserved for PE/COFF header
-> > > +};
-> > 
-> > I saw that in your patch.  The problem is that this doesn't describe what
-> > other software might expect in those fields.  Can anything at all be
-> > placed in those reserved fields?
-> 
-> Yes. The reserved fields can be used for anything that boot loaders and Linux
-> kernel can agree with each other. If you look at the ARM64, they have
-> "Informative flags" in place of res1.
-> 
-> > > > > Do we need to add it now or add it later when we actually need a
-> > > > > version
-> > > > > number. My preference is to add it later based on requirement.
-> > > > 
-> > > > If it isn't added now, how would bootloaders know whether it was there
-> > > > or
-> > > > not?
-> > > > 
-> > > > 
-> > > Here is the corresponding U-Boot Patch
-> > > https://patchwork.ozlabs.org/patch/1096087/
-> > > 
-> > > Currently, boot loader doesn't care about versioning. Since we are
-> > > updating a
-> > > reserved field, offsets will not change. If a boot loader want to use the
-> > > versioning, it should be patched along with the kernel patch.
-> > > 
-> > > Any other boot loader that doesn't care about the version, it can continue
-> > > to
-> > > do so without any change.
-> > > 
-> > > My idea is to enable the minimum required fields in this patch and keep
-> > > everything else as reserved so that it can be amended in future as
-> > > required.
-> > 
-> > If those fields really are reserved for implementors to do whatever they
-> > want with them, then that might be a reasonable approach.  That seems
-> > unlikely, however, since specification authors usually reserve the right
-> > to use reserved fields for their own purposes in later versions.
-> > 
-> Technically, we are just implementing the "DOS" header part of PE/COFF format
-> for now. It only mandates a magic string "MZ" at the top and a 32bit value at
-> offset 0x3c tells us offset of PE/COFF header in image.
-> Anything in between is implementation specific.
-> 
-> For example, it will be updated to support EFI stub as described in the commit
-> text,
-> "In order to support EFI stub, code0 should be replaced with "MZ" magic string
-> and res5(at offset 0x3c) should point to the rest of the PE/COFF header (which
-> will be added during EFI support)."
+I'm used to doing these kinds of fixups in a merge, but I have to
+admit that maybe I should have made it a separate commit, because now
+it's kind of non-obvious, and it's sometimes harder to see changes
+that are in a merge commit than in a separate commit.
 
-OK.  I think we should try to share this header format with other 
-architectures.  This one after all is copied from ARM64, and some of the 
-core fields will be the same across multiple architectures.  That way we 
-can try to avoid proliferating different boot header formats for each 
-architecture, which should be better for both the kernel and the 
-bootloaders.  ARM64 folks, would you be interested in working together on 
-this?
+In particular, it looks like "git log --follow" is not smart enough to
+follow a rename through a merge. But I think that is a git problem,
+and not a very serious one at that ("git blame" has no such problem).
 
-Meanwhile, to unblock RISC-V, and to make this header durable for future 
-extensions and to match the existing ARM64 usage, I think we should make 
-the following technical changes to what you proposed:
+And it means that now the merge has
 
-1. Reserve all of the existing ARM64 fields in the same way ARM64 does 
-   now.  This keeps open the possibility that we can merge this format 
-   with the one used with ARM64, and reuse the same bootloader code.  
-   Based on our discussions, it sounds like the primary difference between 
-   what you're proposing and the ARM64 format involves the flags/res1 
-   field.  Let's keep that as a flag field, reuse ARM64's endianness bit 
-   as architecture-independent, then define the rest of the flags in that 
-   field as architecture-defined.
+ drivers/{misc => soc/aspeed}/aspeed-lpc-ctrl.c                   |   0
+ drivers/{misc => soc/aspeed}/aspeed-lpc-snoop.c                  |   0
+ drivers/{misc => soc/aspeed}/aspeed-p2a-ctrl.c                   |   0
 
-2. Allocate another set of reserved bits for a format version number.
-   Probably 16 bits is sufficient.  This tells bootloaders how to 
-   interpret the header fields in future extensions.  The goal is to 
-   preserve compatibility across newer and older versions of the header.  
-   The existing ARM64 header would be version 0.  This format that 
-   incorporates these changes would be version 1.  The thought here is to 
-   preserve all of the semantics of existing fields in newer versions 
-   (except for any remaining reserved fields), since many people often do 
-   not replace their bootloaders.
+when you do "git show --stat" on it, which looks correct, and it feels
+like conceptually the right merge resolution to me.
 
-3. Define a way to point to additional fields outside this existing
-   header.  Another 32 bits of previously reserved data can be defined as 
-   a file offset to additional fields (defined as 32-bit words from the 
-   beginning of the header).  This should make it technically simple to 
-   add additional fields in the future.  For example, RISC-V, and probably 
-   other architectures, will want to add some way to indicate which ISA 
-   extensions are necessary to run the kernel image.  Right now there 
-   won't be any fields defined, so we can leave the format undefined for 
-   the moment also.  Let's stipulate for version 1 that this field 
-   should be fixed at 0, indicating no additional fields.
+Sending out this explanatory email to everybody involved, just so that
+this doesn't take you by surprise. But it looks like Patrick Venture
+is not just the author of that moved driver, he was also involved in
+the move of the two other drivers, so I'm guessing there's not going
+to be a lot of confusion here.
 
-4. Document all of this, in this patch, in a file such as
-   Documentation/riscv/boot-image-header.txt.  If
-   we're able to reach agreement with other maintainers, then we
-   can move this file out into a common, non-architecture-specific 
-   documentation location.
+HOWEVER. More subtly, as part of my *testing* for this, I also
+realized that commit 524feb799408 is buggy. In my tests, the config
+worked fine, but the aspeed drivers were never actually *built*. The
+reason is that commit 524feb799408 ends up doing
 
+   obj-$(CONFIG_ARCH_ASPEED)      += aspeed/
 
-thanks
+which is completely wrong, because the Kconfig fules are
 
-- Paul
+        depends on (ARCH_ASPEED || COMPILE_TEST) && REGMAP && MFD_SYSCON
+
+so those drivers can be configured even if ARCH_ASPEED *isn't* set.
+The Kconfig part works fine, because the soc/aspeed/Kconfig file is
+included unconditionally, but the actual build process then never
+builds anything in the drivers/soc/aspeed/ subdirectory.
+
+I solved _that_ problem by adding a new config option:
+
+  config SOC_ASPEED
+      def_bool y
+      depends on ARCH_ASPEED || COMPILE_TEST
+
+and using that instead of ARCH_ASPEED.
+
+End result: this was a somewhat messy merge, and the most subtle mess
+was because of that buggy 524feb799408 "soc: add aspeed folder and
+misc drivers").
+
+I *think* I sorted it all out correctly, and now I see the aspeed
+drivers being built (and cleanly at that) but I really *really* want
+people to double-check this all.
+
+Also, I think that the same "we don't actually build-test the end
+result" problem exists else-where for the same reasons.
+
+At the very least, drivers/soc/{atmel,rockchip,zte} seem to have the
+exact same pattern: the Kconfig files enable the drivers, but the
+Makefile in drivers/soc doesn't actually traverse into the
+subdirectories.
+
+End result: CONFIG_COMPILE_TEST doesn't actually do any compile
+testing for those drivers.
+
+I did not try to fix all of those things up, because I didn't do the
+driver movements there.
+
+                  Linus
 
 _______________________________________________
 linux-arm-kernel mailing list
