@@ -2,37 +2,37 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62B7220284
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 11:29:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 637EA20280
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 11:28:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=oE6UZnFz5tZk/gnkmUtKg1N9WpQvwLiqNPeeYUBc/W0=; b=cuRLuq62hNfZwZ
-	sn1sPeutqi8nwStK6a228uUuLWccPAJfaGXhy07aVQXtzcMRdoX/N6YE5FGUF2NBJBftm4uGIUFdd
-	M27+03mGk3wOe11QUSM5lquNQ5+EKDWCDIqx5ZF7rGhHDHoQkmoHr60oY5q356xb2n96OPVGvg024
-	r05kVofAD4PS8x4TjQAZX0/t0i6dwTg09FLP/iIYsyiP0qMLD3vr3h5M+4wO+7HDh7kEd6zLHj3+j
-	rwCqzsnASod/cIbrxrIEfQsZvqBhHshBgMIbzjw3HwoWqurbKdHJcpZMMou3oiIO8uYZEnMGJoS2p
-	l8ulb+3sITO8YHWN+zkQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MAMxJ5Gvq1JpQ3CYeJdjnSkT6pfcYgbiguNFWUAETBo=; b=T1qu0swEs3mZys
+	6B/Qe1GzHqwS0pCEL/9nuZSTJXqO07SGpdT8peXrB9UXF68X1Jb8kt0KHGV4Y8qS3amCYBQB1Vm5Q
+	OfrXs+0vXfYIW//B9X+4q0hM4kYvqizQxZbEvXvr67PhdhYI3alo3oyt4Q1+HWsC4mBJGyxkguuKS
+	osHvsiFlkMt55LvdW4Ic/jt4FV3SI8zbVhgsW7kPJKWLLCjKRxjeoV52JnEVMULXVOFhAxVEXfCKC
+	hzSHLctpj2485VR5izqxmBSCZMIlIbhi9wV7bFMmuAk39cw5umKU0NaNbox+9vfD5tyn5kpG65axb
+	+J0nXh3GMSl0kEeQoL4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRChB-0002QF-0S; Thu, 16 May 2019 09:29:01 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hRCgm-0001xO-1p; Thu, 16 May 2019 09:28:36 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRCgz-0002Oj-Pj; Thu, 16 May 2019 09:28:51 +0000
-X-UUID: 181d1e148fe545cc9fd5a2254c01cd15-20190516
-X-UUID: 181d1e148fe545cc9fd5a2254c01cd15-20190516
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ id 1hRCgR-0001l4-HK; Thu, 16 May 2019 09:28:16 +0000
+X-UUID: 66afc7febe9a4c98b600700e0d73c565-20190516
+X-UUID: 66afc7febe9a4c98b600700e0d73c565-20190516
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <bibby.hsieh@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 978491810; Thu, 16 May 2019 01:28:11 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 16 May 2019 02:28:09 -0700
+ with ESMTP id 1892684646; Thu, 16 May 2019 01:28:05 -0800
+Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 16 May 2019 02:28:03 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Thu, 16 May 2019 17:27:55 +0800
 Received: from mtkslt302.mediatek.inc (10.21.14.115) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
@@ -41,17 +41,17 @@ From: Bibby Hsieh <bibby.hsieh@mediatek.com>
 To: Jassi Brar <jassisinghbrar@gmail.com>, Matthias Brugger
  <matthias.bgg@gmail.com>, Rob Herring <robh+dt@kernel.org>, CK HU
  <ck.hu@mediatek.com>
-Subject: [PATCH v6 07/12] soc: mediatek: cmdq: clear the event in cmdq initial
- flow
-Date: Thu, 16 May 2019 17:27:52 +0800
-Message-ID: <20190516092754.33425-1-bibby.hsieh@mediatek.com>
+Subject: [PATCH v6 10/12] soc: mediatek: cmdq: add cmdq_dev_get_subsys function
+Date: Thu, 16 May 2019 17:27:53 +0800
+Message-ID: <20190516092754.33425-2-bibby.hsieh@mediatek.com>
 X-Mailer: git-send-email 2.18.0
+In-Reply-To: <20190516092754.33425-1-bibby.hsieh@mediatek.com>
+References: <20190516092754.33425-1-bibby.hsieh@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 41BF739DE66FE4DBD0FD8AD9EA84FDC74A6A4D699C23EB81D2709C284B6545432000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_022849_833902_8A8452F1 
-X-CRM114-Status: GOOD (  10.38  )
+X-CRM114-CacheID: sfid-20190516_022815_577405_98844F03 
+X-CRM114-Status: GOOD (  10.35  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -88,78 +88,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-GCE hardware stored event information in own internal sysram,
-if the initial value in those sysram is not zero value
-it will cause a situation that gce can wait the event immediately
-after client ask gce to wait event but not really trigger the
-corresponding hardware.
-
-In order to make sure that the wait event function is
-exactly correct, we need to clear the sysram value in
-cmdq initial flow.
-
-Fixes: 623a6143a845 ("mailbox: mediatek: Add Mediatek CMDQ driver")
+GCE cannot know the register base address, this function
+can help cmdq client to get the relationship of subsys
+and register base address.
 
 Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
-Reviewed-by: CK Hu <ck.hu@mediatek.com>
 ---
- drivers/mailbox/mtk-cmdq-mailbox.c       | 5 +++++
- include/linux/mailbox/mtk-cmdq-mailbox.h | 2 ++
- include/linux/soc/mediatek/mtk-cmdq.h    | 3 ---
- 3 files changed, 7 insertions(+), 3 deletions(-)
+ drivers/soc/mediatek/mtk-cmdq-helper.c | 25 +++++++++++++++++++++++++
+ include/linux/soc/mediatek/mtk-cmdq.h  | 18 ++++++++++++++++++
+ 2 files changed, 43 insertions(+)
 
-diff --git a/drivers/mailbox/mtk-cmdq-mailbox.c b/drivers/mailbox/mtk-cmdq-mailbox.c
-index 6db1e2dd2dea..2c1b80d82c3a 100644
---- a/drivers/mailbox/mtk-cmdq-mailbox.c
-+++ b/drivers/mailbox/mtk-cmdq-mailbox.c
-@@ -20,6 +20,7 @@
- #define CMDQ_NUM_CMD(t)			(t->cmd_buf_size / CMDQ_INST_SIZE)
+diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
+index a53cdd71cfc2..a64060a34e01 100644
+--- a/drivers/soc/mediatek/mtk-cmdq-helper.c
++++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
+@@ -27,6 +27,31 @@ struct cmdq_instruction {
+ 	u8 op;
+ };
  
- #define CMDQ_CURR_IRQ_STATUS		0x10
-+#define CMDQ_SYNC_TOKEN_UPDATE		0x68
- #define CMDQ_THR_SLOT_CYCLES		0x30
- #define CMDQ_THR_BASE			0x100
- #define CMDQ_THR_SIZE			0x80
-@@ -103,8 +104,12 @@ static void cmdq_thread_resume(struct cmdq_thread *thread)
- 
- static void cmdq_init(struct cmdq *cmdq)
- {
-+	int i;
++struct cmdq_subsys *cmdq_dev_get_subsys(struct device *dev, int idx)
++{
++	struct cmdq_subsys *subsys;
++	struct of_phandle_args spec;
 +
- 	WARN_ON(clk_enable(cmdq->clock) < 0);
- 	writel(CMDQ_THR_ACTIVE_SLOT_CYCLES, cmdq->base + CMDQ_THR_SLOT_CYCLES);
-+	for (i = 0; i <= CMDQ_MAX_EVENT; i++)
-+		writel(i, cmdq->base + CMDQ_SYNC_TOKEN_UPDATE);
- 	clk_disable(cmdq->clock);
- }
- 
-diff --git a/include/linux/mailbox/mtk-cmdq-mailbox.h b/include/linux/mailbox/mtk-cmdq-mailbox.h
-index ccb73422c2fa..911475da7a53 100644
---- a/include/linux/mailbox/mtk-cmdq-mailbox.h
-+++ b/include/linux/mailbox/mtk-cmdq-mailbox.h
-@@ -19,6 +19,8 @@
- #define CMDQ_WFE_UPDATE			BIT(31)
- #define CMDQ_WFE_WAIT			BIT(15)
- #define CMDQ_WFE_WAIT_VALUE		0x1
-+/** cmdq event maximum */
-+#define CMDQ_MAX_EVENT			0x3ff
- 
- /*
-  * CMDQ_CODE_MASK:
++	subsys = devm_kzalloc(dev, sizeof(*subsys), GFP_KERNEL);
++	if (!subsys)
++		return NULL;
++
++	if (of_parse_phandle_with_args(dev->of_node, "mediatek,gce-client-reg",
++				       "#subsys-cells", idx, &spec)) {
++		dev_err(dev, "can't parse gce-client-reg property");
++
++		return (struct cmdq_subsys *)-ENODEV;
++	}
++
++	subsys->id = spec.args[0];
++	subsys->offset = spec.args[1];
++	subsys->size = spec.args[2];
++	of_node_put(spec.np);
++
++	return subsys;
++}
++EXPORT_SYMBOL(cmdq_dev_get_subsys);
++
+ static void cmdq_client_timeout(struct timer_list *t)
+ {
+ 	struct cmdq_client *client = from_timer(client, t, timer);
 diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
-index 54ade13a9b15..4e8899972db4 100644
+index 0651a0bffa54..574006c5cd76 100644
 --- a/include/linux/soc/mediatek/mtk-cmdq.h
 +++ b/include/linux/soc/mediatek/mtk-cmdq.h
-@@ -13,9 +13,6 @@
+@@ -15,6 +15,12 @@
  
- #define CMDQ_NO_TIMEOUT		0xffffffffu
- 
--/** cmdq event maximum */
--#define CMDQ_MAX_EVENT				0x3ff
--
  struct cmdq_pkt;
  
++struct cmdq_subsys {
++	u8 id;
++	u16 offset;
++	u16 size;
++};
++
  struct cmdq_client {
+ 	spinlock_t lock;
+ 	u32 pkt_cnt;
+@@ -142,4 +148,16 @@ int cmdq_pkt_flush_async(struct cmdq_pkt *pkt, cmdq_async_flush_cb cb,
+  */
+ int cmdq_pkt_flush(struct cmdq_pkt *pkt);
+ 
++/**
++ * cmdq_dev_get_subsys() - parse sub system from the device node of CMDQ client
++ * @dev:	device of CMDQ mailbox client
++ * @idx:	the index of desired subsys
++ *
++ * Return: CMDQ subsys pointer
++ *
++ * Help CMDQ client pasing the sub system number
++ * from the device node of CMDQ client.
++ */
++struct cmdq_subsys *cmdq_dev_get_subsys(struct device *dev, int idx);
++
+ #endif	/* __MTK_CMDQ_H__ */
 -- 
 2.18.0
 
