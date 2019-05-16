@@ -2,58 +2,131 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4025F203D6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 12:46:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05DD9203D9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 12:46:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9SEjbk/wYKp+GM1g1/zAZVzzhAuiCuByEIUJAVrErhI=; b=XbnAq4WaVjdCKe
-	V0TX4TEsyAeYlOmuDZNVbnlKr5HnotTuPYXiG2G2/V/5AOyuuywhdJwzpvLhCBv4oonnAAcLCYFSO
-	/ZiEPF2X5eHK6eIpMl7CwU1fnzH0n5aVWB20GSrSuVmR5eTNSiEpWFk2fLFHxurIWtKClTVv5LgKi
-	N5OO1wyyXw04O0uRGge6GDi+tQPIocFt6HT/IWKr5Ir6s7jRauB5eGSyKIalOXZ70n793P0lQQdS4
-	LUGGLlfADsxX+EvewZYVwmtAx827P/Q16hwa3kYgn78Fs3YQ9FkHi9HLqvAnNcOiSWqu7PaYZzLsn
-	uZOLVmPEBUBiAy4goRRw==;
+	List-Owner; bh=1XXBc8HTfHv8pJ02Yim1X4+AEezvUmVBBfryFwy4iTE=; b=qEfxeVtnr0nq0W
+	rA0JELvgFYfMEEqgEYboxc+CSII4LizktHFKpRcLJdNk+l0mMl7Yyqgfgju+maVeQAArGrCprfo02
+	cFSfDkZxhtMPzGp6TDiIxOekFmhzp4yHJE+Cs9USAmW9oRE5fQcZYgCTmRQaIlgurqHy27Em9I+yK
+	x/rRW50LodpdG53B0ugJCw68EAjkwFEA8EEncvZ10Hb509tUZWhkXbaO+rrjTWflWEWNO1ZazyiPy
+	wWD/KnBT2SH2tfKm2vsVQShovypeXT30SsrSwcr/OufgZo7rL2qcsav4l6zcW6gv8WBmLXj56/DFJ
+	SBCcW557zUoi5yMRCuZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRDuE-0004nn-JV; Thu, 16 May 2019 10:46:34 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRDu7-0004nN-8u
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 10:46:28 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4AE9519BF;
- Thu, 16 May 2019 03:46:25 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5EA4F3F703;
- Thu, 16 May 2019 03:46:24 -0700 (PDT)
-Date: Thu, 16 May 2019 11:46:19 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: Masahiro Yamada <yamada.masahiro@socionext.com>
-Subject: Re: [PATCH] arm64: vdso: Explicitly add build-id option
-Message-ID: <20190516104619.GA29705@fuggles.cambridge.arm.com>
-References: <20190515194824.5641-1-labbott@redhat.com>
- <CAK7LNASZnRrSsZSrnw41kintGfmpyj3iz-Vjduk7w3k9iSih-w@mail.gmail.com>
+	id 1hRDuQ-0004zu-Ms; Thu, 16 May 2019 10:46:46 +0000
+Received: from mail-am5eur03on0615.outbound.protection.outlook.com
+ ([2a01:111:f400:fe08::615]
+ helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hRDuG-0004tP-8e
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 10:46:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=BZ0NLhMKHR9t/W7fvUSdnYSAwn4/rOJk47JWqBmfgZk=;
+ b=oBTNDtQ+cT/O7lslbH8XACk9RJ8MKqAlJuC32b/DBc2hHJSsuxuVoYzB1jxMqj8yBBBTh9B+sUMkM79rx6ghWAH+7y2suaEHY+1BMX5arFHg1o1OXNjuua5Tmfzmv4SaIPYzsTdeF6u7rGeNlfUD85rT2DmaaUOpQkcx7DQOmqI=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3787.eurprd04.prod.outlook.com (52.134.73.25) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1900.16; Thu, 16 May 2019 10:46:33 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::d035:3bd0:a56a:189d]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::d035:3bd0:a56a:189d%2]) with mapi id 15.20.1900.010; Thu, 16 May 2019
+ 10:46:33 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Aisheng Dong <aisheng.dong@nxp.com>, "robh+dt@kernel.org"
+ <robh+dt@kernel.org>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
+ <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>, "catalin.marinas@arm.com"
+ <catalin.marinas@arm.com>, "will.deacon@arm.com" <will.deacon@arm.com>,
+ "rui.zhang@intel.com" <rui.zhang@intel.com>, "edubezval@gmail.com"
+ <edubezval@gmail.com>, "daniel.lezcano@linaro.org"
+ <daniel.lezcano@linaro.org>, "ulf.hansson@linaro.org"
+ <ulf.hansson@linaro.org>, Daniel Baluta <daniel.baluta@nxp.com>, Peng Fan
+ <peng.fan@nxp.com>, "heiko@sntech.de" <heiko@sntech.de>,
+ "horms+renesas@verge.net.au" <horms+renesas@verge.net.au>,
+ "agross@kernel.org" <agross@kernel.org>, "olof@lixom.net" <olof@lixom.net>,
+ "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
+ "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
+ "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
+ "marc.w.gonzalez@free.fr" <marc.w.gonzalez@free.fr>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-pm@vger.kernel.org"
+ <linux-pm@vger.kernel.org>
+Subject: RE: [PATCH V12 3/5] thermal: imx_sc: add i.MX system controller
+ thermal support
+Thread-Topic: [PATCH V12 3/5] thermal: imx_sc: add i.MX system controller
+ thermal support
+Thread-Index: AQHU9AOc8iXKmYQeMUm4+FbUnbYclKY/+ukAgABUQSCALXAcAIAAAa8g
+Date: Thu, 16 May 2019 10:46:33 +0000
+Message-ID: <DB3PR0402MB3916ABB2E6B07C3AE8AAA9FAF50A0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1555384609-7030-1-git-send-email-Anson.Huang@nxp.com>
+ <1555384609-7030-3-git-send-email-Anson.Huang@nxp.com>
+ <AM0PR04MB421105BBF1B9A90B255D1F7A80250@AM0PR04MB4211.eurprd04.prod.outlook.com>
+ <DB3PR0402MB39163877C25E5BE7E10C96B7F5250@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <AM0PR04MB4211EF0D257E502C3BF917D0800A0@AM0PR04MB4211.eurprd04.prod.outlook.com>
+In-Reply-To: <AM0PR04MB4211EF0D257E502C3BF917D0800A0@AM0PR04MB4211.eurprd04.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [119.31.174.68]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: dd1097cb-8905-4e48-95c3-08d6d9ebc30d
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:DB3PR0402MB3787; 
+x-ms-traffictypediagnostic: DB3PR0402MB3787:
+x-microsoft-antispam-prvs: <DB3PR0402MB3787512B9F92D6356D969F2FF50A0@DB3PR0402MB3787.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 0039C6E5C5
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(346002)(376002)(366004)(396003)(39860400002)(136003)(13464003)(189003)(199004)(86362001)(52536014)(186003)(8676002)(66476007)(64756008)(66446008)(305945005)(229853002)(71190400001)(71200400001)(2201001)(76116006)(81166006)(66946007)(73956011)(66556008)(2501003)(14454004)(66066001)(6436002)(81156014)(74316002)(4326008)(7736002)(33656002)(486006)(316002)(3846002)(6116002)(110136005)(53936002)(53546011)(8936002)(44832011)(6506007)(102836004)(7416002)(478600001)(68736007)(76176011)(6246003)(26005)(55016002)(5660300002)(9686003)(256004)(25786009)(2906002)(446003)(11346002)(476003)(7696005)(99286004)(921003)(1121003)(15866825006);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3787;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: SRKf5YGjpmOXU2F+3ANWF6q9un1oLxp0qzduqnQeb2Lkxt5D7A5Uu/eTmHCyHv/uVwXWjY1Dkzjhl3futH9JK2QiVL7WQMr1f0902mg7+ORlsOh+0cAvi4ROWaYDaO23XMHv9lbZYGqHxFb/iHbWOQqdhCPczOHxsdPxXw/A582cOdHaMvdjm3H9DBB34D/4GYC7yWrXPe1yuhsaGNBM6POrBaJtxvRiGLk8vvfuHBzVr36sBSKLqm1HwkCV5E+trvxt8iRdYIJCAXxErdCHe6gqHfU1kRVyWvfCKHlZbZiZtvUiyAx0RRS/Lm3RvNcML5W6b5Uptfte70lYkOj35gas6CJnRT9UWwVHTyqJ9mVniCyrMfS5jHmGw5dxvQ1lhJcyHKsdHR0BJ0Le45uih220nHqV7T0S6WoGN12bXiY=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK7LNASZnRrSsZSrnw41kintGfmpyj3iz-Vjduk7w3k9iSih-w@mail.gmail.com>
-User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: dd1097cb-8905-4e48-95c3-08d6d9ebc30d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 16 May 2019 10:46:33.0721 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3787
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_034627_319515_ACA973B8 
-X-CRM114-Status: GOOD (  19.23  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190516_034636_323634_3D7EF94C 
+X-CRM114-Status: GOOD (  16.75  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a01:111:f400:fe08:0:0:0:615 listed in]
+ [list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -65,71 +138,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Laura Abbott <labbott@redhat.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 16, 2019 at 01:58:56PM +0900, Masahiro Yamada wrote:
-> On Thu, May 16, 2019 at 4:51 AM Laura Abbott <labbott@redhat.com> wrote:
-> >
-> > Commit 691efbedc60d ("arm64: vdso: use $(LD) instead of $(CC) to
-> > link VDSO") switched to using LD explicitly. The --build-id option
-> > needs to be passed explicitly, similar to x86. Add this option.
-> >
-> > Fixes: 691efbedc60d ("arm64: vdso: use $(LD) instead of $(CC) to link VDSO")
-> > Signed-off-by: Laura Abbott <labbott@redhat.com>
-> > ---
-> >  arch/arm64/kernel/vdso/Makefile | 1 +
-> >  1 file changed, 1 insertion(+)
-> >
-> > diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
-> > index 744b9dbaba03..ca209103cd06 100644
-> > --- a/arch/arm64/kernel/vdso/Makefile
-> > +++ b/arch/arm64/kernel/vdso/Makefile
-> > @@ -13,6 +13,7 @@ targets := $(obj-vdso) vdso.so vdso.so.dbg
-> >  obj-vdso := $(addprefix $(obj)/, $(obj-vdso))
-> >
-> >  ldflags-y := -shared -nostdlib -soname=linux-vdso.so.1 \
-> > +               $(call ld-option, --build-id) \
-> >                 $(call ld-option, --hash-style=sysv) -n -T
-> >
-> >  # Disable gcov profiling for VDSO code
+
+
+> -----Original Message-----
+> From: Aisheng Dong
+> Sent: Thursday, May 16, 2019 6:40 PM
+> To: Anson Huang <anson.huang@nxp.com>; robh+dt@kernel.org;
+> mark.rutland@arm.com; shawnguo@kernel.org; s.hauer@pengutronix.de;
+> kernel@pengutronix.de; festevam@gmail.com; catalin.marinas@arm.com;
+> will.deacon@arm.com; rui.zhang@intel.com; edubezval@gmail.com;
+> daniel.lezcano@linaro.org; ulf.hansson@linaro.org; Daniel Baluta
+> <daniel.baluta@nxp.com>; Peng Fan <peng.fan@nxp.com>;
+> heiko@sntech.de; horms+renesas@verge.net.au; agross@kernel.org;
+> olof@lixom.net; bjorn.andersson@linaro.org; jagan@amarulasolutions.com;
+> enric.balletbo@collabora.com; marc.w.gonzalez@free.fr;
+> devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; linux-arm-
+> kernel@lists.infradead.org; linux-pm@vger.kernel.org
+> Cc: dl-linux-imx <linux-imx@nxp.com>
+> Subject: RE: [PATCH V12 3/5] thermal: imx_sc: add i.MX system controller
+> thermal support
 > 
+> [...]
 > 
-> I missed that. Sorry.
+> > > > +		if (!sensor)
+> > > > +			return -ENOMEM;
+> > > > +
+> > > > +		ret = thermal_zone_of_get_sensor_id(child,
+> > > > +						    &sensor_specs,
+> > >
+> > > It looks a bit strange why need sensor_specs as you even did not use it.
+> >
+> > It is because parsing the phandle arguments needs it, such as the
+> > thermal_zone_of_sensor_register() function needs this pointer to be
+> > passed back to check the elements are valid or NOT, so the API does
+> > NOT define it as local structure. The API NOT just return the sensor
+> > id, but also the of_phandle_args address, although we do NOT need it at all
+> here.
 > 
-> You can add  --build-id without $(call ld-option,...)
-> because it is supported by our minimal version of toolchain.
+> The main problem is this one introduced in 2/5 which needs get ack from
+> maintainer.
+> For me, I would suggest to make sensor_specs transparent to user if it's
+> really not needed by users.
 > 
-> See commit log of 1e0221374e for example.
+> Please try to make it either optional or hide to core users as well.
+> And I guess the later one is doable after a glance at the core code.
 
-Ok, so I'm ok folding in the diff below on top?
+OK, I will hide it to user if no other different comments.
 
-Will
+Anson.
 
---->8
-
-diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
-index ca209103cd06..fa230ff09aa1 100644
---- a/arch/arm64/kernel/vdso/Makefile
-+++ b/arch/arm64/kernel/vdso/Makefile
-@@ -12,9 +12,8 @@ obj-vdso := gettimeofday.o note.o sigreturn.o
- targets := $(obj-vdso) vdso.so vdso.so.dbg
- obj-vdso := $(addprefix $(obj)/, $(obj-vdso))
- 
--ldflags-y := -shared -nostdlib -soname=linux-vdso.so.1 \
--		$(call ld-option, --build-id) \
--		$(call ld-option, --hash-style=sysv) -n -T
-+ldflags-y := -shared -nostdlib -soname=linux-vdso.so.1 --hash-style=sysv \
-+		--build-id -n -T
- 
- # Disable gcov profiling for VDSO code
- GCOV_PROFILE := n
-
+> 
+> Regards
+> Dong Aisheng
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
