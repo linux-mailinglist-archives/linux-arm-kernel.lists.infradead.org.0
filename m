@@ -2,73 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 818A420FE1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 23:12:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD54F2100E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 23:33:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CFo5BXttn4+8nTKWouZORvJKwml2OfdHiAKcC83Y4CY=; b=F8J0RCQNl/18fz
-	HHf/oWvaxCb4gaZm0BjtnOs0imqQ7C/U/D0hn1Bib5BtjhscZ1cJ1J6PuE4ebVwtGD6jkMD9mngtK
-	wdE/6SiVRiPEMyVhBIDbWw2lniYXSr8bb2GbHEFI2nLEzDPvE9BoE4mgIX0/jXthf3/vI5y7rQfwB
-	Mh0yr8NSy3oiszVUkpRbtXPQlSArY850fLfhq798EmS1N7kEWwKKRlpFIVci+mX7GNRjXCYmhSMoG
-	Fws8qnTzLQ5Hhp22vLRsQZ6fI0pLjSc0uRcrD6f6D7XXTEWRTgITyR+JNls6I77t+kTBk5VzWK/zD
-	E3yzGbnf+jq5tl7QkQpg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=xltg3u6QLwP5dYmoQuMvioFehQfTbFx+dDMY732NLhY=; b=BHQ
+	motQ7QKAdgFATL3n3oWsitDPJBE8b13Dxos8qeszENkEteT3kYUwLpcw2Y4By4mdGEaarl4c8pwdb
+	bSTbCU6/0AHRVRtxajy1bbwC0nOKtZlUsOw2+2jmTurlb/3HfZq3qwIwPB/OfRhogEppoTZwGXGJt
+	WM9sDLWBMYQH2qD0D1w5MqCQ6Kd0Km1sIuKc7Is7Q5w8QAio9HNmVy8HJ5eT/EMy8lXbUQG6VEfAG
+	y2SRV3jlKTzitlEZT2QCeOCZOHDR4/r9kjxYgNyN6GQAfv6kMw6VC99Def03IrnKwFCGPg2MTWH4Q
+	qmUeNPa5VAcdZ7/Lewsw+wFsdyYuVIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRNfW-0000E1-Ba; Thu, 16 May 2019 21:12:02 +0000
-Received: from vps.xff.cz ([195.181.215.36])
+	id 1hRO0g-0006IE-V8; Thu, 16 May 2019 21:33:54 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRNfO-0000DZ-LR
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 21:11:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1558041111; bh=UWj0YrD5goghSNEmjJRSGrmoJDVqz/hOGHbwFS3q6Qs=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=E3leZ/bqG3v4DiQd1HKgqnMfkAa7iAxPpIzoIlBCCQj3c66wJJ6OgdrtNC5DtmCNa
- Cp3h0aZBMHwlX3d5eNFGjc6m7TcqfiXv5VMD65SoK/sQmsXpRcKtskw2OjsUYtitVD
- 0Im+OWUvLKknjoD+fI/QT1jHkX0x9EXUhozhOCzw=
-Date: Thu, 16 May 2019 23:11:51 +0200
-From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
-To: Frank Lee <tiny.windzz@gmail.com>
-Subject: Re: [PATCH 2/3] thermal: sun50i: add thermal driver for h6
-Message-ID: <20190516211151.qwac53shdjhlwj4p@core.my.home>
-Mail-Followup-To: Frank Lee <tiny.windzz@gmail.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Mark Rutland <mark.rutland@arm.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, catalin.marinas@arm.com,
- will.deacon@arm.com, bjorn.andersson@linaro.org,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- paulmck@linux.ibm.com, stefan.wahren@i2se.com,
- Linux PM <linux-pm@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Jagan Teki <jagan@amarulasolutions.com>,
- Andy Gross <andy.gross@linaro.org>, rui.zhang@intel.com,
- devicetree@vger.kernel.org, marc.w.gonzalez@free.fr,
- Eduardo Valentin <edubezval@gmail.com>,
- enric.balletbo@collabora.com, robh+dt@kernel.org,
- Jonathan.Cameron@huawei.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- olof@lixom.net, David Miller <davem@davemloft.net>
-References: <20190512082614.9045-1-tiny.windzz@gmail.com>
- <20190512082614.9045-3-tiny.windzz@gmail.com>
- <20190512133930.t5txssl7mou2gljt@flea>
- <CAEExFWvcMbiCJ4HD0UAtv1P6AuBJ=oUdmhu886BNZhrRz483Ug@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAEExFWvcMbiCJ4HD0UAtv1P6AuBJ=oUdmhu886BNZhrRz483Ug@mail.gmail.com>
+ id 1hRO0Z-0006HS-Ru; Thu, 16 May 2019 21:33:49 +0000
+Received: by mail-ot1-x342.google.com with SMTP id s19so4861479otq.5;
+ Thu, 16 May 2019 14:33:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=RLsybBG6sLbUggVAi7bXCzaTyEG1llzt4l8NvXBkWD0=;
+ b=kQKmujFhtAo72AB0snHcaDCif3+naULFQoilmAIC6cMGnoXGg8ewZ21JUB4lOVYrqn
+ ziRwjT6PsQTzua7xc3imb9UZ4NgeYhIEclPb/biFpQyoDbDFAidppg+ZW3qHPFUXx0ze
+ 5IfccJ4XP9KqRDLcfeOaEywCQOBdZZYgC0GDrZWN+2m3m3f856Op6UdFGfgCGpOJ6QAl
+ XXlLDRMeCUo3PgBP/hzld3xTl1ISadWuhZWoCvRqCNp1Qkc85SGbOHdmYMnoRrFT0++7
+ rMqZUYKbrckThZrps3MkJEXsX5U4dRBUE5FB9eYeCVbeOysRMEsHfr2+3ePDXRIYTIjy
+ zJoQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=RLsybBG6sLbUggVAi7bXCzaTyEG1llzt4l8NvXBkWD0=;
+ b=ZAkUJHrOq+2RC+5WJtMP04rQqjVHf3NCPo1o0kv1n+tmhs9EfPHfW4cu4nD9jsTsBP
+ F8lheR0j7NVgWzh0ROWYVkXvahGvmvjAer8xKwuEzIABpqYEqoii3g0liJ8yNqKj67H4
+ 2H1Sx39JjnEJa+WmK982WO5O29g14Lb7amuhCVoCivMKlS0oPQpw/50gUhc6xKAZMtoi
+ Dg8t5YK4P9achfB47HK76TnXptV3t4iAGuzkC9OTew0FKwVdve+5/p8G22ptSPGOQrJW
+ PVoPR/oOuFxtyFEwXMCxkcQpQWkfSuV0msfE0VegxqLClSGZt/blZRZD6TCgG37ay8wD
+ FYcA==
+X-Gm-Message-State: APjAAAVxdNLjtfBq6AGJYnVvsyzt5hSjB2gIzhbNoaVLRTIAe9tsid/7
+ j4omy2BArviBMLw2KEJ/ZN4=
+X-Google-Smtp-Source: APXvYqw0GRwZ6MwUBRMhC/o2jF6nAxZtFpTyzX3MJ5sppTLWqV91vvWY1S8vKT1erdagGfEuy/oJcg==
+X-Received: by 2002:a9d:7154:: with SMTP id y20mr7131771otj.369.1558042425977; 
+ Thu, 16 May 2019 14:33:45 -0700 (PDT)
+Received: from madhuleo ([2605:6000:1023:606d:10b5:228a:3958:f004])
+ by smtp.gmail.com with ESMTPSA id 69sm2282544oty.46.2019.05.16.14.33.44
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 16 May 2019 14:33:44 -0700 (PDT)
+From: Madhumitha Prabakaran <madhumithabiw@gmail.com>
+To: eric@anholt.net, stefan.wahren@i2se.com, gregkh@linuxfoundation.org,
+ f.fainelli@gmail.com, rjui@broadcom.com, sbranden@broadcom.com,
+ bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ devel@driverdev.osuosl.org, linux-kernel@vger.kernel.org
+Subject: [PATCH v2] Staging: bcm2835-camera: Prefer kernel types
+Date: Thu, 16 May 2019 16:33:40 -0500
+Message-Id: <20190516213340.9311-1-madhumithabiw@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_141155_209403_D1F5714E 
-X-CRM114-Status: GOOD (  12.31  )
+X-CRM114-CacheID: sfid-20190516_143347_929358_DF7E0E70 
+X-CRM114-Status: GOOD (  10.68  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (madhumithabiw[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -87,75 +95,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, catalin.marinas@arm.com,
- will.deacon@arm.com, bjorn.andersson@linaro.org, marc.w.gonzalez@free.fr,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>, paulmck@linux.ibm.com,
- stefan.wahren@i2se.com, Daniel Lezcano <daniel.lezcano@linaro.org>,
- Chen-Yu Tsai <wens@csie.org>, Jagan Teki <jagan@amarulasolutions.com>,
- Andy Gross <andy.gross@linaro.org>, rui.zhang@intel.com,
- devicetree@vger.kernel.org, Linux PM <linux-pm@vger.kernel.org>,
- Eduardo Valentin <edubezval@gmail.com>, olof@lixom.net, robh+dt@kernel.org,
- Jonathan.Cameron@huawei.com, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- enric.balletbo@collabora.com, David Miller <davem@davemloft.net>
+Cc: Madhumitha Prabakaran <madhumithabiw@gmail.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+Fix the warning issued by checkpatch
+Prefer kernel type 'u32' over 'uint32_t'.
+Along with that include a blank line after a declaration
+to maintain Linux kernel coding style.
 
-On Fri, May 17, 2019 at 01:51:56AM +0800, Frank Lee wrote:
-> > > +static int tsens_probe(struct platform_device *pdev)
-> > > +{
-> > > +     struct tsens_device *tmdev;
-> > > +     struct device *dev = &pdev->dev;
-> > > +     int ret;
-> > > +
-> > > +     tmdev = devm_kzalloc(dev, sizeof(*tmdev), GFP_KERNEL);
-> > > +     if (!tmdev)
-> > > +             return -ENOMEM;
-> > > +
-> > > +     tmdev->dev = dev;
-> > > +     tmdev->chip = of_device_get_match_data(&pdev->dev);
-> > > +     if (!tmdev->chip)
-> > > +             return -EINVAL;
-> > > +
-> > > +     ret = tsens_init(tmdev);
-> > > +     if (ret)
-> > > +             return ret;
-> > > +
-> > > +     ret = tsens_register(tmdev);
-> > > +     if (ret)
-> > > +             return ret;
-> > > +
-> > > +     ret = tmdev->chip->enable(tmdev);
-> > > +     if (ret)
-> > > +             return ret;
-> > >
-> > > +     platform_set_drvdata(pdev, tmdev);
-> >
-> > Your registration should be the very last thing you do. Otherwise, you
-> > have a small window where the get_temp callback can be called, but the
-> > driver will not be functional yet.
-> No. Anyway, ths data qcquisition is ms level.
+Signed-off-by: Madhumitha Prabakaran <madhumithabiw@gmail.com>
 
-Tz code can change in the future, and call the get_temp callback during
-registration, and this would break. It's better to be correct, than make
-dangerous assumptions. So platform_set_drvdata should be done somewhere 
-prior to init_resource.
+---
+Changes in v2:
+- Modified subject line
+- Included one more change in control.c
+---
+ drivers/staging/vc04_services/bcm2835-camera/controls.c | 3 ++-
+ drivers/staging/vc04_services/bcm2835-camera/mmal-msg.h | 4 ++--
+ 2 files changed, 4 insertions(+), 3 deletions(-)
 
-Enable should be after register though. Because otherwise you may be calling
-tz update on non-registered tz from an interrupt handler.
+diff --git a/drivers/staging/vc04_services/bcm2835-camera/controls.c b/drivers/staging/vc04_services/bcm2835-camera/controls.c
+index 74410fedffad..5ad957e23895 100644
+--- a/drivers/staging/vc04_services/bcm2835-camera/controls.c
++++ b/drivers/staging/vc04_services/bcm2835-camera/controls.c
+@@ -52,7 +52,8 @@ static const s64 ev_bias_qmenu[] = {
+ static const s64 iso_qmenu[] = {
+ 	0, 100000, 200000, 400000, 800000,
+ };
+-static const uint32_t iso_values[] = {
++
++static const u32 iso_values[] = {
+ 	0, 100, 200, 400, 800,
+ };
+ 
+diff --git a/drivers/staging/vc04_services/bcm2835-camera/mmal-msg.h b/drivers/staging/vc04_services/bcm2835-camera/mmal-msg.h
+index d1c57edbe2b8..90793c9f9a0f 100644
+--- a/drivers/staging/vc04_services/bcm2835-camera/mmal-msg.h
++++ b/drivers/staging/vc04_services/bcm2835-camera/mmal-msg.h
+@@ -309,7 +309,7 @@ struct mmal_msg_port_parameter_set {
+ 	u32 port_handle;      /* port */
+ 	u32 id;     /* Parameter ID  */
+ 	u32 size;      /* Parameter size */
+-	uint32_t value[MMAL_WORKER_PORT_PARAMETER_SPACE];
++	u32 value[MMAL_WORKER_PORT_PARAMETER_SPACE];
+ };
+ 
+ struct mmal_msg_port_parameter_set_reply {
+@@ -331,7 +331,7 @@ struct mmal_msg_port_parameter_get_reply {
+ 	u32 status;           /* Status of mmal_port_parameter_get call */
+ 	u32 id;     /* Parameter ID  */
+ 	u32 size;      /* Parameter size */
+-	uint32_t value[MMAL_WORKER_PORT_PARAMETER_SPACE];
++	u32 value[MMAL_WORKER_PORT_PARAMETER_SPACE];
+ };
+ 
+ /* event messages */
+-- 
+2.17.1
 
-> > > +     return ret;
-> > > +}
-> > > +
-
-regards,
-	o.
 
 _______________________________________________
 linux-arm-kernel mailing list
