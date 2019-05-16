@@ -2,104 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40DE620597
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 13:48:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DED72059A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 13:50:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FvoZ4wv72mlDl6h89nTByFjoHUc9/Gz9LNDTc/lCzNM=; b=SnXV5NTUdejvxg
-	GdpgkA7fTVOVUbYoyzAPtohTPpm1ic1nHKy+sUnuT/IxabTtwtgA+jTt2tU5/D4AaRlWU+8IKA7lm
-	6AvOnqU9gllvtmfrYzHygcC8yyv0prl6T3zYILRj47BcMbSGZc4BnA3hjtmDtHa3cZz/xe5pQwGu5
-	ik4d7p68q/iy4CPw9mr7Wr1jr5d3Z0vdGbFQKNLu1owkPP+HXN/V+4TuI0LsX/alVsu0SUGsfl34+
-	hgfIL0lBjx3TeU68rXNZW26r0erQRxYaRiEv6qMwQUvNaeUXt74/7bJBbov9yiUZjYEyqysrAguS3
-	KTVEc0yMyFuNNDqCVaxQ==;
+	List-Owner; bh=bKCxcO/WhHIwBY95yy5IubasWVFNGZsXChuGmoLUkRM=; b=sXbnUCslrisnRz
+	f+OZdWk+P2p0jYwzqKFxCurZhdbsKLNOfJYs9vl+Joz3gtwB98eec1FGKca/duI3FMjogWrSEeGhR
+	2f6nuylE9HNKAgISGwMTxbhTp35pQjqwKExHooatcXjJLNjplarFnouof/wG9tSjhoq3vdoY4lgK9
+	2pcc7vrB0ipyU/gmDTuu9Z+sW2tTPG9ERhTyOpk2lYXRf95dCEngZm4TajzP56rFykL9UlcVxAa0O
+	uJmVOAIocp0vDX4TQrV+y1cCS1ebH+8JhKLmaGjCAJs3NCjcEjQc82v+g1FhXTKnVuZL4D+8XnfCK
+	Lwhlce7mfGfUuyUjrEnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hREsD-0005ww-MT; Thu, 16 May 2019 11:48:33 +0000
-Received: from mail-eopbgr50077.outbound.protection.outlook.com ([40.107.5.77]
- helo=EUR03-VE1-obe.outbound.protection.outlook.com)
+	id 1hREuN-0007nl-T7; Thu, 16 May 2019 11:50:47 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hREqu-0004KA-O7; Thu, 16 May 2019 11:47:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=i1zV2I3hbXMl6nuFQu7WQV+7SoBRA5LIURRfak/wWmg=;
- b=o8bAaBeMpWScsd9PD8EGpIl79nWHDYO0Z7YHzWsRK0H/fAr58ApZUicQSjNdW+MgHpY2ODpUQ0UlkFl6OVKQdfECeg81NUiPmV2JutGtBB4Y4HENLfYcElMp+u/hTqHKHt/BKPliL0MFaA1lOJwVY7eMZWzN73pxtadvSdUrxr0=
-Received: from AM0PR0402MB3556.eurprd04.prod.outlook.com (52.133.43.147) by
- AM0PR0402MB3570.eurprd04.prod.outlook.com (52.133.46.11) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1878.24; Thu, 16 May 2019 11:47:09 +0000
-Received: from AM0PR0402MB3556.eurprd04.prod.outlook.com
- ([fe80::f891:76d:8a6a:3dfd]) by AM0PR0402MB3556.eurprd04.prod.outlook.com
- ([fe80::f891:76d:8a6a:3dfd%2]) with mapi id 15.20.1900.010; Thu, 16 May 2019
- 11:47:09 +0000
-From: Kuldeep Singh <kuldeep.singh@nxp.com>
-To: "shawnguo@kernel.org" <shawnguo@kernel.org>, "devicetree@vger.kernel.org"
- <devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-mtd@lists.infradead.org"
- <linux-mtd@lists.infradead.org>
-Subject: [PATCH] arm64: dts: ls208x: Remove non-compatible driver device from
- qspi node
-Thread-Topic: [PATCH] arm64: dts: ls208x: Remove non-compatible driver device
- from qspi node
-Thread-Index: AQHVC90YmacDPCnlVkuTbUWoWNq11Q==
-Date: Thu, 16 May 2019 11:47:09 +0000
-Message-ID: <20190516114807.30817-4-kuldeep.singh@nxp.com>
-References: <20190516114807.30817-1-kuldeep.singh@nxp.com>
-In-Reply-To: <20190516114807.30817-1-kuldeep.singh@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: PN1PR01CA0117.INDPRD01.PROD.OUTLOOK.COM (2603:1096:c00::33)
- To AM0PR0402MB3556.eurprd04.prod.outlook.com
- (2603:10a6:208:17::19)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=kuldeep.singh@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: git-send-email 2.17.1
-x-originating-ip: [92.120.1.68]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 952071e7-6a0b-4ecf-1ecc-08d6d9f43a59
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR0402MB3570; 
-x-ms-traffictypediagnostic: AM0PR0402MB3570:
-x-ms-exchange-purlcount: 2
-x-microsoft-antispam-prvs: <AM0PR0402MB35703E569289787C1ADA4972E00A0@AM0PR0402MB3570.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:226;
-x-forefront-prvs: 0039C6E5C5
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(39860400002)(346002)(396003)(376002)(366004)(136003)(189003)(199004)(478600001)(5660300002)(6486002)(26005)(73956011)(4326008)(1076003)(6506007)(66066001)(386003)(44832011)(4744005)(102836004)(2201001)(86362001)(446003)(66556008)(2616005)(486006)(11346002)(64756008)(476003)(53936002)(66476007)(66946007)(66446008)(3846002)(6436002)(71200400001)(71190400001)(52116002)(6116002)(76176011)(99286004)(305945005)(68736007)(2906002)(14444005)(256004)(8676002)(110136005)(6306002)(54906003)(50226002)(81166006)(6512007)(36756003)(7736002)(316002)(25786009)(81156014)(8936002)(186003)(14454004)(966005)(2501003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR0402MB3570;
- H:AM0PR0402MB3556.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: duqHK3SqykWZbO6LKnYxAJahLPOYu6f5RoIOnGZVAjEtxJNl1WOH2/mcLa6cZSsnWtCK0p7XL5zREmT7RkJwFaIgBgkHBZ327g/Cp8MOIrmfCsdhMxb6HmF/xvEfuAaoZe50kPuaAdJBF/xxmbJHb0Xig+d2UqZHO5zpxInVwiTJ46SKefTLwLqlDZTk5W1oW3Dx29KzxShYIny3Ys/JXZN5QV1F1LcigY8NwwyQiMPQHBkk2ye9N8ivh5+Ov8TH/RJSDAZQDQQ0RJ1U1ytRExfLbZisFpuhpWZFFrnNDMMYw+eo7QnugIW1MOWyk+TccEWuRvNo6N/+sc/TwwYNP1jjzIeFUieIdUtm8fzMiewowrsFEZuP2EAHIpoH3NXxIK9tvl9yiiwS+89Vxlu9PO5mhKqTUGTcTwlveDxd4fk=
+ id 1hREuG-0007nN-7f
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 11:50:41 +0000
+Received: by mail-lj1-x244.google.com with SMTP id w1so2856730ljw.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 May 2019 04:50:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ZfZWKHa7k32vSF2Rgion0TnHTAjuA1aCE2qsRonqXP0=;
+ b=axwfrku8av26C74Qcnj8NMFl8LQW3ytVsyxJwHyHrABKFSul4eTIQRAgniBSpRNR2T
+ SUCKllbRVUhjH9a5M8vQ2ZctPU2aRCPW2zzHfrExJfmGQGGJKj+UZ8gMQKIIKMCg8q+W
+ d71EwYTR3Nq/rACyFL4CAxYsp4QgSeBRv2U7Q+fNBUsAFO7pdw4soy6W9pOYAyCeXSbD
+ CqdAcuzevt6wp/8joMtEkxOTMm36jy27fYgJD0kUVC1x24NqeVW7JvAfFlnUf7AVqtb0
+ wSTH5rhMPlygfwvgCPaK4TGfEgwd4+eSNjsCqRVenL0HNST+g99Optp097VsBxKhX9Dm
+ 4j2A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ZfZWKHa7k32vSF2Rgion0TnHTAjuA1aCE2qsRonqXP0=;
+ b=N6fovi5iasYEs2EqQT+vRVaxV91K8f2Y863ScxwDsefRGDeWjJOupds2xu1Ts3HzO0
+ A6VjWLWWQJrCaufBPnypY3HtlnEH63n9x1SbIvYUjBE6/Vec8hz7ezKQPrguxYtdngmo
+ xGnWh0/pjAmAfMqXeLHmrgdFf+wFeyYLsneq/ffBPF6QHLBgC1OV93gGEuSUAYXe2orV
+ RiAR/VUREUtkxCIDgs8O6N8LxbSojiCJ2dml2SNVsQbIP8BLW6zPU+ka1QA234hck/y4
+ jZUxtMGDhnD6yq1SsktkzAfBzsrEUKF73XsFQIewOyBJUEIJGeh33dfTvrXDbVgUfNV9
+ j6Bw==
+X-Gm-Message-State: APjAAAV33Unrx7CBtq3oeJO0sVlObe0Y9s71Evu/Mdmx0ZGsd9OLLVdU
+ FpBqOCljheHvjrf2+nmhEuCxNfSVcx4chRNrE/rNLg==
+X-Google-Smtp-Source: APXvYqwaxRjeq7pjR9npAXmwgyhZKdqhC73PwgIVTdnHjqNpDaNtDJResi7MGSU8C3U2sKn8oJY/87TKdcHLFfT0UHI=
+X-Received: by 2002:a2e:60a:: with SMTP id 10mr3127929ljg.126.1558007438447;
+ Thu, 16 May 2019 04:50:38 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 952071e7-6a0b-4ecf-1ecc-08d6d9f43a59
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 May 2019 11:47:09.6658 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR0402MB3570
+References: <cover.1553828158.git.vilhelm.gray@gmail.com>
+ <1cc8b30bb3954ca2a0961ffb0a2eed8a005ed670.1553828158.git.vilhelm.gray@gmail.com>
+In-Reply-To: <1cc8b30bb3954ca2a0961ffb0a2eed8a005ed670.1553828158.git.vilhelm.gray@gmail.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Thu, 16 May 2019 13:50:26 +0200
+Message-ID: <CACRpkdbCt1PAJ1rBvKvZ2ydLgJmKXuLN4mRtSU8CaW=U7EcFbQ@mail.gmail.com>
+Subject: Re: [PATCH v14 01/11] bitops: Introduce the for_each_set_clump8 macro
+To: William Breathitt Gray <vilhelm.gray@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_044713_068698_4A45B8E7 
-X-CRM114-Status: GOOD (  11.37  )
+X-CRM114-CacheID: sfid-20190516_045040_284881_FE9942E6 
+X-CRM114-Status: GOOD (  10.35  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.5.77 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -119,40 +91,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kuldeep Singh <kuldeep.singh@nxp.com>,
- "broonie@kernel.org" <broonie@kernel.org>, Ashish Kumar <ashish.kumar@nxp.com>,
- "bbrezillon@kernel.org" <bbrezillon@kernel.org>
+Cc: linux-arch@vger.kernel.org, Phil Reid <preid@electromag.com.au>,
+ Arnd Bergmann <arnd@arndb.de>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Linux PM list <linux-pm@vger.kernel.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>, Lukas Wunner <lukas@wunner.de>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since device properties are different, so remove fsl, ls1021a-qspi
+On Fri, Mar 29, 2019 at 4:03 AM William Breathitt Gray
+<vilhelm.gray@gmail.com> wrote:
 
-Signed-off-by: Ashish Kumar <ashish.kumar@nxp.com>
-Signed-off-by: Kuldeep Singh <kuldeep.singh@nxp.com>
----
-Dependency on https://patchwork.ozlabs.org/patch/1100471/
-Dependency on https://patchwork.ozlabs.org/patch/1100472/
+> This macro iterates for each 8-bit group of bits (clump) with set bits,
+> within a bitmap memory region. For each iteration, "start" is set to the
+> bit offset of the found clump, while the respective clump value is
+> stored to the location pointed by "clump". Additionally, the
+> bitmap_get_value8 and bitmap_set_value8 functions are introduced to
+> respectively get and set an 8-bit value in a bitmap memory region.
+>
+> Suggested-by: Andy Shevchenko <andy.shevchenko@gmail.com>
+> Suggested-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+> Suggested-by: Lukas Wunner <lukas@wunner.de>
+> Cc: Arnd Bergmann <arnd@arndb.de>
+> Cc: Andrew Morton <akpm@linux-foundation.org>
+> Cc: Linus Walleij <linus.walleij@linaro.org>
+> Acked-by: Andy Shevchenko <andy.shevchenko@gmail.com>
+> Signed-off-by: William Breathitt Gray <vilhelm.gray@gmail.com>
 
- arch/arm64/boot/dts/freescale/fsl-ls208xa.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls208xa.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls208xa.dtsi
-index d7e78dcd153d..8e5ba513b24f 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls208xa.dtsi
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls208xa.dtsi
-@@ -606,7 +606,7 @@
- 
- 		qspi: spi@20c0000 {
- 			status = "disabled";
--			compatible = "fsl,ls2080a-qspi", "fsl,ls1021a-qspi";
-+			compatible = "fsl,ls2080a-qspi";
- 			#address-cells = <1>;
- 			#size-cells = <0>;
- 			reg = <0x0 0x20c0000 0x0 0x10000>,
--- 
-2.17.1
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
