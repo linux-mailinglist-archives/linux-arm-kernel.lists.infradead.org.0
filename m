@@ -2,37 +2,37 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8341C20113
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 10:12:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3043C20119
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 10:12:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R1GjPee8EmM+2aAiM9Frz2KWjlwEmDyu3PbvMkFbJT8=; b=GcfuQA4F3rCiID
-	/lnYVD9YTZNR3eoavpZmaBRwz6kEz/3b7iGJ595ecTpE7RZo7hgApwN9omjd1LT59Xu4s+bTxg/3w
-	HEFM0IuAfCXDVoI8mJlp42s+D9LnHZC/LwugerQhGZrcYxH1o+rtwMp6Tid68buIKuoejsJJwLECd
-	q8nUcz5kRpeMhn2ym0fHWi2tChiEtfVJiPXZdIJSHc7bWlsjN831AIzCqRpnR28TXIVnb0YwwaTR8
-	88mwuXzZ/HQrH52PZw/ELsfT9j0Pyu3q/hST4SAq2gKO4+gl4ex0LAH9jk/w5C53CGEE8d1w7kwLZ
-	Yqirza4ExC4ep3mWexWw==;
+	List-Owner; bh=R999ku/bupXFlJphPPliQG67074ZpBhMZvHi7TenoGU=; b=n01XRYhe83QCW/
+	TETDmSSTFH5ERylimekeLmNR1mluv5vaSwEoBktLKAyf0AUpVFhXcpuejJzeQWVaD3b5TTrq2HHpm
+	hPIilWFpDu4yNMTmw/KCVfjSfIOAUucVNkekODOtNKtnJ3HEOEidpTkCLI/9lzoHnBOPrnBGl3lYm
+	Fe6+Yvm38zp2KyxYWkrr8BhzCI+U703Y81MZfct7RjkVHfmtc32j7gyACZaTicM2brASRqC/ksUp+
+	Lj7i0oftKehZcGoAJHlARXMUsjVf8y1k8oY3mT6OK6SHuRqGpZysFS1DYBEk07tu1aqCoYX705oMQ
+	OIr/jmp/B0AL98s0S8wQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRBUs-0000IT-Un; Thu, 16 May 2019 08:12:14 +0000
+	id 1hRBVA-0000cE-0D; Thu, 16 May 2019 08:12:32 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRBU6-0007p9-9s; Thu, 16 May 2019 08:11:27 +0000
-X-UUID: 9073a198b92846bdbebad5e208b4fe93-20190516
-X-UUID: 9073a198b92846bdbebad5e208b4fe93-20190516
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ id 1hRBU4-0007p9-CA; Thu, 16 May 2019 08:11:26 +0000
+X-UUID: 90029308ecd2461a87e2f476e16efc0d-20190516
+X-UUID: 90029308ecd2461a87e2f476e16efc0d-20190516
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <chun-hung.wu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 725296121; Thu, 16 May 2019 00:11:16 -0800
-Received: from mtkmbs03n1.mediatek.inc (172.21.101.181) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 16 May 2019 01:11:15 -0700
+ with ESMTP id 834763790; Thu, 16 May 2019 00:11:17 -0800
+Received: from mtkmbs03n2.mediatek.inc (172.21.101.182) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 16 May 2019 01:11:16 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs03n1.mediatek.inc (172.21.101.181) with Microsoft SMTP Server (TLS) id
+ mtkmbs03n2.mediatek.inc (172.21.101.182) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Thu, 16 May 2019 16:11:13 +0800
 Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
@@ -42,17 +42,19 @@ To: Jonathan Cameron <jic23@kernel.org>, Hartmut Knaack <knaack.h@gmx.de>,
  Lars-Peter Clausen <lars@metafoo.de>, Peter Meerwald-Stadler
  <pmeerw@pmeerw.net>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
  <mark.rutland@arm.com>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH 2/4] iio: adc: mediatek: mt6765 upstream driver
-Date: Thu, 16 May 2019 16:10:45 +0800
-Message-ID: <1557994247-16739-3-git-send-email-chun-hung.wu@mediatek.com>
+Subject: [PATCH 3/4] iio: adc: mediatek: SET_LATE_SYSTEM_SLEEP_PM_OPS support
+Date: Thu, 16 May 2019 16:10:46 +0800
+Message-ID: <1557994247-16739-4-git-send-email-chun-hung.wu@mediatek.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1557994247-16739-1-git-send-email-chun-hung.wu@mediatek.com>
 References: <1557994247-16739-1-git-send-email-chun-hung.wu@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: F9CC925050B55AC7B0452B4120ABC255673E25AD8C095D8DABCA74CE87BE3D7E2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_011126_362107_8D79EF24 
-X-CRM114-Status: GOOD (  14.38  )
+X-CRM114-CacheID: sfid-20190516_011124_418171_9038EC5C 
+X-CRM114-Status: UNSURE (   9.49  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -83,119 +85,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-1. Add calibrated sample data support
-2. Use of_match_table to decide each platform's
-   feature set
+  Move suspend/resume to late_suspend and
+early_resume to gurantee users can use auxadc
+driver at suspend/resume stage.
 
 Signed-off-by: Chun-Hung Wu <chun-hung.wu@mediatek.com>
 ---
- drivers/iio/adc/mt6577_auxadc.c | 54 +++++++++++++++++++++++++++++++----------
- 1 file changed, 41 insertions(+), 13 deletions(-)
+ drivers/iio/adc/mt6577_auxadc.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/iio/adc/mt6577_auxadc.c b/drivers/iio/adc/mt6577_auxadc.c
-index 95d76ab..e1bdcc0 100644
+index e1bdcc0..58d7cb2 100644
 --- a/drivers/iio/adc/mt6577_auxadc.c
 +++ b/drivers/iio/adc/mt6577_auxadc.c
-@@ -42,10 +42,26 @@
- #define MT6577_AUXADC_POWER_READY_MS          1
- #define MT6577_AUXADC_SAMPLE_READY_US         25
+@@ -326,9 +326,10 @@ static int mt6577_auxadc_remove(struct platform_device *pdev)
+ 	return 0;
+ }
  
-+struct mtk_auxadc_compatible {
-+	bool sample_data_cali;
-+	bool check_global_idle;
+-static SIMPLE_DEV_PM_OPS(mt6577_auxadc_pm_ops,
+-			 mt6577_auxadc_suspend,
+-			 mt6577_auxadc_resume);
++static const struct dev_pm_ops mt6577_auxadc_pm_ops = {
++	SET_LATE_SYSTEM_SLEEP_PM_OPS(mt6577_auxadc_suspend,
++				     mt6577_auxadc_resume)
 +};
-+
- struct mt6577_auxadc_device {
- 	void __iomem *reg_base;
- 	struct clk *adc_clk;
- 	struct mutex lock;
-+	const struct mtk_auxadc_compatible *dev_comp;
-+};
-+
-+static const struct mtk_auxadc_compatible mt8173_compat = {
-+	.sample_data_cali = false,
-+	.check_global_idle = true,
-+};
-+
-+static const struct mtk_auxadc_compatible mt6765_compat = {
-+	.sample_data_cali = true,
-+	.check_global_idle = false,
- };
- 
- #define MT6577_AUXADC_CHANNEL(idx) {				    \
-@@ -74,6 +90,11 @@ struct mt6577_auxadc_device {
- 	MT6577_AUXADC_CHANNEL(15),
- };
- 
-+static int mt_auxadc_get_cali_data(int rawdata, bool enable_cali)
-+{
-+	return rawdata;
-+}
-+
- static inline void mt6577_auxadc_mod_reg(void __iomem *reg,
- 					 u32 or_mask, u32 and_mask)
- {
-@@ -120,15 +141,17 @@ static int mt6577_auxadc_read(struct iio_dev *indio_dev,
- 	/* we must delay here for hardware sample channel data */
- 	udelay(MT6577_AUXADC_SAMPLE_READY_US);
- 
--	/* check MTK_AUXADC_CON2 if auxadc is idle */
--	ret = readl_poll_timeout(adc_dev->reg_base + MT6577_AUXADC_CON2, val,
--				 ((val & MT6577_AUXADC_STA) == 0),
--				 MT6577_AUXADC_SLEEP_US,
--				 MT6577_AUXADC_TIMEOUT_US);
--	if (ret < 0) {
--		dev_err(indio_dev->dev.parent,
--			"wait for auxadc idle time out\n");
--		goto err_timeout;
-+	if (adc_dev->dev_comp->check_global_idle) {
-+		/* check MTK_AUXADC_CON2 if auxadc is idle */
-+		ret = readl_poll_timeout(adc_dev->reg_base + MT6577_AUXADC_CON2,
-+					 val, ((val & MT6577_AUXADC_STA) == 0),
-+					 MT6577_AUXADC_SLEEP_US,
-+					 MT6577_AUXADC_TIMEOUT_US);
-+		if (ret < 0) {
-+			dev_err(indio_dev->dev.parent,
-+				"wait for auxadc idle time out\n");
-+			goto err_timeout;
-+		}
- 	}
- 
- 	/* read channel and make sure ready bit == 1 */
-@@ -163,6 +186,8 @@ static int mt6577_auxadc_read_raw(struct iio_dev *indio_dev,
- 				  int *val2,
- 				  long info)
- {
-+	struct mt6577_auxadc_device *adc_dev = iio_priv(indio_dev);
-+
- 	switch (info) {
- 	case IIO_CHAN_INFO_PROCESSED:
- 		*val = mt6577_auxadc_read(indio_dev, chan);
-@@ -172,6 +197,8 @@ static int mt6577_auxadc_read_raw(struct iio_dev *indio_dev,
- 				chan->channel);
- 			return *val;
- 		}
-+		if (adc_dev->dev_comp->sample_data_cali)
-+			*val = mt_auxadc_get_cali_data(*val, true);
- 		return IIO_VAL_INT;
- 
- 	default:
-@@ -304,10 +331,11 @@ static SIMPLE_DEV_PM_OPS(mt6577_auxadc_pm_ops,
- 			 mt6577_auxadc_resume);
  
  static const struct of_device_id mt6577_auxadc_of_match[] = {
--	{ .compatible = "mediatek,mt2701-auxadc", },
--	{ .compatible = "mediatek,mt2712-auxadc", },
--	{ .compatible = "mediatek,mt7622-auxadc", },
--	{ .compatible = "mediatek,mt8173-auxadc", },
-+	{ .compatible = "mediatek,mt2701-auxadc", .data = &mt8173_compat},
-+	{ .compatible = "mediatek,mt2712-auxadc", .data = &mt8173_compat},
-+	{ .compatible = "mediatek,mt7622-auxadc", .data = &mt8173_compat},
-+	{ .compatible = "mediatek,mt8173-auxadc", .data = &mt8173_compat},
-+	{ .compatible = "mediatek,mt6765-auxadc", .data = &mt6765_compat},
- 	{ }
- };
- MODULE_DEVICE_TABLE(of, mt6577_auxadc_of_match);
+ 	{ .compatible = "mediatek,mt2701-auxadc", .data = &mt8173_compat},
 -- 
 1.9.1
 
