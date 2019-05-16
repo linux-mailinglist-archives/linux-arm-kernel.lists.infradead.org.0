@@ -2,92 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85B9F20D20
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 18:35:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B275820D26
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 18:37:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I/ezQI1ulolXPyv9Utwwh+hRHI8pndCscLubx7MyHAE=; b=usE/tztDZkFmKT
-	AWynoEfE3kelKjBRokOMxszNr5YCjvro/oaiz8r/WT3Po3h1+MFaLTSAI4ligJtrsrz/kVKZyK/8X
-	ZrHTma2CjVthRSzOs5O+F6sdTrS72DeS9OFK7FGtHWqMxlwfcFtWw6wzQpOsT3JBq1aZuEwj3ge2p
-	qIpwmpcppGVZuDaJGaWByrHskqaHYN9WW9OggFS0b+PfT2q3yj/v6mBC/iJDf9+ylN0DgOTrT3Xaf
-	+FngPzUoWwE0FGUNKODMxecgqUW/Jm26AbY9RImTYDld5NrUHWAu6Au2KrSfgMNOXKXP4jAATh3vz
-	YWkmY1iqzAecslMkuVrw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=6DZbZheqjx7yDLXwnTJ53TKO2j2YZLNyc95ySmhVyZs=; b=bkI
+	+Rl6xH+iJhq3cIkT7Znk1uEygfig8bfaZDO1n2mgiPTRFlKWFgZsC9VFh5Oy+K3gEZHj9WNxlmSm/
+	sFd6nTeG5F7n9jw+szg9JzxYBsaRM2VxKvzOf1Noz64W3+/oygwd6Ibd366PNWvC9L9JuMemJmB7T
+	JWDFNEO3j9hRIxZHn3wETW7zKfAR8H7Ey/arZkOrny4cQ96vrHnok0VBP4JVZXJnq2GrgaMV0SaAy
+	1cK3CS1nt1euZa6kwGKlS0qmLTwskpeQJisyr6D5lhjxDq10E+7jgeyxxQZfJpWx86V0ixYewmsLX
+	GOVAgR4Z51t8Pt2Lq537Oypp0vG9fEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRJM1-0003tu-Ee; Thu, 16 May 2019 16:35:37 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hRJNk-0004GO-VV; Thu, 16 May 2019 16:37:24 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRJLs-0003tE-PA
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 16:35:30 +0000
-Received: by mail-pf1-x443.google.com with SMTP id u17so2121947pfn.7
+ id 1hRJNb-0004EF-3R
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 16:37:17 +0000
+Received: by mail-wm1-x341.google.com with SMTP id 15so100772wmg.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 May 2019 09:35:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=9J9a2LzssNOHKN9GbYjxdjZY+TIqtIW8RPeTXwMxezA=;
- b=qR6Y1RLypIHQr2YPzAk8GpNVBjwc4L5nEdW/ex0nmNmkVo/WwDQy1FrRZLP2h1qp7k
- PGmjKb6Oqbjuu8AdQkHCsmRc7GTWWt2mjyw4TTboutPDVoACPunBKROxB8bXZMc63IKB
- LjsPTilg+C4hsTZbBiNT52ieyyelwr654xuw/vXZOd/sPdHe3yC3W1fioPqjzM04W4iw
- 4OPSmjJyt0u8yUBefe36+UrsAHX++oDf0LGM3xPB4PmYIkOcR1FK3J9L8GJUm+Yx9S3O
- +9lABDVEmY3tDFYXnamhK/BuMDLDmr3pYehi+5YnkEIEzI1UzRB4weU2zotTzPvXZmdz
- D9LA==
+ Thu, 16 May 2019 09:37:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id;
+ bh=ThsUgCnRiH2xV7RaQ5eyyKQF0jGHePi2XouhM2DCtVc=;
+ b=qi6MyDpzUBi/YhH3EIVRa9In2VP4i8/Rqo8r4u+l2ILm5g/G2aH1ZkO2/tkZJzAz+4
+ fP3htptmdBLOK1x23VJVUHtY2KnUbze/RsIZyaDFGvx7uSAOWifUSoQUrBeEOo6Z9JEx
+ UJBXkkffA169xraI5y96uDyl+P+i1AqTKrqfqcXDZeVKHP44f4+RfHrbVPDj2EzMhBij
+ bZCJ7Po/trm6o16eQHuuiwHfXslowAzpx7CsB1A1XWwMYZo348VaoFUGdTxC8RnlSsB+
+ /iCrhFXuRYx21k05rd3DgNt4GDVe4/Huxf5QAxwLlbuPQbm74I5EsNkyp3ap1yJF/89E
+ OY7A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=9J9a2LzssNOHKN9GbYjxdjZY+TIqtIW8RPeTXwMxezA=;
- b=IOUKB9yVe1pUuZaHV3xQoi2Y+5Sgw+O34M7xg8bk3KDkh2w5xwbY4DsXLi2YIs+mrS
- y50Y3TVcHkwlqtFc201G9GlnKz0Uxhq6hCFf10J+HpssMm8IP0Bq0OX5uV9DbSOJcKxH
- F/YXUZTCp8UdTaHeDgu6VcQFP1d+3sV+8BqtS7+98cOdWvrsNPwSoaLtxfupbUjYjgIO
- x9ne12oavBCs94ZP4Woj1SHdixFfAmSAHyRa4nzwpylq8+ZYbNvRo7ifNAtZZY/z2pEY
- acNRRZL6D+/NxBR8CoN6SpZKEsc46wK7ykYi/4feWWQ48yTZZpj6buYjwrGgF/1EoPOh
- x2JA==
-X-Gm-Message-State: APjAAAVnh2ul5bjwIuc8KFm8NQsNe45SuWKuINcq+NoHcriLl6/hIQBF
- 0JBtcN0PlQWS9r9tErOw8pkFj1KKWrNrwbevJRi6kw==
-X-Google-Smtp-Source: APXvYqxyN5EOxa0PrXjKgoD0rTtQ/ipxRkM3fY5lzBGw8U4s4Dco01va6mjU04w4hYtLsK2wtFzvy6r0gsdwMO1l+lc=
-X-Received: by 2002:a62:7a8f:: with SMTP id
- v137mr55367829pfc.243.1558024525130; 
- Thu, 16 May 2019 09:35:25 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190516064304.24057-1-olof@lixom.net>
- <20190516064304.24057-4-olof@lixom.net>
- <CAHk-=whb-KituxcvM6ZPuXqyPX+rJENb8cnGCPbGE9pyqwOmXA@mail.gmail.com>
-In-Reply-To: <CAHk-=whb-KituxcvM6ZPuXqyPX+rJENb8cnGCPbGE9pyqwOmXA@mail.gmail.com>
-From: Patrick Venture <venture@google.com>
-Date: Thu, 16 May 2019 09:35:14 -0700
-Message-ID: <CAO=notySOzSjJS9jBCF9fyXEUK7VDZQiJp3WaSLs4Y7X7PC8=Q@mail.gmail.com>
-Subject: Re: [GIT PULL 3/4] ARM: SoC-related driver updates
-To: Linus Torvalds <torvalds@linux-foundation.org>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=ThsUgCnRiH2xV7RaQ5eyyKQF0jGHePi2XouhM2DCtVc=;
+ b=B5kNZxUwQY8TOlTHSJtfzY3kXD6y1dl/7TcFWIWousGV7sC8Aunxfhopm7jsBunqgL
+ ZV9xkf4KeUI3IzZ5VDlgfEoZAEKBXlxslGzmgEJBLGkUEIDv/AqiMl/3QbC6KXe+EogD
+ JNW46ZqmdCcBPkuXDvaCM9EDXdGmzKwK2gMpKRVH4Jfd0ykh1NcOAHqiuxORZ+MitOQ/
+ w+qOKh26J/vh089Nb8O0ITq5ftzjK2zcynBezy85zqK4qU+gP4wmh3hbLLXuZulgUI9z
+ xOcfaCAuewMXf6GT5dmaW8SFAPRdceRsu4f2OrKNB4Y67c41uf0E3DfTEJujhodiYk4T
+ p9Ig==
+X-Gm-Message-State: APjAAAWZVAXqYvHmdXrT8F6bVAb2sAJ0Ag1g3ePaKXxzgNqfLeLhhFkI
+ 9fskh0nnPSf1SapQtMar/Jm0Bg==
+X-Google-Smtp-Source: APXvYqybn3Y6301Af98XjzaiHZSg4KGov0qU7mWWN97Wd731o4jzd/edN9W3fJ1YKaXz9qJGZniWPg==
+X-Received: by 2002:a1c:1f47:: with SMTP id f68mr18234178wmf.57.1558024632927; 
+ Thu, 16 May 2019 09:37:12 -0700 (PDT)
+Received: from loys-ubuntu-BY1835A49200471.thefacebook.com
+ ([2620:10d:c092:180::1:e504])
+ by smtp.googlemail.com with ESMTPSA id x68sm2112515wmf.13.2019.05.16.09.37.10
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Thu, 16 May 2019 09:37:12 -0700 (PDT)
+From: Loys Ollivier <lollivier@baylibre.com>
+To: Johan Hovold <johan@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH v2] gnss: get serial speed from subdrivers
+Date: Thu, 16 May 2019 18:37:06 +0200
+Message-Id: <1558024626-19395-1-git-send-email-lollivier@baylibre.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_093528_845168_7DBEFE4D 
-X-CRM114-Status: GOOD (  29.62  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190516_093715_205442_6F0876D8 
+X-CRM114-Status: GOOD (  16.35  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -99,123 +89,156 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Olof Johansson <olof@lixom.net>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, ARM SoC <arm@kernel.org>,
- Linux List Kernel Mailing <linux-kernel@vger.kernel.org>,
- "linux-alpha@vger.kernel.org" <linux-arm-kernel@lists.infradead.org>
+Cc: baylibre-upstreaming@groups.io, Loys Ollivier <lollivier@baylibre.com>,
+ linux-kernel@vger.kernel.org, Corentin Labbe <clabbe.montjoie@gmail.com>,
+ linux-mediatek@lists.infradead.org, Colin Ian King <colin.king@canonical.com>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Linus Torvalds <torvalds@linux-foundation.org>
-Date: Thu, May 16, 2019 at 9:27 AM
-To: Olof Johansson, Patrick Venture, Greg Kroah-Hartman
-Cc: ARM SoC, Linux List Kernel Mailing, linux-alpha@vger.kernel.org
+The default serial speed was hardcoded in the code.
+Rename current-speed to default-speed.
+Add a function parameter that lets the subdrivers specify their
+default speed.
+If not specified fallback to the device-tree default-speed.
 
-> On Wed, May 15, 2019 at 11:43 PM Olof Johansson <olof@lixom.net> wrote:
-> >
-> > Various driver updates for platforms and a couple of the small driver
-> > subsystems we merge through our tree:
->
-> Hmm. This moved the aspeed drivers from drivers/misc to
-> drivers/soc/aspeed (in commit 524feb799408 "soc: add aspeed folder and
-> misc drivers"), but in the meantime we also had a new aspeed soc
-> driver added (in commit 01c60dcea9f7 "drivers/misc: Add Aspeed P2A
-> control driver").
->
-> I ended up resolving that "conflict" by moving the new aspeed P2A
-> control driver to be with the other aspeed drivers too. That seemed to
-> be the cleanest model.
+Signed-off-by: Loys Ollivier <lollivier@baylibre.com>
+---
+Hello,
 
-Thank you.  I agree.  There was some back-and-forth about the SoC move
-w.r.t any new aspeed misc drivers. Whether moving them into SoC was a
-good approach versus leaving the growing list in misc.  Another aspeed
-driver, controlling UART was headed to misc and received push-back
-that it was sufficiently specialized to go into SoC
-(https://patchwork.ozlabs.org/patch/969238/).  This feedback triggered
-this staging move.
+This patch moves the currently hardcoded, default serial speed
+to the subdrivers.
+If the default speed is not specified by the subdriver then it is read
+from the device tree.
 
-I think storing the growing misc drivers for these SoCs (Aspeed,
-Nuvoton) in a SoC folder is a reasonable grouping.
+Changes since v1[0]
+- Use u32 data types instead of uint
 
->
-> I'm used to doing these kinds of fixups in a merge, but I have to
-> admit that maybe I should have made it a separate commit, because now
-> it's kind of non-obvious, and it's sometimes harder to see changes
-> that are in a merge commit than in a separate commit.
->
-> In particular, it looks like "git log --follow" is not smart enough to
-> follow a rename through a merge. But I think that is a git problem,
-> and not a very serious one at that ("git blame" has no such problem).
->
-> And it means that now the merge has
->
->  drivers/{misc => soc/aspeed}/aspeed-lpc-ctrl.c                   |   0
->  drivers/{misc => soc/aspeed}/aspeed-lpc-snoop.c                  |   0
->  drivers/{misc => soc/aspeed}/aspeed-p2a-ctrl.c                   |   0
->
-> when you do "git show --stat" on it, which looks correct, and it feels
-> like conceptually the right merge resolution to me.
->
-> Sending out this explanatory email to everybody involved, just so that
-> this doesn't take you by surprise. But it looks like Patrick Venture
-> is not just the author of that moved driver, he was also involved in
-> the move of the two other drivers, so I'm guessing there's not going
-> to be a lot of confusion here.
->
-> HOWEVER. More subtly, as part of my *testing* for this, I also
-> realized that commit 524feb799408 is buggy. In my tests, the config
-> worked fine, but the aspeed drivers were never actually *built*. The
-> reason is that commit 524feb799408 ends up doing
->
->    obj-$(CONFIG_ARCH_ASPEED)      += aspeed/
->
-> which is completely wrong, because the Kconfig fules are
->
->         depends on (ARCH_ASPEED || COMPILE_TEST) && REGMAP && MFD_SYSCON
->
-> so those drivers can be configured even if ARCH_ASPEED *isn't* set.
-> The Kconfig part works fine, because the soc/aspeed/Kconfig file is
-> included unconditionally, but the actual build process then never
-> builds anything in the drivers/soc/aspeed/ subdirectory.
->
-> I solved _that_ problem by adding a new config option:
->
->   config SOC_ASPEED
->       def_bool y
->       depends on ARCH_ASPEED || COMPILE_TEST
->
-> and using that instead of ARCH_ASPEED.
+[0]: https://lore.kernel.org/lkml/1557322788-10403-1-git-send-email-lollivier@baylibre.com/
 
-Thank you, that makes perfect sense.  When moving the drivers, I was
-only considering the case where one is compiling them for use and
-forgot to check for COMPILE_TEST.
+Cheers,
+Loys
 
->
-> End result: this was a somewhat messy merge, and the most subtle mess
-> was because of that buggy 524feb799408 "soc: add aspeed folder and
-> misc drivers").
->
-> I *think* I sorted it all out correctly, and now I see the aspeed
-> drivers being built (and cleanly at that) but I really *really* want
-> people to double-check this all.
->
-> Also, I think that the same "we don't actually build-test the end
-> result" problem exists else-where for the same reasons.
->
-> At the very least, drivers/soc/{atmel,rockchip,zte} seem to have the
-> exact same pattern: the Kconfig files enable the drivers, but the
-> Makefile in drivers/soc doesn't actually traverse into the
-> subdirectories.
->
-> End result: CONFIG_COMPILE_TEST doesn't actually do any compile
-> testing for those drivers.
->
-> I did not try to fix all of those things up, because I didn't do the
-> driver movements there.
->
->                   Linus
+ drivers/gnss/mtk.c    |  7 ++++++-
+ drivers/gnss/serial.c | 21 +++++++++++++--------
+ drivers/gnss/serial.h |  3 ++-
+ drivers/gnss/ubx.c    |  3 ++-
+ 4 files changed, 23 insertions(+), 11 deletions(-)
+
+diff --git a/drivers/gnss/mtk.c b/drivers/gnss/mtk.c
+index d1fc55560daf..1d35bcb52072 100644
+--- a/drivers/gnss/mtk.c
++++ b/drivers/gnss/mtk.c
+@@ -16,6 +16,10 @@
+ 
+ #include "serial.h"
+ 
++static uint serial_speed = 9600; /* Serial speed (baud rate) */
++module_param(serial_speed, uint, 0644);
++MODULE_PARM_DESC(serial_speed, "Serial baud rate (bit/s), (default = 9600)");
++
+ struct mtk_data {
+ 	struct regulator *vbackup;
+ 	struct regulator *vcc;
+@@ -69,7 +73,8 @@ static int mtk_probe(struct serdev_device *serdev)
+ 	struct mtk_data *data;
+ 	int ret;
+ 
+-	gserial = gnss_serial_allocate(serdev, sizeof(*data));
++	gserial = gnss_serial_allocate(serdev, sizeof(*data),
++				       (u32)serial_speed);
+ 	if (IS_ERR(gserial)) {
+ 		ret = PTR_ERR(gserial);
+ 		return ret;
+diff --git a/drivers/gnss/serial.c b/drivers/gnss/serial.c
+index def64b36d994..3be799702291 100644
+--- a/drivers/gnss/serial.c
++++ b/drivers/gnss/serial.c
+@@ -103,17 +103,13 @@ static int gnss_serial_set_power(struct gnss_serial *gserial,
+ 	return gserial->ops->set_power(gserial, state);
+ }
+ 
+-/*
+- * FIXME: need to provide subdriver defaults or separate dt parsing from
+- * allocation.
+- */
+ static int gnss_serial_parse_dt(struct serdev_device *serdev)
+ {
+ 	struct gnss_serial *gserial = serdev_device_get_drvdata(serdev);
+ 	struct device_node *node = serdev->dev.of_node;
+-	u32 speed = 4800;
++	u32 speed;
+ 
+-	of_property_read_u32(node, "current-speed", &speed);
++	of_property_read_u32(node, "default-speed", &speed);
+ 
+ 	gserial->speed = speed;
+ 
+@@ -121,7 +117,8 @@ static int gnss_serial_parse_dt(struct serdev_device *serdev)
+ }
+ 
+ struct gnss_serial *gnss_serial_allocate(struct serdev_device *serdev,
+-						size_t data_size)
++					 size_t data_size,
++					 u32 serial_speed)
+ {
+ 	struct gnss_serial *gserial;
+ 	struct gnss_device *gdev;
+@@ -146,10 +143,18 @@ struct gnss_serial *gnss_serial_allocate(struct serdev_device *serdev,
+ 	serdev_device_set_drvdata(serdev, gserial);
+ 	serdev_device_set_client_ops(serdev, &gnss_serial_serdev_ops);
+ 
+-	ret = gnss_serial_parse_dt(serdev);
++	/* Serial speed provided by subdriver takes precedence over dt*/
++	if (!serial_speed)
++		ret = gnss_serial_parse_dt(serdev);
++	else
++		gserial->speed = serial_speed;
++
+ 	if (ret)
+ 		goto err_put_device;
+ 
++	if (!gserial->speed)
++		return -EINVAL;
++
+ 	return gserial;
+ 
+ err_put_device:
+diff --git a/drivers/gnss/serial.h b/drivers/gnss/serial.h
+index 980ffdc86c2a..17df61e399e6 100644
+--- a/drivers/gnss/serial.h
++++ b/drivers/gnss/serial.h
+@@ -33,7 +33,8 @@ struct gnss_serial_ops {
+ extern const struct dev_pm_ops gnss_serial_pm_ops;
+ 
+ struct gnss_serial *gnss_serial_allocate(struct serdev_device *gserial,
+-						size_t data_size);
++					 size_t data_size,
++					 u32 serial_speed);
+ void gnss_serial_free(struct gnss_serial *gserial);
+ 
+ int gnss_serial_register(struct gnss_serial *gserial);
+diff --git a/drivers/gnss/ubx.c b/drivers/gnss/ubx.c
+index 7b05bc40532e..52ae6e4987e0 100644
+--- a/drivers/gnss/ubx.c
++++ b/drivers/gnss/ubx.c
+@@ -68,8 +68,9 @@ static int ubx_probe(struct serdev_device *serdev)
+ 	struct gnss_serial *gserial;
+ 	struct ubx_data *data;
+ 	int ret;
++	u32 speed = 4800;
+ 
+-	gserial = gnss_serial_allocate(serdev, sizeof(*data));
++	gserial = gnss_serial_allocate(serdev, sizeof(*data), speed);
+ 	if (IS_ERR(gserial)) {
+ 		ret = PTR_ERR(gserial);
+ 		return ret;
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
