@@ -2,59 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B226520357
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 12:24:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92BEB2036D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 12:28:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=poFlSs9TBqL6Gllj95P8mAd95smE3fhhQC5NmEPtwaI=; b=fQQL8JmtRIC5Kf
-	M9rPYq/aglizk81kCNjMOCcIGd8s7gS2HjuAEsI3Qg31mXJjQr+4/UlRfFwWQBBHdB0PuRxjm5M9D
-	6oWaOmaFyR/iJ9SHTtQSyvMS2yQDpvUWJtZKkpHmCehHvMgYzN+GECPrmX/wp7sNkLhZTVXfTX+Ew
-	inchwuSYzUv62lx8Lz0gIM3WracPzWmf3lbCZogBP7WatallNmMKGTXwJ4uB7+nW3hODvEEHRnh6z
-	bVduKvaJXSjjshru4QvcKMCFPrSKmEPIyJw/sRXApoX40YeephrfFu8GuIbB3vwXtmJQrWt1TTrwM
-	izkFFA6L2IhybF+VCxtA==;
+	List-Owner; bh=0xWCdts8ok55NamLXwPkM9CM9U8uhRKT6v/JtTJtlLc=; b=RBErlhrjSTOn4C
+	KHSprZ8MCoBod89E8utOo9m4i5zQjzWcfIzK1nTChFxZ3RZP6suLLapPJhusE64V7PGQzjL8hlM3N
+	EbjuF82kI/2iOlbyobjnhzajW0zUHjJ3Mcj0yvoqiwXSg1yOyq/36AZFCMIc9JrwasdxQUSUWRb14
+	7uE1+EuUrf0dFEgtc1xljOn/T7A2lRtTO9pV5muC7LmG4neGFPbaHI0Hlg8ZwxM5H2pKZkOoxY3aY
+	KhbdNGExfJQ7Ajs6mdrV50f7x727RUgYDPw3ShYqgJ2uyEjIDoiyohIbXWimIpEkNBkAVNcLs0EsV
+	PD88jMy96468bFbAKXsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRDYb-0007wb-L0; Thu, 16 May 2019 10:24:13 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRDYR-0007vm-1k
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 10:24:04 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 26DA019BF;
- Thu, 16 May 2019 03:24:00 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2E5713F703;
- Thu, 16 May 2019 03:23:57 -0700 (PDT)
-Date: Thu, 16 May 2019 11:23:54 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Michal Hocko <mhocko@kernel.org>
-Subject: Re: [PATCH V3 2/4] arm64/mm: Hold memory hotplug lock while walking
- for kernel page table dump
-Message-ID: <20190516102354.GB40960@lakrids.cambridge.arm.com>
-References: <1557824407-19092-1-git-send-email-anshuman.khandual@arm.com>
- <1557824407-19092-3-git-send-email-anshuman.khandual@arm.com>
- <20190515165847.GH16651@dhcp22.suse.cz>
+	id 1hRDcU-0001PF-1G; Thu, 16 May 2019 10:28:14 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hRDcL-0001OP-Iw; Thu, 16 May 2019 10:28:07 +0000
+X-UUID: f22237e06cb44df39af6b13a240a5779-20190516
+X-UUID: f22237e06cb44df39af6b13a240a5779-20190516
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1623016907; Thu, 16 May 2019 02:27:56 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 16 May 2019 03:27:55 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 16 May 2019 18:27:52 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 16 May 2019 18:27:52 +0800
+Message-ID: <1558002472.26743.2.camel@mtksdaap41>
+Subject: Re: [PATCH v6 11/12] soc: mediatek: cmdq: add cmdq_dev_get_event
+ function
+From: CK Hu <ck.hu@mediatek.com>
+To: Bibby Hsieh <bibby.hsieh@mediatek.com>
+Date: Thu, 16 May 2019 18:27:52 +0800
+In-Reply-To: <20190516090224.59070-12-bibby.hsieh@mediatek.com>
+References: <20190516090224.59070-1-bibby.hsieh@mediatek.com>
+ <20190516090224.59070-12-bibby.hsieh@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190515165847.GH16651@dhcp22.suse.cz>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+X-TM-SNTS-SMTP: 340E37131E274E309CCD55145B936522FE76AA128486110F5FC92DCAA60C875A2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_032403_103372_5148F7E4 
-X-CRM114-Status: GOOD (  21.77  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190516_032805_654031_A07550A8 
+X-CRM114-Status: GOOD (  14.10  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -66,72 +73,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: cai@lca.pw, ira.weiny@intel.com,
- Anshuman Khandual <anshuman.khandual@arm.com>, catalin.marinas@arm.com,
- david@redhat.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- logang@deltatee.com, james.morse@arm.com, cpandya@codeaurora.org,
- arunks@codeaurora.org, akpm@linux-foundation.org, osalvador@suse.de,
- mgorman@techsingularity.net, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org, robin.murphy@arm.com
+Cc: devicetree@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, srv_heupstream@mediatek.com,
+ Daoyuan Huang <daoyuan.huang@mediatek.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Jassi Brar <jassisinghbrar@gmail.com>,
+ linux-kernel@vger.kernel.org, Daniel Kurtz <djkurtz@chromium.org>,
+ Houlong Wei <houlong.wei@mediatek.com>, YT
+ Shen <yt.shen@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Dennis-YC Hsieh
+ <dennis-yc.hsimediatek/mtkcam/drv/fdvt/4.0/cam_fdvt_v4l2.cppeh@mediatek.com>,
+ Sascha Hauer <kernel@pengutronix.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Jiaguang Zhang <jiaguang.zhang@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org, ginny.chen@mediatek.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Michal,
+Hi, Bibby:
 
-On Wed, May 15, 2019 at 06:58:47PM +0200, Michal Hocko wrote:
-> On Tue 14-05-19 14:30:05, Anshuman Khandual wrote:
-> > The arm64 pagetable dump code can race with concurrent modification of the
-> > kernel page tables. When a leaf entries are modified concurrently, the dump
-> > code may log stale or inconsistent information for a VA range, but this is
-> > otherwise not harmful.
-> > 
-> > When intermediate levels of table are freed, the dump code will continue to
-> > use memory which has been freed and potentially reallocated for another
-> > purpose. In such cases, the dump code may dereference bogus addressses,
-> > leading to a number of potential problems.
-> > 
-> > Intermediate levels of table may by freed during memory hot-remove, or when
-> > installing a huge mapping in the vmalloc region. To avoid racing with these
-> > cases, take the memory hotplug lock when walking the kernel page table.
+On Thu, 2019-05-16 at 17:02 +0800, Bibby Hsieh wrote:
+> When client ask gce to clear or wait for event,
+> client need to pass event number to the API.
+> We suggest client store the event information in device node,
+> so we provide an API for client parse the event property.
 > 
-> Why is this a problem only on arm64 
+> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> ---
+>  drivers/soc/mediatek/mtk-cmdq-helper.c | 18 ++++++++++++++++++
+>  include/linux/soc/mediatek/mtk-cmdq.h  | 12 ++++++++++++
+>  2 files changed, 30 insertions(+)
+> 
+> diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> index a64060a34e01..e9658063c3d4 100644
+> --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
+> +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> @@ -52,6 +52,24 @@ struct cmdq_subsys *cmdq_dev_get_subsys(struct device *dev, int idx)
+>  }
+>  EXPORT_SYMBOL(cmdq_dev_get_subsys);
+>  
+> +s32 cmdq_dev_get_event(struct device *dev, int index)
+> +{
+> +	s32 result;
+> +
+> +	if (!dev)
+> +		return -EINVAL;
+> +
+> +	if (of_property_read_u32_index(dev->of_node, "mediatek,gce-events",
+> +				       index, &result)) {
+> +		dev_err(dev, "can't parse gce-events property");
+> +
+> +		return -ENODEV;
+> +	}
+> +
+> +	return result;
 
-It looks like it's not -- I think we're just the first to realise this.
+This function just does one thing, so client driver could just directly
+call of_property_read_u32_index().
 
-AFAICT x86's debugfs ptdump has the same issue if run conccurently with
-memory hot remove. If 32-bit arm supported hot-remove, its ptdump code
-would have the same issue.
+Regards,
+CK
 
-> and why do we even care for debugfs? Does anybody rely on this thing
-> to be reliable? Do we even need it? Who is using the file?
+> +}
+> +EXPORT_SYMBOL(cmdq_dev_get_event);
+> +
+>  static void cmdq_client_timeout(struct timer_list *t)
+>  {
+>  	struct cmdq_client *client = from_timer(client, t, timer);
+> diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
+> index 574006c5cd76..525713bf79b5 100644
+> --- a/include/linux/soc/mediatek/mtk-cmdq.h
+> +++ b/include/linux/soc/mediatek/mtk-cmdq.h
+> @@ -160,4 +160,16 @@ int cmdq_pkt_flush(struct cmdq_pkt *pkt);
+>   */
+>  struct cmdq_subsys *cmdq_dev_get_subsys(struct device *dev, int idx);
+>  
+> +/**
+> + * cmdq_dev_get_event() - parse event from the device node of CMDQ client
+> + * @dev:	device of CMDQ mailbox client
+> + * @index:	the index of desired event
+> + *
+> + * Return: CMDQ event number
+> + *
+> + * Help CMDQ client pasing the event number
+> + * from the device node of CMDQ client.
+> + */
+> +s32 cmdq_dev_get_event(struct device *dev, int index);
+> +
+>  #endif	/* __MTK_CMDQ_H__ */
 
-The debugfs part is used intermittently by a few people working on the
-arm64 kernel page tables. We use that both to sanity-check that kernel
-page tables are created/updated correctly after changes to the arm64 mmu
-code, and also to debug issues if/when we encounter issues that appear
-to be the result of kernel page table corruption.
 
-So while it's rare to need it, it's really useful to have when we do
-need it, and I'd rather not remove it. I'd also rather that it didn't
-have latent issues where we can accidentally crash the kernel when using
-it, which is what this patch is addressing.
-
-> I am asking because I would really love to make mem hotplug locking less
-> scattered outside of the core MM than more. Most users simply shouldn't
-> care. Pfn walkers should rely on pfn_to_online_page.
-
-I'm not sure if that would help us here; IIUC pfn_to_online_page() alone
-doesn't ensure that the page remains online. Is there a way to achieve
-that other than get_online_mems()?
-
-The big problem for the ptdump code is when tables are freed, since the
-pages can be reused elsewhere (or hot-removed), causing the ptdump code
-to explode.
-
-Thanks,
-Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
