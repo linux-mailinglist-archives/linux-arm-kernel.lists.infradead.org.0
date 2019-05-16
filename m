@@ -2,55 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F6B220A0B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 16:45:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2C9C20A26
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 16:52:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oHWqU+4reYTH3B1hS7gh+elZRWx+UIoKV2hXPd91yIo=; b=A0QP0V+vOH2j1o
-	bEjD9RQxVS3vb8ZRAiomZ2r40RIrJ0lDzyjg74DnqYSut3pFVlMsj2Rvq1neC5UKGHPq1/qR63F0R
-	3b/1c5601XrFgxi9BaG4IugU6rUwOpnFwJjCE4kcGWGEAsioSiRxQ0RyGgUUYPHn8SBNgPO2SRiwO
-	2dqkAYKT6tz0lc1BGUhT0GcvHc/X4XA2iS4D9st6IQnobHzFdRkFSM24LYXUbgdmlMP0kHYN6CbHF
-	TnklNTfABacNh4Y5jBfjtgNPLTLdSIEAj2IqyWtat6OeoOiv6tQ17ypKoQuLSCrEef+sjRuMBBwQv
-	epUOaZuhLgEAyFJk37hg==;
+	List-Owner; bh=xCdwhE6qjaboPkvqsmC2aMj47+wK8XXtEC0rBJA8yrE=; b=AAZ13wy1DMoOfv
+	dWEnRK/Fq9oquJCNRefQ1+T5M2FCk7tS+dfQl8zPBHmPrFk8qW+VhlT8mGJN+vPe0jkeqb+7HAxC1
+	/Xnpg6NGIea95Lq5s+xVBvm+SYqMv+QUddmQOhTptemi6sSuOsM04LulWF2hMudhmeuQsA0JX/AXl
+	nJosiX8mxRYeps9wyyDZZQoqC4ciO5fT1or6mrtw8+VTq8NbwxhK/+vHffMUKSA3KnTsvANiPpjPe
+	EjxijNUD8d8BzfWUcozFRl91Ms8Tcrod3BRPVkN7Z8twwV2VylM8ZOIe2dJr/GcGc8orPnrV1n7c9
+	m0z7pXTOP7ah5T2bWFig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRHd0-0000RF-0D; Thu, 16 May 2019 14:45:02 +0000
-Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+	id 1hRHjk-0004kO-Dz; Thu, 16 May 2019 14:52:00 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRHcr-0000E6-Pk
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 14:44:56 +0000
-X-Originating-IP: 80.215.79.199
-Received: from localhost (unknown [80.215.79.199])
- (Authenticated sender: maxime.ripard@bootlin.com)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 32EEFFF81E;
- Thu, 16 May 2019 14:44:26 +0000 (UTC)
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>, Mark Rutland <mark.rutland@arm.com>,
- Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
- Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: [PATCH v2 2/2] dt-bindings: mmc: sun4i: Add YAML schemas
-Date: Thu, 16 May 2019 16:44:19 +0200
-Message-Id: <5e126d3a9be35a288863189854ea3828f7e5ad14.1558017853.git-series.maxime.ripard@bootlin.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <225e90a94e9558db9f72f64aca05b0951b88c7c5.1558017853.git-series.maxime.ripard@bootlin.com>
-References: <225e90a94e9558db9f72f64aca05b0951b88c7c5.1558017853.git-series.maxime.ripard@bootlin.com>
+ id 1hRHjc-0004k2-UQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 14:51:54 +0000
+Received: by mail-qt1-x844.google.com with SMTP id y22so4189430qtn.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 May 2019 07:51:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=MS2skw+KrEHdESEF2xxKoDYDGwqEs5RP/vpZUAIc9w8=;
+ b=NHU7KZ5WPgjex7taKMhAcaxSBI0pOFebtIsJGsWl7hh4wR4Jw0JQV+f+8CsLvEZUbF
+ NIDFb/pi21lwTr0YsGzwZJQx6OfWVsu0RwJCS6m/LR7guuYqpXcsMJibNxqnnrzwz29B
+ RxfDU88NXLj6+eFsvDvW+DZy5jnZAcJtqI1Lw=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=MS2skw+KrEHdESEF2xxKoDYDGwqEs5RP/vpZUAIc9w8=;
+ b=Bf2sTLuk61ndZKjsrc8JVNgTfx6KecNju035JTFZ8gq7+lNxsih55ND4RSqCM+Fh29
+ fudpTic//FKPZsRpWQySZNxQdEiK9yuR6OuXn34m3drG+FgQ5ffSOiurbGlnJQ4uaSk5
+ 3VgRvhjxkV1bhyRKnt/KkzDXz5UcOJ/1BjFkOsMDVVF+GvBDSSbkDk5DqNT5IdC2sDWF
+ btJVGg2GX/2Wl6SwzUwC4s+Hoxg6jbFINF8/hv4Eywk7GoyvwF0fQuByz/DDuTA1z2/j
+ cOsVB7ugG74ZPtj0wg5buMmORM8Y3N6XcNEc17v8oyZsGbzJkcDr7c1VyaHjZfDiqvSN
+ h+nw==
+X-Gm-Message-State: APjAAAUVrQaLz5XrapPqfzHD/dmSB+0+4UjuLtBSJXpiPoTnWXocEPhL
+ 4O2Z4bhDRJNC++NvZpUj82/e4z2rDuxv5Wh2iP2KBA==
+X-Google-Smtp-Source: APXvYqzVMPGWHrCFhHM2Qm59YhTIVEDyDKb8QkCN50flg0QSHVH1nVxNOjHLPHdaUYliQm5qek/b0gsTg+bhNCIjvIU=
+X-Received: by 2002:ac8:1aa4:: with SMTP id x33mr41119563qtj.69.1558018311752; 
+ Thu, 16 May 2019 07:51:51 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190516102817.188519-1-hsinyi@chromium.org>
+ <20190516102817.188519-2-hsinyi@chromium.org>
+ <CAL_JsqLx1UdjCnZ69aQm0GU_uOdd7tTdD_oM=D7yhDANoQ0fEA@mail.gmail.com>
+In-Reply-To: <CAL_JsqLx1UdjCnZ69aQm0GU_uOdd7tTdD_oM=D7yhDANoQ0fEA@mail.gmail.com>
+From: Hsin-Yi Wang <hsinyi@chromium.org>
+Date: Thu, 16 May 2019 22:51:25 +0800
+Message-ID: <CAJMQK-jrJQri3gM=X6JRD6Rk+B5S4939HJTptrQMY64xEWr1qA@mail.gmail.com>
+Subject: Re: [PATCH v3 2/3] arm64: implement update_fdt_pgprot()
+To: Rob Herring <robh+dt@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_074454_139317_FC30C978 
-X-CRM114-Status: GOOD (  13.71  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190516_075153_000523_70BCE504 
+X-CRM114-Status: UNSURE (   9.74  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.199 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -62,187 +91,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-mmc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Yu Zhao <yuzhao@google.com>, Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Stephen Boyd <swboyd@chromium.org>,
+ Will Deacon <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Mike Rapoport <rppt@linux.ibm.com>, Jun Yao <yaojun8558363@gmail.com>,
+ Miles Chen <miles.chen@mediatek.com>, James Morse <james.morse@arm.com>,
+ Chintan Pandya <cpandya@codeaurora.org>, Andrew Murray <andrew.murray@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Laura Abbott <labbott@redhat.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Robin Murphy <robin.murphy@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Switch the DT binding to a YAML schema to enable the DT validation.
+On Thu, May 16, 2019 at 10:37 PM Rob Herring <robh+dt@kernel.org> wrote:
 
-Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
----
- Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml | 98 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
- Documentation/devicetree/bindings/mmc/sunxi-mmc.txt                | 52 +--------------------------------------
- 2 files changed, 98 insertions(+), 52 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml
- delete mode 100644 Documentation/devicetree/bindings/mmc/sunxi-mmc.txt
-
-diff --git a/Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml b/Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml
-new file mode 100644
-index 000000000000..df0280edef97
---- /dev/null
-+++ b/Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml
-@@ -0,0 +1,98 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/mmc/allwinner,sun4i-a10-mmc.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Allwinner A10 MMC Controller Device Tree Bindings
-+
-+allOf:
-+  - $ref: "mmc-controller.yaml"
-+
-+maintainers:
-+  - Chen-Yu Tsai <wens@csie.org>
-+  - Maxime Ripard <maxime.ripard@bootlin.com>
-+
-+properties:
-+  "#address-cells": true
-+  "#size-cells": true
-+
-+  compatible:
-+    oneOf:
-+      - const: allwinner,sun4i-a10-mmc
-+      - const: allwinner,sun5i-a13-mmc
-+      - const: allwinner,sun7i-a20-mmc
-+      - const: allwinner,sun8i-a83t-emmc
-+      - const: allwinner,sun9i-a80-mmc
-+      - const: allwinner,sun50i-a64-emmc
-+      - const: allwinner,sun50i-a64-mmc
-+      - items:
-+          - const: allwinner,sun8i-a83t-mmc
-+          - const: allwinner,sun7i-a20-mmc
-+      - items:
-+          - const: allwinner,sun50i-h6-emmc
-+          - const: allwinner,sun50i-a64-emmc
-+      - items:
-+          - const: allwinner,sun50i-h6-mmc
-+          - const: allwinner,sun50i-a64-mmc
-+      - items:
-+          - const: allwinner,sun8i-r40-emmc
-+          - const: allwinner,sun50i-a64-emmc
-+      - items:
-+          - const: allwinner,sun8i-r40-mmc
-+          - const: allwinner,sun50i-a64-mmc
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    minItems: 2
-+    maxItems: 4
-+    items:
-+      - description: Bus Clock
-+      - description: Module Clock
-+      - description: Output Clock
-+      - description: Sample Clock
-+
-+  clock-names:
-+    minItems: 2
-+    maxItems: 4
-+    items:
-+      - const: ahb
-+      - const: mmc
-+      - const: output
-+      - const: sample
-+
-+  resets:
-+    maxItems: 1
-+
-+  reset-names:
-+    const: ahb
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+
-+examples:
-+  - |
-+    mmc0: mmc@1c0f000 {
-+        compatible = "allwinner,sun5i-a13-mmc";
-+        reg = <0x01c0f000 0x1000>;
-+        clocks = <&ahb_gates 8>, <&mmc0_clk>;
-+        clock-names = "ahb", "mmc";
-+        interrupts = <32>;
-+        bus-width = <4>;
-+        cd-gpios = <&pio 7 1 0>;
-+    };
-+
-+# FIXME: We should set it, but it would report all the generic
-+# properties as additional properties.
-+# additionalProperties: false
-+
-+...
-diff --git a/Documentation/devicetree/bindings/mmc/sunxi-mmc.txt b/Documentation/devicetree/bindings/mmc/sunxi-mmc.txt
-deleted file mode 100644
-index e9cb3ec5e502..000000000000
---- a/Documentation/devicetree/bindings/mmc/sunxi-mmc.txt
-+++ /dev/null
-@@ -1,52 +0,0 @@
--* Allwinner sunxi MMC controller
--
--The highspeed MMC host controller on Allwinner SoCs provides an interface
--for MMC, SD and SDIO types of memory cards.
--
--Supported maximum speeds are the ones of the eMMC standard 4.5 as well
--as the speed of SD standard 3.0.
--Absolute maximum transfer rate is 200MB/s
--
--Required properties:
-- - compatible : should be one of:
--   * "allwinner,sun4i-a10-mmc"
--   * "allwinner,sun5i-a13-mmc"
--   * "allwinner,sun7i-a20-mmc"
--   * "allwinner,sun8i-a83t-emmc"
--   * "allwinner,sun9i-a80-mmc"
--   * "allwinner,sun50i-a64-emmc"
--   * "allwinner,sun50i-a64-mmc"
--   * "allwinner,sun50i-h6-emmc", "allwinner.sun50i-a64-emmc"
--   * "allwinner,sun50i-h6-mmc", "allwinner.sun50i-a64-mmc"
-- - reg : mmc controller base registers
-- - clocks : a list with 4 phandle + clock specifier pairs
-- - clock-names : must contain "ahb", "mmc", "output" and "sample"
-- - interrupts : mmc controller interrupt
--
--Optional properties:
-- - resets : phandle + reset specifier pair
-- - reset-names : must contain "ahb"
-- - for cd, bus-width and additional generic mmc parameters
--   please refer to mmc.txt within this directory
--
--Examples:
--	- Within .dtsi:
--	mmc0: mmc@1c0f000 {
--		compatible = "allwinner,sun5i-a13-mmc";
--		reg = <0x01c0f000 0x1000>;
--		clocks = <&ahb_gates 8>, <&mmc0_clk>, <&mmc0_output_clk>, <&mmc0_sample_clk>;
--		clock-names = "ahb", "mod", "output", "sample";
--		interrupts = <0 32 4>;
--		status = "disabled";
--	};
--
--	- Within dts:
--	mmc0: mmc@1c0f000 {
--		pinctrl-names = "default", "default";
--		pinctrl-0 = <&mmc0_pins_a>;
--		pinctrl-1 = <&mmc0_cd_pin_reference_design>;
--		bus-width = <4>;
--		cd-gpios = <&pio 7 1 0>; /* PH1 */
--		cd-inverted;
--		status = "okay";
--	};
--- 
-git-series 0.9.1
+>
+> Why not just map the FDT R/W at the start and change it to RO just
+> before calling unflatten_device_tree? Then all the FDT scanning
+> functions or any future fixups we need can just assume R/W. That is
+> essentially what Stephen suggested. However, there's no need for a
+> weak function as it can all be done within the arch code.
+>
+We need to add a new seed for kexec
 
 _______________________________________________
 linux-arm-kernel mailing list
