@@ -2,82 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 675CB20A83
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 16:58:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3781420A8E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 17:01:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9Q0Row33xQanIECHA46C7rI9nw0cU4AkPjRP9Dpw3Ss=; b=CIaBvXnD2t9Sk4
-	n0d1BiJoQfI5lFXX2oilX3HjwH7+15mmsqC9rEnswkK1DHHt0l25qS5eBwETy6p281Zo2yHAaraWE
-	FebTQ0MLVmzOsAu5xVvxpppWq8TxXboXEbjATftbY20+2SjIb8mUu/23w1jwAHcjV0KLjqZkZwDHF
-	KE2JZQvcWVuM1uxTUvV1Q3fX3twFtT+QxUTD6ExoyX4eRd9H38aLdWh6fVsqyN+kreShLqE1a/yfv
-	w3CpRDGbAqaGbqADkIYo7OOYknSC/pKkSC6eal7KPvr36K3DU6tOqa3ch3QkjhmbGalwWzpPlUzLC
-	yPNkqJ527vVy4gdmXi4Q==;
+	List-Owner; bh=K1eghma0BEtiNHcDg8/vSd4ZOMvFOj+0gT2gToPxpBs=; b=jNpG6t+qs9Xr+L
+	WDmFgD0gRacZZxMtjZtmbqJsfpCz/roXlktL3D5WgeEqaw499yne+YKnXuNPhb2c4j9h12lCluIN1
+	wGPV2SHdfR/3Xs+raQRjKiRxk94NNKYpJT7D/miv+HtMNkP6TNhgksDGDx2Hj8F1VIgHc4YL7VYSj
+	zx7bDG867ivCFeFM7xk3fglAN8cMiIkrY8uTIvcdCW0SEJRTduIT33kPrOE51LDA2mm2cryKq7Rbj
+	dXg5UefgQrqF8jiQl5F49S0oRadhaXONKnERU8yWVVs7DUbBpIH7ZLVP3KQfFgSMZqMJgI5jjQyKo
+	gjv0/HTIQKYoQntiYMOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRHq3-0007c3-Al; Thu, 16 May 2019 14:58:31 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1hRHst-00011B-Ql; Thu, 16 May 2019 15:01:27 +0000
+Received: from mail-yw1-xc42.google.com ([2607:f8b0:4864:20::c42])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRHpv-0007bW-EK
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 14:58:24 +0000
-Received: by mail-ed1-x541.google.com with SMTP id p27so5753798eda.1
+ id 1hRHrk-0000xK-8e
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 15:00:18 +0000
+Received: by mail-yw1-xc42.google.com with SMTP id t5so1459057ywf.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 May 2019 07:58:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=brauner.io; s=google;
+ Thu, 16 May 2019 08:00:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=xCVxcbycKijjP8G1i7Lu3aOPyQvDa5anPQzLbernNO4=;
- b=OIHOP7rucDEqRTu8tvry5PPcTvGug7bBvZ3Sj3gEtUFrGnhyINnCk+I0zkqsLasUKZ
- sDF9yMxrNz3GSuRfHnJ98dcv59fxALK1XZT/DdKM+RNStSEbUml+piQP0fMEz2cT77wZ
- 5fUSex8dhyXEU6EezdQo3iMv+/oWdqQP14elkHUkCpZkBvTW8oAW6AfrrmA20E9iIhVk
- ZuAZmTbyIfWt5UMPyKY2uhM8QgCzF5SK4PrtHd7sRoTp6ulgh75hv6U20VbOqq0i/gZ+
- 98BZhaBZoAMvoCxu8vxG/vqn+9IOpy6tDLSn4KBXR2pI1aOzSqOO7bUDxsGPIuc1Dou9
- GnZw==
+ bh=6nxZ6Pq48P2GshEBx+DxaJRDwT3+u0tHYTOJEexMrug=;
+ b=Nzv/YMV/GxXD2dUCPmRiPrRPctb+70fUvEsrm3gvh1k8FX4mU9Bp6hNaGe4UErNMnx
+ aTb+3VsSGvsiyxPlXeGd7UipxJ7UOHZ0LcWjxG5pWEn70sfGLIKPVdmddKaQv5aEN/gV
+ ZKA9e21wHKwwElmOZlkUNCfbm5bPWQNt30UYar4SwMsdJMZWH18cC3FEuus+5PLEVYno
+ i+tGqeYYlh2fAMCn7tgL+YyZc8k9c1vNFHp5MKtyud9oOV+nlaEnc7kJL/k/BBSeFe/C
+ CBl9gvANlreOySMzaYYTviZi8V4R4D383VdavcWKdpxNUjDQDs6G6m4PHK21iauoFYB7
+ IbUQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=xCVxcbycKijjP8G1i7Lu3aOPyQvDa5anPQzLbernNO4=;
- b=F6XgDCcnwAVSMGWKLoEMEaW6KQJWK6Tg40AFwBv5rnU9aghlB+RncLekd0OSgI9LAf
- Umgk6uGaUZnbsDyBkDls69SAm9oo2KxD/Y1I0cyAxXgl6nal5h1sNFkgGVvhU5GyvhEg
- d8GxzE9Z57gPZg+1xg3Bfu+V1uRN4X6taEESXGEqKSjf+hd9qWOzjTyW6br6/lVH71Yj
- 9xnPgdxgZrofTVWW3IgMqYGhcuksnNgOJERjX77GSisgin5n10Zk0xyzy/IZdT3pfakq
- jpohgq4fnAE47eHdS5QKNAghAINNCK7f57UfwaOd1sxQeIrS5h6h1M7Jg1KX4f8VL4M4
- MLFA==
-X-Gm-Message-State: APjAAAU3rFiVYg7v5S8PLQp7zH7SniumCmbwbejDZ5KxRDxlh0L9mw2E
- NHLbeosLlfbbnUIlsGNFq4rXSQ==
-X-Google-Smtp-Source: APXvYqxgJ+X2Q+jweK2Am0efdrd0ewPSsOh9NTyeRf7XaOyCGLt/MTu5duHXcow8oFtMna8nvrnWUQ==
-X-Received: by 2002:a17:906:c391:: with SMTP id
- t17mr28473151ejz.242.1558018702012; 
- Thu, 16 May 2019 07:58:22 -0700 (PDT)
-Received: from brauner.io ([193.96.224.243])
- by smtp.gmail.com with ESMTPSA id s15sm1924877edm.6.2019.05.16.07.58.20
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 16 May 2019 07:58:21 -0700 (PDT)
-Date: Thu, 16 May 2019 16:58:19 +0200
-From: Christian Brauner <christian@brauner.io>
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Subject: Re: [PATCH v1 1/2] pid: add pidfd_open()
-Message-ID: <20190516145819.ofqkv6ozfpumhhuk@brauner.io>
-References: <20190516135944.7205-1-christian@brauner.io>
- <CAMuHMdVbUJ0+28Lc2wHPah8UUk8Ou9m81KzLvhrcMsJzz2bX2A@mail.gmail.com>
+ bh=6nxZ6Pq48P2GshEBx+DxaJRDwT3+u0tHYTOJEexMrug=;
+ b=fVZ3hRsdCruERSfNOaDSA6nBin5W+2rcy4YLQGXSzgVApz8yvGz9Lya4TFG7ik/EVX
+ FJ29lmnNENzXGWcz8oE4hk8sbIN8Y0Hn40gFAlEap3azTAD87nQd7iPvz949Sg5Sp68H
+ Uid3VHNFYUMToX+nwH2ku7wTcRk5amwDamib6B403CrESLqO13Zg9ayha8XLv/svhsvU
+ Ztq80OxXTxzwIZ5p8UvoE2vJq+4XNI4eZ8KmtAr/YBrLGrI6mE8vzqTQ5a+CmZ19n8c8
+ uBGgFtfkkCWTkf6dhqrHlPshJcu0dqQCKzdDpeZGqxdltDhdkmtO0fQnbxQA7dRDxikX
+ hvXQ==
+X-Gm-Message-State: APjAAAWzXTiXfDHJ3Pye4UiEwXcjZLp0qNZp8MtIPtEDMk8EgIPID3AU
+ 3mtJThC+pIUMMQaB/tB78Fg08A==
+X-Google-Smtp-Source: APXvYqwmW32X6QssU5CywmFCCXeQlN6JbwbBc3dqSP0KNb1qL58BZNVZIsgoykWbndquJJLWGDLyjg==
+X-Received: by 2002:a81:4f8c:: with SMTP id
+ d134mr26005945ywb.387.1558018814963; 
+ Thu, 16 May 2019 08:00:14 -0700 (PDT)
+Received: from leoy-ThinkPad-X240s (li483-211.members.linode.com.
+ [50.116.44.211])
+ by smtp.gmail.com with ESMTPSA id m3sm1891302ywf.39.2019.05.16.08.00.10
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 16 May 2019 08:00:13 -0700 (PDT)
+Date: Thu, 16 May 2019 23:00:05 +0800
+From: Leo Yan <leo.yan@linaro.org>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+Subject: Re: [PATCH V2 6/6] perf tools: Properly set the value of 'old' and
+ 'head' in snapshot mode
+Message-ID: <20190516150005.GG12557@leoy-ThinkPad-X240s>
+References: <20190514194018.23420-1-mathieu.poirier@linaro.org>
+ <20190514194018.23420-7-mathieu.poirier@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAMuHMdVbUJ0+28Lc2wHPah8UUk8Ou9m81KzLvhrcMsJzz2bX2A@mail.gmail.com>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <20190514194018.23420-7-mathieu.poirier@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_075823_482890_C7EAAA44 
-X-CRM114-Status: GOOD (  22.01  )
+X-CRM114-CacheID: sfid-20190516_080016_666364_6A804837 
+X-CRM114-Status: GOOD (  28.19  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c42 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -99,88 +101,188 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-ia64@vger.kernel.org" <linux-ia64@vger.kernel.org>,
- Linux-sh list <linux-sh@vger.kernel.org>, Oleg Nesterov <oleg@redhat.com>,
- David Howells <dhowells@redhat.com>, Joel Fernandes <joel@joelfernandes.org>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- sparclinux <sparclinux@vger.kernel.org>, elena.reshetova@intel.com,
- Linux-Arch <linux-arch@vger.kernel.org>,
- linux-s390 <linux-s390@vger.kernel.org>, Daniel Colascione <dancol@google.com>,
- linux-mips@vger.kernel.org, "Serge E. Hallyn" <serge@hallyn.com>,
- linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
- linux-m68k <linux-m68k@lists.linux-m68k.org>,
- Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Parisc List <linux-parisc@vger.kernel.org>, cyphar@cyphar.com,
- Linux API <linux-api@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Andy Lutomirski <luto@amacapital.net>,
- "Eric W. Biederman" <ebiederm@xmission.com>,
- alpha <linux-alpha@vger.kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
- "torvalds@linux-foundation.org" <torvalds@linux-foundation.org>
+Cc: suzuki.poulose@arm.com, alexander.shishkin@linux.intel.com,
+ coresight@lists.linaro.org, acme@kernel.org, peterz@infradead.org,
+ mingo@redhat.com, linux-arm-kernel@lists.infradead.org, mike.leach@linaro.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 16, 2019 at 04:56:08PM +0200, Geert Uytterhoeven wrote:
-> Hi Christian, David,
+On Tue, May 14, 2019 at 01:40:18PM -0600, Mathieu Poirier wrote:
+> This patch adds the necessay intelligence to properly compute the value
+> of 'old' and 'head' when operating in snapshot mode.  That way we can get
+> the latest information in the AUX buffer and be compatible with the
+> generic AUX ring buffer mechanic.
 > 
-> On Thu, May 16, 2019 at 4:00 PM Christian Brauner <christian@brauner.io> wrote:
-> > This adds the pidfd_open() syscall. It allows a caller to retrieve pollable
-> > pidfds for a process which did not get created via CLONE_PIDFD, i.e. for a
-> > process that is created via traditional fork()/clone() calls that is only
-> > referenced by a PID:
-> >
-> > int pidfd = pidfd_open(1234, 0);
-> > ret = pidfd_send_signal(pidfd, SIGSTOP, NULL, 0);
-> >
-> > With the introduction of pidfds through CLONE_PIDFD it is possible to
-> > created pidfds at process creation time.
-> > However, a lot of processes get created with traditional PID-based calls
-> > such as fork() or clone() (without CLONE_PIDFD). For these processes a
-> > caller can currently not create a pollable pidfd. This is a huge problem
-> > for Android's low memory killer (LMK) and service managers such as systemd.
-> > Both are examples of tools that want to make use of pidfds to get reliable
-> > notification of process exit for non-parents (pidfd polling) and race-free
-> > signal sending (pidfd_send_signal()). They intend to switch to this API for
-> > process supervision/management as soon as possible. Having no way to get
-> > pollable pidfds from PID-only processes is one of the biggest blockers for
-> > them in adopting this api. With pidfd_open() making it possible to retrieve
-> > pidfd for PID-based processes we enable them to adopt this api.
-> >
-> > In line with Arnd's recent changes to consolidate syscall numbers across
-> > architectures, I have added the pidfd_open() syscall to all architectures
-> > at the same time.
+> Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> ---
+>  tools/perf/arch/arm/util/cs-etm.c | 124 ++++++++++++++++++++++++++++--
+>  1 file changed, 119 insertions(+), 5 deletions(-)
 > 
-> > +428    common  pidfd_open                      sys_pidfd_open
-> 
-> This number conflicts with "[PATCH 4/4] uapi: Wire up the mount API
-> syscalls on non-x86 arches", which is requested to be included before
-> rc1.
+> diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
+> index 911426721170..3734e3fd18f8 100644
+> --- a/tools/perf/arch/arm/util/cs-etm.c
+> +++ b/tools/perf/arch/arm/util/cs-etm.c
+> @@ -31,6 +31,8 @@ struct cs_etm_recording {
+>  	struct auxtrace_record	itr;
+>  	struct perf_pmu		*cs_etm_pmu;
+>  	struct perf_evlist	*evlist;
+> +	int			wrapped_cnt;
+> +	bool			*wrapped;
+>  	bool			snapshot_mode;
+>  	size_t			snapshot_size;
+>  };
+> @@ -536,16 +538,126 @@ static int cs_etm_info_fill(struct auxtrace_record *itr,
+>  	return 0;
+>  }
+>  
+> -static int cs_etm_find_snapshot(struct auxtrace_record *itr __maybe_unused,
+> +static int cs_etm_alloc_wrapped_array(struct cs_etm_recording *ptr, int idx)
+> +{
+> +	bool *wrapped;
+> +	int cnt = ptr->wrapped_cnt;
+> +
+> +	/* Make @ptr->wrapped as big as @idx */
+> +	while (cnt <= idx)
+> +		cnt++;
+> +
+> +	/* Free'ed in cs_etm_recording_free() */
+> +	wrapped = reallocarray(ptr->wrapped, cnt, sizeof(bool));
+> +	if (!wrapped)
+> +		return -ENOMEM;
+> +
+> +	ptr->wrapped_cnt = cnt;
+> +	ptr->wrapped = wrapped;
+> +
+> +	return 0;
+> +}
+> +
+> +static bool cs_etm_buffer_has_wrapped(unsigned char *buffer,
+> +				      size_t buffer_size, u64 head)
+> +{
+> +	u64 i, watermark;
+> +	u64 *buf = (u64 *)buffer;
+> +	size_t buf_size = buffer_size;
+> +
+> +	/*
+> +	 * We want to look the very last 512 byte (chosen arbitrarily) in
+> +	 * the ring buffer.
+> +	 */
+> +	watermark = buf_size - 512;
+> +
+> +	/*
+> +	 * @head is continuously increasing - if its value is equal or greater
+> +	 * than the size of the ring buffer, it has wrapped around.
+> +	 */
+> +	if (head >= buffer_size)
+> +		return true;
+> +
+> +	/*
+> +	 * The value of @head is somewhere within the size of the ring buffer.
+> +	 * This can be that there hasn't been enough data to fill the ring
+> +	 * buffer yet or the trace time was so long that @head has numerically
+> +	 * wrapped around.  To find we need to check if we have data at the very
+> +	 * end of the ring buffer.  We can reliably do this because mmap'ed
+> +	 * pages are zeroed out and there is a fresh mapping with every new
+> +	 * session.
+> +	 */
+> +
+> +	/* @head is less than 512 byte from the end of the ring buffer */
+> +	if (head > watermark)
+> +		watermark = head;
+> +
+> +	/*
+> +	 * Speed things up by using 64 bit transactions (see "u64 *buf" above)
+> +	 */
+> +	watermark >>= 3;
+> +	buf_size >>= 3;
+> +
+> +	/*
+> +	 * If we find trace data at the end of the ring buffer, @head has
+> +	 * been there and has numerically wrapped around at least once.
+> +	 */
+> +	for (i = watermark; i < buf_size; i++)
+> +		if (buf[i])
 
-Yep, already spotted this thanks to Arnd! Will change the syscall
-numbers.
+I think here should be:
+                if (buf[i << 3])
 
-Thanks!
-Christian
+Otherwise, this patch looks good to me.
 
-> 
-> Note that none of this is part of linux-next.
-> 
-> Gr{oetje,eeting}s,
-> 
->                         Geert
-> 
+> +			return true;
+> +
+> +	return false;
+> +}
+> +
+> +static int cs_etm_find_snapshot(struct auxtrace_record *itr,
+>  				int idx, struct auxtrace_mmap *mm,
+> -				unsigned char *data __maybe_unused,
+> +				unsigned char *data,
+>  				u64 *head, u64 *old)
+>  {
+> -	pr_debug3("%s: mmap index %d old head %zu new head %zu size %zu\n",
+> +	int err;
+> +	bool wrapped;
+> +	struct cs_etm_recording *ptr =
+> +			container_of(itr, struct cs_etm_recording, itr);
+> +
+> +	/*
+> +	 * Allocate memory to keep track of wrapping if this is the first
+> +	 * time we deal with this *mm.
+> +	 */
+> +	if (idx >= ptr->wrapped_cnt) {
+> +		err = cs_etm_alloc_wrapped_array(ptr, idx);
+> +		if (err)
+> +			return err;
+> +	}
+> +
+> +	/*
+> +	 * Check to see if *head has wrapped around.  If it hasn't only the
+> +	 * amount of data between *head and *old is snapshot'ed to avoid
+> +	 * bloating the perf.data file with zeros.  But as soon as *head has
+> +	 * wrapped around the entire size of the AUX ring buffer it taken.
+> +	 */
+> +	wrapped = ptr->wrapped[idx];
+> +	if (!wrapped && cs_etm_buffer_has_wrapped(data, mm->len, *head)) {
+> +		wrapped = true;
+> +		ptr->wrapped[idx] = true;
+> +	}
+> +
+> +	pr_debug3("%s: mmap index %d old head %lx new head %lx size %lx\n",
+>  		  __func__, idx, (size_t)*old, (size_t)*head, mm->len);
+>  
+> -	*old = *head;
+> -	*head += mm->len;
+> +	/* No wrap has occurred, we can just use *head and *old. */
+> +	if (!wrapped)
+> +		return 0;
+> +
+> +	/*
+> +	 * *head has wrapped around - adjust *head and *old to pickup the
+> +	 * entire content of the AUX buffer.
+> +	 */
+> +	if (*head >= mm->len) {
+> +		*old = *head - mm->len;
+> +	} else {
+> +		*head += mm->len;
+> +		*old = *head - mm->len;
+> +	}
+>  
+>  	return 0;
+>  }
+> @@ -586,6 +698,8 @@ static void cs_etm_recording_free(struct auxtrace_record *itr)
+>  {
+>  	struct cs_etm_recording *ptr =
+>  			container_of(itr, struct cs_etm_recording, itr);
+> +
+> +	zfree(&ptr->wrapped);
+>  	free(ptr);
+>  }
+>  
 > -- 
-> Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+> 2.17.1
 > 
-> In personal conversations with technical people, I call myself a hacker. But
-> when I'm talking to journalists I just say "programmer" or something like that.
->                                 -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
