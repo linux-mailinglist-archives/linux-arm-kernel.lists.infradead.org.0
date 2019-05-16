@@ -2,90 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7E6C2102E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 23:41:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11C4B21045
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 23:51:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aoEa2YSGDHdtINI4LL79YC/D+MgjBv+l4GBhgEnRQG4=; b=JVcO6oqXKre4yF
-	DWSX1gQO/CFwEx4aBLfhulHT+xkTXpIbB+kXQnibiqvxErTT9a0HUDo7DMGmqj1B1p//dUBICsYl3
-	+0rYPmlH2RnOZ1+GkAYXeIRMH/78Bal0agXch555BFsXuE0v9fV0CcCp92JUov+CEGMbF593/Zc5W
-	aDvoLfqTMBRQy8HgELb3FcI6iOGdxRIutWuyxOp3QppzINt4i+gOg3PKcKbafuMsRRPC2YxemZhci
-	azhbDavkSBXRngAwQXSj7G1FSfSq9RUNUDz1Ks0Z4nK8JopSct8F8bHNvMgXL2SsIYqMTiuJUnaR1
-	LQIcn0TS2bZmpeWXiS3A==;
+	List-Owner; bh=ETRC6lHsVUkeBOwEq0cENsLDYriD1wYtAB3s+0nJO1A=; b=g7P0LmGAzEwvnQ
+	7NPa3ztKL3Tuej2/cI6UaCA8dGXM7+AzOTEo/sBDBxXOyPwuKy9rjDcSZmrapCDCd0F3Ed9jJf9MG
+	SbP40/ptK9NX3EUz/Szmge2F+x8PT/XKaZFDIB02A8VaOTzKy7QbSGwQnbOIwlyEwMsDoFfqT4xuM
+	hVNQ1LCjbyXOOeMbMveodH8sBgVzj5+4kTJOrPMoE7X9aYYJ2xKAMmJtA6v5OVJOBE+jc74D38s8Q
+	gWzLSanhGMjkIYYU7hQLZVmUxvZpL1SsWy+RAVswxlJ8mxuWe9kifERygYTHz79j+8eRmoDoaa+iT
+	BKdtv1u+wGOSBRinxw+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRO7a-0001Kb-7J; Thu, 16 May 2019 21:41:02 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hROHW-00054p-Do; Thu, 16 May 2019 21:51:18 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRO7P-0001IX-1s
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 21:40:55 +0000
-Received: by mail-pf1-x442.google.com with SMTP id c6so2505957pfa.10
+ id 1hROHO-000544-7W
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 21:51:11 +0000
+Received: by mail-lj1-x243.google.com with SMTP id w1so4515288ljw.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 May 2019 14:40:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=hVv4kB5Ecy4Nzot5JSmd+w2kmDQzag6YdAwhTawAS+o=;
- b=C2mEaCV5q7RRlPDkTl+jNc69GKmHQGbUzwdCXb4uJuIQRqjiwjE8vEVrEuUybINuD1
- CaXvTTgS7AqB5rKqV9O2SfHGsVPYh/UdIAMeuPT128yOp4EI0fA8af3ZBM+HxlhYaScP
- IQMWJsOKUNzn9FS7aX/h9q0stQ3lFpm6IpUEk=
+ Thu, 16 May 2019 14:51:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=rQ486v7/+lFC+0C10/1HSU/dAUcUYwocGLqU5d/PNiE=;
+ b=VZjhIAPa7wz0aagS0zRQq87ux8qNQnOd/eEqJ3whEmgJH9V3r2MCHmqkfSn6wkShgi
+ blx8XQcNi/K2mQUkcBq3S/OjrcDOnWEAvhCjK2UFAEooDhnk9dSWCaSufQC/i+qU0usv
+ YF3Fka6CWTe3GwACK6y8fuK89WpSwGsnHeGgp1MYMLMlwVN+A1/b4DxAR18H3NNDyacY
+ WXJGtcBr4nhNEugSl/IzuI33lXhFS8pp3MYsPiV3drBVn5pN4kfsiJpomUc1jy/gFCCV
+ KmtT9hAY7If0VQKCX3sjq+eCOpCZLJ9HdAGAgQUIBmJr3DuTNcS1o+IUlhrIaDm4Smwz
+ kVVw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=hVv4kB5Ecy4Nzot5JSmd+w2kmDQzag6YdAwhTawAS+o=;
- b=ZtXND2dbhURMGkeNx3CTX/pB0H6Cle2VpVgt5WKgMk4ylA8qrh4UpNy39H74uA01KO
- Ltc5ivl0HqgHJI8gcaZuxAIWQulB8I7CAlQGIwqZBx9qBpJSyC1vu3vZETmoUL+CInDQ
- qN1vkR1OTMzyXJcceOk4Xm8XukcrgVOagzkQWVq8DlOtrCBHM3ynJRtc3qoxwSb5BKZd
- TdOCIPR/NegHR/AO3mAFaBiq2cXIYxpP5F5wfxWckWOlRgTySX2y3ft2yGod/rx+8bt7
- MF6XDhsM0gXV0ZxZxiW5sGWi3r+kD9TF+ZVPOj854fCfy+pSLrSLStzTLp50HxHkZO5X
- hFuw==
-X-Gm-Message-State: APjAAAUq/semElKb4YiaOC8Mzfpg966sanuEjAzr3C1Z3kyNTom1qT6D
- 3j8jGdpGeCAZXTLyS+PocIV/xw==
-X-Google-Smtp-Source: APXvYqyP0E6DNadrM+r5JhT3uOu5deldF8xqqkH34aEOJ4KlNc8FJkCV2ERtDfIFBJk2wFdQq4Is2w==
-X-Received: by 2002:a63:d343:: with SMTP id u3mr53012185pgi.285.1558042850353; 
- Thu, 16 May 2019 14:40:50 -0700 (PDT)
-Received: from tictac2.mtv.corp.google.com
- ([2620:15c:202:1:24fa:e766:52c9:e3b2])
- by smtp.gmail.com with ESMTPSA id v4sm13127252pff.45.2019.05.16.14.40.48
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 16 May 2019 14:40:49 -0700 (PDT)
-From: Douglas Anderson <dianders@chromium.org>
-To: Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
- Andrzej Hajda <a.hajda@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
-Subject: [PATCH v2 2/2] drm/rockchip: dw_hdmi: Handle suspend/resume
-Date: Thu, 16 May 2019 14:40:22 -0700
-Message-Id: <20190516214022.65220-2-dianders@chromium.org>
-X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
-In-Reply-To: <20190516214022.65220-1-dianders@chromium.org>
-References: <20190516214022.65220-1-dianders@chromium.org>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=rQ486v7/+lFC+0C10/1HSU/dAUcUYwocGLqU5d/PNiE=;
+ b=egkviwJ2W+EkRbsWO8LiD4tsNhQi8pqStSIQ5p+wsr5YY2JdyOVzmkcyq1jLlPcKgz
+ hMsidx6wI1pKit5kI+pFbhepPs3STSkKaU8bWE1OnbZlyoKU6TjKc/7Td9Zpe/tfwmgG
+ 68x/Fx+iNluKA8fPkfz17p/5jgUQfMReGM81i9wUlNOznJx1dadWeWECnniGmR/MC4Ly
+ df36sH4/c0W5ZZW57ctn8opfobpX6nyYmEvY8NRjd5AWsyGmFV/1QSZzfgmUWESY0iz3
+ ptuPaW55V7KQRQ1ZSSn8iFsO201NwnoaDLKnL76vq2ZPAzQnJZQcdFePmWRnKxpp/QGL
+ B2PA==
+X-Gm-Message-State: APjAAAXcA9Mzy/yel6UN9JJUKYi6Z3KKjKi+cHQ9LYCz+9g2PTweQixl
+ Fa81f70E4mpl6rgCs8MoU6j/rQ==
+X-Google-Smtp-Source: APXvYqyoR03Ehfj3ojjApBgIzWWuU5NWZW4AT5OOLTz6COtQltQch4b5sqKTVODUFWGIgXoKEeSxzQ==
+X-Received: by 2002:a2e:97cf:: with SMTP id m15mr9579164ljj.135.1558043468356; 
+ Thu, 16 May 2019 14:51:08 -0700 (PDT)
+Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
+ by smtp.gmail.com with ESMTPSA id l76sm1171256lfe.77.2019.05.16.14.51.06
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 16 May 2019 14:51:06 -0700 (PDT)
+Date: Thu, 16 May 2019 14:43:41 -0700
+From: Olof Johansson <olof@lixom.net>
+To: Baolin Wang <baolin.wang@linaro.org>
+Subject: Re: [PATCH] arm64: dts: sprd: Add clock properties for serial devices
+Message-ID: <20190516214341.2qxtmg4turuuozkn@localhost>
+References: <1246f7a9ce912458ea3b889b0c0e392897a664c8.1554879978.git.baolin.wang@linaro.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1246f7a9ce912458ea3b889b0c0e392897a664c8.1554879978.git.baolin.wang@linaro.org>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_144053_378950_FECEC9F5 
-X-CRM114-Status: GOOD (  12.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190516_145110_441925_BDD07603 
+X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -97,74 +95,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- Douglas Anderson <dianders@chromium.org>, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- mka@chromium.org, Sean Paul <seanpaul@chromium.org>,
- Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, arm@kernel.org,
+ arnd@arndb.de, zhang.lyra@gmail.com, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, orsonzhai@gmail.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Rockchip rk3288-based Chromebooks when you do a suspend/resume
-cycle:
+On Wed, Apr 10, 2019 at 03:22:50PM +0800, Baolin Wang wrote:
+> We've introduced power management logics for the Spreadtrum serial
+> controller by commit 062ec2774c8a ("serial: sprd: Add power management
+> for the Spreadtrum serial controller"), thus add related clock properties
+> to support this feature.
+> 
+> Signed-off-by: Baolin Wang <baolin.wang@linaro.org>
 
-1. You lose the ability to detect an HDMI device being plugged in.
+Applied to arm/late.
 
-2. If you're using the i2c bus built in to dw_hdmi then it stops
-working.
 
-Let's call the core dw-hdmi's suspend/resume functions to restore
-things.
-
-NOTE: in downstream Chrome OS (based on kernel 3.14) we used the
-"late/early" versions of suspend/resume because we found that the VOP
-was sometimes resuming before dw_hdmi and then calling into us before
-we were fully resumed.  For now I have gone back to the normal
-suspend/resume because I can't reproduce the problems.
-
-Signed-off-by: Douglas Anderson <dianders@chromium.org>
----
-
-Changes in v2:
-- Add forgotten static (Laurent)
-- No empty stub for suspend (Laurent)
-
- drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
-
-diff --git a/drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c b/drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c
-index 4cdc9f86c2e5..beffe44c248a 100644
---- a/drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c
-+++ b/drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c
-@@ -542,11 +542,23 @@ static int dw_hdmi_rockchip_remove(struct platform_device *pdev)
- 	return 0;
- }
- 
-+static int __maybe_unused dw_hdmi_rockchip_resume(struct device *dev)
-+{
-+	struct rockchip_hdmi *hdmi = dev_get_drvdata(dev);
-+
-+	return dw_hdmi_resume(hdmi->hdmi);
-+}
-+
-+static const struct dev_pm_ops dw_hdmi_rockchip_pm = {
-+	SET_SYSTEM_SLEEP_PM_OPS(NULL, dw_hdmi_rockchip_resume)
-+};
-+
- struct platform_driver dw_hdmi_rockchip_pltfm_driver = {
- 	.probe  = dw_hdmi_rockchip_probe,
- 	.remove = dw_hdmi_rockchip_remove,
- 	.driver = {
- 		.name = "dwhdmi-rockchip",
-+		.pm = &dw_hdmi_rockchip_pm,
- 		.of_match_table = dw_hdmi_rockchip_dt_ids,
- 	},
- };
--- 
-2.21.0.1020.gf2820cf01a-goog
-
+-Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
