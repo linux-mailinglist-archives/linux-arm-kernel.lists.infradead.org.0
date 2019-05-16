@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3665A20BAB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 17:54:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E886A20BAC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 17:55:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6MTYinhTYHPE2xWRh1oakPWTARmEcqA/VdoqSwlaiLs=; b=aAtTrb212sD68z
-	iQIcXYwgrzyC2tpsK8hkNWOy7o+heFrWdea9kYUoe6EvYaeFbTH3vad2zJtZ5kYJbT/Guaogmhanj
-	hReXRngfGGM+TagLnOqAXarTnHY7NONglDeezpGYdIkQ1LcKQ9ZOVe/RDvQOECEKgahONLthVmaMT
-	53rf9FIbfncd2CKfODR1QMyhTSNVutFY+HqZdC9FkQHSntEaUJfUgSeW9tcdh3C5v8IsmleZmwLMh
-	dxxD/xOPaNqt7hY9uTcld0vMJKzU2YRFgWlPY8lx93aQNXfUvhu9Js2EHOa79v8mLbHAklMFW4cKV
-	y5a6+Th9+LlLg2itA6wQ==;
+	List-Owner; bh=uGzRBVG5JvAtccDuDt8YMJTNCuZEhb2Ja2g81X2Xeuk=; b=eyx2cYsSjW+RY3
+	4jz2MYcP9QXHSO8TpGvEB7QfJLYr4isvvV2GzMtq1KPjeP34jlUoBwExRd91/QYMUEg7onHBR/fXs
+	O/o8n4xjuc7qNKiuLUAEO+zOn0uD68oGzYU2+RkVrO3YmVY36ot0Cx65blJ3juom9R84n8pp5bMKj
+	CoiZ/PwQJWK5/LloPsXLPgqjyErSOgz2fBi6b69CmTJCGthsui0Qwpz4KE/UbEbFN9arnL7NPO4vG
+	1SbIviYP9RY320tKHY+Ws6iv/QHXQz3/Pvn5UWRIb5ixxWT4XWAPQXLZ3g6PqdJios8EKxpVR7uKq
+	qh7pDAisr3589TtYTD7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRIia-00007k-DR; Thu, 16 May 2019 15:54:52 +0000
-Received: from foss.arm.com ([217.140.101.70])
+	id 1hRIiq-0000OQ-HX; Thu, 16 May 2019 15:55:08 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRIhj-0007eO-VR
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 15:54:04 +0000
+ id 1hRIhl-0007gY-Nf
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 15:54:06 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CA37B19F6;
- Thu, 16 May 2019 08:53:59 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8DC3D1A25;
+ Thu, 16 May 2019 08:54:01 -0700 (PDT)
 Received: from e119886-lin.cambridge.arm.com (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 60A3D3F71E;
- Thu, 16 May 2019 08:53:58 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 211DB3F71E;
+ Thu, 16 May 2019 08:53:59 -0700 (PDT)
 From: Andrew Murray <andrew.murray@arm.com>
 To: Catalin Marinas <catalin.marinas@arm.com>,
  Will Deacon <will.deacon@arm.com>, Peter Zijlstra <peterz@infradead.org>,
  Ard.Biesheuvel@arm.com
-Subject: [PATCH v1 4/5] arm64: avoid using hard-coded registers for LSE atomics
-Date: Thu, 16 May 2019 16:53:43 +0100
-Message-Id: <20190516155344.24060-5-andrew.murray@arm.com>
+Subject: [PATCH v1 5/5] arm64: atomics: remove atomic_ll_sc compilation unit
+Date: Thu, 16 May 2019 16:53:44 +0100
+Message-Id: <20190516155344.24060-6-andrew.murray@arm.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190516155344.24060-1-andrew.murray@arm.com>
 References: <20190516155344.24060-1-andrew.murray@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_085400_320878_EFFC3E29 
-X-CRM114-Status: GOOD (  11.31  )
+X-CRM114-CacheID: sfid-20190516_085402_391923_7A3CC1A6 
+X-CRM114-Status: GOOD (  11.41  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -69,148 +70,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that we have removed the out-of-line ll/sc atomics we can give
-the compiler the freedom to choose its own register allocation. Let's
-remove the hard-coded use of x30.
+We no longer fall back to out-of-line atomics on systems with
+CONFIG_ARM64_LSE_ATOMICS where ARM64_HAS_LSE_ATOMICS is not set. Let's
+remove the now unused compilation unit which provided these symbols.
 
 Signed-off-by: Andrew Murray <andrew.murray@arm.com>
 ---
- arch/arm64/include/asm/atomic_lse.h | 70 +++++++++++++++++------------
- 1 file changed, 41 insertions(+), 29 deletions(-)
+ arch/arm64/lib/Makefile       | 19 -------------------
+ arch/arm64/lib/atomic_ll_sc.c |  3 ---
+ 2 files changed, 22 deletions(-)
+ delete mode 100644 arch/arm64/lib/atomic_ll_sc.c
 
-diff --git a/arch/arm64/include/asm/atomic_lse.h b/arch/arm64/include/asm/atomic_lse.h
-index 3b7fd01104bb..580709ecae5a 100644
---- a/arch/arm64/include/asm/atomic_lse.h
-+++ b/arch/arm64/include/asm/atomic_lse.h
-@@ -66,12 +66,14 @@ ATOMIC_FETCH_OPS(add, ldadd)
- #define ATOMIC_OP_ADD_RETURN(name, mb, cl...)				\
- static inline int __lse_atomic_add_return##name(int i, atomic_t *v)	\
- {									\
-+	u32 tmp;							\
-+									\
- 	asm volatile(							\
--	"	ldadd" #mb "	%w[i], w30, %[v]\n"			\
--	"	add	%w[i], %w[i], w30"				\
--	: [i] "+r" (i), [v] "+Q" (v->counter)				\
-+	"	ldadd" #mb "	%w[i], %w[tmp], %[v]\n"			\
-+	"	add	%w[i], %w[i], %w[tmp]"				\
-+	: [i] "+r" (i), [v] "+Q" (v->counter), [tmp] "=&r" (tmp)	\
- 	: "r" (v)							\
--	: "x30", ##cl);							\
-+	: cl);								\
- 									\
- 	return i;							\
- }
-@@ -124,13 +126,15 @@ static inline void __lse_atomic_sub(int i, atomic_t *v)
- #define ATOMIC_OP_SUB_RETURN(name, mb, cl...)				\
- static inline int __lse_atomic_sub_return##name(int i, atomic_t *v)	\
- {									\
-+	u32 tmp;							\
-+									\
- 	asm volatile(							\
- 	"	neg	%w[i], %w[i]\n"					\
--	"	ldadd" #mb "	%w[i], w30, %[v]\n"			\
--	"	add	%w[i], %w[i], w30"				\
--	: [i] "+&r" (i), [v] "+Q" (v->counter)				\
-+	"	ldadd" #mb "	%w[i], %w[tmp], %[v]\n"			\
-+	"	add	%w[i], %w[i], %w[tmp]"				\
-+	: [i] "+&r" (i), [v] "+Q" (v->counter), [tmp] "=&r" (tmp)	\
- 	: "r" (v)							\
--	: "x30", ##cl);							\
-+	: cl);							\
- 									\
- 	return i;							\
- }
-@@ -207,12 +211,14 @@ ATOMIC64_FETCH_OPS(add, ldadd)
- #define ATOMIC64_OP_ADD_RETURN(name, mb, cl...)				\
- static inline long __lse_atomic64_add_return##name(long i, atomic64_t *v)	\
- {									\
-+	unsigned long tmp;						\
-+									\
- 	asm volatile(							\
--	"	ldadd" #mb "	%[i], x30, %[v]\n"			\
--	"	add	%[i], %[i], x30"				\
--	: [i] "+r" (i), [v] "+Q" (v->counter)				\
-+	"	ldadd" #mb "	%[i], %x[tmp], %[v]\n"			\
-+	"	add	%[i], %[i], %x[tmp]"				\
-+	: [i] "+r" (i), [v] "+Q" (v->counter), [tmp] "=&r" (tmp)	\
- 	: "r" (v)							\
--	: "x30", ##cl);							\
-+	: cl);								\
- 									\
- 	return i;							\
- }
-@@ -265,13 +271,15 @@ static inline void __lse_atomic64_sub(long i, atomic64_t *v)
- #define ATOMIC64_OP_SUB_RETURN(name, mb, cl...)				\
- static inline long __lse_atomic64_sub_return##name(long i, atomic64_t *v)	\
- {									\
-+	unsigned long tmp;						\
-+									\
- 	asm volatile(							\
- 	"	neg	%[i], %[i]\n"					\
--	"	ldadd" #mb "	%[i], x30, %[v]\n"			\
--	"	add	%[i], %[i], x30"				\
--	: [i] "+&r" (i), [v] "+Q" (v->counter)				\
-+	"	ldadd" #mb "	%[i], %x[tmp], %[v]\n"			\
-+	"	add	%[i], %[i], %x[tmp]"				\
-+	: [i] "+&r" (i), [v] "+Q" (v->counter), [tmp] "=&r" (tmp)	\
- 	: "r" (v)							\
--	: "x30", ##cl);							\
-+	: cl);								\
- 									\
- 	return i;							\
- }
-@@ -305,18 +313,20 @@ ATOMIC64_FETCH_OP_SUB(        , al, "memory")
+diff --git a/arch/arm64/lib/Makefile b/arch/arm64/lib/Makefile
+index 5540a1638baf..f10809ef1690 100644
+--- a/arch/arm64/lib/Makefile
++++ b/arch/arm64/lib/Makefile
+@@ -11,25 +11,6 @@ CFLAGS_REMOVE_xor-neon.o	+= -mgeneral-regs-only
+ CFLAGS_xor-neon.o		+= -ffreestanding
+ endif
  
- static inline long __lse_atomic64_dec_if_positive(atomic64_t *v)
- {
-+	unsigned long tmp;
-+
- 	asm volatile(
--	"1:	ldr	x30, %[v]\n"
--	"	subs	%[ret], x30, #1\n"
-+	"1:	ldr	%x[tmp], %[v]\n"
-+	"	subs	%[ret], %x[tmp], #1\n"
- 	"	b.lt	2f\n"
--	"	casal	x30, %[ret], %[v]\n"
--	"	sub	x30, x30, #1\n"
--	"	sub	x30, x30, %[ret]\n"
--	"	cbnz	x30, 1b\n"
-+	"	casal	%x[tmp], %[ret], %[v]\n"
-+	"	sub	%x[tmp], %x[tmp], #1\n"
-+	"	sub	%x[tmp], %x[tmp], %[ret]\n"
-+	"	cbnz	%x[tmp], 1b\n"
- 	"2:"
--	: [ret] "+&r" (v), [v] "+Q" (v->counter)
-+	: [ret] "+&r" (v), [v] "+Q" (v->counter), [tmp] "=&r" (tmp)
- 	:
--	: "x30", "cc", "memory");
-+	: "cc", "memory");
+-# Tell the compiler to treat all general purpose registers (with the
+-# exception of the IP registers, which are already handled by the caller
+-# in case of a PLT) as callee-saved, which allows for efficient runtime
+-# patching of the bl instruction in the caller with an atomic instruction
+-# when supported by the CPU. Result and argument registers are handled
+-# correctly, based on the function prototype.
+-lib-$(CONFIG_ARM64_LSE_ATOMICS) += atomic_ll_sc.o
+-CFLAGS_atomic_ll_sc.o	:= -ffixed-x1 -ffixed-x2        		\
+-		   -ffixed-x3 -ffixed-x4 -ffixed-x5 -ffixed-x6		\
+-		   -ffixed-x7 -fcall-saved-x8 -fcall-saved-x9		\
+-		   -fcall-saved-x10 -fcall-saved-x11 -fcall-saved-x12	\
+-		   -fcall-saved-x13 -fcall-saved-x14 -fcall-saved-x15	\
+-		   -fcall-saved-x18 -fomit-frame-pointer
+-CFLAGS_REMOVE_atomic_ll_sc.o := -pg
+-GCOV_PROFILE_atomic_ll_sc.o	:= n
+-KASAN_SANITIZE_atomic_ll_sc.o	:= n
+-KCOV_INSTRUMENT_atomic_ll_sc.o	:= n
+-UBSAN_SANITIZE_atomic_ll_sc.o	:= n
+-
+ lib-$(CONFIG_ARCH_HAS_UACCESS_FLUSHCACHE) += uaccess_flushcache.o
  
- 	return (long)v;
- }
-@@ -329,14 +339,16 @@ static inline u##sz __lse__cmpxchg_case_##name##sz(volatile void *ptr,	\
- 	register unsigned long x0 asm ("x0") = (unsigned long)ptr;	\
- 	register u##sz x1 asm ("x1") = old;				\
- 	register u##sz x2 asm ("x2") = new;				\
-+	unsigned long tmp;						\
- 									\
- 	asm volatile(							\
--	"	mov	" #w "30, %" #w "[old]\n"			\
--	"	cas" #mb #sfx "\t" #w "30, %" #w "[new], %[v]\n"	\
--	"	mov	%" #w "[ret], " #w "30"				\
--	: [ret] "+r" (x0), [v] "+Q" (*(unsigned long *)ptr)		\
-+	"	mov	%" #w "[tmp], %" #w "[old]\n"			\
-+	"	cas" #mb #sfx "\t%" #w "[tmp], %" #w "[new], %[v]\n"	\
-+	"	mov	%" #w "[ret], %" #w "[tmp]"			\
-+	: [ret] "+r" (x0), [v] "+Q" (*(unsigned long *)ptr),		\
-+	  [tmp] "=&r" (tmp)						\
- 	: [old] "r" (x1), [new] "r" (x2)				\
--	: "x30", ##cl);							\
-+	: cl);								\
- 									\
- 	return x0;							\
- }
+ obj-$(CONFIG_CRC32) += crc32.o
+diff --git a/arch/arm64/lib/atomic_ll_sc.c b/arch/arm64/lib/atomic_ll_sc.c
+deleted file mode 100644
+index b0c538b0da28..000000000000
+--- a/arch/arm64/lib/atomic_ll_sc.c
++++ /dev/null
+@@ -1,3 +0,0 @@
+-#include <asm/atomic.h>
+-#define __ARM64_IN_ATOMIC_IMPL
+-#include <asm/atomic_ll_sc.h>
 -- 
 2.21.0
 
