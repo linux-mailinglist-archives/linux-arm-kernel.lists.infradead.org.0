@@ -2,87 +2,127 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA70C20EC1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 20:35:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43F4020ECE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 20:39:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uU11MkF5JED8NRFvuQGk0P/Gm3qOGFfZ+W4JO4T4ioc=; b=d428jqr3YXtva5
-	vM3kQOGvzNEIjz1yeMuKeIi/D5SfNPUgYL6/h79h4mY1v/m5gl1b0tNmYFTJlnUJW96CWnjPY8YNb
-	JmjLywjfGJPDBVtPSR0tqfaGoyLAAUEYJJM+liAYaphgKM/pRkg/ft7a/liNXk4AjqkcSdtzXm8Dv
-	O8uMUy7X2tLdu1O28xBS95mDv9hgpCRiIe0zWPcZJL91YHi3kzIRIvr2SCnMlHEY1I3VIf2ghOF9H
-	97g3JZCtDJ+dWx3qMujQKFr84cp7l6pIuj+LtsFnkXp4zSN8FLkaCKfa09oU3YTurt7ZgeniyWVPP
-	vBhXPqPrWEiIPkJ4Futg==;
+	List-Owner; bh=2zjYPbQSy7HQr+Z8m63BkhqqJDBJMCpucOBWPlTEqcE=; b=tugsUZe3zLJijZ
+	rMA2JREJnJrZGUWqQtGjtZ+pIeIpT9ZaR5KzyZQPwaysZtWhVHB8bwpZe238C7UQtMfeNeXwtnoYZ
+	Z98uGxcdYOanUkLFFap8K5FLD3EfiPH8R/2DzbfpWULA5BD4jruOSymlEDkItBjlY4XlaqL+VPocL
+	rA7SOogDVGImu3uGj5ncZPyeNocZ9NcPyso0m431tsVhCuT5ZPbZXxOHkHYaW/fdgVGoywSYBtL1a
+	k2ON8HdD/QN1YTY4LrLF+W/VcsPKeRCDp0M62O94McJ2Zp94BDHy+P/hKJZIANyeFoAVRZYvuotcN
+	p49FWPh6nYuyWlXvgXhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRLE2-0007rY-5r; Thu, 16 May 2019 18:35:30 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1hRLHi-000081-JC; Thu, 16 May 2019 18:39:18 +0000
+Received: from mx0b-002e3701.pphosted.com ([148.163.143.35])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRLDq-0007qA-Ks
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 18:35:24 +0000
-Received: by mail-lf1-x144.google.com with SMTP id q17so3428735lfo.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 May 2019 11:35:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=+idWcmjPST3Hl3czuPFrU6/6AI2HPcejFwVYPK17aPc=;
- b=k23/dPqHAR3dXP7Nj8FpaKzc5p6ZT7V2uAVK19Zd4XHc2cIezlyg7qupevZjFs19Wi
- lgElBoQUKnWDDb1Shm4aylkFJiBVCxa3ai79L1sv5oHRagmXUnAckeuNn+6+TMvPWWYS
- xc5z8qaVXJsy1ZT/svee0CRUGvYVI4Li0PakbgOVC2hQkypL1Xre1n0CNswYXkUTjg5T
- T9mGXMLpCHK3o0OJrOFDlORL+om+R4ww5oxNkNN1hidCgMMOjpJz6OVcLvhP2ttDcSg8
- eEcBKmZ71eZ3zdD0Yz0+DtkYyAGPVj8JvJUMHftIpb2EAQE76/Wguyc3Ktxw/CAeQVTd
- Z3tw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=+idWcmjPST3Hl3czuPFrU6/6AI2HPcejFwVYPK17aPc=;
- b=BJ/YgdsSnsvQfdLGMbr5CFJdNEhkscMpVbPOiXxyZ8OspmpN0TMKf2BQ5OI64XoLpC
- 6Bkt5upBrNFGppCN7jVt5eIzYKdoRtOC6E4NKtIa8sBizy9dDucWk1vpbgKukFG5JXT9
- P22CUp+ovEy3gjtgcNPFQKssaQzue6Gqmra1LW3zp3qZN/umvw8x9BWQd3NLAg1IHWdO
- T0ysOuWJsBB4f1FiKUhr7gGCpxd1tRD7iNV24hDa2a/NCXmizp+SBE0z46rRcuY1TwWR
- rQygIocs6x+Sq0NQr06riRNvDA4ThsfWVEXLipcHXcT+cgbCic2yUOfjlnuRpmBLFR8z
- uCaQ==
-X-Gm-Message-State: APjAAAVMAIt0mvZIAjoLri8f8yI+AJm4b/2u5TCOfeq7nl/dmmllCWgI
- 1lhlcwcOjiw+GNAkzxy/qFVm+CwD8HtGRSPyUQg=
-X-Google-Smtp-Source: APXvYqz/Sid4tmtq5GFJTviFYQ/KFKX7b/x5MgwIHDmCFilPniFlpoSr6HISlpCPi0Da7K8HcAQ2SWuZWgFFg08Qh3M=
-X-Received: by 2002:a19:e34c:: with SMTP id c12mr3562928lfk.145.1558031716748; 
- Thu, 16 May 2019 11:35:16 -0700 (PDT)
+ id 1hRLHZ-00006g-Eu
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 18:39:11 +0000
+Received: from pps.filterd (m0150244.ppops.net [127.0.0.1])
+ by mx0b-002e3701.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x4GIWE41001842; Thu, 16 May 2019 18:38:56 GMT
+Received: from g2t2354.austin.hpe.com (g2t2354.austin.hpe.com [15.233.44.27])
+ by mx0b-002e3701.pphosted.com with ESMTP id 2sha5q9p2q-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 16 May 2019 18:38:55 +0000
+Received: from G2W6311.americas.hpqcorp.net (g2w6311.austin.hp.com
+ [16.197.64.53])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by g2t2354.austin.hpe.com (Postfix) with ESMTPS id C95A3C3;
+ Thu, 16 May 2019 18:38:53 +0000 (UTC)
+Received: from G9W8677.americas.hpqcorp.net (16.220.49.24) by
+ G2W6311.americas.hpqcorp.net (16.197.64.53) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Thu, 16 May 2019 18:38:53 +0000
+Received: from G9W9209.americas.hpqcorp.net (2002:10dc:429c::10dc:429c) by
+ G9W8677.americas.hpqcorp.net (2002:10dc:3118::10dc:3118) with Microsoft SMTP
+ Server (TLS) id 15.0.1367.3; Thu, 16 May 2019 18:38:53 +0000
+Received: from NAM02-BL2-obe.outbound.protection.outlook.com (15.241.52.13) by
+ G9W9209.americas.hpqcorp.net (16.220.66.156) with Microsoft SMTP
+ Server (TLS)
+ id 15.0.1367.3 via Frontend Transport; Thu, 16 May 2019 18:38:53 +0000
+Received: from TU4PR8401MB0607.NAMPRD84.PROD.OUTLOOK.COM (10.169.44.19) by
+ TU4PR8401MB1134.NAMPRD84.PROD.OUTLOOK.COM (10.169.48.140) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1900.17; Thu, 16 May 2019 18:38:51 +0000
+Received: from TU4PR8401MB0607.NAMPRD84.PROD.OUTLOOK.COM
+ ([fe80::e801:598b:4d87:7d6b]) by TU4PR8401MB0607.NAMPRD84.PROD.OUTLOOK.COM
+ ([fe80::e801:598b:4d87:7d6b%6]) with mapi id 15.20.1900.010; Thu, 16 May 2019
+ 18:38:51 +0000
+From: "Kani, Toshi" <toshi.kani@hpe.com>
+To: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-mm@kvack.org"
+ <linux-mm@kvack.org>,
+ "anshuman.khandual@arm.com" <anshuman.khandual@arm.com>
+Subject: Re: [PATCH V4] mm/ioremap: Check virtual address alignment while
+ creating huge mappings
+Thread-Topic: [PATCH V4] mm/ioremap: Check virtual address alignment while
+ creating huge mappings
+Thread-Index: AQHVCsb1po3qOFZtEEG+LlOmCwssnqZuFpkA
+Date: Thu, 16 May 2019 18:38:51 +0000
+Message-ID: <e796e434eef10fbade2597f69be63ceeac32b2cd.camel@hpe.com>
+References: <a893db51-c89a-b061-d308-2a3a1f6cc0eb@arm.com>
+ <1557887716-17918-1-git-send-email-anshuman.khandual@arm.com>
+In-Reply-To: <1557887716-17918-1-git-send-email-anshuman.khandual@arm.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [15.219.163.3]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 4f3471c7-f213-4e41-adad-08d6da2dbdcb
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:TU4PR8401MB1134; 
+x-ms-traffictypediagnostic: TU4PR8401MB1134:
+x-microsoft-antispam-prvs: <TU4PR8401MB113418AC8CDBBF0C131EA8AE820A0@TU4PR8401MB1134.NAMPRD84.PROD.OUTLOOK.COM>
+x-ms-oob-tlc-oobclassifiers: OLM:6430;
+x-forefront-prvs: 0039C6E5C5
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(396003)(39860400002)(346002)(136003)(366004)(376002)(51914003)(199004)(189003)(446003)(11346002)(6486002)(8676002)(81156014)(81166006)(3846002)(6116002)(71190400001)(71200400001)(229853002)(4744005)(305945005)(73956011)(7736002)(2616005)(66946007)(66446008)(64756008)(66556008)(66476007)(99286004)(76116006)(476003)(8936002)(316002)(6436002)(54906003)(68736007)(110136005)(486006)(2906002)(6512007)(66066001)(25786009)(76176011)(6506007)(2501003)(5660300002)(256004)(36756003)(118296001)(14444005)(6246003)(478600001)(186003)(102836004)(53936002)(14454004)(86362001)(2201001)(4326008)(26005)(14583001);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:TU4PR8401MB1134;
+ H:TU4PR8401MB0607.NAMPRD84.PROD.OUTLOOK.COM; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: hpe.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: qQk0BoaS+/Of/Tc5GPEqDaywQu7IIuMJcSk68Eot6CTdzl+jHTKCAdSgWIPMHkAWz3KxE8MQoSNpXUs3vWXenwzz1RdK3SSTcRfyfYWsnWkR0KHkpm6aO7PCQ2FCVmsSvvV4CK+n2tWioAtOegxtaCDnxO7bpvGx7bZ+AhBg9IngJsLBOb7xx65/+L9E/52/qUPi8cMK+t4yeSwOFoWMhIdPXpMbPikyQHOK11d1CqRyaXBJRgalJHsP6/b3PPab+taG3HI8NR0fiWSwF/Rz89vCmxyMhWwGCPomYrTDSupiAXdSsAWjU40aDSGoRv5auRSi28iAYEJZ6MgwzWY1bmp8XThup9IGF5/x54lIIu/pUtDeNte8Uz4ncupeJ6bfOoXtQxwYGqPGwA+La2WjVSyOHyJFRKqxIFcLbgnbgPg=
+Content-ID: <B909AB302DB5BC46AAA96D9F1BC612BA@NAMPRD84.PROD.OUTLOOK.COM>
 MIME-Version: 1.0
-References: <20190515144210.25596-1-daniel.baluta@nxp.com>
- <20190515144210.25596-3-daniel.baluta@nxp.com>
-In-Reply-To: <20190515144210.25596-3-daniel.baluta@nxp.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Thu, 16 May 2019 15:35:06 -0300
-Message-ID: <CAOMZO5A6Gv5k3up0AtKrhQPyMLMe_8SXift68KEP2J+j8D_cJg@mail.gmail.com>
-Subject: Re: [PATCH v3 2/2] arm64: dts: imx8mm-evk: Enable audio codec wm8524
-To: Daniel Baluta <daniel.baluta@nxp.com>
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4f3471c7-f213-4e41-adad-08d6da2dbdcb
+X-MS-Exchange-CrossTenant-originalarrivaltime: 16 May 2019 18:38:51.0738 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 105b2061-b669-4b31-92ac-24d304d195dc
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TU4PR8401MB1134
+X-OriginatorOrg: hpe.com
+X-HPE-SCL: -1
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-05-16_15:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1810050000 definitions=main-1905160116
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_113520_345064_C7C927C7 
-X-CRM114-Status: UNSURE (   8.98  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190516_113909_625346_2D2AAA31 
+X-CRM114-Status: GOOD (  12.48  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.143.35 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,34 +134,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Aisheng Dong <aisheng.dong@nxp.com>, Peng Fan <peng.fan@nxp.com>,
- Anson Huang <anson.huang@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "m.felsch@pengutronix.de" <m.felsch@pengutronix.de>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "S.j. Wang" <shengjiu.wang@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "akpm@linux-foundation.org" <akpm@linux-foundation.org>,
+ "cpandya@codeaurora.org" <cpandya@codeaurora.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 15, 2019 at 11:42 AM Daniel Baluta <daniel.baluta@nxp.com> wrote:
+On Wed, 2019-05-15 at 08:05 +0530, Anshuman Khandual wrote:
+> Virtual address alignment is essential in ensuring correct clearing for all
+> intermediate level pgtable entries and freeing associated pgtable pages. An
+> unaligned address can end up randomly freeing pgtable page that potentially
+> still contains valid mappings. Hence also check it's alignment along with
+> existing phys_addr check.
+> 
+> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+> Cc: Toshi Kani <toshi.kani@hpe.com>
+> Cc: Andrew Morton <akpm@linux-foundation.org>
+> Cc: Will Deacon <will.deacon@arm.com>
+> Cc: Chintan Pandya <cpandya@codeaurora.org>
+> Cc: Thomas Gleixner <tglx@linutronix.de>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> ---
+> Changes in V4:
+> 
+> - Added similar check for ioremap_try_huge_p4d() as per Toshi Kani
 
-> +               simple-audio-card,codec {
-> +                       sound-dai = <&wm8524>;
-> +                       clocks = <&clk IMX8MM_CLK_SAI3_ROOT>;
+Thanks for the update. It looks good to me.
 
-IMX8MM_CLK_SAI3_ROOT is the internal clock that drives the SAI3
-interface, not an external clock that feeds the codec.
+Reviewed-by: Toshi Kani <toshi.kani@hpe.com>
 
-It seems you should remove this 'clocks' entry.
-
+-Toshi
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
