@@ -2,60 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 589381FDFF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 05:19:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 084EF1FE0B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 05:24:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XOyhpazKmw9epUZ4ay/o2FM3QbPEZ0uDlwGfGHhB4K0=; b=X8uF21taTjkXA+
-	6DV3amQNUyGoMcoYuT362uejH++7na+9WIh7QeZw3jeS3gVyHredfNGqm/erobPHXBqJZ84yIrwt6
-	lv496T5vQQBEIbR5eoIpEvPcbj54QVvG/20r5r6lsStBvYkfQZ0tvZbjpGpoNJoUyowSpm5X6YtmD
-	jh8S0CCSlLmAZdvmm+MB25BzS2XaySjhv3cYmu6wIHq2wrzhCVY5pm+OUsOpgMkU0PSs80N3A4C1U
-	oL7i3hoZk0RxFVY2Ex0gccOxtNbLPdOLQUBU/RJTUcRNg1yjGD4qdxP7EwjsBvlYENOzH6utUGp4I
-	W8Q7iUviZUFEV5vgcjaQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ueeNyc/Z1hiFoU2riAKpET51apZhuM/X8Yi/vLvqwgs=; b=tbnaRLf3UqXB3E
+	lrMlkNXGK2kP/A/vBNwE1Ga1qpglgVgLmAlKudfgyEarXHJoNhv9MP7RWaFubwIsKbDTbNLrRIjyd
+	BfkC4qboR/NqG5PtKbVXtlFjMNYIFvzZ+1zo60Ons4C5Tr/Z4nUNSIIfT72ojgl9HRCb1NY8oUEC/
+	xRrl22qMRCrRtZeFFAjW5i11ajN6RvEi0a/KY2Ynl6Pilu1+CKeKg7DUwqIJFws1Q8Hqb6KZEIwDE
+	4MXGzMo/3z+X8zFtEMlQP20ON2Nsm69+RoHXART42rQl4f5CLNj1fQ9Qq+Hkkuzmguuso10tIY+Zk
+	KO53YsEtd2K6J0KgG4xw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hR6va-0003ZP-GZ; Thu, 16 May 2019 03:19:30 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1hR6zw-0006VP-1L; Thu, 16 May 2019 03:24:00 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hR6vQ-0003Y8-Q9; Thu, 16 May 2019 03:19:22 +0000
-Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 97C3BD4F352B9FFE6FAD;
- Thu, 16 May 2019 11:19:13 +0800 (CST)
-Received: from [127.0.0.1] (10.177.131.64) by DGGEMS414-HUB.china.huawei.com
- (10.3.19.214) with Microsoft SMTP Server id 14.3.439.0; Thu, 16 May 2019
- 11:19:07 +0800
-Subject: Re: [PATCH 0/4] support reserving crashkernel above 4G on arm64 kdump
-To: Bhupesh Sharma <bhsharma@redhat.com>, <catalin.marinas@arm.com>,
- <will.deacon@arm.com>, <akpm@linux-foundation.org>,
- <ard.biesheuvel@linaro.org>, <rppt@linux.ibm.com>, <tglx@linutronix.de>,
- <mingo@redhat.com>, <bp@alien8.de>, <ebiederm@xmission.com>
-References: <20190507035058.63992-1-chenzhou10@huawei.com>
- <a9d017d0-82d3-3e5f-4af2-4c611393106d@redhat.com>
-From: Chen Zhou <chenzhou10@huawei.com>
-Message-ID: <bf4050c5-cfb7-fd69-4892-1e0b65861d34@huawei.com>
-Date: Thu, 16 May 2019 11:19:05 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.7.1
+ id 1hR6zm-0006UE-0e; Thu, 16 May 2019 03:23:51 +0000
+X-UUID: f5a0689038b54364acb6cd8506ce40cd-20190515
+X-UUID: f5a0689038b54364acb6cd8506ce40cd-20190515
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <daoyuan.huang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 284144081; Wed, 15 May 2019 19:23:44 -0800
+Received: from mtkmbs03n1.mediatek.inc (172.21.101.181) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 15 May 2019 20:23:42 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs03n1.mediatek.inc (172.21.101.181) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 16 May 2019 11:23:41 +0800
+Received: from mtkslt306.mediatek.inc (10.21.14.136) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Thu, 16 May 2019 11:23:41 +0800
+From: Daoyuan Huang <daoyuan.huang@mediatek.com>
+To: <hans.verkuil@cisco.com>, <laurent.pinchart+renesas@ideasonboard.com>,
+ <tfiga@chromium.org>, <matthias.bgg@gmail.com>, <mchehab@kernel.org>
+Subject: [RFC v2 0/4] media: mediatek: support mdp3 on mt8183 platform
+Date: Thu, 16 May 2019 11:23:28 +0800
+Message-ID: <20190516032332.56844-1-daoyuan.huang@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-In-Reply-To: <a9d017d0-82d3-3e5f-4af2-4c611393106d@redhat.com>
-X-Originating-IP: [10.177.131.64]
-X-CFilter-Loop: Reflected
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_201921_083405_DCD93971 
-X-CRM114-Status: GOOD (  20.03  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190515_202350_057101_A76DE05B 
+X-CRM114-Status: UNSURE (   8.23  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
+ 0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -67,127 +70,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wangkefeng.wang@huawei.com, takahiro.akashi@linaro.org,
- kexec@lists.infradead.org, linux-kernel@vger.kernel.org, linux-mm@kvack.org,
- horms@verge.net.au, Bhupesh SHARMA <bhupesh.linux@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Sean.Cheng@mediatek.com, Rynn.Wu@mediatek.com,
+ srv_heupstream@mediatek.com, holmes.chiou@mediatek.com,
+ Jerry-ch.Chen@mediatek.com, jungo.lin@mediatek.com, sj.huang@mediatek.com,
+ yuzhao@chromium.org, linux-mediatek@lists.infradead.org, zwisler@chromium.org,
+ christie.yu@mediatek.com, frederic.chen@mediatek.com,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Bhupesh,
+Hi,
 
-On 2019/5/15 13:06, Bhupesh Sharma wrote:
-> +Cc kexec-list.
-> 
-> Hi Chen,
-> 
-> I think we are still in the quiet period of the merge cycle, but this is a change which will be useful for systems like HPE Apollo where we are looking at reserving crashkernel across a larger range.
-> 
-> Some comments inline and in respective patch threads..
-> 
-> On 05/07/2019 09:20 AM, Chen Zhou wrote:
->> This patch series enable reserving crashkernel on high memory in arm64.
-> 
-> Please fix the patch subject, it should be v5.
-> Also please Cc the kexec-list (kexec@lists.infradead.org) for future versions to allow wider review of the patchset.
-> 
->> We use crashkernel=X to reserve crashkernel below 4G, which will fail
->> when there is no enough memory. Currently, crashkernel=Y@X can be used
->> to reserve crashkernel above 4G, in this case, if swiotlb or DMA buffers
->> are requierd, capture kernel will boot failure because of no low memory.
-> 
-> ... ^^ required
-> 
-> s/capture kernel will boot failure because of no low memory./capture kernel boot will fail because there is no low memory available for allocation.
-> 
->> When crashkernel is reserved above 4G in memory, kernel should reserve
->> some amount of low memory for swiotlb and some DMA buffers. So there may
->> be two crash kernel regions, one is below 4G, the other is above 4G. Then
->> Crash dump kernel reads more than one crash kernel regions via a dtb
->> property under node /chosen,
->> linux,usable-memory-range = <BASE1 SIZE1 [BASE2 SIZE2]>.
-> 
-> Please use consistent naming for the second kernel, better to use crash dump kernel.
-> 
-> I have tested this on my HPE Apollo machine and with crashkernel=886M,high syntax, I can get the board to reserve a larger memory range for the crashkernel (i.e. 886M):
-> 
-> # dmesg | grep -i crash
-> [    0.000000] kexec_core: Reserving 256MB of low memory at 3560MB for crashkernel (System low RAM: 2029MB)
-> [    0.000000] crashkernel reserved: 0x0000000bc5a00000 - 0x0000000bfd000000 (886 MB)
-> 
-> kexec/kdump can also work also work fine on the board.
-> 
-> So, with the changes suggested in this cover letter and individual patches, please feel free to add:
-> 
-> Reviewed-and-Tested-by: Bhupesh Sharma <bhsharma@redhat.com>
-> 
-> Thanks,
-> Bhupesh
-> 
+This is the first version of RFC patch for Media Data Path 3 (MDP3),
+MDP3 is used for scaling and color format conversion.
+support using GCE to write register in critical time limitation.
+support V4L2 m2m device control.
 
-Thanks for you review and test. I will fix these later.
+Changes since v1:
+- modify code for CMDQ v3 API support
+- EC ipi cmd migration
+- fix compliance test fail item (m2m cmd with -f)
+due to there is two problem in runing all format(-f) cmd:
+1. out of memory before test complete
+	Due to capture buffer mmap (refcount + 1) after reqbuf but seems
+	no corresponding munmap called before device close.
+	There are total 12XX items(formats) in format test and each format
+	alloc 8 capture/output buffers.
+2. unceasingly captureBufs() (randomly)
+	Seems the break statement didn't catch the count == 0 situation:
+	In v4l2-test-buffers.cpp, function: captureBufs()
+			...
+			count--;
+			if (!node->is_m2m && !count)
+				break;
+	Log is as attachment
 
-Thanks,
-Chen Zhou
+I will paste the test result with problem part in another e-mail
 
->> Besides, we need to modify kexec-tools:
->>    arm64: support more than one crash kernel regions(see [1])
->>
->> I post this patch series about one month ago. The previous changes and
->> discussions can be retrived from:
->>
->> Changes since [v4]
->> - reimplement memblock_cap_memory_ranges for multiple ranges by Mike.
->>
->> Changes since [v3]
->> - Add memblock_cap_memory_ranges back for multiple ranges.
->> - Fix some compiling warnings.
->>
->> Changes since [v2]
->> - Split patch "arm64: kdump: support reserving crashkernel above 4G" as
->>    two. Put "move reserve_crashkernel_low() into kexec_core.c" in a separate
->>    patch.
->>
->> Changes since [v1]:
->> - Move common reserve_crashkernel_low() code into kernel/kexec_core.c.
->> - Remove memblock_cap_memory_ranges() i added in v1 and implement that
->>    in fdt_enforce_memory_region().
->>    There are at most two crash kernel regions, for two crash kernel regions
->>    case, we cap the memory range [min(regs[*].start), max(regs[*].end)]
->>    and then remove the memory range in the middle.
->>
->> [1]: http://lists.infradead.org/pipermail/kexec/2019-April/022792.html
->> [v1]: https://lkml.org/lkml/2019/4/2/1174
->> [v2]: https://lkml.org/lkml/2019/4/9/86
->> [v3]: https://lkml.org/lkml/2019/4/9/306
->> [v4]: https://lkml.org/lkml/2019/4/15/273
->>
->> Chen Zhou (3):
->>    x86: kdump: move reserve_crashkernel_low() into kexec_core.c
->>    arm64: kdump: support reserving crashkernel above 4G
->>    kdump: update Documentation about crashkernel on arm64
->>
->> Mike Rapoport (1):
->>    memblock: extend memblock_cap_memory_range to multiple ranges
->>
->>   Documentation/admin-guide/kernel-parameters.txt |  6 +--
->>   arch/arm64/include/asm/kexec.h                  |  3 ++
->>   arch/arm64/kernel/setup.c                       |  3 ++
->>   arch/arm64/mm/init.c                            | 72 +++++++++++++++++++------
->>   arch/x86/include/asm/kexec.h                    |  3 ++
->>   arch/x86/kernel/setup.c                         | 66 +++--------------------
->>   include/linux/kexec.h                           |  5 ++
->>   include/linux/memblock.h                        |  2 +-
->>   kernel/kexec_core.c                             | 56 +++++++++++++++++++
->>   mm/memblock.c                                   | 44 +++++++--------
->>   10 files changed, 157 insertions(+), 103 deletions(-)
->>
-> 
-> 
-> .
-> 
+
+
+---
+Based on v5.0-rc1 and these series:
+device tree:
+http://lists.infradead.org/pipermail/linux-mediatek/2019-February/017570.html
+clock control:
+http://lists.infradead.org/pipermail/linux-mediatek/2019-February/017320.html
+system control processor (SCP):
+http://lists.infradead.org/pipermail/linux-mediatek/2019-February/017774.html
+global command engine (GCE):
+http://lists.infradead.org/pipermail/linux-mediatek/2019-January/017143.html
+---
+
+daoyuan huang (4):
+  dt-binding: mt8183: Add Mediatek MDP3 dt-bindings
+  dts: arm64: mt8183: Add Mediatek MDP3 nodes
+  media: platform: Add Mediatek MDP3 driver KConfig
+  media: platform: mtk-mdp3: Add Mediatek MDP3 driver
+
+ .../bindings/media/mediatek,mt8183-mdp3.txt   |  217 +++
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi      |  173 +++
+ drivers/media/platform/Kconfig                |   18 +
+ drivers/media/platform/Makefile               |    2 +
+ drivers/media/platform/mtk-mdp3/Makefile      |    9 +
+ drivers/media/platform/mtk-mdp3/isp_reg.h     |   38 +
+ .../media/platform/mtk-mdp3/mdp-platform.h    |   67 +
+ .../media/platform/mtk-mdp3/mdp_reg_ccorr.h   |   76 +
+ .../media/platform/mtk-mdp3/mdp_reg_rdma.h    |  207 +++
+ drivers/media/platform/mtk-mdp3/mdp_reg_rsz.h |  110 ++
+ .../media/platform/mtk-mdp3/mdp_reg_wdma.h    |  126 ++
+ .../media/platform/mtk-mdp3/mdp_reg_wrot.h    |  116 ++
+ .../media/platform/mtk-mdp3/mmsys_config.h    |  189 +++
+ drivers/media/platform/mtk-mdp3/mmsys_mutex.h |   36 +
+ .../media/platform/mtk-mdp3/mmsys_reg_base.h  |   39 +
+ drivers/media/platform/mtk-mdp3/mtk-img-ipi.h |  282 ++++
+ .../media/platform/mtk-mdp3/mtk-mdp3-cmdq.c   |  442 ++++++
+ .../media/platform/mtk-mdp3/mtk-mdp3-cmdq.h   |   57 +
+ .../media/platform/mtk-mdp3/mtk-mdp3-comp.c   | 1325 +++++++++++++++++
+ .../media/platform/mtk-mdp3/mtk-mdp3-comp.h   |  177 +++
+ .../media/platform/mtk-mdp3/mtk-mdp3-core.c   |  256 ++++
+ .../media/platform/mtk-mdp3/mtk-mdp3-core.h   |   88 ++
+ .../media/platform/mtk-mdp3/mtk-mdp3-m2m.c    |  823 ++++++++++
+ .../media/platform/mtk-mdp3/mtk-mdp3-m2m.h    |   52 +
+ .../media/platform/mtk-mdp3/mtk-mdp3-regs.c   |  757 ++++++++++
+ .../media/platform/mtk-mdp3/mtk-mdp3-regs.h   |  386 +++++
+ .../media/platform/mtk-mdp3/mtk-mdp3-vpu.c    |  277 ++++
+ .../media/platform/mtk-mdp3/mtk-mdp3-vpu.h    |   90 ++
+ 28 files changed, 6435 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/media/mediatek,mt8183-mdp3.txt
+ create mode 100644 drivers/media/platform/mtk-mdp3/Makefile
+ create mode 100644 drivers/media/platform/mtk-mdp3/isp_reg.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mdp-platform.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mdp_reg_ccorr.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mdp_reg_rdma.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mdp_reg_rsz.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mdp_reg_wdma.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mdp_reg_wrot.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mmsys_config.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mmsys_mutex.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mmsys_reg_base.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-img-ipi.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-cmdq.c
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-cmdq.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-comp.c
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-comp.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-core.c
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-core.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-m2m.c
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-m2m.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-regs.c
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-regs.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-vpu.c
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-vpu.h
+
+-- 
+2.18.0
+
+
 
 
 _______________________________________________
