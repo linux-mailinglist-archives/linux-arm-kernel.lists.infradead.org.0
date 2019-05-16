@@ -2,41 +2,41 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EAB9E20249
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 11:11:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D699E2023D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 11:09:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hPm44MCCOcihUB6BS90ZI1dpKhZ7ZhPIzwqGHaaPmJI=; b=rlEs1SdDXXBO1S
-	wQnL0n03Qp9JtlyBKkrN5bko2FeEHDH87c0F03xA3qLo5YOJJg+2oxfwc8qu9oHHCboNNScO1pZim
-	jGED3uxi9vYUUHLYLfwzyQ+xDTxtbND80k9y25TaXX4UD+OlIEFvasx4xVc4RakwIZdE4L+kEPHwf
-	MwYX7U5HB0RwPvyfIzBKhew9ArexEySN1fZUAHWlrqnp754YYEkiBummpvyxqyxO2+v7yOCyI5lye
-	N4jxb285EszfR0T76nM9plfFeaSMlvngG6esljvDYxr0UIMsr7W33XkhjqfHxlM9R/63UguaH/a83
-	OlotwPw7122qyfZaejug==;
+	List-Owner; bh=xYB4m8OJQnjyK7MiqjiSvWaThkaoNk66hObkgpB/fmY=; b=hGV91dK4dQpCNz
+	b9jOjTALQYj4+qcyxrYViQQOMiKLVBg75ONkfNbpcSxI5PUdAEIJt5Zssjd1QVV5n389RDslDbbXc
+	rbExANxw3OrMolotVuF3YgkYwmkFuQcxoqO/Rg/xbPOD1Fk/JBplGWj1xVCIzMly6E9MEPVfzqhkR
+	eQQiUmvp5D2FbKwLb1sNjfUAzsV0JDk/MoS1yHDc8+JQmG+ps+wtB03R/XvjvIkvC9Ynot4b8MWIV
+	jPzcR3zaLetMsajnu9p0cl0n1DrsUhVf1hcxKZ9SIK3P6tohN2/FTuKQuPRzmjGSKtGJ+3xFY8nvc
+	th7LvKUDr0vPd4oLK4jA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRCPo-00048d-VU; Thu, 16 May 2019 09:11:05 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hRCOQ-0001Pb-JO; Thu, 16 May 2019 09:09:38 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRCPX-0003yL-E6; Thu, 16 May 2019 09:10:52 +0000
-X-UUID: 27edfcfa7148444ca9322070442b9b12-20190516
-X-UUID: 27edfcfa7148444ca9322070442b9b12-20190516
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ id 1hRCNw-0000xD-AJ; Thu, 16 May 2019 09:09:13 +0000
+X-UUID: 179715f3fa3445c7b3dd334c9e23c2b0-20190516
+X-UUID: 179715f3fa3445c7b3dd334c9e23c2b0-20190516
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
  (envelope-from <andrew-sh.cheng@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1266198607; Thu, 16 May 2019 01:08:52 -0800
-Received: from mtkmbs03n1.mediatek.inc (172.21.101.181) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 16 May 2019 02:08:51 -0700
+ with ESMTP id 967265880; Thu, 16 May 2019 01:09:06 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 16 May 2019 02:09:04 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs03n1.mediatek.inc (172.21.101.181) with Microsoft SMTP Server (TLS) id
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Thu, 16 May 2019 17:08:50 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Thu, 16 May 2019 17:08:49 +0800
+ Frontend Transport; Thu, 16 May 2019 17:08:50 +0800
 From: Andrew-sh.Cheng <andrew-sh.cheng@mediatek.com>
 To: MyungJoo Ham <myungjoo.ham@samsung.com>, Kyungmin Park
  <kyungmin.park@samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>, "Rob
@@ -44,17 +44,18 @@ To: MyungJoo Ham <myungjoo.ham@samsung.com>, Kyungmin Park
  Brugger" <matthias.bgg@gmail.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
  Viresh Kumar <viresh.kumar@linaro.org>, Nishanth Menon <nm@ti.com>, "Stephen
  Boyd" <sboyd@kernel.org>
-Subject: [PATCH 3/8] cpufreq: mediatek: Add support for mt8183
-Date: Thu, 16 May 2019 17:08:40 +0800
-Message-ID: <1557997725-12178-4-git-send-email-andrew-sh.cheng@mediatek.com>
+Subject: [PATCH 4/8] dt-bindings: devfreq: add compatible for mt8183 cci
+ devfreq
+Date: Thu, 16 May 2019 17:08:41 +0800
+Message-ID: <1557997725-12178-5-git-send-email-andrew-sh.cheng@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1557997725-12178-1-git-send-email-andrew-sh.cheng@mediatek.com>
 References: <1557997725-12178-1-git-send-email-andrew-sh.cheng@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_021048_130849_0B44EC37 
-X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-CacheID: sfid-20190516_020908_964066_1AB47978 
+X-CRM114-Status: UNSURE (   9.83  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -87,38 +88,42 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: "Andrew-sh.Cheng" <andrew-sh.cheng@mediatek.com>
 
-Add compatible string for mediatek mt8183
+This adds dt-binding documentation of cci devfreq
+for Mediatek MT8183 SoC platform.
 
 Signed-off-by: Andrew-sh.Cheng <andrew-sh.cheng@mediatek.com>
 ---
- drivers/cpufreq/cpufreq-dt-platdev.c | 1 +
- drivers/cpufreq/mediatek-cpufreq.c   | 1 +
- 2 files changed, 2 insertions(+)
+ .../bindings/devfreq/mt8183-cci-devfreq.txt          | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/devfreq/mt8183-cci-devfreq.txt
 
-diff --git a/drivers/cpufreq/cpufreq-dt-platdev.c b/drivers/cpufreq/cpufreq-dt-platdev.c
-index 47729a22c159..53ea52b1602e 100644
---- a/drivers/cpufreq/cpufreq-dt-platdev.c
-+++ b/drivers/cpufreq/cpufreq-dt-platdev.c
-@@ -117,6 +117,7 @@ static const struct of_device_id blacklist[] __initconst = {
- 	{ .compatible = "mediatek,mt817x", },
- 	{ .compatible = "mediatek,mt8173", },
- 	{ .compatible = "mediatek,mt8176", },
-+	{ .compatible = "mediatek,mt8183", },
- 
- 	{ .compatible = "nvidia,tegra124", },
- 	{ .compatible = "nvidia,tegra210", },
-diff --git a/drivers/cpufreq/mediatek-cpufreq.c b/drivers/cpufreq/mediatek-cpufreq.c
-index b2fc01b17b57..022d86757327 100644
---- a/drivers/cpufreq/mediatek-cpufreq.c
-+++ b/drivers/cpufreq/mediatek-cpufreq.c
-@@ -554,6 +554,7 @@ static const struct of_device_id mtk_cpufreq_machines[] __initconst = {
- 	{ .compatible = "mediatek,mt817x", },
- 	{ .compatible = "mediatek,mt8173", },
- 	{ .compatible = "mediatek,mt8176", },
-+	{ .compatible = "mediatek,mt8183", },
- 
- 	{ }
- };
+diff --git a/Documentation/devicetree/bindings/devfreq/mt8183-cci-devfreq.txt b/Documentation/devicetree/bindings/devfreq/mt8183-cci-devfreq.txt
+new file mode 100644
+index 000000000000..3189902902e0
+--- /dev/null
++++ b/Documentation/devicetree/bindings/devfreq/mt8183-cci-devfreq.txt
+@@ -0,0 +1,20 @@
++* Mediatek Cache Coherent Interconnect(CCI) frequency device
++
++Required properties:
++- compatible: should contain "mediatek,mt8183-cci" for frequency scaling of CCI
++- clocks: for frequency scaling of CCI
++- clock-names: for frequency scaling of CCI driver to reference
++- regulator: for voltage scaling of CCI
++- operating-points-v2: for frequency scaling of CCI opp table
++
++Example:
++	cci: cci {
++		compatible = "mediatek,cci";
++		clocks = <&apmixedsys CLK_APMIXED_CCIPLL>;
++		clock-names = "cci_clock";
++		operating-points-v2 = <&cci_opp>;
++	};
++
++	&cci {
++		proc-supply = <&mt6358_vproc12_reg>;
++	};
+\ No newline at end of file
 -- 
 2.12.5
 
