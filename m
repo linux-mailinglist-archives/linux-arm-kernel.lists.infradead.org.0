@@ -2,81 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D52E1FE28
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 05:30:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DFE031FE4B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 06:12:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lJM3kKg9b12QM9IVYqvNkSBGS6NjXXZ2bDDdw32A6ws=; b=AsiDaABJ7sqyP1
-	sWFqA+D0nriepOtqrJQ8vevOlIHdmhCWpfeTfp8G4RnSBPqlaVUhIELg5KpTHcb/UAWgoLeibxbsQ
-	6oOkxYJwLnMtDZFcBDK/kSG6qxHJBFl+iu3A1P5dIWSjSVSialhp8JWi2u6NyhMRc6bsAb0qlsxx5
-	p49aE7y35EdpRnsEdgFsNRozKrZOLpnprR94D+9YKPXBAQdH1zKIk7OemX2TCiZypIg6T2D5uKbau
-	yg4QjUq2SSOVjkczZ0gyoj+ZYwU8qokq/2xCnO9Z94OzNKHlIpk80+Udh1FwKToqPLrJfUTsUwVb8
-	nVdNv2h7eNkjIBPBPxHQ==;
+	List-Owner; bh=X0vUoldGRwr5snJrrBrE7SP/fq+okwNqi/5yI3Go9rA=; b=H3lQiIjck2N/3J
+	pp8UHvOYfg/eF1dHXB8LfHU0MZuzwEyEYF6uAdvFz5CZfYEmI0xA0wJK74XKYQ5kMIZRHU8SRgUqx
+	6Vo6U0UZyEPM7qgVFhvtCt3dDoSRm1EHfN9rCCc1deKRHcJmY5Z0UsJO+afC8ID+pLlZxfMr2li7i
+	3p/0d2Li3qqo8ieFnutHZe5gHsOtJGGYWCmU7nOO0Mfb6WxZ9yaSgj6EsBPEPvET6o0+x6r/UKRL5
+	N07qOq3Yxj/oAqJYSdlL9HF2ie/YOfqL6fLEjXse8tfWFFyaLFD6ER+j2FodiyINte45m+6yNUOba
+	yLp/mY/iHbfIUaJb5nVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hR75f-0001aI-G6; Thu, 16 May 2019 03:29:55 +0000
-Received: from mail-vk1-xa43.google.com ([2607:f8b0:4864:20::a43])
+	id 1hR7kU-00076L-QK; Thu, 16 May 2019 04:12:06 +0000
+Received: from mail-yw1-xc42.google.com ([2607:f8b0:4864:20::c42])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hR75Y-0001Zv-4Y
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 03:29:49 +0000
-Received: by mail-vk1-xa43.google.com with SMTP id o187so629034vkg.4
+ id 1hR7kM-00075V-Pn
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 04:12:00 +0000
+Received: by mail-yw1-xc42.google.com with SMTP id n76so854030ywd.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 May 2019 20:29:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:sender:from:date:message-id
- :subject:to:cc;
- bh=M0gjbwnx5fbOdE5IIPZtX+7pe8myER98gW6UQG7Z08c=;
- b=c0mvPTnmFRt8pwPLF59cLXLZ2XsjQWvhy26/cmn+n47w70i1pkD2Z1LdAw5uQW4hnD
- O32W1syUa3+d+8x/AjY2WW4dcB/wH43F2k469z6Jgtoi8gLwYQVmjlEfzLRIzuaxdrfm
- Q3AvmM484lkGUgG1klaxIgX92xWuAbThMms+FgK0N/TjSdwaw7ump6UD8dQSryrCzXUV
- RQw6xR22+aIj5Ds0r7AuFEKIkulmP3Emquz9+2DDcHbK0f/9gc6FvizbDKwMSvVkylEI
- xYwthPzCrsyFSAn1L/uc9SzPBGvIUGit12aweAj4uT3T7gimwbcAqsGR7Ol54mrDTKOE
- j4mg==
+ Wed, 15 May 2019 21:11:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=6NdkZ/duDqLu2X8L8Sp9Y1qQjsBGdKP1kR2TopQEGdI=;
+ b=h98J4Si4/wykEUWphi4d4zl7MVsiGlxZQ6HVAqIclAJVVNx36TI/Gb1g1PcpNkvsN4
+ MxNtkNqR10IHlg2XylQTO3XARn21apQcIPqn51p2b1ajul9hzUVMqFJL2JYPJL6DH8Wa
+ DK+93LMNzo9B95rN6fkqxXdEqIiUqN/14UnJaGx8NbzXO87vuLClz7tRB6+n423UqMos
+ Lq1eg7agukcKpTHnoE8QlTNbaOd91nwdP0j0dL2O5UVznM0YLWWxsvv1ytI2RqP2k+3i
+ seTD0xiJqcQBMdSCj3wWGBGXcMXpROw62l1g1duECrW53ow5iiQjYxoDCWzURfcqKAmj
+ u3Pg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:sender:from
- :date:message-id:subject:to:cc;
- bh=M0gjbwnx5fbOdE5IIPZtX+7pe8myER98gW6UQG7Z08c=;
- b=hBb94Eg7LDdk5NUwn3tq/i3MDF8Zd+X/zkhvqtVF8IjHoaT5l6/ny2/Yluzk814B8J
- Xz4a4UbDDWUvcIuwe77bwS1Sd3TXZbJPSQJkFcm7wJ6AE4TWY4t9p1Qb6ZASP8yHKs75
- P2eCh91gRnHRTrfPS/UMx1cZHQ9eJxbFS3QmBwSLFz5DjWyv5altOmIbVkupUUgIuZpD
- giGLmgL3m1clMaxXuz9V2zo/suTh6bMp1L0lX8sgAu+holbFcKfc18jJtuD/Pd6yqzDl
- GXdea7PmHdv9y/uDsuXWwZbMUFTSjdYkzW2r3hhidOo1QAhbcJAO84une0v9Q0XsKJnN
- a4Bg==
-X-Gm-Message-State: APjAAAWAjyI5TRGL8Uc8WX/yMPqKyZqrHdHWngz2jfuzzS9djiVjXXwY
- WfaBHXa72AXu98BIryQD2w1s27TyFYFHUZgSTd4=
-X-Google-Smtp-Source: APXvYqzHTzQ0uQT+CuCikxFbQOFKPOyYn+ZBp4N412+zqsajy8Adyu//9Ux3FB29Y67zwggvGC8nines+9sQmh9xfc8=
-X-Received: by 2002:a1f:d6c3:: with SMTP id n186mr21499586vkg.46.1557977386507; 
- Wed, 15 May 2019 20:29:46 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=6NdkZ/duDqLu2X8L8Sp9Y1qQjsBGdKP1kR2TopQEGdI=;
+ b=bHV/vzTpi/cPBBxNQulGnvsYPK9c7Gbx/z0AJQqPky+rj+nOwKi3hp+UkF/KUv5qYc
+ T86WIkoGKBd0cKE5vjEEqAiIesZ/HWQIC3xHR5Bj+CIxSdQikTklnnbqToGqFpr/IEwv
+ ybevLGRU0g5sLZJYwPNZ0gChB9Pw4+NIjGZaQ9tjllE/b0aamrj5huf2Ek6xOqyUhmi5
+ 335kvEltc9aBT2I08NcFhlO/LhMpZpyyTKtrN4S92Hctbwx9DyOUMaln4DxBeKjCz0St
+ g0hxvCtUC6Lqq+FwVhM8x8OMZStXYxnjEzBYcWw7QpSgR1PjNc1Jud2qwxT/QcNvOOza
+ ljwA==
+X-Gm-Message-State: APjAAAUd+13ipCL/4/Wv2XMv1t5ApWYAiJjXksbVosvgHq9Kve3Eb5ko
+ R/0W6P6nLUZqQgqFts7X3gwYjg==
+X-Google-Smtp-Source: APXvYqztbht9RfzIpZ2Bsj4NurJ8AOAUJ52oxUqsz7FB9PMDuUFaijoDiZw87NThfUjW+P5pLLGLNg==
+X-Received: by 2002:a81:241:: with SMTP id 62mr23262278ywc.109.1557979913641; 
+ Wed, 15 May 2019 21:11:53 -0700 (PDT)
+Received: from leoy-ThinkPad-X240s (li483-211.members.linode.com.
+ [50.116.44.211])
+ by smtp.gmail.com with ESMTPSA id p83sm1647743ywp.36.2019.05.15.21.11.46
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 15 May 2019 21:11:52 -0700 (PDT)
+Date: Thu, 16 May 2019 12:11:40 +0800
+From: Leo Yan <leo.yan@linaro.org>
+To: Wanglai Shi <shiwanglai@hisilicon.com>
+Subject: Re: [PATCH v4] arm64: dts: hi3660: Add CoreSight support
+Message-ID: <20190516041140.GC12557@leoy-ThinkPad-X240s>
+References: <1555768835-68555-1-git-send-email-shiwanglai@hisilicon.com>
 MIME-Version: 1.0
-References: <1557927822-21111-1-git-send-email-arunks@codeaurora.org>
- <20190515134902.GI24357@fuggles.cambridge.arm.com>
-In-Reply-To: <20190515134902.GI24357@fuggles.cambridge.arm.com>
-X-Google-Sender-Delegation: getarunks@gmail.com
-From: Arun KS <arunks.linux@gmail.com>
-Date: Thu, 16 May 2019 08:59:35 +0530
-X-Google-Sender-Auth: Jhj8jzl7NQ5YCn7WCpPYESwNezk
-Message-ID: <CAKZGPAMWDbfckAxp5BJVvr+K1k7h2aoVBp_TaW0tuyDfiopnsw@mail.gmail.com>
-Subject: Re: [PATCH v1] arm64: Fix size of __early_cpu_boot_status
-To: Will Deacon <will.deacon@arm.com>
+Content-Disposition: inline
+In-Reply-To: <1555768835-68555-1-git-send-email-shiwanglai@hisilicon.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_202948_206211_9746ACBE 
-X-CRM114-Status: GOOD (  15.14  )
+X-CRM114-CacheID: sfid-20190515_211158_839357_76A36EA9 
+X-CRM114-Status: UNSURE (   9.81  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c42 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arunks.linux[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -95,42 +98,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Shaokun Zhang <zhangshaokun@hisilicon.com>,
- Steve Capper <steve.capper@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- linux-kernel@vger.kernel.org, Jun Yao <yaojun8558363@gmail.com>,
- Arun KS <arunks@codeaurora.org>, James Morse <james.morse@arm.com>,
- Alexandru Elisei <alexandru.elisei@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ mathieu.poirier@linaro.org, suzuki.poulose@arm.com, suzhuangluan@hisilicon.com,
+ linux-kernel@vger.kernel.org, xuwei5@hisilicon.com, robh+dt@kernel.org,
+ John Stultz <john.stultz@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ mike.leach@linaro.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 15, 2019 at 7:20 PM Will Deacon <will.deacon@arm.com> wrote:
->
-> On Wed, May 15, 2019 at 07:13:19PM +0530, Arun KS wrote:
-> > __early_cpu_boot_status is of type int. Fix up the calls to
-> > update_early_cpu_boot_status, to use a w register.
-> >
-> > Signed-off-by: Arun KS <arunks@codeaurora.org>
-> > Acked-by: Mark Rutland <mark.rutland@arm.com>
-> > ---
-> >  arch/arm64/include/asm/smp.h | 2 +-
-> >  arch/arm64/kernel/head.S     | 6 +++---
-> >  2 files changed, 4 insertions(+), 4 deletions(-)
->
-> Your original patch is now in mainline:
->
-> https://git.kernel.org/linus/61cf61d81e32
->
-> Is this still needed?
-Thanks for pointing that out. We can ignore this patch.
+On Sat, Apr 20, 2019 at 10:00:35PM +0800, Wanglai Shi wrote:
+> This patch adds DT bindings for the CoreSight trace components
+> on hi3660, which is used by 96boards Hikey960.
+> 
+> Signed-off-by: Wanglai Shi <shiwanglai@hisilicon.com>
 
-Regards,
-Arun
->
-> Will
+Hi Wei,
+
+Mathieu and me both have reviewed this patch, could you pick up this
+patch?  Thanks a lot!
+
+Leo.
 
 _______________________________________________
 linux-arm-kernel mailing list
