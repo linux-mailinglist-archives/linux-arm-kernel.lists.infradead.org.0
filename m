@@ -2,37 +2,37 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8346020222
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 11:05:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 349002021B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 11:04:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qLopM0X5YHJwSP6U35bbPh2cSlETpTmv6ylU+tOEfvU=; b=LX2ETgLLrvg2/q
-	7SJsBPH6gKIJuOPnc1IBPNp4QAeWjX9urN4rzmW6EONS6gImRufRDCF0B4fY5qUVOsN6D38AMfg7e
-	yyJwPjwmPuFi6BjwzkHPMCefcRx2dPamhYBoVlZSpvgR6JC0n4Qbz1wJ74KDVXHh+5UBRWRM7HHOl
-	eHzJsOPsQ4Y5nWyNuvshx4weyW7+k1LuZJ3SQFV0xnaWuFU0kDzBlhZWREqhbxeZfb+Ss600FboS2
-	rRXEGkI7WQsmOZfgXmlv3xxfm9JBBC+XsCy2l8Td0Cl9jPqyoY3G5DQIe6E4BmON52nw0jFo3yWnL
-	/618P6bP5DaXbeRhrVeg==;
+	List-Owner; bh=8pC/Pfyfu9m8BZp+m1bgB/rrbqhfolEKLA1sIPSs1oo=; b=ui3w+eH5i9sshI
+	P4jR4Cq5lpguzUPbSQBJRA4Clhtt9SLFK9LkIzBOdekEjOzDG2Yx/SYO1BFygRONInhvU4lL7mGtC
+	8pMsRhUk99UMKlqB6yK7FakV04kN2camUIi1v7finAz7/xWWsjGviW+UmcWBBDuvUjbuXyUU/39eT
+	D388soF1oGAM4Ucx/7dV6RghwO8H1wbcODNcXWMcZg/34O6T9uFelrOyle8cgRwM2QhqmYJIAB46L
+	D941p000LksMKneenbpAgU5uvj1BkmMJJ7s4sDY4aX1e+28jYv50YQYMsEByOUcW2A5ASC9yirxh2
+	U34YkB1HBy9DVB951mpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRCKK-0008K3-1z; Thu, 16 May 2019 09:05:24 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hRCJ9-0006St-MU; Thu, 16 May 2019 09:04:11 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRCK4-00080E-CS; Thu, 16 May 2019 09:05:12 +0000
-X-UUID: 97018ea0fe504b0794d556a7988de6db-20190516
-X-UUID: 97018ea0fe504b0794d556a7988de6db-20190516
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ id 1hRCHh-0004g5-Ra; Thu, 16 May 2019 09:02:47 +0000
+X-UUID: 924cabff470143708398b51830a89e9d-20190516
+X-UUID: 924cabff470143708398b51830a89e9d-20190516
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
  (envelope-from <bibby.hsieh@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 135481644; Thu, 16 May 2019 01:02:36 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ with ESMTP id 1891082364; Thu, 16 May 2019 01:02:30 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 16 May 2019 02:02:35 -0700
+ 15.0.1395.4; Thu, 16 May 2019 02:02:28 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Thu, 16 May 2019 17:02:27 +0800
 Received: from mtkslt302.mediatek.inc (10.21.14.115) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
@@ -41,18 +41,17 @@ From: Bibby Hsieh <bibby.hsieh@mediatek.com>
 To: Jassi Brar <jassisinghbrar@gmail.com>, Matthias Brugger
  <matthias.bgg@gmail.com>, Rob Herring <robh+dt@kernel.org>, CK HU
  <ck.hu@mediatek.com>
-Subject: [PATCH v6 03/12] dt-binding: gce: add binding for gce subsys property
-Date: Thu, 16 May 2019 17:02:15 +0800
-Message-ID: <20190516090224.59070-4-bibby.hsieh@mediatek.com>
+Subject: [PATCH v6 04/12] dt-binding: gce: add binding for gce event property
+Date: Thu, 16 May 2019 17:02:16 +0800
+Message-ID: <20190516090224.59070-5-bibby.hsieh@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20190516090224.59070-1-bibby.hsieh@mediatek.com>
 References: <20190516090224.59070-1-bibby.hsieh@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 133ABA43BC3171D96E19DE5D7CE24F57DF595CB91A101F3EBF67AE96D240CE432000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_020508_454755_43F3BC09 
-X-CRM114-Status: GOOD (  10.88  )
+X-CRM114-CacheID: sfid-20190516_020242_419434_B8B272A2 
+X-CRM114-Status: GOOD (  11.15  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -89,60 +88,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tcmdq driver provide a function that get the relationship
-of sub system number from device node for client.
-add specification for #subsys-cells, mediatek,gce-subsys.
+Client hardware would send event to GCE hardware,
+mediatek,gce-event-names and mediatek,gce-events
+can be used to present the event.
 
 Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
 ---
- .../devicetree/bindings/mailbox/mtk-gce.txt       | 15 ++++++++++++---
- 1 file changed, 12 insertions(+), 3 deletions(-)
+ Documentation/devicetree/bindings/mailbox/mtk-gce.txt | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
 diff --git a/Documentation/devicetree/bindings/mailbox/mtk-gce.txt b/Documentation/devicetree/bindings/mailbox/mtk-gce.txt
-index 1f7f8f2a3f49..dceab63ccd06 100644
+index dceab63ccd06..265bb58da7bd 100644
 --- a/Documentation/devicetree/bindings/mailbox/mtk-gce.txt
 +++ b/Documentation/devicetree/bindings/mailbox/mtk-gce.txt
-@@ -21,11 +21,19 @@ Required properties:
- 	priority: Priority of GCE thread.
- 	atomic_exec: GCE processing continuous packets of commands in atomic
- 		way.
-+- #subsys-cells: Should be 3.
-+	<&phandle subsys_number start_offset size>
-+	phandle: Label name of a gce node.
-+	subsys_number: specify the sub-system id which is corresponding
-+		       to the register address.
-+	start_offset: the start offset of register address that GCE can access.
-+	size: the total size of register address that GCE can access.
- 
- Required properties for a client device:
- - mboxes: Client use mailbox to communicate with GCE, it should have this
-   property and list of phandle, mailbox specifiers.
--- mediatek,gce-subsys: u32, specify the sub-system id which is corresponding
-+Optional properties for a client device:
-+- mediatek,gce-client-reg: u32, specify the sub-system id which is corresponding
+@@ -35,6 +35,8 @@ Required properties for a client device:
+ Optional properties for a client device:
+ - mediatek,gce-client-reg: u32, specify the sub-system id which is corresponding
    to the register address.
++- mediatek,gce-events: u32, the event number defined in
++  'dt-bindings/gce/mt8173-gce.h' or 'dt-binding/gce/mt8183-gce.h'.
  
  Some vaules of properties are defined in 'dt-bindings/gce/mt8173-gce.h'
-@@ -40,6 +48,7 @@ Example:
- 		clocks = <&infracfg CLK_INFRA_GCE>;
- 		clock-names = "gce";
- 		#mbox-cells = <3>;
-+		#subsys-cells = <3>;
- 	};
- 
- Example for a client device:
-@@ -48,9 +57,9 @@ Example for a client device:
+ or 'dt-binding/gce/mt8183-gce.h'. Such as sub-system ids, thread priority, event ids.
+@@ -57,8 +59,8 @@ Example for a client device:
  		compatible = "mediatek,mt8173-mmsys";
  		mboxes = <&gce 0 CMDQ_THR_PRIO_LOWEST 1>,
  			 <&gce 1 CMDQ_THR_PRIO_LOWEST 1>;
--		mediatek,gce-subsys = <SUBSYS_1400XXXX>;
- 		mutex-event-eof = <CMDQ_EVENT_MUTEX0_STREAM_EOF
- 				CMDQ_EVENT_MUTEX1_STREAM_EOF>;
--
-+		mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x3000 0x1000>,
-+					  <&gce SUBSYS_1401XXXX 0x2000 0x100>;
+-		mutex-event-eof = <CMDQ_EVENT_MUTEX0_STREAM_EOF
+-				CMDQ_EVENT_MUTEX1_STREAM_EOF>;
++		mediatek,gce-events = <CMDQ_EVENT_MDP_RDMA0_SOF>,
++				      <CMDQ_EVENT_MDP_RSZ0_SOF>;
+ 		mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x3000 0x1000>,
+ 					  <&gce SUBSYS_1401XXXX 0x2000 0x100>;
  		...
- 	};
 -- 
 2.18.0
 
