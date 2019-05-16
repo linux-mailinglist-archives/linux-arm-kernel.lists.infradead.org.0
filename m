@@ -2,58 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC45620D60
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 18:49:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A640620D85
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 18:57:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b86vQbPk7SrC1ywd9N+3xbUR03P4e2sYo7j2He2F4wA=; b=eRZtem/XhdwDT0
-	gFcymw+gvd0YTiTe1U9Mwrsv2Ms3rCQdA2fCuDp7vtP5ZpGAcoUWX54R3jP+VY6aph1UTBNpJZRwu
-	kNNFYFtBessHkXgJWcTh9o0Bad/QcKeYCnrrIopJnpTaQwsTTM7vvqlV51pOqySu0JumrbC8loZAa
-	bL/6zgYzfgyPbUV7NGcc5DDjH80jATiT5uGYuiSNqlVk6ZiMohLUeV9npuEPUgJDpnuHoj4Gk5gh0
-	WdcNfIxxL6pfXN9dQiFhZ+wweC0bm435YqkY5uwuaWW8GMjdut4iIsYOS7F5zkW9iOWMKDD/ay2LZ
-	aFOsGo/8TJU91WZbrgeA==;
+	List-Owner; bh=Xcy29FfBiKXmDHqr55FjYfaQH7BDwGbek62yS0kxebQ=; b=DZ3JsdukCNsQ+7
+	5K88dConDsUM5wCawYobvkqXJwgRCn1q9d2hZfObXhkF1vNUUXDytPZghaeo70+1tmN2X5tNwV1Mz
+	Q8N2TiIydKF0XqA9hvPQ/6i7LjlC9RxkFEberPX7iEEEDeC24l0p3heRWVvRoyknJtc1XKxaml0uG
+	G5uh8oxT5ua5biadbew5UAF1eKnOiGXDu7xpApaeR4kYbzXe4haFsfjraWPxQrzP7tSRgNfPcSuoS
+	CfIPorRDZEXkpk9vU+F2bXcWXeW4su7zsoh9z6fE3oYut9jXQNn4mpQy+9D54yZGD9CgsFNQKd+gl
+	UGMHQfJvQhr8HiqTWv4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRJZU-00036a-LT; Thu, 16 May 2019 16:49:32 +0000
-Received: from verein.lst.de ([213.95.11.211] helo=newverein.lst.de)
+	id 1hRJhL-0007c5-09; Thu, 16 May 2019 16:57:39 +0000
+Received: from mail-vk1-xa43.google.com ([2607:f8b0:4864:20::a43])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRJZK-00030q-Dd
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 16:49:23 +0000
-Received: by newverein.lst.de (Postfix, from userid 2005)
- id 17CF168B02; Thu, 16 May 2019 18:49:00 +0200 (CEST)
-Date: Thu, 16 May 2019 18:48:59 +0200
-From: Torsten Duwe <duwe@lst.de>
-To: Vasily Khoruzhick <anarsoul@gmail.com>
-Subject: Re: [PATCH 4/4] arm64: DTS: allwinner: a64: enable ANX6345 bridge
- on Teres-I
-Message-ID: <20190516164859.GB10431@lst.de>
-References: <20190514155911.6C0AC68B05@newverein.lst.de>
- <20190514160241.9EAC768C7B@newverein.lst.de>
- <CA+E=qVfuKBzWK7dpM_eabjU8mLdzOw3zCnYk6Tc1oXdavH7CNA@mail.gmail.com>
- <20190515093141.41016b11@blackhole.lan>
- <CA+E=qVf6K_0T0x2Hsfp6EDqM-ok6xiAzeZPvp6SRg0yt010pKA@mail.gmail.com>
- <20190516154820.GA10431@lst.de>
- <CA+E=qVe5NkAvHXPvVc7iTbZn5sKeoRm0166zPW_s83c2gk7B+g@mail.gmail.com>
+ id 1hRJhC-0007HN-RP
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 16:57:32 +0000
+Received: by mail-vk1-xa43.google.com with SMTP id o187so1221765vkg.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 May 2019 09:57:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=XhVy4fV27jq2t1U3j4yj5LOX3kolPCtSSv2ORXGfHzE=;
+ b=nmkNcSzFh5OLOVDoIP1Pa1b3QlFQ9XUYxSji0qAe4uJ8qe8/ySQ0B315ClUKfCMxCI
+ QreA9gJduIu2vRUzTpTojdUotl5e6fJq+SceMidLHwj0AeQMK7NwYdEyur30qezJkGB1
+ 6P6pUygJV9C+M4itjNtSHxbE6pyY55gvxIt8M=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=XhVy4fV27jq2t1U3j4yj5LOX3kolPCtSSv2ORXGfHzE=;
+ b=ulvKWM0qhPcgdTFDdj7n1jzCChvZM3oNUmKQIpdDYBFECS9j9e3E0suabtUjhC9Ics
+ Ci28TxU8EEi0FT21H5G/F+t5ul2ulQn2J/lxs7i0XtAweqg9rUDemay6PQUKlhesu+TR
+ kyWlOO7j+BWqJG4iRbVAIPlT9VnGlflYATExNNE2aKPPLaHeY0th5YfyBw4hK/N7ij5q
+ fTGw1LsK8YUUu3eZn+6GNzzt5XIwfZh5Qva5kCOcMSwZSwxMWixj90Rb2YcScE4nX6sC
+ LZm1sy51yHIMVcRDNtSmyC/N0vI0qGP1jcLbFdvMQiN7kyBCuQUOxvPHWmtIAgcSVlgf
+ NRRw==
+X-Gm-Message-State: APjAAAWBs9fqKKL6lbyhnvXYCKHakFwjDqfhSwj+zylwHiHzsQvnkogZ
+ 7ndvfpFL7U9/JtShakoCL2TkvYj/6is=
+X-Google-Smtp-Source: APXvYqyLGU4KF74ZXap/fidhTm8wpfjKLQqfc2OvHwSo6ec8PChXr4+KFWFfGW1xvzidL9bNdSGBZA==
+X-Received: by 2002:ac5:c219:: with SMTP id m25mr22610952vkk.53.1558025848381; 
+ Thu, 16 May 2019 09:57:28 -0700 (PDT)
+Received: from mail-ua1-f44.google.com (mail-ua1-f44.google.com.
+ [209.85.222.44])
+ by smtp.gmail.com with ESMTPSA id y5sm2102386vsc.19.2019.05.16.09.57.26
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Thu, 16 May 2019 09:57:26 -0700 (PDT)
+Received: by mail-ua1-f44.google.com with SMTP id 7so1572117uah.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 May 2019 09:57:26 -0700 (PDT)
+X-Received: by 2002:a9f:24a3:: with SMTP id 32mr1792277uar.109.1558025846288; 
+ Thu, 16 May 2019 09:57:26 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CA+E=qVe5NkAvHXPvVc7iTbZn5sKeoRm0166zPW_s83c2gk7B+g@mail.gmail.com>
-User-Agent: Mutt/1.5.17 (2007-11-01)
+References: <20190516162942.154823-1-mka@chromium.org>
+In-Reply-To: <20190516162942.154823-1-mka@chromium.org>
+From: Doug Anderson <dianders@chromium.org>
+Date: Thu, 16 May 2019 09:57:11 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=XtAMJcNCkV=wm1iNcMo3UenmrCDKJkmS6wtxvtpvLrag@mail.gmail.com>
+Message-ID: <CAD=FV=XtAMJcNCkV=wm1iNcMo3UenmrCDKJkmS6wtxvtpvLrag@mail.gmail.com>
+Subject: Re: [PATCH v2 1/3] ARM: dts: rockchip: raise CPU trip point
+ temperature for veyron to 100 degC
+To: Matthias Kaehlcke <mka@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_094922_644341_492AB6BD 
-X-CRM114-Status: GOOD (  10.00  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190516_095730_900531_7D4F0F30 
+X-CRM114-Status: GOOD (  14.15  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:a43 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -65,46 +102,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Andrzej Hajda <a.hajda@samsung.com>,
- David Airlie <airlied@linux.ie>, linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
- Sean Paul <seanpaul@chromium.org>,
- arm-linux <linux-arm-kernel@lists.infradead.org>,
- Icenowy Zheng <icenowy@aosc.io>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, LKML <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 16, 2019 at 09:06:41AM -0700, Vasily Khoruzhick wrote:
-> 
-> Driver can talk to the panel over AUX channel only after t1+t3, t1 is
-> up to 10ms, t3 is up to 200ms.
-
-This is after power-on. The boot loader needs to deal with this.
-
-> It works with older version of driver
-> that keeps panel always on because it takes a while between driver
-> probe and pipeline start.
-
-No lid switch, no USB, no WiFi, no MMC. If you disable DCDC1 you'll
-run out of wakeup-sources ;-) IOW: I see no practical way any OS
-driver can switch this panel voltage off and survive...
-
-> All in all - you don't need panel timings since there's EDID but you
-> still need panel delays. Anyway, it's up to you and maintainers.
-
-Let's give it a try.
-
-	Torsten
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgpPbiBUaHUsIE1heSAxNiwgMjAxOSBhdCA5OjI5IEFNIE1hdHRoaWFzIEthZWhsY2tlIDxt
+a2FAY2hyb21pdW0ub3JnPiB3cm90ZToKCj4gVGhpcyB2YWx1ZSBtYXRjaGVzIHdoYXQgaXMgdXNl
+ZCBieSB0aGUgZG93bnN0cmVhbSBDaHJvbWUgT1MgMy4xNAo+IGtlcm5lbCwgdGhlICdvZmZpY2lh
+bCcga2VybmVsIGZvciB2ZXlyb24gZGV2aWNlcy4gS2VlcCB0aGUgdGVtcGVyYXR1cmUKPiBmb3Ig
+J3NwZWVkeScgYXQgOTDCsEMsIGFzIGluIHRoZSBkb3duc3RyZWFtIGtlcm5lbC4KPgo+IEluY3Jl
+YXNlIHRoZSB0ZW1wZXJhdHVyZSBmb3IgYSBoYXJkd2FyZSBzaHV0ZG93biB0byAxMjXCsEMsIHdo
+aWNoCj4gbWF0Y2hlcyB0aGUgZG93bnN0cmVhbSBjb25maWd1cmF0aW9uIGFuZCBnaXZlcyB0aGUg
+c3lzdGVtIGEgY2hhbmNlCj4gdG8gc2h1dCBkb3duIG9yZGVybHkgYXQgdGhlIGNyaXRpY2lhbCB0
+cmlwIHBvaW50Lgo+Cj4gU2lnbmVkLW9mZi1ieTogTWF0dGhpYXMgS2FlaGxja2UgPG1rYUBjaHJv
+bWl1bS5vcmc+Cj4gLS0tCj4gQ2hhbmdlcyBpbiB2MjoKPiAtIHBhdGNoIGFkZGVkIHRvIHRoZSBz
+ZXJpZXMKPiAtLS0KPiAgYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXZleXJvbi1zcGVlZHkuZHRz
+IHwgNCArKysrCj4gIGFyY2gvYXJtL2Jvb3QvZHRzL3JrMzI4OC12ZXlyb24uZHRzaSAgICAgICB8
+IDUgKysrKysKPiAgMiBmaWxlcyBjaGFuZ2VkLCA5IGluc2VydGlvbnMoKykKClJldmlld2VkLWJ5
+OiBEb3VnbGFzIEFuZGVyc29uIDxkaWFuZGVyc0BjaHJvbWl1bS5vcmc+CgpfX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
+bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
