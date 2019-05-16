@@ -2,77 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 533F220DE3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 19:25:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7667F20DE7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 19:25:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=EV5ziaQfh/lVmkOVyso19fNbMH6TqRv7lOiD/aQtOqQ=; b=SDhY7JML6L33MH
-	hZsGruOqB6jG+KuRNLaoewNzdzdV/QWrt0+fMp+mqaOuz0g4USrC1tHgtWMymVyKEEvuU3E23Eheh
-	/xPK4gzIN2YVo2ue9NbBCgOQBUYOaRzQ9P8sKj87iq1yOp8ivS58zzsQLFN1ZXDmYyYlKxIQhBNsZ
-	pPqIh01i5j3cLchvHqAbt7JrpYZPprO+y9HvRhJUpJOedollDSa+P4DFVcMG0QC1QXI7P3v2b9daV
-	43Oo51gwC38ZsIr4C+anILsdQKUomFplg3T6PbsKryAlCd4sWt0wQGj2mofNkRSeouN7ysgustNCv
-	wWZ4iLq7+baEN+eICmug==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3lFjlRMjKZEL9Es+uX7shM6+vOQyE90/JSHzlPvexvk=; b=ry7x4tsZSmbq1t
+	UqagWBmjxqjJaaoNN88DHLSfTC+WmAFM+yz4E2T8HLaxQt9Dd0MhbDSIgeRw1YouTHV0jBPVhax0+
+	NwEtT9o7Vd+AV1JKZxqazhSCpiz2JCOG60NoCLd808wsf+BEL4apliZ+OttxTP+kbeO3I5a4qa/Mh
+	khQ+4UufvoGE+JyFrz48SQEm4zhfJjluvDmfK0TAJKJ0KAVP8QShvxypouY14Wnaf7inqUKguGDBa
+	R8IZ9HXvGvVVh0I0voWBVU10YsN8ojNaykRv+xkI9JANgNXQUisI8GmA68/mBT8HYt+xthhvbAbGh
+	QIRznKTsUC1gxuaa6Z9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRK8D-0002af-3c; Thu, 16 May 2019 17:25:25 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hRK8Q-0002oa-6H; Thu, 16 May 2019 17:25:38 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRK83-0002Ye-Pz
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 17:25:17 +0000
-Received: by mail-pg1-x541.google.com with SMTP id z3so1885973pgp.8
+ id 1hRK85-0002ZN-BZ
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 17:25:18 +0000
+Received: by mail-pf1-x441.google.com with SMTP id u17so2191736pfn.7
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 May 2019 10:25:15 -0700 (PDT)
+ Thu, 16 May 2019 10:25:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=EVl8ZXN8JPcw2xaHO9ZTYh60UwjcOeEd2LUYV6FNZrQ=;
- b=L3pOoCaQskb2Fga/dNWke/VSFUUQxbe+nfTUcxUrOmVHH+LzrUUfkyRywEz99Q4nL2
- m2F69hUS3UQsU1/UYxwbVPnwDiHlZv7R4hJ4RU5sRHW+Kb3kXCOs/SWFZz57Bb7K9hiQ
- cvV1dfJXk2iCJVks9ckJo5aM/Ys5drogaQYgg=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=ousylPICmwH1og6gjNylTr7gaxUc1ig3ZdhjNRxPghU=;
+ b=dgGSuA8VDPXv7Fj5Q5+ofTuWInUTRLCEGimaJ/XwDGZgH8iS5qpn3DIYuedOUERjIX
+ TgF/rxteIL7Z4FgxhseTSJdM60kvzN7B9+j7MOUShrmdYPyIeiqsNXzbHYJYAtdG1MRf
+ sXk2aqJnxCwgTHfdsfrBaJ3wtHTlqnbyhdVh4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=EVl8ZXN8JPcw2xaHO9ZTYh60UwjcOeEd2LUYV6FNZrQ=;
- b=t73c5o80p7alxk4WeiKI6E1JiZxs8eJixFMrdsPMcJYbtp7LbwJv7ipyCywT3RMkDd
- 4zXy8JZGKaHYJllsyUZRo37hRjweg8B17dNsBBKzTvMUkvS5fneeoYsWLvxZ0o6fZp+J
- WY4AEFze7Cjzhhws4skhidlK8/+0GN2qfD82AlDk6ClRUkWLj+dKsKB3fSLD8yiDKxpH
- S9Gh7By9u6IV+CqXH4IL7pnrTHngE8CTGOvZ2H6WnlYimL7g+FfhIAfkk00PCxu5rvDq
- nw/hsFl+i9T2ZZzp8Ka3p6EnEeBwAsniLyddv1jKDL4rW4Q33gR6VKqvy815wyqCE69e
- RFdQ==
-X-Gm-Message-State: APjAAAWIEIMFFyCycx6l0ScGXVLMqrYAdGfznbxKvCVbtWB8VWVgtU/G
- PCQH7xbpMK0kBhzATYy9pkV5Ow==
-X-Google-Smtp-Source: APXvYqwpj3INjdyCcYF7eLRtYgUqjMn2YOU0j2bY43pkolET6jRmQIrQb00jKgHVpRrRAInlDPe5xQ==
-X-Received: by 2002:aa7:9afc:: with SMTP id y28mr55797961pfp.101.1558027515393; 
- Thu, 16 May 2019 10:25:15 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=ousylPICmwH1og6gjNylTr7gaxUc1ig3ZdhjNRxPghU=;
+ b=HPlkjVTuCKI1BAQKZfSXNnpUlGrWm3IifCSPacJgRYOUC4L1aHkFflnGMzbNJTTR10
+ yvgr6VRCknO21hxqmsrbmj+CBP1+AePFww1Bg0coCaR6Qb0H6zS2Ju3F0xxAoihyFx+6
+ +yZpReWrVfE+VDuyjVy/Oyj38BSzUfdUJT/7IXksylFedBao54AUGwSdSeA+8E6IjmKL
+ 5HGb/kIg3f+d1ASvlY/Aq4i2+gf0H/Q099UmejTzE8wQ0isJLCJeF4qiI7IvatKgRKhu
+ qXRamZXZodQBl30+xzJDWeOR04F51aHIQomXLReCSQjphE8lVUmX/zpQp0PtrGP1xI5e
+ +H3A==
+X-Gm-Message-State: APjAAAV9iyX5SLRVyqE2vO/if/6pvA93Ng0OLEcpE5UswSOCUjLxVc3b
+ 47hVlrUZPER+TK5ADiWwzz7MXw==
+X-Google-Smtp-Source: APXvYqyRLtHHdZ/6gBoDhAq+Ft8DnEuAOLEu1Tag/6FSXqdLHOz2xTh+/UUVMzZ7Jib/lJnPD2TaUw==
+X-Received: by 2002:a62:570a:: with SMTP id l10mr54993359pfb.151.1558027516911; 
+ Thu, 16 May 2019 10:25:16 -0700 (PDT)
 Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
- by smtp.gmail.com with ESMTPSA id k63sm9651260pfb.108.2019.05.16.10.25.14
+ by smtp.gmail.com with ESMTPSA id f29sm17110563pfq.11.2019.05.16.10.25.15
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 16 May 2019 10:25:14 -0700 (PDT)
+ Thu, 16 May 2019 10:25:16 -0700 (PDT)
 From: Matthias Kaehlcke <mka@chromium.org>
 To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v2 1/3] dt-bindings: gpu: add #cooling-cells property to the
- ARM Mali Midgard GPU binding
-Date: Thu, 16 May 2019 10:25:08 -0700
-Message-Id: <20190516172510.181473-1-mka@chromium.org>
+Subject: [PATCH v2 2/3] ARM: dts: rockchip: Add #cooling-cells entry for
+ rk3288 GPU
+Date: Thu, 16 May 2019 10:25:09 -0700
+Message-Id: <20190516172510.181473-2-mka@chromium.org>
 X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
+In-Reply-To: <20190516172510.181473-1-mka@chromium.org>
+References: <20190516172510.181473-1-mka@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_102515_869693_F3B1FEDD 
-X-CRM114-Status: GOOD (  10.88  )
+X-CRM114-CacheID: sfid-20190516_102517_393963_8AFF1B98 
+X-CRM114-Status: GOOD (  13.62  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,38 +106,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The GPU can be used as a thermal cooling device, add an optional
-'#cooling-cells' property.
+The Mali GPU of the rk3288 can be used as cooling device, add
+a #cooling-cells entry for it.
 
 Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
+Reviewed-by: Douglas Anderson <dianders@chromium.org>
 ---
 Changes in v2:
-- patch added to the series
+- added Doug's 'Reviewed-by' tag
 ---
- Documentation/devicetree/bindings/gpu/arm,mali-midgard.txt | 3 +++
- 1 file changed, 3 insertions(+)
+ arch/arm/boot/dts/rk3288.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/gpu/arm,mali-midgard.txt b/Documentation/devicetree/bindings/gpu/arm,mali-midgard.txt
-index 18a2cde2e5f3..61fd41a20f99 100644
---- a/Documentation/devicetree/bindings/gpu/arm,mali-midgard.txt
-+++ b/Documentation/devicetree/bindings/gpu/arm,mali-midgard.txt
-@@ -37,6 +37,8 @@ Optional properties:
- - operating-points-v2 : Refer to Documentation/devicetree/bindings/opp/opp.txt
-   for details.
- 
-+- #cooling-cells: Refer to Documentation/devicetree/bindings/thermal/thermal.txt
-+  for details.
- 
- Example for a Mali-T760:
- 
-@@ -51,6 +53,7 @@ gpu@ffa30000 {
- 	mali-supply = <&vdd_gpu>;
- 	operating-points-v2 = <&gpu_opp_table>;
- 	power-domains = <&power RK3288_PD_GPU>;
-+	#cooling-cells = <2>;
- };
- 
- gpu_opp_table: opp_table0 {
+diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
+index a024d1e7e74c..14d9609f0b15 100644
+--- a/arch/arm/boot/dts/rk3288.dtsi
++++ b/arch/arm/boot/dts/rk3288.dtsi
+@@ -1273,6 +1273,7 @@
+ 		interrupt-names = "job", "mmu", "gpu";
+ 		clocks = <&cru ACLK_GPU>;
+ 		operating-points-v2 = <&gpu_opp_table>;
++		#cooling-cells = <2>; /* min followed by max */
+ 		power-domains = <&power RK3288_PD_GPU>;
+ 		status = "disabled";
+ 	};
 -- 
 2.21.0.1020.gf2820cf01a-goog
 
