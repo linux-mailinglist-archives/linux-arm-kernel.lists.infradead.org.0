@@ -2,69 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 25BDF206B4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 14:09:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E428206D7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 14:24:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=c37tr6hPT8YlkzW0mA24pFdCTAgytkq+2RHC+cYYS8o=; b=V6hZAL9/pL0fBM
-	yAi6D7WvmjLpo4kHDwACOJXOvNs7x420Q0LxTi9RUfDgvrTc3CADuApXBlCvJAwOFYiF7ZKV7pDy5
-	22ZbNHPyeMf1Z+16sKolBdmvAJt3bX9tjnUA7Ho4eTISnp9mxw5oqKv6Z+fDFZ6GoawJKT9/5u+uA
-	1X61gzCIYSPrLKOLTVx8jfIKvgH9aNNnScXl0M0zryL6wrbenrsR9hkKMbf8PbOFQiUiZayaiVMwB
-	0Plp9qOOsq8hOjIVLvOEdkWHwTaUveRfnjI9Q5wd6lOY4+Q2Gq9a6/1VwQYAaVdCHv1Lwvti/HprA
-	NlKFBHyF0cYNWOzVF/vA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JdNpGAsmupltlujvbm8T7ExvawrZw9bXs4qy9+0j8XQ=; b=GK4AZe/IPd7A2S
+	vINX1ku0bSxaH7BUbfcOQ/YRdvsucdUY+RxSPrNwwwWeoddjJ3NRDuTzccZeSlKzRIAiSpZraFS2g
+	EaCjL2si7HUEMSpNjvwGplPffSlojCjkFd3gSvP30eBKfV74fL925AhK76R/kQaen6hQDmxYGsRzx
+	aH04hxMGxYEvxJMKuNH2tYE/VubMBBJxHmTkm4j98VwGcACh7reC60gTl6JRVppw2uSsU2VIc3b0L
+	S+3EJJcXl018CQyCfCH2u1pgciLwcBSk3cJi4LFHukzhwymHGWpL8qPYdeW4WQCWhhllngtRBykTB
+	BPxUsvoBfb7DScL/J5XQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRFCd-0005Ib-J2; Thu, 16 May 2019 12:09:39 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hRFQX-0002D4-Gv; Thu, 16 May 2019 12:24:01 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRFCX-0005HZ-LA
- for linux-arm-kernel@bombadil.infradead.org; Thu, 16 May 2019 12:09:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
- Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=mVet3PDtMrjmz0qx9TuYyd4zyKdH7dYA7+H5eFGjXw0=; b=NlVSBajKNyZAQAC4UT2zqQzkCN
- MpKQSAzbeuw0v/16knSS5YmW3kM5NyMPdUM3WDLF3pvA6CYjoFiipn6gEeAydzdvAHH7VRsFfemaY
- Y39/5yQFpr/z3kaYTNtgqlMNZh1b8ecsYnT8MYXEeHXogmZEHp/4O+VWNGsMFP9x6+wqJE95r3DVi
- AdmdWbHPMSe4vShHCj108izXaJp0VKVFgaCUDOT6GhfkvecpWdErQa1vkTYVlx9SysiNt1j4D6EMI
- 7vos6bKf8kggGhr/gCPL1+SVYaOTGsHPqaICJHIqkGynAObstkzfxFNdMUwR4V77PR2oPL6I5sqd7
- f/qZm+GA==;
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
- by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRFCT-0006nV-HM
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 12:09:31 +0000
-X-Originating-IP: 80.215.79.199
-Received: from localhost (unknown [80.215.79.199])
- (Authenticated sender: maxime.ripard@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 17805E000E;
- Thu, 16 May 2019 12:08:49 +0000 (UTC)
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
- Frank Rowand <frowand.list@gmail.com>,
- Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH] dt-bindings: pwm: Convert Allwinner PWM to a schema
-Date: Thu, 16 May 2019 14:08:48 +0200
-Message-Id: <20190516120848.25007-1-maxime.ripard@bootlin.com>
-X-Mailer: git-send-email 2.21.0
+ id 1hRFQO-0002CA-HB; Thu, 16 May 2019 12:23:54 +0000
+X-UUID: 423ae854a80a42fca7a16f5bac198baf-20190516
+X-UUID: 423ae854a80a42fca7a16f5bac198baf-20190516
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <andrew-sh.cheng@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 635194405; Thu, 16 May 2019 04:23:49 -0800
+Received: from mtkmbs03n1.mediatek.inc (172.21.101.181) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 16 May 2019 05:23:47 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs03n1.mediatek.inc (172.21.101.181) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 16 May 2019 20:23:46 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 16 May 2019 20:23:46 +0800
+Message-ID: <1558009426.29944.1.camel@mtksdaap41>
+Subject: Re: [PATCH 0/8] Add cpufreq and cci devfreq for mt8183, and SVS
+ support
+From: andrew-sh.cheng <andrew-sh.cheng@mediatek.com>
+To: Viresh Kumar <viresh.kumar@linaro.org>
+Date: Thu, 16 May 2019 20:23:46 +0800
+In-Reply-To: <20190516092328.4n7kuqw7bxokhdjp@vireshk-i7>
+References: <1557997725-12178-1-git-send-email-andrew-sh.cheng@mediatek.com>
+ <20190516092328.4n7kuqw7bxokhdjp@vireshk-i7>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_080929_755682_972D9F21 
-X-CRM114-Status: GOOD (  13.39  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.7 points)
+X-CRM114-CacheID: sfid-20190516_052352_589078_C104C404 
+X-CRM114-Status: GOOD (  17.50  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -76,122 +72,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Ripard <maxime.ripard@bootlin.com>, linux-pwm@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
+ srv_heupstream@mediatek.com, linux-pm@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ linux-kernel@vger.kernel.org, Rob
+ Herring <robh+dt@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, Matthias
+ Brugger <matthias.bgg@gmail.com>, fan.chen@mediatek.com,
+ devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Allwinner SoCs have a PWM controller supported in Linux, with a
-matching Device Tree binding.
+On Thu, 2019-05-16 at 14:53 +0530, Viresh Kumar wrote:
+> On 16-05-19, 17:08, Andrew-sh.Cheng wrote:
+> > From: "Andrew-sh.Cheng" <andrew-sh.cheng@mediatek.com>
+> > 
+> > MT8183 supports CPU DVFS and CCI DVFS, and LITTLE cpus and CCI are in the same voltage domain.
+> > So, this series is to add drivers to handle the voltage coupling between CPU and CCI DVFS.
+> > 
+> > For SVS support, add OPP_EVENT_ADJUST_VOLTAGE and corresponding reaction.
+> 
+> No version information here or what has changed. That doesn't help.
+> 
+> I believe this is V3.
+> 
+> Don't resend it but please mention the changes in reply now. Thanks.
+Yes, this is patch v3
 
-Now that we have the DT validation in place, let's convert the device tree
-bindings for that controller over to a YAML schemas.
+Change since v2:
+- Separate cpufreq modification into 3 patches.
+- Modify dt-binding for more HW information.
+- Refine cci devfreq coding style.
+- patch 6 ~ patch 8 are for SVS support
 
-Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
----
- .../bindings/pwm/allwinner,sun4i-a10-pwm.yaml | 57 +++++++++++++++++++
- .../devicetree/bindings/pwm/pwm-sun4i.txt     | 24 --------
- 2 files changed, 57 insertions(+), 24 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/pwm/allwinner,sun4i-a10-pwm.yaml
- delete mode 100644 Documentation/devicetree/bindings/pwm/pwm-sun4i.txt
+> 
+> > Andrew-sh.Cheng (7):
+> >   cpufreq: mediatek: change to regulator_get_optional
+> >   cpufreq: mediatek: add clock enable for intermediate clock
+> >   cpufreq: mediatek: Add support for mt8183
+> >   dt-bindings: devfreq: add compatible for mt8183 cci devfreq
+> >   devfreq: add mediatek cci devfreq
+> >   cpufreq: mediatek: add opp notification for SVS support
+> >   devfreq: cci devfreq register opp notification for SVS support
+> > 
+> > Stephen Boyd (1):
+> >   PM / OPP: Support adjusting OPP voltages at runtime
+> > 
+> >  .../bindings/devfreq/mt8183-cci-devfreq.txt        |  20 ++
+> >  drivers/cpufreq/cpufreq-dt-platdev.c               |   1 +
+> >  drivers/cpufreq/mediatek-cpufreq.c                 |  88 +++++-
+> >  drivers/devfreq/Kconfig                            |  10 +
+> >  drivers/devfreq/Makefile                           |   1 +
+> >  drivers/devfreq/mt8183-cci-devfreq.c               | 310 +++++++++++++++++++++
+> >  drivers/opp/core.c                                 |  78 ++++++
+> >  include/linux/pm_opp.h                             |  11 +
+> >  8 files changed, 517 insertions(+), 2 deletions(-)
+> >  create mode 100644 Documentation/devicetree/bindings/devfreq/mt8183-cci-devfreq.txt
+> >  create mode 100644 drivers/devfreq/mt8183-cci-devfreq.c
+> > 
+> > -- 
+> > 2.12.5
+> 
 
-diff --git a/Documentation/devicetree/bindings/pwm/allwinner,sun4i-a10-pwm.yaml b/Documentation/devicetree/bindings/pwm/allwinner,sun4i-a10-pwm.yaml
-new file mode 100644
-index 000000000000..0ac52f83a58c
---- /dev/null
-+++ b/Documentation/devicetree/bindings/pwm/allwinner,sun4i-a10-pwm.yaml
-@@ -0,0 +1,57 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/pwm/allwinner,sun4i-a10-pwm.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Allwinner A10 PWM Device Tree Bindings
-+
-+maintainers:
-+  - Chen-Yu Tsai <wens@csie.org>
-+  - Maxime Ripard <maxime.ripard@bootlin.com>
-+
-+properties:
-+  "#pwm-cells":
-+    const: 3
-+
-+  compatible:
-+    oneOf:
-+      - const: allwinner,sun4i-a10-pwm
-+      - const: allwinner,sun5i-a10s-pwm
-+      - const: allwinner,sun5i-a13-pwm
-+      - const: allwinner,sun7i-a20-pwm
-+      - const: allwinner,sun8i-h3-pwm
-+      - items:
-+          - const: allwinner,sun8i-a83t-pwm
-+          - const: allwinner,sun8i-h3-pwm
-+      - items:
-+          - const: allwinner,sun50i-a64-pwm
-+          - const: allwinner,sun5i-a13-pwm
-+      - items:
-+          - const: allwinner,sun50i-h5-pwm
-+          - const: allwinner,sun5i-a13-pwm
-+
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    maxItems: 1
-+
-+required:
-+  - "#pwm-cells"
-+  - compatible
-+  - reg
-+  - clocks
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    pwm: pwm@1c20e00 {
-+        compatible = "allwinner,sun7i-a20-pwm";
-+        reg = <0x01c20e00 0xc>;
-+        clocks = <&osc24M>;
-+        #pwm-cells = <3>;
-+    };
-+
-+...
-diff --git a/Documentation/devicetree/bindings/pwm/pwm-sun4i.txt b/Documentation/devicetree/bindings/pwm/pwm-sun4i.txt
-deleted file mode 100644
-index 2a1affbff45e..000000000000
---- a/Documentation/devicetree/bindings/pwm/pwm-sun4i.txt
-+++ /dev/null
-@@ -1,24 +0,0 @@
--Allwinner sun4i and sun7i SoC PWM controller
--
--Required properties:
--  - compatible: should be one of:
--    - "allwinner,sun4i-a10-pwm"
--    - "allwinner,sun5i-a10s-pwm"
--    - "allwinner,sun5i-a13-pwm"
--    - "allwinner,sun7i-a20-pwm"
--    - "allwinner,sun8i-h3-pwm"
--    - "allwinner,sun50i-a64-pwm", "allwinner,sun5i-a13-pwm"
--    - "allwinner,sun50i-h5-pwm", "allwinner,sun5i-a13-pwm"
--  - reg: physical base address and length of the controller's registers
--  - #pwm-cells: should be 3. See pwm.txt in this directory for a description of
--    the cells format.
--  - clocks: From common clock binding, handle to the parent clock.
--
--Example:
--
--	pwm: pwm@1c20e00 {
--		compatible = "allwinner,sun7i-a20-pwm";
--		reg = <0x01c20e00 0xc>;
--		clocks = <&osc24M>;
--		#pwm-cells = <3>;
--	};
--- 
-2.21.0
 
 
 _______________________________________________
