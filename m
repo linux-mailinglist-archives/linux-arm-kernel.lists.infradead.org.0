@@ -2,81 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5FEBA1FFC3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 08:44:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61E011FFD7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 08:48:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=3aJTAX7xQZFdlwMSZvMQ5JlCCGMDACGp2f1k1zFaN5Y=; b=h7zl5JsSoV8jC7rqKyNELr/yiu
-	DP0pLX9pscQsRh2n4u5PKlwo6ngu4ScumaRyRaVH3ujW1WvWDH5YjOYTlC3TetLYUYup+6q7FqRd1
-	rCwtsSoDuHoB/nD2EP/hJ8nPro2GE7EtpYOR8Jr8HrI6/uzxGqytEElg+owdXI0dXMehop7es12ob
-	rdXcwQ0iPplJjwEAdOS2KumSogsZwVUgoUoWBeNeQ9sGZQvYB2hSqzPxEIQHP1Mr2GzcU+pxYQRgn
-	WQSS3aZoW07mwQqeDdDSyZh6WatzplPQola9teaLWreGE6eYA87ASvv3lNlOqPwelW/wuLrl3PJTS
-	iSMzsK2w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=m2WiOzIaml6840WLfHbTYxW3ou21nGQQ7xuSthQlwbw=; b=mGcHsulsM/vxnB
+	KGg1hejwbfKAvQdYG4r08aetfok5UW6y+a5x49K+uL97vwKgSGduX/dMxR/TsHrTvEnlHx/fvEL8s
+	tgxa54eEZ/Fou8totdQqfDeb7xxwudCA4Ls9j4SinLGRl751QSEyctssDU3EGuo0Ibnk7R2qyJhxN
+	rkuaqxLRcO/aOrT5aw0QNqGA7sDm1xgqO7seg7zquDdMfet6wTC8i+E3KIjTfn2r+2oT+qI+m1s8J
+	NC5GRs3fsIVSWAGaW5wRZ1+JwzgzgebbcABFX0xgEHMIqPGX7nmXS0tFy7FpJW5dwbTaYZGn0QYby
+	FWsUtWfpT+5ZcN7ugZwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRA7U-0004dL-JF; Thu, 16 May 2019 06:44:00 +0000
-Received: from mail-pg1-x535.google.com ([2607:f8b0:4864:20::535])
+	id 1hRABf-0001HR-Pa; Thu, 16 May 2019 06:48:19 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRA75-0004Jj-PN
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 06:43:38 +0000
-Received: by mail-pg1-x535.google.com with SMTP id t22so1042207pgi.10
+ id 1hRABX-0001Gk-Pc
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 06:48:13 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id 8FC5760A4E; Thu, 16 May 2019 06:48:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1557989290;
+ bh=ZG75f0lAOy1l5nnTA2W31hBIGHC2MtPKNbbEUIh5Wf0=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=ip+KhnSDwqQ6o84dfRIgliZ9j6YSTEa9vIzYvXc943S2AD3mA8aQ+Z0lkcoi/m49p
+ 7aMiny8cvc23arEec0ailuT7eJKEu+iZqrEv3Uvhpfs7pXfdnVzTNs6zAzJA1zNZs0
+ NfoQDxOP6wNxrgjB0i1sbFBmV0CzKI9A98mS5vQo=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED autolearn=no autolearn_force=no version=3.4.0
+Received: from mail-ed1-f48.google.com (mail-ed1-f48.google.com
+ [209.85.208.48])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: vivek.gautam@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 860F660CF0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 May 2019 23:43:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=PQnz2nT/KjUKXeHjaBR81zMUbHzh45bNsq/83y1hyFY=;
- b=NYIYk4Yjkv66dEcU3KgIVlzPX+MS4Dh1JbpbaHYMRZrHb8UswXQgoqFLVAwvBF6fY2
- HiGXQi5PNGKstKPY9zh9H/RWxkCtTtDYbwRNbVKzECD3aJiseJ0R5/O7ukdAdtEYt12Y
- ZrzwhZE1qJqX0/zDOpzIXwzjigFlKvNmMMJ3rSm7zHrvgufbPbTsE8FwMLZ3Z2FKUWX5
- M5ygQdQDLMU9JJvH5x8XmeYTF1z7SvnfAl8481ZCizQdqsJxXZGpW82+7/iHLdTHWRk+
- gQv+XtCw/8SPyyTe7XDm0Ti+IAGKj9vW0hFbSHg8FKPmAcm9LHS4X8f7lKNVQlNywO0i
- Z79A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=PQnz2nT/KjUKXeHjaBR81zMUbHzh45bNsq/83y1hyFY=;
- b=rqp2J+mYfkyii777GIRrvzMrjkavQSlSlkQb8NDK8ddrd6O8TOoe9g20Pd9pLaLG+b
- 72ePENcCzSIT+8/s8nhkUSe2sUNY2covTIAhvJjc6jn/78ulAH+SY0hXMBYp1tv1QtUU
- elMcu5/0NkJioc4Z/Sls6eXaoUEX1sPeFrqWTc/neDWmKXzYOmpOhiW9j5N2yFRl3Xiq
- 3uYDJdnHBaL4HIC7/8mbG7lRU3sBRIlouV/O4iBHsqLa2bKpl18/U0f/u4NMxSoFA4Ci
- 7n5zI2qVJN0esbZQWERRUeYi8oIwuzNPFd7eY11gqMuXLMqM36hzinPXZKn7ljhm14OU
- j9Fg==
-X-Gm-Message-State: APjAAAVjkOF6wA99IP5C2bZtrltR24DnjJnK8KRdWEEBuBqt71VHlU5T
- 68rcTXGl4GQ9WVqa8G7GbDKAtA==
-X-Google-Smtp-Source: APXvYqyaVixdyLVdneqZdfKmvJqCzMfXuFHlfYgDiH4+VC14F/TyNFkNjTkGtNIplKl6Gu9jfwXAdg==
-X-Received: by 2002:a63:2cc9:: with SMTP id s192mr6303754pgs.24.1557989014876; 
- Wed, 15 May 2019 23:43:34 -0700 (PDT)
-Received: from localhost.localdomain
- (99-152-116-91.lightspeed.sntcca.sbcglobal.net. [99.152.116.91])
- by smtp.gmail.com with ESMTPSA id w194sm11196050pfd.56.2019.05.15.23.43.32
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 15 May 2019 23:43:33 -0700 (PDT)
-From: Olof Johansson <olof@lixom.net>
-To: torvalds@linux-foundation.org
-Subject: [GIT PULL 4/4] ARM: SoC defconfig updates
-Date: Wed, 15 May 2019 23:43:04 -0700
-Message-Id: <20190516064304.24057-5-olof@lixom.net>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20190516064304.24057-1-olof@lixom.net>
-References: <20190516064304.24057-1-olof@lixom.net>
+ Thu, 16 May 2019 06:48:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1557989287;
+ bh=ZG75f0lAOy1l5nnTA2W31hBIGHC2MtPKNbbEUIh5Wf0=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=i8Skn8GMp5Ca9Xq4RekrA/tI7vqbQdhgnWOmKSuIrmQ1hdYfYfUDwAIyRZea+9d+G
+ WUE6mX2GhMtI+iPujURAFxvOvZfEuvFPjDKiHlJCif+q4kZ70YgN4D9tX1B83SWBW5
+ /EQyE2vOidCqzDcB15dYsgku1yKEywtYvDOrkzVU=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 860F660CF0
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ spf=none smtp.mailfrom=vivek.gautam@codeaurora.org
+Received: by mail-ed1-f48.google.com with SMTP id n17so3650300edb.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 15 May 2019 23:48:06 -0700 (PDT)
+X-Gm-Message-State: APjAAAVHJBaSlPBKAoYQpZvq98y6EaTwm84a+CnKAazwNXE4DkKaxTjR
+ C1MU4yaiYD7RNgFqNGt2mO6R+win6jwAgHvXgWo=
+X-Google-Smtp-Source: APXvYqwE4sv9OWAdotkgId+uAs3Ngm4nCDGeM/ygr0LbOzm5ahsK2cp4+ig58+Nr8zmvRko1JQyh3Xh0k05F1GQXZQg=
+X-Received: by 2002:a50:94db:: with SMTP id t27mr1721377eda.173.1557989284710; 
+ Wed, 15 May 2019 23:48:04 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190515233234.22990-1-bjorn.andersson@linaro.org>
+In-Reply-To: <20190515233234.22990-1-bjorn.andersson@linaro.org>
+From: Vivek Gautam <vivek.gautam@codeaurora.org>
+Date: Thu, 16 May 2019 12:17:53 +0530
+X-Gmail-Original-Message-ID: <CAFp+6iEMQd1uAWdkLysYWt0et8eRojoivG6+e78y0DU+4=H+_g@mail.gmail.com>
+Message-ID: <CAFp+6iEMQd1uAWdkLysYWt0et8eRojoivG6+e78y0DU+4=H+_g@mail.gmail.com>
+Subject: Re: [PATCH] iommu: io-pgtable: Support non-coherent page tables
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_234336_032772_55267261 
-X-CRM114-Status: GOOD (  13.93  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190515_234812_079344_3003A901 
+X-CRM114-Status: GOOD (  20.38  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:535 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -91,106 +103,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Olof Johansson <olof@lixom.net>, arm@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Joerg Roedel <joro@8bytes.org>, Vivek Gautam <vgautam@qti.qualcomm.com>,
+ Will Deacon <will.deacon@arm.com>, open list <linux-kernel@vger.kernel.org>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <iommu@lists.linux-foundation.org>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-- Mostly the usual churn due to options being reordered or not added
-in the right locations.
-- Some various enabling of new drivers, etc.
+On Thu, May 16, 2019 at 5:03 AM Bjorn Andersson
+<bjorn.andersson@linaro.org> wrote:
+>
+> Describe the memory related to page table walks as non-cachable for iommu
+> instances that are not DMA coherent.
+>
+> Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+> ---
+>  drivers/iommu/io-pgtable-arm.c | 12 +++++++++---
+>  1 file changed, 9 insertions(+), 3 deletions(-)
+>
+> diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
+> index 4e21efbc4459..68ff22ffd2cb 100644
+> --- a/drivers/iommu/io-pgtable-arm.c
+> +++ b/drivers/iommu/io-pgtable-arm.c
+> @@ -803,9 +803,15 @@ arm_64_lpae_alloc_pgtable_s1(struct io_pgtable_cfg *cfg, void *cookie)
+>                 return NULL;
+>
+>         /* TCR */
+> -       reg = (ARM_LPAE_TCR_SH_IS << ARM_LPAE_TCR_SH0_SHIFT) |
+> -             (ARM_LPAE_TCR_RGN_WBWA << ARM_LPAE_TCR_IRGN0_SHIFT) |
+> -             (ARM_LPAE_TCR_RGN_WBWA << ARM_LPAE_TCR_ORGN0_SHIFT);
+> +       if (cfg->quirks & IO_PGTABLE_QUIRK_NO_DMA) {
+> +               reg = (ARM_LPAE_TCR_SH_IS << ARM_LPAE_TCR_SH0_SHIFT) |
+> +                     (ARM_LPAE_TCR_RGN_WBWA << ARM_LPAE_TCR_IRGN0_SHIFT) |
+> +                     (ARM_LPAE_TCR_RGN_WBWA << ARM_LPAE_TCR_ORGN0_SHIFT);
+> +       } else {
+> +               reg = (ARM_LPAE_TCR_SH_IS << ARM_LPAE_TCR_SH0_SHIFT) |
+> +                     (ARM_LPAE_TCR_RGN_NC << ARM_LPAE_TCR_IRGN0_SHIFT) |
+> +                     (ARM_LPAE_TCR_RGN_NC << ARM_LPAE_TCR_ORGN0_SHIFT);
+> +       }
 
-... i.e. the usual updates, nothing particularly sticks out.
+This looks okay to me based on the discussion that we had on a similar
+patch that I
+posted. So,
+Reviewed-by: Vivek Gautam <vivek.gautam@codeaurora.org>
 
-----------------------------------------------------------------
+[1] https://lore.kernel.org/patchwork/patch/1032939/
 
-The following changes since commit 75ea84dcdb9cc6fa227385e796ea4ae90bb333c8:
+Thanks & regards
+Vivek
 
-  Merge tag 'armsoc-drivers' into HEAD
-
-are available in the git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git tags/armsoc-defconfig
-
-for you to fetch changes up to 85200317b324924be3bc72b7bfcce219020ced9c:
-
-  Merge tag 'v5.2-rockchip-defconfig32-1' of git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip into arm/defconfig
-
-----------------------------------------------------------------
-
-Biju Das (3):
-      arm64: defconfig: enable RX-8581 config option
-      ARM: shmobile: Enable PHY_RCAR_GEN3_USB2 in shmobile_defconfig
-      ARM: shmobile: Enable USB [EO]HCI HCD PLATFORM support in shmobile_defconfig
-
-Brian Masney (1):
-      ARM: qcom_defconfig: add options for LG Nexus 5 phone
-
-Dinh Nguyen (3):
-      arm64: defconfig: enable PCIE_ALTERA
-      arm64: defconfig: enable fpga and service layer
-      arm64: defconfig: include the Agilex platform to the arm64 defconfig
-
-Enric Balletbo i Serra (1):
-      ARM: multi_v7_defconfig: Enable missing drivers for supported Chromebooks
-
-Geert Uytterhoeven (3):
-      ARM: shmobile: defconfig: Refresh for v5.1-rc1
-      ARM: shmobile: defconfig: Enable support for CFI NOR FLASH
-      ARM: multi_v7_defconfig: Enable support for CFI NOR FLASH
-
-Jagan Teki (1):
-      arm64: defconfig: Enable SPI_SUN6I
-
-Jon Hunter (2):
-      arm64: defconfig: Enable Tegra HDA support
-      arm64: defconfig: Add PWM Fan support
-
-Martin Blumenstingl (1):
-      ARM: multi_v7_defconfig: enable the Amlogic Meson ADC and eFuse drivers
-
-Olof Johansson (11):
-      Merge tag 'amlogic-defconfig' of https://git.kernel.org/.../khilman/linux-amlogic into arm/defconfig
-      Merge tag 'arm64_defconfig_for_v5.2' of git://git.kernel.org/.../dinguyen/linux into arm/defconfig
-      Merge tag 'multi-v7-defconfig-for-v5.2-signed' of git://git.kernel.org/.../tmlind/linux-omap into arm/defconfig
-      Merge tag 'tegra-for-5.2-arm-defconfig' of git://git.kernel.org/.../tegra/linux into arm/defconfig
-      Merge tag 'tegra-for-5.2-arm64-defconfig' of git://git.kernel.org/.../tegra/linux into arm/defconfig
-      Merge tag 'sunxi-config64-for-5.2' of https://git.kernel.org/.../sunxi/linux into arm/defconfig
-      Merge tag 'renesas-arm64-defconfig-for-v5.2' of https://git.kernel.org/.../horms/renesas into arm/defconfig
-      Merge tag 'renesas-arm-defconfig-for-v5.2' of https://git.kernel.org/.../horms/renesas into arm/defconfig
-      Merge tag 'qcom-defconfig-for-5.2' of git://git.kernel.org/.../agross/linux into arm/defconfig
-      Merge tag 'mvebu-arm64-5.2-1' of git://git.infradead.org/linux-mvebu into arm/defconfig
-      Merge tag 'v5.2-rockchip-defconfig32-1' of git://git.kernel.org/.../mmind/linux-rockchip into arm/defconfig
-
-Pascal Paillet (1):
-      ARM: multi_v7_defconfig: Enable support for STPMIC1
-
-Thierry Reding (4):
-      Merge tag 'multi-v7-defconfig-for-v5.2-signed' of git://git.kernel.org/.../tmlind/linux-omap into for-5.2/arm/defconfig
-      ARM: tegra: Update default configuration for v5.1-rc1
-      ARM: tegra: Enable Trusted Foundations by default
-      ARM: Enable Trusted Foundations for multiplatform ARM v7
-
-Thomas Petazzoni (1):
-      arm64: defconfig: enable mv-xor driver
-
-Tony Lindgren (2):
-      ARM: multi_v7_defconfig: Update for dropped options
-      ARM: multi_v7_defconfig: Update for moved options
-
-Valentin Schneider (1):
-      arm64: defconfig: Update UFSHCD for Hi3660 soc
+>
+>         switch (ARM_LPAE_GRANULE(data)) {
+>         case SZ_4K:
+> --
+> 2.18.0
+>
+> _______________________________________________
+> iommu mailing list
+> iommu@lists.linux-foundation.org
+> https://lists.linuxfoundation.org/mailman/listinfo/iommu
 
 
- arch/arm/configs/multi_v7_defconfig | 150 +++++++++++++++++--------------
- arch/arm/configs/qcom_defconfig     |  13 ++-
- arch/arm/configs/shmobile_defconfig |  13 ++-
- arch/arm/configs/tegra_defconfig    |  36 ++++----
- arch/arm64/configs/defconfig        | 100 ++++++++++++---------
- 5 files changed, 177 insertions(+), 135 deletions(-)
+
+-- 
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
