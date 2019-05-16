@@ -2,37 +2,37 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 349002021B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 11:04:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1BC63201F5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 11:02:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8pC/Pfyfu9m8BZp+m1bgB/rrbqhfolEKLA1sIPSs1oo=; b=ui3w+eH5i9sshI
-	P4jR4Cq5lpguzUPbSQBJRA4Clhtt9SLFK9LkIzBOdekEjOzDG2Yx/SYO1BFygRONInhvU4lL7mGtC
-	8pMsRhUk99UMKlqB6yK7FakV04kN2camUIi1v7finAz7/xWWsjGviW+UmcWBBDuvUjbuXyUU/39eT
-	D388soF1oGAM4Ucx/7dV6RghwO8H1wbcODNcXWMcZg/34O6T9uFelrOyle8cgRwM2QhqmYJIAB46L
-	D941p000LksMKneenbpAgU5uvj1BkmMJJ7s4sDY4aX1e+28jYv50YQYMsEByOUcW2A5ASC9yirxh2
-	U34YkB1HBy9DVB951mpA==;
+	List-Owner; bh=7s5v/o93kqDvdA9kdVEddpKoVhr0VlhQSVJ6EHs8KS0=; b=E0X5d+0qIjTG/B
+	40EBStTmFyLPJznuutnOhFilo3TAcR+rRsL6p3tFLfE06bR9r/Rq3B5xHjFWOOFy4W71vW0G02e21
+	+ULBUMrCFkpPK1TzdkRTY1Ha61b6VL5IuVAd/a6xEL7GJ//xdsqvBEMBk/3Q4nX2svzl4uIurupVQ
+	gN5G6yglHb4lS9xohynxzFSDxORSDiZqmeZs5JnspIuCzqLYB5d7/uAC0yr07z85DkB7hb48dT4k1
+	1gUpk/jv8PRLf8MVHfSDHFBKOPK0d15dlBhQgaZGQYt0sck3gl+SNxcTmNMDNkfna373jisLRCxRy
+	n+dpztr0eU/QiyNCkxhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRCJ9-0006St-MU; Thu, 16 May 2019 09:04:11 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hRCHk-0004hm-PA; Thu, 16 May 2019 09:02:44 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRCHh-0004g5-Ra; Thu, 16 May 2019 09:02:47 +0000
-X-UUID: 924cabff470143708398b51830a89e9d-20190516
-X-UUID: 924cabff470143708398b51830a89e9d-20190516
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ id 1hRCHb-0004fk-00; Thu, 16 May 2019 09:02:36 +0000
+X-UUID: f6ffaae72a924ab59b982d89e656b110-20190516
+X-UUID: f6ffaae72a924ab59b982d89e656b110-20190516
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
  (envelope-from <bibby.hsieh@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1891082364; Thu, 16 May 2019 01:02:30 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 16 May 2019 02:02:28 -0700
+ with ESMTP id 441399294; Thu, 16 May 2019 01:02:30 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 16 May 2019 02:02:29 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Thu, 16 May 2019 17:02:27 +0800
 Received: from mtkslt302.mediatek.inc (10.21.14.115) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
@@ -41,17 +41,18 @@ From: Bibby Hsieh <bibby.hsieh@mediatek.com>
 To: Jassi Brar <jassisinghbrar@gmail.com>, Matthias Brugger
  <matthias.bgg@gmail.com>, Rob Herring <robh+dt@kernel.org>, CK HU
  <ck.hu@mediatek.com>
-Subject: [PATCH v6 04/12] dt-binding: gce: add binding for gce event property
-Date: Thu, 16 May 2019 17:02:16 +0800
-Message-ID: <20190516090224.59070-5-bibby.hsieh@mediatek.com>
+Subject: [PATCH v6 05/12] mailbox: mediatek: cmdq: move the CMDQ_IRQ_MASK into
+ cmdq driver data
+Date: Thu, 16 May 2019 17:02:17 +0800
+Message-ID: <20190516090224.59070-6-bibby.hsieh@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20190516090224.59070-1-bibby.hsieh@mediatek.com>
 References: <20190516090224.59070-1-bibby.hsieh@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_020242_419434_B8B272A2 
-X-CRM114-Status: GOOD (  11.15  )
+X-CRM114-CacheID: sfid-20190516_020235_038960_093B7230 
+X-CRM114-Status: GOOD (  11.42  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -88,39 +89,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Client hardware would send event to GCE hardware,
-mediatek,gce-event-names and mediatek,gce-events
-can be used to present the event.
+The interrupt mask and thread number has positive correlation,
+so we move the CMDQ_IRQ_MASK into cmdq driver data and calculate
+it by thread number.
 
 Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+Reviewed-by: CK Hu <ck.hu@mediatek.com>
 ---
- Documentation/devicetree/bindings/mailbox/mtk-gce.txt | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ drivers/mailbox/mtk-cmdq-mailbox.c | 12 +++++++-----
+ 1 file changed, 7 insertions(+), 5 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/mailbox/mtk-gce.txt b/Documentation/devicetree/bindings/mailbox/mtk-gce.txt
-index dceab63ccd06..265bb58da7bd 100644
---- a/Documentation/devicetree/bindings/mailbox/mtk-gce.txt
-+++ b/Documentation/devicetree/bindings/mailbox/mtk-gce.txt
-@@ -35,6 +35,8 @@ Required properties for a client device:
- Optional properties for a client device:
- - mediatek,gce-client-reg: u32, specify the sub-system id which is corresponding
-   to the register address.
-+- mediatek,gce-events: u32, the event number defined in
-+  'dt-bindings/gce/mt8173-gce.h' or 'dt-binding/gce/mt8183-gce.h'.
+diff --git a/drivers/mailbox/mtk-cmdq-mailbox.c b/drivers/mailbox/mtk-cmdq-mailbox.c
+index 22811784dc7d..87617dc7504d 100644
+--- a/drivers/mailbox/mtk-cmdq-mailbox.c
++++ b/drivers/mailbox/mtk-cmdq-mailbox.c
+@@ -17,7 +17,6 @@
+ #include <linux/of_device.h>
  
- Some vaules of properties are defined in 'dt-bindings/gce/mt8173-gce.h'
- or 'dt-binding/gce/mt8183-gce.h'. Such as sub-system ids, thread priority, event ids.
-@@ -57,8 +59,8 @@ Example for a client device:
- 		compatible = "mediatek,mt8173-mmsys";
- 		mboxes = <&gce 0 CMDQ_THR_PRIO_LOWEST 1>,
- 			 <&gce 1 CMDQ_THR_PRIO_LOWEST 1>;
--		mutex-event-eof = <CMDQ_EVENT_MUTEX0_STREAM_EOF
--				CMDQ_EVENT_MUTEX1_STREAM_EOF>;
-+		mediatek,gce-events = <CMDQ_EVENT_MDP_RDMA0_SOF>,
-+				      <CMDQ_EVENT_MDP_RSZ0_SOF>;
- 		mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x3000 0x1000>,
- 					  <&gce SUBSYS_1401XXXX 0x2000 0x100>;
- 		...
+ #define CMDQ_OP_CODE_MASK		(0xff << CMDQ_OP_CODE_SHIFT)
+-#define CMDQ_IRQ_MASK			0xffff
+ #define CMDQ_NUM_CMD(t)			(t->cmd_buf_size / CMDQ_INST_SIZE)
+ 
+ #define CMDQ_CURR_IRQ_STATUS		0x10
+@@ -71,6 +70,7 @@ struct cmdq {
+ 	void __iomem		*base;
+ 	u32			irq;
+ 	u32			thread_nr;
++	u32			irq_mask;
+ 	struct cmdq_thread	*thread;
+ 	struct clk		*clock;
+ 	bool			suspended;
+@@ -284,11 +284,11 @@ static irqreturn_t cmdq_irq_handler(int irq, void *dev)
+ 	unsigned long irq_status, flags = 0L;
+ 	int bit;
+ 
+-	irq_status = readl(cmdq->base + CMDQ_CURR_IRQ_STATUS) & CMDQ_IRQ_MASK;
+-	if (!(irq_status ^ CMDQ_IRQ_MASK))
++	irq_status = readl(cmdq->base + CMDQ_CURR_IRQ_STATUS) & cmdq->irq_mask;
++	if (!(irq_status ^ cmdq->irq_mask))
+ 		return IRQ_NONE;
+ 
+-	for_each_clear_bit(bit, &irq_status, fls(CMDQ_IRQ_MASK)) {
++	for_each_clear_bit(bit, &irq_status, cmdq->thread_nr) {
+ 		struct cmdq_thread *thread = &cmdq->thread[bit];
+ 
+ 		spin_lock_irqsave(&thread->chan->lock, flags);
+@@ -472,6 +472,9 @@ static int cmdq_probe(struct platform_device *pdev)
+ 		dev_err(dev, "failed to get irq\n");
+ 		return -EINVAL;
+ 	}
++
++	cmdq->thread_nr = (u32)(unsigned long)of_device_get_match_data(dev);
++	cmdq->irq_mask = GENMASK(cmdq->thread_nr - 1, 0);
+ 	err = devm_request_irq(dev, cmdq->irq, cmdq_irq_handler, IRQF_SHARED,
+ 			       "mtk_cmdq", cmdq);
+ 	if (err < 0) {
+@@ -488,7 +491,6 @@ static int cmdq_probe(struct platform_device *pdev)
+ 		return PTR_ERR(cmdq->clock);
+ 	}
+ 
+-	cmdq->thread_nr = (u32)(unsigned long)of_device_get_match_data(dev);
+ 	cmdq->mbox.dev = dev;
+ 	cmdq->mbox.chans = devm_kcalloc(dev, cmdq->thread_nr,
+ 					sizeof(*cmdq->mbox.chans), GFP_KERNEL);
 -- 
 2.18.0
 
