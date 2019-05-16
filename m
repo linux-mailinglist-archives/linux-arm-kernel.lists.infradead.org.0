@@ -2,60 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A1C9202BB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 11:41:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B769D202CF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 11:46:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=vjdZ/f49mZq7OSUtRUxZgCNVBmUNhQBZKpC17hlIuv0=; b=iWfdl/C6vitB4fzGgo3PmbutR
-	R9qZayLHR8vJ+mD6/uap8jgXF6ggn6SgNs5RnugTNFu4KicVRO5TauPrkn5P7+JCjl+y7K97IYTWq
-	3Ht8laoNYuQg2gMDuvKXk+1QmVWZO02MLWiWn+Mxf0r2vxR4Yz1qBMUtsF4rZmmmm31rGxtJv1bwn
-	ee/SqCPENr3peBKzVLIld4WMSwRNxnKMebjYG1KE9u1Ld+TB8S2KX6a5D763GbRtYgOEp4EVSddfU
-	I9sZjsrV9tN6aRLgzeB4fIeDpXS/LPsNUgSq4XCuVJEixtDZgS/mMkpKZRArTjGChIY2JLrrVIazx
-	xDTnTsshQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ip9Lh4nuUju05npfwHFRMv/B7EkmMSZgoWh93tG6Pac=; b=C4TZxCGGp6Ogjd
+	TeRHW3oE/1SdRtKOvhq+zHVCtGlqeJoHtWW36C6LfDofWwafg8qL50c4QjH//3dAGaPA+TQ9mfpQx
+	kf1PYf/KTbA7XcdZUr+z4oph7ZD/PCCBnZVl3w/uBP+k5VynGu0btoXrKWaSVE+auntg4dR8skaKo
+	e/5YTxf2kkdN2yfwkynwubBHeebXSnfZUFlleT3lZ2qyxEVOsexrBpUHb8jIKHBcpUBXHut5e6Ay1
+	LopGB862D9r591kqxsth39Jm7rGi4imX/azNtN+MJoEBeApKff1qtS+mLKPEr9K/nort5sgkuxG9r
+	HmKJZgAflg4U+w8taghQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRCtN-00089O-Fq; Thu, 16 May 2019 09:41:37 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRCtD-000892-D3
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 09:41:31 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 713BD174E;
- Thu, 16 May 2019 02:41:26 -0700 (PDT)
-Received: from [10.1.196.93] (en101.cambridge.arm.com [10.1.196.93])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E99D63F71E;
- Thu, 16 May 2019 02:41:24 -0700 (PDT)
-Subject: Re: [PATCH V2 1/6] coresight: etb10: Properly set AUX buffer head in
- snapshot mode
-To: mathieu.poirier@linaro.org
-References: <20190514194018.23420-1-mathieu.poirier@linaro.org>
- <20190514194018.23420-2-mathieu.poirier@linaro.org>
- <657f1851-2a97-4efd-6532-fbcb1c927e88@arm.com>
- <CANLsYkwGyazUAB5Xs1PFn+sgT78c7DBqc6VDDPr4iBYx_Os+Ng@mail.gmail.com>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <d7f7ae43-4c73-724f-7080-c54279a05045@arm.com>
-Date: Thu, 16 May 2019 10:41:22 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hRCxl-0001i0-0G; Thu, 16 May 2019 09:46:09 +0000
+Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hRCxd-0001hM-51
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 09:46:02 +0000
+Received: by mail-wr1-x42a.google.com with SMTP id e15so2616610wrs.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 May 2019 02:45:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=aZ9bkwLjwgYofHPQHgcBu3CBvGQFImDSbHO1WQz0mYY=;
+ b=rZfWrTkTck+lVapdMq7o6+lJhC3egiRrRwDcUJXql8roZ8bvlWlZ7OqDie4Xdv/FLt
+ 4Nf8iXWXd0ommmp1X6jmrgCNn9lJypjE/w4Wj4HYn2qO8TCdUWfpCjrDGjHqd3QEFKS3
+ u9YhHrSsGbaHX9LzN+GHL+9hAARLNvw6357jpwPqiz1JeI5v5sWFmV5ebT25B0Aem+W9
+ l8BHRwPDDYHZq+0DWgqwnUH9O/JiLlV97lCYxhvow/D27s6Wlyv8ZckIqmcwrRtGzym9
+ tnEYkB63UrwTZZjJDqmo/sPBgP9i3zCZMEg3yG+IViiohgOM7HWyXuDMt6tvnzDG530d
+ 7jeQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=aZ9bkwLjwgYofHPQHgcBu3CBvGQFImDSbHO1WQz0mYY=;
+ b=qmSDBlXq5ZSRo0v/IWT4lTwvKCkKDp3QhA5esqSxmTSL3sEu3rGqMap+xZWZ2s7lR8
+ NxDcdqZr9lHawuxMWZFl0CtSrz9bNVunS57E4qM6x+Ai4GWIbS0YUdMu8Yi9DWZqKqLE
+ THl3g2Vdq8taUgzIlXmQqmK92P9lLIJ3Tdj7ChVSvLqDjhg1/RYwRJLNDyczqn/K9REI
+ Km86st6RujEPrnCUWOE6D2l318lU8ReceijlbvSUzBiZZk655iTZjFayRdYcW1ZRY3Ga
+ Lg5Zb2WF7PVIkIqob1ws8jRFf8Ihv+8Z1HA4ujz48cmAPPoAK9AsKHweP1E3bceTBygD
+ /XvQ==
+X-Gm-Message-State: APjAAAX+3sY77yHbL1QvfuO6tZgjevljieR0JKyFdWiaorFbzKzXiSr5
+ GOnjm1BQS0n6GsMZ0cFWb+s=
+X-Google-Smtp-Source: APXvYqwFV+ytb+BzHJu+Jch7u4hZGa/rsqwHurysMjlxlhg3WyCIcfxA8PA2aGgS9XInLLu1U4/xhw==
+X-Received: by 2002:a5d:5506:: with SMTP id b6mr27614793wrv.221.1557999957592; 
+ Thu, 16 May 2019 02:45:57 -0700 (PDT)
+Received: from Red ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
+ by smtp.googlemail.com with ESMTPSA id i17sm5175786wrr.46.2019.05.16.02.45.56
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 16 May 2019 02:45:56 -0700 (PDT)
+Date: Thu, 16 May 2019 11:45:54 +0200
+From: Corentin Labbe <clabbe.montjoie@gmail.com>
+To: maxime.ripard@bootlin.com, airlied@linux.ie, daniel@ffwll.ch, wens@csie.org
+Subject: drm: sun4i: segmentation fault with rmmod sun4i_drm
+Message-ID: <20190516094554.GA7178@Red>
 MIME-Version: 1.0
-In-Reply-To: <CANLsYkwGyazUAB5Xs1PFn+sgT78c7DBqc6VDDPr4iBYx_Os+Ng@mail.gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_024127_448235_D64EE76C 
-X-CRM114-Status: GOOD (  22.97  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190516_024601_220664_6BADCEB3 
+X-CRM114-Status: UNSURE (   9.30  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:42a listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (clabbe.montjoie[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -67,79 +97,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexander.shishkin@linux.intel.com, coresight@lists.linaro.org,
- acme@kernel.org, peterz@infradead.org, mingo@redhat.com, leo.yan@linaro.org,
- linux-arm-kernel@lists.infradead.org, mike.leach@linaro.org
+Cc: linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mathieu,
+Hello
 
-On 15/05/2019 15:28, Mathieu Poirier wrote:
-> Good day Suzuki,
-> 
-> On Wed, 15 May 2019 at 03:45, Suzuki K Poulose <suzuki.poulose@arm.com> wrote:
->>
->> Hi Mathieu,
->>
->> On 14/05/2019 20:40, Mathieu Poirier wrote:
->>> Unify amongst sink drivers how the AUX ring buffer head is communicated
->>> to user space.  That way the same algorithm in cs_etm_find_snapshot()
->>
->> I would leave the userspace tool's function name out of the commit description
->> and the comment below. We could instead say: "That way the same algorithm can be
->> used by the userspace tool to determine the position and the size of the latest
->> snapshot data."
-> 
-> I purposely added the name of the function there so that people can
-> quickly find it and avoid any misunderstanding about the code in
-> question.  But I also have the same information as a comment in the
-> code, which should be sufficient.  I'll fix it.
-> 
+When I rmmod sun4i_drm I got
+[  546.417886] Internal error: Oops: 17 [#1] SMP ARM
+[  547.024731] CPU: 0 PID: 18811 Comm: rmmod Not tainted 5.1.0-next-20190515-00100-gf33d93f7d2a0 #39
+[  547.033588] Hardware name: Allwinner sun7i (A20) Family
+[  547.038816] PC is at drm_connector_cleanup+0x48/0x210
+[  547.043874] LR is at sun4i_hdmi_unbind+0x18/0x5c [sun4i_drm_hdmi]
+[  547.049959] pc : [<c08d313c>]    lr : [<bf051344>]    psr: a0000013
+[  547.056217] sp : c46e1e90  ip : 00000000  fp : 00000000
+[  547.061435] r10: 00000081  r9 : c46e0000  r8 : c0301204
+[  547.066653] r7 : 00000000  r6 : c4b918a0  r5 : c4b91840  r4 : 00000000
+[  547.073171] r3 : 00000000  r2 : 00000000  r1 : ee900210  r0 : c4b91840
+[  547.079691] Flags: NzCv  IRQs on  FIQs on  Mode SVC_32  ISA ARM  Segment none
+[  547.086817] Control: 10c5387d  Table: 446d406a  DAC: 00000051
+[  547.092559] Process rmmod (pid: 18811, stack limit = 0x566ffc72)
+[  547.098559] Stack: (0xc46e1e90 to 0xc46e2000)
+[  547.102915] 1e80:                                     c4b91840 c4df5d80 00000018 00000000
+[  547.111086] 1ea0: c0301204 c46e0000 00000081 bf051344 c4db7200 c4df5d80 00000018 c0974360
+[  547.119256] 1ec0: 00000000 21c0d377 c46e1ec8 0000000e c4df5d80 c0974430 c4dc9800 ee900210
+[  547.127426] 1ee0: bf02003c 00000081 c0301204 bf01f054 c4df5d80 ee900210 bf02003c c0974680
+[  547.135596] 1f00: c4df5d80 c0974728 ee900210 ee900210 bf022104 bf01f014 ee900210 c097c648
+[  547.143767] 1f20: ee900210 c1845388 bf022104 c097ae98 ee900210 bf022104 bed8eb98 c097afd4
+[  547.151937] 1f40: bf022104 bf022180 bed8eb98 c0979c8c c46e0000 c03d4ea0 346e7573 72645f69
+[  547.160107] 1f60: b6fa006d c170ae04 00000017 c031659c b6f048cc c46e1fb0 bed8ee14 000a2060
+[  547.168278] 1f80: bed8eb7c c0316a74 ffffffff 21c0d377 00d8ed28 21c0d377 000278d4 346e7573
+[  547.176448] 1fa0: 72645f69 c0301000 000278d4 346e7573 bed8eb98 00000880 00000000 bed8ee18
+[  547.184618] 1fc0: 000278d4 346e7573 72645f69 00000081 00000000 00000000 b6fa2000 00000000
+[  547.192788] 1fe0: bed8eb90 bed8eb80 000277b8 b6ea8420 60000010 bed8eb98 00000000 00000000
+[  547.200979] [<c08d313c>] (drm_connector_cleanup) from [<bf051344>] (sun4i_hdmi_unbind+0x18/0x5c [sun4i_drm_hdmi])
+[  547.211244] [<bf051344>] (sun4i_hdmi_unbind [sun4i_drm_hdmi]) from [<c0974360>] (component_unbind+0x30/0x68)
+[  547.221063] [<c0974360>] (component_unbind) from [<c0974430>] (component_unbind_all+0x98/0xbc)
+[  547.229670] [<c0974430>] (component_unbind_all) from [<bf01f054>] (sun4i_drv_unbind+0x38/0x4c [sun4i_drm])
+[  547.239317] [<bf01f054>] (sun4i_drv_unbind [sun4i_drm]) from [<c0974680>] (take_down_master.part.0+0x18/0x30)
+[  547.249221] [<c0974680>] (take_down_master.part.0) from [<c0974728>] (component_master_del+0x90/0x94)
+[  547.258433] [<c0974728>] (component_master_del) from [<bf01f014>] (sun4i_drv_remove+0x14/0x1c [sun4i_drm])
+[  547.268080] [<bf01f014>] (sun4i_drv_remove [sun4i_drm]) from [<c097c648>] (platform_drv_remove+0x24/0x3c)
+[  547.277641] [<c097c648>] (platform_drv_remove) from [<c097ae98>] (device_release_driver_internal+0xdc/0x1ac)
+[  547.287462] [<c097ae98>] (device_release_driver_internal) from [<c097afd4>] (driver_detach+0x54/0xa0)
+[  547.296675] [<c097afd4>] (driver_detach) from [<c0979c8c>] (bus_remove_driver+0x4c/0xa0)
+[  547.304762] [<c0979c8c>] (bus_remove_driver) from [<c03d4ea0>] (sys_delete_module+0x178/0x1f4)
+[  547.313370] [<c03d4ea0>] (sys_delete_module) from [<c0301000>] (ret_fast_syscall+0x0/0x54)
+[  547.321622] Exception stack(0xc46e1fa8 to 0xc46e1ff0)
+[  547.326671] 1fa0:                   000278d4 346e7573 bed8eb98 00000880 00000000 bed8ee18
+[  547.334841] 1fc0: 000278d4 346e7573 72645f69 00000081 00000000 00000000 b6fa2000 00000000
+[  547.343008] 1fe0: bed8eb90 bed8eb80 000277b8 b6ea8420
+[  547.348061] Code: e5853310 e1a06005 e5b63060 e1560003 (e5934000) 
+[  547.354336] ---[ end trace 8bd87feb5ea08d7d ]---
+Segmentation fault
 
-No need to resend the series as it is just the comment and description.
-You may fix up both before committing.
+This occurs both on qemu-cubieboard and cubieboard2
 
->>> diff --git a/drivers/hwtracing/coresight/coresight-etb10.c b/drivers/hwtracing/coresight/coresight-etb10.c
->>> index 4ee4c80a4354..60e753b1768d 100644
->>> --- a/drivers/hwtracing/coresight/coresight-etb10.c
->>> +++ b/drivers/hwtracing/coresight/coresight-etb10.c
->>> @@ -548,13 +548,14 @@ static unsigned long etb_update_buffer(struct coresight_device *csdev,
->>>        writel_relaxed(0x0, drvdata->base + ETB_RAM_WRITE_POINTER);
->>>
->>>        /*
->>> -      * In snapshot mode we have to update the handle->head to point
->>> -      * to the new location.
->>> +      * In snapshot mode we simply increment the head by the number of byte
->>> +      * that were written.  User space function  cs_etm_find_snapshot() will
->>> +      * figure out how many bytes to get from the AUX buffer based on the
->>> +      * position of the head.
->>>         */
->>> -     if (buf->snapshot) {
->>> -             handle->head = (cur * PAGE_SIZE) + offset;
->>> -             to_read = buf->nr_pages << PAGE_SHIFT;
->>> -     }
->>> +     if (buf->snapshot)
->>> +             handle->head += to_read;
->>> +
->>>        __etb_enable_hw(drvdata);
->>>        CS_LOCK(drvdata->base);
->>>    out:
->>
->> Otherwise:
->>
->> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> 
-> Is this for all the kernel space patches or just this one?
-
-It was initially for the first patch. But now I realize that
-all the other patches are of similar approach. I will add a
-different tag for better tracking.
-
-Cheers
-Suzuki
+Regards
 
 _______________________________________________
 linux-arm-kernel mailing list
