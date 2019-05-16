@@ -2,86 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B093320D5B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 18:49:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC45620D60
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 18:49:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QoEmkS8CLwcSYSSqJdy0iXH8HCFqmYFch4k3edXphtI=; b=alYbHJwtpO0RYD
-	vd04g5V0mszO+9euJFkbdRPKUMrfNQ+Fhia0TAIsZ6r0UpPwl4BY5Okfkrh9l69XaYWc+60O1968u
-	lBH659jO8D2GRyD/SxI0Vc09KvsrJA9HAKWT2YdNb09Dv21WWZBVEys0fW0xG2/Co+ydX2ncLuxCn
-	xRvj7MFVZmTiUhdqFv/Uob4M6dy4NJ1hvfH/W/hGqz+JKWX6jA6QMgnIN2jJtsqPV1Y8RzVZxUgyU
-	w0v2kO/NZ/QUiR7diOQjhzm8UCZkj6fubBWMORkLSIO0AH6GVTmfarI6No63LLWADJ6J97VlR/jm1
-	SPGjLr5AEAPOAyIrpd4A==;
+	List-Owner; bh=b86vQbPk7SrC1ywd9N+3xbUR03P4e2sYo7j2He2F4wA=; b=eRZtem/XhdwDT0
+	gFcymw+gvd0YTiTe1U9Mwrsv2Ms3rCQdA2fCuDp7vtP5ZpGAcoUWX54R3jP+VY6aph1UTBNpJZRwu
+	kNNFYFtBessHkXgJWcTh9o0Bad/QcKeYCnrrIopJnpTaQwsTTM7vvqlV51pOqySu0JumrbC8loZAa
+	bL/6zgYzfgyPbUV7NGcc5DDjH80jATiT5uGYuiSNqlVk6ZiMohLUeV9npuEPUgJDpnuHoj4Gk5gh0
+	WdcNfIxxL6pfXN9dQiFhZ+wweC0bm435YqkY5uwuaWW8GMjdut4iIsYOS7F5zkW9iOWMKDD/ay2LZ
+	aFOsGo/8TJU91WZbrgeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRJZJ-0002uc-2e; Thu, 16 May 2019 16:49:21 +0000
-Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
+	id 1hRJZU-00036a-LT; Thu, 16 May 2019 16:49:32 +0000
+Received: from verein.lst.de ([213.95.11.211] helo=newverein.lst.de)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRJZC-0002ts-JF
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 16:49:15 +0000
-Received: by mail-qt1-x842.google.com with SMTP id d13so4710192qth.5
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 May 2019 09:49:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=V54eRnKwdjS+PEKbXuK6UCgdmon3FdybUlySjzqEJGo=;
- b=Y7WJlt4bLjAJ4WhWIbMzJ/8PhricDREUZCU7Q1/HTZvvFSjXhMw6Fj3NYJLMxnF5H3
- xFmNwRnXYTntWpRu3Lpdbvwa5tqci5Xe358XawRq25kd+KE+5NovF5rGFK6+pyVUKFjE
- t5pWcHvFVNZlhWAdiIbzyX+khalrXvVMxRhdo=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=V54eRnKwdjS+PEKbXuK6UCgdmon3FdybUlySjzqEJGo=;
- b=UnclLNu8mC6RvPbCtpcR4RYGq5VUJZOzjNwQg8AAiPLlMYzp2K8vKql5fv/GGMFe+u
- Tnk3X33uUGqRh6T+zlGp+AhpZiEnl2n5/iTas8AhZ2FEeW4HJfWjHfkESYCblfvMFMw1
- s73DneR62jN7eN1/uGa3J/KZxF3+V45cCjIjsIjYI8oXG8yoY9lG+U208yfCwcOluzQt
- 723Y13FP+Qhb2kXK0c+l3oy1jcElgwjQ3315kraWJtmBfIfD4HpVAF8O/pzPRMcCm7Ko
- t1ZENG/f6NG3eVF70/gZjgeJdqg1P3MBtLM2Qy8PYfIoTJH45HLwe/Q8g3tAvI+aHyr2
- aY4A==
-X-Gm-Message-State: APjAAAVCac0oKUalqMgROxqBQNcPlAHnB5QD48L2FvpPX4xiNnX57oyi
- hA+yGujtp1h6NCQpgW8JnRnt2PmBZpucDK22/oRhIQ==
-X-Google-Smtp-Source: APXvYqy+/6RfTqO4HVKK22HJ4SUb9lK/prYvmIxZ0Cl7qxFHUR3oqhJi1qikDD7OHXt/c+stN5QSeCyFVHsMZ9dZnA4=
-X-Received: by 2002:a0c:8aad:: with SMTP id 42mr40983967qvv.200.1558025353386; 
- Thu, 16 May 2019 09:49:13 -0700 (PDT)
+ id 1hRJZK-00030q-Dd
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 16:49:23 +0000
+Received: by newverein.lst.de (Postfix, from userid 2005)
+ id 17CF168B02; Thu, 16 May 2019 18:49:00 +0200 (CEST)
+Date: Thu, 16 May 2019 18:48:59 +0200
+From: Torsten Duwe <duwe@lst.de>
+To: Vasily Khoruzhick <anarsoul@gmail.com>
+Subject: Re: [PATCH 4/4] arm64: DTS: allwinner: a64: enable ANX6345 bridge
+ on Teres-I
+Message-ID: <20190516164859.GB10431@lst.de>
+References: <20190514155911.6C0AC68B05@newverein.lst.de>
+ <20190514160241.9EAC768C7B@newverein.lst.de>
+ <CA+E=qVfuKBzWK7dpM_eabjU8mLdzOw3zCnYk6Tc1oXdavH7CNA@mail.gmail.com>
+ <20190515093141.41016b11@blackhole.lan>
+ <CA+E=qVf6K_0T0x2Hsfp6EDqM-ok6xiAzeZPvp6SRg0yt010pKA@mail.gmail.com>
+ <20190516154820.GA10431@lst.de>
+ <CA+E=qVe5NkAvHXPvVc7iTbZn5sKeoRm0166zPW_s83c2gk7B+g@mail.gmail.com>
 MIME-Version: 1.0
-References: <20190516102817.188519-1-hsinyi@chromium.org>
- <20190516102817.188519-2-hsinyi@chromium.org>
- <CAL_JsqLx1UdjCnZ69aQm0GU_uOdd7tTdD_oM=D7yhDANoQ0fEA@mail.gmail.com>
- <CAJMQK-jrJQri3gM=X6JRD6Rk+B5S4939HJTptrQMY64xEWr1qA@mail.gmail.com>
- <CAL_Jsq+dVg9E_EzpoC4Bz1ytUckDGXUcEJyU5pV2HS6rZuKmHA@mail.gmail.com>
-In-Reply-To: <CAL_Jsq+dVg9E_EzpoC4Bz1ytUckDGXUcEJyU5pV2HS6rZuKmHA@mail.gmail.com>
-From: Hsin-Yi Wang <hsinyi@chromium.org>
-Date: Fri, 17 May 2019 00:48:47 +0800
-Message-ID: <CAJMQK-hzjSBf2-QFMn52Sa8fwvm5-gaddzBOudfEc1neR2rwnA@mail.gmail.com>
-Subject: Re: [PATCH v3 2/3] arm64: implement update_fdt_pgprot()
-To: Rob Herring <robh+dt@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <CA+E=qVe5NkAvHXPvVc7iTbZn5sKeoRm0166zPW_s83c2gk7B+g@mail.gmail.com>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_094914_660359_1AAFD8A2 
-X-CRM114-Status: UNSURE (   9.73  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190516_094922_644341_492AB6BD 
+X-CRM114-Status: GOOD (  10.00  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
- [list.dnswl.org]
+ no trust [213.95.11.211 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,43 +65,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Yu Zhao <yuzhao@google.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Stephen Boyd <swboyd@chromium.org>,
- Will Deacon <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Mike Rapoport <rppt@linux.ibm.com>, Jun Yao <yaojun8558363@gmail.com>,
- Miles Chen <miles.chen@mediatek.com>, James Morse <james.morse@arm.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Laura Abbott <labbott@redhat.com>,
- Frank Rowand <frowand.list@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Robin Murphy <robin.murphy@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Andrzej Hajda <a.hajda@samsung.com>,
+ David Airlie <airlied@linux.ie>, linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
+ Sean Paul <seanpaul@chromium.org>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>,
+ Icenowy Zheng <icenowy@aosc.io>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 16, 2019 at 11:32 PM Rob Herring <robh+dt@kernel.org> wrote:
+On Thu, May 16, 2019 at 09:06:41AM -0700, Vasily Khoruzhick wrote:
+> 
+> Driver can talk to the panel over AUX channel only after t1+t3, t1 is
+> up to 10ms, t3 is up to 200ms.
 
-> Doesn't kexec operate on a copy because it already does modifications.
->
-Hi Rob,
+This is after power-on. The boot loader needs to deal with this.
 
-This patch is to assist "[PATCH v3 3/3] fdt: add support for rng-seed"
-(https://lkml.org/lkml/2019/5/16/257). I thought that by default
-second kernel would use original fdt, so I write new seed back to
-original fdt. Might be wrong.
+> It works with older version of driver
+> that keeps panel always on because it takes a while between driver
+> probe and pipeline start.
 
-** "[PATCH v3 3/3] fdt: add support for rng-seed" is supposed to
-handle for adding new seed in kexec case, discussed in v2
-(https://lkml.org/lkml/2019/5/13/425)
+No lid switch, no USB, no WiFi, no MMC. If you disable DCDC1 you'll
+run out of wakeup-sources ;-) IOW: I see no practical way any OS
+driver can switch this panel voltage off and survive...
 
-By default (not considering user defines their own fdt), if second
-kernel uses copied fdt, when is it copied and can we modify that?
+> All in all - you don't need panel timings since there's EDID but you
+> still need panel delays. Anyway, it's up to you and maintainers.
 
-Thanks!
+Let's give it a try.
+
+	Torsten
+
 
 _______________________________________________
 linux-arm-kernel mailing list
