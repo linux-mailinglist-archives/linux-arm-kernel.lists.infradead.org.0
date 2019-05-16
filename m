@@ -2,81 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3A1320B53
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 17:33:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3DB8820B59
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 17:34:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jQ+Pc9Tehre5WZhkx+L+21BfFKlmMwVaVU92IaLAulA=; b=cTVXalaNqIYDjQ
-	C6ef/aLodvIzFso/3WXx0762MIg2n4Hy+m0qzoZeDHhSO+Ersm2Fj3/arC+3/n+5dFCsa+8MX6sH2
-	Rvu9D6KuVK23mbzMZzvBa5F6J5dVrzpb9he7owFZz36XjGgxmaqy9KXMGBogB7A8DQzVuFj/bhxpE
-	jHUEYQ+tytpXkRDXGZjpnJwyixXg1E88uBEiZniJx739w21GVuMx539IMRChGDrstAMIovzcDFjOU
-	3OOQPvPF1PcWuEcNOY1YzE4uOFDaJPCs1ACJt1DOHk0eoj6QzZl26hfVc31npNHoLvhbJeyV0BblI
-	zYQxUL3RiurNmZ1P193g==;
+	List-Owner; bh=LscbjCR9374mcLR9oMIHeJEr63e2SbsHn3391bNhvSg=; b=Fw4xoxV3M8TdLq
+	JqfIHVa8NChGwCywWQzyYM+U0ANWMGA5cl8721jnPViQHwFHwFjTNVHaIZiZzolMBaqp11ToI7ISf
+	/XhMO5QuigxdrfoMZuMYverhUsUc9dwvhxuXgRsghZDdRzgCJBct5dd7GfRv2KsovRDkE+UqIUkp1
+	Wez3he+gLWslNX1hykLnoazygsIs1wAzPzLq7IsA3tiubgbxzBYhViDvg1nRQKhlcKLYIFGfgx9sT
+	J0YS8q2L+R+8xI9eQSJDX5p5BFUns2OeS8pkJa0OaoHP7w8fcRSIQBX3FbAMu/IJIggw2kuY7C6ms
+	wHb7ncTtK11SdMf1gtRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRINN-00063i-4j; Thu, 16 May 2019 15:32:57 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hRIOg-0006Kd-Ar; Thu, 16 May 2019 15:34:18 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRING-00063N-E7
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 15:32:51 +0000
-Received: from mail-qt1-f169.google.com (mail-qt1-f169.google.com
- [209.85.160.169])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D736620881
+ id 1hRIOY-0006K9-W9
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 15:34:12 +0000
+Received: by mail-lj1-x243.google.com with SMTP id k8so3495445lja.8
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 May 2019 15:32:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558020770;
- bh=r68WH/4euMEIF03eDgl3acP0UnHdg4XoFgWuEe+zmHI=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=zhfDnVk7ujI6CGqluZR6aypzeESD4uPYQ91GeF8Bo5/xBsIX9k94BQ+q2Ia3O8Asf
- kFFy3DcTaWqWZt6s6iftPXG/MOY5b7tTFqJsjY6BvWTMo+LdZvNeK3AGIFDAR+vTnK
- P20VCQijmK3M7urTw5uXt0JNAGbnBnc+e/TgXtqo=
-Received: by mail-qt1-f169.google.com with SMTP id y42so4396007qtk.6
+ Thu, 16 May 2019 08:34:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=linux-foundation.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=RgkwpdYQl9vPdtySryKdVHRySf6tMU0/Ia1tcv4ix30=;
+ b=DKcHZXmijDxQRqkKIEARtaTrF1akUPSYdG4y1zbgCZsstI2PKmflfIqn9R57e8r0bh
+ beB+bnHkDd1niy82QG5AzYmQWg6fbD+h8mWkc+3ifWzxXdAYcZjoEFdaTZdz1cx7ceUL
+ B5FI8/pi3t8ENGgO3YVnls3F5P42rYCR/JXvc=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=RgkwpdYQl9vPdtySryKdVHRySf6tMU0/Ia1tcv4ix30=;
+ b=pIlN/6qwuE36NsE7jQ8i1qMIpB7+A/u7I5PzOFh1u9gZzcFgOkibYns245F823d4zB
+ q+GRo6r1DqMwrLmbfNMiLOEOL9KYr53ELDrRKnpOu9umW4t8wl4PRgUZYTg9wglv12x+
+ VB0dXZHM00LlS/PNo0h6oI++lrdxMNPuI07jdNn+AMFP0s6WIoGghofRvGgB1JHk3Lj2
+ 8h/VzfxPej9YRXQAgD+XAeSGgINSfkSXH7i+fQOaCfdH+MIhDvM24DHYKCFt2I/mDpNW
+ ngdzeVuF2RwBurDWViKbRCoy+rkPQx+FM6JeXKqzIVmRVI0VaadnDXIQyliF5raXqTDL
+ cpUA==
+X-Gm-Message-State: APjAAAVuhpqThGIJtC9qvC93cnCP8dCyz2g5Xk5rYPHOBHRzUwt6D+ot
+ uGUkXH0kX+jGU3rU4E0lC40dIe4BoQY=
+X-Google-Smtp-Source: APXvYqyN0EORn/G4TCecib/RXidk+R6yBwp/d8q3iv+KbK3m3MEjm+6AJUaE2ehFB0F+a5n/H0xyNA==
+X-Received: by 2002:a2e:9d0a:: with SMTP id t10mr24908549lji.95.1558020848446; 
+ Thu, 16 May 2019 08:34:08 -0700 (PDT)
+Received: from mail-lj1-f176.google.com (mail-lj1-f176.google.com.
+ [209.85.208.176])
+ by smtp.gmail.com with ESMTPSA id e6sm948058ljg.65.2019.05.16.08.34.07
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 16 May 2019 08:34:07 -0700 (PDT)
+Received: by mail-lj1-f176.google.com with SMTP id h19so3530885ljj.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 May 2019 08:32:49 -0700 (PDT)
-X-Gm-Message-State: APjAAAXwciowgILzndvpsqlnczAhsv6ClLqz9ZvUr2PHp/Nznc1LMAtw
- d0MvSDA3RehI9EnC26BVF6J6xii/LprMRn5OnA==
-X-Google-Smtp-Source: APXvYqySyBWIP8bNkRclfMXh66OEqZoiEOpv/b5tK4fL27uelE9OPAmunH3JBsEYv3jZ06Wmkpj7Be8lFtgdVnowH0M=
-X-Received: by 2002:a0c:fe65:: with SMTP id b5mr40835148qvv.106.1558020769085; 
- Thu, 16 May 2019 08:32:49 -0700 (PDT)
+ Thu, 16 May 2019 08:34:07 -0700 (PDT)
+X-Received: by 2002:a2e:9a94:: with SMTP id p20mr14460647lji.2.1558020847152; 
+ Thu, 16 May 2019 08:34:07 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190516102817.188519-1-hsinyi@chromium.org>
- <20190516102817.188519-2-hsinyi@chromium.org>
- <CAL_JsqLx1UdjCnZ69aQm0GU_uOdd7tTdD_oM=D7yhDANoQ0fEA@mail.gmail.com>
- <CAJMQK-jrJQri3gM=X6JRD6Rk+B5S4939HJTptrQMY64xEWr1qA@mail.gmail.com>
-In-Reply-To: <CAJMQK-jrJQri3gM=X6JRD6Rk+B5S4939HJTptrQMY64xEWr1qA@mail.gmail.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Thu, 16 May 2019 10:32:37 -0500
-X-Gmail-Original-Message-ID: <CAL_Jsq+dVg9E_EzpoC4Bz1ytUckDGXUcEJyU5pV2HS6rZuKmHA@mail.gmail.com>
-Message-ID: <CAL_Jsq+dVg9E_EzpoC4Bz1ytUckDGXUcEJyU5pV2HS6rZuKmHA@mail.gmail.com>
-Subject: Re: [PATCH v3 2/3] arm64: implement update_fdt_pgprot()
-To: Hsin-Yi Wang <hsinyi@chromium.org>
+References: <20190516064304.24057-1-olof@lixom.net>
+ <20190516064304.24057-2-olof@lixom.net>
+In-Reply-To: <20190516064304.24057-2-olof@lixom.net>
+From: Linus Torvalds <torvalds@linux-foundation.org>
+Date: Thu, 16 May 2019 08:33:51 -0700
+X-Gmail-Original-Message-ID: <CAHk-=wj7uZ+rLecwEP+U3jRRPWRoB1QVTr8pHzTcmQadE=Ngvg@mail.gmail.com>
+Message-ID: <CAHk-=wj7uZ+rLecwEP+U3jRRPWRoB1QVTr8pHzTcmQadE=Ngvg@mail.gmail.com>
+Subject: Re: [GIT PULL 1/4] ARM: SoC platform updates
+To: Olof Johansson <olof@lixom.net>, Linus Walleij <linus.walleij@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_083250_491152_CD6104DD 
-X-CRM114-Status: GOOD (  12.73  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190516_083411_039354_E0925599 
+X-CRM114-Status: GOOD (  10.25  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -88,42 +102,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Yu Zhao <yuzhao@google.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Stephen Boyd <swboyd@chromium.org>,
- Will Deacon <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Mike Rapoport <rppt@linux.ibm.com>, Jun Yao <yaojun8558363@gmail.com>,
- Miles Chen <miles.chen@mediatek.com>, James Morse <james.morse@arm.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Laura Abbott <labbott@redhat.com>,
- Frank Rowand <frowand.list@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Robin Murphy <robin.murphy@arm.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: ARM SoC <arm@kernel.org>,
+ Linux List Kernel Mailing <linux-kernel@vger.kernel.org>,
+ "linux-alpha@vger.kernel.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 16, 2019 at 9:51 AM Hsin-Yi Wang <hsinyi@chromium.org> wrote:
->
-> On Thu, May 16, 2019 at 10:37 PM Rob Herring <robh+dt@kernel.org> wrote:
->
-> >
-> > Why not just map the FDT R/W at the start and change it to RO just
-> > before calling unflatten_device_tree? Then all the FDT scanning
-> > functions or any future fixups we need can just assume R/W. That is
-> > essentially what Stephen suggested. However, there's no need for a
-> > weak function as it can all be done within the arch code.
-> >
-> We need to add a new seed for kexec
-
-Doesn't kexec operate on a copy because it already does modifications.
-
-Rob
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gV2VkLCBNYXkgMTUsIDIwMTkgYXQgMTE6NDMgUE0gT2xvZiBKb2hhbnNzb24gPG9sb2ZAbGl4
+b20ubmV0PiB3cm90ZToKPgo+IFNvQyB1cGRhdGVzLCBtb3N0bHkgcmVmYWN0b3JpbmdzIGFuZCBj
+bGVhbnVwcyBvZiBvbGQgbGVnYWN5IHBsYXRmb3Jtcy4KPiBNYWpvciB0aGVtZXMgdGhpcyByZWxl
+YXNlOgoKSG1tLiBUaGlzIGJyaW5ncyBpbiBhIG5ldyB3YXJuaW5nOgoKICBkcml2ZXJzL2Nsb2Nr
+c291cmNlL3RpbWVyLWl4cDR4eC5jOjc4OjIwOiB3YXJuaW5nOgrigJhpeHA0eHhfcmVhZF9zY2hl
+ZF9jbG9ja+KAmSBkZWZpbmVkIGJ1dCBub3QgdXNlZCBbLVd1bnVzZWQtZnVuY3Rpb25dCgpiZWNh
+dXNlIHRoYXQgZHJpdmVycyBpcyBlbmFibGVkIGZvciBidWlsZCB0ZXN0aW5nLCBidXQgdGhhdCBm
+dW5jdGlvbgppcyBvbmx5IHVzZWQgdW5kZXIKCiAgI2lmZGVmIENPTkZJR19BUk0KICAgICAgICBz
+Y2hlZF9jbG9ja19yZWdpc3RlcihpeHA0eHhfcmVhZF9zY2hlZF9jbG9jaywgMzIsIHRpbWVyX2Zy
+ZXEpOwogICNlbmRpZgoKSXQncyBub3QgY2xlYXIgd2h5IHRoYXQgI2lmZGVmIGlzIHRoZXJlLiBU
+aGlzIGRyaXZlciBvbmx5IGJ1aWxkcwpub24tQVJNIHdoZW4gQ09NUElMRV9URVNUIGlzIGVuYWJs
+ZWQsIGFuZCB0aGF0ICNpZmRlZiBhY3R1YWxseSBicmVha3MKdGhhdCBidWlsZCB0ZXN0LgoKSSdt
+IGdvaW5nIHRvIHJlbW92ZSB0aGF0ICNpZmRlZiBpbiBteSBtZXJnZSwgYmVjYXVzZSBJIGRvICpu
+b3QqIHdhbnQKdG8gc2VlIG5ldyB3YXJuaW5ncywgYW5kIGl0IGRvZXNuJ3Qgc2VlbSB0byBtYWtl
+IGFueSBzZW5zZS4KCk1heWJlIHRoYXQncyB0aGUgd3JvbmcgcmVzb2x1dGlvbiwgcGxlYXNlIGhv
+bGxlciBhbmQgbGV0IG1lIGtub3cgaWYKeW91IHdhbnQgc29tZXRoaW5nIGVsc2UuCgogICAgICAg
+ICAgICAgICAgTGludXMKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LWFybS1rZXJuZWwK
