@@ -2,78 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F710204CF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 13:36:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41435204D5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 13:40:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wxiumQxYIws8IBXcBnDIFMjnZh4VEQzruDAc6KjfFO0=; b=c2oxdB6CQDg4Rf
-	FJeIqhME9dgGz6FQ0FdonEMkDXPTE/3PSpCViwxQfOaK+voc6r1cFAsGWqjM4LMwBgaxWre0WrO2V
-	V629y/M1Y6mjCiyYY3d7d1faOHWcgi2c5y741W0Oqi5vqRUmvX9cv5RTRuYH7i0HxmJhTHOi8qOIV
-	Kzc71aagxz95re9brlazxtFuKlxsTJTQW7hWC9wgqnLkFIQ73D7HKCZUd2gjhxv+5i06SLSKq+NGH
-	Wt7fIuI7vmAFvImeQcAJM5+p6n8YssCNdDiQq55eCLX+7ysFlds3pI9VrEGjW2lACF0dtdWwG27ML
-	RmWadbvK0PDAIoKQPrKQ==;
+	List-Owner; bh=g4TYdnXls9xNtnpWmWXLt2G+ucA8reMLge7wO27ZKEU=; b=ZYhgoVKUHTZXdw
+	OT/90ulIIGrT9x9nkBrPhB1s7/Uld5jQY/mHGnrT+8sRA7ZBzidqEG/NBhtyyCXMHREw0pW7wybUl
+	8huk+kWOXEANvdcbjSse4Yw/EBPJN76ObRzgtY+ExZua4dJJolcL/641GTWTBYQThiljH21Odu9gK
+	lKGlMiPxpoo9VGKtyiUrSvZ0/WAa/CWDE6gNuuEWNmY2tZE3dc831BtCiRCWf/9r+PLYl97sNLj7w
+	5HqvWJLVw/8M4/8OQI75lzUy3Pc/3KbTEPSk4PtdozA4Lpr3yNJiQuUXWgkytkfJSGhwYd4DIiRuX
+	i1ZhkfWKUeBc5dogh7Sw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hREgu-0007oN-1C; Thu, 16 May 2019 11:36:52 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1hREkU-00014H-LT; Thu, 16 May 2019 11:40:34 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hREgm-0007lg-2X
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 11:36:45 +0000
-Received: by mail-lf1-x141.google.com with SMTP id l26so2320367lfh.13
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 May 2019 04:36:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=aPeEg8eIyCU96vIMnu0N/V0MLHBwOZKIewHfSDCMiN4=;
- b=LKVjY5hpXs6HG9vcNyUai5oARidkD4sevWY+apEsEee5Xz3ovQTbkaNF9/t2NI9WgH
- 9tL+rXa0kDMzzRr3gVT8dsDWzqEQqUGOHCpGnU5PTh+B/mXmmnUeUS6DYTC7Tybu31hz
- NsUpznGUXOUtm2EVf66vPEe8tXbXgTgd9Uqhj6ZpgNM85yaJReEPfOV8c02vSI8KQyYg
- oujD/7hMdO4aYVJu7PBlux5a8OuxhrvaE/j8EnskrpmeLZe26tzguyPux8Vq8UmFmeEY
- mfKGuSfgBfFaNKpE8ml0knm3c79c1kPgTEGCscVsrPOKY8x8b+sgv6HLdqXjmjYnQc47
- R21A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=aPeEg8eIyCU96vIMnu0N/V0MLHBwOZKIewHfSDCMiN4=;
- b=DRT9W6NC0zicxSjHREvDoIIXjauLqCG+8ZkxygPmO/IU/2hIvMrKgkjQS+HWRDVnVj
- nWk2MpCZFHLnrNmvNtzyNWDV/+MLureqiPrgR4NjVANum+mIv6CTmW8AUIeakEVahx5O
- g6m+JhL/BwUdL7AAx9iZrzOif4NowuWq9eUBjfkcPSUbqDrzkD4F+eV7elly0Z+y+lWP
- sA6qtPhv/fr8jopTX89ECDPmcveoRxqg/RhVvM0LbgW5sWXIUzmHO7d/wzGMFlwxVrmA
- BYKNRLxwTHgAehB9qGECcdFPav3fXLPUTIEHylp185x1DfoUeTglM12vdG00MWgNrcXu
- MwdA==
-X-Gm-Message-State: APjAAAWrP7azGUMfNnzZTLcR3D9RQFNBVBja+6bx3kzYraZVdSw2xoKB
- lUSbJjjpw8tXxBhSke1qi+6w9L04DwU3raNaSCk=
-X-Google-Smtp-Source: APXvYqzbVaLyuRXck+ZijFR7Fq0g6tClfRO211DFZN7OHyacnqqRljvaYjthXlBGkYT/cQtq9BXely1ffRjACfbAP9Q=
-X-Received: by 2002:ac2:434a:: with SMTP id o10mr18954257lfl.122.1558006602110; 
- Thu, 16 May 2019 04:36:42 -0700 (PDT)
+ id 1hREkM-00013E-No
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 11:40:28 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 116BF20862;
+ Thu, 16 May 2019 11:40:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1558006826;
+ bh=BKXauO2Zc4XHHOgQk7SKdfzxMgK8rT1MjX+j7lxm+lI=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=ShVi1q9RGjETx5YfaYeLBBDUBvBn+JBESMurjuWmIpW8YOqtc+Ki2OODaujZIZbjx
+ Z0DySjk7hddFCaVBQSQrDm5FKHbPRbXGd5HNAwMZ9rh4sZvr+svdmQgIbm1/HvcCFN
+ 1lICgZmT24uymnEfRmgblJOvHDIcmUTiBKS+ZiPs=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 5.0 33/34] perf cs-etm: Always allocate memory for
+ cs_etm_queue::prev_packet
+Date: Thu, 16 May 2019 07:39:30 -0400
+Message-Id: <20190516113932.8348-33-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190516113932.8348-1-sashal@kernel.org>
+References: <20190516113932.8348-1-sashal@kernel.org>
 MIME-Version: 1.0
-References: <20190515224601.4527-1-marex@denx.de>
-In-Reply-To: <20190515224601.4527-1-marex@denx.de>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Thu, 16 May 2019 08:36:31 -0300
-Message-ID: <CAOMZO5Cpp20AQqdfbSPdF4_QF5aM_wg78TrCjB3G0zCKoUw4vw@mail.gmail.com>
-Subject: Re: [PATCH V2 1/8] ARM: dts: imx53: Update UART configuration on
- M53Menlo
-To: Marek Vasut <marex@denx.de>
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_043644_119170_4E751FF5 
-X-CRM114-Status: UNSURE (   8.82  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190516_044026_819134_ED7E1287 
+X-CRM114-Status: GOOD (  13.98  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -83,6 +68,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,28 +80,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shawn Guo <shawnguo@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Sasha Levin <sashal@kernel.org>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulouse <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Arnaldo Carvalho de Melo <acme@redhat.com>, Leo Yan <leo.yan@linaro.org>,
+ Namhyung Kim <namhyung@kernel.org>, Robert Walker <robert.walker@arm.com>,
+ Jiri Olsa <jolsa@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 15, 2019 at 7:46 PM Marek Vasut <marex@denx.de> wrote:
->
-> Enable flow control lines on UART1 and UART2, add matching pinmux entries.
-> Add and enable UART3 with RS485 mode enabled on boot.
->
-> Signed-off-by: Marek Vasut <marex@denx.de>
-> Cc: Shawn Guo <shawnguo@kernel.org>
-> Cc: Fabio Estevam <festevam@gmail.com>
-> Cc: NXP Linux Team <linux-imx@nxp.com>
-> To: linux-arm-kernel@lists.infradead.org
+From: Leo Yan <leo.yan@linaro.org>
 
-For the series:
+[ Upstream commit 35bb59c10a6d0578806dd500477dae9cb4be344e ]
 
-Reviewed-by: Fabio Estevam <festevam@gmail.com>
+Robert Walker reported a segmentation fault is observed when process
+CoreSight trace data; this issue can be easily reproduced by the command
+'perf report --itrace=i1000i' for decoding tracing data.
+
+If neither the 'b' flag (synthesize branches events) nor 'l' flag
+(synthesize last branch entries) are specified to option '--itrace',
+cs_etm_queue::prev_packet will not been initialised.  After merging the
+code to support exception packets and sample flags, there introduced a
+number of uses of cs_etm_queue::prev_packet without checking whether it
+is valid, for these cases any accessing to uninitialised prev_packet
+will cause crash.
+
+As cs_etm_queue::prev_packet is used more widely now and it's already
+hard to follow which functions have been called in a context where the
+validity of cs_etm_queue::prev_packet has been checked, this patch
+always allocates memory for cs_etm_queue::prev_packet.
+
+Reported-by: Robert Walker <robert.walker@arm.com>
+Suggested-by: Robert Walker <robert.walker@arm.com>
+Signed-off-by: Leo Yan <leo.yan@linaro.org>
+Tested-by: Robert Walker <robert.walker@arm.com>
+Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+Cc: Jiri Olsa <jolsa@redhat.com>
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+Cc: Mike Leach <mike.leach@linaro.org>
+Cc: Namhyung Kim <namhyung@kernel.org>
+Cc: Suzuki K Poulouse <suzuki.poulose@arm.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Fixes: 7100b12cf474 ("perf cs-etm: Generate branch sample for exception packet")
+Fixes: 24fff5eb2b93 ("perf cs-etm: Avoid stale branch samples when flush packet")
+Link: http://lkml.kernel.org/r/20190428083228.20246-1-leo.yan@linaro.org
+Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ tools/perf/util/cs-etm.c | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+
+diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
+index 27a374ddf6615..947f1bb2fbdfb 100644
+--- a/tools/perf/util/cs-etm.c
++++ b/tools/perf/util/cs-etm.c
+@@ -345,11 +345,9 @@ static struct cs_etm_queue *cs_etm__alloc_queue(struct cs_etm_auxtrace *etm,
+ 	if (!etmq->packet)
+ 		goto out_free;
+ 
+-	if (etm->synth_opts.last_branch || etm->sample_branches) {
+-		etmq->prev_packet = zalloc(szp);
+-		if (!etmq->prev_packet)
+-			goto out_free;
+-	}
++	etmq->prev_packet = zalloc(szp);
++	if (!etmq->prev_packet)
++		goto out_free;
+ 
+ 	if (etm->synth_opts.last_branch) {
+ 		size_t sz = sizeof(struct branch_stack);
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
