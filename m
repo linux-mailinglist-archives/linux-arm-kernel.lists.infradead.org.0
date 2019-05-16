@@ -2,89 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12DDA207DF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 15:20:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C9A3207E5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 15:22:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ywtU2RzITJ7I1RV6D6YZcp44Vs34EPpKInVM4p9sbTA=; b=MiemlnQBGNW8FD
-	0fUFNixVkxorBIhvOhCcEc3XW8ZO/5T6hKgJ76LaYRzw/AUQ/TPQpCUeSgSVk0203tRGiKrog1sx8
-	NXGbomg8ueuWe1mTQjKWsq8eJXzNb247mQFOlYNDYi89aK51qcyKEwVTLzKdrq/ZhMxjiNCnUz3S2
-	DUX1QrWid3mYYamTIr//fSb+qDgNg75ko/Ag/+8Dkco8DzBlcqoO+UgYzoO61zhPRHjFb+5JDUcoi
-	nx77ndrIpn4PUBSdM3Xg2vOqqGdRVZmxGL8hPa/ESIrRcZRHczN0efbbJuYVj8edwr9laiYvGTJRd
-	X57+TDCGqL+LVHD6jR8w==;
+	List-Owner; bh=v9ljLrMCVojNzm1HVAX2oYWqm1pDBXOXhIbJq4X4kEU=; b=PKZhabeUmoSsxn
+	51qDvBKqHwLWDieZ4lvWNVq6im/eF9ptYbQx6rKZCWRfVRt9aG5G96H3bjFTJiXwRVHSmibVuuX1X
+	xPaLGMOswwM5SIJJttRf2MObljp7wqdV/9BwNO2WEOV+R93+nrc6gtMZbeOcIPGmlhbmo1yOT3iAm
+	Qyz47/0s3lDZU1xIOLMjvdUIsuRJaYHrIOSvNHfd8NvYY8RzGgP7+eA6i7qnzEkAk1jUnNraO+7LU
+	olfnqUSf02PV1XoRmZp7j+H9unOBxB9ES86JUpskp4jsFATu/jdXcdGwIY4RFjBgYCNZCoAaVW+ic
+	XrGk361w18uH0J6bgmzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRGIx-0005nV-CJ; Thu, 16 May 2019 13:20:15 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRGIp-0005Gl-Qe
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 13:20:09 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x4GDIr6G007346; Thu, 16 May 2019 15:20:03 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=MtuDKvN8MklsTqTwJQb+qb1nbgfCtLqblkoVlG4HJiQ=;
- b=S1uutbtAtHdUqZ6gFxAtDcx/Kz34SSD3CTbccYcx/gBuqXz8mNSRsy1Rp/07tk1f9iXD
- Dna8nd0sM1sZ+0EOGe0ktLt9df8Gk44MZiOh3lud01hdmMvFdwtbszSWMcsknoQkdmcn
- OmtXnOYZ09RMaxMgRb5iRROKNISB5heCT1QMjOfshFivnps6ck4UUAzmVKacbc3zKJBR
- tmVeP3BdL+7wAOIcMLN5+q3gFRJW7gS12W2WZewjGUmE7TGVmDMSjT7rN4/oMcUw0eDQ
- /CiUBno3cEzbyYlpGnI1/DKdtNKhrtmqdyEPk7qZcc7Mv5sekWQoG+wP6Fe+UWQtMz0/ 6w== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2sdkv079g6-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Thu, 16 May 2019 15:20:03 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 9B46241;
- Thu, 16 May 2019 13:20:02 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6FA6B2732;
- Thu, 16 May 2019 13:20:02 +0000 (GMT)
-Received: from [10.48.0.167] (10.75.127.49) by SFHDAG5NODE3.st.com
- (10.75.127.15) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 16 May
- 2019 15:20:01 +0200
-Subject: Re: [PATCH] i2c: i2c-stm32f7: fix the get_irq error cases
-To: Marc Gonzalez <marc.w.gonzalez@free.fr>
-References: <1557932949-15912-1-git-send-email-fabrice.gasnier@st.com>
- <366a1437-cd12-c0f9-cfa1-49b6524fdb1e@free.fr>
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-Message-ID: <e7424e17-0dec-300f-13dd-71f3725fbde1@st.com>
-Date: Thu, 16 May 2019 15:20:00 +0200
+	id 1hRGKU-00065T-DQ; Thu, 16 May 2019 13:21:50 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hRGKM-00064T-3V
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 13:21:43 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A2C4F1715;
+ Thu, 16 May 2019 06:21:39 -0700 (PDT)
+Received: from [10.1.196.69] (e112269-lin.cambridge.arm.com [10.1.196.69])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 625313F703;
+ Thu, 16 May 2019 06:21:37 -0700 (PDT)
+Subject: Re: [PATCH v4 0/8] Allwinner H6 Mali GPU support
+To: Robin Murphy <robin.murphy@arm.com>, Rob Herring
+ <rob.e.herring@gmail.com>, =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?=
+ <peron.clem@gmail.com>
+References: <20190512174608.10083-1-peron.clem@gmail.com>
+ <20190513151405.GW17751@phenom.ffwll.local>
+ <de50a9da-669f-ab25-2ef2-5ffb90f8ee03@baylibre.com>
+ <CAJiuCccuEw0BK6MwROR+XUDvu8AJTmZ5tu=pYwZbGAuvO31pgg@mail.gmail.com>
+ <CAJiuCccWa5UTML68JDQq6q8SyNZzVWwQWTOL=+84Bh4EMHGC3A@mail.gmail.com>
+ <3c2c9094-69d4-bace-d5ee-c02b7f56ac82@arm.com>
+ <CAJiuCcd=gCQJ4mxn3wNhHXveOhFLnYSEs+cnOMHcALPvd7bQZw@mail.gmail.com>
+ <CAC=3edbn1yXih5vP0SwsDkqRB0j5q0c4FL0jhCq9DQ9Wt2-hAA@mail.gmail.com>
+ <e8618889-9b22-7f9f-7451-3c08a80a0f9b@arm.com>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <fa434575-5576-aff5-8705-1f93eefa209c@arm.com>
+Date: Thu, 16 May 2019 14:21:35 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <366a1437-cd12-c0f9-cfa1-49b6524fdb1e@free.fr>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.49]
-X-ClientProxiedBy: SFHDAG4NODE1.st.com (10.75.127.10) To SFHDAG5NODE3.st.com
- (10.75.127.15)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-16_11:, , signatures=0
+In-Reply-To: <e8618889-9b22-7f9f-7451-3c08a80a0f9b@arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_062008_330824_92094010 
-X-CRM114-Status: GOOD (  18.96  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190516_062142_153358_FDD4EF26 
+X-CRM114-Status: GOOD (  18.21  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,113 +74,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <marc.zyngier@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Wolfram Sang <wsa@the-dreams.de>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ linux-sunxi <linux-sunxi@googlegroups.com>, Rob Herring <robh+dt@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/16/19 11:22 AM, Marc Gonzalez wrote:
-> On 15/05/2019 17:09, Fabrice Gasnier wrote:
-> 
->> During probe, return the "get_irq" error value instead of -EINVAL which
->> allows the driver to be deferred probed if needed.
->> Fix also the case where of_irq_get() returns a negative value.
->> Note :
->> On failure of_irq_get() returns 0 or a negative value while
->> platform_get_irq() returns a negative value.
->>
->> Fixes: aeb068c57214 ("i2c: i2c-stm32f7: add driver")
->>
->> Signed-off-by: Fabien Dessenne <fabien.dessenne@st.com>
->> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
->> ---
->>  drivers/i2c/busses/i2c-stm32f7.c | 26 ++++++++++++++------------
->>  1 file changed, 14 insertions(+), 12 deletions(-)
->>
->> diff --git a/drivers/i2c/busses/i2c-stm32f7.c b/drivers/i2c/busses/i2c-stm32f7.c
->> index 4284fc9..14fb105 100644
->> --- a/drivers/i2c/busses/i2c-stm32f7.c
->> +++ b/drivers/i2c/busses/i2c-stm32f7.c
->> @@ -25,7 +25,6 @@
->>  #include <linux/module.h>
->>  #include <linux/of.h>
->>  #include <linux/of_address.h>
->> -#include <linux/of_irq.h>
->>  #include <linux/of_platform.h>
->>  #include <linux/platform_device.h>
->>  #include <linux/pinctrl/consumer.h>
->> @@ -1812,15 +1811,14 @@ static struct i2c_algorithm stm32f7_i2c_algo = {
->>  
->>  static int stm32f7_i2c_probe(struct platform_device *pdev)
->>  {
->> -	struct device_node *np = pdev->dev.of_node;
->>  	struct stm32f7_i2c_dev *i2c_dev;
->>  	const struct stm32f7_i2c_setup *setup;
->>  	struct resource *res;
->> -	u32 irq_error, irq_event, clk_rate, rise_time, fall_time;
->> +	u32 clk_rate, rise_time, fall_time;
->>  	struct i2c_adapter *adap;
->>  	struct reset_control *rst;
->>  	dma_addr_t phy_addr;
->> -	int ret;
->> +	int irq_error, irq_event, ret;
->>  
->>  	i2c_dev = devm_kzalloc(&pdev->dev, sizeof(*i2c_dev), GFP_KERNEL);
->>  	if (!i2c_dev)
->> @@ -1832,16 +1830,20 @@ static int stm32f7_i2c_probe(struct platform_device *pdev)
->>  		return PTR_ERR(i2c_dev->base);
->>  	phy_addr = (dma_addr_t)res->start;
->>  
->> -	irq_event = irq_of_parse_and_map(np, 0);
->> -	if (!irq_event) {
->> -		dev_err(&pdev->dev, "IRQ event missing or invalid\n");
->> -		return -EINVAL;
->> +	irq_event = platform_get_irq(pdev, 0);
->> +	if (irq_event < 0) {
->> +		if (irq_event != -EPROBE_DEFER)
->> +			dev_err(&pdev->dev, "Failed to get IRQ event: %d\n",
->> +				irq_event);
->> +		return irq_event;
->>  	}
->>  
->> -	irq_error = irq_of_parse_and_map(np, 1);
->> -	if (!irq_error) {
->> -		dev_err(&pdev->dev, "IRQ error missing or invalid\n");
->> -		return -EINVAL;
->> +	irq_error = platform_get_irq(pdev, 1);
->> +	if (irq_error < 0) {
->> +		if (irq_error != -EPROBE_DEFER)
->> +			dev_err(&pdev->dev, "Failed to get IRQ error: %d\n",
->> +				irq_error);
->> +		return irq_error;
-> 
-> As far as I understand, if platform_get_irq() returns 0, that is an error
-> as well.
-> 
-> https://patchwork.kernel.org/patch/10006651/
+On 16/05/2019 12:19, Robin Murphy wrote:
+[...]
+> I was expecting to see a similar behaviour to my T620 (which I now
+> assume was down to 64-bit job descriptors sort-of-but-not-quite working)
+> but this does look a bit more fundamental - the fact that it's a level 1
+> fault with VA == head == tail suggests to me that the MMU can't see the
+> page tables at all to translate anything. I really hope that the H6 GPU
+> integration doesn't suffer from the same DMA offset as the Allwinner
+> display pipeline stuff, because that would be a real pain to support in
+> io-pgtable.
 
-Hi Marc,
+Assuming you mean the case where the physical address (as seen by the
+CPU) is different from the dma address (as seen by the GPU), then I
+highly doubt it because mali_kbase doesn't support it:
 
-Thanks for pointing this out.
-I'll fix it in v2, based on this, e.g. basically:
-if (irq <= 0)
-	return irq ? irq : -ENODEV;
+[from kbase_mem_pool_alloc_page() in mali_kbase_mem_pool.c]:
 
-Best Regards,
-Fabrice
+	dma_addr = dma_map_page(dev, p, 0, PAGE_SIZE, DMA_BIDIRECTIONAL);
+	if (dma_mapping_error(dev, dma_addr)) {
+		__free_page(p);
+		return NULL;
+	}
 
-> https://yarchive.net/comp/linux/zero.html
-> 
-> Regards.
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
+	WARN_ON(dma_addr != page_to_phys(p));
+
+
+That being said it's quite possible there could be something in the bus
+which needs configuring to make this work - in which case your best bet
+is to look at the vendor kernel and see if anything extra is poked when
+the Mali driver is loaded.
+
+Steve
 
 _______________________________________________
 linux-arm-kernel mailing list
