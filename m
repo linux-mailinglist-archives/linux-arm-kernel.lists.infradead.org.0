@@ -2,81 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6029D1FFD1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 08:46:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60A481FFBB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 08:43:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=43ploU1jWI1ueohGrJ/5Jp7JU5ojue6I1FeNZX91kac=; b=Sxny7GvVKb+hgR
-	OxdAqnRNBQZG3QWglepxWHpvluyez1Ys/F22/qzEFXxHQOyd05WqGjtag1f7ZaaabmUoFNy4/NKY6
-	sGW72gMjcY5eze5OulOUS/XkPlJHPJ4BPBNqnO528VncoBxEyB83lW/+av5IholU1CXuwbPvvlkxT
-	tBaER/pQXjaHyV/wB7fn/qWqIwzFD3pVaHZT26zkkwszL5nFIOatAiwHlLNvSoDBEMbqsl9EkUdzI
-	yZ2jswqrsMzbkWK16yYOfHvYuoaKvLR6CALtxbHErfm1LIf1ay/HZA6IwVI21hK3ajhOiKjXytPBw
-	Y/pk21fOFPRKqBK8mndQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=VNCTdyY7WaTq038BVISKY/LDy6Vsr/j0Vjb9nVDZ9Q0=; b=A6T
+	NjIguZCOZ3d8rm1jLEphiQDfl4gZD/s2k4OFS3EQtcHHZrpgs4z1+Ul2pOdVBd5U93qG6mumthmXV
+	8klp5CxouhrpqClk2quc/2qVjb5psrSYHeu/qA8Uhi46TcwXsDLgugqiy55R9iJ4uXH+6lq6vLzXv
+	BaBB1+NTB53n4t4+nz8f9pbFG6hVOaeooplnZhCaDlu2m0LLnCFcjKUz58f3qeoboJBfssmacg+IP
+	EH1YZXDJ/xLrXwP5tC5hoVfMOWN9gxiap15Kjb9hStA41zJ0P1s5Inazc2CStVbTQg/719VNBQDyY
+	n+1Z5sWStrHph2Jrq6uQl4/gAjYppEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRA9u-0000ah-NS; Thu, 16 May 2019 06:46:30 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1hRA74-0004D8-Tz; Thu, 16 May 2019 06:43:34 +0000
+Received: from mail-pf1-x42c.google.com ([2607:f8b0:4864:20::42c])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRA7Z-0004x2-79
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 06:44:23 +0000
-Received: by mail-lj1-x244.google.com with SMTP id h19so2016606ljj.4
+ id 1hRA6x-0004Cb-Cz
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 06:43:28 +0000
+Received: by mail-pf1-x42c.google.com with SMTP id v80so1310218pfa.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 15 May 2019 23:44:05 -0700 (PDT)
+ Wed, 15 May 2019 23:43:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=BhdVXLoJWMfzNzrRx3QHIA0XVbPekInrRo+E7wUe0oU=;
- b=QGg8it0LFXrhiHOL2cIDoPFSVJFb/6RU+b9EnGgVvbrDZwB2ufxFfQQJZyhqOyyhQL
- dh9bnFzcOp18FWKdG/vTjKN4GwXIuQMLroOD/OYw/cRqbw7+a4hIREdK43snVI5wECNA
- 9X13z8jHT/y8jQ4Sveq5Zojk/JxViqrWErz10mdZ5SWuMCRPvX3WT9QUjpXMMdVah5k3
- HQ9x47BThbznmTjzLUUbPo2L2Obn5TEAqL2oFxOP1TfeBv5ytx9RyUyXCRebvO6EmREL
- 6DzjXf3UZ5B5AoWTLRdbbeaOrEo0NTM874D3TtL8ZepDzl4B016HRInNFkNdFI5ioOI6
- r2ZA==
+ h=from:to:cc:subject:date:message-id;
+ bh=SqLUabMMzxCxSOebL0RIYlE+FsNekjMKv483Qc3eXKM=;
+ b=Gj9MopXzSpqX85oENFLgCbsQfKjA/2mr/v96/x0XAw0Hvk8iHXljsbU6k1UPa6KoNO
+ WpUUifFovIYExm9wJGV4MjhzPN0QSigTkRwcSmnRqbu7Wmrp95PheEVUpAuud2Wz6u+0
+ 3JcCajMcAlMUF0NUGU71tAlntbJTe3XI1CKwg9GQIHwYNYpXvNYLAFWG63JDkxX030Lh
+ honZKMzNdGDe6REuxNlGdr6zwSaI436RfSlMSClCWcXdp2u9xCCXVAHRUUqxD/isb94S
+ 3ivwctJp1mJY5KiwBTxkNUc+8nauKCHnmHaVY74lpJlX2PVhJJpNWsKs6cHOLFdw9WaB
+ q6Gg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=BhdVXLoJWMfzNzrRx3QHIA0XVbPekInrRo+E7wUe0oU=;
- b=lExV/wDoupBQxwPfr7xSVlBIua8Pvgk1KklJU8qdJbrk0u4TPG/vjuGkBhfHdgWGMa
- WOiVXxzUcBnQKUHLuFy83u/4+mk/KWGQXD8uc/dRKMxLe9ORiOU9Rsl8xUktmHgmwwyr
- 93+cu9cERPeNYU9WwexJQNcr9LrGRsR1d0atUdLU67G40Y/ZOA3HNmb6LcVLtHc8mrn2
- B1snua6OSIbbxTC/NMEoWbB4zVWpuBTS2J0fps3Bbqnatan3mIS5lsbevKtrCyhRz3dp
- HWczh9W3m0j1rei/VxJjQMPeYaQS5bEeUYl5+vGIeUNrp4wxWKKcWqYAF2I9Lo8ElOdp
- 4SiA==
-X-Gm-Message-State: APjAAAV1tQKrNjtwCgu2/oUgFbLJ6gao3GSBgGGA8o/0Ep3/jnoo9tpV
- xDg5YoMGi2aBb6zt4W9nktdX3A==
-X-Google-Smtp-Source: APXvYqzYMXapYUQF89ctTMRbtZyqwyxvLzNnVa0MvQ1kSHJS3ghKK3A7SCPv/b2sh7mVxo50gpjH6A==
-X-Received: by 2002:a2e:63d1:: with SMTP id s78mr23873278lje.166.1557989043709; 
- Wed, 15 May 2019 23:44:03 -0700 (PDT)
-Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id b23sm782451lfg.41.2019.05.15.23.44.02
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 15 May 2019 23:44:02 -0700 (PDT)
-Date: Wed, 15 May 2019 23:27:27 -0700
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=SqLUabMMzxCxSOebL0RIYlE+FsNekjMKv483Qc3eXKM=;
+ b=l0AeDFtauLevwgjO+01fvzFqb9iFZCR6o6bXnZ7a5VrO28YFgNyywTPmuwt4oxC99M
+ 5AZJRXuTQpEoVY77sz0jqFs1UAIWbaoowC9KDNoTlbjniwThYaH2Ztbcn9MrXjjGoL6k
+ JplqP1HIQvyESESJzWPAXkYFNGBpevq3Fqy0dPVKTidq1cinpL+/PyRNlIyX6UkkEe/Q
+ CWgXWH2vSw277joosGZKriru73S49QhG+dJ/0vEyacgwnwOUMRAIMpWhIB2xc+jS3pHw
+ gCp3KN/lgpQBvwmvSST7PRh/0Dg5XbiuC71twUgJ5aG94uswk7iFOkrpHpjABo3C+oJD
+ MOwA==
+X-Gm-Message-State: APjAAAV/pzQZHGo1RZCxXviEyIxI709mHtR0Iu8rioo7QRLbyqGS1dBw
+ lb8pL4BQmVdY+IV6L09FpSQFJ0thbWQ=
+X-Google-Smtp-Source: APXvYqw0OJ+MvOqREfJMhEjQhim2lbFJ/Zb5HXYS1GVYKGGhMwv45V3f+lNiCcI9UVQISNRsYlPgcQ==
+X-Received: by 2002:a62:c4:: with SMTP id 187mr40911403pfa.55.1557989006488;
+ Wed, 15 May 2019 23:43:26 -0700 (PDT)
+Received: from localhost.localdomain
+ (99-152-116-91.lightspeed.sntcca.sbcglobal.net. [99.152.116.91])
+ by smtp.gmail.com with ESMTPSA id w194sm11196050pfd.56.2019.05.15.23.43.24
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 15 May 2019 23:43:25 -0700 (PDT)
 From: Olof Johansson <olof@lixom.net>
-To: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Subject: Re: [PATCH] Opt out of scripts/get_maintainer.pl
-Message-ID: <20190516062727.ur5bgzt2bukcste2@localhost>
-References: <d1427cd2-9111-025c-1a97-d0fa498f1a03@free.fr>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <d1427cd2-9111-025c-1a97-d0fa498f1a03@free.fr>
-User-Agent: NeoMutt/20170113 (1.7.2)
+To: torvalds@linux-foundation.org
+Subject: [GIT PULL 0/4] ARM: SoC contents for 5.2 merge window
+Date: Wed, 15 May 2019 23:43:00 -0700
+Message-Id: <20190516064304.24057-1-olof@lixom.net>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_234405_781422_0F7D4ADD 
-X-CRM114-Status: GOOD (  12.01  )
+X-CRM114-CacheID: sfid-20190515_234327_441526_81C07618 
+X-CRM114-Status: UNSURE (   8.72  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:42c listed in]
  [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -92,31 +88,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- LKML <linux-kernel@vger.kernel.org>, arm-soc <arm@kernel.org>,
- Joe Perches <joe@perches.com>, Andrew Morton <akpm@linux-foundation.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: arm@kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 15, 2019 at 02:47:57PM +0200, Marc Gonzalez wrote:
-> A few months ago, I submitted a trivial arm64 defconfig update.
-> get_maintainer.pl now outputs my address for every defconfig tweak.
-> Add me to .get_maintainer.ignore to opt out of these notifications.
-> 
-> Signed-off-by: Marc Gonzalez <marc.w.gonzalez@free.fr>
-> ---
->  .get_maintainer.ignore | 1 +
->  1 file changed, 1 insertion(+)
+Hi Linus,
 
-Applied to arm/late.
+The usual batch of patches for ARM SoCs. Like always, DT is the dominant
+portion, but there's an unusual amount of driver updates this release.
 
+Main reason for that is that ixp4xx is seeing a bunch of modernization
+work by Linus Walleij, and some of that has included bringing some things
+out to proper driver. Acks have been collected, but are merged through
+our trees to keep things together.
 
-Thanks,
+Besides that it's a quiet-to-average merge window for us.
 
--Olof
+Some statistics:
+
+82 downstream branches
+791 patches
+175 contributors
+
+4 upstream-bound branches (platform, DT, drivers, defconfig)
+
+New SoCs:
+ - Intel Agilex (SoCFPGA)
+ - NXP i.MX8MM (variant of i.MX8M)
+
+New boards:
+ - Numerous, see DT pull request for full list
+ - Most visible one is probably Nvidia's Jetson Nano
+
+Contributors with 10 or more patches this cycle:
+  54 Maxime Ripard
+  43 Tony Lindgren
+  38 Christina Quast
+  34 Linus Walleij
+  29 Neil Armstrong
+  27 Andrey Smirnov
+  20 Krzysztof Kozlowski
+  18 Thierry Reding
+  17 Amit Kucheria
+  17 Anson Huang
+  13 Dmitry Osipenko
+  12 Douglas Anderson
+  11 Biju Das
+  11 Manivannan Sadhasivam
+  11 Ondrej Jirman
+  10 Fabrizio Castro
 
 _______________________________________________
 linux-arm-kernel mailing list
