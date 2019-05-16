@@ -2,70 +2,146 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 348B22024B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 11:11:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6517020247
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 11:10:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zoMzPLobu27ivd/R34ZMujGWUMPnBjAzJ1zGn55TUMw=; b=PSRFVKh/MNFhJV
-	BrIimUEpuZTkXebi7/ri+jp+gM81U6YB/hScE0kK5aUAxvhhXZ3tN4/cbpTeXFdO7LVmoX7XtLPLS
-	TZIOzbZPeN8MfAMc6D9FhyRkT5CdcLud/vF3NSZ1WumdU59lWFj9ZqtPORGXmg0KgU9rG5zsnAl6O
-	tluXmMIkeHiSp8xsKDRtESRUWFOdBT6xV39hEX6iaqHnSa5bnlzzE8RdsxJWcRtiCims9VjOeoaVs
-	0bfWzwnICVc+MfHsu61dvwXhfyY1apmA6VFmeExvxy4UKazWB64y6AYpGB5r2WKntGbiL7QL0Y4ID
-	9bu9e6gOcEUS6VrYUkWQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=j/Zwwr2roh1cdk5TVKaS36SLSVPw7xJGZHph89phw5E=; b=S9jA022iG9DLLP
+	nANZmj8pkG/cSjw98Ecy7mIO+vmw8H95Er4T5ezzuIaU2FkvOOlhtsKEOQIrcxyJihDXuuKncZIVF
+	qh5ka2WWmJTtuZtz0EIFYT7j5zxnf6lJ0A1bTEqsZKmqrEi1u/QmxaJxam24PUMOYdJtj3b9G5bE5
+	ADKcMzc7zAaHbnyPY03+co67UX5s+M8HAUBPhmXfvhPwagXQm/h9VUJMVewIHaXIffPp2qto5fcSF
+	gV803KPDsTs8CGIoEcgGfuWS9p6bjhfbLliUHyq8ZCnYQeA9X9nLwxkVlg++icLQZa7lD6INxMZUS
+	73b6JegNt4aiTpQjlkIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRCQ3-0004Jt-54; Thu, 16 May 2019 09:11:19 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hRCPX-0003s2-S0; Thu, 16 May 2019 09:10:47 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRCPX-0003x1-Dn; Thu, 16 May 2019 09:10:54 +0000
-X-UUID: 370caefb420b4d14846412d929716594-20190516
-X-UUID: 370caefb420b4d14846412d929716594-20190516
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <andrew-sh.cheng@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 582888598; Thu, 16 May 2019 01:08:58 -0800
-Received: from mtkmbs03n2.mediatek.inc (172.21.101.182) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 16 May 2019 02:08:57 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs03n2.mediatek.inc (172.21.101.182) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 16 May 2019 17:08:54 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Thu, 16 May 2019 17:08:54 +0800
-From: Andrew-sh.Cheng <andrew-sh.cheng@mediatek.com>
-To: MyungJoo Ham <myungjoo.ham@samsung.com>, Kyungmin Park
- <kyungmin.park@samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>, "Rob
- Herring" <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>, "Matthias
- Brugger" <matthias.bgg@gmail.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Viresh Kumar <viresh.kumar@linaro.org>, Nishanth Menon <nm@ti.com>, "Stephen
- Boyd" <sboyd@kernel.org>
-Subject: [PATCH 8/8] devfreq: mediatek: cci devfreq register opp notification
- for SVS support
-Date: Thu, 16 May 2019 17:08:45 +0800
-Message-ID: <1557997725-12178-9-git-send-email-andrew-sh.cheng@mediatek.com>
-X-Mailer: git-send-email 1.8.1.1.dirty
-In-Reply-To: <1557997725-12178-1-git-send-email-andrew-sh.cheng@mediatek.com>
-References: <1557997725-12178-1-git-send-email-andrew-sh.cheng@mediatek.com>
+ id 1hRCOl-0001xp-05
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 09:10:26 +0000
+Received: by mail-wr1-x441.google.com with SMTP id b18so2433022wrq.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 May 2019 02:09:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:openpgp:autocrypt:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=p6kdFIcAXlwCJee+4dm4i376dtq0zqZbqWN1rlHnda0=;
+ b=ljSbd2C8ZQkeKBrPgLgB9WgLt7qN0EAcURtwu7kBsGcXA+JUOJbIjtLY9IZcGKt1iA
+ XFh78n5k0UR/Oehw6ktimwGaI3S3gGABJYtNLr6zDj4KD8Up92kvCcz2kd4QMsKc5keI
+ S4KA+OKXxSoZ/xaSNG9getVUtSacYk3meAdsrCTm3edpu1uazCT6us0a5ApPmPovn+71
+ 1LUs2pifAAdeHOU8Px2dDrI/GGNg7l+ZOCImglqZ+BjGR4FjK33M82H8nEFZHfqoU2JQ
+ hvQwdWgXq6OBGOaqYb1QKVNW9l8WNtCGcYX7sahOWVbWLv8uvmlEA8XzhKn1fady6yg8
+ hlSA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :organization:message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=p6kdFIcAXlwCJee+4dm4i376dtq0zqZbqWN1rlHnda0=;
+ b=gKbSGtfNwzO9Vf8mEDd5TPJRwtEim/V6gCRJ2DItMUNfWhaj1f+hO004S1zyMwtLq5
+ w9nIgxOCxhoZunXy4qFDXq1boSRgy5rC+HlpqBOHbzbxsDYMYSuY8v4+RdTeTUmcpiVB
+ Pl1B9BlEILkUBV3ApzA6Qpv3hX3rLkHoDlIZy9yVKM59poPrz65B8n/wM/IREzPb2BC/
+ c/B6UO5QmzjT7W8PrUncuKeuJO0QeeNDIr2+9Lletx8zFTOCdRPOWFQhnxlnLVZ/XUJi
+ eSr6vEgNF9rvI6o5CcQf2zD4D6yEVSVMfKvWR5T7jWaor0mMLTf9nDQkcriRATV18Q7H
+ 5aNA==
+X-Gm-Message-State: APjAAAXv0uippcgZ52mNaXPcAD49GqYTY2B1fnsOS7HyUpFrVljb0jDV
+ CiTMX/JGpTWz69C/UylaZNm0ySuihhhDtw==
+X-Google-Smtp-Source: APXvYqwqeRDg99An8xL0Uv2hAVMilwlW0MwE2mOPifQCB8/qDGI5gMhvHKbB1Cx8BFdyawk1EX/iJQ==
+X-Received: by 2002:a5d:4f0e:: with SMTP id c14mr13387498wru.91.1557997796550; 
+ Thu, 16 May 2019 02:09:56 -0700 (PDT)
+Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
+ [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id j17sm3266617wrs.77.2019.05.16.02.09.55
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 16 May 2019 02:09:55 -0700 (PDT)
+Subject: Re: [PATCH 2/3] mmc: meson-gx: add ddr-access-quirk
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+References: <20190513091548.16674-1-narmstrong@baylibre.com>
+ <20190513091548.16674-3-narmstrong@baylibre.com>
+ <CAFBinCAMoNDnxoQA9XHKy0Xo9MduxD1CvQXOeLZQ3zZ4ViWm7A@mail.gmail.com>
+ <a54f7a4a-c280-6181-969f-4979dadb36b2@baylibre.com>
+ <CAFBinCCtNQmKKL8yw07DKOfPK=eusgCuYeBmwgiHm0SSVmuFPQ@mail.gmail.com>
+From: Neil Armstrong <narmstrong@baylibre.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ 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
+ ZaTUOEkgIor5losDrePdPgE=
+Organization: Baylibre
+Message-ID: <65c704a4-c4b7-ebdd-a869-353b1536410f@baylibre.com>
+Date: Thu, 16 May 2019 11:09:55 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 62CC2EE68B25C65BA0EF7B7202A11B5471CAE6A481855F75FFF3832C060DAEC82000:8
-X-MTK: N
+In-Reply-To: <CAFBinCCtNQmKKL8yw07DKOfPK=eusgCuYeBmwgiHm0SSVmuFPQ@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_021048_097263_D49DABC9 
-X-CRM114-Status: GOOD (  13.19  )
+X-CRM114-CacheID: sfid-20190516_020959_385778_4885FD5E 
+X-CRM114-Status: GOOD (  22.93  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -77,158 +153,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- "Andrew-sh.Cheng" <andrew-sh.cheng@mediatek.com>, srv_heupstream@mediatek.com,
- linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org, fan.chen@mediatek.com,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: ulf.hansson@linaro.org, baylibre-upstreaming@groups.io,
+ khilman@baylibre.com, linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: "Andrew-sh.Cheng" <andrew-sh.cheng@mediatek.com>
+On 15/05/2019 23:18, Martin Blumenstingl wrote:
+> Hi Neil,
+> 
+> On Wed, May 15, 2019 at 2:45 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+>>
+>> On 14/05/2019 19:58, Martin Blumenstingl wrote:
+>>> Hi Neil,
+>>>
+>>> On Mon, May 13, 2019 at 11:16 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
+>>> [...]
+>>>> @@ -1158,15 +1183,27 @@ static int meson_mmc_probe(struct platform_device *pdev)
+>>>>          */
+>>>>         mmc->caps2 &= ~MMC_CAP2_HS400;
+>>>>
+>>>> -       /* data bounce buffer */
+>>>> -       host->bounce_buf_size = mmc->max_req_size;
+>>>> -       host->bounce_buf =
+>>>> -               dma_alloc_coherent(host->dev, host->bounce_buf_size,
+>>>> -                                  &host->bounce_dma_addr, GFP_KERNEL);
+>>>> -       if (host->bounce_buf == NULL) {
+>>>> -               dev_err(host->dev, "Unable to map allocate DMA bounce buffer.\n");
+>>>> -               ret = -ENOMEM;
+>>>> -               goto err_free_irq;
+>>>> +       if (host->ddr_access_quirk) {
+>>>> +               /*
+>>>> +                * The MMC Controller embeds 1,5KiB of internal SRAM
+>>>> +                * that can be used to be used as bounce buffer.
+>>>> +                * In the case of the G12A SDIO controller, use these
+>>>> +                * instead of the DDR memory
+>>>> +                */
+>>>> +               host->bounce_buf_size = SD_EMMC_SRAM_DATA_BUF_LEN;
+>>>> +               host->bounce_buf = host->regs + SD_EMMC_SRAM_DATA_BUF_OFF;
+>>>> +               host->bounce_dma_addr = res->start + SD_EMMC_SRAM_DATA_BUF_OFF;
+>>> I'm curious: why do you need to set bounce_dma_addr in this case?
+>>
+>> We still need the physical bounce buffer address since we write in the registers,
+> so writing bounce_dma_addr to SD_EMMC_CMD_DAT is needed to make it work?
+> 
+>> and we need the logical address to memcpy() in the buffer.
+> as far as I understand that is what we use the "bounce_buf" member
+> for, but I don't see why we need "bounce_dma_addr"
 
-SVS will change the voltage of opp item.
-CCI devfreq need to react to change frequency.
+Sorry I don't understand these questions, I haven't changed the
+bounce buffer behavior here, I only make it use a local SRAM buffer
+instead of an dma_alloc_coherent() allocated buffer.
 
-Signed-off-by: Andrew-sh.Cheng <andrew-sh.cheng@mediatek.com>
----
- drivers/devfreq/mt8183-cci-devfreq.c | 63 ++++++++++++++++++++++++++++++++++++
- 1 file changed, 63 insertions(+)
+Having bounce_buf_size/bounce_buf/bounce_dma_addr is still necessary like
+an allocated buffer.
 
-diff --git a/drivers/devfreq/mt8183-cci-devfreq.c b/drivers/devfreq/mt8183-cci-devfreq.c
-index 818a167c442f..250c963789f3 100644
---- a/drivers/devfreq/mt8183-cci-devfreq.c
-+++ b/drivers/devfreq/mt8183-cci-devfreq.c
-@@ -19,7 +19,10 @@ struct cci_devfreq {
- 	struct regulator *proc_reg;
- 	unsigned long proc_reg_uV;
- 	struct clk *cci_clk;
-+	unsigned long freq;
- 	struct notifier_block nb;
-+	struct notifier_block opp_nb;
-+	int cci_min_freq;
- };
- 
- static int cci_devfreq_regulator_notifier(struct notifier_block *nb,
-@@ -65,17 +68,62 @@ static int cci_devfreq_regulator_notifier(struct notifier_block *nb,
- 	return 0;
- }
- 
-+static int ccidevfreq_opp_notifier(struct notifier_block *nb,
-+unsigned long event, void *data)
-+{
-+	int ret;
-+	struct dev_pm_opp *opp = data;
-+	struct cci_devfreq *cci_df = container_of(nb, struct cci_devfreq,
-+						  opp_nb);
-+	unsigned long	freq, volt, cur_volt;
-+
-+	if (event == OPP_EVENT_ADJUST_VOLTAGE) {
-+		freq = dev_pm_opp_get_freq(opp);
-+		/* current opp item is changed */
-+		if (freq == cci_df->freq) {
-+			volt = dev_pm_opp_get_voltage(opp);
-+			cur_volt = regulator_get_voltage(cci_df->proc_reg);
-+
-+			if (volt > cur_volt) {
-+				/* need reduce freq */
-+				mutex_lock(&cci_df->devfreq->lock);
-+				ret = update_devfreq(cci_df->devfreq);
-+				if (ret)
-+					pr_err("Fail to reduce cci frequency by opp notification: %d\n",
-+					       ret);
-+				mutex_unlock(&cci_df->devfreq->lock);
-+			}
-+		}
-+
-+		if (freq == cci_df->cci_min_freq) {
-+			volt = dev_pm_opp_get_voltage(opp);
-+			regulator_set_voltage(cci_df->proc_reg, volt, INT_MAX);
-+		}
-+	} else if (event == OPP_EVENT_DISABLE) {
-+	}
-+
-+	return 0;
-+}
-+
-+
- static int mtk_cci_governor_get_target(struct devfreq *devfreq,
- 				       unsigned long *freq)
- {
- 	struct cci_devfreq *cci_df;
- 	struct dev_pm_opp *opp;
-+	int ret;
- 
- 	cci_df = dev_get_drvdata(devfreq->dev.parent);
- 
- 	/* find available frequency */
- 	opp = dev_pm_opp_find_freq_ceil_by_volt(devfreq->dev.parent,
- 						cci_df->proc_reg_uV);
-+	ret = PTR_ERR_OR_ZERO(opp);
-+	if (ret) {
-+		pr_err("%s[%d], cannot find opp with voltage=%d: %d\n",
-+		       __func__, __LINE__, cci_df->proc_reg_uV, ret);
-+		return ret;
-+	}
- 	*freq = dev_pm_opp_get_freq(opp);
- 
- 	return 0;
-@@ -87,9 +135,11 @@ static int mtk_cci_governor_event_handler(struct devfreq *devfreq,
- 	int ret;
- 	struct cci_devfreq *cci_df;
- 	struct notifier_block *nb;
-+	struct notifier_block *opp_nb;
- 
- 	cci_df = dev_get_drvdata(devfreq->dev.parent);
- 	nb = &cci_df->nb;
-+	opp_nb = &cci_df->opp_nb;
- 
- 	switch (event) {
- 	case DEVFREQ_GOV_START:
-@@ -100,6 +150,8 @@ static int mtk_cci_governor_event_handler(struct devfreq *devfreq,
- 		if (ret)
- 			pr_err("%s: failed to add governor: %d\n", __func__,
- 			       ret);
-+		opp_nb->notifier_call = ccidevfreq_opp_notifier;
-+		dev_pm_opp_register_notifier(devfreq->dev.parent, opp_nb);
- 		break;
- 
- 	case DEVFREQ_GOV_STOP:
-@@ -141,6 +193,8 @@ static int mtk_cci_devfreq_target(struct device *dev, unsigned long *freq,
- 		return ret;
- 	}
- 
-+	cci_df->freq = *freq;
-+
- 	return 0;
- }
- 
-@@ -152,6 +206,8 @@ static int mtk_cci_devfreq_probe(struct platform_device *pdev)
- {
- 	struct device *cci_dev = &pdev->dev;
- 	struct cci_devfreq *cci_df;
-+	unsigned long freq, volt;
-+	struct dev_pm_opp *opp;
- 	int ret;
- 
- 	cci_df = devm_kzalloc(cci_dev, sizeof(*cci_df), GFP_KERNEL);
-@@ -181,6 +237,13 @@ static int mtk_cci_devfreq_probe(struct platform_device *pdev)
- 		return ret;
- 	}
- 
-+	/* set voltage lower bound */
-+	freq = 1;
-+	opp = dev_pm_opp_find_freq_ceil(cci_dev, &freq);
-+	cci_df->cci_min_freq = dev_pm_opp_get_freq(opp);
-+	volt = dev_pm_opp_get_voltage(opp);
-+	dev_pm_opp_put(opp);
-+
- 	platform_set_drvdata(pdev, cci_df);
- 
- 	cci_df->devfreq = devm_devfreq_add_device(cci_dev,
--- 
-2.12.5
+> 
+>>>
+>>>> +       } else {
+>>>> +               /* data bounce buffer */
+>>>> +               host->bounce_buf_size = mmc->max_req_size;
+>>>> +               host->bounce_buf =
+>>>> +                       dma_alloc_coherent(host->dev, host->bounce_buf_size,
+>>>> +                                          &host->bounce_dma_addr, GFP_KERNEL);
+>>>> +               if (host->bounce_buf == NULL) {
+>>>> +                       dev_err(host->dev, "Unable to map allocate DMA bounce buffer.\n");
+>>>> +                       ret = -ENOMEM;
+>>>> +                       goto err_free_irq;
+>>>> +               }
+>>>>         }
+>>>>
+>>>>         host->descs = dma_alloc_coherent(host->dev, SD_EMMC_DESC_BUF_LEN,
+>>> if host->descs cannot be allocated then you need to conditionally skip
+>>> dma_free_coherent for the bounce buffer in the goto err_bounce_buf
+>>> case a few lines below (just like you did in meson_mmc_remove)
+>>
+>> It can be allocated, it's only useless. I can skip it but I don't want
+>> to break any logic in the driver.
+> I wasn't clear in my last email, I meant this error case:
+>   err_bounce_buf:
+>     dma_free_coherent(host->dev, host->bounce_buf_size, ...
+> when host->ddr_access_quirk is true then you skip the
+> dma_alloc_coherent call for bounce_buf
+
+Oh, ok, yes, I'll add it.
+
+Neil
+
+> 
+> 
+> Martin
+> 
 
 
 _______________________________________________
