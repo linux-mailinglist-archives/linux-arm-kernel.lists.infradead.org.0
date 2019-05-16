@@ -2,76 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B175520371
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 12:28:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73B2E20375
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 12:29:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=6uKkUNUsqam9w05gA8n41TjUoguLGdjFkeQQK+9BC4k=; b=cembi6hEfg9WYo
-	Nol+wAWbdAIW9sBc+hejuKXzxzVlpFqyLxlgyEU6Csz0Tr4+SGwny5kBrtMBU9wcxGZX/pzAVe0FV
-	P0zRZRDJFQWLz+rV3Sgn0v3kpjKF3tWCduh/d8zmNYtQZfX4islEcpF7/F/Swdpq0k3eNWLKWbgoy
-	arcBxLoOhzyh74ubbktjs61lHluf3hkhBunTgVeCHiA1M12sYHzG6vr92XUd5PWYP8aEENfGHNnMo
-	QywAGOVjaqQvXlWoDEQVH+91/OctItfCc8w+Qe4nFExUD3i+ZgGn3jvRpe3bdM51CT0C+A5W54YaV
-	XXZ8e5+krmPiBnC5iVew==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MnsZrCavNE6+LsqpvzW6lSEYdTxpjmQvdFBk61Ey+5Q=; b=kbY6p3xxo8PZ1c
+	XQFxYV1ay97VCScTdO9fKy1hzHOvZ2xTRHqNxILLEihIIXrmp3nueYzm9a/yqoiExHRTQmwxVBgUs
+	wXfizVN/op1Fgh8S4ws8ZJecLdslJGa7FO9FWy93pedLNzawyt7F6MCkuG4uZp5ea4oYYW3LHBJYi
+	q32lG7VG49CMd9ovKJQMw4ZfiiWaYwPx10YNd0ltXY8pRiEixNMz41hzzSWqt9I+SUzO2jKMB642h
+	39SinS1Ss1I+XWjFLL1qKolivJKBEbCvzmd9fuMq+Eblf5sj0snASv9sKSYOHfEpB/dJOYIYLBVUa
+	JaweCZSr9AfX1UZyg59A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRDcz-0001gm-JK; Thu, 16 May 2019 10:28:45 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hRDdG-0001wb-7G; Thu, 16 May 2019 10:29:02 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRDcr-0001fy-76
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 10:28:38 +0000
-Received: by mail-pf1-x444.google.com with SMTP id u17so1621959pfn.7
+ id 1hRDd6-0001uw-M0
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 10:28:54 +0000
+Received: by mail-pl1-x644.google.com with SMTP id c5so1400631pll.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 May 2019 03:28:36 -0700 (PDT)
+ Thu, 16 May 2019 03:28:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=zdJ9wOciRCFBg5OhP24ccEPW98TzZ5e0I9CMtzhtP7k=;
- b=j6TjZjdTvdf6CjCSc4yUwh0w3lHoZrsZkToyITUvilzaKO5fJ0vqwlISOAS2BDbhb6
- 2VbC5h3lCINUHea8eLr5qB7bqHliBCV26+cZHkuc6/kN9BvyoxdDK0mVitXKri3MUivK
- IbYPCZMbdWKCRDRF9dlx5fQMu94ziC7y43FQI=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=g6nTVnaTPu6u0ik4+YTeRCBKr6f5B4jeaBgRZ5SbxTw=;
+ b=ZQ/kc6aBkZflGhXSDxDpSNRqmjhb6N9q0F7lksh1UBLl2/I6uLpMJ2EFTj5RVV6ZxA
+ IcqVwlZFK1fgG3i5YsdnWHnSvAe8T4bmzMowpcI9tL+lc9gEd+w3HwFB2PVGkTmHiNqw
+ kznERwYCaREsUwnxdTq4nxj3gvx3GkByAOgng=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=zdJ9wOciRCFBg5OhP24ccEPW98TzZ5e0I9CMtzhtP7k=;
- b=HNzH/YzdwsqUZhEtXl9yrye8DPxFKWE7fngxy16VKhSz+E0mPu7bazRRhvU/aNSuGT
- LflrrlITdf9xJydrTn0fC+uMBRl2zYLxHb5wr4REeLnrWT8x08iQGyFaLAR9j8SfJ/Pz
- IDZX1K6KSlMYx2BPFLa38RRVkurr7/OjrNLnoQ29M+RoXqd3Z+ovlQzR68mi2p875QiG
- ttoj/u8YmJJcwvVXDTzkGk/A7+Yu2x60FBdOOyterUzYFSZlmW/3CKGrCLWx1XWyC0Ui
- 6BPrr8GIXj6TAoGZhtHEisStcsr3nCqKJo6+1U63FfnzaQKW7HuOplZor8ETW4tFqn+a
- IlUg==
-X-Gm-Message-State: APjAAAUjJjjc5rvjwJuNGN+OvIF5VcLyYsLXbhNRavVGzo/toMNi0GYX
- eG2kPx4DsKqgwyVmmjWCBwLGVgY0H4U=
-X-Google-Smtp-Source: APXvYqzPTskZH8eYovOCQmHUvgMMgQkqepD4OYCnKFG7nHyDLIhQaMeOn+J/Ld+Xt/Ggq8IM/7Zmkg==
-X-Received: by 2002:a62:e00e:: with SMTP id f14mr52831963pfh.257.1558002515484; 
- Thu, 16 May 2019 03:28:35 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=g6nTVnaTPu6u0ik4+YTeRCBKr6f5B4jeaBgRZ5SbxTw=;
+ b=qLFfsCQ48bxtItLTJglgEaxioTo+hcuwcwQryHHnkj0QaZVBk/sPXudSd9XW5vyPR0
+ qfTH+phtqIo1d6U244QBgPpsCkECWlrW9VBg7VvzI5017pkSn2mBaGZuzZDWpe8IbPd/
+ yWDm3zNG26jPo1P/2nrf/PGha/+q75gE4153y5oniMYQ9TwxUWF6kDUpgz3LrCnP7vO1
+ cy5iz3oxgIGDjGVnQHuyqs3HgBTq6Gt6cg3gMv5BmwijRBUXPWkVrvq79l7MisAlqEVB
+ cf7x6Is/8OY2umueAnR0BlwvOCiqj4OjagLspyqx0ss29AONRTaHe9P27UMGxiFhWEQ+
+ FT1A==
+X-Gm-Message-State: APjAAAVjh6m45lEnWoQsJluJ0U3tpSNYOMUkN432pQ27UA21UTy6Q88q
+ LpYmDq8LDb/BAN97xs8WDeptdimWQjY=
+X-Google-Smtp-Source: APXvYqz6D4VCan2gvNE8/0EMna/+ZpJBgnCigTNFcMqpDIsMc91bUoTxMOxk4U2jcWrjaJnlZy8LoA==
+X-Received: by 2002:a17:902:9a81:: with SMTP id
+ w1mr47668258plp.71.1558002531758; 
+ Thu, 16 May 2019 03:28:51 -0700 (PDT)
 Received: from hsinyi-z840.tpe.corp.google.com
  ([2401:fa00:1:10:b852:bd51:9305:4261])
- by smtp.gmail.com with ESMTPSA id h123sm9338048pfe.80.2019.05.16.03.28.31
+ by smtp.gmail.com with ESMTPSA id h123sm9338048pfe.80.2019.05.16.03.28.48
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Thu, 16 May 2019 03:28:34 -0700 (PDT)
+ Thu, 16 May 2019 03:28:51 -0700 (PDT)
 From: Hsin-Yi Wang <hsinyi@chromium.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 1/3] include/of_fdt.h: add a weak arch hook to update fdt
- pgprot
-Date: Thu, 16 May 2019 18:28:15 +0800
-Message-Id: <20190516102817.188519-1-hsinyi@chromium.org>
+Subject: [PATCH v3 2/3] arm64: implement update_fdt_pgprot()
+Date: Thu, 16 May 2019 18:28:16 +0800
+Message-Id: <20190516102817.188519-2-hsinyi@chromium.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190516102817.188519-1-hsinyi@chromium.org>
+References: <20190516102817.188519-1-hsinyi@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_032837_281703_E9048A90 
-X-CRM114-Status: GOOD (  12.22  )
+X-CRM114-CacheID: sfid-20190516_032852_717287_06C7342C 
+X-CRM114-Status: GOOD (  14.27  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -110,52 +112,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Does nothing as default, arch can implement their function to map
-fdt to RO/RW. This is convenient if arch map fdt to RO during init
-but needs to write fdt in some special cases after that.
+Basically does similar things like __fixmap_remap_fdt(). It's supposed
+to be called after fixmap_remap_fdt() is called at least once, so region
+checking can be skipped. Since it needs to know dt physical address, make
+a copy of the value of __fdt_pointer.
 
 Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
 ---
- drivers/of/fdt.c       | 13 +++++++++++++
- include/linux/of_fdt.h |  2 ++
- 2 files changed, 15 insertions(+)
+ arch/arm64/kernel/setup.c |  2 ++
+ arch/arm64/mm/mmu.c       | 17 +++++++++++++++++
+ 2 files changed, 19 insertions(+)
 
-diff --git a/drivers/of/fdt.c b/drivers/of/fdt.c
-index de893c9616a1..e84971d1e9ea 100644
---- a/drivers/of/fdt.c
-+++ b/drivers/of/fdt.c
-@@ -30,6 +30,19 @@
+diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
+index 413d566405d1..207cbb5f7965 100644
+--- a/arch/arm64/kernel/setup.c
++++ b/arch/arm64/kernel/setup.c
+@@ -66,6 +66,7 @@ static int num_standard_resources;
+ static struct resource *standard_resources;
  
- #include "of_private.h"
+ phys_addr_t __fdt_pointer __initdata;
++phys_addr_t fdt_pointer;
  
-+/*
-+ * update_fdt_pgprot - Arch hook for changing fdt pgprot
-+ *
-+ * @prot: page protection flags for fdt
-+ *
-+ * Architecture can implement this function if they want to chagne
-+ * fdt page protection flags before or after doing modification and
-+ * fixups to fdt.
-+ *
-+ * Default does nothing.
-+ */
-+__weak void update_fdt_pgprot(pgprot_t prot) {}
-+
  /*
-  * of_fdt_limit_memory - limit the number of regions in the /memory node
-  * @limit: maximum entries
-diff --git a/include/linux/of_fdt.h b/include/linux/of_fdt.h
-index a713e5d156d8..406c3e7b2b75 100644
---- a/include/linux/of_fdt.h
-+++ b/include/linux/of_fdt.h
-@@ -109,5 +109,7 @@ static inline void unflatten_device_tree(void) {}
- static inline void unflatten_and_copy_device_tree(void) {}
- #endif /* CONFIG_OF_EARLY_FLATTREE */
+  * Standard memory resources
+@@ -292,6 +293,7 @@ void __init setup_arch(char **cmdline_p)
+ 	early_fixmap_init();
+ 	early_ioremap_init();
  
-+extern void update_fdt_pgprot(pgprot_t prot);
++	fdt_pointer = __fdt_pointer;
+ 	setup_machine_fdt(__fdt_pointer);
+ 
+ 	parse_early_param();
+diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+index a170c6369a68..196ab4d9e92a 100644
+--- a/arch/arm64/mm/mmu.c
++++ b/arch/arm64/mm/mmu.c
+@@ -32,6 +32,7 @@
+ #include <linux/io.h>
+ #include <linux/mm.h>
+ #include <linux/vmalloc.h>
++#include <linux/of_fdt.h>
+ 
+ #include <asm/barrier.h>
+ #include <asm/cputype.h>
+@@ -953,6 +954,22 @@ void *__init fixmap_remap_fdt(phys_addr_t dt_phys)
+ 	return dt_virt;
+ }
+ 
++extern phys_addr_t fdt_pointer;
 +
- #endif /* __ASSEMBLY__ */
- #endif /* _LINUX_OF_FDT_H */
++/* Should be called after fixmap_remap_fdt() is called. */
++void update_fdt_pgprot(pgprot_t prot)
++{
++	u64 dt_virt_base = __fix_to_virt(FIX_FDT);
++	int offset, size;
++
++	offset = fdt_pointer % SWAPPER_BLOCK_SIZE;
++	size = fdt_totalsize((void *)dt_virt_base + offset);
++
++	update_mapping_prot(round_down(fdt_pointer, SWAPPER_BLOCK_SIZE),
++			dt_virt_base,
++			round_up(offset + size, SWAPPER_BLOCK_SIZE), prot);
++}
++
+ int __init arch_ioremap_pud_supported(void)
+ {
+ 	/* only 4k granule supports level 1 block mappings */
 -- 
 2.20.1
 
