@@ -2,29 +2,29 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0523120B97
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 17:52:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD7E520B99
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 17:52:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	References:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	In-Reply-To:List-Owner; bh=ys4pbqg+BATo14dPJnNq3OiSFDa4IfPsRhFSHZUHCaw=; b=Ft
-	dxejasZaK5LHnUf0pwbsKJ0gGZ8tsa5YPthJSG6lplvqVyvlK35egK+U4DDqPhpYrkXzzMYFiSj3K
-	r9GesLZ12yKtpNaGi05WrkhQ5zk/KD6Wxe9SH34cwrRcdiEKSUdtWEbgWoZygPYzJgfIA4qp8/Qp9
-	QK8L9L0whTN0i8oeWZR7zZzTlSbekS4Sjs0RKbs8J/0OL425gY84zsnGdKaqt9wSh9sgkp9Oby9vi
-	ZaQilwv4mhkadh3XeDE9A2nL3w9dlPzP0wqD7tNuwJQAKcQdk2rddq0TEtk+3RqFAWBS9R0ar2rTg
-	0yD7Ux2Ye70tJ1Q5dWSYE7l8qHPEBt4w==;
+	In-Reply-To:List-Owner; bh=MRXRmRXgfRgkt6boXJ9PoXudha3wNBCZDCgKYL1BAs8=; b=m+
+	3XWdqjcVh/LilW3MC/crA8H4GvCoo6CEAN+JsNDQb4Quzg6KCFeLiaxXLH43YyxPGjMVzim5H/Pfw
+	wGAW7WF2dWcsEHjiAUm5v8vBQvFps4JJlN0WO5UwNqzThBPlQ6eYQPYU5z/gNIWGlyJKMOVXs0sZi
+	181hywnaToHsFrzGIHBM4qLgL7GKgEF138iJo2XSk29ck89YsbiczqS5KWZ/LA+fzFaQyn5Wkau8p
+	B7OVu6MwqxekLTsV/QsyuWD3gmrl+tCYAFR7ro4oi2etnLqqODC8A9f13rjXtSdkwQ2LWsmvjeAzN
+	RaZ5GEUkFfuqGnsRsN3hy9Ak4isYHIhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRIgB-0006l2-DM; Thu, 16 May 2019 15:52:23 +0000
+	id 1hRIgR-00075m-Is; Thu, 16 May 2019 15:52:39 +0000
 Received: from verein.lst.de ([213.95.11.211] helo=newverein.lst.de)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRIfp-0006SG-1f
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 15:52:03 +0000
+ id 1hRIft-0006YX-M0
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 15:52:07 +0000
 Received: by newverein.lst.de (Postfix, from userid 2005)
- id E6EE568C65; Thu, 16 May 2019 17:51:39 +0200 (CEST)
+ id 964B068C4E; Thu, 16 May 2019 17:51:44 +0200 (CEST)
 From: Torsten Duwe <duwe@lst.de>
 To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
@@ -35,14 +35,14 @@ To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
  Icenowy Zheng <icenowy@aosc.io>, Sean Paul <seanpaul@chromium.org>,
  Vasily Khoruzhick <anarsoul@gmail.com>, Harald Geyer <harald@ccbib.org>
-Subject: [PATCH v2 3/4] arm64: DTS: allwinner: a64: Enable audio on Teres-I
+Subject: [PATCH v2 4/4] arm64: DTS: allwinner: a64: enable ANX6345 bridge on
+ Teres-I
 References: <20190516154943.239E668B05@newverein.lst.de>
-Message-Id: <20190516155139.E6EE568C65@newverein.lst.de>
-Date: Thu, 16 May 2019 17:51:39 +0200 (CEST)
+Message-Id: <20190516155144.964B068C4E@newverein.lst.de>
+Date: Thu, 16 May 2019 17:51:44 +0200 (CEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_085201_745989_E10ECBE6 
-X-CRM114-Status: UNSURE (   9.91  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190516_085205_871055_191432CF 
+X-CRM114-Status: GOOD (  13.18  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,75 +71,91 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Harald Geyer <harald@ccbib.org>
+From: Icenowy Zheng <icenowy@aosc.io>
 
-The TERES-I has internal speakers (left, right), internal microphone
-and a headset combo jack (headphones + mic), "CTIA" (android) pinout.
+TERES-I has an ANX6345 bridge connected to the RGB666 LCD output, and
+the I2C controlling signals are connected to I2C0 bus.
 
-The headphone and mic detect lines of the A64 are connected properly,
-but AFAIK currently unsupported by the driver.
+Enable it in the device tree.
 
-Signed-off-by: Harald Geyer <harald@ccbib.org>
+Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
 Signed-off-by: Torsten Duwe <duwe@suse.de>
 ---
- .../boot/dts/allwinner/sun50i-a64-teres-i.dts | 53 +++++++++++++++++++
- 1 file changed, 53 insertions(+)
+
+originally: patchwork.kernel.org/patch/10646867
+
+Changed the reset polarity, which is active low,
+according to the (terse) datasheet, Teres-I and pinebook schematics,
+and the confusing parts of the linux driver code (not yet included here).
+Active low -> no more confusion.
+
+---
+ .../boot/dts/allwinner/sun50i-a64-teres-i.dts | 40 +++++++++++++++++--
+ 1 file changed, 36 insertions(+), 4 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
-index f9eede0a8bd3..d57049fbdaca 100644
+index c455b24dd079..bc1d0d6c0672 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
-@@ -70,6 +70,25 @@
- 		compatible = "mmc-pwrseq-simple";
- 		reset-gpios = <&r_pio 0 2 GPIO_ACTIVE_LOW>; /* PL2 */
+@@ -72,20 +72,38 @@
  	};
+ };
+ 
++&de {
++	status = "okay";
++};
 +
-+	speaker_amp: audio-amplifier {
-+		compatible = "simple-audio-amplifier";
-+		enable-gpios = <&r_pio 0 12 GPIO_ACTIVE_HIGH>; /* PL12 */
-+		sound-name-prefix = "Speaker Amp";
+ &ehci1 {
+ 	status = "okay";
+ };
+ 
+ 
+-/* The ANX6345 eDP-bridge is on i2c0. There is no linux (mainline)
+- * driver for this chip at the moment, the bootloader initializes it.
+- * However it can be accessed with the i2c-dev driver from user space.
+- */
+ &i2c0 {
+ 	clock-frequency = <100000>;
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&i2c0_pins>;
+ 	status = "okay";
++
++	anx6345: anx6345@38 {
++		compatible = "analogix,anx6345";
++		reg = <0x38>;
++		reset-gpios = <&pio 3 24 GPIO_ACTIVE_LOW>; /* PD24 */
++		dvdd25-supply = <&reg_dldo2>;
++		dvdd12-supply = <&reg_dldo3>;
++
++		port {
++			anx6345_in: endpoint {
++				remote-endpoint = <&tcon0_out_anx6345>;
++			};
++		};
 +	};
 +};
 +
-+&codec {
-+	status = "okay";
-+};
-+
-+&codec_analog {
-+	cpvdd-supply = <&reg_eldo1>;
-+	status = "okay";
-+};
-+
-+&dai {
++&mixer0 {
 +	status = "okay";
  };
  
- &ehci1 {
-@@ -258,6 +286,29 @@
+ &mmc0 {
+@@ -258,6 +276,20 @@
  	vcc-hdmi-supply = <&reg_dldo1>;
  };
  
-+&sound {
-+	simple-audio-card,aux-devs = <&codec_analog>, <&speaker_amp>;
-+	simple-audio-card,widgets = "Headphone", "Headphone Jack",
-+				    "Microphone", "Headset Microphone",
-+				    "Microphone", "Internal Microphone",
-+				    "Speaker", "Internal Speaker";
-+	simple-audio-card,routing =
-+			"Left DAC", "AIF1 Slot 0 Left",
-+			"Right DAC", "AIF1 Slot 0 Right",
-+			"AIF1 Slot 0 Left ADC", "Left ADC",
-+			"AIF1 Slot 0 Right ADC", "Right ADC",
-+			"Headphone Jack", "HP",
-+			"Speaker Amp INL", "LINEOUT",
-+			"Speaker Amp INR", "LINEOUT",
-+			"Internal Speaker", "Speaker Amp OUTL",
-+			"Internal Speaker", "Speaker Amp OUTR",
-+			"Internal Microphone", "MBIAS",
-+			"MIC1", "Internal Microphone",
-+			"Headset Microphone", "HBIAS",
-+			"MIC2", "Headset Microphone";
++&tcon0 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&lcd_rgb666_pins>;
++
 +	status = "okay";
++};
++
++&tcon0_out {
++	tcon0_out_anx6345: endpoint@0 {
++		reg = <0>;
++		remote-endpoint = <&anx6345_in>;
++	};
 +};
 +
  &uart0 {
