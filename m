@@ -2,56 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D5F5320E54
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 20:02:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94AC620E5A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 20:03:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Kdr8w/j7OiOVLFEfJUPHrP69cSW9sePImhT7+kLa/7c=; b=U73P+9X1Lsin+yUIyi6OXCpIA
-	zJMusl04yF0TJAjISRDOfAUULgDe8LpPWIlxIoIENvaxxGLGbFfqd2Jy+SHlIQ1V8Gwme8FREu+ac
-	6CLzzU+HI05l7bMQwemEhuqwWxgx5Dbtfbr7pLYlSvobn86mPxvu/A0Q/1iZmOp/zmijqWrBUAipX
-	yEC8sp6K7SMv/V8OCtB7qmDURWqabbV8a3gCxYuHIJ7XeJtWCD3AGZLXRtujP+cEHsUqP2Dzr4h3S
-	924ei2hobzhXJQtRvY7cepmjzQLwd3Jeh9ew63/EyzTQTJl/GJVqL5ZVW2U2p6p8AjnGLiQ3S6CLC
-	OWd1IgN0Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=6Y7ctAsiuvi3IATtDVuA/tTSHzKLvepgYHIV09rTfYM=; b=OUQ
+	74Cm7sjIsVljm1XSJ5WKOEZ0DFHXkGZ1m+bzdJWGNHHebBxhXIE0DQaInRBkeSRIj8B9rMFzjj4vX
+	mi6/nBIL15gIjAHzg3L7fJ5tfU+4ANRejnGHvxI+bAG/rfLXEdpUiHnp38ndpIZt1nZOsguN4iyG7
+	iMqDrTf3qmAXD1iX1MM1gz7Bkbm2RPiZSWjQPcYeCqkQkNHGExeQa5W8mumFXi2PXgrfNEY/BqRyr
+	/caJ49mHnyBUiP014hfW+RB/rhZPjMi+LU8gG423EzVk5BpQTiNK0CiWsv1Vqr3smnYk50xmqHU+L
+	heyo1AhVEuDMrx3smReT/1iwyax3TVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRKht-00010V-Ns; Thu, 16 May 2019 18:02:17 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRKhm-0000ti-3S; Thu, 16 May 2019 18:02:11 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 340FA19BF;
- Thu, 16 May 2019 11:02:09 -0700 (PDT)
-Received: from [10.1.196.75] (e110467-lin.cambridge.arm.com [10.1.196.75])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 692343F5AF;
- Thu, 16 May 2019 11:02:07 -0700 (PDT)
-Subject: Re: [PATCH v2] gnss: get serial speed from subdrivers
-To: Loys Ollivier <lollivier@baylibre.com>, Johan Hovold <johan@kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>
-References: <1558024626-19395-1-git-send-email-lollivier@baylibre.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <69b5e90c-c1c3-9f2e-57a8-64741182a96e@arm.com>
-Date: Thu, 16 May 2019 19:02:05 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <1558024626-19395-1-git-send-email-lollivier@baylibre.com>
-Content-Language: en-GB
+	id 1hRKir-0001Nj-UA; Thu, 16 May 2019 18:03:17 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hRKij-0001MK-N1
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 18:03:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+ List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
+ List-Archive; bh=AA9lPomAsHkkaE5VhjaR2bF+DIj0EPIcrzNk5PEZnuA=; b=Ri831v0Uz5gP
+ +SRwM8+oL7a+TraAMglA+7mmyZuTyMDTlEywS+65Q4nVHF95AEDGY+ab9egdNU5blDsklraL1wCHf
+ YsDrraNV+GjARJ8QRB0y2gRyDCjbpl5Dg5Kp/YdHk6ZvbdaEGygR6Ub7wkYwvg7j31MXnNS3EdR8f
+ sb6Gk=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=debutante.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpa (Exim 4.89)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hRKia-00085O-1J; Thu, 16 May 2019 18:03:00 +0000
+Received: by debutante.sirena.org.uk (Postfix, from userid 1000)
+ id 46AC9112929D; Thu, 16 May 2019 19:02:59 +0100 (BST)
+From: Mark Brown <broonie@kernel.org>
+To: Maxime Ripard <maxime.ripard@bootlin.com>
+Subject: Applied "dt-bindings: sound: Convert Allwinner SPDIF binding to YAML"
+ to the asoc tree
+In-Reply-To: <706cb97ae45cc9edc49c8709b2189ed786d2c7db.1557993523.git-series.maxime.ripard@bootlin.com>
+X-Patchwork-Hint: ignore
+Message-Id: <20190516180259.46AC9112929D@debutante.sirena.org.uk>
+Date: Thu, 16 May 2019 19:02:59 +0100 (BST)
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_110210_155780_D9B6511B 
-X-CRM114-Status: GOOD (  27.42  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190516_110309_900976_B2C9C041 
+X-CRM114-Status: GOOD (  18.09  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,164 +77,227 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: baylibre-upstreaming@groups.io, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, Colin Ian King <colin.king@canonical.com>,
- Corentin Labbe <clabbe.montjoie@gmail.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ alsa-devel@alsa-project.org, Liam Girdwood <lgirdwood@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Mark Brown <broonie@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
  linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 16/05/2019 17:37, Loys Ollivier wrote:
-> The default serial speed was hardcoded in the code.
-> Rename current-speed to default-speed.
-> Add a function parameter that lets the subdrivers specify their
-> default speed.
-> If not specified fallback to the device-tree default-speed.
-> 
-> Signed-off-by: Loys Ollivier <lollivier@baylibre.com>
-> ---
-> Hello,
-> 
-> This patch moves the currently hardcoded, default serial speed
-> to the subdrivers.
-> If the default speed is not specified by the subdriver then it is read
-> from the device tree.
-> 
-> Changes since v1[0]
-> - Use u32 data types instead of uint
-> 
-> [0]: https://lore.kernel.org/lkml/1557322788-10403-1-git-send-email-lollivier@baylibre.com/
-> 
-> Cheers,
-> Loys
-> 
->   drivers/gnss/mtk.c    |  7 ++++++-
->   drivers/gnss/serial.c | 21 +++++++++++++--------
->   drivers/gnss/serial.h |  3 ++-
->   drivers/gnss/ubx.c    |  3 ++-
->   4 files changed, 23 insertions(+), 11 deletions(-)
-> 
-> diff --git a/drivers/gnss/mtk.c b/drivers/gnss/mtk.c
-> index d1fc55560daf..1d35bcb52072 100644
-> --- a/drivers/gnss/mtk.c
-> +++ b/drivers/gnss/mtk.c
-> @@ -16,6 +16,10 @@
->   
->   #include "serial.h"
->   
-> +static uint serial_speed = 9600; /* Serial speed (baud rate) */
-> +module_param(serial_speed, uint, 0644);
-> +MODULE_PARM_DESC(serial_speed, "Serial baud rate (bit/s), (default = 9600)");
-> +
->   struct mtk_data {
->   	struct regulator *vbackup;
->   	struct regulator *vcc;
-> @@ -69,7 +73,8 @@ static int mtk_probe(struct serdev_device *serdev)
->   	struct mtk_data *data;
->   	int ret;
->   
-> -	gserial = gnss_serial_allocate(serdev, sizeof(*data));
-> +	gserial = gnss_serial_allocate(serdev, sizeof(*data),
-> +				       (u32)serial_speed);
->   	if (IS_ERR(gserial)) {
->   		ret = PTR_ERR(gserial);
->   		return ret;
-> diff --git a/drivers/gnss/serial.c b/drivers/gnss/serial.c
-> index def64b36d994..3be799702291 100644
-> --- a/drivers/gnss/serial.c
-> +++ b/drivers/gnss/serial.c
-> @@ -103,17 +103,13 @@ static int gnss_serial_set_power(struct gnss_serial *gserial,
->   	return gserial->ops->set_power(gserial, state);
->   }
->   
-> -/*
-> - * FIXME: need to provide subdriver defaults or separate dt parsing from
-> - * allocation.
-> - */
->   static int gnss_serial_parse_dt(struct serdev_device *serdev)
->   {
->   	struct gnss_serial *gserial = serdev_device_get_drvdata(serdev);
->   	struct device_node *node = serdev->dev.of_node;
-> -	u32 speed = 4800;
-> +	u32 speed;
->   
-> -	of_property_read_u32(node, "current-speed", &speed);
-> +	of_property_read_u32(node, "default-speed", &speed);
->   
->   	gserial->speed = speed;
+The patch
 
-Hmm, maybe it's a bit too convoluted for the compiler to warn about, but 
-if a "default-speed" property is not present, gserial->speed will now be 
-assigned an uninitialised value. I don't know what the intent is neither 
-the driver nor the DT provides a value, but you'll either need to bring 
-back the fallback initialisation above or propagate errors from 
-of_property_read_u32().
+   dt-bindings: sound: Convert Allwinner SPDIF binding to YAML
 
-Robin.
+has been applied to the asoc tree at
 
->   
-> @@ -121,7 +117,8 @@ static int gnss_serial_parse_dt(struct serdev_device *serdev)
->   }
->   
->   struct gnss_serial *gnss_serial_allocate(struct serdev_device *serdev,
-> -						size_t data_size)
-> +					 size_t data_size,
-> +					 u32 serial_speed)
->   {
->   	struct gnss_serial *gserial;
->   	struct gnss_device *gdev;
-> @@ -146,10 +143,18 @@ struct gnss_serial *gnss_serial_allocate(struct serdev_device *serdev,
->   	serdev_device_set_drvdata(serdev, gserial);
->   	serdev_device_set_client_ops(serdev, &gnss_serial_serdev_ops);
->   
-> -	ret = gnss_serial_parse_dt(serdev);
-> +	/* Serial speed provided by subdriver takes precedence over dt*/
-> +	if (!serial_speed)
-> +		ret = gnss_serial_parse_dt(serdev);
-> +	else
-> +		gserial->speed = serial_speed;
-> +
->   	if (ret)
->   		goto err_put_device;
->   
-> +	if (!gserial->speed)
-> +		return -EINVAL;
-> +
->   	return gserial;
->   
->   err_put_device:
-> diff --git a/drivers/gnss/serial.h b/drivers/gnss/serial.h
-> index 980ffdc86c2a..17df61e399e6 100644
-> --- a/drivers/gnss/serial.h
-> +++ b/drivers/gnss/serial.h
-> @@ -33,7 +33,8 @@ struct gnss_serial_ops {
->   extern const struct dev_pm_ops gnss_serial_pm_ops;
->   
->   struct gnss_serial *gnss_serial_allocate(struct serdev_device *gserial,
-> -						size_t data_size);
-> +					 size_t data_size,
-> +					 u32 serial_speed);
->   void gnss_serial_free(struct gnss_serial *gserial);
->   
->   int gnss_serial_register(struct gnss_serial *gserial);
-> diff --git a/drivers/gnss/ubx.c b/drivers/gnss/ubx.c
-> index 7b05bc40532e..52ae6e4987e0 100644
-> --- a/drivers/gnss/ubx.c
-> +++ b/drivers/gnss/ubx.c
-> @@ -68,8 +68,9 @@ static int ubx_probe(struct serdev_device *serdev)
->   	struct gnss_serial *gserial;
->   	struct ubx_data *data;
->   	int ret;
-> +	u32 speed = 4800;
->   
-> -	gserial = gnss_serial_allocate(serdev, sizeof(*data));
-> +	gserial = gnss_serial_allocate(serdev, sizeof(*data), speed);
->   	if (IS_ERR(gserial)) {
->   		ret = PTR_ERR(gserial);
->   		return ret;
-> 
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.3
+
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From 506c7f9b0612c46732aa74317f59a28d9477905b Mon Sep 17 00:00:00 2001
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+Date: Thu, 16 May 2019 09:59:25 +0200
+Subject: [PATCH] dt-bindings: sound: Convert Allwinner SPDIF binding to YAML
+
+The Allwinner SoCs feature an SPDIF controller across multiple SoC
+generations.
+
+However, earlier generations were a bit simpler than the subsequent ones,
+and for example would always have RX and TX capabilities, and no reset
+lines.
+
+In order to express this, let's create two YAML schemas instead of the free
+form text we had before.
+
+Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ .../sound/allwinner,sun4i-a10-spdif.yaml      | 101 ++++++++++++++++++
+ .../bindings/sound/sunxi,sun4i-spdif.txt      |  42 --------
+ 2 files changed, 101 insertions(+), 42 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml
+ delete mode 100644 Documentation/devicetree/bindings/sound/sunxi,sun4i-spdif.txt
+
+diff --git a/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml b/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml
+new file mode 100644
+index 000000000000..5d72d48e923e
+--- /dev/null
++++ b/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml
+@@ -0,0 +1,101 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/sound/allwinner,sun4i-a10-spdif.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Allwinner A10 S/PDIF Controller Device Tree Bindings
++
++maintainers:
++  - Chen-Yu Tsai <wens@csie.org>
++  - Liam Girdwood <lgirdwood@gmail.com>
++  - Mark Brown <broonie@kernel.org>
++  - Maxime Ripard <maxime.ripard@bootlin.com>
++
++properties:
++  "#sound-dai-cells":
++    const: 0
++
++  compatible:
++    oneOf:
++      - const: allwinner,sun4i-a10-spdif
++      - const: allwinner,sun6i-a31-spdif
++      - const: allwinner,sun8i-h3-spdif
++      - items:
++          - const: allwinner,sun8i-a83t-spdif
++          - const: allwinner,sun8i-h3-spdif
++      - items:
++          - const: allwinner,sun50i-a64-spdif
++          - const: allwinner,sun8i-h3-spdif
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    items:
++      - description: Bus Clock
++      - description: Module Clock
++
++  clock-names:
++    items:
++      - const: apb
++      - const: spdif
++
++  dmas:
++    items:
++      - description: RX DMA Channel
++      - description: TX DMA Channel
++
++  dma-names:
++    items:
++      - const: rx
++      - const: tx
++
++  # Even though it only applies to subschemas under the conditionals,
++  # not listing them here will trigger a warning because of the
++  # additionalsProperties set to false.
++  resets:
++    maxItems: 1
++
++allOf:
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - allwinner,sun6i-a31-spdif
++              - allwinner,sun8i-h3-spdif
++
++    then:
++      required:
++        - resets
++
++required:
++  - "#sound-dai-cells"
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++  - dmas
++  - dma-names
++
++additionalProperties: false
++
++examples:
++  - |
++    spdif: spdif@1c21000 {
++        #sound-dai-cells = <0>;
++        compatible = "allwinner,sun4i-a10-spdif";
++        reg = <0x01c21000 0x40>;
++        interrupts = <13>;
++        clocks = <&apb0_gates 1>, <&spdif_clk>;
++        clock-names = "apb", "spdif";
++        dmas = <&dma 0 2>, <&dma 0 2>;
++        dma-names = "rx", "tx";
++    };
++
++...
+diff --git a/Documentation/devicetree/bindings/sound/sunxi,sun4i-spdif.txt b/Documentation/devicetree/bindings/sound/sunxi,sun4i-spdif.txt
+deleted file mode 100644
+index 0c64a209c2e9..000000000000
+--- a/Documentation/devicetree/bindings/sound/sunxi,sun4i-spdif.txt
++++ /dev/null
+@@ -1,42 +0,0 @@
+-Allwinner Sony/Philips Digital Interface Format (S/PDIF) Controller
+-
+-The Allwinner S/PDIF audio block is a transceiver that allows the
+-processor to receive and transmit digital audio via an coaxial cable or
+-a fibre cable.
+-For now only playback is supported.
+-
+-Required properties:
+-
+-  - compatible		: should be one of the following:
+-    - "allwinner,sun4i-a10-spdif": for the Allwinner A10 SoC
+-    - "allwinner,sun6i-a31-spdif": for the Allwinner A31 SoC
+-    - "allwinner,sun8i-h3-spdif": for the Allwinner H3 SoC
+-
+-  - reg			: Offset and length of the register set for the device.
+-
+-  - interrupts		: Contains the spdif interrupt.
+-
+-  - dmas		: Generic dma devicetree binding as described in
+-			  Documentation/devicetree/bindings/dma/dma.txt.
+-
+-  - dma-names		: Two dmas have to be defined, "tx" and "rx".
+-
+-  - clocks		: Contains an entry for each entry in clock-names.
+-
+-  - clock-names		: Includes the following entries:
+-	"apb"		  clock for the spdif bus.
+-	"spdif"		  clock for spdif controller.
+-
+-  - resets		: reset specifier for the ahb reset (A31 and newer only)
+-
+-Example:
+-
+-spdif: spdif@1c21000 {
+-	compatible = "allwinner,sun4i-a10-spdif";
+-	reg = <0x01c21000 0x40>;
+-	interrupts = <13>;
+-	clocks = <&apb0_gates 1>, <&spdif_clk>;
+-	clock-names = "apb", "spdif";
+-	dmas = <&dma 0 2>, <&dma 0 2>;
+-	dma-names = "rx", "tx";
+-};
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
