@@ -2,96 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B33920DF8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 19:27:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1BAEA20E01
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 19:34:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=mZueTHHtgao3BYMTDiIV3U2+hMmoY0ln9q62DkJr+Do=; b=YIbAlSim2HBKOHHEmY46AlNrYw
-	Iq0su3wDDr1PwqcOccceTiD13AqbwAr8eQ7c3o8XkOHhEmao9Zcysevljo2gY8t7C8WU66TFOx0/L
-	sSw1iM0DlzEZZzvp2HmnRL37GjTueh/NbJBZfLk/v9qiepNcttor/QPDBWmMSoAitWKAu4pIKlQ4r
-	dRkQcfC1HUpHv5kHHyUe2HcxfKCrI/B8T7GIWJKLnOIedoKL0NaUO5E0XMHrOeAtPd7e9QSQTlbWZ
-	tjLDPz1X3Ymk8pVUSexAkIy4urxd9uZr1Hq7idzEF3jOa/6oO6TsibM40wral6HBOqD1VB4Lg7zQu
-	NR5ZUIRQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yeaZDmmKebu2AlTnk8exkh7yyruM/GrHVieYr57Y6MY=; b=bhlX9dNK5m1CVk
+	PcyZSYXyJTHRCFtaAa2vPr44sjtB0zPIDDVpX5DzN4P8l7jjMS2xgZa7EdYjDV97PdDOb7L9QmwBJ
+	vadqSFJuay4pVLwNN/hFtC7OhFc8Tj+u/xaHtF/+qTVB8TR6PBWpCL83DXOXxg/bp+I4V04wR7cLT
+	KKGJbDgi4YcOO5xAcis0FggFwLNRE5DOfNfsCdOjeBbUaQcrMBpUJaeRsUdWx0/dbPaGcjGPbAsX0
+	xRxy8lASwFvPrcJ8/iElACxNoki1apTM5HQ2Ox2GKxXKiDTx6aHG3ESBhpNCGbTOx24vPZUPN9zs4
+	zM7tBVrE6af7a9sBFQDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRK9u-0003oi-VS; Thu, 16 May 2019 17:27:11 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRK9V-0003S9-0v
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 17:26:48 +0000
-Received: by mail-pg1-x543.google.com with SMTP id h17so1907176pgv.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 May 2019 10:26:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=IlWeur6t+kwpySn24VqBEqPmtDVwsekAH2F04m0wTVs=;
- b=kmjzUz3GIXj8W64WIGM6+ZbI2+dQj9d4/0V7occ3VNHHmSGZx+WJbW4ov8IlbOpc/Q
- H06J4n6ZaSwGd7m/zNkCZ9brpjtsO2VyItzHeZv76NCFPvMkRDKroHSdbOFS86s2oaX3
- 4ENJ7aXVpwPqGZZP6sEuEJDitLli+kY6sS2YgtkdKDb33mMc0H5niZSwvwWoq8cE25es
- z1n5KkU7sY3BayPkuPe3wNxlR7eqmuf7UOfxNRGzeyh3XGQCGFgjGJy6QZ0ZK86TBhSF
- MkLcU9S8HW74a4Sz25uQLuACZAbr6wfsMD/3Kk6VY55w+awNLxFQhazriM2XTAoBknRT
- GOwA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=IlWeur6t+kwpySn24VqBEqPmtDVwsekAH2F04m0wTVs=;
- b=Dp2g4bPoU9O02qgKjlJEc+K6PnMUEcNpRYFegJcoZ5TQ3ou1hTui0LKojosCXFTBTj
- JvyVb3a1Gm0BcQCTWbZS/iB+CwN+ogaJDnmfnMlmtCRQTDq3y/10zRGbCJHL549LGnXQ
- EXAWEYgQDkZ1Waym9v5+/Koby+2aOqQVcMeYJ0B/Nwv+3XuOGKwbaSqioWojlO3+1cUP
- r4BcT16CtLMz+IZ6EBhawMkgT8o1furH+me5Hknto5rrbW1X7iU1q1wASdAN2DEZkYj6
- 32tFg21ji69zK1n+WttSE7EBQPuNqKny5WrfEMVTVqALi83CsoxfRSliMncQLVbIrFuU
- in7w==
-X-Gm-Message-State: APjAAAWaoKtYmDQIDA1qmvJJ8/IIwnHeQhJuyLlsjVYz2llx07zI2mD9
- Z8LnfCgPJv7+GKeBXz8+nmo=
-X-Google-Smtp-Source: APXvYqxvISxdB727dwDNTOKXmKUrUn9+Kd3oUXSQ3tEcgfKkDjc40yubFAx2AFYNL5X0JTxXM4yK/A==
-X-Received: by 2002:aa7:8f22:: with SMTP id y2mr44011586pfr.22.1558027604243; 
- Thu, 16 May 2019 10:26:44 -0700 (PDT)
-Received: from localhost (68.168.130.77.16clouds.com. [68.168.130.77])
- by smtp.gmail.com with ESMTPSA id r18sm16175557pfg.141.2019.05.16.10.26.43
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 16 May 2019 10:26:43 -0700 (PDT)
-From: Yangtao Li <tiny.windzz@gmail.com>
-To: rui.zhang@intel.com, edubezval@gmail.com, daniel.lezcano@linaro.org,
- robh+dt@kernel.org, mark.rutland@arm.com, maxime.ripard@bootlin.com,
- wens@csie.org, davem@davemloft.net, mchehab+samsung@kernel.org,
- gregkh@linuxfoundation.org, linus.walleij@linaro.org,
- Jonathan.Cameron@huawei.com, nicolas.ferre@microchip.com,
- paulmck@linux.ibm.com
-Subject: [PATCH v2 2/2] dt-bindings: thermal: add binding document for h6
- thermal controller
-Date: Thu, 16 May 2019 13:26:33 -0400
-Message-Id: <20190516172633.12607-3-tiny.windzz@gmail.com>
-X-Mailer: git-send-email 2.17.0
-In-Reply-To: <20190516172633.12607-1-tiny.windzz@gmail.com>
-References: <20190516172633.12607-1-tiny.windzz@gmail.com>
+	id 1hRKH5-0005yB-17; Thu, 16 May 2019 17:34:35 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hRKGx-0005xE-4A
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 17:34:28 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4CC4419BF;
+ Thu, 16 May 2019 10:34:23 -0700 (PDT)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 073003F5AF;
+ Thu, 16 May 2019 10:34:19 -0700 (PDT)
+Subject: Re: [PATCH v3 2/3] arm64: implement update_fdt_pgprot()
+To: Hsin-Yi Wang <hsinyi@chromium.org>
+References: <20190516102817.188519-1-hsinyi@chromium.org>
+ <20190516102817.188519-2-hsinyi@chromium.org>
+ <CAL_JsqLx1UdjCnZ69aQm0GU_uOdd7tTdD_oM=D7yhDANoQ0fEA@mail.gmail.com>
+ <CAJMQK-jrJQri3gM=X6JRD6Rk+B5S4939HJTptrQMY64xEWr1qA@mail.gmail.com>
+ <CAL_Jsq+dVg9E_EzpoC4Bz1ytUckDGXUcEJyU5pV2HS6rZuKmHA@mail.gmail.com>
+ <CAJMQK-hzjSBf2-QFMn52Sa8fwvm5-gaddzBOudfEc1neR2rwnA@mail.gmail.com>
+From: James Morse <james.morse@arm.com>
+Message-ID: <5f598806-1c36-7c2a-0f47-da79ec7d28c6@arm.com>
+Date: Thu, 16 May 2019 18:34:16 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <CAJMQK-hzjSBf2-QFMn52Sa8fwvm5-gaddzBOudfEc1neR2rwnA@mail.gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_102645_358747_B5265D36 
-X-CRM114-Status: GOOD (  13.78  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190516_103427_176208_1BAEE22D 
+X-CRM114-Status: GOOD (  16.46  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tiny.windzz[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -103,66 +69,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yangtao Li <tiny.windzz@gmail.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-pm@vger.kernel.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Yu Zhao <yuzhao@google.com>, Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Stephen Boyd <swboyd@chromium.org>,
+ Will Deacon <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Mike Rapoport <rppt@linux.ibm.com>, Jun Yao <yaojun8558363@gmail.com>,
+ Miles Chen <miles.chen@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
+ Andrew Murray <andrew.murray@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Laura Abbott <labbott@redhat.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Robin Murphy <robin.murphy@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds binding document for allwinner h6 thermal controller.
+Hi!
 
-Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
----
- .../bindings/thermal/sun8i-thermal.txt        | 34 +++++++++++++++++++
- 1 file changed, 34 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/thermal/sun8i-thermal.txt
+On 16/05/2019 17:48, Hsin-Yi Wang wrote:
+> On Thu, May 16, 2019 at 11:32 PM Rob Herring <robh+dt@kernel.org> wrote:
+>> Doesn't kexec operate on a copy because it already does modifications.
 
-diff --git a/Documentation/devicetree/bindings/thermal/sun8i-thermal.txt b/Documentation/devicetree/bindings/thermal/sun8i-thermal.txt
-new file mode 100644
-index 000000000000..bd417260501f
---- /dev/null
-+++ b/Documentation/devicetree/bindings/thermal/sun8i-thermal.txt
-@@ -0,0 +1,34 @@
-+* Allwinner Thermal
-+
-+This describes the device tree binding for the Allwinner thermal controller
-+which measures the on-SoC temperatures.
-+
-+Required properties:
-+- compatible:
-+  - "allwinner,sun50i-h6-ths" : For H6
-+- reg: Address range of the thermal controller
-+- clocks, clock-names: Clocks needed for the thermal controller.
-+		       The required clocks for h6 are: "bus".
-+- resets: Reference to the reset controller controlling the thermal controller.
-+- interrupts: IRQ for the thermal controller
-+- #thermal-sensor-cells : For H6 Should be 1.
-+			  See ./thermal.txt for a description.
-+
-+Optional properties:
-+- nvmem-cells: A phandle to the calibration data provided by a nvmem device. If
-+	       unspecified default values shall be used.
-+- nvmem-cell-names: Should be "calib".
-+
-+Example:
-+
-+	ths: ths@1c25000 {
-+		compatible = "allwinner,sun50i-h6-ths";
-+		reg = <0x05070400 0x100>;
-+		clocks = <&ccu CLK_BUS_THS>;
-+		clock-names = "bus";
-+		resets = <&ccu RST_BUS_THS>;
-+		interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
-+		nvmem-cells = <&tsen_calib>;
-+		nvmem-cell-names = "calib";
-+		#thermal-sensor-cells = <1>;
-+	};
--- 
-2.17.0
+It does!
 
+> This patch is to assist "[PATCH v3 3/3] fdt: add support for rng-seed"
+> (https://lkml.org/lkml/2019/5/16/257). I thought that by default
+> second kernel would use original fdt, so I write new seed back to
+> original fdt. Might be wrong.
+> 
+> ** "[PATCH v3 3/3] fdt: add support for rng-seed" is supposed to
+> handle for adding new seed in kexec case, discussed in v2
+> (https://lkml.org/lkml/2019/5/13/425)
+> 
+> By default (not considering user defines their own fdt), if second
+> kernel uses copied fdt, when is it copied and can we modify that?
+
+Regular kexec's user-space already updates the dtb for the cmdline and maybe the initrd.
+For KASLR, it generates its own seed with getrandom():
+
+https://git.kernel.org/pub/scm/utils/kernel/kexec/kexec-tools.git/tree/kexec/arch/arm64/kexec-arm64.c#n483
+
+If user-space can do it, user-space should do it!
+
+
+Thanks,
+
+James
 
 _______________________________________________
 linux-arm-kernel mailing list
