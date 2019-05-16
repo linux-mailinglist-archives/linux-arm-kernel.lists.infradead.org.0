@@ -2,66 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A546E2027D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 11:28:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6E82202A8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 11:38:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i9r27uN3Y8jryyFvEm+TiGoUblsNlD40Cp36ikc7K9E=; b=hdQ7bohVHaZsQI
-	H/FU3KOBHPfWk1H2gPFS43pCNuLjdOiWanVH/4PKJvIoOfbvt47saH5yuOZEue38jSGQyRJmp11vJ
-	esj/ffFeaPPvuDdW+8c0bPCjuxTfCps4gtx9MpwLKj3QbhYoiab7/ToTgraGGcSoYldccourZtG5r
-	ANHqvEukXZ8ea8vYxavU/O1CjdMn+4NsDsaXR4Ry4i1tVcclO0UxxZdP5HgTSQ9j6rh8veV6LFGdj
-	XnyKtg0fB971fyiZ2uOWvN6JdniNz6o2xm2v2f5sGDlkSFQOBMqF9ntAChvPirUk8lTq2iZ3Gkhqk
-	WTUpC2FTnuWFrwIQxyqw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Dlck3mBE/o08BI2/8nyFk3BolmzBXbQ4IFKox2n0Q4M=; b=MFv
+	pPUT17olkWRA76nhRddzpw7utcrUAITnQ2MMb08yonurui9yElJL8bVhakeVdpSWxnyKkrCS6AO5v
+	pXkAv60GzzgDI6/e4t/NATA+KbICwMQfSJugLd9l9TUUCSj87R3/sindUXv05rc+mX3SaOZf0a35x
+	xA3jzWx7Q2uo8XHoWtRLFYg2C5P0C0KOkARFeGjJlOGHS3a1yM7yQ+v1d64hbdl7I4JPfq8Zkr7+m
+	PiKjeT8peQTNFJ9tHLTxZJeXtHqpZGRqvOGD+Kd0+0G1qtmjH0AN6fN9ucDqyabvjP/uqA9nd3j0h
+	SCXu2FqLHpJlGPT5QDX2NME8VAFWJvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRCgb-0001mr-C2; Thu, 16 May 2019 09:28:25 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hRCpy-00063d-6u; Thu, 16 May 2019 09:38:06 +0000
+Received: from plaes.org ([188.166.43.21])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRCgR-0001l3-HQ; Thu, 16 May 2019 09:28:16 +0000
-X-UUID: 65d4e42d33f34203813e60cd0dc5b5fd-20190516
-X-UUID: 65d4e42d33f34203813e60cd0dc5b5fd-20190516
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <bibby.hsieh@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1878097531; Thu, 16 May 2019 01:28:06 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 16 May 2019 02:28:04 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 16 May 2019 17:27:56 +0800
-Received: from mtkslt302.mediatek.inc (10.21.14.115) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Thu, 16 May 2019 17:27:56 +0800
-From: Bibby Hsieh <bibby.hsieh@mediatek.com>
-To: Jassi Brar <jassisinghbrar@gmail.com>, Matthias Brugger
- <matthias.bgg@gmail.com>, Rob Herring <robh+dt@kernel.org>, CK HU
- <ck.hu@mediatek.com>
-Subject: [PATCH v6 11/12] soc: mediatek: cmdq: add cmdq_dev_get_event function
-Date: Thu, 16 May 2019 17:27:54 +0800
-Message-ID: <20190516092754.33425-3-bibby.hsieh@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20190516092754.33425-1-bibby.hsieh@mediatek.com>
-References: <20190516092754.33425-1-bibby.hsieh@mediatek.com>
-MIME-Version: 1.0
-X-MTK: N
+ id 1hRCpo-00062y-QA
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 09:38:00 +0000
+Received: from localhost (unknown [IPv6:2001:bb8:4008:20:21a:64ff:fe97:f60])
+ by plaes.org (Postfix) with ESMTPSA id 69D87403C4;
+ Thu, 16 May 2019 09:28:52 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=plaes.org; s=mail;
+ t=1557998932; bh=kd8HHQHYAXLACCGTSACw8a42kGWpfQ/F8JYYcsX/XT8=;
+ h=From:To:Cc:Subject:Date:From;
+ b=jH2ib0aB8kM/3QqLSov54Qsvzt1Gz6UDaSf3xKUE1ERRcNWA6GTDMwbatPoPCYAl8
+ 0sUvQhWVe4kOF96+8yUpsrTcIOJj9lnO4kHOzRh5y2pPmBMDseHcBu+M4k8ZAfhxPt
+ 78eWowcQbsKwn8f4OkVKsaO3a32bZHhXIaZo9qJKJEcn8D1+VuT/stjcPvsAzuxH9i
+ RoVCd9nLHBTKd3cInIc2R+elbR1EBV5BD+iOZZ0sjka1YNDLqTqbJRkRAaDXvx7bTC
+ GF+iMeunzSF4JAQXJlhjVhC2SLGnvLyYd7VYdHJX72afshMvMxm26NI3BXSkjXMo8x
+ hRMXmq4JAoSOQ==
+From: Priit Laes <plaes@plaes.org>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] ARM: dts: sun7i: olimex-lime2: Enable ac and power supplies
+Date: Thu, 16 May 2019 12:28:50 +0300
+Message-Id: <20190516092850.3200-1-plaes@plaes.org>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_022815_657939_9808A931 
-X-CRM114-Status: UNSURE (   9.13  )
+X-CRM114-CacheID: sfid-20190516_023756_980256_4CF5D917 
+X-CRM114-Status: UNSURE (   8.36  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -73,85 +73,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, srv_heupstream@mediatek.com,
- Daoyuan Huang <daoyuan.huang@mediatek.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- Daniel Kurtz <djkurtz@chromium.org>,
- Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>,
- linux-mediatek@lists.infradead.org, Houlong Wei <houlong.wei@mediatek.com>,
- Sascha Hauer <kernel@pengutronix.de>, YT Shen <yt.shen@mediatek.com>,
- Jiaguang Zhang <jiaguang.zhang@mediatek.com>,
- Bibby Hsieh <bibby.hsieh@mediatek.com>, linux-arm-kernel@lists.infradead.org,
- ginny.chen@mediatek.com
+Cc: linux-sunxi@googlegroups.com, Priit Laes <plaes@plaes.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When client ask gce to clear or wait for event,
-client need to pass event number to the API.
-We suggest client store the event information in device node,
-so we provide an API for client parse the event property.
+Lime2 has battery connector so enable these supplies.
 
-Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+Signed-off-by: Priit Laes <plaes@plaes.org>
 ---
- drivers/soc/mediatek/mtk-cmdq-helper.c | 18 ++++++++++++++++++
- include/linux/soc/mediatek/mtk-cmdq.h  | 12 ++++++++++++
- 2 files changed, 30 insertions(+)
+ arch/arm/boot/dts/sun7i-a20-olinuxino-lime2.dts | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-index a64060a34e01..e9658063c3d4 100644
---- a/drivers/soc/mediatek/mtk-cmdq-helper.c
-+++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
-@@ -52,6 +52,24 @@ struct cmdq_subsys *cmdq_dev_get_subsys(struct device *dev, int idx)
- }
- EXPORT_SYMBOL(cmdq_dev_get_subsys);
+diff --git a/arch/arm/boot/dts/sun7i-a20-olinuxino-lime2.dts b/arch/arm/boot/dts/sun7i-a20-olinuxino-lime2.dts
+index 9c8eecf4337a..9001b5527615 100644
+--- a/arch/arm/boot/dts/sun7i-a20-olinuxino-lime2.dts
++++ b/arch/arm/boot/dts/sun7i-a20-olinuxino-lime2.dts
+@@ -206,6 +206,14 @@
  
-+s32 cmdq_dev_get_event(struct device *dev, int index)
-+{
-+	s32 result;
-+
-+	if (!dev)
-+		return -EINVAL;
-+
-+	if (of_property_read_u32_index(dev->of_node, "mediatek,gce-events",
-+				       index, &result)) {
-+		dev_err(dev, "can't parse gce-events property");
-+
-+		return -ENODEV;
-+	}
-+
-+	return result;
-+}
-+EXPORT_SYMBOL(cmdq_dev_get_event);
-+
- static void cmdq_client_timeout(struct timer_list *t)
- {
- 	struct cmdq_client *client = from_timer(client, t, timer);
-diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
-index 574006c5cd76..525713bf79b5 100644
---- a/include/linux/soc/mediatek/mtk-cmdq.h
-+++ b/include/linux/soc/mediatek/mtk-cmdq.h
-@@ -160,4 +160,16 @@ int cmdq_pkt_flush(struct cmdq_pkt *pkt);
-  */
- struct cmdq_subsys *cmdq_dev_get_subsys(struct device *dev, int idx);
+ #include "axp209.dtsi"
  
-+/**
-+ * cmdq_dev_get_event() - parse event from the device node of CMDQ client
-+ * @dev:	device of CMDQ mailbox client
-+ * @index:	the index of desired event
-+ *
-+ * Return: CMDQ event number
-+ *
-+ * Help CMDQ client pasing the event number
-+ * from the device node of CMDQ client.
-+ */
-+s32 cmdq_dev_get_event(struct device *dev, int index);
++&ac_power_supply {
++	status = "okay";
++};
 +
- #endif	/* __MTK_CMDQ_H__ */
++&battery_power_supply {
++	status = "okay";
++};
++
+ &reg_dcdc2 {
+ 	regulator-always-on;
+ 	regulator-min-microvolt = <1000000>;
 -- 
-2.18.0
+2.11.0
 
 
 _______________________________________________
