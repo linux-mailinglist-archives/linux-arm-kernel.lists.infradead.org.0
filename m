@@ -2,60 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A7E82087F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 15:43:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1FA382088E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 15:49:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=34wnMZH/XYjBgnJhSGSltJYZFud9hbMmIUlQtWsBg00=; b=VHYdI0vgGE/93N
-	22bl5Gjpw+nsxVU1F9ptFVu6g3wcqtWPidZkeaGZTy0xHN6CyL35FqWGdu9c7epo52nTGzcmopSyL
-	Bn8C43tCH9BtE5DQcQmr1If52CReEdqL9lZGVzRqYBArAw2d9bDh1Ui4tRIoZ2mSbkRLIpHohHtma
-	ndykx9YMd3gmvVS45MN3/tM/o0Rq5cdLPV68WhUCNy5GktHdhSggdB1IcJFsLdpOqNMeaoLeAHsmK
-	Y2rYIOZ7phajYinvXTtrwru4wR2FROQw+fBoLBWGxuHViLzl/sqMjgz/Fed+0R8IMKgpr1qUcKylR
-	WaMypmf48+AT3hdQiR2w==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CX4RFdF8I9zFeiMmBs6UHNm5jB59HYfATAaZnQ0aUos=; b=D1uTDEqo6wIKjP
+	mr+XC1QbW1qdq92Bv+cGWzIZcgMrgkbnHASywEFUrX3aRyus7fUwtDx6jfbqx7NFja6IuCSoRIWiG
+	zcd+w1pEBfSeXnzK0oho/LJXcqNDvPiQ43KHnMwyYAIlaInT8sPQ02xkwDAUWGrFLBGc9UB1MBAk7
+	QYCKm25dMhBD4GdD4mqqToR9j4pfEF3wRWQlJbno+f6DZUWUKY7UdET5HhoX265AIuqaiEhMPZ7Bu
+	corCDRTt4MadzrgzQmo51W/pdj8bsVqNcqz4IJb/z+xl1UylQnRCj2PB94fIKD8Hd93cmpZzqdIuK
+	j7dJYw0dhTWSwzyHcYqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRGff-0008RT-Mk; Thu, 16 May 2019 13:43:43 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRGfX-0008QJ-O8
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 13:43:37 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 939901715;
- Thu, 16 May 2019 06:43:33 -0700 (PDT)
-Received: from [10.1.197.45] (e112298-lin.cambridge.arm.com [10.1.197.45])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AE5F23F575;
- Thu, 16 May 2019 06:43:27 -0700 (PDT)
-Subject: Re: [PATCH v2 4/5] arm64: irqflags: Introduce explicit debugging for
- IRQ priorities
-To: Marc Zyngier <marc.zyngier@arm.com>, linux-arm-kernel@lists.infradead.org
-References: <1556553607-46531-1-git-send-email-julien.thierry@arm.com>
- <1556553607-46531-5-git-send-email-julien.thierry@arm.com>
- <9b27cb2c-5159-3001-672e-9391d7490944@arm.com>
-From: Julien Thierry <julien.thierry@arm.com>
-Message-ID: <890a91fd-da1e-50b4-6567-d732a850e32c@arm.com>
-Date: Thu, 16 May 2019 14:43:25 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.2.1
+	id 1hRGlK-00023E-Da; Thu, 16 May 2019 13:49:34 +0000
+Received: from conssluserg-01.nifty.com ([210.131.2.80])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hRGlB-00022V-PT
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 13:49:27 +0000
+Received: from mail-ua1-f51.google.com (mail-ua1-f51.google.com
+ [209.85.222.51]) (authenticated)
+ by conssluserg-01.nifty.com with ESMTP id x4GDmge9017764
+ for <linux-arm-kernel@lists.infradead.org>; Thu, 16 May 2019 22:48:42 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-01.nifty.com x4GDmge9017764
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1558014522;
+ bh=X0frcOGR3psV+x7WGdjxWUl7hWweQjiB+M+DnkVeiMQ=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=J4au0++MIH43N4htFxGoX3FUWhZPH1Fz35ZI3VhdAJEXvAuwD3E4aOJjqMDtB4FBA
+ RBenJQeoH0bAYPWx6WWWrJaN5IMs/GZoKEnF1voWdwQDjB9a+coFGewuNRC3JMSZAA
+ mvRxHEQHdVvH6dgi2ljuQ0s+VWh2+FLochMicjMYtBof+dmKaIpXQ+0FYFm6EQsosZ
+ DwWYHP2ASUZT8LNMffM3XGkXL4LeZ8t64ZrbCmgZ7nYaiP3o0F+Blbb0JuW1DPMjGj
+ CQqfaCQrS+36V6rUW33TdDbXpcTEgu2uNFgyOyErdzIfPgZV92G4eYQpTuSKCzhUZ3
+ f2Iiny8+JYTwg==
+X-Nifty-SrcIP: [209.85.222.51]
+Received: by mail-ua1-f51.google.com with SMTP id 94so1310489uam.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 16 May 2019 06:48:42 -0700 (PDT)
+X-Gm-Message-State: APjAAAWKTGAMZhqebYpM6zg5UC+J2BjJepiBZkMKoKbjiOUJ3QYkcn/R
+ Y8JUQWKFFgfBV6cAI4dYuyHrrGn+P3h1EXWh7QY=
+X-Google-Smtp-Source: APXvYqySVnD3fxjOiZxmSe2ykSqlWEPVQWZ6yLxADtqLjyOwi5GOjJRaPyCAfKg3sxUjS0eAdXUcdeymDecaWzWeY8A=
+X-Received: by 2002:a9f:3381:: with SMTP id p1mr60360uab.40.1558014521478;
+ Thu, 16 May 2019 06:48:41 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <9b27cb2c-5159-3001-672e-9391d7490944@arm.com>
-Content-Language: en-US
+References: <20190515194824.5641-1-labbott@redhat.com>
+ <CAK7LNASZnRrSsZSrnw41kintGfmpyj3iz-Vjduk7w3k9iSih-w@mail.gmail.com>
+ <20190516104619.GA29705@fuggles.cambridge.arm.com>
+In-Reply-To: <20190516104619.GA29705@fuggles.cambridge.arm.com>
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+Date: Thu, 16 May 2019 22:48:05 +0900
+X-Gmail-Original-Message-ID: <CAK7LNARn+mzQNaVrkFqsxOfJ4xeXB5dSnfNWGCjQ=AenVcT50A@mail.gmail.com>
+Message-ID: <CAK7LNARn+mzQNaVrkFqsxOfJ4xeXB5dSnfNWGCjQ=AenVcT50A@mail.gmail.com>
+Subject: Re: [PATCH] arm64: vdso: Explicitly add build-id option
+To: Will Deacon <will.deacon@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_064335_798115_CDA776CC 
-X-CRM114-Status: GOOD (  21.52  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190516_064926_069170_A702E392 
+X-CRM114-Status: GOOD (  17.79  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.80 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -67,147 +84,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, rostedt@goodmis.org, james.morse@arm.com,
- yuzenghui@huawei.com, wanghaibin.wang@huawei.com, liwei391@huawei.com
+Cc: Laura Abbott <labbott@redhat.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, May 16, 2019 at 7:48 PM Will Deacon <will.deacon@arm.com> wrote:
+>
+> On Thu, May 16, 2019 at 01:58:56PM +0900, Masahiro Yamada wrote:
+> > On Thu, May 16, 2019 at 4:51 AM Laura Abbott <labbott@redhat.com> wrote:
+> > >
+> > > Commit 691efbedc60d ("arm64: vdso: use $(LD) instead of $(CC) to
+> > > link VDSO") switched to using LD explicitly. The --build-id option
+> > > needs to be passed explicitly, similar to x86. Add this option.
+> > >
+> > > Fixes: 691efbedc60d ("arm64: vdso: use $(LD) instead of $(CC) to link VDSO")
+> > > Signed-off-by: Laura Abbott <labbott@redhat.com>
+> > > ---
+> > >  arch/arm64/kernel/vdso/Makefile | 1 +
+> > >  1 file changed, 1 insertion(+)
+> > >
+> > > diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
+> > > index 744b9dbaba03..ca209103cd06 100644
+> > > --- a/arch/arm64/kernel/vdso/Makefile
+> > > +++ b/arch/arm64/kernel/vdso/Makefile
+> > > @@ -13,6 +13,7 @@ targets := $(obj-vdso) vdso.so vdso.so.dbg
+> > >  obj-vdso := $(addprefix $(obj)/, $(obj-vdso))
+> > >
+> > >  ldflags-y := -shared -nostdlib -soname=linux-vdso.so.1 \
+> > > +               $(call ld-option, --build-id) \
+> > >                 $(call ld-option, --hash-style=sysv) -n -T
+> > >
+> > >  # Disable gcov profiling for VDSO code
+> >
+> >
+> > I missed that. Sorry.
+> >
+> > You can add  --build-id without $(call ld-option,...)
+> > because it is supported by our minimal version of toolchain.
+> >
+> > See commit log of 1e0221374e for example.
+>
+> Ok, so I'm ok folding in the diff below on top?
 
 
-On 07/05/2019 09:44, Marc Zyngier wrote:
-> On 29/04/2019 17:00, Julien Thierry wrote:
->> Using IRQ priority masking to enable/disable interrupts is a bit
->> sensitive as it requires to deal with both ICC_PMR_EL1 and PSR.I.
->>
->> Introduce some validity checks to both highlight the states in which
->> functions dealing with IRQ enabling/disabling can (not) be called, and
->> bark a warning when called in an unexpected state.
->>
->> Since these checks are done on hotpaths, introduce a build option to
->> choose whether to do the checking.
->>
->> Signed-off-by: Julien Thierry <julien.thierry@arm.com>
->> Cc: Catalin Marinas <catalin.marinas@arm.com>
->> Cc: Will Deacon <will.deacon@arm.com>
->> ---
->>  arch/arm64/Kconfig                 | 11 +++++++++++
->>  arch/arm64/include/asm/daifflags.h |  9 +++++++++
->>  arch/arm64/include/asm/irqflags.h  | 14 ++++++++++++++
->>  3 files changed, 34 insertions(+)
->>
->> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
->> index 7e34b9e..3fb38f3 100644
->> --- a/arch/arm64/Kconfig
->> +++ b/arch/arm64/Kconfig
->> @@ -1359,6 +1359,17 @@ config ARM64_PSEUDO_NMI
->>
->>  	  If unsure, say N
->>
->> +if ARM64_PSEUDO_NMI
->> +config ARM64_DEBUG_PRIORITY_MASKING
->> +	bool "Debug interrupt priority masking"
->> +	help
->> +	  This adds runtime checks to functions enabling/disabling
->> +	  interrupts when using priority masking. The additional checks verify
->> +	  the validity of ICC_PMR_EL1 when calling concerned functions.
->> +
->> +	  If unsure, say N
->> +endif
->> +
->>  config RELOCATABLE
->>  	bool
->>  	help
->> diff --git a/arch/arm64/include/asm/daifflags.h b/arch/arm64/include/asm/daifflags.h
->> index a32ece9..9512968 100644
->> --- a/arch/arm64/include/asm/daifflags.h
->> +++ b/arch/arm64/include/asm/daifflags.h
->> @@ -28,6 +28,11 @@
->>  /* mask/save/unmask/restore all exceptions, including interrupts. */
->>  static inline void local_daif_mask(void)
->>  {
->> +	WARN_ON(IS_ENABLED(CONFIG_ARM64_DEBUG_PRIORITY_MASKING) &&
->> +		system_uses_irq_prio_masking() &&
-> 
-> Given that you repeat these conditions all over the place, how about a
-> helper:
-> 
-> #define DEBUG_PRIORITY_MASKING_CHECK(x)			\
-> 	(IS_ENABLED(CONFIG_ARM64_DEBUG_PRIORITY_MASKING) && \
-> 	 system_uses_irq_prio_masking() && (x))
-> 
-> or some variant thereof.
-> 
+Looks good to me too.
 
-Yes, good point, I'll do that.
+Thanks.
 
->> +		(read_sysreg_s(SYS_ICC_PMR_EL1) == (GIC_PRIO_IRQOFF |
->> +						    GIC_PRIO_IGNORE_PMR)));
->> +
->>  	asm volatile(
->>  		"msr	daifset, #0xf		// local_daif_mask\n"
->>  		:
->> @@ -62,6 +67,10 @@ static inline void local_daif_restore(unsigned long flags)
->>  {
->>  	bool irq_disabled = flags & PSR_I_BIT;
->>
->> +	WARN_ON(IS_ENABLED(CONFIG_ARM64_DEBUG_PRIORITY_MASKING) &&
->> +		system_uses_irq_prio_masking() &&
->> +		!(read_sysreg(daif) & PSR_I_BIT));
->> +
->>  	if (!irq_disabled) {
->>  		trace_hardirqs_on();
->>
->> diff --git a/arch/arm64/include/asm/irqflags.h b/arch/arm64/include/asm/irqflags.h
->> index 516cdfc..a40abc2 100644
->> --- a/arch/arm64/include/asm/irqflags.h
->> +++ b/arch/arm64/include/asm/irqflags.h
->> @@ -40,6 +40,13 @@
->>   */
->>  static inline void arch_local_irq_enable(void)
->>  {
->> +	if (IS_ENABLED(CONFIG_ARM64_DEBUG_PRIORITY_MASKING) &&
->> +	    system_uses_irq_prio_masking()) {
->> +		u32 pmr = read_sysreg_s(SYS_ICC_PMR_EL1);
->> +
->> +		WARN_ON(pmr != GIC_PRIO_IRQON && pmr != GIC_PRIO_IRQOFF);
->> +	}
->> +
->>  	asm volatile(ALTERNATIVE(
->>  		"msr	daifclr, #2		// arch_local_irq_enable\n"
->>  		"nop",
->> @@ -53,6 +60,13 @@ static inline void arch_local_irq_enable(void)
->>
->>  static inline void arch_local_irq_disable(void)
->>  {
->> +	if (IS_ENABLED(CONFIG_ARM64_DEBUG_PRIORITY_MASKING) &&
->> +	    system_uses_irq_prio_masking()) {
->> +		u32 pmr = read_sysreg_s(SYS_ICC_PMR_EL1);
->> +
->> +		WARN_ON(pmr != GIC_PRIO_IRQON && pmr != GIC_PRIO_IRQOFF);
->> +	}
->> +
->>  	asm volatile(ALTERNATIVE(
->>  		"msr	daifset, #2		// arch_local_irq_disable",
->>  		"msr_s  " __stringify(SYS_ICC_PMR_EL1) ", %0",
->> --
->> 1.9.1
->>
-> 
-> nit: There is also the question of using WARN_ON in a context that will
-> be extremely noisy if we're in a condition where this fires.
-> WARN_ON_ONCE, maybe? This is a debugging thing, so maybe we just don't care.
-> 
 
-Yes, thinking about it, it did get pretty noisy when I checked this was
-working. WARN_ON_ONCE might be a good option.
+> Will
+>
+> --->8
+>
+> diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
+> index ca209103cd06..fa230ff09aa1 100644
+> --- a/arch/arm64/kernel/vdso/Makefile
+> +++ b/arch/arm64/kernel/vdso/Makefile
+> @@ -12,9 +12,8 @@ obj-vdso := gettimeofday.o note.o sigreturn.o
+>  targets := $(obj-vdso) vdso.so vdso.so.dbg
+>  obj-vdso := $(addprefix $(obj)/, $(obj-vdso))
+>
+> -ldflags-y := -shared -nostdlib -soname=linux-vdso.so.1 \
+> -               $(call ld-option, --build-id) \
+> -               $(call ld-option, --hash-style=sysv) -n -T
+> +ldflags-y := -shared -nostdlib -soname=linux-vdso.so.1 --hash-style=sysv \
+> +               --build-id -n -T
+>
+>  # Disable gcov profiling for VDSO code
+>  GCOV_PROFILE := n
 
-Thanks,
+
 
 -- 
-Julien Thierry
+Best Regards
+Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
