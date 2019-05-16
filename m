@@ -2,50 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B3E5200C0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 09:59:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2B16200CB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 16 May 2019 10:00:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=VgwVRVIcvyr09M0oD7iXaYsIy+TweZBmv3oW0WQ9j+w=; b=fZpQMYrrXwW2dcQEjc+8l9eUY
-	3ObIKa5c89NNVWPfTch5tn0quHT8EElMHcP0Q8Sufm5sodLMg/pxEAdI5H/a6jBrjazJY/GxB1WvO
-	cU6RvOJ3ZvTxHC1ZA69n8zmOrh1TuV7TTaa4QJwotzXaihxi6Noxqw1nr+4EjmWEUNByLtONVaaDm
-	eTyQ7EqhChsblnW3xIG5I/beWeDLB2Y8D8JGX/GgwW6JelRSolfhVCMFn4+jj/0UFOZWaMYIt1itF
-	J0mtLqgPhvCJV5+2SwjUBAMybPw9DaQbvwi9L0v4VPnleiP82TZXhUNdTZc4VYOjN6im5OTHs3m0x
-	RPwKvqIcA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=RjzL8pRXKiW8rtOMPtwljX0wC5Xv9XSUODAs0xYik5w=; b=fH92GlEKMS72DY
+	uilgGyFk6u5B89ivFdiwp4AD/ODrSBQZUDe5npF/WsJW0KgMKlVRZ7zhi5iwx8BHHbApqYgucd0U4
+	MVFZ0EQay2ZtOUfRA4GJ1VpzH03mVctsC32RzFv+93YcHBx1hqUyFxbHCt5S6T2f6GPUIOjsQI1W8
+	fdleUcFsaVVk413Q7hf0bCqr7D+zQY0jpky2/2ifFT+vjYfhoSJ08+HQniRHiu0ETYtUbYocvWAEj
+	eCK1wx0aNpnqRMGXsbaV2YCZV4utYVckb017BAyG9zyuSe0IJSxNL3ZYiXs+6D3S7QWTUF0Dk7IJa
+	mreCLg1o08nn4WAGEfRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRBI5-0002pr-K5; Thu, 16 May 2019 07:59:01 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRBHw-0002oW-Mq; Thu, 16 May 2019 07:58:55 +0000
-Received: from localhost (p54B334EA.dip0.t-ipconnect.de [84.179.52.234])
- by pokefinder.org (Postfix) with ESMTPSA id 3A3302C04C2;
- Thu, 16 May 2019 09:58:49 +0200 (CEST)
-Date: Thu, 16 May 2019 09:58:48 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Annaliese McDermond <nh6z@nh6z.net>
-Subject: Re: [PATCH v2] i2c: bcm2835: Model Divider in CCF
-Message-ID: <20190516075848.GA1033@kunai>
-References: <20190508071227.18609-1-nh6z@nh6z.net>
- <4174B26B-4E3A-4CCA-A5ED-BE62A3B5E66A@nh6z.net>
+	id 1hRBJE-0003LX-0A; Thu, 16 May 2019 08:00:12 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hRBIp-00038w-9G
+ for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 07:59:49 +0000
+X-Originating-IP: 80.215.246.107
+Received: from localhost (unknown [80.215.246.107])
+ (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 5B0CC1C000D;
+ Thu, 16 May 2019 07:59:28 +0000 (UTC)
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Mark Brown <broonie@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>
+Subject: [PATCH v3 1/2] dt-bindings: sound: Convert Allwinner SPDIF binding to
+ YAML
+Date: Thu, 16 May 2019 09:59:25 +0200
+Message-Id: <706cb97ae45cc9edc49c8709b2189ed786d2c7db.1557993523.git-series.maxime.ripard@bootlin.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <4174B26B-4E3A-4CCA-A5ED-BE62A3B5E66A@nh6z.net>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_005852_887797_B5D58C00 
-X-CRM114-Status: GOOD (  11.99  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190516_005947_615833_08B40330 
+X-CRM114-Status: GOOD (  14.30  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.197 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -58,89 +61,201 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: stefan.wahren@i2se.com, f.fainelli@gmail.com, swarren@wwwdotorg.org,
- team@nwdigitalradio.com, Eric Anholt <eric@anholt.net>,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-i2c@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============2971374227558525926=="
+Cc: Maxime Ripard <maxime.ripard@bootlin.com>, devicetree@vger.kernel.org,
+ alsa-devel@alsa-project.org, Chen-Yu Tsai <wens@csie.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The Allwinner SoCs feature an SPDIF controller across multiple SoC
+generations.
 
---===============2971374227558525926==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="r5Pyd7+fXNt84Ff3"
-Content-Disposition: inline
+However, earlier generations were a bit simpler than the subsequent ones,
+and for example would always have RX and TX capabilities, and no reset
+lines.
 
+In order to express this, let's create two YAML schemas instead of the free
+form text we had before.
 
---r5Pyd7+fXNt84Ff3
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 
-Hi Annaliese,
+---
 
-On Wed, May 15, 2019 at 10:37:03PM -0700, Annaliese McDermond wrote:
-> I=E2=80=99m just following up on this since I haven=E2=80=99t heard anyth=
-ing since I submitted the
-> v2 patch a week ago.  Wolfram, does this look like a sane approach?  Stef=
-an,
-> were my changes in v2 acceptable?
+Changes from v2:
+  - Add comments
 
-There is a bit of overhead involved, but conceptually it looks like an
-elegant solution to me. However, I am not an expert of CCF. Grepping
-through kernel sources, I don't see many clocks defined outside
-drivers/clk. So, I'd appreciate if we could get some ack/feedback from
-one of the CCF experts/maintainers.
+Changes from v1:
+  - Merged the two schemas together and used the draft-7 conditionals
+---
+ Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml | 101 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ Documentation/devicetree/bindings/sound/sunxi,sun4i-spdif.txt          |  42 +------------------------------
+ 2 files changed, 101 insertions(+), 42 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml
+ delete mode 100644 Documentation/devicetree/bindings/sound/sunxi,sun4i-spdif.txt
 
-> I=E2=80=99m happy to go back to the drawing board to change things if the=
-re=E2=80=99s a better
-> answer to the problem.
->=20
-> Thanks for everyone=E2=80=99s patience with me trying to work through the=
- proper
-> process.
+diff --git a/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml b/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml
+new file mode 100644
+index 000000000000..5d72d48e923e
+--- /dev/null
++++ b/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml
+@@ -0,0 +1,101 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/sound/allwinner,sun4i-a10-spdif.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Allwinner A10 S/PDIF Controller Device Tree Bindings
++
++maintainers:
++  - Chen-Yu Tsai <wens@csie.org>
++  - Liam Girdwood <lgirdwood@gmail.com>
++  - Mark Brown <broonie@kernel.org>
++  - Maxime Ripard <maxime.ripard@bootlin.com>
++
++properties:
++  "#sound-dai-cells":
++    const: 0
++
++  compatible:
++    oneOf:
++      - const: allwinner,sun4i-a10-spdif
++      - const: allwinner,sun6i-a31-spdif
++      - const: allwinner,sun8i-h3-spdif
++      - items:
++          - const: allwinner,sun8i-a83t-spdif
++          - const: allwinner,sun8i-h3-spdif
++      - items:
++          - const: allwinner,sun50i-a64-spdif
++          - const: allwinner,sun8i-h3-spdif
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    items:
++      - description: Bus Clock
++      - description: Module Clock
++
++  clock-names:
++    items:
++      - const: apb
++      - const: spdif
++
++  dmas:
++    items:
++      - description: RX DMA Channel
++      - description: TX DMA Channel
++
++  dma-names:
++    items:
++      - const: rx
++      - const: tx
++
++  # Even though it only applies to subschemas under the conditionals,
++  # not listing them here will trigger a warning because of the
++  # additionalsProperties set to false.
++  resets:
++    maxItems: 1
++
++allOf:
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - allwinner,sun6i-a31-spdif
++              - allwinner,sun8i-h3-spdif
++
++    then:
++      required:
++        - resets
++
++required:
++  - "#sound-dai-cells"
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++  - dmas
++  - dma-names
++
++additionalProperties: false
++
++examples:
++  - |
++    spdif: spdif@1c21000 {
++        #sound-dai-cells = <0>;
++        compatible = "allwinner,sun4i-a10-spdif";
++        reg = <0x01c21000 0x40>;
++        interrupts = <13>;
++        clocks = <&apb0_gates 1>, <&spdif_clk>;
++        clock-names = "apb", "spdif";
++        dmas = <&dma 0 2>, <&dma 0 2>;
++        dma-names = "rx", "tx";
++    };
++
++...
+diff --git a/Documentation/devicetree/bindings/sound/sunxi,sun4i-spdif.txt b/Documentation/devicetree/bindings/sound/sunxi,sun4i-spdif.txt
+deleted file mode 100644
+index 0c64a209c2e9..000000000000
+--- a/Documentation/devicetree/bindings/sound/sunxi,sun4i-spdif.txt
++++ /dev/null
+@@ -1,42 +0,0 @@
+-Allwinner Sony/Philips Digital Interface Format (S/PDIF) Controller
+-
+-The Allwinner S/PDIF audio block is a transceiver that allows the
+-processor to receive and transmit digital audio via an coaxial cable or
+-a fibre cable.
+-For now only playback is supported.
+-
+-Required properties:
+-
+-  - compatible		: should be one of the following:
+-    - "allwinner,sun4i-a10-spdif": for the Allwinner A10 SoC
+-    - "allwinner,sun6i-a31-spdif": for the Allwinner A31 SoC
+-    - "allwinner,sun8i-h3-spdif": for the Allwinner H3 SoC
+-
+-  - reg			: Offset and length of the register set for the device.
+-
+-  - interrupts		: Contains the spdif interrupt.
+-
+-  - dmas		: Generic dma devicetree binding as described in
+-			  Documentation/devicetree/bindings/dma/dma.txt.
+-
+-  - dma-names		: Two dmas have to be defined, "tx" and "rx".
+-
+-  - clocks		: Contains an entry for each entry in clock-names.
+-
+-  - clock-names		: Includes the following entries:
+-	"apb"		  clock for the spdif bus.
+-	"spdif"		  clock for spdif controller.
+-
+-  - resets		: reset specifier for the ahb reset (A31 and newer only)
+-
+-Example:
+-
+-spdif: spdif@1c21000 {
+-	compatible = "allwinner,sun4i-a10-spdif";
+-	reg = <0x01c21000 0x40>;
+-	interrupts = <13>;
+-	clocks = <&apb0_gates 1>, <&spdif_clk>;
+-	clock-names = "apb", "spdif";
+-	dmas = <&dma 0 2>, <&dma 0 2>;
+-	dma-names = "rx", "tx";
+-};
 
-Thanks for working on this one!
-
-Kind regards,
-
-   Wolfram
-
-
---r5Pyd7+fXNt84Ff3
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAlzdGDQACgkQFA3kzBSg
-KbYQWg/5AdfmRi/ctOOZd7sOQgmD0lEnr9/6ymkWQRAGt5Q9ydawpT6Naol0J+wP
-3V/a6n6NCsrzRl+8U2SfV6TUPIPGhEz32NwWx3rnbPSG0JKJcoWA3rkPbnZOFWzh
-/4jojbUzI6TJQiOpizOKzGex+Pyjb1mo3oSw7mgYPQ13wHISa4gZdy84fjGeQeUf
-2XGHQqkPJII47O4inWLXGc81IQfnWld1CGgY87EgY7YgzmwYXDqH/uzfnxVo8CTU
-CU5UNiPBnIgdcC9zbkajNqIbPn5OXbZ2AwnNekIXKzAseJcjfciAAJKyo4Wrx8Aa
-5HkbkCYxl2FudXhJLhNv+aEl2wOgCi17aujJgMYseDZlfPPL7NZYJ1KSVIbCdam9
-XrkOb1ukxbdu4jh+bzQSRkmQoPlcPCV1UVvJOU4yvSzpjqzUKIwqY1OLLAJDvZh2
-qNPcI52UWiv1NQLyYflcHWAgweQl7DmxMOVbF8P4FGvkIfY2AJhor1i05KbNzdW2
-QMaOjAEE5EHhSARBK2365kfucjpcib3tDrVC+pZsE0uISVUp1Eabs8JeAu+1Vy2Y
-HI/3R1BfvgIjhnwv1jPAdD1qND0dD0px5PeQ0Sl/vqx4eW597pHNxUUItHcUpKfU
-QhXINFxHkoP45ozosW2YyrVfHFPKDGm0Bf3ZnZcqev5A+GaDQSM=
-=XauL
------END PGP SIGNATURE-----
-
---r5Pyd7+fXNt84Ff3--
-
-
---===============2971374227558525926==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+base-commit: 00c3bc00f0cadbb48f2414370733892676511e79
+-- 
+git-series 0.9.1
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2971374227558525926==--
-
