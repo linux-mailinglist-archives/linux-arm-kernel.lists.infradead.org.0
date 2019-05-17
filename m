@@ -2,58 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B09C2192D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 15:27:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA8152193A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 15:35:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QXWGSVsW/1xMZ4lv35MF9H7aPUSaCZOEaHE9fgeYBCA=; b=G+Z34irT1Gm7B9
-	xXB/kbn2IbwelezMddhNfyC2z4QX80TOvX8QkwqDpVU/wWXC9a1atOwvfVCk7nn5Ol5rG0H6Lw3J1
-	xi0OZ4L486hlvk6sHyPyvn8aGbgxIH77jYnC7IvGEcJ4yODg22Fwfqie8q6wDjb1VTE0tZ4b+8HKx
-	6g0FwdoAj/mUsYhLnW1CZ9imDdL4aNybGsRERzs+SzRXG3K+VFOnxWQLOWH3lskIQKaKcRSiYpmPV
-	y+nEqaVjg4LKmDV0OBpoQBnDN8W2Z0DS2ubftedpKwulPw69x5GfX8VzUPP0ik4KQp39Dz7mPlWtt
-	fcYdH5SUly/4hny/ihfA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sjjjaXP/1RQhYAooEh4yJJ3GPDSkYcYaS/I+ZNAUfDk=; b=ahWrtUmGACZPj5
+	rltElo0qVqKtnWktfjJcw1EUz0t0N/GTao8+syv3Por8sb3xykHcAaZM74uh0IfAogEqAPzAMu/Iv
+	6RHif5FEtZt6nXM0CcQmobYs1vlNuQd2lixbiX0lB7euPXecIWpdtTzNiy25DYj/5+/zlRahVXKAO
+	C1Txz5PllDjs1uVG5JP/LVMIt1n42EEUZbFX5xg286iOz1ZoO0lAiFDQ5MmfXsmJnwsMS1ORHQPwy
+	ta2hAcE5HQFtEoH+GQcv44ow+kNqGaDYp46aPa/pZ3M2flleezkKUYNpfYY8LuSCUkdwAXDkHsGae
+	hrAQqo81QvsiHkXKbD+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRcta-0005tQ-Cl; Fri, 17 May 2019 13:27:34 +0000
-Received: from mga06.intel.com ([134.134.136.31])
+	id 1hRd1Z-0000au-J4; Fri, 17 May 2019 13:35:49 +0000
+Received: from mout.kundenserver.de ([212.227.17.13])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRctS-0005sd-Tp; Fri, 17 May 2019 13:27:28 +0000
-X-Amp-Result: UNSCANNABLE
-X-Amp-File-Uploaded: False
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
- by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 17 May 2019 06:27:26 -0700
-X-ExtLoop1: 1
-Received: from kuha.fi.intel.com ([10.237.72.189])
- by fmsmga001.fm.intel.com with SMTP; 17 May 2019 06:27:21 -0700
-Received: by kuha.fi.intel.com (sSMTP sendmail emulation);
- Fri, 17 May 2019 16:27:21 +0300
-Date: Fri, 17 May 2019 16:27:21 +0300
-From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>
-Subject: Re: [v3 PATCH] dt-binding: usb: add usb-role-switch property
-Message-ID: <20190517132721.GB1887@kuha.fi.intel.com>
-References: <c3596e996c9ab39c6b9bc14b93309244c4a55014.1557306151.git.chunfeng.yun@mediatek.com>
+ id 1hRd1R-0000aV-O2
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 13:35:43 +0000
+Received: from [192.168.178.167] ([109.104.37.130]) by
+ mrelayeu.kundenserver.de (mreue108 [212.227.15.183]) with ESMTPSA (Nemesis)
+ id 1M26n9-1hPhDI0msr-002bf9; Fri, 17 May 2019 15:35:33 +0200
+Subject: Re: ARM: Possible memleak during i.MX6ULL probe
+To: Daniel Baluta <daniel.baluta@nxp.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>
+References: <8b0e51fc-2b26-f98d-7afa-26c6b397d847@i2se.com>
+ <47c1ff2c3d904fdf7cac6ceba254ee7d67948805.camel@nxp.com>
+From: Stefan Wahren <stefan.wahren@i2se.com>
+Message-ID: <9ed1247a-99c6-37f9-693a-28a12648bc0d@i2se.com>
+Date: Fri, 17 May 2019 15:35:32 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <c3596e996c9ab39c6b9bc14b93309244c4a55014.1557306151.git.chunfeng.yun@mediatek.com>
-User-Agent: Mutt/1.11.4 (2019-03-13)
+In-Reply-To: <47c1ff2c3d904fdf7cac6ceba254ee7d67948805.camel@nxp.com>
+Content-Language: en-US
+X-Provags-ID: V03:K1:6adCMSEo5sV3Zl+oURjjTxr5WWMVOvTYRWoVLgNtTJGLcb4we/p
+ 6xFBehuFAn4c3mBrIiMMqhF3Kcj0Z0zC6FFJ0HOqiTekH/9Pgm4YzQjtND0vF6L1Gp01DOM
+ CMb7zo/Vqoq3/t70BMYJG2qPp6yDfoTYrlHzvadiFOwpE8eCfvhZtWdVF/0i60IIK4zR9jm
+ yxHbrzYY8/Mt9eAbzlCEw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:j6ynR8nkM1g=:PEhrm1NyqT9Opkn6jZmVqW
+ 0nSqbHEU3KophZiWbfSU7IcRC0Lg8L9E5G8z9AERb8wfDaSfXuAVpjczetVX0LDJzK5WhVzsw
+ R4URbgyJv+SRlr2mKR80twgRXEcq/2nhvi7D/tslmdVMROWCt5VpTGoS9HPhyVx952Bq9MVfl
+ vlhBI0aeCyamVDoeaQfQR7lx8Vev8Hmaik1npLcjDWdBrTgrJgGoFtscQCOKpLcn0NrQI5RuO
+ Ax3/XExN98jxtJiuiCoXl4xhO1+uM7SdL482iud9KA8SEuf76leCql/yjQYz4nb34OGyjZGLQ
+ lnzS6Jjbk4dNKb4Lh39SkXYfuXH2m9QRyJxx09x6fqH0CcONNGzW8+Bk9SFIa6AKNMDBhTrJp
+ K97CN3KmpIyMoZ63WIboCiFbk01cQLg+Fp0HwJ59KFHK4TcuFD0bgKAyTqgw2SuuhHjrOCOyp
+ T3bIFcbXTwafrbNr1pCcC3EDpW3qtRyqL1Tzhxkk36n3PgA0CEZVuSMB5lw+khFCfKcZB0ZSK
+ OpPjJdWc2BZNbNs1H7MiBulKrexAbRLAWtELggxQIoLtYqyJpQWKZ+5phFjZYMve7ETevmP3q
+ rCto9ajxiZ19gDzJyJNeLlVGOPCvEWbyUiCf6RcQdwMTvEmnNXeh12tgYSeLOSNNZhsjf15Fm
+ D+FgVh/6ha5tMbSWkHPsMtgIedDgFpLlnT5lionSuu2vAU2Ou1vXYkArZ7tdrhZzrTbvID+Q/
+ znIRz89B0ip7LbDkdzHjF+p7Iq7JEee0+7eZPegFMKesXOzXLN4YXLKo/3s=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190517_062727_005609_9B6D5C18 
-X-CRM114-Status: GOOD (  19.11  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190517_063542_088358_D038CC00 
+X-CRM114-Status: GOOD (  14.82  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.31 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.13 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -65,82 +82,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Felipe Balbi <felipe.balbi@linux.intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
- Yu Chen <chenyu56@huawei.com>, linux-kernel@vger.kernel.org,
- Biju Das <biju.das@bp.renesas.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Min Guo <min.guo@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: dl-linux-imx <linux-imx@nxp.com>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 08, 2019 at 05:17:44PM +0800, Chunfeng Yun wrote:
-> Add a property usb-role-switch to tell the driver that use
-> USB Role Switch framework to handle the role switch,
-> it's useful when the driver has already supported other ways,
-> such as extcon framework etc.
-> 
-> Cc: Biju Das <biju.das@bp.renesas.com>
-> Cc: Yu Chen <chenyu56@huawei.com>
-> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Hi Daniel,
 
-Who is meant to pick this? Can you include this in your series where
-you introduce that USB Type-B GPIO connector driver?
-
-FWIW:
-
-Reviewed-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-
-> ---
-> v3:
->     add property type, modify description suggested by Heikki
-> 
-> v2:
->     describe it in terms of h/w functionality suggested by Rob
-> 
-> v1:
->     the property is discussed in:
->     [v2,2/7] dt-bindings: usb: renesas_usb3: add usb-role-switch property
->     https://patchwork.kernel.org/patch/10852497/
-> 
->     Mediatek and Hisilicon also try to use it:
->     [v4,3/6] dt-bindings: usb: mtu3: add properties about USB Role Switch
->     https://patchwork.kernel.org/patch/10918385/
->     [v4,6/6] usb: mtu3: register a USB Role Switch for dual role mode
->     https://patchwork.kernel.org/patch/10918367/
-> 
->     [v6,10/13] usb: dwc3: Registering a role switch in the DRD code
->     https://patchwork.kernel.org/patch/10909981/
-> ---
->  Documentation/devicetree/bindings/usb/generic.txt | 4 ++++
->  1 file changed, 4 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/usb/generic.txt b/Documentation/devicetree/bindings/usb/generic.txt
-> index 0a74ab8dfdc2..cf5a1ad456e6 100644
-> --- a/Documentation/devicetree/bindings/usb/generic.txt
-> +++ b/Documentation/devicetree/bindings/usb/generic.txt
-> @@ -30,6 +30,10 @@ Optional properties:
->  			optional for OTG device.
->   - adp-disable: tells OTG controllers we want to disable OTG ADP, ADP is
->  			optional for OTG device.
-> + - usb-role-switch: boolean, indicates that the device is capable of assigning
-> +			the USB data role (USB host or USB device) for a given
-> +			USB connector, such as Type-C, Type-B(micro).
-> +			see connector/usb-connector.txt.
+On 17.05.19 15:03, Daniel Baluta wrote:
+> Hi Stefan,
+>
+> Can you try the following patch:
+>
+> diff --git a/drivers/base/regmap/regmap-debugfs.c
+> b/drivers/base/regmap/regmap-debugfs.c
+> index 263f82516ff4..a2225efffdda 100644
+> --- a/drivers/base/regmap/regmap-debugfs.c
+> +++ b/drivers/base/regmap/regmap-debugfs.c
+> @@ -579,6 +579,9 @@ void regmap_debugfs_init(struct regmap *map, const
+> char *name)
+>         }
 >  
->  This is an attribute to a USB controller such as:
->  
-> -- 
-> 2.21.0
+>         if (!strcmp(name, "dummy")) {
+> +               if (map->debugfs_name)
+> +                       kfree(map->debugfs_name);
+> +
+>                 map->debugfs_name = kasprintf(GFP_KERNEL, "dummy%d",
+>                                                 dummy_index);
 
-thanks,
+unfortunately this doesn't fix the issue.
 
--- 
-heikki
+Stefan
+
+>
+>
+> thanks,
+> Daniel.
+>
+> On Fri, 2019-05-17 at 14:42 +0200, Stefan Wahren wrote:
+>> Hi,
+>>
+>> today i tested current linus-tree ( a6a4b66bd8f ) with our custom
+>> i.MX6ULL board and i noticed a possible memleak:
+>>
+>> unreferenced object 0xd8366600 (size 64):
+>>   comm "swapper/0", pid 1, jiffies 4294937370 (age 933.220s)
+>>   hex dump (first 32 bytes):
+>>     64 75 6d 6d 79 2d 69 6f 6d 75 78 63 2d 67 70 72  dummy-iomuxc-gpr
+>>     40 32 30 65 34 30 30 30 00 e3 f3 ab fe d1 1b dd  @20e4000........
+>>   backtrace:
+>>     [<b0402aec>] kasprintf+0x2c/0x54
+>>     [<a6fbad2c>] regmap_debugfs_init+0x7c/0x31c
+>>     [<9c8d91fa>] __regmap_init+0xb5c/0xcf4
+>>     [<5b1c3d2a>] of_syscon_register+0x164/0x2c4
+>>     [<596a5d80>] syscon_node_to_regmap+0x64/0x90
+>>     [<49bd597b>] imx6ul_init_machine+0x34/0xa0
+>>     [<250a4dac>] customize_machine+0x1c/0x30
+>>     [<2d19fdaf>] do_one_initcall+0x7c/0x398
+>>     [<e6084469>] kernel_init_freeable+0x328/0x448
+>>     [<168c9101>] kernel_init+0x8/0x114
+>>     [<913268aa>] ret_from_fork+0x14/0x20
+>>     [<ce7b131a>] 0x0
+>>
+>> Best regards
+>> Stefan Wahren
+>>
 
 _______________________________________________
 linux-arm-kernel mailing list
