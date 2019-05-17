@@ -2,106 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36386216A1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 12:02:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7312B216B5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 12:08:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=aGIpGzStihexzcZUgWo4qDkL78rnv5zTuVaLPWrb16U=; b=LsPCYEaNMa/kG0
-	7G7Qq39WHcvd74NzUlQ7mRQgszVM9Ri605Lp6lic3XIqGGhTrM9rqwJqLJ9zS2jQkQacCiA+uKory
-	XwnUcg3VH/iCEW9XwYNVWSoTY7oenCltBz9NBY7+BRyv+bZpptym43yqJv7lilu3hOVB+vuqZwym5
-	CgWyXkAavPBVnch+Rkkp6p4FOGvuhIiqAq0VJnywtBJBFb3sKhaW5WVaCY81s1CN7+ax+YB3SAMO1
-	NNPYlFuBTGT3+rbFTbzScNrqEPo5GZC7N/eyvK1+WWcB7BV6pvg+4YlD+stb0H4MQUmoz5wBu1y/i
-	tB9JeQ+xzupvs1vH8HDw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Z7AfJxFWA4ckmrwRlwkw+hPlXLkXVGCNKRDpAesQ2f8=; b=d2w92gKdeb+eyq
+	frRkqRydVABE/jcfZ861/gH0/hx2+KJen92dP+vBOLLXIHrdpoMA2tTO9NZ1DdLB7+pBR3xeWyjYP
+	QfGuq8e0uqkFnNQAfz0ckWF2G1XqnfscHjx5YcIdZTFSnQ0ffWIeW0tDEQ2WMmA0CBUFUBXIny/lB
+	y5KAZYk+pbBzKovDTbctNEb0UnobRWtMwZI6B4TAn+cmexmHwOLJDsfSV3M0I0225VZYPlOGxClgE
+	62D6bsPsyH7ga3WTY3JMp4NpHfQTFPCW0rZz2LHIhhBhfZGfXd5XjkZ63KiCg69P870r5XJboCBZz
+	8Xdj66ekH5jMoGcrrr9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRZgb-0006Jd-4Q; Fri, 17 May 2019 10:01:57 +0000
-Received: from mail-eopbgr20054.outbound.protection.outlook.com ([40.107.2.54]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRZgT-0006Iq-Dj
- for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 10:01:50 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=xsWYX+LQ6+TTAsXvHqgH/Yc6JCQoQ3ScAu2622F7yRo=;
- b=sElC5dxoX76kegZSC65o65fhophQlAcpDfnCAoN/5uVmpQzRKiuyn6Ft1Iyk2tLNofTQ3bOfKdXKe2/IUaJtN9CjyJ9VddaezWcTPU7Sc0eWUe1fhXXKJqUIBHzpXBxfL/yGS+dgm3ssU/yBNJXUR7jWb8QKurgBHydxdJPyE6E=
-Received: from VI1PR0401MB2496.eurprd04.prod.outlook.com (10.168.65.10) by
- VI1PR0401MB2605.eurprd04.prod.outlook.com (10.168.65.146) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1900.17; Fri, 17 May 2019 10:01:42 +0000
-Received: from VI1PR0401MB2496.eurprd04.prod.outlook.com
- ([fe80::3d45:6b81:13ba:88cf]) by VI1PR0401MB2496.eurprd04.prod.outlook.com
- ([fe80::3d45:6b81:13ba:88cf%7]) with mapi id 15.20.1900.010; Fri, 17 May 2019
- 10:01:42 +0000
-From: Pankaj Bansal <pankaj.bansal@nxp.com>
-To: Leo Li <leoyang.li@nxp.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, Stefan Wahren <stefan.wahren@i2se.com>
-Subject: [PATCH v2] arm64: defconfig: enable NXP FlexCAN driver
-Thread-Topic: [PATCH v2] arm64: defconfig: enable NXP FlexCAN driver
-Thread-Index: AQHVDJeG87Iu/WpLp0aB31mRVY0bxg==
-Date: Fri, 17 May 2019 10:01:42 +0000
-Message-ID: <20190517152513.23339-1-pankaj.bansal@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: PN1PR0101CA0012.INDPRD01.PROD.OUTLOOK.COM
- (2603:1096:c00:e::22) To VI1PR0401MB2496.eurprd04.prod.outlook.com
- (2603:10a6:800:56::10)
-x-mailer: git-send-email 2.17.1
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=pankaj.bansal@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [92.120.1.69]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 947d206a-8951-415f-8c0d-08d6daaea92b
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR0401MB2605; 
-x-ms-traffictypediagnostic: VI1PR0401MB2605:
-x-microsoft-antispam-prvs: <VI1PR0401MB2605ABAAFCE74E082AAFCCC0F10B0@VI1PR0401MB2605.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:751;
-x-forefront-prvs: 0040126723
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(376002)(366004)(39860400002)(136003)(346002)(189003)(199004)(68736007)(66066001)(6486002)(6436002)(86362001)(186003)(486006)(476003)(2616005)(44832011)(26005)(73956011)(316002)(6512007)(36756003)(66946007)(64756008)(66476007)(66556008)(66446008)(110136005)(81166006)(8676002)(2906002)(7736002)(50226002)(1076003)(6506007)(3846002)(53936002)(478600001)(81156014)(386003)(102836004)(52116002)(6116002)(99286004)(5660300002)(14454004)(71190400001)(71200400001)(305945005)(25786009)(256004)(4744005)(4326008)(8936002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0401MB2605;
- H:VI1PR0401MB2496.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: OaPM8V7arQyO69pFTWDCFi6OhpGOK/rAWZSm5kvR1Z1aNagW0ebiWpcbM/Psi2WM0layn4XIOrdFkAPbgnuT9hvmExS84coeyvuk58BLryRT79E/+5dX71wxr1b03SCYg6jvLOU0oKnaIZyRLxanLElHtHhL63AzW281/KHz4SfjdIHTKnC8urHzcoYLfK3XiVvrh6OK8LXVEnRfmViUh4JM218LBLP2vC8G4PAQXVtLBmlkCn53h/jQL+5sEAawDzUPMVrqKkiqluObCftW4+w7VQFobBDfaEFmdT2HcnT4a6CSSnpuOe4/p8NSNa/hkmMy/z6ypVcfmzi7uWuHect5tG2dOCJvcJFzPPZFgIgiQp4eDT6+hG8uf9jt5dnVmv0FY8rTdvIaZ5Tm6/pwGqzI0fcFps/bxycNuiTvZdA=
+	id 1hRZmf-0008Sm-Q0; Fri, 17 May 2019 10:08:13 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hRZmY-0008SL-Uj
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 10:08:08 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AF7C680D;
+ Fri, 17 May 2019 03:08:05 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 44B683F575;
+ Fri, 17 May 2019 03:08:05 -0700 (PDT)
+Date: Fri, 17 May 2019 11:08:03 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Peter Zijlstra <peterz@infradead.org>
+Subject: Re: [PATCH v1 0/5] arm64: avoid out-of-line ll/sc atomics
+Message-ID: <20190517100802.GS8268@e119886-lin.cambridge.arm.com>
+References: <20190516155344.24060-1-andrew.murray@arm.com>
+ <20190517072401.GI2623@hirez.programming.kicks-ass.net>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 947d206a-8951-415f-8c0d-08d6daaea92b
-X-MS-Exchange-CrossTenant-originalarrivaltime: 17 May 2019 10:01:42.2066 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0401MB2605
+Content-Disposition: inline
+In-Reply-To: <20190517072401.GI2623@hirez.programming.kicks-ass.net>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190517_030149_468273_547D8F7C 
-X-CRM114-Status: GOOD (  10.38  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190517_030806_995817_1CD054DF 
+X-CRM114-Status: GOOD (  20.06  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.2.54 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -113,40 +64,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Boqun Feng <boqun.feng@gmail.com>, Will Deacon <will.deacon@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Ard.Biesheuvel@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable driver support of NXP FlexCAN controller.
+On Fri, May 17, 2019 at 09:24:01AM +0200, Peter Zijlstra wrote:
+> On Thu, May 16, 2019 at 04:53:39PM +0100, Andrew Murray wrote:
+> > When building for LSE atomics (CONFIG_ARM64_LSE_ATOMICS), if the hardware
+> > or toolchain doesn't support it the existing code will fallback to ll/sc
+> > atomics. It achieves this by branching from inline assembly to a function
+> > that is built with specical compile flags. Further this results in the
+> > clobbering of registers even when the fallback isn't used increasing
+> > register pressure.
+> > 
+> > Let's improve this by providing inline implementatins of both LSE and
+> > ll/sc and use a static key to select between them. This allows for the
+> > compiler to generate better atomics code.
+> 
+> Don't you guys have alternatives? That would avoid having both versions
+> in the code, and thus significantly cuts back on the bloat.
 
-Signed-off-by: Pankaj Bansal <pankaj.bansal@nxp.com>
----
+Yes we do.
 
-Notes:
-    V2:
-    - Make CAN bus driver as well as FLEXCAN driver as modules
+Prior to patch 3 of this series, the ARM64_LSE_ATOMIC_INSN macro used
+ALTERNATIVE to either bl to a fallback ll/sc function (and nops) - or execute
+some LSE instructions.
 
- arch/arm64/configs/defconfig | 2 ++
- 1 file changed, 2 insertions(+)
+But this approach limits the compilers ability to optimise the code due to
+the asm clobber list being the superset of both ll/sc and LSE - and the gcc
+compiler flags used on the ll/sc functions.
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 2d9c39033c1a..2cc291077bed 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -180,6 +180,8 @@ CONFIG_QRTR=m
- CONFIG_QRTR_SMD=m
- CONFIG_QRTR_TUN=m
- CONFIG_BPF_JIT=y
-+CONFIG_CAN=m
-+CONFIG_CAN_FLEXCAN=m
- CONFIG_BT=m
- CONFIG_BT_HIDP=m
- # CONFIG_BT_HS is not set
--- 
-2.17.1
+I think the alternative solution (excuse the pun) that you are suggesting
+is to put the body of the ll/sc or LSE code in the ALTERNATIVE oldinstr/newinstr
+blocks (i.e. drop the fallback branches). However this still gives us some
+bloat (but less than my current solution) because we're still now inlining the
+larger fallback ll/sc whereas previously they were non-inline'd functions. We
+still end up with potentially unnecessary clobbers for LSE code with this
+approach.
+
+Approach prior to this series:
+
+   BL 1 or NOP <- single alternative instruction
+   LSE
+   LSE
+   ...
+
+1: LL/SC <- LL/SC fallback not inlined so reused
+   LL/SC
+   LL/SC
+   LL/SC
+
+Approach proposed by this series:
+
+   BL 1 or NOP <- single alternative instruction
+   LSE
+   LSE
+   BL 2
+1: LL/SC <- inlined LL/SC and thus duplicated
+   LL/SC
+   LL/SC
+   LL/SC
+2: ..
+
+Approach using alternative without braces:
+
+   LSE
+   LSE
+   NOP
+   NOP
+
+or
+
+   LL/SC <- inlined LL/SC and thus duplicated
+   LL/SC
+   LL/SC
+   LL/SC
+
+I guess there is a balance here between bloat and code optimisation.
+
+> 
+> > These changes add a small amount of bloat on defconfig according to
+> > bloat-o-meter:
+> > 
+> > text:
+> >   add/remove: 1/108 grow/shrink: 3448/20 up/down: 272768/-4320 (268448)
+> >   Total: Before=12363112, After=12631560, chg +2.17%
+> 
+> I'd say 2% is quite significant bloat.
+
+Thanks,
+
+Andrew Murray
 
 _______________________________________________
 linux-arm-kernel mailing list
