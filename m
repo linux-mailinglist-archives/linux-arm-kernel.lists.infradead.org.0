@@ -2,69 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA40D21A8C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 17:27:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85ABC21A95
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 17:32:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MRM939Yq47b81JG8nboYhc6zDKWPr4Fyawk53dACsaQ=; b=Q1jr6RiOG/DFNR
-	MyFM7TyC40Q20rPhJY/06lg+yamOmfErXtQvdpHeNQlyza3P05HL1TTM9E3BUDhwTnHlG40eo/k1r
-	aba1/HJ9Uod0V118nuP2DrD2F79GCSBLyKeN8SNBgAfrGgV8QP2vPkAUdqRDU+Zgne5StPlEOqZyw
-	lxqoqsM6lYsSRSmSufz7jB53zkk7rGTK76wKv9FGZAan2HHAdk0/EHp9mYQRqFKHfjv2iAtQ9UBJo
-	VJrhJtCl9BreR8G5gmqyL0eeBZWDRyPJLirTAe40Mz9vtBzHelC1kgtgNiCSHRTkis2fLJB2qr0aW
-	blIpQkTVKQXt9nNqGLDA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wbsCVRxbeUltIvJyeb60izcSqTSRdJJ/j990nPJNDSE=; b=DQ1z5qiJPZIkmA
+	FjtdF3Fhi1NROXHoI/6g1mz3H66Pbsv7CVF9AAl+eVHQY8uLPcvHPuBVjYUJJZw/LgC8wZixf63Wu
+	b6PA6mPORoJWHx+oTEoWB1X9ydn65pX4cmMNyPtvHWekzDIsL1uQz+VuWnCfZtNno1fKTZHznbJ5C
+	hwWhZt85d1bRcw3JcWSzCWRwOK18bbDCYGqs+Qb6WX5kpgNX9E981c0VRwB1AGao4bc41EsF/uD9U
+	vYoHuSvctGmaFSULbLJ+zRBsvGROICx48PQdn3p1wsWXh+OQozM6AUHSuIZX7fjMdnlUcwE463Y1Y
+	nUR83UAhgpcStsbXmx2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRely-00041d-U9; Fri, 17 May 2019 15:27:50 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1hReqX-0006Eb-TP; Fri, 17 May 2019 15:32:33 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hReld-0003qM-52; Fri, 17 May 2019 15:27:33 +0000
-Received: by mail-ot1-f67.google.com with SMTP id r10so7102923otd.4;
- Fri, 17 May 2019 08:27:27 -0700 (PDT)
+ id 1hReqQ-0006EE-Lw
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 15:32:28 +0000
+Received: by mail-oi1-f196.google.com with SMTP id u199so5452799oie.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 17 May 2019 08:32:26 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=1XBYGYCbC9tO86cnAcGoXN5XYaU0F07Vjq2LhyumLK8=;
- b=Fc8dS8tQiUDdxxQNaJxARosdlqFLe+sW0BZzkYhyaFXYtGr9gkiBRDVGFwByguFuv9
- E52+QJAzVmetuQmRdymbE3d0AujjQNGhhtOb+hkqXM/oQoL7LcBAg0ClGeNm74Y2h8dj
- S9qbzUukVDKKcPr/cVENQyqFUKtFmprpdZwhT7X1rNVerNblJBn9Id9l0eqUr4Y5YTqa
- PKu9jhYUaLcDuqMsE6zlmw/q7s6pWh0351oUmgd6jrTzUBnQBY0RwgEKcAfHbLj83Qcp
- frrxP9FNjLQpqHptaseSWL+zaSVZMy59UxrnuQ9gCHGkU2WPZcYAZHDI5KoZDOjYqLkO
- 0qXQ==
-X-Gm-Message-State: APjAAAWlRYKPV1HRaNzhKxb9PA/bSzHWx9QC/4yAgSZpYT1oQTWcH0bh
- yJKMDrzjcmg92OarGz8fcQ==
-X-Google-Smtp-Source: APXvYqwpuRuRgUl0tfHm+0s59pTu5SXG0sJ9Py2DbN5qxuWHvjcE8+2uQPOaLAL0M1VpK04lYW8MQQ==
-X-Received: by 2002:a9d:6e07:: with SMTP id e7mr2184240otr.53.1558106846511;
- Fri, 17 May 2019 08:27:26 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=pjjzE4+GT6QIjZ+kII5LCAwn20M8y12XM5bh0VRi7ew=;
+ b=Q/7pCVC5moPcWFjO9qRMVrEDezTSdAzV1AtQmOj1dgQlcWQU9TnkKrxlVB+NGIt6ad
+ 18IaoMVhVK3aIuwwasn91LnxGB+/T6HtHK7ebpm0adHMQ40L99DiqNzoSYE09A6hunh8
+ 1rd5inXyi7KnVvWX0Ci5h6iw6zsRVNNkVzz7Q+3BxwvCM6fkG+d2qwjPQFdkiTtE/mek
+ cyvRgeqnoQKS2ItE7kkmUDh/owG4N4vc16qV4yzI80COHKSHDrSWL+MKMScIf3KjjPPc
+ lje4YHrRKUS93tQX1DXDeK6TmyJf2pf1MHJPlbWMJsNM0t5/8YmBDOM3Lfl2TK+wgN5T
+ h/oA==
+X-Gm-Message-State: APjAAAXxkoIY++U9abGYfRj75o7yg7C+wonmw8SfKLHK7qAeM+RAep+p
+ njHKaYjjwXxP5X/qnxwJ8ifsq6A=
+X-Google-Smtp-Source: APXvYqwg5SXymU7zD7SeYVYMf5gcjpsxlY2K1eWVqSYq+9YY8ETKnHq7xVg6IvwAIHJDUEMqkXhgqA==
+X-Received: by 2002:aca:aa8c:: with SMTP id t134mr9914294oie.169.1558107145584; 
+ Fri, 17 May 2019 08:32:25 -0700 (PDT)
 Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id i13sm2186859otl.27.2019.05.17.08.27.25
+ by smtp.googlemail.com with ESMTPSA id o124sm3340730oig.23.2019.05.17.08.32.24
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 17 May 2019 08:27:25 -0700 (PDT)
+ Fri, 17 May 2019 08:32:24 -0700 (PDT)
 From: Rob Herring <robh@kernel.org>
-To: Kevin Hilman <khilman@baylibre.com>
-Subject: [PATCH v3 2/2] dt-bindings: arm: Convert Amlogic board/soc bindings
- to json-schema
-Date: Fri, 17 May 2019 10:27:23 -0500
-Message-Id: <20190517152723.28518-2-robh@kernel.org>
+To: =?UTF-8?q?Andreas=20F=C3=A4rber?= <afaerber@suse.de>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v3] dt-bindings: arm: Convert Actions Semi bindings to
+ jsonschema
+Date: Fri, 17 May 2019 10:32:23 -0500
+Message-Id: <20190517153223.7650-1-robh@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190517152723.28518-1-robh@kernel.org>
-References: <20190517152723.28518-1-robh@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190517_082731_893762_8FF4B19D 
-X-CRM114-Status: GOOD (  13.12  )
+X-CRM114-CacheID: sfid-20190517_083226_713430_F8F6140A 
+X-CRM114-Status: GOOD (  13.22  )
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
+ no trust [209.85.167.196 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -87,302 +90,84 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Neil Armstrong <narmstrong@baylibre.com>, linux-kernel@vger.kernel.org,
- Carlo Caione <carlo@caione.org>, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert Amlogic SoC bindings to DT schema format using json-schema.
-
-Cc: Carlo Caione <carlo@caione.org>
-Cc: Kevin Hilman <khilman@baylibre.com>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: devicetree@vger.kernel.org
-Signed-off-by: Rob Herring <robh@kernel.org>
----
-v3:
-- Add board descriptions
-- Rebase onto Linus' master
-
- .../devicetree/bindings/arm/amlogic.txt       | 113 --------------
- .../devicetree/bindings/arm/amlogic.yaml      | 140 ++++++++++++++++++
- 2 files changed, 140 insertions(+), 113 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/arm/amlogic.txt
- create mode 100644 Documentation/devicetree/bindings/arm/amlogic.yaml
-
-diff --git a/Documentation/devicetree/bindings/arm/amlogic.txt b/Documentation/devicetree/bindings/arm/amlogic.txt
-deleted file mode 100644
-index 5f650248b18e..000000000000
---- a/Documentation/devicetree/bindings/arm/amlogic.txt
-+++ /dev/null
-@@ -1,113 +0,0 @@
--Amlogic MesonX device tree bindings
---------------------------------------------
--
--Work in progress statement:
--
--Device tree files and bindings applying to Amlogic SoCs and boards are
--considered "unstable". Any Amlogic device tree binding may change at
--any time. Be sure to use a device tree binary and a kernel image
--generated from the same source tree.
--
--Please refer to Documentation/devicetree/bindings/ABI.txt for a definition of a
--stable binding/ABI.
--
-----------------------------------------------------------------
--
--Boards with the Amlogic Meson6 SoC shall have the following properties:
--  Required root node property:
--    compatible: "amlogic,meson6"
--
--Boards with the Amlogic Meson8 SoC shall have the following properties:
--  Required root node property:
--    compatible: "amlogic,meson8";
--
--Boards with the Amlogic Meson8b SoC shall have the following properties:
--  Required root node property:
--    compatible: "amlogic,meson8b";
--
--Boards with the Amlogic Meson8m2 SoC shall have the following properties:
--  Required root node property:
--    compatible: "amlogic,meson8m2";
--
--Boards with the Amlogic Meson GXBaby SoC shall have the following properties:
--  Required root node property:
--    compatible: "amlogic,meson-gxbb";
--
--Boards with the Amlogic Meson GXL S905X SoC shall have the following properties:
--  Required root node property:
--    compatible: "amlogic,s905x", "amlogic,meson-gxl";
--
--Boards with the Amlogic Meson GXL S905D SoC shall have the following properties:
--  Required root node property:
--    compatible: "amlogic,s905d", "amlogic,meson-gxl";
--
--Boards with the Amlogic Meson GXL S805X SoC shall have the following properties:
--  Required root node property:
--    compatible: "amlogic,s805x", "amlogic,meson-gxl";
--
--Boards with the Amlogic Meson GXL S905W SoC shall have the following properties:
--  Required root node property:
--    compatible: "amlogic,s905w", "amlogic,meson-gxl";
--
--Boards with the Amlogic Meson GXM S912 SoC shall have the following properties:
--  Required root node property:
--    compatible: "amlogic,s912", "amlogic,meson-gxm";
--
--Boards with the Amlogic Meson AXG A113D SoC shall have the following properties:
--  Required root node property:
--    compatible: "amlogic,a113d", "amlogic,meson-axg";
--
--Boards with the Amlogic Meson G12A S905D2 SoC shall have the following properties:
--  Required root node property:
--    compatible: "amlogic,g12a";
--
--Board compatible values (alphabetically, grouped by SoC):
--
--  - "geniatech,atv1200" (Meson6)
--
--  - "minix,neo-x8" (Meson8)
--
--  - "endless,ec100" (Meson8b)
--  - "hardkernel,odroid-c1" (Meson8b)
--  - "tronfy,mxq" (Meson8b)
--
--  - "tronsmart,mxiii-plus" (Meson8m2)
--
--  - "amlogic,p200" (Meson gxbb)
--  - "amlogic,p201" (Meson gxbb)
--  - "friendlyarm,nanopi-k2" (Meson gxbb)
--  - "hardkernel,odroid-c2" (Meson gxbb)
--  - "nexbox,a95x" (Meson gxbb or Meson gxl s905x)
--  - "tronsmart,vega-s95-pro", "tronsmart,vega-s95" (Meson gxbb)
--  - "tronsmart,vega-s95-meta", "tronsmart,vega-s95" (Meson gxbb)
--  - "tronsmart,vega-s95-telos", "tronsmart,vega-s95" (Meson gxbb)
--  - "wetek,hub" (Meson gxbb)
--  - "wetek,play2" (Meson gxbb)
--
--  - "amlogic,p212" (Meson gxl s905x)
--  - "hwacom,amazetv" (Meson gxl s905x)
--  - "khadas,vim" (Meson gxl s905x)
--  - "libretech,cc" (Meson gxl s905x)
--
--  - "amlogic,p230" (Meson gxl s905d)
--  - "amlogic,p231" (Meson gxl s905d)
--  - "phicomm,n1" (Meson gxl s905d)
--
--  - "amlogic,p241" (Meson gxl s805x)
--  - "libretech,aml-s805x-ac" (Meson gxl s805x)
--
--  - "amlogic,p281" (Meson gxl s905w)
--  - "oranth,tx3-mini" (Meson gxl s905w)
--
--  - "amlogic,q200" (Meson gxm s912)
--  - "amlogic,q201" (Meson gxm s912)
--  - "khadas,vim2" (Meson gxm s912)
--  - "kingnovel,r-box-pro" (Meson gxm S912)
--  - "nexbox,a1" (Meson gxm s912)
--  - "tronsmart,vega-s96" (Meson gxm s912)
--
--  - "amlogic,s400" (Meson axg a113d)
--
--  - "amlogic,u200" (Meson g12a s905d2)
--  - "amediatech,x96-max" (Meson g12a s905x2)
--  - "seirobotics,sei510" (Meson g12a s905x2)
-diff --git a/Documentation/devicetree/bindings/arm/amlogic.yaml b/Documentation/devicetree/bindings/arm/amlogic.yaml
-new file mode 100644
-index 000000000000..6d5bb493db03
---- /dev/null
-+++ b/Documentation/devicetree/bindings/arm/amlogic.yaml
-@@ -0,0 +1,140 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/arm/amlogic.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Amlogic MesonX device tree bindings
-+
-+maintainers:
-+  - Neil Armstrong <narmstrong@baylibre.com>
-+  - Carlo Caione <carlo@caione.org>
-+  - Kevin Hilman <khilman@baylibre.com>
-+
-+description: |+
-+  Work in progress statement:
-+
-+  Device tree files and bindings applying to Amlogic SoCs and boards are
-+  considered "unstable". Any Amlogic device tree binding may change at
-+  any time. Be sure to use a device tree binary and a kernel image
-+  generated from the same source tree.
-+
-+  Please refer to Documentation/devicetree/bindings/ABI.txt for a definition of a
-+  stable binding/ABI.
-+
-+properties:
-+  $nodename:
-+    const: '/'
-+  compatible:
-+    oneOf:
-+      - description: Boards with the Amlogic Meson6 SoC
-+        items:
-+          - enum:
-+              - geniatech,atv1200
-+          - const: amlogic,meson6
-+
-+      - description: Boards with the Amlogic Meson8 SoC
-+        items:
-+          - enum:
-+              - minix,neo-x8
-+          - const: amlogic,meson8
-+
-+      - description: Boards with the Amlogic Meson8m2 SoC
-+        items:
-+          - enum:
-+              - tronsmart,mxiii-plus
-+          - const: amlogic,meson8m2
-+
-+      - description: Boards with the Amlogic Meson8b SoC
-+        items:
-+          - enum:
-+              - endless,ec100
-+              - hardkernel,odroid-c1
-+              - tronfy,mxq
-+          - const: amlogic,meson8b
-+
-+      - description: Boards with the Amlogic Meson GXBaby SoC
-+        items:
-+          - enum:
-+              - amlogic,p200
-+              - amlogic,p201
-+              - friendlyarm,nanopi-k2
-+              - hardkernel,odroid-c2
-+              - nexbox,a95x
-+              - wetek,hub
-+              - wetek,play2
-+          - const: amlogic,meson-gxbb
-+
-+      - description: Tronsmart Vega S95 devices
-+        items:
-+          - enum:
-+              - tronsmart,vega-s95-pro
-+              - tronsmart,vega-s95-meta
-+              - tronsmart,vega-s95-telos
-+          - const: tronsmart,vega-s95
-+          - const: amlogic,meson-gxbb
-+
-+      - description: Boards with the Amlogic Meson GXL S805X SoC
-+        items:
-+          - enum:
-+              - amlogic,p241
-+              - libretech,aml-s805x-ac
-+          - const: amlogic,s805x
-+          - const: amlogic,meson-gxl
-+
-+      - description: Boards with the Amlogic Meson GXL S905W SoC
-+        items:
-+          - enum:
-+              - amlogic,p281
-+              - oranth,tx3-mini
-+          - const: amlogic,s905w
-+          - const: amlogic,meson-gxl
-+
-+      - description: Boards with the Amlogic Meson GXL S905X SoC
-+        items:
-+          - enum:
-+              - amediatech,x96-max
-+              - amlogic,p212
-+              - hwacom,amazetv
-+              - khadas,vim
-+              - libretech,cc
-+              - nexbox,a95x
-+              - seirobotics,sei510
-+          - const: amlogic,s905x
-+          - const: amlogic,meson-gxl
-+
-+      - description: Boards with the Amlogic Meson GXL S905D SoC
-+        items:
-+          - enum:
-+              - amlogic,p230
-+              - amlogic,p231
-+              - phicomm,n1
-+          - const: amlogic,s905d
-+          - const: amlogic,meson-gxl
-+
-+      - description: Boards with the Amlogic Meson GXM S912 SoC
-+        items:
-+          - enum:
-+              - amlogic,q200
-+              - amlogic,q201
-+              - khadas,vim2
-+              - kingnovel,r-box-pro
-+              - nexbox,a1
-+              - tronsmart,vega-s96
-+          - const: amlogic,s912
-+          - const: amlogic,meson-gxm
-+
-+      - description: Boards with the Amlogic Meson AXG A113D SoC
-+        items:
-+          - enum:
-+              - amlogic,s400
-+          - const: amlogic,a113d
-+          - const: amlogic,meson-axg
-+
-+      - description: Boards with the Amlogic Meson G12A S905D2 SoC
-+        items:
-+          - enum:
-+              - amlogic,u200
-+          - const: amlogic,g12a
-+
-+...
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Q29udmVydCBBY3Rpb25zIFNlbWkgU29DIGJpbmRpbmdzIHRvIERUIHNjaGVtYSBmb3JtYXQgdXNp
+bmcganNvbi1zY2hlbWEuCgpDYzogIkFuZHJlYXMgRsOkcmJlciIgPGFmYWVyYmVyQHN1c2UuZGU+
+CkNjOiBNYW5pdmFubmFuIFNhZGhhc2l2YW0gPG1hbml2YW5uYW4uc2FkaGFzaXZhbUBsaW5hcm8u
+b3JnPgpDYzogTWFyayBSdXRsYW5kIDxtYXJrLnJ1dGxhbmRAYXJtLmNvbT4KQ2M6IGxpbnV4LWFy
+bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpDYzogZGV2aWNldHJlZUB2Z2VyLmtlcm5lbC5v
+cmcKU2lnbmVkLW9mZi1ieTogUm9iIEhlcnJpbmcgPHJvYmhAa2VybmVsLm9yZz4KLS0tCnYzOgot
+IHVwZGF0ZSBNQUlOVEFJTkVSUwoKIC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9hY3Rpb25z
+LnR4dCAgICAgICB8IDU2IC0tLS0tLS0tLS0tLS0tLS0tLS0KIC4uLi9kZXZpY2V0cmVlL2JpbmRp
+bmdzL2FybS9hY3Rpb25zLnlhbWwgICAgICB8IDM4ICsrKysrKysrKysrKysKIE1BSU5UQUlORVJT
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICAyICstCiAzIGZpbGVzIGNoYW5n
+ZWQsIDM5IGluc2VydGlvbnMoKyksIDU3IGRlbGV0aW9ucygtKQogZGVsZXRlIG1vZGUgMTAwNjQ0
+IERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9hcm0vYWN0aW9ucy50eHQKIGNyZWF0
+ZSBtb2RlIDEwMDY0NCBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvYXJtL2FjdGlv
+bnMueWFtbAoKZGlmZiAtLWdpdCBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9h
+cm0vYWN0aW9ucy50eHQgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvYXJtL2Fj
+dGlvbnMudHh0CmRlbGV0ZWQgZmlsZSBtb2RlIDEwMDY0NAppbmRleCBkNTRmMzNjNGUwZGEuLjAw
+MDAwMDAwMDAwMAotLS0gYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvYXJtL2Fj
+dGlvbnMudHh0CisrKyAvZGV2L251bGwKQEAgLTEsNTYgKzAsMCBAQAotQWN0aW9ucyBTZW1pIHBs
+YXRmb3JtcyBkZXZpY2UgdHJlZSBiaW5kaW5ncwotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLQotCi0KLVM1MDAgU29DCi09PT09PT09PQotCi1SZXF1aXJlZCByb290
+IG5vZGUgcHJvcGVydGllczoKLQotIC0gY29tcGF0aWJsZSA6ICBtdXN0IGNvbnRhaW4gImFjdGlv
+bnMsczUwMCIKLQotCi1Nb2R1bGVzOgotCi1Sb290IG5vZGUgcHJvcGVydHkgY29tcGF0aWJsZSBt
+dXN0IGNvbnRhaW4sIGRlcGVuZGluZyBvbiBtb2R1bGU6Ci0KLSAtIExlTWFrZXIgR3VpdGFyOiAi
+bGVtYWtlcixndWl0YXIiCi0KLQotQm9hcmRzOgotCi1Sb290IG5vZGUgcHJvcGVydHkgY29tcGF0
+aWJsZSBtdXN0IGNvbnRhaW4sIGRlcGVuZGluZyBvbiBib2FyZDoKLQotIC0gQWxsby5jb20gU3Bh
+cmt5OiAiYWxsbyxzcGFya3kiCi0gLSBDdWJpZXRlY2ggQ3ViaWVCb2FyZDY6ICJjdWJpZXRlY2gs
+Y3ViaWVib2FyZDYiCi0gLSBMZU1ha2VyIEd1aXRhciBCYXNlIEJvYXJkIHJldi4gQjogImxlbWFr
+ZXIsZ3VpdGFyLWJiLXJldi1iIiwgImxlbWFrZXIsZ3VpdGFyIgotCi0KLVM3MDAgU29DCi09PT09
+PT09PQotCi1SZXF1aXJlZCByb290IG5vZGUgcHJvcGVydGllczoKLQotLSBjb21wYXRpYmxlIDog
+IG11c3QgY29udGFpbiAiYWN0aW9ucyxzNzAwIgotCi0KLUJvYXJkczoKLQotUm9vdCBub2RlIHBy
+b3BlcnR5IGNvbXBhdGlibGUgbXVzdCBjb250YWluLCBkZXBlbmRpbmcgb24gYm9hcmQ6Ci0KLSAt
+IEN1YmlldGVjaCBDdWJpZUJvYXJkNzogImN1YmlldGVjaCxjdWJpZWJvYXJkNyIKLQotCi1TOTAw
+IFNvQwotPT09PT09PT0KLQotUmVxdWlyZWQgcm9vdCBub2RlIHByb3BlcnRpZXM6Ci0KLS0gY29t
+cGF0aWJsZSA6ICBtdXN0IGNvbnRhaW4gImFjdGlvbnMsczkwMCIKLQotCi1Cb2FyZHM6Ci0KLVJv
+b3Qgbm9kZSBwcm9wZXJ0eSBjb21wYXRpYmxlIG11c3QgY29udGFpbiwgZGVwZW5kaW5nIG9uIGJv
+YXJkOgotCi0gLSB1Q1JvYm90aWNzIEJ1YmJsZWd1bS05NjogInVjcm9ib3RpY3MsYnViYmxlZ3Vt
+LTk2IgpkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9h
+Y3Rpb25zLnlhbWwgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvYXJtL2FjdGlv
+bnMueWFtbApuZXcgZmlsZSBtb2RlIDEwMDY0NAppbmRleCAwMDAwMDAwMDAwMDAuLjYwYWJkMzcx
+ZTQ3NAotLS0gL2Rldi9udWxsCisrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5n
+cy9hcm0vYWN0aW9ucy55YW1sCkBAIC0wLDAgKzEsMzggQEAKKyMgU1BEWC1MaWNlbnNlLUlkZW50
+aWZpZXI6IEdQTC0yLjAKKyVZQU1MIDEuMgorLS0tCiskaWQ6IGh0dHA6Ly9kZXZpY2V0cmVlLm9y
+Zy9zY2hlbWFzL2FybS9hY3Rpb25zLnlhbWwjCiskc2NoZW1hOiBodHRwOi8vZGV2aWNldHJlZS5v
+cmcvbWV0YS1zY2hlbWFzL2NvcmUueWFtbCMKKwordGl0bGU6IEFjdGlvbnMgU2VtaSBwbGF0Zm9y
+bXMgZGV2aWNlIHRyZWUgYmluZGluZ3MKKworbWFpbnRhaW5lcnM6CisgIC0gQW5kcmVhcyBGw6Ry
+YmVyIDxhZmFlcmJlckBzdXNlLmRlPgorICAtIE1hbml2YW5uYW4gU2FkaGFzaXZhbSA8bWFuaXZh
+bm5hbi5zYWRoYXNpdmFtQGxpbmFyby5vcmc+CisKK3Byb3BlcnRpZXM6CisgIGNvbXBhdGlibGU6
+CisgICAgb25lT2Y6CisgICAgICAjIFRoZSBBY3Rpb25zIFNlbWkgUzUwMCBpcyBhIHF1YWQtY29y
+ZSBBUk0gQ29ydGV4LUE5IFNvQy4KKyAgICAgIC0gaXRlbXM6CisgICAgICAgICAgLSBlbnVtOgor
+ICAgICAgICAgICAgICAtIGFsbG8sc3Bhcmt5ICMgQWxsby5jb20gU3Bhcmt5CisgICAgICAgICAg
+ICAgIC0gY3ViaWV0ZWNoLGN1YmllYm9hcmQ2ICMgQ3ViaWV0ZWNoIEN1YmllQm9hcmQ2CisgICAg
+ICAgICAgLSBjb25zdDogYWN0aW9ucyxzNTAwCisgICAgICAtIGl0ZW1zOgorICAgICAgICAgIC0g
+ZW51bToKKyAgICAgICAgICAgICAgLSBsZW1ha2VyLGd1aXRhci1iYi1yZXYtYiAjIExlTWFrZXIg
+R3VpdGFyIEJhc2UgQm9hcmQgcmV2LiBCCisgICAgICAgICAgLSBjb25zdDogbGVtYWtlcixndWl0
+YXIKKyAgICAgICAgICAtIGNvbnN0OiBhY3Rpb25zLHM1MDAKKworICAgICAgIyBUaGUgQWN0aW9u
+cyBTZW1pIFM3MDAgaXMgYSBxdWFkLWNvcmUgQVJNIENvcnRleC1BNTMgU29DLgorICAgICAgLSBp
+dGVtczoKKyAgICAgICAgICAtIGVudW06CisgICAgICAgICAgICAgIC0gY3ViaWV0ZWNoLGN1Ymll
+Ym9hcmQ3ICMgQ3ViaWV0ZWNoIEN1YmllQm9hcmQ3CisgICAgICAgICAgLSBjb25zdDogYWN0aW9u
+cyxzNzAwCisKKyAgICAgICMgVGhlIEFjdGlvbnMgU2VtaSBTOTAwIGlzIGEgcXVhZC1jb3JlIEFS
+TSBDb3J0ZXgtQTUzIFNvQy4KKyAgICAgIC0gaXRlbXM6CisgICAgICAgICAgLSBlbnVtOgorICAg
+ICAgICAgICAgICAtIHVjcm9ib3RpY3MsYnViYmxlZ3VtLTk2ICMgdUNSb2JvdGljcyBCdWJibGVn
+dW0tOTYKKyAgICAgICAgICAtIGNvbnN0OiBhY3Rpb25zLHM5MDAKZGlmZiAtLWdpdCBhL01BSU5U
+QUlORVJTIGIvTUFJTlRBSU5FUlMKaW5kZXggMDA1OTAyZWExNDUwLi5iZThjMzU2NDgwNGMgMTAw
+NjQ0Ci0tLSBhL01BSU5UQUlORVJTCisrKyBiL01BSU5UQUlORVJTCkBAIC0xMzM4LDcgKzEzMzgs
+NyBAQCBGOglkcml2ZXJzL3BpbmN0cmwvYWN0aW9ucy8qCiBGOglkcml2ZXJzL3NvYy9hY3Rpb25z
+LwogRjoJaW5jbHVkZS9kdC1iaW5kaW5ncy9wb3dlci9vd2wtKgogRjoJaW5jbHVkZS9saW51eC9z
+b2MvYWN0aW9ucy8KLUY6CURvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9hcm0vYWN0
+aW9ucy50eHQKK0Y6CURvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9hcm0vYWN0aW9u
+cy55YW1sCiBGOglEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvY2xvY2svYWN0aW9u
+cyxvd2wtY211LnR4dAogRjoJRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2RtYS9v
+d2wtZG1hLnR4dAogRjoJRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2kyYy9pMmMt
+b3dsLnR4dAotLSAKMi4yMC4xCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5l
+bEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
+bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
