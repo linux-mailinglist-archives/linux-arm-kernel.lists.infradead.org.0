@@ -2,70 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1ABCA2200F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 May 2019 00:07:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FE4B22018
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 May 2019 00:08:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wa5RBajpiksZmwszjRWj2FmFC/FUavGvtbFQ9cBS5jE=; b=ZPy78t3dhxbcA1
-	vRPl+5HIOaEc96TYZj7oMCM2StMmI3DLNfuQ/IFPpCtI+3RXJemrXFX2B8DCnFb4ws8r30g3ytmK9
-	XTv4sG5z6xUi3XjqvXpbxZLOB2Za6c8yxu5dliMtHdKBLR1XiBg5i6tL2htjueB+zucq+ZpusBNk/
-	IOd0eyVaz19kSUbLWM2iSvmgIHpFWWcnm29r/MErkFHOa1Ke7MGg3PYXh2kW6LRHW+LaEAzNk4eWK
-	DimrRTJ3Ca+hzrL1w2WCZTq8GlXV6UGDQE/GuXGhXcCfj5cHZ5Wgd7RUs1jEHCNZdziwbEUIUq9/r
-	5NQwzOvgWRcKccFE8F3w==;
+	List-Owner; bh=2oX+vXEZi/TdiZECEOY2VNv/RCsDrM8L+G+XFNx9Nrg=; b=nLi0EWEkkc554g
+	71CVaNe9CQ/pcL51A2usT55WEgsQK+xPwn78nJhPyG4lYMEqiKP3ZGjFcQ7bVI+xa7gcwwxwQ/gDn
+	igCsVgCW6Gp/svi/LXi394UZ+PZUcZRHgwNav82bahnWrAui3fxsLYIkgXIYwpPdJlpC2omOUYxRZ
+	rV0W5nkRsirEjQfAQU5G+JcarOWa0q+0+xp/bmMz4phN0DVHlVJnACj9ioKzN2OwXHeo9O/scQEhI
+	UkTCdgm8t1nPJixHlYl9tfgHQPHB5zQ/jIsSN2nJUdIqHhSxmd/3K4iI1VLj1oKmNakxY69/q+Lb4
+	/Sf+LQa8l2fXf+qv4pOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRl0Q-0006va-E8; Fri, 17 May 2019 22:07:10 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hRl1u-0007Hn-LE; Fri, 17 May 2019 22:08:42 +0000
+Received: from mail-yw1-xc43.google.com ([2607:f8b0:4864:20::c43])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRl0I-0006vA-GD
- for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 22:07:03 +0000
-Received: from mail-qt1-f179.google.com (mail-qt1-f179.google.com
- [209.85.160.179])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AE4DE21744
+ id 1hRl1n-0007HO-Iq
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 22:08:36 +0000
+Received: by mail-yw1-xc43.google.com with SMTP id w18so3298780ywa.12
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 May 2019 22:07:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558130821;
- bh=NGfDVpnHGlZSPBv3BpoihAF+0N7E7o+m14ZovnpkobE=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=y9fdFpl39fMid+8MsAA/hPpFb3TrE6k7jLGR+qBODvjBpasdPNATrAFSnanBPYEuo
- KtPp2TC60I+dC2MynZazihAVFCl0jWkxQa8eV2Y4QOiEO/fEEvbGhmecLADiaLmnbA
- 1r+a7Fd/E/FeD0aKgq2gMx7ncK4i8B2OPhhCrMMs=
-Received: by mail-qt1-f179.google.com with SMTP id z19so9725929qtz.13
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 May 2019 15:07:01 -0700 (PDT)
-X-Gm-Message-State: APjAAAV62iDhuDn5HWwHGr8K2UcDM6BGkK+q9nDo0hgijZm+89H7WHqq
- O09Ajf85uijQTaJkpx7KOsuCzjtWlfIkjhfQyQ==
-X-Google-Smtp-Source: APXvYqzgnPSjbNZB21jfdHyrVRvTQpjTFduXMTCC2dRcGxkUBTV0K1qQ8CT5M1gXcRQgkiXQx+OFoK0kRL1cf4DpnAo=
-X-Received: by 2002:ac8:2d48:: with SMTP id o8mr51145213qta.136.1558130820928; 
- Fri, 17 May 2019 15:07:00 -0700 (PDT)
+ Fri, 17 May 2019 15:08:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=jft35/5eu7LfpLWAoZ01uRn8po613JLoj7AyHoG1GXA=;
+ b=NYUgiQf/XO3wfHvPfBK9JqBrKKj3Wmowkwt6/vjOgQkCDK/v6jvW0oo1OZnPmZfOd6
+ gXIM2YU1dxM65gHmFxomQBCOUKQV3zVEh6vSfVBe+5Nw1XhNUuyzAv724hOrXXhgW8Cn
+ VQkWNIdZVzet1VOC/zC6hyJHTH5bUEGREk5GN72T5tLuAz7M2PAc55Z2kxM6tQ5SMraJ
+ VZtkn8qK6YLUjTu/4tr0kcNDMPH4zIjSprh5Iy1oYW+ZozjdEZzHGQPDCltQ3I55Bt0/
+ elMkVF9psPDUj7MHeBzCfsRcjwvVTi/HiUpy5OLdflq0g+ead+zvm2UIv6NzBHoYmvym
+ E5XA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=jft35/5eu7LfpLWAoZ01uRn8po613JLoj7AyHoG1GXA=;
+ b=APsgkAeqQ8JX/xZXj++USW84Ul6SVVVpMjK8D67KpdRTiKOTNAjFtitJZ1vBD+j2XM
+ 3PRvaKPq7Sm0gpAYiMRvKxl2Xb4jOzXgNzQg5FTXEQ6uwTHbvkthyOEUkFURsyje5PDj
+ NgGq44cmqfc+6lfDYRzATIJa6AnfqrpI8YTvrGHKGlJG8eTiQPZhTxUv0IhyMsG4tbtB
+ t0s//fDL4C9tHdwUWr0UoR/bbDW6FDJ923iYUUf6tXiwM4h+T2eYNcREGVV5ESvni+Fn
+ Ouvl4Sto0tALVkkSJuW9noA/UvT0UH8khe1DfM8Dg9r8J4RaAlTftxGOG/ODje41G6ZJ
+ m7Qw==
+X-Gm-Message-State: APjAAAUg3yUmCJclMQL5CRTdJ84H0/FVEmjmsYHKcbD3l/dbsQ+fNaA6
+ WfL5hXmspC75fjhMZ8RpfJoDvhM4Y78OJ0WV52g=
+X-Google-Smtp-Source: APXvYqxcSNmzU/oyHvSUYVr+deObwpxqKqFM5P2fsb0esZnQS0M5F0CXJpjeTYUlAVM4uj0CwId57+uwvLalM45wrhw=
+X-Received: by 2002:a81:9a4b:: with SMTP id r72mr5190935ywg.422.1558130914303; 
+ Fri, 17 May 2019 15:08:34 -0700 (PDT)
 MIME-Version: 1.0
-References: <1558118857-16912-1-git-send-email-isaacm@codeaurora.org>
- <1558118857-16912-2-git-send-email-isaacm@codeaurora.org>
-In-Reply-To: <1558118857-16912-2-git-send-email-isaacm@codeaurora.org>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Fri, 17 May 2019 17:06:48 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqKcZaQCZuodCiaTKV1ZyQQcufL4P4jpcDcKCDwR0B+6EA@mail.gmail.com>
-Message-ID: <CAL_JsqKcZaQCZuodCiaTKV1ZyQQcufL4P4jpcDcKCDwR0B+6EA@mail.gmail.com>
-Subject: Re: [RFC/PATCH 1/4] of: Export of_phandle_iterator_args() to modules
-To: "Isaac J. Manjarres" <isaacm@codeaurora.org>
+References: <20190517184659.18828-1-peron.clem@gmail.com>
+ <20190517184659.18828-2-peron.clem@gmail.com>
+ <CAL_JsqKPazGn+g1zS4NMwvQZ_6GcAm0tgcOTqyQA0dz0+2dp3g@mail.gmail.com>
+In-Reply-To: <CAL_JsqKPazGn+g1zS4NMwvQZ_6GcAm0tgcOTqyQA0dz0+2dp3g@mail.gmail.com>
+From: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Date: Sat, 18 May 2019 00:08:22 +0200
+Message-ID: <CAJiuCcdMxXAXYk=QpRwsvBUW0tvBVMqXvgx0Y7fAKP=ouyBnKQ@mail.gmail.com>
+Subject: Re: [PATCH v5 1/6] drm: panfrost: add optional bus_clock
+To: Rob Herring <robh+dt@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190517_150702_553864_72413A1F 
-X-CRM114-Status: GOOD (  10.40  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190517_150835_623944_C33EA8CC 
+X-CRM114-Status: GOOD (  17.78  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:c43 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (peron.clem[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -74,7 +84,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.1 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -86,34 +96,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Android Kernel Team <kernel-team@android.com>,
- linux-pci@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
- Will Deacon <will.deacon@arm.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ Tomeu Vizoso <tomeu.vizoso@collabora.com>,
+ Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Pratik Patel <pratikp@codeaurora.org>,
- Linux IOMMU <iommu@lists.linux-foundation.org>, lmark@codeaurora.org,
- Bjorn Helgaas <bhelgaas@google.com>, Frank Rowand <frowand.list@gmail.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Steven Price <steven.price@arm.com>, Maxime Ripard <maxime.ripard@bootlin.com>,
+ Chen-Yu Tsai <wens@csie.org>, Linux IOMMU <iommu@lists.linux-foundation.org>,
+ Daniel Vetter <daniel@ffwll.ch>, Robin Murphy <robin.murphy@arm.com>,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Robin Murphy <robin.murphy@arm.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 17, 2019 at 1:48 PM Isaac J. Manjarres
-<isaacm@codeaurora.org> wrote:
->
-> Kernel modules may want to use of_phandle_iterator_args(),
-> so export it.
->
-> Signed-off-by: Isaac J. Manjarres <isaacm@codeaurora.org>
-> ---
->  drivers/of/base.c | 1 +
->  1 file changed, 1 insertion(+)
-
-Acked-by: Rob Herring <robh@kernel.org>
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgUm9iLAoKT24gRnJpLCAxNyBNYXkgMjAxOSBhdCAyMjowNywgUm9iIEhlcnJpbmcgPHJvYmgr
+ZHRAa2VybmVsLm9yZz4gd3JvdGU6Cj4KPiBPbiBGcmksIE1heSAxNywgMjAxOSBhdCAxOjQ3IFBN
+IENsw6ltZW50IFDDqXJvbiA8cGVyb24uY2xlbUBnbWFpbC5jb20+IHdyb3RlOgo+ID4KPiA+IEFs
+bHdpbm5lciBINiBoYXMgYW4gQVJNIE1hbGktVDcyMCBNUDIgd2hpY2ggcmVxdWlyZWQgYSBidXNf
+Y2xvY2suCj4gPgo+ID4gQWRkIGFuIG9wdGlvbmFsIGJ1c19jbG9jayBhdCB0aGUgaW5pdCBvZiB0
+aGUgcGFuZnJvc3QgZHJpdmVyLgo+ID4KPiA+IFNpZ25lZC1vZmYtYnk6IENsw6ltZW50IFDDqXJv
+biA8cGVyb24uY2xlbUBnbWFpbC5jb20+Cj4gPiAtLS0KPiA+ICBkcml2ZXJzL2dwdS9kcm0vcGFu
+ZnJvc3QvcGFuZnJvc3RfZGV2aWNlLmMgfCAyNSArKysrKysrKysrKysrKysrKysrKystCj4gPiAg
+ZHJpdmVycy9ncHUvZHJtL3BhbmZyb3N0L3BhbmZyb3N0X2RldmljZS5oIHwgIDEgKwo+ID4gIDIg
+ZmlsZXMgY2hhbmdlZCwgMjUgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQo+ID4KPiA+IGRp
+ZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9kcm0vcGFuZnJvc3QvcGFuZnJvc3RfZGV2aWNlLmMgYi9k
+cml2ZXJzL2dwdS9kcm0vcGFuZnJvc3QvcGFuZnJvc3RfZGV2aWNlLmMKPiA+IGluZGV4IDNiMmJj
+ZWQxYjAxNS4uOGRhNmU2MTJkMzg0IDEwMDY0NAo+ID4gLS0tIGEvZHJpdmVycy9ncHUvZHJtL3Bh
+bmZyb3N0L3BhbmZyb3N0X2RldmljZS5jCj4gPiArKysgYi9kcml2ZXJzL2dwdS9kcm0vcGFuZnJv
+c3QvcGFuZnJvc3RfZGV2aWNlLmMKPiA+IEBAIC00NCw3ICs0NCw4IEBAIHN0YXRpYyBpbnQgcGFu
+ZnJvc3RfY2xrX2luaXQoc3RydWN0IHBhbmZyb3N0X2RldmljZSAqcGZkZXYpCj4gPgo+ID4gICAg
+ICAgICBwZmRldi0+Y2xvY2sgPSBkZXZtX2Nsa19nZXQocGZkZXYtPmRldiwgTlVMTCk7Cj4gPiAg
+ICAgICAgIGlmIChJU19FUlIocGZkZXYtPmNsb2NrKSkgewo+ID4gLSAgICAgICAgICAgICAgIGRl
+dl9lcnIocGZkZXYtPmRldiwgImdldCBjbG9jayBmYWlsZWQgJWxkXG4iLCBQVFJfRVJSKHBmZGV2
+LT5jbG9jaykpOwo+ID4gKyAgICAgICAgICAgICAgIGRldl9lcnIocGZkZXYtPmRldiwgImdldCBj
+bG9jayBmYWlsZWQgJWxkXG4iLAo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgUFRSX0VSUihw
+ZmRldi0+Y2xvY2spKTsKPgo+IFBsZWFzZSBkcm9wIHRoaXMgd2hpdGVzcGFjZSBjaGFuZ2UuCgpT
+b3JyeSwgSSB0aG91Z2h0IGl0IHdhcyBvbmx5IGEgbWlzdGFrZSBoZXJlLCBJIHdpbGwgZHJvcCBp
+dC4KV2h5IGFyZSB0aGV5IHNvIG1hbnkgbGluZXMgb3ZlciA4MCBjaGFyYWN0ZXJzPwpJcyB0aGVy
+ZSBhIHNwZWNpZmljIGNvZGluZyBzdHlsZSB0byBmb2xsb3cgPwoKVGhhbmtzLApDbGVtZW50Cgo+
+Cj4gPiAgICAgICAgICAgICAgICAgcmV0dXJuIFBUUl9FUlIocGZkZXYtPmNsb2NrKTsKPiA+ICAg
+ICAgICAgfQo+ID4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
+L2xpbnV4LWFybS1rZXJuZWwK
