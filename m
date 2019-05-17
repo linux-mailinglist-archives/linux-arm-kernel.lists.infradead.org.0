@@ -2,79 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DADB7215D3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 10:59:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF502215E6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 11:06:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gcGUOIR0Ke14OexOw5GU1YD43pkVnk/O9WlZI6PY+F8=; b=lIlC0BkocJ5TRm
-	yRzoc0osgYaddF4xsjUxivn+ZeTdk9iyFjHc35k2TcwBNu6ZY+DwP6vgfF0/AE60kwwBsPa9H1lci
-	rqEMtpMWenj6j0CZIXz9ZcvqdeIChX7ZTn9aDa+ZdqvUOqZqJ6ZmVRXN6uf/kGN4bjXcG0Xv0At1Q
-	W46din9wghAzwV6D5wwhl/6ASr0OPVtNFmEaWOR5bktbBPu/iaT5p77gtaLz+ctqzjDDVALbKvax0
-	NGegeTnksNH/lc6ElYh5QFCPQFTGZt2gYl3eAm0+bpWF8L+JZaxpRmAykcpSoQtkwMTobNGvGd5Qv
-	PKbx9U/7C5UfkSfc9JTg==;
+	List-Owner; bh=y/jkkdKK0kZTlZunPHs0crwwB82MeRJ+ZMa3MQYK4iE=; b=jpHxw/DQ+LPyaL
+	POMaUnrAU2qvBqN2xof7tjqnJMgt4Cje5YnzkPdiTplKcajgbr/HsLxsVUAa2y3ZX680wnbmX/r+Y
+	7kkbqmlchW0h+1JUU7Z9ZcjofF0o+/R1ONOrRT21hCoEver/bAkPASzo3RA8WCdToOSdbUGIkTDrk
+	nTsX5Uc+07Y65IvDDleRvFpFC7evaQ5qvAZvpidkmuvplRwA20nE7eJ3E8i9zafZ+wYhOjp9Z/J0n
+	f93COO9xRq9ewYS5/Kgs5DiKBnIlIPYOIsTAmYaJZCVE+uH5VKMpB0UO/9zgTGUpcUmFJCmtJE1Hj
+	CdupEUwp8uGglIvU4XWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRYhj-0005rW-1G; Fri, 17 May 2019 08:59:03 +0000
-Received: from mail-qt1-f194.google.com ([209.85.160.194])
+	id 1hRYoU-0000Vw-39; Fri, 17 May 2019 09:06:02 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRYhb-0005qy-LR
- for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 08:58:57 +0000
-Received: by mail-qt1-f194.google.com with SMTP id d13so7143503qth.5
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 May 2019 01:58:55 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=lUdOq+gx0nXT1b9GsinnX5s7hPrX6YoGJqW2/FU2LMQ=;
- b=g4vOVRAC4ClHoyuGRn5yuoZbN3oufHG9jxTdP79m17C90ngTybh5lVJhOdGajOtnAV
- TwbguVwGPRmVnE5aVEnp/MLf9nnWv7fasP/UtQCG5Dk3upMhFun5EG6al7OSKTpatpF6
- RzpdTuvTAgF5ewtLYlyZixdQ+vwKJta429kV/ZZe3AR3K2RS4B0vmsiZwX0YZ6kahx/d
- vRIw6VYlZZBqxLSHhqOhm8mdd4fRQWLsCSVcKo3fK5Ny1nQ0u7TPFWInIIGcYkDPVuN3
- MH4J2jMPraoU0aqNfsirROh4bGW/woxktXN3iDp/DKgJhQqjqliqWu/+ho+24kuhf4Db
- L7Gw==
-X-Gm-Message-State: APjAAAUvfkkvrFE2Gu+zjDc5qEnSjwPS5pNUlZysI9MdDAc8zKsDFdny
- 7p4MPco0MA4vy3+YLpwcDcfUEs3Y3MRRs3rG9ZA=
-X-Google-Smtp-Source: APXvYqwNxbxFr/vzS1RXQZDBTDKL/hVCvagOotGDm724YF5ym/q8RL/him/sN27hB8O1MZtVcEFf95bHEOo3m0FhXo8=
-X-Received: by 2002:ac8:2a05:: with SMTP id k5mr30063052qtk.304.1558083534352; 
- Fri, 17 May 2019 01:58:54 -0700 (PDT)
+ id 1hRYoF-0000Na-Ug; Fri, 17 May 2019 09:05:52 +0000
+X-UUID: 38e18c1e90b940fbba22acbd39bf81e6-20190517
+X-UUID: 38e18c1e90b940fbba22acbd39bf81e6-20190517
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 924884380; Fri, 17 May 2019 01:05:37 -0800
+Received: from mtkmbs03n1.mediatek.inc (172.21.101.181) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 17 May 2019 02:05:35 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs03n1.mediatek.inc (172.21.101.181) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 17 May 2019 17:05:34 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 17 May 2019 17:05:34 +0800
+Message-ID: <1558083934.29098.6.camel@mtksdaap41>
+Subject: Re: [PATCH v3 09/13] [media] mtk-mipicsi: add ISR for writing the
+ data to buffer
+From: CK Hu <ck.hu@mediatek.com>
+To: Stu Hsieh <stu.hsieh@mediatek.com>
+Date: Fri, 17 May 2019 17:05:34 +0800
+In-Reply-To: <1557814430-9675-10-git-send-email-stu.hsieh@mediatek.com>
+References: <1557814430-9675-1-git-send-email-stu.hsieh@mediatek.com>
+ <1557814430-9675-10-git-send-email-stu.hsieh@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-References: <20190515072747.39941-1-xiaowei.bao@nxp.com>
- <20190515072747.39941-2-xiaowei.bao@nxp.com>
- <CAK8P3a3AXRp_v_7hkoJA28tUCiSh1eYzbk4Q4h29OqL6y-KL8A@mail.gmail.com>
- <AM5PR04MB329934765FB8EB1828743D79F50B0@AM5PR04MB3299.eurprd04.prod.outlook.com>
-In-Reply-To: <AM5PR04MB329934765FB8EB1828743D79F50B0@AM5PR04MB3299.eurprd04.prod.outlook.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Fri, 17 May 2019 10:58:37 +0200
-Message-ID: <CAK8P3a0kKb7njiJvUkwJYwf-yc-hEyErSiWcvbdf0XnMoctzrg@mail.gmail.com>
-Subject: Re: [EXT] Re: [PATCH 2/3] arm64: dts: ls1028a: Add PCIe controller DT
- nodes
-To: Xiaowei Bao <xiaowei.bao@nxp.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190517_015855_788870_5C400F12 
-X-CRM114-Status: GOOD (  17.58  )
+X-CRM114-CacheID: sfid-20190517_020548_145606_F38AF95D 
+X-CRM114-Status: GOOD (  22.70  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.194 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.194 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -86,74 +72,207 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Roy Zang <roy.zang@nxp.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- DTML <devicetree@vger.kernel.org>, gregkh <gregkh@linuxfoundation.org>,
- Kate Stewart <kstewart@linuxfoundation.org>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
- linux-pci <linux-pci@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Kishon <kishon@ti.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Philippe Ombredanne <pombredanne@nexb.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Leo Li <leoyang.li@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, Shawn Lin <shawn.lin@rock-chips.com>,
- Mingkai Hu <mingkai.hu@nxp.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 17, 2019 at 5:21 AM Xiaowei Bao <xiaowei.bao@nxp.com> wrote:
-> -----Original Message-----
-> From: Arnd Bergmann <arnd@arndb.de>
-> On Wed, May 15, 2019 at 9:36 AM Xiaowei Bao <xiaowei.bao@nxp.com> wrote:
-> > Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
-> > ---
-> >  arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi |   52 ++++++++++++++++++++++++
-> >  1 files changed, 52 insertions(+), 0 deletions(-)
-> >
-> > diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> > index b045812..50b579b 100644
-> > --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> > +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> > @@ -398,6 +398,58 @@
-> >                         status = "disabled";
-> >                 };
-> >
-> > +               pcie@3400000 {
-> > +                       compatible = "fsl,ls1028a-pcie";
-> > +                       reg = <0x00 0x03400000 0x0 0x00100000   /* controller registers */
-> > +                              0x80 0x00000000 0x0 0x00002000>; /* configuration space */
-> > +                       reg-names = "regs", "config";
-> > +                       interrupts = <GIC_SPI 108 IRQ_TYPE_LEVEL_HIGH>, /* PME interrupt */
-> > +                                    <GIC_SPI 109 IRQ_TYPE_LEVEL_HIGH>; /* aer interrupt */
-> > +                       interrupt-names = "pme", "aer";
-> > +                       #address-cells = <3>;
-> > +                       #size-cells = <2>;
-> > +                       device_type = "pci";
-> > +                       dma-coherent;
-> > +                       num-lanes = <4>;
-> > +                       bus-range = <0x0 0xff>;
-> > +                       ranges = <0x81000000 0x0 0x00000000 0x80 0x00010000 0x0 0x00010000   /* downstream I/O */
-> > +                                 0x82000000 0x0 0x40000000 0x80 0x40000000 0x0 0x40000000>; /* non-prefetchable memory */
->
-> Are you sure there is no support for 64-bit BARs or prefetchable memory?
-> [Xiaowei Bao] sorry for late reply, Thought that our Layerscape platform has not added prefetchable memory support in DTS, so this platform has not been added, I will submit a separate patch to add prefetchable memory support for all Layerscape platforms.
+Hi, Stu:
 
-Ok, thanks.
+On Tue, 2019-05-14 at 14:13 +0800, Stu Hsieh wrote:
+> This patch add ISR for writing the data to buffer
+> 
+> When mipicsi HW complete to write the data in buffer,
+> the interrupt woulb be trigger.
+> So, the ISR need to clear interrupt status for next interrupt.
+> 
+> Signed-off-by: Stu Hsieh <stu.hsieh@mediatek.com>
+> ---
+>  .../media/platform/mtk-mipicsi/mtk_mipicsi.c  | 110 ++++++++++++++++++
+>  1 file changed, 110 insertions(+)
+> 
+> diff --git a/drivers/media/platform/mtk-mipicsi/mtk_mipicsi.c b/drivers/media/platform/mtk-mipicsi/mtk_mipicsi.c
+> index 44c01c8d566b..af5655345754 100644
+> --- a/drivers/media/platform/mtk-mipicsi/mtk_mipicsi.c
+> +++ b/drivers/media/platform/mtk-mipicsi/mtk_mipicsi.c
+> @@ -36,6 +36,7 @@
+>  #include <linux/pm_runtime.h>
+>  #include <linux/iommu.h>
+>  #include <linux/of.h>
+> +#include <linux/of_irq.h>
+>  #include <linux/of_platform.h>
+>  #include <media/v4l2-common.h>
+>  #include <media/v4l2-dev.h>
+> @@ -93,6 +94,8 @@
+>  #define CAMSV_MODULE_EN					0x10
+>  #define CAMSV_FMT_SEL					0x14
+>  #define CAMSV_INT_EN					0x18
+> +#define CAMSV_INT_STATUS				0x1C
+> +#define PASS1_DONE_STATUS				10
+>  #define CAMSV_SW_CTL					0x20
+>  #define CAMSV_CLK_EN					0x30
+>  
+> @@ -122,6 +125,8 @@ struct mtk_mipicsi_dev {
+>  	struct platform_device *pdev;
+>  	unsigned int camsv_num;
+>  	struct device *larb_pdev;
+> +	unsigned int		irq[MTK_CAMDMA_MAX_NUM];
+> +	bool irq_status[MTK_CAMDMA_MAX_NUM];
+>  	void __iomem		*ana;
+>  	void __iomem		*seninf_ctrl;
+>  	void __iomem		*seninf;
+> @@ -132,6 +137,7 @@ struct mtk_mipicsi_dev {
+>  	spinlock_t		lock;
+>  	spinlock_t		queue_lock;
+>  	struct mtk_mipicsi_buf	cam_buf[MAX_BUFFER_NUM];
+> +	bool			is_enable_irq[MTK_CAMDMA_MAX_NUM];
 
-> Of course, the prefetchable PCIE device can work in our boards, because the RC will
-> assign non-prefetchable memory for this device. We reserve 1G no-prefetchable
-> memory for PCIE device, it is enough for general devices.
+Useless, so remove it.
 
-Sure, many devices work just fine, this is mostly a question of supporting those
-devices that do require multiple gigabytes, or that need prefetchable memory
-semantics to get the expected performance. GPUs are the obvious example,
-but I think there are others (infiniband?).
+>  	bool streamon;
+>  	unsigned int link;
+>  	u8 link_reg_val;
+> @@ -911,9 +917,96 @@ static const struct dev_pm_ops mtk_mipicsi_pm = {
+>  		mtk_mipicsi_pm_resume, NULL)
+>  };
+>  
+> +static int get_irq_channel(struct mtk_mipicsi_dev *mipicsi)
+> +{
+> +	int ch;
+> +	u32 int_reg_val;
+> +
+> +	for (ch = 0; ch < mipicsi->camsv_num; ++ch) {
+> +		int_reg_val = readl(mipicsi->camsv[ch] + CAMSV_INT_STATUS);
+> +		if ((int_reg_val & (1UL << PASS1_DONE_STATUS)) != 0UL)
+> +			return ch;
+> +	}
+> +
+> +	return -1;
+> +}
+> +
+> +static void mtk_mipicsi_irq_buf_process(struct mtk_mipicsi_dev *mipicsi)
+> +{
+> +	unsigned int i = 0U;
+> +	struct mtk_mipicsi_buf *new_cam_buf = NULL;
+> +	struct mtk_mipicsi_buf *tmp = NULL;
+> +	unsigned int index = 0U;
+> +	unsigned int next = 0U;
+> +
+> +	for (i = 0U; i < MTK_CAMDMA_MAX_NUM; ++i)
+> +		mipicsi->irq_status[i] = false;
+> +
+> +	i = 0;
+> +
+> +	/* only one buffer left */
+> +	if ((&(mipicsi->fb_list))->next->next == &(mipicsi->fb_list))
+> +		return;
+> +
+> +	/*for each fb_lst 2 times to get the top 2 buffer.*/
+> +	list_for_each_entry_safe(new_cam_buf, tmp,
+> +		&(mipicsi->fb_list), queue) {
+> +		if (i == 0U) {
+> +			index = new_cam_buf->vb->index;
+> +		} else {
+> +			next = new_cam_buf->vb->index;
+> +			break;
+> +		}
+> +		++i;
+> +	}
+> +
+> +	/*
+> +	 * fb_list has one more buffer. Free the first buffer to user
+> +	 * and fill the second buffer to HW.
+> +	 */
+> +	vb2_buffer_done(mipicsi->cam_buf[index].vb,
+> +		VB2_BUF_STATE_DONE);
+> +
+> +	list_del_init(&(mipicsi->cam_buf[index].queue));
+> +}
+> +
+> +static irqreturn_t mtk_mipicsi_isr(int irq, void *data)
+> +{
+> +
+> +	struct mtk_mipicsi_dev *mipicsi = data;
+> +	unsigned long flags = 0;
+> +	int isr_ch;
+> +	u8 irq_cnt = 0, i = 0;
+> +
+> +	spin_lock_irqsave(&mipicsi->lock, flags);
+> +
+> +	isr_ch = get_irq_channel(mipicsi);
 
-      Arnd
+I think you should pass data as camsv instance, so you need not to
+search the camsv instance, and each camsv instance could pointer to the
+same misicsi instance.
+
+> +	if (isr_ch < 0) {
+> +		spin_unlock_irqrestore(&mipicsi->lock, flags);
+> +		return IRQ_HANDLED;
+> +	}
+> +
+> +	/* clear interrupt */
+> +	writel(1UL << PASS1_DONE_STATUS,
+> +		mipicsi->camsv[isr_ch] + CAMSV_INT_STATUS);
+> +	mipicsi->irq_status[isr_ch] = true;
+> +	for (i = 0U; i < MTK_CAMDMA_MAX_NUM; ++i) {
+> +		if (mipicsi->irq_status[i])
+> +			++irq_cnt;
+> +	}
+> +
+> +	if (irq_cnt == mipicsi->link)
+> +		mtk_mipicsi_irq_buf_process(mipicsi);
+
+I think mtk_mipicsi_irq_buf_process() should not be processed in irq
+handler. In irq handler, do as few things as possible.
+
+Regards,
+CK
+
+> +	spin_unlock_irqrestore(&mipicsi->lock, flags);
+> +
+> +	return IRQ_HANDLED;
+> +}
+> +
+>  static int seninf_mux_camsv_node_parse(struct mtk_mipicsi_dev *mipicsi,
+>  		int index)
+>  {
+> +	int ret;
+> +	int irq;
+>  	struct clk *clk = NULL;
+>  	struct device *dev = NULL;
+>  	struct resource *res = NULL;
+> @@ -951,6 +1044,23 @@ static int seninf_mux_camsv_node_parse(struct mtk_mipicsi_dev *mipicsi,
+>  	}
+>  	mipicsi->clk[index] = clk;
+>  
+> +	irq = of_irq_get(np, 0);
+> +	if (irq <= 0) {
+> +		dev_err(dev, "get irq fail in %s node\n", np->full_name);
+> +		return -ENODEV;
+> +	}
+> +	mipicsi->irq[index] = irq;
+> +
+> +	ret = devm_request_irq(dev, irq,
+> +			mtk_mipicsi_isr, 0,
+> +			mipicsi->drv_name, mipicsi);
+> +	if (ret != 0) {
+> +		dev_err(dev, "%s irq register failed\n", np->full_name);
+> +		return -ENODEV;
+> +	}
+> +	disable_irq(mipicsi->irq[index]);
+> +	mipicsi->irq_status[index] = false;
+> +
+>  	res = platform_get_resource(camdma_pdev, IORESOURCE_MEM, 0);
+>  	if (res == NULL) {
+>  		dev_err(dev, "get seninf_mux memory failed in %s node\n",
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
