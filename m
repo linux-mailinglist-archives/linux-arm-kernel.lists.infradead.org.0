@@ -2,108 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 505C121477
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 09:35:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5CF521491
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 09:37:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5//cDBuLzAyxDbSR90LN7Rw5Bfo9Ha2VbNdf2UxBxo8=; b=kj881xIfkJs+D5
-	uhP7OOFzDZtmPFCPbVWphvjoerthEtqp1Rj+Exfm2Kc3XUjf6aLOACvvgPCzxw+QpOTwXx7rpH0Ns
-	B/KfjLoAp15lh9gQrX1OUcvf23XMY47g8NAgi5NB19P+BqtoUGvRoM86o+CFHKhEifZPMOoC0PFVt
-	kwr9YeGyc1l6tajfswcUUWwOyo6hJlNye7ueLvvPf8dGwU8OZfVG/qGsjaSptd5ima2Lsu//OtN3t
-	GBJO1J6Gb8xyFbPFBHpeeD8UulW50vK4igzAmRchn5e1eo6aeQyZ4hnhTakUOKr8HYAmbP/k1oiLp
-	j1dw4G4AEsCohr4G5TMw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Cqk8XQUsiVY0/VyKb3wlOv5NL8lup/BgQ3jFqMI5S5U=; b=mN7Vl2dyLawD1Rfe3TUHron5k
+	GB0v6D7c+XHOCZxEDZ0GzzjWBmoAb4zSl5vwfzvagILegdpvEHrpJUKHPUIbgnpStHq/ORsV3M32H
+	NVUnXdsEzeTlhDbrVwn26r/6jF0IwtSmwQ/6URmxUPF7Wxd2CRInaW2dTB2QfhCBwAjF0J9k6Wle1
+	u/ygaaj37/MmFPrePUa4uGiRbfxIwbCZ7LQPWBlhjiyuHXbPzg/DAOMAxmBQeiCOI4hi2nMG3l7r/
+	7Zh5Y1ZqDA8UTRoincRrHfsZhK6kHsfFkl2J6DL00RrV3UKv8Wzl2/1xZ4X0g5dVIEwrlBrQIiuW9
+	+TfliVPjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRXOq-0002lv-5m; Fri, 17 May 2019 07:35:28 +0000
-Received: from mail-eopbgr140043.outbound.protection.outlook.com
- ([40.107.14.43] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1hRXQQ-00036m-W4; Fri, 17 May 2019 07:37:07 +0000
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRXOj-0002l3-27
- for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 07:35:22 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=eHmjBfuC4vxiTyP58WsAVLZdiIqCRwqeWpLa4rts0ak=;
- b=Mm2/zeI9GFsZ93upGhur22SIKyy9QJUh2AT3sTpnFstEeJjRgjHXt5F3y9dwyhL+Pu6koKSr1SMIHLRh4DXz7sGDyQSf2+sVrhUWiXxpwdqR9b/4YWt9lfh9PV0uHgu4qw3iVU1na/EkRqsUnzMGHPwY/J8OmKtoo+n+x6uus1s=
-Received: from DB7PR08MB3865.eurprd08.prod.outlook.com (20.178.84.149) by
- DB7PR08MB3884.eurprd08.prod.outlook.com (20.178.46.20) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1900.18; Fri, 17 May 2019 07:35:16 +0000
-Received: from DB7PR08MB3865.eurprd08.prod.outlook.com
- ([fe80::1c44:4e1b:c1e1:543e]) by DB7PR08MB3865.eurprd08.prod.outlook.com
- ([fe80::1c44:4e1b:c1e1:543e%7]) with mapi id 15.20.1900.010; Fri, 17 May 2019
- 07:35:16 +0000
-From: Raphael Gault <Raphael.Gault@arm.com>
-To: Peter Zijlstra <peterz@infradead.org>
-Subject: Re: [PATCH 4/6] arm64: pmu: Add hook to handle pmu-related undefined
- instructions
-Thread-Topic: [PATCH 4/6] arm64: pmu: Add hook to handle pmu-related undefined
- instructions
-Thread-Index: AQHVC+ps829CXrnAbkOTNSFu6HVCF6Zu51UAgAAG+YA=
-Date: Fri, 17 May 2019 07:35:16 +0000
-Message-ID: <c7c4c851-51d9-a596-cba2-23252785251c@arm.com>
-References: <20190516132148.10085-1-raphael.gault@arm.com>
- <20190516132148.10085-5-raphael.gault@arm.com>
- <20190517071018.GH2623@hirez.programming.kicks-ass.net>
-In-Reply-To: <20190517071018.GH2623@hirez.programming.kicks-ass.net>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: LO2P265CA0019.GBRP265.PROD.OUTLOOK.COM
- (2603:10a6:600:62::31) To DB7PR08MB3865.eurprd08.prod.outlook.com
- (2603:10a6:10:32::21)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Raphael.Gault@arm.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [217.140.106.53]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 0e5ae6aa-326a-4a6a-c479-08d6da9a345a
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:DB7PR08MB3884; 
-x-ms-traffictypediagnostic: DB7PR08MB3884:
-x-microsoft-antispam-prvs: <DB7PR08MB388454E50431431463762AA9ED0B0@DB7PR08MB3884.eurprd08.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6790;
-x-forefront-prvs: 0040126723
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(366004)(376002)(396003)(346002)(39860400002)(199004)(189003)(40434004)(53936002)(6916009)(5660300002)(6246003)(2906002)(66556008)(64756008)(66446008)(66476007)(66946007)(305945005)(73956011)(7736002)(31686004)(68736007)(6116002)(3846002)(8936002)(8676002)(81156014)(81166006)(53546011)(76176011)(386003)(99286004)(102836004)(31696002)(256004)(14444005)(5024004)(36756003)(54906003)(11346002)(14454004)(6506007)(52116002)(66066001)(44832011)(446003)(229853002)(6436002)(6512007)(71190400001)(86362001)(186003)(2616005)(476003)(486006)(316002)(72206003)(478600001)(71200400001)(4326008)(6486002)(26005)(25786009);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR08MB3884;
- H:DB7PR08MB3865.eurprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: arm.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: NDHao45jqJbS5xIFIvl45y5AW0ojN8fuzImtTfZF+b+20FDtrGRSKKK7NyciTm6awXXWhIXVson+AkqggrQjgjiJrM6xeqjAfBSss2mlMoJoXYV07rl0rs1T8swLhvE4POSHQuDDg8eUUCJKwazje5qjlCecXxmim+4PBjE397e1/IAOM+6UlL4N531P3peAZrtGc0IuW+n48FiZpTC/u2RWpGu/RLbS4PmeOwY4R8Exg4rcUkoDYJl/ehZvx0dKKfXK4WEwOyqyr1FrjukK2lMkzshwmWLYnLsbB7LFcdjxSY8C2O2xj+yMxi0gQ1DUaWNLMOOSndKYjipK12kjcfJ2Oq7054i6iW4p0WoVG7KtH9HLi3YbF+98hbzZ+0MRC/6Fd5kDeAm4+E+2ptH5GuLYAl8ycPoOWvz3GBAI9WE=
-Content-ID: <BCC04CA52D4D464AB543E1CADCDF7E90@eurprd08.prod.outlook.com>
+ id 1hRXQH-000360-8o
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 07:36:59 +0000
+X-Originating-IP: 80.215.154.25
+Received: from localhost (unknown [80.215.154.25])
+ (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 93CA424000E;
+ Fri, 17 May 2019 07:36:35 +0000 (UTC)
+Date: Fri, 17 May 2019 09:36:34 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Frank Lee <tiny.windzz@gmail.com>
+Subject: Re: [PATCH 2/3] thermal: sun50i: add thermal driver for h6
+Message-ID: <20190517073634.izdmba3yqvxviyg3@flea>
+References: <20190512082614.9045-1-tiny.windzz@gmail.com>
+ <20190512082614.9045-3-tiny.windzz@gmail.com>
+ <20190512133930.t5txssl7mou2gljt@flea>
+ <CAEExFWvcMbiCJ4HD0UAtv1P6AuBJ=oUdmhu886BNZhrRz483Ug@mail.gmail.com>
 MIME-Version: 1.0
-X-OriginatorOrg: arm.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0e5ae6aa-326a-4a6a-c479-08d6da9a345a
-X-MS-Exchange-CrossTenant-originalarrivaltime: 17 May 2019 07:35:16.0774 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: f34e5979-57d9-4aaa-ad4d-b122a662184d
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR08MB3884
+In-Reply-To: <CAEExFWvcMbiCJ4HD0UAtv1P6AuBJ=oUdmhu886BNZhrRz483Ug@mail.gmail.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190517_003521_160506_ABFA44C2 
-X-CRM114-Status: GOOD (  18.25  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190517_003657_843564_179E1D40 
+X-CRM114-Status: GOOD (  22.30  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.14.43 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.193 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -115,57 +63,167 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>,
- Catalin Marinas <Catalin.Marinas@arm.com>, Will Deacon <Will.Deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "acme@kernel.org" <acme@kernel.org>, "mingo@redhat.com" <mingo@redhat.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, catalin.marinas@arm.com,
+ will.deacon@arm.com, bjorn.andersson@linaro.org,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>, paulmck@linux.ibm.com,
+ stefan.wahren@i2se.com, Linux PM <linux-pm@vger.kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Jagan Teki <jagan@amarulasolutions.com>,
+ Andy Gross <andy.gross@linaro.org>, rui.zhang@intel.com,
+ devicetree@vger.kernel.org, marc.w.gonzalez@free.fr,
+ Eduardo Valentin <edubezval@gmail.com>, enric.balletbo@collabora.com,
+ robh+dt@kernel.org, Jonathan.Cameron@huawei.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, olof@lixom.net,
+ David Miller <davem@davemloft.net>
+Content-Type: multipart/mixed; boundary="===============4220071351958913098=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
 
-On 5/17/19 8:10 AM, Peter Zijlstra wrote:
-> On Thu, May 16, 2019 at 02:21:46PM +0100, Raphael Gault wrote:
->> In order to prevent the userspace processes which are trying to access
->> the registers from the pmu registers on a big.LITTLE environment we
->> introduce a hook to handle undefined instructions.
->>
->> The goal here is to prevent the process to be interrupted by a signal
->> when the error is caused by the task being scheduled while accessing
->> a counter, causing the counter access to be invalid. As we are not able
->> to know efficiently the number of counters available physically on both
->> pmu in that context we consider that any faulting access to a counter
->> which is architecturally correct should not cause a SIGILL signal if
->> the permissions are set accordingly.
->
-> The other approach is using rseq for this; with that you can guarantee
-> it will never issue the instruction on a wrong CPU.
->
-> That said; emulating the thing isn't horrible either.
->
->> +/*
->> + * We put 0 in the target register if we
->> + * are reading from pmu register. If we are
->> + * writing, we do nothing.
->> + */
->
-> Wait _what_ ?!? userspace can _WRITE_ to these registers?
->
+--===============4220071351958913098==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="k3cws7k6b2j4fvaj"
+Content-Disposition: inline
 
-The user can write to some pmu registers but those are not the ones that
-interest us here. My comment was ill formed, indeed this hook can only
-be triggered by reads in this case.
-Sorry about that.
 
-Thanks,
+--k3cws7k6b2j4fvaj
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Fri, May 17, 2019 at 01:51:56AM +0800, Frank Lee wrote:
+> > > +struct sun50i_thermal_chip {
+> > > +     int     sensor_num;
+> > > +     int     offset;
+> > > +     int     scale;
+> > > +     int     ft_deviation;
+> > > +     int     temp_calib_base;
+> > > +     int     temp_data_base;
+> > > +     int     (*enable)(struct tsens_device *tmdev);
+> > > +     int     (*disable)(struct tsens_device *tmdev);
+> > > +};
+> >
+> > I'm not super fond of having a lot of quirks that are not needed. If
+> > we ever need those quirks when adding support for a new SoC, then
+> > yeah, we should totally have some, but only when and if it's needed.
+> >
+> > Otherwise, the driver is more complicated for no particular reason.
+>
+> This is unavoidable because of the difference in soc.
+
+I know, but this isn't my point.
+
+My point is that at this time of the driver development, we don't know
+what is going to be needed to support all of those SoCs.
+
+Some of the parameters you added might not be needed, some parameters
+might be missing, we don't know. So let's keep it simple for now.
+
+> > > +static int tsens_probe(struct platform_device *pdev)
+> > > +{
+> > > +     struct tsens_device *tmdev;
+> > > +     struct device *dev = &pdev->dev;
+> > > +     int ret;
+> > > +
+> > > +     tmdev = devm_kzalloc(dev, sizeof(*tmdev), GFP_KERNEL);
+> > > +     if (!tmdev)
+> > > +             return -ENOMEM;
+> > > +
+> > > +     tmdev->dev = dev;
+> > > +     tmdev->chip = of_device_get_match_data(&pdev->dev);
+> > > +     if (!tmdev->chip)
+> > > +             return -EINVAL;
+> > > +
+> > > +     ret = tsens_init(tmdev);
+> > > +     if (ret)
+> > > +             return ret;
+> > > +
+> > > +     ret = tsens_register(tmdev);
+> > > +     if (ret)
+> > > +             return ret;
+> > > +
+> > > +     ret = tmdev->chip->enable(tmdev);
+> > > +     if (ret)
+> > > +             return ret;
+> > >
+> > > +     platform_set_drvdata(pdev, tmdev);
+> >
+> > Your registration should be the very last thing you do. Otherwise, you
+> > have a small window where the get_temp callback can be called, but the
+> > driver will not be functional yet.
+>
+> No. Anyway, ths data qcquisition is ms level.
+
+That's kind of irrelevant. There's nothing preventing get_temp to be
+called right away.
+
+> > > +     ret = tsens_calibrate(tmdev);
+> > > +     if (ret)
+> > > +             return ret;
+> > > +
+> > > +     /*
+> > > +      * clkin = 24MHz
+> > > +      * T acquire = clkin / (SUN50I_THS_CTRL0_T_ACQ + 1)
+> > > +      *           = 20us
+> > > +      */
+> > > +     regmap_write(tmdev->regmap, SUN50I_THS_CTRL0,
+> > > +                  SUN50I_THS_CTRL0_T_ACQ(479));
+> > > +     /* average over 4 samples */
+> > > +     regmap_write(tmdev->regmap, SUN50I_H6_THS_MFC,
+> > > +                  SUN50I_THS_FILTER_EN |
+> > > +                  SUN50I_THS_FILTER_TYPE(1));
+> > > +     /* period = (SUN50I_H6_THS_PC_TEMP_PERIOD + 1) * 4096 / clkin; ~10ms */
+> > > +     regmap_write(tmdev->regmap, SUN50I_H6_THS_PC,
+> > > +                  SUN50I_H6_THS_PC_TEMP_PERIOD(58));
+> > > +     /* enable sensor */
+> > > +     val = GENMASK(tmdev->chip->sensor_num - 1, 0);
+> > > +     regmap_write(tmdev->regmap, SUN50I_H6_THS_ENABLE, val);
+> > > +
+> > > +     return 0;
+> > > +
+> > > +assert_reset:
+> > > +     reset_control_assert(tmdev->reset);
+> > > +
+> > > +     return ret;
+> >
+> > Can't we do that with runtime_pm?
+>
+> Saving energy doesn't make much sense compared to system security.
+
+I'm not sure what you mean by security.
+
+Maxime
 
 --
-Raphael Gault
-IMPORTANT NOTICE: The contents of this email and any attachments are confidential and may also be privileged. If you are not the intended recipient, please notify the sender immediately and do not disclose the contents to any other person, use it for any purpose, or store or copy the information in any medium. Thank you.
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--k3cws7k6b2j4fvaj
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXN5kggAKCRDj7w1vZxhR
+xSjEAP0ROb9O13AokItNEnWe0Lv3GDFB7l31wQEb3cxsP3Vh7QEAr1e8+X/0WwOo
+AWNOgr6T4osFIe+fzrg7yYJbVXsPogc=
+=AWAL
+-----END PGP SIGNATURE-----
+
+--k3cws7k6b2j4fvaj--
+
+
+--===============4220071351958913098==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4220071351958913098==--
+
