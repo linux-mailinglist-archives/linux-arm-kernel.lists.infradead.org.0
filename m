@@ -2,66 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9EC2421738
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 12:47:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3CCD217C2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 13:30:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J7VAoWUuN/zCKNMai/BCAEl0mSri3MnTR/yYtaGyWWw=; b=uHu8pLDufQYeoD
-	pB5rQ4gp/T2cbo0eCDtI2/dkVHSDsl2T1G7ojTRMiL94wnF17P7bU5BMtzZDMtSegu8Q4QJ0GBRkL
-	QlGGHlaN/NRx8Zlfk/6ccyz66OliPXxzoML83r6AZc3YJ613gCvaEIhhdim2QxEJ9Wm1iZYnHIzGv
-	AUMtlJX+vQGNdd969CMchXmLCe1UL6DLWSKrZHxJGFvvgTOCm108iL8pt2HYvnlFf/hEsWJqylG1o
-	9veyN2A1QGH5QljTZm1ki6GGnZmXeFWeMrvcdtEYgI59zz2+J8/uYCgCICGLEA3Ex8DGEFuk5XCSe
-	XA6vAYcJg9g9f8Yy9+zg==;
+	List-Owner; bh=sWXwE+X5NSflKfqeD9KJOLawD5UO9Cp22pr1sr8ONYc=; b=tObIUP1DGkR3uv
+	x33JBJlOJpyY0IotSkTETmvn7igsaN2lSLFPAwfV4YOEs8ZtuZGl35m46mRZOvItgle4Tdxt5o4YU
+	e4U9o+3qaqTqEskOFnsLeJwTHSJaWVAx6f7x2YAjkNX3T0Dn1wUpL2ldHshhvDfK29TTEC7OQV6j/
+	qVUB0p71jBEjLE9by6oZpLyzp2XGu7EeDvVpCtdRKaNvH4y7o/WpwgIm5zMCABAulz7pasOSmrqUf
+	vx2GjHRGw0qgJdLve2Gsjd0R6lYDUIJjgukcJHkD07TeWYE9EmeEiVss3jKMlqYnYpWt7sUG7tqp7
+	iL+8UVJ4pTfDPSLNH1RQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRaOc-0006Eo-5S; Fri, 17 May 2019 10:47:26 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1hRb41-0003tY-DP; Fri, 17 May 2019 11:30:13 +0000
+Received: from mail-eopbgr130081.outbound.protection.outlook.com
+ ([40.107.13.81] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRaOV-0006EW-Dp
- for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 10:47:20 +0000
-Received: by mail-lf1-x144.google.com with SMTP id y10so5010800lfl.3
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 May 2019 03:47:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Ku+cJ0KGPggfXsWsOEHqzdK2uKS13WYhdMXnkwa2J94=;
- b=YGWxc2NYkRjVCyVbQ1/3Kdezha005MkUtmDXwU3Dnn66C729JPxJ5OvZuYRVpCUFLQ
- KI/g4RjNq9uklOniZJlfGCrkHS6f7BQowB7XoHbyskPrUjX0322lL4+aTWQYJ58goKjC
- Nr8MEiMJgf1uRPnhX2KIVgij8d4p4vWRG2K9znhvAsxnCpJRLpKrFqTRMRtJPKPose6i
- 8e6Ebfc7YHlS+BhHuTdAlgIhCSANHprdYIW29we064YDbWX5agWqW7MV99e5EwGERmeE
- kwdvEmsqol/i7mS05ECUsNyxXxOFpD2NR/JDj3vMIQodyzu1KyCNMyn2Ufc0ZcKM/WRd
- nDHQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Ku+cJ0KGPggfXsWsOEHqzdK2uKS13WYhdMXnkwa2J94=;
- b=ql/RyNo4GFuI6ss+nzUlbeNXX98+G2ZMz7soWoq7pr6xNLLKNAadyVkKzYqnOjfQAk
- 3997yw91tdqpff/4kWmFCwYSvuMSHTxwGgwufDxlnzl7BN1Jx7EQBjokDhd4pTkEz3Po
- hleaLPbiUi11eSdnEPZpK1XcKnRrL8XxoqGsPvRBl6JaTQn/dNRTRnOuY8rX+gk/QNCV
- V45BXd0FN2kPnUb6uw/5EUIToxb7kiaPYzOm8/o3z44KVgQ2JnouGOkFdRH5kaKLdCYw
- hQ+CApNBlD5jUiL0P9FnOu/MxwSpvZCf1ZEYV+06MkQPmazTB3Gwn9/PiReUDFL2anUh
- L94g==
-X-Gm-Message-State: APjAAAVzxyaMx/CdiRwkhSIcFgT2ppPaOV+4SH+o69JZ+nMKfIRLdFfb
- 7G6uq1YLd5hrrsKNxtUoG5fwuGtGr3cqujHSZgI=
-X-Google-Smtp-Source: APXvYqxZ2MG2AQvc33D8SCatH+kfTvr7StGGJTsiwIzC3IiePbUuBCM66Lyp5YEs5ptkeASOwJL4u708VtTLT1yA9fA=
-X-Received: by 2002:a19:c60f:: with SMTP id w15mr27524114lff.61.1558090037048; 
- Fri, 17 May 2019 03:47:17 -0700 (PDT)
+ id 1hRb3t-0002iS-LN
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 11:30:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hLGBACUNgaJbwlaseeNZvxS77wDYZplHZuh9h2bEmuQ=;
+ b=fsCTq+Q82c5RkowvpBU6ZM+m/vDm8vM3/kcN8SLiINEzZBbgxBc8Dy5stVLQhDtMD1TXaTvvXGQkPsB4aX7ms23oqCcSQpWp4R84KJBkDBp9P7LGqhjqhBVV0AYCBySR7UDFc+LmcdkUpWcormi8o5mixqMXA58ntCVCIl/xn0I=
+Received: from AM0PR04MB4211.eurprd04.prod.outlook.com (52.134.92.158) by
+ AM0PR04MB6082.eurprd04.prod.outlook.com (20.179.32.213) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1900.18; Fri, 17 May 2019 11:29:59 +0000
+Received: from AM0PR04MB4211.eurprd04.prod.outlook.com
+ ([fe80::c415:3cab:a042:2e13]) by AM0PR04MB4211.eurprd04.prod.outlook.com
+ ([fe80::c415:3cab:a042:2e13%6]) with mapi id 15.20.1900.010; Fri, 17 May 2019
+ 11:29:59 +0000
+From: Aisheng Dong <aisheng.dong@nxp.com>
+To: Oliver Graute <oliver.graute@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>
+Subject: RE: [PATCH 1/5] clk: add imx8 clk defines
+Thread-Topic: [PATCH 1/5] clk: add imx8 clk defines
+Thread-Index: AQHVDII7FGokB8QeB06r9iPg0nmfkaZvLf8A
+Date: Fri, 17 May 2019 11:29:59 +0000
+Message-ID: <AM0PR04MB4211706D24BBF3F9FB6CAF28800B0@AM0PR04MB4211.eurprd04.prod.outlook.com>
+References: <20190517071813.26674-1-oliver.graute@gmail.com>
+In-Reply-To: <20190517071813.26674-1-oliver.graute@gmail.com>
+Accept-Language: zh-CN, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=aisheng.dong@nxp.com; 
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: b5adf9f5-1b45-4c30-416e-08d6dabaff12
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB6082; 
+x-ms-traffictypediagnostic: AM0PR04MB6082:
+x-ms-exchange-purlcount: 1
+x-microsoft-antispam-prvs: <AM0PR04MB6082F9BBD95EB80756E60271800B0@AM0PR04MB6082.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1107;
+x-forefront-prvs: 0040126723
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(39860400002)(366004)(396003)(136003)(346002)(376002)(189003)(199004)(446003)(11346002)(305945005)(71190400001)(71200400001)(33656002)(229853002)(66066001)(476003)(76176011)(6506007)(256004)(486006)(44832011)(7736002)(74316002)(102836004)(86362001)(6306002)(2906002)(66556008)(64756008)(66446008)(81156014)(81166006)(66946007)(110136005)(54906003)(52536014)(76116006)(66476007)(26005)(55016002)(99286004)(9686003)(7696005)(4744005)(7416002)(2201001)(8936002)(6436002)(73956011)(316002)(8676002)(25786009)(6116002)(3846002)(5660300002)(53936002)(68736007)(186003)(6246003)(2501003)(4326008)(478600001)(14454004)(966005);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6082;
+ H:AM0PR04MB4211.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: abFa3uLB8GnCqieznt/hpjOmR6DXEoGOrR7rP96Da046o7n05VniESbNObEHAF789HWxTZiG92oe1FeXC84ZB9c8UKFJBE71QmeIgh/7+NUyO/mFpAn1ixH4K1fHIsDnJNiGmamULRKV61eAquIFm9Tl9v1B4tobwF0E/XA3qlFoRQs2vbyzlP9j3UBmpRrcXg9MG9ByGm2WwhgmdZbWRl9e8C7a/34p9RXzaxCSB6XGIeyGs70KM2s+C+IsFd2UQ5iKuivVGjBWlamKDOF5sJlSaaty6YBTkZXUPAjIPdCrMtZBgMpdQ3Q9/BQNWhGQQ0tABJDax5aUpqiCRUd8NiZZm7U8erg22vMBGHSNK34IB8J/cb1QHeW7rI5ap4bKU5LIR3Z/MPYn3QyXMGiIca97RqHVIXCPuZbplfX51OA=
 MIME-Version: 1.0
-References: <20190517074039.22614-1-peng.fan@nxp.com>
-In-Reply-To: <20190517074039.22614-1-peng.fan@nxp.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Fri, 17 May 2019 07:47:08 -0300
-Message-ID: <CAOMZO5CobB6oSKc9SY3LLdLc9+ZkfiZyYXyCQa5yR-Wwnv0OCQ@mail.gmail.com>
-Subject: Re: [PATCH V2] clk: imx: imx8mm: fix int pll clk gate
-To: Peng Fan <peng.fan@nxp.com>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: b5adf9f5-1b45-4c30-416e-08d6dabaff12
+X-MS-Exchange-CrossTenant-originalarrivaltime: 17 May 2019 11:29:59.7332 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6082
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190517_034719_489008_63C4C70C 
-X-CRM114-Status: UNSURE (   8.92  )
+X-CRM114-CacheID: sfid-20190517_043005_714579_360E92A0 
+X-CRM114-Status: UNSURE (   7.35  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -69,12 +93,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
+ no trust [40.107.13.81 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -93,35 +114,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "sboyd@kernel.org" <sboyd@kernel.org>,
- "mturquette@baylibre.com" <mturquette@baylibre.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "stable@vger.kernel.org" <stable@vger.kernel.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
  "shawnguo@kernel.org" <shawnguo@kernel.org>,
  "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ Oliver Graute <oliver.graute@kococonnector.com>,
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 17, 2019 at 4:27 AM Peng Fan <peng.fan@nxp.com> wrote:
->
-> Fixes: ba5625c3e27 ("clk: imx: Add clock driver support for imx8mm")
-> To Frac pll, the gate shift is 13, however to Int PLL the gate shift
-> is 11.
->
-> Cc: <stable@vger.kernel.org>
+Hi Oliver,
 
-The Fixes tag should go here instead.
+> From: Oliver Graute [mailto:oliver.graute@gmail.com]
+> Sent: Friday, May 17, 2019 3:18 PM
+> 
+> From: Oliver Graute <oliver.graute@kococonnector.com>
+> 
+> added header defines for imx8qm clock
+> 
+> Signed-off-by: Oliver Graute <oliver.graute@kococonnector.com>
 
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> Reviewed-by: Fabio Estevam <festevam@gmail.com>
-> Reviewed-by: Jacky Bai <ping.bai@nxp.com>
+It seems you missed this one.
+[00/14] arm64: dts: imx8: architecture improvement and adding imx8qm support
+https://patchwork.kernel.org/cover/10824537/
 
+Regards
+Dong Aisheng
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
