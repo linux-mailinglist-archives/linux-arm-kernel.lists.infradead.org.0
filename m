@@ -2,57 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3408621402
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 09:10:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 418C72140B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 09:14:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x0EIGPox3RjM5HU4skXV6Zuhy+EU/nhC9M6wCAoVOdc=; b=ZMfY6BD0mmfJBu
-	ZcxAvdDMxJQTkSyK2FdpGK5Fb47bQE68T1GT5UWBDjRhoHvKjFi/bd5eKp5cOpVW5NyYoQdb7LNbc
-	C7SY5lzryWh1uixM4A+nNxTA3ElmtibBqAq5e93oNEkZKepy0lOjvRz24SE5qZYEHmgNofVwMv4tZ
-	BtDFL5ajwDsJniliRiomgvrBOkaD/inRnNpzxXKN6G92xAi4+fEojQ/0KsikQ+kH68g1LVYGoiKYq
-	px4AqkAHji/IvK0hXWgIggzLWdHW6uZLKGw906i8RXBMVdxKUcMM7ouYUtbkD1ymf4uv+dA/eHL24
-	TiQxCCyneQeZk4FcRFlw==;
+	List-Owner; bh=7yhlmaboaxjwKwtRx3r475AX5qemxaA2aZNu65CKgXQ=; b=HXbx9qzxL6W5n7
+	p6JMaOoCi99D8mqjL2Fi7PoBOq+0LPg93WfCVQdGzQlGAoIdEKVhT78uMYcacEyPAe3tGEawwGRwU
+	34xIBTgpo9j8Alhelh0yfK6EkGzeDsKYgcNWPIbMBOWz3TxYhWVqsx4qk2SRSrVSETGQejCakwdQP
+	K+Jwu9PAVMJc7h5wZNdlQyJx2eWLNdkJT4IG1Sdesy6Aor3xpaB4mewhTuUdbR9Xz+G4ygVJwV0MF
+	SzxzbqvNOWLDn5QEDO8w63APlkCwU17V+9WEti12YipAIfrHszhSoZeoO1ujKKbq4l588L9426L3L
+	qqCircU+XgiIYuKdsJiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRX0h-0000Tw-7s; Fri, 17 May 2019 07:10:31 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hRX4Y-00012M-0j; Fri, 17 May 2019 07:14:30 +0000
+Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRX0a-0000Tn-Nv
- for linux-arm-kernel@bombadil.infradead.org; Fri, 17 May 2019 07:10:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=HxUFN7ImIherhziAwE4B0zMLXT1M0ngsvbs97gyVEkE=; b=j/4yVJSH4JiFFugtuMOtwB4uo
- 78y9tzESi7HMzHX+wUzTEMVSYVKslEfJ6H8nXugzN1VipITSGlrQuXBMgNEEnYkaQhr/UhTfm2Ejl
- dIL/1/zxXPGhWOfioAkX91ZIXv46+8o3PVtSoVJSf44rKSWOwO7vCIgpToAECIXCgS8LQvHnLw2NO
- Pmhi9uJb0PK4BQJP3fjY123u+cdfxjV4nTpRCvL+oN12r4nKs6c8gOa4e1l2+afp1OYbf1WGsNndF
- yjMkl9tFuUnLwzpUH/3ekvZc3g/5ojgqQ2le3qK5UjvcsGxc6lLh1tMFN0cS3gcCJNbZFfvPBqu5E
- pXwh+QQjw==;
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=hirez.programming.kicks-ass.net)
- by merlin.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRX0X-00075i-Do; Fri, 17 May 2019 07:10:21 +0000
-Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
- id 9ED092029906B; Fri, 17 May 2019 09:10:18 +0200 (CEST)
-Date: Fri, 17 May 2019 09:10:18 +0200
-From: Peter Zijlstra <peterz@infradead.org>
-To: Raphael Gault <raphael.gault@arm.com>
-Subject: Re: [PATCH 4/6] arm64: pmu: Add hook to handle pmu-related undefined
- instructions
-Message-ID: <20190517071018.GH2623@hirez.programming.kicks-ass.net>
-References: <20190516132148.10085-1-raphael.gault@arm.com>
- <20190516132148.10085-5-raphael.gault@arm.com>
+ id 1hRX4R-00011Y-GT
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 07:14:25 +0000
+X-Originating-IP: 92.137.69.152
+Received: from localhost (alyon-656-1-672-152.w92-137.abo.wanadoo.fr
+ [92.137.69.152]) (Authenticated sender: gregory.clement@bootlin.com)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id EF981E0002;
+ Fri, 17 May 2019 07:14:01 +0000 (UTC)
+From: Gregory CLEMENT <gregory.clement@bootlin.com>
+To: Olof Johansson <olof@lixom.net>
+Subject: Re: [GIT PULL v2] ARM: mvebu: arm for v5.2 (#1)
+In-Reply-To: <CAOesGMh8EOkSYFQrDh3QsRD79we16dcnbiw3vMRR3KPqFHmEpw@mail.gmail.com>
+References: <87v9yw5525.fsf@FE-laptop> <87sgti1j1w.fsf@FE-laptop>
+ <CAOesGMh8EOkSYFQrDh3QsRD79we16dcnbiw3vMRR3KPqFHmEpw@mail.gmail.com>
+Date: Fri, 17 May 2019 09:14:01 +0200
+Message-ID: <87y335zh6u.fsf@FE-laptop>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190516132148.10085-5-raphael.gault@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190517_001423_697963_4F3E0576 
+X-CRM114-Status: GOOD (  10.22  )
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.7 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.196 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -64,39 +60,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, acme@kernel.org, mingo@redhat.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Andrew Lunn <andrew@lunn.ch>, Jason Cooper <jason@lakedaemon.net>,
+ Arnd Bergmann <arnd@arndb.de>, ARM-SoC Maintainers <arm@kernel.org>,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 16, 2019 at 02:21:46PM +0100, Raphael Gault wrote:
-> In order to prevent the userspace processes which are trying to access
-> the registers from the pmu registers on a big.LITTLE environment we
-> introduce a hook to handle undefined instructions.
-> 
-> The goal here is to prevent the process to be interrupted by a signal
-> when the error is caused by the task being scheduled while accessing
-> a counter, causing the counter access to be invalid. As we are not able
-> to know efficiently the number of counters available physically on both
-> pmu in that context we consider that any faulting access to a counter
-> which is architecturally correct should not cause a SIGILL signal if
-> the permissions are set accordingly.
+Olof Johansson <olof@lixom.net> writes:
 
-The other approach is using rseq for this; with that you can guarantee
-it will never issue the instruction on a wrong CPU.
+> On Mon, May 13, 2019 at 8:16 AM Gregory CLEMENT
+> <gregory.clement@bootlin.com> wrote:
+>>
+>> Arnd, Olof,
+>>
+>> > Hi,
+>> >
+>> > Here is the second version first pull request for arm for mvebu for
+>> > v5.2.  I fixed the coding style issue dtecting by checkpatch in the
+>> > commit "ARM: mvebu: fix a leaked reference by adding missing
+>> > of_node_put"
+>>
+>> Any news about this PR?
+>>
+>> I sent it less than 24 hours after being rejected by Olof because of a
+>> missing space, so I hope this branch will be finally merged.
+>
+> Hi,
+>
+> It won't be in the batch I am sending in tonight, but I'll pick it up
+> in a late branch.
 
-That said; emulating the thing isn't horrible either.
+OK, Thanks!
 
-> +	/*
-> +	 * We put 0 in the target register if we
-> +	 * are reading from pmu register. If we are
-> +	 * writing, we do nothing.
-> +	 */
+>The contents are mostly looking like fixes so that
+> should be fine. Stay tuned.
 
-Wait _what_ ?!? userspace can _WRITE_ to these registers?
+Indeed the content is between clean-up and fixes.
+
+Gregory
+
+>
+>
+> -Olof
+
+-- 
+Gregory Clement, Bootlin
+Embedded Linux and Kernel engineering
+http://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
