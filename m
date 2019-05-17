@@ -2,78 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C78421BFD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 18:48:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DF6F21BFE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 18:48:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GLPa5tpyBSofvJ7WjOhtnE1Rz79FQekhOc5t5hEkPlk=; b=pDD01uXBIAYKic
-	PPJA14GedgFVlF9SWckFUx+oibevCMWRJB2lFMH6imAKAeDvRNpL3NAhNDFxBc7B+y462HOYoS1Ak
-	sTPtl9PqOKiZDA2Zao+VRxUNxF19uJ2i9maohifbMJRJ4dxOjdcDpO+9eCNeJlvI5buJKtJ27G8Qw
-	yYAJ4ZHx6K61sFFNWobNDAPK+WCQ4sol/CzSE9yqa6hoWp5Bty6hPe4oJfKyl9WNqlq9a4D31CGNw
-	DqnYUPZh1f9j3k/G3t7E7ffF5UiPhya8u8AsEmOSOTwd3QH7aR7XDZntUCh2299mhLtU7KuNEIB6a
-	KQv88Itvslk9zl0KA9ZQ==;
+	List-Owner; bh=mOkB2VYUpklKf7L0Zlmju6L5/S4YpDT2tOec/cX2f00=; b=YPuxUih7gWmfEl
+	zlitZN1Yxl4wj5PT3aSSHS4Lsul3nd1yZejoYnWLHCdcToFjy1L1fNwoBfVjE5nugwavZeKVBOrFB
+	jSOEuDVP/E9Lesq7B0k5I7Pxy/1I0L7AEsuTuQuuySL9Am8+zDWLaUZO0/n61cyH7YW91AsfUQ1/B
+	qWKH4xVwygScI3ch+43n8gi/gGNOYOSd510l7BKo2YXHBXrBM2SYwc3DFH5IRWYf9LPINUQXjN5no
+	XCPlh/myrz+smsw/0MswCh7eybh9MkrV1dwaOt0ijdiT33JoF9uNRSK9RVbu7S84Usv7iSXwgU70I
+	hvNx8sJFDgQFJ0Y9tFtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRg1t-0007sQ-AZ; Fri, 17 May 2019 16:48:21 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hRg25-00085i-5S; Fri, 17 May 2019 16:48:33 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRg1R-0007SV-BL
- for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 16:47:54 +0000
-Received: by mail-pl1-x641.google.com with SMTP id a5so3577519pls.12
+ id 1hRg1S-0007Sr-9G
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 16:47:55 +0000
+Received: by mail-pl1-x642.google.com with SMTP id r18so3581646pls.13
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 May 2019 09:47:53 -0700 (PDT)
+ Fri, 17 May 2019 09:47:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=ZrfU3jaOv3gonSUyJKcZeL36dqfb9Wzrb+12t37zMDc=;
- b=hCa6JuKSMM9Bs3WxT0qkjiSBEXmEf/LJdLX0/dKlb6nuQwSG6kwb+JGDS+mg5gfu9X
- Qrs4zMwjPISN3L2TwsmafobEXz1L5rOYHtS6cdmePanxz8zkBJIDmu0PpB2QMuj3sFCm
- CTPLfkxGffpChmq0cY2gI2ZmTf4OFrXugT+0A=
+ bh=CqKPKWAOqqK2fAPeJ19AHkkbMpccuE5V5twNlxY2yj4=;
+ b=l5axbd7GCjC8UzCQX6le433fYI5Gy+AP17dysVHzpJd5K1V3v/AHW4gWkJNCz7RvkX
+ U/Da5n4quZkQBum7RcbcB/GoUQGFlxfPOuZ2L8sPSnntSKwbhQY1PEaQHXxJ91PjHzMn
+ phj4VIypQewbe385bAXnxglk7G8q2eho9KcGk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=ZrfU3jaOv3gonSUyJKcZeL36dqfb9Wzrb+12t37zMDc=;
- b=c/uYdcAlXpcPluXrdGkTMqS5reViccSVA9Gj9wCoA9XmlFupO1xrOYhsEhz59GsZuM
- j1Nx7/7HtK6TE/v1aJ1aYV4tFuBalu7Y7jwAcBdkbOif0Vn6hMDqKafFUB9dcHl+w5Tn
- WaOfPMFBcIj0EjGTBgbO2aXVTF5S35B2HSXNoDd0dNWRa4S6KOHY2mbfqFYIdPwPuCnu
- f2tX3G08TSA4SyzvXWvJZOCq8bkz11oVHWX+l6VgE2lq+bNPvEXXSVrqibafGaX4IvHz
- SnJHHFEkWVqgj1QmUANrM65UE0NNL+NZjnsrt8zs/Bzd6xPLKACB3DuyQkN3VDiZsUHx
- z8Og==
-X-Gm-Message-State: APjAAAWx2OI1kd9tosUa7g5F61/11cfHw6R0+yBvD6ZEJonoWo/IkZ7C
- cJn/Qz8l5BWbrNGqZTw8gkRhlsMMhBV7xg==
-X-Google-Smtp-Source: APXvYqwzfl7bTpdEQKPRd5yF2qk0elfKWYm1umwxZQ/tTfqWpMHqi0G8Q3pmuAWOtsRl2T6ICJd6KA==
-X-Received: by 2002:a17:902:e108:: with SMTP id
- cc8mr46847446plb.145.1558111672832; 
- Fri, 17 May 2019 09:47:52 -0700 (PDT)
+ bh=CqKPKWAOqqK2fAPeJ19AHkkbMpccuE5V5twNlxY2yj4=;
+ b=KfrLntm6nHXKcvy+zNsTGr4DFHNcMenKhX8BJTTnMuQZSDqVzT4OYToo6zCX46jEx0
+ hFFPQmwbP+DhlRXGOZio8THXDl3CvUwF9seQXRID4jpMgZU982FqYYpxO3/4lUavNcFK
+ yycrOxCZSIRv7MSljuvLYA5mrl1Sks5zD9FaJInGXawdwT6nxQ/m0cKWfh5ea5T8/mcM
+ 0D5dT8mJjdFMZuRQECqM9UXuwg8tqpNWhZ/ONKminFDXGVbX/x6PzqTRkdIonIq9uYI5
+ hxCzG8uNSEjrNbarO9FoC2aHqpdR/LJ8AcJQ78aeIiTtNIho5DyOkSc3/xieQrfog/Q6
+ CXRw==
+X-Gm-Message-State: APjAAAXl8vGzMiOFDEo90IQjiZw5HL0uYas6v7vSeR/rY3u9mxWdvgTb
+ mvmAhTM0EzYpijL3guQ+/H53pg==
+X-Google-Smtp-Source: APXvYqyAp8uRsjVVx2sdnL7aIY5IBJRUMYDjonUYiJUCfdadaA7UoNqRxgke+HnZZ6Yy3quetwwBow==
+X-Received: by 2002:a17:902:ac98:: with SMTP id
+ h24mr1729914plr.265.1558111673755; 
+ Fri, 17 May 2019 09:47:53 -0700 (PDT)
 Received: from smtp.gmail.com ([2620:15c:202:1:fa53:7765:582b:82b9])
- by smtp.gmail.com with ESMTPSA id l141sm12229810pfd.24.2019.05.17.09.47.51
+ by smtp.gmail.com with ESMTPSA id l141sm12229810pfd.24.2019.05.17.09.47.52
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 17 May 2019 09:47:52 -0700 (PDT)
+ Fri, 17 May 2019 09:47:53 -0700 (PDT)
 From: Stephen Boyd <swboyd@chromium.org>
 To: linux-kernel@vger.kernel.org
-Subject: [RFC/PATCH 2/5] soc: qcom: cmd-db: Migrate to
- devm_memremap_reserved_mem()
-Date: Fri, 17 May 2019 09:47:43 -0700
-Message-Id: <20190517164746.110786-3-swboyd@chromium.org>
+Subject: [RFC/PATCH 3/5] memremap: Add support for read-only memory mappings
+Date: Fri, 17 May 2019 09:47:44 -0700
+Message-Id: <20190517164746.110786-4-swboyd@chromium.org>
 X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
 In-Reply-To: <20190517164746.110786-1-swboyd@chromium.org>
 References: <20190517164746.110786-1-swboyd@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190517_094753_386971_DE7FDEE3 
-X-CRM114-Status: GOOD (  13.72  )
+X-CRM114-CacheID: sfid-20190517_094754_320603_3B55FDAF 
+X-CRM114-Status: GOOD (  15.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -107,8 +106,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This gets rid of some duplicate code, and also makes the reserved memory
-region show up as 'cmd-db' memory in /proc/iomem.
+Sometimes we have memories that are supposed to be read-only, but when
+we map these regions the best we can do is map them as write-back with
+MEMREMAP_WB. Introduce a read-only memory mapping (MEMREMAP_RO) that
+allows us to map reserved memory regions as read-only. This way, we're
+less likely to see these special memory regions become corrupted by
+stray writes to them.
 
 Cc: Evan Green <evgreen@chromium.org>
 Cc: Rob Herring <robh+dt@kernel.org>
@@ -119,35 +122,62 @@ Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: Dan Williams <dan.j.williams@intel.com>
 Signed-off-by: Stephen Boyd <swboyd@chromium.org>
 ---
- drivers/soc/qcom/cmd-db.c | 13 +++----------
- 1 file changed, 3 insertions(+), 10 deletions(-)
+ include/linux/io.h |  1 +
+ kernel/iomem.c     | 15 +++++++++++++--
+ 2 files changed, 14 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/soc/qcom/cmd-db.c b/drivers/soc/qcom/cmd-db.c
-index f6c3d17b05c7..10a34d26b753 100644
---- a/drivers/soc/qcom/cmd-db.c
-+++ b/drivers/soc/qcom/cmd-db.c
-@@ -238,18 +238,11 @@ EXPORT_SYMBOL(cmd_db_read_slave_id);
+diff --git a/include/linux/io.h b/include/linux/io.h
+index 32e30e8fb9db..16c7f4498869 100644
+--- a/include/linux/io.h
++++ b/include/linux/io.h
+@@ -159,6 +159,7 @@ enum {
+ 	MEMREMAP_WC = 1 << 2,
+ 	MEMREMAP_ENC = 1 << 3,
+ 	MEMREMAP_DEC = 1 << 4,
++	MEMREMAP_RO = 1 << 5,
+ };
  
- static int cmd_db_dev_probe(struct platform_device *pdev)
- {
--	struct reserved_mem *rmem;
- 	int ret = 0;
+ void *memremap(resource_size_t offset, size_t size, unsigned long flags);
+diff --git a/kernel/iomem.c b/kernel/iomem.c
+index f7525e14ebc6..8d3cf74a32cb 100644
+--- a/kernel/iomem.c
++++ b/kernel/iomem.c
+@@ -19,6 +19,13 @@ static void *arch_memremap_wb(resource_size_t offset, unsigned long size)
+ }
+ #endif
  
--	rmem = of_reserved_mem_lookup(pdev->dev.of_node);
--	if (!rmem) {
--		dev_err(&pdev->dev, "failed to acquire memory region\n");
--		return -EINVAL;
--	}
--
--	cmd_db_header = memremap(rmem->base, rmem->size, MEMREMAP_WB);
--	if (!cmd_db_header) {
--		ret = -ENOMEM;
-+	cmd_db_header = devm_memremap_reserved_mem(&pdev->dev, MEMREMAP_WB);
-+	if (IS_ERR(cmd_db_header)) {
-+		ret = PTR_ERR(cmd_db_header);
- 		cmd_db_header = NULL;
- 		return ret;
++#ifndef arch_memremap_ro
++static void *arch_memremap_ro(resource_size_t offset, unsigned long size)
++{
++	return NULL;
++}
++#endif
++
+ #ifndef arch_memremap_can_ram_remap
+ static bool arch_memremap_can_ram_remap(resource_size_t offset, size_t size,
+ 					unsigned long flags)
+@@ -84,7 +91,10 @@ void *memremap(resource_size_t offset, size_t size, unsigned long flags)
  	}
+ 
+ 	/* Try all mapping types requested until one returns non-NULL */
+-	if (flags & MEMREMAP_WB) {
++	if ((flags & MEMREMAP_RO) && is_ram != REGION_INTERSECTS)
++		addr = arch_memremap_ro(offset, size);
++
++	if (!addr && (flags & MEMREMAP_WB)) {
+ 		/*
+ 		 * MEMREMAP_WB is special in that it can be satisifed
+ 		 * from the direct map.  Some archs depend on the
+@@ -103,7 +113,8 @@ void *memremap(resource_size_t offset, size_t size, unsigned long flags)
+ 	 * address mapping.  Enforce that this mapping is not aliasing
+ 	 * System RAM.
+ 	 */
+-	if (!addr && is_ram == REGION_INTERSECTS && flags != MEMREMAP_WB) {
++	if (!addr && is_ram == REGION_INTERSECTS &&
++	    (flags != MEMREMAP_WB || flags != MEMREMAP_RO)) {
+ 		WARN_ONCE(1, "memremap attempted on ram %pa size: %#lx\n",
+ 				&offset, (unsigned long) size);
+ 		return NULL;
 -- 
 Sent by a computer through tubes
 
