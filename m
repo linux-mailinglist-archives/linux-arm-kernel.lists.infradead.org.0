@@ -2,88 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F176B212BC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 06:07:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5DFCA212CB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 06:19:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=/tzwyzwekflP9CZXyc4TY+4+GdkxRMTXlWmx9fZFNps=; b=XnWSWbKurJp+GgxG7BjwsoNuh4
-	BXejE4b1HlLfJy7T83CEwbGpviC0FkgikfQBS/SWS5B3MsdzqHjOHEdVOnedrVEu2BqCum6ChBRYV
-	QI4JqEB8GQcr0mBXDLmwzTlEDC4b3rxJs0Nw6TKm9A6p1pRkIdJH5MCieT1CMOWciptJd8jYvUDsm
-	KsJdR8UpQ15wLhnSWE8lUr+ftrAnD7Qt109e/sdAwL1iSEkUJ5hSHhSq9tVpkvDCAmuzrci4JRZXd
-	wdTI7f62fTq9ApZtpGc82voKNIZV4FyCt2Kru5RE/om+s6poaSRSz7Dec2B3DOXi5BM0koNBmiYWa
-	osWJQ54w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7WTzUmIM2XBT/Kci0EvSQ/Zlk2j3TYBb9hVcRNxBIsA=; b=K/vwqgQHWN7Z0s
+	5nurXOx0UOoWNDtUaGVFpCRsHk8xGFenyLrga6V+4lTq3KkvlW6m8yTLRyK3u+M6J7cvc0uPYxPKM
+	DZdQ32DxVhqiN2azoKwMR08BphmAmP6/NlzAr5HGs5yMkA8Xd7wW6OdyN9dyhBqoon0YtKY+a8MEF
+	yj6mE5HK7Z5hyVmVCVjzDYxxluBANErcBbnXTXfz9cE57/mFu2egQq0UQjo+UHqFX6qG++OUpPFmF
+	PU6706h174TvW7uyWnN5lqDlqn2rJRqquVQXSGNGSE8AEqUcUCA36MBDxsrrBdy4qC+hdLyPzs6PE
+	LhC7E0VZriwY1ku7F99w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRU94-0005XM-QQ; Fri, 17 May 2019 04:06:58 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hRULO-0000aU-Ay; Fri, 17 May 2019 04:19:42 +0000
+Received: from conssluserg-04.nifty.com ([210.131.2.83])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRU8r-0005Nq-1K
- for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 04:06:48 +0000
-Received: by mail-pf1-x443.google.com with SMTP id g9so2969049pfo.11
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 May 2019 21:06:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=6yVenyf0a0qIZedfKSCtttpa0WMwEDTZq8Yud/8Uytg=;
- b=kCiLjC1owHy+UsjeF60cBtcatNacrggyR9r2TuoTOmaWEe3JT5GGpL6NQCaDV36Umb
- y/uBj3UO2rVyb7LmO0nPT1LDJ13jKkSjsa+1zBQ8ueyJ9FmLUfe5S/lk0Om0Rfr0OqhB
- udBzRgih+ZPFfi/pgEjD43225Heo+dB1r0fyB8XDYOUslZvLWhrEHS68MQPN4itx5QCF
- 5G2Si0cxb+SIySRKcJ89o6NK+bzeiKjUPq+YcDJWlujIPilrDaYpFLTrbyPSXFh2hj+S
- mx9VVpsW1bVQZmZ2Ze6IzHvT3dT9kfO2aRLIUQ1PQFdbLc/kn+Ctg79zCJGwc4LhM4IF
- pBvw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=6yVenyf0a0qIZedfKSCtttpa0WMwEDTZq8Yud/8Uytg=;
- b=OVXS2HRQck4kC9xy4HLy5KOSj4yJCyZdoHVQrKZC2Gh1gIgFMGyuaYAKy9THYNJ39T
- PMSwVoJaTa5ytoAVZ8Z6lahnUaKqjUGZS85wWtDU9cFnvMwN0jbyT50mj4uhErruITTg
- hwVXIHiSXzgdDAMid40akAJY5n+kCFjis2woev3NHl98pW3urn/OfNMN0CZ0Q+P7K0vl
- KeB6gMr0QCYJgLKXf+oW73deDMb0DB2M4CyEXtEn4pSBP2wP2jG7TmRGDCEXhgYJc7jf
- 043/fvF1h87afsih+Zwia6SEBnza7Fhg7KsAOxsHELCqRtSkKUFEXsTNvly7MIwIb7S5
- +Q8w==
-X-Gm-Message-State: APjAAAUYgT9wiTLVOWptYYbyHJB77tJ3/L0wJPsbS0DoakAuuO5EASxX
- KdV5Ww7Dl9/spLXPDOSM2hyAd+dzRg==
-X-Google-Smtp-Source: APXvYqyVaMd+FX1grTr8/UOs0JxoMs+1pdWe8hTBQCYVIxmgR63mOxmsGCZ0sfjQ08bGQHR+ZiNFjw==
-X-Received: by 2002:a62:e718:: with SMTP id s24mr58695777pfh.247.1558066004331; 
- Thu, 16 May 2019 21:06:44 -0700 (PDT)
-Received: from localhost.localdomain ([2409:4072:6390:5018:b478:7b0e:49e:16a3])
- by smtp.gmail.com with ESMTPSA id d3sm8628927pfn.113.2019.05.16.21.06.39
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 16 May 2019 21:06:43 -0700 (PDT)
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: heiko@sntech.de
-Subject: [PATCH v2 2/2] arm64: dts: rockchip: Enable SPI1 on Ficus
-Date: Fri, 17 May 2019 09:36:25 +0530
-Message-Id: <20190517040625.14607-2-manivannan.sadhasivam@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190517040625.14607-1-manivannan.sadhasivam@linaro.org>
-References: <20190517040625.14607-1-manivannan.sadhasivam@linaro.org>
+ id 1hRULH-0000Zl-9Y; Fri, 17 May 2019 04:19:37 +0000
+Received: from mail-ua1-f41.google.com (mail-ua1-f41.google.com
+ [209.85.222.41]) (authenticated)
+ by conssluserg-04.nifty.com with ESMTP id x4H4J80g014744;
+ Fri, 17 May 2019 13:19:09 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-04.nifty.com x4H4J80g014744
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1558066749;
+ bh=J7yAUK19cep0kEYDzk4DJ/4J6NgS5gQ7gjFkMhf0nf0=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=c0LtECK4wG0ntD78HJSVal1PgIaDPnG3TYgZdKUwPQb1na1TUOyc7O8nFlNd6CaCm
+ AXsspHBBBxyBH+xc+yKwpj4hyYVIlPFcjcW/vHsJL5fSi5Q2gSwjjErNYCHX7DoDJk
+ uzHnaxZfaH6FQsso8f00WBIqbL0o02CmwbkFxF8m6vBwnpe79+CLRENPKmsLOuBRZS
+ H1BuxVeZipFZOyAH3A/7goUgdI8wKHrHt3j0pC8tQP/JX2YVrYwXhbMxIntV2ieT5M
+ FSH/2b85VtqV4XO16MdlVD3fBZ0eNwSQDAHODI3YrVqSmTCnoT21JK380X6v99doLI
+ 2TTH2dRT0iNEA==
+X-Nifty-SrcIP: [209.85.222.41]
+Received: by mail-ua1-f41.google.com with SMTP id d4so2180887uaj.7;
+ Thu, 16 May 2019 21:19:08 -0700 (PDT)
+X-Gm-Message-State: APjAAAXgrBfDCXyBw284CgCQYHSN9iQ31EHhjqcC4MwkBj+WxP0uSyoT
+ U58D99Jsht5fT/iXmgp3DM1JwhhI3U6//BxRTt0=
+X-Google-Smtp-Source: APXvYqw2YDleh3v/xnLGvb0ytg007xtjBjm7KsoOOxcHJpN/6dfsgAIRhFvSJ0T46JhQEFnSRL0PruWBvw6llY+KDwI=
+X-Received: by 2002:ab0:3058:: with SMTP id x24mr23094567ual.95.1558066747792; 
+ Thu, 16 May 2019 21:19:07 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190423034959.13525-1-yamada.masahiro@socionext.com>
+ <20190423034959.13525-11-yamada.masahiro@socionext.com>
+ <ca74c830-fe1b-7bff-8dfd-353fca57b647@redhat.com>
+In-Reply-To: <ca74c830-fe1b-7bff-8dfd-353fca57b647@redhat.com>
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+Date: Fri, 17 May 2019 13:18:31 +0900
+X-Gmail-Original-Message-ID: <CAK7LNASjc8rmJvv5kgk6Mxo3mcB4EgB4XJG_8JY47ZQbrsSSXg@mail.gmail.com>
+Message-ID: <CAK7LNASjc8rmJvv5kgk6Mxo3mcB4EgB4XJG_8JY47ZQbrsSSXg@mail.gmail.com>
+Subject: Re: [RESEND PATCH v3 10/11] powerpc/mm/radix: mark as __tlbie_pid()
+ and friends as__always_inline
+To: Laura Abbott <labbott@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_210645_356642_DD445317 
-X-CRM114-Status: GOOD (  11.33  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190516_211935_545974_4B183355 
+X-CRM114-Status: GOOD (  10.13  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ no trust [210.131.2.83 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,53 +83,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tom@vamrs.com, linux-kernel@vger.kernel.org, dev@vamrs.com,
- linux-rockchip@lists.infradead.org,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: linux-arch <linux-arch@vger.kernel.org>,
+ Christophe Leroy <christophe.leroy@c-s.fr>, Arnd Bergmann <arnd@arndb.de>,
+ linux-s390 <linux-s390@vger.kernel.org>, Mathieu Malaterre <malat@debian.org>,
+ X86 ML <x86@kernel.org>, Heiko Carstens <heiko.carstens@de.ibm.com>,
+ linux-mips@vger.kernel.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Ingo Molnar <mingo@redhat.com>, linux-mtd <linux-mtd@lists.infradead.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable SPI1 exposed on both Low and High speed expansion connectors
-of Ficus. SPI1 has 3 different chip selects wired as below:
+Hi Laura,
 
-CS0 - Serial Flash (unpopulated)
-CS1 - Low Speed expansion
-CS2 - High Speed expansion
 
-Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
----
+On Fri, May 17, 2019 at 7:55 AM Laura Abbott <labbott@redhat.com> wrote:
 
-Changes in v2:
+> What gcc version was this tested with?
 
-* Used pin constants instead of hardcoding cs-gpios
+I use kernel.org toolchains
+https://mirrors.edge.kernel.org/pub/tools/crosstool/
 
- arch/arm64/boot/dts/rockchip/rk3399-ficus.dts | 6 ++++++
- 1 file changed, 6 insertions(+)
+It is GCC 8.1
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts b/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts
-index 027d428917b8..9af02d859dcd 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts
-@@ -146,6 +146,12 @@
- 	};
- };
- 
-+&spi1 {
-+	/* On both Low speed and High speed expansion */
-+	cs-gpios = <0>, <&gpio4 RK_PA6 0>, <&gpio4 RK_PA7 0>;
-+	status = "okay";
-+};
-+
- &usbdrd_dwc3_0 {
- 	dr_mode = "host";
- };
--- 
-2.17.1
 
+> We're still seeing errors on
+> Fedora rawhide with gcc 9.1.1 on a version (8c05f3b965da14e7790711026b32cc10a4c06213)
+> that should have this fix in it:
+>
+> BUILDSTDERR: arch/powerpc/mm/book3s64/radix_tlb.c: In function '_tlbiel_pid':
+> BUILDSTDERR: arch/powerpc/mm/book3s64/radix_tlb.c:104:2: warning: asm operand 3 probably doesn't match constraints
+> BUILDSTDERR:   104 |  asm volatile(PPC_TLBIEL(%0, %4, %3, %2, %1)
+> BUILDSTDERR:       |  ^~~
+> BUILDSTDERR: arch/powerpc/mm/book3s64/radix_tlb.c:104:2: error: impossible constraint in 'asm'
+> BUILDSTDERR: make[3]: *** [scripts/Makefile.build:279: arch/powerpc/mm/book3s64/radix_tlb.o] Error 1
+> BUILDSTDERR: make[2]: *** [scripts/Makefile.build:489: arch/powerpc/mm/book3s64] Error 2
+> BUILDSTDERR: make[1]: *** [scripts/Makefile.build:489: arch/powerpc/mm] Error 2
+
+Thanks for the report.
+
+Does this work for you?
+
+
+diff --git a/arch/powerpc/mm/book3s64/radix_tlb.c
+b/arch/powerpc/mm/book3s64/radix_tlb.c
+index 4d841369399f..9a6befdd5e74 100644
+--- a/arch/powerpc/mm/book3s64/radix_tlb.c
++++ b/arch/powerpc/mm/book3s64/radix_tlb.c
+
+@@ -239,7 +239,7 @@ static inline void fixup_tlbie_lpid(unsigned long lpid)
+ /*
+  * We use 128 set in radix mode and 256 set in hpt mode.
+  */
+-static inline void _tlbiel_pid(unsigned long pid, unsigned long ric)
++static __always_inline void _tlbiel_pid(unsigned long pid, unsigned long ric)
+ {
+        int set;
+
+
+
+
+--
+Best Regards
+Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
