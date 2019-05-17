@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23C78217FE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 14:06:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B083B21814
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 14:19:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gWYs5T6kq+tXITHYTMuX4kjmo4Bo9+3lsFxqsOcmQSk=; b=o8jV2xp/ILV95G
-	8Dead+ILa7Eg1wb3ZZN3hRb/7BAKe9VfsDTcq+l1ScEU8i4fH3jKAyrAFvtPTclTa0phvH0suSWVG
-	6bbX0DQNE+nBDBYbH5RpklF34Wl74udQXb3IpFtJuCD9dfy8MhUemxp3YIpAJ+HUwUDXRi+YL/xwU
-	f2GjsOloCYdM/rDNeuwXDAF5lgn2NB/lEDQ/HH+s+XFij0qHq+kR2x3E0qUe4lvR5szn3nW0oXMwn
-	Xsw/xuOkfoIvs/Xaz5kwRP+f4wrlh83qlu+rLilAg81X8SoMibsspcVM515dmmGtE9h+lFOzEioJb
-	tF0FaD/c56WMf3BV26Bg==;
+	List-Owner; bh=EhZI520Vljnb3SlrRsH6fNXWhjbQ+FZqVqs8xpweb8o=; b=LFt5+h2vnxGe62
+	rczhTh441ZecKoRrJBthySNwYYcOY8qb4da7ybRvekA+eJYqWWL3VtWM/vZyvhfbrAfKadkTRkmmo
+	+r2rnvSvVCFwRHMyBTpyS7UXOlAZrfYla/9EfdsiOzVG6PYJrI2AZclfhr7KYN4cDgBUCUKJerC0p
+	8ufv0TG/mtbLpj9DiwqIpcq790Z4cJfXiG9g+DQxeAC5qu5NuOnwo42VG9vYs9VveTrYzBBCZl+vi
+	Ly2FOOEJTlHTg2agX2r2CbSPTXf5s+cPiCWsuz9PLycaKS2sHGR79+h11xNjmXJerKeION76DvgVq
+	D9YmNFES2RKIrRNe7m2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRbcz-0007Y3-9b; Fri, 17 May 2019 12:06:21 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1hRbpn-0003JX-AG; Fri, 17 May 2019 12:19:35 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRbcr-0007XO-D1
- for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 12:06:15 +0000
-Received: by mail-ed1-x542.google.com with SMTP id w11so10237848edl.5
+ id 1hRbpf-0003J3-Jc
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 12:19:29 +0000
+Received: by mail-io1-xd41.google.com with SMTP id p2so5322778iol.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 May 2019 05:06:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ Fri, 17 May 2019 05:19:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Xz2LRvxPp0zacQCxOX9WPIoVksCerdgKAkltB9xI7vU=;
- b=Q710WweXud4xeoDdbDKuewRxMYEvCHccfVW47o4eWpq+HqiDuyHva/46GsGyPG6Fx7
- v0use1+aguA1w8upPSJjlMRAKWZujt/lp2Cs3xeKN0ezbEUFY6hZwb/v2ZQxlNiveV3e
- aA+u4y5iPO2JhyaoEIwdhpXqo5A7AIFaecxDQPp/yoWWCcXsJwdeCF0avR3V4aFU6y5Z
- vYLIwGTAdsZizhMXEXrZjeSAHwjI0YvdasJYuuyCmVjjyI95AThi/Y8HIJWlLsoQORg7
- n1Ttv6f7ZyuUb/FQf14uU5I6jcOczPTTmpaV+jYT8D/8nSSXMKMObcNuKQckQvEWGNiY
- vvmg==
+ :cc; bh=+/iYcn4SxNxGPbwEDe0bNGQX6SeG6H2q/oSMviDjYEI=;
+ b=Tbs1pxjjWYLhirdUNbxD4raimCUofnQRequE0SeHd9lrAixZt0S7P57dr3yjoA+Va8
+ JEN3aO/nylLl4cy7S5gdTc8LKe0VTKfWTOuF/pNR+s3taBVKYXHjr3wFyR5yG81tz4Pr
+ d+j7O8T6VDLp2YuDxnj25UnnJb8yWnw9afkYs4i6889qfrsVvpHEEA6ddbnLr2kvXP9Y
+ yIielfM9fB7rFk/zuC+imuw7eYDR0DIBRPSFDX1+2rGoJMSMvJPX9ZhG9Oc2o59BYYJb
+ hwS8gkj/EphFMxswm9KKwOvaNF7M/BmQB4xfcVfxaC7XpYFce5HF90s3/PC7oluYRbvI
+ oZwA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Xz2LRvxPp0zacQCxOX9WPIoVksCerdgKAkltB9xI7vU=;
- b=BgeGWHrEXMk/rsjQJr+5NBnUjmfPYfiWROpHpQUAO4Yirn5SY9NQQrVbuYsg+Rb0ub
- h+tfuxCsZ+PhJCCbglutDv3VYlbhqcup3TOU50Ds4hfv+W8hXsT8eXEVKO0//rALbVy/
- DxQsH+wxJzo9YfAHK5icO9bIWzG2UCmqP5JVyUqFPeMPKVeOV45bS+qM/KerkYkb9mxT
- F7nHC1WOEHpn9I6+b3uHEY+f/qY652TUTMjQdug7Gf1OU1uVsQH1WKHc+a3DOPDGayTZ
- Qd55nidQC++4hXyHCwwXUTnZXCyPKmzE9oM8xJLx+fnCG10GgJyvjrn2P7bHAJdjgkq2
- Vjew==
-X-Gm-Message-State: APjAAAXe5T/s4dgTDSq5pIkmeXrULczu88BggIWTF/rvPH9aPazTbdgG
- 0jwdte+hP9mGhyBBh1u8CH3X/ICEo0Fn6c22pnw=
-X-Google-Smtp-Source: APXvYqwGS6/wSgFTHe/Cr8SM8sVB9mE54HcByOa3jTreHmIcoCjps+KQZllynZRBtBfo9yZKm6dgH65d32nIvGygh+g=
-X-Received: by 2002:a05:6402:1610:: with SMTP id
- f16mr57531395edv.171.1558094770961; 
- Fri, 17 May 2019 05:06:10 -0700 (PDT)
+ bh=+/iYcn4SxNxGPbwEDe0bNGQX6SeG6H2q/oSMviDjYEI=;
+ b=cfewsUP+pfCZhr6TbgXA3hsjXcNv53qhKmhuHhY/4U+S2wixg2XX57+2wME0GfF2sN
+ mvfwMwdK66wSRBJGVCNReme+gzdT2J/EE3IbJ8Ro0YDPC9EfMCs+miTWxzoasHNEWuQV
+ 5LAPPYLGj1jaYVq81PrNTS2BQzM4Agz1bcjlXWDAR9Ug5UAW5Xm3Ao3jgUx5R3X5I8CG
+ Rjw0qM9uhm0QRRF/SWvlilp1V8ZxjrrtXZHM82pvFLOL6EHF5amDafXP4ITaDAIWdtYw
+ OpkC2ERdhYuYzn0Eu0wmlDSttVykZv/U8cPgL+XXdIgg5MoL02wHYR64NUJavh0Ctsu7
+ u9Iw==
+X-Gm-Message-State: APjAAAUTkdMr5t2myZ4Iwp6KjE76DvzBcnzHGh5wzv/7cxRNVXWVEAWa
+ XWVg+HQjy/EcYOSNensRCU8nAOiI1vZ/R5V2w3xen20PvNewVw==
+X-Google-Smtp-Source: APXvYqx4CYHFPHmlOYQUuCVWsbh6I5i7OymxssgKrHHIxyAyAR8CGFqJIJ5/EuuEAu1c+f0bfDqRwbijl6XzrLyKDOs=
+X-Received: by 2002:a05:6602:2109:: with SMTP id
+ x9mr9381717iox.128.1558095565345; 
+ Fri, 17 May 2019 05:19:25 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190506010800.2433-1-olteanv@gmail.com>
- <20190517010450.GT15856@dragon>
-In-Reply-To: <20190517010450.GT15856@dragon>
-From: Vladimir Oltean <olteanv@gmail.com>
-Date: Fri, 17 May 2019 15:05:59 +0300
-Message-ID: <CA+h21hos=kHRGq089=3Js2pPnW71BBv02rqiMqPcZFe_bzBUHA@mail.gmail.com>
-Subject: Re: [PATCH] ARM: dts: Introduce the NXP LS1021A-TSN board
-To: Shawn Guo <shawnguo@kernel.org>
+References: <20190516155344.24060-1-andrew.murray@arm.com>
+ <20190517072401.GI2623@hirez.programming.kicks-ass.net>
+ <20190517100802.GS8268@e119886-lin.cambridge.arm.com>
+ <20190517120522.GM2623@hirez.programming.kicks-ass.net>
+In-Reply-To: <20190517120522.GM2623@hirez.programming.kicks-ass.net>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Fri, 17 May 2019 14:19:13 +0200
+Message-ID: <CAKv+Gu8390GxxxzQb4phoCeGhNaXpHBSen-mEz1HUp7OAc=5vw@mail.gmail.com>
+Subject: Re: [PATCH v1 0/5] arm64: avoid out-of-line ll/sc atomics
+To: Peter Zijlstra <peterz@infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190517_050613_448665_B4FD22E0 
-X-CRM114-Status: GOOD (  27.98  )
+X-CRM114-CacheID: sfid-20190517_051927_709592_C2F08B9C 
+X-CRM114-Status: GOOD (  19.09  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (olteanv[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -94,370 +94,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, netdev <netdev@vger.kernel.org>,
- linux-kernel@vger.kernel.org, leoyang.li@nxp.com, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Boqun Feng <boqun.feng@gmail.com>, Will Deacon <will.deacon@arm.com>,
+ Ard.Biesheuvel@arm.com, Andrew Murray <andrew.murray@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 17 May 2019 at 04:05, Shawn Guo <shawnguo@kernel.org> wrote:
+On Fri, 17 May 2019 at 14:05, Peter Zijlstra <peterz@infradead.org> wrote:
 >
-> On Mon, May 06, 2019 at 04:08:00AM +0300, Vladimir Oltean wrote:
-> > The LS1021A-TSN is a development board built by VVDN/Argonboards in
-> > partnership with NXP.
+> On Fri, May 17, 2019 at 11:08:03AM +0100, Andrew Murray wrote:
+>
+> > I think the alternative solution (excuse the pun) that you are suggesting
+> > is to put the body of the ll/sc or LSE code in the ALTERNATIVE oldinstr/newinstr
+> > blocks (i.e. drop the fallback branches). However this still gives us some
+> > bloat (but less than my current solution) because we're still now inlining the
+> > larger fallback ll/sc whereas previously they were non-inline'd functions. We
+> > still end up with potentially unnecessary clobbers for LSE code with this
+> > Approach prior to this series:
+>
+> > Approach using alternative without braces:
 > >
-> > It features the LS1021A SoC and the first-generation SJA1105T Ethernet
-> > switch for prototyping implementations of a subset of IEEE 802.1 TSN
-> > standards.
+> >    LSE
+> >    LSE
+> >    NOP
+> >    NOP
 > >
-> > It has two regular Ethernet ports and four switched, TSN-capable ports.
+> > or
 > >
-> > It also features:
-> > - One Arduino header
-> > - One expansion header
-> > - Two USB 3.0 ports
-> > - One mini PCIe slot
-> > - One SATA interface
-> > - Accelerometer, gyroscope, temperature sensors
-> >
-> > Signed-off-by: Vladimir Oltean <olteanv@gmail.com>
-> > ---
-> >  arch/arm/boot/dts/Makefile        |   3 +-
-> >  arch/arm/boot/dts/ls1021a-tsn.dts | 238 ++++++++++++++++++++++++++++++
-> >  2 files changed, 240 insertions(+), 1 deletion(-)
-> >  create mode 100644 arch/arm/boot/dts/ls1021a-tsn.dts
-> >
-> > diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-> > index f4f5aeaf3298..529f0150f6b4 100644
-> > --- a/arch/arm/boot/dts/Makefile
-> > +++ b/arch/arm/boot/dts/Makefile
-> > @@ -593,7 +593,8 @@ dtb-$(CONFIG_SOC_IMX7ULP) += \
-> >  dtb-$(CONFIG_SOC_LS1021A) += \
-> >       ls1021a-moxa-uc-8410a.dtb \
-> >       ls1021a-qds.dtb \
-> > -     ls1021a-twr.dtb
-> > +     ls1021a-twr.dtb \
-> > +     ls1021a-tsn.dtb
+> >    LL/SC <- inlined LL/SC and thus duplicated
+> >    LL/SC
+> >    LL/SC
+> >    LL/SC
 >
-> Please keep the list alphabetically sorted.  That said, ls1021a-tsn.dtb
-> should go prior to ls1021a-twr.dtb.
->
-> >  dtb-$(CONFIG_SOC_VF610) += \
-> >       vf500-colibri-eval-v3.dtb \
-> >       vf610-bk4.dtb \
-> > diff --git a/arch/arm/boot/dts/ls1021a-tsn.dts b/arch/arm/boot/dts/ls1021a-tsn.dts
-> > new file mode 100644
-> > index 000000000000..5269486699bd
-> > --- /dev/null
-> > +++ b/arch/arm/boot/dts/ls1021a-tsn.dts
-> > @@ -0,0 +1,238 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/* Copyright 2016-2018 NXP Semiconductors
-> > + * Copyright 2019 Vladimir Oltean <olteanv@gmail.com>
-> > + */
-> > +
-> > +/dts-v1/;
-> > +#include "ls1021a.dtsi"
-> > +
-> > +/ {
-> > +     model = "NXP LS1021A-TSN Board";
-> > +
-> > +     sys_mclk: clock-mclk {
-> > +             compatible = "fixed-clock";
-> > +             #clock-cells = <0>;
-> > +             clock-frequency = <24576000>;
-> > +     };
-> > +
-> > +     regulators {
-> > +             compatible = "simple-bus";
-> > +             #address-cells = <1>;
-> > +             #size-cells = <0>;
->
-> This is the old style of organizing fixed regulators, which has been
-> complained by device tree maintainers.  Drop this container node and put
-> the regulator nodes directly under root, using name schema below.
->
->         reg_xxx: regulator-xxx {
->                 ...
->         };
->
-> And thus, 'reg' property in regulator node should be dropped.
->
-> > +
-> > +             reg_3p3v: regulator@0 {
-> > +                     compatible = "regulator-fixed";
-> > +                     reg = <0>;
-> > +                     regulator-name = "3P3V";
-> > +                     regulator-min-microvolt = <3300000>;
-> > +                     regulator-max-microvolt = <3300000>;
-> > +                     regulator-always-on;
-> > +             };
-> > +             reg_2p5v: regulator@1 {
-> > +                     compatible = "regulator-fixed";
-> > +                     reg = <1>;
-> > +                     regulator-name = "2P5V";
-> > +                     regulator-min-microvolt = <2500000>;
-> > +                     regulator-max-microvolt = <2500000>;
-> > +                     regulator-always-on;
-> > +             };
-> > +     };
-> > +};
-> > +
-> > +&enet0 {
-> > +     tbi-handle = <&tbi0>;
-> > +     phy-handle = <&sgmii_phy2>;
-> > +     phy-mode = "sgmii";
-> > +     status = "ok";
->
-> For sake of consistency, we prefer to use "okay".
->
-> > +};
-> > +
-> > +&enet1 {
-> > +     tbi-handle = <&tbi1>;
-> > +     phy-handle = <&sgmii_phy1>;
-> > +     phy-mode = "sgmii";
-> > +     status = "ok";
-> > +};
-> > +
-> > +/* RGMII delays added via PCB traces */
-> > +&enet2 {
-> > +     phy-mode = "rgmii";
-> > +     status = "ok";
->
-> Please have a newline between property list and child node.
->
-> > +     fixed-link {
-> > +             speed = <1000>;
-> > +             full-duplex;
-> > +     };
-> > +};
-> > +
-> > +&dspi0 {
->
-> Please sort these labeled nodes alphabetically.
->
-> > +     bus-num = <0>;
-> > +     status = "ok";
-> > +
-> > +     /* ADG704BRMZ 1:4 mux/demux */
-> > +     tsn_switch: sja1105@1 {
->
-> Use a generic node name, while label name can be specific.
->
-> > +             reg = <0x1>;
-> > +             #address-cells = <1>;
-> > +             #size-cells = <0>;
-> > +             compatible = "nxp,sja1105t";
->
-> Undocumented compatible?
->
-> > +             /* 12 MHz */
-> > +             spi-max-frequency = <12000000>;
-> > +             /* Sample data on trailing clock edge */
-> > +             spi-cpha;
-> > +             fsl,spi-cs-sck-delay = <1000>;
-> > +             fsl,spi-sck-cs-delay = <1000>;
->
-> Have a newline.
->
-> > +             ports {
-> > +                     #address-cells = <1>;
-> > +                     #size-cells = <0>;
->
-> Ditto
->
-> > +                     port@0 {
-> > +                             /* ETH5 written on chassis */
-> > +                             label = "swp5";
-> > +                             phy-handle = <&rgmii_phy6>;
-> > +                             phy-mode = "rgmii-id";
-> > +                             reg = <0>;
-> > +                     };
->
-> Please have a newline between nodes as well.
->
-> > +                     port@1 {
-> > +                             /* ETH2 written on chassis */
-> > +                             label = "swp2";
-> > +                             phy-handle = <&rgmii_phy3>;
-> > +                             phy-mode = "rgmii-id";
-> > +                             reg = <1>;
-> > +                     };
-> > +                     port@2 {
-> > +                             /* ETH3 written on chassis */
-> > +                             label = "swp3";
-> > +                             phy-handle = <&rgmii_phy4>;
-> > +                             phy-mode = "rgmii-id";
-> > +                             reg = <2>;
-> > +                     };
-> > +                     port@3 {
-> > +                             /* ETH4 written on chassis */
-> > +                             phy-handle = <&rgmii_phy5>;
-> > +                             label = "swp4";
-> > +                             phy-mode = "rgmii-id";
-> > +                             reg = <3>;
-> > +                     };
-> > +                     port@4 {
-> > +                             /* Internal port connected to eth2 */
-> > +                             ethernet = <&enet2>;
-> > +                             phy-mode = "rgmii";
-> > +                             reg = <4>;
-> > +                             fixed-link {
-> > +                                     speed = <1000>;
-> > +                                     full-duplex;
-> > +                             };
-> > +                     };
-> > +             };
-> > +     };
-> > +};
-> > +
-> > +&mdio0 {
-> > +     /* AR8031 */
-> > +     sgmii_phy1: ethernet-phy@1 {
-> > +             reg = <0x1>;
-> > +     };
-> > +     /* AR8031 */
-> > +     sgmii_phy2: ethernet-phy@2 {
-> > +             reg = <0x2>;
-> > +     };
-> > +     /* BCM5464 */
-> > +     rgmii_phy3: ethernet-phy@3 {
-> > +             reg = <0x3>;
-> > +     };
-> > +     rgmii_phy4: ethernet-phy@4 {
-> > +             reg = <0x4>;
-> > +     };
-> > +     rgmii_phy5: ethernet-phy@5 {
-> > +             reg = <0x5>;
-> > +     };
-> > +     rgmii_phy6: ethernet-phy@6 {
-> > +             reg = <0x6>;
-> > +     };
-> > +     /* SGMII PCS for enet0 */
-> > +     tbi0: tbi-phy@1f {
-> > +             reg = <0x1f>;
-> > +             device_type = "tbi-phy";
-> > +     };
-> > +};
-> > +
-> > +&mdio1 {
-> > +     /* SGMII PCS for enet1 */
-> > +     tbi1: tbi-phy@1f {
-> > +             reg = <0x1f>;
-> > +             device_type = "tbi-phy";
-> > +     };
-> > +};
-> > +
-> > +&i2c0 {
-> > +     status = "ok";
-> > +
-> > +     /* 3 axis accelerometer */
-> > +     accelerometer@1e {
-> > +             compatible = "fsl,fxls8471";
-> > +             reg = <0x1e>;
-> > +             position = <0>;
-> > +     };
-> > +     /* Gyroscope is at 0x20 but not supported */
-> > +     /* Audio codec (SAI2) */
-> > +     codec@2a {
->
-> audio-codec
->
-> > +             #sound-dai-cells = <0>;
->
-> We usually start properties with 'compatible', so please move it behind.
->
-> > +             compatible = "fsl,sgtl5000";
-> > +             reg = <0x2a>;
-> > +             VDDA-supply = <&reg_3p3v>;
-> > +             VDDIO-supply = <&reg_2p5v>;
-> > +             clocks = <&sys_mclk>;
-> > +     };
-> > +     /* Current sensing circuit for 1V VDDCORE PMIC rail */
-> > +     current-sensor@44 {
-> > +             compatible = "ti,ina220";
-> > +             reg = <0x44>;
-> > +             shunt-resistor = <1000>;
-> > +     };
-> > +     /* Current sensing circuit for 12V VCC rail */
-> > +     current-sensor@45 {
-> > +             compatible = "ti,ina220";
-> > +             reg = <0x45>;
-> > +             shunt-resistor = <1000>;
-> > +     };
-> > +     /* Thermal monitor - case */
-> > +     temperature-sensor@48 {
-> > +             compatible = "national,lm75";
-> > +             reg = <0x48>;
-> > +     };
-> > +     /* Thermal monitor - chip */
-> > +     temperature-sensor@4c {
-> > +             compatible = "ti,tmp451";
-> > +             reg = <0x4c>;
-> > +     };
-> > +     /* 4-channel ADC */
-> > +     adc@49 {
-> > +             compatible = "ad7924";
->
-> Undocumented.
->
-> Shawn
->
-> > +             reg = <0x49>;
-> > +     };
-> > +};
-> > +
-> > +&ifc {
-> > +     status = "disabled";
-> > +};
-> > +
-> > +&esdhc {
-> > +     status = "ok";
-> > +};
-> > +
-> > +&uart0 {
-> > +     status = "ok";
-> > +};
-> > +
-> > +&lpuart0 {
-> > +     status = "ok";
-> > +};
-> > +
-> > +&lpuart3 {
-> > +     status = "ok";
-> > +};
-> > +
-> > +&sai2 {
-> > +     status = "ok";
-> > +};
-> > +
-> > +&sata {
-> > +     status = "ok";
-> > +};
-> > --
-> > 2.17.1
-> >
+> Yes that. And if you worry about the extra clobber for LL/SC, you could
+> always stuck a few PUSH/POPs around the LL/SC block.
 
-Hi Shawn,
+Patching in pushes and pops replaces a potential performance hit in
+the LSE code with a guaranteed performance hit in the LL/SC code, and
+you may end up pushing and popping dead registers. So it would be nice
+to see some justification for disproportionately penalizing the LL/SC
+code (which will be used on low end cores where stack accesses are
+relatively expensive) relative to the LSE code, rather than assuming
+that relieving the register pressure on the current hot paths will
+result in a measurable performance improvement on LSE systems.
 
-Thanks for the feedback!
-Do you want a v2 now (will you merge it for 5.2) or should I send it
-after the merge window closes?
-The "nxp,sja1105t" compatible is not undocumented but belongs to
-drivers/net/dsa/sja1105/ which was recently merged into mainline via
-the netdev tree (hence it's not in your tree yet).
-The situation with "ad7924" is more funny. The compatible is indeed
-undocumented but belongs to drivers/iio/adc/ad7923.c. I don't know why
-it lacks an entry in Documentation/devicetree/bindings/iio/adc/.
-However I mistook the chip and it's not a Analog Devices AD7924 ADC
-with a SPI interface, but a TI ADS7924 ADC with an I2C interface. I
-can remove it from v2 since it does not have a Linux driver as far as
-I can tell.
+>  Although I'm not
+> exactly sure where the x16,x17,x30 clobbers come from; then I look at
+> the LL/SC code, there aren't any hard-coded regs in there.
+>
 
--Vladimir
+The out of line LL/SC code is invoked as a function call, and so we
+need to preserve x30 which contains the return value.
+
+x16 and x17 are used by the PLT branching code, in case the module
+invoking the atomics is too far away from the core kernel for an
+ordinary relative branch.
+
+> Also, the safe approach is to emit LL/SC as the default and only patch
+> in LSE when you know the machine supports them.
+>
+
+Given that it is not only the safe approach, but the only working
+approach, we are obviously already doing that both in the old and the
+new version of the code.
 
 _______________________________________________
 linux-arm-kernel mailing list
