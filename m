@@ -2,94 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2323821A83
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 17:26:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B1CC21A89
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 17:27:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eBAU2dclxfQ0zU+0sFF5E+kDo+UrPSdrv+dhOXn91fo=; b=SDKEU8FueJ//0B
-	SSWwUJEjK0/3HMIJYle6CHJboqea5yZqC1dNkcaaBeWEZ0I6U3dl0sCryUsACU1q6dhM549kqWRCT
-	ntY1gOEytYHn1wQ/WgEegVpfsW5ulng1i5kzRrUJQgnf8QApAjzShyITy4WVGRk3/kyfgrvfGOsej
-	KFKfZXfjdc7PD/iphc2DNrdlIwZWu49AneGacE5Sv7UtPuif7K+ukesVyB4xMEVRw220Ol5A7xKvj
-	/FH8DptkX00huGOBdB57g/duh+llfEi45ImsJe9/gB/y6uSe96GF626YnMYenIt6BlKIAsuIJ5wvx
-	kArITgNTRH7hcMrI2KYg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Zg4zsPVavmQK2VJBLCMEHEDZsynh7JRkNvtvh6kbtaw=; b=TVBdxfMpNKxJEA
+	1jZ2lLHt7W16JQSQH3K4bW5SceJgxNK6xbW8biBFh1COwLvXc8ao/Zu0sCV6aUEQwWHH5VtqX+8b8
+	2QWhnYxdRp1Q8TVxChrnBdwWOwOWl12psCMcJZ5yLj3lJdLUdD6NdqS0UQ1FH1CQfPK22AzUjzxff
+	RLfa3vVDtdxou5k6EV7bBkvs/6uk80OP8HrAOOCq4musAhAIY6iBGPX0u56yYO1aNQ1+OeVm+ILuD
+	fiTAUPEqVpKbGEeSbXa52+oP+JPWnkMtDBvN3dlHeUR9U8LQGxnIOA9QWtimKG4/kIK+sAlKO5BWF
+	HRkAkfYT51Su1/zfNo5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hReke-0003Po-Vk; Fri, 17 May 2019 15:26:29 +0000
-Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
+	id 1hReln-0003sE-SB; Fri, 17 May 2019 15:27:39 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRekW-0003Ot-V5
- for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 15:26:22 +0000
-Received: by mail-oi1-x244.google.com with SMTP id w144so5403506oie.12
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 May 2019 08:26:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=xu5A8L7ffk/VuZGGKLFuV6FJUYoNh1BlyhIBaFYJKc8=;
- b=fnGDVA/CPKgszzyvVNGPqdLlo3j4aBFjTJaRyaTzUsUqqtk3Ma/fdvvR6u0jV1QpnS
- ODbWVtFHuGlSkV64ydsIhDYXqWgNvxd9hUKbNVi5azAzpVFWM1JIDuYaGNdd8Pf7kLvX
- gOWTKjEWmmd5+7p/9sWiB9SWvYBGUPrXCEKwk5+wh97ypDgkeA/yPNjXzolAz6em//4Y
- QpgLVf7kpkbMl5b/Ilzqoh78hJdNKJDZRf2yAEaDS8wriC7brnX2Mbko/37I/M5hGoS6
- H4iTDp7tO94GqQ+BaRhwoGNj18Nk/9lxuceTbcsD1wfLtP0skneXJODVFpDmJzqZhHFJ
- vlyg==
+ id 1hReld-0003qR-50; Fri, 17 May 2019 15:27:33 +0000
+Received: by mail-ot1-f67.google.com with SMTP id r7so7088937otn.6;
+ Fri, 17 May 2019 08:27:28 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=xu5A8L7ffk/VuZGGKLFuV6FJUYoNh1BlyhIBaFYJKc8=;
- b=fcoLEL3drSHNo/Et3e8nb7huQns3XdqtqPooHi0tFXrgx5lk+21TKlXykZbTf3mW2g
- ZIsI3Lc0K7RCO/DKLyqYTFUgFFbliubmVUFUOW1kCNxdvsOeIGToe920dNOg4uS73Rzp
- XKVxBs4BPfanDtaJvAsjyXkWiqy/6r+NWc65K/qK7gf7mxIA9ygP9f7j/9GLqKbH9kOr
- r+X67F0fv/nPsXR+FyShVeEoeVZNgRAW16c2ffXRVYvWd04eIKA0VN3d5w6kBSsfMHKb
- EpXe3Q9db8yw3dFUnVtXKThgScR/ePUrarF0sb2xFzzxG1OsRYRWrdYGYV/P4p9l259z
- 3qbw==
-X-Gm-Message-State: APjAAAWbU0/vuGvXh7SAqJiMF2LtBfL0h73XRP233X3Si+mexkyr01jj
- M6CXm/jyl2GwRAa+pEZd1fNmZPUpQnad0QvNBro=
-X-Google-Smtp-Source: APXvYqwYlZSL66GeSU4TZbz+0EZuctc8xlZi5TZE8nl8m8iVOM29zqacKrtT9w5oMHvLig9tG04NA6RK4P6OxABQH90=
-X-Received: by 2002:aca:38d4:: with SMTP id f203mr5209080oia.88.1558106779678; 
- Fri, 17 May 2019 08:26:19 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ZXjo2WzK/l3uzu16XWx7AJkZlf1BIoz+FJUDL45vLwg=;
+ b=ZRWBhFIaXh1B2OeA0b1/DD4aDEbisOOSwxVyppPxV32rjN/T82IME/93vCWAK0JgRz
+ wz0o7xRWKvGmmmr4t/jOGQcHxEScXpmgezXcyp0k2f8o9RM/oLY5KIxDqrzkq93jdDgs
+ siBEAp956rbHstlhjGuyDire86XYb/mhndwEdqa6XUGrxYoNiganxGgjxMwNgtn+0//1
+ bxF5KCM+KNuDE8vuIJ/bm0FM0Rth247wntEE3vMOjbjcuUvsiog4hwn9LDonW4D12PvE
+ ICs99mgGJbZZWLESWuWf58M48xWrO22iSE5JbepoPe/ryXlY6jBM9Foh4AT3rrbETi6n
+ HKRQ==
+X-Gm-Message-State: APjAAAW8vCkQaSoNhNh1UgCAkrlaGYpaOnnrj3kgcb8JjcjsUNLS8KdV
+ KA+2mECE4wciQWDYoglTug==
+X-Google-Smtp-Source: APXvYqzMjh1uN1x7bYZO0lOLW1zGnpUtEQcPyOFHVuAQp9QvmrFCWuPkkhC8UMdrSn6icT5FC87sEw==
+X-Received: by 2002:a9d:6856:: with SMTP id c22mr11882936oto.24.1558106845465; 
+ Fri, 17 May 2019 08:27:25 -0700 (PDT)
+Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.googlemail.com with ESMTPSA id i13sm2186859otl.27.2019.05.17.08.27.24
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Fri, 17 May 2019 08:27:24 -0700 (PDT)
+From: Rob Herring <robh@kernel.org>
+To: Kevin Hilman <khilman@baylibre.com>
+Subject: [PATCH v3 1/2] dt-bindings: arm: amlogic: Move 'amlogic,
+ meson-gx-ao-secure' binding to its own file
+Date: Fri, 17 May 2019 10:27:22 -0500
+Message-Id: <20190517152723.28518-1-robh@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20190514160241.9EAC768C7B@newverein.lst.de>
- <CA+E=qVfuKBzWK7dpM_eabjU8mLdzOw3zCnYk6Tc1oXdavH7CNA@mail.gmail.com>
- <20190515093141.41016b11@blackhole.lan>
- <CA+E=qVf6K_0T0x2Hsfp6EDqM-ok6xiAzeZPvp6SRg0yt010pKA@mail.gmail.com>
- <20190516154820.GA10431@lst.de>
- <CA+E=qVe5NkAvHXPvVc7iTbZn5sKeoRm0166zPW_s83c2gk7B+g@mail.gmail.com>
- <20190516164859.GB10431@lst.de> <20190517072738.deohh5fly4jxms7k@flea>
- <20190517101353.3e86d696@blackhole.lan> <20190517090845.oujs33nplbaxcyun@flea>
- <20190517094708.GA16858@lst.de>
-In-Reply-To: <20190517094708.GA16858@lst.de>
-From: Vasily Khoruzhick <anarsoul@gmail.com>
-Date: Fri, 17 May 2019 08:25:53 -0700
-Message-ID: <CA+E=qVcpMeFfC0EEZRpp3Hc_yBGFMv6cGKGSQENpUTw_ZH7UwQ@mail.gmail.com>
-Subject: Re: [PATCH 4/4] arm64: DTS: allwinner: a64: enable ANX6345 bridge on
- Teres-I
-To: Torsten Duwe <duwe@lst.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190517_082621_027028_D9BA6569 
-X-CRM114-Status: GOOD (  16.09  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190517_082731_761164_2087FFB3 
+X-CRM114-Status: GOOD (  11.66  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (anarsoul[at]gmail.com)
+ provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -101,57 +84,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Andrzej Hajda <a.hajda@samsung.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, David Airlie <airlied@linux.ie>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
- Sean Paul <seanpaul@chromium.org>,
- arm-linux <linux-arm-kernel@lists.infradead.org>,
- Icenowy Zheng <icenowy@aosc.io>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Neil Armstrong <narmstrong@baylibre.com>, linux-kernel@vger.kernel.org,
+ Carlo Caione <carlo@caione.org>, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 17, 2019 at 2:47 AM Torsten Duwe <duwe@lst.de> wrote:
->
-> On Fri, May 17, 2019 at 11:08:45AM +0200, Maxime Ripard wrote:
-> > >
-> > > So for all current practical purposes, we can assume the Teres-I panel
-> > > to be powered properly and providing valid EDID; nothing to worry about
-> > > in software.
-> >
-> > You're creating a generic binding for all the users of that bridge,
-> > while considering only the specific case of the Teres-I.
->
-> All I'm saying is that _this_ usage is also valid. Nothing keeps other
-> users from defining the output panel; on the contrary: the driver at hand
-> already considers an _optional_ panel and handles it, conditionally. So
-> driver and binding spec are 100% in sync here.
+It is best practice to have 1 binding per file, so board level bindings
+should be separate for various misc SoC bindings.
 
-Well, endpoint is not necessarily a panel. It can be another bridge or
-connector - that's why panel can be optional in driver. But it don't
-think that you can just omit an endpoint.
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Carlo Caione <carlo@caione.org>
+Cc: Kevin Hilman <khilman@baylibre.com>
+Cc: devicetree@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-amlogic@lists.infradead.org
+Signed-off-by: Rob Herring <robh@kernel.org>
+---
+It seems this one fell thru the cracks and didn't get applied.
 
-> This is much more straightforward than requiring an output and making up
-> some dummy code and params because it cannot reasonably be handled.
-> (Remember, if there is an output, the driver will make calls to the
-> "attached device" driver.)
+ .../devicetree/bindings/arm/amlogic.txt       | 29 -------------------
+ .../amlogic/amlogic,meson-gx-ao-secure.txt    | 28 ++++++++++++++++++
+ 2 files changed, 28 insertions(+), 29 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/arm/amlogic/amlogic,meson-gx-ao-secure.txt
 
-They aren't dummy. Moreover you have to attach backlight somewhere (to
-panel) so it can be disabled when output is disabled.
+diff --git a/Documentation/devicetree/bindings/arm/amlogic.txt b/Documentation/devicetree/bindings/arm/amlogic.txt
+index 061f7b98a07f..5f650248b18e 100644
+--- a/Documentation/devicetree/bindings/arm/amlogic.txt
++++ b/Documentation/devicetree/bindings/arm/amlogic.txt
+@@ -111,32 +111,3 @@ Board compatible values (alphabetically, grouped by SoC):
+   - "amlogic,u200" (Meson g12a s905d2)
+   - "amediatech,x96-max" (Meson g12a s905x2)
+   - "seirobotics,sei510" (Meson g12a s905x2)
+-
+-Amlogic Meson Firmware registers Interface
+-------------------------------------------
+-
+-The Meson SoCs have a register bank with status and data shared with the
+-secure firmware.
+-
+-Required properties:
+- - compatible: For Meson GX SoCs, must be "amlogic,meson-gx-ao-secure", "syscon"
+-
+-Properties should indentify components of this register interface :
+-
+-Meson GX SoC Information
+-------------------------
+-A firmware register encodes the SoC type, package and revision information on
+-the Meson GX SoCs.
+-If present, the following property should be added :
+-
+-Optional properties:
+-  - amlogic,has-chip-id: If present, the interface gives the current SoC version.
+-
+-Example
+--------
+-
+-ao-secure@140 {
+-	compatible = "amlogic,meson-gx-ao-secure", "syscon";
+-	reg = <0x0 0x140 0x0 0x140>;
+-	amlogic,has-chip-id;
+-};
+diff --git a/Documentation/devicetree/bindings/arm/amlogic/amlogic,meson-gx-ao-secure.txt b/Documentation/devicetree/bindings/arm/amlogic/amlogic,meson-gx-ao-secure.txt
+new file mode 100644
+index 000000000000..c67d9f48fb91
+--- /dev/null
++++ b/Documentation/devicetree/bindings/arm/amlogic/amlogic,meson-gx-ao-secure.txt
+@@ -0,0 +1,28 @@
++Amlogic Meson Firmware registers Interface
++------------------------------------------
++
++The Meson SoCs have a register bank with status and data shared with the
++secure firmware.
++
++Required properties:
++ - compatible: For Meson GX SoCs, must be "amlogic,meson-gx-ao-secure", "syscon"
++
++Properties should indentify components of this register interface :
++
++Meson GX SoC Information
++------------------------
++A firmware register encodes the SoC type, package and revision information on
++the Meson GX SoCs.
++If present, the following property should be added :
++
++Optional properties:
++  - amlogic,has-chip-id: If present, the interface gives the current SoC version.
++
++Example
++-------
++
++ao-secure@140 {
++	compatible = "amlogic,meson-gx-ao-secure", "syscon";
++	reg = <0x0 0x140 0x0 0x140>;
++	amlogic,has-chip-id;
++};
+-- 
+2.20.1
 
-Try 'xrandr --output eDP-1 --off' on teres with your current code and
-see that backlight stays on.
-
->
->         Torsten
->
 
 _______________________________________________
 linux-arm-kernel mailing list
