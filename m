@@ -2,80 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F37621E25
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 21:21:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BDCB921E31
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 21:26:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NR/iFAg5Yuo3NHMn8ss5X5TXbhnI4Xkp4J3inRR2c7Y=; b=pzXACqo1BOu/DP
-	wluxV40Vf9YAwFgK+x4Hv9Lg+RCty9A3uJrIiUuLEehVejoXOaQbmbp8psm+IdhgkoPXQg0c9VWuF
-	UunYEOTSJ/QMxZMNAmhuq79viYtqztxs7bljImBqdSjZ9Yx3i53tqGB9MuQq5a+NhAvycSJTsozDd
-	1sRmFV6jvAh0c6Fo5Gly9F5g8W8ydRidZKylP8JXz935VBk77HmQ66tXvSW/ZPrQOSXdpaNHc95iM
-	svjXHa5FSWSf/aFsI9MN+DgSTMY2rhKg7BLr2FvcZzkG4oGwvM8H4N2Blo2H3gBdYUnA79smKDgAj
-	DiOVP4gBKuMJTbRZynXg==;
+	List-Owner; bh=kApBQbU1b0kc37O2yWaZqJunbLvNjHfQg07lHAkKIGo=; b=heyLgKVa64FYCg
+	6u3RdikD1ASY1zfdE6wWLcSrK3KCgUYm4si4dgYnfNtht4p9lJURB9JqHRXE13YTQ5YTWB4c/eOTi
+	1aGjd1A11+tVolHWgkA9H2l7WUICfaUcyEjv7NlyDf3748qN1Z3xchSYjjxATVQKX5g3OZnMHA0YU
+	EKQi9PkGtikGXI90Lqn9UmVnz33lZQbDi7NDeS9fsTCDseQ5zAI2GsawOOAcgAORnjISOHsLyTYp4
+	bh4iJBknkDT6Rnypm7E81oGUI7wVWCwV6BT4o5cMqUYXa/nvNNTg5y6c6TYhvgKQkS28Ke/Iq99Fc
+	JERr+P0/s1lbGSusy8yA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRiQS-0001q0-Mp; Fri, 17 May 2019 19:21:52 +0000
-Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
+	id 1hRiVD-0003TH-9W; Fri, 17 May 2019 19:26:47 +0000
+Received: from mail-eopbgr20089.outbound.protection.outlook.com ([40.107.2.89]
+ helo=EUR02-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRiQK-0001pO-98
- for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 19:21:46 +0000
-Received: by mail-oi1-x244.google.com with SMTP id y10so5951281oia.8
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 May 2019 12:21:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=usvjkESDKCkdcL7KjxK5+weEZxQOT9+0N++Iq5zdUfY=;
- b=S9wgwZAY+KfYsVSEgX6g5fIWJUzcYaV+VDSx3qecASV/3amWnu1K8ghLVj22td+vpS
- cIkxdCL+mxzliwVMOtw609kDQPIpxyljZs/P/+QYPLtwVCn3TJKB00b/fO0XKwwo0pZp
- 3HYfjvxrr/uIORshlVrkRUsjVSDvxpbkIEO3IqglPHRUJ0Pl6snTbbDwHGjBiYFg7Y+D
- gVn2ziDXvSIi8sx9lAMbwtHrTlfUBbPjGvER0x97PaNZgoLgMwGK08Mye9pyGtuwDyhG
- FFfncqMqxhYhOLFsAwcpdkoqoa4WsZIshjCWNH1BWgMoanGh90ByX/qe6ta3GRFaz+L5
- 2foQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=usvjkESDKCkdcL7KjxK5+weEZxQOT9+0N++Iq5zdUfY=;
- b=eraza9eFOexL/rkKU0/acbXIyfNKOjnY3GKmFPkqvwQw9XVwIucL+jngsEtqM01a9m
- ZAnAJYEHwPEO78ng6rAGjfIcRbLzdkLfmM7dAqE3bdUBFg5Tt7N4g/rGGQLT1OojYDlS
- na/8p+3zl2/vkTTiDC41jixz9IDf0MlcHbcVNXjVzvCCPqsakARRtyOP3LeqTaJJz+qO
- 5YoykkPh/xI4zCFacOwBocb5QNrqDXeadC4n3VBSl7UPs5jVKz9zvVwMhl1xlFY4KLZn
- B4g7vgNgKrcUyXev0OwCHFxFkS2iBhYN3mXnzuip9zh5JwPKFE9XIVdGW/d1sOd+4nj7
- zpDw==
-X-Gm-Message-State: APjAAAXp9dJiTatwUHiPzpPgtQO/IbTkoWWHHzaRi/TvexbDajKFR2hG
- WQfBTt5upp4BqgNnV1t4yyhAY5tsf/p6ziuvUbo=
-X-Google-Smtp-Source: APXvYqyhI6mpfCIEu0hREAEy64CQG4lKET9ZCLVdqqDF8nsijUoo625MEC2XZQW2+mMbkAM/X8eVXLmm8Vl4bRN0Cvc=
-X-Received: by 2002:aca:240d:: with SMTP id n13mr14768947oic.145.1558120901888; 
- Fri, 17 May 2019 12:21:41 -0700 (PDT)
+ id 1hRiV3-0003Sf-A2
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 19:26:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=jNirgzWXWAM8bXuWqab1HkpwTJ+q8wlwoWhOy9mY9Dw=;
+ b=Qa9NOyAAO0anrP974cFKN4PH8YyWb39kXdkDtQkBfBGiMkOC7cTjS+siNmoHCJd0STSOA5/qvSSCIhs8wHyhATAGLt1NJN5FjbKIbnO2tAom26PSW40hI4fghuddPhpbphCMCcxF/h56RJYgCmQQoKKgvuWezF77m4WLw77rdNo=
+Received: from AM0PR04MB5779.eurprd04.prod.outlook.com (20.178.202.151) by
+ AM0PR04MB4116.eurprd04.prod.outlook.com (52.134.94.33) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1900.17; Fri, 17 May 2019 19:26:32 +0000
+Received: from AM0PR04MB5779.eurprd04.prod.outlook.com
+ ([fe80::c19b:5964:bfcb:96a8]) by AM0PR04MB5779.eurprd04.prod.outlook.com
+ ([fe80::c19b:5964:bfcb:96a8%7]) with mapi id 15.20.1900.010; Fri, 17 May 2019
+ 19:26:32 +0000
+From: Abel Vesa <abel.vesa@nxp.com>
+To: Oliver Graute <oliver.graute@gmail.com>
+Subject: Re: [PATCH 1/5] clk: add imx8 clk defines
+Thread-Topic: [PATCH 1/5] clk: add imx8 clk defines
+Thread-Index: AQHVDII79NCaupVXD0We+FXWGgbSwKZvs9iA
+Date: Fri, 17 May 2019 19:26:32 +0000
+Message-ID: <20190517192631.q3lmh3sretxirggg@fsr-ub1664-175>
+References: <20190517071813.26674-1-oliver.graute@gmail.com>
+In-Reply-To: <20190517071813.26674-1-oliver.graute@gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=abel.vesa@nxp.com; 
+x-originating-ip: [89.37.124.34]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 55ab3146-2b87-4f0d-945a-08d6dafd919a
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB4116; 
+x-ms-traffictypediagnostic: AM0PR04MB4116:
+x-ms-exchange-purlcount: 1
+x-microsoft-antispam-prvs: <AM0PR04MB411615248B454FC815B298E8F60B0@AM0PR04MB4116.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2512;
+x-forefront-prvs: 0040126723
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(7916004)(366004)(346002)(396003)(39860400002)(136003)(376002)(189003)(199004)(6436002)(229853002)(14454004)(6916009)(6512007)(86362001)(54906003)(6486002)(8936002)(5660300002)(25786009)(256004)(53946003)(9686003)(71200400001)(7416002)(316002)(6306002)(71190400001)(81156014)(81166006)(53546011)(26005)(8676002)(478600001)(76176011)(6506007)(102836004)(7736002)(966005)(305945005)(76116006)(91956017)(73956011)(64756008)(66446008)(66556008)(66476007)(66946007)(66066001)(99286004)(476003)(1076003)(3846002)(6116002)(44832011)(53936002)(486006)(11346002)(2906002)(186003)(33716001)(4326008)(446003)(30864003)(68736007)(6246003)(2004002)(559001)(569006);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4116;
+ H:AM0PR04MB5779.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 0QIX+3zOKAjPLcttllJJHXY3jDEXZV75UAO9TddJ9tDbaGOY4PquyoKlcOWsc6SvrRizqZ2ALaE+3WDafTJ1aDNDvhc7u7WYA+9dv9cPrmZbY6znTY/b8zjzvQ21gFr9kvHWKqdHV3h2HKR0vX+cphYsQ0bRE9c22HNX2jiArPrANTg6AZdpTf47WGN7K59lo1AFde+dD6iI66QauEPhfUaIxSeDaqbwnLWrc5Xo9Qd+9p8WgXwXlI/ennB9azEYO9bwT1XpY0r2EExKcis3lkGSZVUMPjFrS9FJIYQsivCY6Ft24zN19T+k+do576PN01ywzyIYsGNhwMEPKBl5ONHeC2l9n+rFWykg/vc0mhSbROVVWPCcarB1ZJVO8ktU2AunJXsoshx2GQGOfEyQM1jK+l+F27RZneuJr+gAmfM=
+Content-ID: <8CA5896F88E57E48BF953D2DE249FB12@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-References: <20190512082614.9045-1-tiny.windzz@gmail.com>
- <20190512082614.9045-3-tiny.windzz@gmail.com>
- <20190512133930.t5txssl7mou2gljt@flea>
-In-Reply-To: <20190512133930.t5txssl7mou2gljt@flea>
-From: Vasily Khoruzhick <anarsoul@gmail.com>
-Date: Fri, 17 May 2019 12:21:57 -0700
-Message-ID: <CA+E=qVe82xXPBXpgyLgt2ME6EjGMWWMVvD5eU-b3ntQk_okMdg@mail.gmail.com>
-Subject: Re: [PATCH 2/3] thermal: sun50i: add thermal driver for h6
-To: Maxime Ripard <maxime.ripard@bootlin.com>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 55ab3146-2b87-4f0d-945a-08d6dafd919a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 17 May 2019 19:26:32.2942 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4116
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190517_122144_342275_64CC1C30 
-X-CRM114-Status: GOOD (  43.40  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190517_122637_516112_E536C8FA 
+X-CRM114-Status: GOOD (  16.67  )
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
+ no trust [40.107.2.89 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (anarsoul[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -83,6 +100,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,495 +112,915 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Yangtao Li <tiny.windzz@gmail.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- bjorn.andersson@linaro.org, marc.w.gonzalez@free.fr,
- mchehab+samsung@kernel.org, paulmck@linux.ibm.com,
- Stefan Wahren <stefan.wahren@i2se.com>, daniel.lezcano@linaro.org,
- Chen-Yu Tsai <wens@csie.org>, Jagan Teki <jagan@amarulasolutions.com>,
- andy.gross@linaro.org, rui.zhang@intel.com,
- devicetree <devicetree@vger.kernel.org>, linux-pm@vger.kernel.org,
- edubezval@gmail.com, Olof Johansson <olof@lixom.net>,
- Rob Herring <robh+dt@kernel.org>, Jonathan.Cameron@huawei.com,
- arm-linux <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-kernel <linux-kernel@vger.kernel.org>, enric.balletbo@collabora.com,
- "David S. Miller" <davem@davemloft.net>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ Oliver Graute <oliver.graute@kococonnector.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, May 12, 2019 at 6:39 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
->
-> Hi,
->
-> Thanks a lot for working on this!
->
-> On Sun, May 12, 2019 at 04:26:13AM -0400, Yangtao Li wrote:
-> > This patch adds the support for allwinner thermal sensor, within
-> > allwinner SoC. It will register sensors for thermal framework
-> > and use device tree to bind cooling device.
-> >
-> > Based on driver code found here:
-> > https://megous.com/git/linux and https://github.com/Allwinner-Homlet/H6-BSP4.9-linux
->
-> I wouldn't place the URL in the commit log. The commit log stays
-> forever in the linux history. Git repos and branches are going away
-> over time.
->
-> > Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
-> > ---
-> >  MAINTAINERS                      |   7 +
-> >  drivers/thermal/Kconfig          |  14 ++
-> >  drivers/thermal/Makefile         |   1 +
-> >  drivers/thermal/sun50i_thermal.c | 357 +++++++++++++++++++++++++++++++
->
-> The long term goal is to support all the thermal sensors, not just the
-> H6. Since that controller was introduced with the sun8i family, it
-> makes more sense to use that prefix for the driver and the functions.
->
-> >  4 files changed, 379 insertions(+)
-> >  create mode 100644 drivers/thermal/sun50i_thermal.c
-> >
-> > diff --git a/MAINTAINERS b/MAINTAINERS
-> > index 3c65228e93c5..8da56582e72a 100644
-> > --- a/MAINTAINERS
-> > +++ b/MAINTAINERS
-> > @@ -674,6 +674,13 @@ L:       linux-crypto@vger.kernel.org
-> >  S:   Maintained
-> >  F:   drivers/crypto/sunxi-ss/
-> >
-> > +ALLWINNER THERMAL DRIVER
-> > +M:   Yangtao Li <tiny.windzz@gmail.com>
-> > +L:   linux-pm@vger.kernel.org
-> > +S:   Maintained
-> > +F:   Documentation/devicetree/bindings/thermal/sun50i-thermal.txt
-> > +F:   drivers/thermal/sun50i_thermal.c
-> > +
-> >  ALLWINNER VPU DRIVER
-> >  M:   Maxime Ripard <maxime.ripard@bootlin.com>
-> >  M:   Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> > diff --git a/drivers/thermal/Kconfig b/drivers/thermal/Kconfig
-> > index 653aa27a25a4..2a8d1c98c6ca 100644
-> > --- a/drivers/thermal/Kconfig
-> > +++ b/drivers/thermal/Kconfig
-> > @@ -252,6 +252,20 @@ config SPEAR_THERMAL
-> >         Enable this to plug the SPEAr thermal sensor driver into the Linux
-> >         thermal framework.
-> >
-> > +config SUN50I_THERMAL
-> > +     tristate "Allwinner sun50i thermal driver"
-> > +     depends on ARCH_SUNXI || COMPILE_TEST
-> > +     depends on HAS_IOMEM
-> > +     depends on NVMEM
-> > +     depends on OF
-> > +     depends on RESET_CONTROLLER
-> > +     help
-> > +       Support for the sun50i thermal sensor driver into the Linux thermal
-> > +       framework.
-> > +
-> > +       To compile this driver as a module, choose M here: the
-> > +       module will be called sun50i-thermal.
-> > +
-> >  config ROCKCHIP_THERMAL
-> >       tristate "Rockchip thermal driver"
-> >       depends on ARCH_ROCKCHIP || COMPILE_TEST
-> > diff --git a/drivers/thermal/Makefile b/drivers/thermal/Makefile
-> > index 486d682be047..a09b30b90003 100644
-> > --- a/drivers/thermal/Makefile
-> > +++ b/drivers/thermal/Makefile
-> > @@ -30,6 +30,7 @@ thermal_sys-$(CONFIG_DEVFREQ_THERMAL) += devfreq_cooling.o
-> >  # platform thermal drivers
-> >  obj-y                                += broadcom/
-> >  obj-$(CONFIG_SPEAR_THERMAL)  += spear_thermal.o
-> > +obj-$(CONFIG_SUN50I_THERMAL) += sun50i_thermal.o
-> >  obj-$(CONFIG_ROCKCHIP_THERMAL)       += rockchip_thermal.o
-> >  obj-$(CONFIG_RCAR_THERMAL)   += rcar_thermal.o
-> >  obj-$(CONFIG_RCAR_GEN3_THERMAL)      += rcar_gen3_thermal.o
-> > diff --git a/drivers/thermal/sun50i_thermal.c b/drivers/thermal/sun50i_thermal.c
-> > new file mode 100644
-> > index 000000000000..3bdb3677b3d4
-> > --- /dev/null
-> > +++ b/drivers/thermal/sun50i_thermal.c
-> > @@ -0,0 +1,357 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Thermal sensor driver for Allwinner SOC
-> > + * Copyright (C) 2019 Yangtao Li
-> > + *
-> > + * Based on the work of Icenowy Zheng <icenowy@aosc.io>
-> > + * Based on the work of Ondrej Jirman <megous@megous.com>
-> > + * Based on the work of Josef Gajdusek <atx@atx.name>
-> > + */
-> > +
-> > +#include <linux/clk.h>
-> > +#include <linux/device.h>
-> > +#include <linux/module.h>
-> > +#include <linux/nvmem-consumer.h>
-> > +#include <linux/of_device.h>
-> > +#include <linux/platform_device.h>
-> > +#include <linux/regmap.h>
-> > +#include <linux/reset.h>
-> > +#include <linux/slab.h>
-> > +#include <linux/thermal.h>
-> > +
-> > +#define MAX_SENSOR_NUM       4
-> > +
-> > +#define FT_TEMP_MASK                         GENMASK(11, 0)
-> > +#define TEMP_CALIB_MASK                              GENMASK(11, 0)
-> > +#define TEMP_TO_REG                          672
-> > +#define CALIBRATE_DEFAULT                    0x800
-> > +
-> > +#define SUN50I_THS_CTRL0                     0x00
-> > +#define SUN50I_H6_THS_ENABLE                 0x04
-> > +#define SUN50I_H6_THS_PC                     0x08
-> > +#define SUN50I_H6_THS_MFC                    0x30
-> > +#define SUN50I_H6_TEMP_CALIB                 0xa0
-> > +#define SUN50I_H6_TEMP_DATA                  0xc0
-> > +
-> > +#define SUN50I_THS_CTRL0_T_ACQ(x)            ((GENMASK(15, 0) & (x)) << 16)
-> > +#define SUN50I_THS_FILTER_EN                 BIT(2)
-> > +#define SUN50I_THS_FILTER_TYPE(x)            (GENMASK(1, 0) & (x))
-> > +#define SUN50I_H6_THS_PC_TEMP_PERIOD(x)              ((GENMASK(19, 0) & (x)) << 12)
-> > +
-> > +/* millidegree celsius */
-> > +#define SUN50I_H6_FT_DEVIATION                       7000
-> > +
-> > +struct tsens_device;
-> > +
-> > +struct tsensor {
-> > +     struct tsens_device             *tmdev;
-> > +     struct thermal_zone_device      *tzd;
-> > +     int                             id;
-> > +};
-> > +
-> > +struct sun50i_thermal_chip {
-> > +     int     sensor_num;
-> > +     int     offset;
-> > +     int     scale;
-> > +     int     ft_deviation;
-> > +     int     temp_calib_base;
-> > +     int     temp_data_base;
-> > +     int     (*enable)(struct tsens_device *tmdev);
-> > +     int     (*disable)(struct tsens_device *tmdev);
-> > +};
->
-> I'm not super fond of having a lot of quirks that are not needed. If
-> we ever need those quirks when adding support for a new SoC, then
-> yeah, we should totally have some, but only when and if it's needed.
->
-> Otherwise, the driver is more complicated for no particular reason.
->
-> > +
-> > +struct tsens_device {
->
-> IIRC the acronym used by allwinner is THS, maybe we can just use that
-> as a prefix?
->
-> > +     const struct sun50i_thermal_chip        *chip;
-> > +     struct device                           *dev;
-> > +     struct regmap                           *regmap;
-> > +     struct reset_control                    *reset;
-> > +     struct clk                              *bus_clk;
-> > +     struct tsensor                          sensor[MAX_SENSOR_NUM];
-> > +};
-> > +
-> > +/* Temp Unit: millidegree Celsius */
-> > +static int tsens_reg2temp(struct tsens_device *tmdev,
-> > +                           int reg)
-> > +{
-> > +     return (reg + tmdev->chip->offset) * tmdev->chip->scale;
-> > +}
-> > +
-> > +static int tsens_get_temp(void *data, int *temp)
-> > +{
-> > +     struct tsensor *s = data;
-> > +     struct tsens_device *tmdev = s->tmdev;
-> > +     int val;
-> > +
-> > +     regmap_read(tmdev->regmap, tmdev->chip->temp_data_base +
-> > +                 0x4 * s->id, &val);
-> > +
-> > +     if (unlikely(val == 0))
-> > +             return -EBUSY;
->
-> I'm not sure why a val equals to 0 would be associated with EBUSY?
+On 19-05-17 09:18:09, Oliver Graute wrote:
+> From: Oliver Graute <oliver.graute@kococonnector.com>
+> 
+> added header defines for imx8qm clock
+> 
 
-First few reads of temp data return 0, and in case of H6 (and A64) it
-means max temperature, so kernel does emergency shutdown. I used
--ETIMEDOUT as a workaround in my tree, but it's not appropriate here
-either. Any suggestions are welcome.
+NACK for the entire series.
 
-> Also, it's not in a fast path, so you can drop the unlikely. Chances
-> are it's not that unlikely anyway.
+First of all, by the looks of it, this has been taken
+from some vendor tree, so you need to keep the original
+author (and the S-o-bs).
 
-As I said earlier, it's just few samples after start up.
+And secondly, the commit messages are unacceptable.
 
-> > +     *temp = tsens_reg2temp(tmdev, val);
-> > +     if (tmdev->chip->ft_deviation)
-> > +             *temp += tmdev->chip->ft_deviation;
-> > +
-> > +     return 0;
-> > +}
-> > +
-> > +static const struct thermal_zone_of_device_ops tsens_ops = {
-> > +     .get_temp = tsens_get_temp,
-> > +};
-> > +
-> > +static const struct regmap_config config = {
-> > +     .reg_bits = 32,
-> > +     .val_bits = 32,
-> > +     .reg_stride = 4,
-> > +     .fast_io = true,
-> > +};
-> > +
-> > +static int tsens_init(struct tsens_device *tmdev)
-> > +{
-> > +     struct device *dev = tmdev->dev;
-> > +     struct platform_device *pdev = to_platform_device(dev);
-> > +     struct resource *mem;
-> > +     void __iomem *base;
-> > +
-> > +     mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> > +     base = devm_ioremap_resource(dev, mem);
-> > +     if (IS_ERR(base))
-> > +             return PTR_ERR(base);
-> > +
-> > +     tmdev->regmap = devm_regmap_init_mmio_clk(dev, "bus",
-> > +                                               base,
-> > +                                               &config);
-> > +     if (IS_ERR(tmdev->regmap))
-> > +             return PTR_ERR(tmdev->regmap);
-> > +
-> > +     tmdev->reset = devm_reset_control_get(dev, "bus");
-> > +     if (IS_ERR(tmdev->reset))
-> > +             return PTR_ERR(tmdev->reset);
-> > +
-> > +     tmdev->bus_clk = devm_clk_get(&pdev->dev, "bus");
-> > +     if (IS_ERR(tmdev->bus_clk))
-> > +             return PTR_ERR(tmdev->bus_clk);
->
-> You don't need to get that clock if regmap has it already.
->
-> > +     return 0;
-> > +}
-> > +
-> > +/*
-> > + * Even if the external calibration data stored in sid is not accessible,
-> > + * the THS hardware can still work, although the data won't be so accurate.
-> > + * The default value of calibration register is 0x800 for every sensor,
-> > + * and the calibration value is usually 0x7xx or 0x8xx, so they won't be
-> > + * away from the default value for a lot.
-> > + *
-> > + * So here we do not return error if the calibartion data is
-> > + * not available, except the probe needs deferring.
-> > + */
-> > +static int tsens_calibrate(struct tsens_device *tmdev)
-> > +{
-> > +     struct nvmem_cell *calcell;
-> > +     struct device *dev = tmdev->dev;
-> > +     u16 *caldata;
-> > +     size_t callen;
-> > +     int ft_temp;
-> > +     int i = 0;
-> > +
-> > +     calcell = devm_nvmem_cell_get(dev, "calib");
-> > +     if (IS_ERR(calcell)) {
-> > +             if (PTR_ERR(calcell) == -EPROBE_DEFER)
-> > +                     return -EPROBE_DEFER;
-> > +
-> > +             goto out;
-> > +     }
-> > +
-> > +     caldata = nvmem_cell_read(calcell, &callen);
-> > +     if (IS_ERR(caldata))
-> > +             goto out;
-> > +
-> > +     if (!caldata[0] || callen < 2 + 2 * tmdev->chip->sensor_num)
-> > +             goto out_free;
->
-> The first part of your or isn't obvious and should have a comment.
->
-> The second part shouldn't return 0 but an error
->
-> > +
-> > +     /*
-> > +      * The calbration data on H6 is stored as temperature-value
-> > +      * pair when being filled at factory test stage.
-> > +      * The unit of stored FT temperature is 0.1 degreee celusis.
-> > +      */
-> > +     ft_temp = caldata[0] & FT_TEMP_MASK;
-> > +
-> > +     for (; i < tmdev->chip->sensor_num; i++) {
->
-> Usually you would initialize i here, and not when declared.
->
-> > +             int reg = (int)caldata[i + 1];
-> > +             int sensor_temp = tsens_reg2temp(tmdev, reg);
-> > +             int delta, cdata, calib_offest;
-> > +
-> > +             /*
-> > +              * To calculate the calibration value:
-> > +              *
-> > +              * X(in Celsius) = Ts - ft_temp
-> > +              * delta = X * 10000 / TEMP_TO_REG
-> > +              * cdata = CALIBRATE_DEFAULT - delta
-> > +              *
-> > +              * cdata: calibration value
-> > +              */
-> > +             delta = (sensor_temp - ft_temp * 100) * 10 / TEMP_TO_REG;
-> > +             cdata = CALIBRATE_DEFAULT - delta;
-> > +             if (cdata & ~TEMP_CALIB_MASK) {
-> > +                     dev_warn(dev, "sensor%d calibration value error", i);
-> > +
-> > +                     continue;
-> > +             }
-> > +
-> > +             calib_offest = tmdev->chip->temp_calib_base + (i / 2) * 0x4;
-> > +
-> > +             if (i % 2) {
-> > +                     int val;
-> > +
-> > +                     regmap_read(tmdev->regmap, calib_offest, &val);
-> > +                     val = (val & TEMP_CALIB_MASK) | (cdata << 16);
-> > +                     regmap_write(tmdev->regmap, calib_offest, val);
-> > +             } else
-> > +                     regmap_write(tmdev->regmap, calib_offest, cdata);
->
-> This should have brackets as well
->
-> > +     }
-> > +
-> > +out_free:
-> > +     kfree(caldata);
-> > +out:
-> > +     return 0;
-> > +}
-> > +
-> > +static int tsens_register(struct tsens_device *tmdev)
-> > +{
-> > +     struct thermal_zone_device *tzd;
-> > +     int i = 0;
-> > +
-> > +     for (; i < tmdev->chip->sensor_num; i++) {
->
-> Ditto
->
-> > +             tmdev->sensor[i].tmdev = tmdev;
-> > +             tmdev->sensor[i].id = i;
-> > +             tmdev->sensor[i].tzd = devm_thermal_zone_of_sensor_register(
-> > +                                     tmdev->dev, i, &tmdev->sensor[i],
-> > +                                     &tsens_ops);
-> > +             if (IS_ERR(tmdev->sensor[i].tzd))
-> > +                     return PTR_ERR(tzd);
-> > +     }
-> > +
-> > +     return 0;
-> > +}
-> > +
-> > +static int tsens_probe(struct platform_device *pdev)
-> > +{
-> > +     struct tsens_device *tmdev;
-> > +     struct device *dev = &pdev->dev;
-> > +     int ret;
-> > +
-> > +     tmdev = devm_kzalloc(dev, sizeof(*tmdev), GFP_KERNEL);
-> > +     if (!tmdev)
-> > +             return -ENOMEM;
-> > +
-> > +     tmdev->dev = dev;
-> > +     tmdev->chip = of_device_get_match_data(&pdev->dev);
-> > +     if (!tmdev->chip)
-> > +             return -EINVAL;
-> > +
-> > +     ret = tsens_init(tmdev);
-> > +     if (ret)
-> > +             return ret;
-> > +
-> > +     ret = tsens_register(tmdev);
-> > +     if (ret)
-> > +             return ret;
-> > +
-> > +     ret = tmdev->chip->enable(tmdev);
-> > +     if (ret)
-> > +             return ret;
-> >
-> > +     platform_set_drvdata(pdev, tmdev);
->
-> Your registration should be the very last thing you do. Otherwise, you
-> have a small window where the get_temp callback can be called, but the
-> driver will not be functional yet.
->
-> > +     return ret;
-> > +}
-> > +
-> > +static int tsens_remove(struct platform_device *pdev)
-> > +{
-> > +     struct tsens_device *tmdev = platform_get_drvdata(pdev);
-> > +
-> > +     tmdev->chip->disable(tmdev);
-> > +
-> > +     return 0;
-> > +}
-> > +
-> > +static int sun50i_thermal_enable(struct tsens_device *tmdev)
-> > +{
-> > +     int ret, val;
-> > +
-> > +     ret = reset_control_deassert(tmdev->reset);
-> > +     if (ret)
-> > +             return ret;
-> > +
-> > +     ret = clk_prepare_enable(tmdev->bus_clk);
-> > +     if (ret)
-> > +             goto assert_reset;
->
-> This is done by regmap as well
->
-> > +     ret = tsens_calibrate(tmdev);
-> > +     if (ret)
-> > +             return ret;
-> > +
-> > +     /*
-> > +      * clkin = 24MHz
-> > +      * T acquire = clkin / (SUN50I_THS_CTRL0_T_ACQ + 1)
-> > +      *           = 20us
-> > +      */
-> > +     regmap_write(tmdev->regmap, SUN50I_THS_CTRL0,
-> > +                  SUN50I_THS_CTRL0_T_ACQ(479));
-> > +     /* average over 4 samples */
-> > +     regmap_write(tmdev->regmap, SUN50I_H6_THS_MFC,
-> > +                  SUN50I_THS_FILTER_EN |
-> > +                  SUN50I_THS_FILTER_TYPE(1));
-> > +     /* period = (SUN50I_H6_THS_PC_TEMP_PERIOD + 1) * 4096 / clkin; ~10ms */
-> > +     regmap_write(tmdev->regmap, SUN50I_H6_THS_PC,
-> > +                  SUN50I_H6_THS_PC_TEMP_PERIOD(58));
-> > +     /* enable sensor */
-> > +     val = GENMASK(tmdev->chip->sensor_num - 1, 0);
-> > +     regmap_write(tmdev->regmap, SUN50I_H6_THS_ENABLE, val);
-> > +
-> > +     return 0;
-> > +
-> > +assert_reset:
-> > +     reset_control_assert(tmdev->reset);
-> > +
-> > +     return ret;
->
-> Can't we do that with runtime_pm?
->
-> Thanks!
-> Maxime
->
-> --
-> Maxime Ripard, Bootlin
-> Embedded Linux and Kernel engineering
-> https://bootlin.com
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+You should definitely have a read through here:
 
+https://www.kernel.org/doc/html/v4.17/process/submitting-patches.html
+
+> Signed-off-by: Oliver Graute <oliver.graute@kococonnector.com>
+> ---
+>  include/dt-bindings/clock/imx8qm-clock.h | 861 +++++++++++++++++++++++
+>  1 file changed, 861 insertions(+)
+>  create mode 100644 include/dt-bindings/clock/imx8qm-clock.h
+> 
+> diff --git a/include/dt-bindings/clock/imx8qm-clock.h b/include/dt-bindings/clock/imx8qm-clock.h
+> new file mode 100644
+> index 000000000000..13ee62bf8c86
+> --- /dev/null
+> +++ b/include/dt-bindings/clock/imx8qm-clock.h
+> @@ -0,0 +1,861 @@
+> +/* SPDX-License-Identifier: (GPL-2.0+ OR MIT) */
+> +/*
+> + * Copyright (C) 2016 Freescale Semiconductor, Inc.
+> + * Copyright 2017 NXP
+> + *
+> + * This program is free software; you can redistribute it and/or
+> + * modify it under the terms of the GNU General Public License
+> + * as published by the Free Software Foundation; either version 2
+> + * of the License, or (at your option) any later version.
+> + *
+> + * This program is distributed in the hope that it will be useful,
+> + * but WITHOUT ANY WARRANTY; without even the implied warranty of
+> + * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> + * GNU General Public License for more details.
+> + */
+> +
+> +#ifndef __DT_BINDINGS_CLOCK_IMX8QM_H
+> +#define __DT_BINDINGS_CLOCK_IMX8QM_H
+> +
+> +#define IMX8QM_CLK_DUMMY					0
+> +
+> +#define IMX8QM_A53_DIV						1
+> +#define IMX8QM_A53_CLK						2
+> +#define IMX8QM_A72_DIV						3
+> +#define IMX8QM_A72_CLK						4
+> +
+> +/* SC Clocks. */
+> +#define IMX8QM_SC_I2C_DIV					5
+> +#define IMX8QM_SC_I2C_CLK					6
+> +#define IMX8QM_SC_PID0_DIV					7
+> +#define IMX8QM_SC_PID0_CLK					8
+> +#define IMX8QM_SC_PIT_DIV					9
+> +#define IMX8QM_SC_PIT_CLK					10
+> +#define IMX8QM_SC_TPM_DIV					11
+> +#define IMX8QM_SC_TPM_CLK					12
+> +#define IMX8QM_SC_UART_DIV					13
+> +#define IMX8QM_SC_UART_CLK					14
+> +
+> +/* LSIO */
+> +#define IMX8QM_PWM0_DIV					15
+> +#define IMX8QM_PWM0_CLK					16
+> +#define IMX8QM_PWM1_DIV					17
+> +#define IMX8QM_PWM1_CLK					18
+> +#define IMX8QM_PWM2_DIV					19
+> +#define IMX8QM_PWM2_CLK					20
+> +#define IMX8QM_PWM3_DIV					21
+> +#define IMX8QM_PWM3_CLK					22
+> +#define IMX8QM_PWM4_DIV					23
+> +#define IMX8QM_PWM4_CLK					24
+> +#define IMX8QM_PWM5_DIV					26
+> +#define IMX8QM_PWM5_CLK					27
+> +#define IMX8QM_PWM6_DIV					28
+> +#define IMX8QM_PWM6_CLK					29
+> +#define IMX8QM_PWM7_DIV					30
+> +#define IMX8QM_PWM7_CLK					31
+> +#define IMX8QM_FSPI0_DIV					32
+> +#define IMX8QM_FSPI0_CLK					33
+> +#define IMX8QM_FSPI1_DIV					34
+> +#define IMX8QM_FSPI1_CLK					35
+> +#define IMX8QM_GPT0_DIV					36
+> +//#define IMX8QM_GPT0_CLK					37
+> +#define IMX8QM_GPT1_DIV					38
+> +//#define IMX8QM_GPT1_CLK					39
+> +#define IMX8QM_GPT2_DIV					40
+> +#define IMX8QM_GPT2_CLK					41
+> +#define IMX8QM_GPT3_DIV					42
+> +#define IMX8QM_GPT3_CLK					43
+> +#define IMX8QM_GPT4_DIV					44
+> +#define IMX8QM_GPT4_CLK					45
+> +
+> +/* Connectivity */
+> +#define IMX8QM_APBHDMA_CLK					46
+> +#define IMX8QM_GPMI_APB_CLK					47
+> +#define IMX8QM_GPMI_APB_BCH_CLK				48
+> +#define IMX8QM_GPMI_BCH_IO_DIV					49
+> +#define IMX8QM_GPMI_BCH_IO_CLK					50
+> +#define IMX8QM_GPMI_BCH_DIV					51
+> +#define IMX8QM_GPMI_BCH_CLK					52
+> +#define IMX8QM_SDHC0_IPG_CLK					53
+> +#define IMX8QM_SDHC0_DIV					54
+> +#define IMX8QM_SDHC0_CLK					55
+> +#define IMX8QM_SDHC1_IPG_CLK					56
+> +#define IMX8QM_SDHC1_DIV					57
+> +#define IMX8QM_SDHC1_CLK					58
+> +#define IMX8QM_SDHC2_IPG_CLK					59
+> +#define IMX8QM_SDHC2_DIV					60
+> +#define IMX8QM_SDHC2_CLK					61
+> +#define IMX8QM_USB2_OH_AHB_CLK					62
+> +#define IMX8QM_USB2_OH_IPG_S_CLK				63
+> +#define IMX8QM_USB2_OH_IPG_S_PL301_CLK				64
+> +#define IMX8QM_USB2_PHY_IPG_CLK				65
+> +#define IMX8QM_USB3_IPG_CLK					66
+> +#define IMX8QM_USB3_CORE_PCLK					67
+> +#define IMX8QM_USB3_PHY_CLK					68
+> +#define IMX8QM_USB3_ACLK_DIV					69
+> +#define IMX8QM_USB3_ACLK					70
+> +#define IMX8QM_USB3_BUS_DIV					71
+> +#define IMX8QM_USB3_BUS_CLK					72
+> +#define IMX8QM_USB3_LPM_DIV					73
+> +#define IMX8QM_USB3_LPM_CLK					74
+> +#define IMX8QM_ENET0_AHB_CLK					75
+> +#define IMX8QM_ENET0_IPG_S_CLK					76
+> +#define IMX8QM_ENET0_IPG_CLK					77
+> +#define IMX8QM_ENET0_RGMII_DIV					78
+> +#define IMX8QM_ENET0_RGMII_TX_CLK				79
+> +#define IMX8QM_ENET0_ROOT_DIV					80
+> +#define IMX8QM_ENET0_TX_CLK					81
+> +#define IMX8QM_ENET0_ROOT_CLK					82
+> +#define IMX8QM_ENET0_PTP_CLK					83
+> +#define IMX8QM_ENET0_BYPASS_DIV				84
+> +#define IMX8QM_ENET1_AHB_CLK					85
+> +#define IMX8QM_ENET1_IPG_S_CLK					86
+> +#define IMX8QM_ENET1_IPG_CLK					87
+> +#define IMX8QM_ENET1_RGMII_DIV					88
+> +#define IMX8QM_ENET1_RGMII_TX_CLK				89
+> +#define IMX8QM_ENET1_ROOT_DIV					90
+> +#define IMX8QM_ENET1_TX_CLK					91
+> +#define IMX8QM_ENET1_ROOT_CLK					92
+> +#define IMX8QM_ENET1_PTP_CLK					93
+> +#define IMX8QM_ENET1_BYPASS_DIV				94
+> +//#define IMX8QM_MLB_CLK					95
+> +#define IMX8QM_MLB_HCLK					96
+> +#define IMX8QM_MLB_IPG_CLK					97
+> +#define IMX8QM_EDMA_CLK					98
+> +#define IMX8QM_EDMA_IPG_CLK					99
+> +
+> +/* DMA */
+> +#define IMX8QM_SPI0_IPG_CLK					100
+> +#define IMX8QM_SPI0_DIV					101
+> +#define IMX8QM_SPI0_CLK					102
+> +#define IMX8QM_SPI1_IPG_CLK					103
+> +#define IMX8QM_SPI1_DIV					104
+> +#define IMX8QM_SPI1_CLK					105
+> +#define IMX8QM_SPI2_IPG_CLK					106
+> +#define IMX8QM_SPI2_DIV					107
+> +#define IMX8QM_SPI2_CLK					108
+> +#define IMX8QM_SPI3_IPG_CLK					109
+> +#define IMX8QM_SPI3_DIV					110
+> +#define IMX8QM_SPI3_CLK					111
+> +#define IMX8QM_UART0_IPG_CLK					112
+> +#define IMX8QM_UART0_DIV					113
+> +#define IMX8QM_UART0_CLK					114
+> +#define IMX8QM_UART1_IPG_CLK					115
+> +#define IMX8QM_UART1_DIV					116
+> +#define IMX8QM_UART1_CLK					117
+> +#define IMX8QM_UART2_IPG_CLK					118
+> +#define IMX8QM_UART2_DIV					119
+> +#define IMX8QM_UART2_CLK					120
+> +#define IMX8QM_UART3_IPG_CLK					121
+> +#define IMX8QM_UART3_DIV					122
+> +#define IMX8QM_UART3_CLK					123
+> +#define IMX8QM_UART4_IPG_CLK					124
+> +#define IMX8QM_UART4_DIV					125
+> +#define IMX8QM_EMVSIM0_IPG_CLK					126
+> +#define IMX8QM_UART4_CLK					127
+> +#define IMX8QM_EMVSIM0_DIV					128
+> +#define IMX8QM_EMVSIM0_CLK					129
+> +#define IMX8QM_EMVSIM1_IPG_CLK					130
+> +#define IMX8QM_EMVSIM1_DIV					131
+> +#define IMX8QM_EMVSIM1_CLK					132
+> +#define IMX8QM_CAN0_IPG_CHI_CLK				133
+> +#define IMX8QM_CAN0_IPG_CLK					134
+> +#define IMX8QM_CAN0_DIV					135
+> +#define IMX8QM_CAN0_CLK					136
+> +#define IMX8QM_CAN1_IPG_CHI_CLK				137
+> +#define IMX8QM_CAN1_IPG_CLK					138
+> +#define IMX8QM_CAN1_DIV					139
+> +#define IMX8QM_CAN1_CLK					140
+> +#define IMX8QM_CAN2_IPG_CHI_CLK				141
+> +#define IMX8QM_CAN2_IPG_CLK					142
+> +#define IMX8QM_CAN2_DIV					143
+> +#define IMX8QM_CAN2_CLK					144
+> +#define IMX8QM_I2C0_IPG_CLK					145
+> +#define IMX8QM_I2C0_DIV					146
+> +#define IMX8QM_I2C0_CLK					147
+> +#define IMX8QM_I2C1_IPG_CLK					148
+> +#define IMX8QM_I2C1_DIV					149
+> +#define IMX8QM_I2C1_CLK					150
+> +#define IMX8QM_I2C2_IPG_CLK					151
+> +#define IMX8QM_I2C2_DIV					152
+> +#define IMX8QM_I2C2_CLK					153
+> +#define IMX8QM_I2C3_IPG_CLK					154
+> +#define IMX8QM_I2C3_DIV					155
+> +#define IMX8QM_I2C3_CLK					156
+> +#define IMX8QM_I2C4_IPG_CLK					157
+> +#define IMX8QM_I2C4_DIV					158
+> +#define IMX8QM_I2C4_CLK					159
+> +#define IMX8QM_FTM0_IPG_CLK					160
+> +#define IMX8QM_FTM0_DIV					161
+> +#define IMX8QM_FTM0_CLK					162
+> +#define IMX8QM_FTM1_IPG_CLK					163
+> +#define IMX8QM_FTM1_DIV					164
+> +#define IMX8QM_FTM1_CLK					165
+> +#define IMX8QM_ADC0_IPG_CLK					166
+> +#define IMX8QM_ADC0_DIV					167
+> +#define IMX8QM_ADC0_CLK					168
+> +#define IMX8QM_ADC1_IPG_CLK					169
+> +#define IMX8QM_ADC1_DIV					170
+> +#define IMX8QM_ADC1_CLK					171
+> +
+> +/* Audio */
+> +#define IMX8QM_AUD_PLL0_DIV					172
+> +#define IMX8QM_AUD_PLL0					173
+> +#define IMX8QM_AUD_PLL1_DIV					174
+> +#define IMX8QM_AUD_PLL1					175
+> +#define IMX8QM_AUD_AMIX_IPG					182
+> +#define IMX8QM_AUD_ESAI_0_IPG					183
+> +#define IMX8QM_AUD_ESAI_1_IPG					184
+> +#define IMX8QM_AUD_ESAI_0_EXTAL_IPG				185
+> +#define IMX8QM_AUD_ESAI_1_EXTAL_IPG				186
+> +#define IMX8QM_AUD_SAI_0_IPG					187
+> +#define IMX8QM_AUD_SAI_0_IPG_S					188
+> +#define IMX8QM_AUD_SAI_0_MCLK					189
+> +#define IMX8QM_AUD_SAI_1_IPG					190
+> +#define IMX8QM_AUD_SAI_1_IPG_S					191
+> +#define IMX8QM_AUD_SAI_1_MCLK					192
+> +#define IMX8QM_AUD_SAI_2_IPG					193
+> +#define IMX8QM_AUD_SAI_2_IPG_S					194
+> +#define IMX8QM_AUD_SAI_2_MCLK					195
+> +#define IMX8QM_AUD_SAI_3_IPG					196
+> +#define IMX8QM_AUD_SAI_3_IPG_S					197
+> +#define IMX8QM_AUD_SAI_3_MCLK					198
+> +#define IMX8QM_AUD_SAI_6_IPG					199
+> +#define IMX8QM_AUD_SAI_6_IPG_S					200
+> +#define IMX8QM_AUD_SAI_6_MCLK					201
+> +#define IMX8QM_AUD_SAI_7_IPG					202
+> +#define IMX8QM_AUD_SAI_7_IPG_S					203
+> +#define IMX8QM_AUD_SAI_7_MCLK					204
+> +#define IMX8QM_AUD_SAI_HDMIRX0_IPG				205
+> +#define IMX8QM_AUD_SAI_HDMIRX0_IPG_S				206
+> +#define IMX8QM_AUD_SAI_HDMIRX0_MCLK				207
+> +#define IMX8QM_AUD_SAI_HDMITX0_IPG				208
+> +#define IMX8QM_AUD_SAI_HDMITX0_IPG_S				209
+> +#define IMX8QM_AUD_SAI_HDMITX0_MCLK				210
+> +#define IMX8QM_AUD_MQS_IPG					211
+> +#define IMX8QM_AUD_MQS_HMCLK					212
+> +#define IMX8QM_AUD_GPT5_IPG_S					213
+> +#define IMX8QM_AUD_GPT5_CLKIN					214
+> +#define IMX8QM_AUD_GPT5_24M_CLK				215
+> +#define IMX8QM_AUD_GPT6_IPG_S					216
+> +#define IMX8QM_AUD_GPT6_CLKIN					217
+> +#define IMX8QM_AUD_GPT6_24M_CLK				218
+> +#define IMX8QM_AUD_GPT7_IPG_S					219
+> +#define IMX8QM_AUD_GPT7_CLKIN					220
+> +#define IMX8QM_AUD_GPT7_24M_CLK				221
+> +#define IMX8QM_AUD_GPT8_IPG_S					222
+> +#define IMX8QM_AUD_GPT8_CLKIN					223
+> +#define IMX8QM_AUD_GPT8_24M_CLK				224
+> +#define IMX8QM_AUD_GPT9_IPG_S					225
+> +#define IMX8QM_AUD_GPT9_CLKIN					226
+> +#define IMX8QM_AUD_GPT9_24M_CLK				227
+> +#define IMX8QM_AUD_GPT10_IPG_S					228
+> +#define IMX8QM_AUD_GPT10_CLKIN					229
+> +#define IMX8QM_AUD_GPT10_24M_CLK				230
+> +#define IMX8QM_AUD_ACM_AUD_PLL_CLK0_DIV			232
+> +#define IMX8QM_AUD_ACM_AUD_PLL_CLK0_CLK			233
+> +#define IMX8QM_AUD_ACM_AUD_PLL_CLK1_DIV			234
+> +#define IMX8QM_AUD_ACM_AUD_PLL_CLK1_CLK			235
+> +#define IMX8QM_AUD_ACM_AUD_REC_CLK0_DIV			236
+> +#define IMX8QM_AUD_ACM_AUD_REC_CLK0_CLK			237
+> +#define IMX8QM_AUD_ACM_AUD_REC_CLK1_DIV			238
+> +#define IMX8QM_AUD_ACM_AUD_REC_CLK1_CLK			239
+> +#define IMX8QM_AUD_MCLKOUT0					240
+> +#define IMX8QM_AUD_MCLKOUT1					241
+> +#define IMX8QM_AUD_SPDIF_0_TX_CLK				242
+> +#define IMX8QM_AUD_SPDIF_0_GCLKW				243
+> +#define IMX8QM_AUD_SPDIF_0_IPG_S				244
+> +#define IMX8QM_AUD_SPDIF_1_TX_CLK				245
+> +#define IMX8QM_AUD_SPDIF_1_GCLKW				246
+> +#define IMX8QM_AUD_SPDIF_1_IPG_S				247
+> +#define IMX8QM_AUD_ASRC_0_IPG					248
+> +#define IMX8QM_AUD_ASRC_0_MEM					249
+> +#define IMX8QM_AUD_ASRC_1_IPG					250
+> +#define IMX8QM_AUD_ASRC_1_MEM					251
+> +
+> +
+> +/* VPU */
+> +#define IMX8QM_VPU_CORE_DIV					252
+> +#define IMX8QM_VPU_CORE_CLK					253
+> +#define IMX8QM_VPU_UART_DIV					254
+> +#define IMX8QM_VPU_UART_CLK					255
+> +#define IMX8QM_VPU_DDR_DIV					256
+> +#define IMX8QM_VPU_DDR_CLK					257
+> +#define IMX8QM_VPU_SYS_DIV					258
+> +#define IMX8QM_VPU_SYS_CLK					259
+> +#define IMX8QM_VPU_XUVI_DIV					260
+> +#define IMX8QM_VPU_XUVI_CLK					261
+> +
+> +/* GPU Clocks. */
+> +#define IMX8QM_GPU0_CORE_DIV					262
+> +#define IMX8QM_GPU0_CORE_CLK					263
+> +#define IMX8QM_GPU0_SHADER_DIV					264
+> +#define IMX8QM_GPU0_SHADER_CLK					265
+> +#define IMX8QM_GPU1_CORE_DIV					266
+> +#define IMX8QM_GPU1_CORE_CLK					267
+> +#define IMX8QM_GPU1_SHADER_DIV					268
+> +#define IMX8QM_GPU1_SHADER_CLK					269
+> +
+> +
+> +/* MIPI CSI */
+> +#define IMX8QM_CSI0_IPG_CLK_S					270
+> +#define IMX8QM_CSI0_LIS_IPG_CLK				271
+> +#define IMX8QM_CSI0_APB_CLK					272
+> +#define IMX8QM_CSI0_I2C0_DIV					273
+> +#define IMX8QM_CSI0_I2C0_CLK					274
+> +#define IMX8QM_CSI0_PWM0_DIV					275
+> +#define IMX8QM_CSI0_PWM0_CLK					276
+> +#define IMX8QM_CSI0_CORE_DIV					277
+> +#define IMX8QM_CSI0_CORE_CLK					278
+> +#define IMX8QM_CSI0_ESC_DIV					279
+> +#define IMX8QM_CSI0_ESC_CLK					280
+> +#define IMX8QM_CSI1_IPG_CLK_S					281
+> +#define IMX8QM_CSI1_LIS_IPG_CLK				282
+> +#define IMX8QM_CSI1_APB_CLK					283
+> +#define IMX8QM_CSI1_I2C0_DIV					284
+> +#define IMX8QM_CSI1_I2C0_CLK					285
+> +#define IMX8QM_CSI1_PWM0_DIV					286
+> +#define IMX8QM_CSI1_PWM0_CLK					287
+> +#define IMX8QM_CSI1_CORE_DIV					288
+> +#define IMX8QM_CSI1_CORE_CLK					289
+> +#define IMX8QM_CSI1_ESC_DIV					290
+> +#define IMX8QM_CSI1_ESC_CLK					291
+> +
+> +
+> +/* Display */
+> +#define IMX8QM_DC0_PLL0_DIV					292
+> +#define IMX8QM_DC0_PLL0_CLK					293
+> +#define IMX8QM_DC0_PLL1_DIV					294
+> +#define IMX8QM_DC0_PLL1_CLK					295
+> +#define IMX8QM_DC0_DISP0_DIV					296
+> +#define IMX8QM_DC0_DISP0_CLK					297
+> +#define IMX8QM_DC0_DISP1_DIV					298
+> +#define IMX8QM_DC0_DISP1_CLK					299
+> +#define IMX8QM_DC0_BYPASS_0_DIV				300
+> +#define IMX8QM_DC0_BYPASS_1_DIV				301
+> +#define IMX8QM_DC0_IRIS_AXI_CLK				302
+> +#define IMX8AM_DC0_IRIS_MVPL_CLK				303
+> +#define IMX8QM_DC0_DISP0_MSI_CLK				304
+> +#define IMX8QM_DC0_LIS_IPG_CLK					305
+> +#define IMX8QM_DC0_PXL_CMB_APB_CLK				306
+> +#define IMX8QM_DC0_PRG0_RTRAM_CLK				307
+> +#define IMX8QM_DC0_PRG1_RTRAM_CLK				308
+> +#define IMX8QM_DC0_PRG2_RTRAM_CLK				309
+> +#define IMX8QM_DC0_PRG3_RTRAM_CLK				310
+> +#define IMX8QM_DC0_PRG4_RTRAM_CLK				311
+> +#define IMX8QM_DC0_PRG5_RTRAM_CLK				312
+> +#define IMX8QM_DC0_PRG6_RTRAM_CLK				313
+> +#define IMX8QM_DC0_PRG7_RTRAM_CLK				314
+> +#define IMX8QM_DC0_PRG8_RTRAM_CLK				315
+> +#define IMX8QM_DC0_PRG0_APB_CLK				316
+> +#define IMX8QM_DC0_PRG1_APB_CLK				317
+> +#define IMX8QM_DC0_PRG2_APB_CLK				318
+> +#define IMX8QM_DC0_PRG3_APB_CLK				319
+> +#define IMX8QM_DC0_PRG4_APB_CLK				320
+> +#define IMX8QM_DC0_PRG5_APB_CLK				321
+> +#define IMX8QM_DC0_PRG6_APB_CLK				322
+> +#define IMX8QM_DC0_PRG7_APB_CLK				323
+> +#define IMX8QM_DC0_PRG8_APB_CLK				324
+> +#define IMX8QM_DC0_DPR0_APB_CLK				325
+> +#define IMX8QM_DC0_DPR1_APB_CLK				326
+> +#define IMX8QM_DC0_RTRAM0_CLK					327
+> +#define IMX8QM_DC0_RTRAM1_CLK					328
+> +#define IMX8QM_DC1_PLL0_DIV					329
+> +#define IMX8QM_DC1_PLL0_CLK					330
+> +#define IMX8QM_DC1_PLL1_DIV					331
+> +#define IMX8QM_DC1_PLL1_CLK					332
+> +#define IMX8QM_DC1_DISP0_DIV					333
+> +#define IMX8QM_DC1_DISP0_CLK					334
+> +#define IMX8QM_DC1_BYPASS_0_DIV				335
+> +#define IMX8QM_DC1_BYPASS_1_DIV				336
+> +#define IMX8QM_DC1_DISP1_DIV					337
+> +#define IMX8QM_DC1_DISP1_CLK					338
+> +#define IMX8QM_DC1_IRIS_AXI_CLK				339
+> +#define IMX8AM_DC1_IRIS_MVPL_CLK				340
+> +#define IMX8QM_DC1_DISP0_MSI_CLK				341
+> +#define IMX8QM_DC1_LIS_IPG_CLK					342
+> +#define IMX8QM_DC1_PXL_CMB_APB_CLK				343
+> +#define IMX8QM_DC1_PRG0_RTRAM_CLK				344
+> +#define IMX8QM_DC1_PRG1_RTRAM_CLK				345
+> +#define IMX8QM_DC1_PRG2_RTRAM_CLK				346
+> +#define IMX8QM_DC1_PRG3_RTRAM_CLK				347
+> +#define IMX8QM_DC1_PRG4_RTRAM_CLK				348
+> +#define IMX8QM_DC1_PRG5_RTRAM_CLK				349
+> +#define IMX8QM_DC1_PRG6_RTRAM_CLK				350
+> +#define IMX8QM_DC1_PRG7_RTRAM_CLK				351
+> +#define IMX8QM_DC1_PRG8_RTRAM_CLK				352
+> +#define IMX8QM_DC1_PRG0_APB_CLK				353
+> +#define IMX8QM_DC1_PRG1_APB_CLK				354
+> +#define IMX8QM_DC1_PRG2_APB_CLK				355
+> +#define IMX8QM_DC1_PRG3_APB_CLK				356
+> +#define IMX8QM_DC1_PRG4_APB_CLK				357
+> +#define IMX8QM_DC1_PRG5_APB_CLK				358
+> +#define IMX8QM_DC1_PRG6_APB_CLK				359
+> +#define IMX8QM_DC1_PRG7_APB_CLK				360
+> +#define IMX8QM_DC1_PRG8_APB_CLK				361
+> +#define IMX8QM_DC1_DPR0_APB_CLK				362
+> +#define IMX8QM_DC1_DPR1_APB_CLK				363
+> +#define IMX8QM_DC1_RTRAM0_CLK					364
+> +#define IMX8QM_DC1_RTRAM1_CLK					365
+> +
+> +/* DRC */
+> +#define IMX8QM_DRC0_PLL0_DIV					366
+> +#define IMX8QM_DRC0_PLL0_CLK					367
+> +#define IMX8QM_DRC0_DIV					368
+> +#define IMX8QM_DRC0_CLK					369
+> +#define IMX8QM_DRC1_PLL0_DIV					370
+> +#define IMX8QM_DRC1_PLL0_CLK					371
+> +#define IMX8QM_DRC1_DIV					372
+> +#define IMX8QM_DRC1_CLK					373
+> +
+> +/* HDMI */
+> +#define IMX8QM_HDMI_AV_PLL_DIV					374
+> +#define IMX8QM_HDMI_AV_PLL_CLK					375
+> +#define IMX8QM_HDMI_I2S_BYPASS_CLK				376
+> +#define IMX8QM_HDMI_I2C0_DIV					377
+> +#define IMX8QM_HDMI_I2C0_CLK					378
+> +#define IMX8QM_HDMI_PXL_DIV					379
+> +#define IMX8QM_HDMI_PXL_CLK					380
+> +#define IMX8QM_HDMI_PXL_LINK_DIV				381
+> +#define IMX8QM_HDMI_PXL_LINK_CLK				382
+> +#define IMX8QM_HDMI_PXL_MUX_DIV				383
+> +#define IMX8QM_HDMI_PXL_MUX_CLK				384
+> +#define IMX8QM_HDMI_I2S_DIV					385
+> +#define IMX8QM_HDMI_I2S_CLK					386
+> +#define IMX8QM_HDMI_HDP_CORE_DIV				387
+> +#define IMX8QM_HDMI_HDP_CORE_CLK				388
+> +#define IMX8QM_HDMI_I2C_IPG_S_CLK				389
+> +#define IMX8QM_HDMI_I2C_IPG_CLK				390
+> +#define IMX8QM_HDMI_PWM_IPG_S_CLK				391
+> +#define IMX8QM_HDMI_PWM_IPG_CLK				392
+> +#define IMX8QM_HDMI_PWM_32K_CLK				393
+> +#define IMX8QM_HDMI_GPIO_IPG_CLK				394
+> +#define IMX8QM_HDMI_PXL_LINK_SLV_ODD_CLK			395
+> +#define IMX8QM_HDMI_PXL_LINK_SLV_EVEN_CLK			396
+> +#define IMX8QM_HDMI_LIS_IPG_CLK				397
+> +#define IMX8QM_HDMI_MSI_HCLK					398
+> +#define IMX8QM_HDMI_PXL_EVEN_CLK				399
+> +#define IMX8QM_HDMI_HDP_CLK					400
+> +#define IMX8QM_HDMI_PXL_DBL_CLK				401
+> +#define IMX8QM_HDMI_APB_CLK					402
+> +#define IMX8QM_HDMI_PXL_LPCG_CLK				403
+> +#define IMX8QM_HDMI_HDP_PHY_CLK				404
+> +#define IMX8QM_HDMI_IPG_DIV					405
+> +#define IMX8QM_HDMI_VIF_CLK					406
+> +#define IMX8QM_HDMI_DIG_PLL_DIV				407
+> +#define IMX8QM_HDMI_DIG_PLL_CLK				408
+> +#define IMX8QM_HDMI_APB_MUX_CSR_CLK				409
+> +#define IMX8QM_HDMI_APB_MUX_CTRL_CLK				410
+> +
+> +/* RX-HDMI */
+> +#define IMX8QM_HDMI_RX_I2S_BYPASS_CLK				411
+> +#define IMX8QM_HDMI_RX_BYPASS_CLK				412
+> +#define IMX8QM_HDMI_RX_SPDIF_BYPASS_CLK			413
+> +#define IMX8QM_HDMI_RX_I2C0_DIV				414
+> +#define IMX8QM_HDMI_RX_I2C0_CLK				415
+> +#define IMX8QM_HDMI_RX_SPDIF_DIV				416
+> +#define IMX8QM_HDMI_RX_SPDIF_CLK				417
+> +#define IMX8QM_HDMI_RX_HD_REF_DIV				418
+> +#define IMX8QM_HDMI_RX_HD_REF_CLK				419
+> +#define IMX8QM_HDMI_RX_HD_CORE_DIV				420
+> +#define IMX8QM_HDMI_RX_HD_CORE_CLK				421
+> +#define IMX8QM_HDMI_RX_PXL_DIV					422
+> +#define IMX8QM_HDMI_RX_PXL_CLK					423
+> +#define IMX8QM_HDMI_RX_I2S_DIV					424
+> +#define IMX8QM_HDMI_RX_I2S_CLK					425
+> +#define IMX8QM_HDMI_RX_PWM_DIV					426
+> +#define IMX8QM_HDMI_RX_PWM_CLK					427
+> +
+> +/* LVDS */
+> +#define IMX8QM_LVDS0_BYPASS_CLK				428
+> +#define IMX8QM_LVDS0_PIXEL_DIV					429
+> +#define IMX8QM_LVDS0_PIXEL_CLK					430
+> +#define IMX8QM_LVDS0_PHY_DIV					431
+> +#define IMX8QM_LVDS0_PHY_CLK					432
+> +#define IMX8QM_LVDS0_I2C0_IPG_CLK				433
+> +#define IMX8QM_LVDS0_I2C0_DIV					434
+> +#define IMX8QM_LVDS0_I2C0_CLK					435
+> +#define IMX8QM_LVDS0_I2C1_IPG_CLK				436
+> +#define IMX8QM_LVDS0_I2C1_DIV					437
+> +#define IMX8QM_LVDS0_I2C1_CLK					438
+> +#define IMX8QM_LVDS0_PWM0_IPG_CLK				439
+> +#define IMX8QM_LVDS0_PWM0_DIV					440
+> +#define IMX8QM_LVDS0_PWM0_CLK					441
+> +#define IMX8QM_LVDS0_GPIO_IPG_CLK				444
+> +#define IMX8QM_LVDS1_BYPASS_DIV				445
+> +#define IMX8QM_LVDS1_BYPASS_CLK				446
+> +#define IMX8QM_LVDS1_PIXEL_DIV					447
+> +#define IMX8QM_LVDS1_PIXEL_CLK					448
+> +#define IMX8QM_LVDS1_PHY_DIV					449
+> +#define IMX8QM_LVDS1_PHY_CLK					450
+> +#define IMX8QM_LVDS1_I2C0_IPG_CLK				451
+> +#define IMX8QM_LVDS1_I2C0_DIV					452
+> +#define IMX8QM_LVDS1_I2C0_CLK					453
+> +#define IMX8QM_LVDS1_I2C1_IPG_CLK				454
+> +#define IMX8QM_LVDS1_I2C1_DIV					455
+> +#define IMX8QM_LVDS1_I2C1_CLK					456
+> +#define IMX8QM_LVDS1_PWM0_IPG_CLK				457
+> +#define IMX8QM_LVDS1_PWM0_DIV					458
+> +#define IMX8QM_LVDS1_PWM0_CLK					459
+> +#define IMX8QM_LVDS1_GPIO_IPG_CLK				462
+> +
+> +/* MIPI */
+> +#define IMX8QM_MIPI0_BYPASS_CLK				465
+> +#define IMX8QM_MIPI0_I2C0_DIV					466
+> +#define IMX8QM_MIPI0_I2C0_CLK					467
+> +#define IMX8QM_MIPI0_I2C1_DIV					468
+> +#define IMX8QM_MIPI0_I2C1_CLK					469
+> +#define IMX8QM_MIPI0_PWM0_DIV					470
+> +#define IMX8QM_MIPI0_PWM0_CLK					471
+> +#define IMX8QM_MIPI0_DSI_TX_ESC_DIV				472
+> +#define IMX8QM_MIPI0_DSI_TX_ESC_CLK				473
+> +#define IMX8QM_MIPI0_DSI_RX_ESC_DIV				474
+> +#define IMX8QM_MIPI0_DSI_RX_ESC_CLK				475
+> +#define IMX8QM_MIPI0_PXL_DIV					476
+> +#define IMX8QM_MIPI0_PXL_CLK					477
+> +#define IMX8QM_MIPI1_BYPASS_CLK				479
+> +#define IMX8QM_MIPI1_I2C0_DIV					480
+> +#define IMX8QM_MIPI1_I2C0_CLK					481
+> +#define IMX8QM_MIPI1_I2C1_DIV					482
+> +#define IMX8QM_MIPI1_I2C1_CLK					483
+> +#define IMX8QM_MIPI1_PWM0_DIV					484
+> +#define IMX8QM_MIPI1_PWM0_CLK					485
+> +#define IMX8QM_MIPI1_DSI_TX_ESC_DIV				486
+> +#define IMX8QM_MIPI1_DSI_TX_ESC_CLK				487
+> +#define IMX8QM_MIPI1_DSI_RX_ESC_DIV				488
+> +#define IMX8QM_MIPI1_DSI_RX_ESC_CLK				489
+> +#define IMX8QM_MIPI1_PXL_DIV					490
+> +#define IMX8QM_MIPI1_PXL_CLK					491
+> +
+> +/* Imaging */
+> +#define IMX8QM_IMG_JPEG_ENC_IPG_CLK				492
+> +#define IMX8QM_IMG_JPEG_ENC_CLK				493
+> +#define IMX8QM_IMG_JPEG_DEC_IPG_CLK				494
+> +#define IMX8QM_IMG_JPEG_DEC_CLK				495
+> +#define IMX8QM_IMG_PXL_LINK_DC0_CLK				496
+> +#define IMX8QM_IMG_PXL_LINK_DC1_CLK				497
+> +#define IMX8QM_IMG_PXL_LINK_CSI0_CLK				498
+> +#define IMX8QM_IMG_PXL_LINK_CSI1_CLK				499
+> +#define IMX8QM_IMG_PXL_LINK_HDMI_IN_CLK			500
+> +#define IMX8QM_IMG_PDMA_0_CLK					501
+> +#define IMX8QM_IMG_PDMA_1_CLK					502
+> +#define IMX8QM_IMG_PDMA_2_CLK					503
+> +#define IMX8QM_IMG_PDMA_3_CLK					504
+> +#define IMX8QM_IMG_PDMA_4_CLK					505
+> +#define IMX8QM_IMG_PDMA_5_CLK					506
+> +#define IMX8QM_IMG_PDMA_6_CLK					507
+> +#define IMX8QM_IMG_PDMA_7_CLK					508
+> +
+> +/* HSIO */
+> +#define IMX8QM_HSIO_PCIE_A_MSTR_AXI_CLK			509
+> +#define IMX8QM_HSIO_PCIE_A_SLV_AXI_CLK				510
+> +#define IMX8QM_HSIO_PCIE_A_DBI_AXI_CLK				511
+> +#define IMX8QM_HSIO_PCIE_B_MSTR_AXI_CLK			512
+> +#define IMX8QM_HSIO_PCIE_B_SLV_AXI_CLK				513
+> +#define IMX8QM_HSIO_PCIE_B_DBI_AXI_CLK				514
+> +#define IMX8QM_HSIO_PCIE_X1_PER_CLK				515
+> +#define IMX8QM_HSIO_PCIE_X2_PER_CLK				516
+> +#define IMX8QM_HSIO_SATA_PER_CLK				517
+> +#define IMX8QM_HSIO_PHY_X1_PER_CLK				518
+> +#define IMX8QM_HSIO_PHY_X2_PER_CLK				519
+> +#define IMX8QM_HSIO_MISC_PER_CLK				520
+> +#define IMX8QM_HSIO_PHY_X1_APB_CLK				521
+> +#define IMX8QM_HSIO_PHY_X2_APB_0_CLK				522
+> +#define IMX8QM_HSIO_PHY_X2_APB_1_CLK				523
+> +#define IMX8QM_HSIO_SATA_CLK					524
+> +#define IMX8QM_HSIO_GPIO_CLK					525
+> +#define IMX8QM_HSIO_PHY_X1_PCLK				526
+> +#define IMX8QM_HSIO_PHY_X2_PCLK_0				527
+> +#define IMX8QM_HSIO_PHY_X2_PCLK_1				528
+> +#define IMX8QM_HSIO_SATA_EPCS_RX_CLK				529
+> +#define IMX8QM_HSIO_SATA_EPCS_TX_CLK				530
+> +
+> +
+> +/* M4 */
+> +#define IMX8QM_M4_0_CORE_DIV					531
+> +#define IMX8QM_M4_0_CORE_CLK					532
+> +#define IMX8QM_M4_0_I2C_DIV					533
+> +#define IMX8QM_M4_0_I2C_CLK					534
+> +#define IMX8QM_M4_0_PIT_DIV					535
+> +#define IMX8QM_M4_0_PIT_CLK					536
+> +#define IMX8QM_M4_0_TPM_DIV					537
+> +#define IMX8QM_M4_0_TPM_CLK					538
+> +#define IMX8QM_M4_0_UART_DIV					539
+> +#define IMX8QM_M4_0_UART_CLK					540
+> +#define IMX8QM_M4_0_WDOG_DIV					541
+> +#define IMX8QM_M4_0_WDOG_CLK					542
+> +#define IMX8QM_M4_1_CORE_DIV					543
+> +#define IMX8QM_M4_1_CORE_CLK					544
+> +#define IMX8QM_M4_1_I2C_DIV					545
+> +#define IMX8QM_M4_1_I2C_CLK					546
+> +#define IMX8QM_M4_1_PIT_DIV					547
+> +#define IMX8QM_M4_1_PIT_CLK					548
+> +#define IMX8QM_M4_1_TPM_DIV					549
+> +#define IMX8QM_M4_1_TPM_CLK					550
+> +#define IMX8QM_M4_1_UART_DIV					551
+> +#define IMX8QM_M4_1_UART_CLK					552
+> +#define IMX8QM_M4_1_WDOG_DIV					553
+> +#define IMX8QM_M4_1_WDOG_CLK					554
+> +
+> +/* IPG clocks */
+> +#define IMX8QM_24MHZ						555
+> +#define IMX8QM_GPT_3M						556
+> +#define IMX8QM_IPG_DMA_CLK_ROOT				557
+> +#define IMX8QM_IPG_AUD_CLK_ROOT				558
+> +#define IMX8QM_IPG_CONN_CLK_ROOT				559
+> +#define IMX8QM_AHB_CONN_CLK_ROOT				560
+> +#define IMX8QM_AXI_CONN_CLK_ROOT				561
+> +#define IMX8QM_IPG_MIPI_CSI_CLK_ROOT				562
+> +#define IMX8QM_DC_AXI_EXT_CLK					563
+> +#define IMX8QM_DC_AXI_INT_CLK					564
+> +#define IMX8QM_DC_CFG_CLK					565
+> +#define IMX8QM_HDMI_IPG_CLK					566
+> +#define IMX8QM_LVDS_IPG_CLK					567
+> +#define IMX8QM_IMG_AXI_CLK					568
+> +#define IMX8QM_IMG_IPG_CLK					569
+> +#define IMX8QM_IMG_PXL_CLK					570
+> +#define IMX8QM_CSI0_I2C0_IPG_CLK				571
+> +#define IMX8QM_CSI0_PWM0_IPG_CLK				572
+> +#define IMX8QM_CSI1_I2C0_IPG_CLK				573
+> +#define IMX8QM_CSI1_PWM0_IPG_CLK				574
+> +#define IMX8QM_DC0_DPR0_B_CLK					575
+> +#define IMX8QM_DC0_DPR1_B_CLK					576
+> +#define IMX8QM_DC1_DPR0_B_CLK					577
+> +#define IMX8QM_DC1_DPR1_B_CLK					578
+> +#define IMX8QM_32KHZ						579
+> +#define IMX8QM_HSIO_AXI_CLK					580
+> +#define IMX8QM_HSIO_PER_CLK					581
+> +#define IMX8QM_HDMI_RX_GPIO_IPG_S_CLK				582
+> +#define IMX8QM_HDMI_RX_PWM_IPG_S_CLK				583
+> +#define IMX8QM_HDMI_RX_PWM_IPG_CLK				584
+> +#define IMX8QM_HDMI_RX_I2C_DIV_CLK				585
+> +#define IMX8QM_HDMI_RX_I2C_IPG_S_CLK				586
+> +#define IMX8QM_HDMI_RX_I2C_IPG_CLK				587
+> +#define IMX8QM_HDMI_RX_SINK_PCLK				588
+> +#define IMX8QM_HDMI_RX_SINK_SCLK				589
+> +#define IMX8QM_HDMI_RX_PXL_ENC_CLK				590
+> +#define IMX8QM_HDMI_RX_IPG_CLK					591
+> +
+> +/* ACM */
+> +#define IMX8QM_HDMI_RX_MCLK					592
+> +#define IMX8QM_EXT_AUD_MCLK0					593
+> +#define IMX8QM_EXT_AUD_MCLK1					594
+> +#define IMX8QM_ESAI0_RX_CLK					595
+> +#define IMX8QM_ESAI0_RX_HF_CLK					596
+> +#define IMX8QM_ESAI0_TX_CLK					597
+> +#define IMX8QM_ESAI0_TX_HF_CLK					598
+> +#define IMX8QM_ESAI1_RX_CLK					599
+> +#define IMX8QM_ESAI1_RX_HF_CLK					600
+> +#define IMX8QM_ESAI1_TX_CLK					601
+> +#define IMX8QM_ESAI1_TX_HF_CLK					602
+> +//#define IMX8QM_SPDIF0_RX					603
+> +#define IMX8QM_SPDIF1_RX					604
+> +#define IMX8QM_SAI0_RX_BCLK					605
+> +#define IMX8QM_SAI0_TX_BCLK					606
+> +#define IMX8QM_SAI1_RX_BCLK					607
+> +#define IMX8QM_SAI1_TX_BCLK					608
+> +#define IMX8QM_SAI2_RX_BCLK					609
+> +#define IMX8QM_SAI3_RX_BCLK					610
+> +#define IMX8QM_HDMI_RX_SAI0_RX_BCLK				611
+> +#define IMX8QM_SAI6_RX_BCLK					612
+> +#define IMX8QM_HDMI_TX_SAI0_TX_BCLK				613
+> +
+> +#define IMX8QM_ACM_AUD_CLK0_SEL				614
+> +#define IMX8QM_ACM_AUD_CLK0_CLK				615
+> +#define IMX8QM_ACM_AUD_CLK1_SEL				616
+> +#define IMX8QM_ACM_AUD_CLK1_CLK				617
+> +#define IMX8QM_ACM_MCLKOUT0_SEL				618
+> +#define IMX8QM_ACM_MCLKOUT0_CLK				619
+> +#define IMX8QM_ACM_MCLKOUT1_SEL				620
+> +#define IMX8QM_ACM_MCLKOUT1_CLK				621
+> +#define IMX8QM_ACM_ASRC0_MUX_CLK_SEL				622
+> +#define IMX8QM_ACM_ASRC0_MUX_CLK_CLK				623
+> +#define IMX8QM_ACM_ASRC1_MUX_CLK_SEL				624
+> +#define IMX8QM_ACM_ASRC1_MUX_CLK_CLK				625
+> +#define IMX8QM_ACM_ESAI0_MCLK_SEL				626
+> +#define IMX8QM_ACM_ESAI0_MCLK_CLK				627
+> +#define IMX8QM_ACM_ESAI1_MCLK_SEL				628
+> +#define IMX8QM_ACM_ESAI1_MCLK_CLK				629
+> +#define IMX8QM_ACM_GPT0_MUX_CLK_SEL				630
+> +#define IMX8QM_ACM_GPT0_MUX_CLK_CLK				631
+> +#define IMX8QM_ACM_GPT1_MUX_CLK_SEL				632
+> +#define IMX8QM_ACM_GPT1_MUX_CLK_CLK				633
+> +#define IMX8QM_ACM_GPT2_MUX_CLK_SEL				634
+> +#define IMX8QM_ACM_GPT2_MUX_CLK_CLK				635
+> +#define IMX8QM_ACM_GPT3_MUX_CLK_SEL				636
+> +#define IMX8QM_ACM_GPT3_MUX_CLK_CLK				637
+> +#define IMX8QM_ACM_GPT4_MUX_CLK_SEL				638
+> +#define IMX8QM_ACM_GPT4_MUX_CLK_CLK				639
+> +#define IMX8QM_ACM_GPT5_MUX_CLK_SEL				640
+> +#define IMX8QM_ACM_GPT5_MUX_CLK_CLK				641
+> +#define IMX8QM_ACM_SAI0_MCLK_SEL				642
+> +#define IMX8QM_ACM_SAI0_MCLK_CLK				643
+> +#define IMX8QM_ACM_SAI1_MCLK_SEL				644
+> +#define IMX8QM_ACM_SAI1_MCLK_CLK				645
+> +#define IMX8QM_ACM_SAI2_MCLK_SEL				646
+> +#define IMX8QM_ACM_SAI2_MCLK_CLK				647
+> +#define IMX8QM_ACM_SAI3_MCLK_SEL				648
+> +#define IMX8QM_ACM_SAI3_MCLK_CLK				649
+> +#define IMX8QM_ACM_HDMI_RX_SAI0_MCLK_SEL			650
+> +#define IMX8QM_ACM_HDMI_RX_SAI0_MCLK_CLK			651
+> +#define IMX8QM_ACM_HDMI_TX_SAI0_MCLK_SEL			652
+> +#define IMX8QM_ACM_HDMI_TX_SAI0_MCLK_CLK			653
+> +#define IMX8QM_ACM_SAI6_MCLK_SEL				654
+> +#define IMX8QM_ACM_SAI6_MCLK_CLK				655
+> +#define IMX8QM_ACM_SAI7_MCLK_SEL				656
+> +#define IMX8QM_ACM_SAI7_MCLK_CLK				657
+> +#define IMX8QM_ACM_SPDIF0_TX_CLK_SEL				658
+> +#define IMX8QM_ACM_SPDIF0_TX_CLK_CLK				659
+> +#define IMX8QM_ACM_SPDIF1_TX_CLK_SEL				660
+> +#define IMX8QM_ACM_SPDIF1_TX_CLK_CLK				661
+> +#define IMX8QM_ACM_MQS_TX_CLK_SEL				662
+> +#define IMX8QM_ACM_MQS_TX_CLK_CLK				663
+> +
+> +#define IMX8QM_ENET0_REF_25MHZ_125MHZ_SEL			664
+> +#define IMX8QM_ENET0_REF_25MHZ_125MHZ_CLK			665
+> +#define IMX8QM_ENET1_REF_25MHZ_125MHZ_SEL			666
+> +#define IMX8QM_ENET1_REF_25MHZ_125MHZ_CLK			667
+> +#define IMX8QM_ENET0_REF_50MHZ_CLK				668
+> +#define IMX8QM_ENET1_REF_50MHZ_CLK				669
+> +#define IMX8QM_ENET_25MHZ_CLK					670
+> +#define IMX8QM_ENET_125MHZ_CLK					671
+> +#define IMX8QM_ENET0_REF_DIV					672
+> +#define IMX8QM_ENET0_REF_CLK					673
+> +#define IMX8QM_ENET1_REF_DIV					674
+> +#define IMX8QM_ENET1_REF_CLK					675
+> +#define IMX8QM_ENET0_RMII_TX_CLK				676
+> +#define IMX8QM_ENET1_RMII_TX_CLK				677
+> +#define IMX8QM_ENET0_RMII_TX_SEL				678
+> +#define IMX8QM_ENET1_RMII_TX_SEL				679
+> +#define IMX8QM_ENET0_RMII_RX_CLK				680
+> +#define IMX8QM_ENET1_RMII_RX_CLK				681
+> +
+> +#define IMX8QM_KPP_CLK						683
+> +#define IMX8QM_GPT0_HF_CLK					684
+> +#define IMX8QM_GPT0_IPG_S_CLK					685
+> +#define IMX8QM_GPT0_IPG_SLV_CLK				686
+> +#define IMX8QM_GPT0_IPG_MSTR_CLK				687
+> +#define IMX8QM_GPT1_HF_CLK					688
+> +#define IMX8QM_GPT1_IPG_S_CLK					689
+> +#define IMX8QM_GPT1_IPG_SLV_CLK				690
+> +#define IMX8QM_GPT1_IPG_MSTR_CLK				691
+> +#define IMX8QM_GPT2_HF_CLK					692
+> +#define IMX8QM_GPT2_IPG_S_CLK					693
+> +#define IMX8QM_GPT2_IPG_SLV_CLK				694
+> +#define IMX8QM_GPT2_IPG_MSTR_CLK				695
+> +#define IMX8QM_GPT3_HF_CLK					696
+> +#define IMX8QM_GPT3_IPG_S_CLK					697
+> +#define IMX8QM_GPT3_IPG_SLV_CLK				698
+> +#define IMX8QM_GPT3_IPG_MSTR_CLK				699
+> +#define IMX8QM_GPT4_HF_CLK					700
+> +#define IMX8QM_GPT4_IPG_S_CLK					701
+> +#define IMX8QM_GPT4_IPG_SLV_CLK				702
+> +#define IMX8QM_GPT4_IPG_MSTR_CLK				703
+> +#define IMX8QM_PWM0_HF_CLK					704
+> +#define IMX8QM_PWM0_IPG_S_CLK					705
+> +#define IMX8QM_PWM0_IPG_SLV_CLK				706
+> +#define IMX8QM_PWM0_IPG_MSTR_CLK				707
+> +#define IMX8QM_PWM1_HF_CLK					708
+> +#define IMX8QM_PWM1_IPG_S_CLK					709
+> +#define IMX8QM_PWM1_IPG_SLV_CLK				710
+> +#define IMX8QM_PWM1_IPG_MSTR_CLK				711
+> +#define IMX8QM_PWM2_HF_CLK					712
+> +#define IMX8QM_PWM2_IPG_S_CLK					713
+> +#define IMX8QM_PWM2_IPG_SLV_CLK				714
+> +#define IMX8QM_PWM2_IPG_MSTR_CLK				715
+> +#define IMX8QM_PWM3_HF_CLK					716
+> +#define IMX8QM_PWM3_IPG_S_CLK					717
+> +#define IMX8QM_PWM3_IPG_SLV_CLK				718
+> +#define IMX8QM_PWM3_IPG_MSTR_CLK				719
+> +#define IMX8QM_PWM4_HF_CLK					720
+> +#define IMX8QM_PWM4_IPG_S_CLK					721
+> +#define IMX8QM_PWM4_IPG_SLV_CLK				722
+> +#define IMX8QM_PWM4_IPG_MSTR_CLK				723
+> +#define IMX8QM_PWM5_HF_CLK					724
+> +#define IMX8QM_PWM5_IPG_S_CLK					725
+> +#define IMX8QM_PWM5_IPG_SLV_CLK				726
+> +#define IMX8QM_PWM5_IPG_MSTR_CLK				727
+> +#define IMX8QM_PWM6_HF_CLK					728
+> +#define IMX8QM_PWM6_IPG_S_CLK					729
+> +#define IMX8QM_PWM6_IPG_SLV_CLK				730
+> +#define IMX8QM_PWM6_IPG_MSTR_CLK				731
+> +#define IMX8QM_PWM7_HF_CLK					732
+> +#define IMX8QM_PWM7_IPG_S_CLK					733
+> +#define IMX8QM_PWM7_IPG_SLV_CLK				734
+> +#define IMX8QM_PWM7_IPG_MSTR_CLK				735
+> +#define IMX8QM_FSPI0_HCLK					736
+> +#define IMX8QM_FSPI0_IPG_CLK					737
+> +#define IMX8QM_FSPI0_IPG_S_CLK					738
+> +#define IMX8QM_FSPI1_HCLK					736
+> +#define IMX8QM_FSPI1_IPG_CLK					737
+> +#define IMX8QM_FSPI1_IPG_S_CLK					738
+> +#define IMX8QM_GPIO0_IPG_S_CLK					739
+> +#define IMX8QM_GPIO1_IPG_S_CLK					740
+> +#define IMX8QM_GPIO2_IPG_S_CLK					741
+> +#define IMX8QM_GPIO3_IPG_S_CLK					742
+> +#define IMX8QM_GPIO4_IPG_S_CLK					743
+> +#define IMX8QM_GPIO5_IPG_S_CLK					744
+> +#define IMX8QM_GPIO6_IPG_S_CLK					745
+> +#define IMX8QM_GPIO7_IPG_S_CLK					746
+> +#define IMX8QM_ROMCP_CLK					747
+> +#define IMX8QM_ROMCP_REG_CLK					748
+> +#define IMX8QM_96KROM_CLK					749
+> +#define IMX8QM_OCRAM_MEM_CLK					750
+> +#define IMX8QM_OCRAM_CTRL_CLK					751
+> +#define IMX8QM_LSIO_BUS_CLK					752
+> +#define IMX8QM_LSIO_MEM_CLK					753
+> +#define IMX8QM_LVDS0_LIS_IPG_CLK				754
+> +#define IMX8QM_LVDS1_LIS_IPG_CLK				755
+> +#define IMX8QM_MIPI0_LIS_IPG_CLK				756
+> +#define IMX8QM_MIPI0_I2C0_IPG_S_CLK				757
+> +#define IMX8QM_MIPI0_I2C0_IPG_CLK				758
+> +#define IMX8QM_MIPI0_I2C1_IPG_S_CLK				759
+> +#define IMX8QM_MIPI0_I2C1_IPG_CLK				760
+> +#define IMX8QM_MIPI0_CLK_ROOT					761
+> +#define IMX8QM_MIPI1_LIS_IPG_CLK				762
+> +#define IMX8QM_MIPI1_I2C0_IPG_S_CLK				763
+> +#define IMX8QM_MIPI1_I2C0_IPG_CLK				764
+> +#define IMX8QM_MIPI1_I2C1_IPG_S_CLK				765
+> +#define IMX8QM_MIPI1_I2C1_IPG_CLK				766
+> +#define IMX8QM_MIPI1_CLK_ROOT					767
+> +#define IMX8QM_DC0_DISP0_SEL					768
+> +#define IMX8QM_DC0_DISP1_SEL					769
+> +#define IMX8QM_DC1_DISP0_SEL					770
+> +#define IMX8QM_DC1_DISP1_SEL					771
+> +
+> +/* CM40 */
+> +#define IMX8QM_CM40_IPG_CLK					772
+> +#define IMX8QM_CM40_I2C_DIV					773
+> +#define IMX8QM_CM40_I2C_CLK					774
+> +#define IMX8QM_CM40_I2C_IPG_CLK				775
+> +
+> +/* CM41 */
+> +#define IMX8QM_CM41_IPG_CLK					776
+> +#define IMX8QM_CM41_I2C_DIV					777
+> +#define IMX8QM_CM41_I2C_CLK					778
+> +#define IMX8QM_CM41_I2C_IPG_CLK				779
+> +
+> +#define IMX8QM_HDMI_PXL_SEL					780
+> +#define IMX8QM_HDMI_PXL_LINK_SEL				781
+> +#define IMX8QM_HDMI_PXL_MUX_SEL				782
+> +#define IMX8QM_HDMI_AV_PLL_BYPASS_CLK				783
+> +
+> +#define IMX8QM_HDMI_RX_PXL_SEL					784
+> +#define IMX8QM_HDMI_RX_HD_REF_SEL				785
+> +#define IMX8QM_HDMI_RX_HD_CORE_SEL				786
+> +#define IMX8QM_HDMI_RX_DIG_PLL_CLK				787
+> +
+> +#define IMX8QM_LSIO_MU5A_IPG_S_CLK				788
+> +#define IMX8QM_LSIO_MU5A_IPG_CLK				789
+> +#define IMX8QM_LSIO_MU6A_IPG_S_CLK				790
+> +#define IMX8QM_LSIO_MU6A_IPG_CLK				791
+> +
+> +/* DSP */
+> +#define IMX8QM_AUD_DSP_ADB_ACLK				792
+> +#define IMX8QM_AUD_DSP_IPG					793
+> +#define IMX8QM_AUD_DSP_CORE_CLK				794
+> +#define IMX8QM_AUD_OCRAM_IPG					795
+> +
+> +#define IMX8QM_CLK_END						796
+> +
+> +#endif /* __DT_BINDINGS_CLOCK_IMX8QM_H */
+> -- 
+> 2.17.1
+> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
