@@ -2,57 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7312B216B5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 12:08:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B262216D1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 12:14:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z7AfJxFWA4ckmrwRlwkw+hPlXLkXVGCNKRDpAesQ2f8=; b=d2w92gKdeb+eyq
-	frRkqRydVABE/jcfZ861/gH0/hx2+KJen92dP+vBOLLXIHrdpoMA2tTO9NZ1DdLB7+pBR3xeWyjYP
-	QfGuq8e0uqkFnNQAfz0ckWF2G1XqnfscHjx5YcIdZTFSnQ0ffWIeW0tDEQ2WMmA0CBUFUBXIny/lB
-	y5KAZYk+pbBzKovDTbctNEb0UnobRWtMwZI6B4TAn+cmexmHwOLJDsfSV3M0I0225VZYPlOGxClgE
-	62D6bsPsyH7ga3WTY3JMp4NpHfQTFPCW0rZz2LHIhhBhfZGfXd5XjkZ63KiCg69P870r5XJboCBZz
-	8Xdj66ekH5jMoGcrrr9Q==;
+	List-Owner; bh=UddgqdbPQ1nfqo7I5Hk8EVWmZ6/TdC6d5A1/Y5nA4a0=; b=mUzhCBtSfRx4bJ
+	CzAp6iy6pg5HD1EoJj1ucnWDHbw68qR7BcF0Rpvos4MvrgtZyVorN/pLhOuas2TAMM6wVRYCuJwhz
+	XGXbh6YE2XO/7WsEEttATI5Avu6seA3rtqXE1cFIFyYzfw9h16LA1UkISmLQBPUnbz4MZZ8mwK11q
+	96YOrrK5Fwpy6RQjQDJRDXcY6iYLoAx5Ubaf0uE3v4OL/2QWK2lCSXK2YY25xLg7FeR9LsmfnfcUB
+	VLW9jp0sZFMP5ndEEa1H14MVEp1LrY1cUlY3mCwzUJkHMCFVSOvo/3OBqf8sZqxLfpAYrzmKBscvn
+	ubrasKFPal93NOaGn2dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRZmf-0008Sm-Q0; Fri, 17 May 2019 10:08:13 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRZmY-0008SL-Uj
- for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 10:08:08 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AF7C680D;
- Fri, 17 May 2019 03:08:05 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 44B683F575;
- Fri, 17 May 2019 03:08:05 -0700 (PDT)
-Date: Fri, 17 May 2019 11:08:03 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Peter Zijlstra <peterz@infradead.org>
-Subject: Re: [PATCH v1 0/5] arm64: avoid out-of-line ll/sc atomics
-Message-ID: <20190517100802.GS8268@e119886-lin.cambridge.arm.com>
-References: <20190516155344.24060-1-andrew.murray@arm.com>
- <20190517072401.GI2623@hirez.programming.kicks-ass.net>
+	id 1hRZsZ-0001wr-Vu; Fri, 17 May 2019 10:14:20 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hRZsT-0001vk-D5
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 10:14:14 +0000
+Received: by mail-qt1-x843.google.com with SMTP id k24so7318211qtq.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 17 May 2019 03:14:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=zJAY/Pv8Q8rCNwC0Vbgeg982L/4wPTYgnNPmTbKhmDg=;
+ b=iomWStGl4iQbx8eysPjAozeB43WumfOwhPB77ZRRDGP/507Zl7PX1Gq7HJ1rJ9Eqlb
+ HVJX7hCf6FtmuB82mMUTRb8z4gsMdsm94Bbwk5jKY74u28in3UC3C09azGNKeHNLNEdx
+ Se7hyfP11juO1tqPdhboIE+k9wGUduPUC10mzjhJNBokCoUG/NZQhuCkGfOpdUziIQQQ
+ XKiTGp25+uJ4xLUhWMDsE+fLqb+x/gbwNLg5CIT7WmhGSPIyHAFycNQ7EzPClNwB7Qwl
+ BDtPhmPCodYbrRNYKxnLv7c06tdvUwlx5lKIbVBmg89br/GeOX+lAuwsbf8kxt8W01sd
+ gZww==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=zJAY/Pv8Q8rCNwC0Vbgeg982L/4wPTYgnNPmTbKhmDg=;
+ b=tvRS3pf92Gzw/lnklyl1PKzpqcSI2seLmJjrkAqtakb6O3GSMNhNajNDQQFvi0R0gt
+ 4YmKSyb0HEHlZ5ivjJPdGRlj8zjzSArBNHrOltBKEZwo+cKzKj8PYhSU8f5mvQky9rTE
+ t9pUbA8m9rSakF+6ob1V5TobfenbsZOzViNCeFo8SnZOCWU9QOfUpoGTsmKxGUWhxaGo
+ PinUsmGaXiBXxzyZtL3sZ0KiF5MFDQ7t8YztO4H+edNnE3RHjKRNaU5XsWHkJ50b18rb
+ AcQD1QqVVgrOo0H5LOAQhHiEzHS6gJy/5cAd79QRwx4hmWcGjxTP68WWkJbodCteYW8D
+ 3Ecw==
+X-Gm-Message-State: APjAAAXUrY3fkImDvrwPG9BYnPMghhCCFONKAgNbPJuOPFmvDh0tkeO3
+ PabKdjWamTC0XL40qOe6RC6gAnstYKarTgAyOWKADw==
+X-Google-Smtp-Source: APXvYqz6mT2feKlh8y8KJBFeHaGvmta1tNVLx2J144g2NFmA84lEkdM2Ca/94epR0ewDk42GFLZtxmPXuKFrJ6HDE+g=
+X-Received: by 2002:ac8:104:: with SMTP id e4mr47527750qtg.234.1558088051122; 
+ Fri, 17 May 2019 03:14:11 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190517072401.GI2623@hirez.programming.kicks-ass.net>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+References: <1557826556-10079-1-git-send-email-yannick.fertre@st.com>
+ <1557826556-10079-2-git-send-email-yannick.fertre@st.com>
+In-Reply-To: <1557826556-10079-2-git-send-email-yannick.fertre@st.com>
+From: Benjamin Gaignard <benjamin.gaignard@linaro.org>
+Date: Fri, 17 May 2019 12:14:00 +0200
+Message-ID: <CA+M3ks66kdeCEEzRj9B41YTQQkod5f5p9EgpjUZvnj=q36ak4Q@mail.gmail.com>
+Subject: Re: [PATCH v4 1/2] dt-bindings: display: stm32: add supply property
+ to DSI controller
+To: =?UTF-8?Q?Yannick_Fertr=C3=A9?= <yannick.fertre@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190517_030806_995817_1CD054DF 
-X-CRM114-Status: GOOD (  20.06  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190517_031413_508484_BD35DEAA 
+X-CRM114-Status: GOOD (  16.53  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -64,103 +93,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Boqun Feng <boqun.feng@gmail.com>, Will Deacon <will.deacon@arm.com>,
- linux-arm-kernel@lists.infradead.org, Ard.Biesheuvel@arm.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@linux.ie>,
+ Philippe Cornu <philippe.cornu@st.com>,
+ ML dri-devel <dri-devel@lists.freedesktop.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Vincent Abriou <vincent.abriou@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Benjamin Gaignard <benjamin.gaignard@st.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 17, 2019 at 09:24:01AM +0200, Peter Zijlstra wrote:
-> On Thu, May 16, 2019 at 04:53:39PM +0100, Andrew Murray wrote:
-> > When building for LSE atomics (CONFIG_ARM64_LSE_ATOMICS), if the hardware
-> > or toolchain doesn't support it the existing code will fallback to ll/sc
-> > atomics. It achieves this by branching from inline assembly to a function
-> > that is built with specical compile flags. Further this results in the
-> > clobbering of registers even when the fallback isn't used increasing
-> > register pressure.
-> > 
-> > Let's improve this by providing inline implementatins of both LSE and
-> > ll/sc and use a static key to select between them. This allows for the
-> > compiler to generate better atomics code.
-> 
-> Don't you guys have alternatives? That would avoid having both versions
-> in the code, and thus significantly cuts back on the bloat.
-
-Yes we do.
-
-Prior to patch 3 of this series, the ARM64_LSE_ATOMIC_INSN macro used
-ALTERNATIVE to either bl to a fallback ll/sc function (and nops) - or execute
-some LSE instructions.
-
-But this approach limits the compilers ability to optimise the code due to
-the asm clobber list being the superset of both ll/sc and LSE - and the gcc
-compiler flags used on the ll/sc functions.
-
-I think the alternative solution (excuse the pun) that you are suggesting
-is to put the body of the ll/sc or LSE code in the ALTERNATIVE oldinstr/newinstr
-blocks (i.e. drop the fallback branches). However this still gives us some
-bloat (but less than my current solution) because we're still now inlining the
-larger fallback ll/sc whereas previously they were non-inline'd functions. We
-still end up with potentially unnecessary clobbers for LSE code with this
-approach.
-
-Approach prior to this series:
-
-   BL 1 or NOP <- single alternative instruction
-   LSE
-   LSE
-   ...
-
-1: LL/SC <- LL/SC fallback not inlined so reused
-   LL/SC
-   LL/SC
-   LL/SC
-
-Approach proposed by this series:
-
-   BL 1 or NOP <- single alternative instruction
-   LSE
-   LSE
-   BL 2
-1: LL/SC <- inlined LL/SC and thus duplicated
-   LL/SC
-   LL/SC
-   LL/SC
-2: ..
-
-Approach using alternative without braces:
-
-   LSE
-   LSE
-   NOP
-   NOP
-
-or
-
-   LL/SC <- inlined LL/SC and thus duplicated
-   LL/SC
-   LL/SC
-   LL/SC
-
-I guess there is a balance here between bloat and code optimisation.
-
-> 
-> > These changes add a small amount of bloat on defconfig according to
-> > bloat-o-meter:
-> > 
-> > text:
-> >   add/remove: 1/108 grow/shrink: 3448/20 up/down: 272768/-4320 (268448)
-> >   Total: Before=12363112, After=12631560, chg +2.17%
-> 
-> I'd say 2% is quite significant bloat.
-
-Thanks,
-
-Andrew Murray
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+TGUgbWFyLiAxNCBtYWkgMjAxOSDDoCAxMTozNiwgWWFubmljayBGZXJ0csOpIDx5YW5uaWNrLmZl
+cnRyZUBzdC5jb20+IGEgw6ljcml0IDoKPgo+IFRoaXMgcGF0Y2ggYWRkcyBkb2N1bWVudGF0aW9u
+IG9mIGEgbmV3IHByb3BlcnR5IHBoeS1kc2ktc3VwcGx5IHRvIHRoZQo+IFNUTTMyIERTSSBjb250
+cm9sbGVyLgo+Cj4gU2lnbmVkLW9mZi1ieTogWWFubmljayBGZXJ0csOpIDx5YW5uaWNrLmZlcnRy
+ZUBzdC5jb20+Cj4gUmV2aWV3ZWQtYnk6IFJvYiBIZXJyaW5nIDxyb2JoQGtlcm5lbC5vcmc+Cj4g
+UmV2aWV3ZWQtYnk6IFBoaWxpcHBlIENvcm51IDxwaGlsaXBwZS5jb3JudUBzdC5jb20+CgpBcHBs
+aWVkIG9uIGRybS1taXNjLW5leHQsCgpUaGFua3MsCkJlbmphbWluCgo+IC0tLQo+ICBEb2N1bWVu
+dGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9zdCxzdG0zMi1sdGRjLnR4dCB8IDMg
+KysrCj4gIDEgZmlsZSBjaGFuZ2VkLCAzIGluc2VydGlvbnMoKykKPgo+IGRpZmYgLS1naXQgYS9E
+b2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9zdCxzdG0zMi1sdGRjLnR4
+dCBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5L3N0LHN0bTMyLWx0
+ZGMudHh0Cj4gaW5kZXggM2ViMWI0OC4uNjBjNTRkYSAxMDA2NDQKPiAtLS0gYS9Eb2N1bWVudGF0
+aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9zdCxzdG0zMi1sdGRjLnR4dAo+ICsrKyBi
+L0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5L3N0LHN0bTMyLWx0ZGMu
+dHh0Cj4gQEAgLTQwLDYgKzQwLDggQEAgTWFuZGF0b3J5IG5vZGVzIHNwZWNpZmljIHRvIFNUTTMy
+IERTSToKPiAgLSBwYW5lbCBvciBicmlkZ2Ugbm9kZTogQSBub2RlIGNvbnRhaW5pbmcgdGhlIHBh
+bmVsIG9yIGJyaWRnZSBkZXNjcmlwdGlvbiBhcwo+ICAgIGRvY3VtZW50ZWQgaW4gWzZdLgo+ICAg
+IC0gcG9ydDogcGFuZWwgb3IgYnJpZGdlIHBvcnQgbm9kZSwgY29ubmVjdGVkIHRvIHRoZSBEU0kg
+b3V0cHV0IHBvcnQgKHBvcnRAMSkuCj4gK09wdGlvbmFsIHByb3BlcnRpZXM6Cj4gKy0gcGh5LWRz
+aS1zdXBwbHk6IHBoYW5kbGUgb2YgdGhlIHJlZ3VsYXRvciB0aGF0IHByb3ZpZGVzIHRoZSBzdXBw
+bHkgdm9sdGFnZS4KPgo+ICBOb3RlOiBZb3UgY2FuIGZpbmQgbW9yZSBkb2N1bWVudGF0aW9uIGlu
+IHRoZSBmb2xsb3dpbmcgcmVmZXJlbmNlcwo+ICBbMV0gRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVl
+L2JpbmRpbmdzL2Nsb2NrL2Nsb2NrLWJpbmRpbmdzLnR4dAo+IEBAIC0xMDEsNiArMTAzLDcgQEAg
+RXhhbXBsZSAyOiBEU0kgcGFuZWwKPiAgICAgICAgICAgICAgICAgICAgICAgICBjbG9jay1uYW1l
+cyA9ICJwY2xrIiwgInJlZiI7Cj4gICAgICAgICAgICAgICAgICAgICAgICAgcmVzZXRzID0gPCZy
+Y2MgU1RNMzJGNF9BUEIyX1JFU0VUKERTSSk+Owo+ICAgICAgICAgICAgICAgICAgICAgICAgIHJl
+c2V0LW5hbWVzID0gImFwYiI7Cj4gKyAgICAgICAgICAgICAgICAgICAgICAgcGh5LWRzaS1zdXBw
+bHkgPSA8JnJlZzE4PjsKPgo+ICAgICAgICAgICAgICAgICAgICAgICAgIHBvcnRzIHsKPiAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICNhZGRyZXNzLWNlbGxzID0gPDE+Owo+IC0tCj4g
+Mi43LjQKPgo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+Cj4gZHJpLWRldmVsIG1haWxpbmcgbGlzdAo+IGRyaS1kZXZlbEBsaXN0cy5mcmVlZGVza3RvcC5v
+cmcKPiBodHRwczovL2xpc3RzLmZyZWVkZXNrdG9wLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2RyaS1k
+ZXZlbAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGlu
+dXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRl
+YWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
+YXJtLWtlcm5lbAo=
