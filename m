@@ -2,82 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2936A21114
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 01:41:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E6152112E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 02:17:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vd4t/i/zBF4w5Kq9TEK8//fqu6a5IwfcoW6sU2fO0dE=; b=mxGTkX/3wHWVnv
-	o5z3dyKmUaBnnNr908TM0ut6K87sOeUJSHXtekMu34myKWyATS7c7lOVlZB2x83ipA6+/l0NTas7B
-	ofku/iFcSnIeUax+zE5K2qkBXJe/zTHed2qzplZ+cOXUNRqGnj2vsHBiZCWd+C/yDTyp9XifKxuIx
-	n5FQrERxwlG4TlQ5aRxu+bl33F112jM9FOfDYss+w1h5lErTLQUiiQy7hfVYL01eNiV9PTV41kb9p
-	nSnp0ZotD9KOCT5PrGmk8roSbCFhR54NfjWHKx1XhJNFL1Q3ji5/MvAhnCQE6HtnHVf2naeFnrntE
-	r75O61kwfomGvqHurq6A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=v3qg9uO2w3oEkl5IbWC+KfnxWuAeSFJ1CExGBO/JgPE=; b=WQKk+w29fLPj8e
+	dwZtEZAov7JssobZpyzT8hoqy4EC6DCBWV85GXhLEcq8bg+Z/IupjUZPKZZRTHn+uwrZKgPdoMPmg
+	y3ZJtaBQODC4oJ+yg4NrmPscajxFaDLwxv5YAtC96ogcMAbqVsPjVdl13j5q0Vp3cYnesWEOqjvf/
+	zj9U/l0RQuz/G7g4iekwvkwXg08NiWlPZpoo3LaTNEjDom30Kl6qrfSy/RE4q9ce/vJqYIttth5wS
+	2ax4aJSs1tQvk1ZL1AlH726KXswowWlFlppedzYSXG1qSNlvJfabnRW8UVaAJuF+TaQgaTHpju/hL
+	C1kchFDwp5MHNx6eNVxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRQ04-00015a-7I; Thu, 16 May 2019 23:41:24 +0000
-Received: from mail-it1-x142.google.com ([2607:f8b0:4864:20::142])
+	id 1hRQYo-0003mw-CD; Fri, 17 May 2019 00:17:18 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRPzx-00014u-Gz
- for linux-arm-kernel@lists.infradead.org; Thu, 16 May 2019 23:41:19 +0000
-Received: by mail-it1-x142.google.com with SMTP id q132so9049669itc.5
+ id 1hRQYi-0003bx-9E
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 00:17:13 +0000
+Received: by mail-wm1-x343.google.com with SMTP id 7so5080894wmo.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 May 2019 16:41:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=M5qSvf+7/386vVXt+NHavt50lVIGL89scHYOq4Rlvr4=;
- b=po3MLkh+9m1RUrmOa0xuYBMDHoyiVYWjuSHQflW89VtGym1qHXie2kCrBWspc+N6fZ
- c133OA7C8q/i41+HxxjsNT8HgaWN7AbBsZjWMQ5FilP7lJ3LxIm8CBj8VZy7fgp8Z1vG
- bAVciiIt/N2ex+4d2wFzx9MtcDNj0wR+SdGsjC7YxTbsNk7xBQwkKVpIWrxzCX0NS1JG
- Vq7iR74ES1mrYex/BEWATpmfQ6roEIJZQ8Kxb0E1cAx6O6S9zWHYdQwtqkFHxBzn80z7
- WorUVy4BqUw+omVFMO5a/QC+5tRisTUweMGurx+9b419h80Xf3mr+KKRO/e0ZZEuthJf
- pTAg==
+ Thu, 16 May 2019 17:17:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=ipIKhR3rDzzU4Pwyzqtz4w/CerKS+j5J4VgKcV7Ejgc=;
+ b=rGqHYerEzNXsacWv2Lo+XQn9yV+U3F761T7FsVEUn4aYHnKj43QsN0cH7sSvB872bX
+ 5ZEBr92ZrfOVcT3Iwt0zLgOzYwwfDXUsH9bvNwfohdDR2oFV4ahlQ2e6ZVQHBjazDT6C
+ i6IYiEgxry3a3kquD1I0nIJ00OculvmSUMPxWCafamyRfBzTOqH2nkyre0rA2XCjyFsF
+ qd4Wz5K19WuYLxFSCTjGv7GwNKXNklNFEicrUtrMOd+CE0E2LdEppRkrMzzoVqxma8H+
+ HJTl+Azv5Uc9TKIJhxN1R+hNcfYrx1CFIf/8LYmXWU3dakyiqQlkoOMfmxj9COdkq4PM
+ Ebtg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=M5qSvf+7/386vVXt+NHavt50lVIGL89scHYOq4Rlvr4=;
- b=R/nDZPTciOI8VxZrAOMIPf6kZ47Rad2SLFUwD5RLbEt/vcKh0mYkWUKkefD6ckwZn/
- 9hNveHTf7qO8C40LqUCLAiof1cvH7ex/cP1C0+6aN1J3CSuuRtpETm6TOvquPpFC3MUT
- FFfjxVX11wD+SvGSgGdBxkusHGz937xI7kC9CN5sKHB9ykbIeYlzXwojtQirofZpR38M
- rcwENxroHFxKe/tEzTJzX5VGUT/49Jf61FbvAXcotfczHV9tszKMdLgRXMR8ppObVN8s
- 6XqXq3BQ9iobPzS4AgHVSxFjjTzG3yhDB7fhX3TZQFHR15P9ti/ShG93HTzWHi5PDoEN
- VsCQ==
-X-Gm-Message-State: APjAAAVyq1uupBvBGrji8oB+HFfmJWPc0lUPSm62KO7Z6NIOmTsgz4Hc
- LyWuyxgE+r9Ns4fcCmG7cQiFkXKkJUivlLShwk5dQA==
-X-Google-Smtp-Source: APXvYqzJckXlP7mpcLPMwE30As8An3JqjJkES5XBQi+B9j9bRLTv+xKphNdtnIuFdPrelWDdMnPeczzjDuAd72NPXt0=
-X-Received: by 2002:a24:5fc2:: with SMTP id r185mr17055035itb.43.1558050075986; 
- Thu, 16 May 2019 16:41:15 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=ipIKhR3rDzzU4Pwyzqtz4w/CerKS+j5J4VgKcV7Ejgc=;
+ b=HHDfa1vNzpb5YLOM4f7hK2MwyXWkJbx7L6wEGZ17Q/nN1io62Vk8fXC+wOAhgRCs9k
+ i2wgYrnjqFEtuQWp4MyA8v4E+85zjn4PrCKv5+3VT57pju8eUPNrwtJEDitczv3yPzJl
+ yXOweJQ1zE8RCosLPJ/gGJZX93+Ul48W5f3761rcON8xilvBBg/c1fPGsMOg9EjI8cAq
+ sGpc7kZIrBy18u6u62MTZUYKuIMqLNuPBuyX1uiresDH/qRBwo3EhVimF7y/Ru3Vrgb5
+ ijMdPI1uaKZolzBjL8r4lSgKlKnueRezIYonTKkRhs0XTS/udIGQw87NSBp6c05SRnvB
+ 89DA==
+X-Gm-Message-State: APjAAAVmVp28u6RRTGHJb4u3UiFqYogJsx1qj6W/o/MUWr/Fb2fO4Cja
+ dDATqoniWPkXp2DIQ88H/Vo=
+X-Google-Smtp-Source: APXvYqxGk15stT720ZglD+H2zzXTUFTpu9/FuRCZZJrybgL9PD0jYXWScfpXQy7Mpc1xgWUzlCT9sg==
+X-Received: by 2002:a1c:c004:: with SMTP id q4mr39942wmf.131.1558052226695;
+ Thu, 16 May 2019 17:17:06 -0700 (PDT)
+Received: from ash-clevo (111.104.199.146.dyn.plus.net. [146.199.104.111])
+ by smtp.gmail.com with ESMTPSA id j46sm13223807wre.54.2019.05.16.17.17.05
+ (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Thu, 16 May 2019 17:17:06 -0700 (PDT)
+Date: Fri, 17 May 2019 01:17:05 +0100
+From: Ash Hughes <sehguh.hsa@gmail.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] ARM: dts: armada: netgear-rn104: Add LCD to RN104 dts.
+Message-ID: <20190517001705.GA5451@ash-clevo.lan>
 MIME-Version: 1.0
-References: <20190422031900.GV19962@dragon>
- <AM0PR04MB64349811AD49484EE269E2AEEE300@AM0PR04MB6434.eurprd04.prod.outlook.com>
- <20190507083218.GB22736@dragon> <20190516215030.bzmsdcu5524lskki@localhost>
-In-Reply-To: <20190516215030.bzmsdcu5524lskki@localhost>
-From: Olof Johansson <olof@lixom.net>
-Date: Thu, 16 May 2019 16:41:03 -0700
-Message-ID: <CAOesGMi9GttEyQeG8geePG6=FdhhJYYhFieo9BAb5fpnPFw3Yg@mail.gmail.com>
-Subject: Re: [GIT PULL] i.MX fixes for 5.1, round 3
-To: Shawn Guo <shawnguo@kernel.org>
+Content-Disposition: inline
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_164117_704690_1D17DF00 
-X-CRM114-Status: GOOD (  17.23  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190516_171712_349617_BE72B45B 
+X-CRM114-Status: GOOD (  10.09  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (sehguh.hsa[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -89,53 +96,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Andrew Lunn <andrew@lunn.ch>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>, Fabio Estevam <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Andrew Lunn <andrew@lunn.ch>, Gregory Clement <gregory.clement@bootlin.com>,
+ Jason Cooper <jason@lakedaemon.net>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 16, 2019 at 2:51 PM Olof Johansson <olof@lixom.net> wrote:
->
-> On Tue, May 07, 2019 at 04:32:20PM +0800, Shawn Guo wrote:
-> > On Mon, May 06, 2019 at 07:10:22PM +0000, Leonard Crestez wrote:
-> > > On 4/22/19 6:19 AM, Shawn Guo wrote:
-> > > > The following changes since commit 7aedca875074b33795bc77066b325898b1eb8032:
-> > > >
-> > > >    ARM: dts: imx6q-logicpd: Reduce inrush current on USBH1 (2019-04-11 13:45:03 +0800)
-> > > >
-> > > > are available in the Git repository at:
-> > > >
-> > > >    git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/imx-fixes-5.1-3
-> > > >
-> > > > for you to fetch changes up to c7861adbe37f576931650ad8ef805e0c47564b9a:
-> > > >
-> > > >    ARM: dts: ls1021: Fix SGMII PCS link remaining down after PHY disconnect (2019-04-21 15:51:28 +0800)
-> > >
-> > > I am confused by the path these fixes take to Linus.
-> > >
-> > > The rgmii DT fixes from commit 0672d22a1924 ("ARM: dts: imx: Fix the
-> > > AR803X phy-mode") are still not present in v5.1 and netboot fails on a
-> > > large number of imx6 sabresd boards which have been stable for quite a
-> > > while.
-> > >
-> > > These should have been included from "round 2":
-> > > https://www.spinics.net/lists/arm-kernel/msg723998.html
-> >
-> > Unfortunately, we did have both round 2 and 3 miss 5.1 release.
-> >
-> > @Olof, on April 28 you said you merged them.  What happened there?
+Adds the LCD on the rn104 to its dts file.
 
-To clarify; I had a batch of fixes in our tree that didn't get sent in
-by v5.1 final, so while I had merged them (and merged them as part of
-the merge window contents to catch up), it didn't make it into -final.
+Signed-off-by: Ash Hughes <sehguh.hsa@gmail.com>
+---
+ arch/arm/boot/dts/armada-370-netgear-rn104.dts | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
 
+diff --git a/arch/arm/boot/dts/armada-370-netgear-rn104.dts b/arch/arm/boot/dts/armada-370-netgear-rn104.dts
+index 9fd1cb9f4992..85e2e9e27a9f 100644
+--- a/arch/arm/boot/dts/armada-370-netgear-rn104.dts
++++ b/arch/arm/boot/dts/armada-370-netgear-rn104.dts
+@@ -143,6 +143,20 @@
+ 		};
+ 	};
+ 
++	auxdisplay {
++		compatible = "hit,hd44780";
++		data-gpios = <&gpio1 25 GPIO_ACTIVE_HIGH>,
++				<&gpio1 26 GPIO_ACTIVE_HIGH>,
++				<&gpio1 27 GPIO_ACTIVE_HIGH>,
++				<&gpio1 29 GPIO_ACTIVE_HIGH>;
++		enable-gpios = <&gpio1 24 GPIO_ACTIVE_HIGH>;
++		rs-gpios = <&gpio1 22 GPIO_ACTIVE_HIGH>;
++		rw-gpios = <&gpio1 23 GPIO_ACTIVE_HIGH>;
++		backlight-gpios = <&gpio1 21 GPIO_ACTIVE_LOW>;
++		display-height-chars = <2>;
++		display-width-chars = <16>;
++	};
++
+ 	gpio-keys {
+ 		compatible = "gpio-keys";
+ 		pinctrl-0 = <&backup_button_pin
+-- 
+2.21.0
 
--Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
