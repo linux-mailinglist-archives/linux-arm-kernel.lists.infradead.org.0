@@ -2,90 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6359E219E8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 16:43:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF4DF21A03
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 16:49:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=TbMQRAKP8KZ5yfKftlCzV5BLOuyXJdtH1j3pn8xWVuA=; b=PHS
-	591iLgKUnJK3rjlgaRlTwK33VGsp02IGoNfGJaiQf/qvymq+qL5CmyDG2tbcxynERwlF9b/SvltMa
-	wqltICor9VDfn3IzOFkVoq0N4+MQCr3mNwCrBI6+D0+3xmrHmJqHGDv9s6ZFFolADiH5Ve1XOKB7P
-	VFPoOh8f5YYPpxXe2oUrIMnTUk89V2H8MVLPVgjSV5Anee+rerldNRAwAQYyL4KXJTQ07D3dr5Iyj
-	E+7gUdbhgiTtk0vThf5Mv7ljqZa+WBXLhfbznKf/oXfj897U/tYRADLZ72TWadLdESX2ZdEi9A6b4
-	+/YyQuyzYu3INQcVXqYagbwwWMXzB/g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7sUiYsAJXa17bGFlKmI31i19kM/or+a2LVc8pwnVkf0=; b=qSYpn0qUe+xraW
+	RTZabgHaRZDqTawVrQIox8pSE6FeejVxRpXaL4o1xyqOWBbAbubk6bNVIsJBKMG1rs0j9HQ8/XCWN
+	us4z3i1AXy5tYnMmf9jRDd91q6TM/FTLlI40oU7Y8Nh6qcDkz6rtm3HcH6OxNCsRzc1CJtk1XuwX/
+	kzCfVXSD7qTSpTlzjX9Ee5tTwsxxLEOSk691mFdbZFPSGjie93J/9XGtvT1NLk6ooQFnw4TrXreUJ
+	zYtsD6XVzE8U5AYM31F8jblYAON9MvMy6DsKo8qIUzZzPqeRv9z6gioBEvVdDDXI+cJWfZGHB2H8S
+	nqqGgPLUOd61iYgXZqJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRe50-000511-Rq; Fri, 17 May 2019 14:43:26 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRe4u-00050Q-2Z
- for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 14:43:21 +0000
-Received: by mail-pg1-x543.google.com with SMTP id z16so3391323pgv.11
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 May 2019 07:43:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=qalnLftG8BGXufJW9Y1XxKgDlaGf8qdtZjfLnyDTaDY=;
- b=Lr7ZEuS4guPaPWxHmyxqVA60Z7hDws4wiAA2x3CNhcPpXXowz7VycdoFmhXT9i5rGq
- NMiXRw3rgxK3eYyyJXPLIiH8fZeQE9gSb+OLJpy1evlORo7TQuesrlxHIHgOXAFsDZal
- 7TSXIxEQ+gzNRaDKupwfzJwRm0SX7GgGimpYLo44emMvkWhbgxKHbvMBRfQzIb5qFwmi
- V5rk1zbI1YiyvcrzmoaQuN4xUebbyvCzT15PGA/iIwdn8UnZLgXeyexB+l+ZUxXLQP89
- m99RwYz/HbPTODGMf5xvrYeEEJi0iTTL/m3xNJA4WRCJIm8gOZEgFeVQWOs9nCvFjQRO
- hecQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=qalnLftG8BGXufJW9Y1XxKgDlaGf8qdtZjfLnyDTaDY=;
- b=recVsxph4SJT28mK4pmsFjL1Uudqj3qNEG/uLPAVhtcBiP+b3gKl6dyP6LFt57f7eP
- mEoxPvp7JI5/zC5et0LHT6RAa5eMrwyrjjlj03A3Y1rloFIqMeR0rBY4zEVB8sWpSEkC
- 2xUiABLYO7oMQIJkcST6ogyKRHF7T7v1OAqGAaGzKgHLnIPw6Wzv17jEPaZoYvi75ULH
- TKoXWp6bqsWpmSR4DQ8A2wIqVF5ifTcAK2mO1Z2dZzSbvKPyU3frGXo0xiV7vKuIjAFC
- OJ2Zpe/KavXoUnpU2ueqGavxLqfeMlHFsSxUEd93V3aiojsRUUm7FX5msAi6d3+T003c
- WBQw==
-X-Gm-Message-State: APjAAAV+qZctHYM4bUVwFiKIO8HGGvrfi+383UDNEwTRl7i9L6mV3Si3
- xGNCGh99LDro2TstVRgkA48=
-X-Google-Smtp-Source: APXvYqwn/ZaiN3K+fBgNdBDQ9lJQsMUhnLwY9QRcif3KBUu7XvGpc5MFy0DXSd1Pzq3+OcF7j4nNZA==
-X-Received: by 2002:aa7:881a:: with SMTP id c26mr54130569pfo.254.1558104197811; 
- Fri, 17 May 2019 07:43:17 -0700 (PDT)
-Received: from localhost.localdomain
- (p8554011-ipngn42901marunouchi.tokyo.ocn.ne.jp. [180.57.220.11])
- by smtp.gmail.com with ESMTPSA id 194sm5687959pgd.33.2019.05.17.07.43.14
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Fri, 17 May 2019 07:43:15 -0700 (PDT)
-From: Yoshihiro Kaneko <ykaneko0929@gmail.com>
-To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH/RFT] arm: dts: renesas: r7s9210-rza2mevb: sort nodes of
- rza2mevb board
-Date: Fri, 17 May 2019 23:43:07 +0900
-Message-Id: <1558104187-2842-1-git-send-email-ykaneko0929@gmail.com>
-X-Mailer: git-send-email 1.9.1
+	id 1hReBF-0006rj-0o; Fri, 17 May 2019 14:49:53 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hReB6-0006q9-Co
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 14:49:46 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C624E1715;
+ Fri, 17 May 2019 07:49:39 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 3BA583F71E; Fri, 17 May 2019 07:49:34 -0700 (PDT)
+Date: Fri, 17 May 2019 15:49:31 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Andrey Konovalov <andreyknvl@google.com>
+Subject: Re: [PATCH v15 00/17] arm64: untag user pointers passed to the kernel
+Message-ID: <20190517144931.GA56186@arrakis.emea.arm.com>
+References: <cover.1557160186.git.andreyknvl@google.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <cover.1557160186.git.andreyknvl@google.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190517_074320_143063_350636BE 
-X-CRM114-Status: GOOD (  14.81  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190517_074944_525396_FA59EBBE 
+X-CRM114-Status: GOOD (  20.14  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (ykaneko0929[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (ykaneko0929[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -97,179 +63,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Magnus Damm <magnus.damm@gmail.com>, Simon Horman <horms@verge.net.au>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ linux-kselftest@vger.kernel.org, Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch sorts the nodes of arch/arm/boot/dts/r7s9210-rza2mevb.dts.
+Hi Andrey,
 
-* Sort subnodes of root ("/") node alphabetically
-* Sort following top-level nodes alphabetically
-* Sort subnodes of pinctrl alphabetically
+On Mon, May 06, 2019 at 06:30:46PM +0200, Andrey Konovalov wrote:
+> One of the alternative approaches to untagging that was considered is to
+> completely strip the pointer tag as the pointer enters the kernel with
+> some kind of a syscall wrapper, but that won't work with the countless
+> number of different ioctl calls. With this approach we would need a custom
+> wrapper for each ioctl variation, which doesn't seem practical.
 
-Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
----
+The more I look at this problem, the less convinced I am that we can
+solve it in a way that results in a stable ABI covering ioctls(). While
+for the Android kernel codebase it could be simpler as you don't upgrade
+the kernel version every 2.5 months, for the mainline kernel this
+doesn't scale. Any run-time checks are relatively limited in terms of
+drivers covered. Better static checking would be nice as a long term
+solution but we didn't get anywhere with the discussion last year.
 
-This patch is based on the devel branch of Simon Horman's renesas tree.
+IMO (RFC for now), I see two ways forward:
 
- arch/arm/boot/dts/r7s9210-rza2mevb.dts | 92 +++++++++++++++++-----------------
- 1 file changed, 46 insertions(+), 46 deletions(-)
+1. Make this a user space problem and do not allow tagged pointers into
+   the syscall ABI. A libc wrapper would have to convert structures,
+   parameters before passing them into the kernel. Note that we can
+   still support the hardware MTE in the kernel by enabling tagged
+   memory ranges, saving/restoring tags etc. but not allowing tagged
+   addresses at the syscall boundary.
 
-diff --git a/arch/arm/boot/dts/r7s9210-rza2mevb.dts b/arch/arm/boot/dts/r7s9210-rza2mevb.dts
-index fa44e35..71808ce 100644
---- a/arch/arm/boot/dts/r7s9210-rza2mevb.dts
-+++ b/arch/arm/boot/dts/r7s9210-rza2mevb.dts
-@@ -26,11 +26,6 @@
- 		stdout-path = "serial0:115200n8";
- 	};
- 
--	memory@40000000 {
--		device_type = "memory";
--		reg = <0x40000000 0x00800000>;	 /* HyperRAM */
--	};
--
- 	lbsc {
- 		#address-cells = <1>;
- 		#size-cells = <1>;
-@@ -46,6 +41,33 @@
- 			gpios = <&pinctrl RZA2_PIN(PORTC, 1) GPIO_ACTIVE_HIGH>;
- 		};
- 	};
-+
-+	memory@40000000 {
-+		device_type = "memory";
-+		reg = <0x40000000 0x00800000>;	 /* HyperRAM */
-+	};
-+};
-+
-+&ether0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&eth0_pins>;
-+	status = "okay";
-+	renesas,no-ether-link;
-+	phy-handle = <&phy0>;
-+	phy0: ethernet-phy@0 {
-+		reg = <0>;
-+	};
-+};
-+
-+&ether1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&eth1_pins>;
-+	status = "okay";
-+	renesas,no-ether-link;
-+	phy-handle = <&phy1>;
-+	phy1: ethernet-phy@1 {
-+		reg = <0>;
-+	};
- };
- 
- /* EXTAL */
-@@ -53,23 +75,16 @@
- 	clock-frequency = <24000000>;	/* 24MHz */
- };
- 
--/* RTC_X1 */
--&rtc_x1_clk {
--	clock-frequency = <32768>;
-+/* High resolution System tick timers */
-+&ostm0 {
-+	status = "okay";
- };
- 
--/* USB_X1 */
--&usb_x1_clk {
--	clock-frequency = <48000000>;
-+&ostm1 {
-+	status = "okay";
- };
- 
- &pinctrl {
--	/* Serial Console */
--	scif4_pins: serial4 {
--		pinmux = <RZA2_PINMUX(PORT9, 0, 4)>,	/* TxD4 */
--			 <RZA2_PINMUX(PORT9, 1, 4)>;	/* RxD4 */
--	};
--
- 	eth0_pins: eth0 {
- 		pinmux = <RZA2_PINMUX(PORTE, 0, 7)>, /* REF50CK0 */
- 			 <RZA2_PINMUX(PORT6, 1, 7)>, /* RMMI0_TXDEN */
-@@ -98,6 +113,12 @@
- 			 <RZA2_PINMUX(PORTL, 1, 5)>; /* IRQ5 */
- 	};
- 
-+	/* Serial Console */
-+	scif4_pins: serial4 {
-+		pinmux = <RZA2_PINMUX(PORT9, 0, 4)>,	/* TxD4 */
-+			 <RZA2_PINMUX(PORT9, 1, 4)>;	/* RxD4 */
-+	};
-+
- 	sdhi0_pins: sdhi0 {
- 		pinmux = <RZA2_PINMUX(PORT5, 0, 3)>,	/* SD0_CD */
- 			 <RZA2_PINMUX(PORT5, 1, 3)>;	/* SD0_WP */
-@@ -109,13 +130,9 @@
- 	};
- };
- 
--/* High resolution System tick timers */
--&ostm0 {
--	status = "okay";
--};
--
--&ostm1 {
--	status = "okay";
-+/* RTC_X1 */
-+&rtc_x1_clk {
-+	clock-frequency = <32768>;
- };
- 
- /* Serial Console */
-@@ -126,28 +143,6 @@
- 	status = "okay";
- };
- 
--&ether0 {
--	pinctrl-names = "default";
--	pinctrl-0 = <&eth0_pins>;
--	status = "okay";
--	renesas,no-ether-link;
--	phy-handle = <&phy0>;
--	phy0: ethernet-phy@0 {
--		reg = <0>;
--	};
--};
--
--&ether1 {
--	pinctrl-names = "default";
--	pinctrl-0 = <&eth1_pins>;
--	status = "okay";
--	renesas,no-ether-link;
--	phy-handle = <&phy1>;
--	phy1: ethernet-phy@1 {
--		reg = <0>;
--	};
--};
--
- &sdhi0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&sdhi0_pins>;
-@@ -161,3 +156,8 @@
- 	bus-width = <4>;
- 	status = "okay";
- };
-+
-+/* USB_X1 */
-+&usb_x1_clk {
-+	clock-frequency = <48000000>;
-+};
+2. Similar shim to the above libc wrapper but inside the kernel
+   (arch/arm64 only; most pointer arguments could be covered with an
+   __SC_CAST similar to the s390 one). There are two differences from
+   what we've discussed in the past:
+
+   a) this is an opt-in by the user which would have to explicitly call
+      prctl(). If it returns -ENOTSUPP etc., the user won't be allowed
+      to pass tagged pointers to the kernel. This would probably be the
+      responsibility of the C lib to make sure it doesn't tag heap
+      allocations. If the user did not opt-in, the syscalls are routed
+      through the normal path (no untagging address shim).
+
+   b) ioctl() and other blacklisted syscalls (prctl) will not accept
+      tagged pointers (to be documented in Vicenzo's ABI patches).
+
+It doesn't solve the problems we are trying to address but 2.a saves us
+from blindly relaxing the ABI without knowing how to easily assess new
+code being merged (over 500K lines between kernel versions). Existing
+applications (who don't opt-in) won't inadvertently start using the new
+ABI which could risk becoming de-facto ABI that we need to support on
+the long run.
+
+Option 1 wouldn't solve the ioctl() problem either and while it makes
+things simpler for the kernel, I am aware that it's slightly more
+complicated in user space (but I really don't mind if you prefer option
+1 ;)).
+
+The tagged pointers (whether hwasan or MTE) should ideally be a
+transparent feature for the application writer but I don't think we can
+solve it entirely and make it seamless for the multitude of ioctls().
+I'd say you only opt in to such feature if you know what you are doing
+and the user code takes care of specific cases like ioctl(), hence the
+prctl() proposal even for the hwasan.
+
+Comments welcomed.
+
 -- 
-1.9.1
-
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
