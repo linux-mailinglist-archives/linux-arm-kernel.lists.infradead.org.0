@@ -2,43 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FA5221557
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 10:27:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF51021565
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 10:35:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zs1ZjIAUG3ReUrh+yOKStHLdgQCJdH4k+h/S4aK2dyc=; b=TFUoC1PY6wktXp
-	ZKEzw01TpAiIFC+I6gkD5hBmuAQdd+kKpFY9KWviZTC/KHaep/IDMTcYZgIy/OJBN+ZWcxQwfaBKj
-	B4NBLzqWShOhsl90W4Uvzkf9OmO7KExBwWrq/GMPWRvWwBChIWyn+sVqxvEpyv9dNkfDCPfvglnKz
-	/LPcqREUluCUOaQr7jDwEPNyyms9DYx064umj5zo9L5Fcyme/WxOY5nDj0Sz8HaMapr1Q2GO9skEM
-	52+fXineuTM/7YAnRi45+X65WnRNSvmAJRquImeeF+c40H7O9l5C3J/G0gmORp/t+yGWQ7MBKyuqy
-	xSAl6om1pY3FA4ueZ0Dg==;
+	List-Owner; bh=CYAGZwoKknde2FLhVeQoBHLhBdJVyK8yG0ZCXCcZgwY=; b=jzgbs0GO46hw24
+	g3tPGUInzcwtGBgSmgC9l76j/pMkNzpL6uztSZkBwkoSxVcpZw6lbgdFw3HyR8E9VFoP4tLldMud0
+	fcl+4tW02SKud65fsyIyD/6C/94KbZbQvzkcgzmpJeFNlaCkH1o+rrU9FV3kSZ8qSUNGmenc2irV5
+	Afxt0ONKE5z1mbQ6lIKe5UIN2Z1FuaaDO5jHrGb66g2/rYrXMCJJtCv5rxlhAyH56vlSQDqa1VhnE
+	FCdyaGzTotdrU+vN3S2vpy5+3YQq7Jol4PkeQwnjzQjzdgng+1w/Izy9XFe5B+STiCt/lZU0kn+bi
+	EI3xltztT0CsfPRiyY4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRYCl-0001cW-Du; Fri, 17 May 2019 08:27:03 +0000
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=hirez.programming.kicks-ass.net)
- by bombadil.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRYCf-0001bw-3l; Fri, 17 May 2019 08:26:57 +0000
-Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
- id 126B52029F888; Fri, 17 May 2019 10:26:55 +0200 (CEST)
-Date: Fri, 17 May 2019 10:26:55 +0200
-From: Peter Zijlstra <peterz@infradead.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH 4/6] arm64: pmu: Add hook to handle pmu-related undefined
- instructions
-Message-ID: <20190517082655.GK2623@hirez.programming.kicks-ass.net>
-References: <20190516132148.10085-1-raphael.gault@arm.com>
- <20190516132148.10085-5-raphael.gault@arm.com>
- <20190517071018.GH2623@hirez.programming.kicks-ass.net>
- <20190517080419.dziz4iqc7t4mpoej@blommer>
+	id 1hRYKS-0003lx-Ko; Fri, 17 May 2019 08:35:00 +0000
+Received: from relay2-d.mail.gandi.net ([217.70.183.194])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hRYKJ-0003bA-Ea
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 08:34:53 +0000
+X-Originating-IP: 92.137.69.152
+Received: from localhost (alyon-656-1-672-152.w92-137.abo.wanadoo.fr
+ [92.137.69.152]) (Authenticated sender: gregory.clement@bootlin.com)
+ by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id DA8604000F;
+ Fri, 17 May 2019 08:34:40 +0000 (UTC)
+From: Gregory CLEMENT <gregory.clement@bootlin.com>
+To: Ash Hughes <sehguh.hsa@gmail.com>, linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH] ARM: dts: armada: netgear-rn104: Add LCD to RN104 dts.
+In-Reply-To: <20190517001705.GA5451@ash-clevo.lan>
+References: <20190517001705.GA5451@ash-clevo.lan>
+Date: Fri, 17 May 2019 10:34:39 +0200
+Message-ID: <87v9y9zdgg.fsf@FE-laptop>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190517080419.dziz4iqc7t4mpoej@blommer>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190517_013451_642546_75E67BB2 
+X-CRM114-Status: GOOD (  10.71  )
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.7 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.194 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -50,46 +59,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- acme@kernel.org, Raphael Gault <raphael.gault@arm.com>, mingo@redhat.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Andrew Lunn <andrew@lunn.ch>, Jason Cooper <jason@lakedaemon.net>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 17, 2019 at 09:04:20AM +0100, Mark Rutland wrote:
+Hi Ash Hughes,
 
-> Remember that this is in an undefined (trap) handler.
-> 
-> If userspace _attempts_ to write to the registers, the CPU will trap to the
-> kernel. The comment is perhaps misleading; when we "do nothing", the common
-> trap handling code will send a SIGILL to userspace.
-> 
-> It would probably be better to say something like:
-> 
-> 	/*
-> 	 * If userspace is tries to read a counter that doesn't exist on this
-> 	 * CPU, we emulate it as reading as zero. This happens if userspace is
-> 	 * preempted between reading the idx and actually reading the counter,
-> 	 * and the seqlock and idx have already changed, so it's as-if the
-> 	 * counter has been reprogrammed with a different event.
+> Adds the LCD on the rn104 to its dts file.
+>
+Looks good,
 
-Might be good to mention that userspace will/should discard the value it
-reads, and therefore any value is good (including 0).
+Applied on mvebu/dt
 
-> 	 * We don't permit userspace to write to these registers, and will
-> 	 * inject a SIGILL.
-> 	 */
-> 
-> There is one caveat: userspace can write to PMSELR without trapping, so we will
-> have to context-switch with the task. That only affects indirect addressing of
-> PMU registers, and doesn't have a functional effect on the behaviour of the
-> PMU, so that's benign from the PoV of perf.
+Thanks,
 
-Sad though; ideally you'd state that indirect addressing is
-out-of-bounds and they get to keep the pieces. But I suspect you're
-right that people will do it anyway and complain once it comes apart.
+Gregory
+
+> Signed-off-by: Ash Hughes <sehguh.hsa@gmail.com>
+> ---
+>  arch/arm/boot/dts/armada-370-netgear-rn104.dts | 14 ++++++++++++++
+>  1 file changed, 14 insertions(+)
+>
+> diff --git a/arch/arm/boot/dts/armada-370-netgear-rn104.dts b/arch/arm/boot/dts/armada-370-netgear-rn104.dts
+> index 9fd1cb9f4992..85e2e9e27a9f 100644
+> --- a/arch/arm/boot/dts/armada-370-netgear-rn104.dts
+> +++ b/arch/arm/boot/dts/armada-370-netgear-rn104.dts
+> @@ -143,6 +143,20 @@
+>  		};
+>  	};
+>  
+> +	auxdisplay {
+> +		compatible = "hit,hd44780";
+> +		data-gpios = <&gpio1 25 GPIO_ACTIVE_HIGH>,
+> +				<&gpio1 26 GPIO_ACTIVE_HIGH>,
+> +				<&gpio1 27 GPIO_ACTIVE_HIGH>,
+> +				<&gpio1 29 GPIO_ACTIVE_HIGH>;
+> +		enable-gpios = <&gpio1 24 GPIO_ACTIVE_HIGH>;
+> +		rs-gpios = <&gpio1 22 GPIO_ACTIVE_HIGH>;
+> +		rw-gpios = <&gpio1 23 GPIO_ACTIVE_HIGH>;
+> +		backlight-gpios = <&gpio1 21 GPIO_ACTIVE_LOW>;
+> +		display-height-chars = <2>;
+> +		display-width-chars = <16>;
+> +	};
+> +
+>  	gpio-keys {
+>  		compatible = "gpio-keys";
+>  		pinctrl-0 = <&backup_button_pin
+> -- 
+> 2.21.0
+>
+
+-- 
+Gregory Clement, Bootlin
+Embedded Linux and Kernel engineering
+http://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
