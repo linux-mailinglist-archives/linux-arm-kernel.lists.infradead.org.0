@@ -2,75 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E6395216D5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 12:14:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 45E08216ED
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 12:30:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Kipt66bfa1Q+ckZJTkRgqDYhvTojNBK0PIwy/2xlDJM=; b=fU6SiWta5ErE9L
-	za9pFGLV1xIhRWmGUwTTXzi7fTvGrG2CvOMMpIiRuyLhgaCDzlhh74yQDk1XE37+f4qJ0od5twld8
-	OtTDZFBV8RvHPfKNYoxiPaYCA1Y7pmVJTuYLZCizmQWY4091IQTiVO0rO+Za+iPG2OAvzwXj8PWBS
-	Ed0hhugAoFtqUWyRN+oKW5QhY1lzii1fwkx1zhyne2cqSKFnwm8r+XrVHPT6e4Q+LqUuczYt7DGrU
-	23R8yK5P88rg1rHlSXfI3L9+IoIJsbMRm4O1DPGplnW/s33Tk0eyf6uFpRzVY/07NaTXlmAG5DzPH
-	5l1tJbZ6XNWbi/gWggPQ==;
+	List-Owner; bh=3CcyMbqv585HxAQ30zD8Nv+wpGl7vvXhyKyp9QMzT8g=; b=WbQmzecJnBL9eU
+	neU4/WnICinneb8V/e9HRyz6osop42l3cyJnAiYnPNfV/oLHmqsn2HL3CnzMdJHAcRrXNU6kasoxd
+	YD/aJEHb5v4jwbCnWHpCmeQO8iAgZRqws1igk0oN47/FggRIvDV4YK8Q56EtdI7cp0td2TBYWdHOX
+	eWQxa24IW8Kb7EfYK4GhSD134bGE0qZZZE8mkMewGI3AsqtdY0lEElmV/IdjZ/7EScII1q9307dP2
+	0G5+FXhokm048DSwqCmwlgMVmpqqxrvCgxnENpTo8CO075dARY/FGGFbkkF91fJflHSB6PUj8lqfy
+	w3Xtw7Gs8vm/d6WyUE5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRZss-0002Ah-T3; Fri, 17 May 2019 10:14:38 +0000
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+	id 1hRa81-0008Gn-L9; Fri, 17 May 2019 10:30:17 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRZsj-000294-I5
- for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 10:14:31 +0000
-Received: by mail-qk1-x742.google.com with SMTP id c14so4115937qke.3
+ id 1hRa7s-0007aM-O3
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 10:30:11 +0000
+Received: by mail-io1-xd43.google.com with SMTP id z4so5108381iol.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 17 May 2019 03:14:29 -0700 (PDT)
+ Fri, 17 May 2019 03:30:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=c2AcJv21LbYCYD5C9Jjpp5BCKygW6luQM6iJ5dPZwlA=;
- b=lQncQYniggfzZ8LMfFNfPm8ZuE9Yt7gKDDYK2B1lpPhyV0V6lMzqpbaJnQQp9ken6D
- UviiUJLEW8Gn9oGUMRErMd2XDMk4cD2cIXOlUyk1MWyWe6ANmXrTTy4ouKnfbOXcG5uS
- +Hy1nXkwnLFxZFjtaTK4ro37s4NKGxt9bLqVgAfiW3Aa3k1qc/PsbbbOasjpV4v0oR2a
- pApLyVKvEFTZfCT8grgONhlyTFBToshHNZ4SxDANwweiL75sUBT/jtj909UDHI2KChbW
- xs9DFoJ+I3YDX1Gke7gHMGY5rKN7j/jTJHi+kY7D4GikXNTi+wQuwadOU9+JivSXorW5
- BUkA==
+ :cc; bh=TVFfYduXi8K2muk53D3e0hRKiDGZn3xrJXEaso/BT0c=;
+ b=poVJefL8EYgREhLeKUmcV9EVQNMDYuI7MiSIrbfgdth52FRH8HWjaGpcFylV08HYzC
+ jR8ZPqfOlICn08QsQrhohOEmM6ZLrEZsg8NAcQvcsRO+0vfRXU8G5xOiYeaRI6eDNjer
+ uo5YT+qNRgZliQ1Bty2UzTW+HLAqO/0L4rrY5YHGp0jGF1/2g+VN7PolL237Iwsh/soP
+ qtEjRYIT4IEj8mMFkvac7J4KlftBwjiKkYybVOD4vGp75SfbF0j64CRiwX6PnqiclVKH
+ GeT/sdLLJNDK6YlYLAGtZvE/Dr95ghnZ/45DkzqCAMIqSXfTUNOm8ZWfM7LEevMv8Q5B
+ k/8w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=c2AcJv21LbYCYD5C9Jjpp5BCKygW6luQM6iJ5dPZwlA=;
- b=Fjwq0N0gQCpwlX12XH4nXXxsSY6PrXTdaGxfXbQ+gW2WckBOARsQgsIfsstoxtUyfa
- j0R1gsAGRGxERJo2JOZSljfWUIVlzBOO6gYmb7rigJOYH51QsY0LzZ7qHoFByBA9aZde
- aStvNOOy/vhmMxWFAG3/ShOABvChveYmk6IpGNWO6QseBLDiFmIwfz2dMu9U2fcN6SGy
- 131JizOdNIS11Prpv99PwxvXrw/XZPPWBPwmY8JeQ9Lt8tvjiC/A9JcQNAS7S7qLCgqW
- FskqCMrggqUM2EZukO0Ox10i4bCGFLRvBu0x9Emne7FXH6xYDvIJ5PaGXti1s0sVIA7Z
- o+TA==
-X-Gm-Message-State: APjAAAV/vfeg9602xBCtmtv/1SNU/bMqkj2nbiSow95FCxBUgpMOpAZp
- dfqnT+PCR7BQtUSR27Ua6Nxg7CzjHsCEtKW2PFW45A==
-X-Google-Smtp-Source: APXvYqxVWn2bvh4TLQU8hA7wU5xUDlGjdTmy4QhvkCVnfiI9qFaHAIv4QUUclL6iglzysUdQhZdbFUDPdGhnmrBs0bA=
-X-Received: by 2002:a37:a555:: with SMTP id o82mr22147311qke.93.1558088068450; 
- Fri, 17 May 2019 03:14:28 -0700 (PDT)
+ :message-id:subject:to:cc;
+ bh=TVFfYduXi8K2muk53D3e0hRKiDGZn3xrJXEaso/BT0c=;
+ b=fJLDhx643g3b2fd7h3vBJ5dSspRoqzBT5sQdBdRknvsUAKeA5WsFklwRlOz5msAYov
+ EpuRirGUFhlY17selIqPtiTZoykX+UNZ57yuGlG+4Uzw5C3FYUdGE4Pj4aqtulrQzmx1
+ Z4jpD5rSWYKi987wzbZmqR8iaFD0ZjU0ydWXl13LOXtWtX9i9DQmH2+kPqPdWTsxq1Bf
+ e/pSN6yqScBux1o+bDCe2+U0r82HDrjzYYnu724DVjofR3G27I0F0Ivas/DnpSbNOc24
+ MhmimbsndcD6ww1hiOV24iKVeSiEsQEvW+8vMR4+MWXQgdbShMHPdb9LnaG6R9Xs1eJK
+ jS6w==
+X-Gm-Message-State: APjAAAU99rUOP2dx4RkMF4XCWoT/Ek+O8fneN2dMJwLTg9MzdbaJarv5
+ xnH3WyB5gd6arvl0NzBH48tUWt5f7cZEICj3NtPlfg==
+X-Google-Smtp-Source: APXvYqx9RxX8dL80QC/F+n6GcM5TVIZ+8rwe94jqIY+zmfXkwVJBWyupInwmpXv3w6cmMdSdkHsjbUliRfHm3oSAdzE=
+X-Received: by 2002:a05:6602:2109:: with SMTP id
+ x9mr9084445iox.128.1558089007392; 
+ Fri, 17 May 2019 03:30:07 -0700 (PDT)
 MIME-Version: 1.0
-References: <1557826556-10079-1-git-send-email-yannick.fertre@st.com>
- <1557826556-10079-3-git-send-email-yannick.fertre@st.com>
-In-Reply-To: <1557826556-10079-3-git-send-email-yannick.fertre@st.com>
-From: Benjamin Gaignard <benjamin.gaignard@linaro.org>
-Date: Fri, 17 May 2019 12:14:17 +0200
-Message-ID: <CA+M3ks5hQnqdLxefcCskmNJTw4FeXEgWp=8mUhm7y0JSR4vsKQ@mail.gmail.com>
-Subject: Re: [PATCH v4 2/2] drm/stm: dsi: add regulator support
-To: =?UTF-8?Q?Yannick_Fertr=C3=A9?= <yannick.fertre@st.com>
+References: <20190516155344.24060-1-andrew.murray@arm.com>
+ <20190517072401.GI2623@hirez.programming.kicks-ass.net>
+ <20190517100802.GS8268@e119886-lin.cambridge.arm.com>
+In-Reply-To: <20190517100802.GS8268@e119886-lin.cambridge.arm.com>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Fri, 17 May 2019 12:29:54 +0200
+Message-ID: <CAKv+Gu_fhFB-fFw20OjhPt5BM2cFuYxbD99JJK963gQftAAn3Q@mail.gmail.com>
+Subject: Re: [PATCH v1 0/5] arm64: avoid out-of-line ll/sc atomics
+To: Andrew Murray <andrew.murray@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190517_031429_608465_9EB988F1 
-X-CRM114-Status: GOOD (  18.80  )
+X-CRM114-CacheID: sfid-20190517_033008_985156_4009071B 
+X-CRM114-Status: GOOD (  25.45  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -92,114 +93,137 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@linux.ie>,
- Philippe Cornu <philippe.cornu@st.com>,
- ML dri-devel <dri-devel@lists.freedesktop.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Vincent Abriou <vincent.abriou@st.com>,
- linux-stm32@st-md-mailman.stormreply.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Benjamin Gaignard <benjamin.gaignard@st.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Boqun Feng <boqun.feng@gmail.com>,
+ Will Deacon <will.deacon@arm.com>, Ard.Biesheuvel@arm.com,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TGUgbWFyLiAxNCBtYWkgMjAxOSDDoCAxMTozNiwgWWFubmljayBGZXJ0csOpIDx5YW5uaWNrLmZl
-cnRyZUBzdC5jb20+IGEgw6ljcml0IDoKPgo+IEFkZCBzdXBwb3J0IG9mIHJlZ3VsYXRvciBmb3Ig
-dGhlIHBoeSBwYXJ0IG9mIHRoZSBEU0kKPiBjb250cm9sbGVyLgo+Cj4gU2lnbmVkLW9mZi1ieTog
-WWFubmljayBGZXJ0csOpIDx5YW5uaWNrLmZlcnRyZUBzdC5jb20+Cj4gQWNrZWQtYnk6IFBoaWxp
-cHBlIENvcm51IDxwaGlsaXBwZS5jb3JudUBzdC5jb20+CkFwcGxpZWQgb24gZHJtLW1pc2MtbmV4
-dCwKClRoYW5rcywKQmVuamFtaW4KCj4gLS0tCj4gIGRyaXZlcnMvZ3B1L2RybS9zdG0vZHdfbWlw
-aV9kc2ktc3RtLmMgfCA2MCArKysrKysrKysrKysrKysrKysrKysrKysrKysrLS0tLS0tLQo+ICAx
-IGZpbGUgY2hhbmdlZCwgNDkgaW5zZXJ0aW9ucygrKSwgMTEgZGVsZXRpb25zKC0pCj4KPiBkaWZm
-IC0tZ2l0IGEvZHJpdmVycy9ncHUvZHJtL3N0bS9kd19taXBpX2RzaS1zdG0uYyBiL2RyaXZlcnMv
-Z3B1L2RybS9zdG0vZHdfbWlwaV9kc2ktc3RtLmMKPiBpbmRleCAxYmVmNzNlLi5kOGU0YTE0IDEw
-MDY0NAo+IC0tLSBhL2RyaXZlcnMvZ3B1L2RybS9zdG0vZHdfbWlwaV9kc2ktc3RtLmMKPiArKysg
-Yi9kcml2ZXJzL2dwdS9kcm0vc3RtL2R3X21pcGlfZHNpLXN0bS5jCj4gQEAgLTksNiArOSw3IEBA
-Cj4gICNpbmNsdWRlIDxsaW51eC9jbGsuaD4KPiAgI2luY2x1ZGUgPGxpbnV4L2lvcG9sbC5oPgo+
-ICAjaW5jbHVkZSA8bGludXgvbW9kdWxlLmg+Cj4gKyNpbmNsdWRlIDxsaW51eC9yZWd1bGF0b3Iv
-Y29uc3VtZXIuaD4KPiAgI2luY2x1ZGUgPGRybS9kcm1QLmg+Cj4gICNpbmNsdWRlIDxkcm0vZHJt
-X21pcGlfZHNpLmg+Cj4gICNpbmNsdWRlIDxkcm0vYnJpZGdlL2R3X21pcGlfZHNpLmg+Cj4gQEAg
-LTc2LDYgKzc3LDcgQEAgc3RydWN0IGR3X21pcGlfZHNpX3N0bSB7Cj4gICAgICAgICB1MzIgaHdf
-dmVyc2lvbjsKPiAgICAgICAgIGludCBsYW5lX21pbl9rYnBzOwo+ICAgICAgICAgaW50IGxhbmVf
-bWF4X2ticHM7Cj4gKyAgICAgICBzdHJ1Y3QgcmVndWxhdG9yICp2ZGRfc3VwcGx5Owo+ICB9Owo+
-Cj4gIHN0YXRpYyBpbmxpbmUgdm9pZCBkc2lfd3JpdGUoc3RydWN0IGR3X21pcGlfZHNpX3N0bSAq
-ZHNpLCB1MzIgcmVnLCB1MzIgdmFsKQo+IEBAIC0zMTQsMjEgKzMxNiwzNiBAQCBzdGF0aWMgaW50
-IGR3X21pcGlfZHNpX3N0bV9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ICAg
-ICAgICAgcmVzID0gcGxhdGZvcm1fZ2V0X3Jlc291cmNlKHBkZXYsIElPUkVTT1VSQ0VfTUVNLCAw
-KTsKPiAgICAgICAgIGRzaS0+YmFzZSA9IGRldm1faW9yZW1hcF9yZXNvdXJjZShkZXYsIHJlcyk7
-Cj4gICAgICAgICBpZiAoSVNfRVJSKGRzaS0+YmFzZSkpIHsKPiAtICAgICAgICAgICAgICAgRFJN
-X0VSUk9SKCJVbmFibGUgdG8gZ2V0IGRzaSByZWdpc3RlcnNcbiIpOwo+IC0gICAgICAgICAgICAg
-ICByZXR1cm4gUFRSX0VSUihkc2ktPmJhc2UpOwo+ICsgICAgICAgICAgICAgICByZXQgPSBQVFJf
-RVJSKGRzaS0+YmFzZSk7Cj4gKyAgICAgICAgICAgICAgIERSTV9FUlJPUigiVW5hYmxlIHRvIGdl
-dCBkc2kgcmVnaXN0ZXJzICVkXG4iLCByZXQpOwo+ICsgICAgICAgICAgICAgICByZXR1cm4gcmV0
-Owo+ICsgICAgICAgfQo+ICsKPiArICAgICAgIGRzaS0+dmRkX3N1cHBseSA9IGRldm1fcmVndWxh
-dG9yX2dldChkZXYsICJwaHktZHNpIik7Cj4gKyAgICAgICBpZiAoSVNfRVJSKGRzaS0+dmRkX3N1
-cHBseSkpIHsKPiArICAgICAgICAgICAgICAgcmV0ID0gUFRSX0VSUihkc2ktPnZkZF9zdXBwbHkp
-Owo+ICsgICAgICAgICAgICAgICBpZiAocmV0ICE9IC1FUFJPQkVfREVGRVIpCj4gKyAgICAgICAg
-ICAgICAgICAgICAgICAgRFJNX0VSUk9SKCJGYWlsZWQgdG8gcmVxdWVzdCByZWd1bGF0b3I6ICVk
-XG4iLCByZXQpOwo+ICsgICAgICAgICAgICAgICByZXR1cm4gcmV0Owo+ICsgICAgICAgfQo+ICsK
-PiArICAgICAgIHJldCA9IHJlZ3VsYXRvcl9lbmFibGUoZHNpLT52ZGRfc3VwcGx5KTsKPiArICAg
-ICAgIGlmIChyZXQpIHsKPiArICAgICAgICAgICAgICAgRFJNX0VSUk9SKCJGYWlsZWQgdG8gZW5h
-YmxlIHJlZ3VsYXRvcjogJWRcbiIsIHJldCk7Cj4gKyAgICAgICAgICAgICAgIHJldHVybiByZXQ7
-Cj4gICAgICAgICB9Cj4KPiAgICAgICAgIGRzaS0+cGxscmVmX2NsayA9IGRldm1fY2xrX2dldChk
-ZXYsICJyZWYiKTsKPiAgICAgICAgIGlmIChJU19FUlIoZHNpLT5wbGxyZWZfY2xrKSkgewo+ICAg
-ICAgICAgICAgICAgICByZXQgPSBQVFJfRVJSKGRzaS0+cGxscmVmX2Nsayk7Cj4gLSAgICAgICAg
-ICAgICAgIGRldl9lcnIoZGV2LCAiVW5hYmxlIHRvIGdldCBwbGwgcmVmZXJlbmNlIGNsb2NrOiAl
-ZFxuIiwgcmV0KTsKPiAtICAgICAgICAgICAgICAgcmV0dXJuIHJldDsKPiArICAgICAgICAgICAg
-ICAgRFJNX0VSUk9SKCJVbmFibGUgdG8gZ2V0IHBsbCByZWZlcmVuY2UgY2xvY2s6ICVkXG4iLCBy
-ZXQpOwo+ICsgICAgICAgICAgICAgICBnb3RvIGVycl9jbGtfZ2V0Owo+ICAgICAgICAgfQo+Cj4g
-ICAgICAgICByZXQgPSBjbGtfcHJlcGFyZV9lbmFibGUoZHNpLT5wbGxyZWZfY2xrKTsKPiAgICAg
-ICAgIGlmIChyZXQpIHsKPiAtICAgICAgICAgICAgICAgZGV2X2VycihkZXYsICIlczogRmFpbGVk
-IHRvIGVuYWJsZSBwbGxyZWZfY2xrXG4iLCBfX2Z1bmNfXyk7Cj4gLSAgICAgICAgICAgICAgIHJl
-dHVybiByZXQ7Cj4gKyAgICAgICAgICAgICAgIERSTV9FUlJPUigiRmFpbGVkIHRvIGVuYWJsZSBw
-bGxyZWZfY2xrOiAlZFxuIiwgcmV0KTsKPiArICAgICAgICAgICAgICAgZ290byBlcnJfY2xrX2dl
-dDsKPiAgICAgICAgIH0KPgo+ICAgICAgICAgZHdfbWlwaV9kc2lfc3RtX3BsYXRfZGF0YS5iYXNl
-ID0gZHNpLT5iYXNlOwo+IEBAIC0zMzgsMjAgKzM1NSwyOCBAQCBzdGF0aWMgaW50IGR3X21pcGlf
-ZHNpX3N0bV9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+Cj4gICAgICAgICBk
-c2ktPmRzaSA9IGR3X21pcGlfZHNpX3Byb2JlKHBkZXYsICZkd19taXBpX2RzaV9zdG1fcGxhdF9k
-YXRhKTsKPiAgICAgICAgIGlmIChJU19FUlIoZHNpLT5kc2kpKSB7Cj4gLSAgICAgICAgICAgICAg
-IERSTV9FUlJPUigiRmFpbGVkIHRvIGluaXRpYWxpemUgbWlwaSBkc2kgaG9zdFxuIik7Cj4gLSAg
-ICAgICAgICAgICAgIGNsa19kaXNhYmxlX3VucHJlcGFyZShkc2ktPnBsbHJlZl9jbGspOwo+IC0g
-ICAgICAgICAgICAgICByZXR1cm4gUFRSX0VSUihkc2ktPmRzaSk7Cj4gKyAgICAgICAgICAgICAg
-IHJldCA9IFBUUl9FUlIoZHNpLT5kc2kpOwo+ICsgICAgICAgICAgICAgICBEUk1fRVJST1IoIkZh
-aWxlZCB0byBpbml0aWFsaXplIG1pcGkgZHNpIGhvc3Q6ICVkXG4iLCByZXQpOwo+ICsgICAgICAg
-ICAgICAgICBnb3RvIGVycl9kc2lfcHJvYmU7Cj4gICAgICAgICB9Cj4KPiAgICAgICAgIHJldHVy
-biAwOwo+ICsKPiArZXJyX2RzaV9wcm9iZToKPiArICAgICAgIGNsa19kaXNhYmxlX3VucHJlcGFy
-ZShkc2ktPnBsbHJlZl9jbGspOwo+ICtlcnJfY2xrX2dldDoKPiArICAgICAgIHJlZ3VsYXRvcl9k
-aXNhYmxlKGRzaS0+dmRkX3N1cHBseSk7Cj4gKwo+ICsgICAgICAgcmV0dXJuIHJldDsKPiAgfQo+
-Cj4gIHN0YXRpYyBpbnQgZHdfbWlwaV9kc2lfc3RtX3JlbW92ZShzdHJ1Y3QgcGxhdGZvcm1fZGV2
-aWNlICpwZGV2KQo+ICB7Cj4gICAgICAgICBzdHJ1Y3QgZHdfbWlwaV9kc2lfc3RtICpkc2kgPSBw
-bGF0Zm9ybV9nZXRfZHJ2ZGF0YShwZGV2KTsKPgo+IC0gICAgICAgY2xrX2Rpc2FibGVfdW5wcmVw
-YXJlKGRzaS0+cGxscmVmX2Nsayk7Cj4gICAgICAgICBkd19taXBpX2RzaV9yZW1vdmUoZHNpLT5k
-c2kpOwo+ICsgICAgICAgY2xrX2Rpc2FibGVfdW5wcmVwYXJlKGRzaS0+cGxscmVmX2Nsayk7Cj4g
-KyAgICAgICByZWd1bGF0b3JfZGlzYWJsZShkc2ktPnZkZF9zdXBwbHkpOwo+Cj4gICAgICAgICBy
-ZXR1cm4gMDsKPiAgfQo+IEBAIC0zNjMsNiArMzg4LDcgQEAgc3RhdGljIGludCBfX21heWJlX3Vu
-dXNlZCBkd19taXBpX2RzaV9zdG1fc3VzcGVuZChzdHJ1Y3QgZGV2aWNlICpkZXYpCj4gICAgICAg
-ICBEUk1fREVCVUdfRFJJVkVSKCJcbiIpOwo+Cj4gICAgICAgICBjbGtfZGlzYWJsZV91bnByZXBh
-cmUoZHNpLT5wbGxyZWZfY2xrKTsKPiArICAgICAgIHJlZ3VsYXRvcl9kaXNhYmxlKGRzaS0+dmRk
-X3N1cHBseSk7Cj4KPiAgICAgICAgIHJldHVybiAwOwo+ICB9Cj4gQEAgLTM3MCwxMCArMzk2LDIy
-IEBAIHN0YXRpYyBpbnQgX19tYXliZV91bnVzZWQgZHdfbWlwaV9kc2lfc3RtX3N1c3BlbmQoc3Ry
-dWN0IGRldmljZSAqZGV2KQo+ICBzdGF0aWMgaW50IF9fbWF5YmVfdW51c2VkIGR3X21pcGlfZHNp
-X3N0bV9yZXN1bWUoc3RydWN0IGRldmljZSAqZGV2KQo+ICB7Cj4gICAgICAgICBzdHJ1Y3QgZHdf
-bWlwaV9kc2lfc3RtICpkc2kgPSBkd19taXBpX2RzaV9zdG1fcGxhdF9kYXRhLnByaXZfZGF0YTsK
-PiArICAgICAgIGludCByZXQ7Cj4KPiAgICAgICAgIERSTV9ERUJVR19EUklWRVIoIlxuIik7Cj4K
-PiAtICAgICAgIGNsa19wcmVwYXJlX2VuYWJsZShkc2ktPnBsbHJlZl9jbGspOwo+ICsgICAgICAg
-cmV0ID0gcmVndWxhdG9yX2VuYWJsZShkc2ktPnZkZF9zdXBwbHkpOwo+ICsgICAgICAgaWYgKHJl
-dCkgewo+ICsgICAgICAgICAgICAgICBEUk1fRVJST1IoIkZhaWxlZCB0byBlbmFibGUgcmVndWxh
-dG9yOiAlZFxuIiwgcmV0KTsKPiArICAgICAgICAgICAgICAgcmV0dXJuIHJldDsKPiArICAgICAg
-IH0KPiArCj4gKyAgICAgICByZXQgPSBjbGtfcHJlcGFyZV9lbmFibGUoZHNpLT5wbGxyZWZfY2xr
-KTsKPiArICAgICAgIGlmIChyZXQpIHsKPiArICAgICAgICAgICAgICAgcmVndWxhdG9yX2Rpc2Fi
-bGUoZHNpLT52ZGRfc3VwcGx5KTsKPiArICAgICAgICAgICAgICAgRFJNX0VSUk9SKCJGYWlsZWQg
-dG8gZW5hYmxlIHBsbHJlZl9jbGs6ICVkXG4iLCByZXQpOwo+ICsgICAgICAgICAgICAgICByZXR1
-cm4gcmV0Owo+ICsgICAgICAgfQo+Cj4gICAgICAgICByZXR1cm4gMDsKPiAgfQo+IC0tCj4gMi43
-LjQKPgo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4g
-ZHJpLWRldmVsIG1haWxpbmcgbGlzdAo+IGRyaS1kZXZlbEBsaXN0cy5mcmVlZGVza3RvcC5vcmcK
-PiBodHRwczovL2xpc3RzLmZyZWVkZXNrdG9wLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2RyaS1kZXZl
-bAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
-YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
-LWtlcm5lbAo=
+On Fri, 17 May 2019 at 12:08, Andrew Murray <andrew.murray@arm.com> wrote:
+>
+> On Fri, May 17, 2019 at 09:24:01AM +0200, Peter Zijlstra wrote:
+> > On Thu, May 16, 2019 at 04:53:39PM +0100, Andrew Murray wrote:
+> > > When building for LSE atomics (CONFIG_ARM64_LSE_ATOMICS), if the hardware
+> > > or toolchain doesn't support it the existing code will fallback to ll/sc
+> > > atomics. It achieves this by branching from inline assembly to a function
+> > > that is built with specical compile flags. Further this results in the
+> > > clobbering of registers even when the fallback isn't used increasing
+> > > register pressure.
+> > >
+> > > Let's improve this by providing inline implementatins of both LSE and
+> > > ll/sc and use a static key to select between them. This allows for the
+> > > compiler to generate better atomics code.
+> >
+> > Don't you guys have alternatives? That would avoid having both versions
+> > in the code, and thus significantly cuts back on the bloat.
+>
+> Yes we do.
+>
+> Prior to patch 3 of this series, the ARM64_LSE_ATOMIC_INSN macro used
+> ALTERNATIVE to either bl to a fallback ll/sc function (and nops) - or execute
+> some LSE instructions.
+>
+> But this approach limits the compilers ability to optimise the code due to
+> the asm clobber list being the superset of both ll/sc and LSE - and the gcc
+> compiler flags used on the ll/sc functions.
+>
+> I think the alternative solution (excuse the pun) that you are suggesting
+> is to put the body of the ll/sc or LSE code in the ALTERNATIVE oldinstr/newinstr
+> blocks (i.e. drop the fallback branches). However this still gives us some
+> bloat (but less than my current solution) because we're still now inlining the
+> larger fallback ll/sc whereas previously they were non-inline'd functions. We
+> still end up with potentially unnecessary clobbers for LSE code with this
+> approach.
+>
+> Approach prior to this series:
+>
+>    BL 1 or NOP <- single alternative instruction
+>    LSE
+>    LSE
+>    ...
+>
+> 1: LL/SC <- LL/SC fallback not inlined so reused
+>    LL/SC
+>    LL/SC
+>    LL/SC
+>
+> Approach proposed by this series:
+>
+>    BL 1 or NOP <- single alternative instruction
+>    LSE
+>    LSE
+>    BL 2
+> 1: LL/SC <- inlined LL/SC and thus duplicated
+>    LL/SC
+>    LL/SC
+>    LL/SC
+> 2: ..
+>
+> Approach using alternative without braces:
+>
+>    LSE
+>    LSE
+>    NOP
+>    NOP
+>
+> or
+>
+>    LL/SC <- inlined LL/SC and thus duplicated
+>    LL/SC
+>    LL/SC
+>    LL/SC
+>
+> I guess there is a balance here between bloat and code optimisation.
+>
+
+
+So there are two separate questions here:
+1) whether or not we should merge the inline asm blocks so that the
+compiler sees a single set of constraints and operands
+2) whether the LL/SC sequence should be inlined and/or duplicated.
+
+This approach appears to be based on the assumption that reserving one
+or sometimes two additional registers for the LL/SC fallback has a
+more severe impact on performance than the unconditional branch.
+However, it seems to me that any call site that uses the atomics has
+to deal with the possibility of either version being invoked, and so
+the additional registers need to be freed up in any case. Or am I
+missing something?
+
+As for the duplication: a while ago, I suggested an approach [0] using
+alternatives and asm subsections, which moved the duplicated LL/SC
+fallbacks out of the hot path. This does not remove the bloat, but it
+does mitigate its impact on I-cache efficiency when running on
+hardware that does not require the fallbacks.
+
+
+[0] https://lore.kernel.org/linux-arm-kernel/20181113233923.20098-1-ard.biesheuvel@linaro.org/
+
+
+
+> >
+> > > These changes add a small amount of bloat on defconfig according to
+> > > bloat-o-meter:
+> > >
+> > > text:
+> > >   add/remove: 1/108 grow/shrink: 3448/20 up/down: 272768/-4320 (268448)
+> > >   Total: Before=12363112, After=12631560, chg +2.17%
+> >
+> > I'd say 2% is quite significant bloat.
+>
+> Thanks,
+>
+> Andrew Murray
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
