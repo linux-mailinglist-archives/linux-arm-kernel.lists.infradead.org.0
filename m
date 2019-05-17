@@ -2,52 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED62721448
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 09:31:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4981321467
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 09:32:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=zsmYRRlhAT+MbWJSt/smr3PgCaZG5MRaTn14CoLzfwc=; b=pol+/+e8tX3wgNIIxEl02nv2F
-	SuCLdAxXQ/9XDA/LbsZEf84vlM7IID1kZ3pbv5wjeqyaYfQDVy0IeV99q/M+Ql8kewdKaQMnLast4
-	ZeJ4hHhhI9Ke9hLUCX40EThOWG0t906BCpX9QHeGZT2g8Abf5IIJjyvJCyZu7/CDPRZ0tHpd12G3/
-	m7qsaTDAkqqv4GAhltHdlV9lUmaGi63o2lEr0yLsRLlU3XCBkfVze+T1l7mYtUG6tOliSWTJXVHtO
-	mf07MVoFN8/wfjVyAtw5VEwR6veQaz3HmWqrMKK5o/UsoEHmg0fzJUHz2Y9Kge/rlaugN+NPoXGoP
-	a7SjRXbxg==;
+	 bh=ub7+eq0g8ipj3x0EmZhbpljvBcQ0+6kROY/HaUvcTfo=; b=VotAtYocdq/OttPnTpf0r1ZUL
+	BjUNIlAGxdCg9DNsInvahxTVPI9zuixM/5eCkHsJ4+sJNRdem0ZxW/RMQ9690EwLYXFhptP+9zfVU
+	UEN4HWOw+itCyppeqhKW+OXrcnPBvSRlQ+x1ZP7r5neJkDWfHLf8sgk5YRSsi2LoDNZe9C6FA2PJv
+	q1FTKur0VgCU/ew9IZNZ14vPo8K9w7MwfgmaDFzc88FXZCCIKXYfV96ORM4wESggxwoC8yuWX0geF
+	B/QdlV3AovMRQ+6xBLWaJLCKfgM0PG1TtrrB7v/BiKSWCDe93MfEFUH46j9BMREhjrZoAtfmGQbOE
+	rGR832euQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRXKW-0000P5-4t; Fri, 17 May 2019 07:31:00 +0000
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
+	id 1hRXMF-0000oG-4m; Fri, 17 May 2019 07:32:47 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRXKO-0000Of-9R
- for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 07:30:54 +0000
+ id 1hRXM9-0000no-5I
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 17 May 2019 07:32:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=WA9Je5qHBQ57M+8e8gQClXiHlF1u7LL7msoAAP9qc8E=; b=J0wRT2IpmeYVQWLRl7eYfqpFJ
+ XRRgNq5HzCBpmzI3y/FlBYGpQXyEwS4pCU1odttks9V043fp0EWsU05DVIbMvlFKkJxsE5UEsLojO
+ 8GCp3rWSkty7IpFF8lbOqPbEJoRrECuLbVrt6kSmdANgQjdB1ejs0QyL0t/GiC+wI9PzXjj6DIhJ5
+ 2Iy74XZd1rzgY4JnhVmdLgHBZ6Ck9dzh7MM2d0at/I7jjmH3Vf9XInwJ6B3SpB+UdU3j2QMaoXzi3
+ DL4Mfj1GQEhOMFdTukEos0v/crjCLiBO6Wn3rU16LVtDEhWV/BAlUX17NWPFvWejg6migK6AL4Qjv
+ qxEjuIELA==;
+Received: from relay2-d.mail.gandi.net ([217.70.183.194])
+ by casper.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hRXM5-0000io-Gi
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 07:32:39 +0000
 X-Originating-IP: 80.215.154.25
 Received: from localhost (unknown [80.215.154.25])
  (Authenticated sender: maxime.ripard@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 3C582E0006;
- Fri, 17 May 2019 07:30:48 +0000 (UTC)
-Date: Fri, 17 May 2019 09:30:48 +0200
+ by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 347BA40009;
+ Fri, 17 May 2019 07:31:52 +0000 (UTC)
+Date: Fri, 17 May 2019 09:31:51 +0200
 From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Jernej Skrabec <jernej.skrabec@siol.net>
-Subject: Re: [PATCH] ARM: dts: sun8i-h3: Fix wifi in Beelink X2 DT
-Message-ID: <20190517073048.y6mzgbhhryfmuckl@flea>
-References: <20190516161039.18534-1-jernej.skrabec@siol.net>
+To: Frank Lee <tiny.windzz@gmail.com>
+Subject: Re: [PATCH 2/3] thermal: sun50i: add thermal driver for h6
+Message-ID: <20190517073151.mz6hcmzubk7iqfre@flea>
+References: <20190512082614.9045-1-tiny.windzz@gmail.com>
+ <20190512082614.9045-3-tiny.windzz@gmail.com>
+ <20190512133930.t5txssl7mou2gljt@flea>
+ <20190512214128.qjyys3vfpwdiacib@core.my.home>
+ <20190516150252.hf4u3bloo37chy6q@flea>
+ <CAEExFWu-T2mGQ9Teo7TQOcJsEzXi_dB=S8CFv7MiwHyu5z4-ow@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20190516161039.18534-1-jernej.skrabec@siol.net>
+In-Reply-To: <CAEExFWu-T2mGQ9Teo7TQOcJsEzXi_dB=S8CFv7MiwHyu5z4-ow@mail.gmail.com>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190517_003052_594010_91415057 
-X-CRM114-Status: GOOD (  16.77  )
+X-CRM114-CacheID: sfid-20190517_083237_569744_31B89AF2 
+X-CRM114-Status: GOOD (  22.92  )
 X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.7 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ low trust [217.70.183.194 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -60,53 +80,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, wens@csie.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6339453871213117169=="
+Cc: Mark Rutland <mark.rutland@arm.com>, catalin.marinas@arm.com,
+ will.deacon@arm.com, bjorn.andersson@linaro.org, marc.w.gonzalez@free.fr,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>, paulmck@linux.ibm.com,
+ stefan.wahren@i2se.com, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Chen-Yu Tsai <wens@csie.org>, Jagan Teki <jagan@amarulasolutions.com>,
+ Andy Gross <andy.gross@linaro.org>, rui.zhang@intel.com,
+ devicetree@vger.kernel.org, Linux PM <linux-pm@vger.kernel.org>,
+ Eduardo Valentin <edubezval@gmail.com>, olof@lixom.net, robh+dt@kernel.org,
+ Jonathan.Cameron@huawei.com, Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ enric.balletbo@collabora.com, David Miller <davem@davemloft.net>
+Content-Type: multipart/mixed; boundary="===============6765139085906580092=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============6339453871213117169==
+--===============6765139085906580092==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="jkbi65rx3dzh424y"
+	protocol="application/pgp-signature"; boundary="lfvwzxrwqixjwfma"
 Content-Disposition: inline
 
 
---jkbi65rx3dzh424y
-Content-Type: text/plain; charset=us-ascii
+--lfvwzxrwqixjwfma
+Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Hi,
+On Fri, May 17, 2019 at 02:10:47AM +0800, Frank Lee wrote:
+> > On Sun, May 12, 2019 at 11:41:28PM +0200, Ond=C5=99ej Jirman wrote:
+> > > > > +static int tsens_get_temp(void *data, int *temp)
+> > > > > +{
+> > > > > + struct tsensor *s =3D data;
+> > > > > + struct tsens_device *tmdev =3D s->tmdev;
+> > > > > + int val;
+> > > > > +
+> > > > > + regmap_read(tmdev->regmap, tmdev->chip->temp_data_base +
+> > > > > +             0x4 * s->id, &val);
+> > > > > +
+> > > > > + if (unlikely(val =3D=3D 0))
+> > > > > +         return -EBUSY;
+> > > >
+> > > > I'm not sure why a val equals to 0 would be associated with EBUSY?
+> > >
+> > > Thermal zone driver can (will) call get_temp before we got the
+> > > first interrupt and the thermal data. In that case val will be 0.
+> > >
+> > > Resulting in:
+> > >
+> > >  (val + offset) * scale =3D (-2794) * -67 =3D 187198
+> > >
+> > > 187=C2=B0C and immediate shutdown during boot - based on cirtical
+> > > temperature being reached.
+> > >
+> > > Busy here means, get_temp does not yet have data. Thermal zone
+> > > driver just reports any error to dmesg output.
+> >
+> > Ah, that makes sense.
+> >
+> > I guess if we're switching to an interrupt-based driver, then we can
+> > just use a waitqueue, or is get_temp supposed to be atomic?
+>
+> I think get_temp should not be bloacked.
 
-On Thu, May 16, 2019 at 06:10:39PM +0200, Jernej Skrabec wrote:
-> mmc1 node where wifi module is connected doesn't have properly defined
-> power supplies so wifi module is never powered up. Fix that by
-> specifying additional power supplies.
->
-> Additionally, this STB may have either Realtek or Broadcom based wifi
-> module. One based on Broadcom module also needs external clock to work
-> properly. Fix that by adding clock property to wifi_pwrseq node.
->
-> Fixes: e582b47a9252 ("ARM: dts: sun8i-h3: Add dts for the Beelink X2 STB")
-> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> ---
->  arch/arm/boot/dts/sun8i-h3-beelink-x2.dts | 5 +++++
->  1 file changed, 5 insertions(+)
->
-> diff --git a/arch/arm/boot/dts/sun8i-h3-beelink-x2.dts b/arch/arm/boot/dts/sun8i-h3-beelink-x2.dts
-> index 6277f13f3eb3..6a0ac85b4616 100644
-> --- a/arch/arm/boot/dts/sun8i-h3-beelink-x2.dts
-> +++ b/arch/arm/boot/dts/sun8i-h3-beelink-x2.dts
-> @@ -89,7 +89,10 @@
->
->  	wifi_pwrseq: wifi_pwrseq {
->  		compatible = "mmc-pwrseq-simple";
-> +		pinctrl-names = "default";
-
-pinctrl-names only make sense with another pinctrl-[0-255]
-property. Did you forgot something here?
+Why not?
 
 Maxime
 
@@ -115,21 +153,21 @@ Maxime Ripard, Bootlin
 Embedded Linux and Kernel engineering
 https://bootlin.com
 
---jkbi65rx3dzh424y
+--lfvwzxrwqixjwfma
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXN5jKAAKCRDj7w1vZxhR
-xUr9AP97UzodMbd7XRkMSWOZH5h4GuNferFgLYoAMM0yGXZWrwD6AwhGz1w7cehv
-pfHluFzjaOLCt4LLQWUiDAMaW2+Y0wU=
-=ocrv
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXN5jZwAKCRDj7w1vZxhR
+xRjwAQCF+RoytL/Gdpf15Jq+KQoPxEwYs/XaBIKW6ehF38tr0QD/T1i40/vfptIH
+f1vUZGQCwcHvI4eTbggzXinFNG1BsAM=
+=UQjS
 -----END PGP SIGNATURE-----
 
---jkbi65rx3dzh424y--
+--lfvwzxrwqixjwfma--
 
 
---===============6339453871213117169==
+--===============6765139085906580092==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -140,5 +178,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============6339453871213117169==--
+--===============6765139085906580092==--
 
