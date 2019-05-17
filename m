@@ -2,78 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9723421AD6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 17:42:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 84A4D21B31
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 18:11:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=dmsyzW8EadlXGCPeHza5YidBhWuRmlnGsBcGKHOysX8=; b=m5V42pDbsasuM6
-	B/ofyekrQmr3d5O7+TEoP4lT9M7AJnRYwOiEVvWJfmW5Qz/C3qZsJMNewJ+0JWlk31aCGML5LET22
-	599c7FmWBgVzelVz7v5+AdQjq/Mo23DzA9hJYCklAhtkRLL5XbkciLeEuU4qKOrkCq7uiC0iTnNy2
-	BmEepceZ/CgUmrLjZoFgysM49xHI1DSTn8yksBBHcDnFNAmABV7JuHpfTjXysyiojnO/VQ7EtWu2G
-	g1J54JtpF3f0Frleg594ExnU2sShplYtNixDOp+tDzM3Ly2Lgjei2AorKjFdvIXDiwM9CXL4c8JbF
-	lW8gHcQ4Fd7hRsie8QHQ==;
+	List-Owner; bh=oxF5I7DZMBCBbrugJhl46yCYCNtgt4YqoVUHqpuSp7g=; b=rTc1PTYEqn/jg6
+	588QoAh4qFuBDCOYNmi2v3Oj2jWXUp4Evo1J1kLUa0dT1kZ/08EASMlDIIY7IAgptvpMB1sAvB/s3
+	mmkbZD6zq3X7b4S73hHVmc7k+sJU5shWd75NeifE926czTQvEBqZtJY++vebgw8JGJ8uDuRat4VtB
+	M47ibT7hH+Sajz4YskWeTGXFArucHaW2JT5kgm2uQVTIWKZUHQqTZHtMurOG0gsQM0H/J7MWFP6CC
+	oEB7RQVNoRl+9MEkMwAvnfvEe51dxicnpp96khcsX8bhcs/B9+astrgcG6VX1D2kZawvNTcn6FJbg
+	y+ZpyihOPpfi4L6ll7Tw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRezs-00037W-VU; Fri, 17 May 2019 15:42:12 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1hRfSV-0003tg-6L; Fri, 17 May 2019 16:11:47 +0000
+Received: from mout.gmx.net ([212.227.15.15])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRezl-000373-3h; Fri, 17 May 2019 15:42:06 +0000
-Received: by mail-ot1-f65.google.com with SMTP id r7so7133529otn.6;
- Fri, 17 May 2019 08:42:04 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=M14rlFzwcUBHjfiLjquFIIr+CTAHX9KTzEGha2QcIb4=;
- b=fO4sR+TnDXEkXatyiPvTn8SBwi3P0KiCiC728/1iuP1+olO0coR7Ngy/w6MrjVMi4X
- 7blk0as//JA5ozMryUdKsxcXvbRRxivrVsk108SPnEUN6wZKUkd94lkmHA7PqNZw5d0s
- JWoFYn10aLmA56Mn8EO4zjCcBQ0POtWe2xI9X7flxL+CAtL3LO3h+9VnynG+1QPnph+n
- Ibhk/d2O6XguCe9zPQhG5dt9AvRR9nW4tFJLFjq6L40hy5PPdOv01Ygz/cWQsUmczBAj
- kNZQ1QQej+BF8Zur/RnVpNYlXsoBs9OnZsnY8jY7xe8Qxk7EZHuCkXSZZdCNsP5oro/V
- kMfQ==
-X-Gm-Message-State: APjAAAWKYM/gjk29/bYKcnsIyonh1kZN0BI5XAIrLbbgNhXO2OYZEDSa
- XoepbC5el05gWJlJF3Qz/Q==
-X-Google-Smtp-Source: APXvYqw0Xw5KM/Ug+L3eQ59evU0HzCljrxLHoWvrm2B6Bua1+oOoEbMfCxmoUgUa8UTB+GUNxkAMjw==
-X-Received: by 2002:a05:6830:208a:: with SMTP id
- y10mr8971186otq.293.1558107724092; 
- Fri, 17 May 2019 08:42:04 -0700 (PDT)
-Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id x21sm2912108otk.4.2019.05.17.08.42.03
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 17 May 2019 08:42:03 -0700 (PDT)
-From: Rob Herring <robh@kernel.org>
-To: Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH v3] dt-bindings: arm: Convert MediaTek board/soc bindings to
- json-schema
-Date: Fri, 17 May 2019 10:42:02 -0500
-Message-Id: <20190517154202.24594-1-robh@kernel.org>
+ id 1hRfSP-0003tM-0r
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 16:11:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1558109490;
+ bh=ObVsCKoy24nyR+PE5lyuwbL6rGIGz6OGgJWXUYTs8Gc=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
+ b=fqQDbDarvk1j260RMG1ySbxWBkJAQIhtWUp29JDmoJrZGizSYh620SlDIF13rkOQT
+ t4enlnwpAgGrJ3kuP9k3TRo1xX/qAtpFsMEAkK03M7s1RylbLw7KWPdGT3A6yM91sA
+ IrQLLKxr6F5mp4FMrIApwKuxFBcdtOXp0ozigY8w=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from macchiato.fritz.box ([84.118.159.3]) by mail.gmx.com (mrgmx001
+ [212.227.17.184]) with ESMTPSA (Nemesis) id 0MSdNs-1hHjJ00w68-00RWe0; Fri, 17
+ May 2019 18:11:30 +0200
+From: Heinrich Schuchardt <xypron.glpk@gmx.de>
+To: Jason Cooper <jason@lakedaemon.net>, Andrew Lunn <andrew@lunn.ch>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+ Russell King <linux@armlinux.org.uk>
+Subject: [PATCH 1/1] arm64: dts: marvell: mcbin: enlarge PCI memory window
+Date: Fri, 17 May 2019 18:11:23 +0200
+Message-Id: <20190517161123.9293-1-xypron.glpk@gmx.de>
 X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
+X-Provags-ID: V03:K1:hCNjLnr3ec6akbhn/dmwopTmrwD2ngfwxcwNRx8GXCrYkJA0EpJ
+ L5UcXsGJelQo6uQlfzMgiqLsfqw3RElPw9lrnRcjjwRR9gJcmj1rrRavn1HvVShlaCU+Enq
+ Egozfv7Y/B6s88noZPevX9LpD7kNku6iptetaBWgDjfD10dJMtbxmeENjqoUVoWbJ4oCLar
+ XOelF3caKICXi3KXxsccQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:OcrfSlw1JQ8=:GN1/4inuw1Bj7DI4AR2yOE
+ kenLvJPUoIGFq7CquaGL3nQdBdCj1yHykf2FsJQJHIPVtxiuL7LbrWOhwMHEzLTNDd6YHMLFM
+ py2hQ0SYwIKrHw/1lFlBtN8pJU/FfSJs3RjxBW+ZHwv/uRM0frc2txp2WV8qsNhzvixSLqmeg
+ gPPL73apNRQHlv3euqNA+3OzjZBicRpOukofYNwkuzclIkKX4p2KNqyAjUMAxkmbZNIDJ/gTB
+ 7EeVZmNC6a8YNC1r5z71uhWM0vPITUuD1/lx6kEnd04y+ftqzyoHriL0y727mJDxItIG/M5Jh
+ p5ZxnMHqsC9hhoVnaVdwWHsQhbGgqTi75WnZ/dkSPzj8p52WrUiPdxVLQ3bxQNmxXn68qk6Ki
+ sTP0ULeONcC4xgmdPtOPRhFgRh8rb+fN1wshsiZOm/qr+V4tULGYcOoDMmQgdbRf2gG75yW3T
+ U+xs7MvfZUyP2RVoIjpciq3uzzq5GPxfCefxFoJgR6dxOP8IpSRPOZHMbtVZJBEhCFKKTd7GD
+ aWnaPa6q0LWGlEB9VfBPGngG5MLOZs4TFK4j2RHpui9wxMjwMD9vIaHS2hMIDOHbDwNt7V2Vm
+ My4aO7y53osFxqQleVUXmA4n/VvpZW5nxcl2bIx+8xUD3vFEzpaLCY9GaYPCyh4OlYWA+D8Wt
+ HYT1DH2/UK7Rd2Pe7yBnfOBgeGe3GWmn7uGpT8dHdT0ofIvRcF/0fYqMhuYko3WLq1hjXmdV8
+ lIgJnIEHbHh2ub17m2hQo3yj2OwJFQbwP2XKw0Z1ILw8m+enl7gUZ2m9yoz1XJ24qlJpDHPpS
+ fUou0epAwa2ZNgnPHW7SGFA72qMWSnCM20OB+OdgGgoOhF3g6ozC/1buxhkxnLMR5W0jYjSab
+ TMvM9yFgotVEQK3OamifYbAg0oV3Pnw2muyxD0dKvNWAru6lHOiybnkKjKUfP3J6ooUKtSjBc
+ 6LSRQ7VCs4Jg823WxYvLwdCi4JvvpZCw=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190517_084205_155772_EF141B32 
-X-CRM114-Status: GOOD (  12.07  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190517_091141_405038_36FB6521 
+X-CRM114-Status: UNSURE (   9.39  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.15.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
+ provider (xypron.glpk[at]gmx.de)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -86,224 +94,49 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+ Heinrich Schuchardt <xypron.glpk@gmx.de>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert MediaTek SoC bindings to DT schema format using json-schema.
+Running a graphics adapter on the MACCHIATObin fails due to an
+insufficently sized memory window.
 
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: Matthias Brugger <matthias.bgg@gmail.com>
-Cc: devicetree@vger.kernel.org
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-mediatek@lists.infradead.org
-Signed-off-by: Rob Herring <robh@kernel.org>
+Enlarge the memory window for the PCIe slot to 512 MiB.
+
+With the patch I am able to use a GT710 graphics adapter with 1 GB onboard
+memory.
+
+These are the mapped memory areas that the graphics adapter is actually
+using:
+
+Region 0: Memory at cc000000 (32-bit, non-prefetchable) [size=16M]
+Region 1: Memory at c0000000 (64-bit, prefetchable) [size=128M]
+Region 3: Memory at c8000000 (64-bit, prefetchable) [size=32M]
+Region 5: I/O ports at 1000 [size=128]
+Expansion ROM at ca000000 [disabled] [size=512K]
+
+Signed-off-by: Heinrich Schuchardt <xypron.glpk@gmx.de>
 ---
-v3:
- - Rebase to Linus' master
+ arch/arm64/boot/dts/marvell/armada-8040-mcbin.dtsi | 2 ++
+ 1 file changed, 2 insertions(+)
 
- .../devicetree/bindings/arm/mediatek.txt      | 89 ------------------
- .../devicetree/bindings/arm/mediatek.yaml     | 91 +++++++++++++++++++
- 2 files changed, 91 insertions(+), 89 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/arm/mediatek.txt
- create mode 100644 Documentation/devicetree/bindings/arm/mediatek.yaml
+diff --git a/arch/arm64/boot/dts/marvell/armada-8040-mcbin.dtsi b/arch/arm64/boot/dts/marvell/armada-8040-mcbin.dtsi
+index 329f8ceeebea..205071b45a32 100644
+--- a/arch/arm64/boot/dts/marvell/armada-8040-mcbin.dtsi
++++ b/arch/arm64/boot/dts/marvell/armada-8040-mcbin.dtsi
+@@ -184,6 +184,8 @@
+ 	num-lanes = <4>;
+ 	num-viewport = <8>;
+ 	reset-gpios = <&cp0_gpio2 20 GPIO_ACTIVE_LOW>;
++	ranges = <0x81000000 0x0 0xf9010000 0x0 0xf9010000 0x0 0x10000
++		  0x82000000 0x0 0xc0000000 0x0 0xc0000000 0x0 0x20000000>;
+ 	status = "okay";
+ };
 
-diff --git a/Documentation/devicetree/bindings/arm/mediatek.txt b/Documentation/devicetree/bindings/arm/mediatek.txt
-deleted file mode 100644
-index 56ac7896d6d8..000000000000
---- a/Documentation/devicetree/bindings/arm/mediatek.txt
-+++ /dev/null
-@@ -1,89 +0,0 @@
--MediaTek SoC based Platforms Device Tree Bindings
--
--Boards with a MediaTek SoC shall have the following property:
--
--Required root node property:
--
--compatible: Must contain one of
--   "mediatek,mt2701"
--   "mediatek,mt2712"
--   "mediatek,mt6580"
--   "mediatek,mt6589"
--   "mediatek,mt6592"
--   "mediatek,mt6755"
--   "mediatek,mt6765"
--   "mediatek,mt6795"
--   "mediatek,mt6797"
--   "mediatek,mt7622"
--   "mediatek,mt7623"
--   "mediatek,mt7629"
--   "mediatek,mt8127"
--   "mediatek,mt8135"
--   "mediatek,mt8173"
--   "mediatek,mt8183"
--
--
--Supported boards:
--
--- Evaluation board for MT2701:
--    Required root node properties:
--      - compatible = "mediatek,mt2701-evb", "mediatek,mt2701";
--- Evaluation board for MT2712:
--    Required root node properties:
--      - compatible = "mediatek,mt2712-evb", "mediatek,mt2712";
--- Evaluation board for MT6580:
--    Required root node properties:
--      - compatible = "mediatek,mt6580-evbp1", "mediatek,mt6580";
--- bq Aquaris5 smart phone:
--    Required root node properties:
--      - compatible = "mundoreader,bq-aquaris5", "mediatek,mt6589";
--- Evaluation board for MT6592:
--    Required root node properties:
--      - compatible = "mediatek,mt6592-evb", "mediatek,mt6592";
--- Evaluation phone for MT6755(Helio P10):
--    Required root node properties:
--      - compatible = "mediatek,mt6755-evb", "mediatek,mt6755";
--- Evaluation board for MT6765(Helio P22):
--    Required root node properties:
--      - compatible = "mediatek,mt6765-evb", "mediatek,mt6765";
--- Evaluation board for MT6795(Helio X10):
--    Required root node properties:
--      - compatible = "mediatek,mt6795-evb", "mediatek,mt6795";
--- Evaluation board for MT6797(Helio X20):
--    Required root node properties:
--      - compatible = "mediatek,mt6797-evb", "mediatek,mt6797";
--- Mediatek X20 Development Board:
--    Required root node properties:
--      - compatible = "archermind,mt6797-x20-dev", "mediatek,mt6797";
--- Reference board variant 1 for MT7622:
--    Required root node properties:
--      - compatible = "mediatek,mt7622-rfb1", "mediatek,mt7622";
--- Bananapi BPI-R64 for MT7622:
--    Required root node properties:
--      - compatible = "bananapi,bpi-r64", "mediatek,mt7622";
--- Reference board for MT7623a with eMMC:
--    Required root node properties:
--      - compatible = "mediatek,mt7623a-rfb-emmc", "mediatek,mt7623";
--- Reference board for MT7623a with NAND:
--    Required root node properties:
--      - compatible = "mediatek,mt7623a-rfb-nand", "mediatek,mt7623";
--- Reference board for MT7623n with eMMC:
--    Required root node properties:
--      - compatible = "mediatek,mt7623n-rfb-emmc", "mediatek,mt7623";
--- Bananapi BPI-R2 board:
--      - compatible = "bananapi,bpi-r2", "mediatek,mt7623";
--- Reference board for MT7629:
--    Required root node properties:
--      - compatible = "mediatek,mt7629-rfb", "mediatek,mt7629";
--- MTK mt8127 tablet moose EVB:
--    Required root node properties:
--      - compatible = "mediatek,mt8127-moose", "mediatek,mt8127";
--- MTK mt8135 tablet EVB:
--    Required root node properties:
--      - compatible = "mediatek,mt8135-evbp1", "mediatek,mt8135";
--- MTK mt8173 tablet EVB:
--    Required root node properties:
--      - compatible = "mediatek,mt8173-evb", "mediatek,mt8173";
--- Evaluation board for MT8183:
--    Required root node properties:
--      - compatible = "mediatek,mt8183-evb", "mediatek,mt8183";
-diff --git a/Documentation/devicetree/bindings/arm/mediatek.yaml b/Documentation/devicetree/bindings/arm/mediatek.yaml
-new file mode 100644
-index 000000000000..a4ad2eb926f9
---- /dev/null
-+++ b/Documentation/devicetree/bindings/arm/mediatek.yaml
-@@ -0,0 +1,91 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/arm/mediatek.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: MediaTek SoC based Platforms Device Tree Bindings
-+
-+maintainers:
-+  - Sean Wang <sean.wang@mediatek.com>
-+  - Matthias Brugger <matthias.bgg@gmail.com>
-+description: |
-+  Boards with a MediaTek SoC shall have the following properties.
-+
-+properties:
-+  $nodename:
-+    const: '/'
-+  compatible:
-+    oneOf:
-+      - items:
-+          - enum:
-+              - mediatek,mt2701-evb
-+          - const: mediatek,mt2701
-+
-+      - items:
-+          - enum:
-+              - mediatek,mt2712-evb
-+          - const: mediatek,mt2712
-+      - items:
-+          - enum:
-+              - mediatek,mt6580-evbp1
-+          - const: mediatek,mt6580
-+      - items:
-+          - enum:
-+              - mundoreader,bq-aquaris5
-+          - const: mediatek,mt6589
-+      - items:
-+          - enum:
-+              - mediatek,mt6592-evb
-+          - const: mediatek,mt6592
-+      - items:
-+          - enum:
-+              - mediatek,mt6755-evb
-+          - const: mediatek,mt6755
-+      - items:
-+          - enum:
-+              - mediatek,mt6765-evb
-+          - const: mediatek,mt6765
-+      - items:
-+          - enum:
-+              - mediatek,mt6795-evb
-+          - const: mediatek,mt6795
-+      - items:
-+          - enum:
-+              - archermind,mt6797-x20-dev
-+              - mediatek,mt6797-evb
-+          - const: mediatek,mt6797
-+      - items:
-+          - enum:
-+              - bananapi,bpi-r64
-+              - mediatek,mt7622-rfb1
-+          - const: mediatek,mt7622
-+      - items:
-+          - enum:
-+              - mediatek,mt7623a-rfb-emmc
-+              - mediatek,mt7623a-rfb-nand
-+              - mediatek,mt7623n-rfb-emmc
-+              - bananapi,bpi-r2
-+          - const: mediatek,mt7623
-+
-+      - items:
-+          - enum:
-+              - mediatek,mt7629-rfb
-+          - const: mediatek,mt7629
-+      - items:
-+          - enum:
-+              - mediatek,mt8127-moose
-+          - const: mediatek,mt8127
-+      - items:
-+          - enum:
-+              - mediatek,mt8135-evbp1
-+          - const: mediatek,mt8135
-+      - items:
-+          - enum:
-+              - mediatek,mt8173-evb
-+          - const: mediatek,mt8173
-+      - items:
-+          - enum:
-+              - mediatek,mt8183-evb
-+          - const: mediatek,mt8183
-+...
--- 
+--
 2.20.1
 
 
