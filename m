@@ -2,93 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13658212A4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 05:52:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 083F6212AE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 05:55:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3sOW6pDYNZBZfVeoBxAUFibVSZxpHloJUfRPZtK/NWk=; b=d0c3+xmh88fO1S
-	oENcUTTc28taSaMYy+G34TQIzVQ/UMdoHTCRAaOusM70wEHzByBffj1lyswmVVInYv03ODp3+gduX
-	qb1EEW5PGToDVS6zWGHpAA+3Rsh8xLqfZtL/3p0Z50bs1TxHSgIbclFZUOetTQk8Js+60y47W3YnC
-	cMotsepumf8jN4mTc9mLNHHWbcRQP+p0OzINMz+sLq41uHj32zjuzjlyQn+9vfefHfjMsod7IUKpG
-	qurNsqT5QCUNQ8cLe3uH85+BlUfrGlH0DuAxu5kuidtM547nLYY37lmzN3Rq09o7XQL0t7z7ZvJIB
-	8Jhk5ezRQsNJxU7olQZA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tfqh0utM/aZoyZQcZgQKDl8Mo5S3JagzMtc3r/H8s+M=; b=W49zXs4WswThW5
+	+ylyjfOMY8p3hMnuPF00SScDm6XTMVWeZQEVnLGxqopxJCJF3ltUStIxOGkgngGDUV3cG3aobkdcu
+	VtYxE1KtD1YAXTnJ4NdFsR4GGM1FjxTPsfpbRedwbNfzhWj5rgZpKbrGniiDvAvac53oImqVDY5M+
+	cUxKZFshn/SrKzWQwJ94VbCYLw7/5SLm69lwOYT+t9YsUXeGBdrZ7CNaOr/8ywg5Me8h+LD4i1dcq
+	KhaxytwfIzer4EFxb5xbeFTX6ySXAbdyPlkgy4zDTTqeeVIKh1bHu/Jq7QP76vL8H8gdZc3IOmk+S
+	PBm9Q8hFjnbmBx97X0Cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRTuf-0000W4-FB; Fri, 17 May 2019 03:52:05 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1hRTxR-0000wf-Sd; Fri, 17 May 2019 03:54:57 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRTuX-0000V3-BC
- for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 03:51:59 +0000
-Received: by mail-wr1-x443.google.com with SMTP id m3so5344361wrv.2
+ id 1hRTxJ-0000vs-K9
+ for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 03:54:51 +0000
+Received: by mail-pg1-x541.google.com with SMTP id z3so2606178pgp.8
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 16 May 2019 20:51:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=kernelci-org.20150623.gappssmtp.com; s=20150623;
- h=message-id:date:mime-version:content-transfer-encoding:subject:to
- :from:cc; bh=DdVR87Z6W71pfOZ9P0FpXBOiYmKNFBCn+LbvQzi7wlQ=;
- b=w1FyLLhpMw881IOcASEaUGIdwSeVjjeUpmN6yCOffrsAUamFbjBQP0AfGgBcVoqBFc
- ZfA0dJG1nP3k3iNR8TfTaRpKT81Ga/DjhFHOqTUtz6NxarbpgRBOlyngCOVwH+LueCvx
- bFqN7ytdmAzSxQtlMtMbVapKAvHm96lq+Q9s6b0cXQMp92dJIhvIpNGqC7ZOhL0U3ybn
- i3gn292MF7jkhlq+ghIuR5gXeMX6OrUtO3/FH3Ti9CdwvqAqkSCel8Td8gnYwDhdJt0e
- X8BxN9zrwVqCIEfsC9xg8kon/FwYJFizq3n+8zENJj78X35eL4+E1Cl79AN+e8xWryst
- an4Q==
+ Thu, 16 May 2019 20:54:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=aSWv/3E5xONuctyVCVpI+09Uko/UnXB8canipxV/tCA=;
+ b=SNRqwJ7EZ+/CWo5k9NfHmkbROXRuPjzLmaJu4Rvhsi2l9ucWEJJyifU4TP5Ztq5eFf
+ 6yKDtee7U8Gt3U1ALOf2SaDQI2wHmrlXYvApMqK8XlX7Dap63oqg3JaVwGKD3YMSmDq6
+ +0WcehHzxLN5r0deh1CF8RwD0p1D+2oHPRmQM0CJRfogIubkEe5u+1cLLMtL6erU83Oy
+ ZBbLTl6s8SiHgA09T5XdzCdIm2uarVZjmqXuWvZZqFHp5VHApjuV5t8QPaKMJPgfz83E
+ GHMtBBOyWce4MkW8aJ2mY29Kmb6Lm7Cs46J206H6T+oVs14QAKRL43wtfkxVlMoqS/n4
+ L+CA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:date:mime-version
- :content-transfer-encoding:subject:to:from:cc;
- bh=DdVR87Z6W71pfOZ9P0FpXBOiYmKNFBCn+LbvQzi7wlQ=;
- b=bYe/0AL5GAul3/FTzg19dTfSPt5lqS5hiYMyZou5/tsF1cLNdl8uLnwe2EY5R/Icd4
- i8gMH6+jSkmIff7QZIl+Rw2ZdMa6i4Hx1w/dcgFAb+fNkOFaKmpCYkrRZ0Gv0aYfbJmK
- wz3Y+K1sUFIxryfxLEcPjpBW01CK7xqpb0A5AOwVfX4t3vxcMG9ShPwqSr3avN5YSd5m
- wcFFAKZSx/S3K9LvGNkl1gJJCgRlo4fVX6vcqbxlAs3bjQyIfeh8PPrj+dFXzW+S7zy2
- xmzu94Gzf5XrVT06pdCXNJZ4vuNfnDIMBphp0UgzAxJlk/3hS4Vk4+lPuYlTdVK7gbkL
- rEJA==
-X-Gm-Message-State: APjAAAXTU7S9NdjlQWRlbJ7mNuEmHKJSsr+NmCaYi1F33Zj4x/R1TD+z
- 1SLm44zliA3md2oeA745gfmmMQ==
-X-Google-Smtp-Source: APXvYqzyfhaTEuEHD7b4qavb2NnY+aWioXWHYEipSR9Qye9wu3iFt5gT+TIKeBtfEgyF6JOBfMlrEw==
-X-Received: by 2002:a5d:62c2:: with SMTP id o2mr13569428wrv.254.1558065112562; 
- Thu, 16 May 2019 20:51:52 -0700 (PDT)
-Received: from [148.251.42.114] ([2a01:4f8:201:9271::2])
- by smtp.gmail.com with ESMTPSA id v1sm7371785wrd.47.2019.05.16.20.51.51
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 16 May 2019 20:51:52 -0700 (PDT)
-Message-ID: <5cde2fd8.1c69fb81.8f42e.b6dc@mx.google.com>
-Date: Thu, 16 May 2019 20:51:52 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=aSWv/3E5xONuctyVCVpI+09Uko/UnXB8canipxV/tCA=;
+ b=NqXcYfExYV6Ebg4vAKwS4kaxsqhNPXN6tsib1LMpvBcxLHMyrdgcX5di1mrybCWdeX
+ 8sspISaGm6L1BFLreDMMD1t/6kmdleJD0424yv9MVL70r/dTrLN9xuWI+jToEfmfNyh/
+ RpwXqhfN8teed7LET2kA01pNa795LGTfG2dFex8iegs23Eg+VEVXEISS/j/3ccnqG7aX
+ vfoEH4eWC0j1u1qHJW9/RdaWQY4fv9vK9ECC1sqiJq9iVV9Xi6+gXTXQ7DkKLqUfVi4M
+ dXtYN3QQo9Hu7J/CMZ5UHYXtmMhWNgcOISgXfnW6PQqKMW46mZI8aUDiAvcIOaFp7pt5
+ sKsw==
+X-Gm-Message-State: APjAAAVk8cnxvmaOKQMXqwKJmW5okP+yK0OpaJTN96KQrKkhHnQH5p5/
+ AU/DdcV/pVjz4IItPT1glidS
+X-Google-Smtp-Source: APXvYqzoHXX1P5yhzflXLHPYow3wkn9VYYg/Butit6e08vzoVnsngfCu3i4rgBTsIxwoAWOQnOO4yg==
+X-Received: by 2002:a62:5f42:: with SMTP id t63mr15660001pfb.83.1558065288251; 
+ Thu, 16 May 2019 20:54:48 -0700 (PDT)
+Received: from Mani-XPS-13-9360 ([2409:4072:6390:5018:b478:7b0e:49e:16a3])
+ by smtp.gmail.com with ESMTPSA id s12sm12152355pfd.152.2019.05.16.20.54.42
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 16 May 2019 20:54:47 -0700 (PDT)
+Date: Fri, 17 May 2019 09:24:40 +0530
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH v2 1/3] dt-bindings: arm: stm32: Document Avenger96
+ devicetree binding
+Message-ID: <20190517035440.GA12863@Mani-XPS-13-9360>
+References: <20190506100534.24145-1-manivannan.sadhasivam@linaro.org>
+ <20190506100534.24145-2-manivannan.sadhasivam@linaro.org>
+ <20190513180246.GA8487@bogus>
 MIME-Version: 1.0
-X-Kernelci-Report-Type: bisect
-X-Kernelci-Tree: mainline
-X-Kernelci-Lab-Name: lab-baylibre
-X-Kernelci-Branch: master
-X-Kernelci-Kernel: v5.1-12065-g8c05f3b965da
-Subject: mainline/master boot bisection: v5.1-12065-g8c05f3b965da on
- meson-g12a-x96-max
-To: tomeu.vizoso@collabora.com, guillaume.tucker@collabora.com,
- mgalka@collabora.com, Kevin Hilman <khilman@baylibre.com>,
- Neil Armstrong <narmstrong@baylibre.com>, broonie@kernel.org,
- matthew.hart@linaro.org, khilman@baylibre.com, enric.balletbo@collabora.com,
- Jerome Brunet <jbrunet@baylibre.com>
-From: "kernelci.org bot" <bot@kernelci.org>
+Content-Disposition: inline
+In-Reply-To: <20190513180246.GA8487@bogus>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_205157_437675_E7B00A89 
-X-CRM114-Status: UNSURE (   8.98  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190516_205450_039680_A3B68E72 
+X-CRM114-Status: GOOD (  14.32  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -100,152 +100,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, alexandre.torgue@st.com, loic.pallardy@st.com,
+ linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-* This automated bisection report was sent to you on the basis  *
-* that you may be involved with the breaking commit it has      *
-* found.  No manual investigation has been done to verify it,   *
-* and the root cause of the problem may be somewhere else.      *
-* Hope this helps!                                              *
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Hi Rob,
 
-mainline/master boot bisection: v5.1-12065-g8c05f3b965da on meson-g12a-x96-max
+On Mon, May 13, 2019 at 01:02:46PM -0500, Rob Herring wrote:
+> On Mon, May 06, 2019 at 03:35:32PM +0530, Manivannan Sadhasivam wrote:
+> > Document devicetree binding for Avenger96 board.
+> > 
+> > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> > ---
+> >  Documentation/devicetree/bindings/arm/stm32/stm32.txt | 6 ++++++
+> >  1 file changed, 6 insertions(+)
+> > 
+> > diff --git a/Documentation/devicetree/bindings/arm/stm32/stm32.txt b/Documentation/devicetree/bindings/arm/stm32/stm32.txt
+> > index 6808ed9ddfd5..eba363a4b514 100644
+> > --- a/Documentation/devicetree/bindings/arm/stm32/stm32.txt
+> > +++ b/Documentation/devicetree/bindings/arm/stm32/stm32.txt
+> > @@ -8,3 +8,9 @@ using one of the following compatible strings:
+> >    st,stm32f746
+> >    st,stm32h743
+> >    st,stm32mp157
+> > +
+> > +Boards:
+> > +
+> > +Root node property compatible must contain one of below depending on board:
+> > +
+> > + - Avenger96: "arrow,stm32mp157a-avenger96"
+> 
+> With which SoC compatible?
+> 
 
-Summary:
-  Start:      8c05f3b965da Merge tag 'for-linus' of git://git.armlinux.org.uk/~rmk/linux-arm
-  Details:    https://kernelci.org/boot/id/5cddbf2e59b51487157a362b
-  Plain log:  https://storage.kernelci.org//mainline/master/v5.1-12065-g8c05f3b965da/arm64/defconfig/gcc-8/lab-baylibre/boot-meson-g12a-x96-max.txt
-  HTML log:   https://storage.kernelci.org//mainline/master/v5.1-12065-g8c05f3b965da/arm64/defconfig/gcc-8/lab-baylibre/boot-meson-g12a-x96-max.html
-  Result:     11a7bea17c9e arm64: dts: meson: g12a: add pinctrl support controllers
+I referred some other platform bindings (non YAML) and they don't
+mention the SoC compatible with boards. Shall I just put it like below?
 
-Checks:
-  revert:     PASS
-  verify:     PASS
+Avenger96: "arrow,stm32mp157a-avenger96", "st,stm32mp157"
 
-Parameters:
-  Tree:       mainline
-  URL:        git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
-  Branch:     master
-  Target:     meson-g12a-x96-max
-  CPU arch:   arm64
-  Lab:        lab-baylibre
-  Compiler:   gcc-8
-  Config:     defconfig
-  Test suite: boot
+Thanks,
+Mani
 
-Breaking commit found:
+Thanks,
+Mani
 
--------------------------------------------------------------------------------
-commit 11a7bea17c9e0a36daab934d83e15a760f402147
-Author: Jerome Brunet <jbrunet@baylibre.com>
-Date:   Mon Mar 18 10:58:45 2019 +0100
-
-    arm64: dts: meson: g12a: add pinctrl support controllers
-    
-    Add the peripheral and always-on pinctrl controllers to the g12a soc.
-    
-    Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
-    Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-    Signed-off-by: Kevin Hilman <khilman@baylibre.com>
-
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
-index abfa167751af..5e07e4ca3f4b 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
-@@ -104,6 +104,29 @@
- 				#address-cells = <2>;
- 				#size-cells = <2>;
- 				ranges = <0x0 0x0 0x0 0x34400 0x0 0x400>;
-+
-+				periphs_pinctrl: pinctrl@40 {
-+					compatible = "amlogic,meson-g12a-periphs-pinctrl";
-+					#address-cells = <2>;
-+					#size-cells = <2>;
-+					ranges;
-+
-+					gpio: bank@40 {
-+						reg = <0x0 0x40  0x0 0x4c>,
-+						      <0x0 0xe8  0x0 0x18>,
-+						      <0x0 0x120 0x0 0x18>,
-+						      <0x0 0x2c0 0x0 0x40>,
-+						      <0x0 0x340 0x0 0x1c>;
-+						reg-names = "gpio",
-+							    "pull",
-+							    "pull-enable",
-+							    "mux",
-+							    "ds";
-+						gpio-controller;
-+						#gpio-cells = <2>;
-+						gpio-ranges = <&periphs_pinctrl 0 0 86>;
-+					};
-+				};
- 			};
- 
- 			hiu: bus@3c000 {
-@@ -150,6 +173,25 @@
- 					clocks = <&xtal>, <&clkc CLKID_CLK81>;
- 					clock-names = "xtal", "mpeg-clk";
- 				};
-+
-+				ao_pinctrl: pinctrl@14 {
-+					compatible = "amlogic,meson-g12a-aobus-pinctrl";
-+					#address-cells = <2>;
-+					#size-cells = <2>;
-+					ranges;
-+
-+					gpio_ao: bank@14 {
-+						reg = <0x0 0x14 0x0 0x8>,
-+						      <0x0 0x1c 0x0 0x8>,
-+						      <0x0 0x24 0x0 0x14>;
-+						reg-names = "mux",
-+							    "ds",
-+							    "gpio";
-+						gpio-controller;
-+						#gpio-cells = <2>;
-+						gpio-ranges = <&ao_pinctrl 0 0 15>;
-+					};
-+				};
- 			};
- 
- 			sec_AO: ao-secure@140 {
--------------------------------------------------------------------------------
-
-
-Git bisection log:
-
--------------------------------------------------------------------------------
-git bisect start
-# good: [a455eda33faafcaac1effb31d682765b14ef868c] Merge branch 'linus' of git://git.kernel.org/pub/scm/linux/kernel/git/evalenti/linux-soc-thermal
-git bisect good a455eda33faafcaac1effb31d682765b14ef868c
-# bad: [8c05f3b965da14e7790711026b32cc10a4c06213] Merge tag 'for-linus' of git://git.armlinux.org.uk/~rmk/linux-arm
-git bisect bad 8c05f3b965da14e7790711026b32cc10a4c06213
-# bad: [b45da609a02460c6a34c395f03f891f1fb2a021a] Merge tag 'imx-bindings-5.2' of git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux into arm/dt
-git bisect bad b45da609a02460c6a34c395f03f891f1fb2a021a
-# bad: [a41332dd5e2ac56b0b6eb0959d8828bfe0d6a4ad] Merge tag 'socfpga_dts_updates_for_v5.2' of git://git.kernel.org/pub/scm/linux/kernel/git/dinguyen/linux into arm/dt
-git bisect bad a41332dd5e2ac56b0b6eb0959d8828bfe0d6a4ad
-# bad: [bbf7499dc033831ae91125a88a062910cdc62cf2] Merge tag 'aspeed-5.2-devicetree' of git://git.kernel.org/pub/scm/linux/kernel/git/joel/aspeed into arm/dt
-git bisect bad bbf7499dc033831ae91125a88a062910cdc62cf2
-# bad: [f6f9683c5aedff214433fa130e67a79f08a47fdb] Merge tag 'v5.2-rockchip-dts32-1' of git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip into arm/dt
-git bisect bad f6f9683c5aedff214433fa130e67a79f08a47fdb
-# bad: [e2cffeb398f4830b004774444809ee256b9bc653] arm64: dts: meson-g12a: Add CMA reserved memory
-git bisect bad e2cffeb398f4830b004774444809ee256b9bc653
-# bad: [11a7bea17c9e0a36daab934d83e15a760f402147] arm64: dts: meson: g12a: add pinctrl support controllers
-git bisect bad 11a7bea17c9e0a36daab934d83e15a760f402147
-# good: [7e09092aee006b21d830b99f8498b5640b8711f6] arm64: dts: meson-gxl-s905d-phicomm-n1: add status LED
-git bisect good 7e09092aee006b21d830b99f8498b5640b8711f6
-# good: [965c827ac37e71f76d3ac55c75ac08909f2a4eed] arm64: dts: meson: g12a: add efuse
-git bisect good 965c827ac37e71f76d3ac55c75ac08909f2a4eed
-# good: [b019f4a4199f865b054262ff78f606ca70f7b981] arm64: dts: meson: g12a: Add AO Clock + Reset Controller support
-git bisect good b019f4a4199f865b054262ff78f606ca70f7b981
-# first bad commit: [11a7bea17c9e0a36daab934d83e15a760f402147] arm64: dts: meson: g12a: add pinctrl support controllers
--------------------------------------------------------------------------------
+> > -- 
+> > 2.17.1
+> > 
 
 _______________________________________________
 linux-arm-kernel mailing list
