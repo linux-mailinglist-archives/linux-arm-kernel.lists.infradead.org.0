@@ -2,72 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DFCA212CB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 06:19:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B57CA21300
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 06:25:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7WTzUmIM2XBT/Kci0EvSQ/Zlk2j3TYBb9hVcRNxBIsA=; b=K/vwqgQHWN7Z0s
-	5nurXOx0UOoWNDtUaGVFpCRsHk8xGFenyLrga6V+4lTq3KkvlW6m8yTLRyK3u+M6J7cvc0uPYxPKM
-	DZdQ32DxVhqiN2azoKwMR08BphmAmP6/NlzAr5HGs5yMkA8Xd7wW6OdyN9dyhBqoon0YtKY+a8MEF
-	yj6mE5HK7Z5hyVmVCVjzDYxxluBANErcBbnXTXfz9cE57/mFu2egQq0UQjo+UHqFX6qG++OUpPFmF
-	PU6706h174TvW7uyWnN5lqDlqn2rJRqquVQXSGNGSE8AEqUcUCA36MBDxsrrBdy4qC+hdLyPzs6PE
-	LhC7E0VZriwY1ku7F99w==;
+	List-Owner; bh=E/Du4BAjt/byZ7AJDS/FVwhEKhz8QWVoKSy63dgw5II=; b=RbBQriw8ehlQJU
+	Ze7PljwIearKxp3wdaofAm7rO9Ixxr5jxhR1HYJKEwEJ2oOOSNQZCVqOI4a2xcRFxiA8T2Wa+EJOg
+	1n7GmvpIRqkm/ZH8E03LBG7U95WYUVGbUFK4Vo2/dwJj/U3wEh0qTbbD7PZOByGxyHhGNeEDe4+63
+	yTNAVGFkuuOcQdGw4t/ZYN5CRhRbbmU5CAtlB2V4bWEMPvTqO6epRGUFFKmfUFIXN9zBvPuCKnJzD
+	rhhiOqWP8NVYpTnLxBB2UhhkQ9bvWKuV/AG77CD0EfVIWwTRZXej4d8ztedWO0lzQW8FxstcYeaQ0
+	67JLsrC4bzN6oLlh7gcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRULO-0000aU-Ay; Fri, 17 May 2019 04:19:42 +0000
-Received: from conssluserg-04.nifty.com ([210.131.2.83])
+	id 1hRUQX-0002eZ-Ih; Fri, 17 May 2019 04:25:01 +0000
+Received: from conssluserg-01.nifty.com ([210.131.2.80])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRULH-0000Zl-9Y; Fri, 17 May 2019 04:19:37 +0000
-Received: from mail-ua1-f41.google.com (mail-ua1-f41.google.com
- [209.85.222.41]) (authenticated)
- by conssluserg-04.nifty.com with ESMTP id x4H4J80g014744;
- Fri, 17 May 2019 13:19:09 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-04.nifty.com x4H4J80g014744
+ id 1hRUQQ-0002e9-2W; Fri, 17 May 2019 04:24:55 +0000
+Received: from mail-vs1-f44.google.com (mail-vs1-f44.google.com
+ [209.85.217.44]) (authenticated)
+ by conssluserg-01.nifty.com with ESMTP id x4H4OWNh014153;
+ Fri, 17 May 2019 13:24:33 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-01.nifty.com x4H4OWNh014153
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1558066749;
- bh=J7yAUK19cep0kEYDzk4DJ/4J6NgS5gQ7gjFkMhf0nf0=;
+ s=dec2015msa; t=1558067073;
+ bh=XSdURHr+DFj73XgjlE8DVqoSorih7QO9jSg+HW1D8TM=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=c0LtECK4wG0ntD78HJSVal1PgIaDPnG3TYgZdKUwPQb1na1TUOyc7O8nFlNd6CaCm
- AXsspHBBBxyBH+xc+yKwpj4hyYVIlPFcjcW/vHsJL5fSi5Q2gSwjjErNYCHX7DoDJk
- uzHnaxZfaH6FQsso8f00WBIqbL0o02CmwbkFxF8m6vBwnpe79+CLRENPKmsLOuBRZS
- H1BuxVeZipFZOyAH3A/7goUgdI8wKHrHt3j0pC8tQP/JX2YVrYwXhbMxIntV2ieT5M
- FSH/2b85VtqV4XO16MdlVD3fBZ0eNwSQDAHODI3YrVqSmTCnoT21JK380X6v99doLI
- 2TTH2dRT0iNEA==
-X-Nifty-SrcIP: [209.85.222.41]
-Received: by mail-ua1-f41.google.com with SMTP id d4so2180887uaj.7;
- Thu, 16 May 2019 21:19:08 -0700 (PDT)
-X-Gm-Message-State: APjAAAXgrBfDCXyBw284CgCQYHSN9iQ31EHhjqcC4MwkBj+WxP0uSyoT
- U58D99Jsht5fT/iXmgp3DM1JwhhI3U6//BxRTt0=
-X-Google-Smtp-Source: APXvYqw2YDleh3v/xnLGvb0ytg007xtjBjm7KsoOOxcHJpN/6dfsgAIRhFvSJ0T46JhQEFnSRL0PruWBvw6llY+KDwI=
-X-Received: by 2002:ab0:3058:: with SMTP id x24mr23094567ual.95.1558066747792; 
- Thu, 16 May 2019 21:19:07 -0700 (PDT)
+ b=MjmYEj/7xZIYGboJToCEBgv5PN/8CD6sDWZgip2cIfkO7e3Ii9sfP5C3OkJ+w+bmf
+ nV6cmWzKaBSSjsZhyrn4bys5Y4Q6I+OEw7Kw5shBSlS1idFvlydMF1XAeStprazHXe
+ YEbmOvO03hshhgHZXMzPoXOKrUM23BsqSOjE9eL/rkptHR8OUhQKwyp/IklD0+/Dl9
+ owyazsPp24tpqnpga80RjHHMgFR00FgPaqDWKyOVGScKcv6zoiLl/Anuo6IiuxTxjf
+ qbtJQzYFIsrlK27Oe+MJKRLUUuHhjaC4kJm7cNQh1CbYjHyDzVm4085SMLX6fx2uBd
+ H18+0yFykqaGg==
+X-Nifty-SrcIP: [209.85.217.44]
+Received: by mail-vs1-f44.google.com with SMTP id y6so3808901vsb.0;
+ Thu, 16 May 2019 21:24:32 -0700 (PDT)
+X-Gm-Message-State: APjAAAVrQa16sujJSWSLfr0pzONVmh+ZwZg5tymfva0UR41fsULkJgIV
+ 8n3omE5X02TvnNH1Sia1+dqjx7GXCohV8dDjYlk=
+X-Google-Smtp-Source: APXvYqwRom2nfToM4jL1gKybhnXBZPLM/8GRypEcR2drcSxkNBd5y+Id9rfE+eiIpAnAfm5gkg5AbPeOHdYPagE+d9M=
+X-Received: by 2002:a67:ad0f:: with SMTP id t15mr7896301vsl.179.1558067071748; 
+ Thu, 16 May 2019 21:24:31 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190423034959.13525-1-yamada.masahiro@socionext.com>
- <20190423034959.13525-11-yamada.masahiro@socionext.com>
- <ca74c830-fe1b-7bff-8dfd-353fca57b647@redhat.com>
-In-Reply-To: <ca74c830-fe1b-7bff-8dfd-353fca57b647@redhat.com>
+ <20190423034959.13525-5-yamada.masahiro@socionext.com>
+ <aa73f81d-5d5a-a1d2-5239-3e8eb1278ec4@redhat.com>
+In-Reply-To: <aa73f81d-5d5a-a1d2-5239-3e8eb1278ec4@redhat.com>
 From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Fri, 17 May 2019 13:18:31 +0900
-X-Gmail-Original-Message-ID: <CAK7LNASjc8rmJvv5kgk6Mxo3mcB4EgB4XJG_8JY47ZQbrsSSXg@mail.gmail.com>
-Message-ID: <CAK7LNASjc8rmJvv5kgk6Mxo3mcB4EgB4XJG_8JY47ZQbrsSSXg@mail.gmail.com>
-Subject: Re: [RESEND PATCH v3 10/11] powerpc/mm/radix: mark as __tlbie_pid()
- and friends as__always_inline
+Date: Fri, 17 May 2019 13:23:55 +0900
+X-Gmail-Original-Message-ID: <CAK7LNAST5y9Khg0BBz6W0mekPpuLPwWa9nPvvVENidWhHZ-avw@mail.gmail.com>
+Message-ID: <CAK7LNAST5y9Khg0BBz6W0mekPpuLPwWa9nPvvVENidWhHZ-avw@mail.gmail.com>
+Subject: Re: [RESEND PATCH v3 04/11] s390/cpacf: mark scpacf_query() as
+ __always_inline
 To: Laura Abbott <labbott@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_211935_545974_4B183355 
-X-CRM114-Status: GOOD (  10.13  )
+X-CRM114-CacheID: sfid-20190516_212454_337277_8B6914E1 
+X-CRM114-Status: GOOD (  11.55  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.83 listed in list.dnswl.org]
  1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.80 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -98,56 +98,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Laura,
-
-
-On Fri, May 17, 2019 at 7:55 AM Laura Abbott <labbott@redhat.com> wrote:
-
-> What gcc version was this tested with?
-
-I use kernel.org toolchains
-https://mirrors.edge.kernel.org/pub/tools/crosstool/
-
-It is GCC 8.1
-
-
-> We're still seeing errors on
-> Fedora rawhide with gcc 9.1.1 on a version (8c05f3b965da14e7790711026b32cc10a4c06213)
-> that should have this fix in it:
+On Fri, May 17, 2019 at 8:01 AM Laura Abbott <labbott@redhat.com> wrote:
 >
-> BUILDSTDERR: arch/powerpc/mm/book3s64/radix_tlb.c: In function '_tlbiel_pid':
-> BUILDSTDERR: arch/powerpc/mm/book3s64/radix_tlb.c:104:2: warning: asm operand 3 probably doesn't match constraints
-> BUILDSTDERR:   104 |  asm volatile(PPC_TLBIEL(%0, %4, %3, %2, %1)
+> On 4/22/19 8:49 PM, Masahiro Yamada wrote:
+> > This prepares to move CONFIG_OPTIMIZE_INLINING from x86 to a common
+> > place. We need to eliminate potential issues beforehand.
+> >
+> > If it is enabled for s390, the following error is reported:
+> >
+> > In file included from arch/s390/crypto/des_s390.c:19:
+> > ./arch/s390/include/asm/cpacf.h: In function 'cpacf_query':
+> > ./arch/s390/include/asm/cpacf.h:170:2: warning: asm operand 3 probably doesn't match constraints
+> >    asm volatile(
+> >    ^~~
+> > ./arch/s390/include/asm/cpacf.h:170:2: error: impossible constraint in 'asm'
+> >
+>
+> This also seems to still be broken, again with gcc 9.1.1
+>
+> BUILDSTDERR: In file included from arch/s390/crypto/prng.c:29:
+> BUILDSTDERR: ./arch/s390/include/asm/cpacf.h: In function 'cpacf_query_func':
+> BUILDSTDERR: ./arch/s390/include/asm/cpacf.h:170:2: warning: asm operand 3 probably doesn't match constraints
+> BUILDSTDERR:   170 |  asm volatile(
 > BUILDSTDERR:       |  ^~~
-> BUILDSTDERR: arch/powerpc/mm/book3s64/radix_tlb.c:104:2: error: impossible constraint in 'asm'
-> BUILDSTDERR: make[3]: *** [scripts/Makefile.build:279: arch/powerpc/mm/book3s64/radix_tlb.o] Error 1
-> BUILDSTDERR: make[2]: *** [scripts/Makefile.build:489: arch/powerpc/mm/book3s64] Error 2
-> BUILDSTDERR: make[1]: *** [scripts/Makefile.build:489: arch/powerpc/mm] Error 2
-
-Thanks for the report.
-
-Does this work for you?
+> BUILDSTDERR: ./arch/s390/include/asm/cpacf.h:170:2: error: impossible constraint in 'asm'
+>
+> I realized we're still carrying a patch to add -fno-section-anchors
+> but it's a similar failure to powerpc.
 
 
-diff --git a/arch/powerpc/mm/book3s64/radix_tlb.c
-b/arch/powerpc/mm/book3s64/radix_tlb.c
-index 4d841369399f..9a6befdd5e74 100644
---- a/arch/powerpc/mm/book3s64/radix_tlb.c
-+++ b/arch/powerpc/mm/book3s64/radix_tlb.c
+Christophe had already pointed out potential issues for "i" constraint,
+and I have fixups in hand:
 
-@@ -239,7 +239,7 @@ static inline void fixup_tlbie_lpid(unsigned long lpid)
- /*
-  * We use 128 set in radix mode and 256 set in hpt mode.
-  */
--static inline void _tlbiel_pid(unsigned long pid, unsigned long ric)
-+static __always_inline void _tlbiel_pid(unsigned long pid, unsigned long ric)
- {
-        int set;
+See
+https://lkml.org/lkml/2019/5/3/459
 
 
+My plan was to send it after all of my base patches
+were merged.
 
+This s390 cparf.h is included in the TODO list.
 
---
+Will fix soon.
+
+Thanks.
+
+-- 
 Best Regards
 Masahiro Yamada
 
