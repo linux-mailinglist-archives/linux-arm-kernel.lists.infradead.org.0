@@ -2,52 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1FE69214B9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 09:44:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33231214CC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 17 May 2019 09:50:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/MVhNE1iRFLmLk9+9u/cUDvmpm34IORchrEy1S8fA6c=; b=SPW9JOiXkgjTAby4RJdY+erb0
-	YlOSef56CefXx3Xrt9pQc16lX/EEHjxkPXaaQmP4KX97agnFkik3H+AntJcUZRF1iH5NDj+qTxbX1
-	6NLolgNtmJfbN0WekU6h0a41RebqWBeNATnOSnPG+wzpzuIhHMaLCTIW0U8PGwdZB2BiFCs8f3Yg5
-	gf+P0SXRCvR+xdtJUsZoACkfGurykgcClNga2KX80h+/M11D8PGuvEu4nJfiE78fz5owiN2SY1A5P
-	zcepGDDlzX8wABXnBBbe2gbjjNKXvyNXhuY3oEFLuALqSzQ5Zc2lRGxpiQsFEykARe+Px5j67rbwO
-	D/ZfdZXsQ==;
+	 bh=N7CmqdKxvvl+Ot1FeC3aCYXn8smADf4eRH9I10cmwuI=; b=uD3pIZuwUn6bivcqcTGAn84DX
+	vgI39C4xbFFN5FOXScF3GKcfLWZXvf9FuEQCgoJLH7Cx1saY8plvzTZR/8WoOIt6hDAB/iiy4gEkx
+	n47VRwcSTzoo0plQsPC/3rlVZDFWxe8bMoiLxRj4/kg+A0CMYqKd13UTQ2FbPbNjP2hpRU9uPLRXB
+	WASX1TQzQ4X1XWk7TJkUJh90Ki0cTLQL5Gnwp1e6uEG/+FHKL7SOgoS3rU8/bQrqJSJnz3sLoQpE4
+	DNKrTuHnp8ZxkUzZHDCX1EFtnafDwcagPBuESMVhbd21qqU3df1xR5As3n9UPrmzKaTqHLAU0Su5i
+	RwM6Ro0fg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRXXD-0000sA-Kw; Fri, 17 May 2019 07:44:07 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1hRXd7-00048d-Vm; Fri, 17 May 2019 07:50:13 +0000
+Received: from mout.kundenserver.de ([212.227.17.10])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRXX5-0000rX-T7
- for linux-arm-kernel@lists.infradead.org; Fri, 17 May 2019 07:44:01 +0000
-X-Originating-IP: 80.215.154.25
-Received: from localhost (unknown [80.215.154.25])
- (Authenticated sender: maxime.ripard@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 37CA020009;
- Fri, 17 May 2019 07:43:51 +0000 (UTC)
-Date: Fri, 17 May 2019 09:43:50 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Yangtao Li <tiny.windzz@gmail.com>
-Subject: Re: [PATCH v2 0/2] add thermal driver for h6
-Message-ID: <20190517074350.m4wtxn5rgiqkjgnz@flea>
-References: <20190516172633.12607-1-tiny.windzz@gmail.com>
+ id 1hRXcz-0002w6-Op; Fri, 17 May 2019 07:50:07 +0000
+Received: from [192.168.178.167] ([109.104.37.130]) by
+ mrelayeu.kundenserver.de (mreue108 [212.227.15.183]) with ESMTPSA (Nemesis)
+ id 1MAwTn-1hYOAy3Hzt-00BN1q; Fri, 17 May 2019 09:49:53 +0200
+Subject: Re: [PATCH v2] Staging: bcm2835-camera: Prefer kernel types
+To: Madhumitha Prabakaran <madhumithabiw@gmail.com>, eric@anholt.net,
+ gregkh@linuxfoundation.org, f.fainelli@gmail.com, rjui@broadcom.com,
+ sbranden@broadcom.com, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ devel@driverdev.osuosl.org, linux-kernel@vger.kernel.org
+References: <20190516213340.9311-1-madhumithabiw@gmail.com>
+From: Stefan Wahren <stefan.wahren@i2se.com>
+Message-ID: <bf9d2354-4ba6-bc18-841f-79ad75e6d911@i2se.com>
+Date: Fri, 17 May 2019 09:50:05 +0200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190516172633.12607-1-tiny.windzz@gmail.com>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <20190516213340.9311-1-madhumithabiw@gmail.com>
+Content-Language: de-DE
+X-Provags-ID: V03:K1:5vRoIj7Qja7sHTo/eTuJyaMrKZswD7CC0dePgB/jan/opZcO5fi
+ 2AxCxBwblWgaxK4pmLJuaq4/kOigN4/CdB8CzWAgCS3XhA9bKcS8xrcdIvoZwV9y1zRRAJa
+ yLDsIdmHDEPG8tJ2TvxwuRuZ92NGjM1s2CI7qwJg9QTJXu2eWKVIPFl2OTzP1aQTCRlQ3Wl
+ I1/nrPVaflIUqTWFtGvxg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:poAiXjetLp8=:Yr5UiP7twLxtvNUfdfsjWz
+ kGhcNLpNAjigYCRlaYnIUZ2fCPSyKH6pRx8yIgziJG/JaYrBHwKjxpWnYyBj0Le5ewTz4kQhO
+ NEodSeLH90X+Tf7yiHZkWZO8H0ezxBKIl25Khko4DWbiEKw6yichg8cJ60ELBRrxTRsy4BPWW
+ 3LtLPzYA+iyTII0B4FkJZBqp4+VCRp8xqa3dQoMRlRSLFMs/V+U7xvqlacCSf/9K7QMmzYpRt
+ Uw5HEV2pxlCV6VFlDWaTkcJQV9m500bMeUrNlFUuLtTFTa12UDxhjEIdsTeF+pNxG6LiEJfyC
+ iBekcSsX5WBbj3G0MW9htNrgs/J8P+gQWFlxv5p+se/D0a0AejU4thkHDoj9K8XjGziXRglQl
+ CYeT1VkRyr0Yx22/7VNZm75RBSuTiy4RatpBdRvMtjbst4i5ZY8VXedmrMd8/0zlloo+Ye/T0
+ vsjSkBPpTR5L5JU0K6y9psUyyNlu3H31m2sZB2rVA7SDhcJ5zekdREITGC917RNgLobf3RT0j
+ ZmRgNE2lJixrYwX2FeI1iiXf9ZtVd3z8NUduqwV5B08JLIYffnt+Co6glitm2bWpzudZSIpx1
+ hnYEQSTUbb6tFbtWFXIDlRHlOabq65ZuiYjmtdmnePGT798me6MpBeo+raVCQjgicwaAbBcs0
+ qPBUlZvD2fi3P7hs0xx/5UY23EsYkG7V8YwlJFGyGwesPN2WLUOy8w0EB0c44pmRtLtFYcoD1
+ r0oJKSqcbcZZo/aTH3KGQG4Q6rea+3t56Y8uBfm40w2hV0SAbC5OtjCHkAM=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190517_004400_089791_8E9E9B56 
-X-CRM114-Status: UNSURE (   8.77  )
+X-CRM114-CacheID: sfid-20190517_005006_117000_366434E7 
+X-CRM114-Status: UNSURE (   8.68  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.10 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.10 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -61,68 +83,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
- gregkh@linuxfoundation.org, linus.walleij@linaro.org,
- daniel.lezcano@linaro.org, linux-kernel@vger.kernel.org, edubezval@gmail.com,
- wens@csie.org, robh+dt@kernel.org, Jonathan.Cameron@huawei.com,
- mchehab+samsung@kernel.org, rui.zhang@intel.com, paulmck@linux.ibm.com,
- davem@davemloft.net, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============2568750603475094123=="
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Am 16.05.2019 um 23:33 schrieb Madhumitha Prabakaran:
+> Fix the warning issued by checkpatch
+> Prefer kernel type 'u32' over 'uint32_t'.
+> Along with that include a blank line after a declaration
+> to maintain Linux kernel coding style.
+>
+> Signed-off-by: Madhumitha Prabakaran <madhumithabiw@gmail.com>
 
---===============2568750603475094123==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="uiqnaa7feozmkfnb"
-Content-Disposition: inline
+Acked-by: Stefan Wahren <stefan.wahren@i2se.com>
 
-
---uiqnaa7feozmkfnb
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-Hi,
-
-On Thu, May 16, 2019 at 01:26:31PM -0400, Yangtao Li wrote:
-> This patchset supprt H6 thermal controller.
-
-The discussion is still ongoing on the v1, it would have been better
-to wait a bit on it to settle before sending a new version.
-
-Anyway, some comment made there still apply.
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---uiqnaa7feozmkfnb
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXN5mNgAKCRDj7w1vZxhR
-xdGaAQDw2HatyDwe99md5xjAb+SPPeYer/Zb4obBMYGlhQuO9AEAkn/HI2qNYsxw
-/7OQTPnikOxNibnfTB1JZq1yrq3HeAs=
-=fhoH
------END PGP SIGNATURE-----
-
---uiqnaa7feozmkfnb--
-
-
---===============2568750603475094123==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2568750603475094123==--
-
