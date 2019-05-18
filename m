@@ -2,62 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE4EF2244D
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 May 2019 19:44:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 246EB224FF
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 May 2019 23:01:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=kloiuJaVWW8WAWjhapbv4eP8qh8yxBFmi1u1IM8nPkM=; b=ef3PQwoJK0c0oH
-	sMygu4xKV/zwL9ArIEt2rIZN8rZUXBK8LXZ72QFBPik/GU9ScF4SOQRqWjUd+unOQCIhiTZH3kXaX
-	FKDQko5vkBBeP5wBwMPupAt+hfaLvok8TTBTTMYlpXGh+CXqwqgp9xSZo4TgG4EMOCLcnQycK6XzH
-	Cst2auXbsSXrA0eyHlpNb4jNa2/sLKbFwZSGHoVBC1hHK5kjowpol/6rWLJlD5osKBSy3KaFj4tsP
-	EQbOmhezv8ZMEJ7hoqTgjdW0F7ASKXmhCe5gpBhUcPy5ZDTWH2rXNbz9WpLEbCQi462aWL5lNTJDE
-	grnQd+yYUgRV3p3Ft/TA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yPrgnxA5xEFzq92vwkXS7wa4jdoku2XDTq+pbo57Cfc=; b=UfA5I+/hcky4Id
+	sKcbJM0UZt0UjC8TVd9phsD2rsMYUnxRKz+TCfuUQRmZcW3qFzov1qom4X+1NuT9RDiqRtGlwJxof
+	h5UjalZ/8qC2YFtNRp/IlQIJ1vMnAl0hiHbdkL8asQCN/wtPJDd1nzTw97vnBUL8hseMR6Rp5tqzO
+	fp7bI2lCOIcYkzINqu6fzxW4HIPAS/EgTTFsk2ZOBfgBYOocv1t8bDMuhscTKRcWVud5SfXpAva3n
+	8DFgulpjyCpPEeCZEmfyV2Subg4YChKJsuRn0F501y5T2BVkDEN5+yS8ohiPEI00N4Bc+RZwYCVG/
+	S0z7JytO3Zyt+ITTSLgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hS3Ns-0001EE-RY; Sat, 18 May 2019 17:44:36 +0000
-Received: from mailoutvs50.siol.net ([185.57.226.241] helo=mail.siol.net)
+	id 1hS6SD-0002t1-Gg; Sat, 18 May 2019 21:01:17 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hS3Nj-0001DP-VI
- for linux-arm-kernel@lists.infradead.org; Sat, 18 May 2019 17:44:30 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Zimbra) with ESMTP id 3DCC6520A8D;
- Sat, 18 May 2019 19:44:22 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at psrvmta12.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta12.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id GueISRJvbvib; Sat, 18 May 2019 19:44:21 +0200 (CEST)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Zimbra) with ESMTPS id C2B30520939;
- Sat, 18 May 2019 19:44:21 +0200 (CEST)
-Received: from localhost.localdomain (cpe-86-58-52-202.static.triera.net
- [86.58.52.202]) (Authenticated sender: 031275009)
- by mail.siol.net (Zimbra) with ESMTPSA id F058D520A8D;
- Sat, 18 May 2019 19:44:20 +0200 (CEST)
-From: Jernej Skrabec <jernej.skrabec@siol.net>
-To: paul.kocialkowski@bootlin.com,
-	maxime.ripard@bootlin.com
-Subject: [PATCH] media: cedrus: Allow different mod clock rates
-Date: Sat, 18 May 2019 19:44:15 +0200
-Message-Id: <20190518174415.17795-1-jernej.skrabec@siol.net>
-X-Mailer: git-send-email 2.21.0
+ id 1hS6S6-0002s9-Sk
+ for linux-arm-kernel@lists.infradead.org; Sat, 18 May 2019 21:01:12 +0000
+Received: by mail-lj1-x241.google.com with SMTP id j24so9210117ljg.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 18 May 2019 14:01:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=GjVQ36VwzFJ7223GVX+W1QUwbbB9XFPvg3hASkJmDUE=;
+ b=kRi08ubsnM+ykN86OGVCMysxcVyFgiHLV0b9Fr5ew9x6FdqJsy8RjcIcHaTPXgYKmm
+ d9J29YZ8wKZ/wqisIZCggD2OTJlDFI4EqxAo5uyb91meiXhXpkATPV+mqDRW3cmyPHkX
+ 3XbgcF7MFCIgtbuwm+ReN7wbA62uj7EOJoMwVYslAIsKcLC7kxKGjMpkrLm8pFn0WumH
+ oUnqD/c5nHDKWSPTpB74hAfowS5FbTi6RLxKw1bqw7mIUlNbTJJQQf/H3gdEnOrDa1uE
+ qZc0C0sQ7lBMw6/Ew01qw9Jk2fXF8lBI1M64m//I24dV9uzG2Ydm6ayj7oXjhOe62ZLV
+ 9NDg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=GjVQ36VwzFJ7223GVX+W1QUwbbB9XFPvg3hASkJmDUE=;
+ b=eppSiwombV7ub8Ou6F/c4YH5KMKUQgQtv4RPhb63iRS/e4Geyb+3lO3GI3vmcK/dDN
+ PbymSwzDVq//gt50S1uwI6MnIXXSaYfkzHStdxrf7VqCXO1sj5MUaSSDAj9sUHiuHTUF
+ tKl3L7FmI/UJ+wGujGZh9rPp2ErMNju6rnm2LlgT/WiL3gelHZ3lAjbdWXhG41jjn6T9
+ eRkhfgr5XP32xAh+moVusxpKPj/RIFdDXTGscCxJfBsDzbWHo7ZHDgXIpPfjFzZApU/u
+ qygbKp5duJ4ieT20lhcJuAp4qU9uQrFGyI+M6G7ATzh9UEK87jru+tkxt4kW94A4D5aN
+ xgFw==
+X-Gm-Message-State: APjAAAWhXuU1XO9MQZXYfMKKMX67tL4AmRkwT5p4+n23mDQfQxES40GJ
+ d5m+zXjGdCgryKFnuzUGU0Q1eezn+KhsEmlY+bA=
+X-Google-Smtp-Source: APXvYqz5V1Li5FC7AKD0AQty1G5o21b08C9dVNe188+/PFCqLvAreMM45t6P1vCeSAEyPNJZMmZrxAYvskKc+t8Jt58=
+X-Received: by 2002:a2e:1f02:: with SMTP id f2mr31672771ljf.86.1558213266061; 
+ Sat, 18 May 2019 14:01:06 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190518173852.GA1191@hari-Inspiron-1545>
+In-Reply-To: <20190518173852.GA1191@hari-Inspiron-1545>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Sat, 18 May 2019 18:00:56 -0300
+Message-ID: <CAOMZO5AjtnPhPsQqTqb+FgyEU7kVp+i+6M1AOmwm9XwzTE9rPg@mail.gmail.com>
+Subject: Re: [PATCH] staging: media: imx: fix Unneeded variable: "ret". Return
+ "0"
+To: Hariprasad Kelam <hariprasad.kelam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190518_104428_175508_3AB0A321 
-X-CRM114-Status: GOOD (  10.48  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190518_140110_931415_3231C956 
+X-CRM114-Status: UNSURE (   7.77  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.241 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -69,119 +94,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, wens@csie.org, hverkuil-cisco@xs4all.nl,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: "open list:STAGING SUBSYSTEM" <devel@driverdev.osuosl.org>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Steve Longerbeam <slongerbeam@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ linux-media <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some VPU variants may run at higher clock speeds. They actually need
-extra speed to be capable of decoding more complex codecs like HEVC or
-bigger image sizes (4K).
+On Sat, May 18, 2019 at 2:38 PM Hariprasad Kelam
+<hariprasad.kelam@gmail.com> wrote:
+>
+> fix below warning reported by  coccichec
+>
+> drivers/staging/media/imx/imx-media-capture.c:617:5-8: Unneeded
+> variable: "ret". Return "0" on line 630
+>
+> Signed-off-by: Hariprasad Kelam <hariprasad.kelam@gmail.com>
 
-Expand variant structure with mod_rate information.
+Reviewed-by: Fabio Estevam <festevam@gmail.com>
 
-Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
----
- drivers/staging/media/sunxi/cedrus/cedrus.c    | 11 ++++++++---
- drivers/staging/media/sunxi/cedrus/cedrus.h    |  1 +
- drivers/staging/media/sunxi/cedrus/cedrus_hw.c |  2 +-
- drivers/staging/media/sunxi/cedrus/cedrus_hw.h |  2 --
- 4 files changed, 10 insertions(+), 6 deletions(-)
-
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.c b/drivers/staging/media/sunxi/cedrus/cedrus.c
-index d0429c0e6b6b..9349a082a29c 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus.c
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus.c
-@@ -369,36 +369,41 @@ static int cedrus_remove(struct platform_device *pdev)
- }
- 
- static const struct cedrus_variant sun4i_a10_cedrus_variant = {
--	/* No particular capability. */
-+	.mod_rate	= 320000000,
- };
- 
- static const struct cedrus_variant sun5i_a13_cedrus_variant = {
--	/* No particular capability. */
-+	.mod_rate	= 320000000,
- };
- 
- static const struct cedrus_variant sun7i_a20_cedrus_variant = {
--	/* No particular capability. */
-+	.mod_rate	= 320000000,
- };
- 
- static const struct cedrus_variant sun8i_a33_cedrus_variant = {
- 	.capabilities	= CEDRUS_CAPABILITY_UNTILED,
-+	.mod_rate	= 320000000,
- };
- 
- static const struct cedrus_variant sun8i_h3_cedrus_variant = {
- 	.capabilities	= CEDRUS_CAPABILITY_UNTILED,
-+	.mod_rate	= 402000000,
- };
- 
- static const struct cedrus_variant sun50i_a64_cedrus_variant = {
- 	.capabilities	= CEDRUS_CAPABILITY_UNTILED,
-+	.mod_rate	= 402000000,
- };
- 
- static const struct cedrus_variant sun50i_h5_cedrus_variant = {
- 	.capabilities	= CEDRUS_CAPABILITY_UNTILED,
-+	.mod_rate	= 402000000,
- };
- 
- static const struct cedrus_variant sun50i_h6_cedrus_variant = {
- 	.capabilities	= CEDRUS_CAPABILITY_UNTILED,
- 	.quirks		= CEDRUS_QUIRK_NO_DMA_OFFSET,
-+	.mod_rate	= 600000000,
- };
- 
- static const struct of_device_id cedrus_dt_match[] = {
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.h b/drivers/staging/media/sunxi/cedrus/cedrus.h
-index c57c04b41d2e..25ee1f80f2c7 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus.h
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus.h
-@@ -94,6 +94,7 @@ struct cedrus_dec_ops {
- struct cedrus_variant {
- 	unsigned int	capabilities;
- 	unsigned int	quirks;
-+	unsigned int	mod_rate;
- };
- 
- struct cedrus_dev {
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_hw.c b/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
-index fbfff7c1c771..60406b2d4595 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
-@@ -236,7 +236,7 @@ int cedrus_hw_probe(struct cedrus_dev *dev)
- 		goto err_sram;
- 	}
- 
--	ret = clk_set_rate(dev->mod_clk, CEDRUS_CLOCK_RATE_DEFAULT);
-+	ret = clk_set_rate(dev->mod_clk, variant->mod_rate);
- 	if (ret) {
- 		dev_err(dev->dev, "Failed to set clock rate\n");
- 
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_hw.h b/drivers/staging/media/sunxi/cedrus/cedrus_hw.h
-index b43c77d54b95..27d0882397aa 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus_hw.h
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus_hw.h
-@@ -16,8 +16,6 @@
- #ifndef _CEDRUS_HW_H_
- #define _CEDRUS_HW_H_
- 
--#define CEDRUS_CLOCK_RATE_DEFAULT	320000000
--
- int cedrus_engine_enable(struct cedrus_dev *dev, enum cedrus_codec codec);
- void cedrus_engine_disable(struct cedrus_dev *dev);
- 
--- 
-2.21.0
-
+Thanks
 
 _______________________________________________
 linux-arm-kernel mailing list
