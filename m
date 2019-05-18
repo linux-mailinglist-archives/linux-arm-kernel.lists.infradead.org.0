@@ -2,135 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5287A2219C
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 May 2019 06:25:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4C8D221B4
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 18 May 2019 07:18:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jVECVtshahsgVlupxOb9q+h5DYYriw2FF+U+cYjTZro=; b=ednc6H2dNaKfYv
-	G1Jf5ZTM0kXYGJ/ZqcgV4K+ytxXSh8SNK1Ypc2cO81dWYxC/t1hc9Nn8QZECP/DrLk7oN+dgIbEDy
-	P/E6eAwQOjwPcdZAUEIEHAh3wF9o3oQMmYylGlMzQQ4yuVMa8noa/EqpOgcC+N2pbJnsa7GGwN3l0
-	fYWGR4M1Rhg3MmyWeAAr6VA+fiF+aooVlowRqrfUaTjx4EXs9novHd0j/jtLJ3BZD7JSYAlEDbj8T
-	pZ/IHtKZkb29LDX0WVJvOK+9UGxTZ8ZgqKvLh4zo2+Qbdt7EUTklgMZ6PTZG9G2O1IsrE71EEbw/J
-	It/oEDw1kS7sDMOwqKDQ==;
+	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=insXZ6Y4CIfWy80TQtfC/mw9LucWeRhCptXLKy26c6A=; b=ZjnYFs/WkNLq27
+	bVHR15eJJZm/O1eMdovsh9YYWoFrx2BX/a/nuKBvgJbxoFrPoiy5ulQoJ71J3P8/IHT1MwEBRngk1
+	BQrfK33UkcKq2l6Plg5jif1+ip/uoZ/NwJSnr94QfvPFSNucLZGgcNaeRYYMyNohYlFVL/sEeSIMX
+	oJj3Ph5yljU3AtD2VeeMKsUs+2WzzzmpcuO4gVVNiHHMlBb41C5BjTrZH4dUvRJBAdmn3tktbpKqj
+	WSzuuYXVB97ZRm77Go80/91n1HnIl7SkalKy1wYXeSfoAOn69j6yILcEmFlvHXh3gSQhBInmbhrU6
+	+SmGeIRCf6H3q8IKjAtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRqu9-0003QY-I4; Sat, 18 May 2019 04:25:05 +0000
-Received: from mx0b-0016f401.pphosted.com ([67.231.156.173])
+	id 1hRrkF-0002BH-Cm; Sat, 18 May 2019 05:18:55 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRqu0-0003Pj-LK
- for linux-arm-kernel@lists.infradead.org; Sat, 18 May 2019 04:24:58 +0000
-Received: from pps.filterd (m0045851.ppops.net [127.0.0.1])
- by mx0b-0016f401.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x4I4K4oc021126; Fri, 17 May 2019 21:24:47 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
- h=from : to : cc :
- subject : date : message-id : references : in-reply-to : content-type :
- content-id : content-transfer-encoding : mime-version; s=pfpt0818;
- bh=y1QCWpZuTmXMBKO6gpiTRMOFitJY070kzSvDaMh9c5M=;
- b=qF14xO1Wu1z8BH7E8x5/xPikyU8k3M3Q2TjW8Fmf1iAWXKsmfT2n47DnMH1Qj6KdxaIv
- 1FOJwGN36NV+y04VOhql48bOUo0B1fWX5vsK6EREkv5hX6k2YB/9KH7SBQ9DZn2pBcMc
- sq9zyhLLvB8NpwcR5MJFF/5VoAcmZmw6VTeW8fcAbgIFxK3nqhocql5TAB/6CNLZgy49
- K3mmjpjJGoJu3jZDrWxvbv6+ZAfNC5pooFuHQZ6jDbaDL7pfWcKILi6srxJ/rhYK0Z0i
- l7dyc5vc26gSgkbG0Gng4XAMROwaex3rK4Bj4xT6XeEr5TrJaYTOgm6bpywwM+4kMRO1 mw== 
-Received: from sc-exch01.marvell.com ([199.233.58.181])
- by mx0b-0016f401.pphosted.com with ESMTP id 2shv92kr5t-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
- Fri, 17 May 2019 21:24:47 -0700
-Received: from SC-EXCH03.marvell.com (10.93.176.83) by SC-EXCH01.marvell.com
- (10.93.176.81) with Microsoft SMTP Server (TLS) id 15.0.1367.3; Fri, 17 May
- 2019 21:24:45 -0700
-Received: from NAM03-BY2-obe.outbound.protection.outlook.com (104.47.42.50) by
- SC-EXCH03.marvell.com (10.93.176.83) with Microsoft SMTP Server
- (TLS) id
- 15.0.1367.3 via Frontend Transport; Fri, 17 May 2019 21:24:45 -0700
+ id 1hRrk7-0002Ab-ST
+ for linux-arm-kernel@lists.infradead.org; Sat, 18 May 2019 05:18:49 +0000
+Received: by mail-wr1-x443.google.com with SMTP id m3so8919646wrv.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 17 May 2019 22:18:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=marvell.onmicrosoft.com; s=selector2-marvell-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=y1QCWpZuTmXMBKO6gpiTRMOFitJY070kzSvDaMh9c5M=;
- b=SiMcBe4uzhsiLSDvWDcNBN8g7e3rWJsVByJB+tYqssIjAIIoh52S3bkSZyZLZ1L1Rcndt6ZppAzPLavOkrVcr5n7Keoc7UWZqsx2pCGPNOu7QvVSrYJKmFj/O+BIJRjJTgHbFwY8YQKJbiX7PmCcaG5TcBxIEB+KhiXwi7IDeTk=
-Received: from CY4PR1801MB1942.namprd18.prod.outlook.com (10.171.255.33) by
- CY4PR1801MB1989.namprd18.prod.outlook.com (10.171.255.142) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1900.17; Sat, 18 May 2019 04:24:43 +0000
-Received: from CY4PR1801MB1942.namprd18.prod.outlook.com
- ([fe80::f4b5:9677:2811:41f4]) by CY4PR1801MB1942.namprd18.prod.outlook.com
- ([fe80::f4b5:9677:2811:41f4%7]) with mapi id 15.20.1900.010; Sat, 18 May 2019
- 04:24:43 +0000
-From: Jayachandran Chandrasekharan Nair <jnair@marvell.com>
-To: Will Deacon <will.deacon@arm.com>
-Subject: Re: [RFC] Disable lockref on arm64
-Thread-Topic: [RFC] Disable lockref on arm64
-Thread-Index: AQHVDTGeOFsW4ymLfEiMCmPnsI63vA==
-Date: Sat, 18 May 2019 04:24:43 +0000
-Message-ID: <20190518042424.GA28517@dc5-eodlnx05.marvell.com>
-References: <20190429145159.GA29076@hc>
- <CAHk-=wjPqcPYkiWKFc=R3+18DXqEhV+Nfbo=JWa32Xp8Nze67g@mail.gmail.com>
- <20190502082741.GE13955@hc>
- <CAHk-=wjmtMrxC1nSEHarBn8bW+hNXGv=2YeAWmTw1o54V8GKWA@mail.gmail.com>
- <20190502231858.GB13168@dc5-eodlnx05.marvell.com>
- <CAHk-=wiEahkwDXpoy=-SzJHNMRXKVSjPa870+eKKenufhO_Hgw@mail.gmail.com>
- <20190506061100.GA8465@dc5-eodlnx05.marvell.com>
- <20190506181039.GA2875@brain-police>
-In-Reply-To: <20190506181039.GA2875@brain-police>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: BYAPR05CA0027.namprd05.prod.outlook.com
- (2603:10b6:a03:c0::40) To CY4PR1801MB1942.namprd18.prod.outlook.com
- (2603:10b6:910:7a::33)
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [199.233.59.128]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: c2cdd682-2e64-4204-e083-08d6db48c079
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(2017052603328)(7193020);
- SRVR:CY4PR1801MB1989; 
-x-ms-traffictypediagnostic: CY4PR1801MB1989:
-x-microsoft-antispam-prvs: <CY4PR1801MB1989423AE70737FB3F878676A6040@CY4PR1801MB1989.namprd18.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 0041D46242
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(376002)(346002)(396003)(366004)(39860400002)(136003)(199004)(189003)(66556008)(66476007)(66946007)(73956011)(64756008)(66446008)(6116002)(3846002)(229853002)(2906002)(86362001)(5660300002)(6916009)(68736007)(1076003)(66066001)(53936002)(305945005)(8676002)(26005)(6436002)(8936002)(11346002)(478600001)(486006)(446003)(186003)(6486002)(6512007)(71190400001)(71200400001)(81166006)(81156014)(6246003)(52116002)(14444005)(25786009)(14454004)(102836004)(316002)(256004)(7736002)(476003)(76176011)(33656002)(99286004)(54906003)(4326008)(6506007)(386003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:CY4PR1801MB1989;
- H:CY4PR1801MB1942.namprd18.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: marvell.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: BpEglSbQ0nif9+5dbdgz1y2XVeFBaBrCotTK/ediHEA3rsQUVOwNWG6jF1vn4ohNCrqDsiiyvrge+VA0kHSxEOgyMA5yl1/mbOnvYfC1BQ/0Mg2opaHBmGH0rDeNxr9dKjrYq7yE/lnV8xprx539DQgsvjP1hjff9sKn/HJjPEI5wk8ukYSY0lL5tGV2CJ5RaEbEf6XyUuza1KjUHZoyZ0+vwexgwpKvy4DVnqU/J14zDC8yNIlLfzq6UwYWsws6Qy/+80pdykjvvj6ibZHRZCQ78PVLoBg1yeDmrsVYGkKbaAVknDQxKYuDUMu6rSZ8F74VbGKLwSc60Tm/kg6JvHoTVMIjLwIYKvpsUr2RTRK45fbhQ0eOhIjrPKpQEpxCruwEKYqy+IaY49GWEop9xXqB9kcMurZYXnz9Kv3AFsU=
-Content-ID: <06B7D208A28DEC478C224F6259B6479C@namprd18.prod.outlook.com>
+ d=kernelci-org.20150623.gappssmtp.com; s=20150623;
+ h=message-id:date:mime-version:content-transfer-encoding:subject:to
+ :from:cc; bh=FdTczlBBVa9u+WV7Y3o/VG0d13GnIMDeCYtn2Nanml4=;
+ b=F1zfWMdRgS6aonOqLALhrSo+SyB4+e0YJqXqynv/i3/qPBQf/XXDnhPbqBKxYRQZiz
+ S8ujokRw+sZ8gpEG0r/sqzCtbRLMEWbnAOWCRP/YvIVR8rdMH22YtSsZB8HGQFmDrbGd
+ MjKCAMONJPBnABOtf9XTXbB8QyJCzD30yc9wGBT2syOFI9Mx/wVMlR/kl72NNslvQkc0
+ z7onZq/tS9DFecIgbdFccvdkDKg7l1PIdSXBqMCmCG2+rsAvFL+aRCsJhrjAZYjG9zth
+ JrCM8prGC6/8wXVYk1+UHv2GKpnyZpJtx8vJdZ1t8xKyJKWKz0goQ2ksTil2qJsXAKAM
+ AU1A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:message-id:date:mime-version
+ :content-transfer-encoding:subject:to:from:cc;
+ bh=FdTczlBBVa9u+WV7Y3o/VG0d13GnIMDeCYtn2Nanml4=;
+ b=cqORWh9cKgAXF3Slv2Je1iRWzEBj9+hs3ZXQExD9/SCRP3MSI4GXQ3KFrLBnEAvoyb
+ RcToNx5Ng76IDG6Aoj8iaJb/2sglTXaYUeHOS2TRZDKbyWlEYW+iPzOsERXiPo/6USuL
+ wsS89yQeurEdkSS+IiFiH5vJYZlxU1J+n+PBEoQ6fouw3ilSnxro11OED2rl78HRCFVO
+ Ztz3gWaDFrU9A/FZQqwgQBguxY9ObigmRhGKGu6kmuHcH4OH0nGjAw4e52Cll4Gf4/W9
+ qRJkxMNkxnrhCJZYG4O/9n42yjPO5xYHiapQkqsPwtv5eW4WCq8FMuA5MPgJbkoytLzs
+ GmSg==
+X-Gm-Message-State: APjAAAXnakw4e8REtHT3IOWA+vI510lm3NSiEE1f7lDBEBxrFDQl2z0s
+ v5fmHsP/UKOzmVLXH2wVIfGvQQ==
+X-Google-Smtp-Source: APXvYqyKs/VAHBOML+lvp5PP0kJwVtEuyjECXDM+qa9/C+RbEsVzF763x/DTJy2CzXp5JXcWVGKPwQ==
+X-Received: by 2002:a5d:4e50:: with SMTP id r16mr11753300wrt.197.1558156725277; 
+ Fri, 17 May 2019 22:18:45 -0700 (PDT)
+Received: from [148.251.42.114] ([2a01:4f8:201:9271::2])
+ by smtp.gmail.com with ESMTPSA id r3sm9672144wrn.5.2019.05.17.22.18.44
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 17 May 2019 22:18:44 -0700 (PDT)
+Message-ID: <5cdf95b4.1c69fb81.808ef.7543@mx.google.com>
+Date: Fri, 17 May 2019 22:18:44 -0700 (PDT)
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: c2cdd682-2e64-4204-e083-08d6db48c079
-X-MS-Exchange-CrossTenant-originalarrivaltime: 18 May 2019 04:24:43.6812 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 70e1fb47-1155-421d-87fc-2e58f638b6e0
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR1801MB1989
-X-OriginatorOrg: marvell.com
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-18_03:, , signatures=0
+X-Kernelci-Report-Type: bisect
+X-Kernelci-Tree: mainline
+X-Kernelci-Lab-Name: lab-baylibre
+X-Kernelci-Branch: master
+X-Kernelci-Kernel: v5.1-12505-g0ef0fd351550
+Subject: mainline/master boot bisection: v5.1-12505-g0ef0fd351550 on
+ meson-g12a-x96-max
+To: tomeu.vizoso@collabora.com, guillaume.tucker@collabora.com,
+ mgalka@collabora.com, Kevin Hilman <khilman@baylibre.com>,
+ Neil Armstrong <narmstrong@baylibre.com>, broonie@kernel.org,
+ matthew.hart@linaro.org, khilman@baylibre.com, enric.balletbo@collabora.com,
+ Jerome Brunet <jbrunet@baylibre.com>
+From: "kernelci.org bot" <bot@kernelci.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190517_212456_913822_B1567B09 
-X-CRM114-Status: GOOD (  20.09  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190517_221847_980718_41F67F66 
+X-CRM114-Status: UNSURE (   8.82  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [67.231.156.173 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -144,63 +100,154 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- Jan Glauber <jglauber@marvell.com>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 06, 2019 at 07:10:40PM +0100, Will Deacon wrote:
-> On Mon, May 06, 2019 at 06:13:12AM +0000, Jayachandran Chandrasekharan Nair wrote:
-> > Perhaps someone from ARM can chime in here how the cas/yield combo
-> > is expected to work when there is contention. ThunderX2 does not
-> > do much with the yield, but I don't expect any ARM implementation
-> > to treat YIELD as a hint not to yield, but to get/keep exclusive
-> > access to the last failed CAS location.
-> 
-> Just picking up on this as "someone from ARM".
-> 
-> The yield instruction in our implementation of cpu_relax() is *only* there
-> as a scheduling hint to QEMU so that it can treat it as an internal
-> scheduling hint and run some other thread; see 1baa82f48030 ("arm64:
-> Implement cpu_relax as yield"). We can't use WFE or WFI blindly here, as it
-> could be a long time before we see a wake-up event such as an interrupt. Our
-> implementation of smp_cond_load_acquire() is much better for that kind of
-> thing, but doesn't help at all for a contended CAS loop where the variable
-> is actually changing constantly.
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* This automated bisection report was sent to you on the basis  *
+* that you may be involved with the breaking commit it has      *
+* found.  No manual investigation has been done to verify it,   *
+* and the root cause of the problem may be somewhere else.      *
+* Hope this helps!                                              *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
-Looking thru the perf output of this case (open/close of a file from
-multiple CPUs), I see that refcount is a significant factor in most
-kernel configurations - and that too uses cmpxchg (without yield).
-x86 has an optimized inline version of refcount that helps
-significantly. Do you think this is worth looking at for arm64?
+mainline/master boot bisection: v5.1-12505-g0ef0fd351550 on meson-g12a-x96-max
+
+Summary:
+  Start:      0ef0fd351550 Merge tag 'for-linus' of git://git.kernel.org/pub/scm/virt/kvm/kvm
+  Details:    https://kernelci.org/boot/id/5cdf275859b514bb847a3628
+  Plain log:  https://storage.kernelci.org//mainline/master/v5.1-12505-g0ef0fd351550/arm64/defconfig+CONFIG_RANDOMIZE_BASE=y/gcc-8/lab-baylibre/boot-meson-g12a-x96-max.txt
+  HTML log:   https://storage.kernelci.org//mainline/master/v5.1-12505-g0ef0fd351550/arm64/defconfig+CONFIG_RANDOMIZE_BASE=y/gcc-8/lab-baylibre/boot-meson-g12a-x96-max.html
+  Result:     11a7bea17c9e arm64: dts: meson: g12a: add pinctrl support controllers
+
+Checks:
+  revert:     PASS
+  verify:     PASS
+
+Parameters:
+  Tree:       mainline
+  URL:        git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+  Branch:     master
+  Target:     meson-g12a-x96-max
+  CPU arch:   arm64
+  Lab:        lab-baylibre
+  Compiler:   gcc-8
+  Config:     defconfig+CONFIG_RANDOMIZE_BASE=y
+  Test suite: boot
+
+Breaking commit found:
+
+-------------------------------------------------------------------------------
+commit 11a7bea17c9e0a36daab934d83e15a760f402147
+Author: Jerome Brunet <jbrunet@baylibre.com>
+Date:   Mon Mar 18 10:58:45 2019 +0100
+
+    arm64: dts: meson: g12a: add pinctrl support controllers
+    
+    Add the peripheral and always-on pinctrl controllers to the g12a soc.
+    
+    Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
+    Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+    Signed-off-by: Kevin Hilman <khilman@baylibre.com>
+
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
+index abfa167751af..5e07e4ca3f4b 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
+@@ -104,6 +104,29 @@
+ 				#address-cells = <2>;
+ 				#size-cells = <2>;
+ 				ranges = <0x0 0x0 0x0 0x34400 0x0 0x400>;
++
++				periphs_pinctrl: pinctrl@40 {
++					compatible = "amlogic,meson-g12a-periphs-pinctrl";
++					#address-cells = <2>;
++					#size-cells = <2>;
++					ranges;
++
++					gpio: bank@40 {
++						reg = <0x0 0x40  0x0 0x4c>,
++						      <0x0 0xe8  0x0 0x18>,
++						      <0x0 0x120 0x0 0x18>,
++						      <0x0 0x2c0 0x0 0x40>,
++						      <0x0 0x340 0x0 0x1c>;
++						reg-names = "gpio",
++							    "pull",
++							    "pull-enable",
++							    "mux",
++							    "ds";
++						gpio-controller;
++						#gpio-cells = <2>;
++						gpio-ranges = <&periphs_pinctrl 0 0 86>;
++					};
++				};
+ 			};
  
-> Implementing yield in the CPU may generally be beneficial for SMT designs so
-> that the hardware resources aren't wasted when spinning round a busy loop.
+ 			hiu: bus@3c000 {
+@@ -150,6 +173,25 @@
+ 					clocks = <&xtal>, <&clkc CLKID_CLK81>;
+ 					clock-names = "xtal", "mpeg-clk";
+ 				};
++
++				ao_pinctrl: pinctrl@14 {
++					compatible = "amlogic,meson-g12a-aobus-pinctrl";
++					#address-cells = <2>;
++					#size-cells = <2>;
++					ranges;
++
++					gpio_ao: bank@14 {
++						reg = <0x0 0x14 0x0 0x8>,
++						      <0x0 0x1c 0x0 0x8>,
++						      <0x0 0x24 0x0 0x14>;
++						reg-names = "mux",
++							    "ds",
++							    "gpio";
++						gpio-controller;
++						#gpio-cells = <2>;
++						gpio-ranges = <&ao_pinctrl 0 0 15>;
++					};
++				};
+ 			};
+ 
+ 			sec_AO: ao-secure@140 {
+-------------------------------------------------------------------------------
 
-Yield is probably used in sub-optimal implementations of delay or wait.
-It is going to be different across multiple implementations and
-revisions (given the description in ARM spec). Having a more yielding(?)
-implementation would be equally problematic especially in the lockref
-case.
 
-> For this particular discussion (i.e. lockref), however, it seems as though
-> the cpu_relax() call is questionable to start with.
+Git bisection log:
 
-In case of lockref, taking out the yield/pause and dropping to queued
-spinlock after some cycles appears to me to be a better approach.
-Relying on the quality of cpu_relax() on the specific processor to
-mitigate against contention is going to be tricky anyway.
-
-We will do some more work here, but would appreciate any pointers
-based on your experience here.
-
-Thanks,
-JC
+-------------------------------------------------------------------------------
+git bisect start
+# good: [a455eda33faafcaac1effb31d682765b14ef868c] Merge branch 'linus' of git://git.kernel.org/pub/scm/linux/kernel/git/evalenti/linux-soc-thermal
+git bisect good a455eda33faafcaac1effb31d682765b14ef868c
+# bad: [0ef0fd351550130129bbdb77362488befd7b69d2] Merge tag 'for-linus' of git://git.kernel.org/pub/scm/virt/kvm/kvm
+git bisect bad 0ef0fd351550130129bbdb77362488befd7b69d2
+# bad: [89f4f128ea535acaabf7d5bddc30ddda0fb7a70a] Merge tag 'imx-dt64-5.2' of git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux into arm/dt
+git bisect bad 89f4f128ea535acaabf7d5bddc30ddda0fb7a70a
+# bad: [f5d6e8c077915c84d8b544bc02e3df2f0910c193] Merge tag 'sunxi-dt-for-5.2' of https://git.kernel.org/pub/scm/linux/kernel/git/sunxi/linux into arm/dt
+git bisect bad f5d6e8c077915c84d8b544bc02e3df2f0910c193
+# bad: [6d918e09331e63593b7827ea1a718f0da03b7fb0] Merge tag 'omap-for-v5.2/dt-signed' of git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap into arm/dt
+git bisect bad 6d918e09331e63593b7827ea1a718f0da03b7fb0
+# bad: [2fe743c27f064d637df7f989333c153f8d4b0e65] Merge tag 'renesas-arm64-dt-for-v5.2' of https://git.kernel.org/pub/scm/linux/kernel/git/horms/renesas into arm/dt
+git bisect bad 2fe743c27f064d637df7f989333c153f8d4b0e65
+# bad: [f6f9683c5aedff214433fa130e67a79f08a47fdb] Merge tag 'v5.2-rockchip-dts32-1' of git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip into arm/dt
+git bisect bad f6f9683c5aedff214433fa130e67a79f08a47fdb
+# bad: [e2cffeb398f4830b004774444809ee256b9bc653] arm64: dts: meson-g12a: Add CMA reserved memory
+git bisect bad e2cffeb398f4830b004774444809ee256b9bc653
+# bad: [11a7bea17c9e0a36daab934d83e15a760f402147] arm64: dts: meson: g12a: add pinctrl support controllers
+git bisect bad 11a7bea17c9e0a36daab934d83e15a760f402147
+# good: [7e09092aee006b21d830b99f8498b5640b8711f6] arm64: dts: meson-gxl-s905d-phicomm-n1: add status LED
+git bisect good 7e09092aee006b21d830b99f8498b5640b8711f6
+# good: [965c827ac37e71f76d3ac55c75ac08909f2a4eed] arm64: dts: meson: g12a: add efuse
+git bisect good 965c827ac37e71f76d3ac55c75ac08909f2a4eed
+# good: [b019f4a4199f865b054262ff78f606ca70f7b981] arm64: dts: meson: g12a: Add AO Clock + Reset Controller support
+git bisect good b019f4a4199f865b054262ff78f606ca70f7b981
+# first bad commit: [11a7bea17c9e0a36daab934d83e15a760f402147] arm64: dts: meson: g12a: add pinctrl support controllers
+-------------------------------------------------------------------------------
 
 _______________________________________________
 linux-arm-kernel mailing list
