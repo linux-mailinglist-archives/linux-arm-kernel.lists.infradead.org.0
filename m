@@ -2,59 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BDE47226AB
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 May 2019 12:57:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3F32226BC
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 May 2019 13:15:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=00y9uM6FDJ9TUrnhHJP9QEQ62pOWrKjy6NezEiG8y3s=; b=XI21i0KK+55Sha
-	C9A8hbCY2Kb6PdTTPYIYX2mUKG6pK+GqVLnKZugJhkiKmMx7Z4oYE5KBB/tY3LpBYleEzoi+9++xl
-	4VIYctsx5stpHZmT3qFoVkIiMH+81f/gdzIftURn4+WzYkeXA8YxJ8m3nMBsjtSHZ+5urDPVpevCp
-	GLxDLw0z3ADY8ICUMTmaW+0guO0r0hv9XkBJoiM58mHf5Qd2YrKaoaJffNUuC8Nm7eKb15brGmk7T
-	ZuOcwDDWQ54gByKMfz2zxBpPi87w/nSiQvTl3bsLq1bqCr1mK/PD49od2b+9OYCi6VRTBZIV3upan
-	oin18+RgOdPBVRFLV2nA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ri1sB6F/+IdBHAtQ/NzMKqwJ4l9RrhvEqGqn6Opbopc=; b=A6812IFAlYgp+E
+	1VJPf8qywLrSepC7yWSN1r6WpyheylFVQ9JEmHfi5CR6Fw/z/SFnhjspmVSp/K+libktcv7M+mj5l
+	R9z9fh9DuqE6F/3mWuJzQjfSTpt6CyOa0KvCHU6O7uHaVAsRiaGCLs1+9cmeRYau5/m4y/iN3x0WR
+	PGADPDbi2ZNnm+jzeVUYD93qWK6iyzWMBk38BRpyCfSu3fVFQYkmXZ+STeLfulfhzn2nRHKD8tNNn
+	ED713Z/aNLa8UrMRkF8yszwUN0BlsPQZHOoH7TJFntXwzeQ99A5pYmgas066gs64h22FY3uz1RjHv
+	K4uF5LitK7Y7IBvDOfuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSJVJ-000239-Ph; Sun, 19 May 2019 10:57:21 +0000
+	id 1hSJmu-0007y0-Lg; Sun, 19 May 2019 11:15:32 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSJUz-0001tk-QI; Sun, 19 May 2019 10:57:03 +0000
-X-UUID: 6e55cb6f875f4eebb0e745679500cb20-20190519
-X-UUID: 6e55cb6f875f4eebb0e745679500cb20-20190519
+ id 1hSJmm-0007x8-1U; Sun, 19 May 2019 11:15:25 +0000
+X-UUID: 632abddcebbf4943b3c734ac93951f5d-20190519
+X-UUID: 632abddcebbf4943b3c734ac93951f5d-20190519
 Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
  (envelope-from <jitao.shi@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1324573025; Sun, 19 May 2019 02:56:59 -0800
-Received: from MTKMBS33N1.mediatek.inc (172.27.4.75) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 19 May 2019 03:56:58 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS33N1.mediatek.inc
- (172.27.4.75) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Sun, 19 May 2019 18:56:56 +0800
+ with ESMTP id 363652887; Sun, 19 May 2019 03:15:20 -0800
+Received: from MTKMBS33DR.mediatek.inc (172.27.6.106) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 19 May 2019 04:15:19 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS33DR.mediatek.inc
+ (172.27.6.106) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Sun, 19 May 2019 19:15:16 +0800
 Received: from mszsdclx1018.gcn.mediatek.inc (172.27.4.253) by
  MTKCAS36.mediatek.inc (172.27.4.170) with Microsoft SMTP Server id
- 15.0.1395.4 via Frontend Transport; Sun, 19 May 2019 18:56:54 +0800
+ 15.0.1395.4 via Frontend Transport; Sun, 19 May 2019 19:15:15 +0800
 From: Jitao Shi <jitao.shi@mediatek.com>
 To: Rob Herring <robh+dt@kernel.org>, Pawel Moll <pawel.moll@arm.com>, "Mark
  Rutland" <mark.rutland@arm.com>, Ian Campbell
  <ijc+devicetree@hellion.org.uk>, <linux-pwm@vger.kernel.org>, David Airlie
  <airlied@linux.ie>, "Matthias Brugger" <matthias.bgg@gmail.com>
-Subject: [PATCH 2/2] pwm/mtk_disp: fix update reg issue when chip doesn't have
- commit
-Date: Sun, 19 May 2019 18:56:49 +0800
-Message-ID: <20190519105649.72368-3-jitao.shi@mediatek.com>
+Subject: [PATCH] drm/mediatek: add dsi module reset driver
+Date: Sun, 19 May 2019 19:15:13 +0800
+Message-ID: <20190519111513.73919-1-jitao.shi@mediatek.com>
 X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190519105649.72368-1-jitao.shi@mediatek.com>
-References: <20190519105649.72368-1-jitao.shi@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190519_035701_914926_08D7E5AB 
-X-CRM114-Status: UNSURE (   7.54  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190519_041524_089872_BC6C5472 
+X-CRM114-Status: GOOD (  11.25  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -92,32 +88,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The setting of disable double buffer will lose when suspend and resume.
-So config them again in pwm config.
+Reset dsi HW to default when power on. Prevent the setting differet
+between bootloader and kernel.
 
 Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
 ---
- drivers/pwm/pwm-mtk-disp.c | 7 +++++++
- 1 file changed, 7 insertions(+)
+ drivers/gpu/drm/mediatek/mtk_dsi.c | 35 ++++++++++++++++++++++++++++++
+ 1 file changed, 35 insertions(+)
 
-diff --git a/drivers/pwm/pwm-mtk-disp.c b/drivers/pwm/pwm-mtk-disp.c
-index 27079acc3e1d..14ef981164d3 100644
---- a/drivers/pwm/pwm-mtk-disp.c
-+++ b/drivers/pwm/pwm-mtk-disp.c
-@@ -130,6 +130,13 @@ static int mtk_disp_pwm_config(struct pwm_chip *chip, struct pwm_device *pwm,
- 		mtk_disp_pwm_update_bits(mdp, mdp->data->commit,
- 					 mdp->data->commit_mask,
- 					 0x0);
-+	} else {
-+		mtk_disp_pwm_update_bits(mdp, mdp->data->bls_debug,
-+					 mdp->data->bls_debug_mask,
-+					 mdp->data->bls_debug_mask);
-+		mtk_disp_pwm_update_bits(mdp, mdp->data->con0,
-+					 mdp->data->con0_sel,
-+					 mdp->data->con0_sel);
+diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
+index b00eb2d2e086..39ccb34a7c7f 100644
+--- a/drivers/gpu/drm/mediatek/mtk_dsi.c
++++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
+@@ -21,10 +21,12 @@
+ #include <linux/component.h>
+ #include <linux/iopoll.h>
+ #include <linux/irq.h>
++#include <linux/mfd/syscon.h>
+ #include <linux/of.h>
+ #include <linux/of_platform.h>
+ #include <linux/phy/phy.h>
+ #include <linux/platform_device.h>
++#include <linux/regmap.h>
+ #include <video/mipi_display.h>
+ #include <video/videomode.h>
+ 
+@@ -146,6 +148,8 @@
+ #define T_HS_EXIT	7
+ #define T_HS_ZERO	10
+ 
++#define MMSYS_SW_RST_DSI_B BIT(25)
++
+ #define NS_TO_CYCLE(n, c)    ((n) / (c) + (((n) % (c)) ? 1 : 0))
+ 
+ #define MTK_DSI_HOST_IS_READ(type) \
+@@ -165,6 +169,8 @@ struct mtk_dsi {
+ 	struct drm_panel *panel;
+ 	struct drm_bridge *bridge;
+ 	struct phy *phy;
++	struct regmap *mmsys_sw_rst_b;
++	u32 sw_rst_b;
+ 
+ 	void __iomem *regs;
+ 
+@@ -238,6 +244,16 @@ static void mtk_dsi_disable(struct mtk_dsi *dsi)
+ 	mtk_dsi_mask(dsi, DSI_CON_CTRL, DSI_EN, 0);
+ }
+ 
++static void mtk_dsi_reset_all(struct mtk_dsi *dsi)
++{
++	regmap_update_bits(dsi->mmsys_sw_rst_b, dsi->sw_rst_b,
++			   MMSYS_SW_RST_DSI_B, ~MMSYS_SW_RST_DSI_B);
++	usleep_range(1000, 1100);
++
++	regmap_update_bits(dsi->mmsys_sw_rst_b, dsi->sw_rst_b,
++			   MMSYS_SW_RST_DSI_B, MMSYS_SW_RST_DSI_B);
++}
++
+ static void mtk_dsi_reset_engine(struct mtk_dsi *dsi)
+ {
+ 	mtk_dsi_mask(dsi, DSI_CON_CTRL, DSI_RESET, DSI_RESET);
+@@ -831,6 +847,8 @@ static int mtk_dsi_create_conn_enc(struct drm_device *drm, struct mtk_dsi *dsi)
+ 			goto err_encoder_cleanup;
  	}
  
- 	clk_disable_unprepare(mdp->clk_mm);
++	mtk_dsi_reset_all(dsi);
++
+ 	return 0;
+ 
+ err_encoder_cleanup:
+@@ -1087,6 +1105,7 @@ static int mtk_dsi_probe(struct platform_device *pdev)
+ 	struct mtk_dsi *dsi;
+ 	struct device *dev = &pdev->dev;
+ 	struct resource *regs;
++	struct regmap *regmap;
+ 	int irq_num;
+ 	int comp_id;
+ 	int ret;
+@@ -1139,6 +1158,22 @@ static int mtk_dsi_probe(struct platform_device *pdev)
+ 		return ret;
+ 	}
+ 
++	regmap = syscon_regmap_lookup_by_phandle(dev->of_node,
++						 "mediatek,syscon-dsi");
++	ret = of_property_read_u32_index(dev->of_node, "mediatek,syscon-dsi", 1,
++					 &dsi->sw_rst_b);
++
++	if (IS_ERR(regmap))
++		ret = PTR_ERR(regmap);
++
++	if (ret) {
++		ret = PTR_ERR(regmap);
++		dev_err(dev, "Failed to get mmsys registers: %d\n", ret);
++		return ret;
++	}
++
++	dsi->mmsys_sw_rst_b = regmap;
++
+ 	comp_id = mtk_ddp_comp_get_id(dev->of_node, MTK_DSI);
+ 	if (comp_id < 0) {
+ 		dev_err(dev, "Failed to identify by alias: %d\n", comp_id);
 -- 
 2.21.0
 
