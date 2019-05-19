@@ -2,58 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BDDD722678
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 May 2019 11:33:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D89222680
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 May 2019 11:37:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ooPVqNQ9i0lUmHu2gWm+58/nlljHrRXTy0+b/bl3c9k=; b=dbmPaZrmgsvFgF
-	U26WTvsDmvQnZV85S0N09dd/TIShnXdFWxn9zKI+t07s7QgGgJuOEhPsVmmyJehDpHpNz+aQYfDp9
-	yoI8e2CIWhAqS/TncBnpzViE0oBGO5hMqamC9edI+4dIU2OKTWzKRk6uJe4NUSIVppG93sZ2jBUjA
-	Mcu7gjigmIndZcu1KS/OS+02FTl+L6wRunsegKZhDIE/Nt4VBrmonrLJBZ6TqmfFUmmS6gQ8uSGBo
-	po83l86+TbWut6i4H06EcQsfhuS28eHjFvPE/jlJcd7uEwYOR+8GasOZvqJdYw7WgyykySswEafGb
-	/sW77juqB/pI7ZUG/TVg==;
+	List-Owner; bh=qFT38+KHco6EtmIbYnR1ksnHJhNfPKiLieyOMO1TOZ4=; b=Nc4+cVNPIxGqYu
+	T1aXgPa3oi0o47G7uAAnMF7d4feyRV/IbZpBRpoJstr5LHrI8fMITOS6TMndZ5U+78BZt/fJ6Zijl
+	NsSE+5uSKK57VNccm0LcrLO263ZeW4tsHvPGDVr1f/m/T/dCc3oo0X+Ca7dmA2umPXfiuHMVx8q8F
+	CBQZQKURFX9DXNArivi6styLFLCUSptb4OEz3Z9vz8pODgHC7guAIm4lnf87o5OBZfFjZVFI7JONm
+	1SbtvudgN5LYdWHwvIPnqmqBvtnexCuhZ6HxygVB42jfpdOtYuGZqZhCLHYfHe4yU2VHSTMm5pCrf
+	NJIM+L3qouukfmJigOBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSICM-0001eY-PI; Sun, 19 May 2019 09:33:42 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hSIFW-0003I7-41; Sun, 19 May 2019 09:36:58 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSICE-0001e6-Ci; Sun, 19 May 2019 09:33:36 +0000
-X-UUID: 9e443e5f4dea4482a43b01a77370480c-20190519
-X-UUID: 9e443e5f4dea4482a43b01a77370480c-20190519
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ id 1hSIFP-0003He-Ei; Sun, 19 May 2019 09:36:53 +0000
+X-UUID: ed5d228f56fc460297b3f2575e945307-20190519
+X-UUID: ed5d228f56fc460297b3f2575e945307-20190519
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
  (envelope-from <jitao.shi@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 494772764; Sun, 19 May 2019 01:33:32 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ with ESMTP id 1167877438; Sun, 19 May 2019 01:36:47 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
  MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 19 May 2019 02:33:30 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by mtkmbs01n2.mediatek.inc
- (172.21.101.79) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Sun, 19 May 2019 17:33:28 +0800
+ 15.0.1395.4; Sun, 19 May 2019 02:36:45 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by mtkmbs01n1.mediatek.inc
+ (172.21.101.68) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Sun, 19 May 2019 17:36:32 +0800
 Received: from [10.16.6.141] (172.27.4.253) by MTKCAS36.mediatek.inc
  (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Sun, 19 May 2019 17:33:26 +0800
-Message-ID: <1558258406.367.2.camel@mszsdaap41>
-Subject: Re: [v2 2/5] drm/mediatek: CMDQ reg address of mt8173 is different
- with mt2701
+ Transport; Sun, 19 May 2019 17:36:29 +0800
+Message-ID: <1558258588.367.5.camel@mszsdaap41>
+Subject: Re: [v2 1/5] drm/mediatek: move mipi_dsi_host_register to probe
 From: Jitao Shi <jitao.shi@mediatek.com>
 To: CK Hu <ck.hu@mediatek.com>
-Date: Sun, 19 May 2019 17:33:26 +0800
-In-Reply-To: <1557283144.31731.4.camel@mtksdaap41>
+Date: Sun, 19 May 2019 17:36:28 +0800
+In-Reply-To: <1557222735.3498.11.camel@mtksdaap41>
 References: <20190416060501.76276-1-jitao.shi@mediatek.com>
- <20190416060501.76276-3-jitao.shi@mediatek.com>
- <1557283144.31731.4.camel@mtksdaap41>
+ <20190416060501.76276-2-jitao.shi@mediatek.com>
+ <1557222735.3498.11.camel@mtksdaap41>
 X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 17F19A267425E9C381A65E5780EDC955404235D6C9C3F08D93A1787A5C4050F52000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190519_023334_436994_B781ACBC 
-X-CRM114-Status: GOOD (  19.83  )
+X-CRM114-CacheID: sfid-20190519_023651_496818_3D1C2363 
+X-CRM114-Status: GOOD (  19.49  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -95,142 +93,114 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2019-05-08 at 10:39 +0800, CK Hu wrote:
+On Tue, 2019-05-07 at 17:52 +0800, CK Hu wrote:
+> Hi, Jitao:
+> 
 > On Tue, 2019-04-16 at 14:04 +0800, Jitao Shi wrote:
-> > Config the different CMDQ reg address in driver data.
+> > DSI panel driver need attach function which is inculde in
+> > mipi_dsi_host_ops.
 > > 
-> For MT8173, you change reg_cmd_off from 0x180 to 0x200, so this patch is
-> a bug fix. You should add a 'Fixes' tag.
+> > If mipi_dsi_host_register is not in probe, dsi panel will
+> > probe fail or more delay.
 > 
-> > Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
-> > ---
-> >  drivers/gpu/drm/mediatek/mtk_dsi.c | 39 +++++++++++++++++++++++-------
-> >  1 file changed, 30 insertions(+), 9 deletions(-)
-> > 
-> > diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
-> > index 6c4ac37f983d..573e6bec6d36 100644
-> > --- a/drivers/gpu/drm/mediatek/mtk_dsi.c
-> > +++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
-> > @@ -131,7 +131,6 @@
-> >  #define VM_CMD_EN			BIT(0)
-> >  #define TS_VFP_EN			BIT(5)
-> >  
-> > -#define DSI_CMDQ0		0x180
-> >  #define CONFIG				(0xff << 0)
-> >  #define SHORT_PACKET			0
-> >  #define LONG_PACKET			2
-> > @@ -156,6 +155,10 @@
-> >  
-> >  struct phy;
-> >  
-> > +struct mtk_dsi_driver_data {
-> > +	const u32 reg_cmdq_off;
-> > +};
-> > +
-> >  struct mtk_dsi {
-> >  	struct mtk_ddp_comp ddp_comp;
-> >  	struct device *dev;
-> > @@ -182,6 +185,7 @@ struct mtk_dsi {
-> >  	bool enabled;
-> >  	u32 irq_data;
-> >  	wait_queue_head_t irq_wait_queue;
-> > +	struct mtk_dsi_driver_data *driver_data;
-> >  };
-> >  
-> >  static inline struct mtk_dsi *encoder_to_dsi(struct drm_encoder *e)
-> > @@ -934,6 +938,7 @@ static void mtk_dsi_cmdq(struct mtk_dsi *dsi, const struct mipi_dsi_msg *msg)
-> >  	const char *tx_buf = msg->tx_buf;
-> >  	u8 config, cmdq_size, cmdq_off, type = msg->type;
-> >  	u32 reg_val, cmdq_mask, i;
-> > +	u32 reg_cmdq_off = dsi->driver_data->reg_cmdq_off;
-> >  
-> >  	if (MTK_DSI_HOST_IS_READ(type))
-> >  		config = BTA;
-> > @@ -953,9 +958,11 @@ static void mtk_dsi_cmdq(struct mtk_dsi *dsi, const struct mipi_dsi_msg *msg)
-> >  	}
-> >  
-> >  	for (i = 0; i < msg->tx_len; i++)
-> > -		writeb(tx_buf[i], dsi->regs + DSI_CMDQ0 + cmdq_off + i);
-> > +		mtk_dsi_mask(dsi, (reg_cmdq_off + cmdq_off + i) & (~0x3U),
-> > +			     (0xffUL << (((i + cmdq_off) & 3U) * 8U)),
-> > +			     tx_buf[i] << (((i + cmdq_off) & 3U) * 8U));
-> 
-> You say you would follow Nicolas' suggestion here.
-> 
-
-If i replace mtk_dsi_mask with writeb, i can't get right value from
-registers. I don't know why this.
-
-> >  
-> > -	mtk_dsi_mask(dsi, DSI_CMDQ0, cmdq_mask, reg_val);
-> > +	mtk_dsi_mask(dsi, reg_cmdq_off, cmdq_mask, reg_val);
-> >  	mtk_dsi_mask(dsi, DSI_CMDQ_SIZE, CMDQ_SIZE, cmdq_size);
-> >  }
-> >  
-> > @@ -1074,10 +1081,27 @@ static const struct component_ops mtk_dsi_component_ops = {
-> >  	.unbind = mtk_dsi_unbind,
-> >  };
-> >  
-> > +static const struct mtk_dsi_driver_data mt8173_dsi_driver_data = {
-> > +	.reg_cmdq_off = 0x200,
-> > +};
-> > +
-> > +static const struct mtk_dsi_driver_data mt2701_dsi_driver_data = {
-> > +	.reg_cmdq_off = 0x180,
-> > +};
-> > +
-> > +static const struct of_device_id mtk_dsi_of_match[] = {
-> > +	{ .compatible = "mediatek,mt2701-dsi",
-> > +	  .data = &mt2701_dsi_driver_data },
-> > +	{ .compatible = "mediatek,mt8173-dsi",
-> > +	  .data = &mt8173_dsi_driver_data },
-> > +	{ },
-> > +};
-> > +
-> >  static int mtk_dsi_probe(struct platform_device *pdev)
-> >  {
-> >  	struct mtk_dsi *dsi;
-> >  	struct device *dev = &pdev->dev;
-> > +	const struct of_device_id *of_id;
-> >  	struct resource *regs;
-> >  	int irq_num;
-> >  	int comp_id;
-> > @@ -1101,6 +1125,9 @@ static int mtk_dsi_probe(struct platform_device *pdev)
-> >  	if (ret)
-> >  		goto err_unregister_host;
-> >  
-> > +	of_id = of_match_device(mtk_dsi_of_match, &pdev->dev);
-> > +	dsi->driver_data = of_id->data;
-> 
-> Maybe use of_device_get_match_data() is a more simple way. You could
-> refer to [1].
+> I think this patch just prevent delay, not to prevent dsi panel probe
+> fail. In [1], you mention mipi_dsi_attach() is called in
+> panel_simple_dsi_probe(), but panel_simple_dsi_probe() is trigger by
+> mipi_dsi_host_register(), so the probe would success.
 > 
 > [1]
-> https://elixir.bootlin.com/linux/v5.1/source/drivers/gpu/drm/mediatek/mtk_disp_ovl.c#L300
+> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/panel/panel-simple.c?h=v5.0-rc6#n2987
+> 
+> 
+
+Yes, this just prevent delay.
+
+> > 
+> > So move the mipi_dsi_host_register to probe from bind.
+> > 
+> > Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> > ---
+> >  drivers/gpu/drm/mediatek/mtk_dsi.c | 50 ++++++++++++++++++------------
+> >  1 file changed, 30 insertions(+), 20 deletions(-)
+> > 
+> > diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
+> > index b00eb2d2e086..6c4ac37f983d 100644
+> > --- a/drivers/gpu/drm/mediatek/mtk_dsi.c
+> > +++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
+> > @@ -1045,12 +1045,6 @@ static int mtk_dsi_bind(struct device *dev, struct device *master, void *data)
+> >  		return ret;
+> >  	}
+> >  
+> > -	ret = mipi_dsi_host_register(&dsi->host);
+> > -	if (ret < 0) {
+> > -		dev_err(dev, "failed to register DSI host: %d\n", ret);
+> > -		goto err_ddp_comp_unregister;
+> > -	}
+> > -
+> >  	ret = mtk_dsi_create_conn_enc(drm, dsi);
+> >  	if (ret) {
+> >  		DRM_ERROR("Encoder create failed with %d\n", ret);
+> > @@ -1060,8 +1054,6 @@ static int mtk_dsi_bind(struct device *dev, struct device *master, void *data)
+> >  	return 0;
+> >  
+> >  err_unregister:
+> > -	mipi_dsi_host_unregister(&dsi->host);
+> > -err_ddp_comp_unregister:
+> >  	mtk_ddp_comp_unregister(drm, &dsi->ddp_comp);
+> >  	return ret;
+> >  }
+> > @@ -1097,31 +1089,37 @@ static int mtk_dsi_probe(struct platform_device *pdev)
+> >  
+> >  	dsi->host.ops = &mtk_dsi_ops;
+> >  	dsi->host.dev = dev;
+> > +	dsi->dev = dev;
+> 
+> Why do this?
 > 
 > Regards,
 > CK
 > 
 
-I'll fix it next version.
+There are some error message require this poweron().
 
-> > +
+> > +	ret = mipi_dsi_host_register(&dsi->host);
+> > +	if (ret < 0) {
+> > +		dev_err(dev, "failed to register DSI host: %d\n", ret);
+> > +		return ret;
+> > +	}
+> >  
+> >  	ret = drm_of_find_panel_or_bridge(dev->of_node, 0, 0,
+> >  					  &dsi->panel, &dsi->bridge);
+> >  	if (ret)
+> > -		return ret;
+> > +		goto err_unregister_host;
+> >  
 > >  	dsi->engine_clk = devm_clk_get(dev, "engine");
 > >  	if (IS_ERR(dsi->engine_clk)) {
 > >  		ret = PTR_ERR(dsi->engine_clk);
-> > @@ -1193,12 +1220,6 @@ static int mtk_dsi_remove(struct platform_device *pdev)
-> >  	return 0;
-> >  }
+> >  		dev_err(dev, "Failed to get engine clock: %d\n", ret);
+> > -		return ret;
+> > +		goto err_unregister_host;
+> >  	}
 > >  
-> > -static const struct of_device_id mtk_dsi_of_match[] = {
-> > -	{ .compatible = "mediatek,mt2701-dsi" },
-> > -	{ .compatible = "mediatek,mt8173-dsi" },
-> > -	{ },
-> > -};
-> > -
-> >  struct platform_driver mtk_dsi_driver = {
-> >  	.probe = mtk_dsi_probe,
-> >  	.remove = mtk_dsi_remove,
+> >  	dsi->digital_clk = devm_clk_get(dev, "digital");
+> >  	if (IS_ERR(dsi->digital_clk)) {
+> >  		ret = PTR_ERR(dsi->digital_clk);
+> >  		dev_err(dev, "Failed to get digital clock: %d\n", ret);
+> > -		return ret;
+> > +		goto err_unregister_host;
+> >  	}
+> >  
+> >  	dsi->hs_clk = devm_clk_get(dev, "hs");
+> >  	if (IS_ERR(dsi->hs_clk)) {
+> >  		ret = PTR_ERR(dsi->hs_clk);
+> >  		dev_err(dev, "Failed to get hs clock: %d\n", ret);
+> > -		return ret;
+> > +		goto err_unregister_host;
+> >  	}
+> >  
+> >  	regs = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> 
 > 
 > 
 
