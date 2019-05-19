@@ -2,55 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFA5922691
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 May 2019 12:08:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E1EE226A7
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 19 May 2019 12:57:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=J4pXejlcXZil89OeD7WmrqUPio++/ygA+AaVO2opegE=; b=X/YdFiXyeUui8f
-	Z9dpCq2aj+iAG80g5QRsl5CqD92PrKxG47e+zHK5jc3LI3XHqMJplTWZ7qFOUq0oKvYM1zEScsjqv
-	nA9GBzFQL8l3fmU4jVc2l8cLEZElayA5WbZhJbKRlWmJiWFQ2pli+wY8QgmOBAtnlNxAvolxYldoU
-	ph/ZY3LpI/+M0EopW2Luaeaz2cFuLOp6K7IBvFUiMhINXcdC8FRuQXxx/7EHWpCJfUtEa3opnMbPN
-	m5J63v7yHK2v+JrQIcgtGFIk80M2T0MB2KgN+jh4vSJR1r+R1MA0M3u2lEufyIWbL/nqLtZvdpUGM
-	ZV3vm+5Z681nzRcNoZPA==;
+	List-Owner; bh=urlwvzSpwZiUlIVvh9ybipvJutZ/GXe3tUUFKZqAwoE=; b=Y5OwLf7u6iH7n6
+	jWB8rSXmVfT6m4BwDTWdh3x+YmgynWXXptPZWxCVqP4BvOHrS2/ECvXe/QX/tmdUJCQFgLqQ2NjuN
+	1OZpJV5xzwNPveDzVvs9HTI3HB44M83bOze7TUHRSc6mRCFUDRRlxVScvCptRqB5vl224AKJ455Lh
+	opZZkhe1oUCpetUFj4q9ZHz2liv+EbV5XiNIaAvYPIGp9h0XUS32MAJyQ/qNtXnRDsSLuq8WqBXg+
+	/GZZbgw5GA1FAp2/LtSeNy+qwB6/i5YxYQnznyK5yxj5JasVfe7uRJza4Gs7mxj+s5M6xJy2C0m1V
+	DIXkCpQPkQLatVq5VSGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSIjp-0004J0-1B; Sun, 19 May 2019 10:08:17 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1hSJV9-0001vu-8z; Sun, 19 May 2019 10:57:11 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSIjh-0004IQ-KD
- for linux-arm-kernel@lists.infradead.org; Sun, 19 May 2019 10:08:11 +0000
-Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 2FE1C505548047439AB4;
- Sun, 19 May 2019 18:07:38 +0800 (CST)
-Received: from HGHY1z004218071.china.huawei.com (10.177.29.32) by
- DGGEMS410-HUB.china.huawei.com (10.3.19.210) with Microsoft SMTP Server id
- 14.3.439.0; Sun, 19 May 2019 18:07:29 +0800
-From: Xiang Zheng <zhengxiang9@huawei.com>
-To: <linux-arm-kernel@lists.infradead.org>, <kvmarm@lists.cs.columbia.edu>,
- <linux-kernel@vger.kernel.org>
-Subject: [PATCH] KVM: ARM64: Update perf event when setting PMU count value
-Date: Sun, 19 May 2019 18:05:59 +0800
-Message-ID: <20190519100559.7188-1-zhengxiang9@huawei.com>
-X-Mailer: git-send-email 2.15.1.windows.2
+ id 1hSJUz-0001te-QI; Sun, 19 May 2019 10:57:03 +0000
+X-UUID: bd5bd454651c4903a55b120a75f6bdd1-20190519
+X-UUID: bd5bd454651c4903a55b120a75f6bdd1-20190519
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <jitao.shi@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 582541613; Sun, 19 May 2019 02:56:56 -0800
+Received: from MTKMBS33DR.mediatek.inc (172.27.6.106) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 19 May 2019 03:56:54 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS33DR.mediatek.inc
+ (172.27.6.106) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Sun, 19 May 2019 18:56:52 +0800
+Received: from mszsdclx1018.gcn.mediatek.inc (172.27.4.253) by
+ MTKCAS36.mediatek.inc (172.27.4.170) with Microsoft SMTP Server id
+ 15.0.1395.4 via Frontend Transport; Sun, 19 May 2019 18:56:50 +0800
+From: Jitao Shi <jitao.shi@mediatek.com>
+To: Rob Herring <robh+dt@kernel.org>, Pawel Moll <pawel.moll@arm.com>, "Mark
+ Rutland" <mark.rutland@arm.com>, Ian Campbell
+ <ijc+devicetree@hellion.org.uk>, <linux-pwm@vger.kernel.org>, David Airlie
+ <airlied@linux.ie>, "Matthias Brugger" <matthias.bgg@gmail.com>
+Subject: [PATCH 0/2] fix pwm_mtk_disp suspend/resume issues.
+Date: Sun, 19 May 2019 18:56:47 +0800
+Message-ID: <20190519105649.72368-1-jitao.shi@mediatek.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-X-Originating-IP: [10.177.29.32]
-X-CFilter-Loop: Reflected
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190519_030809_888925_316091ED 
-X-CRM114-Status: GOOD (  12.28  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190519_035701_857280_14FDC065 
+X-CRM114-Status: UNSURE (   5.47  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -62,125 +72,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: suzuki.poulose@arm.com, marc.zyngier@arm.com, julien.thierry@arm.com,
- christoffer.dall@arm.com, shannon.zhaosl@gmail.com,
- Xiang Zheng <zhengxiang9@huawei.com>, james.morse@arm.com,
- wanghaibin.wang@huawei.com
+Cc: stonea168@163.com, dri-devel@lists.freedesktop.org,
+ Andy Yan <andy.yan@rock-chips.com>, Ajay Kumar <ajaykumar.rs@samsung.com>,
+ Vincent Palatin <vpalatin@chromium.org>, cawa.cheng@mediatek.com,
+ bibby.hsieh@mediatek.com, ck.hu@mediatek.com,
+ Russell King <rmk+kernel@arm.linux.org.uk>,
+ Thierry Reding <treding@nvidia.com>, devicetree@vger.kernel.org,
+ Jitao Shi <jitao.shi@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Inki Dae <inki.dae@samsung.com>, linux-mediatek@lists.infradead.org,
+ yingjoe.chen@mediatek.com, eddie.huang@mediatek.com,
+ linux-arm-kernel@lists.infradead.org, Rahul Sharma <rahul.sharma@samsung.com>,
+ srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org,
+ Sascha Hauer <kernel@pengutronix.de>, Sean Paul <seanpaul@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Guest will adjust the sample period and set PMU counter value when
-it takes a long time to handle the PMU interrupts.
+Change in patches:
+ - match pwm_mtk_disp clock when suspend/resume
+ - trigger pwm_mtk_disp reg working after config
 
-However, we don't have a corresponding change on the virtual PMU
-which is emulated via a perf event. It could cause a large number
-of PMU interrupts injected to guest. Then guest will get hang for
-handling these interrupts.
+Jitao Shi (2):
+  pwm: fine tune pwm-mtk-disp clock control flow
+  pwm/mtk_disp: fix update reg issue when chip doesn't have commit
 
-So update the sample_period of perf event if the counter value is
-changed to avoid this case.
+ drivers/pwm/pwm-mtk-disp.c | 50 +++++++++++++++-----------------------
+ 1 file changed, 19 insertions(+), 31 deletions(-)
 
-Signed-off-by: Xiang Zheng <zhengxiang9@huawei.com>
----
- virt/kvm/arm/pmu.c | 54 +++++++++++++++++++++++++++++++++++++++++++++---------
- 1 file changed, 45 insertions(+), 9 deletions(-)
-
-diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
-index 1c5b76c..cbad3ec 100644
---- a/virt/kvm/arm/pmu.c
-+++ b/virt/kvm/arm/pmu.c
-@@ -24,6 +24,11 @@
- #include <kvm/arm_pmu.h>
- #include <kvm/arm_vgic.h>
- 
-+static void kvm_pmu_stop_counter(struct kvm_vcpu *vcpu, struct kvm_pmc *pmc);
-+static struct perf_event *kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu,
-+						    struct kvm_pmc *pmc,
-+						    struct perf_event_attr *attr);
-+
- /**
-  * kvm_pmu_get_counter_value - get PMU counter value
-  * @vcpu: The vcpu pointer
-@@ -57,11 +62,29 @@ u64 kvm_pmu_get_counter_value(struct kvm_vcpu *vcpu, u64 select_idx)
-  */
- void kvm_pmu_set_counter_value(struct kvm_vcpu *vcpu, u64 select_idx, u64 val)
- {
--	u64 reg;
-+	u64 reg, counter, old_sample_period;
-+	struct kvm_pmu *pmu = &vcpu->arch.pmu;
-+	struct kvm_pmc *pmc = &pmu->pmc[select_idx];
-+	struct perf_event *event;
-+	struct perf_event_attr attr;
- 
- 	reg = (select_idx == ARMV8_PMU_CYCLE_IDX)
- 	      ? PMCCNTR_EL0 : PMEVCNTR0_EL0 + select_idx;
- 	__vcpu_sys_reg(vcpu, reg) += (s64)val - kvm_pmu_get_counter_value(vcpu, select_idx);
-+
-+	if (pmc->perf_event) {
-+		attr = pmc->perf_event->attr;
-+		old_sample_period = attr.sample_period;
-+		counter = kvm_pmu_get_counter_value(vcpu, select_idx);
-+		attr.sample_period = (-counter) & pmc->bitmask;
-+		if (attr.sample_period == old_sample_period)
-+			return;
-+
-+		kvm_pmu_stop_counter(vcpu, pmc);
-+		event = kvm_pmu_create_perf_event(vcpu, pmc, &attr);
-+		if (event)
-+			pmc->perf_event = event;
-+	}
- }
- 
- /**
-@@ -303,6 +326,24 @@ static void kvm_pmu_perf_overflow(struct perf_event *perf_event,
- 	}
- }
- 
-+static struct perf_event *kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu,
-+						    struct kvm_pmc *pmc,
-+						    struct perf_event_attr *attr)
-+{
-+	struct perf_event *event;
-+
-+	event = perf_event_create_kernel_counter(attr, -1, current,
-+						 kvm_pmu_perf_overflow, pmc);
-+
-+	if (IS_ERR(event)) {
-+		pr_err_once("kvm: pmu event creation failed %ld\n",
-+			    PTR_ERR(event));
-+		return NULL;
-+	}
-+
-+	return event;
-+}
-+
- /**
-  * kvm_pmu_software_increment - do software increment
-  * @vcpu: The vcpu pointer
-@@ -416,15 +457,10 @@ void kvm_pmu_set_counter_event_type(struct kvm_vcpu *vcpu, u64 data,
- 	/* The initial sample period (overflow count) of an event. */
- 	attr.sample_period = (-counter) & pmc->bitmask;
- 
--	event = perf_event_create_kernel_counter(&attr, -1, current,
--						 kvm_pmu_perf_overflow, pmc);
--	if (IS_ERR(event)) {
--		pr_err_once("kvm: pmu event creation failed %ld\n",
--			    PTR_ERR(event));
--		return;
--	}
-+	event = kvm_pmu_create_perf_event(vcpu, pmc, &attr);
- 
--	pmc->perf_event = event;
-+	if (event)
-+		pmc->perf_event = event;
- }
- 
- bool kvm_arm_support_pmu_v3(void)
 -- 
-1.8.3.1
-
+2.21.0
 
 
 _______________________________________________
