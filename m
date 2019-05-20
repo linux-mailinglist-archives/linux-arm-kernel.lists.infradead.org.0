@@ -2,81 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5322822971
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 01:58:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD9D3229AB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 03:16:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RHth4zcA6Mop8O9yAwKF05FHYtw8pbpQi9XC+Vcmupk=; b=DHEHmihqpk38qy
-	fjEGrCovvShyFVShlBuE2y+tB/adol7jDxi3FIqM5smIi5PVZ7BNeY1sVG9TegDDjcNnDHG1/QESv
-	PW4cVFc9dkUCzgIKIezJaNnOFaojmJlzUVt/8iOmMhmdr361VOFdnc5OZom9BbRi8eZBTxLVs5CRI
-	/yFKQ30f0SqDlZ71yp3PdKXhsSPWEJRExt1XZ6idbHPGiD0vlc4Vkv5FKwrEo0eBE71BmiE2/p+Uz
-	w5tfxMUKnErSAUdaBeV2Z8o9PXnnmUaGEyDcAY5Q7mSHBEqYqSFtgTplRjV3Cw1YKUiaUi7J+7ViX
-	GHyp1kNdjfTLDIYfmhCQ==;
+	List-Owner; bh=71eLYLkc/41NFjX4RrL8oh8qNf6SOKD7vhrypP/BUvw=; b=cWROSoYqLOiSvF
+	f99w46jFETBe60Vp4gVpVkQYwu1OgAqBh1rUH5yJ7xTAAhMi0yFFZ9W/eF6tod0xVQVmLMc8Q3cuX
+	Z+jgNMazc1mM5WmH+R+Pytmr+KKBIWmG6PbJcP62r5ClW8/wEDImc0PaKAbiBUN0+kGDBTMkzsIWi
+	X7dDnDUtf0GAquZlWwLpy+niyBPzfMcNLseGhYYwS9kBEZ8LcaKiq+miLggEplr/Ubj0xqTZ8+rJF
+	YDqIN8amgs/mDgB0ODs4+nEs/0ferhqoD1dihV2Fhw4Lod7TlYJ5nf+3zUReq+1or+OWX5/FrQZJh
+	tSS9LJ6QvfNby4AtHvew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSVgu-0008Ju-7L; Sun, 19 May 2019 23:58:08 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+	id 1hSWuF-00078y-Gl; Mon, 20 May 2019 01:15:59 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSVgm-0008JT-Qz
- for linux-arm-kernel@lists.infradead.org; Sun, 19 May 2019 23:58:02 +0000
-Received: by mail-qk1-x741.google.com with SMTP id a132so7738614qkb.13
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 19 May 2019 16:58:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=doV3v4rh7HRUjJmLbCEHgl+MmgHA5lzEGEyVEOx1UDY=;
- b=HLIYYQBC1OSzB/VEFY3lneCtGDjIBYUYBOWMow+F6FQWpZbr05UH83MoQlJX3cvlF4
- LN1OOVQ7Cfe43RWifImVn1akors29h1C1fVZWa+Iw+C5UgIAItQgUVmgrc9nJDv+4hHq
- HCx2sicJNasbOPfqz1nAvp4HxTIwyNoTIGzcM=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=doV3v4rh7HRUjJmLbCEHgl+MmgHA5lzEGEyVEOx1UDY=;
- b=E1VMzdKplN80FWF/QO4NiXZi4DcP5oFnKxTO9sgRHvkp8ZcTjvIlXwKR/PnS9rO/n3
- UV2rTGu3ALKc+Wxy+ooFhN4DTbdOLocizMlgU9obFWnjXdLNXEylA/GpPu4wH7bfGcil
- LC2hQq0jMzutsnxaT3gfowZ6Q7cp6DygQ99VtLfPO+JtSwSAEOeIk3++ryWDGv5ciLEf
- xn8qyfnLE8ZtM4v72vpcp1I1ihf/f6V6cyj6kYXoQW3MIsaK9n2VHcGa2EWiJQlXKIh4
- S/tvxBA6pbr/5WTJy9zH8aVQ3+yVjoKJaunfwk+z3ZxASDZvtImokvGzTlGH0geJqilK
- QbAg==
-X-Gm-Message-State: APjAAAVs5rwSc0i1vu8RnYuTiA0H5tIb1Sya8nfrti/oMM6JW8t5x9A+
- G6NkgGCzRYN9hrcYJGVwUM1y8+ipyqkGwxRAcZjr3A==
-X-Google-Smtp-Source: APXvYqz+TXeYWMr7RQzoFtrV4mkErBeVaXoHL1oYIIA6PtSpcn5DA5jnt/IgKPeQCwUwN8PmuOmcCFULHhoCEqyY5NM=
-X-Received: by 2002:a37:952:: with SMTP id 79mr52690407qkj.201.1558310279581; 
- Sun, 19 May 2019 16:57:59 -0700 (PDT)
+ id 1hSWu7-000784-2i; Mon, 20 May 2019 01:15:53 +0000
+X-UUID: e0d781155c494a11be0a956767fb23a1-20190519
+X-UUID: e0d781155c494a11be0a956767fb23a1-20190519
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1088236999; Sun, 19 May 2019 17:15:41 -0800
+Received: from mtkmbs03n2.mediatek.inc (172.21.101.182) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 19 May 2019 18:15:40 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs03n2.mediatek.inc (172.21.101.182) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 20 May 2019 09:15:38 +0800
+Received: from [172.21.77.33] (172.21.77.33) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 20 May 2019 09:15:38 +0800
+Message-ID: <1558314937.660.2.camel@mtkswgap22>
+Subject: Re: [PATCH v2 0/3] scsi: ufs: Add error handling of Auto-Hibernate
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>
+Date: Mon, 20 May 2019 09:15:37 +0800
+In-Reply-To: <1557912988-26758-1-git-send-email-stanley.chu@mediatek.com>
+References: <1557912988-26758-1-git-send-email-stanley.chu@mediatek.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-References: <20190519160446.320-1-hsinyi@chromium.org>
-In-Reply-To: <20190519160446.320-1-hsinyi@chromium.org>
-From: Nicolas Boichat <drinkcat@chromium.org>
-Date: Mon, 20 May 2019 07:57:48 +0800
-Message-ID: <CANMq1KC74peKmwdHzb83n2kyXgqarAiu1PGnPCNLYtrdYJF77A@mail.gmail.com>
-Subject: Re: [PATCH v4 1/3] amr64: map FDT as RW for early_init_dt_scan()
-To: Hsin-Yi Wang <hsinyi@chromium.org>
+X-TM-SNTS-SMTP: 98DB3DEF6BAFB6C6F7C95ADEF238E8BF6072C530D9204002251DC5A7057FDE232000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190519_165800_877326_8CA3BF9D 
-X-CRM114-Status: GOOD (  19.72  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190519_181551_127584_9C51BC5A 
+X-CRM114-Status: GOOD (  11.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -88,105 +71,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Yu Zhao <yuzhao@google.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Stephen Boyd <swboyd@chromium.org>,
- Will Deacon <will.deacon@arm.com>, lkml <linux-kernel@vger.kernel.org>,
- Mike Rapoport <rppt@linux.ibm.com>, Jun Yao <yaojun8558363@gmail.com>,
- Miles Chen <miles.chen@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- James Morse <james.morse@arm.com>, Andrew Murray <andrew.murray@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Laura Abbott <labbott@redhat.com>,
- Frank Rowand <frowand.list@gmail.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- Robin Murphy <robin.murphy@arm.com>
+Cc: "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
+ "marc.w.gonzalez@free.fr" <marc.w.gonzalez@free.fr>,
+ Andy Teng =?UTF-8?Q?=28=E9=84=A7=E5=A6=82=E5=AE=8F=29?=
+ <Andy.Teng@mediatek.com>,
+ Chun-Hung Wu =?UTF-8?Q?=28=E5=B7=AB=E9=A7=BF=E5=AE=8F=29?=
+ <Chun-hung.Wu@mediatek.com>,
+ Kuohong Wang =?UTF-8?Q?=28=E7=8E=8B=E5=9C=8B=E9=B4=BB=29?=
+ <kuohong.wang@mediatek.com>, "evgreen@chromium.org" <evgreen@chromium.org>,
+ "avri.altman@wdc.com" <avri.altman@wdc.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ Peter Wang =?UTF-8?Q?=28=E7=8E=8B=E4=BF=A1=E5=8F=8B=29?=
+ <peter.wang@mediatek.com>, "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "pedrom.sousa@synopsys.com" <pedrom.sousa@synopsys.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "beanhuo@micron.com" <beanhuo@micron.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-s/amr64/arm64/ in the commit title.
+Hi Avri, Alim, Pedro,
 
-On Mon, May 20, 2019 at 1:09 AM Hsin-Yi Wang <hsinyi@chromium.org> wrote:
->
-> Currently in arm64, FDT is mapped to RO before it's passed to
-> early_init_dt_scan(). However, there might be some code that needs
-> to modify FDT during init.
+Gentle ping for this patch.
 
-I'd give a specific example (i.e. mention the next commit that
-introduces rng-seed).
+On Wed, 2019-05-15 at 17:36 +0800, Stanley Chu wrote:
+> Currently auto-hibernate is activated if host supports
+> auto-hibern8 capability. However error-handling is not implemented,
+> which makes the feature somewhat risky.
+> 
+> If either "Hibernate Enter" or "Hibernate Exit" fail during
+> auto-hibernate flow, the corresponding interrupt
+> "UIC_HIBERNATE_ENTER" or "UIC_HIBERNATE_EXIT" shall be raised
+> according to UFS specification.
+> 
+> This patch adds auto-hibernate error-handling:
+> 
+> - Monitor "Hibernate Enter" and "Hibernate Exit" interrupts after
+>   auto-hibernate feature is activated.
+> 
+> - If fail happens, trigger error-handling just like "manual-hibernate"
+>   fail and apply the same recovery flow: schedule UFS error handler in
+>   ufshcd_check_errors(), and then do host reset and restore
+>   in UFS error handler.
+> 
+> v2:
+>  - Fix sentences in commit message (Marc Gonzalez)
+>  - Make "Auto-Hibernate" error detection more precise (Bean Huo)
+> 
+> Stanley Chu (3):
+>   scsi: ufs: Do not overwrite Auto-Hibernate timer
+>   scsi: ufs: Add error-handling of Auto-Hibernate
+>   scsi: ufs: Use re-factored Auto-Hibernate function
+> 
+>  drivers/scsi/ufs/ufshcd.c | 33 ++++++++++++++++++++++++++++++++-
+>  drivers/scsi/ufs/ufshcd.h |  5 +++++
+>  drivers/scsi/ufs/ufshci.h |  3 +++
+>  3 files changed, 40 insertions(+), 1 deletion(-)
+> 
+Thanks,
+Stanley
 
-> Map FDT to RW until unflatten DT.
->
-> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
-> ---
-> change log v2->v4:
-> * v3 abandoned
-> * add an arg pgprot_t to fixmap_remap_fdt()
-> ---
->  arch/arm64/include/asm/mmu.h | 2 +-
->  arch/arm64/kernel/setup.c    | 5 ++++-
->  arch/arm64/mm/mmu.c          | 4 ++--
->  3 files changed, 7 insertions(+), 4 deletions(-)
->
-> diff --git a/arch/arm64/include/asm/mmu.h b/arch/arm64/include/asm/mmu.h
-> index 67ef25d037ea..4499cb00ece7 100644
-> --- a/arch/arm64/include/asm/mmu.h
-> +++ b/arch/arm64/include/asm/mmu.h
-> @@ -137,7 +137,7 @@ extern void init_mem_pgprot(void);
->  extern void create_pgd_mapping(struct mm_struct *mm, phys_addr_t phys,
->                                unsigned long virt, phys_addr_t size,
->                                pgprot_t prot, bool page_mappings_only);
-> -extern void *fixmap_remap_fdt(phys_addr_t dt_phys);
-> +extern void *fixmap_remap_fdt(phys_addr_t dt_phys, pgprot_t prot);
->  extern void mark_linear_text_alias_ro(void);
->
->  #define INIT_MM_CONTEXT(name)  \
-> diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
-> index 413d566405d1..064df3de1d14 100644
-> --- a/arch/arm64/kernel/setup.c
-> +++ b/arch/arm64/kernel/setup.c
-> @@ -181,7 +181,7 @@ static void __init smp_build_mpidr_hash(void)
->
->  static void __init setup_machine_fdt(phys_addr_t dt_phys)
->  {
-> -       void *dt_virt = fixmap_remap_fdt(dt_phys);
-> +       void *dt_virt = fixmap_remap_fdt(dt_phys, PAGE_KERNEL);
->         const char *name;
->
->         if (!dt_virt || !early_init_dt_scan(dt_virt)) {
-> @@ -320,6 +320,9 @@ void __init setup_arch(char **cmdline_p)
->         /* Parse the ACPI tables for possible boot-time configuration */
->         acpi_boot_table_init();
->
-> +       /* remap fdt to RO */
-> +       fixmap_remap_fdt(__fdt_pointer, PAGE_KERNEL_RO);
-> +
->         if (acpi_disabled)
->                 unflatten_device_tree();
->
-> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-> index a170c6369a68..29648e86f7e5 100644
-> --- a/arch/arm64/mm/mmu.c
-> +++ b/arch/arm64/mm/mmu.c
-> @@ -940,12 +940,12 @@ void *__init __fixmap_remap_fdt(phys_addr_t dt_phys, int *size, pgprot_t prot)
->         return dt_virt;
->  }
->
-> -void *__init fixmap_remap_fdt(phys_addr_t dt_phys)
-> +void *__init fixmap_remap_fdt(phys_addr_t dt_phys, pgprot_t prot)
->  {
->         void *dt_virt;
->         int size;
->
-> -       dt_virt = __fixmap_remap_fdt(dt_phys, &size, PAGE_KERNEL_RO);
-> +       dt_virt = __fixmap_remap_fdt(dt_phys, &size, prot);
->         if (!dt_virt)
->                 return NULL;
->
-> --
-> 2.20.1
->
 
 _______________________________________________
 linux-arm-kernel mailing list
