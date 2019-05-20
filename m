@@ -2,86 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D87542390E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 16:00:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 040732391E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 16:01:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=gvE05g3vXLTEdRmNTXU5Ra51m/uCXMs54iacrhU1Zwo=; b=m1pHMHBxh0bLzS
-	xBzIGBa2n1f7BrgWLtvpSBahQwl8ODdRHM3zTokVLDhFaR6UZco8Qphm0u2Td7yc6leFg4rBvNGpn
-	Vhmcz/+wrYgronm5lJ0BZ+cmbY+aQIqqaQ0jCpTMwFhjSm6ssum5vLOEeYRK0X25Y3KIR84imLpEM
-	CWdYXXJ5i6N0EWcuzPRwwdxQiTUh+BKKiqVPtCpXBrEakbUldc457m9H82wppUZfwPrKmkwEAuYC7
-	YvgErIngu8b+qnefKjzp5XrF5X2FWfvW0UbiCIrtEnPal0T4NXZjpnH7oBBGqSTv7EE68SRWVIuxJ
-	F0EGUaHgnDYA7hT3PZeA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HSMIJlIZc6ziB0rkhSRFOpu25EL3Ok3AyETr/Ej18OE=; b=pHfV15nTrp/MQW
+	VWcKCByi9ebD/3BhEnprjVuIjAGVv9LhnslKfq0qN1+njsJ2Qok9g4QO2BrK22R8Xu8/HQG28NcXp
+	qV9Irdn76zSXMGWj82KnSxXgeGV/vFEERW56aD5Q7YU4rPjpdhnN6YExlo3qNAAhYCSNOPp90jtuD
+	u0KOJs9/xLnxcFRcXlK/0bVcilhb9j8oHeyNp/SMp4H8yj5FEUsmjzZ74FeHYdLvrt3R7nfpZo4hl
+	38YtN+F1z80mAtdQ82mJmaJX9WDhlMtOHkUUx88wO/zk0L4u2nVwHvOn4EtNle4fJOTo/tpNFxgik
+	nqFuLv9D11CBpIfFQJPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSipw-0000pr-0o; Mon, 20 May 2019 14:00:20 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hSir7-0001Y8-UQ; Mon, 20 May 2019 14:01:33 +0000
+Received: from mail-lf1-f65.google.com ([209.85.167.65])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSipo-0000os-MZ
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 14:00:13 +0000
-Received: by mail-wm1-x341.google.com with SMTP id c66so13396wme.0
+ id 1hSiqz-0001Wn-Ec
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 14:01:27 +0000
+Received: by mail-lf1-f65.google.com with SMTP id h13so10416546lfc.7
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 07:00:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=bk5f0M6WXXbmXTgHtGqHLx2M1jGm6Hu++/ddevpUC3U=;
- b=buEEeU0rxW+e3VpPPy7csd4kPlVjuprnv5G+Zm6gKc+zaXk8TprUccdvM19Ccp4LXh
- EoR8MHoSYy73D0FMJXHN9UXVKLhiWJArCqWVFuKB0QtWmaEsDWRuRvpjbklW9/yzTiDK
- F1tAcywJotdwUGTOr5atQP0RjeO1WyFI0mwqr4M7Of9HhVKUKudFeuGMKjfsdXC2R7eB
- C4t2S/TzdMmRlAECyazDkOnLmHQzwzvS1BBVmm8rm2x93LXMIZZyUm/09M5VlhciSjMq
- 1iT1sZQN/QXdKEXq+yZ0VZUHfIZvLof9jMsNr1FgmNIT96LWYQyIi51aTe35PwxOdKtT
- 6RpQ==
+ Mon, 20 May 2019 07:01:24 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=bk5f0M6WXXbmXTgHtGqHLx2M1jGm6Hu++/ddevpUC3U=;
- b=Wa3IbF+/gtGGcSby7uN8qG1px7Ec85894GVYBWsVmayi4i4T1AyCwKAzAEDVH3vS58
- Q5JMYc0OpexM9xKdElpOw3jbUQxhcNcBu53pNkAXrPpBARYeQIl13tSANPXewQIK5nGU
- n0mKZDQDP2ls4O6ptpO0XtFTy4Zj/7eoyc2+jno+H/nIdDb4QOw7wxYh6nF8A8UpAV7a
- RteXhXVp6a11VT4CbSvC8hrx4Lvr+xojxCr0eTGQ2Zkcm9dQo+pbIBwxyhSuRHuNjBlD
- osxHngkm8v37fI+EwekX1f1JBjWgFA+GNuVxuQsKwl0397076cg0l6PROZV8plccpXcC
- Vf6g==
-X-Gm-Message-State: APjAAAWMBrP31bBUxf0tZJfralbKD76iFj8CA8HHU9zQsqVj0cQua+Kl
- SoDAZUp5oQqdrsANNtB0EzfDzg==
-X-Google-Smtp-Source: APXvYqweyz/vJLz3XSJrTqHAwkyOi496405Xmp7phDEGv3avQAvcYEUVMcBQhA7ylJbR35xK+RmgDw==
-X-Received: by 2002:a1c:c8:: with SMTP id 191mr11326841wma.6.1558360810799;
- Mon, 20 May 2019 07:00:10 -0700 (PDT)
-Received: from bender.baylibre.local
- (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id l16sm28656473wrb.40.2019.05.20.07.00.10
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 20 May 2019 07:00:10 -0700 (PDT)
-From: Neil Armstrong <narmstrong@baylibre.com>
-To: daniel.lezcano@linaro.org,
-	tglx@linutronix.de
-Subject: [PATCH] clocksource: timer-meson6: update with SPDX Licence identifier
-Date: Mon, 20 May 2019 16:00:07 +0200
-Message-Id: <20190520140007.29042-1-narmstrong@baylibre.com>
-X-Mailer: git-send-email 2.21.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=k5M5HG3kl0pUgSauCfNvkeVzL85t6u8JUUHdn9mhx04=;
+ b=Hd0xO2LSEKxjRAdYyiCeIuA0OM8yiO81PvtoAaL4VxPdqs/sus3qw1Y0DlTUwAWZ8F
+ 3Hv/5oO9TolI6YmQMtiZKuIrizqeQIv3F5Q6teZr5FtjHMe2zVJ0kzDLlhMpBBWe2Uzz
+ R93LgkDHYQlE7O5JWKOkx1N0qAxsdHDnX0cnw85+W0oJyVrFq1KNZ1PH9bPVmx1ON9fL
+ C2Y7bZdd+3NpEMCfb3MzbPu72AubWCq2zL6qrXhX7IB9jfY2bc5oL00WNGg/bk03M8GM
+ 00hPdHA8baf8dZWXV7Yl/Hvt3bziaFIyKWr6v0nNLygHBGqyR2oDootD1e6oe4K9jOu2
+ lCiA==
+X-Gm-Message-State: APjAAAUycuRowHLGZgaeZz268BJkZfdaXX2Za6E4ZPSYAJeSKbKAzYRl
+ 5EVzAeTULPBiO5CPaZ1bYwFf8rY44Zl6d4p1boo=
+X-Google-Smtp-Source: APXvYqzBXH0Bn12gU+O/WKysSzgvfoDb4ZQdIiC8js/Lv4/NzbFVAIlWC//CHbjkYuLxxyAwqyeGdyzFagcgQl6QGI8=
+X-Received: by 2002:a19:a887:: with SMTP id r129mr1920861lfe.16.1558360883054; 
+ Mon, 20 May 2019 07:01:23 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190520134605.29116-1-christian@brauner.io>
+In-Reply-To: <20190520134605.29116-1-christian@brauner.io>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 20 May 2019 16:00:44 +0200
+Message-ID: <CAMuHMdVfy-fWVGzd8orLHbC=pOmUH-ocvhjj2DCZdEQRxctYQA@mail.gmail.com>
+Subject: Re: [PATCH v2 1/2] pid: add pidfd_open()
+To: Christian Brauner <christian@brauner.io>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_070012_740342_09CD14DC 
-X-CRM114-Status: GOOD (  11.05  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190520_070125_484982_E1EE0E61 
+X-CRM114-Status: GOOD (  16.86  )
+X-Spam-Score: -0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ no trust [209.85.167.65 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.65 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,40 +81,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
+Cc: "linux-ia64@vger.kernel.org" <linux-ia64@vger.kernel.org>,
+ Linux-sh list <linux-sh@vger.kernel.org>, Oleg Nesterov <oleg@redhat.com>,
+ David Howells <dhowells@redhat.com>, Joel Fernandes <joel@joelfernandes.org>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ sparclinux <sparclinux@vger.kernel.org>, elena.reshetova@intel.com,
+ Linux-Arch <linux-arch@vger.kernel.org>,
+ linux-s390 <linux-s390@vger.kernel.org>, Daniel Colascione <dancol@google.com>,
+ linux-mips@vger.kernel.org, Android Kernel Team <kernel-team@android.com>,
+ "Serge E. Hallyn" <serge@hallyn.com>, linux-xtensa@linux-xtensa.org,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
+ linux-m68k <linux-m68k@lists.linux-m68k.org>,
+ Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, surenb@google.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Parisc List <linux-parisc@vger.kernel.org>, cyphar@cyphar.com,
+ Linux API <linux-api@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Andy Lutomirski <luto@amacapital.net>,
+ "Eric W. Biederman" <ebiederm@xmission.com>,
+ alpha <linux-alpha@vger.kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
+ "torvalds@linux-foundation.org" <torvalds@linux-foundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
----
- drivers/clocksource/timer-meson6.c | 5 +----
- 1 file changed, 1 insertion(+), 4 deletions(-)
+On Mon, May 20, 2019 at 3:46 PM Christian Brauner <christian@brauner.io> wrote:
+> This adds the pidfd_open() syscall. It allows a caller to retrieve pollable
+> pidfds for a process which did not get created via CLONE_PIDFD, i.e. for a
+> process that is created via traditional fork()/clone() calls that is only
+> referenced by a PID:
+>
+> int pidfd = pidfd_open(1234, 0);
+> ret = pidfd_send_signal(pidfd, SIGSTOP, NULL, 0);
+>
+> With the introduction of pidfds through CLONE_PIDFD it is possible to
+> created pidfds at process creation time.
+> However, a lot of processes get created with traditional PID-based calls
+> such as fork() or clone() (without CLONE_PIDFD). For these processes a
+> caller can currently not create a pollable pidfd. This is a problem for
+> Android's low memory killer (LMK) and service managers such as systemd.
+> Both are examples of tools that want to make use of pidfds to get reliable
+> notification of process exit for non-parents (pidfd polling) and race-free
+> signal sending (pidfd_send_signal()). They intend to switch to this API for
+> process supervision/management as soon as possible. Having no way to get
+> pollable pidfds from PID-only processes is one of the biggest blockers for
+> them in adopting this api. With pidfd_open() making it possible to retrieve
+> pidfds for PID-based processes we enable them to adopt this api.
+>
+> In line with Arnd's recent changes to consolidate syscall numbers across
+> architectures, I have added the pidfd_open() syscall to all architectures
+> at the same time.
+>
+> Signed-off-by: Christian Brauner <christian@brauner.io>
+> Reviewed-by: Oleg Nesterov <oleg@redhat.com>
 
-diff --git a/drivers/clocksource/timer-meson6.c b/drivers/clocksource/timer-meson6.c
-index 84bd9479c3f8..9e8b467c71da 100644
---- a/drivers/clocksource/timer-meson6.c
-+++ b/drivers/clocksource/timer-meson6.c
-@@ -1,13 +1,10 @@
-+// SPDX-License-Identifier: GPL-2.0
- /*
-  * Amlogic Meson6 SoCs timer handling.
-  *
-  * Copyright (C) 2014 Carlo Caione <carlo@caione.org>
-  *
-  * Based on code from Amlogic, Inc
-- *
-- * This file is licensed under the terms of the GNU General Public
-- * License version 2.  This program is licensed "as is" without any
-- * warranty of any kind, whether express or implied.
-  */
- 
- #include <linux/bitfield.h>
+>  arch/m68k/kernel/syscalls/syscall.tbl       |  1 +
+
+Acked-by: Geert Uytterhoeven <geert@linux-m68k.org>
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
 -- 
-2.21.0
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
