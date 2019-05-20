@@ -2,64 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD9D3229AB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 03:16:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60566229D3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 04:03:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=71eLYLkc/41NFjX4RrL8oh8qNf6SOKD7vhrypP/BUvw=; b=cWROSoYqLOiSvF
-	f99w46jFETBe60Vp4gVpVkQYwu1OgAqBh1rUH5yJ7xTAAhMi0yFFZ9W/eF6tod0xVQVmLMc8Q3cuX
-	Z+jgNMazc1mM5WmH+R+Pytmr+KKBIWmG6PbJcP62r5ClW8/wEDImc0PaKAbiBUN0+kGDBTMkzsIWi
-	X7dDnDUtf0GAquZlWwLpy+niyBPzfMcNLseGhYYwS9kBEZ8LcaKiq+miLggEplr/Ubj0xqTZ8+rJF
-	YDqIN8amgs/mDgB0ODs4+nEs/0ferhqoD1dihV2Fhw4Lod7TlYJ5nf+3zUReq+1or+OWX5/FrQZJh
-	tSS9LJ6QvfNby4AtHvew==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nTVfbu6KyLCh8C3Me4Dl/2PPezc+2UhkEj1u4G1eUzQ=; b=OnRH5qP+pagex8
+	0tWwMeKUG6mmYPbFt10pvsjL0KtaHnQ9fGVoqWQkWI0NhoOWF/bh7jAnLaRXmq/tAxf72PGnzVEi9
+	jyytCRQJW+YRdVtzyCzPe8twjJ6QjCH1tKOZZ8IP0KsAwQ0+KVtEfPnIPWmOwONJ/xvsIkknWm7xM
+	gYu8fgXBEzUnIFng5MQHY7680kSn0mQywWwUawCVR1pNuXDdX5aaijrj3kakWR48EwoLryxQsHIRH
+	X8j2PDSiHkaMVB4YivEexG4vtVwz1PaE6P06dqwePkinh0vPPBXAHuQ+tePPvUzUG9BQLXqki1V2S
+	7kFa10536gtczqkCPRwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSWuF-00078y-Gl; Mon, 20 May 2019 01:15:59 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hSXeJ-0003uC-CK; Mon, 20 May 2019 02:03:35 +0000
+Received: from mail-eopbgr130054.outbound.protection.outlook.com
+ ([40.107.13.54] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSWu7-000784-2i; Mon, 20 May 2019 01:15:53 +0000
-X-UUID: e0d781155c494a11be0a956767fb23a1-20190519
-X-UUID: e0d781155c494a11be0a956767fb23a1-20190519
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1088236999; Sun, 19 May 2019 17:15:41 -0800
-Received: from mtkmbs03n2.mediatek.inc (172.21.101.182) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 19 May 2019 18:15:40 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs03n2.mediatek.inc (172.21.101.182) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 20 May 2019 09:15:38 +0800
-Received: from [172.21.77.33] (172.21.77.33) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 20 May 2019 09:15:38 +0800
-Message-ID: <1558314937.660.2.camel@mtkswgap22>
-Subject: Re: [PATCH v2 0/3] scsi: ufs: Add error handling of Auto-Hibernate
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>
-Date: Mon, 20 May 2019 09:15:37 +0800
-In-Reply-To: <1557912988-26758-1-git-send-email-stanley.chu@mediatek.com>
-References: <1557912988-26758-1-git-send-email-stanley.chu@mediatek.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1hSXeA-0003sx-J2
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 02:03:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=v67WAPFusspV4Na++nTAAaHMTMAUhVCwGAFZkhqJawo=;
+ b=QxUvbXmhaYhHynZ3q1kmG4Osd/ltbF6qfyFnPaRQpwnReIl/gBP3DtyTHp7FXrD31oVBb1QWCZSq02gVU9A8ANS+Se2yukyOLn0iOCchTHK/13SlVO2Hli+O7EJk9YroqWyiYRw5AVjSYK+yaIsApxZD/UWXukx327gdhNEazqU=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB4628.eurprd04.prod.outlook.com (52.135.148.27) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1900.17; Mon, 20 May 2019 02:03:19 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::3173:24:d401:2378]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::3173:24:d401:2378%6]) with mapi id 15.20.1900.020; Mon, 20 May 2019
+ 02:03:19 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: "mturquette@baylibre.com" <mturquette@baylibre.com>, "sboyd@kernel.org"
+ <sboyd@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>
+Subject: [PATCH V3] clk: imx: imx8mm: fix int pll clk gate
+Thread-Topic: [PATCH V3] clk: imx: imx8mm: fix int pll clk gate
+Thread-Index: AQHVDrAyQ1ZpJItbgUWgZmYb6FWXWQ==
+Date: Mon, 20 May 2019 02:03:19 +0000
+Message-ID: <20190520021702.3531-1-peng.fan@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.16.4
+x-clientproxiedby: HK2PR02CA0160.apcprd02.prod.outlook.com
+ (2603:1096:201:1f::20) To AM0PR04MB4481.eurprd04.prod.outlook.com
+ (2603:10a6:208:70::15)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.71]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: ad5505f9-d739-41b1-de4d-08d6dcc75461
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB4628; 
+x-ms-traffictypediagnostic: AM0PR04MB4628:
+x-microsoft-antispam-prvs: <AM0PR04MB4628BA9BAE10652958BC4B1588060@AM0PR04MB4628.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:386;
+x-forefront-prvs: 004395A01C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(376002)(366004)(136003)(39860400002)(346002)(396003)(189003)(199004)(25786009)(305945005)(2906002)(52116002)(99286004)(2501003)(486006)(316002)(44832011)(476003)(1076003)(14444005)(68736007)(2616005)(53936002)(256004)(66066001)(36756003)(71200400001)(71190400001)(6436002)(4326008)(386003)(6506007)(186003)(3846002)(6116002)(6486002)(26005)(5660300002)(102836004)(6512007)(66476007)(8936002)(7736002)(14454004)(81156014)(81166006)(66446008)(54906003)(8676002)(86362001)(66556008)(2201001)(66946007)(110136005)(64756008)(73956011)(478600001)(50226002)(7416002)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4628;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: lnREfV7/y+twbPywYdw/Cs4vYm5s0IzfozCGDQihASUGJwIAI2Piaz+SuTDeGhvoMFCT+sYf87zi5rldyq4A5XcG/Wb6mceIdaf+YRLoUmqim4OA7za0wUDuxtkMDEtxccuDYn2slOb/nTzTLxguAFRPgfY9+fvW0KPbzmdyGf6hy0xifoFdZDg1PBPcYtdcfYaudD8VwYk1Vj+seB1aaAgXix0IVmbQiKkpqoKES7CBFj7QWgP9QDF7+Zn+0U67qlJvjhMLD7YjgzjSCeTyEgdB0F77T/mJqNF7H1UI3VprJe+dnvkD5MpDdrrYfg6V1c3QV50Pw1fNt5uvvdVoYWtIwxzzcQW6gayXcbe8qH65ow+cKwKcqu03JHjlait5oLSSaoesHVPN9X7w54X6Q1U0zupS/TyXiuR2ZgMjx0g=
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 98DB3DEF6BAFB6C6F7C95ADEF238E8BF6072C530D9204002251DC5A7057FDE232000:8
-X-MTK: N
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: ad5505f9-d739-41b1-de4d-08d6dcc75461
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 May 2019 02:03:19.4075 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4628
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190519_181551_127584_9C51BC5A 
-X-CRM114-Status: GOOD (  11.62  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190519_190326_819513_5F29DBD4 
+X-CRM114-Status: GOOD (  10.45  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.13.54 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -71,68 +114,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
- "marc.w.gonzalez@free.fr" <marc.w.gonzalez@free.fr>,
- Andy Teng =?UTF-8?Q?=28=E9=84=A7=E5=A6=82=E5=AE=8F=29?=
- <Andy.Teng@mediatek.com>,
- Chun-Hung Wu =?UTF-8?Q?=28=E5=B7=AB=E9=A7=BF=E5=AE=8F=29?=
- <Chun-hung.Wu@mediatek.com>,
- Kuohong Wang =?UTF-8?Q?=28=E7=8E=8B=E5=9C=8B=E9=B4=BB=29?=
- <kuohong.wang@mediatek.com>, "evgreen@chromium.org" <evgreen@chromium.org>,
- "avri.altman@wdc.com" <avri.altman@wdc.com>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- Peter Wang =?UTF-8?Q?=28=E7=8E=8B=E4=BF=A1=E5=8F=8B=29?=
- <peter.wang@mediatek.com>, "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "pedrom.sousa@synopsys.com" <pedrom.sousa@synopsys.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "beanhuo@micron.com" <beanhuo@micron.com>
+Cc: Peng Fan <peng.fan@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "stable@vger.kernel.org" <stable@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Avri, Alim, Pedro,
+To Frac pll, the gate shift is 13, however to Int PLL the gate shift
+is 11.
 
-Gentle ping for this patch.
+Cc: <stable@vger.kernel.org>
+Fixes: ba5625c3e27 ("clk: imx: Add clock driver support for imx8mm")
+Signed-off-by: Peng Fan <peng.fan@nxp.com>
+Reviewed-by: Fabio Estevam <festevam@gmail.com>
+Reviewed-by: Jacky Bai <ping.bai@nxp.com>
+---
 
-On Wed, 2019-05-15 at 17:36 +0800, Stanley Chu wrote:
-> Currently auto-hibernate is activated if host supports
-> auto-hibern8 capability. However error-handling is not implemented,
-> which makes the feature somewhat risky.
-> 
-> If either "Hibernate Enter" or "Hibernate Exit" fail during
-> auto-hibernate flow, the corresponding interrupt
-> "UIC_HIBERNATE_ENTER" or "UIC_HIBERNATE_EXIT" shall be raised
-> according to UFS specification.
-> 
-> This patch adds auto-hibernate error-handling:
-> 
-> - Monitor "Hibernate Enter" and "Hibernate Exit" interrupts after
->   auto-hibernate feature is activated.
-> 
-> - If fail happens, trigger error-handling just like "manual-hibernate"
->   fail and apply the same recovery flow: schedule UFS error handler in
->   ufshcd_check_errors(), and then do host reset and restore
->   in UFS error handler.
-> 
-> v2:
->  - Fix sentences in commit message (Marc Gonzalez)
->  - Make "Auto-Hibernate" error detection more precise (Bean Huo)
-> 
-> Stanley Chu (3):
->   scsi: ufs: Do not overwrite Auto-Hibernate timer
->   scsi: ufs: Add error-handling of Auto-Hibernate
->   scsi: ufs: Use re-factored Auto-Hibernate function
-> 
->  drivers/scsi/ufs/ufshcd.c | 33 ++++++++++++++++++++++++++++++++-
->  drivers/scsi/ufs/ufshcd.h |  5 +++++
->  drivers/scsi/ufs/ufshci.h |  3 +++
->  3 files changed, 40 insertions(+), 1 deletion(-)
-> 
-Thanks,
-Stanley
+V3:
+ Move Fixes Tag to correct place
+V2:
+ Update commit with Fixes, Add R-b and cc stable
 
+ drivers/clk/imx/clk-imx8mm.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/drivers/clk/imx/clk-imx8mm.c b/drivers/clk/imx/clk-imx8mm.c
+index 1ef8438e3d6d..122a81ab8e48 100644
+--- a/drivers/clk/imx/clk-imx8mm.c
++++ b/drivers/clk/imx/clk-imx8mm.c
+@@ -449,12 +449,12 @@ static int __init imx8mm_clocks_init(struct device_node *ccm_node)
+ 	clks[IMX8MM_AUDIO_PLL2_OUT] = imx_clk_gate("audio_pll2_out", "audio_pll2_bypass", base + 0x14, 13);
+ 	clks[IMX8MM_VIDEO_PLL1_OUT] = imx_clk_gate("video_pll1_out", "video_pll1_bypass", base + 0x28, 13);
+ 	clks[IMX8MM_DRAM_PLL_OUT] = imx_clk_gate("dram_pll_out", "dram_pll_bypass", base + 0x50, 13);
+-	clks[IMX8MM_GPU_PLL_OUT] = imx_clk_gate("gpu_pll_out", "gpu_pll_bypass", base + 0x64, 13);
+-	clks[IMX8MM_VPU_PLL_OUT] = imx_clk_gate("vpu_pll_out", "vpu_pll_bypass", base + 0x74, 13);
+-	clks[IMX8MM_ARM_PLL_OUT] = imx_clk_gate("arm_pll_out", "arm_pll_bypass", base + 0x84, 13);
+-	clks[IMX8MM_SYS_PLL1_OUT] = imx_clk_gate("sys_pll1_out", "sys_pll1_bypass", base + 0x94, 13);
+-	clks[IMX8MM_SYS_PLL2_OUT] = imx_clk_gate("sys_pll2_out", "sys_pll2_bypass", base + 0x104, 13);
+-	clks[IMX8MM_SYS_PLL3_OUT] = imx_clk_gate("sys_pll3_out", "sys_pll3_bypass", base + 0x114, 13);
++	clks[IMX8MM_GPU_PLL_OUT] = imx_clk_gate("gpu_pll_out", "gpu_pll_bypass", base + 0x64, 11);
++	clks[IMX8MM_VPU_PLL_OUT] = imx_clk_gate("vpu_pll_out", "vpu_pll_bypass", base + 0x74, 11);
++	clks[IMX8MM_ARM_PLL_OUT] = imx_clk_gate("arm_pll_out", "arm_pll_bypass", base + 0x84, 11);
++	clks[IMX8MM_SYS_PLL1_OUT] = imx_clk_gate("sys_pll1_out", "sys_pll1_bypass", base + 0x94, 11);
++	clks[IMX8MM_SYS_PLL2_OUT] = imx_clk_gate("sys_pll2_out", "sys_pll2_bypass", base + 0x104, 11);
++	clks[IMX8MM_SYS_PLL3_OUT] = imx_clk_gate("sys_pll3_out", "sys_pll3_bypass", base + 0x114, 11);
+ 
+ 	/* SYS PLL fixed output */
+ 	clks[IMX8MM_SYS_PLL1_40M] = imx_clk_fixed_factor("sys_pll1_40m", "sys_pll1_out", 1, 20);
+-- 
+2.16.4
 
 _______________________________________________
 linux-arm-kernel mailing list
