@@ -2,57 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5552C22E2A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 10:15:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F0C722E50
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 10:22:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fiH9kDIGUxfq0tz44PQRmyttwTUgAk6UcMcZGhnFi10=; b=rn/KzOMld88yuc
-	PMHFkf7jf6MwUNfKRsBdu7tkxlMIBJY5ckdRgtF3TfgepIIlbkLJafwEYwnFS1RVMknunkPo+eStF
-	STWex45K+/1oXcwg+M4WSlAXLekmiy6jASNE5DoxGyKzTHHNX5k4ehzW9KqN01LC2YlZM1nKZ8J1c
-	XbXbqCFrqtUVKOHKlCWXf5esSjyQ4a/I5CyvYhQCv4ZjOpQNgQP5KiXSEsTyifFt/fICjk6bpb4Tn
-	c8wQztvphCEFs5HYTTTzPPrHM5C/6KL905IjafEfyCk3NFbYlaFSV4AU3VcVoz8jlmGJxffluZt8Y
-	gN09mO9j+kaSosX4JBPg==;
+	List-Owner; bh=NrwCEr3oyCFPShwcQU+MWqCHyYLPQUV3tgmNXO3vWO4=; b=LvcEvvq64K02ul
+	vtJXaYf7NbPH/hkHL0A00aidy2SsQ8G1WxdR/4iUxPFr8R+s1azY42J5bu2WocbVaQrbimSEbJxmS
+	ViLuWZR07jbJJO9UKEXUa7Cr5Z/QWyY2jQv1mR384Z5QD19kMCokQeJUzbVGE9Mz7y7/02mOSl0cp
+	lu96/1jhYOJup8HO3qsCHSkymSjAJ5WLCyoWo6tg/Yvn7nVcGEeQkFVm6BHVQz/EM8Et7Sup+vA3u
+	4+VskH/HoqghAnApph79N24Ef3OfS9YwREF1ydx84FI3NzDBiv4DD5LsPsPLNhZ1PE5AA4fro3eSU
+	Tv4ZjAJAqjEnPILwn8RA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSdS7-0003eK-U1; Mon, 20 May 2019 08:15:23 +0000
-Received: from relay3-d.mail.gandi.net ([217.70.183.195])
+	id 1hSdYX-0006Ok-4o; Mon, 20 May 2019 08:22:01 +0000
+Received: from mail-yw1-xc42.google.com ([2607:f8b0:4864:20::c42])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSdRp-0002an-R5
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 08:15:07 +0000
-X-Originating-IP: 90.88.22.185
-Received: from localhost (aaubervilliers-681-1-80-185.w90-88.abo.wanadoo.fr
- [90.88.22.185]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id E24FB6001B;
- Mon, 20 May 2019 08:15:01 +0000 (UTC)
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>, Mark Rutland <mark.rutland@arm.com>,
- Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
- Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: [PATCH v3 2/2] dt-bindings: mmc: sun4i: Add YAML schemas
-Date: Mon, 20 May 2019 10:14:57 +0200
-Message-Id: <31d745e328b7088cc5851a7e4b0efaae06cf3f56.1558340089.git-series.maxime.ripard@bootlin.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <c6b8789d71ce1970be77387c066a262dca0a0dec.1558340089.git-series.maxime.ripard@bootlin.com>
-References: <c6b8789d71ce1970be77387c066a262dca0a0dec.1558340089.git-series.maxime.ripard@bootlin.com>
+ id 1hSdYP-0006Nu-Oh
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 08:21:55 +0000
+Received: by mail-yw1-xc42.google.com with SMTP id e68so5532267ywf.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 20 May 2019 01:21:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=6qhO6B8/Z9D9GEePABEHToMQA2Zs+IWYeC8mEzi25YY=;
+ b=R5Z+RjbqwZV78P9ToAX8cdQxWCGGQYpG1b6umNEBYkosWgExwZSU1q71Zp4WbGmGoc
+ op/1g+RlSnWhVDVr7/H45rTEmKBCB4wb688alowDLxBL6pV0XbRjLU5Gi0BBFccrvmuC
+ Ec1i+bsCKfe4Jteg4849yH84Lki5NlCEColC4Uzgr5WhH+nycTgaEI+nX2cHyWddzsQD
+ Ah42AhDZoAVxhulQEcfV5SywwNSXTT2ZWi0y+ciBePITT9EpBXPKtYwiolfHgVgnAOtY
+ ElcQ2Lke+RZepMdrTWaQJ1sKMR0IW4Kp9HSZYG0YbaY/IR1g+Qw6Ji1ngvrX8u6KIBlW
+ Obhg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=6qhO6B8/Z9D9GEePABEHToMQA2Zs+IWYeC8mEzi25YY=;
+ b=hhiqVlwP/Lk6gBJdxpL0M4W6KV2EngCIJ1dFp3wFf7ap6kz5A9nDstQy7YpROoejkB
+ cT/yQimbahgwFu/gxDgaqOmGsSZvOIVcdjGnYLfVZSHhQeNmNwxGMAWrH5cINWlkcaOS
+ j+aCUJhnvpVnm7QArMZS1FWZUO4mOfvgocu7zQ3NvqyZfiB9z9Thw36GNpb0gTnYj0bO
+ 3dgjjWtNAvoBtfNMqGk1LfJ6tfamLUIrqSfsrDdINhFCYAn4OlynPxv1WESNJKHzQAwO
+ rZ2ZibDizI7Xn/TvUTXbwIRii1VTuR6SqrzVYBYUW8e0Ze3+hUzH4NilTiMCb4fWbChG
+ F0+g==
+X-Gm-Message-State: APjAAAVKGXX0R+OpZm/GLS2V32rHL4j1nF35S5oZ336fJ5L5ARGOhIht
+ pen6Pb3Kjle5GR1Fek5vbDPeUaBei/PPVjuQCp8=
+X-Google-Smtp-Source: APXvYqxTV7Y4TX39GVp8m3uUIqRHuAd4Xg7evnIjykjVPrMlj+RftBbiQ1AZDp3Zzok2g/gdO2GsZt9sT8nrTtl+3xE=
+X-Received: by 2002:a81:59c2:: with SMTP id n185mr33786741ywb.21.1558340511959; 
+ Mon, 20 May 2019 01:21:51 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190518152355.11134-1-peron.clem@gmail.com>
+ <20190518152355.11134-3-peron.clem@gmail.com>
+ <20190520073652.itk452vrpnicta5v@flea>
+In-Reply-To: <20190520073652.itk452vrpnicta5v@flea>
+From: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Date: Mon, 20 May 2019 10:21:40 +0200
+Message-ID: <CAJiuCceEL9xH45P6Gj99YTir_1tkyraf5HefDNfm9p+UtdLs8w@mail.gmail.com>
+Subject: Re: [PATCH v3 2/4] arm64: dts: allwinner: h6: add watchdog node
+To: Maxime Ripard <maxime.ripard@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_011506_216120_24DBB492 
-X-CRM114-Status: GOOD (  13.77  )
-X-Spam-Score: -1.0 (-)
+X-CRM114-CacheID: sfid-20190520_012153_850508_203A4B9B 
+X-CRM114-Status: GOOD (  16.42  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.0 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.195 listed in wl.mailspike.net]
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:c42 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (peron.clem[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -64,195 +96,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-mmc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Rob Herring <robh@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, linux-watchdog@vger.kernel.org,
+ linux-kernel <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>, Guenter Roeck <linux@roeck-us.net>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Switch the DT binding to a YAML schema to enable the DT validation.
-
-Reviewed-by: Rob Herring <robh@kernel.org>
-Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-
----
-
-Changes from v2
-  - Add Rob's Reviewed-by
----
- Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml | 98 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
- Documentation/devicetree/bindings/mmc/sunxi-mmc.txt                | 52 +--------------------------------------
- 2 files changed, 98 insertions(+), 52 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml
- delete mode 100644 Documentation/devicetree/bindings/mmc/sunxi-mmc.txt
-
-diff --git a/Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml b/Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml
-new file mode 100644
-index 000000000000..df0280edef97
---- /dev/null
-+++ b/Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml
-@@ -0,0 +1,98 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/mmc/allwinner,sun4i-a10-mmc.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Allwinner A10 MMC Controller Device Tree Bindings
-+
-+allOf:
-+  - $ref: "mmc-controller.yaml"
-+
-+maintainers:
-+  - Chen-Yu Tsai <wens@csie.org>
-+  - Maxime Ripard <maxime.ripard@bootlin.com>
-+
-+properties:
-+  "#address-cells": true
-+  "#size-cells": true
-+
-+  compatible:
-+    oneOf:
-+      - const: allwinner,sun4i-a10-mmc
-+      - const: allwinner,sun5i-a13-mmc
-+      - const: allwinner,sun7i-a20-mmc
-+      - const: allwinner,sun8i-a83t-emmc
-+      - const: allwinner,sun9i-a80-mmc
-+      - const: allwinner,sun50i-a64-emmc
-+      - const: allwinner,sun50i-a64-mmc
-+      - items:
-+          - const: allwinner,sun8i-a83t-mmc
-+          - const: allwinner,sun7i-a20-mmc
-+      - items:
-+          - const: allwinner,sun50i-h6-emmc
-+          - const: allwinner,sun50i-a64-emmc
-+      - items:
-+          - const: allwinner,sun50i-h6-mmc
-+          - const: allwinner,sun50i-a64-mmc
-+      - items:
-+          - const: allwinner,sun8i-r40-emmc
-+          - const: allwinner,sun50i-a64-emmc
-+      - items:
-+          - const: allwinner,sun8i-r40-mmc
-+          - const: allwinner,sun50i-a64-mmc
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    minItems: 2
-+    maxItems: 4
-+    items:
-+      - description: Bus Clock
-+      - description: Module Clock
-+      - description: Output Clock
-+      - description: Sample Clock
-+
-+  clock-names:
-+    minItems: 2
-+    maxItems: 4
-+    items:
-+      - const: ahb
-+      - const: mmc
-+      - const: output
-+      - const: sample
-+
-+  resets:
-+    maxItems: 1
-+
-+  reset-names:
-+    const: ahb
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+
-+examples:
-+  - |
-+    mmc0: mmc@1c0f000 {
-+        compatible = "allwinner,sun5i-a13-mmc";
-+        reg = <0x01c0f000 0x1000>;
-+        clocks = <&ahb_gates 8>, <&mmc0_clk>;
-+        clock-names = "ahb", "mmc";
-+        interrupts = <32>;
-+        bus-width = <4>;
-+        cd-gpios = <&pio 7 1 0>;
-+    };
-+
-+# FIXME: We should set it, but it would report all the generic
-+# properties as additional properties.
-+# additionalProperties: false
-+
-+...
-diff --git a/Documentation/devicetree/bindings/mmc/sunxi-mmc.txt b/Documentation/devicetree/bindings/mmc/sunxi-mmc.txt
-deleted file mode 100644
-index e9cb3ec5e502..000000000000
---- a/Documentation/devicetree/bindings/mmc/sunxi-mmc.txt
-+++ /dev/null
-@@ -1,52 +0,0 @@
--* Allwinner sunxi MMC controller
--
--The highspeed MMC host controller on Allwinner SoCs provides an interface
--for MMC, SD and SDIO types of memory cards.
--
--Supported maximum speeds are the ones of the eMMC standard 4.5 as well
--as the speed of SD standard 3.0.
--Absolute maximum transfer rate is 200MB/s
--
--Required properties:
-- - compatible : should be one of:
--   * "allwinner,sun4i-a10-mmc"
--   * "allwinner,sun5i-a13-mmc"
--   * "allwinner,sun7i-a20-mmc"
--   * "allwinner,sun8i-a83t-emmc"
--   * "allwinner,sun9i-a80-mmc"
--   * "allwinner,sun50i-a64-emmc"
--   * "allwinner,sun50i-a64-mmc"
--   * "allwinner,sun50i-h6-emmc", "allwinner.sun50i-a64-emmc"
--   * "allwinner,sun50i-h6-mmc", "allwinner.sun50i-a64-mmc"
-- - reg : mmc controller base registers
-- - clocks : a list with 4 phandle + clock specifier pairs
-- - clock-names : must contain "ahb", "mmc", "output" and "sample"
-- - interrupts : mmc controller interrupt
--
--Optional properties:
-- - resets : phandle + reset specifier pair
-- - reset-names : must contain "ahb"
-- - for cd, bus-width and additional generic mmc parameters
--   please refer to mmc.txt within this directory
--
--Examples:
--	- Within .dtsi:
--	mmc0: mmc@1c0f000 {
--		compatible = "allwinner,sun5i-a13-mmc";
--		reg = <0x01c0f000 0x1000>;
--		clocks = <&ahb_gates 8>, <&mmc0_clk>, <&mmc0_output_clk>, <&mmc0_sample_clk>;
--		clock-names = "ahb", "mod", "output", "sample";
--		interrupts = <0 32 4>;
--		status = "disabled";
--	};
--
--	- Within dts:
--	mmc0: mmc@1c0f000 {
--		pinctrl-names = "default", "default";
--		pinctrl-0 = <&mmc0_pins_a>;
--		pinctrl-1 = <&mmc0_cd_pin_reference_design>;
--		bus-width = <4>;
--		cd-gpios = <&pio 7 1 0>; /* PH1 */
--		cd-inverted;
--		status = "okay";
--	};
--- 
-git-series 0.9.1
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgpPbiBNb24sIDIwIE1heSAyMDE5IGF0IDA5OjM2LCBNYXhpbWUgUmlwYXJkIDxtYXhpbWUu
+cmlwYXJkQGJvb3RsaW4uY29tPiB3cm90ZToKPgo+IE9uIFNhdCwgTWF5IDE4LCAyMDE5IGF0IDA1
+OjIzOjUzUE0gKzAyMDAsIENsw6ltZW50IFDDqXJvbiB3cm90ZToKPiA+IEFsbHdpbm5lciBINiBo
+YXMgYSB3YXRjaG9nIG5vZGUgd2hpY2ggc2VlbXMgYnJva2VuCj4gPiBvbiBzb21lIGJvYXJkcy4K
+PiA+Cj4gPiBUZXN0IGhhcyBiZWVuIHBlcmZvcm1lZCBvbiBzZXZlcmFsIGJvYXJkcy4KPiA+Cj4g
+PiBDaGVuLVl1IFRzYWkgYm9hcmRzOgo+ID4gUGluZSBINjQgLSBINjQ0OEJBIDc3ODIgPT4gT0sK
+PiA+IE9yYW5nZVBpIExpdGUgMiAtIEg4MDY4QkEgNjFDMiA9PiBLTwo+ID4KPiA+IE1hcnRpbiBB
+eW90dGUgYm9hcmRzOgo+ID4gUGluZSBINjQgLSBIODA2OUJBIDY4OTIgPT4gT0sKPiA+IE9yYW5n
+ZVBpIDMgLSBIQTA0N0JBIDY5VzIgPT4gS08KPiA+IE9yYW5nZVBpIE9uZSBQbHVzIC0gSDczMTBC
+QSA2ODQyID0+IEtPCj4gPiBPcmFuZ2VQaSBMaXRlMiAtIEg2NDQ4QkEgNjY2MiA9PiBLTwo+ID4K
+PiA+IENsw6ltZW50IFDDqXJvbiBib2FyZDoKPiA+IEJlZWxpbmsgR1MxIC0gSDczMDlCQSA2ODQy
+ID0+IEtPCj4gPgo+ID4gQXMgaXQgc2VlbXMgbm90IGZpeGFibGUgZm9yIG5vdywgZGVjbGFyZSB0
+aGUgbm9kZQo+ID4gYnV0IGxlYXZlIGl0IGRpc2FibGUgd2l0aCBhIGNvbW1lbnQuCj4gPgo+ID4g
+U2lnbmVkLW9mZi1ieTogQ2zDqW1lbnQgUMOpcm9uIDxwZXJvbi5jbGVtQGdtYWlsLmNvbT4KPgo+
+IElmIGl0IGRvZXNuJ3Qgd29yayBtb3N0IGJvYXJkcywgdGhlbiB3aHkgZG8gd2UgbmVlZCB0byBt
+ZXJnZSB0aGF0Cj4gcGF0Y2ggaW4gdGhlIGZpcnN0IHBsYWNlPwoKTXkgcGVyc29ubmFsIG9waW5p
+b24sIGlzIHRoYXQgaGF2aW5nIHRoZSBJUCBkZWNsYXJlZCBhbmQgZGlzYWJsZWQgd2l0aAphIGNv
+bW1lbnQgc2F5aW5nICJpdCdzIGJyb2tlbiBvbiBzb21lIGJvYXJkcyIgaW4gdGhlIGRldmljZS10
+cmVlIGlzCmJldHRlciB0aGFuIG5vdCBoYXZpbmcgYXQgYWxsLgoKVGhpcyB3aWxsIGV4cGxpY2l0
+IHNheSAidGhlIElQIGV4aXN0IGJ1dCBkb24ndCB1c2UgaXQhIi4KTWF5YmUgc29tZSBwZW9wbGUg
+d2l0aCBhIGZ1bmN0aW9ubmFsIGJvYXJkIHdvdWxkIGxpa2UgdG8gZXhwbGljaXRseQp1c2UgaXQg
+b24gdGhlaXIgZHRzLgoKQWdhaW4ganVzdCBteSBwZXJzb25uYWwgb3BpbmlvbiwKVGhhbmtzIGZv
+ciB0aGUgcmV2aWV3LApDbMOpbWVudAoKPgo+IE1heGltZQo+Cj4gLS0KPiBNYXhpbWUgUmlwYXJk
+LCBCb290bGluCj4gRW1iZWRkZWQgTGludXggYW5kIEtlcm5lbCBlbmdpbmVlcmluZwo+IGh0dHBz
+Oi8vYm9vdGxpbi5jb20KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LWFybS1rZXJuZWwK
