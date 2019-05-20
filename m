@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75AD622DFD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 10:09:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5782C22DFA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 10:08:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WcraCxqDm6Nf3SHi/WAz2D+mqONFhjBtlToWgNKQzGk=; b=a0YWcoR0tZo/GY
-	NtSBb+gs8dX1F8+gUXwtJA0IpDoaMS564/nz7H3oYTJhamlTDy6GXiC9NBvE/5V5hng4O4f99PLmc
-	pyhPc2b2Te3gKeX3HWODcSwQT5eDU3KMEXR547cdohxDzWZWxf3ETZvr4V+pnb+GDAeF8WUDinQBr
-	u7rA1NoFhjYQBI8X2DOE2CaiTwti3GMly7Sll96lScfaznkY7fKCSVaPeVqPXxIHJcjlbsO5WXYRn
-	J3OzWMao3ZN3FT/Ui3Hp8FybvJ+VDpBLrEyEuEF5MwD6/zofmLTjT8VRjxwsHMBGwWZ4qD6G38bTw
-	SN2hzspM+2y8GdnxGVEg==;
+	List-Owner; bh=2IuQEjodNcTK4jASQ9Ora4am2+pdJYrjQ0lCajF3Kmk=; b=Q6Oxu5NssHzdlL
+	xTEYDpBkw0tx1KjiIocyF7Vpx4DKvx2v5yEGofaIp41DXU63shuPxvmvG5CZgvb5ThIKHgTDQxSqc
+	TKMLpoQJKouRrrusA3j+2d2FhOmiMY7KfT5aFn45aX3AVrJtyTa08x11jZJx7l2zwS7LEAl+srrr4
+	/9U1U5jU0zcWYJ/s6woAovLZlSIi7Og8WTZ2W0nTnwk1p1UBD64Gp4bDWplHt0hE3NEdPvsbp286p
+	yj0XymKHeVM3Eay8MUO24wgEwGMLXAd4zesLX7B6jSFuqrDrQpg0NI4r+rismsQB/UYJipJFDZpck
+	QlCdYZGBkKBuEWur8lDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSdMH-0005mb-OB; Mon, 20 May 2019 08:09:21 +0000
+	id 1hSdLp-000572-08; Mon, 20 May 2019 08:08:53 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSdIi-0001Ma-P9
+ id 1hSdIj-0001NA-1t
  for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 08:05:55 +0000
 Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 687C321721;
+ by mail.kernel.org (Postfix) with ESMTPSA id 8DBE9217D9;
  Mon, 20 May 2019 08:05:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1558339539;
- bh=PhBmKtxTxx8I3oL/+mtaeyEVJsEH/irrYiLTee+PY7I=;
+ bh=O1PSJqy9ZjBIZws6j7DikPYDsvlqRAUsogIIdf7Xxzg=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=AVmprhBAuXUJYz4nrGjnrrxxaybLcfGu/fl8sL9LfdAewjLK+Po4KMiargqlNca2l
- 69wpldoMtSDxV6WSuP0oLNax7q5XOWJ+d3I5nF8NmYDUD9eM3JeixR1Vthq7qwpg6q
- ioenPXwnTmZ8e0FXMPBph39Un8QlGts7307S+Tyc=
+ b=nFuDlToLmiYHpZc+zXoiLmsjGWLF7yCR3iHu8I58J6iI0CkQ83EXBCWjz21U34UjC
+ jymBc4bo9Y2UWPBP6fsTx59UQVA4bLMH2jQ6w79OAqUHJLX8MQpry5Cn4r77wQDnS7
+ XLS5j5yinACXhquSg0uUYTzXND6P5hguaF8mToe8=
 Received: by wens.tw (Postfix, from userid 1000)
- id D2F286584F; Mon, 20 May 2019 16:05:32 +0800 (CST)
+ id D993365857; Mon, 20 May 2019 16:05:32 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
 To: Maxime Ripard <maxime.ripard@bootlin.com>, Stephen Boyd <sboyd@kernel.org>,
  Michael Turquette <mturquette@baylibre.com>
-Subject: [PATCH 22/25] clk: sunxi-ng: h6-r: Use local parent references for
- CLK_FIXED_FACTOR
-Date: Mon, 20 May 2019 16:04:18 +0800
-Message-Id: <20190520080421.12575-23-wens@kernel.org>
+Subject: [PATCH 23/25] clk: sunxi-ng: gate: Add macros for referencing local
+ clock parents
+Date: Mon, 20 May 2019 16:04:19 +0800
+Message-Id: <20190520080421.12575-24-wens@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190520080421.12575-1-wens@kernel.org>
 References: <20190520080421.12575-1-wens@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_010541_217186_3C446E40 
-X-CRM114-Status: GOOD (  13.55  )
+X-CRM114-CacheID: sfid-20190520_010541_538151_1E26EA98 
+X-CRM114-Status: GOOD (  13.09  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,32 +88,97 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Chen-Yu Tsai <wens@csie.org>
 
-With the new clk parenting code and CLK_FIXED_FACTOR_{HW,FW_NAME}
-macros, we can reference parents locally via pointers to struct clk_hw
-or DT clock-names.
+With the new clk parenting code, clk_init_data was expanded to include
+.parent_hws, for clk drivers to directly reference parents by clk_hw,
+and .parent_data, for clk drivers to specify parents using a combination
+of device tree clock-names, pointers to struct clk_hw, device tree clocks,
+and/or fallback global clock names.
 
-Convert existing CLK_FIXED_FACTOR definitions to either the _HW or
-_FW_NAME variant based on whether the parent clock is internal or
-external to the CCU.
+Add four new macros:
+
+  - SUNXI_CCU_GATE_HW, that can take a struct clk_hw pointer, instead
+    of a string, as its parent.
+
+  - SUNXI_CCU_GATE_FW that takes a string to match a clock-names entry
+    in the device tree to specify the clock parent.
+
+  - SUNXI_CCU_GATE_HWS that takes an array of struct clk_hw * as its
+    parent. This allows the array to be shared with other clk
+    declarations.
+
+  - SUNXI_CCU_GATE_DATA that takes an array of struct clk_parent_data *
+    as its parent. This allows the array to be shared with other clk
+    declarations.
 
 Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 ---
- drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/clk/sunxi-ng/ccu_gate.h | 53 +++++++++++++++++++++++++++++++++
+ 1 file changed, 53 insertions(+)
 
-diff --git a/drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c b/drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c
-index 27554eaf6929..36cd25bfd8da 100644
---- a/drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c
-+++ b/drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c
-@@ -49,7 +49,7 @@ static struct ccu_div ar100_clk = {
- 	},
- };
+diff --git a/drivers/clk/sunxi-ng/ccu_gate.h b/drivers/clk/sunxi-ng/ccu_gate.h
+index 4466169bd2d7..613ddd03629e 100644
+--- a/drivers/clk/sunxi-ng/ccu_gate.h
++++ b/drivers/clk/sunxi-ng/ccu_gate.h
+@@ -36,6 +36,59 @@ struct ccu_gate {
+ 		}							\
+ 	}
  
--static CLK_FIXED_FACTOR(r_ahb_clk, "r-ahb", "ar100", 1, 1, 0);
-+static CLK_FIXED_FACTOR_HW(r_ahb_clk, "r-ahb", &ar100_clk.common.hw, 1, 1, 0);
- 
- static struct ccu_div r_apb1_clk = {
- 	.div		= _SUNXI_CCU_DIV(0, 2),
++#define SUNXI_CCU_GATE_HW(_struct, _name, _parent, _reg, _gate, _flags)	\
++	struct ccu_gate _struct = {					\
++		.enable	= _gate,					\
++		.common	= {						\
++			.reg		= _reg,				\
++			.hw.init	= CLK_HW_INIT_HW(_name,		\
++							 _parent,	\
++							 &ccu_gate_ops,	\
++							 _flags),	\
++		}							\
++	}
++
++#define SUNXI_CCU_GATE_FW(_struct, _name, _parent, _reg, _gate, _flags)	\
++	struct ccu_gate _struct = {					\
++		.enable	= _gate,					\
++		.common	= {						\
++			.reg		= _reg,				\
++			.hw.init	= CLK_HW_INIT_FW_NAME(_name,	\
++							      _parent,	\
++							      &ccu_gate_ops, \
++							      _flags),	\
++		}							\
++	}
++
++/*
++ * The following two macros allow the re-use of the data structure
++ * holding the parent info.
++ */
++#define SUNXI_CCU_GATE_HWS(_struct, _name, _parent, _reg, _gate, _flags) \
++	struct ccu_gate _struct = {					\
++		.enable	= _gate,					\
++		.common	= {						\
++			.reg		= _reg,				\
++			.hw.init	= CLK_HW_INIT_HWS(_name,	\
++							  _parent,	\
++							  &ccu_gate_ops, \
++							  _flags),	\
++		}							\
++	}
++
++#define SUNXI_CCU_GATE_DATA(_struct, _name, _data, _reg, _gate, _flags)	\
++	struct ccu_gate _struct = {					\
++		.enable	= _gate,					\
++		.common	= {						\
++			.reg		= _reg,				\
++			.hw.init	=				\
++				CLK_HW_INIT_PARENTS_DATA(_name,		\
++							 _data,		\
++							 &ccu_gate_ops,	\
++							 _flags),	\
++		}							\
++	}
++
+ static inline struct ccu_gate *hw_to_ccu_gate(struct clk_hw *hw)
+ {
+ 	struct ccu_common *common = hw_to_ccu_common(hw);
 -- 
 2.20.1
 
