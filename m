@@ -2,56 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5259D22B17
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 07:19:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E376522B25
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 07:30:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=+cdio55hgN0diXU8pU5Erb/Ss3cZa4qNAP6mdqlWQss=; b=tz1KqnGMKg/QvZ9TNtqzjAnc9G
-	qrBg2PQCkdXfM8WvS4UA2Uj9yQB6qPu3W6Xv7uV4+605WGkUa/3u2bekNgdlxG8nFlswCMDAT2ptC
-	tyhxxo//knefkqoNtlN5tgPBLZLAwftYRNx5l4evh0ERw8tJtgqUftRc723XOrmqVq60ex1+THqAz
-	kiwAF59CsSAenTCve5OvJbH6iXrmnfI0jFZ/Dzk4mvR9cECi+pydaJlV4373b1/1Y2OfBcmC1/g94
-	X/YpZ1fsVH+5KxAifUyHALjCjq5N5XkL6a4aHHg1vmWjb/eaIRlsm6ABcaRXe7Tt+95j4T3O7/XcM
-	lJEMw/hA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=68OrDiRnZY8p60OAAE09NOXj2gmL4T0ITE3on2BbUkA=; b=gTZWoV0xyCDlrY
+	2+XMwwoxTaVHNoZR1vLLRpV2sxKpLSzRgQOGFogEXtjfdXbaYwwyK4iBNTazPW7oUtpaIHvDX0jJl
+	2r4alFWKpXqryOXUE9mKr8UjkazkeGjO/ChF+cnsYnclleJF2UFY0SoYm2xlmw2XUgeKG7xDT97WU
+	E7otGsXfu+NxX942NAEVyBJW2A5O6pW3Al49l7pUNSD1c2Whao8/La5TyBS/UbXi81KJ1ffHBAGh7
+	AWbWpsKEvEJKtc0tzyATZ+PrxbLfgd1rducBUIQ82vmEZ8HoTWX0Eo2A2TkLLTHn6U5Dif/FtqaRL
+	VHm9Ydvp824M9ZHartzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSahz-0000VL-Jg; Mon, 20 May 2019 05:19:35 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSahN-0008Qn-Jh
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 05:19:02 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3C1B715AD;
- Sun, 19 May 2019 22:18:57 -0700 (PDT)
-Received: from p8cg001049571a15.blr.arm.com (p8cg001049571a15.blr.arm.com
- [10.162.41.132])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 776263F5AF;
- Sun, 19 May 2019 22:18:51 -0700 (PDT)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- akpm@linux-foundation.org, catalin.marinas@arm.com, will.deacon@arm.com
-Subject: [PATCH V4 4/4] arm64/mm: Enable memory hot remove
-Date: Mon, 20 May 2019 10:48:36 +0530
-Message-Id: <1558329516-10445-5-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1558329516-10445-1-git-send-email-anshuman.khandual@arm.com>
-References: <1558329516-10445-1-git-send-email-anshuman.khandual@arm.com>
+	id 1hSasn-000595-8R; Mon, 20 May 2019 05:30:45 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hSasf-00058D-2x; Mon, 20 May 2019 05:30:38 +0000
+X-UUID: 149f87da9fca48408ff02501bb56e752-20190519
+X-UUID: 149f87da9fca48408ff02501bb56e752-20190519
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 805102241; Sun, 19 May 2019 21:30:31 -0800
+Received: from MTKMBS33DR.mediatek.inc (172.27.6.106) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 19 May 2019 22:30:30 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ MTKMBS33DR.mediatek.inc (172.27.6.106) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 20 May 2019 13:30:26 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 20 May 2019 13:30:27 +0800
+Message-ID: <1558330227.7311.14.camel@mtksdaap41>
+Subject: Re: [v2 3/3] drm/mediatek: add mipi_tx driver for mt8183
+From: CK Hu <ck.hu@mediatek.com>
+To: Jitao Shi <jitao.shi@mediatek.com>
+Date: Mon, 20 May 2019 13:30:27 +0800
+In-Reply-To: <1558165892.7681.8.camel@mszsdaap41>
+References: <20190416054217.75387-1-jitao.shi@mediatek.com>
+ <20190416054217.75387-4-jitao.shi@mediatek.com>
+ <1557134258.5345.5.camel@mtksdaap41> <1558165892.7681.8.camel@mszsdaap41>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
+MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190519_221857_940210_CC771967 
-X-CRM114-Status: GOOD (  16.31  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190519_223037_266725_5C166242 
+X-CRM114-Status: GOOD (  19.09  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,312 +72,172 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, mhocko@suse.com, david@redhat.com,
- ira.weiny@intel.com, mgorman@techsingularity.net, cai@lca.pw,
- ard.biesheuvel@arm.com, cpandya@codeaurora.org, james.morse@arm.com,
- dan.j.williams@intel.com, logang@deltatee.com, arunks@codeaurora.org,
- osalvador@suse.de
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ David Airlie <airlied@linux.ie>, stonea168@163.com,
+ dri-devel@lists.freedesktop.org, yingjoe.chen@mediatek.com, Ajay
+ Kumar <ajaykumar.rs@samsung.com>, Vincent Palatin <vpalatin@chromium.org>,
+ cawa.cheng@mediatek.com, bibby.hsieh@mediatek.com,
+ Russell King <rmk+kernel@arm.linux.org.uk>,
+ Thierry Reding <treding@nvidia.com>, linux-pwm@vger.kernel.org,
+ Sascha Hauer <kernel@pengutronix.de>, Pawel Moll <pawel.moll@arm.com>,
+ Ian Campbell <ijc+devicetree@hellion.org.uk>, Inki Dae <inki.dae@samsung.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Andy Yan <andy.yan@rock-chips.com>, Matthias
+ Brugger <matthias.bgg@gmail.com>, eddie.huang@mediatek.com,
+ linux-arm-kernel@lists.infradead.org, Rahul
+ Sharma <rahul.sharma@samsung.com>, srv_heupstream@mediatek.com,
+ linux-kernel@vger.kernel.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ Kumar Gala <galak@codeaurora.org>, Sean Paul <seanpaul@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The arch code for hot-remove must tear down portions of the linear map and
-vmemmap corresponding to memory being removed. In both cases the page
-tables mapping these regions must be freed, and when sparse vmemmap is in
-use the memory backing the vmemmap must also be freed.
+On Sat, 2019-05-18 at 15:51 +0800, Jitao Shi wrote:
+> On Mon, 2019-05-06 at 17:17 +0800, CK Hu wrote:
+> > Hi, Jitao:
+> > 
+> > On Tue, 2019-04-16 at 13:42 +0800, Jitao Shi wrote:
+> > > This patch add mt8183 mipi_tx driver.
+> > > And also support other chips that use the same binding and driver.
+> > > 
+> > > Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> > > ---
+> > >  drivers/gpu/drm/mediatek/Makefile             |   1 +
+> > >  drivers/gpu/drm/mediatek/mtk_mipi_tx.c        |   2 +
+> > >  drivers/gpu/drm/mediatek/mtk_mipi_tx.h        |   1 +
+> > >  drivers/gpu/drm/mediatek/mtk_mt8183_mipi_tx.c | 154 ++++++++++++++++++
+> > >  4 files changed, 158 insertions(+)
+> > >  create mode 100644 drivers/gpu/drm/mediatek/mtk_mt8183_mipi_tx.c
+> > > 
+> > 
+> > [snip]
+> > 
+> > > +
+> > > +static int mtk_mipi_tx_pll_prepare(struct clk_hw *hw)
+> > > +{
+> > > +	struct mtk_mipi_tx *mipi_tx = mtk_mipi_tx_from_clk_hw(hw);
+> > > +	unsigned int txdiv, txdiv0;
+> > > +	u64 pcw;
+> > > +	int ret;
+> > > +
+> > > +	dev_dbg(mipi_tx->dev, "prepare: %u bps\n", mipi_tx->data_rate);
+> > > +
+> > > +	if (mipi_tx->data_rate >= 2000000000) {
+> > > +		txdiv = 1;
+> > > +		txdiv0 = 0;
+> > > +	} else if (mipi_tx->data_rate >= 1000000000) {
+> > > +		txdiv = 2;
+> > > +		txdiv0 = 1;
+> > > +	} else if (mipi_tx->data_rate >= 500000000) {
+> > > +		txdiv = 4;
+> > > +		txdiv0 = 2;
+> > > +	} else if (mipi_tx->data_rate > 250000000) {
+> > > +		txdiv = 8;
+> > > +		txdiv0 = 3;
+> > > +	} else if (mipi_tx->data_rate >= 125000000) {
+> > > +		txdiv = 16;
+> > > +		txdiv0 = 4;
+> > > +	} else {
+> > > +		return -EINVAL;
+> > > +	}
+> > > +
+> > > +	ret = clk_prepare_enable(mipi_tx->ref_clk);
+> > > +	if (ret < 0) {
+> > > +		dev_err(mipi_tx->dev,
+> > > +			"can't prepare and enable mipi_tx ref_clk %d\n", ret);
+> > > +		return ret;
+> > > +	}
+> > 
+> > You enable the parent clock when prepare this clock here, this behavior
+> > looks strange. I think the flow should be:
+> > 
+> > 1. Parent clock prepare
+> > 2. This clock prepare
+> > 3. Parent clock enable
+> > 4. This clock enable
+> > 
+> > Maybe you should implement 'enable callback' so that parent clock would
+> > be already enabled.
+> > 
+> > One question is, mipi_tx_pll is used by dsi driver, but I does not see
+> > dsi prepare_enable() mipi_tx_pll, how does this work?
+> > 
+> > Regards,
+> > CK
+> > 
+> 
+> The mipi_tx can be accessed after clk_prepare_enable(mipi_tx->ref_clk);
+> 
+> So place the clk_prepare_enable(mipi_tx->ref_clk) before accessing
+> mipitx.
+> 
+> mipi_tx_pll is enable by mtk_mipi_tx_power_on() in mtk_mip_tx.c.
+> clk_prepare_enable(mipi_tx->pll) will enable mipi_tx_pll.
 
-This patch adds a new remove_pagetable() helper which can be used to tear
-down either region, and calls it from vmemmap_free() and
-___remove_pgd_mapping(). The sparse_vmap argument determines whether the
-backing memory will be freed.
+OK, so it start from dsi driver. The callstack is:
 
-While freeing intermediate level page table pages bail out if any of it's
-entries are still valid. This can happen for partially filled kernel page
-table either from a previously attempted failed memory hot add or while
-removing an address range which does not span the entire page table page
-range.
+phy_power_on(dsi->phy);
+-> mtk_mipi_tx_power_on()
+--> clk_prepare_enable(mipi_tx->pll);
+---> mtk_mipi_tx_pll_prepare();
 
-The vmemmap region may share levels of table with the vmalloc region. Take
-the kernel ptl so that we can safely free potentially-shared tables.
+In clk_prepare_enable(), it separately call clk_prepare() and
+clk_enable(). When clk_prepare(), it prepare the parent clock then
+prepare this clock. When clk_enable(), it enable the parent clock then
+enable this clock. So this would result in the sequence:
 
-While here update arch_add_memory() to handle __add_pages() failures by
-just unmapping recently added kernel linear mapping. Now enable memory hot
-remove on arm64 platforms by default with ARCH_ENABLE_MEMORY_HOTREMOVE.
+1. Prepare mipi_tx->ref_clk
+2. Prepare mipi_tx->pll
+3. Enable mipi_tx->ref_clk
+4. Enable mipi_tx->pll
 
-This implementation is overall inspired from kernel page table tear down
-procedure on X86 architecture.
+You say 'So place the clk_prepare_enable(mipi_tx->ref_clk) before
+accessing mipitx.', so the step 1 and step 3 is equal to
+clk_prepare_enable(mipi_tx->ref_clk), so I require you to access mipitx
+in step 4, not in step 2.
 
-Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
----
- arch/arm64/Kconfig  |   3 +
- arch/arm64/mm/mmu.c | 212 +++++++++++++++++++++++++++++++++++++++++++++++++++-
- 2 files changed, 213 insertions(+), 2 deletions(-)
+Regards,
+CK
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 4780eb7..ce24427 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -267,6 +267,9 @@ config HAVE_GENERIC_GUP
- config ARCH_ENABLE_MEMORY_HOTPLUG
- 	def_bool y
- 
-+config ARCH_ENABLE_MEMORY_HOTREMOVE
-+	def_bool y
-+
- config SMP
- 	def_bool y
- 
-diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-index a1bfc44..0cf0d41 100644
---- a/arch/arm64/mm/mmu.c
-+++ b/arch/arm64/mm/mmu.c
-@@ -733,6 +733,187 @@ int kern_addr_valid(unsigned long addr)
- 
- 	return pfn_valid(pte_pfn(pte));
- }
-+
-+#ifdef CONFIG_MEMORY_HOTPLUG
-+static void free_hotplug_page_range(struct page *page, ssize_t size)
-+{
-+	WARN_ON(PageReserved(page));
-+	free_pages((unsigned long)page_address(page), get_order(size));
-+}
-+
-+static void free_hotplug_pgtable_page(struct page *page)
-+{
-+	free_hotplug_page_range(page, PAGE_SIZE);
-+}
-+
-+static void free_pte_table(pte_t *ptep, pmd_t *pmdp, unsigned long addr)
-+{
-+	struct page *page;
-+	int i;
-+
-+	for (i = 0; i < PTRS_PER_PTE; i++) {
-+		if (!pte_none(ptep[i]))
-+			return;
-+	}
-+
-+	page = pmd_page(READ_ONCE(*pmdp));
-+	pmd_clear(pmdp);
-+	__flush_tlb_kernel_pgtable(addr);
-+	free_hotplug_pgtable_page(page);
-+}
-+
-+static void free_pmd_table(pmd_t *pmdp, pud_t *pudp, unsigned long addr)
-+{
-+	struct page *page;
-+	int i;
-+
-+	if (CONFIG_PGTABLE_LEVELS <= 2)
-+		return;
-+
-+	for (i = 0; i < PTRS_PER_PMD; i++) {
-+		if (!pmd_none(pmdp[i]))
-+			return;
-+	}
-+
-+	page = pud_page(READ_ONCE(*pudp));
-+	pud_clear(pudp);
-+	__flush_tlb_kernel_pgtable(addr);
-+	free_hotplug_pgtable_page(page);
-+}
-+
-+static void free_pud_table(pud_t *pudp, pgd_t *pgdp, unsigned long addr)
-+{
-+	struct page *page;
-+	int i;
-+
-+	if (CONFIG_PGTABLE_LEVELS <= 3)
-+		return;
-+
-+	for (i = 0; i < PTRS_PER_PUD; i++) {
-+		if (!pud_none(pudp[i]))
-+			return;
-+	}
-+
-+	page = pgd_page(READ_ONCE(*pgdp));
-+	pgd_clear(pgdp);
-+	__flush_tlb_kernel_pgtable(addr);
-+	free_hotplug_pgtable_page(page);
-+}
-+
-+static void
-+remove_pte_table(pmd_t *pmdp, unsigned long addr,
-+			unsigned long end, bool sparse_vmap)
-+{
-+	struct page *page;
-+	pte_t *ptep, pte;
-+	unsigned long start = addr;
-+
-+	for (; addr < end; addr += PAGE_SIZE) {
-+		ptep = pte_offset_kernel(pmdp, addr);
-+		pte = READ_ONCE(*ptep);
-+
-+		if (pte_none(pte))
-+			continue;
-+
-+		WARN_ON(!pte_present(pte));
-+		if (sparse_vmap) {
-+			page = pte_page(pte);
-+			free_hotplug_page_range(page, PAGE_SIZE);
-+		}
-+		pte_clear(&init_mm, addr, ptep);
-+	}
-+	flush_tlb_kernel_range(start, end);
-+}
-+
-+static void
-+remove_pmd_table(pud_t *pudp, unsigned long addr,
-+			unsigned long end, bool sparse_vmap)
-+{
-+	unsigned long next;
-+	struct page *page;
-+	pte_t *ptep_base;
-+	pmd_t *pmdp, pmd;
-+
-+	for (; addr < end; addr = next) {
-+		next = pmd_addr_end(addr, end);
-+		pmdp = pmd_offset(pudp, addr);
-+		pmd = READ_ONCE(*pmdp);
-+
-+		if (pmd_none(pmd))
-+			continue;
-+
-+		WARN_ON(!pmd_present(pmd));
-+		if (pmd_sect(pmd)) {
-+			if (sparse_vmap) {
-+				page = pmd_page(pmd);
-+				free_hotplug_page_range(page, PMD_SIZE);
-+			}
-+			pmd_clear(pmdp);
-+			continue;
-+		}
-+		ptep_base = pte_offset_kernel(pmdp, 0UL);
-+		remove_pte_table(pmdp, addr, next, sparse_vmap);
-+		free_pte_table(ptep_base, pmdp, addr);
-+	}
-+}
-+
-+static void
-+remove_pud_table(pgd_t *pgdp, unsigned long addr,
-+			unsigned long end, bool sparse_vmap)
-+{
-+	unsigned long next;
-+	struct page *page;
-+	pmd_t *pmdp_base;
-+	pud_t *pudp, pud;
-+
-+	for (; addr < end; addr = next) {
-+		next = pud_addr_end(addr, end);
-+		pudp = pud_offset(pgdp, addr);
-+		pud = READ_ONCE(*pudp);
-+
-+		if (pud_none(pud))
-+			continue;
-+
-+		WARN_ON(!pud_present(pud));
-+		if (pud_sect(pud)) {
-+			if (sparse_vmap) {
-+				page = pud_page(pud);
-+				free_hotplug_page_range(page, PUD_SIZE);
-+			}
-+			pud_clear(pudp);
-+			continue;
-+		}
-+		pmdp_base = pmd_offset(pudp, 0UL);
-+		remove_pmd_table(pudp, addr, next, sparse_vmap);
-+		free_pmd_table(pmdp_base, pudp, addr);
-+	}
-+}
-+
-+static void
-+remove_pagetable(unsigned long start, unsigned long end, bool sparse_vmap)
-+{
-+	unsigned long addr, next;
-+	pud_t *pudp_base;
-+	pgd_t *pgdp, pgd;
-+
-+	spin_lock(&init_mm.page_table_lock);
-+	for (addr = start; addr < end; addr = next) {
-+		next = pgd_addr_end(addr, end);
-+		pgdp = pgd_offset_k(addr);
-+		pgd = READ_ONCE(*pgdp);
-+
-+		if (pgd_none(pgd))
-+			continue;
-+
-+		WARN_ON(!pgd_present(pgd));
-+		pudp_base = pud_offset(pgdp, 0UL);
-+		remove_pud_table(pgdp, addr, next, sparse_vmap);
-+		free_pud_table(pudp_base, pgdp, addr);
-+	}
-+	spin_unlock(&init_mm.page_table_lock);
-+}
-+#endif
-+
- #ifdef CONFIG_SPARSEMEM_VMEMMAP
- #if !ARM64_SWAPPER_USES_SECTION_MAPS
- int __meminit vmemmap_populate(unsigned long start, unsigned long end, int node,
-@@ -780,6 +961,9 @@ int __meminit vmemmap_populate(unsigned long start, unsigned long end, int node,
- void vmemmap_free(unsigned long start, unsigned long end,
- 		struct vmem_altmap *altmap)
- {
-+#ifdef CONFIG_MEMORY_HOTPLUG
-+	remove_pagetable(start, end, true);
-+#endif
- }
- #endif	/* CONFIG_SPARSEMEM_VMEMMAP */
- 
-@@ -1070,10 +1254,16 @@ int p4d_free_pud_page(p4d_t *p4d, unsigned long addr)
- }
- 
- #ifdef CONFIG_MEMORY_HOTPLUG
-+static void __remove_pgd_mapping(pgd_t *pgdir, unsigned long start, u64 size)
-+{
-+	WARN_ON(pgdir != init_mm.pgd);
-+	remove_pagetable(start, start + size, false);
-+}
-+
- int arch_add_memory(int nid, u64 start, u64 size,
- 			struct mhp_restrictions *restrictions)
- {
--	int flags = 0;
-+	int ret, flags = 0;
- 
- 	if (rodata_full || debug_pagealloc_enabled())
- 		flags = NO_BLOCK_MAPPINGS | NO_CONT_MAPPINGS;
-@@ -1081,7 +1271,25 @@ int arch_add_memory(int nid, u64 start, u64 size,
- 	__create_pgd_mapping(swapper_pg_dir, start, __phys_to_virt(start),
- 			     size, PAGE_KERNEL, __pgd_pgtable_alloc, flags);
- 
--	return __add_pages(nid, start >> PAGE_SHIFT, size >> PAGE_SHIFT,
-+	ret = __add_pages(nid, start >> PAGE_SHIFT, size >> PAGE_SHIFT,
- 			   restrictions);
-+	if (ret)
-+		__remove_pgd_mapping(swapper_pg_dir,
-+					__phys_to_virt(start), size);
-+	return ret;
-+}
-+
-+#ifdef CONFIG_MEMORY_HOTREMOVE
-+void arch_remove_memory(int nid, u64 start, u64 size,
-+				struct vmem_altmap *altmap)
-+{
-+	unsigned long start_pfn = start >> PAGE_SHIFT;
-+	unsigned long nr_pages = size >> PAGE_SHIFT;
-+	struct zone *zone = page_zone(pfn_to_page(start_pfn));
-+
-+	__remove_pages(zone, start_pfn, nr_pages, altmap);
-+	__remove_pgd_mapping(swapper_pg_dir,
-+					__phys_to_virt(start), size);
- }
- #endif
-+#endif
--- 
-2.7.4
+> 
+> Beset Regards
+> Jitao
+> 
+> > > +
+> > > +	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_PLL_CON4, RG_DSI_PLL_IBIAS);
+> > > +
+> > > +	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_PLL_PWR, AD_DSI_PLL_SDM_PWR_ON);
+> > > +	usleep_range(30, 100);
+> > > +	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_PLL_PWR, AD_DSI_PLL_SDM_ISO_EN);
+> > > +	pcw = div_u64(((u64)mipi_tx->data_rate * txdiv) << 24, 26000000);
+> > > +	writel(pcw, mipi_tx->regs + MIPITX_PLL_CON0);
+> > > +	mtk_mipi_tx_update_bits(mipi_tx, MIPITX_PLL_CON1, RG_DSI_PLL_POSDIV,
+> > > +				txdiv0 << 8);
+> > > +	usleep_range(1000, 2000);
+> > > +	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_PLL_CON1, RG_DSI_PLL_EN);
+> > > +
+> > > +	return 0;
+> > > +}
+> > > +
+> > > +static void mtk_mipi_tx_pll_unprepare(struct clk_hw *hw)
+> > > +{
+> > > +	struct mtk_mipi_tx *mipi_tx = mtk_mipi_tx_from_clk_hw(hw);
+> > > +
+> > > +	dev_dbg(mipi_tx->dev, "unprepare\n");
+> > > +
+> > > +	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_PLL_CON1, RG_DSI_PLL_EN);
+> > > +
+> > > +	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_PLL_PWR, AD_DSI_PLL_SDM_ISO_EN);
+> > > +	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_PLL_PWR, AD_DSI_PLL_SDM_PWR_ON);
+> > > +	clk_disable_unprepare(mipi_tx->ref_clk);
+> > > +}
+> > > +
+> > 
+> > 
+> 
+> 
+
 
 
 _______________________________________________
