@@ -2,89 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A84723AA1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 16:42:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CBA9F23AA4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 16:43:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K5eviOYNtNhFRLq/z2/aMxoaQn78yiEmTnepNWeoAYg=; b=QpsYn1ei4N4FxF
-	dKmXoRbFjLQ1a9sDstUUYIW2p0MVTHjHM0/xHqTvaoUNIcCAgpUITSbUYn2OBJNQrFC0MDpzZ7M0p
-	yu5dia1fIyosPJcuFu3aWrKLzNv1vmsn8CHwBZ56XEQsOG4xQsKvYdLn95stoSmV1S8/6dkwSq6hm
-	CRXyseGfbX0fgQaJME7FW0IF5SDMjNOAz8ErvEmbXOF+4jkT7oKWbxvF+z50ayT6AKunjd3uM1c/j
-	jJ2llL/AFLAVQ/iJDcpB+MhH/LQCT3douzOleFFZFJ8U1+wMbNablKkH3IByW/X+hM7i7lt1IjhUH
-	rgEf8DRZx6WHFo/n3sgw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Ir16RS8ETT31xisBtYhJs4q9IMMN8ViVH1b8w4bs4io=; b=D79PrRysHs3E554q9RzMBPhnp
+	qZ8wwscAj/5SrUeYX1T9uJTlyKZlTJaL0nHKJ+9QPmVAooJiCK4zJv6xa8/Aqz86qmlXzn6ao5uvu
+	QlnGCyf0EgqEuq8+xWev/5Dx6ckgD2t/IgaOfE8GTmQXB47TfHGy+R4mrNdT2QWZe3uZJsjYh7sPt
+	gNx+7mOUqwfT7Ut+3PHmAiFvzfjnCO45HtICsYZRDoY9MaybHYXiYNI4qMXAf7Qray/EVhzr/tiLs
+	iW3gaQBr1oEYPJIm9xHbbEFdd++atirpu8RzCFt8hV1S73AWs5TavrSy5VyEd0yBLZOpchBhoM60Q
+	Sz1/u096w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSjUr-00048A-5v; Mon, 20 May 2019 14:42:37 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1hSjVe-0005Cl-IZ; Mon, 20 May 2019 14:43:26 +0000
+Received: from relay8-d.mail.gandi.net ([217.70.183.201])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSjTi-0002qf-2x
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 14:41:34 +0000
-Received: by mail-wr1-x443.google.com with SMTP id w8so14930940wrl.6
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 07:41:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=eyDz/kU6Wjim2biRU2q8CqgWCCB8KF6iAcPXPEhI4iE=;
- b=GL1kPF/zUzZXKB5Un27WiEJQ0HNwcqqnlgkMiO94zM4OnjMJI1m+TNzvxK4Yn+Gx/8
- 5O8+gBuLemwUJVEipgg/GahnWgcjh0WLtWb0wr61aGUmUtQopw70+M3+d5YBam07vBvP
- ooVf8RaJCsspmSiwvNglwLoisdmIU4WgXxqjHO3jt/BzyV0M4bBrMlx7gLFStGfEPh8k
- FP6DpQyiBbQf80owDtMzoOOv0DRnv/0FMnhZUSG8Dn9+Dwucxn9Xotr9GoZ9AzOJ/Fte
- a7SJQMwvLQPrdlFVrmy02dW86PGusTvFGXn0n8frBI/zylHHeuBpPZG9eloWHuoydEm6
- 8KPw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=eyDz/kU6Wjim2biRU2q8CqgWCCB8KF6iAcPXPEhI4iE=;
- b=WiKv9R7GaSWDQfIVmA9JWgvvf6wY6Vzad/R+SK0+6Vm14hHE3bwFX1SrnwhnuuljN3
- PhVAXc6MDJranIPfISMStQJcCKtjdOeMUqPI6XJ9aSqmfIikp9Avzirik9EpTw4IJ/YD
- UBQvYVjwLp0qpiyyUhxfEw2xJ6FVWd3Np+qtvWx231rv3A9KhpomJpMbo686RXcrU7ga
- vnfo+RSs1zs63y3i0GzXSDzChMPcerzH8n/T3B6Fwqsho1V9CJOds7A9Kq0G0WVH/dvu
- K6C2AFj1D2ONAkfkP2vo/QdMgfZeOAL299dfn0xesLukMe+AYcNays+CtEtDS7c/tUuP
- ypPA==
-X-Gm-Message-State: APjAAAV90gdw3MiCId6Tn9RsZKknmP/foKjVpP38d6XPQQkyTVha2FXj
- Oc7LhMJ+kUOwZ2GwKSKkSnOdNw==
-X-Google-Smtp-Source: APXvYqwNFE1d2hRxTr4yNHyu/Qt22C88efwwzfb2tPMpnZSFiu3ODusoG5pkwtkQFTWj5bADDe/gBw==
-X-Received: by 2002:adf:ec8c:: with SMTP id z12mr36194064wrn.209.1558363284655; 
- Mon, 20 May 2019 07:41:24 -0700 (PDT)
-Received: from bender.baylibre.local
- (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id w3sm6743679wrv.25.2019.05.20.07.41.23
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 20 May 2019 07:41:23 -0700 (PDT)
-From: Neil Armstrong <narmstrong@baylibre.com>
-To: linus.walleij@linaro.org
-Subject: [PATCH 5/5] dt-bindings: gpio: meson8b-gpio: update with SPDX Licence
- identifier
-Date: Mon, 20 May 2019 16:41:08 +0200
-Message-Id: <20190520144108.3787-6-narmstrong@baylibre.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190520144108.3787-1-narmstrong@baylibre.com>
-References: <20190520144108.3787-1-narmstrong@baylibre.com>
+ id 1hSjVT-0005CE-Lx
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 14:43:17 +0000
+X-Originating-IP: 90.88.22.185
+Received: from localhost (aaubervilliers-681-1-80-185.w90-88.abo.wanadoo.fr
+ [90.88.22.185]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id 67E061BF20E;
+ Mon, 20 May 2019 14:42:59 +0000 (UTC)
+Date: Mon, 20 May 2019 16:42:58 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Subject: Re: [PATCH v3 1/4] dt-bindings: watchdog: add Allwinner H6 watchdog
+Message-ID: <20190520144258.eauhvvwfxuhiczie@flea>
+References: <20190518152355.11134-1-peron.clem@gmail.com>
+ <20190518152355.11134-2-peron.clem@gmail.com>
+ <20190520073529.nxptfbibexrqyzfi@flea>
+ <CAJiuCcdrW7RcEKePCr1DaL-be8dA5oOjvHdxYkiu=h37z2e7tw@mail.gmail.com>
 MIME-Version: 1.0
+In-Reply-To: <CAJiuCcdrW7RcEKePCr1DaL-be8dA5oOjvHdxYkiu=h37z2e7tw@mail.gmail.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_074126_154054_08668B17 
-X-CRM114-Status: GOOD (  12.18  )
-X-Spam-Score: 2.5 (++)
+X-CRM114-CacheID: sfid-20190520_074315_867880_ECCAEED8 
+X-CRM114-Status: GOOD (  14.79  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.201 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,45 +63,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-gpio@vger.kernel.org, Neil Armstrong <narmstrong@baylibre.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, linux-watchdog@vger.kernel.org,
+ linux-kernel <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>, Guenter Roeck <linux@roeck-us.net>
+Content-Type: multipart/mixed; boundary="===============6598481268391925981=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
----
- include/dt-bindings/gpio/meson8b-gpio.h | 8 +-------
- 1 file changed, 1 insertion(+), 7 deletions(-)
 
-diff --git a/include/dt-bindings/gpio/meson8b-gpio.h b/include/dt-bindings/gpio/meson8b-gpio.h
-index bf0d76fa0e7b..e75d09b6087b 100644
---- a/include/dt-bindings/gpio/meson8b-gpio.h
-+++ b/include/dt-bindings/gpio/meson8b-gpio.h
-@@ -1,15 +1,9 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
- /*
-  * GPIO definitions for Amlogic Meson8b SoCs
-  *
-  * Copyright (C) 2015 Endless Mobile, Inc.
-  * Author: Carlo Caione <carlo@endlessm.com>
-- *
-- * This program is free software; you can redistribute it and/or
-- * modify it under the terms of the GNU General Public License
-- * version 2 as published by the Free Software Foundation.
-- *
-- * You should have received a copy of the GNU General Public License
-- * along with this program. If not, see <http://www.gnu.org/licenses/>.
-  */
- 
- #ifndef _DT_BINDINGS_MESON8B_GPIO_H
--- 
-2.21.0
+--===============6598481268391925981==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="vpv227evtpkmkqyk"
+Content-Disposition: inline
 
+
+--vpv227evtpkmkqyk
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Mon, May 20, 2019 at 10:14:10AM +0200, Cl=E9ment P=E9ron wrote:
+> >
+> > > +     - "allwinner,sun4i-a10-wdt"
+> > > +     - "allwinner,sun50i-a64-wdt","allwinner,sun6i-a31-wdt"
+> > > +     - "allwinner,sun50i-h6-wdt","allwinner,sun50i-a64-wdt",
+> > > +       "allwinner,sun6i-a31-wdt"
+> >
+> > Is there a reason to keep the A64 compatible?
+>
+> Yes, A64 and H6 has the exact same memory mapping looking at the datashee=
+t.
+> So if there is an errata or a new feature for the A64, it should be
+> also compatible with the H6.
+> Which is not the case with A31 (WDT_KEY_FIELD is not preset)
+
+The thing is, if you use those three compatibles, then you're saying
+that it's ok for the OS to use first the H6 driver, then the A64
+driver, and then the A31 driver.
+
+If the A31 isn't compatible, then it shouldn't be listed there. And if
+it is, then you can skip the A64 compatible.
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--vpv227evtpkmkqyk
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXOK88gAKCRDj7w1vZxhR
+xQlAAPsE6kzsQQMSHryqgwmd6OWp/s6AtN+TcU7ip7ukhfmmlgEA24/Tc3t6XRAH
+2cNOcp+yz6bb7jinJ2k9sXjsqBcyywo=
+=7TNO
+-----END PGP SIGNATURE-----
+
+--vpv227evtpkmkqyk--
+
+
+--===============6598481268391925981==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6598481268391925981==--
+
