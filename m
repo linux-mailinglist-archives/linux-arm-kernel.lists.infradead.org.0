@@ -2,82 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71A8423A25
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 16:35:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 766F223A2A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 16:36:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7l8/dG8cnE8hBGSXxe3SrrgaGa48RcBJ035wAMwyZUs=; b=k9Xww8M8tn9ddX
-	wwGT8e/FbVy4mveZdWym8qJLdBXaRoOmntWdlpcMCTeMPzDnYJjB46Hlg/OQWElFQTLSgxjUymUUU
-	TUmmoDQCIrLxFBODTCmitzr3t5PR6dX9fQfugiUoYoTPTyvEll8WeUra1IWZD7vxoFlMhmvef0e6M
-	AgyMLEqK+h1h1b2Y/iEybmkcgKHTIRGOSXCBqF2iPJFPT9b80cBPj4AFkcO7QXCHkVx5SDpSE2+wr
-	GfQ0Dc7SF8R5YecLcsPyKT4SvGvfHEMKnFSIRQFCeANbhHKIa6vyknEuVCpoH88YqUXXitlk0+L4N
-	OCSAYVr9vtjEFH6dSCZA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tMpv3VP+fcx7DsjV2JJxkYp8U/LbVf4A6g/CAXYfeh8=; b=msBKeWGNBfA9bE
+	QDBxIBMI9Ot6jzoLlRr02Sme5lcTEzBfQygVG4IcdXOHyx/ArEt9k8tu2aBQwfGKBprp5cVByWMvR
+	9huawVzIkpseQJ/ItsP1+ZyW/Z2ivG9QhiHE4yghGVhNCTHTIWznfKAXyvdXbBoViVjxkMVb7mxKp
+	6DhG5XNBTi09d2NqGEbm3pe3bYv0fBkYaJ9t+GBil0evLYoWafL6DGltQgYAQus1ibh9UHVtiFErS
+	pDBCGOSZ8OxFmgkd7ZnF64f2AiuzpifX48/zFRZQkq4nXzHVadp9BNLmmK4obHGdxJoBzUvXqUxxv
+	DArW2dCiXd56ppLAQErQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSjO4-0003QJ-Bx; Mon, 20 May 2019 14:35:36 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hSjOX-0003mg-GG; Mon, 20 May 2019 14:36:05 +0000
+Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSjNT-0001ib-EN
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 14:35:01 +0000
-Received: by mail-wm1-x341.google.com with SMTP id i3so13576299wml.4
+ id 1hSjOO-0003l5-1y
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 14:35:57 +0000
+Received: by mail-wm1-x32b.google.com with SMTP id t5so11950246wmh.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 07:34:59 -0700 (PDT)
+ Mon, 20 May 2019 07:35:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=jL8EOSTC/B97Q4hYmRDMBEhteRV4Llk3yLW6XJX3YpI=;
- b=WOQGo5E3cBke6q8UgR21NkLOtOUFmM9cJSAy8j0HGje6MfYqcjKkfQ6zQhG+HrG6yP
- tVTmu021qWNJ0EP6J/uvHe/UnTsSzLi58ScfYOr8hRnQr1aEligQKbtbWPPuK0zd66MP
- OgqWP2IGRpvc7D6/qBR6k95C6yNMuUtOYM9cBWSH6Lrj4MFrDPneMgbYJIvK6/rXx1S/
- ZB6nb4s0sRBxmATJZi2b+oG+T3TB9sJTG0jbi0xUo12BwK8Lz/Ze/0t4jJLf1yn5CICi
- ClQSm0KVnlq8x/QxBtZ6K4ZNrpSOiB7b3gvmL0sd4Xg7uOjpyms8cGcVg+5y/SmlEesx
- R40w==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ejqilo1yto88LxSnrCJSQqgQ1iaCyh2m+KasJchWoQA=;
+ b=PmFsDuszt8zbmDWBibaKVcHa3d90eVt4oIYeL7/WxtMyAqEGQbecyxivNB16FD1jmy
+ OHpQWFInSxzYr3AAThREgWvzyqMI+SaJxcNBwZBcoBFeIvDMoe9HlOmkrBc15EgKVUuH
+ Tt/f5FbDD7obeidLvSTYxokhRD4N4rjLqyXCMK9q6nxvsWr2H+mR/VgFUWGiEyrhHSes
+ 0FEtNlU63uUSmpRlQnApY+moyhJO2/ZlPc6SoHNLxHaqZAn+wKTgAivHht17C3UHos0w
+ wHHcfwtKgT8Wee7OkOXAKp5LRgzqbXgCUN6XreuRrzjTg93nK43V3yQwDGibXoIvkOJn
+ nhQw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=jL8EOSTC/B97Q4hYmRDMBEhteRV4Llk3yLW6XJX3YpI=;
- b=nafaHD1aBKu7U/w+7YQgiPhImWP2+tJSJyGMHJU02whtwGBkjyWE57GbOCaxQSD4Ad
- lX92M+zspToRV0ZftvfbQ9TVp9/r0+eAY7S8y1bpJ/dojwAPgn2TtzAb9FTtrOcAKGLV
- h81pO3eJ+49f7FNXRLvWr5KZGELS8nf6K1Zl8I9tLL84udDO0F5870JtccuEIShsPecA
- qf1MOmH8bY60cdeq8HY5jorPACCQYnPbcEUPEgDK99yxxmkotrqJRzgyt+00r7MrVvV+
- qamQduZl1eySsvjnElxKLgEQussIZGa0/8Q8dwKApBfw9LEbioLodIBK5xMM9ChVOyBm
- hjNg==
-X-Gm-Message-State: APjAAAVkgKnS87BOOoBp+Vpd45iqKyxjcxu6SNCH11EXJtDASzCpaug4
- /TNqCFdrcRpObfr354RnyYy5wA==
-X-Google-Smtp-Source: APXvYqxZ3+v/oE9giWxGxEusI5X93pq9x7W3ufJ2uNkz5Lh5e9NxuHzhkG+fIq3auPMxo0dZb4l8gw==
-X-Received: by 2002:a7b:cd0e:: with SMTP id f14mr28896695wmj.127.1558362897942; 
- Mon, 20 May 2019 07:34:57 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ejqilo1yto88LxSnrCJSQqgQ1iaCyh2m+KasJchWoQA=;
+ b=ev2rOwlBRohqq23ldFyyBaISfyShnuPJa+X4IOTSeStNQT0iWNpzsa+Rj6dtk3lCp2
+ QUxBn3rs6EycKyBrRoGbtPOB1kinsjLz/8Ahqs9r9KfFv/zqWJLgcn16HPsp8BJRK13h
+ 0sn3zCWRu/2ixTtvdGxW/pGimJnAUeU3Z/IPhs/bAg8h2HtIMQNhEQ468J29uIF8jRfd
+ wULhthUxjkIrfoUJTYq9FxYcuinprMThS6fn9k1JjgDKrrvcW5RpBmkDz4ei/J24yXjj
+ c4ig9ScF7CmsPH6u37a7VC+eaXRiDNn9CFvRMU/NnjzeCNTYPfoyTb5VdUGZSKhl60xU
+ tsvw==
+X-Gm-Message-State: APjAAAW97Z7zBJRk8VvUgzB3ak4WpLmc5EgYvEN4jrdknzUj4yqTRhro
+ HZnYXS2PeB43DF/Q67Omr9/GmPElRuXJBg==
+X-Google-Smtp-Source: APXvYqzCnbrhWCGv6z19ZfaxyrIPmjh819MAp3NfOSe8oAbofCIxL969Y+24vhzKZK1CnQnZkZVN6A==
+X-Received: by 2002:a1c:7312:: with SMTP id d18mr12188411wmb.147.1558362954239; 
+ Mon, 20 May 2019 07:35:54 -0700 (PDT)
 Received: from bender.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id c2sm12756186wrr.13.2019.05.20.07.34.57
+ by smtp.gmail.com with ESMTPSA id j13sm14042591wru.78.2019.05.20.07.35.53
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 20 May 2019 07:34:57 -0700 (PDT)
+ Mon, 20 May 2019 07:35:53 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
-To: davem@davemloft.net
-Subject: [PATCH net-next 2/2] net: stmmac: dwmac-meson8b: update with SPDX
- Licence identifier
-Date: Mon, 20 May 2019 16:34:50 +0200
-Message-Id: <20190520143450.2143-3-narmstrong@baylibre.com>
+To: kishon@ti.com
+Subject: [PATCH 0/2] phy: amlogic: update with SPDX Licence identifier
+Date: Mon, 20 May 2019 16:35:49 +0200
+Message-Id: <20190520143551.2330-1-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190520143450.2143-1-narmstrong@baylibre.com>
-References: <20190520143450.2143-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_073459_484191_38220320 
-X-CRM114-Status: GOOD (  11.84  )
+X-CRM114-CacheID: sfid-20190520_073556_094610_5BE51A9D 
+X-CRM114-Status: UNSURE (   8.12  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:32b listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -95,39 +93,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, Neil Armstrong <narmstrong@baylibre.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
----
- drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c | 8 +-------
- 1 file changed, 1 insertion(+), 7 deletions(-)
+Update the SPDX Licence identifier for the Amlogic Meson8b and GXL PHY
+drivers.
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c
-index c5979569fd60..c06295ec1ef0 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c
-@@ -1,14 +1,8 @@
-+// SPDX-License-Identifier: GPL-2.0
- /*
-  * Amlogic Meson8b, Meson8m2 and GXBB DWMAC glue layer
-  *
-  * Copyright (C) 2016 Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-- *
-- * This program is free software; you can redistribute it and/or modify
-- * it under the terms of the GNU General Public License version 2 as
-- * published by the Free Software Foundation.
-- *
-- * You should have received a copy of the GNU General Public License
-- * along with this program. If not, see <http://www.gnu.org/licenses/>.
-  */
- 
- #include <linux/clk.h>
+Neil Armstrong (2):
+  phy: amlogic: phy-meson-gxl-usb2: update with SPDX Licence identifier
+  phy: amlogic: phy-meson8b-usb2: update with SPDX Licence identifier
+
+ drivers/phy/amlogic/phy-meson-gxl-usb2.c | 8 +-------
+ drivers/phy/amlogic/phy-meson8b-usb2.c   | 8 +-------
+ 2 files changed, 2 insertions(+), 14 deletions(-)
+
 -- 
 2.21.0
 
