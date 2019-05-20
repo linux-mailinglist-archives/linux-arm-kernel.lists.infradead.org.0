@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E603238F3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 15:55:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B83F5238F5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 15:55:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p5tqBYU4MG5aIPYF+fkrFeUrBz+fB1WoYqW8ivNqdQY=; b=fAn0FZiKnky1RJ
-	5TfSz6jrvOLmSnYR2DoR2NfSyertf/L4pRxiFxGKSOmHFW9F5WoB6L5I2vaiQnrUJnl+Ju8N+2dOj
-	GU+ec4U8P2sOBajqBL7UxjrDzEcumbkVpB1ZjWyBl0BNhQtm7Hd6HKwp/7f5JjQ27DqwAGGAbjYUb
-	SjE4WAQOPgLLBE4EqnXbP+f4d+NY8MAhPZgaOcTCjA797u2TZ0xPJ32n19VjdMzBal1FJE/3wjdcP
-	1QX821cIjkR468sW/ji9l2y7cRuIznrxRrPcbtLjk0dIvp44hcr6YNpTDpsCsONLl+mPhq5QAlQyo
-	kw3nlxsFDi1J6a2LLeYw==;
+	List-Owner; bh=HPuZ5JW7tJGHjjwlQJ32iNR/F65epZUGtaTGvuQM5As=; b=gVDksUzwECYSGs
+	RfgOnh0EQxfuasj+N53vVdjXwoLWvDSuh7vgOicqrqq02rR2qGV+JksCo8orsr7rCEAEPFjhJwIMu
+	7XIpp7Icatoocnht8zgA68I9ck3BOo93im49oPEWI8s5g3ygK+83QhkJswFInbafkLZJDUBXySnGt
+	Uru9L6LWjx2XzHLqtC5deammyXR6jIUopjCoBpdlDXtdhIa7ohZdz7nnJQ1CUxj4RXRlNv3QieCnu
+	h8ovI4vlV7pkLO92yBCUkY1KGjgh1Ao0xm2QGLb5RYhdGWGXNA2riFDkZQMxjHV75gPpuipjiW25s
+	fX3/05mU0yN2djuBaD9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSil8-00067Z-FA; Mon, 20 May 2019 13:55:22 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1hSilT-0006ru-G2; Mon, 20 May 2019 13:55:43 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSijy-0003xL-5F
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 13:54:17 +0000
-Received: by mail-io1-xd42.google.com with SMTP id m7so11072503ioa.6
+ id 1hSijy-0003zH-SQ
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 13:54:19 +0000
+Received: by mail-io1-xd43.google.com with SMTP id e19so11098267iob.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 06:54:09 -0700 (PDT)
+ Mon, 20 May 2019 06:54:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=KapGiunwwx5p5z/8cIELmJy7chJVMEDGUUi3pAZirR8=;
- b=yzkpmxk6Ixt7Vl80qvoHTPb21ID7tx7gUl5mLADJHRIA+mwJh+3RgoLGGk3FLTk54T
- YiScf7OxLAxGZZO9LC3+c8gtM0a7Ny2oW1diBfNo/KFgJgeeoC6QMtMvwqVezCPM64Mp
- Vqa2IRutPqE8aDKy5pSCg0SoCU7x3XEmR9EhpHbWBcQfO0t7f0HIZTkPOFFny9fs2ft/
- SubZ6bAz3fd+WTZssKs0U/8XN4Bvy28hyjoIYHIsrx1TFdoJk2enr7kbvfSS3KDsuUkm
- SnglFiYSqw9p+9YZ7rokP3YXlNVR+BjVzrA4BlMeUzKXro+jzAtArTeK6j2I5+Cf7jRR
- miAg==
+ bh=qTfgXH2ZXOT0rZW+kdJ3acNhah3zg+9vblvPOMdBQ14=;
+ b=v3cHBs+JVLGbaW7f+X68Q7SNESSu2ea1qt0XE5rwqRRjB1H+pvrtWDxfUH0AEFsQJq
+ +l0yHFwkErTYtnhtH/d87kocoecxvwNEuzEn3ZgwG54OEKQbv0vupQIsVRPhY7yvwsrg
+ Wepwos5OEehfTrvI6BJ3/HL98x9ItLBsiW4ABMW4s6cvh29x/nQal4rB5atykq3D+fXq
+ o2pcQA2VJz1bqrOD16+M33W2hVMyjFGHKcFIAqkJWBAVwu8iMyTEbfFoqlPUfckbLVWB
+ VNrr2RSoVbQp421gKP4231PwDa78wGcYfQJlvT3qi89msxZU19CRvpv0TxKB6B20v7/K
+ HE1A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=KapGiunwwx5p5z/8cIELmJy7chJVMEDGUUi3pAZirR8=;
- b=lhvaU0LyRS/zZgZUIesPlqZ9rIWpG6nV1Z1YmgqgPa1Tc4c/rlD3reNJ9Xxg0lvwJh
- v4aT6t9tIh7LL3+UDrIwpEWJB8Nqf9Tt14+OgNZ7IEZGNf/f+p6LUgLkVr89oJN+0uNq
- /d9g1GkU2axdsSfPU1dkO8cbNFmdBlOHj5vIRmr3pxxz8GXjRnINdzZNoQQOc5euemuV
- aIAgTaOcTDDK99NjSoCUEsgWC2kwSQk/LL8EiUfk2h7kJS7d2HDm8dMPEQ0OMaVY0U0d
- iScgx8qMNTtnSlpvzQJ11VnNsFVSTlAfBUSyVbZTkI3w1CRYO/OKknSfDsc8CSkST8pj
- 5PIw==
-X-Gm-Message-State: APjAAAXai9xUaBkgb/EMF7mQSAX0pZ9uQ4bYesyPrc7G/QLaZ5JiH5vB
- 3a7EeKtzaLk9hgV4uxp4+l7+HA==
-X-Google-Smtp-Source: APXvYqwP2yeMVfgpj5IAJSVo21lcBFOvcGIwfuZQCYo5tTMis4c0FbPs3j4lcwnYFd0aeSJGTibCsQ==
-X-Received: by 2002:a6b:f404:: with SMTP id i4mr7597663iog.251.1558360449000; 
- Mon, 20 May 2019 06:54:09 -0700 (PDT)
+ bh=qTfgXH2ZXOT0rZW+kdJ3acNhah3zg+9vblvPOMdBQ14=;
+ b=PsQgltwEMlVX89W0KT3lksj0zeGtv6EE3BVrNDPHb3pue4Ktyx/eJEqh/1Lvv7YwbA
+ M+egT8vyvvcy6NiWigIajYzslwIVh24mPcASgV2/ytQqn/bp6UF6hrHwa8nHXks/cwFq
+ gIUgUsOoUclBCz9xlS75eJTvwuT1IZiy+by7iuDgdQXcBKjwLv+z9UaV/c3YwHI7wULT
+ bTn7hryhDddaYPorn6zr+mPqIXrsdmd5T8CFdCabscGIEREkVUikHoVFmU2Wr265NP2h
+ Atrghc5eY6LksAVyF6umd03yaUsMi+nIh2g0/hI+Yae9K+AnN/7Bj+pxnjkoM4ynOAmY
+ sRJg==
+X-Gm-Message-State: APjAAAUpItqUS7nQ/zdqrMgWgOybEHJeHg3VeXRFOOZZaT46zMFY8aB6
+ cR726D69b30y1BorEDmQZzSG+g==
+X-Google-Smtp-Source: APXvYqw+Dh6IdcQx6woJU//JReMZ8LVIygVjAfQCtJfQq3P/b8mcrruZxt3mXsn8gRe41T3YpWrDpA==
+X-Received: by 2002:a05:6602:2049:: with SMTP id
+ z9mr14847619iod.46.1558360450147; 
+ Mon, 20 May 2019 06:54:10 -0700 (PDT)
 Received: from localhost.localdomain (c-71-195-29-92.hsd1.mn.comcast.net.
  [71.195.29.92])
- by smtp.gmail.com with ESMTPSA id n17sm6581185ioa.0.2019.05.20.06.54.07
+ by smtp.gmail.com with ESMTPSA id n17sm6581185ioa.0.2019.05.20.06.54.09
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 20 May 2019 06:54:08 -0700 (PDT)
+ Mon, 20 May 2019 06:54:09 -0700 (PDT)
 From: Alex Elder <elder@linaro.org>
 To: arnd@arndb.de, subashab@codeaurora.org, david.brown@linaro.org,
  agross@kernel.org, davem@davemloft.net
-Subject: [PATCH 7/8] net: qualcomm: rmnet: mark endianness of struct
- rmnet_map_dl_csum_trailer fields
-Date: Mon, 20 May 2019 08:53:53 -0500
-Message-Id: <20190520135354.18628-8-elder@linaro.org>
+Subject: [PATCH 8/8] net: introduce "include/linux/if_rmnet.h"
+Date: Mon, 20 May 2019 08:53:54 -0500
+Message-Id: <20190520135354.18628-9-elder@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190520135354.18628-1-elder@linaro.org>
 References: <20190520135354.18628-1-elder@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_065410_678219_16DBF3EB 
-X-CRM114-Status: GOOD (  11.32  )
+X-CRM114-CacheID: sfid-20190520_065411_489906_892A2988 
+X-CRM114-Status: GOOD (  15.04  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -109,35 +109,163 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Two 16-bit fields (csum_start_offset and csum_length) in the
-rmnet_map_dl_csum_trailer structure are currently defined to have
-type u16.  But they are in fact big endian values, so should be
-properly represented as __be16 values.
-
-No existing code actually references these fields (they're ignored by
-rmnet_map_ipv4_dl_csum_trailer() and rmnet_map_ipv6_dl_csum_trailer()).
-Changing their type therefore causes no harm, so just fix them.
+The IPA driver requires some (but not all) symbols defined in
+"drivers/net/ethernet/qualcomm/rmnet/rmnet_map.h".  Create a new
+public header file "include/linux/if_rmnet.h" and move the needed
+definitions there.
 
 Signed-off-by: Alex Elder <elder@linaro.org>
 ---
- drivers/net/ethernet/qualcomm/rmnet/rmnet_map.h | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ .../ethernet/qualcomm/rmnet/rmnet_handlers.c  |  1 +
+ .../net/ethernet/qualcomm/rmnet/rmnet_map.h   | 31 -------------
+ .../qualcomm/rmnet/rmnet_map_command.c        |  1 +
+ .../ethernet/qualcomm/rmnet/rmnet_map_data.c  |  1 +
+ .../net/ethernet/qualcomm/rmnet/rmnet_vnd.c   |  1 +
+ include/linux/if_rmnet.h                      | 45 +++++++++++++++++++
+ 6 files changed, 49 insertions(+), 31 deletions(-)
+ create mode 100644 include/linux/if_rmnet.h
 
+diff --git a/drivers/net/ethernet/qualcomm/rmnet/rmnet_handlers.c b/drivers/net/ethernet/qualcomm/rmnet/rmnet_handlers.c
+index 5fff6c78ecd5..8e00e14f4ac9 100644
+--- a/drivers/net/ethernet/qualcomm/rmnet/rmnet_handlers.c
++++ b/drivers/net/ethernet/qualcomm/rmnet/rmnet_handlers.c
+@@ -18,6 +18,7 @@
+ #include <linux/netdev_features.h>
+ #include <linux/if_arp.h>
+ #include <net/sock.h>
++#include <linux/if_rmnet.h>
+ #include "rmnet_private.h"
+ #include "rmnet_config.h"
+ #include "rmnet_vnd.h"
 diff --git a/drivers/net/ethernet/qualcomm/rmnet/rmnet_map.h b/drivers/net/ethernet/qualcomm/rmnet/rmnet_map.h
-index fb1cdb4ec41f..775b98d34e94 100644
+index 775b98d34e94..d101cabb04c3 100644
 --- a/drivers/net/ethernet/qualcomm/rmnet/rmnet_map.h
 +++ b/drivers/net/ethernet/qualcomm/rmnet/rmnet_map.h
-@@ -52,8 +52,8 @@ struct rmnet_map_header {
- struct rmnet_map_dl_csum_trailer {
- 	u8  reserved1;
- 	u8  flags;		/* RMNET_MAP_DL_* */
--	u16 csum_start_offset;
--	u16 csum_length;
+@@ -39,37 +39,6 @@ enum rmnet_map_commands {
+ 	RMNET_MAP_COMMAND_ENUM_LENGTH
+ };
+ 
+-struct rmnet_map_header {
+-	u8  cmd_pad_len;	/* RMNET_MAP_* */
+-	u8  mux_id;
+-	__be16 pkt_len;
+-}  __aligned(1);
+-
+-#define RMNET_MAP_CMD_FMASK		GENMASK(0, 0)   /* 0: data; 1: cmd */
+-#define RMNET_MAP_RESERVED_FMASK	GENMASK(1, 1)
+-#define RMNET_MAP_PAD_LEN_FMASK		GENMASK(7, 2)
+-
+-struct rmnet_map_dl_csum_trailer {
+-	u8  reserved1;
+-	u8  flags;		/* RMNET_MAP_DL_* */
+-	__be16 csum_start_offset;
+-	__be16 csum_length;
+-	__be16 csum_value;
+-} __aligned(1);
+-
+-#define RMNET_MAP_DL_CSUM_VALID_FMASK	GENMASK(0, 0)
+-#define RMNET_MAP_DL_RESERVED_FMASK	GENMASK(7, 1)
+-
+-struct rmnet_map_ul_csum_header {
+-	__be16 csum_start_offset;
+-	__be16 csum_info;	/* RMNET_MAP_UL_* */
+-} __aligned(1);
+-
+-/* NOTE:  These field masks are defined in CPU byte order */
+-#define RMNET_MAP_UL_CSUM_INSERT_FMASK	GENMASK(13, 0)
+-#define RMNET_MAP_UL_CSUM_UDP_FMASK	GENMASK(14, 14)   /* 0: IP; 1: UDP */
+-#define RMNET_MAP_UL_CSUM_ENABLED_FMASK	GENMASK(15, 15)
+-
+ #define RMNET_MAP_COMMAND_REQUEST     0
+ #define RMNET_MAP_COMMAND_ACK         1
+ #define RMNET_MAP_COMMAND_UNSUPPORTED 2
+diff --git a/drivers/net/ethernet/qualcomm/rmnet/rmnet_map_command.c b/drivers/net/ethernet/qualcomm/rmnet/rmnet_map_command.c
+index f675f47c3495..6832c5939cae 100644
+--- a/drivers/net/ethernet/qualcomm/rmnet/rmnet_map_command.c
++++ b/drivers/net/ethernet/qualcomm/rmnet/rmnet_map_command.c
+@@ -11,6 +11,7 @@
+  */
+ 
+ #include <linux/netdevice.h>
++#include <linux/if_rmnet.h>
+ #include "rmnet_config.h"
+ #include "rmnet_map.h"
+ #include "rmnet_private.h"
+diff --git a/drivers/net/ethernet/qualcomm/rmnet/rmnet_map_data.c b/drivers/net/ethernet/qualcomm/rmnet/rmnet_map_data.c
+index 61b7dbab2056..370aee7402e0 100644
+--- a/drivers/net/ethernet/qualcomm/rmnet/rmnet_map_data.c
++++ b/drivers/net/ethernet/qualcomm/rmnet/rmnet_map_data.c
+@@ -18,6 +18,7 @@
+ #include <linux/ip.h>
+ #include <linux/ipv6.h>
+ #include <net/ip6_checksum.h>
++#include <linux/if_rmnet.h>
+ #include "rmnet_config.h"
+ #include "rmnet_map.h"
+ #include "rmnet_private.h"
+diff --git a/drivers/net/ethernet/qualcomm/rmnet/rmnet_vnd.c b/drivers/net/ethernet/qualcomm/rmnet/rmnet_vnd.c
+index d11c16aeb19a..6b39d4d8e523 100644
+--- a/drivers/net/ethernet/qualcomm/rmnet/rmnet_vnd.c
++++ b/drivers/net/ethernet/qualcomm/rmnet/rmnet_vnd.c
+@@ -17,6 +17,7 @@
+ #include <linux/etherdevice.h>
+ #include <linux/if_arp.h>
+ #include <net/pkt_sched.h>
++#include <linux/if_rmnet.h>
+ #include "rmnet_config.h"
+ #include "rmnet_handlers.h"
+ #include "rmnet_private.h"
+diff --git a/include/linux/if_rmnet.h b/include/linux/if_rmnet.h
+new file mode 100644
+index 000000000000..ae60472ecc79
+--- /dev/null
++++ b/include/linux/if_rmnet.h
+@@ -0,0 +1,45 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++
++/* Copyright (c) 2013-2018, The Linux Foundation. All rights reserved.
++ * Copyright (C) 2019 Linaro Ltd.
++ */
++#ifndef _LINUX_IF_RMNET_H_
++#define _LINUX_IF_RMNET_H_
++
++#include <linux/types.h>
++
++/* Header structure that precedes packets in ETH_P_MAP protocol */
++struct rmnet_map_header {
++	u8  cmd_pad_len;	/* RMNET_MAP_* */
++	u8  mux_id;
++	__be16 pkt_len;
++}  __aligned(1);
++
++#define RMNET_MAP_CMD_FMASK		GENMASK(0, 0)   /* 0: data; 1: cmd */
++#define RMNET_MAP_RESERVED_FMASK	GENMASK(1, 1)
++#define RMNET_MAP_PAD_LEN_FMASK		GENMASK(7, 2)
++
++/* Checksum offload metadata header for outbound packets*/
++struct rmnet_map_ul_csum_header {
++	__be16 csum_start_offset;
++	__be16 csum_info;	/* RMNET_MAP_UL_* */
++} __aligned(1);
++
++/* NOTE:  These field masks are defined in CPU byte order */
++#define RMNET_MAP_UL_CSUM_INSERT_FMASK	GENMASK(13, 0)
++#define RMNET_MAP_UL_CSUM_UDP_FMASK	GENMASK(14, 14)   /* 0: IP; 1: UDP */
++#define RMNET_MAP_UL_CSUM_ENABLED_FMASK	GENMASK(15, 15)
++
++/* Checksum offload metadata trailer for inbound packets */
++struct rmnet_map_dl_csum_trailer {
++	u8  reserved1;
++	u8  flags;		/* RMNET_MAP_DL_* */
 +	__be16 csum_start_offset;
 +	__be16 csum_length;
- 	__be16 csum_value;
- } __aligned(1);
- 
++	__be16 csum_value;
++} __aligned(1);
++
++#define RMNET_MAP_DL_CSUM_VALID_FMASK	GENMASK(0, 0)
++#define RMNET_MAP_DL_RESERVED_FMASK	GENMASK(7, 1)
++
++#endif /* _LINUX_IF_RMNET_H_ */
 -- 
 2.20.1
 
