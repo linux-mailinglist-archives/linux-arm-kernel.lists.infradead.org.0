@@ -2,91 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BCEE23242
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 13:25:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 36F2523243
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 13:25:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eHSPGlFhtD6OiXOAKXLCZzhxv2vTNPDVuCyPx74z69M=; b=CLsSq+ps/Fq6IN
-	yf3Rk0eP0GICylg8Bfsc4XicJPPl7NI9GaAoTpoZNtGynq4Dzsnctc9Z6VQipWAViycZV0mqivx9x
-	08YwBc0SmY0JqED3QOpo/2YaOubvwvR/1hAgjSJWPl06XB2uW6rlS/fukng6zyhF+056IfcTQFJBt
-	hjdpiGXSY2o088A39mvMbCN8k+xvveR+htdy+s6joyuNTir8XC/rORHLaHVXR5+Aux/FThQd+9P5W
-	uT0aHk5swi7w16A7cjw4NssPrGlwMnLlkchYQ0q1d9axBL5ZInkfRJZJERxM1bvXNw1TYdzx41sGB
-	eHI5zn3zA73o3yduFqMQ==;
+	List-Owner; bh=AjGOZpArssdqC5FSzJ0lzfgDqFeI7+0uDbrGm4mF8QQ=; b=NGCYgTkkRV9eDR
+	jfU4nRlICfDL98jrQwHbsep4gMyK6sv/6IxbesB6GRBPMXhhS+k6WiUmNMoCYpSv0Q9AZVq8xyhkM
+	+h9yJoc5VmmRPh21BylpkK5IhLM3b/bKNjMnBGuTdbDR8tkCwDYvd+tTamlG2c0/7LARH4UlqLEyQ
+	f1frT4mSQRe/EAEk/S8dEzP1tTKIa+yW4XICdinVdCPMeGUamBVdyC/06KTM/g3Wl0LXMAkVZGdPV
+	zwpWAzmu0xhD56xY7xd91WOY8rd6J2tZEwIew1k1C6XBNubRE7Vsyqn5w4pBA1yt7np34XkmLT17o
+	8+jSUJ7q/9U8hCPN3uWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSgQ4-0006gR-Aj; Mon, 20 May 2019 11:25:28 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSgPv-0006ed-3O
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 11:25:20 +0000
-Received: by mail-wr1-x444.google.com with SMTP id r4so14128914wro.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 04:25:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=message-id:subject:from:to:cc:date:in-reply-to:references
- :user-agent:mime-version:content-transfer-encoding;
- bh=jjlgRqd7/3GdbXtzivENZGFK0W6UGcne26rpZyW4X3o=;
- b=KH9eQMCgAcp+vePFV58EJikabmf6tk7CPaw16nowcMlcJ9rfsp+jqtVbW4ziTIqtJn
- pWBQacIbPY+n191m2WqHswFszkMDXBbauB4/HyE6ZwSzMGnaDM8mc8BC2ItArt3r48p2
- hDW8UVhT/aOcBwNkv3AV39O5SBWYxCLPywsppIcLpCzNlu/SO8Kh6XrvNVW+vDf3BVGO
- dgf7CDa6gkuA6sajvyDCOePcqFxpVeLPk1UFIDhhneZxknvlnqxb4xVh9g1wgPR2ykgo
- bBj2h5PQdq+NXx0DTW2epwkjiXbsm30gJiyeKCUH09+ynK2MOyTfMXH1G5PwwvMSpl9b
- Ihnw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:subject:from:to:cc:date:in-reply-to
- :references:user-agent:mime-version:content-transfer-encoding;
- bh=jjlgRqd7/3GdbXtzivENZGFK0W6UGcne26rpZyW4X3o=;
- b=ihcntekUTlgykvnJdTy38qEmeXi3pKu/epSzI5eLYB3mgKBig3KKSM46aajpXROJ4f
- +467D82YwKyv5/wupVBLlZyegXR3ymqqy4JQZ0sdKx0rcj5hVlgeKsGoLUPjAwNAsdFJ
- 36PShnM5TPnKKx/DL35f1VkvOKsb6NYwv1BuBo9QRDk3ZvTePjxxiBJHSDdoSncyl5Pc
- 1qgEa36dHDv94kPSbw8QERvvioxvgM8AgA6ROp+d21r9UJS12wBwBMG9KnEa+iAhx6Gq
- JVS93YeYb6ymbpI791MbN+1PN/1+rIG+kQFngAhU5Na7RTJdsmeg09d+qkufidZSFJ0m
- hQjQ==
-X-Gm-Message-State: APjAAAWy4/jGyBr3wHgzND++ReuY1t2V0JU5Sm92qX7Dr9Te2UPl34/6
- g0VKXlwO3+5az9bnrDU6Ob1fmQ==
-X-Google-Smtp-Source: APXvYqwD19LntnajDRGhTBQ60xM1YyUoHyMgHC0GjSUru7HiinTiDHC+FsHKj7HQJg4LRDftmwD8dQ==
-X-Received: by 2002:a5d:624d:: with SMTP id m13mr45190092wrv.305.1558351516800; 
- Mon, 20 May 2019 04:25:16 -0700 (PDT)
-Received: from boomer.baylibre.com
- (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id m13sm15690440wrs.87.2019.05.20.04.25.15
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 20 May 2019 04:25:16 -0700 (PDT)
-Message-ID: <fa275d9d4a451d6ef5332a6836e8316c5644d913.camel@baylibre.com>
-Subject: Re: [PATCH 1/1] clk: meson: meson8b: fix a typo in the VPU parent
- names array variable
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>, 
- linux-amlogic@lists.infradead.org, narmstrong@baylibre.com
-Date: Mon, 20 May 2019 13:25:14 +0200
-In-Reply-To: <20190512194300.7445-2-martin.blumenstingl@googlemail.com>
-References: <20190512194300.7445-1-martin.blumenstingl@googlemail.com>
- <20190512194300.7445-2-martin.blumenstingl@googlemail.com>
-User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
+	id 1hSgQH-0006v0-3v; Mon, 20 May 2019 11:25:41 +0000
+Received: from kirsty.vergenet.net ([202.4.237.240])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hSgQ6-0006mF-Ow
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 11:25:32 +0000
+Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
+ by kirsty.vergenet.net (Postfix) with ESMTPA id D1FF325AD7A;
+ Mon, 20 May 2019 21:25:25 +1000 (AEST)
+Received: by reginn.horms.nl (Postfix, from userid 7100)
+ id C18E19404D4; Mon, 20 May 2019 13:25:22 +0200 (CEST)
+Date: Mon, 20 May 2019 13:25:22 +0200
+From: Simon Horman <horms@verge.net.au>
+To: Biju Das <biju.das@bp.renesas.com>
+Subject: Re: [PATCH] ARM: shmobile: Remove GENERIC_PHY from shmobile_defconfig
+Message-ID: <20190520112522.7u5g24nxm4g66yiw@verge.net.au>
+References: <1556025203-59961-1-git-send-email-biju.das@bp.renesas.com>
+ <CAMuHMdVzMt0Bq6Nyky2sSRKn8pB7srG1BTeweERFNJtrTUj+ow@mail.gmail.com>
+ <20190424093315.6jg7muf56d2toxl5@verge.net.au>
+ <OSBPR01MB210316C686F7DFABE8013357B83C0@OSBPR01MB2103.jpnprd01.prod.outlook.com>
+ <20190424110700.4q7ymsj6y62pvbji@verge.net.au>
+ <OSBPR01MB2103E36FDF7A5A38F93D37B9B83C0@OSBPR01MB2103.jpnprd01.prod.outlook.com>
+ <20190426101239.syq534l5awlinzb2@verge.net.au>
+ <OSBPR01MB21030095151CBAD62DF6F7F7B83E0@OSBPR01MB2103.jpnprd01.prod.outlook.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <OSBPR01MB21030095151CBAD62DF6F7F7B83E0@OSBPR01MB2103.jpnprd01.prod.outlook.com>
+Organisation: Horms Solutions BV
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_042519_191859_A6EAB097 
-X-CRM114-Status: UNSURE (   8.94  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190520_042531_030340_1E2F11A8 
+X-CRM114-Status: GOOD (  18.58  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [202.4.237.240 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -98,23 +69,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sboyd@kernel.org, mturquette@baylibre.com, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: Fabrizio Castro <fabrizio.castro@bp.renesas.com>,
+ Chris Paterson <Chris.Paterson2@renesas.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Magnus Damm <magnus.damm@gmail.com>, Russell King <linux@armlinux.org.uk>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 2019-05-12 at 21:43 +0200, Martin Blumenstingl wrote:
-> The variable which holds the parent names for the VPU clocks has a typo
-> in it. Fix this typo to make the variable naming in the driver
-> consistent. No functional changes.
+On Fri, Apr 26, 2019 at 10:14:26AM +0000, Biju Das wrote:
+> > Subject: Re: [PATCH] ARM: shmobile: Remove GENERIC_PHY from
+> > shmobile_defconfig
+> > 
+> > On Wed, Apr 24, 2019 at 11:11:43AM +0000, Biju Das wrote:
+> > > Hi Simon,
+> > >
+> > > Thanks for the feedback.
+> > >
+> > > > Subject: Re: [PATCH] ARM: shmobile: Remove GENERIC_PHY from
+> > > > shmobile_defconfig
+> > > >
+> > > > On Wed, Apr 24, 2019 at 09:44:11AM +0000, Biju Das wrote:
+> > > > > Hi Simon,
+> > > > >
+> > > > > Thanks for the feedback.
+> > > > >
+> > > > > I missed to add the dependency for this patch.
+> > > > >
+> > > > > This patch has dependency on
+> > > > > https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.gi
+> > > > > t/co
+> > > > > mmit/?h=next-
+> > 20190424&id=5d8042e95fd471d0e342cf14f127194f1a867a01
+> > > >
+> > > > Thanks, but I see the same result with this patch applied on top of
+> > > >
+> > > > 5d8042e95fd4 phy: rcar-gen3-usb2: Add support for r8a77470
+> > >
+> > > That is strange.  Have you ran make shmobile_defconfig after applying the
+> > patch?
+> > >
+> > > I get the following result with renesas- devel-20190423-v5.1-rc5.
+> > 
+> > Thanks, I also see things working fine with both
+> > * [PATCH] ARM: shmobile: Remove GENERIC_PHY from shmobile_defconfig
+> > * 5d8042e95fd4 phy: rcar-gen3-usb2: Add support for r8a77470 applied on
+> > top of renesas-devel-20190423-v5.1-rc5
+> > 
+> > I think I can go ahead and apply
+> > [PATCH] ARM: shmobile: Remove GENERIC_PHY from shmobile_defconfig
+> > once I rebase my branches on v5.2-rc1, agter it has been release and
+> > assuming it includes
+> > 5d8042e95fd4 phy: rcar-gen3-usb2: Add support for r8a77470
 > 
-> Fixes: 41785ce562491d ("clk: meson: meson8b: add the VPU clock trees")
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> Thanks Simon.
 
-applied to v5.3/fixes
+Likewise, thanks.
 
+Now that v5.2-rc1 is available I have applied this patch for inclusion
+in v5.3.
 
 _______________________________________________
 linux-arm-kernel mailing list
