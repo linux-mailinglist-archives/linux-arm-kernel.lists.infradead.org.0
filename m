@@ -2,75 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3770824162
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 21:44:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3243C2416B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 21:45:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lFkCMiyC/IoZMCZRuEOy1funmeV5tg8ovcAj5S08EcY=; b=A9gxNRTVUiiTPm
-	3QInuYqElezm6ZxXMlfXlrTAeg/DOl5kMBnyv3d/E5hf6baJoGy/0bonaIRkZiDInoC8ijWrLIJlw
-	vk9u+wdSzh50KdvNsbOc3ZIbBKkMkNjqTJmhuOcyGZQf8SdgULgscH175xwPgS7PGoU1KI6qX3eBR
-	AxpDZNZN31gdshbruEgSkMoKVDZG+y8DMGseBZfDDyUcNGrsmcdsVVbpKnD4Y6lzHBTCvF8un40Ds
-	EDwBEAkPygXeLYMNjYz68b0ZEXfmYbwE6bTV/B6Y9S1JcpFAga8OSO4l5CYyVyt5vXaUvLRiSlDKp
-	rBaaUkoVUS8V+l8lt1Dw==;
+	List-Owner; bh=inE/ev5H0jx3zsflSQBZskA6Ccn4zdPf+z7llQj8C/0=; b=Szn6Z8tPROKdbv
+	sVV8Qv0rZonqqKdO5gaiXq67IUeGIIOP4BSPlKetHPJvGffUBqq6EbWn5odKtHIL4JMBGI1uKbEMw
+	AQk3D1jbdwSxR2a8fdzOicOyEMiJ+Jqk/85VmteBppYMICbRZGJik26oGLXXQWCPT3a2kvcboMCnw
+	1YK7dCNWkX4jNPt8ldsC2dI71T0YnqeSuY2VitA8EPE1nL8ZSVsXq3b+V9xTShVLQrw5imPdFQ2ZQ
+	Y6SBmzRQFiCPRuKqr9JGSz51Eq75381otDkve5xex7RCywX8R7H6weqL3eU3IORsY+JL7cCQ5n1oB
+	heG4zeiTZQu5vhii4jog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSoDE-0001Pf-GL; Mon, 20 May 2019 19:44:44 +0000
+	id 1hSoDn-00021Z-C0; Mon, 20 May 2019 19:45:19 +0000
 Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSoCf-0000lh-1L; Mon, 20 May 2019 19:44:10 +0000
-Received: by mail-wm1-x343.google.com with SMTP id c77so551958wmd.1;
- Mon, 20 May 2019 12:44:08 -0700 (PDT)
+ id 1hSoCf-0000mV-ST; Mon, 20 May 2019 19:44:13 +0000
+Received: by mail-wm1-x343.google.com with SMTP id i3so538445wml.4;
+ Mon, 20 May 2019 12:44:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=fbtcwLTT91//XKmC+nVPtkzszNKe+pk1U7NYT699Lrc=;
- b=bqnP7lv6jn4i1Q/jGxux0ThtCKwf8NtdpmWcAE95aDI+W14w8Kip28zRIk0UnNd8H9
- uLwKOByCpDXwwQznTYVX3bssmINT2gpSwsbYZ1rL2R1gmwUAPDUmWBsGQbVQzPcinQxB
- xNYMJxEfvY2sSqcqHpH7Vx/DfEpp8pH6kVd09RmaSHI7rfv11xyghvZOXzuUbOElDYC3
- PgPwRXIStRlsP7T2dy8TNs86gkFVpGW/dj2my/NPhPbqACLEN3aD6uFczsJj5+rKvnlZ
- J/DrwtS/iLZyhyS4arHTi3Zzq4tSQbZQxGNFynJz7SAhXAel9FsB2Id3VoiSsq0lQ39Q
- 4q6g==
+ bh=IYg36bJkUAGqrs6RcoppkW6uHqR+c6iAwwtmm+SF24A=;
+ b=MQp1WuNCFJvfPVgPWAa/hBKKkjPR1lPrea/FUxe7vACI/kWv437nXBEHZv/6UJellY
+ 1Eq6OKYDbWKX/7jp048kyCjTrQrLssBZg/BTe1w5ggjePsCh/9ytffWIwyOlhmG/dnMZ
+ fY1i41SLm3XVeJlCsN6TsWS0jbepJ7biSuwXvuBSOF/3BymHyafaXopDkQZ8cUd8TapM
+ 3Nb7RUS1hV/ArkTGVQ6MXocKAGALtMqWT+XJnyAIHoWoaM/B2i2NKU/A0h4kod5WHA5/
+ 1Z9RzW6jqYXUZJXG0s/s0Ah61TFsHeKjEEDsDxidKGeaFy2OighIX13Eufp+mAGOPa+G
+ 7xqg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=fbtcwLTT91//XKmC+nVPtkzszNKe+pk1U7NYT699Lrc=;
- b=lpejCvaDtghV+bQVvC8VJugl5tkINID1wndhyKNXg4P5SRjQw+ptM80lSaWF5ZTbhV
- EdQNvQGiHLvVK4ldvXNUouqZFzN//LfHsawWbZdz2mV0l7qDzu/JF5Ewcf0aGwPg5sPF
- J5g9RZOUwHQThv8vNZhn88vWFKIZTB7PNqXhdbdOj+pNLk0cxHgG3sLQvjoRhj8DCwnw
- /1anj0nNLsF2Yik0AQuD2KbfOi1LJB52cRKXl7pJEo071dtreoX9Hafsm0pMF33Xe5Eg
- MBDnqa/HyNkLwTxh3sUppxusUueykF1wW0bxKuFKeiBIt7tPb5j2HjeWluOmwaWmRXBR
- Ie3g==
-X-Gm-Message-State: APjAAAWtMSdYyfbRvxjgN/iuK7nAHt8FUaa1LtDjWmSxD4YE2d4qeWE9
- iN29hRQ2R9PDfZ0sw5L6qNu4+9ib
-X-Google-Smtp-Source: APXvYqxIvBEBsiGaewtDr53S3vSH0QaYQdhtkgZBbh05g6PE/3rwce7wCD+fDv/oMZdNDf13BNdexQ==
-X-Received: by 2002:a1c:9d56:: with SMTP id g83mr614737wme.8.1558381446984;
- Mon, 20 May 2019 12:44:06 -0700 (PDT)
+ bh=IYg36bJkUAGqrs6RcoppkW6uHqR+c6iAwwtmm+SF24A=;
+ b=ku0Ixm4KXc0vwcBvCo7d2ciw0wljp36Y5b2UCdBRb4hZSZwRRYrA9VKJcyk0+PQkEK
+ J2y7diVAUA9zfEFVHwh2xUIE+GTH2E2PSikFnqg/JVhIbDj8smruyBzEZm1h9E6WImR/
+ 2AMt+q7o0KvZiyFwCG96Y+iNlXLFA5FhIPjN4GFnqOvVP1655PHwKpwXwsKiG+EpHsGh
+ aG1UpFhe8wawaP4qFbmqqSvSbT2e20+ijWXeiQcnI21zRRwH0QDl1eYJw11bU5KWMCEx
+ t5t1lCnk6GFHVYCCoxbPJ3/D6EcGZB1vs/3qEPLwPkziRvA787dcT9B6jAzILJWoKKhh
+ I75g==
+X-Gm-Message-State: APjAAAVZFadRbMC8aT8FHgfGShybAGoKIdPCMq8NNMdTb2O0hJqM6jqE
+ wL+By+VMUQKrXqcduISmo0bvAkTT
+X-Google-Smtp-Source: APXvYqyFdBCG8cWHpaN2+KrG1gXeCei6iHoeMF6BgUJTXx01bW/MIbZDAKOJ2UzJT6V/bPMgmzethQ==
+X-Received: by 2002:a1c:1f95:: with SMTP id f143mr627183wmf.16.1558381448175; 
+ Mon, 20 May 2019 12:44:08 -0700 (PDT)
 Received: from blackbox.darklights.net
  (p200300F133EE71009C356FA1F0E19AF9.dip0.t-ipconnect.de.
  [2003:f1:33ee:7100:9c35:6fa1:f0e1:9af9])
- by smtp.googlemail.com with ESMTPSA id p8sm9135352wro.0.2019.05.20.12.44.05
+ by smtp.googlemail.com with ESMTPSA id p8sm9135352wro.0.2019.05.20.12.44.07
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 20 May 2019 12:44:06 -0700 (PDT)
+ Mon, 20 May 2019 12:44:07 -0700 (PDT)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: linux-amlogic@lists.infradead.org, khilman@baylibre.com,
  mjourdan@baylibre.com, robh+dt@kernel.org, mark.rutland@arm.com,
  devicetree@vger.kernel.org
-Subject: [PATCH v2 3/5] ARM: dts: meson8: add the canvas module
-Date: Mon, 20 May 2019 21:43:51 +0200
-Message-Id: <20190520194353.24445-4-martin.blumenstingl@googlemail.com>
+Subject: [PATCH v2 4/5] ARM: dts: meson8m2: update the offset of the canvas
+ module
+Date: Mon, 20 May 2019 21:43:52 +0200
+Message-Id: <20190520194353.24445-5-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190520194353.24445-1-martin.blumenstingl@googlemail.com>
 References: <20190520194353.24445-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_124409_074652_0A84F76B 
-X-CRM114-Status: GOOD (  11.76  )
+X-CRM114-CacheID: sfid-20190520_124410_214297_A3B65A1F 
+X-CRM114-Status: GOOD (  12.79  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -108,58 +109,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the canvas module to Meson8 because it's required for the VPU
-(video output) and video decoders.
+With the Meson8m2 SoC the canvas module was moved from offset 0x20
+(Meson8) to offset 0x48 (same as on Meson8b). The offsets inside the
+canvas module are identical.
 
-The canvas module is located inside thie "DMC bus" (where also some of
-the memory controller registers are located). The "DMC bus" itself is
-part of the so-called "MMC bus".
-
-Amlogic's vendor kernel has an explicit #define for the "DMC" register
-range on Meson8m2 while there's no such #define for Meson8. However, the
-canvas and memory controller registers on Meson8 are all expressed as
-"0x6000 + actual offset", while Meson8m2 uses "DMC + actual offset".
-Thus it's safe to assume that the DMC bus exists on both SoCs even
-though the registers inside are slightly different.
+Correct the offset so the driver uses the correct registers.
 
 Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 ---
- arch/arm/boot/dts/meson8.dtsi | 22 ++++++++++++++++++++++
- 1 file changed, 22 insertions(+)
+ arch/arm/boot/dts/meson8m2.dtsi | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-diff --git a/arch/arm/boot/dts/meson8.dtsi b/arch/arm/boot/dts/meson8.dtsi
-index 40c11b6b217a..6a235275b01f 100644
---- a/arch/arm/boot/dts/meson8.dtsi
-+++ b/arch/arm/boot/dts/meson8.dtsi
-@@ -228,6 +228,28 @@
- 		};
- 	};
+diff --git a/arch/arm/boot/dts/meson8m2.dtsi b/arch/arm/boot/dts/meson8m2.dtsi
+index bb87b251e16d..5bde7f502007 100644
+--- a/arch/arm/boot/dts/meson8m2.dtsi
++++ b/arch/arm/boot/dts/meson8m2.dtsi
+@@ -14,6 +14,16 @@
+ 	compatible = "amlogic,meson8m2-clkc", "amlogic,meson8-clkc";
+ };
  
-+	mmcbus: bus@c8000000 {
-+		compatible = "simple-bus";
-+		reg = <0xc8000000 0x8000>;
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		ranges = <0x0 0xc8000000 0x8000>;
++&dmcbus {
++	/* the offset of the canvas registers has changed compared to Meson8 */
++	/delete-node/ video-lut@20;
 +
-+		dmcbus: bus@6000 {
-+			compatible = "simple-bus";
-+			reg = <0x6000 0x400>;
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+			ranges = <0x0 0x6000 0x400>;
-+
-+			canvas: video-lut@20 {
-+				compatible = "amlogic,meson8-canvas",
-+					     "amlogic,canvas";
-+				reg = <0x20 0x14>;
-+			};
-+		};
++	canvas: video-lut@48 {
++		compatible = "amlogic,meson8m2-canvas", "amlogic,canvas";
++		reg = <0x48 0x14>;
 +	};
++};
 +
- 	apb: bus@d0000000 {
- 		compatible = "simple-bus";
- 		reg = <0xd0000000 0x200000>;
+ &ethmac {
+ 	compatible = "amlogic,meson8m2-dwmac", "snps,dwmac";
+ 	reg = <0xc9410000 0x10000
 -- 
 2.21.0
 
