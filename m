@@ -2,80 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58DF823A5C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 16:38:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A15323A61
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 16:39:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1U1sW2Xiel0akgbm9z/zI09cghsH4EemxD0T0GDHcbs=; b=FXg60ZfSomlP6h
-	605pJdjGcqQABplA97A2b1/+SWBCwEHLpraqfnF6Z6ioUVkg+uOE6aYay0mObHU6CTwIL5yVAaqQU
-	Lz9DqhqeD4E5YDI7WpC4m+stvEnT33cfVDNKWDO47fmugshk8YzGHOvdDp3SwcLrtWgK81I95pPzw
-	VD9CcMgXH3OZC2uscDSer7xyZsMq4groF9eshaET4BOxO4m9sRjCHyqGb0PA6Ojd/pva8TLdX2iK8
-	O4TnRErpYZsPVTtDFt2Xzkp/T9Wkke+uc5wnPXLRLeAiV4NX8pGP78sm89Z8KLV6ArsRtdrGRm0y5
-	XX5HHYBAdoAFut5D9rQA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pLY77dm+K6WjIHcnwea/SuCIJIinXO8P1UwWjFCCQBs=; b=dImgBLcUzHVRDo
+	QQUu4QdXQzM0F8rfMFqn7JI6/mfYU/hrgh+gaxjSr7VJc+WVSxLYtbZzvZcmighsXTNH4MjYGla9y
+	11yYLcEcER3WDvd/yVz7aOWOdYJeb9gvfhL7Gtvj0P4BHSnfwBhoUbAUsH+guGWBKHyZT+C3YICr7
+	p2MlMYBYNnzvbAGob9awiWzW0YLgLoX7Jf0591krsq61uhZQX3n5AMhlfJn3hD98UONNCHNsHs7kB
+	JvxZKyrW+3q7vPkK5FEmQAJeVht2M1JRLBU1x8qanzH8I/mRVFCnTrdj6SfNDqiJHoqMl1UujtkGv
+	BnctJUk5er2V2znH1yKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSjR9-0006oi-Oc; Mon, 20 May 2019 14:38:47 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hSjRb-0007TD-MY; Mon, 20 May 2019 14:39:15 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSjQd-0006JG-SB
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 14:38:19 +0000
-Received: by mail-wm1-x342.google.com with SMTP id y3so13593575wmm.2
+ id 1hSjQf-0006LS-Gb
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 14:38:22 +0000
+Received: by mail-wr1-x443.google.com with SMTP id s17so14929924wru.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 07:38:15 -0700 (PDT)
+ Mon, 20 May 2019 07:38:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=qPErLrIi2TqGTXmqPusukwp+5dK1tRC/mOkp9SybAko=;
- b=LKmA84tLspOC3dfQvPmPXP4G3MGwvU9fFL1Qw8krD5TnvhXLlsPrBYz4SDv+771req
- tZ28MfmFpF8aV+qH22r9G89LNY7z/5BM8vRbLyxq0unrjvsEZSNLjaZJIcamsElvr9Wi
- 7v0Atn04/0XH5KhhL1WTm9fJ8NhpFRiL6x55i0VHCM+zaEt24js9GiijnKCIhGhD7Kmx
- aR3ZcZpV071XAM8c1vPLxbF2H2l+AJ2Qg9CYRJMJYdh3QPOEV2ld6DDP6+314na/6TzE
- Bt2ZjVKD0nV80O3y29GEi2CpaajMEAFCw3U/suvT1vDxiYh0Z8oVdOuKvyre+1Cu6zz1
- r2Qg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=l9U9UFxewhzgfdgHobwlemQkQvapoJUzpG7DyO7HNN0=;
+ b=k4NzsdZWw7F3mbMtriap8qmSsAr/E5Fom1fD7BsuJEUZ5gEsCldI4enocXYFcNvnlL
+ MxBWCCmDp2GcUiDKY6jjA40Lz+/63YhXoJLO/1Cs7YAU1KvvAizLFmrekcdREQPFjSN7
+ KPezATZpwdkAUy0fPHxrD294tpuUYUCzp8EIdsN0uvegUsQtnt/32P0ESrmZxrVZfaHX
+ FGxwrQ/dtu46WZUhTWgWFs2wJaYBo7a5+qcR28oUosOoZU/KsSJBgNp+9QFby9Y4bLQJ
+ GvYj1DqkWymR+OOZ9KGRRZBrC4s3bU64R0OKHJh6hLqMOY+gcdakF/p5rO/TDtkCYwII
+ wMUA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=qPErLrIi2TqGTXmqPusukwp+5dK1tRC/mOkp9SybAko=;
- b=TrQVDjEFRPzyCSnrxnmvQ/A2h3I0MQ5z6lT/yC3jSewiKjRjKXluvn32ofbEyuFXxY
- XhHMW3XejOYQj1kQqjynE8x96tmAqyQa6dnNRcwFWNYAheddMQMZXk0UaazQz/X5nryN
- f4+MGi0ci2V0F8xHD9MlhxiFGElxQGkvIjudXQfd8V+75iViVZX7UlHzUNEXLtmIy4VT
- P9cqyHMRfYzB7Zr5LVjkqN8FTaYRlfmrc1FCWOMdn2IKewvnqHMzeIdI/GAbK/U6JEkz
- /eZeC3AlHDKNivQ4uJeZV1kkb5Ubq/vdNd3Lcfu+VTG72tdfoF60C0rHE9o7OXC8H7Zb
- rwTA==
-X-Gm-Message-State: APjAAAXAdXBeGwG7bc0pXsoBnaf2HHtRDkApWDcqSTcQoJRWZn8Y9VgV
- z9bbsXotLDBIHwiOsgQsXwasig==
-X-Google-Smtp-Source: APXvYqzqGlMUt7XMKaF9kFn8qoRcnhBeXJcmp0cRColc1Kpm2osu1wfI5WPOgJXKJ0djYeIX+7dboQ==
-X-Received: by 2002:a1c:ed16:: with SMTP id l22mr5582854wmh.96.1558363094267; 
- Mon, 20 May 2019 07:38:14 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=l9U9UFxewhzgfdgHobwlemQkQvapoJUzpG7DyO7HNN0=;
+ b=loxdXvDSf8YR5gZ8IyNIzAUUNwSS59DXQ4z3Hjn3Bda8tOh9/FZDKbENmqiH2XgOh2
+ 0G1S5yAH6S0A1NG+UoThr6FOeMmN7pd5xMN92SP3uC1U4X43s/tQ1tYIyTi2ZTuNq1QQ
+ /da8rHqRsAizi8fzdWEONkThlEdCIm41JR/AaZD/hsMOFG2J4glK0vKsTGafzz7JI0Ib
+ UhXK7TTKFVm7Jh2HPVhgAi+kdczljBHtek13GGeO7QDNplZn+ghHGHyWuodTKXd/zYls
+ sYC1ddrBlfuqZwyo+7ZvKI4OsGExbfjX0sw4lbw08OCvEjEWpOY/prEHBm8wRfr7Zncz
+ H9Gw==
+X-Gm-Message-State: APjAAAU06pnKsh1DnwNYLauTxYs6skLF9iYqy83xhRW1maNds3HJFVK1
+ kOjCxfBkw0zePNPcA4fHbut9rM3IHPME7Q==
+X-Google-Smtp-Source: APXvYqxhH4U5Wn9b4ZaRUOkvitSAEMC4SBP5q+SbWgFqVIcYcMlMhG5xdnJZXUxqMdLgouERAcWGhw==
+X-Received: by 2002:a05:6000:10c7:: with SMTP id
+ b7mr14036103wrx.288.1558363095957; 
+ Mon, 20 May 2019 07:38:15 -0700 (PDT)
 Received: from bender.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id y4sm12505976wmj.20.2019.05.20.07.38.13
+ by smtp.gmail.com with ESMTPSA id y4sm12505976wmj.20.2019.05.20.07.38.15
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 20 May 2019 07:38:13 -0700 (PDT)
+ Mon, 20 May 2019 07:38:15 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: khilman@baylibre.com
-Subject: [PATCH 00/10] ARM: meson: update with SPDX Licence identifier
-Date: Mon, 20 May 2019 16:38:02 +0200
-Message-Id: <20190520143812.2801-1-narmstrong@baylibre.com>
+Subject: [PATCH 01/10] ARM: dts: meson: update with SPDX Licence identifier
+Date: Mon, 20 May 2019 16:38:03 +0200
+Message-Id: <20190520143812.2801-2-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190520143812.2801-1-narmstrong@baylibre.com>
+References: <20190520143812.2801-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_073816_695474_705141B5 
-X-CRM114-Status: UNSURE (   8.00  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190520_073818_065982_B6954A2D 
+X-CRM114-Status: GOOD (  17.85  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -100,33 +102,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Update the SPDX Licence identifier for the Amlogic DT and mach-meson
-files.
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+---
+ arch/arm/boot/dts/meson.dtsi | 44 +-----------------------------------
+ 1 file changed, 1 insertion(+), 43 deletions(-)
 
-Neil Armstrong (10):
-  ARM: dts: meson: update with SPDX Licence identifier
-  ARM: dts: meson6-atv1200: update with SPDX Licence identifier
-  ARM: dts: meson6: update with SPDX Licence identifier
-  ARM: dts: meson8-minix-neo-x8: update with SPDX Licence identifier
-  ARM: dts: meson8: update with SPDX Licence identifier
-  ARM: dts: meson8b-mxq: update with SPDX Licence identifier
-  ARM: dts: meson8b-odroidc1: update with SPDX Licence identifier
-  ARM: dts: meson8b: update with SPDX Licence identifier
-  ARM: debug: meson.S: update with SPDX Licence identifier
-  ARM: mach-meson: update with SPDX Licence identifier
-
- arch/arm/boot/dts/meson.dtsi              | 44 +----------------------
- arch/arm/boot/dts/meson6-atv1200.dts      | 44 +----------------------
- arch/arm/boot/dts/meson6.dtsi             | 44 +----------------------
- arch/arm/boot/dts/meson8-minix-neo-x8.dts | 39 +-------------------
- arch/arm/boot/dts/meson8.dtsi             | 42 +---------------------
- arch/arm/boot/dts/meson8b-mxq.dts         | 42 +---------------------
- arch/arm/boot/dts/meson8b-odroidc1.dts    | 42 +---------------------
- arch/arm/boot/dts/meson8b.dtsi            | 42 +---------------------
- arch/arm/include/debug/meson.S            |  5 +--
- arch/arm/mach-meson/meson.c               | 12 +------
- 10 files changed, 10 insertions(+), 346 deletions(-)
-
+diff --git a/arch/arm/boot/dts/meson.dtsi b/arch/arm/boot/dts/meson.dtsi
+index 8841783aceec..6e59894bc6c6 100644
+--- a/arch/arm/boot/dts/meson.dtsi
++++ b/arch/arm/boot/dts/meson.dtsi
+@@ -1,48 +1,6 @@
++// SPDX-License-Identifier: GPL-2.0 OR X11
+ /*
+  * Copyright 2014 Carlo Caione <carlo@caione.org>
+- *
+- * This file is dual-licensed: you can use it either under the terms
+- * of the GPL or the X11 license, at your option. Note that this dual
+- * licensing only applies to this file, and not this project as a
+- * whole.
+- *
+- *  a) This library is free software; you can redistribute it and/or
+- *     modify it under the terms of the GNU General Public License as
+- *     published by the Free Software Foundation; either version 2 of the
+- *     License, or (at your option) any later version.
+- *
+- *     This library is distributed in the hope that it will be useful,
+- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- *     GNU General Public License for more details.
+- *
+- *     You should have received a copy of the GNU General Public
+- *     License along with this library; if not, write to the Free
+- *     Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
+- *     MA 02110-1301 USA
+- *
+- * Or, alternatively,
+- *
+- *  b) Permission is hereby granted, free of charge, to any person
+- *     obtaining a copy of this software and associated documentation
+- *     files (the "Software"), to deal in the Software without
+- *     restriction, including without limitation the rights to use,
+- *     copy, modify, merge, publish, distribute, sublicense, and/or
+- *     sell copies of the Software, and to permit persons to whom the
+- *     Software is furnished to do so, subject to the following
+- *     conditions:
+- *
+- *     The above copyright notice and this permission notice shall be
+- *     included in all copies or substantial portions of the Software.
+- *
+- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+- *     OTHER DEALINGS IN THE SOFTWARE.
+  */
+ 
+ #include <dt-bindings/interrupt-controller/irq.h>
 -- 
 2.21.0
 
