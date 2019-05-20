@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 500E623281
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 13:34:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0321D23282
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 13:34:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,75 +11,75 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=dUlOtd+OFVe8mcfYPGPNIbKLoKw1Fq7f1Ef40gj1cEc=; b=eW/84BtL08rtD/2oomHSxHLLcD
-	F8zRAY2y5Axg3+7h60wjQAyiIGQy4adkYiuOJ28VehcxbZ6vGv6T9ZwLEGrFtLAeJRH5sMNmd6M/7
-	42ksvHHUROp2fT9jOx5rV5oJU0eqjlkBjXUc1Xd7I/IxjMo0X8tnMuvSI41wrTC7oEZtTu8kNPxpw
-	xBajYcrAcyqI049/3p4xLKZ49IpjumvT5J4aYnSrBWocLkdm/fgxVpegNDe8GtEp4H+jrcEmMSnjy
-	VPkaqdurSY8MVS9kRTRw8ZcjMqCiCFmPVvk3e9OMEwJxd+kPea2jzK+iUGwNTmgAUx0FyxUWVzyol
-	wT86CwFw==;
+	bh=VZsrjIM/pH2jV8ZB1Db4LD3sNZvmcBR6i5tvahr+aCE=; b=Pb1E/n6Lfasi/TSg1RRr0iOTBI
+	9/ZPkqgUFyT+TRI5ey9vp37SL4ZQM5IYkpjyOCB7Sz09EUSm3yZ3VbbOHGGGy3mbiNCloOQzkltkb
+	z4kof2JyCzDPAE9WGL7eWiYSWiL4KZCzCZKdoVVu5jBVimdeIttSOYqaCpnD24/lEO4BhtOm/4CfR
+	Qd+cRQsYWdF/l6zL75gE8op189sHQCdAVK1Qowm/1i63w0QiHuId+4srf94wAZpYhaA3nM+qnSU5/
+	CJpsgTii8nvZ5NWS0vmeatRa/5DcmoZi9dI1FlfgPJSVcpUk/0HpUr7HFeTZ2wVFAjCPHo3/QUsHA
+	+E088qQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSgYU-00031t-Bx; Mon, 20 May 2019 11:34:10 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hSgYe-0003FE-0K; Mon, 20 May 2019 11:34:20 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSgXS-0001xy-4r
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 11:33:19 +0000
-Received: by mail-pf1-x444.google.com with SMTP id u17so7089372pfn.7
+ id 1hSgXX-00026P-8I
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 11:33:31 +0000
+Received: by mail-pl1-x642.google.com with SMTP id p15so6602990pll.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 04:33:05 -0700 (PDT)
+ Mon, 20 May 2019 04:33:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :in-reply-to:references;
- bh=S4gzzO6EwH6f41hdnpuqebXlIsK5G8TT4DFszJQHgV0=;
- b=kGzjAWx09b8i614qTj93eApuhAYdKFfSCQb0+hZtpocLm2MSIaH0rF9+HiZf0A+vcj
- DFTljdFN5pWcPxuYfUOJ68tQFKj30ZgtibGH2S3BXHbVCKNLZZhwrhp/XsRkXdFInukP
- Xjk9fWaCFqZJ8jZcXhR3aezzU8FJfnpD/f2ytgb8QX23t5dF/R+yuoTqXH0C0ZF9DjXK
- kK/Z6PNz6xn9BbWuEogWU+jIyoiUOisWLQVu90JBLpFdeKSeAFeaYkcaW1tllFwwnKdZ
- nJfsJF6cAcVhHJ/woNRx2z15cQYdmwdMhtceda3QpfeXnUfr/bh84yM2S2fBpXB8Pd1R
- Y6ZQ==
+ bh=kSx/2bQ8k2nUJmyS2liy45fCcO2iYHSDnrOKKw/RGV4=;
+ b=cPRtb7tQHJTTiLOHkiEpYP+wKGEqufi5OlZI8LAVDn750p0hkPo7BlZXT75VNfp9dR
+ bKCNesFU3UCDsME+gGsOPK0VHvOUsTWH5NPfg+xK8mJwmFd5vbJmaO0EKQMFmNQ+n19H
+ U8mqxoNBif5syGeoUe2lEXsWbDC1YB0BzSBgumFCN8STOyMNeJCtTeNLvgnvh10BAtQu
+ 5J6eaQFuVUuyZhLT2t+Y0NRhAjRTWOVvbNG74UrINXey6BdbxtdfZyTEs6vh0o0X64Ku
+ AulkUGud8AZoQWHpwMC3klVwa3PQ8CDJYu9MkPTAavxbcDPzAhTfuFpg/fcSO03u0aXx
+ CAKg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:in-reply-to:references;
- bh=S4gzzO6EwH6f41hdnpuqebXlIsK5G8TT4DFszJQHgV0=;
- b=nuZ1C5vzlOO2NSusmjlA82/YQgToGl2eqaqHHtLfO5uJC59z9U+OWTdr7o8s2B2TUI
- tDkNRnRFY/HhQ3j0LPCJqrV+7cpHCf6ZbqURsRTKTek0CnTJIjKBw78X+/ZZh0vDMxWN
- Fo69DaL3fpd+HnuWjhP7/6FAVIQnBmlqI9CPruy7Qfdjhv4ifNTm2zXOZ3z8HqdP5s3f
- emnmbyIL7+HaL+H7FWrM0aRHIXuj5rJ6OCkcE3jkV3SHzD7B9mWUrW2uMR8sWPNJ1DEb
- kit0tCDGbZkTQLzyWQPA9hpsmhsEfJIRcapsvn91AicpfV4bDfWC2hElwxBprJ1G8MC4
- 9aZA==
-X-Gm-Message-State: APjAAAXUT39WUrtB4iQHvRzEOlTca0jadpgWyoVmj/A7MSOpOy5PrzV/
- hJftOCga3y+cygEbhrJfCrmARw==
-X-Google-Smtp-Source: APXvYqz1+ao7UVqG40GQmasG5WxCT+39UIx+E5Jw485BRv+ugxfxElvHdFQ11VJd43Wx3nTx7nGipA==
-X-Received: by 2002:a63:6cc5:: with SMTP id
- h188mr13909311pgc.105.1558351985496; 
- Mon, 20 May 2019 04:33:05 -0700 (PDT)
+ bh=kSx/2bQ8k2nUJmyS2liy45fCcO2iYHSDnrOKKw/RGV4=;
+ b=aj0nXr0hoJ/v/SjgUdNRdHtrhjiPNSxxcwqUdGui55Axl4nYpfxGqfgcOCg3etunlA
+ nJJ18NgvxtkJ+RfL/DhV1k0yel5fx+1xxnT+vA6B3YNTjX6/64KxSDBOykNUJHOUsB5s
+ i8xvjy7Ing/RaUyHeWkHuzRGZvA91ASPArAOzXuW/AZDdYgotbVLffv7tzajQwX8bxDd
+ sOXwPQAliT7GxM7mUN5h5LnuplwGMN53P7yTidcd3sFZgqEiWquz7FqJFtphuaDYW8ZF
+ F1/lQXFfNEAgXMq1TCuZNIVUkRaPFsm6359j+RbIXEaLk8ttXmFgXh5MUsn57Oh3ez7q
+ V5LQ==
+X-Gm-Message-State: APjAAAUCON9CaMWb+x+rl5e6EHh9IFJa76HjDLxCdC2zFPG8nQEmEZHW
+ nQPgM0KL4uCvnrQmjGL7CgEgrw==
+X-Google-Smtp-Source: APXvYqxhkwURFkAYdOsYEFVXpnFbD8H/TQI0K1REXB9rdjkjQNCy7pJURAn59WPfwElP41gCPmfnxw==
+X-Received: by 2002:a17:902:18b:: with SMTP id
+ b11mr50155937plb.264.1558351990778; 
+ Mon, 20 May 2019 04:33:10 -0700 (PDT)
 Received: from baolinwangubtpc.spreadtrum.com ([117.18.48.102])
- by smtp.gmail.com with ESMTPSA id z124sm21310020pfz.116.2019.05.20.04.33.00
+ by smtp.gmail.com with ESMTPSA id z124sm21310020pfz.116.2019.05.20.04.33.05
  (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 20 May 2019 04:33:05 -0700 (PDT)
+ Mon, 20 May 2019 04:33:10 -0700 (PDT)
 From: Baolin Wang <baolin.wang@linaro.org>
 To: dan.j.williams@intel.com,
 	vkoul@kernel.org
-Subject: [PATCH v2 7/8] dmaengine: sh: rcar-dmac: Let the core do the device
+Subject: [PATCH v2 8/8] dmaengine: sh: usb-dmac: Let the core do the device
  node validation
-Date: Mon, 20 May 2019 19:32:20 +0800
-Message-Id: <6e544656cea22f93bdb2626620b381b00d1b38bf.1558351667.git.baolin.wang@linaro.org>
+Date: Mon, 20 May 2019 19:32:21 +0800
+Message-Id: <0b4418a1891261a6a4f8e8356b68e38f4ed6a1d5.1558351667.git.baolin.wang@linaro.org>
 X-Mailer: git-send-email 1.7.9.5
 In-Reply-To: <cover.1558351667.git.baolin.wang@linaro.org>
 References: <cover.1558351667.git.baolin.wang@linaro.org>
 In-Reply-To: <cover.1558351667.git.baolin.wang@linaro.org>
 References: <cover.1558351667.git.baolin.wang@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_043306_682297_7A69D25E 
-X-CRM114-Status: GOOD (  11.69  )
+X-CRM114-CacheID: sfid-20190520_043312_111566_CF4346B5 
+X-CRM114-Status: GOOD (  10.43  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -117,29 +117,29 @@ Let the DMA engine core do the device node validation instead of drivers.
 
 Signed-off-by: Baolin Wang <baolin.wang@linaro.org>
 ---
- drivers/dma/sh/rcar-dmac.c |    6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ drivers/dma/sh/usb-dmac.c |    6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/dma/sh/rcar-dmac.c b/drivers/dma/sh/rcar-dmac.c
-index 33ab1b6..67df54a 100644
---- a/drivers/dma/sh/rcar-dmac.c
-+++ b/drivers/dma/sh/rcar-dmac.c
-@@ -1654,8 +1654,7 @@ static bool rcar_dmac_chan_filter(struct dma_chan *chan, void *arg)
- 	 * Forcing it to call dma_request_channel() and iterate through all
- 	 * channels from all controllers is just pointless.
- 	 */
--	if (chan->device->device_config != rcar_dmac_device_config ||
--	    dma_spec->np != chan->device->dev->of_node)
-+	if (chan->device->device_config != rcar_dmac_device_config)
- 		return false;
+diff --git a/drivers/dma/sh/usb-dmac.c b/drivers/dma/sh/usb-dmac.c
+index 59403f6..0afabf3 100644
+--- a/drivers/dma/sh/usb-dmac.c
++++ b/drivers/dma/sh/usb-dmac.c
+@@ -636,9 +636,6 @@ static bool usb_dmac_chan_filter(struct dma_chan *chan, void *arg)
+ 	struct usb_dmac_chan *uchan = to_usb_dmac_chan(chan);
+ 	struct of_phandle_args *dma_spec = arg;
  
- 	return !test_and_set_bit(dma_spec->args[0], dmac->modules);
-@@ -1675,7 +1674,8 @@ static struct dma_chan *rcar_dmac_of_xlate(struct of_phandle_args *dma_spec,
+-	if (dma_spec->np != chan->device->dev->of_node)
+-		return false;
+-
+ 	/* USB-DMAC should be used with fixed usb controller's FIFO */
+ 	if (uchan->index != dma_spec->args[0])
+ 		return false;
+@@ -659,7 +656,8 @@ static struct dma_chan *usb_dmac_of_xlate(struct of_phandle_args *dma_spec,
  	dma_cap_zero(mask);
  	dma_cap_set(DMA_SLAVE, mask);
  
--	chan = dma_request_channel(mask, rcar_dmac_chan_filter, dma_spec);
-+	chan = __dma_request_channel(&mask, rcar_dmac_chan_filter, dma_spec,
+-	chan = dma_request_channel(mask, usb_dmac_chan_filter, dma_spec);
++	chan = __dma_request_channel(&mask, usb_dmac_chan_filter, dma_spec,
 +				     ofdma->of_node);
  	if (!chan)
  		return NULL;
