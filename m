@@ -2,67 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E933D23FAF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 19:57:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E054123FB5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 19:57:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nhNyRPqPcqisV+hlzcM3VfAYbX4EdVuEnBRP3902gaE=; b=JR+ZVEoYFpze3p
-	g79Vqqczsgla0b46sCHlrRnjYC/szx+A6pT9ZXkJA6MeE6Y0DORWuKAPLwjeSoIfXvPzcj/peFIPF
-	3DIGSfDNmem5aywVuZqmx8gj9Vpe4+/07sFFVFMLSb8StFi8pBa5WHoAQDto4DzGXKG/ucoYnYXXw
-	ilr7ZXJg5zHmEeqr7XVARxs5JE9xEWtSpA/6Z0k9FnXdwT23SYyBY5i8yRgi0j20myyWfH4l6xTVV
-	VJ5DlxdO70n7SWCzI8ugdRlReVDyi+FebJQrNvKE+xWWpqL82MWM7pPKOr1rcgDZ5D26zggayC1G8
-	ZZY9lseHO0GfobYyOvFQ==;
+	List-Owner; bh=sizbu2faHj+ezPj8BSTOgSVchgJCGQcEPGaiwyqL/oA=; b=nGsXXsfscris16
+	X3thARnJfeynoQ+0TRRZB6FRXr6nvkaERD6fMTLthNZJ1I79HD26T9xwSvyW1FoljSEY9s85RlrLH
+	Tb04ujAq22hjSUkD4T+sqFUBnbOyM7Cu9oQc9KyFedn/rS1QHUBpLQdW2qr1GcRthQbogIr/MCH1l
+	GTZAZcH5cWR7HQ8jL/5tMPnqJ+4/tngeWJ0vpVd3znnRwXJFvQiBnHZbYhsKvit43yFg3MfNmgtiA
+	DY1UEoCHxYM/mI8ekQlXGbV7q4g/aD9GWiA0NAgSSJKnnMmLjWcbYNzwKBXqjt0iaxedCFJnWVUPk
+	dGuIaOeIya/30z/RpsXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSmXH-0000aH-Go; Mon, 20 May 2019 17:57:19 +0000
-Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
+	id 1hSmXa-00014Y-3j; Mon, 20 May 2019 17:57:38 +0000
+Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSmWd-0008JC-7q; Mon, 20 May 2019 17:56:50 +0000
-Received: by mail-ot1-x342.google.com with SMTP id 66so13861030otq.0;
- Mon, 20 May 2019 10:56:39 -0700 (PDT)
+ id 1hSmWz-0000MF-84; Mon, 20 May 2019 17:57:23 +0000
+Received: by mail-oi1-x241.google.com with SMTP id 203so10655083oid.13;
+ Mon, 20 May 2019 10:57:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=VXOvDra3GYVXRTYzoLbL0Bskxi3eAOjAFxHF07MZQNM=;
- b=EUpH/eB1pYTfMfO+mY3w9LF/pI07gQS2S/BwAzn8jJhZYYkufQNJFmSeUUPOcHATOk
- ANW3tVACzDfeQc89sQYGoypgC2L+lEihzU0OdL1r1pBM126FwHLKanSghrMpHidOWHes
- a3QJPM2tSV7el0FLS73YBDRERJCs1tsy/oUz8YLjVvvEczyxmk1hBRwdSov2YjNGBYT4
- zpWGAWlI1vX9fG+jqA5ce4HC++cv0au/u+7WJgiK257qURuPbMwzTdll02qcfjtiz8Tz
- jvn3ydM+QNL6+DvDyXA+trchDxPTkXdx23lV2UJS1tU61E1SVVbCE9VOBola40zsiOkM
- q18g==
+ :cc; bh=O+YhahOwl72NephherQ5nxh/plQqDrRpWmjW6ty6chw=;
+ b=iJIoy/ixx6XMCclG0KXm7/4HGgiK0ifwcRsSK37SAmbU7SEWP52EOkgkw2QGxih4u3
+ Mvmx69eb8ymJWNLX8R8nwQ+TvKECMa3frmpyCQW7cvsqa8vvziYTt4I9VpDD6v6jWrZd
+ szvPKHxgce/lkR4cBCMufNwPZvr84X/vSxLkrRDTwDyi6Y0O/SJrJCj0jTO5a+SGHZoC
+ 16VXZP/dmKFRa90rzfzm32BhmJ8gVX/IaTKNEEvWzhl+W1mvIVtCCTyMoXq4csxFQwPV
+ DbDQbZyM2g9m1FlQbvEGBY7YUopt/O8GJl17DO4IdeVWj7bmAmwBEPAH4a5whgKvaKYH
+ dHqw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=VXOvDra3GYVXRTYzoLbL0Bskxi3eAOjAFxHF07MZQNM=;
- b=h0DG9LOOK+kHqUD00Mt2RH7pbzI5P0HW2eOCGadvPcvg5vb2xTvOcPDTkNCk38cfEt
- DhA/6ErkutxZMe00G3IFYNhUC68t+jpajBzEVB0yMF7/WBNGtgQwz3KzXeyipidoq5Ti
- iLj8G/or2SXUaiyswbtitCC9BDuaDgRjzU8YtFuTVj6cfsnnMx0aqIhpO7KBauIY8IKN
- Ft4gx4QojXiU37Rf8t64tl++8AWk6K1zf7ImCxEq8zIsiY94MOIAwHBDoSoPIgyFqZ8I
- SKTyaDKSLDym0O3HN3WIDxx/jh6nKcbbt/1thpwHY2JKDzz1elwsvebflqICKoVasoPW
- aaJQ==
-X-Gm-Message-State: APjAAAU17dtpFxVVAfTWrJbH0f16tBPf3Zs05kDXMLc7wODhEa8bAfBg
- 8B+bRx1A3HJMJ/pqhJvTUTbUpNLpkTWbT/CHQFepKbl+VwQ=
-X-Google-Smtp-Source: APXvYqy2RzawdpIc1HHiAmR3XwyoAucu/u340Q0tybzzu1jn/P0w89t3q3knDtRkvNk0w7rRp7KRKkrHEE4DJMJ7UyA=
-X-Received: by 2002:a9d:2f08:: with SMTP id h8mr45241893otb.42.1558374998281; 
- Mon, 20 May 2019 10:56:38 -0700 (PDT)
+ bh=O+YhahOwl72NephherQ5nxh/plQqDrRpWmjW6ty6chw=;
+ b=c2sxTODbDJx3cJJg/rTskWbgWemqFJTneT2EQ+cRj/I9Sbgp0Rg0r2Oh4Z+6mbnMIN
+ g3DkaTZPiI9YTIxEojWvVkaLmeuufMhr8y32qciKZ+cfPUwkziqZzwL1UkO4ti/e+HPJ
+ uqqc5AxNbexU274L4NxnAlkHPa5RnYvgr29qNWuD/OcaNs0CuegHcck2E+cAYCyyKtQJ
+ maYRR8k38jDq2bUuCgZcbzH3E5TNLx018GqBZrWkGAUz892Qi03pyRDnzvY1PdFgDoAZ
+ qjDweDDluvdecMMB4IhS34fyfoLFEqs4MTNVa6axMr66Fj4pSPpcW11anc5ZWFSMH1s+
+ Iapw==
+X-Gm-Message-State: APjAAAV1p7nesmoCpiUv++wp1nAUsWty7G7Z/VEwGUuG3oS0B1Lsgdun
+ ABy3ZK84p6IdlQIWp5/Hcbg1ZtWH6CiNUKHobEc=
+X-Google-Smtp-Source: APXvYqy5VAnJeMmPXq3sDvFlEOPBnOK7QobZpzr9pilr4EW7NuXmZblLmTpenR3KYHgu/fJsbCTCAfXRp2y1aTbqpYA=
+X-Received: by 2002:aca:5b06:: with SMTP id p6mr282468oib.129.1558375020345;
+ Mon, 20 May 2019 10:57:00 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190520143647.2503-1-narmstrong@baylibre.com>
- <20190520143647.2503-3-narmstrong@baylibre.com>
-In-Reply-To: <20190520143647.2503-3-narmstrong@baylibre.com>
+References: <20190520143732.2701-1-narmstrong@baylibre.com>
+ <20190520143732.2701-3-narmstrong@baylibre.com>
+In-Reply-To: <20190520143732.2701-3-narmstrong@baylibre.com>
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Mon, 20 May 2019 19:56:27 +0200
-Message-ID: <CAFBinCDy9rOgk7pHSfyam1YUog8PFJiqyDNhqPC_ayY+6tWrZg@mail.gmail.com>
-Subject: Re: [PATCH 2/2] mmc: meson-mx-sdio: update with SPDX Licence
+Date: Mon, 20 May 2019 19:56:49 +0200
+Message-ID: <CAFBinCAxhEJXO9dsd0e=zJuKgEsAwHrX+Jr7seJpGNjDL+63qg@mail.gmail.com>
+Subject: Re: [PATCH 2/2] nvmem: meson-mx-efuse: update with SPDX Licence
  identifier
 To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_105640_097639_AA46639A 
-X-CRM114-Status: UNSURE (   6.49  )
+X-CRM114-CacheID: sfid-20190520_105701_903968_4FEC0C39 
+X-CRM114-Status: UNSURE (   6.30  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -70,7 +70,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (martin.blumenstingl[at]googlemail.com)
@@ -94,15 +94,14 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, ulf.hansson@linaro.org,
- linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-amlogic@lists.infradead.org, srinivas.kandagatla@linaro.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 20, 2019 at 4:37 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+On Mon, May 20, 2019 at 4:38 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
 >
 > Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
