@@ -2,84 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E31FD23E2C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 19:17:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37F7B23E32
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 19:17:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uG6HbShudQFLkwoUzPYELucwsdT4IBXvPMYsQZY3J1E=; b=MklcW9P5gzj/rO
-	ZRPrrcwIhFHGXON3Pj1ypjLkZPW67tksolsmSjFLZMpi25sUZlxNEgrMdX6dCT9MfEUjLD7nI9uqV
-	yqvgOYK77B1qsTG4ksoYvH6N0VohtAF60z3v0y3ahUYDgOQ1xP0Gx74p/9P4XA02VMvD9bvI8doT5
-	li0TjqwQMjaOJyjVdysrBoE1Bvt2PHMgsb5FixZ2l8t5/vwTYFST28GAfjvU2eKAf6fOUH3wsbN7i
-	LW0sJZsUY9tWqFOBC3N/v065KQ6jnVwjO5nY9QJBBmM8QAoWjHDzkEI3hibgaXRDaxj53sWFPuq6z
-	toV0TbkCEkRuK3bZofEw==;
+	List-Owner; bh=vV9NYzaLK7DjCGTKUQInLX0aTf2v2A2hn4ogFFRwXm8=; b=Fol3hJxrzQf3qe
+	Dw5+9+dHTdCyku60mc2rFNeZGLLeLBxmd0U1RUiuDBhbRmLQhpcw8gLmeQP7q0SHcuKj7qk4b2bwX
+	b2Kne3Z84xBT6i0mYopnA9hxV6cqzeF8l7oafFTeEbA8wN66+Px9OXR8ImpfsiiZEzqd6S4XNIxpD
+	I1Qw12Uc17zKhXNCHf3DbTveKftaqJJMfXEp+N6XkUUk1M1uU0VZV3TOuQu4G1OONQcRt+m3tqXnW
+	xxhXuy5IFmTN46cLXZjj2n18fpgRc975NoWXdLA+U5U2Nv0iqY5zFrK11B5j3NeiJ2EMtcVYL+bEf
+	xHQUTRQalUDa0NYhj5dA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSluD-0003rf-TI; Mon, 20 May 2019 17:16:57 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hSlub-00047T-Au; Mon, 20 May 2019 17:17:21 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSlu6-0003rC-Fs
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 17:16:51 +0000
-Received: by mail-pl1-x644.google.com with SMTP id a5so6984870pls.12
+ id 1hSluT-00046a-J9
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 17:17:14 +0000
+Received: by mail-pl1-x643.google.com with SMTP id w7so7027130plz.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 10:16:50 -0700 (PDT)
+ Mon, 20 May 2019 10:17:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=iwBrfv8lZFcLQJuxEQw4ryA9Pff87UGYkKvp+WEgsEM=;
- b=lpTOQ2YJyCoLaJJB1b8QOSENRFwkKM327cgj2dBLR9wrw8omPdmlro1U9lE+oIi6P7
- yPmIzEDmxXpRE6Oaq/E5tzP/l9NlxSLr+46FQxLum+ADFyzOIG7KZ3zjBOv86Ob+FItx
- 8Xlz0OotmjSrOjY6KfRKZNtlL4QD8cbU/Ate7u2lR9fBPSE+3m4BN0J2pUGQYf0kbmN5
- 98dzhl4mSfgJJMlq1t4qKNwHPB+8c0eEJRsw7Z+/2adDIX41xYKui6sB5gK62meYgh4H
- gsUwPwPTvicMjZmivGRy5Udcz896i9ESJNmmg/+zyhHErJ5KL6xqBCHVXEMc9mUcrPH3
- uz+A==
+ bh=ScUZ/xpgU2aTY1Nb5OViipRU9LRxmOkzl5eEkgamu+4=;
+ b=u/hk7dvb2PAmI5IFI5yr57lW7tUAYqA5xkIZlFRA5Iv/dRJt+p39pMkD0Bbt5qf4xm
+ Ytjuma54OmHG5jIU3bN5wO/eY8VWRtz0gJlwP6zFmUgNcYs+mH6Wj84zJgnnEt+xtn8Y
+ VHxtGaYR2PRh6e/C0ppGWI+o87sfWKSQZr81kvBh5mmB9bbMed3sf/+93nClSlMc0Wq5
+ PrH18U4Q6YvGpYLGx+O3rkDw77jUQ1FUjjDKpN3+cDiUp//siqAyubcvryZIFP4kSKnw
+ +uKYUBZOwsvbFWWxAJ4ClKclBe4NPg6OZZS166JxwXbmTRur4MYX2NdkwpLfrOunPAjC
+ 5Hwg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=iwBrfv8lZFcLQJuxEQw4ryA9Pff87UGYkKvp+WEgsEM=;
- b=SBeRc4cH1K6bCPMHnBHn7qwe850cp5LcdS1omVW0J/ffG6nmiszHDOcd1HpiDj+q+S
- ElbKKv0sW+5uw+Dfc54a1camAJJYhjEgb5jSkEsjI51I8Zu6hSQ21LoS7/cb/icPf4rY
- Vkct3ERR04aoDR65dhGB+oqFd1aXH2STA90yX928EomhXICM52KIKJNE0brSUMb8azNC
- aEzFd4QIqmOqPmD33bf4kWpss/Ih9mF/as9sZ0CUQiMymQk6nIss42J0ziiUtqX7GdbO
- o+IY3naH/UUd91aY+Z8Vzete/81IjSfRVpxEDb20mLlcbd0BHmERkFWStpi3I2HeBRvS
- Jc0g==
-X-Gm-Message-State: APjAAAXjUPSwCDGc5ttpUJxFy/CLFin/rOE1iVapQ5MQaoYelvxRD8NK
- 9yDe+P0Z5ldD313XmL0MX2vyaQ==
-X-Google-Smtp-Source: APXvYqyslm8OFC6kUCHeQjqmxsMsjLor8sCUEgRqtD7u5g54KFiDZBgk+XcT4LC673o+vHPybVpW+w==
-X-Received: by 2002:a17:902:b495:: with SMTP id
- y21mr12215537plr.243.1558372609685; 
- Mon, 20 May 2019 10:16:49 -0700 (PDT)
+ bh=ScUZ/xpgU2aTY1Nb5OViipRU9LRxmOkzl5eEkgamu+4=;
+ b=FtEIa9cMRzyZ2yZpHEbj1H2/4T//AcTu+OB7Zud4nghAWZb2nyCKa4COzOXbk53cOu
+ nq73OPz8GgLtikpSztE7zcod7Vnax5c3oefZG6ntkeUvrxnWlixnNdI4Thp7mTWfJQjl
+ VXb4Coqwp2E4YA9FiJvUJJTxT3CAE5cl4IJM2lgEHaH6bb2XdIo0ZSl2Cpd/d9yQX2nH
+ erE8F/O46pNhTuQR6GQTsufkhaCUBN0fSAPalX2AVW3mRAn0wVgZBBhwHG60wz/9xfCm
+ ipF6rk+6TJ8X8X4hqKUd7NS2J6d0Kfdoy1Gz3J51iq1kzlAKgry2AArq+Mdb2fj5A3gp
+ 52Hw==
+X-Gm-Message-State: APjAAAXDhoWVDQVnPa9btQ8dy/pevSjfFNQRESn/cUTcpppekdAjdcO4
+ sUNGAIp/0fFe6B1gEPRqw97s4w==
+X-Google-Smtp-Source: APXvYqxJH9e/9PMebXHaD9faSRZhhWJCU9i4asOXuPPssxo8pt9GHh9pom+TaB6TkWIjSBUjbqJe9Q==
+X-Received: by 2002:a17:902:24c7:: with SMTP id
+ l7mr27347835plg.192.1558372632896; 
+ Mon, 20 May 2019 10:17:12 -0700 (PDT)
 Received: from tuxbook-pro (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
  [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id y25sm27453653pfp.182.2019.05.20.10.16.48
+ by smtp.gmail.com with ESMTPSA id m12sm15083945pgi.56.2019.05.20.10.17.11
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 20 May 2019 10:16:48 -0700 (PDT)
-Date: Mon, 20 May 2019 10:17:15 -0700
+ Mon, 20 May 2019 10:17:12 -0700 (PDT)
+Date: Mon, 20 May 2019 10:17:39 -0700
 From: Bjorn Andersson <bjorn.andersson@linaro.org>
 To: Alex Elder <elder@linaro.org>
-Subject: Re: [PATCH 5/8] net: qualcomm: rmnet: don't use C bit-fields in
- rmnet checksum trailer
-Message-ID: <20190520171715.GT2085@tuxbook-pro>
+Subject: Re: [PATCH 6/8] net: qualcomm: rmnet: get rid of a variable in
+ rmnet_map_ipv4_ul_csum_header()
+Message-ID: <20190520171739.GU2085@tuxbook-pro>
 References: <20190520135354.18628-1-elder@linaro.org>
- <20190520135354.18628-6-elder@linaro.org>
+ <20190520135354.18628-7-elder@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190520135354.18628-6-elder@linaro.org>
+In-Reply-To: <20190520135354.18628-7-elder@linaro.org>
 User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_101650_562437_F773DB9C 
-X-CRM114-Status: GOOD (  16.85  )
+X-CRM114-CacheID: sfid-20190520_101713_632357_48F716EA 
+X-CRM114-Status: GOOD (  16.86  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -114,60 +114,54 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Mon 20 May 06:53 PDT 2019, Alex Elder wrote:
 
-> Replace the use of C bit-fields in the rmnet_map_dl_csum_trailer
-> structure with a single integral field, using field masks to
-> encode or get at sub-field values.
+> The value passed as an argument to rmnet_map_ipv4_ul_csum_header()
+> is always an IPv4 header.  Just have the type of the argument
+> reflect that rather than obscuring that with a void pointer.  Rename
+> it to be consistent with rmnet_map_ipv6_ul_csum_header().
 > 
 > Signed-off-by: Alex Elder <elder@linaro.org>
-> ---
->  drivers/net/ethernet/qualcomm/rmnet/rmnet_map.h      | 6 ++++--
->  drivers/net/ethernet/qualcomm/rmnet/rmnet_map_data.c | 2 +-
->  2 files changed, 5 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/net/ethernet/qualcomm/rmnet/rmnet_map.h b/drivers/net/ethernet/qualcomm/rmnet/rmnet_map.h
-> index f3231c26badd..fb1cdb4ec41f 100644
-> --- a/drivers/net/ethernet/qualcomm/rmnet/rmnet_map.h
-> +++ b/drivers/net/ethernet/qualcomm/rmnet/rmnet_map.h
-> @@ -51,13 +51,15 @@ struct rmnet_map_header {
->  
->  struct rmnet_map_dl_csum_trailer {
->  	u8  reserved1;
-> -	u8  valid:1;
-> -	u8  reserved2:7;
-> +	u8  flags;		/* RMNET_MAP_DL_* */
->  	u16 csum_start_offset;
->  	u16 csum_length;
->  	__be16 csum_value;
->  } __aligned(1);
->  
-> +#define RMNET_MAP_DL_CSUM_VALID_FMASK	GENMASK(0, 0)
-> +#define RMNET_MAP_DL_RESERVED_FMASK	GENMASK(7, 1)
-
-I presume that the reserved define won't ever be referenced, but it's
-good to have it "documented".
 
 Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 
-Regards,
-Bjorn
-
-> +
->  struct rmnet_map_ul_csum_header {
->  	__be16 csum_start_offset;
->  	__be16 csum_info;	/* RMNET_MAP_UL_* */
+> ---
+>  drivers/net/ethernet/qualcomm/rmnet/rmnet_map_data.c | 9 ++++-----
+>  1 file changed, 4 insertions(+), 5 deletions(-)
+> 
 > diff --git a/drivers/net/ethernet/qualcomm/rmnet/rmnet_map_data.c b/drivers/net/ethernet/qualcomm/rmnet/rmnet_map_data.c
-> index 72b64114505a..a95111cdcd29 100644
+> index a95111cdcd29..61b7dbab2056 100644
 > --- a/drivers/net/ethernet/qualcomm/rmnet/rmnet_map_data.c
 > +++ b/drivers/net/ethernet/qualcomm/rmnet/rmnet_map_data.c
-> @@ -362,7 +362,7 @@ int rmnet_map_checksum_downlink_packet(struct sk_buff *skb, u16 len)
+> @@ -203,26 +203,25 @@ static void rmnet_map_complement_ipv4_txporthdr_csum_field(void *iphdr)
+>  }
 >  
->  	csum_trailer = (struct rmnet_map_dl_csum_trailer *)(skb->data + len);
+>  static void
+> -rmnet_map_ipv4_ul_csum_header(void *iphdr,
+> +rmnet_map_ipv4_ul_csum_header(struct iphdr *ip4hdr,
+>  			      struct rmnet_map_ul_csum_header *ul_header,
+>  			      struct sk_buff *skb)
+>  {
+> -	struct iphdr *ip4h = iphdr;
+>  	u16 offset;
+>  	u16 val;
 >  
-> -	if (!csum_trailer->valid) {
-> +	if (!u8_get_bits(csum_trailer->flags, RMNET_MAP_DL_CSUM_VALID_FMASK)) {
->  		priv->stats.csum_valid_unset++;
->  		return -EINVAL;
->  	}
+> -	offset = skb_transport_header(skb) - (unsigned char *)iphdr;
+> +	offset = skb_transport_header(skb) - (unsigned char *)ip4hdr;
+>  	ul_header->csum_start_offset = htons(offset);
+>  
+>  	val = u16_encode_bits(skb->csum_offset, RMNET_MAP_UL_CSUM_INSERT_FMASK);
+>  	val |= RMNET_MAP_UL_CSUM_ENABLED_FMASK;
+> -	if (ip4h->protocol == IPPROTO_UDP)
+> +	if (ip4hdr->protocol == IPPROTO_UDP)
+>  		val |= RMNET_MAP_UL_CSUM_UDP_FMASK;
+>  	ul_header->csum_info = htons(val);
+>  
+>  	skb->ip_summed = CHECKSUM_NONE;
+>  
+> -	rmnet_map_complement_ipv4_txporthdr_csum_field(iphdr);
+> +	rmnet_map_complement_ipv4_txporthdr_csum_field(ip4hdr);
+>  }
+>  
+>  #if IS_ENABLED(CONFIG_IPV6)
 > -- 
 > 2.20.1
 > 
