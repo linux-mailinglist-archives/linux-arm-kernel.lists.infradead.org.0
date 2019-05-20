@@ -2,71 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6AA3323204
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 13:11:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F65A23232
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 13:20:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=lJzk6YGcaYrdughWjUcfrrWDxzKhHBjSsF2JCbWVmVs=; b=W74XanFevhF7E4L3D0IIzs6N+
-	ohprd7InY3dp6bMiYyRViGIp11ZqRgHZ/XXIt16twQlAM2IWWZuIBolXyMOyU65wndbN8bk9fEW3T
-	7iw1RyCYASIS2yNGv2jntccjUuDhBYKmxB3Z+gUXGbIp1cmzNlwq2iDm8bXxkvmleilAHQdGX4UcY
-	DA9LGarOdVKNBb8GWIdMhsUaG9sikQGN693NV41snsZvZ0KoHkKdcmMBd2B7rrcDOm7ku1VEtbIch
-	qm/g6uEIqc91RkGBHxrBRQvCsbzIdykFWkKCbaXu/cNAqSKMV1WcQK3YkEpjb3QL+mV/N08WycT0X
-	f8hZlSyRg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wNQX3Jzxa5h3nQgXExLM3H7ISENd+ObHMcWtH7ppL1s=; b=DB74QN3GQ2p43k
+	wPQJ1gh2vBpfUsX1D0jJzi3Kewd42fK7d7z46mIcp8ZtJFv7nFW7yCB2Aca16xVilc1gjUwfG1sGV
+	MaDOVPQ/o7kvRmvRye7sHrX15OekAMB+6WLaKJxyMzP9IenGqQ1vfb0LvIlQRP9h7v5Kzv+4n0uzk
+	7V9NGyyXA3Eijm9F/htcQ9s94uwzRYADH5oAEv3MySqaPgSYnT8bVy6BDv8zB5bAklpIEx9TAeoki
+	5OM7Km79mAzqqK33mm5izmK9BfPLvvmO+cPAjvP/GnvYqnR6pSSGgkh9QThAu0OdxxxeqQoqdseMd
+	7/BJKipQZEn4ShawAbNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSgC6-0001yP-Hq; Mon, 20 May 2019 11:11:02 +0000
-Received: from relay5-d.mail.gandi.net ([217.70.183.197])
+	id 1hSgLd-00053n-Qa; Mon, 20 May 2019 11:20:53 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSgBy-0001xz-LF
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 11:10:56 +0000
-X-Originating-IP: 90.88.22.185
-Received: from localhost (aaubervilliers-681-1-80-185.w90-88.abo.wanadoo.fr
- [90.88.22.185]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 75B681C0007;
- Mon, 20 May 2019 11:10:49 +0000 (UTC)
-Date: Mon, 20 May 2019 13:10:49 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Chen-Yu Tsai <wens@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Yong Deng <yong.deng@magewell.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-clk <linux-clk@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
-Subject: Re: [PATCH 4/6] ARM: dts: sun8i: a83t: Add device node for CSI
- (Camera Sensor Interface)
-Message-ID: <20190520111048.cnh435fnmz7esyks@flea>
-References: <20190408165744.11672-1-wens@kernel.org>
- <20190408165744.11672-5-wens@kernel.org>
- <20190409075804.4zrwjil7ie2gjigu@flea>
- <CAGb2v64CYV68Q0a7x5p-XabS74vaQWP3paPopodmqQPTOrq2gQ@mail.gmail.com>
- <20190409082818.z33mq2qrxethldzf@flea>
- <CAGb2v67pX+7ccihmGEWPKrXg8mMhht-vh37p2auWYgt=qGDA6A@mail.gmail.com>
- <20190409145225.2ltluiyqa5xha4zd@flea>
- <20190519135422.l2bnumyjr3dxehhx@core.my.home>
+ id 1hSgLW-00053N-Qu
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 11:20:48 +0000
+Received: by mail-pf1-x441.google.com with SMTP id b76so7079757pfb.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 20 May 2019 04:20:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=UYlwSS27pTWEEATPfmh5rzik1qsLgJhnfWY7i/VPYGM=;
+ b=ZyOXXbD53L7FC9dpCCtwyNa8wQKWqJwmxrwOyTzoaognzLkM7STzGoxJ0Qx71mCs7y
+ sHAA5OxEXmZSLBsk4s5UC1wzwRqlxOZXjVI3YgzfNOZlwST9cVbN5Di2bjxFZgSEQ3HC
+ cAf4/Nfl6PMX99eTSUz2uNGbgXs/y0h2PP6/aRihXmQiSyxZblBUQqK7q5rd0syljRu8
+ Cyxuw9OjLph7KF54MzRzzLb/L92ShE61dFPst2bcFQ5dRzt0VO/azH9aGoomKsVUqPxM
+ VEvSapNK8K26mQA/hUYAaQY9aw5vjv7LiIUkwnQBQXjEHUtRLOPtbpSjN4XFGye1o1qY
+ nlNQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=UYlwSS27pTWEEATPfmh5rzik1qsLgJhnfWY7i/VPYGM=;
+ b=XoVnjLFezKJWzZ3OhwDZssaS+PVVqp+v8nVOD3T4bPjOIn0TCTNsIB1UlhuI11aWYU
+ HnynV1Fm8vX/yQl5rePuIqtL7AG/PfaNKSgBRNiDNB80NVP+lz31VH02faoDz7eQdybo
+ 1pMnh1K0bkKW5TeLrjjL7y/bAcGCf2b8GcwX5Zno2TE7CAyZhR32ZZOcpddhz7TtLUIe
+ vNM3YQc0ckSvn6uoyWEvxvwe3E5ywn8PFxURHfT7Zmat0nAKlT35B2BU79l1RBKLQQE+
+ 3e0x5edp3PmJHb9avaP8knPKaHuPSOFpbQ1lTXUg5IkTMqZloHDqXuj0GEbjosgbVSsy
+ IN6Q==
+X-Gm-Message-State: APjAAAWG18DhMMwLhpCaz5CQj3vRNF3byGmjyLreuu7+ClGGkVGRYo/T
+ ET25JDVuOXFSEoOYJR0NyS/4kQ==
+X-Google-Smtp-Source: APXvYqyzFDClOTo8r2XkJzpOynDgwuJ+BaaJ30GDGYI7e20tvugakdxenyHy289DsPne/XUELPFeGA==
+X-Received: by 2002:a65:62cc:: with SMTP id m12mr19802417pgv.237.1558351245681; 
+ Mon, 20 May 2019 04:20:45 -0700 (PDT)
+Received: from localhost ([122.172.118.99])
+ by smtp.gmail.com with ESMTPSA id r29sm25031152pgn.14.2019.05.20.04.20.44
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 20 May 2019 04:20:44 -0700 (PDT)
+Date: Mon, 20 May 2019 16:50:42 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Ilias Apalodimas <ilias.apalodimas@linaro.org>
+Subject: Re: [PATCH] clk: mvebu: armada-37xx-periph: Fix initialization for
+ cpu clocks
+Message-ID: <20190520112042.mpamnabxpwciih5m@vireshk-i7>
+References: <20190313163558.6705-1-gregory.clement@bootlin.com>
+ <20190314121541.GB19385@apalos>
+ <CAC5LXJcCs4nr-qFOWzUJpUBAJ9ngG-cgeTCVCFBKFc1SPzHMuQ@mail.gmail.com>
+ <20190314134428.GA24768@apalos> <874l85v8p6.fsf@FE-laptop>
+ <20190318112844.GA1708@apalos> <87h8c0s955.fsf@FE-laptop>
+ <20190318122113.GA4834@apalos>
+ <20190424093015.rcr5auamfccxf6ei@vireshk-i7>
+ <20190425123303.GA12659@apalos>
 MIME-Version: 1.0
-In-Reply-To: <20190519135422.l2bnumyjr3dxehhx@core.my.home>
-User-Agent: NeoMutt/20180716
+Content-Disposition: inline
+In-Reply-To: <20190425123303.GA12659@apalos>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_041054_992470_4439885A 
-X-CRM114-Status: GOOD (  34.57  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190520_042046_881695_450C2613 
+X-CRM114-Status: GOOD (  13.95  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.197 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -78,187 +105,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8506051482723871697=="
+Cc: Andrew Lunn <andrew@lunn.ch>, Vincent Guittot <vincent.guittot@linaro.org>,
+ Jason Cooper <jason@lakedaemon.net>,
+ Christian Neubert <christian.neubert.86@gmail.com>,
+ Antoine Tenart <antoine.tenart@bootlin.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Gregory CLEMENT <gregory.clement@bootlin.com>, linux-pm@vger.kernel.org,
+ Stephen Boyd <sboyd@codeaurora.org>, linux-kernel@vger.kernel.org,
+ stable@vger.kernel.org, Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Mike Turquette <mturquette@baylibre.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ =?utf-8?Q?Miqu=C3=A8l?= Raynal <miquel.raynal@bootlin.com>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 25-04-19, 15:33, Ilias Apalodimas wrote:
+> Hi Viresh,
+> 
+> > > > Also, during this week-end, Christian suggested that the issue might
+> > > > come from the AVS support.
+> > > > 
+> > > > Could you disable it and check you still have the issue?
+> > > > 
+> > > > For this, you just have to remove the avs node in
+> > > > arch/arm64/boot/dts/marvell/armada-37xx.dtsi and rebuild the dtb.
+> > > Sure. You'll have to wait for a week though. Currently on a trip. I'll run that
+> > >  once i return
+> > 
+> > @Ilias: Can you please try this now and confirm to Gregory ?
+> I am more overloaded than usual and totally forgot about this. Apologies.
+> I'll try finding some time and do this.
 
---===============8506051482723871697==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="qkatogddc44c6dds"
-Content-Disposition: inline
+Ping Ilias.
 
-
---qkatogddc44c6dds
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi Ond=C5=99ej,
-
-On Sun, May 19, 2019 at 03:54:22PM +0200, Ond=C5=99ej Jirman wrote:
-> On Tue, Apr 09, 2019 at 04:52:25PM +0200, Maxime Ripard wrote:
-> > On Tue, Apr 09, 2019 at 04:40:40PM +0800, Chen-Yu Tsai wrote:
-> > > On Tue, Apr 9, 2019 at 4:28 PM Maxime Ripard <maxime.ripard@bootlin.c=
-om> wrote:
-> > > >
-> > > > On Tue, Apr 09, 2019 at 04:07:34PM +0800, Chen-Yu Tsai wrote:
-> > > > > On Tue, Apr 9, 2019 at 3:58 PM Maxime Ripard <maxime.ripard@bootl=
-in.com> wrote:
-> > > > > > On Tue, Apr 09, 2019 at 12:57:42AM +0800, Chen-Yu Tsai wrote:
-> > > > > > > From: Chen-Yu Tsai <wens@csie.org>
-> > > > > > >
-> > > > > > > The A83T SoC has a camera sensor interface (known as CSI in A=
-llwinner
-> > > > > > > lingo), which is similar to the one found on the A64 and H3. =
-The only
-> > > > > > > difference seems to be that support of MIPI CSI through a con=
-nected
-> > > > > > > MIPI CSI-2 bridge.
-> > > > > > >
-> > > > > > > Add a device node for it, and pinctrl nodes for the commonly =
-used MCLK
-> > > > > > > and 8-bit parallel interface. The property /omit-if-no-ref/ i=
-s added to
-> > > > > > > the pinctrl nodes to keep the device tree blob size down if t=
-hey are
-> > > > > > > unused.
-> > > > > > >
-> > > > > > > Signed-off-by: Chen-Yu Tsai <wens@csie.org>
-> > > > > > > ---
-> > > > > > >  arch/arm/boot/dts/sun8i-a83t.dtsi | 31 +++++++++++++++++++++=
-++++++++++
-> > > > > > >  1 file changed, 31 insertions(+)
-> > > > > > >
-> > > > > > > diff --git a/arch/arm/boot/dts/sun8i-a83t.dtsi b/arch/arm/boo=
-t/dts/sun8i-a83t.dtsi
-> > > > > > > index f739b88efb53..0c52f945fd5f 100644
-> > > > > > > --- a/arch/arm/boot/dts/sun8i-a83t.dtsi
-> > > > > > > +++ b/arch/arm/boot/dts/sun8i-a83t.dtsi
-> > > > > > > @@ -682,6 +682,20 @@
-> > > > > > >                       #interrupt-cells =3D <3>;
-> > > > > > >                       #gpio-cells =3D <3>;
-> > > > > > >
-> > > > > > > +                     /omit-if-no-ref/
-> > > > > > > +                     csi_8bit_parallel_pins: csi-8bit-parall=
-el-pins {
-> > > > > > > +                             pins =3D "PE0", "PE2", "PE3", "=
-PE6", "PE7",
-> > > > > > > +                                    "PE8", "PE9", "PE10", "P=
-E11",
-> > > > > > > +                                    "PE12", "PE13";
-> > > > > > > +                             function =3D "csi";
-> > > > > > > +                     };
-> > > > > > > +
-> > > > > > > +                     /omit-if-no-ref/
-> > > > > > > +                     csi_mclk_pin: csi-mclk-pin {
-> > > > > > > +                             pins =3D "PE1";
-> > > > > > > +                             function =3D "csi";
-> > > > > > > +                     };
-> > > > > > > +
-> > > > > > >                       emac_rgmii_pins: emac-rgmii-pins {
-> > > > > > >                               pins =3D "PD2", "PD3", "PD4", "=
-PD5", "PD6", "PD7",
-> > > > > > >                                      "PD11", "PD12", "PD13", =
-"PD14", "PD18",
-> > > > > > > @@ -994,6 +1008,23 @@
-> > > > > > >                       interrupts =3D <GIC_PPI 9 (GIC_CPU_MASK=
-_SIMPLE(8) | IRQ_TYPE_LEVEL_HIGH)>;
-> > > > > > >               };
-> > > > > > >
-> > > > > > > +             csi: camera@1cb0000 {
-> > > > > > > +                     compatible =3D "allwinner,sun8i-a83t-cs=
-i";
-> > > > > > > +                     reg =3D <0x01cb0000 0x1000>;
-> > > > > > > +                     interrupts =3D <GIC_SPI 84 IRQ_TYPE_LEV=
-EL_HIGH>;
-> > > > > > > +                     clocks =3D <&ccu CLK_BUS_CSI>,
-> > > > > > > +                              <&ccu CLK_CSI_SCLK>,
-> > > > > > > +                              <&ccu CLK_DRAM_CSI>;
-> > > > > > > +                     clock-names =3D "bus", "mod", "ram";
-> > > > > > > +                     resets =3D <&ccu RST_BUS_CSI>;
-> > > > > > > +                     status =3D "disabled";
-> > > > > > > +
-> > > > > > > +                     csi_in: port {
-> > > > > > > +                             #address-cells =3D <1>;
-> > > > > > > +                             #size-cells =3D <0>;
-> > > > > >
-> > > > > > If we expect a single enpoint, then we don't need the address-c=
-ells
-> > > > > > and size-cells properties.
-> > > > >
-> > > > > I wouldn't bet on anything. The way the Q8 tablets did front/back=
- cameras
-> > > > > is kind of genius if not very hacky. They have two "identical" se=
-nsors
-> > > > > on the same I2C bus and CSI bus, with shared reset line but separ=
-ate
-> > > > > shutdown lines. Since they are identical, they also have the same=
- I2C
-> > > > > address. I haven't figured out how to model this in the device tr=
-ee.
-> > > > >
-> > > > > The point is, it's perfectly possible to have two or more sensors=
- use
-> > > > > the same controller, provided only one be active at a time.
-> > > >
-> > > > Right, but I guess the common case would be to have a single sensor,
-> > > > where that wouldn't be needed.
-> > > >
-> > > > In odd cases, we can always specify it in the DTS, and if it becomes
-> > > > common enough, we can move it to the DTSI.
-> > >
-> > > Makes sense. Do you want me to re-spin?
-> >
-> > If there's no other comment, we'll fix it when applying.
->
-> This patch series seems to have been forgotten. It doesn't seem there are=
- any
-> blockers.
-
-Sorry about that :/
-
-> Can you please apply it now? I have some further series (camera module
-> support for TBS-A711) that depend on this.
-
-Some parts of it will have to be merged through v4l2, and I can't
-apply those patches.
-
-Can you resend that series, and ping on a regular basis (like once a
-week) if you don't get any feedback?
-
-Thanks!
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---qkatogddc44c6dds
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXOKLOAAKCRDj7w1vZxhR
-xcUUAQD7Jfd29f0QBa+jm16CGAaZx4LxWkZ47YM74jycMwsRPQD+JbLPWMLy39fT
-gI37QUUND5p2czBiA+hpbcz3sQLb8w8=
-=a/4m
------END PGP SIGNATURE-----
-
---qkatogddc44c6dds--
-
-
---===============8506051482723871697==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8506051482723871697==--
-
