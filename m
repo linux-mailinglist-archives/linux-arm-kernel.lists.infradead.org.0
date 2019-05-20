@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37C7C22D20
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 09:32:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BC3F22D2B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 09:34:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m4dsg4AeQZqir5EjLomM8hjTnhZ1vQMCS5EoChUhGJA=; b=TATKep4I+P9qVK
-	rPMOdMUFPyb+SG9wf4Vy8PQp8Rsf0+NaaE/Ow7vapYGmYMK3SegVfIgiFL/whbCZwQl3aANkZcrdL
-	mhxabotirRf96wU7ZtNlzJ/JuDCg3DT9gqoi9mm9EH8qoWIm4omrVBDCj+dRD/dLNXsIV8NkKv7qR
-	Uf22UrzPbGNi8ZSO8ygcwft4h3thncRf0r8mFKp9AEsYnhp+osWappqh7Lelg6cswlPlmgMB07YPW
-	9XwmivLYKJ1YwOSS/0BZq3fwAQPStz52++W3H37Ja3ibD3RqFopEszC1Ag3n+T7uc22vIGLlpLzNR
-	bLSVZgilmYGsUVXHEccQ==;
+	List-Owner; bh=kCWo0LN025DzXbbYQG494Mg0ORIrLTQAy/KkGTwpKmE=; b=F8HopH5znAXg7j
+	OLr46b2VjOLmwRP/m4jwXe80dknsJg/D211/VaIAwajafVAdldjMuWS/rBtBrkyx7YOykNmXBCmzC
+	JmTK84N0zlt/A5k9ZuJdzv81DKfXZLz/2Mj1pQ6LgXALA9cTS4Zb/skT9J8+eaVbqTdvOTQqJugkp
+	Zmd2b4QMOjmSULTr4Mh0DWhrwZ5LQtowDAkOlm2Qujzpd2NfSD4tR2jUgZeRs4vn+10ePOfM8PAiG
+	hijtH2UQ40wGK8H9NOqwkJFYrK/f7Ctt5xi0fPS9/rA8TNrRGU7Ftgif9InverbcR2Y4HvnhhS9Zb
+	SgCTew718jB5npsweJFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hScmw-0006Rz-If; Mon, 20 May 2019 07:32:50 +0000
+	id 1hScoU-0008BJ-L4; Mon, 20 May 2019 07:34:26 +0000
 Received: from 089144206147.atnat0015.highway.bob.at ([89.144.206.147]
  helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSclI-0004HO-Ov; Mon, 20 May 2019 07:31:09 +0000
+ id 1hSclL-0004Ih-7F; Mon, 20 May 2019 07:31:11 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Robin Murphy <robin.murphy@arm.com>
-Subject: [PATCH 11/24] iommu/dma: Remove __iommu_dma_free
-Date: Mon, 20 May 2019 09:29:35 +0200
-Message-Id: <20190520072948.11412-12-hch@lst.de>
+Subject: [PATCH 12/24] iommu/dma: Refactor iommu_dma_free
+Date: Mon, 20 May 2019 09:29:36 +0200
+Message-Id: <20190520072948.11412-13-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190520072948.11412-1-hch@lst.de>
 References: <20190520072948.11412-1-hch@lst.de>
@@ -52,53 +52,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We only have a single caller of this function left, so open code it there.
+From: Robin Murphy <robin.murphy@arm.com>
 
+The freeing logic was made particularly horrible by part of it being
+opaque to the arch wrapper, which led to a lot of convoluted repetition
+to ensure each path did everything in the right order. Now that it's
+all private, we can pick apart and consolidate the logically-distinct
+steps of freeing the IOMMU mapping, the underlying pages, and the CPU
+remap (if necessary) into something much more manageable.
+
+Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+[various cosmetic changes to the code flow]
 Signed-off-by: Christoph Hellwig <hch@lst.de>
-Reviewed-by: Robin Murphy <robin.murphy@arm.com>
 ---
- drivers/iommu/dma-iommu.c | 21 ++-------------------
- 1 file changed, 2 insertions(+), 19 deletions(-)
+ drivers/iommu/dma-iommu.c | 73 ++++++++++++++++++---------------------
+ 1 file changed, 33 insertions(+), 40 deletions(-)
 
 diff --git a/drivers/iommu/dma-iommu.c b/drivers/iommu/dma-iommu.c
-index 0ffb7805de77..5e0c8450fa0b 100644
+index 5e0c8450fa0b..a288b3d366ae 100644
 --- a/drivers/iommu/dma-iommu.c
 +++ b/drivers/iommu/dma-iommu.c
-@@ -563,24 +563,6 @@ static struct page **__iommu_dma_get_pages(void *cpu_addr)
- 	return area->pages;
+@@ -935,6 +935,39 @@ static void iommu_dma_unmap_resource(struct device *dev, dma_addr_t handle,
+ 	__iommu_dma_unmap(dev, handle, size);
  }
  
--/**
-- * iommu_dma_free - Free a buffer allocated by iommu_dma_alloc_remap()
-- * @dev: Device which owns this buffer
-- * @pages: Array of buffer pages as returned by __iommu_dma_alloc_remap()
-- * @size: Size of buffer in bytes
-- * @handle: DMA address of buffer
-- *
-- * Frees both the pages associated with the buffer, and the array
-- * describing them
-- */
--static void __iommu_dma_free(struct device *dev, struct page **pages,
--		size_t size, dma_addr_t *handle)
++static void iommu_dma_free(struct device *dev, size_t size, void *cpu_addr,
++		dma_addr_t handle, unsigned long attrs)
++{
++	size_t alloc_size = PAGE_ALIGN(size);
++	int count = alloc_size >> PAGE_SHIFT;
++	struct page *page = NULL, **pages = NULL;
++
++	__iommu_dma_unmap(dev, handle, size);
++
++	/* Non-coherent atomic allocation? Easy */
++	if (dma_free_from_pool(cpu_addr, alloc_size))
++		return;
++
++	if (is_vmalloc_addr(cpu_addr)) {
++		/*
++		 * If it the address is remapped, then it's either non-coherent
++		 * or highmem CMA, or an iommu_dma_alloc_remap() construction.
++		 */
++		pages = __iommu_dma_get_pages(cpu_addr);
++		if (!pages)
++			page = vmalloc_to_page(cpu_addr);
++		dma_common_free_remap(cpu_addr, alloc_size, VM_USERMAP);
++	} else {
++		/* Lowmem means a coherent atomic or CMA allocation */
++		page = virt_to_page(cpu_addr);
++	}
++
++	if (pages)
++		__iommu_dma_free_pages(pages, count);
++	if (page && !dma_release_from_contiguous(dev, page, count))
++		__free_pages(page, get_order(alloc_size));
++}
++
+ static void *iommu_dma_alloc(struct device *dev, size_t size,
+ 		dma_addr_t *handle, gfp_t gfp, unsigned long attrs)
+ {
+@@ -1004,46 +1037,6 @@ static void *iommu_dma_alloc(struct device *dev, size_t size,
+ 	return addr;
+ }
+ 
+-static void iommu_dma_free(struct device *dev, size_t size, void *cpu_addr,
+-		dma_addr_t handle, unsigned long attrs)
 -{
--	__iommu_dma_unmap(dev, *handle, size);
--	__iommu_dma_free_pages(pages, PAGE_ALIGN(size) >> PAGE_SHIFT);
--	*handle = DMA_MAPPING_ERROR;
+-	size_t iosize = size;
+-
+-	size = PAGE_ALIGN(size);
+-	/*
+-	 * @cpu_addr will be one of 4 things depending on how it was allocated:
+-	 * - A remapped array of pages for contiguous allocations.
+-	 * - A remapped array of pages from iommu_dma_alloc_remap(), for all
+-	 *   non-atomic allocations.
+-	 * - A non-cacheable alias from the atomic pool, for atomic
+-	 *   allocations by non-coherent devices.
+-	 * - A normal lowmem address, for atomic allocations by
+-	 *   coherent devices.
+-	 * Hence how dodgy the below logic looks...
+-	 */
+-	if (dma_in_atomic_pool(cpu_addr, size)) {
+-		__iommu_dma_unmap(dev, handle, iosize);
+-		dma_free_from_pool(cpu_addr, size);
+-	} else if (attrs & DMA_ATTR_FORCE_CONTIGUOUS) {
+-		struct page *page = vmalloc_to_page(cpu_addr);
+-
+-		__iommu_dma_unmap(dev, handle, iosize);
+-		dma_release_from_contiguous(dev, page, size >> PAGE_SHIFT);
+-		dma_common_free_remap(cpu_addr, size, VM_USERMAP);
+-	} else if (is_vmalloc_addr(cpu_addr)){
+-		struct page **pages = __iommu_dma_get_pages(cpu_addr);
+-
+-		if (!pages)
+-			return;
+-		__iommu_dma_unmap(dev, handle, iosize);
+-		__iommu_dma_free_pages(pages, size >> PAGE_SHIFT);
+-		dma_common_free_remap(cpu_addr, size, VM_USERMAP);
+-	} else {
+-		__iommu_dma_unmap(dev, handle, iosize);
+-		__free_pages(virt_to_page(cpu_addr), get_order(size));
+-	}
 -}
 -
- /**
-  * iommu_dma_alloc_remap - Allocate and map a buffer contiguous in IOVA space
-  * @dev: Device to allocate memory for. Must be a real device
-@@ -1053,7 +1035,8 @@ static void iommu_dma_free(struct device *dev, size_t size, void *cpu_addr,
- 
- 		if (!pages)
- 			return;
--		__iommu_dma_free(dev, pages, iosize, &handle);
-+		__iommu_dma_unmap(dev, handle, iosize);
-+		__iommu_dma_free_pages(pages, size >> PAGE_SHIFT);
- 		dma_common_free_remap(cpu_addr, size, VM_USERMAP);
- 	} else {
- 		__iommu_dma_unmap(dev, handle, iosize);
+ static int __iommu_dma_mmap_pfn(struct vm_area_struct *vma,
+ 			      unsigned long pfn, size_t size)
+ {
 -- 
 2.20.1
 
