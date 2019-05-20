@@ -2,83 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF9CA23034
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 11:23:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DAF223041
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 11:25:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yn71mn7I1nKEqUqvK8blvP5MwHzDpJ9QlASZRk92tu8=; b=a7lncNVSnIxXcT
-	Zg5DtaBx2hqf0+6MSNRD0laE7p7CEknktZ5pKbBGV7n+AADAbP7QK26J7zbUKY9ExsvAmgtGDGjZS
-	Ansg0Hsv4gdd5eDrVzhBbpaU6extt4NgSlGN4T46SmocQggBWGV5UuWqiHXHtzrg4v4U75CkwWROB
-	kr0gikzzsvCO933Dnlfubv52yN0V1WEoOKgpIWfHeTl3HpM2C0CXhprvyXh5xzP6DQZ+hNRUaJg2/
-	z1jh7s7mV7OHsYFko5oLZEtew0mdgfopQx/IwBmsSgEMo0KNyraozb2g/J5CXlzVn12/thjtiE1j7
-	i775d+qe7MGZfQK63yTQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=dzCsTIq4taZEzQ5ST2fvQSAVzS8GulxH8Mwn0tnKf2A=; b=ki/lyAOnpax61rd81/WtNJW4v
+	KMlSm1cKpODJo3R3JgFH5rMdQqjgsxEBlAd5LIatWEfyN7biMhePnoMVBzTelTfAjR7nj790osmcS
+	nMv1z3O8+6tf9FGPbB8+N7CHjTMts/HAh30Yfm+Au17FahqRmlV2DONDdmMDCtZtct2VG4YK1pKLF
+	nsKlJrYyKXLV17dCwvFiHOtF60L0DHZmLZm0LLxYzDyIH8E98r6/hfY2GyE2xU9g2BMw+fXm2y+Qi
+	81shAyF6CN00G8EabHMAo0aJ+PfGVQV0Illo+Ma2BB3gg6v0Fx6kgpzM76xV37eS9aGgMmg7Ott9t
+	IA1PuaXvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSeWG-0002NP-UE; Mon, 20 May 2019 09:23:44 +0000
-Received: from mailgate1.rohmeurope.com ([178.15.145.194])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSeW5-0002Jp-JQ
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 09:23:35 +0000
-X-AuditID: c0a8fbf4-519ff700000014c1-db-5ce2721175f3
-Received: from smtp.reu.rohmeu.com (will-cas001.reu.rohmeu.com
- [192.168.251.177])
- by mailgate1.rohmeurope.com (Symantec Messaging Gateway) with SMTP id
- 0D.F3.05313.11272EC5; Mon, 20 May 2019 11:23:29 +0200 (CEST)
-Received: from WILL-MAIL001.REu.RohmEu.com ([fe80::2915:304f:d22c:c6ba]) by
- WILL-CAS001.REu.RohmEu.com ([fe80::d57e:33d0:7a5d:f0a6%16]) with mapi id
- 14.03.0439.000; Mon, 20 May 2019 11:23:18 +0200
-From: "Vaittinen, Matti" <Matti.Vaittinen@fi.rohmeurope.com>
-To: "leonard.crestez@nxp.com" <leonard.crestez@nxp.com>, "broonie@kernel.org"
- <broonie@kernel.org>, "lee.jones@linaro.org" <lee.jones@linaro.org>
-Subject: Re: [PATCH 3/3] mfd: bd718x7: Make power button press duration
- configurable
-Thread-Topic: [PATCH 3/3] mfd: bd718x7: Make power button press duration
- configurable
-Thread-Index: AQHVDunSFj6MPiSb0EipgvofK8FLX6Zzm/sA
-Date: Mon, 20 May 2019 09:23:17 +0000
-Message-ID: <0c254b96e72605deee4d19bcab96e160187ebb4a.camel@fi.rohmeurope.com>
-References: <cover.1558341613.git.leonard.crestez@nxp.com>
- <3ffd7b9d0b9cc45ac0fd671a701f857be4cfde46.1558341613.git.leonard.crestez@nxp.com>
-In-Reply-To: <3ffd7b9d0b9cc45ac0fd671a701f857be4cfde46.1558341613.git.leonard.crestez@nxp.com>
-Accept-Language: en-US, de-DE
-Content-Language: de-DE
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [213.255.186.46]
-Content-ID: <70E01FF649E1384FA8BCE343059391EB@de.rohmeurope.com>
+	id 1hSeXg-0003aN-65; Mon, 20 May 2019 09:25:12 +0000
+Received: from atrey.karlin.mff.cuni.cz ([195.113.26.193])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hSeXV-00037b-Bs
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 09:25:03 +0000
+Received: by atrey.karlin.mff.cuni.cz (Postfix, from userid 512)
+ id C27EA80450; Mon, 20 May 2019 11:24:49 +0200 (CEST)
+Date: Mon, 20 May 2019 11:24:59 +0200
+From: Pavel Machek <pavel@denx.de>
+To: Ran Wang <ran.wang_1@nxp.com>
+Subject: Re: [PATCH V2 3/3] soc: fsl: add RCPM driver
+Message-ID: <20190520092459.GC9748@amd>
+References: <20190517033946.30763-1-ran.wang_1@nxp.com>
+ <20190517033946.30763-3-ran.wang_1@nxp.com>
+ <20190519213844.GH31403@amd>
+ <AM5PR0402MB2865EC5E1EF12C6C1D3C5566F1060@AM5PR0402MB2865.eurprd04.prod.outlook.com>
+ <20190520085647.GA9748@amd>
+ <AM5PR0402MB2865F4574B19761848B001F9F1060@AM5PR0402MB2865.eurprd04.prod.outlook.com>
+ <20190520090748.GB9748@amd>
+ <AM5PR0402MB2865E28B2E2296CB878ACEA2F1060@AM5PR0402MB2865.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-X-Brightmail-Tracker: H4sIAAAAAAAAA02TaUwTQRiGM91tWaBLhoJ0rGLCRiWYyOWRjRJD4p8alZhovFLFBVYWpVvc
- FhSNUrAelB+oWBM3URQxQSRBihJA8WjwJEqMpqiotVI8UAgqBhE8dlsU/sy8M+8+3/tN8i2B
- ae6qdEQOb2EFnsmlVCH4zZrRhrnhwltDYmVTND3kaMXoHk83oB1en4qubH+kpBsau3G61tGC
- 057vtwFd8+qLknb2uJW0/ecFjD7f9VhBH2hrD6I/XNbSZZcegtQwvcNeA/R1p+uA3llbqtK/
- dF9T6Ruri/QNA80KffmvRP0354xVxMbQlAzGUrA6J5tPWLIllHvvtSnyaqld9S+KVVbQHGMH
- wQSC89Fox+8gOwghNNANUNfPwSDZ0MB7AD0a22AHBKGCKcj+3P9NJKwAyHexB8gHDF7A0TGb
- iMtABFyLrhwq8etIuA559p9QBHQy+vTjqlLWOJyFxKdufwAJ05DPVYUHwsoBOizOk3Uw3IyG
- mx6oZA1gNCq1DvjrYFCLnO+GlYGuIaq+1okF9BT0sef3+D2F2ka8uNw0BuNQfWtCAE1F1VVj
- IKBj0PEy73gL4ej+SR9+BESJkxLECVqcRIuTaHESfQYoawEyMjm52YyFTYoX2Px4wcQZpS3T
- ZHSCwBAMNYM/rmUuAAlAqUn19rcGjZIpMBcaXWAqoaCmkMMVXoMmLMOUVcgxZi5dyM9lzS6A
- CIyKJOfFegwaMosp3M0Kpn/WNAKntORo6y2DBsrJ21k2jxX+udMJgkKkcoeUEy6w2eyurTm5
- lglbQQTLxUN0kWaWz2IFJt/CpcvTkm6WxkW21FLumzwJJ815jFG6DaAPQBJxs8p7CiNe33ov
- rf3yqsF5E8/qtKRNBqAMcPn8/7g+oJVeHUGul7tRS3/H/2p9UpBCClqyxh9kYSYsnRW0Fuve
- HCoyHI217sBf9ZetMY4srZhZcm7oDpnalJb8NcwKEjf9mN3SEJE1vG7PohUz5rZ/bGwrWF04
- MJi+0/OtV1CnXV94rjeCW2Dpre8c1EY9UXN7Fu/z3Yj7vHLbyKzMZ7En+9yhbeKfveW2FDcs
- sR1csZzt7OB5Jrijxpp51kHhZo5JmoMJZuYvI0nkf9oDAAA=
+In-Reply-To: <AM5PR0402MB2865E28B2E2296CB878ACEA2F1060@AM5PR0402MB2865.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_022333_829754_FD0BC518 
-X-CRM114-Status: GOOD (  16.97  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190520_022501_848617_1692FE6E 
+X-CRM114-Status: GOOD (  16.69  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.15.145.194 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.113.26.193 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -90,131 +66,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "aisheng.dong@nxp.com" <aisheng.dong@nxp.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Len Brown <len.brown@intel.com>,
  "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "angus@akkea.ca" <angus@akkea.ca>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "linux-imx@nxp.com" <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "fabio.estevam@nxp.com" <fabio.estevam@nxp.com>,
- "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "yibin.gong@nxp.com" <yibin.gong@nxp.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ Pavel Machek <pavel@denx.de>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============7063214081918781581=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Thanks for implementing this Leonard. This is how it should have been
-done right away. Just one little thing.
 
-On Mon, 2019-05-20 at 08:55 +0000, Leonard Crestez wrote:
-> Allow overwriting the values in BD718XX_REG_PWRONCONFIG0 and
-> BD718XX_REG_PWRONCONFIG1 via devicetree.
-> 
-> Keep existing values (from bootloader or OTP) if property is not
-> present.
-> 
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-> ---
->  drivers/mfd/rohm-bd718x7.c | 42
-> ++++++++++++++++++++++++++++++++++++++
->  1 file changed, 42 insertions(+)
-> 
-> diff --git a/drivers/mfd/rohm-bd718x7.c b/drivers/mfd/rohm-bd718x7.c
-> index cdbef83884f0..dffa3f4bffad 100644
-> --- a/drivers/mfd/rohm-bd718x7.c
-> +++ b/drivers/mfd/rohm-bd718x7.c
-> @@ -79,10 +79,48 @@ static const struct regmap_config
-> bd718xx_regmap_config = {
->  	.volatile_table = &volatile_regs,
->  	.max_register = BD718XX_MAX_REGISTER - 1,
->  	.cache_type = REGCACHE_RBTREE,
->  };
->  
-> +static int bd718xx_init_press_duration(struct bd718xx *bd718xx)
-> +{
-> +	struct device* dev = bd718xx->dev;
-> +	u32 short_press_ms, long_press_ms;
-> +	u32 short_press_value, long_press_value;
-> +	int ret;
-> +
-> +	ret = of_property_read_u32(dev->of_node, "rohm,short-press-ms",
-> +				   &short_press_ms);
-> +	if (!ret) {
-> +		short_press_value = min(15u, short_press_ms / 500);
-
-This should rather be implemented as rounding not flooring. Giving for
-example 1400ms from DT should rather yield timeout 1500ms than 1000ms.
-I'd say it makes the difference at least for long press tmo.
-
-> +		ret = regmap_update_bits(bd718xx->regmap,
-> +					 BD718XX_REG_PWRONCONFIG0,
-> +					 BD718XX_PWRBTN_PRESS_DURATION_
-> MASK,
-> +					 short_press_value);
-> +		if (ret) {
-> +			dev_err(dev, "Failed to init pwron short
-> press\n");
-> +			return ret;
-> +		}
-> +	}
-> +
-> +	ret = of_property_read_u32(dev->of_node, "rohm,long-press-ms",
-> +				   &long_press_ms);
-> +	if (!ret) {
-> +		long_press_value = min(15u, long_press_ms / 1000);
-
-Also here we should do rounding. 900ms from DT should rather be 1s than
-10ms. Especially when the long press causes forced power down and short
-press may be 10 ms...
-
-> +		ret = regmap_update_bits(bd718xx->regmap,
-> +					 BD718XX_REG_PWRONCONFIG1,
-> +					 BD718XX_PWRBTN_PRESS_DURATION_
-> MASK,
-> +					 long_press_value);
-> +		if (ret) {
-> +			dev_err(dev, "Failed to init pwron long
-> press\n");
-> +			return ret;
-> +		}
-> +	}
-> +
-> +	return 0;
-> +}
-> +
->  static int bd718xx_i2c_probe(struct i2c_client *i2c,
->  			    const struct i2c_device_id *id)
->  {
->  	struct bd718xx *bd718xx;
->  	int ret;
-> @@ -115,10 +153,14 @@ static int bd718xx_i2c_probe(struct i2c_client
-> *i2c,
->  	if (ret) {
->  		dev_err(&i2c->dev, "Failed to add irq_chip\n");
->  		return ret;
->  	}
->  
-> +	ret = bd718xx_init_press_duration(bd718xx);
-> +	if (ret)
-> +		return ret;
-> +
->  	ret = regmap_irq_get_virq(bd718xx->irq_data,
-> BD718XX_INT_PWRBTN_S);
->  
->  	if (ret < 0) {
->  		dev_err(&i2c->dev, "Failed to get the IRQ\n");
->  		return ret;
-
-Other than that:
-Reviewed-By: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
+--===============7063214081918781581==
+Content-Type: multipart/signed; micalg=pgp-sha1;
+	protocol="application/pgp-signature"; boundary="0lnxQi9hkpPO77W3"
+Content-Disposition: inline
 
 
-Best Regards
-	Matti Vaittinen
+--0lnxQi9hkpPO77W3
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi!
+
+> > > > You are right, but the current code is "interesting". What about
+> > > >
+> > > >     ws =3D NULL;
+> > > >     while (ws =3D wakeup_source_get_next(NULL)) ...
+> > > >
+> > > > then?
+> > >
+> > > Did you mean:
+> > >      ws =3D NULL;
+> > >      while (ws =3D wakeup_source_get_next(ws)) ...
+> > >
+> > >    Yes, that will be the same to my original logic, do you recommend
+> > > to change to this? :)
+> >=20
+> > Yes please. It will be less confusing to the reader.
+>=20
+> OK, if no other comment, I will work out v4, fix this and extra ','
+> =20
+> > Thanks (and sorry for cross-talk),
+>=20
+> That's OK, thanks for your time.
+
+You can add
+
+Acked-by: Pavel Machek <pavel@ucw.cz>
+
+to that version.
+
+Best regards,
+								Pavel
+--=20
+DENX Software Engineering GmbH,      Managing Director: Wolfgang Denk
+HRB 165235 Munich, Office: Kirchenstr.5, D-82194 Groebenzell, Germany
+
+--0lnxQi9hkpPO77W3
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: Digital signature
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iEYEARECAAYFAlzicmsACgkQMOfwapXb+vI/kACfXfr5zSF0QsKLaIDUnn6ldYdL
+9rUAn1IvhOf/+HglBb9Ro5uZKDJsTOI+
+=fAL6
+-----END PGP SIGNATURE-----
+
+--0lnxQi9hkpPO77W3--
+
+
+--===============7063214081918781581==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7063214081918781581==--
+
