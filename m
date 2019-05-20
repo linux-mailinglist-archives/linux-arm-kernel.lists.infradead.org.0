@@ -2,54 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8CD022CDA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 09:25:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA29122CDF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 09:26:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=IyiaZaGwKbhMo6p3tjMZEdwlAkuHtgApMgPc4kpDjbs=; b=f/WFfRIBNC2szxSzSE+v9Zyf9
-	FWc09Dl/Pm0V9QUQvYStbkBUG+KJfzpvWrKjIuhVl3/CqK1vr4Ntu0aksRaFcuL3yUgcAMjwrpr5s
-	uYyYOeGqwk+KZvT74ZFkWGNMk5qY6oZmZQZVSFXzKJ+YF+yBzf2WDCQBmDXPcgxSLHdACC3c+sbxR
-	xlBLb2vyhrDwTMAdCpz/jEhq6iSUPp6Y9FAwchvlusrffQaby24juhVi66T90+7INwozgv2n6WPF5
-	lWHJsIVY5YoqBMJMtYw/z7dWniUse02dkBsFiuBtTIDYUjKKCHwcKptU14VOhg3ML4ddhC+cT4ER3
-	VK67E5TYQ==;
+	 bh=sIjKshBcjzNnHWzZIcZ+fR6M2H4SRqV+dgLnY9n5OJA=; b=KU1WGL+iaMAkIWIM90ptOqjoh
+	eGMYsbZqB13sqjHmPDvV7ro2zSVxrBKxgPV6G9ZT/HD74NmnHD1WFLMZd7ff6PHuVmvnzgwHsmDDb
+	V6iUHRAqbJLTCkAOD1HgTDt7k6vjGu1rn3iQcJS9KCeCk6ZuFhgP7eKKQHjG5TQuYnZQw7N3t5n5E
+	HQJPsPDBHuqMB3L166xYU3JBSjwn2JP1VxgGfxDq1YExxTY6khmvda/TVbZUp98W8bGfP/KThLE4v
+	PwycM9Ai1n7VF1dZaM6Vn2NOrHQB92gYNM+xvbJdwZcDa32BgvCvl/pZvGw284hwmzimbUmBwD1Pv
+	u2vdTchFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hScfY-0001Gq-JN; Mon, 20 May 2019 07:25:12 +0000
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+	id 1hSch4-0002DU-KG; Mon, 20 May 2019 07:26:46 +0000
+Received: from atrey.karlin.mff.cuni.cz ([195.113.26.193])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hScfN-0000eX-Qh
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 07:25:03 +0000
-X-Originating-IP: 90.88.22.185
-Received: from localhost (aaubervilliers-681-1-80-185.w90-88.abo.wanadoo.fr
- [90.88.22.185]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id 846DB1BF218;
- Mon, 20 May 2019 07:24:48 +0000 (UTC)
-Date: Mon, 20 May 2019 09:24:47 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Jernej =?utf-8?Q?=C5=A0krabec?= <jernej.skrabec@siol.net>
-Subject: Re: [PATCH] ARM: dts: sun8i-h3: Fix wifi in Beelink X2 DT
-Message-ID: <20190520072447.snt4phx57b5rfjv4@flea>
-References: <20190516161039.18534-1-jernej.skrabec@siol.net>
- <20190517073048.y6mzgbhhryfmuckl@flea>
- <36237813.UWQAqNRFN9@jernej-laptop>
+ id 1hScgw-0002D2-Eb
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 07:26:40 +0000
+Received: by atrey.karlin.mff.cuni.cz (Postfix, from userid 512)
+ id 6E3138033F; Mon, 20 May 2019 09:26:21 +0200 (CEST)
+Date: Mon, 20 May 2019 09:26:30 +0200
+From: Pavel Machek <pavel@denx.de>
+To: Ran Wang <ran.wang_1@nxp.com>
+Subject: Re: [PATCH v3 3/3] soc: fsl: add RCPM driver
+Message-ID: <20190520072630.GA3674@amd>
+References: <20190520065816.32360-1-ran.wang_1@nxp.com>
+ <20190520065816.32360-3-ran.wang_1@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <36237813.UWQAqNRFN9@jernej-laptop>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <20190520065816.32360-3-ran.wang_1@nxp.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_002502_023172_32436DAF 
-X-CRM114-Status: GOOD (  20.35  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190520_002638_639039_ED7B18A6 
+X-CRM114-Status: GOOD (  13.87  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.201 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.113.26.193 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -62,94 +60,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, wens@csie.org, robh+dt@kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, Len Brown <len.brown@intel.com>,
+ devicetree@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-pm@vger.kernel.org, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, linuxppc-dev@lists.ozlabs.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1127402881223396194=="
+Content-Type: multipart/mixed; boundary="===============1573403137456153261=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============1127402881223396194==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ctmlzvhrt42rr7y5"
+--===============1573403137456153261==
+Content-Type: multipart/signed; micalg=pgp-sha1;
+	protocol="application/pgp-signature"; boundary="2oS5YaxWCcQjTEyO"
 Content-Disposition: inline
 
 
---ctmlzvhrt42rr7y5
-Content-Type: text/plain; charset=utf-8
+--2oS5YaxWCcQjTEyO
+Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Sat, May 18, 2019 at 05:07:11PM +0200, Jernej =C5=A0krabec wrote:
-> Dne petek, 17. maj 2019 ob 09:30:48 CEST je Maxime Ripard napisal(a):
-> > Hi,
-> >
-> > On Thu, May 16, 2019 at 06:10:39PM +0200, Jernej Skrabec wrote:
-> > > mmc1 node where wifi module is connected doesn't have properly defined
-> > > power supplies so wifi module is never powered up. Fix that by
-> > > specifying additional power supplies.
-> > >
-> > > Additionally, this STB may have either Realtek or Broadcom based wifi
-> > > module. One based on Broadcom module also needs external clock to work
-> > > properly. Fix that by adding clock property to wifi_pwrseq node.
-> > >
-> > > Fixes: e582b47a9252 ("ARM: dts: sun8i-h3: Add dts for the Beelink X2 =
-STB")
-> > > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> > > ---
-> > >
-> > >  arch/arm/boot/dts/sun8i-h3-beelink-x2.dts | 5 +++++
-> > >  1 file changed, 5 insertions(+)
-> > >
-> > > diff --git a/arch/arm/boot/dts/sun8i-h3-beelink-x2.dts
-> > > b/arch/arm/boot/dts/sun8i-h3-beelink-x2.dts index
-> > > 6277f13f3eb3..6a0ac85b4616 100644
-> > > --- a/arch/arm/boot/dts/sun8i-h3-beelink-x2.dts
-> > > +++ b/arch/arm/boot/dts/sun8i-h3-beelink-x2.dts
-> > > @@ -89,7 +89,10 @@
-> > >
-> > >  	wifi_pwrseq: wifi_pwrseq {
-> > >
-> > >  		compatible =3D "mmc-pwrseq-simple";
-> > >
-> > > +		pinctrl-names =3D "default";
-> >
-> > pinctrl-names only make sense with another pinctrl-[0-255]
-> > property. Did you forgot something here?
->
-> No, I just took BananaPi M2+ as a example, which has pinctrl-names proper=
-ty
-> too and no "pinctrl-*". But digging through history of this DT, it seems =
-that
-> this is just leftover which somebody forgot to remove.
->
-> I'll send v2.
+Hi!
 
-This should be fixed in 5.2 thanks to the commit 75f9a058838b
+> The NXP's QorIQ Processors based on ARM Core have RCPM module
+> (Run Control and Power Management), which performs all device-level
+> tasks associated with power management such as wakeup source control.
+>=20
+> This driver depends on PM wakeup source framework which help to
+> collect wake information.
+>=20
+> Signed-off-by: Ran Wang <ran.wang_1@nxp.com>
 
-Maxime
+> +// Copyright 2019 NXP
+> +//
+> +// Author: Ran Wang <ran.wang_1@nxp.com>,
 
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+extra ,
 
---ctmlzvhrt42rr7y5
+> +	rcpm =3D dev_get_drvdata(dev);
+> +	if (!rcpm)
+> +		return -EINVAL;
+> +
+> +	/* Begin with first registered wakeup source */
+> +	ws =3D wakeup_source_get_next(NULL);
+> +	while (ws) {
+
+while (ws =3D wakeup_source_get_next(NULL))
+
+?
+
+								Pavel
+							=09
+--=20
+(english) http://www.livejournal.com/~pavelmachek
+(cesky, pictures) http://atrey.karlin.mff.cuni.cz/~pavel/picture/horses/blo=
+g.html
+
+--2oS5YaxWCcQjTEyO
 Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: Digital signature
 
 -----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXOJWPwAKCRDj7w1vZxhR
-xYE+AP9QhFtjiygFXgICwzp6Lq1kpc5kHMNcjkJ+93Xus3Y9QwD+Kfwc+m/R0CkH
-brzk6h/WxMESpp9HioHOUA0ql3LAWAk=
-=go8o
+iEYEARECAAYFAlziVqYACgkQMOfwapXb+vJYYgCfeELdsln2HAPCMPJgO2RvIdz1
+T5EAn0hVPEYV4vYlN3zVpYR6YBxZjFlI
+=Gqqe
 -----END PGP SIGNATURE-----
 
---ctmlzvhrt42rr7y5--
+--2oS5YaxWCcQjTEyO--
 
 
---===============1127402881223396194==
+--===============1573403137456153261==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -160,5 +144,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============1127402881223396194==--
+--===============1573403137456153261==--
 
