@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90B7E22FD4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 11:08:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D38D22FD6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 11:08:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VlCh0Hm2VxbJf+wjVReU0+hPYOEQ2FnX7R13504XeL0=; b=T22SrQGgzprseI
-	iMcd9OQb8lGacCnh8y+ywSNC5+2OI/97s8JYrltvuGZ5fi8g5FJNM4q19DxWsiGjkorpnr0JdD1B+
-	Vp5H//Ds44qpC3PrpNAfvLY7bOb+JC3VEC6oGDXRI9b11MXcI6xlneoOZCxiXN2UvT9X21/yeg38Y
-	Ld4w3T+9Iq9pGFUcgMET96/XFMNJdpW2kAWYCjUnUM/9emM2cV8e0hFf+ZkdrUa42S7h6Ry+5yamY
-	T1NSfOTv3+I3j0V13+g+F8E3NP6OOZ/C7xUfrFRS34IN7rFbjIYwx7UqZMHagTEZ4ihZmzpMxdIj0
-	4RcC6IfheBB/prN/Ko+A==;
+	List-Owner; bh=HN64ngpJ6viFd/365a465FKs0C2ztyXQy+fPTizmt0Y=; b=mpT6gSIN9x/i8g
+	LWJUJbkIAm0wH18GdR8tZRfupO2iC2jntBjPvJ9V4rsCCsl5uw6W3TKycX8QJbnboJs5obJB751hd
+	7lGOOGrDHY9I446OFDZcLr0YSoy8KZCy1xfOUXFhEjbYcYjJt1Zty1Jh/ut6zqU7t8KU1yHGb8vPa
+	KUupYeAyJCO0RYUkzv9m9CcX4C4UoBk+MV6Pk02m5NKMish39ReYTwsFyobHHm2mcme0SyDbUS+nM
+	u1JQbFncKkmYTLLi0Psg1V/Y8f9OsFZbDyDV5R+jRAd3N4pJwaeqk8aXdX7yuKSte3GFQgYVprBXm
+	uun6ln+wluJPt5vtItng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSeHO-0003S8-Lh; Mon, 20 May 2019 09:08:22 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hSeHh-0003n7-QS; Mon, 20 May 2019 09:08:41 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSeGi-0002lQ-Av
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 09:07:48 +0000
-Received: by mail-pg1-x542.google.com with SMTP id j26so6492638pgl.5
+ id 1hSeGn-0002s2-I7
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 09:07:54 +0000
+Received: by mail-pg1-x543.google.com with SMTP id z3so6483049pgp.8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 02:07:40 -0700 (PDT)
+ Mon, 20 May 2019 02:07:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=v9fCm6pJfwNnZtBLiOWDCiXX9M7MmpxMOv/deygL7hU=;
- b=DZf0IHTg+6ePioO6PbxXMr3b0sxOtlWkuB0Rp/4yTi2ZN5gA6vpKqzCt+E79/4xyLz
- sTb8V2qQqNyxh1FgxVCOw5Ro+uDhlkiDCr+Teqvov0ZjXg4xmEQAe9q73sschfeV2/7b
- 1umWfMmqWgnFDP9XQOT2EyjzH1L1l22e8ByC4=
+ bh=qhq8BOri8GqXtdsxg8qxzoiDzDhWP4zxzqC5ifM9GUM=;
+ b=BwmX6vUwVXSoWUXZaDGxZnC4C2nA+2FLx9nM53JLcHkyAB5WcTW4XIBvaCMGkvN9l8
+ h8ifkdY4+WuJmXFbgWagA5sRceen0HDsv0Ox5dmquIwP9fPC2bcFhBAVP4TCIRHCSf4Y
+ 7nZE/DDUbxoFttnsMo29hrKifDT5WRjCfoT3E=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=v9fCm6pJfwNnZtBLiOWDCiXX9M7MmpxMOv/deygL7hU=;
- b=XfgzqoMJjjfnYAb24TE+br5q0CNINYHZM//PsdDKcPCQ61fq5jBq3W5tn3sqwOIIST
- 1xA7eAUu3cGhOaydL2Qd/rmFMTvV1kUyujso3AX4gxLBp1XE8n8azQqmpG7rc43Y1avK
- ee9NxFQlJ/nkNxNt+1jiASwBuUi+OSrykvJ4gaS5OGNTtHmMW6TgeqU8mEpjGiyXIgqB
- jFesvzW87f0bZNywCOxEKyYGSAiIPn0/2eINV99ISMlMmK2/16bRL8uMm1iwJ1cJViu8
- 0FDz1gqv+pxIIIKYS1hPEvor+lkpL4zRP4oZfRqooi7rAWvgmqLXB37YfcJTXwBvRIma
- vTGw==
-X-Gm-Message-State: APjAAAX3uSbf8FCSaQNNv4nkGmL+2t9YW7R7t+SqoHDZNkAJoM2daBJM
- ydTPR8zFtlenXfxfr0YVy4tP8w==
-X-Google-Smtp-Source: APXvYqySfQ3A6Yya3mnBJTmrp77lvlN5ou8ZoeGALRWlDGRY8S5yM7HkEEgoTE9x3zLO+IG5XbCEIA==
-X-Received: by 2002:a63:ee0b:: with SMTP id e11mr21644801pgi.453.1558343259840; 
- Mon, 20 May 2019 02:07:39 -0700 (PDT)
+ bh=qhq8BOri8GqXtdsxg8qxzoiDzDhWP4zxzqC5ifM9GUM=;
+ b=efHzN3C+YcXmgXrxGwO8aKYLKKWSirxxrxv1Q5xh9zsVJo9I94+892XevvRQB5OeaJ
+ AKv2h8VPJdQ8zFxz3QXXZqLNNmBovOsv9xeCiAMvykcKTl3WBzH77aMxsHnEI3atA9d6
+ 3nd7G0lji/JKJ70aRJ0+5/3cnsKa4xlGERKDpwLyQByZgg5zf74rFTu2gBtNcFGzSCKM
+ Fl5oDPz7/r3YN9xGbK8w3tr8B3GUvVz+lPVTxCqPGzmt1vb52QS8vcblVEz94nhpG3mU
+ HrW7Ya8gXRofnAEQfn1DBUqMrsrGmQMfKtx7L9P0DB2snRPXnQavimqLnAK8qQJcKAw2
+ EwjQ==
+X-Gm-Message-State: APjAAAWDkmAdQ9u+gY53axKECH6D/UdGV6oFxvJNXo7sFySakZ20Iowz
+ OH6BCyZxqT9i83ps3Uj7QIU8yQ==
+X-Google-Smtp-Source: APXvYqzQbGvwKqbUYTfkmz0DyTQcGldqq+MJrZmXW5rXq1utn0gBm9ge5J4w6ezaiZlHn0axjqJVLg==
+X-Received: by 2002:a65:628b:: with SMTP id f11mr71262665pgv.95.1558343265015; 
+ Mon, 20 May 2019 02:07:45 -0700 (PDT)
 Received: from localhost.localdomain ([183.82.227.193])
- by smtp.gmail.com with ESMTPSA id d15sm51671614pfm.186.2019.05.20.02.07.34
+ by smtp.gmail.com with ESMTPSA id d15sm51671614pfm.186.2019.05.20.02.07.40
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 20 May 2019 02:07:39 -0700 (PDT)
+ Mon, 20 May 2019 02:07:44 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Maxime Ripard <maxime.ripard@bootlin.com>, David Airlie <airlied@linux.ie>,
  Daniel Vetter <daniel@ffwll.ch>, Chen-Yu Tsai <wens@csie.org>,
  dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v10 05/11] drm/sun4i: tcon: Export get tcon0 routine
-Date: Mon, 20 May 2019 14:33:12 +0530
-Message-Id: <20190520090318.27570-6-jagan@amarulasolutions.com>
+Subject: [PATCH v10 06/11] drm/sun4i: dsi: Probe tcon0 during dsi_bind
+Date: Mon, 20 May 2019 14:33:13 +0530
+Message-Id: <20190520090318.27570-7-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190520090318.27570-1-jagan@amarulasolutions.com>
 References: <20190520090318.27570-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_020740_746356_E5DA6A90 
-X-CRM114-Status: GOOD (  13.26  )
+X-CRM114-CacheID: sfid-20190520_020746_078334_38AF3121 
+X-CRM114-Status: GOOD (  12.47  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,53 +105,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Sometimes tcon attributes like tcon divider, clock rate etc are needed
-in interface drivers like DSI. So for such cases interface driver must
-probe the respective tcon and get the attributes.
+Probe tcon0 during dsi_bind, so-that the tcon attributes like
+divider value, clock rates are available whenever it required.
 
-Since tcon0 probe is already available, via sun4i_get_tcon0 function,
-export the same instead of probing tcon explicitly.
-
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 Tested-by: Merlijn Wajer <merlijn@wizzup.org>
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- drivers/gpu/drm/sun4i/sun4i_tcon.c | 3 ++-
- drivers/gpu/drm/sun4i/sun4i_tcon.h | 1 +
- 2 files changed, 3 insertions(+), 1 deletion(-)
+ drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c | 6 ++++++
+ drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h | 1 +
+ 2 files changed, 7 insertions(+)
 
-diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.c b/drivers/gpu/drm/sun4i/sun4i_tcon.c
-index 8f93121fead4..9e9d08ee8387 100644
---- a/drivers/gpu/drm/sun4i/sun4i_tcon.c
-+++ b/drivers/gpu/drm/sun4i/sun4i_tcon.c
-@@ -221,7 +221,7 @@ EXPORT_SYMBOL(sun4i_tcon_enable_vblank);
-  * are located in TCON0. This helper returns a pointer to TCON0's
-  * sun4i_tcon structure, or NULL if not found.
-  */
--static struct sun4i_tcon *sun4i_get_tcon0(struct drm_device *drm)
-+struct sun4i_tcon *sun4i_get_tcon0(struct drm_device *drm)
- {
+diff --git a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
+index 47d571d97600..1f9ed2642a47 100644
+--- a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
++++ b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
+@@ -1045,6 +1045,7 @@ static int sun6i_dsi_bind(struct device *dev, struct device *master,
+ 	struct drm_device *drm = data;
  	struct sun4i_drv *drv = drm->dev_private;
- 	struct sun4i_tcon *tcon;
-@@ -235,6 +235,7 @@ static struct sun4i_tcon *sun4i_get_tcon0(struct drm_device *drm)
+ 	struct sun6i_dsi *dsi = dev_get_drvdata(dev);
++	struct sun4i_tcon *tcon0 = sun4i_get_tcon0(drm);
+ 	int ret;
  
- 	return NULL;
- }
-+EXPORT_SYMBOL(sun4i_get_tcon0);
+ 	if (!(dsi->panel || dsi->bridge)) {
+@@ -1054,6 +1055,11 @@ static int sun6i_dsi_bind(struct device *dev, struct device *master,
  
- static void sun4i_tcon_set_mux(struct sun4i_tcon *tcon, int channel,
- 			       const struct drm_encoder *encoder)
-diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.h b/drivers/gpu/drm/sun4i/sun4i_tcon.h
-index 84cfb1952ff7..88e971d5f937 100644
---- a/drivers/gpu/drm/sun4i/sun4i_tcon.h
-+++ b/drivers/gpu/drm/sun4i/sun4i_tcon.h
-@@ -272,6 +272,7 @@ struct sun4i_tcon {
- struct drm_bridge *sun4i_tcon_find_bridge(struct device_node *node);
- struct drm_panel *sun4i_tcon_find_panel(struct device_node *node);
+ 	dsi->drv = drv;
  
-+struct sun4i_tcon *sun4i_get_tcon0(struct drm_device *drm);
- void sun4i_tcon_enable_vblank(struct sun4i_tcon *tcon, bool enable);
- void sun4i_tcon_mode_set(struct sun4i_tcon *tcon,
- 			 const struct drm_encoder *encoder,
++	if (!tcon0)
++		return -EINVAL;
++
++	dsi->tcon = tcon0;
++
+ 	drm_encoder_helper_add(&dsi->encoder,
+ 			       &sun6i_dsi_enc_helper_funcs);
+ 	ret = drm_encoder_init(drm,
+diff --git a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
+index 9c140f55b822..f2826e3ea165 100644
+--- a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
++++ b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
+@@ -28,6 +28,7 @@ struct sun6i_dsi {
+ 
+ 	struct device		*dev;
+ 	struct sun4i_drv	*drv;
++	struct sun4i_tcon	*tcon;
+ 	struct mipi_dsi_device	*device;
+ 	struct drm_panel	*panel;
+ 	struct drm_bridge	*bridge;
 -- 
 2.18.0.321.gffc6fa0e3
 
