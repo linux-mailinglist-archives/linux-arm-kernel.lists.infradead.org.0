@@ -2,75 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9227C237F5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 15:24:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6B9A237F9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 15:24:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=YftL66aoR5bMoMly2CPnTwngDOOuObnSBTcJGQ8B02Q=; b=t0N
-	jjOJ+0iywmtqEOUXssVhm3xwNLRF75PUbwX+GoMjF8Xry1MFqzHR1P7bg6seAapfTM4/thjgGb8b2
-	YUFbihbRXoQlrwQ3MCHrkGEdMSCFF+if7g2Qvig6zJqX77ijEDiRhB9Wvl7N2b9ws2Df8r3vUdkUK
-	4GTSqTc/DwaZlrBHecNP0RJKs6BaP5Uh4IJaAU8HinYQPs8InJG9eoUmeA8i7cO5QytoHck9uMVX3
-	7k9K9nH1+ehbTCIDTo9LpJjrRJl+lhdWGRn+UTz6QUZjaoynDohbu0IyaVlxOtUX8rxLVu9cWS8bN
-	mLwQSzavBJFR0RIVaXwccbeWd3eSj3g==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=YsQ4lRupnGBX9QE4dSqckeDOJqj9FM/bxkV6DYMD498=; b=OHO7z8NRC9WTFN2aZlQhKbfQMa
+	a/NrdQgSrFisaj6kOji4nRmeOkm2gAKx/RyL3/tkJLfDMDfqGsd0ogkFl6LdglyGpGGqAge9tmssX
+	Ka+zdaxQApy6Cb748dbo+/EG3ZD7EchrWW54xiCj0vODXjxxPTwPMn8Zvymmbm98R1VRTii8COZac
+	7vRzvJRoGmxsEZkqNrkpWqoPPDgBKYjzod+3wG0101JuKpGvjktghRGzers96M1Ju8umZlbdPClDJ
+	mAmyqRbmu0My6c9tg/JNfS+/iCac7CQz3i5AMTZUYbVO+KAnWiFLvg2aDMGM+4P9uAZSwr/9YBJDN
+	xy4t15Sg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSiHE-00083d-LZ; Mon, 20 May 2019 13:24:28 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1hSiHO-0008B1-QU; Mon, 20 May 2019 13:24:38 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSiH7-000835-Kh
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 13:24:22 +0000
-Received: by mail-qk1-x744.google.com with SMTP id z6so8748456qkl.10
+ id 1hSiH9-00083L-Tb
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 13:24:25 +0000
+Received: by mail-qt1-x842.google.com with SMTP id t1so16179613qtc.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 06:24:19 -0700 (PDT)
+ Mon, 20 May 2019 06:24:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=rsvHVsIkAw5q/p4kNbSj/zeUXNvQc4j7K0lVXubmICg=;
- b=o6F2qAdg/FF6II5zlDpf5A1jwhfg4WqJzX/gPaG00nu+4/V0nqP27nGQMGVIdvdyfB
- Q32/xeIFIcIX+UgMX5RgbgX7HABLKAGRiy4ezLoFh5mC0CLX1v13DrZZT2eFRlljOJTn
- B0X3CTIC2SLb+DqxzoMdBpWyAj1CklcSE/jjPc/1RoAjs+L5586ztnLWzi5va9YuZUDN
- /nn0rOfRu+UO7BdxT+5hwD+/VfdP5cFhWKBwu+K84NFnYsNxAZNjtC/sw4J73FDkCC95
- 9zCSnRV/hj7na9SzfRYyeOYMLEdXyV94QDw8rAcw066V3gtZQNyRLML6LhRzrqybtzE4
- F4aw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=o9zB0Qs07/bv3+0GBPMx1hgxeOL+RMp4AuO/RYWYPY0=;
+ b=UHYFgGQObGRNUfVnSNi1CmHYdPGz10nTGKKUemXzcycv5YX1fvmEzrBcNUuFR6wK0E
+ 0ipr/AlPW9dFjQY5NLsK9SjUIz1x5A15KWPVUgThG34HxWWz4+cJxvvPkbIlUAbc9zKo
+ 1X4aABUX5cbgM29c4WfBjgpPXa8kpBE6Iwf7mAwBBPlHJKCxJXL9ITuF1OgXe010dyu9
+ uA9u4oHNWbcZBm82vm31pSyUZPGEgZjtr+P+Twynjz4IVpiToOII3v/dO+LhEaWLnFTs
+ LB8dXcLA/V/auJ1BwvAgHyQIUmqLT0LThJyj8kSKQBFaHEWqrBMWATSD1Q22EWSMGynv
+ UGNg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=rsvHVsIkAw5q/p4kNbSj/zeUXNvQc4j7K0lVXubmICg=;
- b=nOaWMQlkXzKVNvrk0A5BVvwc40C+LpXOxMkAcislB/FhFqMZyd8RTh5nJhjqJ5GYTI
- 0y/cHoYt5PTv/5GVa1rVKaRiaj+o6u7tZSbJtgPOxr1VjHa7ylqutFFddvFATdNE4T+A
- tOY//vyQ0RyAUgYG0BTomaTvY0GdYP3kijT7zkOxP2qtWCenvXifIar3TGjzq+KGZhb/
- r720gNSjLyj0M/NQxqWxleroYtk/e0Px7OEi0lOBW80e7R13DY29tQ7kM4NwWeLMxW0S
- 0BAynY18JUBBEVamalchsry+VRYdhe1OMZlVBBkXBUDGyPdT7IPEQcV50BYDDoT7rqgB
- cgnw==
-X-Gm-Message-State: APjAAAX9thlECIVqOOx9oviTq0GkfSMjyajGnJOO902A0Ji0XGN+M9LU
- UJSpEt8JSkrL2h1iSbwU2yE=
-X-Google-Smtp-Source: APXvYqyEgqhlANxVjrMUSSrskyifcYz7vVo49mM4N76/EdHj0B6xMJK1NCHukdavlFO7kHRgmr8+Mg==
-X-Received: by 2002:a37:684a:: with SMTP id d71mr32813029qkc.25.1558358658659; 
- Mon, 20 May 2019 06:24:18 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=o9zB0Qs07/bv3+0GBPMx1hgxeOL+RMp4AuO/RYWYPY0=;
+ b=qxbXC/1oiZnv0YHoyHxdBNbcUeu/XCJo9DF9lXA+/QciN0qSV8tdpty4tXORRUFsw+
+ zlID/0RGVZdmj9z6Csfjwpg2otn4tKe9Q4Ln0vnzzM1dwDxOLo80F6DdI8zaFrkk+5GV
+ rOrVzBwp6hWOO1gADOT2v8Ze5OK1o1xkp+HHP3wqamP6Cq+EoPqVdmBKEbJuW1TBcHQJ
+ rXNaYji9Tc/klWemUlbuSA69GMzbUT8z+NNukXWVQAiX8zdsMdOxhO+hZ/XvRucQNMc3
+ 1+EStwE7bHjfnLA0ylg6nNiMl4UHdowo88Y1kH+zCP5DjjplIS9WIKe56puSMlsjOvN0
+ zSug==
+X-Gm-Message-State: APjAAAXx4jk5INyAMFfhLJEgnNZm8/kiw5y1F0xstx51uzwR4nDgDzM2
+ 1QYwt4kxSV+4aoRV874rANA=
+X-Google-Smtp-Source: APXvYqyVrT/pjQLEbpa+CEj0yjdN3U2EtT5+Sf9goJ9caxiPdhtTMk+TqKMehFCr/5FRArZI56CY+w==
+X-Received: by 2002:a0c:b621:: with SMTP id f33mr30723685qve.199.1558358662632; 
+ Mon, 20 May 2019 06:24:22 -0700 (PDT)
 Received: from fabio-Latitude-E5450.am.freescale.net ([177.221.114.206])
- by smtp.gmail.com with ESMTPSA id q24sm2080269qtq.58.2019.05.20.06.24.15
+ by smtp.gmail.com with ESMTPSA id q24sm2080269qtq.58.2019.05.20.06.24.19
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 20 May 2019 06:24:17 -0700 (PDT)
+ Mon, 20 May 2019 06:24:21 -0700 (PDT)
 From: Fabio Estevam <festevam@gmail.com>
 To: shawnguo@kernel.org
-Subject: [PATCH RESEND 1/2] ARM: dts: imx53: Add capture-subsystem device
-Date: Mon, 20 May 2019 10:24:10 -0300
-Message-Id: <20190520132411.8540-1-festevam@gmail.com>
+Subject: [PATCH RESEND 2/2] ARM: dts: imx53-smd: Add OV5642 video capture
+ support
+Date: Mon, 20 May 2019 10:24:11 -0300
+Message-Id: <20190520132411.8540-2-festevam@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190520132411.8540-1-festevam@gmail.com>
+References: <20190520132411.8540-1-festevam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_062421_704760_23A73B1A 
-X-CRM114-Status: UNSURE (   9.61  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190520_062423_953224_251C8611 
+X-CRM114-Status: GOOD (  12.78  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (festevam[at]gmail.com)
@@ -104,57 +108,116 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Steve Longerbeam <slongerbeam@gmail.com>
 
-Add video capture_subsystem device node, and include both CSI ports.
-Prepare for adding sensors by adding the parallel sensor anchor endpoints
-to the CSI ports.
+Add video capture support from the OV5642 to IPU CSI0 on
+the i.MX53 SMD.
 
 Signed-off-by: Steve Longerbeam <slongerbeam@gmail.com>
+[fabio: remove unnecessary 'regulator-always-on' from camera regulators]
 Signed-off-by: Fabio Estevam <festevam@gmail.com>
 ---
- arch/arm/boot/dts/imx53.dtsi | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
+ arch/arm/boot/dts/imx53-smd.dts | 73 +++++++++++++++++++++++++++++++++
+ 1 file changed, 73 insertions(+)
 
-diff --git a/arch/arm/boot/dts/imx53.dtsi b/arch/arm/boot/dts/imx53.dtsi
-index 9b672ed2486d..ed341cfd9d09 100644
---- a/arch/arm/boot/dts/imx53.dtsi
-+++ b/arch/arm/boot/dts/imx53.dtsi
-@@ -31,6 +31,7 @@
- 		i2c0 = &i2c1;
- 		i2c1 = &i2c2;
- 		i2c2 = &i2c3;
-+		ipu0 = &ipu;
- 		mmc0 = &esdhc1;
- 		mmc1 = &esdhc2;
- 		mmc2 = &esdhc3;
-@@ -71,6 +72,11 @@
- 		ports = <&ipu_di0>, <&ipu_di1>;
+diff --git a/arch/arm/boot/dts/imx53-smd.dts b/arch/arm/boot/dts/imx53-smd.dts
+index 09071ca11c6c..ffdc6d990795 100644
+--- a/arch/arm/boot/dts/imx53-smd.dts
++++ b/arch/arm/boot/dts/imx53-smd.dts
+@@ -185,6 +185,31 @@
+ 			>;
+ 		};
+ 
++		pinctrl_ipu_csi0: ipucsi0grp {
++			fsl,pins = <
++				MX53_PAD_CSI0_DAT12__IPU_CSI0_D_12    0x1c4
++				MX53_PAD_CSI0_DAT13__IPU_CSI0_D_13    0x1c4
++				MX53_PAD_CSI0_DAT14__IPU_CSI0_D_14    0x1c4
++				MX53_PAD_CSI0_DAT15__IPU_CSI0_D_15    0x1c4
++				MX53_PAD_CSI0_DAT16__IPU_CSI0_D_16    0x1c4
++				MX53_PAD_CSI0_DAT17__IPU_CSI0_D_17    0x1c4
++				MX53_PAD_CSI0_DAT18__IPU_CSI0_D_18    0x1c4
++				MX53_PAD_CSI0_DAT19__IPU_CSI0_D_19    0x1c4
++				MX53_PAD_CSI0_PIXCLK__IPU_CSI0_PIXCLK 0x1e4
++				MX53_PAD_CSI0_VSYNC__IPU_CSI0_VSYNC   0x1e4
++				MX53_PAD_CSI0_MCLK__IPU_CSI0_HSYNC    0x1e4
++				MX53_PAD_CSI0_DATA_EN__IPU_CSI0_DATA_EN 0x1e4
++			>;
++		};
++
++		pinctrl_ov5642: ov5642grp {
++			fsl,pins = <
++				MX53_PAD_NANDF_WP_B__GPIO6_9   0x1e4
++				MX53_PAD_NANDF_RB0__GPIO6_10   0x1e4
++				MX53_PAD_GPIO_0__CCM_SSI_EXT1_CLK 0x1c4
++			>;
++		};
++
+ 		pinctrl_uart1: uart1grp {
+ 			fsl,pins = <
+ 				MX53_PAD_CSI0_DAT10__UART1_TXD_MUX	0x1e4
+@@ -256,11 +281,47 @@
+ 	camera: ov5642@3c {
+ 		compatible = "ovti,ov5642";
+ 		reg = <0x3c>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_ov5642>;
++		assigned-clocks = <&clks IMX5_CLK_SSI_EXT1_SEL>,
++				  <&clks IMX5_CLK_SSI_EXT1_COM_SEL>;
++		assigned-clock-parents = <&clks IMX5_CLK_PLL2_SW>,
++					 <&clks IMX5_CLK_SSI_EXT1_PODF>;
++		assigned-clock-rates = <0>, <24000000>;
++		clocks = <&clks IMX5_CLK_SSI_EXT1_GATE>;
++		clock-names = "xclk";
++		DVDD-supply = <&ldo9_reg>;
++		AVDD-supply = <&ldo7_reg>;
++		reset-gpios = <&gpio6 9 GPIO_ACTIVE_LOW>;
++		powerdown-gpios = <&gpio6 10 GPIO_ACTIVE_HIGH>;
++
++		port {
++			ov5642_to_ipu_csi0: endpoint {
++				remote-endpoint = <&ipu_csi0_from_parallel_sensor>;
++				bus-width = <8>;
++				hsync-active = <1>;
++				vsync-active = <1>;
++			};
++		};
  	};
  
-+	capture_subsystem {
-+		compatible = "fsl,imx-capture-subsystem";
-+		ports = <&ipu_csi0>, <&ipu_csi1>;
-+	};
+ 	pmic: dialog@48 {
+ 		compatible = "dlg,da9053", "dlg,da9052";
+ 		reg = <0x48>;
++		interrupt-parent = <&gpio7>;
++		interrupts = <11 IRQ_TYPE_LEVEL_LOW>;
 +
- 	tzic: tz-interrupt-controller@fffc000 {
- 		compatible = "fsl,imx53-tzic", "fsl,tzic";
- 		interrupt-controller;
-@@ -158,10 +164,16 @@
- 
- 			ipu_csi0: port@0 {
- 				reg = <0>;
++		regulators {
++			ldo7_reg: ldo7 {
++				regulator-min-microvolt = <1200000>;
++				regulator-max-microvolt = <3600000>;
++			};
 +
-+				ipu_csi0_from_parallel_sensor: endpoint {
-+				};
- 			};
++			ldo9_reg: ldo9 {
++				regulator-min-microvolt = <1250000>;
++				regulator-max-microvolt = <3650000>;
++			};
++		};
+ 	};
+ };
  
- 			ipu_csi1: port@1 {
- 				reg = <1>;
+@@ -271,3 +332,15 @@
+ 	phy-reset-gpios = <&gpio7 6 GPIO_ACTIVE_LOW>;
+ 	status = "okay";
+ };
 +
-+				ipu_csi1_from_parallel_sensor: endpoint {
-+				};
- 			};
- 
- 			ipu_di0: port@2 {
++&ipu_csi0_from_parallel_sensor {
++	remote-endpoint = <&ov5642_to_ipu_csi0>;
++	data-shift = <12>; /* Lines 19:12 used */
++	hsync-active = <1>;
++	vsync-active = <1>;
++};
++
++&ipu_csi0 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_ipu_csi0>;
++};
 -- 
 2.17.1
 
