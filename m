@@ -2,96 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3DCA72420C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 22:21:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E80F2421E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 22:28:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5xZ0/KbMrqB94vq/8sENjmUyfvRoWPRJYWJtwiyKjKw=; b=qSMbDiP4RGrQ7f
-	T/R1y/LSQ4Phy6WGkW/lruSwOzxFThpOFY8UuMWBv4Tmy+tEIdd7I6vPt6iP40rj0aIv9SqhhCKYH
-	Mtlnzt1CsEnV0H+QyjIpKQxU7N0i/qSs4gqMebZU9onAOLlv+yrb1supw7yRrthFloX/Ab4B9d81o
-	68kjwPD4VCJzNAbQ680XHuXRty7tdDUJDe8MsGZj0kBk1nNtGiTLtBmEKFiJUg+QV3CcwGbqRUSeh
-	DcXVjCG4DyAPCaUUE3KyL28aj/lE/6IfOxqX3Y+lKf0D4zu3wzcJFW2UK63pjFn5E3Z7VF2FpS+Bg
-	7ymqbHzOQOfTWS++ODnA==;
+	List-Owner; bh=J9e1+5BYPHfdYIJbkbty2CTFr98Na2qtUH2gVk3aXIQ=; b=P0H5PCS/OrUlyQ
+	RnBaRmRRkCp0Xs45BxusxyCaZJiqv4qTVzPO3FA7cxpg8aYdrRbUIiYn3GX4g/EQAtf0/sTVlkabm
+	TiTJ4i5VJPPONRsBvcbUgdEgmJ9OGeTiurBMF2dUBo8YegtCUas8RtyTaJJ34mbcCeBMmQBBTUJIn
+	Oczc/LAs9XazNsYUr6hTbtw7unWsVqndm1H8LB1+fhzijudHpusr8Sxf2ebbtC+SU8soTlVnCA08b
+	cd3r8NYSxaXaZYsWR8M9aIHblcCEliqK9THN9dqdkHVCc928U4rZvyXLTtKiK/VjY5lDdS22Czwna
+	TWy6fT9wTsZkQ8J/+f8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSonF-0001n1-50; Mon, 20 May 2019 20:21:57 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1hSotL-0003ju-Fi; Mon, 20 May 2019 20:28:15 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSon6-0001lJ-Ai
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 20:21:49 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id k187so2778223vsk.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 13:21:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=+cwBfmNJOYYnLoNWnVRRnVYNxdiZh0AA2x8O10NbLoM=;
- b=UUk3ytbRvoMJoCb1BDVV+bhMWyNCfP4VAtjMhf1lzGoGdYLBnk+w1DzR1J257pctAl
- Z1sIhOH/IrWFoh7qnyLcIMvuCkh8fkDTGFrKquN9TP9ipVXj2ksMpQf/2h+xNxqCH3K2
- oiIVhVB2Wc5K/vc4KJ88h0vfB7fgjFsM3M9kY=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=+cwBfmNJOYYnLoNWnVRRnVYNxdiZh0AA2x8O10NbLoM=;
- b=NQ7F04/HlYOKc+9BxBW6LKc1CO+vpwIbRC2uHZVGopqC4/0eHwvzzvfYFi5Ms72vwV
- 2oJ0oNRxpw/iYaE+Hc6jGP4/RYUSLoi/YIBBx2Q/zgWyEt3I8MQd56tVSwIb9viTGFhx
- bvwAu5SunasEjZtN/t6nsidiubkfF5pUCF6QhSNVRsDeEM6j6LQpk5fe5PApzlEu7NfK
- jfG6EkDKQqbhVjfWBKZqEikyEUlV8c1pe1UHzyoboj5FAcnRL3jnY0/6iuXh6xMiURCR
- 9ZBd2uOyDhiyNqYlewOKdtAvdrhWJwTdbZMnK/QXfB3flqLkTd39exYRuPiRfKIht0ju
- iOdg==
-X-Gm-Message-State: APjAAAWpV7xMSGNrsgt2M49K1rsV3adMjv8LhhbFUJR0EszBbO6SJpP5
- PkVBHdePYfY9nyBEst/3mXo7nSEXa1w=
-X-Google-Smtp-Source: APXvYqwlJJqenzNHcC61xq4oVIheNHULzBBY5kYatEnsWTgOk8Gppkqv7HrCwL6F44chayGAUN5a6Q==
-X-Received: by 2002:a67:b30b:: with SMTP id a11mr31704286vsm.86.1558383707042; 
- Mon, 20 May 2019 13:21:47 -0700 (PDT)
-Received: from mail-vs1-f42.google.com (mail-vs1-f42.google.com.
- [209.85.217.42])
- by smtp.gmail.com with ESMTPSA id d5sm6928385vka.34.2019.05.20.13.21.45
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Mon, 20 May 2019 13:21:45 -0700 (PDT)
-Received: by mail-vs1-f42.google.com with SMTP id k187so2778165vsk.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 13:21:45 -0700 (PDT)
-X-Received: by 2002:a67:dd8e:: with SMTP id i14mr31790963vsk.149.1558383705071; 
- Mon, 20 May 2019 13:21:45 -0700 (PDT)
-MIME-Version: 1.0
+ id 1hSotD-0003is-Qk; Mon, 20 May 2019 20:28:09 +0000
+Received: from ip5f5a6320.dynamic.kabel-deutschland.de ([95.90.99.32]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1hSot6-0008TP-VJ; Mon, 20 May 2019 22:28:01 +0200
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Doug Anderson <dianders@chromium.org>
+Subject: Re: [PATCH 1/2] ARM: dts: rockchip: Limit GPU frequency on veyron
+ mickey to 300 MHz when the CPU gets very hot
+Date: Mon, 20 May 2019 22:28:00 +0200
+Message-ID: <1695268.0xytyHHoPs@diego>
+In-Reply-To: <CAD=FV=VGA_i=vM4_OrqXnv0WC__Fcdced3oOZjzcPO=i8Q+SdA@mail.gmail.com>
 References: <20190520170132.91571-1-mka@chromium.org>
- <20190520170132.91571-2-mka@chromium.org>
-In-Reply-To: <20190520170132.91571-2-mka@chromium.org>
-From: Doug Anderson <dianders@chromium.org>
-Date: Mon, 20 May 2019 13:21:33 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=Vr2thgHYTH_khqka27_SdGcSEShpSRp+u2E=O5eyxLMQ@mail.gmail.com>
-Message-ID: <CAD=FV=Vr2thgHYTH_khqka27_SdGcSEShpSRp+u2E=O5eyxLMQ@mail.gmail.com>
-Subject: Re: [PATCH 2/2] ARM: dts: rockchip: Configure the GPU thermal zone
- for mickey
-To: Matthias Kaehlcke <mka@chromium.org>
+ <CAD=FV=VGA_i=vM4_OrqXnv0WC__Fcdced3oOZjzcPO=i8Q+SdA@mail.gmail.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_132148_364331_7FC95791 
-X-CRM114-Status: GOOD (  15.38  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190520_132808_013680_0B32F707 
+X-CRM114-Status: GOOD (  19.70  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -104,46 +59,116 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, LKML <linux-kernel@vger.kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
  "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>,
+ Matthias Kaehlcke <mka@chromium.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgpPbiBNb24sIE1heSAyMCwgMjAxOSBhdCAxMDowMSBBTSBNYXR0aGlhcyBLYWVobGNrZSA8
-bWthQGNocm9taXVtLm9yZz4gd3JvdGU6Cj4KPiBtaWNrZXkgY3JhbXMgYSBsb3Qgb2YgaGFyZHdh
-cmUgaW50byBhIHRpbnkgcGFja2FnZSwgd2hpY2ggcmVxdWlyZXMKPiBtb3JlIGFnZ3Jlc3NpdmUg
-dGhlcm1hbCB0aHJvdHRsaW5nIHRoYW4gZm9yIGRldmljZXMgd2l0aCBhIGxhcmdlcgo+IGZvb3Rw
-cmludC4gQ29uZmlndXJlIHRoZSBHUFUgdGhlcm1hbCB6b25lIHRvIHRocm90dGxlIHRoZSBHUFUK
-PiBwcm9ncmVzc2l2ZWx5IGF0IHRlbXBlcmF0dXJlcyA+PSA2MMKwQy4gSGVhdCBkaXNzaXBhdGVk
-IGJ5IHRoZQo+IENQVXMgYWxzbyBhZmZlY3RzIHRoZSBHUFUgdGVtcGVyYXR1cmUsIGhlbmNlIHdl
-IGNhcCB0aGUgQ1BVCj4gZnJlcXVlbmN5IHRvIDEuNCBHSHogZm9yIHRlbXBlcmF0dXJlcyBhYm92
-ZSA2NcKwQy4gRnVydGhlciB0aHJvdHRsaW5nCj4gb2YgdGhlIENQVXMgbWF5IGJlIHBlcmZvcm1l
-ZCBieSB0aGUgQ1BVIHRoZXJtYWwgem9uZS4KPgo+IFRoZSBjb25maWd1cmF0aW9uIG1hdGNoZXMg
-dGhhdCBvZiB0aGUgZG93bnN0cmFtIENocm9tZSBPUyAzLjE0CgpzL2Rvd25zdHJhbS9kb3duc3Ry
-ZWFtCgoKPiArICAgICAgIGNvb2xpbmctbWFwcyB7Cj4gKyAgICAgICAgICAgICAgIC8qIEFmdGVy
-IDFzdCBsZXZlbCB0aHJvdHRsZSB0aGUgR1BVIGRvd24gdG8gYXMgbG93IGFzIDQwMCBNSHogKi8K
-PiArICAgICAgICAgICAgICAgZ3B1X3dhcm1pc2hfbGltaXRfZ3B1IHsKPiArICAgICAgICAgICAg
-ICAgICAgICAgICB0cmlwID0gPCZncHVfYWxlcnRfd2FybWlzaD47Cj4gKyAgICAgICAgICAgICAg
-ICAgICAgICAgY29vbGluZy1kZXZpY2UgPSA8JmdwdSBUSEVSTUFMX05PX0xJTUlUIDE+OwoKQXMg
-cGVyIG15IGNvbW1lbnQgaW4gcGF0Y2ggIzEsIHlvdSBhcmUgcHJvYmFibHkgZW5kaW5nIHVwIHRo
-cm90dGxpbmcKdG8gNTAwIE1Ieiwgbm90IDQwMCBNSHouICBCZWxvdyB3aWxsIGFsbCBoYXZlIHNp
-bWlsYXIgcHJvYmxlbXMgdW5sZXNzCndlIGFjdHVhbGx5IGRlbGV0ZSB0aGUgNTAwIE1IeiBvcGVy
-YXRpbmcgcG9pbnQuCgoKPiArICAgICAgICAgICAgICAgfTsKPiArCj4gKyAgICAgICAgICAgICAg
-IC8qCj4gKyAgICAgICAgICAgICAgICAqIFNsaWdodGx5IGFmdGVyIHdlIHRocm90dGxlIHRoZSBH
-UFUsIHdlJ2xsIGFsc28gbWFrZSBzdXJlIHRoYXQKPiArICAgICAgICAgICAgICAgICogdGhlIENQ
-VSBjYW4ndCBnbyBmYXN0ZXIgdGhhbiAxLjQgR0h6LiAgTm90ZSB0aGF0IHdlIHdvbid0Cj4gKyAg
-ICAgICAgICAgICAgICAqIHRocm90dGxlIHRoZSBDUFUgbG93ZXIgdGhhbiAxLjQgR0h6IGR1ZSB0
-byBHUFUgaGVhdC0td2UnbGwKPiArICAgICAgICAgICAgICAgICogbGV0IHRoZSBDUFUgZG8gdGhl
-IHJlc3QgaXRzZWxmLgo+ICsgICAgICAgICAgICAgICAgKi8KPiArICAgICAgICAgICAgICAgZ3B1
-X3dhcm1fbGltaXRfY3B1IHsKPiArICAgICAgICAgICAgICAgICAgICAgICB0cmlwID0gPCZncHVf
-YWxlcnRfd2FybT47Cj4gKyAgICAgICAgICAgICAgICAgICAgICAgY29vbGluZy1kZXZpY2UgPSA8
-JmNwdTAgNCA0PjsKClNob3VsZG4ndCB5b3UgbGlzdCBjcHUxLCBjcHUyLCBhbmQgY3B1MyB0b28/
-ICBUaGF0J2QgbWF0Y2ggd2hhdAp1cHN0cmVhbSBkaWQgZWxzZXdoZXJlIGluIHRoaXMgZmlsZT8K
-Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFy
-bS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1r
-ZXJuZWwK
+Am Montag, 20. Mai 2019, 22:16:46 CEST schrieb Doug Anderson:
+> Hi,
+> =
+
+> On Mon, May 20, 2019 at 10:01 AM Matthias Kaehlcke <mka@chromium.org> wro=
+te:
+> >
+> > On rk3288 the CPU and GPU temperatures are correlated. Limit the GPU
+> > frequency on veyron mickey to 300 MHz for CPU temperatures >=3D 85=B0C.
+> >
+> > This matches the configuration of the downstream Chrome OS 3.14 kernel,
+> > the 'official' kernel for mickey.
+> >
+> > Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
+> > ---
+> > Note: this patch depends on "ARM: dts: rockchip: Add #cooling-cells
+> > entry for rk3288 GPU" (https://lore.kernel.org/patchwork/patch/1075005/)
+> > ---
+> >  arch/arm/boot/dts/rk3288-veyron-mickey.dts | 6 ++++++
+> >  1 file changed, 6 insertions(+)
+> >
+> > diff --git a/arch/arm/boot/dts/rk3288-veyron-mickey.dts b/arch/arm/boot=
+/dts/rk3288-veyron-mickey.dts
+> > index d889ab3c8235..f118d92a49d0 100644
+> > --- a/arch/arm/boot/dts/rk3288-veyron-mickey.dts
+> > +++ b/arch/arm/boot/dts/rk3288-veyron-mickey.dts
+> > @@ -125,6 +125,12 @@
+> >                                          <&cpu2 8 THERMAL_NO_LIMIT>,
+> >                                          <&cpu3 8 THERMAL_NO_LIMIT>;
+> >                 };
+> > +
+> > +               /* At very hot, don't let GPU go over 300 MHz */
+> > +               cpu_very_hot_limit_gpu {
+> > +                       trip =3D <&cpu_alert_very_hot>;
+> > +                       cooling-device =3D <&gpu 2 2>;
+> > +               };
+> =
+
+> Two things:
+> =
+
+> A) If I'm reading things properly, you're actually limiting things to
+> 400 MHz.  This is because you don't have <https://crrev.com/c/1574579>
+> which deletes the 500 MHz GPU operating point.  So on upstream the
+> available points are:
+> =
+
+> 0: 600 MHz
+> 1: 500 MHz
+> 2: 400 MHz
+> 3: 300 MHz
+> 4: 200 MHz
+> 5: 100 MHz
+> =
+
+> ...and downstream:
+> =
+
+> 0: 600 MHz
+> 1: 400 MHz
+> 2: 300 MHz
+> 3: 200 MHz
+> 4: 100 MHz
+> =
+
+> Thinking about it more, I bet Heiko would actually be OK deleting the
+> 500 MHz GPU operating point for veyron.  Technically it's not needed
+> upstream because upstream doesn't have our hacks to allow re-purposing
+> NPLL for HDMI (so they _can_ make 500 MHz) but maybe we can make the
+> argument that these laptops have only ever been tested with the 500
+> MHz operating point removed and also that eventually someonje will
+> probably figure out a way to re-purpose NPLL for HDMI even upstream...
+
+Yeah. Dropping the opp sounds sensible ... for the npll-related thing
+and also if you're really running into thermal constraints it might be
+good to give the system a bit more breathing room?
+
+
+Heiko
+
+
+> B) It seems like in the same patch you'd want to introduce
+> "cpu_warm_limit_gpu", AKA:
+> =
+
+> cpu_warm_limit_gpu {
+>   trip =3D <&cpu_alert_warm>;
+>   cooling-device =3D
+>   <&gpu 1 1>;
+> };
+> =
+
+> =
+
+> -Doug
+
+
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
