@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 598D622DEF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 10:08:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 530B022DFB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 10:09:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J/DeQBF7ahzF7iZzeZMI+NHrszZxZsWhrAWrv3bn+bc=; b=nzGYYpgGGzdFzw
-	h08fE5ArhtoEz6bPhIZK9HtvwaRXlE9GrYgHXOxKFxUrUwYjXJMTI7ze/wIym3lo0D8h+0RnGwwSz
-	4d5QMDve4DgxAiyXfo448UqnjVAXlJ+0IlwTHilxSPNz5p6Ws70lvlvTwHrV8gJqMM2vicOsrAU1M
-	13xkkwfaT9TstOiuALRjLImcNqIrv4KgA4j7ywXOF8QCk62AgkgajC5ao6GXEE8TH65hzv8u5xBTT
-	Tt2pPNV+LNjPFtlMgK9YNrlKGB0IglZ2lmMDlE8mZd3q4qLPYFtDOqlCASrhQo7E05Is6wkXMCTV5
-	X1w5cfjMtpX/oFSpkMlg==;
+	List-Owner; bh=WVBqeKpWzSK05GF5PofKWn8AMUq52HkI9KfJ8YQ7rIA=; b=qxsekEzfxfMhnM
+	Yb0rCOZ2i/w+S0pbnYyp77NAkStyUbY9ZHH/qi6UwVPSYVIZzd25TDZ0fqjjRV1XSAvV6+EVimwT+
+	CoMhJgJW5MZIwDKSnebNhIRwb8Q0Wvrqzgt4ONIiKU3fieVIWBWYWdCTDu1XJIIqzkHfNT7sorZDz
+	TLBF77Ep2v9CJv+Nhimanr6J2rgQosKgkGl6QORchK8DQdHGGYPme1Tt44Cxe6bB0gOTM9Y9nl9qQ
+	Ul+ZOPBn7Noh0Weay+mVRGDwtNAzqe/YPZuHnc9z/sUsaGnLbmP8Dj3Cq/8DKXdoiZNf6hly3HJye
+	il3YwtIjeb0Ydzq+SIgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSdL0-0003zr-3P; Mon, 20 May 2019 08:08:02 +0000
+	id 1hSdLy-0005Ka-HP; Mon, 20 May 2019 08:09:02 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSdIi-0001Ln-As
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 08:05:50 +0000
+ id 1hSdIi-0001MJ-I5
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 08:05:55 +0000
 Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4D4C52147A;
+ by mail.kernel.org (Postfix) with ESMTPSA id 4FA8821530;
  Mon, 20 May 2019 08:05:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1558339539;
- bh=tGNp9hfpDoXJPouNFcHBAi3efUDgQ7e9i9A4n24cgbg=;
+ bh=2htx2UolyCeadnnxkFkXPr82L02MSZy7JTkEQdSL7Jo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=qjYgiRo7phqHdizYckbDbHtMscrc4lXdjlNKsL5GeBfDvBKhbEqSoypf2evy1ccCE
- y00QQuGZBH3WEE6ST0OwdoWm7WmJAm/pEooUpuJd+qlLTLnLrvIqA92OMq4ghE3bHj
- 0x0hq5E/xkQBqvBRlr2BzmAl31h8RqY/ekdwJ9kM=
+ b=rBdsxMY8+h/r794raJBb1iqyhhMljyBV/DMBFoOoLUYK0P3QpmY4qKdnilgpDsEBr
+ 9620N4LqNRZTz2YRkHFWXS2LouFFEIcuMDqF963i+FqAKN9TmGt92sH3Ky3qkRvKav
+ HxIk3+NuFKfpcTr19q2mTxoyhQn6PyyTYYbNHNGI=
 Received: by wens.tw (Postfix, from userid 1000)
- id AF2C36582C; Mon, 20 May 2019 16:05:32 +0800 (CST)
+ id B3B8A6583F; Mon, 20 May 2019 16:05:32 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
 To: Maxime Ripard <maxime.ripard@bootlin.com>, Stephen Boyd <sboyd@kernel.org>,
  Michael Turquette <mturquette@baylibre.com>
-Subject: [PATCH 17/25] clk: sunxi-ng: v3s: Use local parent references for
+Subject: [PATCH 18/25] clk: sunxi-ng: sun8i-r: Use local parent references for
  CLK_FIXED_FACTOR
-Date: Mon, 20 May 2019 16:04:13 +0800
-Message-Id: <20190520080421.12575-18-wens@kernel.org>
+Date: Mon, 20 May 2019 16:04:14 +0800
+Message-Id: <20190520080421.12575-19-wens@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190520080421.12575-1-wens@kernel.org>
 References: <20190520080421.12575-1-wens@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_010540_781438_B5D9EFE9 
-X-CRM114-Status: GOOD (  12.97  )
+X-CRM114-CacheID: sfid-20190520_010541_145788_C7ECC12F 
+X-CRM114-Status: GOOD (  13.35  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -98,50 +98,22 @@ external to the CCU.
 
 Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 ---
- drivers/clk/sunxi-ng/ccu-sun8i-v3s.c | 29 ++++++++++++++++++----------
- 1 file changed, 19 insertions(+), 10 deletions(-)
+ drivers/clk/sunxi-ng/ccu-sun8i-r.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/clk/sunxi-ng/ccu-sun8i-v3s.c b/drivers/clk/sunxi-ng/ccu-sun8i-v3s.c
-index ec64eb692ecf..60f011b1fbf6 100644
---- a/drivers/clk/sunxi-ng/ccu-sun8i-v3s.c
-+++ b/drivers/clk/sunxi-ng/ccu-sun8i-v3s.c
-@@ -437,17 +437,26 @@ static struct ccu_common *sun8i_v3s_ccu_clks[] = {
- 	&mipi_csi_clk.common,
+diff --git a/drivers/clk/sunxi-ng/ccu-sun8i-r.c b/drivers/clk/sunxi-ng/ccu-sun8i-r.c
+index a43e8de873d7..4a111c28b8c3 100644
+--- a/drivers/clk/sunxi-ng/ccu-sun8i-r.c
++++ b/drivers/clk/sunxi-ng/ccu-sun8i-r.c
+@@ -57,7 +57,7 @@ static struct ccu_div ar100_clk = {
+ 	},
  };
  
-+static const struct clk_hw *clk_parent_pll_audio[] = {
-+	&pll_audio_base_clk.common.hw
-+};
-+
- /* We hardcode the divider to 4 for now */
--static CLK_FIXED_FACTOR(pll_audio_clk, "pll-audio",
--			"pll-audio-base", 4, 1, CLK_SET_RATE_PARENT);
--static CLK_FIXED_FACTOR(pll_audio_2x_clk, "pll-audio-2x",
--			"pll-audio-base", 2, 1, CLK_SET_RATE_PARENT);
--static CLK_FIXED_FACTOR(pll_audio_4x_clk, "pll-audio-4x",
--			"pll-audio-base", 1, 1, CLK_SET_RATE_PARENT);
--static CLK_FIXED_FACTOR(pll_audio_8x_clk, "pll-audio-8x",
--			"pll-audio-base", 1, 2, CLK_SET_RATE_PARENT);
--static CLK_FIXED_FACTOR(pll_periph0_2x_clk, "pll-periph0-2x",
--			"pll-periph0", 1, 2, 0);
-+static CLK_FIXED_FACTOR_HWS(pll_audio_clk, "pll-audio",
-+			    clk_parent_pll_audio,
-+			    4, 1, CLK_SET_RATE_PARENT);
-+static CLK_FIXED_FACTOR_HWS(pll_audio_2x_clk, "pll-audio-2x",
-+			    clk_parent_pll_audio,
-+			    2, 1, CLK_SET_RATE_PARENT);
-+static CLK_FIXED_FACTOR_HWS(pll_audio_4x_clk, "pll-audio-4x",
-+			    clk_parent_pll_audio,
-+			    1, 1, CLK_SET_RATE_PARENT);
-+static CLK_FIXED_FACTOR_HWS(pll_audio_8x_clk, "pll-audio-8x",
-+			    clk_parent_pll_audio,
-+			    1, 2, CLK_SET_RATE_PARENT);
-+static CLK_FIXED_FACTOR_HW(pll_periph0_2x_clk, "pll-periph0-2x",
-+			   &pll_periph0_clk.common.hw,
-+			   1, 2, 0);
+-static CLK_FIXED_FACTOR(ahb0_clk, "ahb0", "ar100", 1, 1, 0);
++static CLK_FIXED_FACTOR_HW(ahb0_clk, "ahb0", &ar100_clk.common.hw, 1, 1, 0);
  
- static struct clk_hw_onecell_data sun8i_v3s_hw_clks = {
- 	.hws	= {
+ static struct ccu_div apb0_clk = {
+ 	.div		= _SUNXI_CCU_DIV_FLAGS(0, 2, CLK_DIVIDER_POWER_OF_TWO),
 -- 
 2.20.1
 
