@@ -2,74 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 040732391E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 16:01:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6AE2323911
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 16:01:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HSMIJlIZc6ziB0rkhSRFOpu25EL3Ok3AyETr/Ej18OE=; b=pHfV15nTrp/MQW
-	VWcKCByi9ebD/3BhEnprjVuIjAGVv9LhnslKfq0qN1+njsJ2Qok9g4QO2BrK22R8Xu8/HQG28NcXp
-	qV9Irdn76zSXMGWj82KnSxXgeGV/vFEERW56aD5Q7YU4rPjpdhnN6YExlo3qNAAhYCSNOPp90jtuD
-	u0KOJs9/xLnxcFRcXlK/0bVcilhb9j8oHeyNp/SMp4H8yj5FEUsmjzZ74FeHYdLvrt3R7nfpZo4hl
-	38YtN+F1z80mAtdQ82mJmaJX9WDhlMtOHkUUx88wO/zk0L4u2nVwHvOn4EtNle4fJOTo/tpNFxgik
-	nqFuLv9D11CBpIfFQJPQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ASmqfC5jKFtE19VIJ0iiZeO2uqMu0T8rLsNEOM0sEO8=; b=aRfInUk5/cyBtE
+	0p/88tuaK6vSliambzV0iWnmV9HjS2uk2WYNULX06nv6yBNCcHVETLTVHOscoBABkd5iCb2bPtrnF
+	HT22zUUasL9Qm1X8Bd6+qbCEF3dcD0P5Q7Pa7KNtC1mnNL4aBYfI4HzVJ/HTMWCA4sCBT5jRh03MG
+	PjOfR+Q1wOBjl9VcrQbWWm7HDoxpjfpOKuRkG/BRAh6kiYrSQjDYYYeTo2SBD6jtQhGUoXyhqFPoA
+	QKxEgz+NNPHgPy8OixdcKilNAAG+Cb+6umbg6yMuRFsJFVQZLSrVPbFamwdDzPHn4oy0FkzrDewcs
+	+i7p3+xuAY/EDeJ9+ZQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSir7-0001Y8-UQ; Mon, 20 May 2019 14:01:33 +0000
-Received: from mail-lf1-f65.google.com ([209.85.167.65])
+	id 1hSiqZ-0001Bx-4Q; Mon, 20 May 2019 14:00:59 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSiqz-0001Wn-Ec
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 14:01:27 +0000
-Received: by mail-lf1-f65.google.com with SMTP id h13so10416546lfc.7
+ id 1hSiqP-00019y-Kj
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 14:00:51 +0000
+Received: by mail-wr1-x443.google.com with SMTP id r7so14702642wrr.13
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 07:01:24 -0700 (PDT)
+ Mon, 20 May 2019 07:00:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=P9mL4O5UKxgeQ6YgVpvHFfuhwxbNZ5YHPxsK8gfhi68=;
+ b=Ecr0J2lDt2WmB+uNkzfbXRDF2lIXqOPdSPEi+quISw8aJCpu/hEJKP37CfN8xM90pe
+ rzVEFd+Tzm2bAyEl6wpifclLxw3NffujRuFHLXDRRYia+I5y1IxRM9L49Yxby7G5s1MN
+ 2PZalXgXFXiht3BlfnASJn8b49sFcV/0p01o9F6ZgCjGZ0e+X0Ii6vyE/ScTE0L7qYuk
+ ELp35CNOva/X/T2xbpw5hQOBlnElKoBDK1canzWOAa2Y8Vvu4MMrSuGq8MqOZf5yY3pT
+ XqtsEZnrHo1q1MAMwa244hkx4zx8xQjOLZBbDSgzbSdI98vhFwbRuwRNpWSFDH2v+HXw
+ ntIQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=k5M5HG3kl0pUgSauCfNvkeVzL85t6u8JUUHdn9mhx04=;
- b=Hd0xO2LSEKxjRAdYyiCeIuA0OM8yiO81PvtoAaL4VxPdqs/sus3qw1Y0DlTUwAWZ8F
- 3Hv/5oO9TolI6YmQMtiZKuIrizqeQIv3F5Q6teZr5FtjHMe2zVJ0kzDLlhMpBBWe2Uzz
- R93LgkDHYQlE7O5JWKOkx1N0qAxsdHDnX0cnw85+W0oJyVrFq1KNZ1PH9bPVmx1ON9fL
- C2Y7bZdd+3NpEMCfb3MzbPu72AubWCq2zL6qrXhX7IB9jfY2bc5oL00WNGg/bk03M8GM
- 00hPdHA8baf8dZWXV7Yl/Hvt3bziaFIyKWr6v0nNLygHBGqyR2oDootD1e6oe4K9jOu2
- lCiA==
-X-Gm-Message-State: APjAAAUycuRowHLGZgaeZz268BJkZfdaXX2Za6E4ZPSYAJeSKbKAzYRl
- 5EVzAeTULPBiO5CPaZ1bYwFf8rY44Zl6d4p1boo=
-X-Google-Smtp-Source: APXvYqzBXH0Bn12gU+O/WKysSzgvfoDb4ZQdIiC8js/Lv4/NzbFVAIlWC//CHbjkYuLxxyAwqyeGdyzFagcgQl6QGI8=
-X-Received: by 2002:a19:a887:: with SMTP id r129mr1920861lfe.16.1558360883054; 
- Mon, 20 May 2019 07:01:23 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=P9mL4O5UKxgeQ6YgVpvHFfuhwxbNZ5YHPxsK8gfhi68=;
+ b=AJ5g5tsRVHQdEuQSclOzm0ivgToOsLFszIP7diFk5MGoPuKxDd/AMQ/mzaOIF6/k0Z
+ DI7cy5g3JnBV/22NpD4vHguvqBL0AFa1FZnfmeJHoq9oPHAA4pcmj/nJfc0MnQF8yIHa
+ qqd7yXPUAk93wG9fiMWD3/mltQZtMkzmfjxYHsUauhk8f8hoiPoWxQFiighc3YpW5UnS
+ l9QrlOSPmFHXZvTgiWnglvRqDkv3ZUABOlLVL0hMSyuGWMI0GZlzXHfeS5Q6/zTNkk6C
+ 97yxfTCQYMRjvxUeHoel3yfy0UTVDWLgORTPxDqlWTkpgxrwdbAkIyiF7ewuRo8buCtP
+ vSJg==
+X-Gm-Message-State: APjAAAUcnqCrw/YkJyl3qX5UPatRncmprRRuUbv8BivtOZcPc65yOLca
+ J/SoBuc+QsmOywSuxZ1TX0qTkg==
+X-Google-Smtp-Source: APXvYqxMh33+I8kq6JhPQH8T+UhQDbExP4qPLZU0cohanQu1ilJqgxLnPPggT85p1cjHMhE/I9oTXA==
+X-Received: by 2002:adf:ec8c:: with SMTP id z12mr36015735wrn.209.1558360848054; 
+ Mon, 20 May 2019 07:00:48 -0700 (PDT)
+Received: from bender.baylibre.local
+ (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id x2sm5292076wrs.39.2019.05.20.07.00.47
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Mon, 20 May 2019 07:00:47 -0700 (PDT)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: khilman@baylibre.com
+Subject: [PATCH] firmware: meson: meson_sm: update with SPDX Licence identifier
+Date: Mon, 20 May 2019 16:00:45 +0200
+Message-Id: <20190520140045.29125-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-References: <20190520134605.29116-1-christian@brauner.io>
-In-Reply-To: <20190520134605.29116-1-christian@brauner.io>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Mon, 20 May 2019 16:00:44 +0200
-Message-ID: <CAMuHMdVfy-fWVGzd8orLHbC=pOmUH-ocvhjj2DCZdEQRxctYQA@mail.gmail.com>
-Subject: Re: [PATCH v2 1/2] pid: add pidfd_open()
-To: Christian Brauner <christian@brauner.io>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_070125_484982_E1EE0E61 
-X-CRM114-Status: GOOD (  16.86  )
-X-Spam-Score: -0.3 (/)
+X-CRM114-CacheID: sfid-20190520_070049_684470_14A50116 
+X-CRM114-Status: GOOD (  11.68  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.65 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.65 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -81,77 +92,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-ia64@vger.kernel.org" <linux-ia64@vger.kernel.org>,
- Linux-sh list <linux-sh@vger.kernel.org>, Oleg Nesterov <oleg@redhat.com>,
- David Howells <dhowells@redhat.com>, Joel Fernandes <joel@joelfernandes.org>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- sparclinux <sparclinux@vger.kernel.org>, elena.reshetova@intel.com,
- Linux-Arch <linux-arch@vger.kernel.org>,
- linux-s390 <linux-s390@vger.kernel.org>, Daniel Colascione <dancol@google.com>,
- linux-mips@vger.kernel.org, Android Kernel Team <kernel-team@android.com>,
- "Serge E. Hallyn" <serge@hallyn.com>, linux-xtensa@linux-xtensa.org,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- Jann Horn <jannh@google.com>, linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
- linux-m68k <linux-m68k@lists.linux-m68k.org>,
- Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, surenb@google.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Parisc List <linux-parisc@vger.kernel.org>, cyphar@cyphar.com,
- Linux API <linux-api@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Andy Lutomirski <luto@amacapital.net>,
- "Eric W. Biederman" <ebiederm@xmission.com>,
- alpha <linux-alpha@vger.kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
- "torvalds@linux-foundation.org" <torvalds@linux-foundation.org>
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 20, 2019 at 3:46 PM Christian Brauner <christian@brauner.io> wrote:
-> This adds the pidfd_open() syscall. It allows a caller to retrieve pollable
-> pidfds for a process which did not get created via CLONE_PIDFD, i.e. for a
-> process that is created via traditional fork()/clone() calls that is only
-> referenced by a PID:
->
-> int pidfd = pidfd_open(1234, 0);
-> ret = pidfd_send_signal(pidfd, SIGSTOP, NULL, 0);
->
-> With the introduction of pidfds through CLONE_PIDFD it is possible to
-> created pidfds at process creation time.
-> However, a lot of processes get created with traditional PID-based calls
-> such as fork() or clone() (without CLONE_PIDFD). For these processes a
-> caller can currently not create a pollable pidfd. This is a problem for
-> Android's low memory killer (LMK) and service managers such as systemd.
-> Both are examples of tools that want to make use of pidfds to get reliable
-> notification of process exit for non-parents (pidfd polling) and race-free
-> signal sending (pidfd_send_signal()). They intend to switch to this API for
-> process supervision/management as soon as possible. Having no way to get
-> pollable pidfds from PID-only processes is one of the biggest blockers for
-> them in adopting this api. With pidfd_open() making it possible to retrieve
-> pidfds for PID-based processes we enable them to adopt this api.
->
-> In line with Arnd's recent changes to consolidate syscall numbers across
-> architectures, I have added the pidfd_open() syscall to all architectures
-> at the same time.
->
-> Signed-off-by: Christian Brauner <christian@brauner.io>
-> Reviewed-by: Oleg Nesterov <oleg@redhat.com>
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+---
+ drivers/firmware/meson/meson_sm.c       | 8 +-------
+ include/linux/firmware/meson/meson_sm.h | 8 +-------
+ 2 files changed, 2 insertions(+), 14 deletions(-)
 
->  arch/m68k/kernel/syscalls/syscall.tbl       |  1 +
-
-Acked-by: Geert Uytterhoeven <geert@linux-m68k.org>
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
+diff --git a/drivers/firmware/meson/meson_sm.c b/drivers/firmware/meson/meson_sm.c
+index 29fbc818a573..4ef8c04ef80c 100644
+--- a/drivers/firmware/meson/meson_sm.c
++++ b/drivers/firmware/meson/meson_sm.c
+@@ -1,15 +1,9 @@
++// SPDX-License-Identifier: GPL-2.0
+ /*
+  * Amlogic Secure Monitor driver
+  *
+  * Copyright (C) 2016 Endless Mobile, Inc.
+  * Author: Carlo Caione <carlo@endlessm.com>
+- *
+- * This program is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU General Public License
+- * version 2 as published by the Free Software Foundation.
+- *
+- * You should have received a copy of the GNU General Public License
+- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+ #define pr_fmt(fmt) "meson-sm: " fmt
+diff --git a/include/linux/firmware/meson/meson_sm.h b/include/linux/firmware/meson/meson_sm.h
+index f98c20dd266e..7b855deb1b15 100644
+--- a/include/linux/firmware/meson/meson_sm.h
++++ b/include/linux/firmware/meson/meson_sm.h
+@@ -1,13 +1,7 @@
++/* SPDX-License-Identifier: GPL-2.0 */
+ /*
+  * Copyright (C) 2016 Endless Mobile, Inc.
+  * Author: Carlo Caione <carlo@endlessm.com>
+- *
+- * This program is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU General Public License
+- * version 2 as published by the Free Software Foundation.
+- *
+- * You should have received a copy of the GNU General Public License
+- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+ #ifndef _MESON_SM_FW_H_
 -- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+2.21.0
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
