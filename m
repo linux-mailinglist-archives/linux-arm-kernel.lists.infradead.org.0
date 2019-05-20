@@ -2,64 +2,138 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4BE722F0E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 10:36:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D59B222F65
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 10:54:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ymu7Yt1MVLII67Kn0dXiUSL4BfD3uqZhSOTEjULar8E=; b=dC9exf1QtgS3Pg
-	r9hGCiYg1xEV4G1MoNiujZln1exSci05hpqZAiXfyo0ARFmqdTTtrUcF0a9w46Fxrd3cFCE42BWiB
-	p4spP08SwZiu8P9JWfzwI7C4rv86COxKJ85lz221wyb+VhCFQNjbVC757Okw+UyifFHZ9u6LOBlay
-	+9QOTipWy4OvmbsOsmrbx2zw3gzidKd9AYak6OdU7MxWwv2Nev+X6qNQPmydJA9N9+YCe4eja/rdt
-	QS3qZq0gTnPyj83d/9K8lSCYJKEVRoj+m7u1A61za5U6j5LEBzcFP7GH5v0zVB3n2rI0iC+cc+dAG
-	Wt/bVQ8KPuQ1rdc20iMQ==;
+	List-Owner; bh=T95FCdt567lTJmmsI4wHwof70tijWL4MM0moZS9eHT4=; b=eL9H/S4N55fWLs
+	gzA2xz7XsOq0GPhnUZENnY46xXAVuoZ+mRVmFpSAo0/Dk1QohiFEuB5jnz+D05xN4IzvjwfeFtDz4
+	SVu5An6hVJqnPmyILG1UMjgFnW0XqZrvmLDQyRHGAWhSbU2GkBDvPAMmtJ2DZA0hiQkkZLdAkEZno
+	gBbIbSAwUkGTgblpVpGgpVp6JvtUExryiMwt2oOBnL0RWT5WAKXtWu25wcdXZQXjqqDmoeRkvb+gI
+	6pqKE1/OHkNpMog/WwBcbCsJhH0oIEX8aO35K/yH7lOUYRjPr8lJ9Gebmgn3QOlsDdxOvILcuTnxl
+	VenIme6gNlzKRvDZyZKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSdmJ-0005z2-KT; Mon, 20 May 2019 08:36:15 +0000
-Received: from mga09.intel.com ([134.134.136.24])
+	id 1hSe4G-0003CE-9D; Mon, 20 May 2019 08:54:48 +0000
+Received: from esa5.microchip.iphmx.com ([216.71.150.166])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSdmC-0005yY-An; Mon, 20 May 2019 08:36:10 +0000
-X-Amp-Result: UNSCANNABLE
-X-Amp-File-Uploaded: False
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
- by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 20 May 2019 01:36:07 -0700
-X-ExtLoop1: 1
-Received: from kuha.fi.intel.com ([10.237.72.189])
- by fmsmga001.fm.intel.com with SMTP; 20 May 2019 01:36:02 -0700
-Received: by kuha.fi.intel.com (sSMTP sendmail emulation);
- Mon, 20 May 2019 11:36:01 +0300
-Date: Mon, 20 May 2019 11:36:01 +0300
-From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-To: Biju Das <biju.das@bp.renesas.com>
-Subject: Re: [PATCH v5 4/6] usb: roles: add API to get usb_role_switch by node
-Message-ID: <20190520083601.GE1887@kuha.fi.intel.com>
-References: <1557823643-8616-1-git-send-email-chunfeng.yun@mediatek.com>
- <1557823643-8616-5-git-send-email-chunfeng.yun@mediatek.com>
- <20190517103736.GA1490@kuha.fi.intel.com>
- <20190517130511.GA1887@kuha.fi.intel.com>
- <1558319951.10179.352.camel@mhfsdcap03>
- <20190520080359.GC1887@kuha.fi.intel.com>
- <OSBPR01MB2103385D996762FA54F8E437B8060@OSBPR01MB2103.jpnprd01.prod.outlook.com>
+ id 1hSe49-0003AT-JY
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 08:54:43 +0000
+Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
+ Claudiu.Beznea@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="Claudiu.Beznea@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa5.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa5.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+X-IronPort-AV: E=Sophos;i="5.60,491,1549954800"; d="scan'208";a="32166388"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa5.microchip.iphmx.com with ESMTP/TLS/DHE-RSA-AES256-SHA;
+ 20 May 2019 01:54:33 -0700
+Received: from NAM02-BL2-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.76.107) with Microsoft SMTP Server (TLS)
+ id 14.3.352.0; Mon, 20 May 2019 01:54:31 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector1-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=kym2ucJTB00u/0r5PK5KuwaYL68HfMmqgeANTDlnHCs=;
+ b=KfWyVWklExTNcdhxkhJVN1ZuxM5KHzgnEg74iq0++LpCL5zaNzZVuzRvzKZeLF6chSGwsq+jWJznOT2o+B/xKsjpYSclnciA1BfEbMovTq+UdhQlMunyqDt6i7kGrXXUOXQ5DMI+arv/o1iPdbC/JvCqZm/bgilMvAlacK9JH0k=
+Received: from CY4PR11MB1543.namprd11.prod.outlook.com (10.172.70.22) by
+ CY4PR11MB1800.namprd11.prod.outlook.com (10.175.62.16) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1900.18; Mon, 20 May 2019 08:54:24 +0000
+Received: from CY4PR11MB1543.namprd11.prod.outlook.com
+ ([fe80::ada3:81b8:4954:9722]) by CY4PR11MB1543.namprd11.prod.outlook.com
+ ([fe80::ada3:81b8:4954:9722%4]) with mapi id 15.20.1900.010; Mon, 20 May 2019
+ 08:54:24 +0000
+From: <Claudiu.Beznea@microchip.com>
+To: <alexandre.belloni@bootlin.com>
+Subject: Re: [PATCH v3 2/4] clk: at91: sckc: add support to specify registers
+ bit offsets
+Thread-Topic: [PATCH v3 2/4] clk: at91: sckc: add support to specify registers
+ bit offsets
+Thread-Index: AQHVByLMz9Q/0hn5ekyMa2w9MKbUHaZk4YYAgAiN1ACAAm0oAIAD6GMA
+Date: Mon, 20 May 2019 08:54:24 +0000
+Message-ID: <8900ba46-7166-2b5e-961b-3786121c845f@microchip.com>
+References: <1557487388-32098-1-git-send-email-claudiu.beznea@microchip.com>
+ <1557487388-32098-3-git-send-email-claudiu.beznea@microchip.com>
+ <20190510213242.GE7622@piout.net>
+ <b99b1782-30be-b6b9-0df2-f14125be22ac@microchip.com>
+ <20190517211336.GB7685@piout.net>
+In-Reply-To: <20190517211336.GB7685@piout.net>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: LO2P265CA0267.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:600:a1::15) To CY4PR11MB1543.namprd11.prod.outlook.com
+ (2603:10b6:910:c::22)
+x-ms-exchange-messagesentrepresentingtype: 1
+x-tagtoolbar-keys: D20190520115408312
+x-originating-ip: [94.177.32.154]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 4bc19ab6-07b4-436e-0df7-08d6dd00c15c
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(2017052603328)(7193020);
+ SRVR:CY4PR11MB1800; 
+x-ms-traffictypediagnostic: CY4PR11MB1800:
+x-microsoft-antispam-prvs: <CY4PR11MB18000F61532B379B8F72805B87060@CY4PR11MB1800.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 004395A01C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(366004)(39860400002)(376002)(346002)(396003)(136003)(52314003)(199004)(189003)(81166006)(81156014)(7736002)(8676002)(305945005)(68736007)(4326008)(66946007)(66476007)(31696002)(66556008)(73956011)(64756008)(186003)(26005)(66446008)(3846002)(6116002)(53936002)(36756003)(6246003)(6512007)(99286004)(66066001)(6436002)(31686004)(6486002)(446003)(316002)(6916009)(8936002)(102836004)(229853002)(54906003)(76176011)(52116002)(486006)(25786009)(53546011)(11346002)(2616005)(2906002)(476003)(6506007)(386003)(14454004)(14444005)(256004)(478600001)(71200400001)(71190400001)(72206003)(86362001)(5660300002)(4744005);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:CY4PR11MB1800;
+ H:CY4PR11MB1543.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: W5Z+npApKFj2jjjVwZYP/pR3I+kyuhPWDuJDyxX2iBt3SwzTZ/QMCwAasIpU9zBzQg9GbLfE+oSb39JdCOGExHoRDLVS57YNS84g8bapOD8w9zByZpBk9wgcUrcVVkpZo0jFxCkJ/45TJOKhBJzyJ8wxyBw742djUxBGh+xrMR/udf3fhZoyuLWHZ/hZm4kc3E2CfDZ6T8CEvZ3LXFEngo/YpjXcda2C3aNUrHgJJFbtfroObhkwDCW3ii39yH2L67zKSNOV4s0bQTz9bWs5K9Vj+iIjDAelXC/rph+xo/G3ci9d2OQdaRBxJSuU7nMCwqFiwL5zUK+WikIdXG/UCw/7LmEeEUTaLG9RqMLCg9f21dL7fyRfss7lw0o0Yud6ygwLEam62W9QC1bCAeBdFlWSwAxf/OsxeE5+7Qp9kQw=
+Content-ID: <17043DB5617E724DA7B445DF92546F4F@namprd11.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <OSBPR01MB2103385D996762FA54F8E437B8060@OSBPR01MB2103.jpnprd01.prod.outlook.com>
-User-Agent: Mutt/1.11.4 (2019-03-13)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4bc19ab6-07b4-436e-0df7-08d6dd00c15c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 May 2019 08:54:24.5868 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR11MB1800
+X-OriginatorOrg: microchip.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_013608_416041_501D07EA 
-X-CRM114-Status: GOOD (  24.71  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190520_015441_756204_8CD00E7E 
+X-CRM114-Status: GOOD (  10.44  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.24 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.150.166 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -71,90 +145,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Hans de Goede <hdegoede@redhat.com>,
- Badhri Jagan Sridharan <badhri@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Andy Shevchenko <andy.shevchenko@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- Min Guo <min.guo@mediatek.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Li Jun <jun.li@nxp.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, sboyd@kernel.org,
+ mturquette@baylibre.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 20, 2019 at 08:06:41AM +0000, Biju Das wrote:
-> Hi Heikki,
+
+
+On 18.05.2019 00:13, Alexandre Belloni wrote:
+> External E-Mail
 > 
-> > -----Original Message-----
-> > From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-> > Sent: Monday, May 20, 2019 9:04 AM
-> > To: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> > Cc: Rob Herring <robh+dt@kernel.org>; Greg Kroah-Hartman
-> > <gregkh@linuxfoundation.org>; Mark Rutland <mark.rutland@arm.com>;
-> > Matthias Brugger <matthias.bgg@gmail.com>; Adam Thomson
-> > <Adam.Thomson.Opensource@diasemi.com>; Li Jun <jun.li@nxp.com>;
-> > Badhri Jagan Sridharan <badhri@google.com>; Hans de Goede
-> > <hdegoede@redhat.com>; Andy Shevchenko
-> > <andy.shevchenko@gmail.com>; Min Guo <min.guo@mediatek.com>;
-> > devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; linux-
-> > usb@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-
-> > mediatek@lists.infradead.org; Biju Das <biju.das@bp.renesas.com>; Linus
-> > Walleij <linus.walleij@linaro.org>
-> > Subject: Re: [PATCH v5 4/6] usb: roles: add API to get usb_role_switch by
-> > node
-> > 
-> > On Mon, May 20, 2019 at 10:39:11AM +0800, Chunfeng Yun wrote:
-> > > Hi,
-> > > On Fri, 2019-05-17 at 16:05 +0300, Heikki Krogerus wrote:
-> > > > Hi,
-> > > >
-> > > > On Fri, May 17, 2019 at 01:37:36PM +0300, Heikki Krogerus wrote:
-> > > > > On Tue, May 14, 2019 at 04:47:21PM +0800, Chunfeng Yun wrote:
-> > > > > > Add fwnode_usb_role_switch_get() to make easier to get
-> > > > > > usb_role_switch by fwnode which register it.
-> > > > > > It's useful when there is not device_connection registered
-> > > > > > between two drivers and only knows the fwnode which register
-> > > > > > usb_role_switch.
-> > > > > >
-> > > > > > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> > > > > > Tested-by: Biju Das <biju.das@bp.renesas.com>
-> > > > >
-> > > > > Acked-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-> > > >
-> > > > Hold on. I just noticed Rob's comment on patch 2/6, where he points
-> > > > out that you don't need to use device graph since the controller is
-> > > > the parent of the connector. Doesn't that mean you don't really need
-> > > > this API?
-> > > No, I still need it.
-> > > The change is about the way how to get fwnode; when use device graph,
-> > > get fwnode by of_graph_get_remote_node(); but now will get fwnode by
-> > > of_get_parent();
-> > 
-> > OK, I get that, but I'm still not convinced about if something like this function
-> > is needed at all. I also have concerns regarding how you are using the
-> > function. I'll explain in comment to the patch 5/6 in this series...
 > 
-> FYI, Currently  I am also using this api in my patch series.
-> https://patchwork.kernel.org/patch/10944637/
+> On 16/05/2019 08:10:34+0000, Claudiu.Beznea@microchip.com wrote:
+>>>> @@ -69,10 +80,11 @@ static int clk_slow_osc_prepare(struct clk_hw *hw)
+>>>>  	void __iomem *sckcr = osc->sckcr;
+>>>>  	u32 tmp = readl(sckcr);
+>>>>  
+>>>> -	if (tmp & (AT91_SCKC_OSC32BYP | AT91_SCKC_OSC32EN))
+>>>> +	if (tmp & (AT91_SCKC_OSC32BYP(osc->bits) |
+>>>> +		   AT91_SCKC_OSC32EN(osc->bits)))
+>>>
+>>> I still find that:
+>>>
+>>> 	if (tmp & (osc->bits->cr_osc32byp | osc->bits->cr_osc32en))
+>>>
+>>> would be shorter and easier to read and still fits on one line.
+>>
+>> Agree, but I thought to use the same interface everywhere. Anyway, tell me
+>> if you want to resend with these changes.
+>>
+> My comment applies to all the AT91_SCKC_.*() macros. I don't feel that
+> the macros make the code clearer, accessing bits->cr_.* is self
+> documenting enough (and makes the code shorter).
 
-Yes, and I have the same question for you I jusb asked in comment I
-added to the patch 5/6 of this series. Why isn't usb_role_switch_get()
-enough?
+OK, I'll send a new version taking this into consideration.
 
-thanks,
-
--- 
-heikki
-
+> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
