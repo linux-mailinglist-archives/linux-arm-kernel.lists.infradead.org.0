@@ -2,85 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A6732395A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 16:05:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A63612395E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 16:05:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=lTysExLgXKDGrNJeGDMoNkhY8+8RoryiYhW81lGVkr8=; b=foHhbxlKFGlrIO
-	pQmk7n2r5Vnf8iZ3SxUok3rva7FGI/h5FywG1OakpzH0RUWkIrQ6RRAbN0BVtaIRODQuHPksW2sy+
-	cNMWaHIH1xz4yfB4XqIBfnJZmKEAx5r/ND8o4qr/blwWiqFHai15Jd3RjksXPaw7/b1W86p0NXqF4
-	0tj6xaks0IZqzzJpzttRCL9OT7MbqDhEmMWa7gnviAFERFWQcE9Mk9YA8wxrWfi70lBBX0ic0glyY
-	XUWye+kgRMUbF+4K6yFd3xG1pNnLrNAH+XAKWeQHW/q8lJiLtPIM3z4G1BToOWWkR3rkMcShTLU2A
-	jQmj583TRE72dc4F+YzA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TI/J5Js55HHYpgQ24i8/Di2+sSP0aoK4RCYW0gvWHwA=; b=RDWgP4NJae2AEd
+	yLxDS3BRYF0KcGbuCV6dvThaDoU7nZsFTvZmnerqTfh1E6XNGgyJyQFQeVdStkZFzl3WW6S4EcLj/
+	kBpazDEQCLdBOnsTRUaTU59ehMqzOD8qZxEMKYdSFxmxfeV7sCutLRwzoo9q1kKPGpNsLeIR718F0
+	Av3+MrqdEEfboWtriHBqxpH1lHKaVY3KoM+6Z8eAWbshP09DRaPuC7bg4b0tsaYkC/j6XS7UVtFNH
+	WnDcTwl+YkPK2bHleIutCNT7GsTwQyi/CDPkgzknwLGGj6u6HfdWzkVQdd6GqrhzXxqdVW7abM7GH
+	boM73qIWVlJrRLQO/cpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSiub-0003M9-1h; Mon, 20 May 2019 14:05:09 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hSivF-0004qX-Sz; Mon, 20 May 2019 14:05:49 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSiuO-0003LS-J2
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 14:04:58 +0000
-Received: by mail-wm1-x344.google.com with SMTP id f204so13479189wme.0
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 07:04:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=txk5DrZL33dHOyu6S/hwbHrXibD4nPtpq1m/2A+Wxoo=;
- b=t73dgU0Gc247WTF7B1Vk9vORzWG22PieCyt/1IhbX0ojd/0VrZw4VEQEr7Rfcjh6/l
- ZD0G2DsREEckY4mBG0ythw/g61R1AK4iLUKci+a0R2JU8eaaEf4bGNyDtqYbtfmrRnop
- pBbxVtrzMZeoIHuBPDOqAu4qp0dBncZztbNkwLQnxhu3S59r4/V7nehwMmMJJ/JNgd1K
- 8UfjICYJRWEr+I0zKj2VuNujr9ioMZSMSqudF5Of41Wp/Cd42cdFDib4qAoCc2xZbbSy
- 6psPlnUKIMz0Pimomwu/DK/tMqUHFvQUKy8xKGwl3sEaSl/bKoldGbQPJ4xAwM0RCW9j
- KSwg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=txk5DrZL33dHOyu6S/hwbHrXibD4nPtpq1m/2A+Wxoo=;
- b=ijNIpCZqF1Mhq5wxA8r7rg8XRpF4b8hU7haIXIPb4dPqMsEU1harCEBw3hfQAk8Fck
- SGnyN1DoeSmTgk+cZkkkg2exV5b3wR8cogvYLL6E3/s1b+BzQr8+Dv2b+vQpsm1bo3aD
- bHy7evTlh9ai7UimP12m69LUG+mUrRMT2kP2er+RZcqzP2PMObzLczFJT2Z0iqqxpkjI
- yI4AX88E6yPFsT8ew5M/Fk6WXufg7tRC0/WIw3SwWWqhoTYG9ABgJ21wpEPGgp2jMEV1
- l7iJzY+6zQoMaEQEBKH+vOkfL4WxUcnxHfFaujkr+uJpFaGU/zUzC83KbLFMp5+fIR9T
- Impg==
-X-Gm-Message-State: APjAAAXLIhD3EfWNF8byfCKqLy2Rz+Sy5bxVL0L6n4dAGlQpAp2bS34t
- nSVciK6k+DOdYds47rAWaIjw2Q==
-X-Google-Smtp-Source: APXvYqwT6uVZjGxR/n5pqIYoJJgpdt5n9FK1oWxNGhWKEAx/4tWR4B+kGZw3mByDDBsWKa9cNp/B1g==
-X-Received: by 2002:a7b:c844:: with SMTP id c4mr12089515wml.108.1558361095088; 
- Mon, 20 May 2019 07:04:55 -0700 (PDT)
-Received: from bender.baylibre.local
- (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id w18sm13731201wru.15.2019.05.20.07.04.54
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 20 May 2019 07:04:54 -0700 (PDT)
-From: Neil Armstrong <narmstrong@baylibre.com>
-To: broonie@kernel.org
-Subject: [PATCH] spi: spi-meson-spifc: update with SPDX Licence identifier
-Date: Mon, 20 May 2019 16:04:52 +0200
-Message-Id: <20190520140452.30167-1-narmstrong@baylibre.com>
-X-Mailer: git-send-email 2.21.0
+ id 1hSiv7-0004pZ-Ie; Mon, 20 May 2019 14:05:42 +0000
+X-UUID: 3c9ec5f8585644329577aa91e7d57e5f-20190520
+X-UUID: 3c9ec5f8585644329577aa91e7d57e5f-20190520
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 662098336; Mon, 20 May 2019 06:05:32 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 20 May 2019 07:05:30 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 20 May 2019 22:05:29 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 20 May 2019 22:05:29 +0800
+Message-ID: <1558361129.660.8.camel@mtkswgap22>
+Subject: RE: [PATCH v3 2/3] scsi: ufs: Add error-handling of Auto-Hibernate
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: Avri Altman <Avri.Altman@wdc.com>
+Date: Mon, 20 May 2019 22:05:29 +0800
+In-Reply-To: <SN6PR04MB4925DE7B66A63ED81EDD9444FC060@SN6PR04MB4925.namprd04.prod.outlook.com>
+References: <1558341138-18043-1-git-send-email-stanley.chu@mediatek.com>
+ <1558341138-18043-3-git-send-email-stanley.chu@mediatek.com>
+ <SN6PR04MB4925DE7B66A63ED81EDD9444FC060@SN6PR04MB4925.namprd04.prod.outlook.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_070456_622490_EA8D7A1A 
-X-CRM114-Status: GOOD (  11.32  )
+X-CRM114-CacheID: sfid-20190520_070541_614552_0306B4AB 
+X-CRM114-Status: GOOD (  11.27  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -92,41 +72,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-spi@vger.kernel.org
+Cc: "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
+ "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
+ "marc.w.gonzalez@free.fr" <marc.w.gonzalez@free.fr>,
+ "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
+ "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
+ "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
+ "evgreen@chromium.org" <evgreen@chromium.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
+ "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "pedrom.sousa@synopsys.com" <pedrom.sousa@synopsys.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "beanhuo@micron.com" <beanhuo@micron.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
----
- drivers/spi/spi-meson-spifc.c | 8 +-------
- 1 file changed, 1 insertion(+), 7 deletions(-)
+Hi Avri,
 
-diff --git a/drivers/spi/spi-meson-spifc.c b/drivers/spi/spi-meson-spifc.c
-index 616566e793c6..20413def4cfb 100644
---- a/drivers/spi/spi-meson-spifc.c
-+++ b/drivers/spi/spi-meson-spifc.c
-@@ -1,14 +1,8 @@
-+// SPDX-License-Identifier: GPL-2.0+
- /*
-  * Driver for Amlogic Meson SPI flash controller (SPIFC)
-  *
-  * Copyright (C) 2014 Beniamino Galvani <b.galvani@gmail.com>
-- *
-- * This program is free software; you can redistribute it and/or
-- * modify it under the terms of the GNU General Public License
-- * version 2 as published by the Free Software Foundation.
-- *
-- * You should have received a copy of the GNU General Public License
-- * along with this program. If not, see <http://www.gnu.org/licenses/>.
-  */
- 
- #include <linux/clk.h>
--- 
-2.21.0
+On Mon, 2019-05-20 at 09:51 +0000, Avri Altman wrote:
+> Aside from some nits - see below, looks fine.
+> 
+> Thanks,
+> Avri
+> 
+> > diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
+> > index ecfa898b9ccc..994d73d03207 100644
+> > --- a/drivers/scsi/ufs/ufshcd.h
+> > +++ b/drivers/scsi/ufs/ufshcd.h
+> > @@ -740,6 +740,11 @@ return true;
+> >  #endif
+> >  }
+> > 
+> > +static inline bool ufshcd_is_auto_hibern8_supported(struct ufs_hba *hba)
+> > +{
+> > +	return (hba->capabilities & MASK_AUTO_HIBERN8_SUPPORT);
+> > +}
+> Maybe use it elsewhere in the driver, preferable in a preparatory patch,
+> Instead of patch #3.
+> 
+
+OK. I will modify original patch #3 to a preparation patch which just
+re-factors ufshcd_is_auto_hibern8_supported(), and change its order to
+#2.
+> 
+> 
+> > diff --git a/drivers/scsi/ufs/ufshci.h b/drivers/scsi/ufs/ufshci.h
+> > index 6fa889de5ee5..4bcb205f2077 100644
+> > --- a/drivers/scsi/ufs/ufshci.h
+> > +++ b/drivers/scsi/ufs/ufshci.h
+> > @@ -148,6 +148,9 @@ enum {
+> >  				UIC_HIBERNATE_EXIT |\
+> >  				UIC_POWER_MODE)
+> > 
+> > +#define UFSHCD_UIC_AH8_ERROR_MASK	(UIC_HIBERNATE_ENTER |\
+> > +					UIC_HIBERNATE_EXIT)
+> So maybe update UFSHCD_UIC_PWR_MASK above
+
+OK.
+WIll make these definitions more elegant.
+
+> 
+> _______________________________________________
+> Linux-mediatek mailing list
+> Linux-mediatek@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-mediatek
+
+Thanks,
+Stanley
+
 
 
 _______________________________________________
