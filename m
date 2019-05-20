@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77F4C22DD8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 10:07:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47D0A22DF2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 10:08:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GKNwlPva0CEMLd2ex2wKug0k8Y5hz4aJJHAS34/HdKA=; b=A5vBXWJF8luZcy
-	aZCcPEKKuhxOIUNHGr6iNNBmudyA3Bo0KaoLgua9XiPmB3Zk3dXqeUBc7Z7/N3S8HjqGjQ37TXEkv
-	6zDeF68DgeCLSvf6bnKPVk49JpS8RvTPkUd/3cIR0BRcJc442AwKoN9HvrCAogCJJzxUMgM9YEBgw
-	3dKRfpwPnKSn+nwU7E/ghUy9TYv+sbIM5xYrbN41M5VPNcZG3G92nixWdVzrjHNZgRHr2Yirem2Ke
-	2W4EjJGMnp1Ndu8mhuKqWuwSGb05vHqYlywrkukHREW5JnyfyxMVk7R3fMRvuElj7Gd+p7eyuo+YH
-	XDswKkeKbs2fjg+/MGCw==;
+	List-Owner; bh=3tnIhDXe+mni+FWdisW/F0UEa5zMdAZMCb7cJ+ZVhvs=; b=csFQaUPZalE0Zn
+	hE0Y6guNna2Ll+Mn5Wz7mGaQHPGj40t7Xws166uVPZCux5UjsEU77KTBE9N39DrXIpXVVkHIUK4r8
+	6THXdL4vpdKqiQfuFuGpdP+ZDUlsIgVC7qmVfc2YlqcPuzUlRe600/6gjnsrzvIohriXBHj2eTLp8
+	sbI6rSxmWhRBenpwEgyeKfndcB7RXOr/LAfbF0e7R1Vba4yv92AYpv3NBEiZ9Tn7GSMGtoEDIuvKh
+	U+A+7WSEZcCoYKATkBJ37iqS1km97loZ3fJLzWk/IMZvHhBlk6ImD37upv3ndvULxABmBi0Z0PG9p
+	cIuFg1wlx/6asTllVceA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSdK1-000376-Fp; Mon, 20 May 2019 08:07:01 +0000
+	id 1hSdLK-0004Sy-E0; Mon, 20 May 2019 08:08:22 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSdIf-0001Ht-BD
+ id 1hSdIg-0001Ir-H8
  for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 08:05:40 +0000
 Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E7C9F208CA;
- Mon, 20 May 2019 08:05:36 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 09F842146F;
+ Mon, 20 May 2019 08:05:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1558339537;
- bh=qxbiy7pYv1UyBjII7RZZHCsKy8cgqqufDiwhp9WjbYI=;
+ bh=CWNcXcAiiwq60Rxoas+cEOG2AqiMII6Upp6sD2Byv84=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=CHSHqk3LxBF7lY/qECJVCOAMj31ubt0jtLLtuUXYv86LQNYkMO69xcocJtYq6eoHC
- k4D4B7m1BFDxf3gGV08lXNsU9V7l1DFb+leN8EU1JcQ9D7FAv7DnKTa081HQVmlFzF
- +wTzTckYuovqrxwdsD8O8D5gOZ11LW5yhNxsSVXw=
+ b=wHL45ANTG59HHoxXdcVLam0z457jT6PGVw7gbBmpJftjcCdyD/mrtLx1lsNkgVWwo
+ J9JwEpJ5ituKo+ZjXt0AJmt5eSu7ZGwYR/0a8pi6HflCi4AduivatUjdceTLe9+qf6
+ mSiax4axNXHRhdVmOHZANQesx4KwOT8/X+nRpQjk=
 Received: by wens.tw (Postfix, from userid 1000)
- id 6CCC462B58; Mon, 20 May 2019 16:05:32 +0800 (CST)
+ id 75FEE60527; Mon, 20 May 2019 16:05:32 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
 To: Maxime Ripard <maxime.ripard@bootlin.com>, Stephen Boyd <sboyd@kernel.org>,
  Michael Turquette <mturquette@baylibre.com>
-Subject: [PATCH 07/25] clk: fixed-factor: Add CLK_FIXED_FACTOR_FW_NAME for DT
- clock-names parent
-Date: Mon, 20 May 2019 16:04:03 +0800
-Message-Id: <20190520080421.12575-8-wens@kernel.org>
+Subject: [PATCH 08/25] clk: sunxi-ng: switch to of_clk_hw_register() for
+ registering clks
+Date: Mon, 20 May 2019 16:04:04 +0800
+Message-Id: <20190520080421.12575-9-wens@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190520080421.12575-1-wens@kernel.org>
 References: <20190520080421.12575-1-wens@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_010537_500026_A653BC8F 
-X-CRM114-Status: GOOD (  12.02  )
+X-CRM114-CacheID: sfid-20190520_010538_759573_C457AE8C 
+X-CRM114-Status: GOOD (  14.02  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,41 +88,33 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Chen-Yu Tsai <wens@csie.org>
 
-With the new clk parenting code, clk_init_data was expanded to include
-.parent_data, for clk drivers to specify parents using a combination of
-device tree clock-names, pointers to struct clk_hw, device tree clocks,
-and/or fallback global clock names.
+Commit 89a5ddcc799d ("clk: Add of_clk_hw_register() API for early clk
+drivers") introduces a new API for registering clks, which allows the
+user to directly specify a device node, even if there is no struct
+device attached to it. The device node is used for local DT clock-names
+matching.
 
-Add a new macro, CLK_FIXED_FACTOR_FW_NAME, that takes a string to match
-a clock-names entry in the device tree to specify the clock parent.
+Switch to of_clk_hw_register() so that local DT clock-names matching
+works.
 
 Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 ---
- include/linux/clk-provider.h | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ drivers/clk/sunxi-ng/ccu_common.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/include/linux/clk-provider.h b/include/linux/clk-provider.h
-index ac26aef874d1..a6cd04442eff 100644
---- a/include/linux/clk-provider.h
-+++ b/include/linux/clk-provider.h
-@@ -1006,6 +1006,17 @@ extern struct of_device_id __clk_of_table;
- 						  _flags),	\
- 	}
+diff --git a/drivers/clk/sunxi-ng/ccu_common.c b/drivers/clk/sunxi-ng/ccu_common.c
+index 40aac316128f..f1db29854934 100644
+--- a/drivers/clk/sunxi-ng/ccu_common.c
++++ b/drivers/clk/sunxi-ng/ccu_common.c
+@@ -110,7 +110,7 @@ int sunxi_ccu_probe(struct device_node *node, void __iomem *reg,
+ 		if (!hw)
+ 			continue;
  
-+#define CLK_FIXED_FACTOR_FW_NAME(_struct, _name, _parent,		\
-+				 _div, _mult, _flags)			\
-+	struct clk_fixed_factor _struct = {				\
-+		.div		= _div,					\
-+		.mult		= _mult,				\
-+		.hw.init	= CLK_HW_INIT_FW_NAME(_name,		\
-+						      _parent,		\
-+						      &clk_fixed_factor_ops, \
-+						      _flags),		\
-+	}
-+
- #ifdef CONFIG_OF
- int of_clk_add_provider(struct device_node *np,
- 			struct clk *(*clk_src_get)(struct of_phandle_args *args,
+-		ret = clk_hw_register(NULL, hw);
++		ret = of_clk_hw_register(node, hw);
+ 		if (ret) {
+ 			pr_err("Couldn't register clock %d - %s\n",
+ 			       i, clk_hw_get_name(hw));
 -- 
 2.20.1
 
