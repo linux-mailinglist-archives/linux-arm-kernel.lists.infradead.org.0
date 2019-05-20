@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D47522A11
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 04:54:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D66B322A18
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 04:56:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=++pmI/gP6daKJhlyPVxuA/pLYaDgB40GhD5c7AG//WI=; b=BNpg/39eu9ABD0
-	xH0HvqHmmYN/Tv0iN7rr74b+zF2vK1Lf+o9k2c9IPkbLEubZxni+31CjUyb6Tu3unl+xhmzIM28pO
-	2m38gcXtCD293Ls8FCSaSFRkao8xjS9ZTV1vTR84GiPuMN2ZGHDoXY8uftqXB7LAjQlVWa5DYqX80
-	Tm+9QXXglPLkJ4bQxQecGsKObzImIrCWUgEIGZefxzI01iGULDaiUFuHTgxYZ1SuFksiqN7Appdui
-	uXpmN+YpDLoYVUFFOUxZPB1sQK4l5C+QqWf3fBi/jqaL3jEM91ak9951FFbK84MDdclUp8+whZkAN
-	Hx8oZJff7WtAIUJGnm4w==;
+	List-Owner; bh=zQdQsgzJdK7hF8AK0EryxSl8qekKr7bXtLH2o9mt7ck=; b=YBfbejj1wu49dm
+	Exh7dDyez7Fx2wNhJWPesJ+GRbpPyW0yE6XNULw0kTLkMiu6CLMznM3+bi3uHbS84htyDTymoChlo
+	t00VVayImDPLG7CZRVfRMvfNf0x5BvMdf0ShSszh67D3Dt/074HhN3h3tlPe89G3TP3kpK+FqlPe7
+	t4//fHXyfxjgIJ55734IVq4oIONaVzrA/WvPrpB8kjtO8vuL+T5kgO7GyecwuL3e3dlz4v7zcAaow
+	L2QzX+Hzmfh1MuONwlkwH+xgEkdfFgQ1kZilnazDnSqF6c+ajlw5W/vfy6dWIZhTa0QM5DEiCZ8W4
+	+QK2XjjaOamFPlBsr8Xg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSYRP-0003pU-2e; Mon, 20 May 2019 02:54:19 +0000
+	id 1hSYT3-0005Yh-SO; Mon, 20 May 2019 02:56:01 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSYRH-0003p9-N8
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 02:54:13 +0000
+ id 1hSYSw-0005Y0-FK
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 02:55:55 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B5DE620644;
- Mon, 20 May 2019 02:54:06 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 70C5B20644;
+ Mon, 20 May 2019 02:55:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558320851;
- bh=+g4e3b9eEUCN0L+u953TbAQRbNQcFr58iPoiy/FcfxQ=;
+ s=default; t=1558320954;
+ bh=8BpeCF0fdOm1m1OcdQX6KdbUacYxfjUW3ylkXKDorQc=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=V05ZVw2Vl7FzAsocbUrTF0YIaxJr6PFjmbgjR7GS4tMvPliBoYP5WRInjHKnqNPrB
- 4jkEWypFuiyKne2/BrJsbMBvv4Clu3rXVwWZSRjHcDpTPrScTOwwTZ58xuc/+YlO+H
- RFYn6su8hExdGV8Vf1qG6AY4FegxrQJANaKbFhI0=
-Date: Mon, 20 May 2019 10:53:21 +0800
+ b=WPWGhUPy/QNIJfz+MQNLhTPf2Xi6QEnDYnO1LG5uDwtCI6eJlayPJHKHCqZRqCX83
+ 1dM/GYtVl1kpyAym/jCfwPUQ9YVe1qVyQ4jbc7w+UHqEjbcf87QN/rKapRwHAuv93z
+ AdUJ8zheqpZLoVxWKilv03EMhnsvTzph71EcyuVs=
+Date: Mon, 20 May 2019 10:55:03 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Pramod Kumar <pramod.kumar_1@nxp.com>
-Subject: Re: [PATCH v2 2/3] arm64: dts: nxp: add ls1046a-frwy board support
-Message-ID: <20190520025319.GJ15856@dragon>
+Subject: Re: [PATCH v2 3/3] arm64: dts: nxp: frwy-ls1046a: add support for
+ micron nor flash
+Message-ID: <20190520025502.GK15856@dragon>
 References: <20190510130207.14330-1-pramod.kumar_1@nxp.com>
- <20190510130207.14330-3-pramod.kumar_1@nxp.com>
+ <20190510130207.14330-4-pramod.kumar_1@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190510130207.14330-3-pramod.kumar_1@nxp.com>
+In-Reply-To: <20190510130207.14330-4-pramod.kumar_1@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190519_195411_794903_A891DF2E 
-X-CRM114-Status: GOOD (  16.49  )
+X-CRM114-CacheID: sfid-20190519_195554_529212_729A2CF8 
+X-CRM114-Status: GOOD (  13.67  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,10 +81,10 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
  Aisheng Dong <aisheng.dong@nxp.com>,
  "Michal.Vokac@ysoft.com" <Michal.Vokac@ysoft.com>,
+ Ashish Kumar <ashish.kumar@nxp.com>,
  "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  Leo Li <leoyang.li@nxp.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- Vabhav Sharma <vabhav.sharma@nxp.com>,
  "manivannan.sadhasivam@linaro.org" <manivannan.sadhasivam@linaro.org>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -91,202 +92,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 10, 2019 at 01:00:20PM +0000, Pramod Kumar wrote:
-> ls1046afrwy board is based on nxp ls1046a SoC.
-> Board support's 4GB ddr memory, i2c, microSD card,
-> serial console,qspi nor flash,ifc nand flash,qsgmii network interface,
-> usb 3.0 and serdes interface to support two x1gen3 pcie interface.
+On Fri, May 10, 2019 at 01:00:24PM +0000, Pramod Kumar wrote:
+> add micron nor flash support for ls1046a frwy board.
 > 
-> Signed-off-by: Vabhav Sharma <vabhav.sharma@nxp.com>
+> Signed-off-by: Ashish Kumar <ashish.kumar@nxp.com>
 > Signed-off-by: Pramod Kumar <pramod.kumar_1@nxp.com>
+
+Prefix 'arm64: dts: frwy-ls1046a: ...' would be good enough.
+
 > ---
->  arch/arm64/boot/dts/freescale/Makefile        |   1 +
->  .../boot/dts/freescale/fsl-ls1046a-frwy.dts   | 156 ++++++++++++++++++
->  2 files changed, 157 insertions(+)
->  create mode 100644 arch/arm64/boot/dts/freescale/fsl-ls1046a-frwy.dts
+>  .../boot/dts/freescale/fsl-ls1046a-frwy.dts     | 17 +++++++++++++++++
+>  1 file changed, 17 insertions(+)
 > 
-> diff --git a/arch/arm64/boot/dts/freescale/Makefile b/arch/arm64/boot/dts/freescale/Makefile
-> index 13604e558dc1..84ff6995b41e 100644
-> --- a/arch/arm64/boot/dts/freescale/Makefile
-> +++ b/arch/arm64/boot/dts/freescale/Makefile
-> @@ -8,6 +8,7 @@ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1028a-qds.dtb
->  dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1028a-rdb.dtb
->  dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1043a-qds.dtb
->  dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1043a-rdb.dtb
-> +dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1046a-frwy.dtb
->  dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1046a-qds.dtb
->  dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1046a-rdb.dtb
->  dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1088a-qds.dtb
 > diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1046a-frwy.dts b/arch/arm64/boot/dts/freescale/fsl-ls1046a-frwy.dts
-> new file mode 100644
-> index 000000000000..de0d19c02944
-> --- /dev/null
+> index de0d19c02944..890f07122dd0 100644
+> --- a/arch/arm64/boot/dts/freescale/fsl-ls1046a-frwy.dts
 > +++ b/arch/arm64/boot/dts/freescale/fsl-ls1046a-frwy.dts
-> @@ -0,0 +1,156 @@
-> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-> +/*
-> + * Device Tree Include file for Freescale Layerscape-1046A family SoC.
-> + *
-> + * Copyright 2019 NXP.
-> + *
-> + */
+> @@ -113,6 +113,23 @@
+>  
+>  };
+>  
 > +
-> +/dts-v1/;
-> +
-> +#include "fsl-ls1046a.dtsi"
-> +
-> +/ {
-> +	model = "LS1046A FRWY Board";
-> +	compatible = "fsl,ls1046a-frwy", "fsl,ls1046a";
-> +
-> +	aliases {
-> +		serial0 = &duart0;
-> +		serial1 = &duart1;
-> +		serial2 = &duart2;
-> +		serial3 = &duart3;
-> +	};
-> +
-> +	chosen {
-> +		stdout-path = "serial0:115200n8";
-> +	};
-> +
-> +	sb_3v3: regulator-sb3v3 {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "LT8642SEV-3.3V";
-> +		regulator-min-microvolt = <3300000>;
-> +		regulator-max-microvolt = <3300000>;
-> +		regulator-boot-on;
-> +		regulator-always-on;
-> +	};
-> +};
-> +
-> +&duart0 {
-> +	status = "okay";
-> +};
-> +
-> +&duart1 {
-> +	status = "okay";
-> +};
-> +
-> +&duart2 {
-> +	status = "okay";
-> +};
-> +
-> +&duart3 {
-> +	status = "okay";
-> +};
-> +
-> +&i2c0 {
-> +	status = "okay";
-> +
-> +	i2c-mux@77 {
-> +		compatible = "nxp,pca9546";
-> +		reg = <0x77>;
-> +		#address-cells = <1>;
-> +		#size-cells = <0>;
-> +		i2c-mux-never-disable;
 
-Undocumented property?
-
-> +
-> +		i2c@0 {
-> +			#address-cells = <1>;
-> +			#size-cells = <0>;
-> +			reg = <0>;
-> +
-> +			eeprom@52 {
-> +				compatible = "atmel,24c512";
-> +				reg = <0x52>;
-> +			};
-> +
-> +			eeprom@53 {
-> +				compatible = "atmel,24c512";
-> +				reg = <0x53>;
-> +			};
-> +
-> +			power-monitor@40 {
-
-Sort the nodes in unit-address.
+Unnecessary newline.
 
 Shawn
 
-> +				compatible = "ti,ina220";
-> +				reg = <0x40>;
-> +				shunt-resistor = <1000>;
-> +			};
-> +
-> +			rtc@51 {
-> +				compatible = "nxp,pcf2129";
-> +				reg = <0x51>;
-> +			};
-> +
-> +			temperature-sensor@4c {
-> +				compatible = "nxp,sa56004";
-> +				reg = <0x4c>;
-> +				vcc-supply = <&sb_3v3>;
-> +			};
-> +
-> +		};
-> +	};
-> +};
-> +
-> +&ifc {
-> +	#address-cells = <2>;
-> +	#size-cells = <1>;
-> +	/* NAND Flash */
-> +	ranges = <0x0 0x0 0x0 0x7e800000 0x00010000>;
+> +&qspi {
+> +	num-cs = <1>;
+> +	bus-num = <0>;
 > +	status = "okay";
 > +
-> +	nand@0,0 {
-> +		compatible = "fsl,ifc-nand";
+> +	qflash0: flash@0 {
+> +		compatible = "jedec,spi-nor";
 > +		#address-cells = <1>;
 > +		#size-cells = <1>;
-> +		reg = <0x0 0x0 0x10000>;
-> +	};
-> +
-> +};
-> +
-> +#include "fsl-ls1046-post.dtsi"
-> +
-> +&fman0 {
-> +	ethernet@e0000 {
-> +		phy-handle = <&qsgmii_phy4>;
-> +		phy-connection-type = "qsgmii";
-> +	};
-> +
-> +	ethernet@e8000 {
-> +		phy-handle = <&qsgmii_phy2>;
-> +		phy-connection-type = "qsgmii";
-> +	};
-> +
-> +	ethernet@ea000 {
-> +		phy-handle = <&qsgmii_phy1>;
-> +		phy-connection-type = "qsgmii";
-> +	};
-> +
-> +	ethernet@f2000 {
-> +		phy-handle = <&qsgmii_phy3>;
-> +		phy-connection-type = "qsgmii";
-> +	};
-> +
-> +	mdio@fd000 {
-> +		qsgmii_phy1: ethernet-phy@1c {
-> +			reg = <0x1c>;
-> +		};
-> +
-> +		qsgmii_phy2: ethernet-phy@1d {
-> +			reg = <0x1d>;
-> +		};
-> +
-> +		qsgmii_phy3: ethernet-phy@1e {
-> +			reg = <0x1e>;
-> +		};
-> +
-> +		qsgmii_phy4: ethernet-phy@1f {
-> +			reg = <0x1f>;
-> +		};
+> +		spi-max-frequency = <50000000>;
+> +		reg = <0>;
+> +		spi-rx-bus-width = <4>;
+> +		spi-tx-bus-width = <4>;
 > +	};
 > +};
+> +
+>  #include "fsl-ls1046-post.dtsi"
+>  
+>  &fman0 {
 > -- 
 > 2.17.1
 > 
