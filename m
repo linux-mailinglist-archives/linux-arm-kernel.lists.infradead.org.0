@@ -2,32 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E59622D2F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 09:34:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89AE822D30
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 09:35:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8nO7uHKhDBqw8Hem9dLIgOoHLDXnrVm0eu+lWrxSZys=; b=jUyAH1rBNmADtQ
-	0wsGUV//4CHPDf2cuST1iSnMVeOjCw6C1vq0cinefA78QtgfbiJAqCnZuq1NQJCo41opxS/4jN8M1
-	s9+CjuEq4dXRLnahdtIttzHMt/iuVxgONEXqM6yJEMqusX9XscLLXryic9HHrqMRYW7nDrCdTFp/R
-	Mj/t4lMPPi4IT/j563ONxJqo3Dsj728+XiHLE4ihZVL+R0aRRxCZA7iz4Z+m4FG6ANG/rkCBpylAy
-	nFlBvx+Sy1V0zseU98oJSvg7YXQiWQP93d5CaoW4g1iD92v9KY2eCJ92pDfQzMhjLNUZCrVLDUdcK
-	ifWxQZJzFCF+Ce7L8V7g==;
+	List-Owner; bh=NYijCQdke2lJiJ7u0d73sVizr0hDyaoL2t78KkDblP8=; b=FPtSqeQp/cYNfI
+	nBY2U4OKZcRmyd1tShktcXlXrBk6wc5UxI3JGAP78vC77jFq0tZEcnf+V4BqVwAWGtPFFW3g9Qtut
+	CGg4R1EHoASQLxlxt4uXBls86hmPujcCjAVQMn0DS5F50qXmdMsVhYSWogjpdz2mXaP9OmCDX1tyn
+	lYU9oFE6jQJxR2shyAaaq0qoVTtMr+Z23igovJttTZ1n7h/0vCLNR0jfzjKxTCQjsjwDS6To94ron
+	hW4v0f/0WQ0EPhnhZs7Q8YkVg4ETgStX/YEUqHU1S3Ps4Z2x76oBW6OBEoVlu+CYtspPNxcUCfAyV
+	jzIeMGh8FvgBwqqgxltg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hScoo-0000An-NJ; Mon, 20 May 2019 07:34:46 +0000
+	id 1hScoy-0000P8-Fv; Mon, 20 May 2019 07:34:56 +0000
 Received: from 089144206147.atnat0015.highway.bob.at ([89.144.206.147]
  helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSclQ-0004Pr-Bh; Mon, 20 May 2019 07:31:16 +0000
+ id 1hSclT-0004Um-GX; Mon, 20 May 2019 07:31:19 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Robin Murphy <robin.murphy@arm.com>
-Subject: [PATCH 14/24] iommu/dma: Don't remap CMA unnecessarily
-Date: Mon, 20 May 2019 09:29:38 +0200
-Message-Id: <20190520072948.11412-15-hch@lst.de>
+Subject: [PATCH 15/24] iommu/dma: Merge the CMA and alloc_pages allocation
+ paths
+Date: Mon, 20 May 2019 09:29:39 +0200
+Message-Id: <20190520072948.11412-16-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190520072948.11412-1-hch@lst.de>
 References: <20190520072948.11412-1-hch@lst.de>
@@ -52,56 +53,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Robin Murphy <robin.murphy@arm.com>
+Instead of having a separate code path for the non-blocking alloc_pages
+and CMA allocations paths merge them into one.  There is a slight
+behavior change here in that we try the page allocator if CMA fails.
+This matches what dma-direct and other iommu drivers do and will be
+needed to use the dma-iommu code on architectures without DMA remapping
+later on.
 
-Always remapping CMA allocations was largely a bodge to keep the freeing
-logic manageable when it was split between here and an arch wrapper. Now
-that it's all together and streamlined, we can relax that limitation.
-
-Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- drivers/iommu/dma-iommu.c | 19 ++++++++++++-------
- 1 file changed, 12 insertions(+), 7 deletions(-)
+ drivers/iommu/dma-iommu.c | 32 ++++++++++++--------------------
+ 1 file changed, 12 insertions(+), 20 deletions(-)
 
 diff --git a/drivers/iommu/dma-iommu.c b/drivers/iommu/dma-iommu.c
-index 4134f13b5529..cffd30810d41 100644
+index cffd30810d41..ee7dcf03c304 100644
 --- a/drivers/iommu/dma-iommu.c
 +++ b/drivers/iommu/dma-iommu.c
-@@ -973,7 +973,6 @@ static void *iommu_dma_alloc(struct device *dev, size_t size,
- {
+@@ -974,7 +974,7 @@ static void *iommu_dma_alloc(struct device *dev, size_t size,
  	bool coherent = dev_is_dma_coherent(dev);
  	int ioprot = dma_info_to_prot(DMA_BIDIRECTIONAL, coherent, attrs);
--	pgprot_t prot = arch_dma_mmap_pgprot(dev, PAGE_KERNEL, attrs);
  	size_t iosize = size;
- 	struct page *page;
+-	struct page *page;
++	struct page *page = NULL;
  	void *addr;
-@@ -1021,13 +1020,19 @@ static void *iommu_dma_alloc(struct device *dev, size_t size,
- 	if (*handle == DMA_MAPPING_ERROR)
- 		goto out_free_pages;
  
--	addr = dma_common_contiguous_remap(page, size, VM_USERMAP, prot,
--			__builtin_return_address(0));
--	if (!addr)
--		goto out_unmap;
-+	if (!coherent || PageHighMem(page)) {
-+		pgprot_t prot = arch_dma_mmap_pgprot(dev, PAGE_KERNEL, attrs);
+ 	size = PAGE_ALIGN(size);
+@@ -984,35 +984,26 @@ static void *iommu_dma_alloc(struct device *dev, size_t size,
+ 	    !(attrs & DMA_ATTR_FORCE_CONTIGUOUS))
+ 		return iommu_dma_alloc_remap(dev, iosize, handle, gfp, attrs);
  
--	if (!coherent)
--		arch_dma_prep_coherent(page, iosize);
-+		addr = dma_common_contiguous_remap(page, size, VM_USERMAP, prot,
-+				__builtin_return_address(0));
-+		if (!addr)
-+			goto out_unmap;
-+
-+		if (!coherent)
-+			arch_dma_prep_coherent(page, iosize);
-+	} else {
-+		addr = page_address(page);
-+	}
- 	memset(addr, 0, size);
- 	return addr;
+-	if (!gfpflags_allow_blocking(gfp)) {
+-		/*
+-		 * In atomic context we can't remap anything, so we'll only
+-		 * get the virtually contiguous buffer we need by way of a
+-		 * physically contiguous allocation.
+-		 */
+-		if (coherent) {
+-			page = alloc_pages(gfp, get_order(size));
+-			addr = page ? page_address(page) : NULL;
+-		} else {
+-			addr = dma_alloc_from_pool(size, &page, gfp);
+-		}
++	if (!gfpflags_allow_blocking(gfp) && !coherent) {
++		addr = dma_alloc_from_pool(size, &page, gfp);
+ 		if (!addr)
+ 			return NULL;
+ 
+ 		*handle = __iommu_dma_map(dev, page_to_phys(page), iosize,
+ 					  ioprot);
+ 		if (*handle == DMA_MAPPING_ERROR) {
+-			if (coherent)
+-				__free_pages(page, get_order(size));
+-			else
+-				dma_free_from_pool(addr, size);
++			dma_free_from_pool(addr, size);
+ 			return NULL;
+ 		}
+ 		return addr;
+ 	}
+ 
+-	page = dma_alloc_from_contiguous(dev, size >> PAGE_SHIFT,
+-					 get_order(size), gfp & __GFP_NOWARN);
++	if (gfpflags_allow_blocking(gfp))
++		page = dma_alloc_from_contiguous(dev, size >> PAGE_SHIFT,
++						 get_order(size),
++						 gfp & __GFP_NOWARN);
++	if (!page)
++		page = alloc_pages(gfp, get_order(size));
+ 	if (!page)
+ 		return NULL;
+ 
+@@ -1038,7 +1029,8 @@ static void *iommu_dma_alloc(struct device *dev, size_t size,
  out_unmap:
+ 	__iommu_dma_unmap(dev, *handle, iosize);
+ out_free_pages:
+-	dma_release_from_contiguous(dev, page, size >> PAGE_SHIFT);
++	if (!dma_release_from_contiguous(dev, page, size >> PAGE_SHIFT))
++		__free_pages(page, get_order(size));
+ 	return NULL;
+ }
+ 
 -- 
 2.20.1
 
