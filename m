@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94C2422DD7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 10:06:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DDD222DDA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 10:07:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9E3hZhoNtBTLIVhkpeZTfeVaq4OUAbWE23zdZRqpCoI=; b=U3qOO93JNQeRbv
-	a0bgNRZ2Ti1Y9yYH+FawNKqQwyV8kpE73V5j/KB69W7Z8ETeFkODcPHlGc0iVlkQudptqeehtERRs
-	g0ze2VjBrXnjgqkZgkRV+KA0bDKR9JFb7c9i9kVi6qGyQmD1zB3bcVg5z4nzyvl4pvmdKLHp5IhaH
-	ztEcKfjOc30Z3XeOcqAlbgf+/3ak4qIF6dYfIzSX1CMwOKrlRG91OgNsrNI3MVTtO0rCvg/225xOS
-	m9CKGY8z6s33nFWxY6+Dll3GdAKqZGB48gihWO9GLu4nuW9xekMHWsq1/aOw3qws+9L6vKONc9w1w
-	9k3tkuPpyHPIQ72fs7sw==;
+	List-Owner; bh=RWvMP6fHRjU//HVVt+/uJaHO5BKPPFl2FnedXo8oHFc=; b=QAvCv0exU9fggB
+	OgzdipBmFl2p0T9rXmxwJlmI990qnI0q7Bowu6mWuxJjnXyvKlfd42axMXibkv2yX6qbly0b/7L9G
+	eVPRZ7bqq7LI5+MVZr6OfZThks6EdZ4DMSctmbWguYS7A+iFm5A7bU8+0LPoLm0qOaosq8EttP5Ei
+	iKMm0okzxUJtTA//2t+NaH7PGms1HlKLxlmLlz5WAv9V4SpU3n6B03bJrKLEyqqccG5zmegOmDwef
+	ap01FApAZprPyJ8gRw7190rKRpFXuosax5smfdoHWPjwtbA6qYRMr28E27zOpq0aHfFY4/ZPef0Vz
+	0/y94RcFKJ6Hzztx3k4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSdJx-0002p8-2P; Mon, 20 May 2019 08:06:57 +0000
+	id 1hSdKW-0003K5-1z; Mon, 20 May 2019 08:07:32 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSdIf-0001Hw-Cz
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 08:05:40 +0000
+ id 1hSdIg-0001Iz-MN
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 08:05:45 +0000
 Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0665F213F2;
+ by mail.kernel.org (Postfix) with ESMTPSA id 777A6216FD;
  Mon, 20 May 2019 08:05:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1558339537;
- bh=1KYlzXrAVy3YbKt+spI0kYNApvHj/GOphIjhtrSLD9k=;
+ bh=2AGcaAsHwfGTJv3xKA/+lQaDT8ESQhPPRn+UM27/434=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=OCEPBeaI3GgJpFcxpHH1M4NsdBwRdhOg6FZDy5yXP0SNdO0EkJ3eiuzmaS4dadRh9
- qqBcnfARabmtjIwihtQ1M8eEM9B/la4H4SoANn3EisQogc38ArIdJv/s5AXLBFSImP
- dJhSRkQeC1tt2uQW3maDpi1/D2BKr4z5lPxOSGUI=
+ b=WwUkaXIdNKcSjp/faqDg1le3JkR/a8P/TWCOP7EBMFLMT0ALvqyR8i8Hu58ZSp1kn
+ pDkPP8LyP09gOl7EaSNbH/gQdmQ5f+EDYemMaizizwPnt4UxGr9uI+rpElko5Qz/SA
+ V7ktS6+atIlsCEssEJulYRsglufDfis1hr09PTVM=
 Received: by wens.tw (Postfix, from userid 1000)
- id 9AE1465811; Mon, 20 May 2019 16:05:32 +0800 (CST)
+ id 9CA7065820; Mon, 20 May 2019 16:05:32 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
 To: Maxime Ripard <maxime.ripard@bootlin.com>, Stephen Boyd <sboyd@kernel.org>,
  Michael Turquette <mturquette@baylibre.com>
-Subject: [PATCH 13/25] clk: sunxi-ng: a23: Use local parent references for
+Subject: [PATCH 14/25] clk: sunxi-ng: a33: Use local parent references for
  CLK_FIXED_FACTOR
-Date: Mon, 20 May 2019 16:04:09 +0800
-Message-Id: <20190520080421.12575-14-wens@kernel.org>
+Date: Mon, 20 May 2019 16:04:10 +0800
+Message-Id: <20190520080421.12575-15-wens@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190520080421.12575-1-wens@kernel.org>
 References: <20190520080421.12575-1-wens@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_010537_501592_04F5FD3C 
+X-CRM114-CacheID: sfid-20190520_010538_951339_121F3B23 
 X-CRM114-Status: GOOD (  12.17  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -98,14 +98,14 @@ external to the CCU.
 
 Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 ---
- drivers/clk/sunxi-ng/ccu-sun8i-a23.c | 34 ++++++++++++++++++----------
+ drivers/clk/sunxi-ng/ccu-sun8i-a33.c | 34 ++++++++++++++++++----------
  1 file changed, 22 insertions(+), 12 deletions(-)
 
-diff --git a/drivers/clk/sunxi-ng/ccu-sun8i-a23.c b/drivers/clk/sunxi-ng/ccu-sun8i-a23.c
-index a9c0c5406b85..de2f2962164e 100644
---- a/drivers/clk/sunxi-ng/ccu-sun8i-a23.c
-+++ b/drivers/clk/sunxi-ng/ccu-sun8i-a23.c
-@@ -551,19 +551,29 @@ static struct ccu_common *sun8i_a23_ccu_clks[] = {
+diff --git a/drivers/clk/sunxi-ng/ccu-sun8i-a33.c b/drivers/clk/sunxi-ng/ccu-sun8i-a33.c
+index 25bcf3fd2dfc..25a14548f39b 100644
+--- a/drivers/clk/sunxi-ng/ccu-sun8i-a33.c
++++ b/drivers/clk/sunxi-ng/ccu-sun8i-a33.c
+@@ -588,19 +588,29 @@ static struct ccu_common *sun8i_a33_ccu_clks[] = {
  	&ats_clk.common,
  };
  
@@ -145,7 +145,7 @@ index a9c0c5406b85..de2f2962164e 100644
 +			   &pll_video_clk.common.hw,
 +			   1, 2, 0);
  
- static struct clk_hw_onecell_data sun8i_a23_hw_clks = {
+ static struct clk_hw_onecell_data sun8i_a33_hw_clks = {
  	.hws	= {
 -- 
 2.20.1
