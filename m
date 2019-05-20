@@ -2,66 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29FD722F07
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 10:34:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4BE722F0E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 10:36:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nU8ZfIQH7ikwTjfkURzk/BCXudlWn7v/p22BwVR0siI=; b=O+TvGiky8CWOts
-	J6Lf4kjunKppZsoz3l/U5BHKoHJnB2ExvgBhhuOvQev6k62r+F3pcKStL7ync/gueUf93P+yb0A2h
-	EapoPe7x4YAn2bqskVOwSH3foT723qRYaJHyaB0bqS8/yE+aQNc1hC9owAR4DUgPu829vfclsnb0b
-	Ax22Mez4wxxKfGGWjBRehjwSRDBUwCbAfqkJYr+6zoZTCOGk2/2q4PoCUudTPor1bxXz/qezLuII0
-	dbP76UNuhTFnUFcsWsaEtu7RKDfZjm5oC+IzP0RNdd1sNSf6We/dEA+yOYjN8gMs1qtssn8vfSVE2
-	VC3sUc9IayzhCuOFaYYQ==;
+	List-Owner; bh=ymu7Yt1MVLII67Kn0dXiUSL4BfD3uqZhSOTEjULar8E=; b=dC9exf1QtgS3Pg
+	r9hGCiYg1xEV4G1MoNiujZln1exSci05hpqZAiXfyo0ARFmqdTTtrUcF0a9w46Fxrd3cFCE42BWiB
+	p4spP08SwZiu8P9JWfzwI7C4rv86COxKJ85lz221wyb+VhCFQNjbVC757Okw+UyifFHZ9u6LOBlay
+	+9QOTipWy4OvmbsOsmrbx2zw3gzidKd9AYak6OdU7MxWwv2Nev+X6qNQPmydJA9N9+YCe4eja/rdt
+	QS3qZq0gTnPyj83d/9K8lSCYJKEVRoj+m7u1A61za5U6j5LEBzcFP7GH5v0zVB3n2rI0iC+cc+dAG
+	Wt/bVQ8KPuQ1rdc20iMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSdkk-0004N4-SA; Mon, 20 May 2019 08:34:38 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hSdmJ-0005z2-KT; Mon, 20 May 2019 08:36:15 +0000
+Received: from mga09.intel.com ([134.134.136.24])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSdka-0004KI-Qa; Mon, 20 May 2019 08:34:30 +0000
-X-UUID: 791829153b9649ceb651b934ffb1b5b7-20190520
-X-UUID: 791829153b9649ceb651b934ffb1b5b7-20190520
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1689499802; Mon, 20 May 2019 00:34:20 -0800
-Received: from MTKMBS33N1.mediatek.inc (172.27.4.75) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 20 May 2019 01:34:19 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- MTKMBS33N1.mediatek.inc (172.27.4.75) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 20 May 2019 16:34:16 +0800
-Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 20 May 2019 16:34:09 +0800
-Message-ID: <1558341248.7311.42.camel@mtksdaap41>
-Subject: Re: [v2 2/5] drm/mediatek: CMDQ reg address of mt8173 is different
- with mt2701
-From: CK Hu <ck.hu@mediatek.com>
-To: Jitao Shi <jitao.shi@mediatek.com>
-Date: Mon, 20 May 2019 16:34:08 +0800
-In-Reply-To: <1558258406.367.2.camel@mszsdaap41>
-References: <20190416060501.76276-1-jitao.shi@mediatek.com>
- <20190416060501.76276-3-jitao.shi@mediatek.com>
- <1557283144.31731.4.camel@mtksdaap41> <1558258406.367.2.camel@mszsdaap41>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hSdmC-0005yY-An; Mon, 20 May 2019 08:36:10 +0000
+X-Amp-Result: UNSCANNABLE
+X-Amp-File-Uploaded: False
+Received: from fmsmga001.fm.intel.com ([10.253.24.23])
+ by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 20 May 2019 01:36:07 -0700
+X-ExtLoop1: 1
+Received: from kuha.fi.intel.com ([10.237.72.189])
+ by fmsmga001.fm.intel.com with SMTP; 20 May 2019 01:36:02 -0700
+Received: by kuha.fi.intel.com (sSMTP sendmail emulation);
+ Mon, 20 May 2019 11:36:01 +0300
+Date: Mon, 20 May 2019 11:36:01 +0300
+From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+To: Biju Das <biju.das@bp.renesas.com>
+Subject: Re: [PATCH v5 4/6] usb: roles: add API to get usb_role_switch by node
+Message-ID: <20190520083601.GE1887@kuha.fi.intel.com>
+References: <1557823643-8616-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1557823643-8616-5-git-send-email-chunfeng.yun@mediatek.com>
+ <20190517103736.GA1490@kuha.fi.intel.com>
+ <20190517130511.GA1887@kuha.fi.intel.com>
+ <1558319951.10179.352.camel@mhfsdcap03>
+ <20190520080359.GC1887@kuha.fi.intel.com>
+ <OSBPR01MB2103385D996762FA54F8E437B8060@OSBPR01MB2103.jpnprd01.prod.outlook.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <OSBPR01MB2103385D996762FA54F8E437B8060@OSBPR01MB2103.jpnprd01.prod.outlook.com>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_013428_860114_39D455E3 
-X-CRM114-Status: GOOD (  21.35  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190520_013608_416041_501D07EA 
+X-CRM114-Status: GOOD (  24.71  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [134.134.136.24 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -73,182 +71,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>, stonea168@163.com,
- dri-devel@lists.freedesktop.org, yingjoe.chen@mediatek.com, Ajay
- Kumar <ajaykumar.rs@samsung.com>, Vincent Palatin <vpalatin@chromium.org>,
- cawa.cheng@mediatek.com, bibby.hsieh@mediatek.com,
- Russell King <rmk+kernel@arm.linux.org.uk>,
- Thierry Reding <treding@nvidia.com>, linux-pwm@vger.kernel.org,
- Sascha Hauer <kernel@pengutronix.de>, Pawel Moll <pawel.moll@arm.com>,
- Ian Campbell <ijc+devicetree@hellion.org.uk>, Inki Dae <inki.dae@samsung.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Andy Yan <andy.yan@rock-chips.com>, Matthias
- Brugger <matthias.bgg@gmail.com>, eddie.huang@mediatek.com,
- linux-arm-kernel@lists.infradead.org, Rahul
- Sharma <rahul.sharma@samsung.com>, srv_heupstream@mediatek.com,
- linux-kernel@vger.kernel.org, Philipp Zabel <p.zabel@pengutronix.de>,
- Kumar Gala <galak@codeaurora.org>, Sean Paul <seanpaul@chromium.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Hans de Goede <hdegoede@redhat.com>,
+ Badhri Jagan Sridharan <badhri@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ Min Guo <min.guo@mediatek.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Li Jun <jun.li@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Jitao:
-
-On Sun, 2019-05-19 at 17:33 +0800, Jitao Shi wrote:
-> On Wed, 2019-05-08 at 10:39 +0800, CK Hu wrote:
-> > On Tue, 2019-04-16 at 14:04 +0800, Jitao Shi wrote:
-> > > Config the different CMDQ reg address in driver data.
-> > > 
-> > For MT8173, you change reg_cmd_off from 0x180 to 0x200, so this patch is
-> > a bug fix. You should add a 'Fixes' tag.
-> > 
-> > > Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
-> > > ---
-> > >  drivers/gpu/drm/mediatek/mtk_dsi.c | 39 +++++++++++++++++++++++-------
-> > >  1 file changed, 30 insertions(+), 9 deletions(-)
-> > > 
-> > > diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
-> > > index 6c4ac37f983d..573e6bec6d36 100644
-> > > --- a/drivers/gpu/drm/mediatek/mtk_dsi.c
-> > > +++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
-> > > @@ -131,7 +131,6 @@
-> > >  #define VM_CMD_EN			BIT(0)
-> > >  #define TS_VFP_EN			BIT(5)
-> > >  
-> > > -#define DSI_CMDQ0		0x180
-> > >  #define CONFIG				(0xff << 0)
-> > >  #define SHORT_PACKET			0
-> > >  #define LONG_PACKET			2
-> > > @@ -156,6 +155,10 @@
-> > >  
-> > >  struct phy;
-> > >  
-> > > +struct mtk_dsi_driver_data {
-> > > +	const u32 reg_cmdq_off;
-> > > +};
-> > > +
-> > >  struct mtk_dsi {
-> > >  	struct mtk_ddp_comp ddp_comp;
-> > >  	struct device *dev;
-> > > @@ -182,6 +185,7 @@ struct mtk_dsi {
-> > >  	bool enabled;
-> > >  	u32 irq_data;
-> > >  	wait_queue_head_t irq_wait_queue;
-> > > +	struct mtk_dsi_driver_data *driver_data;
-> > >  };
-> > >  
-> > >  static inline struct mtk_dsi *encoder_to_dsi(struct drm_encoder *e)
-> > > @@ -934,6 +938,7 @@ static void mtk_dsi_cmdq(struct mtk_dsi *dsi, const struct mipi_dsi_msg *msg)
-> > >  	const char *tx_buf = msg->tx_buf;
-> > >  	u8 config, cmdq_size, cmdq_off, type = msg->type;
-> > >  	u32 reg_val, cmdq_mask, i;
-> > > +	u32 reg_cmdq_off = dsi->driver_data->reg_cmdq_off;
-> > >  
-> > >  	if (MTK_DSI_HOST_IS_READ(type))
-> > >  		config = BTA;
-> > > @@ -953,9 +958,11 @@ static void mtk_dsi_cmdq(struct mtk_dsi *dsi, const struct mipi_dsi_msg *msg)
-> > >  	}
-> > >  
-> > >  	for (i = 0; i < msg->tx_len; i++)
-> > > -		writeb(tx_buf[i], dsi->regs + DSI_CMDQ0 + cmdq_off + i);
-> > > +		mtk_dsi_mask(dsi, (reg_cmdq_off + cmdq_off + i) & (~0x3U),
-> > > +			     (0xffUL << (((i + cmdq_off) & 3U) * 8U)),
-> > > +			     tx_buf[i] << (((i + cmdq_off) & 3U) * 8U));
-> > 
-> > You say you would follow Nicolas' suggestion here.
-> > 
+On Mon, May 20, 2019 at 08:06:41AM +0000, Biju Das wrote:
+> Hi Heikki,
 > 
-> If i replace mtk_dsi_mask with writeb, i can't get right value from
-> registers. I don't know why this.
-
-I remember that Shaoming has also meet some error about writeb(), but he
-finally fix this bug. You may get some hint from him. If we can not use
-writeb(), this modification should be two patches: one is changing
-DSI_CMDQ0 to reg_cmdq_off, another one is changing writeb() to
-mtk_dsi_mask().
-
-Regards,
-CK
-
+> > -----Original Message-----
+> > From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+> > Sent: Monday, May 20, 2019 9:04 AM
+> > To: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> > Cc: Rob Herring <robh+dt@kernel.org>; Greg Kroah-Hartman
+> > <gregkh@linuxfoundation.org>; Mark Rutland <mark.rutland@arm.com>;
+> > Matthias Brugger <matthias.bgg@gmail.com>; Adam Thomson
+> > <Adam.Thomson.Opensource@diasemi.com>; Li Jun <jun.li@nxp.com>;
+> > Badhri Jagan Sridharan <badhri@google.com>; Hans de Goede
+> > <hdegoede@redhat.com>; Andy Shevchenko
+> > <andy.shevchenko@gmail.com>; Min Guo <min.guo@mediatek.com>;
+> > devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; linux-
+> > usb@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-
+> > mediatek@lists.infradead.org; Biju Das <biju.das@bp.renesas.com>; Linus
+> > Walleij <linus.walleij@linaro.org>
+> > Subject: Re: [PATCH v5 4/6] usb: roles: add API to get usb_role_switch by
+> > node
+> > 
+> > On Mon, May 20, 2019 at 10:39:11AM +0800, Chunfeng Yun wrote:
+> > > Hi,
+> > > On Fri, 2019-05-17 at 16:05 +0300, Heikki Krogerus wrote:
+> > > > Hi,
+> > > >
+> > > > On Fri, May 17, 2019 at 01:37:36PM +0300, Heikki Krogerus wrote:
+> > > > > On Tue, May 14, 2019 at 04:47:21PM +0800, Chunfeng Yun wrote:
+> > > > > > Add fwnode_usb_role_switch_get() to make easier to get
+> > > > > > usb_role_switch by fwnode which register it.
+> > > > > > It's useful when there is not device_connection registered
+> > > > > > between two drivers and only knows the fwnode which register
+> > > > > > usb_role_switch.
+> > > > > >
+> > > > > > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> > > > > > Tested-by: Biju Das <biju.das@bp.renesas.com>
+> > > > >
+> > > > > Acked-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+> > > >
+> > > > Hold on. I just noticed Rob's comment on patch 2/6, where he points
+> > > > out that you don't need to use device graph since the controller is
+> > > > the parent of the connector. Doesn't that mean you don't really need
+> > > > this API?
+> > > No, I still need it.
+> > > The change is about the way how to get fwnode; when use device graph,
+> > > get fwnode by of_graph_get_remote_node(); but now will get fwnode by
+> > > of_get_parent();
+> > 
+> > OK, I get that, but I'm still not convinced about if something like this function
+> > is needed at all. I also have concerns regarding how you are using the
+> > function. I'll explain in comment to the patch 5/6 in this series...
 > 
-> > >  
-> > > -	mtk_dsi_mask(dsi, DSI_CMDQ0, cmdq_mask, reg_val);
-> > > +	mtk_dsi_mask(dsi, reg_cmdq_off, cmdq_mask, reg_val);
-> > >  	mtk_dsi_mask(dsi, DSI_CMDQ_SIZE, CMDQ_SIZE, cmdq_size);
-> > >  }
-> > >  
-> > > @@ -1074,10 +1081,27 @@ static const struct component_ops mtk_dsi_component_ops = {
-> > >  	.unbind = mtk_dsi_unbind,
-> > >  };
-> > >  
-> > > +static const struct mtk_dsi_driver_data mt8173_dsi_driver_data = {
-> > > +	.reg_cmdq_off = 0x200,
-> > > +};
-> > > +
-> > > +static const struct mtk_dsi_driver_data mt2701_dsi_driver_data = {
-> > > +	.reg_cmdq_off = 0x180,
-> > > +};
-> > > +
-> > > +static const struct of_device_id mtk_dsi_of_match[] = {
-> > > +	{ .compatible = "mediatek,mt2701-dsi",
-> > > +	  .data = &mt2701_dsi_driver_data },
-> > > +	{ .compatible = "mediatek,mt8173-dsi",
-> > > +	  .data = &mt8173_dsi_driver_data },
-> > > +	{ },
-> > > +};
-> > > +
-> > >  static int mtk_dsi_probe(struct platform_device *pdev)
-> > >  {
-> > >  	struct mtk_dsi *dsi;
-> > >  	struct device *dev = &pdev->dev;
-> > > +	const struct of_device_id *of_id;
-> > >  	struct resource *regs;
-> > >  	int irq_num;
-> > >  	int comp_id;
-> > > @@ -1101,6 +1125,9 @@ static int mtk_dsi_probe(struct platform_device *pdev)
-> > >  	if (ret)
-> > >  		goto err_unregister_host;
-> > >  
-> > > +	of_id = of_match_device(mtk_dsi_of_match, &pdev->dev);
-> > > +	dsi->driver_data = of_id->data;
-> > 
-> > Maybe use of_device_get_match_data() is a more simple way. You could
-> > refer to [1].
-> > 
-> > [1]
-> > https://elixir.bootlin.com/linux/v5.1/source/drivers/gpu/drm/mediatek/mtk_disp_ovl.c#L300
-> > 
-> > Regards,
-> > CK
-> > 
-> 
-> I'll fix it next version.
-> 
-> > > +
-> > >  	dsi->engine_clk = devm_clk_get(dev, "engine");
-> > >  	if (IS_ERR(dsi->engine_clk)) {
-> > >  		ret = PTR_ERR(dsi->engine_clk);
-> > > @@ -1193,12 +1220,6 @@ static int mtk_dsi_remove(struct platform_device *pdev)
-> > >  	return 0;
-> > >  }
-> > >  
-> > > -static const struct of_device_id mtk_dsi_of_match[] = {
-> > > -	{ .compatible = "mediatek,mt2701-dsi" },
-> > > -	{ .compatible = "mediatek,mt8173-dsi" },
-> > > -	{ },
-> > > -};
-> > > -
-> > >  struct platform_driver mtk_dsi_driver = {
-> > >  	.probe = mtk_dsi_probe,
-> > >  	.remove = mtk_dsi_remove,
-> > 
-> > 
-> 
-> 
+> FYI, Currently  I am also using this api in my patch series.
+> https://patchwork.kernel.org/patch/10944637/
 
+Yes, and I have the same question for you I jusb asked in comment I
+added to the patch 5/6 of this series. Why isn't usb_role_switch_get()
+enough?
 
+thanks,
+
+-- 
+heikki
 
 _______________________________________________
 linux-arm-kernel mailing list
