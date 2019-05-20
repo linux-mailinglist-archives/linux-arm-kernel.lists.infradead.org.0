@@ -2,42 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 296DA231AB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 12:48:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9FD53231A8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 12:48:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=zAQw6josSUCLJChGI/kZI0mvvakSk5FOERhcoMcMjWk=; b=LlG/xai+jc2iSY
-	rL65TA6O/BA3pFbqJSiPqD+L1kQW8xjRVcZdSVnoguSzMe0kfSSqakVxCesiNylYbKsINyn3bET4C
-	OX367KSfk8sSdmhbTuUIWwklyBBuDzeYNgdLCeWx4CxRtV/MZQrtu9EuP5NnjVMO/lsIt6aSGOtof
-	6FseS0Q9h+34L/dLHTp3fCYv04iI0yxyygNHm01J9BeAfIUvmgUVGOPoc3VrSn33KcRo3bzF867Hl
-	VMcD7IlLSbAh+BsVNcn9ic/vo+NVlTzXhC1JlOuv25xHM6CXzOG17FFYtMCM6pMFlC3GwvsiXgBuJ
-	w8m+D2uDVRTcuBozK57Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mCxOTBzfHiuI6M9SXyyXOf+XH7MBXY1qnAA81jU5/m0=; b=D3Aef2ajh2vhul
+	fEZDER32Bo3ORDdFHibIIBPrVuwNX7EMDB0dCpIo7aG3kOS4Rn9lA8EPjoHSHImB3sTWHNA/OQTpC
+	X5KfeyTEEg+sQ/4YLM5X6s69+V2DrONBm2BP6+nPEpPR1b5Oa/PyRigWFJPtY/suEiqHqYRnRSu4V
+	Bhv3vTXcqeu0JsTg7OV2xoPalCT27Y1xHuOBjtbz11KI/y20fRes6c8ne8rxy1yJJlluY2nv+Duc3
+	bxUHhrrMvl5cHy1DnIhtdZJcXnKUGNhkXVhVD95dBQ0Xt3130hv9kzgM/ilJ5/OMF9dO/Zb2UYyzY
+	krS502X50ub9ZGHWyNmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSfqQ-0001Tu-FP; Mon, 20 May 2019 10:48:38 +0000
+	id 1hSfpo-0000km-Rv; Mon, 20 May 2019 10:48:00 +0000
 Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSfpU-0000QM-50; Mon, 20 May 2019 10:47:43 +0000
+ id 1hSfpU-0000QN-4t; Mon, 20 May 2019 10:47:43 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 88D7AAFD1;
+ by mx1.suse.de (Postfix) with ESMTP id 91BADAFD2;
  Mon, 20 May 2019 10:47:35 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: stefan.wahren@i2se.com, devicetree@vger.kernel.org,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-pm@vger.kernel.org
-Subject: [RFC v2 0/5] cpufreq support for the Raspberry Pi
-Date: Mon, 20 May 2019 12:47:02 +0200
-Message-Id: <20190520104708.11980-1-nsaenzjulienne@suse.de>
+To: stefan.wahren@i2se.com, Florian Fainelli <f.fainelli@gmail.com>,
+ Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com, Eric Anholt <eric@anholt.net>
+Subject: [RFC v2 1/5] clk: bcm2835: set CLK_GET_RATE_NOCACHE on CPU clocks
+Date: Mon, 20 May 2019 12:47:03 +0200
+Message-Id: <20190520104708.11980-2-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190520104708.11980-1-nsaenzjulienne@suse.de>
+References: <20190520104708.11980-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_034740_428497_0FE0E85F 
-X-CRM114-Status: GOOD (  17.47  )
+X-CRM114-CacheID: sfid-20190520_034740_330997_CE1AC184 
+X-CRM114-Status: GOOD (  12.88  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -58,79 +60,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: f.fainelli@gmail.com, ptesarik@suse.com, sboyd@kernel.org,
- viresh.kumar@linaro.org, mturquette@baylibre.com, rjw@rjwysocki.net,
- linux-kernel@vger.kernel.org, eric@anholt.net,
- bcm-kernel-feedback-list@broadcom.com,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, linux-clk@vger.kernel.org,
+Cc: linux-arm-kernel@lists.infradead.org, ptesarik@suse.com, sboyd@kernel.org,
+ viresh.kumar@linaro.org, mturquette@baylibre.com, linux-pm@vger.kernel.org,
+ rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-rpi-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
  mbrugger@suse.de, ssuloev@orpaltech.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
-as some of you may recall I've been spending some time looking into
-providing 'cpufreq' support for the Raspberry Pi platform[1]. I think
-I'm close to something workable, so I'd love for you to comment on it.
+Raspberry Pi's firmware is responsible for updating the cpu clocks and
+pll. This makes sure we get the right rates anytime.
 
-There has been some design changes since the last version. Namely the
-fact that I now make sure *only* the CPU frequency is updated. The
-firmware API we use has two modes, with or without turbo. Enabling turbo
-implies not only scaling the CPU clock but also the VPU and other
-peripheral related clocks.  This is problematic as some of them are not
-prepared for this kind frequency changes. I spent some time adapting the
-peripheral drivers, but the result was disappointing as they poorly
-support live frequency changes (which most other chips accept, think for
-instance I2C and clock stretching) but also turned out hard to integrate
-into the kernel. As we were planning to use 'clk_notifiers' which turns
-out not to be such a good idea as it's prone to deadlocks and not
-recommended by the clock maintainers[2]. It's also worth mentioning that
-the foundation kernel doesn't support VPU frequency scaling either.
-
-With this in mind, and as suggested by clock maintainers[2], I've
-decided to integrate the firmware clock interface into the bcm2835 clock
-driver. This, in my opinion, provides the least friction with the
-firmware and lets us write very simple and portable higher level
-drivers. As I did with the 'cpufreq' driver which simply queries the max
-and min frequencies available, which are configurable in the firmware,
-to then trigger the generic 'cpufreq-dt'.
-
-In the future we could further integrate other firmware dependent clocks
-into the main driver. For instance to be able to scale the VPU clock,
-which should be operated through a 'devfreq' driver.
-
-This was tested on a RPi3b+ and if the series is well received I'll test
-it further on all platforms I own.
-
-That's all,
-kind regards,
-Nicolas
-
-[1] https://lists.infradead.org/pipermail/linux-rpi-kernel/2019-April/008634.html
-[2] https://www.spinics.net/lists/linux-clk/msg36937.html
-
+Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
+ drivers/clk/bcm/clk-bcm2835.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
-Changes since v1:
-  - Addressed Viresh's comments in cpufreq driver
-  - Resend with (hopefully) proper CCs
-
-Nicolas Saenz Julienne (5):
-  clk: bcm2835: set CLK_GET_RATE_NOCACHE on CPU clocks
-  clk: bcm2835: set pllb_arm divisor as readonly
-  clk: bcm2835: use firmware interface to update pllb
-  dts: bcm2837: add per-cpu clock devices
-  cpufreq: add driver for Raspbery Pi
-
- arch/arm/boot/dts/bcm2837.dtsi        |   8 +
- drivers/clk/bcm/clk-bcm2835.c         | 284 ++++++++++++++++++++++++--
- drivers/cpufreq/Kconfig.arm           |   8 +
- drivers/cpufreq/Makefile              |   1 +
- drivers/cpufreq/raspberrypi-cpufreq.c |  83 ++++++++
- 5 files changed, 366 insertions(+), 18 deletions(-)
- create mode 100644 drivers/cpufreq/raspberrypi-cpufreq.c
-
+diff --git a/drivers/clk/bcm/clk-bcm2835.c b/drivers/clk/bcm/clk-bcm2835.c
+index 770bb01f523e..c2772dfb155a 100644
+--- a/drivers/clk/bcm/clk-bcm2835.c
++++ b/drivers/clk/bcm/clk-bcm2835.c
+@@ -411,6 +411,7 @@ struct bcm2835_pll_data {
+ 	u32 reference_enable_mask;
+ 	/* Bit in CM_LOCK to indicate when the PLL has locked. */
+ 	u32 lock_mask;
++	u32 flags;
+ 
+ 	const struct bcm2835_pll_ana_bits *ana;
+ 
+@@ -1299,7 +1300,7 @@ static struct clk_hw *bcm2835_register_pll(struct bcm2835_cprman *cprman,
+ 	init.num_parents = 1;
+ 	init.name = data->name;
+ 	init.ops = &bcm2835_pll_clk_ops;
+-	init.flags = CLK_IGNORE_UNUSED;
++	init.flags = data->flags | CLK_IGNORE_UNUSED;
+ 
+ 	pll = kzalloc(sizeof(*pll), GFP_KERNEL);
+ 	if (!pll)
+@@ -1660,6 +1661,7 @@ static const struct bcm2835_clk_desc clk_desc_array[] = {
+ 		.ana_reg_base = A2W_PLLB_ANA0,
+ 		.reference_enable_mask = A2W_XOSC_CTRL_PLLB_ENABLE,
+ 		.lock_mask = CM_LOCK_FLOCKB,
++		.flags = CLK_GET_RATE_NOCACHE,
+ 
+ 		.ana = &bcm2835_ana_default,
+ 
+@@ -1674,7 +1676,7 @@ static const struct bcm2835_clk_desc clk_desc_array[] = {
+ 		.load_mask = CM_PLLB_LOADARM,
+ 		.hold_mask = CM_PLLB_HOLDARM,
+ 		.fixed_divider = 1,
+-		.flags = CLK_SET_RATE_PARENT),
++		.flags = CLK_SET_RATE_PARENT | CLK_GET_RATE_NOCACHE),
+ 
+ 	/*
+ 	 * PLLC is the core PLL, used to drive the core VPU clock.
 -- 
 2.21.0
 
