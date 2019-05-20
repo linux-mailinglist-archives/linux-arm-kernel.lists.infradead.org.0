@@ -2,85 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E30C823121
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 12:14:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C6E523122
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 12:14:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=zOHGLUdjf/hHYnEw1llVl9gfeZCnNayp0QXGKz5hqoI=; b=GLGspCEV97joxpFhJUDiK/WQJQ
-	rhyigKi5DDXO6V8PnG1w1pxNHVOHGve2QpKzq303whdEMobfNL4HqP2e9DZK4vsaTT19Qk4hzLYTR
-	7Cg4B4U7hexOS/eNeYfOyfz2/pihy6d6L2MmmBwKmGxEc6EZfUEdXEC/JKLsAKzLgL7ZzLv7+Wa/C
-	uIPISfjcFzUquw6metRmPwCGmxKkNo0fNdlgd7SeDpBFVx85KifB8u1HGti67lH7TDboKH09ZWKic
-	Td3UYA23RZYk7bNUCVjNg0I37xMs7L27x4p/Ww2WXcH3qvXGX9pqLUHTQelkLa3oLWxhni1caFYXf
-	kLEwSvCA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qWfYyRDBfIRjLqaayx7iomF3Vl5Hr9QOWIPRvZmSKGE=; b=PspQdJ6IMErF1r
+	v2IhbE/tLejcz/VzaxLaIXx2EfpQUhLncjPI2uroqXXAo8seoZuHT3UjS+1seEhb4UzoRQJFlAnID
+	tIWBj9XJyYod+y7NU6tcDuU82Hss4TOCo66+8fR2bmyoMuqQvjmi6HnS/SwTND5rIf+TJt65ZXKjT
+	QWxwxTHa/tJz7Z03aQON6k27F3L1gPwaSDW1AmndyMlYHFoiXFYjWQ4e+6FjsfSL+/jL+9ivbkNGR
+	eXzJD8xhD4K6icABiwnw10RtveuMNABR8mtVr9Bm9jLQopa7J9kZJuLchmo6w6Z6qjpe7onIYZEC7
+	N2ifG4RMiSxn+kv6fVQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSfJO-0005ys-B8; Mon, 20 May 2019 10:14:30 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hSfJX-0006Dp-Mi; Mon, 20 May 2019 10:14:39 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSfHy-0004W6-Q3
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 10:13:07 +0000
-Received: by mail-pl1-x642.google.com with SMTP id g9so6499521plm.6
+ id 1hSfIp-0005ha-Dk
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 10:14:10 +0000
+Received: by mail-pg1-x542.google.com with SMTP id z16so6562877pgv.11
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 03:13:02 -0700 (PDT)
+ Mon, 20 May 2019 03:13:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :in-reply-to:references;
- bh=ap6Go4OzNxJ532m09L3XvGYt1ETDxtVIslcDJHxqhh8=;
- b=dg9voSlkL9Tcl87q88SNV55S8GA0JmQ0duHA+37dyzDY6OcpNFosrqe5mS3YzRmQOK
- KPzF/tT9V0EzWBhy2zsLMNsoshKCx2xZyxd4iwz9E9Z+2nn92gIHu5ZHF9a2rvSKpInj
- ca0v4q6NwLwD/s3f1bL/W4RAqzlQCYCkHWlRExJXrGi1L4hv02Om0lUPuSKo3CmzH1mz
- d34F0kjxLbephXWC09QvmFZSnEu6Ekd6KSVve5DHXWh8KKISDCiIzD1Vjtqw0xlrah4s
- Fmbp7jB3XlkVoe7T9o5bHTcpAiwbDpZHyq8FlWAt8RUnDgGdDJmKqnmM8+kdwtqJT8jL
- 8bLw==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=gSl0hdak9nrx3AjRA/ypcoIYXLtCzaU4jnEbvPcvNt8=;
+ b=JRFd3PDnga0E3LWtPoEqEV/39WriE8SzZ1OaF7n/NU7nJdlpwBoLgwLmjKEJpAvjPX
+ XZ1SmHbXXZ193KXruJGSbPsK93YJQfC5wXGkZOU3cIdhtTLLZLncciU/VgFYv4ypoWcA
+ UiHM6mh2RtiZrTevU5N3B6/lVDmfAWk6wlP9NRY324hi0FxwNsGhi9wdsu0rHb0Vhx/n
+ MGClOrhlg89rFShwBGqLaf99mD6KezVo7RAEdSWVDA5RW2t3yQjpL46CSYkkwWwS81n8
+ YTa9BrWd0ZSm0L2gZBK3heWtESBBTKDrSRGtSF/T6+IdbseVqzVpkKLX6PPaHhg3PXvH
+ S4cA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:in-reply-to:references;
- bh=ap6Go4OzNxJ532m09L3XvGYt1ETDxtVIslcDJHxqhh8=;
- b=kODi7iuBw+r5akwrxDbJBRtYg22MhpBnppPOb8Z/7nPiQe4rq3Qkd2tODLSaJad0vd
- cWLmrYFPwSkPJKcNVuRfSLO85uz5iXI8Y7ZBe7uuOsQLaQxl7SKUQjxeheuJf/N0lRIk
- kUxYTBBC6H1+i8bTkEp/Tb4npGjSfm3jXSicarVYisAneB6IWO/PySMlbv+rgAnYWUl4
- loaHgF5iUtRcM3eiNGMHsE8DREjVlepqKdKp+KXfiVNk9orlHFPo9w50mLRZykxIlxiq
- WN5tp+GmASVVtHzrk6uyzpL2gXRiXd6xgGJ1xnmVssuCrHCJUMknh8OjO+CMwaAU8VV7
- 24aA==
-X-Gm-Message-State: APjAAAVobVxHxGOIqDbA2XmPnLX8g6WWyhapBwnQV0XQC+Tky+yA4fn4
- vlXsDZEYgxqBBvFto05zvLAz0Q==
-X-Google-Smtp-Source: APXvYqz/VZ5IYWao7ZtNYoD6jisYi4sIXfq0npMXqR3qxjBzeqk+s2PVbN80bOiH+xksI9cdfVZ8gQ==
-X-Received: by 2002:a17:902:bb06:: with SMTP id
- l6mr16803820pls.78.1558347182324; 
- Mon, 20 May 2019 03:13:02 -0700 (PDT)
-Received: from baolinwangubtpc.spreadtrum.com ([117.18.48.102])
- by smtp.gmail.com with ESMTPSA id b3sm30098127pfr.146.2019.05.20.03.12.58
- (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 20 May 2019 03:13:01 -0700 (PDT)
-From: Baolin Wang <baolin.wang@linaro.org>
-To: adrian.hunter@intel.com, ulf.hansson@linaro.org, zhang.lyra@gmail.com,
- orsonzhai@gmail.com, robh+dt@kernel.org, mark.rutland@arm.com,
- arnd@arndb.de, olof@lixom.net
-Subject: [PATCH 9/9] arm64: dts: sprd: Add Spreadtrum SD host controller
- support
-Date: Mon, 20 May 2019 18:12:02 +0800
-Message-Id: <7fc6cd63966bda900b07ac9b2156e313a6f2ac17.1558346019.git.baolin.wang@linaro.org>
-X-Mailer: git-send-email 1.7.9.5
-In-Reply-To: <cover.1558346019.git.baolin.wang@linaro.org>
-References: <cover.1558346019.git.baolin.wang@linaro.org>
-In-Reply-To: <cover.1558346019.git.baolin.wang@linaro.org>
-References: <cover.1558346019.git.baolin.wang@linaro.org>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=gSl0hdak9nrx3AjRA/ypcoIYXLtCzaU4jnEbvPcvNt8=;
+ b=WAkdUYSxrmfvZA3hFJDUicautDva6e3KMW3BMDWbBLWZ3i1gb7w/57QeygQTANAhtW
+ v0KRwKR3+10RRD9N9VsPyE2SGXNOZOmHIOrS+3y6fPaW7R1dLrqkp+ArHOqA8h7QD0rf
+ ImMa5WF0NJCGyEqeC3kAJGJiG2d7r8PfOvqmU95W2AhOoO21akgASfAF+WvICDIBgMG+
+ +UVu9z9auOGT3g/PJFWLPg6W6ZBV4w8Qd5i+/dvyNDL4IfKe2eRdS79f2cCsLXLxtvS4
+ +5dwW+DWLgkWd0c/d5o44PD7NZ8fx+kGf4MI1v8DfNttqo9RQrQGDHEv668u5xAjLz1N
+ CdWQ==
+X-Gm-Message-State: APjAAAUMf31FWCdEjU0IJFGrIS93QvLCsrWT1Fbx/MwyJYc/OVxa3Z4R
+ HDaRzlxJOyRV23tT/R9oOaUyZw==
+X-Google-Smtp-Source: APXvYqyOW0QZtrH8O3rgAfo54rMSqrN3OZdfxdsodXTr+NokNvxXkGxPwDt1wmWe8pWIuVP0SPHygA==
+X-Received: by 2002:a62:1ec3:: with SMTP id
+ e186mr33157231pfe.197.1558347234346; 
+ Mon, 20 May 2019 03:13:54 -0700 (PDT)
+Received: from localhost ([122.172.118.99])
+ by smtp.gmail.com with ESMTPSA id i17sm22287324pfo.103.2019.05.20.03.13.52
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 20 May 2019 03:13:52 -0700 (PDT)
+Date: Mon, 20 May 2019 15:43:51 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Shawn Guo <shawnguo@kernel.org>
+Subject: Re: [PATCH v4 0/5] cpufreq: Add imx-cpufreq-dt driver for speed
+ grading
+Message-ID: <20190520101351.huda4rmpdzaegnj7@vireshk-i7>
+References: <cover.1557742902.git.leonard.crestez@nxp.com>
+ <20190514071322.avosfk4fzz2hzzx6@vireshk-i7>
+ <20190520071417.GU15856@dragon>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190520071417.GU15856@dragon>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_031303_082241_C8C3D8AC 
-X-CRM114-Status: GOOD (  10.47  )
+X-CRM114-CacheID: sfid-20190520_031356_403531_292FB982 
+X-CRM114-Status: GOOD (  11.80  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -102,78 +101,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, vincent.guittot@linaro.org,
- baolin.wang@linaro.org, linux-mmc@vger.kernel.org,
- linux-kernel@vger.kernel.org, arm@kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Aisheng Dong <aisheng.dong@nxp.com>,
+ Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Jacky Bai <ping.bai@nxp.com>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add one Spreadtrum SD host controller to support eMMC card for Spreadtrum
-SC9860 platform.
+On 20-05-19, 15:14, Shawn Guo wrote:
+> On Tue, May 14, 2019 at 12:43:22PM +0530, Viresh Kumar wrote:
+> > On 13-05-19, 11:01, Leonard Crestez wrote:
+> > > Right now in upstream imx8m cpufreq support just lists a common subset
+> > > of OPPs because the higher ones should only be attempted after checking
+> > > speed grading in fuses.
+> > > 
+> > > Driver reads from nvmem and calls dev_pm_opp_set_supported_hw before
+> > > registering cpufreq-dt.
+> > 
+> > Who will apply patches 3-5 ?
+> 
+> Me.  Will apply them after the first two get applied.
 
-Signed-off-by: Baolin Wang <baolin.wang@linaro.org>
----
- arch/arm64/boot/dts/sprd/whale2.dtsi |   35 ++++++++++++++++++++++++++++++++++
- 1 file changed, 35 insertions(+)
+Applied just now.
 
-diff --git a/arch/arm64/boot/dts/sprd/whale2.dtsi b/arch/arm64/boot/dts/sprd/whale2.dtsi
-index b5c5dce..86ec2b0 100644
---- a/arch/arm64/boot/dts/sprd/whale2.dtsi
-+++ b/arch/arm64/boot/dts/sprd/whale2.dtsi
-@@ -168,6 +168,34 @@
- 				vdd-supply = <&vddusb33>;
- 				sprd,vdd-voltage = <3300000>;
- 			};
-+
-+			sdio3: sdio@50430000 {
-+				compatible  = "sprd,sdhci-r11";
-+				reg = <0 0x50430000 0 0x1000>;
-+				interrupts = <GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>;
-+
-+				clock-names = "sdio", "enable", "2x_enable";
-+				clocks = <&aon_prediv CLK_EMMC_2X>,
-+				       <&apahb_gate CLK_EMMC_EB>,
-+				       <&aon_gate CLK_EMMC_2X_EN>;
-+				assigned-clocks = <&aon_prediv CLK_EMMC_2X>;
-+				assigned-clock-parents = <&clk_l0_409m6>;
-+
-+				sprd,phy-delay-mmc-hs400 = <0x44 0x7f 0x2e 0x2e>;
-+				sprd,phy-delay-mmc-hs200 = <0x0 0x8c 0x8c 0x8c>;
-+				sprd,phy-delay-mmc-ddr52 = <0x3f 0x75 0x14 0x14>;
-+				sprd,phy-delay-mmc-hs400es = <0x3f 0x3f 0x2e 0x2e>;
-+				vmmc-supply = <&vddemmccore>;
-+				bus-width = <8>;
-+				non-removable;
-+				no-sdio;
-+				no-sd;
-+				cap-mmc-hw-reset;
-+				mmc-hs400-enhanced-strobe;
-+				mmc-hs400-1_8v;
-+				mmc-hs200-1_8v;
-+				mmc-ddr-1_8v;
-+			};
- 		};
- 
- 		aon {
-@@ -310,4 +338,11 @@
- 		clock-frequency = <100000000>;
- 		clock-output-names = "ext-rco-100m";
- 	};
-+
-+	clk_l0_409m6: clk_l0_409m6 {
-+		compatible = "fixed-clock";
-+		#clock-cells = <0>;
-+		clock-frequency = <409600000>;
-+		clock-output-names = "ext-409m6";
-+	};
- };
 -- 
-1.7.9.5
-
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
