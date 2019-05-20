@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0EF7522BC7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 08:03:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8301222BD6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 08:06:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MvS634f0pZKjDKONm1W4YnAJo83MI6FjQmj5JbTvv+E=; b=bi/+Rrsy2s3aw1
-	CzMnZa3Qk110/Bx11NGyUD9SJvYb6wjKai5u3hTEQ/l36lJO54yjVjybjmnW5Y0uTP35BiHJfFPyq
-	ATcVM4I+1YC+jkvbRSWhbOdap0BBEuGxouJoXMNbbZpQvWYOtUBoAXEQj08q8+Q3isxVj51YplLqq
-	GH5LH8RgBIlooplSF01vGqeg8cqhLuIusxytqLTi86xkhyyjDcqIf6s6RJrn7G7hQ53s7aJ9l1gH+
-	To+QLh9YoApWV1CwABTyftFm4nNTNdScGtU4LvPBEuspDhkhUthdYSJnjAz1H1+nknCIkfJIloAp4
-	E9ZK6L6hHBoFipBSuFUQ==;
+	List-Owner; bh=zP97BSUz3UELH9jj6XNd5sPcttfBwCQOZMByMNZVJ90=; b=ccSOXDuepcjNgG
+	DOCIibPwe4rveWEw7GYLb8g5cMxQhyTfUNe7VtZfrY7XdKeYntPYXeK/8OBbAHzdBeY6cmxENlW0L
+	1WHajqv3ggKnWC98mNPU866WxAv/Uw2yFZhHhns7njxeEweIy6yDR1MHnkGNVrc86BgBccBIF6X/c
+	pikJR0JwPlcul9avVhO4vGlL5JSh8PbXc1auCTz3P8ciGgPslGhK8egoETJMHilael/yhSTecla34
+	UbfJfAUD180c0GWezoRh6XxxrNgreus5Rnqa/yxHkIgkAHNWCvP3zAlYXzY9zkCMFHNfiuji6MroG
+	YlQ//4cXSNFL2soWD1Uw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSbOk-0003Xw-0W; Mon, 20 May 2019 06:03:46 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hSbRm-0005FD-Gc; Mon, 20 May 2019 06:06:54 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSbOc-0003XS-Sd; Mon, 20 May 2019 06:03:40 +0000
-X-UUID: 357d6eef7b404846864f74a3baaeb5db-20190519
-X-UUID: 357d6eef7b404846864f74a3baaeb5db-20190519
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ id 1hSbRe-00058S-Kv; Mon, 20 May 2019 06:06:47 +0000
+X-UUID: b6ea6b9fce964c7cac7254bb2ba854f8-20190519
+X-UUID: b6ea6b9fce964c7cac7254bb2ba854f8-20190519
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
  (envelope-from <chun-hung.wu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1490184342; Sun, 19 May 2019 22:03:28 -0800
-Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 19 May 2019 23:03:26 -0700
+ with ESMTP id 46756079; Sun, 19 May 2019 22:06:42 -0800
+Received: from mtkmbs03n2.mediatek.inc (172.21.101.182) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 19 May 2019 23:06:40 -0700
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 20 May 2019 14:03:25 +0800
+ mtkmbs03n2.mediatek.inc (172.21.101.182) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 20 May 2019 14:06:38 +0800
 Received: from [172.21.77.33] (172.21.77.33) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 20 May 2019 14:03:25 +0800
-Message-ID: <1558332205.11080.6.camel@mtkswgap22>
-Subject: Re: [PATCH 3/4] iio: adc: mediatek: SET_LATE_SYSTEM_SLEEP_PM_OPS
- support
+ Transport; Mon, 20 May 2019 14:06:38 +0800
+Message-ID: <1558332398.11080.9.camel@mtkswgap22>
+Subject: Re: [PATCH 4/4] iio: auxadc: mediatek: change to subsys_initcall
 From: Chun-Hung Wu <chun-hung.wu@mediatek.com>
 To: Jonathan Cameron <jic23@kernel.org>
-Date: Mon, 20 May 2019 14:03:25 +0800
-In-Reply-To: <20190518113527.5210b0bf@archlinux>
+Date: Mon, 20 May 2019 14:06:38 +0800
+In-Reply-To: <20190518113643.53a42976@archlinux>
 References: <1557994247-16739-1-git-send-email-chun-hung.wu@mediatek.com>
- <1557994247-16739-4-git-send-email-chun-hung.wu@mediatek.com>
- <20190518113527.5210b0bf@archlinux>
+ <1557994247-16739-5-git-send-email-chun-hung.wu@mediatek.com>
+ <20190518113643.53a42976@archlinux>
 X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 2F0B7CBF20F89F7C6C59579E9C4CCAF43409E6EB9A5EC6F37009CE4AC58C707A2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190519_230338_930703_A9FB3502 
-X-CRM114-Status: GOOD (  17.14  )
+X-CRM114-CacheID: sfid-20190519_230646_690938_ADBDF70B 
+X-CRM114-Status: GOOD (  14.67  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -86,56 +86,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jonathan:
+Hi Jonathan,
 
-  Thanks for the prompt reply,
-
-On Sat, 2019-05-18 at 11:35 +0100, Jonathan Cameron wrote:
-> On Thu, 16 May 2019 16:10:46 +0800
+On Sat, 2019-05-18 at 11:36 +0100, Jonathan Cameron wrote:
+> On Thu, 16 May 2019 16:10:47 +0800
 > Chun-Hung Wu <chun-hung.wu@mediatek.com> wrote:
 > 
-> >   Move suspend/resume to late_suspend and
-> > early_resume to gurantee users can use auxadc
-> guarantee
+> >   Move auxadc platform_driver_register() from module_init
+> > to subsys_initcall because auxadc user drivers
+> > are all moudle drivers, need to gurantee
+> > auxadc driver ready before module_init.
+> > 
+> Is it not possible to make them use deferred handling to come
+> back later if this isn't yet available?
 > 
-will fix it in next version.
-> > driver at suspend/resume stage.
-> No problem with the patch content, but we need a reason why they may
-> want to do so?
-Our thermal drivers uses auxadc at suspend/resume stage.
-In order to avoid auxadc suspended prior to thermal driver,
-we move auxadc to late_suspend and early_resume.
+> subsys_initcall often ends up being a more fragile approach.
+
+Agreed, I will ask auxadc driver users to add deferred handling
+instead of moving auxadc platform_driver_register() from module_init
+to subsys_initcall.
 
 Thanks,
-Chun-Hung
+Chun-hung
+
 > 
 > Thanks,
 > 
 > Jonathan
-> > 
+> 
 > > Signed-off-by: Chun-Hung Wu <chun-hung.wu@mediatek.com>
 > > ---
-> >  drivers/iio/adc/mt6577_auxadc.c | 7 ++++---
-> >  1 file changed, 4 insertions(+), 3 deletions(-)
+> >  drivers/iio/adc/mt6577_auxadc.c | 14 +++++++++++++-
+> >  1 file changed, 13 insertions(+), 1 deletion(-)
 > > 
 > > diff --git a/drivers/iio/adc/mt6577_auxadc.c b/drivers/iio/adc/mt6577_auxadc.c
-> > index e1bdcc0..58d7cb2 100644
+> > index 58d7cb2..cb8e3dd 100644
 > > --- a/drivers/iio/adc/mt6577_auxadc.c
 > > +++ b/drivers/iio/adc/mt6577_auxadc.c
-> > @@ -326,9 +326,10 @@ static int mt6577_auxadc_remove(struct platform_device *pdev)
-> >  	return 0;
-> >  }
+> > @@ -350,7 +350,19 @@ static int mt6577_auxadc_remove(struct platform_device *pdev)
+> >  	.probe	= mt6577_auxadc_probe,
+> >  	.remove	= mt6577_auxadc_remove,
+> >  };
+> > -module_platform_driver(mt6577_auxadc_driver);
+> > +
+> > +static int __init mt6577_auxadc_init(void)
+> > +{
+> > +	return platform_driver_register(&mt6577_auxadc_driver);
+> > +}
+> > +
+> > +static void __exit mt6577_auxadc_exit(void)
+> > +{
+> > +	platform_driver_unregister(&mt6577_auxadc_driver);
+> > +}
+> > +
+> > +subsys_initcall(mt6577_auxadc_init);
+> > +module_exit(mt6577_auxadc_exit);
 > >  
-> > -static SIMPLE_DEV_PM_OPS(mt6577_auxadc_pm_ops,
-> > -			 mt6577_auxadc_suspend,
-> > -			 mt6577_auxadc_resume);
-> > +static const struct dev_pm_ops mt6577_auxadc_pm_ops = {
-> > +	SET_LATE_SYSTEM_SLEEP_PM_OPS(mt6577_auxadc_suspend,
-> > +				     mt6577_auxadc_resume)
-> > +};
-> >  
-> >  static const struct of_device_id mt6577_auxadc_of_match[] = {
-> >  	{ .compatible = "mediatek,mt2701-auxadc", .data = &mt8173_compat},
+> >  MODULE_AUTHOR("Zhiyong Tao <zhiyong.tao@mediatek.com>");
+> >  MODULE_DESCRIPTION("MTK AUXADC Device Driver");
 > 
 
 
