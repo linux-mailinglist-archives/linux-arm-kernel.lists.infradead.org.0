@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3B5422E07
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 10:10:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C46C22DD9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 10:07:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a92NPek5RlIAnXH5Qr3pSppW+dex6Bd1MpppQzXob7g=; b=IFKxCsJLa+hRVG
-	oFLnPy8wUeY4++gRB+0AXbMCF6syTpSGXkXK/mh9WFVrc4QVjh64bBfhLeFYDr4W95+wWldFl5bb3
-	yGi/S/NhZp/fuG8RvrrgXFhfUdzwwFsOBKS308WdCZK/58coWqdpDUVgYhb4hWMJ/5F2Hw2LsszXi
-	V6JJ1vDwJuqYiLKExcydULebKfvPHD0r4fYFgrFjBV1YS3505xWiAsXUBBOmiV0aCpNWtsCFgqRcp
-	My9UXmplCILmzDPJKzihr4JfSRvqBt/2i8q4xehUqy0z0IRbrPCpxTCnMftK5cOHSh0rRpecjdcTq
-	xRwA5TllL6Gk1U3NB1kw==;
+	List-Owner; bh=MSucdNKPqFCaHzTbCt6i5ChSaaiPLG0Jl9Y2/RZPuWU=; b=T4VRXSuPOcg8aP
+	BubVlJo+MzQx95ok4FA6wBdFCsKdZ+l1rNkGfONWzE3lTjGjN7zcyjKJDl5e8GopmjeSMq0Xi18u9
+	JHnkx0LqVNefy+EfuOax+qfsTCfEtHuzS9THa70I7vyfG49m+XddNwb5Ya9JlZU5AcH8/y0KbZwbh
+	6//34tPPSUbNnEkEJP2RU7xtM33Xq2crnmui9eZYadsx22429WzTzb2Lh/HZhCxvxOEIjxUC3lsLs
+	1gSdQbGZOslz38KLJ9t4nyX8CjflnXGC4w/WdfzzcKyg0ho9OvuJ1K8VajAcn2NphS0ojSM1JeCKP
+	FcgQJdSDTmlKinYHPtTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSdNJ-0007vg-Q4; Mon, 20 May 2019 08:10:25 +0000
+	id 1hSdKN-0003DD-5e; Mon, 20 May 2019 08:07:23 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSdIg-0001Iv-Hq
+ id 1hSdIg-0001J0-MP
  for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 08:05:45 +0000
 Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E975F21019;
- Mon, 20 May 2019 08:05:36 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5C501216B7;
+ Mon, 20 May 2019 08:05:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1558339537;
- bh=y84Uxko3cSZ4ioV1p74onTS1ViFsGIN9LBJ8rhBd2nQ=;
+ bh=Vd08FCiJI+QbVnWzLa/OEl9cbJxIK9Y8UolCugmpFJ8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=IZqqK1kl+AGI3tZgKJQVbHiIOy0NNbU/B4HOBmRl18J4Gci3r6eh79C8cB9O7qQUm
- KaCrS0g/X5srp9YBpByDEkCK60fJYTwwqC8cF9zBVevR9TZieShQ3Pa7K0iMUsjbnR
- yN0hPHGOJZ2gDlN8zMYlGKjaee1o/hxjO0rNthAI=
+ b=m13RRTzmr3b/Z/1KbobT1RqzRVG5hXxXS24FL4i60Hv/VTB6Z3SSRHIfEaUOaMZU6
+ 5uMlV5kF7zWGTIb7SJf/+6lOfbeBKnz2IkpFURbPFQG41ATaVdAiZThz13u5Tjjho4
+ XfAlbnuY3Z/sAFoZVkMCGkoMVctgaNbr0ibpp5lU=
 Received: by wens.tw (Postfix, from userid 1000)
- id 7CE226580F; Mon, 20 May 2019 16:05:32 +0800 (CST)
+ id 8940B64A9B; Mon, 20 May 2019 16:05:32 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
 To: Maxime Ripard <maxime.ripard@bootlin.com>, Stephen Boyd <sboyd@kernel.org>,
  Michael Turquette <mturquette@baylibre.com>
-Subject: [PATCH 09/25] clk: sunxi-ng: sun8i-r: Use local parent references for
- CLK_HW_INIT_*
-Date: Mon, 20 May 2019 16:04:05 +0800
-Message-Id: <20190520080421.12575-10-wens@kernel.org>
+Subject: [PATCH 10/25] clk: sunxi-ng: a10: Use local parent references for
+ CLK_FIXED_FACTOR
+Date: Mon, 20 May 2019 16:04:06 +0800
+Message-Id: <20190520080421.12575-11-wens@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190520080421.12575-1-wens@kernel.org>
 References: <20190520080421.12575-1-wens@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_010538_799022_C05C695D 
-X-CRM114-Status: GOOD (  13.68  )
+X-CRM114-CacheID: sfid-20190520_010538_926078_B88B18D3 
+X-CRM114-Status: GOOD (  12.30  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,139 +88,77 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Chen-Yu Tsai <wens@csie.org>
 
-With the new clk parenting code and CLK_HW_INIT_* macros, we can
-reference parents locally via pointers to struct clk_hw or DT
-clock-names.
+With the new clk parenting code and CLK_FIXED_FACTOR_{HW,FW_NAME}
+macros, we can reference parents locally via pointers to struct clk_hw
+or DT clock-names.
 
-Convert existing CLK_HW_INIT_* definitions to describe parents using
-either struct clk_hw pointers or clock-names from the device tree
-binding.
-
-For the AR100, this also allows us to merge the generic AR100 and the
-A83T specific one, which only differed in the global clock names for
-their parent clocks. The device tree bindings used the same name
-specifiers.
+Convert existing CLK_FIXED_FACTOR definitions to either the _HW or
+_FW_NAME variant based on whether the parent clock is internal or
+external to the CCU.
 
 Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 ---
- drivers/clk/sunxi-ng/ccu-sun8i-r.c | 65 ++++++++++++------------------
- 1 file changed, 25 insertions(+), 40 deletions(-)
+ drivers/clk/sunxi-ng/ccu-sun4i-a10.c | 39 ++++++++++++++++++----------
+ 1 file changed, 25 insertions(+), 14 deletions(-)
 
-diff --git a/drivers/clk/sunxi-ng/ccu-sun8i-r.c b/drivers/clk/sunxi-ng/ccu-sun8i-r.c
-index 71feb7b24e8a..a43e8de873d7 100644
---- a/drivers/clk/sunxi-ng/ccu-sun8i-r.c
-+++ b/drivers/clk/sunxi-ng/ccu-sun8i-r.c
-@@ -25,10 +25,13 @@
+diff --git a/drivers/clk/sunxi-ng/ccu-sun4i-a10.c b/drivers/clk/sunxi-ng/ccu-sun4i-a10.c
+index 2bbfb3343311..59def849db08 100644
+--- a/drivers/clk/sunxi-ng/ccu-sun4i-a10.c
++++ b/drivers/clk/sunxi-ng/ccu-sun4i-a10.c
+@@ -168,8 +168,9 @@ static struct ccu_nk pll_periph_base_clk = {
+ 	},
+ };
  
- #include "ccu-sun8i-r.h"
+-static CLK_FIXED_FACTOR(pll_periph_clk, "pll-periph", "pll-periph-base",
+-			2, 1, CLK_SET_RATE_PARENT);
++static CLK_FIXED_FACTOR_HW(pll_periph_clk, "pll-periph",
++			   &pll_periph_base_clk.common.hw,
++			   2, 1, CLK_SET_RATE_PARENT);
  
--static const char * const ar100_parents[] = { "osc32k", "osc24M",
--					     "pll-periph0", "iosc" };
--static const char * const a83t_ar100_parents[] = { "osc16M-d512", "osc24M",
--						   "pll-periph0", "iosc" };
-+static const struct clk_parent_data ar100_parents[] = {
-+	{ .fw_name = "losc" },
-+	{ .fw_name = "hosc" },
-+	{ .fw_name = "pll-periph" },
-+	{ .fw_name = "iosc" },
+ /* Not documented on A10 */
+ static struct ccu_div pll_periph_sata_clk = {
+@@ -1036,19 +1037,29 @@ static struct ccu_common *sun4i_sun7i_ccu_clks[] = {
+ 	&out_b_clk.common
+ };
+ 
++static const struct clk_hw *clk_parent_pll_audio[] = {
++	&pll_audio_base_clk.common.hw
 +};
 +
- static const struct ccu_mux_var_prediv ar100_predivs[] = {
- 	{ .index = 2, .shift = 8, .width = 5 },
- };
-@@ -47,31 +50,10 @@ static struct ccu_div ar100_clk = {
- 	.common		= {
- 		.reg		= 0x00,
- 		.features	= CCU_FEATURE_VARIABLE_PREDIV,
--		.hw.init	= CLK_HW_INIT_PARENTS("ar100",
--						      ar100_parents,
--						      &ccu_div_ops,
--						      0),
--	},
--};
--
--static struct ccu_div a83t_ar100_clk = {
--	.div		= _SUNXI_CCU_DIV_FLAGS(4, 2, CLK_DIVIDER_POWER_OF_TWO),
--
--	.mux		= {
--		.shift	= 16,
--		.width	= 2,
--
--		.var_predivs	= ar100_predivs,
--		.n_var_predivs	= ARRAY_SIZE(ar100_predivs),
--	},
--
--	.common		= {
--		.reg		= 0x00,
--		.features	= CCU_FEATURE_VARIABLE_PREDIV,
--		.hw.init	= CLK_HW_INIT_PARENTS("ar100",
--						      a83t_ar100_parents,
--						      &ccu_div_ops,
--						      0),
-+		.hw.init	= CLK_HW_INIT_PARENTS_DATA("ar100",
-+							   ar100_parents,
-+							   &ccu_div_ops,
-+							   0),
- 	},
- };
+ /* Post-divider for pll-audio is hardcoded to 1 */
+-static CLK_FIXED_FACTOR(pll_audio_clk, "pll-audio",
+-			"pll-audio-base", 1, 1, CLK_SET_RATE_PARENT);
+-static CLK_FIXED_FACTOR(pll_audio_2x_clk, "pll-audio-2x",
+-			"pll-audio-base", 2, 1, CLK_SET_RATE_PARENT);
+-static CLK_FIXED_FACTOR(pll_audio_4x_clk, "pll-audio-4x",
+-			"pll-audio-base", 1, 1, CLK_SET_RATE_PARENT);
+-static CLK_FIXED_FACTOR(pll_audio_8x_clk, "pll-audio-8x",
+-			"pll-audio-base", 1, 2, CLK_SET_RATE_PARENT);
+-static CLK_FIXED_FACTOR(pll_video0_2x_clk, "pll-video0-2x",
+-			"pll-video0", 1, 2, CLK_SET_RATE_PARENT);
+-static CLK_FIXED_FACTOR(pll_video1_2x_clk, "pll-video1-2x",
+-			"pll-video1", 1, 2, CLK_SET_RATE_PARENT);
++static CLK_FIXED_FACTOR_HWS(pll_audio_clk, "pll-audio",
++			    clk_parent_pll_audio,
++			    1, 1, CLK_SET_RATE_PARENT);
++static CLK_FIXED_FACTOR_HWS(pll_audio_2x_clk, "pll-audio-2x",
++			    clk_parent_pll_audio,
++			    2, 1, CLK_SET_RATE_PARENT);
++static CLK_FIXED_FACTOR_HWS(pll_audio_4x_clk, "pll-audio-4x",
++			    clk_parent_pll_audio,
++			    1, 1, CLK_SET_RATE_PARENT);
++static CLK_FIXED_FACTOR_HWS(pll_audio_8x_clk, "pll-audio-8x",
++			    clk_parent_pll_audio,
++			    1, 2, CLK_SET_RATE_PARENT);
++static CLK_FIXED_FACTOR_HW(pll_video0_2x_clk, "pll-video0-2x",
++			   &pll_video0_clk.common.hw,
++			   1, 2, CLK_SET_RATE_PARENT);
++static CLK_FIXED_FACTOR_HW(pll_video1_2x_clk, "pll-video1-2x",
++			   &pll_video1_clk.common.hw,
++			   1, 2, CLK_SET_RATE_PARENT);
  
-@@ -82,10 +64,10 @@ static struct ccu_div apb0_clk = {
  
- 	.common		= {
- 		.reg		= 0x0c,
--		.hw.init	= CLK_HW_INIT("apb0",
--					      "ahb0",
--					      &ccu_div_ops,
--					      0),
-+		.hw.init	= CLK_HW_INIT_HW("apb0",
-+						 &ahb0_clk.hw,
-+						 &ccu_div_ops,
-+						 0),
- 	},
- };
- 
-@@ -115,7 +97,10 @@ static SUNXI_CCU_MP_WITH_MUX_GATE(ir_clk, "ir",
- 				  BIT(31),	/* gate */
- 				  0);
- 
--static const char *const a83t_r_mod0_parents[] = { "osc16M", "osc24M" };
-+static const struct clk_parent_data a83t_r_mod0_parents[] = {
-+	{ .fw_name = "iosc" },
-+	{ .fw_name = "hosc" },
-+};
- static const struct ccu_mux_fixed_prediv a83t_ir_predivs[] = {
- 	{ .index = 0, .div = 16 },
- };
-@@ -135,15 +120,15 @@ static struct ccu_mp a83t_ir_clk = {
- 	.common		= {
- 		.reg		= 0x54,
- 		.features	= CCU_FEATURE_VARIABLE_PREDIV,
--		.hw.init	= CLK_HW_INIT_PARENTS("ir",
--						      a83t_r_mod0_parents,
--						      &ccu_mp_ops,
--						      0),
-+		.hw.init	= CLK_HW_INIT_PARENTS_DATA("ir",
-+							   a83t_r_mod0_parents,
-+							   &ccu_mp_ops,
-+							   0),
- 	},
- };
- 
- static struct ccu_common *sun8i_a83t_r_ccu_clks[] = {
--	&a83t_ar100_clk.common,
-+	&ar100_clk.common,
- 	&a83t_apb0_clk.common,
- 	&apb0_pio_clk.common,
- 	&apb0_ir_clk.common,
-@@ -182,7 +167,7 @@ static struct ccu_common *sun50i_a64_r_ccu_clks[] = {
- 
- static struct clk_hw_onecell_data sun8i_a83t_r_hw_clks = {
- 	.hws	= {
--		[CLK_AR100]		= &a83t_ar100_clk.common.hw,
-+		[CLK_AR100]		= &ar100_clk.common.hw,
- 		[CLK_AHB0]		= &ahb0_clk.hw,
- 		[CLK_APB0]		= &a83t_apb0_clk.common.hw,
- 		[CLK_APB0_PIO]		= &apb0_pio_clk.common.hw,
+ static struct clk_hw_onecell_data sun4i_a10_hw_clks = {
 -- 
 2.20.1
 
