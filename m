@@ -2,56 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1BC923AB1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 16:44:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CF9723ABF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 16:46:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/Sq6mKjm5G52QE2/no3VwZhP1bm5TRMutwGj7oBSk50=; b=jDJ5aJrUTu7amBEI1nHJLtKSu
-	sfGEYyQCtJy4zBOYZpBGmejRsXjbAWq/8G69njfWMdb4o8wOCtIWPZShgeJ4I2xkBIUxHlmMxSFTD
-	PZIXHylVFo6fE3FfIPXmIx5keftQkP5uHJxBgldWufeA5m90WgM8lhIQPOKARmCvZa4fnBYvMYHd5
-	YkMpllBzfNMNoVRV7XQQw9yZenCxQJIXIVJgAzqX1BAXfOgj5fInb3/g+Ln8l0Ofb3TTboRHW2xT6
-	ZJPWtSPKzABzt9p/+cqkx0/lcbOm/5eKZyEqqXTbkkmomzvdaCIcazYUGbFR9ewnVXIa75+OKZqxL
-	fJqJ0jYCA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=OQuTw78gavvbKfxKfgSCCxSOf84XI5PF5B/VQXQ8O9E=; b=lFlCqRUbJrO9HQ
+	rBUEcrpQJpxRwTmO4pl1ZZRppNUylMea8bLOPA5lCrqYst1pADt8pCczFos8KeB5+KyX6u8+3DnbT
+	34F4fBQofEC9WtSJKs9TSULVX7IrBU3s3oFy7Lg9PXIF9NPZyu2EjDxDEItpazHyORmj07YxA7+j6
+	hZ2uFZD8LB5AW55OZ0GFxp8iW5J7uU3O7VA2f7qbzm7hIwRiXfWLztoa8NHNy5VLa4RGj9/WB73p2
+	Alclc6hyGmTV/Sf5+FB3jQM7idx14588CoSS2djDdbZs2v+0uOo3ZnNL88ncL1tGBrmeOwP0cnCbY
+	jRwwnCO41QFKhK5hImMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSjWR-0005oA-En; Mon, 20 May 2019 14:44:15 +0000
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+	id 1hSjYb-0007XN-Bw; Mon, 20 May 2019 14:46:29 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSjWJ-0005no-QV
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 14:44:09 +0000
-X-Originating-IP: 90.88.22.185
-Received: from localhost (aaubervilliers-681-1-80-185.w90-88.abo.wanadoo.fr
- [90.88.22.185]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id F0B831BF216;
- Mon, 20 May 2019 14:44:04 +0000 (UTC)
-Date: Mon, 20 May 2019 16:44:04 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
-Subject: Re: [PATCH v3 2/4] arm64: dts: allwinner: h6: add watchdog node
-Message-ID: <20190520144404.zprbuqt3d7uuxgr2@flea>
-References: <20190518152355.11134-1-peron.clem@gmail.com>
- <20190518152355.11134-3-peron.clem@gmail.com>
- <20190520073652.itk452vrpnicta5v@flea>
- <CAJiuCceEL9xH45P6Gj99YTir_1tkyraf5HefDNfm9p+UtdLs8w@mail.gmail.com>
+ id 1hSjYT-0007Wu-GR
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 14:46:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:Content-Type:MIME-Version:
+ Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=pSW5ctloJRT72T9mw3+jWe/wggZXae1Ey1a1jP2wyhg=; b=t9KY++UqF2Aazp+uUPmGeC+gd
+ 434nvKJS/6lTz7MQrToT8lPZlIWrhuKlSCXnf2oh8k+dzIVfAwQFjH5d9IreX8vdPITigh/Z/nxFc
+ 1G0+nq3KqcAdm8KnlthTdOQLJk+GD1WeJeiJH9KrDe4PUH72piDxBJ0834xP0cgLdL+Ho+qpSrp+g
+ aR3wtGhD7hpYK0F+lszctIcuqkf1Dr0XvoKE3E9K6FrtzK+0yrUgRvBUlIABE99zMWmisM0vokTXV
+ LjDiDF+/V3dmhxOZOmIZAXIlMIeo8lBY2oGqYEXPFi599Bt/etw3TSs7roezRZZqrLKiUn/M7N6uK
+ TSCGG1SuA==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:55900)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1hSjYO-0003O4-Gc; Mon, 20 May 2019 15:46:16 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.89)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1hSjYN-00050O-QQ; Mon, 20 May 2019 15:46:15 +0100
+Date: Mon, 20 May 2019 15:46:15 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 0/8] Resurect RiscPC support
+Message-ID: <20190520144615.gzrztyhoncyfc5xr@shell.armlinux.org.uk>
 MIME-Version: 1.0
-In-Reply-To: <CAJiuCceEL9xH45P6Gj99YTir_1tkyraf5HefDNfm9p+UtdLs8w@mail.gmail.com>
-User-Agent: NeoMutt/20180716
+Content-Disposition: inline
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_074408_014540_690D4077 
-X-CRM114-Status: GOOD (  17.99  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190520_074621_543878_5B05305A 
+X-CRM114-Status: GOOD (  12.24  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.201 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,102 +84,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, linux-watchdog@vger.kernel.org,
- linux-kernel <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Wim Van Sebroeck <wim@linux-watchdog.org>, Guenter Roeck <linux@roeck-us.net>
-Content-Type: multipart/mixed; boundary="===============4978933016158731337=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Support for RiscPC still mostly works, but there have been some
+breakages along the way since 2.6 kernels (the last kernel I ran on my
+RiscPC.)  Notable breakages are:
 
---===============4978933016158731337==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ilnq5ytbw3qmunv6"
-Content-Disposition: inline
+- Conversion to generic IRQ broke the keyboard.
+- A patch to avoid modifying SG entries for IOMD DMA broke DMA support
+  (which only affects expansion cards.)
+- Cosmentic breakage due to printk() behavioural changes.
+- The kernel size grew beyond the ability for the RISC OS boot loader
+  application to cope, which has been resolved in the latest version of
+  !Linux.
 
+These issues are resolved in this series, as well as removing RiscPC's
+usage of the old gettimeoffset facility.
 
---ilnq5ytbw3qmunv6
-Content-Type: text/plain; charset=iso-8859-1
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+However, RiscPC timekeeping suffers greatly on recent kernels compared
+to 2.6 series kernels: the change to make all interrupt handlers run
+with IRQs off means that we are no longer able to receive timer
+interrupts while (eg) PIO data is being transferred to the internal
+drive, which is a very time-consuming operation.  This is soo bad that
+NTP is unable to fix the problem, and there is no way to resolve this
+regression from a hardware point of view.
 
-On Mon, May 20, 2019 at 10:21:40AM +0200, Cl=E9ment P=E9ron wrote:
-> Hi,
->
-> On Mon, 20 May 2019 at 09:36, Maxime Ripard <maxime.ripard@bootlin.com> w=
-rote:
-> >
-> > On Sat, May 18, 2019 at 05:23:53PM +0200, Cl=E9ment P=E9ron wrote:
-> > > Allwinner H6 has a watchog node which seems broken
-> > > on some boards.
-> > >
-> > > Test has been performed on several boards.
-> > >
-> > > Chen-Yu Tsai boards:
-> > > Pine H64 - H6448BA 7782 =3D> OK
-> > > OrangePi Lite 2 - H8068BA 61C2 =3D> KO
-> > >
-> > > Martin Ayotte boards:
-> > > Pine H64 - H8069BA 6892 =3D> OK
-> > > OrangePi 3 - HA047BA 69W2 =3D> KO
-> > > OrangePi One Plus - H7310BA 6842 =3D> KO
-> > > OrangePi Lite2 - H6448BA 6662 =3D> KO
-> > >
-> > > Cl=E9ment P=E9ron board:
-> > > Beelink GS1 - H7309BA 6842 =3D> KO
-> > >
-> > > As it seems not fixable for now, declare the node
-> > > but leave it disable with a comment.
-> > >
-> > > Signed-off-by: Cl=E9ment P=E9ron <peron.clem@gmail.com>
-> >
-> > If it doesn't work most boards, then why do we need to merge that
-> > patch in the first place?
->
-> My personnal opinion, is that having the IP declared and disabled with
-> a comment saying "it's broken on some boards" in the device-tree is
-> better than not having at all.
->
-> This will explicit say "the IP exist but don't use it!".
-> Maybe some people with a functionnal board would like to explicitly
-> use it on their dts.
+That said, using an external disk connected via an expansion card
+allows the use of DMA, thereby allowing the problem to be bypassed.
 
-Yeah, that makes sense. Chen-Yu, any opinion on the matter?
+Keeping RiscPC support alive in the kernel, however, is beneficial to
+on-going maintanence of fs/adfs support, which still has users.
 
-Maxime
+This patch series is currently against 5.1, but should merge with
+v5.2-rc1.
 
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+Merge plan: I'll send a pull request to arm-soc for this in due course.
 
---ilnq5ytbw3qmunv6
-Content-Type: application/pgp-signature; name="signature.asc"
+ arch/arm/Kconfig          |  1 -
+ arch/arm/mach-rpc/dma.c   | 97 ++++++++++++++++++++++++-----------------------
+ arch/arm/mach-rpc/ecard.c | 11 ++++--
+ arch/arm/mach-rpc/irq.c   |  3 +-
+ arch/arm/mach-rpc/time.c  | 38 ++++++++++++-------
+ 5 files changed, 83 insertions(+), 67 deletions(-)
 
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXOK9NAAKCRDj7w1vZxhR
-xTPcAP41As2dmsqJWuZDGwrGeXjz5+67O+gfyWMVpwNTjBfB3wD+LDkh8o3xUFs7
-x5b2IjWeOW15lbD6dJpdtyxuRX4coQg=
-=178x
------END PGP SIGNATURE-----
-
---ilnq5ytbw3qmunv6--
-
-
---===============4978933016158731337==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4978933016158731337==--
-
