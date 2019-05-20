@@ -2,87 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B20522AEB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 06:41:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC48F22AF1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 06:43:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wOdoBoWJ6y87CYwwGRp1V9tzJUrrg6o5tFkUSKBdKPw=; b=F/nt4aI4pxyCQ0
-	e5P8fMyPm9nIx9hKAiMIC2wCvApDZ9tZh4/QSHdbm9jBQ84FpaGgEjdoJVZbiQpYymPDTDjEXXjVL
-	0C/jivFuIvANNr0prYFKpUXID0sywERKnBHWi06g1c8tZGAPSu4OmOWGHXY2FtfNZtB/L39Xg/y3Y
-	w2G5FdbaQpwznWMISlvETNMk6n52nIn/gNhsoSEKU1edCeQsQxguCMGHtyxpKYfGOJrgbqjYPInSY
-	/yvGXOXk9/IUn/C9qLCG4ytWrzvcGYavm9fR4ZgtIj0b1gHOQNTnIerIuROKvDf8cdMU18l+L3h8l
-	cqQ7+YAjVvOqoLRX+xuA==;
+	List-Owner; bh=da6bV/3awB0i7+D0f7KP8B9aaUDVOrlzFQ92B7ILkM8=; b=ZioIk67BsTOH5H
+	hjyYFI8Gu7+x1x8pSDvQbWHT6iueDQ4eHe0uKFbVr8nb1vcLtn9MIl1qKIExWWPRx+2CZkZep6/P+
+	ABzJTKyPJBH/3wes/LT57aldVDstzR1GI2sUwSha+WoSHiR9mEGmIuyDZMIKmOnbxQQDhDjlpLATh
+	EvUXqAeEHfr9hvfdWDWvt0XjhSt58eEXqq4lGQtadyw/3+pMj2q60yLYGijGStFn6ECxj51945h9i
+	LN9BK+Q+Eb/iLG9MeT0/xQBwkXMLKYeNCi6ih+AZRYI9R6Lbad17Nb5d2mpYp5WWwh/Kje/iEVUPz
+	JizFzs1aZp/lOggQb7ZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSa6v-00056L-Uk; Mon, 20 May 2019 04:41:18 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hSa92-0005PP-0I; Mon, 20 May 2019 04:43:28 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSa6p-00055Z-Nn
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 04:41:12 +0000
-Received: by mail-pl1-x643.google.com with SMTP id p1so713674plo.2
+ id 1hSa8v-0005OK-1f
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 04:43:22 +0000
+Received: by mail-pl1-x644.google.com with SMTP id g69so6094310plb.7
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 19 May 2019 21:41:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ Sun, 19 May 2019 21:43:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=hQw5aECgY9hKK5rZ7g8MBM09I6jNL0ROWQsBCMlAOrQ=;
- b=CHlsGg1p7a9hc3+KkJoUw8ok0htU3vc27YzRVP8CMdqBhgkmGeNP91gS+yuP3utt5G
- oRlTos/xF2Rejcsd0BkEVMmQrs7XKf/dae6xidzWuR+xFI5AILwFC0Hlk5g0UvwEkbzW
- 1iZdLSnjXW9taDvh8QeuNJmhAT1sawmbt2Pf0k75DF7p1fs8uZA4cI+YDo/ekFDDS72w
- onIWHPVbYxSv7jLjDoRrXA+L2q5UJH/WIyaj2D6PFQccc65Ma5Vf/ZVcs+1OxyWsjq1D
- MpNfsnRt/2BBgrbsH9ZIil3AoE5FMa0lZKhAo1p4GsQTR9eWVhx2LNBmJ50+FQR2Mjst
- SqaA==
+ bh=+XiwKGCePMesqEFsZbk88+d/XnSzWj4VH7Ml5qL5pt0=;
+ b=unoGz+98418sHeX4y3va9Fw7O/7rbEjL0hqVIq1my/Asr2dzM38M5H+2LqZvHB8AAU
+ CqAQ6kJMNTvZsHuKd08/xPftA/HCBVOpd9T/IVsfET13Jf59zZ2lgw7rBogYKdMYL5HO
+ D19WNFD3+CXw7ekYEu/sBvRFOLcPxesn9XRptLA4MN0cxd/h+H6ijVajWhreBcZlEb89
+ 1zto6lDvOL6iTVNTtZLtBD5/usk/MiY8ToYMfmuWPSFpLXmjSRm7UfgLrVM9IDZz023L
+ +jA3+5k0WyY/BV+s9tNRRQvSDaqiY473/tMDg9LXbhdS9165ETFM0jaOZW2A2jQBuMSY
+ XRug==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=hQw5aECgY9hKK5rZ7g8MBM09I6jNL0ROWQsBCMlAOrQ=;
- b=cwIzJOa3kDT1lnfbgyueDY9MkVtNVzaM0NA5TB8f8YDLhLKxKMZb4G0j3GQ2dJ0IPb
- qgsmPu8qszqzuSLlCb9ikK95fmquefHcG/ECJd5ZelpWU8VQUK5B7IC/SVXn/JUOtg1x
- JPuKnPA5EBAm2WmzOzQRQ51nXeMT0whxi7+Xwi4RLFdajGy3V3VNGGoW9j773ekIPJNQ
- g4CRu3EE5aq1dCCZEFu+NXcVS6wL07nIY9/JsVrM3ETt4PJrcJvH62JRyTnBfvKRnd1d
- 12JHy60BmsIVM6IDuKSyrDAJSqKupMGh2ldkqwcXNOheQHo+kToeeSvGqHbD7AL5PFXQ
- GoYw==
-X-Gm-Message-State: APjAAAXdKFRB8MXo2msoEHe3ZE5HX31paCJIlG/6TFEEE6edM1EFftFw
- 0EFy+v++xU9Et4kf/zi2Zgw=
-X-Google-Smtp-Source: APXvYqygdq7byHUUQ6kGF5vwKhQcPMMTp8G+OKse6Q0yeghSrgx1i3NizEAosJMWB5h7sP2z/RCo7g==
-X-Received: by 2002:a17:902:6b03:: with SMTP id
- o3mr23433791plk.85.1558327270669; 
- Sun, 19 May 2019 21:41:10 -0700 (PDT)
-Received: from localhost (c-73-222-71-142.hsd1.ca.comcast.net. [73.222.71.142])
- by smtp.gmail.com with ESMTPSA id m123sm21780054pfm.39.2019.05.19.21.41.09
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 19 May 2019 21:41:09 -0700 (PDT)
-Date: Sun, 19 May 2019 21:41:07 -0700
-From: Richard Cochran <richardcochran@gmail.com>
-To: "Y.b. Lu" <yangbo.lu@nxp.com>
-Subject: Re: [EXT] Re: [PATCH 1/3] enetc: add hardware timestamping support
-Message-ID: <20190520044107.ugro6zb7vkveyjw5@localhost>
-References: <20190516100028.48256-1-yangbo.lu@nxp.com>
- <20190516100028.48256-2-yangbo.lu@nxp.com>
- <20190516143251.akbt3ns6ue2jrhl5@localhost>
- <VI1PR0401MB2237FB387B3F5ABC70EE4285F8060@VI1PR0401MB2237.eurprd04.prod.outlook.com>
+ bh=+XiwKGCePMesqEFsZbk88+d/XnSzWj4VH7Ml5qL5pt0=;
+ b=ZDqi1A6cFpi0ktjt8rKja4kXVfMQ6sjcHiGa/wqFw0vbE9YtjHri7cGFisB3gXCWOv
+ iEx1YQi7Vm+5umCu4WNpmjW+32UukdeKPfIZNsDLuc4saGlgWZBD4qM5Jur66AAEAEIJ
+ pR7mPvkyUKF6BCcp6VymnVEopcTQR2vsrCHHyqsXKwvZ2eOOZjiHtz2AJhcEEoWwo/G8
+ xjMn47rfIazIU7+VzeJtRxUgvPtF1j4Xsy0AHdsMWUQGqYmTolBz/l5eH3jq9Ahu3Jyl
+ uBLNZhEqA4PSIkCBH5BusfqBC85kO0hRMBtTiV5axaAWbfmei+KcC/df6+/39v+0fePI
+ nDjg==
+X-Gm-Message-State: APjAAAUZoFKB6zPC8kZzaLJhj7g+uQq6owz9lT0fDP1/urvPbDAW7Y1o
+ E1qRP2G9nshtoAleo55IiPGSfA==
+X-Google-Smtp-Source: APXvYqxKxyg7Aak1yT0b9mdNSLwjCHjek+L8V1ZtJqzVLOZXXZuDfEEcEGssLjb+LtYO06CzCKIoow==
+X-Received: by 2002:a17:902:8e8a:: with SMTP id
+ bg10mr19217573plb.247.1558327400037; 
+ Sun, 19 May 2019 21:43:20 -0700 (PDT)
+Received: from localhost ([122.172.118.99])
+ by smtp.gmail.com with ESMTPSA id b16sm27365221pfd.12.2019.05.19.21.43.18
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sun, 19 May 2019 21:43:19 -0700 (PDT)
+Date: Mon, 20 May 2019 10:13:17 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: "Andrew-sh.Cheng" <andrew-sh.cheng@mediatek.com>
+Subject: Re: [PATCH 4/8] dt-bindings: devfreq: add compatible for mt8183 cci
+ devfreq
+Message-ID: <20190520044317.pwciu4bjuz5jh7f7@vireshk-i7>
+References: <1557997725-12178-1-git-send-email-andrew-sh.cheng@mediatek.com>
+ <1557997725-12178-5-git-send-email-andrew-sh.cheng@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <VI1PR0401MB2237FB387B3F5ABC70EE4285F8060@VI1PR0401MB2237.eurprd04.prod.outlook.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <1557997725-12178-5-git-send-email-andrew-sh.cheng@mediatek.com>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190519_214111_786404_AA87F295 
-X-CRM114-Status: GOOD (  12.57  )
+X-CRM114-CacheID: sfid-20190519_214321_094603_F22EF47A 
+X-CRM114-Status: GOOD (  17.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (richardcochran[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -103,35 +100,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Claudiu Manoil <claudiu.manoil@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- Shawn Guo <shawnguo@kernel.org>, David Miller <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
+ srv_heupstream@mediatek.com, linux-pm@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Chanwoo Choi <cw00.choi@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, fan.chen@mediatek.com,
+ devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 20, 2019 at 03:20:23AM +0000, Y.b. Lu wrote:
-> > > +config FSL_ENETC_HW_TIMESTAMPING
-> > > +     bool "ENETC hardware timestamping support"
-> > > +     depends on FSL_ENETC || FSL_ENETC_VF
-> > > +     help
-> > > +       Enable hardware timestamping support on the Ethernet packets
-> > > +       using the SO_TIMESTAMPING API. Because the RX BD ring dynamic
-> > > +       allocation hasn't been supported and it's too expensive to use
-> > 
-> > s/it's/it is/
+On 16-05-19, 17:08, Andrew-sh.Cheng wrote:
+> From: "Andrew-sh.Cheng" <andrew-sh.cheng@mediatek.com>
 > 
-> [Y.b. Lu] Will modify it. BTW, may I know what's the purpose of dropping single quote character? For searching, script checking, or something else?
+> This adds dt-binding documentation of cci devfreq
+> for Mediatek MT8183 SoC platform.
+> 
+> Signed-off-by: Andrew-sh.Cheng <andrew-sh.cheng@mediatek.com>
+> ---
+>  .../bindings/devfreq/mt8183-cci-devfreq.txt          | 20 ++++++++++++++++++++
+>  1 file changed, 20 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/devfreq/mt8183-cci-devfreq.txt
+> 
+> diff --git a/Documentation/devicetree/bindings/devfreq/mt8183-cci-devfreq.txt b/Documentation/devicetree/bindings/devfreq/mt8183-cci-devfreq.txt
+> new file mode 100644
+> index 000000000000..3189902902e0
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/devfreq/mt8183-cci-devfreq.txt
+> @@ -0,0 +1,20 @@
+> +* Mediatek Cache Coherent Interconnect(CCI) frequency device
+> +
+> +Required properties:
+> +- compatible: should contain "mediatek,mt8183-cci" for frequency scaling of CCI
 
-Simply because "it's" is informal speech, but the Kconfig help is
-formal technical documentation.  (Or at least it should be!)
+Example doesn't have this compatible .
 
-Thanks,
-Richard
+> +- clocks: for frequency scaling of CCI
+> +- clock-names: for frequency scaling of CCI driver to reference
+> +- regulator: for voltage scaling of CCI
+> +- operating-points-v2: for frequency scaling of CCI opp table
+> +
+> +Example:
+> +	cci: cci {
+> +		compatible = "mediatek,cci";
+> +		clocks = <&apmixedsys CLK_APMIXED_CCIPLL>;
+> +		clock-names = "cci_clock";
+> +		operating-points-v2 = <&cci_opp>;
+> +	};
+> +
+> +	&cci {
+> +		proc-supply = <&mt6358_vproc12_reg>;
+> +	};
+> \ No newline at end of file
+> -- 
+> 2.12.5
+
+-- 
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
