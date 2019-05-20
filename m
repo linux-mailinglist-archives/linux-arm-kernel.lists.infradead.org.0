@@ -2,142 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92B5623F6B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 19:50:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6630B23F77
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 19:52:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=na8UMgjavfOFo7I+zdmo8vdZGG1bvg5hWYFaa4FTyIo=; b=AR5IURH57QakaK
-	5azmRw0UB5Tr94hdV5hPO0/eVDRtsjftLA9RgOMT9IrpBnEOcRUQyTCltXC0yCNMwwymrSb3kXo6s
-	aiPe9hbE7KYRm3eqorOqaq4gtVopMqBMWMsV7mJv/NzEKxWYudFpuH66/GgHepazKPFPFhTem08p2
-	/+ElwuJkUJQBCWm3AsGJfnkxAdEjNRjKE7rfOEmn1UffkhdgiajsWz/UWSf/5Wif4lNfRIMcpvhQ3
-	lrghFxhdh1bKPri++bs3lS7PMC/ogEP1EaUlhoLzOFtNBf/+L4Qoq3WkuAT+Y9lMcU5po1Ci+Bxxk
-	bhgKzp9WlzlGht87U65g==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yahuIBheiaqGqXtWH1i/pNQJHD5FKFqDnvS5f5Li9nk=; b=RjBuLNHBmg2uLK
+	TOwNJ5MN57wll8b8vB8xXvKEXlPMY055xQg0sycirOQPTJJ63doB3fM78gBLoNPuGB1Be07066M8c
+	R7hXoryLfOKTjN8nRZaHwdsH0lmZOfnI5QOze/7m26mDvHAg8kzWb9g8+xNyzUSSNj1nvr30bu9Hr
+	+AiUeqNFbY/H/fz4PvIrFimrzsnQemFZbxuFPDfFGkmo+oUD7JkJfHzw7l5jhsCS3DatGQ6A+TTGB
+	FErqK7TnG1UCYo+5yXD1ERGebWVA/qIBkLJzYiAYFO3qjgb0u4J4G/OoCuA1dhClMUUy9FxTXMl6g
+	3nkH+vgW7qONe1sEn42Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSmQA-0003KD-Ap; Mon, 20 May 2019 17:49:58 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hSmSH-0005Ff-OW; Mon, 20 May 2019 17:52:09 +0000
+Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSmPt-0003Ab-At
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 17:49:42 +0000
-Received: by mail-pl1-x644.google.com with SMTP id p1so1670177plo.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 10:49:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=85LlB19Vc5cB2RdwoS/XFiBS9Y2yPdZUMDTHransqEU=;
- b=M4T/JeFeYhETklteIQoqkY1OMlNtx60WUK7i9jkUDx0NsFxRnEk2z818gYapQ115Dg
- MlMB4xGBEj0Z2eb3rEv+4y60KPuTz35BkUjjh9AbkQaSzsAY0aegFqg9jLbJkhOipUER
- /EAXGoNQJxMiZCYffPL1bh9Rt+F6JCx/p5wE3TTGrGDtjn497O1eYUyguSGTjoBhwtfD
- bW++C0l/UPVtpgzBR8XCCfAOByEq6iZhBSbqasqyRlvY0c++qYMfAv7tTgHdugT6h/sN
- R0rTcpMYqKYKXKtRth0V3HiwFfRl2ca5YqbdZYjSzkbfC/hOC76ANiQpXG9WYhi/ngHZ
- OYAw==
+ id 1hSmS9-0005Ee-9J; Mon, 20 May 2019 17:52:02 +0000
+Received: by mail-oi1-x242.google.com with SMTP id r136so10675001oie.7;
+ Mon, 20 May 2019 10:52:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=bLlY3qA7vJB5pB/85supzcun/5fE7fwwy8teM59jstk=;
+ b=AbQa4d1keqd/BDD7x+wNAp7tmtUjC9bTqCW4WRudeyF15W9elUiBJ4chChiuhZE/Rw
+ LRGi5hAY3QteLppe2OwPYbtx8KEulzBqeVNhlxiJ2dozNJg8Wo95y/q37wWHGQhfASfV
+ qb3Yg+46JYqq2oTHtt08qKjFz0PyHjG4iWux11r4C32ER0+tRazSJp2FKBtAePl6h+c9
+ ObHWWXcoPFPUpu57FHOacEYoGA71+Q0Jd0dSvNP5HeWyLjmsXHdCqqdA6zZ7xb2SmBm0
+ gTz9ZDbUYAbJrvtqCoqg4TKnOgzjTqIQHgtNYakEPVgEl6iF6hyPus2gO45bDO9jSBsa
+ lbBw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=85LlB19Vc5cB2RdwoS/XFiBS9Y2yPdZUMDTHransqEU=;
- b=NuGIfvLs+6s57CNaTsxbm/Krb3j3NI1sS9iPciedj/wSYAhnTgROnTNomPBh5EBBQR
- zfB6ucHP25w0pxXGitxQ51qdF9Bd/ILJzn6b34ZBS6fq+KOwyJS1yLBA6MOZebQ33y1D
- Efnu+9JHF+q/Dr5iIzt7H0uI7F3wQc7aHKTSmW8ttIGdUXSVpE3VzB2MBBs3v9PQXSoO
- c4PvJEDO2+3pzBmCtKUT0BNuvZ8iKAVPxlueIYylYVXzlAbosDMas79+uLk9IFNp41r2
- 5FJchC21V6IhGs+N/hV3PDDie4rXD6rCwuwtwE1kQRC77iRtfFi5GrRf2IhjhlI6n9me
- 0jew==
-X-Gm-Message-State: APjAAAXsuVa/V2/JaXqiqVFMNmm3K1hqZItpeioo270RBBxGkhowI110
- q3e9ZcC9tZrVDYs/CsjFPbQDeOLG
-X-Google-Smtp-Source: APXvYqw/Tc2BhexJJ/VaHspKMrSUOiagWwYFWZzcGth1XEGYdlqL5KAkr0H+8ZnNiosdBlddcxORvg==
-X-Received: by 2002:a17:902:5a47:: with SMTP id
- f7mr52105525plm.321.1558374580342; 
- Mon, 20 May 2019 10:49:40 -0700 (PDT)
-Received: from [10.67.49.52] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id a69sm48414380pfa.81.2019.05.20.10.49.37
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 20 May 2019 10:49:39 -0700 (PDT)
-Subject: Re: [PATCH] MAINTAINERS: Update Stefan Wahren email address
-To: Stefan Wahren <wahrenst@gmx.net>, linux-kernel@vger.kernel.org
-References: <1556740055-4962-1-git-send-email-wahrenst@gmx.net>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <dbe83727-ccf3-57f0-a30c-a8226e0fc6bb@gmail.com>
-Date: Mon, 20 May 2019 10:49:28 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=bLlY3qA7vJB5pB/85supzcun/5fE7fwwy8teM59jstk=;
+ b=ZaOtDz/FfBFKu7mZBdTFjrQmYeyjxGKxZOxbJFeFP1GixGg70op1s6SQnBdo+qpAhM
+ V0R3Zsnzv+uLb+RiAV0lQ+ZQaGJDUkK8c63aUm60rFxv3YDAEHXJGcFvVVlb3cBWoFv1
+ 6YtlCr3bbCooPTefc+nNYJ7oCTsdNtD7XRWrR5U1NxcMZBtjpRTl/o1PwPYU73/c8TZV
+ 2Ck8KNF0Nf9A3qwnO7jiNM0EO4NdW3c9I5X7mUsbAIm33a/ccLdufkGUjNCaivbNqCM7
+ 5vXUpA+INOphXH2QSLCHHGmCDIWlLDymh+lc6unx2JIjjtDU7RMkMiAm+2zfu6qAYL8P
+ 0Vog==
+X-Gm-Message-State: APjAAAVznA3Rvuv1FBoLAb7nvb+RkFVVvC7R9xeX2rKPGnzP8IPbqJtK
+ gi16rE6chEyQP0jis+t3UesRc4byq1wd/Y97HQ0=
+X-Google-Smtp-Source: APXvYqxiFXL690TZO93hoIiMXPwRHNWOJXmMa25xFpK2VvQFxaqq4LCf1V6YJFp9f3Jq88uc83lFjBYQHfTH/0m7wVY=
+X-Received: by 2002:aca:4341:: with SMTP id q62mr304351oia.140.1558374720213; 
+ Mon, 20 May 2019 10:52:00 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <1556740055-4962-1-git-send-email-wahrenst@gmx.net>
-Content-Language: en-US
+References: <20190520134817.25435-1-narmstrong@baylibre.com>
+ <20190520134817.25435-2-narmstrong@baylibre.com>
+In-Reply-To: <20190520134817.25435-2-narmstrong@baylibre.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Mon, 20 May 2019 19:51:49 +0200
+Message-ID: <CAFBinCA+G6f8pq8zPwzq6rkNmyS6U=7fL5HWnObvWDWCB893iQ@mail.gmail.com>
+Subject: Re: [PATCH 1/3] arm64: dts: meson: g12a: add drive-strength hdmi ddc
+ pins
+To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_104941_369824_21780360 
-X-CRM114-Status: GOOD (  10.91  )
+X-CRM114-CacheID: sfid-20190520_105201_321280_3A459149 
+X-CRM114-Status: UNSURE (   7.80  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ provider (martin.blumenstingl[at]googlemail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -158,20 +94,21 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
+Cc: khilman@baylibre.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/1/19 12:47 PM, Stefan Wahren wrote:
-> I2SE has been acquired, so i decided to use my private address now.
-> 
-> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
-
-Applied to maintainers-arm64/fixes, thanks!
--- 
-Florian
+On Mon, May 20, 2019 at 3:48 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+>
+> With the default boot settings, the DDC drive strength is too weak,
+> set the driver-strengh to 4mA to avoid errors on the DDC line.
+>
+> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+Amlogic's vendor kernel (from buildroot-openlinux-A113-201901) does the same so:
+Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
