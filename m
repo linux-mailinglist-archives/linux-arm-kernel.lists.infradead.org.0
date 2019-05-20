@@ -2,83 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40CB723C5B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 17:40:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EBDD623C72
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 17:43:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FaEov1hyk9CrwpZlZdFXc0u0qbor3ijLiRh+SbD3UvM=; b=VvSHL0ZTZpcM2B
-	ZTpEm+jbKm3f+3SNO+eFgHFYIcDtJUK81MEP6IZAsxC19FAz1Seammh+KR6bbusBqMRofpvd7He+P
-	RGMzjWzjCoqRMaCn6NNwmea1aBH3Hzy58Ju1OPZNOrMkOBl3PraPCfcGlxTiSM6i1jb7Vw9z30fZW
-	BU+jNXfjvgKlP98hsDn/9GXAAEkHiTH56sBq7hPKH5JNc4o/3Y8F/SmZXiJi8piglQCrGm1rk2Zw5
-	b6kQhF4by4TiC5xLP6g8I+QxnaMdMB6bAp5XAfXLgYZ1ZUaINHlXCffYB/3BeTzVsoqQmyFSoLrQM
-	yHUmXdm29WVsIrpfbUdQ==;
+	List-Owner; bh=z4g279Z/tox+D6tv+p0jJ6l8EnIqiT+yQWpJmQSc/DA=; b=QC7fGvag7rHdY5
+	Nek6smbw+cKPbcZC1vK4LiHSRvgG4brufgFV6e+1RZlGtBp2fl5S9Mm1d0dDEoCIfHyWX3fnfOf+P
+	Sgs9MzfO1EYgvJg5aNbLD+LJV5RGIX1rjGZy8c+++i3ALKEvU/W0Yc9ICVh7rdTQy2lX+2RFemS8+
+	wmN5oBG4tq1s9eguVJXnmAHTSQeSVwoTV2b6oVzX+LHyFFskYV/etbCIXbeF+2+SXc2Ii1Pidm8xG
+	ideFE8PX6SWu0wXFbw0W8nlB5gz5jwuK1RSpUSPgZPLGtDdVZyNqPvo+eRJZ8fwAcAFnMJTtsexX7
+	aej0fol/aJ3vxRKW3jUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSkPB-0006bE-H9; Mon, 20 May 2019 15:40:49 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hSkRZ-0006yH-8V; Mon, 20 May 2019 15:43:17 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSkP4-0006aj-FR
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 15:40:44 +0000
-Received: by mail-pf1-x441.google.com with SMTP id u17so7413622pfn.7
+ id 1hSkRS-0006xr-HM
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 15:43:11 +0000
+Received: by mail-pl1-x642.google.com with SMTP id p1so1519619plo.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 08:40:42 -0700 (PDT)
+ Mon, 20 May 2019 08:43:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=k/heyaUqeKgmsqNyqFuRQhrCnWAaJChzuChioekfYFU=;
- b=szsaZEAWQZBAPa/oSIDZup6Sf3jSi3AJ76WcSsZC1BgEtPm2HRp1c+w0lJQChX3EX6
- hX/GoTqMK+0+zx/9R5rDkf5m5aZmhpybbpZJQBdSeK5uTi3+UvGjBlOQcsZMpnKl4AzR
- qlGDJn7Oq7xYDgi8LQsdENsNMpNdnWWnty6fDhrh/VjIO0o5tu81pgh8/DOF5kR34az6
- KABjDG9DI7NtDSB5JsYly4sD4iTg3dk/qU8HG67UhbEngTVIYwRYPstU4hFei2dlyvNx
- n7fhc7CgCLg7Z/rik+tGZirioJ5jwOUhd9dYcpPxgvLI1JGroSd3ozTGxA9XV5aVgnZs
- VIJQ==
+ bh=dSszR7FrS692VH1z85mprElPR4g7J+3WPMn0YI2hzUI=;
+ b=HSS0bspW251VHBhx+bFWcDCC75vF9KJwGQzVTl9d4San6LcNcwdYICYfpp794IKztA
+ FnI+z4SX2Q+CznDpIdXTgBbDMmt05+kCyS6BqDHY+2XEaBwnNzZ8HOM5tdcbZh9zZ7t1
+ PqJPxNW/EmMHcCzpoXDTeT8y9wyQpaFs3Bn15wIzeuASXGu1ZSC+h45ZKKphgYIormmx
+ IvlwPSQAkPUniEuwUi58BWkT7XL7e0QPFg+aHKbUl1T2n+bLyW0+RHMsN9QaBrrjueOm
+ 2stUFYKEvT0rkuAMuiP2bYQA9JkA4D2HmkEf+17aP/iDhT/oFW6LZz/zyVFeahHcwkGS
+ nqTw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=k/heyaUqeKgmsqNyqFuRQhrCnWAaJChzuChioekfYFU=;
- b=nNecGsLV5IH1wdg0YnsWU4X0Ok5Kv99yqWg1jHDNXjIEaZh0qNvGinsz6ZgxYVylr5
- FTLZvq4Jsbb0Ijen74DLrD6aKSa0SX1tUEgBF11qUPFTgEg3kVtRntze6gljADGkeK17
- xA7Vrz4/qEfOZGkLbtseU/sYs3KNREaSz1zq3CSqyn5EedVxvp/B/K0ldgijriqMtsWb
- bM9YUUCFliG9/M3oYjO/BFWpLF4EdSxp83+r2tqKW4XZl52OVdgos7N/zvjtfgLVe/hr
- fcnIhJgQImA6NID1jg7raBLUW0QUvXnXQZgIpywtvYi6ZP4f3W+iIsdfwdNwNbMyQ1rz
- Ez2g==
-X-Gm-Message-State: APjAAAWcH+5mJYW3OF1lvgbDg7MHozupJ5O+pdq/BiWFt3g66E4aEKbq
- 6705v4z7AOoK3v863b6hb3656A==
-X-Google-Smtp-Source: APXvYqzB4o9I2xZFF8x25ug5HF4C3D7MauyyGIjq+J9XrCQDbuj+gG89I5cVtID1X4Jo1vMXmLyuqA==
-X-Received: by 2002:aa7:9a8c:: with SMTP id w12mr80346129pfi.187.1558366841456; 
- Mon, 20 May 2019 08:40:41 -0700 (PDT)
+ bh=dSszR7FrS692VH1z85mprElPR4g7J+3WPMn0YI2hzUI=;
+ b=S3VCnof7VEnhAsq+vlLVn0uBGwfrRwZerXht7E7y7qXTNtkHkdOd7tcJ1GfMwgfwp+
+ 24tfLs03+wzLUfVLxqtn3+tOezghb1zxRXrFYL5+DULRtaJvyZizoOfOaR2gbMn1eu90
+ fJe/nFsNn6jrDZtnaPzbXvJ8RigknOaaGrk2f91vQPcSa0BwBqXgy1AWDXRLw8Pu1wGE
+ BcUTPDLN6C8zwCNeK9MuFT49MGx5CcFYDh0ohDrjopn165IvTRk7U/RYnzl3pF/na2Tk
+ aVQRAzkCvePr1GTNBQ3z+nwqV1gU23cggcMaxh4OT9aCCSGSG3CcQptexGjfbuflUJxF
+ E3dA==
+X-Gm-Message-State: APjAAAXIr+OHYtmBnxHVQ89m02hz12n04wZg5CejBioiWEDhRa/qTfzc
+ dn2Gp9677us4KfpLVYeHNeLeX38ONxE=
+X-Google-Smtp-Source: APXvYqycTna/AM0jQoiDLo0k1zmLzle59j2ZRtnmZwWIASAjkruy8oLXgvEcXBUk0hCRZBVN+OFylw==
+X-Received: by 2002:a17:902:7002:: with SMTP id
+ y2mr76588597plk.75.1558366989673; 
+ Mon, 20 May 2019 08:43:09 -0700 (PDT)
 Received: from tuxbook-pro (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
  [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id a69sm47830937pfa.81.2019.05.20.08.40.39
+ by smtp.gmail.com with ESMTPSA id e14sm21365631pff.60.2019.05.20.08.43.08
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 20 May 2019 08:40:40 -0700 (PDT)
-Date: Mon, 20 May 2019 08:41:08 -0700
+ Mon, 20 May 2019 08:43:09 -0700 (PDT)
+Date: Mon, 20 May 2019 08:43:36 -0700
 From: Bjorn Andersson <bjorn.andersson@linaro.org>
 To: Alex Elder <elder@linaro.org>
-Subject: Re: [PATCH 2/8] net: qualcomm: rmnet: kill RMNET_MAP_GET_*()
- accessor macros
-Message-ID: <20190520154108.GQ2085@tuxbook-pro>
+Subject: Re: [PATCH 3/8] net: qualcomm: rmnet: use field masks instead of C
+ bit-fields
+Message-ID: <20190520154336.GR2085@tuxbook-pro>
 References: <20190520135354.18628-1-elder@linaro.org>
- <20190520135354.18628-3-elder@linaro.org>
+ <20190520135354.18628-4-elder@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190520135354.18628-3-elder@linaro.org>
+In-Reply-To: <20190520135354.18628-4-elder@linaro.org>
 User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_084042_530459_C2C60824 
-X-CRM114-Status: GOOD (  24.82  )
+X-CRM114-CacheID: sfid-20190520_084310_582111_D92FDCBE 
+X-CRM114-Status: GOOD (  18.91  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -113,167 +114,98 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Mon 20 May 06:53 PDT 2019, Alex Elder wrote:
 
-> The following macros, defined in "rmnet_map.h", assume a socket
-> buffer is provided as an argument without any real indication this
-> is the case.
->     RMNET_MAP_GET_MUX_ID()
->     RMNET_MAP_GET_CD_BIT()
->     RMNET_MAP_GET_PAD()
->     RMNET_MAP_GET_CMD_START()
->     RMNET_MAP_GET_LENGTH()
-> What they hide is pretty trivial accessing of fields in a structure,
-> and it's much clearer to see this if we do these accesses directly.
-> 
-> So rather than using these accessor macros, assign a local
-> variable of the map header pointer type to the socket buffer data
-> pointer, and derereference that pointer variable.
-> 
-> Use the network byte order macros (e.g., ntohs()), not the Linux
-> byte order functions (e.g. be_to_cpu16()) to convert the big-endian
-> packet length field, to match the convention used elswhere in the
-> driver.
-> 
-> There's no need to byte swap 0; it's all zeros irrespective of
-> endianness.
+> Using C bitfields (e.g. int foo : 3) is not portable.  So stop
+> using them for the command/data flag and the pad length fields in
+> the rmnet_map structure.  Instead, use the functions defined in
+> <linux/bitfield.h> along with field mask constants to extract or
+> assign values within an integral structure member of a known size.
 > 
 
 Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 
 > Signed-off-by: Alex Elder <elder@linaro.org>
 > ---
->  drivers/net/ethernet/qualcomm/rmnet/rmnet_handlers.c |  9 +++++----
->  drivers/net/ethernet/qualcomm/rmnet/rmnet_map.h      | 12 ------------
->  .../net/ethernet/qualcomm/rmnet/rmnet_map_command.c  | 11 ++++++++---
->  drivers/net/ethernet/qualcomm/rmnet/rmnet_map_data.c |  4 ++--
->  4 files changed, 15 insertions(+), 21 deletions(-)
+>  drivers/net/ethernet/qualcomm/rmnet/rmnet_handlers.c | 5 +++--
+>  drivers/net/ethernet/qualcomm/rmnet/rmnet_map.h      | 8 +++++---
+>  drivers/net/ethernet/qualcomm/rmnet/rmnet_map_data.c | 5 ++++-
+>  3 files changed, 12 insertions(+), 6 deletions(-)
 > 
 > diff --git a/drivers/net/ethernet/qualcomm/rmnet/rmnet_handlers.c b/drivers/net/ethernet/qualcomm/rmnet/rmnet_handlers.c
-> index 11167abe5934..4c1b62b72504 100644
+> index 4c1b62b72504..5fff6c78ecd5 100644
 > --- a/drivers/net/ethernet/qualcomm/rmnet/rmnet_handlers.c
 > +++ b/drivers/net/ethernet/qualcomm/rmnet/rmnet_handlers.c
-> @@ -65,20 +65,21 @@ static void
->  __rmnet_map_ingress_handler(struct sk_buff *skb,
->  			    struct rmnet_port *port)
->  {
-> +	struct rmnet_map_header *map_header = (void *)skb->data;
->  	struct rmnet_endpoint *ep;
+> @@ -13,6 +13,7 @@
+>   *
+>   */
+>  
+> +#include <linux/bitfield.h>
+>  #include <linux/netdevice.h>
+>  #include <linux/netdev_features.h>
+>  #include <linux/if_arp.h>
+> @@ -70,7 +71,7 @@ __rmnet_map_ingress_handler(struct sk_buff *skb,
 >  	u16 len, pad;
 >  	u8 mux_id;
 >  
-> -	if (RMNET_MAP_GET_CD_BIT(skb)) {
-> +	if (map_header->cd_bit) {
+> -	if (map_header->cd_bit) {
+> +	if (u8_get_bits(map_header->cmd_pad_len, RMNET_MAP_CMD_FMASK)) {
 >  		if (port->data_format & RMNET_FLAGS_INGRESS_MAP_COMMANDS)
 >  			return rmnet_map_command(skb, port);
 >  
->  		goto free_skb;
+> @@ -78,7 +79,7 @@ __rmnet_map_ingress_handler(struct sk_buff *skb,
 >  	}
 >  
-> -	mux_id = RMNET_MAP_GET_MUX_ID(skb);
-> -	pad = RMNET_MAP_GET_PAD(skb);
-> -	len = RMNET_MAP_GET_LENGTH(skb) - pad;
-> +	mux_id = map_header->mux_id;
-> +	pad = map_header->pad_len;
-> +	len = ntohs(map_header->pkt_len) - pad;
+>  	mux_id = map_header->mux_id;
+> -	pad = map_header->pad_len;
+> +	pad = u8_get_bits(map_header->cmd_pad_len, RMNET_MAP_PAD_LEN_FMASK);
+>  	len = ntohs(map_header->pkt_len) - pad;
 >  
 >  	if (mux_id >= RMNET_MAX_LOGICAL_EP)
->  		goto free_skb;
 > diff --git a/drivers/net/ethernet/qualcomm/rmnet/rmnet_map.h b/drivers/net/ethernet/qualcomm/rmnet/rmnet_map.h
-> index b1ae9499c0b2..a30a7b405a11 100644
+> index a30a7b405a11..a56209645c81 100644
 > --- a/drivers/net/ethernet/qualcomm/rmnet/rmnet_map.h
 > +++ b/drivers/net/ethernet/qualcomm/rmnet/rmnet_map.h
-> @@ -63,18 +63,6 @@ struct rmnet_map_ul_csum_header {
->  	u16 csum_enabled:1;
->  } __aligned(1);
+> @@ -40,13 +40,15 @@ enum rmnet_map_commands {
+>  };
 >  
-> -#define RMNET_MAP_GET_MUX_ID(Y) (((struct rmnet_map_header *) \
-> -				 (Y)->data)->mux_id)
-> -#define RMNET_MAP_GET_CD_BIT(Y) (((struct rmnet_map_header *) \
-> -				(Y)->data)->cd_bit)
-> -#define RMNET_MAP_GET_PAD(Y) (((struct rmnet_map_header *) \
-> -				(Y)->data)->pad_len)
-> -#define RMNET_MAP_GET_CMD_START(Y) ((struct rmnet_map_control_command *) \
-> -				    ((Y)->data + \
-> -				      sizeof(struct rmnet_map_header)))
-> -#define RMNET_MAP_GET_LENGTH(Y) (ntohs(((struct rmnet_map_header *) \
-> -					(Y)->data)->pkt_len))
-> -
->  #define RMNET_MAP_COMMAND_REQUEST     0
->  #define RMNET_MAP_COMMAND_ACK         1
->  #define RMNET_MAP_COMMAND_UNSUPPORTED 2
-> diff --git a/drivers/net/ethernet/qualcomm/rmnet/rmnet_map_command.c b/drivers/net/ethernet/qualcomm/rmnet/rmnet_map_command.c
-> index f6cf59aee212..f675f47c3495 100644
-> --- a/drivers/net/ethernet/qualcomm/rmnet/rmnet_map_command.c
-> +++ b/drivers/net/ethernet/qualcomm/rmnet/rmnet_map_command.c
-> @@ -20,12 +20,13 @@ static u8 rmnet_map_do_flow_control(struct sk_buff *skb,
->  				    struct rmnet_port *port,
->  				    int enable)
->  {
-> +	struct rmnet_map_header *map_header = (void *)skb->data;
->  	struct rmnet_endpoint *ep;
->  	struct net_device *vnd;
->  	u8 mux_id;
->  	int r;
+>  struct rmnet_map_header {
+> -	u8  cd_bit:1;
+> -	u8  reserved_bit:1;
+> -	u8  pad_len:6;
+> +	u8  cmd_pad_len;	/* RMNET_MAP_* */
+>  	u8  mux_id;
+>  	__be16 pkt_len;
+>  }  __aligned(1);
 >  
-> -	mux_id = RMNET_MAP_GET_MUX_ID(skb);
-> +	mux_id = map_header->mux_id;
->  
->  	if (mux_id >= RMNET_MAX_LOGICAL_EP) {
->  		kfree_skb(skb);
-> @@ -57,6 +58,7 @@ static void rmnet_map_send_ack(struct sk_buff *skb,
->  			       unsigned char type,
->  			       struct rmnet_port *port)
->  {
-> +	struct rmnet_map_header *map_header = (void *)skb->data;
->  	struct rmnet_map_control_command *cmd;
->  	struct net_device *dev = skb->dev;
->  
-> @@ -66,7 +68,8 @@ static void rmnet_map_send_ack(struct sk_buff *skb,
->  
->  	skb->protocol = htons(ETH_P_MAP);
->  
-> -	cmd = RMNET_MAP_GET_CMD_START(skb);
-> +	/* Command data immediately follows the header */
-> +	cmd = (struct rmnet_map_control_command *)(map_header + 1);
->  	cmd->cmd_type = type & 0x03;
->  
->  	netif_tx_lock(dev);
-> @@ -79,11 +82,13 @@ static void rmnet_map_send_ack(struct sk_buff *skb,
->   */
->  void rmnet_map_command(struct sk_buff *skb, struct rmnet_port *port)
->  {
-> +	struct rmnet_map_header *map_header = (void *)skb->data;
->  	struct rmnet_map_control_command *cmd;
->  	unsigned char command_name;
->  	unsigned char rc = 0;
->  
-> -	cmd = RMNET_MAP_GET_CMD_START(skb);
-> +	/* Command data immediately follows the header */
-> +	cmd = (struct rmnet_map_control_command *)(map_header + 1);
->  	command_name = cmd->command_name;
->  
->  	switch (command_name) {
+> +#define RMNET_MAP_CMD_FMASK		GENMASK(0, 0)   /* 0: data; 1: cmd */
+> +#define RMNET_MAP_RESERVED_FMASK	GENMASK(1, 1)
+> +#define RMNET_MAP_PAD_LEN_FMASK		GENMASK(7, 2)
+> +
+>  struct rmnet_map_dl_csum_trailer {
+>  	u8  reserved1;
+>  	u8  valid:1;
 > diff --git a/drivers/net/ethernet/qualcomm/rmnet/rmnet_map_data.c b/drivers/net/ethernet/qualcomm/rmnet/rmnet_map_data.c
-> index 57a9c314a665..498f20ba1826 100644
+> index 498f20ba1826..10d2d582a9ce 100644
 > --- a/drivers/net/ethernet/qualcomm/rmnet/rmnet_map_data.c
 > +++ b/drivers/net/ethernet/qualcomm/rmnet/rmnet_map_data.c
-> @@ -323,7 +323,7 @@ struct sk_buff *rmnet_map_deaggregate(struct sk_buff *skb,
->  		return NULL;
+> @@ -13,6 +13,7 @@
+>   *
+>   */
 >  
->  	maph = (struct rmnet_map_header *)skb->data;
-> -	packet_len = ntohs(maph->pkt_len) + sizeof(struct rmnet_map_header);
-> +	packet_len = ntohs(maph->pkt_len) + sizeof(*maph);
+> +#include <linux/bitfield.h>
+>  #include <linux/netdevice.h>
+>  #include <linux/ip.h>
+>  #include <linux/ipv6.h>
+> @@ -301,7 +302,9 @@ struct rmnet_map_header *rmnet_map_add_map_header(struct sk_buff *skb,
 >  
->  	if (port->data_format & RMNET_FLAGS_INGRESS_MAP_CKSUMV4)
->  		packet_len += sizeof(struct rmnet_map_dl_csum_trailer);
-> @@ -332,7 +332,7 @@ struct sk_buff *rmnet_map_deaggregate(struct sk_buff *skb,
->  		return NULL;
+>  done:
+>  	map_header->pkt_len = htons(map_datalen + padding);
+> -	map_header->pad_len = padding & 0x3F;
+> +	/* This is a data packet, so cmd field is 0 */
+> +	map_header->cmd_pad_len =
+> +			u8_encode_bits(padding, RMNET_MAP_PAD_LEN_FMASK);
 >  
->  	/* Some hardware can send us empty frames. Catch them */
-> -	if (ntohs(maph->pkt_len) == 0)
-> +	if (!maph->pkt_len)
->  		return NULL;
->  
->  	skbn = alloc_skb(packet_len + RMNET_MAP_DEAGGR_SPACING, GFP_ATOMIC);
+>  	return map_header;
+>  }
 > -- 
 > 2.20.1
 > 
