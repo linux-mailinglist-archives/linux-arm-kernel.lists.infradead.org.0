@@ -2,86 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C8BD2445C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 01:29:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE6FC2449D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 01:50:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MX3hemMLMYU4ShVf60vRXi8AmZRJyvPfC3lsdX6Y4lM=; b=XUKpXlagrEgwNQ
-	BbnaCeOL2G4BmHYBqUwU/nCwRhFdfq6Ur3fSO5uVyluzQSkioQzo2AZP96H1W5vGEvgq2u6vfY5+2
-	LRMEnX0CQitEyFeZOyTDhHm9gBYaBrF5yzD7V5t5+y5ZyQdl14Uu6nuctrXf6ZqN7vbPRSdxfdKXP
-	TjCpcgPeONciUqKAjl5odyd0XIK3lKkirrHQYLKmuuI6jZRfxDKJHlvywT/9jmutUjoU0uvpenQra
-	GHuyMX2TUavGHNi4F32YuJ2PSNZ7zMhXO/2+lq8410tiufPPes7rCEVwRbT0aLGvdTzcnNiVs3tXa
-	MEUg1cEngzg0oZrQfvLw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=gPfEnJnmg4L2Q89L5uT0Q1pyAuXdqk7OkqVaLhaeDFY=; b=EXkAkHtZtkHaA9
+	Dcwdn8za93cGU8gp7kEkJwJuL741J+/7P4N/PDjnOHdnV9sWzMlkdxhNOtRI5KwgXh2EbQuoPaFfS
+	D6R+3OyNkRY3UBAXPoNKfxL/SDL62uefeSiNXIpUDlGfNbtHn+t5lP+1daQtYKeZiXyIdtRIZdWBo
+	K/IF8WzONmVl7fg7si8HxRMGjpVQ6YlzIi4Za4A4VFL47czdFuKtE2SfBGlBCfLrrdBM6T7Z9U5QT
+	wx8LhHSV8kCwon+ciwakXW9k+VUhAq5L+SZP8h83n3yq941QF0VwLyyFI+m+BP/y8pezTtADBz9It
+	zX0LsbMnIXKJTGew8D8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSriq-0003el-PG; Mon, 20 May 2019 23:29:36 +0000
-Received: from mail-vk1-xa43.google.com ([2607:f8b0:4864:20::a43])
+	id 1hSs39-00035f-JX; Mon, 20 May 2019 23:50:35 +0000
+Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSrii-0003e6-UL
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 23:29:30 +0000
-Received: by mail-vk1-xa43.google.com with SMTP id g194so2708113vke.13
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 16:29:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=CQeZYzD9s3oOBXBqpcz3upzW+HnTQAvaSuAunctoyUw=;
- b=LKTBBoJnF7WkULGQxYRtktRyp16+r2Gr0GC86jOnsS5RT3Wx9ZuGBDEItu79R4p99p
- vAFX/U3chWHezKYIkoxL/MVdaASdEIItymbmrFUUVIacAs0Lnbhz+9Jj3d0vRx0zoZLH
- gTG72w3rwFRZVgtpgcRRnnrJYF5tIVag+zGCM=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=CQeZYzD9s3oOBXBqpcz3upzW+HnTQAvaSuAunctoyUw=;
- b=eMFGN6mifGT6oEw/ZoKx19V9n/LCFn+XT4khM9pMrF9rpjUN9ml0rrxRVt6K99axnF
- 28WS5PEz7OwtX6LHdpXhkqlMRU17Ep25W2mvnXYGK3W4fKh3WKzrqalt973d9Hhr16V8
- 43PlhOiWjlEA1jNyanSfLiEKyljjQQkcLR/YRVgt1bq+JzXUt4HcxUJc7L9zS8zfuiFl
- uMBH37jK4T++/bFjPh19hAx/tYRjgnQZRdA5MMZ8E6tv0xPq4alYtOC58/tJQ7tmakCU
- WJmlSf8SlWO55Ri4S24kk1uhR+8jfSmh9TJm3oLFrINeOaPSE5HcajPNLV0ID+3RVuTv
- wVvA==
-X-Gm-Message-State: APjAAAUOGc2OOp6+13eiu1Fr+8U1UbjaWGuItIfT2V4ehu2sienD+WOe
- 7edDZKQ5SYD6b+Tnzz8vcV+GxfmEGxo=
-X-Google-Smtp-Source: APXvYqwPFwuEcOon2uSbGXla/SwEgRxzNEACQViTIcz6LZW0fkvbVYFV0sbgAxRuqP27twQPEklejQ==
-X-Received: by 2002:a1f:30d4:: with SMTP id w203mr10621424vkw.0.1558394967898; 
- Mon, 20 May 2019 16:29:27 -0700 (PDT)
-Received: from mail-vs1-f41.google.com (mail-vs1-f41.google.com.
- [209.85.217.41])
- by smtp.gmail.com with ESMTPSA id t189sm9272179vke.31.2019.05.20.16.29.27
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Mon, 20 May 2019 16:29:27 -0700 (PDT)
-Received: by mail-vs1-f41.google.com with SMTP id d128so10014597vsc.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 16:29:27 -0700 (PDT)
-X-Received: by 2002:a67:ebd6:: with SMTP id y22mr22498929vso.87.1558394966905; 
- Mon, 20 May 2019 16:29:26 -0700 (PDT)
+ id 1hSs2o-0002vr-34
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 23:50:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
+ t=1558396211; bh=+aeg2Woz3+t2JiBhDAFfN1sYNAy9B08eCt2djEk7ne0=;
+ h=From:To:Cc:Subject:Date:From;
+ b=pybKZZw/LV6TBhvgmgqJqq0Elr1IZbcbZjytlPDYuLCiQrEktOxUx9aYh+OKJP7iB
+ HktF4znuabQM0ww4K6UTzqoCzjgVM7nEb8lDvTGNExpmE6acHDjcakz3c6EYxVHJUx
+ pggpD1ZjE7l1h6Kcx5kXciPEgUleZpI6+ahkEyLs=
+From: megous@megous.com
+To: linux-sunxi@googlegroups.com, Maxime Ripard <maxime.ripard@bootlin.com>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>
+Subject: [PATCH v5 0/6] Add support for Orange Pi 3
+Date: Tue, 21 May 2019 01:50:03 +0200
+Message-Id: <20190520235009.16734-1-megous@megous.com>
 MIME-Version: 1.0
-References: <20190520220051.54847-1-mka@chromium.org>
- <20190520220051.54847-3-mka@chromium.org>
-In-Reply-To: <20190520220051.54847-3-mka@chromium.org>
-From: Doug Anderson <dianders@chromium.org>
-Date: Mon, 20 May 2019 16:29:14 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=WOpBWapjiz7zq-X7JUG3AaZOcN3Q-Z5XG9md4ZvMCtBw@mail.gmail.com>
-Message-ID: <CAD=FV=WOpBWapjiz7zq-X7JUG3AaZOcN3Q-Z5XG9md4ZvMCtBw@mail.gmail.com>
-Subject: Re: [PATCH v2 3/3] ARM: dts: rockchip: Configure the GPU thermal zone
- for mickey
-To: Matthias Kaehlcke <mka@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_162928_986704_163E2ECA 
-X-CRM114-Status: GOOD (  15.18  )
+X-CRM114-CacheID: sfid-20190520_165014_682355_71192929 
+X-CRM114-Status: GOOD (  13.49  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a43 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -91,7 +53,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -103,36 +64,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, LKML <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Ondrej Jirman <megous@megous.com>, Mark Rutland <mark.rutland@arm.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, devicetree@vger.kernel.org,
+ David Airlie <airlied@linux.ie>, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-stm32@st-md-mailman.stormreply.com, Jose Abreu <joabreu@synopsys.com>,
+ linux-arm-kernel@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S. Miller" <davem@davemloft.net>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgpPbiBNb24sIE1heSAyMCwgMjAxOSBhdCAzOjAxIFBNIE1hdHRoaWFzIEthZWhsY2tlIDxt
-a2FAY2hyb21pdW0ub3JnPiB3cm90ZToKPgo+IG1pY2tleSBjcmFtcyBhIGxvdCBvZiBoYXJkd2Fy
-ZSBpbnRvIGEgdGlueSBwYWNrYWdlLCB3aGljaCByZXF1aXJlcwo+IG1vcmUgYWdncmVzc2l2ZSB0
-aGVybWFsIHRocm90dGxpbmcgdGhhbiBmb3IgZGV2aWNlcyB3aXRoIGEgbGFyZ2VyCj4gZm9vdHBy
-aW50LiBDb25maWd1cmUgdGhlIEdQVSB0aGVybWFsIHpvbmUgdG8gdGhyb3R0bGUgdGhlIEdQVQo+
-IHByb2dyZXNzaXZlbHkgYXQgdGVtcGVyYXR1cmVzID49IDYwwrBDLiBIZWF0IGRpc3NpcGF0ZWQg
-YnkgdGhlCj4gQ1BVcyBhbHNvIGFmZmVjdHMgdGhlIEdQVSB0ZW1wZXJhdHVyZSwgaGVuY2Ugd2Ug
-Y2FwIHRoZSBDUFUKPiBmcmVxdWVuY3kgdG8gMS40IEdIeiBmb3IgdGVtcGVyYXR1cmVzIGFib3Zl
-IDY1wrBDLiBGdXJ0aGVyIHRocm90dGxpbmcKPiBvZiB0aGUgQ1BVcyBtYXkgYmUgcGVyZm9ybWVk
-IGJ5IHRoZSBDUFUgdGhlcm1hbCB6b25lLgo+Cj4gVGhlIGNvbmZpZ3VyYXRpb24gbWF0Y2hlcyB0
-aGF0IG9mIHRoZSBkb3duc3RyZWFtIENocm9tZSBPUyAzLjE0Cj4ga2VybmVsLCB0aGUgJ29mZmlj
-aWFsJyBrZXJuZWwgZm9yIG1pY2tleS4KPgo+IFNpZ25lZC1vZmYtYnk6IE1hdHRoaWFzIEthZWhs
-Y2tlIDxta2FAY2hyb21pdW0ub3JnPgo+IC0tLQo+IENoYW5nZXMgaW4gdjI6Cj4gLSBzcGVjaWZ5
-IGFsbCBDUFVzIGFzIGNvb2xpbmcgZGV2aWNlcwo+IC0gcy9kb3duc3RyYW0vZG93bnN0cmVhbS8g
-aW4gY29tbWl0IG1lc3NhZ2UKPgo+IE5vdGU6IHRoaXMgcGF0Y2ggZGVwZW5kcyBvbiAiQVJNOiBk
-dHM6IHJvY2tjaGlwOiBBZGQgI2Nvb2xpbmctY2VsbHMKPiBlbnRyeSBmb3IgcmszMjg4IEdQVSIg
-KGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL3BhdGNod29yay9wYXRjaC8xMDc1MDA1LykKPiAtLS0K
-PiAgYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LXZleXJvbi1taWNrZXkuZHRzIHwgNjcgKysrKysr
-KysrKysrKysrKysrKysrKwo+ICAxIGZpbGUgY2hhbmdlZCwgNjcgaW5zZXJ0aW9ucygrKQoKUmV2
-aWV3ZWQtYnk6IERvdWdsYXMgQW5kZXJzb24gPGRpYW5kZXJzQGNocm9taXVtLm9yZz4KCl9fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJu
-ZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
-Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+From: Ondrej Jirman <megous@megous.com>
+
+This series implements support for Xunlong Orange Pi 3 board.
+
+Unfortunately, this board needs some small driver patches, so I have
+split the boards DT patch into chunks that require patches for drivers
+in various subsystems.
+
+Suggested merging plan/dependencies:
+
+- stmmac patches are needed for ethernet support (patches 1-3)
+  - these should be ready now
+- HDMI support (patches 4-6)
+  - needs DT and driver review
+
+Changes in v2:
+- added dt-bindings documentation for the board's compatible string
+  (suggested by Clement)
+- addressed checkpatch warnings and code formatting issues (on Maxime's
+  suggestions)
+- stmmac: dropped useless parenthesis, reworded description of the patch
+  (suggested by Sergei)
+- drop useles dev_info() about the selected io bias voltage
+- docummented io voltage bias selection variant macros
+- wifi: marked WiFi DTS patch and realted mmc1_pins as "DO NOT MERGE",
+  because wifi depends on H6 RTC support that's not merged yet (suggested
+  by Clement)
+- added missing signed-of-bys
+- changed &usb2otg dr_mode to otg, and added a note about VBUS
+- improved wording of HDMI driver's DDC power supply patch
+
+Changes in v3:
+- dropped already applied patches
+- changed pinctrl I/O bias selection constants to enum and renamed
+- added /omit-if-no-ref/ to mmc1_pins
+- made mmc1_pins default pinconf for mmc1 in H6 dtsi
+- move ddc-supply to HDMI connector node, updated patch descriptions,
+  changed dt-bindings docs
+
+Changes in v4:
+- fix checkpatch warnings/style issues
+- use enum in struct sunxi_desc_function for io_bias_cfg_variant
+- collected acked-by's
+- fix compile error in drivers/pinctrl/sunxi/pinctrl-sun9i-a80-r.c:156
+  caused by missing conversion from has_io_bias_cfg struct member
+  (I've kept the acked-by, because it's a trivial change, but feel free
+  to object.) (reported by Martin A. on github)
+  I did not have A80 pinctrl enabled for some reason, so I did not catch
+  this sooner.
+- dropped brcm firmware patch (was already applied)
+- dropped the wifi dts patch (will re-send after H6 RTC gets merged,
+  along with bluetooth support, in a separate series)
+
+Changes in v5:
+- dropped already applied patches (pinctrl patches, mmc1 pinconf patch)
+- rename GMAC-3V3 -> GMAC-3V to match the schematic (Jagan)
+- changed hdmi-connector's ddc-supply property to ddc-en-gpios
+  (Rob Herring)
+
+Please take a look.
+
+thank you and regards,
+  Ondrej Jirman
+
+Icenowy Zheng (2):
+  net: stmmac: sun8i: add support for Allwinner H6 EMAC
+  net: stmmac: sun8i: force select external PHY when no internal one
+
+Ondrej Jirman (4):
+  arm64: dts: allwinner: orange-pi-3: Enable ethernet
+  dt-bindings: display: hdmi-connector: Support DDC bus enable
+  drm: sun4i: Add support for enabling DDC I2C bus to sun8i_dw_hdmi glue
+  arm64: dts: allwinner: orange-pi-3: Enable HDMI output
+
+ .../display/connector/hdmi-connector.txt      |  1 +
+ .../dts/allwinner/sun50i-h6-orangepi-3.dts    | 70 +++++++++++++++++++
+ drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c         | 55 ++++++++++++++-
+ drivers/gpu/drm/sun4i/sun8i_dw_hdmi.h         |  3 +
+ .../net/ethernet/stmicro/stmmac/dwmac-sun8i.c | 21 ++++++
+ 5 files changed, 147 insertions(+), 3 deletions(-)
+
+-- 
+2.21.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
