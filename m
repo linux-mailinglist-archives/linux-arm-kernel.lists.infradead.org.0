@@ -2,79 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA6DF23920
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 16:01:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0EE723924
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 16:02:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=obiplaW1lnuF34UaLiwQZoFrEKnCfuAHrW1hdUkUtW0=; b=Bp6qTlC6xDL2Db
-	F1jiGjRcTlCruBj7Ef/u7U74t3zkFA+UWPTxxxPw2eXWWUxXKj+Fj2Oj3OXIHdbZf+6DJ9zM+OYAy
-	fACk+AbDnLzwQ31HIZz3k7tZlp1KzDqKR9xhdr6vu/Zn5gqKh9YKFboq+OMzB0XPpH2YvRf9k3a2L
-	OBfxyk8FYbf+GlVURqyPWkPjv+XT3KQlcWAuVE8pJrHtkeEYVzLlSC9l/N5mOOUWviVPK01BzUTfA
-	hDwUWEmpDL1/8fl4oN23azqTXh3ZCCTyMcO15wLIzRKv7zU3b59Ltwn0U5DKKupPiEK4bLJWHDsQb
-	diW+O7Je+0423NjWy3kA==;
+	List-Owner; bh=GbhU3YCCjz69CbW/FMmiZaxIzj/dPoc3Z2ks0Dk7yMA=; b=DHkjOEJsQgvTXa
+	1P3awqvB7JxBy6hi/RfPS1pl4T/I1ImcZFZtVceuMTF5A++7CHc4v5Y1cCt9Yd9ITbg0gYHJ5B+MG
+	0jukdPXIHFw6Lxai5h72D1dFPyHsXDzLTpJUQIGqu6rpZ87UMK42CgPdeCB7rycBolh7JZQ917zdu
+	g47pjfoeTP5owDNJnvmGuJIHlthz4BAqxyJiisgXRa1NTwlTkiciW1V0N8G+nti5Hu9Uv7lSfOmEz
+	dz96m1lqAGqqnYwgQvDcgydYIzPRvorNM0JKM70oGTnnpZwWiK38L//yQQc8Ip4D6qx/81JIBkC/a
+	UP6YGl6WiqF6WSTp+KKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSirL-0001mp-Nb; Mon, 20 May 2019 14:01:47 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hSisE-000281-6P; Mon, 20 May 2019 14:02:42 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSirC-0001jT-KN
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 14:01:40 +0000
-Received: by mail-wr1-x444.google.com with SMTP id g12so14468047wro.8
+ id 1hSis5-00026c-3R
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 14:02:34 +0000
+Received: by mail-wr1-x443.google.com with SMTP id d18so14767911wrs.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 07:01:38 -0700 (PDT)
+ Mon, 20 May 2019 07:02:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=Z4tnU+N/DU1N5SPy41/fi/miGaLy6d3wjz6icgaZVuI=;
- b=0WoDOm7eSUPpLoIkMOSusIKkzLWDQndtkVtMrGv8KeIPGtwW9IqpBlwAf//CG+IO9b
- q7aVWcfLGjukA/a5dBEMZ0iwfWK22jsX7ha+nyfdiYkjP4D2eMGlGeoIGa3bQ84wsKS8
- TMAnpVntCcP2PVlcvED5ml1PjmoIkaRBsiXxHt05BNDwFma0SSCOafqRpg9eXjLBlEll
- N1J0oUsHG58CHkYHl922OZ9xuT6FSEyUr/2/6pa8v6s2R7m4xoijYYVdnJ50lx1Jetwo
- DRW724JkkmwuowaoF6lh8n70DvlR4bqUPhpAETLXkg6GfrTq9Gr7o61SKJT3nq1cM9iE
- RjDQ==
+ bh=v8c/nNirEKJZwKIupGqiWC7ZFCXPvzpzRwKkeo1GtHI=;
+ b=G046+NmoXL7OmlgnOxpy2A8NXGg3BrTDxquqdqUum4Ygxt4MvSRKsevFEyp+7us3XH
+ fc4SPI5TljfQN8pVoQbCL0YXZIHTmu2XEgSxWGe6mB3B+pa/lf3M6nBFbRw1zey+uYD1
+ X9t6E3SM/X5+Q11kw9fhVUxKAeA1srEnEUSQuANAn58IWxJPrGoc0suA68x5scwwTKTh
+ I2vtdPfI0jNG6kq7z/53mlkT0hz5tX1kc8snw5EEqwftaqjiBOW5+JtIEVWkGaOI5+do
+ yRsBpNKsIkdSS2CWP5NXKmz5ozy32+/VobT83THj3Db3a1T4FVNWxEq0h4d9RMZIKTyb
+ sELg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=Z4tnU+N/DU1N5SPy41/fi/miGaLy6d3wjz6icgaZVuI=;
- b=Rs5g9zUjWcyBkS/fEQTcb+15YPsgy0ZvZVVGjqSSqFfkeHVWRP4oHE8G2Mup0eDM6j
- 3EuvsXrrShbMcFzCGRbMrgbG6IMhU5oBxuoihBJPEyVaTAesIxyrxZTfRKgbw5RGHiCj
- XIFUtpCjNwuZvFGAMQ17yE2BhlDDlI+hrPRKL72tdF72bpk03loEql0gkrDxNHSkv/qg
- 4wYOuX+tM6swTiv88T0VAnRExyLleFP44QJ5ZQuIB6ogq78NcpQFaOg5CPAylmF2+7HS
- m6o5hxTHMPpsfgtSJFH7G9jYTLAsMut331XFnHhV0RgOmk+5B1BFkGtRlfhYMqcywppf
- sCUQ==
-X-Gm-Message-State: APjAAAXyi6umhfV63BxNUNqyn67epJnJiJLZD3AFizQB00XoThUJptv3
- NTNQ+tU+wf1A+QFHgK8cXJZsLA==
-X-Google-Smtp-Source: APXvYqwEEdJHWNWT9tmdPHAERp5H+E+95z5naZ9rAlFKjxLflOoHQqlwBCMhp9NAPjMi8a5idFRzog==
-X-Received: by 2002:a5d:448e:: with SMTP id j14mr26575282wrq.158.1558360897097; 
- Mon, 20 May 2019 07:01:37 -0700 (PDT)
+ bh=v8c/nNirEKJZwKIupGqiWC7ZFCXPvzpzRwKkeo1GtHI=;
+ b=QBMhvdFgRWRu944xkgRNCavrUUmj+YhA3OFhMZYpd3J21OyjcpvwQ9KwVXXyenqRL6
+ eDEmKLr668PpWSmutIcwjFMj3ABebBCC1NJHAyhikLtvzbqyXcDZpxr054JLEt6WFGXY
+ us75tydYMdmll/1Y2A4ZNYB+TCjZsf+Bvi3sk3svXL4QilfKx3p+TMHCY+GxyZ4OcjhC
+ 9fvbxoEfxdZwHagwTe9FOuRsRJ/pY33+5wI4YXnUCoD8awC67SBL2yIRMeuzTjtsKSLA
+ BO++DzpU4ya53lK/bDvHDeQ3lJiVn/Dmek6XdUU0HRw11FR2vCRmtaHd/yQ17bHPzXBe
+ MOmw==
+X-Gm-Message-State: APjAAAVV2xmjuadZMyAMr8HuGyTYnxwBD43PK1e2YxX07L2tx386yAsH
+ f3imnWf6Pi9VzTTaPPGq2M1jLg==
+X-Google-Smtp-Source: APXvYqwJ/Iyu7VnNKOAEfQFWmiIYCFgiEuV3TWfmUKry/H26rgf36s3aqukRIz7NFTNPiemoS3aFuQ==
+X-Received: by 2002:adf:f44b:: with SMTP id f11mr16249685wrp.128.1558360951634; 
+ Mon, 20 May 2019 07:02:31 -0700 (PDT)
 Received: from bender.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id f10sm24622307wrg.24.2019.05.20.07.01.36
+ by smtp.gmail.com with ESMTPSA id 67sm6650580wmd.38.2019.05.20.07.02.30
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 20 May 2019 07:01:36 -0700 (PDT)
+ Mon, 20 May 2019 07:02:31 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
-To: linux-i2c@vger.kernel.org
-Subject: [PATCH] i2c: i2c-meson: update with SPDX Licence identifier
-Date: Mon, 20 May 2019 16:01:33 +0200
-Message-Id: <20190520140133.29230-1-narmstrong@baylibre.com>
+To: jic23@kernel.org,
+	knaack.h@gmx.de,
+	lars@metafoo.de,
+	pmeerw@pmeerw.net
+Subject: [PATCH] iio: adc: meson_saradc: update with SPDX Licence identifier
+Date: Mon, 20 May 2019 16:02:28 +0200
+Message-Id: <20190520140228.29325-1-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_070138_737463_CB0702DC 
-X-CRM114-Status: GOOD (  11.05  )
+X-CRM114-CacheID: sfid-20190520_070233_339170_797A7345 
+X-CRM114-Status: GOOD (  11.01  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -92,8 +95,10 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ martin.blumenstingl@googlemail.com, linux-kernel@vger.kernel.org,
+ linux-iio@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -101,26 +106,29 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- drivers/i2c/busses/i2c-meson.c | 5 +----
- 1 file changed, 1 insertion(+), 4 deletions(-)
+ drivers/iio/adc/meson_saradc.c | 8 +-------
+ 1 file changed, 1 insertion(+), 7 deletions(-)
 
-diff --git a/drivers/i2c/busses/i2c-meson.c b/drivers/i2c/busses/i2c-meson.c
-index 90f5d0407d73..f530d9a0450b 100644
---- a/drivers/i2c/busses/i2c-meson.c
-+++ b/drivers/i2c/busses/i2c-meson.c
-@@ -1,11 +1,8 @@
-+// SPDX-License-Identifier: GPL-2.0
+diff --git a/drivers/iio/adc/meson_saradc.c b/drivers/iio/adc/meson_saradc.c
+index 510d8b7ef3a0..e39d95734496 100644
+--- a/drivers/iio/adc/meson_saradc.c
++++ b/drivers/iio/adc/meson_saradc.c
+@@ -1,14 +1,8 @@
++// SPDX-License-Identifier: GPL-2.0+
  /*
-  * I2C bus driver for Amlogic Meson SoCs
+  * Amlogic Meson Successive Approximation Register (SAR) A/D Converter
   *
-  * Copyright (C) 2014 Beniamino Galvani <b.galvani@gmail.com>
+  * Copyright (C) 2017 Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 - *
 - * This program is free software; you can redistribute it and/or modify
 - * it under the terms of the GNU General Public License version 2 as
 - * published by the Free Software Foundation.
+- *
+- * You should have received a copy of the GNU General Public License
+- * along with this program. If not, see <http://www.gnu.org/licenses/>.
   */
  
- #include <linux/clk.h>
+ #include <linux/bitfield.h>
 -- 
 2.21.0
 
