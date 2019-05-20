@@ -2,53 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA29122CDF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 09:26:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 642BB22CE5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 09:31:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=sIjKshBcjzNnHWzZIcZ+fR6M2H4SRqV+dgLnY9n5OJA=; b=KU1WGL+iaMAkIWIM90ptOqjoh
-	eGMYsbZqB13sqjHmPDvV7ro2zSVxrBKxgPV6G9ZT/HD74NmnHD1WFLMZd7ff6PHuVmvnzgwHsmDDb
-	V6iUHRAqbJLTCkAOD1HgTDt7k6vjGu1rn3iQcJS9KCeCk6ZuFhgP7eKKQHjG5TQuYnZQw7N3t5n5E
-	HQJPsPDBHuqMB3L166xYU3JBSjwn2JP1VxgGfxDq1YExxTY6khmvda/TVbZUp98W8bGfP/KThLE4v
-	PwycM9Ai1n7VF1dZaM6Vn2NOrHQB92gYNM+xvbJdwZcDa32BgvCvl/pZvGw284hwmzimbUmBwD1Pv
-	u2vdTchFg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wJxN/xJhw24QVGMtZuhaxzEstvgVdI8dwpIak0Rt990=; b=TDwLYcERpr+NyN
+	mL0pXWptbMEVLCk3wwZJf0nmPq4h2d6JVkW1/AX0PsisqmnAy9dkrrw6ast2SYVQFtfJD2xv8FdWi
+	hpYmXgaRFA01CzSaQUA5v8v1jkRVj/anFzCctxNe1jnN5xSA4uunU2pbyV+eDeZXvFvi7NdA0VbiU
+	uaH12Z32WfuxyCwemudLzPe/6dednFmoQ1U7RlnmHKGQZBNvnC4hFzV/i2rSJ/k+cPKyUKfPaKdo3
+	fSKwpibPi+Lfe9vtZNHjh5ZXGmgCkR5hs5JW6PEwISMo8+zMaOsKFfiTe+mP6wA0XEHx9a6ahRDVg
+	uYMWadLmfRKQV0sN15qA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSch4-0002DU-KG; Mon, 20 May 2019 07:26:46 +0000
-Received: from atrey.karlin.mff.cuni.cz ([195.113.26.193])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hScgw-0002D2-Eb
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 07:26:40 +0000
-Received: by atrey.karlin.mff.cuni.cz (Postfix, from userid 512)
- id 6E3138033F; Mon, 20 May 2019 09:26:21 +0200 (CEST)
-Date: Mon, 20 May 2019 09:26:30 +0200
-From: Pavel Machek <pavel@denx.de>
-To: Ran Wang <ran.wang_1@nxp.com>
-Subject: Re: [PATCH v3 3/3] soc: fsl: add RCPM driver
-Message-ID: <20190520072630.GA3674@amd>
-References: <20190520065816.32360-1-ran.wang_1@nxp.com>
- <20190520065816.32360-3-ran.wang_1@nxp.com>
+	id 1hSckz-0003kF-9k; Mon, 20 May 2019 07:30:49 +0000
+Received: from 089144206147.atnat0015.highway.bob.at ([89.144.206.147]
+ helo=localhost)
+ by bombadil.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hSckq-0003ju-6K; Mon, 20 May 2019 07:30:40 +0000
+From: Christoph Hellwig <hch@lst.de>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: implement generic dma_map_ops for IOMMUs v5
+Date: Mon, 20 May 2019 09:29:24 +0200
+Message-Id: <20190520072948.11412-1-hch@lst.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <20190520065816.32360-3-ran.wang_1@nxp.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_002638_639039_ED7B18A6 
-X-CRM114-Status: GOOD (  13.87  )
-X-Spam-Score: -2.3 (--)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.113.26.193 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -60,89 +41,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Len Brown <len.brown@intel.com>,
- devicetree@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-pm@vger.kernel.org, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, linuxppc-dev@lists.ozlabs.org,
+Cc: Tom Murphy <tmurphy@arista.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1573403137456153261=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Robin and Joerg,
 
---===============1573403137456153261==
-Content-Type: multipart/signed; micalg=pgp-sha1;
-	protocol="application/pgp-signature"; boundary="2oS5YaxWCcQjTEyO"
-Content-Disposition: inline
-
-
---2oS5YaxWCcQjTEyO
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi!
-
-> The NXP's QorIQ Processors based on ARM Core have RCPM module
-> (Run Control and Power Management), which performs all device-level
-> tasks associated with power management such as wakeup source control.
->=20
-> This driver depends on PM wakeup source framework which help to
-> collect wake information.
->=20
-> Signed-off-by: Ran Wang <ran.wang_1@nxp.com>
-
-> +// Copyright 2019 NXP
-> +//
-> +// Author: Ran Wang <ran.wang_1@nxp.com>,
-
-extra ,
-
-> +	rcpm =3D dev_get_drvdata(dev);
-> +	if (!rcpm)
-> +		return -EINVAL;
-> +
-> +	/* Begin with first registered wakeup source */
-> +	ws =3D wakeup_source_get_next(NULL);
-> +	while (ws) {
-
-while (ws =3D wakeup_source_get_next(NULL))
-
-?
-
-								Pavel
-							=09
---=20
-(english) http://www.livejournal.com/~pavelmachek
-(cesky, pictures) http://atrey.karlin.mff.cuni.cz/~pavel/picture/horses/blo=
-g.html
-
---2oS5YaxWCcQjTEyO
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: Digital signature
-
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1
-
-iEYEARECAAYFAlziVqYACgkQMOfwapXb+vJYYgCfeELdsln2HAPCMPJgO2RvIdz1
-T5EAn0hVPEYV4vYlN3zVpYR6YBxZjFlI
-=Gqqe
------END PGP SIGNATURE-----
-
---2oS5YaxWCcQjTEyO--
+I think we are finally ready for the generic dma-iommu series.  I have
+various DMA API changes pending, and Tom has patches ready to convert
+the AMD and Intel iommu drivers over to it.  I'd love to have this
+in a stable branch shared between the dma-mapping and iommu trees
+the day after rc2 is released.  I volunteer to create the branch,
+but I'm fine with it living in the iommu tree as well.  Before that
+Will has already said he wants to send the first patch in the series
+to Linus for this merge window.
 
 
---===============1573403137456153261==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+A git tree is also available at:
+
+    git://git.infradead.org/users/hch/misc.git dma-iommu-ops.5
+
+Gitweb:
+
+    http://git.infradead.org/users/hch/misc.git/shortlog/refs/heads/dma-iommu-ops.5
+
+Changes since v4:
+ - rebased to 5.2-rc1
+
+Changes since v3:
+ - fold the separate patch to refactor mmap bounds checking
+ - don't warn on not finding a vm_area
+ - improve a commit log
+ - refactor __dma_iommu_free a little differently
+ - remove a minor MSI map cleanup to avoid a conflict with the
+   "Split iommu_dma_map_msi_msg" series
+
+Changes since v2:
+ - address various review comments and include patches from Robin
+
+Changes since v1:
+ - only include other headers in dma-iommu.h if CONFIG_DMA_IOMMU is enabled
+ - keep using a scatterlist in iommu_dma_alloc
+ - split out mmap/sgtable fixes and move them early in the series
+ - updated a few commit logs
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1573403137456153261==--
-
