@@ -2,89 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCFB62404C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 20:26:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1FEC2404D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 20:27:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Subject:To:
-	MIME-Version:From:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oA5VId6k0VS4rhLgZPM/HBbHIuwVoTBck0oRezeXQxI=; b=s+LTDzR7jbM41e
-	O3aheobS/QHZYYzmTLfwj3d6CaCJ8o7Y1HtbRtblny+bGaAwgDEePhouN8n2fw6JIDRzGOg/DdN18
-	TqtjMlQZbhHpboJg0LtIrWb9pFuhoSLPiTXn0l7YdpLRoJxCT2TzZEe69lB2ZUXCoCucduS+jYUy7
-	GhcccwwfAHJyCHCmw34vEYja4z3RYz8NoEKY49R5k37rsgWw0+ILspd/5mHmf9GNEUWhF/BH+tX7f
-	ceJDJKZJ2Hea3o/w0goKX8wBptLakzBLptGp+coR6EvT5c+XbuIxDKPJsXMR1tEMBZ1HKCzOXIU5h
-	hfrG12EiFu40Yz8sKbIw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=aGJgTcmxwW2ALifaGaaBIJ7zrtGHgD6cytZZYXElkqk=; b=iN2
+	pkVsYGM+VR+n+rspkuNsl1agb8YiSxybnqnUIx0+tH8eQLlmL1XIjEwnH95APa7t+dUG+MrjfaTa8
+	GtHR8badt6aV9m7/ziAgPOEy4ct0OZGpNC7OXMiw22v7z8XU+BPNlkYCOhvmAnG5W8SyK6+pdgXqp
+	xFTJkgWyRhW9skttEFptkT4up74CxCpDqAqU0fa4kS0Mac1v/IbRt0XFnzYTWEz05aC6yyUj53YX7
+	Ups7mLA1o66tP7wDt0HXkrtm54Danp6OjZOR3sYS8cqjTUx4Q2AtRzDkEktmfHrA0Outs9h0G9jxs
+	BI/MpdltdK7Wkh0PojVeNPW0ysJRw6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSmz2-0006Zc-Em; Mon, 20 May 2019 18:26:00 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1hSn05-0006t4-Ii; Mon, 20 May 2019 18:27:05 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSmyu-0006YT-9O
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 18:25:54 +0000
-Received: by mail-wr1-x442.google.com with SMTP id f10so292214wre.7
+ id 1hSmzx-0006sE-LL
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 18:26:59 +0000
+Received: by mail-pg1-x542.google.com with SMTP id t1so5751230pgc.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 11:25:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=message-id:date:from:user-agent:mime-version:to:cc:subject
- :references:in-reply-to:content-transfer-encoding;
- bh=sdtwsXgqa/NDq4JZO/qTIK4aUEyBtvxUvqlGly1nriI=;
- b=NdQOnzKz6heoK6zaciWzqf3ePB2ECiG3nRuCSbEsXZu76sa2AL2Ldo+j/m6TP3/JHA
- 36eF8VzFXeFWRa74x2Z6KsjgEDTyxSPRbHm6Z5FxSBhEwsOjLDj8OhcwHg49SPBdhYTU
- Jpzy0aZ+floKjG2FR4g9i7rFFQ8nlulhSX1e29HrELIhby0knGJWen/07yz8jtQL03b3
- HtNlPO3AQnmgFaHZGqFCt4Hx0QvEaSY1EzKQR3AZfhNRyHdDb0CxitDCXs8GSkmcgPNP
- SB4V8z/Eja5I0pVC9c6IhdT9RYTk1cyRDCkYqAbgVNL2L4n5RFPVTOTphS+INj+7srT7
- Abiw==
+ Mon, 20 May 2019 11:26:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=4JB3xmM81O9yJMtz2Jw3FvlIWnySnxe6Jj18Ua3tmY4=;
+ b=PSggfs1Iyp88cxRByrj3ROsWSZwa7lEIVjSkY9O9NHvEoy/hTEp1HSzotdvhvNgOdT
+ B1t62ZGequPKmwFd/9cgDZiwyJdYS/szZWmyfGf/ucLN4HdtBVZhcE7utBvCW/VdXwER
+ CvvILA9weNIkbbHUbXZTega23lo1JizMxHi6D1/e5vP21qHaSYBJiXsm/stO8og39HTZ
+ qNXGwKVNpnFoc90icbQilH0eqqxxZ9o8T1b7j3TXI2fBIM3rbMk8bqZ4Rw2LiLHcZfTe
+ nNLqsi8nKdgA831hJzGIlTEkJwy6CD8XUOjbOn5xFeKdx4ZsbJ+Xi664Th83Au5NlUBV
+ e7hA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:date:from:user-agent:mime-version:to
- :cc:subject:references:in-reply-to:content-transfer-encoding;
- bh=sdtwsXgqa/NDq4JZO/qTIK4aUEyBtvxUvqlGly1nriI=;
- b=DGy59VaIat+dIRlddmpDu1G+Ua/q/Ib7gmU9jD4VlL2Ilk5FOZ+f6Wbz7TtKKbBLa9
- flN+inPV4lkvRAMVpYXzNYrIit5ZpacAREQwDVQH8o6DydugS0EwvprB9zIBWT9ZjTU6
- s3uwsd4ZS/RWldwXEEV1PDmFIPYpI9NkwaptMkO4e/Z6GAP53CVqukBXPl3zrUZt7xTd
- lVrQy6XvXjnvDocrAexNmAOb9kMFjv/uW+wqe7QCcKWvzmSrUvETQN2lU0XTWFCBxGW0
- ex2lMw3o3sWSchOZpz7/KhFTTjrjmitAwmgrPfxrX2CsS5QvKcEhxSI2jzbg6iE9Mt+R
- 9YXQ==
-X-Gm-Message-State: APjAAAUXUkV31PWq9ps1Ue5Ra/gpNNfds5ZdXgV+gFwnZG/c48ZlzpVZ
- /S9O0YCKeUD/9d0cfMh4iO9zJX70bHki/g==
-X-Google-Smtp-Source: APXvYqzF2++lQ5ZuxocUnfANpanLa7uAQ0+FDIAeGsP5M2LB9AUNt0qLR81E1CVhrpDpPpXwwrLa0A==
-X-Received: by 2002:a5d:4647:: with SMTP id j7mr11774775wrs.280.1558376750654; 
- Mon, 20 May 2019 11:25:50 -0700 (PDT)
-Received: from [192.168.1.77] (wal59-h01-176-150-251-154.dsl.sta.abo.bbox.fr.
- [176.150.251.154])
- by smtp.gmail.com with ESMTPSA id j28sm28737171wrd.64.2019.05.20.11.25.49
- (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 20 May 2019 11:25:50 -0700 (PDT)
-Message-ID: <5CE2F12D.3040303@baylibre.com>
-Date: Mon, 20 May 2019 20:25:49 +0200
-From: Neil Armstrong <narmstrong@baylibre.com>
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13;
- rv:24.0) Gecko/20100101 Thunderbird/24.6.0
-MIME-Version: 1.0
-To: Thomas Gleixner <tglx@linutronix.de>
-Subject: Re: [PATCH] irqchip: irq-meson-gpio: update with SPDX Licence
- identifier
-References: <20190520140310.29635-1-narmstrong@baylibre.com>
- <alpine.DEB.2.21.1905202001270.1635@nanos.tec.linutronix.de>
-In-Reply-To: <alpine.DEB.2.21.1905202001270.1635@nanos.tec.linutronix.de>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=4JB3xmM81O9yJMtz2Jw3FvlIWnySnxe6Jj18Ua3tmY4=;
+ b=o2HCqdFItDKU9+2rSb/BanTKh6mlPdh1Otv1ccgBv6XsfZlFQkerg5Sc9gWjljUQpo
+ Ikljq7eJSz9U0kMAmmZReIMNLTKSAy295sK8/aJnQ3lVYCvtIpPnyNGp7J1+3nfMfFcJ
+ jOq1K5S9TMaYezo3YTFsXiyuA3UQQGh4VX1ltjmr1/GNQKReiDKu8oC0d54SQ1tuDWlM
+ 3803IDcXF0T1sJXfJJJOylIOS0+i51KUTyhuPFab6cdQrydy690f+LyzfLnXWARm1G2n
+ eO0PEJ5ALaonoaMgwwZ0RWg3H3w7miLi1sBhjCPij94VAQoj1vM1E2qzzPCNCLXY76MA
+ 318A==
+X-Gm-Message-State: APjAAAU5JjWcBIiHLgSjbHOlVW01jX5Bfhk207BNnmT/vL69D61z0wKu
+ 07IW3/DlSDkCfOfLePOCiIYBSTQv
+X-Google-Smtp-Source: APXvYqwlAzk57XYghECqsA6tx5QMLZW4rZeoA+msLfPGAuOTPDwFWLkjtpNpQJaLCddvjzOR8PGf6g==
+X-Received: by 2002:a63:318b:: with SMTP id
+ x133mr76670474pgx.297.1558376816874; 
+ Mon, 20 May 2019 11:26:56 -0700 (PDT)
+Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id l7sm18220150pfl.9.2019.05.20.11.26.55
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 20 May 2019 11:26:56 -0700 (PDT)
+From: Florian Fainelli <f.fainelli@gmail.com>
+To: arm@kernel.org
+Subject: [GIT PULL 1/3] Broadcom devicetree fixes for 5.2
+Date: Mon, 20 May 2019 11:26:46 -0700
+Message-Id: <20190520182648.1063-1-f.fainelli@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_112552_331018_AF046F41 
-X-CRM114-Status: GOOD (  15.39  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190520_112657_722430_2FE50F51 
+X-CRM114-Status: GOOD (  11.55  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -97,76 +94,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: marc.zyngier@arm.com, linux-amlogic@lists.infradead.org,
- jason@lakedaemon.net, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Florian Fainelli <f.fainelli@gmail.com>, arnd@arndb.de,
+ Kevin Hilman <khilman@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ olof@lixom.net, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 
+  Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
 
-Le 20/05/2019 20:02, Thomas Gleixner a =E9crit :
-> On Mon, 20 May 2019, Neil Armstrong wrote:
-> =
+are available in the Git repository at:
 
->> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
->> ---
->>  drivers/irqchip/irq-meson-gpio.c | 15 +--------------
->>  1 file changed, 1 insertion(+), 14 deletions(-)
->>
->> diff --git a/drivers/irqchip/irq-meson-gpio.c b/drivers/irqchip/irq-meso=
-n-gpio.c
->> index 7b531fd075b8..d83244ea0959 100644
->> --- a/drivers/irqchip/irq-meson-gpio.c
->> +++ b/drivers/irqchip/irq-meson-gpio.c
->> @@ -1,22 +1,9 @@
->> +// SPDX-License-Identifier: GPL-2.0+
-> =
+  https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.2/devicetree-fixes
 
-> + ????
-> =
+for you to fetch changes up to e8bd76dccd792b371a934336c3e7d8c389755d9f:
 
->>  /*
->>   * Copyright (c) 2015 Endless Mobile, Inc.
->>   * Author: Carlo Caione <carlo@endlessm.com>
->>   * Copyright (c) 2016 BayLibre, SAS.
->>   * Author: Jerome Brunet <jbrunet@baylibre.com>
->> - *
->> - * This program is free software; you can redistribute it and/or modify
->> - * it under the terms of version 2 of the GNU General Public License as
->> - * published by the Free Software Foundation.
-> =
+  ARM: dts: bcm: Add missing device_type = "memory" property (2019-05-20 09:29:47 -0700)
 
-> I really can't spot a 'or any later version' text here ....
+----------------------------------------------------------------
+This pull request contains Broadcom ARM-based SoCs Device Tree fixes for
+5.2-rc1, please pull the following:
 
-Exact, will re-spin, thanks for reviewing !
+- Florian fixes the remaining Broadcom DTS files to have a valid
+device_type = "memory" property which was missed during the removal of
+skeleton.dtsi
 
-It was all blurry after 54 SPDX updates !
+----------------------------------------------------------------
+Florian Fainelli (1):
+      ARM: dts: bcm: Add missing device_type = "memory" property
 
-Neil
-
-> =
-
->> - * This program is distributed in the hope that it will be useful, but
->> - * WITHOUT ANY WARRANTY; without even the implied warranty of
->> - * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
->> - * General Public License for more details.
->> - *
->> - * You should have received a copy of the GNU General Public License
->> - * along with this program; if not, see <http://www.gnu.org/licenses/>.
->> - * The full GNU General Public License is included in this distribution
->> - * in the file called COPYING.
->>   */
->>  =
-
->>  #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
->> -- =
-
->> 2.21.0
->>
->>
+ arch/arm/boot/dts/bcm4708-asus-rt-ac56u.dts       | 1 +
+ arch/arm/boot/dts/bcm4708-asus-rt-ac68u.dts       | 1 +
+ arch/arm/boot/dts/bcm4708-buffalo-wzr-1750dhp.dts | 1 +
+ arch/arm/boot/dts/bcm4708-linksys-ea6300-v1.dts   | 1 +
+ arch/arm/boot/dts/bcm4708-linksys-ea6500-v2.dts   | 1 +
+ arch/arm/boot/dts/bcm4708-luxul-xap-1510.dts      | 1 +
+ arch/arm/boot/dts/bcm4708-luxul-xwc-1000.dts      | 1 +
+ arch/arm/boot/dts/bcm4708-netgear-r6250.dts       | 1 +
+ arch/arm/boot/dts/bcm4708-netgear-r6300-v2.dts    | 1 +
+ arch/arm/boot/dts/bcm4708-smartrg-sr400ac.dts     | 1 +
+ arch/arm/boot/dts/bcm4709-asus-rt-ac87u.dts       | 1 +
+ arch/arm/boot/dts/bcm4709-buffalo-wxr-1900dhp.dts | 1 +
+ arch/arm/boot/dts/bcm4709-linksys-ea9200.dts      | 1 +
+ arch/arm/boot/dts/bcm4709-netgear-r7000.dts       | 1 +
+ arch/arm/boot/dts/bcm4709-netgear-r8000.dts       | 1 +
+ arch/arm/boot/dts/bcm4709-tplink-archer-c9-v1.dts | 1 +
+ arch/arm/boot/dts/bcm47094-phicomm-k3.dts         | 1 +
+ arch/arm/boot/dts/bcm94708.dts                    | 1 +
+ arch/arm/boot/dts/bcm94709.dts                    | 1 +
+ arch/arm/boot/dts/bcm963138dvt.dts                | 1 +
+ 20 files changed, 20 insertions(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
