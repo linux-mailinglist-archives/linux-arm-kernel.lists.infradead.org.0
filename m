@@ -2,67 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9126230EA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 12:04:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CEFE230FB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 12:12:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/dDkZxmNt1EC3CGoA+FHeAoJoINgv9PdvQ65rjpViXA=; b=rGdpMLCEgnB2gZ
-	oae14mt0qEoBaJYU2kAGezE6oCX8Hr6zg8VtM2RHkDa0ayiUzis1QqZzmJyhUdPu0qiWJdAkOp57B
-	s0zxnVhoY2DxclJ1ht5/yKMNwbGKcwI+c4VjclUlpD4FNKlmSLJPzohSppDkeSEM26wvYWevuBrKm
-	Ze+T5oOWJqU20/roJwIEbGJoiOR/JKv4T4sMZjDjajRXm7KBMzkrn21YE1yjp4H4S2nnfNp+oJe8f
-	2d7Iuolq31EdXN2V9yre1mNb1Mr96N4N4MrrZZPPoiQOFUsOm7JPiNwkfiQlOPEzMo4SwSBBOck1J
-	xUlT6Y7BzN7WGQYPMAOg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=A9g9d70sLgo8zfVAGSKsMXCOlISC4B2znrkr+0hBG3A=; b=KNR
+	XPQibuOUF1aovXxBUM1JOewdQMHMJ6ubzeqSxHZpVzkh+ToE14w8qegL+aiMc8xRraeVvopr8lgA0
+	HaWmKvUeQGGZf5qcINBRqpq/M+x9uGfP6RJLpj7lDac8BisttaVW/IN4WmS3AbTi9Q56ymO0nxA1i
+	3IF5jogHHwNnyhhjkfvOIlCebFmHSxs4nTx1tLW2fTpWoxeVh4RRP9suSEpxe8xMrJ1VLW6W3sDR3
+	eOfK7GroiYKpVwA/LfYvXGnYzhr2NTb+3OrYkucAf7mKwvvlUqirpQpoOT7tfUxtudRrjEACFBfYt
+	6dwvyYe6RIBvXb4/C4q5E0I2JO/pHUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSf9t-0000kc-Gj; Mon, 20 May 2019 10:04:41 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hSfHU-0003h4-Kh; Mon, 20 May 2019 10:12:32 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSf9m-0000jy-J7; Mon, 20 May 2019 10:04:36 +0000
-X-UUID: 3efc854043394a6ea0e98f7994aad57f-20190520
-X-UUID: 3efc854043394a6ea0e98f7994aad57f-20190520
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <jerry-ch.chen@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1499576345; Mon, 20 May 2019 02:04:29 -0800
-Received: from mtkmbs03n2.mediatek.inc (172.21.101.182) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 20 May 2019 03:04:27 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs03n2.mediatek.inc (172.21.101.182) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 20 May 2019 18:04:13 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 20 May 2019 18:04:12 +0800
-Message-ID: <1558346653.3318.18.camel@mtksdccf07>
-Subject: Re: [RFC PATCH V1 1/6] dt-bindings: mt8183: Add binding for FD
- shared memory
-From: Jerry-ch Chen <Jerry-ch.Chen@mediatek.com>
-To: Rob Herring <robh@kernel.org>
-Date: Mon, 20 May 2019 18:04:13 +0800
-In-Reply-To: <20190501224512.GA4287@bogus>
-References: <20190423104505.38778-1-Jerry-Ch.chen@mediatek.com>
- <20190423104505.38778-2-Jerry-Ch.chen@mediatek.com>
- <20190501224512.GA4287@bogus>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
-MIME-Version: 1.0
-X-TM-SNTS-SMTP: C4BCE08F12A91F1FC96390B1BA7BC941E6507BB7E8BC193F02F220A7615273562000:8
-X-MTK: N
+ id 1hSfHM-0003fx-Oh
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 10:12:26 +0000
+Received: by mail-pl1-x644.google.com with SMTP id g9so6498597plm.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 20 May 2019 03:12:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=nj86Nyw3KJK7Z3FsC5eQxrUvkQQ/Oi+NDG8wLjmFGQU=;
+ b=XC8PRwo84WSBd/TUs7O4kUryHVFjZ0XnohBkePvQGh3CobFgptIyYyK9QPrxq+moTw
+ qheK3uDYfkxqc+38JpOr+MuQx3M+slPhb4hsHvX/1FdLomKsDGaJBTXctgbRuPwhMo6I
+ +ItbFYvP1KMvoATv/mJdHRFf42AEBmhCLxJ14QY8cCi6i5VRzHv6VW72gfwzM8yUvUm7
+ H+nNdj2feSOkTDc1EC8y6kKnXffkzwVY6UGQ1UscoSQKq+jiqwPU+ZbHj6fmu/jr3bKY
+ ytyKTtebsLfAXv25ZfqOOLmPcisMLpAYSSglfz3JVyN8wMm6N+4iV+lpY3eGVvGcgFev
+ ee/g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=nj86Nyw3KJK7Z3FsC5eQxrUvkQQ/Oi+NDG8wLjmFGQU=;
+ b=HzSn0ZH0KltgeYI3YS/fbjHEnBKAIOCp2GxnGCP8gBTS6ScHDNLhz4gt4x6cft1ZMp
+ JOUks5EjLNv4gwXJPf7rVefq1YZKj+HBWvggdP8OH5OFpdT/mrrZfBFJBDX7LgQeIu8U
+ DmPhPJPhgQifB2YJgnroz+hlzIVvRrb4QLTTczhD+/SvFv/vUA33iA9YanC8ZOpezvl/
+ ClpLvdRMmmCbTbQC9sVobC/UPAqZR0jZdQZh4T+TKbnofzUWV0w4vmIAeKPDcuDhvW3v
+ vI+kBlE5BK8wGvt9OxQROzcSVHgNrjp+82axVtcpRWluwpNbDMgNOFsaLsk7F/j9zqXA
+ gOFg==
+X-Gm-Message-State: APjAAAUEPezTX8v0EOFuvLLdLwZ5ha6Ofl9SWeocR7D4vC4E9SvwXibt
+ I81Ot6pcGxIRKZbtNNZ2Signow==
+X-Google-Smtp-Source: APXvYqxs+7628IuHBHqhbphPC8vlchUw/ugXo/fGIy1jfQpK4ADRQzLXXHQQSf8RfDbtwEP9NVZqPQ==
+X-Received: by 2002:a17:902:860c:: with SMTP id
+ f12mr76409294plo.127.1558347142768; 
+ Mon, 20 May 2019 03:12:22 -0700 (PDT)
+Received: from baolinwangubtpc.spreadtrum.com ([117.18.48.102])
+ by smtp.gmail.com with ESMTPSA id b3sm30098127pfr.146.2019.05.20.03.12.17
+ (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Mon, 20 May 2019 03:12:22 -0700 (PDT)
+From: Baolin Wang <baolin.wang@linaro.org>
+To: adrian.hunter@intel.com, ulf.hansson@linaro.org, zhang.lyra@gmail.com,
+ orsonzhai@gmail.com, robh+dt@kernel.org, mark.rutland@arm.com,
+ arnd@arndb.de, olof@lixom.net
+Subject: [PATCH 0/9] Add SD host controller support for SC9860 platform
+Date: Mon, 20 May 2019 18:11:53 +0800
+Message-Id: <cover.1558346019.git.baolin.wang@linaro.org>
+X-Mailer: git-send-email 1.7.9.5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_030434_636554_C245F70D 
-X-CRM114-Status: GOOD (  22.32  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190520_031224_807553_4504EB45 
+X-CRM114-Status: UNSURE (   8.34  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -74,116 +95,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Sean Cheng =?UTF-8?Q?=28=E9=84=AD=E6=98=87=E5=BC=98=29?=
- <Sean.Cheng@mediatek.com>, "laurent.pinchart+renesas@ideasonboard.com"
- <laurent.pinchart+renesas@ideasonboard.com>,
- Rynn Wu =?UTF-8?Q?=28=E5=90=B3=E8=82=B2=E6=81=A9=29?= <Rynn.Wu@mediatek.com>,
- Christie Yu =?UTF-8?Q?=28=E6=B8=B8=E9=9B=85=E6=83=A0=29?=
- <christie.yu@mediatek.com>, srv_heupstream <srv_heupstream@mediatek.com>,
- Holmes Chiou =?UTF-8?Q?=28=E9=82=B1=E6=8C=BA=29?= <holmes.chiou@mediatek.com>,
- "suleiman@chromium.org" <suleiman@chromium.org>,
- "shik@chromium.org" <shik@chromium.org>,
- "tfiga@chromium.org" <tfiga@chromium.org>,
- Jungo Lin =?UTF-8?Q?=28=E6=9E=97=E6=98=8E=E4=BF=8A=29?=
- <jungo.lin@mediatek.com>, Sj
- Huang =?UTF-8?Q?=28=E9=BB=83=E4=BF=A1=E7=92=8B=29?= <sj.huang@mediatek.com>,
- "yuzhao@chromium.org" <yuzhao@chromium.org>,
- "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
- "zwisler@chromium.org" <zwisler@chromium.org>,
- Frederic Chen =?UTF-8?Q?=28=E9=99=B3=E4=BF=8A=E5=85=83=29?=
- <Frederic.Chen@mediatek.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "mchehab@kernel.org" <mchehab@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Cc: devicetree@vger.kernel.org, vincent.guittot@linaro.org,
+ baolin.wang@linaro.org, linux-mmc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, arm@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
+This patch set adds optional clock support, HS400 enhanced strobe mode support,
+PHY DLL configuration and other optimization to make the SD host controller
+can work well on the Spreadtrum SC9860 platform.
 
-Thank you for your comments.
+Baolin Wang (9):
+  mmc: sdhci-sprd: Check the enable clock's return value correctly
+  dt-bindings: mmc: sprd: Add another optional clock documentation
+  mmc: sdhci-sprd: Add optional gate clock support
+  mmc: sdhci-sprd: Implement the get_max_timeout_count() interface
+  mmc: sdhci-sprd: Add HS400 enhanced strobe mode
+  mmc: sdhci-sprd: Enable PHY DLL to make clock stable
+  dt-bindings: mmc: sprd: Add PHY DLL delay documentation
+  mmc: sdhci-sprd: Add PHY DLL delay configuration
+  arm64: dts: sprd: Add Spreadtrum SD host controller support
 
-On Thu, 2019-05-02 at 06:45 +0800, Rob Herring wrote:
-> On Tue, Apr 23, 2019 at 06:45:00PM +0800, Jerry-ch Chen wrote:
-> > From: Jerry-ch Chen <jerry-ch.chen@mediatek.com>
-> > 
-> > This patch adds the binding for describing the shared memory
-> > used to exchange meta data between the co-processor and Face
-> > Detection (FD) unit of the camera system on Mediatek SoCs.
-> > 
-> > Signed-off-by: Jerry-ch Chen <jerry-ch.chen@mediatek.com>
-> > ---
-> >  .../mediatek,reserve-memory-fd_smem.txt       | 44 +++++++++++++++++++
-> >  1 file changed, 44 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/reserved-memory/mediatek,reserve-memory-fd_smem.txt
-> > 
-> > diff --git a/Documentation/devicetree/bindings/reserved-memory/mediatek,reserve-memory-fd_smem.txt b/Documentation/devicetree/bindings/reserved-memory/mediatek,reserve-memory-fd_smem.txt
-> > new file mode 100644
-> > index 000000000000..52ae5071e238
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/reserved-memory/mediatek,reserve-memory-fd_smem.txt
-> > @@ -0,0 +1,44 @@
-> > +Mediatek FD Shared Memory binding
-> > +
-> > +This binding describes the shared memory, which serves the purpose of
-> > +describing the shared memory region used to exchange data between Face
-> > +Detection hardware (FD) and co-processor in Mediatek SoCs.
-> > +
-> > +The co-processor doesn't have the iommu so we need to use the physical
-> > +address to access the shared buffer in the firmware.
-> > +
-> > +The Face Detection hardware (FD) can access memory through mt8183 IOMMU so
-> > +it can use dma address to access the memory region.
-> > +(See iommu/mediatek,iommu.txt for the detailed description of Mediatek IOMMU)
-> > +
-> > +
-> > +Required properties:
-> > +
-> > +- compatible: must be "mediatek,reserve-memory-fd_smem"
-> > +
-> > +- reg: required for static allocation (see reserved-memory.txt for
-> > +  the detailed usage)
-> > +
-> > +- alloc-range: required for dynamic allocation. The range must
-> > +  between 0x00000400 and 0x100000000 due to the co-processer's
-> > +  addressing limitation
-> > +
-> > +- size: required for dynamic allocation. The unit is bytes.
-> > +  for Face Detection Unit, you need 1 MB at least.
-> 
-> What's the most?
-> 
+ .../devicetree/bindings/mmc/sdhci-sprd.txt         |   19 +++
+ arch/arm64/boot/dts/sprd/whale2.dtsi               |   35 ++++
+ drivers/mmc/host/sdhci-sprd.c                      |  171 +++++++++++++++++++-
+ 3 files changed, 217 insertions(+), 8 deletions(-)
 
-For this part, we would like to revise as following:
-
-alloc-range: required for dynamic allocation. The range must between
-0x40000000 and 0x100000000 due to the co-processor's addressing
-limitation
-
-size: required for dynamic allocation. The unit is bytes.
-for Face Detection Unit, you need 518KB.
-
-> I don't think you really need reserved memory here if you don't need a 
-> fixed address. The size is not that big that a contiguous allocation 
-> shouldn't be a problem (though with IOMMU you don't even need that). 
-> 'dma-ranges' can be used to set the kernel's dma mask and ensure a 
-> range below 0x10000000.
-> 
-
-FD driver might be able to use the FD memory pool inside the scp
-reserved memory instead of declaring reserved memory here.
-would you have any suggestion if so?
-
-Sincerely,
-	Jerry
-
-
-> Rob
-
+-- 
+1.7.9.5
 
 
 _______________________________________________
