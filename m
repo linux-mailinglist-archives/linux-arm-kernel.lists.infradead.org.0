@@ -2,87 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4465D22D68
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 09:52:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5DEC222D77
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 09:56:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=a1iEbT6V6aZ8a1vFTnmneOk1H8y93myT/9y8fa+cssI=; b=Ruz8ZDmftG9wb8
-	BcUAvvILTxc+dr3QmGuXxeUKZcAqehzQCJHetIBMZuIdBoFMYuwJImT0XVxuoXSdEHVJIymx/5s4R
-	9kkLS5oNUhhh9n/NfSZCs6zNmI6ykAt4d1QH/c1uUVXdgNI7yKGz1P5sOjeE1dR8yhH898OyumpiY
-	SlTQZXC1kpUVB2jZTxaXiJgfPYpucfUFdCM6rHBWsa2hsakgj94DP+316kXo+bQfl4IvJTbL2XMSL
-	K4jZ+LSRmQ3eYUxD1r3oyZ6jFoUM09QpdZjNBodNf7ETbWbifLLW7V+5UDQPn5YzPMNbnT5VaHYln
-	LtafrLRB19uR4blniTTQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oB4LtgvGAAi1TE36WGwZstdetvy2duCKhT54AHYltNA=; b=Q0HUJK8Z7kQnXb
+	WGbG/f2VETlf02vr8K2wC7dZdWMJMz2+LpO0W2geDLZbO+oRHVbX58paSZvAWt7x3uN26hVVj7M7U
+	9My7rQwhraU00CbhwsEVjpWj2JEpuJLkQy5a3qgDBHodWFaQjYAcX/SxBV0tx48Op4qZGUt0MDsQp
+	T9PS8/tOEPdCEUyGF83ecgqNhDbaks/75vagpS8BZS+6toUVCIkxPCOb/HWk1hGd2bGIoETpHQCA7
+	Dy0Jl8p9VVmfJBozZFkErUsuEaR7ZCOaixKVviX60klYsRIdj2fkNw606a1ZpXhqch5SShdwKJmIZ
+	doD1c4RvtPcM2LikuGGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSd62-000273-HT; Mon, 20 May 2019 07:52:34 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1hSdAB-0005Mv-CM; Mon, 20 May 2019 07:56:51 +0000
+Received: from mail-ed1-f65.google.com ([209.85.208.65])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSd5v-00025q-C4
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 07:52:29 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x4K7owVV024214; Mon, 20 May 2019 09:52:18 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=AmLaTPn+4Y+PnO2cSAi1LC9tZLLiMimnsWha5pKlny8=;
- b=zyzJqh5vP+aveI2mQhAv7Ag2QoFpavLrSaMApQZSN9cAxXZdhg6aeig49lB0g5BR8zOn
- Rm6/+8XRMIhwB7oiEOgQeEqoW6mqADkW3HlYZVqyfaeMt4tnfH4p3FkTJhGJzGgKXRGQ
- BXsjLEUtYHWxWiqnbrTNwB401MyI2ttSeqy+tXXbOyuHKagD6qf2gjEZIb8Dz64jpY43
- 01QEPQ5yVxVANbsIOqBHkCUmTn9T4DUL7XvCBXwZufXbSG2sbnMOBw/CbSpXWvgWwrsb
- I5MKAZ/vEsav5KYikZQlq1IAJvfDbvkw3j5wahF59uPByqIkQiGKTJ3/T8r2SFB52+TQ Ow== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2sj7ttt4nb-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Mon, 20 May 2019 09:52:18 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 7A11E3A;
- Mon, 20 May 2019 07:52:16 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas23.st.com [10.75.90.46])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 40E3C1557;
- Mon, 20 May 2019 07:52:16 +0000 (GMT)
-Received: from SAFEX1HUBCAS22.st.com (10.75.90.93) by SAFEX1HUBCAS23.st.com
- (10.75.90.46) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 20 May
- 2019 09:52:16 +0200
-Received: from localhost (10.201.20.5) by Webmail-ga.st.com (10.75.90.48) with
- Microsoft SMTP Server (TLS) id 14.3.439.0;
- Mon, 20 May 2019 09:52:15 +0200
-From: Amelie Delaunay <amelie.delaunay@st.com>
-To: Lee Jones <lee.jones@linaro.org>, Linus Walleij <linus.walleij@linaro.org>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Subject: [PATCH] pinctrl: stmfx: Fix compile issue when CONFIG_OF_GPIO is not
- defined
-Date: Mon, 20 May 2019 09:52:15 +0200
-Message-ID: <1558338735-8444-1-git-send-email-amelie.delaunay@st.com>
-X-Mailer: git-send-email 2.7.4
+ id 1hSd9p-000527-6K
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 07:56:43 +0000
+Received: by mail-ed1-f65.google.com with SMTP id p26so22466575edr.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 20 May 2019 00:56:28 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=jiVgtLJVaSK+kBnj7Ae+LR1x0hOyccWrwqfEKZcrZlk=;
+ b=OffikusCD0Yw5KVr/w9xB8CvE6mKDNMNPm8rrv6UXe9AkNyx9KaPd0ZyVI5HdvrGbJ
+ x+N1BBr3d7eYID0jtOnECRyVXbMBZOsFymXE4/gkCAGKE7qeVNH5UF5BtY+Ssc6AvG+E
+ VykgHgpoBdPQ6JPt8LZrkuU2tUt8sFbW153qCY7A4Vks7eNQeWlzLGu78r6ngKtXWYht
+ qNdLKUIZ2gWiK+SFOtdBHBB6aRCuBE/ID20wudG99tnRNgHfNgEatqHa+xTVF5ui0qCc
+ i80pp4DP0ee4No7PAppIjZ/aFFGuc5FDBwspkwh0d2CqVLUcL6WZkfCfFQ+MnoqnVpm5
+ t3/g==
+X-Gm-Message-State: APjAAAW6kjkMZeoItQmD5vYxQPdmv3eQJ4aUSlzXK73ILgvy3wfAwakH
+ sIL5HFBU/jlzmv7eAiiR2Q8VWR2QPOc=
+X-Google-Smtp-Source: APXvYqwYYDkj0NLfi3SClB4iym9NzZKys4U/6njAv07Nv6kc8OwjhOEmkQMCLf3WzpQBi0ON8cUEUw==
+X-Received: by 2002:a17:906:4a45:: with SMTP id
+ a5mr35862457ejv.172.1558338985667; 
+ Mon, 20 May 2019 00:56:25 -0700 (PDT)
+Received: from mail-wr1-f46.google.com (mail-wr1-f46.google.com.
+ [209.85.221.46])
+ by smtp.gmail.com with ESMTPSA id c38sm5182378edc.22.2019.05.20.00.56.24
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 20 May 2019 00:56:25 -0700 (PDT)
+Received: by mail-wr1-f46.google.com with SMTP id d9so423691wrx.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 20 May 2019 00:56:24 -0700 (PDT)
+X-Received: by 2002:adf:dfc4:: with SMTP id q4mr41065855wrn.201.1558338984633; 
+ Mon, 20 May 2019 00:56:24 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [10.201.20.5]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-20_04:, , signatures=0
+References: <20190516154943.239E668B05@newverein.lst.de>
+ <20190516155139.E6EE568C65@newverein.lst.de>
+In-Reply-To: <20190516155139.E6EE568C65@newverein.lst.de>
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Mon, 20 May 2019 15:56:13 +0800
+X-Gmail-Original-Message-ID: <CAGb2v64xKk1r1iqSVm5pVvHVkyQ175MUFB7JPUkvQX9ecOZDDQ@mail.gmail.com>
+Message-ID: <CAGb2v64xKk1r1iqSVm5pVvHVkyQ175MUFB7JPUkvQX9ecOZDDQ@mail.gmail.com>
+Subject: Re: [PATCH v2 3/4] arm64: DTS: allwinner: a64: Enable audio on Teres-I
+To: Torsten Duwe <duwe@lst.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_005227_856671_B5E0BCD8 
-X-CRM114-Status: GOOD (  11.80  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190520_005629_862242_7987BB67 
+X-CRM114-Status: GOOD (  10.18  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.65 listed in list.dnswl.org]
+ -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.65 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (wens213[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wens213[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,44 +97,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Amelie Delaunay <amelie.delaunay@st.com>, linux-kernel@vger.kernel.org,
- linux-gpio@vger.kernel.org, kbuild-all@01.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ Archit Taneja <architt@codeaurora.org>, Andrzej Hajda <a.hajda@samsung.com>,
+ David Airlie <airlied@linux.ie>, linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Rob Herring <robh+dt@kernel.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
+ Sean Paul <seanpaul@chromium.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Icenowy Zheng <icenowy@aosc.io>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When CONFIG_GPIO_OF is not defined, struct gpio_chip 'of_node' member does
-not exist:
-drivers/pinctrl/pinctrl-stmfx.c: In function 'stmfx_pinctrl_probe':
-drivers/pinctrl/pinctrl-stmfx.c:652:17: error: 'struct gpio_chip' has no member named 'of_node'
-     pctl->gpio_chip.of_node = np;
+On Thu, May 16, 2019 at 11:52 PM Torsten Duwe <duwe@lst.de> wrote:
+>
+> From: Harald Geyer <harald@ccbib.org>
+>
+> The TERES-I has internal speakers (left, right), internal microphone
+> and a headset combo jack (headphones + mic), "CTIA" (android) pinout.
+>
+> The headphone and mic detect lines of the A64 are connected properly,
+> but AFAIK currently unsupported by the driver.
+>
+> Signed-off-by: Harald Geyer <harald@ccbib.org>
+> Signed-off-by: Torsten Duwe <duwe@suse.de>
 
-Fixes: 1490d9f841b1 ("pinctrl: Add STMFX GPIO expander Pinctrl/GPIO driver")
-Reported-by: kbuild test robot <lkp@intel.com>
-Signed-off-by: Amelie Delaunay <amelie.delaunay@st.com>
----
- drivers/pinctrl/pinctrl-stmfx.c | 2 ++
- 1 file changed, 2 insertions(+)
+Looks good to me.
 
-diff --git a/drivers/pinctrl/pinctrl-stmfx.c b/drivers/pinctrl/pinctrl-stmfx.c
-index eba872c..bb64aa0 100644
---- a/drivers/pinctrl/pinctrl-stmfx.c
-+++ b/drivers/pinctrl/pinctrl-stmfx.c
-@@ -648,7 +648,9 @@ static int stmfx_pinctrl_probe(struct platform_device *pdev)
- 	pctl->gpio_chip.base = -1;
- 	pctl->gpio_chip.ngpio = pctl->pctl_desc.npins;
- 	pctl->gpio_chip.can_sleep = true;
-+#ifdef CONFIG_OF_GPIO
- 	pctl->gpio_chip.of_node = np;
-+#endif
- 	pctl->gpio_chip.need_valid_mask = true;
- 
- 	ret = devm_gpiochip_add_data(pctl->dev, &pctl->gpio_chip, pctl);
--- 
-2.7.4
-
+Reviewed-by: Chen-Yu Tsai <wens@csie.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
