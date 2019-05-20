@@ -2,75 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BE3B23B8E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 17:05:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD25F23B9A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 20 May 2019 17:07:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rMMNReAvcKIrn44N9cTG59dJytGt3Xvhv3IDxUPtzBY=; b=nvkZFm90a4c0mK
-	dxN8LdqMlJ9rFPz8/anY1Gs6mjNB8QAvUz75yxJL71DJgErQ+6T6gTi/WLcLtDazzvf1VdMtAwH3j
-	6RrAMdZQrv4UJRabYyOL/XtSePpzkb9DMd8/vLXnEFUdJnY6cXHeYB1ErEj0K/5dbghIrvFbzV8R6
-	FiVTSEUXcx2vnXQ5Ap3Mk4NJqDIGYSiaKzj1ye/3LSZJnVb+K6EstIIYvJh0SxCRVTXgs18wQdvZY
-	ij9iD53xxasECaeZBLK9OwQUxq7SZbeGDDvXcu1sUiW+G+GkaAqLez65/w9BmsxJ0n0pwOIfOFios
-	16FkMW6dm8Vef/TGL9jQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=twqEYzht4n2DMy4x9HZDt+VEBsIAn6WaJ0gvCzMoxG8=; b=sywHw769EDkUQt
+	dKNDIHUcSDVvVc6eHS103S08mSVHRDT2Xfebrlbvg7mYAEeQy7+Qwf9spaiBGGM7zwg+oA6oTnkAp
+	Tlivbl87NwLPsMGm/hbZpLzeqmfGs1Dw+EQxChMb9XI6usdr2Pymp0EbnfcbsbIjuYY84jerSB6T1
+	+VukiQ4O76FQVtL0LHk9rxM4J1upRyYFTjLm1Vd4RVozpa0TqY8hVif+l1MTckixAycyNCgfxDU88
+	1VOcxG/Aa5/0HkivXafOSAp6PY6ceM3hTM0cw+CJvrSt6vonQFq6HfZrjsPqKzFAiDcgXyERzUOHk
+	/qCCUNQh2VNK+Cj97PiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSjrB-0002yu-L8; Mon, 20 May 2019 15:05:41 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	id 1hSjsY-0003xZ-C7; Mon, 20 May 2019 15:07:06 +0000
+Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSjqu-0002aN-T4
- for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 15:05:28 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id 157B420BCE;
- Mon, 20 May 2019 17:05:19 +0200 (CEST)
-Received: from [192.168.108.49] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id E906920B17;
- Mon, 20 May 2019 17:05:18 +0200 (CEST)
-Subject: Re: [PATCH] arm64/io: Don't use WZR in writel
-To: Robin Murphy <robin.murphy@arm.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>
-References: <68b71c15f32341468a868f6418e4fcb375bc49ba.camel@gmail.com>
- <20190211105755.GB30880@fuggles.cambridge.arm.com>
- <38d8965a-cd41-17cf-1b95-8dd58c079be4@arm.com>
- <874c702b8af760aa8fae38d478c79e3ecba00515.camel@gmail.com>
- <235d20ef-3054-69d9-975d-25aebf32aad3@arm.com>
- <20190223181254.GC572@tuxbook-pro> <86zhqm8i6d.wl-marc.zyngier@arm.com>
- <20190224035356.GD572@tuxbook-pro>
- <33d765b5-1807-fa6c-1ceb-99f09f7c8d5a@free.fr>
- <8eb4f446-6152-ffb6-9529-77fb0bcc307f@arm.com>
- <7b5e8bb1-d339-07f7-66f6-7f09df2107c4@free.fr>
- <3757fc2d-0587-be46-8f75-6d79906be8bd@arm.com>
- <5b83a4c2-1f0e-337f-a78d-f7d84fe01ab3@free.fr>
- <a6f89d1a-e7bb-bae9-6666-f4d5b263b835@free.fr>
- <b7a3c9d1-6bbc-1f14-956f-ee4dd3bce175@arm.com>
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Message-ID: <c70264f1-98cc-7e4f-2e3b-08b5cb15c3ed@free.fr>
-Date: Mon, 20 May 2019 17:05:18 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hSjsB-0003bQ-Lk
+ for linux-arm-kernel@lists.infradead.org; Mon, 20 May 2019 15:06:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
+ t=1558364799; bh=MOIiLhQ+IjpqYl5yHzKvxPsRQBzGIbHz8ojgz49ajzM=;
+ h=From:To:Cc:Subject:Date:From;
+ b=c739CFNQlY0oMPgSRJ6Gd+ppWrHcU9ifdJ48imf5TZ4akgkyrfOflPcrue9VhteFO
+ ZqNzzuIzVhoyOMOguR3sQcwhxTpxHpUWAU9zheMWLMTve+3VME2HcaUJlM5wcyUB0i
+ NIGfuNVaPkXChDZBBhR7Hb/fH1VvUxQKeMrRAS/E=
+From: megous@megous.com
+To: Chen-Yu Tsai <wens@kernel.org>, Maxime Ripard <maxime.ripard@bootlin.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, Yong Deng <yong.deng@magewell.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>
+Subject: [PATCH v2 0/3] ARM: sun8i: a83t: Support Camera Sensor Interface
+ controller
+Date: Mon, 20 May 2019 17:06:34 +0200
+Message-Id: <20190520150637.23557-1-megous@megous.com>
 MIME-Version: 1.0
-In-Reply-To: <b7a3c9d1-6bbc-1f14-956f-ee4dd3bce175@arm.com>
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Mon May 20 17:05:19 2019 +0200 (CEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_080525_436824_9AE4D600 
-X-CRM114-Status: UNSURE (   7.84  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190520_080643_872869_4C7F497C 
+X-CRM114-Status: GOOD (  11.10  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marc.w.gonzalez[at]free.fr)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -82,26 +68,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Jeffrey Hugo <jhugo@codeaurora.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- MSM <linux-arm-msm@vger.kernel.org>,
- AngeloGioacchino Del Regno <kholk11@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Ondrej Jirman <megous@megous.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Chen-Yu Tsai <wens@csie.org>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03/05/2019 14:48, Robin Murphy wrote:
+From: Ondrej Jirman <megous@megous.com>
 
-> Anyway, I'll clean up my patch and post it properly - thanks to you and 
-> Bjorn for testing.
+This is a re-send of Chen-Yu's A83T CSI patch series with review tags
+applied and removed address/size cells from csi_in port. Already applied
+patches from v1  were dropped.
 
-Ideally, the "wzr work-around" would land early enough in the 5.2 RC cycle
-that it remains possible to submit the msm8998 anoc1 smmu and PCIe DT nodes
-(the latter requires the former) in time for the 5.3 merge window.
+The series is ready to be merged:
 
-Regards.
+  Patch 1 and 2 via sunxi tree
+  Patch 3 via media tree
+
+v2:
+- dropped address/size cells from csi_in port
+- added review tags
+
+Please take a look and merge.
+
+Thank you,
+	Ondrej
+
+--------------------------
+Original description:
+
+Hi everyone,
+
+This series adds support for the camera sensor interface controller
+found on the Allwinner A83T SoC. The controller is similar to the one
+found on  the H3, with the addition of a MIPI CSI-2 interface. However,
+this series only supports parallel and BT.656 interfaces, based on the
+existing driver.
+
+Patch 1 adds an undocumented clock parent of the CSI MCLK. This was
+found after finding the default value to sometimes work and sometimes
+not, and then comparing against BSP code.
+
+Patch 2 adds a compatible string for the A83T variant.
+
+Patch 3 adds support for the A83T variant to the existing sun6i-csi
+driver.
+
+Patch 4 adds a device node for the controller, as well as commonly
+used pin muxing options.
+
+Patch 5 adds a pin muxing option for I2C1 on the PE pins, used in
+conjunction with the CSI pins.
+
+Patch 6 provides an example usage of the CSI controller: the Bananapi M3
+with its camera module attached.
+
+Please have a look.
+
+Regards
+ChenYu
+
+Chen-Yu Tsai (3):
+  dt-bindings: media: sun6i-csi: Add compatible string for A83T variant
+  media: sun6i: Support A83T variant
+  ARM: dts: sun8i: a83t: Add device node for CSI (Camera Sensor
+    Interface)
+
+ .../devicetree/bindings/media/sun6i-csi.txt   |  1 +
+ arch/arm/boot/dts/sun8i-a83t.dtsi             | 29 +++++++++++++++++++
+ .../platform/sunxi/sun6i-csi/sun6i_csi.c      |  1 +
+ 3 files changed, 31 insertions(+)
+
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
