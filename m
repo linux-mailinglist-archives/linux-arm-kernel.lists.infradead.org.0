@@ -2,75 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2165B24EC0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 14:15:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E03524EC5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 14:16:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xDgxZSPATHHF8iLCBrMzpnueQ4AM09KtWkxMkuLPmAg=; b=qulUVVvLsmiq2D
-	EL8hpB4BOCwVUWdRabLnsen6RiBk49eGOpdww5sll0H770frmNl5ZeBA8w7snaBDPeXwdA/gSxSe1
-	CkJAKOtdPXDwT4unHbHXLhIGLsYwFWnN/uTH4dfY1u0N3vWsG5bGpfxjibihFeCqhbAfeR6Xw0rBi
-	p5bpkvxDkuK9FSNXNukVi5OzhyvrR0KdDiSPzPhLl4xy1VxP4e0D/bASCEEipDP5Hy6eUqxR4bLKp
-	Mv49RfBZ46h3BPBTPaGjUZGvwnbO1FZltMIF/52X9erlpd4q/j06bBqXkkzsuWSDYym0Paq6Ezu66
-	W0UlKJ45X40xNWFH7B1Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
+	:Subject:From:Reply-To:To:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=cHL2eaMQoaD1yzZiMYry0JgezKtludrvu95nRUYNK/o=; b=niyUbwAzq6RYrK
+	XlhGi2foHyB7aDJPY8rxGCBXHiQePsNqHBIkqWwr+DDChw345xXDz0di2hj2IyEAH9+HDAvwFG9rV
+	YLnil3phf5tD8NG21gKhuXEcn61/eMBVHfW3rdteQrxLo33SJrVEpJBiR6bWefqsF7szVBIqXSlEs
+	UGP+k/lwHKUcBkc9XaJUuCrzydUO2T89qzOJIyPoiSVOcb3nlpzPW/qUMxxjNO3eWnlIfFS23HlVS
+	LOD56Dayqy84SMpjdSujAH8b0+v4NhbtHNcFdgvYpn6X07asKRPMjE4A/ykVHhllYvdiW47DTw952
+	TusBRmAOjKejZYNAfAVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT3g6-0001iN-Qk; Tue, 21 May 2019 12:15:34 +0000
-Received: from vps.xff.cz ([195.181.215.36])
+	id 1hT3gx-0002B1-LF; Tue, 21 May 2019 12:16:27 +0000
+Received: from mail-oln040092065019.outbound.protection.outlook.com
+ ([40.92.65.19] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT3fv-0001Ys-Hc
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 12:15:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1558440920; bh=VGlJ9wO7InEXoKlQsJrI3YYXQgBrZfsVum4dwV9O/qw=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=H8itSFBTgfJexSfOsuGiRevevVee8AWok+TNwvYGh7+dE1NYC7HRI8brRhf87wLga
- d9QkGESJyeoaSCyRYs3EQ2grPw+h1Uha56OooMFMOlk4Sm5xTp26Bz32P9/VowQFZP
- xDHQqFWmk/FSFXR/1nm1hEhj9MMSZ7GIUAjIabwA=
-Date: Tue, 21 May 2019 14:15:19 +0200
-From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
-To: Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: Re: [PATCH v5 5/6] drm: sun4i: Add support for enabling DDC I2C bus
- to sun8i_dw_hdmi glue
-Message-ID: <20190521121519.k343dgv3cgpewjl2@core.my.home>
-Mail-Followup-To: Maxime Ripard <maxime.ripard@bootlin.com>,
- linux-sunxi@googlegroups.com, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, David Airlie <airlied@linux.ie>,
- Daniel Vetter <daniel@ffwll.ch>,
- Mark Rutland <mark.rutland@arm.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Jose Abreu <joabreu@synopsys.com>,
- "David S. Miller" <davem@davemloft.net>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- netdev@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com
-References: <20190520235009.16734-1-megous@megous.com>
- <20190520235009.16734-6-megous@megous.com>
- <20190521114611.ylmbo2oqeanveil4@flea>
+ id 1hT3gp-0002A2-Eo; Tue, 21 May 2019 12:16:20 +0000
+Received: from VE1EUR01FT058.eop-EUR01.prod.protection.outlook.com
+ (10.152.2.54) by VE1EUR01HT145.eop-EUR01.prod.protection.outlook.com
+ (10.152.3.191) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1900.16; Tue, 21 May
+ 2019 12:16:14 +0000
+Received: from VI1PR07MB4432.eurprd07.prod.outlook.com (10.152.2.54) by
+ VE1EUR01FT058.mail.protection.outlook.com (10.152.3.136) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.20.1900.16 via Frontend Transport; Tue, 21 May 2019 12:16:14 +0000
+Received: from VI1PR07MB4432.eurprd07.prod.outlook.com
+ ([fe80::91f:b1bb:a60a:fdc3]) by VI1PR07MB4432.eurprd07.prod.outlook.com
+ ([fe80::91f:b1bb:a60a:fdc3%7]) with mapi id 15.20.1922.013; Tue, 21 May 2019
+ 12:16:14 +0000
+From: Philippe Mazenauer <philippe.mazenauer@outlook.de>
+Subject: [PATCH] clk: Remove unused variable
+Thread-Topic: [PATCH] clk: Remove unused variable
+Thread-Index: AQHVD878NH4niKcAbkGQS1Zq+TuwCg==
+Date: Tue, 21 May 2019 12:16:14 +0000
+Message-ID: <VI1PR07MB44324648C54773C24E4B186AFD070@VI1PR07MB4432.eurprd07.prod.outlook.com>
+Accept-Language: de-CH, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: MWHPR0201CA0045.namprd02.prod.outlook.com
+ (2603:10b6:301:73::22) To VI1PR07MB4432.eurprd07.prod.outlook.com
+ (2603:10a6:802:67::17)
+x-incomingtopheadermarker: OriginalChecksum:AC1CDF9B7E0587675D62C5068EBBAEEFEC3198AA2838AA2DEEEB372B33E36057;
+ UpperCasedChecksum:F12575AB9399412C42B53289C4DC711B69F7A80BEF1B18AF3232D82A69D6696A;
+ SizeAsReceived:7733; Count:47
+x-ms-exchange-messagesentrepresentingtype: 1
+x-mailer: git-send-email 2.17.1
+x-tmn: [nJ1juxtnP1Zcdux7epdSyzoGFywwolgO]
+x-microsoft-original-message-id: <20190521121547.119863-1-philippe.mazenauer@outlook.de>
+x-ms-publictraffictype: Email
+x-incomingheadercount: 47
+x-eopattributedmessage: 0
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(5050001)(7020095)(20181119110)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031323274)(2017031324274)(2017031322404)(1601125500)(1603101475)(1701031045);
+ SRVR:VE1EUR01HT145; 
+x-ms-traffictypediagnostic: VE1EUR01HT145:
+x-microsoft-antispam-message-info: BQrbwy9gZ2t/mX75oj20cZ9Gt8TciHH9LYQqfCp6YoTF9coVOiYEvbFj1P00OhCK40PNBwo30sfRKUfqGnv/Oy98rwCjTeubSBDzbzyV44SX9qVdDIXCZvQqwcDzxK5W8AUeMmmcZX4XHiSrLdnBvmRLpw6xTLROGrlN46PO5/3/+IYJ/bLymd5NwtWq5Udd
+Content-ID: <A735F365BEE52F4FB81877FF849B6A63@eurprd07.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190521114611.ylmbo2oqeanveil4@flea>
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: b43d6e31-bbb0-4f49-bcfd-08d6dde61e20
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-originalarrivaltime: 21 May 2019 12:16:14.4118 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Internet
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1EUR01HT145
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_051524_105009_4D4AAAFE 
-X-CRM114-Status: GOOD (  21.25  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190521_051619_492330_2C1FA122 
+X-CRM114-Status: UNSURE (   9.91  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 2.8 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (2.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.92.65.19 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (philippe.mazenauer[at]outlook.de)
+ 1.2 MISSING_HEADERS        Missing To: header
+ 1.6 MALFORMED_FREEMAIL     Bad headers on message from free email
+ service
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -82,124 +103,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Jose Abreu <joabreu@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>, netdev@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, Chen-Yu Tsai <wens@csie.org>,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- linux-sunxi@googlegroups.com, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ open list <linux-kernel@vger.kernel.org>, Fabien Parent <fparent@baylibre.com>,
+ Philippe Mazenauer <philippe.mazenauer@outlook.de>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, "open
+ list:COMMON CLK FRAMEWORK" <linux-clk@vger.kernel.org>, "moderated
+ list:ARM/Mediatek SoC support" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Maxime,
-
-On Tue, May 21, 2019 at 01:46:11PM +0200, Maxime Ripard wrote:
-> Hi,
-> 
-> On Tue, May 21, 2019 at 01:50:08AM +0200, megous@megous.com wrote:
-> > From: Ondrej Jirman <megous@megous.com>
-> >
-> > Orange Pi 3 board requires enabling a voltage shifting circuit via GPIO
-> > for the DDC bus to be usable.
-> >
-> > Add support for hdmi-connector node's optional ddc-en-gpios property to
-> > support this use case.
-> >
-> > Signed-off-by: Ondrej Jirman <megous@megous.com>
-> > ---
-> >  drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c | 55 +++++++++++++++++++++++++--
-> >  drivers/gpu/drm/sun4i/sun8i_dw_hdmi.h |  3 ++
-> >  2 files changed, 55 insertions(+), 3 deletions(-)
-> >
-> > diff --git a/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c b/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c
-> > index 39d8509d96a0..59b81ba02d96 100644
-> > --- a/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c
-> > +++ b/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c
-> > @@ -98,6 +98,30 @@ static u32 sun8i_dw_hdmi_find_possible_crtcs(struct drm_device *drm,
-> >  	return crtcs;
-> >  }
-> >
-> > +static int sun8i_dw_hdmi_find_connector_pdev(struct device *dev,
-> > +					     struct platform_device **pdev_out)
-> > +{
-> > +	struct platform_device *pdev;
-> > +	struct device_node *remote;
-> > +
-> > +	remote = of_graph_get_remote_node(dev->of_node, 1, -1);
-> > +	if (!remote)
-> > +		return -ENODEV;
-> > +
-> > +	if (!of_device_is_compatible(remote, "hdmi-connector")) {
-> > +		of_node_put(remote);
-> > +		return -ENODEV;
-> > +	}
-> > +
-> > +	pdev = of_find_device_by_node(remote);
-> > +	of_node_put(remote);
-> > +	if (!pdev)
-> > +		return -ENODEV;
-> > +
-> > +	*pdev_out = pdev;
-> > +	return 0;
-> > +}
-> > +
-> >  static int sun8i_dw_hdmi_bind(struct device *dev, struct device *master,
-> >  			      void *data)
-> >  {
-> > @@ -151,16 +175,29 @@ static int sun8i_dw_hdmi_bind(struct device *dev, struct device *master,
-> >  		return PTR_ERR(hdmi->regulator);
-> >  	}
-> >
-> > +	ret = sun8i_dw_hdmi_find_connector_pdev(dev, &hdmi->connector_pdev);
-> > +	if (!ret) {
-> > +		hdmi->ddc_en = gpiod_get_optional(&hdmi->connector_pdev->dev,
-> > +						  "ddc-en", GPIOD_OUT_HIGH);
-> > +		if (IS_ERR(hdmi->ddc_en)) {
-> > +			platform_device_put(hdmi->connector_pdev);
-> > +			dev_err(dev, "Couldn't get ddc-en gpio\n");
-> > +			return PTR_ERR(hdmi->ddc_en);
-> > +		}
-> > +	}
-> > +
-> >  	ret = regulator_enable(hdmi->regulator);
-> >  	if (ret) {
-> >  		dev_err(dev, "Failed to enable regulator\n");
-> > -		return ret;
-> > +		goto err_unref_ddc_en;
-> >  	}
-> >
-> > +	gpiod_set_value(hdmi->ddc_en, 1);
-> > +
-> 
-> Do you really need this to be done all the time? I'm guessing you
-> would only need this when running .get_modes, right?
-
-I don't think it hurts anything. Enabled voltage shifting circuit doesn't
-draw any current, unless DDC is actually transmitting data. On most boards
-I'd imagine this circuit is always on anyway (Orange Pi 3 schematic even has
-an option to tie this signal to VCC-IO instead of GPIO).
-
-Schematic: https://megous.com/dl/tmp/bfcdd32d655aaa76.png
-
-thank you and regards,
-	o.
-
-> Maxime
-> 
-> --
-> Maxime Ripard, Bootlin
-> Embedded Linux and Kernel engineering
-> https://bootlin.com
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VmFyaWFibGUgJ2RkcnBoeWNmZ19wYXJlbnRzJyBpcyBkZWZpbmVkIHN0YXRpYyBhbmQgaW5pdGlh
+bGl6ZWQsIGJ1dCBub3QNCnVzZWQgaW4gdGhlIGZpbGUuDQoNCi4uL2RyaXZlcnMvY2xrL21lZGlh
+dGVrL2Nsay1tdDg1MTYuYzoyMzQ6Mjc6IHdhcm5pbmc6IOKAmGRkcnBoeWNmZ19wYXJlbnRz4oCZ
+IGRlZmluZWQgYnV0IG5vdCB1c2VkIFstV3VudXNlZC1jb25zdC12YXJpYWJsZT1dDQogc3RhdGlj
+IGNvbnN0IGNoYXIgKiBjb25zdCBkZHJwaHljZmdfcGFyZW50c1tdIF9faW5pdGNvbnN0ID0gew0K
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgXn5+fn5+fn5+fn5+fn5+fn4NCg0KU2lnbmVkLW9m
+Zi1ieTogUGhpbGlwcGUgTWF6ZW5hdWVyIDxwaGlsaXBwZS5tYXplbmF1ZXJAb3V0bG9vay5kZT4N
+Ci0tLQ0KIGRyaXZlcnMvY2xrL21lZGlhdGVrL2Nsay1tdDg1MTYuYyB8IDUgLS0tLS0NCiAxIGZp
+bGUgY2hhbmdlZCwgNSBkZWxldGlvbnMoLSkNCg0KZGlmZiAtLWdpdCBhL2RyaXZlcnMvY2xrL21l
+ZGlhdGVrL2Nsay1tdDg1MTYuYyBiL2RyaXZlcnMvY2xrL21lZGlhdGVrL2Nsay1tdDg1MTYuYw0K
+aW5kZXggMjZmZTQzY2M5ZWEyLi45ZDQyNjFlY2M3NjAgMTAwNjQ0DQotLS0gYS9kcml2ZXJzL2Ns
+ay9tZWRpYXRlay9jbGstbXQ4NTE2LmMNCisrKyBiL2RyaXZlcnMvY2xrL21lZGlhdGVrL2Nsay1t
+dDg1MTYuYw0KQEAgLTIzMSwxMSArMjMxLDYgQEAgc3RhdGljIGNvbnN0IGNoYXIgKiBjb25zdCBu
+ZmkxeF9wYWRfcGFyZW50c1tdIF9faW5pdGNvbnN0ID0gew0KIAkibmZpMXhfY2siDQogfTsNCiAN
+Ci1zdGF0aWMgY29uc3QgY2hhciAqIGNvbnN0IGRkcnBoeWNmZ19wYXJlbnRzW10gX19pbml0Y29u
+c3QgPSB7DQotCSJjbGsyNm1fY2siLA0KLQkibWFpbnBsbF9kMTYiDQotfTsNCi0NCiBzdGF0aWMg
+Y29uc3QgY2hhciAqIGNvbnN0IHVzYl83OG1fcGFyZW50c1tdIF9faW5pdGNvbnN0ID0gew0KIAki
+Y2xrX251bGwiLA0KIAkiY2xrMjZtX2NrIiwNCi0tIA0KMi4xNy4xDQoNCl9fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
+ZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
+aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
