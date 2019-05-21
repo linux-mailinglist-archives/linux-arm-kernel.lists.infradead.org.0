@@ -2,66 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C44BF24658
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 05:31:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 836B02465B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 05:35:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qlZBGzVVSpzsXUEGUvt0030Z2ZrpE+7iuc/4yaiu0Do=; b=kLD+KPmFdJT9HC
-	jv9gv/qAH71FZzfKXUyFLVDzjHzyv6OXkaD1HT8MHUEMt6Fa/xr+h1yEkj2rCo3o7vA8+hhKeN0dy
-	SFkE5n4SatyzsKk5yPrJqiVIXIdAQ8aBVFCsZE4FVEZ6a/t6zE8808BKepDVA7O4KeyeOFpkWNVj1
-	aJD3kzxltETWyEDQDjQq1f8yCWyc7QZupv5koBZKUt8V60AvQNAF/9ES079Op5nVl4jwn0dt8t0aJ
-	Gk4dbX7w9ZA9t3GmSyYU//h9TXIDj5VUElDZ3SQLuVH8I8zOA1Rx79gU24x2iAh9k3tgC0s8ixg1P
-	sdk++Tf/NXZolUJWjj3A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=5fhtFG9y6rIse/2zMF2MKuCDW18s4FKFRPcKf3eBzdU=; b=DrX
+	FhlC5Sh9+MN4m2aDSIQrs8076x7684YGc/DFZ8UX0JUaiefbdMl8Nq/odOEYmv7iRi9cuI5gKLuJO
+	NIwfCTmUldtZZ/a5u14tPoe8eW+/YmaUW7zCTPNmzm5lhyW5F688sxrh0A/fuPluXvoCPnzx3oHvc
+	HcwN8J4sr8yf1VgRqnBgXXlD5Vmm8jesj5c6HlJgcPH+DxcsEmnk8+bCgXGkEvQdXJd9RZOdGU96E
+	qqFkf+WAigXvW9v6NOhnH2ikJAR1zXoULPMe5JxhbMaevMD8oSnSqTpB8eefooRCnhHM1oVf8kwpM
+	KS2LHZmu8MGp1ESZ5/6sB5HE+2MBuWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSvUf-0003vf-N0; Tue, 21 May 2019 03:31:13 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSvUY-0003us-C5; Tue, 21 May 2019 03:31:08 +0000
-X-UUID: 0814620f792946e2b1bc9347a65ff692-20190520
-X-UUID: 0814620f792946e2b1bc9347a65ff692-20190520
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 684936289; Mon, 20 May 2019 19:30:29 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 20 May 2019 20:30:28 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 21 May 2019 11:30:25 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 21 May 2019 11:30:25 +0800
-Message-ID: <1558409425.25526.13.camel@mtksdaap41>
-Subject: Re: [PATCH v7 11/12] soc: mediatek: cmdq: add
- cmdq_dev_get_client_reg function
-From: CK Hu <ck.hu@mediatek.com>
-To: Bibby Hsieh <bibby.hsieh@mediatek.com>
-Date: Tue, 21 May 2019 11:30:25 +0800
-In-Reply-To: <20190521011108.40428-12-bibby.hsieh@mediatek.com>
-References: <20190521011108.40428-1-bibby.hsieh@mediatek.com>
- <20190521011108.40428-12-bibby.hsieh@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
-MIME-Version: 1.0
-X-TM-SNTS-SMTP: 798B638221290F7BC5D8959C66269264E402B2FA60D529F582211C428B8D881B2000:8
-X-MTK: N
+	id 1hSvYr-0005VA-Mh; Tue, 21 May 2019 03:35:33 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hSvYk-0005Um-9l
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 03:35:27 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5A671341;
+ Mon, 20 May 2019 20:35:25 -0700 (PDT)
+Received: from p8cg001049571a15.blr.arm.com (p8cg001049571a15.blr.arm.com
+ [10.162.42.136])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 10D603F718;
+ Mon, 20 May 2019 20:35:22 -0700 (PDT)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+To: linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64/hugetlb: Use macros for contiguous huge page sizes
+Date: Tue, 21 May 2019 09:05:03 +0530
+Message-Id: <1558409703-31894-1-git-send-email-anshuman.khandual@arm.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_203106_415202_739FE11C 
-X-CRM114-Status: GOOD (  16.31  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190520_203526_347102_E6AF9772 
+X-CRM114-Status: GOOD (  13.28  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -73,124 +61,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, srv_heupstream@mediatek.com,
- Daoyuan Huang <daoyuan.huang@mediatek.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Jassi Brar <jassisinghbrar@gmail.com>,
- linux-kernel@vger.kernel.org, Daniel Kurtz <djkurtz@chromium.org>,
- Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>, YT
- Shen <yt.shen@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Houlong Wei <houlong.wei@mediatek.com>,
- Sascha Hauer <kernel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Jiaguang Zhang <jiaguang.zhang@mediatek.com>,
- linux-arm-kernel@lists.infradead.org, ginny.chen@mediatek.com
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Steve Capper <steve.capper@arm.com>,
+ Will Deacon <will.deacon@arm.com>,
+ Anshuman Khandual <anshuman.khandual@arm.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2019-05-21 at 09:11 +0800, Bibby Hsieh wrote:
-> GCE cannot know the register base address, this function
-> can help cmdq client to get the cmdq_client_reg structure.
-> 
-> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
-> ---
->  drivers/soc/mediatek/mtk-cmdq-helper.c | 25 +++++++++++++++++++++++++
->  include/linux/soc/mediatek/mtk-cmdq.h  | 18 ++++++++++++++++++
->  2 files changed, 43 insertions(+)
-> 
-> diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> index 70ad4d806fac..815845bb5982 100644
-> --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
-> +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> @@ -27,6 +27,31 @@ struct cmdq_instruction {
->  	u8 op;
->  };
->  
-> +struct cmdq_client_reg  *cmdq_dev_get_client_reg(struct device *dev, int idx)
-> +{
-> +	struct cmdq_client_reg *client_reg;
-> +	struct of_phandle_args spec;
-> +
-> +	client_reg  = devm_kzalloc(dev, sizeof(*client_reg), GFP_KERNEL);
-> +	if (!client_reg)
-> +		return NULL;
-> +
-> +	if (of_parse_phandle_with_args(dev->of_node, "mediatek,gce-client-reg",
-> +				       "#subsys-cells", idx, &spec)) {
-> +		dev_err(dev, "can't parse gce-client-reg property (%d)", idx);
+Replace all open encoded contiguous huge page size computations with
+available macro encodings CONT_PTE_SIZE and CONT_PMD_SIZE. There are other
+instances where these macros are used in the file and this change makes it
+consistently use the same mnemonic.
 
-I think you should call devm_kfree(client_reg) here because this
-function may not be called in client driver's probe function. But in
-another view point, I would like you to move the memory allocation out
-of this function. When client call cmdq_dev_get_client_reg() to get a
-pointer, it's easy that client does not free it because you does not
-provide free API, Some client may embed struct cmdq_client_reg with its
-client structure together,
+Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will.deacon@arm.com>
+Cc: Steve Capper <steve.capper@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+---
+ arch/arm64/mm/hugetlbpage.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
-struct client {
-	struct cmdq_client_reg client_reg;
-};
-
-Because each client may have different memory allocation strategy, so I
-would like you to move memory allocation out of this function to let
-client driver have the flexibility.
-
-Regards,
-CK
-
-> +
-> +		return NULL;
-> +	}
-> +
-> +	client_reg->subsys = spec.args[0];
-> +	client_reg->offset = spec.args[1];
-> +	client_reg->size = spec.args[2];
-> +	of_node_put(spec.np);
-> +
-> +	return client_reg;
-> +}
-> +EXPORT_SYMBOL(cmdq_dev_get_client_reg);
-> +
->  static void cmdq_client_timeout(struct timer_list *t)
->  {
->  	struct cmdq_client *client = from_timer(client, t, timer);
-> diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
-> index a345870a6d10..d0dea3780f7a 100644
-> --- a/include/linux/soc/mediatek/mtk-cmdq.h
-> +++ b/include/linux/soc/mediatek/mtk-cmdq.h
-> @@ -15,6 +15,12 @@
->  
->  struct cmdq_pkt;
->  
-> +struct cmdq_client_reg {
-> +	u8 subsys;
-> +	u16 offset;
-> +	u16 size;
-> +};
-> +
->  struct cmdq_client {
->  	spinlock_t lock;
->  	u32 pkt_cnt;
-> @@ -142,4 +148,16 @@ int cmdq_pkt_flush_async(struct cmdq_pkt *pkt, cmdq_async_flush_cb cb,
->   */
->  int cmdq_pkt_flush(struct cmdq_pkt *pkt);
->  
-> +/**
-> + * cmdq_dev_get_client_reg() - parse cmdq client reg from the device node of CMDQ client
-> + * @dev:	device of CMDQ mailbox client
-> + * @idx:	the index of desired reg
-> + *
-> + * Return: CMDQ client reg pointer
-> + *
-> + * Help CMDQ client pasing the cmdq client reg
-> + * from the device node of CMDQ client.
-> + */
-> +struct cmdq_client_reg  *cmdq_dev_get_client_reg(struct device *dev, int idx);
-> +
->  #endif	/* __MTK_CMDQ_H__ */
-
+diff --git a/arch/arm64/mm/hugetlbpage.c b/arch/arm64/mm/hugetlbpage.c
+index 6b4a47b..05b5dda 100644
+--- a/arch/arm64/mm/hugetlbpage.c
++++ b/arch/arm64/mm/hugetlbpage.c
+@@ -236,7 +236,7 @@ pte_t *huge_pte_alloc(struct mm_struct *mm,
+ 
+ 	if (sz == PUD_SIZE) {
+ 		ptep = (pte_t *)pudp;
+-	} else if (sz == (PAGE_SIZE * CONT_PTES)) {
++	} else if (sz == (CONT_PTE_SIZE)) {
+ 		pmdp = pmd_alloc(mm, pudp, addr);
+ 
+ 		WARN_ON(addr & (sz - 1));
+@@ -254,7 +254,7 @@ pte_t *huge_pte_alloc(struct mm_struct *mm,
+ 			ptep = huge_pmd_share(mm, addr, pudp);
+ 		else
+ 			ptep = (pte_t *)pmd_alloc(mm, pudp, addr);
+-	} else if (sz == (PMD_SIZE * CONT_PMDS)) {
++	} else if (sz == (CONT_PMD_SIZE)) {
+ 		pmdp = pmd_alloc(mm, pudp, addr);
+ 		WARN_ON(addr & (sz - 1));
+ 		return (pte_t *)pmdp;
+@@ -462,9 +462,9 @@ static int __init hugetlbpage_init(void)
+ #ifdef CONFIG_ARM64_4K_PAGES
+ 	add_huge_page_size(PUD_SIZE);
+ #endif
+-	add_huge_page_size(PMD_SIZE * CONT_PMDS);
++	add_huge_page_size(CONT_PMD_SIZE);
+ 	add_huge_page_size(PMD_SIZE);
+-	add_huge_page_size(PAGE_SIZE * CONT_PTES);
++	add_huge_page_size(CONT_PTE_SIZE);
+ 
+ 	return 0;
+ }
+@@ -478,9 +478,9 @@ static __init int setup_hugepagesz(char *opt)
+ #ifdef CONFIG_ARM64_4K_PAGES
+ 	case PUD_SIZE:
+ #endif
+-	case PMD_SIZE * CONT_PMDS:
++	case CONT_PMD_SIZE:
+ 	case PMD_SIZE:
+-	case PAGE_SIZE * CONT_PTES:
++	case CONT_PTE_SIZE:
+ 		add_huge_page_size(ps);
+ 		return 1;
+ 	}
+-- 
+2.7.4
 
 
 _______________________________________________
