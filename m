@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41AF3253B9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 17:20:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCDFA253BC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 17:20:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=18dmQFI5Cx/m18V3j4UeCAsU7TxALUcc1wV1xHKlI4c=; b=AYclW70iCFxi+Z
-	99UPUFSSy57+3KzssX1eOYMG2YUIpzxl5Y993Yu86ARoNHkeaFt1BC+8EsBTAJ5W4L5SmGlmcPcy1
-	lzWKnVOMJ8h9z561fzb0ZIQkwSqWIT4XErGLX1dWBZimFaqFGy4JpMdGBZth/e+WaIt3alFhSjKWS
-	Z/pumytxN/6rrR3S6GP25cSDkycFAgMNSRJWPMbOvYfbwNZXQSwgqjuppQAptQeC1zoCYMlLBVnvd
-	tW2awl4H0byJceq/04xSVR1uONUUQ+6QyicOT3k2fjHBvIkHRHwu73AVJ8BdTTCsv2fHLaZwTZGR5
-	i/tpoi3L4Kg/BGJFejXg==;
+	List-Owner; bh=2ZDx8mJd7sMxpxRryBGoTo1J0kJGZpBKQ/zDZlQEhao=; b=a1TsIgBm8UmUtM
+	VB6rXGh9QTpA2xIJvjMppstzjabrvkFeUpFTnAU9JcED393ad68VIBFM05evAvTDkpf953y7xOyt6
+	+v+cNV0BBqbOjb2rREZ4BcGkhkrT0yFUxA5xgScVBhx+p8Jrky0YcArihnsYqhGpa/iVzBaBUO9jQ
+	DbMW1RUfglJsFzwmpTujoJWZaScf7m3ZF+K4lgRC3kD/U/83+8Izb4ClKwEGaSlJRoIi8ZNOACE+R
+	zY/O4muk2LKwF3OQD2YLBw03dqI3JIfEMkuvtJ7bl1YcfEKXQSObbwyzp/R1e1Lbqq/+r+XlwpcW6
+	8r2A5sEZtyYul7wechNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT6Z0-0006zj-RE; Tue, 21 May 2019 15:20:26 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hT6ZG-0007RL-Hz; Tue, 21 May 2019 15:20:42 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT6YX-0005R3-5r
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 15:19:59 +0000
-Received: by mail-wr1-x444.google.com with SMTP id s17so19106115wru.3
+ id 1hT6YY-0005RD-QH
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 15:20:00 +0000
+Received: by mail-wm1-x341.google.com with SMTP id i3so3401986wml.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 May 2019 08:19:56 -0700 (PDT)
+ Tue, 21 May 2019 08:19:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=vhkCArdSYp19WRy9pHtDkpRiGu4ocnCtsFxZgKHOrQQ=;
- b=ZdzRHhNgFLRHQR2KIcm6dzqe1zFhhkXiYls6dlf6D0mkFq02TpZrZ2l+l4r75FvB0v
- m4JTBZwT8qCdcC88C+fXX6a8njfGpjqV9qvC0JKB2cddv12E4/a8/lAgFsVFSPzQ1rBR
- ZXL+sA089J4vbDi/TfRsJXTWmnzY2bOxPWFxnTaaF5fLuf+ZICJ7f5x0LsKUyOL545JK
- XgbN8tMu7pvfgSSACiloqxRp+TQy2HQq2cGYLE11rSl8SWGkOqxqKfdex0fPdwgW7ihJ
- 2RG/iudUEiUaVpyAU0wOUCv/tL1kzCqe1EilyLOC3uMtPMPXyteLlUMS4TSRPWihE6ie
- Iosw==
+ bh=2UEmu+PQTJMEzkzxShtce1PUS0kwGjqD32xVaKXEq8k=;
+ b=m4gDvS+OKNfl4tPhdhYIPSGwDI5QUMCD0qa2ChEKnlS1dVhLQFGx+t+skeULPeKIKK
+ va6KX7ohP5NII4ATmVhU8vtjZUELDtjDNotPuBJ3nHzves6U656GVJdsKOkZd0eHJorR
+ Jj/RLpv3ksfacmK2rjHOhbG4J/ioBy0yNuvKQh8d0JZQGO6D2cRj7SMUmGfa4AnOHEAf
+ swr/rdaEmrXl6s+NHLTg1RMS48bUJOD8eSBGFyQ/gAuF08dEdG9ns6/8nsTW/BH3GFq3
+ Bqs9KuArvqeZRBuCVhg9axNdwF6RNS94r1Mz1Ha2E+EJl5HqB+a/ovi7zDRdOTsma/Pe
+ EkJA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=vhkCArdSYp19WRy9pHtDkpRiGu4ocnCtsFxZgKHOrQQ=;
- b=PdSh0iEx41jpGVSWhaz4QdcRrequY2kMh2db5TZMUDggexBdHNgH1V5hOwe5Gpmv8b
- 0djh7bPHcBeNcZowoXXyCabSrzC5pYOEPPNBJTbao2ui0PzAfma/JF0exCNgQgJnZUpz
- j2HeqFxQDPTIakyIVlPIkxBtPdjhTZ0zUAbfyB9H4kIiyFgobcx1OI5W+sXbNbXOFeN2
- Byb4X7DCPat6ad4lDiuw0qqQxXPQI0Lb0s1XF3nxmP5miW76qTx0wXgwXCJvhZMKUios
- LZeV0Id3Y+piGfk6kXkl6hwQRqUvqr40Lzb3zmiaAyCmuu2bbgROu6UNFFOMtUWyXNX/
- jcgA==
-X-Gm-Message-State: APjAAAVVZ+EA8htq+v1VUPc8ImryX+9me2ZomqnM0mLGjvPaEjhciqHi
- EtD1lmH8AIKQUHYqqauZhOW/Kg==
-X-Google-Smtp-Source: APXvYqyRX+GLakjFp0Eh9cc4c2GsZ6BB2KNHfqbeBehOMfsXhgM9oc/3OwNRrSmb43o1etqmgBN0Nw==
-X-Received: by 2002:adf:cf0e:: with SMTP id o14mr14666829wrj.230.1558451995591; 
- Tue, 21 May 2019 08:19:55 -0700 (PDT)
+ bh=2UEmu+PQTJMEzkzxShtce1PUS0kwGjqD32xVaKXEq8k=;
+ b=JzqduZJuD93FOsEoNHb9zfNPjcHHjYdp66VrAeRqLQcqXBPqc/pJe2BZ8Qfx9Wd9X0
+ Chvctdc0jWDjKwYjwcaD5I+HydYcK54MmQ/oKGepddiZjWo6qSgjQ70DtP6645i4w8q5
+ IXc5BLfOHhCrT1cLt6qlvvbZ27fBa0ef1k/a13xnHmjiwMPFRa7RAOWlllfh9+KQSK+I
+ SKBcCcyKDh73pWRstTp8DGm0iwhkfW1co32B3daih4q1pidQ2i0YGlTPGw2HhSEip0O7
+ 58hVm6uAL6gty/bx5D6aSprEjmLKVcqoENlQw0yib98jcWBPMfMkd8fOqJk+sK/WCJNN
+ oEAA==
+X-Gm-Message-State: APjAAAU5sq2CZhIqHZlf9XI3pCoO2FGSpXNwlBPDqoEkoRtEvCPUtZ5z
+ fGzrecTcer66yAheMowVDKjaeA==
+X-Google-Smtp-Source: APXvYqwk2IBY1kdDxl8FarpdDrMnx6sRXqje8GLIZs5Bg3e9TU58EJrEreRIcvDw7cnoTqyedCYF8A==
+X-Received: by 2002:a1c:ba87:: with SMTP id k129mr3900600wmf.132.1558451996629; 
+ Tue, 21 May 2019 08:19:56 -0700 (PDT)
 Received: from bender.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id p17sm3945677wrq.95.2019.05.21.08.19.54
+ by smtp.gmail.com with ESMTPSA id p17sm3945677wrq.95.2019.05.21.08.19.55
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Tue, 21 May 2019 08:19:54 -0700 (PDT)
+ Tue, 21 May 2019 08:19:55 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: khilman@baylibre.com,
 	devicetree@vger.kernel.org
-Subject: [PATCH v3 1/3] dt-bindings: arm: amlogic: add G12B bindings
-Date: Tue, 21 May 2019 17:19:50 +0200
-Message-Id: <20190521151952.2779-2-narmstrong@baylibre.com>
+Subject: [PATCH v3 2/3] dt-bindings: arm: amlogic: add Odroid-N2 binding
+Date: Tue, 21 May 2019 17:19:51 +0200
+Message-Id: <20190521151952.2779-3-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190521151952.2779-1-narmstrong@baylibre.com>
 References: <20190521151952.2779-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_081957_214884_A826973F 
-X-CRM114-Status: GOOD (  10.10  )
+X-CRM114-CacheID: sfid-20190521_081958_850561_8BFBC418 
+X-CRM114-Status: GOOD (  10.58  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -104,8 +104,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add compatible for the Amlogic G12B SoC, sharing most of the
-features and architecture with the G12A SoC.
+Add compatible for the Amlogic G12B (S922X) SoC based Odroid-N2 SBC
+from HardKernel.
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 Reviewed-by: Rob Herring <robh@kernel.org>
@@ -117,22 +117,21 @@ I converted the patch you acked in yaml, I kept the Reviewed-by,
 is it ok for you ?
 
 Neil
-
- Documentation/devicetree/bindings/arm/amlogic.yaml | 4 ++++
- 1 file changed, 4 insertions(+)
+ Documentation/devicetree/bindings/arm/amlogic.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/Documentation/devicetree/bindings/arm/amlogic.yaml b/Documentation/devicetree/bindings/arm/amlogic.yaml
-index 6d5bb493db03..28115dd49f96 100644
+index 28115dd49f96..f75df4471c0a 100644
 --- a/Documentation/devicetree/bindings/arm/amlogic.yaml
 +++ b/Documentation/devicetree/bindings/arm/amlogic.yaml
-@@ -137,4 +137,8 @@ properties:
-               - amlogic,u200
-           - const: amlogic,g12a
+@@ -139,6 +139,8 @@ properties:
  
-+      - description: Boards with the Amlogic Meson G12B S922X SoC
-+        items:
-+          - const: amlogic,g12b
-+
+       - description: Boards with the Amlogic Meson G12B S922X SoC
+         items:
++          - enum:
++              - hardkernel,odroid-n2
+           - const: amlogic,g12b
+ 
  ...
 -- 
 2.21.0
