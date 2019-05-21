@@ -2,81 +2,119 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD43B25022
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 15:27:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48738250F0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 15:45:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BsGD8y/MILran1Yhl8cx3Vwh3N66rezk48X/uj1Bti0=; b=auHKx/tFPxRiMW
-	E/3xZ8DxHJAnkYa5eWpRa1KSxU3bn2n1FNJbXykUBrN+l+QFkytT7SFMh+o13d7flvUVg9WL7Nblx
-	HBe1E47fRW7CXKDTlbM61xcATyb3mtiy8XO40K8UMZc4KR5Xhg0UKhOd3btPbqKj1jHx5n+fcJdQ0
-	uDiViiSkeAI5JM4z1g3VW6A8hIq8zdfhRiulb6FIso+xzGWHn7RYHtjq4gI0smU4GYTfQOrQVQK6b
-	fgJn+IKuhqFUpSZpH2vhh6DNfUWcKFXn5LmBXsSFZVIo5705GC88P5YaSmJ3uC0419eaQae9yVk3R
-	jWeC1gsUMZbqTXc6QmPg==;
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Date:Message-ID
+	:Subject:From:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=Mjq2ZjSFv4p7FVoKcI4ss3+tFsY8iC9iNywfie3AZ9o=; b=cg7rQcjPjvyAEV
+	k//dAnBpIbq1u7nOs7JTaZ8GgMmMvDJ5I7tJcck7aTuJ5fP1Pi434AtnE7sSWH8dsCwFpC1vaJkNT
+	6zPQ2hO0mUQgFEz1lGtYEdZGh5nhGmmY73bN3eGt4zSev63hgMz6HewJ70JWcdMKqfTi9DfUmoRYg
+	mUIpCRJxSsRmta6O0zLVuEp5pZuAbp9jDgYkZsUs+ZlFn0xQoeQFQS/ABphl8vA1ZWT8Yo7o3MEAl
+	5RFKJv1WG4YZselbJ32QZcGFA5dJ9Y7AbDWe7A/BF5DdiCyVnVTOnWrnXgfVOKSTuB/UaDjSX0wUw
+	FcLJbUF7sgjT+SRs4o3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT4nJ-00065T-Tr; Tue, 21 May 2019 13:27:05 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hT54h-0003mY-QI; Tue, 21 May 2019 13:45:03 +0000
+Received: from mailout1.w1.samsung.com ([210.118.77.11])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT4nC-00064x-7q
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 13:26:59 +0000
-Received: by mail-wm1-x342.google.com with SMTP id n25so1073392wmk.4
+ id 1hT54R-0003lK-1q
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 13:44:48 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+ by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20190521134443euoutp015b0d20bf63ed0781ffc10d0c2a0003db~gtqNhb9Fp2436524365euoutp01C
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 May 2019 06:26:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=qrp/cCOlFJCvzIc4gQMAUxLU+7cAYh9D4Zth3uCG30U=;
- b=BGix0mkl0u5OQfGkGTujOD8MfOHzU4MYEmrQ2i+91eBnAXKE0bhRFBSfYaAgzMeOlI
- 9ONIZrQ/YPo+0QNPpjlrSCzqMAu8ynnOKpefspeJHrh6Kwk5hL9ph5wXS5wa/qQDnTft
- MaN4qXXsIdqL4HSiXkY8mE675oJIwjj9wSW6YJVX0I6xQK0+EUkbRkLADENVvpD0T3bl
- nNhivqvhlkH+3twPkmVCNr/OaW4yC6DO/ChzmVK3xovROhCMNbqwQx48r54i+bWgDk3U
- lAmQd727iyPDH+t/wg8/fepVOzlr54pQ6k3rScOMSLLO1LYYT7ETgWGWtCqyKwfKcya9
- ikWg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=qrp/cCOlFJCvzIc4gQMAUxLU+7cAYh9D4Zth3uCG30U=;
- b=UvlOHJiy39H3vNhxIaiKUtjSDT7yNRUY/J2RbVB3ksOQn7HUS3aPi8Kz4eLVXfFfPJ
- nifapBnNcWP0dALr4Rx1WBP2/Cml5Y1tMC5cHcsvyZ+pHi6znRl6g/oFz9BPneKXiBgh
- 2I/0r96hSBhxCecltz3nTuUc1aAPCy9PjFJjoRf0qtZ2RpYZBqO/YlJTxNdR/IiPISNP
- wui8dLifNUKyTHuMNA0Mv8utvZOOVqGFgvPdORXb+r13nTFZKOvZIWuJaemBPrAnBOV3
- 47SkHWWEGo4OxzVq12OGVWaoKak6mfJkSJ+Ub73E+xt+yICNyPvS+qY8YxnkLab7vGz8
- 7b9w==
-X-Gm-Message-State: APjAAAVMWH1w6bC8onQ22ZxcyLBaOeJb4wCDLOLFJxgUt+mjcOqVBSBo
- oeqcHl7XrTi+pRC6BewiAdQT2REtY9SlWxHLxtg=
-X-Google-Smtp-Source: APXvYqzvGLXTpCYDjBTmFlxpnFdDs/GZX8wN3Yik3u04wGLJ1U4Jbdm4OYibVzfWSGgFLb4l674d8SHtW41xH+KCxlk=
-X-Received: by 2002:a1c:e443:: with SMTP id b64mr3433813wmh.71.1558445216111; 
- Tue, 21 May 2019 06:26:56 -0700 (PDT)
+ Tue, 21 May 2019 13:44:43 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
+ 20190521134443euoutp015b0d20bf63ed0781ffc10d0c2a0003db~gtqNhb9Fp2436524365euoutp01C
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1558446283;
+ bh=RLKuvBEG6Mny/Pi7NLR0Nbvy2HIvFuNlpcTPZlMZBXk=;
+ h=To:Cc:From:Subject:Date:References:From;
+ b=Vb6ydFvKm9z1RR1Gb0tMkhE9r7REcltW89yYJLNHhCIzVRDFLCyOcsB8eTCRxIYcB
+ uSSxxREujTovpQu+wX7rhZwgTUJzFjW1wkeKD2EHIJm2tk0MOSwqTiWThVTXdkZ3JZ
+ tlHT1QwdSq/I+IF5f8U51gzvmoPLTIoFNCTjW480=
+Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20190521134443eucas1p2a0361c7efc2c3d4dee8fcee519c6addc~gtqM0XIxT3113031130eucas1p2Z;
+ Tue, 21 May 2019 13:44:43 +0000 (GMT)
+Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
+ eusmges3new.samsung.com (EUCPMTA) with SMTP id 3B.80.04325.AC004EC5; Tue, 21
+ May 2019 14:44:42 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190521134442eucas1p2bf6236c3af24bb023f11f8d119a822be~gtqL9Aldk1363313633eucas1p2s;
+ Tue, 21 May 2019 13:44:42 +0000 (GMT)
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20190521134441eusmtrp1c9cddd818c93cd6503e93b5e28897d74~gtqLtfH792230522305eusmtrp1P;
+ Tue, 21 May 2019 13:44:41 +0000 (GMT)
+X-AuditID: cbfec7f5-fbbf09c0000010e5-f4-5ce400ca0d61
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id E0.9D.04140.9C004EC5; Tue, 21
+ May 2019 14:44:41 +0100 (BST)
+Received: from [106.120.51.71] (unknown [106.120.51.71]) by
+ eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190521134441eusmtip172871ea8af1b007e36dc816b66719ebe~gtqLcK_Z72907329073eusmtip1e;
+ Tue, 21 May 2019 13:44:41 +0000 (GMT)
+To: Russell King <linux@armlinux.org.uk>
+From: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
+Subject: [PATCH] video: fbdev: cyber2000fb: remove superfluous CONFIG_PCI ifdef
+Message-ID: <214f05e0-a448-b1cf-7475-4fa7eeaa9949@samsung.com>
+Date: Tue, 21 May 2019 15:44:40 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-References: <1555943870-15353-1-git-send-email-manish.narani@xilinx.com>
- <1555943870-15353-4-git-send-email-manish.narani@xilinx.com>
-In-Reply-To: <1555943870-15353-4-git-send-email-manish.narani@xilinx.com>
-From: Paul Thomas <pthomas8589@gmail.com>
-Date: Tue, 21 May 2019 09:26:44 -0400
-Message-ID: <CAD56B7dw4kTRuXeKXyT6KbEP9E=B=KqpamL14d96LjGgAfrbGQ@mail.gmail.com>
-Subject: Re: [PATCH v4 3/3] arm64: zynqmp: DT: Add Xilinx AMS node
-To: Manish Narani <manish.narani@xilinx.com>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA01Sa0hTYRj281w8Skc+N8MXraxBkZGaTWFlDLOQEXTxV5FGW3lSy03ZvOYP
+ L4HKErHUtINUxMoU75nzkhKazktq6hCzwkwLEyQvWSg1cjta/nve58L3PPAxhIin3JloTTyn
+ 1ahiJLQT2di9OuTdZzcTfsjyQCozr3ynZfXTY5SsJ2+Bko22lNKyjqI2FEQpRseGCcXkbZO9
+ 4rkhTbFcv+scedHpWAQXE53IaX3lSqeopcFOh7hSJnl6pIlORx9pPXJkAPuDOXuW0iMnRoSf
+ IZjNaEXC8QOB8Va5g3AsI5h61fYv8rPXQghCGYLiiq+kVRDheQQNr5VW7Ir3Q13JGm01ETgL
+ wRfeTFkFGh+FO9kVyIrFOBQ6C7vWeYZhsRyqJxgrTeK90DXH2yzb8QWY7K61RVnsAr33Z2xv
+ EdgNJmYe2gvYE4zzpbZCgLMd4H3eO0poehKW+XxCwGKYMzU4CHgH9BfkkkKgGsGfnNmNtBFB
+ WYFlY2cgdJqGbe0I7AU1Lb4CfRzGB4doKw3YGcbnXYQSznC3sZgQaBZyskSCex/UPq2lN5/V
+ N5dvWBSQ8ZLJR3v4Lcv4Lcv4Lcv4/xUeIbICuXEJOnUkp5NquCQfnUqtS9BE+lyNVdej9R/T
+ bzGtNKH231c6EGaQZBsrm5oOF1GqRF2KugMBQ0hc2f6+z+EiNkKVcpPTxl7WJsRwug7kwZAS
+ NzbV7lOYCEeq4rkbHBfHaTdVe8bRPR0N0eLStD7lG2mhPDSgpO7skV+c40LvZIO7X/7a+Rov
+ 887M00vNEcEfikPj7wUODOx+kco/YvWFwVUGsW97S9C1PPKUsrKy0cMQkpyzKO45POI5yvp7
+ n3kcUNX6tjJpVeost4taPfHtYBTbTdbl8rGZ1QH+RYvy634GY0jik7BLElIXpfI7QGh1qr8d
+ ZThcLQMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprMIsWRmVeSWpSXmKPExsVy+t/xu7onGZ7EGPT9M7e48vU9m8Wmx9dY
+ LU70fWC1uLxrDpvFoal7GR1YPS5fu8jscb/7OJPH5iX1Hp83yQWwROnZFOWXlqQqZOQXl9gq
+ RRtaGOkZWlroGZlY6hkam8daGZkq6dvZpKTmZJalFunbJehlfDp3mL1gDkfF40s72BoY77J1
+ MXJySAiYSHw7+Y+5i5GLQ0hgKaPE3KaZTF2MHEAJGYnj68sgaoQl/lzrAqsXEnjNKHFuIzeI
+ LSKgIbFxxi82kF5mgTZGiQMzTzODJNgErCQmtq9iBLGFBQIlDk85ygoyk1fATmLdLQ6QMIuA
+ qsTRV7PASkQFIiTOvF/BAmLzCghKnJz5BMxmFlCX+DPvEjOELS5x68l8JghbXmL72znMExgF
+ ZiFpmYWkZRaSlllIWhYwsqxiFEktLc5Nzy020itOzC0uzUvXS87P3cQIjJBtx35u2cHY9S74
+ EKMAB6MSD++De49jhFgTy4orcw8xSnAwK4nwnj71KEaINyWxsiq1KD++qDQntfgQoynQQxOZ
+ pUST84HRm1cSb2hqaG5haWhubG5sZqEkztshcDBGSCA9sSQ1OzW1ILUIpo+Jg1OqgVH8SFWb
+ GF9gzut5NRcaUpKeHk1Z33knMXfTlSYfNeX4cxyatjVPrMrLwj02GvudcV8hJPa2oJKhIqXA
+ 6ZwWg3he+u6Je6x9mLu/39fZeOpOZ4XfrIbXPjk75mYd33GlcieXbbaqn/NJN63s495v3rNH
+ qW74sK3v46n4yekxX443yZw2OGarr8RSnJFoqMVcVJwIANdnKJ2mAgAA
+X-CMS-MailID: 20190521134442eucas1p2bf6236c3af24bb023f11f8d119a822be
+X-Msg-Generator: CA
+X-RootMTR: 20190521134442eucas1p2bf6236c3af24bb023f11f8d119a822be
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20190521134442eucas1p2bf6236c3af24bb023f11f8d119a822be
+References: <CGME20190521134442eucas1p2bf6236c3af24bb023f11f8d119a822be@eucas1p2.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_062658_279805_C493C07B 
-X-CRM114-Status: GOOD (  15.41  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190521_064447_359043_54795FD2 
+X-CRM114-Status: GOOD (  12.11  )
+X-Spam-Score: -2.7 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (pthomas8589[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.11 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pthomas8589[at]gmail.com)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -84,6 +122,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,110 +134,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, charles-antoine.couret@essensium.com,
- tmaimon77@gmail.com, linux-iio@vger.kernel.org, xc-racer2@live.ca,
- stefan@agner.ch, pmeerw@pmeerw.net, lee.jones@linaro.org,
- marcus.folkesson@gmail.com, lars@metafoo.de, contact@artur-rojek.eu,
- ricardo@ribalda.com, michal.simek@xilinx.com, geert@linux-m68k.org,
- stefan.popa@analog.com, devicetree@vger.kernel.org,
- max.krummenacher@toradex.com, smohanad@codeaurora.org, robh+dt@kernel.org,
- dmurphy@ti.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel <linux-kernel@vger.kernel.org>, amit.kucheria@linaro.org,
- dinguyen@kernel.org, Jisheng.Zhang@synaptics.com, knaack.h@gmx.de,
- olof@lixom.net, jic23@kernel.org
+Cc: linux-fbdev@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Manish,
+This is a PCI driver and FB_CYBER2000 depends on PCI in Kconfig so
+there is no need to check for PCI inside the driver code.
 
-Thank you for posting this! It is very much needed in the mainline
-kernel, nice work.
+Cc: Russell King <linux@armlinux.org.uk>
+Signed-off-by: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
+---
+ drivers/video/fbdev/cyber2000fb.c |    5 -----
+ 1 file changed, 5 deletions(-)
 
-On Mon, Apr 22, 2019 at 10:54 AM Manish Narani <manish.narani@xilinx.com> wrote:
->
-> The Xilinx AMS includes an ADC as well as on-chip sensors that can be
-> used to sample external and monitor on-die operating conditions, such as
-> temperature and supply voltage levels.
->
-> Signed-off-by: Manish Narani <manish.narani@xilinx.com>
-> ---
->  arch/arm64/boot/dts/xilinx/zynqmp.dtsi | 26 ++++++++++++++++++++++++++
->  1 file changed, 26 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/xilinx/zynqmp.dtsi b/arch/arm64/boot/dts/xilinx/zynqmp.dtsi
-> index 9aa6734..f776913 100644
-> --- a/arch/arm64/boot/dts/xilinx/zynqmp.dtsi
-> +++ b/arch/arm64/boot/dts/xilinx/zynqmp.dtsi
-> @@ -625,5 +625,31 @@
->                         reg = <0x0 0xfd4d0000 0x0 0x1000>;
->                         timeout-sec = <10>;
->                 };
-> +
-> +               xilinx_ams: ams@ffa50000 {
-> +                       compatible = "xlnx,zynqmp-ams";
-> +                       status = "disabled";
-> +                       interrupt-parent = <&gic>;
-> +                       interrupts = <0 56 4>;
-> +                       interrupt-names = "ams-irq";
-> +                       reg = <0x0 0xffa50000 0x0 0x800>;
-> +                       reg-names = "ams-base";
-> +                       #address-cells = <1>;
-> +                       #size-cells = <1>;
-> +                       #io-channel-cells = <1>;
-> +                       ranges = <0 0 0xffa50800 0x800>;
-> +
-> +                       ams_ps: ams-ps@0,0 {
-> +                               compatible = "xlnx,zynqmp-ams-ps";
-> +                               status = "disabled";
-> +                               reg = <0 0x400>;
-> +                       };
-> +
-> +                       ams_pl: ams-pl@1,0 {
-> +                               compatible = "xlnx,zynqmp-ams-pl";
-> +                               status = "disabled";
-> +                               reg = <0x400 0x400>;
-> +                       };
-> +               };
->         };
->  };
-> --
-> 2.1.1
->
-I tested this with an older 4.18 kernel, and with a slightly different
-devicetree (shown below) it seems to be working.
-
-        xilinx_ams: ams@ffa50000 {
-                compatible = "xlnx,zynqmp-ams";
-                status = "okay";
-                interrupt-parent = <&gic>;
-                interrupts = <0 56 4>;
-                interrupt-names = "ams-irq";
-                reg = <0x0 0xffa50000 0x0 0x800>;
-                reg-names = "ams-base";
-
-                #address-cells = <2>;
-                #size-cells = <2>;
-                ranges;
-
-                ams_ps: ams_ps@ffa50800 {
-                        compatible = "xlnx,zynqmp-ams-ps";
-                        reg = <0x0 0xffa50800 0x0 0x400>;
-                };
-
-                ams_pl: ams_pl@ffa50c00 {
-                        compatible = "xlnx,zynqmp-ams-pl";
-                        reg = <0x0 0xffa50c00 0x0 0x400>;
-                };
-
-Also I needed to have the clock defined "clocks = <&clk 70>;".
-
-For the temperatures I get in_temp0_raw, in_temp1_raw and in_temp2 do
-these correspond to channels 7,8 & 21 in the devicetree documentation?
-
-thanks,
-Paul
+Index: b/drivers/video/fbdev/cyber2000fb.c
+===================================================================
+--- a/drivers/video/fbdev/cyber2000fb.c
++++ b/drivers/video/fbdev/cyber2000fb.c
+@@ -1642,10 +1642,6 @@ static void cyberpro_common_resume(struc
+ }
+ 
+ /*
+- * PCI specific support.
+- */
+-#ifdef CONFIG_PCI
+-/*
+  * We need to wake up the CyberPro, and make sure its in linear memory
+  * mode.  Unfortunately, this is specific to the platform and card that
+  * we are running on.
+@@ -1861,7 +1857,6 @@ static struct pci_driver cyberpro_driver
+ 	.resume		= cyberpro_pci_resume,
+ 	.id_table	= cyberpro_pci_table
+ };
+-#endif
+ 
+ /*
+  * I don't think we can use the "module_init" stuff here because
 
 _______________________________________________
 linux-arm-kernel mailing list
