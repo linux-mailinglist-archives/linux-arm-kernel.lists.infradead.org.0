@@ -2,98 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1F1E24634
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 05:06:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C44BF24658
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 05:31:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y6kLsytyaji1s5/9QEufXrq3FYQqk3NrDQ0ziFHL04Y=; b=C9bLcfYsq8AaAj
-	X/ehM2cKn9XTB2ik7rU2uIy8//vzoPhLRoESqWRArBLVV/Jg2EDGYLj1d4pWLLwetXhCuJzOV6YjP
-	OwOlHqW2MjhC6p0Xu0O3wkWss5dsLKE49VsZmPhkqWG6vCmwPD6q9bPoGOZITT2Js+6wrW/ousJYN
-	APJOQFA66Ks55eK1zSu6ab99XUXXoW2UQQETZYNrMIYuEOCIK/OnO5HlgMz7kg8bvk7VShFJqHL0a
-	cZxDHbaXpgyMRoi0NM6VhBZPUGHhIkxUcI9S6Eh6iC0Ff+Hp+jjaR/bLJp6MQ108/Z7xs6mFqgCAg
-	Tox6HLTHXxsAFtchgkLg==;
+	List-Owner; bh=qlZBGzVVSpzsXUEGUvt0030Z2ZrpE+7iuc/4yaiu0Do=; b=kLD+KPmFdJT9HC
+	jv9gv/qAH71FZzfKXUyFLVDzjHzyv6OXkaD1HT8MHUEMt6Fa/xr+h1yEkj2rCo3o7vA8+hhKeN0dy
+	SFkE5n4SatyzsKk5yPrJqiVIXIdAQ8aBVFCsZE4FVEZ6a/t6zE8808BKepDVA7O4KeyeOFpkWNVj1
+	aJD3kzxltETWyEDQDjQq1f8yCWyc7QZupv5koBZKUt8V60AvQNAF/9ES079Op5nVl4jwn0dt8t0aJ
+	Gk4dbX7w9ZA9t3GmSyYU//h9TXIDj5VUElDZ3SQLuVH8I8zOA1Rx79gU24x2iAh9k3tgC0s8ixg1P
+	sdk++Tf/NXZolUJWjj3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSv79-00056C-Dr; Tue, 21 May 2019 03:06:55 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hSvUf-0003vf-N0; Tue, 21 May 2019 03:31:13 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSv72-00055o-GG
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 03:06:49 +0000
-Received: by mail-pl1-x642.google.com with SMTP id y3so7703228plp.0
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 20:06:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=L6rmQq+gPSXmZQ1NvJ0gt7vzdglgYRZhWO69QkEpq4s=;
- b=W6bBtDCkqYW+zUT8OZDmpyZxkn80Lc5l/c/oKtPUNJ/Kf6PgRimqdFjIQbncOk7fh5
- uYnAKbkqSZ7tVUNbuLEqncLfTRPi5Is43mR2JEYtRcG1t1SZAzePFKWgH6xnawODxmK0
- QroNahzP9a6jAF1W4Pth5Tgj0PIxaMcpp8hYfBklE3RaX+aCIIOzTzaucF7eM3GwBNUo
- hT+Y/7FmqMZN7gat7B6SKwWAJnZDkuUcICEJqPGe/fpH4xzE7pdWFqyxmIHoTCsYU5dP
- UNYBefeKrmr0bR+UA0lNvzOU1WLfngLD8+kBThTdGUeCMUGJ4Iubv69I497uOuZFGmYJ
- lrRQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=L6rmQq+gPSXmZQ1NvJ0gt7vzdglgYRZhWO69QkEpq4s=;
- b=tEP5KTPIj0zGmPIBt+Sscf2B5LAdfRvFPYDyxOlz+a7pfeQjSMueuYGMgrt9PIyGtc
- LeLj+OyahZzA4/zVIiyNjYScyEGoiKDp0fjbG2Y1FabPgjMwbtsjCNSgIKUudRvRs292
- TLVFJBYWRwJXPe6jxwyH2hMjVFO7oEuju3trJPEsZNOCGuXZy+0uIhYtTjhHguJMHbaU
- 7vU3DPg+pYuufqnzaCIX4a7pwiMfiOEhiEarV5mNl4Aj5yOcghpsqxpZohcF/JgFRBuX
- oVyKLddyUWSk5KpIL1RBlLVZNNm4m4wHZoJEbAkR4i8VZKKx9PZ6iIiIXEvx//y3jJFR
- jYgg==
-X-Gm-Message-State: APjAAAVsaxbLcVmZ1NjTmJOZZUgXItGwfzmhIXChr/5XSnbRzzxSwAZh
- kWQQl4PMQe7YcKEfB0OlxGmgwQ==
-X-Google-Smtp-Source: APXvYqzw9GX4e6zEdn2jIoJXmVbu/zG5ngWRViST01bGmBuzxZn00fba7Cq1NDzVTnzZ4PDpCaTlUw==
-X-Received: by 2002:a17:902:b191:: with SMTP id
- s17mr57530171plr.262.1558408007225; 
- Mon, 20 May 2019 20:06:47 -0700 (PDT)
-Received: from tuxbook-pro (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id n1sm18491693pgv.15.2019.05.20.20.06.45
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 20 May 2019 20:06:46 -0700 (PDT)
-Date: Mon, 20 May 2019 20:07:12 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Alex Elder <elder@linaro.org>
-Subject: Re: [PATCH 1/8] net: qualcomm: rmnet: fix struct rmnet_map_header
-Message-ID: <20190521030712.GY2085@tuxbook-pro>
-References: <20190520135354.18628-1-elder@linaro.org>
- <20190520135354.18628-2-elder@linaro.org>
- <b0edef36555877350cfbab2248f8baac@codeaurora.org>
- <81fd1e01-b8e3-f86a-fcc9-2bcbc51bd679@linaro.org>
- <d90f8ccdc1f76f9166f269eb71a14f7f@codeaurora.org>
- <cd839826-639d-2419-0941-333055e26e37@linaro.org>
+ id 1hSvUY-0003us-C5; Tue, 21 May 2019 03:31:08 +0000
+X-UUID: 0814620f792946e2b1bc9347a65ff692-20190520
+X-UUID: 0814620f792946e2b1bc9347a65ff692-20190520
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 684936289; Mon, 20 May 2019 19:30:29 -0800
+Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 20 May 2019 20:30:28 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 21 May 2019 11:30:25 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 21 May 2019 11:30:25 +0800
+Message-ID: <1558409425.25526.13.camel@mtksdaap41>
+Subject: Re: [PATCH v7 11/12] soc: mediatek: cmdq: add
+ cmdq_dev_get_client_reg function
+From: CK Hu <ck.hu@mediatek.com>
+To: Bibby Hsieh <bibby.hsieh@mediatek.com>
+Date: Tue, 21 May 2019 11:30:25 +0800
+In-Reply-To: <20190521011108.40428-12-bibby.hsieh@mediatek.com>
+References: <20190521011108.40428-1-bibby.hsieh@mediatek.com>
+ <20190521011108.40428-12-bibby.hsieh@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <cd839826-639d-2419-0941-333055e26e37@linaro.org>
-User-Agent: Mutt/1.11.4 (2019-03-13)
+X-TM-SNTS-SMTP: 798B638221290F7BC5D8959C66269264E402B2FA60D529F582211C428B8D881B2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_200648_604951_A8325A06 
-X-CRM114-Status: GOOD (  13.29  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190520_203106_415202_739FE11C 
+X-CRM114-Status: GOOD (  16.31  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -105,57 +73,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: syadagir@codeaurora.org, ejcaruso@google.com, arnd@arndb.de,
- netdev@vger.kernel.org, ilias.apalodimas@linaro.org,
- linux-kernel@vger.kernel.org, evgreen@chromium.org, david.brown@linaro.org,
- agross@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-arm-msm@vger.kernel.org,
- Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>, davem@davemloft.net,
- cpratapa@codeaurora.org, benchan@google.com
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: devicetree@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, srv_heupstream@mediatek.com,
+ Daoyuan Huang <daoyuan.huang@mediatek.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Jassi Brar <jassisinghbrar@gmail.com>,
+ linux-kernel@vger.kernel.org, Daniel Kurtz <djkurtz@chromium.org>,
+ Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>, YT
+ Shen <yt.shen@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Houlong Wei <houlong.wei@mediatek.com>,
+ Sascha Hauer <kernel@pengutronix.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Jiaguang Zhang <jiaguang.zhang@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org, ginny.chen@mediatek.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon 20 May 19:30 PDT 2019, Alex Elder wrote:
+On Tue, 2019-05-21 at 09:11 +0800, Bibby Hsieh wrote:
+> GCE cannot know the register base address, this function
+> can help cmdq client to get the cmdq_client_reg structure.
+> 
+> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> ---
+>  drivers/soc/mediatek/mtk-cmdq-helper.c | 25 +++++++++++++++++++++++++
+>  include/linux/soc/mediatek/mtk-cmdq.h  | 18 ++++++++++++++++++
+>  2 files changed, 43 insertions(+)
+> 
+> diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> index 70ad4d806fac..815845bb5982 100644
+> --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
+> +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> @@ -27,6 +27,31 @@ struct cmdq_instruction {
+>  	u8 op;
+>  };
+>  
+> +struct cmdq_client_reg  *cmdq_dev_get_client_reg(struct device *dev, int idx)
+> +{
+> +	struct cmdq_client_reg *client_reg;
+> +	struct of_phandle_args spec;
+> +
+> +	client_reg  = devm_kzalloc(dev, sizeof(*client_reg), GFP_KERNEL);
+> +	if (!client_reg)
+> +		return NULL;
+> +
+> +	if (of_parse_phandle_with_args(dev->of_node, "mediatek,gce-client-reg",
+> +				       "#subsys-cells", idx, &spec)) {
+> +		dev_err(dev, "can't parse gce-client-reg property (%d)", idx);
 
-> On 5/20/19 8:32 PM, Subash Abhinov Kasiviswanathan wrote:
-> >>
-> >> If=A0you=A0are=A0telling=A0me=A0that=A0the=A0command/data=A0flag=A0res=
-ides=A0at=A0bit
-> >> 7=A0of=A0the=A0first=A0byte,=A0I=A0will=A0update=A0the=A0field=A0masks=
-=A0in=A0a=A0later
-> >> patch=A0in=A0this=A0series=A0to=A0reflect=A0that.
-> >>
-> > =
+I think you should call devm_kfree(client_reg) here because this
+function may not be called in client driver's probe function. But in
+another view point, I would like you to move the memory allocation out
+of this function. When client call cmdq_dev_get_client_reg() to get a
+pointer, it's easy that client does not free it because you does not
+provide free API, Some client may embed struct cmdq_client_reg with its
+client structure together,
 
-> > Higher=A0order=A0bit=A0is=A0Command=A0/=A0Data.
-> =
+struct client {
+	struct cmdq_client_reg client_reg;
+};
 
-> So what this means is that to get the command/data bit we use:
-> =
-
-> 	first_byte & 0x80
-> =
-
-> If that is correct I will remove this patch from the series and
-> will update the subsequent patches so bit 7 is the command bit,
-> bit 6 is reserved, and bits 0-5 are the pad length.
-> =
-
-> I will post a v2 of the series with these changes, and will
-> incorporate Bjorn's "Reviewed-by".
-> =
-
-
-But didn't you say that your testing show that the current bit order is
-wrong?
-
-I still like the cleanup, if nothing else just to clarify and clearly
-document the actual content of this header.
+Because each client may have different memory allocation strategy, so I
+would like you to move memory allocation out of this function to let
+client driver have the flexibility.
 
 Regards,
-Bjorn
+CK
+
+> +
+> +		return NULL;
+> +	}
+> +
+> +	client_reg->subsys = spec.args[0];
+> +	client_reg->offset = spec.args[1];
+> +	client_reg->size = spec.args[2];
+> +	of_node_put(spec.np);
+> +
+> +	return client_reg;
+> +}
+> +EXPORT_SYMBOL(cmdq_dev_get_client_reg);
+> +
+>  static void cmdq_client_timeout(struct timer_list *t)
+>  {
+>  	struct cmdq_client *client = from_timer(client, t, timer);
+> diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
+> index a345870a6d10..d0dea3780f7a 100644
+> --- a/include/linux/soc/mediatek/mtk-cmdq.h
+> +++ b/include/linux/soc/mediatek/mtk-cmdq.h
+> @@ -15,6 +15,12 @@
+>  
+>  struct cmdq_pkt;
+>  
+> +struct cmdq_client_reg {
+> +	u8 subsys;
+> +	u16 offset;
+> +	u16 size;
+> +};
+> +
+>  struct cmdq_client {
+>  	spinlock_t lock;
+>  	u32 pkt_cnt;
+> @@ -142,4 +148,16 @@ int cmdq_pkt_flush_async(struct cmdq_pkt *pkt, cmdq_async_flush_cb cb,
+>   */
+>  int cmdq_pkt_flush(struct cmdq_pkt *pkt);
+>  
+> +/**
+> + * cmdq_dev_get_client_reg() - parse cmdq client reg from the device node of CMDQ client
+> + * @dev:	device of CMDQ mailbox client
+> + * @idx:	the index of desired reg
+> + *
+> + * Return: CMDQ client reg pointer
+> + *
+> + * Help CMDQ client pasing the cmdq client reg
+> + * from the device node of CMDQ client.
+> + */
+> +struct cmdq_client_reg  *cmdq_dev_get_client_reg(struct device *dev, int idx);
+> +
+>  #endif	/* __MTK_CMDQ_H__ */
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
