@@ -2,46 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7487625687
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 19:22:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12E232568B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 19:22:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=YLkuPabRQEDzpYdrKScSGDITJykd1BhhVKweAFXoKWY=; b=n3U
-	G7Wu775O7sxJKiT/q1pPYiFnYKawYmgwaHvoqVfcC+ijsuCW3JXZiDVmf5anfXUROG7fLTPutvGfO
-	xczKZHsTXsmlJvIVMMheivwC1vSGdbiybrI7/pafRPA7Z6bAfmTld/JBl7SnsldeCrzH/YUBKVuq/
-	DrH7YgWcvwTbbnVQM3KNSVg/05pL7Q5Ct0lZ9dZIj8JgBXmRHFfLBmx8JMLGTYFi/44mxqwnQRPX3
-	+dSX2cKlIPruGt4W5W1Kgfzbjvj1+WV6IpYG57fIuCVsvfYfcV+X+xqSspcH/L1nP4tLRS9L/9bHZ
-	fjQLeKN1JLM9QK7OWHPnJotFFQBrSrA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=243J2ZD9aISbcxKZFjZb1SVRkA7IGLZlAv7o8UiDwbg=; b=PjBxX7r9vbNTCQzeTKjiXXkon3
+	2A0R9XmEGbj/bVjgpLUKqIvkFI8aJCtBJHqpMiFVqvU8fB5qVGE2w8R38+GQyvnnvwCl9HzeRfSnZ
+	AMqVkGxza+tdCC6iDvvRR7KP2aM08RW66vm9uFJtFzSNPQa8nwUSYu/5flxCBTJabtTM+V5azTPWX
+	UprFAyhPtRP92BY0LygKvdLq2ebfwfL0de9+XM3f/sqqCUJwzfxp0v0ih0RsKD5A76wvM1x965xVU
+	vXPZZ/F0/nc6ge2/uac9apmbVbT9BcCFM681HF2+t1Upa7RazmIRP1UlszP5aXTCH/AtxOB4zlzfd
+	WO2/nZFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT8Sg-0001Ot-Uu; Tue, 21 May 2019 17:22:02 +0000
-Received: from foss.arm.com ([217.140.101.70])
+	id 1hT8Sw-0001fF-5B; Tue, 21 May 2019 17:22:18 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT8SZ-0001MS-QG
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 17:21:56 +0000
+ id 1hT8Sb-0001MW-3a
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 17:21:58 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B619F15A2;
- Tue, 21 May 2019 10:21:52 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 38877374;
+ Tue, 21 May 2019 10:21:55 -0700 (PDT)
 Received: from e108454-lin.cambridge.arm.com (e108454-lin.cambridge.arm.com
  [10.1.196.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7E4BC3F718;
- Tue, 21 May 2019 10:21:50 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 005B03F718;
+ Tue, 21 May 2019 10:21:52 -0700 (PDT)
 From: Julien Grall <julien.grall@arm.com>
 To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  kvmarm@lists.cs.columbia.edu
-Subject: [PATCH v5 0/3] arm64/fpsimd: Don't disable softirq when touching
- FPSIMD/SVE state
-Date: Tue, 21 May 2019 18:21:36 +0100
-Message-Id: <20190521172139.21277-1-julien.grall@arm.com>
+Subject: [PATCH v5 1/3] arm64/fpsimd: Remove the prototype for
+ sve_flush_cpu_state()
+Date: Tue, 21 May 2019 18:21:37 +0100
+Message-Id: <20190521172139.21277-2-julien.grall@arm.com>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20190521172139.21277-1-julien.grall@arm.com>
+References: <20190521172139.21277-1-julien.grall@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_102155_852926_3A4B0D19 
-X-CRM114-Status: UNSURE (   9.09  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190521_102157_150792_8DE05CDB 
+X-CRM114-Status: GOOD (  11.55  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -72,38 +75,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+The function sve_flush_cpu_state() has been removed in commit 21cdd7fd76e3
+("KVM: arm64: Remove eager host SVE state saving").
 
-This patch series keeps softirqs enabled while touching FPSIMD/SVE state.
-For more details on the impact see patch #3.
+So remove the associated prototype in asm/fpsimd.h.
 
-This patch series has been benchmarked on Linux 5.1-rc4 with defconfig.
+Signed-off-by: Julien Grall <julien.grall@arm.com>
+Reviewed-by: Dave Martin <Dave.Martin@arm.com>
 
-On Juno2:
-    * hackbench 100 process 1000 (10 times)
-    * .7% quicker
+---
+    Changes in v3:
+        - Add Dave's reviewed-by
+        - Fix checkpatch style error when mentioning a commit
 
-On ThunderX 2:
-    * hackbench 1000 process 1000 (20 times)
-    * 3.4% quicker
+    Changes in v2:
+        - Patch added
+---
+ arch/arm64/include/asm/fpsimd.h | 1 -
+ 1 file changed, 1 deletion(-)
 
-Note that while the benchmark has been done on 5.1-rc4, the patch series is
-based on 5.2-rc1.
-
-Cheers,
-
-Julien Grall (3):
-  arm64/fpsimd: Remove the prototype for sve_flush_cpu_state()
-  arch/arm64: fpsimd: Introduce fpsimd_save_and_flush_cpu_state() and
-    use it
-  arm64/fpsimd: Don't disable softirq when touching FPSIMD/SVE state
-
- arch/arm64/include/asm/fpsimd.h |   5 +-
- arch/arm64/include/asm/simd.h   |  10 +--
- arch/arm64/kernel/fpsimd.c      | 139 +++++++++++++++++++++++++++-------------
- arch/arm64/kvm/fpsimd.c         |   4 +-
- 4 files changed, 103 insertions(+), 55 deletions(-)
-
+diff --git a/arch/arm64/include/asm/fpsimd.h b/arch/arm64/include/asm/fpsimd.h
+index df62bbd33a9a..b73d12fcc7f9 100644
+--- a/arch/arm64/include/asm/fpsimd.h
++++ b/arch/arm64/include/asm/fpsimd.h
+@@ -64,7 +64,6 @@ extern void fpsimd_bind_state_to_cpu(struct user_fpsimd_state *state,
+ 
+ extern void fpsimd_flush_task_state(struct task_struct *target);
+ extern void fpsimd_flush_cpu_state(void);
+-extern void sve_flush_cpu_state(void);
+ 
+ /* Maximum VL that SVE VL-agnostic software can transparently support */
+ #define SVE_VL_ARCH_MAX 0x100
 -- 
 2.11.0
 
