@@ -2,56 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D43425251
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 16:38:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04F6C2525E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 16:43:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=W6ztzIsjkeos50wFpKs3TorSb5/AcUzC9i/5KCjOJoU=; b=QvVxcHkSEhJboz
-	72dftxxdrYqLq4V24Owo6/jfQlUL2NqMlWtLApovmxkXqHdK7YK+DxcdNHSxiIGmY38VsQsltJu1T
-	FwrdPNRT1WJhI0R/fbi4+COgcHIQmB/aA7rJ+PFNz1cklQSrrW/vYXJpqkL+i2D7CxYTxKkueFoZY
-	KmA+pW7glZ2Vx5pTY5rHgewDvWCHklVqztkcbNs1Jts4tkttn00m6dZDTVcTh1EYOes6labCG1VAL
-	tqIlYZBE7EfSy0Uw4U2Z2/6FlP+59tRIuHJhMZqeKIwB7Aki2maGh3RUIoFkQXCxp9LHSdaI33YnD
-	EA2xikzzAmogAV5n/89w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ExgC83y3QxTAodblui7awsqa0LPAqxzljCY2v5LPK+c=; b=EWfQvAWCH5HRo7
+	OR74vMqDhmsBl9UpykEsmtD9JydqY55fQHAm68vlLTMXe2nwMHcIDTRjVeGFwM8QOAtDpH/N70qf2
+	fLZPvnViK56sD6xZYbgDp8TR3FsIQkf8mCohKRSCEld3zq+UsBRxDj4hdalmp/tp2dc1K9Q44HpoE
+	t1NHrjRKjUX68N8P8Tv+jhBnGhaGHUE/+/dDh8HYOaXBz5hu07C5w4yI1yZ21asY+NAZCQ6oQOZld
+	pqEYdcWX8LBlBqwjguj1nQYY0ICBX2cMIE8+/CDNj9dkMWUH13CjQ+ObHMPB7YzViq+2CgViDXCDs
+	9vUKCRPI96VjEjgp3oIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT5ty-0005BB-0W; Tue, 21 May 2019 14:38:02 +0000
-Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+	id 1hT5yv-00070w-NG; Tue, 21 May 2019 14:43:09 +0000
+Received: from mail-eopbgr10085.outbound.protection.outlook.com ([40.107.1.85]
+ helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT5tr-0005Ap-VY
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 14:37:57 +0000
-X-Originating-IP: 90.88.22.185
-Received: from localhost.localdomain
- (aaubervilliers-681-1-80-185.w90-88.abo.wanadoo.fr [90.88.22.185])
- (Authenticated sender: miquel.raynal@bootlin.com)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id CCDBCFF80B;
- Tue, 21 May 2019 14:37:50 +0000 (UTC)
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Gregory Clement <gregory.clement@bootlin.com>,
- Jason Cooper <jason@lakedaemon.net>, Andrew Lunn <andrew@lunn.ch>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- <devicetree@vger.kernel.org>
-Subject: [PATCH] arm64: dts: marvell: Disable AP I2C on Armada-8040-DB
-Date: Tue, 21 May 2019 16:37:49 +0200
-Message-Id: <20190521143749.488-1-miquel.raynal@bootlin.com>
-X-Mailer: git-send-email 2.19.1
+ id 1hT5yn-0006qE-VV
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 14:43:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=bAe9D7hevjHlYHPyoDMgrvMn9mfWUeel6DvzUcwfE18=;
+ b=F4YwiU3QF3zbomZfR9IY+vjKBxtNsWaln1n3TkehQUE9p+SQGgnNBnYpkKkpGXYsRzW+5GS91sYZjU56Xt1usyX92gaAk9tFBYaxeOAyRJC3bVxEuegq1WzDP6IDLZHLMuQ1jfbgx4YDtCnOVQjULmUjtGFDZkjPYcE6Hf6Ff2E=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3930.eurprd04.prod.outlook.com (52.134.71.161) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1922.15; Tue, 21 May 2019 14:42:58 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::5835:e874:bd94:fec]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::5835:e874:bd94:fec%5]) with mapi id 15.20.1900.020; Tue, 21 May 2019
+ 14:42:58 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Marc Gonzalez <marc.w.gonzalez@free.fr>, Leonard Crestez
+ <leonard.crestez@nxp.com>
+Subject: RE: [PATCH V4 1/2] soc: imx: Add SCU SoC info driver support
+Thread-Topic: [PATCH V4 1/2] soc: imx: Add SCU SoC info driver support
+Thread-Index: AQHVDHRAx0Mm9bAN6USp/nK7XaFMrKZ1igmAgAAjXCA=
+Date: Tue, 21 May 2019 14:42:58 +0000
+Message-ID: <DB3PR0402MB3916EED0DD292956887E839DF5070@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1558071840-841-1-git-send-email-Anson.Huang@nxp.com>
+ <AM0PR04MB6434643CA1A6807347DCAAF8EE070@AM0PR04MB6434.eurprd04.prod.outlook.com>
+ <61fb2d82-67e7-ab2d-961e-78d018cf3272@free.fr>
+In-Reply-To: <61fb2d82-67e7-ab2d-961e-78d018cf3272@free.fr>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [119.31.174.68]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: b6168bb3-4ffe-44e2-deec-08d6ddfa9e27
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:DB3PR0402MB3930; 
+x-ms-traffictypediagnostic: DB3PR0402MB3930:
+x-microsoft-antispam-prvs: <DB3PR0402MB39303DD3C926656395D9CC79F5070@DB3PR0402MB3930.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:883;
+x-forefront-prvs: 0044C17179
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(376002)(396003)(346002)(39860400002)(366004)(136003)(13464003)(199004)(189003)(66946007)(76176011)(66446008)(73956011)(26005)(66556008)(64756008)(110136005)(316002)(76116006)(6636002)(66476007)(55016002)(229853002)(44832011)(14444005)(256004)(9686003)(68736007)(2906002)(99286004)(54906003)(11346002)(6506007)(476003)(14454004)(53546011)(446003)(7696005)(6436002)(186003)(71190400001)(6116002)(71200400001)(4326008)(3846002)(478600001)(53936002)(102836004)(86362001)(52536014)(74316002)(8936002)(305945005)(7736002)(33656002)(66066001)(8676002)(5660300002)(81166006)(81156014)(6246003)(25786009)(486006)(15866825006);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3930;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: Jon27ZC59QlF8oPWc1tstJgF1BSiCVvz7GSJzcHaVXeL8TRz7DD0doPdsNk+i32bj0X2xemqtgs7elrUm5/XsvlmG/vaTRjtxQyl5pwvQT009JNz+Jar5RZEy/KxKYCPaARwm+47JV33u0JxXUn9VBe43tJ5wzRsvimA1TLDcsmivn9Ff3ZbBg7wmoeqQFk0Wti/RqLv9DOhs5n8/781+4qWolZJGYuh85zLaaH7WGnvbJyiYM6ABiuII9Xa+WwZEkeu85Tg/G6DO1br5ERDplPAzi7L9LxLG502zM9oXgk44LgCN7kFbyaU8U/u1CHm2Gh9Qyc0FYFCOj8k7Zt+YYlvBWOh1zSOQuQH1V1WCtjiSAuH8Swc5w/9hgP5wKtntooNn4nytzs2w6+hSuz8LXd8Pc+xc5/yXNFsCBX4nPU=
 MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: b6168bb3-4ffe-44e2-deec-08d6ddfa9e27
+X-MS-Exchange-CrossTenant-originalarrivaltime: 21 May 2019 14:42:58.3230 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3930
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_073756_190759_63AA6624 
-X-CRM114-Status: GOOD (  12.90  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190521_074302_152473_EE552661 
+X-CRM114-Status: GOOD (  15.18  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.199 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.1.85 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,64 +112,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Antoine Tenart <antoine.tenart@bootlin.com>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Nadav Haklai <nadavh@marvell.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Konstantin Porotchkin <kostap@marvell.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, DT <devicetree@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Konstantin Porotchkin <kostap@marvell.com>
+Hi, Marc/Leonard
 
-While AP I2C bus was available to users in early revisions of the SoC,
-this is not the case anymore since eMMC was connected to the AP. Most
-users do not have access to this I2C bus so do not enable it in the
-board device tree.
+> -----Original Message-----
+> From: Marc Gonzalez [mailto:marc.w.gonzalez@free.fr]
+> Sent: Tuesday, May 21, 2019 8:34 PM
+> To: Leonard Crestez <leonard.crestez@nxp.com>; Anson Huang
+> <anson.huang@nxp.com>
+> Cc: Mark Rutland <mark.rutland@arm.com>; Rob Herring
+> <robh+dt@kernel.org>; Linux ARM <linux-arm-kernel@lists.infradead.org>;
+> DT <devicetree@vger.kernel.org>
+> Subject: Re: [PATCH V4 1/2] soc: imx: Add SCU SoC info driver support
+> 
+> On 21/05/2019 13:56, Leonard Crestez wrote:
+> 
+> > On 5/17/2019 8:49 AM, Anson Huang wrote:
+> >
+> >> +	root = of_find_node_by_path("/");
+> >> +
+> >> +	np = of_find_compatible_node(NULL, NULL, "fsl,imx-scu");
+> >
+> > It's possibly not very important for root or FW communication nodes
+> > but you should probably of_node_put those back.
+> 
+> Isn't it better/simpler to use of_root?
+> 
+> extern struct device_node *of_root;
 
-As there are three I2C buses enabled on this board, add an alias to be
-sure the two other buses keep their initial numbering.
+You are right, I will add below changes into V5, one change is to use extern of_root
+directly, the other is to add of_put_node() after "fsl,imx-scu" is found.
 
-Signed-off-by: Konstantin Porotchkin <kostap@marvell.com>
-[<miquel.raynal@bootlin.com>: Reword commit message, add alias]
-Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
----
- arch/arm64/boot/dts/marvell/armada-8040-db.dts | 7 ++-----
- 1 file changed, 2 insertions(+), 5 deletions(-)
+@@ -56,7 +56,6 @@ static int imx_scu_soc_probe(struct platform_device *pdev)
+ {
+        struct soc_device_attribute *soc_dev_attr;
+        struct soc_device *soc_dev;
+-       struct device_node *root;
+        u32 id, val;
+        int ret;
 
-diff --git a/arch/arm64/boot/dts/marvell/armada-8040-db.dts b/arch/arm64/boot/dts/marvell/armada-8040-db.dts
-index 9f4f939ab65f..d6e9c014c2f9 100644
---- a/arch/arm64/boot/dts/marvell/armada-8040-db.dts
-+++ b/arch/arm64/boot/dts/marvell/armada-8040-db.dts
-@@ -27,6 +27,8 @@
- 		ethernet1 = &cp0_eth2;
- 		ethernet2 = &cp1_eth0;
- 		ethernet3 = &cp1_eth1;
-+		i2c1 = &cp0_i2c0;
-+		i2c2 = &cp1_i2c0;
- 	};
- 
- 	cp0_reg_usb3_0_vbus: cp0-usb3-0-vbus {
-@@ -72,11 +74,6 @@
- 	};
- };
- 
--&i2c0 {
--	status = "okay";
--	clock-frequency = <100000>;
--};
--
- &spi0 {
- 	status = "okay";
- 
--- 
-2.19.1
+@@ -72,8 +71,7 @@ static int imx_scu_soc_probe(struct platform_device *pdev)
 
+        soc_dev_attr->family = "Freescale i.MX";
 
+-       root = of_find_node_by_path("/");
+-       ret = of_property_read_string(root,
++       ret = of_property_read_string(of_root,
+                                      "model",
+                                      &soc_dev_attr->machine);
+        if (ret)
+@@ -132,6 +130,8 @@ static int __init imx_scu_soc_init(void)
+        if (!np)
+                return -ENODEV;
+
++       of_node_put(np);
++
+        ret = platform_driver_register(&imx_scu_soc_driver);
+        if (ret)
+                return ret;
+
+thanks,
+Anson
+
+> 
+> Regards.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
