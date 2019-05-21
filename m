@@ -2,96 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 11C3724AA2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 10:42:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E80424ADF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 10:54:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iG/HSMg9SCNhnxoFHLXJA9dK68GBE08PGLQWDk41SkM=; b=Bbwmbb09tmiQt4
-	05qNWTwxu3lUZWQbC94y7vy5U0uBmVv5A2vIJccib5RVr4shiXhUBRGlfZ5GkOpIKaHGfTljD/mg9
-	YY9dRXtxMoURadgI1tRAy4kVkDtEnlL1ajA1w8g1EaAX/iVauhfzIM34wJCPxeWVKUzzYJXV73sWw
-	XFFRP7f3PKiNIot46GsKSBzE+lfAuJvfZyxadwfQe6SxjslS8lCpl/7yIbdGpc2gsxw6obWwmYZ7E
-	BmLhuHRxk2UtWF0qM80KI2eNosHzzMk80zl4Wwl7IgdFG58ZfwwuAVgeNc8S7gGEwqC1Py8mU8ZSA
-	pTO7cLuiKQmwshgidYNA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=CUKbFgrqkEB6ssRRK2sTlROsV8EGCfUt/XXs9Vlf7Ig=; b=HJhzUqR6dLvPJ5F+g1OCjIVtH
+	V/mF0QDi1cJHNDXSxy44ypcNNpHD62diME+w53Gd5CI3tpybsjq8SrjnNCx/qKAi/H6rMU71P7ofK
+	zzsukv6cQQudTQQ2W1fafKlZ8Qq/scLaRp/ZlnB5vwvuXwh3PlK9Fw8v/zm73/rn4icmD/hNt3v+f
+	KhD7s6+5Ij+0DeuVBeyTgaItrYqNhuFQgGqTyImzUCl2kxxJpRaz6cL01bF2Amvf3BruxAXpTlwAF
+	9W5x28f6HGduD3v9Rz4/rCs47yvlfqwmB8C20t+6KnuZkk/RoT5RRSE8XyqHknh9g1drv3Iv99uTg
+	n0Wi9R9yQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT0M7-0006RB-Su; Tue, 21 May 2019 08:42:43 +0000
-Received: from mail-eopbgr150075.outbound.protection.outlook.com
- ([40.107.15.75] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+	id 1hT0X1-0003DC-LJ; Tue, 21 May 2019 08:53:59 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT0M0-0006QL-Qk
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 08:42:38 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=LTwn26hGk98qhFNKDhuqmtRcWqbka96B26HnzTZdOIo=;
- b=gdjrHy4H3hIAefLoi/Ia6QoSNPIdnAjQtvAXKlTSf8qoRnG9pxtbcRUucEIfNARw3BY63xh2RGnW6VePYsc5wFI8eIg81hH5onkLtLAm6FTw7Eqooh4L+VGC+W6EKwahLPZ2IM2Munrr2ouMy0bUSJTLJ//5jGgdEqRffXqtlZo=
-Received: from AM0PR04MB5314.eurprd04.prod.outlook.com (20.177.41.157) by
- AM0PR04MB5409.eurprd04.prod.outlook.com (20.178.116.92) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1900.18; Tue, 21 May 2019 08:42:32 +0000
-Received: from AM0PR04MB5314.eurprd04.prod.outlook.com
- ([fe80::f0fd:f85a:5df:8dd0]) by AM0PR04MB5314.eurprd04.prod.outlook.com
- ([fe80::f0fd:f85a:5df:8dd0%5]) with mapi id 15.20.1900.020; Tue, 21 May 2019
- 08:42:31 +0000
-From: Peter Chen <peter.chen@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: RE: [PATCH v2 6/8] ARM: dts: imx7ulp: add imx7ulp USBOTG1 support
-Thread-Topic: [PATCH v2 6/8] ARM: dts: imx7ulp: add imx7ulp USBOTG1 support
-Thread-Index: AQHVCigBwvPXZQ0UVkuAwmjsg1TEmaZzp+eAgAGl6NA=
-Date: Tue, 21 May 2019 08:42:31 +0000
-Message-ID: <AM0PR04MB53140D914E608A9BA2CB30858B070@AM0PR04MB5314.eurprd04.prod.outlook.com>
-References: <20190514073529.29505-1-peter.chen@nxp.com>
- <20190514073529.29505-7-peter.chen@nxp.com> <20190520073157.GW15856@dragon>
-In-Reply-To: <20190520073157.GW15856@dragon>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peter.chen@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: edd3fda7-4874-497e-fc87-08d6ddc843c0
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB5409; 
-x-ms-traffictypediagnostic: AM0PR04MB5409:
-x-microsoft-antispam-prvs: <AM0PR04MB5409520D87D99FE36402900A8B070@AM0PR04MB5409.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3968;
-x-forefront-prvs: 0044C17179
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(979002)(346002)(376002)(136003)(396003)(39860400002)(366004)(189003)(199004)(6506007)(54906003)(316002)(71200400001)(8676002)(33656002)(81166006)(81156014)(71190400001)(14454004)(7696005)(76176011)(73956011)(66946007)(6116002)(3846002)(76116006)(5660300002)(66476007)(66556008)(64756008)(66446008)(68736007)(6916009)(8936002)(186003)(25786009)(26005)(6436002)(2906002)(74316002)(256004)(9686003)(14444005)(11346002)(55016002)(52536014)(66066001)(102836004)(229853002)(476003)(305945005)(486006)(99286004)(446003)(86362001)(4326008)(44832011)(7736002)(478600001)(53936002)(6246003)(969003)(989001)(999001)(1009001)(1019001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5409;
- H:AM0PR04MB5314.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: h0MOTsQ3ZcKrMCMGiPE/NqeeppooVODBcwMXx7sxmFOryGJJL05dOaEdedrd4wUdeVGS9ZmlbESBM5e0TvQSLPeDL7VixVSPiifVK9nLiOCcbkV3+OAkUns339hlQtHLqSbBkXY2YRmQP2qI5LPHLsM5WDFxUzHgHysFhsH4ouDJS4F1HbDCR5W9UMP/R5pgY4siWtz/AVVgE5d+9x9XQbY2CBKi2yPAyU6smzTWLnKCeWkW4T688OwDFVvOEubd4L/Yqz61A4I8RoTfTeso9K2t1ua1NGYzu9N4rrIsmUhUJ28C/Qe2mTN6I6Faeze+JDXqD/qVWOis+1dPH0SNvQuL8O1tdw7JpdTwuKTXUGQcvzRMGh7tl8qftikxdk8XMFM5Jv+HF1Lb3vbrq7EG9HHoXqoNKjSAQqJRQRGeGQQ=
+ id 1hT0Ws-0003AD-9J
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 08:53:52 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x4L8fIda005383; Tue, 21 May 2019 10:53:45 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : references
+ : from : message-id : date : mime-version : in-reply-to : content-type :
+ content-transfer-encoding; s=STMicroelectronics;
+ bh=UPl9cMLd/jz3BJgxLaiHt4XCIbnglMdgLWCuCTS6vvg=;
+ b=VfMr2HkbAldoxufbvO1631fAPiVUF/WVx7wOIB6xoSSCAlVewatvqak8ux9pHEJVXy6L
+ 1BbU80hb0R3rh39tpKOL4q3StSIUtUvn+tfzLHVLLOe9X6bu6hWfBHygWqZUuP4DVr/w
+ Lw7BjptedS47bMtJ4PYkZMaAlfZo34hXjErEz/COFPzXvgfjPS6Urm8Y6lUBWx63eUm8
+ pZlmr2P6zoVkbUeyy8d6v+dl90rk2zMm/yLFh/mTZUMZs2PZMlWjYXQbP5lm4cz/t0K3
+ cnnrueXj+GZKtNBT8n9+diR8fgT2WKGRaEKYFVjskWRO4ElOQck+PbSH+xZT538Iffpq 1g== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2sj7tu08t1-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Tue, 21 May 2019 10:53:45 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 63D6938;
+ Tue, 21 May 2019 08:53:41 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id A4E182450;
+ Tue, 21 May 2019 08:53:41 +0000 (GMT)
+Received: from [10.48.0.204] (10.75.127.50) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 21 May
+ 2019 10:53:41 +0200
+Subject: Re: [Linux-stm32][PATCH 0/4] ARM: dts: stm32: add i2s and sai support
+ on stm32mp157c
+To: Olivier Moysan <olivier.moysan@st.com>,
+ <linux-stm32@st-md-mailman.stormreply.com>, <robh@kernel.org>,
+ <mark.rutland@arm.com>, <devicetree@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+References: <1556201440-5540-1-git-send-email-olivier.moysan@st.com>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <79b6d8c7-5756-26eb-1e26-534890e712e1@st.com>
+Date: Tue, 21 May 2019 10:53:40 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: edd3fda7-4874-497e-fc87-08d6ddc843c0
-X-MS-Exchange-CrossTenant-originalarrivaltime: 21 May 2019 08:42:31.9062 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5409
+In-Reply-To: <1556201440-5540-1-git-send-email-olivier.moysan@st.com>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.50]
+X-ClientProxiedBy: SFHDAG8NODE3.st.com (10.75.127.24) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-05-21_01:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_014236_868836_BE5FA68E 
-X-CRM114-Status: GOOD (  11.77  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190521_015350_628277_ECBF2E1C 
+X-CRM114-Status: GOOD (  13.07  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.15.75 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -110,85 +99,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, "balbi@kernel.org" <balbi@kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
- 
-> >  1 file changed, 31 insertions(+)
-> >
-> > diff --git a/arch/arm/boot/dts/imx7ulp.dtsi
-> > b/arch/arm/boot/dts/imx7ulp.dtsi index fca6e50f37c8..60c9ea116d0a
-> > 100644
-> > --- a/arch/arm/boot/dts/imx7ulp.dtsi
-> > +++ b/arch/arm/boot/dts/imx7ulp.dtsi
-> > @@ -30,6 +30,7 @@
-> >  		serial1 = &lpuart5;
-> >  		serial2 = &lpuart6;
-> >  		serial3 = &lpuart7;
-> > +		usbphy0 = &usbphy1;
-> >  	};
-> >
-> >  	cpus {
-> > @@ -133,6 +134,36 @@
-> >  			clock-names = "ipg", "per";
-> >  		};
-> >
-> > +		usbotg1: usb@40330000 {
-> > +			compatible = "fsl,imx7ulp-usb", "fsl,imx6ul-usb",
-> > +				"fsl,imx27-usb";
-> > +			reg = <0x40330000 0x200>;
-> > +			interrupts = <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>;
-> > +			clocks = <&pcc2 IMX7ULP_CLK_USB0>;
-> > +			phys = <&usbphy1>;
-> > +			fsl,usbmisc = <&usbmisc1 0>;
-> > +			ahb-burst-config = <0x0>;
-> > +			tx-burst-size-dword = <0x8>;
-> > +			rx-burst-size-dword = <0x8>;
-> > +			status = "disabled";
-> > +		};
-> > +
-> > +		usbmisc1: usbmisc@40330200 {
-> > +			#index-cells = <1>;
+Hi Olivier
+
+On 4/25/19 4:10 PM, Olivier Moysan wrote:
+> This patchset adds support of STM32 SAI and I2S on stm32mp157c
 > 
-> Nit: we usually start with 'compatible', so can we move it behind?
+> Olivier Moysan (4):
+>    ARM: dts: stm32: add sai support on stm32mp157c
+>    ARM: dts: stm32: add sai pins muxing on stm32mp157
+>    ARM: dts: stm32: add i2s support on stm32mp157c
+>    ARM: dts: stm32: add i2s pins muxing on stm32mp157
+> 
+>   arch/arm/boot/dts/stm32mp157-pinctrl.dtsi |  92 +++++++++++++++++
+>   arch/arm/boot/dts/stm32mp157c.dtsi        | 158 ++++++++++++++++++++++++++++++
+>   2 files changed, 250 insertions(+)
 > 
 
-Thanks, will change.
+Series applied on stm32-next.
 
-Peter
-
-
-> Shawn
-> 
-> > +			compatible = "fsl,imx7ulp-usbmisc", "fsl,imx7d-usbmisc",
-> > +				"fsl,imx6q-usbmisc";
-> > +			reg = <0x40330200 0x200>;
-> > +		};
-> > +
-> > +		usbphy1: usbphy@0x40350000 {
-> > +			compatible = "fsl,imx7ulp-usbphy",
-> > +				"fsl,imx6ul-usbphy", "fsl,imx23-usbphy";
-> > +			reg = <0x40350000 0x1000>;
-> > +			interrupts = <GIC_SPI 39 IRQ_TYPE_LEVEL_HIGH>;
-> > +			clocks = <&pcc2 IMX7ULP_CLK_USB_PHY>;
-> > +			#phy-cells = <0>;
-> > +		};
-> > +
-> >  		usdhc0: mmc@40370000 {
-> >  			compatible = "fsl,imx7ulp-usdhc", "fsl,imx6sx-usdhc";
-> >  			reg = <0x40370000 0x10000>;
-> > --
-> > 2.14.1
-> >
+Regards
+Alex
 
 _______________________________________________
 linux-arm-kernel mailing list
