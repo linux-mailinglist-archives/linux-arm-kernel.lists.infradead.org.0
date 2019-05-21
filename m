@@ -2,96 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BFB9B254A9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 17:57:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5CA0254BB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 18:03:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
-	:Subject:From:Reply-To:To:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=sMIY2sDyA/rQxgEpLD7Zf45PcGq5AEzvj+hjVggvsUU=; b=l78Wh6ll5W8iwW
-	fMGRMQXKelpgjiidxsyJiUJB2oQy8asxXQfm2L6+2gAdEfa9uBPp8Tha2JvHh8alBQayYk8qUHNZW
-	JbGNUZAL0TxvfJnjKpY3J+AjazQAvjdn+H8fPRBBtaVixY5uvsWjoQAeakno24FdugpuOSvxzLq69
-	zugU4g+AzscMp0n5lbAlC3UsBCn+Cjvnt8z3czdFaZhxHynE4Vt4U9GLpE9PK1CWX/SBbBX/V5Uq+
-	ERS0zRm5DynCbfRzW0a/kiqadY8t4e8EHIeeyBSgiM+e3Wf3HupqBUUNl0FLKEh+rmPCPLPDm5zfL
-	Qw6LBjzwXP3gVUEaoLew==;
+	List-Owner; bh=YjWDgDDD/vRl77ivPgq7iOre53ak0NAyW19ZcmIvaB8=; b=ldLwVxQUHASgvX
+	mklqjtyQT6lkxlVkhti4UoiPQst3M8SujpOXU2no77v4E+b7/6KqmOb/tbHcHLubMcUuFfMyXQ3je
+	QbiLERI/8M1FFBld3Rifb2Uv4n5vTHjkENpU0+Ly6Ru67rY6q56BUdhyPhtPH1CJNbTinLizKRjgY
+	u/8L7PGyOnozwOa5C77nfVkKh1DDoXiQewa4NDJmHHcUEFS2u4+iYJmnrMm7kxZrDBaIMOPRLjZ7u
+	5i13wVzj8B1VSzQLEGRtOKGG15b09xtxXAX7ySt4qPxusKCo9OfON3GvPl72CaywRHwIKbcMEMePR
+	42fPZLSE5WUDGP32z7JQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT78S-0007B1-Tg; Tue, 21 May 2019 15:57:04 +0000
-Received: from mail-oln040092068072.outbound.protection.outlook.com
- ([40.92.68.72] helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1hT7Ex-0000Yr-MP; Tue, 21 May 2019 16:03:47 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT78C-0006xP-R1
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 15:56:53 +0000
-Received: from HE1EUR02FT018.eop-EUR02.prod.protection.outlook.com
- (10.152.10.56) by HE1EUR02HT039.eop-EUR02.prod.protection.outlook.com
- (10.152.10.183) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1900.16; Tue, 21 May
- 2019 15:56:45 +0000
-Received: from VI1PR07MB4432.eurprd07.prod.outlook.com (10.152.10.56) by
- HE1EUR02FT018.mail.protection.outlook.com (10.152.10.248) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.20.1900.16 via Frontend Transport; Tue, 21 May 2019 15:56:45 +0000
-Received: from VI1PR07MB4432.eurprd07.prod.outlook.com
- ([fe80::91f:b1bb:a60a:fdc3]) by VI1PR07MB4432.eurprd07.prod.outlook.com
- ([fe80::91f:b1bb:a60a:fdc3%7]) with mapi id 15.20.1922.013; Tue, 21 May 2019
- 15:56:45 +0000
-From: Philippe Mazenauer <philippe.mazenauer@outlook.de>
-Subject: [PATCH] arm: arch_timer: add missing include <asm/arch_timer.h>
-Thread-Topic: [PATCH] arm: arch_timer: add missing include <asm/arch_timer.h>
-Thread-Index: AQHVD+3KlWo8uLaBL0Om+aRELQJgnw==
-Date: Tue, 21 May 2019 15:56:45 +0000
-Message-ID: <VI1PR07MB443278198DB7B722332BF19EFD070@VI1PR07MB4432.eurprd07.prod.outlook.com>
-Accept-Language: de-CH, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: CO2PR05CA0108.namprd05.prod.outlook.com
- (2603:10b6:104:1::34) To VI1PR07MB4432.eurprd07.prod.outlook.com
- (2603:10a6:802:67::17)
-x-incomingtopheadermarker: OriginalChecksum:186E5CFB7B24037E55ED5B9FFCB2EC106609FE42483C1837CB115A039DD7DA49;
- UpperCasedChecksum:A469A90C7B9CA5EA58B6ECC21A3510A7C0F06828EC1395F3A28DE01644CEB9D2;
- SizeAsReceived:7465; Count:47
-x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: git-send-email 2.17.1
-x-tmn: [TQcm3/Y3dd47esT1vuBKNil4lmYimqOs]
-x-microsoft-original-message-id: <20190521155618.176880-1-philippe.mazenauer@outlook.de>
-x-ms-publictraffictype: Email
-x-incomingheadercount: 47
-x-eopattributedmessage: 0
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(5050001)(7020095)(20181119110)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031323274)(2017031324274)(2017031322404)(1601125500)(1603101475)(1701031045);
- SRVR:HE1EUR02HT039; 
-x-ms-traffictypediagnostic: HE1EUR02HT039:
-x-microsoft-antispam-message-info: BH6Gp5RW9aEaoCSw8Ec+Miuidkrbu2klVned73NOyXRJi1Lr6oSxUcpV6SSi1zHNSO1DSPe3hrQvflh1okQTxc/5bG69l7J1Z22gXTFYvOW66f7sWExH2Be7Li8honf9FuXsCFhPVMhGxmqh2woHSKHFUK8NFEnL1YnPyagBIQ3zqpjgBGJIzevi+T58PKXl
-Content-ID: <6F6827F23A99554DBCA2F4794F2D09C6@eurprd07.prod.outlook.com>
+ id 1hT7Eq-0000Xz-B2
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 16:03:41 +0000
+Received: by mail-wr1-x444.google.com with SMTP id w8so19271954wrl.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 21 May 2019 09:03:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=nDVM5JY0UCQQWnTrJayIQkK7SrKOctqqMDMV9spSsxw=;
+ b=EYxZgIO5dsxx3yD9fsqj6fe4T+XzTC5VXoGkGvuywXp8yJRU754xsd8K0OEXIy4UCP
+ g7WTSgirP243yLYV6r0iHdDyQjtQE9zP7Bb5BNSQoll1ld1h4eBB2i/xrNmezqhql3/C
+ nfkGZF04ZpAdquZuprZSg0EOzQFn5b4sA8Pad2z1LwRf5X7OZcVA3hE63IqkRX9dJdqa
+ ax2LdGe+7nTI0JUBsgJw1oIaGXKyS4SOGjtpiMb9f+CWQUyRfM7ALbzDKK7a/UuB0Q1D
+ hLBwRLokrdeLuI6j+34idK2cpYRzi4SBMtYnMoqlVFGTg96NsFRq9fVt1i3U6eLNCM1e
+ BPMA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=nDVM5JY0UCQQWnTrJayIQkK7SrKOctqqMDMV9spSsxw=;
+ b=VUgRfWovwsD2ulRrfonkvdbIirtC2xCQl71TuQvHltCftWD3DGNditgRBJeLrBww94
+ BYvUcVAAGaChQ9aoOiEAM0tkY1TYETRuiYjS/wS7Mq4uyJxrCpjunql3TicmfzdTlCSK
+ gQY9T39wA7kcH2XRTkAVOVlgvQsGpjSKPLJPwPU8IpWPTsPAQU08+90ID6SxdraOHXuN
+ hWdlHppuxDB4HIoUAyQCY9ttPHCupHuqMVrw6jIqIgmm2hXdfteUcPfwo1ehpv/xsmcs
+ yk2paReti2dB8Kwi3s9h/apjCd8DOHtBEl06VpwvlgoIR99n4EnxCfgjRHl37SCmUPge
+ DyhA==
+X-Gm-Message-State: APjAAAVGDHjo+TxOXDjQUpbnwA09u7pgNdg/b8S2py4A6kCPhRCZVnk8
+ /fK3mQLCTHS8jMXJjtjtVxA=
+X-Google-Smtp-Source: APXvYqw//oVHVQE8dOkatKRTfxOnljBLeM0nGz32xgOKSjeongOCRNazNj5zD0dXglyd7R3Kdi2Jdg==
+X-Received: by 2002:adf:fc8f:: with SMTP id g15mr52594055wrr.122.1558454617669; 
+ Tue, 21 May 2019 09:03:37 -0700 (PDT)
+Received: from localhost.localdomain (18.189-60-37.rdns.acropolistelecom.net.
+ [37.60.189.18])
+ by smtp.gmail.com with ESMTPSA id g11sm6853811wrq.89.2019.05.21.09.03.36
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 21 May 2019 09:03:36 -0700 (PDT)
+From: =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>
+To: Wim Van Sebroeck <wim@linux-watchdog.org>,
+ Guenter Roeck <linux@roeck-us.net>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>
+Subject: [PATCH v4 0/5] Allwinner H6 watchdog support
+Date: Tue, 21 May 2019 18:03:25 +0200
+Message-Id: <20190521160330.28402-1-peron.clem@gmail.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-Network-Message-Id: 85d939cc-3911-4733-95ae-08d6de04eccd
-X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-originalarrivaltime: 21 May 2019 15:56:45.7403 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Internet
-X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1EUR02HT039
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_085649_355359_98A55E37 
-X-CRM114-Status: GOOD (  10.79  )
-X-Spam-Score: 2.8 (++)
+X-CRM114-CacheID: sfid-20190521_090340_406206_433727C1 
+X-CRM114-Status: GOOD (  12.21  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.68.72 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (philippe.mazenauer[at]outlook.de)
- 1.2 MISSING_HEADERS        Missing To: header
- 1.6 MALFORMED_FREEMAIL     Bad headers on message from free email
- service
+ provider (peron.clem[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -103,29 +100,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Philippe Mazenauer <philippe.mazenauer@outlook.de>,
- Russell King <linux@armlinux.org.uk>,
- "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>,
- open list <linux-kernel@vger.kernel.org>
+Cc: devicetree@vger.kernel.org,
+ =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>,
+ linux-watchdog@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SW5jbHVkZSBjb3JyZXNwb25pbmcgaGVhZGVyIGZpbGUgPGFzbS9hcmNoX3RpbWVyLmg+IGZvciBm
-dW5jdGlvbg0KYXJjaF90aW1lcl9hcmNoX2luaXQoKS4NCg0KLi4vYXJjaC9hcm0va2VybmVsL2Fy
-Y2hfdGltZXIuYzozNDoxMjogd2FybmluZzogbm8gcHJldmlvdXMgcHJvdG90eXBlIGZvciDigJhh
-cmNoX3RpbWVyX2FyY2hfaW5pdOKAmSBbLVdtaXNzaW5nLXByb3RvdHlwZXNdDQogaW50IF9faW5p
-dCBhcmNoX3RpbWVyX2FyY2hfaW5pdCh2b2lkKQ0KICAgICAgICAgICAgXn5+fn5+fn5+fn5+fn5+
-fn5+fn4NCg0KU2lnbmVkLW9mZi1ieTogUGhpbGlwcGUgTWF6ZW5hdWVyIDxwaGlsaXBwZS5tYXpl
-bmF1ZXJAb3V0bG9vay5kZT4NCi0tLQ0KIGFyY2gvYXJtL2tlcm5lbC9hcmNoX3RpbWVyLmMgfCAx
-ICsNCiAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKykNCg0KZGlmZiAtLWdpdCBhL2FyY2gv
-YXJtL2tlcm5lbC9hcmNoX3RpbWVyLmMgYi9hcmNoL2FybS9rZXJuZWwvYXJjaF90aW1lci5jDQpp
-bmRleCAxNzkxZjEyYzE4MGIuLmY5ZTdmNWI0YjE3NSAxMDA2NDQNCi0tLSBhL2FyY2gvYXJtL2tl
-cm5lbC9hcmNoX3RpbWVyLmMNCisrKyBiL2FyY2gvYXJtL2tlcm5lbC9hcmNoX3RpbWVyLmMNCkBA
-IC0xMyw2ICsxMyw3IEBADQogI2luY2x1ZGUgPGxpbnV4L2Vycm5vLmg+DQogDQogI2luY2x1ZGUg
-PGFzbS9kZWxheS5oPg0KKyNpbmNsdWRlIDxhc20vYXJjaF90aW1lci5oPg0KIA0KICNpbmNsdWRl
-IDxjbG9ja3NvdXJjZS9hcm1fYXJjaF90aW1lci5oPg0KIA0KLS0gDQoyLjE3LjENCg0KX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5l
-bCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+SGksCgpBbGx3aW5uZXIgSDYgU29DIGhhcyB0d28gd2F0Y2hkb2dzLgoKQXMgd2UgYXJlIG5vdCBz
+dXJlIHRoYXQgYm90aCBBNjQgYW5kIEg2IGFyZSBzdHJpY2x5IGlkZW50aWNhbCwgSSBoYXZlCmlu
+dHJvZHVjZWQgdGhlIEg2IGJpbmRpbmdzLgoKQWZ0ZXIgaW52ZXN0aWdhdGlvbiBpdCBzZWVtcyB0
+aGF0IG9uIHNvbWUgYm9hcmRzIHRoZSBmaXJzdCB3YXRjaGRvZyBkb2Vzbid0Cm1ha2UgaXQgcHJv
+cGVybHkgcmVib290LiBQbGVhc2Ugc2VlIGRldGFpbHMgaW4gdGhlIGNvbW1pdCBsb2cuCgpJIHRo
+aW5rIGl0J3MgcHJvcGVyIHRvIGFkZCBpdCB3aXRoIGEgY29tbWVudCBhbnl3YXkuCgpUaGUgcl93
+YXRjaGRvZyBpcyBzdGlsbCBhdmFpbGFibGUgYW5kIHVzYWJsZSBvbiBhbGwgdGhlIEg2IGJvYXJk
+cy4KClRoYW5rcywKQ2zDqW1lbnQKCkNoYW5nZXMgc2luY2UgdjM6CiAtIFJlbW92ZSBBNjQgY29t
+cGF0aWJsZQogLSBJbnRyb2R1Y2Ugc3BlY2lmaWMgYmluZGluZ3MgZm9yIHItd2R0CgpDaGFuZ2Vz
+IHNpbmNlIHYyOgogLSBSZWludHJvZHVjZSBINiBiaW5kaW5ncwogLSBBZGQgd2F0Y2hkb2cgTWFp
+bnRhaW50ZXJzIC8gTUwKIC0gQWRkIE1hcnRpbiBBeW90dGUgdGVzdCByZXN1bHRzCgpDaGFuZ2Vz
+IHNpbmNlIHYxOgogLSBVc2UgQTY0IGNvbXBhdGlibGUgaW5zdGVhZCBvZiBINgogLSBSZW1vdmUg
+ZHQtYmluZGluZ3MgcGF0Y2gKIC0gQ2hhbmdlIHdhdGNoZG9nIHN0YXR1cyB0byBkaXNhYmxlZAog
+LSBBZGQgcl93YXRjaGRvZyBub2RlIHBhdGNoCiAtIEFkZCBlbmFibGUgc3VueGkgd2F0Y2hkb2cg
+cGF0Y2gKCkNsw6ltZW50IFDDqXJvbiAoNSk6CiAgZHQtYmluZGluZ3M6IHdhdGNoZG9nOiBhZGQg
+QWxsd2lubmVyIEg2IHdhdGNoZG9nCiAgYXJtNjQ6IGR0czogYWxsd2lubmVyOiBoNjogYWRkIHdh
+dGNoZG9nIG5vZGUKICBkdC1iaW5kaW5nczogd2F0Y2hkb2c6IGFkZCBBbGx3aW5uZXIgSDYgcl93
+YXRjaGRvZwogIGFybTY0OiBkdHM6IGFsbHdpbm5lcjogaDY6IGFkZCByX3dhdGNob2cgbm9kZQog
+IGFybTY0OiBkZWZjb25maWc6IGVuYWJsZSBzdW54aSB3YXRjaGRvZwoKIC4uLi9kZXZpY2V0cmVl
+L2JpbmRpbmdzL3dhdGNoZG9nL3N1bnhpLXdkdC50eHQgICB8ICAyICsrCiBhcmNoL2FybTY0L2Jv
+b3QvZHRzL2FsbHdpbm5lci9zdW41MGktaDYuZHRzaSAgICAgfCAxNiArKysrKysrKysrKysrKysr
+CiBhcmNoL2FybTY0L2NvbmZpZ3MvZGVmY29uZmlnICAgICAgICAgICAgICAgICAgICAgfCAgMSAr
+CiAzIGZpbGVzIGNoYW5nZWQsIDE5IGluc2VydGlvbnMoKykKCi0tIAoyLjE3LjEKCgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
+IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
