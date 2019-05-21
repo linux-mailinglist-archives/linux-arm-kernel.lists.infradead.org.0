@@ -2,70 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37C9D2498F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 09:59:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD67B24997
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 09:59:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fze0zf1Ee+Q58V7XFyq32rkS6eIQJgOepE3UUiTrSkM=; b=eOWnQZ7zSqXRm0
-	tsovzRmU3Onh9btUQwt654M9PJGpC7me+iwKJvVsGkOPKvry7cPEtnQ2+o+h6JGtCwtGPHlN2OE+t
-	cnEuVM/cgaqydU77YfkJ2VdJvmLZ7dDFKothfpXgThiytdGTCp02CHM5GUT5ebjIhVTS5UjJDae5B
-	UnDxAqWG/Yo4o31zV3LN3AGNr3K3spERHemJgUd/2vMiaZfPya7DGYetrSoKhofQ1MYfGggtiEhdx
-	HcVrFsJret5YieDE+K8m8ZVw+Qfm6cWdCi0+P4NTQFEBf7Gr7YtdkQH0FNIgB+hFnzp5lXsQZP0u2
-	7qrYGbjcMRriyMjPWFPQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=xz4iR4P4HlYiz/dZrEK0gCsyUw8Nnr1m1fT8TIogsLA=; b=oyvBMCI1zP3R4L
+	GPfgxSczVTJFb80fJQ7gQGRSXGsN8TNR9GnBhnrCH+yd4rSMuRMCjDsCUOYmIuwhNtjvxDQp8sCIS
+	1Zr+T9p2AFkYZZhGKAMf2ynLNwoEN19Vv8RTT9khgXv3ZIH2ADbyByD3Ipj72PZkmgCwNZZBhsnIj
+	JrkiTUCVG29FCrJGCE5Qe6EIgRmg4adw56pKURPGbLHI3lmFSGau9KxOEhqvFwqrgsiTaBvENnuFF
+	qfmycCZ5ULrAW3uAD9Ss5vLiX2+YVYjQbQGHD3GsnEQKR7K69/ubSi9K2+s06mts9WT5Blpaz2VYN
+	uM44NvFBWJuLg2I8o2Ng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSzfl-0003O3-Ta; Tue, 21 May 2019 07:58:57 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1hSzgV-0003zD-Nb; Tue, 21 May 2019 07:59:43 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSzfV-0003Em-3J
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 07:58:42 +0000
-Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <sha@pengutronix.de>)
- id 1hSzfJ-0004dW-Sy; Tue, 21 May 2019 09:58:29 +0200
-Received: from sha by ptx.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <sha@pengutronix.de>)
- id 1hSzfG-0007g7-0T; Tue, 21 May 2019 09:58:26 +0200
-Date: Tue, 21 May 2019 09:58:25 +0200
-From: Sascha Hauer <s.hauer@pengutronix.de>
-To: Boris Brezillon <boris.brezillon@collabora.com>
-Subject: Re: [PATCH v2 14/15] mtd: rawnand: Get rid of chip->numchips
-Message-ID: <20190521075825.yaxdgxsqhzm7y2id@pengutronix.de>
-References: <20190304201522.11323-1-miquel.raynal@bootlin.com>
- <20190304201522.11323-15-miquel.raynal@bootlin.com>
- <20190521065948.GA16530@pengutronix.de>
- <20190521093302.079f5470@collabora.com>
- <20190521095130.58573d20@collabora.com>
+ id 1hSzgO-0003yZ-3r
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 07:59:37 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x4L7xXqj072922;
+ Tue, 21 May 2019 02:59:33 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1558425573;
+ bh=IzWT3e6xVFbiZmSHFjmPBCCwZEObs0gFBMkK0Qxp8bg=;
+ h=From:To:CC:Subject:Date;
+ b=onyOFoYd6iT3zbfUFrP1jChuvkmOzb97Db8+o2dfG3+pdNkb8jHonbpEOYD/98gld
+ ivbuzODleKw4Yhuj+epqWIS3u2uD5zqVAw8bdZ67wshrYaLduB02Hr20a/+5nAneUS
+ AwGMIZAwmsAK1329HQVpIOXBSCS5lhVfi8YL7rBs=
+Received: from DLEE106.ent.ti.com (dlee106.ent.ti.com [157.170.170.36])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x4L7xWYj051369
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 21 May 2019 02:59:33 -0500
+Received: from DLEE103.ent.ti.com (157.170.170.33) by DLEE106.ent.ti.com
+ (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 21
+ May 2019 02:59:32 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE103.ent.ti.com
+ (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Tue, 21 May 2019 02:59:32 -0500
+Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x4L7xUjx078442;
+ Tue, 21 May 2019 02:59:30 -0500
+From: Peter Ujfalusi <peter.ujfalusi@ti.com>
+To: <vkoul@kernel.org>
+Subject: [PATCH v2 0/2] dmaengine: ti: edma: Polled completion support
+Date: Tue, 21 May 2019 10:59:43 +0300
+Message-ID: <20190521075945.14085-1-peter.ujfalusi@ti.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190521095130.58573d20@collabora.com>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 09:57:50 up 3 days, 14:16, 44 users, load average: 0.12, 0.12, 0.15
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
-X-SA-Exim-Mail-From: sha@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_005841_290989_03FDCC0A 
-X-CRM114-Status: GOOD (  22.59  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190521_005936_239908_DA39DBED 
+X-CRM114-Status: GOOD (  10.52  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -77,72 +87,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mason Yang <masonccyang@mxic.com.tw>, Vignesh R <vigneshr@ti.com>,
- Boris Brezillon <bbrezillon@kernel.org>, Julien Su <juliensu@mxic.com.tw>,
- Richard Weinberger <richard@nod.at>,
- Tudor Ambarus <Tudor.Ambarus@microchip.com>,
- Schrempf Frieder <frieder.schrempf@kontron.de>,
- Marek Vasut <marek.vasut@gmail.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, linux-mtd@lists.infradead.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Brian Norris <computersforpeace@gmail.com>,
- David Woodhouse <dwmw2@infradead.org>, linux-arm-kernel@lists.infradead.org
+Cc: dmaengine@vger.kernel.org, dan.j.williams@intel.com,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 21, 2019 at 09:51:30AM +0200, Boris Brezillon wrote:
-> On Tue, 21 May 2019 09:33:02 +0200
-> Boris Brezillon <boris.brezillon@collabora.com> wrote:
-> 
-> > On Tue, 21 May 2019 08:59:48 +0200
-> > Sascha Hauer <s.hauer@pengutronix.de> wrote:
-> > 
-> > > Hi,
-> > > 
-> > > On Mon, Mar 04, 2019 at 09:15:21PM +0100, Miquel Raynal wrote:  
-> > > > diff --git a/drivers/mtd/nand/raw/internals.h b/drivers/mtd/nand/raw/internals.h
-> > > > index fbf6ca015cd7..a204f9d7e123 100644
-> > > > --- a/drivers/mtd/nand/raw/internals.h
-> > > > +++ b/drivers/mtd/nand/raw/internals.h
-> > > > @@ -110,7 +110,7 @@ static inline int nand_exec_op(struct nand_chip *chip,
-> > > >  	if (!nand_has_exec_op(chip))
-> > > >  		return -ENOTSUPP;
-> > > >  
-> > > > -	if (WARN_ON(op->cs >= chip->numchips))
-> > > > +	if (WARN_ON(op->cs >= nanddev_ntargets(&chip->base)))
-> > > >  		return -EINVAL;    
-> > > 
-> > > This warning triggers when I apply my gpmi nand exec_op series.
-> > > 
-> > > The gpmi driver calls:
-> > > 
-> > > 	ret = nand_scan(chip, GPMI_IS_MX6(this) ? 2 : 1);
-> > > 
-> > > This ends up in nand_scan_ident() with maxchips = 2. Here nand_detect()
-> > > is called which sets memorg->ntargets = 1; Later in nand_scan_ident() we
-> > > have:
-> > > 
-> > > 	for (i = 1; i < maxchips; i++) {  
-> > 
-> > This loop should be fixed to test against nanddev_ntargets() instead of
-> > maxchips.
-> 
-> Nevermind, I see what you mean. I guess we should set ->ntargets to
-> maxchips before entering this loop.
+Hi,
 
-Okay, you got the same conclusion in the meantime ;)
+Changes since v1:
+- Cleanup patch for the array register handling
+- typo fixed in patch2 commit message
 
-Sascha
+The code around the array register access was pretty confusing for the first
+look, so clean them up first then use the cleaner way in the polled handling.
 
+When a DMA client driver decides that it is not providing callback for
+completion of a transfer (and/or does not set the DMA_PREP_INTERRUPT) but
+it will poll the status of the transfer (in case of short memcpy for
+example) we will not get interrupt for the completion of the transfer and
+will not mark the transaction as done.
+
+Check the event registers (ER and EER) and if the channel is inactive then
+return wioth DMA_COMPLETE to let the client know that the transfer is
+completed.
+
+Regards,
+Peter
+---
+Peter Ujfalusi (2):
+  dmaengine: ti: edma: Clean up the 2x32bit array register accesses
+  dmaengine: ti: edma: Enable support for polled (memcpy) completion
+
+ drivers/dma/ti/edma.c | 129 ++++++++++++++++++++++++++----------------
+ 1 file changed, 81 insertions(+), 48 deletions(-)
 
 -- 
-Pengutronix e.K.                           |                             |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+Peter
+
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
+Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+
 
 _______________________________________________
 linux-arm-kernel mailing list
