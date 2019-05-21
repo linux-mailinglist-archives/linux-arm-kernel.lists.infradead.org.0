@@ -2,37 +2,37 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D3F22484E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 08:45:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85EED24850
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 08:45:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ncRB+F9QVgMPXatOpNtAgODrfgAd8UStRgQok4vyqRw=; b=HlMpHN2GAnIzBY
-	Q6rm989UOQwKMYHDViNl5VxDWCmvHNcAi0Ykq3R8ALtXlYenP7I6Oq9lXETmXG/1zCrFSrWxEIBzZ
-	Vv1ABl6VDXbOsduXHNrfO7IvUSzn2Z797nk+ez8f/PKn/sK9QSJ/2l6QNONhGH2ZScfRbCkxRLjMC
-	qKF5NDNH6CrlxF7l8o0eGQ8aqU2qT6E23qyvZfk+iWRFI0P8rSMjiv36OFmvecBmYVU81z5eWjSaK
-	N7J5+nC6sKnKrZltUDzwDNQshe00jFlKcObfQprH65IEGhLAo2vtISgt4+6b72qK8nFu2YDCtjISS
-	BYcrf+yswuBCy0SrugLw==;
+	List-Owner; bh=atEJWeXafBKzXKHD9YbhlC2A/gxCyZbSBxRCB+tGA74=; b=Z43nOR/v4ZMRrg
+	KNpk5W6J9aBJv6h+VimBybdiir/nOflG4CaJEkCb4d4l96TJjPs8K6hCbLIUXkGfdCPFdOBq3dohj
+	8IdiVzJ0DxUrLoKGiGC6uUZfj9XO0DJ5bELjXt28f0iGIrN2i4g1GRlKbK6UaCGqtRHVTngIpb/Vb
+	1CWiTZv9fP2vM679u70uJKzpdk4cdtS15ixVB6CbZdryZG4mv5QUDc20VbtvHK/OllGo58LlIeFmb
+	gLLneRPmETKQLjHVLhM96taj6xNCD2S2QTXZJhsSCHc/kTdXKgd7D6be5f9RJAuaVG7Ibkx7t4sRi
+	HzHbIT1ie7BOufuIb6fg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSyWp-0000kK-OQ; Tue, 21 May 2019 06:45:39 +0000
+	id 1hSyX0-0000tR-V7; Tue, 21 May 2019 06:45:50 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSyWi-0000jA-4w; Tue, 21 May 2019 06:45:33 +0000
-X-UUID: 381ac8fb45984be7abfd5ff7b053a1f6-20190520
-X-UUID: 381ac8fb45984be7abfd5ff7b053a1f6-20190520
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ id 1hSyWi-0000jM-LW; Tue, 21 May 2019 06:45:34 +0000
+X-UUID: 56a337ad85734016ab64e70540d5b894-20190520
+X-UUID: 56a337ad85734016ab64e70540d5b894-20190520
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <stanley.chu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1760941141; Mon, 20 May 2019 22:45:08 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 20 May 2019 23:45:06 -0700
+ with ESMTP id 608991245; Mon, 20 May 2019 22:45:08 -0800
+Received: from mtkmbs03n2.mediatek.inc (172.21.101.182) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 20 May 2019 23:45:07 -0700
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ mtkmbs03n2.mediatek.inc (172.21.101.182) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Tue, 21 May 2019 14:45:05 +0800
 Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
@@ -40,18 +40,18 @@ Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas09.mediatek.inc
 From: Stanley Chu <stanley.chu@mediatek.com>
 To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
  <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <pedrom.sousa@synopsys.com>
-Subject: [PATCH v5 2/3] scsi: ufs: Do not overwrite Auto-Hibernate timer
-Date: Tue, 21 May 2019 14:44:53 +0800
-Message-ID: <1558421094-3182-3-git-send-email-stanley.chu@mediatek.com>
+Subject: [PATCH v5 3/3] scsi: ufs: Add error-handling of Auto-Hibernate
+Date: Tue, 21 May 2019 14:44:54 +0800
+Message-ID: <1558421094-3182-4-git-send-email-stanley.chu@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
 In-Reply-To: <1558421094-3182-1-git-send-email-stanley.chu@mediatek.com>
 References: <1558421094-3182-1-git-send-email-stanley.chu@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: CC202388F3AF10FB555D675A1FD7A2E45BD37801BC1DE1582DC149E9463583BC2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_234532_197884_B35D3D7D 
-X-CRM114-Status: UNSURE (   9.79  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190520_234532_705644_1D4952B4 
+X-CRM114-Status: GOOD (  11.07  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -82,29 +82,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some vendor-specific initialization flow may set its own
-auto-hibernate timer. In this case, do not overwrite timer value
-as "default value" in ufshcd_init().
+Currently auto-hibernate is activated if host supports
+auto-hibern8 capability. However error-handling is not implemented,
+which makes the feature somewhat risky.
+
+If either "Hibernate Enter" or "Hibernate Exit" fail during
+auto-hibernate flow, the corresponding interrupt
+"UIC_HIBERNATE_ENTER" or "UIC_HIBERNATE_EXIT" shall be raised
+according to UFS specification.
+
+This patch adds auto-hibernate error-handling:
+
+- Monitor "Hibernate Enter" and "Hibernate Exit" interrupts after
+  auto-hibernate feature is activated.
+
+- If fail happens, trigger error-handling just like "manual-hibernate"
+  fail and apply the same recovery flow: schedule UFS error handler in
+  ufshcd_check_errors(), and then do host reset and restore
+  in UFS error handler.
 
 Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+Reviewed-by: Bean Huo <beanhuo@micron.com>
 Reviewed-by: Alim Akhtar <alim.akhtar@samsung.com>
 ---
- drivers/scsi/ufs/ufshcd.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/scsi/ufs/ufshcd.c | 31 +++++++++++++++++++++++++++++++
+ drivers/scsi/ufs/ufshci.h |  6 ++++--
+ 2 files changed, 35 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index 0cf698d05426..7cd757558203 100644
+index 7cd757558203..a208589426b1 100644
 --- a/drivers/scsi/ufs/ufshcd.c
 +++ b/drivers/scsi/ufs/ufshcd.c
-@@ -8312,7 +8312,7 @@ int ufshcd_init(struct ufs_hba *hba, void __iomem *mmio_base, unsigned int irq)
- 						UIC_LINK_HIBERN8_STATE);
- 
- 	/* Set the default auto-hiberate idle timer value to 150 ms */
--	if (ufshcd_is_auto_hibern8_supported(hba)) {
-+	if (ufshcd_is_auto_hibern8_supported(hba) && !hba->ahit) {
- 		hba->ahit = FIELD_PREP(UFSHCI_AHIBERN8_TIMER_MASK, 150) |
- 			    FIELD_PREP(UFSHCI_AHIBERN8_SCALE_MASK, 3);
+@@ -5254,6 +5254,7 @@ static void ufshcd_err_handler(struct work_struct *work)
+ 			goto skip_err_handling;
  	}
+ 	if ((hba->saved_err & INT_FATAL_ERRORS) ||
++	    (hba->saved_err & UFSHCD_UIC_HIBERN8_MASK) ||
+ 	    ((hba->saved_err & UIC_ERROR) &&
+ 	    (hba->saved_uic_err & (UFSHCD_UIC_DL_PA_INIT_ERROR |
+ 				   UFSHCD_UIC_DL_NAC_RECEIVED_ERROR |
+@@ -5413,6 +5414,23 @@ static void ufshcd_update_uic_error(struct ufs_hba *hba)
+ 			__func__, hba->uic_error);
+ }
+ 
++static bool ufshcd_is_auto_hibern8_error(struct ufs_hba *hba,
++					 u32 intr_mask)
++{
++	if (!ufshcd_is_auto_hibern8_supported(hba))
++		return false;
++
++	if (!(intr_mask & UFSHCD_UIC_HIBERN8_MASK))
++		return false;
++
++	if (hba->active_uic_cmd &&
++	    (hba->active_uic_cmd->command == UIC_CMD_DME_HIBER_ENTER ||
++	    hba->active_uic_cmd->command == UIC_CMD_DME_HIBER_EXIT))
++		return false;
++
++	return true;
++}
++
+ /**
+  * ufshcd_check_errors - Check for errors that need s/w attention
+  * @hba: per-adapter instance
+@@ -5431,6 +5449,15 @@ static void ufshcd_check_errors(struct ufs_hba *hba)
+ 			queue_eh_work = true;
+ 	}
+ 
++	if (hba->errors & UFSHCD_UIC_HIBERN8_MASK) {
++		dev_err(hba->dev,
++			"%s: Auto Hibern8 %s failed - status: 0x%08x, upmcrs: 0x%08x\n",
++			__func__, (hba->errors & UIC_HIBERNATE_ENTER) ?
++			"Enter" : "Exit",
++			hba->errors, ufshcd_get_upmcrs(hba));
++		queue_eh_work = true;
++	}
++
+ 	if (queue_eh_work) {
+ 		/*
+ 		 * update the transfer error masks to sticky bits, let's do this
+@@ -5493,6 +5520,10 @@ static void ufshcd_tmc_handler(struct ufs_hba *hba)
+ static void ufshcd_sl_intr(struct ufs_hba *hba, u32 intr_status)
+ {
+ 	hba->errors = UFSHCD_ERROR_MASK & intr_status;
++
++	if (ufshcd_is_auto_hibern8_error(hba, intr_status))
++		hba->errors |= (UFSHCD_UIC_HIBERN8_MASK & intr_status);
++
+ 	if (hba->errors)
+ 		ufshcd_check_errors(hba);
+ 
+diff --git a/drivers/scsi/ufs/ufshci.h b/drivers/scsi/ufs/ufshci.h
+index 6fa889de5ee5..dbb75cd28dc8 100644
+--- a/drivers/scsi/ufs/ufshci.h
++++ b/drivers/scsi/ufs/ufshci.h
+@@ -144,8 +144,10 @@ enum {
+ #define CONTROLLER_FATAL_ERROR			0x10000
+ #define SYSTEM_BUS_FATAL_ERROR			0x20000
+ 
+-#define UFSHCD_UIC_PWR_MASK	(UIC_HIBERNATE_ENTER |\
+-				UIC_HIBERNATE_EXIT |\
++#define UFSHCD_UIC_HIBERN8_MASK	(UIC_HIBERNATE_ENTER |\
++				UIC_HIBERNATE_EXIT)
++
++#define UFSHCD_UIC_PWR_MASK	(UFSHCD_UIC_HIBERN8_MASK |\
+ 				UIC_POWER_MODE)
+ 
+ #define UFSHCD_UIC_MASK		(UIC_COMMAND_COMPL | UFSHCD_UIC_PWR_MASK)
 -- 
 2.18.0
 
