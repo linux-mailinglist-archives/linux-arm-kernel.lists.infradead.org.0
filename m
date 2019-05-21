@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA862259A3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 23:05:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E74BD259B0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 23:08:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=3VVq9RYmd481BcWqHUan9+9C2bNzkej5rU6yoGvuCH4=; b=r2VN989CIJFJK17UMZKMUnzND
-	vq/n7yMLIZl6/1cpcksN8MdRh+utnP3AKh81Kb/4nYiImyUqG4avs25ANjidclzjLdQaGdWYvyj9r
-	Lp2hARjSosOXnGt58LV4FSm63t0PpCVzmLDtVU7v9ChvdK5/BmQZs/j+fe4MRH/EJkmM9ixBswds1
-	++VCWH8Sfg0TpXF3TFPYEKkuh5bNsb8adjlneceEqReUQuXtYfLpOCuB4qaBpTM4ybUUgJkX/hc+B
-	eRyRXS3e4US0RbOg2P/5x25pRNXBYr27XcgTNYnMH/FbhTuL4CzPwOI0KaERIeEJdxn+p4mdzRQEy
-	VESSY1EzQ==;
+	 bh=/fYLV7IKaluSmNHc/JrAR+j04gmUEXehwZghy0I6MIE=; b=W/1AJgjMT4CI2nCP900/R9hnZ
+	O/sEa1ro3lXL3Pm16o/KWJYQWWcQkWVvFfT/Rt4bZPOazXOpiWWiIRFTH/AMUilMv4eZ5rzKictyd
+	WS0WxzQ/NGaLgQxeovQA6IvSdhK3PXANhowoC/+DkjJzVLotmcWRWMzRssg7y8YjWV5oRRLh27ZXR
+	VSrFzDarHQxNzQCHtFCdxeGLdAPPZYvylksOdUn53lbYlix9MuPr8hvTmiaH5gGkMjCOL0Eiyj+Kv
+	dMKymBoS7YPmkLxK7k5LJ8rJjB/HEMN2gJKZHSkH1lmk4cLIq46oE6BvfUNsqbA9hV1cz8a6102Sk
+	lperyIc6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTBwk-0001cD-T4; Tue, 21 May 2019 21:05:18 +0000
+	id 1hTC0D-0003B6-SB; Tue, 21 May 2019 21:08:53 +0000
 Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTBwJ-0000kR-Gp; Tue, 21 May 2019 21:04:55 +0000
+ id 1hTC06-0003AZ-1b
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 21:08:47 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
  MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=d9M7yQ5yVOSEMt8T+B3jEX8ZpiakoXvD5uTaMsNBD5U=; b=IAmIMI5PjJ4StIZLqS2qHjJE3
- +BDscThjnoxlmE0lqyuyituvDJBsLSMqnf3n3vX3KTrNDOsSuKPYB0IJw1ZIcQNY7pZayaKKUmm5X
- kn4Ex7wD8OeJTV8bwAqN4WCx3Gg6vCCrJ5F9PoD74EC9oC11Rq48uXTuiC2NPrren6R9E=;
+ bh=y7ibEasnNlMrg0Cg0u1uA8kjMpvwkTqXDxhIGJ97fKY=; b=fHihLTsTBRj8VjaQKfcECHqjH
+ 7QaAYGF0BGdUc3CQdB5hmMpvxPaU8ozn9e1eWwM9GVrWUlF8NH5Sr26Hwo0fxYOQ+nebRdpf2VUrZ
+ x8CMS1QorssZj9YtUqQHVVsNebaHWlNgE0Eh8o87e4P89Jw5JOfi3mPbtF1Doevl4hAPQ=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=debutante.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpa (Exim 4.89)
  (envelope-from <broonie@sirena.org.uk>)
- id 1hTBwH-0002Et-Sl; Tue, 21 May 2019 21:04:49 +0000
+ id 1hTC03-0002FI-Um; Tue, 21 May 2019 21:08:43 +0000
 Received: by debutante.sirena.org.uk (Postfix, from userid 1000)
- id 6C9341126D13; Tue, 21 May 2019 22:04:49 +0100 (BST)
-Date: Tue, 21 May 2019 22:04:49 +0100
+ id 643A11126D13; Tue, 21 May 2019 22:08:43 +0100 (BST)
+Date: Tue, 21 May 2019 22:08:43 +0100
 From: Mark Brown <broonie@kernel.org>
-To: Kuldeep Singh <kuldeep.singh@nxp.com>
-Subject: Re: [PATCH] dt-bindings: spi: spi-fsl-qspi: Add ls2080a
- compatibility string
-Message-ID: <20190521210449.GB1580@sirena.org.uk>
-References: <20190516104046.23830-1-kuldeep.singh@nxp.com>
- <20190516104046.23830-2-kuldeep.singh@nxp.com>
+To: Olof Johansson <olof@lixom.net>
+Subject: Re: [PATCH] spi: zynqmp: Fix build break
+Message-ID: <20190521210843.GC1580@sirena.org.uk>
+References: <2bb66114-c976-9c44-6db3-33a5dd12edde@monstr.eu>
+ <20190429162246.6061-1-olof@lixom.net>
 MIME-Version: 1.0
-In-Reply-To: <20190516104046.23830-2-kuldeep.singh@nxp.com>
+In-Reply-To: <20190429162246.6061-1-olof@lixom.net>
 X-Cookie: Klatu barada nikto.
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_140452_398512_5D6EF7DF 
-X-CRM114-Status: UNSURE (   5.44  )
+X-CRM114-CacheID: sfid-20190521_140846_456202_0A83D22C 
+X-CRM114-Status: UNSURE (   7.25  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -79,53 +79,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-mtd@lists.infradead.org" <linux-mtd@lists.infradead.org>,
- Ashish Kumar <ashish.kumar@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "bbrezillon@kernel.org" <bbrezillon@kernel.org>
-Content-Type: multipart/mixed; boundary="===============6727787723434198018=="
+Cc: Rajan Vaja <rajan.vaja@xilinx.com>, Michal Simek <michal.simek@xilinx.com>,
+ linux-kernel@vger.kernel.org, Jolly Shah <jollys@xilinx.com>,
+ linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============9042551197776394573=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============6727787723434198018==
+--===============9042551197776394573==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="gj572EiMnwbLXET9"
+	protocol="application/pgp-signature"; boundary="4jXrM3lyYWu4nBt5"
 Content-Disposition: inline
 
 
---gj572EiMnwbLXET9
+--4jXrM3lyYWu4nBt5
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-On Thu, May 16, 2019 at 10:39:45AM +0000, Kuldeep Singh wrote:
-> There are 2 version of QSPI-IP, according to which it can be big endian
-> or little endian. There are some other minor changes as well.
-> The big endian version uses driver compatible fsl,ls1021a-qspi and little
-> endian version uses fsl,ls10280a-qspi
+On Mon, Apr 29, 2019 at 09:22:46AM -0700, Olof Johansson wrote:
+> Missing include:
+> drivers/spi/spi-zynqmp-gqspi.c:1025:13: error: implicit declaration of
+>   function 'zynqmp_pm_get_eemi_ops'; did you mean
+>   'zynqmp_process_dma_irq'? [-Werror=3Dimplicit-function-declaration]
+>=20
+> Fixes: 3d0313786470a ('drivers: Defer probe if firmware is not ready')
 
-This doesn't apply against current code, please check and resend.
+Please copy maintainers on patches so they aren't surprised when they
+get mails saying they accepted patches they never heard of before!
 
---gj572EiMnwbLXET9
+--4jXrM3lyYWu4nBt5
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAlzkZ/AACgkQJNaLcl1U
-h9Dcggf/a5SCEOq1f8Uztg6sAxsCy+2TMZDAfoiuy9SH76QY+e6nHxdy+DrXkwPC
-RGL2sLSSC9pbd1BqabLJn4+ivFrbs3FN6pG06RXTw8s9bm/jPC80df67eNaLt6Fq
-Omyq0iYTAw3KMz3TyhdzmBeCS5T44EG+39ofRW5O2xms+mkXNPB7D5a8UjTj9OXr
-vLoM4lx0yWLiMZ1KMZ0pc4/A9O3JXpamPmUn6+sYlVkW9680sM5ve1nzC3x9my0v
-f4rFFjcJe/cFZ5PxkRMSeDeyJQTHRk3tWGnMBl81zKY0r+5x2Qfe/xg7tFHBNr7S
-z6yi+WirwaH7QY8lCWCfWu9EFdwBSg==
-=Titl
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAlzkaNoACgkQJNaLcl1U
+h9CBfwgAgbLrAnQDkYTUpP7MdSDSiv8ppwZ4R/EN9OCgQb6Cjms4xG6hrxkbloPA
++oUebvqpcjb2wzduZU8tdCKx2CSU/uGlqTxG55BLy+pyrGHmFDY3MBpWr0aAj8hi
+XZGbyLoZWQYWTWorcXeC50RTLzX+fRTPx0A5KJzjXU8pjUmjnA+hjDeruCcW2JNN
+Suy2LE8ivUVCFUAOHVhM0bVXIbteUPRu08p3XGd3aTsfzJRn35GWepyfhnzAKX1g
+OwIBgEZFHVzQ0AZh4jm4c4YdkrF/vpawZdC+48BCVtfsdreTlVzBZ8OvKfC9j4jX
+q0QdP42x5IWG+4mrek1zsa3JoYmsJA==
+=tUfm
 -----END PGP SIGNATURE-----
 
---gj572EiMnwbLXET9--
+--4jXrM3lyYWu4nBt5--
 
 
---===============6727787723434198018==
+--===============9042551197776394573==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -136,5 +138,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============6727787723434198018==--
+--===============9042551197776394573==--
 
