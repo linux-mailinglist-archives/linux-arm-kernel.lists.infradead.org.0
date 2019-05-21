@@ -2,87 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0CDD25666
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 19:14:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7487625687
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 19:22:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8fkFtWvDS0fLH9kTjnYtuI/v4fQSaqJjhdYob6maT1U=; b=VWarPmANAGTMZneGnq2O0WRgB
-	W+lDePrX/s+NCHZOzXpedFegNvoTx11P7x2+hPoYh40fNd67IS/AvX3YfWgzgGlQHUCcvflCXPrSS
-	LZLCywOM+oDzqhQv2MbhfhtPiFT/GfyAyby+jtwB47xQpEut6V6xNi+z3b4w9O5M6tVr6vKR6pD/a
-	VrWaTyPiFwJWAy17seuUc5V5b7T2R6lwFCc0dIW5kOdxGCDSjpE4gY/QMzuKH4hbAJzQi3mMbbmSP
-	Txd2RkAEr+Uv9z5kNKFxaIiD4K3MgxsrhtkVdcoQRVEEeM/Hoeu6oLeY1+Ct+2NJ4qHmtWa1Tc8WK
-	A9ArnskNg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=YLkuPabRQEDzpYdrKScSGDITJykd1BhhVKweAFXoKWY=; b=n3U
+	G7Wu775O7sxJKiT/q1pPYiFnYKawYmgwaHvoqVfcC+ijsuCW3JXZiDVmf5anfXUROG7fLTPutvGfO
+	xczKZHsTXsmlJvIVMMheivwC1vSGdbiybrI7/pafRPA7Z6bAfmTld/JBl7SnsldeCrzH/YUBKVuq/
+	DrH7YgWcvwTbbnVQM3KNSVg/05pL7Q5Ct0lZ9dZIj8JgBXmRHFfLBmx8JMLGTYFi/44mxqwnQRPX3
+	+dSX2cKlIPruGt4W5W1Kgfzbjvj1+WV6IpYG57fIuCVsvfYfcV+X+xqSspcH/L1nP4tLRS9L/9bHZ
+	fjQLeKN1JLM9QK7OWHPnJotFFQBrSrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT8LD-0006pr-2R; Tue, 21 May 2019 17:14:19 +0000
-Received: from hqemgate16.nvidia.com ([216.228.121.65])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT8L6-0006pY-Lf
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 17:14:14 +0000
-Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5ce431e40002>; Tue, 21 May 2019 10:14:12 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate102.nvidia.com (PGP Universal service);
- Tue, 21 May 2019 10:14:12 -0700
-X-PGP-Universal: processed;
- by hqpgpgate102.nvidia.com on Tue, 21 May 2019 10:14:12 -0700
-Received: from [10.25.72.115] (172.20.13.39) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 21 May
- 2019 17:14:06 +0000
-Subject: Re: [PATCH V7 05/15] PCI: dwc: Add ext config space capability search
- API
-To: Thierry Reding <thierry.reding@gmail.com>
-References: <20190517123846.3708-1-vidyas@nvidia.com>
- <20190517123846.3708-6-vidyas@nvidia.com> <20190521103629.GE29166@ulmo>
-X-Nvconfidentiality: public
-From: Vidya Sagar <vidyas@nvidia.com>
-Message-ID: <d70ac7e8-d04e-5195-3808-fca520ad23f6@nvidia.com>
-Date: Tue, 21 May 2019 22:44:04 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <20190521103629.GE29166@ulmo>
-X-Originating-IP: [172.20.13.39]
-X-ClientProxiedBy: HQMAIL103.nvidia.com (172.20.187.11) To
- HQMAIL107.nvidia.com (172.20.187.13)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1558458852; bh=BcyBWuXsiZPLocS6gKpgICDF6NfMYJFTJoNUnlHyJbA=;
- h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
- Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
- X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=At4Xdpw0Zrn5NsJ2CRKYABUSOeeEfKMEt9N1cZC7IFh4aB1Xzp5/eiDTcuV0z5mjP
- +Rbrzd8Fajyae9wCzljeqfSzm5JLySCJAff9YBdPaLgv2ZH/aThQlJ/9cnr+rFQnbi
- zNiOaCci50OPFXQ1eukzFALbhyGokGYgBpkANGMkwOuYTK3SpNSszTSDZWWI4ri6oX
- +iCI/vHaoU+/DiFzRcflgqoK+oD4Fnik1RKZzbqptYuA+Keb4XnZ22V/s9bkkTGs8k
- 4TyGgUsgh/YnX95Pd9LfGJKmgUAfAZnW0LaisxnZ5WbcGLvIN0Tf0wMI53UXAIPeSK
- McpPwR6MFnj9Q==
+	id 1hT8Sg-0001Ot-Uu; Tue, 21 May 2019 17:22:02 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hT8SZ-0001MS-QG
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 17:21:56 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B619F15A2;
+ Tue, 21 May 2019 10:21:52 -0700 (PDT)
+Received: from e108454-lin.cambridge.arm.com (e108454-lin.cambridge.arm.com
+ [10.1.196.50])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7E4BC3F718;
+ Tue, 21 May 2019 10:21:50 -0700 (PDT)
+From: Julien Grall <julien.grall@arm.com>
+To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu
+Subject: [PATCH v5 0/3] arm64/fpsimd: Don't disable softirq when touching
+ FPSIMD/SVE state
+Date: Tue, 21 May 2019 18:21:36 +0100
+Message-Id: <20190521172139.21277-1-julien.grall@arm.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_101412_723550_0BB81C51 
-X-CRM114-Status: GOOD (  16.30  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190521_102155_852926_3A4B0D19 
+X-CRM114-Status: UNSURE (   9.09  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.65 listed in list.dnswl.org]
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,131 +62,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
- mperttunen@nvidia.com, mmaddireddy@nvidia.com, linux-pci@vger.kernel.org,
- catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- kthota@nvidia.com, kishon@ti.com, linux-tegra@vger.kernel.org,
- robh+dt@kernel.org, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
- bhelgaas@google.com, jonathanh@nvidia.com,
- linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
+Cc: ard.biesheuvel@linaro.org, julien.thierry@arm.com, marc.zyngier@arm.com,
+ catalin.marinas@arm.com, suzuki.poulose@arm.com, will.deacon@arm.com,
+ christoffer.dall@arm.com, Julien Grall <julien.grall@arm.com>,
+ james.morse@arm.com, Dave.Martin@arm.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/21/2019 4:06 PM, Thierry Reding wrote:
-> On Fri, May 17, 2019 at 06:08:36PM +0530, Vidya Sagar wrote:
->> Add extended configuration space capability search API using struct dw_pcie *
->> pointer
->>
->> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
->> Acked-by: Gustavo Pimentel <gustavo.pimentel@synopsys.com>
->> ---
->> Changes since [v6]:
->> * None
->>
->> Changes since [v5]:
->> * None
->>
->> Changes since [v4]:
->> * None
->>
->> Changes since [v3]:
->> * None
->>
->> Changes since [v2]:
->> * None
->>
->> Changes since [v1]:
->> * This is a new patch in v2 series
->>
->>   drivers/pci/controller/dwc/pcie-designware.c | 41 ++++++++++++++++++++
->>   drivers/pci/controller/dwc/pcie-designware.h |  1 +
->>   2 files changed, 42 insertions(+)
->>
->> diff --git a/drivers/pci/controller/dwc/pcie-designware.c b/drivers/pci/controller/dwc/pcie-designware.c
->> index 8f53ce63d17e..3b7d50888caa 100644
->> --- a/drivers/pci/controller/dwc/pcie-designware.c
->> +++ b/drivers/pci/controller/dwc/pcie-designware.c
->> @@ -54,6 +54,47 @@ u8 dw_pcie_find_capability(struct dw_pcie *pci, u8 cap)
->>   }
->>   EXPORT_SYMBOL_GPL(dw_pcie_find_capability);
->>   
->> +static int dw_pcie_find_next_ext_capability(struct dw_pcie *pci, int start,
->> +					    int cap)
-> 
-> Perhaps make this more consistent with the existing regular
-> configuration space capability search API? Something like this perhaps:
-> 
-> 	static u16 dw_pcie_find_next_ext_capability(struct dw_pcie *pci,
-> 						    u16 start, u8 cap)
-> 
-> ? I guess your variant above is consistent with the existing generic
-> capability search API, so another alternative might be to make the old
-> dw_pcie_find_capability() API consistent with everything else. It's
-> confusing if we keep having to jump between the two variants.
-Ok. I'll change it to the format being followed in this file i.e. using u16 and u8
+Hi all,
 
-> 
-> Thierry
-> 
->> +{
->> +	u32 header;
->> +	int ttl;
->> +	int pos = PCI_CFG_SPACE_SIZE;
->> +
->> +	/* minimum 8 bytes per capability */
->> +	ttl = (PCI_CFG_SPACE_EXP_SIZE - PCI_CFG_SPACE_SIZE) / 8;
->> +
->> +	if (start)
->> +		pos = start;
->> +
->> +	header = dw_pcie_readl_dbi(pci, pos);
->> +	/*
->> +	 * If we have no capabilities, this is indicated by cap ID,
->> +	 * cap version and next pointer all being 0.
->> +	 */
->> +	if (header == 0)
->> +		return 0;
->> +
->> +	while (ttl-- > 0) {
->> +		if (PCI_EXT_CAP_ID(header) == cap && pos != start)
->> +			return pos;
->> +
->> +		pos = PCI_EXT_CAP_NEXT(header);
->> +		if (pos < PCI_CFG_SPACE_SIZE)
->> +			break;
->> +
->> +		header = dw_pcie_readl_dbi(pci, pos);
->> +	}
->> +
->> +	return 0;
->> +}
->> +
->> +int dw_pcie_find_ext_capability(struct dw_pcie *pci, int cap)
->> +{
->> +	return dw_pcie_find_next_ext_capability(pci, 0, cap);
->> +}
->> +EXPORT_SYMBOL_GPL(dw_pcie_find_ext_capability);
->> +
->>   int dw_pcie_read(void __iomem *addr, int size, u32 *val)
->>   {
->>   	if (!IS_ALIGNED((uintptr_t)addr, size)) {
->> diff --git a/drivers/pci/controller/dwc/pcie-designware.h b/drivers/pci/controller/dwc/pcie-designware.h
->> index 6cb978132469..fff284098117 100644
->> --- a/drivers/pci/controller/dwc/pcie-designware.h
->> +++ b/drivers/pci/controller/dwc/pcie-designware.h
->> @@ -252,6 +252,7 @@ struct dw_pcie {
->>   		container_of((endpoint), struct dw_pcie, ep)
->>   
->>   u8 dw_pcie_find_capability(struct dw_pcie *pci, u8 cap);
->> +int dw_pcie_find_ext_capability(struct dw_pcie *pci, int cap);
->>   
->>   int dw_pcie_read(void __iomem *addr, int size, u32 *val);
->>   int dw_pcie_write(void __iomem *addr, int size, u32 val);
->> -- 
->> 2.17.1
->>
+This patch series keeps softirqs enabled while touching FPSIMD/SVE state.
+For more details on the impact see patch #3.
+
+This patch series has been benchmarked on Linux 5.1-rc4 with defconfig.
+
+On Juno2:
+    * hackbench 100 process 1000 (10 times)
+    * .7% quicker
+
+On ThunderX 2:
+    * hackbench 1000 process 1000 (20 times)
+    * 3.4% quicker
+
+Note that while the benchmark has been done on 5.1-rc4, the patch series is
+based on 5.2-rc1.
+
+Cheers,
+
+Julien Grall (3):
+  arm64/fpsimd: Remove the prototype for sve_flush_cpu_state()
+  arch/arm64: fpsimd: Introduce fpsimd_save_and_flush_cpu_state() and
+    use it
+  arm64/fpsimd: Don't disable softirq when touching FPSIMD/SVE state
+
+ arch/arm64/include/asm/fpsimd.h |   5 +-
+ arch/arm64/include/asm/simd.h   |  10 +--
+ arch/arm64/kernel/fpsimd.c      | 139 +++++++++++++++++++++++++++-------------
+ arch/arm64/kvm/fpsimd.c         |   4 +-
+ 4 files changed, 103 insertions(+), 55 deletions(-)
+
+-- 
+2.11.0
 
 
 _______________________________________________
