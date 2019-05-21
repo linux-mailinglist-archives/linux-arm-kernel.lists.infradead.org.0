@@ -2,93 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 999FC24941
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 09:45:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B02892494A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 09:47:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cOZsLrlzMKOLhnGrEsMdMu4MoKq/Hc7w/zTmAR848X8=; b=oEltwBcC7UB6tg
-	kCKcF3Qpt05CtcGzNU2kYqa1bOotIvGJ2k1LMcd0+xAggwXooKFPSRFUT7UAWoe7GG9aPD4WlZjMo
-	mqQCRTLAC46rBXAJJ2Nzgutf5JiyzYIErbN39tjSlN7RwMnys6+HhD6enx94FMprFtPBah+gHFPT7
-	zbRYiWVCY5JYU65qMNW6ZImFoPU5CnxO0WsLwT47jd9uu/vptOK7+60t4wwow3pQoowOKo454dIeq
-	P04OlJPgiPECkRoHpsj2dOFxRy96Pqys18PSCjiG5tZBEUshTF8Lm98j5JYzSH0NfnzUxGZMlaq3c
-	3zj/HJFYlNk/yPDEPG2A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=SolysjVfHmFHyeNGVUjhGO50AfvI7yINsplM3yT7piA=; b=bVqIqNh+bOCEdsBbAOFq4whSq
+	2DXdl2VPv2Z0pyw1lrwyk8fZXkHAdM+3b9Ey2jH+Od5NIHujh3win+nZKPsxYv69/o5eQ4qQSj/jH
+	Fjsk65J055PEtpXM+uRSXaQ9VM5KuyDag7m77jz3j2H6nJt1zvflRnwmEk60qkBgSwCb8IMyfAgmv
+	v6TI1lSs5vBK0wAd0H9Ln7QLeUx8ZE3XU3gS+3V6v75UIR0XDvs4bjvJdUytkBfMlBAMrkEedt9NA
+	bV6ViXDVGUPhJsmCBl4gzGwaEZCSlG3AUDdtqERmqIv2SUrvu3GAc0nJkKTw4JtLujzfbahcrG/Uk
+	thAW+gCwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSzSx-0005uj-JV; Tue, 21 May 2019 07:45:43 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hSzV1-0006Ne-Q8; Tue, 21 May 2019 07:47:51 +0000
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSzSh-0005rx-HW
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 07:45:33 +0000
-Received: by mail-wm1-x341.google.com with SMTP id n25so1736412wmk.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 May 2019 00:45:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=7W2uW0GKbANg0YRRJwfDi3S83JuyE8bC4TgR386g+ig=;
- b=Ztqxpie7c7XA0ZxhayhLFU5YfLTiyHUepsEAmGYq+FUlQAfXb3LwgAtRxGq3DBMLDp
- sAAXnOa9PYGcZ2g3jo2609OGB/QROfchy98+Lz36qwm1cKApYb3XTOi+Fp9cR8bVxbXX
- QV+o57b8E7XeETrpYw4/yQsK5KmNqLoEwQFrC4dJdS3WKZ6c1N5mTanXGuLa48ZI4/Ju
- kuXzRua9Q0TL1j1xdYisI51IrpaRbwBKzlhgJLH1nVvULMnfAGM+/MOoxzlW5IpXIvk7
- nD1ATrlT7CCZu3wOLugC1MEkaGYXRLATx+0g0WSbNuhvwOd2J1mwx5rEy2A8ApafFmxY
- 7ImQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=7W2uW0GKbANg0YRRJwfDi3S83JuyE8bC4TgR386g+ig=;
- b=EDfXzAI1Grwnayn2POgd5O1sIXQBoZNFS9uzuiOCgIgyuM0M4CfCDuWOaq8NALLtLX
- 9TRfjan32O9tYh0IUw9kc7Pod9fxiyfi8z8iUEPjeO13cPAhjpq4GAZkBciaoDSFsH/V
- gsayTMXoP5g+y3YHHbwqlG4NL9F+KwZG0yMNMcOsC3tl/73VmrDrCbFOoIA4TAgHcXd7
- KPoEXZauchrRCgXD2vDx+ksO11PLCpYsdAE/Ib5p2yntX/xX6nKEJTDg1Pwy0DwnOwz+
- C5Dp9XeqnpmbHerRiLN4spAWjw+B8QLkoIP36wHk9+9gTloQBHfW+shxdVBywGBww8Fk
- +hcw==
-X-Gm-Message-State: APjAAAX7iGVx/CCzHZSRw2uBpGHNt97zB+OF2aEGUS/Kzr0RC3XOpni6
- pPOoQkYErXxzyPl/dGCTnAKw5A==
-X-Google-Smtp-Source: APXvYqyxfn6nygtboQpBoFArmbb8LvGA5vlw84HB75QJRhHbSdB1cLdCnbsbPzvasZc5W/5o+FBHzg==
-X-Received: by 2002:a1c:9e8e:: with SMTP id h136mr2140540wme.29.1558424725333; 
- Tue, 21 May 2019 00:45:25 -0700 (PDT)
-Received: from [10.1.203.87] (nat-wifi.sssup.it. [193.205.81.22])
- by smtp.googlemail.com with ESMTPSA id u7sm6381826wmg.25.2019.05.21.00.45.24
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 21 May 2019 00:45:24 -0700 (PDT)
-Subject: Re: [PATCH] clocksource: timer-meson6: update with SPDX Licence
- identifier
-To: Neil Armstrong <narmstrong@baylibre.com>, tglx@linutronix.de
-References: <20190520140007.29042-1-narmstrong@baylibre.com>
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
-Message-ID: <4262cc03-51eb-67fd-b899-61a2ed03dffa@linaro.org>
-Date: Tue, 21 May 2019 09:45:24 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hSzUt-0006Mw-Fe
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 07:47:45 +0000
+X-Originating-IP: 90.88.22.185
+Received: from localhost (aaubervilliers-681-1-80-185.w90-88.abo.wanadoo.fr
+ [90.88.22.185]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 2CB2F240004;
+ Tue, 21 May 2019 07:47:24 +0000 (UTC)
+Date: Tue, 21 May 2019 09:47:23 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Vasily Khoruzhick <anarsoul@gmail.com>
+Subject: Re: [PATCH 2/3] thermal: sun50i: add thermal driver for h6
+Message-ID: <20190521074723.s3hcrnpc5pkdreqe@flea>
+References: <20190512082614.9045-1-tiny.windzz@gmail.com>
+ <20190512082614.9045-3-tiny.windzz@gmail.com>
+ <20190512133930.t5txssl7mou2gljt@flea>
+ <CA+E=qVe82xXPBXpgyLgt2ME6EjGMWWMVvD5eU-b3ntQk_okMdg@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20190520140007.29042-1-narmstrong@baylibre.com>
-Content-Language: en-US
+In-Reply-To: <CA+E=qVe82xXPBXpgyLgt2ME6EjGMWWMVvD5eU-b3ntQk_okMdg@mail.gmail.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_004527_773044_CA8296C7 
-X-CRM114-Status: GOOD (  10.56  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190521_004743_860001_3EFB6FAC 
+X-CRM114-Status: GOOD (  16.91  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.193 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -100,20 +63,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, Yangtao Li <tiny.windzz@gmail.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ bjorn.andersson@linaro.org, marc.w.gonzalez@free.fr,
+ mchehab+samsung@kernel.org, paulmck@linux.ibm.com,
+ Stefan Wahren <stefan.wahren@i2se.com>, daniel.lezcano@linaro.org,
+ Chen-Yu Tsai <wens@csie.org>, Jagan Teki <jagan@amarulasolutions.com>,
+ andy.gross@linaro.org, rui.zhang@intel.com,
+ devicetree <devicetree@vger.kernel.org>, linux-pm@vger.kernel.org,
+ edubezval@gmail.com, Olof Johansson <olof@lixom.net>,
+ Rob Herring <robh+dt@kernel.org>, Jonathan.Cameron@huawei.com,
+ arm-linux <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>, enric.balletbo@collabora.com,
+ "David S. Miller" <davem@davemloft.net>
+Content-Type: multipart/mixed; boundary="===============6558717489134309426=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAvMDUvMjAxOSAxNjowMCwgTmVpbCBBcm1zdHJvbmcgd3JvdGU6Cj4gU2lnbmVkLW9mZi1i
-eTogTmVpbCBBcm1zdHJvbmcgPG5hcm1zdHJvbmdAYmF5bGlicmUuY29tPgo+IC0tLQoKQXBwbGll
-ZCwgdGhhbmtzLgoKICAtLSBEYW5pZWwKCgotLSAKIDxodHRwOi8vd3d3LmxpbmFyby5vcmcvPiBM
-aW5hcm8ub3JnIOKUgiBPcGVuIHNvdXJjZSBzb2Z0d2FyZSBmb3IgQVJNIFNvQ3MKCkZvbGxvdyBM
-aW5hcm86ICA8aHR0cDovL3d3dy5mYWNlYm9vay5jb20vcGFnZXMvTGluYXJvPiBGYWNlYm9vayB8
-CjxodHRwOi8vdHdpdHRlci5jb20vIyEvbGluYXJvb3JnPiBUd2l0dGVyIHwKPGh0dHA6Ly93d3cu
-bGluYXJvLm9yZy9saW5hcm8tYmxvZy8+IEJsb2cKCgpfX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51
-eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+
+--===============6558717489134309426==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="uzo2p4ihnuoqkun5"
+Content-Disposition: inline
+
+
+--uzo2p4ihnuoqkun5
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Fri, May 17, 2019 at 12:21:57PM -0700, Vasily Khoruzhick wrote:
+> On Sun, May 12, 2019 at 6:39 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+> > > +static int tsens_get_temp(void *data, int *temp)
+> > > +{
+> > > +     struct tsensor *s = data;
+> > > +     struct tsens_device *tmdev = s->tmdev;
+> > > +     int val;
+> > > +
+> > > +     regmap_read(tmdev->regmap, tmdev->chip->temp_data_base +
+> > > +                 0x4 * s->id, &val);
+> > > +
+> > > +     if (unlikely(val == 0))
+> > > +             return -EBUSY;
+> >
+> > I'm not sure why a val equals to 0 would be associated with EBUSY?
+>
+> First few reads of temp data return 0, and in case of H6 (and A64) it
+> means max temperature, so kernel does emergency shutdown. I used
+> -ETIMEDOUT as a workaround in my tree, but it's not appropriate here
+> either. Any suggestions are welcome.
+
+If we can use the interrupts and wait for a value to be converted
+before we read, then we should do that.
+
+> > Also, it's not in a fast path, so you can drop the unlikely. Chances
+> > are it's not that unlikely anyway.
+>
+> As I said earlier, it's just few samples after start up.
+
+That's not really my point though. unlikely is tricky to get right,
+because the compiler has his own meaning of what exactly unlikely
+means statistically to be able to do the right branching
+optimisations.
+
+However, this particular real case scenario might not have the same
+probability, which might result in a poor optimisation choice due to
+the unlikely being there.
+
+Moreover, this probability can evolve in the future. For example,
+let's assume that we enable dynamic PM in the driver. Starting from
+there, most of the reads become "first" reads, and your unlikely case
+becomes the likely one.
+
+My point was that, because of this, and because of the fact that it's
+really not a hot path, we should just drop it.
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--uzo2p4ihnuoqkun5
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXOOtCwAKCRDj7w1vZxhR
+xagHAQDdykPbWKdDic/RhsfGFYna5RZkWIPRvdVdikshfRJofQEAoFj6rDEFv4qd
+usQ5po0YFvhjL3xoWPQb0PQV4k9yLwI=
+=oWJX
+-----END PGP SIGNATURE-----
+
+--uzo2p4ihnuoqkun5--
+
+
+--===============6558717489134309426==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6558717489134309426==--
+
