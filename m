@@ -2,97 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 381D524600
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 04:30:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78A7524602
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 04:31:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q/HUD+YstVctoUfA07+xBxGO7FPCQlxfbCksaPh9hy8=; b=RJmEQAwdsL8yjk
-	IkmzEI+rwB1JN7sbUCpa+GVKWcHhCobgn9BzRHSvYcrTtA0YdyyksasbHbrc7PSXgykqJBXsbjVt9
-	AMXJ4k/ZAESb8n2mq0Vrh5ALeChaA2bb1II2Yn/ejBhX9fNN5uCdy5lptAdwiJQ3Py8wAN62EvPqb
-	d/hCYmxXgfydrytnvv/U7dkwMqKicyGZR2Mli4nJxXfGpymbKipIV6Vg+83M7aGCqdjmv4RlVI1xm
-	2gJ5F7wr5VsSsV7guEzrr5v4+IJeA4fTkMQ1WcaRDbUsfOGdh+UYEr/4fT9wYPoHI0cWtjSisn5zb
-	9jzWz0drwDNsB/o4gK1g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sJsjRqt0sbP6dZbzv62pt2oI/7G6mw1zJKdbvk5kTFY=; b=fdpRzx8oypUnG/
+	+QPxBPnS0STJepN0De+cW9yNlgjMI0oCOYWKmSPBNlw37Cvvp3UHlEzNH91Lo2KbZTy2WhECwU0l6
+	EYNcDcdiPb/D5sOxrRszC4XxvDEjmCUZWWhCdVS8GJ+xxONWKhd0hKMPCQx4qITwc93nBpApvK12c
+	3GWH/wTF2GrBW0V/CMTaNQcoW1apbZ6qAcJdbeCYhv9eVJEDI2y4/t/JVw8yiVDo18+t93qEP9Al1
+	KJBneGhRKYfzTwkl2sd0Py3/jfApYM23h06HQbl4y8swr4ei7z0DV2oloUQ+dE2+xTNjEeTA8HIqk
+	3DE4V+jmXFbIG/t2sMKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSuXu-0008VY-Lr; Tue, 21 May 2019 02:30:30 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1hSuYK-0000Pa-QQ; Tue, 21 May 2019 02:30:56 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSuXh-0008Ui-Di
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 02:30:19 +0000
-Received: by mail-io1-xd42.google.com with SMTP id a17so12682859iot.8
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 19:30:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=7SgdozFln6N4cKOXj579GcIC6rtza9ecdWL5Wy3TukE=;
- b=nmhwmpIqEdDndur2ChAsWeETvv5l0ZvTBJEtb370hddhGnIxxPPS1QXvF6c0TUXszP
- Yr7EU9Sh4VKHnget+n7Pms3+v3IYuUFGauOnG3iEQESd5l3m1KSETSuhQO5hYGZ1NfHt
- LPiqwzXwYjz5n+bQKEtV3fApV8heGjkpZKbic7oS1/rb9uqKH7lXjUbPcj+woOxmTg4Q
- m0HNFY+GxkdFjyX9PGuOXsaiLoB1kwoZ3BPYPhVnwY5OaAYxdpnZTJTycgmKzxIFJ/Di
- 1YbAfj1rHtpuQR8vsAEarxyVT+rLh4FomGP4y8JtjYHxGkxYOASMrUtf7pHzRowINwLc
- 5P4A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=7SgdozFln6N4cKOXj579GcIC6rtza9ecdWL5Wy3TukE=;
- b=nhu3Dj1ETTlg98Ofg+GHZad0r4W3qysg/62p0XTMAcv1IICwvHc3MjHN0lanxxcYj0
- JIut5vmXRg1zkFidYUN+OH5tFIOA6oWxC+tC4+MSnFJbmMiWTJugcd9tK8ciNUiFHft2
- t0fa+qe6/o1HxEGziephqwIA7LtrrvseHR1krAwlHlM9zQLJ7PqFaNKO2tWdbsmSYH/m
- coFfgtL9linSWzqdRb/0zMfqeh3sqT8NbaPtwsSBxom0e1iMb2LgSxdFxL2MP4C005n1
- fG0Wohdtx3sK8kXsLuMJb4dbBT6aGFSCYKzuTOjUv3SNtQmP7/THgJ8kfQhPU3xI1IMM
- D0rg==
-X-Gm-Message-State: APjAAAVDP5K4MxWkhnUI/YZKSsxbsRjLZhujNb79NtUiMZOIzDrmohu/
- VVdu6lfPo8E8sCUIAZO5aEDleQ==
-X-Google-Smtp-Source: APXvYqz9vj/PZiRmzYCXa+PAsNaZto+wgavDJl397bLT75uosm0y+5EYz+JwQEdkwKsy3yJZG/Ij5A==
-X-Received: by 2002:a5e:9907:: with SMTP id t7mr4471913ioj.24.1558405816298;
- Mon, 20 May 2019 19:30:16 -0700 (PDT)
-Received: from [172.22.22.26] (c-71-195-29-92.hsd1.mn.comcast.net.
- [71.195.29.92])
- by smtp.googlemail.com with ESMTPSA id c3sm5748728iob.80.2019.05.20.19.30.14
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 20 May 2019 19:30:15 -0700 (PDT)
-Subject: Re: [PATCH 1/8] net: qualcomm: rmnet: fix struct rmnet_map_header
-To: Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>
-References: <20190520135354.18628-1-elder@linaro.org>
- <20190520135354.18628-2-elder@linaro.org>
- <b0edef36555877350cfbab2248f8baac@codeaurora.org>
- <81fd1e01-b8e3-f86a-fcc9-2bcbc51bd679@linaro.org>
- <d90f8ccdc1f76f9166f269eb71a14f7f@codeaurora.org>
-From: Alex Elder <elder@linaro.org>
-Message-ID: <cd839826-639d-2419-0941-333055e26e37@linaro.org>
-Date: Mon, 20 May 2019 21:30:14 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hSuYD-0000Ox-Cp; Tue, 21 May 2019 02:30:50 +0000
+X-UUID: 26243c531dc545f089beab8469938b2d-20190520
+X-UUID: 26243c531dc545f089beab8469938b2d-20190520
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1771749030; Mon, 20 May 2019 18:30:30 -0800
+Received: from mtkmbs03n2.mediatek.inc (172.21.101.182) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 20 May 2019 19:30:29 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs03n2.mediatek.inc (172.21.101.182) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 21 May 2019 10:30:21 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 21 May 2019 10:30:21 +0800
+Message-ID: <1558405821.25526.2.camel@mtksdaap41>
+Subject: Re: [PATCH v7 08/12] soc: mediatek: cmdq: change the type of input
+ parameter
+From: CK Hu <ck.hu@mediatek.com>
+To: Bibby Hsieh <bibby.hsieh@mediatek.com>
+Date: Tue, 21 May 2019 10:30:21 +0800
+In-Reply-To: <20190521011108.40428-9-bibby.hsieh@mediatek.com>
+References: <20190521011108.40428-1-bibby.hsieh@mediatek.com>
+ <20190521011108.40428-9-bibby.hsieh@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <d90f8ccdc1f76f9166f269eb71a14f7f@codeaurora.org>
-Content-Language: en-US
+X-TM-SNTS-SMTP: E88ADBB64ED6F6756962BB9AC0D0364B8ABFDF368B7F2FE8B55D8484F273F8A92000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_193017_531624_0F114111 
-X-CRM114-Status: GOOD (  11.36  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190520_193049_437880_34B523F6 
+X-CRM114-Status: GOOD (  15.35  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -104,30 +73,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: syadagir@codeaurora.org, ejcaruso@google.com, arnd@arndb.de,
- netdev@vger.kernel.org, ilias.apalodimas@linaro.org,
- linux-kernel@vger.kernel.org, evgreen@chromium.org, bjorn.andersson@linaro.org,
- david.brown@linaro.org, agross@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- davem@davemloft.net, cpratapa@codeaurora.org, benchan@google.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, srv_heupstream@mediatek.com,
+ Daoyuan Huang <daoyuan.huang@mediatek.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Jassi Brar <jassisinghbrar@gmail.com>,
+ linux-kernel@vger.kernel.org, Daniel Kurtz <djkurtz@chromium.org>,
+ Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>, YT
+ Shen <yt.shen@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Houlong Wei <houlong.wei@mediatek.com>,
+ Sascha Hauer <kernel@pengutronix.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Jiaguang Zhang <jiaguang.zhang@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org, ginny.chen@mediatek.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gNS8yMC8xOSA4OjMyIFBNLCBTdWJhc2ggQWJoaW5vdiBLYXNpdmlzd2FuYXRoYW4gd3JvdGU6
-Cj4+Cj4+IElmwqB5b3XCoGFyZcKgdGVsbGluZ8KgbWXCoHRoYXTCoHRoZcKgY29tbWFuZC9kYXRh
-wqBmbGFnwqByZXNpZGVzwqBhdMKgYml0Cj4+IDfCoG9mwqB0aGXCoGZpcnN0wqBieXRlLMKgScKg
-d2lsbMKgdXBkYXRlwqB0aGXCoGZpZWxkwqBtYXNrc8KgaW7CoGHCoGxhdGVyCj4+IHBhdGNowqBp
-bsKgdGhpc8Kgc2VyaWVzwqB0b8KgcmVmbGVjdMKgdGhhdC4KPj4KPiAKPiBIaWdoZXLCoG9yZGVy
-wqBiaXTCoGlzwqBDb21tYW5kwqAvwqBEYXRhLgoKU28gd2hhdCB0aGlzIG1lYW5zIGlzIHRoYXQg
-dG8gZ2V0IHRoZSBjb21tYW5kL2RhdGEgYml0IHdlIHVzZToKCglmaXJzdF9ieXRlICYgMHg4MAoK
-SWYgdGhhdCBpcyBjb3JyZWN0IEkgd2lsbCByZW1vdmUgdGhpcyBwYXRjaCBmcm9tIHRoZSBzZXJp
-ZXMgYW5kCndpbGwgdXBkYXRlIHRoZSBzdWJzZXF1ZW50IHBhdGNoZXMgc28gYml0IDcgaXMgdGhl
-IGNvbW1hbmQgYml0LApiaXQgNiBpcyByZXNlcnZlZCwgYW5kIGJpdHMgMC01IGFyZSB0aGUgcGFk
-IGxlbmd0aC4KCkkgd2lsbCBwb3N0IGEgdjIgb2YgdGhlIHNlcmllcyB3aXRoIHRoZXNlIGNoYW5n
-ZXMsIGFuZCB3aWxsCmluY29ycG9yYXRlIEJqb3JuJ3MgIlJldmlld2VkLWJ5Ii4KCgkJCQkJLUFs
-ZXgKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
-LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
-bS1rZXJuZWwK
+Hi, Bibby:
+
+On Tue, 2019-05-21 at 09:11 +0800, Bibby Hsieh wrote:
+> According to the cmdq hardware design, the subsys is u8,
+> the offset is u16 and the event id is u16.
+> This patch changes the type of subsys, offset and event id
+> to the correct type.
+
+Reviewed-by: CK Hu <ck.hu@mediatek.com>
+
+> 
+> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> ---
+>  drivers/soc/mediatek/mtk-cmdq-helper.c | 10 +++++-----
+>  include/linux/soc/mediatek/mtk-cmdq.h  | 10 +++++-----
+>  2 files changed, 10 insertions(+), 10 deletions(-)
+> 
+> diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> index 082b8978651e..7aa0517ff2f3 100644
+> --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
+> +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> @@ -136,7 +136,7 @@ static int cmdq_pkt_append_command(struct cmdq_pkt *pkt, enum cmdq_code code,
+>  	return 0;
+>  }
+>  
+> -int cmdq_pkt_write(struct cmdq_pkt *pkt, u32 subsys, u32 offset, u32 value)
+> +int cmdq_pkt_write(struct cmdq_pkt *pkt, u8 subsys, u16 offset, u32 value)
+>  {
+>  	u32 arg_a = (offset & CMDQ_ARG_A_WRITE_MASK) |
+>  		    (subsys << CMDQ_SUBSYS_SHIFT);
+> @@ -145,8 +145,8 @@ int cmdq_pkt_write(struct cmdq_pkt *pkt, u32 subsys, u32 offset, u32 value)
+>  }
+>  EXPORT_SYMBOL(cmdq_pkt_write);
+>  
+> -int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u32 subsys,
+> -			u32 offset, u32 value, u32 mask)
+> +int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u8 subsys,
+> +			u16 offset, u32 value, u32 mask)
+>  {
+>  	u32 offset_mask = offset;
+>  	int err = 0;
+> @@ -161,7 +161,7 @@ int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u32 subsys,
+>  }
+>  EXPORT_SYMBOL(cmdq_pkt_write_mask);
+>  
+> -int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u32 event)
+> +int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u16 event)
+>  {
+>  	u32 arg_b;
+>  
+> @@ -181,7 +181,7 @@ int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u32 event)
+>  }
+>  EXPORT_SYMBOL(cmdq_pkt_wfe);
+>  
+> -int cmdq_pkt_clear_event(struct cmdq_pkt *pkt, u32 event)
+> +int cmdq_pkt_clear_event(struct cmdq_pkt *pkt, u16 event)
+>  {
+>  	if (event >= CMDQ_MAX_EVENT)
+>  		return -EINVAL;
+> diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
+> index 39d813dde4b4..9618debb9ceb 100644
+> --- a/include/linux/soc/mediatek/mtk-cmdq.h
+> +++ b/include/linux/soc/mediatek/mtk-cmdq.h
+> @@ -66,7 +66,7 @@ void cmdq_pkt_destroy(struct cmdq_pkt *pkt);
+>   *
+>   * Return: 0 for success; else the error code is returned
+>   */
+> -int cmdq_pkt_write(struct cmdq_pkt *pkt, u32 subsys, u32 offset, u32 value);
+> +int cmdq_pkt_write(struct cmdq_pkt *pkt, u8 subsys, u16 offset, u32 value);
+>  
+>  /**
+>   * cmdq_pkt_write_mask() - append write command with mask to the CMDQ packet
+> @@ -78,8 +78,8 @@ int cmdq_pkt_write(struct cmdq_pkt *pkt, u32 subsys, u32 offset, u32 value);
+>   *
+>   * Return: 0 for success; else the error code is returned
+>   */
+> -int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u32 subsys,
+> -			u32 offset, u32 value, u32 mask);
+> +int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u8 subsys,
+> +			u16 offset, u32 value, u32 mask);
+>  
+>  /**
+>   * cmdq_pkt_wfe() - append wait for event command to the CMDQ packet
+> @@ -88,7 +88,7 @@ int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u32 subsys,
+>   *
+>   * Return: 0 for success; else the error code is returned
+>   */
+> -int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u32 event);
+> +int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u16 event);
+>  
+>  /**
+>   * cmdq_pkt_clear_event() - append clear event command to the CMDQ packet
+> @@ -97,7 +97,7 @@ int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u32 event);
+>   *
+>   * Return: 0 for success; else the error code is returned
+>   */
+> -int cmdq_pkt_clear_event(struct cmdq_pkt *pkt, u32 event);
+> +int cmdq_pkt_clear_event(struct cmdq_pkt *pkt, u16 event);
+>  
+>  /**
+>   * cmdq_pkt_flush_async() - trigger CMDQ to asynchronously execute the CMDQ
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
