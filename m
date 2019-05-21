@@ -2,98 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04F6C2525E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 16:43:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C82ED25292
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 16:47:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ExgC83y3QxTAodblui7awsqa0LPAqxzljCY2v5LPK+c=; b=EWfQvAWCH5HRo7
-	OR74vMqDhmsBl9UpykEsmtD9JydqY55fQHAm68vlLTMXe2nwMHcIDTRjVeGFwM8QOAtDpH/N70qf2
-	fLZPvnViK56sD6xZYbgDp8TR3FsIQkf8mCohKRSCEld3zq+UsBRxDj4hdalmp/tp2dc1K9Q44HpoE
-	t1NHrjRKjUX68N8P8Tv+jhBnGhaGHUE/+/dDh8HYOaXBz5hu07C5w4yI1yZ21asY+NAZCQ6oQOZld
-	pqEYdcWX8LBlBqwjguj1nQYY0ICBX2cMIE8+/CDNj9dkMWUH13CjQ+ObHMPB7YzViq+2CgViDXCDs
-	9vUKCRPI96VjEjgp3oIg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=80bHftH9tAWdAwk9pe/NjJMCa4BQp7uDtvHuHGE1ZZE=; b=O5N
+	14UzLZzet6499WQc2HBtcPGBvRISrQQ9po9Pa5an7wuklpXy/2nGTtltpIfrq0DblZk0G89DYPTpK
+	QUYUsv9bT+bbmDfhZpCTPKrZFiCXQvzCjezYEdjshiZOLIR+E8xZxjit4WNsVGU4ZTs0kvqdIVfe4
+	6qytpp4RlJdJD/vXmArJJWPnZ6nSCczSwHddMJp1/dj3K3TKRVDIRZmtG5KT+YSreipUQjSvOh85W
+	+uB7K3JVbr+ZE4wUHkY4WbZbyYk6ZPeEXtqXlZuZRqSVZ8+rzlHvkVXY6du1Ws0ik/nybk5bfxDen
+	omvyVRDkYC3j2M8eJhy3m2jMIPFX8qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT5yv-00070w-NG; Tue, 21 May 2019 14:43:09 +0000
-Received: from mail-eopbgr10085.outbound.protection.outlook.com ([40.107.1.85]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1hT63X-0000hp-W4; Tue, 21 May 2019 14:47:56 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT5yn-0006qE-VV
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 14:43:03 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=bAe9D7hevjHlYHPyoDMgrvMn9mfWUeel6DvzUcwfE18=;
- b=F4YwiU3QF3zbomZfR9IY+vjKBxtNsWaln1n3TkehQUE9p+SQGgnNBnYpkKkpGXYsRzW+5GS91sYZjU56Xt1usyX92gaAk9tFBYaxeOAyRJC3bVxEuegq1WzDP6IDLZHLMuQ1jfbgx4YDtCnOVQjULmUjtGFDZkjPYcE6Hf6Ff2E=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3930.eurprd04.prod.outlook.com (52.134.71.161) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.15; Tue, 21 May 2019 14:42:58 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::5835:e874:bd94:fec]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::5835:e874:bd94:fec%5]) with mapi id 15.20.1900.020; Tue, 21 May 2019
- 14:42:58 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Marc Gonzalez <marc.w.gonzalez@free.fr>, Leonard Crestez
- <leonard.crestez@nxp.com>
-Subject: RE: [PATCH V4 1/2] soc: imx: Add SCU SoC info driver support
-Thread-Topic: [PATCH V4 1/2] soc: imx: Add SCU SoC info driver support
-Thread-Index: AQHVDHRAx0Mm9bAN6USp/nK7XaFMrKZ1igmAgAAjXCA=
-Date: Tue, 21 May 2019 14:42:58 +0000
-Message-ID: <DB3PR0402MB3916EED0DD292956887E839DF5070@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1558071840-841-1-git-send-email-Anson.Huang@nxp.com>
- <AM0PR04MB6434643CA1A6807347DCAAF8EE070@AM0PR04MB6434.eurprd04.prod.outlook.com>
- <61fb2d82-67e7-ab2d-961e-78d018cf3272@free.fr>
-In-Reply-To: <61fb2d82-67e7-ab2d-961e-78d018cf3272@free.fr>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.68]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: b6168bb3-4ffe-44e2-deec-08d6ddfa9e27
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3930; 
-x-ms-traffictypediagnostic: DB3PR0402MB3930:
-x-microsoft-antispam-prvs: <DB3PR0402MB39303DD3C926656395D9CC79F5070@DB3PR0402MB3930.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:883;
-x-forefront-prvs: 0044C17179
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(376002)(396003)(346002)(39860400002)(366004)(136003)(13464003)(199004)(189003)(66946007)(76176011)(66446008)(73956011)(26005)(66556008)(64756008)(110136005)(316002)(76116006)(6636002)(66476007)(55016002)(229853002)(44832011)(14444005)(256004)(9686003)(68736007)(2906002)(99286004)(54906003)(11346002)(6506007)(476003)(14454004)(53546011)(446003)(7696005)(6436002)(186003)(71190400001)(6116002)(71200400001)(4326008)(3846002)(478600001)(53936002)(102836004)(86362001)(52536014)(74316002)(8936002)(305945005)(7736002)(33656002)(66066001)(8676002)(5660300002)(81166006)(81156014)(6246003)(25786009)(486006)(15866825006);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3930;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: Jon27ZC59QlF8oPWc1tstJgF1BSiCVvz7GSJzcHaVXeL8TRz7DD0doPdsNk+i32bj0X2xemqtgs7elrUm5/XsvlmG/vaTRjtxQyl5pwvQT009JNz+Jar5RZEy/KxKYCPaARwm+47JV33u0JxXUn9VBe43tJ5wzRsvimA1TLDcsmivn9Ff3ZbBg7wmoeqQFk0Wti/RqLv9DOhs5n8/781+4qWolZJGYuh85zLaaH7WGnvbJyiYM6ABiuII9Xa+WwZEkeu85Tg/G6DO1br5ERDplPAzi7L9LxLG502zM9oXgk44LgCN7kFbyaU8U/u1CHm2Gh9Qyc0FYFCOj8k7Zt+YYlvBWOh1zSOQuQH1V1WCtjiSAuH8Swc5w/9hgP5wKtntooNn4nytzs2w6+hSuz8LXd8Pc+xc5/yXNFsCBX4nPU=
-MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b6168bb3-4ffe-44e2-deec-08d6ddfa9e27
-X-MS-Exchange-CrossTenant-originalarrivaltime: 21 May 2019 14:42:58.3230 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3930
+ id 1hT63R-0000h5-7Z
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 14:47:50 +0000
+Received: by mail-pg1-x542.google.com with SMTP id a3so8721306pgb.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 21 May 2019 07:47:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=vWapel5oQFRL5IS9nITnTDS1CiQKS+fkgwKTVcUkRi8=;
+ b=J+wfUmDSL7gurwPNzxB20Y9csHlDX+J2lMuxHU1BjO7Ee4cmiTK3EE9XkA8tMMn42W
+ tpNPg1ZAjRJesMpVd8tltQp5G3UdZSkYd7s2iUQZnoF4ZHlXjn1NwcMWf0p+gms2GcSW
+ uOK0LiORxiKO8x2i6QVei6lCzwf/Opm9dLSkMSuxG6bWc+lYkLbmpcV9askG7wkwCGeZ
+ p+qPqk66IZYb5VzlNCh1Llg/fKpj/4lGWf/W63jm8IekkNnB+EVElP15Ay/Iz57W50SU
+ 8VulXzLuTttSDYpHHb9B4whok/Yqx9b5E1gk68sEd01REGO192+SgL/PDwIKH8M1JkcA
+ k7gw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=vWapel5oQFRL5IS9nITnTDS1CiQKS+fkgwKTVcUkRi8=;
+ b=KP8A+kbtPLu7awuCY18eY3eKKCTa05P7YU3t/XUH1dZkYewoQWFbmDcW0vauYl+NWK
+ Mne3/n0cdckfzRjfp0ps5M7aoGi3XVWILfcKE49Q9HfF+J/uR55vP/TFTJGlzJj4GfmY
+ 7dcpcvprepHIF7rWRI6Gct/LHO4ohOfD2i4uNl0NBxRN62eiIP0IU9llECHwZKc2hvow
+ u9P4KpAzkmYb8ss/dbWSnlcmMZ+MkD+vOyXLW89axfqN6kte2ZVAwP+lKO++bEhqH8LT
+ 0lbdaZds0ybjczyQKJTpi7hdzoa6ik/jP7m6tR/ALVh7HESvmrHH9Lv0MiqUEeuvlvFH
+ rEXQ==
+X-Gm-Message-State: APjAAAVcjDHorleWXrspbFsXAU+jLtyjSTC6iJkoYIdg9hDfJ1wEExIE
+ UI5oqAKeWHo/RKVy+Xc3C7I=
+X-Google-Smtp-Source: APXvYqzLKro+yl9TmaN24S/pQj0fpek+/qhlfX1j1ZWZnpe6kEvnbtW9El8eBXcB5losLDhepUyYKA==
+X-Received: by 2002:a62:304:: with SMTP id 4mr70248166pfd.186.1558450067108;
+ Tue, 21 May 2019 07:47:47 -0700 (PDT)
+Received: from localhost ([43.224.245.181])
+ by smtp.gmail.com with ESMTPSA id a7sm40112206pgj.42.2019.05.21.07.47.45
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 21 May 2019 07:47:46 -0700 (PDT)
+From: houweitao <houweitaoo@gmail.com>
+X-Google-Original-From: houweitao <houweitao@xiaomi.com>
+To: linus.walleij@linaro.org, yamada.masahiro@socionext.com,
+ a.zummo@towertech.it, alexandre.belloni@bootlin.com, baohua@kernel.org,
+ gregkh@linuxfoundation.org, jslaby@suse.com, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ linux-imx@nxp.com, davem@davemloft.net, rostedt@goodmis.org,
+ mingo@redhat.com
+Subject: [PATCH] tracing: fix typos in code and comments
+Date: Tue, 21 May 2019 22:47:40 +0800
+Message-Id: <20190521144740.22490-1-houweitao@xiaomi.com>
+X-Mailer: git-send-email 2.18.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_074302_152473_EE552661 
-X-CRM114-Status: GOOD (  15.18  )
+X-CRM114-CacheID: sfid-20190521_074749_276061_EF2D44AE 
+X-CRM114-Status: GOOD (  12.02  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.85 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (houweitaoo[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -112,77 +99,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DT <devicetree@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-rtc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-gpio@vger.kernel.org, linux-serial@vger.kernel.org,
+ sparclinux@vger.kernel.org, houweitao <houweitao@xiaomi.com>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Marc/Leonard
+fix ingore to ignore in kernel; since there are other
+mistakes can be found with "git grep ",fix all
 
-> -----Original Message-----
-> From: Marc Gonzalez [mailto:marc.w.gonzalez@free.fr]
-> Sent: Tuesday, May 21, 2019 8:34 PM
-> To: Leonard Crestez <leonard.crestez@nxp.com>; Anson Huang
-> <anson.huang@nxp.com>
-> Cc: Mark Rutland <mark.rutland@arm.com>; Rob Herring
-> <robh+dt@kernel.org>; Linux ARM <linux-arm-kernel@lists.infradead.org>;
-> DT <devicetree@vger.kernel.org>
-> Subject: Re: [PATCH V4 1/2] soc: imx: Add SCU SoC info driver support
-> 
-> On 21/05/2019 13:56, Leonard Crestez wrote:
-> 
-> > On 5/17/2019 8:49 AM, Anson Huang wrote:
-> >
-> >> +	root = of_find_node_by_path("/");
-> >> +
-> >> +	np = of_find_compatible_node(NULL, NULL, "fsl,imx-scu");
-> >
-> > It's possibly not very important for root or FW communication nodes
-> > but you should probably of_node_put those back.
-> 
-> Isn't it better/simpler to use of_root?
-> 
-> extern struct device_node *of_root;
+Signed-off-by: houweitao <houweitao@xiaomi.com>
+---
+ drivers/pinctrl/uniphier/pinctrl-uniphier-core.c | 2 +-
+ drivers/rtc/rtc-sirfsoc.c                        | 2 +-
+ drivers/tty/serial/mxs-auart.c                   | 2 +-
+ drivers/tty/serial/serial_txx9.c                 | 2 +-
+ drivers/tty/serial/sunsab.c                      | 2 +-
+ kernel/trace/trace.c                             | 2 +-
+ 6 files changed, 6 insertions(+), 6 deletions(-)
 
-You are right, I will add below changes into V5, one change is to use extern of_root
-directly, the other is to add of_put_node() after "fsl,imx-scu" is found.
-
-@@ -56,7 +56,6 @@ static int imx_scu_soc_probe(struct platform_device *pdev)
+diff --git a/drivers/pinctrl/uniphier/pinctrl-uniphier-core.c b/drivers/pinctrl/uniphier/pinctrl-uniphier-core.c
+index 57babf31e320..9f56863ed481 100644
+--- a/drivers/pinctrl/uniphier/pinctrl-uniphier-core.c
++++ b/drivers/pinctrl/uniphier/pinctrl-uniphier-core.c
+@@ -399,7 +399,7 @@ static int uniphier_conf_pin_bias_set(struct pinctrl_dev *pctldev,
+ 		}
+ 
+ 		if (arg == 0)
+-			return 0; /* configuration ingored */
++			return 0; /* configuration ignored */
+ 		break;
+ 	default:
+ 		BUG();
+diff --git a/drivers/rtc/rtc-sirfsoc.c b/drivers/rtc/rtc-sirfsoc.c
+index 9ba28d1ebd87..af1b7ba403fc 100644
+--- a/drivers/rtc/rtc-sirfsoc.c
++++ b/drivers/rtc/rtc-sirfsoc.c
+@@ -121,7 +121,7 @@ static int sirfsoc_rtc_set_alarm(struct device *dev,
+ 		rtc_status_reg = sirfsoc_rtc_readl(rtcdrv, RTC_STATUS);
+ 		if (rtc_status_reg & SIRFSOC_RTC_AL0E) {
+ 			/*
+-			 * An ongoing alarm in progress - ingore it and not
++			 * An ongoing alarm in progress - ignore it and not
+ 			 * to return EBUSY
+ 			 */
+ 			dev_info(dev, "An old alarm was set, will be replaced by a new one\n");
+diff --git a/drivers/tty/serial/mxs-auart.c b/drivers/tty/serial/mxs-auart.c
+index 4c188f4079b3..9f83a387d6ed 100644
+--- a/drivers/tty/serial/mxs-auart.c
++++ b/drivers/tty/serial/mxs-auart.c
+@@ -667,7 +667,7 @@ static void mxs_auart_rx_char(struct mxs_auart_port *s)
+ 	}
+ 
+ 	/*
+-	 * Mask off conditions which should be ingored.
++	 * Mask off conditions which should be ignored.
+ 	 */
+ 	stat &= s->port.read_status_mask;
+ 
+diff --git a/drivers/tty/serial/serial_txx9.c b/drivers/tty/serial/serial_txx9.c
+index d22ccb32aa9b..372890e3b896 100644
+--- a/drivers/tty/serial/serial_txx9.c
++++ b/drivers/tty/serial/serial_txx9.c
+@@ -314,7 +314,7 @@ receive_chars(struct uart_txx9_port *up, unsigned int *status)
+ 			}
+ 
+ 			/*
+-			 * Mask off conditions which should be ingored.
++			 * Mask off conditions which should be ignored.
+ 			 */
+ 			disr &= up->port.read_status_mask;
+ 
+diff --git a/drivers/tty/serial/sunsab.c b/drivers/tty/serial/sunsab.c
+index 72131b5e132e..daae2b0dbe11 100644
+--- a/drivers/tty/serial/sunsab.c
++++ b/drivers/tty/serial/sunsab.c
+@@ -200,7 +200,7 @@ receive_chars(struct uart_sunsab_port *up,
+ 				up->port.icount.overrun++;
+ 
+ 			/*
+-			 * Mask off conditions which should be ingored.
++			 * Mask off conditions which should be ignored.
+ 			 */
+ 			stat->sreg.isr0 &= (up->port.read_status_mask & 0xff);
+ 			stat->sreg.isr1 &= ((up->port.read_status_mask >> 8) & 0xff);
+diff --git a/kernel/trace/trace.c b/kernel/trace/trace.c
+index 2c92b3d9ea30..bfa5ab0663e7 100644
+--- a/kernel/trace/trace.c
++++ b/kernel/trace/trace.c
+@@ -8554,7 +8554,7 @@ init_tracer_tracefs(struct trace_array *tr, struct dentry *d_tracer)
+ 	ftrace_init_tracefs(tr, d_tracer);
+ }
+ 
+-static struct vfsmount *trace_automount(struct dentry *mntpt, void *ingore)
++static struct vfsmount *trace_automount(struct dentry *mntpt, void *ignore)
  {
-        struct soc_device_attribute *soc_dev_attr;
-        struct soc_device *soc_dev;
--       struct device_node *root;
-        u32 id, val;
-        int ret;
+ 	struct vfsmount *mnt;
+ 	struct file_system_type *type;
+-- 
+2.18.0
 
-@@ -72,8 +71,7 @@ static int imx_scu_soc_probe(struct platform_device *pdev)
 
-        soc_dev_attr->family = "Freescale i.MX";
-
--       root = of_find_node_by_path("/");
--       ret = of_property_read_string(root,
-+       ret = of_property_read_string(of_root,
-                                      "model",
-                                      &soc_dev_attr->machine);
-        if (ret)
-@@ -132,6 +130,8 @@ static int __init imx_scu_soc_init(void)
-        if (!np)
-                return -ENODEV;
-
-+       of_node_put(np);
-+
-        ret = platform_driver_register(&imx_scu_soc_driver);
-        if (ret)
-                return ret;
-
-thanks,
-Anson
-
-> 
-> Regards.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
