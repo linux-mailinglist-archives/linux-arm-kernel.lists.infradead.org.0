@@ -2,129 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 640AE2536F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 17:05:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0F9E253B0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 17:20:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wnr3ROdjTgkTTB0UPWVLatSWPG+gm4tbuD3Vssaihag=; b=pfECcOzPlfVtoo
-	5p/x2dUK+76Pbv/omDG0WpG1gRG3muEQlFTa4d3QQ1qKEF/GTrF/XuNLTdGNZl+IlHBpjM412DRPv
-	UQganOpTW9G6Ac+9+AM4bZNAKmkJwG+M3M+uNJrAyK8tsr1LeC9LVVKf5WaAoI7N3nfSiFAwhkz5o
-	iiTLwp9sV7Y8P58D2i2CjlOzJt8VJFGdLjJJPWidvNIxdenM1DckjxLbw8OWa+SCXLkFAUJ/RHDQj
-	nEzOWum+X4D9Ta/AYvk4MpdmpIlMAbejSru4xx4rbvYg4NQaQ7OCzJdzYVHvN7a9pqVaOmFHRb5xe
-	3cQORkDRUzJFBMaF24Zw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=2Bj1BlDgbiENzCkSrSzIxZwysPleSBbXJMmI0lrLTgI=; b=IpKY8fJ6qqKI3f
+	ecKj2aEuk3vrVdRD0pt10YLMYUKuuznFKIR/1k3WL5XvnCJVlechmNZG/V5tysWuaQf4g1XiHZizB
+	s74+K1RHSfFb2nDwIOrJvoDMvRtuXjV/u5PH8ICXA4j9MHQXvgxD3qhEI669WgaeXd7YnavpA2j8c
+	3ERmOlvl7ZQAtZyY5mWSwy+9+EbQwaPd589nNaMBAq7ZJbqUqgbtmkrYy4xlZf6iVWDSrOaEPE+IR
+	VeM0Bm6V+6+pNxfhVy00jadvZmiSUsSDZk2XUIa2oO2wvSQXHysWDBgU0SyOaUg5I/avT7NnqubyD
+	IVzt0DGEzAT2VnxkHuYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT6KX-00024v-JZ; Tue, 21 May 2019 15:05:29 +0000
+	id 1hT6Yi-0005SX-1g; Tue, 21 May 2019 15:20:08 +0000
 Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT6KO-00023k-Se
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 15:05:22 +0000
-Received: by mail-wr1-x442.google.com with SMTP id w13so8264645wru.11
+ id 1hT6YV-0005QY-TL
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 15:19:57 +0000
+Received: by mail-wr1-x442.google.com with SMTP id g12so18800084wro.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 May 2019 08:05:20 -0700 (PDT)
+ Tue, 21 May 2019 08:19:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:openpgp:autocrypt:organization
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=eJeaQpqmTrI1tGNmxY3CrSOcsSb6wdxlc9iqK0FMa/Y=;
- b=o/RnosTyL0Cx3Zxh/td2nWqjfqIbiQC6UDEFsow5E/rJp0AM5uIMVO6zUGLs85DUy7
- snHWYSpyQdzMN5TpmzRZ8maOMkOYLNQBCzSXk+nXxrRsShxZT1vtUXoREk6I3YxN8/fe
- hvy/gaNoFiMd685lo39FIX2BpYd0n5JwrTCMQDEN4uvvZLD+4wJfBd1mexMqQcaKl4qo
- lMrLzTQh61RaiS1eyqPExNDqcBpvwX3fEmQZ9804pE092STEizDDa1fDO6UlZlVtIuUV
- U6CMoPP4qLGTN2jgv3dOABsxBES4yVPWHbnOIGUmXoBDqYIiHpB86kc3NM9VHhZX938j
- 02QQ==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=6IPAsBd9aqCnJMjXkUOTpKCD1VaCTy3cgfSntX0acqU=;
+ b=W4uTbkPUsgy+wYyacFG5KBeV711U/EZ2erMd0a6GAG803PewiGEmhbAhhzHsjcy0m1
+ CsbGHRURSiZa+kz0fSOiY3OTQhFg+Kbgde6fCvinBuXVbMBJaobR/5YCUJG4/NSKBO2l
+ BnJ1HJYBnRhJFMCuAX8i8A7bePJ7di2YHuYLXsyZGxuycgM3y9wUzhcqFhThueQIrHs9
+ ZCEfekei8R7wo99oD6OrhQQaO4cZi3shl8JY7w7M0fQGDNmi1w66jyTEZM05HyD8mi6K
+ GTSMPUKplmxnnj0s+OvunZrl1qIkYeVTdBJNMdNfhb/jcFe6EejkTzIE/GLnMQNxLBsH
+ DaEg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=eJeaQpqmTrI1tGNmxY3CrSOcsSb6wdxlc9iqK0FMa/Y=;
- b=uj6qr+UA+r29AA0zqIPfqqbWPnMmmzgSoDmccH8uBjbINJO8y1zL1CKRKtZyEr4wFj
- 0NDGLOhAUw9Ia5wl0hp7ZfybOpqDRpJXhHuyYCgTOFsZMzMvwSjDzfP3CDfIrCKjeoOq
- ZSOz2+GmzQ0b7SeeE8YOzM4bIP2uaWHWnmPz4rR0E3BFxXEphenxFEUm/r2E2bEVfVUX
- az2PKEhJloQAB/iOD5V+v2JPTFwRL/kaxPzL4hebXdfdEClfg1E82Y+G2Uus36xA8XYA
- HcEcfTXpY5LXVC3rlScksbVdrZVS9vFYwERstQv5wez7cWWYya4BOx2WIc/fA22w5bSO
- dpvw==
-X-Gm-Message-State: APjAAAUEknCilCj8DKyOLd20UG923VVuF6pvIWLRVR3Ku8o9YpfNlTsk
- VHe799kuWnpbqVlMahBWGLFT1w==
-X-Google-Smtp-Source: APXvYqwHL4I/kUrnRxsNNYqmLFUNw/C5VhUy0eI8DaYGfmrZxRCu2psHcYCynl2pNvyIEoRPS+1GvA==
-X-Received: by 2002:adf:e311:: with SMTP id b17mr379687wrj.11.1558451119147;
- Tue, 21 May 2019 08:05:19 -0700 (PDT)
-Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id f2sm4231282wme.12.2019.05.21.08.05.18
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 21 May 2019 08:05:18 -0700 (PDT)
-Subject: Re: [PATCH 0/3] clk: meson: add support for Amlogic G12A
-To: jbrunet@baylibre.com
-References: <20190521150130.31684-1-narmstrong@baylibre.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=6IPAsBd9aqCnJMjXkUOTpKCD1VaCTy3cgfSntX0acqU=;
+ b=Z0SAVydkaWse3fwBZXXVrlL8arFxtdG/VglqNSVyazyOR09lLpiX7myWRQSpmFf9fe
+ P0KBq0cfKbiOYP+GEooTth0vJbR6pX4hStlWwo169dN20JeD8QcM1dC5eQ2Dl7d8GhWy
+ JiRFST4/jmtaKhG/AcL+hHOT9/CA2xTMfXyAbJD1drtpEyfwgPJU9nxR7EvBwYPYO9Ha
+ 88YL5YF+6xMQqU7VnVL71uxZlq5IUP5vnLxYNIE2ex8TK9tkKS1XUELinfjcoMfeNuD4
+ +cFmDRjvIFqBsZu2hSXmvM8yJ7GwA83gLZGLvibLw2v1/ZOY5STS+w/FpkPa5/Ncq+0O
+ IMHg==
+X-Gm-Message-State: APjAAAXs+OAx/0HAK+w9mdz8nmQeFNaGiCtJn+f+/x1XrYedUIkYtDXP
+ 4vCuzM+BCPQRqexPJSgaHv662A==
+X-Google-Smtp-Source: APXvYqzv+0iUJ8V/1uMD79siZs9BDYvq/ZwRew6+bi21TmFVB8cSfm5Z0uUKS8YoH8d3R6LTjYy+eQ==
+X-Received: by 2002:adf:c60e:: with SMTP id n14mr18774059wrg.255.1558451994318; 
+ Tue, 21 May 2019 08:19:54 -0700 (PDT)
+Received: from bender.baylibre.local
+ (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id p17sm3945677wrq.95.2019.05.21.08.19.53
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Tue, 21 May 2019 08:19:53 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- ZaTUOEkgIor5losDrePdPgE=
-Organization: Baylibre
-Message-ID: <d0f0262b-f8b9-fcfb-58e0-8083baf07ff4@baylibre.com>
-Date: Tue, 21 May 2019 17:05:18 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+To: khilman@baylibre.com
+Subject: [PATCH v3 0/3] arm64: Add initial support for Odroid-N2
+Date: Tue, 21 May 2019 17:19:49 +0200
+Message-Id: <20190521151952.2779-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <20190521150130.31684-1-narmstrong@baylibre.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_080521_035231_91A63EB9 
-X-CRM114-Status: GOOD (  18.26  )
+X-CRM114-CacheID: sfid-20190521_081955_949736_36A0E22E 
+X-CRM114-Status: GOOD (  13.20  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -149,49 +92,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 21/05/2019 17:01, Neil Armstrong wrote:
-> The Amlogic G12B SoC is very similar with the G12A SoC, sharing
-> most of the features and architecture.
-> G12B clock tree is very close, the main differences are :
-> - SYS_PLL is used for the second cluster (otherwise used fir the first on G12a)
-> - SYS_PLL1 is used for the first cluster (instead of SYS_PLL on G12a)
-> - A duplicate CPU tree is added for the second cluster
-> - G12A has additional clocks like for CSI an other components, not handled yet
-> 
-> Dependencies :
-> - Patch 1, 3 : None
-> - Patch 2 : Depends on Guillaume's Temperature sensor Clock patches at [1]
-> 
-> This patchset is a spinoff of the v2 Odroid-N2 megapatchset at [2]
-> 
-> Changes since original pathset :
-> - Added missing sys1_pll div16, cpub div16 and cpub atb/axi/ahb/trace clocks
-> - Rewrote "This patch .." in commit messages
-> 
-> [1] https://lkml.kernel.org/r/20190412100221.26740-1-glaroque@baylibre.com
-> [2] https://lkml.kernel.org/r/20190423091503.10847-1-narmstrong@baylibre.com
-> 
-> Neil Armstrong (3):
->   dt-bindings: clk: meson: add g12b periph clock controller bindings
->   clk: meson: g12a: Add support for G12B CPUB clocks
->   clk: meson: g12a: mark fclk_div3 as critical
-> 
->  .../bindings/clock/amlogic,gxbb-clkc.txt      |   1 +
->  drivers/clk/meson/g12a.c                      | 659 ++++++++++++++++++
->  drivers/clk/meson/g12a.h                      |  33 +-
->  3 files changed, 692 insertions(+), 1 deletion(-)
-> 
+This patchset adds basic support for :
+- Amlogic G12B, which is very similar to G12A
+- The HardKernel Odroid-N2 based on the S922X SoC
 
-The subject is wrong, it should be "clk: meson: add support for Amlogic G12B"
+The Amlogic G12B SoC is very similar with the G12A SoC, sharing
+most of the features and architecture, but with these differences :
+- The first CPU cluster only has 2xCortex-A53 instead of 4
+- G12B has a second cluster of 4xCortex-A73
+- Both cluster can achieve 2GHz instead of 1,8GHz for G12A
+- CPU Clock architecture is difference, thus needing a different
+  compatible to handle this slight difference
+- Supports a MIPI CSI input
+- Embeds a Mali-G52 instead of a Mali-G31, but integration is the same
 
-Neil
+Actual support is done in the same way as for the GXM support, including
+the G12A dtsi and redefining the CPU clusters.
+Unlike GXM, the first cluster is different, thus needing to remove
+the last 2 cpu nodes of the first cluster.
+
+Dependencies :
+- Patch 1, 2 : YAML rewrite of amlogic.txt bindings at [7]
+- Patch 3 : None since clock + g12b bindings has been acked
+
+Changes since v2 at [5]:
+- sent the clk patches in standalone at [6]
+- rewrote the bindings on top of the YAML rewrite at [7]
+- Added MMC, SDCard and Network support to Odroid-N2
+
+Changes since v1 at [3]:
+- Renamed the g12b cpu clocks like g12a counterparts
+- Rebased clock patches on top of Guillaume's Temperature sensor Clock patches at [4]
+- Added AO-CEC-B support to N2 DTS
+
+Changes since RFC at [1]:
+- Added bindings review tags
+- Moved the fclk_div3 CRITICAL flags to the gate
+- Removed invalid CRITICAL flags on the cpu clocks
+
+[1] https://lkml.kernel.org/r/20190327103308.25058-1-narmstrong@baylibre.com
+[2] https://lkml.kernel.org/r/20190325145914.32391-1-narmstrong@baylibre.com
+[3] https://lkml.kernel.org/r/20190404150518.30337-1-narmstrong@baylibre.com
+[4] https://lkml.kernel.org/r/20190412100221.26740-1-glaroque@baylibre.com
+[5] https://lkml.kernel.org/r/20190423091503.10847-1-narmstrong@baylibre.com
+[6] https://lkml.kernel.org/r/20190521150130.31684-1-narmstrong@baylibre.com
+[7] https://lkml.kernel.org/r/20190517152723.28518-2-robh@kernel.org
+
+Neil Armstrong (3):
+  dt-bindings: arm: amlogic: add G12B bindings
+  dt-bindings: arm: amlogic: add Odroid-N2 binding
+  arm64: dts: meson: Add minimal support for Odroid-N2
+
+ .../devicetree/bindings/arm/amlogic.yaml      |   6 +
+ arch/arm64/boot/dts/amlogic/Makefile          |   1 +
+ .../boot/dts/amlogic/meson-g12b-odroid-n2.dts | 286 ++++++++++++++++++
+ arch/arm64/boot/dts/amlogic/meson-g12b.dtsi   |  82 +++++
+ 4 files changed, 375 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
+ create mode 100644 arch/arm64/boot/dts/amlogic/meson-g12b.dtsi
+
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
