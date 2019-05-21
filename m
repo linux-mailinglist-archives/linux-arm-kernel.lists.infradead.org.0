@@ -2,83 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9843249C6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 10:08:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE3D9249D8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 10:10:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FjHXBsFDm8qtREZRDNbUQD9cZTXuVaZ/sGOy2qri9PM=; b=DU2VCYnyZ9/5Hj
-	wuypi36ajaUHIG6F0mlhu36HrWoG5OaXM89I9NntNGXeIDa3ZF1171kBm02HEYfbfaAWMIvG5/8ga
-	5xDL53iKcyKhSFz6wiR1WEGxDHCzSzz9GHdZ3ZAokMbJ6FRKyIU/TI/qCmqGCX+wCBjrhm2w34oVs
-	iSsR/C8zeQVPp3BgvN+bVtJb+KCzXdBR0sqxO83Rpz/3NOGK4Thq9WxNoPhIxX0eqi/VS3LRbqUci
-	BHMKLo/Oa4Ihqzc9RCvs61svySbfdc7WlOog6IO22UmomDr0ibGIYSXtgowshbFTll7/g+ogs0ugL
-	2KtUR9SD9RPhV6GbMWKw==;
+	List-Owner; bh=+EdiOT80VThPlo/OTW8uRGLHi0sanWAfdZ4gYrOsKmk=; b=DQUStzwa8oDRqp
+	q8h+QnRd5D8K8hiZ4DGFjvNi1a5myaZqQAtCKU5G86VHF8+UjuHgIRSNSZVgiAz+JQgLnCyVWCMDN
+	IzVd0fb0XD70lY/HcPPijQtz+9QkBe2DFkps9g2BrKZpTc4mWnvF0XTms9T2XPC/GsDcDTbpwYwg+
+	ZfG/wQoVLxlGHYDq8dGH9piDy4ZeTLokUlGw2sC0qj73Tz0NkJmsMOfatdAZvrJXZmRvK8Ne1A3j4
+	sHoBewRSjfFX5z5AwSNiegXbwFHtBHPU0fcoCzVhEw78GMMXimMOIXzKX4mB3/swKjZlSgAQFT9g7
+	xxRv7wK4Smu9Qf/S8fFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSzol-00018I-QF; Tue, 21 May 2019 08:08:15 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hSzqd-0001j2-It; Tue, 21 May 2019 08:10:11 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSzoc-00016R-3b
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 08:08:07 +0000
-Received: by mail-wr1-x441.google.com with SMTP id b18so17370794wrq.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 May 2019 01:08:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=06+DCEbyMY34D3BOjzKRvN7V1nIU5XaEGS8h9soAWyg=;
- b=jSm5ZYDHwpEZV6Lzr77c04c2MsvRIb8GM2tdOjIu3a2j2Kuvh1LWiDWnldvzLDlnBj
- HPNkQsMMobx1yQDQdatXHtT/9sX8GU5yKkLkVHTt0+p3194e/HDjg1nkNJ7XKxTEGBga
- EcdX0Gfgcbm7mFDeTcViHTODqK/m48MVMH4N3DoATpMRcUxtLdFW1jVevWos//50lGmt
- 0K2J4UrYGQVYEM9PI67EJdGFvRMoJKYo7J4Ki8Pz132sHFpC62odL2CfXsm2CARdgey7
- WOCYjTdhVfor+T3w+k4roiYmD3KjwBpH4OaDtikgsMElU8vUvadU2JYcpC3mlr3miOh4
- +NTw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=06+DCEbyMY34D3BOjzKRvN7V1nIU5XaEGS8h9soAWyg=;
- b=geh7X4yhMRGlBWo3bel31LbevO5LskRbIKebeo0bnMBV76QZ+jiG6t4M7V6bcaGo+P
- OALitfr8jMsvFZek/NOJteff5Du5TcVJKJfwyh9xC8fgCY8tXRi4SMcjufRR9kGkDS+q
- T1kOvumfjWQT6Li11wx7zIeznf1s1Z0LgawyzZgUoGTlTNJsGKgv6yCVyvaANlsNFi9g
- 7cMpfhWWcfhqVDQL3q2Dkng/rhqSLUTFE3+lA0pJRTnY7l7LsGAVFRR8h/ThzgjlFf7H
- svzYTKSBjsLuahUj+0i6kXvjfiEeO1QjiUSizki7Yrw86sZi+NCBXXd/5hyXHrdw+Dsw
- JiDg==
-X-Gm-Message-State: APjAAAXLRBWDJwRV2RCoOH2C2pZklJ3ww0xx9QQDYuDX2Oc28e/XUyJI
- zsYyKfNvkCrUpTNwWu3UzgKBP/62wz7PNEGcgRIqvw==
-X-Google-Smtp-Source: APXvYqy1XwQ/YD98w6cEQSPMGYKJYFFqtxnEz9VURWZ8UkMaYFj8x70GVpHFVifwBScAIxHO6A61uC4G2dXRZMxc1kg=
-X-Received: by 2002:adf:dd51:: with SMTP id u17mr44688507wrm.150.1558426084074; 
- Tue, 21 May 2019 01:08:04 -0700 (PDT)
+ id 1hSzqR-0001id-HK
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 08:10:00 +0000
+Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6AE0121773;
+ Tue, 21 May 2019 08:09:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1558426199;
+ bh=/004y5rsgjqXUQAztnJ6E7c2FQLI5fNa1XatRR1RBJ4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=qxt3kyP+2/0jOC5auPLGolZjJwNUYFnVqo8URgLmXqKLDdgVhmY+QfZjeNNl0XxHe
+ Zpu0RScCf2gxmWEwnOoSdsAiS5q7wjdz/CMomlSBpsbFA7ZsuRVZcwhotSgBnGCVKc
+ 4uH4rYcfD4GNrtql+4Hh/IXt0fxznh2x7NfGHuts=
+Date: Tue, 21 May 2019 16:09:01 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Anson Huang <anson.huang@nxp.com>
+Subject: Re: [PATCH] arm64: dts: imx8qxp: Add gpio alias
+Message-ID: <20190521080900.GC15856@dragon>
+References: <1557809536-749-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
-References: <20190520194353.24445-1-martin.blumenstingl@googlemail.com>
- <20190520194353.24445-3-martin.blumenstingl@googlemail.com>
-In-Reply-To: <20190520194353.24445-3-martin.blumenstingl@googlemail.com>
-From: Maxime Jourdan <mjourdan@baylibre.com>
-Date: Tue, 21 May 2019 10:07:53 +0200
-Message-ID: <CAMO6naw0Fe9g4pTODFs8TfcWBWO8jdf2EOB2ZAhyebqmfMWg9w@mail.gmail.com>
-Subject: Re: [PATCH v2 2/5] soc: amlogic: canvas: add support for Meson8,
- Meson8b and Meson8m2
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Content-Disposition: inline
+In-Reply-To: <1557809536-749-1-git-send-email-Anson.Huang@nxp.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_010806_283481_807D3838 
-X-CRM114-Status: UNSURE (   7.77  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190521_010959_584341_0C2B0A41 
+X-CRM114-Status: GOOD (  13.78  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -90,20 +76,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Kevin Hilman <khilman@baylibre.com>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ Aisheng Dong <aisheng.dong@nxp.com>, Peng Fan <peng.fan@nxp.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 20, 2019 at 9:44 PM Martin Blumenstingl
-<martin.blumenstingl@googlemail.com> wrote:
->
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Reviewed-by: Maxime Jourdan <mjourdan@baylibre.com>
+On Tue, May 14, 2019 at 04:57:17AM +0000, Anson Huang wrote:
+> Add i.MX8QXP GPIO alias for kernel GPIO driver usage.
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+>  arch/arm64/boot/dts/freescale/imx8qxp.dtsi | 8 ++++++++
+>  1 file changed, 8 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
+> index b17c22e..923705e 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
+> @@ -22,6 +22,14 @@
+>  		mmc2 = &usdhc3;
+>  		serial0 = &adma_lpuart0;
+>  		mu1 = &lsio_mu1;
+> +		gpio0 = &lsio_gpio0;
+
+Okay, it's already out of alphabetical order, but let's not make it
+worse.
+
+Shawn
+
+> +		gpio1 = &lsio_gpio1;
+> +		gpio2 = &lsio_gpio2;
+> +		gpio3 = &lsio_gpio3;
+> +		gpio4 = &lsio_gpio4;
+> +		gpio5 = &lsio_gpio5;
+> +		gpio6 = &lsio_gpio6;
+> +		gpio7 = &lsio_gpio7;
+>  	};
+>  
+>  	cpus {
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
