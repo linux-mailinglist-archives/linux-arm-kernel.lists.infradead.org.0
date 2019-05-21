@@ -2,79 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE7C125A23
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 23:44:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC5F125A3B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 00:06:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:References:
-	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fa7EeEwFSKVmfXsJkE7v4eJNaNUm6sKvywDSr3Rkf6M=; b=pxUqOtWA/uNs6L
-	UhtzFXzg7UpWj1lXgsWmVOOBe4/PBQvNzqQAfM3X9P7PliU6imZyruUHD/2fUuulDhKf/Qdw16Z0r
-	FQT8XmYIvmTkn3pr520OpCxYc9lpLLF9oiY3L1GeeExRVAyaseatop7xqzDogU0NJwkAYgk+DaW2R
-	dt/rgsRjZ1nOcDTZUyDGsl2IgrlnjwaqGVKV0ChH+2gBCAtQYx8jKFRWTX7zHTKYfK4gxzUBfvDa/
-	QFTLcuw8v/uBeG3rvSAvS5pickhojhq0yNklceocStZv3YOXIgcsA5lQtWu//BpteS2ZJ1xeJdwm9
-	aMs90gJuZXtFdsyXkDNw==;
+	List-Owner; bh=3bHEZT9JJ2AWyYOM7NO/ZEKudQ4jH324H8MjdbPu5yc=; b=Kd+kWvFMJKMxb0
+	j4xyBDLHzEm3fPb9Aan/nrcHfq3h6dedEfU4H6Hu5pqLRl2kJTqlWaMVeBdYrv1zZG0I4SG16kXVO
+	bD68cH56vexNCq8gVQVChsako7q0TAUuq1zd0KgU+s22jhk4pOEnQo6A4ZiFs1go8stIYYI/g8oOt
+	2fJ/35gflHX+AbeMRyZaxwUN62XZsdQnPMSFm+ynHdblfvhEH7MWi/inXkT7q6DltkXQel3a0HGHm
+	+fIxqF07jybPMLI6s2K/eTqSjoIP8SLm0ah2slj0eO83sxXyGEZVMiPNuX43iW+g1ON4KZBpunErg
+	2IfL6tw07F5QMwXqEdsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTCYP-0007VE-51; Tue, 21 May 2019 21:44:13 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
+	id 1hTCtn-0006Yy-1N; Tue, 21 May 2019 22:06:19 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTCYG-0007Uc-PY; Tue, 21 May 2019 21:44:06 +0000
-Received: from oxbaltgw36.schlund.de ([172.19.246.44]) by
- mrelayeu.kundenserver.de (mreue109 [213.165.67.113]) with ESMTPSA (Nemesis)
- id 1M3UhQ-1hTkmN1yTK-000dQZ; Tue, 21 May 2019 23:43:49 +0200
-Date: Tue, 21 May 2019 23:43:46 +0200 (CEST)
-From: Stefan Wahren <stefan.wahren@i2se.com>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
- Scott Branden <sbranden@broadcom.com>,
- bcm-kernel-feedback-list@broadcom.com, Eric Anholt <eric@anholt.net>
-Message-ID: <1599901940.259900.1558475026379@email.ionos.de>
-In-Reply-To: <a142b72b828a798610d885d81189dd21b1870d78.camel@suse.de>
-References: <20190520104708.11980-1-nsaenzjulienne@suse.de>
- <20190520104708.11980-4-nsaenzjulienne@suse.de>
- <ebc78880-418f-f507-021c-41295113e041@i2se.com>
- <6383b357-3f7e-f031-f59f-61c598e44763@i2se.com>
- <a142b72b828a798610d885d81189dd21b1870d78.camel@suse.de>
-Subject: Re: [RFC v2 3/5] clk: bcm2835: use firmware interface to update pllb
+ id 1hTCte-0006Xj-NN
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 22:06:12 +0000
+Received: by mail-pg1-x544.google.com with SMTP id z3so181259pgp.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 21 May 2019 15:06:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=E1DrzXtGDj3hfWXv7sO+LUDSb752frj/M4xDQFuIKdI=;
+ b=ZLPsZLBQfDkyWlMuSQTbZZPvBJjcaZBc5GER2rRMijZOokHJ8ij+fr/bcT9/7dIdwb
+ 1CFYM1rB+bmDU7tm+jgEoq12FdcKNURyTwvdtiHep+LL3Xo6UxzSyCjVo/6qm5NuNPHh
+ LxP/IBMmJY9UGDj19FA28SdZ9JsowKVLe5C+A=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=E1DrzXtGDj3hfWXv7sO+LUDSb752frj/M4xDQFuIKdI=;
+ b=WBL51xMdL+9cuvxfLqO155TvxSpnItEi46725Z5YQelfAUHUv0Y9X6ZFsOPCEWl65g
+ TmPr0fpReIr6mL0bnRZDaOwjyKugnpfL7dm+7DtlwvBVStaj0WcBnXBQSIrY1AFfQ+cz
+ xZOmOE01avre2GvzygNu/zP5S3xAFL484PiFKJfnMfDW2Cf6uTMfOR1LNQJf6/nYNaac
+ /DYXV8upCXtQ2bIp+V1WnqGfhFf6yWmIUm3Gxri7Z74ON29cTWSLpJ0EsCJ4BzDOG6m3
+ bPWazIsCChMaxomVQWic+K3pCCM5bJWWKVNzvyZM4g6s8OJIxhnoXqWzgLdQom4HWOEu
+ Fisw==
+X-Gm-Message-State: APjAAAXXQnC+qPStABjusuA2EJQxZDpQ2JE3nt90+/BDGtdN8802u2NU
+ 27J7wp1uRlE5UbXg1VDforN71A==
+X-Google-Smtp-Source: APXvYqzQz7ZxAp6T6WnMzgzo44oFO/MH3Fqa55WCIqK5Qkpj/XDsVrW00b0XB9chQs/5VLWCkFpbsQ==
+X-Received: by 2002:a63:2c4a:: with SMTP id s71mr68633329pgs.343.1558476369987; 
+ Tue, 21 May 2019 15:06:09 -0700 (PDT)
+Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
+ by smtp.gmail.com with ESMTPSA id f17sm22771652pgv.16.2019.05.21.15.06.09
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 21 May 2019 15:06:09 -0700 (PDT)
+Date: Tue, 21 May 2019 15:06:08 -0700
+From: Matthias Kaehlcke <mka@chromium.org>
+To: Douglas Anderson <dianders@chromium.org>
+Subject: Re: [PATCH 2/2] ARM: dts: rockchip: Add pin names for
+ rk3288-veyron-jerry
+Message-ID: <20190521220608.GK40515@google.com>
+References: <20190521203215.234898-1-dianders@chromium.org>
+ <20190521203215.234898-2-dianders@chromium.org>
 MIME-Version: 1.0
-X-Priority: 3
-Importance: Medium
-X-Mailer: Open-Xchange Mailer v7.8.4-Rev55
-X-Originating-Client: open-xchange-appsuite
-X-Provags-ID: V03:K1:Isy5OlYsYGu9nrdhnWYleYJBAsXAYF+kjVDhfkkBJjpqzq5ZCJ8
- wBrxVrIo4++MiWGXASEOqxb4cpbPuhfyfcpg6XJSh/BMfGi9o7z1fQ0Khes7Q8QfhAon+iu
- Ph83K39Jzsa5+H1HvaMbZwfikr4aq0l8KiaHIfpCPI89Hw0fan5EAleIIX9/KTIpjv3F0xR
- FCPtxd9TpiKaJ0UONo/RA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:nY8tA70RVBM=:mOsfgkfjoAIx80KhU342a4
- yiIrkI7pWZ99A/mCEoZVH+0C1zJXeM6uoYYhGJL/sfzZ7y4GMmdrn4Ziqsp9VnDV9PqPnBK9e
- NCeT5AAIqT/jjszs8m5KyTcEaCw5gsYVlG1g/ghx60arMlkVkvQXFvSk1KW5PIw2OB5ckhfsv
- KMDOIy9RwM5XruZnfBjbWQxqfkRRo1xcsG6+V2rAu1plD+yIXDZnS+eE7qBI7eedU1FR605eZ
- 4Zh72Z21kH7qhvv1TDKzV2wdka9dwqZ0OE5ApKjURmgSmLmbpPxBCqSYokQaaW8hZumhdaFro
- jljEXtF9nm/yaRjMTzkBFXceEfpL5hLRD6y+fd8kXRqazon7pQJYtqc/uU/T6z8dV3w8dMk9L
- u577Sz4xJaLpsHKGXktJJluopiUfX7DZAN41+2AvA+381FNI7KBqbU++3cGOnh58rCfiOem4p
- rPwXFPDjxuhRpfVUFt/dWUjfx7Xe4KGXYH8TA8c6HFckaal0uXfX+Let7872KVAyugzccDPcw
- BS/pwCCxGBTsJUVGUoxS55Pp1znnfuNaI6OLCxjThm3sPnt/dgWDRiaLSmKmYBK/66Sc91ecm
- iYdCy+iz+yCETge8pBVxUWrwwC3DJuCegXJSS2Q6tHFLadvSZj9WSxDeOu2vR2Na7yPXO72hI
- QpJL3EsCKUTKtU/FyqNjV5SUtgMw+Imt5JxEDmvRjB3vq4QfiTLnFUjOqFwaa3I+7pm7/p0Sn
- Rvro3OibNuNCeeNH8n65x7Ag+QRfPDGpGbSX/C1+U9r7gDL/IrLNTF+tbj8=
+Content-Disposition: inline
+In-Reply-To: <20190521203215.234898-2-dianders@chromium.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_144405_130323_A01358CE 
-X-CRM114-Status: GOOD (  30.26  )
-X-Spam-Score: -0.3 (/)
+X-CRM114-CacheID: sfid-20190521_150610_784467_2455ED23 
+X-CRM114-Status: GOOD (  11.34  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
- -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.10 listed in wl.mailspike.net]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -86,81 +97,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, ptesarik@suse.com, sboyd@kernel.org,
- viresh.kumar@linaro.org, mturquette@baylibre.com, linux-pm@vger.kernel.org,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
- linux-rpi-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
- mbrugger@suse.de, ssuloev@orpaltech.com
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, briannorris@chromium.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, ryandcase@chromium.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-> Nicolas Saenz Julienne <nsaenzjulienne@suse.de> hat am 21. Mai 2019 um 17:47 geschrieben:
+On Tue, May 21, 2019 at 01:32:15PM -0700, Douglas Anderson wrote:
+> This is like the same change for rk3288-veyron-minnie.  See that patch
+> for more details.
 > 
-> 
-> Hi Stefan, thanks for your comments!
-> 
-> On Tue, 2019-05-21 at 14:40 +0200, Stefan Wahren wrote:
-> > Hi Nicolas,
-> > 
-> > On 20.05.19 14:11, Stefan Wahren wrote:
-> > > Hi Nicolas,
-> > > 
-> > > the following comments applies only in case Eric is fine with the whole
-> > > approach.
-> > > 
-> > > On 20.05.19 12:47, Nicolas Saenz Julienne wrote:
-> > > > Raspberry Pi's firmware, which runs in a dedicated processor, keeps
-> > > maybe we should clarify that the firmware is running in the VPU
-> > > > track of the board's temperature and voltage. It's resposible for
-> > > > scaling the CPU frequency whenever it deems the device reached an unsafe
-> > > > state. On top of that the firmware provides an interface which allows
-> > > > Linux to to query the clock's state or change it's frequency.
-> > > I think this requires a separate update of the devicetree binding.
-> > > > Being the sole user of the bcm2835 clock driver, this integrates the
-> > > > firmware interface into the clock driver and adds a first user: the CPU
-> > > > pll, also known as 'pllb'.
-> > > Please verify that the kernel still works (and this clock driver probe)
-> > > under the following conditions:
-> > > 
-> > > - CONFIG_RASPBERRYPI_FIRMWARE=n
-> > > - CONFIG_RASPBERRYPI_FIRMWARE=m
-> > > - older DTBs without patch #1
-> > i thought about this and the case this driver would return
-> > -EPROBE_DEFER. The clock driver is too essential for doing such a thing.
-> > So i think the best solution would be to move these changes into a
-> > separate driver which should be register by the clock driver (similiar
-> > to vchiq). This also avoid the need of a new device tree binding.
-> 
-> I understand your concerns.
-> 
-> Wouldn't you prefer registering the device trough the device tree? I'd go with
-> the same approach as the firmware touchscreen driver, which is registered after
-> the firmware's probe trough dt's 'simple-bus'. That said, it's not a strongly
-> held opinion, I'm happy with whatever solution as long as it works.
+> Signed-off-by: Douglas Anderson <dianders@chromium.org>
 
-A devicetree binding always introduce some kind of inflexibility. In case someone finds a better solution later things can get really messy. A recent example is the clock handling for i2c-bcm2835.
-
-> 
-> I get from your comments that you'd like the register based version of 'pllb'
-> and 'pllb_arm' to be loaded if for some reason the firmware isn't available. Is
-> that right? 
-
-This wasn't my intention. I would prefer a simple approch here (no handover). 
-
-> The main problem I see with this is the duplication of 'pllb' and
-> 'pllb_arm'. Both drivers will create the same clock device through different
-> interfaces. Any suggestions on how to deal with that? If not I can simply
-> remove 'pllb' and 'pllb_arm' from clk-bcm2835.c.
-
-Yes. So even if this driver is disabled, there shouldn't be a regression. Or did i miss something?
-
-> 
-> Regards,
-> Nicolas
->
+Reviewed-by: Matthias Kaehlcke <mka@chromium.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
