@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94B0925532
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 18:14:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF29F25546
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 18:15:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,28 +11,28 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=UwJ+kQZ044aJocvOM79P1BGBZ4EGC5hYsPxiUcel7X8=; b=NOiInMOYkTEz2Yzh0FSfAekLJm
-	AdtcDE+N6zgmOywfZ6uaLy5h7z1v3UM2J0llekGXANIQhWYY0y9yuvcbfvo3fdQxoDNnq6Vq+fd9L
-	ZeSkdtfjJtJl363mwRCLQBh0W8CXmtj3JwkYwm8mVAhST9+/1ua6tadsxvHlXSsLZNbAG63f6spuE
-	jcMCSNBmIsi3chRfZBTFhdYtFWLrvJ8AUDrog/jkXBDBxMbIDlyTm9xfKpSzYGgdZEsAA//5c/tI3
-	02EFdGyq0hmP+9vxRyiGp6LmI3fvZ/3uD3TxVhZRPWlzPc6dg3AdwZju0hZvjask6QItPeJoaTKrd
-	GI1MZMlA==;
+	bh=+oljWGi4LHQp3eMHOz3eNjjknrFdqBce+AHybLYwOh4=; b=IOIAF62KEqmmhX64QZcx+5iC4Q
+	G6iejhrRLITUBDm9JMZVsfgCXitfx0WSJ5yG28Gj8/XXyZd3TvF4G+oFEXcTF7Ik+QHtmWG5fLtEB
+	F3t/bZRU6kSsLCfId9eSnLh5zdMhJaVnOjFKT/IC/weM1bLjLpAmSRQN+jeu04VRTfNDE199AOkK4
+	N+kR9kBiTiSsmYc1bjAalUW2W1czViJNnSydQOU0yvXpIffE1JDsP4JzzgiuNnZdywsrfsON4pviO
+	LlySkADBvxWpgerfrRIITX+C8Az1kj22TdBgDCYlKuh7Sg7Ajt0IEgRoBLIItf326vr7As9fHD7ds
+	lu65NLoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT7PR-0000Gw-0Z; Tue, 21 May 2019 16:14:37 +0000
+	id 1hT7Px-0000ol-1M; Tue, 21 May 2019 16:15:09 +0000
 Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT7PC-00007D-1n
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 16:14:25 +0000
+ id 1hT7PK-0000IY-Go
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 16:14:37 +0000
 Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id 8305D61196; Tue, 21 May 2019 16:14:13 +0000 (UTC)
+ id E5DE7619D0; Tue, 21 May 2019 16:14:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1558455261;
- bh=aGKLQAv1Wqo3iK9as+fTnW2wvo10dYipLbiZ+tTw6Qw=;
+ s=default; t=1558455270;
+ bh=zK9RPyifG7tYABiCXCNew7jEdoS+xD1s/QJqmXUeVFQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=oARVvnZ+3vtonUFiDMy4gtw3X2hapr0ALgRwvCgt2KtQ3IqEC4lydEmS2HerwJ7rr
- ViJS5wOHPeVVj8hIFH6k8pyVL3mZXZi8Gh5el4AfFNuaII768SW+aE02hg2L+lAY3w
- xuws7KSnRhZ61FyLBtC71xEOZOBUi33kVc/fALQU=
+ b=QmZyLJRjO/hv3Y3j9Hb8FuwX4w5Z6sGheQowso5BkOO+FHNDfGuDEF7mVQK3+lTSA
+ 8P0X2tbw80v9mtmEL5oDobXlsbX6otteWflKzLJ0kKP3Rqwr5DAGZTU9cvrA7OS8y9
+ h/OR1vtwCwm6Xr3FV96y07a9Ig4rnDOvLJef7VrY=
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
  pdx-caf-mail.web.codeaurora.org
 X-Spam-Level: 
@@ -44,32 +44,32 @@ Received: from jcrouse1-lnx.qualcomm.com (i-global254.qualcomm.com
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
  (Authenticated sender: jcrouse@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id E5A3D60DB6;
- Tue, 21 May 2019 16:14:10 +0000 (UTC)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 72CBE611FD;
+ Tue, 21 May 2019 16:14:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1558455252;
- bh=aGKLQAv1Wqo3iK9as+fTnW2wvo10dYipLbiZ+tTw6Qw=;
+ s=default; t=1558455254;
+ bh=zK9RPyifG7tYABiCXCNew7jEdoS+xD1s/QJqmXUeVFQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=XbU4KG7BYVeqP+pX8713MzxW2ReuMEqPxBK8OCaomYnCqk8nnntMi+KsdEGJmYd5g
- dsnmVx8AfWokWZKPswurOQCdDIMEfd/ixPvupQlqrlcnErZFxfEY7224yQWRsaXXcN
- CbzeGwNUrHrmrp5uZJc7OAE1Wn8ubV85ZOddO/Cw=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org E5A3D60DB6
+ b=mXMnu7s7OS2yYC7kXkaX4OfK91tM8UiixaXldIlpG2jWomtp9uFSzql42VFarFd2V
+ gta1zUYRoOFrjISUnygdOxpoSdgGVNLxTd86kNPXO5yZXQIzPcVICk175T+hUZM1tt
+ PNN8fEhHYtuYfU5TlW+MJXxUAIV7YysLb7ZFr6ts=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 72CBE611FD
 Authentication-Results: pdx-caf-mail.web.codeaurora.org;
  dmarc=none (p=none dis=none) header.from=codeaurora.org
 Authentication-Results: pdx-caf-mail.web.codeaurora.org;
  spf=none smtp.mailfrom=jcrouse@codeaurora.org
 From: Jordan Crouse <jcrouse@codeaurora.org>
 To: freedreno@lists.freedesktop.org
-Subject: [PATCH v2 01/15] iommu/arm-smmu: Allow IOMMU enabled devices to skip
- DMA domains
-Date: Tue, 21 May 2019 10:13:49 -0600
-Message-Id: <1558455243-32746-2-git-send-email-jcrouse@codeaurora.org>
+Subject: [PATCH v2 03/15] iommu/arm-smmu: Add split pagetable support for
+ arm-smmu-v2
+Date: Tue, 21 May 2019 10:13:51 -0600
+Message-Id: <1558455243-32746-4-git-send-email-jcrouse@codeaurora.org>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1558455243-32746-1-git-send-email-jcrouse@codeaurora.org>
 References: <1558455243-32746-1-git-send-email-jcrouse@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_091422_425988_B3D949D9 
-X-CRM114-Status: GOOD (  16.82  )
+X-CRM114-CacheID: sfid-20190521_091430_963946_9ACC8F03 
+X-CRM114-Status: GOOD (  22.23  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -108,156 +108,394 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Allow IOMMU enabled devices specified on an opt-in list to create a
-default identity domain for a new IOMMU group and bypass the DMA
-domain created by the IOMMU core. This allows the group to be properly
-set up but otherwise skips touching the hardware until the client
-device attaches a unmanaged domain of its own.
+Add support for a split pagetable (TTBR0/TTBR1) scheme for arm-smmu-v2.
+If split pagetables are enabled, create a pagetable for TTBR1 and set
+up the sign extension bit so that all IOVAs with that bit set are mapped
+and translated from the TTBR1 pagetable.
 
 Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
 ---
 
- drivers/iommu/arm-smmu.c | 42 ++++++++++++++++++++++++++++++++++++++++++
- drivers/iommu/iommu.c    | 29 +++++++++++++++++++++++------
- include/linux/iommu.h    |  3 +++
- 3 files changed, 68 insertions(+), 6 deletions(-)
+ drivers/iommu/arm-smmu-regs.h  |  19 +++++
+ drivers/iommu/arm-smmu.c       | 179 ++++++++++++++++++++++++++++++++++++++---
+ drivers/iommu/io-pgtable-arm.c |   3 +-
+ 3 files changed, 186 insertions(+), 15 deletions(-)
 
+diff --git a/drivers/iommu/arm-smmu-regs.h b/drivers/iommu/arm-smmu-regs.h
+index e9132a9..23f27c2 100644
+--- a/drivers/iommu/arm-smmu-regs.h
++++ b/drivers/iommu/arm-smmu-regs.h
+@@ -195,7 +195,26 @@ enum arm_smmu_s2cr_privcfg {
+ #define RESUME_RETRY			(0 << 0)
+ #define RESUME_TERMINATE		(1 << 0)
+ 
++#define TTBCR_EPD1			(1 << 23)
++#define TTBCR_T0SZ_SHIFT		0
++#define TTBCR_T1SZ_SHIFT		16
++#define TTBCR_IRGN1_SHIFT		24
++#define TTBCR_ORGN1_SHIFT		26
++#define TTBCR_RGN_WBWA			1
++#define TTBCR_SH1_SHIFT			28
++#define TTBCR_SH_IS			3
++
++#define TTBCR_TG1_16K			(1 << 30)
++#define TTBCR_TG1_4K			(2 << 30)
++#define TTBCR_TG1_64K			(3 << 30)
++
+ #define TTBCR2_SEP_SHIFT		15
++#define TTBCR2_SEP_31			(0x0 << TTBCR2_SEP_SHIFT)
++#define TTBCR2_SEP_35			(0x1 << TTBCR2_SEP_SHIFT)
++#define TTBCR2_SEP_39			(0x2 << TTBCR2_SEP_SHIFT)
++#define TTBCR2_SEP_41			(0x3 << TTBCR2_SEP_SHIFT)
++#define TTBCR2_SEP_43			(0x4 << TTBCR2_SEP_SHIFT)
++#define TTBCR2_SEP_47			(0x5 << TTBCR2_SEP_SHIFT)
+ #define TTBCR2_SEP_UPSTREAM		(0x7 << TTBCR2_SEP_SHIFT)
+ #define TTBCR2_AS			(1 << 4)
+ 
 diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-index 5e54cc0..a795ada 100644
+index a795ada..e09c0e6 100644
 --- a/drivers/iommu/arm-smmu.c
 +++ b/drivers/iommu/arm-smmu.c
-@@ -1235,6 +1235,35 @@ static int arm_smmu_domain_add_master(struct arm_smmu_domain *smmu_domain,
- 	return 0;
+@@ -152,6 +152,7 @@ struct arm_smmu_cb {
+ 	u32				tcr[2];
+ 	u32				mair[2];
+ 	struct arm_smmu_cfg		*cfg;
++	unsigned long			split_table_mask;
+ };
+ 
+ struct arm_smmu_master_cfg {
+@@ -253,13 +254,14 @@ enum arm_smmu_domain_stage {
+ 
+ struct arm_smmu_domain {
+ 	struct arm_smmu_device		*smmu;
+-	struct io_pgtable_ops		*pgtbl_ops;
++	struct io_pgtable_ops		*pgtbl_ops[2];
+ 	const struct iommu_gather_ops	*tlb_ops;
+ 	struct arm_smmu_cfg		cfg;
+ 	enum arm_smmu_domain_stage	stage;
+ 	bool				non_strict;
+ 	struct mutex			init_mutex; /* Protects smmu pointer */
+ 	spinlock_t			cb_lock; /* Serialises ATS1* ops and TLB syncs */
++	u32 attributes;
+ 	struct iommu_domain		domain;
+ };
+ 
+@@ -621,6 +623,85 @@ static irqreturn_t arm_smmu_global_fault(int irq, void *dev)
+ 	return IRQ_HANDLED;
  }
  
-+struct arm_smmu_client_match_data {
-+	bool use_identity_domain;
-+};
-+
-+static const struct arm_smmu_client_match_data qcom_adreno = {
-+	.use_identity_domain = true,
-+};
-+
-+static const struct arm_smmu_client_match_data qcom_mdss = {
-+	.use_identity_domain = true,
-+};
-+
-+static const struct of_device_id arm_smmu_client_of_match[] = {
-+	{ .compatible = "qcom,adreno", .data = &qcom_adreno },
-+	{ .compatible = "qcom,mdp4", .data = &qcom_mdss },
-+	{ .compatible = "qcom,mdss", .data = &qcom_mdss },
-+	{ .compatible = "qcom,sdm845-mdss", .data = &qcom_mdss },
-+	{},
-+};
-+
-+static const struct arm_smmu_client_match_data *
-+arm_smmu_client_data(struct device *dev)
++/* Adjust the context bank settings to support TTBR1 */
++static void arm_smmu_init_ttbr1(struct arm_smmu_domain *smmu_domain,
++		struct io_pgtable_cfg *pgtbl_cfg)
 +{
-+	const struct of_device_id *match =
-+		of_match_device(arm_smmu_client_of_match, dev);
++	struct arm_smmu_device *smmu = smmu_domain->smmu;
++	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
++	struct arm_smmu_cb *cb = &smmu_domain->smmu->cbs[cfg->cbndx];
++	int pgsize = 1 << __ffs(pgtbl_cfg->pgsize_bitmap);
 +
-+	return match ? match->data : NULL;
-+}
++	/* Enable speculative walks through the TTBR1 */
++	cb->tcr[0] &= ~TTBCR_EPD1;
 +
- static int arm_smmu_attach_dev(struct iommu_domain *domain, struct device *dev)
- {
- 	int ret;
-@@ -1552,6 +1581,7 @@ static struct iommu_group *arm_smmu_device_group(struct device *dev)
- {
- 	struct iommu_fwspec *fwspec = dev_iommu_fwspec_get(dev);
- 	struct arm_smmu_device *smmu = fwspec_smmu(fwspec);
-+	const struct arm_smmu_client_match_data *client;
- 	struct iommu_group *group = NULL;
- 	int i, idx;
- 
-@@ -1573,6 +1603,18 @@ static struct iommu_group *arm_smmu_device_group(struct device *dev)
- 	else
- 		group = generic_device_group(dev);
- 
-+	client = arm_smmu_client_data(dev);
++	cb->tcr[0] |= TTBCR_SH_IS << TTBCR_SH1_SHIFT;
++	cb->tcr[0] |= TTBCR_RGN_WBWA << TTBCR_IRGN1_SHIFT;
++	cb->tcr[0] |= TTBCR_RGN_WBWA << TTBCR_ORGN1_SHIFT;
++
++	switch (pgsize) {
++	case SZ_4K:
++		cb->tcr[0] |= TTBCR_TG1_4K;
++		break;
++	case SZ_16K:
++		cb->tcr[0] |= TTBCR_TG1_16K;
++		break;
++	case SZ_64K:
++		cb->tcr[0] |= TTBCR_TG1_64K;
++		break;
++	}
 +
 +	/*
-+	 * If the client chooses to bypass the dma domain, create a identity
-+	 * domain as a default placeholder. This will give the device a
-+	 * default domain but skip DMA operations and not consume a context
-+	 * bank
++	 * Outside of the special 49 bit UBS case that has a dedicated sign
++	 * extension bit, setting the SEP for any other va_size will force us to
++	 * shrink the size of the T0/T1 regions by one bit to accommodate the
++	 * SEP
 +	 */
-+	if (client && client->no_dma_domain)
-+		iommu_group_set_default_domain(group, dev,
-+			IOMMU_DOMAIN_IDENTITY);
++	if (smmu->va_size != 48) {
++		/* Replace the T0 size */
++		cb->tcr[0] &= ~(0x3f << TTBCR_T0SZ_SHIFT);
++		cb->tcr[0] |= (64ULL - smmu->va_size - 1) << TTBCR_T0SZ_SHIFT;
++		/* Set the T1 size */
++		cb->tcr[0] |= (64ULL - smmu->va_size - 1) << TTBCR_T1SZ_SHIFT;
++	} else {
++		/* Set the T1 size to the full available UBS */
++		cb->tcr[0] |= (64ULL - smmu->va_size) << TTBCR_T1SZ_SHIFT;
++	}
 +
- 	return group;
- }
- 
-diff --git a/drivers/iommu/iommu.c b/drivers/iommu/iommu.c
-index 67ee662..af3e1ed 100644
---- a/drivers/iommu/iommu.c
-+++ b/drivers/iommu/iommu.c
-@@ -1062,6 +1062,24 @@ struct iommu_group *fsl_mc_device_group(struct device *dev)
- 	return group;
- }
- 
-+struct iommu_domain *iommu_group_set_default_domain(struct iommu_group *group,
-+		struct device *dev, unsigned int type)
-+{
-+	struct iommu_domain *dom;
++	/* Clear the existing SEP configuration */
++	cb->tcr[1] &= ~TTBCR2_SEP_UPSTREAM;
 +
-+	dom = __iommu_domain_alloc(dev->bus, type);
-+	if (!dom)
-+		return NULL;
++	/* Set up the sign extend bit */
++	switch (smmu->va_size) {
++	case 32:
++		cb->tcr[1] |= TTBCR2_SEP_31;
++		cb->split_table_mask = (1UL << 31);
++		break;
++	case 36:
++		cb->tcr[1] |= TTBCR2_SEP_35;
++		cb->split_table_mask = (1UL << 35);
++		break;
++	case 40:
++		cb->tcr[1] |= TTBCR2_SEP_39;
++		cb->split_table_mask = (1UL << 39);
++		break;
++	case 42:
++		cb->tcr[1] |= TTBCR2_SEP_41;
++		cb->split_table_mask = (1UL << 41);
++		break;
++	case 44:
++		cb->tcr[1] |= TTBCR2_SEP_43;
++		cb->split_table_mask = (1UL << 43);
++		break;
++	case 48:
++		cb->tcr[1] |= TTBCR2_SEP_UPSTREAM;
++		cb->split_table_mask = (1UL << 48);
++	}
 +
-+	/* FIXME: Error if the default domain is already set? */
-+	group->default_domain = dom;
-+	if (!group->domain)
-+		group->domain = dom;
-+
-+	return dom;
++	cb->ttbr[1] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr[0];
++	cb->ttbr[1] |= (u64)cfg->asid << TTBRn_ASID_SHIFT;
 +}
-+EXPORT_SYMBOL_GPL(iommu_group_set_default_domain);
 +
- /**
-  * iommu_group_get_for_dev - Find or create the IOMMU group for a device
-  * @dev: target device
-@@ -1099,9 +1117,12 @@ struct iommu_group *iommu_group_get_for_dev(struct device *dev)
- 	if (!group->default_domain) {
- 		struct iommu_domain *dom;
+ static void arm_smmu_init_context_bank(struct arm_smmu_domain *smmu_domain,
+ 				       struct io_pgtable_cfg *pgtbl_cfg)
+ {
+@@ -763,11 +844,13 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
+ {
+ 	int irq, start, ret = 0;
+ 	unsigned long ias, oas;
+-	struct io_pgtable_ops *pgtbl_ops;
++	struct io_pgtable_ops *pgtbl_ops[2] = { NULL, NULL };
+ 	struct io_pgtable_cfg pgtbl_cfg;
+ 	enum io_pgtable_fmt fmt;
+ 	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
+ 	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
++	bool split_tables =
++		(smmu_domain->attributes & (1 << DOMAIN_ATTR_SPLIT_TABLES));
  
--		dom = __iommu_domain_alloc(dev->bus, iommu_def_domain_type);
-+		dom = iommu_group_set_default_domain(group, dev,
-+			iommu_def_domain_type);
+ 	mutex_lock(&smmu_domain->init_mutex);
+ 	if (smmu_domain->smmu)
+@@ -797,8 +880,15 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
+ 	 *
+ 	 * Note that you can't actually request stage-2 mappings.
+ 	 */
+-	if (!(smmu->features & ARM_SMMU_FEAT_TRANS_S1))
++	if (!(smmu->features & ARM_SMMU_FEAT_TRANS_S1)) {
+ 		smmu_domain->stage = ARM_SMMU_DOMAIN_S2;
 +
- 		if (!dom && iommu_def_domain_type != IOMMU_DOMAIN_DMA) {
--			dom = __iommu_domain_alloc(dev->bus, IOMMU_DOMAIN_DMA);
-+			dom = iommu_group_set_default_domain(group, dev,
-+				IOMMU_DOMAIN_DMA);
- 			if (dom) {
- 				dev_warn(dev,
- 					 "failed to allocate default IOMMU domain of type %u; falling back to IOMMU_DOMAIN_DMA",
-@@ -1109,10 +1130,6 @@ struct iommu_group *iommu_group_get_for_dev(struct device *dev)
- 			}
++		/* Only allow split pagetables on stage 1 tables */
++		if (split_tables) {
++			ret = -EINVAL;
++			goto out_unlock;
++		}
++	}
+ 	if (!(smmu->features & ARM_SMMU_FEAT_TRANS_S2))
+ 		smmu_domain->stage = ARM_SMMU_DOMAIN_S1;
+ 
+@@ -817,6 +907,7 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
+ 	    (smmu->features & ARM_SMMU_FEAT_FMT_AARCH32_S) &&
+ 	    (smmu_domain->stage == ARM_SMMU_DOMAIN_S1))
+ 		cfg->fmt = ARM_SMMU_CTX_FMT_AARCH32_S;
++
+ 	if ((IS_ENABLED(CONFIG_64BIT) || cfg->fmt == ARM_SMMU_CTX_FMT_NONE) &&
+ 	    (smmu->features & (ARM_SMMU_FEAT_FMT_AARCH64_64K |
+ 			       ARM_SMMU_FEAT_FMT_AARCH64_16K |
+@@ -828,6 +919,12 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
+ 		goto out_unlock;
+ 	}
+ 
++	/* For now, only allow split tables for AARCH64 formats */
++	if (split_tables && cfg->fmt != ARM_SMMU_CTX_FMT_AARCH64) {
++		ret = -EINVAL;
++		goto out_unlock;
++	}
++
+ 	switch (smmu_domain->stage) {
+ 	case ARM_SMMU_DOMAIN_S1:
+ 		cfg->cbar = CBAR_TYPE_S1_TRANS_S2_BYPASS;
+@@ -906,8 +1003,8 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
+ 		pgtbl_cfg.quirks |= IO_PGTABLE_QUIRK_NON_STRICT;
+ 
+ 	smmu_domain->smmu = smmu;
+-	pgtbl_ops = alloc_io_pgtable_ops(fmt, &pgtbl_cfg, smmu_domain);
+-	if (!pgtbl_ops) {
++	pgtbl_ops[0] = alloc_io_pgtable_ops(fmt, &pgtbl_cfg, smmu_domain);
++	if (!pgtbl_ops[0]) {
+ 		ret = -ENOMEM;
+ 		goto out_clear_smmu;
+ 	}
+@@ -919,6 +1016,20 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
+ 
+ 	/* Initialise the context bank with our page table cfg */
+ 	arm_smmu_init_context_bank(smmu_domain, &pgtbl_cfg);
++
++	if (split_tables) {
++		/* It is safe to reuse pgtbl_cfg here */
++		pgtbl_ops[1] = alloc_io_pgtable_ops(fmt, &pgtbl_cfg,
++			smmu_domain);
++		if (!pgtbl_ops[1]) {
++			free_io_pgtable_ops(pgtbl_ops[0]);
++			ret = -ENOMEM;
++			goto out_clear_smmu;
++		}
++
++		arm_smmu_init_ttbr1(smmu_domain, &pgtbl_cfg);
++	}
++
+ 	arm_smmu_write_context_bank(smmu, cfg->cbndx);
+ 
+ 	/*
+@@ -937,7 +1048,9 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
+ 	mutex_unlock(&smmu_domain->init_mutex);
+ 
+ 	/* Publish page table ops for map/unmap */
+-	smmu_domain->pgtbl_ops = pgtbl_ops;
++	smmu_domain->pgtbl_ops[0] = pgtbl_ops[0];
++	smmu_domain->pgtbl_ops[1] = pgtbl_ops[1];
++
+ 	return 0;
+ 
+ out_clear_smmu:
+@@ -973,7 +1086,9 @@ static void arm_smmu_destroy_domain_context(struct iommu_domain *domain)
+ 		devm_free_irq(smmu->dev, irq, domain);
+ 	}
+ 
+-	free_io_pgtable_ops(smmu_domain->pgtbl_ops);
++	free_io_pgtable_ops(smmu_domain->pgtbl_ops[0]);
++	free_io_pgtable_ops(smmu_domain->pgtbl_ops[1]);
++
+ 	__arm_smmu_free_bitmap(smmu->context_map, cfg->cbndx);
+ 
+ 	arm_smmu_rpm_put(smmu);
+@@ -1317,10 +1432,37 @@ static int arm_smmu_attach_dev(struct iommu_domain *domain, struct device *dev)
+ 	return ret;
+ }
+ 
++static struct io_pgtable_ops *
++arm_smmu_get_pgtbl_ops(struct iommu_domain *domain, unsigned long iova)
++{
++	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
++	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
++	struct arm_smmu_cb *cb = &smmu_domain->smmu->cbs[cfg->cbndx];
++
++	if (iova & cb->split_table_mask)
++		return smmu_domain->pgtbl_ops[1];
++
++	return smmu_domain->pgtbl_ops[0];
++}
++
++/*
++ * If split pagetables are enabled adjust the iova so that it
++ * matches the T0SZ/T1SZ that has been programmed
++ */
++unsigned long arm_smmu_adjust_iova(struct iommu_domain *domain,
++		unsigned long iova)
++{
++	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
++	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
++	struct arm_smmu_cb *cb = &smmu_domain->smmu->cbs[cfg->cbndx];
++
++	return cb->split_table_mask ? iova & (cb->split_table_mask - 1) : iova;
++}
++
+ static int arm_smmu_map(struct iommu_domain *domain, unsigned long iova,
+ 			phys_addr_t paddr, size_t size, int prot)
+ {
+-	struct io_pgtable_ops *ops = to_smmu_domain(domain)->pgtbl_ops;
++	struct io_pgtable_ops *ops = arm_smmu_get_pgtbl_ops(domain, iova);
+ 	struct arm_smmu_device *smmu = to_smmu_domain(domain)->smmu;
+ 	int ret;
+ 
+@@ -1328,7 +1470,8 @@ static int arm_smmu_map(struct iommu_domain *domain, unsigned long iova,
+ 		return -ENODEV;
+ 
+ 	arm_smmu_rpm_get(smmu);
+-	ret = ops->map(ops, iova, paddr, size, prot);
++	ret = ops->map(ops, arm_smmu_adjust_iova(domain, iova),
++		paddr, size, prot);
+ 	arm_smmu_rpm_put(smmu);
+ 
+ 	return ret;
+@@ -1337,7 +1480,7 @@ static int arm_smmu_map(struct iommu_domain *domain, unsigned long iova,
+ static size_t arm_smmu_unmap(struct iommu_domain *domain, unsigned long iova,
+ 			     size_t size)
+ {
+-	struct io_pgtable_ops *ops = to_smmu_domain(domain)->pgtbl_ops;
++	struct io_pgtable_ops *ops = arm_smmu_get_pgtbl_ops(domain, iova);
+ 	struct arm_smmu_device *smmu = to_smmu_domain(domain)->smmu;
+ 	size_t ret;
+ 
+@@ -1345,7 +1488,7 @@ static size_t arm_smmu_unmap(struct iommu_domain *domain, unsigned long iova,
+ 		return 0;
+ 
+ 	arm_smmu_rpm_get(smmu);
+-	ret = ops->unmap(ops, iova, size);
++	ret = ops->unmap(ops, arm_smmu_adjust_iova(domain, iova), size);
+ 	arm_smmu_rpm_put(smmu);
+ 
+ 	return ret;
+@@ -1381,7 +1524,7 @@ static phys_addr_t arm_smmu_iova_to_phys_hard(struct iommu_domain *domain,
+ 	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
+ 	struct arm_smmu_device *smmu = smmu_domain->smmu;
+ 	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
+-	struct io_pgtable_ops *ops= smmu_domain->pgtbl_ops;
++	struct io_pgtable_ops *ops = arm_smmu_get_pgtbl_ops(domain, iova);
+ 	struct device *dev = smmu->dev;
+ 	void __iomem *cb_base;
+ 	u32 tmp;
+@@ -1429,7 +1572,7 @@ static phys_addr_t arm_smmu_iova_to_phys(struct iommu_domain *domain,
+ 					dma_addr_t iova)
+ {
+ 	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
+-	struct io_pgtable_ops *ops = smmu_domain->pgtbl_ops;
++	struct io_pgtable_ops *ops = arm_smmu_get_pgtbl_ops(domain, iova);
+ 
+ 	if (domain->type == IOMMU_DOMAIN_IDENTITY)
+ 		return iova;
+@@ -1629,6 +1772,11 @@ static int arm_smmu_domain_get_attr(struct iommu_domain *domain,
+ 		case DOMAIN_ATTR_NESTING:
+ 			*(int *)data = (smmu_domain->stage == ARM_SMMU_DOMAIN_NESTED);
+ 			return 0;
++		case DOMAIN_ATTR_SPLIT_TABLES:
++			*((int *)data) =
++				!!(smmu_domain->attributes &
++				   (1 << DOMAIN_ATTR_SPLIT_TABLES));
++			return 0;
+ 		default:
+ 			return -ENODEV;
  		}
+@@ -1669,6 +1817,11 @@ static int arm_smmu_domain_set_attr(struct iommu_domain *domain,
+ 			else
+ 				smmu_domain->stage = ARM_SMMU_DOMAIN_S1;
+ 			break;
++		case DOMAIN_ATTR_SPLIT_TABLES:
++			if (*((int *)data))
++				smmu_domain->attributes |=
++					(1 << DOMAIN_ATTR_SPLIT_TABLES);
++			break;
+ 		default:
+ 			ret = -ENODEV;
+ 		}
+diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
+index 4e21efb..71ecb08 100644
+--- a/drivers/iommu/io-pgtable-arm.c
++++ b/drivers/iommu/io-pgtable-arm.c
+@@ -490,8 +490,7 @@ static int arm_lpae_map(struct io_pgtable_ops *ops, unsigned long iova,
+ 	if (!(iommu_prot & (IOMMU_READ | IOMMU_WRITE)))
+ 		return 0;
  
--		group->default_domain = dom;
--		if (!group->domain)
--			group->domain = dom;
--
- 		if (dom && !iommu_dma_strict) {
- 			int attr = 1;
- 			iommu_domain_set_attr(dom,
-diff --git a/include/linux/iommu.h b/include/linux/iommu.h
-index a815cf6..4ef8bd5 100644
---- a/include/linux/iommu.h
-+++ b/include/linux/iommu.h
-@@ -394,6 +394,9 @@ extern int iommu_group_id(struct iommu_group *group);
- extern struct iommu_group *iommu_group_get_for_dev(struct device *dev);
- extern struct iommu_domain *iommu_group_default_domain(struct iommu_group *);
+-	if (WARN_ON(iova >= (1ULL << data->iop.cfg.ias) ||
+-		    paddr >= (1ULL << data->iop.cfg.oas)))
++	if (WARN_ON(paddr >= (1ULL << data->iop.cfg.oas)))
+ 		return -ERANGE;
  
-+struct iommu_domain *iommu_group_set_default_domain(struct iommu_group *group,
-+		struct device *dev, unsigned int type);
-+
- extern int iommu_domain_get_attr(struct iommu_domain *domain, enum iommu_attr,
- 				 void *data);
- extern int iommu_domain_set_attr(struct iommu_domain *domain, enum iommu_attr,
+ 	prot = arm_lpae_prot_to_pte(data, iommu_prot);
 -- 
 2.7.4
 
