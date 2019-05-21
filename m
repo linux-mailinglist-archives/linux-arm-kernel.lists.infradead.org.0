@@ -2,93 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07A2125015
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 15:23:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5DF512501E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 15:25:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4+esLSpuKkxOIiH+qi8nzG7kY8oOp99vcD5HHc7LBSc=; b=u+NZqYZG6ARtCX
-	xZ8KH0+ZI7xWmxPyTthBVwIRq1HOgqV54y3tMIctpo5J0aDmR89L8Gpc12UZN5+m5s4qgCAPig3fA
-	8OT0JgmXWyAv2ci67I3GZWQ3JSn+9r6z+MlfKxmmdnZ1BegvIUxI6fgF7pDWcZO5pKNB+pAtuttMG
-	38szuOzTHiuKdzqZv37C1VY66xSQzIJDvZL0iXG/ZpdboZTAovyVyhK9jaU7XfriPEZICaTLnZ44W
-	AHxdHFnThX7Kypr+OugaLcKblfM0d4tW5pmsardoJBkMycd0R53U5XhkAnuVIWfs98UZboZSKB851
-	sNrPwqqekRmSymjTTfCw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=k+qp14+Xq3flU5ltGsrZh+K1fVLmYQ4Cf0tda/jO3zc=; b=J5E
+	6gX4jRr2xXyvLNE11V3Eh2F5VZ0X9cg5O46D0NAwphZTr5DZrx/Y5fcw0vJ1eodWF/g00HVMicrV8
+	8vDqoJu36fu3ucFt0vcPSSV89lcIJE1DARmQssMSCgjuo8e8q6CLi2cfsG3NuMqCMVRaN3OhuJm62
+	MUGp7Qdfw/UwCpocGvaINFOqIdOur93il+qMcesrYKFmQbWXN07z5XPkzOsLR7SiEsCqwqzidOdEZ
+	S8q9ZZcZ7syZXtNsIT+4yXzZm4S3R3pwJshG9CLdxuC8eVLNTawNnORhIrC7cviVgP0RZwznWQXlj
+	nRkSGsPT0sAukqO//11U/XKIHdXR2tQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT4jw-0004Df-9L; Tue, 21 May 2019 13:23:36 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT4jn-0004Cn-QW
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 13:23:29 +0000
-Received: by mail-wr1-x441.google.com with SMTP id s17so18625520wru.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 May 2019 06:23:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=brauner.io; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=zPeZPlO76ltnQqvYGINFToUvBJmXqM645QmEt4Hw6Rc=;
- b=BUu5zjdtN4tz3uDq/7UpOx4K4hUQVJBWS+eEuFLdpi6Rmwdp0HavCUwLV8syhoRhBs
- uutuEJthT54zEPxESFMYXggKMqpF+e9kjCS2KXB6a8V8DjwFSU/ukGJ+bjlCRLwN7Itn
- NioFIdnrRyEyEXF9J8PaDiZ1BKte4njCTV4UqMcQIxHCp36wZKBXLuGaTuzR077IIyGB
- sh/VNZyNC9dytmpNSG0A/cuTGl76M/BtkEN2Bj2PP9spj3uzju6GRwQbZsYefL3l1zFQ
- DUpnJfPzQ1HZROA8RvSmOKB1jZ+QySIxvLrPIvBwJ5t1t+aSsSSgiGJe52BZXhX2b2t5
- /pjA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=zPeZPlO76ltnQqvYGINFToUvBJmXqM645QmEt4Hw6Rc=;
- b=cEmsLHVAWIYdalyMyNDraLVQDYBrQgYVLBkGbu5nxlUQu7A52jyamEL9VuDTIUHReM
- TkfejVzssupwucV5+bgnqEcNefIxtKeumAUZs8P0OJjTurjYMskH+dmlvBSqn/iLSUfw
- HuLMxMrzckJ4eak97LUv3PnXQPkh27n/SjHw76cLBVptefzof9Rt7DAt3dJlQWgUVf3T
- aAWmxd/gYYqrPLj9ODgx5WA9yvMsKINKsQg1jbLsY3AxP5avTdWZgVW7Np8X03V+fgPN
- ywSCaOO9y3SlvbhrjIV6HHoe8VUj2TyIw9o5ppMfArF9COeVn0CmzPrS42ZRFacz0+dR
- lt4w==
-X-Gm-Message-State: APjAAAV1v7/92Xcy5yATXzowlx4pYWEC4xE/lzOakSM3kbqzlbafW58R
- UfOF0FwwjchVkg9NM21vZVCx3A==
-X-Google-Smtp-Source: APXvYqx9Vd+T8JFd9e9hzlyFLebVljF2D14aArNe6wO+D4nzJaWpMCXvLevCthzGrMSyj5JSdNW7NA==
-X-Received: by 2002:adf:e344:: with SMTP id n4mr26865746wrj.192.1558445005993; 
- Tue, 21 May 2019 06:23:25 -0700 (PDT)
-Received: from brauner.io (p548C9938.dip0.t-ipconnect.de. [84.140.153.56])
- by smtp.gmail.com with ESMTPSA id a15sm5483898wrw.49.2019.05.21.06.23.23
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 21 May 2019 06:23:24 -0700 (PDT)
-Date: Tue, 21 May 2019 15:23:23 +0200
-From: Christian Brauner <christian@brauner.io>
-To: Florian Weimer <fweimer@redhat.com>
-Subject: Re: [PATCH 1/2] open: add close_range()
-Message-ID: <20190521132252.y5wt7d7o4bdjns4e@brauner.io>
-References: <20190521113448.20654-1-christian@brauner.io>
- <87tvdoau12.fsf@oldenburg2.str.redhat.com>
- <20190521130438.q3u4wvve7p6md6cm@brauner.io>
- <87h89o9cng.fsf@oldenburg2.str.redhat.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <87h89o9cng.fsf@oldenburg2.str.redhat.com>
-User-Agent: NeoMutt/20180716
+	id 1hT4m9-0005pj-VU; Tue, 21 May 2019 13:25:53 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hT4m2-0005p6-Ou
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 13:25:48 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3D7FA80D;
+ Tue, 21 May 2019 06:25:44 -0700 (PDT)
+Received: from localhost (e113682-lin.copenhagen.arm.com [10.32.144.41])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8C75D3F5AF;
+ Tue, 21 May 2019 06:25:43 -0700 (PDT)
+From: Christoffer Dall <christoffer.dall@arm.com>
+To: kvmarm@lists.cs.columbia.edu,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] MAINTAINERS: KVM: arm/arm64: Remove myself as maintainer
+Date: Tue, 21 May 2019 15:25:40 +0200
+Message-Id: <20190521132540.12729-1-christoffer.dall@arm.com>
+X-Mailer: git-send-email 2.18.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_062328_037899_2A950F03 
-X-CRM114-Status: GOOD (  16.11  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190521_062546_814917_435656A6 
+X-CRM114-Status: GOOD (  10.95  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -100,68 +60,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- linux-kernel@vger.kernel.org, dhowells@redhat.com,
- linux-kselftest@vger.kernel.org, sparclinux@vger.kernel.org, shuah@kernel.org,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org, miklos@szeredi.hu,
- x86@kernel.org, torvalds@linux-foundation.org, linux-mips@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, tkjos@android.com, arnd@arndb.de,
- jannh@google.com, linux-m68k@lists.linux-m68k.org, viro@zeniv.linux.org.uk,
- tglx@linutronix.de, ldv@altlinux.org, linux-arm-kernel@lists.infradead.org,
- linux-parisc@vger.kernel.org, linux-api@vger.kernel.org, oleg@redhat.com,
- linux-alpha@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- linuxppc-dev@lists.ozlabs.org
+Cc: kvm@vger.kernel.org, suzuki.poulose@arm.com,
+ Marc Zyngier <marc.zyngier@arm.com>, julien.thierry@arm.com,
+ Christoffer Dall <christoffer.dall@arm.com>, james.morse@arm.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 21, 2019 at 03:10:11PM +0200, Florian Weimer wrote:
-> * Christian Brauner:
-> 
-> >> Solaris has an fdwalk function:
-> >> 
-> >>   <https://docs.oracle.com/cd/E88353_01/html/E37843/closefrom-3c.html>
-> >> 
-> >> So a different way to implement this would expose a nextfd system call
-> >
-> > Meh. If nextfd() then I would like it to be able to:
-> > - get the nextfd(fd) >= fd
-> > - get highest open fd e.g. nextfd(-1)
-> 
-> The highest open descriptor isn't istering for fdwalk because nextfd
-> would just fail.
+I no longer have time to actively review patches and manage the tree and
+it's time to make that official.
 
-Sure. I was thinking about other usecases. For example, sometimes in
-userspace you want to do the following:
-save_fd = dup(fd, <well-known-number-at-the-end-of-the-range);
-close_range(3, (save_fd - 1));
+Huge thanks to the incredible Linux community and all the contributors
+who have put up with me over the past years.
 
-Which brings me to another point. So even if we don't do close_range() I
-would like libc to maybe give us something like close_range() for such
-scenarios.
+I also take this opportunity to remove the website link to the Columbia
+web page, as that information is no longer up to date and I don't know
+who manages that anymore.
 
-> 
-> > But then I wonder if nextfd() needs to be a syscall and isn't just
-> > either:
-> > fcntl(fd, F_GET_NEXT)?
-> > or
-> > prctl(PR_GET_NEXT)?
-> 
-> I think the fcntl route is a bit iffy because you might need it to get
-> the *first* valid descriptor.
-> 
-> >> to userspace, so that we can use that to implement both fdwalk and
-> >> closefrom.  But maybe fdwalk is just too obscure, given the existence of
-> >> /proc.
-> >
-> > Yeah we probably don't need fdwalk.
-> 
-> Agreed.  Just wanted to bring it up for completeness.  I certainly don't
-> want to derail the implementation of close_range.
-> 
-> Thanks,
-> Florian
+Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
+---
+ MAINTAINERS | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 5cfbea4ce575..4ba271a8e0ef 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -8611,14 +8611,12 @@ F:	arch/x86/include/asm/svm.h
+ F:	arch/x86/kvm/svm.c
+ 
+ KERNEL VIRTUAL MACHINE FOR ARM/ARM64 (KVM/arm, KVM/arm64)
+-M:	Christoffer Dall <christoffer.dall@arm.com>
+ M:	Marc Zyngier <marc.zyngier@arm.com>
+ R:	James Morse <james.morse@arm.com>
+ R:	Julien Thierry <julien.thierry@arm.com>
+ R:	Suzuki K Pouloze <suzuki.poulose@arm.com>
+ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+ L:	kvmarm@lists.cs.columbia.edu
+-W:	http://systems.cs.columbia.edu/projects/kvm-arm
+ T:	git git://git.kernel.org/pub/scm/linux/kernel/git/kvmarm/kvmarm.git
+ S:	Maintained
+ F:	arch/arm/include/uapi/asm/kvm*
+-- 
+2.18.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
