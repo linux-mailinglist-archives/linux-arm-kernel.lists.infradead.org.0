@@ -2,69 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D17D24A81
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 10:35:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 673DB24A8C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 10:39:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ziqu/NVCgsNw6z92+gKpLXZVN2UrHyI5J7N4B7iupsM=; b=RdVBwi9pe3eVKi
-	k+5RrW5fgu7Q1kqsdwmum9SFEvKyabSfqgrIWT4TrAcFvTcpkqKEGb7mQ4WXZ2VxooLZzYn337UP5
-	44kcJUkfiOjU5k+NTEDlFUEPcDpxl+6X0bvwzYagJyioF0vFgNXhH5sszPnxdICy7SXo7t66ZnuuN
-	ToS0AznvsXlDvgaEkHVJddE6ZY3ER7I8LOZPgWiwR/rkY6O6NNp+EmSZ/PhsbU2XsptskGWQwpsZb
-	b1cL0FVHs+XeyeVDQpKVjs+KD6oa223zk8vTrI72PC7SuS/963J6X81b7RL7wEe34GjpVm8Jjsrj0
-	FikqpqvXG5lxkLPQPCUA==;
+	List-Owner; bh=8ak/y7I/BKJ64+YhRC2EUxZ1TkpFT3xyLbedXeaEs88=; b=CWCNVqBD4u5Xac
+	sSt+SEwiueRM2xVYYtGGqcguO7eEenBzoUBlW9KV/gVm2+GUrqd2G0TzS0s8a0GKSL5FUMLUoOeo3
+	A9J31P2gMthA4UZ3HMHk/MleTDcQTjPppvO7jCJHxRj9x/YCUvOXEI6aXHpB8aE88iNe4Iz4p84WN
+	ER7COX0/2BWSOGhY6/cjjHq6wNMzPNuXIDNHmi+1oBm9VhvXGddEvMqEo+P3cxfDjlQrU4jcR6SD5
+	5sR9dshHZRBIbm9fu8Ty5XV4mDE1+QEWG6Uk4Ukwz5IXSbImdtM9Qjnz+n6avhMETJqLf55YzMT9Z
+	g9x5MG9hWmYPUT5s2Raw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT0Eu-00026E-Jf; Tue, 21 May 2019 08:35:16 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hT0IZ-0003dJ-Aw; Tue, 21 May 2019 08:39:03 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT0Ei-0001Uq-74
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 08:35:06 +0000
-Received: by mail-wm1-x342.google.com with SMTP id q15so1930449wmj.0
+ id 1hT0IR-0003Xo-C1
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 08:38:57 +0000
+Received: by mail-wm1-x344.google.com with SMTP id c77so2008377wmd.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 May 2019 01:35:03 -0700 (PDT)
+ Tue, 21 May 2019 01:38:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=KbeeGujfdpWAaKWmtvzwlipu4OGzzpibM4zbaDGQkD0=;
- b=RZXGuIuzHtBZURrj15qgLEcXH9BqCtgbLv3ixLuD3lF4lpUXBqSIRdyegUBLGO1+uS
- vfbZOjEYcWM4TfvDB0OwPX/dfiwl2kC4U5SbRO/n8N5bXHqMAGlifJZTnOuTap2qmZhS
- aGo+umuDPdlDR7KwWEOV/pV+7xkesxl5YAQkzIQRrPlxcGPzU8K6Sw1Q9VqLRoX7L3rR
- TNDG4gGV5i4MlzG4girN4uaTCMCeRG/rbM8ia1S3bkwZvNcgHr8UI+88pJRsyzX4kLmu
- bMwL59UyDBYWigWQu1ZtM4nIWPgipJ8P6sO/VxllMr3eiz+8pOFJ+HiZD+Eq0xnrPWKb
- ExyQ==
+ bh=sU8ZvVyOkwzWB64qjmD8yMis5IArCRr5jkybcZOcNyQ=;
+ b=tj92RRfyqAVHu8xAj0p1uGTqIBYJT1dxLYHotISTrV0cODxptm82cF9djoqwCmK5zb
+ Mo37mQPkAhfkLHYi340nUvpgFyOcYLsUMhYC2e4q7NxotZCVzgWAJnoDgM3qEt1pU8vg
+ ORrXbfnVLhFv87i5z85rqnVz1vVXVIC84/oN0rQ/0x0vpO1cGc5AtsX10xvwaStUl/8A
+ VskcJyEjjLq0Cx3bj7LVQBB0TnJRvTbWEiOJ8ZJfWAcqUTU1Ik1Rx0q4/y0rcLom1G3W
+ 6kG0elFABxAUa9IkInSW9EK+xZAenEFo1PX2FyS3DkFMFjYHcMZIQolmUKkVs75vFZTJ
+ s1JQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=KbeeGujfdpWAaKWmtvzwlipu4OGzzpibM4zbaDGQkD0=;
- b=Kd2MJ04b+7ZBqui9fGijEnuMGeUKvxigxrsurXdEWPzt5Ztd7O7klUL7mHDZzHb+v0
- rDZXkOgHyXjDWb5IqCzxrJSl4Rxa13FECZg5+fGl3V5k4MJYmbkoP0/jkXy8r3IElF8a
- QNkYDK4/NWWnobReW+NIgxLtSuYuuCvf9/hHIHf+HOUL0dd4dWADTrrFITIXzqDz9l9o
- XjQGbJFW7FXHBTpVrmKOEUXeded4tLx1os5QO7DCrKrjeBMlCkHobn3Uldw065ag2CfJ
- dS2+pIRdgfJc7SO0qsPF4e2PwlYnaarbiO0qOHligXjtzNPbcAibsr5m17sfk8LM9Pc8
- GddA==
-X-Gm-Message-State: APjAAAXbzNWFGc7+BZsRUU7Q4GOV4znNw59A5EHEDDt9GICocOQ1HrRA
- amT8a3WER3wWL8WEMSF/oO1yNkzB/tFMxA==
-X-Google-Smtp-Source: APXvYqy7r61mAXvIsDO2txsWXAh13YuMmTLlhQAjAZibEi/GE5CEIrbKOtqEvjr4375SGGAVbiQUOQ==
-X-Received: by 2002:a1c:7c0d:: with SMTP id x13mr2267880wmc.89.1558427702015; 
- Tue, 21 May 2019 01:35:02 -0700 (PDT)
+ bh=sU8ZvVyOkwzWB64qjmD8yMis5IArCRr5jkybcZOcNyQ=;
+ b=lK8+R6PzuRHbE7KnbYbIpm4f3Q7P/D+XrVlNRPC7PXnhSwO5Fl+y9HJ1PiWAODsFLf
+ gPunlWl3Ors7uXc0hjq3373L6SmSJjUrXyshSGKcLEtUp1FVSj7Qu0oD6RgDDSIFfcaK
+ zygBpky+1c2exjYJGa/xNUdiXjiZlHuDxT36EZWF0E222EbYZ8cHciWyQHevVjVM1OCE
+ Ev0i/bY2O8b+tqGhQqoJyoDM9lCTahdB/PiUjLXzS77CeULfgfHMqtqC7UnV9MxV1N3Q
+ 1YPmdNP/14XZT6F7/psTjz47UjgflLr4EnVYFmLeN+UcmU6YmU5/N9xj0L0Aq5IQ2ftv
+ DW4g==
+X-Gm-Message-State: APjAAAVyCGEZ0aDM9c+RK2yLqu5tD37vSUVBA7aV5GatOAtxoRNMNAy6
+ j7odmYjO6KowsU0of/0p3+vWV3MDt7qFoQ==
+X-Google-Smtp-Source: APXvYqwtUYJw7kwH6qgGypBkZAimWcISe6QiMUvyHjqYBaXsLB88g2mbRv2AfecGqKxjxqB9Y3P/AA==
+X-Received: by 2002:a7b:ce03:: with SMTP id m3mr2277652wmc.99.1558427933334;
+ Tue, 21 May 2019 01:38:53 -0700 (PDT)
 Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
  [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id h11sm26096432wrr.44.2019.05.21.01.35.01
+ by smtp.gmail.com with ESMTPSA id 197sm3217316wma.36.2019.05.21.01.38.52
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 21 May 2019 01:35:01 -0700 (PDT)
-Subject: Re: [PATCH] arm64: dts: meson-g12a-x96-max: Add Gigabit Ethernet
- Support
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-References: <20190520134336.24737-1-narmstrong@baylibre.com>
- <CAFBinCCvERE1V9aBhwNadwPRAi3Fy3EPQ_MGTGX23CQaHi0_kA@mail.gmail.com>
+ Tue, 21 May 2019 01:38:52 -0700 (PDT)
+Subject: Re: [PATCH 1/1] ARM: dts: meson8b: odroidc1: add the GPIO line names
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-amlogic@lists.infradead.org, khilman@baylibre.com
+References: <20190328204721.25970-1-martin.blumenstingl@googlemail.com>
+ <20190328204721.25970-2-martin.blumenstingl@googlemail.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -117,23 +117,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <90bad489-4186-08c9-8073-b3eafce273e4@baylibre.com>
-Date: Tue, 21 May 2019 10:35:00 +0200
+Message-ID: <b9e45b82-5ba9-ad0a-35ba-6bccdd0bc8ce@baylibre.com>
+Date: Tue, 21 May 2019 10:38:51 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <CAFBinCCvERE1V9aBhwNadwPRAi3Fy3EPQ_MGTGX23CQaHi0_kA@mail.gmail.com>
+In-Reply-To: <20190328204721.25970-2-martin.blumenstingl@googlemail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_013504_274332_DF87F7BA 
-X-CRM114-Status: GOOD (  18.23  )
+X-CRM114-CacheID: sfid-20190521_013855_940776_D0124577 
+X-CRM114-Status: GOOD (  17.81  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -151,82 +151,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: khilman@baylibre.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On 20/05/2019 19:49, Martin Blumenstingl wrote:
-> Hi Neil,
+On 28/03/2019 21:47, Martin Blumenstingl wrote:
+> This adds the GPIO line names from the schematics to get them displayed
+> in the debugfs output of each GPIO controller.
 > 
-> On Mon, May 20, 2019 at 3:43 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
->>
->> Enable the network interface of the X96 Mac using an external
->> Realtek RTL8211F gigabit PHY, needing the same broken-eee properties
->> as the previous Amlogic SoC generations.
->>
->> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
->> ---
->>  .../boot/dts/amlogic/meson-g12a-x96-max.dts   | 22 +++++++++++++++++++
->>  1 file changed, 22 insertions(+)
->>
->> diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts b/arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts
->> index 5cdc263b03e6..5ca79109c250 100644
->> --- a/arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts
->> +++ b/arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts
->> @@ -15,6 +15,7 @@
->>
->>         aliases {
->>                 serial0 = &uart_AO;
->> +               ethernet0 = &ethmac;
->>         };
->>         chosen {
->>                 stdout-path = "serial0:115200n8";
->> @@ -150,6 +151,27 @@
->>         pinctrl-names = "default";
->>  };
->>
->> +&ext_mdio {
->> +       external_phy: ethernet-phy@0 {
->> +               /* Realtek RTL8211F (0x001cc916) */
->> +               reg = <0>;
->> +               max-speed = <1000>;
->> +               eee-broken-1000t;
-> do we still need eee-broken-1000t? there are only 2 boards left which
-> set it and I'm not sure whether those still need it after Carlo's
-> fixes
-
-In our tests, this boards really needs it... otherwise the network stalls
-pretty quickly. I'd prefer to avoid it but seems it's necessary.
-
+> The schematics from Odroid-C1+ PCB revision 0.4 20150615 are used as
+> referenced.
 > 
->> +       };
->> +};
->> +
->> +&ethmac {
->> +       pinctrl-0 = <&eth_rmii_pins>, <&eth_rgmii_pins>;
-> Jerome renamed "eth_rmii_pins" to "eth_pins" in v2 of his Ethernet
-> pinctrl patch: [0]
-> you missed his update only by a few minutes
-
-
-Damn...
-Thx.
-
-Neil
-
+> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> ---
+>  arch/arm/boot/dts/meson8b-odroidc1.dts | 52 ++++++++++++++++++++++++++
+>  1 file changed, 52 insertions(+)
 > 
-> 
-> Martin
-> 
-> 
-> [0] https://patchwork.kernel.org/patch/10951103/
+> diff --git a/arch/arm/boot/dts/meson8b-odroidc1.dts b/arch/arm/boot/dts/meson8b-odroidc1.dts
+> index 3b0e0f8fbc23..0157646e3a89 100644
+> --- a/arch/arm/boot/dts/meson8b-odroidc1.dts
+> +++ b/arch/arm/boot/dts/meson8b-odroidc1.dts
+> @@ -234,7 +234,59 @@
+>  	};
+>  };
+>  
+> +&gpio {
+> +	gpio-line-names = /* Bank GPIOX */
+> +			  "J2 Header Pin 35", "J2 Header Pin 36",
+> +			  "J2 Header Pin 32", "J2 Header Pin 31",
+> +			  "J2 Header Pin 29", "J2 Header Pin 18",
+> +			  "J2 Header Pin 22", "J2 Header Pin 16",
+> +			  "J2 Header Pin 23", "J2 Header Pin 21",
+> +			  "J2 Header Pin 19", "J2 Header Pin 33",
+> +			  "J2 Header Pin 8", "J2 Header Pin 10",
+> +			  "J2 Header Pin 15", "J2 Header Pin 13",
+> +			  "J2 Header Pin 24", "J2 Header Pin 26",
+> +			  /* Bank GPIOY */
+> +			  "Revision (upper)", "Revision (lower)",
+> +			  "J2 Header Pin 7", "", "J2 Header Pin 12",
+> +			  "J2 Header Pin 11", "", "", "",
+> +			  "TFLASH_VDD_EN", "", "",
+> +			  /* Bank GPIODV */
+> +			  "VCCK_PWM (PWM_C)", "I2CA_SDA", "I2CA_SCL",
+> +			  "I2CB_SDA", "I2CB_SCL", "VDDEE_PWM (PWM_D)",
+> +			  "",
+> +			  /* Bank GPIOH */
+> +			  "HDMI_HPD", "HDMI_I2C_SDA", "HDMI_I2C_SCL",
+> +			  "ETH_PHY_INTR", "ETH_PHY_NRST", "ETH_TXD1",
+> +			  "ETH_TXD0", "ETH_TXD3", "ETH_TXD2",
+> +			  "ETH_RGMII_TX_CLK",
+> +			  /* Bank CARD */
+> +			  "SD_DATA1 (SDB_D1)", "SD_DATA0 (SDB_D0)",
+> +			  "SD_CLK",  "SD_CMD", "SD_DATA3 (SDB_D3)",
+> +			  "SD_DATA2 (SDB_D2)", "SD_CDN (SD_DET_N)",
+> +			  /* Bank BOOT */
+> +			  "SDC_D0 (EMMC)", "SDC_D1 (EMMC)",
+> +			  "SDC_D2 (EMMC)", "SDC_D3 (EMMC)",
+> +			  "SDC_D4 (EMMC)", "SDC_D5 (EMMC)",
+> +			  "SDC_D6 (EMMC)", "SDC_D7 (EMMC)",
+> +			  "SDC_CLK (EMMC)", "SDC_RSTn (EMMC)",
+> +			  "SDC_CMD (EMMC)", "BOOT_SEL", "", "", "",
+> +			  "", "", "", "",
+> +			  /* Bank DIF */
+> +			  "ETH_RXD1", "ETH_RXD0", "ETH_RX_DV",
+> +			  "RGMII_RX_CLK", "ETH_RXD3", "ETH_RXD2",
+> +			  "ETH_TXEN", "ETH_PHY_REF_CLK_25MOUT",
+> +			  "ETH_MDC", "ETH_MDIO";
+> +};
+> +
+>  &gpio_ao {
+> +	gpio-line-names = "UART TX", "UART RX", "",
+> +			  "TF_3V3N_1V8_EN", "USB_HUB_RST_N",
+> +			  "USB_OTG_PWREN", "J7 Header Pin 2",
+> +			  "IR_IN", "J7 Header Pin 4",
+> +			  "J7 Header Pin 6", "J7 Header Pin 5",
+> +			  "J7 Header Pin 7", "HDMI_CEC",
+> +			  "SYS_LED", "", "";
+> +
+>  	/*
+>  	 * WARNING: The USB Hub on the Odroid-C1/C1+ needs a reset signal
+>  	 * to be turned high in order to be detected by the USB Controller.
 > 
 
+Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
