@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6FDE62469D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 06:16:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96508246A2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 06:16:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xhpKCE6wCan9PFT5/ypGUudnwsIV5PRAR/h/lGLsDAo=; b=Uc1krFzWjnasaZ
-	df7acO9M4LxwnGP8cl3OcpP76P725Fa8rTXQ6ZaeaIp6RyhRYs5Y5ZUR0XztM6IlvG11xzhpevtOf
-	h5Qpsi6W24jL6ZAr2Yhu3+/WSdMdw86b3SEmQ2ifVE0vURDHDLdsL4YgW+aXxXZ7TEidkvgSWA5am
-	Gh2UwB9VNbpC6xyvELbqtaFFZ4crzWFF5gvKAsaE1K5G1kC6D9C/rH2a6Y1HUIygfOTFUpw9gQuEB
-	6shDqiu+nZn3WkvysmyUE4TnsxOXw4G9Y0lPnw04MYW1IcaoI+bsieXEVZDzmtMWkPUfWvMAZ6aaV
-	VG7j6zyDuNDN6qJJ5WSw==;
+	List-Owner; bh=E6P5M2iFuiqnaepO+yTUpTeZdwKeFMZCP/f6ns4xFyA=; b=othGueBU9iXTqZ
+	1DwCI4+7Wj8+drSNLQy0XcsSf0/QikJkaiEZ1gMH9kXBJZOxJvAuAU6Nw+NDBzke27cRdra0ZdDkB
+	OhsJlAiJkyVtEEFDM4903rK7kxW/UJZ6xOsqCSJCN2CluOorKYg711mf0SGSdWCUMpk0qik293z0E
+	nNqsGBVHkO7Q4LEsy0IKCYzXq/AgRowypux+J7pmrX9BlGxF6ZH3qb7gMxN2huyKLNTI4SsqrCQAK
+	3dFyVBB/IyMa2EADv+fpAQFtknUU9o1FufcG61/jcU+rfqWGCtcKJWDqLeD7sAGrMF+rMtitIU8vQ
+	McEnX9JG0hNw79hyulXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSwC6-0001Er-Ns; Tue, 21 May 2019 04:16:06 +0000
+	id 1hSwCc-0001Vk-Hy; Tue, 21 May 2019 04:16:38 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSwBy-0001E3-RI
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 04:16:00 +0000
+ id 1hSwCV-0001VO-AT
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 04:16:32 +0000
 Received: from localhost (unknown [106.201.107.13])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 442BB21773;
- Tue, 21 May 2019 04:15:55 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4F5A321773;
+ Tue, 21 May 2019 04:16:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558412156;
- bh=TQBbgsbg7JWnbEI2dswhoI88Uh8METCt3Pb9gkO1tk4=;
+ s=default; t=1558412191;
+ bh=pmk5CqkD6sqT/pibTXOuA932xXqreDHa6zo1d/maJQ8=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=vv7SowBI+n/sk5Bcp/+vac8sDqclukeH2MwatV8jwS/MfWlLmFWVgC29U1txvJ/Tm
- 8iuhELNZb76yAYDz0ZclUy5UZ4HBCnjqFlr4KssG5dilko3ePfNe8EEsrmIBNrwGa3
- qaR4Wp69ZyLwqFt4ECaaP8NenJRD7ObNQFG72nGA=
-Date: Tue, 21 May 2019 09:45:52 +0530
+ b=YouPjg0qdaKRUWE6aOJTqaI+Spb0FKW/P6tWAVX6EEihJZQMqXjNjnfOrgBC2Q8qm
+ QjsCGz1UccOvVY96sN6+5L58NdXkIVH5f4DROpd4MFZuhUZzZ4bJtsLzm0zDh2k2cK
+ JaDnXuUdy73oVgD5JCzrvvzSov5n2BwIujX9Vwdk=
+Date: Tue, 21 May 2019 09:46:27 +0530
 From: Vinod Koul <vkoul@kernel.org>
 To: Robin Gong <yibin.gong@nxp.com>
-Subject: Re: [PATCH v3 04/14] dmaengine: imx-sdma: remove dupilicated
- sdma_load_context
-Message-ID: <20190521041552.GD15118@vkoul-mobl>
+Subject: Re: [PATCH v3 05/14] dmaengine: imx-sdma: add mcu_2_ecspi script
+Message-ID: <20190521041627.GE15118@vkoul-mobl>
 References: <1557249513-4903-1-git-send-email-yibin.gong@nxp.com>
- <1557249513-4903-5-git-send-email-yibin.gong@nxp.com>
+ <1557249513-4903-6-git-send-email-yibin.gong@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1557249513-4903-5-git-send-email-yibin.gong@nxp.com>
+In-Reply-To: <1557249513-4903-6-git-send-email-yibin.gong@nxp.com>
 User-Agent: Mutt/1.11.3 (2019-02-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_211558_901060_77951DDF 
-X-CRM114-Status: UNSURE (   7.03  )
+X-CRM114-CacheID: sfid-20190520_211631_372305_8D9F4A25 
+X-CRM114-Status: UNSURE (   7.12  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -103,8 +102,7 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 07-05-19, 09:16, Robin Gong wrote:
-> Since sdma_transfer_init() will do sdma_load_context before any
-> sdma transfer, no need once more in sdma_config_channel().
+> Add mcu_2_ecspi script to fix ecspi errata ERR009165.
 
 Acked-by: Vinod Koul <vkoul@kernel.org>
 
