@@ -2,33 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E28AA2521B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 16:31:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 851F72521E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 16:31:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vadouOXeiG3ynilrJS7eU0Y3aGGMW+TyQc+YpIpgvcM=; b=cV6MYI+0Ft2rn/
-	HacutkCzvRxnCivBF7qpRikapuYW/+oS3ffD7sFKZ3TCHpdKZbJ5Xy8rfeDKV9STQmWbig2MSveg0
-	3uN4gkiWllPAMqyBwojxI2Ghl6yXGTa2xVF8p9OMXM9eIFmw2Sa0wQq6Owo3rCvkxS7/IeYxh8cK6
-	6z0tQbNfTJXLNOHuU0925GKHbYSGPKffCw4hfzR3j0P2Y5APasXgJDjIBM27mcdLXqWBbw3tjiEWJ
-	mCwPWcit0T0jVu5VDa/BaZWe0SU+GAb4VS1yqyQGLEBMz+9dXpRX3t9qROFw/go+nhNYWfSDEkwlp
-	aFCgxE+udlVZ2fxmpQGg==;
+	List-Owner; bh=zUyFswUABCHxYpdz97enDJJe85/08wdcUxcna10E3C0=; b=mvQ3f6CQNiuMGI
+	BNXo0+PY3mWN2aZ8KuYJMGiPavXPkMsF2NSfz5u/fRIubWF0a1JY0pRT7dJZXwHooRpTcRAz2bx8c
+	GT69z/Li3Q+KItT/XOUKuxvL3Ify/C6GnATt7ekwYyKUYYp+WK2/8Zk+bdGKkuTAf2WuCAPPW55Uo
+	DhiwKW5dS+1KpLLguU+biHQldax+aukVhDKaERNYxf4FZbHHeVifMy4Fa+0+phaJCz9Wr3AGda+Xw
+	3rKBfyJSO1tcyFt3Ts6BQK1BR876jxPqS2nAiwgkT7VhK1eK62WVt0mXQs/EJP7h0GwB3rlL+8Nq9
+	p6H8zHgcU+JXlVseOHyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT5nm-0001Om-3f; Tue, 21 May 2019 14:31:38 +0000
+	id 1hT5nv-0001Wv-Tj; Tue, 21 May 2019 14:31:47 +0000
 Received: from relay1-d.mail.gandi.net ([217.70.183.193])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT5nM-0000zg-QU
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 14:31:16 +0000
+ id 1hT5nQ-00014U-SI
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 14:31:18 +0000
 X-Originating-IP: 90.88.22.185
 Received: from localhost.localdomain
  (aaubervilliers-681-1-80-185.w90-88.abo.wanadoo.fr [90.88.22.185])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 26211240011;
- Tue, 21 May 2019 14:31:04 +0000 (UTC)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 947DC240017;
+ Tue, 21 May 2019 14:31:11 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Gregory Clement <gregory.clement@bootlin.com>,
  Jason Cooper <jason@lakedaemon.net>, Andrew Lunn <andrew@lunn.ch>,
@@ -36,17 +36,16 @@ To: Gregory Clement <gregory.clement@bootlin.com>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Jens Axboe <axboe@kernel.dk>, Hans de Goede <hdegoede@redhat.com>,
  Thomas Gleixner <tglx@linutronix.de>, Marc Zyngier <marc.zyngier@arm.com>
-Subject: [PATCH v4 03/10] dt-bindings: ata: Update ahci bindings with possible
- per-port interrupts
-Date: Tue, 21 May 2019 16:30:16 +0200
-Message-Id: <20190521143023.31810-4-miquel.raynal@bootlin.com>
+Subject: [PATCH v4 04/10] ata: ahci: mvebu: Rename a platform data flag
+Date: Tue, 21 May 2019 16:30:17 +0200
+Message-Id: <20190521143023.31810-5-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.19.1
 In-Reply-To: <20190521143023.31810-1-miquel.raynal@bootlin.com>
 References: <20190521143023.31810-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_073113_089563_DC0D70CC 
-X-CRM114-Status: GOOD (  10.71  )
+X-CRM114-CacheID: sfid-20190521_073117_185730_C7AEC14E 
+X-CRM114-Status: GOOD (  14.81  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -79,36 +78,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Update bindings to reflect the fact that a SATA IP can either have:
-- only one interrupt: in this case an 'interrupts' property is
-  declared at the root of the node;
-or
-- each SATA port can have their own interrupt: in this case there is
-  one 'interrupts' property per port/sub-node and none at the root.
+Before adding more entries in the platform data structure, rename the
+flags entry to be more precise and name it host_flags.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
 ---
- Documentation/devicetree/bindings/ata/ahci-platform.txt | 6 ++++++
- 1 file changed, 6 insertions(+)
+ drivers/ata/ahci_mvebu.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/ata/ahci-platform.txt b/Documentation/devicetree/bindings/ata/ahci-platform.txt
-index e30fd106df4f..80261e2845b0 100644
---- a/Documentation/devicetree/bindings/ata/ahci-platform.txt
-+++ b/Documentation/devicetree/bindings/ata/ahci-platform.txt
-@@ -53,6 +53,12 @@ And at least one of the following properties:
- - phys		    : reference to the SATA PHY node
- - target-supply     : regulator for SATA target power
+diff --git a/drivers/ata/ahci_mvebu.c b/drivers/ata/ahci_mvebu.c
+index d4bba3ace45d..43bb2db59698 100644
+--- a/drivers/ata/ahci_mvebu.c
++++ b/drivers/ata/ahci_mvebu.c
+@@ -30,7 +30,7 @@
  
-+Sub-nodes optional properties:
-+- interrupts        : <interrupt mapping for SATA ports IRQ>, please
-+                      note that either the root SATA node has the
-+                      interrupts property, or there is one per SATA
-+                      port, but not both at the same time.
-+
- Examples:
-         sata@ffe08000 {
- 		compatible = "snps,spear-ahci";
+ struct ahci_mvebu_plat_data {
+ 	int (*plat_config)(struct ahci_host_priv *hpriv);
+-	unsigned int flags;
++	unsigned int host_flags;
+ };
+ 
+ static void ahci_mvebu_mbus_config(struct ahci_host_priv *hpriv,
+@@ -196,7 +196,7 @@ static int ahci_mvebu_probe(struct platform_device *pdev)
+ 	if (IS_ERR(hpriv))
+ 		return PTR_ERR(hpriv);
+ 
+-	hpriv->flags |= pdata->flags;
++	hpriv->flags |= pdata->host_flags;
+ 	hpriv->plat_data = (void *)pdata;
+ 
+ 	rc = ahci_platform_enable_resources(hpriv);
+@@ -227,7 +227,7 @@ static const struct ahci_mvebu_plat_data ahci_mvebu_armada_380_plat_data = {
+ 
+ static const struct ahci_mvebu_plat_data ahci_mvebu_armada_3700_plat_data = {
+ 	.plat_config = ahci_mvebu_armada_3700_config,
+-	.flags = AHCI_HFLAG_SUSPEND_PHYS,
++	.host_flags = AHCI_HFLAG_SUSPEND_PHYS,
+ };
+ 
+ static const struct of_device_id ahci_mvebu_of_match[] = {
 -- 
 2.19.1
 
