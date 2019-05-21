@@ -2,44 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D74E624F49
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 14:52:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 83B0C24F4A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 14:52:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=C+u0WKciqr/ScmQu1BZEfQQhnp12ezMHqU/0sLN4Hxo=; b=BByPsCM4+nc4RW
-	rVPWFk9ePlcIJR7IPylzEq+EcX7jOzqtFW+OBynnp06xRYY5YbkDCFlSYF5+oWslzpFh9zbXgGTNy
-	6HQCwcxYYCyZNRPUADTdizHgUpQcrrvTYEKiMJ8gFQi+SzxyubIRmZInxOC8NJeKvIiRz9FBN6eZ7
-	5sflP+pulh8ri8eP+7y8luaVNXCc87w64ktJTiCVOki4qku7CVJXPiJ5vgo+aFBETsXVBDJhgDyL+
-	787Z/K6UhdnExAwKnsnl4to/hKEM1KzcVozX3eyEToyr4ud9g8tpYfKRBIgtFMMryavvpRlpaJgLA
-	7aPkW1bJq+uwyhA51cjA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SIEz/I+KrFzN/lmi6eeKHdn7Hynpub2m1iRrKRpR2Kk=; b=RvPnxnZXKQkkh4
+	qyRVV8j968np8F208PvPdSgq6NK61kW7o6LJfwNKG3LNb5165WRDp+3YaJAt/2XCVh7+CtqI9Myes
+	D66RTVQFCppG8qbqoPd+jNsiEVDgpiwFO5HHKKe0PxSZELOcasEINuYvBzdFKjdpFIs9rSN5kQmUU
+	dA9Ab09fs/oiesZA2bOKVE2HraVMhk2/RIj8ffSg3GV6xLd0wVA/YLzVEbzBDueUEGjrrhwm5Wt/O
+	4/lFq198GPSZoVCGgSNarCJ91V69iISEU0s2EZO12vf0qnRL91piy481f4I3h5lkf+IA+nA8xvLry
+	wNfVNLNF1CbNVjmFjOXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT4FV-0008Jl-3v; Tue, 21 May 2019 12:52:09 +0000
+	id 1hT4Ff-00006E-Jy; Tue, 21 May 2019 12:52:19 +0000
 Received: from relay5-d.mail.gandi.net ([217.70.183.197])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT4Ep-0007hc-1b
+ id 1hT4Ep-0007he-1R
  for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 12:51:30 +0000
 X-Originating-IP: 90.88.22.185
 Received: from localhost.localdomain
  (aaubervilliers-681-1-80-185.w90-88.abo.wanadoo.fr [90.88.22.185])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 8C4BF1C0002;
- Tue, 21 May 2019 12:51:15 +0000 (UTC)
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id D3DCB1C0017;
+ Tue, 21 May 2019 12:51:17 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Michael Turquette <mturquette@baylibre.com>,
  Stephen Boyd <sboyd@kernel.org>, Russell King <linux@armlinux.org.uk>
-Subject: [PATCH v5 0/4] Hello,
-Date: Tue, 21 May 2019 14:51:09 +0200
-Message-Id: <20190521125114.20357-1-miquel.raynal@bootlin.com>
+Subject: [PATCH v5 1/4] clk: core: link consumer with clock driver
+Date: Tue, 21 May 2019 14:51:10 +0200
+Message-Id: <20190521125114.20357-2-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.19.1
+In-Reply-To: <20190521125114.20357-1-miquel.raynal@bootlin.com>
+References: <20190521125114.20357-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_055127_429734_2F282D75 
-X-CRM114-Status: GOOD (  21.63  )
+X-CRM114-CacheID: sfid-20190521_055127_778343_EA8E1A35 
+X-CRM114-Status: GOOD (  15.96  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -67,252 +69,178 @@ Cc: Antoine Tenart <antoine.tenart@bootlin.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
  Miquel Raynal <miquel.raynal@bootlin.com>, linux-clk@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-V2hpbGUgd29ya2luZyBvbiBzdXNwZW5kIHRvIFJBTSBmZWF0dXJlLCBJIHJhbiBpbnRvIHRyb3Vi
-bGVzIG11bHRpcGxlCnRpbWVzIHdoZW4gY2xvY2tzIHdoZXJlIG5vdCBzdXNwZW5kaW5nL3Jlc3Vt
-aW5nIGF0IHRoZSBkZXNpcmVkIHRpbWUuIEkKaGFkIGEgbG9vayBhdCB0aGUgY29yZSBhbmQgSSB0
-aGluayB0aGUgc2FtZSBsb2dpYyBhcyBpbiB0aGUKcmVndWxhdG9yJ3MgY29yZSBtYXkgYmUgYXBw
-bGllZCBoZXJlIHRvICh2ZXJ5IGVhc2lseSkgZml4IHRoaXMgaXNzdWU6CnVzaW5nIGRldmljZSBs
-aW5rcy4KClRoZSBvbmx5IGFkZGl0aW9uYWwgY2hhbmdlIEkgaGFkIHRvIGRvIHdhcyB0byBhbHdh
-eXMgKHdoZW4gYXZhaWxhYmxlKQpwb3B1bGF0ZSB0aGUgZGV2aWNlIGVudHJ5IG9mIHRoZSBjb3Jl
-IGNsb2NrIHN0cnVjdHVyZSBzbyB0aGF0IGl0IGNvdWxkCmJlIHVzZWQgbGF0ZXIuIFRoaXMgaXMg
-dGhlIHB1cnBvc2Ugb2YgcGF0Y2ggMS4gUGF0Y2ggMiBhY3R1YWxseSBhZGRzCnN1cHBvcnQgZm9y
-IGRldmljZSBsaW5rcy4KCkhlcmUgaXMgYSBzdGVwLWJ5LXN0ZXAgZXhwbGFuYXRpb24gb2YgaG93
-IGxpbmtzIGFyZSBtYW5hZ2VkLCBmb2xsb3dpbmcKTWF4aW1lIFJpcGFyZCdzIHN1Z2dlc3Rpb24u
-CgoKVGhlIG9yZGVyIG9mIHByb2JlIGhhcyBubyBpbXBvcnRhbmNlIGJlY2F1c2UgdGhlIGZyYW1l
-d29yayBhbHJlYWR5CmhhbmRsZXMgb3JwaGFuZWQgY2xvY2tzIHNvIGxldCdzIGJlIHNpbXBsZSBh
-bmQgc2F5IHRoZXJlIGFyZSB0d28gcm9vdApjbG9ja3MsIG5vdCBkZXBlbmRpbmcgb24gYW55dGhp
-bmcsIHRoYXQgYXJlIHByb2JlZCBmaXJzdDogeHRhbDAgYW5kCnh0YWwxLiBOb25lIG9mIHRoZXNl
-IGNsb2NrcyBoYXZlIGEgcGFyZW50LCB0aGVyZSBpcyBubyBkZXZpY2UgbGluayBpbgp0aGUgZ2Ft
-ZSwgeWV0LgoKICAgKy0tLS0tLS0tLS0tLS0tLS0rICAgICAgICAgICAgKy0tLS0tLS0tLS0tLS0t
-LS0rCiAgIHwgICAgICAgICAgICAgICAgfCAgICAgICAgICAgIHwgICAgICAgICAgICAgICAgfAog
-ICB8ICAgICAgICAgICAgICAgIHwgICAgICAgICAgICB8ICAgICAgICAgICAgICAgIHwKICAgfCAg
-IHh0YWwwIGNvcmUgICB8ICAgICAgICAgICAgfCAgIHh0YWwxIGNvcmUgICB8CiAgIHwgICAgICAg
-ICAgICAgICAgfCAgICAgICAgICAgIHwgICAgICAgICAgICAgICAgfAogICB8ICAgICAgICAgICAg
-ICAgIHwgICAgICAgICAgICB8ICAgICAgICAgICAgICAgIHwKICAgKy0tLS0tLS1eXi0tLS0tLS0r
-ICAgICAgICAgICAgKy0tLS0tLS1eXi0tLS0tLS0rCiAgICAgICAgICAgfHwgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgfHwKICAgICAgICAgICB8fCAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICB8fAogICArLS0tLS0tLS0tLS0tLS0tLSsgICAgICAgICAgICArLS0tLS0tLS0tLS0tLS0tLSsK
-ICAgfCAgICAgICAgICAgICAgICB8ICAgICAgICAgICAgfCAgICAgICAgICAgICAgICB8CiAgIHwg
-ICB4dGFsMCBjbGsgICAgfCAgICAgICAgICAgIHwgICB4dGFsMSBjbGsgICAgfAogICB8ICAgICAg
-ICAgICAgICAgIHwgICAgICAgICAgICB8ICAgICAgICAgICAgICAgIHwKICAgKy0tLS0tLS0tLS0t
-LS0tLS0rICAgICAgICAgICAgKy0tLS0tLS0tLS0tLS0tLS0rCgpUaGVuLCBhIHBlcmlwaGVyYWwg
-Y2xvY2sgcGVyaXBoMCBpcyBwcm9iZWQuIEhpcyBwYXJlbnQgaXMgeHRhbDEuIFRoZQpjbG9ja19y
-ZWdpc3Rlcl8qKCkgY2FsbCB3aWxsIHJ1biBfX2Nsa19pbml0X3BhcmVudCgpIGFuZCBhIGxpbmsg
-YmV0d2VlbgpwZXJpcGgwJ3MgY29yZSBhbmQgeHRhbDEncyBjb3JlIHdpbGwgYmUgY3JlYXRlZCBh
-bmQgc3RvcmVkIGluCnBlcmlwaDAncyBjb3JlLT5wYXJlbnRfY2xrX2xpbmsgZW50cnkuCgogICAr
-LS0tLS0tLS0tLS0tLS0tLSsgICAgICAgICAgICArLS0tLS0tLS0tLS0tLS0tLSsKICAgfCAgICAg
-ICAgICAgICAgICB8ICAgICAgICAgICAgfCAgICAgICAgICAgICAgICB8CiAgIHwgICAgICAgICAg
-ICAgICAgfCAgICAgICAgICAgIHwgICAgICAgICAgICAgICAgfAogICB8ICAgeHRhbDAgY29yZSAg
-IHwgICAgICAgICAgICB8ICAgeHRhbDEgY29yZSAgIHwKICAgfCAgICAgICAgICAgICAgICB8ICAg
-ICAgICAgICAgfCAgICAgICAgICAgICAgICB8CiAgIHwgICAgICAgICAgICAgICAgfCAgICAgICAg
-ICAgIHwgICAgICAgICAgICAgICAgfAogICArLS0tLS0tLV5eLS0tLS0tLSsgICAgICAgICAgICAr
-LS0tLS0tLV5eLS0tLS0tLSsKICAgICAgICAgICB8fCAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICB8fAogICAgICAgICAgIHx8ICAgICAgICAgICAgICAgICAgICAgICAgICAgIHx8CiAgICstLS0t
-LS0tLS0tLS0tLS0tKyAgICAgICAgICAgICstLS0tLS0tLS0tLS0tLS0tKwogICB8ICAgICAgICAg
-ICAgICAgIHwgICAgICAgICAgICB8ICAgICAgICAgICAgICAgIHwKICAgfCAgIHh0YWwwIGNsayAg
-ICB8ICAgICAgICAgICAgfCAgIHh0YWwxIGNsayAgICB8CiAgIHwgICAgICAgICAgICAgICAgfCAg
-ICAgICAgICAgIHwgICAgICAgICAgICAgICAgfAogICArLS0tLS0tLS0tLS0tLS0tLSsgICAgICAg
-ICAgICArLS0tLS0tLV4tLS0tLS0tLSsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICB8CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfAogICAg
-ICAgICAgICAgICAgICAgICAgICAgICstLS0tLS0tLS0tLS0tLSsKICAgICAgICAgICAgICAgICAg
-ICAgICAgICB8ICAgLT5wYXJlbnRfY2xrX2xpbmsKICAgICAgICAgICAgICAgICAgICAgICAgICB8
-CiAgICAgICAgICAgICAgICAgICstLS0tLS0tLS0tLS0tLS0tKwogICAgICAgICAgICAgICAgICB8
-ICAgICAgICAgICAgICAgIHwKICAgICAgICAgICAgICAgICAgfCAgICAgICAgICAgICAgICB8CiAg
-ICAgICAgICAgICAgICAgIHwgIHBlcmlwaDAgY29yZSAgfAogICAgICAgICAgICAgICAgICB8ICAg
-ICAgICAgICAgICAgIHwKICAgICAgICAgICAgICAgICAgfCAgICAgICAgICAgICAgICB8CiAgICAg
-ICAgICAgICAgICAgICstLS0tLS0tXl4tLS0tLS0tKwogICAgICAgICAgICAgICAgICAgICAgICAg
-IHx8CiAgICAgICAgICAgICAgICAgICAgICAgICAgfHwKICAgICAgICAgICAgICAgICAgKy0tLS0t
-LS0tLS0tLS0tLS0rCiAgICAgICAgICAgICAgICAgIHwgICAgICAgICAgICAgICAgfAogICAgICAg
-ICAgICAgICAgICB8ICBwZXJpcGgwIGNsayAwIHwKICAgICAgICAgICAgICAgICAgfCAgICAgICAg
-ICAgICAgICB8CiAgICAgICAgICAgICAgICAgICstLS0tLS0tLS0tLS0tLS0tKwoKVGhlbiwgZGV2
-aWNlMCBpcyBwcm9iZWQgYW5kICJnZXQiIHRoZSBwZXJpcGgwIGNsb2NrLiBjbGtfZ2V0KCkgd2ls
-bCBiZQpjYWxsZWQgYW5kIGEgc3RydWN0IGNsayB3aWxsIGJlIGluc3RhbnRpYXRlZCBmb3IgZGV2
-aWNlMCAoY2FsbGVkIGluCnRoZSBmaWd1cmUgY2xrIDEpLiBBIGxpbmsgYmV0d2VlbiBkZXZpY2Uw
-IGFuZCB0aGUgbmV3IGNsayAxIGluc3RhbmNlIG9mCnBlcmlwaDAgd2lsbCBiZSBjcmVhdGVkIGFu
-ZCBzdG9yZWQgaW4gdGhlIGNsay0+Y29uc3VtZXJfbGluayBlbnRyeS4KCiAgICstLS0tLS0tLS0t
-LS0tLS0tKyAgICAgICAgICAgICstLS0tLS0tLS0tLS0tLS0tKwogICB8ICAgICAgICAgICAgICAg
-IHwgICAgICAgICAgICB8ICAgICAgICAgICAgICAgIHwKICAgfCAgICAgICAgICAgICAgICB8ICAg
-ICAgICAgICAgfCAgICAgICAgICAgICAgICB8CiAgIHwgICB4dGFsMCBjb3JlICAgfCAgICAgICAg
-ICAgIHwgICB4dGFsMSBjb3JlICAgfAogICB8ICAgICAgICAgICAgICAgIHwgICAgICAgICAgICB8
-ICAgICAgICAgICAgICAgIHwKICAgfCAgICAgICAgICAgICAgICB8ICAgICAgICAgICAgfCAgICAg
-ICAgICAgICAgICB8CiAgICstLS0tLS0tXl4tLS0tLS0tKyAgICAgICAgICAgICstLS0tLS0tXl4t
-LS0tLS0tKwogICAgICAgICAgIHx8ICAgICAgICAgICAgICAgICAgICAgICAgICAgIHx8CiAgICAg
-ICAgICAgfHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgfHwKICAgKy0tLS0tLS0tLS0tLS0t
-LS0rICAgICAgICAgICAgKy0tLS0tLS0tLS0tLS0tLS0rCiAgIHwgICAgICAgICAgICAgICAgfCAg
-ICAgICAgICAgIHwgICAgICAgICAgICAgICAgfAogICB8ICAgeHRhbDAgY2xrICAgIHwgICAgICAg
-ICAgICB8ICAgeHRhbDEgY2xrICAgIHwKICAgfCAgICAgICAgICAgICAgICB8ICAgICAgICAgICAg
-fCAgICAgICAgICAgICAgICB8CiAgICstLS0tLS0tLS0tLS0tLS0tKyAgICAgICAgICAgICstLS0t
-LS0tXi0tLS0tLS0tKwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwK
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8CiAgICAgICAgICAgICAg
-ICAgICAgICAgICAgKy0tLS0tLS0tLS0tLS0tKwogICAgICAgICAgICAgICAgICAgICAgICAgIHwg
-ICAtPnBhcmVudF9jbGtfbGluawogICAgICAgICAgICAgICAgICAgICAgICAgIHwKICAgICAgICAg
-ICAgICAgICAgKy0tLS0tLS0tLS0tLS0tLS0rCiAgICAgICAgICAgICAgICAgIHwgICAgICAgICAg
-ICAgICAgfAogICAgICAgICAgICAgICAgICB8ICAgICAgICAgICAgICAgIHwKICAgICAgICAgICAg
-ICAgICAgfCAgcGVyaXBoMCBjb3JlICB8CiAgICAgICAgICAgICAgICAgIHwgICAgICAgICAgICAg
-ICAgPC0tLS0tLS0tLS0tLS0rCiAgICAgICAgICAgICAgICAgIHwgICAgICAgICAgICAgICAgPC0t
-LS0tLS0tLS0tLS18CiAgICAgICAgICAgICAgICAgICstLS0tLS0tXl4tLS0tLS0tKyAgICAgICAg
-ICAgIHx8CiAgICAgICAgICAgICAgICAgICAgICAgICAgfHwgICAgICAgICAgICAgICAgICAgIHx8
-CiAgICAgICAgICAgICAgICAgICAgICAgICAgfHwgICAgICAgICAgICAgICAgICAgIHx8CiAgICAg
-ICAgICAgICAgICAgICstLS0tLS0tLS0tLS0tLS0tKyAgICArLS0tLS0tLS0tLS0tLS0tLSsKICAg
-ICAgICAgICAgICAgICAgfCAgICAgICAgICAgICAgICB8ICAgIHwgICAgICAgICAgICAgICAgfAog
-ICAgICAgICAgICAgICAgICB8ICBwZXJpcGgwIGNsayAwIHwgICAgfCAgcGVyaXBoMCBjbGsgMSB8
-CiAgICAgICAgICAgICAgICAgIHwgICAgICAgICAgICAgICAgfCAgICB8ICAgICAgICAgICAgICAg
-IHwKICAgICAgICAgICAgICAgICAgKy0tLS0tLS0tLS0tLS0tLS0rICAgICstLS0tLS0tLS0tLS0t
-LS0tKwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8CiAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgLT5jb25zdW1l
-cl9saW5rCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwK
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfAogICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8CiAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICArLS0tLS0tLXYtLS0tLS0tLSsKICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgICAgZGV2aWNlMCAgICAgfAogICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgKy0tLS0tLS0tLS0tLS0tLS0rCgpSaWdodCBu
-b3csIGRldmljZTAgaXMgbGlua2VkIHRvIHBlcmlwaDAsIGl0c2VsZiBsaW5rZWQgdG8geHRhbDEg
-c28KZXZlcnl0aGluZyBpcyBmaW5lLgoKTm93IGxldCdzIGdldCBzb21lIGZ1bjogdGhlIG5ldyBw
-YXJlbnQgb2YgcGVyaXBoMCBpcyB4dGFsMS4gVGhlIHByb2Nlc3MKd2lsbCBjYWxsIGNsa19yZXBh
-cmVudCgpLCBwZXJpcGgwJ3MgY29yZS0+cGFyZW50X2Nsa19saW5rIHdpbGwgYmUKZGVzdHJveWVk
-IGFuZCBhIG5ldyBsaW5rIHRvIHh0YWwxIHdpbGwgYmUgc2V0dXAgYW5kIHN0b3JlZC4gVGhlCnNp
-dHVhdGlvbiBpcyBub3cgdGhhdCBkZXZpY2UwIGlzIGxpbmtlZCB0byBwZXJpcGgwIGFuZCBwZXJp
-cGgwIGlzCmxpbmtlZCB0byB4dGFsMSwgc28gdGhlIGRlcGVuZGVuY3kgYmV0d2VlbiBkZXZpY2Uw
-IGFuZCB4dGFsMSBpcyBzdGlsbApjbGVhci4KCiAgICstLS0tLS0tLS0tLS0tLS0tKyAgICAgICAg
-ICAgICstLS0tLS0tLS0tLS0tLS0tKwogICB8ICAgICAgICAgICAgICAgIHwgICAgICAgICAgICB8
-ICAgICAgICAgICAgICAgIHwKICAgfCAgICAgICAgICAgICAgICB8ICAgICAgICAgICAgfCAgICAg
-ICAgICAgICAgICB8CiAgIHwgICB4dGFsMCBjb3JlICAgfCAgICAgICAgICAgIHwgICB4dGFsMSBj
-b3JlICAgfAogICB8ICAgICAgICAgICAgICAgIHwgICAgICAgICAgICB8ICAgICAgICAgICAgICAg
-IHwKICAgfCAgICAgICAgICAgICAgICB8ICAgICAgICAgICAgfCAgICAgICAgICAgICAgICB8CiAg
-ICstLS0tLS0tXl4tLS0tLS0tKyAgICAgICAgICAgICstLS0tLS0tXl4tLS0tLS0tKwogICAgICAg
-ICAgIHx8ICAgICAgICAgICAgICAgICAgICAgICAgICAgIHx8CiAgICAgICAgICAgfHwgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgfHwKICAgKy0tLS0tLS0tLS0tLS0tLS0rICAgICAgICAgICAg
-Ky0tLS0tLS0tLS0tLS0tLS0rCiAgIHwgICAgICAgICAgICAgICAgfCAgICAgICAgICAgIHwgICAg
-ICAgICAgICAgICAgfAogICB8ICAgeHRhbDAgY2xrICAgIHwgICAgICAgICAgICB8ICAgeHRhbDEg
-Y2xrICAgIHwKICAgfCAgICAgICAgICAgICAgICB8ICAgICAgICAgICAgfCAgICAgICAgICAgICAg
-ICB8CiAgICstLS0tLS0tXi0tLS0tLS0tKyAgICAgICAgICAgICstLS0tLS0tLS0tLS0tLS0tKwog
-ICAgICAgICAgIHwKICAgICAgICAgICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgXCAvCiAg
-ICAgICAgICAgKy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS14CiAgICAgIC0+cGFyZW50X2Ns
-a19saW5rICAgfCAgICAgICAgICAgIC8gXAogICAgICAgICAgICAgICAgICAgICAgICAgIHwKICAg
-ICAgICAgICAgICAgICAgKy0tLS0tLS0tLS0tLS0tLS0rCiAgICAgICAgICAgICAgICAgIHwgICAg
-ICAgICAgICAgICAgfAogICAgICAgICAgICAgICAgICB8ICAgICAgICAgICAgICAgIHwKICAgICAg
-ICAgICAgICAgICAgfCAgcGVyaXBoMCBjb3JlICB8CiAgICAgICAgICAgICAgICAgIHwgICAgICAg
-ICAgICAgICAgPC0tLS0tLS0tLS0tLS0rCiAgICAgICAgICAgICAgICAgIHwgICAgICAgICAgICAg
-ICAgPC0tLS0tLS0tLS0tLS18CiAgICAgICAgICAgICAgICAgICstLS0tLS0tXl4tLS0tLS0tKyAg
-ICAgICAgICAgIHx8CiAgICAgICAgICAgICAgICAgICAgICAgICAgfHwgICAgICAgICAgICAgICAg
-ICAgIHx8CiAgICAgICAgICAgICAgICAgICAgICAgICAgfHwgICAgICAgICAgICAgICAgICAgIHx8
-CiAgICAgICAgICAgICAgICAgICstLS0tLS0tLS0tLS0tLS0tKyAgICArLS0tLS0tLS0tLS0tLS0t
-LSsKICAgICAgICAgICAgICAgICAgfCAgICAgICAgICAgICAgICB8ICAgIHwgICAgICAgICAgICAg
-ICAgfAogICAgICAgICAgICAgICAgICB8ICBwZXJpcGgwIGNsayAwIHwgICAgfCAgcGVyaXBoMCBj
-bGsgMSB8CiAgICAgICAgICAgICAgICAgIHwgICAgICAgICAgICAgICAgfCAgICB8ICAgICAgICAg
-ICAgICAgIHwKICAgICAgICAgICAgICAgICAgKy0tLS0tLS0tLS0tLS0tLS0rICAgICstLS0tLS0t
-LS0tLS0tLS0tKwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICB8CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgLT5j
-b25zdW1lcl9saW5rCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgIHwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfAog
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8CiAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICArLS0tLS0tLXYtLS0tLS0tLSsKICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgICAgZGV2aWNlMCAgICAgfAogICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgKy0tLS0tLS0tLS0tLS0tLS0rCgpJ
-IGFzc3VtZSBwZXJpcGgwIGNhbm5vdCBiZSByZW1vdmVkIHdoaWxlIHRoZXJlIGFyZSBkZXZpY2Vz
-IHVzaW5nIGl0LApzYW1lIGZvciB4dGFsMC4KCldoYXQgY2FuIGhhcHBlbiBpcyB0aGF0IGRldmlj
-ZTAgJ3B1dCcgdGhlIGNsb2NrIHBlcmlwaDAuIFRoZSByZWxldmFudApsaW5rIGlzIGRlbGV0ZWQg
-YW5kIHRoZSBjbGsgaW5zdGFuY2UgZHJvcHBlZC4KCiAgICstLS0tLS0tLS0tLS0tLS0tKyAgICAg
-ICAgICAgICstLS0tLS0tLS0tLS0tLS0tKwogICB8ICAgICAgICAgICAgICAgIHwgICAgICAgICAg
-ICB8ICAgICAgICAgICAgICAgIHwKICAgfCAgICAgICAgICAgICAgICB8ICAgICAgICAgICAgfCAg
-ICAgICAgICAgICAgICB8CiAgIHwgICB4dGFsMCBjb3JlICAgfCAgICAgICAgICAgIHwgICB4dGFs
-MSBjb3JlICAgfAogICB8ICAgICAgICAgICAgICAgIHwgICAgICAgICAgICB8ICAgICAgICAgICAg
-ICAgIHwKICAgfCAgICAgICAgICAgICAgICB8ICAgICAgICAgICAgfCAgICAgICAgICAgICAgICB8
-CiAgICstLS0tLS0tXl4tLS0tLS0tKyAgICAgICAgICAgICstLS0tLS0tXl4tLS0tLS0tKwogICAg
-ICAgICAgIHx8ICAgICAgICAgICAgICAgICAgICAgICAgICAgIHx8CiAgICAgICAgICAgfHwgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgfHwKICAgKy0tLS0tLS0tLS0tLS0tLS0rICAgICAgICAg
-ICAgKy0tLS0tLS0tLS0tLS0tLS0rCiAgIHwgICAgICAgICAgICAgICAgfCAgICAgICAgICAgIHwg
-ICAgICAgICAgICAgICAgfAogICB8ICAgeHRhbDAgY2xrICAgIHwgICAgICAgICAgICB8ICAgeHRh
-bDEgY2xrICAgIHwKICAgfCAgICAgICAgICAgICAgICB8ICAgICAgICAgICAgfCAgICAgICAgICAg
-ICAgICB8CiAgICstLS0tLS0tXi0tLS0tLS0tKyAgICAgICAgICAgICstLS0tLS0tLS0tLS0tLS0t
-KwogICAgICAgICAgIHwKICAgICAgICAgICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgXCAv
-CiAgICAgICAgICAgKy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS14CiAgICAgIC0+cGFyZW50
-X2Nsa19saW5rICAgfCAgICAgICAgICAgIC8gXAogICAgICAgICAgICAgICAgICAgICAgICAgIHwK
-ICAgICAgICAgICAgICAgICAgKy0tLS0tLS0tLS0tLS0tLS0rCiAgICAgICAgICAgICAgICAgIHwg
-ICAgICAgICAgICAgICAgfAogICAgICAgICAgICAgICAgICB8ICAgICAgICAgICAgICAgIHwKICAg
-ICAgICAgICAgICAgICAgfCAgcGVyaXBoMCBjb3JlICB8CiAgICAgICAgICAgICAgICAgIHwgICAg
-ICAgICAgICAgICAgfAogICAgICAgICAgICAgICAgICB8ICAgICAgICAgICAgICAgIHwKICAgICAg
-ICAgICAgICAgICAgKy0tLS0tLS1eXi0tLS0tLS0rCiAgICAgICAgICAgICAgICAgICAgICAgICAg
-fHwKICAgICAgICAgICAgICAgICAgICAgICAgICB8fAogICAgICAgICAgICAgICAgICArLS0tLS0t
-LS0tLS0tLS0tLSsKICAgICAgICAgICAgICAgICAgfCAgICAgICAgICAgICAgICB8CiAgICAgICAg
-ICAgICAgICAgIHwgIHBlcmlwaDAgY2xrIDAgfAogICAgICAgICAgICAgICAgICB8ICAgICAgICAg
-ICAgICAgIHwKICAgICAgICAgICAgICAgICAgKy0tLS0tLS0tLS0tLS0tLS0rCgpOb3cgd2UgY2Fu
-IHVucmVnaXN0ZXIgcGVyaXBoMDogbGluayB3aXRoIHRoZSBwYXJlbnQgd2lsbCBiZSBkZXN0cm95
-ZWQKYW5kIHRoZSBjbG9jayBtYXkgYmUgc2FmZWx5IHJlbW92ZWQuCgogICArLS0tLS0tLS0tLS0t
-LS0tLSsgICAgICAgICAgICArLS0tLS0tLS0tLS0tLS0tLSsKICAgfCAgICAgICAgICAgICAgICB8
-ICAgICAgICAgICAgfCAgICAgICAgICAgICAgICB8CiAgIHwgICAgICAgICAgICAgICAgfCAgICAg
-ICAgICAgIHwgICAgICAgICAgICAgICAgfAogICB8ICAgeHRhbDAgY29yZSAgIHwgICAgICAgICAg
-ICB8ICAgeHRhbDEgY29yZSAgIHwKICAgfCAgICAgICAgICAgICAgICB8ICAgICAgICAgICAgfCAg
-ICAgICAgICAgICAgICB8CiAgIHwgICAgICAgICAgICAgICAgfCAgICAgICAgICAgIHwgICAgICAg
-ICAgICAgICAgfAogICArLS0tLS0tLV5eLS0tLS0tLSsgICAgICAgICAgICArLS0tLS0tLV5eLS0t
-LS0tLSsKICAgICAgICAgICB8fCAgICAgICAgICAgICAgICAgICAgICAgICAgICB8fAogICAgICAg
-ICAgIHx8ICAgICAgICAgICAgICAgICAgICAgICAgICAgIHx8CiAgICstLS0tLS0tLS0tLS0tLS0t
-KyAgICAgICAgICAgICstLS0tLS0tLS0tLS0tLS0tKwogICB8ICAgICAgICAgICAgICAgIHwgICAg
-ICAgICAgICB8ICAgICAgICAgICAgICAgIHwKICAgfCAgIHh0YWwwIGNsayAgICB8ICAgICAgICAg
-ICAgfCAgIHh0YWwxIGNsayAgICB8CiAgIHwgICAgICAgICAgICAgICAgfCAgICAgICAgICAgIHwg
-ICAgICAgICAgICAgICAgfAogICArLS0tLS0tLS0tLS0tLS0tLSsgICAgICAgICAgICArLS0tLS0t
-LS0tLS0tLS0tLSsKCgpUaGlzIGlzIG15IHVuZGVyc3RhbmRpbmcgb2YgdGhlIGNvbW1vbiBjbG9j
-ayBmcmFtZXdvcmsgYW5kIGhvdyBsaW5rcwpjYW4gYmUgYWRkZWQgdG8gaXQuCgpBcyBhIHJlc3Vs
-dCwgaGVyZSBhcmUgdGhlIGxpbmtzIGNyZWF0ZWQgZHVyaW5nIHRoZSBib290IG9mIGFuCkVTUFJF
-U1NPYmluOgoKLS0tLS0+OC0tLS0tCm1hcnZlbGwtYXJtYWRhLTM3MDAtdGJnLWNsb2NrIGQwMDEz
-MjAwLnRiZzogTGlua2VkIGFzIGEgY29uc3VtZXIgdG8gZDAwMTM4MDAucGluY3RybDp4dGFsLWNs
-awptYXJ2ZWxsLWFybWFkYS0zNzAwLXRiZy1jbG9jayBkMDAxMzIwMC50Ymc6IERyb3BwaW5nIHRo
-ZSBsaW5rIHRvIGQwMDEzODAwLnBpbmN0cmw6eHRhbC1jbGsKbWFydmVsbC1hcm1hZGEtMzcwMC10
-YmctY2xvY2sgZDAwMTMyMDAudGJnOiBMaW5rZWQgYXMgYSBjb25zdW1lciB0byBkMDAxMzgwMC5w
-aW5jdHJsOnh0YWwtY2xrCm1hcnZlbGwtYXJtYWRhLTM3MDAtcGVyaXBoLWNsb2NrIGQwMDEzMDAw
-Lm5iLXBlcmlwaC1jbGs6IExpbmtlZCBhcyBhIGNvbnN1bWVyIHRvIGQwMDEzMjAwLnRiZwptYXJ2
-ZWxsLWFybWFkYS0zNzAwLXBlcmlwaC1jbG9jayBkMDAxMzAwMC5uYi1wZXJpcGgtY2xrOiBMaW5r
-ZWQgYXMgYSBjb25zdW1lciB0byBkMDAxMzgwMC5waW5jdHJsOnh0YWwtY2xrCm1hcnZlbGwtYXJt
-YWRhLTM3MDAtcGVyaXBoLWNsb2NrIGQwMDE4MDAwLnNiLXBlcmlwaC1jbGs6IExpbmtlZCBhcyBh
-IGNvbnN1bWVyIHRvIGQwMDEzMjAwLnRiZwptdm5ldGEgZDAwMzAwMDAuZXRoZXJuZXQ6IExpbmtl
-ZCBhcyBhIGNvbnN1bWVyIHRvIGQwMDE4MDAwLnNiLXBlcmlwaC1jbGsKeGhjaS1oY2QgZDAwNTgw
-MDAudXNiOiBMaW5rZWQgYXMgYSBjb25zdW1lciB0byBkMDAxODAwMC5zYi1wZXJpcGgtY2xrCnhl
-bm9uLXNkaGNpIGQwMGQwMDAwLnNkaGNpOiBMaW5rZWQgYXMgYSBjb25zdW1lciB0byBkMDAxMzAw
-MC5uYi1wZXJpcGgtY2xrCnhlbm9uLXNkaGNpIGQwMGQwMDAwLnNkaGNpOiBEcm9wcGluZyB0aGUg
-bGluayB0byBkMDAxMzAwMC5uYi1wZXJpcGgtY2xrCm12ZWJ1LXVhcnQgZDAwMTIwMDAuc2VyaWFs
-OiBMaW5rZWQgYXMgYSBjb25zdW1lciB0byBkMDAxMzgwMC5waW5jdHJsOnh0YWwtY2xrCmFkdmst
-cGNpZSBkMDA3MDAwMC5wY2llOiBMaW5rZWQgYXMgYSBjb25zdW1lciB0byBkMDAxODAwMC5zYi1w
-ZXJpcGgtY2xrCnhlbm9uLXNkaGNpIGQwMGQwMDAwLnNkaGNpOiBMaW5rZWQgYXMgYSBjb25zdW1l
-ciB0byBkMDAxMzAwMC5uYi1wZXJpcGgtY2xrCnhlbm9uLXNkaGNpIGQwMGQwMDAwLnNkaGNpOiBM
-aW5rZWQgYXMgYSBjb25zdW1lciB0byByZWd1bGF0b3IuMQpjcHUgY3B1MDogTGlua2VkIGFzIGEg
-Y29uc3VtZXIgdG8gZDAwMTMwMDAubmItcGVyaXBoLWNsawpjcHUgY3B1MDogRHJvcHBpbmcgdGhl
-IGxpbmsgdG8gZDAwMTMwMDAubmItcGVyaXBoLWNsawpjcHUgY3B1MDogTGlua2VkIGFzIGEgY29u
-c3VtZXIgdG8gZDAwMTMwMDAubmItcGVyaXBoLWNsawotLS0tLTg8LS0tLS0KClRoYW5rcywKTWlx
-dcOobAoKQ2hhbmdlcyBzaW5jZSB2NDoKPT09PT09PT09PT09PT09PT0KKiBSZWJhc2VkIG9uIHRv
-cCBvZiB2NS4yLXJjMS4KCkNoYW5nZXMgc2luY2UgdjM6Cj09PT09PT09PT09PT09PT09CiogUmVi
-YXNlZCBvbiB0b3Agb2YgU3RlcGhlbidzICdjbGstcGFyZW50LXJld3JpdGUnIGJyYW5jaC4gU3Rl
-cGhlbgogIGFscmVhZHkgdXBkYXRlZCBhbmQgdG9vayB0aGUgcGF0Y2ggJ2NsazogY29yZTogY2xh
-cmlmeSB0aGUgY2hlY2sgZm9yCiAgcnVudGltZSBQTScgc28gaXQgaXMgbm90IHByZXNlbnQgaW4g
-dGhpcyBzZXJpZXMgYW55bW9yZS4KKiBVcGRhdGVkIHRoZSBjb2RlIHRvIGZpdCB3aXRoIHRoZSBu
-ZXcgY29yZS4gS2VwdCB0aGUgaGVscGVycyB0aGF0CiAgd2VyZSBhZGRlZCB0byBjbGsvY2xrLmMg
-KHR1cm5pbmcgdGhlbSBzdGF0aWMpIGZvciBtb3JlIHJlYWRhYmlsaXR5LgoqIFdoaWxlIHdvcmtp
-bmcgb24gY2xvY2tzLCBJIGRpc2NvdmVyZWQgYSB0eXBvIGluIGFuIGEzNzAwLXRiZyBkcml2ZXIK
-ICBlcnJvciBtZXNzYWdlLiBBIHBhdGNoIGhhcyBiZWVuIGFkZGVkIHRvIGNvcnJlY3QgdGhpcyB0
-eXBvLgoKQ2hhbmdlcyBzaW5jZSB2MjoKPT09PT09PT09PT09PT09PT0KKiBGaXhlZCBjb21waWxh
-dGlvbiBpc3N1ZSB3aGVuIG5vdCB1c2luZyB0aGUgY29tbW9uIGNsb2NrIGZyYW1ld29yazoKICBy
-ZW1vdmVkIHRoZSBzdGF0aWMga2V5d29yZCBpbiBmcm9udCBvZiBjbGtfbGluay91bmxpbmtfY29u
-c3VtZXIoKQogIGR1bW15IGRlZmluaXRpb25zIGluIGNsa2Rldi5jLgoKQ2hhbmdlcyBzaW5jZSB2
-MToKPT09PT09PT09PT09PT09PT0KKiBBZGQgY2xvY2stPmNsb2NrIGxpbmtzLCBub3Qgb25seSBk
-ZXZpY2UtPmNsb2NrIGxpbmtzLgoqIEhlbHBlcnMgcmVuYW1lZDoKICA+IGNsa197bGluayx1bmxp
-bmt9X2hpZXJhcmNoeSgpCiAgPiBjbGtfe2xpbmssdW5saW5rfV9jb25zdW1lcigpCiogQWRkIHR3
-byBwYXRjaGVzIHRvIHBhc3MgYSAic3RydWN0IGRldmljZSIgdG8gdGhlIGNsb2NrIHJlZ2lzdHJh
-dGlvbgogIGhlbHBlci4gVGhpcyB3YXkgZGV2aWNlIGxpbmtzIG1heSB3b3JrIGJldHdlZW4gY2xv
-Y2tzIHRoZW1zZWx2ZXMKICAob3RoZXJ3aXNlIHRoZSBsaW5rIGlzIG5vdCBjcmVhdGVkKS4KCgpN
-aXF1ZWwgUmF5bmFsICg0KToKICBjbGs6IGNvcmU6IGxpbmsgY29uc3VtZXIgd2l0aCBjbG9jayBk
-cml2ZXIKICBjbGs6IG12ZWJ1OiBhcm1hZGEtMzd4eC10Ymc6IGZpeCBlcnJvciBtZXNzYWdlCiAg
-Y2xrOiBtdmVidTogYXJtYWRhLTM3eHgtdGJnOiBmaWxsIHRoZSBkZXZpY2UgZW50cnkgd2hlbiBy
-ZWdpc3RlcmluZwogICAgdGhlIGNsb2NrcwogIGNsazogbXZlYnU6IGFybWFkYS0zN3h4LXh0YWw6
-IGZpbGwgdGhlIGRldmljZSBlbnRyeSB3aGVuIHJlZ2lzdGVyaW5nCiAgICB0aGUgY2xvY2sKCiBk
-cml2ZXJzL2Nsay9jbGsuYyAgICAgICAgICAgICAgICAgICAgfCA1MCArKysrKysrKysrKysrKysr
-KysrKysrKysrKystCiBkcml2ZXJzL2Nsay9tdmVidS9hcm1hZGEtMzd4eC10YmcuYyAgfCAgOCAr
-KystLQogZHJpdmVycy9jbGsvbXZlYnUvYXJtYWRhLTM3eHgteHRhbC5jIHwgIDMgKy0KIDMgZmls
-ZXMgY2hhbmdlZCwgNTYgaW5zZXJ0aW9ucygrKSwgNSBkZWxldGlvbnMoLSkKCi0tIAoyLjE5LjEK
-CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
-cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
-cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
-a2VybmVsCg==
+One major concern when, for instance, suspending/resuming a platform
+is to never access registers before the underlying clock has been
+resumed, otherwise most of the time the kernel will just crash. One
+solution is to use syscore operations when registering clock drivers
+suspend/resume callbacks. One problem of using syscore_ops is that the
+suspend/resume scheduling will depend on the order of the
+registrations, which brings (unacceptable) randomness in the process.
+
+A feature called device links has been introduced to handle such
+situation. It creates dependencies between consumers and providers,
+enforcing e.g. the suspend/resume order when needed. Such feature is
+already in use for regulators.
+
+Add device links support in the clock subsystem by creating/deleting
+the links at get/put time.
+
+Example of a boot (ESPRESSObin, A3700 SoC) with devices linked to clocks:
+
+marvell-armada-3700-tbg-clock d0013200.tbg: Linked as a consumer to d0013800.pinctrl:xtal-clk
+marvell-armada-3700-tbg-clock d0013200.tbg: Dropping the link to d0013800.pinctrl:xtal-clk
+marvell-armada-3700-tbg-clock d0013200.tbg: Linked as a consumer to d0013800.pinctrl:xtal-clk
+marvell-armada-3700-periph-clock d0013000.nb-periph-clk: Linked as a consumer to d0013200.tbg
+marvell-armada-3700-periph-clock d0013000.nb-periph-clk: Linked as a consumer to d0013800.pinctrl:xtal-clk
+marvell-armada-3700-periph-clock d0018000.sb-periph-clk: Linked as a consumer to d0013200.tbg
+mvneta d0030000.ethernet: Linked as a consumer to d0018000.sb-periph-clk
+xhci-hcd d0058000.usb: Linked as a consumer to d0018000.sb-periph-clk
+xenon-sdhci d00d0000.sdhci: Linked as a consumer to d0013000.nb-periph-clk
+xenon-sdhci d00d0000.sdhci: Dropping the link to d0013000.nb-periph-clk
+mvebu-uart d0012000.serial: Linked as a consumer to d0013800.pinctrl:xtal-clk
+advk-pcie d0070000.pcie: Linked as a consumer to d0018000.sb-periph-clk
+xenon-sdhci d00d0000.sdhci: Linked as a consumer to d0013000.nb-periph-clk
+xenon-sdhci d00d0000.sdhci: Linked as a consumer to regulator.1
+cpu cpu0: Linked as a consumer to d0013000.nb-periph-clk
+cpu cpu0: Dropping the link to d0013000.nb-periph-clk
+cpu cpu0: Linked as a consumer to d0013000.nb-periph-clk
+
+Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+---
+ drivers/clk/clk.c | 50 ++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 49 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
+index ec6f04dcf5e6..e6b84ab43f9f 100644
+--- a/drivers/clk/clk.c
++++ b/drivers/clk/clk.c
+@@ -83,6 +83,7 @@ struct clk_core {
+ 	struct hlist_node	debug_node;
+ #endif
+ 	struct kref		ref;
++	struct device_link	*parent_clk_link;
+ };
+ 
+ #define CREATE_TRACE_POINTS
+@@ -97,6 +98,7 @@ struct clk {
+ 	unsigned long max_rate;
+ 	unsigned int exclusive_count;
+ 	struct hlist_node clks_node;
++	struct device_link *consumer_link;
+ };
+ 
+ /***           runtime pm          ***/
+@@ -281,6 +283,35 @@ struct clk_hw *clk_hw_get_parent(const struct clk_hw *hw)
+ }
+ EXPORT_SYMBOL_GPL(clk_hw_get_parent);
+ 
++static void clk_link_consumer(struct device *consumer, struct clk *clk)
++{
++	if (consumer && clk)
++		clk->consumer_link = device_link_add(consumer, clk->core->dev,
++						     DL_FLAG_STATELESS);
++}
++
++static void clk_unlink_consumer(struct clk *clk)
++{
++	if (clk && clk->consumer_link)
++		device_link_del(clk->consumer_link);
++}
++
++static void clk_link_hierarchy(struct clk_core *consumer,
++			       struct clk_core *provider)
++{
++	if (consumer && provider)
++		consumer->parent_clk_link = device_link_add(consumer->dev,
++							    provider->dev,
++							    DL_FLAG_STATELESS);
++}
++
++static void clk_unlink_hierarchy(struct clk_core *consumer,
++				 struct clk_core *provider)
++{
++	if (consumer && provider && consumer->parent_clk_link)
++		device_link_del(consumer->parent_clk_link);
++}
++
+ static struct clk_core *__clk_lookup_subtree(const char *name,
+ 					     struct clk_core *core)
+ {
+@@ -1665,6 +1696,9 @@ static void clk_reparent(struct clk_core *core, struct clk_core *new_parent)
+ 
+ 	hlist_del(&core->child_node);
+ 
++	if (core->parent)
++		clk_unlink_hierarchy(core, core->parent);
++
+ 	if (new_parent) {
+ 		bool becomes_orphan = new_parent->orphan;
+ 
+@@ -1676,6 +1710,8 @@ static void clk_reparent(struct clk_core *core, struct clk_core *new_parent)
+ 
+ 		if (was_orphan != becomes_orphan)
+ 			clk_core_update_orphan_status(core, becomes_orphan);
++
++		clk_link_hierarchy(core, new_parent);
+ 	} else {
+ 		hlist_add_head(&core->child_node, &clk_orphan_list);
+ 		if (!was_orphan)
+@@ -2402,6 +2438,8 @@ __clk_init_parent(struct clk_core *core, bool update_orphan)
+ 	if (!parent_hw)
+ 		return NULL;
+ 
++	clk_link_hierarchy(core, parent_hw->core);
++
+ 	return parent_hw->core;
+ }
+ 
+@@ -3473,6 +3511,7 @@ struct clk *clk_hw_create_clk(struct device *dev, struct clk_hw *hw,
+ 	}
+ 
+ 	kref_get(&core->ref);
++	clk_link_consumer(dev, clk);
+ 	clk_core_link_consumer(core, clk);
+ 
+ 	return clk;
+@@ -3776,11 +3815,18 @@ void clk_unregister(struct clk *clk)
+ 	clk->core->ops = &clk_nodrv_ops;
+ 	clk_enable_unlock(flags);
+ 
++	clk_unlink_hierarchy(clk->core, clk->core->parent);
++
+ 	if (!hlist_empty(&clk->core->children)) {
+ 		struct clk_core *child;
+ 		struct hlist_node *t;
+ 
+-		/* Reparent all children to the orphan list. */
++		/*
++		 * Reparent all children to the orphan list.
++		 *
++		 * No need to unlink the child clock manually, this will be
++		 * handled by clk_reparent().
++		 */
+ 		hlist_for_each_entry_safe(child, t, &clk->core->children,
+ 					  child_node)
+ 			clk_core_set_parent_nolock(child, NULL);
+@@ -3943,6 +3989,8 @@ void __clk_put(struct clk *clk)
+ 
+ 	clk_prepare_lock();
+ 
++	clk_unlink_consumer(clk);
++
+ 	/*
+ 	 * Before calling clk_put, all calls to clk_rate_exclusive_get() from a
+ 	 * given user should be balanced with calls to clk_rate_exclusive_put()
+-- 
+2.19.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
