@@ -2,87 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 652E425765
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 20:18:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2054C2576E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 20:18:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=W4loz1gLYBuxh6dnvxLpZLlFjY7KBTAKvCJnKeUvGco=; b=r/tLsfY8N7oy8gxnUzC9c26qB
-	hNpQVywqRDiN1kYSM56I/RXIZM/kKOK/8Kuf8H8UYMr7SI3F72+UaM9kOx05Cz/keIu4J8/dDonKF
-	KgfV95b5D/LlS62tJ4fqoM1r8MMCkJpvBwwHlX9aNe0iFI3kKimxhckisXBkt5tc60JWZ4iZiiORR
-	bOVQZKO4o/dpr0KeifOhdmK6x2JZblt2EPSrC/Y34bEkUIdMBsrFmqI2q4aZ03MdNPqN6q6j+diIu
-	FgOOD6OPlzivhi3khP0ts9736jvpC1bdqucAahKuwqlDl1XmExNzRcrsoRTtzGI895TLWlu3/y2sm
-	zko4q9+CQ==;
+	 bh=OBAXyX040FaiTpCP+GneYtRcqf68hoOz9TKafkq5zwA=; b=jhMKKPeVkBAqAq7AXv9/3jtlF
+	j0hE574pkr9YAiiaAWBMYMMgfR3Zd6xj/wk4QL6TSKFtqAYACgiJVEQAWUnm67U3YposA9psyZahX
+	RwlGOJWkbOC67tjJRdhOgq0o8AqvMYf63EBEQE+8ai+SKloJaS+pllHIgOzryy+FU3YEDYZytnGNG
+	nZnHo7AAAbch98jA9qmPzcqdr8SniWHdn/Nu/heeUJyQI0jPe4XQ56e+dqPuJ6YWZvVrxnC153POv
+	HEHB9aHXT/WwsFsGJQmXYs+UUwkWEayj+Tb5uI4y9GVqFaG/i4U/Mcz/p+9Ya++0PelQU/Fl5FG3+
+	z2FHTbfUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT9Kq-000606-U5; Tue, 21 May 2019 18:18:00 +0000
-Received: from hqemgate16.nvidia.com ([216.228.121.65])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT9Kk-0005zm-6J
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 18:17:55 +0000
-Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5ce440d20000>; Tue, 21 May 2019 11:17:54 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate101.nvidia.com (PGP Universal service);
- Tue, 21 May 2019 11:17:53 -0700
-X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Tue, 21 May 2019 11:17:53 -0700
-Received: from [10.25.72.115] (10.124.1.5) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 21 May
- 2019 18:17:48 +0000
-Subject: Re: [PATCH V7 12/15] arm64: tegra: Enable PCIe slots in P2972-0000
- board
-To: Thierry Reding <thierry.reding@gmail.com>
-References: <20190517123846.3708-1-vidyas@nvidia.com>
- <20190517123846.3708-13-vidyas@nvidia.com> <20190521105455.GK29166@ulmo>
-X-Nvconfidentiality: public
-From: Vidya Sagar <vidyas@nvidia.com>
-Message-ID: <6a2c0a9a-1c37-3e32-535a-aaf0db2f101d@nvidia.com>
-Date: Tue, 21 May 2019 23:47:45 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+	id 1hT9LX-0006KS-Ss; Tue, 21 May 2019 18:18:43 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hT9LQ-0006Jk-CR
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 18:18:38 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A3D0280D;
+ Tue, 21 May 2019 11:18:35 -0700 (PDT)
+Received: from [10.1.196.75] (e110467-lin.cambridge.arm.com [10.1.196.75])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A97D23F5AF;
+ Tue, 21 May 2019 11:18:33 -0700 (PDT)
+Subject: Re: [PATCH v2 03/15] iommu/arm-smmu: Add split pagetable support for
+ arm-smmu-v2
+To: Jordan Crouse <jcrouse@codeaurora.org>, freedreno@lists.freedesktop.org
+References: <1558455243-32746-1-git-send-email-jcrouse@codeaurora.org>
+ <1558455243-32746-4-git-send-email-jcrouse@codeaurora.org>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <f2b2f524-cd63-7153-c454-0210410d1116@arm.com>
+Date: Tue, 21 May 2019 19:18:32 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190521105455.GK29166@ulmo>
-X-Originating-IP: [10.124.1.5]
-X-ClientProxiedBy: HQMAIL105.nvidia.com (172.20.187.12) To
- HQMAIL107.nvidia.com (172.20.187.13)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1558462674; bh=a8LODZvSpNaDmQpk25Mop1kwqk2JYgsbirOqlH6wW/0=;
- h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
- Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
- X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=sOAeepoIn+0kLL5zHwpwlNYmx7dO8zJTj95zfvWEzRH4O30O3BUwQM0p1brYyE10F
- J4MLekCR8ZAThIesLjoTJS7Omhtg5xR4kefXUe4tI2pIBdQoJzy6R2i6PSgFuc8Bj6
- lsMACXqN+87u3mfAwHXRGeVhhMs7lJdk2jhfmV6dbWCQGPY5+zLEB5T0ZDjKa/9Cyz
- TJ+8HcFSPxNNdMydPQ1yLFWA+j0A9xTQ7aLMUpoHBuAmTBYZFG4o0U/fzjMoWWgdYj
- yvHdIvlBGzM/UEm4a+k0+Efh/ZZ4Dhgyty11166IcKbciasl99ntwQwjpBB8S8h+El
- YN2zcS6UXk2sA==
+In-Reply-To: <1558455243-32746-4-git-send-email-jcrouse@codeaurora.org>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_111754_248695_48EBCB23 
-X-CRM114-Status: GOOD (  15.10  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190521_111836_434613_74C70C61 
+X-CRM114-Status: GOOD (  34.91  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.65 listed in list.dnswl.org]
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,124 +65,428 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
- mperttunen@nvidia.com, mmaddireddy@nvidia.com, linux-pci@vger.kernel.org,
- catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- kthota@nvidia.com, kishon@ti.com, linux-tegra@vger.kernel.org,
- robh+dt@kernel.org, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
- bhelgaas@google.com, jonathanh@nvidia.com,
- linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
+Cc: jean-philippe.brucker@arm.com, linux-arm-msm@vger.kernel.org,
+ Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
+ dianders@chromium.org, linux-kernel@vger.kernel.org,
+ iommu@lists.linux-foundation.org, hoegsberg@google.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/21/2019 4:24 PM, Thierry Reding wrote:
-> On Fri, May 17, 2019 at 06:08:43PM +0530, Vidya Sagar wrote:
->> Enable PCIe controller nodes to enable respective PCIe slots on
->> P2972-0000 board. Following is the ownership of slots by different
->> PCIe controllers.
->> Controller-0 : M.2 Key-M slot
->> Controller-1 : On-board Marvell eSATA controller
->> Controller-3 : M.2 Key-E slot
->>
->> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
->> ---
->> Changes since [v6]:
->> * None
->>
->> Changes since [v5]:
->> * Arranged PCIe nodes in the order of their addresses
->>
->> Changes since [v4]:
->> * None
->>
->> Changes since [v3]:
->> * None
->>
->> Changes since [v2]:
->> * Changed P2U label names to reflect new format that includes 'hsio'/'nvhs'
->>    strings to reflect UPHY brick they belong to
->>
->> Changes since [v1]:
->> * Dropped 'pcie-' from phy-names property strings
->>
->>   .../arm64/boot/dts/nvidia/tegra194-p2888.dtsi |  2 +-
->>   .../boot/dts/nvidia/tegra194-p2972-0000.dts   | 41 +++++++++++++++++++
->>   2 files changed, 42 insertions(+), 1 deletion(-)
->>
->> diff --git a/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi b/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi
->> index 0fd5bd29fbf9..30a83d4c5b69 100644
->> --- a/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi
->> +++ b/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi
->> @@ -191,7 +191,7 @@
->>   						regulator-boot-on;
->>   					};
->>   
->> -					sd3 {
->> +					vdd_1v8ao: sd3 {
->>   						regulator-name = "VDD_1V8AO";
->>   						regulator-min-microvolt = <1800000>;
->>   						regulator-max-microvolt = <1800000>;
->> diff --git a/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts b/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
->> index 73801b48d1d8..a22704e76a84 100644
->> --- a/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
->> +++ b/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
->> @@ -167,4 +167,45 @@
->>   			};
->>   		};
->>   	};
->> +
->> +	pcie@14100000 {
->> +		status = "okay";
->> +
->> +		vddio-pex-ctl-supply = <&vdd_1v8ao>;
->> +
->> +		phys = <&p2u_hsio_0>;
->> +		phy-names = "p2u-0";
->> +	};
->> +
->> +	pcie@14140000 {
->> +		status = "okay";
->> +
->> +		vddio-pex-ctl-supply = <&vdd_1v8ao>;
->> +
->> +		phys = <&p2u_hsio_7>;
->> +		phy-names = "p2u-0";
->> +	};
->> +
->> +	pcie@14180000 {
->> +		status = "okay";
->> +
->> +		vddio-pex-ctl-supply = <&vdd_1v8ao>;
->> +
->> +		phys = <&p2u_hsio_2>, <&p2u_hsio_3>, <&p2u_hsio_4>,
->> +		       <&p2u_hsio_5>;
->> +		phy-names = "p2u-0", "p2u-1", "p2u-2", "p2u-3";
->> +	};
->> +
->> +	pcie@141a0000 {
->> +		status = "disabled";
->> +
->> +		vddio-pex-ctl-supply = <&vdd_1v8ao>;
->> +
->> +		phys = <&p2u_nvhs_0>, <&p2u_nvhs_1>, <&p2u_nvhs_2>,
->> +		       <&p2u_nvhs_3>, <&p2u_nvhs_4>, <&p2u_nvhs_5>,
->> +		       <&p2u_nvhs_6>, <&p2u_nvhs_7>;
->> +
->> +		phy-names = "p2u-0", "p2u-1", "p2u-2", "p2u-3", "p2u-4",
->> +			    "p2u-5", "p2u-6", "p2u-7";
->> +	};
+On 21/05/2019 17:13, Jordan Crouse wrote:
+> Add support for a split pagetable (TTBR0/TTBR1) scheme for arm-smmu-v2.
+> If split pagetables are enabled, create a pagetable for TTBR1 and set
+> up the sign extension bit so that all IOVAs with that bit set are mapped
+> and translated from the TTBR1 pagetable.
 > 
-> This last controller is disabled by default. Why do we need to include
-> all of this if it's not going to be used anyway?
-I want to keep this entry ready by populating all the required fields. When pinctrl
-driver is ready, I'll send out patches to enable this node as well.
+> Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
+> ---
+> 
+>   drivers/iommu/arm-smmu-regs.h  |  19 +++++
+>   drivers/iommu/arm-smmu.c       | 179 ++++++++++++++++++++++++++++++++++++++---
+>   drivers/iommu/io-pgtable-arm.c |   3 +-
+>   3 files changed, 186 insertions(+), 15 deletions(-)
+> 
+> diff --git a/drivers/iommu/arm-smmu-regs.h b/drivers/iommu/arm-smmu-regs.h
+> index e9132a9..23f27c2 100644
+> --- a/drivers/iommu/arm-smmu-regs.h
+> +++ b/drivers/iommu/arm-smmu-regs.h
+> @@ -195,7 +195,26 @@ enum arm_smmu_s2cr_privcfg {
+>   #define RESUME_RETRY			(0 << 0)
+>   #define RESUME_TERMINATE		(1 << 0)
+>   
+> +#define TTBCR_EPD1			(1 << 23)
+> +#define TTBCR_T0SZ_SHIFT		0
+> +#define TTBCR_T1SZ_SHIFT		16
+> +#define TTBCR_IRGN1_SHIFT		24
+> +#define TTBCR_ORGN1_SHIFT		26
+> +#define TTBCR_RGN_WBWA			1
+> +#define TTBCR_SH1_SHIFT			28
+> +#define TTBCR_SH_IS			3
+> +
+> +#define TTBCR_TG1_16K			(1 << 30)
+> +#define TTBCR_TG1_4K			(2 << 30)
+> +#define TTBCR_TG1_64K			(3 << 30)
+> +
+>   #define TTBCR2_SEP_SHIFT		15
+> +#define TTBCR2_SEP_31			(0x0 << TTBCR2_SEP_SHIFT)
+> +#define TTBCR2_SEP_35			(0x1 << TTBCR2_SEP_SHIFT)
+> +#define TTBCR2_SEP_39			(0x2 << TTBCR2_SEP_SHIFT)
+> +#define TTBCR2_SEP_41			(0x3 << TTBCR2_SEP_SHIFT)
+> +#define TTBCR2_SEP_43			(0x4 << TTBCR2_SEP_SHIFT)
+> +#define TTBCR2_SEP_47			(0x5 << TTBCR2_SEP_SHIFT)
+>   #define TTBCR2_SEP_UPSTREAM		(0x7 << TTBCR2_SEP_SHIFT)
+>   #define TTBCR2_AS			(1 << 4)
+>   
+> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+> index a795ada..e09c0e6 100644
+> --- a/drivers/iommu/arm-smmu.c
+> +++ b/drivers/iommu/arm-smmu.c
+> @@ -152,6 +152,7 @@ struct arm_smmu_cb {
+>   	u32				tcr[2];
+>   	u32				mair[2];
+>   	struct arm_smmu_cfg		*cfg;
+> +	unsigned long			split_table_mask;
+>   };
+>   
+>   struct arm_smmu_master_cfg {
+> @@ -253,13 +254,14 @@ enum arm_smmu_domain_stage {
+>   
+>   struct arm_smmu_domain {
+>   	struct arm_smmu_device		*smmu;
+> -	struct io_pgtable_ops		*pgtbl_ops;
+> +	struct io_pgtable_ops		*pgtbl_ops[2];
 
-> 
-> Thierry
-> 
+This seems a bit off - surely the primary domain and aux domain only 
+ever need one set of tables each, but either way there's definitely 
+unnecessary redundancy in having four sets of io_pgtable_ops between them.
 
+>   	const struct iommu_gather_ops	*tlb_ops;
+>   	struct arm_smmu_cfg		cfg;
+>   	enum arm_smmu_domain_stage	stage;
+>   	bool				non_strict;
+>   	struct mutex			init_mutex; /* Protects smmu pointer */
+>   	spinlock_t			cb_lock; /* Serialises ATS1* ops and TLB syncs */
+> +	u32 attributes;
+>   	struct iommu_domain		domain;
+>   };
+>   
+> @@ -621,6 +623,85 @@ static irqreturn_t arm_smmu_global_fault(int irq, void *dev)
+>   	return IRQ_HANDLED;
+>   }
+>   
+> +/* Adjust the context bank settings to support TTBR1 */
+> +static void arm_smmu_init_ttbr1(struct arm_smmu_domain *smmu_domain,
+> +		struct io_pgtable_cfg *pgtbl_cfg)
+> +{
+> +	struct arm_smmu_device *smmu = smmu_domain->smmu;
+> +	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
+> +	struct arm_smmu_cb *cb = &smmu_domain->smmu->cbs[cfg->cbndx];
+> +	int pgsize = 1 << __ffs(pgtbl_cfg->pgsize_bitmap);
+> +
+> +	/* Enable speculative walks through the TTBR1 */
+> +	cb->tcr[0] &= ~TTBCR_EPD1;
+> +
+> +	cb->tcr[0] |= TTBCR_SH_IS << TTBCR_SH1_SHIFT;
+> +	cb->tcr[0] |= TTBCR_RGN_WBWA << TTBCR_IRGN1_SHIFT;
+> +	cb->tcr[0] |= TTBCR_RGN_WBWA << TTBCR_ORGN1_SHIFT;
+> +
+> +	switch (pgsize) {
+> +	case SZ_4K:
+> +		cb->tcr[0] |= TTBCR_TG1_4K;
+> +		break;
+> +	case SZ_16K:
+> +		cb->tcr[0] |= TTBCR_TG1_16K;
+> +		break;
+> +	case SZ_64K:
+> +		cb->tcr[0] |= TTBCR_TG1_64K;
+> +		break;
+> +	}
+> +
+> +	/*
+> +	 * Outside of the special 49 bit UBS case that has a dedicated sign
+> +	 * extension bit, setting the SEP for any other va_size will force us to
+> +	 * shrink the size of the T0/T1 regions by one bit to accommodate the
+> +	 * SEP
+> +	 */
+> +	if (smmu->va_size != 48) {
+> +		/* Replace the T0 size */
+> +		cb->tcr[0] &= ~(0x3f << TTBCR_T0SZ_SHIFT);
+> +		cb->tcr[0] |= (64ULL - smmu->va_size - 1) << TTBCR_T0SZ_SHIFT;
+> +		/* Set the T1 size */
+> +		cb->tcr[0] |= (64ULL - smmu->va_size - 1) << TTBCR_T1SZ_SHIFT;
+> +	} else {
+> +		/* Set the T1 size to the full available UBS */
+> +		cb->tcr[0] |= (64ULL - smmu->va_size) << TTBCR_T1SZ_SHIFT;
+> +	}
+> +
+> +	/* Clear the existing SEP configuration */
+> +	cb->tcr[1] &= ~TTBCR2_SEP_UPSTREAM;
+> +
+> +	/* Set up the sign extend bit */
+> +	switch (smmu->va_size) {
+> +	case 32:
+> +		cb->tcr[1] |= TTBCR2_SEP_31;
+> +		cb->split_table_mask = (1UL << 31);
+> +		break;
+> +	case 36:
+> +		cb->tcr[1] |= TTBCR2_SEP_35;
+> +		cb->split_table_mask = (1UL << 35);
+> +		break;
+> +	case 40:
+> +		cb->tcr[1] |= TTBCR2_SEP_39;
+> +		cb->split_table_mask = (1UL << 39);
+> +		break;
+> +	case 42:
+> +		cb->tcr[1] |= TTBCR2_SEP_41;
+> +		cb->split_table_mask = (1UL << 41);
+> +		break;
+> +	case 44:
+> +		cb->tcr[1] |= TTBCR2_SEP_43;
+> +		cb->split_table_mask = (1UL << 43);
+> +		break;
+> +	case 48:
+> +		cb->tcr[1] |= TTBCR2_SEP_UPSTREAM;
+> +		cb->split_table_mask = (1UL << 48);
+> +	}
+> +
+> +	cb->ttbr[1] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr[0];
+
+Assigning a "TTBR0" to a "TTBR1" is the point at which it becomes clear 
+that we need to take a step back and reconsider. I think there was 
+originally a half-formed idea that pagetables might go around in pairs, 
+but things really aren't working out that way in practice, so it's 
+almost certainly time to rework the io_pgatble_alloc() interface. We 
+probably want to make "TTBR1" an up-front option for the appropriate 
+formats, such that either way they return a single TTBR value plus a TCR 
+with the appropriate half configured (hopefully in such a way that the 
+caller can simply allocate one of each and merge the two TCRs together, 
+so maybe responsibility for EPD* needs to move). That way we can also 
+make *better* use of the IOVA sanity-checking in io-pgtable-arm, rather 
+than just removing it (especially since this will open up a whole new 
+class of "unmapping a TTBR0 address from the TTBR1 domain" type bugs).
+
+Robin.
+
+> +	cb->ttbr[1] |= (u64)cfg->asid << TTBRn_ASID_SHIFT;
+> +}
+> +
+>   static void arm_smmu_init_context_bank(struct arm_smmu_domain *smmu_domain,
+>   				       struct io_pgtable_cfg *pgtbl_cfg)
+>   {
+> @@ -763,11 +844,13 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
+>   {
+>   	int irq, start, ret = 0;
+>   	unsigned long ias, oas;
+> -	struct io_pgtable_ops *pgtbl_ops;
+> +	struct io_pgtable_ops *pgtbl_ops[2] = { NULL, NULL };
+>   	struct io_pgtable_cfg pgtbl_cfg;
+>   	enum io_pgtable_fmt fmt;
+>   	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
+>   	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
+> +	bool split_tables =
+> +		(smmu_domain->attributes & (1 << DOMAIN_ATTR_SPLIT_TABLES));
+>   
+>   	mutex_lock(&smmu_domain->init_mutex);
+>   	if (smmu_domain->smmu)
+> @@ -797,8 +880,15 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
+>   	 *
+>   	 * Note that you can't actually request stage-2 mappings.
+>   	 */
+> -	if (!(smmu->features & ARM_SMMU_FEAT_TRANS_S1))
+> +	if (!(smmu->features & ARM_SMMU_FEAT_TRANS_S1)) {
+>   		smmu_domain->stage = ARM_SMMU_DOMAIN_S2;
+> +
+> +		/* Only allow split pagetables on stage 1 tables */
+> +		if (split_tables) {
+> +			ret = -EINVAL;
+> +			goto out_unlock;
+> +		}
+> +	}
+>   	if (!(smmu->features & ARM_SMMU_FEAT_TRANS_S2))
+>   		smmu_domain->stage = ARM_SMMU_DOMAIN_S1;
+>   
+> @@ -817,6 +907,7 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
+>   	    (smmu->features & ARM_SMMU_FEAT_FMT_AARCH32_S) &&
+>   	    (smmu_domain->stage == ARM_SMMU_DOMAIN_S1))
+>   		cfg->fmt = ARM_SMMU_CTX_FMT_AARCH32_S;
+> +
+>   	if ((IS_ENABLED(CONFIG_64BIT) || cfg->fmt == ARM_SMMU_CTX_FMT_NONE) &&
+>   	    (smmu->features & (ARM_SMMU_FEAT_FMT_AARCH64_64K |
+>   			       ARM_SMMU_FEAT_FMT_AARCH64_16K |
+> @@ -828,6 +919,12 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
+>   		goto out_unlock;
+>   	}
+>   
+> +	/* For now, only allow split tables for AARCH64 formats */
+> +	if (split_tables && cfg->fmt != ARM_SMMU_CTX_FMT_AARCH64) {
+> +		ret = -EINVAL;
+> +		goto out_unlock;
+> +	}
+> +
+>   	switch (smmu_domain->stage) {
+>   	case ARM_SMMU_DOMAIN_S1:
+>   		cfg->cbar = CBAR_TYPE_S1_TRANS_S2_BYPASS;
+> @@ -906,8 +1003,8 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
+>   		pgtbl_cfg.quirks |= IO_PGTABLE_QUIRK_NON_STRICT;
+>   
+>   	smmu_domain->smmu = smmu;
+> -	pgtbl_ops = alloc_io_pgtable_ops(fmt, &pgtbl_cfg, smmu_domain);
+> -	if (!pgtbl_ops) {
+> +	pgtbl_ops[0] = alloc_io_pgtable_ops(fmt, &pgtbl_cfg, smmu_domain);
+> +	if (!pgtbl_ops[0]) {
+>   		ret = -ENOMEM;
+>   		goto out_clear_smmu;
+>   	}
+> @@ -919,6 +1016,20 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
+>   
+>   	/* Initialise the context bank with our page table cfg */
+>   	arm_smmu_init_context_bank(smmu_domain, &pgtbl_cfg);
+> +
+> +	if (split_tables) {
+> +		/* It is safe to reuse pgtbl_cfg here */
+> +		pgtbl_ops[1] = alloc_io_pgtable_ops(fmt, &pgtbl_cfg,
+> +			smmu_domain);
+> +		if (!pgtbl_ops[1]) {
+> +			free_io_pgtable_ops(pgtbl_ops[0]);
+> +			ret = -ENOMEM;
+> +			goto out_clear_smmu;
+> +		}
+> +
+> +		arm_smmu_init_ttbr1(smmu_domain, &pgtbl_cfg);
+> +	}
+> +
+>   	arm_smmu_write_context_bank(smmu, cfg->cbndx);
+>   
+>   	/*
+> @@ -937,7 +1048,9 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
+>   	mutex_unlock(&smmu_domain->init_mutex);
+>   
+>   	/* Publish page table ops for map/unmap */
+> -	smmu_domain->pgtbl_ops = pgtbl_ops;
+> +	smmu_domain->pgtbl_ops[0] = pgtbl_ops[0];
+> +	smmu_domain->pgtbl_ops[1] = pgtbl_ops[1];
+> +
+>   	return 0;
+>   
+>   out_clear_smmu:
+> @@ -973,7 +1086,9 @@ static void arm_smmu_destroy_domain_context(struct iommu_domain *domain)
+>   		devm_free_irq(smmu->dev, irq, domain);
+>   	}
+>   
+> -	free_io_pgtable_ops(smmu_domain->pgtbl_ops);
+> +	free_io_pgtable_ops(smmu_domain->pgtbl_ops[0]);
+> +	free_io_pgtable_ops(smmu_domain->pgtbl_ops[1]);
+> +
+>   	__arm_smmu_free_bitmap(smmu->context_map, cfg->cbndx);
+>   
+>   	arm_smmu_rpm_put(smmu);
+> @@ -1317,10 +1432,37 @@ static int arm_smmu_attach_dev(struct iommu_domain *domain, struct device *dev)
+>   	return ret;
+>   }
+>   
+> +static struct io_pgtable_ops *
+> +arm_smmu_get_pgtbl_ops(struct iommu_domain *domain, unsigned long iova)
+> +{
+> +	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
+> +	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
+> +	struct arm_smmu_cb *cb = &smmu_domain->smmu->cbs[cfg->cbndx];
+> +
+> +	if (iova & cb->split_table_mask)
+> +		return smmu_domain->pgtbl_ops[1];
+> +
+> +	return smmu_domain->pgtbl_ops[0];
+> +}
+> +
+> +/*
+> + * If split pagetables are enabled adjust the iova so that it
+> + * matches the T0SZ/T1SZ that has been programmed
+> + */
+> +unsigned long arm_smmu_adjust_iova(struct iommu_domain *domain,
+> +		unsigned long iova)
+> +{
+> +	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
+> +	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
+> +	struct arm_smmu_cb *cb = &smmu_domain->smmu->cbs[cfg->cbndx];
+> +
+> +	return cb->split_table_mask ? iova & (cb->split_table_mask - 1) : iova;
+> +}
+> +
+>   static int arm_smmu_map(struct iommu_domain *domain, unsigned long iova,
+>   			phys_addr_t paddr, size_t size, int prot)
+>   {
+> -	struct io_pgtable_ops *ops = to_smmu_domain(domain)->pgtbl_ops;
+> +	struct io_pgtable_ops *ops = arm_smmu_get_pgtbl_ops(domain, iova);
+>   	struct arm_smmu_device *smmu = to_smmu_domain(domain)->smmu;
+>   	int ret;
+>   
+> @@ -1328,7 +1470,8 @@ static int arm_smmu_map(struct iommu_domain *domain, unsigned long iova,
+>   		return -ENODEV;
+>   
+>   	arm_smmu_rpm_get(smmu);
+> -	ret = ops->map(ops, iova, paddr, size, prot);
+> +	ret = ops->map(ops, arm_smmu_adjust_iova(domain, iova),
+> +		paddr, size, prot);
+>   	arm_smmu_rpm_put(smmu);
+>   
+>   	return ret;
+> @@ -1337,7 +1480,7 @@ static int arm_smmu_map(struct iommu_domain *domain, unsigned long iova,
+>   static size_t arm_smmu_unmap(struct iommu_domain *domain, unsigned long iova,
+>   			     size_t size)
+>   {
+> -	struct io_pgtable_ops *ops = to_smmu_domain(domain)->pgtbl_ops;
+> +	struct io_pgtable_ops *ops = arm_smmu_get_pgtbl_ops(domain, iova);
+>   	struct arm_smmu_device *smmu = to_smmu_domain(domain)->smmu;
+>   	size_t ret;
+>   
+> @@ -1345,7 +1488,7 @@ static size_t arm_smmu_unmap(struct iommu_domain *domain, unsigned long iova,
+>   		return 0;
+>   
+>   	arm_smmu_rpm_get(smmu);
+> -	ret = ops->unmap(ops, iova, size);
+> +	ret = ops->unmap(ops, arm_smmu_adjust_iova(domain, iova), size);
+>   	arm_smmu_rpm_put(smmu);
+>   
+>   	return ret;
+> @@ -1381,7 +1524,7 @@ static phys_addr_t arm_smmu_iova_to_phys_hard(struct iommu_domain *domain,
+>   	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
+>   	struct arm_smmu_device *smmu = smmu_domain->smmu;
+>   	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
+> -	struct io_pgtable_ops *ops= smmu_domain->pgtbl_ops;
+> +	struct io_pgtable_ops *ops = arm_smmu_get_pgtbl_ops(domain, iova);
+>   	struct device *dev = smmu->dev;
+>   	void __iomem *cb_base;
+>   	u32 tmp;
+> @@ -1429,7 +1572,7 @@ static phys_addr_t arm_smmu_iova_to_phys(struct iommu_domain *domain,
+>   					dma_addr_t iova)
+>   {
+>   	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
+> -	struct io_pgtable_ops *ops = smmu_domain->pgtbl_ops;
+> +	struct io_pgtable_ops *ops = arm_smmu_get_pgtbl_ops(domain, iova);
+>   
+>   	if (domain->type == IOMMU_DOMAIN_IDENTITY)
+>   		return iova;
+> @@ -1629,6 +1772,11 @@ static int arm_smmu_domain_get_attr(struct iommu_domain *domain,
+>   		case DOMAIN_ATTR_NESTING:
+>   			*(int *)data = (smmu_domain->stage == ARM_SMMU_DOMAIN_NESTED);
+>   			return 0;
+> +		case DOMAIN_ATTR_SPLIT_TABLES:
+> +			*((int *)data) =
+> +				!!(smmu_domain->attributes &
+> +				   (1 << DOMAIN_ATTR_SPLIT_TABLES));
+> +			return 0;
+>   		default:
+>   			return -ENODEV;
+>   		}
+> @@ -1669,6 +1817,11 @@ static int arm_smmu_domain_set_attr(struct iommu_domain *domain,
+>   			else
+>   				smmu_domain->stage = ARM_SMMU_DOMAIN_S1;
+>   			break;
+> +		case DOMAIN_ATTR_SPLIT_TABLES:
+> +			if (*((int *)data))
+> +				smmu_domain->attributes |=
+> +					(1 << DOMAIN_ATTR_SPLIT_TABLES);
+> +			break;
+>   		default:
+>   			ret = -ENODEV;
+>   		}
+> diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
+> index 4e21efb..71ecb08 100644
+> --- a/drivers/iommu/io-pgtable-arm.c
+> +++ b/drivers/iommu/io-pgtable-arm.c
+> @@ -490,8 +490,7 @@ static int arm_lpae_map(struct io_pgtable_ops *ops, unsigned long iova,
+>   	if (!(iommu_prot & (IOMMU_READ | IOMMU_WRITE)))
+>   		return 0;
+>   
+> -	if (WARN_ON(iova >= (1ULL << data->iop.cfg.ias) ||
+> -		    paddr >= (1ULL << data->iop.cfg.oas)))
+> +	if (WARN_ON(paddr >= (1ULL << data->iop.cfg.oas)))
+>   		return -ERANGE;
+>   
+>   	prot = arm_lpae_prot_to_pte(data, iommu_prot);
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
