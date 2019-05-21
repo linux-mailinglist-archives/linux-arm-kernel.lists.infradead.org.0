@@ -2,74 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E24E24D53
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 12:55:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 748C624D67
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 13:00:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=s7Hw7cNxh5UVqKU+0bWLCC7ZAgFpkOieJWPgf0sIeWw=; b=tf28xWgL01SG9J0f+3BzjQIhJ
-	PW/uY6SQlysXpzoVexoY7sEvixOefApw/Fsjavwf28PHLJF0XY65aTpRbg4Lj51HY6yaGMq5De8O6
-	xhkdqeajqCtwUhwW4PQeypwVwBWz6ZRKaMiEdcDrC8jstysjSoL44URE+waPpkn2f00P6e+WT5qQQ
-	qUkHXn10hUSXfo6pgLmsvg9S4cUxu3EJnl9aj/PD+9aLqWPQXJ0MdaJi1zl5XzOFZgw4g6Ejzllff
-	EqtyYBFCNHp7j/uczXlINTOxw1QUb0Cx+cCP16qOq3yAr3+PirGmQqF7Ah+bueeYrOcURS4wwUwWT
-	D8x5UAsgA==;
+	 bh=pdYEji5tpkiJnypE6SyRt+R+g3H3YzwGDLH85PebkxU=; b=XIZHXr+W7YYT5GtMIZF4LegsC
+	BTp9bVBx9AzWYaEXctPeii3jd0UPjkPrCjaoqUumjZVeiKkfOTIm2yylsmT/N+XxX7Dlxtg2N1Rkq
+	KChDYho9XElFvIevraK3HD5V6kIQB9e1X1fD6zzQfbgeBeWexyc8BlduschZ1WabElE8J3TT0OPXF
+	wxesKO1Y3uQQ6sd1sjXNbQtFXOyyqR8zOWqwl0gEXN6m90vhP6LHnlbsseE/dU3aUNNeVdsCv6vIf
+	/e3pwYs/ZzHN3/Rn9hXAZh5HPhm0Waoh79piSJSk+oGIZRxBzuoazgNXcrZz0Ttz3qW9zREQhLXDR
+	Qn5N2usAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT2QJ-0001Xe-7M; Tue, 21 May 2019 10:55:11 +0000
+	id 1hT2VL-0004f8-56; Tue, 21 May 2019 11:00:23 +0000
 Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT2Q6-0001Um-EB
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 10:55:00 +0000
-Received: by mail-wm1-x342.google.com with SMTP id x64so2479307wmb.5
+ id 1hT2VD-0004eV-Ea
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 11:00:17 +0000
+Received: by mail-wm1-x342.google.com with SMTP id x64so2497845wmb.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 May 2019 03:54:58 -0700 (PDT)
+ Tue, 21 May 2019 04:00:15 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=17nYfbdzzIwCOeEA+32Sv30sZvfqih6k6/KJfQXHU0U=;
- b=ZeCYc5/F8knOo4+9a9x6Xq+QFpVOaFI3oIhMnprKcgXcpS0kD1HJciICKcvMlghVW0
- XfCl+74pJ6lL6G113gPktUgcftO4/FlnnjbiPOLrTZDSKGg5HHEUWd+4Cb+9Cd+ADIt/
- xpvfN1/LZjXz5OwL5kj7NUy58RxlnTo7kTgJPRKNy0E2Ue4hxsX9YDXcxe1kYVglKBEo
- dmUC+Oeiw5Img+KeBRlGuX8erP29OpjFE7kWGMG89WJR2wRKoLjIbWEkNXiEY2sp8Pbh
- CvguTnOhYmiwt65ikaarYkabr/g4bzFtFYHlcbCRamQ1gHzQv4pp3EEo4bznfCNvDJT0
- kVrw==
+ bh=JXK0l/dJDi4Wtgp8nyxTdsDiyMt/NG7NKTcUG3fu8Eo=;
+ b=jtYDSnZwGjfr/2PZkilboV/Yx/zWbI6/QLXFQp7ymRKEmMSg7Azb8r8MzH2KzJjNfa
+ i6j8JZr2VQroVZaCScAPIyc10VNsZK9m24pV4kvfVzbwga6JVHvsYpd/NEh4OVsO6v7E
+ pcxhYXzTUdBIJTm6uTh/euaxGB9DEZU1td9MmIsVr0HzT37mMMHCTgqXgJkE/ad0lSar
+ ELgGaFKIwcIlD4VQQO1rSYR0INPKmvcqQdAPrWcyAaHRw+ActMTn7fFmcjPlwM0Bq+Qy
+ JiN2ttDFgiCVpo/uwWRRgbpDlR881yMDKxyni+NlP6wRCC52QAXWxN99XBRkzbnYMDa6
+ oTIA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=17nYfbdzzIwCOeEA+32Sv30sZvfqih6k6/KJfQXHU0U=;
- b=X4gWDH6VkjN2zdQ0rf8WCFZepCgFleX2mLN25SeA0kuYz3pscjTHyIdz53rTb9EwdS
- +WZJiDGzH4P2Cg5IF46JhkylrooT1QU4xjY0DmwkgVWcDEEOZgsdriBMRm9XshDvjz+a
- 9gH4gf2XJzQW0fCjwk5jDfJqEKmqpAGkPj0YfBz3oaRTCzWmdROjkgzrHQvw6Kf/68JA
- /0RO119D6Pl2uqyiBDZfp1+Xl7cWuzD7OxuIkmBhKPPOYhUfyG0RkVGfucr0xqUEX2zH
- DJyiWWDw0ed/BPwoW2MfTUyRpfVt2ehdk+AyIFSu5JeSzxkKVdIgm8QL/f8txYVcALHF
- OSLw==
-X-Gm-Message-State: APjAAAWfZXRVvdjlGdiyVFdcu/7vKTtq/UKViUBlN75ObHgris+nnmFR
- rR1cQKoHNtldBuPVHAVQwto=
-X-Google-Smtp-Source: APXvYqz60C1gN4ScjH6m6U5kFd88ETnN9gWQBtpWy+PHfqfM7Bq7SOcnQmw1+nRlZkREwZl5nQ9N7w==
-X-Received: by 2002:a1c:65c3:: with SMTP id z186mr2831904wmb.93.1558436096773; 
- Tue, 21 May 2019 03:54:56 -0700 (PDT)
+ bh=JXK0l/dJDi4Wtgp8nyxTdsDiyMt/NG7NKTcUG3fu8Eo=;
+ b=Ji3cmL3hWGvvZwzYtrZaKZCGlHd/bndYoZvxk8bfgw6s05SQnA+L4+V6gx1KgRQXjy
+ feS6AMU0oZEuPz6niaV9uo+hS+Ixna3zyL4UxvXQKM+k1Pen9JK/qEvkwsceZjuhw+Dn
+ DdmwJIpjro9uY9ZjTuisnfkAKdCqlF4Q2UC+m2MOvInEIOVL9/xwQVM95bSDuo2Apg8w
+ qzFSoYHQtY7OcYjozpp/VeM0wh6X5Qb7d8DNIdHSZzszvVKXYWGdtMqPR61ddLGdIaV2
+ YKAijBv9R/TpzQOae4xCRRGP3S0H16q8+3mvkxDFBdPhWrCBN1nVTkVsRXUqknG4XRNK
+ UyVw==
+X-Gm-Message-State: APjAAAUC5BgZ1tPtTtAdWRwpXvsgwJybMK1YwXXeTQf57QtL1Vg/bPif
+ YptAESQ0c4L6MTySlKInalM=
+X-Google-Smtp-Source: APXvYqyeIQVKV3k9pdyoSXqvWOBE9HiJtJqgDEyc04cN48x2WpyAJGVJZwxJplQ8EOtCL6mEB3EklQ==
+X-Received: by 2002:a1c:6c1a:: with SMTP id h26mr2811263wmc.89.1558436413733; 
+ Tue, 21 May 2019 04:00:13 -0700 (PDT)
 Received: from localhost (p2E5BEF36.dip0.t-ipconnect.de. [46.91.239.54])
- by smtp.gmail.com with ESMTPSA id k8sm7245236wrp.74.2019.05.21.03.54.55
+ by smtp.gmail.com with ESMTPSA id t6sm5373178wmt.34.2019.05.21.04.00.12
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 21 May 2019 03:54:56 -0700 (PDT)
-Date: Tue, 21 May 2019 12:54:55 +0200
+ Tue, 21 May 2019 04:00:12 -0700 (PDT)
+Date: Tue, 21 May 2019 13:00:11 +0200
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Vidya Sagar <vidyas@nvidia.com>
-Subject: Re: [PATCH V7 12/15] arm64: tegra: Enable PCIe slots in P2972-0000
- board
-Message-ID: <20190521105455.GK29166@ulmo>
+Subject: Re: [PATCH V7 13/15] phy: tegra: Add PCIe PIPE2UPHY support
+Message-ID: <20190521110011.GL29166@ulmo>
 References: <20190517123846.3708-1-vidyas@nvidia.com>
- <20190517123846.3708-13-vidyas@nvidia.com>
+ <20190517123846.3708-14-vidyas@nvidia.com>
 MIME-Version: 1.0
-In-Reply-To: <20190517123846.3708-13-vidyas@nvidia.com>
+In-Reply-To: <20190517123846.3708-14-vidyas@nvidia.com>
 User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_035458_481837_40BCAAC3 
-X-CRM114-Status: GOOD (  16.64  )
+X-CRM114-CacheID: sfid-20190521_040015_517454_452E3DEB 
+X-CRM114-Status: GOOD (  22.96  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -107,29 +106,28 @@ Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
  robh+dt@kernel.org, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
  bhelgaas@google.com, jonathanh@nvidia.com,
  linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
-Content-Type: multipart/mixed; boundary="===============5723479081408525477=="
+Content-Type: multipart/mixed; boundary="===============7999248044314451443=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============5723479081408525477==
+--===============7999248044314451443==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ibq+fG+Ci5ONsaof"
+	protocol="application/pgp-signature"; boundary="ucfHZChuBC0NsER/"
 Content-Disposition: inline
 
 
---ibq+fG+Ci5ONsaof
+--ucfHZChuBC0NsER/
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Fri, May 17, 2019 at 06:08:43PM +0530, Vidya Sagar wrote:
-> Enable PCIe controller nodes to enable respective PCIe slots on
-> P2972-0000 board. Following is the ownership of slots by different
-> PCIe controllers.
-> Controller-0 : M.2 Key-M slot
-> Controller-1 : On-board Marvell eSATA controller
-> Controller-3 : M.2 Key-E slot
+On Fri, May 17, 2019 at 06:08:44PM +0530, Vidya Sagar wrote:
+> Synopsys DesignWare core based PCIe controllers in Tegra 194 SoC interface
+> with Universal PHY (UPHY) module through a PIPE2UPHY (P2U) module.
+> For each PCIe lane of a controller, there is a P2U unit instantiated at
+> hardware level. This driver provides support for the programming required
+> for each P2U that is going to be used for a PCIe controller.
 >=20
 > Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
 > ---
@@ -137,120 +135,218 @@ On Fri, May 17, 2019 at 06:08:43PM +0530, Vidya Sagar wrote:
 > * None
 >=20
 > Changes since [v5]:
-> * Arranged PCIe nodes in the order of their addresses
+> * Addressed review comments from Thierry
 >=20
 > Changes since [v4]:
 > * None
 >=20
 > Changes since [v3]:
-> * None
+> * Rebased on top of linux-next top of the tree
 >=20
 > Changes since [v2]:
-> * Changed P2U label names to reflect new format that includes 'hsio'/'nvh=
-s'
->   strings to reflect UPHY brick they belong to
+> * Replaced spaces with tabs in Kconfig file
+> * Sorted header file inclusion alphabetically
 >=20
 > Changes since [v1]:
-> * Dropped 'pcie-' from phy-names property strings
+> * Added COMPILE_TEST in Kconfig
+> * Removed empty phy_ops implementations
+> * Modified code according to DT documentation file modifications
 >=20
->  .../arm64/boot/dts/nvidia/tegra194-p2888.dtsi |  2 +-
->  .../boot/dts/nvidia/tegra194-p2972-0000.dts   | 41 +++++++++++++++++++
->  2 files changed, 42 insertions(+), 1 deletion(-)
+>  drivers/phy/tegra/Kconfig             |   7 ++
+>  drivers/phy/tegra/Makefile            |   1 +
+>  drivers/phy/tegra/pcie-p2u-tegra194.c | 109 ++++++++++++++++++++++++++
+>  3 files changed, 117 insertions(+)
+>  create mode 100644 drivers/phy/tegra/pcie-p2u-tegra194.c
 >=20
-> diff --git a/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi b/arch/arm64/=
-boot/dts/nvidia/tegra194-p2888.dtsi
-> index 0fd5bd29fbf9..30a83d4c5b69 100644
-> --- a/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi
-> +++ b/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi
-> @@ -191,7 +191,7 @@
->  						regulator-boot-on;
->  					};
+> diff --git a/drivers/phy/tegra/Kconfig b/drivers/phy/tegra/Kconfig
+> index a3b1de953fb7..06d423fa85b4 100644
+> --- a/drivers/phy/tegra/Kconfig
+> +++ b/drivers/phy/tegra/Kconfig
+> @@ -6,3 +6,10 @@ config PHY_TEGRA_XUSB
 > =20
-> -					sd3 {
-> +					vdd_1v8ao: sd3 {
->  						regulator-name =3D "VDD_1V8AO";
->  						regulator-min-microvolt =3D <1800000>;
->  						regulator-max-microvolt =3D <1800000>;
-> diff --git a/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts b/arch/ar=
-m64/boot/dts/nvidia/tegra194-p2972-0000.dts
-> index 73801b48d1d8..a22704e76a84 100644
-> --- a/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
-> +++ b/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
-> @@ -167,4 +167,45 @@
->  			};
->  		};
->  	};
+>  	  To compile this driver as a module, choose M here: the module will
+>  	  be called phy-tegra-xusb.
 > +
-> +	pcie@14100000 {
-> +		status =3D "okay";
-> +
-> +		vddio-pex-ctl-supply =3D <&vdd_1v8ao>;
-> +
-> +		phys =3D <&p2u_hsio_0>;
-> +		phy-names =3D "p2u-0";
-> +	};
-> +
-> +	pcie@14140000 {
-> +		status =3D "okay";
-> +
-> +		vddio-pex-ctl-supply =3D <&vdd_1v8ao>;
-> +
-> +		phys =3D <&p2u_hsio_7>;
-> +		phy-names =3D "p2u-0";
-> +	};
-> +
-> +	pcie@14180000 {
-> +		status =3D "okay";
-> +
-> +		vddio-pex-ctl-supply =3D <&vdd_1v8ao>;
-> +
-> +		phys =3D <&p2u_hsio_2>, <&p2u_hsio_3>, <&p2u_hsio_4>,
-> +		       <&p2u_hsio_5>;
-> +		phy-names =3D "p2u-0", "p2u-1", "p2u-2", "p2u-3";
-> +	};
-> +
-> +	pcie@141a0000 {
-> +		status =3D "disabled";
-> +
-> +		vddio-pex-ctl-supply =3D <&vdd_1v8ao>;
-> +
-> +		phys =3D <&p2u_nvhs_0>, <&p2u_nvhs_1>, <&p2u_nvhs_2>,
-> +		       <&p2u_nvhs_3>, <&p2u_nvhs_4>, <&p2u_nvhs_5>,
-> +		       <&p2u_nvhs_6>, <&p2u_nvhs_7>;
-> +
-> +		phy-names =3D "p2u-0", "p2u-1", "p2u-2", "p2u-3", "p2u-4",
-> +			    "p2u-5", "p2u-6", "p2u-7";
-> +	};
+> +config PHY_TEGRA194_PCIE_P2U
+> +	tristate "NVIDIA Tegra P2U PHY Driver"
 
-This last controller is disabled by default. Why do we need to include
-all of this if it's not going to be used anyway?
+The Kconfig symbol and driver are named inconsistently. That's not
+inherently wrong, but I think it unnecessarily complicates things. Why
+not just do something like:
+
+	config PHY_TEGRA194_P2U
+
+and name the driver...
+
+> +	depends on ARCH_TEGRA || COMPILE_TEST
+> +	select GENERIC_PHY
+> +	help
+> +	  Enable this to support the P2U (PIPE to UPHY) that is part of Tegra 1=
+9x SOCs.
+> diff --git a/drivers/phy/tegra/Makefile b/drivers/phy/tegra/Makefile
+> index a93cd9a499b2..1aaca794f40c 100644
+> --- a/drivers/phy/tegra/Makefile
+> +++ b/drivers/phy/tegra/Makefile
+> @@ -5,3 +5,4 @@ phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_124_SOC) +=3D xusb-teg=
+ra124.o
+>  phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_132_SOC) +=3D xusb-tegra124.o
+>  phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_210_SOC) +=3D xusb-tegra210.o
+>  phy-tegra-xusb-$(CONFIG_ARCH_TEGRA_186_SOC) +=3D xusb-tegra186.o
+> +obj-$(CONFIG_PHY_TEGRA194_PCIE_P2U) +=3D pcie-p2u-tegra194.o
+
+=2E.. phy-tegra194-p2u here? Or perhaps even leave away the 194 and make
+it just phy-tegra-p2u. That would make it consistent with the
+phy-tegra-xusb driver.
+
+Looks good otherwise.
 
 Thierry
 
---ibq+fG+Ci5ONsaof
+> diff --git a/drivers/phy/tegra/pcie-p2u-tegra194.c b/drivers/phy/tegra/pc=
+ie-p2u-tegra194.c
+> new file mode 100644
+> index 000000000000..fae2afe1a1aa
+> --- /dev/null
+> +++ b/drivers/phy/tegra/pcie-p2u-tegra194.c
+> @@ -0,0 +1,109 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * P2U (PIPE to UPHY) driver for Tegra T194 SoC
+> + *
+> + * Copyright (C) 2019 NVIDIA Corporation.
+> + *
+> + * Author: Vidya Sagar <vidyas@nvidia.com>
+> + */
+> +
+> +#include <linux/err.h>
+> +#include <linux/io.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/of_platform.h>
+> +#include <linux/phy/phy.h>
+> +
+> +#define P2U_PERIODIC_EQ_CTRL_GEN3	0xc0
+> +#define P2U_PERIODIC_EQ_CTRL_GEN3_PERIODIC_EQ_EN		BIT(0)
+> +#define P2U_PERIODIC_EQ_CTRL_GEN3_INIT_PRESET_EQ_TRAIN_EN	BIT(1)
+> +#define P2U_PERIODIC_EQ_CTRL_GEN4	0xc4
+> +#define P2U_PERIODIC_EQ_CTRL_GEN4_INIT_PRESET_EQ_TRAIN_EN	BIT(1)
+> +
+> +#define P2U_RX_DEBOUNCE_TIME				0xa4
+> +#define P2U_RX_DEBOUNCE_TIME_DEBOUNCE_TIMER_MASK	0xffff
+> +#define P2U_RX_DEBOUNCE_TIME_DEBOUNCE_TIMER_VAL		160
+> +
+> +struct tegra_p2u {
+> +	void __iomem *base;
+> +};
+> +
+> +static int tegra_p2u_power_on(struct phy *x)
+> +{
+> +	struct tegra_p2u *phy =3D phy_get_drvdata(x);
+> +	u32 val;
+> +
+> +	val =3D readl(phy->base + P2U_PERIODIC_EQ_CTRL_GEN3);
+> +	val &=3D ~P2U_PERIODIC_EQ_CTRL_GEN3_PERIODIC_EQ_EN;
+> +	val |=3D P2U_PERIODIC_EQ_CTRL_GEN3_INIT_PRESET_EQ_TRAIN_EN;
+> +	writel(val, phy->base + P2U_PERIODIC_EQ_CTRL_GEN3);
+> +
+> +	val =3D readl(phy->base + P2U_PERIODIC_EQ_CTRL_GEN4);
+> +	val |=3D P2U_PERIODIC_EQ_CTRL_GEN4_INIT_PRESET_EQ_TRAIN_EN;
+> +	writel(val, phy->base + P2U_PERIODIC_EQ_CTRL_GEN4);
+> +
+> +	val =3D readl(phy->base + P2U_RX_DEBOUNCE_TIME);
+> +	val &=3D ~P2U_RX_DEBOUNCE_TIME_DEBOUNCE_TIMER_MASK;
+> +	val |=3D P2U_RX_DEBOUNCE_TIME_DEBOUNCE_TIMER_VAL;
+> +	writel(val, phy->base + P2U_RX_DEBOUNCE_TIME);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct phy_ops ops =3D {
+> +	.power_on =3D tegra_p2u_power_on,
+> +	.owner =3D THIS_MODULE,
+> +};
+> +
+> +static int tegra_p2u_probe(struct platform_device *pdev)
+> +{
+> +	struct phy_provider *phy_provider;
+> +	struct device *dev =3D &pdev->dev;
+> +	struct phy *generic_phy;
+> +	struct tegra_p2u *phy;
+> +	struct resource *res;
+> +
+> +	phy =3D devm_kzalloc(dev, sizeof(*phy), GFP_KERNEL);
+> +	if (!phy)
+> +		return -ENOMEM;
+> +
+> +	res =3D platform_get_resource_byname(pdev, IORESOURCE_MEM, "ctl");
+> +	phy->base =3D devm_ioremap_resource(dev, res);
+> +	if (IS_ERR(phy->base))
+> +		return PTR_ERR_OR_ZERO(phy->base);
+> +
+> +	platform_set_drvdata(pdev, phy);
+> +
+> +	generic_phy =3D devm_phy_create(dev, NULL, &ops);
+> +	if (IS_ERR(generic_phy))
+> +		return PTR_ERR_OR_ZERO(generic_phy);
+> +
+> +	phy_set_drvdata(generic_phy, phy);
+> +
+> +	phy_provider =3D devm_of_phy_provider_register(dev, of_phy_simple_xlate=
+);
+> +	if (IS_ERR(phy_provider))
+> +		return PTR_ERR_OR_ZERO(phy_provider);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct of_device_id tegra_p2u_id_table[] =3D {
+> +	{
+> +		.compatible =3D "nvidia,tegra194-p2u",
+> +	},
+> +	{}
+> +};
+> +MODULE_DEVICE_TABLE(of, tegra_p2u_id_table);
+> +
+> +static struct platform_driver tegra_p2u_driver =3D {
+> +	.probe =3D tegra_p2u_probe,
+> +	.driver =3D {
+> +		.name =3D "tegra194-p2u",
+> +		.of_match_table =3D tegra_p2u_id_table,
+> +	},
+> +};
+> +module_platform_driver(tegra_p2u_driver);
+> +
+> +MODULE_AUTHOR("Vidya Sagar <vidyas@nvidia.com>");
+> +MODULE_DESCRIPTION("NVIDIA Tegra PIPE2UPHY PHY driver");
+> +MODULE_LICENSE("GPL v2");
+> --=20
+> 2.17.1
+>=20
+
+--ucfHZChuBC0NsER/
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAlzj2P8ACgkQ3SOs138+
-s6EDeA/9EVyT1aT46kUCfatlTu/Dz99vr8HzGHDju/DqmmIWFuXT6U/7e/iziS8m
-LcoCBu23buFnDYZe9UBTKkKtTUSOipOpE+TW0MR/h3Rk0E7sB29RljYCoooRJbrZ
-cRBl1HbLt4NueaYck621spKCghRw84gPRDOtCEIP1ET/kpkDCRYBtuoMhOufrqgQ
-8Zddc+5YzhNC7dYdV+DLi6WvKjmi12Tz3HNFgwxIXSgfEieCnzwms63qZLULA2tf
-dvwCNKS9w8x6EsOmu8iXxfYv9gr823Yge1pCJTKW+LxTaACRSzKMiGAotDMqCxWG
-VIb39bG+wsiSLb8PjKT3X34wW6VPtsAWCCxeXJ8EsZuT3YGVskswBQ/tLyDvpooJ
-ni/zobjMTFqJl9ePCgEauo+Zhdf665JwZO6vkRql7+ZFquFBHVwY8IOag0qM/kx5
-pv4Q8Ov3GQr/QYPfn+CtvYJ1Iq61NJBhNC6zQwxw8DonLLt1OL64gGpF32x2155I
-Toi6a3SAnJVYe1rJirldNME8Xb3HbyBhItj5GVMkf+jMxrsxs3GL9nzNfLi4gmDT
-EXleRiiWixks2F/DATusE28tPhE9j+Fo9ZUXyLZ9rJiCuvqcZKGgtnboipXrn0+o
-bRdy6xLv9PhLEkwYzxqnn9odSa3LHH40b39t+xOgdr9Yw8QZ0ZM=
-=xv9D
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAlzj2jsACgkQ3SOs138+
+s6HX1BAAle2u+c/p0OdUxLkzn9KLUBAt0Da+73TQ8Ms7YJd8K/5HeU4xMfXquhwp
+3BVFMk/c84AkgOJTmGYpnC52Z0Z+S40954SZkiB3CxnBVugDXmypAp0GahpsknUj
+CrGCxYoEc6DWcum9Gk1xXvJZGsGLWBz6JcZa8c+18q+6Re7th83vIQPkiv97o/Cv
+KeFAuqrOVFn5QoTnmXcqVVvrmH9Isfo/G5LcQ3nCJZoGyEcqumYkPqFTL1Jln/qR
+RE1PiENhNmldKhesqKjFVkDp/nwB6YAaUpPIZ05wEBA5oLqsUkujQAAnBAuolkcn
+zJkuUkyvnXUM3flWQ8PVmoBLWfL5wyQ70h/+zyGOvDLqDeMzfTTCW+exHMvJfW2D
+jjzZfkNM+PGentTd4m09Y03h92ayNA1Z3YoUZr4SJWY/M35ZUByCOMluXmDjZ5Q2
+R1EeF24gj+0WC7GWC9wB/v1qYcacMnij4QSX+tADhxAnChEWIfQv0L8YD8YxDlv1
+VUOAPfSgh8UE6jcjxdGLIm5R8nPtppX4yuoK4uWsk0KGYwIh5tlPAxK0zhMdEiMN
+1KCRlm9XjFHp4pSsoMHGWq3/hy87NC0dZi7BgedKrjDUQJmNg9Qm6H6kEmED1Gxu
+0Z8rcygx19P5kSngS/YE+m0EWqp3Y45Jhr86MZzWPQOk4zZY6T4=
+=thc2
 -----END PGP SIGNATURE-----
 
---ibq+fG+Ci5ONsaof--
+--ucfHZChuBC0NsER/--
 
 
---===============5723479081408525477==
+--===============7999248044314451443==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -261,5 +357,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============5723479081408525477==--
+--===============7999248044314451443==--
 
