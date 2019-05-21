@@ -2,46 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A732E251E6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 16:25:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A81D2251E8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 16:25:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=T9LzUL2B0XxEJQMXVnyEkJldJLxGp95kpDqiiIaDQMg=; b=GPJBfoEMgMAsDs
-	FLbftze9qeDdS4WoK38BiIc+WPdK2hLqsfQe8N/yQNHK2CHwl3IQzUTVKddkCWY7H++LtXYaBCS0v
-	04DxoRP+WGYd9VXLhI8udGjq23u8ha/7yqrabHG5ugsqwDpwY54qxp609leWWk1CbzgRsm6D/4t8t
-	KkSX5FqdZRVZjiiVRiG1274aGNsq7iTqw4TBNhZZ7VVBx+DNMJcNC566qF22pPBrhLJICKduizwgd
-	1dRC+6hUu9YfbHt92dQxayTfkAvN9OxDWaDxT9RiRJDwCabZ+fBe920pQxUhKITGbbKfNkPfEJnu+
-	PiHvCJP0qCrSc/tBd2lQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2nOWzIak+0eT69wv2D+1BT9BQoku1tsKE1EbTU9fW9M=; b=ZiJ2CvfcVmTRM0
+	GBiIjOakvlFg3iS8dFKX1WGOqH3MxkxGXY5ywtCMqKL68W0qPY+Q3clffvugsfAyrplLTbkb6R7ma
+	oZlErQk4K/e2wOyDuH8YCLwxge8VK61V8iP0sfe60RcPbjD2IqFQk6sONbXrP8BxYpTcvzwAh4edR
+	cJ0Tssj6Ey4BH7XN8YfGj0FEOCVI1ip6zdFYqkV8kew74qKbzB8I+hv1j//XNGQLdljMxBgjnEU9B
+	5VTXb7GQ6WIn3MVMuuKZDZ70nZmw9RUrd7mu7VaGe5h4VduQ5+s1gsn4SnLbMyAnRpxYjS6w6Fieb
+	VnmVcGoreMU/xV8itdqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT5hv-0005h4-7c; Tue, 21 May 2019 14:25:35 +0000
+	id 1hT5i5-0005od-Cv; Tue, 21 May 2019 14:25:45 +0000
 Received: from relay9-d.mail.gandi.net ([217.70.183.199])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT5hl-0005Y3-K4
+ id 1hT5hl-0005Y4-K2
  for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 14:25:29 +0000
 X-Originating-IP: 90.88.22.185
 Received: from localhost.localdomain
  (aaubervilliers-681-1-80-185.w90-88.abo.wanadoo.fr [90.88.22.185])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 0D0A1FF815;
- Tue, 21 May 2019 14:25:06 +0000 (UTC)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 9DDFEFF816;
+ Tue, 21 May 2019 14:25:11 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Gregory Clement <gregory.clement@bootlin.com>,
  Jason Cooper <jason@lakedaemon.net>, Andrew Lunn <andrew@lunn.ch>,
  Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH resend 0/2] Marvell A7k/A8k thermal throttling
-Date: Tue, 21 May 2019 16:25:02 +0200
-Message-Id: <20190521142504.31558-1-miquel.raynal@bootlin.com>
+Subject: [PATCH resend 1/2] arm64: dts: marvell: Change core numbering in
+ AP806 thermal-node
+Date: Tue, 21 May 2019 16:25:03 +0200
+Message-Id: <20190521142504.31558-2-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.19.1
+In-Reply-To: <20190521142504.31558-1-miquel.raynal@bootlin.com>
+References: <20190521142504.31558-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_072525_957548_B3F12464 
-X-CRM114-Status: GOOD (  10.76  )
+X-CRM114-CacheID: sfid-20190521_072525_935426_13D128AD 
+X-CRM114-Status: GOOD (  11.04  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -68,31 +71,67 @@ Cc: devicetree@vger.kernel.org, Antoine Tenart <antoine.tenart@bootlin.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
  Miquel Raynal <miquel.raynal@bootlin.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGVsbG8sCgpUaGlzIHNlcmllcyB3b3JrcyBvbiB0b3Agb2YgR3JlZ29yeSdzIHNlcmllcyBhZGRp
-bmcgYm90aCBDUFVmcmVxIChhbHJlYWR5Cm1lcmdlZCkgYW5kIGEgc3VpdGFibGUgQVA4MDYgY2xv
-Y2sgZHJpdmVyLiBUaGVzZSB0d28gcGF0Y2hlcyBjYW4gZmx5CmFzLWlzIGFuZCBkbyBub3QgZGVw
-ZW5kIG9uIEdyZWdvcnkncyB3b3JrIHRvIGFwcGx5IGFuZCBzaG91bGQgcHJvYmFibHkKbWVyZ2Vk
-IGluZGVwZW5kZW50bHkuCgpXaXRoIGhpcyBwYXRjaGVzLCBhbGwgdGhlIHBpZWNlcyB3aGVyZSBh
-dmFpbGFibGUgdG8gZW5hYmxlIHRoZXJtYWwKdGhyb3R0bGluZyBvbiB0aGUgQVA4MDYgZW1iZWRk
-ZWQgaW4gTWFydmVsbCBBcm1hZGEgN2svOGsgU29Dcy4gVGhpcyBpcwpqdXN0IHRoZSBnbHVlIHRv
-IG1ha2UgaXQgYWN0dWFsbHkgd29yay4KClBhdGNoIDEgY2hhbmdlcyB0aGUgY29yZSBudW1iZXJp
-bmcgaW4gdGhlIHRoZXJtYWwtem9uZSBub2RlIHRvIGJlIGluCnN5bmMgd2l0aCB0aGUgQ1BVIG51
-bWJlcmluZyBpbiB0aGUgRFQgKGZyb20gMCB0byAzIGluc3RlYWQgb2YgZnJvbSAxCnRvIDQpLiBQ
-YXRjaCAyIGFkZHMgdHJpcCBwb2ludHMgYW5kIGNvb2xpbmcgbWFwcyB0byBhY3R1YWxseSBlbmFi
-bGUKdGhlIGZlYXR1cmUuCgpUZXN0ZWQgd2l0aCBhbiBBcm1hZGEgN2sgREIuCgpUaGFua3MsCk1p
-cXXDqGwKCk1pcXVlbCBSYXluYWwgKDIpOgogIGFybTY0OiBkdHM6IG1hcnZlbGw6IENoYW5nZSBj
-b3JlIG51bWJlcmluZyBpbiBBUDgwNiB0aGVybWFsLW5vZGUKICBhcm02NDogZHRzOiBtYXJ2ZWxs
-OiBFbmFibGUgQVA4MDYgdGhlcm1hbCB0aHJvdHRsaW5nIHdpdGggQ1BVZnJlcQoKIC4uLi9ib290
-L2R0cy9tYXJ2ZWxsL2FybWFkYS1hcDgwNi1kdWFsLmR0c2kgICB8ICAgMiArCiAuLi4vYm9vdC9k
-dHMvbWFydmVsbC9hcm1hZGEtYXA4MDYtcXVhZC5kdHNpICAgfCAgIDUgKwogYXJjaC9hcm02NC9i
-b290L2R0cy9tYXJ2ZWxsL2FybWFkYS1hcDgwNi5kdHNpIHwgMTEwICsrKysrKysrKysrKysrKy0t
-LQogMyBmaWxlcyBjaGFuZ2VkLCAxMDMgaW5zZXJ0aW9ucygrKSwgMTQgZGVsZXRpb25zKC0pCgot
-LSAKMi4xOS4xCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtYXJtLWtlcm5lbAo=
+When adding thermal nodes, the CPUs have been named from 1 to 4 while
+usually everywhere else they are referred as 0-3. Let's change this to
+be consistent with later changes when we will use CPUfreq and CPU
+phandles as cooling devices to avoid inconsistencies in the nodes
+numbering.
+
+Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+---
+ arch/arm64/boot/dts/marvell/armada-ap806.dtsi | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/marvell/armada-ap806.dtsi b/arch/arm64/boot/dts/marvell/armada-ap806.dtsi
+index 28e9dbcf47e3..df90e8b1daa8 100644
+--- a/arch/arm64/boot/dts/marvell/armada-ap806.dtsi
++++ b/arch/arm64/boot/dts/marvell/armada-ap806.dtsi
+@@ -324,7 +324,7 @@
+ 			cooling-maps { };
+ 		};
+ 
+-		ap_thermal_cpu1: ap-thermal-cpu1 {
++		ap_thermal_cpu0: ap-thermal-cpu0 {
+ 			polling-delay-passive = <1000>;
+ 			polling-delay = <1000>;
+ 
+@@ -334,7 +334,7 @@
+ 			cooling-maps { };
+ 		};
+ 
+-		ap_thermal_cpu2: ap-thermal-cpu2 {
++		ap_thermal_cpu1: ap-thermal-cpu1 {
+ 			polling-delay-passive = <1000>;
+ 			polling-delay = <1000>;
+ 
+@@ -344,7 +344,7 @@
+ 			cooling-maps { };
+ 		};
+ 
+-		ap_thermal_cpu3: ap-thermal-cpu3 {
++		ap_thermal_cpu2: ap-thermal-cpu2 {
+ 			polling-delay-passive = <1000>;
+ 			polling-delay = <1000>;
+ 
+@@ -354,7 +354,7 @@
+ 			cooling-maps { };
+ 		};
+ 
+-		ap_thermal_cpu4: ap-thermal-cpu4 {
++		ap_thermal_cpu3: ap-thermal-cpu3 {
+ 			polling-delay-passive = <1000>;
+ 			polling-delay = <1000>;
+ 
+-- 
+2.19.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
