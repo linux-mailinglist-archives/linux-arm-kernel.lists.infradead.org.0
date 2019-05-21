@@ -2,49 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2054C2576E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 20:18:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73D7725796
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 20:29:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=OBAXyX040FaiTpCP+GneYtRcqf68hoOz9TKafkq5zwA=; b=jhMKKPeVkBAqAq7AXv9/3jtlF
-	j0hE574pkr9YAiiaAWBMYMMgfR3Zd6xj/wk4QL6TSKFtqAYACgiJVEQAWUnm67U3YposA9psyZahX
-	RwlGOJWkbOC67tjJRdhOgq0o8AqvMYf63EBEQE+8ai+SKloJaS+pllHIgOzryy+FU3YEDYZytnGNG
-	nZnHo7AAAbch98jA9qmPzcqdr8SniWHdn/Nu/heeUJyQI0jPe4XQ56e+dqPuJ6YWZvVrxnC153POv
-	HEHB9aHXT/WwsFsGJQmXYs+UUwkWEayj+Tb5uI4y9GVqFaG/i4U/Mcz/p+9Ya++0PelQU/Fl5FG3+
-	z2FHTbfUA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6MZ/z/V9PPGoZxYW/NT0uzlz56Jy+q1i76q72xTb5Xw=; b=WqmTStkrUoxHPD
+	LyI6fnMU21f/H84aV8aOTxyFmDjItiOUxG737A2LXPE3cr67FgllolRh8OlkCCFjTKpEnXIlyDOI+
+	1Z7WntmLvW6gAFaA6olf90PhJO96E7kkVzfpsrnKif034NbJibyME3uXkyOHjhCJo7GTbzW6ASoLu
+	UL8bCIZoIqsPJ39Mq350yQpl7zP/COufPhlsOofPBWZ3D6qktUJf1A3BA6FU2nQjOAf+fJMIcsfjq
+	znWuGp/V45jXBVwJ/iHCx/kkXWI3WF4XPTiGeToMzs1+LA7J4OBkZdQfx1nHrQgjKhoX1PkX87eOP
+	fylJQNKH3hP7Ut6mnCAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT9LX-0006KS-Ss; Tue, 21 May 2019 18:18:43 +0000
+	id 1hT9WL-0001es-Ka; Tue, 21 May 2019 18:29:53 +0000
 Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT9LQ-0006Jk-CR
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 18:18:38 +0000
+ id 1hT9WD-0001do-Sm
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 18:29:47 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A3D0280D;
- Tue, 21 May 2019 11:18:35 -0700 (PDT)
-Received: from [10.1.196.75] (e110467-lin.cambridge.arm.com [10.1.196.75])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A97D23F5AF;
- Tue, 21 May 2019 11:18:33 -0700 (PDT)
-Subject: Re: [PATCH v2 03/15] iommu/arm-smmu: Add split pagetable support for
- arm-smmu-v2
-To: Jordan Crouse <jcrouse@codeaurora.org>, freedreno@lists.freedesktop.org
-References: <1558455243-32746-1-git-send-email-jcrouse@codeaurora.org>
- <1558455243-32746-4-git-send-email-jcrouse@codeaurora.org>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <f2b2f524-cd63-7153-c454-0210410d1116@arm.com>
-Date: Tue, 21 May 2019 19:18:32 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4EE4F80D;
+ Tue, 21 May 2019 11:29:42 -0700 (PDT)
+Received: from mbp (usa-sjc-mx-foss1.foss.arm.com [217.140.101.70])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 294B83F5AF;
+ Tue, 21 May 2019 11:29:36 -0700 (PDT)
+Date: Tue, 21 May 2019 19:29:33 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Evgenii Stepanov <eugenis@google.com>
+Subject: Re: [PATCH v15 00/17] arm64: untag user pointers passed to the kernel
+Message-ID: <20190521182932.sm4vxweuwo5ermyd@mbp>
+References: <cover.1557160186.git.andreyknvl@google.com>
+ <20190517144931.GA56186@arrakis.emea.arm.com>
+ <CAFKCwrj6JEtp4BzhqO178LFJepmepoMx=G+YdC8sqZ3bcBp3EQ@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <1558455243-32746-4-git-send-email-jcrouse@codeaurora.org>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <CAFKCwrj6JEtp4BzhqO178LFJepmepoMx=G+YdC8sqZ3bcBp3EQ@mail.gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_111836_434613_74C70C61 
-X-CRM114-Status: GOOD (  34.91  )
+X-CRM114-CacheID: sfid-20190521_112945_937833_3D2872DA 
+X-CRM114-Status: GOOD (  31.24  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -65,428 +64,143 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jean-philippe.brucker@arm.com, linux-arm-msm@vger.kernel.org,
- Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
- dianders@chromium.org, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, hoegsberg@google.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ linux-media@vger.kernel.org, Kevin Brodsky <kevin.brodsky@arm.com>,
+ Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Elliott Hughes <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 21/05/2019 17:13, Jordan Crouse wrote:
-> Add support for a split pagetable (TTBR0/TTBR1) scheme for arm-smmu-v2.
-> If split pagetables are enabled, create a pagetable for TTBR1 and set
-> up the sign extension bit so that all IOVAs with that bit set are mapped
-> and translated from the TTBR1 pagetable.
-> 
-> Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
-> ---
-> 
->   drivers/iommu/arm-smmu-regs.h  |  19 +++++
->   drivers/iommu/arm-smmu.c       | 179 ++++++++++++++++++++++++++++++++++++++---
->   drivers/iommu/io-pgtable-arm.c |   3 +-
->   3 files changed, 186 insertions(+), 15 deletions(-)
-> 
-> diff --git a/drivers/iommu/arm-smmu-regs.h b/drivers/iommu/arm-smmu-regs.h
-> index e9132a9..23f27c2 100644
-> --- a/drivers/iommu/arm-smmu-regs.h
-> +++ b/drivers/iommu/arm-smmu-regs.h
-> @@ -195,7 +195,26 @@ enum arm_smmu_s2cr_privcfg {
->   #define RESUME_RETRY			(0 << 0)
->   #define RESUME_TERMINATE		(1 << 0)
->   
-> +#define TTBCR_EPD1			(1 << 23)
-> +#define TTBCR_T0SZ_SHIFT		0
-> +#define TTBCR_T1SZ_SHIFT		16
-> +#define TTBCR_IRGN1_SHIFT		24
-> +#define TTBCR_ORGN1_SHIFT		26
-> +#define TTBCR_RGN_WBWA			1
-> +#define TTBCR_SH1_SHIFT			28
-> +#define TTBCR_SH_IS			3
-> +
-> +#define TTBCR_TG1_16K			(1 << 30)
-> +#define TTBCR_TG1_4K			(2 << 30)
-> +#define TTBCR_TG1_64K			(3 << 30)
-> +
->   #define TTBCR2_SEP_SHIFT		15
-> +#define TTBCR2_SEP_31			(0x0 << TTBCR2_SEP_SHIFT)
-> +#define TTBCR2_SEP_35			(0x1 << TTBCR2_SEP_SHIFT)
-> +#define TTBCR2_SEP_39			(0x2 << TTBCR2_SEP_SHIFT)
-> +#define TTBCR2_SEP_41			(0x3 << TTBCR2_SEP_SHIFT)
-> +#define TTBCR2_SEP_43			(0x4 << TTBCR2_SEP_SHIFT)
-> +#define TTBCR2_SEP_47			(0x5 << TTBCR2_SEP_SHIFT)
->   #define TTBCR2_SEP_UPSTREAM		(0x7 << TTBCR2_SEP_SHIFT)
->   #define TTBCR2_AS			(1 << 4)
->   
-> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-> index a795ada..e09c0e6 100644
-> --- a/drivers/iommu/arm-smmu.c
-> +++ b/drivers/iommu/arm-smmu.c
-> @@ -152,6 +152,7 @@ struct arm_smmu_cb {
->   	u32				tcr[2];
->   	u32				mair[2];
->   	struct arm_smmu_cfg		*cfg;
-> +	unsigned long			split_table_mask;
->   };
->   
->   struct arm_smmu_master_cfg {
-> @@ -253,13 +254,14 @@ enum arm_smmu_domain_stage {
->   
->   struct arm_smmu_domain {
->   	struct arm_smmu_device		*smmu;
-> -	struct io_pgtable_ops		*pgtbl_ops;
-> +	struct io_pgtable_ops		*pgtbl_ops[2];
+On Mon, May 20, 2019 at 04:53:07PM -0700, Evgenii Stepanov wrote:
+> On Fri, May 17, 2019 at 7:49 AM Catalin Marinas <catalin.marinas@arm.com> wrote:
+> > IMO (RFC for now), I see two ways forward:
+> >
+> > 1. Make this a user space problem and do not allow tagged pointers into
+> >    the syscall ABI. A libc wrapper would have to convert structures,
+> >    parameters before passing them into the kernel. Note that we can
+> >    still support the hardware MTE in the kernel by enabling tagged
+> >    memory ranges, saving/restoring tags etc. but not allowing tagged
+> >    addresses at the syscall boundary.
+> >
+> > 2. Similar shim to the above libc wrapper but inside the kernel
+> >    (arch/arm64 only; most pointer arguments could be covered with an
+> >    __SC_CAST similar to the s390 one). There are two differences from
+> >    what we've discussed in the past:
+> >
+> >    a) this is an opt-in by the user which would have to explicitly call
+> >       prctl(). If it returns -ENOTSUPP etc., the user won't be allowed
+> >       to pass tagged pointers to the kernel. This would probably be the
+> >       responsibility of the C lib to make sure it doesn't tag heap
+> >       allocations. If the user did not opt-in, the syscalls are routed
+> >       through the normal path (no untagging address shim).
+> >
+> >    b) ioctl() and other blacklisted syscalls (prctl) will not accept
+> >       tagged pointers (to be documented in Vicenzo's ABI patches).
+[...]
+> Any userspace shim approach is problematic for Android because of the
+> apps that use raw system calls. AFAIK, all apps written in Go are in
+> that camp - I'm not sure how common they are, but getting them all
+> recompiled is probably not realistic.
 
-This seems a bit off - surely the primary domain and aux domain only 
-ever need one set of tables each, but either way there's definitely 
-unnecessary redundancy in having four sets of io_pgtable_ops between them.
+That's a fair point (I wasn't expecting it would get much traction
+anyway ;)). OTOH, it allows upstreaming of the MTE patches while we
+continue the discussions around TBI.
 
->   	const struct iommu_gather_ops	*tlb_ops;
->   	struct arm_smmu_cfg		cfg;
->   	enum arm_smmu_domain_stage	stage;
->   	bool				non_strict;
->   	struct mutex			init_mutex; /* Protects smmu pointer */
->   	spinlock_t			cb_lock; /* Serialises ATS1* ops and TLB syncs */
-> +	u32 attributes;
->   	struct iommu_domain		domain;
->   };
->   
-> @@ -621,6 +623,85 @@ static irqreturn_t arm_smmu_global_fault(int irq, void *dev)
->   	return IRQ_HANDLED;
->   }
->   
-> +/* Adjust the context bank settings to support TTBR1 */
-> +static void arm_smmu_init_ttbr1(struct arm_smmu_domain *smmu_domain,
-> +		struct io_pgtable_cfg *pgtbl_cfg)
-> +{
-> +	struct arm_smmu_device *smmu = smmu_domain->smmu;
-> +	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
-> +	struct arm_smmu_cb *cb = &smmu_domain->smmu->cbs[cfg->cbndx];
-> +	int pgsize = 1 << __ffs(pgtbl_cfg->pgsize_bitmap);
-> +
-> +	/* Enable speculative walks through the TTBR1 */
-> +	cb->tcr[0] &= ~TTBCR_EPD1;
-> +
-> +	cb->tcr[0] |= TTBCR_SH_IS << TTBCR_SH1_SHIFT;
-> +	cb->tcr[0] |= TTBCR_RGN_WBWA << TTBCR_IRGN1_SHIFT;
-> +	cb->tcr[0] |= TTBCR_RGN_WBWA << TTBCR_ORGN1_SHIFT;
-> +
-> +	switch (pgsize) {
-> +	case SZ_4K:
-> +		cb->tcr[0] |= TTBCR_TG1_4K;
-> +		break;
-> +	case SZ_16K:
-> +		cb->tcr[0] |= TTBCR_TG1_16K;
-> +		break;
-> +	case SZ_64K:
-> +		cb->tcr[0] |= TTBCR_TG1_64K;
-> +		break;
-> +	}
-> +
-> +	/*
-> +	 * Outside of the special 49 bit UBS case that has a dedicated sign
-> +	 * extension bit, setting the SEP for any other va_size will force us to
-> +	 * shrink the size of the T0/T1 regions by one bit to accommodate the
-> +	 * SEP
-> +	 */
-> +	if (smmu->va_size != 48) {
-> +		/* Replace the T0 size */
-> +		cb->tcr[0] &= ~(0x3f << TTBCR_T0SZ_SHIFT);
-> +		cb->tcr[0] |= (64ULL - smmu->va_size - 1) << TTBCR_T0SZ_SHIFT;
-> +		/* Set the T1 size */
-> +		cb->tcr[0] |= (64ULL - smmu->va_size - 1) << TTBCR_T1SZ_SHIFT;
-> +	} else {
-> +		/* Set the T1 size to the full available UBS */
-> +		cb->tcr[0] |= (64ULL - smmu->va_size) << TTBCR_T1SZ_SHIFT;
-> +	}
-> +
-> +	/* Clear the existing SEP configuration */
-> +	cb->tcr[1] &= ~TTBCR2_SEP_UPSTREAM;
-> +
-> +	/* Set up the sign extend bit */
-> +	switch (smmu->va_size) {
-> +	case 32:
-> +		cb->tcr[1] |= TTBCR2_SEP_31;
-> +		cb->split_table_mask = (1UL << 31);
-> +		break;
-> +	case 36:
-> +		cb->tcr[1] |= TTBCR2_SEP_35;
-> +		cb->split_table_mask = (1UL << 35);
-> +		break;
-> +	case 40:
-> +		cb->tcr[1] |= TTBCR2_SEP_39;
-> +		cb->split_table_mask = (1UL << 39);
-> +		break;
-> +	case 42:
-> +		cb->tcr[1] |= TTBCR2_SEP_41;
-> +		cb->split_table_mask = (1UL << 41);
-> +		break;
-> +	case 44:
-> +		cb->tcr[1] |= TTBCR2_SEP_43;
-> +		cb->split_table_mask = (1UL << 43);
-> +		break;
-> +	case 48:
-> +		cb->tcr[1] |= TTBCR2_SEP_UPSTREAM;
-> +		cb->split_table_mask = (1UL << 48);
-> +	}
-> +
-> +	cb->ttbr[1] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr[0];
+> The way I see it, a patch that breaks handling of tagged pointers is
+> not that different from, say, a patch that adds a wild pointer
+> dereference. Both are bugs; the difference is that (a) the former
+> breaks a relatively uncommon target and (b) it's arguably an easier
+> mistake to make. If MTE adoption goes well, (a) will not be the case
+> for long.
 
-Assigning a "TTBR0" to a "TTBR1" is the point at which it becomes clear 
-that we need to take a step back and reconsider. I think there was 
-originally a half-formed idea that pagetables might go around in pairs, 
-but things really aren't working out that way in practice, so it's 
-almost certainly time to rework the io_pgatble_alloc() interface. We 
-probably want to make "TTBR1" an up-front option for the appropriate 
-formats, such that either way they return a single TTBR value plus a TCR 
-with the appropriate half configured (hopefully in such a way that the 
-caller can simply allocate one of each and merge the two TCRs together, 
-so maybe responsibility for EPD* needs to move). That way we can also 
-make *better* use of the IOVA sanity-checking in io-pgtable-arm, rather 
-than just removing it (especially since this will open up a whole new 
-class of "unmapping a TTBR0 address from the TTBR1 domain" type bugs).
+It's also the fact such patch would go unnoticed for a long time until
+someone exercises that code path. And when they do, the user would be
+pretty much in the dark trying to figure what what went wrong, why a
+SIGSEGV or -EFAULT happened. What's worse, we can't even say we fixed
+all the places where it matters in the current kernel codebase (ignoring
+future patches).
 
-Robin.
+I think we should revisit the static checking discussions we had last
+year. Run-time checking (even with compiler instrumentation and
+syzkaller fuzzing) would only cover the code paths specific to a Linux
+or Android installation.
 
-> +	cb->ttbr[1] |= (u64)cfg->asid << TTBRn_ASID_SHIFT;
-> +}
-> +
->   static void arm_smmu_init_context_bank(struct arm_smmu_domain *smmu_domain,
->   				       struct io_pgtable_cfg *pgtbl_cfg)
->   {
-> @@ -763,11 +844,13 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
->   {
->   	int irq, start, ret = 0;
->   	unsigned long ias, oas;
-> -	struct io_pgtable_ops *pgtbl_ops;
-> +	struct io_pgtable_ops *pgtbl_ops[2] = { NULL, NULL };
->   	struct io_pgtable_cfg pgtbl_cfg;
->   	enum io_pgtable_fmt fmt;
->   	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
->   	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
-> +	bool split_tables =
-> +		(smmu_domain->attributes & (1 << DOMAIN_ATTR_SPLIT_TABLES));
->   
->   	mutex_lock(&smmu_domain->init_mutex);
->   	if (smmu_domain->smmu)
-> @@ -797,8 +880,15 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
->   	 *
->   	 * Note that you can't actually request stage-2 mappings.
->   	 */
-> -	if (!(smmu->features & ARM_SMMU_FEAT_TRANS_S1))
-> +	if (!(smmu->features & ARM_SMMU_FEAT_TRANS_S1)) {
->   		smmu_domain->stage = ARM_SMMU_DOMAIN_S2;
-> +
-> +		/* Only allow split pagetables on stage 1 tables */
-> +		if (split_tables) {
-> +			ret = -EINVAL;
-> +			goto out_unlock;
-> +		}
-> +	}
->   	if (!(smmu->features & ARM_SMMU_FEAT_TRANS_S2))
->   		smmu_domain->stage = ARM_SMMU_DOMAIN_S1;
->   
-> @@ -817,6 +907,7 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
->   	    (smmu->features & ARM_SMMU_FEAT_FMT_AARCH32_S) &&
->   	    (smmu_domain->stage == ARM_SMMU_DOMAIN_S1))
->   		cfg->fmt = ARM_SMMU_CTX_FMT_AARCH32_S;
-> +
->   	if ((IS_ENABLED(CONFIG_64BIT) || cfg->fmt == ARM_SMMU_CTX_FMT_NONE) &&
->   	    (smmu->features & (ARM_SMMU_FEAT_FMT_AARCH64_64K |
->   			       ARM_SMMU_FEAT_FMT_AARCH64_16K |
-> @@ -828,6 +919,12 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
->   		goto out_unlock;
->   	}
->   
-> +	/* For now, only allow split tables for AARCH64 formats */
-> +	if (split_tables && cfg->fmt != ARM_SMMU_CTX_FMT_AARCH64) {
-> +		ret = -EINVAL;
-> +		goto out_unlock;
-> +	}
-> +
->   	switch (smmu_domain->stage) {
->   	case ARM_SMMU_DOMAIN_S1:
->   		cfg->cbar = CBAR_TYPE_S1_TRANS_S2_BYPASS;
-> @@ -906,8 +1003,8 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
->   		pgtbl_cfg.quirks |= IO_PGTABLE_QUIRK_NON_STRICT;
->   
->   	smmu_domain->smmu = smmu;
-> -	pgtbl_ops = alloc_io_pgtable_ops(fmt, &pgtbl_cfg, smmu_domain);
-> -	if (!pgtbl_ops) {
-> +	pgtbl_ops[0] = alloc_io_pgtable_ops(fmt, &pgtbl_cfg, smmu_domain);
-> +	if (!pgtbl_ops[0]) {
->   		ret = -ENOMEM;
->   		goto out_clear_smmu;
->   	}
-> @@ -919,6 +1016,20 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
->   
->   	/* Initialise the context bank with our page table cfg */
->   	arm_smmu_init_context_bank(smmu_domain, &pgtbl_cfg);
-> +
-> +	if (split_tables) {
-> +		/* It is safe to reuse pgtbl_cfg here */
-> +		pgtbl_ops[1] = alloc_io_pgtable_ops(fmt, &pgtbl_cfg,
-> +			smmu_domain);
-> +		if (!pgtbl_ops[1]) {
-> +			free_io_pgtable_ops(pgtbl_ops[0]);
-> +			ret = -ENOMEM;
-> +			goto out_clear_smmu;
-> +		}
-> +
-> +		arm_smmu_init_ttbr1(smmu_domain, &pgtbl_cfg);
-> +	}
-> +
->   	arm_smmu_write_context_bank(smmu, cfg->cbndx);
->   
->   	/*
-> @@ -937,7 +1048,9 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
->   	mutex_unlock(&smmu_domain->init_mutex);
->   
->   	/* Publish page table ops for map/unmap */
-> -	smmu_domain->pgtbl_ops = pgtbl_ops;
-> +	smmu_domain->pgtbl_ops[0] = pgtbl_ops[0];
-> +	smmu_domain->pgtbl_ops[1] = pgtbl_ops[1];
-> +
->   	return 0;
->   
->   out_clear_smmu:
-> @@ -973,7 +1086,9 @@ static void arm_smmu_destroy_domain_context(struct iommu_domain *domain)
->   		devm_free_irq(smmu->dev, irq, domain);
->   	}
->   
-> -	free_io_pgtable_ops(smmu_domain->pgtbl_ops);
-> +	free_io_pgtable_ops(smmu_domain->pgtbl_ops[0]);
-> +	free_io_pgtable_ops(smmu_domain->pgtbl_ops[1]);
-> +
->   	__arm_smmu_free_bitmap(smmu->context_map, cfg->cbndx);
->   
->   	arm_smmu_rpm_put(smmu);
-> @@ -1317,10 +1432,37 @@ static int arm_smmu_attach_dev(struct iommu_domain *domain, struct device *dev)
->   	return ret;
->   }
->   
-> +static struct io_pgtable_ops *
-> +arm_smmu_get_pgtbl_ops(struct iommu_domain *domain, unsigned long iova)
-> +{
-> +	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
-> +	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
-> +	struct arm_smmu_cb *cb = &smmu_domain->smmu->cbs[cfg->cbndx];
-> +
-> +	if (iova & cb->split_table_mask)
-> +		return smmu_domain->pgtbl_ops[1];
-> +
-> +	return smmu_domain->pgtbl_ops[0];
-> +}
-> +
-> +/*
-> + * If split pagetables are enabled adjust the iova so that it
-> + * matches the T0SZ/T1SZ that has been programmed
-> + */
-> +unsigned long arm_smmu_adjust_iova(struct iommu_domain *domain,
-> +		unsigned long iova)
-> +{
-> +	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
-> +	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
-> +	struct arm_smmu_cb *cb = &smmu_domain->smmu->cbs[cfg->cbndx];
-> +
-> +	return cb->split_table_mask ? iova & (cb->split_table_mask - 1) : iova;
-> +}
-> +
->   static int arm_smmu_map(struct iommu_domain *domain, unsigned long iova,
->   			phys_addr_t paddr, size_t size, int prot)
->   {
-> -	struct io_pgtable_ops *ops = to_smmu_domain(domain)->pgtbl_ops;
-> +	struct io_pgtable_ops *ops = arm_smmu_get_pgtbl_ops(domain, iova);
->   	struct arm_smmu_device *smmu = to_smmu_domain(domain)->smmu;
->   	int ret;
->   
-> @@ -1328,7 +1470,8 @@ static int arm_smmu_map(struct iommu_domain *domain, unsigned long iova,
->   		return -ENODEV;
->   
->   	arm_smmu_rpm_get(smmu);
-> -	ret = ops->map(ops, iova, paddr, size, prot);
-> +	ret = ops->map(ops, arm_smmu_adjust_iova(domain, iova),
-> +		paddr, size, prot);
->   	arm_smmu_rpm_put(smmu);
->   
->   	return ret;
-> @@ -1337,7 +1480,7 @@ static int arm_smmu_map(struct iommu_domain *domain, unsigned long iova,
->   static size_t arm_smmu_unmap(struct iommu_domain *domain, unsigned long iova,
->   			     size_t size)
->   {
-> -	struct io_pgtable_ops *ops = to_smmu_domain(domain)->pgtbl_ops;
-> +	struct io_pgtable_ops *ops = arm_smmu_get_pgtbl_ops(domain, iova);
->   	struct arm_smmu_device *smmu = to_smmu_domain(domain)->smmu;
->   	size_t ret;
->   
-> @@ -1345,7 +1488,7 @@ static size_t arm_smmu_unmap(struct iommu_domain *domain, unsigned long iova,
->   		return 0;
->   
->   	arm_smmu_rpm_get(smmu);
-> -	ret = ops->unmap(ops, iova, size);
-> +	ret = ops->unmap(ops, arm_smmu_adjust_iova(domain, iova), size);
->   	arm_smmu_rpm_put(smmu);
->   
->   	return ret;
-> @@ -1381,7 +1524,7 @@ static phys_addr_t arm_smmu_iova_to_phys_hard(struct iommu_domain *domain,
->   	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
->   	struct arm_smmu_device *smmu = smmu_domain->smmu;
->   	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
-> -	struct io_pgtable_ops *ops= smmu_domain->pgtbl_ops;
-> +	struct io_pgtable_ops *ops = arm_smmu_get_pgtbl_ops(domain, iova);
->   	struct device *dev = smmu->dev;
->   	void __iomem *cb_base;
->   	u32 tmp;
-> @@ -1429,7 +1572,7 @@ static phys_addr_t arm_smmu_iova_to_phys(struct iommu_domain *domain,
->   					dma_addr_t iova)
->   {
->   	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
-> -	struct io_pgtable_ops *ops = smmu_domain->pgtbl_ops;
-> +	struct io_pgtable_ops *ops = arm_smmu_get_pgtbl_ops(domain, iova);
->   
->   	if (domain->type == IOMMU_DOMAIN_IDENTITY)
->   		return iova;
-> @@ -1629,6 +1772,11 @@ static int arm_smmu_domain_get_attr(struct iommu_domain *domain,
->   		case DOMAIN_ATTR_NESTING:
->   			*(int *)data = (smmu_domain->stage == ARM_SMMU_DOMAIN_NESTED);
->   			return 0;
-> +		case DOMAIN_ATTR_SPLIT_TABLES:
-> +			*((int *)data) =
-> +				!!(smmu_domain->attributes &
-> +				   (1 << DOMAIN_ATTR_SPLIT_TABLES));
-> +			return 0;
->   		default:
->   			return -ENODEV;
->   		}
-> @@ -1669,6 +1817,11 @@ static int arm_smmu_domain_set_attr(struct iommu_domain *domain,
->   			else
->   				smmu_domain->stage = ARM_SMMU_DOMAIN_S1;
->   			break;
-> +		case DOMAIN_ATTR_SPLIT_TABLES:
-> +			if (*((int *)data))
-> +				smmu_domain->attributes |=
-> +					(1 << DOMAIN_ATTR_SPLIT_TABLES);
-> +			break;
->   		default:
->   			ret = -ENODEV;
->   		}
-> diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
-> index 4e21efb..71ecb08 100644
-> --- a/drivers/iommu/io-pgtable-arm.c
-> +++ b/drivers/iommu/io-pgtable-arm.c
-> @@ -490,8 +490,7 @@ static int arm_lpae_map(struct io_pgtable_ops *ops, unsigned long iova,
->   	if (!(iommu_prot & (IOMMU_READ | IOMMU_WRITE)))
->   		return 0;
->   
-> -	if (WARN_ON(iova >= (1ULL << data->iop.cfg.ias) ||
-> -		    paddr >= (1ULL << data->iop.cfg.oas)))
-> +	if (WARN_ON(paddr >= (1ULL << data->iop.cfg.oas)))
->   		return -ERANGE;
->   
->   	prot = arm_lpae_prot_to_pte(data, iommu_prot);
-> 
+> This is a bit of a chicken-and-egg problem. In a world where memory
+> allocators on one or several popular platforms generate pointers with
+> non-zero tags, any such breakage will be caught in testing.
+> Unfortunately to reach that state we need the kernel to start
+> accepting tagged pointers first, and then hold on for a couple of
+> years until userspace catches up.
+
+Would the kernel also catch up with providing a stable ABI? Because we
+have two moving targets.
+
+On one hand, you have Android or some Linux distro that stick to a
+stable kernel version for some time, so they have better chance of
+clearing most of the problems. On the other hand, we have mainline
+kernel that gets over 500K lines every release. As maintainer, I can't
+rely on my testing alone as this is on a limited number of platforms. So
+my concern is that every kernel release has a significant chance of
+breaking the ABI, unless we have a better way of identifying potential
+issues.
+
+> Perhaps we can start by whitelisting ioctls by driver?
+
+This was also raised by Ruben in private but without a (static) tool to
+to check, manually going through all the drivers doesn't scale. It's
+very likely that most drivers don't care, just a get_user/put_user is
+already handled by these patches. Searching for find_vma() was
+identifying one such use-case but is this sufficient? Are there other
+cases we need to explicitly untag a pointer?
+
+
+The other point I'd like feedback on is 2.a above. I see _some_ value
+into having the user opt-in to this relaxed ABI rather than blinding
+exposing it to all applications. Dave suggested (in private) a new
+personality (e.g. PER_LINUX_TBI) inherited by children. It would be the
+responsibility of the C library to check the current personality bits
+and only tag pointers on allocation *if* the kernel allowed it. The
+kernel could provide the AT_FLAGS bit as in Vincenzo's patches if the
+personality was set but can't set it retrospectively if the user called
+sys_personality. By default, /sbin/init would not have this personality
+and libc would not tag pointers, so we can guarantee that your distro
+boots normally with a new kernel version. We could have an envp that
+gets caught by /sbin/init so you can pass it on the kernel command line
+(or a dynamic loader at run-time). But the default should be the current
+ABI behaviour.
+
+We can enforce the current behaviour by having access_ok() check the
+personality or a TIF flag but we may relax this enforcement at some
+point in the future as we learn more about the implications of TBI.
+
+Thanks.
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
