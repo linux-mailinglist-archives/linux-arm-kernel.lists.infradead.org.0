@@ -2,57 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8AEA2492D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 09:43:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C07452493D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 09:45:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kZhWM3kT9osX+U4K1YojEc3bS9FmzsX6HDqLIWeqLAg=; b=KKhRgbS/Q6lVet
-	3VVgEqi08BrlzWuYwdZ4lrgIucTFdzG+teqMWtTFkTrQbzCn2+DYQtG80k29lM/DNjSX+QxXOaNIo
-	JXXKnG3P4K4PCHxTnCDn2c1mAGdDij0kV/n+6sVAAqqRBpO/g5cQ9or4Hr62c7fb/XvRwUPy8Lskz
-	yBJVm8v4FKMounwVk9F+EkUo4YvF7p8nQHXgBffH0N7I+HXdf6x5UtPwl1K9AjgL1YLXeNo49y2cu
-	uBK0bJEyfhlyTPzj0W3U/2D4SIUQBBGV6aaS9DtI8EQ1mnZExipKta/G5IS9UB2Jr/HcFjmEFNytA
-	y3K1poSF9JBxwyNiW8eA==;
+	List-Owner; bh=dnRkRUnDp/e058HzkR/i3zxfP/QaK4c23964D8vKlh8=; b=OAqV7oA0h12fIs
+	B2CZL8nn6kLRvn/0jF3nOUKxiNpv5/4YC0AzjObpBtoIxZI8t+WRCbLWyZOu8+nGmn61FnNBn6pMX
+	icuppt5n0E+dILTf1JAUKOlkSVrhgYW6SDLPhkTv5AuSR4maq29CWxn/Ox5l8D5TlIlJdw89yBxYu
+	BgcTHWlRl6i0q1G6AvsM191vaZ8vWmOdlu4aZZVgcAyGePwHkaRqInsg1gPTuBfyCyT/e5Xz6QWH5
+	KraDpgi3lTLslK2IB5KYCGWOYmuDHX5oK6mXChJvFH65S5HrmvqMRI9mHOmW24mHIpoN+EvUI7Q5k
+	YkSyNp2bRy/FK7aC1MNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSzQe-0003dR-8c; Tue, 21 May 2019 07:43:20 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hSzSX-0004m6-9l; Tue, 21 May 2019 07:45:17 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSzQU-0003cS-H9; Tue, 21 May 2019 07:43:12 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id A23F02841E1;
- Tue, 21 May 2019 08:43:08 +0100 (BST)
-Date: Tue, 21 May 2019 09:43:05 +0200
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Sascha Hauer <s.hauer@pengutronix.de>
-Subject: Re: [PATCH v2 14/15] mtd: rawnand: Get rid of chip->numchips
-Message-ID: <20190521094305.3769f1a2@collabora.com>
-In-Reply-To: <20190521093302.079f5470@collabora.com>
-References: <20190304201522.11323-1-miquel.raynal@bootlin.com>
- <20190304201522.11323-15-miquel.raynal@bootlin.com>
- <20190521065948.GA16530@pengutronix.de>
- <20190521093302.079f5470@collabora.com>
-Organization: Collabora
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ id 1hSzSI-0004Nj-5Z; Tue, 21 May 2019 07:45:04 +0000
+X-UUID: 00f87ac4fa424d4c8133d4e49eff014c-20190520
+X-UUID: 00f87ac4fa424d4c8133d4e49eff014c-20190520
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1223937690; Mon, 20 May 2019 23:44:58 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 21 May 2019 00:44:56 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
+ (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Tue, 21 May 2019 15:44:54 +0800
+Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 21 May 2019 15:44:53 +0800
+Message-ID: <1558424693.10179.374.camel@mhfsdcap03>
+Subject: Re: [PATCH v5 5/6] usb: roles: add USB Type-B GPIO connector driver
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+Date: Tue, 21 May 2019 15:44:53 +0800
+In-Reply-To: <20190520083151.GD1887@kuha.fi.intel.com>
+References: <1557823643-8616-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1557823643-8616-6-git-send-email-chunfeng.yun@mediatek.com>
+ <20190520083151.GD1887@kuha.fi.intel.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_004310_850377_23937FF3 
-X-CRM114-Status: GOOD (  23.63  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190521_004502_364545_EA9963F7 
+X-CRM114-Status: GOOD (  17.25  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -64,85 +72,161 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mason Yang <masonccyang@mxic.com.tw>, Vignesh R <vigneshr@ti.com>,
- Boris Brezillon <bbrezillon@kernel.org>, Julien Su <juliensu@mxic.com.tw>,
- Richard Weinberger <richard@nod.at>,
- Tudor Ambarus <Tudor.Ambarus@microchip.com>,
- Schrempf Frieder <frieder.schrempf@kontron.de>,
- Marek Vasut <marek.vasut@gmail.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, linux-mtd@lists.infradead.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Brian Norris <computersforpeace@gmail.com>,
- David Woodhouse <dwmw2@infradead.org>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Hans de Goede <hdegoede@redhat.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Biju Das <biju.das@bp.renesas.com>, Badhri Jagan
+ Sridharan <badhri@google.com>, Andy
+ Shevchenko <andy.shevchenko@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Min Guo <min.guo@mediatek.com>, Matthias
+ Brugger <matthias.bgg@gmail.com>,
+ Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
+ linux-arm-kernel@lists.infradead.org, Li Jun <jun.li@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 21 May 2019 09:33:02 +0200
-Boris Brezillon <boris.brezillon@collabora.com> wrote:
+Hi,
 
-> On Tue, 21 May 2019 08:59:48 +0200
-> Sascha Hauer <s.hauer@pengutronix.de> wrote:
+On Mon, 2019-05-20 at 11:31 +0300, Heikki Krogerus wrote:
+> On Tue, May 14, 2019 at 04:47:22PM +0800, Chunfeng Yun wrote:
+> > +static int usb_conn_probe(struct platform_device *pdev)
+> > +{
+> > +	struct device *dev = &pdev->dev;
+> > +	struct device_node *node = dev->of_node;
+> > +	struct device_node *remote_node;
+> > +	struct usb_conn_info *info;
+> > +	int ret = 0;
+> > +
+> > +	info = devm_kzalloc(dev, sizeof(*info), GFP_KERNEL);
+> > +	if (!info)
+> > +		return -ENOMEM;
+> > +
+> > +	info->dev = dev;
+> > +	info->id_gpiod = devm_gpiod_get_optional(dev, "id", GPIOD_IN);
+> > +	if (IS_ERR(info->id_gpiod))
+> > +		return PTR_ERR(info->id_gpiod);
+> > +
+> > +	info->vbus_gpiod = devm_gpiod_get_optional(dev, "vbus", GPIOD_IN);
+> > +	if (IS_ERR(info->vbus_gpiod))
+> > +		return PTR_ERR(info->vbus_gpiod);
+> > +
+> > +	if (!info->id_gpiod && !info->vbus_gpiod) {
+> > +		dev_err(dev, "failed to get gpios\n");
+> > +		return -ENODEV;
+> > +	}
+> > +
+> > +	if (info->id_gpiod)
+> > +		ret = gpiod_set_debounce(info->id_gpiod, USB_GPIO_DEB_US);
+> > +	if (!ret && info->vbus_gpiod)
+> > +		ret = gpiod_set_debounce(info->vbus_gpiod, USB_GPIO_DEB_US);
+> > +	if (ret < 0)
+> > +		info->debounce_jiffies = msecs_to_jiffies(USB_GPIO_DEB_MS);
+> > +
+> > +	INIT_DELAYED_WORK(&info->dw_det, usb_conn_detect_cable);
+> > +
+> > +	info->vbus = devm_regulator_get(dev, "vbus");
+> > +	if (IS_ERR(info->vbus)) {
+> > +		dev_err(dev, "failed to get vbus\n");
+> > +		return PTR_ERR(info->vbus);
+> > +	}
+> > +
+> > +	remote_node = of_graph_get_remote_node(node, -1, 0);
 > 
-> > Hi,
-> > 
-> > On Mon, Mar 04, 2019 at 09:15:21PM +0100, Miquel Raynal wrote:  
-> > > diff --git a/drivers/mtd/nand/raw/internals.h b/drivers/mtd/nand/raw/internals.h
-> > > index fbf6ca015cd7..a204f9d7e123 100644
-> > > --- a/drivers/mtd/nand/raw/internals.h
-> > > +++ b/drivers/mtd/nand/raw/internals.h
-> > > @@ -110,7 +110,7 @@ static inline int nand_exec_op(struct nand_chip *chip,
-> > >  	if (!nand_has_exec_op(chip))
-> > >  		return -ENOTSUPP;
-> > >  
-> > > -	if (WARN_ON(op->cs >= chip->numchips))
-> > > +	if (WARN_ON(op->cs >= nanddev_ntargets(&chip->base)))
-> > >  		return -EINVAL;    
-> > 
-> > This warning triggers when I apply my gpmi nand exec_op series.
-> > 
-> > The gpmi driver calls:
-> > 
-> > 	ret = nand_scan(chip, GPMI_IS_MX6(this) ? 2 : 1);
-> > 
-> > This ends up in nand_scan_ident() with maxchips = 2. Here nand_detect()
-> > is called which sets memorg->ntargets = 1; Later in nand_scan_ident() we
-> > have:
-> > 
-> > 	for (i = 1; i < maxchips; i++) {  
-> 
-> This loop should be fixed to test against nanddev_ntargets() instead of
-> maxchips.
-> 
-> > 		u8 id[2];
-> > 
-> > 		/* See comment in nand_get_flash_type for reset */
-> > 		ret = nand_reset(chip, i);
-> > 		if (ret)
-> > 			break;
-> > 		....
-> > 
-> > this nand_reset() calls nand_exec_op() with op->cs = 1, nanddev_ntargets() = 1
-> > and boom.
-> > 
-> > I can't see how this can work with anything else but maxchips = 1. Do you
-> > have an idea how this is supposed to work?
+> This is really not ideal. In practice this code will only work if
+> there is only one endpoint described for this device, or if the first
+> endpoint is always the one we are looking for. There is no way to
+> guarantee that.
+Yes, it is.
+I'll modify it as case 2, see reply [v5, 4/6] in this series.
 
-Forgot to reply to that one. ->ntargets is set to the number of
-dies/tartgets actually detected here [1], so it's not always 1 (can
-also be extracted from the ONFI table IIRC).
-Note that I've never been a big fan of this maxchip param, and I've
-asked that new drivers pass the actual number of CS connected to the
-NAND chip being initialized (which should be part of the HW desc, be it
-DT based or board-file based). So, ideally this argument should be named
-num_dies or num_targets and the function should return an error when
-one of the die returns a different ID. Unfortunately, that's not
-something we can do, because a lot of drivers rely on the old
-semantic...
+> 
+> The code really has to walk through the entire graph, and identify the
+> remote endpoint it's looking for (and for that we have the boolean
+> device property).
+> 
+> > +	if (!remote_node) {
+> > +		dev_err(dev, "failed to get remote node\n");
+> > +		return -ENODEV;
+> > +	}
+> > +
+> > +	info->role_sw =
+> > +		fwnode_usb_role_switch_get(of_fwnode_handle(remote_node));
+> 
+> So fwnode_usb_role_switch_get() needs be the one that walks through
+> the graph, not the drivers. Otherwise every driver will do the same
+> exact steps (boilerplate). Here you need to be able to just pass the
+> node of this device, not the remote endpoint:
+> 
+>         info->role_sw = fwnode_usb_role_switch_get(dev_fwnode(&client->dev));
+> 
+> But why do you need that function at all? Why wouldn't
+> usb_role_switch_get() work?
+> 
+>         info->role_sw = usb_role_switch_get(&client->dev);
+> 
+see reply [v5, 4/6] in this series
 
-[1]https://elixir.bootlin.com/linux/v5.2-rc1/source/drivers/mtd/nand/raw/nand_base.c#L5073
+Thanks a lot.
+
+> > +	of_node_put(remote_node);
+> > +	if (IS_ERR(info->role_sw)) {
+> > +		dev_err(dev, "failed to get role switch\n");
+> > +		return PTR_ERR(info->role_sw);
+> > +	}
+> > +
+> > +	if (info->id_gpiod) {
+> > +		info->id_irq = gpiod_to_irq(info->id_gpiod);
+> > +		if (info->id_irq < 0) {
+> > +			dev_err(dev, "failed to get ID IRQ\n");
+> > +			ret = info->id_irq;
+> > +			goto put_role_sw;
+> > +		}
+> > +
+> > +		ret = devm_request_threaded_irq(dev, info->id_irq, NULL,
+> > +						usb_conn_isr, USB_CONN_IRQF,
+> > +						pdev->name, info);
+> > +		if (ret < 0) {
+> > +			dev_err(dev, "failed to request ID IRQ\n");
+> > +			goto put_role_sw;
+> > +		}
+> > +	}
+> > +
+> > +	if (info->vbus_gpiod) {
+> > +		info->vbus_irq = gpiod_to_irq(info->vbus_gpiod);
+> > +		if (info->vbus_irq < 0) {
+> > +			dev_err(dev, "failed to get VBUS IRQ\n");
+> > +			ret = info->vbus_irq;
+> > +			goto put_role_sw;
+> > +		}
+> > +
+> > +		ret = devm_request_threaded_irq(dev, info->vbus_irq, NULL,
+> > +						usb_conn_isr, USB_CONN_IRQF,
+> > +						pdev->name, info);
+> > +		if (ret < 0) {
+> > +			dev_err(dev, "failed to request VBUS IRQ\n");
+> > +			goto put_role_sw;
+> > +		}
+> > +	}
+> > +
+> > +	platform_set_drvdata(pdev, info);
+> > +
+> > +	/* Perform initial detection */
+> > +	usb_conn_queue_dwork(info, 0);
+> > +
+> > +	return 0;
+> > +
+> > +put_role_sw:
+> > +	usb_role_switch_put(info->role_sw);
+> > +	return ret;
+> > +}
+> 
+> thanks,
+> 
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
