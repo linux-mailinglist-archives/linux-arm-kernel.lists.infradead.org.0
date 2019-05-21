@@ -2,68 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F7E124CC5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 12:33:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB7F324CDB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 12:36:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ATdmjH1+hM0739khdSqws3EGxavxr4AXbOkBScNI0NA=; b=fiB0Wv6ek5zL46
-	pCiJMRWZjmbFG2X2eagFnidsV/dvKGfnZYMGDYMLu0M2Lq1f65cqoax1byaMtt7BmnzDdwJ5TLZqU
-	kVNBnFqiPW02WmjI515P+x5giJ6tbKWdI1qknZjBq7t7mgsas2Kj61K26T4/6Wg1TIRYOp+q+LJn1
-	yVCR/IquT11bdVvFa6wlPJ833nhGZJ55rskKOUeQK60hMBMglSbIjjqSzlMMMtc4O3+KsiAB7j943
-	RMWQG+Ha5ABEyfDdOCuGzfkwSgo/+q483seM/AJIFAvKovzAgxIATglE9sSGnrz9PxDr7eM5rviHn
-	Hl5wdE1FpGhHb8uReqYg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=zCOfTHpy8fcQS8y1SRf0oPcCohPmMjnrG7UxjP97xZ8=; b=u1i4ZiXL3T3vX+2i/1Z8ow8kX
+	XW5Da558DgVQVmfWJzDOAnh8zlWp4FHd9ThHTbpqfR8Mo/lLlQQXC1+xF8TnhOn4BGH/pmR5MCzqZ
+	yvWeuYqd4IULWOkr3u/NzK2aZNQWwsk4K+lxyE+jTLvBjsrkqnav6+19UZ+sX/GWZ+PdvAhalPADy
+	WYrMu/QvarAFyCHppFp9jtcK78bfT57tiiqfrpn83+wSV4l1mC9Xnk3a0nP9BOrA7eOyE6+uevGm/
+	OCgiAr1TfueAVA5fPtMckWhxxKsWiIW5tK47KmsNzH4pLHq0mNtIu3t944eACbujMu2UseRIRKv5C
+	+kEMNhELw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT258-0000Bj-HM; Tue, 21 May 2019 10:33:18 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1hT28O-000272-NQ; Tue, 21 May 2019 10:36:40 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT251-0000BA-Ao; Tue, 21 May 2019 10:33:13 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
- by fmsmga101.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 21 May 2019 03:33:09 -0700
-X-ExtLoop1: 1
-Received: from kuha.fi.intel.com ([10.237.72.189])
- by fmsmga001.fm.intel.com with SMTP; 21 May 2019 03:33:05 -0700
-Received: by kuha.fi.intel.com (sSMTP sendmail emulation);
- Tue, 21 May 2019 13:33:04 +0300
-Date: Tue, 21 May 2019 13:33:04 +0300
-From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>
-Subject: Re: [PATCH v5 4/6] usb: roles: add API to get usb_role_switch by node
-Message-ID: <20190521103304.GJ1887@kuha.fi.intel.com>
-References: <1557823643-8616-1-git-send-email-chunfeng.yun@mediatek.com>
- <1557823643-8616-5-git-send-email-chunfeng.yun@mediatek.com>
- <20190517103736.GA1490@kuha.fi.intel.com>
- <20190517130511.GA1887@kuha.fi.intel.com>
- <1558319951.10179.352.camel@mhfsdcap03>
- <20190520080359.GC1887@kuha.fi.intel.com>
- <OSBPR01MB2103385D996762FA54F8E437B8060@OSBPR01MB2103.jpnprd01.prod.outlook.com>
- <20190520083601.GE1887@kuha.fi.intel.com>
- <OSBPR01MB2103C4C8920C40E42BC1B2A9B8060@OSBPR01MB2103.jpnprd01.prod.outlook.com>
- <1558424104.10179.365.camel@mhfsdcap03>
+ id 1hT28G-00026X-W6
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 10:36:34 +0000
+Received: by mail-wm1-x343.google.com with SMTP id q15so2350545wmj.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 21 May 2019 03:36:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=s2IM3ZE8ODzpRagkoqqzQK54sUQjKZc2JHhz8V5RObU=;
+ b=Z0XG4sSZF5JHXuLMcZ5YxjA9J4SuMnIYkei3Z6Y55JOS7YdFyWj75eMV/H3CoQ7S64
+ f66Zbdubw6XtFPbgFxmbLdkd0AAdVEIM6F+pRugNUyLPLW8Mf3URbYZmOFBgBvwc7HMn
+ H7YWii70vEzEdswFBrExT2mrItuRsYAJnhyIV5SV23vfi1SAn/YOJRcJxG8W8/YhgAJT
+ krEWDPPN6VQHU8Nlw6QKlOPZ3wa8TTzbBgPtrJOl6SRi2hRc/mKBEQhDsU5RVf+BtulB
+ ufWBW4woz44gjVh04+TGVKYhzic6cy9mlGsX2xgqHwgMpvUQhJHsm76ZmGyPpF3zjjI3
+ LMyg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=s2IM3ZE8ODzpRagkoqqzQK54sUQjKZc2JHhz8V5RObU=;
+ b=iPzTSLyw8CO9z+ULVMczCyPV5k10Y265KZkcifkZ1Fv2PzGU9tcCtkNg/MJKhnCt3A
+ vAqDMUiQ/RX3qkWUrJ/LyvDWTewRTlP4nl3Wck958nx/hOw3N3v5lR6M9hm4htAaQ3sN
+ S6kgBs+NgoEKezz5NcaCN4L2EtXR6LI5ZMiBhNkXSqiZHQBk30jZeUoulQziLa/Al8aR
+ bTm8Wr2oRBhIIIcTNim/C7oCMwUpRyGN0bodsQr2lA6VPYDu3S2YN61HZHvWpY/AvSlh
+ sqyH/x/neIbRxTm5or/jy3M20r09+Jsq19EVaU9LJL71FUG51a9t1NlwVLrH5qCUrc5Q
+ sq0Q==
+X-Gm-Message-State: APjAAAVi8eB/Bj4yXxsKoYDbtJBC8GqnAx9D/Uh21OAGKrK/nB+7w6vM
+ I6Y9R4jSaskslCnmFtpYf8A=
+X-Google-Smtp-Source: APXvYqxHktRf5rZ8QFK+DuWsj6B/g4usmi5nDqgeTDiJTvlktbKs/Ju/VpRX9wgMAQ587L+UC1/IfQ==
+X-Received: by 2002:a1c:d14b:: with SMTP id i72mr2887854wmg.4.1558434991573;
+ Tue, 21 May 2019 03:36:31 -0700 (PDT)
+Received: from localhost (p2E5BEF36.dip0.t-ipconnect.de. [46.91.239.54])
+ by smtp.gmail.com with ESMTPSA id h11sm26592314wrr.44.2019.05.21.03.36.30
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 21 May 2019 03:36:30 -0700 (PDT)
+Date: Tue, 21 May 2019 12:36:29 +0200
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Vidya Sagar <vidyas@nvidia.com>
+Subject: Re: [PATCH V7 05/15] PCI: dwc: Add ext config space capability
+ search API
+Message-ID: <20190521103629.GE29166@ulmo>
+References: <20190517123846.3708-1-vidyas@nvidia.com>
+ <20190517123846.3708-6-vidyas@nvidia.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1558424104.10179.365.camel@mhfsdcap03>
+In-Reply-To: <20190517123846.3708-6-vidyas@nvidia.com>
 User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_033311_386963_9D82E9AD 
-X-CRM114-Status: GOOD (  34.29  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190521_033633_221068_BA40F955 
+X-CRM114-Status: GOOD (  18.47  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (thierry.reding[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -75,242 +100,177 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Hans de Goede <hdegoede@redhat.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Biju Das <biju.das@bp.renesas.com>, Badhri Jagan Sridharan <badhri@google.com>,
- Andy Shevchenko <andy.shevchenko@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- Min Guo <min.guo@mediatek.com>, Matthias Brugger <matthias.bgg@gmail.com>,
- Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Li Jun <jun.li@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ mperttunen@nvidia.com, mmaddireddy@nvidia.com, linux-pci@vger.kernel.org,
+ catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ kthota@nvidia.com, kishon@ti.com, linux-tegra@vger.kernel.org,
+ robh+dt@kernel.org, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
+ bhelgaas@google.com, jonathanh@nvidia.com,
+ linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
+Content-Type: multipart/mixed; boundary="===============1407791857445015660=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 21, 2019 at 03:35:04PM +0800, Chunfeng Yun wrote:
-> Hi,
-> On Mon, 2019-05-20 at 09:45 +0000, Biju Das wrote:
-> > 
-> > Hi Heikki,
-> > 
-> > Thanks for the feedback.
-> > 
-> > > Subject: Re: [PATCH v5 4/6] usb: roles: add API to get usb_role_switch by
-> > > node
-> > > 
-> > > On Mon, May 20, 2019 at 08:06:41AM +0000, Biju Das wrote:
-> > > > Hi Heikki,
-> > > >
-> > > > > Subject: Re: [PATCH v5 4/6] usb: roles: add API to get
-> > > > > usb_role_switch by node
-> > > > >
-> > > > > On Mon, May 20, 2019 at 10:39:11AM +0800, Chunfeng Yun wrote:
-> > > > > > Hi,
-> > > > > > On Fri, 2019-05-17 at 16:05 +0300, Heikki Krogerus wrote:
-> > > > > > > Hi,
-> > > > > > >
-> > > > > > > On Fri, May 17, 2019 at 01:37:36PM +0300, Heikki Krogerus wrote:
-> > > > > > > > On Tue, May 14, 2019 at 04:47:21PM +0800, Chunfeng Yun wrote:
-> > > > > > > > > Add fwnode_usb_role_switch_get() to make easier to get
-> > > > > > > > > usb_role_switch by fwnode which register it.
-> > > > > > > > > It's useful when there is not device_connection registered
-> > > > > > > > > between two drivers and only knows the fwnode which register
-> > > > > > > > > usb_role_switch.
-> > > > > > > > >
-> > > > > > > > > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> > > > > > > > > Tested-by: Biju Das <biju.das@bp.renesas.com>
-> > > > > > > >
-> > > > > > > > Acked-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-> > > > > > >
-> > > > > > > Hold on. I just noticed Rob's comment on patch 2/6, where he
-> > > > > > > points out that you don't need to use device graph since the
-> > > > > > > controller is the parent of the connector. Doesn't that mean you
-> > > > > > > don't really need this API?
-> > > > > > No, I still need it.
-> > > > > > The change is about the way how to get fwnode; when use device
-> > > > > > graph, get fwnode by of_graph_get_remote_node(); but now will get
-> > > > > > fwnode by of_get_parent();
-> > > > >
-> > > > > OK, I get that, but I'm still not convinced about if something like
-> > > > > this function is needed at all. I also have concerns regarding how
-> > > > > you are using the function. I'll explain in comment to the patch 5/6 in this
-> > > series...
-> > > >
-> > > > FYI, Currently  I am also using this api in my patch series.
-> > > > https://patchwork.kernel.org/patch/10944637/
-> > > 
-> > > Yes, and I have the same question for you I jusb asked in comment I added
-> > > to the patch 5/6 of this series. Why isn't usb_role_switch_get() enough?
-> > 
-> > Currently no issue. It will work with this api as well, since the port node is part of controller node.
-> > For eg:-
-> > https://patchwork.kernel.org/patch/10944627/
-> > 
-> > However if any one adds port node inside the connector node, then this api may won't work as expected.
-> > Currently I get below error
-> > 
-> > [    2.299703] OF: graph: no port node found in /soc/i2c@e6500000/hd3ss3220@47
-> > 
-> > For eg:-
-> > 
-> > 	hd3ss3220@47 {
-> > 		compatible = "ti,hd3ss3220";
-> > 		...
-> > 		....
-> > 		usb_con: connector {
-> >                                      ....
-> >                                      ....
-> > 			port {
-> > 				hd3ss3220_ep: endpoint@0 {
-> > 					reg = <0>;
-> > 					remote-endpoint = <&usb3peri_role_switch>;
-> > 				};
-> > 			};
-> > 		};
-> > 	};
-> > 
-> > Regards,
-> > Biju
-> 
-> I tested 3 cases:
-> 
-> case 1:
-> 
-> connector {
->     compatible = "linux,typeb-conn-gpio", "usb-b-connector";
->     label = "micro-USB";
->     type = "micro";
->     id-gpios = <&pio 12 GPIO_ACTIVE_HIGH>;
->     vbus-supply = <&usb_p0_vbus>;
-> 
->     port {
->         bconn_ep: endpoint@0 {
->             remote-endpoint = <&usb_role_sw>;
->         };
->     };
-> };
-> 
-> &mtu3 {
->     usb-role-switch;
-> 
->     port {
->         usb_role_sw: endpoint@0 {
->             remote-endpoint = <&bconn_ep>;
->         };
->     };
-> };
-> 
-> the driver of connector could use usb_role_switch_get(dev) to get
-> mtu3's USB Role Switch. (dev is the device of connector)
-> 
-> case 2:
-> 
-> &mtu3 {
->     usb-role-switch;
-> 
->     connector {
->         compatible = "linux,typeb-conn-gpio", "usb-b-connector";
->         label = "micro-USB";
->         type = "micro";
->         id-gpios = <&pio 12 GPIO_ACTIVE_HIGH>;
->         vbus-supply = <&usb_p0_vbus>;
->     };
-> };
-> 
-> the driver of connector using usb_role_switch_get(dev) failed to get
-> mtu3's USB Role Switch.
-> error log:
-> #OF: graph: no port node found in /usb@11271000/connector
-> this is because connector hasn't child node connected to remote
-> endpoint which register USB Role Switch
-> 
-> case 3:
-> 
-> rsw_iddig: role_sw_iddig {
->     compatible = "linux,typeb-conn-gpio";
->     status = "okay";
-> 
->     connector {
->         compatible = "usb-b-connector";
->         label = "micro-USB";
->         type = "micro";
->         id-gpios = <&pio 12 GPIO_ACTIVE_HIGH>;
->         vbus-supply = <&usb_p0_vbus>;
-> 
->         port {
->             bconn_ep: endpoint@0 {
->                 remote-endpoint = <&usb_role_sw>;
->             };
->         };
->     };
-> };
-> 
-> &mtu3 {
->     usb-role-switch;
-> 
->     port {
->         usb_role_sw: endpoint@0 {
->             remote-endpoint = <&bconn_ep>;
->         };
->     };
-> };
-> 
-> 
-> the driver of connector using usb_role_switch_get(dev) also failed to
-> get mtu3's USB Role Switch. Because usb_role_switch_get() only search
-> its child nodes (connector node), but not child's child (port node)
-> This case is the same as Biju's
-> 
-> Usually type-c is similar with case 3;
-> the next version v6 of this series will use case 2 as Rob suggested,
-> see [v5, 2/6]
-> 
-> for case 2, will need the new API fwnode_usb_role_switch_get();
 
-Thanks for the explanation.
-
-In this case, if I understood this correctly, the USB controller, which
-is also the role switch, is the parent of the connector. So shouldn't
-we simply consider that in the current API?
-
-diff --git a/drivers/usb/roles/class.c b/drivers/usb/roles/class.c
-index f45d8df5cfb8..2f898167b99a 100644
---- a/drivers/usb/roles/class.c
-+++ b/drivers/usb/roles/class.c
-@@ -125,6 +125,13 @@ struct usb_role_switch *usb_role_switch_get(struct device *dev)
- {
-        struct usb_role_switch *sw;
-
-+       /*
-+        * Simplest case is that a connector is looking for the controller,
-+        * which is its parent.
-+        */
-+       if (device_property_present(dev->parent, "usb-role-switch"))
-+               return to_role_switch(dev->parent);
-+
-        sw = device_connection_find_match(dev, "usb-role-switch", NULL,
-                                          usb_role_switch_match);
+--===============1407791857445015660==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="o0ZfoUVt4BxPQnbU"
+Content-Disposition: inline
 
 
-> for case 3, use the new API, or need modify usb_role_switch_get();
+--o0ZfoUVt4BxPQnbU
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-I did not completely understand this case, but isn't it the same as
-case 2 in the end, after you change it as Rob suggested?
+On Fri, May 17, 2019 at 06:08:36PM +0530, Vidya Sagar wrote:
+> Add extended configuration space capability search API using struct dw_pc=
+ie *
+> pointer
+>=20
+> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
+> Acked-by: Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+> ---
+> Changes since [v6]:
+> * None
+>=20
+> Changes since [v5]:
+> * None
+>=20
+> Changes since [v4]:
+> * None
+>=20
+> Changes since [v3]:
+> * None
+>=20
+> Changes since [v2]:
+> * None
+>=20
+> Changes since [v1]:
+> * This is a new patch in v2 series
+>=20
+>  drivers/pci/controller/dwc/pcie-designware.c | 41 ++++++++++++++++++++
+>  drivers/pci/controller/dwc/pcie-designware.h |  1 +
+>  2 files changed, 42 insertions(+)
+>=20
+> diff --git a/drivers/pci/controller/dwc/pcie-designware.c b/drivers/pci/c=
+ontroller/dwc/pcie-designware.c
+> index 8f53ce63d17e..3b7d50888caa 100644
+> --- a/drivers/pci/controller/dwc/pcie-designware.c
+> +++ b/drivers/pci/controller/dwc/pcie-designware.c
+> @@ -54,6 +54,47 @@ u8 dw_pcie_find_capability(struct dw_pcie *pci, u8 cap)
+>  }
+>  EXPORT_SYMBOL_GPL(dw_pcie_find_capability);
+> =20
+> +static int dw_pcie_find_next_ext_capability(struct dw_pcie *pci, int sta=
+rt,
+> +					    int cap)
+
+Perhaps make this more consistent with the existing regular
+configuration space capability search API? Something like this perhaps:
+
+	static u16 dw_pcie_find_next_ext_capability(struct dw_pcie *pci,
+						    u16 start, u8 cap)
+
+? I guess your variant above is consistent with the existing generic
+capability search API, so another alternative might be to make the old
+dw_pcie_find_capability() API consistent with everything else. It's
+confusing if we keep having to jump between the two variants.
+
+Thierry
+
+> +{
+> +	u32 header;
+> +	int ttl;
+> +	int pos =3D PCI_CFG_SPACE_SIZE;
+> +
+> +	/* minimum 8 bytes per capability */
+> +	ttl =3D (PCI_CFG_SPACE_EXP_SIZE - PCI_CFG_SPACE_SIZE) / 8;
+> +
+> +	if (start)
+> +		pos =3D start;
+> +
+> +	header =3D dw_pcie_readl_dbi(pci, pos);
+> +	/*
+> +	 * If we have no capabilities, this is indicated by cap ID,
+> +	 * cap version and next pointer all being 0.
+> +	 */
+> +	if (header =3D=3D 0)
+> +		return 0;
+> +
+> +	while (ttl-- > 0) {
+> +		if (PCI_EXT_CAP_ID(header) =3D=3D cap && pos !=3D start)
+> +			return pos;
+> +
+> +		pos =3D PCI_EXT_CAP_NEXT(header);
+> +		if (pos < PCI_CFG_SPACE_SIZE)
+> +			break;
+> +
+> +		header =3D dw_pcie_readl_dbi(pci, pos);
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +int dw_pcie_find_ext_capability(struct dw_pcie *pci, int cap)
+> +{
+> +	return dw_pcie_find_next_ext_capability(pci, 0, cap);
+> +}
+> +EXPORT_SYMBOL_GPL(dw_pcie_find_ext_capability);
+> +
+>  int dw_pcie_read(void __iomem *addr, int size, u32 *val)
+>  {
+>  	if (!IS_ALIGNED((uintptr_t)addr, size)) {
+> diff --git a/drivers/pci/controller/dwc/pcie-designware.h b/drivers/pci/c=
+ontroller/dwc/pcie-designware.h
+> index 6cb978132469..fff284098117 100644
+> --- a/drivers/pci/controller/dwc/pcie-designware.h
+> +++ b/drivers/pci/controller/dwc/pcie-designware.h
+> @@ -252,6 +252,7 @@ struct dw_pcie {
+>  		container_of((endpoint), struct dw_pcie, ep)
+> =20
+>  u8 dw_pcie_find_capability(struct dw_pcie *pci, u8 cap);
+> +int dw_pcie_find_ext_capability(struct dw_pcie *pci, int cap);
+> =20
+>  int dw_pcie_read(void __iomem *addr, int size, u32 *val);
+>  int dw_pcie_write(void __iomem *addr, int size, u32 val);
+> --=20
+> 2.17.1
+>=20
+
+--o0ZfoUVt4BxPQnbU
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAlzj1K0ACgkQ3SOs138+
+s6HTgQ//aJr7a1P9iSYJK5pv2YoM6D33S9R3ezA6+xgoGLr8Kc0/or1z4iDwNpfh
+u08lYHkPxU8cIl5I9LFY8gxFvQu1ZVm3P9PDhMeyiR6TXnTa7FPJT28xY/bTQzyY
+g/Y6rkKxoN5V+ZQ/bRyzlbZIRKbQJtEXEs8AE859u/B3EGiBw2aEYJ22/TZfrfhM
+CIHyXaQGrTevCcBoKYp4B+qiYOH9sxLBdlDe1v6ZDhG4ulPpxpIT6fT8yuVxZhs+
+1hOIjVM5N9m8jI8t4ZCiN1Qen1xK2M/saa1y5+JJt6pssb7xUa3YjX4ESGSH68GX
+3/jcqOLAnRk+ZXrRwxRSrZtyCmuX1P+clOTrVV2QCYbf0VYHFD0kz3AD4IJcPjZ/
+pouAXmXETl2PQQJs/My08Dc5ICYba5+/JYKvxJL9kPXDsMyuTAahoSXuomu/TKIU
+Qy8VtWwAxo4oPlKQDxiRir2Qrh85R7Yg7uqDBZ9+WdQRW1z9Y5JuQFrryHClssfl
+6Lehxkw0YH4ubcZ0h+qWHPBE8nhIOHNtSv6rvgKd/A0mF97DaCKiqRx29VU+ywgh
+bdfDqEjzUa6wNykNB6Iz8QT8J29ayymgxBcU1cJy9UDrf1t/jX3nt/7R7G9Yst1h
+exQop1nRDInzw2kEnw17lfJjj12b7izfI/J12l/j0bK4Ay9InDc=
+=4jiK
+-----END PGP SIGNATURE-----
+
+--o0ZfoUVt4BxPQnbU--
 
 
-thanks,
-
--- 
-heikki
+--===============1407791857445015660==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1407791857445015660==--
+
