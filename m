@@ -2,74 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09D5C245A6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 03:32:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E1A9245AE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 03:42:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hcBvrVGBsNHoZDXrHyoa3Ot2P8FvUl9zb74Lxz8iKC0=; b=hwz8MzyZQRgIHDMJjApuLmyA1
-	D3fzV86S9QmiuOKNt2hWcbqWb8iv0hFCGWgT7gJKLkSMvaEWLF5sAlxL8UXjqVb3D4l13SFJIvBaH
-	epama8WHyF41vXKekV+fPcijruCuXpU5ggmsCTUj8tqIMPD2QJkSyboGQ4/fr0Nj6A8WjWQFmqXMY
-	B+41BBH+K8Eg2lfma7FwVq+Zb48DvmVI63qdk82/0y76W2bsZuuTX6yqC2uzcekP2qKJDCfPxcALP
-	ng544pZkAkj9/T/vgPEvoKA7/5lADCKGT4E/+JnkFYI5i2L4lx2RuRvT+/XO2/p0WdCzrot7Pzx5T
-	Tom2j9iEw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=xSQjQn864PSTiAtD4xX9VXYjNtXJMw956+heySqPMcg=; b=uMiuyZBJUpSKRh
+	Wwb+QYQEUmd5Y/P1jx9BgJz6iqWWxEoeEpcggA9lBixVw88IlzKM+NsHgDnBFxlI5Sagyj6CrSRsb
+	gp4PnWmHZP2v6pxR7XLPNyEp0/oPRR1LOBoQt/0ZPePsKiJoZlY+YehUFPSAgCbBUH5qK1jNuuZ61
+	7t981Pf6QnjpZgKtW+YTKnJgvzaPmVHlIFNxd1SopdEYV0DD7omCwmVjZEvULsTGm5MEAoiDPwaxN
+	Z+mi3/Oy4tmgP7Od7VDI9R7JxZdDLUi0BV2lCrf3sP7J+kK0SGVIA2x60CROsMPHRQ2kD2kWIH758
+	C9ajQV8d+6QBa/K3cciw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hStdt-0005Rm-U8; Tue, 21 May 2019 01:32:37 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
+	id 1hStnE-0008RG-V0; Tue, 21 May 2019 01:42:16 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hStdn-0005RI-07
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 01:32:32 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id 728B3608D4; Tue, 21 May 2019 01:32:30 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1558402350;
- bh=jUBciQwDLO8DI/ZPhk5HhSoTVtSqS/+i48ZqN5DOVwA=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=F47/6NMrbkhdAJ9MAogrobowwRLAa43aexBQxM2FzC/DbcjHMMhXAkYQDccVcOYrL
- Lo3XUC5vrv929pXKxtjGzFBzjGWqPA4Q6NYeiNiKz5RG8PmuFZGPXh9hd0kvnjCnZQ
- DZPNPlNrPDXWPZn7y9rwx811gwG6XSsKuTUSMlf4=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED autolearn=no autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- by smtp.codeaurora.org (Postfix) with ESMTP id 85C5A602B7;
- Tue, 21 May 2019 01:32:29 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1558402349;
- bh=jUBciQwDLO8DI/ZPhk5HhSoTVtSqS/+i48ZqN5DOVwA=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=h307RjJc9xkBcbnBvEAcel6wzzP0lSQJmwqychQ0OK2jcvpNKzB+evEcy2FajZfZz
- y5AWG98+nUS1Kbj6zWQTquwNyIzxv13pm6e252k+Vf0iywk3GTe+Yd8CWLzAjOFcTh
- M6Fcpp54cyEfJOInaRF0yUB7joAZKpDXbaZREXac=
+ id 1hStn5-0008Qs-UV
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 01:42:09 +0000
+Received: by mail-lf1-x143.google.com with SMTP id n22so11694373lfe.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 20 May 2019 18:42:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=kO7/ARc/j1pAITgbr/7HY0EQu84NZf4mpPHFLN6TCWY=;
+ b=W951JTEMdg7q+qglVZinKbFax2hz6M8q8mNEKauBQqgx3xmbUUO9yMZAMJqfR4je3b
+ hyMzTxdfkv8z6698yy/KBvJjXRdKGSyIAKRwkUCEAw+05NwAUGdC8N+Og3LTYp7dNFtG
+ EwqDM63L26f0Ro5TgZ+2ISu/sjYWguVjfbh65oIH/f0IpUBLGQVh/kGi5OMCgZobM6rI
+ zA5lOuroLQ7bu23u8srtZuFs3/KKvRPvHlt3weQSA81h16bNR8TamdJPxM9PXjr6dQ9B
+ djtn6I4P7Qag/s5QlAv5L5+U1CFtqzMNaaEQJxHgWolfoKLDZ8uPv2VwmglafSP5+Ww9
+ VW1w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=kO7/ARc/j1pAITgbr/7HY0EQu84NZf4mpPHFLN6TCWY=;
+ b=Mp2VrNP4mJtgLhR1H4zJ40qSi/22d8uOPmIvB60DyxXobjTC07qEnt4ozEjT3bS8Zm
+ 0Iiv5DlQLGOg+kZfaG+htZ1MvTbKJPlrMfPT5G36ZSqiuSNne58gVDiX5Yf2B15Rjv8s
+ tpsutGyXjmxRxHLhacbB1vI3YlZ3MnhAD0A5SKnpkXUw0uzvyYPnUArZx2VX/n9Sn/wL
+ sEDG8XY9+zr/Cc7814ZHjNd3bT1J5dpYDYDigTSHWQK/g/3+QZgXuMGlgn1B8oE4jrFW
+ MXYPjVXNzt+jmVW4PhPa0PIcJfi6LhXM9YxBX97Vj+EMa945NASrpFt6jAmQWJhIf3bc
+ bctw==
+X-Gm-Message-State: APjAAAWfftP2HdbzonKLrzNcjVFDzE3+TTM8FQxfcjPrpxNhj+VCxIgu
+ ZH/LzbERKy9Urd1SDQJVjb+BBH+DI9Y=
+X-Google-Smtp-Source: APXvYqzWGoUPG5zn1MerU8aSxRkbqg4xRaRhxIaKu3pXSPiwofTsohRSrtIcuyoM0rvG9pdBleBDrg==
+X-Received: by 2002:ac2:5222:: with SMTP id i2mr32423660lfl.80.1558402925658; 
+ Mon, 20 May 2019 18:42:05 -0700 (PDT)
+Received: from localhost.localdomain
+ (c-d2cd225c.014-348-6c756e10.bbcust.telenor.se. [92.34.205.210])
+ by smtp.gmail.com with ESMTPSA id s29sm4412455lfc.51.2019.05.20.18.42.04
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 20 May 2019 18:42:04 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] ARM: versatile: Drop CLCD platform data
+Date: Tue, 21 May 2019 03:40:01 +0200
+Message-Id: <20190521014001.17978-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Date: Mon, 20 May 2019 19:32:29 -0600
-From: Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>
-To: Alex Elder <elder@linaro.org>
-Subject: Re: [PATCH 1/8] net: qualcomm: rmnet: fix struct rmnet_map_header
-In-Reply-To: <81fd1e01-b8e3-f86a-fcc9-2bcbc51bd679@linaro.org>
-References: <20190520135354.18628-1-elder@linaro.org>
- <20190520135354.18628-2-elder@linaro.org>
- <b0edef36555877350cfbab2248f8baac@codeaurora.org>
- <81fd1e01-b8e3-f86a-fcc9-2bcbc51bd679@linaro.org>
-Message-ID: <d90f8ccdc1f76f9166f269eb71a14f7f@codeaurora.org>
-X-Sender: subashab@codeaurora.org
-User-Agent: Roundcube Webmail/1.2.5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_183231_076462_66788407 
-X-CRM114-Status: GOOD (  17.72  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190520_184207_990624_05EE5BD4 
+X-CRM114-Status: GOOD (  15.19  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -90,63 +95,258 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: syadagir@codeaurora.org, ejcaruso@google.com, arnd@arndb.de,
- netdev@vger.kernel.org, ilias.apalodimas@linaro.org,
- linux-kernel@vger.kernel.org, evgreen@chromium.org, bjorn.andersson@linaro.org,
- david.brown@linaro.org, agross@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- davem@davemloft.net, cpratapa@codeaurora.org, benchan@google.com
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Linus Walleij <linus.walleij@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Pj4gSWYgdGhlIGFib3ZlIGlsbHVzdHJhdGlvbiBpcyBzdXBwb3NlZCB0byBiZSBpbiBuZXR3b3Jr
-IGJ5dGUgb3JkZXIsCj4+IHRoZW4gaXQgaXMgd3JvbmcuIFRoZSBkb2N1bWVudGF0aW9uIGhhcyB0
-aGUgZGVmaW5pdGlvbiBmb3IgdGhlIE1BUAo+PiBwYWNrZXQuCj4gCj4gTmV0d29yayAqYml0KiBv
-cmRlciBpcyBpcnJlbGV2YW50IHRvIHRoZSBob3N0LiAgSG9zdCBtZW1vcnkgaXMKPiBieXRlIGFk
-ZHJlc3NhYmxlIG9ubHksIGFuZCBiaXQgMCBpcyB0aGUgbG93LW9yZGVyIGJpdC4KPiAKPj4gUGFj
-a2V0IGZvcm1hdCAtCj4+IAo+PiBCaXTCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgMMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoCAxwqDCoMKgwqDCoMKgwqDCoMKgwqAgMi03wqDCoMKgwqDCoCA4IC0g
-MTXCoMKgwqDCoMKgwqDCoMKgwqDCoCAxNiAKPj4gLSAzMQo+PiBGdW5jdGlvbsKgwqAgQ29tbWFu
-ZCAvIERhdGHCoMKgIFJlc2VydmVkwqDCoMKgwqAgUGFkwqDCoCBNdWx0aXBsZXhlciBJRMKgwqDC
-oCAKPj4gUGF5bG9hZCBsZW5ndGgKPj4gQml0wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAzMiAtIHgK
-Pj4gRnVuY3Rpb27CoMKgwqDCoCBSYXfCoCBCeXRlcwo+IAo+IEkgZG9uJ3Qga25vdyBob3cgdG8g
-aW50ZXJwcmV0IHRoaXMuICBBcmUgeW91IHNheWluZyB0aGF0IHRoZSBsb3ctCj4gb3JkZXIgYml0
-IG9mIHRoZSBmaXJzdCBieXRlIGlzIHRoZSBjb21tYW5kL2RhdGEgZmxhZz8gIE9yIGlzIGl0Cj4g
-dGhlIGhpZ2gtb3JkZXIgYml0IG9mIHRoZSBmaXJzdCBieXRlPwo+IAo+IEknbSBzYXlpbmcgdGhh
-dCB3aGF0IEkgb2JzZXJ2ZWQgd2hlbiBidWlsZGluZyB0aGUgY29kZSB3YXMgdGhhdAo+IGFzIG9y
-aWdpbmFsbHkgZGVmaW5lZCwgdGhlIGNkX2JpdCBmaWVsZCB3YXMgdGhlIGhpZ2gtb3JkZXIgYml0
-Cj4gKGJpdCA3KSBvZiB0aGUgZmlyc3QgYnl0ZSwgd2hpY2ggSSB1bmRlcnN0YW5kIHRvIGJlIHdy
-b25nLgo+IAo+IElmIHlvdSBhcmUgdGVsbGluZyBtZSB0aGF0IHRoZSBjb21tYW5kL2RhdGEgZmxh
-ZyByZXNpZGVzIGF0IGJpdAo+IDcgb2YgdGhlIGZpcnN0IGJ5dGUsIEkgd2lsbCB1cGRhdGUgdGhl
-IGZpZWxkIG1hc2tzIGluIGEgbGF0ZXIKPiBwYXRjaCBpbiB0aGlzIHNlcmllcyB0byByZWZsZWN0
-IHRoYXQuCj4gCgpIaWdoZXIgb3JkZXIgYml0IGlzIENvbW1hbmQgLyBEYXRhLgoKPj4gVGhlIGRy
-aXZlciB3YXMgd3JpdHRlbiBhc3N1bWluZyB0aGF0IHRoZSBob3N0IHdhcyBydW5uaW5nIEFSTTY0
-LCBzbwo+PiB0aGUgc3RydWN0cyBhcmUgbGl0dGxlIGVuZGlhbi4gKEkgc2hvdWxkIGhhdmUgbWFk
-ZSBpdCBjb21wYXRpYmxlCj4+IHdpdGggYmlnIGFuZCBsaXR0bGUgZW5kaWFuIGVhcmxpZXIgc28g
-dGhhdCBpcyBteSBmYXVsdCkuCj4gCj4gTGl0dGxlIGVuZGlhbiBhbmQgYmlnIGVuZGlhbiBoYXZl
-IG5vIGJlYXJpbmcgb24gdGhlIGhvc3Qncwo+IGludGVycHJldGF0aW9uIG9mIGJpdHMgd2l0aGlu
-IGEgYnl0ZS4KPiAKPiBQbGVhc2UgY2xhcmlmeS4gIEkgd2FudCB0aGUgcGF0Y2hlcyB0byBiZSBj
-b3JyZWN0LCBhbmQgd2hhdAo+IHlvdSdyZSBleHBsYWluaW5nIGRvZXNuJ3QgcmVhbGx5IHN0cmFp
-Z2h0ZW4gdGhpbmdzIG91dCBmb3IgbWUuCj4gCj4gCQkJCQktQWxleAoKQ2FuJ3QgdGhpcyBiaXRm
-aWVsZHMganVzdCBiZSB1c2VkIHNpbWlsYXIgdG8gaG93IHN0cnVjdCB0Y3BoZHIgJgppcGhkciBh
-cmUgY3VycmVudGx5IGRlZmluZWQuIFRoYXQgd2F5LCB5b3UgZG9udCBoYXZlIHRvIG1ha2UKdGhl
-c2UgbWFueSBjaGFuZ2VzLgoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvbmV0L2V0aGVybmV0L3F1YWxj
-b21tL3JtbmV0L3JtbmV0X21hcC5oIApiL2RyaXZlcnMvbmV0L2V0aGVybmV0L3F1YWxjb21tL3Jt
-bmV0L3JtbmV0X21hcC5oCmluZGV4IDg4NGYxZjUuLjMwMmQxZGIgMTAwNjQ0Ci0tLSBhL2RyaXZl
-cnMvbmV0L2V0aGVybmV0L3F1YWxjb21tL3JtbmV0L3JtbmV0X21hcC5oCisrKyBiL2RyaXZlcnMv
-bmV0L2V0aGVybmV0L3F1YWxjb21tL3JtbmV0L3JtbmV0X21hcC5oCkBAIC00MCw5ICs0MCwxNyBA
-QCBlbnVtIHJtbmV0X21hcF9jb21tYW5kcyB7CiAgfTsKCiAgc3RydWN0IHJtbmV0X21hcF9oZWFk
-ZXIgeworI2lmIGRlZmluZWQoX19MSVRUTEVfRU5ESUFOX0JJVEZJRUxEKQogICAgICAgICB1OCAg
-cGFkX2xlbjo2OwogICAgICAgICB1OCAgcmVzZXJ2ZWRfYml0OjE7CiAgICAgICAgIHU4ICBjZF9i
-aXQ6MTsKKyNlbGlmIGRlZmluZWQgKF9fQklHX0VORElBTl9CSVRGSUVMRCkKKyAgICAgICB1OCAg
-Y2RfYml0OjE7CisgICAgICAgdTggIHJlc2VydmVkX2JpdDoxOworICAgICAgIHU4ICBwYWRfbGVu
-OjY7CisjZWxzZQorI2Vycm9yICJQbGVhc2UgZml4IDxhc20vYnl0ZW9yZGVyLmg+IgorI2VuZGlm
-CiAgICAgICAgIHU4ICBtdXhfaWQ7CiAgICAgICAgIF9fYmUxNiBwa3RfbGVuOwogIH0gIF9fYWxp
-Z25lZCgxKTsKCgotLSAKUXVhbGNvbW0gSW5ub3ZhdGlvbiBDZW50ZXIsIEluYy4gaXMgYSBtZW1i
-ZXIgb2YgQ29kZSBBdXJvcmEgRm9ydW0sCmEgTGludXggRm91bmRhdGlvbiBDb2xsYWJvcmF0aXZl
-IFByb2plY3QKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LWFybS1rZXJuZWwK
+The Versatile family no longer makes any use of the CLCD
+platform data, we have moved over all users to the DRM
+driver that has built-in handling of the displays. Delete
+the old auxdata.
+
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ arch/arm/mach-versatile/versatile_dt.c        | 157 ------------------
+ .../platform_data/video-clcd-versatile.h      |  28 ----
+ 2 files changed, 185 deletions(-)
+ delete mode 100644 include/linux/platform_data/video-clcd-versatile.h
+
+diff --git a/arch/arm/mach-versatile/versatile_dt.c b/arch/arm/mach-versatile/versatile_dt.c
+index e9d60687e416..3e2634851f16 100644
+--- a/arch/arm/mach-versatile/versatile_dt.c
++++ b/arch/arm/mach-versatile/versatile_dt.c
+@@ -29,8 +29,6 @@
+ #include <linux/of_platform.h>
+ #include <linux/slab.h>
+ #include <linux/amba/bus.h>
+-#include <linux/amba/clcd.h>
+-#include <linux/platform_data/video-clcd-versatile.h>
+ #include <linux/amba/mmci.h>
+ #include <asm/mach-types.h>
+ #include <asm/mach/arch.h>
+@@ -47,14 +45,12 @@
+  */
+ #define VERSATILE_SYS_PCICTL_OFFSET           0x44
+ #define VERSATILE_SYS_MCI_OFFSET              0x48
+-#define VERSATILE_SYS_CLCD_OFFSET             0x50
+ 
+ /*
+  * VERSATILE peripheral addresses
+  */
+ #define VERSATILE_MMCI0_BASE           0x10005000	/* MMC interface */
+ #define VERSATILE_MMCI1_BASE           0x1000B000	/* MMC Interface */
+-#define VERSATILE_CLCD_BASE            0x10120000	/* CLCD */
+ #define VERSATILE_SCTL_BASE            0x101E0000	/* System controller */
+ #define VERSATILE_IB2_BASE             0x24000000	/* IB2 module */
+ #define VERSATILE_IB2_CTL_BASE		(VERSATILE_IB2_BASE + 0x03000000)
+@@ -96,158 +92,6 @@ static struct mmci_platform_data mmc1_plat_data = {
+ 	.status		= mmc_status,
+ };
+ 
+-/*
+- * CLCD support.
+- */
+-#define SYS_CLCD_MODE_MASK	(3 << 0)
+-#define SYS_CLCD_MODE_888	(0 << 0)
+-#define SYS_CLCD_MODE_5551	(1 << 0)
+-#define SYS_CLCD_MODE_565_RLSB	(2 << 0)
+-#define SYS_CLCD_MODE_565_BLSB	(3 << 0)
+-#define SYS_CLCD_NLCDIOON	(1 << 2)
+-#define SYS_CLCD_VDDPOSSWITCH	(1 << 3)
+-#define SYS_CLCD_PWR3V5SWITCH	(1 << 4)
+-#define SYS_CLCD_ID_MASK	(0x1f << 8)
+-#define SYS_CLCD_ID_SANYO_3_8	(0x00 << 8)
+-#define SYS_CLCD_ID_UNKNOWN_8_4	(0x01 << 8)
+-#define SYS_CLCD_ID_EPSON_2_2	(0x02 << 8)
+-#define SYS_CLCD_ID_SANYO_2_5	(0x07 << 8)
+-#define SYS_CLCD_ID_VGA		(0x1f << 8)
+-
+-static bool is_sanyo_2_5_lcd;
+-
+-/*
+- * Disable all display connectors on the interface module.
+- */
+-static void versatile_clcd_disable(struct clcd_fb *fb)
+-{
+-	void __iomem *sys_clcd = versatile_sys_base + VERSATILE_SYS_CLCD_OFFSET;
+-	u32 val;
+-
+-	val = readl(sys_clcd);
+-	val &= ~SYS_CLCD_NLCDIOON | SYS_CLCD_PWR3V5SWITCH;
+-	writel(val, sys_clcd);
+-
+-	/*
+-	 * If the LCD is Sanyo 2x5 in on the IB2 board, turn the back-light off
+-	 */
+-	if (of_machine_is_compatible("arm,versatile-ab") && is_sanyo_2_5_lcd) {
+-		unsigned long ctrl;
+-
+-		ctrl = readl(versatile_ib2_ctrl);
+-		ctrl &= ~0x01;
+-		writel(ctrl, versatile_ib2_ctrl);
+-	}
+-}
+-
+-/*
+- * Enable the relevant connector on the interface module.
+- */
+-static void versatile_clcd_enable(struct clcd_fb *fb)
+-{
+-	struct fb_var_screeninfo *var = &fb->fb.var;
+-	void __iomem *sys_clcd = versatile_sys_base + VERSATILE_SYS_CLCD_OFFSET;
+-	u32 val;
+-
+-	val = readl(sys_clcd);
+-	val &= ~SYS_CLCD_MODE_MASK;
+-
+-	switch (var->green.length) {
+-	case 5:
+-		val |= SYS_CLCD_MODE_5551;
+-		break;
+-	case 6:
+-		if (var->red.offset == 0)
+-			val |= SYS_CLCD_MODE_565_RLSB;
+-		else
+-			val |= SYS_CLCD_MODE_565_BLSB;
+-		break;
+-	case 8:
+-		val |= SYS_CLCD_MODE_888;
+-		break;
+-	}
+-
+-	/*
+-	 * Set the MUX
+-	 */
+-	writel(val, sys_clcd);
+-
+-	/*
+-	 * And now enable the PSUs
+-	 */
+-	val |= SYS_CLCD_NLCDIOON | SYS_CLCD_PWR3V5SWITCH;
+-	writel(val, sys_clcd);
+-
+-	/*
+-	 * If the LCD is Sanyo 2x5 in on the IB2 board, turn the back-light on
+-	 */
+-	if (of_machine_is_compatible("arm,versatile-ab") && is_sanyo_2_5_lcd) {
+-		unsigned long ctrl;
+-
+-		ctrl = readl(versatile_ib2_ctrl);
+-		ctrl |= 0x01;
+-		writel(ctrl, versatile_ib2_ctrl);
+-	}
+-}
+-
+-/*
+- * Detect which LCD panel is connected, and return the appropriate
+- * clcd_panel structure.  Note: we do not have any information on
+- * the required timings for the 8.4in panel, so we presently assume
+- * VGA timings.
+- */
+-static int versatile_clcd_setup(struct clcd_fb *fb)
+-{
+-	void __iomem *sys_clcd = versatile_sys_base + VERSATILE_SYS_CLCD_OFFSET;
+-	const char *panel_name;
+-	u32 val;
+-
+-	is_sanyo_2_5_lcd = false;
+-
+-	val = readl(sys_clcd) & SYS_CLCD_ID_MASK;
+-	if (val == SYS_CLCD_ID_SANYO_3_8)
+-		panel_name = "Sanyo TM38QV67A02A";
+-	else if (val == SYS_CLCD_ID_SANYO_2_5) {
+-		panel_name = "Sanyo QVGA Portrait";
+-		is_sanyo_2_5_lcd = true;
+-	} else if (val == SYS_CLCD_ID_EPSON_2_2)
+-		panel_name = "Epson L2F50113T00";
+-	else if (val == SYS_CLCD_ID_VGA)
+-		panel_name = "VGA";
+-	else {
+-		printk(KERN_ERR "CLCD: unknown LCD panel ID 0x%08x, using VGA\n",
+-			val);
+-		panel_name = "VGA";
+-	}
+-
+-	fb->panel = versatile_clcd_get_panel(panel_name);
+-	if (!fb->panel)
+-		return -EINVAL;
+-
+-	return versatile_clcd_setup_dma(fb, SZ_1M);
+-}
+-
+-static void versatile_clcd_decode(struct clcd_fb *fb, struct clcd_regs *regs)
+-{
+-	clcdfb_decode(fb, regs);
+-
+-	/* Always clear BGR for RGB565: we do the routing externally */
+-	if (fb->fb.var.green.length == 6)
+-		regs->cntl &= ~CNTL_BGR;
+-}
+-
+-static struct clcd_board clcd_plat_data = {
+-	.name		= "Versatile",
+-	.caps		= CLCD_CAP_5551 | CLCD_CAP_565 | CLCD_CAP_888,
+-	.check		= clcdfb_check,
+-	.decode		= versatile_clcd_decode,
+-	.disable	= versatile_clcd_disable,
+-	.enable		= versatile_clcd_enable,
+-	.setup		= versatile_clcd_setup,
+-	.mmap		= versatile_clcd_mmap_dma,
+-	.remove		= versatile_clcd_remove_dma,
+-};
+-
+ /*
+  * Lookup table for attaching a specific name and platform_data pointer to
+  * devices as they get created by of_platform_populate().  Ideally this table
+@@ -257,7 +101,6 @@ static struct clcd_board clcd_plat_data = {
+ struct of_dev_auxdata versatile_auxdata_lookup[] __initdata = {
+ 	OF_DEV_AUXDATA("arm,primecell", VERSATILE_MMCI0_BASE, "fpga:05", &mmc0_plat_data),
+ 	OF_DEV_AUXDATA("arm,primecell", VERSATILE_MMCI1_BASE, "fpga:0b", &mmc1_plat_data),
+-	OF_DEV_AUXDATA("arm,primecell", VERSATILE_CLCD_BASE, "dev:20", &clcd_plat_data),
+ 	{}
+ };
+ 
+diff --git a/include/linux/platform_data/video-clcd-versatile.h b/include/linux/platform_data/video-clcd-versatile.h
+deleted file mode 100644
+index 305ebaec3afd..000000000000
+--- a/include/linux/platform_data/video-clcd-versatile.h
++++ /dev/null
+@@ -1,28 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0 */
+-#ifndef PLAT_CLCD_H
+-#define PLAT_CLCD_H
+-
+-#ifdef CONFIG_PLAT_VERSATILE_CLCD
+-struct clcd_panel *versatile_clcd_get_panel(const char *);
+-int versatile_clcd_setup_dma(struct clcd_fb *, unsigned long);
+-int versatile_clcd_mmap_dma(struct clcd_fb *, struct vm_area_struct *);
+-void versatile_clcd_remove_dma(struct clcd_fb *);
+-#else
+-static inline struct clcd_panel *versatile_clcd_get_panel(const char *s)
+-{
+-	return NULL;
+-}
+-static inline int versatile_clcd_setup_dma(struct clcd_fb *fb, unsigned long framesize)
+-{
+-	return -ENODEV;
+-}
+-static inline int versatile_clcd_mmap_dma(struct clcd_fb *fb, struct vm_area_struct *vm)
+-{
+-	return -ENODEV;
+-}
+-static inline void versatile_clcd_remove_dma(struct clcd_fb *fb)
+-{
+-}
+-#endif
+-
+-#endif
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
