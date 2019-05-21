@@ -2,65 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C07452493D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 09:45:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 999FC24941
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 09:45:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dnRkRUnDp/e058HzkR/i3zxfP/QaK4c23964D8vKlh8=; b=OAqV7oA0h12fIs
-	B2CZL8nn6kLRvn/0jF3nOUKxiNpv5/4YC0AzjObpBtoIxZI8t+WRCbLWyZOu8+nGmn61FnNBn6pMX
-	icuppt5n0E+dILTf1JAUKOlkSVrhgYW6SDLPhkTv5AuSR4maq29CWxn/Ox5l8D5TlIlJdw89yBxYu
-	BgcTHWlRl6i0q1G6AvsM191vaZ8vWmOdlu4aZZVgcAyGePwHkaRqInsg1gPTuBfyCyT/e5Xz6QWH5
-	KraDpgi3lTLslK2IB5KYCGWOYmuDHX5oK6mXChJvFH65S5HrmvqMRI9mHOmW24mHIpoN+EvUI7Q5k
-	YkSyNp2bRy/FK7aC1MNA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cOZsLrlzMKOLhnGrEsMdMu4MoKq/Hc7w/zTmAR848X8=; b=oEltwBcC7UB6tg
+	kCKcF3Qpt05CtcGzNU2kYqa1bOotIvGJ2k1LMcd0+xAggwXooKFPSRFUT7UAWoe7GG9aPD4WlZjMo
+	mqQCRTLAC46rBXAJJ2Nzgutf5JiyzYIErbN39tjSlN7RwMnys6+HhD6enx94FMprFtPBah+gHFPT7
+	zbRYiWVCY5JYU65qMNW6ZImFoPU5CnxO0WsLwT47jd9uu/vptOK7+60t4wwow3pQoowOKo454dIeq
+	P04OlJPgiPECkRoHpsj2dOFxRy96Pqys18PSCjiG5tZBEUshTF8Lm98j5JYzSH0NfnzUxGZMlaq3c
+	3zj/HJFYlNk/yPDEPG2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSzSX-0004m6-9l; Tue, 21 May 2019 07:45:17 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hSzSx-0005uj-JV; Tue, 21 May 2019 07:45:43 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSzSI-0004Nj-5Z; Tue, 21 May 2019 07:45:04 +0000
-X-UUID: 00f87ac4fa424d4c8133d4e49eff014c-20190520
-X-UUID: 00f87ac4fa424d4c8133d4e49eff014c-20190520
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <chunfeng.yun@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1223937690; Mon, 20 May 2019 23:44:58 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 21 May 2019 00:44:56 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
- (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Tue, 21 May 2019 15:44:54 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 21 May 2019 15:44:53 +0800
-Message-ID: <1558424693.10179.374.camel@mhfsdcap03>
-Subject: Re: [PATCH v5 5/6] usb: roles: add USB Type-B GPIO connector driver
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-Date: Tue, 21 May 2019 15:44:53 +0800
-In-Reply-To: <20190520083151.GD1887@kuha.fi.intel.com>
-References: <1557823643-8616-1-git-send-email-chunfeng.yun@mediatek.com>
- <1557823643-8616-6-git-send-email-chunfeng.yun@mediatek.com>
- <20190520083151.GD1887@kuha.fi.intel.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1hSzSh-0005rx-HW
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 07:45:33 +0000
+Received: by mail-wm1-x341.google.com with SMTP id n25so1736412wmk.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 21 May 2019 00:45:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=7W2uW0GKbANg0YRRJwfDi3S83JuyE8bC4TgR386g+ig=;
+ b=Ztqxpie7c7XA0ZxhayhLFU5YfLTiyHUepsEAmGYq+FUlQAfXb3LwgAtRxGq3DBMLDp
+ sAAXnOa9PYGcZ2g3jo2609OGB/QROfchy98+Lz36qwm1cKApYb3XTOi+Fp9cR8bVxbXX
+ QV+o57b8E7XeETrpYw4/yQsK5KmNqLoEwQFrC4dJdS3WKZ6c1N5mTanXGuLa48ZI4/Ju
+ kuXzRua9Q0TL1j1xdYisI51IrpaRbwBKzlhgJLH1nVvULMnfAGM+/MOoxzlW5IpXIvk7
+ nD1ATrlT7CCZu3wOLugC1MEkaGYXRLATx+0g0WSbNuhvwOd2J1mwx5rEy2A8ApafFmxY
+ 7ImQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=7W2uW0GKbANg0YRRJwfDi3S83JuyE8bC4TgR386g+ig=;
+ b=EDfXzAI1Grwnayn2POgd5O1sIXQBoZNFS9uzuiOCgIgyuM0M4CfCDuWOaq8NALLtLX
+ 9TRfjan32O9tYh0IUw9kc7Pod9fxiyfi8z8iUEPjeO13cPAhjpq4GAZkBciaoDSFsH/V
+ gsayTMXoP5g+y3YHHbwqlG4NL9F+KwZG0yMNMcOsC3tl/73VmrDrCbFOoIA4TAgHcXd7
+ KPoEXZauchrRCgXD2vDx+ksO11PLCpYsdAE/Ib5p2yntX/xX6nKEJTDg1Pwy0DwnOwz+
+ C5Dp9XeqnpmbHerRiLN4spAWjw+B8QLkoIP36wHk9+9gTloQBHfW+shxdVBywGBww8Fk
+ +hcw==
+X-Gm-Message-State: APjAAAX7iGVx/CCzHZSRw2uBpGHNt97zB+OF2aEGUS/Kzr0RC3XOpni6
+ pPOoQkYErXxzyPl/dGCTnAKw5A==
+X-Google-Smtp-Source: APXvYqyxfn6nygtboQpBoFArmbb8LvGA5vlw84HB75QJRhHbSdB1cLdCnbsbPzvasZc5W/5o+FBHzg==
+X-Received: by 2002:a1c:9e8e:: with SMTP id h136mr2140540wme.29.1558424725333; 
+ Tue, 21 May 2019 00:45:25 -0700 (PDT)
+Received: from [10.1.203.87] (nat-wifi.sssup.it. [193.205.81.22])
+ by smtp.googlemail.com with ESMTPSA id u7sm6381826wmg.25.2019.05.21.00.45.24
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 21 May 2019 00:45:24 -0700 (PDT)
+Subject: Re: [PATCH] clocksource: timer-meson6: update with SPDX Licence
+ identifier
+To: Neil Armstrong <narmstrong@baylibre.com>, tglx@linutronix.de
+References: <20190520140007.29042-1-narmstrong@baylibre.com>
+From: Daniel Lezcano <daniel.lezcano@linaro.org>
+Message-ID: <4262cc03-51eb-67fd-b899-61a2ed03dffa@linaro.org>
+Date: Tue, 21 May 2019 09:45:24 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20190520140007.29042-1-narmstrong@baylibre.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_004502_364545_EA9963F7 
-X-CRM114-Status: GOOD (  17.25  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190521_004527_773044_CA8296C7 
+X-CRM114-Status: GOOD (  10.56  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -72,163 +100,20 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Hans de Goede <hdegoede@redhat.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, Biju Das <biju.das@bp.renesas.com>, Badhri Jagan
- Sridharan <badhri@google.com>, Andy
- Shevchenko <andy.shevchenko@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Min Guo <min.guo@mediatek.com>, Matthias
- Brugger <matthias.bgg@gmail.com>,
- Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
- linux-arm-kernel@lists.infradead.org, Li Jun <jun.li@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On Mon, 2019-05-20 at 11:31 +0300, Heikki Krogerus wrote:
-> On Tue, May 14, 2019 at 04:47:22PM +0800, Chunfeng Yun wrote:
-> > +static int usb_conn_probe(struct platform_device *pdev)
-> > +{
-> > +	struct device *dev = &pdev->dev;
-> > +	struct device_node *node = dev->of_node;
-> > +	struct device_node *remote_node;
-> > +	struct usb_conn_info *info;
-> > +	int ret = 0;
-> > +
-> > +	info = devm_kzalloc(dev, sizeof(*info), GFP_KERNEL);
-> > +	if (!info)
-> > +		return -ENOMEM;
-> > +
-> > +	info->dev = dev;
-> > +	info->id_gpiod = devm_gpiod_get_optional(dev, "id", GPIOD_IN);
-> > +	if (IS_ERR(info->id_gpiod))
-> > +		return PTR_ERR(info->id_gpiod);
-> > +
-> > +	info->vbus_gpiod = devm_gpiod_get_optional(dev, "vbus", GPIOD_IN);
-> > +	if (IS_ERR(info->vbus_gpiod))
-> > +		return PTR_ERR(info->vbus_gpiod);
-> > +
-> > +	if (!info->id_gpiod && !info->vbus_gpiod) {
-> > +		dev_err(dev, "failed to get gpios\n");
-> > +		return -ENODEV;
-> > +	}
-> > +
-> > +	if (info->id_gpiod)
-> > +		ret = gpiod_set_debounce(info->id_gpiod, USB_GPIO_DEB_US);
-> > +	if (!ret && info->vbus_gpiod)
-> > +		ret = gpiod_set_debounce(info->vbus_gpiod, USB_GPIO_DEB_US);
-> > +	if (ret < 0)
-> > +		info->debounce_jiffies = msecs_to_jiffies(USB_GPIO_DEB_MS);
-> > +
-> > +	INIT_DELAYED_WORK(&info->dw_det, usb_conn_detect_cable);
-> > +
-> > +	info->vbus = devm_regulator_get(dev, "vbus");
-> > +	if (IS_ERR(info->vbus)) {
-> > +		dev_err(dev, "failed to get vbus\n");
-> > +		return PTR_ERR(info->vbus);
-> > +	}
-> > +
-> > +	remote_node = of_graph_get_remote_node(node, -1, 0);
-> 
-> This is really not ideal. In practice this code will only work if
-> there is only one endpoint described for this device, or if the first
-> endpoint is always the one we are looking for. There is no way to
-> guarantee that.
-Yes, it is.
-I'll modify it as case 2, see reply [v5, 4/6] in this series.
-
-> 
-> The code really has to walk through the entire graph, and identify the
-> remote endpoint it's looking for (and for that we have the boolean
-> device property).
-> 
-> > +	if (!remote_node) {
-> > +		dev_err(dev, "failed to get remote node\n");
-> > +		return -ENODEV;
-> > +	}
-> > +
-> > +	info->role_sw =
-> > +		fwnode_usb_role_switch_get(of_fwnode_handle(remote_node));
-> 
-> So fwnode_usb_role_switch_get() needs be the one that walks through
-> the graph, not the drivers. Otherwise every driver will do the same
-> exact steps (boilerplate). Here you need to be able to just pass the
-> node of this device, not the remote endpoint:
-> 
->         info->role_sw = fwnode_usb_role_switch_get(dev_fwnode(&client->dev));
-> 
-> But why do you need that function at all? Why wouldn't
-> usb_role_switch_get() work?
-> 
->         info->role_sw = usb_role_switch_get(&client->dev);
-> 
-see reply [v5, 4/6] in this series
-
-Thanks a lot.
-
-> > +	of_node_put(remote_node);
-> > +	if (IS_ERR(info->role_sw)) {
-> > +		dev_err(dev, "failed to get role switch\n");
-> > +		return PTR_ERR(info->role_sw);
-> > +	}
-> > +
-> > +	if (info->id_gpiod) {
-> > +		info->id_irq = gpiod_to_irq(info->id_gpiod);
-> > +		if (info->id_irq < 0) {
-> > +			dev_err(dev, "failed to get ID IRQ\n");
-> > +			ret = info->id_irq;
-> > +			goto put_role_sw;
-> > +		}
-> > +
-> > +		ret = devm_request_threaded_irq(dev, info->id_irq, NULL,
-> > +						usb_conn_isr, USB_CONN_IRQF,
-> > +						pdev->name, info);
-> > +		if (ret < 0) {
-> > +			dev_err(dev, "failed to request ID IRQ\n");
-> > +			goto put_role_sw;
-> > +		}
-> > +	}
-> > +
-> > +	if (info->vbus_gpiod) {
-> > +		info->vbus_irq = gpiod_to_irq(info->vbus_gpiod);
-> > +		if (info->vbus_irq < 0) {
-> > +			dev_err(dev, "failed to get VBUS IRQ\n");
-> > +			ret = info->vbus_irq;
-> > +			goto put_role_sw;
-> > +		}
-> > +
-> > +		ret = devm_request_threaded_irq(dev, info->vbus_irq, NULL,
-> > +						usb_conn_isr, USB_CONN_IRQF,
-> > +						pdev->name, info);
-> > +		if (ret < 0) {
-> > +			dev_err(dev, "failed to request VBUS IRQ\n");
-> > +			goto put_role_sw;
-> > +		}
-> > +	}
-> > +
-> > +	platform_set_drvdata(pdev, info);
-> > +
-> > +	/* Perform initial detection */
-> > +	usb_conn_queue_dwork(info, 0);
-> > +
-> > +	return 0;
-> > +
-> > +put_role_sw:
-> > +	usb_role_switch_put(info->role_sw);
-> > +	return ret;
-> > +}
-> 
-> thanks,
-> 
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjAvMDUvMjAxOSAxNjowMCwgTmVpbCBBcm1zdHJvbmcgd3JvdGU6Cj4gU2lnbmVkLW9mZi1i
+eTogTmVpbCBBcm1zdHJvbmcgPG5hcm1zdHJvbmdAYmF5bGlicmUuY29tPgo+IC0tLQoKQXBwbGll
+ZCwgdGhhbmtzLgoKICAtLSBEYW5pZWwKCgotLSAKIDxodHRwOi8vd3d3LmxpbmFyby5vcmcvPiBM
+aW5hcm8ub3JnIOKUgiBPcGVuIHNvdXJjZSBzb2Z0d2FyZSBmb3IgQVJNIFNvQ3MKCkZvbGxvdyBM
+aW5hcm86ICA8aHR0cDovL3d3dy5mYWNlYm9vay5jb20vcGFnZXMvTGluYXJvPiBGYWNlYm9vayB8
+CjxodHRwOi8vdHdpdHRlci5jb20vIyEvbGluYXJvb3JnPiBUd2l0dGVyIHwKPGh0dHA6Ly93d3cu
+bGluYXJvLm9yZy9saW5hcm8tYmxvZy8+IEJsb2cKCgpfX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51
+eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
