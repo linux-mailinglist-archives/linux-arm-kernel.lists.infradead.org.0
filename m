@@ -2,84 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DBC524788
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 07:31:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B5ED247D8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 08:13:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J+sX3c2BP2ri5/UvnbSCeDPolFLhblMLckPWp3yaVJY=; b=O773D8mdzLrsqp
-	Rd55pvA2B1ZaphTTJJo7nziAKAdXPMLzpBNC2zdlVx835eBxmAEiW6wlSH8gzrK6LSSH03qgYuhBJ
-	ekYQZHGMD/v2GYWBWR3dxE8BzSq6xOtwQWTyK1vyzYnC9WTNEvldyr+4ujld3/ZXqMK68KPQyyfD3
-	GeHirWks8hCGsXzhvm9onbkqtZwjn2+UWUgKHAjdwaDTISKNpr8IFNjhrBIG6pESt6y3VMFdV0dWL
-	Bolah5nq+WQP+xLh5TU2NVD8ekw2fJw+6fz18XcFPsAlN2q1hNt6h9qkD6zSnFUqWnsRpwtuQoQVf
-	Yrw55eiwhZLW5hr22Rog==;
+	List-Owner; bh=qCk4k9nmRdxIDL5lDTJ8x78d0v+/KkgNId4X9PWzc4c=; b=gr0KCF6aA7/ZKH
+	H4iHJNEF/DZf6qRP/aUvLCXjqJMjklUO8ppA+H76EvfGwjkWvr6ljTQQYsFGueqJ6vsqZaj+HDhUr
+	ZO44X/BTQWD8SFNRDXtD42dIW7ujEhUc5nRF7doFr2cu1NPOK6wcqRoM6/j8L2pVxB/M7LGXlpY4E
+	SGpWTlJVoHSR85ItiFnjoBHFYvKq8ViN7wr6ZyQwVDdG8u9Z2G1nqViWI5NVjnfAX2VhOONIJAl5p
+	FxpcYKBPuZTwRsE5QIqFjQUHBtQg0xs5Y+lDl8c3VBt16UonMP1h/iPsJRabJsYeU02AoUBm94NQB
+	vf4urGrB+8QRW9fuieJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSxMZ-0000xy-B7; Tue, 21 May 2019 05:30:59 +0000
-Received: from mail-it1-x132.google.com ([2607:f8b0:4864:20::132])
+	id 1hSy14-0004mC-BP; Tue, 21 May 2019 06:12:50 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSxMR-0000xW-Q7
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 05:30:53 +0000
-Received: by mail-it1-x132.google.com with SMTP id e184so2772404ite.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 22:30:51 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=8qN0twdFcwXuepzLmJZnPlQPdwe8pV/UL2Zay+CiZEw=;
- b=KInkiCDFWuYqXHPIDcw89Bqsu1qxHPFy0Ke9vwbcjv0yIpwnhei08uqTk+c1S26RHs
- 0wJBAt7cmZz5bO/4Hie52tA5ikSCxvJ1jHjjUMGNuWuDUTnkRE//rkLI47Qzxers6ozt
- P9jXOxiLTXavrK+kpnRszjdkJY/eA2m1PM9l1sVGHtRhHeHc9y6V6O4xDEPigQKsTSXs
- dCXTYy78q0EZp8FOLwbd3NaushImT1RR3cU0PB86wzU3xNlAb27HbEKn9KD7CikA42VI
- yrmd0nLS9xWbmoyfPPCq+xFa6Fu1IM19OPkDZEs3uAIvR6sf3rrUDp6iDwCCMAFHPOE0
- UTtA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=8qN0twdFcwXuepzLmJZnPlQPdwe8pV/UL2Zay+CiZEw=;
- b=kQ3bpuBUuCys32UGfWla9o6pRUvmAAb+bXQqEXTQKWDzqb3sQhbuU0nYDpg1yEfzqV
- sLOcTNBlaxbSyxNQ5CwsHJnCClRWwMr6crd/cfSVT5GnA9SNpJqsWv8SuoCielRTvmKi
- PT4XHgU0BccU/eDns6n7AXnE3/gSKXaIsbAcIpBOMZPrxpyxz4+ed9rz8oPNBx20X8PB
- kczQ+BcZ6vQhv1zT+MRlB74wDKnoG+qtLYFIrWEZ81eKVSdITLy0Cyc7SCvO5eI+eMnL
- kLvZ818yO/qqE53/c6RH0kZnFZhaFZrjiv6z0uXi+v3ufIM0zdXnG/VZ5T7KZaroeMqT
- YlIA==
-X-Gm-Message-State: APjAAAUcA0ai4KPXQDMJQAF4VRRfKOb3CaYWEzwZVmPAjBLW1VKuXKBj
- 4eTLClGxD8p5A191gsOpo5o=
-X-Google-Smtp-Source: APXvYqwuIWQFVA9y0u/gRe18vPIYmGs1HAuZAsz6ATsaeQ0fOvJWojiW3Q1JE8LlXwqX/9UZaYFbsA==
-X-Received: by 2002:a24:618f:: with SMTP id s137mr2331223itc.134.1558416650374; 
- Mon, 20 May 2019 22:30:50 -0700 (PDT)
-Received: from dtor-ws ([2620:15c:202:201:3adc:b08c:7acc:b325])
- by smtp.gmail.com with ESMTPSA id w132sm861310itb.30.2019.05.20.22.30.48
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 20 May 2019 22:30:49 -0700 (PDT)
-Date: Mon, 20 May 2019 22:30:47 -0700
-From: "dmitry.torokhov@gmail.com" <dmitry.torokhov@gmail.com>
-To: Anson Huang <anson.huang@nxp.com>
-Subject: Re: [RESEND] input: keyboard: imx: make sure keyboard can always
- wake up system
-Message-ID: <20190521053047.GG183429@dtor-ws>
-References: <1554341727-16084-1-git-send-email-Anson.Huang@nxp.com>
+ id 1hSy0x-0004lF-0L
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 06:12:44 +0000
+Received: from localhost (unknown [106.201.107.13])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DDFC920863;
+ Tue, 21 May 2019 06:12:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1558419160;
+ bh=4VC9bKP9QU7iVDFMtdo9WoMzmY1tJYqXCWxT9T/NUpY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=lJzLTxcVnQlcC8g5MlkXWsEtukxQJremgG+7zcGYuVRwfHSSl/CjVbwp62oapFxjZ
+ RB3v+k7IXX6G0ix1zRMQJ2OvmqFFR1LCVcZnUWQFvAHionw5nVJu6KU8/EW2X/ujcW
+ XyM9/dqc3r3hrt7uRZc5BRuGjG8gjJF0yevCkmSg=
+Date: Tue, 21 May 2019 11:42:36 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Robin Gong <yibin.gong@nxp.com>
+Subject: Re: Re: Re: [PATCH v3 11/14] dmaengine: imx-sdma: fix ecspi1 rx dma
+ not work on i.mx8mm
+Message-ID: <20190521061236.GA15118@vkoul-mobl>
+References: <VI1PR04MB4543DEEC702531ED69616B8C89070@VI1PR04MB4543.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1554341727-16084-1-git-send-email-Anson.Huang@nxp.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <VI1PR04MB4543DEEC702531ED69616B8C89070@VI1PR04MB4543.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.11.3 (2019-02-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_223051_873994_193F4BBE 
-X-CRM114-Status: GOOD (  14.23  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190520_231243_071621_F437BB33 
+X-CRM114-Status: GOOD (  15.35  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:132 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (dmitry.torokhov[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -89,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -100,48 +77,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "linux-input@vger.kernel.org" <linux-input@vger.kernel.org>,
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "robh@kernel.org" <robh@kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
  "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "plyatov@gmail.com" <plyatov@gmail.com>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
+ "broonie@kernel.org" <broonie@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
+ "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
+ "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Anson,
-On Thu, Apr 04, 2019 at 01:40:16AM +0000, Anson Huang wrote:
-> There are several scenarios that keyboard can NOT wake up system
-> from suspend, e.g., if a keyboard is depressed between system
-> device suspend phase and device noirq suspend phase, the keyboard
-> ISR will be called and both keyboard depress and release interrupts
-> will be disabled, then keyboard will no longer be able to wake up
-> system. Another scenario would be, if a keyboard is kept depressed,
-> and then system goes into suspend, the expected behavior would be
-> when keyboard is released, system will be waked up, but current
-> implementation can NOT achieve that, because both depress and release
-> interrupts are disabled in ISR, and the event check is still in
-> progress.
-> 
-> To fix these issues, need to make sure keyboard's depress or release
-> interrupt is enabled after noirq device suspend phase, this patch
-> moves the suspend/resume callback to noirq suspend/resume phase, and
-> enable the corresponding interrupt according to current keyboard status.
-
-I believe it is possible for IRQ to be disabled and still  being enabled
-as wakeup source. What happens if you call disable_irq() before
-disabling the clock?
-
-Thanks.
-
--- 
-Dmitry
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjEtMDUtMTksIDA1OjQxLCBSb2JpbiBHb25nIHdyb3RlOgo+ID4gLS0tLS1PcmlnaW5hbCBN
+ZXNzYWdlLS0tLS0KPiA+IEZyb206IFZpbm9kIEtvdWwgPHZrb3VsQGtlcm5lbC5vcmc+Cj4gPiBT
+ZW50OiAyMDE55bm0NeaciDIx5pelIDEzOjEzCj4gPiAKPiA+IE9uIDIxLTA1LTE5LCAwNDo1OCwg
+Um9iaW4gR29uZyB3cm90ZToKPiA+ID4gPiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQo+ID4g
+PiA+IEZyb206IFZpbm9kIEtvdWwgPHZrb3VsQGtlcm5lbC5vcmc+Cj4gPiA+ID4gU2VudDogMjAx
+OeW5tDXmnIgyMeaXpSAxMjoxOAo+ID4gPiA+Cj4gPiA+ID4gT24gMDctMDUtMTksIDA5OjE2LCBS
+b2JpbiBHb25nIHdyb3RlOgo+ID4gPiA+ID4gQmVjYXVzZSB0aGUgbnVtYmVyIG9mIGVjc3BpMSBy
+eCBldmVudCBvbiBpLm14OG1tIGlzIDAsIHRoZQo+ID4gPiA+ID4gY29uZGl0aW9uIGNoZWNrIGln
+bm9yZSBzdWNoIHNwZWNpYWwgY2FzZSB3aXRob3V0IGRtYSBjaGFubmVsCj4gPiA+ID4gPiBlbmFi
+bGVkLCB3aGljaCBjYXVzZWQKPiA+ID4gPiA+IGVjc3BpMSByeCB3b3JrcyBmYWlsZWQuIEFjdHVh
+bGx5LCBubyBuZWVkIHRvIGNoZWNrIGV2ZW50X2lkMCwKPiA+ID4gPiA+IGNoZWNraW5nCj4gPiA+
+ID4gPiBldmVudF9pZDEgaXMgZW5vdWdoIGZvciBERVZfMl9ERVYgY2FzZSBiZWNhdXNlIGl0J3Mg
+c28gbHVja3kgdGhhdAo+ID4gPiA+ID4gZXZlbnRfaWQxIG5ldmVyIGJlIDAuCj4gPiA+ID4KPiA+
+ID4gPiBXZWxsIGlzIHRoYXQgYnkgY2hhbmNlIG9yIGRlc2lnbiB0aGF0IGV2ZW50X2lkMSB3aWxs
+IGJlIG5ldmVyIDA/Cj4gPiA+ID4KPiA+ID4gVGhhdCdzIGJ5IGNoYW5jZS4gREVWXzJfREVWIGlz
+IGp1c3QgZm9yIEF1ZGlvIGNhc2UgYW5kIG5vbi16ZXJvIGZvcgo+ID4gZXZlbnRfaWQxIG9uIGN1
+cnJlbnQgaS5NWCBmYW1pbHkuCj4gPiAKPiA+IFRoZW4gaXQgd29udCBiZSBmZ29vZCB0byByZWx5
+IG9uIGNoYW5jZSA6KQo+IFllcywgSSBrbmV3IHRoYXQuIE1heSBJIGNyZWF0ZSBhbm90aGVyIGlu
+ZGVwZW5kZW50IHBhdGNoIGZvciBldmVudF9pZDEgc2luY2UgdGhhdCdzIHBvdGVudGlhbCBpc3N1
+ZSBpcyBub3QgcmVsYXRlZCB3aXRoIHRoaXMgZWNzcGkgcGF0Y2ggc2V0PwoKU3VyZSBhIHBhdGNo
+IHNob3VsZCBjaGFuZ2Ugb25lIHRoaW5nIGJ1dCBJIHRoaW5rIGl0IHNob3VsZCBjb21lIGJlZm9y
+ZQp0aGlzIG9uZS4gVGhlIGxvZyBmb3IgdGhpcyBzaG91bGQgYmUgZml4ZWQgdXAgYXMgd2VsbAoK
+LS0gCn5WaW5vZAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
+bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
+bGludXgtYXJtLWtlcm5lbAo=
