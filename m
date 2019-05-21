@@ -2,96 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28008258CA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 22:23:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C721258CB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 22:24:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4kcaAIaDR0H3GIEDIQLcBEDRl3VIG8RlAF/TPdFW/Qo=; b=ByvtOV/tniVCjx
-	rQxI1bYyt65F7fqMHFv1ONJmDbs51AVL5J8Rg7Y6g9+Qo1093/P/ucM+xIgxVj1+Wv+RdXyDJYUkt
-	Gj3WM6159SZQlkvawWIg/70emzZ4Js33l+IKrd5vm3oixEv61KB7P1x9skSgEjV8YW/xEIoYgB4eB
-	xdVXCeOQpqhjgSBYLYCLyAnj++8YJyuWoCyBGR+ZqxkcUSCrmwNTons7s11OO1a2iHEa8FCeBbOPj
-	6CXwoFh0GDwj+7KQY5/BD/0ECt5rujCWhSsntIlmy/G8E31pmC8BXsGUcO92ztKdRYgPHYmvpc4XP
-	Dt3q6OfwKin6w0R7nbAA==;
+	List-Owner; bh=Mcgi6es68NYbLxcu/cQJs/lhY4zIZ5Hz3yAz1jrds9k=; b=W1OL4IWP2CW8Gh
+	GoiY4z3u9O6vj08hUePo/yP+jmsES+NpB9JbNyeXbpl7z4SpU4t2Pd8QE81A2gXyUu9qORmnUQ30J
+	6T5R/oXLu9gPgvTTovlL1EHNQEhF4h2W2ioSKKbvpID4ht3UI7TK1/iN9Z5SwJy/hc7dUVxPzHZI0
+	wnEVMShxF9uSaMNGaMw9Jb8BCcA/uJ65gcRnif7IRPG8gJWK33MLAYa2gxOgVffLAkGrEZOVpXpry
+	vuUj69pZR/p7zatyRMYWkSa67Md0Dru0YoW5wEEK6AT1tqg0szUOcET1FxImAlW+gWXnurKtL2pY5
+	hhYZjWe6QSdqSz7MkczA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTBIW-0000Mx-8s; Tue, 21 May 2019 20:23:44 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1hTBIo-0000cq-7b; Tue, 21 May 2019 20:24:02 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTBIP-0000BL-G3
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 20:23:38 +0000
-Received: by mail-lf1-x143.google.com with SMTP id x132so14117379lfd.0
+ id 1hTBIf-0000aw-KZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 20:23:55 +0000
+Received: by mail-pf1-x443.google.com with SMTP id u17so27809pfn.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 May 2019 13:23:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=linux-foundation.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=mwA8SKkNo0NB1BSSFbQlGkhBkIi6dkzdh19hX1ggqqc=;
- b=E9cuWHFCD4Bgx1lOv97Ctr9bLKO3EjHQDpiZyM5FZUFuOxpsSHENK8V3oPkAEWY2CT
- 4OwJ0l1afyS0KlYgZEStFftLyE7H7JbMd/BnYgfS8lVdq73pcYKuqkBJcrl7o7GLJZCx
- 7466NcnIhfaDTvK1H+iwihEveSzhyKGC/2Zgk=
+ Tue, 21 May 2019 13:23:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to;
+ bh=jL1S7zFzjAxE4JNqh4L9FDfG4cAz8JcsD74o794kTBQ=;
+ b=HTDoWsxi7QDqVixev1f6cqXoZsue3n3xEMiTeFWZaXgqKnKMwHNLfC3f+dJJhqMBRw
+ nDQtVaPP/Z0+mQW6Cy9frq6SwMcF66bdeErddgk7YrYR0WJIYRfOZsfwALK2a95aELQF
+ DAIWkjIYzMPYDvGxpWXquPJ9JJRDVKkErl4fs=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=mwA8SKkNo0NB1BSSFbQlGkhBkIi6dkzdh19hX1ggqqc=;
- b=Gw0k+yyaZC/BDIxn6PL4ozUGQtCUl/pZ2SXE9xh9WSR/cPT4g6kPJ1Cq2Z5wLG8pSH
- xHT7BaJ5AVq+tfGs/b+Iwm7rrK7RyPyA/kP+HOR1EqQjYuLIutAs7iZ+wSSq1BAA2QA4
- VabxOxmIJubLErVbVVsePRPtIzM2kn1GrJOprjhY7eFkq+Qr8f0Cf2DNRfBtexX5gusm
- 9idPvLLQLQVuzEkUT05k80zKmS3uf1ecZCmgO/yPG/VjJR5O8ojspfveQi42Aj1zLfe4
- QPjyfwIzMMOpyeAvqU8f/5xq8sJAlxBsyF+bj5KJc2iEcsnNh2qWOL5mHHkiu60t+EGh
- OzPQ==
-X-Gm-Message-State: APjAAAU69nfEIC2abKWRkpTmFFHKj3UkojCEdCWO3+H9XieJQisto3Ga
- RwfPtljyMLmXK/RnZCyOMiBLPqoq4UE=
-X-Google-Smtp-Source: APXvYqyD5+vkCllgYKnKQlf/gFDeZd0h1XwKz8+McY4j7zV1du+vAE0UyNNVgHc0toOpBmVgS1X0Ug==
-X-Received: by 2002:a19:ccca:: with SMTP id c193mr40774771lfg.36.1558470210582; 
- Tue, 21 May 2019 13:23:30 -0700 (PDT)
-Received: from mail-lj1-f177.google.com (mail-lj1-f177.google.com.
- [209.85.208.177])
- by smtp.gmail.com with ESMTPSA id y17sm1438451lji.66.2019.05.21.13.23.29
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 21 May 2019 13:23:29 -0700 (PDT)
-Received: by mail-lj1-f177.google.com with SMTP id j24so12911ljg.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 May 2019 13:23:29 -0700 (PDT)
-X-Received: by 2002:a2e:2f03:: with SMTP id v3mr4725518ljv.6.1558470208997;
- Tue, 21 May 2019 13:23:28 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to;
+ bh=jL1S7zFzjAxE4JNqh4L9FDfG4cAz8JcsD74o794kTBQ=;
+ b=uEhGH0xyK3dDvM9OYzkt3vL+JOptBL4nWCqkt6TwNs+Cn9+OGiC7brxaorS9gjHkM4
+ dhJzD/JG7nHH1SVFV/ZAFzA1OIQd5EJBr9nMy84bE2zGuud5eONjtKTcuWCH6xxAmJSN
+ SUmFvkc0dF8gK8LYnzP7j2up+2JuYMgVvqbmo9UIKZ8OiLznijTlPJP6lZMxWojLaUkF
+ 3zk5tHzMl4yodGF5HHet17JWvwRz4fBonBgQK5niFbywvz/+UL1cV5v6OHa5by7p9l+M
+ E4/kiarpWiiT3YYfGaE5mkBKdrgFwWOaqCpk41iyKHA2A5AIwBh79tV/IfdGoUGZ8XsF
+ QjJw==
+X-Gm-Message-State: APjAAAVQRpV++2rf/Xwj8HfNHqY+WR1FdHtFJUaOg+4uOixZrmWlni/Q
+ 0n12VAd0yMnA7QtzOAn1lgz7UQ==
+X-Google-Smtp-Source: APXvYqxOxJPANXcitp87yHMwwlb908gqPaSxiqSVECmGo+Kntyeadkzvfnc3UlOr5MMFdZisu7CwHg==
+X-Received: by 2002:a63:1061:: with SMTP id 33mr58636901pgq.328.1558470232784; 
+ Tue, 21 May 2019 13:23:52 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id q75sm32078478pfa.175.2019.05.21.13.23.52
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 21 May 2019 13:23:52 -0700 (PDT)
+Date: Tue, 21 May 2019 13:23:51 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Philippe Mazenauer <philippe.mazenauer@outlook.de>
+Subject: Re: [PATCH] arm: add missing include <linux/elf-randomize.h>
+Message-ID: <201905211323.7064F60D@keescook>
+References: <VI1PR07MB44324E07A6AFE89A920444AFFD070@VI1PR07MB4432.eurprd07.prod.outlook.com>
 MIME-Version: 1.0
-References: <20190521150006.GJ17978@ZenIV.linux.org.uk>
- <20190521113448.20654-1-christian@brauner.io>
- <28114.1558456227@warthog.procyon.org.uk>
- <20190521164141.rbehqnghiej3gfua@brauner.io>
-In-Reply-To: <20190521164141.rbehqnghiej3gfua@brauner.io>
-From: Linus Torvalds <torvalds@linux-foundation.org>
-Date: Tue, 21 May 2019 13:23:13 -0700
-X-Gmail-Original-Message-ID: <CAHk-=wgtHm4t71oKbykE=awiVv2H2wCy8yH0L_FsyhHQ5OSO+Q@mail.gmail.com>
-Message-ID: <CAHk-=wgtHm4t71oKbykE=awiVv2H2wCy8yH0L_FsyhHQ5OSO+Q@mail.gmail.com>
-Subject: Re: [PATCH 1/2] open: add close_range()
-To: Christian Brauner <christian@brauner.io>
+Content-Disposition: inline
+In-Reply-To: <VI1PR07MB44324E07A6AFE89A920444AFFD070@VI1PR07MB4432.eurprd07.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_132337_543650_D489A2CD 
-X-CRM114-Status: GOOD (  10.89  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190521_132353_692571_74108E55 
+X-CRM114-Status: GOOD (  14.15  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -103,52 +95,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, Linux-sh list <linux-sh@vger.kernel.org>,
- Oleg Nesterov <oleg@redhat.com>, David Howells <dhowells@redhat.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- sparclinux@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
- linux-arch <linux-arch@vger.kernel.org>,
- linux-s390 <linux-s390@vger.kernel.org>, Miklos Szeredi <miklos@szeredi.hu>,
- the arch/x86 maintainers <x86@kernel.org>, linux-mips@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, tkjos@android.com,
- Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
- linux-m68k <linux-m68k@lists.linux-m68k.org>,
- Al Viro <viro@zeniv.linux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
- "Dmitry V. Levin" <ldv@altlinux.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Florian Weimer <fweimer@redhat.com>, linux-parisc@vger.kernel.org,
- Linux API <linux-api@vger.kernel.org>,
- Linux List Kernel Mailing <linux-kernel@vger.kernel.org>,
- alpha <linux-alpha@vger.kernel.org>,
- linux-fsdevel <linux-fsdevel@vger.kernel.org>, linuxppc-dev@lists.ozlabs.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Russell King <linux@armlinux.org.uk>, open list <linux-kernel@vger.kernel.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 21, 2019 at 9:41 AM Christian Brauner <christian@brauner.io> wrote:
->
-> Yeah, you mentioned this before. I do like being able to specify an
-> upper bound to have the ability to place fds strategically after said
-> upper bound.
-
-I suspect that's the case.
-
-And if somebody really wants to just close everything and uses a large
-upper bound, we can - if we really want to - just compare the upper
-bound to the file table size, and do an optimized case for that. We do
-that upper bound comparison anyway to limit the size of the walk, so
-*if* it's a big deal, that case could then do the whole "shrink
-fdtable" case too.
-
-But I don't believe it's worth optimizing for unless somebody really
-has a load where that is shown to be a big deal.   Just do the silly
-and simple loop, and add a cond_resched() in the loop, like
-close_files() does for the "we have a _lot_ of files open" case.
-
-                   Linus
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCBNYXkgMjEsIDIwMTkgYXQgMDM6NTQ6MzZQTSArMDAwMCwgUGhpbGlwcGUgTWF6ZW5h
+dWVyIHdyb3RlOgo+IEluY2x1ZGUgY29ycmVzcG9uZGluZyBoZWFkZXIgZmlsZSA8bGludXgvZWxm
+LXJhbmRvbWl6ZS5oPiBmb3IgZnVuY3Rpb24KPiBhcmNoX3JhbmRvbWl6ZV9icmsoKS4KPiAKPiAu
+Li9hcmNoL2FybS9rZXJuZWwvcHJvY2Vzcy5jOjMyNToxNTogd2FybmluZzogbm8gcHJldmlvdXMg
+cHJvdG90eXBlIGZvciDigJhhcmNoX3JhbmRvbWl6ZV9icmvigJkgWy1XbWlzc2luZy1wcm90b3R5
+cGVzXQo+ICB1bnNpZ25lZCBsb25nIGFyY2hfcmFuZG9taXplX2JyayhzdHJ1Y3QgbW1fc3RydWN0
+ICptbSkKPiAgICAgICAgICAgICAgICBefn5+fn5+fn5+fn5+fn5+fn4KPiAKPiBTaWduZWQtb2Zm
+LWJ5OiBQaGlsaXBwZSBNYXplbmF1ZXIgPHBoaWxpcHBlLm1hemVuYXVlckBvdXRsb29rLmRlPgoK
+QWNrZWQtYnk6IEtlZXMgQ29vayA8a2Vlc2Nvb2tAY2hyb21pdW0ub3JnPgoKPiAtLS0KPiAgYXJj
+aC9hcm0va2VybmVsL3Byb2Nlc3MuYyB8IDEgKwo+ICAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRp
+b24oKykKPiAKPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0va2VybmVsL3Byb2Nlc3MuYyBiL2FyY2gv
+YXJtL2tlcm5lbC9wcm9jZXNzLmMKPiBpbmRleCA3MmNjMDg2MmEzMGUuLjczNzgyMDEyZDQwMyAx
+MDA2NDQKPiAtLS0gYS9hcmNoL2FybS9rZXJuZWwvcHJvY2Vzcy5jCj4gKysrIGIvYXJjaC9hcm0v
+a2VybmVsL3Byb2Nlc3MuYwo+IEBAIC0yMyw2ICsyMyw3IEBACj4gICNpbmNsdWRlIDxsaW51eC9p
+bnRlcnJ1cHQuaD4KPiAgI2luY2x1ZGUgPGxpbnV4L2luaXQuaD4KPiAgI2luY2x1ZGUgPGxpbnV4
+L2VsZmNvcmUuaD4KPiArI2luY2x1ZGUgPGxpbnV4L2VsZi1yYW5kb21pemUuaD4KPiAgI2luY2x1
+ZGUgPGxpbnV4L3BtLmg+Cj4gICNpbmNsdWRlIDxsaW51eC90aWNrLmg+Cj4gICNpbmNsdWRlIDxs
+aW51eC91dHNuYW1lLmg+Cj4gLS0gCj4gMi4xNy4xCj4gCgotLSAKS2VlcyBDb29rCgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
+IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
