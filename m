@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51D5724F47
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 14:51:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E647A24F46
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 14:51:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OStKu/6TWct4b4rOPV5REG+nYIdWyII8YS7DviEGfL0=; b=VOv0J9ZxqTq3k2
-	a4y6IdYc1paSWX/020D6G9JZAbLeCOHU3Ka3zUhE/m2H5TpulTN5aNCtjLoGXtXYP7Z5QdTZiEcRJ
-	QhJmq5eFo6lORkQPYwipbYSf2WJkgHOdzn8/gXa5xeZ2O/K/O3bg07ZgL54T4zOnewRWK+Axc5enV
-	BKBp6itLC/g4QlQP96X3wXnTZrNwNJK/nbg3sjve0XFfX9G5INKR5rOWP1wENY1wZ+krf2E5GHC2x
-	z+KA7coHXYp/3a98dOWYWRtaCze/rTKZnctYhQwxMJu7WCJ5OE7qJg3HQK07U8NSK00dw+O5YrESz
-	2pHX2lBM0TfUQlkjQB/Q==;
+	List-Owner; bh=5vQSTVcz2GN1+G55Mn40KgnI8YRDN3ueUcPG75xPTys=; b=QOEldexyicKa1n
+	cF4RnQsfiQZREOwEhzokZQSCid+ctoHvQDbt9xAvRHX7y851QOSOmOAK5XV2JUESEh0bDBprmWIpn
+	3S47EtdmVHpc5v6O2Y6SZR9n0/ClI6IdorwfwxL2WNghESY4X5OnvzNUO+WeUkbT70Z1Jl2KpKfvk
+	4jXkWTRWTY0CDmovakTgA5i2lQ2xk9wCgx9JtIPMl8NVyUwJq0dYNKpNhC6O3IOvMq4a5oXobSEd0
+	MYy+haaStlUrURNaQzwMRlU+E2kEDPTw4qGcVituit282oALYzSG5exAirnnt0Am0jOh6fxSIz5Sl
+	F0oFVIzj3A/2HszBPBoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT4F6-0007sB-14; Tue, 21 May 2019 12:51:44 +0000
+	id 1hT4Ex-0007kK-Av; Tue, 21 May 2019 12:51:35 +0000
 Received: from relay5-d.mail.gandi.net ([217.70.183.197])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT4Eo-0007hd-Vj
+ id 1hT4Ep-0007hl-2e
  for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 12:51:28 +0000
 X-Originating-IP: 90.88.22.185
 Received: from localhost.localdomain
  (aaubervilliers-681-1-80-185.w90-88.abo.wanadoo.fr [90.88.22.185])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id E6D661C001A;
- Tue, 21 May 2019 12:51:19 +0000 (UTC)
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id EDEB11C0011;
+ Tue, 21 May 2019 12:51:21 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Michael Turquette <mturquette@baylibre.com>,
  Stephen Boyd <sboyd@kernel.org>, Russell King <linux@armlinux.org.uk>
-Subject: [PATCH v5 2/4] clk: mvebu: armada-37xx-tbg: fix error message
-Date: Tue, 21 May 2019 14:51:11 +0200
-Message-Id: <20190521125114.20357-3-miquel.raynal@bootlin.com>
+Subject: [PATCH v5 3/4] clk: mvebu: armada-37xx-tbg: fill the device entry
+ when registering the clocks
+Date: Tue, 21 May 2019 14:51:12 +0200
+Message-Id: <20190521125114.20357-4-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.19.1
 In-Reply-To: <20190521125114.20357-1-miquel.raynal@bootlin.com>
 References: <20190521125114.20357-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_055127_168701_12BF6C27 
-X-CRM114-Status: GOOD (  12.95  )
+X-CRM114-CacheID: sfid-20190521_055127_418657_50773920 
+X-CRM114-Status: GOOD (  13.69  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -74,28 +75,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The error message should state that the driver failed to get the
-parent clock, not the opposite.
+So far the clk_hw_register_fixed_factor() calls are not providing any
+device structure. While doing so is harmless for regular use, the
+missing device structure may be a problem for suspend to RAM support.
+
+Since, device links have been added to clocks, links created during
+probe will enforce the suspend/resume orders. When the device is
+missing during the registration, no link can be established, hence the
+order between parent and child clocks are not enforced.
+
+Adding the device structure here will create a link between the 4 TBG
+clocks (registered by this driver) and:
+* their parent clock: XTAL,
+* their child clocks: several 'periph' clock.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 Reviewed-by: Gregory CLEMENT <gregory.clement@bootlin.com>
 ---
- drivers/clk/mvebu/armada-37xx-tbg.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/clk/mvebu/armada-37xx-tbg.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/clk/mvebu/armada-37xx-tbg.c b/drivers/clk/mvebu/armada-37xx-tbg.c
-index 585a02e0b330..992f2d1130b3 100644
+index 992f2d1130b3..6336f6955e92 100644
 --- a/drivers/clk/mvebu/armada-37xx-tbg.c
 +++ b/drivers/clk/mvebu/armada-37xx-tbg.c
-@@ -99,7 +99,7 @@ static int armada_3700_tbg_clock_probe(struct platform_device *pdev)
- 
- 	parent = clk_get(dev, NULL);
- 	if (IS_ERR(parent)) {
--		dev_err(dev, "Could get the clock parent\n");
-+		dev_err(dev, "Could not get the clock parent\n");
- 		return -EINVAL;
+@@ -117,8 +117,10 @@ static int armada_3700_tbg_clock_probe(struct platform_device *pdev)
+ 		name = tbg[i].name;
+ 		mult = tbg_get_mult(reg, &tbg[i]);
+ 		div = tbg_get_div(reg, &tbg[i]);
+-		hw_tbg_data->hws[i] = clk_hw_register_fixed_factor(NULL, name,
+-						parent_name, 0, mult, div);
++		hw_tbg_data->hws[i] = clk_hw_register_fixed_factor(dev, name,
++								   parent_name,
++								   0, mult,
++								   div);
+ 		if (IS_ERR(hw_tbg_data->hws[i]))
+ 			dev_err(dev, "Can't register TBG clock %s\n", name);
  	}
- 	parent_name = __clk_get_name(parent);
 -- 
 2.19.1
 
