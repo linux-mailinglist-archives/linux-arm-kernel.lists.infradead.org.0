@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C57F124A2D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 10:22:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52BED24A30
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 10:23:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YpzTZg67b8b95dG+nJA6M4h0AOt3+O8ajtcsjcGarBM=; b=A7PbuLRYfrwCTV
-	bXyrNNNM0HQMLwnSC2G3ncmH8XC9+UfKVJZpqNtN9t7S/3vtcjl6UUN8eB/lhbAzBJCJB5Fz6/Dgp
-	6U7oXvMfxpJLPaWE6r0AqqtpfMms5DtYZlIx9/WwXRurhDjxI36bxWR4cBikNQMY1e/Ozb1Vhra5D
-	3Q0BaLfmL+mpJToueekXQOjLPt8NalZYzy11mLO9FIRSVEKdGrRLsAIYAyuCQEbczNOxWjLvGGVcS
-	QRrrRj3psucySaW2wuhXecrGO8mQivX6grf1X5u53E0z2+x/4UhQyu88u08GDmRKPoueM3aNY1ApZ
-	5WWgMjY+V0TooSTUkcyQ==;
+	List-Owner; bh=1NcS0zcDRJD4cRVwQij3/ftiUqRNkuL+CArRKFBpE6Q=; b=cCRjdEJ91KYwzF
+	WYE5CZs8+A3Ut9DD8fpfml9J6S42NIwFT1HvFEGPqnDGV/voB5ZJ8ctSIJByWIydAp0Un/5b2ehZk
+	7pMAJWcbeR3cNcoTEj3mjvUPlICWA4f4/k1KfqUd3PE2IMoQmqUhRcG/I+YIPgnZbAALlo09NIwRx
+	OC6P9P/rflnKIh8d+BS91Q2HlDfrOgXoVrNf2CcqM1hUX3TdkFdsWgc1bvkwrfpW58PtlCLp0umdn
+	VLPBCnNAFU4wB+Fa7Rjpiux/GdLz37l637Ie+sj3cjA4rtZcx+f0tsYM4ZlF1GOD6v16tbjbcaoZs
+	nHZdVdqugDMBTyZMrSig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT02j-0002Ao-6M; Tue, 21 May 2019 08:22:41 +0000
+	id 1hT03F-0002tY-9C; Tue, 21 May 2019 08:23:13 +0000
 Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT01q-0001E5-JW
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 08:21:48 +0000
+ id 1hT01s-0001Er-0l
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 08:21:49 +0000
 Received: from localhost (p54B334E1.dip0.t-ipconnect.de [84.179.52.225])
- by pokefinder.org (Postfix) with ESMTPSA id E38132C777D;
- Tue, 21 May 2019 10:21:45 +0200 (CEST)
+ by pokefinder.org (Postfix) with ESMTPSA id 541112C7789;
+ Tue, 21 May 2019 10:21:46 +0200 (CEST)
 From: Wolfram Sang <wsa@the-dreams.de>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 4/8] MAINTAINERS: add I2C DT bindings to Nomadik/U300 platforms
-Date: Tue, 21 May 2019 10:21:33 +0200
-Message-Id: <20190521082137.2889-5-wsa@the-dreams.de>
+Subject: [PATCH 5/8] MAINTAINERS: add I2C DT bindings to Rockchip platform
+Date: Tue, 21 May 2019 10:21:34 +0200
+Message-Id: <20190521082137.2889-6-wsa@the-dreams.de>
 X-Mailer: git-send-email 2.19.1
 In-Reply-To: <20190521082137.2889-1-wsa@the-dreams.de>
 References: <20190521082137.2889-1-wsa@the-dreams.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_012146_787666_A37360A3 
-X-CRM114-Status: UNSURE (   7.08  )
+X-CRM114-CacheID: sfid-20190521_012148_210549_E536BD1B 
+X-CRM114-Status: UNSURE (   7.62  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -59,7 +59,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linus Walleij <linus.walleij@linaro.org>, linux-i2c@vger.kernel.org,
+Cc: Heiko Stuebner <heiko@sntech.de>, linux-i2c@vger.kernel.org,
  Wolfram Sang <wsa@the-dreams.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -67,24 +67,23 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 Signed-off-by: Wolfram Sang <wsa@the-dreams.de>
-Cc: Linus Walleij <linus.walleij@linaro.org>
+Cc: Heiko Stuebner <heiko@sntech.de>
 ---
- MAINTAINERS | 2 ++
- 1 file changed, 2 insertions(+)
+ MAINTAINERS | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/MAINTAINERS b/MAINTAINERS
-index 01b5579cfa07..1a60cd98aad5 100644
+index 1a60cd98aad5..09f32866bdef 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -1921,6 +1921,8 @@ ARM/NOMADIK/U300/Ux500 ARCHITECTURES
- M:	Linus Walleij <linus.walleij@linaro.org>
- L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+@@ -2145,6 +2145,7 @@ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+ L:	linux-rockchip@lists.infradead.org
+ T:	git git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git
  S:	Maintained
-+F:	Documentation/devicetree/bindings/i2c/i2c-nomadik.txt
-+F:	Documentation/devicetree/bindings/i2c/i2c-stu300.txt
- F:	arch/arm/mach-nomadik/
- F:	arch/arm/mach-u300/
- F:	arch/arm/mach-ux500/
++F:	Documentation/devicetree/bindings/i2c/i2c-rk3x.txt
+ F:	arch/arm/boot/dts/rk3*
+ F:	arch/arm/boot/dts/rv1108*
+ F:	arch/arm/mach-rockchip/
 -- 
 2.19.1
 
