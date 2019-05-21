@@ -2,56 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1682F24903
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 09:33:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3E802490E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 09:35:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9g/ZSSW1769sYPlcoNh31sLANR/PN0i4Uw87VgbWPes=; b=eCIyvTwzuHvrrJ
-	ThXQYSej7yr4hX2sGIhlJUMKVforVI7+JzOFEsbLLtFuAw86HJn/lBVnqZq9CtFNyhHUu9i9t7sib
-	hRyIb8qyoC8wqEbSiRls/254sYPFFaZisTWYOwpxHdPOsBBeDJiIF+RVT8De9jdsetuGtrbG9bzC7
-	/2KQCVSd0tQpGfii96EdKV9CoW9pvtgHJei7VtMP60Unbq+25sLvU3tm3qn3IGgI+s7HbTANSk4ls
-	EL227AFSfxL8ka0RzoACnDy5otWGBIkU8XeovF1PCJ7YBAAv5ZMjhpwSbUQytf9g/Kfz7cq88CJgj
-	tAXOA5xOOYuvUJxlTxSw==;
+	List-Owner; bh=SbOdC/oIhix8DEPkRxjIlJ9ue/5H3QlY9TFngtcEsj8=; b=G7Jja8ii/4jdjd
+	GM08jNrgkR5bhOGIpy9kkv+a7KpnvwKu09SJ4WL81KlorNvpcn8omdiUAp//eCEOupI5NORQmQGBu
+	DlwWQeliw3YUvReKe9ZkMmCKjb5ITD5PgCZosNvWNkYRbFb0Z1RZnCgwCwRFhQ4eIENcowiURtuLe
+	E1JzdvWuxbUlsuRNuyqhn+CasRIzuBJ5rnhXZOAiE5rcVwdN/rOAuUxYiTDkts/k+Zj9acMTQm7xB
+	pTENGaNmqMgYaSQ3pncoTgRjcAxtpMWPcjMjUlumxMrMObflEJ/s/NsmQ9MxhV0naiHC0Kt+rbFJB
+	7sqkw8Jnwrgxdfe78zBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSzGw-0007Gt-8N; Tue, 21 May 2019 07:33:18 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hSzJP-0000nE-3M; Tue, 21 May 2019 07:35:51 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSzGn-0007EW-VM; Tue, 21 May 2019 07:33:11 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 9E41E2841E1;
- Tue, 21 May 2019 08:33:05 +0100 (BST)
-Date: Tue, 21 May 2019 09:33:02 +0200
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Sascha Hauer <s.hauer@pengutronix.de>
-Subject: Re: [PATCH v2 14/15] mtd: rawnand: Get rid of chip->numchips
-Message-ID: <20190521093302.079f5470@collabora.com>
-In-Reply-To: <20190521065948.GA16530@pengutronix.de>
-References: <20190304201522.11323-1-miquel.raynal@bootlin.com>
- <20190304201522.11323-15-miquel.raynal@bootlin.com>
- <20190521065948.GA16530@pengutronix.de>
-Organization: Collabora
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ id 1hSzJG-0000lb-Al; Tue, 21 May 2019 07:35:43 +0000
+X-UUID: cc5e6503f79d4fbe932c837125bba82a-20190520
+X-UUID: cc5e6503f79d4fbe932c837125bba82a-20190520
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 615289992; Mon, 20 May 2019 23:35:11 -0800
+Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 21 May 2019 00:35:08 -0700
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31DR.mediatek.inc
+ (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Tue, 21 May 2019 15:35:05 +0800
+Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 21 May 2019 15:35:04 +0800
+Message-ID: <1558424104.10179.365.camel@mhfsdcap03>
+Subject: RE: [PATCH v5 4/6] usb: roles: add API to get usb_role_switch by node
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Biju Das <biju.das@bp.renesas.com>, Heikki Krogerus
+ <heikki.krogerus@linux.intel.com>
+Date: Tue, 21 May 2019 15:35:04 +0800
+In-Reply-To: <OSBPR01MB2103C4C8920C40E42BC1B2A9B8060@OSBPR01MB2103.jpnprd01.prod.outlook.com>
+References: <1557823643-8616-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1557823643-8616-5-git-send-email-chunfeng.yun@mediatek.com>
+ <20190517103736.GA1490@kuha.fi.intel.com>
+ <20190517130511.GA1887@kuha.fi.intel.com>
+ <1558319951.10179.352.camel@mhfsdcap03>
+ <20190520080359.GC1887@kuha.fi.intel.com>
+ <OSBPR01MB2103385D996762FA54F8E437B8060@OSBPR01MB2103.jpnprd01.prod.outlook.com>
+ <20190520083601.GE1887@kuha.fi.intel.com>
+ <OSBPR01MB2103C4C8920C40E42BC1B2A9B8060@OSBPR01MB2103.jpnprd01.prod.outlook.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_003310_146729_1CD99A40 
-X-CRM114-Status: GOOD (  20.40  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190521_003542_381737_C7E86A11 
+X-CRM114-Status: GOOD (  27.04  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,72 +79,206 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mason Yang <masonccyang@mxic.com.tw>, Vignesh R <vigneshr@ti.com>,
- Boris Brezillon <bbrezillon@kernel.org>, Julien Su <juliensu@mxic.com.tw>,
- Richard Weinberger <richard@nod.at>,
- Tudor Ambarus <Tudor.Ambarus@microchip.com>,
- Schrempf Frieder <frieder.schrempf@kontron.de>,
- Marek Vasut <marek.vasut@gmail.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, linux-mtd@lists.infradead.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Brian Norris <computersforpeace@gmail.com>,
- David Woodhouse <dwmw2@infradead.org>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Hans de Goede <hdegoede@redhat.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Badhri Jagan Sridharan <badhri@google.com>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ Min Guo <min.guo@mediatek.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Li Jun <jun.li@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 21 May 2019 08:59:48 +0200
-Sascha Hauer <s.hauer@pengutronix.de> wrote:
-
-> Hi,
+Hi,
+On Mon, 2019-05-20 at 09:45 +0000, Biju Das wrote:
 > 
-> On Mon, Mar 04, 2019 at 09:15:21PM +0100, Miquel Raynal wrote:
-> > diff --git a/drivers/mtd/nand/raw/internals.h b/drivers/mtd/nand/raw/internals.h
-> > index fbf6ca015cd7..a204f9d7e123 100644
-> > --- a/drivers/mtd/nand/raw/internals.h
-> > +++ b/drivers/mtd/nand/raw/internals.h
-> > @@ -110,7 +110,7 @@ static inline int nand_exec_op(struct nand_chip *chip,
-> >  	if (!nand_has_exec_op(chip))
-> >  		return -ENOTSUPP;
-> >  
-> > -	if (WARN_ON(op->cs >= chip->numchips))
-> > +	if (WARN_ON(op->cs >= nanddev_ntargets(&chip->base)))
-> >  		return -EINVAL;  
+> Hi Heikki,
 > 
-> This warning triggers when I apply my gpmi nand exec_op series.
+> Thanks for the feedback.
 > 
-> The gpmi driver calls:
+> > Subject: Re: [PATCH v5 4/6] usb: roles: add API to get usb_role_switch by
+> > node
+> > 
+> > On Mon, May 20, 2019 at 08:06:41AM +0000, Biju Das wrote:
+> > > Hi Heikki,
+> > >
+> > > > Subject: Re: [PATCH v5 4/6] usb: roles: add API to get
+> > > > usb_role_switch by node
+> > > >
+> > > > On Mon, May 20, 2019 at 10:39:11AM +0800, Chunfeng Yun wrote:
+> > > > > Hi,
+> > > > > On Fri, 2019-05-17 at 16:05 +0300, Heikki Krogerus wrote:
+> > > > > > Hi,
+> > > > > >
+> > > > > > On Fri, May 17, 2019 at 01:37:36PM +0300, Heikki Krogerus wrote:
+> > > > > > > On Tue, May 14, 2019 at 04:47:21PM +0800, Chunfeng Yun wrote:
+> > > > > > > > Add fwnode_usb_role_switch_get() to make easier to get
+> > > > > > > > usb_role_switch by fwnode which register it.
+> > > > > > > > It's useful when there is not device_connection registered
+> > > > > > > > between two drivers and only knows the fwnode which register
+> > > > > > > > usb_role_switch.
+> > > > > > > >
+> > > > > > > > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> > > > > > > > Tested-by: Biju Das <biju.das@bp.renesas.com>
+> > > > > > >
+> > > > > > > Acked-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+> > > > > >
+> > > > > > Hold on. I just noticed Rob's comment on patch 2/6, where he
+> > > > > > points out that you don't need to use device graph since the
+> > > > > > controller is the parent of the connector. Doesn't that mean you
+> > > > > > don't really need this API?
+> > > > > No, I still need it.
+> > > > > The change is about the way how to get fwnode; when use device
+> > > > > graph, get fwnode by of_graph_get_remote_node(); but now will get
+> > > > > fwnode by of_get_parent();
+> > > >
+> > > > OK, I get that, but I'm still not convinced about if something like
+> > > > this function is needed at all. I also have concerns regarding how
+> > > > you are using the function. I'll explain in comment to the patch 5/6 in this
+> > series...
+> > >
+> > > FYI, Currently  I am also using this api in my patch series.
+> > > https://patchwork.kernel.org/patch/10944637/
+> > 
+> > Yes, and I have the same question for you I jusb asked in comment I added
+> > to the patch 5/6 of this series. Why isn't usb_role_switch_get() enough?
 > 
-> 	ret = nand_scan(chip, GPMI_IS_MX6(this) ? 2 : 1);
+> Currently no issue. It will work with this api as well, since the port node is part of controller node.
+> For eg:-
+> https://patchwork.kernel.org/patch/10944627/
 > 
-> This ends up in nand_scan_ident() with maxchips = 2. Here nand_detect()
-> is called which sets memorg->ntargets = 1; Later in nand_scan_ident() we
-> have:
+> However if any one adds port node inside the connector node, then this api may won't work as expected.
+> Currently I get below error
 > 
-> 	for (i = 1; i < maxchips; i++) {
-
-This loop should be fixed to test against nanddev_ntargets() instead of
-maxchips.
-
-> 		u8 id[2];
+> [    2.299703] OF: graph: no port node found in /soc/i2c@e6500000/hd3ss3220@47
 > 
-> 		/* See comment in nand_get_flash_type for reset */
-> 		ret = nand_reset(chip, i);
-> 		if (ret)
-> 			break;
+> For eg:-
+> 
+> 	hd3ss3220@47 {
+> 		compatible = "ti,hd3ss3220";
+> 		...
 > 		....
+> 		usb_con: connector {
+>                                      ....
+>                                      ....
+> 			port {
+> 				hd3ss3220_ep: endpoint@0 {
+> 					reg = <0>;
+> 					remote-endpoint = <&usb3peri_role_switch>;
+> 				};
+> 			};
+> 		};
+> 	};
 > 
-> this nand_reset() calls nand_exec_op() with op->cs = 1, nanddev_ntargets() = 1
-> and boom.
-> 
-> I can't see how this can work with anything else but maxchips = 1. Do you
-> have an idea how this is supposed to work?
-> 
-> Sascha
-> 
-> 
+> Regards,
+> Biju
+
+I tested 3 cases:
+
+case 1:
+
+connector {
+    compatible = "linux,typeb-conn-gpio", "usb-b-connector";
+    label = "micro-USB";
+    type = "micro";
+    id-gpios = <&pio 12 GPIO_ACTIVE_HIGH>;
+    vbus-supply = <&usb_p0_vbus>;
+
+    port {
+        bconn_ep: endpoint@0 {
+            remote-endpoint = <&usb_role_sw>;
+        };
+    };
+};
+
+&mtu3 {
+    usb-role-switch;
+
+    port {
+        usb_role_sw: endpoint@0 {
+            remote-endpoint = <&bconn_ep>;
+        };
+    };
+};
+
+the driver of connector could use usb_role_switch_get(dev) to get
+mtu3's USB Role Switch. (dev is the device of connector)
+
+case 2:
+
+&mtu3 {
+    usb-role-switch;
+
+    connector {
+        compatible = "linux,typeb-conn-gpio", "usb-b-connector";
+        label = "micro-USB";
+        type = "micro";
+        id-gpios = <&pio 12 GPIO_ACTIVE_HIGH>;
+        vbus-supply = <&usb_p0_vbus>;
+    };
+};
+
+the driver of connector using usb_role_switch_get(dev) failed to get
+mtu3's USB Role Switch.
+error log:
+#OF: graph: no port node found in /usb@11271000/connector
+this is because connector hasn't child node connected to remote
+endpoint which register USB Role Switch
+
+case 3:
+
+rsw_iddig: role_sw_iddig {
+    compatible = "linux,typeb-conn-gpio";
+    status = "okay";
+
+    connector {
+        compatible = "usb-b-connector";
+        label = "micro-USB";
+        type = "micro";
+        id-gpios = <&pio 12 GPIO_ACTIVE_HIGH>;
+        vbus-supply = <&usb_p0_vbus>;
+
+        port {
+            bconn_ep: endpoint@0 {
+                remote-endpoint = <&usb_role_sw>;
+            };
+        };
+    };
+};
+
+&mtu3 {
+    usb-role-switch;
+
+    port {
+        usb_role_sw: endpoint@0 {
+            remote-endpoint = <&bconn_ep>;
+        };
+    };
+};
+
+
+the driver of connector using usb_role_switch_get(dev) also failed to
+get mtu3's USB Role Switch. Because usb_role_switch_get() only search
+its child nodes (connector node), but not child's child (port node)
+This case is the same as Biju's
+
+Usually type-c is similar with case 3;
+the next version v6 of this series will use case 2 as Rob suggested,
+see [v5, 2/6]
+
+for case 2, will need the new API fwnode_usb_role_switch_get();
+for case 3, use the new API, or need modify usb_role_switch_get();
+
 
 
 _______________________________________________
