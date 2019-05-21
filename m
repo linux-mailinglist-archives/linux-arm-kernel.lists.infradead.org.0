@@ -2,82 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6EB42485C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 08:47:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E0942489D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 09:00:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iZW7wUmvQIwBNk0gM/1jI77nBiZZZnhuGNgnrcsASds=; b=n63wBp6WcfL51q
-	TaFAhOKQuDtTg5d8f2Mo4EhTx744d7b2GD5ykS1/aMFB3eNY3kvtlRYu2/kuC9hQlWVmxSMkKkf+z
-	Sr0Fay4MI4TlAsgzHNwFaOYKi8KfcBveRksyc/KiRmVLbzLfSgy9kmw7PpY25ScIy5COsopZK/R9g
-	nDX2r/0/6sfVneIviiRpNUJCcKxIfkHCWtisxpi1g0ntWGYBg7Z2zYzH+3YaNDCaXcmr050bzMBnt
-	4XILJNUkVOxoSRsgWjF+KERlbELROb5k+WNrb8bmDpMUQg2NnNgORZs+C04ntAkshVqAShbToF2Mc
-	IZjFNWaMFryTIL7CPcyQ==;
+	List-Owner; bh=bZ4kmjLKuYK88QqxDg1IzsRw4mOu3K6vNDFVnq8gYq4=; b=ZptCETvUsE4eK2
+	zuFToD+vy4vIxY2nYT4W4X5D0StB6l23/ypi5jy3pE9RxuMTGgqYbjbhL4lafIlvnGZcn/f3Oro3i
+	cVAD0uAY7qZtQEsO4gEoraQ9NBMKxyC9/R5GtnXX5wvbI4wXZKxq909EBRQEdth4etqLOoVlBNEtI
+	YkIb9KZq9HO7r4gvrm4mevBV4tadX8gd6Tvw1sAs9OcQRv3cK9FvtRweGW1YpQgrz4gz3Vcs81BgP
+	JyBoWOFZW4HaCH5YHZ2g7/O+B1wq4xM5e3WEU8pYqivUUyUs/3KwUhy3Ng1Fi81A49cldaBb0YWM6
+	91aJ/9SH/4dhtUN2Qj2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSyYX-0002Ko-P0; Tue, 21 May 2019 06:47:25 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hSylF-0008Mi-02; Tue, 21 May 2019 07:00:33 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSyYN-0002Jx-SN
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 06:47:18 +0000
-Received: by mail-wm1-x341.google.com with SMTP id x64so1628622wmb.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 23:47:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Dtcdsu0fUtok0q96jnMGpWM0fc0NoVZ6NVYcC/TU3EI=;
- b=KeH2Aa8UGeY3ald/vMtEvRNEPoOZgF6ZxP+nhAsZupukHiOm8t0PXqEZS/WBoeHG/0
- 7vTSdr7BTbtHz2o2Jqvx7wMH1SmkqwzYd5Gdg/w0hH3eL/OlPpzUlozsZ4rN6E/h7sMd
- bMdDLCwW+K7eQEPgfsVVK5lh7g25N8mZ7wUgg=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Dtcdsu0fUtok0q96jnMGpWM0fc0NoVZ6NVYcC/TU3EI=;
- b=ART+9wqnT2hfdtABwPj8xCT0PdEkj/UR5Llpa5mw4JW0QX4gwsM7Frs9aIUHCiXQL6
- N6RBzTIE8aAH+2oRXzEYgn7ARfa57TC7Ft55pTmV7X3kYVSZQzyfjtQBQl+PEzpGw1MT
- p8aSNl35209d530kODSzpgswkfL+Nufw9kdOECIv539Pc2lY0s58BdcT/y4hLt7dh5oj
- WAaFkxwizDotLt/KJxgg8YtrbUfi8YVRxAWT2LMw68eltwIQof2oI+bLA6XfVXBFFBot
- xEyDZtDvM20xiZ+CJU2IiKoeLQUfeAKJxjyz/ebRYN0uWf1Bl12qnfa/8SPigaXolgpO
- TVsg==
-X-Gm-Message-State: APjAAAVQ+alyl5GNrGS5sz52gFdDblV2dMvsEnULeHNzjrafi79A75XF
- Ct1XOUmHfD6hEydHsYzvOrGOM4WrQ3QUAEixp0ZEig==
-X-Google-Smtp-Source: APXvYqzfKKX+FWJFZbOOtvY+5rX4F4OJzEUSEX+qaWWcrbh0PkdH/kOZOIQuqFdUHG1hJoLc5d9aCY/fi8EkfoSZ+9Y=
-X-Received: by 2002:a1c:7310:: with SMTP id d16mr1907943wmb.65.1558421233660; 
- Mon, 20 May 2019 23:47:13 -0700 (PDT)
+ id 1hSykz-0008F9-2f
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 07:00:18 +0000
+Received: from dude.hi.pengutronix.de ([2001:67c:670:100:1d::7])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <sha@pengutronix.de>)
+ id 1hSykZ-0005e0-75; Tue, 21 May 2019 08:59:51 +0200
+Received: from sha by dude.hi.pengutronix.de with local (Exim 4.92)
+ (envelope-from <sha@pengutronix.de>)
+ id 1hSykW-00074j-42; Tue, 21 May 2019 08:59:48 +0200
+Date: Tue, 21 May 2019 08:59:48 +0200
+From: Sascha Hauer <s.hauer@pengutronix.de>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+Subject: Re: [PATCH v2 14/15] mtd: rawnand: Get rid of chip->numchips
+Message-ID: <20190521065948.GA16530@pengutronix.de>
+References: <20190304201522.11323-1-miquel.raynal@bootlin.com>
+ <20190304201522.11323-15-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
-References: <20190418141658.10868-1-jagan@amarulasolutions.com>
- <20190418145641.q23tupopz2czjzc5@flea>
-In-Reply-To: <20190418145641.q23tupopz2czjzc5@flea>
-From: Michael Nazzareno Trimarchi <michael@amarulasolutions.com>
-Date: Tue, 21 May 2019 08:47:02 +0200
-Message-ID: <CAOf5uwn8CtRs8cx0KC-bxNoRP4TiDrHi8F83QfjsZhueLDYFJg@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: allwinner: a64-oceanic-5205-5inmfd: Enable CAN
-To: Maxime Ripard <maxime.ripard@bootlin.com>
+Content-Disposition: inline
+In-Reply-To: <20190304201522.11323-15-miquel.raynal@bootlin.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 08:41:50 up 3 days, 13:04, 66 users,  load average: 13.93, 12.19,
+ 6.64
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::7
+X-SA-Exim-Mail-From: sha@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_234716_419762_F5C6A7CD 
-X-CRM114-Status: GOOD (  19.02  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190521_000017_270937_F714EBA7 
+X-CRM114-Status: GOOD (  18.66  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -89,113 +75,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- LKML <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mason Yang <masonccyang@mxic.com.tw>, Vignesh R <vigneshr@ti.com>,
+ Tudor Ambarus <Tudor.Ambarus@microchip.com>, Julien Su <juliensu@mxic.com.tw>,
+ Richard Weinberger <richard@nod.at>, Boris Brezillon <bbrezillon@kernel.org>,
+ Schrempf Frieder <frieder.schrempf@kontron.de>,
+ Marek Vasut <marek.vasut@gmail.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>, linux-mtd@lists.infradead.org,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Brian Norris <computersforpeace@gmail.com>,
+ David Woodhouse <dwmw2@infradead.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Maxime
+Hi,
 
-On Thu, Apr 18, 2019 at 4:56 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
->
-> On Thu, Apr 18, 2019 at 07:46:58PM +0530, Jagan Teki wrote:
-> > Oceanic 5205 5inMFD has MCP2515 CAN device connected via SPI1.
-> >
-> > - via SPI1 bus
-> > - vdd supplied by 5V supply along with PL2 enable pin
-> > - xceiver supply same as vdd
-> > - can oscillator connected at 20MHz
-> > - PB2 gpio as interrupt pin
-> > - PD6 gpio as RX_BUF1_CAN0
-> > - PD7 gpio as RX_BUF0_CAN0
-> >
-> > Tested-by: Tamas Papp <tamas@osukl.com>
-> > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> > ---
-> >  .../sun50i-a64-oceanic-5205-5inmfd.dts        | 43 +++++++++++++++++++
-> >  1 file changed, 43 insertions(+)
-> >
-> > diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-oceanic-5205-5inmfd.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-oceanic-5205-5inmfd.dts
-> > index f0cd6587f619..22535a297f51 100644
-> > --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-oceanic-5205-5inmfd.dts
-> > +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-oceanic-5205-5inmfd.dts
-> > @@ -21,6 +21,24 @@
-> >       chosen {
-> >               stdout-path = "serial0:115200n8";
-> >       };
-> > +
-> > +     can_osc: can-osc {
-> > +             compatible = "fixed-clock";
-> > +             #clock-cells = <0>;
-> > +             clock-frequency = <20000000>;
-> > +     };
-> > +
-> > +     reg_can_v5v: reg-can-v5v {
-> > +             compatible = "regulator-fixed";
-> > +             regulator-name = "reg-can-v5v";
-> > +             regulator-min-microvolt = <5000000>;
-> > +             regulator-max-microvolt = <5000000>;
-> > +             regulator-boot-on;
-> > +             enable-active-high;
-> > +             gpio = <&r_pio 0 2 GPIO_ACTIVE_HIGH>; /* CAN_3V3_EN: PL2 */
-> > +             status = "okay";
->
-> You don't need the status property here.
->
+On Mon, Mar 04, 2019 at 09:15:21PM +0100, Miquel Raynal wrote:
+> diff --git a/drivers/mtd/nand/raw/internals.h b/drivers/mtd/nand/raw/internals.h
+> index fbf6ca015cd7..a204f9d7e123 100644
+> --- a/drivers/mtd/nand/raw/internals.h
+> +++ b/drivers/mtd/nand/raw/internals.h
+> @@ -110,7 +110,7 @@ static inline int nand_exec_op(struct nand_chip *chip,
+>  	if (!nand_has_exec_op(chip))
+>  		return -ENOTSUPP;
+>  
+> -	if (WARN_ON(op->cs >= chip->numchips))
+> +	if (WARN_ON(op->cs >= nanddev_ntargets(&chip->base)))
+>  		return -EINVAL;
 
-Correct, need to be dropped
+This warning triggers when I apply my gpmi nand exec_op series.
 
-> > +     };
-> > +
-> >  };
-> >
-> >  &ehci0 {
-> > @@ -77,6 +95,31 @@
-> >       status = "okay";
-> >  };
-> >
-> > +&pio {
-> > +     can_pins: can-pins {
-> > +             pins = "PD6",                   /* RX_BUF1_CAN0 */
-> > +                    "PD7";                   /* RX_BUF0_CAN0 */
-> > +             function = "gpio_in";
-> > +     };
-> > +};
->
-> That isn't needed. What are they used for, you're not tying them to
-> anything?
+The gpmi driver calls:
 
-Mux of their function is correct. They are connected in the schematics
-but not used right now.
-I can garantee that kernel wlll always configurred in the right way
-and if I want I can export in userspace
-for debug purpose
+	ret = nand_scan(chip, GPMI_IS_MX6(this) ? 2 : 1);
 
-Michael
+This ends up in nand_scan_ident() with maxchips = 2. Here nand_detect()
+is called which sets memorg->ntargets = 1; Later in nand_scan_ident() we
+have:
+
+	for (i = 1; i < maxchips; i++) {
+		u8 id[2];
+
+		/* See comment in nand_get_flash_type for reset */
+		ret = nand_reset(chip, i);
+		if (ret)
+			break;
+		....
+
+this nand_reset() calls nand_exec_op() with op->cs = 1, nanddev_ntargets() = 1
+and boom.
+
+I can't see how this can work with anything else but maxchips = 1. Do you
+have an idea how this is supposed to work?
+
+Sascha
 
 
->
-> Maxime
->
-> --
-> Maxime Ripard, Bootlin
-> Embedded Linux and Kernel engineering
-> https://bootlin.com
-
-
-
---
-| Michael Nazzareno Trimarchi                     Amarula Solutions BV |
-| COO  -  Founder                                      Cruquiuskade 47 |
-| +31(0)851119172                                 Amsterdam 1018 AM NL |
-|                  [`as] http://www.amarulasolutions.com               |
+-- 
+Pengutronix e.K.                           |                             |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
