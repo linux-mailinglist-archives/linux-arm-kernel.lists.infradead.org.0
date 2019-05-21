@@ -2,95 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43D25254D2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 18:04:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00474254E5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 18:07:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5yD5c2wXB3iN/M0/hYKtornajfloFaMitAOZNEMe/0U=; b=Zf0OqRm3JkDlcM
-	wdj8swdt74A93vZnm8XQVo/ep/LYL/2Ndy9quO5VBiZah4CBWgqwmb8vpCkVYGbPiyRcBQub2caY9
-	S0ERbDUXwFuxvB3900ItrvwdUk+C9N2dYwOHJrCZbR8RYlgQ39ries3XZBE67LVZo9RubP+1TunHC
-	POXsat4fwHuGXfjqbK/phOZpKGFGSHsl8J4zh/cgquvbWUder4AlwZPg/fQ7Cw1n97elZIBWCvfqp
-	Rwp+tBLB9qb1CFXIPzdyRTP2Nrkk+i+0KqfOh2+op5DH6ZdlRz38vSi4ZpZBTv6RcLaMN8pEF85+b
-	sdtRDMZsic5DWyFeUYtA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ny52J4EegCuIayt+sHt7d6BpQoPK/z2P720mJXDQnC0=; b=eQP0U+WVbxQbOI
+	ztEvhb1kaTaUPENvvDegtCfg1IZOoP7ff4ygHCbTHthczOcKvjP6TMPDGaUARD5SO8aWD7nBD7mul
+	bYkvmJYzxHWvaM2JG/ArHrOqOLvb6IWIacqH2LVB6uQKn2agqok9vSZFiMG3QyZFX1oesmD4eAt+n
+	knCsolXe2/wjImdOTzrdGCx28cVdy7BxovZp1mkB1woVofAUx3J6R58AfTFkOjqtUzJbVkUVDR2Ec
+	fabYcVZf6GDKQvThWtLl3rOFQqd2/MRPYokViOlck1RaEguWQ6TbjgxIFmkhU3XpF/mgn1wji8JDg
+	DSd0YK7H1TIiKKDjLL4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT7Fq-0001eO-JA; Tue, 21 May 2019 16:04:42 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT7Ev-0000ak-71
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 16:03:48 +0000
-Received: by mail-wr1-x444.google.com with SMTP id d18so19271734wrs.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 May 2019 09:03:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=hGVC97kr/8/BngU9FjmbWaxR7LHVSKdzb8qIb3rfhLw=;
- b=HRRHLDE1UdIMVLXhwmTlkWpovX6rwrEXPgpyKoOZuazWMIopdAk4WZP0WUYOA3XTgv
- vQxe4ruWmBTcZJ4wCOqsdA/7mq37vXaU/eCoqqgnI/abpOR0Uu1ny4UDdtz6hV5lu3Cr
- awd1tgjLmydezd0eSTlv5xZlJOerP4Y7+98cXdJrzEVoL4TmL7kcZ9mKvq4oj6y28ahb
- uRIEZVH5wTF0UWExYRcZxojFsjmPrlS6zTGDFxDs1nxv2oeTGakE7+a47GIZ4Iu0KthH
- 3jf65+ePC+f3evSjgiHaXfaR8C7FTuOTSSvkGe/WaAnHoV/RzggAAqhPMFE7dzcMGLLd
- KvAw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=hGVC97kr/8/BngU9FjmbWaxR7LHVSKdzb8qIb3rfhLw=;
- b=O4+tVVdyV7T/xPdmKQM+ZJ1782Qolk0lbHwqTFyud0HRLVYpI9wc77aRBwK4khAcUc
- ri1ipjD0gU32HX6k2duh70O+CvZZHic24EPVrBr/0vPsic64rX2xneAHpXPYMsaGKiWE
- Lvl+AkAdLc6yxfdKHezTCq1glb2zU15O2jGSBi5U/gaXrV7/L4FZttvmN1uqAmqabz6T
- Wpe7ks8GKTzKFIwdnl7GiCPBJya3pzQtEL5YKrJICxB6uLd77nrIgnO3xY70h86A0qx/
- YFfw6YyORpGFjND4JicxUwyaHG2SJa62QaKGAy0z0b2jMjQMDeUpt1iqdaawdKJrO/C5
- RuYQ==
-X-Gm-Message-State: APjAAAXduJu1+v7wr2BYk6HEWJnk3SFvCDUFV3DrGanQtvW75V/t6I+E
- STkFPEmlQrhf51R/wxXlm2s=
-X-Google-Smtp-Source: APXvYqwsJuVrNQzCHOQhxugVzCWj6HJBBTOVQD6czAHbkhVTt9RaLaBMKvGnLoVMuS7+6erE1Vtuuw==
-X-Received: by 2002:adf:c149:: with SMTP id w9mr40235573wre.40.1558454623694; 
- Tue, 21 May 2019 09:03:43 -0700 (PDT)
-Received: from localhost.localdomain (18.189-60-37.rdns.acropolistelecom.net.
- [37.60.189.18])
- by smtp.gmail.com with ESMTPSA id g11sm6853811wrq.89.2019.05.21.09.03.42
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 21 May 2019 09:03:43 -0700 (PDT)
-From: =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>
-To: Wim Van Sebroeck <wim@linux-watchdog.org>,
- Guenter Roeck <linux@roeck-us.net>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>
-Subject: [PATCH v4 5/5] arm64: defconfig: enable sunxi watchdog
-Date: Tue, 21 May 2019 18:03:30 +0200
-Message-Id: <20190521160330.28402-6-peron.clem@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190521160330.28402-1-peron.clem@gmail.com>
-References: <20190521160330.28402-1-peron.clem@gmail.com>
+	id 1hT7Iv-0003xp-SV; Tue, 21 May 2019 16:07:53 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hT7Io-0003x7-Tt
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 16:07:48 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CAF7F15A2;
+ Tue, 21 May 2019 09:07:44 -0700 (PDT)
+Received: from [10.1.196.129] (ostrya.cambridge.arm.com [10.1.196.129])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4A22B3F718;
+ Tue, 21 May 2019 09:07:42 -0700 (PDT)
+From: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
+Subject: Re: [RFC/PATCH 0/4] Initial support for modular IOMMU drivers
+To: "Isaac J. Manjarres" <isaacm@codeaurora.org>, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
+ iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org
+References: <1558118857-16912-1-git-send-email-isaacm@codeaurora.org>
+Message-ID: <2379c1cf-be1b-503f-7dbc-51110650e91f@arm.com>
+Date: Tue, 21 May 2019 17:07:18 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <1558118857-16912-1-git-send-email-isaacm@codeaurora.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_090345_803187_5551852C 
-X-CRM114-Status: GOOD (  11.58  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190521_090746_978209_2B30D2C7 
+X-CRM114-Status: GOOD (  29.01  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (peron.clem[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -102,27 +65,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>,
- linux-watchdog@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: frowand.list@gmail.com, kernel-team@android.com, joro@8bytes.org,
+ will.deacon@arm.com, lmark@codeaurora.org, robh+dt@kernel.org,
+ bhelgaas@google.com, robin.murphy@arm.com, pratikp@codeaurora.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VGhlIFNVTlhJX1dBVENIRE9HIG9wdGlvbiBpcyByZXF1aXJlZCB0byBtYWtlIHRoZQp3YXRjaGRv
-ZyBhdmFpbGFibGUgb24gQWxsd2lubmVyIEg2LgoKRW5hYmxlIHRoaXMgb3B0aW9uIGFzIGEgbW9k
-dWxlLgoKU2lnbmVkLW9mZi1ieTogQ2zDqW1lbnQgUMOpcm9uIDxwZXJvbi5jbGVtQGdtYWlsLmNv
-bT4KLS0tCiBhcmNoL2FybTY0L2NvbmZpZ3MvZGVmY29uZmlnIHwgMSArCiAxIGZpbGUgY2hhbmdl
-ZCwgMSBpbnNlcnRpb24oKykKCmRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2NvbmZpZ3MvZGVmY29u
-ZmlnIGIvYXJjaC9hcm02NC9jb25maWdzL2RlZmNvbmZpZwppbmRleCA0ZDU4MzUxNDI1OGMuLmZj
-NTFkZDRkZWNiMSAxMDA2NDQKLS0tIGEvYXJjaC9hcm02NC9jb25maWdzL2RlZmNvbmZpZworKysg
-Yi9hcmNoL2FybTY0L2NvbmZpZ3MvZGVmY29uZmlnCkBAIC00MjAsNiArNDIwLDcgQEAgQ09ORklH
-X1VOSVBISUVSX1RIRVJNQUw9eQogQ09ORklHX1dBVENIRE9HPXkKIENPTkZJR19BUk1fU1A4MDVf
-V0FUQ0hET0c9eQogQ09ORklHX1MzQzI0MTBfV0FUQ0hET0c9eQorQ09ORklHX1NVTlhJX1dBVENI
-RE9HPW0KIENPTkZJR19JTVgyX1dEVD15CiBDT05GSUdfTUVTT05fR1hCQl9XQVRDSERPRz1tCiBD
-T05GSUdfTUVTT05fV0FUQ0hET0c9bQotLSAKMi4xNy4xCgoKX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QK
-bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi Isaac,
+
+On 17/05/2019 19:47, Isaac J. Manjarres wrote:
+> This series adds initial support for being able to use the ARM
+> SMMU driver as a loadable kernel module. The series also adds
+> to the IOMMU framework, so that it can defer probing for devices
+> that depend on an IOMMU driver that may be a loadable module.
+> 
+> The primary reason behind these changes is that having the ARM
+> SMMU driver as a module allows for the same kernel image to be
+> used across different platforms. For example, if one platform
+> contains an IOMMU that implements one version of the ARM SMMU
+> specification, and another platform simply does not have an
+> IOMMU, the only way that these platforms can share the same
+> kernel image is if the ARM SMMU driver is compiled into the
+> kernel image.
+> 
+> This solution is not scalable, as it will lead to bloating the
+> kernel image with support for several future versions of the
+> SMMU specification to maintain a common kernel image that works
+> across all platforms. Having the ARM SMMU driver as a module allows
+> for a common kernel image to be supported across all platforms,
+> while yielding a smaller kernel image size, since the correct
+> SMMU driver can be loaded at runtime, if necessary.
+
+It can also be useful if IOMMU drivers want to rely on components that
+distros usually build as modules. I have that problem with virtio-iommu,
+where the whole virtio transport is usually modular.
+
+> Patchset Summary:
+> 
+> 1. Since the ARM SMMU driver depends on symbols being exported from
+> several subsystems, the first three patches are dedicated to exporting
+> the necessary symbols.
+> 
+> 2. Similar to how the pinctrl framework handles deferring probes,
+> the subsequent patch makes it so that the IOMMU framework will defer
+> probes indefinitely if there is a chance that the IOMMU driver that a
+> device is waiting for is a module. Otherwise, it upholds the current
+> behavior of stopping probe deferrals once all of the builtin drivers
+> have finished probing.
+> 
+> The ARM SMMU driver currently has support for the deprecated
+> "mmu-masters" binding, which relies on the notion of initcall
+> ordering for setting the bus ops to ensure that all SMMU devices
+> have been bound to the driver. This poses a problem with
+> making the driver a module, as there is no such notion with
+> loadable modules. Will support for this be completely deprecated?
+> If not, might it be useful to leverage the device tree ordering,
+> and assign a property to the last SMMU device, and set the bus ops
+> at that point? Or perhaps have some deferred timer based approach
+> to know when to set the bus ops? 
+
+Another problem is module unloading: if the user calls rmmod on an IOMMU
+module, we have to ensure that endpoints aren't performing DMA anymore.
+It could be solved by declaring consumers of an IOMMU with
+device_link_add(), so that device drivers are unbound before the IOMMU
+module is unloaded.
+
+Thanks,
+Jean
+
+> 
+> Thanks,
+> Isaac
+> 
+> Isaac J. Manjarres (4):
+>   of: Export of_phandle_iterator_args() to modules
+>   PCI: Export PCI ACS and DMA searching functions to modules
+>   iommu: Export core IOMMU functions to kernel modules
+>   iommu: Add probe deferral support for IOMMU kernel modules
+> 
+>  drivers/iommu/iommu-sysfs.c | 3 +++
+>  drivers/iommu/iommu.c       | 6 ++++++
+>  drivers/iommu/of_iommu.c    | 8 ++++++--
+>  drivers/of/base.c           | 1 +
+>  drivers/pci/pci.c           | 1 +
+>  drivers/pci/search.c        | 1 +
+>  6 files changed, 18 insertions(+), 2 deletions(-)
+> 
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
