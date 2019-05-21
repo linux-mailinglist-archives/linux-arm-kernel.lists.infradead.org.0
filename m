@@ -2,71 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD032245BE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 03:47:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D2925245CA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 03:56:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=xF7h3W+h4MrOY4CHvXjobBK3AXgmFwiQt0tBsaaS+/0=; b=HCPKLaLJMYdHmc
-	BYbS28uY+ORRAfcENhxffScnkYDrtSZf9av14VYy5k0Itqu39zaPr4PE9lTD0GIuIXkVV6sA3FBYG
-	VSBt192iRaGjs9IXRz2oSuwML3ZSR+x2uRwH/m/LevNmyIBXJgB3tT3t+rtNLVOGdv9VzF877JpB+
-	LBeoPC3bwrjOj6KhOFabp1/HwYY/5SyqR0PJ6PAmFtjQmxlqIrsecg4OIga6U42OvtGnaw7/d2LVR
-	U58PUhTPCZFSOPbUeL23aTGDzcO+MUj2whS3z+u062Ng1dPfpudwECgG2iq46JUDThndcq8ZkxoHX
-	NC4+Nj96MrMOE0k+yzgw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DPRPNg1b7Z0UJ4WM8kO4UvFSttvIl7iRZJQ091JSAoU=; b=NWFiNQijMg+c0J
+	yY2eS2whxrEUyLMAVWeYbyxMefzwsgaZo1YpaliXVpC5vbWpsUeRjQVtnFWc742d9AWt0CdFydwGs
+	NkGG9cfQp8nUEhlQ43spTNoVYTLmafG/mWSdYPQZ+4uV53lpWXj9iC0A3ATlDX1nyb9QX3snad8lt
+	OVGmeCFzlgAwVU8meXNv2RPSZQXzJAi6sUH71MWcBXe49OBpo3gI8fMhfLXK0TxdsG/24p8aiKpBv
+	In5dahmkn5p2fZJot78eYdkLC7bQUtn7GFvjGcBB/czuKygsCd6A5dcuiCTAUAxKwym+zRWyrF/6W
+	hRdkl02z50NEP9XRryhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hStsh-0003AF-D6; Tue, 21 May 2019 01:47:55 +0000
+	id 1hSu0v-0006Zw-Av; Tue, 21 May 2019 01:56:25 +0000
 Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hStsY-00039j-VS
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 01:47:48 +0000
-Received: by mail-lj1-x244.google.com with SMTP id z1so14295776ljb.3
+ id 1hSu0o-0006ZO-27
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 01:56:19 +0000
+Received: by mail-lj1-x244.google.com with SMTP id 188so106420ljf.9
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 20 May 2019 18:47:46 -0700 (PDT)
+ Mon, 20 May 2019 18:56:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=IIahErT+Xk52W8xom0sRAAntlUCIVUf6X8wGeA51Sfk=;
- b=Lf8oyCWonlw6cjqbrkxZXxOzAoJDjt9ZR1YIRMMK7vzHFz7YIZje9Nn5KpD0FLQRsP
- 0ArI3hLwZus/IqfD/qO8BSqhdeXbcRrh64/CvKtnoQO4Ssqosgs45eLn+7quHlxAA97k
- YEAAP/ExjRgEllJJ5fa/1hUNxqtmv7DTrZlMIdxpbo8Hb8/ouD/UPdvuv5uXmlJ+5GL6
- BKn8HlNp+MZn/Xeq8GigMYfm/9HjVDcjjajpXfX2Rq90fdZLVlWOixLM/3xymIk+Qf56
- vVzZtZ/BGlGcz5T3heYTukJYntkNHoSMIYiW04Qc0WF17pPIv9mJuVNH+kPYbBtMQ2kX
- g0Kw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=RK6ndkRTWz8BRsPXZTsaKWRwNL0f5R2SNYL8g1PubVY=;
+ b=fN++ytDaN2pdbW3qPJHuazRjbjGW93QeXRud1kirzcB24kojHFKuLHo/Q6ofObZfzI
+ drBGDRy8JnFYmbmJKgvlKFB/w/mtfWze/pq+bs33lgu3FB7JH4eLGDwB+/krRHKduFG9
+ 0XsgBbjZv3ZZQydqiITemWrZViesD6cRFBcAgl5orc1tHA6BL756HNMnGvG7venBISRS
+ Am0kBLEvJgdFSPhp4VTs/vXNNFc7Hz/QvHto0XwJmN3FxOpm5QroyhJBqKcbRzTB6jIs
+ 42P1QmteyYr0E6te8YkFl0+npUhQ5awAKmmKtTDPFMgGjaocaCoxD2iAOApdZfKkbIjY
+ ZFDw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=IIahErT+Xk52W8xom0sRAAntlUCIVUf6X8wGeA51Sfk=;
- b=F5aH6mAZNNnqGWA5aVXsAgYItx2H72/lyttN4wtOMg7YYDxJve1Tn6EYrOg17pKMM4
- LTldpcWwFGxiub/dlkm7CzR64AtsgbYSpBIpMTI6kqcteVRe9AhUGvIHu5hVd81cgOBp
- gftFiZWHsq3X0qC4Y/ee6zNbJeOpDATxtSc3ObKeKLN4fHcuFxpij0v0B0532HjzPXAb
- 4W2A+hvMjF/BO19hedpJ7ec7tRMcW7q2Ab+pd94UfGaths3wy6KvT34mnM2bKM4LuUVI
- 5FwgpDFavaz9FKNsPR1byk5I36ffO6CVk4KYIFPZlNIIYYohT+rCumqmoJX//t8A4+jl
- XEVg==
-X-Gm-Message-State: APjAAAU3/M7USpD1hG5BvlEP3bJb7kgSud2Qvi4iRawwbAFzlPV32Uy1
- V0e8IFbS0gFSchK+usOS/i+YpMidaUU=
-X-Google-Smtp-Source: APXvYqyJCNe4oCxFM+jrKqSRPAXMZokuRm+DYI5CgZ+BBqxNBuW1wo3JcxZy+uZpJO7oCqV4WDH3RA==
-X-Received: by 2002:a2e:a0d1:: with SMTP id f17mr2074482ljm.117.1558403264750; 
- Mon, 20 May 2019 18:47:44 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=RK6ndkRTWz8BRsPXZTsaKWRwNL0f5R2SNYL8g1PubVY=;
+ b=STVdhjairBw2g9708ILQpeVLKPCTQ6xOM3Os8FtkgCqFmptNinXHIjjwUiKFDD2epa
+ 2kNq6hNzZINywXQwoGPN7nIRFlrBNn+wLl2UEyi8e/OoKwFT6c2Cdy5M/Vf8oTLl2Hsa
+ 1wATmsX60YjL7Py8Y3VLTNDssLsulS/fhQ+SZqu7eud+30JJah5RUgA70Y5abloGqie8
+ TzhaihISVcsO8nvtP6JbjJuyNO7j474c76dAmum+cLBp5b9dBJWyTCY0jKGNxbZP4VWs
+ 9IXf/NNEF3kKrbgdr8xV20WURc5ioTB4wM00vR82ML7AUZRdc8HJYMkZ5s7UdBVtTRLB
+ 2KDw==
+X-Gm-Message-State: APjAAAXMHScEmbYV/XFbgk7r5BYkUdkGAVdcgGCDyUP7rG40WyFelizL
+ Gg09lXff9rydeKx5BR5xa2IBfH3xkC4=
+X-Google-Smtp-Source: APXvYqwC10WQL33ClqRv6GNVZB+zkXfD+IFesVBpoPQQoPTzcfDSttTeUBrfgOnpV2vNdnVSYXpPyA==
+X-Received: by 2002:a2e:81d0:: with SMTP id s16mr17362430ljg.42.1558403776060; 
+ Mon, 20 May 2019 18:56:16 -0700 (PDT)
 Received: from localhost.localdomain
  (c-d2cd225c.014-348-6c756e10.bbcust.telenor.se. [92.34.205.210])
- by smtp.gmail.com with ESMTPSA id i74sm4415508lfg.78.2019.05.20.18.47.43
+ by smtp.gmail.com with ESMTPSA id i74sm4415508lfg.78.2019.05.20.18.56.14
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 20 May 2019 18:47:43 -0700 (PDT)
+ Mon, 20 May 2019 18:56:15 -0700 (PDT)
 From: Linus Walleij <linus.walleij@linaro.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/4] ARM: dts: integrator: specify AFS partition
-Date: Tue, 21 May 2019 03:45:34 +0200
-Message-Id: <20190521014537.19238-1-linus.walleij@linaro.org>
+Subject: [PATCH 2/4] ARM: dts: versatile: specify AFS partition
+Date: Tue, 21 May 2019 03:45:35 +0200
+Message-Id: <20190521014537.19238-2-linus.walleij@linaro.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190521014537.19238-1-linus.walleij@linaro.org>
+References: <20190521014537.19238-1-linus.walleij@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_184747_030293_6005AC35 
-X-CRM114-Status: GOOD (  10.76  )
+X-CRM114-CacheID: sfid-20190520_185618_108170_C27A5A2D 
+X-CRM114-Status: GOOD (  11.18  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -101,28 +103,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This activates the code for AFS partition parsing on
-the Integrator.
+This activates the AFS partition parsing on the Versatile.
 
 Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 ---
- arch/arm/boot/dts/integrator.dtsi | 3 +++
+ arch/arm/boot/dts/versatile-ab.dts | 3 +++
  1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm/boot/dts/integrator.dtsi b/arch/arm/boot/dts/integrator.dtsi
-index 1612a869a4f7..602f74d2c758 100644
---- a/arch/arm/boot/dts/integrator.dtsi
-+++ b/arch/arm/boot/dts/integrator.dtsi
-@@ -62,6 +62,9 @@
+diff --git a/arch/arm/boot/dts/versatile-ab.dts b/arch/arm/boot/dts/versatile-ab.dts
+index 269e6bf99ccb..37bd41ff8dff 100644
+--- a/arch/arm/boot/dts/versatile-ab.dts
++++ b/arch/arm/boot/dts/versatile-ab.dts
+@@ -161,6 +161,9 @@
  		compatible = "arm,versatile-flash", "cfi-flash";
- 		reg = <0x24000000 0x02000000>;
+ 		reg = <0x34000000 0x04000000>;
  		bank-width = <4>;
 +		partitions {
 +			compatible = "arm,arm-firmware-suite";
 +		};
  	};
  
- 	fpga {
+ 	i2c0: i2c@10002000 {
 -- 
 2.20.1
 
