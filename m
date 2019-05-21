@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9892124D42
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 12:52:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E24E24D53
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 12:55:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1c4+O3PSQXDwvIEcfVdbH/ly6jc9t9KsjjdDhrjfN+k=; b=gIe1ElErfSuLi9nP6DV/I9Ncg
-	nQEAsJjFOhjml6JYFsWxTIO/MgwkHUb+rfmh7qL7fvvGmkZslTAx2ofchV0oCrFl2YM163lRmKg8U
-	Y9T5NaP7oi1+DgGEBxo5lCABpc/hJHUMf/5+CpOLrPatX8MHJ3+Wn5ud+BntQkjw91O82NloScrvi
-	5e2ucSPpf327n3tmGU63wXrOcaeiLI0dt+BsfHysigxYW6i42CkpsWo+6NTMFBFkpXbZynoNL2p6s
-	D1adO5qPZLHXy7XT98ll3bSTdvRf79aXtIeuULDOh8eiR9auMV43KrcjOstOQGB5TaPzA2dE69T/l
-	UyL2pS1rA==;
+	 bh=s7Hw7cNxh5UVqKU+0bWLCC7ZAgFpkOieJWPgf0sIeWw=; b=tf28xWgL01SG9J0f+3BzjQIhJ
+	PW/uY6SQlysXpzoVexoY7sEvixOefApw/Fsjavwf28PHLJF0XY65aTpRbg4Lj51HY6yaGMq5De8O6
+	xhkdqeajqCtwUhwW4PQeypwVwBWz6ZRKaMiEdcDrC8jstysjSoL44URE+waPpkn2f00P6e+WT5qQQ
+	qUkHXn10hUSXfo6pgLmsvg9S4cUxu3EJnl9aj/PD+9aLqWPQXJ0MdaJi1zl5XzOFZgw4g6Ejzllff
+	EqtyYBFCNHp7j/uczXlINTOxw1QUb0Cx+cCP16qOq3yAr3+PirGmQqF7Ah+bueeYrOcURS4wwUwWT
+	D8x5UAsgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT2Nu-0000lP-1x; Tue, 21 May 2019 10:52:42 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1hT2QJ-0001Xe-7M; Tue, 21 May 2019 10:55:11 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT2Ne-0000a8-2J
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 10:52:28 +0000
-Received: by mail-wr1-x443.google.com with SMTP id b18so17991491wrq.12
+ id 1hT2Q6-0001Um-EB
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 10:55:00 +0000
+Received: by mail-wm1-x342.google.com with SMTP id x64so2479307wmb.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 May 2019 03:52:25 -0700 (PDT)
+ Tue, 21 May 2019 03:54:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=HRbTjVTN8OoB545citX2qhVa2c0AvJYcHqIgYxkmq9A=;
- b=gkkqBAtxeAPYYG/Bk54hkH9W9k40R8uawvVI3nn1dXeSJIdx/0BCghDn7ppDeHy6kc
- 1x4Kj9pDY90TqhbyxR++oZHu8pwSewYJrFIxFsz9FdXkXh+jIniud+n3yXsT6VL3l5Eo
- UGQ/KSJ4OvIGeCP/jH/8MXWbg/0mnp9LSdquQwLKvvosZZn4c2re21swy87R4nDoA1H6
- dMD9CsR71iXzoaUsfgtnS2dh+3mcASZHM/OsAZC8tqFPbzhwB8TzayFS8SnvKWoeoytB
- U6klf3SUPvPyHoT8EABXmdCYtoaLA0kiRvJw8nmMR0O+ZD3ty8UJL6sUYET3+6ATBAPL
- lnyQ==
+ bh=17nYfbdzzIwCOeEA+32Sv30sZvfqih6k6/KJfQXHU0U=;
+ b=ZeCYc5/F8knOo4+9a9x6Xq+QFpVOaFI3oIhMnprKcgXcpS0kD1HJciICKcvMlghVW0
+ XfCl+74pJ6lL6G113gPktUgcftO4/FlnnjbiPOLrTZDSKGg5HHEUWd+4Cb+9Cd+ADIt/
+ xpvfN1/LZjXz5OwL5kj7NUy58RxlnTo7kTgJPRKNy0E2Ue4hxsX9YDXcxe1kYVglKBEo
+ dmUC+Oeiw5Img+KeBRlGuX8erP29OpjFE7kWGMG89WJR2wRKoLjIbWEkNXiEY2sp8Pbh
+ CvguTnOhYmiwt65ikaarYkabr/g4bzFtFYHlcbCRamQ1gHzQv4pp3EEo4bznfCNvDJT0
+ kVrw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=HRbTjVTN8OoB545citX2qhVa2c0AvJYcHqIgYxkmq9A=;
- b=GIdEVxXhs9qAbOCh116PzlHOeVaAiyI1RDa4K4X7PaKfrQPdv6zHha3ryjxl/6OUPk
- nCjtX0e/oqu3hJkk1tHNWIExLVOEJWLH7SOPKjTqgUeagxrI+9h1CvWO5ICQhciL55og
- U4lRxdc8n94M2Mcr9QMHgZlwKBG5jfiE0CNySJnB74FpjXxiLNXE8MuSiP86UI0iyGUc
- +mf3+tNtK4iCt4gcDclQ4Z/WdUgxMymnBwatTITp0Dbvusjyqy1Wsu2av/ndqW29IrUk
- tjZdxqf2KtVe84FuCsrkBX1+Ay4rf6BuDl9R5dqN8jyO+UzsX2gptJIs8bm+HiJ9cYi9
- APTA==
-X-Gm-Message-State: APjAAAVhOUT8AwuuYEwv/UFsSVvxfTetshqKEs1zRpzmvPMjJhyqWh0w
- HS+EQw9rEWVw/J2lAuyC/9Y=
-X-Google-Smtp-Source: APXvYqxpXXLjrUYm+9Ks93ImeKkcYxcdmkZsVwnotPqTe6hEInxRQZ9jQBFI3jur5GF4T/OAdMh/zg==
-X-Received: by 2002:adf:cc8e:: with SMTP id p14mr34392325wrj.82.1558435944596; 
- Tue, 21 May 2019 03:52:24 -0700 (PDT)
+ bh=17nYfbdzzIwCOeEA+32Sv30sZvfqih6k6/KJfQXHU0U=;
+ b=X4gWDH6VkjN2zdQ0rf8WCFZepCgFleX2mLN25SeA0kuYz3pscjTHyIdz53rTb9EwdS
+ +WZJiDGzH4P2Cg5IF46JhkylrooT1QU4xjY0DmwkgVWcDEEOZgsdriBMRm9XshDvjz+a
+ 9gH4gf2XJzQW0fCjwk5jDfJqEKmqpAGkPj0YfBz3oaRTCzWmdROjkgzrHQvw6Kf/68JA
+ /0RO119D6Pl2uqyiBDZfp1+Xl7cWuzD7OxuIkmBhKPPOYhUfyG0RkVGfucr0xqUEX2zH
+ DJyiWWDw0ed/BPwoW2MfTUyRpfVt2ehdk+AyIFSu5JeSzxkKVdIgm8QL/f8txYVcALHF
+ OSLw==
+X-Gm-Message-State: APjAAAWfZXRVvdjlGdiyVFdcu/7vKTtq/UKViUBlN75ObHgris+nnmFR
+ rR1cQKoHNtldBuPVHAVQwto=
+X-Google-Smtp-Source: APXvYqz60C1gN4ScjH6m6U5kFd88ETnN9gWQBtpWy+PHfqfM7Bq7SOcnQmw1+nRlZkREwZl5nQ9N7w==
+X-Received: by 2002:a1c:65c3:: with SMTP id z186mr2831904wmb.93.1558436096773; 
+ Tue, 21 May 2019 03:54:56 -0700 (PDT)
 Received: from localhost (p2E5BEF36.dip0.t-ipconnect.de. [46.91.239.54])
- by smtp.gmail.com with ESMTPSA id a22sm2545601wma.41.2019.05.21.03.52.23
+ by smtp.gmail.com with ESMTPSA id k8sm7245236wrp.74.2019.05.21.03.54.55
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 21 May 2019 03:52:23 -0700 (PDT)
-Date: Tue, 21 May 2019 12:52:22 +0200
+ Tue, 21 May 2019 03:54:56 -0700 (PDT)
+Date: Tue, 21 May 2019 12:54:55 +0200
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Vidya Sagar <vidyas@nvidia.com>
-Subject: Re: [PATCH V7 10/15] dt-bindings: PHY: P2U: Add Tegra194 P2U block
-Message-ID: <20190521105222.GJ29166@ulmo>
+Subject: Re: [PATCH V7 12/15] arm64: tegra: Enable PCIe slots in P2972-0000
+ board
+Message-ID: <20190521105455.GK29166@ulmo>
 References: <20190517123846.3708-1-vidyas@nvidia.com>
- <20190517123846.3708-11-vidyas@nvidia.com>
+ <20190517123846.3708-13-vidyas@nvidia.com>
 MIME-Version: 1.0
-In-Reply-To: <20190517123846.3708-11-vidyas@nvidia.com>
+In-Reply-To: <20190517123846.3708-13-vidyas@nvidia.com>
 User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_035226_320892_D4FFF8D6 
-X-CRM114-Status: GOOD (  13.45  )
+X-CRM114-CacheID: sfid-20190521_035458_481837_40BCAAC3 
+X-CRM114-Status: GOOD (  16.64  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -106,37 +107,37 @@ Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
  robh+dt@kernel.org, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
  bhelgaas@google.com, jonathanh@nvidia.com,
  linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
-Content-Type: multipart/mixed; boundary="===============7428080775134706040=="
+Content-Type: multipart/mixed; boundary="===============5723479081408525477=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============7428080775134706040==
+--===============5723479081408525477==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="yhze8HlyfmXt1APY"
+	protocol="application/pgp-signature"; boundary="ibq+fG+Ci5ONsaof"
 Content-Disposition: inline
 
 
---yhze8HlyfmXt1APY
+--ibq+fG+Ci5ONsaof
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Fri, May 17, 2019 at 06:08:41PM +0530, Vidya Sagar wrote:
-> Add support for Tegra194 P2U (PIPE to UPHY) module block which is a glue
-> module instantiated one for each PCIe lane between Synopsys DesignWare co=
-re
-> based PCIe IP and Universal PHY block.
+On Fri, May 17, 2019 at 06:08:43PM +0530, Vidya Sagar wrote:
+> Enable PCIe controller nodes to enable respective PCIe slots on
+> P2972-0000 board. Following is the ownership of slots by different
+> PCIe controllers.
+> Controller-0 : M.2 Key-M slot
+> Controller-1 : On-board Marvell eSATA controller
+> Controller-3 : M.2 Key-E slot
 >=20
 > Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
 > ---
 > Changes since [v6]:
 > * None
 >=20
 > Changes since [v5]:
-> * Added Sob
-> * Changed node name from "p2u@xxxxxxxx" to "phy@xxxxxxxx"
+> * Arranged PCIe nodes in the order of their addresses
 >=20
 > Changes since [v4]:
 > * None
@@ -145,43 +146,111 @@ re
 > * None
 >=20
 > Changes since [v2]:
-> * Changed node label to reflect new format that includes either 'hsio' or
->   'nvhs' in its name to reflect which UPHY brick they belong to
+> * Changed P2U label names to reflect new format that includes 'hsio'/'nvh=
+s'
+>   strings to reflect UPHY brick they belong to
 >=20
 > Changes since [v1]:
-> * This is a new patch in v2 series
+> * Dropped 'pcie-' from phy-names property strings
 >=20
->  .../bindings/phy/phy-tegra194-p2u.txt         | 28 +++++++++++++++++++
->  1 file changed, 28 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/phy-tegra194-p2=
-u.txt
+>  .../arm64/boot/dts/nvidia/tegra194-p2888.dtsi |  2 +-
+>  .../boot/dts/nvidia/tegra194-p2972-0000.dts   | 41 +++++++++++++++++++
+>  2 files changed, 42 insertions(+), 1 deletion(-)
+>=20
+> diff --git a/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi b/arch/arm64/=
+boot/dts/nvidia/tegra194-p2888.dtsi
+> index 0fd5bd29fbf9..30a83d4c5b69 100644
+> --- a/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi
+> +++ b/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi
+> @@ -191,7 +191,7 @@
+>  						regulator-boot-on;
+>  					};
+> =20
+> -					sd3 {
+> +					vdd_1v8ao: sd3 {
+>  						regulator-name =3D "VDD_1V8AO";
+>  						regulator-min-microvolt =3D <1800000>;
+>  						regulator-max-microvolt =3D <1800000>;
+> diff --git a/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts b/arch/ar=
+m64/boot/dts/nvidia/tegra194-p2972-0000.dts
+> index 73801b48d1d8..a22704e76a84 100644
+> --- a/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
+> +++ b/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
+> @@ -167,4 +167,45 @@
+>  			};
+>  		};
+>  	};
+> +
+> +	pcie@14100000 {
+> +		status =3D "okay";
+> +
+> +		vddio-pex-ctl-supply =3D <&vdd_1v8ao>;
+> +
+> +		phys =3D <&p2u_hsio_0>;
+> +		phy-names =3D "p2u-0";
+> +	};
+> +
+> +	pcie@14140000 {
+> +		status =3D "okay";
+> +
+> +		vddio-pex-ctl-supply =3D <&vdd_1v8ao>;
+> +
+> +		phys =3D <&p2u_hsio_7>;
+> +		phy-names =3D "p2u-0";
+> +	};
+> +
+> +	pcie@14180000 {
+> +		status =3D "okay";
+> +
+> +		vddio-pex-ctl-supply =3D <&vdd_1v8ao>;
+> +
+> +		phys =3D <&p2u_hsio_2>, <&p2u_hsio_3>, <&p2u_hsio_4>,
+> +		       <&p2u_hsio_5>;
+> +		phy-names =3D "p2u-0", "p2u-1", "p2u-2", "p2u-3";
+> +	};
+> +
+> +	pcie@141a0000 {
+> +		status =3D "disabled";
+> +
+> +		vddio-pex-ctl-supply =3D <&vdd_1v8ao>;
+> +
+> +		phys =3D <&p2u_nvhs_0>, <&p2u_nvhs_1>, <&p2u_nvhs_2>,
+> +		       <&p2u_nvhs_3>, <&p2u_nvhs_4>, <&p2u_nvhs_5>,
+> +		       <&p2u_nvhs_6>, <&p2u_nvhs_7>;
+> +
+> +		phy-names =3D "p2u-0", "p2u-1", "p2u-2", "p2u-3", "p2u-4",
+> +			    "p2u-5", "p2u-6", "p2u-7";
+> +	};
 
-Acked-by: Thierry Reding <treding@nvidia.com>
+This last controller is disabled by default. Why do we need to include
+all of this if it's not going to be used anyway?
 
---yhze8HlyfmXt1APY
+Thierry
+
+--ibq+fG+Ci5ONsaof
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAlzj2GYACgkQ3SOs138+
-s6GkRBAAsTNXxZRflg9TNJMUocJhYJyNf2p2I3MYeL/Es4lheCSur4dpFNxLS4d4
-8ovi/gHEn583zazth7fZmKLKRA1uowxBAY3GIeOwHDUjUPUM4EoskrdGiIHqyb1Q
-RwheHqBMllkYHAUoqNYKAMqW6HScTa2rp6cRs/MoK2KEGK1lK2gutkLSx81RwVcN
-A4hDk+lJBT7cBgAiF+qbl/S/5K6JA/4ZAJWFIj5reM13zItYRg2X8ybijky1enbX
-kGhxxq5IphzpFPEOQxEDjKu+0XtnKZkh9Uc9zgWZeniV+GNQWNu/KdznSrh88hgU
-qiCF1Oneyu638SdA6sBGLqD4MC/Lkz80oJmtYlCAwdkHuUM4NmpLMn7MbXt1ztdG
-v8FvlB9j98nL4fRSB5cUhryuFACwCRmO/oZ873PfHSmcaku6OHjTrYEGqO+wM3UK
-ejpHA4w5kWmE9PSNvuBee3InEwvIRiBGCio5es1G0OH1NDUmoxCdv4uif+cHm+DB
-sQdkoV/9/XKEk2qU9uYr7gPcO9pm0X/aqa5nRV5Nj8QO9yUMqI8AyWGgqUP922gm
-CC7w7PYMch9sjOvNKdZZ5GjdRrUrTh6D7qpr8IfZ3ryxmzBE0o2Kqi1Rx6C5OBOr
-5f1joAV9ke0zZ8c0923NrFnKAdo6FeB2epvM1qyTQUBM7V0QyNA=
-=n2S2
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAlzj2P8ACgkQ3SOs138+
+s6EDeA/9EVyT1aT46kUCfatlTu/Dz99vr8HzGHDju/DqmmIWFuXT6U/7e/iziS8m
+LcoCBu23buFnDYZe9UBTKkKtTUSOipOpE+TW0MR/h3Rk0E7sB29RljYCoooRJbrZ
+cRBl1HbLt4NueaYck621spKCghRw84gPRDOtCEIP1ET/kpkDCRYBtuoMhOufrqgQ
+8Zddc+5YzhNC7dYdV+DLi6WvKjmi12Tz3HNFgwxIXSgfEieCnzwms63qZLULA2tf
+dvwCNKS9w8x6EsOmu8iXxfYv9gr823Yge1pCJTKW+LxTaACRSzKMiGAotDMqCxWG
+VIb39bG+wsiSLb8PjKT3X34wW6VPtsAWCCxeXJ8EsZuT3YGVskswBQ/tLyDvpooJ
+ni/zobjMTFqJl9ePCgEauo+Zhdf665JwZO6vkRql7+ZFquFBHVwY8IOag0qM/kx5
+pv4Q8Ov3GQr/QYPfn+CtvYJ1Iq61NJBhNC6zQwxw8DonLLt1OL64gGpF32x2155I
+Toi6a3SAnJVYe1rJirldNME8Xb3HbyBhItj5GVMkf+jMxrsxs3GL9nzNfLi4gmDT
+EXleRiiWixks2F/DATusE28tPhE9j+Fo9ZUXyLZ9rJiCuvqcZKGgtnboipXrn0+o
+bRdy6xLv9PhLEkwYzxqnn9odSa3LHH40b39t+xOgdr9Yw8QZ0ZM=
+=xv9D
 -----END PGP SIGNATURE-----
 
---yhze8HlyfmXt1APY--
+--ibq+fG+Ci5ONsaof--
 
 
---===============7428080775134706040==
+--===============5723479081408525477==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -192,5 +261,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============7428080775134706040==--
+--===============5723479081408525477==--
 
