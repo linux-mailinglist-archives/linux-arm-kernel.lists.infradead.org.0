@@ -2,62 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8123824EB5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 14:10:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BB3B24EBD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 14:15:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X032sUyl/QbBzE521kyjgNj876013ESbPaWEKhewLQw=; b=pe5S9WrGN0qR3q
-	+OxLygon9emYj0W//gwL+g7ce1QYtCLgeKconpVFpm44etUTOxPWD7NTrPQ4pgIa59loiNu+1ie6C
-	OpdMzRyqtb7Ctq+Sk55pBk1YUA3JN16k9FGDnE9BvqeknYL5ANouodurVnIqoKD6r4kBJfDIlNbO4
-	KTi6O0NDeodRszqhwNTWJJVFs188i83vl9hEBmHFcZW+qaZkV+t2Rp7AnuH+6+8YWU6OWovklniJQ
-	c67CP+rl58Fo3edAS8EoGt6FHfjoxsXeTt7j12naAbHSNAbwtoxoOB8hK3nKyqjVrCi+31JpvJ3p0
-	y8zvzk+lLI5CWzbpxF/w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=gee79I8ZuEJaP8sq6dpT8VD6rlJoSAI1IBA2itw9zO8=; b=N9Ny6bHB7IBy9BMseOmLKuXvF
+	Vzqrn65dVxn2Ts5h9AUYEeo0zPSVrbKZl5FOLMrjtFK58Y2BZuYhvXM6N5KwhrChj64i7/9KUFMpq
+	JsIUwgbYZGvUzCAjMdDe78JLX7K4m8v8x5L8MYRgvKViSL8EWHhlaVs332bQ79jJiIwEg5ngMztRt
+	dRqfya3YH6pCjoXOTbaQVt2CThftn5X2vvD+MiOMHdyT0xLahMp2V3JMiGGCOM00dc8CZPMj2s3bb
+	jXwHSBZK3/nqgzw0hwTqFGHiYIFKgqggORx9rwK3aYKFTzZWWzIHD1QSnVtIeavh2FHaDtWW3cJIN
+	PEHaN/7ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT3as-00073Z-1Y; Tue, 21 May 2019 12:10:10 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hT3fu-0001WB-4A; Tue, 21 May 2019 12:15:22 +0000
+Received: from smtp2.provo.novell.com ([137.65.250.81])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT3ag-00072S-Tx
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 12:10:00 +0000
-Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
- [10.5.11.13])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id CAE443179162;
- Tue, 21 May 2019 12:09:38 +0000 (UTC)
-Received: from oldenburg2.str.redhat.com (dhcp-192-219.str.redhat.com
- [10.33.192.219])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 8854750A63;
- Tue, 21 May 2019 12:09:30 +0000 (UTC)
-From: Florian Weimer <fweimer@redhat.com>
-To: Christian Brauner <christian@brauner.io>
-Subject: Re: [PATCH 1/2] open: add close_range()
-References: <20190521113448.20654-1-christian@brauner.io>
-Date: Tue, 21 May 2019 14:09:29 +0200
-In-Reply-To: <20190521113448.20654-1-christian@brauner.io> (Christian
- Brauner's message of "Tue, 21 May 2019 13:34:47 +0200")
-Message-ID: <87tvdoau12.fsf@oldenburg2.str.redhat.com>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+ id 1hT3fn-0001V9-H4; Tue, 21 May 2019 12:15:17 +0000
+Received: from ezekiel.suse.cz (prva10-snat226-2.provo.novell.com
+ [137.65.226.36])
+ by smtp2.provo.novell.com with ESMTP (TLS encrypted);
+ Tue, 21 May 2019 06:15:04 -0600
+Date: Tue, 21 May 2019 14:14:56 +0200
+From: Petr Tesarik <ptesarik@suse.com>
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Subject: Re: [RFC v2 3/5] clk: bcm2835: use firmware interface to update pllb
+Message-ID: <20190521141456.46f6d4a7@ezekiel.suse.cz>
+In-Reply-To: <46004f242c2618a185445630580116c772455613.camel@suse.de>
+References: <20190520104708.11980-1-nsaenzjulienne@suse.de>
+ <20190520104708.11980-4-nsaenzjulienne@suse.de>
+ <1558356237.12672.3.camel@suse.com>
+ <46004f242c2618a185445630580116c772455613.camel@suse.de>
+Organization: SUSE Linux
+X-Mailer: Claws Mail 3.16.0 (GTK+ 2.24.32; x86_64-suse-linux-gnu)
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.41]); Tue, 21 May 2019 12:09:49 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_050958_985678_FD195D19 
-X-CRM114-Status: GOOD (  15.74  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190521_051515_619275_47C4E10B 
+X-CRM114-Status: GOOD (  15.16  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [137.65.250.81 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -69,49 +62,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- linux-kernel@vger.kernel.org, dhowells@redhat.com,
- linux-kselftest@vger.kernel.org, sparclinux@vger.kernel.org, shuah@kernel.org,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org, miklos@szeredi.hu,
- x86@kernel.org, torvalds@linux-foundation.org, linux-mips@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, tkjos@android.com, arnd@arndb.de,
- jannh@google.com, linux-m68k@lists.linux-m68k.org, viro@zeniv.linux.org.uk,
- tglx@linutronix.de, ldv@altlinux.org, linux-arm-kernel@lists.infradead.org,
- linux-parisc@vger.kernel.org, linux-api@vger.kernel.org, oleg@redhat.com,
- linux-alpha@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- linuxppc-dev@lists.ozlabs.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: stefan.wahren@i2se.com, Florian Fainelli <f.fainelli@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Scott Branden <sbranden@broadcom.com>,
+ linux-pm@vger.kernel.org, sboyd@kernel.org, Ray Jui <rjui@broadcom.com>,
+ mturquette@baylibre.com, Oliver Neukum <oneukum@suse.com>, rjw@rjwysocki.net,
+ linux-kernel@vger.kernel.org, Eric Anholt <eric@anholt.net>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ viresh.kumar@linaro.org, linux-clk@vger.kernel.org, mbrugger@suse.de,
+ ssuloev@orpaltech.com
+Content-Type: multipart/mixed; boundary="===============0930731777838980654=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-KiBDaHJpc3RpYW4gQnJhdW5lcjoKCj4gKy8qKgo+ICsgKiBfX2Nsb3NlX3JhbmdlKCkgLSBDbG9z
-ZSBhbGwgZmlsZSBkZXNjcmlwdG9ycyBpbiBhIGdpdmVuIHJhbmdlLgo+ICsgKgo+ICsgKiBAZmQ6
-ICAgICBzdGFydGluZyBmaWxlIGRlc2NyaXB0b3IgdG8gY2xvc2UKPiArICogQG1heF9mZDogbGFz
-dCBmaWxlIGRlc2NyaXB0b3IgdG8gY2xvc2UKPiArICoKPiArICogVGhpcyBjbG9zZXMgYSByYW5n
-ZSBvZiBmaWxlIGRlc2NyaXB0b3JzLiBBbGwgZmlsZSBkZXNjcmlwdG9ycwo+ICsgKiBmcm9tIEBm
-ZCB1cCB0byBhbmQgaW5jbHVkaW5nIEBtYXhfZmQgYXJlIGNsb3NlZC4KPiArICovCj4gK2ludCBf
-X2Nsb3NlX3JhbmdlKHN0cnVjdCBmaWxlc19zdHJ1Y3QgKmZpbGVzLCB1bnNpZ25lZCBmZCwgdW5z
-aWduZWQgbWF4X2ZkKQo+ICt7Cj4gKwl1bnNpZ25lZCBpbnQgY3VyX21heDsKPiArCj4gKwlpZiAo
-ZmQgPiBtYXhfZmQpCj4gKwkJcmV0dXJuIC1FSU5WQUw7Cj4gKwo+ICsJcmN1X3JlYWRfbG9jaygp
-Owo+ICsJY3VyX21heCA9IGZpbGVzX2ZkdGFibGUoZmlsZXMpLT5tYXhfZmRzOwo+ICsJcmN1X3Jl
-YWRfdW5sb2NrKCk7Cj4gKwo+ICsJLyogY2FwIHRvIGxhc3QgdmFsaWQgaW5kZXggaW50byBmZHRh
-YmxlICovCj4gKwlpZiAobWF4X2ZkID49IGN1cl9tYXgpCj4gKwkJbWF4X2ZkID0gY3VyX21heCAt
-IDE7Cj4gKwo+ICsJd2hpbGUgKGZkIDw9IG1heF9mZCkKPiArCQlfX2Nsb3NlX2ZkKGZpbGVzLCBm
-ZCsrKTsKPiArCj4gKwlyZXR1cm4gMDsKPiArfQoKVGhpcyBzZWVtcyByYXRoZXIgZHJhc3RpYy4g
-IEhvdyBsb25nIGRvZXMgdGhpcyBibG9jayBpbiBrZXJuZWwgbW9kZT8KTWF5YmUgaXQncyBva2F5
-IGFzIGxvbmcgYXMgdGhlIG1heGltdW0gcG9zc2libGUgdmFsdWUgZm9yIGN1cl9tYXggc3RheXMK
-YXJvdW5kIDQgbWlsbGlvbiBvciBzby4KClNvbGFyaXMgaGFzIGFuIGZkd2FsayBmdW5jdGlvbjoK
-CiAgPGh0dHBzOi8vZG9jcy5vcmFjbGUuY29tL2NkL0U4ODM1M18wMS9odG1sL0UzNzg0My9jbG9z
-ZWZyb20tM2MuaHRtbD4KClNvIGEgZGlmZmVyZW50IHdheSB0byBpbXBsZW1lbnQgdGhpcyB3b3Vs
-ZCBleHBvc2UgYSBuZXh0ZmQgc3lzdGVtIGNhbGwKdG8gdXNlcnNwYWNlLCBzbyB0aGF0IHdlIGNh
-biB1c2UgdGhhdCB0byBpbXBsZW1lbnQgYm90aCBmZHdhbGsgYW5kCmNsb3NlZnJvbS4gIEJ1dCBt
-YXliZSBmZHdhbGsgaXMganVzdCB0b28gb2JzY3VyZSwgZ2l2ZW4gdGhlIGV4aXN0ZW5jZSBvZgov
-cHJvYy4KCkknbGwgaGFwcGlseSBpbXBsZW1lbnQgY2xvc2Vmcm9tIG9uIHRvcCBvZiBjbG9zZV9y
-YW5nZSBpbiBnbGliYyAocGx1cwpmYWxsYmFjayBmb3Igb2xkZXIga2VybmVscyBiYXNlZCBvbiAv
-cHJvY+KAlHdpdGggYW4gYWJvcnQgaW4gY2FzZSB0aGF0CmRvZXNuJ3Qgd29yayBiZWNhdXNlIHRo
-ZSBSTElNSVRfTk9GSUxFIGhhY2sgaXMgdW5yZWxpYWJsZQp1bmZvcnR1bmF0ZWx5KS4KClRoYW5r
-cywKRmxvcmlhbgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtYXJtLWtlcm5lbAo=
+--===============0930731777838980654==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+ boundary="Sig_/v4zFxgx_udbNpFsK480f9ms"; protocol="application/pgp-signature"
+
+--Sig_/v4zFxgx_udbNpFsK480f9ms
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, 21 May 2019 13:39:31 +0200
+Nicolas Saenz Julienne <nsaenzjulienne@suse.de> wrote:
+
+> Hi Oliver, thanks for the review.
+>=20
+> On Mon, 2019-05-20 at 14:43 +0200, Oliver Neukum wrote:
+> > On Mo, 2019-05-20 at 12:47 +0200, Nicolas Saenz Julienne wrote: =20
+> > > + * For more information on the firmware interface check:
+> > > + * https://github.com/raspberrypi/firmware/wiki/Mailbox-property-int=
+erface
+> > > + */
+> > > +struct bcm2835_firmware_prop {
+> > > +       u32 id;
+> > > +       u32 val;
+> > > +       u32 disable_turbo;
+> > > +} __packed; =20
+> >=20
+> > Hi,
+> >=20
+> > technically we are not in arch and those fields have a defined
+> > endianness.
+> >  =20
+>=20
+> Well I set it as packed since it's 'sent' through a memory mapped firmware
+> interface. Hence the need for the structure format to be fixed. So I gues=
+sed
+> we're safer with it, as I'm not 100% sure what the different compilers are
+> going to do with it (although it's very likely it'll stay the same). BTW =
+this
+> will be built both for arm & arm64.
+
+I believe that's not the point Oliver was trying to make. You should
+use __le32 instead of u32.
+
+That's because u32 means "host byte order" and this code is not located
+under arch/, so host endianness is unknown, but the mailbox interface
+requires little-endian.
+
+It's nit-picking, and that's why Oliver writes 'technically'; there is
+probably no way this firmware interface could be used on a big-endian
+CPU...
+
+Petr T
+
+--Sig_/v4zFxgx_udbNpFsK480f9ms
+Content-Type: application/pgp-signature
+Content-Description: Digitální podpis OpenPGP
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEHl2YIZkIo5VO2MxYqlA7ya4PR6cFAlzj68AACgkQqlA7ya4P
+R6f62AgAz0n5U8DxFLjG8+/3CYeQR5ZyeBY4k4i59x0CtEHzdc/KpzHUMeMk4UY4
+CX0BTMxH8rszNyr01dpGqYDlRUJTZg+WCs+V9N8ZWDafcI9+ZFoZPTOAZumw4o5g
+q7Y4Gpip+ygMHVSrds+uFQkJtinN7eiyr16GR8TLsb55TjYwiaodn4iNRiR3o+Od
+qhUwScebGj4vjjru+U0XyYUGUaL22vuKXx8j15aSEO+FB7qYCxs6QbhF33wLvP9T
+V7BUmamRLwoNqL1YPgj9RSC73PHPQpWKSCvwi2HcK4eUdwC3GNtfLwId+0ocxqwg
+pFEsVHZTqhV18UWpMD/Pnb5Z39zFRQ==
+=z3QT
+-----END PGP SIGNATURE-----
+
+--Sig_/v4zFxgx_udbNpFsK480f9ms--
+
+
+--===============0930731777838980654==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0930731777838980654==--
+
