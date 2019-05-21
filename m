@@ -2,96 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DBC2251F1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 16:27:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7B3A251F5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 16:28:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
-	:Subject:From:Reply-To:To:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hOJYGpOiR5uey7aUklJm44yjEiqWp+vfIQgG8LsHi04=; b=thWzMsEoYJhTRH
-	tokz7KEuUpOb3Y2KfSlsCe4OwpU6gQdXuhVwdtp/3+1ODSgGZLd73WsSPqBUIlYtJKoHZUkzmXR84
-	0BMCSuos+5wiRg7wSSnndn6v/rgSlUEr1C77yYIJFVuJLuDTR3Cn0e9NNWcmuw9rPiI61Vpq260rI
-	g4lbPt34OhheKjPLhAY52OxGVhWZy+40I8jY2R3IWCH9vOp4Og4Qi4WuGvlDZMSVWcRd5SBDQ1uJR
-	ggCTpz14wcnfW+a8jU+HUQE8zcDAReNQWRPkv7J9OczNdVHObMBxmxO56ygGWfZvAXFAlCKab/xyz
-	FwmAAO0o42I6YK9EDlFQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=6bfXF5fASOEMzxoZWlEss71ko2RLeNXF+2E9qeO7fmw=; b=TBeVt93QUJh9SaPfFLNB+XYNa
+	J85r2Ip8qArBLKatDGPc8JA+1v2+gGr++OTk0NVSjwU3fwyDjhYZw2JZzoxs23vqXrl/Ai4s0T7Ci
+	M5uJlO11Y8Bg6Sl1fPIxotCE52YMv5a3T071TUHbRJGtBP3LeEKM086Vj8K6yerwaM+dUcZ0acUO/
+	g8d2lUNyI/3yJ1p0zbOb39iSMlN8LtYrqyoyRMN5UP61qJBff70irnHWef+tgseHuKljH8wOEbP2y
+	KazY9pCyGkNZ61R3EpVk6wusMcbQpyzeQ4hMZaCtjhMVpn5oCdf8LRZA12sykEehalR4IZqM4U68g
+	qloGkn/Yg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT5jn-0006pS-5u; Tue, 21 May 2019 14:27:31 +0000
-Received: from mail-oln040092065010.outbound.protection.outlook.com
- ([40.92.65.10] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1hT5kF-00076F-0A; Tue, 21 May 2019 14:27:59 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT5je-0006om-Sp
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 14:27:24 +0000
-Received: from VE1EUR01FT021.eop-EUR01.prod.protection.outlook.com
- (10.152.2.52) by VE1EUR01HT097.eop-EUR01.prod.protection.outlook.com
- (10.152.3.63) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1900.16; Tue, 21 May
- 2019 14:27:20 +0000
-Received: from VI1PR07MB4432.eurprd07.prod.outlook.com (10.152.2.55) by
- VE1EUR01FT021.mail.protection.outlook.com (10.152.2.223) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1900.16 via Frontend Transport; Tue, 21 May 2019 14:27:20 +0000
-Received: from VI1PR07MB4432.eurprd07.prod.outlook.com
- ([fe80::91f:b1bb:a60a:fdc3]) by VI1PR07MB4432.eurprd07.prod.outlook.com
- ([fe80::91f:b1bb:a60a:fdc3%7]) with mapi id 15.20.1922.013; Tue, 21 May 2019
- 14:27:20 +0000
-From: Philippe Mazenauer <philippe.mazenauer@outlook.de>
-Subject: [PATCH] arm: add missing include <asm/system_misc.h>
-Thread-Topic: [PATCH] arm: add missing include <asm/system_misc.h>
-Thread-Index: AQHVD+FMaE/bAVrtFUKLj850TK7Gvg==
-Date: Tue, 21 May 2019 14:27:19 +0000
-Message-ID: <VI1PR07MB44320C0A8BF43B054BA3D71CFD070@VI1PR07MB4432.eurprd07.prod.outlook.com>
-Accept-Language: de-CH, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: MW2PR16CA0023.namprd16.prod.outlook.com (2603:10b6:907::36)
- To VI1PR07MB4432.eurprd07.prod.outlook.com
- (2603:10a6:802:67::17)
-x-incomingtopheadermarker: OriginalChecksum:3CF4B88603A15A4069E2F09216DCB3CEBB997CC6F99A476453F70487702EE3C6;
- UpperCasedChecksum:26227384BE2B2F1343F3162DEA6BF2BC7D4AEA5CD449C40C4BB19F8114E42A5C;
- SizeAsReceived:7432; Count:47
-x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: git-send-email 2.17.1
-x-tmn: [2mBiuiP4HBnya3jsXfghEEZOM6+b//f2]
-x-microsoft-original-message-id: <20190521142655.91715-1-philippe.mazenauer@outlook.de>
-x-ms-publictraffictype: Email
-x-incomingheadercount: 47
-x-eopattributedmessage: 0
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(5050001)(7020095)(20181119110)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031323274)(2017031324274)(2017031322404)(1601125500)(1603101475)(1701031045);
- SRVR:VE1EUR01HT097; 
-x-ms-traffictypediagnostic: VE1EUR01HT097:
-x-microsoft-antispam-message-info: sqnL2VwgmMW3r3TRfEDu4wLUy3/4r/xLG7jW4mXzvqtHlzDwaPSc4W3JtUfshApG5XytrbFKz/kjTvTasP/Kt6LArLYMVwWsyHgxRHFT+lRkU3VQzL0kjiYux9vO5H8OdyyCnY53OsspFFbvh8TnMrOymzXmlaEkGDYr9dabLL0ZonuYpGRJd71O44hxBca5
-Content-ID: <F9C029BC30B4184D9F631839944CDD7A@eurprd07.prod.outlook.com>
+ id 1hT5k6-00075e-SF
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 14:27:52 +0000
+X-Originating-IP: 90.88.22.185
+Received: from localhost (aaubervilliers-681-1-80-185.w90-88.abo.wanadoo.fr
+ [90.88.22.185]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id A52961C000A;
+ Tue, 21 May 2019 14:27:34 +0000 (UTC)
+Date: Tue, 21 May 2019 16:27:34 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Frank Lee <tiny.windzz@gmail.com>, Mark Rutland <mark.rutland@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, catalin.marinas@arm.com,
+ will.deacon@arm.com, bjorn.andersson@linaro.org,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ paulmck@linux.ibm.com, stefan.wahren@i2se.com,
+ Linux PM <linux-pm@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Jagan Teki <jagan@amarulasolutions.com>,
+ Andy Gross <andy.gross@linaro.org>, rui.zhang@intel.com,
+ devicetree@vger.kernel.org, marc.w.gonzalez@free.fr,
+ Eduardo Valentin <edubezval@gmail.com>,
+ enric.balletbo@collabora.com, robh+dt@kernel.org,
+ Jonathan.Cameron@huawei.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ olof@lixom.net, David Miller <davem@davemloft.net>
+Subject: Re: [PATCH 2/3] thermal: sun50i: add thermal driver for h6
+Message-ID: <20190521142734.fvhdomqhuntpop52@flea>
+References: <20190512082614.9045-1-tiny.windzz@gmail.com>
+ <20190512082614.9045-3-tiny.windzz@gmail.com>
+ <20190512133930.t5txssl7mou2gljt@flea>
+ <CAEExFWvcMbiCJ4HD0UAtv1P6AuBJ=oUdmhu886BNZhrRz483Ug@mail.gmail.com>
+ <20190517073634.izdmba3yqvxviyg3@flea>
+ <CAEExFWtNhTqLR+v3o6vn0Y4L65i_XsrEeiex6DNLEPEkhseCjA@mail.gmail.com>
+ <20190521080515.qlni2lnmcwh7itl7@flea>
+ <20190521102721.5hgks6guzlhubj6d@core.my.home>
 MIME-Version: 1.0
-X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-Network-Message-Id: db677e2a-dfc4-47ac-7869-08d6ddf86e72
-X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-originalarrivaltime: 21 May 2019 14:27:19.9954 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Internet
-X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1EUR01HT097
+In-Reply-To: <20190521102721.5hgks6guzlhubj6d@core.my.home>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_072722_928721_CD2ED457 
-X-CRM114-Status: GOOD (  10.71  )
-X-Spam-Score: 2.8 (++)
+X-CRM114-CacheID: sfid-20190521_072751_214496_6D3719E2 
+X-CRM114-Status: GOOD (  28.66  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.8 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.65.10 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.197 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (philippe.mazenauer[at]outlook.de)
- 1.2 MISSING_HEADERS        Missing To: header
- 1.6 MALFORMED_FREEMAIL     Bad headers on message from free email
- service
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -103,29 +82,159 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Philippe Mazenauer <philippe.mazenauer@outlook.de>,
- Russell King <linux@armlinux.org.uk>,
- "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>,
- open list <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============5097333777637018200=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SW5jbHVkZSBjb3JyZXNwb25kaW5nIGhlYWRlciBmaWxlIDxhc20vc3lzdGVtX21pc2MuaD4gZm9y
-IGZ1bmN0aW9uDQpzb2Z0X3Jlc3RhcnQoKS4NCg0KLi4vYXJjaC9hcm0va2VybmVsL3JlYm9vdC5j
-OjgyOjY6IHdhcm5pbmc6IG5vIHByZXZpb3VzIHByb3RvdHlwZSBmb3Ig4oCYc29mdF9yZXN0YXJ0
-4oCZIFstV21pc3NpbmctcHJvdG90eXBlc10NCiB2b2lkIHNvZnRfcmVzdGFydCh1bnNpZ25lZCBs
-b25nIGFkZHIpDQogICAgICBefn5+fn5+fn5+fn4NCg0KU2lnbmVkLW9mZi1ieTogUGhpbGlwcGUg
-TWF6ZW5hdWVyIDxwaGlsaXBwZS5tYXplbmF1ZXJAb3V0bG9vay5kZT4NCi0tLQ0KIGFyY2gvYXJt
-L2tlcm5lbC9yZWJvb3QuYyB8IDEgKw0KIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKQ0K
-DQpkaWZmIC0tZ2l0IGEvYXJjaC9hcm0va2VybmVsL3JlYm9vdC5jIGIvYXJjaC9hcm0va2VybmVs
-L3JlYm9vdC5jDQppbmRleCAzYjJhYTlhOWZlMjYuLjhhY2E2MWZhY2EzNyAxMDA2NDQNCi0tLSBh
-L2FyY2gvYXJtL2tlcm5lbC9yZWJvb3QuYw0KKysrIGIvYXJjaC9hcm0va2VybmVsL3JlYm9vdC5j
-DQpAQCAtMTAsNiArMTAsNyBAQA0KICNpbmNsdWRlIDxsaW51eC9kZWxheS5oPg0KICNpbmNsdWRl
-IDxsaW51eC9yZWJvb3QuaD4NCiANCisjaW5jbHVkZSA8YXNtL3N5c3RlbV9taXNjLmg+DQogI2lu
-Y2x1ZGUgPGFzbS9jYWNoZWZsdXNoLmg+DQogI2luY2x1ZGUgPGFzbS9pZG1hcC5oPg0KICNpbmNs
-dWRlIDxhc20vdmlydC5oPg0KLS0gDQoyLjE3LjENCg0KX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
-dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+
+--===============5097333777637018200==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="mvmiwnrklxk7dcbu"
+Content-Disposition: inline
+
+
+--mvmiwnrklxk7dcbu
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, May 21, 2019 at 12:27:21PM +0200, Ond=C5=99ej Jirman wrote:
+> On Tue, May 21, 2019 at 10:05:15AM +0200, Maxime Ripard wrote:
+> > On Sat, May 18, 2019 at 01:27:39AM +0800, Frank Lee wrote:
+> > > On Fri, May 17, 2019 at 3:36 PM Maxime Ripard <maxime.ripard@bootlin.=
+com> wrote:
+> > > >
+> > > > On Fri, May 17, 2019 at 01:51:56AM +0800, Frank Lee wrote:
+> > > > > > > +struct sun50i_thermal_chip {
+> > > > > > > +     int     sensor_num;
+> > > > > > > +     int     offset;
+> > > > > > > +     int     scale;
+> > > > > > > +     int     ft_deviation;
+> > > > > > > +     int     temp_calib_base;
+> > > > > > > +     int     temp_data_base;
+> > > > > > > +     int     (*enable)(struct tsens_device *tmdev);
+> > > > > > > +     int     (*disable)(struct tsens_device *tmdev);
+> > > > > > > +};
+> > > > > >
+> > > > > > I'm not super fond of having a lot of quirks that are not neede=
+d. If
+> > > > > > we ever need those quirks when adding support for a new SoC, th=
+en
+> > > > > > yeah, we should totally have some, but only when and if it's ne=
+eded.
+> > > > > >
+> > > > > > Otherwise, the driver is more complicated for no particular rea=
+son.
+> > > > >
+> > > > > This is unavoidable because of the difference in soc.
+> > > >
+> > > > I know, but this isn't my point.
+> > > >
+> > > > My point is that at this time of the driver development, we don't k=
+now
+> > > > what is going to be needed to support all of those SoCs.
+> > > >
+> > > > Some of the parameters you added might not be needed, some paramete=
+rs
+> > > > might be missing, we don't know. So let's keep it simple for now.
+> > > >
+> > > > > > > +static int tsens_probe(struct platform_device *pdev)
+> > > > > > > +{
+> > > > > > > +     struct tsens_device *tmdev;
+> > > > > > > +     struct device *dev =3D &pdev->dev;
+> > > > > > > +     int ret;
+> > > > > > > +
+> > > > > > > +     tmdev =3D devm_kzalloc(dev, sizeof(*tmdev), GFP_KERNEL);
+> > > > > > > +     if (!tmdev)
+> > > > > > > +             return -ENOMEM;
+> > > > > > > +
+> > > > > > > +     tmdev->dev =3D dev;
+> > > > > > > +     tmdev->chip =3D of_device_get_match_data(&pdev->dev);
+> > > > > > > +     if (!tmdev->chip)
+> > > > > > > +             return -EINVAL;
+> > > > > > > +
+> > > > > > > +     ret =3D tsens_init(tmdev);
+> > > > > > > +     if (ret)
+> > > > > > > +             return ret;
+> > > > > > > +
+> > > > > > > +     ret =3D tsens_register(tmdev);
+> > > > > > > +     if (ret)
+> > > > > > > +             return ret;
+> > > > > > > +
+> > > > > > > +     ret =3D tmdev->chip->enable(tmdev);
+> > > > > > > +     if (ret)
+> > > > > > > +             return ret;
+> > > > > > >
+> > > > > > > +     platform_set_drvdata(pdev, tmdev);
+> > > > > >
+> > > > > > Your registration should be the very last thing you do. Otherwi=
+se, you
+> > > > > > have a small window where the get_temp callback can be called, =
+but the
+> > > > > > driver will not be functional yet.
+> > > > >
+> > > > > No. Anyway, ths data qcquisition is ms level.
+> > > >
+> > > > That's kind of irrelevant. There's nothing preventing get_temp to be
+> > > > called right away.
+> > >
+> > > As Ond=C5=99ej said,
+> > >
+> > > Registration after enabling will lead to call tz update on non-regist=
+ered tz
+> > > from an interrupt handler.
+> >
+> > I'm probably missing something but you're not using the interrupts, so
+> > how could an interrupt handler call it?
+> >
+> > Also, other drivers seem to be doing that just fine (mtk_thermal for
+> > example), so surely there's a way?
+>
+> Last version is using the interrupts.
+>
+> Drivers do it in various ways. For example imx_thermal (and others like
+> hisi_thermal) does it the suggested way. It enables interrupts after ther=
+mal
+> zone registration, so that IRQ handler doesn't get invoked before the tzd=
+ is
+> registered.
+
+Enabling the interrupts after the registration makes sense, yes, but
+filling the device private pointer with the private structure,
+enabling the clocks, setting up the controller and so on can be done
+before.
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--mvmiwnrklxk7dcbu
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXOQK1gAKCRDj7w1vZxhR
+xaQIAQCkBPqHwCa6/NpbfkPd6mG52czynrHCcU7cjXcL596AWwEA3MeGcwawbKsZ
+o97K9dmQ8waHGYenijOIsp37ffbo/Aw=
+=G2Q2
+-----END PGP SIGNATURE-----
+
+--mvmiwnrklxk7dcbu--
+
+
+--===============5097333777637018200==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5097333777637018200==--
+
