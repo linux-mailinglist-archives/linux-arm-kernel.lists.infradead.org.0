@@ -2,33 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C826225235
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 16:32:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6289D25236
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 16:32:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OihOW1C3SDbZ4pZzK/9IuA4qFlQ9GYoim6+SfWt0Mw8=; b=ejUbkF8wz9xb8w
-	hvjdVHehlS1vDy7xfk1rHMjjSMC4TDo/2YpGab0S5ioGdejKwx3xiog5vUhbJDGxEP9HlSv+y/hqA
-	xL9755fYdo3J5i5x81pesZPEyaBDLsaFSYdqBwqUOUce8PZVzI6R5+f5PKev6zxunaDUBwMAokGPZ
-	dysxF5JCJwXxCkaHf6Moqzedr0O57a10UPnDONvmYfn1HhQxCs9z+5hh8txsNWgAoamObKvT5Imvr
-	W8fNNCDnWGBaPgAo9mue1xObaP6cIiDLY9O9HyMh+eZhyFcWRpB7iUMpbXK5MvLeB/96W/LsRcta6
-	O28Alo/7LfE3VfN0kcmg==;
+	List-Owner; bh=5NStne7x7qW7dpwD/GKjIekKOlnq4V71eu1P20FWH3c=; b=OdSXSeAvYt9Fmw
+	ECHKnuPsiA98pT7Md0pbVvYe07qn/+GELd3ubeMH4xX0aVy37BmdnBzbbjS2sLccLP1qdHVE0q3EI
+	qFEFycisapFX9QY3bpfJKvdm9GM+aoVTHt/pJuD/1aObM+5f9JxpVYoCXidehyRIWMAQQSEJGeMKX
+	S26W1CcZBhIRef+E78N3hSMlSKrcnLgBpq1kSfaWFJEIFIAbz465SRQUs6tTssAJg17uuK2cg4VQl
+	auJmB/mZVbqNwYz5Frf9sxAsGWmos5Hy5R+ca8xPHVmi/b3RW/vBGjoRNI6W/RXpeqJyhXCbzSPjV
+	InGTfx0jXP6dFFZXG8FQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT5op-0002Xv-Rt; Tue, 21 May 2019 14:32:43 +0000
+	id 1hT5oz-0002mn-Uh; Tue, 21 May 2019 14:32:53 +0000
 Received: from relay1-d.mail.gandi.net ([217.70.183.193])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT5nl-0001Sk-5D
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 14:31:43 +0000
+ id 1hT5nv-0001in-Jl
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 14:32:00 +0000
 X-Originating-IP: 90.88.22.185
 Received: from localhost.localdomain
  (aaubervilliers-681-1-80-185.w90-88.abo.wanadoo.fr [90.88.22.185])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 8F8DF24001D;
- Tue, 21 May 2019 14:31:29 +0000 (UTC)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 35776240012;
+ Tue, 21 May 2019 14:31:35 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Gregory Clement <gregory.clement@bootlin.com>,
  Jason Cooper <jason@lakedaemon.net>, Andrew Lunn <andrew@lunn.ch>,
@@ -36,17 +36,17 @@ To: Gregory Clement <gregory.clement@bootlin.com>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Jens Axboe <axboe@kernel.dk>, Hans de Goede <hdegoede@redhat.com>,
  Thomas Gleixner <tglx@linutronix.de>, Marc Zyngier <marc.zyngier@arm.com>
-Subject: [PATCH v4 08/10] ata: ahci: mvebu: Add support for A8k legacy DT
- bindings
-Date: Tue, 21 May 2019 16:30:21 +0200
-Message-Id: <20190521143023.31810-9-miquel.raynal@bootlin.com>
+Subject: [PATCH v4 09/10] irqchip/irq-mvebu-icu: Remove the double SATA ports
+ interrupt hack
+Date: Tue, 21 May 2019 16:30:22 +0200
+Message-Id: <20190521143023.31810-10-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.19.1
 In-Reply-To: <20190521143023.31810-1-miquel.raynal@bootlin.com>
 References: <20190521143023.31810-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_073138_016569_FF3C0B6B 
-X-CRM114-Status: GOOD (  19.87  )
+X-CRM114-CacheID: sfid-20190521_073148_262316_B0538864 
+X-CRM114-Status: GOOD (  13.98  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -79,124 +79,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The CP110 SATA unit has 2 ports, and a dedicated ICU entry per
-port. In the past, the AHCI SATA driver only supported one interrupt
-per SATA unit. To solve this conflict, the 2 SATA wired interrupts in
-the South-Bridge got configured as 1 GIC interrupt in the
-North-Bridge, regardless of the number of SATA ports actually
-enabled/in use, and the DT bindings only referenced the interrupt of
-one port.
-
-Since then, this limitation has been addressed and this patch ensures
-backward compatibility with old DTs not describing SATA ports
-correctly directly from the AHCI MVEBU driver. This way, we will be
-able to drop the hack from the ICU driver. IOW, when the A8k
-compatible string is used and there is no sub-nodes in the DT, we
-fake the creation and mapping of the second (missing) interrupt.
+When writing the driver, a hack was introduced to configure both SATA
+interrupts regardless of the port in use to overcome a limitation in
+the SATA core. Now that this limitation has been addressed and the
+hack moved in the (historically) responsible SATA driver,
+ahci_{platform,mvebu}.c, let's clean this driver section.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 ---
- drivers/ata/ahci_mvebu.c       | 29 ++++++++++++++++++++++++++++-
- drivers/ata/libahci_platform.c |  3 +++
- include/linux/ahci_platform.h  |  1 +
- 3 files changed, 32 insertions(+), 1 deletion(-)
+ drivers/irqchip/irq-mvebu-icu.c | 18 ------------------
+ 1 file changed, 18 deletions(-)
 
-diff --git a/drivers/ata/ahci_mvebu.c b/drivers/ata/ahci_mvebu.c
-index 8671aa8179fa..8c981b8d6e4d 100644
---- a/drivers/ata/ahci_mvebu.c
-+++ b/drivers/ata/ahci_mvebu.c
-@@ -16,6 +16,7 @@
- #include <linux/mbus.h>
- #include <linux/module.h>
- #include <linux/of_device.h>
-+#include <linux/of_irq.h>
- #include <linux/platform_device.h>
- #include "ahci.h"
+diff --git a/drivers/irqchip/irq-mvebu-icu.c b/drivers/irqchip/irq-mvebu-icu.c
+index 547045d89c4b..f3b43f63fe2e 100644
+--- a/drivers/irqchip/irq-mvebu-icu.c
++++ b/drivers/irqchip/irq-mvebu-icu.c
+@@ -38,8 +38,6 @@
  
-@@ -28,9 +29,13 @@
- #define AHCI_WINDOW_BASE(win)	(0x64 + ((win) << 4))
- #define AHCI_WINDOW_SIZE(win)	(0x68 + ((win) << 4))
+ /* ICU definitions */
+ #define ICU_MAX_IRQS		207
+-#define ICU_SATA0_ICU_ID	109
+-#define ICU_SATA1_ICU_ID	107
  
-+#define ICU_SATA0_ICU_ID 109
-+#define ICU_SATA1_ICU_ID 107
-+
- struct ahci_mvebu_plat_data {
- 	int (*plat_config)(struct ahci_host_priv *hpriv, struct device *dev);
- 	unsigned int host_flags;
-+	unsigned int resource_flags;
- };
+ struct mvebu_icu_subset_data {
+ 	unsigned int icu_group;
+@@ -111,22 +109,6 @@ static void mvebu_icu_write_msg(struct msi_desc *desc, struct msi_msg *msg)
+ 	}
  
- static void ahci_mvebu_mbus_config(struct ahci_host_priv *hpriv,
-@@ -101,6 +106,27 @@ static int ahci_mvebu_armada_3700_config(struct ahci_host_priv *hpriv,
- static int ahci_mvebu_armada_8k_config(struct ahci_host_priv *hpriv,
- 				       struct device *dev)
- {
-+	struct device_node *np = of_irq_find_parent(dev->of_node);
-+	struct irq_data *irqd = irq_get_irq_data(hpriv->irqs[0]);
-+	int host_irq = irqd ? irqd_to_hwirq(irqd) : 0;
-+	int missing_irq = (host_irq == ICU_SATA1_ICU_ID) ?
-+		ICU_SATA0_ICU_ID : ICU_SATA1_ICU_ID;
-+	struct irq_fwspec fwspec = {
-+		.fwnode = of_node_to_fwnode(np),
-+		.param_count = 2,
-+		.param = {missing_irq, IRQ_TYPE_LEVEL_HIGH},
-+	};
-+
-+	if (of_get_child_count(dev->of_node))
-+		return 0;
-+
-+	hpriv->irqs[1] = irq_create_fwspec_mapping(&fwspec);
-+	if (hpriv->irqs[1]) {
-+		hpriv->flags |= AHCI_HFLAG_MULTI_MSI;
-+		hpriv->get_irq_vector = ahci_get_per_port_irq_vector;
-+		hpriv->mask_port_map = GENMASK(1, 0);
-+	}
-+
- 	return 0;
+ 	writel_relaxed(icu_int, icu->base + ICU_INT_CFG(d->hwirq));
+-
+-	/*
+-	 * The SATA unit has 2 ports, and a dedicated ICU entry per
+-	 * port. The ahci sata driver supports only one irq interrupt
+-	 * per SATA unit. To solve this conflict, we configure the 2
+-	 * SATA wired interrupts in the south bridge into 1 GIC
+-	 * interrupt in the north bridge. Even if only a single port
+-	 * is enabled, if sata node is enabled, both interrupts are
+-	 * configured (regardless of which port is actually in use).
+-	 */
+-	if (d->hwirq == ICU_SATA0_ICU_ID || d->hwirq == ICU_SATA1_ICU_ID) {
+-		writel_relaxed(icu_int,
+-			       icu->base + ICU_INT_CFG(ICU_SATA0_ICU_ID));
+-		writel_relaxed(icu_int,
+-			       icu->base + ICU_INT_CFG(ICU_SATA1_ICU_ID));
+-	}
  }
  
-@@ -200,7 +226,7 @@ static int ahci_mvebu_probe(struct platform_device *pdev)
- 	if (!pdata)
- 		return -EINVAL;
- 
--	hpriv = ahci_platform_get_resources(pdev, 0);
-+	hpriv = ahci_platform_get_resources(pdev, pdata->resource_flags);
- 	if (IS_ERR(hpriv))
- 		return PTR_ERR(hpriv);
- 
-@@ -240,6 +266,7 @@ static const struct ahci_mvebu_plat_data ahci_mvebu_armada_3700_plat_data = {
- 
- static const struct ahci_mvebu_plat_data ahci_mvebu_armada_8k_plat_data = {
- 	.plat_config = ahci_mvebu_armada_8k_config,
-+	.resource_flags = AHCI_PLATFORM_A8K_QUIRK,
- };
- 
- static const struct of_device_id ahci_mvebu_of_match[] = {
-diff --git a/drivers/ata/libahci_platform.c b/drivers/ata/libahci_platform.c
-index 347ff14aedd2..620e5f27fdd7 100644
---- a/drivers/ata/libahci_platform.c
-+++ b/drivers/ata/libahci_platform.c
-@@ -484,6 +484,9 @@ struct ahci_host_priv *ahci_platform_get_resources(struct platform_device *pdev,
- 	if (!child_nodes)
- 		hpriv->nports = 1;
- 
-+	if (!child_nodes && flags & AHCI_PLATFORM_A8K_QUIRK)
-+		hpriv->nports = 2;
-+
- 	hpriv->phys = devm_kcalloc(dev, hpriv->nports, sizeof(*hpriv->phys), GFP_KERNEL);
- 	if (!hpriv->phys) {
- 		rc = -ENOMEM;
-diff --git a/include/linux/ahci_platform.h b/include/linux/ahci_platform.h
-index eaedca5fe6fc..57465ba6bb15 100644
---- a/include/linux/ahci_platform.h
-+++ b/include/linux/ahci_platform.h
-@@ -44,5 +44,6 @@ int ahci_platform_suspend(struct device *dev);
- int ahci_platform_resume(struct device *dev);
- 
- #define AHCI_PLATFORM_GET_RESETS	0x01
-+#define AHCI_PLATFORM_A8K_QUIRK		0x02
- 
- #endif /* _AHCI_PLATFORM_H */
+ static struct irq_chip mvebu_icu_nsr_chip = {
 -- 
 2.19.1
 
