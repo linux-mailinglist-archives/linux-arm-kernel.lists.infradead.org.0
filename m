@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86079246A8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 06:17:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E1B02246B0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 06:18:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ptxdwh2WwQrkVbl6zWawrf1PdyNsYPlkGQU5dxq9Z68=; b=inkLp2WCAiBVRB
-	3CfgHq81Bn0wIDill64rwM9KT3y0QrH8dXTww1nG8mfLA0OGSaTa2Q1hcLNGnZifuftb132M9g/+4
-	abkm6TnLPAfiQHZxS/ygrUEJDR6nhv0Om/iXohNKhluZpjdzFiVo+wcqXiVBkZF3jxGrtfTpKytf7
-	U0jtL/rc1OqFViNUEFF0aAGyHmp9rKcEURYCDLuBkouX8qYLGpskP9wZUDXoDgYhsIV3jv2/oETiV
-	n4DfSA9m1DlYfpN5hUvzACma66BzidSVnNdzoj91UHiI1xLpp7UOnjjxXCawuprcEW5aeaB0IdxW3
-	HWhh58oQFsRw7fkeAwgw==;
+	List-Owner; bh=46yxGUav09m0Dz1SPZDj3fV3T9Djh3q94mX8iuqRF4w=; b=iPWUXlqe3rNBji
+	0k/8XgVpWH7+b3Wn1mXoQWX+ET0BZIUpl7Fq8CNAsBKdh1ED0DexwYT3J6IEzZrdHe5xxKRIA0jJK
+	rMRLIHfd1XOT9cRN7pPQA2XE1WHPfi0VXKTcDOxjCD6CBq6qKP6+asGYRYa+LPBo0SzpNIjEsrLqQ
+	ku1ZIcQfLThXKQfHQ3dYfmSFumK6IQ8OgCrvTZWD0PzRf4OxTLUiXb7b8mk2q7MP6yVHER2TT+3U8
+	4c7AIyp1o3Jp7nxmTNXS5+Kni9jsiCVxcGdOrJKST9c/th29xyCQ+2wE4ZtSdVK/kDD5hrOUXkltE
+	Gy6IdrpBiFNhpBW06HfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSwDS-0001kb-G3; Tue, 21 May 2019 04:17:30 +0000
+	id 1hSwEZ-00021C-E6; Tue, 21 May 2019 04:18:39 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSwDK-0001kI-QT
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 04:17:23 +0000
+ id 1hSwES-00020r-5I
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 04:18:33 +0000
 Received: from localhost (unknown [106.201.107.13])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D1A7B20862;
- Tue, 21 May 2019 04:17:21 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1DBFE2054F;
+ Tue, 21 May 2019 04:18:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558412242;
- bh=6u/h3EtOSCUvPB5LeBHuTry0EzDtPz2Gj05mMEh9044=;
+ s=default; t=1558412311;
+ bh=fZXYRkAeFGnA+NIcHyTm3OTAcMXVrInGSq8PaIKCbfU=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=KsbzrPj40lJg9HoUz9cEfXZ1i1kj7Vw9YqjAXtefPMR9ttbaBkgNxgPZ59bfDwh53
- Oqyz7MxcKAsnmDjeX2mKp6H0OCR6/ng9QIJ7K9Y3acl2ep8jNtaA8C9iZ8lt1K8wi6
- reuFuv8WuKclRjwZG8tie368HFe6EYmF0i0LpBzo=
-Date: Tue, 21 May 2019 09:47:18 +0530
+ b=gX6Ml98y6y0nRsMKLAHlU0I3dsJDEzjTVwyPtbbi3XRSvNeXbVqEiOUIm88LhtgJ9
+ sBZGVJZwG1HRd01ExEXA55n4aGYPZg6QQ8BS4JFT63ckZ3VRTz5URCjwpSuJU489ta
+ gP9Ce2v5NGuNUcsmEWbptEeJnstmc+czndaqlrLo=
+Date: Tue, 21 May 2019 09:48:28 +0530
 From: Vinod Koul <vkoul@kernel.org>
 To: Robin Gong <yibin.gong@nxp.com>
-Subject: Re: [PATCH v3 09/14] dmaengine: imx-sdma: remove ERR009165 on i.mx6ul
-Message-ID: <20190521041718.GF15118@vkoul-mobl>
+Subject: Re: [PATCH v3 11/14] dmaengine: imx-sdma: fix ecspi1 rx dma not work
+ on i.mx8mm
+Message-ID: <20190521041828.GG15118@vkoul-mobl>
 References: <1557249513-4903-1-git-send-email-yibin.gong@nxp.com>
- <1557249513-4903-10-git-send-email-yibin.gong@nxp.com>
+ <1557249513-4903-12-git-send-email-yibin.gong@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1557249513-4903-10-git-send-email-yibin.gong@nxp.com>
+In-Reply-To: <1557249513-4903-12-git-send-email-yibin.gong@nxp.com>
 User-Agent: Mutt/1.11.3 (2019-02-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190520_211722_871970_72E47548 
-X-CRM114-Status: UNSURE (   7.61  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190520_211832_218582_3AD8A10C 
+X-CRM114-Status: GOOD (  17.27  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -102,11 +102,53 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 07-05-19, 09:16, Robin Gong wrote:
-> ECSPI issue fixed from i.mx6ul at hardware level, no need
-> ERR009165 anymore on those chips such as i.mx8mq. Add i.mx6sx
-> from where i.mx6ul source.
+> Because the number of ecspi1 rx event on i.mx8mm is 0, the condition
+> check ignore such special case without dma channel enabled, which caused
+> ecspi1 rx works failed. Actually, no need to check event_id0, checking
+> event_id1 is enough for DEV_2_DEV case because it's so lucky that event_id1
+> never be 0.
 
-Acked-by: Vinod Koul <vkoul@kernel.org>
+Well is that by chance or design that event_id1 will be never 0?
+
+> 
+> Signed-off-by: Robin Gong <yibin.gong@nxp.com>
+> ---
+>  drivers/dma/imx-sdma.c | 12 +++++-------
+>  1 file changed, 5 insertions(+), 7 deletions(-)
+> 
+> diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c
+> index a495c7f..86594fc 100644
+> --- a/drivers/dma/imx-sdma.c
+> +++ b/drivers/dma/imx-sdma.c
+> @@ -1370,8 +1370,8 @@ static void sdma_free_chan_resources(struct dma_chan *chan)
+>  
+>  	sdma_channel_synchronize(chan);
+>  
+> -	if (sdmac->event_id0)
+> -		sdma_event_disable(sdmac, sdmac->event_id0);
+> +	sdma_event_disable(sdmac, sdmac->event_id0);
+> +
+>  	if (sdmac->event_id1)
+>  		sdma_event_disable(sdmac, sdmac->event_id1);
+>  
+> @@ -1670,11 +1670,9 @@ static int sdma_config(struct dma_chan *chan,
+>  	memcpy(&sdmac->slave_config, dmaengine_cfg, sizeof(*dmaengine_cfg));
+>  
+>  	/* Set ENBLn earlier to make sure dma request triggered after that */
+> -	if (sdmac->event_id0) {
+> -		if (sdmac->event_id0 >= sdmac->sdma->drvdata->num_events)
+> -			return -EINVAL;
+> -		sdma_event_enable(sdmac, sdmac->event_id0);
+> -	}
+> +	if (sdmac->event_id0 >= sdmac->sdma->drvdata->num_events)
+> +		return -EINVAL;
+> +	sdma_event_enable(sdmac, sdmac->event_id0);
+>  
+>  	if (sdmac->event_id1) {
+>  		if (sdmac->event_id1 >= sdmac->sdma->drvdata->num_events)
+> -- 
+> 2.7.4
+> 
 
 -- 
 ~Vinod
