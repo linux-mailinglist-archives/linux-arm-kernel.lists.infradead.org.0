@@ -2,77 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C721258CB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 22:24:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 791CE258F1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 22:33:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mcgi6es68NYbLxcu/cQJs/lhY4zIZ5Hz3yAz1jrds9k=; b=W1OL4IWP2CW8Gh
-	GoiY4z3u9O6vj08hUePo/yP+jmsES+NpB9JbNyeXbpl7z4SpU4t2Pd8QE81A2gXyUu9qORmnUQ30J
-	6T5R/oXLu9gPgvTTovlL1EHNQEhF4h2W2ioSKKbvpID4ht3UI7TK1/iN9Z5SwJy/hc7dUVxPzHZI0
-	wnEVMShxF9uSaMNGaMw9Jb8BCcA/uJ65gcRnif7IRPG8gJWK33MLAYa2gxOgVffLAkGrEZOVpXpry
-	vuUj69pZR/p7zatyRMYWkSa67Md0Dru0YoW5wEEK6AT1tqg0szUOcET1FxImAlW+gWXnurKtL2pY5
-	hhYZjWe6QSdqSz7MkczA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=19ymMSSZw2Z3Z7WziD83EuXbi28/bqmsURYk1q3Q9Z0=; b=EBiU4U1cY/sCmM
+	7W8T9mDV+1M0ujKx53VxNXl4bGsQdoNO5iwAjMyZvczZD3HQPIwYFvd9wAe16SmgHw3UTrHUE4IXk
+	aeEgL4fNX0pP+ZckzJmUHgJkcPvzM6vS9dZGVLolZm+hSyJWuGD/x0W78qaMLeeBhIWZfjzvFnKUh
+	kuJ5yGupPRaIi/Y5ahVAWF5Gesw1THs9BaSauN0w7wpg4Wvd9tkM0T/vI1lHayixtgUDUGPtpsZ9S
+	bB0ZXsITql2gPY8J0QPqP1L+leZq7gr1v7YECzUt0/4kpnUTTA3w/cIhgmNP7+Je00FIQd2Qeqpau
+	wyS4SXI1BNTdDYk47EDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTBIo-0000cq-7b; Tue, 21 May 2019 20:24:02 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hTBRS-0004gv-44; Tue, 21 May 2019 20:32:58 +0000
+Received: from mail-it1-x142.google.com ([2607:f8b0:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTBIf-0000aw-KZ
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 20:23:55 +0000
-Received: by mail-pf1-x443.google.com with SMTP id u17so27809pfn.7
+ id 1hTBRB-0004YK-4h
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 20:32:42 +0000
+Received: by mail-it1-x142.google.com with SMTP id g24so2882016iti.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 May 2019 13:23:53 -0700 (PDT)
+ Tue, 21 May 2019 13:32:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to;
- bh=jL1S7zFzjAxE4JNqh4L9FDfG4cAz8JcsD74o794kTBQ=;
- b=HTDoWsxi7QDqVixev1f6cqXoZsue3n3xEMiTeFWZaXgqKnKMwHNLfC3f+dJJhqMBRw
- nDQtVaPP/Z0+mQW6Cy9frq6SwMcF66bdeErddgk7YrYR0WJIYRfOZsfwALK2a95aELQF
- DAIWkjIYzMPYDvGxpWXquPJ9JJRDVKkErl4fs=
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=TL0Rco+HJb/XdiRCUNcHvK2NcbT9epjRSGpGsvVbQoI=;
+ b=QBq9fahcLU2tgJhshCN0dwVdL0HE77OlAbTaVT8QDvwmSf17Ll5gBABBcZbQPKSgI8
+ wPLldHhQueXNBElEdaeVQGucuCyfo4uJDJwgYvxXvlJB+Ro8K+sPZp03zZ6h3jcX+Zwn
+ 8KN7ULMXhj+3tDAZroKu43AHQM5IoJZShiDBU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=jL1S7zFzjAxE4JNqh4L9FDfG4cAz8JcsD74o794kTBQ=;
- b=uEhGH0xyK3dDvM9OYzkt3vL+JOptBL4nWCqkt6TwNs+Cn9+OGiC7brxaorS9gjHkM4
- dhJzD/JG7nHH1SVFV/ZAFzA1OIQd5EJBr9nMy84bE2zGuud5eONjtKTcuWCH6xxAmJSN
- SUmFvkc0dF8gK8LYnzP7j2up+2JuYMgVvqbmo9UIKZ8OiLznijTlPJP6lZMxWojLaUkF
- 3zk5tHzMl4yodGF5HHet17JWvwRz4fBonBgQK5niFbywvz/+UL1cV5v6OHa5by7p9l+M
- E4/kiarpWiiT3YYfGaE5mkBKdrgFwWOaqCpk41iyKHA2A5AIwBh79tV/IfdGoUGZ8XsF
- QjJw==
-X-Gm-Message-State: APjAAAVQRpV++2rf/Xwj8HfNHqY+WR1FdHtFJUaOg+4uOixZrmWlni/Q
- 0n12VAd0yMnA7QtzOAn1lgz7UQ==
-X-Google-Smtp-Source: APXvYqxOxJPANXcitp87yHMwwlb908gqPaSxiqSVECmGo+Kntyeadkzvfnc3UlOr5MMFdZisu7CwHg==
-X-Received: by 2002:a63:1061:: with SMTP id 33mr58636901pgq.328.1558470232784; 
- Tue, 21 May 2019 13:23:52 -0700 (PDT)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id q75sm32078478pfa.175.2019.05.21.13.23.52
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 21 May 2019 13:23:52 -0700 (PDT)
-Date: Tue, 21 May 2019 13:23:51 -0700
-From: Kees Cook <keescook@chromium.org>
-To: Philippe Mazenauer <philippe.mazenauer@outlook.de>
-Subject: Re: [PATCH] arm: add missing include <linux/elf-randomize.h>
-Message-ID: <201905211323.7064F60D@keescook>
-References: <VI1PR07MB44324E07A6AFE89A920444AFFD070@VI1PR07MB4432.eurprd07.prod.outlook.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=TL0Rco+HJb/XdiRCUNcHvK2NcbT9epjRSGpGsvVbQoI=;
+ b=Yrh77CHKenGtnM/qxdEfk9MT03bsANWrIfwXw+imyGLqXcUT55h+nIz5/cKmwBxi2v
+ Yjm1SSIIvH6lwxlolzsLjeHKxApQ2bZ3n7tLUlFrJeBeVhbmZylpKeeaajT5mVk5SHCa
+ o+fORzZ254sbZ8CLkMzpoRIj+CYXyc21tErCFdX7TKE2e6CUzcItIdDf6Kn+ZdA+Rq08
+ Cn7QDLR7L//wtQP6uFKxqc+0IfhsjDUYLbsKFco6NgP1tUIzv6wyJYU+C840A4TgiNY/
+ apDPeWsStUwqKgvzqoKK+nNUZbpAtKuV0qgQ/jGHC2LUxN9BTx5S54GByHd9Juh9X3KI
+ Kh1w==
+X-Gm-Message-State: APjAAAV4QiFbjcC0vPUVGTaLqOfLvoVvcZuRy7vld6D5AsWzoqYU86hn
+ NvSw6Yrc1JVEx5uMOrXl524pwA==
+X-Google-Smtp-Source: APXvYqzMgS+2Y+L54Bugxjb3Y7W5RtvSETPi7Pcr1ybp84tqKgN8/mOHXp8N4/4GVoMpgsDaegyHyg==
+X-Received: by 2002:a24:278c:: with SMTP id g134mr4385454ita.49.1558470759345; 
+ Tue, 21 May 2019 13:32:39 -0700 (PDT)
+Received: from tictac2.mtv.corp.google.com
+ ([2620:15c:202:1:24fa:e766:52c9:e3b2])
+ by smtp.gmail.com with ESMTPSA id e22sm7205710ioe.45.2019.05.21.13.32.38
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 21 May 2019 13:32:38 -0700 (PDT)
+From: Douglas Anderson <dianders@chromium.org>
+To: Heiko Stuebner <heiko@sntech.de>
+Subject: [PATCH 1/2] ARM: dts: rockchip: Add pin names for rk3288-veyron-minnie
+Date: Tue, 21 May 2019 13:32:14 -0700
+Message-Id: <20190521203215.234898-1-dianders@chromium.org>
+X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <VI1PR07MB44324E07A6AFE89A920444AFFD070@VI1PR07MB4432.eurprd07.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_132353_692571_74108E55 
-X-CRM114-Status: GOOD (  14.15  )
+X-CRM114-CacheID: sfid-20190521_133241_208430_618AA9A1 
+X-CRM114-Status: GOOD (  14.01  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -95,35 +93,271 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Russell King <linux@armlinux.org.uk>, open list <linux-kernel@vger.kernel.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ briannorris@chromium.org, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Douglas Anderson <dianders@chromium.org>,
+ linux-rockchip@lists.infradead.org, mka@chromium.org, ryandcase@chromium.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCBNYXkgMjEsIDIwMTkgYXQgMDM6NTQ6MzZQTSArMDAwMCwgUGhpbGlwcGUgTWF6ZW5h
-dWVyIHdyb3RlOgo+IEluY2x1ZGUgY29ycmVzcG9uZGluZyBoZWFkZXIgZmlsZSA8bGludXgvZWxm
-LXJhbmRvbWl6ZS5oPiBmb3IgZnVuY3Rpb24KPiBhcmNoX3JhbmRvbWl6ZV9icmsoKS4KPiAKPiAu
-Li9hcmNoL2FybS9rZXJuZWwvcHJvY2Vzcy5jOjMyNToxNTogd2FybmluZzogbm8gcHJldmlvdXMg
-cHJvdG90eXBlIGZvciDigJhhcmNoX3JhbmRvbWl6ZV9icmvigJkgWy1XbWlzc2luZy1wcm90b3R5
-cGVzXQo+ICB1bnNpZ25lZCBsb25nIGFyY2hfcmFuZG9taXplX2JyayhzdHJ1Y3QgbW1fc3RydWN0
-ICptbSkKPiAgICAgICAgICAgICAgICBefn5+fn5+fn5+fn5+fn5+fn4KPiAKPiBTaWduZWQtb2Zm
-LWJ5OiBQaGlsaXBwZSBNYXplbmF1ZXIgPHBoaWxpcHBlLm1hemVuYXVlckBvdXRsb29rLmRlPgoK
-QWNrZWQtYnk6IEtlZXMgQ29vayA8a2Vlc2Nvb2tAY2hyb21pdW0ub3JnPgoKPiAtLS0KPiAgYXJj
-aC9hcm0va2VybmVsL3Byb2Nlc3MuYyB8IDEgKwo+ICAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRp
-b24oKykKPiAKPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0va2VybmVsL3Byb2Nlc3MuYyBiL2FyY2gv
-YXJtL2tlcm5lbC9wcm9jZXNzLmMKPiBpbmRleCA3MmNjMDg2MmEzMGUuLjczNzgyMDEyZDQwMyAx
-MDA2NDQKPiAtLS0gYS9hcmNoL2FybS9rZXJuZWwvcHJvY2Vzcy5jCj4gKysrIGIvYXJjaC9hcm0v
-a2VybmVsL3Byb2Nlc3MuYwo+IEBAIC0yMyw2ICsyMyw3IEBACj4gICNpbmNsdWRlIDxsaW51eC9p
-bnRlcnJ1cHQuaD4KPiAgI2luY2x1ZGUgPGxpbnV4L2luaXQuaD4KPiAgI2luY2x1ZGUgPGxpbnV4
-L2VsZmNvcmUuaD4KPiArI2luY2x1ZGUgPGxpbnV4L2VsZi1yYW5kb21pemUuaD4KPiAgI2luY2x1
-ZGUgPGxpbnV4L3BtLmg+Cj4gICNpbmNsdWRlIDxsaW51eC90aWNrLmg+Cj4gICNpbmNsdWRlIDxs
-aW51eC91dHNuYW1lLmg+Cj4gLS0gCj4gMi4xNy4xCj4gCgotLSAKS2VlcyBDb29rCgpfX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
-IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
-L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+We can now use the "gpio-line-names" property to provide the names for
+all the pins on a board.  Let's use this to provide the names for all
+the pins on rk3288-veyron-minnie.
+
+In general the names here come straight from the schematic.  That
+means even if the schematic name is weird / doesn't have consistent
+naming conventions / has typos I still haven't made any changes.
+
+The exception here is for two pins: the recovery switch and the write
+protect detection pin.  These two pins need to have standardized names
+since crossystem (a Chrome OS tool) uses these names to query the
+pins.  In downstream kernels crossystem used an out-of-tree driver to
+do this but it has now been moved to the gpiod API and needs the
+standardized names.
+
+It's expected that other rk3288-veyron boards will get similar patches
+shortly.
+
+NOTE: I have sorted the "gpio" section to be next to the "pinctrl"
+section since it seems to logically make the most sense there.
+
+Signed-off-by: Douglas Anderson <dianders@chromium.org>
+---
+
+ arch/arm/boot/dts/rk3288-veyron-minnie.dts | 212 +++++++++++++++++++++
+ 1 file changed, 212 insertions(+)
+
+diff --git a/arch/arm/boot/dts/rk3288-veyron-minnie.dts b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
+index ce57881625ec..a65099b4aef1 100644
+--- a/arch/arm/boot/dts/rk3288-veyron-minnie.dts
++++ b/arch/arm/boot/dts/rk3288-veyron-minnie.dts
+@@ -184,6 +184,218 @@
+ 	pinctrl-0 = <&vcc50_hdmi_en>;
+ };
+ 
++&gpio0 {
++	gpio-line-names = "PMIC_SLEEP_AP",
++			  "DDRIO_PWROFF",
++			  "DDRIO_RETEN",
++			  "TS3A227E_INT_L",
++			  "PMIC_INT_L",
++			  "PWR_KEY_L",
++			  "AP_LID_INT_L",
++			  "EC_IN_RW",
++
++			  "AC_PRESENT_AP",
++			  /*
++			   * RECOVERY_SW_L is Chrome OS ABI.  Schematics call
++			   * it REC_MODE_L.
++			   */
++			  "RECOVERY_SW_L",
++			  "OTP_OUT",
++			  "HOST1_PWR_EN",
++			  "USBOTG_PWREN_H",
++			  "AP_WARM_RESET_H",
++			  "nFALUT2",
++			  "I2C0_SDA_PMIC",
++
++			  "I2C0_SCL_PMIC",
++			  "SUSPEND_L",
++			  "USB_INT";
++};
++
++&gpio2 {
++	gpio-line-names = "CONFIG0",
++			  "CONFIG1",
++			  "CONFIG2",
++			  "",
++			  "",
++			  "",
++			  "",
++			  "CONFIG3",
++
++			  "PROCHOT#",
++			  "EMMC_RST_L",
++			  "",
++			  "",
++			  "BL_PWR_EN",
++			  "AVDD_1V8_DISP_EN",
++			  "TOUCH_INT",
++			  "TOUCH_RST",
++
++			  "I2C3_SCL_TP",
++			  "I2C3_SDA_TP";
++};
++
++&gpio3 {
++	gpio-line-names = "FLASH0_D0",
++			  "FLASH0_D1",
++			  "FLASH0_D2",
++			  "FLASH0_D3",
++			  "FLASH0_D4",
++			  "FLASH0_D5",
++			  "FLASH0_D6",
++			  "FLASH0_D7",
++
++			  "",
++			  "",
++			  "",
++			  "",
++			  "",
++			  "",
++			  "",
++			  "",
++
++			  "FLASH0_CS2/EMMC_CMD",
++			  "",
++			  "FLASH0_DQS/EMMC_CLKO";
++};
++
++&gpio4 {
++	gpio-line-names = "",
++			  "",
++			  "",
++			  "",
++			  "",
++			  "",
++			  "",
++			  "",
++
++			  "",
++			  "",
++			  "",
++			  "",
++			  "",
++			  "",
++			  "",
++			  "",
++
++			  "UART0_RXD",
++			  "UART0_TXD",
++			  "UART0_CTS",
++			  "UART0_RTS",
++			  "SDIO0_D0",
++			  "SDIO0_D1",
++			  "SDIO0_D2",
++			  "SDIO0_D3",
++
++			  "SDIO0_CMD",
++			  "SDIO0_CLK",
++			  "dev_wake",
++			  "",
++			  "WIFI_ENABLE_H",
++			  "BT_ENABLE_L",
++			  "WIFI_HOST_WAKE",
++			  "BT_HOST_WAKE";
++};
++
++&gpio5 {
++	gpio-line-names = "",
++			  "",
++			  "",
++			  "",
++			  "",
++			  "",
++			  "",
++			  "",
++
++			  "",
++			  "",
++			  "Volum_Up#",
++			  "Volum_Down#",
++			  "SPI0_CLK",
++			  "SPI0_CS0",
++			  "SPI0_TXD",
++			  "SPI0_RXD",
++
++			  "",
++			  "",
++			  "",
++			  "VCC50_HDMI_EN";
++};
++
++&gpio6 {
++	gpio-line-names = "I2S0_SCLK",
++			  "I2S0_LRCK_RX",
++			  "I2S0_LRCK_TX",
++			  "I2S0_SDI",
++			  "I2S0_SDO0",
++			  "HP_DET_H",
++			  "",
++			  "INT_CODEC",
++
++			  "I2S0_CLK",
++			  "I2C2_SDA",
++			  "I2C2_SCL",
++			  "MICDET",
++			  "",
++			  "",
++			  "",
++			  "",
++
++			  "SDMMC_D0",
++			  "SDMMC_D1",
++			  "SDMMC_D2",
++			  "SDMMC_D3",
++			  "SDMMC_CLK",
++			  "SDMMC_CMD";
++};
++
++&gpio7 {
++	gpio-line-names = "LCDC_BL",
++			  "PWM_LOG",
++			  "BL_EN",
++			  "TRACKPAD_INT",
++			  "TPM_INT_H",
++			  "SDMMC_DET_L",
++			  /*
++			   * AP_FLASH_WP_L is Chrome OS ABI.  Schematics call
++			   * it FW_WP_AP.
++			   */
++			  "AP_FLASH_WP_L",
++			  "EC_INT",
++
++			  "CPU_NMI",
++			  "DVS_OK",
++			  "SDMMC_WP",
++			  "EDP_HPD",
++			  "DVS1",
++			  "nFALUT1",
++			  "LCD_EN",
++			  "DVS2",
++
++			  "VCC5V_GOOD_H",
++			  "I2C4_SDA_TP",
++			  "I2C4_SCL_TP",
++			  "I2C5_SDA_HDMI",
++			  "I2C5_SCL_HDMI",
++			  "5V_DRV",
++			  "UART2_RXD",
++			  "UART2_TXD";
++};
++
++&gpio8 {
++	gpio-line-names = "RAM_ID0",
++			  "RAM_ID1",
++			  "RAM_ID2",
++			  "RAM_ID3",
++			  "I2C1_SDA_TPM",
++			  "I2C1_SCL_TPM",
++			  "SPI2_CLK",
++			  "SPI2_CS0",
++
++			  "SPI2_RXD",
++			  "SPI2_TXD";
++};
++
+ &pinctrl {
+ 	backlight {
+ 		bl_pwr_en: bl_pwr_en {
+-- 
+2.21.0.1020.gf2820cf01a-goog
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
