@@ -2,87 +2,108 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D42A624B51
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 11:18:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B29C524B55
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 11:19:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Q9REveEhY46RevbHVT3r2+R8pyvQbuCivG3rWD+E2hQ=; b=aZ39l4HslxW1/Mel3csr8DHFX
-	1b+2Ia2P/2L0/jF5TUnSHNVLC4kTRhkBUUZ7Bv9D14oWLLLW1o7em6m0kABbDX3PnIIdzLjSBfJqb
-	HlPPXd2rbIYVXgqHtkif0asLisBPAV7m/2Emg9x0TkL1FFJtjv7aqkeouHas9R5z0fEDGsbGjL2B8
-	z8RIBDqvgmWr1RBKpcmNLXPDS97a0xbwbCs80aO139MOui6i4NKQt0+FkICmqbiH3kY+jTtd4KdHW
-	76EdNMb9LJNPkAyvO+iVz+nVSlxa4CRAZmRdQA5KY943ZTdyOZuRTXLzLVlmGFvz7sh0AuFPdl/Hv
-	c2wp1Wqdw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=t/RtxpE6ZZH8Z20PxcDlt1zhO16NKVh/ot7oEO49hy8=; b=utKxUH5UAuRSg6
+	xzMc9z+kdkc8yXBvkk9s060XcjQVoS9brr8F9C/vs/t76zqY0tp0IsncoPcYMrJtsuYCCrN0I28xD
+	Pwyy3+JChaCyx4xGjF5rPcLTx5EXDlI8mw+eqb7C2urhDknt7f5hKjqQHHv/GwLXY59Nwx21tTGRa
+	SmRqyk+76I9MYP/JDUYbyuXjdyDnkbusJdpxKOnu8u0Ptxp7m58LcDkRiqUYRUMUlqmesq/MVpMS5
+	SJLovtE+TCoMKC+fCK4tEkILBJMVmdj4Xyvo2c0kkkTOIV3dNRU1Uk8u0tcQhN5PMljieEfbMDsMf
+	5eQzrUfyrPXSRaNvnb/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT0uL-0005rE-9B; Tue, 21 May 2019 09:18:05 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1hT0vC-0006Uq-Pv; Tue, 21 May 2019 09:18:58 +0000
+Received: from mail-eopbgr70072.outbound.protection.outlook.com ([40.107.7.72]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT0uC-0005qk-D4
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 09:17:58 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x4L96iJ0014021; Tue, 21 May 2019 11:17:51 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=4RTuKGHCLsvh6APcX9ZvfmHkgHj7OwihyknGBu1Dl3k=;
- b=zu0FNCpQ3k5YZ+Hsbbr3+WOhETEEI/gIOo8/DQQg6XhVOH+wQN5fmQxRdPoCRMQl5YHP
- BXFwqOgCQeT/O3uvkr/R1btmto74WK/L9rN8UnYKQwZC6LfYnCeswjgmf0wBmOOQ72ir
- HTGEDPHbl3+VDiPOrxUgouddIuxMgctnPwiTu5l9Ssm+sdJOvMDGmYaWJCNFq/8AP21Y
- NRJfA5saQo7a+yG5I5A4LjLOrqk74BBnHvNZfK2ealDkR4PahOAymzNzuVwKd1LkSaDJ
- T881Rf3ep8OKCnHgANMCr9YhMkR7PBygemChfoWMJoXEYrd+Rz/tnM6pM3JXW+ZSRigb VQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2sj8xg8bpr-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Tue, 21 May 2019 11:17:51 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 4ECC531;
- Tue, 21 May 2019 09:17:50 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 1DB7C24EC;
- Tue, 21 May 2019 09:17:50 +0000 (GMT)
-Received: from [10.48.0.237] (10.75.127.44) by SFHDAG6NODE1.st.com
- (10.75.127.16) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 21 May
- 2019 11:17:49 +0200
-Subject: Re: [PATCH V2 0/5] mmc: mmci: add busy detect for stm32 sdmmc variant
-To: Ulf Hansson <ulf.hansson@linaro.org>
-References: <1556264798-18540-1-git-send-email-ludovic.Barre@st.com>
- <CAPDyKFqbn=UcbwoH_z+yjrjvHQZaMtmsD=n0yrBV7DAK5VRJEQ@mail.gmail.com>
- <74b91eb4-e5a3-38b2-f732-29cdd058eb6a@st.com>
- <CAPDyKFoURwnai1hbCbO+Uh6+hc7A4dYHjWkqeFAEgMQET-BzwA@mail.gmail.com>
- <e884b614-14d4-1cae-5b77-c6aacabb764a@st.com>
- <CAPDyKFo4Y9PF_QL47rO2c_szUHahPMuzHV=j_SL9dxvAzst17w@mail.gmail.com>
-From: Ludovic BARRE <ludovic.barre@st.com>
-Message-ID: <7e15c8ec-f851-b0d3-a3ce-dfad2a398e78@st.com>
-Date: Tue, 21 May 2019 11:17:48 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <CAPDyKFo4Y9PF_QL47rO2c_szUHahPMuzHV=j_SL9dxvAzst17w@mail.gmail.com>
+ id 1hT0v2-0006IV-31
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 09:18:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=YSzlrVus6h4wgDGfi7rOg2cKnK8z3Gki/jd2MrlQMb4=;
+ b=gZYCgIsmPgoF3ROdvs/CawdERYiy92dvA8TC2dU8aHz/1T/thRFlMGDkgYy8AjxhnhElYVJj04ouduWHuPTav1tbeeG0V0JBHv1+ro/go4KYb595Cp/LtzCYC9+2nztWBrr74zyNfqPu/Dzx3gxUQA9zPvZb7rpZB0Gt79+I5cU=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3836.eurprd04.prod.outlook.com (52.134.71.139) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1900.16; Tue, 21 May 2019 09:18:43 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::5835:e874:bd94:fec]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::5835:e874:bd94:fec%5]) with mapi id 15.20.1900.020; Tue, 21 May 2019
+ 09:18:43 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
+ <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>, Leonard Crestez
+ <leonard.crestez@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
+ "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: [PATCH 1/2] soc: imx: soc-imx8: Avoid unnecessary of_node_put() in
+ error handling
+Thread-Topic: [PATCH 1/2] soc: imx: soc-imx8: Avoid unnecessary of_node_put()
+ in error handling
+Thread-Index: AQHVD7YvdNtmZ2uz6UeyYdwfC+FzEA==
+Date: Tue, 21 May 2019 09:18:43 +0000
+Message-ID: <1558430013-18346-1-git-send-email-Anson.Huang@nxp.com>
+Accept-Language: en-US
 Content-Language: en-US
-X-Originating-IP: [10.75.127.44]
-X-ClientProxiedBy: SFHDAG3NODE1.st.com (10.75.127.7) To SFHDAG6NODE1.st.com
- (10.75.127.16)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-21_01:, , signatures=0
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.7.4
+x-clientproxiedby: HK2PR0401CA0005.apcprd04.prod.outlook.com
+ (2603:1096:202:2::15) To DB3PR0402MB3916.eurprd04.prod.outlook.com
+ (2603:10a6:8:10::18)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 92db3c01-4687-4cb2-5f4b-08d6ddcd517e
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:DB3PR0402MB3836; 
+x-ms-traffictypediagnostic: DB3PR0402MB3836:
+x-microsoft-antispam-prvs: <DB3PR0402MB38360E22BA9C55A00701AFB9F5070@DB3PR0402MB3836.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3383;
+x-forefront-prvs: 0044C17179
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(39860400002)(366004)(376002)(136003)(346002)(396003)(199004)(189003)(4326008)(486006)(256004)(14454004)(26005)(81156014)(8676002)(81166006)(8936002)(6486002)(2201001)(2501003)(6436002)(6512007)(7736002)(86362001)(53936002)(3846002)(36756003)(25786009)(6116002)(71200400001)(71190400001)(4744005)(5660300002)(66066001)(64756008)(66446008)(102836004)(50226002)(52116002)(99286004)(2616005)(66556008)(66476007)(73956011)(66946007)(186003)(476003)(386003)(6506007)(478600001)(2906002)(305945005)(316002)(68736007)(110136005);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3836;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: OhrtVyWcq7jHAm/gdy2b/sT2EbBOqcTHgH1rK2xcPl/eEjGFcNKyAA2LO4ChIj+23ryuYzWlKZiW1Pr29RGjwefSqb7iwimlm9PPH7XKXkA5k+CChNEnb7Dnq+KCgD07QcO1kn9vjyo77Sb67cZpJKvLdoymFVPNdFBtZooHAvgo8hRUpdjX9YSbn1UFrigx/EYIEkdIKc3O9FnrOQaowZbk6mBj7eCM7BGkwe0oESVjUtBWY0LmLev6/UaOolrvYtzBi0d4+NYtfiTN+gmMQuFYAEQllFCxRzD5Twe2LO78Hnwt8k05P2/1VLuuxPJKJ3q6peilEgLCduG6G1xXxJqoHPARCIOmZQmsW3N4s4ht8HNj1FkwVSGf1bo3uqEyAswgWsMP7Ko2lzTeKY1QOiQeghZPR0y/+jcFW1pjggw=
+Content-ID: <CF5C1AA984D9574AB2DA00BC5C569C7D@eurprd04.prod.outlook.com>
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 92db3c01-4687-4cb2-5f4b-08d6ddcd517e
+X-MS-Exchange-CrossTenant-originalarrivaltime: 21 May 2019 09:18:43.1360 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3836
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_021756_726514_69967C9E 
-X-CRM114-Status: GOOD (  20.84  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190521_021848_360925_FC5145A3 
+X-CRM114-Status: GOOD (  12.25  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.7.72 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -101,123 +122,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: dl-linux-imx <linux-imx@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+of_node_put() is called after of_match_node() successfully called,
+then in the following error handling, of_node_put() is called again
+which is unnecessary, this patch adjusts the location of of_node_put()
+to avoid such scenario.
 
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+ drivers/soc/imx/soc-imx8.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-On 5/21/19 9:56 AM, Ulf Hansson wrote:
-> On Tue, 21 May 2019 at 09:38, Ludovic BARRE <ludovic.barre@st.com> wrote:
->>
->> hi Ulf
->>
->> Just a "gentleman ping" about the rest of series.
->> "mmc: mmci: add busy detect for stm32 sdmmc variant"
-> 
-> Thanks!
-> 
-> It's been a busy period and I am currently traveling. My plan is to
-> look at in detail beginning of next week when get back home. I hope
-> that's okay.
+diff --git a/drivers/soc/imx/soc-imx8.c b/drivers/soc/imx/soc-imx8.c
+index b1bd8e2..944add2 100644
+--- a/drivers/soc/imx/soc-imx8.c
++++ b/drivers/soc/imx/soc-imx8.c
+@@ -86,8 +86,6 @@ static int __init imx8_soc_init(void)
+ 	if (!id)
+ 		goto free_soc;
+ 
+-	of_node_put(root);
+-
+ 	data = id->data;
+ 	if (data) {
+ 		soc_dev_attr->soc_id = data->name;
+@@ -106,6 +104,8 @@ static int __init imx8_soc_init(void)
+ 	if (IS_ENABLED(CONFIG_ARM_IMX_CPUFREQ_DT))
+ 		platform_device_register_simple("imx-cpufreq-dt", -1, NULL, 0);
+ 
++	of_node_put(root);
++
+ 	return 0;
+ 
+ free_rev:
+-- 
+2.7.4
 
-yes, I understand, it's just to not forget me :-)
-
-> 
-> Kind regards
-> Uffe
-> 
->>
->> Regards
->> Ludo
->>
->> On 5/3/19 3:29 PM, Ulf Hansson wrote:
->>> On Tue, 30 Apr 2019 at 14:06, Ludovic BARRE <ludovic.barre@st.com> wrote:
->>>>
->>>>
->>>>
->>>> On 4/30/19 1:13 PM, Ulf Hansson wrote:
->>>>> On Fri, 26 Apr 2019 at 09:46, Ludovic Barre <ludovic.Barre@st.com> wrote:
->>>>>>
->>>>>> From: Ludovic Barre <ludovic.barre@st.com>
->>>>>>
->>>>>> This patch series adds busy detect for stm32 sdmmc variant.
->>>>>> Some adaptations are required:
->>>>>> -Avoid to check and poll busy status when is not expected.
->>>>>> -Clear busy status bit if busy_detect_flag and busy_detect_mask are
->>>>>>     different.
->>>>>> -Add hardware busy timeout with MMCIDATATIMER register.
->>>>>>
->>>>>> V2:
->>>>>> -mmci_cmd_irq cleanup in separate patch.
->>>>>> -simplify the busy_detect_flag exclude
->>>>>> -replace sdmmc specific comment in
->>>>>> "mmc: mmci: avoid fake busy polling in mmci_irq"
->>>>>> to focus on common behavior
->>>>>>
->>>>>> Ludovic Barre (5):
->>>>>>      mmc: mmci: cleanup mmci_cmd_irq for busy detect feature
->>>>>>      mmc: mmci: avoid fake busy polling in mmci_irq
->>>>>>      mmc: mmci: fix clear of busy detect status
->>>>>>      mmc: mmci: add hardware busy timeout feature
->>>>>>      mmc: mmci: add busy detect for stm32 sdmmc variant
->>>>>>
->>>>>>     drivers/mmc/host/mmci.c | 61 ++++++++++++++++++++++++++++++++++++++-----------
->>>>>>     drivers/mmc/host/mmci.h |  3 +++
->>>>>>     2 files changed, 51 insertions(+), 13 deletions(-)
->>>>>>
->>>>>> --
->>>>>> 2.7.4
->>>>>>
->>>>>
->>>>> Ludovic, just wanted to let you know that I am reviewing and testing
->>>>> this series.
->>>>>
->>>>> However, while running some tests on Ux500 for validating the busy
->>>>> detection code, even without your series applied, I encounter some odd
->>>>> behaviors. I am looking into the problem to understand better and will
->>>>> let you know as soon as I have some more data to share.
->>>>
->>>> Oops, don't hesitate to share your status, if I could help.
->>>
->>> Thanks! Good and bad news here, then.
->>>
->>> I now understand what is going on - and there is certainly room for
->>> improvements here, but more importantly the actual mmci busy detection
->>> works as expected.
->>>
->>> When it comes to improvements, the main issue I have found is how we
->>> treat DATA WRITES. In many cases we simply don't use the HW busy
->>> detection at all, but instead rely on the mmc core to send CMD13 in a
->>> loop to poll. Well, then if the polling would have consisted of a
->>> couple of CMD13s that wouldn't be an issue, but my observations is
->>> rather that the numbers of CMD13 sent to poll is in the range or
->>> hundreds/thousands - per each WRITE request!
->>>
->>> I am going to send a patch (or two) that improves the behavior. It
->>> might even involve changing parts in core layer, not sure how the end
->>> result will look like yet.
->>>
->>> In any case, I have applied patch 1 and patch2 for next, as the tests
->>> turned out well at my side. I also took the liberty of updating some
->>> of the comments/changelogs, please have look and tell if there is
->>> something you want to change.
->>>
->>> I will continue with the rest of series next week.
->>>
->>> Kind regards
->>> Uffe
->>>
 
 _______________________________________________
 linux-arm-kernel mailing list
