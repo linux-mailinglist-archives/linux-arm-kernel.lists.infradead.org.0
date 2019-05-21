@@ -2,84 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C63B32562D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 18:54:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0CDD25666
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 19:14:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r/XnZKAKj1Bv3UEggbqmbL+KjGbuyEw5iYHWMHLmwPY=; b=cSptKjGdp3YDfE
-	z95os9RC1fKeQV12Ucs5b9gSAuMN+wwaPuUM03JfU099Y8O9PXly1BQjI0P+w4P+YNPbn35VnodxM
-	2UHT5ruLuWvtBsOvuDIJCbKJNF2BgGeIU7Gi1WQAbMokFrLomQalVdBRgu408UCATdSDtPURKUJJi
-	CjdMSTQ5NOPWVTLDusZ7+Tpzyb2ej8QUW6IyASWiREULVYSyU5fpfx5eZXUB6eLWkttaU8oYODCNo
-	y2l5KJhEmS+LAEKCDFs8npy2y7fhdo6YTZuzqLY+oDYBOGyFZNd6khBvy1vl+OO48G6wKU50m0vtV
-	7s/9kugC4JcZv/zLW5CQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=8fkFtWvDS0fLH9kTjnYtuI/v4fQSaqJjhdYob6maT1U=; b=VWarPmANAGTMZneGnq2O0WRgB
+	W+lDePrX/s+NCHZOzXpedFegNvoTx11P7x2+hPoYh40fNd67IS/AvX3YfWgzgGlQHUCcvflCXPrSS
+	LZLCywOM+oDzqhQv2MbhfhtPiFT/GfyAyby+jtwB47xQpEut6V6xNi+z3b4w9O5M6tVr6vKR6pD/a
+	VrWaTyPiFwJWAy17seuUc5V5b7T2R6lwFCc0dIW5kOdxGCDSjpE4gY/QMzuKH4hbAJzQi3mMbbmSP
+	Txd2RkAEr+Uv9z5kNKFxaIiD4K3MgxsrhtkVdcoQRVEEeM/Hoeu6oLeY1+Ct+2NJ4qHmtWa1Tc8WK
+	A9ArnskNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT81a-00011F-A9; Tue, 21 May 2019 16:54:02 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hT8LD-0006pr-2R; Tue, 21 May 2019 17:14:19 +0000
+Received: from hqemgate16.nvidia.com ([216.228.121.65])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT81S-00010V-Sx
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 16:53:56 +0000
-Received: by mail-wr1-x441.google.com with SMTP id r7so19395651wrr.13
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 May 2019 09:53:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=brauner.io; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=RjB7EuozO9SbpuWjY+CIL5jhjOJH/kZTishJT3qd1so=;
- b=DVrrdj/uSypBpQeJ7w1A/QlA+FyxTxrTjqgIjCbG0reYil1YwuJTymbPcq5VHJqvVz
- +ycMes6cu/p9bim38A9JdNpiuhKR9vQv7DKRlOjTKaH0aqGgcMNm9LyZRCsl86xL9T/2
- v52uCPRsGaEw7QZ8JAwWz7Kq/Yj8TlXF4sm4C/8FN/Sr2m4ymsOhSa0mlT/aKrxO9iLl
- j1mrN/7F1XvRVqFUi9infQrf5nFqVWvyb3hSIPgiuXrpPOdfJR8Np8CmTFbMGebX0RJF
- ggWVReABajaL93O9n4VuSlBrHfB9XuQYf2S00X4VsMQ9qcMjAtgT2YCUTAII0Ql7QzsL
- 6EMg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=RjB7EuozO9SbpuWjY+CIL5jhjOJH/kZTishJT3qd1so=;
- b=M7qM/KaOoj5TRSIBoUVGgNvjIaAn7cE2roPlivakz/Y9hKdsK+B2jGknWVn/vu1Dz8
- x3bHQTxT3BU3pSrU8IpYgMq4bcRtsB/WnpMH/f1rtY1KiSsQV8G/GxFZufkNk9w2j6Iq
- j0kOeZLBbAVjvshco/Af1ZHjjT69rQF43oydp4IF0qRGYFkZM+7t9ARkAErnSaPqvR8v
- rATWrb8HcmGKlIf6AegcpdcToCqVkvaLBf7VpWvktjioHDRkWSedcYU3NEnxcOkV3H2j
- 0wxKPEMinJ43WvwzwzGiKSTVd6+0idyLxdcuRYJ1CJEEIz9/dTFyMD4ufbM4ndpXsZGx
- adAg==
-X-Gm-Message-State: APjAAAWFmrtO2NWp2Zvd9l/Pn/fU+Lbl4eNNkoxo6cPveeUjb5wN9Xnk
- zaDjxUSE51rQGBxkLNU1bhvjew==
-X-Google-Smtp-Source: APXvYqzvE8cesTA8vFkWKOJDTA1w0C5Fkm0j+9nhaMupM7B34j2tZxI4AHBlMWgH0cSYuDDVbKye1A==
-X-Received: by 2002:a5d:4d46:: with SMTP id a6mr13850707wru.142.1558457632993; 
- Tue, 21 May 2019 09:53:52 -0700 (PDT)
-Received: from brauner.io ([212.91.227.56])
- by smtp.gmail.com with ESMTPSA id t194sm6090599wmt.3.2019.05.21.09.53.51
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 21 May 2019 09:53:52 -0700 (PDT)
-Date: Tue, 21 May 2019 18:53:50 +0200
-From: Christian Brauner <christian@brauner.io>
-To: Al Viro <viro@zeniv.linux.org.uk>
-Subject: Re: [PATCH 1/2] open: add close_range()
-Message-ID: <20190521165349.lduphxylwnfgael4@brauner.io>
-References: <20190521113448.20654-1-christian@brauner.io>
- <20190521150006.GJ17978@ZenIV.linux.org.uk>
+ id 1hT8L6-0006pY-Lf
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 17:14:14 +0000
+Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5ce431e40002>; Tue, 21 May 2019 10:14:12 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate102.nvidia.com (PGP Universal service);
+ Tue, 21 May 2019 10:14:12 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate102.nvidia.com on Tue, 21 May 2019 10:14:12 -0700
+Received: from [10.25.72.115] (172.20.13.39) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 21 May
+ 2019 17:14:06 +0000
+Subject: Re: [PATCH V7 05/15] PCI: dwc: Add ext config space capability search
+ API
+To: Thierry Reding <thierry.reding@gmail.com>
+References: <20190517123846.3708-1-vidyas@nvidia.com>
+ <20190517123846.3708-6-vidyas@nvidia.com> <20190521103629.GE29166@ulmo>
+X-Nvconfidentiality: public
+From: Vidya Sagar <vidyas@nvidia.com>
+Message-ID: <d70ac7e8-d04e-5195-3808-fca520ad23f6@nvidia.com>
+Date: Tue, 21 May 2019 22:44:04 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190521150006.GJ17978@ZenIV.linux.org.uk>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <20190521103629.GE29166@ulmo>
+X-Originating-IP: [172.20.13.39]
+X-ClientProxiedBy: HQMAIL103.nvidia.com (172.20.187.11) To
+ HQMAIL107.nvidia.com (172.20.187.13)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1558458852; bh=BcyBWuXsiZPLocS6gKpgICDF6NfMYJFTJoNUnlHyJbA=;
+ h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
+ Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
+ X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=At4Xdpw0Zrn5NsJ2CRKYABUSOeeEfKMEt9N1cZC7IFh4aB1Xzp5/eiDTcuV0z5mjP
+ +Rbrzd8Fajyae9wCzljeqfSzm5JLySCJAff9YBdPaLgv2ZH/aThQlJ/9cnr+rFQnbi
+ zNiOaCci50OPFXQ1eukzFALbhyGokGYgBpkANGMkwOuYTK3SpNSszTSDZWWI4ri6oX
+ +iCI/vHaoU+/DiFzRcflgqoK+oD4Fnik1RKZzbqptYuA+Keb4XnZ22V/s9bkkTGs8k
+ 4TyGgUsgh/YnX95Pd9LfGJKmgUAfAZnW0LaisxnZ5WbcGLvIN0Tf0wMI53UXAIPeSK
+ McpPwR6MFnj9Q==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_095354_948411_EB997757 
-X-CRM114-Status: GOOD (  36.76  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190521_101412_723550_0BB81C51 
+X-CRM114-Status: GOOD (  16.30  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -87,6 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -98,207 +94,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org, oleg@redhat.com,
- dhowells@redhat.com, linux-kselftest@vger.kernel.org,
- sparclinux@vger.kernel.org, shuah@kernel.org, linux-arch@vger.kernel.org,
- linux-s390@vger.kernel.org, miklos@szeredi.hu, x86@kernel.org,
- torvalds@linux-foundation.org, linux-mips@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, tkjos@android.com, arnd@arndb.de,
- jannh@google.com, linux-m68k@lists.linux-m68k.org, tglx@linutronix.de,
- ldv@altlinux.org, linux-arm-kernel@lists.infradead.org, fweimer@redhat.com,
- linux-parisc@vger.kernel.org, linux-api@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-alpha@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, linuxppc-dev@lists.ozlabs.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ mperttunen@nvidia.com, mmaddireddy@nvidia.com, linux-pci@vger.kernel.org,
+ catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ kthota@nvidia.com, kishon@ti.com, linux-tegra@vger.kernel.org,
+ robh+dt@kernel.org, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
+ bhelgaas@google.com, jonathanh@nvidia.com,
+ linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 21, 2019 at 04:00:06PM +0100, Al Viro wrote:
-> On Tue, May 21, 2019 at 01:34:47PM +0200, Christian Brauner wrote:
+On 5/21/2019 4:06 PM, Thierry Reding wrote:
+> On Fri, May 17, 2019 at 06:08:36PM +0530, Vidya Sagar wrote:
+>> Add extended configuration space capability search API using struct dw_pcie *
+>> pointer
+>>
+>> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
+>> Acked-by: Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+>> ---
+>> Changes since [v6]:
+>> * None
+>>
+>> Changes since [v5]:
+>> * None
+>>
+>> Changes since [v4]:
+>> * None
+>>
+>> Changes since [v3]:
+>> * None
+>>
+>> Changes since [v2]:
+>> * None
+>>
+>> Changes since [v1]:
+>> * This is a new patch in v2 series
+>>
+>>   drivers/pci/controller/dwc/pcie-designware.c | 41 ++++++++++++++++++++
+>>   drivers/pci/controller/dwc/pcie-designware.h |  1 +
+>>   2 files changed, 42 insertions(+)
+>>
+>> diff --git a/drivers/pci/controller/dwc/pcie-designware.c b/drivers/pci/controller/dwc/pcie-designware.c
+>> index 8f53ce63d17e..3b7d50888caa 100644
+>> --- a/drivers/pci/controller/dwc/pcie-designware.c
+>> +++ b/drivers/pci/controller/dwc/pcie-designware.c
+>> @@ -54,6 +54,47 @@ u8 dw_pcie_find_capability(struct dw_pcie *pci, u8 cap)
+>>   }
+>>   EXPORT_SYMBOL_GPL(dw_pcie_find_capability);
+>>   
+>> +static int dw_pcie_find_next_ext_capability(struct dw_pcie *pci, int start,
+>> +					    int cap)
 > 
-> > This adds the close_range() syscall. It allows to efficiently close a range
-> > of file descriptors up to all file descriptors of a calling task.
-> > 
-> > The syscall came up in a recent discussion around the new mount API and
-> > making new file descriptor types cloexec by default. During this
-> > discussion, Al suggested the close_range() syscall (cf. [1]). Note, a
-> > syscall in this manner has been requested by various people over time.
-> > 
-> > First, it helps to close all file descriptors of an exec()ing task. This
-> > can be done safely via (quoting Al's example from [1] verbatim):
-> > 
-> >         /* that exec is sensitive */
-> >         unshare(CLONE_FILES);
-> >         /* we don't want anything past stderr here */
-> >         close_range(3, ~0U);
-> >         execve(....);
-> > 
-> > The code snippet above is one way of working around the problem that file
-> > descriptors are not cloexec by default. This is aggravated by the fact that
-> > we can't just switch them over without massively regressing userspace. For
-> > a whole class of programs having an in-kernel method of closing all file
-> > descriptors is very helpful (e.g. demons, service managers, programming
-> > language standard libraries, container managers etc.).
-> > (Please note, unshare(CLONE_FILES) should only be needed if the calling
-> >  task is multi-threaded and shares the file descriptor table with another
-> >  thread in which case two threads could race with one thread allocating
-> >  file descriptors and the other one closing them via close_range(). For the
-> >  general case close_range() before the execve() is sufficient.)
-> > 
-> > Second, it allows userspace to avoid implementing closing all file
-> > descriptors by parsing through /proc/<pid>/fd/* and calling close() on each
-> > file descriptor. From looking at various large(ish) userspace code bases
-> > this or similar patterns are very common in:
-> > - service managers (cf. [4])
-> > - libcs (cf. [6])
-> > - container runtimes (cf. [5])
-> > - programming language runtimes/standard libraries
-> >   - Python (cf. [2])
-> >   - Rust (cf. [7], [8])
-> > As Dmitry pointed out there's even a long-standing glibc bug about missing
-> > kernel support for this task (cf. [3]).
-> > In addition, the syscall will also work for tasks that do not have procfs
-> > mounted and on kernels that do not have procfs support compiled in. In such
-> > situations the only way to make sure that all file descriptors are closed
-> > is to call close() on each file descriptor up to UINT_MAX or RLIMIT_NOFILE,
-> > OPEN_MAX trickery (cf. comment [8] on Rust).
-> > 
-> > The performance is striking. For good measure, comparing the following
-> > simple close_all_fds() userspace implementation that is essentially just
-> > glibc's version in [6]:
-> > 
-> > static int close_all_fds(void)
-> > {
-> >         DIR *dir;
-> >         struct dirent *direntp;
-> > 
-> >         dir = opendir("/proc/self/fd");
-> >         if (!dir)
-> >                 return -1;
-> > 
-> >         while ((direntp = readdir(dir))) {
-> >                 int fd;
-> >                 if (strcmp(direntp->d_name, ".") == 0)
-> >                         continue;
-> >                 if (strcmp(direntp->d_name, "..") == 0)
-> >                         continue;
-> >                 fd = atoi(direntp->d_name);
-> >                 if (fd == 0 || fd == 1 || fd == 2)
-> >                         continue;
-> >                 close(fd);
-> >         }
-> > 
-> >         closedir(dir); /* cannot fail */
-> >         return 0;
-> > }
-> > 
-> > to close_range() yields:
-> > 1. closing 4 open files:
-> >    - close_all_fds(): ~280 us
-> >    - close_range():    ~24 us
-> > 
-> > 2. closing 1000 open files:
-> >    - close_all_fds(): ~5000 us
-> >    - close_range():   ~800 us
-> > 
-> > close_range() is designed to allow for some flexibility. Specifically, it
-> > does not simply always close all open file descriptors of a task. Instead,
-> > callers can specify an upper bound.
-> > This is e.g. useful for scenarios where specific file descriptors are
-> > created with well-known numbers that are supposed to be excluded from
-> > getting closed.
-> > For extra paranoia close_range() comes with a flags argument. This can e.g.
-> > be used to implement extension. Once can imagine userspace wanting to stop
-> > at the first error instead of ignoring errors under certain circumstances.
-> > There might be other valid ideas in the future. In any case, a flag
-> > argument doesn't hurt and keeps us on the safe side.
-> > 
-> > >From an implementation side this is kept rather dumb. It saw some input
-> > from David and Jann but all nonsense is obviously my own!
-> > - Errors to close file descriptors are currently ignored. (Could be changed
-> >   by setting a flag in the future if needed.)
-> > - __close_range() is a rather simplistic wrapper around __close_fd().
-> >   My reasoning behind this is based on the nature of how __close_fd() needs
-> >   to release an fd. But maybe I misunderstood specifics:
-> >   We take the files_lock and rcu-dereference the fdtable of the calling
-> >   task, we find the entry in the fdtable, get the file and need to release
-> >   files_lock before calling filp_close().
-> >   In the meantime the fdtable might have been altered so we can't just
-> >   retake the spinlock and keep the old rcu-reference of the fdtable
-> >   around. Instead we need to grab a fresh reference to the fdtable.
-> >   If my reasoning is correct then there's really no point in fancyfying
-> >   __close_range(): We just need to rcu-dereference the fdtable of the
-> >   calling task once to cap the max_fd value correctly and then go on
-> >   calling __close_fd() in a loop.
+> Perhaps make this more consistent with the existing regular
+> configuration space capability search API? Something like this perhaps:
 > 
-> > +/**
-> > + * __close_range() - Close all file descriptors in a given range.
-> > + *
-> > + * @fd:     starting file descriptor to close
-> > + * @max_fd: last file descriptor to close
-> > + *
-> > + * This closes a range of file descriptors. All file descriptors
-> > + * from @fd up to and including @max_fd are closed.
-> > + */
-> > +int __close_range(struct files_struct *files, unsigned fd, unsigned max_fd)
-> > +{
-> > +	unsigned int cur_max;
-> > +
-> > +	if (fd > max_fd)
-> > +		return -EINVAL;
-> > +
-> > +	rcu_read_lock();
-> > +	cur_max = files_fdtable(files)->max_fds;
-> > +	rcu_read_unlock();
-> > +
-> > +	/* cap to last valid index into fdtable */
-> > +	if (max_fd >= cur_max)
-> > +		max_fd = cur_max - 1;
-> > +
-> > +	while (fd <= max_fd)
-> > +		__close_fd(files, fd++);
-> > +
-> > +	return 0;
-> > +}
+> 	static u16 dw_pcie_find_next_ext_capability(struct dw_pcie *pci,
+> 						    u16 start, u8 cap)
 > 
-> Umm...  That's going to be very painful if you dup2() something to MAX_INT and
-> then run that; roughly 2G iterations of bouncing ->file_lock up and down,
-> without anything that would yield CPU in process.
-> 
-> If anything, I would suggest something like
-> 
-> 	fd = *start_fd;
-> 	grab the lock
->         fdt = files_fdtable(files);
-> more:
-> 	look for the next eviction candidate in ->open_fds, starting at fd
-> 	if there's none up to max_fd
-> 		drop the lock
-> 		return NULL
-> 	*start_fd = fd + 1;
-> 	if the fscker is really opened and not just reserved
-> 		rcu_assign_pointer(fdt->fd[fd], NULL);
-> 		__put_unused_fd(files, fd);
-> 		drop the lock
-> 		return the file we'd got
-> 	if (unlikely(need_resched()))
-> 		drop lock
-> 		cond_resched();
-> 		grab lock
-> 		fdt = files_fdtable(files);
-> 	goto more;
-> 
-> with the main loop being basically
-> 	while ((file = pick_next(files, &start_fd, max_fd)) != NULL)
-> 		filp_close(file, files);
+> ? I guess your variant above is consistent with the existing generic
+> capability search API, so another alternative might be to make the old
+> dw_pcie_find_capability() API consistent with everything else. It's
+> confusing if we keep having to jump between the two variants.
+Ok. I'll change it to the format being followed in this file i.e. using u16 and u8
 
-That's obviously much more clever than what I had.
-I honestly have never thought about using open_fds before this. Seemed
-extremely localized to file.c
-Thanks for the pointers!
+> 
+> Thierry
+> 
+>> +{
+>> +	u32 header;
+>> +	int ttl;
+>> +	int pos = PCI_CFG_SPACE_SIZE;
+>> +
+>> +	/* minimum 8 bytes per capability */
+>> +	ttl = (PCI_CFG_SPACE_EXP_SIZE - PCI_CFG_SPACE_SIZE) / 8;
+>> +
+>> +	if (start)
+>> +		pos = start;
+>> +
+>> +	header = dw_pcie_readl_dbi(pci, pos);
+>> +	/*
+>> +	 * If we have no capabilities, this is indicated by cap ID,
+>> +	 * cap version and next pointer all being 0.
+>> +	 */
+>> +	if (header == 0)
+>> +		return 0;
+>> +
+>> +	while (ttl-- > 0) {
+>> +		if (PCI_EXT_CAP_ID(header) == cap && pos != start)
+>> +			return pos;
+>> +
+>> +		pos = PCI_EXT_CAP_NEXT(header);
+>> +		if (pos < PCI_CFG_SPACE_SIZE)
+>> +			break;
+>> +
+>> +		header = dw_pcie_readl_dbi(pci, pos);
+>> +	}
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +int dw_pcie_find_ext_capability(struct dw_pcie *pci, int cap)
+>> +{
+>> +	return dw_pcie_find_next_ext_capability(pci, 0, cap);
+>> +}
+>> +EXPORT_SYMBOL_GPL(dw_pcie_find_ext_capability);
+>> +
+>>   int dw_pcie_read(void __iomem *addr, int size, u32 *val)
+>>   {
+>>   	if (!IS_ALIGNED((uintptr_t)addr, size)) {
+>> diff --git a/drivers/pci/controller/dwc/pcie-designware.h b/drivers/pci/controller/dwc/pcie-designware.h
+>> index 6cb978132469..fff284098117 100644
+>> --- a/drivers/pci/controller/dwc/pcie-designware.h
+>> +++ b/drivers/pci/controller/dwc/pcie-designware.h
+>> @@ -252,6 +252,7 @@ struct dw_pcie {
+>>   		container_of((endpoint), struct dw_pcie, ep)
+>>   
+>>   u8 dw_pcie_find_capability(struct dw_pcie *pci, u8 cap);
+>> +int dw_pcie_find_ext_capability(struct dw_pcie *pci, int cap);
+>>   
+>>   int dw_pcie_read(void __iomem *addr, int size, u32 *val);
+>>   int dw_pcie_write(void __iomem *addr, int size, u32 val);
+>> -- 
+>> 2.17.1
+>>
 
-Christian
 
 _______________________________________________
 linux-arm-kernel mailing list
