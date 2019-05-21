@@ -2,60 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0429A2492A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 09:41:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8AEA2492D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 09:43:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=VbX0zzxU5VUtMHbKCX27RAlFDNXuMhocD/+Qb3ApL2E=; b=QgzQkmfjckEiRS4DqPkNU/kMp
-	qn2c1VRs5Gvrjn65bYqY9fy5SNcCszhvKxUBwPfNcRg5A6vWPaMJpvCoqLmPKdwhfXG6MsNMAf4xw
-	nK0K2oKsI9mmk1oxy0vzr8QB5x2EO7h4I2WTVAz5lUPI4eOn8FgtEHvI5r6LtaeUAuV5ax1/0E7ie
-	tCmbGJkYGJS4qVShwIJwHxjR8rkyWiIxNgmokWt0swwN/cY6+T7h6+6DQ7eXQ/PrVJLDIBYBnoQpA
-	3CFHx1uiuKYcC5slDjPkvPhh5/SXi7JoyqikRg4S/hTbeTO83/1HP86DrqNV9Rg4tjZ0PyJlD1wV3
-	tPWyNAgcQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kZhWM3kT9osX+U4K1YojEc3bS9FmzsX6HDqLIWeqLAg=; b=KKhRgbS/Q6lVet
+	3VVgEqi08BrlzWuYwdZ4lrgIucTFdzG+teqMWtTFkTrQbzCn2+DYQtG80k29lM/DNjSX+QxXOaNIo
+	JXXKnG3P4K4PCHxTnCDn2c1mAGdDij0kV/n+6sVAAqqRBpO/g5cQ9or4Hr62c7fb/XvRwUPy8Lskz
+	yBJVm8v4FKMounwVk9F+EkUo4YvF7p8nQHXgBffH0N7I+HXdf6x5UtPwl1K9AjgL1YLXeNo49y2cu
+	uBK0bJEyfhlyTPzj0W3U/2D4SIUQBBGV6aaS9DtI8EQ1mnZExipKta/G5IS9UB2Jr/HcFjmEFNytA
+	y3K1poSF9JBxwyNiW8eA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSzPB-0003Fb-Bw; Tue, 21 May 2019 07:41:49 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1hSzQe-0003dR-8c; Tue, 21 May 2019 07:43:20 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSzP2-0003Ee-F2
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 07:41:42 +0000
-X-Originating-IP: 90.88.22.185
-Received: from localhost (aaubervilliers-681-1-80-185.w90-88.abo.wanadoo.fr
- [90.88.22.185]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 329F5240014;
- Tue, 21 May 2019 07:41:22 +0000 (UTC)
-Date: Tue, 21 May 2019 09:41:22 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Frank Lee <tiny.windzz@gmail.com>
-Subject: Re: [PATCH 2/3] thermal: sun50i: add thermal driver for h6
-Message-ID: <20190521074122.syyctwvfsorl45dv@flea>
-References: <20190512082614.9045-1-tiny.windzz@gmail.com>
- <20190512082614.9045-3-tiny.windzz@gmail.com>
- <20190512133930.t5txssl7mou2gljt@flea>
- <20190512214128.qjyys3vfpwdiacib@core.my.home>
- <20190516150252.hf4u3bloo37chy6q@flea>
- <CAEExFWu-T2mGQ9Teo7TQOcJsEzXi_dB=S8CFv7MiwHyu5z4-ow@mail.gmail.com>
- <20190517073151.mz6hcmzubk7iqfre@flea>
- <CAEExFWtban8Fjw6aZ5gdeC2GNk1vdqFoaJB_o-JtYZ_z70AJcQ@mail.gmail.com>
+ id 1hSzQU-0003cS-H9; Tue, 21 May 2019 07:43:12 +0000
+Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ (Authenticated sender: bbrezillon)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id A23F02841E1;
+ Tue, 21 May 2019 08:43:08 +0100 (BST)
+Date: Tue, 21 May 2019 09:43:05 +0200
+From: Boris Brezillon <boris.brezillon@collabora.com>
+To: Sascha Hauer <s.hauer@pengutronix.de>
+Subject: Re: [PATCH v2 14/15] mtd: rawnand: Get rid of chip->numchips
+Message-ID: <20190521094305.3769f1a2@collabora.com>
+In-Reply-To: <20190521093302.079f5470@collabora.com>
+References: <20190304201522.11323-1-miquel.raynal@bootlin.com>
+ <20190304201522.11323-15-miquel.raynal@bootlin.com>
+ <20190521065948.GA16530@pengutronix.de>
+ <20190521093302.079f5470@collabora.com>
+Organization: Collabora
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <CAEExFWtban8Fjw6aZ5gdeC2GNk1vdqFoaJB_o-JtYZ_z70AJcQ@mail.gmail.com>
-User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_004140_805342_F65BE95A 
-X-CRM114-Status: GOOD (  19.91  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190521_004310_850377_23937FF3 
+X-CRM114-Status: GOOD (  23.63  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.193 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -67,119 +64,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, catalin.marinas@arm.com,
- will.deacon@arm.com, bjorn.andersson@linaro.org, marc.w.gonzalez@free.fr,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>, paulmck@linux.ibm.com,
- stefan.wahren@i2se.com, Daniel Lezcano <daniel.lezcano@linaro.org>,
- Chen-Yu Tsai <wens@csie.org>, Jagan Teki <jagan@amarulasolutions.com>,
- Andy Gross <andy.gross@linaro.org>, rui.zhang@intel.com,
- devicetree@vger.kernel.org, Linux PM <linux-pm@vger.kernel.org>,
- Eduardo Valentin <edubezval@gmail.com>, olof@lixom.net, robh+dt@kernel.org,
- Jonathan.Cameron@huawei.com, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- enric.balletbo@collabora.com, David Miller <davem@davemloft.net>
-Content-Type: multipart/mixed; boundary="===============6995607121836603688=="
+Cc: Mason Yang <masonccyang@mxic.com.tw>, Vignesh R <vigneshr@ti.com>,
+ Boris Brezillon <bbrezillon@kernel.org>, Julien Su <juliensu@mxic.com.tw>,
+ Richard Weinberger <richard@nod.at>,
+ Tudor Ambarus <Tudor.Ambarus@microchip.com>,
+ Schrempf Frieder <frieder.schrempf@kontron.de>,
+ Marek Vasut <marek.vasut@gmail.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>, linux-mtd@lists.infradead.org,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ Brian Norris <computersforpeace@gmail.com>,
+ David Woodhouse <dwmw2@infradead.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, 21 May 2019 09:33:02 +0200
+Boris Brezillon <boris.brezillon@collabora.com> wrote:
 
---===============6995607121836603688==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="oyv7cdm2vd7as2px"
-Content-Disposition: inline
+> On Tue, 21 May 2019 08:59:48 +0200
+> Sascha Hauer <s.hauer@pengutronix.de> wrote:
+> 
+> > Hi,
+> > 
+> > On Mon, Mar 04, 2019 at 09:15:21PM +0100, Miquel Raynal wrote:  
+> > > diff --git a/drivers/mtd/nand/raw/internals.h b/drivers/mtd/nand/raw/internals.h
+> > > index fbf6ca015cd7..a204f9d7e123 100644
+> > > --- a/drivers/mtd/nand/raw/internals.h
+> > > +++ b/drivers/mtd/nand/raw/internals.h
+> > > @@ -110,7 +110,7 @@ static inline int nand_exec_op(struct nand_chip *chip,
+> > >  	if (!nand_has_exec_op(chip))
+> > >  		return -ENOTSUPP;
+> > >  
+> > > -	if (WARN_ON(op->cs >= chip->numchips))
+> > > +	if (WARN_ON(op->cs >= nanddev_ntargets(&chip->base)))
+> > >  		return -EINVAL;    
+> > 
+> > This warning triggers when I apply my gpmi nand exec_op series.
+> > 
+> > The gpmi driver calls:
+> > 
+> > 	ret = nand_scan(chip, GPMI_IS_MX6(this) ? 2 : 1);
+> > 
+> > This ends up in nand_scan_ident() with maxchips = 2. Here nand_detect()
+> > is called which sets memorg->ntargets = 1; Later in nand_scan_ident() we
+> > have:
+> > 
+> > 	for (i = 1; i < maxchips; i++) {  
+> 
+> This loop should be fixed to test against nanddev_ntargets() instead of
+> maxchips.
+> 
+> > 		u8 id[2];
+> > 
+> > 		/* See comment in nand_get_flash_type for reset */
+> > 		ret = nand_reset(chip, i);
+> > 		if (ret)
+> > 			break;
+> > 		....
+> > 
+> > this nand_reset() calls nand_exec_op() with op->cs = 1, nanddev_ntargets() = 1
+> > and boom.
+> > 
+> > I can't see how this can work with anything else but maxchips = 1. Do you
+> > have an idea how this is supposed to work?
 
+Forgot to reply to that one. ->ntargets is set to the number of
+dies/tartgets actually detected here [1], so it's not always 1 (can
+also be extracted from the ONFI table IIRC).
+Note that I've never been a big fan of this maxchip param, and I've
+asked that new drivers pass the actual number of CS connected to the
+NAND chip being initialized (which should be part of the HW desc, be it
+DT based or board-file based). So, ideally this argument should be named
+num_dies or num_targets and the function should return an error when
+one of the die returns a different ID. Unfortunately, that's not
+something we can do, because a lot of drivers rely on the old
+semantic...
 
---oyv7cdm2vd7as2px
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-On Sat, May 18, 2019 at 01:19:54AM +0800, Frank Lee wrote:
-> On Fri, May 17, 2019 at 3:32 PM Maxime Ripard <maxime.ripard@bootlin.com>=
- wrote:
-> >
-> > On Fri, May 17, 2019 at 02:10:47AM +0800, Frank Lee wrote:
-> > > > On Sun, May 12, 2019 at 11:41:28PM +0200, Ond=C5=99ej Jirman wrote:
-> > > > > > > +static int tsens_get_temp(void *data, int *temp)
-> > > > > > > +{
-> > > > > > > + struct tsensor *s =3D data;
-> > > > > > > + struct tsens_device *tmdev =3D s->tmdev;
-> > > > > > > + int val;
-> > > > > > > +
-> > > > > > > + regmap_read(tmdev->regmap, tmdev->chip->temp_data_base +
-> > > > > > > +             0x4 * s->id, &val);
-> > > > > > > +
-> > > > > > > + if (unlikely(val =3D=3D 0))
-> > > > > > > +         return -EBUSY;
-> > > > > >
-> > > > > > I'm not sure why a val equals to 0 would be associated with EBU=
-SY?
-> > > > >
-> > > > > Thermal zone driver can (will) call get_temp before we got the
-> > > > > first interrupt and the thermal data. In that case val will be 0.
-> > > > >
-> > > > > Resulting in:
-> > > > >
-> > > > >  (val + offset) * scale =3D (-2794) * -67 =3D 187198
-> > > > >
-> > > > > 187=C2=B0C and immediate shutdown during boot - based on cirtical
-> > > > > temperature being reached.
-> > > > >
-> > > > > Busy here means, get_temp does not yet have data. Thermal zone
-> > > > > driver just reports any error to dmesg output.
-> > > >
-> > > > Ah, that makes sense.
-> > > >
-> > > > I guess if we're switching to an interrupt-based driver, then we can
-> > > > just use a waitqueue, or is get_temp supposed to be atomic?
-> > >
-> > > I think get_temp should not be bloacked.
-> >
-> > Why not?
->
-> Maybe, I am wrong. I also want to know if we should do this.
-
-I guess it really all depends on whether you can sleep or not in
-get_temps. If you can, then you should wait for the value to be
-converted and the THS raising an interrupt.
-
-If you can't, then we should ask what the thermal frameworks expects
-in such a case.
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---oyv7cdm2vd7as2px
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXOOrogAKCRDj7w1vZxhR
-xULTAQC1mWNEVwrK+oid9JOzl0rrU7ybLUMo5gBPlvdd1iIu+QEAzEe9pVgCRCN6
-Z8AqbAjBGsyR2h/P/5jg1jYC4d/GBQg=
-=MglJ
------END PGP SIGNATURE-----
-
---oyv7cdm2vd7as2px--
-
-
---===============6995607121836603688==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+[1]https://elixir.bootlin.com/linux/v5.2-rc1/source/drivers/mtd/nand/raw/nand_base.c#L5073
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6995607121836603688==--
-
