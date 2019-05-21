@@ -2,85 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75B4024CA4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 12:27:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2861C24CB0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 12:29:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	MIME-Version:Date:Message-ID:To:Subject:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ziiuv9PyXK8DLj7p2/xUW6+K24FMD2933ORp0l1zTpw=; b=I7mAZGnwnuB4TfEd7dRM4kv7y
-	8MEWgGamiMMGmKWFcGaMya6g3BkkMS6Acx0h6mhY2806GKUEAtM8Z6XjqS86s2Gqy1Ugu+7v0k6HE
-	h8tANwVYRvZsc9j8UVeiDC75nUflkwo9uZfQQJ1EyrWWxpE0kzKoomen58+mqmxHbXxoCji6tGKg5
-	yp0wx5eqoE1XmkFujdiEsdDpjcAUjUMhq6Cp/QcZ3muLCspK2s77k1M5ZH3xvu9WjCKyNB0tkbliO
-	XuvzJ69ou+zc7wLZ+hJY+qBgu4MII3Z62jgORwKP0xshi97e5ASRbZBQJYgPkOa+u61cEt0mOA27x
-	EFZVCLzNg==;
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=/lYQ9rbLAw3+SQ19asBPvnm5sLwKbvlsKDNpR3cg0Dg=; b=kbd
+	ckLAfaDFNGl0qqVQHBVO9OFVULWj8ZEHsUABhM0aRnfrsKbqj87yqcBa0t+kq17YdwgrIIzQd8fRa
+	WdzhkAUNw6EXzCWVOrctrKRV+eSH3qVjH6Ni5+dbmQxJffJMy8VdXTLa4nQJtY2uKRUkGRZotHUNZ
+	k1TGlSGhTPWIeS1CH/cbjO5Vm3r3tG0D4K4pxW4/nSv+dZU2bXYUPZ7JMxQ7+XnjRzaJVexOnmKQb
+	+rCT7UKXcWinE/yTJXPV2ppMP6AJKbOQyVDAqinc27wG6Re2JkBQ2OApVwNU2Gnc44hJF8S8r9/mz
+	xDxktO4hAWLOEVprgolQcBNze3qX7mA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT1zx-0005ax-3q; Tue, 21 May 2019 10:27:57 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hT211-0006Dv-Fy; Tue, 21 May 2019 10:29:03 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT1zZ-0005GD-Kr
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 10:27:35 +0000
-Received: by mail-wr1-x444.google.com with SMTP id r4so17926180wro.10
+ id 1hT20r-0006CW-QO
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 10:28:55 +0000
+Received: by mail-lf1-x143.google.com with SMTP id l26so12612790lfh.13
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 May 2019 03:27:32 -0700 (PDT)
+ Tue, 21 May 2019 03:28:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=0u/cElypM0FGg3NqoZhyM4kF6/Suy0Ma6wulSB8WXxk=;
- b=D8LItHFK56peyyh2BjRqAE0QSAEGdSuOdY3ELK8p1Hhn5BM9FXVbU86E6K/HZsME4Q
- kHxex2HC0xFWg1SKMIR4tfPjBRgdVtKvZrgxhcFOegMcSlR6PXY1ltWAeq30PVJW+5pr
- JyGEHwl5V5uQgY8SL3EobnEVHoXBqeCE+qrDisHX2aNXlYhLWWBe2pFQ0Pdv+YfVLUa+
- DjCnkr7yZEpXOUcbGJ2XDk7rxsCR7+0WMQH4rHinDXNYEg7lkKw9htiyCO5h/M8RKIHU
- bzpH+S2sOLpNaDPHgHaMqdCRpquZokbZZ5HGDmMmeP4MNYNkdDvDntLPD1bS6T1SYkY0
- UtfA==
+ h=from:subject:to:cc:message-id:date:user-agent:mime-version
+ :content-language;
+ bh=mpYXtdsUWNbeccAIywEl4UaSAhjl4gBKJ90NkZlAKFw=;
+ b=mxi3uyzHog1AqUJCb2xTatuk6bjh6QFENd50GvwbRhU+suirammKro2Gxn8c19UWJm
+ 3X4fnIOEcU5WMYJiFomcyn2UkT0zLVtppjypSesmUpidS2gl5uJZ2laclG10u/kv8nES
+ 7kjBa3bhP3lp4wpnbbXNHA1fWJIB4oxaQlToNKr4YinlXOTB3Hz3uGOyZtGZAOx6NCsC
+ NXVTq+YGh3c3Gxq7jmBdIpfxHcRiS3rp5zIjktB49DiEdR78N3KO/tE/f7UQhyNLiX6K
+ TDeqdc8W0BoLAHoVXJK7j8UX9EfssqgO3et7BQA1JibXQTziBgJHcDEr87ikJMdP0oUI
+ w1xg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=0u/cElypM0FGg3NqoZhyM4kF6/Suy0Ma6wulSB8WXxk=;
- b=MjXRXesa5RxbGxx6lX6kql8kV8qX4za+Z2fEF8b/bxpCV6s6ojjzPkQ3Cwp9g6nNOd
- mrI8jG+2XSe/Smu0qlpcajbILpna4YUtaJItFHm0jCbjOCp0XkYnndJPcHrCXTS0P5KF
- f0tJQxsYody9VNxz4le9KtAtL2u0/ykX6HBbx3jA1vJbUWlTFG3ooe+UlF8q4p5uOP7D
- mjbZHp1S5FQRvIrOyb3nr5ZjT0j6gO4GzmTf/rmbcOEo8jfqf1o7vHZbYOxuqitlWjUX
- FW3ut9NeRipomn5TjTgPOVaZsUKtrthWL9TLkNpt0IrVzzSo8hVEqorj89TDv8+8mJ2r
- negg==
-X-Gm-Message-State: APjAAAXnwULc3oe7jhnPdPlXSrZJZI3h9blhG3fUOqmhaH7iuBd/eD67
- cC8rU0xSDees8Ec1JKnACWtBMLkcfww=
-X-Google-Smtp-Source: APXvYqzN0aFxhFPXBCSNKpdXBwYkCaswfe1f/2Sol7iXRMG9CaRzPkEF9jISqZ9I4geyOBywAICB0Q==
-X-Received: by 2002:adf:cf05:: with SMTP id o5mr34219199wrj.262.1558434451659; 
- Tue, 21 May 2019 03:27:31 -0700 (PDT)
-Received: from localhost (p2E5BEF36.dip0.t-ipconnect.de. [46.91.239.54])
- by smtp.gmail.com with ESMTPSA id k8sm7135873wrp.74.2019.05.21.03.27.30
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 21 May 2019 03:27:30 -0700 (PDT)
-Date: Tue, 21 May 2019 12:27:29 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Vidya Sagar <vidyas@nvidia.com>
-Subject: Re: [PATCH V7 02/15] PCI: Disable MSI for Tegra194 root port
-Message-ID: <20190521102729.GB29166@ulmo>
-References: <20190517123846.3708-1-vidyas@nvidia.com>
- <20190517123846.3708-3-vidyas@nvidia.com>
+ h=x-gm-message-state:from:subject:to:cc:message-id:date:user-agent
+ :mime-version:content-language;
+ bh=mpYXtdsUWNbeccAIywEl4UaSAhjl4gBKJ90NkZlAKFw=;
+ b=D1fWf1+YjjgKYc+Y0D8vCZiLLSBfNH7AVfXbCPRoSJnqtFGuBIthldCGEHFHXi8/bw
+ T1q3oGgdSgRfP0FX1QjvGkqMQm2LM1HGZR7rtiXO7J3/+7VDZonS5ECkqzfQt1KhMhHL
+ 2H74qQ5qZ65PpA74PpoJ3UiQPR4/177pE2dcavMlETRoqGscNI1Yy0hTHHYRHv0J/TAu
+ NQ1rKdQLQFIDSBNsSfgjgNv3qVHxxLDmZxhF1aARD6J0wz4N1kYPmaBCXwa+4ATX3GQ0
+ D2zo++vu5tfuA+FELEdLYmZTv4X+8MA6dKolB1nf7jyJEIkZeYVAVKSEbVom0NVDniGw
+ o54A==
+X-Gm-Message-State: APjAAAU4WIcik3zf6oTFoMae/XRRw+svEjinxSn0M6c9RrEpLoDJAY0U
+ wq3NaqHTIU7VPx4WHgHeHJI=
+X-Google-Smtp-Source: APXvYqyxPJbnSyCXfS1uLADdjWVLErha9YuAb8d/3tZPiV9maoDIZv0yZlIGHwPo4n2XSTm3jg51aw==
+X-Received: by 2002:ac2:51de:: with SMTP id u30mr32843332lfm.42.1558434531477; 
+ Tue, 21 May 2019 03:28:51 -0700 (PDT)
+Received: from elitebook.lan (ip-194-187-74-233.konfederacka.maverick.com.pl.
+ [194.187.74.233])
+ by smtp.googlemail.com with ESMTPSA id v2sm4283760ljg.6.2019.05.21.03.28.49
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Tue, 21 May 2019 03:28:50 -0700 (PDT)
+From: =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>
+Subject: ARM router NAT performance affected by random/unrelated commits
+To: Network Development <netdev@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Message-ID: <9a9ba4c9-3cb7-eb64-4aac-d43b59224442@gmail.com>
+Date: Tue, 21 May 2019 12:28:48 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.5.2
 MIME-Version: 1.0
-In-Reply-To: <20190517123846.3708-3-vidyas@nvidia.com>
-User-Agent: Mutt/1.11.4 (2019-03-13)
+Content-Type: multipart/mixed; boundary="------------1044F4275EEC14C287F51DC5"
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_032733_762192_F8A815FB 
-X-CRM114-Status: GOOD (  17.02  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190521_032853_862563_9C127308 
+X-CRM114-Status: GOOD (  13.83  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (zajec5[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (thierry.reding[at]gmail.com)
+ provider (zajec5[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -88,6 +93,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -99,107 +105,187 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
- mperttunen@nvidia.com, mmaddireddy@nvidia.com, linux-pci@vger.kernel.org,
- catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- kthota@nvidia.com, kishon@ti.com, linux-tegra@vger.kernel.org,
- robh+dt@kernel.org, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
- bhelgaas@google.com, jonathanh@nvidia.com,
- linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
-Content-Type: multipart/mixed; boundary="===============7566439867918888510=="
+Cc: linux-block@vger.kernel.org, John Crispin <john@phrozen.org>,
+ Jonas Gorski <jonas.gorski@gmail.com>, Jo-Philipp Wich <jo@mein.io>,
+ Felix Fietkau <nbd@nbd.name>
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This is a multi-part message in MIME format.
+--------------1044F4275EEC14C287F51DC5
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
 
---===============7566439867918888510==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="hHWLQfXTYDoKhP50"
-Content-Disposition: inline
+Hi,
 
+I work on home routers based on Broadcom's Northstar SoCs. Those devices
+have ARM Cortex-A9 and most of them are dual-core.
 
---hHWLQfXTYDoKhP50
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+As for home routers, my main concern is network performance. That CPU
+isn't powerful enough to handle gigabit traffic so all kind of
+optimizations do matter. I noticed some unexpected changes in NAT
+performance when switching between kernels.
 
-On Fri, May 17, 2019 at 06:08:33PM +0530, Vidya Sagar wrote:
-> Tegra194 rootports don't generate MSI interrupts for PME events and hence
-> MSI needs to be disabled for them to avoid root ports service drivers
-> registering their respective ISRs with MSI interrupt.
->=20
-> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
-> ---
-> Changes since [v6]:
-> * This is a new patch
->=20
->  drivers/pci/quirks.c | 14 ++++++++++++++
->  1 file changed, 14 insertions(+)
->=20
-> diff --git a/drivers/pci/quirks.c b/drivers/pci/quirks.c
-> index 0f16acc323c6..28f9a0380df5 100644
-> --- a/drivers/pci/quirks.c
-> +++ b/drivers/pci/quirks.c
-> @@ -2592,6 +2592,20 @@ DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_NVIDIA,
->  			PCI_DEVICE_ID_NVIDIA_NVENET_15,
->  			nvenet_msi_disable);
-> =20
-> +/*
-> + * Tegra194's PCIe root ports don't generate MSI interrupts for PME even=
-ts
-> + * instead legacy interrupts are generated. Hence, to avoid service driv=
-ers
-> + * registering their respective ISRs for MSIs, need to disable MSI inter=
-rupts
-> + * for root ports.
-> + */
-> +static void disable_tegra194_rp_msi(struct pci_dev *dev)
-> +{
-> +	dev->no_msi =3D 1;
-> +}
-> +DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_NVIDIA, 0x1ad0, disable_tegra194_r=
-p_msi);
-> +DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_NVIDIA, 0x1ad1, disable_tegra194_r=
-p_msi);
-> +DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_NVIDIA, 0x1ad2, disable_tegra194_r=
-p_msi);
-> +
+My hardware is BCM47094 SoC (dual core ARM) with integrated network
+controller and external BCM53012 switch.
 
-Later functions in this file seem to use a more consistent naming
-pattern, according to which the name for this would become:
+Relevant setup:
+* SoC network controller is wired to the hardware switch
+* Switch passes 802.1q frames with VID 1 to four LAN ports
+* Switch passes 802.1q frames with VID 2 to WAN port
+* Linux does NAT for LAN (eth0.1) to WAN (eth0.2)
+* Linux uses pfifo and "echo 2 > rps_cpus"
+* Ryzen 5 PRO 2500U (x86_64) laptop connected to a LAN port
+* Intel i7-2670QM laptop connected to a WAN port
 
-	pci_quirk_nvidia_tegra194_disable_rp_msi
+*****
 
-Might be worth considering making this consistent.
+I found a very nice example of commit that does /nothing/ yet it affects
+NAT performance: 9316a9ed6895 ("blk-mq: provide helper for setting up an
+SQ queue and tag set")
+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=9316a9ed6895c4ad2f0cde171d486f80c55d8283
+All it does is exporting an unused symbol (function).
 
-This could also be moved to the DWC driver to restrict this to where it
-is needed. In either case, this seems like a good solution, so:
+Let me share some numbers (I use iperf for testing):
 
-Reviewed-by: Thierry Reding <treding@nvidia.com>
+git reset --hard v4.19
+git am OpenWrt-mtd-chages.patch
+[  3]  0.0-30.0 sec  2.60 GBytes   745 Mbits/sec
+[  3]  0.0-30.0 sec  2.60 GBytes   745 Mbits/sec
+[  3]  0.0-30.0 sec  2.60 GBytes   744 Mbits/sec
+[  3]  0.0-30.0 sec  2.59 GBytes   742 Mbits/sec
+[  3]  0.0-30.0 sec  2.59 GBytes   740 Mbits/sec
+[  3]  0.0-30.0 sec  2.59 GBytes   740 Mbits/sec
+[  3]  0.0-30.0 sec  2.58 GBytes   738 Mbits/sec
+[  3]  0.0-30.0 sec  2.58 GBytes   738 Mbits/sec
+[  3]  0.0-30.0 sec  2.58 GBytes   738 Mbits/sec
+[  3]  0.0-30.0 sec  2.57 GBytes   735 Mbits/sec
+Average: 741 Mb/s
 
---hHWLQfXTYDoKhP50
-Content-Type: application/pgp-signature; name="signature.asc"
+git reset --hard v4.19
+git am OpenWrt-mtd-chages.patch
+git cherry-pick -x 9316a9ed6895
+[  3]  0.0-30.0 sec  2.73 GBytes   780 Mbits/sec
+[  3]  0.0-30.0 sec  2.72 GBytes   777 Mbits/sec
+[  3]  0.0-30.0 sec  2.71 GBytes   775 Mbits/sec
+[  3]  0.0-30.0 sec  2.70 GBytes   773 Mbits/sec
+[  3]  0.0-30.0 sec  2.70 GBytes   771 Mbits/sec
+[  3]  0.0-30.0 sec  2.69 GBytes   771 Mbits/sec
+[  3]  0.0-30.0 sec  2.69 GBytes   771 Mbits/sec
+[  3]  0.0-30.0 sec  2.69 GBytes   770 Mbits/sec
+[  3]  0.0-30.0 sec  2.69 GBytes   769 Mbits/sec
+[  3]  0.0-30.0 sec  2.68 GBytes   768 Mbits/sec
+Average: 773 Mb/s
 
------BEGIN PGP SIGNATURE-----
+As you can see cherry-picking (on top of Linux 4.19) a single commit
+that does /nothing/ can improve NAT performance by 4,5%.
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAlzj0pEACgkQ3SOs138+
-s6GqcxAAjaEUM9FTNPbKl4kQsquEnKIrVyDWV9lxJqFh1YaQGK005Nk/f1oJcuOn
-CEP8HrtYIpZk1wn1cUsT+ec9j7qxlu9ihEhKBXxsFOf6njXoBnc+QjscO28UJ4tu
-HYHDpvEK98bDBRMJhaZuBEClqBuFAH5Zrp8909NaUgaka7ut6PZqQC6XymRa6aX8
-5z8GSfR/FSNdUnhJ0gboYdliYQc+/co73YJUPVWKimKkRKnfD6OYNjR9+YfncIPU
-cFkBWnqCFzLVg6NIIOXpcEftFstLcTSJeC4XZ4bVa442Wbnz2dsgqHJMBy2wuR1z
-vwtnw+94Coa8E7Zsa5NCwTOiqyqhjsJGsS5IcI3OEbjh2aue7ScypriufK4Dyept
-hITWFgp0ZX1UxT2/QCLHfue3qNgSdOTYtomYFATqyHPD3BrgDAG8XZKKSDUVty8h
-PE7MLQfsgWWdqFn0SaHeiCGMlc/1n5JvBRzfO04dPNH62G80YoJ5/WqkZ15pTQFW
-FCbfApM2DekXpRsJaQvkPuXOAJOsUhR//WSLEMJQWfTl2pfRq2HPwWbSAgriL++k
-VnsA4LBL4dKx8eqQJO/6SGJHmeHEjEnugbm9vsxQmiajUFl3LdVt6PfGeaSMq9oy
-ggLSXlC+pTaWmPnBKEKh5aLNtSCCz+lT2cKkLq24YbX3YnLaC4g=
-=PTXE
------END PGP SIGNATURE-----
+*****
 
---hHWLQfXTYDoKhP50--
+I was hoping to learn something from profiling kernel with the "perf"
+tool. Eanbling CONFIG_PERF_EVENTS resulted in smaller NAT performance
+gain: 741 Mb/s → 750 Mb/s. I tried it anyway.
 
+Without cherry-picking I got:
++    9,04%  swapper          [kernel.kallsyms]  [k] v7_dma_inv_range
++    5,54%  swapper          [kernel.kallsyms]  [k] __irqentry_text_end
++    5,12%  swapper          [kernel.kallsyms]  [k] l2c210_inv_range
++    4,30%  ksoftirqd/1      [kernel.kallsyms]  [k] v7_dma_clean_range
++    4,02%  swapper          [kernel.kallsyms]  [k] bcma_host_soc_read32
++    3,13%  swapper          [kernel.kallsyms]  [k] arch_cpu_idle
++    2,88%  ksoftirqd/1      [kernel.kallsyms]  [k] __netif_receive_skb_core
++    2,51%  ksoftirqd/1      [kernel.kallsyms]  [k] l2c210_clean_range
++    1,88%  ksoftirqd/1      [kernel.kallsyms]  [k] fib_table_lookup
+(741 Mb/s while *not* running perf)
 
---===============7566439867918888510==
+With cherry-picked 9316a9ed6895 I got:
++    9,16%  swapper          [kernel.kallsyms]  [k] v7_dma_inv_range
++    5,64%  swapper          [kernel.kallsyms]  [k] __irqentry_text_end
++    5,05%  swapper          [kernel.kallsyms]  [k] l2c210_inv_range
++    4,25%  ksoftirqd/1      [kernel.kallsyms]  [k] v7_dma_clean_range
++    4,10%  swapper          [kernel.kallsyms]  [k] bcma_host_soc_read32
++    3,35%  ksoftirqd/1      [kernel.kallsyms]  [k] __netif_receive_skb_core
++    3,17%  swapper          [kernel.kallsyms]  [k] arch_cpu_idle
++    2,49%  ksoftirqd/1      [kernel.kallsyms]  [k] l2c210_clean_range
++    2,03%  ksoftirqd/1      [kernel.kallsyms]  [k] fib_table_lookup
+(750 Mb/s while *not* running perf)
+
+Changes seem quite minimal and I'm not sure if they tell what is causing
+that NAT performance change at all.
+
+*****
+
+I also tried running cachestat but didn't get anything interesting:
+Counting cache functions... Output every 1 seconds.
+TIME         HITS   MISSES  DIRTIES    RATIO   BUFFERS_MB   CACHE_MB
+10:06:59     1020        5        0    99.5%            0          2
+10:07:00     1029        0        0   100.0%            0          2
+10:07:01     1013        0        0   100.0%            0          2
+10:07:02     1029        0        0   100.0%            0          2
+10:07:03     1029        0        0   100.0%            0          2
+10:07:04      997        0        0   100.0%            0          2
+10:07:05     1013        0        0   100.0%            0          2
+(I started iperf at 10:07:00).
+
+*****
+
+There were more situations with such unexpected performance changes.
+Another example: cherry-picking 5b0890a97204 ("flow_dissector: Parse
+batman-adv unicast headers")
+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=5b0890a97204627d75a333fc30f29f737e2bfad6
+to some Linux 4.14.x release was lowering NAT performance by 55 Mb/s.
+
+The tricky part is there aren't any ETH_P_BATMAN packets in my traffic.
+Extra tests revealed that any __skb_flow_dissect() modification was
+lowering my NAT performance (e.g. commenting out ETH_P_TIPC or
+ETH_P_FCOE switch cases).
+
+*****
+
+I would like every kernel to provide a maximum NAT performance, no
+matter what random commits it contains.
+
+Suffering from such a random changes makes it also really hard to notice
+a real performance regression.
+
+Do you have any idea what is causing those performance changes? Can I
+provide any extra info to help debugging this?
+
+--------------1044F4275EEC14C287F51DC5
+Content-Type: text/plain; charset=UTF-8;
+ name="openwrt-mtd-patches.txt"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+ filename="openwrt-mtd-patches.txt"
+
+MDQ3LXY0LjIxLW10ZC1rZWVwLW9yaWdpbmFsLWZsYWdzLWZvci1ldmVyeS1zdHJ1Y3QtbXRk
+X2luZm8ucGF0Y2gKMDQ4LXY0LjIxLW10ZC1pbXByb3ZlLWNhbGN1bGF0aW5nLXBhcnRpdGlv
+bi1ib3VuZGFyaWVzLXdoZW4tY2gucGF0Y2gKMDgwLXY1LjEtMDAwMS1iY21hLWtlZXAtYS1k
+aXJlY3QtcG9pbnRlci10by10aGUtc3RydWN0LWRldmljZS5wYXRjaAowODAtdjUuMS0wMDAy
+LWJjbWEtdXNlLWRldl8tcHJpbnRpbmctZnVuY3Rpb25zLnBhdGNoCjA5NS1BbGxvdy1jbGFz
+cy1lLWFkZHJlc3MtYXNzaWdubWVudC12aWEtaWZjb25maWctaW9jdGwucGF0Y2gKCjE0MC1q
+ZmZzMi11c2UtLnJlbmFtZTItYW5kLWFkZC1SRU5BTUVfV0hJVEVPVVQtc3VwcG9ydC5wYXRj
+aAoxNDEtamZmczItYWRkLVJFTkFNRV9FWENIQU5HRS1zdXBwb3J0LnBhdGNoCjQwMC1tdGQt
+YWRkLXJvb3Rmcy1zcGxpdC1zdXBwb3J0LnBhdGNoCjQwMS1tdGQtYWRkLXN1cHBvcnQtZm9y
+LWRpZmZlcmVudC1wYXJ0aXRpb24tcGFyc2VyLXR5cGVzLnBhdGNoCjQwMi1tdGQtdXNlLXR5
+cGVkLW10ZC1wYXJzZXJzLWZvci1yb290ZnMtYW5kLWZpcm13YXJlLXNwbGl0LnBhdGNoCjQw
+My1tdGQtaG9vay1tdGRzcGxpdC10by1LYnVpbGQucGF0Y2gKNDA0LW10ZC1hZGQtbW9yZS1o
+ZWxwZXItZnVuY3Rpb25zLnBhdGNoCjQzMS1tdGQtYmNtNDd4eHBhcnQtY2hlY2stZm9yLWJh
+ZC1ibG9ja3Mtd2hlbi1jYWxjdWxhdGluLnBhdGNoCjQzMi1tdGQtYmNtNDd4eHBhcnQtZGV0
+ZWN0LVRfTWV0ZXItcGFydGl0aW9uLnBhdGNoCjQ4MC1tdGQtc2V0LXJvb3Rmcy10by1iZS1y
+b290LWRldi5wYXRjaAo0OTAtdWJpLWF1dG8tYXR0YWNoLW10ZC1kZXZpY2UtbmFtZWQtdWJp
+LW9yLWRhdGEtb24tYm9vdC5wYXRjaAo0OTEtdWJpLWF1dG8tY3JlYXRlLXViaWJsb2NrLWRl
+dmljZS1mb3Itcm9vdGZzLnBhdGNoCjQ5Mi10cnktYXV0by1tb3VudGluZy11YmkwLXJvb3Rm
+cy1pbi1pbml0LWRvX21vdW50cy5jLnBhdGNoCjQ5My11Ymktc2V0LVJPT1RfREVWLXRvLXVi
+aWJsb2NrLXJvb3Rmcy1pZi11bnNldC5wYXRjaAo1MzAtamZmczJfbWFrZV9sem1hX2F2YWls
+YWJsZS5wYXRjaAo1MzItamZmczJfZW9mZGV0ZWN0LnBhdGNoCjUwMC12NC4yMC11Ymlmcy1G
+aXgtZGVmYXVsdC1jb21wcmVzc2lvbi1zZWxlY3Rpb24taW4tdWJpZnMucGF0Y2gKNTUzLXVi
+aWZzLUFkZC1vcHRpb24tdG8tY3JlYXRlLVVCSS1GUy12ZXJzaW9uLTQtb24tZW1wdHkucGF0
+Y2gKCjcwMC1zd2NvbmZpZ19zd2l0Y2hfZHJpdmVycy5wYXRjaAo3MDItcGh5X2FkZF9hbmVn
+X2RvbmVfZnVuY3Rpb24ucGF0Y2gKNzIxLXBoeV9wYWNrZXRzLnBhdGNoCjc3My1iZ21hYy1h
+ZGQtc3JhYi1zd2l0Y2gucGF0Y2gKOTEwLWtvYmplY3RfdWV2ZW50LnBhdGNoCjkxMS1rb2Jq
+ZWN0X2FkZF9icm9hZGNhc3RfdWV2ZW50LnBhdGNoCg==
+--------------1044F4275EEC14C287F51DC5
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -210,5 +296,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============7566439867918888510==--
+--------------1044F4275EEC14C287F51DC5--
 
