@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C1F825927
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 22:41:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82BDA25928
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 22:42:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0Nguoqr9McucAKB4zzvT6IX124yiTXX51YuGpzd9ubc=; b=cqGuhbM3ctMrr6
-	0ZW6NZliBj4YENof2loQeasYBUZIHgSzog80rFNfTh8C/AxQ7vVatTNsmsf8ga170rJeGAO5R3Prq
-	x/ivIYaA70fOvcByjHZXGX1fQkGyFYEeeNWePUky9YX82j8kGA67NyiKGV6KX+DIltJurYoAjt8r3
-	zafk5mWijtUdjclYiYJ6oqFvkWXbVNE0GB5QY5FPH4pk5IHHTE6n+Qd2rNQcIYjAWPilizqNF1Kxp
-	gsWORw9sPRBhdX3tAY7JTmUE0fjApXsqyFCSwIV97EgyBBoiJIEJ90gPeYU6rKeit3NnSqJqYSWbo
-	wzg7YFzaI5P8EfJOEQ7g==;
+	List-Owner; bh=j65whIjXiBJGfwLdoYsxA2ztwK4iCwQ6T9ggg8Co/jk=; b=JoU8nAUdkf7MZ0
+	/I1YWCZaI4ny/eL0XSA57BLuCh6JXvKCm0rDPRYqPaD5IlbtW4o92Dox8Tbz0XY28SwizdKblRR9X
+	54J2bagVrBorRfDiZUtZEdhJSqHsXsM9EIGwgEFJ8247AB6Bmqwbs3Fk0hzfmD7tlPJp4bSE//g6J
+	ehEaKvsejgmWCnzpCWObBPRFFmgaQwMYL3GX8pZ88pBes1sr+VfF3dCqKMgYMfcoK1m/MXZwBnr+F
+	LGo8fxmKDdlyQMw4b8tKDXV74HUy2NmYi6aX2A+TBelQVjcC4/264ZPsmxQ9UpnM4+kcEkpL0o0tC
+	Zp092Cv6u+rOGojP2Wig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTBZz-0001nI-Pr; Tue, 21 May 2019 20:41:47 +0000
+	id 1hTBaH-00028L-OU; Tue, 21 May 2019 20:42:05 +0000
 Received: from mail-eopbgr150057.outbound.protection.outlook.com
  ([40.107.15.57] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTBZW-0001HT-3i
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 20:41:20 +0000
+ id 1hTBZY-0001HT-Mw
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 20:41:24 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ux/yUpIogRttMIRPuVV/IqUU6npj47b5WYhnnnOyou8=;
- b=ZpV9+y2usisaM5roR8tnD7Hv8Qn/Ebr4aCni1m1fs+FS+gFAbvvMNjTE4fWW390wazGNFKI+sg8iYW7tyMEuF6g6e17kKSdBBDyL2o+CXqCnqbW028BCRM2lNZ72Ztl01tVp1mdF5Cjzl7DJ8wnc5kEj1gU45CTHPS4aVCiRmiE=
+ bh=2way/9sIqRHHFbskkR8nNdMkVvpw/XzfR2NZesclsOg=;
+ b=imXx2Z8btDSptZDw+w2fOs28MXYRYRwlma550KfnH6DZCUnTahUD6VvJGnlb2emFcXqkb8uDkTuYauHQ0FLuwjh9pQcMXuNqxr6IExYFDJRNUj7FF+18/shvnBfLc6kHbSs5TsF7z2H+ZQmkZl8o+0LoiKeQ3EFjFMgTf99UtP0=
 Received: from AM0PR04MB6434.eurprd04.prod.outlook.com (20.179.252.215) by
  AM0PR04MB3970.eurprd04.prod.outlook.com (52.134.92.143) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.15; Tue, 21 May 2019 20:41:13 +0000
+ 15.20.1922.15; Tue, 21 May 2019 20:41:15 +0000
 Received: from AM0PR04MB6434.eurprd04.prod.outlook.com
  ([fe80::19be:75a:9fe:7cec]) by AM0PR04MB6434.eurprd04.prod.outlook.com
  ([fe80::19be:75a:9fe:7cec%7]) with mapi id 15.20.1900.020; Tue, 21 May 2019
- 20:41:13 +0000
+ 20:41:14 +0000
 From: Leonard Crestez <leonard.crestez@nxp.com>
 To: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>, Lee Jones
  <lee.jones@linaro.org>, Mark Brown <broonie@kernel.org>
-Subject: [PATCH v2 2/3] dt-bindings: mfd: Document short/long press duration
- for bd718x7
-Thread-Topic: [PATCH v2 2/3] dt-bindings: mfd: Document short/long press
- duration for bd718x7
-Thread-Index: AQHVEBWHFdXJ679N0k21iueFfMOOlA==
-Date: Tue, 21 May 2019 20:41:13 +0000
-Message-ID: <ec750ff0021c942b3c477e1cc7dc35f957600c96.1558471150.git.leonard.crestez@nxp.com>
+Subject: [PATCH v2 3/3] mfd: bd718x7: Make power button press duration
+ configurable
+Thread-Topic: [PATCH v2 3/3] mfd: bd718x7: Make power button press duration
+ configurable
+Thread-Index: AQHVEBWIEayFCadtqUGcm3gRPCBI7w==
+Date: Tue, 21 May 2019 20:41:14 +0000
+Message-ID: <bada813d7c3818f86851e9a31b19a7251da441f5.1558471150.git.leonard.crestez@nxp.com>
 References: <cover.1558471150.git.leonard.crestez@nxp.com>
 In-Reply-To: <cover.1558471150.git.leonard.crestez@nxp.com>
 Accept-Language: en-US
@@ -61,36 +61,36 @@ authentication-results: spf=none (sender IP is )
  smtp.mailfrom=leonard.crestez@nxp.com; 
 x-ms-exchange-messagesentrepresentingtype: 1
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 08080a7e-56b4-47ac-0033-08d6de2caa1e
+x-ms-office365-filtering-correlation-id: ac29df6e-7913-4ded-9bb4-08d6de2caade
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
  SRVR:AM0PR04MB3970; 
 x-ms-traffictypediagnostic: AM0PR04MB3970:
-x-microsoft-antispam-prvs: <AM0PR04MB3970056A6C126FE0A0AB7768EE070@AM0PR04MB3970.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-microsoft-antispam-prvs: <AM0PR04MB39705F2CB4C13BFAA974CAD5EE070@AM0PR04MB3970.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6790;
 x-forefront-prvs: 0044C17179
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(346002)(39860400002)(376002)(366004)(136003)(199004)(189003)(36756003)(86362001)(52116002)(25786009)(6116002)(14454004)(71190400001)(71200400001)(7736002)(5660300002)(2906002)(7416002)(6436002)(316002)(6486002)(66556008)(64756008)(66446008)(386003)(6506007)(3846002)(66946007)(6512007)(73956011)(66476007)(54906003)(118296001)(8676002)(44832011)(4326008)(81166006)(81156014)(76176011)(486006)(50226002)(2616005)(66066001)(8936002)(26005)(305945005)(446003)(256004)(110136005)(11346002)(102836004)(68736007)(476003)(478600001)(53936002)(186003)(99286004)(138113003);
+ SFS:(10009020)(396003)(346002)(39860400002)(376002)(366004)(136003)(199004)(189003)(36756003)(86362001)(52116002)(25786009)(6116002)(14454004)(71190400001)(71200400001)(7736002)(5660300002)(2906002)(7416002)(6436002)(316002)(6486002)(66556008)(64756008)(66446008)(386003)(6506007)(3846002)(66946007)(6512007)(73956011)(66476007)(54906003)(118296001)(8676002)(44832011)(4326008)(81166006)(81156014)(76176011)(486006)(50226002)(2616005)(66066001)(8936002)(26005)(305945005)(14444005)(446003)(256004)(110136005)(11346002)(102836004)(68736007)(476003)(478600001)(53936002)(186003)(99286004);
  DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB3970;
  H:AM0PR04MB6434.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: egEGARHah1acR0Q6UK3qka6Vuh3V6UOxUnTj83egbRUZQ5M+xnHnHMSuMrq9a/XZd/Aw5zNSFIDsdVuHndnCDOR7jPcqH3GYDrgUCH62bdJFVHubk+p4dbumIk7YK1i/JVthxyz365CybaoYl2rx+T8Y3EXeO5WUAYD+rZy71BUocpYl/GMGR6IoQ7ColJmRjtHVuFF9mXmSHvFQ3Zjne4emePxFK/nSbvqAl/+UcjgyRnmAei5EnzCb8KGHtnTVDz0RlN1UPggVciosqfFDZRoAHisn8jSYJouKUtqYMArbPPBt+HYL6byofZQLatU2fkDIqXvPLyhjOy7+JR9/4ykaYTbvUkeLrqEs1dpWaAe/eLzhijNH03VFJvWRcFdxFFSjtaFWOfEPUWxygFb8X3gfDYVV6LEiEQAx0EA+uHI=
-Content-ID: <F25247640247BD458D9D40ACCF1CE5AD@eurprd04.prod.outlook.com>
+x-microsoft-antispam-message-info: TegSCwZ8N3umeKdgSaet696x4H+/Z0EWwj3Jy/DcY3E1WI3a/R6veeKZJ7SjXQhFzDuT4c34M9Fz5Bi2+DnRPyUYDk8Q3Dn/MOWHtvcUdhtj451zaMWusaevo1igM/dkuYSHjU6LxLTD7HmZ7Z8lM6esjnEMy9M8vZTtEGtPD259UOsjcahDxow3fLzlXCTUQMSutwuNwBKze4xpnUZqvhRAxa++SkoP1InMLyQ2bDDwClg4iMhO8Jj4BTxEWRVfkpxTiWW/sv/V7qvpxES3c8+dtXiJnWEoBBpXwVkwxKixJKPyC/WfKSs6yw1GfnFsPnRkbRNvM9Y68XkwP5JTsg76RV5T0L9HEFcO1/Blu90TV3tBhgM0PkUeL3t6bPwIINZ/nhh/aIfCLaSesz6Dz/xGBTjBuU58lmnDCz45EEE=
+Content-ID: <16686B02C1EDC944B114614CB3353D50@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 08080a7e-56b4-47ac-0033-08d6de2caa1e
-X-MS-Exchange-CrossTenant-originalarrivaltime: 21 May 2019 20:41:13.6892 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: ac29df6e-7913-4ded-9bb4-08d6de2caade
+X-MS-Exchange-CrossTenant-originalarrivaltime: 21 May 2019 20:41:14.8945 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB3970
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_134118_323472_010F7657 
-X-CRM114-Status: GOOD (  11.19  )
+X-CRM114-CacheID: sfid-20190521_134121_122408_D0B847EC 
+X-CRM114-Status: GOOD (  13.87  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -131,37 +131,87 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-These values can be overwritten at probe time.
+Allow overwriting the values in BD718XX_REG_PWRONCONFIG0 and
+BD718XX_REG_PWRONCONFIG1 via devicetree. Read values in milliseconds and
+attempt to round them to something supported by the hardware.
+
+Keep existing values (from bootloader or OTP) if property is not
+present.
 
 Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-Acked-By: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
+Reviewed-By: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
 ---
- .../devicetree/bindings/mfd/rohm,bd71837-pmic.txt         | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ drivers/mfd/rohm-bd718x7.c | 42 ++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 42 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/mfd/rohm,bd71837-pmic.txt b/Documentation/devicetree/bindings/mfd/rohm,bd71837-pmic.txt
-index d5f68ac78d15..3649c1191432 100644
---- a/Documentation/devicetree/bindings/mfd/rohm,bd71837-pmic.txt
-+++ b/Documentation/devicetree/bindings/mfd/rohm,bd71837-pmic.txt
-@@ -36,10 +36,18 @@ switched power state to SNVS. If reset is done via READY state the power
- outputs will be returned to HW control by OTP loading. Thus the reset
- target state is set to READY by default. If SNVS state is used the boot
- crucial regulators must have the regulator-always-on and regulator-boot-on
- properties set in regulator node.
+diff --git a/drivers/mfd/rohm-bd718x7.c b/drivers/mfd/rohm-bd718x7.c
+index cdbef83884f0..c061c3f421fc 100644
+--- a/drivers/mfd/rohm-bd718x7.c
++++ b/drivers/mfd/rohm-bd718x7.c
+@@ -79,10 +79,48 @@ static const struct regmap_config bd718xx_regmap_config = {
+ 	.volatile_table = &volatile_regs,
+ 	.max_register = BD718XX_MAX_REGISTER - 1,
+ 	.cache_type = REGCACHE_RBTREE,
+ };
  
-+- rohm,short-press-ms	: Short press duration in milliseconds
-+- rohm,long-press-ms	: Long press duration in milliseconds
++static int bd718xx_init_press_duration(struct bd718xx *bd718xx)
++{
++	struct device* dev = bd718xx->dev;
++	u32 short_press_ms, long_press_ms;
++	u32 short_press_value, long_press_value;
++	int ret;
 +
-+Configure the "short press" and "long press" timers for the power button.
-+Values are rounded to what hardware supports (500ms multiple for short and
-+1000ms multiple for long). If these properties are not present the existing
-+configuration (from bootloader or OTP) is not touched.
++	ret = of_property_read_u32(dev->of_node, "rohm,short-press-ms",
++				   &short_press_ms);
++	if (!ret) {
++		short_press_value = min(15u, (short_press_ms + 250) / 500);
++		ret = regmap_update_bits(bd718xx->regmap,
++					 BD718XX_REG_PWRONCONFIG0,
++					 BD718XX_PWRBTN_PRESS_DURATION_MASK,
++					 short_press_value);
++		if (ret) {
++			dev_err(dev, "Failed to init pwron short press\n");
++			return ret;
++		}
++	}
 +
- Example:
++	ret = of_property_read_u32(dev->of_node, "rohm,long-press-ms",
++				   &long_press_ms);
++	if (!ret) {
++		long_press_value = min(15u, (long_press_ms + 500) / 1000);
++		ret = regmap_update_bits(bd718xx->regmap,
++					 BD718XX_REG_PWRONCONFIG1,
++					 BD718XX_PWRBTN_PRESS_DURATION_MASK,
++					 long_press_value);
++		if (ret) {
++			dev_err(dev, "Failed to init pwron long press\n");
++			return ret;
++		}
++	}
++
++	return 0;
++}
++
+ static int bd718xx_i2c_probe(struct i2c_client *i2c,
+ 			    const struct i2c_device_id *id)
+ {
+ 	struct bd718xx *bd718xx;
+ 	int ret;
+@@ -115,10 +153,14 @@ static int bd718xx_i2c_probe(struct i2c_client *i2c,
+ 	if (ret) {
+ 		dev_err(&i2c->dev, "Failed to add irq_chip\n");
+ 		return ret;
+ 	}
  
- 	/* external oscillator node */
- 	osc: oscillator {
- 		compatible = "fixed-clock";
++	ret = bd718xx_init_press_duration(bd718xx);
++	if (ret)
++		return ret;
++
+ 	ret = regmap_irq_get_virq(bd718xx->irq_data, BD718XX_INT_PWRBTN_S);
+ 
+ 	if (ret < 0) {
+ 		dev_err(&i2c->dev, "Failed to get the IRQ\n");
+ 		return ret;
 -- 
 2.17.1
 
