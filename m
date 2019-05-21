@@ -2,105 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6070249D3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 10:09:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 300D1249DB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 10:10:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IVkXNecRvyx3qVYjRuric0Wubywvm4tO4mFVeQD8Cio=; b=t1CekKI+9qlEGD
-	KEFWh8/G2ll+GALD13foqlDV53hDzXg0OyrepAn/PwRqF8U6bwx/JRW9ADMIrmriLT9swhKGQFNk3
-	IiL6ckNU5SdwlZEyNW3OEg1WMG/rlszXwKmM3qZT132L8ODjRC9VX5L9aNKQm5jRYbka2y2yOuPEZ
-	FihcS8HkHYioVGcRKA4CPK7d6Wvrm0RjHP++pDBjWGnC25+r8v5RV0GZptX+bMGo3Lj7zSOHvrlIP
-	iRzj8mfv9npjAacR6iKXF+VppOoloB9I6tqDMQlXeCqgi1MxyCAh/f0Vip7GCHV+kqhJjJcl+Ltnv
-	EZ0lpT3RvLBycCNmF52Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=tMm8H5LVNhC5tiA+sqoDiLK+FONe5zEUUR8M3qtpyDk=; b=lNgS9+KppwKCE1hjqzuQjsvUC
+	ZkcTANdGY/n07WxO8XWVOQVJsXcFLsiJEyF3oviodmZJ8gkP/XC7schIbxh75OuyB01MraLmOqk/J
+	dLzH6aplUbZ9iCuenlPSlGYYIHI06J7pb97h31oESHBwJnwh828/Orydj//q6FRruriOvTlnrlkPv
+	m6P46LGGccWHKwkSSDAXRQmfkytesEN8xhDyxt5ftA2O5do1M0ja11wkfR2ZZG7VEERNEvEU6N5a2
+	1gbd81gWrHGuRP1MXJYZfPiUgn71xa0T+Bp4GEOghWH1cCrtZxs6i+E/wpQAqqiY0qssn91K8Hi0B
+	si2cp5hAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSzq4-0001Tv-SO; Tue, 21 May 2019 08:09:36 +0000
-Received: from mail-eopbgr20083.outbound.protection.outlook.com ([40.107.2.83]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+	id 1hSzrH-0003Cf-IO; Tue, 21 May 2019 08:10:51 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSzpw-0001TV-Ni
- for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 08:09:30 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DfRVySqbmJywbAD2MzEMSSYmTNe8oT41Id7MVJ84npE=;
- b=A6pFOh46J0THMIzpVLjrxizWX/y4Ws/quWRohY1hDiWbK0mVyMDaJ21zEmEaAXt1RATvSjRdbbrrIsXVcGkePTWDl1SKgapqrec4cT3ccbwZmQ57Ux71C6u6m1IS6z7Cw1/O7Rh8Hz45TMpVvrpNmpVWZtkVaOsPAui/tpThzCw=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3755.eurprd04.prod.outlook.com (52.134.71.155) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1900.17; Tue, 21 May 2019 08:09:24 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::5835:e874:bd94:fec]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::5835:e874:bd94:fec%5]) with mapi id 15.20.1900.020; Tue, 21 May 2019
- 08:09:24 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: RE: [PATCH] arm64: dts: imx8mq: Add gpio alias
-Thread-Topic: [PATCH] arm64: dts: imx8mq: Add gpio alias
-Thread-Index: AQHVCgXcX4QYJXCP60mxd4H1AV7MJKZ1RDsAgAAAijA=
-Date: Tue, 21 May 2019 08:09:24 +0000
-Message-ID: <DB3PR0402MB3916375ABA4F49AD69899C0FF5070@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1557804533-18194-1-git-send-email-Anson.Huang@nxp.com>
- <20190521080647.GB15856@dragon>
-In-Reply-To: <20190521080647.GB15856@dragon>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 774c6fd9-c807-4643-f95a-08d6ddc3a331
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3755; 
-x-ms-traffictypediagnostic: DB3PR0402MB3755:
-x-microsoft-antispam-prvs: <DB3PR0402MB37554530BF6602D4738A0413F5070@DB3PR0402MB3755.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1850;
-x-forefront-prvs: 0044C17179
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(376002)(396003)(136003)(346002)(366004)(39860400002)(189003)(199004)(13464003)(6246003)(478600001)(446003)(6916009)(44832011)(11346002)(7736002)(186003)(2906002)(102836004)(86362001)(68736007)(66066001)(305945005)(25786009)(81166006)(14454004)(4326008)(6506007)(76116006)(53546011)(53936002)(229853002)(7416002)(8936002)(66476007)(66556008)(64756008)(66446008)(73956011)(66946007)(5660300002)(256004)(52536014)(9686003)(99286004)(54906003)(6436002)(476003)(76176011)(71190400001)(71200400001)(8676002)(3846002)(33656002)(6116002)(316002)(7696005)(81156014)(26005)(74316002)(55016002)(486006)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3755;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: ALIXtnMHPZVTcrNQVFAjS4/viemT7ont72Tb8aTjpm/i5Q106/Vn0opzMCjjftAjX4vbtAx+gquyK4mIOa63qA5aSERh8Q6mT90T4XpNOgsw90QAGBmPPqNL6pmyMJCvEg6uepCZkISqOTcXnF0F+v6LbkcpBme03L3RmVnHvsGg8ray2BiLKOvffEEK9pPM9tyTVbRk9oTZzD9CStRfo9fGfdkN+ZWVIKAoUwu+jzJwFrCU/ZStiunp1TQgDR7E9PCqjJbMyQFkexoNKm5iw/CpD8zrbbaDGRhcgt7KRI2rdcx7IoeLtqYpQyeetwJjwYYlvjBtgIpvpWXnC5Wv6qTN/GrLVhoemvJjclQlHshcPYhe+bZItKQwCvArj1QbNKdiCb5VuMTCZScOGEr+TI21Anr72K0WPOUYEIPPUcU=
+ id 1hSzr9-0003CR-NO
+ for linux-arm-kernel@bombadil.infradead.org; Tue, 21 May 2019 08:10:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=S/sMkVIiqy6kO+OrXciWebalksyfHoN/pZM1IhWLCok=; b=CuG6bISSDrngASYDUbWKiWaro
+ Q3OZQJpedDL7tpJPn9LIWuNfhdIairfhbpHREgCwi4X+Ge/c2E8bgFyTFodQr0D+964tvEVHICBW0
+ 3d+diyKDxXfHOnlj58UNwJbaUlEeXmnEK5MmevUv5Q+LsD7FaMsLE1grlPlOuJHKp54vrOqRYVrH5
+ mC+s11vMEPgUZ8iiyiwDxd+92fSkf8isahNxdcSZf0TFASVTFVDuIjLjUNJuhSNMTi0d9kJubWlZR
+ aHTV/f7vNiINdyqWzlebz1/pHZ71P9bJl3hvv7gnMfRcYpF4EwbS4xJW/w/gdqjP1ZXeaB20B6jRj
+ iITpRYCsQ==;
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+ by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hSzr6-0008MM-OX
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 08:10:41 +0000
+X-Originating-IP: 90.88.22.185
+Received: from localhost (aaubervilliers-681-1-80-185.w90-88.abo.wanadoo.fr
+ [90.88.22.185]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 4598620025;
+ Tue, 21 May 2019 08:10:02 +0000 (UTC)
+Date: Tue, 21 May 2019 10:10:01 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Michael Nazzareno Trimarchi <michael@amarulasolutions.com>
+Subject: Re: [PATCH] arm64: dts: allwinner: a64-oceanic-5205-5inmfd: Enable CAN
+Message-ID: <20190521081001.zjq3gnlvyuyexz6m@flea>
+References: <20190418141658.10868-1-jagan@amarulasolutions.com>
+ <20190418145641.q23tupopz2czjzc5@flea>
+ <CAOf5uwn8CtRs8cx0KC-bxNoRP4TiDrHi8F83QfjsZhueLDYFJg@mail.gmail.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 774c6fd9-c807-4643-f95a-08d6ddc3a331
-X-MS-Exchange-CrossTenant-originalarrivaltime: 21 May 2019 08:09:24.5036 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3755
+In-Reply-To: <CAOf5uwn8CtRs8cx0KC-bxNoRP4TiDrHi8F83QfjsZhueLDYFJg@mail.gmail.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_010928_778634_108C16DF 
-X-CRM114-Status: GOOD (  16.71  )
-X-Spam-Score: -0.5 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.5 points)
+X-CRM114-CacheID: sfid-20190521_041040_892793_655F42AA 
+X-CRM114-Status: GOOD (  15.65  )
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.2.83 listed in list.dnswl.org]
- -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.2.83 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.200 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -112,76 +78,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Abel Vesa <abel.vesa@nxp.com>, "ccaione@baylibre.com" <ccaione@baylibre.com>,
- "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "angus@akkea.ca" <angus@akkea.ca>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ LKML <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
+ linux-amarula <linux-amarula@amarulasolutions.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============2672246534564583489=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Shawn
 
-> -----Original Message-----
-> From: Shawn Guo [mailto:shawnguo@kernel.org]
-> Sent: Tuesday, May 21, 2019 4:07 PM
-> To: Anson Huang <anson.huang@nxp.com>
-> Cc: robh+dt@kernel.org; mark.rutland@arm.com; s.hauer@pengutronix.de;
-> kernel@pengutronix.de; festevam@gmail.com; l.stach@pengutronix.de;
-> Abel Vesa <abel.vesa@nxp.com>; andrew.smirnov@gmail.com;
-> ccaione@baylibre.com; angus@akkea.ca; devicetree@vger.kernel.org; linux-
-> arm-kernel@lists.infradead.org; linux-kernel@vger.kernel.org; dl-linux-imx
-> <linux-imx@nxp.com>
-> Subject: Re: [PATCH] arm64: dts: imx8mq: Add gpio alias
-> 
-> On Tue, May 14, 2019 at 03:33:56AM +0000, Anson Huang wrote:
-> > Add i.MX8MQ GPIO alias for kernel GPIO driver usage.
-> >
-> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > ---
-> >  arch/arm64/boot/dts/freescale/imx8mq.dtsi | 5 +++++
-> >  1 file changed, 5 insertions(+)
-> >
-> > diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> > index 6d635ba..df33672 100644
-> > --- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> > +++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> > @@ -30,6 +30,11 @@
-> >  		spi0 = &ecspi1;
-> >  		spi1 = &ecspi2;
-> >  		spi2 = &ecspi3;
-> > +		gpio0 = &gpio1;
-> 
-> Please keep the list alphabetically sorted.
+--===============2672246534564583489==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="xwglcbrmgqk6xsau"
+Content-Disposition: inline
 
-OK, will send V2 to fix it.
 
-Anson.
+--xwglcbrmgqk6xsau
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-> 
-> Shawn
-> 
-> > +		gpio1 = &gpio2;
-> > +		gpio2 = &gpio3;
-> > +		gpio3 = &gpio4;
-> > +		gpio4 = &gpio5;
-> >  	};
+On Tue, May 21, 2019 at 08:47:02AM +0200, Michael Nazzareno Trimarchi wrote:
+> > > +     };
+> > > +
+> > >  };
+> > >
+> > >  &ehci0 {
+> > > @@ -77,6 +95,31 @@
+> > >       status = "okay";
+> > >  };
+> > >
+> > > +&pio {
+> > > +     can_pins: can-pins {
+> > > +             pins = "PD6",                   /* RX_BUF1_CAN0 */
+> > > +                    "PD7";                   /* RX_BUF0_CAN0 */
+> > > +             function = "gpio_in";
+> > > +     };
+> > > +};
 > >
-> >  	ckil: clock-ckil {
-> > --
-> > 2.7.4
-> >
+> > That isn't needed. What are they used for, you're not tying them to
+> > anything?
+>
+> Mux of their function is correct. They are connected in the schematics
+> but not used right now.
+
+Then describe the whole thing or don't?
+
+And that's kind of missing my point. If that pin group isn't related
+to any device, the pin muxing will not be changed. So that group, in
+itself, has strictly no effect.
+
+Moreover, you don't need a pin group in the first place to mux pins in
+GPIOs, the GPIO API will make sure that is the case when you request
+it.
+
+> I can garantee that kernel wlll always configurred in the right way
+> and if I want I can export in userspace
+> for debug purpose
+
+Yes, because the API does it, not your change
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--xwglcbrmgqk6xsau
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXOOyWQAKCRDj7w1vZxhR
+xVrXAP461PPKE8+N+fcEtV7h6ivucRpYH0qSu/7rhCb1pnto4gEAkjCJYIuq90Qb
+VJVC85qKFQVFJBnSNhfkOi8Eoh8IaAM=
+=KuKJ
+-----END PGP SIGNATURE-----
+
+--xwglcbrmgqk6xsau--
+
+
+--===============2672246534564583489==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2672246534564583489==--
+
