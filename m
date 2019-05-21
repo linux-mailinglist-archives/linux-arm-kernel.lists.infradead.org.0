@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F47625731
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 20:02:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 652E425765
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 21 May 2019 20:18:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A8japMlY3voTXgk/iWxPvAD+lyMc+jTwx9AIVYovllA=; b=rIXKuef2nfm6HK
-	nRi3TxR2j0VF576u9+Ig2ClYVIOMwmmzMn/33KhyIgrYSHrmhWo0Ug9HS/kLBtjKgdZ0a2GTzpLTb
-	EerWucs3pzoxraWe8J2p8MdQTGSFUEb+8+rCuhApmKyewPmvRkor8KfAs0LdlSNpWygF1Gcm6HTX1
-	I4Xl/Out6l8k/PHrHG5f/psDgJmmca3/FtN/AYGCg7avlMYpiiIXwito7ffAK9neNPrPbKZZGIj1n
-	+Ur5edYdN25jp6SRCqpiA5XHcUTGMT048szogH92wxLHQzv7ljvQDRremCmJiRigOaDCl2NLUjEO0
-	rkbk8qFccLbYC1Mu5k8g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=W4loz1gLYBuxh6dnvxLpZLlFjY7KBTAKvCJnKeUvGco=; b=r/tLsfY8N7oy8gxnUzC9c26qB
+	hNpQVywqRDiN1kYSM56I/RXIZM/kKOK/8Kuf8H8UYMr7SI3F72+UaM9kOx05Cz/keIu4J8/dDonKF
+	KgfV95b5D/LlS62tJ4fqoM1r8MMCkJpvBwwHlX9aNe0iFI3kKimxhckisXBkt5tc60JWZ4iZiiORR
+	bOVQZKO4o/dpr0KeifOhdmK6x2JZblt2EPSrC/Y34bEkUIdMBsrFmqI2q4aZ03MdNPqN6q6j+diIu
+	FgOOD6OPlzivhi3khP0ts9736jvpC1bdqucAahKuwqlDl1XmExNzRcrsoRTtzGI895TLWlu3/y2sm
+	zko4q9+CQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT95Y-0001Qi-D1; Tue, 21 May 2019 18:02:12 +0000
-Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
+	id 1hT9Kq-000606-U5; Tue, 21 May 2019 18:18:00 +0000
+Received: from hqemgate16.nvidia.com ([216.228.121.65])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT95P-0001PR-Ox; Tue, 21 May 2019 18:02:05 +0000
-Received: by mail-ot1-x342.google.com with SMTP id g18so17149285otj.11;
- Tue, 21 May 2019 11:02:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=vjWxpHH3RznZUOqoTJZzK9OefaWQHmm+6EF8eel7zaI=;
- b=fCTbBab53Rb/T5/XOyrfV9aXwuFPA8aJCgNesV9ZYjTy2R2SeRzgE5zVvjRV2d7NrV
- W96B1ax1cJnk8+D4B5xVKYBn0d22Dpn71HE6Nply3n+bCBt6ul5Go8zGCiHEd0hfsYck
- xDO56q31L4b7WIoKUpkeStjZZGpjL357ji16/Zs9EhetntVCemnO5yK0GMoNuFk3dtCk
- 0eZQB8UQm0qOa+CRQiVv9NNP52v0+/a56lCF8i70AHXvRc/d4hv3nFP1U0KCt2dkhU4U
- qOvOluWUwk0SCkNtPknnJDrMchCSzDPAc1EWOLJYky29sKUoZduhzz2xNDWF+NmEbuVN
- YwWw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=vjWxpHH3RznZUOqoTJZzK9OefaWQHmm+6EF8eel7zaI=;
- b=jbnbVAlHB0woHtlZBcn97qkGUZyFi8aEmtVNxkG4MbVILpouVOyJhmyZ9CFkVSgWOQ
- VtgFtdx6F2Qsg9OSQiw5jWKGy2X7BYm0d2Lpj+wxF7oZOm+7VOUfcgtnau6D+VsL5g0V
- 03ZyBkhoIxUvx8KdyodkI4jWUQj992uYmWCk5q8/wQjRjGgMqPtUR1kIVeuS0jME04nt
- 2ENOeFeTNiTRHF9JfihxuilgOj4SbtcAPIpdzbNjeVHXXd0PaR6nl3KrZ4ToCAsG9P3j
- eC6gxQlOpinMcDMipXYnsJquof4k+eI2queG6w2B0I/9twp2K2FX8Nr++gCg+bWxnfmJ
- f3eg==
-X-Gm-Message-State: APjAAAWLs6Oiv+vIIYoBURTCG9swkzRPu/QP07Z/ReV2r8HQb7FNR+eP
- JuMR5stv0DhSZl65AsG7nDQPccp5OO5xZqb+jes=
-X-Google-Smtp-Source: APXvYqxIY/HpMv45ibunXIFlX3sF5mN0iADq/vx0dJX2bVB1EzbElUuxq9OuQBIvCivd25vNdd1d39c6pIL8y0lMaGg=
-X-Received: by 2002:a9d:2f08:: with SMTP id h8mr49623983otb.42.1558461722700; 
- Tue, 21 May 2019 11:02:02 -0700 (PDT)
+ id 1hT9Kk-0005zm-6J
+ for linux-arm-kernel@lists.infradead.org; Tue, 21 May 2019 18:17:55 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5ce440d20000>; Tue, 21 May 2019 11:17:54 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Tue, 21 May 2019 11:17:53 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Tue, 21 May 2019 11:17:53 -0700
+Received: from [10.25.72.115] (10.124.1.5) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 21 May
+ 2019 18:17:48 +0000
+Subject: Re: [PATCH V7 12/15] arm64: tegra: Enable PCIe slots in P2972-0000
+ board
+To: Thierry Reding <thierry.reding@gmail.com>
+References: <20190517123846.3708-1-vidyas@nvidia.com>
+ <20190517123846.3708-13-vidyas@nvidia.com> <20190521105455.GK29166@ulmo>
+X-Nvconfidentiality: public
+From: Vidya Sagar <vidyas@nvidia.com>
+Message-ID: <6a2c0a9a-1c37-3e32-535a-aaf0db2f101d@nvidia.com>
+Date: Tue, 21 May 2019 23:47:45 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-References: <20190521151952.2779-1-narmstrong@baylibre.com>
- <20190521151952.2779-4-narmstrong@baylibre.com>
-In-Reply-To: <20190521151952.2779-4-narmstrong@baylibre.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Tue, 21 May 2019 20:01:51 +0200
-Message-ID: <CAFBinCDzvroNfzhZHhDdvc+VR1eQNg5JMJ7F9=++hdWKcEXSOw@mail.gmail.com>
-Subject: Re: [PATCH v3 3/3] arm64: dts: meson: Add minimal support for
- Odroid-N2
-To: Neil Armstrong <narmstrong@baylibre.com>
+In-Reply-To: <20190521105455.GK29166@ulmo>
+X-Originating-IP: [10.124.1.5]
+X-ClientProxiedBy: HQMAIL105.nvidia.com (172.20.187.12) To
+ HQMAIL107.nvidia.com (172.20.187.13)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1558462674; bh=a8LODZvSpNaDmQpk25Mop1kwqk2JYgsbirOqlH6wW/0=;
+ h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
+ Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
+ X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=sOAeepoIn+0kLL5zHwpwlNYmx7dO8zJTj95zfvWEzRH4O30O3BUwQM0p1brYyE10F
+ J4MLekCR8ZAThIesLjoTJS7Omhtg5xR4kefXUe4tI2pIBdQoJzy6R2i6PSgFuc8Bj6
+ lsMACXqN+87u3mfAwHXRGeVhhMs7lJdk2jhfmV6dbWCQGPY5+zLEB5T0ZDjKa/9Cyz
+ TJ+8HcFSPxNNdMydPQ1yLFWA+j0A9xTQ7aLMUpoHBuAmTBYZFG4o0U/fzjMoWWgdYj
+ yvHdIvlBGzM/UEm4a+k0+Efh/ZZ4Dhgyty11166IcKbciasl99ntwQwjpBB8S8h+El
+ YN2zcS6UXk2sA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_110203_813866_BCC3F350 
-X-CRM114-Status: GOOD (  11.42  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190521_111754_248695_48EBCB23 
+X-CRM114-Status: GOOD (  15.10  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -82,6 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,59 +94,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: khilman@baylibre.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ mperttunen@nvidia.com, mmaddireddy@nvidia.com, linux-pci@vger.kernel.org,
+ catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ kthota@nvidia.com, kishon@ti.com, linux-tegra@vger.kernel.org,
+ robh+dt@kernel.org, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
+ bhelgaas@google.com, jonathanh@nvidia.com,
+ linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Neil,
+On 5/21/2019 4:24 PM, Thierry Reding wrote:
+> On Fri, May 17, 2019 at 06:08:43PM +0530, Vidya Sagar wrote:
+>> Enable PCIe controller nodes to enable respective PCIe slots on
+>> P2972-0000 board. Following is the ownership of slots by different
+>> PCIe controllers.
+>> Controller-0 : M.2 Key-M slot
+>> Controller-1 : On-board Marvell eSATA controller
+>> Controller-3 : M.2 Key-E slot
+>>
+>> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
+>> ---
+>> Changes since [v6]:
+>> * None
+>>
+>> Changes since [v5]:
+>> * Arranged PCIe nodes in the order of their addresses
+>>
+>> Changes since [v4]:
+>> * None
+>>
+>> Changes since [v3]:
+>> * None
+>>
+>> Changes since [v2]:
+>> * Changed P2U label names to reflect new format that includes 'hsio'/'nvhs'
+>>    strings to reflect UPHY brick they belong to
+>>
+>> Changes since [v1]:
+>> * Dropped 'pcie-' from phy-names property strings
+>>
+>>   .../arm64/boot/dts/nvidia/tegra194-p2888.dtsi |  2 +-
+>>   .../boot/dts/nvidia/tegra194-p2972-0000.dts   | 41 +++++++++++++++++++
+>>   2 files changed, 42 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi b/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi
+>> index 0fd5bd29fbf9..30a83d4c5b69 100644
+>> --- a/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi
+>> +++ b/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi
+>> @@ -191,7 +191,7 @@
+>>   						regulator-boot-on;
+>>   					};
+>>   
+>> -					sd3 {
+>> +					vdd_1v8ao: sd3 {
+>>   						regulator-name = "VDD_1V8AO";
+>>   						regulator-min-microvolt = <1800000>;
+>>   						regulator-max-microvolt = <1800000>;
+>> diff --git a/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts b/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
+>> index 73801b48d1d8..a22704e76a84 100644
+>> --- a/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
+>> +++ b/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
+>> @@ -167,4 +167,45 @@
+>>   			};
+>>   		};
+>>   	};
+>> +
+>> +	pcie@14100000 {
+>> +		status = "okay";
+>> +
+>> +		vddio-pex-ctl-supply = <&vdd_1v8ao>;
+>> +
+>> +		phys = <&p2u_hsio_0>;
+>> +		phy-names = "p2u-0";
+>> +	};
+>> +
+>> +	pcie@14140000 {
+>> +		status = "okay";
+>> +
+>> +		vddio-pex-ctl-supply = <&vdd_1v8ao>;
+>> +
+>> +		phys = <&p2u_hsio_7>;
+>> +		phy-names = "p2u-0";
+>> +	};
+>> +
+>> +	pcie@14180000 {
+>> +		status = "okay";
+>> +
+>> +		vddio-pex-ctl-supply = <&vdd_1v8ao>;
+>> +
+>> +		phys = <&p2u_hsio_2>, <&p2u_hsio_3>, <&p2u_hsio_4>,
+>> +		       <&p2u_hsio_5>;
+>> +		phy-names = "p2u-0", "p2u-1", "p2u-2", "p2u-3";
+>> +	};
+>> +
+>> +	pcie@141a0000 {
+>> +		status = "disabled";
+>> +
+>> +		vddio-pex-ctl-supply = <&vdd_1v8ao>;
+>> +
+>> +		phys = <&p2u_nvhs_0>, <&p2u_nvhs_1>, <&p2u_nvhs_2>,
+>> +		       <&p2u_nvhs_3>, <&p2u_nvhs_4>, <&p2u_nvhs_5>,
+>> +		       <&p2u_nvhs_6>, <&p2u_nvhs_7>;
+>> +
+>> +		phy-names = "p2u-0", "p2u-1", "p2u-2", "p2u-3", "p2u-4",
+>> +			    "p2u-5", "p2u-6", "p2u-7";
+>> +	};
+> 
+> This last controller is disabled by default. Why do we need to include
+> all of this if it's not going to be used anyway?
+I want to keep this entry ready by populating all the required fields. When pinctrl
+driver is ready, I'll send out patches to enable this node as well.
 
-On Tue, May 21, 2019 at 5:20 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
-[...]
-> +       hub_5v: regulator-hub_5v {
-> +               compatible = "regulator-fixed";
-> +               regulator-name = "HUB_5V";
-> +               regulator-min-microvolt = <5000000>;
-> +               regulator-max-microvolt = <5000000>;
-> +               vin-supply = <&vcc_5v>;
-> +
-> +               gpio = <&gpio GPIOH_5 GPIO_ACTIVE_HIGH>;
-I missed this in the review of v1:
-according to the schematics GPIOH_5 is routed to GL3523 (soldered down
-USB hub) CHIP_EN signal.
-The datasheet [0] mentions that this will "Disable whole chip and keep
-hub in lowest power state (standby mode)"
+> 
+> Thierry
+> 
 
-do you know if this is a similar case as GPIOH_4 (USB hub reset line,
-we configure this using a gpio-hog)?
-
-[...]
-> +&ext_mdio {
-> +       external_phy: ethernet-phy@0 {
-> +               /* Realtek RTL8211F (0x001cc916) */
-> +               reg = <0>;
-> +               max-speed = <1000>;
-> +               eee-broken-1000t;
-are we in the same situation that we have on the X96 Max where network
-dies without eee-broken-1000t?
-
-[...]
-> +&usb2_phy0 {
-> +       phy-supply = <&usb_pwr_en>;
-is usb_pwr_en really the phy-supply or is it the vbus-supply of the
-USB top control block (&usb node)?
-
-if these three questions are answered then you can add my:
-Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-
-
-Regards
-Martin
-
-
-[0] https://datasheet.lcsc.com/szlcsc/GL3523-OV3S1_C157363.pdf
 
 _______________________________________________
 linux-arm-kernel mailing list
