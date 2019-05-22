@@ -2,93 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68D6F266FF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 17:31:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0708126709
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 17:36:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1Zw19JDWoUSvKhsye6c4yaP7HY8gtDOOUzpjw21dgQ0=; b=AxhIZmbJC6ZyEZ
-	ortDjPMKdkw4InBXLtdl/ska1RtJYnzaNONh2Vb7Cey+pldatO5dIAzCN/IAdPXvmqarUhY7zfKzw
-	86MuG3QsA9w99agCsAGKpI4lzje0zMUuqo/CsEvbtSE6PfJlsiqSVV7PQ6xdrX+36NvMWDsWOVAWt
-	u87zfmL4sthCJuL3Thv+XEI+IQTE17vikaz31dCYnsnsTbIiM9ckIO8BPNaB2rLwe3XWnAQ9bI37k
-	tpYAnYAR8e6BxCiJ+MxZ8JI0PcN3EZsf8I9STWGoyEmlK3dIGCf7HdQnFTbbehKc7CbNu/eou2FDm
-	mbRUGIeBjXPEUUGAJrIQ==;
+	List-Owner; bh=yy4f+Nt1CtKBavh6zFJRqRKkrtW5OH6vp/71znHRymY=; b=H8rfMGBAllPhvU
+	C0oN2QYixKu9J4YSv9NdpqMqs2TvTJ8lpPaNlHNXRjItHDJ4+tPMPiTMnVyF6xOIym85xFBG/WUMt
+	sv/MxmxrO4YZOL4VtpJ/UMGEHHYhlO/ds6mLeWVJMvipWNeaSmijTanEIRjxy3pCVypBYk9N9cF4y
+	kueuMjpfC/69humRZ8F2/7VdrzHFnIFlYKXjxTXiUXlMOU/h7pzAxZPmjulreE4IGz312tIEKygip
+	9Uqw8vYjXbzQrluIf5P2TVl+P4z4kfeBHR0+5YqXAXBSFNrkAD+iEmzW53D72xzr9TE0HMlYbHzd1
+	jwJ3nG9AcRNO1wEiKSTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTTDV-0006ij-P0; Wed, 22 May 2019 15:31:45 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTTCQ-0005OM-Qw
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 15:30:41 +0000
-Received: by mail-lj1-x242.google.com with SMTP id j24so2523945ljg.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 May 2019 08:30:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=RM2Vs3BpRvxchuOeBY/wop/PzNSZzl64F2EeK+wEZZM=;
- b=YY6JA+LoUtjEOO757K58wra7rdXirZ4AlTHpmSQ+decwKFXSNcixrW+Od3xAIfHhzc
- E31pVzZHa1k0N1eBsu/pwx/4gJOY/Z23T1KlGxD+A3kg2G2nUjg2KBJXZgrs4NREuNVs
- TYlUYYtdAekOg5uSt0naDgODEcL0YeodFYzgZ2kMgQbeYv13wJLMpmBWE0SyYa3YKKBJ
- Ky8EOr/z31g0owz/7VlcdxKTQPp3/9K5jFnQ5GWfggZi2OZBL5soMXgy15fr5y5CKPxC
- m0te1S3imaMe8QwTNQlrTPoiVAA5L9886WXf4f0IGaQNg3NN+dFLYS9ofr5e9wU3GA29
- mQlA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=RM2Vs3BpRvxchuOeBY/wop/PzNSZzl64F2EeK+wEZZM=;
- b=oFBQN78Td++6Rb8Mir1Y25XIpMhtRxHN82chmDsNIq4J3UcyT7eAxm5EtsPQRRl3iA
- n4j0HoICjt6pG3lU1MVlIXeUnwZX9bTPSqdcdOLC6ATmfgvx5xyq9jMJ7HiSyLkPqp3q
- FnEJIjYMr0/Qw1JlG30JINKzqP20uJXjzYj8DaOug0f41m2MvCcqRpSI/rCC0BEBynp/
- ffgatTj5xH/GXAL1xFDSxKtw2ahbGJhv5Rqo9QsiQdx+2xSGsSgjeSugTqc48H8y6hNF
- bUZAZNHq7Bk9JYiehxSjg6deEI1qCaSiT8q98xNk+mFAwabCtZsCKn0MMlLxt4hyWpqu
- nnhg==
-X-Gm-Message-State: APjAAAXmITExqrLA+wzZUzP+cf/ONeCzU2PK2gvfQ3uyTZQSt5e71voF
- Rqzt68G5S+Y8/idfP8CoXbKF6kX36W4czfo77DxETA==
-X-Google-Smtp-Source: APXvYqyXSCxhB+3RVGWUi2lXqAnCXVjRJMmGDtSQwaSdaunD3RrP1dCFavWCgkEVu7tMxmxxgJ5X4QeZFUMwuOfrpVg=
-X-Received: by 2002:a2e:9601:: with SMTP id v1mr22163816ljh.60.1558539033496; 
- Wed, 22 May 2019 08:30:33 -0700 (PDT)
+	id 1hTTID-0000RA-Ki; Wed, 22 May 2019 15:36:37 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hTTI6-0000Qm-IB
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 15:36:32 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1AF6C341;
+ Wed, 22 May 2019 08:36:30 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7C00C3F718;
+ Wed, 22 May 2019 08:36:29 -0700 (PDT)
+Date: Wed, 22 May 2019 16:36:27 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Re: [PATCH v1 0/5] arm64: avoid out-of-line ll/sc atomics
+Message-ID: <20190522153627.GE8268@e119886-lin.cambridge.arm.com>
+References: <20190516155344.24060-1-andrew.murray@arm.com>
+ <20190517072401.GI2623@hirez.programming.kicks-ass.net>
+ <20190517100802.GS8268@e119886-lin.cambridge.arm.com>
+ <CAKv+Gu_fhFB-fFw20OjhPt5BM2cFuYxbD99JJK963gQftAAn3Q@mail.gmail.com>
+ <20190522104536.GA8268@e119886-lin.cambridge.arm.com>
+ <CAKv+Gu9sWBwCisYPd7eAH7YBC4RfeQNvGh2Tt_f2iXZ5UUbmsw@mail.gmail.com>
 MIME-Version: 1.0
-References: <cover.1557160186.git.andreyknvl@google.com>
- <20190517144931.GA56186@arrakis.emea.arm.com>
- <CAFKCwrj6JEtp4BzhqO178LFJepmepoMx=G+YdC8sqZ3bcBp3EQ@mail.gmail.com>
- <20190521182932.sm4vxweuwo5ermyd@mbp> <201905211633.6C0BF0C2@keescook>
- <20190522101110.m2stmpaj7seezveq@mbp>
-In-Reply-To: <20190522101110.m2stmpaj7seezveq@mbp>
-From: enh <enh@google.com>
-Date: Wed, 22 May 2019 08:30:21 -0700
-Message-ID: <CAJgzZoosKBwqXRyA6fb8QQSZXFqfHqe9qO9je5TogHhzuoGXJQ@mail.gmail.com>
-Subject: Re: [PATCH v15 00/17] arm64: untag user pointers passed to the kernel
-To: Catalin Marinas <catalin.marinas@arm.com>
+Content-Disposition: inline
+In-Reply-To: <CAKv+Gu9sWBwCisYPd7eAH7YBC4RfeQNvGh2Tt_f2iXZ5UUbmsw@mail.gmail.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_083039_090030_BDFEFA52 
-X-CRM114-Status: GOOD (  53.21  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190522_083630_613347_F0D647E5 
+X-CRM114-Status: GOOD (  37.98  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -100,240 +67,188 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org,
- Linux Memory Management List <linux-mm@kvack.org>,
- Khalid Aziz <khalid.aziz@oracle.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
- Evgenii Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Yishai Hadas <yishaih@mellanox.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>, LKML <linux-kernel@vger.kernel.org>,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Boqun Feng <boqun.feng@gmail.com>,
+ Will Deacon <will.deacon@arm.com>, Ard.Biesheuvel@arm.com,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 22, 2019 at 3:11 AM Catalin Marinas <catalin.marinas@arm.com> wrote:
->
-> Hi Kees,
->
-> Thanks for joining the thread ;).
->
-> On Tue, May 21, 2019 at 05:04:39PM -0700, Kees Cook wrote:
-> > On Tue, May 21, 2019 at 07:29:33PM +0100, Catalin Marinas wrote:
-> > > On Mon, May 20, 2019 at 04:53:07PM -0700, Evgenii Stepanov wrote:
-> > > > On Fri, May 17, 2019 at 7:49 AM Catalin Marinas <catalin.marinas@arm.com> wrote:
-> > > > > IMO (RFC for now), I see two ways forward:
-> > > > > [...]
-> > > > > 2. Similar shim to the above libc wrapper but inside the kernel
-> > > > >    (arch/arm64 only; most pointer arguments could be covered with an
-> > > > >    __SC_CAST similar to the s390 one). There are two differences from
-> > > > >    what we've discussed in the past:
-> > > > >
-> > > > >    a) this is an opt-in by the user which would have to explicitly call
-> > > > >       prctl(). If it returns -ENOTSUPP etc., the user won't be allowed
-> > > > >       to pass tagged pointers to the kernel. This would probably be the
-> > > > >       responsibility of the C lib to make sure it doesn't tag heap
-> > > > >       allocations. If the user did not opt-in, the syscalls are routed
-> > > > >       through the normal path (no untagging address shim).
-> > > > >
-> > > > >    b) ioctl() and other blacklisted syscalls (prctl) will not accept
-> > > > >       tagged pointers (to be documented in Vicenzo's ABI patches).
+On Wed, May 22, 2019 at 12:44:35PM +0100, Ard Biesheuvel wrote:
+> On Wed, 22 May 2019 at 11:45, Andrew Murray <andrew.murray@arm.com> wrote:
+> >
+> > On Fri, May 17, 2019 at 12:29:54PM +0200, Ard Biesheuvel wrote:
+> > > On Fri, 17 May 2019 at 12:08, Andrew Murray <andrew.murray@arm.com> wrote:
 > > > >
-> > > > The way I see it, a patch that breaks handling of tagged pointers is
-> > > > not that different from, say, a patch that adds a wild pointer
-> > > > dereference. Both are bugs; the difference is that (a) the former
-> > > > breaks a relatively uncommon target and (b) it's arguably an easier
-> > > > mistake to make. If MTE adoption goes well, (a) will not be the case
-> > > > for long.
+> > > > On Fri, May 17, 2019 at 09:24:01AM +0200, Peter Zijlstra wrote:
+> > > > > On Thu, May 16, 2019 at 04:53:39PM +0100, Andrew Murray wrote:
+> > > > > > When building for LSE atomics (CONFIG_ARM64_LSE_ATOMICS), if the hardware
+> > > > > > or toolchain doesn't support it the existing code will fallback to ll/sc
+> > > > > > atomics. It achieves this by branching from inline assembly to a function
+> > > > > > that is built with specical compile flags. Further this results in the
+> > > > > > clobbering of registers even when the fallback isn't used increasing
+> > > > > > register pressure.
+> > > > > >
+> > > > > > Let's improve this by providing inline implementatins of both LSE and
+> > > > > > ll/sc and use a static key to select between them. This allows for the
+> > > > > > compiler to generate better atomics code.
+> > > > >
+> > > > > Don't you guys have alternatives? That would avoid having both versions
+> > > > > in the code, and thus significantly cuts back on the bloat.
+> > > >
+> > > > Yes we do.
+> > > >
+> > > > Prior to patch 3 of this series, the ARM64_LSE_ATOMIC_INSN macro used
+> > > > ALTERNATIVE to either bl to a fallback ll/sc function (and nops) - or execute
+> > > > some LSE instructions.
+> > > >
+> > > > But this approach limits the compilers ability to optimise the code due to
+> > > > the asm clobber list being the superset of both ll/sc and LSE - and the gcc
+> > > > compiler flags used on the ll/sc functions.
+> > > >
+> > > > I think the alternative solution (excuse the pun) that you are suggesting
+> > > > is to put the body of the ll/sc or LSE code in the ALTERNATIVE oldinstr/newinstr
+> > > > blocks (i.e. drop the fallback branches). However this still gives us some
+> > > > bloat (but less than my current solution) because we're still now inlining the
+> > > > larger fallback ll/sc whereas previously they were non-inline'd functions. We
+> > > > still end up with potentially unnecessary clobbers for LSE code with this
+> > > > approach.
+> > > >
+> > > > Approach prior to this series:
+> > > >
+> > > >    BL 1 or NOP <- single alternative instruction
+> > > >    LSE
+> > > >    LSE
+> > > >    ...
+> > > >
+> > > > 1: LL/SC <- LL/SC fallback not inlined so reused
+> > > >    LL/SC
+> > > >    LL/SC
+> > > >    LL/SC
+> > > >
+> > > > Approach proposed by this series:
+> > > >
+> > > >    BL 1 or NOP <- single alternative instruction
+> > > >    LSE
+> > > >    LSE
+> > > >    BL 2
+> > > > 1: LL/SC <- inlined LL/SC and thus duplicated
+> > > >    LL/SC
+> > > >    LL/SC
+> > > >    LL/SC
+> > > > 2: ..
+> > > >
+> > > > Approach using alternative without braces:
+> > > >
+> > > >    LSE
+> > > >    LSE
+> > > >    NOP
+> > > >    NOP
+> > > >
+> > > > or
+> > > >
+> > > >    LL/SC <- inlined LL/SC and thus duplicated
+> > > >    LL/SC
+> > > >    LL/SC
+> > > >    LL/SC
+> > > >
+> > > > I guess there is a balance here between bloat and code optimisation.
+> > > >
 > > >
-> > > It's also the fact such patch would go unnoticed for a long time until
-> > > someone exercises that code path. And when they do, the user would be
-> > > pretty much in the dark trying to figure what what went wrong, why a
-> > > SIGSEGV or -EFAULT happened. What's worse, we can't even say we fixed
-> > > all the places where it matters in the current kernel codebase (ignoring
-> > > future patches).
-> >
-> > So, looking forward a bit, this isn't going to be an ARM-specific issue
-> > for long.
->
-> I do hope so.
->
-> > In fact, I think we shouldn't have arm-specific syscall wrappers
-> > in this series: I think untagged_addr() should likely be added at the
-> > top-level and have it be a no-op for other architectures.
->
-> That's what the current patchset does, so we have this as a starting
-> point. Kostya raised another potential issue with the syscall wrappers:
-> with MTE the kernel will be forced to enable the match-all (wildcard)
-> pointers for user space accesses since copy_from_user() would only get a
-> 0 tag. So it has wider implications than just uaccess routines not
-> checking the colour.
->
-> > So given this becoming a kernel-wide multi-architecture issue (under
-> > the assumption that x86, RISC-V, and others will gain similar TBI or
-> > MTE things), we should solve it in a way that we can re-use.
->
-> Can we do any better to aid the untagged_addr() placement (e.g. better
-> type annotations, better static analysis)? We have to distinguish
-> between user pointers that may be dereferenced by the kernel (I think
-> almost fully covered with this patchset) and user addresses represented
-> as ulong that may:
->
-> a) be converted to a user pointer and dereferenced; I think that's the
->    case for many overloaded ulong/u64 arguments
->
-> b) used for address space management, rbtree look-ups etc. where the tag
->    is no longer relevant and it even gets in the way
->
-> We tried last year to identify void __user * casts to unsigned long
-> using sparse on the assumption that pointers can be tagged while ulong
-> is about address space management and needs to lose such tag. I think we
-> could have pushed this further. For example, get_user_pages() takes an
-> unsigned long but it is perfectly capable of untagging the address
-> itself. Shall we change its first argument to void __user * (together
-> with all its callers)?
->
-> find_vma(), OTOH, could untag the address but it doesn't help since
-> vm_start/end don't have such information (that's more about the content
-> or type that the user decided) and the callers check against it.
->
-> Are there any other places where this matters? These patches tracked
-> down find_vma() as some heuristics but we may need better static
-> analysis to identify other cases.
->
-> > We need something that is going to work everywhere. And it needs to be
-> > supported by the kernel for the simple reason that the kernel needs to
-> > do MTE checks during copy_from_user(): having that information stripped
-> > means we lose any userspace-assigned MTE protections if they get handled
-> > by the kernel, which is a total non-starter, IMO.
->
-> Such feedback is welcomed ;).
->
-> > As an aside: I think Sparc ADI support in Linux actually side-stepped
-> > this[1] (i.e. chose "solution 1"): "All addresses passed to kernel must
-> > be non-ADI tagged addresses." (And sadly, "Kernel does not enable ADI
-> > for kernel code.") I think this was a mistake we should not repeat for
-> > arm64 (we do seem to be at least in agreement about this, I think).
-> >
-> > [1] https://lore.kernel.org/patchwork/patch/654481/
->
-> I tried to drag the SPARC guys into this discussion but without much
-> success.
->
-> > > > This is a bit of a chicken-and-egg problem. In a world where memory
-> > > > allocators on one or several popular platforms generate pointers with
-> > > > non-zero tags, any such breakage will be caught in testing.
-> > > > Unfortunately to reach that state we need the kernel to start
-> > > > accepting tagged pointers first, and then hold on for a couple of
-> > > > years until userspace catches up.
 > > >
-> > > Would the kernel also catch up with providing a stable ABI? Because we
-> > > have two moving targets.
+> > > So there are two separate questions here:
+> > > 1) whether or not we should merge the inline asm blocks so that the
+> > > compiler sees a single set of constraints and operands
+> > > 2) whether the LL/SC sequence should be inlined and/or duplicated.
 > > >
-> > > On one hand, you have Android or some Linux distro that stick to a
-> > > stable kernel version for some time, so they have better chance of
-> > > clearing most of the problems. On the other hand, we have mainline
-> > > kernel that gets over 500K lines every release. As maintainer, I can't
-> > > rely on my testing alone as this is on a limited number of platforms. So
-> > > my concern is that every kernel release has a significant chance of
-> > > breaking the ABI, unless we have a better way of identifying potential
-> > > issues.
+> > > This approach appears to be based on the assumption that reserving one
+> > > or sometimes two additional registers for the LL/SC fallback has a
+> > > more severe impact on performance than the unconditional branch.
+> > > However, it seems to me that any call site that uses the atomics has
+> > > to deal with the possibility of either version being invoked, and so
+> > > the additional registers need to be freed up in any case. Or am I
+> > > missing something?
 > >
-> > I just want to make sure I fully understand your concern about this
-> > being an ABI break, and I work best with examples. The closest situation
-> > I can see would be:
+> > Yes at compile time the compiler doesn't know which atomics path will
+> > be taken so code has to be generated for both (thus optimisation is
+> > limited). However due to this approach we no longer use hard-coded
+> > registers or restrict which/how registers can be used and therefore the
+> > compiler ought to have greater freedom to optimise.
 > >
-> > - some program has no idea about MTE
->
-> Apart from some libraries like libc (and maybe those that handle
-> specific device ioctls), I think most programs should have no idea about
-> MTE. I wouldn't expect programmers to have to change their app just
-> because we have a new feature that colours heap allocations.
+> 
+> Yes, I agree that is an improvement. But that doesn't require the
+> LL/SC and LSE asm sequences to be distinct.
+> 
+> > >
+> > > As for the duplication: a while ago, I suggested an approach [0] using
+> > > alternatives and asm subsections, which moved the duplicated LL/SC
+> > > fallbacks out of the hot path. This does not remove the bloat, but it
+> > > does mitigate its impact on I-cache efficiency when running on
+> > > hardware that does not require the fallbacks.#
+> >
+> > I've seen this. I guess its possible to incorporate subsections into the
+> > inline assembly in the __ll_sc_* functions of this series. If we wanted
+> > the ll/sc fallbacks not to be inlined, then I suppose we can put these
+> > functions in their own section to achieve the same goal.
+> >
+> > My toolchain knowledge is a limited here - but in order to use subsections
+> > you require a branch - in this case does the compiler optimise across the
+> > sub sections? If not then I guess there is no benefit to inlining the code
+> > in which case you may as well have a branch to a function (in its own
+> > section) and then you get both the icache gain and also avoid bloat. Does
+> > that make any sense?
+> >
+> 
+> 
+> Not entirely. A function call requires an additional register to be
+> preserved, and the bl and ret instructions are both indirect branches,
+> while subsections use direct unconditional branches only.
+> 
+> Another reason we want to get rid of the current approach (and the
+> reason I looked into it in the first place) is that we are introducing
+> hidden branches, which affects the reliability of backtraces and this
+> is an issue for livepatch.
 
-obviously i'm biased as a libc maintainer, but...
+I guess we don't have enough information to determine the performance effect
+of this.
 
-i don't think it helps to move this to libc --- now you just have an
-extra dependency where to have a guaranteed working system you need to
-update your kernel and libc together. (or at least update your libc to
-understand new ioctls etc _before_ you can update your kernel.)
+I think I'll spend some time comparing the effect of some of these factors
+on typical code with objdump to get a better feel for the likely effect
+on performance and post my findings.
 
-> > - malloc() starts returning MTE-tagged addresses
-> > - program doesn't break from that change
-> > - program uses some syscall that is missing untagged_addr() and fails
-> > - kernel has now broken userspace that used to work
->
-> That's one aspect though probably more of a case of plugging in a new
-> device (graphics card, network etc.) and the ioctl to the new device
-> doesn't work.
->
-> The other is that, assuming we reach a point where the kernel entirely
-> supports this relaxed ABI, can we guarantee that it won't break in the
-> future. Let's say some subsequent kernel change (some refactoring)
-> misses out an untagged_addr(). This renders a previously TBI/MTE-capable
-> syscall unusable. Can we rely only on testing?
->
-> > The trouble I see with this is that it is largely theoretical and
-> > requires part of userspace to collude to start using a new CPU feature
-> > that tickles a bug in the kernel. As I understand the golden rule,
-> > this is a bug in the kernel (a missed ioctl() or such) to be fixed,
-> > not a global breaking of some userspace behavior.
->
-> Yes, we should follow the rule that it's a kernel bug but it doesn't
-> help the user that a newly installed kernel causes user space to no
-> longer reach a prompt. Hence the proposal of an opt-in via personality
-> (for MTE we would need an explicit opt-in by the user anyway since the
-> top byte is no longer ignored but checked against the allocation tag).
+Thanks for the feedback.
 
-but realistically would this actually get used in this way? or would
-any given system either be MTE or non-MTE. in which case a kernel
-configuration option would seem to make more sense. (because either
-way, the hypothetical user basically needs to recompile the kernel to
-get back on their feet. or all of userspace.)
+Thanks,
 
-i'm not sure i see this new way for a kernel update to break my system
-and need to be fixed forward/rolled back as any different from any of
-the existing ways in which this can happen :-) as an end-user i have
-to rely on whoever's sending me software updates to test adequately
-enough that they find the problems. as an end user, there isn't any
-difference between "my phone rebooted when i tried to take a photo
-because of a kernel/driver leak", say, and "my phone rebooted when i
-tried to take a photo because of missing untagging of a pointer passed
-via ioctl".
+Andrew Murray
 
-i suspect you and i have very different people in mind when we say "user" :-)
-
-> > I feel like I'm missing something about this being seen as an ABI
-> > break. The kernel already fails on userspace addresses that have high
-> > bits set -- are there things that _depend_ on this failure to operate?
->
-> It's about providing a relaxed ABI which allows non-zero top byte and
-> breaking it later inadvertently without having something better in place
-> to analyse the kernel changes.
->
-> Thanks.
->
-> --
-> Catalin
+> 
+> > >
+> > >
+> > > [0] https://lore.kernel.org/linux-arm-kernel/20181113233923.20098-1-ard.biesheuvel@linaro.org/
+> > >
+> > >
+> > >
+> > > > >
+> > > > > > These changes add a small amount of bloat on defconfig according to
+> > > > > > bloat-o-meter:
+> > > > > >
+> > > > > > text:
+> > > > > >   add/remove: 1/108 grow/shrink: 3448/20 up/down: 272768/-4320 (268448)
+> > > > > >   Total: Before=12363112, After=12631560, chg +2.17%
+> > > > >
+> > > > > I'd say 2% is quite significant bloat.
+> > > >
+> > > > Thanks,
+> > > >
+> > > > Andrew Murray
+> > > >
+> > > > _______________________________________________
+> > > > linux-arm-kernel mailing list
+> > > > linux-arm-kernel@lists.infradead.org
+> > > > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
