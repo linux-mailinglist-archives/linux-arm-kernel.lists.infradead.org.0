@@ -2,51 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5A582603D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 11:15:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 296F126048
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 11:18:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8MNmsMFqAuMBrqK/eBrk1S2d+zlZQ3aT4UxwVGkvBKw=; b=T9fVC+daid7p1J
-	/dPiEafmFjZXgZeST3FL6XZPDNDZIAb3Yf204QLOzsz4g9X8Fb6UYEkd41RoKFLkNmTHstemFjaj9
-	0YnECG18arUb4oBuOIYkZ1LvBF52TDkW+JzFqFjYOzbk7LdsPPEDj9uqDhP2wiZzn5egXOtHkxn91
-	WeKqDs/jKT6qMpZjnhE6uvqBFdLDcn7lS3JLOuxUpc1kBjjXNYlown8qbQ2tViYSRwxjB7gVs4vIo
-	fhHjndvFfMn1irsclRtMppGF95MShz6ACRQXmfyd95pgPIYMV0vju412Ytoc6YQH1wYZDqKi3QUsi
-	kungE2ZIRyPuUfr7Anpw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cMWQWDOprecvxw/mbeRS92TQFespkT+MvN16AzXTGRE=; b=ZamYcyXHbYIBUW
+	hC9oZUYuReZ29GMT1U/YoDhTqh6BKzyRYl307YMKRRdZ02gjz2r1aiyPRzSpM+9fA6gcfxZHMizm+
+	1Kx/z5jDtSRfNga2GVbYDpgYs4BUrS2wLeyxdddMKp8o2LDK6z1u0AgUkH0LwO4ky93CTGdIsfvy6
+	FUWmefUsg9tJ2Kt3ydQvOdN3KXbjeWTMRr2IB2o7OiEEryysXpZjtaRxqmWPXDlYE5DBRu43Lzcph
+	Rv9vxaQUcgLGiFG5b2bhdYHHyid3zekjWxQIuRJvsP7QuNBdGrE9kGcdIPIVEfrBmnU0/jtwJMBvE
+	Aqu5Dq+nGO13DT7ngwAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTNL5-0006zD-7v; Wed, 22 May 2019 09:15:11 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1hTNNj-0000Cl-DK; Wed, 22 May 2019 09:17:55 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTNKs-0006ye-L7; Wed, 22 May 2019 09:14:59 +0000
-Received: from we0524.dip.tu-dresden.de ([141.76.178.12] helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hTNKp-0008JC-Ur; Wed, 22 May 2019 11:14:55 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Matthias Kaehlcke <mka@chromium.org>
-Subject: Re: [PATCH v2 2/3] ARM: dts: rockchip: Use the GPU to cool CPU
- thermal zone of veyron mickey
-Date: Wed, 22 May 2019 11:14:55 +0200
-Message-ID: <3939310.vedCpJl8Cg@phil>
-In-Reply-To: <20190520220051.54847-2-mka@chromium.org>
-References: <20190520220051.54847-1-mka@chromium.org>
- <20190520220051.54847-2-mka@chromium.org>
+ id 1hTNNb-0000CI-I1
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 09:17:49 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+ by ns.iliad.fr (Postfix) with ESMTP id AB33520A0E;
+ Wed, 22 May 2019 11:17:40 +0200 (CEST)
+Received: from [192.168.108.49] (freebox.vlq16.iliad.fr [213.36.7.13])
+ by ns.iliad.fr (Postfix) with ESMTP id 7CED620875;
+ Wed, 22 May 2019 11:17:40 +0200 (CEST)
+From: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Subject: Re: [PATCH v2 7/9] arm64: dts: qcom: msm8998: Add PSCI cpuidle low
+ power states
+To: Amit Kucheria <amit.kucheria@linaro.org>,
+ MSM <linux-arm-msm@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+References: <cover.1558430617.git.amit.kucheria@linaro.org>
+ <49cf5d94beb9af9ef4e78d4c52f3b0ad20b7c63f.1558430617.git.amit.kucheria@linaro.org>
+ <a7514c68-d2d3-ce9e-bc4b-f484bb5bf3cf@free.fr>
+Message-ID: <d1ca4d37-ce25-a285-a9ef-dfe831f3d1de@free.fr>
+Date: Wed, 22 May 2019 11:17:40 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <a7514c68-d2d3-ce9e-bc4b-f484bb5bf3cf@free.fr>
+Content-Language: en-US
+X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
+ Wed May 22 11:17:40 2019 +0200 (CEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_021458_836850_9AB8737D 
-X-CRM114-Status: UNSURE (   8.47  )
+X-CRM114-CacheID: sfid-20190522_021747_739951_4650A6E7 
+X-CRM114-Status: UNSURE (   8.26  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [212.27.33.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (marc.w.gonzalez[at]free.fr)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -58,33 +73,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Douglas Anderson <dianders@chromium.org>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Jeffrey Hugo <jhugo@codeaurora.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Marc Zyngier <marc.zyngier@arm.com>, Sibi Sankar <sibis@codeaurora.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, Niklas Cassel <niklas.cassel@linaro.org>,
+ Robin Murphy <robin.murphy@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am Dienstag, 21. Mai 2019, 00:00:50 CEST schrieb Matthias Kaehlcke:
-> On rk3288 the CPU and GPU temperatures are correlated. Limit the GPU
-> frequency on veyron mickey to 400 MHz for CPU temperatures >=3D 65=B0C
-> and to 300 MHz for CPU temperatures >=3D 85=B0C.
-> =
+[ Re-sending to a wider audience, hoping to catch someone's eye ]
 
-> This matches the configuration of the downstream Chrome OS 3.14 kernel,
-> the 'official' kernel for mickey.
-> =
+https://patchwork.kernel.org/patch/10953257/
 
-> Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
+On 21/05/2019 14:03, Marc Gonzalez wrote:
 
-applied patches 2+3 for 5.3
+> With CPUIDLE enabled, my system starts to boot, hangs a few seconds,
+> then silently reboots (killed by FW)
 
-Thanks
-Heiko
+Using extremely high-tech debugging tools (i.e. spraying printk left and right)
+I traced this crash down to:
+
+psci_cpu_suspend_enter: 435
+psci_cpu_suspend: 171
+psci_cpu_suspend: __invoke_psci_fn_smc c4000001
+__invoke_psci_fn_smc: id=c4000001 3 0 0
+/*** execution never returns from arm_smccc_smc() ***/
 
 
+The following dmesg log caught my eye, and might be relevant:
+
+	ARM_SMCCC_ARCH_WORKAROUND_1 missing from firmware
+
+Is that bad, doctor? I don't think it would explain the crash though...
+
+
+If I revert the patch, psci_cpu_suspend_enter() is never called,
+so we don't tickle the arm_smccc_smc() monster.
+
+Could it be that this FW doesn't support PSCI?
+
+Regards.
 
 _______________________________________________
 linux-arm-kernel mailing list
