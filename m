@@ -2,43 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B616A27193
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 23:26:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60E4D27196
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 23:26:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hyAPnpYjbNRyf+m5Fbz9iBoOoq+UXlsdziAv2u62M+w=; b=XMcrMtzCT+qiZL
-	7fjWdU1T6JSrnysldQFm031HfSD8UOR8m369xLVLZRSBWgKWNDQO7toReS3cnknJgS1cMzWr18tUC
-	yQt2V3cvyFRTmPpaMY7OJX/AfHzNzHv2VAtXqCd3LZw6qYgK97+shZZU/Zi3LM5hBszvX0We6iqVo
-	qXmONQgrhV4hPu5qYYKcnkprAnN5nTJPe83fuZRrAfDiIlXvCICWCcUyjqRP+6eEb43cn5YNSe6EP
-	4n3zrP7hKcZcpdzYc/T7BPpCJ8bzT9Dca2QtOO4q+w9RE9WcWUsGDj2rB88nlc4hSfWcJ5KGksbNU
-	whyzV8TsTgftYgz7h7Bg==;
+	List-Owner; bh=Qper+IXtaqYCJoIJ+w6i7OYTfziUTXdPFxSHjPCqU7U=; b=DGaU5NVEzAzbmC
+	xXo1lnQgSfFUO7VwHNvwqQSkzWO+AC9JjjoChn6aLCvlNRIDj2LLcNrA3VSxR9o2V0W0qkJWK1i5C
+	5x4I4xGMqL0bXK+bS9OzX76zSxLjc+xxi4s12ix2txrPTWC6eUH3awep7UIWdL+KcKYGFCmJ3RVZk
+	QW1h92RE7UThqgl9WlxI0n5PrDz96o48fHovnV2mtPWP8ZUBFbaRRXILhCoCSzuFyIbDspXzTYMb+
+	kLP6FpCq7Nwf8g1ZZEkXwA2eBs9bpT4SC47OpiQToceO6Y8zJnI9XJE/tEuuYIitNA42ObUvRG+S2
+	8n6UWu6gQ98Z6jPpcFlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTYko-0007c5-Dg; Wed, 22 May 2019 21:26:30 +0000
-Received: from relay10.mail.gandi.net ([217.70.178.230])
+	id 1hTYl6-0007rO-0g; Wed, 22 May 2019 21:26:48 +0000
+Received: from relay9-d.mail.gandi.net ([217.70.183.199])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTYkg-0007bh-DZ
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 21:26:24 +0000
+ id 1hTYky-0007pF-0Z
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 21:26:41 +0000
+X-Originating-IP: 88.190.179.123
 Received: from localhost (unknown [88.190.179.123])
  (Authenticated sender: repk@triplefau.lt)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id A7F9A240009;
- Wed, 22 May 2019 21:26:08 +0000 (UTC)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 5D16DFF805;
+ Wed, 22 May 2019 21:26:25 +0000 (UTC)
 From: Remi Pommarel <repk@triplefau.lt>
 To: Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
  Bjorn Helgaas <helgaas@kernel.org>
-Subject: [PATCH] PCI: aardvark: Fix PCI_EXP_RTCTL conf register writing
-Date: Wed, 22 May 2019 23:33:49 +0200
-Message-Id: <20190522213351.21366-1-repk@triplefau.lt>
+Subject: [PATCH v2] PCI: aardvark: Wait for endpoint to be ready before
+ training link
+Date: Wed, 22 May 2019 23:33:50 +0200
+Message-Id: <20190522213351.21366-2-repk@triplefau.lt>
 X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_142622_607301_B49BA83B 
-X-CRM114-Status: UNSURE (   9.30  )
+X-CRM114-CacheID: sfid-20190522_142640_202063_E049C528 
+X-CRM114-Status: UNSURE (   9.17  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -46,7 +48,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.230 listed in list.dnswl.org]
+ low trust [217.70.183.199 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,40 +70,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-PCI_EXP_RTCTL is used to activate PME interrupt only, so writing into it
-should not modify other interrupts' mask (such as ISR0).
+When configuring pcie reset pin from gpio (e.g. initially set by
+u-boot) to pcie function this pin goes low for a brief moment
+asserting the PERST# signal. Thus connected device enters fundamental
+reset process and link configuration can only begin after a minimal
+100ms delay (see [1]).
 
-Fixes: 6302bf3ef78d ("PCI: Init PCIe feature bits for managed host bridge alloc")
+Because the pin configuration comes from the "default" pinctrl it is
+implicitly configured before the probe callback is called:
+
+driver_probe_device()
+  really_probe()
+    ...
+    pinctrl_bind_pins() /* Here pin goes from gpio to PCIE reset
+                           function and PERST# is asserted */
+    ...
+    drv->probe()
+
+[1] "PCI Express Base Specification", REV. 4.0
+    PCI Express, February 19 2014, 6.6.1 Conventional Reset
+
 Signed-off-by: Remi Pommarel <repk@triplefau.lt>
 ---
+Changes since v1:
+  - Add a comment about pinctrl implicit pin configuration
+  - Use more legible msleep
+  - Use PCI_PM_D3COLD_WAIT macro
+
 Please note that I will unlikely be able to answer any comments from May
 24th to June 10th.
 ---
- drivers/pci/controller/pci-aardvark.c | 10 +++++++---
- 1 file changed, 7 insertions(+), 3 deletions(-)
+ drivers/pci/controller/pci-aardvark.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
 diff --git a/drivers/pci/controller/pci-aardvark.c b/drivers/pci/controller/pci-aardvark.c
-index 134e0306ff00..27102d3b4f9c 100644
+index 134e0306ff00..d998c2b9cd04 100644
 --- a/drivers/pci/controller/pci-aardvark.c
 +++ b/drivers/pci/controller/pci-aardvark.c
-@@ -451,10 +451,14 @@ advk_pci_bridge_emul_pcie_conf_write(struct pci_bridge_emul *bridge,
- 		advk_writel(pcie, new, PCIE_CORE_PCIEXP_CAP + reg);
- 		break;
+@@ -324,6 +324,14 @@ static void advk_pcie_setup_hw(struct advk_pcie *pcie)
+ 	reg |= PIO_CTRL_ADDR_WIN_DISABLE;
+ 	advk_writel(pcie, reg, PIO_CTRL);
  
--	case PCI_EXP_RTCTL:
--		new = (new & PCI_EXP_RTCTL_PMEIE) << 3;
--		advk_writel(pcie, new, PCIE_ISR0_MASK_REG);
-+	case PCI_EXP_RTCTL: {
-+		/* Only mask/unmask PME interrupt */
-+		u32 val = advk_readl(pcie, PCIE_ISR0_MASK_REG) &
-+			~PCIE_MSG_PM_PME_MASK;
-+		val |= (new & PCI_EXP_RTCTL_PMEIE) << 3;
-+		advk_writel(pcie, val, PCIE_ISR0_MASK_REG);
- 		break;
-+	}
- 
- 	case PCI_EXP_RTSTA:
- 		new = (new & PCI_EXP_RTSTA_PME) >> 9;
++	/*
++	 * PERST# signal could have been asserted by pinctrl subsystem before
++	 * probe() callback has been called, making the endpoint going into
++	 * fundamental reset. As required by PCI Express spec a delay for at
++	 * least 100ms after such a reset before link training is needed.
++	 */
++	msleep(PCI_PM_D3COLD_WAIT);
++
+ 	/* Start link training */
+ 	reg = advk_readl(pcie, PCIE_CORE_LINK_CTRL_STAT_REG);
+ 	reg |= PCIE_CORE_LINK_TRAINING;
 -- 
 2.20.1
 
