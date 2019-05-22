@@ -2,115 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A69026149
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 12:03:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 953B52614E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 12:03:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MyF2wVQ4MXqnXt+s3lYSXqV6//N9cG95L3Z5wiVMHOc=; b=VCtIkM7zogsY2K
-	SYkupPlv1mxRkTCmPLl5HXa99MFgGdO9ubYW/PcCc807DEzqiZwlxsoG7rCVzUD621F5S4FrHII7G
-	+X/87rCOM8PNkHtVtpXrqX2ErLDyFOCGTHRiAKH0CmqHKusACblZRDohdodfotHSilOrW6Xktg04E
-	xKb63MNXmtaUdu4vBhUrcLIqmACYKJIXTBwWgoApPusU7OUgqFiKDuJanpB2+GONNU51VQmTWKCFc
-	rutqENjgCvgOK9PLYVzzm2Az3o+GbIfXs+DkfouwqUbw7jA8BRQXizxQXVHNGYGtyLG2NjNtQcyGP
-	cGvb3R3NVzUeQwU4E7hw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
+	:Subject:From:Reply-To:To:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=UkehibFyAUetu2o2YAddH7hhaiBK46P8rOQFdDiqVFI=; b=HLOAnbRMZVwaph
+	AMsRX0TSOSFMY2UGBm4A4eZDKJTozwEk7z2gIhLIgfZ0aEz6A6Rh8X96FO+ldVtlD+uIpW5T9azZh
+	SPW3G4SnOZcNsqUjooOjWdHKImy5xZ8sTBhTGOG1NE1m0rvYzbkfu76X/jUwyANrTtGMxQ9EIecgt
+	8lj4f/8pwj/0Uat4xAAdlem4yaA6TeWkQ0oagCYpRXeE7iXD58gIJHJQyEjL29qVk8qDqwnf6RMaC
+	rM2YsQSFofMFskrt9A8+V2scwao9jbjNYOZMs+Wznz9NMVrp6yJdYpnuaIah6+/9PakrRDo5ZGMBb
+	c11XpdNqRt+Hv9JC8zCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTO5V-000827-RI; Wed, 22 May 2019 10:03:09 +0000
-Received: from mail-eopbgr60075.outbound.protection.outlook.com ([40.107.6.75]
- helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+	id 1hTO6A-000065-1x; Wed, 22 May 2019 10:03:50 +0000
+Received: from mail-db5eur03olkn0818.outbound.protection.outlook.com
+ ([2a01:111:f400:fe0a::818]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTO49-0004ug-6D
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 10:01:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=CoY2my2cxZrdmgh7yx7DhKszJb02zyXz9XuhYE5MPU0=;
- b=ftZ4B9r0L+neZmT7aI8HMdVXcha3h8ONV613ndUNsp0aPGhIQirvgKPT7Qso/cl14hlCGNe3J34cJ3Tk0GQT6sVKldlj6Z4F0S0u5oeRWQVdiposEYrW9k091PXw2jYbX83VuwaYZ/22tK9Lxu88A44oQO+xHkbFggqJtufUtc8=
-Received: from VI1PR04MB4543.eurprd04.prod.outlook.com (20.177.55.90) by
- VI1PR04MB3149.eurprd04.prod.outlook.com (10.170.229.23) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1900.18; Wed, 22 May 2019 10:01:03 +0000
-Received: from VI1PR04MB4543.eurprd04.prod.outlook.com
- ([fe80::5062:df97:a70b:93f8]) by VI1PR04MB4543.eurprd04.prod.outlook.com
- ([fe80::5062:df97:a70b:93f8%7]) with mapi id 15.20.1900.020; Wed, 22 May 2019
- 10:01:03 +0000
-From: Robin Gong <yibin.gong@nxp.com>
-To: "robh@kernel.org" <robh@kernel.org>, "broonie@kernel.org"
- <broonie@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "festevam@gmail.com"
- <festevam@gmail.com>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "vkoul@kernel.org" <vkoul@kernel.org>, "dan.j.williams@intel.com"
- <dan.j.williams@intel.com>, "u.kleine-koenig@pengutronix.de"
- <u.kleine-koenig@pengutronix.de>, "plyatov@gmail.com" <plyatov@gmail.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>, "l.stach@pengutronix.de"
- <l.stach@pengutronix.de>
-Subject: [PATCH v4 14/14] arm64: defconfig: Enable SDMA on i.mx8mq/8mm
-Thread-Topic: [PATCH v4 14/14] arm64: defconfig: Enable SDMA on i.mx8mq/8mm
-Thread-Index: AQHVEIVEOHCp3qYurEufxlsdSFFt/w==
-Date: Wed, 22 May 2019 10:01:03 +0000
-Message-ID: <1558548188-1155-15-git-send-email-yibin.gong@nxp.com>
-References: <1558548188-1155-1-git-send-email-yibin.gong@nxp.com>
-In-Reply-To: <1558548188-1155-1-git-send-email-yibin.gong@nxp.com>
-Accept-Language: en-US
+ id 1hTO5h-0008PB-0Y
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 10:03:29 +0000
+Received: from DB5EUR03FT027.eop-EUR03.prod.protection.outlook.com
+ (10.152.20.60) by DB5EUR03HT010.eop-EUR03.prod.protection.outlook.com
+ (10.152.20.73) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1922.16; Wed, 22 May
+ 2019 10:03:18 +0000
+Received: from VI1PR07MB4432.eurprd07.prod.outlook.com (10.152.20.52) by
+ DB5EUR03FT027.mail.protection.outlook.com (10.152.20.121) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.20.1922.16 via Frontend Transport; Wed, 22 May 2019 10:03:18 +0000
+Received: from VI1PR07MB4432.eurprd07.prod.outlook.com
+ ([fe80::91f:b1bb:a60a:fdc3]) by VI1PR07MB4432.eurprd07.prod.outlook.com
+ ([fe80::91f:b1bb:a60a:fdc3%7]) with mapi id 15.20.1922.013; Wed, 22 May 2019
+ 10:03:17 +0000
+From: Philippe Mazenauer <philippe.mazenauer@outlook.de>
+Subject: [PATCH] arm: topology: make function static
+Thread-Topic: [PATCH] arm: topology: make function static
+Thread-Index: AQHVEIWUn/i0+75iwk+EnwEgRCDTcw==
+Date: Wed, 22 May 2019 10:03:17 +0000
+Message-ID: <VI1PR07MB443207D4A7601168EC51C641FD000@VI1PR07MB4432.eurprd07.prod.outlook.com>
+Accept-Language: de-CH, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.7.4
-x-clientproxiedby: HK2PR04CA0045.apcprd04.prod.outlook.com
- (2603:1096:202:14::13) To VI1PR04MB4543.eurprd04.prod.outlook.com
- (2603:10a6:803:6d::26)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=yibin.gong@nxp.com; 
+x-clientproxiedby: MWHPR15CA0050.namprd15.prod.outlook.com
+ (2603:10b6:301:4c::12) To VI1PR07MB4432.eurprd07.prod.outlook.com
+ (2603:10a6:802:67::17)
+x-incomingtopheadermarker: OriginalChecksum:B2CF39FDFDD89AAA0052F75E9B8DCBAE08792BD69B67008FB2B3B2D5119C3C7F;
+ UpperCasedChecksum:62CEE253371D47573478AC960DC26245A833E06E5F2A90DC4E1016866B5C54CB;
+ SizeAsReceived:7452; Count:47
 x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [119.31.174.66]
+x-mailer: git-send-email 2.17.1
+x-tmn: [Te3Kow79IK5edHwUwcUouDi32pwLaVe6]
+x-microsoft-original-message-id: <20190522100255.157960-1-philippe.mazenauer@outlook.de>
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: c0d43ad0-1bb2-4918-98f1-08d6de9c6638
-x-ms-office365-filtering-ht: Tenant
+x-incomingheadercount: 47
+x-eopattributedmessage: 0
 x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR04MB3149; 
-x-ms-traffictypediagnostic: VI1PR04MB3149:
-x-microsoft-antispam-prvs: <VI1PR04MB31497DFF1ED3CA4BDCABB08D89000@VI1PR04MB3149.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:949;
-x-forefront-prvs: 0045236D47
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(199004)(189003)(2501003)(446003)(11346002)(2616005)(186003)(68736007)(26005)(5660300002)(476003)(86362001)(71190400001)(50226002)(54906003)(110136005)(66066001)(76176011)(486006)(4326008)(7736002)(52116002)(2201001)(4744005)(71200400001)(36756003)(6512007)(99286004)(7416002)(386003)(8676002)(6506007)(305945005)(53936002)(81166006)(66446008)(25786009)(64756008)(81156014)(6436002)(256004)(6486002)(102836004)(14454004)(73956011)(8936002)(498600001)(2906002)(66946007)(66476007)(66556008)(6116002)(3846002)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB3149;
- H:VI1PR04MB4543.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: fN+8mbVaioLkJvmGgy3/Q0QJ1iqAjGSWEJwZ6hkvMQJSQyPyp2j6jBJgNnN+cULqEAAHrESKbiXpc9P4rS9U8N/fbiSrO2aGvVEHJ3qEa6bUN0BQmVbnKMJ5n/OWc0X1UAOliUv6cuALP3brMM3rmxBVe+9WZFrEyxj603oSZzwgvXHu2btcysExL0PUsyY17WtH2tn+9OJGMlGMz2w8eXZRALmpZUqINZXNTSvAiYPypdNOql3WhZzWtdMmJIYPjgpYmJ4+BNbHnUVc+5wPkGGDCNTOpPQPAqWHXjfaqgA8vfAC4soQuTqK9plDAnjeEFS7JkD2fhQ4tiXUHVzSrk4eiu7ItWlvF02si2Y00aY+CTivvHnxpd0NJsEPSWRimG3M7OUOnpWPVnKqu3Nm5lov360CJafrUm+xBsxcuPA=
+ RULEID:(2390118)(5050001)(7020095)(20181119110)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031323274)(2017031324274)(2017031322404)(1601125500)(1603101475)(1701031045);
+ SRVR:DB5EUR03HT010; 
+x-ms-traffictypediagnostic: DB5EUR03HT010:
+x-microsoft-antispam-message-info: 8WLtpJQc7MTNj3jj1KRuaXfkIkyIa7N5x35J8RRDo42SAEmVXeaDD0jvvl7OWX45A4ruKddmCyy1MPQxiN4pu7uMU+eP9g2SYMs6A1APSklzIyI5AP//bDhUXzjMAxABBY0vqLsAK/bhAaVnio36tkyFDn1DTXzXAmJnYTzS53a+Q+X2sXm2/K1URtOz+9Nb
+Content-ID: <2B3C6BEBC5B5E94FB67AC814F0603D07@eurprd07.prod.outlook.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c0d43ad0-1bb2-4918-98f1-08d6de9c6638
-X-MS-Exchange-CrossTenant-originalarrivaltime: 22 May 2019 10:01:03.6670 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB3149
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9b07c1ee-b58f-479c-6977-08d6de9cb660
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 May 2019 10:03:17.9347 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Internet
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB5EUR03HT010
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_030145_239493_72AE6ED7 
-X-CRM114-Status: GOOD (  11.07  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190522_030321_229651_B92185E9 
+X-CRM114-Status: GOOD (  12.51  )
+X-Spam-Score: 2.8 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (2.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.6.75 listed in list.dnswl.org]
+ no trust [2a01:111:f400:fe0a:0:0:0:818 listed in]
+ [list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.2 MISSING_HEADERS        Missing To: header
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (philippe.mazenauer[at]outlook.de)
+ 1.6 MALFORMED_FREEMAIL     Bad headers on message from free email
+ service
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -122,52 +105,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Rob Herring <robh@kernel.org>,
+ Philippe Mazenauer <philippe.mazenauer@outlook.de>,
+ Russell King <linux@armlinux.org.uk>, "moderated list:ARM
+ PORT" <linux-arm-kernel@lists.infradead.org>,
+ open list <linux-kernel@vger.kernel.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable SDMA support on i.mx8mq/8mm chips, including enabling
-CONFIG_FW_LOADER_USER_HELPER/CONFIG_FW_LOADER_USER_HELPER_FALLBACK
-for firmware loaded by udev.
-
-Signed-off-by: Robin Gong <yibin.gong@nxp.com>
----
- arch/arm64/configs/defconfig | 3 +++
- 1 file changed, 3 insertions(+)
-
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index c12c505..2ffea30 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -198,6 +198,8 @@ CONFIG_PCIE_HISI_STB=y
- CONFIG_UEVENT_HELPER_PATH="/sbin/hotplug"
- CONFIG_DEVTMPFS=y
- CONFIG_DEVTMPFS_MOUNT=y
-+CONFIG_FW_LOADER_USER_HELPER=y
-+CONFIG_FW_LOADER_USER_HELPER_FALLBACK=y
- CONFIG_HISILICON_LPC=y
- CONFIG_SIMPLE_PM_BUS=y
- CONFIG_MTD=y
-@@ -630,6 +632,7 @@ CONFIG_RTC_DRV_IMX_SC=m
- CONFIG_RTC_DRV_XGENE=y
- CONFIG_DMADEVICES=y
- CONFIG_DMA_BCM2835=m
-+CONFIG_IMX_SDMA=y
- CONFIG_K3_DMA=y
- CONFIG_MV_XOR=y
- CONFIG_MV_XOR_V2=y
--- 
-2.7.4
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+TWFrZSBmdW5jdGlvbiBjcHVfY29yZXBvd2VyX21hc2soKSBzdGF0aWMsIGFzIGl0IGlzIG9ubHkg
+cmVmZXJlbmNlZCBpbg0KdGhpcyBmaWxlLg0KDQouLi9hcmNoL2FybS9rZXJuZWwvdG9wb2xvZ3ku
+YzoxOTU6MjM6IHdhcm5pbmc6IG5vIHByZXZpb3VzIHByb3RvdHlwZSBmb3Ig4oCYY3B1X2NvcmVw
+b3dlcl9tYXNr4oCZIFstV21pc3NpbmctcHJvdG90eXBlc10NCiBjb25zdCBzdHJ1Y3QgY3B1bWFz
+ayAqY3B1X2NvcmVwb3dlcl9tYXNrKGludCBjcHUpDQogICAgICAgICAgICAgICAgICAgICAgIF5+
+fn5+fn5+fn5+fn5+fn5+fg0KDQpTaWduZWQtb2ZmLWJ5OiBQaGlsaXBwZSBNYXplbmF1ZXIgPHBo
+aWxpcHBlLm1hemVuYXVlckBvdXRsb29rLmRlPg0KLS0tDQogYXJjaC9hcm0va2VybmVsL3RvcG9s
+b2d5LmMgfCAyICstDQogMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspLCAxIGRlbGV0aW9u
+KC0pDQoNCmRpZmYgLS1naXQgYS9hcmNoL2FybS9rZXJuZWwvdG9wb2xvZ3kuYyBiL2FyY2gvYXJt
+L2tlcm5lbC90b3BvbG9neS5jDQppbmRleCA2MGUzNzVjZTFhYjIuLjVjODA3NWVjODA2NSAxMDA2
+NDQNCi0tLSBhL2FyY2gvYXJtL2tlcm5lbC90b3BvbG9neS5jDQorKysgYi9hcmNoL2FybS9rZXJu
+ZWwvdG9wb2xvZ3kuYw0KQEAgLTE5Miw3ICsxOTIsNyBAQCBjb25zdCBzdHJ1Y3QgY3B1bWFzayAq
+Y3B1X2NvcmVncm91cF9tYXNrKGludCBjcHUpDQogICogVGhlIGN1cnJlbnQgYXNzdW1wdGlvbiBp
+cyB0aGF0IHdlIGNhbiBwb3dlciBnYXRlIGVhY2ggY29yZSBpbmRlcGVuZGVudGx5Lg0KICAqIFRo
+aXMgd2lsbCBiZSBzdXBlcnNlZGVkIGJ5IERUIGJpbmRpbmcgb25jZSBhdmFpbGFibGUuDQogICov
+DQotY29uc3Qgc3RydWN0IGNwdW1hc2sgKmNwdV9jb3JlcG93ZXJfbWFzayhpbnQgY3B1KQ0KK3N0
+YXRpYyBjb25zdCBzdHJ1Y3QgY3B1bWFzayAqY3B1X2NvcmVwb3dlcl9tYXNrKGludCBjcHUpDQog
+ew0KIAlyZXR1cm4gJmNwdV90b3BvbG9neVtjcHVdLnRocmVhZF9zaWJsaW5nOw0KIH0NCi0tIA0K
+Mi4xNy4xDQoNCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
+cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
+bnV4LWFybS1rZXJuZWwK
