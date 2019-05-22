@@ -2,104 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF356264BD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 15:31:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5774264D0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 15:35:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=1YB9JsMm5gPULGHMQKCyx0uocBI5pZlKw5LdsDgAPVk=; b=s6qVyXdi9+K1vB
-	bAZPrpJSY5mu3SZ4xtT46KNUqkYjdkewOnLSuowVDHnVU9z0CDSSTq8osWgsBztsDdYlcWKTZmXpn
-	G+0PeGBUtvS5z0YqeDbsafCAzKiJkhmRnNmy+24nmPOd/KCb6ya/s12dgO7zVv8n45Ed4l0kZeu90
-	Oh7At7J8llcGLZ/fW7/d1jo7PSOGN19TNH+MbAMafhUj7sExbMB8tZc+9MT7T9kC74KwybHlgosMv
-	xw/vsa3qklhxskJiL8WC60KCODsYsGPphg0KgFWcafKtF+jsBMglWFIbZqZ/D2vzF36t7sjqevnYU
-	On+mtyNpNgDUBNafUB1Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=zwR4ttIWHBrzUHNAd48L9SH52mkLm7XOs1BHnpDjTFY=; b=dNRkFEDk3+sfLvtOUWZDwvaQt
+	sFQWB3bDAFip4sxKJa9QGAJZJgniDNnlSpswNxiWpP35gcdqbjI5wT3Rh3VkdP5KDHBQDNrEdo5Qm
+	7EkC2spPdnqiHh66abd8DKqazgnzBg8SZifQU1C3E2aQVrRTHl3eTyUplYGSqo1ah1KugUEb7hGYu
+	YzkjTjyfuLrvqzs9Y9fdIu1eNzkhhUrdqtSMBnn7AcyZf+pzLhHI9iMzaTfIe1fAvCBkC2mhWbttw
+	ruK3uHxno/qY0tqvqATAW38Ms6Ar2ihHlH+NJoKLJVr2rp5IdW3g/qHxyoktKAcpOWxCl6S5ePMrw
+	vqyb3LwSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTRKk-0001dF-Vl; Wed, 22 May 2019 13:31:06 +0000
-Received: from mail-eopbgr30088.outbound.protection.outlook.com ([40.107.3.88]
- helo=EUR03-AM5-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTRKd-0001c2-E9
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 13:31:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=v4EG07VKQFTwcomKXGlm4Oh2OlESk4AVCJdnNIXgl4k=;
- b=aZ7BKWehm30RpRmy/zMSTExZzVxCHxU1doFEMphfdqriOvZaqxYkge6gTCaP7qRcNvWiIYVpuU5qR97vJH20yYg2ztofdDVxQarKELmjUyF0aBePgEAG0PX6JKXD5CgT048J6Bd9GAExX8xyLr7kmEcV5VSeqaHEACOaUfY/NGE=
-Received: from AM0PR04MB6434.eurprd04.prod.outlook.com (20.179.252.215) by
- AM0PR04MB4404.eurprd04.prod.outlook.com (52.135.149.33) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1900.18; Wed, 22 May 2019 13:30:54 +0000
-Received: from AM0PR04MB6434.eurprd04.prod.outlook.com
- ([fe80::19be:75a:9fe:7cec]) by AM0PR04MB6434.eurprd04.prod.outlook.com
- ([fe80::19be:75a:9fe:7cec%7]) with mapi id 15.20.1922.016; Wed, 22 May 2019
- 13:30:54 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: =?iso-8859-1?Q?Guido_G=FCnther?= <agx@sigxcpu.org>, Abel Vesa
- <abel.vesa@nxp.com>, Lucas Stach <l.stach@pengutronix.de>
-Subject: Re: [RFC PATCH] soc: imx: Try harder to get imq8mq SoC revisions
-Thread-Topic: [RFC PATCH] soc: imx: Try harder to get imq8mq SoC revisions
-Thread-Index: AQHVEKAZarE5OuVeAEC7HAm8UuJafQ==
-Date: Wed, 22 May 2019 13:30:54 +0000
-Message-ID: <AM0PR04MB6434B72679CD26C22FFB420BEE000@AM0PR04MB6434.eurprd04.prod.outlook.com>
-References: <20190522131304.GA5692@bogon.m.sigxcpu.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [89.37.124.34]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: fd638ae9-b715-46ad-ab60-08d6deb9b720
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB4404; 
-x-ms-traffictypediagnostic: AM0PR04MB4404:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <AM0PR04MB440473E3A23A9CC6A496096AEE000@AM0PR04MB4404.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0045236D47
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(189003)(199004)(99286004)(6436002)(446003)(55016002)(8936002)(26005)(186003)(81166006)(81156014)(9686003)(6306002)(52536014)(68736007)(102836004)(86362001)(2906002)(8676002)(44832011)(498600001)(6506007)(53546011)(7696005)(14444005)(256004)(76176011)(66066001)(14454004)(71190400001)(71200400001)(966005)(33656002)(5660300002)(229853002)(110136005)(4326008)(6246003)(66574012)(54906003)(53936002)(74316002)(76116006)(66556008)(25786009)(7736002)(305945005)(66946007)(486006)(91956017)(6116002)(476003)(73956011)(66476007)(3846002)(66446008)(64756008)(34023003)(148693002)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4404;
- H:AM0PR04MB6434.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: RMQkG9PsX93s1YfJ8SjIt6M4/7z564V+vFvfDZNTiARNUJSHhWeIBIvWNx3pNdwoYOXrU53aORgKHKBzbQBMLYHtVpE5Vw0DhBtCBiTUYpVJDb+Zd4v9/6nqJZLR8u3VIQu5fbKisLHkxtzQCgtQgKt16ZE6wtQPgfkEO5p8IjFMIEtYxmNaGMR8WKfWM4JJnahEayMMMa8p4xhGnIeaTf4V1M0actAq+BjLOGsVoyunmYBMzxG/TL2o6Kczxhq73ZZ2eDm/D3tizj3cgd0mLgE5MwLx89d0FTe/AiS/IxPo7bqcgmdj4Qk3TsNcLZX6xTzl6woLtMyXaRfmaBfTsgYWCkY0a2IhYf6kNPqCuthWBDkw0OM3qqdK5Woq6yA+OJakMtkg+vgSYLIhTLDI4lVMbtVuiMjJ+G1YqnZ0Joo=
+	id 1hTROX-00026D-48; Wed, 22 May 2019 13:35:01 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hTROP-00025M-1p
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 13:34:54 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D0AC080D;
+ Wed, 22 May 2019 06:34:52 -0700 (PDT)
+Received: from [10.1.196.75] (e110467-lin.cambridge.arm.com [10.1.196.75])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4356C3F575;
+ Wed, 22 May 2019 06:34:51 -0700 (PDT)
+Subject: Re: [PATCH 07/24] iommu/dma: Move domain lookup into
+ __iommu_dma_{map, unmap}
+To: Christoph Hellwig <hch@lst.de>
+References: <20190520072948.11412-1-hch@lst.de>
+ <20190520072948.11412-8-hch@lst.de>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <b2ef2d14-ec58-a1d6-1741-7834840498ee@arm.com>
+Date: Wed, 22 May 2019 14:34:49 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: fd638ae9-b715-46ad-ab60-08d6deb9b720
-X-MS-Exchange-CrossTenant-originalarrivaltime: 22 May 2019 13:30:54.1471 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4404
+In-Reply-To: <20190520072948.11412-8-hch@lst.de>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_063059_786625_A5045D90 
-X-CRM114-Status: UNSURE (   9.24  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190522_063453_108181_6B80BD13 
+X-CRM114-Status: GOOD (  26.40  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.88 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -111,59 +66,146 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jacky Bai <ping.bai@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Tom Murphy <tmurphy@arista.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 22.05.2019 16:13, Guido G=FCnther wrote:
-> Subject: Re: [RFC PATCH] soc: imx: Try harder to get imq8mq SoC revisions
+On 20/05/2019 08:29, Christoph Hellwig wrote:
+> From: Robin Murphy <robin.murphy@arm.com>
+> 
+> Most of the callers don't care, and the couple that do already have the
+> domain to hand for other reasons are in slow paths where the (trivial)
+> overhead of a repeated lookup will be utterly immaterial.
+> 
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> [hch: dropped the hunk touching iommu_dma_get_msi_page to avoid a
+>   conflict with another series]
 
-Fixed subject
+Since the MSI changes made it into 5.2, do you want to resurrect that 
+hunk here, or shall I spin it up as a follow-on patch?
 
-> On Wed, May 08, 2019 at 02:40:18PM +0200, Guido G=FCnther wrote:
->> Thanks for your comments. Let's try s.th. different then: identify by
->> bootrom, ocotop and anatop and fall back to ATF afterwards (I'll split
->> out the DT part and add binding docs if this makes sense). I'm also
->> happy to drop the whole ATF logic until mailine ATF catched up:
->>
->> The mainline ATF doesn't currently support the FSL_SIP_GET_SOC_INFO call
->> nor does it have the code to identify different imx8mq SOC revisions so
->> mimic what NXPs ATF does here.
-> =
+Robin.
 
-> Does this makes sense? If so I'll send this out as a series.
-
-Mainline ATF has recently caught up:
-
-https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/tree/plat/imx/i=
-mx8m/imx8mq/imx8mq_bl31_setup.c#n52
-
->> As a fallback use ATF so we can identify new revisions once it gains
->> support or when using NXPs ATF.
-> =
-
-> I'm also fine with dropping the ATF part if we don't want to depend on
-> it in mainline.
-
-Linux arm64 depends on ATF to implement power management via PSCI: =
-
-hotplug cpuidle and suspend.
-
-It is not clear why Linux would avoid other services and insist on =
-
-reimplementing hardware workarounds.
-
---
-Regards,
-Leonard
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+>   drivers/iommu/dma-iommu.c | 29 ++++++++++++++---------------
+>   1 file changed, 14 insertions(+), 15 deletions(-)
+> 
+> diff --git a/drivers/iommu/dma-iommu.c b/drivers/iommu/dma-iommu.c
+> index c406abe3be01..6ece8f477fc8 100644
+> --- a/drivers/iommu/dma-iommu.c
+> +++ b/drivers/iommu/dma-iommu.c
+> @@ -448,9 +448,10 @@ static void iommu_dma_free_iova(struct iommu_dma_cookie *cookie,
+>   				size >> iova_shift(iovad));
+>   }
+>   
+> -static void __iommu_dma_unmap(struct iommu_domain *domain, dma_addr_t dma_addr,
+> +static void __iommu_dma_unmap(struct device *dev, dma_addr_t dma_addr,
+>   		size_t size)
+>   {
+> +	struct iommu_domain *domain = iommu_get_dma_domain(dev);
+>   	struct iommu_dma_cookie *cookie = domain->iova_cookie;
+>   	struct iova_domain *iovad = &cookie->iovad;
+>   	size_t iova_off = iova_offset(iovad, dma_addr);
+> @@ -465,8 +466,9 @@ static void __iommu_dma_unmap(struct iommu_domain *domain, dma_addr_t dma_addr,
+>   }
+>   
+>   static dma_addr_t __iommu_dma_map(struct device *dev, phys_addr_t phys,
+> -		size_t size, int prot, struct iommu_domain *domain)
+> +		size_t size, int prot)
+>   {
+> +	struct iommu_domain *domain = iommu_get_dma_domain(dev);
+>   	struct iommu_dma_cookie *cookie = domain->iova_cookie;
+>   	size_t iova_off = 0;
+>   	dma_addr_t iova;
+> @@ -565,7 +567,7 @@ static struct page **__iommu_dma_alloc_pages(struct device *dev,
+>   static void __iommu_dma_free(struct device *dev, struct page **pages,
+>   		size_t size, dma_addr_t *handle)
+>   {
+> -	__iommu_dma_unmap(iommu_get_dma_domain(dev), *handle, size);
+> +	__iommu_dma_unmap(dev, *handle, size);
+>   	__iommu_dma_free_pages(pages, PAGE_ALIGN(size) >> PAGE_SHIFT);
+>   	*handle = DMA_MAPPING_ERROR;
+>   }
+> @@ -718,14 +720,13 @@ static void iommu_dma_sync_sg_for_device(struct device *dev,
+>   static dma_addr_t __iommu_dma_map_page(struct device *dev, struct page *page,
+>   		unsigned long offset, size_t size, int prot)
+>   {
+> -	return __iommu_dma_map(dev, page_to_phys(page) + offset, size, prot,
+> -			iommu_get_dma_domain(dev));
+> +	return __iommu_dma_map(dev, page_to_phys(page) + offset, size, prot);
+>   }
+>   
+>   static void __iommu_dma_unmap_page(struct device *dev, dma_addr_t handle,
+>   		size_t size, enum dma_data_direction dir, unsigned long attrs)
+>   {
+> -	__iommu_dma_unmap(iommu_get_dma_domain(dev), handle, size);
+> +	__iommu_dma_unmap(dev, handle, size);
+>   }
+>   
+>   static dma_addr_t iommu_dma_map_page(struct device *dev, struct page *page,
+> @@ -734,11 +735,10 @@ static dma_addr_t iommu_dma_map_page(struct device *dev, struct page *page,
+>   {
+>   	phys_addr_t phys = page_to_phys(page) + offset;
+>   	bool coherent = dev_is_dma_coherent(dev);
+> +	int prot = dma_info_to_prot(dir, coherent, attrs);
+>   	dma_addr_t dma_handle;
+>   
+> -	dma_handle =__iommu_dma_map(dev, phys, size,
+> -			dma_info_to_prot(dir, coherent, attrs),
+> -			iommu_get_dma_domain(dev));
+> +	dma_handle =__iommu_dma_map(dev, phys, size, prot);
+>   	if (!coherent && !(attrs & DMA_ATTR_SKIP_CPU_SYNC) &&
+>   	    dma_handle != DMA_MAPPING_ERROR)
+>   		arch_sync_dma_for_device(dev, phys, size, dir);
+> @@ -750,7 +750,7 @@ static void iommu_dma_unmap_page(struct device *dev, dma_addr_t dma_handle,
+>   {
+>   	if (!(attrs & DMA_ATTR_SKIP_CPU_SYNC))
+>   		iommu_dma_sync_single_for_cpu(dev, dma_handle, size, dir);
+> -	__iommu_dma_unmap(iommu_get_dma_domain(dev), dma_handle, size);
+> +	__iommu_dma_unmap(dev, dma_handle, size);
+>   }
+>   
+>   /*
+> @@ -931,21 +931,20 @@ static void iommu_dma_unmap_sg(struct device *dev, struct scatterlist *sg,
+>   		sg = tmp;
+>   	}
+>   	end = sg_dma_address(sg) + sg_dma_len(sg);
+> -	__iommu_dma_unmap(iommu_get_dma_domain(dev), start, end - start);
+> +	__iommu_dma_unmap(dev, start, end - start);
+>   }
+>   
+>   static dma_addr_t iommu_dma_map_resource(struct device *dev, phys_addr_t phys,
+>   		size_t size, enum dma_data_direction dir, unsigned long attrs)
+>   {
+>   	return __iommu_dma_map(dev, phys, size,
+> -			dma_info_to_prot(dir, false, attrs) | IOMMU_MMIO,
+> -			iommu_get_dma_domain(dev));
+> +			dma_info_to_prot(dir, false, attrs) | IOMMU_MMIO);
+>   }
+>   
+>   static void iommu_dma_unmap_resource(struct device *dev, dma_addr_t handle,
+>   		size_t size, enum dma_data_direction dir, unsigned long attrs)
+>   {
+> -	__iommu_dma_unmap(iommu_get_dma_domain(dev), handle, size);
+> +	__iommu_dma_unmap(dev, handle, size);
+>   }
+>   
+>   static void *iommu_dma_alloc(struct device *dev, size_t size,
+> @@ -1222,7 +1221,7 @@ static struct iommu_dma_msi_page *iommu_dma_get_msi_page(struct device *dev,
+>   	if (!msi_page)
+>   		return NULL;
+>   
+> -	iova = __iommu_dma_map(dev, msi_addr, size, prot, domain);
+> +	iova = __iommu_dma_map(dev, msi_addr, size, prot);
+>   	if (iova == DMA_MAPPING_ERROR)
+>   		goto out_free_page;
+>   
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
