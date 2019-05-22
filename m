@@ -2,148 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D819C27097
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 22:07:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F9D3270AF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 22:16:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CErAo9ocACBQs04pB0qbYNCer95+QghZ75Zn/sZ4KH8=; b=fJI3CtVUcm+cdY
-	yIWvJQ0RiLBT4v7QIkFJZB6H25vcb5JE63gvWt0q5/SKdp6VIM1CEZKwFUoWV/ULMVQw0rjUYKQP5
-	P9VA7Q5e4EAdUL/qT8mtX2987naY83BwQ2Q6382ktXVfz3QMk0hNVs0UVFbsaYCCI/sb1Z5X9Ndyn
-	Qty+BypJbSZfRYw/TgO0/Z6CEXs2WkwJ3ZKZzIVquW9nniVI3k5IJTJVJeUgbC0vIjPmOCUcvJeex
-	vd5Z0qzxhrCy1mrZrHGarToZuVAmR8ToLSEoT+b4zHA0attfsXxyWV6T1RDAWLPnZYIbloWPbCc8j
-	OWTVPxyObAaBKtDM7oyw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Wbw+qcD7qBOPfDUqRLJ5rw/RTMYM9IBynE41BTVUiZA=; b=WNPsltamISAoD4
+	okLi6H7Ly2TAPB5bbtxyfGR7ai26FzH3zF0+wuwgzo8+J8RldRQnTXOMBoVKRaxYrsvsPL6F6jxFt
+	TE1ZpP0c3OXiZCc/V0XAfuuclT3lNLqX92P5hplEbbZtCxYHc5wPk0b73WMg+aCmbbg3svSFpLpwN
+	qYDHM2nX8Sig71AX4y3lP3jhwcQXkUP0mCd36DQxBi6uhfRLGqhOnAQMzKpReat+1cO/9qlItWlJ8
+	T+eV2rwE4zRmB5ExcJmM8T+olkTPs7Da4nAqoKEUFpLYoUgQ3zEWT8yUE+RutSZaikg3iSn7Ti1nH
+	Zk2eCQu96mhYBWitR1sQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTXW6-0004Sm-Nm; Wed, 22 May 2019 20:07:14 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hTXeu-0007kI-2m; Wed, 22 May 2019 20:16:20 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTXVz-0004SP-LH
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 20:07:08 +0000
-Received: by mail-wm1-x342.google.com with SMTP id 198so3461354wme.3
+ id 1hTXel-0007jn-Rf
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 20:16:13 +0000
+Received: by mail-lj1-x243.google.com with SMTP id z1so3318842ljb.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 May 2019 13:07:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=9dd5VrREXNzYlzZ/Hq0rW45na+V+EBUYHhrE9XhI9hk=;
- b=PbiM0zsKSAsulWPhCq4fkiyFofX7e8lVfEra0zpBZZA4iJ+g8p6IO9vG4ZWsOoR8MD
- evvRoCYJAsyvr1gIW5bcwAkreni9KvSwvVX76LtKEjIULTuLFdWJMhJ1d5YuHeSYgkeX
- zPJQdkhbhXWCNAm9KP4YQ5F/wyN94CzFGO5fFeLLyAAi2ZbUhDwPti/GP0t1ZpAV/OUp
- zt9JvZWw8kPmUGe3mlJw8LsbpEduI3m0IGRbcihON5b2I+Us7SsCPhMymSDYCicSelTB
- +8lb/P2YhgQs7NXh3lQG3BQLMGK9PcOKKtaeyvRkuj6XNnQThwqujig/MTdhK2Y5rl9O
- 1UqA==
+ Wed, 22 May 2019 13:16:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=0QfgGpfBPenuVTK4QBHqIOfbfu3mYm6801nPB6AtTbg=;
+ b=efNzGroYusRAaEDsxj++TPJsvxks1eNated5nn5y7tlpjx/+YV4iarteHjAsgVRWyv
+ qV1iM2jFkqeqVZ60hyGrgA+iKj9XLYoinAIbx9aKQGymsFhsi8sDNA4x7lKxk9I/yxf9
+ zx43H2ftRI4hpAeLvUaCSFwSlmKo8BKAgAeCJSD9hxfs7RtSGY9pmt5vsnNtNJ56rv67
+ jIGc/hrimcITUdfG9J7ly3HBYArn3SKohhDYcSqAbppqL0mNbFyjlLDnYeaHM9uonO4O
+ ufZRlzizHiSyf/pfX51aVvjz0xzqbcySuny4AVjp7wVtb4QBwDkwZrZ0z/Q3p7onR8yt
+ etJQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=9dd5VrREXNzYlzZ/Hq0rW45na+V+EBUYHhrE9XhI9hk=;
- b=QfR0Sv2unKi80m2l4dUPCUEP5EB6ffDfJa4JtU0v7s9JgJ6qINgZrlJ4hm1v+3YpWJ
- eyEToDabhFTF9eZrpGYH+SPKpWrgooiXbnpH723QoNMHG/7kWIs8zUktqy6TpSFASLf8
- r/TL95wr6PjiGhUW7MGTORKKPUgIOkiDzMchMYRPeRev2qrCP7BE3Sxr1uf4mpPnMSzz
- yKKBpPYkKHL+BInCP+BVCMWm9PfW8FmZwJqR6Mn0jXSa0lQNQaIe5ilSTktzThXELe1i
- tE0PQPhXPnOMTQDI/XI/cOyTy/cZvb1zci5PbVLi5T4x6k3alH6f8MQsfhqJPqsyaP4n
- qYQQ==
-X-Gm-Message-State: APjAAAVmAxHKvwWVtaijiyqQSwh1xr1ZmPOlfOZuOQfKRyN1P2pFFPVo
- xoo7BBPKzqyvyWur7sDFxuE=
-X-Google-Smtp-Source: APXvYqzjDNs5ZBtyBDfR56VAHnXh9iR+WHVZjV0ILOsAuzXiSMjrejejMpM69kdmyV7F2VIQeJTd9g==
-X-Received: by 2002:a7b:c001:: with SMTP id c1mr9589654wmb.49.1558555626049;
- Wed, 22 May 2019 13:07:06 -0700 (PDT)
-Received: from [10.67.49.213] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id k184sm17141438wmk.0.2019.05.22.13.07.03
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 22 May 2019 13:07:05 -0700 (PDT)
-Subject: Re: [PATCH net-next 2/2] net: phy: aquantia: add USXGMII support
-To: Heiner Kallweit <hkallweit1@gmail.com>,
- Madalin-cristian Bucur <madalin.bucur@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Andrew Lunn <andrew@lunn.ch>, David Miller <davem@davemloft.net>
-References: <110a1e45-56a7-a646-7b63-f39fe3083c28@gmail.com>
- <2c68bdb1-9b53-ce0b-74d3-c7ea2d9e7ac0@gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <46a141c7-f838-ae4b-4a47-5b1fb44ef063@gmail.com>
-Date: Wed, 22 May 2019 13:07:01 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=0QfgGpfBPenuVTK4QBHqIOfbfu3mYm6801nPB6AtTbg=;
+ b=E++aF7+alwP5OoTffR3u+9hXfNJhbYxZfNo8UcBjGnyJdF+cNsCErTWeK8tqqCR+ir
+ sCurEEJ0ceJ/pXFonQxmEzWINdL4C6Y4YZQAl2XzvDiohjTJpeh1HULGSma4Bjqk1gQO
+ wRGAM4RIM4sKH++IF9BzVznt9fdac2W6xSwIyebHR+pVSpxCfdI6PSaIVttyKShCwo+x
+ bT2T0UfSgFjlLn9GlB9ubFjFqm3KYcaUTHol2DUqnpdXu3WfTiObbF6fZcIy+yAeXp7n
+ KguMDcSso51Ah6kBAIXNCNUSE0rezkNQU4CXkHqMQo0G6jUtshOL3/NK/EAj3O9VWFNi
+ 8Q3Q==
+X-Gm-Message-State: APjAAAWDhaSAHs+pjTgbVNKVkT5tQvulKuknIvskToz9/T9F/Cp0f1Gt
+ blM8aF0yv3Z6fux41+VW6SHIovSQwjebD8y8pErqLA==
+X-Google-Smtp-Source: APXvYqygGa8rtRNIFjzwi6ULooCIPc9lOrOSeVX/ax8A+QrN8e39fSC+EkrWuLWAGu39QnHtsT9z6aUFsbTAkajmkCU=
+X-Received: by 2002:a2e:9d4e:: with SMTP id y14mr20404646ljj.199.1558556169212; 
+ Wed, 22 May 2019 13:16:09 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <2c68bdb1-9b53-ce0b-74d3-c7ea2d9e7ac0@gmail.com>
-Content-Language: en-US
+References: <cover.1557160186.git.andreyknvl@google.com>
+ <20190517144931.GA56186@arrakis.emea.arm.com>
+ <CAFKCwrj6JEtp4BzhqO178LFJepmepoMx=G+YdC8sqZ3bcBp3EQ@mail.gmail.com>
+ <20190521182932.sm4vxweuwo5ermyd@mbp> <201905211633.6C0BF0C2@keescook>
+ <20190522101110.m2stmpaj7seezveq@mbp>
+ <CAJgzZoosKBwqXRyA6fb8QQSZXFqfHqe9qO9je5TogHhzuoGXJQ@mail.gmail.com>
+ <201905221157.A9BAB1F296@keescook>
+In-Reply-To: <201905221157.A9BAB1F296@keescook>
+From: enh <enh@google.com>
+Date: Wed, 22 May 2019 13:15:57 -0700
+Message-ID: <CAJgzZooRCx5MFL8dWuG8VaV=esYBADji7-L49fMeQa6niieWnw@mail.gmail.com>
+Subject: Re: [PATCH v15 00/17] arm64: untag user pointers passed to the kernel
+To: Kees Cook <keescook@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_130707_697475_DDDBB961 
-X-CRM114-Status: GOOD (  16.07  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190522_131611_922012_1566191B 
+X-CRM114-Status: GOOD (  43.29  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -151,6 +89,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -162,33 +102,154 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Khalid Aziz <khalid.aziz@oracle.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgenii Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Yishai Hadas <yishaih@mellanox.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/22/19 12:58 PM, Heiner Kallweit wrote:
-> So far we didn't support mode USXGMII, and in order to not break the
-> two Freescale boards mode XGMII was accepted for the AQR107 family
-> even though it doesn't support XGMII. Add USXGMII support to the
-> Aquantia PHY driver and change the phy connection type for the two
-> boards.
-> 
-> As an additional note: Even though the handle is named aqr106
-> there seem to be LS1046A boards with an AQR107.
-> 
-> Signed-off-by: Heiner Kallweit <hkallweit1@gmail.com>
+On Wed, May 22, 2019 at 12:21 PM Kees Cook <keescook@chromium.org> wrote:
+>
+> On Wed, May 22, 2019 at 08:30:21AM -0700, enh wrote:
+> > On Wed, May 22, 2019 at 3:11 AM Catalin Marinas <catalin.marinas@arm.com> wrote:
+> > > On Tue, May 21, 2019 at 05:04:39PM -0700, Kees Cook wrote:
+> > > > I just want to make sure I fully understand your concern about this
+> > > > being an ABI break, and I work best with examples. The closest situation
+> > > > I can see would be:
+> > > >
+> > > > - some program has no idea about MTE
+> > >
+> > > Apart from some libraries like libc (and maybe those that handle
+> > > specific device ioctls), I think most programs should have no idea about
+> > > MTE. I wouldn't expect programmers to have to change their app just
+> > > because we have a new feature that colours heap allocations.
+>
+> Right -- things should Just Work from the application perspective.
+>
+> > obviously i'm biased as a libc maintainer, but...
+> >
+> > i don't think it helps to move this to libc --- now you just have an
+> > extra dependency where to have a guaranteed working system you need to
+> > update your kernel and libc together. (or at least update your libc to
+> > understand new ioctls etc _before_ you can update your kernel.)
+>
+> I think (hope?) we've all agreed that we shouldn't pass this off to
+> userspace. At the very least, it reduces the utility of MTE, and at worst
+> it complicates userspace when this is clearly a kernel/architecture issue.
+>
+> >
+> > > > - malloc() starts returning MTE-tagged addresses
+> > > > - program doesn't break from that change
+> > > > - program uses some syscall that is missing untagged_addr() and fails
+> > > > - kernel has now broken userspace that used to work
+> > >
+> > > That's one aspect though probably more of a case of plugging in a new
+> > > device (graphics card, network etc.) and the ioctl to the new device
+> > > doesn't work.
+>
+> I think MTE will likely be rather like NX/PXN and SMAP/PAN: there will
+> be glitches, and we can disable stuff either via CONFIG or (as is more
+> common now) via a kernel commandline with untagged_addr() containing a
+> static branch, etc. But I actually don't think we need to go this route
+> (see below...)
+>
+> > > The other is that, assuming we reach a point where the kernel entirely
+> > > supports this relaxed ABI, can we guarantee that it won't break in the
+> > > future. Let's say some subsequent kernel change (some refactoring)
+> > > misses out an untagged_addr(). This renders a previously TBI/MTE-capable
+> > > syscall unusable. Can we rely only on testing?
+> > >
+> > > > The trouble I see with this is that it is largely theoretical and
+> > > > requires part of userspace to collude to start using a new CPU feature
+> > > > that tickles a bug in the kernel. As I understand the golden rule,
+> > > > this is a bug in the kernel (a missed ioctl() or such) to be fixed,
+> > > > not a global breaking of some userspace behavior.
+> > >
+> > > Yes, we should follow the rule that it's a kernel bug but it doesn't
+> > > help the user that a newly installed kernel causes user space to no
+> > > longer reach a prompt. Hence the proposal of an opt-in via personality
+> > > (for MTE we would need an explicit opt-in by the user anyway since the
+> > > top byte is no longer ignored but checked against the allocation tag).
+> >
+> > but realistically would this actually get used in this way? or would
+> > any given system either be MTE or non-MTE. in which case a kernel
+> > configuration option would seem to make more sense. (because either
+> > way, the hypothetical user basically needs to recompile the kernel to
+> > get back on their feet. or all of userspace.)
+>
+> Right: the point is to design things so that we do our best to not break
+> userspace that is using the new feature (which I think this series has
+> done well). But supporting MTE/TBI is just like supporting PAN: if someone
+> refactors a driver and swaps a copy_from_user() to a memcpy(), it's going
+> to break under PAN. There will be the same long tail of these bugs like
+> any other, but my sense is that they are small and rare. But I agree:
+> they're going to be pretty weird bugs to track down. The final result,
+> however, will be excellent annotation in the kernel for where userspace
+> addresses get used and people make assumptions about them.
+>
+> The sooner we get the series landed and gain QEMU support (or real
+> hardware), the faster we can hammer out these missed corner-cases.
+> What's the timeline for either of those things, BTW?
+>
+> > > > I feel like I'm missing something about this being seen as an ABI
+> > > > break. The kernel already fails on userspace addresses that have high
+> > > > bits set -- are there things that _depend_ on this failure to operate?
+> > >
+> > > It's about providing a relaxed ABI which allows non-zero top byte and
+> > > breaking it later inadvertently without having something better in place
+> > > to analyse the kernel changes.
+>
+> It sounds like the question is how to switch a process in or out of this
+> ABI (but I don't think that's the real issue: I think it's just a matter
+> of whether or not a process uses tags at all). Doing it at the prctl()
+> level doesn't make sense to me, except maybe to detect MTE support or
+> something. ("Should I tag allocations?") And that state is controlled
+> by the kernel: the kernel does it or it doesn't.
+>
+> If a process wants to not tag, that's also up to the allocator where
+> it can decide not to ask the kernel, and just not tag. Nothing breaks in
+> userspace if a process is NOT tagging and untagged_addr() exists or is
+> missing. This, I think, is the core way this doesn't trip over the
+> golden rule: an old system image will run fine (because it's not
+> tagging). A *new* system may encounter bugs with tagging because it's a
+> new feature: this is The Way Of Things. But we don't break old userspace
+> because old userspace isn't using tags.
+>
+> So the agreement appears to be between the kernel and the allocator.
+> Kernel says "I support this" or not. Telling the allocator to not tag if
+> something breaks sounds like an entirely userspace decision, yes?
 
-You can probably split the DTS changes and the PHY driver changes into a
-separate commits and just have the DTS changes come last? With that:
+sgtm, and the AT_FLAGS suggestion sounds fine for our needs in that regard.
 
-Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
--- 
-Florian
+> --
+> Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
