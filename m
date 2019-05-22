@@ -2,76 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C675626A08
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 20:46:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 528DC26A09
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 20:46:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=h9/FRGFNFU6PHt+jOW2t5rfUXQ8Dspsap4iZyitiQ8M=; b=PnB
-	1MRpnx51O9CHJaGi1x+GbRqncRH4UaFGO2upGm8gPRKatZ15/bqHOd1fQxLxjGvFRfe1H1WZSA8nh
-	KjbEwZWRxtZPQN/jZW4jsptjlVQlf51lxmUxBXRDGe7Kqk6GFikaRSp0BhaJtjLhMiOCHS/pUvtZU
-	2RonqpprZVR1xd2CD0T6/YcfppXOWsA83Bd8SdLlhu5dClutbffrb8VB7AgvOQcXlSi/x7Lw2Fu4D
-	JGyl1QYmhQFlWYyIKSDZ6F4PBAVXIgb7lWE7EvPWg3rpbs+NMwhzQINQ6aADHQyRfTa2siDO8uCma
-	/LP789NHQVsUzSG9+O55o5KwnA5CGpg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=MVad2UbuMfKXJGJRTIIqCVqvsyOe9kgNelQ13R8hNNA=; b=Tq43dCwLgZjZX2vKwd1gTCzvLL
+	lJmQt7yEeJiGFzMRru6mFt4W52Q8BaMyKq8Bl7xc3LM4SREokhfvTcAKAcl4A2jtny+KiVXyQt/e8
+	cXAohUhOpB0DwAWqt66OrNdh1+U8OB/U5jBDMbAERwzjY5qenWrb4cQmYzQWFWeMJoqn0/XLlufa0
+	o2ZQy7DTgv/EdQZJZfUdC05VNKyGJcnXJOWd08CwdDeMdSzee2BQdEcLQzgel/q7cdr7syIgEvIrZ
+	HiUQieVIn4SVio7+deQhnUg3R4JkUdu5KvwY8/Ju49B7EjuVHip441xmQS0oh5CMZbSfcZ/SZay78
+	eNfYml+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTWFq-0004Qc-B5; Wed, 22 May 2019 18:46:22 +0000
-Received: from mail-pl1-x62e.google.com ([2607:f8b0:4864:20::62e])
+	id 1hTWG2-0004a9-5G; Wed, 22 May 2019 18:46:34 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTWFi-0004A5-7O
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 18:46:15 +0000
-Received: by mail-pl1-x62e.google.com with SMTP id f12so1486021plt.8
+ id 1hTWFj-0004Ge-DR
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 18:46:16 +0000
+Received: by mail-pg1-x544.google.com with SMTP id v11so1763756pgl.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 May 2019 11:46:13 -0700 (PDT)
+ Wed, 22 May 2019 11:46:15 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=O1znsyun5k31ul6fBEA+RjUaCYqXoow7Mzb/sgD9eYc=;
- b=Liwk7BDgA5Iglig6m0mb2LfwL1u9OLghbwyUFckRqJTDaFmasEbzSl1/ciR+AbzTm0
- ekVpm8d21vO8e9PNvVZ6KCUQ+qMtgbY0SttsF0sYxTTxJ5QK6IRMu+WoNrpbNArSwDbV
- Yp8fpLVOnc9+krxB4I8QejUSkpVJJxnZamugXSuoAUG8s0QtQUJScuHjijL4QgZBj5Pk
- M8En9fwXCb02IwCj6yBdPmRJrnaa6qkNBhNOY75uG+TGUQ76zHcMd4A5BzOP5UCIW58s
- otrXv11sAvf7Iqh+EZ/CwbywmCJSv3mU4aIUzS9ktCffEo9PTRCpdcMQkFQRDFu+OWos
- I0lA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=GmGzWLHRhAiFHdLO6sJ1o+baERaywOCM8lSPrMQvma4=;
+ b=oIGeZss5BNTBJcdtowR+26iCRL4R4Fx9g7Qgo20cHvKWUFUy2aZ8eonGKSgpstWskl
+ 3HEFFLEs2l5SU+/FOvNIzLc+VprONyDe3l0YBe4JNXd0VUdf2/E+cEmAswoEv9ufAmBv
+ dcj9amWmV01GudIV5EbexapIqVk6E9itihrZsI5N9QWi5jIBVhtJxVcuAc7KYVGQu915
+ KdGs/Ae+730mGjN8LDiXhcDW+MX2c0FhIsg5DbD2bZBzbj31uRHTsJPYQIFBtbJJIvbY
+ H7P8fNZeF6xQoy2TFa6DKfFkXgrDPRu2mvQ/3vEru1ZL7EXMwqFEgaDK1SCLOeR7/Ith
+ 2THQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=O1znsyun5k31ul6fBEA+RjUaCYqXoow7Mzb/sgD9eYc=;
- b=q23rv8sqmCEabotRr3Bq0xwoEfhZuITKdn8MuwsGre+Uv0GVhUYpAbEd9D63FIA8Nn
- eLUvM+6WXKo5S3Wh2ziUQbzITrBeVKg1KYr84Fcfr/VK11BsupNr/ncLMU1qXC+dbA85
- +N15fSS/Y6s9+dEH6IQWlQ7Negc1WqGXAxEOX8fWT2VRTSSpoArBPNRKBpYxNCt7foS6
- ZvXR1JMlC3ikkXm9I1wu1lW3zAimHKpHgMxyn4gx7U/2ojvS4U5EMgDr2Y5238YAEIE9
- k5GJq5+ZRngT2o6wo++ZhNqH05rwPJhUL0pPxEZ9LoRIDXmvGx1wPRhCVYKjM34Lj+f+
- sS9g==
-X-Gm-Message-State: APjAAAVlKuDbApfYKpLqoLkJRFogvGe2MuOQaS+Y786Q+ER2OLB5RmEs
- cnu7Pfphp0iioVjpekf5aOs=
-X-Google-Smtp-Source: APXvYqw6heevUJ2swRbGZS0xxVKiZnMhXMs1Af4Hhp37/UeOa9UZrmjlJpFoBifUUSwMZqySNo9opA==
-X-Received: by 2002:a17:902:b581:: with SMTP id
- a1mr90420442pls.206.1558550773318; 
- Wed, 22 May 2019 11:46:13 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=GmGzWLHRhAiFHdLO6sJ1o+baERaywOCM8lSPrMQvma4=;
+ b=oKIpU1QhiA1zPvQvyeZjbYdgHNZkz+LxMmC/G2Kto3Pzv56QybA82Qg3tPgTRd9E0a
+ Elqst59TtTrx19ty80K/IJ6QhI+qxQGlHThh2fQkB/N6ZSoDLAvHiFFxw5uM4CsIrO+6
+ j3eARFP3vgCs47sXFvMbys71qtmuL0K1XVolD5c5+aDaHBs5buIqcW2qPPonIZ2BokKj
+ 1B/yPGPHEYKDXff9o4pEse83aWOnGx22hHfZRumor3A8jzDh596PuyOaW2nnvpMuOgmT
+ ZxXo5SrdF4kBywtj5t7Y3GukJNko8JAk+F9gdxGzwOeElC7bfdgeXPQOf2pYNhyf6RrV
+ p7hg==
+X-Gm-Message-State: APjAAAVHCt1a5HS3X/c5YdyLbaO9igDTZBvtrFfpN6ImmM+STVkE0v1J
+ TAtN2CdxTxiaPQkICcrpUbQ=
+X-Google-Smtp-Source: APXvYqx5MVPCTwB1TvOzSQ+U+LjSQYLhgOCeldaVnfeKLh7uDytNdcFNe+vlJzLK/zdCNC/iIWLAYg==
+X-Received: by 2002:a63:c94f:: with SMTP id y15mr28257342pgg.159.1558550774800; 
+ Wed, 22 May 2019 11:46:14 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id 25sm2439585pfp.76.2019.05.22.11.46.12
+ by smtp.gmail.com with ESMTPSA id 25sm2439585pfp.76.2019.05.22.11.46.13
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 22 May 2019 11:46:12 -0700 (PDT)
+ Wed, 22 May 2019 11:46:14 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 0/2] cpufreq: brcmstb-avs-cpufreq: Couple fixes
-Date: Wed, 22 May 2019 11:45:45 -0700
-Message-Id: <20190522184547.31791-1-f.fainelli@gmail.com>
+Subject: [PATCH 1/2] cpufreq: brcmstb-avs-cpufreq: Fix initial command check
+Date: Wed, 22 May 2019 11:45:46 -0700
+Message-Id: <20190522184547.31791-2-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190522184547.31791-1-f.fainelli@gmail.com>
+References: <20190522184547.31791-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_114614_273216_F344A2C1 
-X-CRM114-Status: UNSURE (   7.83  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190522_114615_459539_B158BC9E 
+X-CRM114-Status: GOOD (  13.24  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:62e listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -111,18 +113,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rafael, Viresh,
+There is a logical error in brcm_avs_is_firmware_loaded() whereby if the
+firmware returns -EINVAL, we will be reporting this as an error. The
+comment is correct, the code was not.
 
-These patch series contains two minor fixes for the brcmstb-avs-cpufreq
-driver.
+Fixes: de322e085995 ("cpufreq: brcmstb-avs-cpufreq: AVS CPUfreq driver for Broadcom STB SoCs")
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+---
+ drivers/cpufreq/brcmstb-avs-cpufreq.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-Florian Fainelli (2):
-  cpufreq: brcmstb-avs-cpufreq: Fix initial command check
-  cpufreq: brcmstb-avs-cpufreq: Fix types for voltage/frequency
-
- drivers/cpufreq/brcmstb-avs-cpufreq.c | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
-
+diff --git a/drivers/cpufreq/brcmstb-avs-cpufreq.c b/drivers/cpufreq/brcmstb-avs-cpufreq.c
+index e6f9cbe5835f..6ed53ca8aa98 100644
+--- a/drivers/cpufreq/brcmstb-avs-cpufreq.c
++++ b/drivers/cpufreq/brcmstb-avs-cpufreq.c
+@@ -446,8 +446,8 @@ static bool brcm_avs_is_firmware_loaded(struct private_data *priv)
+ 	rc = brcm_avs_get_pmap(priv, NULL);
+ 	magic = readl(priv->base + AVS_MBOX_MAGIC);
+ 
+-	return (magic == AVS_FIRMWARE_MAGIC) && (rc != -ENOTSUPP) &&
+-		(rc != -EINVAL);
++	return (magic == AVS_FIRMWARE_MAGIC) && ((rc != -ENOTSUPP) ||
++		(rc != -EINVAL));
+ }
+ 
+ static unsigned int brcm_avs_cpufreq_get(unsigned int cpu)
 -- 
 2.17.1
 
