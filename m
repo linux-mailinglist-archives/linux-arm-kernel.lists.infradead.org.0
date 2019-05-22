@@ -2,56 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B666526460
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 15:13:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E7EE2646A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 15:16:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:To:From:Date:
-	Reply-To:Subject:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=TDDByjKO1ZKwxoKZMLV2RLaLHn5l4UjX4Eg3kJlnbvQ=; b=qKwZ3NAiodmkuI
-	jSwKTIy5aSO1fyV5mFjWuwnFUXWRdsZ0A6ZROlEQS7tsEjja0RtpfhcAc+DOgAU8rlcpguuhxtd5P
-	05HpBd3oT0ha44M0SDVXZWi6ZkjWtUYBQu/TDUiLUydHTgXfVuALZWw/hTPAKhUKG96mUjWQFuQ1y
-	my1lRl4bXQ+AytxJns6w1zQh2uPo0wr+aghsCFatBOlrRhigFS0YVV/CvrCmB/zmkj+1Fk0hJZ1lv
-	2QaGH0tenjjasz93XmV6agYjzlvGd1IZP1UsE+haTGHpRDBN//bnoZCHgrzydsEOCXMYo60JKdM2p
-	1DKkrY9tZ8k9TjAfxnOg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=l/Yql9Zo5saDeMeTM95xz8RNKk0wcjbBTQkCk7wHGY4=; b=CMP
+	cgMi6cTEpRIEpQe/z7HxqmMzL6tdsDMZteGh7AU02j7eIwgtZWUtPX+ud8WCGbvbG2hK7Q6UL0Ogo
+	ci/NrBrRGjqA5etig4UD73jXll8RTB454i4fgOxP5e/pbS839y6xfrooStDP5qFfCKmhXzdonp6Vm
+	v+DbhAasqMVnzYNR5YquCgkHBLYRKJt4zytdDnpm6sOVQ0/kRnnST5pNxVC6xGvBfpddaieLLkbBg
+	cehuBmiG0TleMjZtqB3OAUkgcmK/uItC+LD+A/NmokQdWatRIpV45xP/uHHzWfQZGapsL1AeonJzx
+	YLe+heNpaL6JWjP3C3cGrQwH6ZH1kXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTR3W-0001d9-Cz; Wed, 22 May 2019 13:13:18 +0000
-Received: from honk.sigxcpu.org ([24.134.29.49])
+	id 1hTR6V-0003CP-GS; Wed, 22 May 2019 13:16:23 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTR3O-0001bp-2P
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 13:13:12 +0000
-Received: from localhost (localhost [127.0.0.1])
- by honk.sigxcpu.org (Postfix) with ESMTP id DBFE6FB03;
- Wed, 22 May 2019 15:13:05 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
-Received: from honk.sigxcpu.org ([127.0.0.1])
- by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id 016_fW5-3grm; Wed, 22 May 2019 15:13:04 +0200 (CEST)
-Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
- id 26DC440FF6; Wed, 22 May 2019 15:13:04 +0200 (CEST)
-Date: Wed, 22 May 2019 15:13:04 +0200
-From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-Message-ID: <20190522131304.GA5692@bogon.m.sigxcpu.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1hTR6N-0003BT-Vc
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 13:16:17 +0000
+Received: by mail-pl1-x641.google.com with SMTP id a5so1061865pls.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 22 May 2019 06:16:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=CDSHlZ4R9H1PhFEC6NVmtI65PCR+1fnOjrUw3HlFSmY=;
+ b=MiALhfMLLB3ZUtSYw73WM0Ok//GbWWrp0nbqOMCtuKJQ27dI+r5EonhedPoCt5M2Cj
+ hD52ITjt5Jrq43aNFM3WoDws0AeEvgmljbydK0yKHzwrnrAsOE6GmEaqrFsWrbKkUP8R
+ pVi7wVyE5NWJxnBVacA7dUKpF6Hgwq5yuz6z6c5ExDhOSMxqU23ocdiKrdl5fBafoMV/
+ Vl0h/fgYjiHBYRwzzusSNkCoggfd+Ih7bAaHgjgZk9NoEWk4wrJjvB+RjtF5sbW0XJrn
+ 73yDzmzOzsN5EU4uXC/89XTe3sY0Go60tV+f7/eum49OJFXX6Li2kYtrEIklt6rP6jFZ
+ ohaw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=CDSHlZ4R9H1PhFEC6NVmtI65PCR+1fnOjrUw3HlFSmY=;
+ b=eVV2uai3O7e2eYhkzE5ookXgpjMWOZqLrGvqlh1hUvdM2gHvmEZTn6UBTAhAfs+B3g
+ 2lylOZuXJPm3Cwl/gCiZ+xAPS2oNO6gmflN30eKoiLKkcxsMe13S9wlUeH1zSLqNY++h
+ c/Z3IMqqhknfEwRCbH7Wt4U57Mq0dM1VDScmjCNfqYQKI0OF5Dcqz8jsrAu9LMwawEWu
+ 17/D/QGOq8XpmOTMn8a2MkFLDiOsaqkNauC2T0Y6v95s8ryi86YbqYhbG6R6u03B9Rba
+ fcBKeT+IsrMKk/zHu952DcVSfqknBJTHnnXkRyB6NmCo/kR+Nu+qrtxp4pMNzdk0qSWl
+ HGyQ==
+X-Gm-Message-State: APjAAAWvUXOjalsav3QuMeisrup8eXlGScITUGho6vgkiIf4U+RUgBQq
+ uzNRNA8L/tRwKBt6hNJ2NSgQ
+X-Google-Smtp-Source: APXvYqyK18MyeSBgTUuExrOuAFSNAl/gMnvHsGeTTCkCfMwqa4pggff8/j3VsWwJv9AoLKltHBe3mQ==
+X-Received: by 2002:a17:902:e104:: with SMTP id
+ cc4mr89824069plb.254.1558530974800; 
+ Wed, 22 May 2019 06:16:14 -0700 (PDT)
+Received: from localhost.localdomain ([2405:204:73c4:1ab0:ac45:9c21:7eb3:888a])
+ by smtp.gmail.com with ESMTPSA id b7sm22273565pgq.71.2019.05.22.06.16.06
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 22 May 2019 06:16:13 -0700 (PDT)
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: shawnguo@kernel.org, s.hauer@pengutronix.de, robh+dt@kernel.org,
+ festevam@gmail.com
+Subject: [PATCH 0/2] Add 96Boards Meerkat96 board support
+Date: Wed, 22 May 2019 18:45:48 +0530
+Message-Id: <20190522131550.9034-1-manivannan.sadhasivam@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_061310_435016_74D2D5E0 
-X-CRM114-Status: GOOD (  22.25  )
-X-Spam-Score: 1.8 (+)
+X-CRM114-CacheID: sfid-20190522_061616_026139_D9F6DE08 
+X-CRM114-Status: GOOD (  10.01  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [24.134.29.49 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 1.8 MISSING_SUBJECT        Missing Subject: header
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,215 +93,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jacky Bai <ping.bai@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Lucas Stach <l.stach@pengutronix.de>, Fabio Estevam <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Abel Vesa <abel.vesa@nxp.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, yossi@novtech.com,
+ nazik@novtech.com, pbrobinson@gmail.com, kernel@pengutronix.de,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Bcc: =
+Hello,
 
-Subject: Re: [RFC PATCH] soc: imx: Try harder to get imq8mq SoC revisions
-Reply-To: =
+This patchset adds board support for 96Boards Meerkat96 board from
+Novtech. This board is one of the Consumer Edition boards of the 96Boards
+family based on i.MX7D SoC. Following are the currently supported
+features of the board:
+ 
+* uSD
+* WiFi/BT
+* USB
+    
+More information about this board can be found in 96Boards product page:
+https://www.96boards.org/product/imx7-96/
 
-In-Reply-To: <20190508124018.GA16859@bogon.m.sigxcpu.org>
+Thanks,
+Mani
 
-Hi Leonard,,
-On Wed, May 08, 2019 at 02:40:18PM +0200, Guido G=FCnther wrote:
-> Hi Leonard,
-> =
+Manivannan Sadhasivam (2):
+  dt-bindings: arm: Document 96Boards Meerkat96 devicetree binding
+  ARM: dts: Add support for 96Boards Meerkat96 board
 
-> Thanks for your comments. Let's try s.th. different then: identify by
-> bootrom, ocotop and anatop and fall back to ATF afterwards (I'll split
-> out the DT part and add binding docs if this makes sense). I'm also
-> happy to drop the whole ATF logic until mailine ATF catched up:
-> =
+ .../devicetree/bindings/arm/fsl.yaml          |   1 +
+ arch/arm/boot/dts/Makefile                    |   1 +
+ arch/arm/boot/dts/imx7d-meerkat96.dts         | 396 ++++++++++++++++++
+ 3 files changed, 398 insertions(+)
+ create mode 100644 arch/arm/boot/dts/imx7d-meerkat96.dts
 
-> The mainline ATF doesn't currently support the FSL_SIP_GET_SOC_INFO call
-> nor does it have the code to identify different imx8mq SOC revisions so
-> mimic what NXPs ATF does here.
-
-Does this makes sense? If so I'll send this out as a series.
-
-> =
-
-> As a fallback use ATF so we can identify new revisions once it gains
-> support or when using NXPs ATF.
-
-I'm also fine with dropping the ATF part if we don't want to depend on
-it in mainline.
-Cheers,
- -- Guido
-
-> =
-
-> Signed-off-by: Guido G=FCnther <agx@sigxcpu.org>
-> ---
->  arch/arm64/boot/dts/freescale/imx8mq.dtsi | 12 ++++
->  drivers/soc/imx/soc-imx8.c                | 68 ++++++++++++++++++-----
->  2 files changed, 67 insertions(+), 13 deletions(-)
-> =
-
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/=
-dts/freescale/imx8mq.dtsi
-> index 6d635ba0904c..52aa1600b33b 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> @@ -246,6 +246,18 @@
->  		ranges =3D <0x0 0x0 0x0 0x3e000000>;
->  		dma-ranges =3D <0x40000000 0x0 0x40000000 0xc0000000>;
->  =
-
-> +		bus@00000000 { /* ROM */
-> +			compatible =3D "simple-bus";
-> +			#address-cells =3D <1>;
-> +			#size-cells =3D <1>;
-> +			ranges =3D <0x00000000 0x00000000 0x20000>;
-> +
-> +			rom@00000000 {
-> +				compatible =3D "fsl,imx8mq-bootrom";
-> +				reg =3D <0x00000000 0x1e800>;
-> +			};
-> +		};
-> +
->  		bus@30000000 { /* AIPS1 */
->  			compatible =3D "fsl,imx8mq-aips-bus", "simple-bus";
->  			#address-cells =3D <1>;
-> diff --git a/drivers/soc/imx/soc-imx8.c b/drivers/soc/imx/soc-imx8.c
-> index fc6429f9170a..0a1fe82efe86 100644
-> --- a/drivers/soc/imx/soc-imx8.c
-> +++ b/drivers/soc/imx/soc-imx8.c
-> @@ -3,6 +3,7 @@
->   * Copyright 2019 NXP.
->   */
->  =
-
-> +#include <linux/arm-smccc.h>
->  #include <linux/init.h>
->  #include <linux/io.h>
->  #include <linux/of_address.h>
-> @@ -11,39 +12,80 @@
->  #include <linux/platform_device.h>
->  #include <linux/of.h>
->  =
-
-> +#define REV_A0				0x10
-> +#define REV_B0				0x20
->  #define REV_B1				0x21
->  =
-
-> +#define IMX8MQ_SW_INFO_A0		0x800
-> +#define IMX8MQ_SW_INFO_B0		0x83C
->  #define IMX8MQ_SW_INFO_B1		0x40
->  #define IMX8MQ_SW_MAGIC_B1		0xff0055aa
->  =
-
-> +#define FSL_SIP_GET_SOC_INFO		0xc2000006
-> +
->  struct imx8_soc_data {
->  	char *name;
->  	u32 (*soc_revision)(void);
->  };
->  =
-
-> -static u32 __init imx8mq_soc_revision(void)
-> +static u32 __init imx8mq_soc_revision_atf(void)
-> +{
-> +	struct arm_smccc_res res =3D { 0 };
-> +
-> +	arm_smccc_smc(FSL_SIP_GET_SOC_INFO, 0, 0, 0, 0, 0, 0, 0, &res);
-> +	/*
-> +	 * Bit [23:16] is the silicon ID
-> +	 * Bit[7:4] is the base layer revision,
-> +	 * Bit[3:0] is the metal layer revision
-> +	 * e.g. 0x10 stands for Tapeout 1.0
-> +	 */
-> +	return res.a0 & 0xff;
-> +}
-> +
-> +static u32 __init imx8mq_soc_magic_node(const char *node, u32 offset)
->  {
->  	struct device_node *np;
-> -	void __iomem *ocotp_base;
-> +	void __iomem *base;
->  	u32 magic;
-> -	u32 rev =3D 0;
->  =
-
-> -	np =3D of_find_compatible_node(NULL, NULL, "fsl,imx8mq-ocotp");
-> +	np =3D of_find_compatible_node(NULL, NULL, node);
->  	if (!np)
-> -		goto out;
-> +		return 0;
-> +	base =3D of_iomap(np, 0);
-> +	WARN_ON(!base);
-> +
-> +	magic =3D readl_relaxed(base + offset);
-> +	iounmap(base);
-> +	of_node_put(np);
-> +
-> +	return magic;
-> +}
->  =
-
-> -	ocotp_base =3D of_iomap(np, 0);
-> -	WARN_ON(!ocotp_base);
-> +static u32 __init imx8mq_soc_revision(void)
-> +{
-> +	u32 magic;
->  =
-
-> -	magic =3D readl_relaxed(ocotp_base + IMX8MQ_SW_INFO_B1);
-> +	/* B1 revision identified by ocotop */
-> +	magic =3D imx8mq_soc_magic_node("fsl,imx8mq-ocotp", IMX8MQ_SW_INFO_B1);
->  	if (magic =3D=3D IMX8MQ_SW_MAGIC_B1)
-> -		rev =3D REV_B1;
-> +		return REV_B1;
->  =
-
-> -	iounmap(ocotp_base);
-> +	/* B0 identified by bootrom */
-> +	magic =3D imx8mq_soc_magic_node("fsl,imx8mq-bootrom", IMX8MQ_SW_INFO_B0=
-);
-> +	if ((magic & 0xff) =3D=3D REV_B0)
-> +		return REV_B0;
->  =
-
-> -out:
-> -	of_node_put(np);
-> -	return rev;
-> +	/* A0 identified by anatop */
-> +	magic =3D imx8mq_soc_magic_node("fsl,imx8mq-anatop", IMX8MQ_SW_INFO_A0);
-> +	if ((magic & 0xff) =3D=3D REV_A0)
-> +		return REV_A0;
-> +
-> +	/* Read revision from ATF as fallback */
-> +	magic =3D imx8mq_soc_revision_atf();
-> +	if (magic !=3D 0xff)
-> +		return magic;
-> +
-> +	return 0;
->  }
->  =
-
->  static const struct imx8_soc_data imx8mq_soc_data =3D {
-> -- =
-
-> 2.20.1
-> =
-
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> =
+-- 
+2.17.1
 
 
 _______________________________________________
