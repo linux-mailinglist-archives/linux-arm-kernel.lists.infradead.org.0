@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8263026869
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 18:35:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A97F126882
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 18:42:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zcoh9GQ1MPBuJemsL9GZg/Hu1rKAOyErpZXAoS762iI=; b=SlE9vT+EWtq1yL
-	BU/QjS7yFbaI+d59SGcyTnmoYe4f4zDh4Dc8CNoukQ/zgnS64ZQCiTGHlFziy5Pv4R7V1iNfPlF9z
-	TMokW+/3fypuaxmihb8iqepPJlbYaSkungX9G3pD57US2l8sV0bvLG6Xc3ugJy60cFnWK1T1Hr+63
-	UNcTcs0t4AAdJooXYQn3zM2ijMAtE9ZaAkZceeDs5iBq/Es305x2USpQavIZUqZBFb7mNpr1cJ6x+
-	LOlgz+sKftqqZj0SrmK0HAvuNHYRMA4k8AS2Rsz/K/SillzElwapPFa06SM9swFcmRLd5/YrBKOSy
-	VcbNmQ1Tx9LrIgnSn5wg==;
+	List-Owner; bh=cwMQfNo/CeBeKcXWLYdEBl8bflvO7Qi/2tYG2Li8RIQ=; b=qFcMOuZkRwdmkX
+	KgyhbRNktTDUND4GGW6R6zdsYUieeE09YtkemlVQBEMh9s6wXdctw0uRiFx8amG0mIu5t4oQpY3CZ
+	zn75XxyeoGLtBAiWRuaNjr03M6mDGiysUZ7AjTPjC5+5e29kly5jLUull2FMxKhhV8Fp/sWZNW0L4
+	AFRNclqN+cro3Fpjo/ONdLfEFceVeDyKTtJRbMAmsnvbFwQ0hZsYTKzr6u6F5LjqQs9t0uPrV1tKA
+	4YwwvbXR25/bOCuybsIDGeQApfpb6HYwmODKpLextK6tCk4OZM/NjdDHAPl6Zf6rxFan537Mc3QSw
+	gx391OHw81YCn9VVnDJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTUDR-00009Y-6k; Wed, 22 May 2019 16:35:45 +0000
+	id 1hTUJv-0003nK-NR; Wed, 22 May 2019 16:42:27 +0000
 Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
  helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTUDK-00008a-HI
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 16:35:40 +0000
+ id 1hTUJo-0003mO-S7
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 16:42:22 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 39D60341;
- Wed, 22 May 2019 09:35:36 -0700 (PDT)
-Received: from mbp (usa-sjc-mx-foss1.foss.arm.com [217.140.101.70])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1CE693F5AF;
- Wed, 22 May 2019 09:35:29 -0700 (PDT)
-Date: Wed, 22 May 2019 17:35:27 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: enh <enh@google.com>
-Subject: Re: [PATCH v15 00/17] arm64: untag user pointers passed to the kernel
-Message-ID: <20190522163527.rnnc6t4tll7tk5zw@mbp>
-References: <cover.1557160186.git.andreyknvl@google.com>
- <20190517144931.GA56186@arrakis.emea.arm.com>
- <CAFKCwrj6JEtp4BzhqO178LFJepmepoMx=G+YdC8sqZ3bcBp3EQ@mail.gmail.com>
- <20190521182932.sm4vxweuwo5ermyd@mbp>
- <201905211633.6C0BF0C2@keescook>
- <20190522101110.m2stmpaj7seezveq@mbp>
- <CAJgzZoosKBwqXRyA6fb8QQSZXFqfHqe9qO9je5TogHhzuoGXJQ@mail.gmail.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7081B341;
+ Wed, 22 May 2019 09:42:18 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7B7FF3F5AF;
+ Wed, 22 May 2019 09:42:15 -0700 (PDT)
+Date: Wed, 22 May 2019 17:42:13 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Michal Hocko <mhocko@kernel.org>
+Subject: Re: [PATCH V3 2/4] arm64/mm: Hold memory hotplug lock while walking
+ for kernel page table dump
+Message-ID: <20190522164212.GD23592@lakrids.cambridge.arm.com>
+References: <1557824407-19092-1-git-send-email-anshuman.khandual@arm.com>
+ <1557824407-19092-3-git-send-email-anshuman.khandual@arm.com>
+ <20190515165847.GH16651@dhcp22.suse.cz>
+ <20190516102354.GB40960@lakrids.cambridge.arm.com>
+ <20190516110529.GQ16651@dhcp22.suse.cz>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAJgzZoosKBwqXRyA6fb8QQSZXFqfHqe9qO9je5TogHhzuoGXJQ@mail.gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <20190516110529.GQ16651@dhcp22.suse.cz>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_093538_586025_8692D1D5 
-X-CRM114-Status: GOOD (  40.49  )
+X-CRM114-CacheID: sfid-20190522_094220_917915_5B24E7E1 
+X-CRM114-Status: GOOD (  33.14  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -69,141 +69,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org,
- Linux Memory Management List <linux-mm@kvack.org>,
- Khalid Aziz <khalid.aziz@oracle.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
- Evgenii Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Yishai Hadas <yishaih@mellanox.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>, LKML <linux-kernel@vger.kernel.org>,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: cai@lca.pw, ira.weiny@intel.com,
+ Anshuman Khandual <anshuman.khandual@arm.com>, catalin.marinas@arm.com,
+ david@redhat.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ logang@deltatee.com, james.morse@arm.com, cpandya@codeaurora.org,
+ arunks@codeaurora.org, akpm@linux-foundation.org, osalvador@suse.de,
+ mgorman@techsingularity.net, dan.j.williams@intel.com,
+ linux-arm-kernel@lists.infradead.org, robin.murphy@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 22, 2019 at 08:30:21AM -0700, enh wrote:
-> On Wed, May 22, 2019 at 3:11 AM Catalin Marinas <catalin.marinas@arm.com> wrote:
-> > On Tue, May 21, 2019 at 05:04:39PM -0700, Kees Cook wrote:
-> > > I just want to make sure I fully understand your concern about this
-> > > being an ABI break, and I work best with examples. The closest situation
-> > > I can see would be:
-> > >
-> > > - some program has no idea about MTE
-> >
-> > Apart from some libraries like libc (and maybe those that handle
-> > specific device ioctls), I think most programs should have no idea about
-> > MTE. I wouldn't expect programmers to have to change their app just
-> > because we have a new feature that colours heap allocations.
+On Thu, May 16, 2019 at 01:05:29PM +0200, Michal Hocko wrote:
+> On Thu 16-05-19 11:23:54, Mark Rutland wrote:
+> > Hi Michal,
+> > 
+> > On Wed, May 15, 2019 at 06:58:47PM +0200, Michal Hocko wrote:
+> > > On Tue 14-05-19 14:30:05, Anshuman Khandual wrote:
+> > > > The arm64 pagetable dump code can race with concurrent modification of the
+> > > > kernel page tables. When a leaf entries are modified concurrently, the dump
+> > > > code may log stale or inconsistent information for a VA range, but this is
+> > > > otherwise not harmful.
+> > > > 
+> > > > When intermediate levels of table are freed, the dump code will continue to
+> > > > use memory which has been freed and potentially reallocated for another
+> > > > purpose. In such cases, the dump code may dereference bogus addressses,
+> > > > leading to a number of potential problems.
+> > > > 
+> > > > Intermediate levels of table may by freed during memory hot-remove, or when
+> > > > installing a huge mapping in the vmalloc region. To avoid racing with these
+> > > > cases, take the memory hotplug lock when walking the kernel page table.
+> > > 
+> > > Why is this a problem only on arm64 
+> > 
+> > It looks like it's not -- I think we're just the first to realise this.
+> > 
+> > AFAICT x86's debugfs ptdump has the same issue if run conccurently with
+> > memory hot remove. If 32-bit arm supported hot-remove, its ptdump code
+> > would have the same issue.
+> > 
+> > > and why do we even care for debugfs? Does anybody rely on this thing
+> > > to be reliable? Do we even need it? Who is using the file?
+> > 
+> > The debugfs part is used intermittently by a few people working on the
+> > arm64 kernel page tables. We use that both to sanity-check that kernel
+> > page tables are created/updated correctly after changes to the arm64 mmu
+> > code, and also to debug issues if/when we encounter issues that appear
+> > to be the result of kernel page table corruption.
 > 
-> obviously i'm biased as a libc maintainer, but...
+> OK, I see. Thanks for the clarification.
 > 
-> i don't think it helps to move this to libc --- now you just have an
-> extra dependency where to have a guaranteed working system you need to
-> update your kernel and libc together. (or at least update your libc to
-> understand new ioctls etc _before_ you can update your kernel.)
-
-That's not what I meant (or I misunderstood you). If we have a relaxed
-ABI in the kernel and a libc that returns tagged pointers on malloc() I
-wouldn't expect the programmer to do anything different in the
-application code like explicit untagging. Basically the program would
-continue to run unmodified irrespective of whether you use an old libc
-without tagged pointers or a new one which tags heap allocations.
-
-What I do expect is that the libc checks for the presence of the relaxed
-ABI, currently proposed as an AT_FLAGS bit (for MTE we'd have a
-HWCAP_MTE), and only tag the malloc() pointers if the kernel supports
-the relaxed ABI. As you said, you shouldn't expect that the C library
-and kernel are upgraded together, so they should be able to work in any
-new/old version combination.
-
-> > > The trouble I see with this is that it is largely theoretical and
-> > > requires part of userspace to collude to start using a new CPU feature
-> > > that tickles a bug in the kernel. As I understand the golden rule,
-> > > this is a bug in the kernel (a missed ioctl() or such) to be fixed,
-> > > not a global breaking of some userspace behavior.
-> >
-> > Yes, we should follow the rule that it's a kernel bug but it doesn't
-> > help the user that a newly installed kernel causes user space to no
-> > longer reach a prompt. Hence the proposal of an opt-in via personality
-> > (for MTE we would need an explicit opt-in by the user anyway since the
-> > top byte is no longer ignored but checked against the allocation tag).
+> > So while it's rare to need it, it's really useful to have when we do
+> > need it, and I'd rather not remove it. I'd also rather that it didn't
+> > have latent issues where we can accidentally crash the kernel when using
+> > it, which is what this patch is addressing.
 > 
-> but realistically would this actually get used in this way? or would
-> any given system either be MTE or non-MTE. in which case a kernel
-> configuration option would seem to make more sense. (because either
-> way, the hypothetical user basically needs to recompile the kernel to
-> get back on their feet. or all of userspace.)
+> While I agree, do we rather want to document that you shouldn't be using
+> the debugging tool while the hotplug is ongoing because you might get a
+> garbage or crash the kernel in the worst case? In other words is the
+> absolute correctness worth the additional maint. burden wrt. to future
+> hotplug changes?
 
-The two hard requirements I have for supporting any new hardware feature
-in Linux are (1) a single kernel image binary continues to run on old
-hardware while making use of the new feature if available and (2) old
-user space continues to run on new hardware while new user space can
-take advantage of the new feature.
+I don't think that it's reasonable for this code to bring down the
+kernel unless the kernel page tables are already corrupt. I agree we
+should minimize the impact on other code, and I'm happy to penalize
+ptdump so long as it's functional and safe.
 
-The distro user space usually has a hard requirement that it continues
-to run on (certain) old hardware. We can't enforce this in the kernel
-but we offer the option to user space developers of checking feature
-availability through HWCAP bits.
+I would like it to be possible to use the ptdump code to debug
+hot-remove, so I'd rather not make the two mutually exclusive. I'd also
+like it to be possible to use this in-the-field, and for that asking an
+admin to potentially crash their system isn't likely to fly.
 
-The Android story may be different as you have more control about which
-kernel configurations are deployed on specific SoCs. I'm looking more
-from a Linux distro angle where you just get an off-the-shelf OS image
-and install it on your hardware, either taking advantage of new features
-or just not using them if the software was not updated. Or, if updated
-software is installed on old hardware, it would just run.
+> > > I am asking because I would really love to make mem hotplug locking less
+> > > scattered outside of the core MM than more. Most users simply shouldn't
+> > > care. Pfn walkers should rely on pfn_to_online_page.
 
-For MTE, we just can't enable it by default since there are applications
-who use the top byte of a pointer and expect it to be ignored rather
-than failing with a mismatched tag. Just think of a hwasan compiled
-binary where TBI is expected to work and you try to run it with MTE
-turned on.
+Jut to check, is your plan to limit access to the hotplug lock, or to
+redesign the locking scheme?
 
-I would also expect the C library or dynamic loader to check for the
-presence of a HWCAP_MTE bit before starting to tag memory allocations,
-otherwise it would get SIGILL on the first MTE instruction it tries to
-execute.
-
-> i'm not sure i see this new way for a kernel update to break my system
-> and need to be fixed forward/rolled back as any different from any of
-> the existing ways in which this can happen :-) as an end-user i have
-> to rely on whoever's sending me software updates to test adequately
-> enough that they find the problems. as an end user, there isn't any
-> difference between "my phone rebooted when i tried to take a photo
-> because of a kernel/driver leak", say, and "my phone rebooted when i
-> tried to take a photo because of missing untagging of a pointer passed
-> via ioctl".
+> > I'm not sure if that would help us here; IIUC pfn_to_online_page() alone
+> > doesn't ensure that the page remains online. Is there a way to achieve
+> > that other than get_online_mems()?
 > 
-> i suspect you and i have very different people in mind when we say "user" :-)
+> You have to pin the page to make sure the hotplug is not going to
+> offline it.
 
-Indeed, I think we have different users in mind. I didn't mean the end
-user who doesn't really care which C library version it's running on
-their phone but rather advanced users (not necessarily kernel
-developers) that prefer to build their own kernels with every release.
-We could extend this to kernel developers who don't have time to track
-down why a new kernel triggers lots of SIGSEGVs during boot.
+I'm not exactly sure how pinning works -- is there a particular set of
+functions I should look at for that?
 
--- 
-Catalin
+I guess that if/when we allocate the vmemmap from hotpluggable memory
+that will require the pinning code to take the hotplug lock internally
+to ensure that the struct page is accessible while we attempt to pin it?
+
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
