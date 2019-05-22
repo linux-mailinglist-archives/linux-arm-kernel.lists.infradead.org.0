@@ -2,91 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1559725E6F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 09:04:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2061B25E7E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 09:06:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wO23sBJ1nWKXrLQw4fqpHXoecpSOOmPpUDLUT6Ykpsk=; b=ZR5rfztzhayHf2
-	UyQ6pK7QNZSz3LXqjPiGZwwqvDddHUP8gw8UZsBQcRNtbsqUziVYYNOMOMQmY00lkD90JFExiRHW/
-	bc74tkcLtTb4LERNlHM1bXCuKr1uLLDGEmQc9YRoamEJiKQfEljUfVR/kgw+rlZy8Pi+FCcUGUL2q
-	HOugY54ZAa4qFTYRfs02OBY3an+x/+8ZQGDPpZoFvKy/qEp7c1PzvF259Yx9smyj9jm0n6y0wlg4Y
-	aYrs+rB2vgtMKqH8nnSdpmJMV3Uf6ZEJq6+78ljxTHKz5knx6zPx19rG+KgXJ1r/igQjzflgmwSpw
-	X3NzqGy2OY2317lQrpAQ==;
+	List-Owner; bh=EuAyvPxijXRPw2n9M/qBJQGEZXQQp7jMWLsMgeGoioo=; b=C6oeDmC6kHqoNa
+	5eMB853tl401DZ7vJr4oBtqsToJEsT+bUwJUxZrXThBJYl57nmn1dEqf4UDPwtK7ybqTNxgKEr7jV
+	AKpzOxS3Hhj83PUHwG+DMARhoQUB6taK2bofTOJLa1rph39eZecLNq9XfgXc0MNSgSpyOEdF4TEMT
+	hQ3ucvobl5JRbhuC5cfVEtPSCXIuxo7JTnF6Wc86h7dVDoohwIfXeYX2PLQMpoSWb8vtsjLIW2Kz1
+	O6smvcejVCwWX6m/95uZyxEi17taen5L3o71UCT0/qhJahJzrDPBjgfMGdR8RPDS3WNeRgTTDSg16
+	Wqa2Zdve297DRj7ksjyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTLI4-0007l0-MN; Wed, 22 May 2019 07:03:56 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hTLKS-0000nG-7T; Wed, 22 May 2019 07:06:24 +0000
+Received: from mail-eopbgr70087.outbound.protection.outlook.com ([40.107.7.87]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTLHw-0007kB-Kr
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 07:03:50 +0000
-Received: by mail-wm1-x341.google.com with SMTP id c77so965732wmd.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 May 2019 00:03:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=XyUExAoRIQds+qaoHz71XnnFutNbjVISu9zM0HA1E0Q=;
- b=j0btQvTz6E4xGvDiw4VXPhX7YQ6nOsdnHrZV5hlXZT8LnvPguOHY0A6C6F68DbXgsT
- 1UZhr3USWTP4RQO8tV7nSgQ0Qc/kY39lSydBLYpOCjwSlv5H2+Qi+g4BDAUAi1x932SM
- XbR8r4HMZKgdKZkDlupKGCxhxW1rD4dXaEQ6iqD0mXyurCQXabhgh0ecB185tLLTyvGw
- 00ni7naU2QWh99Fh2Gk0f5LqnEZFfHe1QNv72nxj0WOtZPhF4fQ5r/AdkP6LtJWKmFEt
- P6nUcthiKbsZTEfR1UkN/tMrHpjj8QCaXHmVrJ7NwfZBxou9cKvUqGxVz2GKzq3jfusk
- ZCJg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=XyUExAoRIQds+qaoHz71XnnFutNbjVISu9zM0HA1E0Q=;
- b=ELG8KoFdM47tck4S2oy5+dvCRmusY7BDkD4EFVUDNr1O8edHGPuVakpLsLDbuJ4kZ8
- PGb0dqtcSWb7F44ZeGN30DX/Fb+h4W3vtSqy2DR3/tgnIvSd8yNlb3hP4ZPFjNC1043z
- DLQtx83c2ERuZWjd8bE/0N4LTbMbxW5Uv3VIgZNxMDVsVlQU/E8oDN/NNeYhq8286oRT
- xyoqXsoTm6zK5hrV41/Ib31E4HT/QAReRcrT2wXwWw8RbPQRCUoyWwDnLoTfPjm+PsyE
- Ed+iGQBQangbv34B+ZFK0CJyokzSJ0ZR9MId3ZMtoM/hRxuBKHtjQONebVGTtdvCzdZP
- BSIg==
-X-Gm-Message-State: APjAAAU1gcOs1yTzeB+3c0ZlrdD3mwwJb8CSNklm0Jw2EHdes0qGM+za
- SKdAJwg/djrGIasP9GL2pPrB7w==
-X-Google-Smtp-Source: APXvYqyI/8BkHq8u9vd6mhfC6UOZUI4KUX4YD1XbWpr2TILi4b1BFlR3W0pVD27X22wwcaFNwPfa+w==
-X-Received: by 2002:a1c:4107:: with SMTP id o7mr6321092wma.122.1558508625472; 
- Wed, 22 May 2019 00:03:45 -0700 (PDT)
-Received: from apalos (ppp-94-66-229-5.home.otenet.gr. [94.66.229.5])
- by smtp.gmail.com with ESMTPSA id p8sm15598396wro.0.2019.05.22.00.03.43
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 22 May 2019 00:03:44 -0700 (PDT)
-Date: Wed, 22 May 2019 10:03:41 +0300
-From: Ilias Apalodimas <ilias.apalodimas@linaro.org>
-To: Viresh Kumar <viresh.kumar@linaro.org>
-Subject: Re: [PATCH] clk: mvebu: armada-37xx-periph: Fix initialization for
- cpu clocks
-Message-ID: <20190522070341.GA32613@apalos>
-References: <20190314121541.GB19385@apalos>
- <CAC5LXJcCs4nr-qFOWzUJpUBAJ9ngG-cgeTCVCFBKFc1SPzHMuQ@mail.gmail.com>
- <20190314134428.GA24768@apalos> <874l85v8p6.fsf@FE-laptop>
- <20190318112844.GA1708@apalos> <87h8c0s955.fsf@FE-laptop>
- <20190318122113.GA4834@apalos>
- <20190424093015.rcr5auamfccxf6ei@vireshk-i7>
- <20190425123303.GA12659@apalos>
- <20190520112042.mpamnabxpwciih5m@vireshk-i7>
+ id 1hTLKK-0000ms-Lw; Wed, 22 May 2019 07:06:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=js/rleFrTUm9e6nJA8yHzFp4ws0qmvJw8hibKrftfcQ=;
+ b=fvp3undoFyYGbTDa4vqyEVyLv8YerIuEKsZ3P1u8JfuXI4b7LswwJcyn4ItSw505TL2rZQZec3+sFODbuF/Jgj4eOmGoV5JaX9cSP8PjledHlVDeUAhKxOS7d83CjIqLpUrp+7incQS1ZU5o6P/ZWuFE22JdwDmbf56WlQrDT+c=
+Received: from AM0PR0402MB3556.eurprd04.prod.outlook.com (52.133.43.147) by
+ AM0PR0402MB3683.eurprd04.prod.outlook.com (52.133.38.147) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1900.18; Wed, 22 May 2019 07:06:13 +0000
+Received: from AM0PR0402MB3556.eurprd04.prod.outlook.com
+ ([fe80::f891:76d:8a6a:3dfd]) by AM0PR0402MB3556.eurprd04.prod.outlook.com
+ ([fe80::f891:76d:8a6a:3dfd%2]) with mapi id 15.20.1922.016; Wed, 22 May 2019
+ 07:06:13 +0000
+From: Kuldeep Singh <kuldeep.singh@nxp.com>
+To: Mark Brown <broonie@kernel.org>
+Subject: RE: [EXT] Re: [PATCH] dt-bindings: spi: spi-fsl-qspi: Add ls2080a
+ compatibility string
+Thread-Topic: [EXT] Re: [PATCH] dt-bindings: spi: spi-fsl-qspi: Add ls2080a
+ compatibility string
+Thread-Index: AQHVC9OtkL2+pIZt7Uy9/HRX7rIojaZ2Gf+AgACmmfA=
+Date: Wed, 22 May 2019 07:06:12 +0000
+Message-ID: <AM0PR0402MB3556568F1033897FC4784D83E0000@AM0PR0402MB3556.eurprd04.prod.outlook.com>
+References: <20190516104046.23830-1-kuldeep.singh@nxp.com>
+ <20190516104046.23830-2-kuldeep.singh@nxp.com>
+ <20190521210449.GB1580@sirena.org.uk>
+In-Reply-To: <20190521210449.GB1580@sirena.org.uk>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=kuldeep.singh@nxp.com; 
+x-originating-ip: [92.120.1.71]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: b87ead17-ac02-4e73-9946-08d6de83f9e3
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR0402MB3683; 
+x-ms-traffictypediagnostic: AM0PR0402MB3683:
+x-microsoft-antispam-prvs: <AM0PR0402MB36830664338AAD0186758A64E0000@AM0PR0402MB3683.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1002;
+x-forefront-prvs: 0045236D47
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(366004)(189003)(199004)(13464003)(6116002)(14454004)(6246003)(3846002)(9686003)(33656002)(55016002)(4326008)(25786009)(4744005)(256004)(5660300002)(6916009)(76176011)(44832011)(66066001)(2906002)(7696005)(476003)(186003)(446003)(76116006)(486006)(73956011)(66556008)(66446008)(66946007)(6506007)(66476007)(64756008)(229853002)(99286004)(11346002)(102836004)(54906003)(53546011)(86362001)(7736002)(74316002)(68736007)(6436002)(26005)(8936002)(81166006)(81156014)(8676002)(52536014)(53936002)(305945005)(498600001)(71190400001)(71200400001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR0402MB3683;
+ H:AM0PR0402MB3556.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: HB0XwIPUA9vkRyYewaCwmJ1Yfpg5JMkAX8qW/Gb/dW2CY3u2L1dPYsvGzoQds/t326M1mplknNPKn/ISrhTrQnpzAwIoc3qQNpKUwT1p8S3dSEQsf3aHMnUr6vuDYmCKm9LnM7SI+P7gXbvmknT/mjfA+YaEXzTLN4Eg7WdzRdfLAPw+zRczmD11FGevuFnnptEyWzD0/hYzLIYjZ9//wqPhvYAde+tvOg5ujDXznpb0ZgVRVdlA0tA4lfXcV9wi0ZVqthvD7HXJk9NJyP/uK2YF2sGhnGbrhYka40IwN4GOgViaQJChQp/yUWgtSDL3lFpkFhBglDBR/oTVgJNbAz2CgTKPEC+i1xYWUwyLSeKc/iDP5Lwpqhu5KSGkI1WjK3Caw+b8T9ZhHzZMQ9hlhLHT7Odv6JFCH6jQDddoQQ4=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190520112042.mpamnabxpwciih5m@vireshk-i7>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: b87ead17-ac02-4e73-9946-08d6de83f9e3
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 May 2019 07:06:13.2779 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR0402MB3683
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_000348_749556_D4FDA114 
-X-CRM114-Status: GOOD (  15.90  )
+X-CRM114-CacheID: sfid-20190522_000616_720913_98311756 
+X-CRM114-Status: UNSURE (   8.43  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ no trust [40.107.7.87 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -105,53 +113,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Vincent Guittot <vincent.guittot@linaro.org>,
- Jason Cooper <jason@lakedaemon.net>,
- Christian Neubert <christian.neubert.86@gmail.com>,
- Antoine Tenart <antoine.tenart@bootlin.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Gregory CLEMENT <gregory.clement@bootlin.com>, linux-pm@vger.kernel.org,
- Stephen Boyd <sboyd@codeaurora.org>, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org, Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Mike Turquette <mturquette@baylibre.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- =?iso-8859-1?Q?Miqu=E8l?= Raynal <miquel.raynal@bootlin.com>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-mtd@lists.infradead.org" <linux-mtd@lists.infradead.org>,
+ Ashish Kumar <ashish.kumar@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "bbrezillon@kernel.org" <bbrezillon@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Viresh, Gregory
-On Mon, May 20, 2019 at 04:50:42PM +0530, Viresh Kumar wrote:
-> On 25-04-19, 15:33, Ilias Apalodimas wrote:
-> > Hi Viresh,
-> > 
-> > > > > Also, during this week-end, Christian suggested that the issue might
-> > > > > come from the AVS support.
-> > > > > 
-> > > > > Could you disable it and check you still have the issue?
-> > > > > 
-> > > > > For this, you just have to remove the avs node in
-> > > > > arch/arm64/boot/dts/marvell/armada-37xx.dtsi and rebuild the dtb.
-> > > > Sure. You'll have to wait for a week though. Currently on a trip. I'll run that
-> > > >  once i return
-> > > 
-> > > @Ilias: Can you please try this now and confirm to Gregory ?
-> > I am more overloaded than usual and totally forgot about this. Apologies.
-> > I'll try finding some time and do this.
-> 
-> Ping Ilias.
-Sorry for the huge delay. 
-Applying this patch and removing tha 'avs' node from
-arch/arm64/boot/dts/marvell/armada-37xx.dtsi seems to work.
-Changing between governors does not freeze the board any more. I haven't checked
-the actual impact on the CPU speed but the values on 
-/sys/devices/system/cpu/cpufreq/policy0/scaling_governor are correct
+Hi Mark,
 
-Cheers
-/Ilias
+> -----Original Message-----
+> From: Mark Brown [mailto:broonie@kernel.org]
+> Sent: Wednesday, May 22, 2019 2:35 AM
+> To: Kuldeep Singh <kuldeep.singh@nxp.com>
+> Cc: devicetree@vger.kernel.org; bbrezillon@kernel.org; linux-arm-
+> kernel@lists.infradead.org; linux-mtd@lists.infradead.org; Ashish Kumar
+> <ashish.kumar@nxp.com>
+> Subject: [EXT] Re: [PATCH] dt-bindings: spi: spi-fsl-qspi: Add ls2080a
+> compatibility string
+> 
+> On Thu, May 16, 2019 at 10:39:45AM +0000, Kuldeep Singh wrote:
+> > There are 2 version of QSPI-IP, according to which it can be big
+> > endian or little endian. There are some other minor changes as well.
+> > The big endian version uses driver compatible fsl,ls1021a-qspi and
+> > little endian version uses fsl,ls10280a-qspi
+> 
+> This doesn't apply against current code, please check and resend.
+
+I have sent v2 of patches by converting them to patch series.
+
+Regards 
+Kuldeep Singh
 
 _______________________________________________
 linux-arm-kernel mailing list
