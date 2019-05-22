@@ -2,79 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92FD426409
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 14:50:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD0B426418
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 14:54:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qVb0XpTIRByS/msKXQNiAXTjSs/PdKEnUJgP8mWbDNg=; b=fWVA5n3m2w9IKw
-	J7LASIuC/I7Ndz5pnR8P36K9tz75RqqCNu5yw0SVyqYYeFtbrSlgySFOFsKI9/3KwDlfb5xqDYpQN
-	9I2JGA71KUFJLWfaoBGCuO4z5uftgy65s1q0sdCF3cGcwjfcOX2Ui5NFxGgcSCoZDBBWZU1UYdrKu
-	goIf0wuy+s82J/1xTxgKxFHsgLNOrq3LW7ETiHZrZw0n4qqVqziQ2XGb4U3hkNkh8P3IPnTBg+Nbx
-	MOwSclT67i7ymHMor6T+w2IZwTABIihfZZ9OVIHdQBxVZpathm2v14vX3q1P18Tn3YhtSdr9dhTqE
-	tkK5dwGvvunLGFugcT8Q==;
+	List-Owner; bh=Xj1OVMS7byYfwjLnjgeX81UxLR9h/NRkkyVZ3u+YeGw=; b=Pw6JDxfNc2TzrC
+	Gc6b+QNZ/ImriNTKjR4HRNImmOC7Mif7R6sWlMB5utQ+gE+nvNiumZgZW/r0kaH4gU6UNEhv1QJwo
+	1fYXaKjXc8VZJVl2o2KHqJVd8Ffp39vcGOU/oXg/yNbZSogAijLnHJGzdHgZHSWSncrMwORHDpoLF
+	S5nAOl86l/J44/ztDxhNM5w8xLNOsEc3GSaLA1kLhYD0Ix2p359iyR3z4e78h6ZrxOkQMFvr606+i
+	XKMGWLJIZ6f3nDTROoBJffi0D8mdaDsFErXgPDiAksegKi5Pq28wqOqGd4P2EomAx8datxGrJOwOX
+	p1r68Af2bAmEVIbJdMFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTQh7-0001Vc-RI; Wed, 22 May 2019 12:50:09 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTQgv-0001Uz-V1
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 12:49:59 +0000
-Received: from mail-qt1-f181.google.com (mail-qt1-f181.google.com
- [209.85.160.181])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 96F752184B
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 May 2019 12:49:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558529397;
- bh=5ZGoJi7NkwXVR/OD6kRE/4231NNk5lVLqumccNmisaM=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=P/Xi9UJqmeYRdPazqEcKP9IuQTWCddd6kst1SKQ3qjtCiUCMbvuOEEDFicZv/pk63
- NeV63sW+AFY9dTKnLz1Lreb0QxFX4AC9RFKcvXTXt1ZrMWRDQBPXZKLqEvEDUM4vwH
- QT+r59SQPi1NU1B28D+wbB9ZjFloODaKSgvs63xA=
-Received: by mail-qt1-f181.google.com with SMTP id f24so2081628qtk.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 May 2019 05:49:57 -0700 (PDT)
-X-Gm-Message-State: APjAAAXGWrzdqG3g4ENoTqyE9piwuGilL8Xa1XiS7Iul1Sz945wFAfTU
- zM/Ze6GKQkQY8prriTECZn3054PWU6DKWtbBbg==
-X-Google-Smtp-Source: APXvYqxJyh8gPJdSllFYvlfTjnDcRfyrin0i7k2617dS8CfKNsSi0ccmNnsl8crgC8wL+I59VDGEoYxEPmonj9M9fPU=
-X-Received: by 2002:ac8:3884:: with SMTP id f4mr75987199qtc.300.1558529396825; 
- Wed, 22 May 2019 05:49:56 -0700 (PDT)
+	id 1hTQlc-0003Lw-4r; Wed, 22 May 2019 12:54:48 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hTQlU-0003LI-R4
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 12:54:41 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0364880D;
+ Wed, 22 May 2019 05:54:36 -0700 (PDT)
+Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C32D23F575;
+ Wed, 22 May 2019 05:54:34 -0700 (PDT)
+Date: Wed, 22 May 2019 13:54:29 +0100
+From: Will Deacon <will.deacon@arm.com>
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: [PATCH] ACPI/IORT: Fix build without CONFIG_IOMMU_API
+Message-ID: <20190522125429.GA7876@fuggles.cambridge.arm.com>
+References: <20190520065746.17068-1-hch@lst.de>
 MIME-Version: 1.0
-References: <20190521212325.16639-1-robh@kernel.org>
- <20190522104226.nwcvx33akt6q576m@flea>
-In-Reply-To: <20190522104226.nwcvx33akt6q576m@flea>
-From: Rob Herring <robh@kernel.org>
-Date: Wed, 22 May 2019 07:49:44 -0500
-X-Gmail-Original-Message-ID: <CAL_Jsq+JimAYW9GiPz6_hNJfnA+8bnN=kPDOEJFPyt+57bwriw@mail.gmail.com>
-Message-ID: <CAL_Jsq+JimAYW9GiPz6_hNJfnA+8bnN=kPDOEJFPyt+57bwriw@mail.gmail.com>
-Subject: Re: [PATCH] spi: dt-bindings: Convert Arm pl022 to json-schema
-To: Maxime Ripard <maxime.ripard@bootlin.com>
+Content-Disposition: inline
+In-Reply-To: <20190520065746.17068-1-hch@lst.de>
+User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_054958_009325_7E1BD466 
-X-CRM114-Status: GOOD (  12.00  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190522_055440_877455_40BF8923 
+X-CRM114-Status: GOOD (  16.63  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -86,32 +64,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- linux-spi <linux-spi@vger.kernel.org>, Mark Brown <broonie@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: jean-philippe.brucker@arm.com, linux-acpi@vger.kernel.org,
+ lorenzo.pieralisi@arm.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 22, 2019 at 5:42 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
->
-> Hi Rob,
->
-> On Tue, May 21, 2019 at 04:23:24PM -0500, Rob Herring wrote:
-> > +allOf:
-> > +  - $ref: "spi-controller.yaml#"
->
-> You're using a different construct on the spi-gpio binding you just
-> sent (/schemas/spi/spi-controller.yaml).
->
-> Is that on purpose?
+Hi Christoph,
 
-No. This one is correct (though both work).
+On Mon, May 20, 2019 at 08:57:46AM +0200, Christoph Hellwig wrote:
+> IOMMU_FWSPEC_PCI_RC_ATS is only defined if CONFIG_IOMMU_API is
+> enabled.
+> 
+> Fixes: 5702ee24182f ("ACPI/IORT: Check ATS capability in root complex nodes")
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+>  drivers/acpi/arm64/iort.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
+> index 9058cb084b91..3e542b5d2a2d 100644
+> --- a/drivers/acpi/arm64/iort.c
+> +++ b/drivers/acpi/arm64/iort.c
+> @@ -1074,9 +1074,10 @@ const struct iommu_ops *iort_iommu_configure(struct device *dev)
+>  		info.node = node;
+>  		err = pci_for_each_dma_alias(to_pci_dev(dev),
+>  					     iort_pci_iommu_init, &info);
+> -
+> +#ifdef CONFIG_IOMMU_API
+>  		if (!err && iort_pci_rc_supports_ats(node))
+>  			dev->iommu_fwspec->flags |= IOMMU_FWSPEC_PCI_RC_ATS;
+> +#endif
 
-Rob
+Cheers, although there's an alternative fix from Lorenzo that I'll send up
+for -rc2.
+
+Sorry for the delay; been having email issues this week.
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
