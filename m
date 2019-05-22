@@ -2,83 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 705A626521
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 15:51:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6BB772653C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 15:56:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YqjGhWvlv9AiSnWkgkYxSH04LtGRS/SLA1oH5QGyU/w=; b=I7E8nE+TpugVl0
-	uylCQMMWxne8ORU/EHttc60odKI5LLZ38SvZEP2El+0ICWrVzMVoMM7rbXDexEiCQsefT+D1Ahmyi
-	q+/RuRgG9jMOs0NEx35XIiyYfJx9qblE/AVuiX5qj8Yn1zo3dz22+S+vbR+ZqJ0Gx2cPu7UoKHXjC
-	TsTSaTrMx7WfbNtzO5dNjIiWBUYOoJWjYihmPw0Vpp9xXOr0CwdPwwL5EUohZOCnDP1L4CZOMq9Wj
-	pzv7/mWFtkTfHjFiviGrWVvW8RghXBGfj5TDCai6gUbLb79iy1DtFfipQBDHioGyUN/uFrJGIjCn/
-	Z8ViZQQy746TihKsbkEQ==;
+	List-Owner; bh=F4i0hNuip8EN9+3COh6Ivw2iWzKg1+gxKT0L+6rQJgw=; b=B1pE+fxgwCoVo3
+	xaKWmiGN4Zq4u+wUppiIe+HSCvjRTM9/9Ndhm/rTCR2+3MiwK/ixQ0k7SCY2Ij+nuyKlrcM3ABc27
+	fOWdic+0fUvFtYMajthRqXD/ga3uu48Lv80v+k/pWtR/r2nBqlVm+qsbK6A5ZuwFcI6dlX2t+mlVi
+	9KpWXe9nH65UueTsl4C5WGXBPkSE0V1Syv+vTT1Hrw+050yyDspOSZ8zOEcF/yzRbv7rNR3sr85AF
+	q7GT8TFbGY0RSNZu8Z9l/VMaALG4Ut1ABnfMXQEo58el6/fwNOSn5+PLwH5v0ZQfG4umUE2LCYx/8
+	LnCkKxILI2efWmzGekSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTRed-0001H1-Hs; Wed, 22 May 2019 13:51:39 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1hTRj5-0003AA-0k; Wed, 22 May 2019 13:56:15 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTReW-0001GL-Av
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 13:51:33 +0000
-Received: by mail-ot1-f65.google.com with SMTP id l25so2100703otp.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 May 2019 06:51:30 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=WNC2JYWG7tWES9f64iNfx+WaqJ4vmOCp/0J1TeLz0p4=;
- b=EcIq799SwRlcZ61QoNmL7YN6tmKoL2rA1vbaBQcxVhHaPUhxySYBjvsnQx3AEv44WH
- d8KkVwAFXOuQkoUfY7ZQH/hdR0GCximMSwDmoqQ9p05+RjV7TMj5I9+8UiJTvj+1Cc3x
- fYLh7OcBQ6QySONc2kPbgBw60NFoxTuDXBq6SYU6bBeupwCFz4I9ONy8EkavqYARIL5Z
- Wlz0T6cpiI4ZZ8RpK2ikTT6XkNbZjMpOE1iUSWmAbP3fdDcT8vasv0fQEXqeug5pjQwe
- x2f8uL/qE+NNCSd6Xp3GbTvphMSYN833A2uMAzv2bAAQt3erMcge8diOWFuDzFKOezAH
- 9ZXA==
-X-Gm-Message-State: APjAAAVDyp4DtIixf8IiwGONJ+W4LUv4fDltf9d1uThkNNcLea/h04+4
- J9X9Wfm6Cm/ACT7yrNpbLQ==
-X-Google-Smtp-Source: APXvYqyruJO4hpb5ERYDyy8YFYJg7Z8ngUs0aEUiTimEwLTJsVuVZ4S1t245qpR8qtmb7mfA8CLAFA==
-X-Received: by 2002:a05:6830:11ce:: with SMTP id
- v14mr23382616otq.184.1558533089709; 
- Wed, 22 May 2019 06:51:29 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id e8sm4849679otk.13.2019.05.22.06.51.28
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 22 May 2019 06:51:29 -0700 (PDT)
-Date: Wed, 22 May 2019 08:51:28 -0500
-From: Rob Herring <robh@kernel.org>
-To: Robin Gong <yibin.gong@nxp.com>
-Subject: Re: [PATCH v4 10/14] dma: imx-sdma: add i.mx6ul/6sx compatible name
-Message-ID: <20190522135128.GA24987@bogus>
-References: <1558548188-1155-1-git-send-email-yibin.gong@nxp.com>
- <1558548188-1155-11-git-send-email-yibin.gong@nxp.com>
+ id 1hTRiw-00039B-9d; Wed, 22 May 2019 13:56:07 +0000
+Received: from mail-qk1-f172.google.com (mail-qk1-f172.google.com
+ [209.85.222.172])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A03B421851;
+ Wed, 22 May 2019 13:56:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1558533365;
+ bh=CpWRPFDFDeEz2FasTJpU7xC9m9MJZ5sBPRt83HEYgfo=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=duF47EnJ1olpUVNwqtjHV8UOkB/JftPjhDIWWr5H4ZMBt7IDtYQ1C/3BKouXzaL0v
+ f3jygMikKv5/BWPNiA3P92IWbjeorOYEupad+Hlhua/d6y7btM+ZP6HzFBgM/1PR/F
+ gF+k03o4CdD3kYEN6+YfFHKpbwJPIm2lkyOB1Qxs=
+Received: by mail-qk1-f172.google.com with SMTP id m18so1497083qki.8;
+ Wed, 22 May 2019 06:56:05 -0700 (PDT)
+X-Gm-Message-State: APjAAAXRNr35U3ambEnRM0/3jzwGCY3LQGNaOPavRdtYCox++gWT7KR/
+ hQZiuydN5SQsiTIVL6doojhkBPD8MHR7tTRqdw==
+X-Google-Smtp-Source: APXvYqzvt+EFGiFr6y2zsSRBs4qOUs7e+/z+bJpZu4CMkQbtQjvYCr7ioBnDYS6ibBsbagsPUO0sVjALMvR6IRu+67E=
+X-Received: by 2002:a37:dc03:: with SMTP id v3mr70538862qki.151.1558533364775; 
+ Wed, 22 May 2019 06:56:04 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1558548188-1155-11-git-send-email-yibin.gong@nxp.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <1558466890-45471-1-git-send-email-kdasu.kdev@gmail.com>
+ <CAL_JsqKd53W1E33YdtJwagi4=7DrVQ5+N3rSY=Rxo5J0RiW46g@mail.gmail.com>
+In-Reply-To: <CAL_JsqKd53W1E33YdtJwagi4=7DrVQ5+N3rSY=Rxo5J0RiW46g@mail.gmail.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Wed, 22 May 2019 08:55:53 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqJ+zNQ3CeBh8K=oBiZZsiBQ8w1w=6vs8zOQeqUf_qhqcg@mail.gmail.com>
+Message-ID: <CAL_JsqJ+zNQ3CeBh8K=oBiZZsiBQ8w1w=6vs8zOQeqUf_qhqcg@mail.gmail.com>
+Subject: Re: [PATCH] dt: bindings: mtd: replace references to nand.txt with
+ nand-controller.yaml
+To: Kamal Dasu <kdasu.kdev@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_065132_378700_1B267D40 
-X-CRM114-Status: GOOD (  11.78  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190522_065606_357307_AF239461 
+X-CRM114-Status: GOOD (  13.04  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -90,43 +85,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "robh@kernel.org" <robh@kernel.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "plyatov@gmail.com" <plyatov@gmail.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Mans Rullgard <mans@mansr.com>,
+ Lucas Stach <dev@lynxeye.de>, Vignesh Raghavendra <vigneshr@ti.com>,
+ Neil Armstrong <narmstrong@baylibre.com>, Stefan Agner <stefan@agner.ch>,
+ David Brown <david.brown@linaro.org>, Liang Yang <liang.yang@amlogic.com>,
+ MTD Maling List <linux-mtd@lists.infradead.org>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ linux-stm32@st-md-mailman.stormreply.com, Richard Weinberger <richard@nod.at>,
+ Jonathan Hunter <jonathanh@nvidia.com>, Marek Vasut <marek.vasut@gmail.com>,
+ Andy Gross <agross@kernel.org>,
+ "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
+ <bcm-kernel-feedback-list@broadcom.com>, devicetree@vger.kernel.org,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Marc Gonzalez <marc.w.gonzalez@free.fr>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>, linux-tegra@vger.kernel.org,
+ linux-amlogic@lists.infradead.org,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, linux-oxnas@groups.io,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
- "vkoul@kernel.org" <vkoul@kernel.org>,
- "broonie@kernel.org" <broonie@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
- "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
- "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
+ Thierry Reding <thierry.reding@gmail.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Brian Norris <computersforpeace@gmail.com>,
+ David Woodhouse <dwmw2@infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 22 May 2019 10:00:38 +0000, Robin Gong wrote:
-> Add i.mx6ul and i.mx6sx compatible name in binding doc.
-> 
-> Signed-off-by: Robin Gong <yibin.gong@nxp.com>
-> ---
->  Documentation/devicetree/bindings/dma/fsl-imx-sdma.txt | 2 ++
->  1 file changed, 2 insertions(+)
-> 
+On Wed, May 22, 2019 at 8:19 AM Rob Herring <robh+dt@kernel.org> wrote:
+>
+> On Tue, May 21, 2019 at 2:28 PM Kamal Dasu <kdasu.kdev@gmail.com> wrote:
+> >
+> > nand-controller.yaml replaced nand.txt however the references to it were
+> > not updated. This change updates these references wherever it appears in
+> > bindings documentation.
+> >
+> > Fixes: 212e49693592 ("dt-bindings: mtd: Add YAML schemas for the generic NAND options")
+> >
+> > Signed-off-by: Kamal Dasu <kdasu.kdev@gmail.com>
+>
+> Mauro already sent a similar patch.
 
-Please add Acked-by/Reviewed-by tags when posting new versions. However,
-there's no need to repost patches *only* to add the tags. The upstream
-maintainer will do that for acks received on the version they apply.
+Actually, Mauro's patch missed a bunch of cases that aren't full
+paths, so I'll take this one.
 
-If a tag was not added on purpose, please state why and what changed.
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
