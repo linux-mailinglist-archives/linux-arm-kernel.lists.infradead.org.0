@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F101D26801
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 18:21:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A23A026800
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 18:21:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JfCg7jLx4myK1DydT/JbgVG1+vAKV57twLnmUvMp9UE=; b=lywtCvQ55yeTq/
-	Eduuj7q6OtTUGuRWn57y/TlRbUbGkVXVCHF+waDC58dk04zPmkFzgTHnjR4Mg6lfAMzeYBdmYy+ss
-	9dl4dC8S4kUR5dLSlHHwlPrjIK38NlRuFvPmZM1Gj26yVelvyxuqWEVECEjYnuONKNsnlabH1O4EI
-	W9UFmbdFgMlnG1AvzCp3WZR8lFGvwfnkoncasHSo5+WEdpJE8HA/hdaayncRR4TIdUSEIdU55izEB
-	hP+gRNrcctaKKR31ksEYyXPwqOVpgzPVNWeHNH1ZLjg1Go+be9RBjrh5jOMh/QTDB7MXqYyOCba7T
-	vE70NaPGmpCE2KXW73uQ==;
+	List-Owner; bh=2q1CPPjWk8wf1qTlC4ls7q40ibJZs4Wfl+NRJ4odAjs=; b=VgPyKxO+3xv9+Q
+	Ozy/zO43cfkKtQweufoHpJAuqb7DMg2T8YjFfoLL0dSfb05I7djqTDJMUD63qGMBCGgw2bsIUrQl0
+	ZRqmAkuuRswsofThkcIrOxgw2Aa7svIrJDC975olBoDOCZ96ZxGsMwfJBR8m+omcfHo5TaJ4ROGEx
+	k+BOZGZ7KcIY1wK4rlllxBuXU86hw8N4fXHqzlj6bkK3XSPcEn5FWwyKNTy4GUC0zPw5FlqZglUFk
+	3IPhlWgguMKrhyHqe1DNGZjPziIqKzdnT1qlQvkouCbVBUz0oYYkpmS4eH9ZL8oogyiLjroDliztd
+	ta4cOjV2lWZ5AQtbM+1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTTzV-0001BU-4V; Wed, 22 May 2019 16:21:21 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1hTTzM-000154-Rq; Wed, 22 May 2019 16:21:12 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTTzB-00012h-N2
+ id 1hTTzC-00012q-1U
  for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 16:21:06 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x4MGKdLq034797;
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x4MGKd5N073728;
  Wed, 22 May 2019 11:20:39 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
  s=ti-com-17Q1; t=1558542039;
- bh=f/DgD/v6sg4vKR8gO+PKcIYXb0uoL9WzlNtRu2fAVGs=;
+ bh=QXG5XFuSCA/eKjm6eAz/ccN4peIXTQp3/Ud3QfKb6II=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=QwSZ8tNLIZhHkt1FkibkCscS+PFBk//Fa9yuLADIU3W+r08+zttFroi8V6AmiXfFG
- 5UYhYQNfvvGhGmrY3x2IcBuNqLPehtMmfBfRLJnLjFV2Z1LsuyLVU7SbZpva850iXD
- WWl/jHM44naz7aTWPOgUlGxACy56ZiplBPJ9u8hA=
-Received: from DLEE107.ent.ti.com (dlee107.ent.ti.com [157.170.170.37])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x4MGKd56080388
+ b=fhNn1wp8crWYJ6iDZgNwO2GuexbMHyGTxN8IiSUFy8sFhz/W+eLyLpWbXp/9wM7PD
+ 7uKO72YIa5m2NnVkv/CA4AtRbukV8LigCUVocLtBPLDRRG9YM6AfRiB3njXUVZRqQW
+ e8SD7cNCyG1sgQRmF4WGED8BCsB5CAHINy1VJduM=
+Received: from DLEE106.ent.ti.com (dlee106.ent.ti.com [157.170.170.36])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x4MGKdcQ103304
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
  Wed, 22 May 2019 11:20:39 -0500
-Received: from DLEE110.ent.ti.com (157.170.170.21) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+Received: from DLEE110.ent.ti.com (157.170.170.21) by DLEE106.ent.ti.com
+ (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Wed, 22
  May 2019 11:20:38 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE110.ent.ti.com
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE110.ent.ti.com
  (157.170.170.21) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
  Frontend Transport; Wed, 22 May 2019 11:20:38 -0500
 Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x4MGKceB104536;
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x4MGKc2P122874;
  Wed, 22 May 2019 11:20:38 -0500
 From: Nishanth Menon <nm@ti.com>
 To: Arnd Bergmann <arnd@arndb.de>, Olof Johansson <olof@lixom.net>, Santosh
@@ -54,24 +54,25 @@ To: Arnd Bergmann <arnd@arndb.de>, Olof Johansson <olof@lixom.net>, Santosh
  Marinas <catalin.marinas@arm.com>, Greg Kroah-Hartman
  <gregkh@linuxfoundation.org>, Mark Rutland <mark.rutland@arm.com>, Rob
  Herring <robh+dt@kernel.org>
-Subject: [PATCH 4/6] soc: ti: Add Support for J721E SoC config option
-Date: Wed, 22 May 2019 11:19:19 -0500
-Message-ID: <20190522161921.20750-5-nm@ti.com>
+Subject: [PATCH 5/6] arm64: dts: ti: Add support for J721E Common Processor
+ Board
+Date: Wed, 22 May 2019 11:19:20 -0500
+Message-ID: <20190522161921.20750-6-nm@ti.com>
 X-Mailer: git-send-email 2.21.0.777.g83232e38648b
 In-Reply-To: <20190522161921.20750-1-nm@ti.com>
 References: <20190522161921.20750-1-nm@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_092101_836021_E2D31E54 
-X-CRM114-Status: GOOD (  12.88  )
+X-CRM114-CacheID: sfid-20190522_092102_160924_84A0ADB1 
+X-CRM114-Status: GOOD (  20.72  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -101,29 +102,157 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add option to build J721E SoC specific components
+Add Support for J721E Common Processor board support.
+The EVM architecture is as follows:
+
++------------------------------------------------------+
+|   +-------------------------------------------+      |
+|   |                                           |      |
+|   |        Add-on Card 1 Options              |      |
+|   |                                           |      |
+|   +-------------------------------------------+      |
+|                                                      |
+|                                                      |
+|                     +-------------------+            |
+|                     |                   |            |
+|                     |   SOM             |            |
+|  +--------------+   |                   |            |
+|  |              |   |                   |            |
+|  |  Add-on      |   +-------------------+            |
+|  |  Card 2      |                                    |    Power Supply
+|  |  Options     |                                    |    |
+|  |              |                                    |    |
+|  +--------------+                                    | <---
++------------------------------------------------------+
+                                Common Processor Board
+
+Common Processor board is the baseboard that has most of the actual
+connectors, power supply etc. A SOM (System on Module) is plugged on
+to the common processor board and this contains the SoC, PMIC, DDR and
+basic high speed components necessary for functionality. Add-n card
+options add further functionality (such as additional Audio, Display,
+networking options).
+
+Note:
+A) The minimum configuration required to boot up the board is System On
+   Module(SOM) + Common Processor Board.
+B) Since there is just a single SOM and Common Processor Board, we are
+   maintaining common processor board as the base dts and SOM as the dtsi
+   that we include. In the future as more SOM's appear, we should move
+   common processor board as a dtsi and include configurations as dts.
+C) All daughter cards beyond the basic boards shall be maintained as
+   overlays.
 
 Signed-off-by: Nishanth Menon <nm@ti.com>
 ---
- drivers/soc/ti/Kconfig | 5 +++++
- 1 file changed, 5 insertions(+)
+ arch/arm64/boot/dts/ti/Makefile               |  2 +
+ .../dts/ti/k3-j721e-common-proc-board.dts     | 50 +++++++++++++++++++
+ arch/arm64/boot/dts/ti/k3-j721e-som-p0.dtsi   | 29 +++++++++++
+ 3 files changed, 81 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts
+ create mode 100644 arch/arm64/boot/dts/ti/k3-j721e-som-p0.dtsi
 
-diff --git a/drivers/soc/ti/Kconfig b/drivers/soc/ti/Kconfig
-index dbd6c60b81db..a51beac6751f 100644
---- a/drivers/soc/ti/Kconfig
-+++ b/drivers/soc/ti/Kconfig
-@@ -8,6 +8,11 @@ config ARCH_K3_AM6_SOC
- 	help
- 	  Enable support for TI's AM6 SoC Family support
+diff --git a/arch/arm64/boot/dts/ti/Makefile b/arch/arm64/boot/dts/ti/Makefile
+index 63e619d0b5b8..b397945fdf73 100644
+--- a/arch/arm64/boot/dts/ti/Makefile
++++ b/arch/arm64/boot/dts/ti/Makefile
+@@ -7,3 +7,5 @@
+ #
  
-+config ARCH_K3_J721E_SOC
-+	bool "K3 J721E SoC"
-+	help
-+	  Enable support for TI's J721E SoC Family support
+ dtb-$(CONFIG_ARCH_K3_AM6_SOC) += k3-am654-base-board.dtb
 +
- endif
- 
- endif
++dtb-$(CONFIG_ARCH_K3_J721E_SOC) += k3-j721e-common-proc-board.dtb
+diff --git a/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts b/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts
+new file mode 100644
+index 000000000000..c680123f067c
+--- /dev/null
++++ b/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts
+@@ -0,0 +1,50 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com/
++ */
++
++/dts-v1/;
++
++#include "k3-j721e-som-p0.dtsi"
++
++/ {
++	chosen {
++		stdout-path = "serial2:115200n8";
++		bootargs = "console=ttyS2,115200n8 earlycon=ns16550a,mmio32,0x02800000";
++	};
++};
++
++&wkup_uart0 {
++	/* Wakeup UART is used by System firmware */
++	status = "disabled";
++};
++
++&main_uart3 {
++	/* UART not brought out */
++	status = "disabled";
++};
++
++&main_uart5 {
++	/* UART not brought out */
++	status = "disabled";
++};
++
++&main_uart6 {
++	/* UART not brought out */
++	status = "disabled";
++};
++
++&main_uart7 {
++	/* UART not brought out */
++	status = "disabled";
++};
++
++&main_uart8 {
++	/* UART not brought out */
++	status = "disabled";
++};
++
++&main_uart9 {
++	/* UART not brought out */
++	status = "disabled";
++};
+diff --git a/arch/arm64/boot/dts/ti/k3-j721e-som-p0.dtsi b/arch/arm64/boot/dts/ti/k3-j721e-som-p0.dtsi
+new file mode 100644
+index 000000000000..1884fc70148f
+--- /dev/null
++++ b/arch/arm64/boot/dts/ti/k3-j721e-som-p0.dtsi
+@@ -0,0 +1,29 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com/
++ */
++
++/dts-v1/;
++
++#include "k3-j721e.dtsi"
++
++/ {
++	memory@80000000 {
++		device_type = "memory";
++		/* 4G RAM */
++		reg = <0x00000000 0x80000000 0x00000000 0x80000000>,
++		      <0x00000008 0x80000000 0x00000000 0x80000000>;
++	};
++
++	reserved_memory: reserved-memory {
++		#address-cells = <2>;
++		#size-cells = <2>;
++		ranges;
++
++		secure_ddr: optee@9e800000 {
++			reg = <0x00 0x9e800000 0x00 0x01800000>;
++			alignment = <0x1000>;
++			no-map;
++		};
++	};
++};
 -- 
 2.21.0.777.g83232e38648b
 
