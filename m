@@ -2,68 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 941BD265A8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 16:26:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB47126642
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 16:49:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
-	Content-Type:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To
-	:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PkD1LHWGGHKhH8j1F5dFniy/uLKpKVT46ezZu/xosQA=; b=hdqI0NFz8qUJYo974Xfg+GPFB
-	r1zGxbww33AyMgeZtboJLplKb92ayoCeRx4fmPBOYr+bjxT7kAbb42tRnQotk4FZUBTQ+mK1ImT4q
-	ZHWVJmZduAktXR1cLSvWmTW2/3JzfDkRYhX24QibjjyssJ3Mof3z2waISKz4f0vE23gDD7vKK8ZNY
-	Q9C5UAdLI363HvqXbtLrvLxe21y9+kZzziBWD7nqFWgz01IQT4BnuHQ29mX7fBW7XrIR3Jxe8nFyH
-	PpXk9x5CGa7kgpPBa23Pcd0EC749PWsXznOilbjORMwRLOrSdElu9lB2ynTVq6phMtoFYB7KDtgI+
-	uoidJvYrg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Lvq2qc351TuaRQU9rPre14Lhh/73Ftw3TNQjjebUxVY=; b=RB4mLw+gtVHcBl
+	MxNFv86LsmiwH3AvU+rR2o8yklFJlyFgZZdgX7Dy9nvxugXzmfcHnPsEzdxzgNZPN8IcmTDoRxUS1
+	WoQYEvXAcWbfEZ272xQ0Nm+N5XiImHg+4a7xlwaJHiVjMcBuqNe2Pgs7PM6tMK7RvmCm6CAlNTM9S
+	CzddHbe/qhuJuYM65nrFm5nOHpZQ0TVFJs8QVXI8eYVMAwQRCkZYni7hZqI58g0HHgJ1a1sf1yuAY
+	OLGT3cOUZfIHC/l8FlJy+iZQEEJ9AIHqtBSNu9LFv3TF8htKQqkzJUvClp30bdO89JljeHKxgAiR5
+	9ZJcSqwa8WjmoZzFNIYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTSCm-00074H-LP; Wed, 22 May 2019 14:26:56 +0000
-Received: from mga02.intel.com ([134.134.136.20])
+	id 1hTSYI-0005mw-P3; Wed, 22 May 2019 14:49:10 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTSCe-00073m-3j; Wed, 22 May 2019 14:26:51 +0000
-X-Amp-Result: UNSCANNABLE
-X-Amp-File-Uploaded: False
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
- by orsmga101.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 22 May 2019 07:26:46 -0700
-X-ExtLoop1: 1
-Received: from kuha.fi.intel.com ([10.237.72.189])
- by fmsmga001.fm.intel.com with SMTP; 22 May 2019 07:26:41 -0700
-Received: by kuha.fi.intel.com (sSMTP sendmail emulation);
- Wed, 22 May 2019 17:26:40 +0300
-Date: Wed, 22 May 2019 17:26:40 +0300
-From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-To: Biju Das <biju.das@bp.renesas.com>
-Subject: Re: [PATCH v5 4/6] usb: roles: add API to get usb_role_switch by node
-Message-ID: <20190522142640.GN1887@kuha.fi.intel.com>
-References: <20190517130511.GA1887@kuha.fi.intel.com>
- <1558319951.10179.352.camel@mhfsdcap03>
- <20190520080359.GC1887@kuha.fi.intel.com>
- <OSBPR01MB2103385D996762FA54F8E437B8060@OSBPR01MB2103.jpnprd01.prod.outlook.com>
- <20190520083601.GE1887@kuha.fi.intel.com>
- <OSBPR01MB2103C4C8920C40E42BC1B2A9B8060@OSBPR01MB2103.jpnprd01.prod.outlook.com>
- <20190521095839.GI1887@kuha.fi.intel.com>
- <OSBPR01MB21032206146152983C8F4E8EB8000@OSBPR01MB2103.jpnprd01.prod.outlook.com>
- <1558517436.10179.388.camel@mhfsdcap03>
- <OSBPR01MB21038F2B99EF74831A22727BB8000@OSBPR01MB2103.jpnprd01.prod.outlook.com>
+ id 1hTSY9-0005mX-Ac
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 14:49:04 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+ by ns.iliad.fr (Postfix) with ESMTP id 1C4FE20BCE;
+ Wed, 22 May 2019 16:48:57 +0200 (CEST)
+Received: from [192.168.108.49] (freebox.vlq16.iliad.fr [213.36.7.13])
+ by ns.iliad.fr (Postfix) with ESMTP id EDFAF20BC5;
+ Wed, 22 May 2019 16:48:56 +0200 (CEST)
+Subject: Re: [PATCH v2 7/9] arm64: dts: qcom: msm8998: Add PSCI cpuidle low
+ power states
+From: Marc Gonzalez <marc.w.gonzalez@free.fr>
+To: Amit Kucheria <amit.kucheria@linaro.org>,
+ MSM <linux-arm-msm@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+References: <cover.1558430617.git.amit.kucheria@linaro.org>
+ <49cf5d94beb9af9ef4e78d4c52f3b0ad20b7c63f.1558430617.git.amit.kucheria@linaro.org>
+ <a7514c68-d2d3-ce9e-bc4b-f484bb5bf3cf@free.fr>
+ <d1ca4d37-ce25-a285-a9ef-dfe831f3d1de@free.fr>
+Message-ID: <23a49ebd-5cdb-4e89-029d-51891a51d387@free.fr>
+Date: Wed, 22 May 2019 16:48:56 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="VS++wcV0S1rZb1Fb"
-Content-Disposition: inline
-In-Reply-To: <OSBPR01MB21038F2B99EF74831A22727BB8000@OSBPR01MB2103.jpnprd01.prod.outlook.com>
-User-Agent: Mutt/1.11.4 (2019-03-13)
+In-Reply-To: <d1ca4d37-ce25-a285-a9ef-dfe831f3d1de@free.fr>
+Content-Language: en-US
+X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
+ Wed May 22 16:48:57 2019 +0200 (CEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_072648_231527_CE481570 
-X-CRM114-Status: GOOD (  46.22  )
+X-CRM114-CacheID: sfid-20190522_074901_680401_BC6A57C5 
+X-CRM114-Status: GOOD (  10.01  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.20 listed in list.dnswl.org]
+ medium trust [212.27.33.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (marc.w.gonzalez[at]free.fr)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -76,399 +74,1225 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Hans de Goede <hdegoede@redhat.com>,
- Badhri Jagan Sridharan <badhri@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Andy Shevchenko <andy.shevchenko@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- Min Guo <min.guo@mediatek.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Li Jun <jun.li@nxp.com>
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Jeffrey Hugo <jhugo@codeaurora.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Marc Zyngier <marc.zyngier@arm.com>, Andy Gross <agross@kernel.org>,
+ Sibi Sankar <sibis@codeaurora.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ Niklas Cassel <niklas.cassel@linaro.org>, Robin Murphy <robin.murphy@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 22/05/2019 11:17, Marc Gonzalez wrote:
 
---VS++wcV0S1rZb1Fb
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+> Could it be that this FW doesn't support PSCI?
 
-On Wed, May 22, 2019 at 10:55:17AM +0000, Biju Das wrote:
-> Hi Chunfeng Yun,
-> 
-> Thanks for the feedback.
-> 
-> > Subject: RE: [PATCH v5 4/6] usb: roles: add API to get usb_role_switch by
-> > node
-> > 
-> > Hi Biju,
-> > On Wed, 2019-05-22 at 08:05 +0000, Biju Das wrote:
-> > > Hi Heikki,
-> > >
-> > > Thanks for the feedback.
-> > >
-> > > > Subject: Re: [PATCH v5 4/6] usb: roles: add API to get
-> > > > usb_role_switch by node
-> > > >
-> > > > On Mon, May 20, 2019 at 09:45:46AM +0000, Biju Das wrote:
-> > > > >
-> > > > >
-> > > > > Hi Heikki,
-> > > > >
-> > > > > Thanks for the feedback.
-> > > > >
-> > > > > > Subject: Re: [PATCH v5 4/6] usb: roles: add API to get
-> > > > > > usb_role_switch by node
-> > > > > >
-> > > > > > On Mon, May 20, 2019 at 08:06:41AM +0000, Biju Das wrote:
-> > > > > > > Hi Heikki,
-> > > > > > >
-> > > > > > > > Subject: Re: [PATCH v5 4/6] usb: roles: add API to get
-> > > > > > > > usb_role_switch by node
-> > > > > > > >
-> > > > > > > > On Mon, May 20, 2019 at 10:39:11AM +0800, Chunfeng Yun wrote:
-> > > > > > > > > Hi,
-> > > > > > > > > On Fri, 2019-05-17 at 16:05 +0300, Heikki Krogerus wrote:
-> > > > > > > > > > Hi,
-> > > > > > > > > >
-> > > > > > > > > > On Fri, May 17, 2019 at 01:37:36PM +0300, Heikki Krogerus
-> > wrote:
-> > > > > > > > > > > On Tue, May 14, 2019 at 04:47:21PM +0800, Chunfeng Yun
-> > > > wrote:
-> > > > > > > > > > > > Add fwnode_usb_role_switch_get() to make easier to
-> > > > > > > > > > > > get usb_role_switch by fwnode which register it.
-> > > > > > > > > > > > It's useful when there is not device_connection
-> > > > > > > > > > > > registered between two drivers and only knows the
-> > > > > > > > > > > > fwnode which register usb_role_switch.
-> > > > > > > > > > > >
-> > > > > > > > > > > > Signed-off-by: Chunfeng Yun
-> > > > > > > > > > > > <chunfeng.yun@mediatek.com>
-> > > > > > > > > > > > Tested-by: Biju Das <biju.das@bp.renesas.com>
-> > > > > > > > > > >
-> > > > > > > > > > > Acked-by: Heikki Krogerus
-> > > > > > > > > > > <heikki.krogerus@linux.intel.com>
-> > > > > > > > > >
-> > > > > > > > > > Hold on. I just noticed Rob's comment on patch 2/6,
-> > > > > > > > > > where he points out that you don't need to use device
-> > > > > > > > > > graph since the controller is the parent of the
-> > > > > > > > > > connector. Doesn't that mean you don't really need this API?
-> > > > > > > > > No, I still need it.
-> > > > > > > > > The change is about the way how to get fwnode; when use
-> > > > > > > > > device graph, get fwnode by of_graph_get_remote_node();
-> > > > > > > > > but now will get fwnode by of_get_parent();
-> > > > > > > >
-> > > > > > > > OK, I get that, but I'm still not convinced about if
-> > > > > > > > something like this function is needed at all. I also have
-> > > > > > > > concerns regarding how you are using the function. I'll
-> > > > > > > > explain in comment to the patch 5/6 in this
-> > > > > > series...
-> > > > > > >
-> > > > > > > FYI, Currently  I am also using this api in my patch series.
-> > > > > > > https://patchwork.kernel.org/patch/10944637/
-> > > > > >
-> > > > > > Yes, and I have the same question for you I jusb asked in
-> > > > > > comment I added to the patch 5/6 of this series. Why isn't
-> > > > > > usb_role_switch_get()
-> > > > enough?
-> > > > >
-> > > > > Currently no issue. It will work with this api as well, since the
-> > > > > port node is
-> > > > part of controller node.
-> > > > > For eg:-
-> > > > > https://patchwork.kernel.org/patch/10944627/
-> > > > >
-> > > > > However if any one adds port node inside the connector node, then
-> > > > > this
-> > > > api may won't work as expected.
-> > > > > Currently I get below error
-> > > > >
-> > > > > [    2.299703] OF: graph: no port node found in
-> > > > /soc/i2c@e6500000/hd3ss3220@47
-> > > >
-> > > > We need to understand why is that happening?
-> > > >
-> > >
-> > > Form the stack trace  the parent node is "parent_node=hd3ss3220@47" ,
-> > instead of the "connector" node.
-> > > That is the reason for the above error.
-> > >
-> > > [    2.442429]  of_graph_get_next_endpoint.part.0+0x28/0x168
-> > > [    2.447889]  of_fwnode_graph_get_next_endpoint+0x5c/0xb0
-> > > [    2.453267]  fwnode_graph_get_next_endpoint+0x20/0x30
-> > > [    2.458374]  device_connection_find_match+0x74/0x1a0
-> > > [    2.463399]  usb_role_switch_get+0x20/0x28
-> > > [    2.467542]  hd3ss3220_probe+0xc4/0x218
-> > >
-> > > The use case is
-> > >
-> > > &i2c0 {
-> > > 	hd3ss3220@47 {
-> > >                  	compatible = "ti,hd3ss3220";
-> > >
-> > >                  	usb_con: connector {
-> > >                           		compatible = "usb-c-connector";
-> > >                          		port {
-> > >                                 		 hd3ss3220_ep: endpoint {
-> > >                                         			remote-endpoint =
-> > <&usb3_role_switch>;
-> > >                                 		};
-> > >                          		};
-> > >                 	 };
-> > > 	 };
-> > > };
-> > >
-> > > &usb3_peri0 {
-> > >          companion = <&xhci0>;
-> > >          usb-role-switch;
-> > >
-> > >          port {
-> > >                 usb3_role_switch: endpoint {
-> > >                         remote-endpoint = <&hd3ss3220_ep>;
-> > >                  };
-> > >          };
-> > > };
-> > >
-> > > Q1) How do we modify the usb_role_switch_get() function to search
-> > > Child(connector) and child's endpoint?
-> > How about firstly finding connector node in fwnode_graph_devcon_match(),
-> > then search each endpoint?
-> 
->  I have done a quick prototyping with the changes you suggested and it works.
-> 
-> -       struct fwnode_handle *ep;
-> +       struct fwnode_handle *ep,*child,*tmp = fwnode; 
->  
-> -       fwnode_graph_for_each_endpoint(fwnode, ep) {
-> +       child = fwnode_get_named_child_node(fwnode, "connector");
-> +       if (child)
-> +               tmp = child;
-> +
-> +       fwnode_graph_for_each_endpoint(tmp, ep) {
-> 
-> Form the stack trace  the parent node is "parent_node= connector" .
-> 
-> [    2.440922]  of_graph_get_next_endpoint.part.0+0x28/0x168
-> [    2.446381]  of_fwnode_graph_get_next_endpoint+0x5c/0xb0
-> [    2.451758]  fwnode_graph_get_next_endpoint+0x20/0x30
-> [    2.456866]  device_connection_find_match+0x84/0x1c0
-> [    2.461888]  usb_role_switch_get+0x20/0x28
-> 
-> Heikki, 
-> Are you ok  with the above changes?
+I believe it works now.
 
-Doesn't that mean that if we made fwnode_usb_role_switch_get() the way
-I proposed, there is no problem? You just find the "connector" child
-node in your driver, and pass that to fwnode_usb_role_switch_get():
+Tested-by: Marc Gonzalez <marc.w.gonzalez@free.fr>
 
-        struct fwnode_handle *connector;
-        ...
-        connector = device_get_named_child_node(&client->dev, "connector");
-        if (IS_ERR(connector))
-                <do something>
+As pointed out by Niklas in v1:
+	arm,psci-suspend-param needs to be 0x40000003 not 0x3
 
-        hd3ss3220->role_sw = fwnode_usb_role_switch_get(connector);
-        ...
+(If either local-timer-stop is removed, bad things happen.)
 
-The difference is that instead of just converting a device node of an
-usb role switch to the usb role switch, it works just like
-usb_role_switch_get(), just taking fwnode instead of device entry as
-parameter.
+Below is the diff with next-20190521.
 
-I prepared the patches implementing fwnode_usb_role_switch_get() the
-way I though it needs to work for my own tests. Please find the
-patches attached.
-
-thanks,
-
--- 
-heikki
-
---VS++wcV0S1rZb1Fb
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: attachment; filename="0001-device-connection-Add-fwnode_connection_find_match.patch"
-
-From 18a15ef54f2d88b04ce851d9428cda6697a66fb2 Mon Sep 17 00:00:00 2001
-From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-Date: Wed, 22 May 2019 16:43:41 +0300
-Subject: [PATCH 1/2] device connection: Add fwnode_connection_find_match()
-
-The fwnode_connection_find_match() function is exactly the
-same as device_connection_find_match(), except it takes
-struct fwnode_handle as parameter instead of struct device.
-That allows locating device connections before the device
-entries have been created.
-
-Signed-off-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
----
- drivers/base/devcon.c  | 33 +++++++++++++++++++++++++--------
- include/linux/device.h | 10 +++++++---
- 2 files changed, 32 insertions(+), 11 deletions(-)
-
-diff --git a/drivers/base/devcon.c b/drivers/base/devcon.c
-index 04db9ae235e4..8311b70bbca2 100644
---- a/drivers/base/devcon.c
-+++ b/drivers/base/devcon.c
-@@ -12,9 +12,6 @@
- static DEFINE_MUTEX(devcon_lock);
- static LIST_HEAD(devcon_list);
- 
--typedef void *(*devcon_match_fn_t)(struct device_connection *con, int ep,
--				   void *data);
--
- static void *
- fwnode_graph_devcon_match(struct fwnode_handle *fwnode, const char *con_id,
- 			  void *data, devcon_match_fn_t match)
-@@ -38,6 +35,28 @@ fwnode_graph_devcon_match(struct fwnode_handle *fwnode, const char *con_id,
- 	return NULL;
- }
- 
-+/**
-+ * fwnode_connection_find_match - Find connection from a device node
-+ * @fwnode: Device node with the connection
-+ * @con_id: Identifier for the connection
-+ * @data: Data for the match function
-+ * @match: Function to check and convert the connection description
-+ *
-+ * Find a connection with unique identifier @con_id between @fwnode and another
-+ * device node. @match will be used to convert the connection description to
-+ * data the caller is expecting to be returned.
-+ */
-+void *fwnode_connection_find_match(struct fwnode_handle *fwnode,
-+				   const char *con_id, void *data,
-+				   devcon_match_fn_t match)
-+{
-+	if (!fwnode || !match)
-+		return NULL;
+diff --git a/arch/arm64/boot/dts/qcom/msm8998.dtsi b/arch/arm64/boot/dts/qcom/msm8998.dtsi
+index 412195b9794c..224f84e39204 100644
+--- a/arch/arm64/boot/dts/qcom/msm8998.dtsi
++++ b/arch/arm64/boot/dts/qcom/msm8998.dtsi
+@@ -78,6 +78,7 @@
+ 			compatible = "arm,armv8";
+ 			reg = <0x0 0x0>;
+ 			enable-method = "psci";
++			cpu-idle-states = <&LITTLE_CPU_SLEEP_0 &LITTLE_CPU_SLEEP_1>;
+ 			next-level-cache = <&L2_0>;
+ 			L2_0: l2-cache {
+ 				compatible = "arm,arch-cache";
+@@ -96,6 +97,7 @@
+ 			compatible = "arm,armv8";
+ 			reg = <0x0 0x1>;
+ 			enable-method = "psci";
++			cpu-idle-states = <&LITTLE_CPU_SLEEP_0 &LITTLE_CPU_SLEEP_1>;
+ 			next-level-cache = <&L2_0>;
+ 			L1_I_1: l1-icache {
+ 				compatible = "arm,arch-cache";
+@@ -110,6 +112,7 @@
+ 			compatible = "arm,armv8";
+ 			reg = <0x0 0x2>;
+ 			enable-method = "psci";
++			cpu-idle-states = <&LITTLE_CPU_SLEEP_0 &LITTLE_CPU_SLEEP_1>;
+ 			next-level-cache = <&L2_0>;
+ 			L1_I_2: l1-icache {
+ 				compatible = "arm,arch-cache";
+@@ -124,6 +127,7 @@
+ 			compatible = "arm,armv8";
+ 			reg = <0x0 0x3>;
+ 			enable-method = "psci";
++			cpu-idle-states = <&LITTLE_CPU_SLEEP_0 &LITTLE_CPU_SLEEP_1>;
+ 			next-level-cache = <&L2_0>;
+ 			L1_I_3: l1-icache {
+ 				compatible = "arm,arch-cache";
+@@ -138,6 +142,7 @@
+ 			compatible = "arm,armv8";
+ 			reg = <0x0 0x100>;
+ 			enable-method = "psci";
++			cpu-idle-states = <&BIG_CPU_SLEEP_0 &BIG_CPU_SLEEP_1>;
+ 			next-level-cache = <&L2_1>;
+ 			L2_1: l2-cache {
+ 				compatible = "arm,arch-cache";
+@@ -156,6 +161,7 @@
+ 			compatible = "arm,armv8";
+ 			reg = <0x0 0x101>;
+ 			enable-method = "psci";
++			cpu-idle-states = <&BIG_CPU_SLEEP_0 &BIG_CPU_SLEEP_1>;
+ 			next-level-cache = <&L2_1>;
+ 			L1_I_101: l1-icache {
+ 				compatible = "arm,arch-cache";
+@@ -170,6 +176,7 @@
+ 			compatible = "arm,armv8";
+ 			reg = <0x0 0x102>;
+ 			enable-method = "psci";
++			cpu-idle-states = <&BIG_CPU_SLEEP_0 &BIG_CPU_SLEEP_1>;
+ 			next-level-cache = <&L2_1>;
+ 			L1_I_102: l1-icache {
+ 				compatible = "arm,arch-cache";
+@@ -184,6 +191,7 @@
+ 			compatible = "arm,armv8";
+ 			reg = <0x0 0x103>;
+ 			enable-method = "psci";
++			cpu-idle-states = <&BIG_CPU_SLEEP_0 &BIG_CPU_SLEEP_1>;
+ 			next-level-cache = <&L2_1>;
+ 			L1_I_103: l1-icache {
+ 				compatible = "arm,arch-cache";
+@@ -230,6 +238,48 @@
+ 				};
+ 			};
+ 		};
 +
-+	return fwnode_graph_devcon_match(fwnode, con_id, data, match);
-+}
-+EXPORT_SYMBOL_GPL(fwnode_connection_find_match);
++		idle-states {
++			entry-method = "psci";
 +
- /**
-  * device_connection_find_match - Find physical connection to a device
-  * @dev: Device with the connection
-@@ -61,11 +80,9 @@ void *device_connection_find_match(struct device *dev, const char *con_id,
- 	if (!match)
- 		return NULL;
- 
--	if (fwnode) {
--		ret = fwnode_graph_devcon_match(fwnode, con_id, data, match);
--		if (ret)
--			return ret;
--	}
-+	ret = fwnode_connection_find_match(fwnode, con_id, data, match);
-+	if (ret)
-+		return ret;
- 
- 	mutex_lock(&devcon_lock);
- 
-diff --git a/include/linux/device.h b/include/linux/device.h
-index 72a6260f2b4d..04ca902d24dc 100644
---- a/include/linux/device.h
-+++ b/include/linux/device.h
-@@ -772,10 +772,14 @@ struct device_connection {
- 	struct list_head	list;
- };
- 
-+typedef void *(*devcon_match_fn_t)(struct device_connection *con, int ep,
-+				   void *data);
++			LITTLE_CPU_SLEEP_0: cpu-sleep-0-0 {
++				compatible = "arm,idle-state";
++				idle-state-name = "little-retention";
++				arm,psci-suspend-param = <0x00000002>;
++				entry-latency-us = <43>;
++				exit-latency-us = <86>;
++				min-residency-us = <200>;
++			};
 +
-+void *fwnode_connection_find_match(struct fwnode_handle *fwnode,
-+				   const char *con_id, void *data,
-+				   devcon_match_fn_t match);
- void *device_connection_find_match(struct device *dev, const char *con_id,
--				void *data,
--				void *(*match)(struct device_connection *con,
--					       int ep, void *data));
-+				   void *data, devcon_match_fn_t match);
- 
- struct device *device_connection_find(struct device *dev, const char *con_id);
- 
--- 
-2.20.1
-
-
---VS++wcV0S1rZb1Fb
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: attachment; filename="0002-usb-roles-Add-fwnode_usb_role_switch_get-function.patch"
-
-From 9eaa446c507780a6f9d0a1cc12c04e87a3bafcf3 Mon Sep 17 00:00:00 2001
-From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-Date: Wed, 22 May 2019 16:43:41 +0300
-Subject: [PATCH 2/2] usb: roles: Add fwnode_usb_role_switch_get() function
-
-The fwnode_usb_role_switch_get() function is exactly the
-same as usb_role_switch_get(), except that it takes struct
-fwnode_handle as parameter instead of struct device.
-
-Signed-off-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
----
- drivers/usb/roles/class.c | 20 ++++++++++++++++++++
- include/linux/usb/role.h  |  1 +
- 2 files changed, 21 insertions(+)
-
-diff --git a/drivers/usb/roles/class.c b/drivers/usb/roles/class.c
-index f45d8df5cfb8..aab795b54c7f 100644
---- a/drivers/usb/roles/class.c
-+++ b/drivers/usb/roles/class.c
-@@ -135,6 +135,26 @@ struct usb_role_switch *usb_role_switch_get(struct device *dev)
- }
- EXPORT_SYMBOL_GPL(usb_role_switch_get);
- 
-+/**
-+ * fwnode_usb_role_switch_get - Find USB role switch linked with the caller
-+ * @fwnode: The caller device node
-+ *
-+ * This is similar to the usb_role_switch_get() function above, but it searches
-+ * the switch using fwnode instead of device entry.
-+ */
-+struct usb_role_switch *fwnode_usb_role_switch_get(struct fwnode_handle *fwnode)
-+{
-+	struct usb_role_switch *sw;
++			LITTLE_CPU_SLEEP_1: cpu-sleep-0-1 {
++				compatible = "arm,idle-state";
++				idle-state-name = "little-power-collapse";
++				arm,psci-suspend-param = <0x40000003>;
++				entry-latency-us = <100>;
++				exit-latency-us = <612>;
++				min-residency-us = <1000>;
++				local-timer-stop;
++			};
 +
-+	sw = fwnode_connection_find_match(fwnode, "usb-role-switch", NULL,
-+					  usb_role_switch_match);
-+	if (!IS_ERR_OR_NULL(sw))
-+		WARN_ON(!try_module_get(sw->dev.parent->driver->owner));
++			BIG_CPU_SLEEP_0: cpu-sleep-1-0 {
++				compatible = "arm,idle-state";
++				idle-state-name = "big-retention";
++				arm,psci-suspend-param = <0x00000002>;
++				entry-latency-us = <41>;
++				exit-latency-us = <82>;
++				min-residency-us = <200>;
++			};
 +
-+	return sw;
-+}
-+EXPORT_SYMBOL_GPL(fwnode_usb_role_switch_get);
-+
- /**
-  * usb_role_switch_put - Release handle to a switch
-  * @sw: USB Role Switch
-diff --git a/include/linux/usb/role.h b/include/linux/usb/role.h
-index c05ffa6abda9..6abb04df255c 100644
---- a/include/linux/usb/role.h
-+++ b/include/linux/usb/role.h
-@@ -45,6 +45,7 @@ struct usb_role_switch_desc {
- int usb_role_switch_set_role(struct usb_role_switch *sw, enum usb_role role);
- enum usb_role usb_role_switch_get_role(struct usb_role_switch *sw);
- struct usb_role_switch *usb_role_switch_get(struct device *dev);
-+struct usb_role_switch *fwnode_usb_role_switch_get(struct fwnode_handle *node);
- void usb_role_switch_put(struct usb_role_switch *sw);
++			BIG_CPU_SLEEP_1: cpu-sleep-1-1 {
++				compatible = "arm,idle-state";
++				idle-state-name = "big-power-collapse";
++				arm,psci-suspend-param = <0x40000003>;
++				entry-latency-us = <100>;
++				exit-latency-us = <525>;
++				min-residency-us = <1000>;
++				local-timer-stop;
++			};
++		};
+ 	};
  
- struct usb_role_switch *
--- 
-2.20.1
+ 	firmware {
 
 
---VS++wcV0S1rZb1Fb
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+
+
+
+
+# for F in $(find /sys/devices/system/cpu -type f); do echo $F; cat $F; done
+/sys/devices/system/cpu/cpuidle/current_governor_ro
+menu
+/sys/devices/system/cpu/cpuidle/current_driver
+arm_idle
+/sys/devices/system/cpu/uevent
+/sys/devices/system/cpu/cpu7/cpuidle/state1/disable
+0
+/sys/devices/system/cpu/cpu7/cpuidle/state1/above
+1
+/sys/devices/system/cpu/cpu7/cpuidle/state1/time
+15749
+/sys/devices/system/cpu/cpu7/cpuidle/state1/power
+0
+/sys/devices/system/cpu/cpu7/cpuidle/state1/residency
+200
+/sys/devices/system/cpu/cpu7/cpuidle/state1/latency
+123
+/sys/devices/system/cpu/cpu7/cpuidle/state1/usage
+19
+/sys/devices/system/cpu/cpu7/cpuidle/state1/desc
+big-retention
+/sys/devices/system/cpu/cpu7/cpuidle/state1/below
+6
+/sys/devices/system/cpu/cpu7/cpuidle/state1/name
+cpu-sleep-1-0
+/sys/devices/system/cpu/cpu7/cpuidle/driver/name
+arm_idle
+/sys/devices/system/cpu/cpu7/cpuidle/state2/disable
+0
+/sys/devices/system/cpu/cpu7/cpuidle/state2/above
+8
+/sys/devices/system/cpu/cpu7/cpuidle/state2/time
+616012492
+/sys/devices/system/cpu/cpu7/cpuidle/state2/power
+0
+/sys/devices/system/cpu/cpu7/cpuidle/state2/residency
+1000
+/sys/devices/system/cpu/cpu7/cpuidle/state2/latency
+625
+/sys/devices/system/cpu/cpu7/cpuidle/state2/usage
+120
+/sys/devices/system/cpu/cpu7/cpuidle/state2/desc
+big-power-collapse
+/sys/devices/system/cpu/cpu7/cpuidle/state2/below
+0
+/sys/devices/system/cpu/cpu7/cpuidle/state2/name
+cpu-sleep-1-1
+/sys/devices/system/cpu/cpu7/cpuidle/state0/disable
+0
+/sys/devices/system/cpu/cpu7/cpuidle/state0/above
+0
+/sys/devices/system/cpu/cpu7/cpuidle/state0/time
+29077
+/sys/devices/system/cpu/cpu7/cpuidle/state0/power
+4294967295
+/sys/devices/system/cpu/cpu7/cpuidle/state0/residency
+1
+/sys/devices/system/cpu/cpu7/cpuidle/state0/latency
+1
+/sys/devices/system/cpu/cpu7/cpuidle/state0/usage
+11
+/sys/devices/system/cpu/cpu7/cpuidle/state0/desc
+ARM WFI
+/sys/devices/system/cpu/cpu7/cpuidle/state0/below
+8
+/sys/devices/system/cpu/cpu7/cpuidle/state0/name
+WFI
+/sys/devices/system/cpu/cpu7/uevent
+OF_NAME=cpu
+OF_FULLNAME=/cpus/cpu@103
+OF_TYPE=cpu
+OF_COMPATIBLE_0=arm,armv8
+OF_COMPATIBLE_N=1
+MODALIAS=cpu:type:aarch64:feature:,0000,0001,0002,0003,0004,0005,0006,0007,000B
+
+/sys/devices/system/cpu/cpu7/power/runtime_active_time
+0
+/sys/devices/system/cpu/cpu7/power/pm_qos_resume_latency_us
+0
+/sys/devices/system/cpu/cpu7/power/runtime_status
+unsupported
+/sys/devices/system/cpu/cpu7/power/autosuspend_delay_ms
+cat: read error: Input/output error
+/sys/devices/system/cpu/cpu7/power/runtime_suspended_time
+0
+/sys/devices/system/cpu/cpu7/power/control
+auto
+/sys/devices/system/cpu/cpu7/topology/physical_package_id
+1
+/sys/devices/system/cpu/cpu7/topology/core_siblings
+f0
+/sys/devices/system/cpu/cpu7/topology/core_siblings_list
+4-7
+/sys/devices/system/cpu/cpu7/topology/thread_siblings_list
+7
+/sys/devices/system/cpu/cpu7/topology/core_id
+3
+/sys/devices/system/cpu/cpu7/topology/thread_siblings
+80
+/sys/devices/system/cpu/cpu7/cpu_capacity
+1024
+/sys/devices/system/cpu/cpu7/cache/uevent
+/sys/devices/system/cpu/cpu7/cache/index2/uevent
+/sys/devices/system/cpu/cpu7/cache/index2/shared_cpu_list
+4-7
+/sys/devices/system/cpu/cpu7/cache/index2/type
+Unified
+/sys/devices/system/cpu/cpu7/cache/index2/level
+2
+/sys/devices/system/cpu/cpu7/cache/index2/shared_cpu_map
+f0
+/sys/devices/system/cpu/cpu7/cache/index0/uevent
+/sys/devices/system/cpu/cpu7/cache/index0/shared_cpu_list
+7
+/sys/devices/system/cpu/cpu7/cache/index0/type
+Data
+/sys/devices/system/cpu/cpu7/cache/index0/level
+1
+/sys/devices/system/cpu/cpu7/cache/index0/shared_cpu_map
+80
+/sys/devices/system/cpu/cpu7/cache/index1/uevent
+/sys/devices/system/cpu/cpu7/cache/index1/shared_cpu_list
+7
+/sys/devices/system/cpu/cpu7/cache/index1/type
+Instruction
+/sys/devices/system/cpu/cpu7/cache/index1/level
+1
+/sys/devices/system/cpu/cpu7/cache/index1/shared_cpu_map
+80
+/sys/devices/system/cpu/cpu7/regs/identification/revidr_el1
+0x0000000000000001
+/sys/devices/system/cpu/cpu7/regs/identification/midr_el1
+0x0000000051af8001
+/sys/devices/system/cpu/cpu5/cpuidle/state1/disable
+0
+/sys/devices/system/cpu/cpu5/cpuidle/state1/above
+0
+/sys/devices/system/cpu/cpu5/cpuidle/state1/time
+19922
+/sys/devices/system/cpu/cpu5/cpuidle/state1/power
+0
+/sys/devices/system/cpu/cpu5/cpuidle/state1/residency
+200
+/sys/devices/system/cpu/cpu5/cpuidle/state1/latency
+123
+/sys/devices/system/cpu/cpu5/cpuidle/state1/usage
+28
+/sys/devices/system/cpu/cpu5/cpuidle/state1/desc
+big-retention
+/sys/devices/system/cpu/cpu5/cpuidle/state1/below
+5
+/sys/devices/system/cpu/cpu5/cpuidle/state1/name
+cpu-sleep-1-0
+/sys/devices/system/cpu/cpu5/cpuidle/driver/name
+arm_idle
+/sys/devices/system/cpu/cpu5/cpuidle/state2/disable
+0
+/sys/devices/system/cpu/cpu5/cpuidle/state2/above
+12
+/sys/devices/system/cpu/cpu5/cpuidle/state2/time
+616088023
+/sys/devices/system/cpu/cpu5/cpuidle/state2/power
+0
+/sys/devices/system/cpu/cpu5/cpuidle/state2/residency
+1000
+/sys/devices/system/cpu/cpu5/cpuidle/state2/latency
+625
+/sys/devices/system/cpu/cpu5/cpuidle/state2/usage
+248
+/sys/devices/system/cpu/cpu5/cpuidle/state2/desc
+big-power-collapse
+/sys/devices/system/cpu/cpu5/cpuidle/state2/below
+0
+/sys/devices/system/cpu/cpu5/cpuidle/state2/name
+cpu-sleep-1-1
+/sys/devices/system/cpu/cpu5/cpuidle/state0/disable
+0
+/sys/devices/system/cpu/cpu5/cpuidle/state0/above
+0
+/sys/devices/system/cpu/cpu5/cpuidle/state0/time
+30023
+/sys/devices/system/cpu/cpu5/cpuidle/state0/power
+4294967295
+/sys/devices/system/cpu/cpu5/cpuidle/state0/residency
+1
+/sys/devices/system/cpu/cpu5/cpuidle/state0/latency
+1
+/sys/devices/system/cpu/cpu5/cpuidle/state0/usage
+16
+/sys/devices/system/cpu/cpu5/cpuidle/state0/desc
+ARM WFI
+/sys/devices/system/cpu/cpu5/cpuidle/state0/below
+10
+/sys/devices/system/cpu/cpu5/cpuidle/state0/name
+WFI
+/sys/devices/system/cpu/cpu5/uevent
+OF_NAME=cpu
+OF_FULLNAME=/cpus/cpu@101
+OF_TYPE=cpu
+OF_COMPATIBLE_0=arm,armv8
+OF_COMPATIBLE_N=1
+MODALIAS=cpu:type:aarch64:feature:,0000,0001,0002,0003,0004,0005,0006,0007,000B
+
+/sys/devices/system/cpu/cpu5/power/runtime_active_time
+0
+/sys/devices/system/cpu/cpu5/power/pm_qos_resume_latency_us
+0
+/sys/devices/system/cpu/cpu5/power/runtime_status
+unsupported
+/sys/devices/system/cpu/cpu5/power/autosuspend_delay_ms
+cat: read error: Input/output error
+/sys/devices/system/cpu/cpu5/power/runtime_suspended_time
+0
+/sys/devices/system/cpu/cpu5/power/control
+auto
+/sys/devices/system/cpu/cpu5/topology/physical_package_id
+1
+/sys/devices/system/cpu/cpu5/topology/core_siblings
+f0
+/sys/devices/system/cpu/cpu5/topology/core_siblings_list
+4-7
+/sys/devices/system/cpu/cpu5/topology/thread_siblings_list
+5
+/sys/devices/system/cpu/cpu5/topology/core_id
+1
+/sys/devices/system/cpu/cpu5/topology/thread_siblings
+20
+/sys/devices/system/cpu/cpu5/cpu_capacity
+1024
+/sys/devices/system/cpu/cpu5/cache/uevent
+/sys/devices/system/cpu/cpu5/cache/index2/uevent
+/sys/devices/system/cpu/cpu5/cache/index2/shared_cpu_list
+4-7
+/sys/devices/system/cpu/cpu5/cache/index2/type
+Unified
+/sys/devices/system/cpu/cpu5/cache/index2/level
+2
+/sys/devices/system/cpu/cpu5/cache/index2/shared_cpu_map
+f0
+/sys/devices/system/cpu/cpu5/cache/index0/uevent
+/sys/devices/system/cpu/cpu5/cache/index0/shared_cpu_list
+5
+/sys/devices/system/cpu/cpu5/cache/index0/type
+Data
+/sys/devices/system/cpu/cpu5/cache/index0/level
+1
+/sys/devices/system/cpu/cpu5/cache/index0/shared_cpu_map
+20
+/sys/devices/system/cpu/cpu5/cache/index1/uevent
+/sys/devices/system/cpu/cpu5/cache/index1/shared_cpu_list
+5
+/sys/devices/system/cpu/cpu5/cache/index1/type
+Instruction
+/sys/devices/system/cpu/cpu5/cache/index1/level
+1
+/sys/devices/system/cpu/cpu5/cache/index1/shared_cpu_map
+20
+/sys/devices/system/cpu/cpu5/regs/identification/revidr_el1
+0x0000000000000001
+/sys/devices/system/cpu/cpu5/regs/identification/midr_el1
+0x0000000051af8001
+/sys/devices/system/cpu/possible
+0-7
+/sys/devices/system/cpu/offline
+
+/sys/devices/system/cpu/present
+0-7
+/sys/devices/system/cpu/power/runtime_active_time
+0
+/sys/devices/system/cpu/power/runtime_status
+unsupported
+/sys/devices/system/cpu/power/autosuspend_delay_ms
+cat: read error: Input/output error
+/sys/devices/system/cpu/power/runtime_suspended_time
+0
+/sys/devices/system/cpu/power/control
+auto
+/sys/devices/system/cpu/cpu3/cpuidle/state1/disable
+0
+/sys/devices/system/cpu/cpu3/cpuidle/state1/above
+0
+/sys/devices/system/cpu/cpu3/cpuidle/state1/time
+7453
+/sys/devices/system/cpu/cpu3/cpuidle/state1/power
+0
+/sys/devices/system/cpu/cpu3/cpuidle/state1/residency
+200
+/sys/devices/system/cpu/cpu3/cpuidle/state1/latency
+129
+/sys/devices/system/cpu/cpu3/cpuidle/state1/usage
+10
+/sys/devices/system/cpu/cpu3/cpuidle/state1/desc
+little-retention
+/sys/devices/system/cpu/cpu3/cpuidle/state1/below
+2
+/sys/devices/system/cpu/cpu3/cpuidle/state1/name
+cpu-sleep-0-0
+/sys/devices/system/cpu/cpu3/cpuidle/driver/name
+arm_idle
+/sys/devices/system/cpu/cpu3/cpuidle/state2/disable
+0
+/sys/devices/system/cpu/cpu3/cpuidle/state2/above
+8
+/sys/devices/system/cpu/cpu3/cpuidle/state2/time
+616684999
+/sys/devices/system/cpu/cpu3/cpuidle/state2/power
+0
+/sys/devices/system/cpu/cpu3/cpuidle/state2/residency
+1000
+/sys/devices/system/cpu/cpu3/cpuidle/state2/latency
+712
+/sys/devices/system/cpu/cpu3/cpuidle/state2/usage
+298
+/sys/devices/system/cpu/cpu3/cpuidle/state2/desc
+little-power-collapse
+/sys/devices/system/cpu/cpu3/cpuidle/state2/below
+0
+/sys/devices/system/cpu/cpu3/cpuidle/state2/name
+cpu-sleep-0-1
+/sys/devices/system/cpu/cpu3/cpuidle/state0/disable
+0
+/sys/devices/system/cpu/cpu3/cpuidle/state0/above
+0
+/sys/devices/system/cpu/cpu3/cpuidle/state0/time
+29256
+/sys/devices/system/cpu/cpu3/cpuidle/state0/power
+4294967295
+/sys/devices/system/cpu/cpu3/cpuidle/state0/residency
+1
+/sys/devices/system/cpu/cpu3/cpuidle/state0/latency
+1
+/sys/devices/system/cpu/cpu3/cpuidle/state0/usage
+11
+/sys/devices/system/cpu/cpu3/cpuidle/state0/desc
+ARM WFI
+/sys/devices/system/cpu/cpu3/cpuidle/state0/below
+8
+/sys/devices/system/cpu/cpu3/cpuidle/state0/name
+WFI
+/sys/devices/system/cpu/cpu3/uevent
+OF_NAME=cpu
+OF_FULLNAME=/cpus/cpu@3
+OF_TYPE=cpu
+OF_COMPATIBLE_0=arm,armv8
+OF_COMPATIBLE_N=1
+MODALIAS=cpu:type:aarch64:feature:,0000,0001,0002,0003,0004,0005,0006,0007,000B
+
+/sys/devices/system/cpu/cpu3/power/runtime_active_time
+0
+/sys/devices/system/cpu/cpu3/power/pm_qos_resume_latency_us
+0
+/sys/devices/system/cpu/cpu3/power/runtime_status
+unsupported
+/sys/devices/system/cpu/cpu3/power/autosuspend_delay_ms
+cat: read error: Input/output error
+/sys/devices/system/cpu/cpu3/power/runtime_suspended_time
+0
+/sys/devices/system/cpu/cpu3/power/control
+auto
+/sys/devices/system/cpu/cpu3/topology/physical_package_id
+0
+/sys/devices/system/cpu/cpu3/topology/core_siblings
+0f
+/sys/devices/system/cpu/cpu3/topology/core_siblings_list
+0-3
+/sys/devices/system/cpu/cpu3/topology/thread_siblings_list
+3
+/sys/devices/system/cpu/cpu3/topology/core_id
+3
+/sys/devices/system/cpu/cpu3/topology/thread_siblings
+08
+/sys/devices/system/cpu/cpu3/cpu_capacity
+1024
+/sys/devices/system/cpu/cpu3/cache/uevent
+/sys/devices/system/cpu/cpu3/cache/index2/uevent
+/sys/devices/system/cpu/cpu3/cache/index2/shared_cpu_list
+0-3
+/sys/devices/system/cpu/cpu3/cache/index2/type
+Unified
+/sys/devices/system/cpu/cpu3/cache/index2/level
+2
+/sys/devices/system/cpu/cpu3/cache/index2/shared_cpu_map
+0f
+/sys/devices/system/cpu/cpu3/cache/index0/uevent
+/sys/devices/system/cpu/cpu3/cache/index0/shared_cpu_list
+3
+/sys/devices/system/cpu/cpu3/cache/index0/type
+Data
+/sys/devices/system/cpu/cpu3/cache/index0/level
+1
+/sys/devices/system/cpu/cpu3/cache/index0/shared_cpu_map
+08
+/sys/devices/system/cpu/cpu3/cache/index1/uevent
+/sys/devices/system/cpu/cpu3/cache/index1/shared_cpu_list
+3
+/sys/devices/system/cpu/cpu3/cache/index1/type
+Instruction
+/sys/devices/system/cpu/cpu3/cache/index1/level
+1
+/sys/devices/system/cpu/cpu3/cache/index1/shared_cpu_map
+08
+/sys/devices/system/cpu/cpu3/regs/identification/revidr_el1
+0x0000000000000180
+/sys/devices/system/cpu/cpu3/regs/identification/midr_el1
+0x0000000051af8014
+/sys/devices/system/cpu/online
+0-7
+/sys/devices/system/cpu/cpu1/cpuidle/state1/disable
+0
+/sys/devices/system/cpu/cpu1/cpuidle/state1/above
+3
+/sys/devices/system/cpu/cpu1/cpuidle/state1/time
+8494
+/sys/devices/system/cpu/cpu1/cpuidle/state1/power
+0
+/sys/devices/system/cpu/cpu1/cpuidle/state1/residency
+200
+/sys/devices/system/cpu/cpu1/cpuidle/state1/latency
+129
+/sys/devices/system/cpu/cpu1/cpuidle/state1/usage
+15
+/sys/devices/system/cpu/cpu1/cpuidle/state1/desc
+little-retention
+/sys/devices/system/cpu/cpu1/cpuidle/state1/below
+0
+/sys/devices/system/cpu/cpu1/cpuidle/state1/name
+cpu-sleep-0-0
+/sys/devices/system/cpu/cpu1/cpuidle/driver/name
+arm_idle
+/sys/devices/system/cpu/cpu1/cpuidle/state2/disable
+0
+/sys/devices/system/cpu/cpu1/cpuidle/state2/above
+6
+/sys/devices/system/cpu/cpu1/cpuidle/state2/time
+617122679
+/sys/devices/system/cpu/cpu1/cpuidle/state2/power
+0
+/sys/devices/system/cpu/cpu1/cpuidle/state2/residency
+1000
+/sys/devices/system/cpu/cpu1/cpuidle/state2/latency
+712
+/sys/devices/system/cpu/cpu1/cpuidle/state2/usage
+394
+/sys/devices/system/cpu/cpu1/cpuidle/state2/desc
+little-power-collapse
+/sys/devices/system/cpu/cpu1/cpuidle/state2/below
+0
+/sys/devices/system/cpu/cpu1/cpuidle/state2/name
+cpu-sleep-0-1
+/sys/devices/system/cpu/cpu1/cpuidle/state0/disable
+0
+/sys/devices/system/cpu/cpu1/cpuidle/state0/above
+0
+/sys/devices/system/cpu/cpu1/cpuidle/state0/time
+4704
+/sys/devices/system/cpu/cpu1/cpuidle/state0/power
+4294967295
+/sys/devices/system/cpu/cpu1/cpuidle/state0/residency
+1
+/sys/devices/system/cpu/cpu1/cpuidle/state0/latency
+1
+/sys/devices/system/cpu/cpu1/cpuidle/state0/usage
+8
+/sys/devices/system/cpu/cpu1/cpuidle/state0/desc
+ARM WFI
+/sys/devices/system/cpu/cpu1/cpuidle/state0/below
+4
+/sys/devices/system/cpu/cpu1/cpuidle/state0/name
+WFI
+/sys/devices/system/cpu/cpu1/uevent
+OF_NAME=cpu
+OF_FULLNAME=/cpus/cpu@1
+OF_TYPE=cpu
+OF_COMPATIBLE_0=arm,armv8
+OF_COMPATIBLE_N=1
+MODALIAS=cpu:type:aarch64:feature:,0000,0001,0002,0003,0004,0005,0006,0007,000B
+
+/sys/devices/system/cpu/cpu1/power/runtime_active_time
+0
+/sys/devices/system/cpu/cpu1/power/pm_qos_resume_latency_us
+0
+/sys/devices/system/cpu/cpu1/power/runtime_status
+unsupported
+/sys/devices/system/cpu/cpu1/power/autosuspend_delay_ms
+cat: read error: Input/output error
+/sys/devices/system/cpu/cpu1/power/runtime_suspended_time
+0
+/sys/devices/system/cpu/cpu1/power/control
+auto
+/sys/devices/system/cpu/cpu1/topology/physical_package_id
+0
+/sys/devices/system/cpu/cpu1/topology/core_siblings
+0f
+/sys/devices/system/cpu/cpu1/topology/core_siblings_list
+0-3
+/sys/devices/system/cpu/cpu1/topology/thread_siblings_list
+1
+/sys/devices/system/cpu/cpu1/topology/core_id
+1
+/sys/devices/system/cpu/cpu1/topology/thread_siblings
+02
+/sys/devices/system/cpu/cpu1/cpu_capacity
+1024
+/sys/devices/system/cpu/cpu1/cache/uevent
+/sys/devices/system/cpu/cpu1/cache/index2/uevent
+/sys/devices/system/cpu/cpu1/cache/index2/shared_cpu_list
+0-3
+/sys/devices/system/cpu/cpu1/cache/index2/type
+Unified
+/sys/devices/system/cpu/cpu1/cache/index2/level
+2
+/sys/devices/system/cpu/cpu1/cache/index2/shared_cpu_map
+0f
+/sys/devices/system/cpu/cpu1/cache/index0/uevent
+/sys/devices/system/cpu/cpu1/cache/index0/shared_cpu_list
+1
+/sys/devices/system/cpu/cpu1/cache/index0/type
+Data
+/sys/devices/system/cpu/cpu1/cache/index0/level
+1
+/sys/devices/system/cpu/cpu1/cache/index0/shared_cpu_map
+02
+/sys/devices/system/cpu/cpu1/cache/index1/uevent
+/sys/devices/system/cpu/cpu1/cache/index1/shared_cpu_list
+1
+/sys/devices/system/cpu/cpu1/cache/index1/type
+Instruction
+/sys/devices/system/cpu/cpu1/cache/index1/level
+1
+/sys/devices/system/cpu/cpu1/cache/index1/shared_cpu_map
+02
+/sys/devices/system/cpu/cpu1/regs/identification/revidr_el1
+0x0000000000000180
+/sys/devices/system/cpu/cpu1/regs/identification/midr_el1
+0x0000000051af8014
+/sys/devices/system/cpu/vulnerabilities/spectre_v2
+Vulnerable
+/sys/devices/system/cpu/vulnerabilities/mds
+Not affected
+/sys/devices/system/cpu/vulnerabilities/l1tf
+Not affected
+/sys/devices/system/cpu/vulnerabilities/spec_store_bypass
+Vulnerable
+/sys/devices/system/cpu/vulnerabilities/spectre_v1
+Mitigation: __user pointer sanitization
+/sys/devices/system/cpu/vulnerabilities/meltdown
+Mitigation: PTI
+/sys/devices/system/cpu/cpu6/cpuidle/state1/disable
+0
+/sys/devices/system/cpu/cpu6/cpuidle/state1/above
+0
+/sys/devices/system/cpu/cpu6/cpuidle/state1/time
+7186
+/sys/devices/system/cpu/cpu6/cpuidle/state1/power
+0
+/sys/devices/system/cpu/cpu6/cpuidle/state1/residency
+200
+/sys/devices/system/cpu/cpu6/cpuidle/state1/latency
+123
+/sys/devices/system/cpu/cpu6/cpuidle/state1/usage
+9
+/sys/devices/system/cpu/cpu6/cpuidle/state1/desc
+big-retention
+/sys/devices/system/cpu/cpu6/cpuidle/state1/below
+2
+/sys/devices/system/cpu/cpu6/cpuidle/state1/name
+cpu-sleep-1-0
+/sys/devices/system/cpu/cpu6/cpuidle/driver/name
+arm_idle
+/sys/devices/system/cpu/cpu6/cpuidle/state2/disable
+0
+/sys/devices/system/cpu/cpu6/cpuidle/state2/above
+4
+/sys/devices/system/cpu/cpu6/cpuidle/state2/time
+617440536
+/sys/devices/system/cpu/cpu6/cpuidle/state2/power
+0
+/sys/devices/system/cpu/cpu6/cpuidle/state2/residency
+1000
+/sys/devices/system/cpu/cpu6/cpuidle/state2/latency
+625
+/sys/devices/system/cpu/cpu6/cpuidle/state2/usage
+385
+/sys/devices/system/cpu/cpu6/cpuidle/state2/desc
+big-power-collapse
+/sys/devices/system/cpu/cpu6/cpuidle/state2/below
+0
+/sys/devices/system/cpu/cpu6/cpuidle/state2/name
+cpu-sleep-1-1
+/sys/devices/system/cpu/cpu6/cpuidle/state0/disable
+0
+/sys/devices/system/cpu/cpu6/cpuidle/state0/above
+0
+/sys/devices/system/cpu/cpu6/cpuidle/state0/time
+28990
+/sys/devices/system/cpu/cpu6/cpuidle/state0/power
+4294967295
+/sys/devices/system/cpu/cpu6/cpuidle/state0/residency
+1
+/sys/devices/system/cpu/cpu6/cpuidle/state0/latency
+1
+/sys/devices/system/cpu/cpu6/cpuidle/state0/usage
+10
+/sys/devices/system/cpu/cpu6/cpuidle/state0/desc
+ARM WFI
+/sys/devices/system/cpu/cpu6/cpuidle/state0/below
+8
+/sys/devices/system/cpu/cpu6/cpuidle/state0/name
+WFI
+/sys/devices/system/cpu/cpu6/uevent
+OF_NAME=cpu
+OF_FULLNAME=/cpus/cpu@102
+OF_TYPE=cpu
+OF_COMPATIBLE_0=arm,armv8
+OF_COMPATIBLE_N=1
+MODALIAS=cpu:type:aarch64:feature:,0000,0001,0002,0003,0004,0005,0006,0007,000B
+
+/sys/devices/system/cpu/cpu6/power/runtime_active_time
+0
+/sys/devices/system/cpu/cpu6/power/pm_qos_resume_latency_us
+0
+/sys/devices/system/cpu/cpu6/power/runtime_status
+unsupported
+/sys/devices/system/cpu/cpu6/power/autosuspend_delay_ms
+cat: read error: Input/output error
+/sys/devices/system/cpu/cpu6/power/runtime_suspended_time
+0
+/sys/devices/system/cpu/cpu6/power/control
+auto
+/sys/devices/system/cpu/cpu6/topology/physical_package_id
+1
+/sys/devices/system/cpu/cpu6/topology/core_siblings
+f0
+/sys/devices/system/cpu/cpu6/topology/core_siblings_list
+4-7
+/sys/devices/system/cpu/cpu6/topology/thread_siblings_list
+6
+/sys/devices/system/cpu/cpu6/topology/core_id
+2
+/sys/devices/system/cpu/cpu6/topology/thread_siblings
+40
+/sys/devices/system/cpu/cpu6/cpu_capacity
+1024
+/sys/devices/system/cpu/cpu6/cache/uevent
+/sys/devices/system/cpu/cpu6/cache/index2/uevent
+/sys/devices/system/cpu/cpu6/cache/index2/shared_cpu_list
+4-7
+/sys/devices/system/cpu/cpu6/cache/index2/type
+Unified
+/sys/devices/system/cpu/cpu6/cache/index2/level
+2
+/sys/devices/system/cpu/cpu6/cache/index2/shared_cpu_map
+f0
+/sys/devices/system/cpu/cpu6/cache/index0/uevent
+/sys/devices/system/cpu/cpu6/cache/index0/shared_cpu_list
+6
+/sys/devices/system/cpu/cpu6/cache/index0/type
+Data
+/sys/devices/system/cpu/cpu6/cache/index0/level
+1
+/sys/devices/system/cpu/cpu6/cache/index0/shared_cpu_map
+40
+/sys/devices/system/cpu/cpu6/cache/index1/uevent
+/sys/devices/system/cpu/cpu6/cache/index1/shared_cpu_list
+6
+/sys/devices/system/cpu/cpu6/cache/index1/type
+Instruction
+/sys/devices/system/cpu/cpu6/cache/index1/level
+1
+/sys/devices/system/cpu/cpu6/cache/index1/shared_cpu_map
+40
+/sys/devices/system/cpu/cpu6/regs/identification/revidr_el1
+0x0000000000000001
+/sys/devices/system/cpu/cpu6/regs/identification/midr_el1
+0x0000000051af8001
+/sys/devices/system/cpu/cpu4/cpuidle/state1/disable
+0
+/sys/devices/system/cpu/cpu4/cpuidle/state1/above
+4
+/sys/devices/system/cpu/cpu4/cpuidle/state1/time
+48576
+/sys/devices/system/cpu/cpu4/cpuidle/state1/power
+0
+/sys/devices/system/cpu/cpu4/cpuidle/state1/residency
+200
+/sys/devices/system/cpu/cpu4/cpuidle/state1/latency
+123
+/sys/devices/system/cpu/cpu4/cpuidle/state1/usage
+58
+/sys/devices/system/cpu/cpu4/cpuidle/state1/desc
+big-retention
+/sys/devices/system/cpu/cpu4/cpuidle/state1/below
+15
+/sys/devices/system/cpu/cpu4/cpuidle/state1/name
+cpu-sleep-1-0
+/sys/devices/system/cpu/cpu4/cpuidle/driver/name
+arm_idle
+/sys/devices/system/cpu/cpu4/cpuidle/state2/disable
+0
+/sys/devices/system/cpu/cpu4/cpuidle/state2/above
+19
+/sys/devices/system/cpu/cpu4/cpuidle/state2/time
+617566283
+/sys/devices/system/cpu/cpu4/cpuidle/state2/power
+0
+/sys/devices/system/cpu/cpu4/cpuidle/state2/residency
+1000
+/sys/devices/system/cpu/cpu4/cpuidle/state2/latency
+625
+/sys/devices/system/cpu/cpu4/cpuidle/state2/usage
+515
+/sys/devices/system/cpu/cpu4/cpuidle/state2/desc
+big-power-collapse
+/sys/devices/system/cpu/cpu4/cpuidle/state2/below
+0
+/sys/devices/system/cpu/cpu4/cpuidle/state2/name
+cpu-sleep-1-1
+/sys/devices/system/cpu/cpu4/cpuidle/state0/disable
+0
+/sys/devices/system/cpu/cpu4/cpuidle/state0/above
+0
+/sys/devices/system/cpu/cpu4/cpuidle/state0/time
+33524
+/sys/devices/system/cpu/cpu4/cpuidle/state0/power
+4294967295
+/sys/devices/system/cpu/cpu4/cpuidle/state0/residency
+1
+/sys/devices/system/cpu/cpu4/cpuidle/state0/latency
+1
+/sys/devices/system/cpu/cpu4/cpuidle/state0/usage
+19
+/sys/devices/system/cpu/cpu4/cpuidle/state0/desc
+ARM WFI
+/sys/devices/system/cpu/cpu4/cpuidle/state0/below
+9
+/sys/devices/system/cpu/cpu4/cpuidle/state0/name
+WFI
+/sys/devices/system/cpu/cpu4/uevent
+OF_NAME=cpu
+OF_FULLNAME=/cpus/cpu@100
+OF_TYPE=cpu
+OF_COMPATIBLE_0=arm,armv8
+OF_COMPATIBLE_N=1
+MODALIAS=cpu:type:aarch64:feature:,0000,0001,0002,0003,0004,0005,0006,0007,000B
+
+/sys/devices/system/cpu/cpu4/power/runtime_active_time
+0
+/sys/devices/system/cpu/cpu4/power/pm_qos_resume_latency_us
+0
+/sys/devices/system/cpu/cpu4/power/runtime_status
+unsupported
+/sys/devices/system/cpu/cpu4/power/autosuspend_delay_ms
+cat: read error: Input/output error
+/sys/devices/system/cpu/cpu4/power/runtime_suspended_time
+0
+/sys/devices/system/cpu/cpu4/power/control
+auto
+/sys/devices/system/cpu/cpu4/topology/physical_package_id
+1
+/sys/devices/system/cpu/cpu4/topology/core_siblings
+f0
+/sys/devices/system/cpu/cpu4/topology/core_siblings_list
+4-7
+/sys/devices/system/cpu/cpu4/topology/thread_siblings_list
+4
+/sys/devices/system/cpu/cpu4/topology/core_id
+0
+/sys/devices/system/cpu/cpu4/topology/thread_siblings
+10
+/sys/devices/system/cpu/cpu4/cpu_capacity
+1024
+/sys/devices/system/cpu/cpu4/cache/uevent
+/sys/devices/system/cpu/cpu4/cache/index2/uevent
+/sys/devices/system/cpu/cpu4/cache/index2/shared_cpu_list
+4-7
+/sys/devices/system/cpu/cpu4/cache/index2/type
+Unified
+/sys/devices/system/cpu/cpu4/cache/index2/level
+2
+/sys/devices/system/cpu/cpu4/cache/index2/shared_cpu_map
+f0
+/sys/devices/system/cpu/cpu4/cache/index0/uevent
+/sys/devices/system/cpu/cpu4/cache/index0/shared_cpu_list
+4
+/sys/devices/system/cpu/cpu4/cache/index0/type
+Data
+/sys/devices/system/cpu/cpu4/cache/index0/level
+1
+/sys/devices/system/cpu/cpu4/cache/index0/shared_cpu_map
+10
+/sys/devices/system/cpu/cpu4/cache/index1/uevent
+/sys/devices/system/cpu/cpu4/cache/index1/shared_cpu_list
+4
+/sys/devices/system/cpu/cpu4/cache/index1/type
+Instruction
+/sys/devices/system/cpu/cpu4/cache/index1/level
+1
+/sys/devices/system/cpu/cpu4/cache/index1/shared_cpu_map
+10
+/sys/devices/system/cpu/cpu4/regs/identification/revidr_el1
+0x0000000000000001
+/sys/devices/system/cpu/cpu4/regs/identification/midr_el1
+0x0000000051af8001
+/sys/devices/system/cpu/isolated
+
+/sys/devices/system/cpu/kernel_max
+255
+/sys/devices/system/cpu/cpu2/cpuidle/state1/disable
+0
+/sys/devices/system/cpu/cpu2/cpuidle/state1/above
+27
+/sys/devices/system/cpu/cpu2/cpuidle/state1/time
+80485
+/sys/devices/system/cpu/cpu2/cpuidle/state1/power
+0
+/sys/devices/system/cpu/cpu2/cpuidle/state1/residency
+200
+/sys/devices/system/cpu/cpu2/cpuidle/state1/latency
+129
+/sys/devices/system/cpu/cpu2/cpuidle/state1/usage
+142
+/sys/devices/system/cpu/cpu2/cpuidle/state1/desc
+little-retention
+/sys/devices/system/cpu/cpu2/cpuidle/state1/below
+6
+/sys/devices/system/cpu/cpu2/cpuidle/state1/name
+cpu-sleep-0-0
+/sys/devices/system/cpu/cpu2/cpuidle/driver/name
+arm_idle
+/sys/devices/system/cpu/cpu2/cpuidle/state2/disable
+0
+/sys/devices/system/cpu/cpu2/cpuidle/state2/above
+14
+/sys/devices/system/cpu/cpu2/cpuidle/state2/time
+617916929
+/sys/devices/system/cpu/cpu2/cpuidle/state2/power
+0
+/sys/devices/system/cpu/cpu2/cpuidle/state2/residency
+1000
+/sys/devices/system/cpu/cpu2/cpuidle/state2/latency
+712
+/sys/devices/system/cpu/cpu2/cpuidle/state2/usage
+614
+/sys/devices/system/cpu/cpu2/cpuidle/state2/desc
+little-power-collapse
+/sys/devices/system/cpu/cpu2/cpuidle/state2/below
+0
+/sys/devices/system/cpu/cpu2/cpuidle/state2/name
+cpu-sleep-0-1
+/sys/devices/system/cpu/cpu2/cpuidle/state0/disable
+0
+/sys/devices/system/cpu/cpu2/cpuidle/state0/above
+0
+/sys/devices/system/cpu/cpu2/cpuidle/state0/time
+36601
+/sys/devices/system/cpu/cpu2/cpuidle/state0/power
+4294967295
+/sys/devices/system/cpu/cpu2/cpuidle/state0/residency
+1
+/sys/devices/system/cpu/cpu2/cpuidle/state0/latency
+1
+/sys/devices/system/cpu/cpu2/cpuidle/state0/usage
+49
+/sys/devices/system/cpu/cpu2/cpuidle/state0/desc
+ARM WFI
+/sys/devices/system/cpu/cpu2/cpuidle/state0/below
+20
+/sys/devices/system/cpu/cpu2/cpuidle/state0/name
+WFI
+/sys/devices/system/cpu/cpu2/uevent
+OF_NAME=cpu
+OF_FULLNAME=/cpus/cpu@2
+OF_TYPE=cpu
+OF_COMPATIBLE_0=arm,armv8
+OF_COMPATIBLE_N=1
+MODALIAS=cpu:type:aarch64:feature:,0000,0001,0002,0003,0004,0005,0006,0007,000B
+
+/sys/devices/system/cpu/cpu2/power/runtime_active_time
+0
+/sys/devices/system/cpu/cpu2/power/pm_qos_resume_latency_us
+0
+/sys/devices/system/cpu/cpu2/power/runtime_status
+unsupported
+/sys/devices/system/cpu/cpu2/power/autosuspend_delay_ms
+cat: read error: Input/output error
+/sys/devices/system/cpu/cpu2/power/runtime_suspended_time
+0
+/sys/devices/system/cpu/cpu2/power/control
+auto
+/sys/devices/system/cpu/cpu2/topology/physical_package_id
+0
+/sys/devices/system/cpu/cpu2/topology/core_siblings
+0f
+/sys/devices/system/cpu/cpu2/topology/core_siblings_list
+0-3
+/sys/devices/system/cpu/cpu2/topology/thread_siblings_list
+2
+/sys/devices/system/cpu/cpu2/topology/core_id
+2
+/sys/devices/system/cpu/cpu2/topology/thread_siblings
+04
+/sys/devices/system/cpu/cpu2/cpu_capacity
+1024
+/sys/devices/system/cpu/cpu2/cache/uevent
+/sys/devices/system/cpu/cpu2/cache/index2/uevent
+/sys/devices/system/cpu/cpu2/cache/index2/shared_cpu_list
+0-3
+/sys/devices/system/cpu/cpu2/cache/index2/type
+Unified
+/sys/devices/system/cpu/cpu2/cache/index2/level
+2
+/sys/devices/system/cpu/cpu2/cache/index2/shared_cpu_map
+0f
+/sys/devices/system/cpu/cpu2/cache/index0/uevent
+/sys/devices/system/cpu/cpu2/cache/index0/shared_cpu_list
+2
+/sys/devices/system/cpu/cpu2/cache/index0/type
+Data
+/sys/devices/system/cpu/cpu2/cache/index0/level
+1
+/sys/devices/system/cpu/cpu2/cache/index0/shared_cpu_map
+04
+/sys/devices/system/cpu/cpu2/cache/index1/uevent
+/sys/devices/system/cpu/cpu2/cache/index1/shared_cpu_list
+2
+/sys/devices/system/cpu/cpu2/cache/index1/type
+Instruction
+/sys/devices/system/cpu/cpu2/cache/index1/level
+1
+/sys/devices/system/cpu/cpu2/cache/index1/shared_cpu_map
+04
+/sys/devices/system/cpu/cpu2/regs/identification/revidr_el1
+0x0000000000000180
+/sys/devices/system/cpu/cpu2/regs/identification/midr_el1
+0x0000000051af8014
+/sys/devices/system/cpu/cpu0/cpuidle/state1/disable
+0
+/sys/devices/system/cpu/cpu0/cpuidle/state1/above
+42
+/sys/devices/system/cpu/cpu0/cpuidle/state1/time
+363386
+/sys/devices/system/cpu/cpu0/cpuidle/state1/power
+0
+/sys/devices/system/cpu/cpu0/cpuidle/state1/residency
+200
+/sys/devices/system/cpu/cpu0/cpuidle/state1/latency
+129
+/sys/devices/system/cpu/cpu0/cpuidle/state1/usage
+416
+/sys/devices/system/cpu/cpu0/cpuidle/state1/desc
+little-retention
+/sys/devices/system/cpu/cpu0/cpuidle/state1/below
+117
+/sys/devices/system/cpu/cpu0/cpuidle/state1/name
+cpu-sleep-0-0
+/sys/devices/system/cpu/cpu0/cpuidle/driver/name
+arm_idle
+/sys/devices/system/cpu/cpu0/cpuidle/state2/disable
+0
+/sys/devices/system/cpu/cpu0/cpuidle/state2/above
+189
+/sys/devices/system/cpu/cpu0/cpuidle/state2/time
+616567065
+/sys/devices/system/cpu/cpu0/cpuidle/state2/power
+0
+/sys/devices/system/cpu/cpu0/cpuidle/state2/residency
+1000
+/sys/devices/system/cpu/cpu0/cpuidle/state2/latency
+712
+/sys/devices/system/cpu/cpu0/cpuidle/state2/usage
+1661
+/sys/devices/system/cpu/cpu0/cpuidle/state2/desc
+little-power-collapse
+/sys/devices/system/cpu/cpu0/cpuidle/state2/below
+0
+/sys/devices/system/cpu/cpu0/cpuidle/state2/name
+cpu-sleep-0-1
+/sys/devices/system/cpu/cpu0/cpuidle/state0/disable
+0
+/sys/devices/system/cpu/cpu0/cpuidle/state0/above
+0
+/sys/devices/system/cpu/cpu0/cpuidle/state0/time
+7123
+/sys/devices/system/cpu/cpu0/cpuidle/state0/power
+4294967295
+/sys/devices/system/cpu/cpu0/cpuidle/state0/residency
+1
+/sys/devices/system/cpu/cpu0/cpuidle/state0/latency
+1
+/sys/devices/system/cpu/cpu0/cpuidle/state0/usage
+53
+/sys/devices/system/cpu/cpu0/cpuidle/state0/desc
+ARM WFI
+/sys/devices/system/cpu/cpu0/cpuidle/state0/below
+14
+/sys/devices/system/cpu/cpu0/cpuidle/state0/name
+WFI
+/sys/devices/system/cpu/cpu0/uevent
+OF_NAME=cpu
+OF_FULLNAME=/cpus/cpu@0
+OF_TYPE=cpu
+OF_COMPATIBLE_0=arm,armv8
+OF_COMPATIBLE_N=1
+MODALIAS=cpu:type:aarch64:feature:,0000,0001,0002,0003,0004,0005,0006,0007,000B
+
+/sys/devices/system/cpu/cpu0/power/runtime_active_time
+0
+/sys/devices/system/cpu/cpu0/power/pm_qos_resume_latency_us
+0
+/sys/devices/system/cpu/cpu0/power/runtime_status
+unsupported
+/sys/devices/system/cpu/cpu0/power/autosuspend_delay_ms
+cat: read error: Input/output error
+/sys/devices/system/cpu/cpu0/power/runtime_suspended_time
+0
+/sys/devices/system/cpu/cpu0/power/control
+auto
+/sys/devices/system/cpu/cpu0/topology/physical_package_id
+0
+/sys/devices/system/cpu/cpu0/topology/core_siblings
+0f
+/sys/devices/system/cpu/cpu0/topology/core_siblings_list
+0-3
+/sys/devices/system/cpu/cpu0/topology/thread_siblings_list
+0
+/sys/devices/system/cpu/cpu0/topology/core_id
+0
+/sys/devices/system/cpu/cpu0/topology/thread_siblings
+01
+/sys/devices/system/cpu/cpu0/cpu_capacity
+1024
+/sys/devices/system/cpu/cpu0/cache/uevent
+/sys/devices/system/cpu/cpu0/cache/index2/uevent
+/sys/devices/system/cpu/cpu0/cache/index2/shared_cpu_list
+0-3
+/sys/devices/system/cpu/cpu0/cache/index2/type
+Unified
+/sys/devices/system/cpu/cpu0/cache/index2/level
+2
+/sys/devices/system/cpu/cpu0/cache/index2/shared_cpu_map
+0f
+/sys/devices/system/cpu/cpu0/cache/index0/uevent
+/sys/devices/system/cpu/cpu0/cache/index0/shared_cpu_list
+0
+/sys/devices/system/cpu/cpu0/cache/index0/type
+Data
+/sys/devices/system/cpu/cpu0/cache/index0/level
+1
+/sys/devices/system/cpu/cpu0/cache/index0/shared_cpu_map
+01
+/sys/devices/system/cpu/cpu0/cache/index1/uevent
+/sys/devices/system/cpu/cpu0/cache/index1/shared_cpu_list
+0
+/sys/devices/system/cpu/cpu0/cache/index1/type
+Instruction
+/sys/devices/system/cpu/cpu0/cache/index1/level
+1
+/sys/devices/system/cpu/cpu0/cache/index1/shared_cpu_map
+01
+/sys/devices/system/cpu/cpu0/regs/identification/revidr_el1
+0x0000000000000180
+/sys/devices/system/cpu/cpu0/regs/identification/midr_el1
+0x0000000051af8014
+/sys/devices/system/cpu/modalias
+cpu:type:aarch64:feature:,0000,0001,0002,0003,0004,0005,0006,0007,000B
+
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---VS++wcV0S1rZb1Fb--
-
