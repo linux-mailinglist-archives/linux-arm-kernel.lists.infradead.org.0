@@ -2,87 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E444526323
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 13:45:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 416562632E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 13:49:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/en1g06jJs99CiXMWh9SV6JfYztJmlRx8vyM+vK268M=; b=ckCPp3w2E2GfaP
-	9r7QA+TnjxwGzs0icETF5+jbeIm0PTUubwtHxtKAZh9QJYt3BCHEqPA4/z6hm8Mh0FWEy6TLr6yw9
-	T/iEpmzHDcn45C8jGquKjgzBTbKDQ6a8QA2xCkxbyeuJJMPxdsypgE3OwKoK8/2icIptPlDaS0D8A
-	kPoCuBbrysdP9Wyv3tkeWtR6Ks7IZY7gq2sgzqgvSbp321d1WYi8eYu7fmPkHK/ekGhPEGwsDlVOb
-	tVlgoP8rowYeaZedp/mBoJg1jGzZuqlJxK6rVJhONJjS7GsHD18JSkA5zcJvjLlYb9o0AgW1+duhl
-	Co39ma0aDH9KFv/InWew==;
+	List-Owner; bh=B78F2U89f+Mu+9L7AWau4Em7OIz5ADrcgvmacCxlDWI=; b=HQikmHkoVyGJXr
+	CRd2/ENiePp2bE8LA2Xm+XfO7pPLq4h9uNDKr6ylVVn1tnczwPmxXHXRo3m1hJqVtMJRuQemyMDBK
+	tvd0useSPFKt3wynI4e1EhcwDCO2Sjr1mDFb6wpxWBOQKvVhwsHWlq5kHb1oyu8mHMZY/g/xrmHX0
+	m17a+0wReCUdBR6HC8edrZeYCdqwK2qzMonNKPy4TWgdUd9afGg5FzhzZ8TFGmYNW0RvwqcT3zkmE
+	pRCKjhlyUixk0kK2tkYFZ1CcF+DHjD9hkJFOssnPfLqYDWFL6GLt2xAwnnOBFXTPYf1D5hh9OSREu
+	76X9prc/ccjUMJo0gBRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTPg2-0000l2-Uk; Wed, 22 May 2019 11:44:58 +0000
-Received: from mail-it1-x142.google.com ([2607:f8b0:4864:20::142])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTPfv-0000kU-5C
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 11:44:53 +0000
-Received: by mail-it1-x142.google.com with SMTP id i63so2546780ita.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 May 2019 04:44:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=64VIbj7lTeoo5qnu4kEAKbi9tvANIAWvMoPtfvBmkwo=;
- b=bLZ4Uj2eN9M3KLbId2sQ3SZAZ3TQIaponyfZ9Bx8GFsd5n4+e40We1VyXHz9HlnUB7
- rExlzzT3WZOBY94rhyg3uB0IIYMxbB7vu8jZ12nX7/LuZLi3BO/z85KCajbcl6Tf+7eu
- Fdc4D2BDZ/0ZBIojcdIP2UaUV+uL5gU68SHTTTxLw4QEpH2SWOex9TF+qp5JqFmnBWio
- S1UvwDD0nAKAKEQCV2AKNOEj+5y1x0QJ9zWMDH2pouGfTaGwlsp8H/aTIBmmnXKJ6XAG
- NPNpIHw0IIA+pSIsQnzuyRj1eUHp5M8l4OZt1EBsXZf56cDiRk+xDjnpYMkQsYxQ13cz
- 6Eng==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=64VIbj7lTeoo5qnu4kEAKbi9tvANIAWvMoPtfvBmkwo=;
- b=idWoOGofkM4tLhxyhpJTTlncucw2AWPCk/leesXczLiJ1r5n6egltFoXmQWnCvdApT
- syPIcIsaUpxkinCI+z5OxH7IBirQsGwcHG5MqyvCxdtaLji5dAM2mXXQ+QVJ7ZNFuWOG
- kl3w1TheliXyOpUfevAuxKeQvruh2TrU5NpktEBeDyHxOfV/LfIAcuDHrU3uZV4dOsVC
- z4RGW7Ipy4xfvPtsbzi1IMqyRGZOuw01wJXjo/m9gL2dtbPaqTdfl/ifLrSScogx3+IG
- 7ybEg/3nhFItdExXKzgY//NzeTOwC/qWfiIdpX4X5Jb8en4xHchzZc1PZhLRTW1j+z+7
- Zlnw==
-X-Gm-Message-State: APjAAAVNbvAWLGd7UX4elKMt/qWzBX1INL8m1uS+gZqMyrpH8LWpXkBP
- 9WDZxBcKzyEuO2RGHBjViVoL/MdjayoaogiiMEH8eg==
-X-Google-Smtp-Source: APXvYqx0keyneW/17ECWp+J+xTDOIWqb8oMKJCYu85EUJB8ZTxGK3HlAIIuzIUOk/gMOpRok4Of6zFKs8QQEUe+bv5M=
-X-Received: by 2002:a24:d00e:: with SMTP id m14mr7472750itg.153.1558525485892; 
- Wed, 22 May 2019 04:44:45 -0700 (PDT)
+	id 1hTPkO-0002fm-4F; Wed, 22 May 2019 11:49:28 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hTPkH-0002f9-3t
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 11:49:22 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7DC8180D;
+ Wed, 22 May 2019 04:49:19 -0700 (PDT)
+Received: from mbp (usa-sjc-mx-foss1.foss.arm.com [217.140.101.70])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AE7643F575;
+ Wed, 22 May 2019 04:49:13 -0700 (PDT)
+Date: Wed, 22 May 2019 12:49:10 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Andrey Konovalov <andreyknvl@google.com>
+Subject: Re: [PATCH v15 05/17] arms64: untag user pointers passed to memory
+ syscalls
+Message-ID: <20190522114910.emlckebwzv2qz42i@mbp>
+References: <cover.1557160186.git.andreyknvl@google.com>
+ <00eb4c63fefc054e2c8d626e8fedfca11d7c2600.1557160186.git.andreyknvl@google.com>
 MIME-Version: 1.0
-References: <20190516155344.24060-1-andrew.murray@arm.com>
- <20190517072401.GI2623@hirez.programming.kicks-ass.net>
- <20190517100802.GS8268@e119886-lin.cambridge.arm.com>
- <CAKv+Gu_fhFB-fFw20OjhPt5BM2cFuYxbD99JJK963gQftAAn3Q@mail.gmail.com>
- <20190522104536.GA8268@e119886-lin.cambridge.arm.com>
-In-Reply-To: <20190522104536.GA8268@e119886-lin.cambridge.arm.com>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Wed, 22 May 2019 12:44:35 +0100
-Message-ID: <CAKv+Gu9sWBwCisYPd7eAH7YBC4RfeQNvGh2Tt_f2iXZ5UUbmsw@mail.gmail.com>
-Subject: Re: [PATCH v1 0/5] arm64: avoid out-of-line ll/sc atomics
-To: Andrew Murray <andrew.murray@arm.com>
+Content-Disposition: inline
+In-Reply-To: <00eb4c63fefc054e2c8d626e8fedfca11d7c2600.1557160186.git.andreyknvl@google.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_044451_205265_56577883 
-X-CRM114-Status: GOOD (  35.52  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190522_044921_170737_F34A0EE3 
+X-CRM114-Status: GOOD (  24.38  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,173 +65,201 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Boqun Feng <boqun.feng@gmail.com>,
- Will Deacon <will.deacon@arm.com>, Ard.Biesheuvel@arm.com,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ linux-kselftest@vger.kernel.org, Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 22 May 2019 at 11:45, Andrew Murray <andrew.murray@arm.com> wrote:
->
-> On Fri, May 17, 2019 at 12:29:54PM +0200, Ard Biesheuvel wrote:
-> > On Fri, 17 May 2019 at 12:08, Andrew Murray <andrew.murray@arm.com> wrote:
-> > >
-> > > On Fri, May 17, 2019 at 09:24:01AM +0200, Peter Zijlstra wrote:
-> > > > On Thu, May 16, 2019 at 04:53:39PM +0100, Andrew Murray wrote:
-> > > > > When building for LSE atomics (CONFIG_ARM64_LSE_ATOMICS), if the hardware
-> > > > > or toolchain doesn't support it the existing code will fallback to ll/sc
-> > > > > atomics. It achieves this by branching from inline assembly to a function
-> > > > > that is built with specical compile flags. Further this results in the
-> > > > > clobbering of registers even when the fallback isn't used increasing
-> > > > > register pressure.
-> > > > >
-> > > > > Let's improve this by providing inline implementatins of both LSE and
-> > > > > ll/sc and use a static key to select between them. This allows for the
-> > > > > compiler to generate better atomics code.
-> > > >
-> > > > Don't you guys have alternatives? That would avoid having both versions
-> > > > in the code, and thus significantly cuts back on the bloat.
-> > >
-> > > Yes we do.
-> > >
-> > > Prior to patch 3 of this series, the ARM64_LSE_ATOMIC_INSN macro used
-> > > ALTERNATIVE to either bl to a fallback ll/sc function (and nops) - or execute
-> > > some LSE instructions.
-> > >
-> > > But this approach limits the compilers ability to optimise the code due to
-> > > the asm clobber list being the superset of both ll/sc and LSE - and the gcc
-> > > compiler flags used on the ll/sc functions.
-> > >
-> > > I think the alternative solution (excuse the pun) that you are suggesting
-> > > is to put the body of the ll/sc or LSE code in the ALTERNATIVE oldinstr/newinstr
-> > > blocks (i.e. drop the fallback branches). However this still gives us some
-> > > bloat (but less than my current solution) because we're still now inlining the
-> > > larger fallback ll/sc whereas previously they were non-inline'd functions. We
-> > > still end up with potentially unnecessary clobbers for LSE code with this
-> > > approach.
-> > >
-> > > Approach prior to this series:
-> > >
-> > >    BL 1 or NOP <- single alternative instruction
-> > >    LSE
-> > >    LSE
-> > >    ...
-> > >
-> > > 1: LL/SC <- LL/SC fallback not inlined so reused
-> > >    LL/SC
-> > >    LL/SC
-> > >    LL/SC
-> > >
-> > > Approach proposed by this series:
-> > >
-> > >    BL 1 or NOP <- single alternative instruction
-> > >    LSE
-> > >    LSE
-> > >    BL 2
-> > > 1: LL/SC <- inlined LL/SC and thus duplicated
-> > >    LL/SC
-> > >    LL/SC
-> > >    LL/SC
-> > > 2: ..
-> > >
-> > > Approach using alternative without braces:
-> > >
-> > >    LSE
-> > >    LSE
-> > >    NOP
-> > >    NOP
-> > >
-> > > or
-> > >
-> > >    LL/SC <- inlined LL/SC and thus duplicated
-> > >    LL/SC
-> > >    LL/SC
-> > >    LL/SC
-> > >
-> > > I guess there is a balance here between bloat and code optimisation.
-> > >
-> >
-> >
-> > So there are two separate questions here:
-> > 1) whether or not we should merge the inline asm blocks so that the
-> > compiler sees a single set of constraints and operands
-> > 2) whether the LL/SC sequence should be inlined and/or duplicated.
-> >
-> > This approach appears to be based on the assumption that reserving one
-> > or sometimes two additional registers for the LL/SC fallback has a
-> > more severe impact on performance than the unconditional branch.
-> > However, it seems to me that any call site that uses the atomics has
-> > to deal with the possibility of either version being invoked, and so
-> > the additional registers need to be freed up in any case. Or am I
-> > missing something?
->
-> Yes at compile time the compiler doesn't know which atomics path will
-> be taken so code has to be generated for both (thus optimisation is
-> limited). However due to this approach we no longer use hard-coded
-> registers or restrict which/how registers can be used and therefore the
-> compiler ought to have greater freedom to optimise.
->
+On Mon, May 06, 2019 at 06:30:51PM +0200, Andrey Konovalov wrote:
+> This patch is a part of a series that extends arm64 kernel ABI to allow to
+> pass tagged user pointers (with the top byte set to something else other
+> than 0x00) as syscall arguments.
+> 
+> This patch allows tagged pointers to be passed to the following memory
+> syscalls: brk, get_mempolicy, madvise, mbind, mincore, mlock, mlock2,
+> mmap, mmap_pgoff, mprotect, mremap, msync, munlock, munmap,
+> remap_file_pages, shmat and shmdt.
+> 
+> This is done by untagging pointers passed to these syscalls in the
+> prologues of their handlers.
 
-Yes, I agree that is an improvement. But that doesn't require the
-LL/SC and LSE asm sequences to be distinct.
+I'll go through them one by one to see if we can tighten the expected
+ABI while having the MTE in mind.
 
-> >
-> > As for the duplication: a while ago, I suggested an approach [0] using
-> > alternatives and asm subsections, which moved the duplicated LL/SC
-> > fallbacks out of the hot path. This does not remove the bloat, but it
-> > does mitigate its impact on I-cache efficiency when running on
-> > hardware that does not require the fallbacks.#
->
-> I've seen this. I guess its possible to incorporate subsections into the
-> inline assembly in the __ll_sc_* functions of this series. If we wanted
-> the ll/sc fallbacks not to be inlined, then I suppose we can put these
-> functions in their own section to achieve the same goal.
->
-> My toolchain knowledge is a limited here - but in order to use subsections
-> you require a branch - in this case does the compiler optimise across the
-> sub sections? If not then I guess there is no benefit to inlining the code
-> in which case you may as well have a branch to a function (in its own
-> section) and then you get both the icache gain and also avoid bloat. Does
-> that make any sense?
->
+> diff --git a/arch/arm64/kernel/sys.c b/arch/arm64/kernel/sys.c
+> index b44065fb1616..933bb9f3d6ec 100644
+> --- a/arch/arm64/kernel/sys.c
+> +++ b/arch/arm64/kernel/sys.c
+> @@ -35,10 +35,33 @@ SYSCALL_DEFINE6(mmap, unsigned long, addr, unsigned long, len,
+>  {
+>  	if (offset_in_page(off) != 0)
+>  		return -EINVAL;
+> -
+> +	addr = untagged_addr(addr);
+>  	return ksys_mmap_pgoff(addr, len, prot, flags, fd, off >> PAGE_SHIFT);
+>  }
 
+If user passes a tagged pointer to mmap() and the address is honoured
+(or MAP_FIXED is given), what is the expected return pointer? Does it
+need to be tagged with the value from the hint?
 
-Not entirely. A function call requires an additional register to be
-preserved, and the bl and ret instructions are both indirect branches,
-while subsections use direct unconditional branches only.
+With MTE, we may want to use this as a request for the default colour of
+the mapped pages (still under discussion).
 
-Another reason we want to get rid of the current approach (and the
-reason I looked into it in the first place) is that we are introducing
-hidden branches, which affects the reliability of backtraces and this
-is an issue for livepatch.
+> +SYSCALL_DEFINE6(arm64_mmap_pgoff, unsigned long, addr, unsigned long, len,
+> +		unsigned long, prot, unsigned long, flags,
+> +		unsigned long, fd, unsigned long, pgoff)
+> +{
+> +	addr = untagged_addr(addr);
+> +	return ksys_mmap_pgoff(addr, len, prot, flags, fd, pgoff);
+> +}
 
-> >
-> >
-> > [0] https://lore.kernel.org/linux-arm-kernel/20181113233923.20098-1-ard.biesheuvel@linaro.org/
-> >
-> >
-> >
-> > > >
-> > > > > These changes add a small amount of bloat on defconfig according to
-> > > > > bloat-o-meter:
-> > > > >
-> > > > > text:
-> > > > >   add/remove: 1/108 grow/shrink: 3448/20 up/down: 272768/-4320 (268448)
-> > > > >   Total: Before=12363112, After=12631560, chg +2.17%
-> > > >
-> > > > I'd say 2% is quite significant bloat.
-> > >
-> > > Thanks,
-> > >
-> > > Andrew Murray
-> > >
-> > > _______________________________________________
-> > > linux-arm-kernel mailing list
-> > > linux-arm-kernel@lists.infradead.org
-> > > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+We don't have __NR_mmap_pgoff on arm64.
+
+> +SYSCALL_DEFINE5(arm64_mremap, unsigned long, addr, unsigned long, old_len,
+> +		unsigned long, new_len, unsigned long, flags,
+> +		unsigned long, new_addr)
+> +{
+> +	addr = untagged_addr(addr);
+> +	new_addr = untagged_addr(new_addr);
+> +	return ksys_mremap(addr, old_len, new_len, flags, new_addr);
+> +}
+
+Similar comment as for mmap(), do we want the tag from new_addr to be
+preserved? In addition, should we check that the two tags are identical
+or mremap() should become a way to repaint a memory region?
+
+> +SYSCALL_DEFINE2(arm64_munmap, unsigned long, addr, size_t, len)
+> +{
+> +	addr = untagged_addr(addr);
+> +	return ksys_munmap(addr, len);
+> +}
+
+This looks fine.
+
+> +SYSCALL_DEFINE1(arm64_brk, unsigned long, brk)
+> +{
+> +	brk = untagged_addr(brk);
+> +	return ksys_brk(brk);
+> +}
+
+I wonder whether brk() should simply not accept tags, and should not
+return them (similar to the prctl(PR_SET_MM) discussion). We could
+document this in the ABI requirements.
+
+> +SYSCALL_DEFINE5(arm64_get_mempolicy, int __user *, policy,
+> +		unsigned long __user *, nmask, unsigned long, maxnode,
+> +		unsigned long, addr, unsigned long, flags)
+> +{
+> +	addr = untagged_addr(addr);
+> +	return ksys_get_mempolicy(policy, nmask, maxnode, addr, flags);
+> +}
+> +
+> +SYSCALL_DEFINE3(arm64_madvise, unsigned long, start,
+> +		size_t, len_in, int, behavior)
+> +{
+> +	start = untagged_addr(start);
+> +	return ksys_madvise(start, len_in, behavior);
+> +}
+> +
+> +SYSCALL_DEFINE6(arm64_mbind, unsigned long, start, unsigned long, len,
+> +		unsigned long, mode, const unsigned long __user *, nmask,
+> +		unsigned long, maxnode, unsigned int, flags)
+> +{
+> +	start = untagged_addr(start);
+> +	return ksys_mbind(start, len, mode, nmask, maxnode, flags);
+> +}
+> +
+> +SYSCALL_DEFINE2(arm64_mlock, unsigned long, start, size_t, len)
+> +{
+> +	start = untagged_addr(start);
+> +	return ksys_mlock(start, len, VM_LOCKED);
+> +}
+> +
+> +SYSCALL_DEFINE2(arm64_mlock2, unsigned long, start, size_t, len)
+> +{
+> +	start = untagged_addr(start);
+> +	return ksys_mlock(start, len, VM_LOCKED);
+> +}
+> +
+> +SYSCALL_DEFINE2(arm64_munlock, unsigned long, start, size_t, len)
+> +{
+> +	start = untagged_addr(start);
+> +	return ksys_munlock(start, len);
+> +}
+> +
+> +SYSCALL_DEFINE3(arm64_mprotect, unsigned long, start, size_t, len,
+> +		unsigned long, prot)
+> +{
+> +	start = untagged_addr(start);
+> +	return ksys_mprotect_pkey(start, len, prot, -1);
+> +}
+> +
+> +SYSCALL_DEFINE3(arm64_msync, unsigned long, start, size_t, len, int, flags)
+> +{
+> +	start = untagged_addr(start);
+> +	return ksys_msync(start, len, flags);
+> +}
+> +
+> +SYSCALL_DEFINE3(arm64_mincore, unsigned long, start, size_t, len,
+> +		unsigned char __user *, vec)
+> +{
+> +	start = untagged_addr(start);
+> +	return ksys_mincore(start, len, vec);
+> +}
+
+These look fine.
+
+> +SYSCALL_DEFINE5(arm64_remap_file_pages, unsigned long, start,
+> +		unsigned long, size, unsigned long, prot,
+> +		unsigned long, pgoff, unsigned long, flags)
+> +{
+> +	start = untagged_addr(start);
+> +	return ksys_remap_file_pages(start, size, prot, pgoff, flags);
+> +}
+
+While this has been deprecated for some time, I presume user space still
+invokes it?
+
+> +SYSCALL_DEFINE3(arm64_shmat, int, shmid, char __user *, shmaddr, int, shmflg)
+> +{
+> +	shmaddr = untagged_addr(shmaddr);
+> +	return ksys_shmat(shmid, shmaddr, shmflg);
+> +}
+> +
+> +SYSCALL_DEFINE1(arm64_shmdt, char __user *, shmaddr)
+> +{
+> +	shmaddr = untagged_addr(shmaddr);
+> +	return ksys_shmdt(shmaddr);
+> +}
+
+Do we actually want to allow shared tagged memory? Who's going to tag
+it? If not, we can document it as not supported.
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
