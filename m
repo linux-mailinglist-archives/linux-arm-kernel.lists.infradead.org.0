@@ -2,98 +2,117 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA76F26113
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 12:00:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26EFD26116
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 12:00:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
-	:Subject:From:Reply-To:To:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=cVRUnjhSDHsgkWIfGmduno9+nxv0bzXClpIoUtATWeE=; b=dtU8dQ0EtD71u4
-	LmSMcJyYCEchKxjzb7gMAZwwtkEDXeof5OmKWPZ09FCbHg00ACDiem8T+euqgksi5OYW0YKZvirpE
-	E4Wvj3a/EBg2SqaHgnoIEcBbdEgtbMarJYvZAE0VvYyDEMj4bZacnf6oR6jraKT44fx8PnDou6isC
-	JpeRltGQ4zmfdwhsIP+jO71JmrPDXrrrb4Du7PHQqkxm4nQlze12DM7q624SzpqzBhqzQatPiOhq9
-	O54L/oKHfJENzbetqSfhrNh4zNqdpi1Dby1r68jZAhst2HvtvmfkGOWldvlGw7zs3/Eja5mTlwPgv
-	NIiye0oMKaaA+kzvjucw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=k0Du9CAm/uEVVGmXAFNW4kBz2i/6gioPHP7tbRSOav0=; b=fdHxd60f5DOaGP
+	hmEwbxWS5x5ygq05WVFXFwuNsXPscGpjfml9Lx39NYvnqbqVtpfiL6o4pkkeWUvpnswVGexHzsxMa
+	vUL/5Wd6wCSv0K4Ezaxwpw1tkYK/YZ0FnMHcWd54Wg79QMsOmu2T0T0vKuDoo+9EQ6Jxmhe4exG/S
+	kmsg4S7MO2zJ0i3YGCqZlVqSVrNUL7y83k7ZEXx5eXAge+pAOjML8ays7d4GyarRfYXV8U9rDwagA
+	YcfdeoGO2X9aZ+fsvX8kvGzaqUnrdPO44WeyPC7OMPWrU4gzFG6/Kf4I8rZai03u/GRzCqjDcpNqg
+	ido9RvEus7l1aBtCgaug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTO3A-0005Bb-Ub; Wed, 22 May 2019 10:00:44 +0000
-Received: from mail-db5eur03olkn0802.outbound.protection.outlook.com
- ([2a01:111:f400:fe0a::802]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1hTO3L-0005MO-EL; Wed, 22 May 2019 10:00:55 +0000
+Received: from mail-eopbgr20043.outbound.protection.outlook.com ([40.107.2.43]
+ helo=EUR02-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTO2Q-0003J8-Lh
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 10:00:02 +0000
-Received: from VE1EUR03FT044.eop-EUR03.prod.protection.outlook.com
- (10.152.18.57) by VE1EUR03HT110.eop-EUR03.prod.protection.outlook.com
- (10.152.19.189) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1900.16; Wed, 22 May
- 2019 09:59:56 +0000
-Received: from VI1PR07MB4432.eurprd07.prod.outlook.com (10.152.18.60) by
- VE1EUR03FT044.mail.protection.outlook.com (10.152.19.106) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.20.1922.16 via Frontend Transport; Wed, 22 May 2019 09:59:56 +0000
-Received: from VI1PR07MB4432.eurprd07.prod.outlook.com
- ([fe80::91f:b1bb:a60a:fdc3]) by VI1PR07MB4432.eurprd07.prod.outlook.com
- ([fe80::91f:b1bb:a60a:fdc3%7]) with mapi id 15.20.1922.013; Wed, 22 May 2019
- 09:59:52 +0000
-From: Philippe Mazenauer <philippe.mazenauer@outlook.de>
-Subject: [PATCH] arm: kexec: Make function static
-Thread-Topic: [PATCH] arm: kexec: Make function static
-Thread-Index: AQHVEIUZgDg7hS40xUq+6eBVL19VIg==
-Date: Wed, 22 May 2019 09:59:52 +0000
-Message-ID: <VI1PR07MB443291A1A53B11863CC94CF2FD000@VI1PR07MB4432.eurprd07.prod.outlook.com>
-Accept-Language: de-CH, en-US
+ id 1hTO2R-0003Jx-Jl
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 10:00:04 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ne8lUTHYIL86i2wNgDyCIKewW238BE0WWwtYB4rlmGc=;
+ b=m7Ck0MGvWJyNgtGPBn9NwqQUl6R9UrHlPF6Kywfem+v2srgrMQqDZszpSzbA4N+1fAQrHOithtr2XS7dp9lRVKiabsngAs9gKPG2HgCvcMN/ACsROHkQahlM9xL5UlqfNBqGuaZw4jZWT8FaMm/CQQABxUicFtdh6qOCyTwMPjo=
+Received: from VI1PR04MB4543.eurprd04.prod.outlook.com (20.177.55.90) by
+ VI1PR04MB3103.eurprd04.prod.outlook.com (10.170.229.13) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1900.18; Wed, 22 May 2019 09:59:56 +0000
+Received: from VI1PR04MB4543.eurprd04.prod.outlook.com
+ ([fe80::5062:df97:a70b:93f8]) by VI1PR04MB4543.eurprd04.prod.outlook.com
+ ([fe80::5062:df97:a70b:93f8%7]) with mapi id 15.20.1900.020; Wed, 22 May 2019
+ 09:59:56 +0000
+From: Robin Gong <yibin.gong@nxp.com>
+To: "robh@kernel.org" <robh@kernel.org>, "broonie@kernel.org"
+ <broonie@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "festevam@gmail.com"
+ <festevam@gmail.com>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "vkoul@kernel.org" <vkoul@kernel.org>, "dan.j.williams@intel.com"
+ <dan.j.williams@intel.com>, "u.kleine-koenig@pengutronix.de"
+ <u.kleine-koenig@pengutronix.de>, "plyatov@gmail.com" <plyatov@gmail.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>, "l.stach@pengutronix.de"
+ <l.stach@pengutronix.de>
+Subject: [PATCH v4 03/14] Revert "dmaengine: imx-sdma: refine to load context
+ only once"
+Thread-Topic: [PATCH v4 03/14] Revert "dmaengine: imx-sdma: refine to load
+ context only once"
+Thread-Index: AQHVEIUcooXNsGt30kGAg9mv40OQWQ==
+Date: Wed, 22 May 2019 09:59:56 +0000
+Message-ID: <1558548188-1155-4-git-send-email-yibin.gong@nxp.com>
+References: <1558548188-1155-1-git-send-email-yibin.gong@nxp.com>
+In-Reply-To: <1558548188-1155-1-git-send-email-yibin.gong@nxp.com>
+Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-clientproxiedby: CO2PR04CA0184.namprd04.prod.outlook.com
- (2603:10b6:104:5::14) To VI1PR07MB4432.eurprd07.prod.outlook.com
- (2603:10a6:802:67::17)
-x-incomingtopheadermarker: OriginalChecksum:9142456758F54D39B48F89E39745417DE4858B598A4A4642D51B4949F38FC9BA;
- UpperCasedChecksum:673D0B77AC37DD197533B001F0229245E98729DDA58EB21241DBD1DE73F31F60;
- SizeAsReceived:7446; Count:47
+x-mailer: git-send-email 2.7.4
+x-clientproxiedby: HK2PR04CA0045.apcprd04.prod.outlook.com
+ (2603:1096:202:14::13) To VI1PR04MB4543.eurprd04.prod.outlook.com
+ (2603:10a6:803:6d::26)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=yibin.gong@nxp.com; 
 x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: git-send-email 2.17.1
-x-tmn: [N+ZqhKH1FPuF8bK7tTriPAl46xXok0HX]
-x-microsoft-original-message-id: <20190522095930.157843-1-philippe.mazenauer@outlook.de>
+x-originating-ip: [119.31.174.66]
 x-ms-publictraffictype: Email
-x-incomingheadercount: 47
-x-eopattributedmessage: 0
+x-ms-office365-filtering-correlation-id: 5198f41b-7940-4489-8ae2-08d6de9c3e5d
+x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(5050001)(7020095)(20181119110)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031322404)(2017031323274)(2017031324274)(1601125500)(1603101475)(1701031045);
- SRVR:VE1EUR03HT110; 
-x-ms-traffictypediagnostic: VE1EUR03HT110:
-x-microsoft-antispam-message-info: eS9mnvW9kHXHBBWNTG9JZafcO8zVJPEQAWqDW3RrlqB5J/XLPlW5PYAyq7MzzS2ZvWeSyjOkEOk+A6PshOjMyqJlOGW2dIHCV3VsIGbrsd8spimjIQ2U5JdcusrQAC029JFwqg13iL/Y1ngrE0QH+TB9LGia7nYat3apUdC9i2P/3K5ZoW3Uf8sbLIY/dThr
-Content-ID: <F1A48A595A058F458EE05BA24C232FBE@eurprd07.prod.outlook.com>
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:VI1PR04MB3103; 
+x-ms-traffictypediagnostic: VI1PR04MB3103:
+x-microsoft-antispam-prvs: <VI1PR04MB310374DB00236321CA76A9F189000@VI1PR04MB3103.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:119;
+x-forefront-prvs: 0045236D47
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(366004)(189003)(199004)(68736007)(81166006)(2201001)(2501003)(52116002)(71200400001)(14454004)(186003)(256004)(14444005)(26005)(53936002)(7736002)(25786009)(81156014)(305945005)(8936002)(4326008)(86362001)(8676002)(50226002)(71190400001)(486006)(6512007)(5660300002)(6436002)(66946007)(73956011)(498600001)(446003)(66446008)(66066001)(66476007)(64756008)(66556008)(3846002)(6116002)(99286004)(386003)(6506007)(2906002)(54906003)(76176011)(36756003)(11346002)(110136005)(7416002)(2616005)(6486002)(102836004)(476003)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB3103;
+ H:VI1PR04MB4543.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: Y8oAKkUHnkvIIgIjNIEA3PwfuQhy6FttTbW/93WME0lgYzqshVGp5OlnC6UqU24GRuWS7x7GQD0K7p7zHm6H5rI3yJ2/68cj1OhfVKByL1EHJdazo4mWsbLOGab6dilxpfEazYJaMD/Z9GrZGyzyRil5VzdSJA3XopWi8IEzRa8hN2TN01rSX3Nvr32qy/MT/qPhP7AUgJgK8XXykWt7E2iseTfECuh0pXFbENQmGaPEgQRk2DajXJVi1y7KLhxqXxMB2xVik8QEE33OscwStE2y85AgkHzx981+++CfalPKiqMiOgGZJy00CBWqeHAiZtVgNCBlEkGaLn9wBsqTChywr6Te4C+RlOcsG3l71lb7D4tpXsQEJd5Hr3o5uUW5180J3p9Xt6rqgdALN4+afYQRRF6t3EyToFkjPirbtqc=
 MIME-Version: 1.0
-X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-Network-Message-Id: dab1e480-4559-47e7-9221-08d6de9c3c0d
-X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-originalarrivaltime: 22 May 2019 09:59:52.7398 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Internet
-X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1EUR03HT110
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5198f41b-7940-4489-8ae2-08d6de9c3e5d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 May 2019 09:59:56.8392 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB3103
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_025958_715436_D7084076 
-X-CRM114-Status: GOOD (  11.59  )
-X-Spam-Score: 2.8 (++)
+X-CRM114-CacheID: sfid-20190522_025959_966333_FED4E602 
+X-CRM114-Status: GOOD (  12.00  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe0a:0:0:0:802 listed in]
- [list.dnswl.org]
+ no trust [40.107.2.43 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.2 MISSING_HEADERS        Missing To: header
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (philippe.mazenauer[at]outlook.de)
- 1.6 MALFORMED_FREEMAIL     Bad headers on message from free email
- service
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -105,31 +124,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Philippe Mazenauer <philippe.mazenauer@outlook.de>,
- Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
- "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>,
- open list <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TWFrZSBmdW5jdGlvbiBtYWNoaW5lX2NyYXNoX25vbnBhbmljX2NvcmUoKSBzdGF0aWMsIGFzIGl0
-IGlzIG9ubHkNCnJlZmVyZW5jZWQgaW4gdGhpcyBmaWxlLg0KDQouLi9hcmNoL2FybS9rZXJuZWwv
-bWFjaGluZV9rZXhlYy5jOjgyOjY6IHdhcm5pbmc6IG5vIHByZXZpb3VzIHByb3RvdHlwZSBmb3Ig
-4oCYbWFjaGluZV9jcmFzaF9ub25wYW5pY19jb3Jl4oCZIFstV21pc3NpbmctcHJvdG90eXBlc10N
-CiB2b2lkIG1hY2hpbmVfY3Jhc2hfbm9ucGFuaWNfY29yZSh2b2lkICp1bnVzZWQpDQogICAgICBe
-fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn4NCg0KU2lnbmVkLW9mZi1ieTogUGhpbGlwcGUgTWF6
-ZW5hdWVyIDxwaGlsaXBwZS5tYXplbmF1ZXJAb3V0bG9vay5kZT4NCi0tLQ0KIGFyY2gvYXJtL2tl
-cm5lbC9tYWNoaW5lX2tleGVjLmMgfCAyICstDQogMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9u
-KCspLCAxIGRlbGV0aW9uKC0pDQoNCmRpZmYgLS1naXQgYS9hcmNoL2FybS9rZXJuZWwvbWFjaGlu
-ZV9rZXhlYy5jIGIvYXJjaC9hcm0va2VybmVsL21hY2hpbmVfa2V4ZWMuYw0KaW5kZXggNzYzMDBm
-MzgxM2U4Li4yNDU2MjE1NzM4MDIgMTAwNjQ0DQotLS0gYS9hcmNoL2FybS9rZXJuZWwvbWFjaGlu
-ZV9rZXhlYy5jDQorKysgYi9hcmNoL2FybS9rZXJuZWwvbWFjaGluZV9rZXhlYy5jDQpAQCAtNzks
-NyArNzksNyBAQCB2b2lkIG1hY2hpbmVfa2V4ZWNfY2xlYW51cChzdHJ1Y3Qga2ltYWdlICppbWFn
-ZSkNCiB7DQogfQ0KIA0KLXZvaWQgbWFjaGluZV9jcmFzaF9ub25wYW5pY19jb3JlKHZvaWQgKnVu
-dXNlZCkNCitzdGF0aWMgdm9pZCBtYWNoaW5lX2NyYXNoX25vbnBhbmljX2NvcmUodm9pZCAqdW51
-c2VkKQ0KIHsNCiAJc3RydWN0IHB0X3JlZ3MgcmVnczsNCiANCi0tIA0KMi4xNy4xDQoNCl9fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJu
-ZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
-Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+This reverts commit ad0d92d7ba6aecbe2705907c38ff8d8be4da1e9c, because
+in spi-imx case, burst length may be changed dynamically.
+
+Signed-off-by: Robin Gong <yibin.gong@nxp.com>
+---
+ drivers/dma/imx-sdma.c | 7 -------
+ 1 file changed, 7 deletions(-)
+
+diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c
+index 99d9f43..407a56e 100644
+--- a/drivers/dma/imx-sdma.c
++++ b/drivers/dma/imx-sdma.c
+@@ -377,7 +377,6 @@ struct sdma_channel {
+ 	unsigned long			watermark_level;
+ 	u32				shp_addr, per_addr;
+ 	enum dma_status			status;
+-	bool				context_loaded;
+ 	struct imx_dma_data		data;
+ 	struct work_struct		terminate_worker;
+ };
+@@ -988,9 +987,6 @@ static int sdma_load_context(struct sdma_channel *sdmac)
+ 	int ret;
+ 	unsigned long flags;
+ 
+-	if (sdmac->context_loaded)
+-		return 0;
+-
+ 	if (sdmac->direction == DMA_DEV_TO_MEM)
+ 		load_address = sdmac->pc_from_device;
+ 	else if (sdmac->direction == DMA_DEV_TO_DEV)
+@@ -1033,8 +1029,6 @@ static int sdma_load_context(struct sdma_channel *sdmac)
+ 
+ 	spin_unlock_irqrestore(&sdma->channel_0_lock, flags);
+ 
+-	sdmac->context_loaded = true;
+-
+ 	return ret;
+ }
+ 
+@@ -1074,7 +1068,6 @@ static void sdma_channel_terminate_work(struct work_struct *work)
+ 	sdmac->desc = NULL;
+ 	spin_unlock_irqrestore(&sdmac->vc.lock, flags);
+ 	vchan_dma_desc_free_list(&sdmac->vc, &head);
+-	sdmac->context_loaded = false;
+ }
+ 
+ static int sdma_disable_channel_async(struct dma_chan *chan)
+-- 
+2.7.4
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
