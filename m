@@ -2,54 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B66F42645A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 15:11:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B666526460
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 15:13:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:To:From:Date:
+	Reply-To:Subject:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=u+BP0nOztRE7Sz+9dxxZYSzDoR/W7hICsO9Rb013kwg=; b=MjDwwoNLCdgeWh
-	E+dAa4Cog0F6gpAmmt64cJR1XfEZYVrmxRMOZrKgoAsn6BNYEiw+gooHOFxcVGtuGN6MhM5Ey6xOB
-	0vPIq6/KactKG71TVTSkOM2YI6T3gemXYPuOj4aw1OveEsn/trr/C0PzvDUoLK4Dwx7uieUJ9kaxV
-	pzrb4RhYPgFFTP492JVNdQd9r6YzkXvM91Rov9Ys1txcm4jJQudgXEZlxs96LciC30SBr40Az07jp
-	oHcQvvJNI7ndB6ReZ4fyIiwmmwjDxVLNgKEYKxQB4wrH8Dw/Jgvz1zcjgh2Fyl4QGhqAzXzIgbeaA
-	vTaMY9AK7G2anoR4vYDQ==;
+	List-Owner; bh=TDDByjKO1ZKwxoKZMLV2RLaLHn5l4UjX4Eg3kJlnbvQ=; b=qKwZ3NAiodmkuI
+	jSwKTIy5aSO1fyV5mFjWuwnFUXWRdsZ0A6ZROlEQS7tsEjja0RtpfhcAc+DOgAU8rlcpguuhxtd5P
+	05HpBd3oT0ha44M0SDVXZWi6ZkjWtUYBQu/TDUiLUydHTgXfVuALZWw/hTPAKhUKG96mUjWQFuQ1y
+	my1lRl4bXQ+AytxJns6w1zQh2uPo0wr+aghsCFatBOlrRhigFS0YVV/CvrCmB/zmkj+1Fk0hJZ1lv
+	2QaGH0tenjjasz93XmV6agYjzlvGd1IZP1UsE+haTGHpRDBN//bnoZCHgrzydsEOCXMYo60JKdM2p
+	1DKkrY9tZ8k9TjAfxnOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTR1U-0001Ge-GE; Wed, 22 May 2019 13:11:12 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTR1O-0001GF-7U
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 13:11:07 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B1DB580D;
- Wed, 22 May 2019 06:11:05 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C55F33F575;
- Wed, 22 May 2019 06:11:04 -0700 (PDT)
-Date: Wed, 22 May 2019 14:11:02 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: torvalds@linux-foundation.org
-Subject: [GIT PULL] arm64: First round of fixes for -rc2
-Message-ID: <20190522131102.GC7876@fuggles.cambridge.arm.com>
+	id 1hTR3W-0001d9-Cz; Wed, 22 May 2019 13:13:18 +0000
+Received: from honk.sigxcpu.org ([24.134.29.49])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hTR3O-0001bp-2P
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 13:13:12 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by honk.sigxcpu.org (Postfix) with ESMTP id DBFE6FB03;
+ Wed, 22 May 2019 15:13:05 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
+Received: from honk.sigxcpu.org ([127.0.0.1])
+ by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id 016_fW5-3grm; Wed, 22 May 2019 15:13:04 +0200 (CEST)
+Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
+ id 26DC440FF6; Wed, 22 May 2019 15:13:04 +0200 (CEST)
+Date: Wed, 22 May 2019 15:13:04 +0200
+From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Message-ID: <20190522131304.GA5692@bogon.m.sigxcpu.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_061106_275048_51334CF8 
-X-CRM114-Status: GOOD (  13.89  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190522_061310_435016_74D2D5E0 
+X-CRM114-Status: GOOD (  22.25  )
+X-Spam-Score: 1.8 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (1.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [24.134.29.49 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 1.8 MISSING_SUBJECT        Missing Subject: header
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -61,84 +63,216 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Jacky Bai <ping.bai@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Lucas Stach <l.stach@pengutronix.de>, Fabio Estevam <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Abel Vesa <abel.vesa@nxp.com>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Linus,
+Bcc: =
 
-Please pull these arm64 fixes for -rc2. The summary is in the tag.
+Subject: Re: [RFC PATCH] soc: imx: Try harder to get imq8mq SoC revisions
+Reply-To: =
 
-I was actually planning to send these in during the merge window, which
-is why the branch is based on top of the previous arm64 pull rather than
--rc1. Unfortunately, due to various goings on, my ability to send
-external email has been patchy (no pun intended) but here we are anyway.
+In-Reply-To: <20190508124018.GA16859@bogon.m.sigxcpu.org>
 
-I'll probably send some more fixes in later this week, but based on -rc1
-to avoid conflicts.
+Hi Leonard,,
+On Wed, May 08, 2019 at 02:40:18PM +0200, Guido G=FCnther wrote:
+> Hi Leonard,
+> =
 
+> Thanks for your comments. Let's try s.th. different then: identify by
+> bootrom, ocotop and anatop and fall back to ATF afterwards (I'll split
+> out the DT part and add binding docs if this makes sense). I'm also
+> happy to drop the whole ATF logic until mailine ATF catched up:
+> =
+
+> The mainline ATF doesn't currently support the FSL_SIP_GET_SOC_INFO call
+> nor does it have the code to identify different imx8mq SOC revisions so
+> mimic what NXPs ATF does here.
+
+Does this makes sense? If so I'll send this out as a series.
+
+> =
+
+> As a fallback use ATF so we can identify new revisions once it gains
+> support or when using NXPs ATF.
+
+I'm also fine with dropping the ATF part if we don't want to depend on
+it in mainline.
 Cheers,
+ -- Guido
 
-Will
+> =
 
---->8
+> Signed-off-by: Guido G=FCnther <agx@sigxcpu.org>
+> ---
+>  arch/arm64/boot/dts/freescale/imx8mq.dtsi | 12 ++++
+>  drivers/soc/imx/soc-imx8.c                | 68 ++++++++++++++++++-----
+>  2 files changed, 67 insertions(+), 13 deletions(-)
+> =
 
-The following changes since commit b33f908811b7627015238e0dee9baf2b4c9d720d:
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/=
+dts/freescale/imx8mq.dtsi
+> index 6d635ba0904c..52aa1600b33b 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+> @@ -246,6 +246,18 @@
+>  		ranges =3D <0x0 0x0 0x0 0x3e000000>;
+>  		dma-ranges =3D <0x40000000 0x0 0x40000000 0xc0000000>;
+>  =
 
-  Merge branch 'for-next/perf' of git://git.kernel.org/pub/scm/linux/kernel/git/will/linux into for-next/core (2019-05-03 10:18:08 +0100)
+> +		bus@00000000 { /* ROM */
+> +			compatible =3D "simple-bus";
+> +			#address-cells =3D <1>;
+> +			#size-cells =3D <1>;
+> +			ranges =3D <0x00000000 0x00000000 0x20000>;
+> +
+> +			rom@00000000 {
+> +				compatible =3D "fsl,imx8mq-bootrom";
+> +				reg =3D <0x00000000 0x1e800>;
+> +			};
+> +		};
+> +
+>  		bus@30000000 { /* AIPS1 */
+>  			compatible =3D "fsl,imx8mq-aips-bus", "simple-bus";
+>  			#address-cells =3D <1>;
+> diff --git a/drivers/soc/imx/soc-imx8.c b/drivers/soc/imx/soc-imx8.c
+> index fc6429f9170a..0a1fe82efe86 100644
+> --- a/drivers/soc/imx/soc-imx8.c
+> +++ b/drivers/soc/imx/soc-imx8.c
+> @@ -3,6 +3,7 @@
+>   * Copyright 2019 NXP.
+>   */
+>  =
 
-are available in the git repository at:
+> +#include <linux/arm-smccc.h>
+>  #include <linux/init.h>
+>  #include <linux/io.h>
+>  #include <linux/of_address.h>
+> @@ -11,39 +12,80 @@
+>  #include <linux/platform_device.h>
+>  #include <linux/of.h>
+>  =
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git tags/arm64-fixes
+> +#define REV_A0				0x10
+> +#define REV_B0				0x20
+>  #define REV_B1				0x21
+>  =
 
-for you to fetch changes up to 7a0a93c51799edc45ee57c6cc1679aa94f1e03d5:
+> +#define IMX8MQ_SW_INFO_A0		0x800
+> +#define IMX8MQ_SW_INFO_B0		0x83C
+>  #define IMX8MQ_SW_INFO_B1		0x40
+>  #define IMX8MQ_SW_MAGIC_B1		0xff0055aa
+>  =
 
-  arm64: vdso: Explicitly add build-id option (2019-05-16 11:45:36 +0100)
+> +#define FSL_SIP_GET_SOC_INFO		0xc2000006
+> +
+>  struct imx8_soc_data {
+>  	char *name;
+>  	u32 (*soc_revision)(void);
+>  };
+>  =
 
-----------------------------------------------------------------
-First round of arm64 fixes for -rc2
+> -static u32 __init imx8mq_soc_revision(void)
+> +static u32 __init imx8mq_soc_revision_atf(void)
+> +{
+> +	struct arm_smccc_res res =3D { 0 };
+> +
+> +	arm_smccc_smc(FSL_SIP_GET_SOC_INFO, 0, 0, 0, 0, 0, 0, 0, &res);
+> +	/*
+> +	 * Bit [23:16] is the silicon ID
+> +	 * Bit[7:4] is the base layer revision,
+> +	 * Bit[3:0] is the metal layer revision
+> +	 * e.g. 0x10 stands for Tapeout 1.0
+> +	 */
+> +	return res.a0 & 0xff;
+> +}
+> +
+> +static u32 __init imx8mq_soc_magic_node(const char *node, u32 offset)
+>  {
+>  	struct device_node *np;
+> -	void __iomem *ocotp_base;
+> +	void __iomem *base;
+>  	u32 magic;
+> -	u32 rev =3D 0;
+>  =
 
-- Fix SPE probe failure when backing auxbuf with high-order pages
+> -	np =3D of_find_compatible_node(NULL, NULL, "fsl,imx8mq-ocotp");
+> +	np =3D of_find_compatible_node(NULL, NULL, node);
+>  	if (!np)
+> -		goto out;
+> +		return 0;
+> +	base =3D of_iomap(np, 0);
+> +	WARN_ON(!base);
+> +
+> +	magic =3D readl_relaxed(base + offset);
+> +	iounmap(base);
+> +	of_node_put(np);
+> +
+> +	return magic;
+> +}
+>  =
 
-- Fix handling of DMA allocations from outside of the vmalloc area
+> -	ocotp_base =3D of_iomap(np, 0);
+> -	WARN_ON(!ocotp_base);
+> +static u32 __init imx8mq_soc_revision(void)
+> +{
+> +	u32 magic;
+>  =
 
-- Fix generation of build-id ELF section for vDSO object
+> -	magic =3D readl_relaxed(ocotp_base + IMX8MQ_SW_INFO_B1);
+> +	/* B1 revision identified by ocotop */
+> +	magic =3D imx8mq_soc_magic_node("fsl,imx8mq-ocotp", IMX8MQ_SW_INFO_B1);
+>  	if (magic =3D=3D IMX8MQ_SW_MAGIC_B1)
+> -		rev =3D REV_B1;
+> +		return REV_B1;
+>  =
 
-- Disable huge I/O mappings if kernel page table dumping is enabled
+> -	iounmap(ocotp_base);
+> +	/* B0 identified by bootrom */
+> +	magic =3D imx8mq_soc_magic_node("fsl,imx8mq-bootrom", IMX8MQ_SW_INFO_B0=
+);
+> +	if ((magic & 0xff) =3D=3D REV_B0)
+> +		return REV_B0;
+>  =
 
-- A few other minor fixes (comments, kconfig etc)
+> -out:
+> -	of_node_put(np);
+> -	return rev;
+> +	/* A0 identified by anatop */
+> +	magic =3D imx8mq_soc_magic_node("fsl,imx8mq-anatop", IMX8MQ_SW_INFO_A0);
+> +	if ((magic & 0xff) =3D=3D REV_A0)
+> +		return REV_A0;
+> +
+> +	/* Read revision from ATF as fallback */
+> +	magic =3D imx8mq_soc_revision_atf();
+> +	if (magic !=3D 0xff)
+> +		return magic;
+> +
+> +	return 0;
+>  }
+>  =
 
-----------------------------------------------------------------
-Christoph Hellwig (1):
-      arm64/iommu: handle non-remapped addresses in ->mmap and ->get_sgtable
+>  static const struct imx8_soc_data imx8mq_soc_data =3D {
+> -- =
 
-Hillf Danton (1):
-      arm64: assembler: Update comment above cond_yield_neon() macro
+> 2.20.1
+> =
 
-Laura Abbott (1):
-      arm64: vdso: Explicitly add build-id option
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> =
 
-Mark Rutland (1):
-      arm64/mm: Inhibit huge-vmap with ptdump
-
-Will Deacon (2):
-      drivers/perf: arm_spe: Don't error on high-order pages for aux buf
-      arm64: Print physical address of page table base in show_pte()
-
-Yury Norov (1):
-      arm64: don't trash config with compat symbol if COMPAT is disabled
-
- arch/arm64/Kconfig                 |  2 +-
- arch/arm64/include/asm/assembler.h | 11 +++++------
- arch/arm64/kernel/vdso/Makefile    |  4 ++--
- arch/arm64/mm/dma-mapping.c        | 10 ++++++++++
- arch/arm64/mm/fault.c              |  5 +++--
- arch/arm64/mm/mmu.c                | 11 ++++++++---
- drivers/perf/arm_spe_pmu.c         | 10 +---------
- 7 files changed, 30 insertions(+), 23 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
