@@ -2,66 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09F8025D8E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 07:24:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E033D25DC7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 07:48:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XBOklu5SpuFQErDwONYlefofjflbPbPd1zUUb594RX8=; b=ubPVNCkGJrfOvv
-	9gM1ALYpiqA103oK+HNrTY2+5YzJcjRCNDuSLOQ6v9055ePsIcOFf3MiYXEz9HKTchsP5zL/adhxr
-	ulok4xe3GKDfpFXB2AQhN+ViKKmBqQqSSY9RVd889365qiM1uWQZgJXRh7hYM91mwT3uv1sSSb8Hs
-	8LDgNKZQotwvkFzB9kxiXmTbJE43gQUjPPH6KWbZm6Fvaxa3GsW17DbC7czNLjvf7IGgoxyOVdppM
-	labNzXKOfdsmEZcu8Wk2KPofC6gCeqI+TpnSgD9ecS4CcwRl3vdJsBa0RN9cWdk6oVkOuURVRyloV
-	kIAYvHCtgrYg8QAtL2IQ==;
+	List-Owner; bh=1Mv1NwJuF44k4JQtX6Uge36FXK32Gf/jfPMXaGhnHnM=; b=M7/vBoGFCyyZBC
+	wGpx/twI7dbWfFdf+oeRvofDozApUuNtM3cGGepEL9cWRH1TgZvAbfewXTx6785oybZW8E+w4XdUj
+	VL2kxa43vDuYAJeiE1h5gC9MPuG1qc/KxrdwF+1khdKHWOwqHzKlMTYyY6mo6LQR39U9rGAzz4jvP
+	PjjSbjNXv6CR0yD+Axzr1XI71jdq11205yjkJ+/6Bueeh7Nei+HuR8boYXfHovX0nqxE9AT7o6Gj6
+	HSQhB3k1n6mkdTok5vTnlEJbaXS4AqJJE0/wha+XEhYkD4YNJkh6OFxaD44qsVxHiWwplYZS21hoW
+	wtDHHKq6xHz3ZXaLqmhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTJkC-0008Mr-7n; Wed, 22 May 2019 05:24:52 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hTK7K-0008Iz-SS; Wed, 22 May 2019 05:48:46 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTJk5-0008Ln-JU; Wed, 22 May 2019 05:24:47 +0000
-X-UUID: 162dfa29ccc94ad0855b26031fae5ed8-20190521
-X-UUID: 162dfa29ccc94ad0855b26031fae5ed8-20190521
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <long.cheng@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1585397934; Tue, 21 May 2019 21:24:33 -0800
-Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 21 May 2019 22:24:31 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by mtkmbs08n1.mediatek.inc
- (172.21.101.55) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Wed, 22 May 2019 13:24:23 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 22 May 2019 13:24:22 +0800
-Message-ID: <1558502662.14150.31.camel@mhfsdcap03>
-Subject: Re: [PATCH 4/4] serial: 8250-mtk: modify uart DMA rx
-From: Long Cheng <long.cheng@mediatek.com>
-To: Nicolas Boichat <drinkcat@chromium.org>
-Date: Wed, 22 May 2019 13:24:22 +0800
-In-Reply-To: <1558078602.14150.27.camel@mhfsdcap03>
-References: <1556336193-15198-1-git-send-email-long.cheng@mediatek.com>
- <1556336193-15198-5-git-send-email-long.cheng@mediatek.com>
- <CANMq1KDTyu48joV6uMksGBMz9EmjFH9SEpGAm93YCZ40jxgBpQ@mail.gmail.com>
- <1558078602.14150.27.camel@mhfsdcap03>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1hTK7C-0008IE-Ui
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 05:48:40 +0000
+Received: by mail-wm1-x344.google.com with SMTP id 15so752129wmg.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 21 May 2019 22:48:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=/tTf0o0S8X8KnChjJDfa2qYc6+8coCPQJrmnG5nMMms=;
+ b=uUve0ZipnHu6cyNoI44TVwaoHbwO5Byw+UNySCQATErAkisI+mHPIbXN4XMMGxFRbd
+ YU40swFzP8fPVrDfpyRwt0K1sNhjTFKRFTZ0jvSzNnDU0aayBXnXPkYQat15PEkbB7B2
+ vdZImcsk6mklId16PzEv6fSWDOnOUW7nUpfiCksXPkZXigHjnI5aKhbvqJXFMXLtR1k2
+ r1UkXhC+sh+5Qx+M+vywvf0UdtefyAn9GD2w+2709N6CFU7uSw9jsRL/28jYYhx4QoH4
+ JLdQdZRONICn8J4EdMWYVD3d35LNAwi7oVsGBzBZiP2B7vylayIdp89IvWCQxbdPoC41
+ LGKQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=/tTf0o0S8X8KnChjJDfa2qYc6+8coCPQJrmnG5nMMms=;
+ b=EcNmUuE4gggYmOQB1hvcXUjU84dTP5N6cjbPP5+FN+JaDtHY42a9w/aX3imKxbUP7v
+ EsmNvMSFgghWuL0NCw0PlboJoM9uJS1tejIcWyFb4VZHWQlScRt8oi6bW2ZGIYZfRsHO
+ +VNhKAtksidXgVjHuxydafd7sYvSC5riPtH6XWY+iUM8a06CAHhwibbPRy3qnAf/TyGf
+ R8gvwmSNAZAYAUxHnN64l9phCf9IGD0FfsPTj0TUKfS1W9WuBJhp7fJW1+zCNAGbhHlW
+ C3UvuDytNs4hVClhUwnqtr4+sVDBS3nZyXGXaX0R8trq/OuvnXIx2lxu5RpCEC4m44YH
+ 5rVg==
+X-Gm-Message-State: APjAAAX3bUJ0CWUqIWGw4jUaHpiocgGKRWMbN0dDIcvmrfwF7GN5V05P
+ l+YX8tG4LPqLKY0WlAFFA4uLAw==
+X-Google-Smtp-Source: APXvYqw7YHeamUnm0AYxBgRDczx++fDFxFoKXuD29B3Z8t2mMkfJ9/TcKb9Bf8lpkjRJKl0djf95Gw==
+X-Received: by 2002:a1c:f10f:: with SMTP id p15mr6051518wmh.150.1558504115720; 
+ Tue, 21 May 2019 22:48:35 -0700 (PDT)
+Received: from dell ([2.27.167.43])
+ by smtp.gmail.com with ESMTPSA id p8sm15177511wro.0.2019.05.21.22.48.34
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 21 May 2019 22:48:34 -0700 (PDT)
+Date: Wed, 22 May 2019 06:48:33 +0100
+From: Lee Jones <lee.jones@linaro.org>
+To: Amelie Delaunay <amelie.delaunay@st.com>
+Subject: Re: [PATCH] pinctrl: stmfx: Fix compile issue when CONFIG_OF_GPIO is
+ not defined
+Message-ID: <20190522054833.GB4574@dell>
+References: <1558338735-8444-1-git-send-email-amelie.delaunay@st.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <1558338735-8444-1-git-send-email-amelie.delaunay@st.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_222445_647383_0A41D520 
-X-CRM114-Status: GOOD (  25.88  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190521_224839_019045_60AAECBF 
+X-CRM114-Status: GOOD (  13.73  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -73,189 +99,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Sean Wang <sean.wang@kernel.org>,
- Zhenbao Liu <zhenbao.liu@mediatek.com>, Ryder
- Lee <ryder.lee@mediatek.com>, Long Cheng <long.cheng@mediatek.com>,
- linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
- YT Shen <yt.shen@mediatek.com>, Yingjoe Chen <yingjoe.chen@mediatek.com>,
- devicetree@vger.kernel.org, Sean Wang <sean.wang@mediatek.com>, Rob
- Herring <robh+dt@kernel.org>, "moderated list:ARM/Mediatek
- SoC support" <linux-mediatek@lists.infradead.org>, Matthias
- Brugger <matthias.bgg@gmail.com>, Dan Williams <dan.j.williams@intel.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Randy Dunlap <rdunlap@infradead.org>, lkml <linux-kernel@vger.kernel.org>,
- Vinod Koul <vkoul@kernel.org>, dmaengine@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Alexandre Torgue <alexandre.torgue@st.com>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
+ linux-gpio@vger.kernel.org, kbuild-all@01.org,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2019-05-17 at 15:36 +0800, Long Cheng wrote:
-> On Wed, 2019-05-15 at 21:48 +0800, Nicolas Boichat wrote:
-> > On Sat, Apr 27, 2019 at 11:36 AM Long Cheng <long.cheng@mediatek.com> wrote:
-> > >
-> > > Modify uart rx and complete for DMA.
-> > 
-> > I don't know much about the DMA framework, but can you please explain
-> > why you are making the changes in this CL? I see that you are dropping
-> > dma_sync_single_for_device calls, for example, why?
-> > 
-> 
-> the rx buffer is create by 'dma_alloc_coherent'. in the function, the
-> buffer is uncache. We don't need to sync between CPU and DMA. So I
-> remove it.
-> 
-> > >
-> > > Signed-off-by: Long Cheng <long.cheng@mediatek.com>
-> > > ---
-> > >  drivers/tty/serial/8250/8250_mtk.c |   53 ++++++++++++++++--------------------
-> > >  1 file changed, 23 insertions(+), 30 deletions(-)
-> > >
-> > > diff --git a/drivers/tty/serial/8250/8250_mtk.c b/drivers/tty/serial/8250/8250_mtk.c
-> > > index c1fdbc0..04081a6 100644
-> > > --- a/drivers/tty/serial/8250/8250_mtk.c
-> > > +++ b/drivers/tty/serial/8250/8250_mtk.c
-> > > @@ -30,7 +30,6 @@
-> > >  #define MTK_UART_DMA_EN_TX     0x2
-> > >  #define MTK_UART_DMA_EN_RX     0x5
-> > >
-> > > -#define MTK_UART_TX_SIZE       UART_XMIT_SIZE
-> > >  #define MTK_UART_RX_SIZE       0x8000
-> > >  #define MTK_UART_TX_TRIGGER    1
-> > >  #define MTK_UART_RX_TRIGGER    MTK_UART_RX_SIZE
-> > > @@ -64,28 +63,30 @@ static void mtk8250_dma_rx_complete(void *param)
-> > >         struct mtk8250_data *data = up->port.private_data;
-> > >         struct tty_port *tty_port = &up->port.state->port;
-> > >         struct dma_tx_state state;
-> > > +       int copied, cnt, tmp;
-> > >         unsigned char *ptr;
-> > > -       int copied;
-> > >
-> > > -       dma_sync_single_for_cpu(dma->rxchan->device->dev, dma->rx_addr,
-> > > -                               dma->rx_size, DMA_FROM_DEVICE);
-> > > +       if (data->rx_status == DMA_RX_SHUTDOWN)
-> > > +               return;
-> > >
-> > >         dmaengine_tx_status(dma->rxchan, dma->rx_cookie, &state);
-> > > +       cnt = dma->rx_size - state.residue;
-> > > +       tmp = cnt;
-> > 
-> > I ponder, maybe we should rename cnt to left? (like, how many bytes
-> > are left to transfer, in total) Or maybe "total"
-> > Then maybe rename tmp to cnt.
-> > 
-> like better.
-> 
-> > >
-> > > -       if (data->rx_status == DMA_RX_SHUTDOWN)
-> > > -               return;
-> > > +       if ((data->rx_pos + cnt) > dma->rx_size)
-> > > +               tmp = dma->rx_size - data->rx_pos;
-> > 
-> > Maybe replace this and the line above:
-> > tmp = max_t(int, cnt, dma->rx_size - data->rx_pos);
-> > 
-> Yes. It's better.
-> 
-
-can't replace by 'max_t'. So I will keep original code.
-
-> > >
-> > > -       if ((data->rx_pos + state.residue) <= dma->rx_size) {
-> > > -               ptr = (unsigned char *)(data->rx_pos + dma->rx_buf);
-> > > -               copied = tty_insert_flip_string(tty_port, ptr, state.residue);
-> > > -       } else {
-> > > -               ptr = (unsigned char *)(data->rx_pos + dma->rx_buf);
-> > > -               copied = tty_insert_flip_string(tty_port, ptr,
-> > > -                                               dma->rx_size - data->rx_pos);
-> > > +       ptr = (unsigned char *)(data->rx_pos + dma->rx_buf);
-> > > +       copied = tty_insert_flip_string(tty_port, ptr, tmp);
-> > > +       data->rx_pos += tmp;
-> > > +
-> > > +       if (cnt > tmp) {
-> > >                 ptr = (unsigned char *)(dma->rx_buf);
-> > > -               copied += tty_insert_flip_string(tty_port, ptr,
-> > > -                               data->rx_pos + state.residue - dma->rx_size);
-> > > +               tmp = cnt - tmp;
-> > > +               copied += tty_insert_flip_string(tty_port, ptr, tmp);
-> > > +               data->rx_pos = tmp;
-> > >         }
-> > > +
-> > >         up->port.icount.rx += copied;
-> > >
-> > >         tty_flip_buffer_push(tty_port);
-> > > @@ -96,9 +97,7 @@ static void mtk8250_dma_rx_complete(void *param)
-> > >  static void mtk8250_rx_dma(struct uart_8250_port *up)
-> > >  {
-> > >         struct uart_8250_dma *dma = up->dma;
-> > > -       struct mtk8250_data *data = up->port.private_data;
-> > >         struct dma_async_tx_descriptor  *desc;
-> > > -       struct dma_tx_state      state;
-> > >
-> > >         desc = dmaengine_prep_slave_single(dma->rxchan, dma->rx_addr,
-> > >                                            dma->rx_size, DMA_DEV_TO_MEM,
-> > > @@ -113,12 +112,6 @@ static void mtk8250_rx_dma(struct uart_8250_port *up)
-> > >
-> > >         dma->rx_cookie = dmaengine_submit(desc);
-> > >
-> > > -       dmaengine_tx_status(dma->rxchan, dma->rx_cookie, &state);
-> > > -       data->rx_pos = state.residue;
-> > > -
-> > > -       dma_sync_single_for_device(dma->rxchan->device->dev, dma->rx_addr,
-> > > -                                  dma->rx_size, DMA_FROM_DEVICE);
-> > > -
-> > >         dma_async_issue_pending(dma->rxchan);
-> > >  }
-> > >
-> > > @@ -131,13 +124,13 @@ static void mtk8250_dma_enable(struct uart_8250_port *up)
-> > >         if (data->rx_status != DMA_RX_START)
-> > >                 return;
-> > >
-> > > -       dma->rxconf.direction           = DMA_DEV_TO_MEM;
-> > > -       dma->rxconf.src_addr_width      = dma->rx_size / 1024;
-> > > -       dma->rxconf.src_addr            = dma->rx_addr;
-> > > +       dma->rxconf.direction                           = DMA_DEV_TO_MEM;
-> > > +       dma->rxconf.src_port_window_size        = dma->rx_size;
-> > > +       dma->rxconf.src_addr                            = dma->rx_addr;
-> > >
-> > > -       dma->txconf.direction           = DMA_MEM_TO_DEV;
-> > > -       dma->txconf.dst_addr_width      = MTK_UART_TX_SIZE / 1024;
-> > > -       dma->txconf.dst_addr            = dma->tx_addr;
-> > > +       dma->txconf.direction                           = DMA_MEM_TO_DEV;
-> > > +       dma->txconf.dst_port_window_size        = UART_XMIT_SIZE;
-> > > +       dma->txconf.dst_addr                            = dma->tx_addr;
-> > >
-> > >         serial_out(up, UART_FCR, UART_FCR_ENABLE_FIFO | UART_FCR_CLEAR_RCVR |
-> > >                 UART_FCR_CLEAR_XMIT);
-> > > @@ -217,7 +210,7 @@ static void mtk8250_shutdown(struct uart_port *port)
-> > >          * Mediatek UARTs use an extra highspeed register (UART_MTK_HIGHS)
-> > >          *
-> > >          * We need to recalcualte the quot register, as the claculation depends
-> > > -        * on the vaule in the highspeed register.
-> > > +        * on the value in the highspeed register.
-> > 
-> > Since you're doing some cosmetic changes here, you might as well fix
-> > recalcualte => recalculate and claculation => calculation on the line
-> > above.
-> > 
-> 
-> I see.
-> 
-> > But technically, this should belong in another patch...
-> > 
-> > >          *
-> > >          * Some baudrates are not supported by the chip, so we use the next
-> > >          * lower rate supported and update termios c_flag.
-> > > --
-> > > 1.7.9.5
-> > >
-> 
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gTW9uLCAyMCBNYXkgMjAxOSwgQW1lbGllIERlbGF1bmF5IHdyb3RlOgoKPiBXaGVuIENPTkZJ
+R19HUElPX09GIGlzIG5vdCBkZWZpbmVkLCBzdHJ1Y3QgZ3Bpb19jaGlwICdvZl9ub2RlJyBtZW1i
+ZXIgZG9lcwo+IG5vdCBleGlzdDoKPiBkcml2ZXJzL3BpbmN0cmwvcGluY3RybC1zdG1meC5jOiBJ
+biBmdW5jdGlvbiAnc3RtZnhfcGluY3RybF9wcm9iZSc6Cj4gZHJpdmVycy9waW5jdHJsL3BpbmN0
+cmwtc3RtZnguYzo2NTI6MTc6IGVycm9yOiAnc3RydWN0IGdwaW9fY2hpcCcgaGFzIG5vIG1lbWJl
+ciBuYW1lZCAnb2Zfbm9kZScKPiAgICAgIHBjdGwtPmdwaW9fY2hpcC5vZl9ub2RlID0gbnA7Cj4g
+Cj4gRml4ZXM6IDE0OTBkOWY4NDFiMSAoInBpbmN0cmw6IEFkZCBTVE1GWCBHUElPIGV4cGFuZGVy
+IFBpbmN0cmwvR1BJTyBkcml2ZXIiKQo+IFJlcG9ydGVkLWJ5OiBrYnVpbGQgdGVzdCByb2JvdCA8
+bGtwQGludGVsLmNvbT4KPiBTaWduZWQtb2ZmLWJ5OiBBbWVsaWUgRGVsYXVuYXkgPGFtZWxpZS5k
+ZWxhdW5heUBzdC5jb20+Cj4gLS0tCj4gIGRyaXZlcnMvcGluY3RybC9waW5jdHJsLXN0bWZ4LmMg
+fCAyICsrCj4gIDEgZmlsZSBjaGFuZ2VkLCAyIGluc2VydGlvbnMoKykKPiAKPiBkaWZmIC0tZ2l0
+IGEvZHJpdmVycy9waW5jdHJsL3BpbmN0cmwtc3RtZnguYyBiL2RyaXZlcnMvcGluY3RybC9waW5j
+dHJsLXN0bWZ4LmMKPiBpbmRleCBlYmE4NzJjLi5iYjY0YWEwIDEwMDY0NAo+IC0tLSBhL2RyaXZl
+cnMvcGluY3RybC9waW5jdHJsLXN0bWZ4LmMKPiArKysgYi9kcml2ZXJzL3BpbmN0cmwvcGluY3Ry
+bC1zdG1meC5jCj4gQEAgLTY0OCw3ICs2NDgsOSBAQCBzdGF0aWMgaW50IHN0bWZ4X3BpbmN0cmxf
+cHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiAgCXBjdGwtPmdwaW9fY2hpcC5i
+YXNlID0gLTE7Cj4gIAlwY3RsLT5ncGlvX2NoaXAubmdwaW8gPSBwY3RsLT5wY3RsX2Rlc2MubnBp
+bnM7Cj4gIAlwY3RsLT5ncGlvX2NoaXAuY2FuX3NsZWVwID0gdHJ1ZTsKPiArI2lmZGVmIENPTkZJ
+R19PRl9HUElPCj4gIAlwY3RsLT5ncGlvX2NoaXAub2Zfbm9kZSA9IG5wOwo+ICsjZW5kaWYKClRo
+aXMgaXMgcHJldHR5IHVnbHkuICBXaWxsIFNUTUZYIGV2ZXIgYmUgdXNlZCB3aXRob3V0IE9GIHN1
+cHBvcnQ/ICBJZgpub3QsIGl0IG1pZ2h0IGJlIGJldHRlciB0byBwbGFjZSB0aGlzIHJlc3RyaWN0
+aW9uIG9uIHRoZSBkcml2ZXIgYXMgYQp3aG9sZS4KCkluY2lkZW50YWxseSwgd2h5IGlzIHRoaXMg
+YmxhbmtlZCBvdXQgaW4gdGhlIHN0cnVjdHVyZSBkZWZpbml0aW9uPwpFdmVuICdzdHJ1Y3QgZGV2
+aWNlJyBkb2Vzbid0IGRvIHRoaXMuCgo+ICAJcGN0bC0+Z3Bpb19jaGlwLm5lZWRfdmFsaWRfbWFz
+ayA9IHRydWU7Cj4gIAo+ICAJcmV0ID0gZGV2bV9ncGlvY2hpcF9hZGRfZGF0YShwY3RsLT5kZXYs
+ICZwY3RsLT5ncGlvX2NoaXAsIHBjdGwpOwoKLS0gCkxlZSBKb25lcyBb5p2O55C85pavXQpMaW5h
+cm8gU2VydmljZXMgVGVjaG5pY2FsIExlYWQKTGluYXJvLm9yZyDilIIgT3BlbiBzb3VyY2Ugc29m
+dHdhcmUgZm9yIEFSTSBTb0NzCkZvbGxvdyBMaW5hcm86IEZhY2Vib29rIHwgVHdpdHRlciB8IEJs
+b2cKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
+LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
+bS1rZXJuZWwK
