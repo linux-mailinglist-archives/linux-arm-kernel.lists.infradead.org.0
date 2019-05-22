@@ -2,56 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9AA12695E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 19:47:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C84B26964
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 19:50:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j1StWCzrd6CGBgVHkXIryz065KETwneSgnYAAtGjIAQ=; b=oM4tPUwHUcBPpt
-	R6scpEbpyOc43K28Sc66/NK1vbVdJwk95ucecBwIi9KlxTAg5EJRKN/draxsCW5hoe6KUdwe4EBpk
-	Vd9RWW9J7nvOIBMd5bASuinrVda+DQGkExz9NXLzGLSy5ltvKs+6OKM97EOVwswoqClgHPNY4ZNVr
-	gK6INvCip2bcs6+5uIna35osl/HscdBlmYX9XpH2XSAyPUpXQBENDseDanIjgEiX2FpNMAyQKdovx
-	qjz3S+T8eVMANPhQAgf4D9v634TsgXhBv5tx5MGY1OcQduOCMTdnhw8PH+oaPEbzhk9tGobaZyU8I
-	13U27rS5lhltQ1nhdN2w==;
+	List-Owner; bh=3KMipPmPBDjguWOdey5TkCuHu1k+pBFjJv+qspwoMho=; b=M4zcGtu3zL4u3R
+	C71yX9WLFUu9P/7tZuVaY1puvQaVEN5TWEMCQ5OkKqnyFJExnZkDfUp1HehKcMPQqfkdQwdgWWeT9
+	En5/pj+WIvJHSG6bxcSoTzunoSbCFH96YUQRR+WAU3GxFs2m8+lIWPBFR7hlHMTEv5cRm7WUCBNP9
+	XQAQ34WwLAuU5scyXlsg2w3q2o5qsMKZ+SDipd60ea8LKVWXl/5swa81jhEMLgihOHdjbiXX7bBln
+	o6Yp+i7dXi4+SWg4Vzq3tNKEAJ2LZEF4NzcuydKyeCHy7P4r7+JtBqhblTJJu1ajnWfpghVuviKTV
+	+4q0iD75lc8JkJbgX8OA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTVLF-0000MA-D2; Wed, 22 May 2019 17:47:53 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTVKq-0008V3-1q
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 17:47:32 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 845EA15AB;
- Wed, 22 May 2019 10:47:27 -0700 (PDT)
-Received: from eglon.cambridge.arm.com (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D8A553F5AF;
- Wed, 22 May 2019 10:47:25 -0700 (PDT)
-From: James Morse <james.morse@arm.com>
-To: linux-arm-kernel@lists.infradead.org,
-	kvmarm@lists.cs.columbia.edu
-Subject: [PATCH v2 2/2] KVM: arm/arm64: Move cc/it checks under hyp's Makefile
- to avoid instrumentation
-Date: Wed, 22 May 2019 18:47:05 +0100
-Message-Id: <20190522174705.236469-3-james.morse@arm.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190522174705.236469-1-james.morse@arm.com>
-References: <20190522174705.236469-1-james.morse@arm.com>
+	id 1hTVNY-00022m-Vt; Wed, 22 May 2019 17:50:16 +0000
+Received: from mail-it1-x142.google.com ([2607:f8b0:4864:20::142])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hTVNR-00021s-VP
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 17:50:11 +0000
+Received: by mail-it1-x142.google.com with SMTP id m141so5021957ita.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 22 May 2019 10:50:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=cJPxAPmrd2C4lX1coOIuzlgyV9VAK5JxLftwCKVxBHg=;
+ b=XtpAYJeRmqcV2qahVe9bnVhLNmRBX+E8AvnMnWZdm34v5n5IxPxvYf3GdHVmIcM+dR
+ G/bykiZ5qWgHHcx/cBLMSGZo4fPp6mgehuO3IycMm3Zvpa9kbWK7eSOGsW3UacnqmOxz
+ v4wrca0Ge9mo4keTJwTJE4ECHtfFHR4C1F/2WCkELXTK3qjS4HAYF2tH0GYCFhLPjhVe
+ +bLGHnf8PvzRHK3kRSpagZ95wEx2EndR4ufmQoqO0xBhv/l18nnE/9H7eJHnZ1N0jUvi
+ Ta7YsAeCfwzvY4jCvernQpgQuZKE3WB1hJp95lLS1Ldiz40kFfXpj9qdqQ+mulY2yvhf
+ fvnQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=cJPxAPmrd2C4lX1coOIuzlgyV9VAK5JxLftwCKVxBHg=;
+ b=iVCLKtCtFejPwG5wgiGtSNSqwwg5W1gjrVhax9ElvydL81mKwJ9TU1QR1303ADSA4v
+ /DF+woD49GV7JJ8UEMXH/e4tSwyOOLi+22tAP5KnoLnkcR6D2uX9AmfoLJwK/I5yM0Ta
+ kSrZDEj9M6wOb8M0USsUC88D/LhA7knASVV6uTwzW/CDUYIUaOteJwTk1IkhvGw01+IX
+ Jpm9qB1nFwtkT+YpLZUTQ8oJpxjVNqaoW7pNC8amFqWZ8Cp1yW5VOkNcQpRnGAr9zDQ4
+ iURXceaUOzIRdJAWWpLbr/eXzFbcbp529l3oqjCkfMliFvf9RHcaCmmx8IPomnYo9LCr
+ Y/3g==
+X-Gm-Message-State: APjAAAW+910umvgPsZMTUD2FVxitYh3+KXvlHwxZ/K6gBuZ2qT01PIQG
+ F6hMgqkhyK4eDEhzILWz8gKsyF1oYhTA7krMZmI=
+X-Google-Smtp-Source: APXvYqxJR8aAkCSA3tmznR7qBXCq6yO1/12SPYPe5qh1go89kiAn+y4cSSRa+WH8WDBeqh+6GyQgwXeUumpzjizidug=
+X-Received: by 2002:a24:d43:: with SMTP id 64mr2561513itx.114.1558547408444;
+ Wed, 22 May 2019 10:50:08 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190522071227.31488-1-andrew.smirnov@gmail.com>
+ <1558517848.2624.34.camel@pengutronix.de>
+In-Reply-To: <1558517848.2624.34.camel@pengutronix.de>
+From: Andrey Smirnov <andrew.smirnov@gmail.com>
+Date: Wed, 22 May 2019 10:49:57 -0700
+Message-ID: <CAHQ1cqHxhafgsnt6O9G6iVFjbh0+HNPKrFq6UO2hbXcU2t28aw@mail.gmail.com>
+Subject: Re: [PATCH 1/3] ARM: dts: imx6: rdu2: Add node for UCS1002 USB
+ charger chip
+To: Lucas Stach <l.stach@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_104728_609168_B40CA397 
-X-CRM114-Status: GOOD (  20.88  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190522_105010_038122_7D89E0A1 
+X-CRM114-Status: GOOD (  10.84  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (andrew.smirnov[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,335 +94,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Pouloze <suzuki.poulose@arm.com>,
- Marc Zyngier <marc.zyngier@arm.com>, Julien Thierry <julien.thierry@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>, James Morse <james.morse@arm.com>,
- Andrew Murray <Andrew.Murray@arm.com>
+Cc: Fabio Estevam <festevam@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
+ Chris Healy <cphealy@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-KVM has helpers to handle the condition codes of trapped aarch32
-instructions. These are marked __hyp_text and used from HYP, but they
-aren't built by the 'hyp' Makefile, which has all the runes to avoid ASAN
-and KCOV instrumentation.
+On Wed, May 22, 2019 at 2:37 AM Lucas Stach <l.stach@pengutronix.de> wrote:
+>
+> Hi Andrey,
+>
+> Am Mittwoch, den 22.05.2019, 00:12 -0700 schrieb Andrey Smirnov:
+> > Add node for UCS1002 USB charger chip connected to front panel USB and
+> > replace "regulator-fixed" previously used to control VBUS.
+>
+> I've had a similar version of this patch, but also added GPIO hogs for
+> the UCS1002 configuration pins, so the device is put into the expected
+> state even before driver load. Maybe something worth to consider?
 
-Move this code to a new hyp/aarch32.c to avoid a hyp-panic when starting
-an aarch32 guest on a host built with the ASAN/KCOV debug options.
+Makes sense, will add in v2.
 
-Fixes: 021234ef3752f ("KVM: arm64: Make kvm_condition_valid32() accessible from EL2")
-Fixes: 8cebe750c4d9a ("arm64: KVM: Make kvm_skip_instr32 available to HYP")
-Signed-off-by: James Morse <james.morse@arm.com>
----
- arch/arm/kvm/hyp/Makefile   |   1 +
- arch/arm64/kvm/hyp/Makefile |   1 +
- virt/kvm/arm/aarch32.c      | 121 --------------------------------
- virt/kvm/arm/hyp/aarch32.c  | 136 ++++++++++++++++++++++++++++++++++++
- 4 files changed, 138 insertions(+), 121 deletions(-)
- create mode 100644 virt/kvm/arm/hyp/aarch32.c
-
-diff --git a/arch/arm/kvm/hyp/Makefile b/arch/arm/kvm/hyp/Makefile
-index d2b5ec9c4b92..ba88b1eca93c 100644
---- a/arch/arm/kvm/hyp/Makefile
-+++ b/arch/arm/kvm/hyp/Makefile
-@@ -11,6 +11,7 @@ CFLAGS_ARMV7VE		   :=$(call cc-option, -march=armv7ve)
- 
- obj-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/hyp/vgic-v3-sr.o
- obj-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/hyp/timer-sr.o
-+obj-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/hyp/aarch32.o
- 
- obj-$(CONFIG_KVM_ARM_HOST) += tlb.o
- obj-$(CONFIG_KVM_ARM_HOST) += cp15-sr.o
-diff --git a/arch/arm64/kvm/hyp/Makefile b/arch/arm64/kvm/hyp/Makefile
-index 82d1904328ad..ea710f674cb6 100644
---- a/arch/arm64/kvm/hyp/Makefile
-+++ b/arch/arm64/kvm/hyp/Makefile
-@@ -10,6 +10,7 @@ KVM=../../../../virt/kvm
- 
- obj-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/hyp/vgic-v3-sr.o
- obj-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/hyp/timer-sr.o
-+obj-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/hyp/aarch32.o
- 
- obj-$(CONFIG_KVM_ARM_HOST) += vgic-v2-cpuif-proxy.o
- obj-$(CONFIG_KVM_ARM_HOST) += sysreg-sr.o
-diff --git a/virt/kvm/arm/aarch32.c b/virt/kvm/arm/aarch32.c
-index 5abbe9b3c652..6880236974b8 100644
---- a/virt/kvm/arm/aarch32.c
-+++ b/virt/kvm/arm/aarch32.c
-@@ -25,127 +25,6 @@
- #include <asm/kvm_emulate.h>
- #include <asm/kvm_hyp.h>
- 
--/*
-- * stolen from arch/arm/kernel/opcodes.c
-- *
-- * condition code lookup table
-- * index into the table is test code: EQ, NE, ... LT, GT, AL, NV
-- *
-- * bit position in short is condition code: NZCV
-- */
--static const unsigned short cc_map[16] = {
--	0xF0F0,			/* EQ == Z set            */
--	0x0F0F,			/* NE                     */
--	0xCCCC,			/* CS == C set            */
--	0x3333,			/* CC                     */
--	0xFF00,			/* MI == N set            */
--	0x00FF,			/* PL                     */
--	0xAAAA,			/* VS == V set            */
--	0x5555,			/* VC                     */
--	0x0C0C,			/* HI == C set && Z clear */
--	0xF3F3,			/* LS == C clear || Z set */
--	0xAA55,			/* GE == (N==V)           */
--	0x55AA,			/* LT == (N!=V)           */
--	0x0A05,			/* GT == (!Z && (N==V))   */
--	0xF5FA,			/* LE == (Z || (N!=V))    */
--	0xFFFF,			/* AL always              */
--	0			/* NV                     */
--};
--
--/*
-- * Check if a trapped instruction should have been executed or not.
-- */
--bool __hyp_text kvm_condition_valid32(const struct kvm_vcpu *vcpu)
--{
--	unsigned long cpsr;
--	u32 cpsr_cond;
--	int cond;
--
--	/* Top two bits non-zero?  Unconditional. */
--	if (kvm_vcpu_get_hsr(vcpu) >> 30)
--		return true;
--
--	/* Is condition field valid? */
--	cond = kvm_vcpu_get_condition(vcpu);
--	if (cond == 0xE)
--		return true;
--
--	cpsr = *vcpu_cpsr(vcpu);
--
--	if (cond < 0) {
--		/* This can happen in Thumb mode: examine IT state. */
--		unsigned long it;
--
--		it = ((cpsr >> 8) & 0xFC) | ((cpsr >> 25) & 0x3);
--
--		/* it == 0 => unconditional. */
--		if (it == 0)
--			return true;
--
--		/* The cond for this insn works out as the top 4 bits. */
--		cond = (it >> 4);
--	}
--
--	cpsr_cond = cpsr >> 28;
--
--	if (!((cc_map[cond] >> cpsr_cond) & 1))
--		return false;
--
--	return true;
--}
--
--/**
-- * adjust_itstate - adjust ITSTATE when emulating instructions in IT-block
-- * @vcpu:	The VCPU pointer
-- *
-- * When exceptions occur while instructions are executed in Thumb IF-THEN
-- * blocks, the ITSTATE field of the CPSR is not advanced (updated), so we have
-- * to do this little bit of work manually. The fields map like this:
-- *
-- * IT[7:0] -> CPSR[26:25],CPSR[15:10]
-- */
--static void __hyp_text kvm_adjust_itstate(struct kvm_vcpu *vcpu)
--{
--	unsigned long itbits, cond;
--	unsigned long cpsr = *vcpu_cpsr(vcpu);
--	bool is_arm = !(cpsr & PSR_AA32_T_BIT);
--
--	if (is_arm || !(cpsr & PSR_AA32_IT_MASK))
--		return;
--
--	cond = (cpsr & 0xe000) >> 13;
--	itbits = (cpsr & 0x1c00) >> (10 - 2);
--	itbits |= (cpsr & (0x3 << 25)) >> 25;
--
--	/* Perform ITAdvance (see page A2-52 in ARM DDI 0406C) */
--	if ((itbits & 0x7) == 0)
--		itbits = cond = 0;
--	else
--		itbits = (itbits << 1) & 0x1f;
--
--	cpsr &= ~PSR_AA32_IT_MASK;
--	cpsr |= cond << 13;
--	cpsr |= (itbits & 0x1c) << (10 - 2);
--	cpsr |= (itbits & 0x3) << 25;
--	*vcpu_cpsr(vcpu) = cpsr;
--}
--
--/**
-- * kvm_skip_instr - skip a trapped instruction and proceed to the next
-- * @vcpu: The vcpu pointer
-- */
--void __hyp_text kvm_skip_instr32(struct kvm_vcpu *vcpu, bool is_wide_instr)
--{
--	bool is_thumb;
--
--	is_thumb = !!(*vcpu_cpsr(vcpu) & PSR_AA32_T_BIT);
--	if (is_thumb && !is_wide_instr)
--		*vcpu_pc(vcpu) += 2;
--	else
--		*vcpu_pc(vcpu) += 4;
--	kvm_adjust_itstate(vcpu);
--}
--
- /*
-  * Table taken from ARMv8 ARM DDI0487B-B, table G1-10.
-  */
-diff --git a/virt/kvm/arm/hyp/aarch32.c b/virt/kvm/arm/hyp/aarch32.c
-new file mode 100644
-index 000000000000..d31f267961e7
---- /dev/null
-+++ b/virt/kvm/arm/hyp/aarch32.c
-@@ -0,0 +1,136 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Hyp portion of the (not much of an) Emulation layer for 32bit guests.
-+ *
-+ * Copyright (C) 2012,2013 - ARM Ltd
-+ * Author: Marc Zyngier <marc.zyngier@arm.com>
-+ *
-+ * based on arch/arm/kvm/emulate.c
-+ * Copyright (C) 2012 - Virtual Open Systems and Columbia University
-+ * Author: Christoffer Dall <c.dall@virtualopensystems.com>
-+ */
-+
-+#include <linux/kvm_host.h>
-+#include <asm/kvm_emulate.h>
-+#include <asm/kvm_hyp.h>
-+
-+/*
-+ * stolen from arch/arm/kernel/opcodes.c
-+ *
-+ * condition code lookup table
-+ * index into the table is test code: EQ, NE, ... LT, GT, AL, NV
-+ *
-+ * bit position in short is condition code: NZCV
-+ */
-+static const unsigned short cc_map[16] = {
-+	0xF0F0,			/* EQ == Z set            */
-+	0x0F0F,			/* NE                     */
-+	0xCCCC,			/* CS == C set            */
-+	0x3333,			/* CC                     */
-+	0xFF00,			/* MI == N set            */
-+	0x00FF,			/* PL                     */
-+	0xAAAA,			/* VS == V set            */
-+	0x5555,			/* VC                     */
-+	0x0C0C,			/* HI == C set && Z clear */
-+	0xF3F3,			/* LS == C clear || Z set */
-+	0xAA55,			/* GE == (N==V)           */
-+	0x55AA,			/* LT == (N!=V)           */
-+	0x0A05,			/* GT == (!Z && (N==V))   */
-+	0xF5FA,			/* LE == (Z || (N!=V))    */
-+	0xFFFF,			/* AL always              */
-+	0			/* NV                     */
-+};
-+
-+/*
-+ * Check if a trapped instruction should have been executed or not.
-+ */
-+bool __hyp_text kvm_condition_valid32(const struct kvm_vcpu *vcpu)
-+{
-+	unsigned long cpsr;
-+	u32 cpsr_cond;
-+	int cond;
-+
-+	/* Top two bits non-zero?  Unconditional. */
-+	if (kvm_vcpu_get_hsr(vcpu) >> 30)
-+		return true;
-+
-+	/* Is condition field valid? */
-+	cond = kvm_vcpu_get_condition(vcpu);
-+	if (cond == 0xE)
-+		return true;
-+
-+	cpsr = *vcpu_cpsr(vcpu);
-+
-+	if (cond < 0) {
-+		/* This can happen in Thumb mode: examine IT state. */
-+		unsigned long it;
-+
-+		it = ((cpsr >> 8) & 0xFC) | ((cpsr >> 25) & 0x3);
-+
-+		/* it == 0 => unconditional. */
-+		if (it == 0)
-+			return true;
-+
-+		/* The cond for this insn works out as the top 4 bits. */
-+		cond = (it >> 4);
-+	}
-+
-+	cpsr_cond = cpsr >> 28;
-+
-+	if (!((cc_map[cond] >> cpsr_cond) & 1))
-+		return false;
-+
-+	return true;
-+}
-+
-+/**
-+ * adjust_itstate - adjust ITSTATE when emulating instructions in IT-block
-+ * @vcpu:	The VCPU pointer
-+ *
-+ * When exceptions occur while instructions are executed in Thumb IF-THEN
-+ * blocks, the ITSTATE field of the CPSR is not advanced (updated), so we have
-+ * to do this little bit of work manually. The fields map like this:
-+ *
-+ * IT[7:0] -> CPSR[26:25],CPSR[15:10]
-+ */
-+static void __hyp_text kvm_adjust_itstate(struct kvm_vcpu *vcpu)
-+{
-+	unsigned long itbits, cond;
-+	unsigned long cpsr = *vcpu_cpsr(vcpu);
-+	bool is_arm = !(cpsr & PSR_AA32_T_BIT);
-+
-+	if (is_arm || !(cpsr & PSR_AA32_IT_MASK))
-+		return;
-+
-+	cond = (cpsr & 0xe000) >> 13;
-+	itbits = (cpsr & 0x1c00) >> (10 - 2);
-+	itbits |= (cpsr & (0x3 << 25)) >> 25;
-+
-+	/* Perform ITAdvance (see page A2-52 in ARM DDI 0406C) */
-+	if ((itbits & 0x7) == 0)
-+		itbits = cond = 0;
-+	else
-+		itbits = (itbits << 1) & 0x1f;
-+
-+	cpsr &= ~PSR_AA32_IT_MASK;
-+	cpsr |= cond << 13;
-+	cpsr |= (itbits & 0x1c) << (10 - 2);
-+	cpsr |= (itbits & 0x3) << 25;
-+	*vcpu_cpsr(vcpu) = cpsr;
-+}
-+
-+/**
-+ * kvm_skip_instr - skip a trapped instruction and proceed to the next
-+ * @vcpu: The vcpu pointer
-+ */
-+void __hyp_text kvm_skip_instr32(struct kvm_vcpu *vcpu, bool is_wide_instr)
-+{
-+	bool is_thumb;
-+
-+	is_thumb = !!(*vcpu_cpsr(vcpu) & PSR_AA32_T_BIT);
-+	if (is_thumb && !is_wide_instr)
-+		*vcpu_pc(vcpu) += 2;
-+	else
-+		*vcpu_pc(vcpu) += 4;
-+	kvm_adjust_itstate(vcpu);
-+}
--- 
-2.20.1
-
+Thanks,
+Andrey Smirnov
 
 _______________________________________________
 linux-arm-kernel mailing list
