@@ -2,73 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C60B526590
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 16:17:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 224912659F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 16:25:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ktWGJ79wpwHyhn5DMLjDBn0TJREygMIAe1xM1AuSv9Q=; b=dKz/Mrb/wFGf/m
-	ObbxPozcH0aF/ZVrfII0sMqL1MsxFKu3Vl+ev72UjmSgham0V5oJEat5qOe2taySmx4Q8j5bJfBUu
-	AlsOLPTzIUi6QxrOvT1fJnsw+o/y0/snO5wVbPDgelFvQUZ9XEJFkkUkI3ttOmwvwS3pVzD/Dshkm
-	MxDmlY0+7qGm8N0SuzEWyjIYAaUTHjTgOXCDdNqP6mdbc9vquGgWoZ9fYMvycclWjTUlGmwU2zxbs
-	Jdg+0Sfs0Cu30oWEPBBI874Uq6U4nR594MT8nPIjbwskPHMAjMYhkzTAi579TGcjPnNmjy98Bbrpx
-	ETr1rbbK9iu0iyObJ11w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+gbYvfyt4xyVv1mcD9A9sUpJWmRP7nqIf65piYKQ8HU=; b=bcVOqsPDWFhuK8
+	qaS7Clfs4q8FPk/QiXEYm+ShnDbVfoWWaULwDPgZNFBRgBTqcAGOaB8msgIYqSznGvGIp8J8obE69
+	1FqZiuoboeCfbbPJ4xD7jpbPdhAodpySbGQ3BjJX2Nh89MDIGO3sSEtvTAhOM602yhMK82x2k210N
+	CqXWENI4FixqSbNczhct+KgARw7fgWzucTpo5ksfmz/+b9ab1i5d3fDLRNeOoeh+itJ3VQDQE3WKb
+	O7f/hlwIglj1CV++XG5Vp0c7BOG0pife/R8JhgIj0U39zKODD82lhlRXdtk9KLZTka/eqNbpx7vV6
+	SieuNgM6DFGP238BGj0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTS3B-0003nF-W8; Wed, 22 May 2019 14:17:02 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1hTSBM-0006e4-6Z; Wed, 22 May 2019 14:25:28 +0000
+Received: from guitar.tcltek.co.il ([192.115.133.116] helo=mx.tkos.co.il)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTS36-0003mz-Oj
- for linux-arm-kernel@bombadil.infradead.org; Wed, 22 May 2019 14:16:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=73SuxDyavW+O+7Kca2sOpTx56wKPB8p3EZy2+QcZCD4=; b=C8Wpn9lOpcoIfvY5uNHghhzV5
- vvKsFW+E82f4s3kBW/kLcmg57UyFDp/hAWpN9ZEV7KnQqE5G6K0HKZ8gMbShQjIGGOoq9SFlUgNJi
- H2KJKMuZMrNwqS+3Cn8ieR/1M2tEIbRGJF53E6iRWqTvCZbd7WkcwLz6U6hOjeGbNgngatj1RxDKu
- TwUiQLUwCtiMlAs84+dCjrVjzFyOMo0Wqd56COdJ8xQG18xtJ+tWU/sp1271YkPI3s+834hMNsOBX
- 4DHpkwDa9sqg5lZ89T8gTMUZabGbNEW+MTPWf1onKcT6dSyjIcxrpixLEZmM+rYvmZPi9sU+mKHOS
- EuNJBHjZA==;
-Received: from foss.arm.com ([217.140.101.70])
- by casper.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTS33-0006JV-5f
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 14:16:55 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E408280D;
- Wed, 22 May 2019 07:16:20 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 57C233F718; Wed, 22 May 2019 07:16:15 -0700 (PDT)
-Date: Wed, 22 May 2019 15:16:12 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Andrey Konovalov <andreyknvl@google.com>
-Subject: Re: [PATCH v15 17/17] selftests, arm64: add a selftest for passing
- tagged pointers to kernel
-Message-ID: <20190522141612.GA28122@arrakis.emea.arm.com>
-References: <cover.1557160186.git.andreyknvl@google.com>
- <e31d9364eb0c2eba8ce246a558422e811d82d21b.1557160186.git.andreyknvl@google.com>
+ id 1hTSBE-0006dE-KT
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 14:25:23 +0000
+Received: from sapphire.tkos.co.il (unknown [192.168.100.188])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mx.tkos.co.il (Postfix) with ESMTPS id 8A35944030A;
+ Wed, 22 May 2019 17:25:12 +0300 (IDT)
+Date: Wed, 22 May 2019 17:25:11 +0300
+From: Baruch Siach <baruch@tkos.co.il>
+To: Abel Vesa <abel.vesa@nxp.com>
+Subject: i.MX8MQ clk: enet1_root_clk already disabled
+Message-ID: <20190522142511.7woox7asx636fiw7@sapphire.tkos.co.il>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <e31d9364eb0c2eba8ce246a558422e811d82d21b.1557160186.git.andreyknvl@google.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_151653_372498_ACFC2DC4 
-X-CRM114-Status: GOOD (  14.64  )
-X-Spam-Score: -5.0 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-5.0 points, 5.0 required)
+X-CRM114-CacheID: sfid-20190522_072520_952515_29E25CE5 
+X-CRM114-Status: UNSURE (   7.80  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -80,91 +58,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- linux-kselftest@vger.kernel.org, Felix Kuehling <Felix.Kuehling@amd.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
- Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: netdev@vger.kernel.org, Fabio Estevam <festevam@gmail.com>,
+ Fugang Duan <fugang.duan@nxp.com>, NXP Linux Team <linux-imx@nxp.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 06, 2019 at 06:31:03PM +0200, Andrey Konovalov wrote:
-> This patch is a part of a series that extends arm64 kernel ABI to allow to
-> pass tagged user pointers (with the top byte set to something else other
-> than 0x00) as syscall arguments.
-> 
-> This patch adds a simple test, that calls the uname syscall with a
-> tagged user pointer as an argument. Without the kernel accepting tagged
-> user pointers the test fails with EFAULT.
+Hi Abel,
 
-That's probably sufficient for a simple example. Something we could add
-to Documentation maybe is a small library that can be LD_PRELOAD'ed so
-that you can run a lot more tests like LTP.
+I'm testing kernel v5.2-rc1 on my i.MX8MQ system, SolidRun Hummingboard
+Pulse. The fec driver happens to probe before the gpio driver that we need for 
+the PHY reset. So fec_reset_phy() returns -EPROBE_DEFER. This triggers the 
+splat below when clk_ahb is disabled somewhere below the 'failed_reset' label:
 
-We could add this to selftests but I think it's too glibc specific.
+[    1.267218] enet1_root_clk already disabled
+[    1.271462] WARNING: CPU: 0 PID: 1 at drivers/clk/clk.c:924 clk_core_disable+0xa0/0xa8
+[    1.279396] CPU: 0 PID: 1 Comm: swapper/0 Not tainted 5.2.0-rc1-00002-gb88a935c6e3f-dirty #1340
+[    1.288105] Hardware name: SolidRun i.MX8MQ HummingBoard Pulse (DT)
+[    1.294383] pstate: 60000085 (nZCv daIf -PAN -UAO)
+[    1.299184] pc : clk_core_disable+0xa0/0xa8
+[    1.303376] lr : clk_core_disable+0xa0/0xa8
+[    1.307565] sp : ffff00001003bad0
+[    1.310886] x29: ffff00001003bad0 x28: ffff0000110c4000 
+[    1.316208] x27: ffff00001099f0b0 x26: ffff8000bd9f50a8 
+[    1.321530] x25: ffff00001099dfb0 x24: ffff0000110c4990 
+[    1.326852] x23: ffff8000bd9f4810 x22: ffff8000b8820000 
+[    1.332173] x21: ffff8000b949ec00 x20: ffff8000b91d0d00 
+[    1.337495] x19: ffff8000b91d0d00 x18: 0000000000000010 
+[    1.342816] x17: 0000000000000000 x16: 0000000000000000 
+[    1.348138] x15: ffffffffffffffff x14: 0720072007200720 
+[    1.353459] x13: 0720072007200720 x12: 0720072007200720 
+[    1.358780] x11: 0720072007200720 x10: 0720072007200720 
+[    1.364101] x9 : 0720072007200720 x8 : 0720072007200720 
+[    1.369423] x7 : 000000000000009b x6 : ffff8000ba020f00 
+[    1.374744] x5 : 0000000000000000 x4 : 0000000000000000 
+[    1.380065] x3 : 00000000ffffffff x2 : ffff000011008ce0 
+[    1.385386] x1 : dc292ba4797d3600 x0 : 0000000000000000 
+[    1.390708] Call trace:
+[    1.393162]  clk_core_disable+0xa0/0xa8
+[    1.397006]  clk_core_disable_lock+0x20/0x38
+[    1.401286]  clk_disable+0x1c/0x28
+[    1.404698]  fec_probe+0x6a4/0x1248
+[    1.408196]  platform_drv_probe+0x50/0xa0
+[    1.412214]  really_probe+0xcc/0x280
+[    1.415797]  driver_probe_device+0x54/0xe8
+[    1.419901]  device_driver_attach+0x6c/0x78
+[    1.424092]  __driver_attach+0x68/0xe8
+[    1.427851]  bus_for_each_dev+0x70/0xc0
+[    1.431695]  driver_attach+0x20/0x28
+[    1.435279]  bus_add_driver+0x170/0x1d0
+[    1.439123]  driver_register+0x60/0x110
+[    1.442967]  __platform_driver_register+0x44/0x50
+[    1.447683]  fec_driver_init+0x18/0x20
+[    1.451443]  do_one_initcall+0x70/0x164
+[    1.455288]  kernel_init_freeable+0x1a0/0x234
+[    1.459657]  kernel_init+0x10/0x100
+[    1.463156]  ret_from_fork+0x10/0x18
+[    1.466743] ---[ end trace 5e50e985bb318e6c ]---
 
---------------------8<------------------------------------
-#include <stdlib.h>
+On the following probe attempt after gpio probe, fec probes successfully, and
+Ethernet is functional. So this is not a fatal error, but it is not nice.
 
-#define TAG_SHIFT	(56)
-#define TAG_MASK	(0xffUL << TAG_SHIFT)
+Any idea how to fix it?
 
-void *__libc_malloc(size_t size);
-void __libc_free(void *ptr);
-void *__libc_realloc(void *ptr, size_t size);
-void *__libc_calloc(size_t nmemb, size_t size);
+Thanks,
+baruch
 
-static void *tag_ptr(void *ptr)
-{
-	unsigned long tag = rand() & 0xff;
-	if (!ptr)
-		return ptr;
-	return (void *)((unsigned long)ptr | (tag << TAG_SHIFT));
-}
-
-static void *untag_ptr(void *ptr)
-{
-	return (void *)((unsigned long)ptr & ~TAG_MASK);
-}
-
-void *malloc(size_t size)
-{
-	return tag_ptr(__libc_malloc(size));
-}
-
-void free(void *ptr)
-{
-	__libc_free(untag_ptr(ptr));
-}
-
-void *realloc(void *ptr, size_t size)
-{
-	return tag_ptr(__libc_realloc(untag_ptr(ptr), size));
-}
-
-void *calloc(size_t nmemb, size_t size)
-{
-	return tag_ptr(__libc_calloc(nmemb, size));
-}
+-- 
+     http://baruch.siach.name/blog/                  ~. .~   Tk Open Systems
+=}------------------------------------------------ooO--U--Ooo------------{=
+   - baruch@tkos.co.il - tel: +972.2.679.5364, http://www.tkos.co.il -
 
 _______________________________________________
 linux-arm-kernel mailing list
