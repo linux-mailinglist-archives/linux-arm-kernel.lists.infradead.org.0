@@ -2,82 +2,150 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2FC0D270C9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 22:22:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F6AF270D2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 22:30:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=C6iwor/v4NYPzqdZrBjPhfPifYtFqn3TfJTnumE23Rw=; b=eCRT4qkLubLRr5
-	YcHpfhjyXFimqrQz7/0dYc0CAni3aERnNrwUNv19Fl/zEU5I7uQbPbcv1YwESXBtoA7skHFu62Qfr
-	oRQFGljM85I5019dmnwyToMGO8S6//9qvsBPhoIoIv27YNXJrhhnYIj3hs/N+oWXwRzmSdXkkbVro
-	9ZX0lBsQdgu5F4AwilzO1en7q343Yjj3zYppIvE0Jkrc4FvdzlO0JH0S0yDTIvAgvR5xHBftSuIUG
-	Vk4VAHnw0r5+Av3o6OCLKiiTFDc53tS+DHQhCGHYcDrap83AMBYRDt9ENv9m5Pr6vwMS110nw7SUD
-	GpytenIAIxX4HbB4nO1A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oKW6tRW3oc9cDHetGGVCUe1wJFNjXN58ZJZEhZ9XFto=; b=uq+rqMKJZ3vAOr
+	7X611P6WgY+3BNdQJYfEy3KFgVyWEkgiwc06dRmNvvJzEhtp+NYR0v2hKVpgzExKr4fYcWvFGlmdR
+	efZjwNfw3Yw6lphHj4D0PwB9ZVhOS4Db7RrbZ8+GaIFynMhyagAOcLmkO7g6Qgegne0isCTVG8ud7
+	NFQeKaK1eH1Me5S6OmtQ7BjUjZvp95ODUdSdk+6lTIMX4hQ4aAU0vvqDWdhDPyYdIYdzRuC5psPY6
+	Qs8xg+uttdgLFAzAPCXKFJm15A4H55ymE/J4jfPW2Pks178MvzxEakee5LMBL9S/sE/o3YrXHGU+3
+	LbgbSoxINkYnPUR8L/Dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTXkl-0001jP-DU; Wed, 22 May 2019 20:22:23 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1hTXsF-0004cu-J5; Wed, 22 May 2019 20:30:07 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTXkZ-0001hv-So
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 20:22:16 +0000
-Received: by mail-qk1-x744.google.com with SMTP id q197so2375122qke.7
+ id 1hTXs4-0004cZ-JX
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 20:29:57 +0000
+Received: by mail-wm1-x343.google.com with SMTP id j187so5532400wma.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 May 2019 13:22:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
+ Wed, 22 May 2019 13:29:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=zmy7j+V2kfqtYYz1WddkagE0DXlderr4yqX5VeQ0jxE=;
- b=Wv7fYjcBuPUYR9MTgyDgURjkjHlUrU+vf2Rjh5kikh+aeZcuBsA45dQS0W772uQXyR
- wJy78nYNEK2ip1KWnGM2LE22p5ty2akRWDyauopLTLGmMOimVzjTRVfFCtf1un/wRAhF
- H39a8cuaCC555EA90d9ghjrpvYjUMsCiJYkUByOaPQzw83C2xylldr98kJUHCtnGmcLy
- ZKCvmW1B9b0npeIxz4U15fKa2mrqGczcA47ac45qCszR0woi68ptU/PdMxnm5xrBbvIY
- jqHC27QIKbDoyUxjHvLVb6+EEAh2qcJtkbObfDMEZWzFgOk5einIXqDBdrI/NOjAONzY
- Br6Q==
+ bh=KlVZNryM8pB5f8q8+hboTK/K1z9nBq5Ad03d8AAJxNY=;
+ b=Qa+RiDdXXDFrn6uJ4Tz7/YwbR58+zwe5dbQ9DWQ9F2aSIwRl2T4VDlxv38BVeNG8Zc
+ GDGdsnO9KsRdi7lMbvnozmUN8IbrQl1AqzcekGYGrtwgpcnMhj9UmU7m51jRdTagJbVz
+ Dl8ZvHWqli0fMyuotJgeMrKnBWdrHTIVAiRYfvfHDU1TMtto/qBPYSEVfACgIqPUt0Zg
+ +R01+GmAPqqBfR1gS+oACttndBCmTFy98thXX/GFwagwPTs919ct21aA8g3orm/Upc7x
+ Nwlgak9CMNTm+XX+IPdR4CJgbQOAMnWyyGNUuEf99fbJK4DWQ7SaCW2H2L42CPnX5WiM
+ 67Bw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=zmy7j+V2kfqtYYz1WddkagE0DXlderr4yqX5VeQ0jxE=;
- b=ji7nCbT+rWxsAY5VSKSs1d879SLykFVTuD/EQCOViIbfPQeuLY9alQkh8jFm7M5hyX
- 4tT9cITRXAEsPjUR65w9qE5Uu062Z83rOJANmiGpawJ0ytdU8T8KPmh4vyfJyRyZQobF
- +lRbNfvA5hKtrXB28wBbzsQb7dFqrUzY7tATbV5ODatBvUBkONyteNjNeYA59AJmSeXV
- Mp4wiySwzYkOnjc2YO0oO67zqt6cyP/WGkv/9wNu+F3QcyoGBef3VC7URzRg0d1F6ioU
- fpFivZdJq25PSK0Dkmcrvv3NbflzK0SaBLbSvmud7Dg3hxvKw6qnJhlCl5MwPP4RyAmQ
- kN0A==
-X-Gm-Message-State: APjAAAUyDj5PWybqgAQEDyxpWXeDTK2WT6Qjv5rGrEJtOjl7njqvSHP2
- DHKODagUGokVuBNtt/XU9yxyyg==
-X-Google-Smtp-Source: APXvYqyr5JtWJBxoh41hbTAkOsXHCvEtb3C3/m7M5P7Ry9zlF0gq04xYFw3DvF+dqaIxFQ/JKexWLA==
-X-Received: by 2002:a05:620a:141c:: with SMTP id
- d28mr40026915qkj.18.1558556529503; 
- Wed, 22 May 2019 13:22:09 -0700 (PDT)
-Received: from rosewood.cam.corp.google.com
- ([2620:0:1013:11:89c6:2139:5435:371d])
- by smtp.gmail.com with ESMTPSA id t187sm4546863qkh.10.2019.05.22.13.22.08
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=KlVZNryM8pB5f8q8+hboTK/K1z9nBq5Ad03d8AAJxNY=;
+ b=E5GxqZAde5M7JgexK9yDiL+63BieREcwEIGn9/CC9nyM1EnbGjRqKgCiX6coQ/m/O6
+ W96nd9nnNjclDJunWPwz1C8iVcz7iaog2Z1lQ0bh7FDRoktwYPWDxhNUT0lLpzz7OQy/
+ ihlHYpt/COvHla2IuaPKMR58ef6iyBB6FDfyPmMGQgiOEaOV3LUxF50aXGxgUaqU8E10
+ thwCejkHLvgLBeVzsIBDmhddzGKaslKHgD+t55EHctuGzDg9hKgg6ZZp2EUlvxiwLvc4
+ CFd4sEiaCwPDC4XrWaGqwY8tuZdsTw2vUGsCCTUAvy5KYidb51CcjaIsQruRSRfUbrPP
+ uhTw==
+X-Gm-Message-State: APjAAAX3yJN2fuKRwsNa8zu1xMj2JjKrq7Wv8TtyOIlIMVVspOMSuHkf
+ YYeYlW5y5yHJlv6HhjSTa2I=
+X-Google-Smtp-Source: APXvYqx79L4dLdho3RmjNNG05YSYjceSOmhjzMUTlKEy95bjxcsugoi4VURK8x0TN4yK9rRlxQE+uw==
+X-Received: by 2002:a1c:200a:: with SMTP id g10mr9091671wmg.121.1558556994603; 
+ Wed, 22 May 2019 13:29:54 -0700 (PDT)
+Received: from [10.67.49.213] ([192.19.223.252])
+ by smtp.googlemail.com with ESMTPSA id h6sm4578132wrm.47.2019.05.22.13.29.51
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 22 May 2019 13:22:09 -0700 (PDT)
-From: Sean Paul <sean@poorly.run>
-To: dri-devel@lists.freedesktop.org
-Subject: [PATCH] drm/mediatek: Fix warning about unhandled enum value
-Date: Wed, 22 May 2019 16:21:54 -0400
-Message-Id: <20190522202207.223110-1-sean@poorly.run>
-X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
+ Wed, 22 May 2019 13:29:53 -0700 (PDT)
+Subject: Re: [PATCH net-next 2/2] net: phy: aquantia: add USXGMII support
+To: Heiner Kallweit <hkallweit1@gmail.com>,
+ Madalin-cristian Bucur <madalin.bucur@nxp.com>,
+ Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Andrew Lunn <andrew@lunn.ch>, David Miller <davem@davemloft.net>
+References: <110a1e45-56a7-a646-7b63-f39fe3083c28@gmail.com>
+ <2c68bdb1-9b53-ce0b-74d3-c7ea2d9e7ac0@gmail.com>
+ <46a141c7-f838-ae4b-4a47-5b1fb44ef063@gmail.com>
+ <e7a7c38c-ebe7-1cea-4099-3cf3a4483ac7@gmail.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+ M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
+Message-ID: <abdf67f6-3b7b-fab4-ed7c-779f5685ab58@gmail.com>
+Date: Wed, 22 May 2019 13:29:45 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <e7a7c38c-ebe7-1cea-4099-3cf3a4483ac7@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_132215_385792_0144D93C 
-X-CRM114-Status: GOOD (  11.19  )
+X-CRM114-CacheID: sfid-20190522_132956_669404_CE1EE629 
+X-CRM114-Status: GOOD (  17.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -96,54 +164,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-fbdev@vger.kernel.org,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Hans Verkuil <hansverk@cisco.com>, David Airlie <airlied@linux.ie>,
- Uma Shankar <uma.shankar@intel.com>, Sean Paul <seanpaul@chromium.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- CK Hu <ck.hu@mediatek.com>, linux-mediatek@lists.infradead.org,
- Sean Paul <sean@poorly.run>,
- =?UTF-8?q?Ville=20Syrj=C3=A4l=C3=A4?= <ville.syrjala@linux.intel.com>,
- Shashank Sharma <shashank.sharma@intel.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogU2VhbiBQYXVsIDxzZWFucGF1bEBjaHJvbWl1bS5vcmc+CgpGaXhlcyB0aGUgZm9sbG93
-aW5nIGJ1aWxkIHdhcm5pbmc6CmRyaXZlcnMvZ3B1L2RybS9tZWRpYXRlay9tdGtfaGRtaS5jOjMy
-NzoyOiB3YXJuaW5nOiBlbnVtZXJhdGlvbiB2YWx1ZSDigJhIRE1JX0lORk9GUkFNRV9UWVBFX0RS
-TeKAmSBub3QgaGFuZGxlZCBpbiBzd2l0Y2ggWy1Xc3dpdGNoXQoKSW50cm9kdWNlZCB3aXRoIHRo
-ZSBhZGRpdGlvbiBvZiBIRE1JX0lORk9GUkFNRV9UWVBFX0RSTSBpbiB0aGUgY29tbWl0CmJlbG93
-LCBidXQgdGhlIGNvZGUgcmVhbGx5IHNob3VsZCBoYXZlIGJlZW4gZnV0dXJlLXByb29mZWQgZnJv
-bSB0aGUKc3RhcnQuCgpGaXhlczogMmNkYmZkNjZhODI5ICgiZHJtOiBFbmFibGUgSERSIGluZm9m
-cmFtZSBzdXBwb3J0IikKQ2M6IFVtYSBTaGFua2FyIDx1bWEuc2hhbmthckBpbnRlbC5jb20+CkNj
-OiBTaGFzaGFuayBTaGFybWEgPHNoYXNoYW5rLnNoYXJtYUBpbnRlbC5jb20+CkNjOiBWaWxsZSBT
-eXJqw6Rsw6QgPHZpbGxlLnN5cmphbGFAbGludXguaW50ZWwuY29tPgpDYzogTWFhcnRlbiBMYW5r
-aG9yc3QgPG1hYXJ0ZW4ubGFua2hvcnN0QGxpbnV4LmludGVsLmNvbT4KQ2M6IE1heGltZSBSaXBh
-cmQgPG1heGltZS5yaXBhcmRAYm9vdGxpbi5jb20+CkNjOiBTZWFuIFBhdWwgPHNlYW5AcG9vcmx5
-LnJ1bj4KQ2M6IERhdmlkIEFpcmxpZSA8YWlybGllZEBsaW51eC5pZT4KQ2M6IERhbmllbCBWZXR0
-ZXIgPGRhbmllbEBmZndsbC5jaD4KQ2M6IEJhcnRsb21pZWogWm9sbmllcmtpZXdpY3ogPGIuem9s
-bmllcmtpZUBzYW1zdW5nLmNvbT4KQ2M6ICJWaWxsZSBTeXJqw6Rsw6QiIDx2aWxsZS5zeXJqYWxh
-QGxpbnV4LmludGVsLmNvbT4KQ2M6IEhhbnMgVmVya3VpbCA8aGFuc3ZlcmtAY2lzY28uY29tPgpD
-YzogZHJpLWRldmVsQGxpc3RzLmZyZWVkZXNrdG9wLm9yZwpDYzogbGludXgtZmJkZXZAdmdlci5r
-ZXJuZWwub3JnClNpZ25lZC1vZmYtYnk6IFNlYW4gUGF1bCA8c2VhbnBhdWxAY2hyb21pdW0ub3Jn
-PgotLS0KIGRyaXZlcnMvZ3B1L2RybS9tZWRpYXRlay9tdGtfaGRtaS5jIHwgMyArKysKIDEgZmls
-ZSBjaGFuZ2VkLCAzIGluc2VydGlvbnMoKykKCmRpZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9kcm0v
-bWVkaWF0ZWsvbXRrX2hkbWkuYyBiL2RyaXZlcnMvZ3B1L2RybS9tZWRpYXRlay9tdGtfaGRtaS5j
-CmluZGV4IGUwNGU2YzI5M2QzOS4uMTBjYzk5MTBmMTY0IDEwMDY0NAotLS0gYS9kcml2ZXJzL2dw
-dS9kcm0vbWVkaWF0ZWsvbXRrX2hkbWkuYworKysgYi9kcml2ZXJzL2dwdS9kcm0vbWVkaWF0ZWsv
-bXRrX2hkbWkuYwpAQCAtMzQxLDYgKzM0MSw5IEBAIHN0YXRpYyB2b2lkIG10a19oZG1pX2h3X3Nl
-bmRfaW5mb19mcmFtZShzdHJ1Y3QgbXRrX2hkbWkgKmhkbWksIHU4ICpidWZmZXIsCiAJCWN0cmxf
-ZnJhbWVfZW4gPSBWU19FTjsKIAkJY3RybF9yZWcgPSBHUkxfQUNQX0lTUkNfQ1RSTDsKIAkJYnJl
-YWs7CisJZGVmYXVsdDoKKwkJZGV2X2VycihoZG1pLT5kZXYsICJVbmtub3duIGluZm9mcmFtZSB0
-eXBlICVkXG4iLCBmcmFtZV90eXBlKTsKKwkJcmV0dXJuOwogCX0KIAltdGtfaGRtaV9jbGVhcl9i
-aXRzKGhkbWksIGN0cmxfcmVnLCBjdHJsX2ZyYW1lX2VuKTsKIAltdGtfaGRtaV93cml0ZShoZG1p
-LCBHUkxfSU5GT0ZSTV9UWVBFLCBmcmFtZV90eXBlKTsKLS0gClNlYW4gUGF1bCwgU29mdHdhcmUg
-RW5naW5lZXIsIEdvb2dsZSAvIENocm9taXVtIE9TCgoKX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
-dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On 5/22/19 1:18 PM, Heiner Kallweit wrote:
+> On 22.05.2019 22:07, Florian Fainelli wrote:
+>> On 5/22/19 12:58 PM, Heiner Kallweit wrote:
+>>> So far we didn't support mode USXGMII, and in order to not break the
+>>> two Freescale boards mode XGMII was accepted for the AQR107 family
+>>> even though it doesn't support XGMII. Add USXGMII support to the
+>>> Aquantia PHY driver and change the phy connection type for the two
+>>> boards.
+>>>
+>>> As an additional note: Even though the handle is named aqr106
+>>> there seem to be LS1046A boards with an AQR107.
+>>>
+>>> Signed-off-by: Heiner Kallweit <hkallweit1@gmail.com>
+>>
+>> You can probably split the DTS changes and the PHY driver changes into a
+>> separate commits and just have the DTS changes come last? With that:
+>>
+> To split the patches I would have to do:
+> 1. Add USXGMII support to Aquantia PHY driver
+> 2. DTS changes
+> 3. Don't accept XGMII any longer in Aquantia PHY driver
+> This seemed to me to be too much overhead considering the very small
+> change.
+> 
+> Just making the DTS changes a separate patch would break bisecting.
+
+I fail to see how, you can't make use of "usxgmii" in DTS unless you
+define that as as a valid phy-mode property value (patch #1), and you
+can't have that possibly working until patch #2. Until then using
+"xgmii" is still supported and going to work.
+
+Once patch #3 which brings DTS lands in, you could possibly deprecate
+"xgmii" in the Aquantia PHY driver (or rather issue a big warning).
+-- 
+Florian
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
