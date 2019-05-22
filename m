@@ -2,86 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EEDCF25B79
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 03:03:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92A7625BAB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 03:35:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=zG4VfY41ufwQ19rQSzjQBDlHqUOcBdZ/WhLYoLW5eZI=; b=klt3feTwoRJUIx+HZlN4qi8HSh
-	IVhCp3kS8D/bczlG9ApFx2QR4RlFuvZqst3z/4pZ3p7YR+ZTf7qvWVVXpoPS9AnC2AszxWVdd58lZ
-	NZ1sVaDufc3FDKmi1fM+6gOtpDdfV3NdDlcuImq49jHKWeatq1go+Xow+MHBwDWe61Z1SFW2L9M5d
-	sM8X5OTPG11mdodzKKXfiTb/LZIy5vnW5Nyprvsl4PLFlzgscCismINGAU86Hz0Q42+wNESrtOiIg
-	ADISlWgRsvYR8Zx09ECF8xYx+voedcVeZ6vTCfiM21aEcJ6BsGQ7S59Pl61zYtTsGBaPqwsVXXwob
-	OSeibLhg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MVeRPqOEOAC/A/SXiwN3CDFc3ZXgQCDLyAkYBdX01is=; b=DOlNujP7jRLAUu
+	RP7y89RoXyAbHmdTE0alfxqcoLn4HmvxFUDj0gTQhwH5LJwWQefev2nBknDljTUBBxifIGPdwEIh7
+	6hLhH5XitPChcMZvN9e9i0PO8puZ5FBOk5GSlgy6461bkdQJDZueGDE21gXPidI0YMSbtlHllOmTB
+	UMV/1kuTS3DpUqDWqyHhss77+q/XSGRV4ImnLYC6rP2ZNsLFlOYULh8dn6G606LAwXSiDwflbqCGE
+	1TZl43RuIwTujhci47KaTp2taC/hPdimBABz44h8sxN88G21l8sOwa0czjoMH5LmV/VYv3xORMs4K
+	GgbMN/1925Xkc0IBZuQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTFfh-0000LE-EQ; Wed, 22 May 2019 01:03:57 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hTG9j-0001Ef-SG; Wed, 22 May 2019 01:34:59 +0000
+Received: from mail-vi1eur04on062c.outbound.protection.outlook.com
+ ([2a01:111:f400:fe0e::62c]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTFfL-0008VZ-KZ
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 01:03:37 +0000
-Received: by mail-pl1-x642.google.com with SMTP id g69so187377plb.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 21 May 2019 18:03:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=dOvFQYa2L20bDU/RX45j9+9Wd5Kr6fD3oBmwWTXE89o=;
- b=ikwL3w0Rl0KGBAQzF+yPZY3+d1534b40LpfFWBRRMMAEb9m+vAyxOVOaekxQF9EMeM
- rEh1PUa1dEELlBVCw+KBHcHGZkFp4KZtLHNVKO2r9c1aKPfHyM5ZqxY0zi05CIBCisIE
- y+35OvV2XdQNNJd7qFjKYgVptCDEavZ5vr8bA9u/fRtVflmiJKP09UgRq0GNT+QlG04F
- 1IWLoS5wap6EnEKweSFNc3/0Zeg1ngZtIRzVlwJF+9VMgFrcfwYS+7fJVxc4ClhtZpIe
- lEM6PNBNekkTCN2pCp++RtXDeCCfCN4OqgAfYnjlT13C71h+FN3g9GFd3AFwkVKs3spw
- Pm1w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=dOvFQYa2L20bDU/RX45j9+9Wd5Kr6fD3oBmwWTXE89o=;
- b=pnnwRt8XmUo4u5gCeDhRlgEe3iyPCrdLoEzUQYHN4XgI4SMXguOCbmHAwv7AbkTkOB
- 6mv8l9oA12dwaqHRt5F1qR4shp/SmynPv77IOMT+bLlIeF7iDM7zQQ+mS3ahru/JOM6q
- 1AHPqv2NzQzyoot2pi10DymMiDTM5B8Hn4K5CJ59/27HYjk6nt2eDbJcI7cNmOKGlft+
- DG1rEej786fASqML6lwET/l4BHaxEGabhCcNozQx3GzjAaCSY3D89lhkxCWNNHt8YSfr
- Oibb9mEpOfOX+cRdbUqzBVM6AqfKzoq9VyP8sUnKJrRkP2McYXoZlAHbs2VoQ2o1AW/S
- an0A==
-X-Gm-Message-State: APjAAAWbIvYoFiRB1W8Cu5tm/bFWtbB/yZDAk6zJDK+9BpsSKDTW47da
- sMC4cx488QNcio0BzWsAi04=
-X-Google-Smtp-Source: APXvYqyOglaqa4AiJ7+AEdpzAMBW5PxZOMpB3TxkUfQxxEItAUzfuhfHjme7NLbA7ZAtHXAz1w8vkw==
-X-Received: by 2002:a17:902:e701:: with SMTP id
- co1mr53344558plb.259.1558487014880; 
- Tue, 21 May 2019 18:03:34 -0700 (PDT)
-Received: from majic.sklembedded.com (c-73-202-231-77.hsd1.ca.comcast.net.
- [73.202.231.77]) by smtp.googlemail.com with ESMTPSA id
- q193sm34291242pfc.52.2019.05.21.18.03.33
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 21 May 2019 18:03:34 -0700 (PDT)
-From: Steve Longerbeam <slongerbeam@gmail.com>
-To: linux-media@vger.kernel.org
-Subject: [PATCH v8 5/5] media: imx: Try colorimetry at both sink and source
- pads
-Date: Tue, 21 May 2019 18:03:17 -0700
-Message-Id: <20190522010317.23710-6-slongerbeam@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190522010317.23710-1-slongerbeam@gmail.com>
-References: <20190522010317.23710-1-slongerbeam@gmail.com>
+ id 1hTG9e-0001Dq-0M
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 01:34:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=s9RBZMpkScmW0tmxR9D/1y3JO1wDPva9EwWy1bOkW9Y=;
+ b=hA2GaKWw/YFQ/8t8Eqz3eDDj/ygUWC3moJRuPCTt2AGETsii8dKFF12s1OaenS8g1hde/DKdOsYGIODQqeRCDef36HP5EDffDguXNKmGS8v2176OUv1N4lqkyixnGZseOuMqIaGqgnOq6YPIzo5HY4VkfzgssC4b5lf0XiTlOg0=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB4147.eurprd04.prod.outlook.com (52.134.125.157) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1900.18; Wed, 22 May 2019 01:34:47 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::3173:24:d401:2378]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::3173:24:d401:2378%6]) with mapi id 15.20.1900.020; Wed, 22 May 2019
+ 01:34:47 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: "mturquette@baylibre.com" <mturquette@baylibre.com>, "sboyd@kernel.org"
+ <sboyd@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>
+Subject: [PATCH] clk: imx: imx8mm: correct audio_pll2_clk to audio_pll2_out
+Thread-Topic: [PATCH] clk: imx: imx8mm: correct audio_pll2_clk to
+ audio_pll2_out
+Thread-Index: AQHVED6JGbhPMl1ASUycBcbN9uhZig==
+Date: Wed, 22 May 2019 01:34:46 +0000
+Message-ID: <20190522014832.29485-1-peng.fan@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.16.4
+x-clientproxiedby: HK2PR06CA0013.apcprd06.prod.outlook.com
+ (2603:1096:202:2e::25) To AM0PR04MB4481.eurprd04.prod.outlook.com
+ (2603:10a6:208:70::15)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.71]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: f3f2d4ee-26ea-441c-fb57-08d6de55aaa3
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB4147; 
+x-ms-traffictypediagnostic: AM0PR04MB4147:
+x-microsoft-antispam-prvs: <AM0PR04MB41479692C944ED56D60F6E5C88000@AM0PR04MB4147.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2449;
+x-forefront-prvs: 0045236D47
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(366004)(199004)(189003)(386003)(52116002)(102836004)(6506007)(2201001)(99286004)(86362001)(6512007)(25786009)(66476007)(66446008)(64756008)(66556008)(6436002)(6486002)(66946007)(73956011)(305945005)(71190400001)(8936002)(66066001)(81166006)(71200400001)(81156014)(4326008)(5660300002)(8676002)(486006)(36756003)(476003)(44832011)(68736007)(50226002)(1076003)(2616005)(7416002)(54906003)(110136005)(256004)(7736002)(498600001)(2906002)(186003)(26005)(14454004)(6116002)(3846002)(2501003)(53936002)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4147;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: /kewJrZJ3XT3brvq7Fq3CF5v7P/wsq4224JbMV6iTUkEctZJBkaJ0meJt7c5YRRqwm2iQbDnm+PnaUfg2S/fE2AMFT/gCmCLr4squRmZn5Zw5wOUMjNe79ldI28xm09WhWbIrbEdpcG3XCq2vtWzbU8mG0HrACHbni1JJeEUbJ06JmsD0lit4vXVwKvcrOWNcS5/ZZe/5fEIns86M8Y5WP563GtHa6sXBwZuHfe15suVjW3UCTL2gYirsn/lta+KJ9+tFdixASKjBu07+luOLuTkqsCyTcaSyJTQXaXFzvmDh5+1XdKGSj/X9oBaE4Lpx2KEAA22AkxAUmpczDgx0rwtLES4ZEDnzDfi+7juPi9HW+A/XPAI7/VokaJeuV23vwRqUlcPdlcvE/cBnHPAwAMlKRlPnUllcqbzca6+r9s=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: f3f2d4ee-26ea-441c-fb57-08d6de55aaa3
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 May 2019 01:34:46.7483 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4147
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_180335_674217_1A2603C0 
-X-CRM114-Status: GOOD (  21.37  )
+X-CRM114-CacheID: sfid-20190521_183454_077423_CA95C66B 
+X-CRM114-Status: GOOD (  11.73  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2a01:111:f400:fe0e:0:0:0:62c listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (slongerbeam[at]gmail.com)
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -100,328 +117,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:STAGING SUBSYSTEM" <devel@driverdev.osuosl.org>,
- Fabio Estevam <festevam@gmail.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- open list <linux-kernel@vger.kernel.org>, Rui Miguel Silva <rmfrfs@gmail.com>,
- NXP Linux Team <linux-imx@nxp.com>, Philipp Zabel <p.zabel@pengutronix.de>,
- Steve Longerbeam <slongerbeam@gmail.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-MIME-Version: 1.0
+Cc: Peng Fan <peng.fan@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "stable@vger.kernel.org" <stable@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Retask imx_media_fill_default_mbus_fields() to try colorimetry parameters,
-renaming it to to imx_media_try_colorimetry(), and call it at both sink and
-source pad try_fmt's. The unrelated check for uninitialized field value is
-moved out to appropriate places in each subdev try_fmt.
+There is no audio_pll2_clk registered, it should be audio_pll2_out.
 
-The IC now supports Rec.709 and BT.601 Y'CbCr encoding, and both limited
-and full range quantization for both YUV and RGB space, so allow those
-for pipelines that route through the IC.
-
-Signed-off-by: Steve Longerbeam <slongerbeam@gmail.com>
+Cc: <stable@vger.kernel.org>
+Fixes: ba5625c3e27 ("clk: imx: Add clock driver support for imx8mm")
+Signed-off-by: Peng Fan <peng.fan@nxp.com>
 ---
-Changes in v7:
-- squashed with "media: imx: Allow Rec.709 encoding for IC routes".
-- remove the RGB full-range quantization restriction for IC routes.
----
- drivers/staging/media/imx/imx-ic-prp.c      |  6 +-
- drivers/staging/media/imx/imx-ic-prpencvf.c |  8 +--
- drivers/staging/media/imx/imx-media-csi.c   | 19 +++---
- drivers/staging/media/imx/imx-media-utils.c | 73 ++++++++++-----------
- drivers/staging/media/imx/imx-media-vdic.c  |  5 +-
- drivers/staging/media/imx/imx-media.h       |  5 +-
- drivers/staging/media/imx/imx7-media-csi.c  |  8 +--
- 7 files changed, 62 insertions(+), 62 deletions(-)
+ drivers/clk/imx/clk-imx8mm.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/staging/media/imx/imx-ic-prp.c b/drivers/staging/media/imx/imx-ic-prp.c
-index 10ffe00f1a54..f87fe0203720 100644
---- a/drivers/staging/media/imx/imx-ic-prp.c
-+++ b/drivers/staging/media/imx/imx-ic-prp.c
-@@ -193,8 +193,8 @@ static int prp_set_fmt(struct v4l2_subdev *sd,
- 			sdformat->format.code = cc->codes[0];
- 		}
+diff --git a/drivers/clk/imx/clk-imx8mm.c b/drivers/clk/imx/clk-imx8mm.c
+index 1ef8438e3d6d..3a889846a05c 100644
+--- a/drivers/clk/imx/clk-imx8mm.c
++++ b/drivers/clk/imx/clk-imx8mm.c
+@@ -325,7 +325,7 @@ static const char *imx8mm_dsi_dbi_sels[] = {"osc_24m", "sys_pll1_266m", "sys_pll
+ 					    "sys_pll2_1000m", "sys_pll3_out", "audio_pll2_out", "video_pll1_out", };
  
--		imx_media_fill_default_mbus_fields(&sdformat->format, infmt,
--						   true);
-+		if (sdformat->format.field == V4L2_FIELD_ANY)
-+			sdformat->format.field = V4L2_FIELD_NONE;
- 		break;
- 	case PRP_SRC_PAD_PRPENC:
- 	case PRP_SRC_PAD_PRPVF:
-@@ -203,6 +203,8 @@ static int prp_set_fmt(struct v4l2_subdev *sd,
- 		break;
- 	}
+ static const char *imx8mm_usdhc3_sels[] = {"osc_24m", "sys_pll1_400m", "sys_pll1_800m", "sys_pll2_500m",
+-					   "sys_pll3_out", "sys_pll1_266m", "audio_pll2_clk", "sys_pll1_100m", };
++					   "sys_pll3_out", "sys_pll1_266m", "audio_pll2_out", "sys_pll1_100m", };
  
-+	imx_media_try_colorimetry(&sdformat->format, true);
-+
- 	fmt = __prp_get_fmt(priv, cfg, sdformat->pad, sdformat->which);
- 	*fmt = sdformat->format;
- out:
-diff --git a/drivers/staging/media/imx/imx-ic-prpencvf.c b/drivers/staging/media/imx/imx-ic-prpencvf.c
-index e8b36a181ccc..f2fe3c11c70e 100644
---- a/drivers/staging/media/imx/imx-ic-prpencvf.c
-+++ b/drivers/staging/media/imx/imx-ic-prpencvf.c
-@@ -907,8 +907,6 @@ static void prp_try_fmt(struct prp_priv *priv,
- 		/* propagate colorimetry from sink */
- 		sdformat->format.colorspace = infmt->colorspace;
- 		sdformat->format.xfer_func = infmt->xfer_func;
--		sdformat->format.quantization = infmt->quantization;
--		sdformat->format.ycbcr_enc = infmt->ycbcr_enc;
- 	} else {
- 		v4l_bound_align_image(&sdformat->format.width,
- 				      MIN_W_SINK, MAX_W_SINK, W_ALIGN_SINK,
-@@ -916,9 +914,11 @@ static void prp_try_fmt(struct prp_priv *priv,
- 				      MIN_H_SINK, MAX_H_SINK, H_ALIGN_SINK,
- 				      S_ALIGN);
+ static const char *imx8mm_csi1_core_sels[] = {"osc_24m", "sys_pll1_266m", "sys_pll2_250m", "sys_pll1_800m",
+ 					      "sys_pll2_1000m", "sys_pll3_out", "audio_pll2_out", "video_pll1_out", };
+@@ -361,11 +361,11 @@ static const char *imx8mm_pdm_sels[] = {"osc_24m", "sys_pll2_100m", "audio_pll1_
+ 					"sys_pll2_1000m", "sys_pll3_out", "clk_ext3", "audio_pll2_out", };
  
--		imx_media_fill_default_mbus_fields(&sdformat->format, infmt,
--						   true);
-+		if (sdformat->format.field == V4L2_FIELD_ANY)
-+			sdformat->format.field = V4L2_FIELD_NONE;
- 	}
-+
-+	imx_media_try_colorimetry(&sdformat->format, true);
- }
+ static const char *imx8mm_vpu_h1_sels[] = {"osc_24m", "vpu_pll_out", "sys_pll1_800m", "sys_pll2_1000m",
+-					   "audio_pll2_clk", "sys_pll2_125m", "sys_pll3_clk", "audio_pll1_out", };
++					   "audio_pll2_out", "sys_pll2_125m", "sys_pll3_clk", "audio_pll1_out", };
  
- static int prp_set_fmt(struct v4l2_subdev *sd,
-diff --git a/drivers/staging/media/imx/imx-media-csi.c b/drivers/staging/media/imx/imx-media-csi.c
-index 1d248aca40a9..dce4addadff4 100644
---- a/drivers/staging/media/imx/imx-media-csi.c
-+++ b/drivers/staging/media/imx/imx-media-csi.c
-@@ -1375,9 +1375,15 @@ static void csi_try_field(struct csi_priv *priv,
- 	struct v4l2_mbus_framefmt *infmt =
- 		__csi_get_fmt(priv, cfg, CSI_SINK_PAD, sdformat->which);
+ static const char *imx8mm_dram_core_sels[] = {"dram_pll_out", "dram_alt_root", };
  
--	/* no restrictions on sink pad field type */
--	if (sdformat->pad == CSI_SINK_PAD)
-+	/*
-+	 * no restrictions on sink pad field type except must
-+	 * be initialized.
-+	 */
-+	if (sdformat->pad == CSI_SINK_PAD) {
-+		if (sdformat->format.field == V4L2_FIELD_ANY)
-+			sdformat->format.field = V4L2_FIELD_NONE;
- 		return;
-+	}
+-static const char *imx8mm_clko1_sels[] = {"osc_24m", "sys_pll1_800m", "osc_27m", "sys_pll1_200m", "audio_pll2_clk",
++static const char *imx8mm_clko1_sels[] = {"osc_24m", "sys_pll1_800m", "osc_27m", "sys_pll1_200m", "audio_pll2_out",
+ 					 "vpu_pll", "sys_pll1_80m", };
  
- 	switch (infmt->field) {
- 	case V4L2_FIELD_SEQ_TB:
-@@ -1455,8 +1461,6 @@ static void csi_try_fmt(struct csi_priv *priv,
- 		/* propagate colorimetry from sink */
- 		sdformat->format.colorspace = infmt->colorspace;
- 		sdformat->format.xfer_func = infmt->xfer_func;
--		sdformat->format.quantization = infmt->quantization;
--		sdformat->format.ycbcr_enc = infmt->ycbcr_enc;
- 
- 		break;
- 	case CSI_SINK_PAD:
-@@ -1476,10 +1480,6 @@ static void csi_try_fmt(struct csi_priv *priv,
- 
- 		csi_try_field(priv, cfg, sdformat);
- 
--		imx_media_fill_default_mbus_fields(
--			&sdformat->format, infmt,
--			priv->active_output_pad == CSI_SRC_PAD_DIRECT);
--
- 		/* Reset crop and compose rectangles */
- 		crop->left = 0;
- 		crop->top = 0;
-@@ -1495,6 +1495,9 @@ static void csi_try_fmt(struct csi_priv *priv,
- 
- 		break;
- 	}
-+
-+	imx_media_try_colorimetry(&sdformat->format,
-+			priv->active_output_pad == CSI_SRC_PAD_DIRECT);
- }
- 
- static int csi_set_fmt(struct v4l2_subdev *sd,
-diff --git a/drivers/staging/media/imx/imx-media-utils.c b/drivers/staging/media/imx/imx-media-utils.c
-index b41842dba5ec..05b63395084e 100644
---- a/drivers/staging/media/imx/imx-media-utils.c
-+++ b/drivers/staging/media/imx/imx-media-utils.c
-@@ -511,21 +511,18 @@ int imx_media_init_cfg(struct v4l2_subdev *sd,
- EXPORT_SYMBOL_GPL(imx_media_init_cfg);
- 
- /*
-- * Check whether the field and colorimetry parameters in tryfmt are
-- * uninitialized, and if so fill them with the values from fmt,
-- * or if tryfmt->colorspace has been initialized, all the default
-- * colorimetry params can be derived from tryfmt->colorspace.
-+ * Default the colorspace in tryfmt to SRGB if set to an unsupported
-+ * colorspace or not initialized. Then set the remaining colorimetry
-+ * parameters based on the colorspace if they are uninitialized.
-  *
-  * tryfmt->code must be set on entry.
-  *
-  * If this format is destined to be routed through the Image Converter,
-- * quantization and Y`CbCr encoding must be fixed. The IC expects and
-- * produces fixed quantization and Y`CbCr encoding at its input and output
-- * (full range for RGB, limited range for YUV, and V4L2_YCBCR_ENC_601).
-+ * Y`CbCr encoding must be fixed. The IC supports only BT.601 Y`CbCr
-+ * or Rec.709 Y`CbCr encoding.
-  */
--void imx_media_fill_default_mbus_fields(struct v4l2_mbus_framefmt *tryfmt,
--					struct v4l2_mbus_framefmt *fmt,
--					bool ic_route)
-+void imx_media_try_colorimetry(struct v4l2_mbus_framefmt *tryfmt,
-+			       bool ic_route)
- {
- 	const struct imx_media_pixfmt *cc;
- 	bool is_rgb = false;
-@@ -533,44 +530,46 @@ void imx_media_fill_default_mbus_fields(struct v4l2_mbus_framefmt *tryfmt,
- 	cc = imx_media_find_mbus_format(tryfmt->code, CS_SEL_ANY, true);
- 	if (!cc)
- 		cc = imx_media_find_ipu_format(tryfmt->code, CS_SEL_ANY);
--	if (cc && cc->cs != IPUV3_COLORSPACE_YUV)
-+	if (cc && cc->cs == IPUV3_COLORSPACE_RGB)
- 		is_rgb = true;
- 
--	/* fill field if necessary */
--	if (tryfmt->field == V4L2_FIELD_ANY)
--		tryfmt->field = fmt->field;
-+	switch (tryfmt->colorspace) {
-+	case V4L2_COLORSPACE_SMPTE170M:
-+	case V4L2_COLORSPACE_REC709:
-+	case V4L2_COLORSPACE_JPEG:
-+	case V4L2_COLORSPACE_SRGB:
-+	case V4L2_COLORSPACE_BT2020:
-+	case V4L2_COLORSPACE_OPRGB:
-+	case V4L2_COLORSPACE_DCI_P3:
-+	case V4L2_COLORSPACE_RAW:
-+		break;
-+	default:
-+		tryfmt->colorspace = V4L2_COLORSPACE_SRGB;
-+		break;
-+	}
-+
-+	if (tryfmt->xfer_func == V4L2_XFER_FUNC_DEFAULT)
-+		tryfmt->xfer_func =
-+			V4L2_MAP_XFER_FUNC_DEFAULT(tryfmt->colorspace);
- 
--	/* fill colorimetry if necessary */
--	if (tryfmt->colorspace == V4L2_COLORSPACE_DEFAULT) {
--		tryfmt->colorspace = fmt->colorspace;
--		tryfmt->xfer_func = fmt->xfer_func;
--		tryfmt->ycbcr_enc = fmt->ycbcr_enc;
--		tryfmt->quantization = fmt->quantization;
-+	if (ic_route) {
-+		if (tryfmt->ycbcr_enc != V4L2_YCBCR_ENC_601 &&
-+		    tryfmt->ycbcr_enc != V4L2_YCBCR_ENC_709)
-+			tryfmt->ycbcr_enc = V4L2_YCBCR_ENC_601;
- 	} else {
--		if (tryfmt->xfer_func == V4L2_XFER_FUNC_DEFAULT) {
--			tryfmt->xfer_func =
--				V4L2_MAP_XFER_FUNC_DEFAULT(tryfmt->colorspace);
--		}
- 		if (tryfmt->ycbcr_enc == V4L2_YCBCR_ENC_DEFAULT) {
- 			tryfmt->ycbcr_enc =
- 				V4L2_MAP_YCBCR_ENC_DEFAULT(tryfmt->colorspace);
- 		}
--		if (tryfmt->quantization == V4L2_QUANTIZATION_DEFAULT) {
--			tryfmt->quantization =
--				V4L2_MAP_QUANTIZATION_DEFAULT(
--					is_rgb, tryfmt->colorspace,
--					tryfmt->ycbcr_enc);
--		}
- 	}
- 
--	if (ic_route) {
--		tryfmt->quantization = is_rgb ?
--			V4L2_QUANTIZATION_FULL_RANGE :
--			V4L2_QUANTIZATION_LIM_RANGE;
--		tryfmt->ycbcr_enc = V4L2_YCBCR_ENC_601;
--	}
-+	if (tryfmt->quantization == V4L2_QUANTIZATION_DEFAULT)
-+		tryfmt->quantization =
-+			V4L2_MAP_QUANTIZATION_DEFAULT(is_rgb,
-+						      tryfmt->colorspace,
-+						      tryfmt->ycbcr_enc);
- }
--EXPORT_SYMBOL_GPL(imx_media_fill_default_mbus_fields);
-+EXPORT_SYMBOL_GPL(imx_media_try_colorimetry);
- 
- int imx_media_mbus_fmt_to_pix_fmt(struct v4l2_pix_format *pix,
- 				  struct v4l2_rect *compose,
-diff --git a/drivers/staging/media/imx/imx-media-vdic.c b/drivers/staging/media/imx/imx-media-vdic.c
-index 4487374c9435..fbafd7fb7aeb 100644
---- a/drivers/staging/media/imx/imx-media-vdic.c
-+++ b/drivers/staging/media/imx/imx-media-vdic.c
-@@ -617,14 +617,13 @@ static void vdic_try_fmt(struct vdic_priv *priv,
- 				      &sdformat->format.height,
- 				      MIN_H, MAX_H_VDIC, H_ALIGN, S_ALIGN);
- 
--		imx_media_fill_default_mbus_fields(&sdformat->format, infmt,
--						   true);
--
- 		/* input must be interlaced! Choose SEQ_TB if not */
- 		if (!V4L2_FIELD_HAS_BOTH(sdformat->format.field))
- 			sdformat->format.field = V4L2_FIELD_SEQ_TB;
- 		break;
- 	}
-+
-+	imx_media_try_colorimetry(&sdformat->format, true);
- }
- 
- static int vdic_set_fmt(struct v4l2_subdev *sd,
-diff --git a/drivers/staging/media/imx/imx-media.h b/drivers/staging/media/imx/imx-media.h
-index 6587aa49e005..23024c9bc887 100644
---- a/drivers/staging/media/imx/imx-media.h
-+++ b/drivers/staging/media/imx/imx-media.h
-@@ -172,9 +172,8 @@ int imx_media_init_mbus_fmt(struct v4l2_mbus_framefmt *mbus,
- 			    const struct imx_media_pixfmt **cc);
- int imx_media_init_cfg(struct v4l2_subdev *sd,
- 		       struct v4l2_subdev_pad_config *cfg);
--void imx_media_fill_default_mbus_fields(struct v4l2_mbus_framefmt *tryfmt,
--					struct v4l2_mbus_framefmt *fmt,
--					bool ic_route);
-+void imx_media_try_colorimetry(struct v4l2_mbus_framefmt *tryfmt,
-+			       bool ic_route);
- int imx_media_mbus_fmt_to_pix_fmt(struct v4l2_pix_format *pix,
- 				  struct v4l2_rect *compose,
- 				  const struct v4l2_mbus_framefmt *mbus,
-diff --git a/drivers/staging/media/imx/imx7-media-csi.c b/drivers/staging/media/imx/imx7-media-csi.c
-index a708a0340eb1..6e2f4c3eb24f 100644
---- a/drivers/staging/media/imx/imx7-media-csi.c
-+++ b/drivers/staging/media/imx/imx7-media-csi.c
-@@ -1003,8 +1003,6 @@ static int imx7_csi_try_fmt(struct imx7_csi *csi,
- 
- 		sdformat->format.colorspace = in_fmt->colorspace;
- 		sdformat->format.xfer_func = in_fmt->xfer_func;
--		sdformat->format.quantization = in_fmt->quantization;
--		sdformat->format.ycbcr_enc = in_fmt->ycbcr_enc;
- 		break;
- 	case IMX7_CSI_PAD_SINK:
- 		*cc = imx_media_find_mbus_format(sdformat->format.code,
-@@ -1015,14 +1013,14 @@ static int imx7_csi_try_fmt(struct imx7_csi *csi,
- 							 false);
- 			sdformat->format.code = (*cc)->codes[0];
- 		}
--
--		imx_media_fill_default_mbus_fields(&sdformat->format, in_fmt,
--						   false);
- 		break;
- 	default:
- 		return -EINVAL;
- 		break;
- 	}
-+
-+	imx_media_try_colorimetry(&sdformat->format, false);
-+
- 	return 0;
- }
- 
+ static struct clk *clks[IMX8MM_CLK_END];
 -- 
-2.17.1
-
+2.16.4
 
 _______________________________________________
 linux-arm-kernel mailing list
