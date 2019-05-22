@@ -2,107 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E250F26094
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 11:35:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1741626099
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 11:37:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CywuEyK1HcII4ClxDtaMVx5g5/IqxMyFX3CpbpQzFEA=; b=tb+2G3UKWnrWbq
-	l5BaSNYHyHp42svPYtCpv8kyICyghhDIeg0UCtp4YVChq4KpBYpCop7WBZ09JBncnc+LOQE8hd61k
-	sn2JB2Xqsu2/aVKW1nM1RfXL0Ulw8C3YrDORGLhXl1jOnVdRupucMI4kx+LnjW11w5n8QFEjW+7pv
-	owUm8AoW4hMoTiIzMukHfrsIvFy3W3/KR2pgpa6fBY1Vlv4zFcqb7YDNRYG79UFNgaEpZ5IUWnl/l
-	93y9RB71Mp80z1wGfDLGpp1x2dP/thr77eDO17bi+YmP/YbCKrls/9CBRVRf2CQdrJo/4gwA9I19h
-	TwpfvBhjZgGYVvuAK3Cg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
+	:Subject:From:Reply-To:To:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=h2Lt79LpVVqIIw0KpgnuPElwjXHY1PCcOjSddYC0SxM=; b=idn+NWPTYm4+M/
+	Kn/Rv2qMBWqfwBlsdzGw9YZYDr63kzW8bAFHeEYLq0kef8xmhLJg2Zdw1Cugrxva+mcM1nuxN83xD
+	A5GkHEMDYDc71E/02kAQx5KnvLVbWuZGOld2ceDqJl/ZxDBNdgztGcR2gzCxI92bgVBIt5XkSv1dC
+	JUjE2en72f2GT/M+m/XprpdC+5f/7fzJlHYnJgCQDmxpBPm1JhpptoHDo0eJ/6igbPH1EzpAnWZ37
+	1DLQmVZeheMKaGz6bV03I1NoK0Nu9JIvekwtanfT4M/KU4iBQXVK2VpL1XfalGKmPKuizUqxXDll8
+	KTzTb7LCG4xBEW9XFLYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTNeY-0008VV-6h; Wed, 22 May 2019 09:35:18 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTNeR-0008VB-6B
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 09:35:12 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BFD80341;
- Wed, 22 May 2019 02:35:10 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 0B70F3F575; Wed, 22 May 2019 02:35:06 -0700 (PDT)
-Subject: Re: [PATCH v2 7/9] arm64: dts: qcom: msm8998: Add PSCI cpuidle low
- power states
-To: Marc Gonzalez <marc.w.gonzalez@free.fr>,
- Amit Kucheria <amit.kucheria@linaro.org>, MSM
- <linux-arm-msm@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-References: <cover.1558430617.git.amit.kucheria@linaro.org>
- <49cf5d94beb9af9ef4e78d4c52f3b0ad20b7c63f.1558430617.git.amit.kucheria@linaro.org>
- <a7514c68-d2d3-ce9e-bc4b-f484bb5bf3cf@free.fr>
- <d1ca4d37-ce25-a285-a9ef-dfe831f3d1de@free.fr>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
-Organization: ARM Ltd
-Message-ID: <2f8db49a-759c-d560-70c1-d041beeea914@arm.com>
-Date: Wed, 22 May 2019 10:35:04 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <d1ca4d37-ce25-a285-a9ef-dfe831f3d1de@free.fr>
+	id 1hTNgL-0000Jc-7r; Wed, 22 May 2019 09:37:09 +0000
+Received: from mail-oln040092068012.outbound.protection.outlook.com
+ ([40.92.68.12] helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hTNgD-0000JB-24
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 09:37:02 +0000
+Received: from AM5EUR02FT003.eop-EUR02.prod.protection.outlook.com
+ (10.152.8.60) by AM5EUR02HT037.eop-EUR02.prod.protection.outlook.com
+ (10.152.9.162) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1922.16; Wed, 22 May
+ 2019 09:36:58 +0000
+Received: from VI1PR07MB4432.eurprd07.prod.outlook.com (10.152.8.56) by
+ AM5EUR02FT003.mail.protection.outlook.com (10.152.8.137) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.20.1922.16 via Frontend Transport; Wed, 22 May 2019 09:36:57 +0000
+Received: from VI1PR07MB4432.eurprd07.prod.outlook.com
+ ([fe80::91f:b1bb:a60a:fdc3]) by VI1PR07MB4432.eurprd07.prod.outlook.com
+ ([fe80::91f:b1bb:a60a:fdc3%7]) with mapi id 15.20.1922.013; Wed, 22 May 2019
+ 09:36:57 +0000
+From: Philippe Mazenauer <philippe.mazenauer@outlook.de>
+Subject: [PATCH] arm: add missing include platform-data/atmel.h
+Thread-Topic: [PATCH] arm: add missing include platform-data/atmel.h
+Thread-Index: AQHVEIHmwqCRWv45dU+96A02oogPbw==
+Date: Wed, 22 May 2019 09:36:57 +0000
+Message-ID: <VI1PR07MB443209D29ADFA139B9735D89FD000@VI1PR07MB4432.eurprd07.prod.outlook.com>
+Accept-Language: de-CH, en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: MWHPR08CA0059.namprd08.prod.outlook.com
+ (2603:10b6:300:c0::33) To VI1PR07MB4432.eurprd07.prod.outlook.com
+ (2603:10a6:802:67::17)
+x-incomingtopheadermarker: OriginalChecksum:93CD7ADE6AD34B393F044E52CDF5EA4DDF10D87F80E81BFF1E84C4652B53F226;
+ UpperCasedChecksum:BAC4A55834B0659D1E2F50FD8CD1AE12D391813C43D7FD10B3A032ABFECA07FD;
+ SizeAsReceived:7644; Count:47
+x-ms-exchange-messagesentrepresentingtype: 1
+x-mailer: git-send-email 2.17.1
+x-tmn: [pUfdQLg42iiv9FdXbIJA2HDMX7HzPMgX]
+x-microsoft-original-message-id: <20190522093634.157414-1-philippe.mazenauer@outlook.de>
+x-ms-publictraffictype: Email
+x-incomingheadercount: 47
+x-eopattributedmessage: 0
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(5050001)(7020095)(20181119110)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031323274)(2017031324274)(2017031322404)(1601125500)(1603101475)(1701031045);
+ SRVR:AM5EUR02HT037; 
+x-ms-traffictypediagnostic: AM5EUR02HT037:
+x-microsoft-antispam-message-info: tfmLjODZCjHZv0L7VHlARd+k3K/x8NB1BwKVcs2QLv2jtfQ8qGnBl+auWfvTuYmHCfKV4NYT0BF8S/ewlNx0wfckDyw5+XzjCxYdpe6NRI/8stmKTLQrZZJjNgrPWMiEgMDcDE/9ZtEEvZa2dGXjQGuhp6iatoHdCCjvbmfRLBZk/eHh+FzKQM0tYYaGgJcy
+Content-ID: <7FBCE08C9A428D489A2F271157E25109@eurprd07.prod.outlook.com>
+MIME-Version: 1.0
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: 753f2fa7-2c99-46c3-0771-08d6de99088a
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 May 2019 09:36:57.8987 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Internet
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM5EUR02HT037
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_023511_243122_21DC418F 
-X-CRM114-Status: GOOD (  15.71  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190522_023701_107530_30221DF6 
+X-CRM114-Status: GOOD (  10.71  )
+X-Spam-Score: 2.8 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (2.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.92.68.12 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.2 MISSING_HEADERS        Missing To: header
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (philippe.mazenauer[at]outlook.de)
+ 1.6 MALFORMED_FREEMAIL     Bad headers on message from free email
+ service
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -114,65 +103,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Jeffrey Hugo <jhugo@codeaurora.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Sibi Sankar <sibis@codeaurora.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Niklas Cassel <niklas.cassel@linaro.org>, Robin Murphy <robin.murphy@arm.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ open list <linux-kernel@vger.kernel.org>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Philippe Mazenauer <philippe.mazenauer@outlook.de>,
+ Russell King <linux@armlinux.org.uk>,
+ "moderated list:ARM/Microchip \(AT91\) SoC support"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 22/05/2019 10:17, Marc Gonzalez wrote:
-> [ Re-sending to a wider audience, hoping to catch someone's eye ]
-> 
-> https://patchwork.kernel.org/patch/10953257/
-> 
-> On 21/05/2019 14:03, Marc Gonzalez wrote:
-> 
->> With CPUIDLE enabled, my system starts to boot, hangs a few seconds,
->> then silently reboots (killed by FW)
-> 
-> Using extremely high-tech debugging tools (i.e. spraying printk left and right)
-> I traced this crash down to:
-> 
-> psci_cpu_suspend_enter: 435
-> psci_cpu_suspend: 171
-> psci_cpu_suspend: __invoke_psci_fn_smc c4000001
-> __invoke_psci_fn_smc: id=c4000001 3 0 0
-> /*** execution never returns from arm_smccc_smc() ***/
-> 
-> 
-> The following dmesg log caught my eye, and might be relevant:
-> 
-> 	ARM_SMCCC_ARCH_WORKAROUND_1 missing from firmware
-> 
-> Is that bad, doctor? I don't think it would explain the crash though...
-
-It doesn't explain it.
-
-It is bad though: your vendor doesn't tell the kernel about the HW being
-free of Spectre-v2, and doesn't provide a mitigation either. Hopefully,
-this is a responsible vendor that will provide you with a firmware
-update that fixes it.
-
-> 
-> 
-> If I revert the patch, psci_cpu_suspend_enter() is never called,
-> so we don't tickle the arm_smccc_smc() monster.
-> 
-> Could it be that this FW doesn't support PSCI?
-
-Probably not in as well as it could, at least for CPU suspend.
-
-	M.
--- 
-Jazz is not dead. It just smells funny...
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SW5jbHVkZSBjb3JyZXNwb25kaW5nIGhlYWRlcmZpbGUgPGxpbnV4L3BsYXRmb3JtLWRhdGEvYXRt
+ZWwuaD4gZm9yDQpmdW5jdGlvbiBhdDkxX3N1c3BlbmRfZW50ZXJpbmdfc2xvd19jbG9jaygpLg0K
+DQouLi9hcmNoL2FybS9tYWNoLWF0OTEvcG0uYzoyNzk6NTogd2FybmluZzogbm8gcHJldmlvdXMg
+cHJvdG90eXBlIGZvciDigJhhdDkxX3N1c3BlbmRfZW50ZXJpbmdfc2xvd19jbG9ja+KAmSBbLVdt
+aXNzaW5nLXByb3RvdHlwZXNdDQogaW50IGF0OTFfc3VzcGVuZF9lbnRlcmluZ19zbG93X2Nsb2Nr
+KHZvaWQpDQogICAgIF5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+DQoNClNpZ25lZC1v
+ZmYtYnk6IFBoaWxpcHBlIE1hemVuYXVlciA8cGhpbGlwcGUubWF6ZW5hdWVyQG91dGxvb2suZGU+
+DQotLS0NCiBhcmNoL2FybS9tYWNoLWF0OTEvcG0uYyB8IDEgKw0KIDEgZmlsZSBjaGFuZ2VkLCAx
+IGluc2VydGlvbigrKQ0KDQpkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vbWFjaC1hdDkxL3BtLmMgYi9h
+cmNoL2FybS9tYWNoLWF0OTEvcG0uYw0KaW5kZXggNmM4MTQ3NTM2ZjNkLi4xYzg4YjQ3YzIzNmYg
+MTAwNjQ0DQotLS0gYS9hcmNoL2FybS9tYWNoLWF0OTEvcG0uYw0KKysrIGIvYXJjaC9hcm0vbWFj
+aC1hdDkxL3BtLmMNCkBAIC0xOSw2ICsxOSw3IEBADQogI2luY2x1ZGUgPGxpbnV4L3N1c3BlbmQu
+aD4NCiANCiAjaW5jbHVkZSA8bGludXgvY2xrL2F0OTFfcG1jLmg+DQorI2luY2x1ZGUgPGxpbnV4
+L3BsYXRmb3JtX2RhdGEvYXRtZWwuaD4NCiANCiAjaW5jbHVkZSA8YXNtL2NhY2hlZmx1c2guaD4N
+CiAjaW5jbHVkZSA8YXNtL2ZuY3B5Lmg+DQotLSANCjIuMTcuMQ0KDQpfX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcg
+bGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
+ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
