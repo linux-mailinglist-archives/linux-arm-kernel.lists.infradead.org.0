@@ -2,50 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24ACE263EF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 14:35:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92FD426409
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 14:50:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aDxJKzp08KxXgmop/23vmSVeqdsGOfzsfBLpAstodPo=; b=MU44mJ0Dz01ymd
-	Z581PMxLHiq5wqnlhPdoM1zAHpMzBmATW5TQTOStOs6iSrsbT+56UCdw3H8HVqGZ7w2j0D+2wS+pZ
-	RrMPNlaw9nJqHXRZimu61/zxT2X1VVnm86fdOcdZBNsTWfOM/mHYoEF6FMTHdw3W1DmDjtdKm7iRO
-	rhl7wUWi4IRxcgbnMcsQpaFgYARdRz6UPFo/tvz4r529r/T9OcRxP9xhxxIBoP3x2KO6/VVbpMA6i
-	3Gknhl33oWN+EIc2WQTdxY1Xer/w1VN7MHfHAT30Xa5v8L929rGLKtpDaioOIRF/T8VtW0R8pyHoa
-	lpDXOr8RWNq94QUonYJw==;
+	List-Owner; bh=qVb0XpTIRByS/msKXQNiAXTjSs/PdKEnUJgP8mWbDNg=; b=fWVA5n3m2w9IKw
+	J7LASIuC/I7Ndz5pnR8P36K9tz75RqqCNu5yw0SVyqYYeFtbrSlgySFOFsKI9/3KwDlfb5xqDYpQN
+	9I2JGA71KUFJLWfaoBGCuO4z5uftgy65s1q0sdCF3cGcwjfcOX2Ui5NFxGgcSCoZDBBWZU1UYdrKu
+	goIf0wuy+s82J/1xTxgKxFHsgLNOrq3LW7ETiHZrZw0n4qqVqziQ2XGb4U3hkNkh8P3IPnTBg+Nbx
+	MOwSclT67i7ymHMor6T+w2IZwTABIihfZZ9OVIHdQBxVZpathm2v14vX3q1P18Tn3YhtSdr9dhTqE
+	tkK5dwGvvunLGFugcT8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTQSg-0006ME-BJ; Wed, 22 May 2019 12:35:14 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1hTQh7-0001Vc-RI; Wed, 22 May 2019 12:50:09 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTQSX-0005lQ-VR; Wed, 22 May 2019 12:35:07 +0000
-Received: from we0524.dip.tu-dresden.de ([141.76.178.12] helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hTQSR-0000lq-OK; Wed, 22 May 2019 14:34:59 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Daniel Lezcano <daniel.lezcano@linaro.org>
-Subject: Re: [PATCH v3 1/3] thermal: rockchip: fix up the tsadc pinctrl
- setting error
-Date: Wed, 22 May 2019 14:34:58 +0200
-Message-ID: <1805430.MCm2xJzUXA@phil>
-In-Reply-To: <f0581341-126a-5733-3c4b-8e6f67bfc32e@linaro.org>
-References: <1556618986-18923-1-git-send-email-zhangqing@rock-chips.com>
- <2174314.1vfUlvne1O@phil> <f0581341-126a-5733-3c4b-8e6f67bfc32e@linaro.org>
+ id 1hTQgv-0001Uz-V1
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 12:49:59 +0000
+Received: from mail-qt1-f181.google.com (mail-qt1-f181.google.com
+ [209.85.160.181])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 96F752184B
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 22 May 2019 12:49:57 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1558529397;
+ bh=5ZGoJi7NkwXVR/OD6kRE/4231NNk5lVLqumccNmisaM=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=P/Xi9UJqmeYRdPazqEcKP9IuQTWCddd6kst1SKQ3qjtCiUCMbvuOEEDFicZv/pk63
+ NeV63sW+AFY9dTKnLz1Lreb0QxFX4AC9RFKcvXTXt1ZrMWRDQBPXZKLqEvEDUM4vwH
+ QT+r59SQPi1NU1B28D+wbB9ZjFloODaKSgvs63xA=
+Received: by mail-qt1-f181.google.com with SMTP id f24so2081628qtk.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 22 May 2019 05:49:57 -0700 (PDT)
+X-Gm-Message-State: APjAAAXGWrzdqG3g4ENoTqyE9piwuGilL8Xa1XiS7Iul1Sz945wFAfTU
+ zM/Ze6GKQkQY8prriTECZn3054PWU6DKWtbBbg==
+X-Google-Smtp-Source: APXvYqxJyh8gPJdSllFYvlfTjnDcRfyrin0i7k2617dS8CfKNsSi0ccmNnsl8crgC8wL+I59VDGEoYxEPmonj9M9fPU=
+X-Received: by 2002:ac8:3884:: with SMTP id f4mr75987199qtc.300.1558529396825; 
+ Wed, 22 May 2019 05:49:56 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190521212325.16639-1-robh@kernel.org>
+ <20190522104226.nwcvx33akt6q576m@flea>
+In-Reply-To: <20190522104226.nwcvx33akt6q576m@flea>
+From: Rob Herring <robh@kernel.org>
+Date: Wed, 22 May 2019 07:49:44 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq+JimAYW9GiPz6_hNJfnA+8bnN=kPDOEJFPyt+57bwriw@mail.gmail.com>
+Message-ID: <CAL_Jsq+JimAYW9GiPz6_hNJfnA+8bnN=kPDOEJFPyt+57bwriw@mail.gmail.com>
+Subject: Re: [PATCH] spi: dt-bindings: Convert Arm pl022 to json-schema
+To: Maxime Ripard <maxime.ripard@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_053506_190181_3765D8DE 
-X-CRM114-Status: GOOD (  14.34  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190522_054958_009325_7E1BD466 
+X-CRM114-Status: GOOD (  12.00  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -57,48 +86,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, huangtao@rock-chips.com,
- Doug Anderson <dianders@chromium.org>,
- Linux PM list <linux-pm@vger.kernel.org>,
- Enric Balletbo Serra <eballetbo@gmail.com>, xxx@rock-chips.com,
- Elaine Zhang <zhangqing@rock-chips.com>,
- linux-kernel <linux-kernel@vger.kernel.org>, vicencb@gmail.com,
- xf@rock-chips.com, Eduardo Valentin <edubezval@gmail.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Zhang Rui <rui.zhang@intel.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ linux-spi <linux-spi@vger.kernel.org>, Mark Brown <broonie@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am Mittwoch, 22. Mai 2019, 14:30:16 CEST schrieb Daniel Lezcano:
-> On 22/05/2019 14:27, Heiko Stuebner wrote:
-> 
-> [ ... ]
-> 
-> >> As this change is now in mainline and is causing veyron to hang I'd
-> >> suggest reverting this change for now. Even fixing the root cause
-> >> (maybe the one I pointed above) after this patch we will have the
-> >> thermal driver to fail because "gpio" and "otpout" states are not
-> >> defined nor documented (a change on this will need some reviews and
-> >> acks and time I guess).
-> > 
-> > I definitly agree here. Handling + checking the binding change
-> > as well as needed fallback code is definitly not material for -rc-kernels
-> > so we should just revert for now and let Elaine fix the issues for 5.3.
-> > 
-> > Anyone volunteering for sending a revert-patch to Eduardo? :-)
-> 
-> I can't right now :/
+On Wed, May 22, 2019 at 5:42 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+>
+> Hi Rob,
+>
+> On Tue, May 21, 2019 at 04:23:24PM -0500, Rob Herring wrote:
+> > +allOf:
+> > +  - $ref: "spi-controller.yaml#"
+>
+> You're using a different construct on the spi-gpio binding you just
+> sent (/schemas/spi/spi-controller.yaml).
+>
+> Is that on purpose?
 
-ok, I'll do the revert patch then, so that we get this sorted.
+No. This one is correct (though both work).
 
-
-Heiko
-
-
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
