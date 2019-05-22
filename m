@@ -2,71 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C6CB27091
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 22:06:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D819C27097
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 22:07:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fLx6lSxN7UdaVBGUekAghYLcWPtNH3RQAiWOYZhX2kc=; b=uxjizQKZz0heev
-	PdrbR4+YFS8AdKm1km5ElyTePxbvCQQco4zdITGMmHE2KmM7oxu1wYmS2k/rhg2THb7Y5PM4d7zx8
-	e7Xi0IlgPZ17mCizApqFG43ObtYLrEgMA++QU0FWAbqTRz14dYrbQnGNTKYL8SVfAD1cxHt9nPy6h
-	5d2aFjmGEikz0xtgwmeN1jFaOtG4hD+DySJbbiFzaQV7GUBxMwdXcNtSExRpSvTYGiJq5UrSOdK1G
-	F0UddSD5jAGevx3maG6gsgoRGlP1el5E2z7oXQWscRhy21/tNk1Um6WBCvSdtG8jeSL0o7EiLW4MB
-	ABn7HvJt93DdkTgtIs/Q==;
+	List-Owner; bh=CErAo9ocACBQs04pB0qbYNCer95+QghZ75Zn/sZ4KH8=; b=fJI3CtVUcm+cdY
+	yIWvJQ0RiLBT4v7QIkFJZB6H25vcb5JE63gvWt0q5/SKdp6VIM1CEZKwFUoWV/ULMVQw0rjUYKQP5
+	P9VA7Q5e4EAdUL/qT8mtX2987naY83BwQ2Q6382ktXVfz3QMk0hNVs0UVFbsaYCCI/sb1Z5X9Ndyn
+	Qty+BypJbSZfRYw/TgO0/Z6CEXs2WkwJ3ZKZzIVquW9nniVI3k5IJTJVJeUgbC0vIjPmOCUcvJeex
+	vd5Z0qzxhrCy1mrZrHGarToZuVAmR8ToLSEoT+b4zHA0attfsXxyWV6T1RDAWLPnZYIbloWPbCc8j
+	OWTVPxyObAaBKtDM7oyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTXVR-00047r-2L; Wed, 22 May 2019 20:06:33 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hTXW6-0004Sm-Nm; Wed, 22 May 2019 20:07:14 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTXVK-00047D-1I
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 20:06:27 +0000
-Received: by mail-wm1-x344.google.com with SMTP id 198so3459500wme.3
+ id 1hTXVz-0004SP-LH
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 20:07:08 +0000
+Received: by mail-wm1-x342.google.com with SMTP id 198so3461354wme.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 May 2019 13:06:25 -0700 (PDT)
+ Wed, 22 May 2019 13:07:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=xfvWzWOCcbhUBPcKYGPfMdW6ZihbO5PDb0iYphVdys8=;
- b=ZLsSaGdO3SEwOSieiZ9j/OL/t86LIE9E8dOoNCwYJVfWTAppusktQmEJABToqmqD/V
- mD6KcVAUpuz6+TFwvWTQ1/f83bNY+H5EN/yCCnLO5YdpY9CwaVtbG5mrUfNt5HA+0Vj0
- sun6fiWTOU/G+iTtsKAB1my/CuOJBUTQrhOwtOKoXWbOulB/dM5KvG6P12M5J2UFmf7Q
- c4r2syWtuXRqpLT4rFgrJ2TdWtqAqXVxgOro0dbRo6mt+YT4yEyq37yK0bthavEgpeSN
- 0tm92/4RKkT5EOETXhpOysTEOQcL8peADyINHi7HCQMnSg6waIa3P9R4p4nh4NaHtDPB
- XZ/A==
+ bh=9dd5VrREXNzYlzZ/Hq0rW45na+V+EBUYHhrE9XhI9hk=;
+ b=PbiM0zsKSAsulWPhCq4fkiyFofX7e8lVfEra0zpBZZA4iJ+g8p6IO9vG4ZWsOoR8MD
+ evvRoCYJAsyvr1gIW5bcwAkreni9KvSwvVX76LtKEjIULTuLFdWJMhJ1d5YuHeSYgkeX
+ zPJQdkhbhXWCNAm9KP4YQ5F/wyN94CzFGO5fFeLLyAAi2ZbUhDwPti/GP0t1ZpAV/OUp
+ zt9JvZWw8kPmUGe3mlJw8LsbpEduI3m0IGRbcihON5b2I+Us7SsCPhMymSDYCicSelTB
+ +8lb/P2YhgQs7NXh3lQG3BQLMGK9PcOKKtaeyvRkuj6XNnQThwqujig/MTdhK2Y5rl9O
+ 1UqA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=xfvWzWOCcbhUBPcKYGPfMdW6ZihbO5PDb0iYphVdys8=;
- b=eADYYPJEc1RlPcEzw1qfCKIt/jriX+gODDcBI9W/D8jmU3yuZKFbYlzTOrtL3KNf5W
- 7GRpHw8r9PW4p3146e/cW8ZnVdhebJ5K1RRYCNAgxi8LDD/6Aomp7Q2J5GMSL3XE0CK/
- swrU2XetbM8odyLkNKNmfEU5RZ/Eos3Q4je+F0oLVR9Iog8IYl1Op/DlY4ngBJcYn8Ld
- NPnfba19xJ3ONimDPIWYehEIfsvBFFs/dQBO7h4FHJ5vqOipyJRk8aJECiT117luupiG
- 4WNDL3xiTSeB7K1IPcA003YpZRDN4D6zVXGcrRngTPUunLgX4qPCANdUhxYdoHK71YWU
- xzsg==
-X-Gm-Message-State: APjAAAUaPFYH2miQID0U6/JOqBQtGAUMuPwvBzaQCuEGQUsVbzcBNqKK
- ua6OMyy3pWykWbI5s36DUFA=
-X-Google-Smtp-Source: APXvYqzPyHVt/C8ajAwh9GI2cYqbV21wAPx83W4rFKRMglUmsuW2RoBMr1tEl3jOf8AUXNQAXoYMMw==
-X-Received: by 2002:a1c:cb0e:: with SMTP id b14mr8452387wmg.61.1558555583944; 
- Wed, 22 May 2019 13:06:23 -0700 (PDT)
+ bh=9dd5VrREXNzYlzZ/Hq0rW45na+V+EBUYHhrE9XhI9hk=;
+ b=QfR0Sv2unKi80m2l4dUPCUEP5EB6ffDfJa4JtU0v7s9JgJ6qINgZrlJ4hm1v+3YpWJ
+ eyEToDabhFTF9eZrpGYH+SPKpWrgooiXbnpH723QoNMHG/7kWIs8zUktqy6TpSFASLf8
+ r/TL95wr6PjiGhUW7MGTORKKPUgIOkiDzMchMYRPeRev2qrCP7BE3Sxr1uf4mpPnMSzz
+ yKKBpPYkKHL+BInCP+BVCMWm9PfW8FmZwJqR6Mn0jXSa0lQNQaIe5ilSTktzThXELe1i
+ tE0PQPhXPnOMTQDI/XI/cOyTy/cZvb1zci5PbVLi5T4x6k3alH6f8MQsfhqJPqsyaP4n
+ qYQQ==
+X-Gm-Message-State: APjAAAVmAxHKvwWVtaijiyqQSwh1xr1ZmPOlfOZuOQfKRyN1P2pFFPVo
+ xoo7BBPKzqyvyWur7sDFxuE=
+X-Google-Smtp-Source: APXvYqzjDNs5ZBtyBDfR56VAHnXh9iR+WHVZjV0ILOsAuzXiSMjrejejMpM69kdmyV7F2VIQeJTd9g==
+X-Received: by 2002:a7b:c001:: with SMTP id c1mr9589654wmb.49.1558555626049;
+ Wed, 22 May 2019 13:07:06 -0700 (PDT)
 Received: from [10.67.49.213] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id p17sm9107432wrq.95.2019.05.22.13.06.20
+ by smtp.googlemail.com with ESMTPSA id k184sm17141438wmk.0.2019.05.22.13.07.03
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 22 May 2019 13:06:23 -0700 (PDT)
-Subject: Re: [PATCH net-next 1/2] net: phy: add interface mode
- PHY_INTERFACE_MODE_USXGMII
+ Wed, 22 May 2019 13:07:05 -0700 (PDT)
+Subject: Re: [PATCH net-next 2/2] net: phy: aquantia: add USXGMII support
 To: Heiner Kallweit <hkallweit1@gmail.com>,
  Madalin-cristian Bucur <madalin.bucur@nxp.com>,
  Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Andrew Lunn <andrew@lunn.ch>, David Miller <davem@davemloft.net>
 References: <110a1e45-56a7-a646-7b63-f39fe3083c28@gmail.com>
- <aca070f6-f56b-1b1f-180a-ddf52af91ecb@gmail.com>
+ <2c68bdb1-9b53-ce0b-74d3-c7ea2d9e7ac0@gmail.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
@@ -123,23 +122,23 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
  6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9Za0Dx0yyp44iD1OvHtkEI
  M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <d736f2d8-5c2a-e624-e372-cc2dd7b29f3c@gmail.com>
-Date: Wed, 22 May 2019 13:06:11 -0700
+Message-ID: <46a141c7-f838-ae4b-4a47-5b1fb44ef063@gmail.com>
+Date: Wed, 22 May 2019 13:07:01 -0700
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <aca070f6-f56b-1b1f-180a-ddf52af91ecb@gmail.com>
+In-Reply-To: <2c68bdb1-9b53-ce0b-74d3-c7ea2d9e7ac0@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_130626_104231_6089A315 
-X-CRM114-Status: GOOD (  11.04  )
+X-CRM114-CacheID: sfid-20190522_130707_697475_DDDBB961 
+X-CRM114-Status: GOOD (  16.07  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -172,13 +171,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/22/19 12:57 PM, Heiner Kallweit wrote:
-> Add support for interface mode PHY_INTERFACE_MODE_USXGMII.
+On 5/22/19 12:58 PM, Heiner Kallweit wrote:
+> So far we didn't support mode USXGMII, and in order to not break the
+> two Freescale boards mode XGMII was accepted for the AQR107 family
+> even though it doesn't support XGMII. Add USXGMII support to the
+> Aquantia PHY driver and change the phy connection type for the two
+> boards.
+> 
+> As an additional note: Even though the handle is named aqr106
+> there seem to be LS1046A boards with an AQR107.
 > 
 > Signed-off-by: Heiner Kallweit <hkallweit1@gmail.com>
 
-If you update Documentation/devicetree/bindings/net/ethernet.txt, then
-this is:
+You can probably split the DTS changes and the PHY driver changes into a
+separate commits and just have the DTS changes come last? With that:
 
 Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
 -- 
