@@ -2,50 +2,144 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75FF025ED3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 09:51:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5587E25EE3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 09:58:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3RYpbyvfC4j33RxQdtBStzgv+4D6i4HAXYQUIg5gYO0=; b=hfMx+kAMdd+HZL
-	3RlA9ljipseZAmxV5H/iVGV8TilmY4KndovmzTn/18A7p3XVpZM5noXb+dLVwa1xKBkwDupE40pUr
-	zHfNJLR68Y94Y6x1a1G5qYX9qrmYW6eVRi8PCevEPsM5Zmxk/OljkBgi52SRpD0YLJ5lpneDvs7lT
-	pbRnU9BNvk6Xh0KXiA6xgnH9RrkpuJ6QYI0YxBRDn1h6xx7+vl/to0TU7rzfS6AT73SA8Hc49+AwG
-	8v38vQZT6vLNbFjpsN7Abnwp2o1if7emfDFrOaRwO8FbFOSAbsqftVNDOS3w9JgfFP7BYbJqiaVeS
-	eLOn1j37ikpkSujAWCEw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pKW/bkX8oS8svuMBUywBIE+tLHcKDNa5uIeuYuFfcnw=; b=a5M2d0aexaEOfC
+	8UgefS4U/cw9oZE8kE3Br2w49Bw2OoXGU/Iv3StoebRFeQNm1iuCdTIUbTbVnZN81XR91tYeNwzi4
+	oWlpkiBOHEAphkiAUvkjNTY8jmpv0Nd3kbf+x0tDEufWi9t9RZ+AKiV8Lv0c6NYxmqABmYBaEI99E
+	YCl7lxI9j/o05q6QA1JzidZ9koltgiR2vzFGFEA4KePsMzAijwDKNU6LUdZj0vhL4RBfd0OP6+TGC
+	f3wR0VmtnHNOvrNimYk6JxU41QtolHucIEFknFhesgGpt6VwKf3VS55H72n02OHwIDQcwDO6DsiY7
+	ajVAwEtLzranK+UO+SxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTM2F-0001h3-43; Wed, 22 May 2019 07:51:39 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1hTM8Z-0003If-Db; Wed, 22 May 2019 07:58:11 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTM28-0001gf-Er
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 07:51:33 +0000
-Received: from we0524.dip.tu-dresden.de ([141.76.178.12] helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hTM24-0007xP-LO; Wed, 22 May 2019 09:51:28 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Wolfram Sang <wsa@the-dreams.de>
-Subject: Re: [PATCH 5/8] MAINTAINERS: add I2C DT bindings to Rockchip platform
-Date: Wed, 22 May 2019 09:51:27 +0200
-Message-ID: <2847662.8Nn05j9K3f@phil>
-In-Reply-To: <20190521082137.2889-6-wsa@the-dreams.de>
-References: <20190521082137.2889-1-wsa@the-dreams.de>
- <20190521082137.2889-6-wsa@the-dreams.de>
+ id 1hTM8Q-0003H8-22
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 07:58:03 +0000
+Received: by mail-wr1-x443.google.com with SMTP id e15so1121001wrs.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 22 May 2019 00:58:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:openpgp:autocrypt:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=GHAkYeVRW/vlbv+4Giq061DHjtEKlGHH98fC8Hd4T6c=;
+ b=FULFs+pjbx8CFx/gQAp0W7KZGUi3h9Q9BAqvA+O8BsbxrKAoPipjzIsl5qN/Mvmsl1
+ 1dcxuUcoyUPPlrtZUbZxbCGzGfZf2ykIrGOgIWevqEZsuXquAc0YsBYzHo+EoqarUIpF
+ hLZxyXRLNLrVkakJWYy4AhsRVZYNRpGVVj8v8QvRMLUh9yqkFU0yyKZYd0+uJgfyV1Wq
+ 3vtsQc0v4uTr1Gf6jsJ3oihSLhidlk89CfvtWC/MxEt/WS9vWJgd6v4z06eCWEuNtJNx
+ xwQ7yZY51PS/D2u+QSrKK1Lvap/2EI68WciYN4ol9b/0/m0VYWyLZYaK3LXgouijZ1uW
+ GpxQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :organization:message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=GHAkYeVRW/vlbv+4Giq061DHjtEKlGHH98fC8Hd4T6c=;
+ b=LMTLPYDKlsgurVJUizcOg+w14Ab74+waxjHgKHgHrtFs4c9xZQUM9TuBjUnXvrbP6k
+ JqsSGojIrQxzQs1vrcc2BM9Mx3NunP/P9BOjtRdhESBYwyEqASPGvpqg+YOtAeojiKao
+ JM+5tgVUmNywc8Nyvyv2/W1v3QJZKxDWibpii3iL9JPJlKvwOavNpWlNdgVkAYdbpa1o
+ sC3VplrlVtdViGUx0judsI262bpBm68ROxj6EZSu23Jt2e0+wzMR0lIZs2S5972RWS6K
+ E6ZDQzGjKyICn0X0ZxWi3Rn/kUpDPQYt1naxYsKNT//URgSurRus8r+ZveK6ax2aJXir
+ U3OQ==
+X-Gm-Message-State: APjAAAX/uaLVBlwKmJj/lA61s+Tv9fd6XOTK6dX6Z+bZUT+z1+76LZW8
+ N22lYOXHjZBV5FCyN+DC/dg5joZuu6+N3Q==
+X-Google-Smtp-Source: APXvYqyckrgKV1n38zckZ+etnJoUTm0gV39Y0P7uWUcumPygS8i6kzuWmgBBnPrHoFM5KYDd+RZoiw==
+X-Received: by 2002:adf:cf0c:: with SMTP id o12mr44779541wrj.182.1558511880004; 
+ Wed, 22 May 2019 00:58:00 -0700 (PDT)
+Received: from [192.168.1.62] (176-150-251-154.abo.bbox.fr. [176.150.251.154])
+ by smtp.gmail.com with ESMTPSA id
+ y16sm7339220wru.28.2019.05.22.00.57.58
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 22 May 2019 00:57:59 -0700 (PDT)
+Subject: Re: [PATCH 2/3] clk: meson: g12a: Add support for G12B CPUB clocks
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+References: <20190521150130.31684-1-narmstrong@baylibre.com>
+ <20190521150130.31684-3-narmstrong@baylibre.com>
+ <CAFBinCB+DD=hssuswV6M4i1Buv7bs0-6TfPTRVdUrhaprLMb0w@mail.gmail.com>
+From: Neil Armstrong <narmstrong@baylibre.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ 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
+ ZaTUOEkgIor5losDrePdPgE=
+Organization: Baylibre
+Message-ID: <469affe7-c049-8726-a242-2a003370f952@baylibre.com>
+Date: Wed, 22 May 2019 09:57:58 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <CAFBinCB+DD=hssuswV6M4i1Buv7bs0-6TfPTRVdUrhaprLMb0w@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_005132_650020_C0823C8D 
-X-CRM114-Status: GOOD (  13.35  )
+X-CRM114-CacheID: sfid-20190522_005802_109399_B610551C 
+X-CRM114-Status: GOOD (  21.35  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -57,44 +151,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org, jbrunet@baylibre.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Wolfram,
-
-Am Dienstag, 21. Mai 2019, 10:21:34 CEST schrieb Wolfram Sang:
-> Signed-off-by: Wolfram Sang <wsa@the-dreams.de>
-> Cc: Heiko Stuebner <heiko@sntech.de>
-
-not sure if you want me to apply this or just want to pick it up
-yourself (I don't have a hard preference here). In any case, if you
-want to pick it up, it is obviously
-
-Reviewed-by: Heiko Stuebner <heiko@sntech.de>
-
-> ---
->  MAINTAINERS | 1 +
->  1 file changed, 1 insertion(+)
+On 21/05/2019 19:49, Martin Blumenstingl wrote:
+> Hi Neil,
 > 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 1a60cd98aad5..09f32866bdef 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -2145,6 +2145,7 @@ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
->  L:	linux-rockchip@lists.infradead.org
->  T:	git git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git
->  S:	Maintained
-> +F:	Documentation/devicetree/bindings/i2c/i2c-rk3x.txt
->  F:	arch/arm/boot/dts/rk3*
->  F:	arch/arm/boot/dts/rv1108*
->  F:	arch/arm/mach-rockchip/
+> On Tue, May 21, 2019 at 5:02 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+>>
+>> Update the Meson G12A Clock driver to support the Amlogic G12B SoC.
+>>
+>> G12B clock driver is very close, the main differences are :
+>> - the clock tree is duplicated for the both clusters, and the
+>>   SYS_PLL are swapped between the clusters
+>> - G12A has additional clocks like for CSI an other components
+> should this also be G12B?
+
+Indeed, another leftover from previous patchset...
+
 > 
+> [...]
+>> +static struct clk_regmap g12b_cpub_clk_apb_div = {
+> if you also think that it's worth it then please add a comment stating
+> that this is called "PCLK_mux" in the datasheet
+> same goes for the ATB and AXI clocks below as the naming in the driver
+> and datasheet differs
+> 
+>> +       .data = &(struct clk_regmap_div_data){
+>> +               .offset = HHI_SYS_CPUB_CLK_CNTL1,
+>> +               .shift = 3,
+>> +               .width = 3,
+>> +               .flags = CLK_DIVIDER_POWER_OF_TWO,
+>> +       },
+>> +       .hw.init = &(struct clk_init_data){
+>> +               .name = "cpub_clk_apb_div",
+>> +               .ops = &clk_regmap_divider_ro_ops,
+>> +               .parent_names = (const char *[]){ "cpub_clk" },
+>> +               .num_parents = 1,
+>> +       },
+>> +};
+> I'm assuming you checked that this is really a power of two divider,
+> on the Meson8/8b/8m2 SoCs this is a mux between div[2..8]
+> (the same goes for the ATB, AXI and trace div clocks below)
 
+Indeed it's not a power of 2 here, it's mux between div[2..8]
 
+I'll also need to update the first cluster aswell...
 
+> 
+>> +
+>> +static struct clk_regmap g12b_cpub_clk_apb = {
+>> +       .data = &(struct clk_regmap_gate_data){
+>> +               .offset = HHI_SYS_CPUB_CLK_CNTL1,
+>> +               .bit_idx = 16,
+> the public S922X datasheet calls this "PCLK_dis", does this mean you
+> need a flag here?
+>   .flags = CLK_GATE_SET_TO_DISABLE,
+
+The first cluster register has some description, but with the same
+fields naming :
+APB_CLK_DIS: set to 1 to manually disable the APB clock...
+
+So you are right, I'll also fix the first cluster clocks.
+
+> 
+> [...]
+>> +static struct clk_regmap g12b_cpub_clk_atb = {
+>> +       .data = &(struct clk_regmap_gate_data){
+>> +               .offset = HHI_SYS_CPUB_CLK_CNTL1,
+>> +               .bit_idx = 17,
+> the public S922X datasheet calls this "ATCLK_clk_dis", does this mean
+> you need a flag here?
+>   .flags = CLK_GATE_SET_TO_DISABLE,
+
+Exact
+
+> 
+> [...]
+>> +static struct clk_regmap g12b_cpub_clk_axi = {
+>> +       .data = &(struct clk_regmap_gate_data){
+>> +               .offset = HHI_SYS_CPUB_CLK_CNTL1,
+>> +               .bit_idx = 18,
+> the public S922X datasheet calls this "ACLKM_clk_dis", does this mean
+> you need a flag here?
+>   .flags = CLK_GATE_SET_TO_DISABLE,
+
+Exact
+
+> 
+> [...]
+>> +static struct clk_regmap g12b_cpub_clk_trace = {
+>> +       .data = &(struct clk_regmap_gate_data){
+>> +               .offset = HHI_SYS_CPUB_CLK_CNTL1,
+>> +               .bit_idx = 23,
+> the public S922X datasheet calls this "Trace_clk_dis", does this mean
+> you need a flag here?
+>   .flags = CLK_GATE_SET_TO_DISABLE,
+
+Exact
+
+Thanks for the review !
+
+Neil
+
+> 
+> 
+> Regards
+> Martin
+> 
 
 
 _______________________________________________
