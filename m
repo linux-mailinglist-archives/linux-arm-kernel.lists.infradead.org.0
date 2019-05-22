@@ -2,51 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A2EE2264FE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 15:49:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 411582650A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 15:49:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SKQmU1gm2KuoaaVG6k0IjRDcdJIg06SsQB28KGWTOBw=; b=gcufn80MH/I8DJ
-	X2Ypc55VWJablvwJTA5xTcX8hi5SdDw2vXU6M8MYf5Y2TWOo/zDMFIG1PWfM1k4TH0QMgf/CtB31v
-	8Pv3ZGCg0uR9plGyVmEC6NcsULT3bl19CxctHqPXRy7FPvm6/Lp6z2fYk4uBxbpGVA4HFXkl3kLUu
-	jJcU27bdV8AX8gWC6Ykqt8u7PHFElG0EdMZDyNsWXheFm+8lhFilCBkZPb+DRj21zMLZeuRP/uPvV
-	3SPRn/gB32oriq41/RXGy1HmyC8qStv/PCgUp3o2QbJVaZlOHvMPmBZjS7StHytaxcipdpfBYTlzT
-	h5rT9Zg3059bRqLt+EjQ==;
+	List-Owner; bh=Mw5zlcwKKEGC6uITNR9CfYVJOlI/Kos7Oj+UhrjtChk=; b=RXQsLyR4Gf5IBw
+	i8Zi5RjhY1Fi4bYoOwBowUuclDLygRmTMgzB25klWIInn/Zr8Wcetj0knUILUUh0N06KOcrAdn8Lp
+	ZQ/FRAzZh09/dtfSXb+t/2FkC+Y8xaSnm3Q/6pjmvD4dvD7iK4ByHOogLKEZ2+hpIoczk71MCgsxt
+	dhmVooExHTK1QBIJFJHRivqjMBaWvVR0mVaNhy0FmQRZMbzL4+xUu6zRG/dCQTC1dI9dNLpA3jiNk
+	0ccTU2cKY1Az0cdoDgK2/zB/qX+2LbqjaCMuEzqHz8gZJxIpfHXxRa6dCIsU137Y7IdutWDapDXIm
+	Ft9s92yCYhLDPkuapGGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTRcO-0007Z8-Ej; Wed, 22 May 2019 13:49:20 +0000
+	id 1hTRco-000891-Fe; Wed, 22 May 2019 13:49:46 +0000
 Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
  helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTRc4-0007Ga-Lw
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 13:49:02 +0000
+ id 1hTRcg-00080A-36
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 13:49:39 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4A8AC80D;
- Wed, 22 May 2019 06:49:00 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D455C3F575;
- Wed, 22 May 2019 06:48:59 -0700 (PDT)
-Date: Wed, 22 May 2019 14:48:58 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Marc Zyngier <marc.zyngier@arm.com>
-Subject: Re: [PATCH v7 5/5] KVM: arm/arm64: support chained PMU counters
-Message-ID: <20190522134857.GB8268@e119886-lin.cambridge.arm.com>
-References: <20190521155228.903-1-andrew.murray@arm.com>
- <20190521155228.903-6-andrew.murray@arm.com>
- <42142487-4059-dbfb-062c-0839c1f0ea51@arm.com>
- <20190522103537.GZ8268@e119886-lin.cambridge.arm.com>
- <37b16e12-cc0e-1d27-17f9-9bd1a326610f@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5198E80D;
+ Wed, 22 May 2019 06:49:36 -0700 (PDT)
+Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 94CFA3F575;
+ Wed, 22 May 2019 06:49:30 -0700 (PDT)
+Date: Wed, 22 May 2019 14:49:28 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Jason Gunthorpe <jgg@ziepe.ca>
+Subject: Re: [PATCH v15 00/17] arm64: untag user pointers passed to the kernel
+Message-ID: <20190522134925.GV28398@e103592.cambridge.arm.com>
+References: <cover.1557160186.git.andreyknvl@google.com>
+ <20190517144931.GA56186@arrakis.emea.arm.com>
+ <20190521184856.GC2922@ziepe.ca>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <37b16e12-cc0e-1d27-17f9-9bd1a326610f@arm.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+In-Reply-To: <20190521184856.GC2922@ziepe.ca>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_064900_777287_DED6D2F2 
-X-CRM114-Status: GOOD (  34.33  )
+X-CRM114-CacheID: sfid-20190522_064938_151079_6D75AF79 
+X-CRM114-Status: GOOD (  22.82  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -67,275 +66,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Pouloze <suzuki.poulose@arm.com>,
- Julien Thierry <julien.thierry@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>, James Morse <james.morse@arm.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ Lee Smith <Lee.Smith@arm.com>, linux-kselftest@vger.kernel.org,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, Evgeniy Stepanov <eugenis@google.com>,
+ linux-media@vger.kernel.org, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
+ Yishai Hadas <yishaih@mellanox.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 22, 2019 at 12:50:43PM +0100, Marc Zyngier wrote:
-> On 22/05/2019 11:35, Andrew Murray wrote:
-> > On Tue, May 21, 2019 at 05:31:47PM +0100, Marc Zyngier wrote:
-> >> On 21/05/2019 16:52, Andrew Murray wrote:
-> >>> ARMv8 provides support for chained PMU counters, where an event type
-> >>> of 0x001E is set for odd-numbered counters, the event counter will
-> >>> increment by one for each overflow of the preceding even-numbered
-> >>> counter. Let's emulate this in KVM by creating a 64 bit perf counter
-> >>> when a user chains two emulated counters together.
-> >>>
-> >>> For chained events we only support generating an overflow interrupt
-> >>> on the high counter. We use the attributes of the low counter to
-> >>> determine the attributes of the perf event.
-> >>>
-> >>> Suggested-by: Marc Zyngier <marc.zyngier@arm.com>
-> >>> Signed-off-by: Andrew Murray <andrew.murray@arm.com>
-> >>> ---
-> >>>  include/kvm/arm_pmu.h |   2 +
-> >>>  virt/kvm/arm/pmu.c    | 246 ++++++++++++++++++++++++++++++++++++------
-> >>>  2 files changed, 215 insertions(+), 33 deletions(-)
-> >>>
-> >>> diff --git a/include/kvm/arm_pmu.h b/include/kvm/arm_pmu.h
-> >>> index b73f31baca52..8b434745500a 100644
-> >>> --- a/include/kvm/arm_pmu.h
-> >>> +++ b/include/kvm/arm_pmu.h
-> >>> @@ -22,6 +22,7 @@
-> >>>  #include <asm/perf_event.h>
-> >>>  
-> >>>  #define ARMV8_PMU_CYCLE_IDX		(ARMV8_PMU_MAX_COUNTERS - 1)
-> >>> +#define ARMV8_PMU_MAX_COUNTER_PAIRS	((ARMV8_PMU_MAX_COUNTERS + 1) >> 1)
-> >>>  
-> >>>  #ifdef CONFIG_KVM_ARM_PMU
-> >>>  
-> >>> @@ -34,6 +35,7 @@ struct kvm_pmc {
-> >>>  struct kvm_pmu {
-> >>>  	int irq_num;
-> >>>  	struct kvm_pmc pmc[ARMV8_PMU_MAX_COUNTERS];
-> >>> +	DECLARE_BITMAP(chained, ARMV8_PMU_MAX_COUNTER_PAIRS);
-> >>>  	bool ready;
-> >>>  	bool created;
-> >>>  	bool irq_level;
-> >>> diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
-> >>> index ae1e886d4a1a..4b0981c402c6 100644
-> >>> --- a/virt/kvm/arm/pmu.c
-> >>> +++ b/virt/kvm/arm/pmu.c
-> >>> @@ -25,28 +25,128 @@
-> >>>  #include <kvm/arm_vgic.h>
-> >>>  
-> >>>  static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx);
-> >>> +
-> >>> +#define PERF_ATTR_CFG1_KVM_PMU_CHAINED 0x1
-> >>> +
-> >>> +static struct kvm_vcpu *kvm_pmc_to_vcpu(struct kvm_pmc *pmc)
-> >>> +{
-> >>> +	struct kvm_pmu *pmu;
-> >>> +	struct kvm_vcpu_arch *vcpu_arch;
-> >>> +
-> >>> +	pmc -= pmc->idx;
-> >>> +	pmu = container_of(pmc, struct kvm_pmu, pmc[0]);
-> >>> +	vcpu_arch = container_of(pmu, struct kvm_vcpu_arch, pmu);
-> >>> +	return container_of(vcpu_arch, struct kvm_vcpu, arch);
-> >>> +}
-> >>> +
-> >>>  /**
-> >>> - * kvm_pmu_get_counter_value - get PMU counter value
-> >>> + * kvm_pmu_pmc_is_chained - determine if the pmc is chained
-> >>> + * @pmc: The PMU counter pointer
-> >>> + */
-> >>> +static bool kvm_pmu_pmc_is_chained(struct kvm_pmc *pmc)
-> >>> +{
-> >>> +	struct kvm_vcpu *vcpu = kvm_pmc_to_vcpu(pmc);
-> >>> +
-> >>> +	return test_bit(pmc->idx >> 1, vcpu->arch.pmu.chained);
-> >>> +}
-> >>> +
-> >>> +/**
-> >>> + * kvm_pmu_pmc_is_high_counter - determine if select_idx is a high/low counter
-> >>> + * @select_idx: The counter index
-> >>> + */
-> >>> +static bool kvm_pmu_pmc_is_high_counter(u64 select_idx)
-> >>> +{
-> >>> +	return select_idx & 0x1;
-> >>> +}
-> >>> +
-> >>> +/**
-> >>> + * kvm_pmu_get_canonical_pmc - obtain the canonical pmc
-> >>> + * @pmc: The PMU counter pointer
-> >>> + *
-> >>> + * When a pair of PMCs are chained together we use the low counter (canonical)
-> >>> + * to hold the underlying perf event.
-> >>> + */
-> >>> +static struct kvm_pmc *kvm_pmu_get_canonical_pmc(struct kvm_pmc *pmc)
-> >>> +{
-> >>> +	if (kvm_pmu_pmc_is_chained(pmc) &&
-> >>> +	    kvm_pmu_pmc_is_high_counter(pmc->idx))
-> >>> +		return pmc - 1;
-> >>> +
-> >>> +	return pmc;
-> >>> +}
-> >>> +
-> >>> +/**
-> >>> + * kvm_pmu_idx_has_chain_evtype - determine if the event type is chain
-> >>>   * @vcpu: The vcpu pointer
-> >>>   * @select_idx: The counter index
-> >>>   */
-> >>> -u64 kvm_pmu_get_counter_value(struct kvm_vcpu *vcpu, u64 select_idx)
-> >>> +static bool kvm_pmu_idx_has_chain_evtype(struct kvm_vcpu *vcpu, u64 select_idx)
-> >>>  {
-> >>> -	u64 counter, reg, enabled, running;
-> >>> -	struct kvm_pmu *pmu = &vcpu->arch.pmu;
-> >>> -	struct kvm_pmc *pmc = &pmu->pmc[select_idx];
-> >>> +	u64 eventsel, reg;
-> >>>  
-> >>> -	reg = (select_idx == ARMV8_PMU_CYCLE_IDX)
-> >>> -	      ? PMCCNTR_EL0 : PMEVCNTR0_EL0 + select_idx;
-> >>> -	counter = __vcpu_sys_reg(vcpu, reg);
-> >>> +	select_idx |= 0x1;
-> >>> +
-> >>> +	if (select_idx == ARMV8_PMU_CYCLE_IDX)
-> >>> +		return false;
-> >>> +
-> >>> +	reg = PMEVTYPER0_EL0 + select_idx;
-> >>> +	eventsel = __vcpu_sys_reg(vcpu, reg) & ARMV8_PMU_EVTYPE_EVENT;
-> >>> +
-> >>> +	return armv8pmu_evtype_is_chain(eventsel);
-> >>> +}
-> >>> +
-> >>> +/**
-> >>> + * kvm_pmu_get_pair_counter_value - get PMU counter value
-> >>> + * @vcpu: The vcpu pointer
-> >>> + * @pmc: The PMU counter pointer
-> >>> + */
-> >>> +static u64 kvm_pmu_get_pair_counter_value(struct kvm_vcpu *vcpu,
-> >>> +					  struct kvm_pmc *pmc)
-> >>> +{
-> >>> +	u64 counter, counter_high, reg, enabled, running;
-> >>> +
-> >>> +	if (kvm_pmu_pmc_is_chained(pmc)) {
-> >>> +		pmc = kvm_pmu_get_canonical_pmc(pmc);
-> >>> +		reg = PMEVCNTR0_EL0 + pmc->idx;
-> >>> +
-> >>> +		counter = __vcpu_sys_reg(vcpu, reg);
-> >>> +		counter_high = __vcpu_sys_reg(vcpu, reg + 1);
-> >>> +
-> >>> +		counter = lower_32_bits(counter) | (counter_high << 32);
-> >>> +	} else {
-> >>> +		reg = (pmc->idx == ARMV8_PMU_CYCLE_IDX)
-> >>> +		      ? PMCCNTR_EL0 : PMEVCNTR0_EL0 + pmc->idx;
-> >>> +		counter = __vcpu_sys_reg(vcpu, reg);
-> >>> +	}
-> >>>  
-> >>> -	/* The real counter value is equal to the value of counter register plus
-> >>> +	/*
-> >>> +	 * The real counter value is equal to the value of counter register plus
-> >>>  	 * the value perf event counts.
-> >>>  	 */
-> >>>  	if (pmc->perf_event)
-> >>>  		counter += perf_event_read_value(pmc->perf_event, &enabled,
-> >>>  						 &running);
-> >>>  
-> >>> +	return counter;
-> >>> +}
-> >>> +
-> >>> +/**
-> >>> + * kvm_pmu_get_counter_value - get PMU counter value
-> >>> + * @vcpu: The vcpu pointer
-> >>> + * @select_idx: The counter index
-> >>> + */
-> >>> +u64 kvm_pmu_get_counter_value(struct kvm_vcpu *vcpu, u64 select_idx)
-> >>> +{
-> >>> +	u64 counter;
-> >>> +	struct kvm_pmu *pmu = &vcpu->arch.pmu;
-> >>> +	struct kvm_pmc *pmc = &pmu->pmc[select_idx];
-> >>> +
-> >>> +	counter = kvm_pmu_get_pair_counter_value(vcpu, pmc);
-> >>> +
-> >>> +	if (kvm_pmu_pmc_is_chained(pmc) &&
-> >>> +	    kvm_pmu_pmc_is_high_counter(select_idx))
-> >>> +		counter >>= 32;
-> >>> +
-> >>>  	return counter & pmc->bitmask;
-> >>>  }
-> >>>  
-> >>> @@ -74,6 +174,7 @@ void kvm_pmu_set_counter_value(struct kvm_vcpu *vcpu, u64 select_idx, u64 val)
-> >>>   */
-> >>>  static void kvm_pmu_release_perf_event(struct kvm_pmc *pmc)
-> >>>  {
-> >>> +	pmc = kvm_pmu_get_canonical_pmc(pmc);
-> >>>  	if (pmc->perf_event) {
-> >>>  		perf_event_disable(pmc->perf_event);
-> >>>  		perf_event_release_kernel(pmc->perf_event);
-> >>> @@ -91,13 +192,24 @@ static void kvm_pmu_stop_counter(struct kvm_vcpu *vcpu, struct kvm_pmc *pmc)
-> >>>  {
-> >>>  	u64 counter, reg;
-> >>>  
-> >>> -	if (pmc->perf_event) {
-> >>> +	pmc = kvm_pmu_get_canonical_pmc(pmc);
-> >>> +	if (!pmc->perf_event)
-> >>> +		return;
-> >>> +
-> >>> +	if (kvm_pmu_pmc_is_chained(pmc)) {
-> >>> +		counter = kvm_pmu_get_pair_counter_value(vcpu, pmc);
-> >>> +
-> >>> +		reg = PMEVCNTR0_EL0 + pmc->idx;
-> >>> +		__vcpu_sys_reg(vcpu, reg) = counter & pmc->bitmask;
-> >>> +		__vcpu_sys_reg(vcpu, reg + 1) = (counter >> 32) & pmc->bitmask;
-> >>
-> >> There is something odd here: You use the same mask for both half of the
-> >> counter. The second one doesn't make much sense, and the first one makes
-> >> me wonder... Why isn't bitmask a 64bit quantity in this case?
-> >>
-> > 
-> > Yes it's incorrect, the second bitmask should have been pmc+1's bitmask. (In
-> > the previous revision of this series the sysreg values were populated by two
-> > calls to kvm_pmu_get_counter_value with pmc and pmc+1 - I introduced this error
-> > when using kvm_pmu_get_pair_counter_value instead).
-> > 
-> > My rationale has been that the __vcpu_sys_reg's should represent the underlying
-> > hardware registers. This means a 64 bit register with the first 32 bits RES0 for
-> > PMEVCNTR<n> registers (chained or otherwise) and a 64 bit register for PMCCNTR.
-> > We currently use the bitmask to mask off the RES0 bits in kvm_pmu_get_counter_value
-> > when requested by access_pmu_evcntr (to match the counter width). (And thus I've
-> > treated bitmask as the width of the counter *within* each register).
+On Tue, May 21, 2019 at 03:48:56PM -0300, Jason Gunthorpe wrote:
+> On Fri, May 17, 2019 at 03:49:31PM +0100, Catalin Marinas wrote:
 > 
-> Well, the truncation is a property of the counter registers, and that's
-> what we should honor. The bitmask is a property associated to the perf
-> event, allowing us to only consider the useful bits.
+> > The tagged pointers (whether hwasan or MTE) should ideally be a
+> > transparent feature for the application writer but I don't think we can
+> > solve it entirely and make it seamless for the multitude of ioctls().
+> > I'd say you only opt in to such feature if you know what you are doing
+> > and the user code takes care of specific cases like ioctl(), hence the
+> > prctl() proposal even for the hwasan.
 > 
-> > It may be possible, for chained counters, to use only the register value and
-> > bitmask in the canonical (just as we do now for the perf_event). Thus for chained
-> > counters the bitmask is stored in the low counter and is always 64 bits, and the
-> > 64 bit counter value is also only stored in the low counter vcpu_sys_reg register.
-> > 
-> > This means we could calculate the sample_period with the canonical bitmask (instead
-> > of the hunk you also commented on). However it means that in kvm_pmu_get_counter_value
-> > we'd have to mask out the RES0 bits indexes that are not the cycle counter. We
-> > would also have to write the value of the high counter upon demotion from chained
-> > to unchained in kvm_pmu_update_pmc_chained.
-> > 
-> > Does this seem a better approach to you?
+> I'm not sure such a dire view is warrented.. 
 > 
-> It would be much better. It would certainly make it clear that there is
-> a difference between the perf_event and the emulated counter.
-
-It looks like we don't really need the bitmask seeing as it the information it holds
-can be deduced by the pmc->idx and ARM ARM. I'll respin with the latest feedback and
-without the bitmask.
-
-Thanks for the feedback.
-
-Thanks,
-
-Andrew Murray
-
+> The ioctl situation is not so bad, other than a few special cases,
+> most drivers just take a 'void __user *' and pass it as an argument to
+> some function that accepts a 'void __user *'. sparse et al verify
+> this. 
 > 
-> Thanks,
+> As long as the core functions do the right thing the drivers will be
+> OK.
 > 
-> 	M.
-> -- 
-> Jazz is not dead. It just smells funny...
+> The only place things get dicy is if someone casts to unsigned long
+> (ie for vma work) but I think that reflects that our driver facing
+> APIs for VMAs are compatible with static analysis (ie I have no
+> earthly idea why get_user_pages() accepts an unsigned long), not that
+> this is too hard.
+
+If multiple people will care about this, perhaps we should try to
+annotate types more explicitly in SYSCALL_DEFINEx() and ABI data
+structures.
+
+For example, we could have a couple of mutually exclusive modifiers
+
+T __object *
+T __vaddr * (or U __vaddr)
+
+In the first case the pointer points to an object (in the C sense)
+that the call may dereference but not use for any other purpose.
+
+In the latter case the pointer (or other type) is a virtual address
+that the call does not dereference but my do other things with.
+
+Also
+
+U __really(T)
+
+to tell static analysers the real type of pointers smuggled through
+UAPI disguised as other types (*cough* KVM, etc.)
+
+We could gradually make sparse more strict about the presence of
+annotations and allowed conversions, add get/put_user() variants
+that demand explicit annotation, etc.
+
+find_vma() wouldn't work with a __object pointer, for example.  A
+get_user_pages_for_dereference() might be needed for __object pointers
+(embodying a promise from the caller that only the object will be
+dereferenced within the mapped pages).
+
+Thoughts?
+
+This kind of thing would need widespread buy-in in order to be viable.
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
