@@ -2,96 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D83EA262A1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 12:59:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E444526323
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 13:45:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6jxJszC0NsLNHHYD121tPzy0tk70MsvZeM/WrVIvAMA=; b=ZN3qESv7lUeBmd
-	cWie2KX72/VGA0ck3j1//Y1QFz1xl3pQxeTSPQPXNE89XthU+nt89HLLK5PKeKmf3MSYMD7y3CMCh
-	j+jEcdwyUz1v7L7w64J1olQ8BA44gx91SYhs0txYr9YLLG35xCoaHK775rIsylDaC1Dzn+W75Soq6
-	/f/EGLi6Yz4vipVq03RJ0dCcey6mF8d40MY1uneb2P1eX+lJhssX//v/2sveWObDMvuTOQiE5FaIi
-	A5MBmVzTd0Fn6V0vs5EW6dR0JSlxaOvV8Mnrp5jnPN/JgurzbAaqnDJMiEMqQDKedi2TrWFLftoII
-	tZpWo2pZloAm49aShqDg==;
+	List-Owner; bh=/en1g06jJs99CiXMWh9SV6JfYztJmlRx8vyM+vK268M=; b=ckCPp3w2E2GfaP
+	9r7QA+TnjxwGzs0icETF5+jbeIm0PTUubwtHxtKAZh9QJYt3BCHEqPA4/z6hm8Mh0FWEy6TLr6yw9
+	T/iEpmzHDcn45C8jGquKjgzBTbKDQ6a8QA2xCkxbyeuJJMPxdsypgE3OwKoK8/2icIptPlDaS0D8A
+	kPoCuBbrysdP9Wyv3tkeWtR6Ks7IZY7gq2sgzqgvSbp321d1WYi8eYu7fmPkHK/ekGhPEGwsDlVOb
+	tVlgoP8rowYeaZedp/mBoJg1jGzZuqlJxK6rVJhONJjS7GsHD18JSkA5zcJvjLlYb9o0AgW1+duhl
+	Co39ma0aDH9KFv/InWew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTOy5-0003lK-4M; Wed, 22 May 2019 10:59:33 +0000
-Received: from mail-eopbgr30066.outbound.protection.outlook.com ([40.107.3.66]
- helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+	id 1hTPg2-0000l2-Uk; Wed, 22 May 2019 11:44:58 +0000
+Received: from mail-it1-x142.google.com ([2607:f8b0:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTOxx-0003kt-Qv
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 10:59:27 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=E/ridlp7tUAyBzpi5gaohhfqrbU6JWE1TDOdO5e3Ko0=;
- b=MPFcX9QXFyrqRbIXCtCD55HjYN/lEcbJonuPjugwWbQgXlb5CoJHrYI0NZJ/HKv+pb1iy222C1uub4cSCva56g/9a6pSoaeNDeuomtUHYDVxNs4lMJ/uYUA1VaMAkJwdp3h2q8YnWyDojJPXAo+nFoluBR3JBwlILuG6aMR7RoU=
-Received: from AM0PR04MB5779.eurprd04.prod.outlook.com (20.178.202.151) by
- AM0PR04MB6354.eurprd04.prod.outlook.com (10.255.182.79) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.16; Wed, 22 May 2019 10:59:22 +0000
-Received: from AM0PR04MB5779.eurprd04.prod.outlook.com
- ([fe80::c19b:5964:bfcb:96a8]) by AM0PR04MB5779.eurprd04.prod.outlook.com
- ([fe80::c19b:5964:bfcb:96a8%7]) with mapi id 15.20.1900.020; Wed, 22 May 2019
- 10:59:22 +0000
-From: Abel Vesa <abel.vesa@nxp.com>
-To: Anson Huang <anson.huang@nxp.com>
-Subject: Re: [PATCH V5 1/2] soc: imx: Add SCU SoC info driver support
-Thread-Topic: [PATCH V5 1/2] soc: imx: Add SCU SoC info driver support
-Thread-Index: AQHVEGbg2QLbsVO1oE+jxvonbRb8fqZ2+gOA
-Date: Wed, 22 May 2019 10:59:22 +0000
-Message-ID: <20190522105921.p7h5sdrf4ykvfdz3@fsr-ub1664-175>
-References: <1558505898-722-1-git-send-email-Anson.Huang@nxp.com>
-In-Reply-To: <1558505898-722-1-git-send-email-Anson.Huang@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=abel.vesa@nxp.com; 
-x-originating-ip: [89.37.124.34]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: d6b6f141-02c3-4e16-ec3a-08d6dea48bf8
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB6354; 
-x-ms-traffictypediagnostic: AM0PR04MB6354:
-x-microsoft-antispam-prvs: <AM0PR04MB6354A966885ED905E190206EF6000@AM0PR04MB6354.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2201;
-x-forefront-prvs: 0045236D47
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(7916004)(366004)(189003)(199004)(8936002)(25786009)(5660300002)(33716001)(26005)(1076003)(186003)(8676002)(6636002)(81156014)(81166006)(305945005)(66066001)(53936002)(3846002)(14454004)(6116002)(498600001)(2906002)(7416002)(6486002)(76116006)(91956017)(6246003)(229853002)(256004)(486006)(71200400001)(68736007)(71190400001)(54906003)(44832011)(99286004)(102836004)(76176011)(53546011)(6506007)(6862004)(446003)(11346002)(476003)(7736002)(4326008)(6512007)(9686003)(73956011)(66946007)(66556008)(66446008)(66476007)(64756008)(86362001)(6436002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6354;
- H:AM0PR04MB5779.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: BxkcUSQ5sWa8tTz9qT4LVTq3qbsKm1Iq9E5EX9j3J2CnE7/c32uy3NCCi2CAHibPN9SgXPxCb83q2kBxxCO+K3Tif6P9vMrkof4zyyJmcjAJJ/PKQMXjCRhUhq9VYdCTmCBH3JMpEnP99Iy96kKEYWpm5Y7kdlXb4MMrmZ8aE9117N8VF1WxUflXI7bbdZsE69bLH/qYGHyuBB/W4V+RGsHRbxLurOy/4ZV1UJwurokrTyyKW7WlgoiqeASumerxna0U3jzIasoDTeHuoE2MxEhYehKNT372B0QP1PlyLJyFoRIN1HzlgmXlfACvm950Uhni/P2SNAzZpCWxU2h6tpaetfAdpDq5p7G8T/zDdBJcfgVqFTfu2PSeG67L3IfQxWHZ/TnX0XUBb6vY8ylEGAeDfsJv/MrHZZLdFbplhmY=
-Content-ID: <266E643100E92A45A5723DCAFD39CF99@eurprd04.prod.outlook.com>
+ id 1hTPfv-0000kU-5C
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 11:44:53 +0000
+Received: by mail-it1-x142.google.com with SMTP id i63so2546780ita.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 22 May 2019 04:44:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=64VIbj7lTeoo5qnu4kEAKbi9tvANIAWvMoPtfvBmkwo=;
+ b=bLZ4Uj2eN9M3KLbId2sQ3SZAZ3TQIaponyfZ9Bx8GFsd5n4+e40We1VyXHz9HlnUB7
+ rExlzzT3WZOBY94rhyg3uB0IIYMxbB7vu8jZ12nX7/LuZLi3BO/z85KCajbcl6Tf+7eu
+ Fdc4D2BDZ/0ZBIojcdIP2UaUV+uL5gU68SHTTTxLw4QEpH2SWOex9TF+qp5JqFmnBWio
+ S1UvwDD0nAKAKEQCV2AKNOEj+5y1x0QJ9zWMDH2pouGfTaGwlsp8H/aTIBmmnXKJ6XAG
+ NPNpIHw0IIA+pSIsQnzuyRj1eUHp5M8l4OZt1EBsXZf56cDiRk+xDjnpYMkQsYxQ13cz
+ 6Eng==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=64VIbj7lTeoo5qnu4kEAKbi9tvANIAWvMoPtfvBmkwo=;
+ b=idWoOGofkM4tLhxyhpJTTlncucw2AWPCk/leesXczLiJ1r5n6egltFoXmQWnCvdApT
+ syPIcIsaUpxkinCI+z5OxH7IBirQsGwcHG5MqyvCxdtaLji5dAM2mXXQ+QVJ7ZNFuWOG
+ kl3w1TheliXyOpUfevAuxKeQvruh2TrU5NpktEBeDyHxOfV/LfIAcuDHrU3uZV4dOsVC
+ z4RGW7Ipy4xfvPtsbzi1IMqyRGZOuw01wJXjo/m9gL2dtbPaqTdfl/ifLrSScogx3+IG
+ 7ybEg/3nhFItdExXKzgY//NzeTOwC/qWfiIdpX4X5Jb8en4xHchzZc1PZhLRTW1j+z+7
+ Zlnw==
+X-Gm-Message-State: APjAAAVNbvAWLGd7UX4elKMt/qWzBX1INL8m1uS+gZqMyrpH8LWpXkBP
+ 9WDZxBcKzyEuO2RGHBjViVoL/MdjayoaogiiMEH8eg==
+X-Google-Smtp-Source: APXvYqx0keyneW/17ECWp+J+xTDOIWqb8oMKJCYu85EUJB8ZTxGK3HlAIIuzIUOk/gMOpRok4Of6zFKs8QQEUe+bv5M=
+X-Received: by 2002:a24:d00e:: with SMTP id m14mr7472750itg.153.1558525485892; 
+ Wed, 22 May 2019 04:44:45 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d6b6f141-02c3-4e16-ec3a-08d6dea48bf8
-X-MS-Exchange-CrossTenant-originalarrivaltime: 22 May 2019 10:59:22.2453 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6354
+References: <20190516155344.24060-1-andrew.murray@arm.com>
+ <20190517072401.GI2623@hirez.programming.kicks-ass.net>
+ <20190517100802.GS8268@e119886-lin.cambridge.arm.com>
+ <CAKv+Gu_fhFB-fFw20OjhPt5BM2cFuYxbD99JJK963gQftAAn3Q@mail.gmail.com>
+ <20190522104536.GA8268@e119886-lin.cambridge.arm.com>
+In-Reply-To: <20190522104536.GA8268@e119886-lin.cambridge.arm.com>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Wed, 22 May 2019 12:44:35 +0100
+Message-ID: <CAKv+Gu9sWBwCisYPd7eAH7YBC4RfeQNvGh2Tt_f2iXZ5UUbmsw@mail.gmail.com>
+Subject: Re: [PATCH v1 0/5] arm64: avoid out-of-line ll/sc atomics
+To: Andrew Murray <andrew.murray@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_035925_884544_1263ABA6 
-X-CRM114-Status: GOOD (  22.78  )
+X-CRM114-CacheID: sfid-20190522_044451_205265_56577883 
+X-CRM114-Status: GOOD (  35.52  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.66 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -110,258 +94,174 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
- "robh@kernel.org" <robh@kernel.org>,
- "maxime.ripard@bootlin.com" <maxime.ripard@bootlin.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- dl-linux-imx <linux-imx@nxp.com>, "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
- "dinguyen@kernel.org" <dinguyen@kernel.org>,
- "agross@kernel.org" <agross@kernel.org>,
- "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "horms+renesas@verge.net.au" <horms+renesas@verge.net.au>,
- "olof@lixom.net" <olof@lixom.net>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
+Cc: Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Boqun Feng <boqun.feng@gmail.com>,
+ Will Deacon <will.deacon@arm.com>, Ard.Biesheuvel@arm.com,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19-05-22 06:23:31, Anson Huang wrote:
-> Add i.MX SCU SoC info driver to support i.MX8QXP SoC, introduce
-> driver dependency into Kconfig as CONFIG_IMX_SCU must be
-> selected to support i.MX SCU SoC driver, also need to use
-> platform driver model to make sure IMX_SCU driver is probed
-> before i.MX SCU SoC driver.
-> 
-> With this patch, SoC info can be read from sysfs:
-> 
-> i.mx8qxp-mek# cat /sys/devices/soc0/family
-> Freescale i.MX
-> 
-> i.mx8qxp-mek# cat /sys/devices/soc0/soc_id
-> 0x2
-> 
-> i.mx8qxp-mek# cat /sys/devices/soc0/machine
-> Freescale i.MX8QXP MEK
-> 
-> i.mx8qxp-mek# cat /sys/devices/soc0/revision
-> 1.1
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+On Wed, 22 May 2019 at 11:45, Andrew Murray <andrew.murray@arm.com> wrote:
+>
+> On Fri, May 17, 2019 at 12:29:54PM +0200, Ard Biesheuvel wrote:
+> > On Fri, 17 May 2019 at 12:08, Andrew Murray <andrew.murray@arm.com> wrote:
+> > >
+> > > On Fri, May 17, 2019 at 09:24:01AM +0200, Peter Zijlstra wrote:
+> > > > On Thu, May 16, 2019 at 04:53:39PM +0100, Andrew Murray wrote:
+> > > > > When building for LSE atomics (CONFIG_ARM64_LSE_ATOMICS), if the hardware
+> > > > > or toolchain doesn't support it the existing code will fallback to ll/sc
+> > > > > atomics. It achieves this by branching from inline assembly to a function
+> > > > > that is built with specical compile flags. Further this results in the
+> > > > > clobbering of registers even when the fallback isn't used increasing
+> > > > > register pressure.
+> > > > >
+> > > > > Let's improve this by providing inline implementatins of both LSE and
+> > > > > ll/sc and use a static key to select between them. This allows for the
+> > > > > compiler to generate better atomics code.
+> > > >
+> > > > Don't you guys have alternatives? That would avoid having both versions
+> > > > in the code, and thus significantly cuts back on the bloat.
+> > >
+> > > Yes we do.
+> > >
+> > > Prior to patch 3 of this series, the ARM64_LSE_ATOMIC_INSN macro used
+> > > ALTERNATIVE to either bl to a fallback ll/sc function (and nops) - or execute
+> > > some LSE instructions.
+> > >
+> > > But this approach limits the compilers ability to optimise the code due to
+> > > the asm clobber list being the superset of both ll/sc and LSE - and the gcc
+> > > compiler flags used on the ll/sc functions.
+> > >
+> > > I think the alternative solution (excuse the pun) that you are suggesting
+> > > is to put the body of the ll/sc or LSE code in the ALTERNATIVE oldinstr/newinstr
+> > > blocks (i.e. drop the fallback branches). However this still gives us some
+> > > bloat (but less than my current solution) because we're still now inlining the
+> > > larger fallback ll/sc whereas previously they were non-inline'd functions. We
+> > > still end up with potentially unnecessary clobbers for LSE code with this
+> > > approach.
+> > >
+> > > Approach prior to this series:
+> > >
+> > >    BL 1 or NOP <- single alternative instruction
+> > >    LSE
+> > >    LSE
+> > >    ...
+> > >
+> > > 1: LL/SC <- LL/SC fallback not inlined so reused
+> > >    LL/SC
+> > >    LL/SC
+> > >    LL/SC
+> > >
+> > > Approach proposed by this series:
+> > >
+> > >    BL 1 or NOP <- single alternative instruction
+> > >    LSE
+> > >    LSE
+> > >    BL 2
+> > > 1: LL/SC <- inlined LL/SC and thus duplicated
+> > >    LL/SC
+> > >    LL/SC
+> > >    LL/SC
+> > > 2: ..
+> > >
+> > > Approach using alternative without braces:
+> > >
+> > >    LSE
+> > >    LSE
+> > >    NOP
+> > >    NOP
+> > >
+> > > or
+> > >
+> > >    LL/SC <- inlined LL/SC and thus duplicated
+> > >    LL/SC
+> > >    LL/SC
+> > >    LL/SC
+> > >
+> > > I guess there is a balance here between bloat and code optimisation.
+> > >
+> >
+> >
+> > So there are two separate questions here:
+> > 1) whether or not we should merge the inline asm blocks so that the
+> > compiler sees a single set of constraints and operands
+> > 2) whether the LL/SC sequence should be inlined and/or duplicated.
+> >
+> > This approach appears to be based on the assumption that reserving one
+> > or sometimes two additional registers for the LL/SC fallback has a
+> > more severe impact on performance than the unconditional branch.
+> > However, it seems to me that any call site that uses the atomics has
+> > to deal with the possibility of either version being invoked, and so
+> > the additional registers need to be freed up in any case. Or am I
+> > missing something?
+>
+> Yes at compile time the compiler doesn't know which atomics path will
+> be taken so code has to be generated for both (thus optimisation is
+> limited). However due to this approach we no longer use hard-coded
+> registers or restrict which/how registers can be used and therefore the
+> compiler ought to have greater freedom to optimise.
+>
 
-For the entire series:
+Yes, I agree that is an improvement. But that doesn't require the
+LL/SC and LSE asm sequences to be distinct.
 
-Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
+> >
+> > As for the duplication: a while ago, I suggested an approach [0] using
+> > alternatives and asm subsections, which moved the duplicated LL/SC
+> > fallbacks out of the hot path. This does not remove the bloat, but it
+> > does mitigate its impact on I-cache efficiency when running on
+> > hardware that does not require the fallbacks.#
+>
+> I've seen this. I guess its possible to incorporate subsections into the
+> inline assembly in the __ll_sc_* functions of this series. If we wanted
+> the ll/sc fallbacks not to be inlined, then I suppose we can put these
+> functions in their own section to achieve the same goal.
+>
+> My toolchain knowledge is a limited here - but in order to use subsections
+> you require a branch - in this case does the compiler optimise across the
+> sub sections? If not then I guess there is no benefit to inlining the code
+> in which case you may as well have a branch to a function (in its own
+> section) and then you get both the icache gain and also avoid bloat. Does
+> that make any sense?
+>
 
-> ---
-> Changes since V4:
-> 	- using extern struct of_root instead of searching it again from DT;
-> 	- add of_node_put() after "fsl,imx-scu" is found.
-> ---
->  drivers/soc/imx/Kconfig       |   9 +++
->  drivers/soc/imx/Makefile      |   1 +
->  drivers/soc/imx/soc-imx-scu.c | 155 ++++++++++++++++++++++++++++++++++++++++++
->  3 files changed, 165 insertions(+)
->  create mode 100644 drivers/soc/imx/soc-imx-scu.c
-> 
-> diff --git a/drivers/soc/imx/Kconfig b/drivers/soc/imx/Kconfig
-> index d80f899..cbc1a41 100644
-> --- a/drivers/soc/imx/Kconfig
-> +++ b/drivers/soc/imx/Kconfig
-> @@ -7,4 +7,13 @@ config IMX_GPCV2_PM_DOMAINS
->  	select PM_GENERIC_DOMAINS
->  	default y if SOC_IMX7D
->  
-> +config IMX_SCU_SOC
-> +	bool "i.MX System Controller Unit SoC info support"
-> +	depends on IMX_SCU
-> +	select SOC_BUS
-> +	help
-> +	  If you say yes here you get support for the NXP i.MX System
-> +	  Controller Unit SoC info module, it will provide the SoC info
-> +	  like SoC family, ID and revision etc.
-> +
->  endmenu
-> diff --git a/drivers/soc/imx/Makefile b/drivers/soc/imx/Makefile
-> index d6b529e0..ddf343d 100644
-> --- a/drivers/soc/imx/Makefile
-> +++ b/drivers/soc/imx/Makefile
-> @@ -1,3 +1,4 @@
->  obj-$(CONFIG_HAVE_IMX_GPC) += gpc.o
->  obj-$(CONFIG_IMX_GPCV2_PM_DOMAINS) += gpcv2.o
->  obj-$(CONFIG_ARCH_MXC) += soc-imx8.o
-> +obj-$(CONFIG_IMX_SCU_SOC) += soc-imx-scu.o
-> diff --git a/drivers/soc/imx/soc-imx-scu.c b/drivers/soc/imx/soc-imx-scu.c
-> new file mode 100644
-> index 0000000..17deb4e
-> --- /dev/null
-> +++ b/drivers/soc/imx/soc-imx-scu.c
-> @@ -0,0 +1,155 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright 2019 NXP.
-> + */
-> +
-> +#include <dt-bindings/firmware/imx/rsrc.h>
-> +#include <linux/firmware/imx/sci.h>
-> +#include <linux/slab.h>
-> +#include <linux/sys_soc.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/of.h>
-> +
-> +#define IMX_SCU_SOC_DRIVER_NAME		"imx-scu-soc"
-> +
-> +static struct imx_sc_ipc *soc_ipc_handle;
-> +
-> +struct imx_sc_msg_misc_get_soc_id {
-> +	struct imx_sc_rpc_msg hdr;
-> +	union {
-> +		struct {
-> +			u32 control;
-> +			u16 resource;
-> +		} send;
-> +		struct {
-> +			u32 id;
-> +			u16 reserved;
-> +		} resp;
-> +	} data;
-> +} __packed;
-> +
-> +static u32 imx_scu_soc_id(void)
-> +{
-> +	struct imx_sc_msg_misc_get_soc_id msg;
-> +	struct imx_sc_rpc_msg *hdr = &msg.hdr;
-> +	int ret;
-> +
-> +	hdr->ver = IMX_SC_RPC_VERSION;
-> +	hdr->svc = IMX_SC_RPC_SVC_MISC;
-> +	hdr->func = IMX_SC_MISC_FUNC_GET_CONTROL;
-> +	hdr->size = 3;
-> +
-> +	msg.data.send.control = IMX_SC_C_ID;
-> +	msg.data.send.resource = IMX_SC_R_SYSTEM;
-> +
-> +	ret = imx_scu_call_rpc(soc_ipc_handle, &msg, true);
-> +	if (ret) {
-> +		pr_err("%s: get soc info failed, ret %d\n", __func__, ret);
-> +		/* return 0 means getting revision failed */
-> +		return 0;
-> +	}
-> +
-> +	return msg.data.resp.id;
-> +}
-> +
-> +static int imx_scu_soc_probe(struct platform_device *pdev)
-> +{
-> +	struct soc_device_attribute *soc_dev_attr;
-> +	struct soc_device *soc_dev;
-> +	u32 id, val;
-> +	int ret;
-> +
-> +	/* wait i.MX SCU driver ready */
-> +	ret = imx_scu_get_handle(&soc_ipc_handle);
-> +	if (ret)
-> +		return ret;
-> +
-> +	soc_dev_attr = devm_kzalloc(&pdev->dev, sizeof(*soc_dev_attr),
-> +				    GFP_KERNEL);
-> +	if (!soc_dev_attr)
-> +		return -ENOMEM;
-> +
-> +	soc_dev_attr->family = "Freescale i.MX";
-> +
-> +	ret = of_property_read_string(of_root,
-> +				      "model",
-> +				      &soc_dev_attr->machine);
-> +	if (ret)
-> +		return ret;
-> +
-> +	id = imx_scu_soc_id();
-> +
-> +	/* format soc_id value passed from SCU firmware */
-> +	val = id & 0x1f;
-> +	soc_dev_attr->soc_id = val ? kasprintf(GFP_KERNEL, "0x%x", val)
-> +			       : "unknown";
-> +	if (!soc_dev_attr->soc_id)
-> +		return -ENOMEM;
-> +
-> +	/* format revision value passed from SCU firmware */
-> +	val = (id >> 5) & 0xf;
-> +	val = (((val >> 2) + 1) << 4) | (val & 0x3);
-> +	soc_dev_attr->revision = val ? kasprintf(GFP_KERNEL,
-> +						 "%d.%d",
-> +						 (val >> 4) & 0xf,
-> +						 val & 0xf) : "unknown";
-> +	if (!soc_dev_attr->revision) {
-> +		ret = -ENOMEM;
-> +		goto free_soc_id;
-> +	}
-> +
-> +	soc_dev = soc_device_register(soc_dev_attr);
-> +	if (IS_ERR(soc_dev)) {
-> +		ret = PTR_ERR(soc_dev);
-> +		goto free_revision;
-> +	}
-> +
-> +	return 0;
-> +
-> +free_revision:
-> +	kfree(soc_dev_attr->revision);
-> +free_soc_id:
-> +	kfree(soc_dev_attr->soc_id);
-> +	return ret;
-> +}
-> +
-> +static struct platform_driver imx_scu_soc_driver = {
-> +	.driver = {
-> +		.name = IMX_SCU_SOC_DRIVER_NAME,
-> +	},
-> +	.probe = imx_scu_soc_probe,
-> +};
-> +
-> +static int __init imx_scu_soc_init(void)
-> +{
-> +	struct platform_device *imx_scu_soc_pdev;
-> +	struct device_node *np;
-> +	int ret;
-> +
-> +	np = of_find_compatible_node(NULL, NULL, "fsl,imx-scu");
-> +	if (!np)
-> +		return -ENODEV;
-> +
-> +	of_node_put(np);
-> +
-> +	ret = platform_driver_register(&imx_scu_soc_driver);
-> +	if (ret)
-> +		return ret;
-> +
-> +	imx_scu_soc_pdev =
-> +		platform_device_register_simple(IMX_SCU_SOC_DRIVER_NAME,
-> +						-1,
-> +						NULL,
-> +						0);
-> +	if (IS_ERR(imx_scu_soc_pdev)) {
-> +		ret = PTR_ERR(imx_scu_soc_pdev);
-> +		goto unreg_platform_driver;
-> +	}
-> +
-> +	return 0;
-> +
-> +unreg_platform_driver:
-> +	platform_driver_unregister(&imx_scu_soc_driver);
-> +	return ret;
-> +}
-> +device_initcall(imx_scu_soc_init);
-> -- 
-> 2.7.4
-> 
+
+Not entirely. A function call requires an additional register to be
+preserved, and the bl and ret instructions are both indirect branches,
+while subsections use direct unconditional branches only.
+
+Another reason we want to get rid of the current approach (and the
+reason I looked into it in the first place) is that we are introducing
+hidden branches, which affects the reliability of backtraces and this
+is an issue for livepatch.
+
+> >
+> >
+> > [0] https://lore.kernel.org/linux-arm-kernel/20181113233923.20098-1-ard.biesheuvel@linaro.org/
+> >
+> >
+> >
+> > > >
+> > > > > These changes add a small amount of bloat on defconfig according to
+> > > > > bloat-o-meter:
+> > > > >
+> > > > > text:
+> > > > >   add/remove: 1/108 grow/shrink: 3448/20 up/down: 272768/-4320 (268448)
+> > > > >   Total: Before=12363112, After=12631560, chg +2.17%
+> > > >
+> > > > I'd say 2% is quite significant bloat.
+> > >
+> > > Thanks,
+> > >
+> > > Andrew Murray
+> > >
+> > > _______________________________________________
+> > > linux-arm-kernel mailing list
+> > > linux-arm-kernel@lists.infradead.org
+> > > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
