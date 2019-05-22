@@ -2,60 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0621F26178
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 12:11:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F2DF26187
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 12:15:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3Y5bx5DOyyQZlCL4PM2NBzMEJdvVcCdDIkiy2IpNk6Y=; b=REvjAezHTkJAxp
-	5IQWfczqhEt+9vFhQxq/8HdxWRIKkLlyjKwjJvfzp5fFluD72o+w79ZgTEJtLek4IOHcaF6AH+Owv
-	m4BEEBou5lbnr5MjFmTt+FxlLd59RONsBkNwf4OIJLjIfE6ih/2VC3onqcfMWzpoHy6hKxTNw2mdr
-	cLU08u2G+2ynzwWAQo9zbQSUJeMXjyeAXSoUQLs7N0qxADnfwZeKOvCZS4TRmB++zuXseDsGDB40E
-	rbuIv21erL9OhRtasUX7+qwiEscBJglY9qo2kX96W5RUObHKCux6UFHyBGYnxtLlhHAiLoilzp3Ax
-	sg102SLYv+yLB0XQdBwQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YsAIvVpz3rp+hbj1b68UQj9YuuGFh1STlRxEbP/j5DY=; b=XZMR3IqOs5oLJ5
+	gghj4UHxzpDYXrHN9KTSb3g8dGtMEWtzaVU4pqQgwcVV3izmM+VTa6jP48To7o4Z9W9xUmzmhOcHQ
+	MNo/rbJF2yUsKS0N/0hBEdlrlyZJX9I3+TmeOwcSqKfoVdX+pMjqW6OY1qLKL3pQaGuKbA/ICQRcX
+	7FWu2UiPtVk0o2ieSbF53c5HqEAPsi+43csxX1URQmyXEik+3ldpYbyHDC8eIth2atnU0MIG+ewZN
+	KwhyKN8CYtKnMdory6j51voctJYkP5tFX0l2fgETvZqJuYL0LU1ka37zQgS9pjjLOMrTtX8R7ZCYp
+	mVPnx3ZV8+fwTOtwOsIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTODY-0003wb-11; Wed, 22 May 2019 10:11:28 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTODQ-0003wG-Uq
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 10:11:22 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2B39E341;
- Wed, 22 May 2019 03:11:20 -0700 (PDT)
-Received: from mbp (usa-sjc-mx-foss1.foss.arm.com [217.140.101.70])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 12BA73F575;
- Wed, 22 May 2019 03:11:13 -0700 (PDT)
-Date: Wed, 22 May 2019 11:11:11 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Kees Cook <keescook@chromium.org>
-Subject: Re: [PATCH v15 00/17] arm64: untag user pointers passed to the kernel
-Message-ID: <20190522101110.m2stmpaj7seezveq@mbp>
-References: <cover.1557160186.git.andreyknvl@google.com>
- <20190517144931.GA56186@arrakis.emea.arm.com>
- <CAFKCwrj6JEtp4BzhqO178LFJepmepoMx=G+YdC8sqZ3bcBp3EQ@mail.gmail.com>
- <20190521182932.sm4vxweuwo5ermyd@mbp>
- <201905211633.6C0BF0C2@keescook>
+	id 1hTOHU-0005he-Ln; Wed, 22 May 2019 10:15:32 +0000
+Received: from mail-eopbgr10047.outbound.protection.outlook.com ([40.107.1.47]
+ helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hTOHN-0005hI-L5
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 10:15:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=+dqo49IE6Hyu28xDXn3CEozEsEu8BstlMk1rq9bA+oI=;
+ b=P2N0wm44ZPTPW6LaMtLGQ9q5KnxNcjDv7rnqMjBT5VYl+kMbSo6RUYly/tAUDVfSNkw1CoDdjYsnELIoGbhpCIZ7tbIDmTKHexfS8P+0oUV5SB43xYFA81KROwcywU+k48XDYHp3aopEO9b5+nKjGBFKTJ1BbAQY4hc+aJo3X38=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB5092.eurprd04.prod.outlook.com (20.177.40.161) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1900.17; Wed, 22 May 2019 10:15:21 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::3173:24:d401:2378]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::3173:24:d401:2378%6]) with mapi id 15.20.1900.020; Wed, 22 May 2019
+ 10:15:21 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: "sudeep.holla@arm.com" <sudeep.holla@arm.com>
+Subject: [PATCH] firmware: arm_scmi: clock: set rate_discrete
+Thread-Topic: [PATCH] firmware: arm_scmi: clock: set rate_discrete
+Thread-Index: AQHVEIdDeGE/ZUAgK0KBQchFdwpL/g==
+Date: Wed, 22 May 2019 10:15:21 +0000
+Message-ID: <20190522102912.1032-1-peng.fan@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.16.4
+x-clientproxiedby: HK2PR0401CA0017.apcprd04.prod.outlook.com
+ (2603:1096:202:2::27) To AM0PR04MB4481.eurprd04.prod.outlook.com
+ (2603:10a6:208:70::15)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.71]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: cbb28e2f-5a90-45e0-2eb9-08d6de9e65aa
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB5092; 
+x-ms-traffictypediagnostic: AM0PR04MB5092:
+x-microsoft-antispam-prvs: <AM0PR04MB5092F5D17FDE59DF83AE711F88000@AM0PR04MB5092.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6430;
+x-forefront-prvs: 0045236D47
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(366004)(189003)(199004)(66066001)(53936002)(14454004)(4744005)(50226002)(6512007)(1076003)(25786009)(305945005)(54906003)(6436002)(5640700003)(4326008)(7736002)(52116002)(2501003)(498600001)(5660300002)(102836004)(99286004)(386003)(6506007)(2906002)(8936002)(8676002)(81166006)(81156014)(68736007)(3846002)(6116002)(26005)(186003)(86362001)(71200400001)(71190400001)(44832011)(2351001)(2616005)(73956011)(66946007)(66446008)(64756008)(66556008)(66476007)(476003)(486006)(6916009)(256004)(6486002)(36756003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5092;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: v06QT+psWAQRWPe/zlbAD4HZ8zPuELgiEr7kcTyrINL32g7lFOgxL50T5zQCjZoUb+oJP8UPYyJ8IEAyAItRCdQONkGc/ZldGMaNAi9kNzOHBux8GZ7jjqPn0TUDTDX++HGFKrkorLMK9dVlbXuB/Ak4zb6Trc6EAJ7B6+YQEeO04mXNlf+BrCHWwhd4/CXUHibOe0f/vxsKd1UQYkmk6jo7Yvqqad3RVICcCXgV4SdCyu1W7lBOqJc0YKmgZdjpVhrvl8Yqy9hYwSv8Nxsmc082LyiXygjxw6fUGCNy/pif/2m6SZTN9LQmdN2kXrXSzK2fTg/mQUB+pMKNldCYk2mQyp1aH2fIX4EubFetC0Dei3DXswPX/uK/fCy1Jl7Kd0KabxaLMJtTYlsqHzrR+Yd97Od5FIqkQieBOaYMOqc=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <201905211633.6C0BF0C2@keescook>
-User-Agent: NeoMutt/20170113 (1.7.2)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: cbb28e2f-5a90-45e0-2eb9-08d6de9e65aa
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 May 2019 10:15:21.7271 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5092
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_031121_003260_05959795 
-X-CRM114-Status: GOOD (  47.47  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190522_031525_696013_8274C1DE 
+X-CRM114-Status: GOOD (  10.64  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.1.47 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -67,214 +112,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org,
- Linux Memory Management List <linux-mm@kvack.org>,
- Khalid Aziz <khalid.aziz@oracle.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
- Evgenii Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kevin Brodsky <kevin.brodsky@arm.com>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Yishai Hadas <yishaih@mellanox.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>, LKML <linux-kernel@vger.kernel.org>,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, Elliott Hughes <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: "van.freenix@gmail.com" <van.freenix@gmail.com>,
+ Peng Fan <peng.fan@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Kees,
+The rate_discrete needs to be assigned to clk->rate_discrete,
+then scmi_clk_round_rate could get the value.
 
-Thanks for joining the thread ;).
+Fixes: 5f6c6430e904 ("firmware: arm_scmi: add initial support for clock protocol")
+Signed-off-by: Peng Fan <peng.fan@nxp.com>
+---
+ drivers/firmware/arm_scmi/clock.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-On Tue, May 21, 2019 at 05:04:39PM -0700, Kees Cook wrote:
-> On Tue, May 21, 2019 at 07:29:33PM +0100, Catalin Marinas wrote:
-> > On Mon, May 20, 2019 at 04:53:07PM -0700, Evgenii Stepanov wrote:
-> > > On Fri, May 17, 2019 at 7:49 AM Catalin Marinas <catalin.marinas@arm.com> wrote:
-> > > > IMO (RFC for now), I see two ways forward:
-> > > > [...]
-> > > > 2. Similar shim to the above libc wrapper but inside the kernel
-> > > >    (arch/arm64 only; most pointer arguments could be covered with an
-> > > >    __SC_CAST similar to the s390 one). There are two differences from
-> > > >    what we've discussed in the past:
-> > > >
-> > > >    a) this is an opt-in by the user which would have to explicitly call
-> > > >       prctl(). If it returns -ENOTSUPP etc., the user won't be allowed
-> > > >       to pass tagged pointers to the kernel. This would probably be the
-> > > >       responsibility of the C lib to make sure it doesn't tag heap
-> > > >       allocations. If the user did not opt-in, the syscalls are routed
-> > > >       through the normal path (no untagging address shim).
-> > > >
-> > > >    b) ioctl() and other blacklisted syscalls (prctl) will not accept
-> > > >       tagged pointers (to be documented in Vicenzo's ABI patches).
-> > >
-> > > The way I see it, a patch that breaks handling of tagged pointers is
-> > > not that different from, say, a patch that adds a wild pointer
-> > > dereference. Both are bugs; the difference is that (a) the former
-> > > breaks a relatively uncommon target and (b) it's arguably an easier
-> > > mistake to make. If MTE adoption goes well, (a) will not be the case
-> > > for long.
-> > 
-> > It's also the fact such patch would go unnoticed for a long time until
-> > someone exercises that code path. And when they do, the user would be
-> > pretty much in the dark trying to figure what what went wrong, why a
-> > SIGSEGV or -EFAULT happened. What's worse, we can't even say we fixed
-> > all the places where it matters in the current kernel codebase (ignoring
-> > future patches).
-> 
-> So, looking forward a bit, this isn't going to be an ARM-specific issue
-> for long.
-
-I do hope so.
-
-> In fact, I think we shouldn't have arm-specific syscall wrappers
-> in this series: I think untagged_addr() should likely be added at the
-> top-level and have it be a no-op for other architectures.
-
-That's what the current patchset does, so we have this as a starting
-point. Kostya raised another potential issue with the syscall wrappers:
-with MTE the kernel will be forced to enable the match-all (wildcard)
-pointers for user space accesses since copy_from_user() would only get a
-0 tag. So it has wider implications than just uaccess routines not
-checking the colour.
-
-> So given this becoming a kernel-wide multi-architecture issue (under
-> the assumption that x86, RISC-V, and others will gain similar TBI or
-> MTE things), we should solve it in a way that we can re-use.
-
-Can we do any better to aid the untagged_addr() placement (e.g. better
-type annotations, better static analysis)? We have to distinguish
-between user pointers that may be dereferenced by the kernel (I think
-almost fully covered with this patchset) and user addresses represented
-as ulong that may:
-
-a) be converted to a user pointer and dereferenced; I think that's the
-   case for many overloaded ulong/u64 arguments
-
-b) used for address space management, rbtree look-ups etc. where the tag
-   is no longer relevant and it even gets in the way
-
-We tried last year to identify void __user * casts to unsigned long
-using sparse on the assumption that pointers can be tagged while ulong
-is about address space management and needs to lose such tag. I think we
-could have pushed this further. For example, get_user_pages() takes an
-unsigned long but it is perfectly capable of untagging the address
-itself. Shall we change its first argument to void __user * (together
-with all its callers)?
-
-find_vma(), OTOH, could untag the address but it doesn't help since
-vm_start/end don't have such information (that's more about the content
-or type that the user decided) and the callers check against it.
-
-Are there any other places where this matters? These patches tracked
-down find_vma() as some heuristics but we may need better static
-analysis to identify other cases.
-
-> We need something that is going to work everywhere. And it needs to be
-> supported by the kernel for the simple reason that the kernel needs to
-> do MTE checks during copy_from_user(): having that information stripped
-> means we lose any userspace-assigned MTE protections if they get handled
-> by the kernel, which is a total non-starter, IMO.
-
-Such feedback is welcomed ;).
-
-> As an aside: I think Sparc ADI support in Linux actually side-stepped
-> this[1] (i.e. chose "solution 1"): "All addresses passed to kernel must
-> be non-ADI tagged addresses." (And sadly, "Kernel does not enable ADI
-> for kernel code.") I think this was a mistake we should not repeat for
-> arm64 (we do seem to be at least in agreement about this, I think).
-> 
-> [1] https://lore.kernel.org/patchwork/patch/654481/
-
-I tried to drag the SPARC guys into this discussion but without much
-success.
-
-> > > This is a bit of a chicken-and-egg problem. In a world where memory
-> > > allocators on one or several popular platforms generate pointers with
-> > > non-zero tags, any such breakage will be caught in testing.
-> > > Unfortunately to reach that state we need the kernel to start
-> > > accepting tagged pointers first, and then hold on for a couple of
-> > > years until userspace catches up.
-> > 
-> > Would the kernel also catch up with providing a stable ABI? Because we
-> > have two moving targets.
-> > 
-> > On one hand, you have Android or some Linux distro that stick to a
-> > stable kernel version for some time, so they have better chance of
-> > clearing most of the problems. On the other hand, we have mainline
-> > kernel that gets over 500K lines every release. As maintainer, I can't
-> > rely on my testing alone as this is on a limited number of platforms. So
-> > my concern is that every kernel release has a significant chance of
-> > breaking the ABI, unless we have a better way of identifying potential
-> > issues.
-> 
-> I just want to make sure I fully understand your concern about this
-> being an ABI break, and I work best with examples. The closest situation
-> I can see would be:
-> 
-> - some program has no idea about MTE
-
-Apart from some libraries like libc (and maybe those that handle
-specific device ioctls), I think most programs should have no idea about
-MTE. I wouldn't expect programmers to have to change their app just
-because we have a new feature that colours heap allocations.
-
-> - malloc() starts returning MTE-tagged addresses
-> - program doesn't break from that change
-> - program uses some syscall that is missing untagged_addr() and fails
-> - kernel has now broken userspace that used to work
-
-That's one aspect though probably more of a case of plugging in a new
-device (graphics card, network etc.) and the ioctl to the new device
-doesn't work.
-
-The other is that, assuming we reach a point where the kernel entirely
-supports this relaxed ABI, can we guarantee that it won't break in the
-future. Let's say some subsequent kernel change (some refactoring)
-misses out an untagged_addr(). This renders a previously TBI/MTE-capable
-syscall unusable. Can we rely only on testing?
-
-> The trouble I see with this is that it is largely theoretical and
-> requires part of userspace to collude to start using a new CPU feature
-> that tickles a bug in the kernel. As I understand the golden rule,
-> this is a bug in the kernel (a missed ioctl() or such) to be fixed,
-> not a global breaking of some userspace behavior.
-
-Yes, we should follow the rule that it's a kernel bug but it doesn't
-help the user that a newly installed kernel causes user space to no
-longer reach a prompt. Hence the proposal of an opt-in via personality
-(for MTE we would need an explicit opt-in by the user anyway since the
-top byte is no longer ignored but checked against the allocation tag).
-
-> I feel like I'm missing something about this being seen as an ABI
-> break. The kernel already fails on userspace addresses that have high
-> bits set -- are there things that _depend_ on this failure to operate?
-
-It's about providing a relaxed ABI which allows non-zero top byte and
-breaking it later inadvertently without having something better in place
-to analyse the kernel changes.
-
-Thanks.
-
+diff --git a/drivers/firmware/arm_scmi/clock.c b/drivers/firmware/arm_scmi/clock.c
+index 30fc04e28431..0a194af92438 100644
+--- a/drivers/firmware/arm_scmi/clock.c
++++ b/drivers/firmware/arm_scmi/clock.c
+@@ -185,6 +185,8 @@ scmi_clock_describe_rates_get(const struct scmi_handle *handle, u32 clk_id,
+ 	if (rate_discrete)
+ 		clk->list.num_rates = tot_rate_cnt;
+ 
++	clk->rate_discrete = rate_discrete;
++
+ err:
+ 	scmi_xfer_put(handle, t);
+ 	return ret;
 -- 
-Catalin
+2.16.4
 
 _______________________________________________
 linux-arm-kernel mailing list
