@@ -2,98 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 953B52614E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 12:03:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD4062615A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 12:05:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
-	:Subject:From:Reply-To:To:Content-Description:Resent-Date:Resent-From:
+	:Subject:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=UkehibFyAUetu2o2YAddH7hhaiBK46P8rOQFdDiqVFI=; b=HLOAnbRMZVwaph
-	AMsRX0TSOSFMY2UGBm4A4eZDKJTozwEk7z2gIhLIgfZ0aEz6A6Rh8X96FO+ldVtlD+uIpW5T9azZh
-	SPW3G4SnOZcNsqUjooOjWdHKImy5xZ8sTBhTGOG1NE1m0rvYzbkfu76X/jUwyANrTtGMxQ9EIecgt
-	8lj4f/8pwj/0Uat4xAAdlem4yaA6TeWkQ0oagCYpRXeE7iXD58gIJHJQyEjL29qVk8qDqwnf6RMaC
-	rM2YsQSFofMFskrt9A8+V2scwao9jbjNYOZMs+Wznz9NMVrp6yJdYpnuaIah6+/9PakrRDo5ZGMBb
-	c11XpdNqRt+Hv9JC8zCw==;
+	List-Owner; bh=p6O9jER4fToAjLomwfbal0KoRK/TxbMC1dYELSTbrWE=; b=RO+h5GhBkUYKTR
+	EIBLIdfB+X6c1vhWMIBxMBBDmFVOZ5Te49tcYb34e40T9/FUiA+6fiwmqY34gZGkPz6YlLMSs6KUy
+	755Y5g8MAaZ3g62wD1kCJOpdCxOtGvzJ17jwEfMLtWsn0Hz2wW8wdqbwmOkHRCYKqIVn9WmR07DCZ
+	DzScKsDE7hXXqc3qm/T+ajieQb6Wmqh7q34vCmC8bs8DJLoGOEFovjH38k4zf/TNf/oxBfg/9j+Zi
+	jGaDGbtnnNZhNFqqmP+SeqlsjaNKBS/U78zXB/mpLkqnpiga51JirCE/Z9U/ffg/RHTRoRgpA5rqB
+	b2WMcZmk4YHNGoeHVlRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTO6A-000065-1x; Wed, 22 May 2019 10:03:50 +0000
-Received: from mail-db5eur03olkn0818.outbound.protection.outlook.com
- ([2a01:111:f400:fe0a::818]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1hTO7b-0001iP-Kq; Wed, 22 May 2019 10:05:19 +0000
+Received: from mail-eopbgr810084.outbound.protection.outlook.com
+ ([40.107.81.84] helo=NAM01-BY2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTO5h-0008PB-0Y
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 10:03:29 +0000
-Received: from DB5EUR03FT027.eop-EUR03.prod.protection.outlook.com
- (10.152.20.60) by DB5EUR03HT010.eop-EUR03.prod.protection.outlook.com
- (10.152.20.73) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1922.16; Wed, 22 May
- 2019 10:03:18 +0000
-Received: from VI1PR07MB4432.eurprd07.prod.outlook.com (10.152.20.52) by
- DB5EUR03FT027.mail.protection.outlook.com (10.152.20.121) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.20.1922.16 via Frontend Transport; Wed, 22 May 2019 10:03:18 +0000
-Received: from VI1PR07MB4432.eurprd07.prod.outlook.com
- ([fe80::91f:b1bb:a60a:fdc3]) by VI1PR07MB4432.eurprd07.prod.outlook.com
- ([fe80::91f:b1bb:a60a:fdc3%7]) with mapi id 15.20.1922.013; Wed, 22 May 2019
- 10:03:17 +0000
-From: Philippe Mazenauer <philippe.mazenauer@outlook.de>
-Subject: [PATCH] arm: topology: make function static
-Thread-Topic: [PATCH] arm: topology: make function static
-Thread-Index: AQHVEIWUn/i0+75iwk+EnwEgRCDTcw==
-Date: Wed, 22 May 2019 10:03:17 +0000
-Message-ID: <VI1PR07MB443207D4A7601168EC51C641FD000@VI1PR07MB4432.eurprd07.prod.outlook.com>
-Accept-Language: de-CH, en-US
+ id 1hTO7U-0001i0-3X
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 10:05:13 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=Synaptics.onmicrosoft.com; s=selector1-Synaptics-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=7UNfbEXsabz5kESBWA6ulrO4/whIWfxzgCO+ujPHTak=;
+ b=UU6Bj4oXvxfmuDrfOF0dkNxLjZ1ma41SH9MEIjyQPcVSN+hMKrZXHKl4NVUMq4NuHYg9+orRs6Ur6NNsMY22GOsScgRUiWgPYJ3naKkm8S9zP/f5zvb9DxUyp/3/1lPHVPXLGWPOqTCb5AySSJKGCQ6rhIgSrt5JnCFD2VxeBLk=
+Received: from BYAPR03MB4773.namprd03.prod.outlook.com (20.179.92.152) by
+ BYAPR03MB4152.namprd03.prod.outlook.com (20.177.184.161) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1900.17; Wed, 22 May 2019 10:05:09 +0000
+Received: from BYAPR03MB4773.namprd03.prod.outlook.com
+ ([fe80::e484:f15c:c415:5ff9]) by BYAPR03MB4773.namprd03.prod.outlook.com
+ ([fe80::e484:f15c:c415:5ff9%7]) with mapi id 15.20.1900.020; Wed, 22 May 2019
+ 10:05:09 +0000
+From: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
+To: Giuseppe Cavallaro <peppe.cavallaro@st.com>, Alexandre Torgue
+ <alexandre.torgue@st.com>, Jose Abreu <joabreu@synopsys.com>, "David S.
+ Miller" <davem@davemloft.net>
+Subject: [PATCH] net: stmmac: fix reset gpio free missing
+Thread-Topic: [PATCH] net: stmmac: fix reset gpio free missing
+Thread-Index: AQHVEIXW1Q99JUn5Pke19mHCbWn03A==
+Date: Wed, 22 May 2019 10:05:09 +0000
+Message-ID: <20190522175558.59b21673@xhacker.debian>
+Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-clientproxiedby: MWHPR15CA0050.namprd15.prod.outlook.com
- (2603:10b6:301:4c::12) To VI1PR07MB4432.eurprd07.prod.outlook.com
- (2603:10a6:802:67::17)
-x-incomingtopheadermarker: OriginalChecksum:B2CF39FDFDD89AAA0052F75E9B8DCBAE08792BD69B67008FB2B3B2D5119C3C7F;
- UpperCasedChecksum:62CEE253371D47573478AC960DC26245A833E06E5F2A90DC4E1016866B5C54CB;
- SizeAsReceived:7452; Count:47
+x-originating-ip: [124.74.246.114]
+x-clientproxiedby: TYAPR01CA0232.jpnprd01.prod.outlook.com
+ (2603:1096:404:11e::28) To BYAPR03MB4773.namprd03.prod.outlook.com
+ (2603:10b6:a03:134::24)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Jisheng.Zhang@synaptics.com; 
 x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: git-send-email 2.17.1
-x-tmn: [Te3Kow79IK5edHwUwcUouDi32pwLaVe6]
-x-microsoft-original-message-id: <20190522100255.157960-1-philippe.mazenauer@outlook.de>
+x-mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 x-ms-publictraffictype: Email
-x-incomingheadercount: 47
-x-eopattributedmessage: 0
+x-ms-office365-filtering-correlation-id: 51926e20-f253-483b-8a7a-08d6de9cf8bc
 x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(5050001)(7020095)(20181119110)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031323274)(2017031324274)(2017031322404)(1601125500)(1603101475)(1701031045);
- SRVR:DB5EUR03HT010; 
-x-ms-traffictypediagnostic: DB5EUR03HT010:
-x-microsoft-antispam-message-info: 8WLtpJQc7MTNj3jj1KRuaXfkIkyIa7N5x35J8RRDo42SAEmVXeaDD0jvvl7OWX45A4ruKddmCyy1MPQxiN4pu7uMU+eP9g2SYMs6A1APSklzIyI5AP//bDhUXzjMAxABBY0vqLsAK/bhAaVnio36tkyFDn1DTXzXAmJnYTzS53a+Q+X2sXm2/K1URtOz+9Nb
-Content-ID: <2B3C6BEBC5B5E94FB67AC814F0603D07@eurprd07.prod.outlook.com>
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(2017052603328)(7193020);
+ SRVR:BYAPR03MB4152; 
+x-ms-traffictypediagnostic: BYAPR03MB4152:
+x-microsoft-antispam-prvs: <BYAPR03MB415246663852B812063A8923ED000@BYAPR03MB4152.namprd03.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3513;
+x-forefront-prvs: 0045236D47
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(366004)(136003)(39860400002)(346002)(396003)(376002)(199004)(189003)(53936002)(14454004)(72206003)(6506007)(486006)(81166006)(71190400001)(71200400001)(6512007)(9686003)(386003)(8676002)(81156014)(478600001)(476003)(8936002)(110136005)(50226002)(6116002)(99286004)(25786009)(54906003)(6486002)(68736007)(6436002)(52116002)(102836004)(4326008)(3846002)(66066001)(66556008)(64756008)(66446008)(256004)(66946007)(66476007)(316002)(14444005)(305945005)(7736002)(186003)(1076003)(86362001)(5660300002)(73956011)(26005)(2906002)(39210200001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR03MB4152;
+ H:BYAPR03MB4773.namprd03.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:0; MX:1; 
+received-spf: None (protection.outlook.com: synaptics.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: TEVoJoHFTV8reiVFD+srtEOlRMGGPxghghCLGyUSvtPOZeKJBAEzra+TLOtVYgTx6yvuJXrRgXfLhHwyEMkgjYxpwK2y7JyCEoNpxzbRBt9dCWRpzDpV8spiDbUt+9xoTdavlO1fia2bcwrEdbe3uuv0BifnWWqp6QxFnjHdCQvRM9BRCQ143FKjXhyai3L6XfxGvhdVkmSjI27Xhtfg/DcTq1aV8Xg6Rdpir2wshbMG/scX3kgTxvhUVtMqCBxh70WpIghSsipa5jSBhbrEjYUmbNWRVcSe+310iwVWWK6V6a0eI/RdxIaHet47WP6Cqc4D7nXXQiN0n+g2zZeW2FH9Yb6oqA7Hlz+9YYceVoGdG++TqjiONLvU4sXpYVHO/iunMYw2mKb5aNkItN1sX3FMfRIBFmFSwP61owlxV1I=
+Content-ID: <95BC64B905AAEB45B689662B446B9877@namprd03.prod.outlook.com>
 MIME-Version: 1.0
-X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9b07c1ee-b58f-479c-6977-08d6de9cb660
-X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-originalarrivaltime: 22 May 2019 10:03:17.9347 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Internet
-X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB5EUR03HT010
+X-OriginatorOrg: synaptics.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 51926e20-f253-483b-8a7a-08d6de9cf8bc
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 May 2019 10:05:09.3700 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 335d1fbc-2124-4173-9863-17e7051a2a0e
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR03MB4152
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_030321_229651_B92185E9 
-X-CRM114-Status: GOOD (  12.51  )
-X-Spam-Score: 2.8 (++)
+X-CRM114-CacheID: sfid-20190522_030512_195461_614B985B 
+X-CRM114-Status: GOOD (  10.71  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.8 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe0a:0:0:0:818 listed in]
- [list.dnswl.org]
+ no trust [40.107.81.84 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.2 MISSING_HEADERS        Missing To: header
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (philippe.mazenauer[at]outlook.de)
- 1.6 MALFORMED_FREEMAIL     Bad headers on message from free email
- service
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -105,35 +111,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>,
- Philippe Mazenauer <philippe.mazenauer@outlook.de>,
- Russell King <linux@armlinux.org.uk>, "moderated list:ARM
- PORT" <linux-arm-kernel@lists.infradead.org>,
- open list <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TWFrZSBmdW5jdGlvbiBjcHVfY29yZXBvd2VyX21hc2soKSBzdGF0aWMsIGFzIGl0IGlzIG9ubHkg
-cmVmZXJlbmNlZCBpbg0KdGhpcyBmaWxlLg0KDQouLi9hcmNoL2FybS9rZXJuZWwvdG9wb2xvZ3ku
-YzoxOTU6MjM6IHdhcm5pbmc6IG5vIHByZXZpb3VzIHByb3RvdHlwZSBmb3Ig4oCYY3B1X2NvcmVw
-b3dlcl9tYXNr4oCZIFstV21pc3NpbmctcHJvdG90eXBlc10NCiBjb25zdCBzdHJ1Y3QgY3B1bWFz
-ayAqY3B1X2NvcmVwb3dlcl9tYXNrKGludCBjcHUpDQogICAgICAgICAgICAgICAgICAgICAgIF5+
-fn5+fn5+fn5+fn5+fn5+fg0KDQpTaWduZWQtb2ZmLWJ5OiBQaGlsaXBwZSBNYXplbmF1ZXIgPHBo
-aWxpcHBlLm1hemVuYXVlckBvdXRsb29rLmRlPg0KLS0tDQogYXJjaC9hcm0va2VybmVsL3RvcG9s
-b2d5LmMgfCAyICstDQogMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspLCAxIGRlbGV0aW9u
-KC0pDQoNCmRpZmYgLS1naXQgYS9hcmNoL2FybS9rZXJuZWwvdG9wb2xvZ3kuYyBiL2FyY2gvYXJt
-L2tlcm5lbC90b3BvbG9neS5jDQppbmRleCA2MGUzNzVjZTFhYjIuLjVjODA3NWVjODA2NSAxMDA2
-NDQNCi0tLSBhL2FyY2gvYXJtL2tlcm5lbC90b3BvbG9neS5jDQorKysgYi9hcmNoL2FybS9rZXJu
-ZWwvdG9wb2xvZ3kuYw0KQEAgLTE5Miw3ICsxOTIsNyBAQCBjb25zdCBzdHJ1Y3QgY3B1bWFzayAq
-Y3B1X2NvcmVncm91cF9tYXNrKGludCBjcHUpDQogICogVGhlIGN1cnJlbnQgYXNzdW1wdGlvbiBp
-cyB0aGF0IHdlIGNhbiBwb3dlciBnYXRlIGVhY2ggY29yZSBpbmRlcGVuZGVudGx5Lg0KICAqIFRo
-aXMgd2lsbCBiZSBzdXBlcnNlZGVkIGJ5IERUIGJpbmRpbmcgb25jZSBhdmFpbGFibGUuDQogICov
-DQotY29uc3Qgc3RydWN0IGNwdW1hc2sgKmNwdV9jb3JlcG93ZXJfbWFzayhpbnQgY3B1KQ0KK3N0
-YXRpYyBjb25zdCBzdHJ1Y3QgY3B1bWFzayAqY3B1X2NvcmVwb3dlcl9tYXNrKGludCBjcHUpDQog
-ew0KIAlyZXR1cm4gJmNwdV90b3BvbG9neVtjcHVdLnRocmVhZF9zaWJsaW5nOw0KIH0NCi0tIA0K
-Mi4xNy4xDQoNCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LWFybS1rZXJuZWwK
+Commit 984203ceff27 ("net: stmmac: mdio: remove reset gpio free")
+removed the reset gpio free, when the driver is unbinded or rmmod,
+we miss the gpio free.
+
+This patch uses managed API to request the reset gpio, so that the
+gpio could be freed properly.
+
+Signed-off-by: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
+Fixes: 984203ceff27 ("net: stmmac: mdio: remove reset gpio free")
+---
+ drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
+index bdd351597b55..093a223fe408 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
+@@ -267,7 +267,8 @@ int stmmac_mdio_reset(struct mii_bus *bus)
+ 			of_property_read_u32_array(np,
+ 				"snps,reset-delays-us", data->delays, 3);
+ 
+-			if (gpio_request(data->reset_gpio, "mdio-reset"))
++			if (devm_gpio_request(priv->device, data->reset_gpio,
++					      "mdio-reset"))
+ 				return 0;
+ 		}
+ 
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
