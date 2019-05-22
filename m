@@ -2,96 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D14D25FD0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 10:54:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 047B425FD2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 10:55:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
-	:Subject:From:Reply-To:To:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8tilUxZIXfR8wtuJBQqJnajKWmxFdtOebHM2Yvfq0e4=; b=YN3KM+780bU0RB
-	j7VIEfBkt4lM4d72VloiL/GtoECET2JXQPVUfcQiOi0DW0pCii+0hFZ5IiAkvLvr0L2EDmnQ93XKK
-	f8O8kr1t8ruJhGNaEqfLmr4agVn8NjOACF8ZH9sOyo/W7HXiVdSrdlWISx3ighcq0r68WJq4VmI7w
-	m7Fwzq/Q3bn05izUB0LPn4TVr3hrvxdlG0ETNBhrAo0OEGSiNDrw+LgBdLQDl7IazZZICT5LzWAMM
-	nDqjgeQapdXUA7NK5t5pq21n1n7jyo3Acdj577Uv66Tj+0tW7+KOdO+BAD/gqWtSeyS3yJRE74xbh
-	bLhYUbpRELTwDDByRRHw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ywx6utRXnZAaNn6cddZnTxjBdJCJGZBdWacQ5uDSZkw=; b=buofdRAHLngyph
+	eVJt6Y6pBItaB0tFcAj61Ju6RzQExicTMkB6mL2jVf0H6tIXx9GB9fBfXaQFv0pOtK/Pn2dMda7fZ
+	UzYaz9ieOZSWoZeDqIu5ekDY6lHYzz0nHX9NjMH38BDG2kgVqMVOlczejet/SRjki1U90Nrqyhi3o
+	8bHsite8+5+8ZeRQMYeCcloDZ7kYtGYqSxLI2Hip49fpVubZBIu1+NpVRDdqKP+aRSgpoGLLicueh
+	JjXernOofCkXgXYT1zlQnWLQ0r0vo6ePk5N8kYnGijz+5sMpjqdWXXoIbRpqrCXe149l7zFZRPMwh
+	vPsFNjGsb2DXCgBgAKuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTN1K-0006bh-Cr; Wed, 22 May 2019 08:54:46 +0000
-Received: from mail-oln040092067106.outbound.protection.outlook.com
- ([40.92.67.106] helo=EUR02-AM5-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTN1D-0006b0-K4
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 08:54:41 +0000
-Received: from AM5EUR02FT029.eop-EUR02.prod.protection.outlook.com
- (10.152.8.57) by AM5EUR02HT231.eop-EUR02.prod.protection.outlook.com
- (10.152.9.138) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1922.16; Wed, 22 May
- 2019 08:54:36 +0000
-Received: from VI1PR07MB4432.eurprd07.prod.outlook.com (10.152.8.57) by
- AM5EUR02FT029.mail.protection.outlook.com (10.152.8.161) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.16 via Frontend Transport; Wed, 22 May 2019 08:54:36 +0000
-Received: from VI1PR07MB4432.eurprd07.prod.outlook.com
- ([fe80::91f:b1bb:a60a:fdc3]) by VI1PR07MB4432.eurprd07.prod.outlook.com
- ([fe80::91f:b1bb:a60a:fdc3%7]) with mapi id 15.20.1922.013; Wed, 22 May 2019
- 08:54:35 +0000
-From: Philippe Mazenauer <philippe.mazenauer@outlook.de>
-Subject: [PATCH] ARM: Add method to mach/pci.h
-Thread-Topic: [PATCH] ARM: Add method to mach/pci.h
-Thread-Index: AQHVEHv6lq8w7O7W1kuo9tizM8ubug==
-Date: Wed, 22 May 2019 08:54:34 +0000
-Message-ID: <VI1PR07MB443283DF94F9F8942E6A3ADAFD000@VI1PR07MB4432.eurprd07.prod.outlook.com>
-Accept-Language: de-CH, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: MWHPR0201CA0001.namprd02.prod.outlook.com
- (2603:10b6:301:74::14) To VI1PR07MB4432.eurprd07.prod.outlook.com
- (2603:10a6:802:67::17)
-x-incomingtopheadermarker: OriginalChecksum:AE6877DCB04B7A1ABB5EAE267A161E0BB157E0E7B953ABF9D704854FE2E1E338;
- UpperCasedChecksum:1F8AD31A4A089FF3C730F2C3E3FA88C354BFB6319A50B83F0A7CD44991D4E8C2;
- SizeAsReceived:7421; Count:47
-x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: git-send-email 2.17.1
-x-tmn: [cYBMpV7q8ymNh4KaOYE0WfZP4tigp1go]
-x-microsoft-original-message-id: <20190522085353.113717-1-philippe.mazenauer@outlook.de>
-x-ms-publictraffictype: Email
-x-incomingheadercount: 47
-x-eopattributedmessage: 0
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(5050001)(7020095)(20181119110)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031323274)(2017031324274)(2017031322404)(1601125500)(1603101475)(1701031045);
- SRVR:AM5EUR02HT231; 
-x-ms-traffictypediagnostic: AM5EUR02HT231:
-x-microsoft-antispam-message-info: h1vn1LmJtUMreQ0Pee7FC2pTadgObiOZKYK1dMviGlW+IATHSKa3dujBwCgjMMiofT6i2CXo/V5std3KWMCVAJn0lW0a+/QwMiniy8B6klV5TtS2KzhxR+7RNPeJvRNSXz1qWqXo9vfi9Zpl6kpT7M0tu/zUiNGf9DEfFuQYOgPklds+RejtnH5fhkM7Ashm
-Content-ID: <17B8CDA1DC5EF441B76A66E351EC577E@eurprd07.prod.outlook.com>
+	id 1hTN1n-00086V-RU; Wed, 22 May 2019 08:55:15 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hTN1h-00084t-55
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 08:55:10 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5D5D3374;
+ Wed, 22 May 2019 01:55:08 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BE1AD3F718;
+ Wed, 22 May 2019 01:55:07 -0700 (PDT)
+Date: Wed, 22 May 2019 09:55:06 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Julien Thierry <julien.thierry@arm.com>
+Subject: Re: [PATCH v7 5/5] KVM: arm/arm64: support chained PMU counters
+Message-ID: <20190522085505.GY8268@e119886-lin.cambridge.arm.com>
+References: <20190521155228.903-1-andrew.murray@arm.com>
+ <20190521155228.903-6-andrew.murray@arm.com>
+ <d6e0efaa-162c-e606-54e9-cfe74b228bf4@arm.com>
 MIME-Version: 1.0
-X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-Network-Message-Id: c8705529-ceb8-49a1-0466-08d6de931c0a
-X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-originalarrivaltime: 22 May 2019 08:54:35.6337 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Internet
-X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM5EUR02HT231
+Content-Disposition: inline
+In-Reply-To: <d6e0efaa-162c-e606-54e9-cfe74b228bf4@arm.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_015439_664990_187D7790 
-X-CRM114-Status: GOOD (  12.21  )
-X-Spam-Score: 2.8 (++)
+X-CRM114-CacheID: sfid-20190522_015509_212300_3D56D19B 
+X-CRM114-Status: GOOD (  32.18  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.8 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.67.106 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.2 MISSING_HEADERS        Missing To: header
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (philippe.mazenauer[at]outlook.de)
- 1.6 MALFORMED_FREEMAIL     Bad headers on message from free email
- service
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -103,42 +65,320 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Philippe Mazenauer <philippe.mazenauer@outlook.de>,
- Russell King <linux@armlinux.org.uk>,
- "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>,
- open list <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Suzuki K Pouloze <suzuki.poulose@arm.com>,
+ Marc Zyngier <marc.zyngier@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>, James Morse <james.morse@arm.com>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QWRkaW5nIG1ldGhvZCBwY2liaW9zX3JlcG9ydF9zdGF0dXMoKSB0byBtYWNoL3BjaS5oLCBzbyBh
-cyB0byByZW1vdmUgdGhlDQpleHRlcm4gZGVjbGFyYXRpb24gaW4gZGMyMTI4NS5jLCBhbmQgcmVt
-b3ZlIG1pc3NpbmctcHJvdG90eXBlcyB3YXJuaW5nDQppbiBrZXJuZWwvYmlvczMyLmMuDQoNCi4u
-L2FyY2gvYXJtL2tlcm5lbC9iaW9zMzIuYzo1OTo2OiB3YXJuaW5nOiBubyBwcmV2aW91cyBwcm90
-b3R5cGUgZm9yIOKAmHBjaWJpb3NfcmVwb3J0X3N0YXR1c+KAmSBbLVdtaXNzaW5nLXByb3RvdHlw
-ZXNdDQogdm9pZCBwY2liaW9zX3JlcG9ydF9zdGF0dXModV9pbnQgc3RhdHVzX21hc2ssIGludCB3
-YXJuKQ0KICAgICAgXn5+fn5+fn5+fn5+fn5+fn5+fn5+DQoNClNpZ25lZC1vZmYtYnk6IFBoaWxp
-cHBlIE1hemVuYXVlciA8cGhpbGlwcGUubWF6ZW5hdWVyQG91dGxvb2suZGU+DQotLS0NCiBhcmNo
-L2FybS9pbmNsdWRlL2FzbS9tYWNoL3BjaS5oICAgIHwgMiArKw0KIGFyY2gvYXJtL21hY2gtZm9v
-dGJyaWRnZS9kYzIxMjg1LmMgfCAxIC0NCiAyIGZpbGVzIGNoYW5nZWQsIDIgaW5zZXJ0aW9ucygr
-KSwgMSBkZWxldGlvbigtKQ0KDQpkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vaW5jbHVkZS9hc20vbWFj
-aC9wY2kuaCBiL2FyY2gvYXJtL2luY2x1ZGUvYXNtL21hY2gvcGNpLmgNCmluZGV4IDIzM2I0YjUw
-ZWZmMy4uMWUwNzYxMmJjYmRiIDEwMDY0NA0KLS0tIGEvYXJjaC9hcm0vaW5jbHVkZS9hc20vbWFj
-aC9wY2kuaA0KKysrIGIvYXJjaC9hcm0vaW5jbHVkZS9hc20vbWFjaC9wY2kuaA0KQEAgLTU3LDYg
-KzU3LDggQEAgc3RydWN0IHBjaV9zeXNfZGF0YSB7DQogCXZvaWQJCSpwcml2YXRlX2RhdGE7CS8q
-IHBsYXRmb3JtIGNvbnRyb2xsZXIgcHJpdmF0ZSBkYXRhCSovDQogfTsNCiANCit2b2lkIHBjaWJp
-b3NfcmVwb3J0X3N0YXR1cyh1X2ludCBzdGF0dXNfbWFzaywgaW50IHdhcm4pOw0KKw0KIC8qDQog
-ICogQ2FsbCB0aGlzIHdpdGggeW91ciBod19wY2kgc3RydWN0IHRvIGluaXRpYWxpc2UgdGhlIFBD
-SSBzeXN0ZW0uDQogICovDQpkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vbWFjaC1mb290YnJpZGdlL2Rj
-MjEyODUuYyBiL2FyY2gvYXJtL21hY2gtZm9vdGJyaWRnZS9kYzIxMjg1LmMNCmluZGV4IDE2ZDcx
-YmFjMDA2MS4uNzVkOTdjZGU3NjU1IDEwMDY0NA0KLS0tIGEvYXJjaC9hcm0vbWFjaC1mb290YnJp
-ZGdlL2RjMjEyODUuYw0KKysrIGIvYXJjaC9hcm0vbWFjaC1mb290YnJpZGdlL2RjMjEyODUuYw0K
-QEAgLTM0LDcgKzM0LDYgQEANCiAJCQkJICBQQ0lfU1RBVFVTX1BBUklUWSkgPDwgMTYpDQogDQog
-ZXh0ZXJuIGludCBzZXR1cF9hcm1faXJxKGludCwgc3RydWN0IGlycWFjdGlvbiAqKTsNCi1leHRl
-cm4gdm9pZCBwY2liaW9zX3JlcG9ydF9zdGF0dXModV9pbnQgc3RhdHVzX21hc2ssIGludCB3YXJu
-KTsNCiANCiBzdGF0aWMgdW5zaWduZWQgbG9uZw0KIGRjMjEyODVfYmFzZV9hZGRyZXNzKHN0cnVj
-dCBwY2lfYnVzICpidXMsIHVuc2lnbmVkIGludCBkZXZmbikNCi0tIA0KMi4xNy4xDQoNCl9fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJu
-ZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
-Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Tue, May 21, 2019 at 05:46:28PM +0100, Julien Thierry wrote:
+> Hi Andrew,
+> 
+> On 05/21/2019 04:52 PM, Andrew Murray wrote:
+> > ARMv8 provides support for chained PMU counters, where an event type
+> > of 0x001E is set for odd-numbered counters, the event counter will
+> > increment by one for each overflow of the preceding even-numbered
+> > counter. Let's emulate this in KVM by creating a 64 bit perf counter
+> > when a user chains two emulated counters together.
+> > 
+> > For chained events we only support generating an overflow interrupt
+> > on the high counter. We use the attributes of the low counter to
+> > determine the attributes of the perf event.
+> > 
+> > Suggested-by: Marc Zyngier <marc.zyngier@arm.com>
+> > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+> > ---
+> >  include/kvm/arm_pmu.h |   2 +
+> >  virt/kvm/arm/pmu.c    | 246 ++++++++++++++++++++++++++++++++++++------
+> >  2 files changed, 215 insertions(+), 33 deletions(-)
+> > 
+> > diff --git a/include/kvm/arm_pmu.h b/include/kvm/arm_pmu.h
+> > index b73f31baca52..8b434745500a 100644
+> > --- a/include/kvm/arm_pmu.h
+> > +++ b/include/kvm/arm_pmu.h
+> > @@ -22,6 +22,7 @@
+> >  #include <asm/perf_event.h>
+> >  
+> >  #define ARMV8_PMU_CYCLE_IDX		(ARMV8_PMU_MAX_COUNTERS - 1)
+> > +#define ARMV8_PMU_MAX_COUNTER_PAIRS	((ARMV8_PMU_MAX_COUNTERS + 1) >> 1)
+> >  
+> >  #ifdef CONFIG_KVM_ARM_PMU
+> >  
+> > @@ -34,6 +35,7 @@ struct kvm_pmc {
+> >  struct kvm_pmu {
+> >  	int irq_num;
+> >  	struct kvm_pmc pmc[ARMV8_PMU_MAX_COUNTERS];
+> > +	DECLARE_BITMAP(chained, ARMV8_PMU_MAX_COUNTER_PAIRS);
+> >  	bool ready;
+> >  	bool created;
+> >  	bool irq_level;
+> > diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
+> > index ae1e886d4a1a..4b0981c402c6 100644
+> > --- a/virt/kvm/arm/pmu.c
+> > +++ b/virt/kvm/arm/pmu.c
+> > @@ -25,28 +25,128 @@
+> >  #include <kvm/arm_vgic.h>
+> >  
+> >  static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx);
+> > +
+> > +#define PERF_ATTR_CFG1_KVM_PMU_CHAINED 0x1
+> > +
+> > +static struct kvm_vcpu *kvm_pmc_to_vcpu(struct kvm_pmc *pmc)
+> > +{
+> > +	struct kvm_pmu *pmu;
+> > +	struct kvm_vcpu_arch *vcpu_arch;
+> > +
+> > +	pmc -= pmc->idx;
+> > +	pmu = container_of(pmc, struct kvm_pmu, pmc[0]);
+> > +	vcpu_arch = container_of(pmu, struct kvm_vcpu_arch, pmu);
+> > +	return container_of(vcpu_arch, struct kvm_vcpu, arch);
+> > +}
+> > +
+> >  /**
+> > - * kvm_pmu_get_counter_value - get PMU counter value
+> > + * kvm_pmu_pmc_is_chained - determine if the pmc is chained
+> > + * @pmc: The PMU counter pointer
+> > + */
+> > +static bool kvm_pmu_pmc_is_chained(struct kvm_pmc *pmc)
+> > +{
+> > +	struct kvm_vcpu *vcpu = kvm_pmc_to_vcpu(pmc);
+> > +
+> > +	return test_bit(pmc->idx >> 1, vcpu->arch.pmu.chained);
+> > +}
+> > +
+> > +/**
+> > + * kvm_pmu_pmc_is_high_counter - determine if select_idx is a high/low counter
+> > + * @select_idx: The counter index
+> > + */
+> > +static bool kvm_pmu_pmc_is_high_counter(u64 select_idx)
+> > +{
+> > +	return select_idx & 0x1;
+> > +}
+> > +
+> > +/**
+> > + * kvm_pmu_get_canonical_pmc - obtain the canonical pmc
+> > + * @pmc: The PMU counter pointer
+> > + *
+> > + * When a pair of PMCs are chained together we use the low counter (canonical)
+> > + * to hold the underlying perf event.
+> > + */
+> > +static struct kvm_pmc *kvm_pmu_get_canonical_pmc(struct kvm_pmc *pmc)
+> > +{
+> > +	if (kvm_pmu_pmc_is_chained(pmc) &&
+> > +	    kvm_pmu_pmc_is_high_counter(pmc->idx))
+> > +		return pmc - 1;
+> > +
+> > +	return pmc;
+> > +}
+> > +
+> > +/**
+> > + * kvm_pmu_idx_has_chain_evtype - determine if the event type is chain
+> >   * @vcpu: The vcpu pointer
+> >   * @select_idx: The counter index
+> >   */
+> > -u64 kvm_pmu_get_counter_value(struct kvm_vcpu *vcpu, u64 select_idx)
+> > +static bool kvm_pmu_idx_has_chain_evtype(struct kvm_vcpu *vcpu, u64 select_idx)
+> >  {
+> > -	u64 counter, reg, enabled, running;
+> > -	struct kvm_pmu *pmu = &vcpu->arch.pmu;
+> > -	struct kvm_pmc *pmc = &pmu->pmc[select_idx];
+> > +	u64 eventsel, reg;
+> >  
+> > -	reg = (select_idx == ARMV8_PMU_CYCLE_IDX)
+> > -	      ? PMCCNTR_EL0 : PMEVCNTR0_EL0 + select_idx;
+> > -	counter = __vcpu_sys_reg(vcpu, reg);
+> > +	select_idx |= 0x1;
+> > +
+> > +	if (select_idx == ARMV8_PMU_CYCLE_IDX)
+> > +		return false;
+> > +
+> > +	reg = PMEVTYPER0_EL0 + select_idx;
+> > +	eventsel = __vcpu_sys_reg(vcpu, reg) & ARMV8_PMU_EVTYPE_EVENT;
+> > +
+> > +	return armv8pmu_evtype_is_chain(eventsel);
+> > +}
+> > +
+> > +/**
+> > + * kvm_pmu_get_pair_counter_value - get PMU counter value
+> > + * @vcpu: The vcpu pointer
+> > + * @pmc: The PMU counter pointer
+> > + */
+> > +static u64 kvm_pmu_get_pair_counter_value(struct kvm_vcpu *vcpu,
+> > +					  struct kvm_pmc *pmc)
+> > +{
+> > +	u64 counter, counter_high, reg, enabled, running;
+> > +
+> > +	if (kvm_pmu_pmc_is_chained(pmc)) {
+> > +		pmc = kvm_pmu_get_canonical_pmc(pmc);
+> > +		reg = PMEVCNTR0_EL0 + pmc->idx;
+> > +
+> > +		counter = __vcpu_sys_reg(vcpu, reg);
+> > +		counter_high = __vcpu_sys_reg(vcpu, reg + 1);
+> > +
+> > +		counter = lower_32_bits(counter) | (counter_high << 32);
+> > +	} else {
+> > +		reg = (pmc->idx == ARMV8_PMU_CYCLE_IDX)
+> > +		      ? PMCCNTR_EL0 : PMEVCNTR0_EL0 + pmc->idx;
+> > +		counter = __vcpu_sys_reg(vcpu, reg);
+> > +	}
+> >  
+> > -	/* The real counter value is equal to the value of counter register plus
+> > +	/*
+> > +	 * The real counter value is equal to the value of counter register plus
+> >  	 * the value perf event counts.
+> >  	 */
+> >  	if (pmc->perf_event)
+> >  		counter += perf_event_read_value(pmc->perf_event, &enabled,
+> >  						 &running);
+> >  
+> > +	return counter;
+> > +}
+> > +
+> > +/**
+> > + * kvm_pmu_get_counter_value - get PMU counter value
+> > + * @vcpu: The vcpu pointer
+> > + * @select_idx: The counter index
+> > + */
+> > +u64 kvm_pmu_get_counter_value(struct kvm_vcpu *vcpu, u64 select_idx)
+> > +{
+> > +	u64 counter;
+> > +	struct kvm_pmu *pmu = &vcpu->arch.pmu;
+> > +	struct kvm_pmc *pmc = &pmu->pmc[select_idx];
+> > +
+> > +	counter = kvm_pmu_get_pair_counter_value(vcpu, pmc);
+> > +
+> > +	if (kvm_pmu_pmc_is_chained(pmc) &&
+> > +	    kvm_pmu_pmc_is_high_counter(select_idx))
+> > +		counter >>= 32;
+> > +
+> >  	return counter & pmc->bitmask;
+> >  }
+> >  
+> > @@ -74,6 +174,7 @@ void kvm_pmu_set_counter_value(struct kvm_vcpu *vcpu, u64 select_idx, u64 val)
+> >   */
+> >  static void kvm_pmu_release_perf_event(struct kvm_pmc *pmc)
+> >  {
+> > +	pmc = kvm_pmu_get_canonical_pmc(pmc);
+> >  	if (pmc->perf_event) {
+> >  		perf_event_disable(pmc->perf_event);
+> >  		perf_event_release_kernel(pmc->perf_event);
+> > @@ -91,13 +192,24 @@ static void kvm_pmu_stop_counter(struct kvm_vcpu *vcpu, struct kvm_pmc *pmc)
+> >  {
+> >  	u64 counter, reg;
+> >  
+> > -	if (pmc->perf_event) {
+> > +	pmc = kvm_pmu_get_canonical_pmc(pmc);
+> > +	if (!pmc->perf_event)
+> > +		return;
+> > +
+> > +	if (kvm_pmu_pmc_is_chained(pmc)) {
+> > +		counter = kvm_pmu_get_pair_counter_value(vcpu, pmc);
+> > +
+> > +		reg = PMEVCNTR0_EL0 + pmc->idx;
+> > +		__vcpu_sys_reg(vcpu, reg) = counter & pmc->bitmask;
+> > +		__vcpu_sys_reg(vcpu, reg + 1) = (counter >> 32) & pmc->bitmask;
+> > +	} else {
+> >  		counter = kvm_pmu_get_counter_value(vcpu, pmc->idx);
+> >  		reg = (pmc->idx == ARMV8_PMU_CYCLE_IDX)
+> >  		       ? PMCCNTR_EL0 : PMEVCNTR0_EL0 + pmc->idx;
+> >  		__vcpu_sys_reg(vcpu, reg) = counter;
+> > -		kvm_pmu_release_perf_event(pmc);
+> >  	}
+> > +
+> > +	kvm_pmu_release_perf_event(pmc);
+> >  }
+> >  
+> >  /**
+> > @@ -115,6 +227,8 @@ void kvm_pmu_vcpu_reset(struct kvm_vcpu *vcpu)
+> >  		pmu->pmc[i].idx = i;
+> >  		pmu->pmc[i].bitmask = 0xffffffffUL;
+> >  	}
+> > +
+> > +	bitmap_zero(vcpu->arch.pmu.chained, ARMV8_PMU_MAX_COUNTER_PAIRS);
+> >  }
+> >  
+> >  /**
+> > @@ -154,6 +268,7 @@ void kvm_pmu_enable_counter_mask(struct kvm_vcpu *vcpu, u64 val)
+> >  	int i;
+> >  	struct kvm_pmu *pmu = &vcpu->arch.pmu;
+> >  	struct kvm_pmc *pmc;
+> > +	struct perf_event *perf_event;
+> >  
+> >  	if (!(__vcpu_sys_reg(vcpu, PMCR_EL0) & ARMV8_PMU_PMCR_E) || !val)
+> >  		return;
+> > @@ -163,9 +278,21 @@ void kvm_pmu_enable_counter_mask(struct kvm_vcpu *vcpu, u64 val)
+> >  			continue;
+> >  
+> >  		pmc = &pmu->pmc[i];
+> > +
+> > +		/*
+> > +		 * For high counters of chained events we must recreate the
+> > +		 * perf event with the long (64bit) attribute set.
+> > +		 */
+> > +		if (kvm_pmu_pmc_is_chained(pmc) &&
+> > +		    kvm_pmu_pmc_is_high_counter(i)) {
+> > +			kvm_pmu_create_perf_event(vcpu, i);
+> > +			continue;
+> > +		}
+> > +
+> > +		pmc = kvm_pmu_get_canonical_pmc(pmc);
+> 
+> But pmc is already a canonical pmc, we don't need to call
+> kvm_pmu_get_canonical_pmc(). The condition above is the same as the one
+> use in kvm_pmu_get_canonical_pmc(), so no "non canonical" pmc ever
+> reaches that point. I would understand putting a comment to clarify that
+> fact.
+
+Yes you're completely right. Thanks for spotting this unnecessary code.
+
+> 
+> >  		if (pmc->perf_event) {
+> >  			perf_event_enable(pmc->perf_event);
+> > -			if (pmc->perf_event->state != PERF_EVENT_STATE_ACTIVE)
+> > +			if (perf_event->state != PERF_EVENT_STATE_ACTIVE)
+> 
+> You forgot to set perf_event.
+
+Yes this should have been pmc->perf_event - thanks.
+
+> 
+> >  				kvm_debug("fail to enable perf event\n");
+> >  		}
+> >  	}
+> > @@ -192,6 +319,18 @@ void kvm_pmu_disable_counter_mask(struct kvm_vcpu *vcpu, u64 val)
+> >  			continue;
+> >  
+> >  		pmc = &pmu->pmc[i];
+> > +
+> > +		/*
+> > +		 * For high counters of chained events we must recreate the
+> > +		 * perf event with the long (64bit) attribute unset.
+> > +		 */
+> > +		if (kvm_pmu_pmc_is_chained(pmc) &&
+> > +		    kvm_pmu_pmc_is_high_counter(i)) {
+> > +			kvm_pmu_create_perf_event(vcpu, i);
+> > +			continue;
+> > +		}
+> > +
+> > +		pmc = kvm_pmu_get_canonical_pmc(pmc);
+> 
+> Same as the enable case, we know pmc is already canonical, no need to
+> call the function.
+> 
+
+Thanks for the good review as always.
+
+Andrew Murray
+
+> Thanks,
+> 
+> -- 
+> Julien Thierry
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
