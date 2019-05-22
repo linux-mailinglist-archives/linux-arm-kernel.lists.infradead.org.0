@@ -2,88 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44DC3272A1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 00:53:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72544272B0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 01:04:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=KOCTBQtljdsAnGPymU6ikT6oKp3e7caITfSzpeGyFHw=; b=NDZ
-	T2oweFq37UMf27l0NLwlsmCmG/oKoB7WFWBPv+t7DmqkyWvkFh+BLVHK4SIyozA/ZQGSQZWP8Duv4
-	RbttL/j6MweDYMTDFW0c9kdL1YH95YpZdWDeBdrOMIInNWjDhNEWlGVeq16hbUZfWST6KH2CurK1I
-	BdFkc1Z0p5GCe+6LdO91T3rzI+4eDVrTaApcIMy5qESbGn4LEweLK22OTAFRwXDW26gU2xdQoyJub
-	k7hZWSIRb90VBtVJdpK+B0flxNBt+cBZZ2RXVqHY3GPzK6JzLZiTi8POrTvjkHe8Ho6/yp8FZJ8BC
-	y82U4FECuLaSU8oIban5xmrHwMrcnJg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=06HrDJJSwMbhlzTUDOz6w5UNEOjNSTWreua/8GELmxU=; b=oap067SSHdVE8f
+	cND+KK+FIw8NwiL6WAuO0L5/5rF+g/lrGm4/9Ag9MAntX4WZk83EQxnmAow7ChhZIlJx8VU3Ee0Xm
+	bAJTU13q5ZmfWJv5pa+D/Zs0MKMNpgpwrU7/ZVaS546mMX57Eo6f1KpqxfmyIpNeLykj8E7Bv9iCW
+	38ZaWTikzo8XAXJH1JUuB9tQbv0Y3v7/NOgSHOSCPuc6ydnNZ0CI5xAQr+zNCRBjAY3qinyhb9t0X
+	GpxWGtQiNcTsmdoYjtxYHIDPDnusDRC/AH80j03Vug2dM9twU1rs3aI7rCYpiL0LvSSC91f1qrpun
+	nDf8o9BFizCBwocbO/ZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTa7G-00041e-6O; Wed, 22 May 2019 22:53:46 +0000
-Received: from outgoing4.flk.host-h.net ([188.40.0.90])
+	id 1hTaHA-00073b-KK; Wed, 22 May 2019 23:04:00 +0000
+Received: from mail-vk1-xa41.google.com ([2607:f8b0:4864:20::a41])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTa76-00040R-Lw; Wed, 22 May 2019 22:53:39 +0000
-Received: from www31.flk1.host-h.net ([188.40.1.173])
- by antispam1-flk1.host-h.net with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.89)
- (envelope-from <justin.swartz@risingedge.co.za>)
- id 1hTa6n-0000bT-Bw; Thu, 23 May 2019 00:53:18 +0200
-Received: from [130.255.73.16] (helo=v01.28459.vpscontrol.net)
- by www31.flk1.host-h.net with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.84_2)
- (envelope-from <justin.swartz@risingedge.co.za>)
- id 1hTa6c-0007fD-EJ; Thu, 23 May 2019 00:53:06 +0200
-From: Justin Swartz <justin.swartz@risingedge.co.za>
-To: Sandy Huang <hjc@rock-chips.com>,
- =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH] drm/rockchip: dw_hdmi: add basic rk3228 support
-Date: Wed, 22 May 2019 22:46:29 +0000
-Message-Id: <20190522224631.25164-1-justin.swartz@risingedge.co.za>
-X-Mailer: git-send-email 2.11.0
-X-Authenticated-Sender: justin.swartz@risingedge.co.za
-X-Virus-Scanned: Clear (ClamAV 0.100.3/25457/Wed May 22 09:57:31 2019)
-X-Originating-IP: 188.40.1.173
-X-SpamExperts-Domain: risingedge.co.za
-X-SpamExperts-Username: 
-Authentication-Results: host-h.net;
- auth=pass (login) smtp.auth=@risingedge.co.za
-X-SpamExperts-Outgoing-Class: ham
-X-SpamExperts-Outgoing-Evidence: SB/global_tokens (0.000718690605145)
-X-Recommended-Action: accept
-X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0fHWENUdqj+4JDN3TQDP3eCpSDasLI4SayDByyq9LIhVur86TwL7jsv5
- m6+fjp/sxETNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3K7uDjV/sFUXQr+CDrNQuIHgQg
- mAX8Bxy/iUu0ThNZg0h/RxVysY5Ye6+GGw0VqdJD7ren9RtRNyYim5e3GD8LGfWrcbYvelpuN/Pk
- qhBpvAyWwieZyauFYqHkIbFa+ipF21HJWO60ZqrvKy/1AXUV5oXt6ymoFHaG7BQtEYvFCSo5O9aO
- OPCZx1b2uMC/zMc3aAOV7ICS29ZskdEzgnmWc6FyCw2oLKHJClAYHcXyktNZ2XmZE6Ulo3Sg6/fH
- CWNxoaEnuBtnt6GUDDzwi0xE9ujBdjBi/EW6wTMO5aPWRLvv8qeRWs1kOo/p5GKJkWYAO3Aa5n+U
- cgHka3/viXjzcoj1m7f+vTE4JStv6WwSOoIjjjxJx7TjfIl9lT02e+bLG5tY/17Am1+3t6saIBBg
- jLL9CBTChXJpl1nl23cKb/28qAHF3ayYxbGdFos0fpCN/Zqe7k8tOuyC0ezetWWw8nL3mjAyuRnY
- YfqoF0qwBaWr31abV7tmT2g84edke3MdOkNjooab3HXOpUJdeB9FrcmwwJhZoFj1JrH8+3dIKm8T
- aJbF/DJ9xG35AyqkelXaj1B5NGYLZCD5qc9WTEIS3cJCoM1jZKVSdLKiMKeae175VNiXOYUQ+bYR
- OTnFZniyHwlqvaI+zok/BsKQK4gft9MTokp23oPCMeUu86GfQl/coNq5LDsD+gmtrHR34ik+dbYb
- 9IXfYGRpVS/0hA4MwqmkYLLjcD7HaYjxiQBclDtVrfG8Zd+nzbonxrsMSs4uYqsuNEW45+y/2kiU
- pWy9c+XovTjsJstHtBoNlKIuslv0d6pyfV7QOE1hL9j5OVSXNVTcvF4bYNCxBEiOkhGolglPmh6a
- ILJqM6WsXf7aQnmpO2ydeyFd1pMxtzaLrgiAa1jZ449c5QOSXHeR3E0E19yXIdNHJDPRcm8rLb1r
- h0PyzIaTXD+uKJkHA4nFPinpYeLTxNigHOV5GQgWJq64bnCnflZnbjDB2+RGRgaXth0ZHRqQruFr
- G/GlTGRDUHWt54s410cgWo1fMD6i15+WgVsQdC9uGg5IeWmPBYt4N47WgJgyTfy73B/Plf7FmTDV
- qY+pQN3pVbMWvtuGUnEh3DwJWw42swm4bO6gacpMpzKjPCVKQvBNmkphbV+6LqpSOVpogBsPfG5h
- jLRjd6kxWF4VLgIZIkTm0juO6rHlP/TihjA708Lg3Y2gXyaf+rItBxw1SWz0NFi7GeT33MAvp0E4
- hZvaIK8zWrz4lb7RoCsWna0PdfWBYPgYUN6vj8NApCcRaz+idK1HZy9Txmtmp2+U8T3Kfj7tHuHD
- vXqVSlU=
-X-Report-Abuse-To: spam@antispammaster.host-h.net
+ id 1hTaH2-00073D-1C
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 23:03:53 +0000
+Received: by mail-vk1-xa41.google.com with SMTP id k1so936332vkb.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 22 May 2019 16:03:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=083fICcLHdIZzVNufU25syYhE84WJwTKtiHOZtf8SA0=;
+ b=R1whbY0DRJvYeo6WDezCnq6bV0i36te0/v1SFgHuDKDfWdFfZ1uqlfu6C2/257hQWf
+ 13OBZbWoVT2d4n1OkMyYTaJdzzdNJVODvxD7ax/78bOTFn0UZG6rkpjhsDxguOSNWQSW
+ /pem354o3ayyWSPYKkkwbewRgzXJsoaUxgC/ouAEGxy6liid3L/+YVw/SLmKu4nN5deA
+ sI1HZSYq1Jfkv/d/KsZmiH7dePki/Ktib/+2n6rc/FESU7nQ1RBKbd2tskxVzb2WzGm/
+ +2fOWm+jMAJ/JCuclmW37/f6kDPw2o5cg4ErXP4x4jo4xyXhp8lPR9gvbLshZk81RzVf
+ ErKA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=083fICcLHdIZzVNufU25syYhE84WJwTKtiHOZtf8SA0=;
+ b=GPA4VLRbnnDN+NaXBW+aBvGZ+jiB+7f1lSd7akOOUzm0psJ+3En9Co0YQ4RiLMFwtF
+ K3dSV3vHnwJTOXmJBf0w9p5FgDbAmAGPh1XSLe0blewWcmmaP77Lt+PRdngBExhi48ef
+ eOXkhZxDCeWXmYleA3dI7Rm0IEna/FZj5BcD1I1E9ZBFYDo2GZ8HqLh5XDP11ZuT6A3O
+ Kdmw0ZMnNDkwcGmgTcZS1VYAb0ZH6qVyfF6EkiQSgdCCle1SYg6dC0iZZEbdetd52ebr
+ q7IvG0F1uvgJKJ71b7WFPevkdh1uV7uAWYgrYONrSD3KYGXvWhCi8ISsMTqpufuWEyar
+ wfjg==
+X-Gm-Message-State: APjAAAUMo0V+1vaPlEJWg3x640q9nj/CqLS64DGXHCQptQIwUkauR/ZT
+ QBctHEepONduh3TsbWhCNMjnZa9jKHprEwGxOsvTwQ==
+X-Google-Smtp-Source: APXvYqxPKtiNPawqkCkuPCNw0GStvO0zt/hmYPvT2nokhB6CEYZVKos9gwheEkiU5Yy2rN1PLFcfrDl2WDUSCoUDbnM=
+X-Received: by 2002:a1f:4ec6:: with SMTP id c189mr128107vkb.17.1558566229772; 
+ Wed, 22 May 2019 16:03:49 -0700 (PDT)
+MIME-Version: 1.0
+References: <cover.1557160186.git.andreyknvl@google.com>
+ <20190517144931.GA56186@arrakis.emea.arm.com>
+ <CAFKCwrj6JEtp4BzhqO178LFJepmepoMx=G+YdC8sqZ3bcBp3EQ@mail.gmail.com>
+ <20190521182932.sm4vxweuwo5ermyd@mbp> <201905211633.6C0BF0C2@keescook>
+ <20190522101110.m2stmpaj7seezveq@mbp>
+ <CAJgzZoosKBwqXRyA6fb8QQSZXFqfHqe9qO9je5TogHhzuoGXJQ@mail.gmail.com>
+ <20190522163527.rnnc6t4tll7tk5zw@mbp> <201905221316.865581CF@keescook>
+In-Reply-To: <201905221316.865581CF@keescook>
+From: Evgenii Stepanov <eugenis@google.com>
+Date: Wed, 22 May 2019 16:03:36 -0700
+Message-ID: <CAFKCwrjOjdJAbcABp3qxwyYy+hgfyQirvmqGkDSJVJe5pSz0Uw@mail.gmail.com>
+Subject: Re: [PATCH v15 00/17] arm64: untag user pointers passed to the kernel
+To: Kees Cook <keescook@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_155336_721786_102B8913 
-X-CRM114-Status: GOOD (  12.65  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190522_160352_101924_CD9C13A4 
+X-CRM114-Status: GOOD (  29.96  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [188.40.0.90 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:a41 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,128 +102,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Justin Swartz <justin.swartz@risingedge.co.za>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Khalid Aziz <khalid.aziz@oracle.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ linux-media@vger.kernel.org, Kevin Brodsky <kevin.brodsky@arm.com>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Like the RK3328, RK322x SoCs offer a Synopsis DesignWare HDMI transmitter
-and an Innosilicon HDMI PHY.
+On Wed, May 22, 2019 at 1:47 PM Kees Cook <keescook@chromium.org> wrote:
+>
+> On Wed, May 22, 2019 at 05:35:27PM +0100, Catalin Marinas wrote:
+> > The two hard requirements I have for supporting any new hardware feature
+> > in Linux are (1) a single kernel image binary continues to run on old
+> > hardware while making use of the new feature if available and (2) old
+> > user space continues to run on new hardware while new user space can
+> > take advantage of the new feature.
+>
+> Agreed! And I think the series meets these requirements, yes?
+>
+> > For MTE, we just can't enable it by default since there are applications
+> > who use the top byte of a pointer and expect it to be ignored rather
+> > than failing with a mismatched tag. Just think of a hwasan compiled
+> > binary where TBI is expected to work and you try to run it with MTE
+> > turned on.
+>
+> Ah! Okay, here's the use-case I wasn't thinking of: the concern is TBI
+> conflicting with MTE. And anything that starts using TBI suddenly can't
+> run in the future because it's being interpreted as MTE bits? (Is that
+> the ABI concern? I feel like we got into the weeds about ioctl()s and
+> one-off bugs...)
+>
+> So there needs to be some way to let the kernel know which of three
+> things it should be doing:
+> 1- leaving userspace addresses as-is (present)
+> 2- wiping the top bits before using (this series)
+> 3- wiping the top bits for most things, but retaining them for MTE as
+>    needed (the future)
+>
+> I expect MTE to be the "default" in the future. Once a system's libc has
+> grown support for it, everything will be trying to use MTE. TBI will be
+> the special case (but TBI is effectively a prerequisite).
+>
+> AFAICT, the only difference I see between 2 and 3 will be the tag handling
+> in usercopy (all other places will continue to ignore the top bits). Is
+> that accurate?
+>
+> Is "1" a per-process state we want to keep? (I assume not, but rather it
+> is available via no TBI/MTE CONFIG or a boot-time option, if at all?)
+>
+> To choose between "2" and "3", it seems we need a per-process flag to
+> opt into TBI (and out of MTE). For userspace, how would a future binary
+> choose TBI over MTE? If it's a library issue, we can't use an ELF bit,
+> since the choice may be "late" after ELF load (this implies the need
+> for a prctl().) If it's binary-only ("built with HWKASan") then an ELF
+> bit seems sufficient. And without the marking, I'd expect the kernel to
+> enforce MTE when there are high bits.
+>
+> > I would also expect the C library or dynamic loader to check for the
+> > presence of a HWCAP_MTE bit before starting to tag memory allocations,
+> > otherwise it would get SIGILL on the first MTE instruction it tries to
+> > execute.
+>
+> I've got the same question as Elliot: aren't MTE instructions just NOP
+> to older CPUs? I.e. if the CPU (or kernel) don't support it, it just
+> gets entirely ignored: checking is only needed to satisfy curiosity
+> or behavioral expectations.
 
-Add a new dw_hdmi_plat_data struct, rk3228_hdmi_drv_data.
-Assign a set of mostly generic rk3228_hdmi_phy_ops functions.
-Add dw_hdmi_rk3228_setup_hpd() to enable the HDMI HPD and DDC lines.
+MTE instructions are not NOP. Most of them have side effects (changing
+register values, zeroing memory).
+This only matters for stack tagging, though. Heap tagging is a runtime
+decision in the allocator.
 
-Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
----
- .../bindings/display/rockchip/dw_hdmi-rockchip.txt |  1 +
- drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c        | 53 ++++++++++++++++++++++
- 2 files changed, 54 insertions(+)
+If an image needs to run on old hardware, it will have to do heap tagging only.
 
-diff --git a/Documentation/devicetree/bindings/display/rockchip/dw_hdmi-rockchip.txt b/Documentation/devicetree/bindings/display/rockchip/dw_hdmi-rockchip.txt
-index 39143424a..703503103 100644
---- a/Documentation/devicetree/bindings/display/rockchip/dw_hdmi-rockchip.txt
-+++ b/Documentation/devicetree/bindings/display/rockchip/dw_hdmi-rockchip.txt
-@@ -12,6 +12,7 @@ following device-specific properties.
- Required properties:
- 
- - compatible: should be one of the following:
-+		"rockchip,rk3228-dw-hdmi"
- 		"rockchip,rk3288-dw-hdmi"
- 		"rockchip,rk3328-dw-hdmi"
- 		"rockchip,rk3399-dw-hdmi"
-diff --git a/drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c b/drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c
-index 4cdc9f86c..182a852af 100644
---- a/drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c
-+++ b/drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c
-@@ -23,6 +23,14 @@
- #include "rockchip_drm_drv.h"
- #include "rockchip_drm_vop.h"
- 
-+#define RK3228_GRF_SOC_CON2		0x0408
-+#define RK3228_HDMI_SDAIN_MSK		BIT(14)
-+#define RK3228_HDMI_SCLIN_MSK		BIT(13)
-+#define RK3228_GRF_SOC_CON6		0x0418
-+#define RK3228_HDMI_HPD_VSEL		BIT(6)
-+#define RK3228_HDMI_SDA_VSEL		BIT(5)
-+#define RK3228_HDMI_SCL_VSEL		BIT(4)
-+
- #define RK3288_GRF_SOC_CON6		0x025C
- #define RK3288_HDMI_LCDC_SEL		BIT(4)
- #define RK3328_GRF_SOC_CON2		0x0408
-@@ -325,6 +333,25 @@ static void dw_hdmi_rockchip_genphy_disable(struct dw_hdmi *dw_hdmi, void *data)
- 	phy_power_off(hdmi->phy);
- }
- 
-+static void dw_hdmi_rk3228_setup_hpd(struct dw_hdmi *dw_hdmi, void *data)
-+{
-+	struct rockchip_hdmi *hdmi = (struct rockchip_hdmi *)data;
-+
-+	dw_hdmi_phy_setup_hpd(dw_hdmi, data);
-+
-+	regmap_write(hdmi->regmap,
-+		RK3228_GRF_SOC_CON6,
-+		HIWORD_UPDATE(RK3228_HDMI_HPD_VSEL | RK3228_HDMI_SDA_VSEL |
-+			      RK3228_HDMI_SCL_VSEL,
-+			      RK3228_HDMI_HPD_VSEL | RK3228_HDMI_SDA_VSEL |
-+			      RK3228_HDMI_SCL_VSEL));
-+
-+	regmap_write(hdmi->regmap,
-+		RK3228_GRF_SOC_CON2,
-+		HIWORD_UPDATE(RK3228_HDMI_SDAIN_MSK | RK3228_HDMI_SCLIN_MSK,
-+			      RK3228_HDMI_SDAIN_MSK | RK3228_HDMI_SCLIN_MSK));
-+}
-+
- static enum drm_connector_status
- dw_hdmi_rk3328_read_hpd(struct dw_hdmi *dw_hdmi, void *data)
- {
-@@ -370,6 +397,29 @@ static void dw_hdmi_rk3328_setup_hpd(struct dw_hdmi *dw_hdmi, void *data)
- 			      RK3328_HDMI_HPD_IOE));
- }
- 
-+static const struct dw_hdmi_phy_ops rk3228_hdmi_phy_ops = {
-+	.init		= dw_hdmi_rockchip_genphy_init,
-+	.disable	= dw_hdmi_rockchip_genphy_disable,
-+	.read_hpd	= dw_hdmi_phy_read_hpd,
-+	.update_hpd	= dw_hdmi_phy_update_hpd,
-+	.setup_hpd	= dw_hdmi_rk3228_setup_hpd,
-+};
-+
-+static struct rockchip_hdmi_chip_data rk3228_chip_data = {
-+	.lcdsel_grf_reg = -1,
-+};
-+
-+static const struct dw_hdmi_plat_data rk3228_hdmi_drv_data = {
-+	.mode_valid = dw_hdmi_rockchip_mode_valid,
-+	.mpll_cfg = rockchip_mpll_cfg,
-+	.cur_ctr = rockchip_cur_ctr,
-+	.phy_config = rockchip_phy_config,
-+	.phy_data = &rk3228_chip_data,
-+	.phy_ops = &rk3228_hdmi_phy_ops,
-+	.phy_name = "inno_dw_hdmi_phy2",
-+	.phy_force_vendor = true,
-+};
-+
- static struct rockchip_hdmi_chip_data rk3288_chip_data = {
- 	.lcdsel_grf_reg = RK3288_GRF_SOC_CON6,
- 	.lcdsel_big = HIWORD_UPDATE(0, RK3288_HDMI_LCDC_SEL),
-@@ -422,6 +472,9 @@ static const struct dw_hdmi_plat_data rk3399_hdmi_drv_data = {
- };
- 
- static const struct of_device_id dw_hdmi_rockchip_dt_ids[] = {
-+	{ .compatible = "rockchip,rk3228-dw-hdmi",
-+	  .data = &rk3228_hdmi_drv_data
-+	},
- 	{ .compatible = "rockchip,rk3288-dw-hdmi",
- 	  .data = &rk3288_hdmi_drv_data
- 	},
--- 
-2.11.0
-
+> To me, the conflict seems to be using TBI in the face of expecting MTE to
+> be the default state of the future. (But the internal changes needed
+> for TBI -- this series -- is a prereq for MTE.)
+>
+> --
+> Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
