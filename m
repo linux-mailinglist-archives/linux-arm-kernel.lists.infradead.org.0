@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 612112680A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 18:21:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E78D526810
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 18:21:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9Bk9L4vuiItOoLyEj4Nz1pQio273VReJ1QMT5MM7QuI=; b=NMM7cwv7udDl0S
-	BQFHJHpoM3Ny0uds05MqBqCEcHgXWxM30uMEobJYgj9y9Y6Xp7q77SDHKm55oLMcrQw/GlfHuqoc9
-	Skkgiq+LbO/mER70B8ajT7Dy3+UiOkMajbsWdgJPzVieNYHacnaBySdkHa3Thu3XmKP5KSHNifvz7
-	qzWtyK0y/mFwEj8XKRAPY8oPIvecwEEs1buigti0gU5ad7HNA3Ja3ziFtHlzkLXf57slSkCcy1N1K
-	/zjFupGorPopg3Psfqrj0xqXqp78PKNFxYbbne5BLixReJ57rJ2MGiAsz968hqaiSopR8fpC/Lfd0
-	pSnE8Qmm5nbd7QwiHgjw==;
+	List-Owner; bh=2hFFJKScGx3WYZ/cjrfzDlLVeYI8xQIiibdblUgeGag=; b=hHDrPRErzPKbld
+	urDgoXEqHyzXkGfPXPpW4musoiPtd2lHPxgbKI1BzAGlWlTcXiPSw2nttpn8hmDVR4DY1I5U8XAYy
+	NmmYQ3w3xQ3CRuGOedf7cbdViUmgwvY7dLnVi4oPJrD09UEF/lJjGgeSC/RKMqmQsCavrJcwh8ZP8
+	6g7IBpCXcHXboPBSVoC+GJB87WOMVBxrQDAWuwPbudiWNBfBGPTB+Qw8LvtL1DFTLqoclVZ3M1bas
+	Oe+oarSM4I4p3G/OJKiQJvUUYLjoIbls5qLw5kcVCUnoJjDtUBHTzRy7ueAnlk45TS//eebDbvOae
+	zYjBPEpIERgKttAWnTww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTTzk-0001bv-Gb; Wed, 22 May 2019 16:21:36 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1hTTzu-0001jT-NI; Wed, 22 May 2019 16:21:46 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTTzF-00013u-2Y
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 16:21:08 +0000
+ id 1hTTzD-00013L-8D
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 16:21:07 +0000
 Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x4MGKdev102267;
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x4MGKdI2037691;
  Wed, 22 May 2019 11:20:39 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
  s=ti-com-17Q1; t=1558542039;
- bh=VCnEYJi1HcEwa5Iq6WKWhniPEkwL4k0FanrWfiqf6K0=;
+ bh=NHGPWtIBtgCaIRfzn2pY4Joyz5HN6po2SvcIC4DkkMU=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=Mf/P/3FrkUIXW+4ewz5KuRrQNOyEVulTEvST+4lJY0UrfaqaTtyGv1adilwWDWgK3
- e9FmQgBOxYd0v5uH1mX1lfQNxaTHTczQ3NuqPLMlYEK2cFefsYDiSH2V+i6cAbbGxQ
- nkswLRTNCwaPTYS0Jejs7+ZqqCWn+gmjC/0IYIZE=
-Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x4MGKdxC099357
+ b=V8dAIqL5X+4hefMSssRkIut7wYFjJgbloh2SRmA3cR+POQ6fJ+qEzPAfZ+NP6nNEv
+ pxe/i9D7N7Pd1xHiQxMZbeRBvWXsAQhRazuFYrVaonambtOeQTcr+wQKl0dXOtlAeD
+ GW3lwzAjZuQdeAzQqjuoaxECxDRFT/bAeR1uyv1M=
+Received: from DLEE108.ent.ti.com (dlee108.ent.ti.com [157.170.170.38])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x4MGKdLk099362
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
  Wed, 22 May 2019 11:20:39 -0500
-Received: from DLEE111.ent.ti.com (157.170.170.22) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+Received: from DLEE113.ent.ti.com (157.170.170.24) by DLEE108.ent.ti.com
+ (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Wed, 22
  May 2019 11:20:38 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE111.ent.ti.com
- (157.170.170.22) with Microsoft SMTP Server (version=TLS1_2,
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE113.ent.ti.com
+ (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
  Frontend Transport; Wed, 22 May 2019 11:20:38 -0500
 Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x4MGKcsX122870;
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x4MGKcW6126463;
  Wed, 22 May 2019 11:20:38 -0500
 From: Nishanth Menon <nm@ti.com>
 To: Arnd Bergmann <arnd@arndb.de>, Olof Johansson <olof@lixom.net>, Santosh
@@ -54,24 +54,25 @@ To: Arnd Bergmann <arnd@arndb.de>, Olof Johansson <olof@lixom.net>, Santosh
  Marinas <catalin.marinas@arm.com>, Greg Kroah-Hartman
  <gregkh@linuxfoundation.org>, Mark Rutland <mark.rutland@arm.com>, Rob
  Herring <robh+dt@kernel.org>
-Subject: [PATCH 1/6] dt-bindings: arm: ti: Add bindings for J721E SoC
-Date: Wed, 22 May 2019 11:19:16 -0500
-Message-ID: <20190522161921.20750-2-nm@ti.com>
+Subject: [PATCH 2/6] dt-bindings: serial: 8250_omap: Add compatible for J721E
+ UART controller
+Date: Wed, 22 May 2019 11:19:17 -0500
+Message-ID: <20190522161921.20750-3-nm@ti.com>
 X-Mailer: git-send-email 2.21.0.777.g83232e38648b
 In-Reply-To: <20190522161921.20750-1-nm@ti.com>
 References: <20190522161921.20750-1-nm@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_092105_190738_8C1B8FB7 
-X-CRM114-Status: GOOD (  13.29  )
+X-CRM114-CacheID: sfid-20190522_092103_368799_27D3F1EF 
+X-CRM114-Status: GOOD (  15.17  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -94,7 +95,8 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Nishanth Menon <nm@ti.com>, devicetree@vger.kernel.org,
- Tony Lindgren <tony@atomide.com>, linux-kernel@vger.kernel.org,
+ Vignesh R <vigneshr@ti.com>, Tony Lindgren <tony@atomide.com>,
+ Sekhar Nori <nsekhar@ti.com>, linux-kernel@vger.kernel.org,
  Russell King <linux@armlinux.org.uk>, Tero Kristo <t-kristo@ti.com>,
  linux-serial@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -102,62 +104,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The J721E SoC belongs to the K3 Multicore SoC architecture platform,
-providing advanced system integration to enable lower system costs
-of automotive applications such as infotainment, cluster, premium
-Audio, Gateway, industrial and a range of broad market applications.
-This SoC is designed around reducing the system cost by eliminating
-the need of an external system MCU and is targeted towards ASIL-B/C
-certification/requirements in addition to allowing complex software
-and system use-cases.
+J721e uses a UART controller that is compatible with AM654 UART.
+Introduce a specific compatible to help handle the differences if
+necessary.
 
-Some highlights of this SoC are:
-* Dual Cortex-A72s in a single cluster, three clusters of lockstep
-  capable dual Cortex-R5F MCUs, Deep-learning Matrix Multiply Accelerator(MMA),
-  C7x floating point Vector DSP, Two C66x floating point DSPs.
-* 3D GPU PowerVR Rogue 8XE GE8430
-* Vision Processing Accelerator (VPAC) with image signal processor and Depth
-  and Motion Processing Accelerator (DMPAC)
-* Two Gigabit Industrial Communication Subsystems (ICSSG), each with dual
-  PRUs and dual RTUs
-* Two CSI2.0 4L RX plus one CSI2.0 4L TX, one eDP/DP, One DSI Tx, and
-  up to two DPI interfaces.
-* Integrated Ethernet switch supporting up to a total of 8 external ports in
-  addition to legacy Ethernet switch of up to 2 ports.
-* System MMU (SMMU) Version 3.0 and advanced virtualisation
-  capabilities.
-* Upto 4 PCIe-GEN3 controllers, 2 USB3.0 Dual-role device subsystems,
-  16 MCANs, 12 McASP, eMMC and SD, UFS, OSPI/HyperBus memory controller, QSPI,
-  I3C and I2C, eCAP/eQEP, eHRPWM, MLB among other peripherals.
-* Two hardware accelerator block containing AES/DES/SHA/MD5 called SA2UL
-  management.
-* Configurable L3 Cache and IO-coherent architecture with high data throughput
-  capable distributed DMA architecture under NAVSS
-* Centralized System Controller for Security, Power, and Resource
-  Management (DMSC)
-
-See J721E Technical Reference Manual (SPRUIL1, May 2019)
-for further details: http://www.ti.com/lit/pdf/spruil1
-
+Cc: Sekhar Nori <nsekhar@ti.com>
+Cc: Vignesh R <vigneshr@ti.com>
 Signed-off-by: Nishanth Menon <nm@ti.com>
 ---
- Documentation/devicetree/bindings/arm/ti/k3.txt | 3 +++
- 1 file changed, 3 insertions(+)
+NOTE:
+ - If Greg is ok, we can pick up the uart compatibility via the k3 tree,
+   else, I can spawn it off the series into it's own patch, but it
+   seemed better in a logical order.
 
-diff --git a/Documentation/devicetree/bindings/arm/ti/k3.txt b/Documentation/devicetree/bindings/arm/ti/k3.txt
-index 6a059cabb2da..333e7256126a 100644
---- a/Documentation/devicetree/bindings/arm/ti/k3.txt
-+++ b/Documentation/devicetree/bindings/arm/ti/k3.txt
-@@ -13,6 +13,9 @@ architecture it uses, using one of the following compatible values:
- - AM654
-   compatible = "ti,am654";
+ Documentation/devicetree/bindings/serial/omap_serial.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Documentation/devicetree/bindings/serial/omap_serial.txt b/Documentation/devicetree/bindings/serial/omap_serial.txt
+index 0a9b5444f4e6..dcba86b0a0d0 100644
+--- a/Documentation/devicetree/bindings/serial/omap_serial.txt
++++ b/Documentation/devicetree/bindings/serial/omap_serial.txt
+@@ -1,6 +1,7 @@
+ OMAP UART controller
  
-+- J721E
-+  compatible = "ti,j721e";
-+
- Boards
- ------
- 
+ Required properties:
++- compatible : should be "ti,j721e-uart", "ti,am654-uart" for J721E controllers
+ - compatible : should be "ti,am654-uart" for AM654 controllers
+ - compatible : should be "ti,omap2-uart" for OMAP2 controllers
+ - compatible : should be "ti,omap3-uart" for OMAP3 controllers
 -- 
 2.21.0.777.g83232e38648b
 
