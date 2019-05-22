@@ -2,62 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A97F126882
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 18:42:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F847268B2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 18:58:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cwMQfNo/CeBeKcXWLYdEBl8bflvO7Qi/2tYG2Li8RIQ=; b=qFcMOuZkRwdmkX
-	KgyhbRNktTDUND4GGW6R6zdsYUieeE09YtkemlVQBEMh9s6wXdctw0uRiFx8amG0mIu5t4oQpY3CZ
-	zn75XxyeoGLtBAiWRuaNjr03M6mDGiysUZ7AjTPjC5+5e29kly5jLUull2FMxKhhV8Fp/sWZNW0L4
-	AFRNclqN+cro3Fpjo/ONdLfEFceVeDyKTtJRbMAmsnvbFwQ0hZsYTKzr6u6F5LjqQs9t0uPrV1tKA
-	4YwwvbXR25/bOCuybsIDGeQApfpb6HYwmODKpLextK6tCk4OZM/NjdDHAPl6Zf6rxFan537Mc3QSw
-	gx391OHw81YCn9VVnDJg==;
+	List-Owner; bh=Cd3kMz9UiDPcOD8u7QAqNkFFkTNkFAyNYSS4OVn5Sr0=; b=nz7P+INHF/3zuq
+	m9CWiJd9nHcmAIQ3GkF0KZSmOGXXsO3DLs7rZiWzACYukZAWBHvRyJYFe7jCkOZC4RcozsqFTKPUQ
+	5gnFVR3eKA7icou3AEX7rpQEZu5XqfMk92sye3r+HVw2pKjQyI1dYlEzjPW+iXObwe2oTpl7eZuPF
+	hU9sZYhSbWOqwV8qXgIaLmvnMy1CYbp0EYh/HC1EhaVpLf7qU30dzw/mRQNtO9yKroJy8q01hlhfr
+	ZVjw3aR/1FKFmC+pTTVGWLtJHPf24xG59qgGE9wYp8y2uepf4RUsO9fXFv74ZxLCGD3eFyFYoVuw4
+	2XJJvfJ5lHY3YtysQy0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTUJv-0003nK-NR; Wed, 22 May 2019 16:42:27 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTUJo-0003mO-S7
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 16:42:22 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7081B341;
- Wed, 22 May 2019 09:42:18 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7B7FF3F5AF;
- Wed, 22 May 2019 09:42:15 -0700 (PDT)
-Date: Wed, 22 May 2019 17:42:13 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Michal Hocko <mhocko@kernel.org>
-Subject: Re: [PATCH V3 2/4] arm64/mm: Hold memory hotplug lock while walking
- for kernel page table dump
-Message-ID: <20190522164212.GD23592@lakrids.cambridge.arm.com>
-References: <1557824407-19092-1-git-send-email-anshuman.khandual@arm.com>
- <1557824407-19092-3-git-send-email-anshuman.khandual@arm.com>
- <20190515165847.GH16651@dhcp22.suse.cz>
- <20190516102354.GB40960@lakrids.cambridge.arm.com>
- <20190516110529.GQ16651@dhcp22.suse.cz>
+	id 1hTUZT-0008Pb-NP; Wed, 22 May 2019 16:58:31 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hTUZM-0008Oe-Ng
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 16:58:26 +0000
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 494B93053878;
+ Wed, 22 May 2019 16:57:52 +0000 (UTC)
+Received: from dhcp-27-174.brq.redhat.com (unknown [10.43.17.159])
+ by smtp.corp.redhat.com (Postfix) with SMTP id 69B5560BE5;
+ Wed, 22 May 2019 16:57:40 +0000 (UTC)
+Received: by dhcp-27-174.brq.redhat.com (nbSMTP-1.00) for uid 1000
+ oleg@redhat.com; Wed, 22 May 2019 18:57:50 +0200 (CEST)
+Date: Wed, 22 May 2019 18:57:37 +0200
+From: Oleg Nesterov <oleg@redhat.com>
+To: Christian Brauner <christian@brauner.io>
+Subject: Re: [PATCH v1 1/2] open: add close_range()
+Message-ID: <20190522165737.GC4915@redhat.com>
+References: <20190522155259.11174-1-christian@brauner.io>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190516110529.GQ16651@dhcp22.suse.cz>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <20190522155259.11174-1-christian@brauner.io>
+User-Agent: Mutt/1.5.24 (2015-08-30)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.41]); Wed, 22 May 2019 16:58:18 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_094220_917915_5B24E7E1 
-X-CRM114-Status: GOOD (  33.14  )
+X-CRM114-CacheID: sfid-20190522_095824_812829_B23A9D4A 
+X-CRM114-Status: GOOD (  13.80  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -69,101 +70,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: cai@lca.pw, ira.weiny@intel.com,
- Anshuman Khandual <anshuman.khandual@arm.com>, catalin.marinas@arm.com,
- david@redhat.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- logang@deltatee.com, james.morse@arm.com, cpandya@codeaurora.org,
- arunks@codeaurora.org, akpm@linux-foundation.org, osalvador@suse.de,
- mgorman@techsingularity.net, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org, robin.murphy@arm.com
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org, ldv@altlinux.org,
+ dhowells@redhat.com, linux-kselftest@vger.kernel.org,
+ sparclinux@vger.kernel.org, shuah@kernel.org, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, miklos@szeredi.hu, x86@kernel.org,
+ torvalds@linux-foundation.org, linux-mips@vger.kernel.org,
+ linux-xtensa@linux-xtensa.org, tkjos@android.com, arnd@arndb.de,
+ jannh@google.com, linux-m68k@lists.linux-m68k.org, viro@zeniv.linux.org.uk,
+ tglx@linutronix.de, linux-arm-kernel@lists.infradead.org, fweimer@redhat.com,
+ linux-parisc@vger.kernel.org, linux-api@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-alpha@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 16, 2019 at 01:05:29PM +0200, Michal Hocko wrote:
-> On Thu 16-05-19 11:23:54, Mark Rutland wrote:
-> > Hi Michal,
-> > 
-> > On Wed, May 15, 2019 at 06:58:47PM +0200, Michal Hocko wrote:
-> > > On Tue 14-05-19 14:30:05, Anshuman Khandual wrote:
-> > > > The arm64 pagetable dump code can race with concurrent modification of the
-> > > > kernel page tables. When a leaf entries are modified concurrently, the dump
-> > > > code may log stale or inconsistent information for a VA range, but this is
-> > > > otherwise not harmful.
-> > > > 
-> > > > When intermediate levels of table are freed, the dump code will continue to
-> > > > use memory which has been freed and potentially reallocated for another
-> > > > purpose. In such cases, the dump code may dereference bogus addressses,
-> > > > leading to a number of potential problems.
-> > > > 
-> > > > Intermediate levels of table may by freed during memory hot-remove, or when
-> > > > installing a huge mapping in the vmalloc region. To avoid racing with these
-> > > > cases, take the memory hotplug lock when walking the kernel page table.
-> > > 
-> > > Why is this a problem only on arm64 
-> > 
-> > It looks like it's not -- I think we're just the first to realise this.
-> > 
-> > AFAICT x86's debugfs ptdump has the same issue if run conccurently with
-> > memory hot remove. If 32-bit arm supported hot-remove, its ptdump code
-> > would have the same issue.
-> > 
-> > > and why do we even care for debugfs? Does anybody rely on this thing
-> > > to be reliable? Do we even need it? Who is using the file?
-> > 
-> > The debugfs part is used intermittently by a few people working on the
-> > arm64 kernel page tables. We use that both to sanity-check that kernel
-> > page tables are created/updated correctly after changes to the arm64 mmu
-> > code, and also to debug issues if/when we encounter issues that appear
-> > to be the result of kernel page table corruption.
-> 
-> OK, I see. Thanks for the clarification.
-> 
-> > So while it's rare to need it, it's really useful to have when we do
-> > need it, and I'd rather not remove it. I'd also rather that it didn't
-> > have latent issues where we can accidentally crash the kernel when using
-> > it, which is what this patch is addressing.
-> 
-> While I agree, do we rather want to document that you shouldn't be using
-> the debugging tool while the hotplug is ongoing because you might get a
-> garbage or crash the kernel in the worst case? In other words is the
-> absolute correctness worth the additional maint. burden wrt. to future
-> hotplug changes?
+On 05/22, Christian Brauner wrote:
+>
+> +static struct file *pick_file(struct files_struct *files, unsigned fd)
+>  {
+> -	struct file *file;
+> +	struct file *file = NULL;
+>  	struct fdtable *fdt;
+>  
+>  	spin_lock(&files->file_lock);
+> @@ -632,15 +629,65 @@ int __close_fd(struct files_struct *files, unsigned fd)
+>  		goto out_unlock;
+>  	rcu_assign_pointer(fdt->fd[fd], NULL);
+>  	__put_unused_fd(files, fd);
+> -	spin_unlock(&files->file_lock);
+> -	return filp_close(file, files);
+>  
+>  out_unlock:
+>  	spin_unlock(&files->file_lock);
+> -	return -EBADF;
+> +	return file;
 
-I don't think that it's reasonable for this code to bring down the
-kernel unless the kernel page tables are already corrupt. I agree we
-should minimize the impact on other code, and I'm happy to penalize
-ptdump so long as it's functional and safe.
+...
 
-I would like it to be possible to use the ptdump code to debug
-hot-remove, so I'd rather not make the two mutually exclusive. I'd also
-like it to be possible to use this in-the-field, and for that asking an
-admin to potentially crash their system isn't likely to fly.
+> +int __close_range(struct files_struct *files, unsigned fd, unsigned max_fd)
+> +{
+> +	unsigned int cur_max;
+> +
+> +	if (fd > max_fd)
+> +		return -EINVAL;
+> +
+> +	rcu_read_lock();
+> +	cur_max = files_fdtable(files)->max_fds;
+> +	rcu_read_unlock();
+> +
+> +	/* cap to last valid index into fdtable */
+> +	if (max_fd >= cur_max)
+> +		max_fd = cur_max - 1;
+> +
+> +	while (fd <= max_fd) {
+> +		struct file *file;
+> +
+> +		file = pick_file(files, fd++);
 
-> > > I am asking because I would really love to make mem hotplug locking less
-> > > scattered outside of the core MM than more. Most users simply shouldn't
-> > > care. Pfn walkers should rely on pfn_to_online_page.
+Well, how about something like
 
-Jut to check, is your plan to limit access to the hotplug lock, or to
-redesign the locking scheme?
+	static unsigned int find_next_opened_fd(struct fdtable *fdt, unsigned start)
+	{
+		unsigned int maxfd = fdt->max_fds;
+		unsigned int maxbit = maxfd / BITS_PER_LONG;
+		unsigned int bitbit = start / BITS_PER_LONG;
 
-> > I'm not sure if that would help us here; IIUC pfn_to_online_page() alone
-> > doesn't ensure that the page remains online. Is there a way to achieve
-> > that other than get_online_mems()?
-> 
-> You have to pin the page to make sure the hotplug is not going to
-> offline it.
+		bitbit = find_next_bit(fdt->full_fds_bits, maxbit, bitbit) * BITS_PER_LONG;
+		if (bitbit > maxfd)
+			return maxfd;
+		if (bitbit > start)
+			start = bitbit;
+		return find_next_bit(fdt->open_fds, maxfd, start);
+	}
 
-I'm not exactly sure how pinning works -- is there a particular set of
-functions I should look at for that?
+	unsigned close_next_fd(struct files_struct *files, unsigned start, unsigned maxfd)
+	{
+		unsigned fd;
+		struct file *file;
+		struct fdtable *fdt;
+	
+		spin_lock(&files->file_lock);
+		fdt = files_fdtable(files);
+		fd = find_next_opened_fd(fdt, start);
+		if (fd >= fdt->max_fds || fd > maxfd) {
+			fd = -1;
+			goto out;
+		}
 
-I guess that if/when we allocate the vmemmap from hotpluggable memory
-that will require the pinning code to take the hotplug lock internally
-to ensure that the struct page is accessible while we attempt to pin it?
+		file = fdt->fd[fd];
+		rcu_assign_pointer(fdt->fd[fd], NULL);
+		__put_unused_fd(files, fd);
+	out:
+		spin_unlock(&files->file_lock);
 
-Thanks,
-Mark.
+		if (fd == -1u)
+			return fd;
+
+		filp_close(file, files);
+		return fd + 1;
+	}
+
+?
+
+Then close_range() can do
+
+	while (fd < max_fd)
+		fd = close_next_fd(fd, maxfd);
+
+Oleg.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
