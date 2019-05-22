@@ -2,62 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FDED27141
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 22:59:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E33DD2714D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 23:00:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=At5aaAj0Km3a3ffJKBPULDy5t3etqBeqCB1saSZt3Cs=; b=LMh7fAxpqQumdK
-	vLoqzSE63/kwa0d9gCVky8NTqFRupD/d3yx+Ml72yh2zri3bQfFjeZbaX3OHQjJLicghoya773k54
-	otGhzZD17dyJbfC3ZqRTkLXMDAcgzINGSGN9PZae2zJUMq4Bslvd/PGqsYwhKRnpZFNIkmELfe/ra
-	YiB9gpYdiATVO1/ybPX1A6xSmb2uVvR5B2CSP/kNtk/qSlWM2KPUDcT6K2FU3GaA7YNWZAhANDqg8
-	uBR/5PBDxumOmaXGKSMJdG2IpFpHuPX6284V4cmyE48VvpWwyBblBi9Ef5Jvk3TodcwmyQG21XGcV
-	cOl2EWd9SKyleMu0GYnw==;
+	List-Owner; bh=NWJt9J+MkHqVNnzEff/Fxwy8NGHGqbGHd9zD3bjeJxU=; b=XZX3FlGiUQKgbB
+	/vjSJ+6FHIqHKPwvGxnlQ4H5I0CnYtVgSeF3wxZ4OgOuIz6xu+utyRouEBsQZcby6PYYDCXi73NiX
+	wKOS7cyFiEuUsIdeuhYvaUNipTfLtL24IltU2SYmFev02DvFjVQjozmPbiULI/Y7dlPi0UUZXnCt1
+	TIx+UUbnXS5BHq0eTWwDMwLzVPhJkWjq195J5mZALX5jVAsZAkgEvc+gpwe86qGFKLpFpj/R7vwVI
+	Jov7BRk31r/lPrOJK1CUkl91dGaAs7S0CkikWJYb/Fu73tv8MWkNpOks+ncR4n5vjNrfL2PS84Peg
+	yYNzFSKr8eyphaCcss0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTYKI-0005yu-70; Wed, 22 May 2019 20:59:06 +0000
-Received: from vps0.lunn.ch ([185.16.172.187])
+	id 1hTYLu-0007Yq-V2; Wed, 22 May 2019 21:00:46 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTYKB-0005yQ-Ci
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 20:59:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
- s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=RK7BKuNuoUu12dYwR+LCR1MVVz/2S9o4Rt7rUWybqf8=; b=yx5WWbMsXgABiQ93gNWHSUnLT7
- DyKeIngnIYN1A1UQCQRvV99PIAYpsQjpYvdyC3/6sWA3gOZ/XkdomnvRqplictFyt3AZor1bsYhoc
- Andgst9OS8008DdYaQwb30b/5CmsatFz4IjJfXVWUaeEBmWKrquP645Z+LfdEy7Y2kUY=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
- (envelope-from <andrew@lunn.ch>)
- id 1hTYK3-0004ZD-5G; Wed, 22 May 2019 22:58:51 +0200
-Date: Wed, 22 May 2019 22:58:51 +0200
-From: Andrew Lunn <andrew@lunn.ch>
-To: Heiner Kallweit <hkallweit1@gmail.com>
-Subject: Re: [PATCH net-next 2/2] net: phy: aquantia: add USXGMII support
-Message-ID: <20190522205851.GA15257@lunn.ch>
-References: <110a1e45-56a7-a646-7b63-f39fe3083c28@gmail.com>
- <2c68bdb1-9b53-ce0b-74d3-c7ea2d9e7ac0@gmail.com>
+ id 1hTYLo-0007YO-6v
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 21:00:41 +0000
+Received: from localhost (unknown [69.71.4.100])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3FF2121019;
+ Wed, 22 May 2019 21:00:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1558558839;
+ bh=DAAiD6IH0KlDghAVNPmVbeERdOtKivo01YxuNAw7Lv4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=NMu4b6BJ6eGOg5zZMYjFoMJPEjwWgJzXYlUFNL/cVGdMfzr6eLQQV4fTw0oerv/D+
+ RP2brANDVsvcMxhzfOECmHSJFZ8Ghm4KstXuGdGVc+DEa3jtgRa2btaLFFe575w+TH
+ 4i9jAAXLgNkFwSgCIMEOX1dAXlJtDolPRrkjQVhw=
+Date: Wed, 22 May 2019 16:00:38 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: "Isaac J. Manjarres" <isaacm@codeaurora.org>
+Subject: Re: [RFC/PATCH 2/4] PCI: Export PCI ACS and DMA searching functions
+ to modules
+Message-ID: <20190522210038.GE79339@google.com>
+References: <1558118857-16912-1-git-send-email-isaacm@codeaurora.org>
+ <1558118857-16912-3-git-send-email-isaacm@codeaurora.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <2c68bdb1-9b53-ce0b-74d3-c7ea2d9e7ac0@gmail.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <1558118857-16912-3-git-send-email-isaacm@codeaurora.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_135859_581576_344A5101 
-X-CRM114-Status: GOOD (  20.35  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190522_140040_268983_420B7EAA 
+X-CRM114-Status: GOOD (  13.86  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [185.16.172.187 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -65,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -76,88 +78,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Madalin-cristian Bucur <madalin.bucur@nxp.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- Shawn Guo <shawnguo@kernel.org>, David Miller <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, kernel-team@android.com,
+ linux-pci@vger.kernel.org, joro@8bytes.org, will.deacon@arm.com,
+ linux-kernel@vger.kernel.org, pratikp@codeaurora.org,
+ iommu@lists.linux-foundation.org, robh+dt@kernel.org, lmark@codeaurora.org,
+ frowand.list@gmail.com, linux-arm-kernel@lists.infradead.org,
+ robin.murphy@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 22, 2019 at 09:58:32PM +0200, Heiner Kallweit wrote:
-> So far we didn't support mode USXGMII, and in order to not break the
-> two Freescale boards mode XGMII was accepted for the AQR107 family
-> even though it doesn't support XGMII. Add USXGMII support to the
-> Aquantia PHY driver and change the phy connection type for the two
-> boards.
+On Fri, May 17, 2019 at 11:47:35AM -0700, Isaac J. Manjarres wrote:
+> IOMMU drivers that can be compiled as modules may
+> want to use pci_for_each_dma_alias() and pci_request_acs(),
+> so export those functions.
 > 
-> As an additional note: Even though the handle is named aqr106
-> there seem to be LS1046A boards with an AQR107.
-> 
-> Signed-off-by: Heiner Kallweit <hkallweit1@gmail.com>
+> Signed-off-by: Isaac J. Manjarres <isaacm@codeaurora.org>
+
+Acked-by: Bjorn Helgaas <bhelgaas@google.com>
+
 > ---
->  arch/arm64/boot/dts/freescale/fsl-ls1043a-rdb.dts | 2 +-
->  arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts | 2 +-
->  drivers/net/phy/aquantia_main.c                   | 6 +++++-
->  3 files changed, 7 insertions(+), 3 deletions(-)
+>  drivers/pci/pci.c    | 1 +
+>  drivers/pci/search.c | 1 +
+>  2 files changed, 2 insertions(+)
 > 
-> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1043a-rdb.dts b/arch/arm64/boot/dts/freescale/fsl-ls1043a-rdb.dts
-> index 4223a2352..c2ce1a611 100644
-> --- a/arch/arm64/boot/dts/freescale/fsl-ls1043a-rdb.dts
-> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1043a-rdb.dts
-> @@ -139,7 +139,7 @@
+> diff --git a/drivers/pci/pci.c b/drivers/pci/pci.c
+> index 766f577..3f354c1 100644
+> --- a/drivers/pci/pci.c
+> +++ b/drivers/pci/pci.c
+> @@ -3124,6 +3124,7 @@ void pci_request_acs(void)
+>  {
+>  	pci_acs_enable = 1;
+>  }
+> +EXPORT_SYMBOL_GPL(pci_request_acs);
 >  
->  	ethernet@f0000 { /* 10GEC1 */
->  		phy-handle = <&aqr105_phy>;
-> -		phy-connection-type = "xgmii";
-> +		phy-connection-type = "usxgmii";
->  	};
+>  static const char *disable_acs_redir_param;
 >  
->  	mdio@fc000 {
-> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts b/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
-> index 6a6514d0e..f927a8a25 100644
-> --- a/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
-> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
-> @@ -147,7 +147,7 @@
+> diff --git a/drivers/pci/search.c b/drivers/pci/search.c
+> index 2b5f720..cf9ede9 100644
+> --- a/drivers/pci/search.c
+> +++ b/drivers/pci/search.c
+> @@ -111,6 +111,7 @@ int pci_for_each_dma_alias(struct pci_dev *pdev,
 >  
->  	ethernet@f0000 { /* 10GEC1 */
->  		phy-handle = <&aqr106_phy>;
-> -		phy-connection-type = "xgmii";
-> +		phy-connection-type = "usxgmii";
->  	};
+>  	return ret;
+>  }
+> +EXPORT_SYMBOL_GPL(pci_for_each_dma_alias);
 >  
->  	ethernet@f2000 { /* 10GEC2 */
-> diff --git a/drivers/net/phy/aquantia_main.c b/drivers/net/phy/aquantia_main.c
-> index 0fedd28fd..3f24c42a8 100644
-> @@ -487,7 +491,7 @@ static int aqr107_config_init(struct phy_device *phydev)
->  	/* Check that the PHY interface type is compatible */
->  	if (phydev->interface != PHY_INTERFACE_MODE_SGMII &&
->  	    phydev->interface != PHY_INTERFACE_MODE_2500BASEX &&
-> -	    phydev->interface != PHY_INTERFACE_MODE_XGMII &&
-> +	    phydev->interface != PHY_INTERFACE_MODE_USXGMII &&
->  	    phydev->interface != PHY_INTERFACE_MODE_10GKR)
->  		return -ENODEV;
-
-Hi Heiner
-
-Just to reiterate Florian's point. We need to be careful with device
-tree blobs. We should try not to break them, at least not for a few
-cycles.
-
-I would much prefer to see a
-
-WARN_ON(phydev->interface == PHY_INTERFACE_MODE_XGMII,
-        "Your devicetree is out of date, please update it");
-
-and accept XGMII for this cycle. These are development boards, so in
-theory users are developers, so should know how to update the DT.
-
-    Andrew
+>  static struct pci_bus *pci_do_find_bus(struct pci_bus *bus, unsigned char busnr)
+>  {
+> -- 
+> The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+> a Linux Foundation Collaborative Project
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
