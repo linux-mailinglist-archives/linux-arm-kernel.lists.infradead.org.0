@@ -2,40 +2,40 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8023826127
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 12:01:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 260682611E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 12:01:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MiyUpSB1rTZOc3Np/FTKiij1EBfjdjzwB9Fr81OyHZY=; b=f1GjBQWD6i9QyS
-	DLgXO+dyRiOTBAPjJGmWSz2A/OkbFyNEQgEzgYV87aSbqX57COtw4benO7vadkxMWL7i0WKt0v5Qr
-	evYRer9OUVI/p1i4LtfC/CXNi+HYlwdlZI7/0ihh0bYWTj4uT2VXYYcMwc8/AaiURXdpBCJkaokkh
-	fAMsCZzVTDRtSgZKEkVez3YF6jDDtakFsrkiyzDXr2jrsbhKhGaaidtvYZlHtK6tJD2YXF5VOE3Pq
-	KwVvqGkNjvwGuOMC87x/ht4M9vhr5w9+IrwNdNrP5oEhEw4AyjvgaNNAzQR1ACwuSTBeE+NLr8jg/
-	iNH47zAG0eJ2JsKih5YA==;
+	List-Owner; bh=Fa963XL7KVcEpxsVirbrYyUC9NQWRThiBYdURK1DtLM=; b=Cf0PkECmo/XNQN
+	Cl3zAxiDOtNis1PmdXr120lo18it1ZU6nRwiww0dlvZaJ9138URNh8fT/MhHZmZM0Kr7bIqgNn1uC
+	qg/q+clPy13/m7NHLZhwO6VqYAp4LowoQTqhmkZ/R1nPH30jcgRVz4SR5W0Re5BifdVvbEGv1kood
+	L8BrKMw45sDqFhI7YqhpRKaY4svS93diNWLTkxjcNzd9ROnleNFx2hRLtjBoccl7pDP3fAhe4Ftnq
+	OEDfsb0UN3g67agi9gRo6hsbUGA+XDV3192itKuQO5rErTAL/whDX/Uatk6egrlnF4e87Yba+8u7D
+	MjPKKaFbEngyNNvQN36Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTO4K-0006Sf-Cj; Wed, 22 May 2019 10:01:56 +0000
-Received: from mail-eopbgr20043.outbound.protection.outlook.com ([40.107.2.43]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+	id 1hTO3t-00064Q-0J; Wed, 22 May 2019 10:01:29 +0000
+Received: from mail-eopbgr60075.outbound.protection.outlook.com ([40.107.6.75]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTO2u-0003Jx-BC
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 10:00:37 +0000
+ id 1hTO2p-0004ug-DU
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 10:00:35 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=lSG+op0LGTlu9UVubzot8VhrFW1HWF33r3Ek1gPsJR8=;
- b=TgdJ0/4pLwyw7ha7zltHY6k0V5a5HQkDIg8+vHf74nfH1rxBlvYCeBQeri/rr9dNmxYIJ82Xk3PEG9YA9WwRHMSh9D/I/UuZmc2xobS0wBIwKJd42umVPu03vF4BSDmA2R0BsX2gG92exVI/QHQv3rGeQ1ce8PfRECQJpTeQOck=
+ bh=w6ADy7pLlzZYEYZaDPAxQBNKiAyltF4OeNTnp/jzk1o=;
+ b=FVcotXTgzhmJJz22ju4fu5bd8My8u6dy8FS/AAlr39Sh8amZyRCiU0kRZQp6phPnJhsnw7m64g3mOhZ/YQagk/wl8xwUFiwNcfAINo3hk8jCEaCAiRROQ2Nj2LW+1TrkULu4HAYUDmU3tYUUv6lie7GBw/empMcVc/20mDg5qXI=
 Received: from VI1PR04MB4543.eurprd04.prod.outlook.com (20.177.55.90) by
- VI1PR04MB3103.eurprd04.prod.outlook.com (10.170.229.13) with Microsoft SMTP
+ VI1PR04MB3149.eurprd04.prod.outlook.com (10.170.229.23) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1900.18; Wed, 22 May 2019 10:00:14 +0000
+ 15.20.1900.18; Wed, 22 May 2019 10:00:20 +0000
 Received: from VI1PR04MB4543.eurprd04.prod.outlook.com
  ([fe80::5062:df97:a70b:93f8]) by VI1PR04MB4543.eurprd04.prod.outlook.com
  ([fe80::5062:df97:a70b:93f8%7]) with mapi id 15.20.1900.020; Wed, 22 May 2019
- 10:00:14 +0000
+ 10:00:20 +0000
 From: Robin Gong <yibin.gong@nxp.com>
 To: "robh@kernel.org" <robh@kernel.org>, "broonie@kernel.org"
  <broonie@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
@@ -46,11 +46,11 @@ To: "robh@kernel.org" <robh@kernel.org>, "broonie@kernel.org"
  <u.kleine-koenig@pengutronix.de>, "plyatov@gmail.com" <plyatov@gmail.com>,
  "catalin.marinas@arm.com" <catalin.marinas@arm.com>, "l.stach@pengutronix.de"
  <l.stach@pengutronix.de>
-Subject: [PATCH v4 06/14] spi: imx: fix ERR009165
-Thread-Topic: [PATCH v4 06/14] spi: imx: fix ERR009165
-Thread-Index: AQHVEIUm1l7pAgZtKU6lENGrbSG0GA==
-Date: Wed, 22 May 2019 10:00:14 +0000
-Message-ID: <1558548188-1155-7-git-send-email-yibin.gong@nxp.com>
+Subject: [PATCH v4 07/14] spi: imx: remove ERR009165 workaround on i.mx6ul
+Thread-Topic: [PATCH v4 07/14] spi: imx: remove ERR009165 workaround on i.mx6ul
+Thread-Index: AQHVEIUq6WzqjupH2U+A6iNqXBfmAg==
+Date: Wed, 22 May 2019 10:00:20 +0000
+Message-ID: <1558548188-1155-8-git-send-email-yibin.gong@nxp.com>
 References: <1558548188-1155-1-git-send-email-yibin.gong@nxp.com>
 In-Reply-To: <1558548188-1155-1-git-send-email-yibin.gong@nxp.com>
 Accept-Language: en-US
@@ -66,43 +66,43 @@ authentication-results: spf=none (sender IP is )
 x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [119.31.174.66]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 8cbe9eb9-3fb6-46df-79c3-08d6de9c4939
+x-ms-office365-filtering-correlation-id: 341ea908-89b4-447c-ea08-08d6de9c4ca3
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR04MB3103; 
-x-ms-traffictypediagnostic: VI1PR04MB3103:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <VI1PR04MB3103C30E578E00EAF944956289000@VI1PR04MB3103.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6790;
+ SRVR:VI1PR04MB3149; 
+x-ms-traffictypediagnostic: VI1PR04MB3149:
+x-ms-exchange-purlcount: 2
+x-microsoft-antispam-prvs: <VI1PR04MB3149A08A3E1B58D541B12C3289000@VI1PR04MB3149.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
 x-forefront-prvs: 0045236D47
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(189003)(199004)(68736007)(81166006)(2201001)(2501003)(52116002)(71200400001)(14454004)(186003)(256004)(14444005)(26005)(53936002)(7736002)(25786009)(81156014)(305945005)(966005)(8936002)(4326008)(86362001)(8676002)(50226002)(71190400001)(486006)(6512007)(6306002)(5660300002)(6436002)(66946007)(73956011)(498600001)(446003)(66446008)(66066001)(66476007)(64756008)(66556008)(3846002)(6116002)(99286004)(386003)(6506007)(2906002)(54906003)(76176011)(36756003)(11346002)(110136005)(7416002)(2616005)(6486002)(102836004)(476003)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB3103;
+ SFS:(10009020)(366004)(199004)(189003)(2501003)(446003)(11346002)(2616005)(186003)(68736007)(26005)(5660300002)(476003)(86362001)(71190400001)(50226002)(54906003)(110136005)(66066001)(76176011)(486006)(4326008)(7736002)(52116002)(2201001)(71200400001)(36756003)(6512007)(99286004)(7416002)(6306002)(386003)(8676002)(6506007)(305945005)(53936002)(81166006)(66446008)(25786009)(64756008)(81156014)(6436002)(256004)(6486002)(966005)(102836004)(14454004)(73956011)(8936002)(498600001)(2906002)(66946007)(66476007)(14444005)(66556008)(6116002)(3846002)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB3149;
  H:VI1PR04MB4543.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
+ PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: WcaN4mqUg33sjYTkOoZX2ZRsBhWAjS8DVQXE164S+W4vxYfbBric8skRZXnhqvKzrJhbadkukrEU/ATmQtobgddx9dG0gOrxHwi5ZeUqvzVYS9hICwu+XLjuTn9T0YRcI6s/Zlz8IFaKg03tT6XEa5Va0/3eVfZuT51Yy+fLD1WLC0f4VVDZWe4ZsRC4p/Kl7J81aPHQi+JyKWuqXdi3OACCXU4c1DGnzGs8vwgJihgdDbMEvtl6RZd+2LAEFnoT8pYNIa/WoxjC85jKLm2BggTscAIsxm8q9nYzByHgd73kCOiFvSYAFBCL7Ajusw+vzUbSZVxl+jiBCQlEmi7Rq1H/OSNzjY1Oi5oc+8OZtGLu40z4sfuR29RJZwr8kXklmD+Jh2AkAnbKIyAN7qgWLgeYrTQqlQu17v7WuZDb+sQ=
+x-microsoft-antispam-message-info: 1BHSK8nnzsWCeds0SBEAuqakfbTwQ66uTv9R5OCbAp7jvA6csJhJJ1zXb9PLV4ftLkN3USaGsoI2nXhUdSK+Mol8AZPY27XtT1lqLixBIQz4I7ShfPBq866hThzGeG35uUDpL8f5mIm0blV5CIQ5FNOhzs3soUsKMVLWJBXZekZ9aBuwX+oS+qQHxuO26+apyiPeaIQJHXm09UVS2qqUTwm1/r7qoj3D0gmvHdF3iAck6Gwyr/7hr5B79bys9yfBGJGdxySo1Z7UN44l13BHihmHaqN4CFZvvE/osC5nVj1W+PtrNfQkHS9wgdFvjGe51oqYYu5eljxviwc30uJCAa8k9iPf+VCAc+9rc8hLdT+pGwPVkJceLywD+9q5hC0xSWiGmsP+3puzXxCFktMcFdHY655y0KAFfFYBG8JVkdE=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8cbe9eb9-3fb6-46df-79c3-08d6de9c4939
-X-MS-Exchange-CrossTenant-originalarrivaltime: 22 May 2019 10:00:14.8559 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 341ea908-89b4-447c-ea08-08d6de9c4ca3
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 May 2019 10:00:20.5087 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB3103
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB3149
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_030028_929990_E08A1117 
-X-CRM114-Status: GOOD (  16.01  )
+X-CRM114-CacheID: sfid-20190522_030024_115579_F8EC2DE1 
+X-CRM114-Status: GOOD (  19.54  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.2.43 listed in list.dnswl.org]
+ no trust [40.107.6.75 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -135,71 +135,135 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Change to XCH  mode even in dma mode, please refer to the below
-errata:
-https://www.nxp.com/docs/en/errata/IMX6DQCE.pdf
+ERR009165 fixed on i.mx6ul/6ull/6sll. All other i.mx6/7 and
+i.mx8m/8mm still need this errata. Please refer to nxp official
+errata document from https://www.nxp.com/ .
+
+For removing workaround on those chips. Add new i.mx6ul type.
 
 Signed-off-by: Robin Gong <yibin.gong@nxp.com>
 Acked-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/spi-imx.c | 17 ++++++++++-------
- 1 file changed, 10 insertions(+), 7 deletions(-)
+ drivers/spi/spi-imx.c | 50 +++++++++++++++++++++++++++++++++++++++++++++-----
+ 1 file changed, 45 insertions(+), 5 deletions(-)
 
 diff --git a/drivers/spi/spi-imx.c b/drivers/spi/spi-imx.c
-index 09c9a1e..6795910 100644
+index 6795910..91660dc 100644
 --- a/drivers/spi/spi-imx.c
 +++ b/drivers/spi/spi-imx.c
-@@ -585,8 +585,9 @@ static int mx51_ecspi_prepare_transfer(struct spi_imx_data *spi_imx,
+@@ -57,6 +57,7 @@ enum spi_imx_devtype {
+ 	IMX35_CSPI,	/* CSPI on all i.mx except above */
+ 	IMX51_ECSPI,	/* ECSPI on i.mx51 */
+ 	IMX53_ECSPI,	/* ECSPI on i.mx53 and later */
++	IMX6UL_ECSPI,	/* ERR009165 fix from i.mx6ul */
+ };
+ 
+ struct spi_imx_data;
+@@ -75,6 +76,11 @@ struct spi_imx_devtype_data {
+ 	bool has_slavemode;
+ 	unsigned int fifo_size;
+ 	bool dynamic_burst;
++	/*
++	 * ERR009165 fixed or not:
++	 * https://www.nxp.com/docs/en/errata/IMX6DQCE.pdf
++	 */
++	bool tx_glitch_fixed;
+ 	enum spi_imx_devtype devtype;
+ };
+ 
+@@ -128,7 +134,8 @@ static inline int is_imx35_cspi(struct spi_imx_data *d)
+ 
+ static inline int is_imx51_ecspi(struct spi_imx_data *d)
+ {
+-	return d->devtype_data->devtype == IMX51_ECSPI;
++	return d->devtype_data->devtype == IMX51_ECSPI ||
++	       d->devtype_data->devtype == IMX6UL_ECSPI;
+ }
+ 
+ static inline int is_imx53_ecspi(struct spi_imx_data *d)
+@@ -585,9 +592,16 @@ static int mx51_ecspi_prepare_transfer(struct spi_imx_data *spi_imx,
  	ctrl |= mx51_ecspi_clkdiv(spi_imx, t->speed_hz, &clk);
  	spi_imx->spi_bus_clk = clk;
  
-+	/* ERR009165: work in XHC mode as PIO */
- 	if (spi_imx->usedma)
--		ctrl |= MX51_ECSPI_CTRL_SMC;
-+		ctrl &= ~MX51_ECSPI_CTRL_SMC;
+-	/* ERR009165: work in XHC mode as PIO */
+-	if (spi_imx->usedma)
+-		ctrl &= ~MX51_ECSPI_CTRL_SMC;
++	/*
++	 * ERR009165: work in XHC mode instead of SMC as PIO on the chips
++	 * before i.mx6ul.
++	 */
++	if (spi_imx->usedma) {
++		if (spi_imx->devtype_data->tx_glitch_fixed)
++			ctrl |= MX51_ECSPI_CTRL_SMC;
++		else
++			ctrl &= ~MX51_ECSPI_CTRL_SMC;
++	}
  
  	writel(ctrl, spi_imx->base + MX51_ECSPI_CTRL);
  
-@@ -612,12 +613,14 @@ static int mx51_ecspi_prepare_transfer(struct spi_imx_data *spi_imx,
- 
- static void mx51_setup_wml(struct spi_imx_data *spi_imx)
+@@ -615,6 +629,8 @@ static void mx51_setup_wml(struct spi_imx_data *spi_imx)
  {
-+	u32 tx_wml = 0;
-+
+ 	u32 tx_wml = 0;
+ 
++	if (spi_imx->devtype_data->tx_glitch_fixed)
++		tx_wml = spi_imx->wml;
  	/*
  	 * Configure the DMA register: setup the watermark
  	 * and enable DMA request.
+@@ -1012,6 +1028,23 @@ static struct spi_imx_devtype_data imx53_ecspi_devtype_data = {
+ 	.devtype = IMX53_ECSPI,
+ };
+ 
++static struct spi_imx_devtype_data imx6ul_ecspi_devtype_data = {
++	.intctrl = mx51_ecspi_intctrl,
++	.prepare_message = mx51_ecspi_prepare_message,
++	.prepare_transfer = mx51_ecspi_prepare_transfer,
++	.trigger = mx51_ecspi_trigger,
++	.rx_available = mx51_ecspi_rx_available,
++	.reset = mx51_ecspi_reset,
++	.setup_wml = mx51_setup_wml,
++	.fifo_size = 64,
++	.has_dmamode = true,
++	.dynamic_burst = true,
++	.has_slavemode = true,
++	.tx_glitch_fixed = true,
++	.disable = mx51_ecspi_disable,
++	.devtype = IMX6UL_ECSPI,
++};
++
+ static const struct platform_device_id spi_imx_devtype[] = {
+ 	{
+ 		.name = "imx1-cspi",
+@@ -1035,6 +1068,9 @@ static const struct platform_device_id spi_imx_devtype[] = {
+ 		.name = "imx53-ecspi",
+ 		.driver_data = (kernel_ulong_t) &imx53_ecspi_devtype_data,
+ 	}, {
++		.name = "imx6ul-ecspi",
++		.driver_data = (kernel_ulong_t) &imx6ul_ecspi_devtype_data,
++	}, {
+ 		/* sentinel */
+ 	}
+ };
+@@ -1047,6 +1083,7 @@ static const struct of_device_id spi_imx_dt_ids[] = {
+ 	{ .compatible = "fsl,imx35-cspi", .data = &imx35_cspi_devtype_data, },
+ 	{ .compatible = "fsl,imx51-ecspi", .data = &imx51_ecspi_devtype_data, },
+ 	{ .compatible = "fsl,imx53-ecspi", .data = &imx53_ecspi_devtype_data, },
++	{ .compatible = "fsl,imx6ul-ecspi", .data = &imx6ul_ecspi_devtype_data, },
+ 	{ /* sentinel */ }
+ };
+ MODULE_DEVICE_TABLE(of, spi_imx_dt_ids);
+@@ -1178,7 +1215,10 @@ static int spi_imx_dma_configure(struct spi_master *master)
+ 	 * For ERR009165 with tx_wml = 0 could enlarge burst size to fifo size
+ 	 * to speed up fifo filling as possible.
  	 */
- 	writel(MX51_ECSPI_DMA_RX_WML(spi_imx->wml - 1) |
--		MX51_ECSPI_DMA_TX_WML(spi_imx->wml) |
-+		MX51_ECSPI_DMA_TX_WML(tx_wml) |
- 		MX51_ECSPI_DMA_RXT_WML(spi_imx->wml) |
- 		MX51_ECSPI_DMA_TEDEN | MX51_ECSPI_DMA_RXDEN |
- 		MX51_ECSPI_DMA_RXTDEN, spi_imx->base + MX51_ECSPI_DMA);
-@@ -1171,7 +1174,11 @@ static int spi_imx_dma_configure(struct spi_master *master)
- 	tx.direction = DMA_MEM_TO_DEV;
- 	tx.dst_addr = spi_imx->base_phys + MXC_CSPITXDATA;
- 	tx.dst_addr_width = buswidth;
--	tx.dst_maxburst = spi_imx->wml;
-+	/*
-+	 * For ERR009165 with tx_wml = 0 could enlarge burst size to fifo size
-+	 * to speed up fifo filling as possible.
-+	 */
-+	tx.dst_maxburst = spi_imx->devtype_data->fifo_size;
+-	tx.dst_maxburst = spi_imx->devtype_data->fifo_size;
++	if (spi_imx->devtype_data->tx_glitch_fixed)
++		tx.dst_maxburst = spi_imx->wml;
++	else
++		tx.dst_maxburst = spi_imx->devtype_data->fifo_size;
  	ret = dmaengine_slave_config(master->dma_tx, &tx);
  	if (ret) {
  		dev_err(spi_imx->dev, "TX dma configuration failed with %d\n", ret);
-@@ -1265,10 +1272,6 @@ static int spi_imx_sdma_init(struct device *dev, struct spi_imx_data *spi_imx,
- {
- 	int ret;
- 
--	/* use pio mode for i.mx6dl chip TKT238285 */
--	if (of_machine_is_compatible("fsl,imx6dl"))
--		return 0;
--
- 	spi_imx->wml = spi_imx->devtype_data->fifo_size / 2;
- 
- 	/* Prepare for TX DMA: */
 -- 
 2.7.4
 
