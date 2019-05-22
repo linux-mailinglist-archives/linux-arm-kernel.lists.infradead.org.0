@@ -2,80 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC7AA263A9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 14:19:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9687D263A4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 14:19:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T6gqku0JL/EQHofQdhSPhVzb2ZUzkzRSXU3J6qf5JjM=; b=fpDPQvRpslNSTu
-	PWjOjktl7vc0i5rgMGwkM8AWC34Fsm3ngQoZhJJvFLMGCSvypliS+FSNZdrKqFzExj6Bn03kCGKAT
-	GUaUStO4Ux4PWtz6X0feIaxyDoKUJQL9qr37BtIL+zxO7efoCBWKE4u8w4c/gtQrpSTQEQAHk0JLk
-	Tq3PKIa38bpilrdd6IzFgMXLP1GBaoMPkiC/bamkKLrnwyCofWRarMfiIhCAt9Tkx5Afbdu8iW0c2
-	Bc4DKmhToVu616Gsfnq0VTUmFnI6DV+BkC4hvjuxwd2V8xuFtE2BDUk1a5/310CsL+8+HMDIli4lJ
-	sYLi+5s0KO80/KgEMa4g==;
+	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hnnkYwQr0NNK53lWbsYebQlvJr0rVvpKr2SAiLzfqG8=; b=RW7nYunyHvcfvk
+	jca2KMtW4A3qEPFexP6EeWjcqxuGi0PJ3C4DpTfW4iQEbz2zOy29gVOdEokNWzOoOuPQGh8ODDstN
+	rgOHqn+Hk9dS4EJCvI1J7UMCmv8nsERK8KhVxqL/j9xd+v76mRtilXV7wOF8XtSSNrl5nfC4M0dSb
+	4Eu8ZQsWxCz01S96cvk0ENTpVSuUKlsg7RF7mAxWHv4LzSGkrOkqVJmAMa7yYRLM/59mKc95wHNKm
+	ecKv+OvZbxwb3t3uYyrMJAE+YwYEL2m43yL1Zd1p+pIHWHL7rIGIO8m/2l9YSu2eaUhI0M1ij169l
+	YVn4/x6Fe/GSyiS2hz1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTQDl-0007ZE-Oz; Wed, 22 May 2019 12:19:49 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1hTQD8-0007C8-19; Wed, 22 May 2019 12:19:10 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTQDd-0006m0-4l
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 12:19:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:
- Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=XRRgdQBJ/m9hgBIL0+vqNyzCsUJrXLqFJLRgNNPO7vw=; b=Wq6xO1sANWcBwPamElkQu2Y/r
- bkPQQyr4IGWcpM9D+ubD8c0xiMiPGBPPX0fplOwBjmPx9YvpFeuFb5J9VzDyjzBaWurrcHjnPDPoN
- w4WJs40ixrpw3o790FJHTJPicLMMcEtzvmNug49BPpQuO5ZD7nsuOkPEpQE78oqWIHZlvkgm0HDcK
- dFyxR/s903Xp7ETectuAHVpTXTYMabNTRgy2WtP/kM5zpEIMdJ2NquDSpILAYl++aPDjrksVLLcp6
- fBiack2GMrfLt2h0yf2azhpnVPhwz0gDfAOMIRP+ubcHQ+wzR0B7kLLi79Aa6px4CqAK/e15u5ZWV
- MfIs6814w==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:52576)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1hTQBa-0007Ya-1f; Wed, 22 May 2019 13:17:34 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.89)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1hTQBW-0006f9-UC; Wed, 22 May 2019 13:17:30 +0100
-Date: Wed, 22 May 2019 13:17:30 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: =?utf-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>
-Subject: Re: ARM router NAT performance affected by random/unrelated commits
-Message-ID: <20190522121730.fhswxkw4gbflkhei@shell.armlinux.org.uk>
-References: <9a9ba4c9-3cb7-eb64-4aac-d43b59224442@gmail.com>
- <20190521104512.2r67fydrgniwqaja@shell.armlinux.org.uk>
- <de262f71-748f-d242-f1d4-ea10188a0438@gmail.com>
+ id 1hTQCz-0007AY-JI
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 12:19:03 +0000
+Received: by mail-wm1-x344.google.com with SMTP id c77so2015789wmd.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 22 May 2019 05:18:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=kernelci-org.20150623.gappssmtp.com; s=20150623;
+ h=message-id:date:mime-version:content-transfer-encoding:subject:to
+ :from:cc; bh=4lhpOXU5flLHaPgCnlKi/zbwwdvQGy7aO9emZ/m2IY8=;
+ b=yIdCRbURcrDlI9SLR+Bvl5oxhZwOZqYKuBTNLSXNcHCWe0u9pHDx+OhZH6o3LcY+b+
+ EkKg1GZKdYpfmLOLGaeFR9Gnl2TNLApOUF8mF7DAtnAkOaZSVmBPLCJdPbmwc5U38f6p
+ IaylMs4wNHPvKSRP3wKlbWLeL1hed6rRspEw7Rrjp+Uo6Oi5YgM1hN+BZCdhP2M3nY9l
+ LA9qmKEdmYxmu0YsJ9dOR44DgHcpltIyweDimJilw8Dahb70Boms5wtof80Lc1R6HTiZ
+ 0yDNVrGQM4w21BUwbkLZCV6oQb0ir+qEaAXrRCO2vQoOCLX8aVuCNoStXE6aWiHuWNVP
+ +CGA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:message-id:date:mime-version
+ :content-transfer-encoding:subject:to:from:cc;
+ bh=4lhpOXU5flLHaPgCnlKi/zbwwdvQGy7aO9emZ/m2IY8=;
+ b=EVNBqF4v+TBlfgY1RHsyVJbtP8/R4Ph+K/GjBGrt0hHIDpbu7uo1g9VdhVIKpCyyzJ
+ ILDgfyrK+Pc9QE4/prdsssjVSZbxBkgB1s0YlBkIGDLlS/nlt0i1uun6T/OE6U8cDHX6
+ kHsccHqoo57oSblF2EUocVusP5Q+FP3YX3VCJc1mLb7g0pYdTQC6AF37chU6HWxLe09l
+ WG/u2aFE7ZQa0hOQvsvA5PbFmdKy/U1AYtv2s8m5+KYnvvZt97hL8VU68/iW7gL8VzFh
+ +Do0L9W12cvgNNahtZKGSQmriSHmQdccq9Ti16Sof8COJD9YX6ObfwS/n9aU4Ta5TJOF
+ w00Q==
+X-Gm-Message-State: APjAAAWpTgu5VrWTwTDuM9vfqI1BN2uo986XIg0PI5j3DwPo7Qu2vrhx
+ Mc7VbfcxhKvic7FYzZajGPRZRg==
+X-Google-Smtp-Source: APXvYqxhJBFQ6wD68xNh+ViCZQrptwFAKjQZvDM+tx4eVH7gccBPHLQDlUfDo0wxb0laDALKdQGVVQ==
+X-Received: by 2002:a1c:9c42:: with SMTP id f63mr7712636wme.23.1558527537756; 
+ Wed, 22 May 2019 05:18:57 -0700 (PDT)
+Received: from [148.251.42.114] ([2a01:4f8:201:9271::2])
+ by smtp.gmail.com with ESMTPSA id 88sm58288086wrc.33.2019.05.22.05.18.54
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 22 May 2019 05:18:56 -0700 (PDT)
+Message-ID: <5ce53e30.1c69fb81.887a7.b77c@mx.google.com>
+Date: Wed, 22 May 2019 05:18:56 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <de262f71-748f-d242-f1d4-ea10188a0438@gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+X-Kernelci-Report-Type: bisect
+X-Kernelci-Tree: mainline
+X-Kernelci-Lab-Name: lab-collabora
+X-Kernelci-Branch: master
+X-Kernelci-Kernel: v5.2-rc1-129-g9c7db5004280
+Subject: mainline/master boot bisection: v5.2-rc1-129-g9c7db5004280 on
+ rk3288-veyron-jaq
+To: tomeu.vizoso@collabora.com, guillaume.tucker@collabora.com,
+ mgalka@collabora.com, broonie@kernel.org, matthew.hart@linaro.org,
+ khilman@baylibre.com, enric.balletbo@collabora.com,
+ Elaine Zhang <zhangqing@rock-chips.com>,
+ Eduardo Valentin <edubezval@gmail.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>
+From: "kernelci.org bot" <bot@kernelci.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_051941_460581_70125D56 
-X-CRM114-Status: GOOD (  23.93  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190522_051901_696137_BCDB85C1 
+X-CRM114-Status: GOOD (  13.17  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -88,150 +100,185 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jo-Philipp Wich <jo@mein.io>, Network Development <netdev@vger.kernel.org>,
- John Crispin <john@phrozen.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-block@vger.kernel.org, Jonas Gorski <jonas.gorski@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Felix Fietkau <nbd@nbd.name>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Heiko Stuebner <heiko@sntech.de>, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Zhang Rui <rui.zhang@intel.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCBNYXkgMjIsIDIwMTkgYXQgMDE6NTE6MDFQTSArMDIwMCwgUmFmYcWCIE1pxYJlY2tp
-IHdyb3RlOgo+IE9uIDIxLjA1LjIwMTkgMTI6NDUsIFJ1c3NlbGwgS2luZyAtIEFSTSBMaW51eCBh
-ZG1pbiB3cm90ZTo+IE9uIFR1ZSwgTWF5IDIxLCAyMDE5IGF0IDEyOjI4OjQ4UE0gKzAyMDAsIFJh
-ZmHFgiBNacWCZWNraSB3cm90ZToKPiA+PiBJIHdvcmsgb24gaG9tZSByb3V0ZXJzIGJhc2VkIG9u
-IEJyb2FkY29tJ3MgTm9ydGhzdGFyIFNvQ3MuIFRob3NlIGRldmljZXMKPiA+PiBoYXZlIEFSTSBD
-b3J0ZXgtQTkgYW5kIG1vc3Qgb2YgdGhlbSBhcmUgZHVhbC1jb3JlLgo+ID4+Cj4gPj4gQXMgZm9y
-IGhvbWUgcm91dGVycywgbXkgbWFpbiBjb25jZXJuIGlzIG5ldHdvcmsgcGVyZm9ybWFuY2UuIFRo
-YXQgQ1BVCj4gPj4gaXNuJ3QgcG93ZXJmdWwgZW5vdWdoIHRvIGhhbmRsZSBnaWdhYml0IHRyYWZm
-aWMgc28gYWxsIGtpbmQgb2YKPiA+PiBvcHRpbWl6YXRpb25zIGRvIG1hdHRlci4gSSBub3RpY2Vk
-IHNvbWUgdW5leHBlY3RlZCBjaGFuZ2VzIGluIE5BVAo+ID4+IHBlcmZvcm1hbmNlIHdoZW4gc3dp
-dGNoaW5nIGJldHdlZW4ga2VybmVscy4KPiA+Pgo+ID4+IE15IGhhcmR3YXJlIGlzIEJDTTQ3MDk0
-IFNvQyAoZHVhbCBjb3JlIEFSTSkgd2l0aCBpbnRlZ3JhdGVkIG5ldHdvcmsKPiA+PiBjb250cm9s
-bGVyIGFuZCBleHRlcm5hbCBCQ001MzAxMiBzd2l0Y2guCj4gPgo+ID4gR3Vlc3NpbmcsIEknZCBz
-YXkgaXQncyB0byBkbyB3aXRoIHRoZSBwbGFjZW1lbnQgb2YgY29kZSB3cnQgY2FjaGVsaW5lcy4K
-PiA+IFlvdSBjb3VsZCB0cnkgYWxpZ25pbmcgc29tZSBvZiB0aGUgY2FjaGUgZmx1c2hpbmcgY29k
-ZSB0byBhIGNhY2hlIGxpbmUKPiA+IGFuZCBzZWUgd2hhdCBlZmZlY3QgdGhhdCBoYXMuCj4gCj4g
-SXMgU3lzdGVtLm1hcCBhIGdvb2QgcGxhY2UgdG8gY2hlY2sgZm9yIGZ1bmN0aW9ucyBjb2RlIGFs
-aWdubWVudD8KPiAKPiBXaXRoIExpbnV4IDQuMTkgKyBPcGVuV3J0IG10ZCBwYXRjaGVzIEkgaGF2
-ZToKPiAoLi4uKQo+IGMwMTBlYTk0IHQgdjdfZG1hX2ludl9yYW5nZQo+IGMwMTBlYWUwIHQgdjdf
-ZG1hX2NsZWFuX3JhbmdlCj4gKC4uLikKPiBjMDJjYTNkMCBUIGJsa19tcV91cGRhdGVfbnJfaHdf
-cXVldWVzCj4gYzAyY2E2OWMgVCBibGtfbXFfYWxsb2NfdGFnX3NldAo+IGMwMmNhOTRjIFQgYmxr
-X21xX3JlbGVhc2UKPiBjMDJjYTliNCBUIGJsa19tcV9mcmVlX3F1ZXVlCj4gYzAyY2FhODggVCBi
-bGtfbXFfdXBkYXRlX25yX3JlcXVlc3RzCj4gYzAyY2FiNTAgVCBibGtfbXFfdW5pcXVlX3RhZwo+
-ICguLi4pCj4gCj4gQWZ0ZXIgY2hlcnJ5LXBpY2tpbmcgOTMxNmE5ZWQ2ODk1ICgiYmxrLW1xOiBw
-cm92aWRlIGhlbHBlciBmb3Igc2V0dGluZwo+IHVwIGFuIFNRIHF1ZXVlIGFuZCB0YWcgc2V0Iik6
-Cj4gKC4uLikKPiBjMDEwZWE5NCB0IHY3X2RtYV9pbnZfcmFuZ2UKPiBjMDEwZWFlMCB0IHY3X2Rt
-YV9jbGVhbl9yYW5nZQo+ICguLi4pCj4gYzAyY2EzZDAgVCBibGtfbXFfdXBkYXRlX25yX2h3X3F1
-ZXVlcwo+IGMwMmNhNjljIFQgYmxrX21xX2FsbG9jX3RhZ19zZXQKPiBjMDJjYTk0YyBUIGJsa19t
-cV9pbml0X3NxX3F1ZXVlIDwtLSBORVcKPiBjMDJjYTljMCBUIGJsa19tcV9yZWxlYXNlIDwtLSBE
-aWZmZXJlbnQgYWRkcmVzcyBvZiB0aGlzICYgYWxsIGJlbG93Cj4gYzAyY2FhMjggVCBibGtfbXFf
-ZnJlZV9xdWV1ZQo+IGMwMmNhYWZjIFQgYmxrX21xX3VwZGF0ZV9ucl9yZXF1ZXN0cwo+IGMwMmNh
-YmM0IFQgYmxrX21xX3VuaXF1ZV90YWcKPiAoLi4uKQo+IAo+IEFzIHlvdSBjYW4gc2VlIGJsa19t
-cV9pbml0X3NxX3F1ZXVlIGhhcyBhcHBlYXJlZCBpbiB0aGUgU3lzdGVtLm1hcCBhbmQKPiBpdCBh
-ZmZlY3RlZCBhZGRyZXNzZXMgb2YgfjMwMDAwIHN5bWJvbHMuIEkgY2FuIGJlbGlldmUgc29tZSBm
-cmVxdWVudGx5Cj4gdXNlZCBzeW1ib2xzIGdvdCBsdWNraWx5IGFsaWduZWQgYW5kIHRoYXQgaW1w
-cm92ZWQgb3ZlcmFsbCBwZXJmb3JtYW5jZS4KPiAKPiBJbnRlcmVzdGluZ2x5IHY3X2RtYV9pbnZf
-cmFuZ2UoKSBhbmQgdjdfZG1hX2NsZWFuX3JhbmdlKCkgd2VyZSBub3QKPiByZWxvY2F0ZWQuCj4g
-Cj4gKioqKioKPiAKPiBJIGZvbGxvd2VkIFJ1c3NlbGwncyBzdWdnZXN0aW9uIGFuZCBhZGRlZCAu
-YWxpZ24gNSB0byBjYWNoZS12Ny5TIChzZWUKPiB0d28gYXR0YWNoZWQgZGlmZnMpLgo+IAo+IDEp
-IHY0LjE5ICsgT3BlbldydCBtdGQgcGF0Y2hlcwo+ID4gZWdyZXAgLUIgMSAtQSAxICJ2N19kbWFf
-KGludnxjbGVhbilfcmFuZ2UiIFN5c3RlbS5tYXAKPiBjMDEwZWE1OCBUIHY3X2ZsdXNoX2tlcm5f
-ZGNhY2hlX2FyZWEKPiBjMDEwZWE5NCB0IHY3X2RtYV9pbnZfcmFuZ2UKPiBjMDEwZWFlMCB0IHY3
-X2RtYV9jbGVhbl9yYW5nZQo+IGMwMTBlYjE4IFQgYjE1X2RtYV9mbHVzaF9yYW5nZQo+IAo+IDIp
-IHY0LjE5ICsgT3BlbldydCBtdGQgcGF0Y2hlcyArIHR3byAuYWxpZ24gNSBpbiBjYWNoZS12Ny5T
-Cj4gYzAxMGVhNmMgVCB2N19mbHVzaF9rZXJuX2RjYWNoZV9hcmVhCj4gYzAxMGVhYzAgdCB2N19k
-bWFfaW52X3JhbmdlCj4gYzAxMGViMjAgdCB2N19kbWFfY2xlYW5fcmFuZ2UKPiBjMDEwZWI1OCBU
-IGIxNV9kbWFfZmx1c2hfcmFuZ2UKPiAoYWN0dWFsbHkgMTUgc3ltYm9scyBhYm92ZSB2N19kbWFf
-aW52X3JhbmdlIHdlcmUgcmVwbGFjZWQpCj4gCj4gVGhpcyBtZXRob2Qgc2VlbXMgdG8gYmUgc29t
-ZWhvdyB3b3JraW5nIChhdCBsZWFzdCBhZmZlY3RzIGFkZHJlc3NlcyBpbgo+IFN5c3RlbS5tYXAp
-Lgo+IAo+ICoqKioqCj4gCj4gSSBydW4gMiB0ZXN0cyBmb3IgZWFjaCBjb21iaW5hdGlvbiBvZiBj
-aGFuZ2VzLiBFYWNoIHRlc3QgY29uc2lzdGVkIG9mCj4gMTAgc2VxdWVuY2VzIG9mOiAzMCBzZWNv
-bmRzIGlwZXJmIHNlc3Npb24gKyByZWJvb3QuCj4gCj4gCj4gPiBnaXQgcmVzZXQgLS1oYXJkIHY0
-LjE5Cj4gPiBnaXQgYW0gT3BlbldydC1tdGQtY2hhZ2VzLnBhdGNoCj4gVGVzdCAjMTogNzM4IE1i
-L3MKPiBUZXN0ICMyOiA3MzcgTWIvcwo+IAo+ID4gZ2l0IHJlc2V0IC0taGFyZCB2NC4xOQo+ID4g
-Z2l0IGFtIE9wZW5XcnQtbXRkLWNoYWdlcy5wYXRjaAo+IHBhdGNoIC1wMSA8IHY3X2RtYV9jbGVh
-bl9yYW5nZS1hbGlnbi5kaWZmCj4gVGVzdCAjMTogNzQ2IE1iL3MKPiBUZXN0ICMyOiA3NDcgTWIv
-cwo+IAo+ID4gZ2l0IHJlc2V0IC0taGFyZCB2NC4xOQo+ID4gZ2l0IGFtIE9wZW5XcnQtbXRkLWNo
-YWdlcy5wYXRjaAo+ID4gcGF0Y2ggLXAxIDwgdjdfZG1hX2ludl9yYW5nZS1hbGlnbi5kaWZmCj4g
-VGVzdCAjMTogNzQ1IE1iL3MKPiBUZXN0ICMyOiA3NDYgTWIvcwo+IAo+ID4gZ2l0IHJlc2V0IC0t
-aGFyZCB2NC4xOQo+ID4gZ2l0IGFtIE9wZW5XcnQtbXRkLWNoYWdlcy5wYXRjaAo+ID4gcGF0Y2gg
-LXAxIDwgdjdfZG1hX2NsZWFuX3JhbmdlLWFsaWduLmRpZmYKPiA+IHBhdGNoIC1wMSA8IHY3X2Rt
-YV9pbnZfcmFuZ2UtYWxpZ24uZGlmZgo+IFRlc3QgIzE6IDc2MiBNYi9zCj4gVGVzdCAjMjogNzYx
-IE1iL3MKPiAKPiBBcyB5b3UgY2FuIHNlZSBJIGdvdCBhIHF1aXRlIG5pY2UgcGVyZm9ybWFuY2Ug
-aW1wcm92ZW1lbnQgYWZ0ZXIgYWxpZ25pbmcKPiBib3RoOiB2N19kbWFfY2xlYW5fcmFuZ2UoKSBh
-bmQgdjdfZG1hX2ludl9yYW5nZSgpLgoKVGhpcyBpcyBhbiBpbXByb3ZlbWVudCBvZiBhYm91dCAz
-LjMlLgoKPiBJdCBzdGlsbCB3YXNuJ3QgYXMgZ29vZCBhcyB3aXRoIDkzMTZhOWVkNjg5NSBjaGVy
-cnktcGlja2VkIGJ1dCBwcmV0dHkKPiBjbG9zZS4KPiAKPiAKPiA+IGdpdCByZXNldCAtLWhhcmQg
-djQuMTkKPiA+IGdpdCBhbSBPcGVuV3J0LW10ZC1jaGFnZXMucGF0Y2gKPiA+IGdpdCBjaGVycnkt
-cGljayAteCA5MzE2YTllZDY4OTUKPiBUZXN0ICMxOiA3NzAgTWIvcwo+IFRlc3QgIzI6IDc2NiBN
-Yi9zCj4gCj4gPiBnaXQgcmVzZXQgLS1oYXJkIHY0LjE5Cj4gPiBnaXQgYW0gT3BlbldydC1tdGQt
-Y2hhZ2VzLnBhdGNoCj4gPiBnaXQgY2hlcnJ5LXBpY2sgLXggOTMxNmE5ZWQ2ODk1Cj4gPiBwYXRj
-aCAtcDEgPCB2N19kbWFfY2xlYW5fcmFuZ2UtYWxpZ24uZGlmZgo+IFRlc3QgIzE6IDc1NiBNYi9z
-Cj4gVGVzdCAjMjogNzU5IE1iL3MKPiAKPiA+IGdpdCByZXNldCAtLWhhcmQgdjQuMTkKPiA+IGdp
-dCBhbSBPcGVuV3J0LW10ZC1jaGFnZXMucGF0Y2gKPiA+IGdpdCBjaGVycnktcGljayAteCA5MzE2
-YTllZDY4OTUKPiA+IHBhdGNoIC1wMSA8IHY3X2RtYV9pbnZfcmFuZ2UtYWxpZ24uZGlmZgo+IFRl
-c3QgIzE6IDc1OCBNYi9zCj4gVGVzdCAjMjogNzU5IE1iL3MKPiAKPiA+IGdpdCByZXNldCAtLWhh
-cmQgdjQuMTkKPiA+IGdpdCBhbSBPcGVuV3J0LW10ZC1jaGFnZXMucGF0Y2gKPiA+IGdpdCBjaGVy
-cnktcGljayAteCA5MzE2YTllZDY4OTUKPiA+IHBhdGNoIC1wMSA8IHY3X2RtYV9jbGVhbl9yYW5n
-ZS1hbGlnbi5kaWZmCj4gPiBwYXRjaCAtcDEgPCB2N19kbWFfaW52X3JhbmdlLWFsaWduLmRpZmYK
-PiBUZXN0ICMxOiA3NjcgTWIvcwo+IFRlc3QgIzI6IDc2MyBNYi9zCj4gCj4gTm93IHlvdSBjYW4g
-c2VlIGhvdyB1bnByZWRpY3RhYmxlIGl0IGlzLiBJZiBJIGNoZXJyeS1waWNrIDkzMTZhOWVkNjg5
-NQo+IGFuZCBkbyBhbiBleHRyYSBhbGlnbm1lbnQgb2YgdjdfZG1hX2NsZWFuX3JhbmdlKCkgYW5k
-IHY3X2RtYV9pbnZfcmFuZ2UoKQo+IHRoYXQgZXh0cmEgYWxpZ25tZW50IGNhbiBhY3R1YWxseSAq
-aHVydCogTkFUIHBlcmZvcm1hbmNlLgoKWW91IGhhdmUgYSBtYXhpbXVtIHZhcmlhbmNlIG9mIDRN
-Yi9zIGluIHlvdXIgdGVzdHMgd2hpY2ggaXMgYXJvdW5kCjAuNSUsIGFuZCB0aGlzIHNob3dzIGEg
-cmVkdWN0aW9uIG9mIDNNYi9zLCBvciAwLjQlLgoKSWYgd2UgbG9vayBhdCBpdCBhIGRpZmZlcmVu
-dCB3YXk6Ci0gV2l0aG91dCB0aGUgYWxpZ25tZW50IHBhdGNoZXMsIHRoZXJlIGlzIGEgZGlmZmVy
-ZW5jZSBvZiA0JSBpbgogIHBlcmZvcm1hbmNlIGRlcGVuZGluZyBvbiB3aGV0aGVyIDkzMTZhOWVk
-Njg5NSBpcyBhcHBsaWVkLgotIFdpdGggdGhlIGFsaWdubWVudCBwYXRjaGVzLCB0aGVyZSBpcyBh
-IGRpZmZlcmVuY2Ugb2YgMC40JSBpbgogIHBlcmZvcm1hbmNlIGRlcGVuZGluZyBvbiB3aGV0aGVy
-IDkzMTZhOWVkNjg5NSBpcyBhcHBsaWVkLgoKSG93IGNhbiB0aGlzIG5vdCBiZSBiZW5lZmljaWFs
-PwoKPiAKPiBNeSBndWVzcyBpcyB0aGF0Ogo+IDEpIDkzMTZhOWVkNjg5NSBwcm92aWRlcyBhbGln
-bm1lbnQgb2Ygc29tZSB2ZXJ5IGltcG9ydGFudCBmdW5jdGlvbihzKQo+IDIpIERNQSBhbGlnbm1l
-bnRzIG9uIHRvcCBeXiBwcm92aWRlIHNvbWUgZ2FpbiBidXQgYWxzbyBicmVhayBzb21lIGFsaWdu
-Cj4gCj4gKioqKioKPiAKPiBTVU1NQVJZCj4gCj4gSXQgc2VlbXMgdGhhdCBmb3IgTGludXggNC4x
-OSArIG15IC5jb25maWcgSSBjYW4gZ2V0IGEgdmVyeSBsdWNreSAmCj4gb3B0aW1hbCBhbGlnbm1l
-bnQgb2YgZnVuY3Rpb25zIGJ5IGNoZXJyeS1waWNraW5nIDkzMTZhOWVkNjg5NS4KPiAKPiBJIHRo
-b3VnaHQgb2YgY2hlY2tpbmcgZnVuY3Rpb25zIHJlcG9ydGVkIGJ5IHRoZSAicGVyZiIgdG9vbCB3
-aXRoIENQVQo+IHVzYWdlIG9mIDIlKy4KPiAKPiBBbGwgZm9sbG93aW5nIGZ1bmN0aW9ucyBrZWVw
-IHRoZWlyIG9yaWdpbmFsIGFkZHJlc3Mgd2l0aCA5MzE2YTllZDY4OTU6Cj4gX19pcnFlbnRyeV90
-ZXh0X2VuZAo+IGFyY2hfY3B1X2lkbGUKPiBsMmMyMTBfY2xlYW5fcmFuZ2UKPiBsMmMyMTBfaW52
-X3JhbmdlCj4gdjdfZG1hX2NsZWFuX3JhbmdlCj4gdjdfZG1hX2ludl9yYW5nZQo+IAo+IFJlbWFp
-bmluZyAzIGZ1bmN0aW9ucyBnb3QgcmVhbGxvY2F0ZWQ6Cj4gLWMwM2U1MDM4IHQgX19uZXRpZl9y
-ZWNlaXZlX3NrYl9jb3JlCj4gK2MwM2U1MGIwIHQgX19uZXRpZl9yZWNlaXZlX3NrYl9jb3JlCj4g
-LWMwM2M4YjFjIHQgYmNtYV9ob3N0X3NvY19yZWFkMzIKPiArYzAzYzhiOTQgdCBiY21hX2hvc3Rf
-c29jX3JlYWQzMgo+IC1jMDQ3NTYyMCBUIGZpYl90YWJsZV9sb29rdXAKPiArYzA0NzU2OTggVCBm
-aWJfdGFibGVfbG9va3VwCj4gCj4gSSB0cmllZCBhbGlnbmluZyBhbGwgMyBhYm92ZSBmdW5jdGlv
-bnMgdXNpbmc6Cj4gX19hdHRyaWJ1dGVfXygoYWxpZ25lZCgzMikpKQo+IGFuZCBnb3QgNzU2IE1i
-L3MuIEl0J3MgYmV0dGVyIGJ1dCBzdGlsbCBub3Qgfjc3MCBNYi9zLgo+IAo+IElzIHRoZXJlIGFu
-eSBlYXN5IHdheSBvZiBpZGVudGlmeWluZyB3aGljaCBvZiBmdW5jdGlvbiBhbGlnbm1lbnRzIGdv
-dAo+IHN1Y2ggYSBiaWcgaW1wYWN0IG9uIE5BVCBwZXJmb3JtYW5jZT8gSSdkIGxpa2UgdG8gZ2V0
-IHRob3NlIGZ1bmN0aW9ucwo+IGV4cGxpY2l0bHkgYWxpZ25lZCB1c2luZyBhc3NlbWJsZXIvX19h
-dHRyaWJ1dGVfXy9zb21ldGhpbmcuCj4gCj4gV2hhdCBJJ20gYWxzbyBhZnJhaWQgYXJlIGZhbHNl
-IHBvc2l0aXZlcy4gSSBtYXkgZW5kIHVwIGFsaWduaW5nIHNvbWUKPiB1bnJlbGF0ZWQgZnVuY3Rp
-b24gdGhhdCBqdXN0IGhhcHBlbnMgdG8gYWxpZ24gb3RoZXIgb25lcy4gSnVzdCBsaWtlCj4gY2hl
-cnJ5LXBpY2tpbmcgOTMxNmE5ZWQ2ODk1IGhhdmluZyBzaWRlLWVmZmVjdHMgYW5kIG5vdCByZWFs
-bHkgZml4aW5nCj4gYW55dGhpbmcgZXhwbGljaXRseS4KCj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJt
-L21tL2NhY2hlLXY3LlMgYi9hcmNoL2FybS9tbS9jYWNoZS12Ny5TCj4gaW5kZXggMjE1ZGY0MzVi
-ZmI5Li5jNjAwNDZjZDM0YWEgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm0vbW0vY2FjaGUtdjcuUwo+
-ICsrKyBiL2FyY2gvYXJtL21tL2NhY2hlLXY3LlMKPiBAQCAtMzczLDYgKzM3Myw4IEBAIHY3X2Rt
-YV9pbnZfcmFuZ2U6Cj4gIAlyZXQJbHIKPiAgRU5EUFJPQyh2N19kbWFfaW52X3JhbmdlKQo+ICAK
-PiArCS5hbGlnbgk1Cj4gKwo+ICAvKgo+ICAgKgl2N19kbWFfY2xlYW5fcmFuZ2Uoc3RhcnQsZW5k
-KQo+ICAgKgktIHN0YXJ0ICAgLSB2aXJ0dWFsIHN0YXJ0IGFkZHJlc3Mgb2YgcmVnaW9uCgo+IGRp
-ZmYgLS1naXQgYS9hcmNoL2FybS9tbS9jYWNoZS12Ny5TIGIvYXJjaC9hcm0vbW0vY2FjaGUtdjcu
-Uwo+IGluZGV4IDIxNWRmNDM1YmZiOS4uMGMzOTk5ZjIxOWFiIDEwMDY0NAo+IC0tLSBhL2FyY2gv
-YXJtL21tL2NhY2hlLXY3LlMKPiArKysgYi9hcmNoL2FybS9tbS9jYWNoZS12Ny5TCj4gQEAgLTM0
-MCw2ICszNDAsOCBAQCBFTlRSWSh2N19mbHVzaF9rZXJuX2RjYWNoZV9hcmVhKQo+ICAJcmV0CWxy
-Cj4gIEVORFBST0ModjdfZmx1c2hfa2Vybl9kY2FjaGVfYXJlYSkKPiAgCj4gKwkuYWxpZ24JNQo+
-ICsKPiAgLyoKPiAgICoJdjdfZG1hX2ludl9yYW5nZShzdGFydCxlbmQpCj4gICAqCgoKLS0gClJN
-SydzIFBhdGNoIHN5c3RlbTogaHR0cHM6Ly93d3cuYXJtbGludXgub3JnLnVrL2RldmVsb3Blci9w
-YXRjaGVzLwpGVFRDIGJyb2FkYmFuZCBmb3IgMC44bWlsZSBsaW5lIGluIHN1YnVyYmlhOiBzeW5j
-IGF0IDEyLjFNYnBzIGRvd24gNjIya2JwcyB1cApBY2NvcmRpbmcgdG8gc3BlZWR0ZXN0Lm5ldDog
-MTEuOU1icHMgZG93biA1MDBrYnBzIHVwCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0t
-a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* This automated bisection report was sent to you on the basis  *
+* that you may be involved with the breaking commit it has      *
+* found.  No manual investigation has been done to verify it,   *
+* and the root cause of the problem may be somewhere else.      *
+* Hope this helps!                                              *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+mainline/master boot bisection: v5.2-rc1-129-g9c7db5004280 on rk3288-veyron-jaq
+
+Summary:
+  Start:      9c7db5004280 Merge tag 'selinux-pr-20190521' of git://git.kernel.org/pub/scm/linux/kernel/git/pcmoore/selinux
+  Details:    https://kernelci.org/boot/id/5ce4966759b5141df07a362c
+  Plain log:  https://storage.kernelci.org//mainline/master/v5.2-rc1-129-g9c7db5004280/arm/multi_v7_defconfig/gcc-8/lab-collabora/boot-rk3288-veyron-jaq.txt
+  HTML log:   https://storage.kernelci.org//mainline/master/v5.2-rc1-129-g9c7db5004280/arm/multi_v7_defconfig/gcc-8/lab-collabora/boot-rk3288-veyron-jaq.html
+  Result:     28694e009e51 thermal: rockchip: fix up the tsadc pinctrl setting error
+
+Checks:
+  revert:     PASS
+  verify:     PASS
+
+Parameters:
+  Tree:       mainline
+  URL:        git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+  Branch:     master
+  Target:     rk3288-veyron-jaq
+  CPU arch:   arm
+  Lab:        lab-collabora
+  Compiler:   gcc-8
+  Config:     multi_v7_defconfig
+  Test suite: boot
+
+Breaking commit found:
+
+-------------------------------------------------------------------------------
+commit 28694e009e512451ead5519dd801f9869acb1f60
+Author: Elaine Zhang <zhangqing@rock-chips.com>
+Date:   Tue Apr 30 18:09:44 2019 +0800
+
+    thermal: rockchip: fix up the tsadc pinctrl setting error
+    
+    Explicitly use the pinctrl to set/unset the right mode
+    instead of relying on the pinctrl init mode.
+    And it requires setting the tshut polarity before select pinctrl.
+    
+    When the temperature sensor mode is set to 0, it will automatically
+    reset the board via the Clock-Reset-Unit (CRU) if the over temperature
+    threshold is reached. However, when the pinctrl initializes, it does a
+    transition to "otp_out" which may lead the SoC restart all the time.
+    
+    "otp_out" IO may be connected to the RESET circuit on the hardware.
+    If the IO is in the wrong state, it will trigger RESET.
+    (similar to the effect of pressing the RESET button)
+    which will cause the soc to restart all the time.
+    
+    Signed-off-by: Elaine Zhang <zhangqing@rock-chips.com>
+    Reviewed-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+    Signed-off-by: Eduardo Valentin <edubezval@gmail.com>
+
+diff --git a/drivers/thermal/rockchip_thermal.c b/drivers/thermal/rockchip_thermal.c
+index 9c7643d62ed7..6dc7fc516abf 100644
+--- a/drivers/thermal/rockchip_thermal.c
++++ b/drivers/thermal/rockchip_thermal.c
+@@ -172,6 +172,9 @@ struct rockchip_thermal_data {
+ 	int tshut_temp;
+ 	enum tshut_mode tshut_mode;
+ 	enum tshut_polarity tshut_polarity;
++	struct pinctrl *pinctrl;
++	struct pinctrl_state *gpio_state;
++	struct pinctrl_state *otp_state;
+ };
+ 
+ /**
+@@ -1242,6 +1245,8 @@ static int rockchip_thermal_probe(struct platform_device *pdev)
+ 		return error;
+ 	}
+ 
++	thermal->chip->control(thermal->regs, false);
++
+ 	error = clk_prepare_enable(thermal->clk);
+ 	if (error) {
+ 		dev_err(&pdev->dev, "failed to enable converter clock: %d\n",
+@@ -1267,6 +1272,30 @@ static int rockchip_thermal_probe(struct platform_device *pdev)
+ 	thermal->chip->initialize(thermal->grf, thermal->regs,
+ 				  thermal->tshut_polarity);
+ 
++	if (thermal->tshut_mode == TSHUT_MODE_GPIO) {
++		thermal->pinctrl = devm_pinctrl_get(&pdev->dev);
++		if (IS_ERR(thermal->pinctrl)) {
++			dev_err(&pdev->dev, "failed to find thermal pinctrl\n");
++			return PTR_ERR(thermal->pinctrl);
++		}
++
++		thermal->gpio_state = pinctrl_lookup_state(thermal->pinctrl,
++							   "gpio");
++		if (IS_ERR_OR_NULL(thermal->gpio_state)) {
++			dev_err(&pdev->dev, "failed to find thermal gpio state\n");
++			return -EINVAL;
++		}
++
++		thermal->otp_state = pinctrl_lookup_state(thermal->pinctrl,
++							  "otpout");
++		if (IS_ERR_OR_NULL(thermal->otp_state)) {
++			dev_err(&pdev->dev, "failed to find thermal otpout state\n");
++			return -EINVAL;
++		}
++
++		pinctrl_select_state(thermal->pinctrl, thermal->otp_state);
++	}
++
+ 	for (i = 0; i < thermal->chip->chn_num; i++) {
+ 		error = rockchip_thermal_register_sensor(pdev, thermal,
+ 						&thermal->sensors[i],
+@@ -1337,8 +1366,8 @@ static int __maybe_unused rockchip_thermal_suspend(struct device *dev)
+ 
+ 	clk_disable(thermal->pclk);
+ 	clk_disable(thermal->clk);
+-
+-	pinctrl_pm_select_sleep_state(dev);
++	if (thermal->tshut_mode == TSHUT_MODE_GPIO)
++		pinctrl_select_state(thermal->pinctrl, thermal->gpio_state);
+ 
+ 	return 0;
+ }
+@@ -1383,7 +1412,8 @@ static int __maybe_unused rockchip_thermal_resume(struct device *dev)
+ 	for (i = 0; i < thermal->chip->chn_num; i++)
+ 		rockchip_thermal_toggle_sensor(&thermal->sensors[i], true);
+ 
+-	pinctrl_pm_select_default_state(dev);
++	if (thermal->tshut_mode == TSHUT_MODE_GPIO)
++		pinctrl_select_state(thermal->pinctrl, thermal->otp_state);
+ 
+ 	return 0;
+ }
+-------------------------------------------------------------------------------
+
+
+Git bisection log:
+
+-------------------------------------------------------------------------------
+git bisect start
+# good: [83f3ef3de625a5766de2382f9e077d4daafd5bac] Merge tag 'libnvdimm-fixes-5.2-rc1' of git://git.kernel.org/pub/scm/linux/kernel/git/nvdimm/nvdimm
+git bisect good 83f3ef3de625a5766de2382f9e077d4daafd5bac
+# bad: [9c7db5004280767566e91a33445bf93aa479ef02] Merge tag 'selinux-pr-20190521' of git://git.kernel.org/pub/scm/linux/kernel/git/pcmoore/selinux
+git bisect bad 9c7db5004280767566e91a33445bf93aa479ef02
+# bad: [dc413a90edbe715bebebe859dc072ef73d490d70] Merge tag 'armsoc-drivers' of git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc
+git bisect bad dc413a90edbe715bebebe859dc072ef73d490d70
+# good: [b45da609a02460c6a34c395f03f891f1fb2a021a] Merge tag 'imx-bindings-5.2' of git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux into arm/dt
+git bisect good b45da609a02460c6a34c395f03f891f1fb2a021a
+# good: [6cbc4d88ad208d6f5b9567bac2fff038e1bbfa77] Merge tag 'bitmain-soc-5.2' of git://git.kernel.org/pub/scm/linux/kernel/git/mani/linux-bitmain into arm/dt
+git bisect good 6cbc4d88ad208d6f5b9567bac2fff038e1bbfa77
+# bad: [a455eda33faafcaac1effb31d682765b14ef868c] Merge branch 'linus' of git://git.kernel.org/pub/scm/linux/kernel/git/evalenti/linux-soc-thermal
+git bisect bad a455eda33faafcaac1effb31d682765b14ef868c
+# bad: [ffd1b122d3a17783b68cfd03b0479dffedf0d960] thermal: rockchip: Support the PX30 SoC in thermal driver
+git bisect bad ffd1b122d3a17783b68cfd03b0479dffedf0d960
+# good: [3e6a8fb3308419129c7a52de6eb42feef5a919a0] drivers: thermal: tsens: Add new operation to check if a sensor is enabled
+git bisect good 3e6a8fb3308419129c7a52de6eb42feef5a919a0
+# good: [d36e2fa025387567710df740fd4dce1d5001b226] thermal: generic-adc: make lookup table optional
+git bisect good d36e2fa025387567710df740fd4dce1d5001b226
+# good: [42cd9b049829d7facbd45ab503d763a86251e81b] thermal/drivers/cpu_cooling: Fixup the header and copyright
+git bisect good 42cd9b049829d7facbd45ab503d763a86251e81b
+# good: [6ec8070b9d48294fbe865535c167a79527eaf357] thermal: Fix build error of missing devm_ioremap_resource on UM
+git bisect good 6ec8070b9d48294fbe865535c167a79527eaf357
+# bad: [28694e009e512451ead5519dd801f9869acb1f60] thermal: rockchip: fix up the tsadc pinctrl setting error
+git bisect bad 28694e009e512451ead5519dd801f9869acb1f60
+# good: [fcc6d4cadadcc977911c6bfcdd95d379f4082c74] thermal: broadcom: Remove ACPI support
+git bisect good fcc6d4cadadcc977911c6bfcdd95d379f4082c74
+# first bad commit: [28694e009e512451ead5519dd801f9869acb1f60] thermal: rockchip: fix up the tsadc pinctrl setting error
+-------------------------------------------------------------------------------
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
