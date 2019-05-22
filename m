@@ -2,108 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D535825EF9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 10:05:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBB2B25F13
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 10:08:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1eZraqP4NYLZ32AJHI1rtF+UAa8dtCTRhEdbxKFJbFA=; b=HisQcRxSaCr71w
-	p+JGGK5auFQnekBeHcUWf8F2LI68CZp4oWT91DDm6bSOsxf+AdF9jpVya6bT6R61fkGTZ+EGPfUoK
-	476Gzdk4EEN8rbi5WXa0DVcnHuWtHrYVCCM5wKkbEMjQjZyGBiPN5RQjDEQYsvRb4ky/v2ZngvKjC
-	j2PYXYC/UWdYIMV2lIRn5Q5BK5HoO2/wmidYJTHekslAwV74XNWWH+3c1c047O2RvnQQG7ZK6HpUi
-	9+v6OYQ8PSdKB46f8wPvtZ2WLsOg31SnnZY9xKBvg7oNXmh57LB4JvAaHbQu+iTOywSGsy4foEkJk
-	rXi4jWDjruVXRwDlRCiw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=kUbfxCdJhPUm3GIdmPNyw27vkRHgl4sNyRGRUMrvmKA=; b=Clb6ZOav7oIJHGfb9+bGYyAeJ
+	AxohB/gHRPh8JlA7PN1M750NpEM8dksSg+0NGJztFXt/obJwKN8ECWfJ/Z33UnRjqaQQfrELyxKFF
+	u19KhUDkbeURq4MWsjxAbd4oKpMIa1EMjdNQfr7ICG26stXi0wJewSUUt+Rg0EvZuVvMkxRcf8HBD
+	/TXmADgu2OWOZ+Op29MvTbGQDZUKCRh4tcmkrddLnp2Uis+Vlcv5e5gM+RLcFriLgEqkC7wlX/xqB
+	/k5+6qA4ssTq8b6aReWWa70bDRfbZOjgHEEG/6xxoVUXiJm+qeK7HoqDM5w2JEl32b1tFvX8Tt+xO
+	9d45jQEsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTMFX-000762-Pm; Wed, 22 May 2019 08:05:23 +0000
-Received: from mail-eopbgr1400120.outbound.protection.outlook.com
- ([40.107.140.120] helo=JPN01-TY1-obe.outbound.protection.outlook.com)
+	id 1hTMIK-0007cY-AJ; Wed, 22 May 2019 08:08:16 +0000
+Received: from hqemgate16.nvidia.com ([216.228.121.65])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTMFQ-00075V-SZ; Wed, 22 May 2019 08:05:18 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HbYtDrrTnyCm0GizAGLUUbkJk8OIV5B2JUPsHjtJSMQ=;
- b=giKf4kVOsEKhYXnSAsge3fh4MRepzf69aCsBMtfqqfIDwsbi+NMwEgglDyn9q6sW9+eS33JuKj7oAGD4Sr/+5pjbZtK5QrwMecw0cfbjtv7HUBajcfLVqClrGXXMxEPiHS81SkAZ2GQMZmXZvqFASbSflf6q8nzLMgIwaPoQ9pw=
-Received: from OSBPR01MB2103.jpnprd01.prod.outlook.com (52.134.242.17) by
- OSBPR01MB5094.jpnprd01.prod.outlook.com (20.179.183.209) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.16; Wed, 22 May 2019 08:05:10 +0000
-Received: from OSBPR01MB2103.jpnprd01.prod.outlook.com
- ([fe80::a146:39f0:5df9:11bc]) by OSBPR01MB2103.jpnprd01.prod.outlook.com
- ([fe80::a146:39f0:5df9:11bc%7]) with mapi id 15.20.1900.020; Wed, 22 May 2019
- 08:05:10 +0000
-From: Biju Das <biju.das@bp.renesas.com>
-To: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-Subject: RE: [PATCH v5 4/6] usb: roles: add API to get usb_role_switch by node
-Thread-Topic: [PATCH v5 4/6] usb: roles: add API to get usb_role_switch by node
-Thread-Index: AQHVCjGxbEdsIx4ReU+jIZIOb3TooaZvJLIAgAApPICABAgXgIAAWsCAgAAANlCAAAi9gIAADx0AgAGaToCAAW2SoA==
-Date: Wed, 22 May 2019 08:05:09 +0000
-Message-ID: <OSBPR01MB21032206146152983C8F4E8EB8000@OSBPR01MB2103.jpnprd01.prod.outlook.com>
-References: <1557823643-8616-1-git-send-email-chunfeng.yun@mediatek.com>
- <1557823643-8616-5-git-send-email-chunfeng.yun@mediatek.com>
- <20190517103736.GA1490@kuha.fi.intel.com>
- <20190517130511.GA1887@kuha.fi.intel.com>
- <1558319951.10179.352.camel@mhfsdcap03>
- <20190520080359.GC1887@kuha.fi.intel.com>
- <OSBPR01MB2103385D996762FA54F8E437B8060@OSBPR01MB2103.jpnprd01.prod.outlook.com>
- <20190520083601.GE1887@kuha.fi.intel.com>
- <OSBPR01MB2103C4C8920C40E42BC1B2A9B8060@OSBPR01MB2103.jpnprd01.prod.outlook.com>
- <20190521095839.GI1887@kuha.fi.intel.com>
-In-Reply-To: <20190521095839.GI1887@kuha.fi.intel.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=biju.das@bp.renesas.com; 
-x-originating-ip: [193.141.220.21]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: d6c9d8a7-5293-4c92-d74e-08d6de8c360f
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:OSBPR01MB5094; 
-x-ms-traffictypediagnostic: OSBPR01MB5094:
-x-ms-exchange-purlcount: 2
-x-microsoft-antispam-prvs: <OSBPR01MB5094730728BB5BE1005D841AB8000@OSBPR01MB5094.jpnprd01.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7691;
-x-forefront-prvs: 0045236D47
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(396003)(366004)(346002)(136003)(376002)(39860400002)(189003)(199004)(51914003)(53936002)(8936002)(71190400001)(25786009)(74316002)(71200400001)(66066001)(6246003)(14454004)(966005)(4326008)(7416002)(76116006)(64756008)(66476007)(66946007)(102836004)(316002)(73956011)(66446008)(66556008)(6506007)(54906003)(44832011)(8676002)(86362001)(26005)(446003)(5660300002)(486006)(52536014)(81156014)(81166006)(478600001)(11346002)(2906002)(6116002)(3846002)(186003)(476003)(76176011)(305945005)(7696005)(6916009)(33656002)(99286004)(7736002)(6436002)(55016002)(9686003)(229853002)(256004)(6306002)(68736007);
- DIR:OUT; SFP:1102; SCL:1; SRVR:OSBPR01MB5094;
- H:OSBPR01MB2103.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:0; 
-received-spf: None (protection.outlook.com: bp.renesas.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: KnH6yByx83xBIVFYf0B/+WKjBcQBhrJhEctgn74U9t3qjBA1slL+qFIcfl4pp+HynaCBBsBnr4K29z1b587v8A9P4l6ihqnEuqJlUQ+RkdNn9thAs3iVW24rm4P2IaRdj1yQo9seb61PSzEkNEbCceCgJNLD1vAi6YcAuA3ra6LMZte6QSrzqZZdnK8fiVNPxqVGzdR/ApHC5Ok34/gloyAjDeVuhe7Q55le+ihfLtw76iIzhy2KnOnBq9yGLaAEmFmAtrBHizm9G21tgV9mYKC3R0JhrX64g/oTfJIuxTPLKJhtwddeZeGDQk13UU2UJbUqfxo3JpzKDnxFuadOz+/1v6Zoa4nQwuC/L/Dj4qLiGL4rhnh752H+/SKTvPmXCFDN8jQ8ch2qzp8uZ+cF2fl5DMl6FnCqsB63RJkFmJY=
+ id 1hTMID-0007c6-4x
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 08:08:10 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5ce503660001>; Wed, 22 May 2019 01:08:06 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Wed, 22 May 2019 01:08:06 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Wed, 22 May 2019 01:08:06 -0700
+Received: from [10.24.45.128] (10.124.1.5) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 22 May
+ 2019 08:08:01 +0000
+Subject: Re: [PATCH V7 02/15] PCI: Disable MSI for Tegra194 root port
+To: Bjorn Helgaas <helgaas@kernel.org>
+References: <20190517123846.3708-1-vidyas@nvidia.com>
+ <20190517123846.3708-3-vidyas@nvidia.com> <20190521102729.GB29166@ulmo>
+ <f63051b0-a220-125b-219e-25156d65ea6d@nvidia.com>
+ <20190521193616.GE57618@google.com>
+X-Nvconfidentiality: public
+From: Vidya Sagar <vidyas@nvidia.com>
+Message-ID: <4a9dadc5-7e16-4893-c7c2-acd7f515e039@nvidia.com>
+Date: Wed, 22 May 2019 13:37:58 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-OriginatorOrg: bp.renesas.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d6c9d8a7-5293-4c92-d74e-08d6de8c360f
-X-MS-Exchange-CrossTenant-originalarrivaltime: 22 May 2019 08:05:10.1230 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSBPR01MB5094
+In-Reply-To: <20190521193616.GE57618@google.com>
+X-Originating-IP: [10.124.1.5]
+X-ClientProxiedBy: HQMAIL101.nvidia.com (172.20.187.10) To
+ HQMAIL107.nvidia.com (172.20.187.13)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1558512486; bh=S3qg1DZrsjj7dBknX1Sd7FnNcS0V5oTUC1xCslRcFBw=;
+ h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
+ Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
+ X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=AWdqHpM7dtZkVRmsszQ5JLOgOMdjk5aT6OpjxRX0jVR5xOEnTKH41lFcfDeR+P9O+
+ qtsguVLnqrmnYEW8/NQel6Q3DzeTOHUZvNH8Kq6GEwq+DzFzO2QkzHF+2E8D0Yd6yX
+ 3eF8tUSXtzYOtzSxaV0MV1eZ3xXND2FxoMI0b1pOKeTe4MEPG+FLgxbxIQHpP66J7O
+ CyXFXW+EYm7y1p+SaBekN2zSKWCnH8mR7V69+eUKC6GT2uXa9TME0qNIqytjTU8q7C
+ NHYLQ2rLjkAc9rQID0clnHLuYDL0yV8+yLrvFSorlRjswGFpWSpCRw7vO1GBXB1NE4
+ ddghXQzP14t7g==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_010516_932034_4C7A66A2 
-X-CRM114-Status: GOOD (  28.72  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190522_010809_206119_F47FC81C 
+X-CRM114-Status: GOOD (  23.17  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.140.120 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.65 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -115,154 +95,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Hans de Goede <hdegoede@redhat.com>,
- Badhri Jagan Sridharan <badhri@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Andy Shevchenko <andy.shevchenko@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- Min Guo <min.guo@mediatek.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Li Jun <jun.li@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ mperttunen@nvidia.com, mmaddireddy@nvidia.com, linux-pci@vger.kernel.org,
+ catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, kishon@ti.com, kthota@nvidia.com,
+ Thierry Reding <thierry.reding@gmail.com>, gustavo.pimentel@synopsys.com,
+ jingoohan1@gmail.com, linux-tegra@vger.kernel.org, jonathanh@nvidia.com,
+ linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Heikki,
-
-Thanks for the feedback.
-
-> Subject: Re: [PATCH v5 4/6] usb: roles: add API to get usb_role_switch by
-> node
+On 5/22/2019 1:06 AM, Bjorn Helgaas wrote:
+> On Tue, May 21, 2019 at 10:17:26PM +0530, Vidya Sagar wrote:
+>> On 5/21/2019 3:57 PM, Thierry Reding wrote:
+>>> On Fri, May 17, 2019 at 06:08:33PM +0530, Vidya Sagar wrote:
+>>>> Tegra194 rootports don't generate MSI interrupts for PME events and hence
+>>>> MSI needs to be disabled for them to avoid root ports service drivers
+>>>> registering their respective ISRs with MSI interrupt.
 > 
-> On Mon, May 20, 2019 at 09:45:46AM +0000, Biju Das wrote:
-> >
-> >
-> > Hi Heikki,
-> >
-> > Thanks for the feedback.
-> >
-> > > Subject: Re: [PATCH v5 4/6] usb: roles: add API to get
-> > > usb_role_switch by node
-> > >
-> > > On Mon, May 20, 2019 at 08:06:41AM +0000, Biju Das wrote:
-> > > > Hi Heikki,
-> > > >
-> > > > > Subject: Re: [PATCH v5 4/6] usb: roles: add API to get
-> > > > > usb_role_switch by node
-> > > > >
-> > > > > On Mon, May 20, 2019 at 10:39:11AM +0800, Chunfeng Yun wrote:
-> > > > > > Hi,
-> > > > > > On Fri, 2019-05-17 at 16:05 +0300, Heikki Krogerus wrote:
-> > > > > > > Hi,
-> > > > > > >
-> > > > > > > On Fri, May 17, 2019 at 01:37:36PM +0300, Heikki Krogerus wrote:
-> > > > > > > > On Tue, May 14, 2019 at 04:47:21PM +0800, Chunfeng Yun
-> wrote:
-> > > > > > > > > Add fwnode_usb_role_switch_get() to make easier to get
-> > > > > > > > > usb_role_switch by fwnode which register it.
-> > > > > > > > > It's useful when there is not device_connection
-> > > > > > > > > registered between two drivers and only knows the fwnode
-> > > > > > > > > which register usb_role_switch.
-> > > > > > > > >
-> > > > > > > > > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> > > > > > > > > Tested-by: Biju Das <biju.das@bp.renesas.com>
-> > > > > > > >
-> > > > > > > > Acked-by: Heikki Krogerus
-> > > > > > > > <heikki.krogerus@linux.intel.com>
-> > > > > > >
-> > > > > > > Hold on. I just noticed Rob's comment on patch 2/6, where he
-> > > > > > > points out that you don't need to use device graph since the
-> > > > > > > controller is the parent of the connector. Doesn't that mean
-> > > > > > > you don't really need this API?
-> > > > > > No, I still need it.
-> > > > > > The change is about the way how to get fwnode; when use device
-> > > > > > graph, get fwnode by of_graph_get_remote_node(); but now will
-> > > > > > get fwnode by of_get_parent();
-> > > > >
-> > > > > OK, I get that, but I'm still not convinced about if something
-> > > > > like this function is needed at all. I also have concerns
-> > > > > regarding how you are using the function. I'll explain in
-> > > > > comment to the patch 5/6 in this
-> > > series...
-> > > >
-> > > > FYI, Currently  I am also using this api in my patch series.
-> > > > https://patchwork.kernel.org/patch/10944637/
-> > >
-> > > Yes, and I have the same question for you I jusb asked in comment I
-> > > added to the patch 5/6 of this series. Why isn't usb_role_switch_get()
-> enough?
-> >
-> > Currently no issue. It will work with this api as well, since the port node is
-> part of controller node.
-> > For eg:-
-> > https://patchwork.kernel.org/patch/10944627/
-> >
-> > However if any one adds port node inside the connector node, then this
-> api may won't work as expected.
-> > Currently I get below error
-> >
-> > [    2.299703] OF: graph: no port node found in
-> /soc/i2c@e6500000/hd3ss3220@47
+> The service drivers (AER, hotplug, etc) don't know whether the
+> interrupt is INTx or MSI; they just register their ISRs with
+> pcie_device.irq.
 > 
-> We need to understand why is that happening?
+> The point of this patch is that the PCI core doesn't support devices
+> that use MSI and INTx at the same time, and since this device can't
+> generate MSI for PME, we have to use INTx for *all* its interrupts.
 > 
+>>>> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
+>>>> ---
+>>>> Changes since [v6]:
+>>>> * This is a new patch
+>>>>
+>>>>    drivers/pci/quirks.c | 14 ++++++++++++++
+>>>>    1 file changed, 14 insertions(+)
+>>>>
+>>>> diff --git a/drivers/pci/quirks.c b/drivers/pci/quirks.c
+>>>> index 0f16acc323c6..28f9a0380df5 100644
+>>>> --- a/drivers/pci/quirks.c
+>>>> +++ b/drivers/pci/quirks.c
+>>>> @@ -2592,6 +2592,20 @@ DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_NVIDIA,
+>>>>    			PCI_DEVICE_ID_NVIDIA_NVENET_15,
+>>>>    			nvenet_msi_disable);
+>>>> +/*
+>>>> + * Tegra194's PCIe root ports don't generate MSI interrupts for PME events
+>>>> + * instead legacy interrupts are generated. Hence, to avoid service drivers
+>>>> + * registering their respective ISRs for MSIs, need to disable MSI interrupts
+>>>> + * for root ports.
+>>>> + */
+>>>> +static void disable_tegra194_rp_msi(struct pci_dev *dev)
+>>>> +{
+>>>> +	dev->no_msi = 1;
+>>>> +}
+>>>> +DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_NVIDIA, 0x1ad0, disable_tegra194_rp_msi);
+>>>> +DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_NVIDIA, 0x1ad1, disable_tegra194_rp_msi);
+>>>> +DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_NVIDIA, 0x1ad2, disable_tegra194_rp_msi);
+>>>> +
+>>>
+>>> Later functions in this file seem to use a more consistent naming
+>>> pattern, according to which the name for this would become:
+>>>
+>>> 	pci_quirk_nvidia_tegra194_disable_rp_msi
+>>>
+>>> Might be worth considering making this consistent.
+>>>
+>>> This could also be moved to the DWC driver to restrict this to where it
+>>> is needed. In either case, this seems like a good solution, so:
+>>>
+>>> Reviewed-by: Thierry Reding <treding@nvidia.com>
+>>>
+>> Ok. I'll move it to DWC driver along with name change for the quirk API.
+> 
+> Is there any possibility this hardware would be used in an ACPI
+> system?  If so, the quirk should probably stay in drivers/pci/quirks.c
+> because the DWC driver would not be present.
+Yes. There is a plan to boot kernel through UEFI (using ACPI) on this system.
+So, I'll move it to drivers/pci/quirks.c file.
 
-Form the stack trace  the parent node is "parent_node=hd3ss3220@47" , instead of the "connector" node.
-That is the reason for the above error.
+> 
+> Either way, please also add some PCIe spec references about this in
+> the changelog and a comment in the code about working around this
+> issue.  I think the MSI/MSI-X sections that prohibit a device from
+> using both INTx and MSI/MSI-X are probably the most pertinent.
+Ok. I'll take care of it in the next patch series.
 
-[    2.442429]  of_graph_get_next_endpoint.part.0+0x28/0x168
-[    2.447889]  of_fwnode_graph_get_next_endpoint+0x5c/0xb0
-[    2.453267]  fwnode_graph_get_next_endpoint+0x20/0x30
-[    2.458374]  device_connection_find_match+0x74/0x1a0
-[    2.463399]  usb_role_switch_get+0x20/0x28
-[    2.467542]  hd3ss3220_probe+0xc4/0x218
+> 
+> The reason I want a comment about this is to discourage future
+> hardware from following this example because every device that *does*
+> follow this example requires a kernel update that would be otherwise
+> unnecessary.
+Ok. I'll take it up with our hardware engineers to have only MSI/MSI-X interrupts
+getting generated for all root port received events.
 
-The use case is
-
-&i2c0 {
-	hd3ss3220@47 {                                                           
-                 	compatible = "ti,hd3ss3220"; 
-                                   
-                 	usb_con: connector {                                             
-                          		compatible = "usb-c-connector";                                                      
-                         		port {                                                   
-                                		 hd3ss3220_ep: endpoint {                         
-                                        			remote-endpoint = <&usb3_role_switch>;   
-                                		};                                               
-                         		};                                                       
-                	 };                                                               
-	 }; 
-};
-   
-&usb3_peri0 {                                                                    
-         companion = <&xhci0>;                                                    
-         usb-role-switch;                                                         
-                                                                                  
-         port {                                                                   
-                usb3_role_switch: endpoint {                                     
-                        remote-endpoint = <&hd3ss3220_ep>;                       
-                 };                                                               
-         };                                                                       
-};   
-
-Q1) How do we modify the usb_role_switch_get() function to search 
-Child(connector) and child's endpoint?
-
-> It looks like we have an issue somewhere in the code, and instead of fixing
-> that, you are working around it. Let's not do that.
-
-OK.
-
-Regards,
-Biju
+> 
+> Bjorn
+> 
 
 
 _______________________________________________
