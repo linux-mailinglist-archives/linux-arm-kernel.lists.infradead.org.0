@@ -2,78 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6BB772653C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 15:56:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 993F926547
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 15:57:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F4i0hNuip8EN9+3COh6Ivw2iWzKg1+gxKT0L+6rQJgw=; b=B1pE+fxgwCoVo3
-	xaKWmiGN4Zq4u+wUppiIe+HSCvjRTM9/9Ndhm/rTCR2+3MiwK/ixQ0k7SCY2Ij+nuyKlrcM3ABc27
-	fOWdic+0fUvFtYMajthRqXD/ga3uu48Lv80v+k/pWtR/r2nBqlVm+qsbK6A5ZuwFcI6dlX2t+mlVi
-	9KpWXe9nH65UueTsl4C5WGXBPkSE0V1Syv+vTT1Hrw+050yyDspOSZ8zOEcF/yzRbv7rNR3sr85AF
-	q7GT8TFbGY0RSNZu8Z9l/VMaALG4Ut1ABnfMXQEo58el6/fwNOSn5+PLwH5v0ZQfG4umUE2LCYx/8
-	LnCkKxILI2efWmzGekSQ==;
+	List-Owner; bh=VyMKIlxPBXAVB0boigAegy76OU517sv28gbTHZ85XvQ=; b=uIIkn/wO5mppHz
+	52ik9iMtjneJyQn0KDXUOJlqJkjS7frRUKZFe81p4w3wJF+exvWJ5T21qipKbQXyjQ8zc92Wo/Sgs
+	orA1iyo1gxUIemAq2cvKD3kt5H6TSUqFR/aMdUeDET66ZndPfl5he+vqWzmx3ko/627WkA5itvHQu
+	eMckOr4hp1oLgUFo9jorMKn/d+JyDHpZsnKq3oblL2nqcAbTBLtcNZYfTsua1dGtOHMoWog24fOTb
+	2aJvPnYQugjQ/rDae3RZJ5gmqA0AITa8D7CQLdmTKw1hYDPqaESBYTgYIGq9IehC9ZMDujgF6h2JO
+	0zPFGnWW+PRrXWuPaN/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTRj5-0003AA-0k; Wed, 22 May 2019 13:56:15 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hTRkG-0003gY-MQ; Wed, 22 May 2019 13:57:28 +0000
+Received: from mail-oi1-f193.google.com ([209.85.167.193])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTRiw-00039B-9d; Wed, 22 May 2019 13:56:07 +0000
-Received: from mail-qk1-f172.google.com (mail-qk1-f172.google.com
- [209.85.222.172])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A03B421851;
- Wed, 22 May 2019 13:56:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558533365;
- bh=CpWRPFDFDeEz2FasTJpU7xC9m9MJZ5sBPRt83HEYgfo=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=duF47EnJ1olpUVNwqtjHV8UOkB/JftPjhDIWWr5H4ZMBt7IDtYQ1C/3BKouXzaL0v
- f3jygMikKv5/BWPNiA3P92IWbjeorOYEupad+Hlhua/d6y7btM+ZP6HzFBgM/1PR/F
- gF+k03o4CdD3kYEN6+YfFHKpbwJPIm2lkyOB1Qxs=
-Received: by mail-qk1-f172.google.com with SMTP id m18so1497083qki.8;
- Wed, 22 May 2019 06:56:05 -0700 (PDT)
-X-Gm-Message-State: APjAAAXRNr35U3ambEnRM0/3jzwGCY3LQGNaOPavRdtYCox++gWT7KR/
- hQZiuydN5SQsiTIVL6doojhkBPD8MHR7tTRqdw==
-X-Google-Smtp-Source: APXvYqzvt+EFGiFr6y2zsSRBs4qOUs7e+/z+bJpZu4CMkQbtQjvYCr7ioBnDYS6ibBsbagsPUO0sVjALMvR6IRu+67E=
-X-Received: by 2002:a37:dc03:: with SMTP id v3mr70538862qki.151.1558533364775; 
- Wed, 22 May 2019 06:56:04 -0700 (PDT)
+ id 1hTRk8-0003g1-TQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 13:57:22 +0000
+Received: by mail-oi1-f193.google.com with SMTP id v2so1655809oie.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 22 May 2019 06:57:20 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=Ufc5xAkTgGElLwGV3th2QQhKqTN82tIInC0mh/mr/zI=;
+ b=iLffsqkJg5GTJqGHdxyTb9oldNgxWrUXPG26sIlWrnegoAHFx72qavyRFqIpsA5Ak8
+ rns9wnNK30+OQXagUfOgcNafUQpnJqe9a+RKCzoHkyGM7QRzwyXec5ciHZBtwDnJX4mo
+ /K4BxiUhFjkgeyI/yhVIqI57hpJgIZVVnYxRrIfY/uKMC1D4aw3UJVVzwZO0wu3viMLM
+ cae5H1cnnP1aN90O3hCDO+VvU+ywbzz1/wmEApfJ+3XiGCxlYewVoeM2OhbkClueBSjn
+ Z7MJNokgrO0tZci7R/wCACT1lvB9KC4EbVLSaYweLyMKHfVT5Rooc7oleKdVCuVG7xfm
+ Zi4w==
+X-Gm-Message-State: APjAAAW99qJtcSKo3ECeYWsytSQQLNtULyfrM1NKQOTMYqXBrmyIW0dO
+ 01/ZpfIdUZUoH3L60QIoVsuYTsc=
+X-Google-Smtp-Source: APXvYqxi4uaUalBhrHYmE19XVGTw8ZehARzdqVww9dDisYp5w60DNiLvbox7RynSvNzpoP7eq2gAVA==
+X-Received: by 2002:aca:b255:: with SMTP id b82mr7227466oif.52.1558533437666; 
+ Wed, 22 May 2019 06:57:17 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id i5sm2253114otf.26.2019.05.22.06.57.16
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 22 May 2019 06:57:17 -0700 (PDT)
+Date: Wed, 22 May 2019 08:57:16 -0500
+From: Rob Herring <robh@kernel.org>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH 2/2] dt-bindings: arm: Clean up CPU binding examples
+Message-ID: <20190522135716.GA4030@bogus>
+References: <50fbe259ee5951e32221af457737b7d970be9f32.1558456785.git.robin.murphy@arm.com>
+ <fe070f591d5e07042062b6b07a701feab324ee2c.1558456785.git.robin.murphy@arm.com>
 MIME-Version: 1.0
-References: <1558466890-45471-1-git-send-email-kdasu.kdev@gmail.com>
- <CAL_JsqKd53W1E33YdtJwagi4=7DrVQ5+N3rSY=Rxo5J0RiW46g@mail.gmail.com>
-In-Reply-To: <CAL_JsqKd53W1E33YdtJwagi4=7DrVQ5+N3rSY=Rxo5J0RiW46g@mail.gmail.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Wed, 22 May 2019 08:55:53 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqJ+zNQ3CeBh8K=oBiZZsiBQ8w1w=6vs8zOQeqUf_qhqcg@mail.gmail.com>
-Message-ID: <CAL_JsqJ+zNQ3CeBh8K=oBiZZsiBQ8w1w=6vs8zOQeqUf_qhqcg@mail.gmail.com>
-Subject: Re: [PATCH] dt: bindings: mtd: replace references to nand.txt with
- nand-controller.yaml
-To: Kamal Dasu <kdasu.kdev@gmail.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <fe070f591d5e07042062b6b07a701feab324ee2c.1558456785.git.robin.murphy@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_065606_357307_AF239461 
-X-CRM114-Status: GOOD (  13.04  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190522_065720_955259_30C90DEC 
+X-CRM114-Status: GOOD (  11.57  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.193 listed in list.dnswl.org]
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.4 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.193 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -85,50 +91,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Mans Rullgard <mans@mansr.com>,
- Lucas Stach <dev@lynxeye.de>, Vignesh Raghavendra <vigneshr@ti.com>,
- Neil Armstrong <narmstrong@baylibre.com>, Stefan Agner <stefan@agner.ch>,
- David Brown <david.brown@linaro.org>, Liang Yang <liang.yang@amlogic.com>,
- MTD Maling List <linux-mtd@lists.infradead.org>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- linux-stm32@st-md-mailman.stormreply.com, Richard Weinberger <richard@nod.at>,
- Jonathan Hunter <jonathanh@nvidia.com>, Marek Vasut <marek.vasut@gmail.com>,
- Andy Gross <agross@kernel.org>,
- "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <bcm-kernel-feedback-list@broadcom.com>, devicetree@vger.kernel.org,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Marc Gonzalez <marc.w.gonzalez@free.fr>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>, linux-tegra@vger.kernel.org,
- linux-amlogic@lists.infradead.org,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, linux-oxnas@groups.io,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Brian Norris <computersforpeace@gmail.com>,
- David Woodhouse <dwmw2@infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 22, 2019 at 8:19 AM Rob Herring <robh+dt@kernel.org> wrote:
->
-> On Tue, May 21, 2019 at 2:28 PM Kamal Dasu <kdasu.kdev@gmail.com> wrote:
-> >
-> > nand-controller.yaml replaced nand.txt however the references to it were
-> > not updated. This change updates these references wherever it appears in
-> > bindings documentation.
-> >
-> > Fixes: 212e49693592 ("dt-bindings: mtd: Add YAML schemas for the generic NAND options")
-> >
-> > Signed-off-by: Kamal Dasu <kdasu.kdev@gmail.com>
->
-> Mauro already sent a similar patch.
+On Tue, 21 May 2019 17:44:27 +0100, Robin Murphy wrote:
+> Following commit 31af04cd60d3 ("arm64: dts: Remove inconsistent use of
+> 'arm,armv8' compatible string"), clean up these binding examples in case
+> anyone is tempted to copy them.
+> 
+> CC: Linus Walleij <linus.walleij@linaro.org>
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> ---
+>  Documentation/devicetree/bindings/arm/arm-boards     |  4 ++--
+>  .../devicetree/bindings/arm/cpu-capacity.txt         | 12 ++++++------
+>  2 files changed, 8 insertions(+), 8 deletions(-)
+> 
 
-Actually, Mauro's patch missed a bunch of cases that aren't full
-paths, so I'll take this one.
+Applied, thanks.
 
 Rob
 
