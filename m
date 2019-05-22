@@ -2,58 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0276F26017
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 11:04:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 449B126037
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 11:14:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a9FMETdbEQwIqTlxwczE8Kd9wjVqY+QIf92pM/B6laY=; b=m3jijlZC7Gz/8H
-	FSyd8qqhOur/pUm8PFnqTI3Esfn8ta8Fs9ryVMui2tVB4+Djtt8ti70CP5D31Dl5JOM3A+cJbj46r
-	QKSm4/EITDZ1BdpjaKQ0GrSBt35vPKJYvSlV0J4dgWQCvyFPEuL8nw5oOO//V6uPlFepePsY5VInV
-	Ywzp9zVB3X1GBCRVO4UGl1pdZBifT6u0IzJqwz9RkYrQGOEmeHSzBxyIojOgeuDY1sznUYAvOFyCS
-	t7yW4R3L+d/7riaVJamXOGHR3u77qXCChe9pRUEztgSDBC0q4kPctjgEZJ6/65l1+akoML00Lbj/G
-	cmfYyldNLLGJIepbQR8A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gkYq/roqtZoVLDPngapVFadOohFSPI3F/phx2Qa1XP4=; b=UnRzFU7vG+XjVl
+	iX91/4uraMYYLf6U5vmHWA7NPfdJQdarQY+xqg2b0SEvDm2t6AqQbTZwWoEFm7hUdv1KdWiV0dfNG
+	YKm4lPC8QlXTjTMpPzPcwGF7uHGBXKr2cxLjYUF+BltwB5EIJCK8rPr1xYdg+KBH1MVu4XjSgmix9
+	puvyY7UnPxR/R/AUeWMsHEBqOtp4+D2hoijnlIkCue1tWJmrHi0rUrdgB+kuGHOk9oT4LpsCiJhsO
+	O71ltMl2L4Breioh3BgClLC3MnyhUq0f7WyRkfGQPwKPXwD+3uw3rWK0Mc0SkWJfEctnXlmENyX06
+	6n9iCP28skCb4BrLF4ew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTNB1-0003R7-20; Wed, 22 May 2019 09:04:47 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTNAu-0003QK-2r
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 09:04:41 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A043A374;
- Wed, 22 May 2019 02:04:37 -0700 (PDT)
-Received: from [10.162.43.129] (p8cg001049571a15.blr.arm.com [10.162.43.129])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- A4AC23F718; Wed, 22 May 2019 02:04:34 -0700 (PDT)
-Subject: Re: [PATCH] arm64: break while loop if task had been rescheduled
-To: Tengfei Fan <tengfeif@codeaurora.org>, catalin.marinas@arm.com,
- will.deacon@arm.com
-References: <1558430404-4840-1-git-send-email-tengfeif@codeaurora.org>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <f2d62227-4694-d973-cacc-8225e2b2baf4@arm.com>
-Date: Wed, 22 May 2019 14:34:46 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1hTNKa-0006hr-RA; Wed, 22 May 2019 09:14:40 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hTNKS-0006gc-PS; Wed, 22 May 2019 09:14:34 +0000
+Received: from we0524.dip.tu-dresden.de ([141.76.178.12] helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1hTNKP-0008Ig-Qw; Wed, 22 May 2019 11:14:29 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: Matthias Kaehlcke <mka@chromium.org>
+Subject: Re: [PATCH v2 1/3] ARM: dts: rockchip: disable GPU 500 MHz OPP for
+ veyron
+Date: Wed, 22 May 2019 11:14:29 +0200
+Message-ID: <3108277.JP5bvJISVS@phil>
+In-Reply-To: <20190520220051.54847-1-mka@chromium.org>
+References: <20190520220051.54847-1-mka@chromium.org>
 MIME-Version: 1.0
-In-Reply-To: <1558430404-4840-1-git-send-email-tengfeif@codeaurora.org>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_020440_137997_27B76829 
-X-CRM114-Status: GOOD (  27.13  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190522_021432_975350_F1015833 
+X-CRM114-Status: GOOD (  16.14  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -65,101 +56,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, tengfei@codeaurora.org, marc.zyngier@arm.com,
- andreyknvl@google.com, linux-kernel@vger.kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Douglas Anderson <dianders@chromium.org>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 05/21/2019 02:50 PM, Tengfei Fan wrote:
-> While printing a task's backtrace and this task isn't
-> current task, it is possible that task's fp and fp+8
-> have the same value, so cannot break the while loop.
-> This can break while loop if this task had been
-> rescheduled during print this task's backtrace.
-
-This is very confusing. IIUC it suggests that while printing
-the backtrace for non-current tasks the do/while loop does not
-exit because fp and fp+8 might have the same value ? When would
-this happen ? Even in that case the commit message here does not
-properly match the change in this patch.
-
-This patch tries to stop printing the stack for non-current tasks
-if their state change while there is one dump_backtrace() trying
-to print back trace. Dont we have any lock preventing a task in
-this situation (while dumping it's backtrace) from running again
-or changing state.
-
+Am Dienstag, 21. Mai 2019, 00:00:49 CEST schrieb Matthias Kaehlcke:
+> The NPLL is the only safe way to generate 500 MHz for the GPU. The
+> downstream Chrome OS 3.14 kernel ('official' kernel for veyron
+> devices) re-purposes NPLL to HDMI and hence disables the OPP for
+> the GPU (see https://crrev.com/c/1574579). Disable it here as well
+> to keep in sync and avoid problems in case someone decides to
+> re-purpose NPLL.
 > 
-> Signed-off-by: Tengfei Fan <tengfeif@codeaurora.org>
+> Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
+
+I was actually expecting to just drop the 500MHz opp from all
+of rk3288 ;-) .
+
+To not have to respin, I just modified your patch accordingly,
+see [0] and please holler if you disagree :-D .
+
+Heiko
+
+
+[0] https://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git/commit/?id=75481833c6dbab4c29d15452f6b4337c16f5407b
+
+
 > ---
->  arch/arm64/kernel/traps.c | 23 +++++++++++++++++++++++
->  1 file changed, 23 insertions(+)
+> Changes in v2:
+> - patch added to the series
+> ---
+>  arch/arm/boot/dts/rk3288-veyron.dtsi | 8 ++++++++
+>  1 file changed, 8 insertions(+)
 > 
-> diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
-> index 2975598..9df6e02 100644
-> --- a/arch/arm64/kernel/traps.c
-> +++ b/arch/arm64/kernel/traps.c
-> @@ -103,6 +103,9 @@ void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk)
->  {
->  	struct stackframe frame;
->  	int skip = 0;
-> +	long cur_state = 0;
-> +	unsigned long cur_sp = 0;
-> +	unsigned long cur_fp = 0;
+> diff --git a/arch/arm/boot/dts/rk3288-veyron.dtsi b/arch/arm/boot/dts/rk3288-veyron.dtsi
+> index 90c8312d01ff..ec10ce4fcf04 100644
+> --- a/arch/arm/boot/dts/rk3288-veyron.dtsi
+> +++ b/arch/arm/boot/dts/rk3288-veyron.dtsi
+> @@ -174,6 +174,14 @@
+>  	temperature = <100000>;
+>  };
 >  
->  	pr_debug("%s(regs = %p tsk = %p)\n", __func__, regs, tsk);
->  
-> @@ -127,6 +130,9 @@ void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk)
->  		 */
->  		frame.fp = thread_saved_fp(tsk);
->  		frame.pc = thread_saved_pc(tsk);
-> +		cur_state = tsk->state;
-> +		cur_sp = thread_saved_sp(tsk);
-> +		cur_fp = frame.fp;
-
-Should 'saved_state|sp|fp' instead as its applicable to non-current
-tasks only.
-
->  	}
->  #ifdef CONFIG_FUNCTION_GRAPH_TRACER
->  	frame.graph = 0;
-> @@ -134,6 +140,23 @@ void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk)
->  
->  	printk("Call trace:\n");
->  	do {
-> +		if (tsk != current && (cur_state != tsk->state
-> +			/*
-> +			 * We would not be printing backtrace for the task
-> +			 * that has changed state from uninterruptible to
-> +			 * running before hitting the do-while loop but after
-> +			 * saving the current state. If task is in running
-
-This does not check any explicit task states like 'un-interruptible' or
-'running' but instead tracks change from any previously 'saved' state.
+> +/*
+> + * Remove 500 MHz since the only way to make 500 MHz is via the NPLL
+> + * which might be used for HDMI.
+> + */
+> +&gpu_opp_table {
+> +	/delete-node/ opp-500000000;
+> +};
+> +
+>  &hdmi {
+>  	ddc-i2c-bus = <&i2c5>;
+>  	status = "okay";
+> 
 
 
-> +			 * state before saving the state, then we may print
-> +			 * wrong call trace or end up in infinite while loop
-> +			 * if *(fp) and *(fp+8) are same. While the situation
-
-Then dump_backtrace() must detect it, should not save it and just abort.
 
 
-> +			 * will stop print when that task schedule out.
-
-Thats not a reliable solution. AFICS we should not proceed further if
-there is a chance of an wrong trace or an infinite loop. Hoping that
-the printing will stop when task gets scheduled out does not seem right.
-
-> +			 */
-> +			|| cur_sp != thread_saved_sp(tsk)
-> +			|| cur_fp != thread_saved_fp(tsk))) {
-
-Why does any of these three mismatches detect the problematic transition
-not just the state ?
 
 _______________________________________________
 linux-arm-kernel mailing list
