@@ -2,54 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76B6426780
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 17:57:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1964626798
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 22 May 2019 18:00:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
+	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UtdeVf7uFY3SvOVKslWdjVNgInpFtd1wm+ABjQtzIeM=; b=fTxPPkKE54BbDR
-	8V4EIQ5yT7nqn7qLnR4/POS2VVRK03C1Eb4cqu+Ie/+3i06mLrr1aaLGfK+t6s278IoD45UwA29ct
-	WV5rmKOs4X8yqWuw3LAIw/hRoII5SjhdrpYoK4sHqvaMZqEgWRMts6nM4a9FFD5IKw7pn5MBNV69T
-	Vz7oRc16tk7NdAs2Vtplt6XK7lIi2JQoObLND+TX5wD6sKO6Lt2WcrFCDPdVhlaEm+kqbJuRJL8ta
-	f8Mfk+4JIapJIOus4c8FORPx3iDkwk2KJYKmOe2lixxwtdEBCfjsb7GCeedpIIJS3+MIxj/9AvAUO
-	NqYCLplAUaVt31csEbOw==;
+	List-Owner; bh=ebwfyRC88S8VdSY1rkq9Pn9twEkuRJAkd6m/KxBlGzY=; b=qojudwprixvJhk
+	bjX2xdwQtMW5lUPJglAmnDIiZLPy1E0YCPGGdH6rLlcEVG3Dq9ASyXfOWPFzZE+hf9too5IEDlrqN
+	YaIiuLbiLf4RXXDffVTr4xJPF9QV45ct8pmnoM3dAgFL5M8bxfoIcFJMxxY4cuQMgYtc7fg5O8uqo
+	k4RHn6+whJarAIqi4H9u77Wodgk6TUsmSakIQsZdVKN3I8oih5Hs+Sq1DmjwNg33A1l6H1uy63S78
+	VQUX04F6NXlHe7eyWrMWg6vImzUaYxrbfhjj724r0eAhfJADVyUyQcqJ3QmvyDTY/E78rKzixG6am
+	V6ZlOn4008lWXmBI/kIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTTcZ-0008Fx-GC; Wed, 22 May 2019 15:57:39 +0000
-Received: from verein.lst.de ([213.95.11.211] helo=newverein.lst.de)
+	id 1hTTfN-0001nf-R7; Wed, 22 May 2019 16:00:33 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTTcS-0008FS-58
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 15:57:33 +0000
-Received: by newverein.lst.de (Postfix, from userid 2407)
- id 35D7268B05; Wed, 22 May 2019 17:57:09 +0200 (CEST)
-Date: Wed, 22 May 2019 17:57:08 +0200
-From: Christoph Hellwig <hch@lst.de>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 07/24] iommu/dma: Move domain lookup into
- __iommu_dma_{map, unmap}
-Message-ID: <20190522155708.GA29904@lst.de>
-References: <20190520072948.11412-1-hch@lst.de>
- <20190520072948.11412-8-hch@lst.de>
- <b2ef2d14-ec58-a1d6-1741-7834840498ee@arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <b2ef2d14-ec58-a1d6-1741-7834840498ee@arm.com>
-User-Agent: Mutt/1.5.17 (2007-11-01)
+ id 1hTTfD-0001m6-23
+ for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 16:00:28 +0000
+Subject: Re: [GIT PULL] arm64: First round of fixes for -rc2
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1558540820;
+ bh=J3PVro+tz2J/mbQeKKrLnaYAPBOBsv0SCaa0LR4beHo=;
+ h=From:In-Reply-To:References:Date:To:Cc:From;
+ b=2TBjCpcWH97BGuwRPp4pu4Euue4R9o1GoAtLspzNQAAD9y4fzEh/QG8eZPih4U2Fj
+ 4QORouZbOFCDmSMdjeTtMQVzyQwpVtWywvPbrlqMeNXTMzivmlWTV7NjhF/cNUQz7p
+ Az/TV/QBcFyzUrrK5L0WuHKK2j80/O1i5XSVpIYo=
+From: pr-tracker-bot@kernel.org
+In-Reply-To: <20190522131102.GC7876@fuggles.cambridge.arm.com>
+References: <20190522131102.GC7876@fuggles.cambridge.arm.com>
+X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
+X-PR-Tracked-Message-Id: <20190522131102.GC7876@fuggles.cambridge.arm.com>
+X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git
+ tags/arm64-fixes
+X-PR-Tracked-Commit-Id: 7a0a93c51799edc45ee57c6cc1679aa94f1e03d5
+X-PR-Merge-Tree: torvalds/linux.git
+X-PR-Merge-Refname: refs/heads/master
+X-PR-Merge-Commit-Id: 54dee406374ce8adb352c48e175176247cb8db7c
+Message-Id: <155854082049.3461.9141870673021713606.pr-tracker-bot@kernel.org>
+Date: Wed, 22 May 2019 16:00:20 +0000
+To: Will Deacon <will.deacon@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_085732_347786_1509ACB0 
-X-CRM114-Status: GOOD (  10.20  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190522_090023_118410_754EA405 
+X-CRM114-Status: UNSURE (   2.06  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -61,31 +77,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tom Murphy <tmurphy@arista.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, Christoph Hellwig <hch@lst.de>,
- linux-arm-kernel@lists.infradead.org
+Cc: catalin.marinas@arm.com, torvalds@linux-foundation.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 22, 2019 at 02:34:49PM +0100, Robin Murphy wrote:
-> On 20/05/2019 08:29, Christoph Hellwig wrote:
->> From: Robin Murphy <robin.murphy@arm.com>
->>
->> Most of the callers don't care, and the couple that do already have the
->> domain to hand for other reasons are in slow paths where the (trivial)
->> overhead of a repeated lookup will be utterly immaterial.
->>
->> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
->> [hch: dropped the hunk touching iommu_dma_get_msi_page to avoid a
->>   conflict with another series]
->
-> Since the MSI changes made it into 5.2, do you want to resurrect that hunk 
-> here, or shall I spin it up as a follow-on patch?
+The pull request you sent on Wed, 22 May 2019 14:11:02 +0100:
 
-Either way is fine with me.
+> git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git tags/arm64-fixes
+
+has been merged into torvalds/linux.git:
+https://git.kernel.org/torvalds/c/54dee406374ce8adb352c48e175176247cb8db7c
+
+Thank you!
+
+-- 
+Deet-doot-dot, I am a bot.
+https://korg.wiki.kernel.org/userdoc/prtracker
 
 _______________________________________________
 linux-arm-kernel mailing list
