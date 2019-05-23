@@ -2,57 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D23E327D16
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 14:46:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CCBD27D21
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 14:49:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=UArZvSY/eUa0okpdMJWHcxqpe2QJoiq1knHKknwQu7s=; b=dAIWUDqJ/xI4yclZ0k8b5BmJg
-	v+fzEgaRaiJ4RSymeHgdurhaZtQormbu/6oX89ifXvkRZ7e7RpKLrKzleQkSAa2xQvN7KKXcwgyq1
-	sXKGn+1PeCy3ykm9hYffYIIIWqjlqiw/Dg0xyFEH6YALX6nH8crdoPme/pNexUZFO467WqQ7yLsmE
-	SoDowo4Oc4Bw17UTMmSJBdzKh226wgpLdYRBeTv62zW1XLuqu4HurYWOOj3ixFA46oJEgPLQRbYFC
-	235qN5b+D0KLZt+uDwpmjklJKDyNoPWzvwbRsrNJzWmerKNDEEI6OqG8c+w4jfzw5qGI4ZVNgxS90
-	gYbehznKA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iJ9u83okjOluzIFzPOTVvwss8l/FtezsdU2O8C0ctRA=; b=OOP7OFzV+LOrTh
+	CYpWplwsZQ/wapKSsXDCFu35+uHvOU3bfAuQiZUmWKHPHILk5DscCycwuiKhEIJ2EYFKUHHH1E87V
+	PwbD1GnrjI4Yqh2H2Gl3nPXy7Kji/U/5ycJvlZ0cLclba8sXBJcTPccEAoRYyONkmBCNw7JCIW48/
+	997RQHxnl8v8j+/My85SihnsbEJBJLqlxYVk9Uk0Shfshz7xG3zQC8cZ0eTB+cUwYtomctxKgh9OR
+	vkujcllaK2BPGXoXt6pXUKjn8vQe4JneLGgeTzPPrwCGDpvKJl9tXH+vvJ2uOawd3rkXiPmE5L4Fb
+	I8/rlV51W/D01tENOX+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTn6s-0000ex-L8; Thu, 23 May 2019 12:46:14 +0000
-Received: from relay11.mail.gandi.net ([217.70.178.231])
+	id 1hTn9p-0001Cm-K0; Thu, 23 May 2019 12:49:17 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTn6l-0000ea-G9
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 12:46:09 +0000
-Received: from localhost (aaubervilliers-681-1-80-185.w90-88.abo.wanadoo.fr
- [90.88.22.185]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay11.mail.gandi.net (Postfix) with ESMTPSA id CD9B2100022;
- Thu, 23 May 2019 12:45:46 +0000 (UTC)
-Date: Thu, 23 May 2019 14:45:46 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Jose Abreu <Jose.Abreu@synopsys.com>
-Subject: Re: [PATCH 6/8] dt-bindings: net: stmmac: Convert the binding to a
- schemas
-Message-ID: <20190523124546.6agw7fu5qteag3ol@flea>
-References: <74d98cc3c744d53710c841381efd41cf5f15e656.1558605170.git-series.maxime.ripard@bootlin.com>
- <ba1a5d8ad34a8c9ab99f504c04fbe65bde42081b.1558605170.git-series.maxime.ripard@bootlin.com>
- <78EB27739596EE489E55E81C33FEC33A0B92B864@DE02WEMBXB.internal.synopsys.com>
- <20190523110715.ckyzpec3quxr26cp@flea>
- <78EB27739596EE489E55E81C33FEC33A0B92BA5B@DE02WEMBXB.internal.synopsys.com>
+ id 1hTn9h-0001C2-PE
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 12:49:11 +0000
+Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B3F3821019;
+ Thu, 23 May 2019 12:49:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1558615749;
+ bh=g7j2U62ETM/CfVTkfqNEarGmBDOCA3a/rrw2qe9DprM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=PPW/6mG7vewO2NbAd0kFIjtyYvLRGdmge0Ey2nJ2ExENJxDwn1c3MKM6ZRxm1eknj
+ gE/CRIT0hQ2bcizugjxoty17Y8C6NcLKmte0W8iKuw93ZJJzHOOwSP//JsU8BhA+bn
+ eeZJ+LN928b4znRYwQpNUiKH09Klj/ZnJd9T+1WU=
+Date: Thu, 23 May 2019 20:48:06 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Pankaj Bansal <pankaj.bansal@nxp.com>
+Subject: Re: [PATCH] arm64: dts: fsl: ls1046: Modify the qspi flash frequency
+Message-ID: <20190523124806.GU9261@dragon>
+References: <20190521150336.8409-1-pankaj.bansal@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <78EB27739596EE489E55E81C33FEC33A0B92BA5B@DE02WEMBXB.internal.synopsys.com>
-User-Agent: NeoMutt/20180716
+Content-Disposition: inline
+In-Reply-To: <20190521150336.8409-1-pankaj.bansal@nxp.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_054607_689073_DCD13137 
-X-CRM114-Status: GOOD (  12.95  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190523_054909_832184_67BF8650 
+X-CRM114-Status: GOOD (  14.22  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.231 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -64,90 +76,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Antoine =?utf-8?Q?T=C3=A9nart?= <antoine.tenart@bootlin.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Frank Rowand <frowand.list@gmail.com>,
- "David S . Miller" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============6479707374587605372=="
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Rajesh Bhagat <rajesh.bhagat@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Mingkai Hu <mingkai.hu@nxp.com>, Leo Li <leoyang.li@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, May 21, 2019 at 09:40:09AM +0000, Pankaj Bansal wrote:
+> The qspi flash in ls1046a based QDS and RDB boards can operate
+> at 50MHz frequency.
+> Therefore, update the maximum supported freq in their respective
+> dts files.
+> 
+> Signed-off-by: Pankaj Bansal <pankaj.bansal@nxp.com>
 
---===============6479707374587605372==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="tf5grxv2ddxyomh6"
-Content-Disposition: inline
+Do not use base64 encoding for patch posting.
 
+Shawn
 
---tf5grxv2ddxyomh6
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Thu, May 23, 2019 at 11:25:09AM +0000, Jose Abreu wrote:
-> From: Maxime Ripard <maxime.ripard@bootlin.com>
-> Date: Thu, May 23, 2019 at 12:07:15
->
-> > You can then run make dtbs_check, and those YAML files will be used to
-> > validate that any devicetree using those properties are doing it
-> > properly. That implies having the right node names, properties, types,
-> > ranges of values when relevant, and so on.
->
-> Thanks but how can one that's developing know which bindings it shall use?
-
-I'm not quite sure what you mean here. Are you talking about which
-file to use, or which property are required, or something else?
-
-> Is this not parsed/prettified and displayed in some kind of webpage ?
-
-Not at the moment, but it's one of the things that are made much
-easier by using a formal data format.
-
-> Just that now that the TXT is gone its kind of "strange" to look at YAML
-> instead of plain text and develop/use the bindings.
-
-Well, it's kind of the point though. Free-form text was impossible to
-parse in a generic way, and you couldn't build any generic tools upon
-it. YAML provides that.
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---tf5grxv2ddxyomh6
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXOaV+gAKCRDj7w1vZxhR
-xbIiAQDiQ/YoNNi0GkGaqteHf9TnQ2HqpEptDspMMmoMtI/iUQD9GIkc5JePBFh2
-kcr5Fwff9irX+EB/TCiw12tiyLODug8=
-=9C+d
------END PGP SIGNATURE-----
-
---tf5grxv2ddxyomh6--
-
-
---===============6479707374587605372==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> ---
+>  arch/arm64/boot/dts/freescale/fsl-ls1046a-qds.dts | 4 ++--
+>  arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts | 5 +++--
+>  2 files changed, 5 insertions(+), 4 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1046a-qds.dts b/arch/arm64/boot/dts/freescale/fsl-ls1046a-qds.dts
+> index eec62c63dafe..e441dbfbfb81 100644
+> --- a/arch/arm64/boot/dts/freescale/fsl-ls1046a-qds.dts
+> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1046a-qds.dts
+> @@ -3,7 +3,7 @@
+>   * Device Tree Include file for Freescale Layerscape-1046A family SoC.
+>   *
+>   * Copyright 2016 Freescale Semiconductor, Inc.
+> - * Copyright 2018 NXP
+> + * Copyright 2018-2019 NXP
+>   *
+>   * Shaohui Xie <Shaohui.Xie@nxp.com>
+>   */
+> @@ -169,7 +169,7 @@
+>  		compatible = "spansion,m25p80";
+>  		#address-cells = <1>;
+>  		#size-cells = <1>;
+> -		spi-max-frequency = <20000000>;
+> +		spi-max-frequency = <50000000>;
+>  		spi-rx-bus-width = <4>;
+>  		spi-tx-bus-width = <4>;
+>  		reg = <0>;
+> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts b/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
+> index 6a6514d0e5a9..6f5411d09bb9 100644
+> --- a/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
+> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
+> @@ -3,6 +3,7 @@
+>   * Device Tree Include file for Freescale Layerscape-1046A family SoC.
+>   *
+>   * Copyright 2016 Freescale Semiconductor, Inc.
+> + * Copyright 2019 NXP
+>   *
+>   * Mingkai Hu <mingkai.hu@nxp.com>
+>   */
+> @@ -105,7 +106,7 @@
+>  		compatible = "spansion,m25p80";
+>  		#address-cells = <1>;
+>  		#size-cells = <1>;
+> -		spi-max-frequency = <20000000>;
+> +		spi-max-frequency = <50000000>;
+>  		spi-rx-bus-width = <4>;
+>  		spi-tx-bus-width = <4>;
+>  		reg = <0>;
+> @@ -115,7 +116,7 @@
+>  		compatible = "spansion,m25p80";
+>  		#address-cells = <1>;
+>  		#size-cells = <1>;
+> -		spi-max-frequency = <20000000>;
+> +		spi-max-frequency = <50000000>;
+>  		spi-rx-bus-width = <4>;
+>  		spi-tx-bus-width = <4>;
+>  		reg = <1>;
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6479707374587605372==--
-
