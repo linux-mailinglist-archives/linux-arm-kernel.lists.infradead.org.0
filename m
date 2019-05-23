@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6906C277D5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 10:18:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A88927804
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 10:33:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=00yFo7TtKwH1V+dRvPwjEu/TEcNu34C5adlk5zF4q24=; b=RDTnjwzZMr98ne
-	eI2sFMzq+Oi5Yib5PUw0E/pRGBSv+qvNHWMhJKGwjj3NReuSKSlNyj48Zy9BU8Jzsq/VkHWkP/vjY
-	hILujeYm3hkXZ2ak5j4iWlfinFuFUTy89QW5rg1AfNS1ujPzDxgmkr7jfewMClpCdwaMf7+pfDziy
-	j+oJKYk75o2qMZ2c/QEEGlspNYh22BQun/SkHkG7v+fP7N+iqAkuM0p9M/C1A0lMvVrtFIAC7RKgD
-	L06fVu618FcV191V6dAvFN4eeSAWJY2fCsVA9eteRzIQDhEwcgGz/FsTdOSUYKUBWJ1Hg/g9c0U7h
-	iAqQWnZtOSLAsiQVxtsA==;
+	List-Owner; bh=Ze5IPh3/rvIuitSvmKbWHaenqSsjl+lCOeC+F5eNtyQ=; b=K0jbvtL590gXzn
+	2diOyOyqYoZ0iol8JKOnf1k5AHTaB6jTk7z1RpZ2GLbZEcsoDCiZoTxZJzOiri0ItcsF8CF3B9YC9
+	ncBYHGpAWTfcv9wazovJnRAUVGP+9JS0+vgOjH4ErMXeQKSk+luaNiPJh0jmd7VXZEn10mE4WQyH+
+	0XUFYS9PtSjt33dxvKzN5ZIJpdlwYXESo6yGu30J9zzmWSqiAMfXpkx6bKiIWHmR4ceMYMkMKvH3N
+	6P7sdcMR4+6n1XUUUu3CoM8rT2q3nSC2WH7pl/9oO/G6Gwt09E+7DL63oeBhyGy9N1ByfN4ARutUW
+	4fN2e48f6AM0y0fASSvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTivF-0007Pq-Nh; Thu, 23 May 2019 08:17:57 +0000
+	id 1hTj9k-0003Sb-Qn; Thu, 23 May 2019 08:32:56 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTiv6-0007P4-AQ
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 08:17:50 +0000
+ id 1hTj9d-0003SB-4b
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 08:32:50 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 93A922070D;
- Thu, 23 May 2019 08:17:42 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C35BD20879;
+ Thu, 23 May 2019 08:32:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558599468;
- bh=NnkwAg/YpYzmsV5gEgSTLJOum3MFjnwTcfMyU/RxFd4=;
+ s=default; t=1558600366;
+ bh=3/axH3G7pHsCnkzfqiVoyOAsmcfLuAmvjYG7M5n4EVE=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ewmsl7bUlQBSCNM43YojeCadG02W2pPb2VnIZCtlqjJ7dyLLaN49yif69QA4/tfhP
- Mr+dGy6ISYnQukwbAF1ecPpAscL3+oG3Toi74Ux/m55biAZh2ts/jGkg/SVcpKNMxz
- bUV7ADy2BQjDCPbZNo32c+RJRgaNQuDjbGtIbaPo=
-Date: Thu, 23 May 2019 16:16:47 +0800
+ b=h4rb0O0GzEdufAFPJo6x3Cql6QSr/ijUmuBngWWAHMGsRpeCglXH06VAbC2rWMKar
+ Iy12NbWwfBlXgvKsZYsIbSRG4LwQqlRS/4hvlqtA6IJeyNOBwn5XUFg+ShOhIrXFwL
+ amdtlFq/T5BXjVHMMmbK5RrIGyQ6QjqdIvXqo+lk=
+Date: Thu, 23 May 2019 16:31:49 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Ran Wang <ran.wang_1@nxp.com>
-Subject: Re: [RESEND][PATCH] arm64: dts: lx2160a: Enable usb3-lpm-capable for
- usb3 node
-Message-ID: <20190523081646.GK9261@dragon>
-References: <20190515060434.33581-1-ran.wang_1@nxp.com>
- <20190523074300.GH9261@dragon>
- <AM5PR0402MB2865A81EB93DBAC90DB22E87F1010@AM5PR0402MB2865.eurprd04.prod.outlook.com>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH] ARM: dts: imx: Avoid colliding 'display' node and
+ property names
+Message-ID: <20190523083148.GL9261@dragon>
+References: <20190516225525.32605-1-robh@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <AM5PR0402MB2865A81EB93DBAC90DB22E87F1010@AM5PR0402MB2865.eurprd04.prod.outlook.com>
+In-Reply-To: <20190516225525.32605-1-robh@kernel.org>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_011749_398132_34287CB9 
-X-CRM114-Status: GOOD (  11.32  )
+X-CRM114-CacheID: sfid-20190523_013249_196706_C4842E0F 
+X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,48 +78,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 23, 2019 at 07:51:41AM +0000, Ran Wang wrote:
-> Hi Shawn,
+On Thu, May 16, 2019 at 05:55:25PM -0500, Rob Herring wrote:
+> While properties and child nodes with the same name are valid DT, the
+> practice is not encouraged. Furthermore, the collision is problematic for
+> YAML encoded DT. Let's just avoid the issue and rename the nodes.
 > 
-> On Thursday, May 23, 2019 15:43, Shawn Guo wrote:
-> > 
-> > On Wed, May 15, 2019 at 02:04:34PM +0800, Ran Wang wrote:
-> > > Enable USB3 HW LPM feature for lx2160a and active patch for snps
-> > > erratum A-010131. It will disable U1/U2 temperary when initiate U3
-> > > request.
-> > >
-> > > Signed-off-by: Ran Wang <ran.wang_1@nxp.com>
-> > > ---
-> > > Depend on:
-> > > https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Flore
-> > > .kernel.org%2Fpatchwork%2Fpatch%2F870134%2F&amp;data=02%7C01%7Cr
-> > an.wan
-> > >
-> > g_1%40nxp.com%7Cc6df41748bc243397d3008d6df526c04%7C686ea1d3bc2b4c
-> > 6fa92
-> > >
-> > cd99c5c301635%7C0%7C0%7C636941942428322802&amp;sdata=NR2zs8BE%2
-> > FNn8KdP
-> > > do6%2FsNwJJdx2VgaQTy5H4bAlTJgw%3D&amp;reserved=0
-> > 
-> > Is the dependency accepted?
-> 
-> No, I got no comment for that post since then.
-> lore.kernel.org/patchwork/patch/870134/
+> Cc: Shawn Guo <shawnguo@kernel.org>
+> Cc: Sascha Hauer <s.hauer@pengutronix.de>
+> Cc: Pengutronix Kernel Team <kernel@pengutronix.de>
+> Cc: Fabio Estevam <festevam@gmail.com>
+> Cc: NXP Linux Team <linux-imx@nxp.com>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Signed-off-by: Rob Herring <robh@kernel.org>
 
-Please post dts patch only after dependency gets accepted.
-
-Shawn
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
