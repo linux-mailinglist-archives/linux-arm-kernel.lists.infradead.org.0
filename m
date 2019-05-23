@@ -2,32 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6BFD7276AE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 09:04:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B24F6276AF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 09:05:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f2ccugCxMWHJAEFHJ+UqfPvJyyP3UYpBzKDPb6hqOuA=; b=KE1yqtwl+DP/nl
-	I0xyu1kpDJj9Q2Ad1r0NKFI06E9DMXa8Om2/AZULx1haNEq1ACXNOczX1e3TI0VocwDRRFDzyc1lu
-	BMSTUZAaq4k0IlcsUH3UIjRHZewmhcqsJ1coYZuh5AvIMxMiduQsntmXW1Fh+Y/19mbsd9VLuY6YD
-	uq7GxIEtbafegPD7u+j/UMDy0Q6xfwDIqv/t86kZeKY5ruFVqIQSoxlqNPqcwbj+uGqLjddgD867X
-	kXMON1HTbNrkeFV7ZKP6LcqG38G7+sEL3rB39amWV4IoVopwk3yFwd+ThQGFqV6noB44UfuPaZffq
-	0eQDp8L3P1Vxe9GCvJmg==;
+	List-Owner; bh=eukRVLGwHPU+CMYDKjAh32+OE+SV7k5YDe5unlqercA=; b=LLN90bMugK8exU
+	llAcAb3agmjRMjaKWG60TfPZ1jqVfq7h08/QjZ/RG1/chVKjppaB4k9cRnp1trq2NrtOlrjOmYcC7
+	G48w30V7xyDMcwes3wAdzIifBW2LwQbSqB8KPY7UhpS23aO63LGn7CpApFoqIYNJX0NUtKB1rIK0L
+	Z4WHpwEi0IjSRuzibRUjeh9WC+Ekk4ORccT3OXRrjXR3uv8L0Hw4ipfMBuTLrTzXYDe2h97QMd7Fz
+	Zwtcgz2DOTAYUoEphkoUa884rzQYfP14dZOqc2aWjj+dQ3sJc6w+nl0o9YPJFgPI2IC9EuP4hLr0K
+	i/rcK/VU8M0yvYbjHfaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hThmB-0001Uy-KX; Thu, 23 May 2019 07:04:31 +0000
+	id 1hThnT-0003JW-QD; Thu, 23 May 2019 07:05:51 +0000
 Received: from 213-225-10-46.nat.highway.a1.net ([213.225.10.46]
  helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hThjG-00062C-Rw; Thu, 23 May 2019 07:01:31 +0000
+ id 1hThjJ-00062m-MF; Thu, 23 May 2019 07:01:34 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Robin Murphy <robin.murphy@arm.com>
-Subject: [PATCH 21/23] iommu/dma: Switch copyright boilerplace to SPDX
-Date: Thu, 23 May 2019 09:00:26 +0200
-Message-Id: <20190523070028.7435-22-hch@lst.de>
+Subject: [PATCH 22/23] arm64: switch copyright boilerplace to SPDX in
+ dma-mapping.c
+Date: Thu, 23 May 2019 09:00:27 +0200
+Message-Id: <20190523070028.7435-23-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190523070028.7435-1-hch@lst.de>
 References: <20190523070028.7435-1-hch@lst.de>
@@ -44,8 +45,9 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Tom Murphy <tmurphy@arista.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org
+ Mukesh Ojha <mojha@codeaurora.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -53,24 +55,23 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 Acked-by: Robin Murphy <robin.murphy@arm.com>
+Reviewed-by: Mukesh Ojha <mojha@codeaurora.org>
+Acked-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
- drivers/iommu/dma-iommu.c | 13 +------------
- include/linux/dma-iommu.h | 13 +------------
- 2 files changed, 2 insertions(+), 24 deletions(-)
+ arch/arm64/mm/dma-mapping.c | 15 +--------------
+ 1 file changed, 1 insertion(+), 14 deletions(-)
 
-diff --git a/drivers/iommu/dma-iommu.c b/drivers/iommu/dma-iommu.c
-index 567c300d1926..0233195dd196 100644
---- a/drivers/iommu/dma-iommu.c
-+++ b/drivers/iommu/dma-iommu.c
-@@ -1,3 +1,4 @@
+diff --git a/arch/arm64/mm/dma-mapping.c b/arch/arm64/mm/dma-mapping.c
+index d1661f78eb4d..184ef9ccd69d 100644
+--- a/arch/arm64/mm/dma-mapping.c
++++ b/arch/arm64/mm/dma-mapping.c
+@@ -1,20 +1,7 @@
 +// SPDX-License-Identifier: GPL-2.0
  /*
-  * A fairly generic DMA-API to IOMMU-API glue layer.
-  *
-@@ -5,18 +6,6 @@
-  *
-  * based in part on arch/arm/mm/dma-mapping.c:
-  * Copyright (C) 2000-2004 Russell King
+- * SWIOTLB-based DMA API implementation
+- *
+  * Copyright (C) 2012 ARM Ltd.
+  * Author: Catalin Marinas <catalin.marinas@arm.com>
 - *
 - * This program is free software; you can redistribute it and/or modify
 - * it under the terms of the GNU General Public License version 2 as
@@ -85,30 +86,7 @@ index 567c300d1926..0233195dd196 100644
 - * along with this program.  If not, see <http://www.gnu.org/licenses/>.
   */
  
- #include <linux/acpi_iort.h>
-diff --git a/include/linux/dma-iommu.h b/include/linux/dma-iommu.h
-index b3cc3fb84079..05556f4d9cce 100644
---- a/include/linux/dma-iommu.h
-+++ b/include/linux/dma-iommu.h
-@@ -1,17 +1,6 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
- /*
-  * Copyright (C) 2014-2015 ARM Ltd.
-- *
-- * This program is free software; you can redistribute it and/or modify
-- * it under the terms of the GNU General Public License version 2 as
-- * published by the Free Software Foundation.
-- *
-- * This program is distributed in the hope that it will be useful,
-- * but WITHOUT ANY WARRANTY; without even the implied warranty of
-- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- * GNU General Public License for more details.
-- *
-- * You should have received a copy of the GNU General Public License
-- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  */
- #ifndef __DMA_IOMMU_H
- #define __DMA_IOMMU_H
+ #include <linux/gfp.h>
 -- 
 2.20.1
 
