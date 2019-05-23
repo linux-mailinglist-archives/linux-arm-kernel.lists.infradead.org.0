@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAB55276E9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 09:28:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10D2A276EE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 09:30:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BHsvZMh39cHBJp6Bm9xXXKHJ3oI/X/dDkBslB2XmnQY=; b=dJSxLRKj+gQQs2
-	MV7n9eYPpG6TYEPzlUix8+5+51ioQkClBJ8lloWcdwjszrxPYuB38yIvp7PcSnM9mvY/kJacysjzK
-	rYGZuvruSMe4B0pZfKhEFVlOinL92A3Bko2nUHvzgdSCLfkqDsDbLkYaDbY/DFjdjwth5nbqR0HaE
-	r3rupHSFAae6d0hafznEXZbZ2afUBzVuKGi6A8ugyfUBwpqK+1P3IlvlTbJ432aj8nPfbA8f1gBKH
-	iNnjT2TsayxwNs1bQluB2Z8zOC/qVFdo1CmUt+Iqc21AM7oRjX2eJuBp5bV6qzgJYaUwTzXvQ3YwF
-	hxXsW6mbkS/XHz45wa4A==;
+	List-Owner; bh=AzvDn2R7T7x8K+PfFX86A9m42rgWdKcH2e5n+9AEJHE=; b=Lr8PX1Ty+FmLxe
+	SbpbnGLsiWjV9WYkJqbgMboczDcavRjr0NiMhngIYmKWXe0bhKnnyd1bJrhhGOICdqXBfpkmUP0LU
+	uladRGFJjyARSi7G17Bjzt4d88RZoxO8xmXOdIMfOcXmp6yRMLYGy7tr5ZbbvQXI2R5oWRHwy3bLX
+	FiaqN0cah626d2Mvl7/JoeULk4y3smOHLtjinClaUT6zAG1cnpQ31yBbCGDUOv4+cQctFvUQ8Y+hZ
+	q0iGpPsVOqEpUwyS3Mo88ZLG4bdySJjleGeAsMgIq1lkNnCT5aj9T73m9hE3ueYehBQ+SENIB9Api
+	RFXkUfQUcfrewbtba+HQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTi9A-0001pn-Vu; Thu, 23 May 2019 07:28:16 +0000
+	id 1hTiAq-00026p-JF; Thu, 23 May 2019 07:30:00 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTi92-0001pG-VO
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 07:28:10 +0000
+ id 1hTiAj-00026R-FR
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 07:29:54 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0CBC82175B;
- Thu, 23 May 2019 07:28:01 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4C7C9217D7;
+ Thu, 23 May 2019 07:29:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558596488;
- bh=fR8am8eYsyOKxxovT2B3g28ceysx1M76jsNM6qy5Fys=;
+ s=default; t=1558596593;
+ bh=c19NWt/LnVDFdWa5G3PG11NsA8ijCR/rV/h5vpWD/KM=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=e+WcTzi4FLyVQvYWVkuOfbzOoxrxOS3Ykwvz0kfoeoHMgdvTt6fjUfRBxVDrZUbt3
- 8bdMOsWQ0oi7ehdPifRPlZ1d3oP+8UuaJGBQH8fyFTiVZYpljr5XE7zuIbLK5hLAz7
- AY9OA7GDy4E6JKRX6P+r59ijRrRqBMRelh2frdZs=
-Date: Thu, 23 May 2019 15:27:07 +0800
+ b=FUnxHXFaDCaj/+Bu7q+MBexqxbykrKFJGpTwTuxoc22wIq9w7U6xRHM2hyAjbMBmK
+ LIR+oih5+cDxXqyJpdNT4jUIcDHfarSSpGfsysvmet33eNIPlLKQc1FTTSfgblf3fn
+ kXKCTYqYQrDq/R2K6dnEqAbw5moK87v1dWDx444s=
+Date: Thu, 23 May 2019 15:28:52 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Anson Huang <anson.huang@nxp.com>
-Subject: Re: [PATCH 1/3] dt-bindings: clock: imx8mm: Add SNVS clock
-Message-ID: <20190523072706.GD9261@dragon>
+Subject: Re: [PATCH 2/3] clk: imx8mm: add SNVS clock to clock tree
+Message-ID: <20190523072851.GE9261@dragon>
 References: <1557883490-22360-1-git-send-email-Anson.Huang@nxp.com>
+ <1557883490-22360-2-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1557883490-22360-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1557883490-22360-2-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_002809_028222_5356E29F 
-X-CRM114-Status: UNSURE (   8.39  )
+X-CRM114-CacheID: sfid-20190523_002953_532214_EC7710C3 
+X-CRM114-Status: UNSURE (   8.76  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -94,8 +95,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 15, 2019 at 01:29:53AM +0000, Anson Huang wrote:
-> Add macro for the SNVS clock of the i.MX8MM.
+On Wed, May 15, 2019 at 01:29:57AM +0000, Anson Huang wrote:
+> i.MX8MM has clock gate for SNVS module, add it into clock tree
+> for SNVS RTC driver to manage.
 > 
 > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
