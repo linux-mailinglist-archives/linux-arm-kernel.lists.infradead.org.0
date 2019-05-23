@@ -2,57 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C52712771E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 09:35:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49C022771F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 09:36:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=e35ob3B9sI54qLYTbIxxEHRbpFVWvi2ER0j1qhoXyko=; b=jmd+Z3vJ0jlabG
-	oec87iYCdhh1UjFwbdd/JuLOmotFpMMLDKHlpPBCrG50xDIupS+aSOGUKRekOP+ZaYdtREKmYjRgB
-	mqC18znJk0bxpPpGgdhbSs6yKadL513YKhGehQBeUN/ioiJEYreX12sm/o39yHsU8b47qcecfwdAp
-	qXZcgyj3kevwweej4gJ6IkOVCoH6dBEAi1Bm5KbbTBg0GdiunZQK2LlfdU4LYp+thXN6HNwk8JMw0
-	xDqfA/s+7KDaiJ4oRd6DVN0lwzbfM+mrf5FFNp1gsyIU+Nr3+zeTY4Q1sRN0NInqBh24GC/ZtWfKp
-	P2ya3X5kxL7eWnMWhfaw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LgkizWmTbPts6/sHcKZ0rnhl4P2yEi1EFEZ7FmCAcA0=; b=SKGGTB0zdxJu2p
+	VT8tsGEG6QtZVpsUObhhf8g2jten4Z1/Wbl+urCMMxG1gbQG/4s3KFnIkVVqViBLWCEZPQIfLWtSp
+	K0DcFKkZutFRrWcrtkWpsac0lMynGf14kHBtawS86OHTYQ3WLpGWKr9qwZOAic+IP4oyHBiJULWmy
+	9w+GKuQYmGAQCARqu5dqeOROQNYJNk6jbLi9+RRaR50lqtaYhOr5M2BE4/Pi6gJRqPbPkQ/I6lFlP
+	uJU8XDkdo5qk/92YzGYEA1IrqszPrEBX2zeN+dcSdlx7ptoFtnBIjI1tTGCmUC+Jh9q9Fa12sh4wq
+	leS6RQqdoEZ9goV8OPYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTiGQ-0006Hz-Vz; Thu, 23 May 2019 07:35:46 +0000
+	id 1hTiGb-0006Rq-EY; Thu, 23 May 2019 07:35:57 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTiG4-00060B-4A; Thu, 23 May 2019 07:35:25 +0000
-X-UUID: 708ffbded03b457dae67bdd16e314db1-20190522
-X-UUID: 708ffbded03b457dae67bdd16e314db1-20190522
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ id 1hTiG5-00061T-K0; Thu, 23 May 2019 07:35:27 +0000
+X-UUID: 62a483dfea0c498db3bd1e854dbdc673-20190522
+X-UUID: 62a483dfea0c498db3bd1e854dbdc673-20190522
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <long.cheng@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 661790956; Wed, 22 May 2019 23:35:15 -0800
-Received: from mtkmbs03n1.mediatek.inc (172.21.101.181) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 23 May 2019 00:35:14 -0700
+ with ESMTP id 1130617877; Wed, 22 May 2019 23:35:23 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 23 May 2019 00:35:21 -0700
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs03n1.mediatek.inc (172.21.101.181) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 23 May 2019 15:35:12 +0800
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 23 May 2019 15:35:13 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 23 May 2019 15:35:11 +0800
+ Transport; Thu, 23 May 2019 15:35:12 +0800
 From: Long Cheng <long.cheng@mediatek.com>
 To: Vinod Koul <vkoul@kernel.org>, Randy Dunlap <rdunlap@infradead.org>, "Rob
  Herring" <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Ryder Lee
  <ryder.lee@mediatek.com>, Sean Wang <sean.wang@kernel.org>, Nicolas Boichat
  <drinkcat@chromium.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH v13 0/2] add uart DMA function 
-Date: Thu, 23 May 2019 15:35:07 +0800
-Message-ID: <1558596909-14084-1-git-send-email-long.cheng@mediatek.com>
+Subject: [PATCH v13 1/2] arm: dts: mt2712: add uart APDMA to device tree
+Date: Thu, 23 May 2019 15:35:08 +0800
+Message-ID: <1558596909-14084-2-git-send-email-long.cheng@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
+In-Reply-To: <1558596909-14084-1-git-send-email-long.cheng@mediatek.com>
+References: <1558596909-14084-1-git-send-email-long.cheng@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_003524_164969_B04BAA98 
-X-CRM114-Status: UNSURE (   8.23  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190523_003525_656436_9408F535 
+X-CRM114-Status: GOOD (  10.35  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -86,56 +87,118 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In Mediatek SOCs, the uart can support DMA function.
-Base on DMA engine formwork, we add the DMA code to support uart. And put the code under drivers/dma/mediatek.
+1. add uart APDMA controller device node
+2. add uart 0/1/2/3/4/5 DMA function
 
-This series contains document bindings, Kconfig to control the function enable or not,
-device tree including interrupt and dma device node, the code of UART DMA
-
-Changes compared to v12
--rename parameters
--remove direction
-Changes compared to v11
--modify TX/RX
--pause function by software
-Changes compared to v10
--modify DMA tx status function
--modify 8250_mtk for DMA rx
--add notes to binding Document.
-Changes compared to v9
--rename dt-bindings file
--remove direction from device_config
--simplified code
-Changes compared to v8
--revise missing items
-Changes compared to v7:
--modify apdma uart tx
-Changes compared to v6:
--Correct spelling
-Changes compared to v5:
--move 'requst irqs' to alloc channel
--remove tasklet.
-Changes compared to v4:
--modify Kconfig depends on.
-Changes compared to v3:
--fix CONFIG_PM, will cause build fail
-Changes compared to v2:
--remove unimportant parameters
--instead of cookie, use APIs of virtual channel.
--use of_dma_xlate_by_chan_id.
-Changes compared to v1:
--mian revised file, 8250_mtk_dma.c
---parameters renamed for standard
---remove atomic operation
-
-Long Cheng (2):
-  arm: dts: mt2712: add uart APDMA to device tree
-  serial: 8250-mtk: modify uart DMA rx
-
+Signed-off-by: Long Cheng <long.cheng@mediatek.com>
+---
  arch/arm64/boot/dts/mediatek/mt2712e.dtsi |   51 +++++++++++++++++++++++++++++
- drivers/tty/serial/8250/8250_mtk.c        |   49 +++++++++++----------------
- 2 files changed, 71 insertions(+), 29 deletions(-)
+ 1 file changed, 51 insertions(+)
 
+diff --git a/arch/arm64/boot/dts/mediatek/mt2712e.dtsi b/arch/arm64/boot/dts/mediatek/mt2712e.dtsi
+index 43307ba..a7a7362 100644
+--- a/arch/arm64/boot/dts/mediatek/mt2712e.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt2712e.dtsi
+@@ -300,6 +300,9 @@
+ 		interrupts = <GIC_SPI 127 IRQ_TYPE_LEVEL_LOW>;
+ 		clocks = <&baud_clk>, <&sys_clk>;
+ 		clock-names = "baud", "bus";
++		dmas = <&apdma 10
++			&apdma 11>;
++		dma-names = "tx", "rx";
+ 		status = "disabled";
+ 	};
+ 
+@@ -369,6 +372,39 @@
+ 			 (GIC_CPU_MASK_RAW(0x13) | IRQ_TYPE_LEVEL_HIGH)>;
+ 	};
+ 
++	apdma: dma-controller@11000400 {
++		compatible = "mediatek,mt2712-uart-dma",
++			     "mediatek,mt6577-uart-dma";
++		reg = <0 0x11000400 0 0x80>,
++		      <0 0x11000480 0 0x80>,
++		      <0 0x11000500 0 0x80>,
++		      <0 0x11000580 0 0x80>,
++		      <0 0x11000600 0 0x80>,
++		      <0 0x11000680 0 0x80>,
++		      <0 0x11000700 0 0x80>,
++		      <0 0x11000780 0 0x80>,
++		      <0 0x11000800 0 0x80>,
++		      <0 0x11000880 0 0x80>,
++		      <0 0x11000900 0 0x80>,
++		      <0 0x11000980 0 0x80>;
++		interrupts = <GIC_SPI 103 IRQ_TYPE_LEVEL_LOW>,
++			     <GIC_SPI 104 IRQ_TYPE_LEVEL_LOW>,
++			     <GIC_SPI 105 IRQ_TYPE_LEVEL_LOW>,
++			     <GIC_SPI 106 IRQ_TYPE_LEVEL_LOW>,
++			     <GIC_SPI 107 IRQ_TYPE_LEVEL_LOW>,
++			     <GIC_SPI 108 IRQ_TYPE_LEVEL_LOW>,
++			     <GIC_SPI 109 IRQ_TYPE_LEVEL_LOW>,
++			     <GIC_SPI 110 IRQ_TYPE_LEVEL_LOW>,
++			     <GIC_SPI 111 IRQ_TYPE_LEVEL_LOW>,
++			     <GIC_SPI 112 IRQ_TYPE_LEVEL_LOW>,
++			     <GIC_SPI 113 IRQ_TYPE_LEVEL_LOW>,
++			     <GIC_SPI 114 IRQ_TYPE_LEVEL_LOW>;
++		dma-requests = <12>;
++		clocks = <&pericfg CLK_PERI_AP_DMA>;
++		clock-names = "apdma";
++		#dma-cells = <1>;
++	};
++
+ 	auxadc: adc@11001000 {
+ 		compatible = "mediatek,mt2712-auxadc";
+ 		reg = <0 0x11001000 0 0x1000>;
+@@ -385,6 +421,9 @@
+ 		interrupts = <GIC_SPI 91 IRQ_TYPE_LEVEL_LOW>;
+ 		clocks = <&baud_clk>, <&sys_clk>;
+ 		clock-names = "baud", "bus";
++		dmas = <&apdma 0
++			&apdma 1>;
++		dma-names = "tx", "rx";
+ 		status = "disabled";
+ 	};
+ 
+@@ -395,6 +434,9 @@
+ 		interrupts = <GIC_SPI 92 IRQ_TYPE_LEVEL_LOW>;
+ 		clocks = <&baud_clk>, <&sys_clk>;
+ 		clock-names = "baud", "bus";
++		dmas = <&apdma 2
++			&apdma 3>;
++		dma-names = "tx", "rx";
+ 		status = "disabled";
+ 	};
+ 
+@@ -405,6 +447,9 @@
+ 		interrupts = <GIC_SPI 93 IRQ_TYPE_LEVEL_LOW>;
+ 		clocks = <&baud_clk>, <&sys_clk>;
+ 		clock-names = "baud", "bus";
++		dmas = <&apdma 4
++			&apdma 5>;
++		dma-names = "tx", "rx";
+ 		status = "disabled";
+ 	};
+ 
+@@ -415,6 +460,9 @@
+ 		interrupts = <GIC_SPI 94 IRQ_TYPE_LEVEL_LOW>;
+ 		clocks = <&baud_clk>, <&sys_clk>;
+ 		clock-names = "baud", "bus";
++		dmas = <&apdma 6
++			&apdma 7>;
++		dma-names = "tx", "rx";
+ 		status = "disabled";
+ 	};
+ 
+@@ -629,6 +677,9 @@
+ 		interrupts = <GIC_SPI 126 IRQ_TYPE_LEVEL_LOW>;
+ 		clocks = <&baud_clk>, <&sys_clk>;
+ 		clock-names = "baud", "bus";
++		dmas = <&apdma 8
++			&apdma 9>;
++		dma-names = "tx", "rx";
+ 		status = "disabled";
+ 	};
+ 
 -- 
 1.7.9.5
 
