@@ -2,102 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87DC22741A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 03:48:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90A8E27445
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 04:09:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=HqvNUEEZALq0GLCokH5NhYXgz3u7MGj6NGUFQo8Bv30=; b=sD+3MN6rmTNXnn
-	kBpckmtlBvWdlQ5If0XDb3VHnU48yFR3+Pb1eFR0iOUDrMvCHoyFib3iFp7CKW7bmZKIipMlDuSMo
-	fUDiu8kW5bjGsYAueDc5cpdACRz7sX5jE9sIM1ubRag3sxRl1i6rLYP+3ZbHUXZoIk8LepFu1D+Ug
-	oGV2FBk6YrknVnuvAfGxRZGuX8mtjQgOieS1rhZyjeShfGFMCtw9azhuy6SwyDsUu98IGgeSxjyH1
-	i+vXunRfEj5t6pTFVou1XsribDs/Feh9yhTRMmYgSeURz4vRCzhoK0oAB1Qq6zUaGWJXRx/3QY2BJ
-	YSf+0Ijkt5/VkoqtoUDg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oSoVIfX29RH3JA4PH6GnHUFiMsU/WMtOYI11QmisywE=; b=mrB9PzOPhpdfBt
+	LxhTSNCrDjL94mOXhUGXCIJZjfJWfc/7zhMKBRddW25F29a1ouKDnvOyxPV1BYLPRka85qryMEAzB
+	4Jr+/zoyJfLCqQ/0BrwxcBRg4VEfMgXD7xB8LCDnRU41ZyoQwkiDSX9bae5kldvr2T6042Bztgq0b
+	Kn5rv8iqTVwb8zH6BrgCgylWO4A82DIs4Cm6oivTcjOalPP0fQ5fU76SMcN1SlU8uyCfFMTKVZdd6
+	d/oNYEg1zxPeD8owVeDCWkypl/gPcxXuxPUaGzQ57Z9Ag1rRFEfhvxIqfwkLv/DV/Ndvi3bf7eTZ4
+	z7zT3AauTzuhc8/SDd2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTcpp-0007fF-H8; Thu, 23 May 2019 01:47:57 +0000
-Received: from mail-eopbgr40060.outbound.protection.outlook.com ([40.107.4.60]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1hTdAM-0004uo-6G; Thu, 23 May 2019 02:09:10 +0000
+Received: from mail-eopbgr130072.outbound.protection.outlook.com
+ ([40.107.13.72] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTcph-0007eq-VY
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 01:47:51 +0000
+ id 1hTdAF-0004te-If
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 02:09:05 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=npPU9WFO4GFYAixvY2NBx7WIkmuJ91uDW1b6L0Jvwsg=;
- b=EXSdI4g81dMn0StMsIGAaadVcwTfh5WwPm0wGTo4nb3b9gnfx0zCpZlhsbLiTK4HNx+IFLVNfHirexqJLmIiwCsh1rkQIoYgNMG5MuZYg4f4vIYbV2PWleGxz5wilLMjxoGLOJwPs5pIJxS+s2KthPbKfGZO8SOi0vXNfEuWlvU=
-Received: from AM5PR04MB3299.eurprd04.prod.outlook.com (10.173.255.158) by
- AM5PR04MB3044.eurprd04.prod.outlook.com (10.173.254.147) with Microsoft SMTP
+ bh=MwZgzs/4aZwNfCjdz+/ne/jbJMPxd4bUOyyhLYXEmVI=;
+ b=nP+EimQWUqrXt5cXHaVpbVhy9ZH0Qhzk9/N8pJLoVsYEIZArUpMWK+JjZhixjfAkEwKt6YzZUk4IbDXAjv9uQ73WmK9LUTo7ME0k2MXH+Ydx6ljp8vfknOuWbPlf42I7KMpJ5FFL9oECyA8N7GB96CvUPqYnmsYB2ECqIlrFaq0=
+Received: from VI1PR04MB4543.eurprd04.prod.outlook.com (20.177.55.90) by
+ VI1PR04MB6094.eurprd04.prod.outlook.com (20.179.25.148) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.17; Thu, 23 May 2019 01:47:43 +0000
-Received: from AM5PR04MB3299.eurprd04.prod.outlook.com
- ([fe80::15e3:bb28:7e33:1adb]) by AM5PR04MB3299.eurprd04.prod.outlook.com
- ([fe80::15e3:bb28:7e33:1adb%7]) with mapi id 15.20.1922.017; Thu, 23 May 2019
- 01:47:43 +0000
-From: Xiaowei Bao <xiaowei.bao@nxp.com>
-To: "shawnguo@kernel.org" <shawnguo@kernel.org>, Leo Li <leoyang.li@nxp.com>, 
- "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
- <mark.rutland@arm.com>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "devicetree@vger.kernel.org"
- <devicetree@vger.kernel.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: [PATCHv3] arm64: dts: ls1028a: add flexspi nodes
-Thread-Topic: [PATCHv3] arm64: dts: ls1028a: add flexspi nodes
-Thread-Index: AQHVEQmDureenWGIPkqqXMOejO/D4g==
-Date: Thu, 23 May 2019 01:47:42 +0000
-Message-ID: <20190523014921.15020-1-xiaowei.bao@nxp.com>
+ 15.20.1900.17; Thu, 23 May 2019 02:08:55 +0000
+Received: from VI1PR04MB4543.eurprd04.prod.outlook.com
+ ([fe80::5062:df97:a70b:93f8]) by VI1PR04MB4543.eurprd04.prod.outlook.com
+ ([fe80::5062:df97:a70b:93f8%7]) with mapi id 15.20.1900.020; Thu, 23 May 2019
+ 02:08:54 +0000
+From: Robin Gong <yibin.gong@nxp.com>
+To: Rob Herring <robh@kernel.org>
+Subject: RE: [EXT] Re: [PATCH v4 10/14] dma: imx-sdma: add i.mx6ul/6sx
+ compatible name
+Thread-Topic: [EXT] Re: [PATCH v4 10/14] dma: imx-sdma: add i.mx6ul/6sx
+ compatible name
+Thread-Index: AQHVEIU1vbltRMJezUidB/k1RHkv66Z3Kd0AgADL88A=
+Date: Thu, 23 May 2019 02:08:54 +0000
+Message-ID: <VI1PR04MB4543BE5BB829A2BFDA48824789010@VI1PR04MB4543.eurprd04.prod.outlook.com>
+References: <1558548188-1155-1-git-send-email-yibin.gong@nxp.com>
+ <1558548188-1155-11-git-send-email-yibin.gong@nxp.com>
+ <20190522135128.GA24987@bogus>
+In-Reply-To: <20190522135128.GA24987@bogus>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-clientproxiedby: HK2P15301CA0021.APCP153.PROD.OUTLOOK.COM
- (2603:1096:202:1::31) To AM5PR04MB3299.eurprd04.prod.outlook.com
- (2603:10a6:206:d::30)
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=xiaowei.bao@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: git-send-email 2.17.1
-x-originating-ip: [119.31.174.73]
+ smtp.mailfrom=yibin.gong@nxp.com; 
+x-originating-ip: [119.31.174.66]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: b6b682a0-c735-416e-cd54-08d6df20a54a
+x-ms-office365-filtering-correlation-id: 817b28b3-d63c-44eb-92dc-08d6df239bc7
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:AM5PR04MB3044; 
-x-ms-traffictypediagnostic: AM5PR04MB3044:
-x-microsoft-antispam-prvs: <AM5PR04MB3044EE04B44779BE9A9C0029F5010@AM5PR04MB3044.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:5516;
+ SRVR:VI1PR04MB6094; 
+x-ms-traffictypediagnostic: VI1PR04MB6094:
+x-microsoft-antispam-prvs: <VI1PR04MB6094D46D8E2A38D25049248E89010@VI1PR04MB6094.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 00462943DE
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(136003)(39860400002)(366004)(346002)(376002)(189003)(199004)(14454004)(6486002)(5660300002)(6436002)(26005)(73956011)(66946007)(305945005)(64756008)(7736002)(81166006)(66476007)(66556008)(81156014)(66446008)(8676002)(66066001)(186003)(1076003)(256004)(8936002)(50226002)(6512007)(53936002)(478600001)(2906002)(386003)(6506007)(2501003)(36756003)(25786009)(99286004)(486006)(102836004)(4326008)(2616005)(110136005)(71200400001)(71190400001)(44832011)(476003)(3846002)(316002)(86362001)(52116002)(2201001)(68736007)(6116002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM5PR04MB3044;
- H:AM5PR04MB3299.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ SFS:(10009020)(396003)(346002)(366004)(39860400002)(136003)(376002)(13464003)(189003)(199004)(446003)(476003)(11346002)(4744005)(71190400001)(71200400001)(52536014)(5660300002)(2906002)(486006)(186003)(68736007)(66446008)(64756008)(66556008)(66476007)(66946007)(73956011)(6116002)(26005)(3846002)(7736002)(76116006)(305945005)(81156014)(81166006)(86362001)(66066001)(6916009)(316002)(74316002)(8676002)(8936002)(33656002)(7416002)(54906003)(76176011)(7696005)(229853002)(25786009)(102836004)(256004)(14444005)(4326008)(99286004)(53936002)(55016002)(9686003)(478600001)(6436002)(6506007)(6246003)(14454004);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB6094;
+ H:VI1PR04MB4543.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: XggY+XlbRQos+BGWFNcg7Lep9tYHdSHaGN6LlRFzb7lbUH7buqeFlK/JFrpU10Y9Jq+z2A3RfiRmL2LsuSZIUiYPHJsWec8T0soLqpIHtSvceWTu1qWTLKb7YPVPXSRLu9DyE81OTWI0KcbnrUkjShELslPFGKyFZFriyuNQLMFd+J3OKMF0l1A1z4zu6UUMb3Kq7ZziUamfjczJ7nnAG6+wHP2iD13gwM/XkInI0FuSpdqZtsSF0hcVW3V2D/z8sc+Pm2OEmMceu+/0vxTb7oWw1CEfICgZM0nLQD8gn/y4S98wJVeK3N0EfhpEiahdrVSZdl+0MYvEOaEtuCGrzKNN4DQCNf9PooCafEDYEytsVbLXB5TohdxgOLgPrcuYwoXyuR8W7b/b3T1x/8sHmocSbg9xK/j+4r1Lao0fLi0=
+x-microsoft-antispam-message-info: 3K3cPhbNnzwtDRRdVPWB7LqwrE1SytmzdbFbuVWzSXwQZk3Y7rA0D2XnHHotVTwx3+sRL6VDKWi/xQHHiF6yFOFhIZT9Wd/aljoL8Lx5wOsbGuPHmU5mqHJO63/04mu916C8MXbmFOZklhC+ZuvCV8veFV2h9d2TCHgTZNUqRTRO0642CtdTdz5ibtYipB/riCr8VKtr1VkNBDp102UhasX3I5J4Xvra1cki0WLom6AyaUt/UsqL+Rikl+XKAckrNigKNMyLr9/kV9jCuaBDR6vIHIIIeu1Iop1OeyKgwAnK2AgeUJ9LGAJYrr3a0xbKyuZEo2flSHijZx4vyygD+sxrFhKNJt4szoidsugeYeiY8AUvUU8XZJsI2H4l2PuFKpp1D+XGfLH/uC2XXYdCxB49FYJ8VGstqB2hL0HBwPg=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b6b682a0-c735-416e-cd54-08d6df20a54a
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 May 2019 01:47:43.0230 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 817b28b3-d63c-44eb-92dc-08d6df239bc7
+X-MS-Exchange-CrossTenant-originalarrivaltime: 23 May 2019 02:08:54.8391 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: xiaowei.bao@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM5PR04MB3044
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB6094
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_184750_021051_3E734BDB 
-X-CRM114-Status: GOOD (  11.89  )
+X-CRM114-CacheID: sfid-20190522_190903_715307_C682110D 
+X-CRM114-Status: GOOD (  13.90  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.4.60 listed in list.dnswl.org]
+ no trust [40.107.13.72 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -118,109 +113,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Xiaowei Bao <xiaowei.bao@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "plyatov@gmail.com" <plyatov@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
+ "vkoul@kernel.org" <vkoul@kernel.org>,
+ "broonie@kernel.org" <broonie@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
+ "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
+ "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>
+Content-Type: text/plain; charset="gb2312"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Xiaowei Bao <xiaowei.bao@nxp.com>
-
-Add fspi node property for LS1028A SoC for FlexSPI driver.
-Property added for the FlexSPI controller and for the connected
-slave device for the LS1028ARDB and LS1028AQDS target.
-This is having one SPI-NOR flash device, mt35xu02g connected at
-CS0.
-
-Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
----
-v3:
- - move the "spansion,m25p80" compatible property to the top.
-
- arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts |   15 +++++++++++++++
- arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts |   15 +++++++++++++++
- arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi    |   12 ++++++++++++
- 3 files changed, 42 insertions(+), 0 deletions(-)
-
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
-index 5c3ff43..b8cabd3 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
-@@ -166,6 +166,21 @@
- 	};
- };
- 
-+&fspi {
-+	status = "okay";
-+	mt35xu02g: flash@0 {
-+		compatible = "spansion,m25p80";
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		m25p,fast-read;
-+		spi-max-frequency = <20000000>;
-+		reg = <0>;
-+		/* The following setting enables 1-1-8 (CMD-ADDR-DATA) mode */
-+		spi-rx-bus-width = <8>; /* 8 SPI Rx lines */
-+		spi-tx-bus-width = <1>; /* 1 SPI Tx line */
-+	};
-+};
-+
- &sai1 {
- 	status = "okay";
- };
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
-index f7d4da6..b5e052c 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
-@@ -152,6 +152,21 @@
- 	};
- };
- 
-+&fspi {
-+	status = "okay";
-+	mt35xu02g: flash@0 {
-+		compatible = "spansion,m25p80";
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		m25p,fast-read;
-+		spi-max-frequency = <20000000>;
-+		reg = <0>;
-+		/* The following setting enables 1-1-8 (CMD-ADDR-DATA) mode */
-+		spi-rx-bus-width = <8>; /* 8 SPI Rx lines */
-+		spi-tx-bus-width = <1>; /* 1 SPI Tx line */
-+	};
-+};
-+
- &duart0 {
- 	status = "okay";
- };
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-index e8095cf..06d9c90 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-@@ -189,6 +189,18 @@
- 			snps,incr-burst-type-adjustment = <1>, <4>, <8>, <16>;
- 		};
- 
-+		fspi: spi@20c0000 {
-+			compatible = "nxp,lx2160a-fspi";
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			reg = <0x0 0x20c0000 0x0 0x10000>,
-+			      <0x0 0x20000000 0x0 0x10000000>;
-+			reg-names = "FSPI", "FSPI-memory";
-+			interrupts = <0 25 0x4>; /* Level high type */
-+			clocks = <&clockgen 4 3>, <&clockgen 4 3>;
-+			clock-names = "fspi_en", "fspi";
-+		};
-+
- 		i2c0: i2c@2000000 {
- 			compatible = "fsl,vf610-i2c";
- 			#address-cells = <1>;
--- 
-1.7.1
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgUm9iLA0KCVRoYW5rIHlvdSBmb3IgeW91ciByZW1pbmRpbmcsIEkgaGF2ZSBhZGRlZCBBY2tl
+ZC1ieSB0YWdzIGdvdHRlbiBmcm9tIE1hcmsgYW5kIFZpbm9kIGluIHY0IHBhdGNoIHNldCwgYnV0
+IHRoZXJlIGlzIHN0aWxsIG9uZSB1cGRhdGUgKA0KcmVtb3ZlIGNoZWNraW5nICdldmVudF9pZDEn
+IHplcm8gYXMgJ2V2ZW50X2lkMCcuKSBmb3IgVmlub2QncyBjb25jZXJuLCBzbyBJIHNlbnQgbmV3
+IHY0Lg0KPiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQ0KPiBGcm9tOiBSb2IgSGVycmluZyA8
+cm9iaEBrZXJuZWwub3JnPg0KPiBTZW50OiAyMDE5xOo11MIyMsjVIDIxOjUxPiANCj4gT24gV2Vk
+LCAyMiBNYXkgMjAxOSAxMDowMDozOCArMDAwMCwgUm9iaW4gR29uZyB3cm90ZToNCj4gPiBBZGQg
+aS5teDZ1bCBhbmQgaS5teDZzeCBjb21wYXRpYmxlIG5hbWUgaW4gYmluZGluZyBkb2MuDQo+ID4N
+Cj4gPiBTaWduZWQtb2ZmLWJ5OiBSb2JpbiBHb25nIDx5aWJpbi5nb25nQG54cC5jb20+DQo+ID4g
+LS0tDQo+ID4gIERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9kbWEvZnNsLWlteC1z
+ZG1hLnR4dCB8IDIgKysNCj4gPiAgMSBmaWxlIGNoYW5nZWQsIDIgaW5zZXJ0aW9ucygrKQ0KPiA+
+DQo+IA0KPiBQbGVhc2UgYWRkIEFja2VkLWJ5L1Jldmlld2VkLWJ5IHRhZ3Mgd2hlbiBwb3N0aW5n
+IG5ldyB2ZXJzaW9ucy4gSG93ZXZlciwNCj4gdGhlcmUncyBubyBuZWVkIHRvIHJlcG9zdCBwYXRj
+aGVzICpvbmx5KiB0byBhZGQgdGhlIHRhZ3MuIFRoZSB1cHN0cmVhbQ0KPiBtYWludGFpbmVyIHdp
+bGwgZG8gdGhhdCBmb3IgYWNrcyByZWNlaXZlZCBvbiB0aGUgdmVyc2lvbiB0aGV5IGFwcGx5Lg0K
+PiANCj4gSWYgYSB0YWcgd2FzIG5vdCBhZGRlZCBvbiBwdXJwb3NlLCBwbGVhc2Ugc3RhdGUgd2h5
+IGFuZCB3aGF0IGNoYW5nZWQuDQpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
