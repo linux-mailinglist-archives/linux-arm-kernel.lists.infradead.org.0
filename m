@@ -2,55 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3B1328111
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 17:21:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1087428132
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 17:30:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=doKceCdjT2AA+SxmUVb+II9V9PmSj8upYrcV25ErmXE=; b=nUnST69Y0ALXR2
-	g6+VY6nuds6Ye4Jrv3OlkWU3thtE5BocU6hXgA4+suu6bwPP3ykh5x1sUNAWsBonxwmDjpsCltZdT
-	O9gOhdhRIvZPCT2KCKTFmllyj8D31R9erCZfUcKwgbv2m60KkUnGlynKG0j9KE9PClPRxUZ4YQeUh
-	e1unogVJoKVhyH9ve7cz6kOKcbmArcUcT1WIOuGK5S+y/590aB5MyNM67tDN8xH9ey205KK3cRQ7K
-	Ro0NywDoDQPfl/fNPsFSB9HkljMJByw8mTqW+to2l321hG1Sn5PzNBlPU7tU5XreM3EDp3BykJGXy
-	WVtqjehzvh0RssA2UN8w==;
+	List-Owner; bh=METWqdBdk4g6i82ZpuQMHRV5j5gFNqVB14oX3B7H1+M=; b=gxKO/si9NYdubN
+	V4scBxg9oKUMzQMXcneyh+A7SnkpuJFwKnGTcPuHQmlGVMRhLWD9roLvnESV/E0DpA61x6TZsf7Eg
+	ZG62BUGvDpiemV/gFMjjNC2RI836tEc9JtplkUz5lOQItWBsubrqZXN24j7Y0FL0oA8hVBuhT5Xb1
+	vsfAQwMVVwQ0Ht9a0gJ8r7OqZMLaRpF0NW/Eo/kr0943N5iO67Bb+BikBalTiaPngSk00xwbnBXGE
+	59ypAeBy+5vvnJijCKU6Jsgd38L0uRDvAQLZ7B0+zcUgrEQq6JZthNKKfKnRgKeDYRcsY4YZG/mtG
+	rK/jF5IvpbPfWe/zRPmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTpXH-00036P-HS; Thu, 23 May 2019 15:21:39 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
+	id 1hTpg1-0006i1-JF; Thu, 23 May 2019 15:30:41 +0000
+Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTpXA-000365-QO
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 15:21:33 +0000
+ id 1hTpfu-0006hd-IQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 15:30:35 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5555380D;
- Thu, 23 May 2019 08:21:32 -0700 (PDT)
-Received: from mbp (usa-sjc-mx-foss1.foss.arm.com [217.140.101.70])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3D6CE3F690;
- Thu, 23 May 2019 08:21:26 -0700 (PDT)
-Date: Thu, 23 May 2019 16:21:19 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: enh <enh@google.com>
-Subject: Re: [PATCH v15 00/17] arm64: untag user pointers passed to the kernel
-Message-ID: <20190523152118.t22z37mpqfwjjtkw@mbp>
-References: <cover.1557160186.git.andreyknvl@google.com>
- <20190517144931.GA56186@arrakis.emea.arm.com>
- <CAFKCwrj6JEtp4BzhqO178LFJepmepoMx=G+YdC8sqZ3bcBp3EQ@mail.gmail.com>
- <20190521182932.sm4vxweuwo5ermyd@mbp>
- <201905211633.6C0BF0C2@keescook>
- <20190522101110.m2stmpaj7seezveq@mbp>
- <CAJgzZoosKBwqXRyA6fb8QQSZXFqfHqe9qO9je5TogHhzuoGXJQ@mail.gmail.com>
- <20190522163527.rnnc6t4tll7tk5zw@mbp>
- <CAJgzZooc+wXBBXenm62n2zR8TVrv-y1pXMmHSdxeaNYhFLSzBA@mail.gmail.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 499A680D;
+ Thu, 23 May 2019 08:30:33 -0700 (PDT)
+Received: from ostrya.cambridge.arm.com (ostrya.cambridge.arm.com
+ [10.1.196.129])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 39AC63F690;
+ Thu, 23 May 2019 08:30:32 -0700 (PDT)
+From: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
+To: gregkh@linuxfoundation.org
+Subject: [PATCH stable 4.9] arm64: Save and restore OSDLR_EL1 across
+ suspend/resume
+Date: Thu, 23 May 2019 16:27:33 +0100
+Message-Id: <20190523152733.28069-1-jean-philippe.brucker@arm.com>
+X-Mailer: git-send-email 2.21.0
+In-Reply-To: <155809593723029@kroah.com>
+References: <155809593723029@kroah.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAJgzZooc+wXBBXenm62n2zR8TVrv-y1pXMmHSdxeaNYhFLSzBA@mail.gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_082132_858654_4C297C46 
-X-CRM114-Status: GOOD (  12.81  )
+X-CRM114-CacheID: sfid-20190523_083034_614830_E45A8BC8 
+X-CRM114-Status: UNSURE (   9.54  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -71,57 +64,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org,
- Linux Memory Management List <linux-mm@kvack.org>,
- Khalid Aziz <khalid.aziz@oracle.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
- Evgenii Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Yishai Hadas <yishaih@mellanox.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>, LKML <linux-kernel@vger.kernel.org>,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: catalin.marinas@arm.com, will.deacon@arm.com,
+ linux-arm-kernel@lists.infradead.org, stable@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 22, 2019 at 09:58:22AM -0700, enh wrote:
-> i was questioning the argument about the ioctl issues, and saying that
-> from my perspective, untagging bugs are not really any different than
-> any other kind of kernel bug.
+commit 827a108e354db633698f0b4a10c1ffd2b1f8d1d0 upstream
 
-Once this series gets in, they are indeed just kernel bugs. What I want
-is an easier way to identify them, ideally before they trigger in the
-field.
+When the CPU comes out of suspend, the firmware may have modified the OS
+Double Lock Register. Save it in an unused slot of cpu_suspend_ctx, and
+restore it on resume.
 
-> i still don't see how this isn't just a regular testing/CI issue, the
-> same as any other kind of kernel bug. it's already the case that i can
-> get a bad kernel...
+Signed-off-by: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
+Signed-off-by: Will Deacon <will.deacon@arm.com>
+---
+Modified for v4.9 backport: 623b476fc815 and 6d99b68933fb are missing in
+v4.9, but the conflict is easily resolved.
 
-The testing would have a smaller code coverage in terms of drivers,
-filesystems than something like a static checker (though one does not
-exclude the other).
+Tested on Juno with cpuidle.
+---
+ arch/arm64/mm/proc.S | 26 ++++++++++++++------------
+ 1 file changed, 14 insertions(+), 12 deletions(-)
 
+diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
+index f5fde8d389c9..3ceec224d3d2 100644
+--- a/arch/arm64/mm/proc.S
++++ b/arch/arm64/mm/proc.S
+@@ -64,17 +64,18 @@ ENTRY(cpu_do_suspend)
+ 	mrs	x2, tpidr_el0
+ 	mrs	x3, tpidrro_el0
+ 	mrs	x4, contextidr_el1
+-	mrs	x5, cpacr_el1
+-	mrs	x6, tcr_el1
+-	mrs	x7, vbar_el1
+-	mrs	x8, mdscr_el1
+-	mrs	x9, oslsr_el1
+-	mrs	x10, sctlr_el1
++	mrs	x5, osdlr_el1
++	mrs	x6, cpacr_el1
++	mrs	x7, tcr_el1
++	mrs	x8, vbar_el1
++	mrs	x9, mdscr_el1
++	mrs	x10, oslsr_el1
++	mrs	x11, sctlr_el1
+ 	stp	x2, x3, [x0]
+-	stp	x4, xzr, [x0, #16]
+-	stp	x5, x6, [x0, #32]
+-	stp	x7, x8, [x0, #48]
+-	stp	x9, x10, [x0, #64]
++	stp	x4, x5, [x0, #16]
++	stp	x6, x7, [x0, #32]
++	stp	x8, x9, [x0, #48]
++	stp	x10, x11, [x0, #64]
+ 	ret
+ ENDPROC(cpu_do_suspend)
+ 
+@@ -96,8 +97,8 @@ ENTRY(cpu_do_resume)
+ 	msr	cpacr_el1, x6
+ 
+ 	/* Don't change t0sz here, mask those bits when restoring */
+-	mrs	x5, tcr_el1
+-	bfi	x8, x5, TCR_T0SZ_OFFSET, TCR_TxSZ_WIDTH
++	mrs	x7, tcr_el1
++	bfi	x8, x7, TCR_T0SZ_OFFSET, TCR_TxSZ_WIDTH
+ 
+ 	msr	tcr_el1, x8
+ 	msr	vbar_el1, x9
+@@ -115,6 +116,7 @@ ENTRY(cpu_do_resume)
+ 	/*
+ 	 * Restore oslsr_el1 by writing oslar_el1
+ 	 */
++	msr	osdlr_el1, x5
+ 	ubfx	x11, x11, #1, #1
+ 	msr	oslar_el1, x11
+ 	reset_pmuserenr_el0 x0			// Disable PMU access from EL0
 -- 
-Catalin
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
