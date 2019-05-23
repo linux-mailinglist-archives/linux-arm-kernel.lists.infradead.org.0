@@ -2,63 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F941275E9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 08:13:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81C922761F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 08:40:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6lU2cvA7/yLUutA00cqLQ80qkPeyIX7Ir5NrV8uauyo=; b=e8fE5SLNajuO1Z
-	8qxVoIFN7jJpNZeMJZcmZrOOvHbDKhKFpPcVfiU2Rxqtr+7tEJgO2hOh8QMBRCmRdG/iH/oTuWasL
-	Oc5UkOOWO+AK2haRG3DVsJziZpj9xZjUlx9F9G8C3ntQm44PrncWlcqmVEJKJBpJBFj2p1Vkc09Qf
-	hnsUzBm7EJliXE5EJO2M33hUV5NZIiZ4GLXEmsj4aUkjWT/ZrT4x2Kokf85JE0VLxdLv5WzOgg9AO
-	nieNE7Nl/Zk2UUqPAT+aLWMFfU2J0F42wUvo6PGlOG5W7HvFqGdFBcMarXliSKAWu5Uz7KD6mtkrF
-	Ugx9NiIJ+Yr//sFqVopw==;
+	List-Owner; bh=HpIReChNvmg5Ce0biu8GLw70k0GrsoGJaP9Nbzp/RUA=; b=otBebSGzD0Mm5o
+	UO1RZRSSG1WhJD+4s/PnKJRtkd9BW8brj4GO/KQzF1KLOVjQ3e+WDiAtdhlLAh5QYIytXZUu3/C08
+	HxKi7ypDSSWs2MuRVaEe9GO7Pm9vAdqYP6HMUtkCct8ZVwos1alF78/KeuZVJPL7wZyeiZjzRMw3V
+	m4hlyh+i06Ot4m5/aSe0jGqdeJER6ETK/FhfIKV9RI8aB5LPxGDnH6m3K++HgpFxZOR2bpQ7AYf+u
+	DTkLN4YLdjrqoIvT1pAjrtEdrmRtmMg7wg74ye3mKqcpQsqSTf+6YjmaACPOWVKHuS+94+n1XistK
+	mUUgIcMaS3fFDGfRiy9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTgyx-0004s8-CK; Thu, 23 May 2019 06:13:39 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hThOe-0004Lh-BW; Thu, 23 May 2019 06:40:12 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTgyo-0004rH-3j; Thu, 23 May 2019 06:13:32 +0000
-X-UUID: 95ed1a278bca4de39dd70483acbb440b-20190522
-X-UUID: 95ed1a278bca4de39dd70483acbb440b-20190522
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1863230554; Wed, 22 May 2019 22:13:23 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 22 May 2019 23:13:21 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 23 May 2019 14:13:20 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 23 May 2019 14:13:20 +0800
-Message-ID: <1558592000.552.3.camel@mtksdaap41>
-Subject: Re: [PATCH] drm/mediatek: Fix warning about unhandled enum value
-From: CK Hu <ck.hu@mediatek.com>
-To: Sean Paul <sean@poorly.run>
-Date: Thu, 23 May 2019 14:13:20 +0800
-In-Reply-To: <20190522202207.223110-1-sean@poorly.run>
-References: <20190522202207.223110-1-sean@poorly.run>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hThOW-0003DC-QJ
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 06:40:06 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x4N6W1if012749; Thu, 23 May 2019 08:39:57 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=ho0xlKX03HhiHuuMo5Fyh6gxLhNZqkg4on/Piy7I8/k=;
+ b=AzI25pdKMW2AjCHGniSJK4KsArt6w16MeGtqNv6ySWJN2y0Ga0RgV0gy8isVaQha347W
+ n4ULpsYM+oEedpcpSY4Rl+bGtGcT3yLYp66/J7BZQjPur1ovG2hA2mgDkhrbTO/P3doy
+ mt0kdlnD4Y1KZxOW0q+eLLlJCRQcMCDPF3XRG5vc07okdJAsEsGvXXgfLmraX2JjB1Fp
+ JD8q79MZieR23MMkiXznPys1uVASw4p2yhHODeAqpZGAuQ5JWdrVERKhQ8U8eb/XoUU1
+ Q2VTIVzkW1W718PwZNueBENTv//afmBYzun3loTA5DIQyrpACZB/pWokAWKgGAbiq2n3 gQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2sj7tucwk2-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Thu, 23 May 2019 08:39:57 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id DB7B034;
+ Thu, 23 May 2019 06:39:56 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id B933614C9;
+ Thu, 23 May 2019 06:39:56 +0000 (GMT)
+Received: from SFHDAG5NODE3.st.com (10.75.127.15) by SFHDAG3NODE3.st.com
+ (10.75.127.9) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 23 May
+ 2019 08:39:56 +0200
+Received: from SFHDAG5NODE3.st.com ([fe80::7c09:5d6b:d2c7:5f47]) by
+ SFHDAG5NODE3.st.com ([fe80::7c09:5d6b:d2c7:5f47%20]) with mapi id
+ 15.00.1347.000; Thu, 23 May 2019 08:39:56 +0200
+From: Fabien DESSENNE <fabien.dessenne@st.com>
+To: Arnaud POULIQUEN <arnaud.pouliquen@st.com>, Jassi Brar
+ <jassisinghbrar@gmail.com>
+Subject: Re: [PATCH] mailbox: stm32_ipcc: add spinlock to fix channels
+ concurrent access
+Thread-Topic: [PATCH] mailbox: stm32_ipcc: add spinlock to fix channels
+ concurrent access
+Thread-Index: AQHVEHf3zLD2dpF4NEGX8BuhDUErpqZ4IjCA
+Date: Thu, 23 May 2019 06:39:56 +0000
+Message-ID: <7a0352eb-41ea-4d81-4a22-ba9df2c72148@st.com>
+References: <1558513535-16736-1-git-send-email-arnaud.pouliquen@st.com>
+In-Reply-To: <1558513535-16736-1-git-send-email-arnaud.pouliquen@st.com>
+Accept-Language: fr-FR, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.50]
+Content-ID: <12B83101779F314AADBBE24BC168E7AC@st.com>
 MIME-Version: 1.0
-X-MTK: N
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-05-23_06:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_231330_154672_A914A9CE 
-X-CRM114-Status: GOOD (  15.04  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190522_234005_339741_F86207BC 
+X-CRM114-Status: GOOD (  22.39  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -70,59 +107,150 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-fbdev@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- dri-devel@lists.freedesktop.org, Hans Verkuil <hansverk@cisco.com>,
- David Airlie <airlied@linux.ie>, Uma Shankar <uma.shankar@intel.com>,
- Sean Paul <seanpaul@chromium.org>,
- Ville =?ISO-8859-1?Q?Syrj=E4l=E4?= <ville.syrjala@linux.intel.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Shashank
- Sharma <shashank.sharma@intel.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksIFNlYW46CgpPbiBXZWQsIDIwMTktMDUtMjIgYXQgMTY6MjEgLTA0MDAsIFNlYW4gUGF1bCB3
-cm90ZToKPiBGcm9tOiBTZWFuIFBhdWwgPHNlYW5wYXVsQGNocm9taXVtLm9yZz4KPiAKPiBGaXhl
-cyB0aGUgZm9sbG93aW5nIGJ1aWxkIHdhcm5pbmc6Cj4gZHJpdmVycy9ncHUvZHJtL21lZGlhdGVr
-L210a19oZG1pLmM6MzI3OjI6IHdhcm5pbmc6IGVudW1lcmF0aW9uIHZhbHVlIOKAmEhETUlfSU5G
-T0ZSQU1FX1RZUEVfRFJN4oCZIG5vdCBoYW5kbGVkIGluIHN3aXRjaCBbLVdzd2l0Y2hdCj4gCj4g
-SW50cm9kdWNlZCB3aXRoIHRoZSBhZGRpdGlvbiBvZiBIRE1JX0lORk9GUkFNRV9UWVBFX0RSTSBp
-biB0aGUgY29tbWl0Cj4gYmVsb3csIGJ1dCB0aGUgY29kZSByZWFsbHkgc2hvdWxkIGhhdmUgYmVl
-biBmdXR1cmUtcHJvb2ZlZCBmcm9tIHRoZQo+IHN0YXJ0LgoKQWNrZWQtYnk6IENLIEh1IDxjay5o
-dUBtZWRpYXRlay5jb20+Cgo+IAo+IEZpeGVzOiAyY2RiZmQ2NmE4MjkgKCJkcm06IEVuYWJsZSBI
-RFIgaW5mb2ZyYW1lIHN1cHBvcnQiKQoKSSB0aGluayAiZHJtOiBFbmFibGUgSERSIGluZm9mcmFt
-ZSBzdXBwb3J0IiBleGlzdCBvbmx5IGluIGRybS1taXNjIHRyZWUsCmNvdWxkIHlvdSBqdXN0IG1l
-cmdlIHRoaXMgcGF0Y2ggdG8gImRybTogRW5hYmxlIEhEUiBpbmZvZnJhbWUgc3VwcG9ydCI/CgpS
-ZWdhcmRzLApDSwoKPiBDYzogVW1hIFNoYW5rYXIgPHVtYS5zaGFua2FyQGludGVsLmNvbT4KPiBD
-YzogU2hhc2hhbmsgU2hhcm1hIDxzaGFzaGFuay5zaGFybWFAaW50ZWwuY29tPgo+IENjOiBWaWxs
-ZSBTeXJqw6Rsw6QgPHZpbGxlLnN5cmphbGFAbGludXguaW50ZWwuY29tPgo+IENjOiBNYWFydGVu
-IExhbmtob3JzdCA8bWFhcnRlbi5sYW5raG9yc3RAbGludXguaW50ZWwuY29tPgo+IENjOiBNYXhp
-bWUgUmlwYXJkIDxtYXhpbWUucmlwYXJkQGJvb3RsaW4uY29tPgo+IENjOiBTZWFuIFBhdWwgPHNl
-YW5AcG9vcmx5LnJ1bj4KPiBDYzogRGF2aWQgQWlybGllIDxhaXJsaWVkQGxpbnV4LmllPgo+IENj
-OiBEYW5pZWwgVmV0dGVyIDxkYW5pZWxAZmZ3bGwuY2g+Cj4gQ2M6IEJhcnRsb21pZWogWm9sbmll
-cmtpZXdpY3ogPGIuem9sbmllcmtpZUBzYW1zdW5nLmNvbT4KPiBDYzogIlZpbGxlIFN5cmrDpGzD
-pCIgPHZpbGxlLnN5cmphbGFAbGludXguaW50ZWwuY29tPgo+IENjOiBIYW5zIFZlcmt1aWwgPGhh
-bnN2ZXJrQGNpc2NvLmNvbT4KPiBDYzogZHJpLWRldmVsQGxpc3RzLmZyZWVkZXNrdG9wLm9yZwo+
-IENjOiBsaW51eC1mYmRldkB2Z2VyLmtlcm5lbC5vcmcKPiBTaWduZWQtb2ZmLWJ5OiBTZWFuIFBh
-dWwgPHNlYW5wYXVsQGNocm9taXVtLm9yZz4KPiAtLS0KPiAgZHJpdmVycy9ncHUvZHJtL21lZGlh
-dGVrL210a19oZG1pLmMgfCAzICsrKwo+ICAxIGZpbGUgY2hhbmdlZCwgMyBpbnNlcnRpb25zKCsp
-Cj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9tZWRpYXRlay9tdGtfaGRtaS5jIGIv
-ZHJpdmVycy9ncHUvZHJtL21lZGlhdGVrL210a19oZG1pLmMKPiBpbmRleCBlMDRlNmMyOTNkMzku
-LjEwY2M5OTEwZjE2NCAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2dwdS9kcm0vbWVkaWF0ZWsvbXRr
-X2hkbWkuYwo+ICsrKyBiL2RyaXZlcnMvZ3B1L2RybS9tZWRpYXRlay9tdGtfaGRtaS5jCj4gQEAg
-LTM0MSw2ICszNDEsOSBAQCBzdGF0aWMgdm9pZCBtdGtfaGRtaV9od19zZW5kX2luZm9fZnJhbWUo
-c3RydWN0IG10a19oZG1pICpoZG1pLCB1OCAqYnVmZmVyLAo+ICAJCWN0cmxfZnJhbWVfZW4gPSBW
-U19FTjsKPiAgCQljdHJsX3JlZyA9IEdSTF9BQ1BfSVNSQ19DVFJMOwo+ICAJCWJyZWFrOwo+ICsJ
-ZGVmYXVsdDoKPiArCQlkZXZfZXJyKGhkbWktPmRldiwgIlVua25vd24gaW5mb2ZyYW1lIHR5cGUg
-JWRcbiIsIGZyYW1lX3R5cGUpOwo+ICsJCXJldHVybjsKPiAgCX0KPiAgCW10a19oZG1pX2NsZWFy
-X2JpdHMoaGRtaSwgY3RybF9yZWcsIGN0cmxfZnJhbWVfZW4pOwo+ICAJbXRrX2hkbWlfd3JpdGUo
-aGRtaSwgR1JMX0lORk9GUk1fVFlQRSwgZnJhbWVfdHlwZSk7CgoKCl9fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
-aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi Arnaud,
+
+
+Thank you for the patch.
+
+
+On 22/05/2019 10:25 AM, Arnaud Pouliquen wrote:
+> Add spinlock protection on IPCC register update to avoid race condition.
+> Without this fix, stm32_ipcc_set_bits and stm32_ipcc_clr_bits can be
+> called in parallel for different channels. This results in register
+> corruptions.
+>
+> Signed-off-by: Arnaud Pouliquen <arnaud.pouliquen@st.com>
+
+Reviewed-by: Fabien Dessenne <fabien.dessenne@st.com>
+
+
+> ---
+>   drivers/mailbox/stm32-ipcc.c | 37 +++++++++++++++++++++++++++----------
+>   1 file changed, 27 insertions(+), 10 deletions(-)
+>
+> diff --git a/drivers/mailbox/stm32-ipcc.c b/drivers/mailbox/stm32-ipcc.c
+> index f91dfb1327c7..5c2d1e1f988b 100644
+> --- a/drivers/mailbox/stm32-ipcc.c
+> +++ b/drivers/mailbox/stm32-ipcc.c
+> @@ -50,6 +50,7 @@ struct stm32_ipcc {
+>   	void __iomem *reg_base;
+>   	void __iomem *reg_proc;
+>   	struct clk *clk;
+> +	spinlock_t lock; /* protect access to IPCC registers */
+>   	int irqs[IPCC_IRQ_NUM];
+>   	int wkp;
+>   	u32 proc_id;
+> @@ -58,14 +59,24 @@ struct stm32_ipcc {
+>   	u32 xmr;
+>   };
+>   
+> -static inline void stm32_ipcc_set_bits(void __iomem *reg, u32 mask)
+> +static inline void stm32_ipcc_set_bits(spinlock_t *lock, void __iomem *reg,
+> +				       u32 mask)
+>   {
+> +	unsigned long flags;
+> +
+> +	spin_lock_irqsave(lock, flags);
+>   	writel_relaxed(readl_relaxed(reg) | mask, reg);
+> +	spin_unlock_irqrestore(lock, flags);
+>   }
+>   
+> -static inline void stm32_ipcc_clr_bits(void __iomem *reg, u32 mask)
+> +static inline void stm32_ipcc_clr_bits(spinlock_t *lock, void __iomem *reg,
+> +				       u32 mask)
+>   {
+> +	unsigned long flags;
+> +
+> +	spin_lock_irqsave(lock, flags);
+>   	writel_relaxed(readl_relaxed(reg) & ~mask, reg);
+> +	spin_unlock_irqrestore(lock, flags);
+>   }
+>   
+>   static irqreturn_t stm32_ipcc_rx_irq(int irq, void *data)
+> @@ -92,7 +103,7 @@ static irqreturn_t stm32_ipcc_rx_irq(int irq, void *data)
+>   
+>   		mbox_chan_received_data(&ipcc->controller.chans[chan], NULL);
+>   
+> -		stm32_ipcc_set_bits(ipcc->reg_proc + IPCC_XSCR,
+> +		stm32_ipcc_set_bits(&ipcc->lock, ipcc->reg_proc + IPCC_XSCR,
+>   				    RX_BIT_CHAN(chan));
+>   
+>   		ret = IRQ_HANDLED;
+> @@ -121,7 +132,7 @@ static irqreturn_t stm32_ipcc_tx_irq(int irq, void *data)
+>   		dev_dbg(dev, "%s: chan:%d tx\n", __func__, chan);
+>   
+>   		/* mask 'tx channel free' interrupt */
+> -		stm32_ipcc_set_bits(ipcc->reg_proc + IPCC_XMR,
+> +		stm32_ipcc_set_bits(&ipcc->lock, ipcc->reg_proc + IPCC_XMR,
+>   				    TX_BIT_CHAN(chan));
+>   
+>   		mbox_chan_txdone(&ipcc->controller.chans[chan], 0);
+> @@ -141,10 +152,12 @@ static int stm32_ipcc_send_data(struct mbox_chan *link, void *data)
+>   	dev_dbg(ipcc->controller.dev, "%s: chan:%d\n", __func__, chan);
+>   
+>   	/* set channel n occupied */
+> -	stm32_ipcc_set_bits(ipcc->reg_proc + IPCC_XSCR, TX_BIT_CHAN(chan));
+> +	stm32_ipcc_set_bits(&ipcc->lock, ipcc->reg_proc + IPCC_XSCR,
+> +			    TX_BIT_CHAN(chan));
+>   
+>   	/* unmask 'tx channel free' interrupt */
+> -	stm32_ipcc_clr_bits(ipcc->reg_proc + IPCC_XMR, TX_BIT_CHAN(chan));
+> +	stm32_ipcc_clr_bits(&ipcc->lock, ipcc->reg_proc + IPCC_XMR,
+> +			    TX_BIT_CHAN(chan));
+>   
+>   	return 0;
+>   }
+> @@ -163,7 +176,8 @@ static int stm32_ipcc_startup(struct mbox_chan *link)
+>   	}
+>   
+>   	/* unmask 'rx channel occupied' interrupt */
+> -	stm32_ipcc_clr_bits(ipcc->reg_proc + IPCC_XMR, RX_BIT_CHAN(chan));
+> +	stm32_ipcc_clr_bits(&ipcc->lock, ipcc->reg_proc + IPCC_XMR,
+> +			    RX_BIT_CHAN(chan));
+>   
+>   	return 0;
+>   }
+> @@ -175,7 +189,7 @@ static void stm32_ipcc_shutdown(struct mbox_chan *link)
+>   					       controller);
+>   
+>   	/* mask rx/tx interrupt */
+> -	stm32_ipcc_set_bits(ipcc->reg_proc + IPCC_XMR,
+> +	stm32_ipcc_set_bits(&ipcc->lock, ipcc->reg_proc + IPCC_XMR,
+>   			    RX_BIT_CHAN(chan) | TX_BIT_CHAN(chan));
+>   
+>   	clk_disable_unprepare(ipcc->clk);
+> @@ -208,6 +222,8 @@ static int stm32_ipcc_probe(struct platform_device *pdev)
+>   	if (!ipcc)
+>   		return -ENOMEM;
+>   
+> +	spin_lock_init(&ipcc->lock);
+> +
+>   	/* proc_id */
+>   	if (of_property_read_u32(np, "st,proc-id", &ipcc->proc_id)) {
+>   		dev_err(dev, "Missing st,proc-id\n");
+> @@ -259,9 +275,10 @@ static int stm32_ipcc_probe(struct platform_device *pdev)
+>   	}
+>   
+>   	/* mask and enable rx/tx irq */
+> -	stm32_ipcc_set_bits(ipcc->reg_proc + IPCC_XMR,
+> +	stm32_ipcc_set_bits(&ipcc->lock, ipcc->reg_proc + IPCC_XMR,
+>   			    RX_BIT_MASK | TX_BIT_MASK);
+> -	stm32_ipcc_set_bits(ipcc->reg_proc + IPCC_XCR, XCR_RXOIE | XCR_TXOIE);
+> +	stm32_ipcc_set_bits(&ipcc->lock, ipcc->reg_proc + IPCC_XCR,
+> +			    XCR_RXOIE | XCR_TXOIE);
+>   
+>   	/* wakeup */
+>   	if (of_property_read_bool(np, "wakeup-source")) {
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
