@@ -2,54 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45BF027A73
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 12:26:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 31EB327A9C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 12:35:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=lUb/g5TgXcotKNVEBNlGnCs6Hfct43MpdcXrd49igUM=; b=I1lJob5LUsSLSm
-	NgmCZRRCH8YFZu1tAjLCiyCBKyoxAZcQJaFVl26eToMVZZliFvW23KAglzBwAnXl6Y9lPEZmn9QFl
-	COdN0pjIl5StkiEOyHfDWGdOrx3YNwSAENSQaZeSh4qsuYRVZk5ZxUrMcOu63/9HPmlq/LqFXVdhH
-	D0rEXKBuNtQUsapFvuCkEszlZFJOnUzKIZt0PtHUKJpRFQYPnYIXLIOsTMlfID2DeMozAANGmnvJA
-	D0lYQpLVPcz79dZnjcjcLhVhXA0Kd/Cn9NknNt1HzHN05AiDlPHFufxs+0YpFjtyFbWm6pVRzT7uD
-	HKRslte7w0MOaNIpzqGQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=5ptdHbo43XTTUj5n/juLGcz4ujI+/E5eWxfEwcAOUJ0=; b=iPf
+	+CBbec5HJPPpWAHVdGoM0lkd2BaUeAAAud5IZUG7LaCQmE3Hu673/fF4r2WVY18Ezb2rRdE1tzf2j
+	rV8ksjfZvuZxOiXJow2iD22zj7rN625FwYPhq39MPpFYX9a3L6M87RL58JaxPHFJ+3s0n4RL5CUyw
+	MCNinUK2LWuFRfNg7Jc8cLInxcmhN3hOrz9ROFPaJTabkIR+chgSbyPtewuXs10DhFUV4yfllQDc6
+	zhX/AjEaQBTfC4n8IUwbfrvf2D/hd6FBAu4hD5itLZV394seE+T3rZALoORqr/7Uoo8hPtFGH/2wH
+	MerdOa20fhNcJ4iQa5Lvv4rmkegamVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTkvH-0005Od-8A; Thu, 23 May 2019 10:26:07 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
+	id 1hTl4K-0000OR-OD; Thu, 23 May 2019 10:35:28 +0000
+Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTkuC-0003LK-P4
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 10:25:20 +0000
+ id 1hTl4D-0000Nm-8l
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 10:35:22 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 41BB9341;
- Thu, 23 May 2019 03:25:00 -0700 (PDT)
-Received: from filthy-habits.cambridge.arm.com
- (filthy-habits.cambridge.arm.com [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7894E3F718;
- Thu, 23 May 2019 03:24:59 -0700 (PDT)
-From: Marc Zyngier <marc.zyngier@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: Handle erratum 1418040 as a superset of erratum 1188873
-Date: Thu, 23 May 2019 11:24:50 +0100
-Message-Id: <20190523102450.207532-1-marc.zyngier@arm.com>
-X-Mailer: git-send-email 2.20.1
-MIME-Version: 1.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E3737341;
+ Thu, 23 May 2019 03:35:20 -0700 (PDT)
+Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id CECA73F718;
+ Thu, 23 May 2019 03:35:18 -0700 (PDT)
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: kvmarm@lists.cs.columbia.edu,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 00/15] arm64: KVM: add SPE profiling support for guest
+Date: Thu, 23 May 2019 11:34:47 +0100
+Message-Id: <20190523103502.25925-1-sudeep.holla@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_032501_156242_89FA93EE 
-X-CRM114-Status: GOOD (  14.91  )
+X-CRM114-CacheID: sfid-20190523_033521_311136_8F6D9FB2 
+X-CRM114-Status: GOOD (  12.35  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -61,151 +59,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>
+Cc: kvm@vger.kernel.org, Suzuki K Pouloze <suzuki.poulose@arm.com>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Julien Thierry <julien.thierry@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, Sudeep Holla <sudeep.holla@arm.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We already mitigate erratum 1188873 affecting Cortex-A76 and
-Neoverse-N1 r0p0 to r2p0. It turns out that revisions r0p0 to
-r3p1 of the same cores are affected by erratum 1418040, which
-has the same workaround as 1188873.
+Hi,
 
-Let's expand the range of affected revisions to match 1418040,
-and repaint all occurences of 1188873 to 1418040. Whilst we're
-there, do a bit of reformating in silicon-errata.txt and drop
-a now unnecessary dependency on ARM_ARCH_TIMER_OOL_WORKAROUND.
+This series implements support for allowing KVM guests to use the Arm
+Statistical Profiling Extension (SPE).
 
-Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
----
- Documentation/arm64/silicon-errata.txt |  8 ++++----
- arch/arm64/Kconfig                     |  7 +++----
- arch/arm64/include/asm/cpucaps.h       |  2 +-
- arch/arm64/kernel/cpu_errata.c         | 24 ++++++++++++++----------
- arch/arm64/kernel/entry.S              |  4 ++--
- 5 files changed, 24 insertions(+), 21 deletions(-)
+The patches are also available on a branch[1]. The last two extra
+patches are for the kvmtool if someone wants to play with it.
 
-diff --git a/Documentation/arm64/silicon-errata.txt b/Documentation/arm64/silicon-errata.txt
-index 68d9b74fd751..94fa1941b84c 100644
---- a/Documentation/arm64/silicon-errata.txt
-+++ b/Documentation/arm64/silicon-errata.txt
-@@ -58,13 +58,13 @@ stable kernels.
- | ARM            | Cortex-A72      | #853709         | N/A                         |
- | ARM            | Cortex-A73      | #858921         | ARM64_ERRATUM_858921        |
- | ARM            | Cortex-A55      | #1024718        | ARM64_ERRATUM_1024718       |
--| ARM            | Cortex-A76      | #1188873        | ARM64_ERRATUM_1188873       |
-+| ARM            | Cortex-A76      | #1188873,1418040| ARM64_ERRATUM_1418040       |
- | ARM            | Cortex-A76      | #1165522        | ARM64_ERRATUM_1165522       |
- | ARM            | Cortex-A76      | #1286807        | ARM64_ERRATUM_1286807       |
--| ARM            | Neoverse-N1     | #1188873        | ARM64_ERRATUM_1188873       |
--| ARM            | MMU-500         | #841119,#826419 | N/A                         |
-+| ARM            | Neoverse-N1     | #1188873,1418040| ARM64_ERRATUM_1418040       |
-+| ARM            | MMU-500         | #841119,826419  | N/A                         |
- |                |                 |                 |                             |
--| Cavium         | ThunderX ITS    | #22375, #24313  | CAVIUM_ERRATUM_22375        |
-+| Cavium         | ThunderX ITS    | #22375,24313    | CAVIUM_ERRATUM_22375        |
- | Cavium         | ThunderX ITS    | #23144          | CAVIUM_ERRATUM_23144        |
- | Cavium         | ThunderX GICv3  | #23154          | CAVIUM_ERRATUM_23154        |
- | Cavium         | ThunderX Core   | #27456          | CAVIUM_ERRATUM_27456        |
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 4780eb7af842..f6a105b953ed 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -475,16 +475,15 @@ config ARM64_ERRATUM_1024718
- 
- 	  If unsure, say Y.
- 
--config ARM64_ERRATUM_1188873
-+config ARM64_ERRATUM_1418040
- 	bool "Cortex-A76/Neoverse-N1: MRC read following MRRC read of specific Generic Timer in AArch32 might give incorrect result"
- 	default y
- 	depends on COMPAT
--	select ARM_ARCH_TIMER_OOL_WORKAROUND
- 	help
- 	  This option adds a workaround for ARM Cortex-A76/Neoverse-N1
--	  erratum 1188873.
-+	  errata 1188873 and 1418040.
- 
--	  Affected Cortex-A76/Neoverse-N1 cores (r0p0, r1p0, r2p0) could
-+	  Affected Cortex-A76/Neoverse-N1 cores (r0p0 to r3p1) could
- 	  cause register corruption when accessing the timer registers
- 	  from AArch32 userspace.
- 
-diff --git a/arch/arm64/include/asm/cpucaps.h b/arch/arm64/include/asm/cpucaps.h
-index defdc67d9ab4..5e10515c819e 100644
---- a/arch/arm64/include/asm/cpucaps.h
-+++ b/arch/arm64/include/asm/cpucaps.h
-@@ -53,7 +53,7 @@
- #define ARM64_HAS_STAGE2_FWB			32
- #define ARM64_HAS_CRC32				33
- #define ARM64_SSBS				34
--#define ARM64_WORKAROUND_1188873		35
-+#define ARM64_WORKAROUND_1418040		35
- #define ARM64_HAS_SB				36
- #define ARM64_WORKAROUND_1165522		37
- #define ARM64_HAS_ADDRESS_AUTH_ARCH		38
-diff --git a/arch/arm64/kernel/cpu_errata.c b/arch/arm64/kernel/cpu_errata.c
-index e88d4e7bdfc7..266cc0a1be38 100644
---- a/arch/arm64/kernel/cpu_errata.c
-+++ b/arch/arm64/kernel/cpu_errata.c
-@@ -682,12 +682,16 @@ static const struct midr_range workaround_clean_cache[] = {
- };
- #endif
- 
--#ifdef CONFIG_ARM64_ERRATUM_1188873
--static const struct midr_range erratum_1188873_list[] = {
--	/* Cortex-A76 r0p0 to r2p0 */
--	MIDR_RANGE(MIDR_CORTEX_A76, 0, 0, 2, 0),
--	/* Neoverse-N1 r0p0 to r2p0 */
--	MIDR_RANGE(MIDR_NEOVERSE_N1, 0, 0, 2, 0),
-+#ifdef CONFIG_ARM64_ERRATUM_1418040
-+/*
-+ * - 1188873 affects r0p0 to r2p0
-+ * - 1418040 affects r0p0 to r3p1
-+ */
-+static const struct midr_range erratum_1418040_list[] = {
-+	/* Cortex-A76 r0p0 to r3p1 */
-+	MIDR_RANGE(MIDR_CORTEX_A76, 0, 0, 3, 1),
-+	/* Neoverse-N1 r0p0 to r3p1 */
-+	MIDR_RANGE(MIDR_NEOVERSE_N1, 0, 0, 3, 1),
- 	{},
- };
- #endif
-@@ -809,11 +813,11 @@ const struct arm64_cpu_capabilities arm64_errata[] = {
- 		.matches = has_ssbd_mitigation,
- 		.midr_range_list = arm64_ssb_cpus,
- 	},
--#ifdef CONFIG_ARM64_ERRATUM_1188873
-+#ifdef CONFIG_ARM64_ERRATUM_1418040
- 	{
--		.desc = "ARM erratum 1188873",
--		.capability = ARM64_WORKAROUND_1188873,
--		ERRATA_MIDR_RANGE_LIST(erratum_1188873_list),
-+		.desc = "ARM erratum 1418040",
-+		.capability = ARM64_WORKAROUND_1418040,
-+		ERRATA_MIDR_RANGE_LIST(erratum_1418040_list),
- 	},
- #endif
- #ifdef CONFIG_ARM64_ERRATUM_1165522
-diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-index 1a7811b7e3c4..cd0c7af8e4a8 100644
---- a/arch/arm64/kernel/entry.S
-+++ b/arch/arm64/kernel/entry.S
-@@ -336,8 +336,8 @@ alternative_if ARM64_WORKAROUND_845719
- alternative_else_nop_endif
- #endif
- 3:
--#ifdef CONFIG_ARM64_ERRATUM_1188873
--alternative_if_not ARM64_WORKAROUND_1188873
-+#ifdef CONFIG_ARM64_ERRATUM_1418040
-+alternative_if_not ARM64_WORKAROUND_1418040
- 	b	4f
- alternative_else_nop_endif
- 	/*
--- 
-2.20.1
+Regards,
+Sudeep
+
+v1->v2:
+	- Rebased on v5.2-rc1
+	- Adjusted sysreg_elx_s macros with merged clang build support
+
+[1] git://git.kernel.org/pub/scm/linux/kernel/git/sudeep.holla/linux.git kvm_spe
+
+Sudeep Holla (15):
+  KVM: arm64: add {read,write}_sysreg_elx_s versions for new registers
+  dt-bindings: ARM SPE: highlight the need for PPI partitions on
+    heterogeneous systems
+  arm64: KVM: reset E2PB correctly in MDCR_EL2 when exiting the
+    guest(VHE)
+  arm64: KVM: define SPE data structure for each vcpu
+  arm64: KVM: add access handler for SPE system registers
+  arm64: KVM/VHE: enable the use PMSCR_EL12 on VHE systems
+  arm64: KVM: split debug save restore across vm/traps activation
+  arm64: KVM/debug: drop pmscr_el1 and use sys_regs[PMSCR_EL1] in
+    kvm_cpu_context
+  arm64: KVM: add support to save/restore SPE profiling buffer controls
+  arm64: KVM: enable conditional save/restore full SPE profiling buffer
+    controls
+  arm64: KVM/debug: trap all accesses to SPE controls at EL1
+  KVM: arm64: add a new vcpu device control group for SPEv1
+  KVM: arm64: enable SPE support
+  KVMTOOL: update_headers: Sync kvm UAPI headers with linux v5.2-rc1
+  KVMTOOL: kvm: add a vcpu feature for SPEv1 support
+
+ .../devicetree/bindings/arm/spe-pmu.txt       |   5 +-
+ Documentation/virtual/kvm/devices/vcpu.txt    |  28 +++
+ arch/arm64/boot/dts/arm/rtsm_ve-aemv8a.dts    | 185 +++++++++++-------
+ arch/arm64/configs/defconfig                  |   6 +
+ arch/arm64/include/asm/kvm_host.h             |  19 +-
+ arch/arm64/include/asm/kvm_hyp.h              |  26 ++-
+ arch/arm64/include/uapi/asm/kvm.h             |   4 +
+ arch/arm64/kvm/Kconfig                        |   7 +
+ arch/arm64/kvm/Makefile                       |   1 +
+ arch/arm64/kvm/guest.c                        |   9 +
+ arch/arm64/kvm/hyp/debug-sr.c                 |  98 +++++++---
+ arch/arm64/kvm/hyp/switch.c                   |  18 +-
+ arch/arm64/kvm/reset.c                        |   3 +
+ arch/arm64/kvm/sys_regs.c                     |  35 ++++
+ include/kvm/arm_spe.h                         |  71 +++++++
+ include/uapi/linux/kvm.h                      |   1 +
+ virt/kvm/arm/arm.c                            |   5 +
+ virt/kvm/arm/spe.c                            | 163 +++++++++++++++
+ 18 files changed, 570 insertions(+), 114 deletions(-)
+ create mode 100644 include/kvm/arm_spe.h
+ create mode 100644 virt/kvm/arm/spe.c
+
+--
+2.17.1
 
 
 _______________________________________________
