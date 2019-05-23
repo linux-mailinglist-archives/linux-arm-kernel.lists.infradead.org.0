@@ -2,57 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7947028B38
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 22:02:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4FF0028B51
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 22:11:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7kDwXBiZO1pojMwHF+1G5/iHJUAiI4iUCQL0CTGuPFk=; b=cGunaM+7fPwRVA
-	vFv3nmLi6rUu3oXM/iUzWtJ8tU02SgMZkT6O61jaFOupBY15w75v+0y3F6PabdBkgi2sVc5akmcJX
-	8IjC3EAKRy23BM++4Om6ceppx5NXAswNXI35k3c1EqveA7WBDgd0RqgPYBrVvgclJPu76bI2npX6I
-	mK/QaarIWoAPGpzCWHsYkeEAOFMFN0nYVpiXmois5S7B86gfyCOjJD5W0USUkDAxQ69tXL47HYMCh
-	kgChtAAj7VDJ7Rsoc9H26EiN/WmDJBXAwD09tgYS9v9MRngphdh2UZbecC/2kYc8SnjJtnniB2OTw
-	j96F+Ba2pOqCBBzUBNkA==;
+	List-Owner; bh=tx8ENxcsi/7ahNbWyFLYycvYagiSndM+9hfbkPFSPdY=; b=Sp6r5oWf9TYrtx
+	NmqZUutqxDUZBEwL+l73AaU8wha/pGy072W9KaWhCY8bLluIBZkOo1qlCiWUvf73SL1Vj3SIeYT/u
+	QkUFhyYlnUHZl+WbIbgYNMSezGX6wedPoInSiOP51boNkBeycIuCkEEUKscg83LpLhZJYp82qK0ry
+	4Rb+nrXZRZ21GNNKjA23bfRPmZhFLqpSnoEjMfPavBoVdIDXDAd75Nos9iiQj3KivPF1a6nTfEZDk
+	TTmcCtenypWPZRuyoCDr0s9hcY43M1DAkhFMCTS8Cp7i9by6K0RGHUazTsO31fj8cvsCuoBXbFKgh
+	QVr+3KK7HQ6uMKgDbxjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTtuw-0002ay-PW; Thu, 23 May 2019 20:02:22 +0000
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTtuo-0002aC-Bi
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 20:02:16 +0000
-X-Originating-IP: 90.89.68.76
-Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
- (Authenticated sender: maxime.ripard@bootlin.com)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 6398FC0006;
- Thu, 23 May 2019 20:01:53 +0000 (UTC)
-Date: Thu, 23 May 2019 22:01:52 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Andrew Lunn <andrew@lunn.ch>
-Subject: Re: [PATCH 2/8] dt-bindings: net: Add a YAML schemas for the generic
- PHY options
-Message-ID: <20190523200152.c2sz6mrzxgblslya@flea>
-References: <74d98cc3c744d53710c841381efd41cf5f15e656.1558605170.git-series.maxime.ripard@bootlin.com>
- <aa5ec90854429c2d9e2c565604243e1b10cfd94b.1558605170.git-series.maxime.ripard@bootlin.com>
- <20190523143744.GB19369@lunn.ch>
+	id 1hTu3k-0005gt-W9; Thu, 23 May 2019 20:11:29 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hTu3c-0005g7-U9
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 20:11:22 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1A48EA78;
+ Thu, 23 May 2019 13:11:19 -0700 (PDT)
+Received: from mbp (usa-sjc-mx-foss1.foss.arm.com [217.140.101.70])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BBB143F690;
+ Thu, 23 May 2019 13:11:12 -0700 (PDT)
+Date: Thu, 23 May 2019 21:11:05 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Khalid Aziz <khalid.aziz@oracle.com>
+Subject: Re: [PATCH v15 00/17] arm64: untag user pointers passed to the kernel
+Message-ID: <20190523201105.oifkksus4rzcwqt4@mbp>
+References: <cover.1557160186.git.andreyknvl@google.com>
+ <20190517144931.GA56186@arrakis.emea.arm.com>
+ <CAFKCwrj6JEtp4BzhqO178LFJepmepoMx=G+YdC8sqZ3bcBp3EQ@mail.gmail.com>
+ <20190521182932.sm4vxweuwo5ermyd@mbp>
+ <201905211633.6C0BF0C2@keescook>
+ <6049844a-65f5-f513-5b58-7141588fef2b@oracle.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190523143744.GB19369@lunn.ch>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <6049844a-65f5-f513-5b58-7141588fef2b@oracle.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_130214_703614_DB628DF7 
-X-CRM114-Status: GOOD (  25.55  )
-X-Spam-Score: -1.0 (-)
+X-CRM114-CacheID: sfid-20190523_131120_980038_0BE6665D 
+X-CRM114-Status: GOOD (  17.77  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.198 listed in list.dnswl.org]
- -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.198 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -66,127 +67,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Antoine =?utf-8?Q?T=C3=A9nart?= <antoine.tenart@bootlin.com>,
- netdev@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Frank Rowand <frowand.list@gmail.com>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgenii Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Yishai Hadas <yishaih@mellanox.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Elliott Hughes <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andrew,
+Hi Khalid,
 
-(Sorry for not CC'ing you on this)
+On Thu, May 23, 2019 at 11:51:40AM -0600, Khalid Aziz wrote:
+> On 5/21/19 6:04 PM, Kees Cook wrote:
+> > As an aside: I think Sparc ADI support in Linux actually side-stepped
+> > this[1] (i.e. chose "solution 1"): "All addresses passed to kernel must
+> > be non-ADI tagged addresses." (And sadly, "Kernel does not enable ADI
+> > for kernel code.") I think this was a mistake we should not repeat for
+> > arm64 (we do seem to be at least in agreement about this, I think).
+> > 
+> > [1] https://lore.kernel.org/patchwork/patch/654481/
+> 
+> That is a very early version of the sparc ADI patch. Support for tagged
+> addresses in syscalls was added in later versions and is in the patch
+> that is in the kernel.
 
-On Thu, May 23, 2019 at 04:37:44PM +0200, Andrew Lunn wrote:
-> On Thu, May 23, 2019 at 11:56:45AM +0200, Maxime Ripard wrote:
-> > The networking PHYs have a number of available device tree properties that
-> > can be used in their device tree node. Add a YAML schemas for those.
-> >
-> > Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-> > ---
-> >  Documentation/devicetree/bindings/net/ethernet-phy.yaml | 148 +++++++++-
-> >  Documentation/devicetree/bindings/net/phy.txt           |  80 +-----
-> >  2 files changed, 149 insertions(+), 79 deletions(-)
-> >  create mode 100644 Documentation/devicetree/bindings/net/ethernet-phy.yaml
-> >
-> > diff --git a/Documentation/devicetree/bindings/net/ethernet-phy.yaml b/Documentation/devicetree/bindings/net/ethernet-phy.yaml
-> > new file mode 100644
-> > index 000000000000..eb79ee6db977
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/net/ethernet-phy.yaml
-> > @@ -0,0 +1,148 @@
-> > +# SPDX-License-Identifier: GPL-2.0
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/net/ethernet-phy.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Ethernet PHY Generic Binding
-> > +
-> > +maintainers:
-> > +  - David S. Miller <davem@davemloft.net>
-> > +
-> > +properties:
-> > +  $nodename:
-> > +    pattern: "^ethernet-phy(@[a-f0-9])?$"
-> > +
-> > +  compatible:
-> > +    oneOf:
->
-> I don't know the language. It is valid to have both
-> ethernet-phy-ieee802.3-c45 and
-> ethernet-phy-id[a-f0-9]{4}\\.[a-f0-9]{4}$".  Does this oneOf prevent
-> multiple compatible strings?
+I tried to figure out but I'm not familiar with the sparc port. How did
+you solve the tagged address going into various syscall implementations
+in the kernel (e.g. sys_write)? Is the tag removed on kernel entry or it
+ends up deeper in the core code?
 
-I haven't tested it, I will make sure it works
+Thanks.
 
-> Also, the general case is no compatible at all.
-
-This is covered already. The description here just mentions the values
-available if the property is set.
-
-The required keyword a bit later lists the required property. In this
-case, compatible is omitted so we just list the available values for
-the compatible property.
-
-> > +      - const: ethernet-phy-ieee802.3-c22
-> > +        description: PHYs that implement IEEE802.3 clause 22
-> > +      - const: ethernet-phy-ieee802.3-c45
-> > +        description: PHYs that implement IEEE802.3 clause 45
-> > +      - pattern: "^ethernet-phy-id[a-f0-9]{4}\\.[a-f0-9]{4}$"
-> > +        description:
-> > +          The first group of digits is the 16 bit Phy Identifier 1
-> > +          register, this is the chip vendor OUI bits 3:18. The
-> > +          second group of digits is the Phy Identifier 2 register,
-> > +          this is the chip vendor OUI bits 19:24, followed by 10
-> > +          bits of a vendor specific ID.
->
-> Could we try to retain:
->
-> > -  If the PHY reports an incorrect ID (or none at all) then the
-> > -  "compatible" list may contain an entry with the correct PHY ID in the
->      ...
->
-> Using it is generally wrong, and that is not clear in the new text.
-
-Ok, I'll add it back.
-
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +    minimum: 0
-> > +    maximum: 31
-> > +    description:
-> > +      The ID number for the PHY.
-> > +
-> > +  interrupts:
-> > +    maxItems: 1
-> > +
-> > +  max-speed:
-> > +    enum:
-> > +      - 10
-> > +      - 100
-> > +      - 1000
->
-> This is outdated in the text description. Any valid speed is
-> supported, currently 10 - 200000, as listed in phy_setting settings().
-
-Ack, I'll update it
-
-Thanks!
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
