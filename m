@@ -2,105 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90A8E27445
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 04:09:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D656B27455
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 04:23:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oSoVIfX29RH3JA4PH6GnHUFiMsU/WMtOYI11QmisywE=; b=mrB9PzOPhpdfBt
-	LxhTSNCrDjL94mOXhUGXCIJZjfJWfc/7zhMKBRddW25F29a1ouKDnvOyxPV1BYLPRka85qryMEAzB
-	4Jr+/zoyJfLCqQ/0BrwxcBRg4VEfMgXD7xB8LCDnRU41ZyoQwkiDSX9bae5kldvr2T6042Bztgq0b
-	Kn5rv8iqTVwb8zH6BrgCgylWO4A82DIs4Cm6oivTcjOalPP0fQ5fU76SMcN1SlU8uyCfFMTKVZdd6
-	d/oNYEg1zxPeD8owVeDCWkypl/gPcxXuxPUaGzQ57Z9Ag1rRFEfhvxIqfwkLv/DV/Ndvi3bf7eTZ4
-	z7zT3AauTzuhc8/SDd2A==;
+	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=sApEuNAcb6FHyUGAzYfykhttI8Loo5O3+N5zo2MAa6s=; b=Xn5X+O6OciPvMd
+	2JP2M+UuOg+DSmIepbJ5Kw70uL10g1X+HA7IWteFc/IuBHmdvJmg8ANml2wAyaINBmNyKYMkq68KE
+	AKko/XspbWMi0uu/i7qxD5X5n3uKsK20b6Kf+sIiVIEnfO3zUaiHMBE3KBrsADXNspQbe6BZFdEyd
+	DpRucvGe4K4t+uC4rStztf22ZDW8IipHkDRfe8AeYEQ5O6Ivmhv6FZh/++p/I+Zo/lgmFDng6nVn1
+	z5QJfXEFLV6hjej0iKLYks0p6ueS87E3vTlpw44mVsv6JCs6Tr41rrCZATXQwEPrr4lsnoRkoe5kw
+	fGPPFzSCe3e64JXtHdgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTdAM-0004uo-6G; Thu, 23 May 2019 02:09:10 +0000
-Received: from mail-eopbgr130072.outbound.protection.outlook.com
- ([40.107.13.72] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1hTdO5-0000lw-2o; Thu, 23 May 2019 02:23:21 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTdAF-0004te-If
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 02:09:05 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=MwZgzs/4aZwNfCjdz+/ne/jbJMPxd4bUOyyhLYXEmVI=;
- b=nP+EimQWUqrXt5cXHaVpbVhy9ZH0Qhzk9/N8pJLoVsYEIZArUpMWK+JjZhixjfAkEwKt6YzZUk4IbDXAjv9uQ73WmK9LUTo7ME0k2MXH+Ydx6ljp8vfknOuWbPlf42I7KMpJ5FFL9oECyA8N7GB96CvUPqYnmsYB2ECqIlrFaq0=
-Received: from VI1PR04MB4543.eurprd04.prod.outlook.com (20.177.55.90) by
- VI1PR04MB6094.eurprd04.prod.outlook.com (20.179.25.148) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1900.17; Thu, 23 May 2019 02:08:55 +0000
-Received: from VI1PR04MB4543.eurprd04.prod.outlook.com
- ([fe80::5062:df97:a70b:93f8]) by VI1PR04MB4543.eurprd04.prod.outlook.com
- ([fe80::5062:df97:a70b:93f8%7]) with mapi id 15.20.1900.020; Thu, 23 May 2019
- 02:08:54 +0000
-From: Robin Gong <yibin.gong@nxp.com>
-To: Rob Herring <robh@kernel.org>
-Subject: RE: [EXT] Re: [PATCH v4 10/14] dma: imx-sdma: add i.mx6ul/6sx
- compatible name
-Thread-Topic: [EXT] Re: [PATCH v4 10/14] dma: imx-sdma: add i.mx6ul/6sx
- compatible name
-Thread-Index: AQHVEIU1vbltRMJezUidB/k1RHkv66Z3Kd0AgADL88A=
-Date: Thu, 23 May 2019 02:08:54 +0000
-Message-ID: <VI1PR04MB4543BE5BB829A2BFDA48824789010@VI1PR04MB4543.eurprd04.prod.outlook.com>
-References: <1558548188-1155-1-git-send-email-yibin.gong@nxp.com>
- <1558548188-1155-11-git-send-email-yibin.gong@nxp.com>
- <20190522135128.GA24987@bogus>
-In-Reply-To: <20190522135128.GA24987@bogus>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=yibin.gong@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 817b28b3-d63c-44eb-92dc-08d6df239bc7
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR04MB6094; 
-x-ms-traffictypediagnostic: VI1PR04MB6094:
-x-microsoft-antispam-prvs: <VI1PR04MB6094D46D8E2A38D25049248E89010@VI1PR04MB6094.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 00462943DE
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(346002)(366004)(39860400002)(136003)(376002)(13464003)(189003)(199004)(446003)(476003)(11346002)(4744005)(71190400001)(71200400001)(52536014)(5660300002)(2906002)(486006)(186003)(68736007)(66446008)(64756008)(66556008)(66476007)(66946007)(73956011)(6116002)(26005)(3846002)(7736002)(76116006)(305945005)(81156014)(81166006)(86362001)(66066001)(6916009)(316002)(74316002)(8676002)(8936002)(33656002)(7416002)(54906003)(76176011)(7696005)(229853002)(25786009)(102836004)(256004)(14444005)(4326008)(99286004)(53936002)(55016002)(9686003)(478600001)(6436002)(6506007)(6246003)(14454004);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB6094;
- H:VI1PR04MB4543.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 3K3cPhbNnzwtDRRdVPWB7LqwrE1SytmzdbFbuVWzSXwQZk3Y7rA0D2XnHHotVTwx3+sRL6VDKWi/xQHHiF6yFOFhIZT9Wd/aljoL8Lx5wOsbGuPHmU5mqHJO63/04mu916C8MXbmFOZklhC+ZuvCV8veFV2h9d2TCHgTZNUqRTRO0642CtdTdz5ibtYipB/riCr8VKtr1VkNBDp102UhasX3I5J4Xvra1cki0WLom6AyaUt/UsqL+Rikl+XKAckrNigKNMyLr9/kV9jCuaBDR6vIHIIIeu1Iop1OeyKgwAnK2AgeUJ9LGAJYrr3a0xbKyuZEo2flSHijZx4vyygD+sxrFhKNJt4szoidsugeYeiY8AUvUU8XZJsI2H4l2PuFKpp1D+XGfLH/uC2XXYdCxB49FYJ8VGstqB2hL0HBwPg=
+ id 1hTdNw-0000ki-81
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 02:23:14 +0000
+Received: by mail-wr1-x442.google.com with SMTP id r7so4372020wrr.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 22 May 2019 19:23:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=kernelci-org.20150623.gappssmtp.com; s=20150623;
+ h=message-id:date:mime-version:content-transfer-encoding:subject:to
+ :from:cc; bh=Hnjt/K9t57LlxXJzyl6rEPuBPixyxFUWutrkuh4rjao=;
+ b=NrSed+fzL4RpCD8iPSFxux0YoMWBD5xiClJpTElPXsPOMJV0wLIzY1OKWA0+QVKYgN
+ EQnwBtfcLzE6ggFS2KRh+QWtZYrfDOx7I/edfC1rfz2my86qCXV8rZU+OGKMrKa0+J24
+ FijrlJNzoz6dIYKb9O5YgWusWhx/3xcGx3MA4Nr/Ct8zwi3vOI6q6vJRSTBvdKg3/c8W
+ 0xCbyC9YsJUiayUGYaxt/iK6hQPda3xZA8n5bb/Ja+sxPqQ6+iPG58Ypcy3sIXN6KV6S
+ +0pHMt6321DPa/1c4ilxlhUCE+9SZFV0kuThs9ex1/Gv2M1uhrKJL0EqKaWZsRG4YxEc
+ b6RQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:message-id:date:mime-version
+ :content-transfer-encoding:subject:to:from:cc;
+ bh=Hnjt/K9t57LlxXJzyl6rEPuBPixyxFUWutrkuh4rjao=;
+ b=QL8fZc42+CSKDgoD5UYp2qv9O74LJLQx0jWlKm8/b7r8d96U7xQqDEcoZv4g5OCrli
+ XPDHyEVa4kogvr+ORXGfYMgIcCipbTlmWeel4twGO+77ZQbemkdB5zyZJF1JmsNzvUD9
+ bc7718zw0VRwI8AiLxFfrKPeKDLqDtHBuVU4tiRKCeGctTzMPvTcGkDygygKYlvbEs2W
+ lI1czx4gJA8pkHb8IlrBxxSZm5Svfqv9IDlpD4LyXszC/Sf3QflLnxOwZyavTbuoCadO
+ R151ngKWcelbwRXXMX8WWqMTuj2ZXSLN6y3gCtCM5dgyJcNVhx+zasqa5tMM5y4lAFEX
+ nfEg==
+X-Gm-Message-State: APjAAAURzw12K8JLKf6gmCtNN7Udtf9+tzVBAbsKL+gG3o9GFHAbqlD8
+ agRXTz6at4OdQZMsmM+/uC+V8A==
+X-Google-Smtp-Source: APXvYqz/QxREnLfKEm8J2aD73wASeFN0MHotPjc9HnDx/Tdd4uk9S2oBIQ4E+6qRfQN3d6BY6eD6Ng==
+X-Received: by 2002:a5d:6a8c:: with SMTP id s12mr24929353wru.326.1558578190207; 
+ Wed, 22 May 2019 19:23:10 -0700 (PDT)
+Received: from [148.251.42.114] ([2a01:4f8:201:9271::2])
+ by smtp.gmail.com with ESMTPSA id l16sm42303704wrb.40.2019.05.22.19.23.08
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 22 May 2019 19:23:09 -0700 (PDT)
+Message-ID: <5ce6040d.1c69fb81.60b3b.29fb@mx.google.com>
+Date: Wed, 22 May 2019 19:23:09 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 817b28b3-d63c-44eb-92dc-08d6df239bc7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 May 2019 02:08:54.8391 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB6094
+X-Kernelci-Report-Type: bisect
+X-Kernelci-Tree: mainline
+X-Kernelci-Lab-Name: lab-collabora
+X-Kernelci-Branch: master
+X-Kernelci-Kernel: v5.2-rc1-165-g54dee406374c
+Subject: mainline/master boot bisection: v5.2-rc1-165-g54dee406374c on
+ rk3288-veyron-jaq
+To: tomeu.vizoso@collabora.com, guillaume.tucker@collabora.com,
+ mgalka@collabora.com, broonie@kernel.org, matthew.hart@linaro.org,
+ khilman@baylibre.com, enric.balletbo@collabora.com,
+ Elaine Zhang <zhangqing@rock-chips.com>,
+ Eduardo Valentin <edubezval@gmail.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>
+From: "kernelci.org bot" <bot@kernelci.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_190903_715307_C682110D 
-X-CRM114-Status: GOOD (  13.90  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190522_192312_352952_DDA96D31 
+X-CRM114-Status: GOOD (  13.29  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.13.72 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -113,45 +100,185 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "plyatov@gmail.com" <plyatov@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
- "vkoul@kernel.org" <vkoul@kernel.org>,
- "broonie@kernel.org" <broonie@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
- "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
- "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
-Content-Type: text/plain; charset="gb2312"
-Content-Transfer-Encoding: base64
+Cc: Heiko Stuebner <heiko@sntech.de>, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Zhang Rui <rui.zhang@intel.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgUm9iLA0KCVRoYW5rIHlvdSBmb3IgeW91ciByZW1pbmRpbmcsIEkgaGF2ZSBhZGRlZCBBY2tl
-ZC1ieSB0YWdzIGdvdHRlbiBmcm9tIE1hcmsgYW5kIFZpbm9kIGluIHY0IHBhdGNoIHNldCwgYnV0
-IHRoZXJlIGlzIHN0aWxsIG9uZSB1cGRhdGUgKA0KcmVtb3ZlIGNoZWNraW5nICdldmVudF9pZDEn
-IHplcm8gYXMgJ2V2ZW50X2lkMCcuKSBmb3IgVmlub2QncyBjb25jZXJuLCBzbyBJIHNlbnQgbmV3
-IHY0Lg0KPiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQ0KPiBGcm9tOiBSb2IgSGVycmluZyA8
-cm9iaEBrZXJuZWwub3JnPg0KPiBTZW50OiAyMDE5xOo11MIyMsjVIDIxOjUxPiANCj4gT24gV2Vk
-LCAyMiBNYXkgMjAxOSAxMDowMDozOCArMDAwMCwgUm9iaW4gR29uZyB3cm90ZToNCj4gPiBBZGQg
-aS5teDZ1bCBhbmQgaS5teDZzeCBjb21wYXRpYmxlIG5hbWUgaW4gYmluZGluZyBkb2MuDQo+ID4N
-Cj4gPiBTaWduZWQtb2ZmLWJ5OiBSb2JpbiBHb25nIDx5aWJpbi5nb25nQG54cC5jb20+DQo+ID4g
-LS0tDQo+ID4gIERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9kbWEvZnNsLWlteC1z
-ZG1hLnR4dCB8IDIgKysNCj4gPiAgMSBmaWxlIGNoYW5nZWQsIDIgaW5zZXJ0aW9ucygrKQ0KPiA+
-DQo+IA0KPiBQbGVhc2UgYWRkIEFja2VkLWJ5L1Jldmlld2VkLWJ5IHRhZ3Mgd2hlbiBwb3N0aW5n
-IG5ldyB2ZXJzaW9ucy4gSG93ZXZlciwNCj4gdGhlcmUncyBubyBuZWVkIHRvIHJlcG9zdCBwYXRj
-aGVzICpvbmx5KiB0byBhZGQgdGhlIHRhZ3MuIFRoZSB1cHN0cmVhbQ0KPiBtYWludGFpbmVyIHdp
-bGwgZG8gdGhhdCBmb3IgYWNrcyByZWNlaXZlZCBvbiB0aGUgdmVyc2lvbiB0aGV5IGFwcGx5Lg0K
-PiANCj4gSWYgYSB0YWcgd2FzIG5vdCBhZGRlZCBvbiBwdXJwb3NlLCBwbGVhc2Ugc3RhdGUgd2h5
-IGFuZCB3aGF0IGNoYW5nZWQuDQpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* This automated bisection report was sent to you on the basis  *
+* that you may be involved with the breaking commit it has      *
+* found.  No manual investigation has been done to verify it,   *
+* and the root cause of the problem may be somewhere else.      *
+* Hope this helps!                                              *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+mainline/master boot bisection: v5.2-rc1-165-g54dee406374c on rk3288-veyron-jaq
+
+Summary:
+  Start:      54dee406374c Merge tag 'arm64-fixes' of git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux
+  Details:    https://kernelci.org/boot/id/5ce5984c59b514e6a47a364c
+  Plain log:  https://storage.kernelci.org//mainline/master/v5.2-rc1-165-g54dee406374c/arm/multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE=y/gcc-8/lab-collabora/boot-rk3288-veyron-jaq.txt
+  HTML log:   https://storage.kernelci.org//mainline/master/v5.2-rc1-165-g54dee406374c/arm/multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE=y/gcc-8/lab-collabora/boot-rk3288-veyron-jaq.html
+  Result:     28694e009e51 thermal: rockchip: fix up the tsadc pinctrl setting error
+
+Checks:
+  revert:     PASS
+  verify:     PASS
+
+Parameters:
+  Tree:       mainline
+  URL:        git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+  Branch:     master
+  Target:     rk3288-veyron-jaq
+  CPU arch:   arm
+  Lab:        lab-collabora
+  Compiler:   gcc-8
+  Config:     multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE=y
+  Test suite: boot
+
+Breaking commit found:
+
+-------------------------------------------------------------------------------
+commit 28694e009e512451ead5519dd801f9869acb1f60
+Author: Elaine Zhang <zhangqing@rock-chips.com>
+Date:   Tue Apr 30 18:09:44 2019 +0800
+
+    thermal: rockchip: fix up the tsadc pinctrl setting error
+    
+    Explicitly use the pinctrl to set/unset the right mode
+    instead of relying on the pinctrl init mode.
+    And it requires setting the tshut polarity before select pinctrl.
+    
+    When the temperature sensor mode is set to 0, it will automatically
+    reset the board via the Clock-Reset-Unit (CRU) if the over temperature
+    threshold is reached. However, when the pinctrl initializes, it does a
+    transition to "otp_out" which may lead the SoC restart all the time.
+    
+    "otp_out" IO may be connected to the RESET circuit on the hardware.
+    If the IO is in the wrong state, it will trigger RESET.
+    (similar to the effect of pressing the RESET button)
+    which will cause the soc to restart all the time.
+    
+    Signed-off-by: Elaine Zhang <zhangqing@rock-chips.com>
+    Reviewed-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+    Signed-off-by: Eduardo Valentin <edubezval@gmail.com>
+
+diff --git a/drivers/thermal/rockchip_thermal.c b/drivers/thermal/rockchip_thermal.c
+index 9c7643d62ed7..6dc7fc516abf 100644
+--- a/drivers/thermal/rockchip_thermal.c
++++ b/drivers/thermal/rockchip_thermal.c
+@@ -172,6 +172,9 @@ struct rockchip_thermal_data {
+ 	int tshut_temp;
+ 	enum tshut_mode tshut_mode;
+ 	enum tshut_polarity tshut_polarity;
++	struct pinctrl *pinctrl;
++	struct pinctrl_state *gpio_state;
++	struct pinctrl_state *otp_state;
+ };
+ 
+ /**
+@@ -1242,6 +1245,8 @@ static int rockchip_thermal_probe(struct platform_device *pdev)
+ 		return error;
+ 	}
+ 
++	thermal->chip->control(thermal->regs, false);
++
+ 	error = clk_prepare_enable(thermal->clk);
+ 	if (error) {
+ 		dev_err(&pdev->dev, "failed to enable converter clock: %d\n",
+@@ -1267,6 +1272,30 @@ static int rockchip_thermal_probe(struct platform_device *pdev)
+ 	thermal->chip->initialize(thermal->grf, thermal->regs,
+ 				  thermal->tshut_polarity);
+ 
++	if (thermal->tshut_mode == TSHUT_MODE_GPIO) {
++		thermal->pinctrl = devm_pinctrl_get(&pdev->dev);
++		if (IS_ERR(thermal->pinctrl)) {
++			dev_err(&pdev->dev, "failed to find thermal pinctrl\n");
++			return PTR_ERR(thermal->pinctrl);
++		}
++
++		thermal->gpio_state = pinctrl_lookup_state(thermal->pinctrl,
++							   "gpio");
++		if (IS_ERR_OR_NULL(thermal->gpio_state)) {
++			dev_err(&pdev->dev, "failed to find thermal gpio state\n");
++			return -EINVAL;
++		}
++
++		thermal->otp_state = pinctrl_lookup_state(thermal->pinctrl,
++							  "otpout");
++		if (IS_ERR_OR_NULL(thermal->otp_state)) {
++			dev_err(&pdev->dev, "failed to find thermal otpout state\n");
++			return -EINVAL;
++		}
++
++		pinctrl_select_state(thermal->pinctrl, thermal->otp_state);
++	}
++
+ 	for (i = 0; i < thermal->chip->chn_num; i++) {
+ 		error = rockchip_thermal_register_sensor(pdev, thermal,
+ 						&thermal->sensors[i],
+@@ -1337,8 +1366,8 @@ static int __maybe_unused rockchip_thermal_suspend(struct device *dev)
+ 
+ 	clk_disable(thermal->pclk);
+ 	clk_disable(thermal->clk);
+-
+-	pinctrl_pm_select_sleep_state(dev);
++	if (thermal->tshut_mode == TSHUT_MODE_GPIO)
++		pinctrl_select_state(thermal->pinctrl, thermal->gpio_state);
+ 
+ 	return 0;
+ }
+@@ -1383,7 +1412,8 @@ static int __maybe_unused rockchip_thermal_resume(struct device *dev)
+ 	for (i = 0; i < thermal->chip->chn_num; i++)
+ 		rockchip_thermal_toggle_sensor(&thermal->sensors[i], true);
+ 
+-	pinctrl_pm_select_default_state(dev);
++	if (thermal->tshut_mode == TSHUT_MODE_GPIO)
++		pinctrl_select_state(thermal->pinctrl, thermal->otp_state);
+ 
+ 	return 0;
+ }
+-------------------------------------------------------------------------------
+
+
+Git bisection log:
+
+-------------------------------------------------------------------------------
+git bisect start
+# good: [83f3ef3de625a5766de2382f9e077d4daafd5bac] Merge tag 'libnvdimm-fixes-5.2-rc1' of git://git.kernel.org/pub/scm/linux/kernel/git/nvdimm/nvdimm
+git bisect good 83f3ef3de625a5766de2382f9e077d4daafd5bac
+# bad: [54dee406374ce8adb352c48e175176247cb8db7c] Merge tag 'arm64-fixes' of git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux
+git bisect bad 54dee406374ce8adb352c48e175176247cb8db7c
+# bad: [dc413a90edbe715bebebe859dc072ef73d490d70] Merge tag 'armsoc-drivers' of git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc
+git bisect bad dc413a90edbe715bebebe859dc072ef73d490d70
+# good: [b45da609a02460c6a34c395f03f891f1fb2a021a] Merge tag 'imx-bindings-5.2' of git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux into arm/dt
+git bisect good b45da609a02460c6a34c395f03f891f1fb2a021a
+# good: [6cbc4d88ad208d6f5b9567bac2fff038e1bbfa77] Merge tag 'bitmain-soc-5.2' of git://git.kernel.org/pub/scm/linux/kernel/git/mani/linux-bitmain into arm/dt
+git bisect good 6cbc4d88ad208d6f5b9567bac2fff038e1bbfa77
+# bad: [a455eda33faafcaac1effb31d682765b14ef868c] Merge branch 'linus' of git://git.kernel.org/pub/scm/linux/kernel/git/evalenti/linux-soc-thermal
+git bisect bad a455eda33faafcaac1effb31d682765b14ef868c
+# bad: [ffd1b122d3a17783b68cfd03b0479dffedf0d960] thermal: rockchip: Support the PX30 SoC in thermal driver
+git bisect bad ffd1b122d3a17783b68cfd03b0479dffedf0d960
+# good: [3e6a8fb3308419129c7a52de6eb42feef5a919a0] drivers: thermal: tsens: Add new operation to check if a sensor is enabled
+git bisect good 3e6a8fb3308419129c7a52de6eb42feef5a919a0
+# good: [d36e2fa025387567710df740fd4dce1d5001b226] thermal: generic-adc: make lookup table optional
+git bisect good d36e2fa025387567710df740fd4dce1d5001b226
+# good: [42cd9b049829d7facbd45ab503d763a86251e81b] thermal/drivers/cpu_cooling: Fixup the header and copyright
+git bisect good 42cd9b049829d7facbd45ab503d763a86251e81b
+# good: [6ec8070b9d48294fbe865535c167a79527eaf357] thermal: Fix build error of missing devm_ioremap_resource on UM
+git bisect good 6ec8070b9d48294fbe865535c167a79527eaf357
+# bad: [28694e009e512451ead5519dd801f9869acb1f60] thermal: rockchip: fix up the tsadc pinctrl setting error
+git bisect bad 28694e009e512451ead5519dd801f9869acb1f60
+# good: [fcc6d4cadadcc977911c6bfcdd95d379f4082c74] thermal: broadcom: Remove ACPI support
+git bisect good fcc6d4cadadcc977911c6bfcdd95d379f4082c74
+# first bad commit: [28694e009e512451ead5519dd801f9869acb1f60] thermal: rockchip: fix up the tsadc pinctrl setting error
+-------------------------------------------------------------------------------
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
