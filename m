@@ -2,43 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACF3C27A62
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 12:24:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 466F727A69
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 12:25:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=GNPnzrhdoEtXYe3ZKk2kOFUR4xx/8DxKrYE9+hwOIPI=; b=Uz4
-	8i8q3vfjZn8GgoMdynlN6VKAl0bA1ekk1nZ211BrbZwwKeIH6Q0ML5DnUKuMgtc369bPA6qVmdZ1Q
-	Um9vVAyJeOv0tNyENjrMERaVlOnqBhm25vOJDs7+Wl+T6HrIV4Q71mISfVQjpyToUI7APzrHxZQLO
-	86BPVUqb4z3aV2QkdXZMOxO3SurKCj1hantGfrbQGwn7WEOusT/8bGJbcj68t/V2PrzQzB8Oezx3b
-	xzDGhsbKS4RPqq8IAiKUuZkHKi1lzpBOeOOotF3ylMrH3lOC58E60zyzV+U3op0y/omZV+8j7xZPW
-	KW9XlMRs7kaSXdqmllrQ1RT13MeKm2g==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=vk5Cl+KHu9911itJMSJmXM32CfFOYRp1TmK0gx/zO0w=; b=sY8J7tiA7gF2bqf6/BXTq6UBcI
+	XMa97/hz5mIZq1v616GKCkZNePT5tW0ZrAs0g8fegk3KnyFdtbdJPXUmkxCT1OUYYoPcO5uMCy1g0
+	33dpFsTr8US+K0xULzVtuAHgLBSkSm5Fmt05Nu/if0WspoteSA8NIJ/wJXGBQFnGi8r/+snxlLX47
+	7MUehgHNHECyXREHumdQ3+XaLWw93uEEnow/EuVhSGl4xkrUzoi7kifQRwm5VhrM8YY3UFivTL4oJ
+	c2QSrZm62ITjflfVOhPIDUDD58l2NCN8BjtHPBHKbx28NLbjsu/ti1J1swXn8CauE+I0zwWUQdIup
+	i6dd2N4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTku2-0002zI-Kf; Thu, 23 May 2019 10:24:50 +0000
+	id 1hTkuB-00037D-9K; Thu, 23 May 2019 10:24:59 +0000
 Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
  helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTkth-0002iN-Pj
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 10:24:31 +0000
+ id 1hTktj-0002is-Cc
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 10:24:33 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CA97AA78;
- Thu, 23 May 2019 03:24:28 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3E7E315AB;
+ Thu, 23 May 2019 03:24:31 -0700 (PDT)
 Received: from e111045-lin.cambridge.arm.com (unknown [10.1.39.23])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A4DE43F718;
- Thu, 23 May 2019 03:24:26 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1695C3F718;
+ Thu, 23 May 2019 03:24:28 -0700 (PDT)
 From: Ard Biesheuvel <ard.biesheuvel@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 0/4] arm64: wire up VM_FLUSH_RESET_PERMS
-Date: Thu, 23 May 2019 11:22:52 +0100
-Message-Id: <20190523102256.29168-1-ard.biesheuvel@arm.com>
+Subject: [PATCH 1/4] arm64: module: create module allocations without exec
+ permissions
+Date: Thu, 23 May 2019 11:22:53 +0100
+Message-Id: <20190523102256.29168-2-ard.biesheuvel@arm.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190523102256.29168-1-ard.biesheuvel@arm.com>
+References: <20190523102256.29168-1-ard.biesheuvel@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_032429_833966_6D330FEE 
-X-CRM114-Status: GOOD (  12.04  )
+X-CRM114-CacheID: sfid-20190523_032431_535758_CC7A518B 
+X-CRM114-Status: GOOD (  12.41  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -72,38 +76,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Wire up the code introduced in v5.2 to manage the permissions
-of executable vmalloc regions (and their linear aliases) more
-strictly.
+Now that the core code manages the executable permissions of code
+regions of modules explicitly, it is no longer necessary to create
+the module vmalloc regions with RWX permissions, and we can create
+them with RW- permissions instead, which is preferred from a
+security perspective.
 
-One of the things that came up in the internal discussion is
-whether non-x86 architectures have any benefit at all from the
-lazy vunmap feature, and whether it would perhaps be better to
-implement eager vunmap instead.
+Signed-off-by: Ard Biesheuvel <ard.biesheuvel@arm.com>
+---
+ arch/arm64/kernel/module.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-Cc: Nadav Amit <namit@vmware.com>
-Cc: Rick Edgecombe <rick.p.edgecombe@intel.com>
-Cc: Peter Zijlstra <peterz@infradead.org>
-Cc: Andrew Morton <akpm@linux-foundation.org>
-Cc: Will Deacon <will.deacon@arm.com>
-Cc: Masami Hiramatsu <mhiramat@kernel.org>
-Cc: James Morse <james.morse@arm.com>
-
-Ard Biesheuvel (4):
-  arm64: module: create module allocations without exec permissions
-  arm64/mm: wire up CONFIG_ARCH_HAS_SET_DIRECT_MAP
-  arm64/kprobes: set VM_FLUSH_RESET_PERMS on kprobe instruction pages
-  arm64: bpf: do not allocate executable memory
-
- arch/arm64/Kconfig                  |  1 +
- arch/arm64/include/asm/cacheflush.h |  3 ++
- arch/arm64/kernel/module.c          |  4 +-
- arch/arm64/kernel/probes/kprobes.c  |  4 +-
- arch/arm64/mm/pageattr.c            | 48 ++++++++++++++++----
- arch/arm64/net/bpf_jit_comp.c       |  2 +-
- mm/vmalloc.c                        | 11 -----
- 7 files changed, 50 insertions(+), 23 deletions(-)
-
+diff --git a/arch/arm64/kernel/module.c b/arch/arm64/kernel/module.c
+index 2e4e3915b4d0..88f0ed31d9aa 100644
+--- a/arch/arm64/kernel/module.c
++++ b/arch/arm64/kernel/module.c
+@@ -41,7 +41,7 @@ void *module_alloc(unsigned long size)
+ 
+ 	p = __vmalloc_node_range(size, MODULE_ALIGN, module_alloc_base,
+ 				module_alloc_base + MODULES_VSIZE,
+-				gfp_mask, PAGE_KERNEL_EXEC, 0,
++				gfp_mask, PAGE_KERNEL, 0,
+ 				NUMA_NO_NODE, __builtin_return_address(0));
+ 
+ 	if (!p && IS_ENABLED(CONFIG_ARM64_MODULE_PLTS) &&
+@@ -57,7 +57,7 @@ void *module_alloc(unsigned long size)
+ 		 */
+ 		p = __vmalloc_node_range(size, MODULE_ALIGN, module_alloc_base,
+ 				module_alloc_base + SZ_4G, GFP_KERNEL,
+-				PAGE_KERNEL_EXEC, 0, NUMA_NO_NODE,
++				PAGE_KERNEL, 0, NUMA_NO_NODE,
+ 				__builtin_return_address(0));
+ 
+ 	if (p && (kasan_module_alloc(p, size) < 0)) {
 -- 
 2.17.1
 
