@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 864BD285B5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 20:14:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E049B285B8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 20:15:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OoXzwV+NaI606oKPg6VI72Ij/jx5OgPHhgMuvx6bKL8=; b=fGMe3warWzxB8m
-	13ac3dcN17T93wNWNlDcLxoccTqGbA8Bm0ft/qZqZGasJTiWzM5kNMuNB2WejT8CWcOUXLBFXzyEk
-	ILCqNSPL2kbtMRRR420CBS8PRP3QwWQi1UQRsiD8eG0Ex7HYgTxFly1cECtJoFbF9ApXwPh8xYW5d
-	waK+RzyTU92bwO9MMemYv/tCT+xckBy23m3tXz+RrdNcmgdsXsetWrPuc8PVv+2vO9RYQLmnmaXjh
-	o+5/OYTN8Jod1xKKfUqcU1s4AvZcyYLIzV3up4dBMQ4kPF/IorU31FORWgPiZIv26ljENYUMx6Kb1
-	L4asnkGeSJdQBj3x0JGw==;
+	List-Owner; bh=2KcA6D4EjelVeGF7io5k+zbVPkXJtHnB5VSK//yDF1o=; b=Tog8PDfCSAj77m
+	AdLZYAAOAabrHCJaWdvPXs6fgkUioEEuIqnTbbxVyqtD6+URetceV/J7Xyd/CupNJm79nmGVb2Fl1
+	63LcvMhLW0eA/p/tJ/ybAQPVUzyFG7wg0YIpbc06TxjQSTnuw4L9leP1ug5QgISDGgyOhTrrIgni2
+	k4t3zWLWh9ySdq4LPDnI3mKitYLoUeB2wNWmZCKEuqhgEOreo1s7/aepj1mjXWRcuPtLzZ37fVqMZ
+	JLfhSCjDd8QH7ytS3u0crCAEViYBLyztr+n3qaQThJai5PkZ7f4LdGQ63pal6eBwQnYL8V8/SIWST
+	yxi19g5TIsSh7S9Zhrdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTsEI-00057U-Oc; Thu, 23 May 2019 18:14:14 +0000
+	id 1hTsFC-0005Ml-0G; Thu, 23 May 2019 18:15:10 +0000
 Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTsEC-000579-TU
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 18:14:10 +0000
+ id 1hTsEz-0005MM-9r
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 18:14:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
  s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
  Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=jFkH/OKol9syKvMTApd+XKBRYj2Ri/8nnEMaSkJkhE0=; b=tCbbqh/+icQ3DXb6GkretSV/ao
- eMLP9nNGm1Oxp+FgdRY0msdvMtsNh8GrFVCuO6EpEPVolRwe4GO5439MrRchXYAbfaWkAipiWqcOx
- RsQrCkeGJ26WMJgdrVot+SVt6mipVAweFRrJrtEv7Ru+wkRTIsaE4NyfZrHHFP+EUac0=;
+ bh=4IC8R0ZhlQdaL/KSUQ7yDr8Vg9RfeeUfunFzY6EuR7o=; b=Aq66OGPGB9Ehr1k9ZlOc5y7ECw
+ OcJpov1dTfOe3vD5eITO3kzBSVVeqEQFripA/ajYOlwRdMgybI5ljtVBcOV09nCTGRtS/01yJxMsk
+ 9FMDPuTXU+F6CVgs/+QK6JBerzR0k8e0J7OnR0chK57C1jwOiZ9zZWHS/zVCrHSEcq1o=;
 Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
  (envelope-from <andrew@lunn.ch>)
- id 1hTsE5-0008QG-23; Thu, 23 May 2019 20:14:01 +0200
-Date: Thu, 23 May 2019 20:14:01 +0200
+ id 1hTsEt-0008SB-Tk; Thu, 23 May 2019 20:14:51 +0200
+Date: Thu, 23 May 2019 20:14:51 +0200
 From: Andrew Lunn <andrew@lunn.ch>
 To: Heiner Kallweit <hkallweit1@gmail.com>
-Subject: Re: [PATCH net-next v2 2/3] dt-bindings: net: document new usxgmii
- phy mode
-Message-ID: <20190523181401.GD15531@lunn.ch>
+Subject: Re: [PATCH net-next v2 3/3] net: phy: aquantia: add USXGMII support
+ and warn if XGMII mode is set
+Message-ID: <20190523181451.GE15531@lunn.ch>
 References: <9d284f4d-93ee-fb27-e386-80825f92adc8@gmail.com>
- <60079a09-670b-268e-9ad5-014a427b60bf@gmail.com>
+ <96437cfa-b1f9-eeae-f9ca-c658c81f61c0@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <60079a09-670b-268e-9ad5-014a427b60bf@gmail.com>
+In-Reply-To: <96437cfa-b1f9-eeae-f9ca-c658c81f61c0@gmail.com>
 User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_111409_103799_E349315C 
-X-CRM114-Status: UNSURE (   7.65  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190523_111457_491458_6A4CC9C0 
+X-CRM114-Status: GOOD (  10.46  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -91,8 +90,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 23, 2019 at 08:07:56PM +0200, Heiner Kallweit wrote:
-> Add new interface mode USXGMII to binding documentation.
+On Thu, May 23, 2019 at 08:09:08PM +0200, Heiner Kallweit wrote:
+> So far we didn't support mode USXGMII, and in order to not break few
+> boards mode XGMII was accepted for the AQR107 family even though it
+> doesn't support XGMII. Add USXGMII support to the Aquantia PHY driver
+> and warn if XGMII mode is set.
+> 
+> v2:
+> - add warning if XGMII mode is set
 > 
 > Signed-off-by: Heiner Kallweit <hkallweit1@gmail.com>
 
