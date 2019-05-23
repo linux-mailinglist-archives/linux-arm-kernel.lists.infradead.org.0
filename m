@@ -2,83 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB1E3281C5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 17:49:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7EDB6281DF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 17:55:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hiI1MDJlOp6Jxbp5X8XzBHEnCKRthsUaZJuDxgdHqtE=; b=gCkF7HLGMUqn2S
-	AJy7JpnIMuQIgUhlI3PfhgapjhDCnu2c4n1e7S0egF0UJN0jpLspTM+8hGUcINGV9BHZeX5mYQMdM
-	r6UCLkRl4tkSqk5CWMDcjq0hGNUH8snKeRkP58brMONTGEFa9y5jxIYdSOMBUzbDeh/QCt1jziHD8
-	6uIHNGyM/+MciCFpb5WIylcXkGFmvbIidefLVP0XpxPa66EByjbDPd2gxBeDeQov3tcW3sVtHV4x4
-	dkQM9mXSuGodB7t7/BwvxUryZbTIAxuXYOlVdTs0BiJUid/yjiSd6mWyQwQPPT8OEhqCZG0TuIzmd
-	MvoXtRNiFm55W55pNpiQ==;
+	List-Owner; bh=rv9BPty79Kp9bmtBvn6x+QLFv4mFYRsc8mIlgmF2C34=; b=O2y8A6TwbCcGag
+	8SrT4jyfStuke/2oAoWyh/n87pjAGEgh61NPUzD4mcG88O+bA8TiBdaZ/ncnThyF9lCSWXEF94dxp
+	dksjH0/L7vJGOaaXfQuZBZAXzwcn1Jm93A6rWIWkq/Qtvc/Yf9oGNs8vJSS8F6vLE2GBXtXKNlAoP
+	3H9DOvFhjcxU9lP82yz45k1n3UENSlEAQabd5ad4QsYJmdTaVu2Q9vG/mbkRS2bg8X2Lmdt4ebLKX
+	2NvgCZHLNSWTccUBGkC6cdDUgSxTl5WTA4cYt+B4lOVdDvENIwpMltfLNxiY0a3l9Q/0/wVjk23fm
+	De+8k6ed9BeF/Q7BYNDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTpyM-00070o-Mb; Thu, 23 May 2019 15:49:38 +0000
-Received: from mail-it1-x144.google.com ([2607:f8b0:4864:20::144])
+	id 1hTq3w-0001rG-9h; Thu, 23 May 2019 15:55:24 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTpxy-0006hU-4y
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 15:49:21 +0000
-Received: by mail-it1-x144.google.com with SMTP id e184so9261369ite.1
+ id 1hTq3p-0001qo-JI
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 15:55:18 +0000
+Received: from mail-qt1-f169.google.com (mail-qt1-f169.google.com
+ [209.85.160.169])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 79D802175B
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 23 May 2019 08:49:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=brauner.io; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=Z5ctpIu+jWXTv/YFXK0h4ORrsvPLOawXchITh96/44s=;
- b=LmDqunokL2kjMrDmv8k3gLYKoM+RLixq6vguLoqH6ppc5OE2j6g/sY/IRwa/T+C0lr
- MzhTsdRi1nPEx9ntLAlE+TIJAMjWkklvTV4NijoxXlid+DHygGOIWSTqHkZnznJMFfeP
- woDcMT587TMgQJWCpoFjPXDaTxIjTBX17qmqOUGVWRXnl0B30Lu03+FkoeVqO7OJvCOe
- 6c1p8lxR7QzK3IVGGBHWO0z88XD+S1W9KkFTpROeb06FbFjBD6yrA4WamZ4UtOoN6tJk
- f05IXhmT+6d1ozkBEwzS/GJUPFRCEV+QIkQwz+TdoaVCt4UW8b+fkgNlvMeA8ioJ5g/s
- GwPQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=Z5ctpIu+jWXTv/YFXK0h4ORrsvPLOawXchITh96/44s=;
- b=TUeJlTegFdHRN1acf+zK5ZU2NlJQvP0c4YwMa2DFLFsBUOA1VwnKx3mcbRz0+peGFG
- mk0tuc8pGMhl9Bp9NEV+MlGIl5vUfT9zCgRF/pBs9MDggyWgmEkNXoaIwctZb0fgNW8f
- y7FyUwLoxzQiT61ssm87rlAOcxyJ7kyGCHCOE7SDsgZtGhIPFcLIc5ox+cHccFa8JgYb
- Kki/0p5Zivzw/hDlNNSwB1af5vrbtvFS7P39sYzzQiXSVdWHjWZSTDSxdO+YCNYWcj7O
- 7otzxAxBVWyc3Uomw71D4aTBzNyscPq7r2hiYN8ByyZshbx7lpwOfEayHHp5KPOf+VtK
- Aevw==
-X-Gm-Message-State: APjAAAWeHwhbJ0OgJ/wraX6sVG8s/YD8KySTm/ZuUc3/K2ZOBG1FqlS1
- fBStIAf4o0750wfaWl60ufkNHw==
-X-Google-Smtp-Source: APXvYqxC9q/gfvF4noEmnKzYohqXHRREb6iPacdieXuLb/sEjezVXXt1D/3GJTGuntWPZltO3Gx05A==
-X-Received: by 2002:a05:6638:617:: with SMTP id
- g23mr11397158jar.118.1558626553338; 
- Thu, 23 May 2019 08:49:13 -0700 (PDT)
-Received: from localhost.localdomain ([172.56.12.187])
- by smtp.gmail.com with ESMTPSA id v1sm9124939iob.56.2019.05.23.08.49.05
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 23 May 2019 08:49:12 -0700 (PDT)
-From: Christian Brauner <christian@brauner.io>
-To: viro@zeniv.linux.org.uk, linux-kernel@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, linux-api@vger.kernel.org,
- torvalds@linux-foundation.org, fweimer@redhat.com
-Subject: [PATCH v2 2/2] tests: add close_range() tests
-Date: Thu, 23 May 2019 17:47:47 +0200
-Message-Id: <20190523154747.15162-3-christian@brauner.io>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190523154747.15162-1-christian@brauner.io>
-References: <20190523154747.15162-1-christian@brauner.io>
+ Thu, 23 May 2019 15:55:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1558626916;
+ bh=JUOPRAHlxD37cj7X5mjXujgKukJ+EI5g3Of9neklXRc=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=Ocp40sto8Gq6/0uRuAdHyZHHkF2oG0CIBODLzqqtKumSJxpWuCby6vxTFj19gf+eG
+ 9FIWW+5EJzp220GZ5j8OH62sdyNyEuCD+eRtoGun/U2S9jWpB4JlUEt4bCAxHyel/w
+ mZK/3l5p6LCRP+bLZqB9mlMk2s0vqj6Wz6G6CFcM=
+Received: by mail-qt1-f169.google.com with SMTP id f24so7284530qtk.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 23 May 2019 08:55:16 -0700 (PDT)
+X-Gm-Message-State: APjAAAWUIk1vuCZr+LN60roEzlf2TRm+v6sRdjxqZBq9azKhlh6GMhNT
+ TeK+l1zhdIk+mvhi+gyGSY914KdSFQ+aObtqUQ==
+X-Google-Smtp-Source: APXvYqwEEihkSXSYkUOGNw6QZNJ7c5VF8WdzMUhYcRqzxhUuKrUfiTJdsCIvlXDQgQ80MHzHtm0PBbhB4PgJSALMZ1k=
+X-Received: by 2002:ac8:6b14:: with SMTP id w20mr60341941qts.110.1558626915748; 
+ Thu, 23 May 2019 08:55:15 -0700 (PDT)
 MIME-Version: 1.0
+References: <74d98cc3c744d53710c841381efd41cf5f15e656.1558605170.git-series.maxime.ripard@bootlin.com>
+ <6f16585ffdc75af4e023c4d3ebba68feb65cc26e.1558605170.git-series.maxime.ripard@bootlin.com>
+In-Reply-To: <6f16585ffdc75af4e023c4d3ebba68feb65cc26e.1558605170.git-series.maxime.ripard@bootlin.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Thu, 23 May 2019 10:55:04 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq+PMT99aw5bkp515XDpKELdpXB2BH_n6e-BwQS+KAHy0Q@mail.gmail.com>
+Message-ID: <CAL_Jsq+PMT99aw5bkp515XDpKELdpXB2BH_n6e-BwQS+KAHy0Q@mail.gmail.com>
+Subject: Re: [PATCH 7/8] dt-bindings: net: sun7i-gmac: Convert the binding to
+ a schemas
+To: Maxime Ripard <maxime.ripard@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_084914_556995_436A317C 
-X-CRM114-Status: GOOD (  20.46  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190523_085517_648382_CEE92FC6 
+X-CRM114-Status: GOOD (  14.55  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -88,6 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -99,233 +87,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org, ldv@altlinux.org,
- dhowells@redhat.com, linux-kselftest@vger.kernel.org,
- sparclinux@vger.kernel.org, shuah@kernel.org, linux-arch@vger.kernel.org,
- linux-s390@vger.kernel.org, miklos@szeredi.hu, x86@kernel.org,
- Christian Brauner <christian@brauner.io>, linux-mips@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, tkjos@android.com, arnd@arndb.de,
- jannh@google.com, linux-m68k@lists.linux-m68k.org, tglx@linutronix.de,
- linux-arm-kernel@lists.infradead.org, linux-parisc@vger.kernel.org,
- oleg@redhat.com, linux-alpha@vger.kernel.org, linuxppc-dev@lists.ozlabs.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ =?UTF-8?Q?Antoine_T=C3=A9nart?= <antoine.tenart@bootlin.com>,
+ netdev <netdev@vger.kernel.org>, linux-stm32@st-md-mailman.stormreply.com,
+ Chen-Yu Tsai <wens@csie.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "David S . Miller" <davem@davemloft.net>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds basic tests for the new close_range() syscall.
-- test that no invalid flags can be passed
-- test that a range of file descriptors is correctly closed
-- test that a range of file descriptors is correctly closed if there there
-  are already closed file descriptors in the range
-- test that max_fd is correctly capped to the current fdtable maximum
+On Thu, May 23, 2019 at 4:57 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+>
+> Switch our Allwinner A20 GMAC controller binding to a YAML schema to enable
+> the DT validation. Since that controller is based on a Synopsys IP, let's
+> add the validation to that schemas with a bunch of conditionals.
+>
+> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+> ---
+>  Documentation/devicetree/bindings/net/allwinner,sun7i-a20-gmac.txt | 27 ---------------------------
+>  Documentation/devicetree/bindings/net/snps,dwmac.yaml              | 45 +++++++++++++++++++++++++++++++++++++++++++++
+>  2 files changed, 45 insertions(+), 27 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/net/allwinner,sun7i-a20-gmac.txt
 
-Signed-off-by: Christian Brauner <christian@brauner.io>
-Cc: Arnd Bergmann <arnd@arndb.de>
-Cc: Jann Horn <jannh@google.com>
-Cc: David Howells <dhowells@redhat.com>
-Cc: Dmitry V. Levin <ldv@altlinux.org>
-Cc: Oleg Nesterov <oleg@redhat.com>
-Cc: Linus Torvalds <torvalds@linux-foundation.org>
-Cc: Florian Weimer <fweimer@redhat.com>
-Cc: linux-api@vger.kernel.org
----
-v1: unchanged
-v2:
-- Christian Brauner <christian@brauner.io>:
-  - verify that close_range() correctly closes a single file descriptor
----
- tools/testing/selftests/Makefile              |   1 +
- tools/testing/selftests/core/.gitignore       |   1 +
- tools/testing/selftests/core/Makefile         |   6 +
- .../testing/selftests/core/close_range_test.c | 142 ++++++++++++++++++
- 4 files changed, 150 insertions(+)
- create mode 100644 tools/testing/selftests/core/.gitignore
- create mode 100644 tools/testing/selftests/core/Makefile
- create mode 100644 tools/testing/selftests/core/close_range_test.c
+I think it would be better to keep these as separate files and either
+include snps,dwmac.yaml from it or only add the compatible to
+snps,dwmac.yaml.
 
-diff --git a/tools/testing/selftests/Makefile b/tools/testing/selftests/Makefile
-index 9781ca79794a..06e57fabbff9 100644
---- a/tools/testing/selftests/Makefile
-+++ b/tools/testing/selftests/Makefile
-@@ -4,6 +4,7 @@ TARGETS += bpf
- TARGETS += breakpoints
- TARGETS += capabilities
- TARGETS += cgroup
-+TARGETS += core
- TARGETS += cpufreq
- TARGETS += cpu-hotplug
- TARGETS += drivers/dma-buf
-diff --git a/tools/testing/selftests/core/.gitignore b/tools/testing/selftests/core/.gitignore
-new file mode 100644
-index 000000000000..6e6712ce5817
---- /dev/null
-+++ b/tools/testing/selftests/core/.gitignore
-@@ -0,0 +1 @@
-+close_range_test
-diff --git a/tools/testing/selftests/core/Makefile b/tools/testing/selftests/core/Makefile
-new file mode 100644
-index 000000000000..de3ae68aa345
---- /dev/null
-+++ b/tools/testing/selftests/core/Makefile
-@@ -0,0 +1,6 @@
-+CFLAGS += -g -I../../../../usr/include/ -I../../../../include
-+
-+TEST_GEN_PROGS := close_range_test
-+
-+include ../lib.mk
-+
-diff --git a/tools/testing/selftests/core/close_range_test.c b/tools/testing/selftests/core/close_range_test.c
-new file mode 100644
-index 000000000000..d6e6079d3d53
---- /dev/null
-+++ b/tools/testing/selftests/core/close_range_test.c
-@@ -0,0 +1,142 @@
-+// SPDX-License-Identifier: GPL-2.0
-+
-+#define _GNU_SOURCE
-+#include <errno.h>
-+#include <fcntl.h>
-+#include <linux/kernel.h>
-+#include <limits.h>
-+#include <stdbool.h>
-+#include <stdio.h>
-+#include <stdlib.h>
-+#include <string.h>
-+#include <syscall.h>
-+#include <unistd.h>
-+
-+#include "../kselftest.h"
-+
-+static inline int sys_close_range(unsigned int fd, unsigned int max_fd,
-+				  unsigned int flags)
-+{
-+	return syscall(__NR_close_range, fd, max_fd, flags);
-+}
-+
-+#ifndef ARRAY_SIZE
-+#define ARRAY_SIZE(x) (sizeof(x) / sizeof((x)[0]))
-+#endif
-+
-+int main(int argc, char **argv)
-+{
-+	const char *test_name = "close_range";
-+	int i, ret;
-+	int open_fds[101];
-+	int fd_max, fd_mid, fd_min;
-+
-+	ksft_set_plan(9);
-+
-+	for (i = 0; i < ARRAY_SIZE(open_fds); i++) {
-+		int fd;
-+
-+		fd = open("/dev/null", O_RDONLY | O_CLOEXEC);
-+		if (fd < 0) {
-+			if (errno == ENOENT)
-+				ksft_exit_skip(
-+					"%s test: skipping test since /dev/null does not exist\n",
-+					test_name);
-+
-+			ksft_exit_fail_msg(
-+				"%s test: %s - failed to open /dev/null\n",
-+				strerror(errno), test_name);
-+		}
-+
-+		open_fds[i] = fd;
-+	}
-+
-+	fd_min = open_fds[0];
-+	fd_max = open_fds[99];
-+
-+	ret = sys_close_range(fd_min, fd_max, 1);
-+	if (!ret)
-+		ksft_exit_fail_msg(
-+			"%s test: managed to pass invalid flag value\n",
-+			test_name);
-+	ksft_test_result_pass("do not allow invalid flag values for close_range()\n");
-+
-+	fd_mid = open_fds[50];
-+	ret = sys_close_range(fd_min, fd_mid, 0);
-+	if (ret < 0)
-+		ksft_exit_fail_msg(
-+			"%s test: Failed to close range of file descriptors from %d to %d\n",
-+			test_name, fd_min, fd_mid);
-+	ksft_test_result_pass("close_range() from %d to %d\n", fd_min, fd_mid);
-+
-+	for (i = 0; i <= 50; i++) {
-+		ret = fcntl(open_fds[i], F_GETFL);
-+		if (ret >= 0)
-+			ksft_exit_fail_msg(
-+				"%s test: Failed to close range of file descriptors from %d to %d\n",
-+				test_name, fd_min, fd_mid);
-+	}
-+	ksft_test_result_pass("fcntl() verify closed range from %d to %d\n", fd_min, fd_mid);
-+
-+	/* create a couple of gaps */
-+	close(57);
-+	close(78);
-+	close(81);
-+	close(82);
-+	close(84);
-+	close(90);
-+
-+	fd_mid = open_fds[51];
-+	/* Choose slightly lower limit and leave some fds for a later test */
-+	fd_max = open_fds[92];
-+	ret = sys_close_range(fd_mid, fd_max, 0);
-+	if (ret < 0)
-+		ksft_exit_fail_msg(
-+			"%s test: Failed to close range of file descriptors from 51 to 100\n",
-+			test_name);
-+	ksft_test_result_pass("close_range() from %d to %d\n", fd_mid, fd_max);
-+
-+	for (i = 51; i <= 92; i++) {
-+		ret = fcntl(open_fds[i], F_GETFL);
-+		if (ret >= 0)
-+			ksft_exit_fail_msg(
-+				"%s test: Failed to close range of file descriptors from 51 to 100\n",
-+				test_name);
-+	}
-+	ksft_test_result_pass("fcntl() verify closed range from %d to %d\n", fd_mid, fd_max);
-+
-+	fd_mid = open_fds[93];
-+	fd_max = open_fds[99];
-+	/* test that the kernel caps and still closes all fds */
-+	ret = sys_close_range(fd_mid, UINT_MAX, 0);
-+	if (ret < 0)
-+		ksft_exit_fail_msg(
-+			"%s test: Failed to close range of file descriptors from 51 to 100\n",
-+			test_name);
-+	ksft_test_result_pass("close_range() from %d to %d\n", fd_mid, fd_max);
-+
-+	for (i = 93; i < 100; i++) {
-+		ret = fcntl(open_fds[i], F_GETFL);
-+		if (ret >= 0)
-+			ksft_exit_fail_msg(
-+				"%s test: Failed to close range of file descriptors from 51 to 100\n",
-+				test_name);
-+	}
-+	ksft_test_result_pass("fcntl() verify closed range from %d to %d\n", fd_mid, fd_max);
-+
-+	ret = sys_close_range(open_fds[100], open_fds[100], 0);
-+	if (ret < 0)
-+		ksft_exit_fail_msg(
-+			"%s test: Failed to close single file descriptor\n",
-+			test_name);
-+	ksft_test_result_pass("close_range() closed single file descriptor\n");
-+
-+	ret = fcntl(open_fds[100], F_GETFL);
-+	if (ret >= 0)
-+		ksft_exit_fail_msg(
-+			"%s test: Failed to close single file descriptor\n",
-+			test_name);
-+	ksft_test_result_pass("fcntl() verify closed single file descriptor\n");
-+
-+	return ksft_exit_pass();
-+}
--- 
-2.21.0
-
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
