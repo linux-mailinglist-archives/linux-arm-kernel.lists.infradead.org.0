@@ -2,90 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A626827314
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 02:00:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B69DD27329
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 02:13:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=5dRdt3OnqK3OBwdJA1E9ajAxyHco71Xw+eLBv9rK3fE=; b=ah72z8VcrroI0EAben2dLQg7I
-	X+siKt6sK8iRQg1mfsLTfJW1l7h8nVschMYPJT+0974zKy9TCuox0Faxi7MrXSeaO45WGN9hpa3pE
-	4ZvXuEb+8tZXhc659u26rcf39jLIXh0d1XxDVm2/B823oeNnxCGEehdS8XYZX4dMVDYMkzn6k6QnG
-	ngwrr17MppohLpHFZZ7kk4d/3zmWGbVNp2hiw9cudOqje3aZmtHIWeY9dRhnCfRyjgPG3v1fEcHsp
-	RQH1x6wDLHah6DPvjINC3amnU5Dy6sBxr00/h7bf1NU51o0OBgGPLPpr4Sy0zyYUsKcES4HxBMv6q
-	jE4YTE7+g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=0jBdd5L5lTolq2j1J/g/eu9ofDQ+Tibv4v36t9EHnn4=; b=l1E
+	15ct2Ng+vQDbv0AXWlqz8F0+38Ld0sH24kaLxnpwqPTTBxU8WduRkX6akxxCG02/tKjq3Gqovw9eW
+	hEKE0pa0kM9OnfNeq4NnxkPJWAdPEcgsWX90NiDD5w/hiGObAy1z9H97sLrfSKo/S2jUbcYkYFVg0
+	U8/l2Crz2eilsaPD9OGOMwwUKOZQacDSsenzQavJFUj0k2ILt5r7zi3B/kwOa+qNLAjTbWH6SzwMU
+	FBpDXDm6fp901/vmXhdWYq5e8QgIHjzsQMjQpPtr4rw5cvK5sU5duiv2K4609uP5l31vX7OSqxjUQ
+	V6idTckrZvn9Lg9yfu+zWgn8A56bJ/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTbA2-0007uF-V8; Thu, 23 May 2019 00:00:42 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1hTbMi-0002ZL-1V; Thu, 23 May 2019 00:13:48 +0000
+Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTb9s-0007rP-68; Thu, 23 May 2019 00:00:35 +0000
-Received: by mail-qt1-x843.google.com with SMTP id a17so4686702qth.3;
- Wed, 22 May 2019 17:00:29 -0700 (PDT)
+ id 1hTbMb-0002Z2-CE
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 00:13:42 +0000
+Received: by mail-qk1-x742.google.com with SMTP id i125so611955qkd.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 22 May 2019 17:13:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=D32ZOKFRLW3jAQLYe8MxTrM9BtRmyZsAFpuUM0kn1Ds=;
- b=JS8A+Bj/AWAzLMo3ePM3T1UaSpb1eFU4LIWakq8i+KUmlgr835lr1xpsWj2Uj7x2MB
- PqJJTfd06T/sk14XCzrScM5CEvQU5Jq9efppNRs1FFYUgGDSUh1OXcZpYJy7IlH+PKQh
- q5kvokXUAgCQNYrPmGygRhBdWXPdihNDXxR42nnHvt0juMn7iLRbRnTC38Lo12QwanDg
- 3sN0VNr0XKwBQQKqe99tYKMVRYqbqdTcOdMsRNCBntYbbsAU/4NSEIXE4FhWv5d5gxQq
- lqFruq00bv9lW3y7lxOSisbTemJ0JgQqHAlySmn5jF/k93YXIpKDV5et1tSARvTIY1n8
- Lstw==
+ h=from:to:cc:subject:date:message-id;
+ bh=CAAVCkRuBI0e6m+i9nH99blgCysQM7p9/3WE4nNdp98=;
+ b=HahybX4EYjTIw0G4/2Gb7Ww2tKMa5jDJZ/J2wczrsFc1cR5nq2akOtSpQBugqw18K5
+ tuGh6uiYroEX8qzLy1+kd5btw4Adgg9flMrJumAckVhsj2fGkhnAYsJcrct1QJlweAcH
+ t/uche/kUKLyVSh7vwe0HoDAbTvEZzkK0I4YUbIGpxQ8v7Aqja/XqhJuPHi2TRdR+Fre
+ SWdw+kMQocXNpmyQal24hJ8d9XjESDCeVv2ol88yspTYWe2FBb1zwpzJd+QLIkEeXlpc
+ Gnq1aAIEq2Xm/dSEjDb/n000zuKIx5wQDhGj/+LdDXjDqXcQ7gpm2t58gm++rfA8VpD0
+ 51oQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=D32ZOKFRLW3jAQLYe8MxTrM9BtRmyZsAFpuUM0kn1Ds=;
- b=MJ1wDJDC2zMU4IGqgmKbxOaXpWpxAcr9yYzAXvGwP1QkPzp6+KazNgMyj4JFhuZj2H
- WOspSYbDVoI4XVE2nsustdHT6sKdcgPLkBvT5LNlKbMRZPE3RMvHma7l7UzQNCyAYQMT
- Onb2NSM6MDZraDfT/y3uAqelGUjNW8y6pff0f60AjNqU75VjAAymBcoKeeykrPDQVmlC
- vLDaUa/2Wl2ZGsqFMjCfTNn6ls81fxXjbt8zhG+zMcf3rpeQsTFH0gO3WVLgRCBuDPih
- NrUvfKBWhKOmoiVmxt2tzdYmWUuudmewOGjfuQzz+bqJ0pZArWnrAkm4iE7YI6ZHV0tb
- kBzQ==
-X-Gm-Message-State: APjAAAWLniQWGSDTbEarP8+da9PthQT1/r9BmsPET4u2euqqLxI9Uq9I
- ZsFOZEhZ0hs4HrFVUpCz4U9CWngjnR0=
-X-Google-Smtp-Source: APXvYqwCoN7DDPqrWOVld8/7JP9cFARTCBUDwI2ne42/vUAqE2OwpkZjxFm9lOvdj0+yKh06/hUEpw==
-X-Received: by 2002:ac8:32d1:: with SMTP id a17mr12803234qtb.111.1558569628805; 
- Wed, 22 May 2019 17:00:28 -0700 (PDT)
-Received: from ?IPv6:2601:153:900:ebb:74b5:9fcf:6f1f:201d?
- ([2601:153:900:ebb:74b5:9fcf:6f1f:201d])
- by smtp.gmail.com with ESMTPSA id c32sm17735525qte.2.2019.05.22.17.00.28
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=CAAVCkRuBI0e6m+i9nH99blgCysQM7p9/3WE4nNdp98=;
+ b=EcQ5K52lFCsi5ORb6ClLCupXm8yCRCJMvvNymad5YVmvl5CX2bOULXcAv7Wda50Tiu
+ y34hcuDpawKjxr6rwyLbVj71NZUxQ8o1kUguRoLZmOPYMyoLhWEVDoZIx+3VYpgI3c5+
+ RYyPCCDiv3184jOiF1dOEY6xFrQT0GCt+DvKzCe0q5/E6PkskKuAo9sdk7C0Hl76Va9y
+ dpkvKd97zQc7CcL+ug0fuLrVJ84NCuTgSlY9S5tTvOExCK325CiU8aGgolOb2yvSwHn8
+ zgnKJpl1z7GkDTj9csBLq1xUCZfyfZ+5AptSm5dYx0IGbEnKq+rnxkRjcoXNsROygBsR
+ bMPg==
+X-Gm-Message-State: APjAAAWLUK4QBfYCstpK1p8pk6eMda3sKJC3FeKvHg5LVccSodJj9D3i
+ r4slBA45dPz1itQUA0ko88w=
+X-Google-Smtp-Source: APXvYqxOXU1H1tgc2+e+Y2AyyAJqAIvFJgkXT1ZZUliGYEyNKk32g/AeXw7UCTsWUQ/fUuGFYqREiw==
+X-Received: by 2002:a37:dcc1:: with SMTP id
+ v184mr62432658qki.338.1558570419041; 
+ Wed, 22 May 2019 17:13:39 -0700 (PDT)
+Received: from localhost.localdomain ([2804:14c:482:3c8:56cb:1049:60d2:137b])
+ by smtp.gmail.com with ESMTPSA id
+ 29sm14198425qty.87.2019.05.22.17.13.35
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 22 May 2019 17:00:28 -0700 (PDT)
-Subject: Re: [PATCH] arm64: dts: rockchip: set TX PBL for rk3328-roc-cc gmac
-To: "Leonidas P. Papadakos" <papadakospan@gmail.com>
-References: <20190417210059.26262-1-papadakospan@gmail.com>
- <8865b046-fb3a-4071-335c-66abb344d7f4@gmail.com>
- <1555915435.1262.1@gmail.com>
- <9a5c62b4-ea75-de4f-9b71-ffa42cb8eaac@gmail.com>
- <1555938803.1241.1@gmail.com>
-From: Peter Geis <pgwipeout@gmail.com>
-Message-ID: <8ded737d-1fd5-3609-ca2e-cfeba63b2d95@gmail.com>
-Date: Wed, 22 May 2019 20:00:27 -0400
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-MIME-Version: 1.0
-In-Reply-To: <1555938803.1241.1@gmail.com>
-Content-Language: en-US
+ Wed, 22 May 2019 17:13:38 -0700 (PDT)
+From: Fabio Estevam <festevam@gmail.com>
+To: shawnguo@kernel.org
+Subject: [PATCH] ARM: imx_v6_v7_defconfig: Select CONFIG_NVMEM_SNVS_LPGPR
+Date: Wed, 22 May 2019 21:13:35 -0300
+Message-Id: <20190523001335.14081-1-festevam@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_170032_253657_5A853E2C 
-X-CRM114-Status: GOOD (  13.00  )
+X-CRM114-CacheID: sfid-20190522_171341_444496_C7CC98F4 
+X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pgwipeout[at]gmail.com)
+ provider (festevam[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -104,41 +96,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <jose.abreu@synopsys.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org, Fabio Estevam <festevam@gmail.com>,
+ linux-imx@nxp.com, kernel@pengutronix.de
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The SNVS LPGPR hardware is present on several i.MX SoCs.
 
+Select its driver by default.
 
-On 4/22/2019 9:13 AM, Leonidas P. Papadakos wrote:
-> 
-> Indeed, at least with that first patch users won't have a crappy 
-> experience by default (ssh lags and the like)
-> 
-> 
+Signed-off-by: Fabio Estevam <festevam@gmail.com>
+---
+ arch/arm/configs/imx_v6_v7_defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-I apologize for taking so long at this, but I wanted to make sure I had 
-it right.
+diff --git a/arch/arm/configs/imx_v6_v7_defconfig b/arch/arm/configs/imx_v6_v7_defconfig
+index 2cdce7be27f1..658982063dd8 100644
+--- a/arch/arm/configs/imx_v6_v7_defconfig
++++ b/arch/arm/configs/imx_v6_v7_defconfig
+@@ -406,6 +406,7 @@ CONFIG_PWM_IMX27=y
+ CONFIG_PWM_IMX_TPM=y
+ CONFIG_NVMEM_IMX_OCOTP=y
+ CONFIG_NVMEM_VF610_OCOTP=y
++CONFIG_NVMEM_SNVS_LPGPR=y
+ CONFIG_TEE=y
+ CONFIG_OPTEE=y
+ CONFIG_MUX_MMIO=y
+-- 
+2.17.1
 
-So far I've found a few things that seem to help, and would like y'all 
-to test them when you get the chance.
-
-Adding snps,aal (configures DMA for address alignment) appears to make a 
-massive improvement to stability, although the the snps,txpbl = <0x4> is 
-still necessary for this to work.
-
-Second, I added snps,rxpbl = <0x4> as well, which seems to help with my 
-RX issues a bit.
-The biggest improvement with these two settings is more stable transmit 
-and receive.
-Currently I'm getting about 800mbps on tx and 400 mbps on rx.
-
-Please test when you get the chance and provide feedback.
 
 _______________________________________________
 linux-arm-kernel mailing list
