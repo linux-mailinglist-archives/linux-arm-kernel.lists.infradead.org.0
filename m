@@ -2,56 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D32D6278D0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 11:07:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4786F278D1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 11:07:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=h44jlQP5zTbZcnctKfQEjNr3DId7gbbYutxvRfhxcW8=; b=aqdMSFR5KMBI8CU0S95BfQOyas
-	P68hndpeVbJrLDq0/gZiixsLOHvp8anjuD1q1QmGBFetSdunhJZML0nurpAgxbPUq10z/R1IqqFBE
-	cken16f9QQSkPwK3Nzlfyf07goiQeibqcWwTs37UqNElGNDL1UI9cioRGHX6dmh/MtkCzFbbZEifH
-	+5I9NphnwRTePWfwYDnT0hNXTPhtaOmLOMNnubvbFMXum0uAwO55n7i1OsPolaC/c6plPM184Actu
-	58MTC3a/vadby3lE9QgI3iSpZKPFoL9EaOgF16mfVtl7kCixHBEdy37IzBll80L9Rd7u4BJH9jYim
-	W6+vW+4w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8LnLPnT5v4F3bwbpTyZpbCSlQxMYHSaLCW0Y6M2Ps8A=; b=uOqpHKt9dDF21P
+	hRKITU2+DkSuHCgr12D/advJ66s0j6sdK3xO0LAEoI5N8UtLggn3vIwPp3b+z9iFFUWgNRfkUFb/c
+	dF+Crd45WfT/KsCIiwQc4L9B66/sN3hLLQJKfNIF2kCl/kjl10q0TUUYsjgNSmkzIUf0v/fYpLzL1
+	7NuDmMkGVS2HiQDQD2T3Ald85yIzLz+v77R6FyiwxQX0+NK8h3Ck+DPHe6SG4RCFT/Kh5X/clm7Lk
+	QOlkz/9OMswry/eGmbNmjViQN4KM4iP329Qc/YLtFUwMCafLHT+I0pi7jhYYqn4yxGuHLpQgq3Onk
+	T8bMZEBoDPY3MYeCgZQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTjhB-0004sM-4i; Thu, 23 May 2019 09:07:29 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTjgQ-00045A-Mf
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 09:06:46 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2102B165C;
- Thu, 23 May 2019 02:06:42 -0700 (PDT)
-Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 0D7903F575;
- Thu, 23 May 2019 02:06:39 -0700 (PDT)
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: x86@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH v4 4/4] arm64: ptrace: add support for syscall emulation
-Date: Thu, 23 May 2019 10:06:18 +0100
-Message-Id: <20190523090618.13410-5-sudeep.holla@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190523090618.13410-1-sudeep.holla@arm.com>
-References: <20190523090618.13410-1-sudeep.holla@arm.com>
+	id 1hTjhY-0005Bl-Bx; Thu, 23 May 2019 09:07:52 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hTjh8-00050C-Mz
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 09:07:36 +0000
+Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1F90220856;
+ Thu, 23 May 2019 09:07:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1558602446;
+ bh=R6tEjLas6MCcccFsLl09D1g/U6ahQt0pSWcx7kkBmNI=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=MXYXGoMKGUoph3WRN7mBSSc7ka02CFH/wvKGoRlpJhc3nHyoVDOd7ZNLCmbBNIhQh
+ X/ub24N0+AKD84WD8zHsy8My0v9Zo2NLmVNmwezRJqOzzqMFIXfjmeouRAP80wHI5q
+ iX076YMfG2TdVL+EeR8DTgOB5WmxhQvIUyxEkrY0=
+Date: Thu, 23 May 2019 17:06:29 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Fabio Estevam <festevam@gmail.com>
+Subject: Re: [PATCH RESEND 1/2] ARM: dts: imx53: Add capture-subsystem device
+Message-ID: <20190523090627.GS9261@dragon>
+References: <20190520132411.8540-1-festevam@gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190520132411.8540-1-festevam@gmail.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_020643_462018_7EBBFA0A 
-X-CRM114-Status: GOOD (  15.17  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190523_020727_585554_5B20124D 
+X-CRM114-Status: UNSURE (   7.58  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,91 +77,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Haibo Xu <haibo.xu@arm.com>, Steve Capper <Steve.Capper@arm.com>,
- Richard Weinberger <richard@nod.at>, jdike@addtoit.com,
- Sudeep Holla <sudeep.holla@arm.com>, Will Deacon <will.deacon@arm.com>,
- Oleg Nesterov <oleg@redhat.com>, Bin Lu <bin.lu@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>
-MIME-Version: 1.0
+Cc: linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
+ kernel@pengutronix.de, slongerbeam@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add PTRACE_SYSEMU and PTRACE_SYSEMU_SINGLESTEP support on arm64.
-We don't need any special handling for PTRACE_SYSEMU_SINGLESTEP.
+On Mon, May 20, 2019 at 10:24:10AM -0300, Fabio Estevam wrote:
+> From: Steve Longerbeam <slongerbeam@gmail.com>
+> 
+> Add video capture_subsystem device node, and include both CSI ports.
+> Prepare for adding sensors by adding the parallel sensor anchor endpoints
+> to the CSI ports.
+> 
+> Signed-off-by: Steve Longerbeam <slongerbeam@gmail.com>
+> Signed-off-by: Fabio Estevam <festevam@gmail.com>
 
-It's quite difficult to generalize handling PTRACE_SYSEMU cross
-architectures and avoid calls to tracehook_report_syscall_entry twice.
-Different architecture have different mechanism to indicate NO_SYSCALL
-and trying to generalise adds more code for no gain.
-
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will.deacon@arm.com>
-Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
----
- arch/arm64/include/asm/thread_info.h | 5 ++++-
- arch/arm64/kernel/ptrace.c           | 6 +++++-
- 2 files changed, 9 insertions(+), 2 deletions(-)
-
-diff --git a/arch/arm64/include/asm/thread_info.h b/arch/arm64/include/asm/thread_info.h
-index eb3ef73e07cf..c285d1ce7186 100644
---- a/arch/arm64/include/asm/thread_info.h
-+++ b/arch/arm64/include/asm/thread_info.h
-@@ -75,6 +75,7 @@ void arch_release_task_struct(struct task_struct *tsk);
-  *  TIF_SYSCALL_TRACE	- syscall trace active
-  *  TIF_SYSCALL_TRACEPOINT - syscall tracepoint for ftrace
-  *  TIF_SYSCALL_AUDIT	- syscall auditing
-+ *  TIF_SYSCALL_EMU     - syscall emulation active
-  *  TIF_SECOMP		- syscall secure computing
-  *  TIF_SIGPENDING	- signal pending
-  *  TIF_NEED_RESCHED	- rescheduling necessary
-@@ -91,6 +92,7 @@ void arch_release_task_struct(struct task_struct *tsk);
- #define TIF_SYSCALL_AUDIT	9
- #define TIF_SYSCALL_TRACEPOINT	10
- #define TIF_SECCOMP		11
-+#define TIF_SYSCALL_EMU		12
- #define TIF_MEMDIE		18	/* is terminating due to OOM killer */
- #define TIF_FREEZE		19
- #define TIF_RESTORE_SIGMASK	20
-@@ -109,6 +111,7 @@ void arch_release_task_struct(struct task_struct *tsk);
- #define _TIF_SYSCALL_AUDIT	(1 << TIF_SYSCALL_AUDIT)
- #define _TIF_SYSCALL_TRACEPOINT	(1 << TIF_SYSCALL_TRACEPOINT)
- #define _TIF_SECCOMP		(1 << TIF_SECCOMP)
-+#define _TIF_SYSCALL_EMU	(1 << TIF_SYSCALL_EMU)
- #define _TIF_UPROBE		(1 << TIF_UPROBE)
- #define _TIF_FSCHECK		(1 << TIF_FSCHECK)
- #define _TIF_32BIT		(1 << TIF_32BIT)
-@@ -120,7 +123,7 @@ void arch_release_task_struct(struct task_struct *tsk);
- 
- #define _TIF_SYSCALL_WORK	(_TIF_SYSCALL_TRACE | _TIF_SYSCALL_AUDIT | \
- 				 _TIF_SYSCALL_TRACEPOINT | _TIF_SECCOMP | \
--				 _TIF_NOHZ)
-+				 _TIF_NOHZ | _TIF_SYSCALL_EMU)
- 
- #define INIT_THREAD_INFO(tsk)						\
- {									\
-diff --git a/arch/arm64/kernel/ptrace.c b/arch/arm64/kernel/ptrace.c
-index b82e0a9b3da3..9353355cb91a 100644
---- a/arch/arm64/kernel/ptrace.c
-+++ b/arch/arm64/kernel/ptrace.c
-@@ -1819,8 +1819,12 @@ static void tracehook_report_syscall(struct pt_regs *regs,
- 
- int syscall_trace_enter(struct pt_regs *regs)
- {
--	if (test_thread_flag(TIF_SYSCALL_TRACE))
-+	if (test_thread_flag(TIF_SYSCALL_TRACE) ||
-+		test_thread_flag(TIF_SYSCALL_EMU)) {
- 		tracehook_report_syscall(regs, PTRACE_SYSCALL_ENTER);
-+		if (!in_syscall(regs) || test_thread_flag(TIF_SYSCALL_EMU))
-+			return -1;
-+	}
- 
- 	/* Do the secure computing after ptrace; failures should be fast. */
- 	if (secure_computing(NULL) == -1)
--- 
-2.17.1
-
+Applied both, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
