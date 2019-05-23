@@ -2,33 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3EF2927665
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 09:00:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CCAF27669
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 09:00:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/lgrBOXzq8EM4cQKpfJ9tDvl/gMzMYozGGnYuT6lIPU=; b=kUEuLKyusU3WeF
-	3RdzySBtPongA1UoOPvh2sqXVEFm+y88XDMwuxkVPe1I4ZG03EBsjokaomnMQWaGYkNLnbgjDTJzI
-	8U4MoIuA/UmneNr2lf9J92mUf4KrVGWw653eD7LDaxT7rkMapf5bWm40CLAYlBojoSK7YH2HERJPM
-	ARf4KGBCZhoAr3HK44vLNlgbvfQeMuiiaqeipMikyOLMUNMrSmGbfMpP5dDjxH/UkgaIXhQzzCup5
-	CWPz2tePPohuVPT6vv4GJATbIBsTz1oDwE2Bv5eJKvavRK/vE+OhWIPzXHv5MaRp500lU3ur+5NNW
-	kbkkFzDrN1uJPqlWogWQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pfvG2Je1Ju2qOmLwR05+rz7cS9tkINesi1gQDqj2tOY=; b=kQfLVJv3fRer+Y
+	/xElkbDhqrQtIMbLG/MsLFWemUOk7Z5MO+BiZVyF+aPpJGyQEvCLSaqk7MSg4N0u0qqsj27xms/K4
+	7J2UOLS19LvuiyMjyzJvdt+C6sKX4TxmJl35Sw5U5rdknTft0Kukj/9To0C+GFniX/Kp5tUe9wZsx
+	aEBATDQGm8vX/G/pEC5YZ8SnRlGbd6Cj7WKjkFOiRH5IcjGu3ESK1+ZzrQaN/CiTIHSRzZLfl3jlU
+	TxgGIqJFmQnp42M8BulariTmI5NSBazwxVfK4ojoHN0hY6kuqxuvj3zLXWxbopr5NjLOeM7Vm6DOz
+	v3KhrnuFAgWh0lhIpsOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hThiQ-0004hO-JK; Thu, 23 May 2019 07:00:38 +0000
+	id 1hThid-0004tb-1c; Thu, 23 May 2019 07:00:51 +0000
 Received: from 213-225-10-46.nat.highway.a1.net ([213.225.10.46]
  helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hThiJ-0004hB-Jm; Thu, 23 May 2019 07:00:32 +0000
+ id 1hThiM-0004hI-Ez; Thu, 23 May 2019 07:00:34 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Robin Murphy <robin.murphy@arm.com>
-Subject: implement generic dma_map_ops for IOMMUs v6
-Date: Thu, 23 May 2019 09:00:05 +0200
-Message-Id: <20190523070028.7435-1-hch@lst.de>
+Subject: [PATCH 01/23] iommu/dma: Cleanup dma-iommu.h
+Date: Thu, 23 May 2019 09:00:06 +0200
+Message-Id: <20190523070028.7435-2-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190523070028.7435-1-hch@lst.de>
+References: <20190523070028.7435-1-hch@lst.de>
 MIME-Version: 1.0
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -49,54 +51,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+No need for a __KERNEL__ guard outside uapi and add a missing comment
+describing the #else cpp statement.  Last but not least include
+<linux/errno.h> instead of the asm version, which is frowned upon.
 
-Hi Robin and Joerg,
+Signed-off-by: Christoph Hellwig <hch@lst.de>
+Reviewed-by: Robin Murphy <robin.murphy@arm.com>
+---
+ include/linux/dma-iommu.h | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
-I think we are finally ready for the generic dma-iommu series.  I have
-various DMA API changes pending, and Tom has patches ready to convert
-the AMD and Intel iommu drivers over to it.  I'd love to have this
-in a stable branch shared between the dma-mapping and iommu trees
-the day after rc2 is released.  I volunteer to create the branch,
-but I'm fine with it living in the iommu tree as well.
+diff --git a/include/linux/dma-iommu.h b/include/linux/dma-iommu.h
+index 476e0c54de2d..dfb83f9c24dc 100644
+--- a/include/linux/dma-iommu.h
++++ b/include/linux/dma-iommu.h
+@@ -16,9 +16,8 @@
+ #ifndef __DMA_IOMMU_H
+ #define __DMA_IOMMU_H
+ 
+-#ifdef __KERNEL__
++#include <linux/errno.h>
+ #include <linux/types.h>
+-#include <asm/errno.h>
+ 
+ #ifdef CONFIG_IOMMU_DMA
+ #include <linux/dma-mapping.h>
+@@ -86,7 +85,7 @@ void iommu_dma_compose_msi_msg(struct msi_desc *desc,
+ 
+ void iommu_dma_get_resv_regions(struct device *dev, struct list_head *list);
+ 
+-#else
++#else /* CONFIG_IOMMU_DMA */
+ 
+ struct iommu_domain;
+ struct msi_desc;
+@@ -128,5 +127,4 @@ static inline void iommu_dma_get_resv_regions(struct device *dev, struct list_he
+ }
+ 
+ #endif	/* CONFIG_IOMMU_DMA */
+-#endif	/* __KERNEL__ */
+ #endif	/* __DMA_IOMMU_H */
+-- 
+2.20.1
 
-
-A git tree is also available at:
-
-    git://git.infradead.org/users/hch/misc.git dma-iommu-ops.6
-
-Gitweb:
-
-    http://git.infradead.org/users/hch/misc.git/shortlog/refs/heads/dma-iommu-ops.6
-
-Changes since v5:
- - rebased to latest linus tree and dropped a patch now merged
- - remove the now pointless __dma_iommu_mmap function
- - restore a cleanup from Robin that would have caused a conflict in
-   last merge winow, but is fine now
-
-Changes since v4:
- - rebased to 5.2-rc1
-
-Changes since v3:
- - fold the separate patch to refactor mmap bounds checking
- - don't warn on not finding a vm_area
- - improve a commit log
- - refactor __dma_iommu_free a little differently
- - remove a minor MSI map cleanup to avoid a conflict with the
-   "Split iommu_dma_map_msi_msg" series
-
-Changes since v2:
- - address various review comments and include patches from Robin
-
-Changes since v1:
- - only include other headers in dma-iommu.h if CONFIG_DMA_IOMMU is enabled
- - keep using a scatterlist in iommu_dma_alloc
- - split out mmap/sgtable fixes and move them early in the series
- - updated a few commit logs
-_______________________________________________
-iommu mailing list
-iommu@lists.linux-foundation.org
-https://lists.linuxfoundation.org/mailman/listinfo/iommu
 
 _______________________________________________
 linux-arm-kernel mailing list
