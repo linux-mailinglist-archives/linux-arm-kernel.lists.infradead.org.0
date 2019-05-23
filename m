@@ -2,60 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39E4127EE2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 15:55:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4258127EFF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 16:02:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/7yBDxshANgTr69+l75MxbLbedhChGkf+ZDEzYzOiG8=; b=UX/M+3R8RPjvK5
-	9k7OVvjKJtTlwVB2sGMCbZlDAYXthKUk1ajNf9Qf/NaC409i0eVK14dfJCU51faZOJB+i1ewqg6Ul
-	mXITZ3rpW4wfaUhZo5D8+al6HUCpddQst9Khx4VLybaTc60qpCr61BRR8Z0l6H/DQWtXxx6NcA/wZ
-	ahHx5YmjZKEL87zm+IFcZ09u58lMqSCr+XazWg5oPrpK9+RxJIOgW0Dz9Xhn8sCdLsSEs/AYZu6WY
-	ZEDI5II6n8b0dakQ40NmhIED6IPKGWxtF4UdbpgK4WNWi5udQ+oYqPIOMR+8P1OW/Dyykn5hFAn5Q
-	y74honpyxKywCTvobUvg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PdyG0ntosKEfPLGnD4pOm7aXrDG2Gi10E3aRDXgbbEQ=; b=HglhYgGHyLtHmH
+	WUFYxHbX0Lgh39EcF+Lix+4GVudS5dk0JsSu+rhroz8kLnCVTYlu0skvd4y4mqyCJ31FZ+W1jlpv5
+	NCu1sWaDEQVchQW8ZYd4cyXGqPGQx+hXtHPtcEE/uBBHIQC3gfQRaCDkBOFpZYvza5rQGegEZEITu
+	hSABnHKI8H9HhqzglBvg5UHDYyP3fnW8NxxSdH7yS1oTKWAepXE1o+tNIb9UYQTA3I4HqYreKAIJc
+	2Hdy9F0xvKOFBmdFZHkdK6U336eyneWhXqQ4uF134g8QxZREbcSLvJJhI1QOIb+GQXRTLw5mdPS7H
+	sjYjz75K6hFHQVdiX6og==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hToBv-0003lS-Qy; Thu, 23 May 2019 13:55:31 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hToBp-0003kt-Q1
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 13:55:27 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D2BD980D;
- Thu, 23 May 2019 06:55:19 -0700 (PDT)
-Received: from [10.1.196.129] (ostrya.cambridge.arm.com [10.1.196.129])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8828C3F690;
- Thu, 23 May 2019 06:55:18 -0700 (PDT)
-Subject: Re: [PATCH/RFC] arm64: fix build warning from
- __AARCH64_INSN_FUNCS(ldadd, ...)
-To: Daniel Borkmann <daniel@iogearbox.net>, Will Deacon
- <will.deacon@arm.com>, Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-References: <1558599120-29394-1-git-send-email-yoshihiro.shimoda.uh@renesas.com>
- <20190523103602.GJ26646@fuggles.cambridge.arm.com>
- <4b35cc15-9e35-eb67-3cfc-3a8eff8c462e@iogearbox.net>
-From: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-Message-ID: <1daf0c3e-745b-386b-4a8d-bfb18f987239@arm.com>
-Date: Thu, 23 May 2019 14:54:54 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <4b35cc15-9e35-eb67-3cfc-3a8eff8c462e@iogearbox.net>
+	id 1hToIa-0006bq-2L; Thu, 23 May 2019 14:02:24 +0000
+Received: from mga12.intel.com ([192.55.52.136])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hToIR-0006aE-U8; Thu, 23 May 2019 14:02:17 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga008.jf.intel.com ([10.7.209.65])
+ by fmsmga106.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 23 May 2019 07:02:13 -0700
+X-ExtLoop1: 1
+Received: from fmsmsx103.amr.corp.intel.com ([10.18.124.201])
+ by orsmga008.jf.intel.com with ESMTP; 23 May 2019 07:02:13 -0700
+Received: from fmsmsx118.amr.corp.intel.com (10.18.116.18) by
+ FMSMSX103.amr.corp.intel.com (10.18.124.201) with Microsoft SMTP Server (TLS)
+ id 14.3.408.0; Thu, 23 May 2019 07:02:13 -0700
+Received: from shsmsx104.ccr.corp.intel.com (10.239.4.70) by
+ fmsmsx118.amr.corp.intel.com (10.18.116.18) with Microsoft SMTP Server (TLS)
+ id 14.3.408.0; Thu, 23 May 2019 07:02:12 -0700
+Received: from shsmsx108.ccr.corp.intel.com ([169.254.8.126]) by
+ SHSMSX104.ccr.corp.intel.com ([169.254.5.33]) with mapi id 14.03.0415.000;
+ Thu, 23 May 2019 22:02:11 +0800
+From: "Zhang, Rui" <rui.zhang@intel.com>
+To: Enric Balletbo i Serra <enric.balletbo@collabora.com>, Mark Brown
+ <broonie@kernel.org>, Eduardo Valentin <edubezval@gmail.com>, Elaine Zhang
+ <zhangqing@rock-chips.com>
+Subject: RE: mainline/master boot bisection: v5.2-rc1-165-g54dee406374c on
+ rk3288-veyron-jaq
+Thread-Topic: mainline/master boot bisection: v5.2-rc1-165-g54dee406374c on
+ rk3288-veyron-jaq
+Thread-Index: AQHVEQ59ng5b65ntw0ypm8xLYzn0kaZ4KgWAgAAB5wCAAJHx8A==
+Date: Thu, 23 May 2019 14:02:11 +0000
+Message-ID: <744357E9AAD1214791ACBA4B0B9092637757AD75@SHSMSX108.ccr.corp.intel.com>
+References: <5ce6040d.1c69fb81.60b3b.29fb@mx.google.com>
+ <20190523131207.GC17245@sirena.org.uk>
+ <ac2f06ac-2bf5-7af6-06c3-37b865c43738@collabora.com>
+In-Reply-To: <ac2f06ac-2bf5-7af6-06c3-37b865c43738@collabora.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-titus-metadata-40: eyJDYXRlZ29yeUxhYmVscyI6IiIsIk1ldGFkYXRhIjp7Im5zIjoiaHR0cDpcL1wvd3d3LnRpdHVzLmNvbVwvbnNcL0ludGVsMyIsImlkIjoiMWIyNDI1MTEtODVlNy00ZmQzLWFlZWUtYzI3OGQ0ODdiMDBlIiwicHJvcHMiOlt7Im4iOiJDVFBDbGFzc2lmaWNhdGlvbiIsInZhbHMiOlt7InZhbHVlIjoiQ1RQX05UIn1dfV19LCJTdWJqZWN0TGFiZWxzIjpbXSwiVE1DVmVyc2lvbiI6IjE3LjEwLjE4MDQuNDkiLCJUcnVzdGVkTGFiZWxIYXNoIjoibXUyNlNRZ3U4RWtRSEI1Q1ZFdjlOMURGMmlRVnc0M29SemtQREFEb0FGd0NLdDdUSkNEVXNqS2JzcXV4VXhEcCJ9
+x-ctpclassification: CTP_NT
+dlp-product: dlpe-windows
+dlp-version: 11.0.600.7
+dlp-reaction: no-action
+x-originating-ip: [10.239.127.40]
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_065525_850370_A56CEA9B 
-X-CRM114-Status: GOOD (  20.30  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190523_070215_985840_6B8DBD6F 
+X-CRM114-Status: GOOD (  14.58  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.136 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -67,81 +88,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-renesas-soc@vger.kernel.org, catalin.marinas@arm.com,
- kuninori.morimoto.gx@renesas.com, linux-arm-kernel@lists.infradead.org
+Cc: Heiko Stuebner <heiko@sntech.de>,
+ "tomeu.vizoso@collabora.com" <tomeu.vizoso@collabora.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "guillaume.tucker@collabora.com" <guillaume.tucker@collabora.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ "matthew.hart@linaro.org" <matthew.hart@linaro.org>,
+ "khilman@baylibre.com" <khilman@baylibre.com>,
+ "mgalka@collabora.com" <mgalka@collabora.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 23/05/2019 14:02, Daniel Borkmann wrote:
-> On 05/23/2019 12:36 PM, Will Deacon wrote:
->> [+Daniel and Jean-Philippe]
->>
->> On Thu, May 23, 2019 at 05:12:00PM +0900, Yoshihiro Shimoda wrote:
->>> The following build warning happens on gcc 8.1.0.
->>>
->>>  linux/arch/arm64/include/asm/insn.h: In function 'aarch64_insn_is_ldadd':
->>>  linux/arch/arm64/include/asm/insn.h:280:257: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
->>>  __AARCH64_INSN_FUNCS(ldadd, 0x3F20FC00, 0xB8200000)
->>>
->>> Since the second argument is mask value and compare with the third
->>> argument value, the bit 31 is always masked and then this macro is
->>> always false. So, this patch fixes the issue.
->>>
->>> Reported-by: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>
->>> Fixes: 34b8ab091f9ef57a ("bpf, arm64: use more scalable stadd over ldxr / stxr loop in xadd")
->>> Tested-by: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>
->>> Signed-off-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
->>> ---
->>>  I'm not sure the second argument "0xBF20FC00" is OK or not (we can set
->>>  to 0xFF20FC00 instead). So, I marked RFC on this patch.
->>>
->>>  arch/arm64/include/asm/insn.h | 2 +-
->>>  1 file changed, 1 insertion(+), 1 deletion(-)
->>>
->>> diff --git a/arch/arm64/include/asm/insn.h b/arch/arm64/include/asm/insn.h
->>> index ec894de..c9e3cdc 100644
->>> --- a/arch/arm64/include/asm/insn.h
->>> +++ b/arch/arm64/include/asm/insn.h
->>> @@ -277,7 +277,7 @@ __AARCH64_INSN_FUNCS(adrp,	0x9F000000, 0x90000000)
->>>  __AARCH64_INSN_FUNCS(prfm,	0x3FC00000, 0x39800000)
->>>  __AARCH64_INSN_FUNCS(prfm_lit,	0xFF000000, 0xD8000000)
->>>  __AARCH64_INSN_FUNCS(str_reg,	0x3FE0EC00, 0x38206800)
->>> -__AARCH64_INSN_FUNCS(ldadd,	0x3F20FC00, 0xB8200000)
->>> +__AARCH64_INSN_FUNCS(ldadd,	0xBF20FC00, 0xB8200000)
->>
->> Looking at the ISA encoding, I think that top digit should indeed be 'B',
->> but I haven't checked the rest of the instruction.
->>
->> However, I'm fairly sure we tested this so now I'm a bit worried that I'm
->> missing something :/
+
+
+> -----Original Message-----
+> From: Enric Balletbo i Serra [mailto:enric.balletbo@collabora.com]
+> Sent: Thursday, May 23, 2019 9:19 PM
+> To: Mark Brown <broonie@kernel.org>; Eduardo Valentin
+> <edubezval@gmail.com>; Elaine Zhang <zhangqing@rock-chips.com>
+> Cc: tomeu.vizoso@collabora.com; guillaume.tucker@collabora.com;
+> mgalka@collabora.com; matthew.hart@linaro.org; khilman@baylibre.com;
+> Daniel Lezcano <daniel.lezcano@linaro.org>; Heiko Stuebner
+> <heiko@sntech.de>; linux-pm@vger.kernel.org; linux-
+> kernel@vger.kernel.org; linux-rockchip@lists.infradead.org; Zhang, Rui
+> <rui.zhang@intel.com>; linux-arm-kernel@lists.infradead.org
+> Subject: Re: mainline/master boot bisection: v5.2-rc1-165-g54dee406374c on
+> rk3288-veyron-jaq
+> Importance: High
 > 
-> Hmm, good catch, the mask aka aarch64_insn_is_ldadd() is not used anywhere
-> in the tree, just the aarch64_insn_get_ldadd_value(). Latter was runtime
-> tested via BPF JIT as well as through disassembler that it emits ldadd. I
-> initially had a different mask value than Jean-Philippe, but that was probably
-> due to confusion on my side. In any case, value should be correct though.
-
-I suggested that mask and forgot to change val, sorry about that. My
-intent was to stay consistent with ldr_reg and str_reg, which mask out
-the two size bits [31:30]. The proposed fix works but won't take into
-account ldaddb and ldaddh, so maybe we could change val to 0x38200000
-instead?
-
-diff --git a/arch/arm64/include/asm/insn.h b/arch/arm64/include/asm/insn.h
-index ec894de0ed4e..f71b84d9f294 100644
---- a/arch/arm64/include/asm/insn.h
-+++ b/arch/arm64/include/asm/insn.h
-@@ -279,3 +279,3 @@ __AARCH64_INSN_FUNCS(prfm_lit,      0xFF000000,
-0xD8000000)
- __AARCH64_INSN_FUNCS(str_reg,  0x3FE0EC00, 0x38206800)
--__AARCH64_INSN_FUNCS(ldadd,    0x3F20FC00, 0xB8200000)
-+__AARCH64_INSN_FUNCS(ldadd,    0x3F20FC00, 0x38200000)
- __AARCH64_INSN_FUNCS(ldr_reg,  0x3FE0EC00, 0x38606800)
+> Hi Mark,
+> 
+> On 23/5/19 15:12, Mark Brown wrote:
+> > On Wed, May 22, 2019 at 07:23:09PM -0700, kernelci.org bot wrote:
+> >
+> >>   Details:    https://kernelci.org/boot/id/5ce5984c59b514e6a47a364c
+> >>   Plain log:  https://storage.kernelci.org//mainline/master/v5.2-rc1-165-
+> g54dee406374c/arm/multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE
+> =y/gcc-8/lab-collabora/boot-rk3288-veyron-jaq.txt
+> >>   HTML log:   https://storage.kernelci.org//mainline/master/v5.2-rc1-165-
+> g54dee406374c/arm/multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE
+> =y/gcc-8/lab-collabora/boot-rk3288-veyron-jaq.html
+> >>   Result:     28694e009e51 thermal: rockchip: fix up the tsadc pinctrl setting
+> error
+> >
+> > It looks like this issue has persisted for a while without any kind of
+> > fix happening - given that the bisection has identified this commit as
+> > causing the regression and confirmed that reverting it fixes shouldn't
+> > we just revert?  My guess would be that there's some error with the
+> > pinctrl settings in the DT for the board.
+> >
+> 
+> After some discussion Heiko sent a patch that reverts the offending commit
+> one day ago [1] and it's waiting for maintainer to pick-up the patch.
+> 
+I thought Eduardo will take the patch.
+But I will apply it and queue it for -rc2 anyway.
 
 Thanks,
-Jean
+Rui
+
+> The reason why we think is best reverting that fix it is explained here [2]
+> 
+> [1] https://lkml.org/lkml/2019/5/22/467
+> [2] https://lkml.org/lkml/2019/4/30/270
+> 
+> Thanks,
+>  Enric
 
 _______________________________________________
 linux-arm-kernel mailing list
