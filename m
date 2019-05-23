@@ -2,80 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E48C32834E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 18:22:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F33CB283A2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 18:30:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=MjNmAbuYN/jOYH9VuYvJMqAlTr46AM468jFAIzsbiFo=; b=QqLfTRQPCrz3146AzwDcdWjLB
-	IrJpJZoVLvV3/BHGrd79oFtQtlqvS8lGPgO/nCRaeZJ0Vd24/ghKtBL4ZIEm1LDxfEE+oVboQK900
-	uoqZAWkD5VuPDV0IsQYXdaHCQyN3p//mykkLTWyoX7nRSMpPFcuXj1cTWxwMgK/C5QxeyTNsyVl24
-	x110ycPrTpZo7ZwTCrr8E+OzxEJx2jasYXjjkMSxrfSvmeNBHz1+kqSSzg6Zl6WAD+yU92a24/vWf
-	8dfM/YhgVYhtzYsdO3vDwDYnM+f8jHYHwRLorYOBfiNL1i9pPiWnAQqqBbIXwO1CTsqOSv8U9kiB9
-	z9Bl3e9iQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2woHD79kvnEmc6aVIzx7uwXgNHy2hFj17sULTIAq50g=; b=jWnkd4lCtMsj4B
+	mKT3SjqYzQ2LFy+qaNdIKwzk+p0U0Z64eA+f3X60Zt2cEz63iZLZAn4gJ/9jIwQquVsC9lQRiRwvE
+	5kdliPmFbSsZDUulDTNHtO131TD7ONIavsJsECuO+cmIe2s2wZOKmH7MlX/lguQx38xKKXvrbfMDX
+	AT0hRmHXoOn92n1vp0whfvkDTW7oMHqMQwr2eyweZyjPnOI9vSnCTE0nq85DKcSFmsMuiL0MuqMYq
+	ff/4dd7qiwNyJHLdLFjEqgQ+2MI6xRBLcFEX5ZLcqyBoigPN1YISpfvmsklLlt+oUZHIftTp3TVKT
+	CdTKTZXfBl7v9QYgNWqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTqUJ-0006Qd-S3; Thu, 23 May 2019 16:22:39 +0000
-Received: from forwardcorp1o.mail.yandex.net ([2a02:6b8:0:1a2d::193])
+	id 1hTqbR-0000DI-KG; Thu, 23 May 2019 16:30:01 +0000
+Received: from eu-smtp-delivery-151.mimecast.com ([207.82.80.151])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTqUA-0006Ml-Al
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 16:22:33 +0000
-Received: from mxbackcorp1g.mail.yandex.net (mxbackcorp1g.mail.yandex.net
- [IPv6:2a02:6b8:0:1402::301])
- by forwardcorp1o.mail.yandex.net (Yandex) with ESMTP id 21C5B2E14C7;
- Thu, 23 May 2019 19:22:21 +0300 (MSK)
-Received: from smtpcorp1j.mail.yandex.net (smtpcorp1j.mail.yandex.net
- [2a02:6b8:0:1619::137])
- by mxbackcorp1g.mail.yandex.net (nwsmtp/Yandex) with ESMTP id
- 0DFFaAm6RR-MIkOLjMb; Thu, 23 May 2019 19:22:21 +0300
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yandex-team.ru;
- s=default; 
- t=1558628541; bh=uno7Tkm+J4CAMiQ/ZqUGJguv/8erTBXtf0FT8zsjtio=;
- h=In-Reply-To:Message-ID:From:Date:References:To:Subject:Cc;
- b=k3zVPs4kQWtPQALu2u9BzlP4FyuzjC8jraY16YYgbhRJcd5Z61zALp+w+i+4KbG4f
- SKZL9+W3jMAoId0+8RI71yDUsbAZ0QuVU2McbP2O7VfpoTNtH6xcWXwnMZIE5s08Op
- pTTPy5lehJcSC2JRzNucne+6X4MGSlOtZqYtoJDk=
-Authentication-Results: mxbackcorp1g.mail.yandex.net;
- dkim=pass header.i=@yandex-team.ru
-Received: from dynamic-red.dhcp.yndx.net (dynamic-red.dhcp.yndx.net
- [2a02:6b8:0:40c:e47f:4b1d:b053:2762])
- by smtpcorp1j.mail.yandex.net (nwsmtp/Yandex) with ESMTPSA id
- ZuU1s6qKwt-MH8aDH8P; Thu, 23 May 2019 19:22:18 +0300
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (Client certificate not present)
-Subject: Re: [PATCH v1 1/2] open: add close_range()
-To: Christian Brauner <christian@brauner.io>, viro@zeniv.linux.org.uk,
- linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- linux-api@vger.kernel.org, torvalds@linux-foundation.org, fweimer@redhat.com
+ id 1hTqbK-0000BY-IX
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 16:29:56 +0000
+Received: from AcuMS.aculab.com (156.67.243.126 [156.67.243.126]) (Using
+ TLS) by relay.mimecast.com with ESMTP id
+ uk-mta-124-k_tmI2M6OK6o6fWSJ4SZFw-1; Thu, 23 May 2019 17:29:45 +0100
+Received: from AcuMS.Aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) by
+ AcuMS.aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) with Microsoft SMTP
+ Server (TLS) id 15.0.1347.2; Thu, 23 May 2019 17:29:44 +0100
+Received: from AcuMS.Aculab.com ([fe80::43c:695e:880f:8750]) by
+ AcuMS.aculab.com ([fe80::43c:695e:880f:8750%12]) with mapi id 15.00.1347.000; 
+ Thu, 23 May 2019 17:29:44 +0100
+From: David Laight <David.Laight@ACULAB.COM>
+To: 'Konstantin Khlebnikov' <khlebnikov@yandex-team.ru>, Christian Brauner
+ <christian@brauner.io>, "viro@zeniv.linux.org.uk" <viro@zeniv.linux.org.uk>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-fsdevel@vger.kernel.org" <linux-fsdevel@vger.kernel.org>,
+ "linux-api@vger.kernel.org" <linux-api@vger.kernel.org>,
+ "torvalds@linux-foundation.org" <torvalds@linux-foundation.org>,
+ "fweimer@redhat.com" <fweimer@redhat.com>
+Subject: RE: [PATCH v1 1/2] open: add close_range()
+Thread-Topic: [PATCH v1 1/2] open: add close_range()
+Thread-Index: AQHVEYO6ZYKDwRYmH0ewnJkZ6B6UzqZ45dMA
+Date: Thu, 23 May 2019 16:29:44 +0000
+Message-ID: <5e57c26cb7044b69acd3846ac474b5d5@AcuMS.aculab.com>
 References: <20190522155259.11174-1-christian@brauner.io>
-From: Konstantin Khlebnikov <khlebnikov@yandex-team.ru>
-Message-ID: <67e4458a-9cc4-d1aa-608c-73ebe9e2f7a3@yandex-team.ru>
-Date: Thu, 23 May 2019 19:22:17 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ <67e4458a-9cc4-d1aa-608c-73ebe9e2f7a3@yandex-team.ru>
+In-Reply-To: <67e4458a-9cc4-d1aa-608c-73ebe9e2f7a3@yandex-team.ru>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.202.205.107]
 MIME-Version: 1.0
-In-Reply-To: <20190522155259.11174-1-christian@brauner.io>
-Content-Language: en-CA
+X-MC-Unique: k_tmI2M6OK6o6fWSJ4SZFw-1
+X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_092230_880035_850D8CAB 
-X-CRM114-Status: GOOD (  35.90  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190523_092954_886414_3AD6647D 
+X-CRM114-Status: UNSURE (   9.39  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [207.82.80.151 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -87,223 +81,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org, ldv@altlinux.org,
- dhowells@redhat.com, linux-kselftest@vger.kernel.org,
- sparclinux@vger.kernel.org, shuah@kernel.org, linux-arch@vger.kernel.org,
- linux-s390@vger.kernel.org, miklos@szeredi.hu, x86@kernel.org,
- linux-mips@vger.kernel.org, linux-xtensa@linux-xtensa.org, tkjos@android.com,
- arnd@arndb.de, jannh@google.com, linux-m68k@lists.linux-m68k.org,
- tglx@linutronix.de, linux-arm-kernel@lists.infradead.org,
- linux-parisc@vger.kernel.org, oleg@redhat.com, linux-alpha@vger.kernel.org,
- linuxppc-dev@lists.ozlabs.org
+Cc: "linux-ia64@vger.kernel.org" <linux-ia64@vger.kernel.org>,
+ "linux-sh@vger.kernel.org" <linux-sh@vger.kernel.org>,
+ "ldv@altlinux.org" <ldv@altlinux.org>,
+ "dhowells@redhat.com" <dhowells@redhat.com>,
+ "linux-kselftest@vger.kernel.org" <linux-kselftest@vger.kernel.org>,
+ "sparclinux@vger.kernel.org" <sparclinux@vger.kernel.org>,
+ "shuah@kernel.org" <shuah@kernel.org>,
+ "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
+ "linux-s390@vger.kernel.org" <linux-s390@vger.kernel.org>,
+ "miklos@szeredi.hu" <miklos@szeredi.hu>, "x86@kernel.org" <x86@kernel.org>,
+ "linux-mips@vger.kernel.org" <linux-mips@vger.kernel.org>,
+ "linux-xtensa@linux-xtensa.org" <linux-xtensa@linux-xtensa.org>,
+ "tkjos@android.com" <tkjos@android.com>, "arnd@arndb.de" <arnd@arndb.de>,
+ "jannh@google.com" <jannh@google.com>,
+ "linux-m68k@lists.linux-m68k.org" <linux-m68k@lists.linux-m68k.org>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
+ "oleg@redhat.com" <oleg@redhat.com>,
+ "linux-alpha@vger.kernel.org" <linux-alpha@vger.kernel.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 22.05.2019 18:52, Christian Brauner wrote:> This adds the close_range() syscall. It allows to efficiently close a range
- > of file descriptors up to all file descriptors of a calling task.
- >
- > The syscall came up in a recent discussion around the new mount API and
- > making new file descriptor types cloexec by default. During this
- > discussion, Al suggested the close_range() syscall (cf. [1]). Note, a
- > syscall in this manner has been requested by various people over time.
- >
- > First, it helps to close all file descriptors of an exec()ing task. This
- > can be done safely via (quoting Al's example from [1] verbatim):
- >
- >          /* that exec is sensitive */
- >          unshare(CLONE_FILES);
- >          /* we don't want anything past stderr here */
- >          close_range(3, ~0U);
- >          execve(....);
- >
- > The code snippet above is one way of working around the problem that file
- > descriptors are not cloexec by default. This is aggravated by the fact that
- > we can't just switch them over without massively regressing userspace. For
- > a whole class of programs having an in-kernel method of closing all file
- > descriptors is very helpful (e.g. demons, service managers, programming
- > language standard libraries, container managers etc.).
- > (Please note, unshare(CLONE_FILES) should only be needed if the calling
- >   task is multi-threaded and shares the file descriptor table with another
- >   thread in which case two threads could race with one thread allocating
- >   file descriptors and the other one closing them via close_range(). For the
- >   general case close_range() before the execve() is sufficient.)
- >
- > Second, it allows userspace to avoid implementing closing all file
- > descriptors by parsing through /proc/<pid>/fd/* and calling close() on each
- > file descriptor. From looking at various large(ish) userspace code bases
- > this or similar patterns are very common in:
- > - service managers (cf. [4])
- > - libcs (cf. [6])
- > - container runtimes (cf. [5])
- > - programming language runtimes/standard libraries
- >    - Python (cf. [2])
- >    - Rust (cf. [7], [8])
- > As Dmitry pointed out there's even a long-standing glibc bug about missing
- > kernel support for this task (cf. [3]).
- > In addition, the syscall will also work for tasks that do not have procfs
- > mounted and on kernels that do not have procfs support compiled in. In such
- > situations the only way to make sure that all file descriptors are closed
- > is to call close() on each file descriptor up to UINT_MAX or RLIMIT_NOFILE,
- > OPEN_MAX trickery (cf. comment [8] on Rust).
- >
- > The performance is striking. For good measure, comparing the following
- > simple close_all_fds() userspace implementation that is essentially just
- > glibc's version in [6]:
- >
- > static int close_all_fds(void)
- > {
- >          int dir_fd;
- >          DIR *dir;
- >          struct dirent *direntp;
- >
- >          dir = opendir("/proc/self/fd");
- >          if (!dir)
- >                  return -1;
- >          dir_fd = dirfd(dir);
- >          while ((direntp = readdir(dir))) {
- >                  int fd;
- >                  if (strcmp(direntp->d_name, ".") == 0)
- >                          continue;
- >                  if (strcmp(direntp->d_name, "..") == 0)
- >                          continue;
- >                  fd = atoi(direntp->d_name);
- >                  if (fd == dir_fd || fd == 0 || fd == 1 || fd == 2)
- >                          continue;
- >                  close(fd);
- >          }
- >          closedir(dir);
- >          return 0;
- > }
- >
- > to close_range() yields:
- > 1. closing 4 open files:
- >     - close_all_fds(): ~280 us
- >     - close_range():    ~24 us
- >
- > 2. closing 1000 open files:
- >     - close_all_fds(): ~5000 us
- >     - close_range():   ~800 us
- >
- > close_range() is designed to allow for some flexibility. Specifically, it
- > does not simply always close all open file descriptors of a task. Instead,
- > callers can specify an upper bound.
- > This is e.g. useful for scenarios where specific file descriptors are
- > created with well-known numbers that are supposed to be excluded from
- > getting closed.
- > For extra paranoia close_range() comes with a flags argument. This can e.g.
- > be used to implement extension. Once can imagine userspace wanting to stop
- > at the first error instead of ignoring errors under certain circumstances.
+From:  Konstantin Khlebnikov
+> Sent: 23 May 2019 17:22
+....
+>  > In addition, the syscall will also work for tasks that do not have procfs
+>  > mounted and on kernels that do not have procfs support compiled in. In such
+>  > situations the only way to make sure that all file descriptors are closed
+>  > is to call close() on each file descriptor up to UINT_MAX or RLIMIT_NOFILE,
+>  > OPEN_MAX trickery (cf. comment [8] on Rust).
 
- > There might be other valid ideas in the future. In any case, a flag
- > argument doesn't hurt and keeps us on the safe side.
+Code using RLIMIT_NOFILE is broken.
+It is easy to reduce the hard limit below that of an open fd.
 
-Here is another strange but real-live scenario: crash handler for dumping core.
+	David
 
-If applications has network connections it would be better to close them all,
-otherwise clients will wait until end of dumping process or timeout.
-Also closing normal files might be a good idea for releasing locks.
-
-But simple closing might race with other threads - closed fd will be reused
-while some code still thinks it refers to original file.
-
-Our solution closes files without freeing fd: it opens /dev/null and
-replaces all opened descriptors using dup2.
-
-So, special flag for close_range() could close files without clearing bitmap.
-Effect should be the same - fd wouldn't be reused.
-
-Actually two flags for two phases: closing files and releasing fd.
-
- >
- >  From an implementation side this is kept rather dumb. It saw some input
- > from David and Jann but all nonsense is obviously my own!
- > - Errors to close file descriptors are currently ignored. (Could be changed
- >    by setting a flag in the future if needed.)
- > - __close_range() is a rather simplistic wrapper around __close_fd().
- >    My reasoning behind this is based on the nature of how __close_fd() needs
- >    to release an fd. But maybe I misunderstood specifics:
- >    We take the files_lock and rcu-dereference the fdtable of the calling
- >    task, we find the entry in the fdtable, get the file and need to release
- >    files_lock before calling filp_close().
- >    In the meantime the fdtable might have been altered so we can't just
- >    retake the spinlock and keep the old rcu-reference of the fdtable
- >    around. Instead we need to grab a fresh reference to the fdtable.
- >    If my reasoning is correct then there's really no point in fancyfying
- >    __close_range(): We just need to rcu-dereference the fdtable of the
- >    calling task once to cap the max_fd value correctly and then go on
- >    calling __close_fd() in a loop.
- >
- > /* References */
- > [1]: https://lore.kernel.org/lkml/20190516165021.GD17978@ZenIV.linux.org.uk/
- > [2]: https://github.com/python/cpython/blob/9e4f2f3a6b8ee995c365e86d976937c141d867f8/Modules/_posixsubprocess.c#L220
- > [3]: https://sourceware.org/bugzilla/show_bug.cgi?id=10353#c7
- > [4]: https://github.com/systemd/systemd/blob/5238e9575906297608ff802a27e2ff9effa3b338/src/basic/fd-util.c#L217
- > [5]: https://github.com/lxc/lxc/blob/ddf4b77e11a4d08f09b7b9cd13e593f8c047edc5/src/lxc/start.c#L236
- > [6]: 
-https://sourceware.org/git/?p=glibc.git;a=blob;f=sysdeps/unix/sysv/linux/grantpt.c;h=2030e07fa6e652aac32c775b8c6e005844c3c4eb;hb=HEAD#l17
- >       Note that this is an internal implementation that is not exported.
- >       Currently, libc seems to not provide an exported version of this
- >       because of missing kernel support to do this.
- > [7]: https://github.com/rust-lang/rust/issues/12148
- > [8]: https://github.com/rust-lang/rust/blob/5f47c0613ed4eb46fca3633c1297364c09e5e451/src/libstd/sys/unix/process2.rs#L303-L308
- >       Rust's solution is slightly different but is equally unperformant.
- >       Rust calls getdtablesize() which is a glibc library function that
- >       simply returns the current RLIMIT_NOFILE or OPEN_MAX values. Rust then
- >       goes on to call close() on each fd. That's obviously overkill for most
- >       tasks. Rarely, tasks - especially non-demons - hit RLIMIT_NOFILE or
- >       OPEN_MAX.
- >       Let's be nice and assume an unprivileged user with RLIMIT_NOFILE set
- >       to 1024. Even in this case, there's a very high chance that in the
- >       common case Rust is calling the close() syscall 1021 times pointlessly
- >       if the task just has 0, 1, and 2 open.
- >
- > Suggested-by: Al Viro <viro@zeniv.linux.org.uk>
- > Signed-off-by: Christian Brauner <christian@brauner.io>
- > Cc: Arnd Bergmann <arnd@arndb.de>
- > Cc: Jann Horn <jannh@google.com>
- > Cc: David Howells <dhowells@redhat.com>
- > Cc: Dmitry V. Levin <ldv@altlinux.org>
- > Cc: Oleg Nesterov <oleg@redhat.com>
- > Cc: Linus Torvalds <torvalds@linux-foundation.org>
- > Cc: Florian Weimer <fweimer@redhat.com>
- > Cc: linux-api@vger.kernel.org
- > ---
- > v1:
- > - Linus Torvalds <torvalds@linux-foundation.org>:
- >    - add cond_resched() to yield cpu when closing a lot of file descriptors
- > - Al Viro <viro@zeniv.linux.org.uk>:
- >    - add cond_resched() to yield cpu when closing a lot of file descriptors
- > ---
- >   arch/alpha/kernel/syscalls/syscall.tbl      |  1 +
- >   arch/arm/tools/syscall.tbl                  |  1 +
- >   arch/arm64/include/asm/unistd32.h           |  2 +
- >   arch/ia64/kernel/syscalls/syscall.tbl       |  1 +
- >   arch/m68k/kernel/syscalls/syscall.tbl       |  1 +
- >   arch/microblaze/kernel/syscalls/syscall.tbl |  1 +
- >   arch/mips/kernel/syscalls/syscall_n32.tbl   |  1 +
- >   arch/mips/kernel/syscalls/syscall_n64.tbl   |  1 +
- >   arch/mips/kernel/syscalls/syscall_o32.tbl   |  1 +
- >   arch/parisc/kernel/syscalls/syscall.tbl     |  1 +
- >   arch/powerpc/kernel/syscalls/syscall.tbl    |  1 +
- >   arch/s390/kernel/syscalls/syscall.tbl       |  1 +
- >   arch/sh/kernel/syscalls/syscall.tbl         |  1 +
- >   arch/sparc/kernel/syscalls/syscall.tbl      |  1 +
- >   arch/x86/entry/syscalls/syscall_32.tbl      |  1 +
- >   arch/x86/entry/syscalls/syscall_64.tbl      |  1 +
- >   arch/xtensa/kernel/syscalls/syscall.tbl     |  1 +
- >   fs/file.c                                   | 63 ++++++++++++++++++---
- >   fs/open.c                                   | 20 +++++++
- >   include/linux/fdtable.h                     |  2 +
- >   include/linux/syscalls.h                    |  2 +
- >   include/uapi/asm-generic/unistd.h           |  4 +-
- >   22 files changed, 100 insertions(+), 9 deletions(-)
- >
-
-It would be better to split arch/ wiring into separate patch for better readability.
-
-
+-
+Registered Address Lakeside, Bramley Road, Mount Farm, Milton Keynes, MK1 1PT, UK
+Registration No: 1397386 (Wales)
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
