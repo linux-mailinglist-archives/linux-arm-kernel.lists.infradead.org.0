@@ -2,93 +2,116 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2542E274F1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 06:09:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5873427547
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 06:54:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ell/JpUkjKQ4biNd9UWhGBj6Bb58vDcjRGd08XjJuws=; b=gjlvWsmKTgbXNR
-	fN3nbuLNSjA2EhXUfF12ON7k1Z5L2XsUjPr8QHU7ZAEizZXqsUEj/wvydn5YCey0uwrXtS/jd1WHA
-	8giIJzZeZKDyVzFwU/uBA+2Y3DlnFXyfMFgRNh+d7BLftbZsK9BHYsy0DLz8eWmMNOsaTIRWSc60Y
-	jJnGa7tv4UPaC/bHjulvs0BNB0s4OrcG2usajMQcHW8C3DLsYxC5TLljR7/RcSzpQ8mYtOCnqlzxI
-	jVosjNwLYAD90jR1ScPh+v2Z5Luiqhg3oryiE6f4YX05TUo99WhV5ZJpsYaD+OqsnwQgYBR5rBtKT
-	CFh63qe/dE5OaGwnS6Gw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=iUyaVFOnz4sLhaj/hwnj/4238mu78lzEGj6soP1+ViU=; b=qotY463RL9jLtJ
+	0fCp4NxvaBgNT2zoBsHAnaXBWAYY26/4fUpoUBZvXCgOEZSQ6nY3uYTJ1iu0LuV5mOrzuzSwKvN5b
+	W81w3ujC3f4cDxQ3FMqVO6FJh7pouHK2k4p4ebeRkPQSwcOIA2GFxl8lHvwSHecukw3R4xUsHsejq
+	ochYMY1ZyMHfWOwlcwCFdBRg3mce0ZvUatyoLu8TH0Dm996eSOEFfQ3VlwQtsElWwOQh+y1mEwkfz
+	itp60PxGiAjIo8zhAZa1GtH3MO7kFGGzDpt1WvQzPGorEji1f9zAkdExVKyQ/VleH5/GmkxogCmmX
+	eS5pTcBIn57XCSf3g5mA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTf2I-0007u8-4e; Thu, 23 May 2019 04:08:58 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hTfjs-0006Mp-W3; Thu, 23 May 2019 04:54:01 +0000
+Received: from mail-eopbgr40045.outbound.protection.outlook.com ([40.107.4.45]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTf2B-0007tN-Er
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 04:08:52 +0000
-Received: by mail-wm1-x342.google.com with SMTP id 198so4221883wme.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 22 May 2019 21:08:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=/LhxOT+3mKOp8646fhyFd7RQKcrwy2o1g/++7VEPXKE=;
- b=CE1qn8SRdHON7QPLKdG5+1RWXAiSr9wqRIbZ1INqj7qD4bhX7+eB3oMQPMhbfC2UMf
- ACSczZ4AlW7JVW90IF971RTgWMGh0LU7VxzYqb3K8zz2ixGpep0P3sdWaMTjofryAEff
- GS6Y6CFo4xnFARu1+Kz1tv6T2rRgFKj96WMbZGlffYmKI8mOyh/IhzZbabHQLMvVqwze
- BDLvu4lRQnRcqOZHUd/C1PXEDDrCcQerwHhkRwhDgdRB7HzQAHi4P92K3bTN1w+tP/Hp
- +7/tix7UArGW2eoDRc11idcf1QtwA3Dz6VGWbF+R++vMswxqVTinD3KAk/o1bDXfzMbm
- q9uw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=/LhxOT+3mKOp8646fhyFd7RQKcrwy2o1g/++7VEPXKE=;
- b=JLcirwHdd3mDL3lC1M1eLmIqcFky+U9GBipqzSsh3+qXfVl8MM25/w6p0XrRWQXpXZ
- OrNIRNdvabOFyQ32E3AB1S5AxFwaIWzf/RoXMLEhV86JLa2rlLSEXzUNrzsfUMq1WqqK
- Mr8hwRM9ezsWMqO8mmciu1gaO0p1dZOU+G2KwD96ZRkLu3frJ4KqYJKkZdiCKcJpYff7
- QcN8cNKC1Aj7M8pFGJLJYJmF/EkraSS/K55mKQAg1MFvT/0cXf14fo/SEZpolQMRmDIc
- vQJKtaxCMg+BPyBQPcriq+4G7BYmh7HrzNq++kC0tw7oEulg2/QogaAea+CNOa4Cr4qC
- lOUg==
-X-Gm-Message-State: APjAAAVg1u0KdZsKUOubnwzc+qN+nVjsWiJP2KhMgHHGAh3S9qXTpnaE
- xSqhjo4waNv7jLYoXUk5C8M=
-X-Google-Smtp-Source: APXvYqzWaIe7PQakTCW3+fi9El0aDhj4hoknFNBnZkDaPkn73UP52tqIRMVI/Ba0VNKZ1d7l/QwKaQ==
-X-Received: by 2002:a7b:c7d6:: with SMTP id z22mr9494486wmk.54.1558584528762; 
- Wed, 22 May 2019 21:08:48 -0700 (PDT)
-Received: from ?IPv6:2003:ea:8bd4:5700:58fa:1813:196c:76bb?
- (p200300EA8BD4570058FA1813196C76BB.dip0.t-ipconnect.de.
- [2003:ea:8bd4:5700:58fa:1813:196c:76bb])
- by smtp.googlemail.com with ESMTPSA id 19sm4874003wmi.10.2019.05.22.21.08.47
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 22 May 2019 21:08:48 -0700 (PDT)
-Subject: Re: [PATCH net-next 2/2] net: phy: aquantia: add USXGMII support
-To: Andrew Lunn <andrew@lunn.ch>
-References: <110a1e45-56a7-a646-7b63-f39fe3083c28@gmail.com>
- <2c68bdb1-9b53-ce0b-74d3-c7ea2d9e7ac0@gmail.com>
- <20190522205851.GA15257@lunn.ch>
-From: Heiner Kallweit <hkallweit1@gmail.com>
-Message-ID: <8e34e321-fe1d-0dea-0d85-246876c43e14@gmail.com>
-Date: Thu, 23 May 2019 06:08:42 +0200
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <20190522205851.GA15257@lunn.ch>
+ id 1hTfjk-0006MR-N6
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 04:53:54 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=N4WU3ZxLdXwBfrglLvc+CCt/oJA3mHl9tSaRvdzqo3g=;
+ b=YnWewp50kN9CyAWncyadFMnk7tnBCLLzQE2jD4VBz1gWmjW46bdok5kO0obqGZbVL6YBLE+RoU6iNDOg42U6Zb7VAz+rr6zKIjRMNteJK8RqGXuhPTQq8oeI0g79LQoEaTjfxvkTcV8bBLAyl6VoIgqlrycEzvkIWUlJJzlfBEA=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3881.eurprd04.prod.outlook.com (52.134.73.28) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1922.17; Thu, 23 May 2019 04:53:46 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::5835:e874:bd94:fec]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::5835:e874:bd94:fec%5]) with mapi id 15.20.1922.017; Thu, 23 May 2019
+ 04:53:46 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: "catalin.marinas@arm.com" <catalin.marinas@arm.com>, "will.deacon@arm.com"
+ <will.deacon@arm.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
+ <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
+ "maxime.ripard@bootlin.com" <maxime.ripard@bootlin.com>, "olof@lixom.net"
+ <olof@lixom.net>, "agross@kernel.org" <agross@kernel.org>,
+ "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
+ "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>, Leonard Crestez
+ <leonard.crestez@nxp.com>, "dinguyen@kernel.org" <dinguyen@kernel.org>,
+ "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>, Aisheng Dong
+ <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>, "tglx@linutronix.de"
+ <tglx@linutronix.de>, "robh@kernel.org" <robh@kernel.org>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: [PATCH V6 1/2] soc: imx: Add SCU SoC info driver support
+Thread-Topic: [PATCH V6 1/2] soc: imx: Add SCU SoC info driver support
+Thread-Index: AQHVESOBOi968fgyqkGLTWjGKVXT0g==
+Date: Thu, 23 May 2019 04:53:46 +0000
+Message-ID: <1558586911-29309-1-git-send-email-Anson.Huang@nxp.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.7.4
+x-clientproxiedby: HK0PR03CA0034.apcprd03.prod.outlook.com
+ (2603:1096:203:2f::22) To DB3PR0402MB3916.eurprd04.prod.outlook.com
+ (2603:10a6:8:10::18)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 242dffd5-3965-4ed0-55c0-08d6df3aa352
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
+ SRVR:DB3PR0402MB3881; 
+x-ms-traffictypediagnostic: DB3PR0402MB3881:
+x-microsoft-antispam-prvs: <DB3PR0402MB38812867294BF13E6EE6CCB8F5010@DB3PR0402MB3881.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2201;
+x-forefront-prvs: 00462943DE
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(39860400002)(346002)(136003)(366004)(376002)(396003)(199004)(189003)(7736002)(66476007)(7416002)(6116002)(66556008)(64756008)(3846002)(66446008)(73956011)(66946007)(81156014)(8936002)(81166006)(50226002)(316002)(8676002)(186003)(4326008)(2906002)(26005)(476003)(2616005)(36756003)(6436002)(68736007)(99286004)(6486002)(110136005)(71200400001)(305945005)(71190400001)(14454004)(478600001)(486006)(256004)(53936002)(2201001)(6512007)(86362001)(25786009)(2501003)(102836004)(386003)(6506007)(66066001)(5660300002)(52116002)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3881;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 44Zl8EPNxLwDkX/eV+QVh2HfOzSqaDPdmYE4fnlRj0VclzSZNPqBNKLDKyAclvKfIpo1hDjNAOtGWeBRQiJAVNSL7FZfVS16pf+BJhNnmMK4S3KyhmcJlKeHVUgD1Hp0Id7zqZwdph/gpZY/DPz1kU3mkUVel5PBG3Jvm/GvsxAcpzbKNuvSwmcs9n18AXx8ESdR3aY1XpYx0TP08JZ5egPHn7s0srn3SmvAYnfGsuxS2kq0XNBrQsHDhr3HPYNvhKCwsqUkiFkofVU2hYW5vnbVYLOnZmrkiVQJ3JDVD+13IiIop11u4vgeLFkeSXpGy0jQte/3trQxZP9xGNUavzELa1yV8vvCAMnbZrJi1aQ2ZhG84aaM/kT5/Xx433eV89qPnpO9L17NCTPRqWe/UM6NliQJHPJPW/BFT+VyLS0=
+Content-ID: <1FF5B11B81644A49835431FB9A8CB99D@eurprd04.prod.outlook.com>
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 242dffd5-3965-4ed0-55c0-08d6df3aa352
+X-MS-Exchange-CrossTenant-originalarrivaltime: 23 May 2019 04:53:46.8238 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: anson.huang@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3881
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_210851_526931_C7DEFD81 
-X-CRM114-Status: GOOD (  24.48  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190522_215352_879865_EF731D0D 
+X-CRM114-Status: GOOD (  18.48  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ no trust [40.107.4.45 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (hkallweit1[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (hkallweit1[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -107,94 +130,230 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Madalin-cristian Bucur <madalin.bucur@nxp.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- Shawn Guo <shawnguo@kernel.org>, David Miller <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 22.05.2019 22:58, Andrew Lunn wrote:
-> On Wed, May 22, 2019 at 09:58:32PM +0200, Heiner Kallweit wrote:
->> So far we didn't support mode USXGMII, and in order to not break the
->> two Freescale boards mode XGMII was accepted for the AQR107 family
->> even though it doesn't support XGMII. Add USXGMII support to the
->> Aquantia PHY driver and change the phy connection type for the two
->> boards.
->>
->> As an additional note: Even though the handle is named aqr106
->> there seem to be LS1046A boards with an AQR107.
->>
->> Signed-off-by: Heiner Kallweit <hkallweit1@gmail.com>
->> ---
->>  arch/arm64/boot/dts/freescale/fsl-ls1043a-rdb.dts | 2 +-
->>  arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts | 2 +-
->>  drivers/net/phy/aquantia_main.c                   | 6 +++++-
->>  3 files changed, 7 insertions(+), 3 deletions(-)
->>
->> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1043a-rdb.dts b/arch/arm64/boot/dts/freescale/fsl-ls1043a-rdb.dts
->> index 4223a2352..c2ce1a611 100644
->> --- a/arch/arm64/boot/dts/freescale/fsl-ls1043a-rdb.dts
->> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1043a-rdb.dts
->> @@ -139,7 +139,7 @@
->>  
->>  	ethernet@f0000 { /* 10GEC1 */
->>  		phy-handle = <&aqr105_phy>;
->> -		phy-connection-type = "xgmii";
->> +		phy-connection-type = "usxgmii";
->>  	};
->>  
->>  	mdio@fc000 {
->> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts b/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
->> index 6a6514d0e..f927a8a25 100644
->> --- a/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
->> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
->> @@ -147,7 +147,7 @@
->>  
->>  	ethernet@f0000 { /* 10GEC1 */
->>  		phy-handle = <&aqr106_phy>;
->> -		phy-connection-type = "xgmii";
->> +		phy-connection-type = "usxgmii";
->>  	};
->>  
->>  	ethernet@f2000 { /* 10GEC2 */
->> diff --git a/drivers/net/phy/aquantia_main.c b/drivers/net/phy/aquantia_main.c
->> index 0fedd28fd..3f24c42a8 100644
->> @@ -487,7 +491,7 @@ static int aqr107_config_init(struct phy_device *phydev)
->>  	/* Check that the PHY interface type is compatible */
->>  	if (phydev->interface != PHY_INTERFACE_MODE_SGMII &&
->>  	    phydev->interface != PHY_INTERFACE_MODE_2500BASEX &&
->> -	    phydev->interface != PHY_INTERFACE_MODE_XGMII &&
->> +	    phydev->interface != PHY_INTERFACE_MODE_USXGMII &&
->>  	    phydev->interface != PHY_INTERFACE_MODE_10GKR)
->>  		return -ENODEV;
-> 
-> Hi Heiner
-> 
-> Just to reiterate Florian's point. We need to be careful with device
-> tree blobs. We should try not to break them, at least not for a few
-> cycles.
-> 
-> I would much prefer to see a
-> 
-> WARN_ON(phydev->interface == PHY_INTERFACE_MODE_XGMII,
->         "Your devicetree is out of date, please update it");
-> 
-> and accept XGMII for this cycle. These are development boards, so in
-> theory users are developers, so should know how to update the DT.
-> 
-I see your point. Then I'll just change phylib and will let the NXP
-guys change the board DTS.
+Add i.MX SCU SoC info driver to support i.MX8QXP SoC, introduce
+driver dependency into Kconfig as CONFIG_IMX_SCU must be
+selected to support i.MX SCU SoC driver, also need to use
+platform driver model to make sure IMX_SCU driver is probed
+before i.MX SCU SoC driver.
 
->     Andrew
-> 
-Heiner
+With this patch, SoC info can be read from sysfs:
+
+i.mx8qxp-mek# cat /sys/devices/soc0/family
+Freescale i.MX
+
+i.mx8qxp-mek# cat /sys/devices/soc0/soc_id
+0x2
+
+i.mx8qxp-mek# cat /sys/devices/soc0/machine
+Freescale i.MX8QXP MEK
+
+i.mx8qxp-mek# cat /sys/devices/soc0/revision
+1.1
+
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
+Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
+---
+Changes since V5:
+	- remove unnecessary comment;
+	- improve the IPC message structure definition;
+	- improve the error check and return value in imx_scu_soc_init() to save some code.
+---
+ drivers/soc/imx/Kconfig       |   9 +++
+ drivers/soc/imx/Makefile      |   1 +
+ drivers/soc/imx/soc-imx-scu.c | 147 ++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 157 insertions(+)
+ create mode 100644 drivers/soc/imx/soc-imx-scu.c
+
+diff --git a/drivers/soc/imx/Kconfig b/drivers/soc/imx/Kconfig
+index ade1b46..8aaebf1 100644
+--- a/drivers/soc/imx/Kconfig
++++ b/drivers/soc/imx/Kconfig
+@@ -8,4 +8,13 @@ config IMX_GPCV2_PM_DOMAINS
+ 	select PM_GENERIC_DOMAINS
+ 	default y if SOC_IMX7D
+ 
++config IMX_SCU_SOC
++	bool "i.MX System Controller Unit SoC info support"
++	depends on IMX_SCU
++	select SOC_BUS
++	help
++	  If you say yes here you get support for the NXP i.MX System
++	  Controller Unit SoC info module, it will provide the SoC info
++	  like SoC family, ID and revision etc.
++
+ endmenu
+diff --git a/drivers/soc/imx/Makefile b/drivers/soc/imx/Makefile
+index caa8653..cf9ca42 100644
+--- a/drivers/soc/imx/Makefile
++++ b/drivers/soc/imx/Makefile
+@@ -2,3 +2,4 @@
+ obj-$(CONFIG_HAVE_IMX_GPC) += gpc.o
+ obj-$(CONFIG_IMX_GPCV2_PM_DOMAINS) += gpcv2.o
+ obj-$(CONFIG_ARCH_MXC) += soc-imx8.o
++obj-$(CONFIG_IMX_SCU_SOC) += soc-imx-scu.o
+diff --git a/drivers/soc/imx/soc-imx-scu.c b/drivers/soc/imx/soc-imx-scu.c
+new file mode 100644
+index 0000000..258c987
+--- /dev/null
++++ b/drivers/soc/imx/soc-imx-scu.c
+@@ -0,0 +1,147 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright 2019 NXP.
++ */
++
++#include <dt-bindings/firmware/imx/rsrc.h>
++#include <linux/firmware/imx/sci.h>
++#include <linux/slab.h>
++#include <linux/sys_soc.h>
++#include <linux/platform_device.h>
++#include <linux/of.h>
++
++#define IMX_SCU_SOC_DRIVER_NAME		"imx-scu-soc"
++
++static struct imx_sc_ipc *soc_ipc_handle;
++
++struct imx_sc_msg_misc_get_soc_id {
++	struct imx_sc_rpc_msg hdr;
++	union {
++		struct {
++			u32 control;
++			u16 resource;
++		} __packed req;
++		struct {
++			u32 id;
++		} __packed resp;
++	} data;
++} __packed;
++
++static u32 imx_scu_soc_id(void)
++{
++	struct imx_sc_msg_misc_get_soc_id msg;
++	struct imx_sc_rpc_msg *hdr = &msg.hdr;
++	int ret;
++
++	hdr->ver = IMX_SC_RPC_VERSION;
++	hdr->svc = IMX_SC_RPC_SVC_MISC;
++	hdr->func = IMX_SC_MISC_FUNC_GET_CONTROL;
++	hdr->size = 3;
++
++	msg.data.req.control = IMX_SC_C_ID;
++	msg.data.req.resource = IMX_SC_R_SYSTEM;
++
++	ret = imx_scu_call_rpc(soc_ipc_handle, &msg, true);
++	if (ret) {
++		pr_err("%s: get soc info failed, ret %d\n", __func__, ret);
++		/* return 0 means getting revision failed */
++		return 0;
++	}
++
++	return msg.data.resp.id;
++}
++
++static int imx_scu_soc_probe(struct platform_device *pdev)
++{
++	struct soc_device_attribute *soc_dev_attr;
++	struct soc_device *soc_dev;
++	u32 id, val;
++	int ret;
++
++	ret = imx_scu_get_handle(&soc_ipc_handle);
++	if (ret)
++		return ret;
++
++	soc_dev_attr = devm_kzalloc(&pdev->dev, sizeof(*soc_dev_attr),
++				    GFP_KERNEL);
++	if (!soc_dev_attr)
++		return -ENOMEM;
++
++	soc_dev_attr->family = "Freescale i.MX";
++
++	ret = of_property_read_string(of_root,
++				      "model",
++				      &soc_dev_attr->machine);
++	if (ret)
++		return ret;
++
++	id = imx_scu_soc_id();
++
++	/* format soc_id value passed from SCU firmware */
++	val = id & 0x1f;
++	soc_dev_attr->soc_id = val ? kasprintf(GFP_KERNEL, "0x%x", val)
++			       : "unknown";
++	if (!soc_dev_attr->soc_id)
++		return -ENOMEM;
++
++	/* format revision value passed from SCU firmware */
++	val = (id >> 5) & 0xf;
++	val = (((val >> 2) + 1) << 4) | (val & 0x3);
++	soc_dev_attr->revision = val ? kasprintf(GFP_KERNEL,
++						 "%d.%d",
++						 (val >> 4) & 0xf,
++						 val & 0xf) : "unknown";
++	if (!soc_dev_attr->revision) {
++		ret = -ENOMEM;
++		goto free_soc_id;
++	}
++
++	soc_dev = soc_device_register(soc_dev_attr);
++	if (IS_ERR(soc_dev)) {
++		ret = PTR_ERR(soc_dev);
++		goto free_revision;
++	}
++
++	return 0;
++
++free_revision:
++	kfree(soc_dev_attr->revision);
++free_soc_id:
++	kfree(soc_dev_attr->soc_id);
++	return ret;
++}
++
++static struct platform_driver imx_scu_soc_driver = {
++	.driver = {
++		.name = IMX_SCU_SOC_DRIVER_NAME,
++	},
++	.probe = imx_scu_soc_probe,
++};
++
++static int __init imx_scu_soc_init(void)
++{
++	struct platform_device *imx_scu_soc_pdev;
++	struct device_node *np;
++	int ret;
++
++	np = of_find_compatible_node(NULL, NULL, "fsl,imx-scu");
++	if (!np)
++		return -ENODEV;
++
++	of_node_put(np);
++
++	ret = platform_driver_register(&imx_scu_soc_driver);
++	if (ret)
++		return ret;
++
++	imx_scu_soc_pdev =
++		platform_device_register_simple(IMX_SCU_SOC_DRIVER_NAME,
++						-1,
++						NULL,
++						0);
++	if (IS_ERR(imx_scu_soc_pdev))
++		platform_driver_unregister(&imx_scu_soc_driver);
++
++	return PTR_ERR_OR_ZERO(imx_scu_soc_pdev);
++}
++device_initcall(imx_scu_soc_init);
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
