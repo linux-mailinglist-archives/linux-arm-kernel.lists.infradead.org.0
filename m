@@ -2,70 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57BAB27EA4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 15:48:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B19827EAB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 15:49:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=dj4oUMuRWWJ09ZUCQeBj03uCOWlPV7vLwUbRt05Rso4=; b=oL360vgwmLM7NtXMJPS96ertW
-	3g+aTtu/WCFhH2EN8ibngu/wU0DE+XYQMwrBQcxmqlFdqFuRyDT1JTuNjkigKe/Okp8BrMPqrBRIS
-	nwHRy4R0L/X3OPMkoJaAeHV9SO+sfZ2G5IHvT/Zs5HwrYVp/nnc9yNL7QH3O3Pp51bKSrx/rWV2fN
-	+gkwm0JXlxXr1XN9k3HfM2mP4LR07SR17ElJDslWvczTEKjF6iH0hujcwTt9auD8JyFi8WiaKFZNx
-	Ls++9fsT9zpCU2I7JOsbXx3gh1qLSlJG/vG3wuv5kM5G3FSwtKZYQlEhxh5HG5mz+wFQH9EjZdqKa
-	XK0NMAQkw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RJjD9rEG4tlMCmkMSFCpVTLcYAFoxo5eHrDqdauMMak=; b=KDIWMgTubEq4u5
+	9G2on4TBXHjEHqKZmD900/+344WG90gBjT4rEYslbXowJAnIgM022xzpiVa4HyVS/4z2NWiNRnP+4
+	NGfH+TG2WhdbznWZ+w/zF8Ez+m/8RMpz3ptlRsHdMpgJ6tDopSnVpMAHYDFOaRscJBDDbYqgdiqnZ
+	/GG7dUCV1X841YNHetEDD4wopGmxKt13/SwnWnzwvgLWv0/FtQz8p1jzgbVDw/k+eL3kMh1xkBoNL
+	1+Q2EBDkqzTP9Mrycipx9HxjOk1eaGTPVCgRwojwfSvtyxLjlwk74fJMsjhytdyzjYPfo47ATT/Mw
+	6OphJp+R1VqfcgMQz+cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTo5S-0008Gq-V8; Thu, 23 May 2019 13:48:51 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1hTo65-0000Hb-Io; Thu, 23 May 2019 13:49:29 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTo5B-0008GT-Hd; Thu, 23 May 2019 13:48:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=X6yLgBlALTmm8f+P1P/St4oPtsvR1/9CNsOiFiXV8xg=; b=KQ6R6tGNyApe5h8pwVsVlYGGZ
- NOR2ifx6p/cw3HqGvkJUeYMNLd0l4wHKzmL+jm/XlTB6BAXT0PfMNpDMBsX1f1ZRJv/8zwR+8Q6U2
- Y7ugrn80U037qfUn8jDKCssIerp3fWltxBuFlYgmscfhxJwQqOezW9qjZf8sDmVLHpmPg=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=debutante.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpa (Exim 4.89)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hTo59-0000Do-Ab; Thu, 23 May 2019 13:48:31 +0000
-Received: by debutante.sirena.org.uk (Postfix, from userid 1000)
- id 36A361126D24; Thu, 23 May 2019 14:48:27 +0100 (BST)
-Date: Thu, 23 May 2019 14:48:27 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Kuldeep Singh <kuldeep.singh@nxp.com>
-Subject: Re: [PATCH v2 1/2] dt-bindings: spi: spi-fsl-qspi: Add bindings of
- ls1088a and ls1012a
-Message-ID: <20190523134827.GH17245@sirena.org.uk>
-References: <20190522070133.24953-1-kuldeep.singh@nxp.com>
+ id 1hTo5E-0008Gp-Sl
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 13:48:39 +0000
+Received: by mail-pl1-x641.google.com with SMTP id g9so2793270plm.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 23 May 2019 06:48:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=+gf6TK/DBZkbbPD59gjM5EzSFnmu0bkE4KJafULy65Y=;
+ b=rnsqyg44lH8m7taWbuklaTCCz+35oJR/l6Qvu3nboiWywtVJszAN5r1JZZHNf22TlL
+ EC6rzSjYQa/QR0ivyeZMdANgKAjULdQ8jZm65iQGs+q82LE2KLJ5xf+OjAK4S7BR91Es
+ b5zTbN82WIaV6D95qOmUz/zqRV7tuLDrhiG4juw5hDWhRZyiifIizk4b+8z67j38wZKR
+ roz6c8S7JRou1K+Hp2d8pEigq64HClfp+59fhiSKhLvwcIhL+H00WgbMyFXI9TPHSfoD
+ ZXrtrGkrt/NwdtN+K0dNuzbfEX4sRH8aTyhUQJBSLp3RtWGgpvzEhwJlbNbAH95jHOjo
+ K+7g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=+gf6TK/DBZkbbPD59gjM5EzSFnmu0bkE4KJafULy65Y=;
+ b=sD3+b6m8tMptdUJFwCBSr6mwBjVcVKBOlWRJyhcYoMwtbq2lwSFW+2WqI6SO+djjKM
+ jlGEF1PCBIwYMRHIoWN+P8vCtbJq8Qic77sV4z3dOctG62PrkpZP1VueAYsDU7PMhFaE
+ MMViYnTtAjEvOUxRReFEFI9hMFYOHdKqkSJiqSr2SCG1KKZawzPVmXSK1AM4kPaqLHGp
+ XjeYMuSlcAljuW3AFM0drarxsrq87+LXuF4hyMdDlUpijatLTHKdQIharM5+9gS06zZo
+ d8kY0G5VkvIqVde/ETsf/wwe7pz3zdf+/wAjOQNBeANKLQK9DSDtpnnGO5DAhu/bPefZ
+ JYUw==
+X-Gm-Message-State: APjAAAWBWExz/NRrdVmscVVOqgqVvmq3GWb35lTB549sJNj16O6TNPQ1
+ ILgv6ldux2E7CyO9PPXKNBg=
+X-Google-Smtp-Source: APXvYqwKUTsNLMMZr3WT+JsRYI+XStFLzKHLL4taI1RlLURXHZmDRyhRh2+PrNYZ032j2fi3xT6L8g==
+X-Received: by 2002:a17:902:728f:: with SMTP id
+ d15mr24384602pll.167.1558619315442; 
+ Thu, 23 May 2019 06:48:35 -0700 (PDT)
+Received: from localhost (c-73-222-71-142.hsd1.ca.comcast.net. [73.222.71.142])
+ by smtp.gmail.com with ESMTPSA id y191sm2667986pfb.179.2019.05.23.06.48.34
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 23 May 2019 06:48:34 -0700 (PDT)
+Date: Thu, 23 May 2019 06:48:32 -0700
+From: Richard Cochran <richardcochran@gmail.com>
+To: "Y.b. Lu" <yangbo.lu@nxp.com>
+Subject: Re: [PATCH net-next v2, 0/4] ENETC: support hardware timestamping
+Message-ID: <20190523134832.xzupnwvhhlljtoyh@localhost>
+References: <20190523023451.2933-1-yangbo.lu@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <20190522070133.24953-1-kuldeep.singh@nxp.com>
-X-Cookie: I brake for chezlogs!
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <20190523023451.2933-1-yangbo.lu@nxp.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_064833_725445_526CBE03 
-X-CRM114-Status: UNSURE (   7.27  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190523_064837_008576_9BDBA25E 
+X-CRM114-Status: GOOD (  11.52  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (richardcochran[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -79,67 +101,28 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-mtd@lists.infradead.org" <linux-mtd@lists.infradead.org>,
- Ashish Kumar <ashish.kumar@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "bbrezillon@kernel.org" <bbrezillon@kernel.org>
-Content-Type: multipart/mixed; boundary="===============0984707644255454778=="
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ Alexandru Marginean <alexandru.marginean@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Claudiu Manoil <claudiu.manoil@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>, David Miller <davem@davemloft.net>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, May 23, 2019 at 02:33:24AM +0000, Y.b. Lu wrote:
+> This patch-set is to support hardware timestamping for ENETC
+> and also to add ENETC 1588 timer device tree node for ls1028a.
 
---===============0984707644255454778==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="9sSKoi6Rw660DLir"
-Content-Disposition: inline
+Please, in the future, summarize the changes from the last series in
+the cover letter.  It helps the reviewers to focus.
 
-
---9sSKoi6Rw660DLir
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Wed, May 22, 2019 at 07:00:32AM +0000, Kuldeep Singh wrote:
-> Signed-off-by: Ashish Kumar <ashish.kumar@nxp.com>
-> Signed-off-by: Kuldeep Singh <kuldeep.singh@nxp.com>
-> ---
-> Update v2:
-> 	Convert to patch series and rebasing done on top of tree
-
-These still don't apply against current code (for-5.3 or for-next of
-git://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git).  Please
-check and resend.
-
-Please use subject lines matching the style for the subsystem.  This
-makes it easier for people to identify relevant patches.
-
---9sSKoi6Rw660DLir
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAlzmpKoACgkQJNaLcl1U
-h9AeXgf+K/fyUAneVeSKJB2PlpJY0/l0sSrrEho/KS2x1MPK84BO5He4Q7R56mZ4
-qPJSsRMJwhj62P5Zj8SoxbLdWKGYqs8AAwzvVztBMhOKmj3vbYeIK/2/ArKc1xLQ
-GVYEcU8HpbFCQcxhsjpUQKDpBurkZUJ2+soa7IufJM2CF9+xXopqZt6bTcbIR8/P
-bGg17RQIpq6Oukz30eyRDUVoTzTyCxEFK/M34nb/+O5wK0K2cKN6NWxGxoZNFNAx
-jcFXRP/k3i9aZPISHZe3nCzIyPDoq7Z1Ez5o1Xd9rSy2VajZOdaDAPxlxbEbkYIx
-eiSXwFFZvSye+r7wPu1w5NDriw7MYg==
-=isZA
------END PGP SIGNATURE-----
-
---9sSKoi6Rw660DLir--
-
-
---===============0984707644255454778==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Thanks,
+Richard
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0984707644255454778==--
-
