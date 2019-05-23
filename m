@@ -2,81 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4258127EFF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 16:02:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E138727F05
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 16:02:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PdyG0ntosKEfPLGnD4pOm7aXrDG2Gi10E3aRDXgbbEQ=; b=HglhYgGHyLtHmH
-	WUFYxHbX0Lgh39EcF+Lix+4GVudS5dk0JsSu+rhroz8kLnCVTYlu0skvd4y4mqyCJ31FZ+W1jlpv5
-	NCu1sWaDEQVchQW8ZYd4cyXGqPGQx+hXtHPtcEE/uBBHIQC3gfQRaCDkBOFpZYvza5rQGegEZEITu
-	hSABnHKI8H9HhqzglBvg5UHDYyP3fnW8NxxSdH7yS1oTKWAepXE1o+tNIb9UYQTA3I4HqYreKAIJc
-	2Hdy9F0xvKOFBmdFZHkdK6U336eyneWhXqQ4uF134g8QxZREbcSLvJJhI1QOIb+GQXRTLw5mdPS7H
-	sjYjz75K6hFHQVdiX6og==;
+	List-Owner; bh=j4qE92Oh6nt9pl5fHGR3lbD6Pg6mRMCYd2vVM1pkD88=; b=IjtiIOCJoABqBr
+	bEu62m3j24C3Q5xf7sVHuhCw1M4SCoREN6IujQEinJFpSiw8Av6XWkbThFpyJftJ7r8jIUUOzVUJc
+	20cJ7Ud6SlvMWQEKcc9hGTQD07HDWW4oPDm+H5JRtIjfFUts0NF570IbH9B2P7gDKqLmBb+BO/TwC
+	EvhmCt6yaykxnTmplYNmZH47lriBqtDgufbRfSbSirFEVC4VZ4VSEqC7paqm4Y2GlePOaBaA8bSW+
+	YyraNGWCRKW0aWanpSw+VWWL7q2hyoaxpq4DOaX1aaRaG5xKAfmeWeCEV4SQctn9JWDUtK9oRR+zR
+	eXqZRWMp05m11d6wv0hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hToIa-0006bq-2L; Thu, 23 May 2019 14:02:24 +0000
-Received: from mga12.intel.com ([192.55.52.136])
+	id 1hToIz-0006yx-Of; Thu, 23 May 2019 14:02:49 +0000
+Received: from mail-yb1-xb41.google.com ([2607:f8b0:4864:20::b41])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hToIR-0006aE-U8; Thu, 23 May 2019 14:02:17 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga008.jf.intel.com ([10.7.209.65])
- by fmsmga106.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 23 May 2019 07:02:13 -0700
-X-ExtLoop1: 1
-Received: from fmsmsx103.amr.corp.intel.com ([10.18.124.201])
- by orsmga008.jf.intel.com with ESMTP; 23 May 2019 07:02:13 -0700
-Received: from fmsmsx118.amr.corp.intel.com (10.18.116.18) by
- FMSMSX103.amr.corp.intel.com (10.18.124.201) with Microsoft SMTP Server (TLS)
- id 14.3.408.0; Thu, 23 May 2019 07:02:13 -0700
-Received: from shsmsx104.ccr.corp.intel.com (10.239.4.70) by
- fmsmsx118.amr.corp.intel.com (10.18.116.18) with Microsoft SMTP Server (TLS)
- id 14.3.408.0; Thu, 23 May 2019 07:02:12 -0700
-Received: from shsmsx108.ccr.corp.intel.com ([169.254.8.126]) by
- SHSMSX104.ccr.corp.intel.com ([169.254.5.33]) with mapi id 14.03.0415.000;
- Thu, 23 May 2019 22:02:11 +0800
-From: "Zhang, Rui" <rui.zhang@intel.com>
-To: Enric Balletbo i Serra <enric.balletbo@collabora.com>, Mark Brown
- <broonie@kernel.org>, Eduardo Valentin <edubezval@gmail.com>, Elaine Zhang
- <zhangqing@rock-chips.com>
-Subject: RE: mainline/master boot bisection: v5.2-rc1-165-g54dee406374c on
- rk3288-veyron-jaq
-Thread-Topic: mainline/master boot bisection: v5.2-rc1-165-g54dee406374c on
- rk3288-veyron-jaq
-Thread-Index: AQHVEQ59ng5b65ntw0ypm8xLYzn0kaZ4KgWAgAAB5wCAAJHx8A==
-Date: Thu, 23 May 2019 14:02:11 +0000
-Message-ID: <744357E9AAD1214791ACBA4B0B9092637757AD75@SHSMSX108.ccr.corp.intel.com>
-References: <5ce6040d.1c69fb81.60b3b.29fb@mx.google.com>
- <20190523131207.GC17245@sirena.org.uk>
- <ac2f06ac-2bf5-7af6-06c3-37b865c43738@collabora.com>
-In-Reply-To: <ac2f06ac-2bf5-7af6-06c3-37b865c43738@collabora.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-titus-metadata-40: eyJDYXRlZ29yeUxhYmVscyI6IiIsIk1ldGFkYXRhIjp7Im5zIjoiaHR0cDpcL1wvd3d3LnRpdHVzLmNvbVwvbnNcL0ludGVsMyIsImlkIjoiMWIyNDI1MTEtODVlNy00ZmQzLWFlZWUtYzI3OGQ0ODdiMDBlIiwicHJvcHMiOlt7Im4iOiJDVFBDbGFzc2lmaWNhdGlvbiIsInZhbHMiOlt7InZhbHVlIjoiQ1RQX05UIn1dfV19LCJTdWJqZWN0TGFiZWxzIjpbXSwiVE1DVmVyc2lvbiI6IjE3LjEwLjE4MDQuNDkiLCJUcnVzdGVkTGFiZWxIYXNoIjoibXUyNlNRZ3U4RWtRSEI1Q1ZFdjlOMURGMmlRVnc0M29SemtQREFEb0FGd0NLdDdUSkNEVXNqS2JzcXV4VXhEcCJ9
-x-ctpclassification: CTP_NT
-dlp-product: dlpe-windows
-dlp-version: 11.0.600.7
-dlp-reaction: no-action
-x-originating-ip: [10.239.127.40]
+ id 1hToIq-0006vn-T2
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 14:02:42 +0000
+Received: by mail-yb1-xb41.google.com with SMTP id w127so440023yba.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 23 May 2019 07:02:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=sqmYovtDH2Cha2ixUIjp55v47f+tfN+Y/9nD/H0oaXU=;
+ b=S0WIOvfhxfwfAv7ibPxBjD1HBQmHhdi/cM0k2xwZ5e8ECTMVUNqunHYdnAhuKwbDjN
+ Xu8BiJho9SPuTk4wu04jroQpaoDnl0YqNbEBdkaBe0laaCkOz5PxNJYrP4byiu9iu+Ni
+ eV4lSa657lsml6+XQgvFORwIB0LQsbP42cOpgFiECUEFMVbmejiHv41dxvs0CX90H/zU
+ eO/mQkOQphWmY9HEo7Bhr0TaEcA4QYzakZtp2LXeixe/zuJ9XD/QjJrLOVSYQGCPuHv6
+ dIknKspngjhSiFsIIKxxDn6P2LsfxGt8rRbCGnUedOOG7Y5tW1z4iLSqn1Ik8Fr5CK/9
+ SiTw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=sqmYovtDH2Cha2ixUIjp55v47f+tfN+Y/9nD/H0oaXU=;
+ b=UFL1JXrDdxDh+Cw9UtZtpUb7K4FPoYhjpblQZz/HhJ+vIRpl3XzinK7OgjEMqGanfW
+ Sb24VFAPJm6F9ao6TdKvWVm2HPAfsbwHEy6tpqQf/6pFNC/ITHPPIpC/uQCmJBcix+hg
+ P1t2yxLeaaySyZldruYiTTRwzVJVlqT+aPWhxsXmeykhRvpNxtAcGRvXXjBY2CBiAuJU
+ 0R3uBCEmEBXDPs8VgesIBNCqhZoSIU0AWg4BZvW+W3lbO0G7/yPSWSaK73hDeuz3zb4f
+ i5LKXnYYZM3OUEJuOi78dCukFach0AbOwu2Qa/TR+WLJBdrfFQX03HNTWo/TQmmU7OzS
+ h4rA==
+X-Gm-Message-State: APjAAAWXY7tKKUc1cMrXEENCc3HyyM1bBWXhQ6bxA6J7WbTBcDwWDktn
+ /wkESYkcBoGYZFgu/1oD68rKiWgR4nMvNbbR1Is=
+X-Google-Smtp-Source: APXvYqxgIVauTGVCqLlR4n4GbP/KO2TXbfyg5FKYwg7m799qm8qa/AQBMYaFifalBrQB2p3zYAor1U7RqgV1eyk1QRs=
+X-Received: by 2002:a25:340e:: with SMTP id b14mr4677744yba.82.1558620159194; 
+ Thu, 23 May 2019 07:02:39 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190521160330.28402-1-peron.clem@gmail.com>
+ <20190521160330.28402-4-peron.clem@gmail.com>
+ <20190522103243.mmrfato5p2mhtf4j@flea>
+ <CAJiuCcdaZVLQyupEf8HPaUySakufXXAhzundo6VeyQaAyZ8Trw@mail.gmail.com>
+ <20190523125716.g4euwplfsvw4vqzl@flea>
+In-Reply-To: <20190523125716.g4euwplfsvw4vqzl@flea>
+From: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Date: Thu, 23 May 2019 16:02:28 +0200
+Message-ID: <CAJiuCcdE-RtiGpPKe-BMJpS-m=wOXy+30vS7iAvd6Ng7gaZWNg@mail.gmail.com>
+Subject: Re: [PATCH v4 3/5] dt-bindings: watchdog: add Allwinner H6 r_watchdog
+To: Maxime Ripard <maxime.ripard@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_070215_985840_6B8DBD6F 
-X-CRM114-Status: GOOD (  14.58  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190523_070241_129251_A239B61A 
+X-CRM114-Status: GOOD (  21.56  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.136 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:b41 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (peron.clem[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -88,79 +98,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>,
- "tomeu.vizoso@collabora.com" <tomeu.vizoso@collabora.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "guillaume.tucker@collabora.com" <guillaume.tucker@collabora.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- "matthew.hart@linaro.org" <matthew.hart@linaro.org>,
- "khilman@baylibre.com" <khilman@baylibre.com>,
- "mgalka@collabora.com" <mgalka@collabora.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, linux-watchdog@vger.kernel.org,
+ linux-kernel <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>, Guenter Roeck <linux@roeck-us.net>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-> -----Original Message-----
-> From: Enric Balletbo i Serra [mailto:enric.balletbo@collabora.com]
-> Sent: Thursday, May 23, 2019 9:19 PM
-> To: Mark Brown <broonie@kernel.org>; Eduardo Valentin
-> <edubezval@gmail.com>; Elaine Zhang <zhangqing@rock-chips.com>
-> Cc: tomeu.vizoso@collabora.com; guillaume.tucker@collabora.com;
-> mgalka@collabora.com; matthew.hart@linaro.org; khilman@baylibre.com;
-> Daniel Lezcano <daniel.lezcano@linaro.org>; Heiko Stuebner
-> <heiko@sntech.de>; linux-pm@vger.kernel.org; linux-
-> kernel@vger.kernel.org; linux-rockchip@lists.infradead.org; Zhang, Rui
-> <rui.zhang@intel.com>; linux-arm-kernel@lists.infradead.org
-> Subject: Re: mainline/master boot bisection: v5.2-rc1-165-g54dee406374c on
-> rk3288-veyron-jaq
-> Importance: High
-> 
-> Hi Mark,
-> 
-> On 23/5/19 15:12, Mark Brown wrote:
-> > On Wed, May 22, 2019 at 07:23:09PM -0700, kernelci.org bot wrote:
-> >
-> >>   Details:    https://kernelci.org/boot/id/5ce5984c59b514e6a47a364c
-> >>   Plain log:  https://storage.kernelci.org//mainline/master/v5.2-rc1-165-
-> g54dee406374c/arm/multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE
-> =y/gcc-8/lab-collabora/boot-rk3288-veyron-jaq.txt
-> >>   HTML log:   https://storage.kernelci.org//mainline/master/v5.2-rc1-165-
-> g54dee406374c/arm/multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE
-> =y/gcc-8/lab-collabora/boot-rk3288-veyron-jaq.html
-> >>   Result:     28694e009e51 thermal: rockchip: fix up the tsadc pinctrl setting
-> error
-> >
-> > It looks like this issue has persisted for a while without any kind of
-> > fix happening - given that the bisection has identified this commit as
-> > causing the regression and confirmed that reverting it fixes shouldn't
-> > we just revert?  My guess would be that there's some error with the
-> > pinctrl settings in the DT for the board.
-> >
-> 
-> After some discussion Heiko sent a patch that reverts the offending commit
-> one day ago [1] and it's waiting for maintainer to pick-up the patch.
-> 
-I thought Eduardo will take the patch.
-But I will apply it and queue it for -rc2 anyway.
-
-Thanks,
-Rui
-
-> The reason why we think is best reverting that fix it is explained here [2]
-> 
-> [1] https://lkml.org/lkml/2019/5/22/467
-> [2] https://lkml.org/lkml/2019/4/30/270
-> 
-> Thanks,
->  Enric
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVGh1LCAyMyBNYXkgMjAxOSBhdCAxNDo1NywgTWF4aW1lIFJpcGFyZCA8bWF4aW1lLnJpcGFy
+ZEBib290bGluLmNvbT4gd3JvdGU6Cj4KPiBPbiBXZWQsIE1heSAyMiwgMjAxOSBhdCAwNjoxNToy
+NlBNICswMjAwLCBDbMOpbWVudCBQw6lyb24gd3JvdGU6Cj4gPiBIaSBNYXhpbWUsCj4gPgo+ID4g
+T24gV2VkLCAyMiBNYXkgMjAxOSBhdCAxMjozMiwgTWF4aW1lIFJpcGFyZCA8bWF4aW1lLnJpcGFy
+ZEBib290bGluLmNvbT4gd3JvdGU6Cj4gPiA+Cj4gPiA+IE9uIFR1ZSwgTWF5IDIxLCAyMDE5IGF0
+IDA2OjAzOjI4UE0gKzAyMDAsIENsw6ltZW50IFDDqXJvbiB3cm90ZToKPiA+ID4gPiBBbGx3aW5u
+ZXIgSDYgaGFzIGEgc2Vjb25kIHdhdGNoZG9nIG9uIHRoZSByLWJsb2NrcyB3aGljaCBpcwo+ID4g
+PiA+IGNvbXBhdGlibGUgd2l0aCB0aGUgQTMxLgo+ID4gPiA+Cj4gPiA+ID4gVGhpcyBjb21taXQg
+YWRkIHRoZSBINiBjb21wYXRpYmxlIGZvciB0aGUgcl93YXRjaGRvZy4KPiA+ID4gPgo+ID4gPiA+
+IFNpZ25lZC1vZmYtYnk6IENsw6ltZW50IFDDqXJvbiA8cGVyb24uY2xlbUBnbWFpbC5jb20+Cj4g
+PiA+Cj4gPiA+IFVubGVzcyB5b3UgaGF2ZSBzb21lIGV2aWRlbmNlIHRoYXQgdGhlIHR3byBibG9j
+a3MgYXJlIGRpZmZlcmVudCwgdGhlbgo+ID4gPiB5b3Ugc2hvdWxkIGp1c3QgcmV1c2UgdGhlIHNh
+bWUgb25lLgo+ID4KPiA+IEkgaGF2ZSBubyBldmlkZW5jZSBpdCdzIGRpZmZlcmVudCBub3IgaWRl
+bnRpY2FsLCBpdCdzIG5vdCBkb2N1bWVudGVkCj4gPiBpbiB0aGUgdXNlciBtYW51YWwuCj4gPiBJ
+IHRob3VnaHQgaXQgd291bGQgYmV0dGVyIHRvIGhhdmUgc2VwYXJhdGUgYmluZGluZ3MgaW4gY2Fz
+ZSB0aGVyZSBpcyBhCj4gPiBkaWZmZXJlbmNlLgo+ID4gVGhhbiBkb24ndCBoYXZlIGFuZCBmaW5k
+IGxhdGVyIHRoYXQgd2UgaGF2ZSB0byBpbnRyb2R1Y2Ugb25lLgo+Cj4gSXQncyBhIHRyYWRlb2Zm
+LiBQdXNoaW5nIHlvdXIgbG9naWMgdG8gdGhlIGxpbWl0LCB3ZSB3b3VsZCBoYXZlIGEKPiBjb21w
+YXRpYmxlIGZvciBlYWNoIGNvbnRyb2xsZXIgZW1iZWRkZWQgaW4gYW4gU29DLgo+Cj4gVGhpcyB3
+b3VsZCBiZSB1bm1haW50YWluYWJsZSwgYW5kIHNsaWdodGx5IHVzZWxlc3Mgc2luY2UgdGhhdCBj
+YXNlIGlzCj4gdmVyeSB1bmxpa2VseS4KPgo+IEhvd2V2ZXIsIGhhdmluZyBkaWZmZXJlbmNlcyBi
+ZXR3ZWVuIFNvQ3MgaXMgcXVpdGUgY29tbW9uLCBoZW5jZSB3aHkgd2UKPiBoYXZlIGRpZmZlcmVu
+dCBjb21wYXRpYmxlcyBmb3IgZWFjaCBTb0MuClllcywgdGhhdCBtYWtlIHNlbnNlLCBJIHdpbGwg
+c2VuZCBhIG5ldyB2ZXJzaW9uIHNvb24sCgpUaGFua3MgZm9yIHRoZSByZXZpZXcsCkNsw6ltZW50
+Cgo+Cj4gTWF4aW1lCj4KPiAtLQo+IE1heGltZSBSaXBhcmQsIEJvb3RsaW4KPiBFbWJlZGRlZCBM
+aW51eCBhbmQgS2VybmVsIGVuZ2luZWVyaW5nCj4gaHR0cHM6Ly9ib290bGluLmNvbQoKX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5l
+bCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
+Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
