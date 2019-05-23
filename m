@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57EB027AA7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 12:35:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0CC127AAB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 12:36:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=CqM5HRMNMuUrfwR5l4lswOQ/ylDSgzFEMHViX8cb/w4=; b=OwYLx/8AhBmy9aErz+zlbJQ9H3
-	CziXrYYRTy4r9BW5FJyKfdRKSsNhk8u1SW67jCUmvCA8TaqoW3abYbaIlJheyf1BGJA12/gm3YoDV
-	2V4MCvW9CrjmOTbS0h6mkoNglJJaOWJhGhEfOh4LeQqOOGntJlDMSmH6W792GS34VrV7TR+wNu25q
-	nGs//pxot66LTmfVePMkvTaIEI2Dequg4hwzYfVJziBJwi3TIevOHevnizRfO+IHi+6VcRJ1s2gGS
-	n2NC5KNA/JTBBNBvtPNr9v3E2UGfZ3B3bcZsLT7dR5D1+O6zk3cH6f+6mjoMZRgW3LjH2NYvOg/rh
-	LMms7BUg==;
+	bh=RHcVVe+YVRRAuHIsSJUsrQFXl6JheAKNdlnMtBCBTGk=; b=IDUeFHQXRYC6RTysZJbkxW54X6
+	rdA0OaeqBVWjZhlw6o/PDjnXr40ixtwfnGqwvmkKc25TQgssscFLsad3YHLzmgJEusqUo8GqWz6He
+	+lMqV6/N3CDmkfbKT8FqToanQl73/dmvtlb83UI71lOSMZLCbfSYk7qOHTl9RePo+NRrQntQ4qJHP
+	cX9AmVM084tqym0Cr31bpjzK+EOAVBf9Wbrdg5OpzeucSGuH/lOiygSBEQVGtL9hB3sWNHHa/7Voh
+	8FrHhB1x/SEDNJ5JxrQiaPbDr8UjBZrciNSP5rPMZduVpIM9vV/hZDvWUJ0EzGnV1NZEGddYlZ+D6
+	N6JBIaeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTl4j-0000qC-MC; Thu, 23 May 2019 10:35:53 +0000
+	id 1hTl4t-00017N-Qg; Thu, 23 May 2019 10:36:03 +0000
 Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
  helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTl4I-0000RQ-Ea
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 10:35:29 +0000
+ id 1hTl4K-0000U8-DI
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 10:35:31 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9D9B9341;
- Thu, 23 May 2019 03:35:25 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 043F3A78;
+ Thu, 23 May 2019 03:35:28 -0700 (PDT)
 Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 7F6473F718;
- Thu, 23 May 2019 03:35:23 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id DC2023F718;
+ Thu, 23 May 2019 03:35:25 -0700 (PDT)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: kvmarm@lists.cs.columbia.edu,
 	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 02/15] dt-bindings: ARM SPE: highlight the need for PPI
- partitions on heterogeneous systems
-Date: Thu, 23 May 2019 11:34:49 +0100
-Message-Id: <20190523103502.25925-3-sudeep.holla@arm.com>
+Subject: [PATCH v2 03/15] arm64: KVM: reset E2PB correctly in MDCR_EL2 when
+ exiting the guest(VHE)
+Date: Thu, 23 May 2019 11:34:50 +0100
+Message-Id: <20190523103502.25925-4-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190523103502.25925-1-sudeep.holla@arm.com>
 References: <20190523103502.25925-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_033526_546034_2F824404 
-X-CRM114-Status: GOOD (  12.51  )
+X-CRM114-CacheID: sfid-20190523_033528_711598_678DEE67 
+X-CRM114-Status: GOOD (  12.28  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -75,33 +75,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It's not entirely clear for the binding document that the only way to
-express ARM SPE affined to a subset of CPUs on a heterogeneous systems
-is through the use of PPI partitions available in the interrupt
-controller bindings.
+On VHE systems, the reset value for MDCR_EL2.E2PB=b00 which defaults
+to profiling buffer using the EL2 stage 1 translations. However if the
+guest are allowed to use profiling buffers changing E2PB settings, we
+need to ensure we resume back MDCR_EL2.E2PB=b00. Currently we just
+do bitwise '&' with MDCR_EL2_E2PB_MASK which will retain the value.
 
-Let's make it clear.
+So fix it by clearing all the bits in E2PB.
 
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- Documentation/devicetree/bindings/arm/spe-pmu.txt | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+ arch/arm64/kvm/hyp/switch.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/arm/spe-pmu.txt b/Documentation/devicetree/bindings/arm/spe-pmu.txt
-index 93372f2a7df9..4f4815800f6e 100644
---- a/Documentation/devicetree/bindings/arm/spe-pmu.txt
-+++ b/Documentation/devicetree/bindings/arm/spe-pmu.txt
-@@ -9,8 +9,9 @@ performance sample data using an in-memory trace buffer.
- 	       "arm,statistical-profiling-extension-v1"
+diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
+index 22b4c335e0b2..9b2461138ddc 100644
+--- a/arch/arm64/kvm/hyp/switch.c
++++ b/arch/arm64/kvm/hyp/switch.c
+@@ -202,9 +202,7 @@ void deactivate_traps_vhe_put(void)
+ {
+ 	u64 mdcr_el2 = read_sysreg(mdcr_el2);
  
- - interrupts : Exactly 1 PPI must be listed. For heterogeneous systems where
--               SPE is only supported on a subset of the CPUs, please consult
--	       the arm,gic-v3 binding for details on describing a PPI partition.
-+               SPE is only supported on a subset of the CPUs, a PPI partition
-+	       described in the arm,gic-v3 binding must be used to describe
-+	       the set of CPUs this interrupt is affine to.
+-	mdcr_el2 &= MDCR_EL2_HPMN_MASK |
+-		    MDCR_EL2_E2PB_MASK << MDCR_EL2_E2PB_SHIFT |
+-		    MDCR_EL2_TPMS;
++	mdcr_el2 &= MDCR_EL2_HPMN_MASK | MDCR_EL2_TPMS;
  
- ** Example:
+ 	write_sysreg(mdcr_el2, mdcr_el2);
  
 -- 
 2.17.1
