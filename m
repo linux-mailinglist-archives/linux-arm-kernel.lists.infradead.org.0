@@ -2,55 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF05D282E2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 18:20:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0480B28341
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 18:21:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n5/cWn/bLHuIzXjDLU6OVqnMkklhkdK8wsclZe/L9lY=; b=V/gYn3tVYeiSIb
-	Bfz1wI/1HLM/Wecbp0Ylbsr/3yUhtqAvuaoybkJBa5wGE5+Unlx5hJ0b4qU8Dy32BjOCVK8d08ve0
-	i/+g9BiQENQ6sm2J84O3HUSOpNITQl+aNiaHhuuwEaFKrgkSkfPqVs08BFBAeg8RzpnYbBN70aOVw
-	MAfO4ZHA94JhXHSXL4Lltl9RE36b9b2JTM6/q99pPljKP9jJyU5vENpfQSzQVXHbfbIG+WJe7ihWx
-	Crsk9IZTX8uDLcpf7F84mOjiL12aainX/KiKvrEA3T/u8bZWTEVbDSTZNnqTO72VBF7Wkg2BUg5Ko
-	BYV6iCA2hScaqDjszO+g==;
+	List-Owner; bh=nK5EtrcLeR+5BNkln19ysxDJ5W2d0UIKptbwmwpocx8=; b=dctCX3u+j/Sfbd
+	UzUT5YUqDBo2ePvpD4YwVfpufCFn8VI/P500wuVN2uy5XCSeKi7RMkyMXef2V7SqLcXkHTQCWs7XO
+	UrbbOQssVnDyY0g+P8Oi2+J0DdF4r9aU11oBirCpdKFRcmjVPQe7W37miGFhwmD4oV53718kAlGhN
+	N5F7t3i0qtTpw+r/L7qNKO5XBVSrKYukTJg60ijdoikAKmuhVxKrzRmweObUAS65jneEl06hZFUKF
+	KqYWDuI0W7RTGp0RR1Z5MIhkqeMHqE0fA091GeBQ/Dwnehw9DvM1vSY+yTN6oc7oVh6znCZtiFbnM
+	1EZsXhkQmYZYBaDa3w8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTqSc-0005Y7-Op; Thu, 23 May 2019 16:20:54 +0000
+	id 1hTqTO-00066i-JE; Thu, 23 May 2019 16:21:42 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTqSU-0005Qs-Jo
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 16:20:48 +0000
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
+ id 1hTqTH-00066K-Kg
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 16:21:36 +0000
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 408BA6698C;
- Thu, 23 May 2019 16:20:18 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id D6E5B9B3B7;
+ Thu, 23 May 2019 16:21:19 +0000 (UTC)
 Received: from dhcp-27-174.brq.redhat.com (unknown [10.43.17.159])
- by smtp.corp.redhat.com (Postfix) with SMTP id 9C59759441;
- Thu, 23 May 2019 16:20:08 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with SMTP id 10657422B;
+ Thu, 23 May 2019 16:21:07 +0000 (UTC)
 Received: by dhcp-27-174.brq.redhat.com (nbSMTP-1.00) for uid 1000
- oleg@redhat.com; Thu, 23 May 2019 18:20:15 +0200 (CEST)
-Date: Thu, 23 May 2019 18:20:05 +0200
+ oleg@redhat.com; Thu, 23 May 2019 18:21:17 +0200 (CEST)
+Date: Thu, 23 May 2019 18:21:04 +0200
 From: Oleg Nesterov <oleg@redhat.com>
 To: Christian Brauner <christian@brauner.io>
-Subject: Re: [PATCH v2 1/2] open: add close_range()
-Message-ID: <20190523162004.GC23070@redhat.com>
-References: <20190523154747.15162-1-christian@brauner.io>
- <20190523154747.15162-2-christian@brauner.io>
+Subject: Re: [PATCH v1 1/2] open: add close_range()
+Message-ID: <20190523162104.GD23070@redhat.com>
+References: <20190522155259.11174-1-christian@brauner.io>
+ <20190522165737.GC4915@redhat.com>
+ <20190523115118.pmscbd6kaqy37dym@brauner.io>
+ <20190523141447.34s3kc3fuwmoeq7n@brauner.io>
+ <20190523142826.omb7vgygudifmveq@brauner.io>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190523154747.15162-2-christian@brauner.io>
+In-Reply-To: <20190523142826.omb7vgygudifmveq@brauner.io>
 User-Agent: Mutt/1.5.24 (2015-08-30)
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
 X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.38]); Thu, 23 May 2019 16:20:41 +0000 (UTC)
+ (mx1.redhat.com [10.5.110.39]); Thu, 23 May 2019 16:21:30 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_092046_856209_3968CD3C 
-X-CRM114-Status: GOOD (  11.56  )
+X-CRM114-CacheID: sfid-20190523_092135_696894_2BB092D2 
+X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -89,22 +93,11 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On 05/23, Christian Brauner wrote:
 >
-> +int __close_range(struct files_struct *files, unsigned fd, unsigned max_fd)
-> +{
-> +	unsigned int cur_max;
-> +
-> +	if (fd > max_fd)
-> +		return -EINVAL;
-> +
-> +	rcu_read_lock();
-> +	cur_max = files_fdtable(files)->max_fds;
-> +	rcu_read_unlock();
-> +
-> +	/* cap to last valid index into fdtable */
-> +	max_fd = max(max_fd, (cur_max - 1));
-                 ^^^
+> So given that we would really need another find_next_open_fd() I think
+> sticking to the simple cond_resched() version I sent before is better
+> for now until we see real-world performance issues.
 
-Hmm. min() ?
+OK, agreed.
 
 Oleg.
 
