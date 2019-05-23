@@ -2,60 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8CB4D276F7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 09:32:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9E1327702
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 09:32:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U7L23x7JoSsGDXLVx74by0nHzXqS8dPeGPh+AVhWkH4=; b=WgZeIlklumusUz
-	VxMoKPV0ryaGLNwCH2fZkWyiax3/CwiaweRpxuPWj4q9lZIpjHE4TY+Q2AKNCZElOT5zpB+yboURL
-	MgwdZu3nglxMHOjcvTPfpfRT31zLIqrHnJjw/P0w0zFM2xm4tk7OVOZBCLdLdjs4hDB3z/EFzVvY5
-	GNNJQNlUExbFgLxq75wWGuqF3zmDxhd+0qJgAnskeSfip2F3Zw5OSYfydTVIge1kwWvUA+t0cCYnM
-	ah8E3Ih5e0rML/drsS9396gHjlNU/X4Wf48842NBsDIGFMyC731TumXWYiDsSCQ0J70pMCFW4Om6P
-	tCDLZd9HEmoG0RvZfRUA==;
+	List-Owner; bh=dfzcSUcOcbkoH1YgbPj13at+jl2t0z57XHQ+6XwO/N4=; b=rfiOYASPQTwSn2
+	suNOL+ogRFUgkP6H4MJt/0rPZLKOTnNJdpye/4sk5hIsbqB/oyyCFuASp3b6+zloALR+pgIswfF67
+	OF/UqaMuTTaHygi4OMQ1PowWFFfLJTEFAClAJ3xEAVH6JhMQFIOMORL+OD438zjCWwMqvJGWHdK05
+	E49q/fnvf/29riSgptmEuV6vwrYSbxII/FjwSQpChG3yFp8MI/gwQ0gWZUZguBreYJH/2QJpTcxRS
+	qUI98Q2DxYRcPFuQqeOCtjap/KyD0I6dQtVfn1pEqSmCHrsZY8jgod/kWdKCs265MQM3RRlZDLKhm
+	2a3nrEDx8Nr0efxKfmaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTiDB-0003wf-VL; Thu, 23 May 2019 07:32:25 +0000
-Received: from perceval.ideasonboard.com
- ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+	id 1hTiDZ-0004Dj-Pd; Thu, 23 May 2019 07:32:49 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTiD4-0003vU-Do
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 07:32:20 +0000
-Received: from pendragon.ideasonboard.com (85-76-106-214-nat.elisa-mobile.fi
- [85.76.106.214])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 9139B337;
- Thu, 23 May 2019 09:32:01 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1558596722;
- bh=/W2SCMLQvihCKvM7mxR3BE+Y239YuZ1nvKLwS2lS22s=;
+ id 1hTiDS-0004DQ-KG
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 07:32:43 +0000
+Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2DC7F206BA;
+ Thu, 23 May 2019 07:32:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1558596762;
+ bh=7y1NyoV6VAVBTbSwJN9K7Zn3fWn/egJKRZ5wKdxwVnQ=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=b6vY6YIDsBJ6mfZ1r7Cjz+6RS7YWDC4UqQv/GhyPYWnwLaqWsHk4FioMivLW63tzk
- cr3JIVwoKX+zuCtO47ebgD+Lo5+6DQctzjSOf0UjhryORcxtcJ/jenCG8PBz3Y3v+N
- RFtQvviCFCcE6TLV0l9RHjyP2CIv6RzPEGaxsvFk=
-Date: Thu, 23 May 2019 10:31:41 +0300
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Torsten Duwe <duwe@lst.de>
-Subject: Re: [PATCH 5/6] dt-bindings: Add ANX6345 DP/eDP transmitter binding
-Message-ID: <20190523073141.GB4745@pendragon.ideasonboard.com>
-References: <20190523065013.2719D68B05@newverein.lst.de>
- <20190523065400.BD9EB68B05@newverein.lst.de>
+ b=Jg4Nl8B52eYCfl1L8c19y4siJt4HA8XORwMET0wbUpfodzWS3d5Rr2nB9cQouXX+N
+ x7L4DDAY3pHuZrtzPUClDa4dVbhyxOa64COa7V1+RF2urPJI26D1FztHrreNje5yZB
+ h7p1W/WbrECxlAVlDAcpNpVRbO3cQgrOpckhk8kE=
+Date: Thu, 23 May 2019 15:31:43 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Anson Huang <anson.huang@nxp.com>
+Subject: Re: [PATCH 3/3] arm64: dts: imx8mm: add clock for SNVS RTC node
+Message-ID: <20190523073142.GF9261@dragon>
+References: <1557883490-22360-1-git-send-email-Anson.Huang@nxp.com>
+ <1557883490-22360-3-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190523065400.BD9EB68B05@newverein.lst.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1557883490-22360-3-git-send-email-Anson.Huang@nxp.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_003218_779601_508A276B 
-X-CRM114-Status: GOOD (  18.77  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190523_003242_679948_9E9B3D00 
+X-CRM114-Status: UNSURE (   8.84  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -63,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -74,111 +78,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Andrzej Hajda <a.hajda@samsung.com>, Maxime Ripard <maxime.ripard@bootlin.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, David Airlie <airlied@linux.ie>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- Harald Geyer <harald@ccbib.org>, Sean Paul <seanpaul@chromium.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Icenowy Zheng <icenowy@aosc.io>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Jacky Bai <ping.bai@nxp.com>, "sboyd@kernel.org" <sboyd@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "mturquette@baylibre.com" <mturquette@baylibre.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Torsten,
-
-Thank you for the patch.
-
-On Thu, May 23, 2019 at 08:54:00AM +0200, Torsten Duwe wrote:
-> From: Icenowy Zheng <icenowy@aosc.io>
+On Wed, May 15, 2019 at 01:30:02AM +0000, Anson Huang wrote:
+> i.MX8MM has clock gate for SNVS module, add clock info to SNVS
+> RTC node for clock management.
 > 
-> The anx6345 is an ultra-low power DisplayPort/eDP transmitter designed
-> for portable devices.
-> 
-> Add a binding document for it.
-> 
-> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
-> Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> Signed-off-by: Torsten Duwe <duwe@suse.de>
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-
-> ---
->  .../bindings/display/bridge/anx6345.txt       | 56 +++++++++++++++++++
->  1 file changed, 56 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/bridge/anx6345.txt
-> 
-> diff --git a/Documentation/devicetree/bindings/display/bridge/anx6345.txt b/Documentation/devicetree/bindings/display/bridge/anx6345.txt
-> new file mode 100644
-> index 000000000000..e79a11348d11
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/bridge/anx6345.txt
-> @@ -0,0 +1,56 @@
-> +Analogix ANX6345 eDP Transmitter
-> +--------------------------------
-> +
-> +The ANX6345 is an ultra-low power Full-HD eDP transmitter designed for
-> +portable devices.
-> +
-> +Required properties:
-> +
-> + - compatible		: "analogix,anx6345"
-> + - reg			: I2C address of the device
-> + - reset-gpios		: Which GPIO to use for reset
-> + - dvdd12-supply	: Regulator for 1.2V digital core power.
-> + - dvdd25-supply	: Regulator for 2.5V digital core power.
-> +
-> +Optional properties:
-> +
-> + - Video ports for RGB input and eDP output using the DT bindings
-> +   defined in [1]
-> +
-> +[1]: Documentation/devicetree/bindings/media/video-interfaces.txt
-> +
-> +Example:
-> +
-> +anx6345: anx6345@38 {
-> +	compatible = "analogix,anx6345";
-> +	reg = <0x38>;
-> +	reset-gpios = <&pio 3 24 GPIO_ACTIVE_LOW>; /* PD24 */
-> +	dvdd25-supply = <&reg_dldo2>;
-> +	dvdd12-supply = <&reg_fldo1>;
-> +
-> +	ports {
-> +		#address-cells = <1>;
-> +		#size-cells = <0>;
-> +
-> +		anx6345_in: port@0 {
-> +			#address-cells = <1>;
-> +			#size-cells = <0>;
-> +			reg = <0>;
-> +			anx6345_in_tcon0: endpoint@0 {
-> +				reg = <0>;
-> +				remote-endpoint = <&tcon0_out_anx6345>;
-> +			};
-> +		};
-> +
-> +		anx6345_out: port@1 {
-> +			#address-cells = <1>;
-> +			#size-cells = <0>;
-> +			reg = <1>;
-> +
-> +			anx6345_out_panel: endpoint@0 {
-> +				reg = <0>;
-> +				remote-endpoint = <&panel_in_edp>;
-> +			};
-> +		};
-> +	};
-> +};
-
--- 
-Regards,
-
-Laurent Pinchart
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
