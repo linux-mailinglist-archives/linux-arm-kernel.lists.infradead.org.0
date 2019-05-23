@@ -2,54 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10BEC27C3B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 13:53:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 13F3527CDC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 14:28:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F4RI3IGb/hqqSSn8V48EH+6sgRm56Jjc0JdAE0DDUso=; b=GyZYNso+mAFn+X
-	52eb34lul8eMaMLrPFV+be1IQH5FZJP9SQI8O0vyNY50dBy8T9ia47sJPCPOt4tr/dN4be/WkO8E6
-	4eNDRa116c/tUtA3xlrDUZZ0b7v8RvQIUY7UmOe/7puWaEip5EwKVh94VW+Vkda6Eb0HLk0xN5N2h
-	Wa4g6KbkGIs8Ws2PHx/zOJAgVH7OClM+jsJUo6evXb8wQzotTxi8nyk1mhMnVqJJJPTAT3X9ToWI5
-	ISnTeh+JJkKLUXGpr585qfKq7ZG7n+zJCqOkMd9SRorhp0w25O9Zz2a5Eog6W2x6rALabFZL/3NEz
-	CSTiXP4uD6Xezp7XZKEg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=5sVSYv+5fee2iQb54H/qWoNVCHU++XxrRfC6ZuRXPx8=; b=OiDH571WzA+wAwPprzJL5B8y5
+	0/jlzwpXhL+BqyOIsGmVRaPftn+090RwZF0jQ2vjjvKZoq//aYOrTj24fnOEiPk1VRnRk+EcwFu/K
+	Ofc7+8oaHHNqOVyhq6IUKw+jHoBRvSzFrJVFKNQwX80Nlx6eVD5qfrJyboa3Fwuz5+3Hqg41dSAbN
+	WpFAgyUpKVLFAGspqnoWefWwBhohBAHwPH55EG1fwPOAk5BD9P3Ug5iSKwDbHZWROKS2tMID25hex
+	+M//BSJHYC2vj9nTkkStqRlr48fuH7t9/2E+9vfr6lPIBty7J3YNOYpPj/QvCZvxEobayvXkvBKAT
+	8IjgoErwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTmHH-0005lZ-CL; Thu, 23 May 2019 11:52:55 +0000
-Received: from verein.lst.de ([213.95.11.211] helo=newverein.lst.de)
+	id 1hTmpN-0001IJ-9m; Thu, 23 May 2019 12:28:09 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTmHB-0005l5-0c
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 11:52:50 +0000
-Received: by newverein.lst.de (Postfix, from userid 2005)
- id 79A4768AFE; Thu, 23 May 2019 13:52:24 +0200 (CEST)
-Date: Thu, 23 May 2019 13:52:24 +0200
-From: Torsten Duwe <duwe@lst.de>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Subject: Re: [PATCH 3/6] drm/bridge: extract some Analogix I2C DP common code
-Message-ID: <20190523115224.GA15685@lst.de>
-References: <20190523065013.2719D68B05@newverein.lst.de>
- <20190523065352.8FD7668B05@newverein.lst.de>
- <CAGb2v66+1+goJfnY7nWTGN2fupqMUm5o+gkPdUW6nxcwQEDwog@mail.gmail.com>
- <20190523075035.GA5971@pendragon.ideasonboard.com>
+ id 1hTmpH-0001I4-7c
+ for linux-arm-kernel@bombadil.infradead.org; Thu, 23 May 2019 12:28:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:To:From:Date:Sender:Reply-To:Cc:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=2WoPsYjFJhNQoyWLLEwjicIMAKKZ7IT91qb9KhAq5ww=; b=RlITGMUnSGcHqgpuwDUevCk5N
+ 9yZ1Tg8a0nR/X91VPrGrp/Ahu2CYbRwmQyJOMjptVTeQG9s+KtoTppCFiu9EqHu0IxLxyv9HgSfmZ
+ TTtGpdBx6qOEfHHBCtQYMeywzBlyzXpnRDDdDrEVt9ET1l2XwCeJjVJvwzkJBb3MO/Z8foT/C81Sr
+ 094gxhFrdLNQvqrfd+pCf1mxaN5IDZGJo8nnXDtm1tqqnbLZu0qfe4elQsAL+Q95AEVLa9QeOzAT1
+ 3Vc+LmdnJZVXIyAa2+fhyKNIsQbs2n2lua9eIZv/ysDJoARyDx9Lf/Uc9wCI+DlO90ws5O6HLfoYX
+ aVPDYhDTA==;
+Received: from relay3-d.mail.gandi.net ([217.70.183.195])
+ by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hTmpB-00053c-NI
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 12:27:59 +0000
+X-Originating-IP: 90.88.22.185
+Received: from localhost (aaubervilliers-681-1-80-185.w90-88.abo.wanadoo.fr
+ [90.88.22.185]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id 8D5E060005;
+ Thu, 23 May 2019 12:27:01 +0000 (UTC)
+Date: Thu, 23 May 2019 14:27:01 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: linux-sunxi@googlegroups.com, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, David Airlie <airlied@linux.ie>,
+ Daniel Vetter <daniel@ffwll.ch>, Mark Rutland <mark.rutland@arm.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Jose Abreu <joabreu@synopsys.com>, "David S. Miller" <davem@davemloft.net>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ netdev@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com
+Subject: Re: [PATCH v5 5/6] drm: sun4i: Add support for enabling DDC I2C bus
+ to sun8i_dw_hdmi glue
+Message-ID: <20190523122701.qeuthkrczdzngzod@flea>
+References: <20190520235009.16734-1-megous@megous.com>
+ <20190520235009.16734-6-megous@megous.com>
+ <20190521114611.ylmbo2oqeanveil4@flea>
+ <20190521121519.k343dgv3cgpewjl2@core.my.home>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190523075035.GA5971@pendragon.ideasonboard.com>
-User-Agent: Mutt/1.5.17 (2007-11-01)
+In-Reply-To: <20190521121519.k343dgv3cgpewjl2@core.my.home>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_045249_208324_76D3B80D 
-X-CRM114-Status: GOOD (  11.25  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+X-CRM114-CacheID: sfid-20190523_082757_946467_1EEE8A75 
+X-CRM114-Status: GOOD (  29.30  )
+X-Spam-Score: -1.0 (-)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
+ -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.195 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.195 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -61,39 +91,153 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Andrzej Hajda <a.hajda@samsung.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, David Airlie <airlied@linux.ie>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- Harald Geyer <harald@ccbib.org>, Sean Paul <seanpaul@chromium.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Icenowy Zheng <icenowy@aosc.io>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============7171271869766287133=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 23, 2019 at 10:50:35AM +0300, Laurent Pinchart wrote:
-> On Thu, May 23, 2019 at 03:40:25PM +0800, Chen-Yu Tsai wrote:
-> > 
-> > If this was simple code movement, then the original copyright still applies.
-> > A different copyright notice should not be used. I suppose the same applies
-> > to the module author.
-> 
-> And likely to patch 2/6 too.
 
-Absolutely correct. Wdiff does not lie.
-Re-evaluating...
+--===============7171271869766287133==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="xaediv5ol6nrlghm"
+Content-Disposition: inline
 
-	Torsten
 
+--xaediv5ol6nrlghm
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, May 21, 2019 at 02:15:19PM +0200, Ond=C5=99ej Jirman wrote:
+> Hi Maxime,
+>
+> On Tue, May 21, 2019 at 01:46:11PM +0200, Maxime Ripard wrote:
+> > Hi,
+> >
+> > On Tue, May 21, 2019 at 01:50:08AM +0200, megous@megous.com wrote:
+> > > From: Ondrej Jirman <megous@megous.com>
+> > >
+> > > Orange Pi 3 board requires enabling a voltage shifting circuit via GP=
+IO
+> > > for the DDC bus to be usable.
+> > >
+> > > Add support for hdmi-connector node's optional ddc-en-gpios property =
+to
+> > > support this use case.
+> > >
+> > > Signed-off-by: Ondrej Jirman <megous@megous.com>
+> > > ---
+> > >  drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c | 55 +++++++++++++++++++++++++=
+--
+> > >  drivers/gpu/drm/sun4i/sun8i_dw_hdmi.h |  3 ++
+> > >  2 files changed, 55 insertions(+), 3 deletions(-)
+> > >
+> > > diff --git a/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c b/drivers/gpu/drm/=
+sun4i/sun8i_dw_hdmi.c
+> > > index 39d8509d96a0..59b81ba02d96 100644
+> > > --- a/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c
+> > > +++ b/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c
+> > > @@ -98,6 +98,30 @@ static u32 sun8i_dw_hdmi_find_possible_crtcs(struc=
+t drm_device *drm,
+> > >  	return crtcs;
+> > >  }
+> > >
+> > > +static int sun8i_dw_hdmi_find_connector_pdev(struct device *dev,
+> > > +					     struct platform_device **pdev_out)
+> > > +{
+> > > +	struct platform_device *pdev;
+> > > +	struct device_node *remote;
+> > > +
+> > > +	remote =3D of_graph_get_remote_node(dev->of_node, 1, -1);
+> > > +	if (!remote)
+> > > +		return -ENODEV;
+> > > +
+> > > +	if (!of_device_is_compatible(remote, "hdmi-connector")) {
+> > > +		of_node_put(remote);
+> > > +		return -ENODEV;
+> > > +	}
+> > > +
+> > > +	pdev =3D of_find_device_by_node(remote);
+> > > +	of_node_put(remote);
+> > > +	if (!pdev)
+> > > +		return -ENODEV;
+> > > +
+> > > +	*pdev_out =3D pdev;
+> > > +	return 0;
+> > > +}
+> > > +
+> > >  static int sun8i_dw_hdmi_bind(struct device *dev, struct device *mas=
+ter,
+> > >  			      void *data)
+> > >  {
+> > > @@ -151,16 +175,29 @@ static int sun8i_dw_hdmi_bind(struct device *de=
+v, struct device *master,
+> > >  		return PTR_ERR(hdmi->regulator);
+> > >  	}
+> > >
+> > > +	ret =3D sun8i_dw_hdmi_find_connector_pdev(dev, &hdmi->connector_pde=
+v);
+> > > +	if (!ret) {
+> > > +		hdmi->ddc_en =3D gpiod_get_optional(&hdmi->connector_pdev->dev,
+> > > +						  "ddc-en", GPIOD_OUT_HIGH);
+> > > +		if (IS_ERR(hdmi->ddc_en)) {
+> > > +			platform_device_put(hdmi->connector_pdev);
+> > > +			dev_err(dev, "Couldn't get ddc-en gpio\n");
+> > > +			return PTR_ERR(hdmi->ddc_en);
+> > > +		}
+> > > +	}
+> > > +
+> > >  	ret =3D regulator_enable(hdmi->regulator);
+> > >  	if (ret) {
+> > >  		dev_err(dev, "Failed to enable regulator\n");
+> > > -		return ret;
+> > > +		goto err_unref_ddc_en;
+> > >  	}
+> > >
+> > > +	gpiod_set_value(hdmi->ddc_en, 1);
+> > > +
+> >
+> > Do you really need this to be done all the time? I'm guessing you
+> > would only need this when running .get_modes, right?
+>
+> I don't think it hurts anything. Enabled voltage shifting circuit doesn't
+> draw any current, unless DDC is actually transmitting data. On most boards
+> I'd imagine this circuit is always on anyway (Orange Pi 3 schematic even =
+has
+> an option to tie this signal to VCC-IO instead of GPIO).
+
+Ok, it works for me then
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--xaediv5ol6nrlghm
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXOaRjgAKCRDj7w1vZxhR
+xXP8AQDJFrAb2tEeZAxbO0lR5xA3HSBZ1CG8XwnZfh/DVcz7IgD/d1nl6k3ae3tz
+jt35NpcG3EPiCyUUHN1/ZuAY6YBkHQc=
+=qe05
+-----END PGP SIGNATURE-----
+
+--xaediv5ol6nrlghm--
+
+
+--===============7171271869766287133==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7171271869766287133==--
+
