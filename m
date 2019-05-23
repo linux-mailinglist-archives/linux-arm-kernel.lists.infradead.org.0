@@ -2,69 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DE172847D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 19:04:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0029528488
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 19:09:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gsGEWoCNZScc+jZaBggwW1uS3AbEi/YLoE94IhKfT9g=; b=ZddRRTG3k/hYj3
-	tH9CAx9L92AGFRZ14L5xjZLnDOysfaXnoZPjmPZTTlF5pqNgPDbANkn9OEEDz3SwLy9InQeu9DS/I
-	hkvrFmRbb1h6DWEbfWBdWEBJJaf0Xv5GT0ZMd62TfeMF5aheAVt+tcI7yOT+DJIn0GAS8mRPyhChg
-	McLI7kqSElIX9oBe5zvk12DwtGi6zar89HO9jYS+tBtAHNo/3GjrnDkq5rdukq7ziGiqtfoXSUuAB
-	zy+xmxMcTYsySIiaMBBt94HYQgAkaYJH2HxJWqa9oXHR0KBCm6SKF6XpQBYyAUn0vRS0EwGCaU/VQ
-	HYuQRIZqcrzrFCGWS8HQ==;
+	List-Owner; bh=RsMfuledDbxMkwohUDlzhwcKBUy5042Uw3GvXPx/P64=; b=VHITDwceV5Gpy+
+	dzcGjtNB0tDUYVantgVih4aCZL6VGTaiqU6VSRCU247yLaI0gwXbDriOlgFn0gjTwaYe+G6tF8Fzp
+	9Qg3ONfzTR1TNEPx3wmR/rPz1j9JlEECdXSZ/qLgnRGA8/52buU2l6iTZ6GsAtIr26xaruWMPXCnj
+	8IqYNhbQ/j2qQCkHmGRBWhiM1AKEo+tgWAMUTimGkO2Wiu1IsMQ9vbCg6JcCUHqug3PSxgRNjAPyc
+	fRXKPFnbEYMyG8vwZXx3DQ8YTAIO1P8gkYTi2tjOAsW7X5LLI1w+S9SN8opvmoDhdnu5PgElFR6Wl
+	e+Zapncv6jMhzJ5vuSXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTr8r-00058r-6v; Thu, 23 May 2019 17:04:33 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1hTrDJ-0006wB-PO; Thu, 23 May 2019 17:09:09 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTr8h-00057J-Eg; Thu, 23 May 2019 17:04:25 +0000
-Received: by mail-ed1-x544.google.com with SMTP id p27so10245135eda.1;
- Thu, 23 May 2019 10:04:20 -0700 (PDT)
+ id 1hTrDB-0006vC-FT; Thu, 23 May 2019 17:09:03 +0000
+Received: by mail-ed1-x543.google.com with SMTP id g57so10186663edc.12;
+ Thu, 23 May 2019 10:09:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
+ h=subject:from:to:cc:references:openpgp:autocrypt:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=pJftvEyxg8C/zVVqR3zI4TRUVSE8hkNVwSfcuCSM4dQ=;
- b=Fx6VLlqvmPVMYPGmLwhgSrCkii8y09bkYVGSIeAQfRPro/eewll725dIuhrax7LEK0
- cOOje9BGKuNC7LxG9f+2TwSDaFtzO6OL8Lr81BkL2gM3YDdS0eKgJ4fh3ITM+RFuy4om
- nB9vZz7BZbMKIfknDYesHMxDTACba5WQxOuCuTYThU+8VAPJYD7c5NIIQhZD34e16Kbn
- uTcV+zaWearGcIpeHscMhgMqVx2Wy+NjBBbPOAt6TMUfWB2jEgFWXexyZaIGaSjLL635
- qz4GtDyhkaykqzyOwEWR+5nh2/TJdJZwNB2esPkis1X7mvSypyRPjz87a2dnUmbfLW/B
- ddnQ==
+ bh=JqpKKF8u4atruLZeJRlzKvhmwKnhiDpsfffFU0OwfeY=;
+ b=Z7+8XpluiUSJ+/YUPE0uV14ZCVH8GfOJhzpz8+LsfeVFNh878jI9pBHJVzsNmwjX94
+ ReSkwP0/sIj4vB9YFnU2wJXWgPDbsNtpXgPLWszOb32gK8mSmVfcYNnly60BgvL3zdlG
+ splNHmjr/LeSRqDmbsijHH5LzezX791OHsEtxJvbfNATpbdW8NEfXcmm2sT/6Bf211F2
+ t9MQ0NtjEqseHMFcRWXNGYlvk9UmhnzkBGlWZQeVvCGgrs8IDVKph6tZ0G9e1eUDwQCC
+ TvXGeNtht0sqJz9DRFawaav4yLyYKXEPcfHpDa/Dn+I/RPVzJBQ/ooKz8WD4UycmrG9f
+ gEZA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ h=x-gm-message-state:subject:from:to:cc:references:openpgp:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=pJftvEyxg8C/zVVqR3zI4TRUVSE8hkNVwSfcuCSM4dQ=;
- b=msZWJtCa5JdeKAooFtZj7+po7i+C+M9gWlpYXHzlMCG1+XoIR5Pj3lc0MMWD0Dp3Nn
- yqlHz+AsVUMEdtCjZz8B55V4TMIFXi86OfMM0jWdPfMc9vbDmiDR2W6uboYKBpP3wncs
- PGiviTRZr1e4kKTgz9ySUGEX+HufrfRch8IvypGGhYj2JmKzLCeVoOSLM2y1i/Y1FHhs
- fXibNLFOjoQnRaFpwk5NdHP+Mx+fpy8BUsjOHSset6lykjaYcEVQg+LJrx+w3X9AzYxg
- N0wmbyhYugnupwAyPXmyvXiTE9WzgTrRtVhtSmQVLWRBn3n6flSU01jdZxSdXHiLwU/5
- zkyg==
-X-Gm-Message-State: APjAAAURyv6AHtV0U5DY+GknQcbvk0WsVExkl1DSudfYG2fCG6Na0ruw
- ZbYM1itpDNytjawxLz+6OpgNAyzeK1bVKg==
-X-Google-Smtp-Source: APXvYqxtZo/LyrKlcb+xz8tRO/M6SeJIHYIpUYajWWsVxF8S5TXWDCkhdEL/zKJ3f6NmU/2y0Yc0Aw==
-X-Received: by 2002:a17:906:b20f:: with SMTP id
- p15mr66459415ejz.63.1558631058628; 
- Thu, 23 May 2019 10:04:18 -0700 (PDT)
+ bh=JqpKKF8u4atruLZeJRlzKvhmwKnhiDpsfffFU0OwfeY=;
+ b=R4fwdMDPGEyKDwU8AMg6k4lCk/IVJUR+pj5XJWvjuaoGqDooNh7oj9m/j5SQUcnLSG
+ KFq6GNDZwtci8V0JsmDtHnLt9ZJ2nZpBehZA6/k9RKWlFBhBp2A8dIlGi2K8yNKZT/P9
+ uExRu1NG+K5YnLmKwTAH85e0O2/O6qm4JISo+ruB+kSiKj5cG2lpYgqXouA37TPXyUbI
+ ixjexTyMLyc5wIp8F5K3b6P5aiJF/vYwvti3+K4hEnHPSWi5TNXjUqlkLaXp5zwFhcnk
+ md6fpc8C29HPQH2DqAlkTlC82xxzBGtmxFRofRjg4BQf26mM2P4FQoaRkE4hBGsuNF2e
+ 6yAw==
+X-Gm-Message-State: APjAAAUtt/bBMcseLIthCk+jeWxuiVwYMHiCRS3h+T3yqlbi9mRVwEWY
+ DxB1fq9IMBLQbE0FkJs1ZdM=
+X-Google-Smtp-Source: APXvYqxYkwRM0SzTeyMSlhinkKDLc5vcOeez94usU0quFrHEUKgUcbL04sMp03vL57Ghbzl0L1p87w==
+X-Received: by 2002:a50:987c:: with SMTP id h57mr51649310edb.229.1558631339545; 
+ Thu, 23 May 2019 10:08:59 -0700 (PDT)
 Received: from ziggy.stardust (charybdis-ext.suse.de. [195.135.221.2])
- by smtp.gmail.com with ESMTPSA id h23sm4535518ejc.34.2019.05.23.10.04.17
+ by smtp.gmail.com with ESMTPSA id f44sm20208eda.73.2019.05.23.10.08.58
  (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Thu, 23 May 2019 10:04:17 -0700 (PDT)
+ Thu, 23 May 2019 10:08:58 -0700 (PDT)
 Subject: Re: [PATCH v13 1/2] arm: dts: mt2712: add uart APDMA to device tree
+From: Matthias Brugger <matthias.bgg@gmail.com>
 To: Long Cheng <long.cheng@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
  Randy Dunlap <rdunlap@infradead.org>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>, Ryder Lee <ryder.lee@mediatek.com>,
  Sean Wang <sean.wang@kernel.org>, Nicolas Boichat <drinkcat@chromium.org>
 References: <1558596909-14084-1-git-send-email-long.cheng@mediatek.com>
  <1558596909-14084-2-git-send-email-long.cheng@mediatek.com>
-From: Matthias Brugger <matthias.bgg@gmail.com>
+ <434cbd9b-face-de45-0d17-4096ad81a7b9@gmail.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
@@ -159,23 +159,23 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  pac005PuhxCWkKTJz3gCmznnoat4GCnL5gy/m0Qk45l4PFqwWXVLo9AQg2Kp3mlIFZ6fsEKI
  AN5hxlbNvNb9V2Zo5bFZjPWPFTxOteM0omUAS+QopwU0yPLLGJVf2iCmItHcUXI+r2JwH1CJ
  jrHWeQEI2ucSKsNa8FllDmG/fQ==
-Message-ID: <434cbd9b-face-de45-0d17-4096ad81a7b9@gmail.com>
-Date: Thu, 23 May 2019 19:04:16 +0200
+Message-ID: <9c7fdd43-dffe-9339-272d-62311a39dbb9@gmail.com>
+Date: Thu, 23 May 2019 19:08:57 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <1558596909-14084-2-git-send-email-long.cheng@mediatek.com>
+In-Reply-To: <434cbd9b-face-de45-0d17-4096ad81a7b9@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_100423_521017_3297A342 
-X-CRM114-Status: GOOD (  18.02  )
+X-CRM114-CacheID: sfid-20190523_100901_524185_7E31AF2A 
+X-CRM114-Status: GOOD (  17.55  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -213,129 +213,138 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 23/05/2019 09:35, Long Cheng wrote:
-> 1. add uart APDMA controller device node
-> 2. add uart 0/1/2/3/4/5 DMA function
+On 23/05/2019 19:04, Matthias Brugger wrote:
 > 
-> Signed-off-by: Long Cheng <long.cheng@mediatek.com>
-> ---
->  arch/arm64/boot/dts/mediatek/mt2712e.dtsi |   51 +++++++++++++++++++++++++++++
->  1 file changed, 51 insertions(+)
 > 
-> diff --git a/arch/arm64/boot/dts/mediatek/mt2712e.dtsi b/arch/arm64/boot/dts/mediatek/mt2712e.dtsi
-> index 43307ba..a7a7362 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt2712e.dtsi
-> +++ b/arch/arm64/boot/dts/mediatek/mt2712e.dtsi
-> @@ -300,6 +300,9 @@
->  		interrupts = <GIC_SPI 127 IRQ_TYPE_LEVEL_LOW>;
->  		clocks = <&baud_clk>, <&sys_clk>;
->  		clock-names = "baud", "bus";
-> +		dmas = <&apdma 10
-> +			&apdma 11>;
-> +		dma-names = "tx", "rx";
->  		status = "disabled";
->  	};
->  
-> @@ -369,6 +372,39 @@
->  			 (GIC_CPU_MASK_RAW(0x13) | IRQ_TYPE_LEVEL_HIGH)>;
->  	};
->  
-> +	apdma: dma-controller@11000400 {
-> +		compatible = "mediatek,mt2712-uart-dma",
-> +			     "mediatek,mt6577-uart-dma";
+> On 23/05/2019 09:35, Long Cheng wrote:
+>> 1. add uart APDMA controller device node
+>> 2. add uart 0/1/2/3/4/5 DMA function
+>>
+>> Signed-off-by: Long Cheng <long.cheng@mediatek.com>
+>> ---
+>>  arch/arm64/boot/dts/mediatek/mt2712e.dtsi |   51 +++++++++++++++++++++++++++++
+>>  1 file changed, 51 insertions(+)
+>>
+>> diff --git a/arch/arm64/boot/dts/mediatek/mt2712e.dtsi b/arch/arm64/boot/dts/mediatek/mt2712e.dtsi
+>> index 43307ba..a7a7362 100644
+>> --- a/arch/arm64/boot/dts/mediatek/mt2712e.dtsi
+>> +++ b/arch/arm64/boot/dts/mediatek/mt2712e.dtsi
+>> @@ -300,6 +300,9 @@
+>>  		interrupts = <GIC_SPI 127 IRQ_TYPE_LEVEL_LOW>;
+>>  		clocks = <&baud_clk>, <&sys_clk>;
+>>  		clock-names = "baud", "bus";
+>> +		dmas = <&apdma 10
+>> +			&apdma 11>;
+>> +		dma-names = "tx", "rx";
+>>  		status = "disabled";
+>>  	};
+>>  
+>> @@ -369,6 +372,39 @@
+>>  			 (GIC_CPU_MASK_RAW(0x13) | IRQ_TYPE_LEVEL_HIGH)>;
+>>  	};
+>>  
+>> +	apdma: dma-controller@11000400 {
+>> +		compatible = "mediatek,mt2712-uart-dma",
+>> +			     "mediatek,mt6577-uart-dma";
+> 
+> I was able to find a binding descpription but no actual driver.
+> drivers/dma/mediatek only has hsdma and cqdma but no apdma driver.
+> 
+> Seems there is something missing here.
+> 
 
-I was able to find a binding descpription but no actual driver.
-drivers/dma/mediatek only has hsdma and cqdma but no apdma driver.
-
-Seems there is something missing here.
+Sorry I just realized that tje driver got merged from v12.
 
 Regards,
 Matthias
 
-> +		reg = <0 0x11000400 0 0x80>,
-> +		      <0 0x11000480 0 0x80>,
-> +		      <0 0x11000500 0 0x80>,
-> +		      <0 0x11000580 0 0x80>,
-> +		      <0 0x11000600 0 0x80>,
-> +		      <0 0x11000680 0 0x80>,
-> +		      <0 0x11000700 0 0x80>,
-> +		      <0 0x11000780 0 0x80>,
-> +		      <0 0x11000800 0 0x80>,
-> +		      <0 0x11000880 0 0x80>,
-> +		      <0 0x11000900 0 0x80>,
-> +		      <0 0x11000980 0 0x80>;
-> +		interrupts = <GIC_SPI 103 IRQ_TYPE_LEVEL_LOW>,
-> +			     <GIC_SPI 104 IRQ_TYPE_LEVEL_LOW>,
-> +			     <GIC_SPI 105 IRQ_TYPE_LEVEL_LOW>,
-> +			     <GIC_SPI 106 IRQ_TYPE_LEVEL_LOW>,
-> +			     <GIC_SPI 107 IRQ_TYPE_LEVEL_LOW>,
-> +			     <GIC_SPI 108 IRQ_TYPE_LEVEL_LOW>,
-> +			     <GIC_SPI 109 IRQ_TYPE_LEVEL_LOW>,
-> +			     <GIC_SPI 110 IRQ_TYPE_LEVEL_LOW>,
-> +			     <GIC_SPI 111 IRQ_TYPE_LEVEL_LOW>,
-> +			     <GIC_SPI 112 IRQ_TYPE_LEVEL_LOW>,
-> +			     <GIC_SPI 113 IRQ_TYPE_LEVEL_LOW>,
-> +			     <GIC_SPI 114 IRQ_TYPE_LEVEL_LOW>;
-> +		dma-requests = <12>;
-> +		clocks = <&pericfg CLK_PERI_AP_DMA>;
-> +		clock-names = "apdma";
-> +		#dma-cells = <1>;
-> +	};
-> +
->  	auxadc: adc@11001000 {
->  		compatible = "mediatek,mt2712-auxadc";
->  		reg = <0 0x11001000 0 0x1000>;
-> @@ -385,6 +421,9 @@
->  		interrupts = <GIC_SPI 91 IRQ_TYPE_LEVEL_LOW>;
->  		clocks = <&baud_clk>, <&sys_clk>;
->  		clock-names = "baud", "bus";
-> +		dmas = <&apdma 0
-> +			&apdma 1>;
-> +		dma-names = "tx", "rx";
->  		status = "disabled";
->  	};
->  
-> @@ -395,6 +434,9 @@
->  		interrupts = <GIC_SPI 92 IRQ_TYPE_LEVEL_LOW>;
->  		clocks = <&baud_clk>, <&sys_clk>;
->  		clock-names = "baud", "bus";
-> +		dmas = <&apdma 2
-> +			&apdma 3>;
-> +		dma-names = "tx", "rx";
->  		status = "disabled";
->  	};
->  
-> @@ -405,6 +447,9 @@
->  		interrupts = <GIC_SPI 93 IRQ_TYPE_LEVEL_LOW>;
->  		clocks = <&baud_clk>, <&sys_clk>;
->  		clock-names = "baud", "bus";
-> +		dmas = <&apdma 4
-> +			&apdma 5>;
-> +		dma-names = "tx", "rx";
->  		status = "disabled";
->  	};
->  
-> @@ -415,6 +460,9 @@
->  		interrupts = <GIC_SPI 94 IRQ_TYPE_LEVEL_LOW>;
->  		clocks = <&baud_clk>, <&sys_clk>;
->  		clock-names = "baud", "bus";
-> +		dmas = <&apdma 6
-> +			&apdma 7>;
-> +		dma-names = "tx", "rx";
->  		status = "disabled";
->  	};
->  
-> @@ -629,6 +677,9 @@
->  		interrupts = <GIC_SPI 126 IRQ_TYPE_LEVEL_LOW>;
->  		clocks = <&baud_clk>, <&sys_clk>;
->  		clock-names = "baud", "bus";
-> +		dmas = <&apdma 8
-> +			&apdma 9>;
-> +		dma-names = "tx", "rx";
->  		status = "disabled";
->  	};
->  
+> Regards,
+> Matthias
 > 
+>> +		reg = <0 0x11000400 0 0x80>,
+>> +		      <0 0x11000480 0 0x80>,
+>> +		      <0 0x11000500 0 0x80>,
+>> +		      <0 0x11000580 0 0x80>,
+>> +		      <0 0x11000600 0 0x80>,
+>> +		      <0 0x11000680 0 0x80>,
+>> +		      <0 0x11000700 0 0x80>,
+>> +		      <0 0x11000780 0 0x80>,
+>> +		      <0 0x11000800 0 0x80>,
+>> +		      <0 0x11000880 0 0x80>,
+>> +		      <0 0x11000900 0 0x80>,
+>> +		      <0 0x11000980 0 0x80>;
+>> +		interrupts = <GIC_SPI 103 IRQ_TYPE_LEVEL_LOW>,
+>> +			     <GIC_SPI 104 IRQ_TYPE_LEVEL_LOW>,
+>> +			     <GIC_SPI 105 IRQ_TYPE_LEVEL_LOW>,
+>> +			     <GIC_SPI 106 IRQ_TYPE_LEVEL_LOW>,
+>> +			     <GIC_SPI 107 IRQ_TYPE_LEVEL_LOW>,
+>> +			     <GIC_SPI 108 IRQ_TYPE_LEVEL_LOW>,
+>> +			     <GIC_SPI 109 IRQ_TYPE_LEVEL_LOW>,
+>> +			     <GIC_SPI 110 IRQ_TYPE_LEVEL_LOW>,
+>> +			     <GIC_SPI 111 IRQ_TYPE_LEVEL_LOW>,
+>> +			     <GIC_SPI 112 IRQ_TYPE_LEVEL_LOW>,
+>> +			     <GIC_SPI 113 IRQ_TYPE_LEVEL_LOW>,
+>> +			     <GIC_SPI 114 IRQ_TYPE_LEVEL_LOW>;
+>> +		dma-requests = <12>;
+>> +		clocks = <&pericfg CLK_PERI_AP_DMA>;
+>> +		clock-names = "apdma";
+>> +		#dma-cells = <1>;
+>> +	};
+>> +
+>>  	auxadc: adc@11001000 {
+>>  		compatible = "mediatek,mt2712-auxadc";
+>>  		reg = <0 0x11001000 0 0x1000>;
+>> @@ -385,6 +421,9 @@
+>>  		interrupts = <GIC_SPI 91 IRQ_TYPE_LEVEL_LOW>;
+>>  		clocks = <&baud_clk>, <&sys_clk>;
+>>  		clock-names = "baud", "bus";
+>> +		dmas = <&apdma 0
+>> +			&apdma 1>;
+>> +		dma-names = "tx", "rx";
+>>  		status = "disabled";
+>>  	};
+>>  
+>> @@ -395,6 +434,9 @@
+>>  		interrupts = <GIC_SPI 92 IRQ_TYPE_LEVEL_LOW>;
+>>  		clocks = <&baud_clk>, <&sys_clk>;
+>>  		clock-names = "baud", "bus";
+>> +		dmas = <&apdma 2
+>> +			&apdma 3>;
+>> +		dma-names = "tx", "rx";
+>>  		status = "disabled";
+>>  	};
+>>  
+>> @@ -405,6 +447,9 @@
+>>  		interrupts = <GIC_SPI 93 IRQ_TYPE_LEVEL_LOW>;
+>>  		clocks = <&baud_clk>, <&sys_clk>;
+>>  		clock-names = "baud", "bus";
+>> +		dmas = <&apdma 4
+>> +			&apdma 5>;
+>> +		dma-names = "tx", "rx";
+>>  		status = "disabled";
+>>  	};
+>>  
+>> @@ -415,6 +460,9 @@
+>>  		interrupts = <GIC_SPI 94 IRQ_TYPE_LEVEL_LOW>;
+>>  		clocks = <&baud_clk>, <&sys_clk>;
+>>  		clock-names = "baud", "bus";
+>> +		dmas = <&apdma 6
+>> +			&apdma 7>;
+>> +		dma-names = "tx", "rx";
+>>  		status = "disabled";
+>>  	};
+>>  
+>> @@ -629,6 +677,9 @@
+>>  		interrupts = <GIC_SPI 126 IRQ_TYPE_LEVEL_LOW>;
+>>  		clocks = <&baud_clk>, <&sys_clk>;
+>>  		clock-names = "baud", "bus";
+>> +		dmas = <&apdma 8
+>> +			&apdma 9>;
+>> +		dma-names = "tx", "rx";
+>>  		status = "disabled";
+>>  	};
+>>  
+>>
 
 _______________________________________________
 linux-arm-kernel mailing list
