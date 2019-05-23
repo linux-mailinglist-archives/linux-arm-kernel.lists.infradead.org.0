@@ -2,144 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D0EC284BC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 19:18:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10E9E284DD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 19:25:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7W7ttLce0aAYNa0unYHPYY0xiK4rfsgV0bS6m1xZWbk=; b=teK82oB49fvSHe
-	hXjroOUutkagUkZRvyhSf4jZB4NyStZOa0EWD2Xd7+DRM+7YmQ9i7954SDS8TuL8Rm1TNJUheYCjj
-	rQj1XnFFcjAMWgi+iMzt/6V8ZAkbIpmQ4kLFDbg2fPUA6FL+vx3VOUOv0aPieHDl7FVSaoWkLjaJi
-	3fE75ceUvNypMB+KOHQjCt3nepqvhWnKcNZhHzyaav+RvtkYXtsbBKYbG0vpAHsbAxBfKHebucCIy
-	V6ntl9PKi1sXuCp33JW3zFQqCxOR6Wb3l9Ufh4rvTsgiAGC75ccj0UgakgiUzR13W6ZrHEhMAeyN+
-	x/x34WW9XZkLAu4U3pZQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NyiOuASsXPPXNo+HNYn8byBVPuMUCUTD0+wQL48latA=; b=aPcisDAdfOIhRB
+	MQh4oBaPW5fHJPi/LbSpgA0yI+rIMCBxPIKJbE8cRsPUvlZlrCcmdh25RpVknw30qItUO1TtmzquS
+	mslFag3fYDAJw4ajlXdsDIO7TrGCEeysJ+NTFEaWFHJaPF6WouhhLGELCbNpF4Zj/v+y503lK/LJ9
+	TIs8y09r8JCqjncTLmY2ujbnaHLgo6xg5WrPuy67IaLK/T8necPSi5XJE+7U2MIZtSTYgQfnfBdzW
+	2AtFuN6Gxtuxj7VbFP4SiZLZCPr52iD8s76VOVWjfKs2j7nBAlGxxvafzM/1PhjQDmiNpi1DcnudI
+	LyrCFKrERDQY6NtT5c3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTrM2-000299-EW; Thu, 23 May 2019 17:18:10 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hTrSp-0004FG-T1; Thu, 23 May 2019 17:25:11 +0000
+Received: from mail-eopbgr00041.outbound.protection.outlook.com ([40.107.0.41]
+ helo=EUR02-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTrLu-00028h-4e
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 17:18:03 +0000
-Received: by mail-wm1-x341.google.com with SMTP id i3so6649213wml.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 23 May 2019 10:18:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=jaESNs4hCLS2B67pZhYME8U2AZgN5qJKIo+PAIFx/Pc=;
- b=WnvWX/goQFDV1XYt88cdHikALq7QfOWdheLk5BssxNMOtj5sRAUdJEkD8dJCBxwM0k
- w4AoPUoa78Sil6NcZUe5K7b8Th4y3S9jl8oVbiaRVHYzrg3KrWzajXVJtrY6zj/MI+Rg
- erdigxScQKDPw4WXZhSy7rBLsMBJF1V/6W2uKfCXarER+JxnfHwaSnZXsWu2FqMy7c49
- wKNvc6g/ZK4UWe0gf5v4aZbNg9cZRvqj+TsowHbulIlivXuQp9zip9E/ensLgf+laYTW
- 3+vShQ9FFZ9mrFxdi0jzvIUBrTXQDPV4c9NMryGVABGO1xR/KWZ2A+ubkm+0QvZxRaMc
- pLsg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=jaESNs4hCLS2B67pZhYME8U2AZgN5qJKIo+PAIFx/Pc=;
- b=a7N2QdknOx2cfajaBTUtdx5/xPamCB/rIKsU/Mjw8u9AKiYQakZkdevP349aj5+OeQ
- IP3aeA6G+zOxLYihcpTe/An+svvfF2berxZ6wEB5cLPMt1o0LgVTXQkYivnZsKe04Up8
- Vx+CwrIjyYBd6pI24VntqYKsee0Z7MHoZK5OwGQy/fwaC7Puc26Fjb2GpA2jy3pEZ+r1
- 5pDzC3kwWAY5TzMnaoMjI7+tAY3TZCaJKMK8H8WI6BlBbpDpUXeMCWb1wSBbsm9rmCfb
- aN5EXoEvUVxiBRhQF6pWE/9VxhMD5Tef/QPTC+rphTfJc91lVPTS1gQ2rdVsRB1mC27B
- YmBw==
-X-Gm-Message-State: APjAAAUqZp134jIGhVI7Q95vaa+vaND0PJOUa4U6te5iyQC/LHbhQLt9
- cHUfA/BMf/woeFt5UJRq6CE=
-X-Google-Smtp-Source: APXvYqzX43VINOR3UJSYmqV3brcHiNb00GOFlWEEcQ9fMKivftcsO2vdVJ7tDvwfLy1cKEXib2MJvQ==
-X-Received: by 2002:a1c:ef05:: with SMTP id n5mr13178914wmh.149.1558631880331; 
- Thu, 23 May 2019 10:18:00 -0700 (PDT)
-Received: from [10.67.49.213] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id 16sm49321wmx.45.2019.05.23.10.17.57
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 23 May 2019 10:17:59 -0700 (PDT)
-Subject: Re: [PATCH RFC] firmware: arm_scmi: Allow for better protocol
- extensibility
-To: linux-arm-kernel@lists.infradead.org
-References: <20190521200110.8309-1-f.fainelli@gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <f9403e7e-1b87-dc46-dfc5-62227c659e7c@gmail.com>
-Date: Thu, 23 May 2019 10:17:50 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <20190521200110.8309-1-f.fainelli@gmail.com>
+ id 1hTrSf-0003vs-32
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 17:25:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=epam.com; s=selector1; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=J8wk3axRcofJU6ok/pWR27a5nb5ggUShxHLNcMX3vps=;
+ b=OnL3Sz/mKG0lgevhfyhD3gwtzFXqzzOnlsD1iW12Tkd5HrrRnsm+FTMb4X0bbCp0nqjdIV09pRclABOTpkiydrHDhQ7bMoX2Ag085/RJGuPRoXQMBQeFd3i4JZJYc947yt/0L6Sth2//1Chd+oC0LvZFNPDGukpW1Tksbdk+yjOo1Qi7Tza0fNiKbazRkz1e+ptSiy3xAiX51bFQmnTifhMjILnO6raEyl+P16YOsAWTD0/UTn0R/sav+wYPrE3znqrmfnsEQ7vjhVYcbvYJ25LzWW+MO8rnUMFeSMCulugujc7RtznAOVMSI4/TOSRycdvyd22SS96IAwfgs5JIsA==
+Received: from AM0PR03MB4148.eurprd03.prod.outlook.com (20.176.214.210) by
+ AM0PR03MB3538.eurprd03.prod.outlook.com (52.134.80.155) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1922.16; Thu, 23 May 2019 17:24:57 +0000
+Received: from AM0PR03MB4148.eurprd03.prod.outlook.com
+ ([fe80::55c5:599a:1f80:208a]) by AM0PR03MB4148.eurprd03.prod.outlook.com
+ ([fe80::55c5:599a:1f80:208a%3]) with mapi id 15.20.1900.020; Thu, 23 May 2019
+ 17:24:57 +0000
+From: Volodymyr Babchuk <Volodymyr_Babchuk@epam.com>
+To: Sudeep Holla <sudeep.holla@arm.com>
+Subject: Re: [PATCH] dt-bindings: arm: fix the document ID for SCMI protocol
+ documentation
+Thread-Topic: [PATCH] dt-bindings: arm: fix the document ID for SCMI protocol
+ documentation
+Thread-Index: AQHVEVn2U05P8CKPx0+q1JYvuEenTaZ48eYAgAAERwA=
+Date: Thu, 23 May 2019 17:24:56 +0000
+Message-ID: <877eah84nr.fsf@epam.com>
+References: <20190523112312.24529-1-volodymyr_babchuk@epam.com>
+ <20190523170938.GC4224@e107155-lin>
+In-Reply-To: <20190523170938.GC4224@e107155-lin>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Volodymyr_Babchuk@epam.com; 
+x-originating-ip: [85.223.209.22]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: ce5af6ac-c988-4821-aa76-08d6dfa393b3
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(7168020)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(2017052603328)(7193020);
+ SRVR:AM0PR03MB3538; 
+x-ms-traffictypediagnostic: AM0PR03MB3538:
+x-microsoft-antispam-prvs: <AM0PR03MB35386A23C82FD6C09E3527FFE6010@AM0PR03MB3538.eurprd03.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1775;
+x-forefront-prvs: 00462943DE
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(376002)(366004)(136003)(346002)(39860400002)(396003)(189003)(199004)(36756003)(6506007)(446003)(2616005)(72206003)(11346002)(25786009)(316002)(486006)(14454004)(186003)(86362001)(7736002)(71200400001)(305945005)(71190400001)(55236004)(5660300002)(102836004)(99286004)(2906002)(4744005)(76176011)(6246003)(4326008)(54906003)(6512007)(53936002)(229853002)(508600001)(66066001)(256004)(3846002)(6116002)(26005)(81156014)(66476007)(6916009)(73956011)(76116006)(6486002)(8936002)(66446008)(66556008)(6436002)(64756008)(80792005)(66946007)(81166006)(8676002)(68736007)(476003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR03MB3538;
+ H:AM0PR03MB4148.eurprd03.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: epam.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 1No+QT6wopdUwh54m4lwCZFfBOQKV0PChUWeFK+DxpRdXrhfsWer7RLHbiHJht0qXB7Jo2Vz4jcm4TyUgL2kgOcp/+eLqMJANnONDQ7KeU6Qlazbbo9qTd1qNu041VFqae8NZPq3Es0mrJYyQ9mTtnkDen10VxF4Rz8Cmbblpbzm6AeMyLktTyw52ZXfLYn4Qron8naYm1pcKjJWllMfVImtIROcsFDuCux/nsk/Wm67RmFxSmx07x3q86lR9DRc1X4RYVfRuu5IqYNKBLI2fgLbXxlO6iUE/6TGHimOemLq1v1ReGJHADxpd5tgd7+yigDbvI1G3y0dS+9mptsExdfyawvzK1bqsWK+1iqPcfrgTbUhuS2RWP09Qed1YsIzUmqbI+RvN1DeP4k+1yB8/dqUlF/PiZaS3dQme9adinE=
+MIME-Version: 1.0
+X-OriginatorOrg: epam.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: ce5af6ac-c988-4821-aa76-08d6dfa393b3
+X-MS-Exchange-CrossTenant-originalarrivaltime: 23 May 2019 17:24:56.8463 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: b41b72d0-4e9f-4c26-8a69-f949f367c91d
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR03MB3538
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_101802_209933_2C249189 
-X-CRM114-Status: GOOD (  15.23  )
+X-CRM114-CacheID: sfid-20190523_102501_452502_BB8AA0BC 
+X-CRM114-Status: UNSURE (   8.77  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.0.41 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -158,48 +112,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:HARDWARE MONITORING" <linux-hwmon@vger.kernel.org>,
- Jean Delvare <jdelvare@suse.com>,
- "open list:CPU FREQUENCY SCALING FRAMEWORK" <linux-pm@vger.kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- open list <linux-kernel@vger.kernel.org>,
- bcm-kernel-feedback-list@broadcom.com, james.quinlan@broadcom.com,
- Sudeep Holla <sudeep.holla@arm.com>,
- "open list:COMMON CLK FRAMEWORK" <linux-clk@vger.kernel.org>,
- Guenter Roeck <linux@roeck-us.net>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "trivial@kernel.org" <trivial@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Volodymyr Babchuk <Volodymyr_Babchuk@epam.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/21/19 1:01 PM, Florian Fainelli wrote:
-> The SCMI specific allows implementors to define their custom protocols
-> in the 0x80-0xFF space. The current scmi_handle structure requires us to
-> extend the structure with a set of operations and associated private
-> data in a way that is not quite scaling well.
-> 
-> Create a 255 bytes structure that contains an opaque pointer to a set of
-> operations and private data and create two helper functions to retrieve
-> those based on the protocol identifier. Several options were considered,
-> like using a linked list but since we could be performance sensitive in
-> some paths, using an array was faster and simpler.
-> 
-> Convert all call sites to use either scmi_protocol_get_ops() or
-> scmi_protocol_get_info().
-> 
-> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 
-On second thought, what I really need is private storage to the scmi_dev
-(the consumer side), and not so much the protocol (provider) side.
-Therefore using dev_{set,get}_drvadata() against scmi_device::dev should
-be working just fine, and if we are concerned about another part of the
-SCMI stack making use of that storage, we can always extend struct
-scmi_device with a private cookie.
+Hi,
+
+Sudeep Holla writes:
+
+> On Thu, May 23, 2019 at 11:23:35AM +0000, Volodymyr Babchuk wrote:
+>> From: Volodymyr Babchuk <volodymyr_babchuk@epam.com
+
+I accidentally deleted ending ">" symbol in the line above, so "git
+send-email" decided to move that line from headers to the message body.
+
+>> arm,scmi.txt used the wrong document identifier. "ARM DUI 0922B" is
+>> the "ARM Compute Subsystem SCP, Message Interface Protocols". What we
+>> need is the ARM DEN 0056A - "ARM System Control and Management
+>> Interface Platform Design Document".
+>>
+>
+> Indeed, it's most stupid copy-paste mistake. Thanks for fixing this.
+> Applied now.
+It happens all the time. I also did stupid mistake in my patch file. It
+is described above. Could you please ensure that this line will be not
+in the resulting commit message? Thank you.
+
 -- 
-Florian
-
+Best regards,Volodymyr Babchuk
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
