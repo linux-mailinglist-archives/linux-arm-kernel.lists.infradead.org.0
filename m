@@ -2,84 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90E242824C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 18:13:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF32E28259
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 18:14:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
 	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s1qIVyV5V3y51Bmucl1NG5vU0HeQDs5vwSJWN28ICfE=; b=s7ogBcbKaHwqCQ
-	HTSk85kUoCWO34f3nGIzQ97AYWlZmxL2t0yts6YwUk8ysgrd0nR6gy/BE4J+1L1ntmA4eS0q69DTp
-	NFEqcFyEYxKq/ARLagqGuvb7Qt9TS2gx4BwxeZM68VNRnNYN1mcZam+rtuegLV2/xweNb161049OW
-	atxakrJ3PUEBK31IonbScWI5U973Z/j/7Y0t2kdTc7RP+Bmt/y8dTyFMEi5O03Tqu+V8T1ZLq/h4D
-	3DHmy+1NkRozKcXZoEqc1XGYxbLoJn/mO3MCYYe2r6uThu+jwHg6JWVTf7nokkXaS+6iaKldXUGHO
-	fNbWUiYP7Tqp119T+WsA==;
+	List-Owner; bh=WqSXUkyf0S8EwC0wvdz1PDZqLJDEbvTwOTs3WNIdV4U=; b=KCiHlWPvciuwk4
+	eyJ80Pn+ZLWrTVm/KIQVpRj+klqwaO/iwMBHhpzQlXjvruqjVjMJgYSP+1Zup84wWO9DJghPvGDlY
+	2XyldVspP90+FxGtaEBHk3LEd81jCE0REv+WW+jHk1d2TK/GfW3RZgYd0o8+CTYBax5ANchHgN/LZ
+	qHaLl7t1gfwgTMCFol7Q/7iiWhxXYxjUDa/WKNQ5/PguCcsZNq1cZ7s4kET50x5YGux3uyNBgyx5z
+	292lbRpXqPdzaDjlyxP69ckb+HUAIyL9KABgusPv/EQ3dm6qnqcEl9R46epiiFyv9cuOORWD/ytTM
+	TTkVrzFxmRG+HqqlzbBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTqLp-0001OM-VE; Thu, 23 May 2019 16:13:53 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hTqM9-0001jA-3Q; Thu, 23 May 2019 16:14:13 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTqLd-0001GC-Hv
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 16:13:43 +0000
-Received: by mail-pf1-x441.google.com with SMTP id q17so3497428pfq.8
+ id 1hTqLv-0001dL-Vv
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 16:14:03 +0000
+Received: by mail-pf1-x443.google.com with SMTP id y11so3484147pfm.13
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 23 May 2019 09:13:41 -0700 (PDT)
+ Thu, 23 May 2019 09:13:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=dxcl7qeoBSGm7yM9sqTozFqzilaB2ov2JQxOkdUbcHI=;
- b=h2Owf/A2KjV8Ud+sGliPrzwL6UypMFI8zBq5XI+wlYkZ789Wpy7eO5lnkkBc3dQCWs
- 98TcJWT8asc3gMOlX4yAPaldzJs9Th424Mlg78neTsB6g5KGBL79l0jLSotb5j1hBb7W
- ULbuwWls34VU+AgosN0afn6g/hgRPU94NfzxDZ49g18bI3nQC24o9gy21jLN4rX20jGk
- rniUgFaEyLztyEg2wynMy7pVYHbLPasse1kZYojMaAn1CnYu+hmslbg0DvgfDyNivzXc
- fPRDlcHC9eddT8WWIaAro0yypWuKWjviYf6/fj6ezuviK/Tc9r5gdXkMcRcXPpPiOax0
- eUVA==
+ :mime-version; bh=aRONL6lUSP8ySgexr3N6TwqdyB5aYrx+k7X7nWH0u7g=;
+ b=ggWF1rOFU/L+bItrGYOrJMFIMeJBMy1WrRcSsr/WIBe/SB8eNQTLknryHkreR5tByW
+ lsdj3s7N2iF3ZDqzrgDKd43KkU+Pp7q9FmJ1bkqWQFr8iPV8+Yz+spKDbDMSLJFvjANm
+ clswCgsoDvvQhg0gmadmjdbo1953N4JsWXfxRagJfIxprFe+KcKANt6T8950sS7EYiZB
+ 0KN8NFVK5S8mFMZJogjBrFskvYWQGNqp3MpQS98Ba1ppmifq1k3Vu0iGVIUan9sHb2fv
+ DeS79O4YsObFSplomEdYGoLwhlj0RUtaf3oCSV81fgKrm2gTW8VqIGBn6z+BWYOlPneP
+ 7YUg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
  :message-id:mime-version;
- bh=dxcl7qeoBSGm7yM9sqTozFqzilaB2ov2JQxOkdUbcHI=;
- b=UNIJePXTtYxyNYNCyC8DYXMuvP7iMbtFLn3DUR5KWWyLswc/FADkCrg1r9GcgHqzp4
- fbRY3n5QOeLDFvc8+vF2cACIPGCtoPFTo7bjevLHVPCb0SHVoPhKlmpM4w9bEMi1N6nM
- NCinzV9XtaVUoZcE9c+4mYgJt+4h5iEJ0cdrty0/8KXVmjYW1awjrDRP5r4c/6pCGLmd
- MAUiuRatvFqicafNE9HlHIwSOUjhjyTEDv5jocwD6jiNV+94gal9iEjamoCwxF+Qp4gA
- 0QZ0TVV9vUV2K09umT6YQKoIWLdF7hdgrzbPkqG2TXbUVKAmnNjlxakEv8e+r4p2MUSp
- JEdA==
-X-Gm-Message-State: APjAAAUB7+o1RVm/ASkYgKbFa9ljhYPqD7PBXqud9p9sCNKgOofJvdSN
- clmfN4/0cMU9KsQUn19feQ1zaQ==
-X-Google-Smtp-Source: APXvYqx/tCamAz6aS+Mz79lzll1VAvooHEJ3LVVUfQLgtPgLrRHNqNAT4LbZn6jhpfGEP0d6dikK6g==
-X-Received: by 2002:a17:90a:2322:: with SMTP id
- f31mr2407129pje.9.1558628020974; 
- Thu, 23 May 2019 09:13:40 -0700 (PDT)
+ bh=aRONL6lUSP8ySgexr3N6TwqdyB5aYrx+k7X7nWH0u7g=;
+ b=Cgc2k3NpdWHWpmSedL/ipaOxtncjAUnPKRvlCiDrxZr6BRcN98HqvhmwOQJESS7jyE
+ 1kSaKNhieeLvrarVV8UTvdJR1Wtg9HvBI80/HvaDwLUwo5ExUpApEX63Q4x4qM+QY/2Q
+ ahrmtWIFYiXX+Ij9WwufpUVvX4uPHEqZWBB/02rjytXLuT6YiVWoIj8pd5T2et/MkMHx
+ dnpk9BSqE9N2uvbRzMwwRzdPELxgdsI3EnY6G7qUo3ph42pisK7M/fnT9nZ29IKk8cnL
+ mFUZ1S5cOEoCYsraJ/ItT/WrJELpkB/FXPRhrFRWbDvXN5Raz6rU3rvlw9FFxV5dJ1k/
+ 6pCQ==
+X-Gm-Message-State: APjAAAXGuEj9qLD7+D9tyVt6YpTteoQUO6V+RmnIrVDkLkSSjckX7w1t
+ 5BjgLCL63iYvUL9xi/aQBWQijjbimRDtyg==
+X-Google-Smtp-Source: APXvYqwfbn9vU6s+/np/lHKs6WpigAe5sHs/aZok+lBA7/xt8Mml6cW1UHNizjxuvC6Fg0TkrO0QyQ==
+X-Received: by 2002:a63:5107:: with SMTP id f7mr11171884pgb.198.1558628039057; 
+ Thu, 23 May 2019 09:13:59 -0700 (PDT)
 Received: from localhost ([2601:602:9200:a1a5:ed4f:2717:3604:bb3f])
- by smtp.googlemail.com with ESMTPSA id d6sm3356394pgv.4.2019.05.23.09.13.40
+ by smtp.googlemail.com with ESMTPSA id c5sm30795748pgh.86.2019.05.23.09.13.57
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 23 May 2019 09:13:40 -0700 (PDT)
+ Thu, 23 May 2019 09:13:58 -0700 (PDT)
 From: Kevin Hilman <khilman@baylibre.com>
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH 2/3] arm64: dts: meson: g12a: add drive strength for eth
- pins
-In-Reply-To: <CAFBinCBmgTdZBDd5D_rCVQwO4UcJpXjX=Rc+0qgADF9sW-wFWQ@mail.gmail.com>
+To: Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Subject: Re: [PATCH 3/3] arm64: dts: meson: g12a: Add hwrng node
+In-Reply-To: <f4a1f115-d886-ddf3-c4fc-ea995f10a434@baylibre.com>
 References: <20190520134817.25435-1-narmstrong@baylibre.com>
- <20190520134817.25435-3-narmstrong@baylibre.com>
- <CAFBinCBmgTdZBDd5D_rCVQwO4UcJpXjX=Rc+0qgADF9sW-wFWQ@mail.gmail.com>
-Date: Thu, 23 May 2019 09:13:39 -0700
-Message-ID: <7hftp54098.fsf@baylibre.com>
+ <20190520134817.25435-4-narmstrong@baylibre.com>
+ <CAFBinCD6wJnYd3-E=kS6WCZLFebV9JYk-GybBxoMA8qQqGfSHw@mail.gmail.com>
+ <f4a1f115-d886-ddf3-c4fc-ea995f10a434@baylibre.com>
+Date: Thu, 23 May 2019 09:13:57 -0700
+Message-ID: <7hblzt408q.fsf@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_091341_681030_C76E940E 
-X-CRM114-Status: UNSURE (   9.18  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190523_091400_262776_DFB44C50 
+X-CRM114-Status: GOOD (  12.89  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,19 +102,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Martin Blumenstingl <martin.blumenstingl@googlemail.com> writes:
+Neil Armstrong <narmstrong@baylibre.com> writes:
 
-> On Mon, May 20, 2019 at 3:48 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
->>
->> With the X96 Max board using an external Gigabit Ethernet PHY,
->> add the same driver strength to the Ethernet pins as the vendor
->> tree.
->>
->> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-> Amlogic's vendor kernel (from buildroot-openlinux-A113-201901) does the same so:
-> Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> On 20/05/2019 19:45, Martin Blumenstingl wrote:
+>> Hi Neil,
+>> 
+>> On Mon, May 20, 2019 at 3:49 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+>>>
+>>> The Amlogic G12A has the hwrng module in an unknown "EFUSE" bus.
+>>>
+>>> The hwrng is not enabled on the vendor G12A DTs, but is enabled on
+>>> next generation SM1 SoC family sharing the exact same memory mapping.
+>>>
+>>> Let's add the "EFUSE" bus and the hwrng node.
+>>>
+>>> This hwrng has been checked with the rng-tools rngtest FIPS tool :
+>>> rngtest: starting FIPS tests...
+>>> rngtest: bits received from input: 1630240032
+>>> rngtest: FIPS 140-2 successes: 81436
+>>> rngtest: FIPS 140-2 failures: 76
+>>> rngtest: FIPS 140-2(2001-10-10) Monobit: 10
+>>> rngtest: FIPS 140-2(2001-10-10) Poker: 6
+>>> rngtest: FIPS 140-2(2001-10-10) Runs: 26
+>>> rngtest: FIPS 140-2(2001-10-10) Long run: 34
+>>> rngtest: FIPS 140-2(2001-10-10) Continuous run: 0
+>>> rngtest: input channel speed: (min=3.784; avg=5687.521; max=19073.486)Mibits/s
+>>> rngtest: FIPS tests speed: (min=47.684; avg=52.348; max=52.835)Mibits/s
+>>> rngtest: Program run time: 30000987 microseconds
+>>>
+>>> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+>>> ---
+>>>  arch/arm64/boot/dts/amlogic/meson-g12a.dtsi | 13 +++++++++++++
+>>>  1 file changed, 13 insertions(+)
+>>>
+>>> diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
+>>> index 8fcdd12f684a..19ef6a467d63 100644
+>>> --- a/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
+>>> +++ b/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
+>>> @@ -197,6 +197,19 @@
+>>>                                 };
+>>>                         };
+>>>
+>>> +                       apb_efuse: bus@30000 {
+>>> +                               compatible = "simple-bus";
+>>> +                               reg = <0x0 0x30000 0x0 0x1000>;
+>> the public S922X datasheet lists the range as FF630000 - FF631FFF
+>> that translates to a size of 0x2000, which the vendor kernel
+>> (kernel/aml-4.9/arch/arm64/boot/dts/amlogic/mesong12a.dtsi from
+>> buildroot-openlinux-A113-201901) seems to use as well:
+>>   io_efuse_base{
+>>     reg = <0x0 0xff630000 0x0 0x2000>;
+>>   };
+>> 
+>> where did you take the size from?
+>
+> Another typo, it's 0x2000.
+>
+>> 
+>>> +                               #address-cells = <2>;
+>>> +                               #size-cells = <2>;
+>>> +                               ranges = <0x0 0x0 0x0 0x30000 0x0 0x1000>;
+>> (see reg property above)
+>> 
+>>> +
+>>> +                               hwrng: rng {
+>> this should be rng@218
+>
+> Exact.
+>
 
-Queued for v5.3,
+Will wait for v2 on this one,
 
 Kevin
 
