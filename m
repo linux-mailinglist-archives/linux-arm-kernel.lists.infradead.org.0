@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B245278C9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 11:07:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EDF5A278CE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 11:07:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=NLnJZqdrzeeZATJseLbPNc7elrBZpqzEwM6j+sDlj4k=; b=Cam424qU+z1qnfRRCkEoTaAH1w
-	w/e3ggeXQLPLsHs058vqtRG3oVeygwrgqFzjvQOEQmvEwjthn9q8xjejfrfBcbzQ+DPL6WkLN2/SY
-	pM7VTByUnUjEE9ngcUuUGkxhYcFnk26zsrWT/pyZIBn3d9BpJxH0XPz4x72ZtGYYrEdLU5NS/BhGI
-	uKZpctRrCk47zXdvccH9uHj+XwCMJx2vsuF68atiT9HXJMZbel6DvLggPql6zxdddI5kpQtjLtT+6
-	MKO1X5P19mDq+6F1DDll0f6OglNlib18bK/uPWIjVMafCq/wSJV13J7N5uRkjrY3alTIxMsUU9tuH
-	zGhE7pRg==;
+	bh=x2mLDNcKr2AWKBAIIv4mlkeHi/RKYFNQro97HYP9Mr0=; b=FTo0R5z0JidGJBH8F+mecwYALu
+	OxcyllT1iO7sHkZtqOrCu09q5a7gaig1/VvF4gWV6C4yqdnPPS6NFAYCEptpre0tOVM9hyOzOdOXP
+	ErfoBkSkmcNOhBLNsy8xaAeIf/ReY5eUo6PtwWAkasgaajkP3GIur4oXFe4EiKcOV62SkTFOQj4nr
+	jtzh3tPjFJzHQrc8GeX7kOastTl1E+aYiR90ldEFsN4IJmE9i7fyM1MYdK2L+aSg1xOR6uynQdjKC
+	wh2nhZfWj8JJ8dGT6TOMNt7VHmdUjQPPQFxmjxYgQMX5kRoZuLkwcGHuDAemKQv7Px5MZP60a/qHi
+	R+FZOMbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTjgf-0004GK-GQ; Thu, 23 May 2019 09:06:57 +0000
-Received: from foss.arm.com ([217.140.101.70])
+	id 1hTjgp-0004Oy-Ll; Thu, 23 May 2019 09:07:07 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTjgI-0003w8-Vd
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 09:06:36 +0000
+ id 1hTjgL-0003y9-PG
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 09:06:41 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7A6F1A78;
- Thu, 23 May 2019 02:06:34 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 66D1515AB;
+ Thu, 23 May 2019 02:06:37 -0700 (PDT)
 Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id CD7EC3F575;
- Thu, 23 May 2019 02:06:31 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id B9A643F575;
+ Thu, 23 May 2019 02:06:34 -0700 (PDT)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: x86@kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v4 1/4] ptrace: move clearing of TIF_SYSCALL_EMU flag to core
-Date: Thu, 23 May 2019 10:06:15 +0100
-Message-Id: <20190523090618.13410-2-sudeep.holla@arm.com>
+Subject: [PATCH v4 2/4] x86: simplify _TIF_SYSCALL_EMU handling
+Date: Thu, 23 May 2019 10:06:16 +0100
+Message-Id: <20190523090618.13410-3-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190523090618.13410-1-sudeep.holla@arm.com>
 References: <20190523090618.13410-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_020635_016953_BF1E67AD 
-X-CRM114-Status: GOOD (  12.25  )
+X-CRM114-CacheID: sfid-20190523_020638_125134_3585876B 
+X-CRM114-Status: GOOD (  14.06  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -66,9 +67,8 @@ Cc: Haibo Xu <haibo.xu@arm.com>, Steve Capper <Steve.Capper@arm.com>,
  Richard Weinberger <richard@nod.at>, jdike@addtoit.com,
  Sudeep Holla <sudeep.holla@arm.com>, Will Deacon <will.deacon@arm.com>,
  Oleg Nesterov <oleg@redhat.com>, Bin Lu <bin.lu@arm.com>,
- Ingo Molnar <mingo@redhat.com>, Paul Mackerras <paulus@samba.org>,
- Michael Ellerman <mpe@ellerman.id.au>,
- Catalin Marinas <catalin.marinas@arm.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
  Thomas Gleixner <tglx@linutronix.de>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
@@ -76,66 +76,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-While the TIF_SYSCALL_EMU is set in ptrace_resume independent of any
-architecture, currently only powerpc and x86 unset the TIF_SYSCALL_EMU
-flag in ptrace_disable which gets called from ptrace_detach.
+The usage of emulated/_TIF_SYSCALL_EMU flags in syscall_trace_enter
+seems to be bit overcomplicated than required. Let's simplify it.
 
-Let's move the clearing of TIF_SYSCALL_EMU flag to __ptrace_unlink
-which gets executed from ptrace_detach and also keep it along with
-or close to clearing of TIF_SYSCALL_TRACE.
-
-Cc: Paul Mackerras <paulus@samba.org>
-Cc: Michael Ellerman <mpe@ellerman.id.au>
+Cc: Andy Lutomirski <luto@kernel.org>
 Cc: Thomas Gleixner <tglx@linutronix.de>
 Cc: Ingo Molnar <mingo@redhat.com>
+Cc: Borislav Petkov <bp@alien8.de>
 Acked-by: Oleg Nesterov <oleg@redhat.com>
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- arch/powerpc/kernel/ptrace.c | 1 -
- arch/x86/kernel/ptrace.c     | 3 ---
- kernel/ptrace.c              | 3 +++
- 3 files changed, 3 insertions(+), 4 deletions(-)
+ arch/x86/entry/common.c | 17 ++++++-----------
+ 1 file changed, 6 insertions(+), 11 deletions(-)
 
-diff --git a/arch/powerpc/kernel/ptrace.c b/arch/powerpc/kernel/ptrace.c
-index 684b0b315c32..8c92febf5f44 100644
---- a/arch/powerpc/kernel/ptrace.c
-+++ b/arch/powerpc/kernel/ptrace.c
-@@ -2521,7 +2521,6 @@ void ptrace_disable(struct task_struct *child)
- {
- 	/* make sure the single step bit is not set. */
- 	user_disable_single_step(child);
--	clear_tsk_thread_flag(child, TIF_SYSCALL_EMU);
- }
+diff --git a/arch/x86/entry/common.c b/arch/x86/entry/common.c
+index a986b3c8294c..0a61705d62ec 100644
+--- a/arch/x86/entry/common.c
++++ b/arch/x86/entry/common.c
+@@ -72,23 +72,18 @@ static long syscall_trace_enter(struct pt_regs *regs)
  
- #ifdef CONFIG_PPC_ADV_DEBUG_REGS
-diff --git a/arch/x86/kernel/ptrace.c b/arch/x86/kernel/ptrace.c
-index 4b8ee05dd6ad..45792dbd2443 100644
---- a/arch/x86/kernel/ptrace.c
-+++ b/arch/x86/kernel/ptrace.c
-@@ -746,9 +746,6 @@ static int ioperm_get(struct task_struct *target,
- void ptrace_disable(struct task_struct *child)
- {
- 	user_disable_single_step(child);
--#ifdef TIF_SYSCALL_EMU
--	clear_tsk_thread_flag(child, TIF_SYSCALL_EMU);
--#endif
- }
+ 	struct thread_info *ti = current_thread_info();
+ 	unsigned long ret = 0;
+-	bool emulated = false;
+ 	u32 work;
  
- #if defined CONFIG_X86_32 || defined CONFIG_IA32_EMULATION
-diff --git a/kernel/ptrace.c b/kernel/ptrace.c
-index 6f357f4fc859..16c7fc1eabcf 100644
---- a/kernel/ptrace.c
-+++ b/kernel/ptrace.c
-@@ -117,6 +117,9 @@ void __ptrace_unlink(struct task_struct *child)
- 	BUG_ON(!child->ptrace);
+ 	if (IS_ENABLED(CONFIG_DEBUG_ENTRY))
+ 		BUG_ON(regs != task_pt_regs(current));
  
- 	clear_tsk_thread_flag(child, TIF_SYSCALL_TRACE);
-+#ifdef TIF_SYSCALL_EMU
-+	clear_tsk_thread_flag(child, TIF_SYSCALL_EMU);
-+#endif
+-	work = READ_ONCE(ti->flags) & _TIF_WORK_SYSCALL_ENTRY;
++	work = READ_ONCE(ti->flags);
  
- 	child->parent = child->real_parent;
- 	list_del_init(&child->ptrace_entry);
+-	if (unlikely(work & _TIF_SYSCALL_EMU))
+-		emulated = true;
+-
+-	if ((emulated || (work & _TIF_SYSCALL_TRACE)) &&
+-	    tracehook_report_syscall_entry(regs))
+-		return -1L;
+-
+-	if (emulated)
+-		return -1L;
++	if (work & (_TIF_SYSCALL_TRACE | _TIF_SYSCALL_EMU)) {
++		ret = tracehook_report_syscall_entry(regs);
++		if (ret || (work & _TIF_SYSCALL_EMU))
++			return -1L;
++	}
+ 
+ #ifdef CONFIG_SECCOMP
+ 	/*
 -- 
 2.17.1
 
