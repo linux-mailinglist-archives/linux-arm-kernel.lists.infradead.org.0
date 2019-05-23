@@ -2,84 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0EE728C9C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 23:46:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F43228CAB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 23:49:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YKDxd/qkR3iMl5kDIYRIKG4EcOzLuKKCEGE3bks1yTc=; b=pWGhlNcFWckT1b
-	tFKYHa3WbcstrI9cG3wmM6Y0Q5M/NDkpmkmaGEVN1/OC+Yq55J8EO1XZykUVwpHLbsuhPIreXiDGp
-	SCOw1CtBMtCzKbtDl91T/a82V/GEvxnfF6w1lMS39ZF5neFlOQqyqCa45mOfNT/7QXMQZzQYSHhxx
-	NWDpjqLP/2Uyi2kH6DBNnax8ZhbhSewMwnWAuLU0HauuDLb+M/wE17VCVNTe5j06VLMOleel2muOS
-	mh7aFcIRvVS8eqwlYXfBmtYlzwimaZdiwVPMun4c/u54M/DRjywxxyePQDpxXJxbDGAz/LfzzcqM0
-	Ca1RVkXR9V+xtrJDK2uQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zZ+dHFF9SD0XbL4m4LXtHkhpGThsWPr9F8O+CspLd9o=; b=Zf22xLFwheBPzQ
+	lB0LTYO7oi15Y5httned+i25WLzujac9Cw+WLHmfX1upLbd7rr7KREkr+yyuwtAWWvjFKRmf3Fx/Y
+	8IkHS9oTu7xR5hc1OoBxv0PcjieuJfgeRz4srRpQGfV8CmenuSq7LwCZlajlBEgO6jFd5doAICikJ
+	9Rgbnp9kKPRnREwWyd2ccPxm4FQExUJKnYsXNZ69oJ0XAwySeRlgsif3HvC+pgyYOvZpFaMfMpfB9
+	frI4eXEEmIsGN0BXv4VQ63/rSta9EHrMj1kjQvFkFrdIH35hRXCP7cm5rBjebgXaIe0mAQh+gpJbg
+	EDA6p5j+ufGhvZ7GtDWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTvXm-0004cF-U5; Thu, 23 May 2019 21:46:34 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1hTvaj-00056F-El; Thu, 23 May 2019 21:49:37 +0000
+Received: from aserp2130.oracle.com ([141.146.126.79])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTvXf-0004bq-2m
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 21:46:28 +0000
-Received: by mail-lj1-x244.google.com with SMTP id q16so6853585ljj.8
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 23 May 2019 14:46:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=L40m6i7tZPLQ9iKavhZnA3KH/2jvARjZyuhU2BI7O9M=;
- b=eH6C5Au10yB/Db3vJzqwisP1niVXIQN572MCacizn2RxCtX5QDzbIBkUWlDvKBt6kD
- 17myI9dq+sJh+zL9kUGC8XSx1evF5EohHcXKOX16PQJlUdrDIADJzmXdcjqIVTolDwED
- c7yBRhIC2s7aKriP2coZbmhGdZTccPlbJSGry+U/bOOoo7mQ9oSztZ1LHdgTmru2iRci
- vS7VRe1FtVf3dEBE/FQmrb9S4+zdf73HAZSbyewEZTxL7wVsI+S09ARXmmlP5qdgWYiX
- ANl+4CnZxcK9MWL1zzyw9zncsPDed5HWimvN7JKk+uF+TdMCFfIWCY9JU+qPAaWE+PtN
- 9sFQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=L40m6i7tZPLQ9iKavhZnA3KH/2jvARjZyuhU2BI7O9M=;
- b=JV0v7HlUwZxIFbMjW/F76OsezxATPXzNDAex9qqfcaU+x1dizT3FUX8keadcFI0mgH
- +D1enHfo1Ao0Et3zTc9D9n4YJxdGBB36nK2BgoFuJ54G5+pkTxrkxQ0q2rdNWyqOPYJp
- +prYohrD3WQtsSix62+bKsL0reoAr1nJxR+y2UqEQ8Sl2+LssiR5xCTyRYag5rRVJIHC
- 89g8YSEiZ757XJemYx4sAVRwJ6ufbUjEOTMxeDYfhpFp59kbJya87C2qOFHQ0fklI5hj
- b+uqKo6dwD3ahi2lLZ3XoA74lI1prJvF9pB4gHUEKJUDwWBI5OTeiKnNB+5O3WZKmmIw
- Yzrw==
-X-Gm-Message-State: APjAAAXR6H487YpJwE7ZRJSePaIDT6bNnqfhUAaYlyxIn53z8FASYHY9
- pA1JfAQYIRuzY9SP7a9WHz5guQ==
-X-Google-Smtp-Source: APXvYqzYvw3SYCpZLeTQhdYuLa1BZ5iuKOeS9LjFXv2gg3Fj0LwZzyEolhahK4KPdvbcvWcsu/7jCg==
-X-Received: by 2002:a2e:8816:: with SMTP id x22mr21314386ljh.169.1558647984769; 
- Thu, 23 May 2019 14:46:24 -0700 (PDT)
-Received: from centauri (m83-185-80-163.cust.tele2.se. [83.185.80.163])
- by smtp.gmail.com with ESMTPSA id b29sm149132lfo.38.2019.05.23.14.46.22
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 23 May 2019 14:46:23 -0700 (PDT)
-Date: Thu, 23 May 2019 23:46:19 +0200
-From: Niklas Cassel <niklas.cassel@linaro.org>
-To: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Subject: Re: [PATCH v3] arm64: dts: qcom: msm8998: Add PSCI cpuidle low power
- states
-Message-ID: <20190523214619.GB25133@centauri>
-References: <346cd9f0-583d-f467-83d0-e73768bf5aac@free.fr>
+ id 1hTvab-00055U-4A
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 21:49:30 +0000
+Received: from pps.filterd (aserp2130.oracle.com [127.0.0.1])
+ by aserp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x4NLhifU004317;
+ Thu, 23 May 2019 21:49:13 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2018-07-02;
+ bh=CA4BRvH7LpSOvdwGQ1RgbPK5R7ura7qGqy4SrVn6TGs=;
+ b=X//cpGAKkvYu1m1BjaIbh5y4EYuwM+8rZjWW5aAmW0vi1toc+ON7ojqHQsbcK6pAW1oD
+ bdaUeEmghYKNyuWdojEirpuCtcEnGnpjzGNjA/TAPNGPvcylGBa+20OGWCMnCwLHj8Tf
+ YRS6xbAb5NCY6/3hnPEk+xsQaxia6MP4a6XjVZSvoh9chZIbCYwa7XRJ+TOdhejZB+v7
+ XSe3hifUXqlRGwDwQJJUjbd8e+die4vTzQ+aF3wEY1CdthC5hOmZQere78SM0w/UZFJa
+ y1F1RpJmvyYHjzu9jq9fzTHoce2ebfeYA5vSKPJb2pXe3nPIQrp8MMBgMFftquXsLaI1 XQ== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by aserp2130.oracle.com with ESMTP id 2smsk5n948-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 23 May 2019 21:49:13 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x4NLmFZJ185512;
+ Thu, 23 May 2019 21:49:12 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+ by userp3020.oracle.com with ESMTP id 2smsgvrm93-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 23 May 2019 21:49:12 +0000
+Received: from abhmp0002.oracle.com (abhmp0002.oracle.com [141.146.116.8])
+ by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x4NLn8SI003595;
+ Thu, 23 May 2019 21:49:09 GMT
+Received: from [192.168.1.16] (/24.9.64.241)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Thu, 23 May 2019 21:49:08 +0000
+Subject: Re: [PATCH v15 00/17] arm64: untag user pointers passed to the kernel
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <cover.1557160186.git.andreyknvl@google.com>
+ <20190517144931.GA56186@arrakis.emea.arm.com>
+ <CAFKCwrj6JEtp4BzhqO178LFJepmepoMx=G+YdC8sqZ3bcBp3EQ@mail.gmail.com>
+ <20190521182932.sm4vxweuwo5ermyd@mbp> <201905211633.6C0BF0C2@keescook>
+ <6049844a-65f5-f513-5b58-7141588fef2b@oracle.com>
+ <20190523201105.oifkksus4rzcwqt4@mbp>
+From: Khalid Aziz <khalid.aziz@oracle.com>
+Organization: Oracle Corp
+Message-ID: <ffe58af3-7c70-d559-69f6-1f6ebcb0fec6@oracle.com>
+Date: Thu, 23 May 2019 15:49:05 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <346cd9f0-583d-f467-83d0-e73768bf5aac@free.fr>
-User-Agent: Mutt/1.11.4 (2019-03-13)
+In-Reply-To: <20190523201105.oifkksus4rzcwqt4@mbp>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9266
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1905230139
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9266
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
+ definitions=main-1905230139
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_144627_129252_1CB7B1EB 
-X-CRM114-Status: GOOD (  15.26  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190523_144929_258905_7AFAB0CF 
+X-CRM114-Status: GOOD (  27.18  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [141.146.126.79 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -87,6 +104,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -98,239 +116,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jeffrey Hugo <jhugo@codeaurora.org>, MSM <linux-arm-msm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Amit Kucheria <amit.kucheria@linaro.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Andy Gross <agross@kernel.org>,
- Sibi Sankar <sibis@codeaurora.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgenii Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Yishai Hadas <yishaih@mellanox.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Elliott Hughes <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 23, 2019 at 10:36:51AM +0200, Marc Gonzalez wrote:
-> From: Amit Kucheria <amit.kucheria@linaro.org>
+On 5/23/19 2:11 PM, Catalin Marinas wrote:
+> Hi Khalid,
 > 
-> Add device bindings for cpuidle states for cpu devices.
+> On Thu, May 23, 2019 at 11:51:40AM -0600, Khalid Aziz wrote:
+>> On 5/21/19 6:04 PM, Kees Cook wrote:
+>>> As an aside: I think Sparc ADI support in Linux actually side-stepped
+>>> this[1] (i.e. chose "solution 1"): "All addresses passed to kernel must
+>>> be non-ADI tagged addresses." (And sadly, "Kernel does not enable ADI
+>>> for kernel code.") I think this was a mistake we should not repeat for
+>>> arm64 (we do seem to be at least in agreement about this, I think).
+>>>
+>>> [1] https://lore.kernel.org/patchwork/patch/654481/
+>>
+>> That is a very early version of the sparc ADI patch. Support for tagged
+>> addresses in syscalls was added in later versions and is in the patch
+>> that is in the kernel.
 > 
-> [marc: rebase and fix arm,psci-suspend-param for power-collapse]
-> Acked-by: Daniel Lezcano <daniel.lezcano@linaro.org>
-> Signed-off-by: Amit Kucheria <amit.kucheria@linaro.org>
-> Signed-off-by: Marc Gonzalez <marc.w.gonzalez@free.fr>
-> ---
-> Bjorn, this is an updated/fixed (as documented above) version of
-> [PATCH v2 7/9] arm64: dts: qcom: msm8998: Add PSCI cpuidle low power states
-> ---
->  arch/arm64/boot/dts/qcom/msm8998.dtsi | 50 +++++++++++++++++++++++++++
->  1 file changed, 50 insertions(+)
+> I tried to figure out but I'm not familiar with the sparc port. How did
+> you solve the tagged address going into various syscall implementations
+> in the kernel (e.g. sys_write)? Is the tag removed on kernel entry or it
+> ends up deeper in the core code?
 > 
-> diff --git a/arch/arm64/boot/dts/qcom/msm8998.dtsi b/arch/arm64/boot/dts/qcom/msm8998.dtsi
-> index 412195b9794c..224f84e39204 100644
-> --- a/arch/arm64/boot/dts/qcom/msm8998.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/msm8998.dtsi
-> @@ -78,6 +78,7 @@
->  			compatible = "arm,armv8";
->  			reg = <0x0 0x0>;
->  			enable-method = "psci";
-> +			cpu-idle-states = <&LITTLE_CPU_SLEEP_0 &LITTLE_CPU_SLEEP_1>;
->  			next-level-cache = <&L2_0>;
->  			L2_0: l2-cache {
->  				compatible = "arm,arch-cache";
-> @@ -96,6 +97,7 @@
->  			compatible = "arm,armv8";
->  			reg = <0x0 0x1>;
->  			enable-method = "psci";
-> +			cpu-idle-states = <&LITTLE_CPU_SLEEP_0 &LITTLE_CPU_SLEEP_1>;
->  			next-level-cache = <&L2_0>;
->  			L1_I_1: l1-icache {
->  				compatible = "arm,arch-cache";
-> @@ -110,6 +112,7 @@
->  			compatible = "arm,armv8";
->  			reg = <0x0 0x2>;
->  			enable-method = "psci";
-> +			cpu-idle-states = <&LITTLE_CPU_SLEEP_0 &LITTLE_CPU_SLEEP_1>;
->  			next-level-cache = <&L2_0>;
->  			L1_I_2: l1-icache {
->  				compatible = "arm,arch-cache";
-> @@ -124,6 +127,7 @@
->  			compatible = "arm,armv8";
->  			reg = <0x0 0x3>;
->  			enable-method = "psci";
-> +			cpu-idle-states = <&LITTLE_CPU_SLEEP_0 &LITTLE_CPU_SLEEP_1>;
->  			next-level-cache = <&L2_0>;
->  			L1_I_3: l1-icache {
->  				compatible = "arm,arch-cache";
-> @@ -138,6 +142,7 @@
->  			compatible = "arm,armv8";
->  			reg = <0x0 0x100>;
->  			enable-method = "psci";
-> +			cpu-idle-states = <&BIG_CPU_SLEEP_0 &BIG_CPU_SLEEP_1>;
->  			next-level-cache = <&L2_1>;
->  			L2_1: l2-cache {
->  				compatible = "arm,arch-cache";
-> @@ -156,6 +161,7 @@
->  			compatible = "arm,armv8";
->  			reg = <0x0 0x101>;
->  			enable-method = "psci";
-> +			cpu-idle-states = <&BIG_CPU_SLEEP_0 &BIG_CPU_SLEEP_1>;
->  			next-level-cache = <&L2_1>;
->  			L1_I_101: l1-icache {
->  				compatible = "arm,arch-cache";
-> @@ -170,6 +176,7 @@
->  			compatible = "arm,armv8";
->  			reg = <0x0 0x102>;
->  			enable-method = "psci";
-> +			cpu-idle-states = <&BIG_CPU_SLEEP_0 &BIG_CPU_SLEEP_1>;
->  			next-level-cache = <&L2_1>;
->  			L1_I_102: l1-icache {
->  				compatible = "arm,arch-cache";
-> @@ -184,6 +191,7 @@
->  			compatible = "arm,armv8";
->  			reg = <0x0 0x103>;
->  			enable-method = "psci";
-> +			cpu-idle-states = <&BIG_CPU_SLEEP_0 &BIG_CPU_SLEEP_1>;
->  			next-level-cache = <&L2_1>;
->  			L1_I_103: l1-icache {
->  				compatible = "arm,arch-cache";
-> @@ -230,6 +238,48 @@
->  				};
->  			};
->  		};
-> +
 
-Hello Marc, Amit,
+Another spot I should point out in ADI patch - Tags are not stored in
+VMAs and IOMMU does not support ADI tags on M7. ADI tags are stripped
+before userspace addresses are passed to IOMMU in the following snippet
+from the patch:
 
-Looking at this line of code in msm-4.14:
-https://source.codeaurora.org/quic/la/kernel/msm-4.14/tree/drivers/cpuidle/lpm-levels.c?h=LA.UM.7.1.r1-14000-sm8150.0#n993
+diff --git a/arch/sparc/mm/gup.c b/arch/sparc/mm/gup.c
+index 5335ba3c850e..357b6047653a 100644
+--- a/arch/sparc/mm/gup.c
++++ b/arch/sparc/mm/gup.c
+@@ -201,6 +202,24 @@ int __get_user_pages_fast(unsigned long start, int
+nr_pages
+, int write,
+        pgd_t *pgdp;
+        int nr = 0;
 
-And seeing the equivalent in msm-4.4:
-https://source.codeaurora.org/quic/la/kernel/msm-4.4/tree/drivers/cpuidle/lpm-levels.c?h=msm-4.4#n1080
-
-It becomes obvious that
-
-qcom,time-overhead == entry-latency-us + exit-latency-us
-and
-qcom,latency-us == exit-latency-us
-
-which means that
-
-entry-latency-us == qcom,time-overhead - qcom,latency-us
++#ifdef CONFIG_SPARC64
++       if (adi_capable()) {
++               long addr = start;
++
++               /* If userspace has passed a versioned address, kernel
++                * will not find it in the VMAs since it does not store
++                * the version tags in the list of VMAs. Storing version
++                * tags in list of VMAs is impractical since they can be
++                * changed any time from userspace without dropping into
++                * kernel. Any address search in VMAs will be done with
++                * non-versioned addresses. Ensure the ADI version bits
++                * are dropped here by sign extending the last bit before
++                * ADI bits. IOMMU does not implement version tags.
++                */
++               addr = (addr << (long)adi_nbits()) >> (long)adi_nbits();
++               start = addr;
++       }
++#endif
+        start &= PAGE_MASK;
+        addr = start;
+        len = (unsigned long) nr_pages << PAGE_SHIFT;
 
 
-Using this formula, with the numbers from downstream SDM845:
-https://source.codeaurora.org/quic/la/kernel/msm-4.9/tree/arch/arm64/boot/dts/qcom/sdm845-pm.dtsi?h=msm-4.9#n123
+--
+Khalid
 
-qcom,latency-us = <621>;
-qcom,time-overhead = <885>;
 
-885 - 621 = 264
-
-we end up with the same values that Raju
-has in his submission for upstream SDM845:
-https://patchwork.kernel.org/patch/10953253/
-
-entry-latency-us = <264>;
-exit-latency-us = <621>;
-
-> +		idle-states {
-> +			entry-method = "psci";
-> +
-> +			LITTLE_CPU_SLEEP_0: cpu-sleep-0-0 {
-> +				compatible = "arm,idle-state";
-> +				idle-state-name = "little-retention";
-> +				arm,psci-suspend-param = <0x00000002>;
-> +				entry-latency-us = <43>;
-> +				exit-latency-us = <86>;
-
-Which for little cluster retention:
-
-https://source.codeaurora.org/quic/la/kernel/msm-4.4/tree/arch/arm/boot/dts/qcom/msm8998-pm.dtsi?h=msm-4.4#n153
-
-qcom,latency-us = <86>;
-qcom,time-overhead = <167>;
-
-gives:
-
-entry-latency-us = <81>;
-exit-latency-us = <86>;
-
-> +				min-residency-us = <200>;
-> +			};
-> +
-> +			LITTLE_CPU_SLEEP_1: cpu-sleep-0-1 {
-> +				compatible = "arm,idle-state";
-> +				idle-state-name = "little-power-collapse";
-> +				arm,psci-suspend-param = <0x40000003>;
-> +				entry-latency-us = <100>;
-> +				exit-latency-us = <612>;
-
-Which for little power collapse:
-
-https://source.codeaurora.org/quic/la/kernel/msm-4.4/tree/arch/arm/boot/dts/qcom/msm8998-pm.dtsi?h=msm-4.4#n163
-
-qcom,latency-us = <612>;
-qcom,time-overhead = <885>;
-
-gives:
-
-entry-latency-us = <273>;
-exit-latency-us = <612>;
-
-> +				min-residency-us = <1000>;
-> +				local-timer-stop;
-> +			};
-> +
-> +			BIG_CPU_SLEEP_0: cpu-sleep-1-0 {
-> +				compatible = "arm,idle-state";
-> +				idle-state-name = "big-retention";
-> +				arm,psci-suspend-param = <0x00000002>;
-> +				entry-latency-us = <41>;
-> +				exit-latency-us = <82>;
-
-Which for big retention:
-
-https://source.codeaurora.org/quic/la/kernel/msm-4.4/tree/arch/arm/boot/dts/qcom/msm8998-pm.dtsi?h=msm-4.4#n246
-
-qcom,latency-us = <82>;
-qcom,time-overhead = <161>;
-
-gives:
-
-entry-latency-us = <79>;
-exit-latency-us = <82>;
-
-> +				min-residency-us = <200>;
-> +			};
-> +
-> +			BIG_CPU_SLEEP_1: cpu-sleep-1-1 {
-> +				compatible = "arm,idle-state";
-> +				idle-state-name = "big-power-collapse";
-> +				arm,psci-suspend-param = <0x40000003>;
-> +				entry-latency-us = <100>;
-> +				exit-latency-us = <525>;
-> +				min-residency-us = <1000>;
-
-Which for big power collapse:
-
-https://source.codeaurora.org/quic/la/kernel/msm-4.4/tree/arch/arm/boot/dts/qcom/msm8998-pm.dtsi?h=msm-4.4#n256
-
-qcom,latency-us = <525>;
-qcom,time-overhead = <861>;
-
-gives:
-
-entry-latency-us = <336>;
-exit-latency-us = <525>;
-
-> +				local-timer-stop;
-> +			};
-> +		};
->  	};
->  
->  	firmware {
-> -- 
-> 2.17.1
 
 _______________________________________________
 linux-arm-kernel mailing list
