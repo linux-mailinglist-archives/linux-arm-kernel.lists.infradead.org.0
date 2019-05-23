@@ -2,85 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0061428157
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 17:34:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D228F28182
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 17:44:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OYFKOukXkkqIo6KEzHVgVYkVPP464/fjacDbck0Zrpo=; b=PG0TZ2V+m+KNt+
-	c0dSsTjL4zh3IIYzoO7VxqwWxCFB4ABF4wR+VPeDOI++H9D3tcQB+V0Qhv9sBCxytyiFCaz+RUQlE
-	VWJgjt+ldbpTViTGJcUVg1FGxD/PwkEs5L+ZzoKYBfM+d7kc3WdsbZVPUvw/u0B5KZZxy402wsYwi
-	8oGriEmpD49yZjXEGY3QZxtUPvAh+pYkmRNwub0RFixdx7f8gLnmKH0joggb+VT6CozWZCSvLvujN
-	jE+A7GzNR7VI/HmMB1Znb3MDYi7glHPtbUP8FZm1kSBDQu7H4vvFLwC3TIXsoxcBKl8NjBdcqASl1
-	yyZPzPAhZt+W1ad6Q+tQ==;
+	List-Owner; bh=9B4wUCKCJfBRHoJsXOC/hbDCbwX3h9x20R10CKDv+qo=; b=tQpTlDs3DjJ/kq
+	btMePUa+FLTkZ84yhe+7JkaZsZgdw6K2SigkpdaJNySzom6UGfWaxj0J56QeMszq88qRiEXxY7YaN
+	AqZqtzxxIs8tvwFDqqHzhR4nDQmX7zrS9RsHKbT7UbXo3KZBR6hM3Dk94PN28U94Pjxqc7cRQbDhp
+	qlBio+44EB+PiX6zvNQg7/XJR0z+ZIaGZQLBr6autAK7TKcCWavGSSLMGxj5xkYYhaZMPWsH4Upj+
+	+Tl04pMIUiuKoXX8bXUvkCBLQ06A7uWZXdz6bmMm9cKQmlz04+nlLRKUqvV3uyTgxE6//4SoRMfOl
+	JaMJkeKweUf2zohDmblw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTpjt-00009J-9n; Thu, 23 May 2019 15:34:41 +0000
-Received: from mail-it1-x142.google.com ([2607:f8b0:4864:20::142])
+	id 1hTptV-0004JN-2K; Thu, 23 May 2019 15:44:37 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTpjj-00008b-V7
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 15:34:34 +0000
-Received: by mail-it1-x142.google.com with SMTP id h20so10418198itk.4
+ id 1hTptN-0004Hq-Iz
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 15:44:31 +0000
+Received: by mail-lj1-x243.google.com with SMTP id z5so5914476lji.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 23 May 2019 08:34:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
+ Thu, 23 May 2019 08:44:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=Z4KPzzFsdGcBdAr5bNG6JKh38d9/uHM4E4WIv1LXSx4=;
- b=YYadS9fNuoSsvmLh28CLlcNFOR4c0CO8CCadSPs02K2zUwG2Cov8aiLX/U+yGOAYGb
- R0KBvuagNFrO3HD3wgaOQmMm7OmGrpBAQIXWnTCLJHVsCCfbxaCPWs4UY9IihyiTZ9AV
- uBcmQrLpB4/R7JKLsgyCs+fsVwWCPv4y//sJAxbmyMXQ+LUs5zjs32+s55uwg0ecp9nQ
- F7Wim0HYNflr/5CcCtu/014icVLBvPbutqSzx0vGItbbaCLKx426zzLOFgd8n2W4sjk5
- qjrsJirsR3I42TOvUNtsBdkmd/5nLzCTshPBzcfQvDpnqGk6fNBgrMY8tda01I3Xolk1
- XT2w==
+ :cc; bh=/wji4Ea/4BKbtz1pB+NomkucTVNmeP5sWS4Z09Qoh/0=;
+ b=aFH35CN6oPRsy0HINPVyUyCLmmZ1q+W5tanGOLFB9ZDOu6iaE0T6Zf2p50/YpwHsbr
+ 48EE1NUmchXldef87VmFcBOfomkIHiEfKDLilaRqMK87cFmewn3SJqhTI1TRHWczozD4
+ oXQnG40alYiwUIlV5zhAeNCFOXlq3pqE0BbnZ0FvRVuwBWMRV9wfu1H9fYBPCAdnSv5U
+ HVNKv9dUz6r+VmwUQYwzrC3kRsKz62p+YOIjrLW4bC1aoOEaVaZZBPmIi8QCc4AHmXYb
+ 1tLTls+6tcRQac2V8FPQbYxeEAGXeJISVC1rVB3y4LA5KetGIABPN8JvrlKNXRYKDzkN
+ FlXA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=Z4KPzzFsdGcBdAr5bNG6JKh38d9/uHM4E4WIv1LXSx4=;
- b=onPsLV8+3lKhc9cXQ8OjILiKa+IErajFHpecHrMwV5yBsBhLol4DNiqkSCUYvU8Flg
- eCagafBYYvs4VMmYIBHkqTbgU3wMVC1pCoK2iWmluj1oGt0DLCdwHKpf9LxLejFai6Ch
- pZeGcl4hmqYGZtD8R5pevlL4rp8DT4ETYpobFO0REasCsl6IrcRrIm8A4fi0e3GGhsJ/
- 6lOdlKvERa9e6AR3BYocLeD+6Q6v31Xm9zJbxQlFGO8D1Y4dBYWHFCvPV18CUsJZ1HRJ
- w8K2W9dqby67QemFWS5gOiKAoL49C0nqu9O+qN5XUfJ4B6UKdfNM82kVLQgRLM7W5AVY
- 7/og==
-X-Gm-Message-State: APjAAAWYBU322oc1JdtMuwdJ8P2NhE9kmEI7jvfpNML0m7kodQL7Q7KX
- NU/mo2qLmUDWvoOBYgVhAMrLaP79Gt+RpnhaO0i25g==
-X-Google-Smtp-Source: APXvYqwOyTiWj7DRNZuwkOCP8cSldAHhrwF14HATAzXUOruWpcjC64EzkCng07uLWqWchLgSG8+SA02W9UGBjHjD4ik=
-X-Received: by 2002:a24:e409:: with SMTP id o9mr14808892ith.4.1558625670960;
- Thu, 23 May 2019 08:34:30 -0700 (PDT)
+ :message-id:subject:to:cc;
+ bh=/wji4Ea/4BKbtz1pB+NomkucTVNmeP5sWS4Z09Qoh/0=;
+ b=fUV/6i2Wox1g3tPPpC0RiFAtYe/BfhmIYxAWQ75QhWHVGPjwViv15Y1Fs8xffpmrDG
+ P3ouIQvr0wwVM5msih3iTwa+b5BmmdBfpHm7W9Z8mFG5zGUE8kcgxdxzwAQGOb8lrn7D
+ pGa7byCTFCm8PrLliigoORF/ZfCh+qRKHb+M6xm3MDcKAq7b+S0xod7xaNG+ZmRvY/hQ
+ /qehBR4Gent9EujBDqjHsK5/HGweX6pbhBKZMPDJHMkrx2ZT7eOI7GChewWEo1Dqb68X
+ 2csDoKkq9aR7m2Aj4qMuNQi88xTCnu2mQbaSgVBgDrW3zvmF21A2UHfXPAcOaxm0YPeE
+ NLuA==
+X-Gm-Message-State: APjAAAWyYJfeiH7cfqL3qZDZUxLfb3Pn2adN1w2YMLsUjWqxHZvsGcEz
+ VWvlp+04xZ6d1MtpiLF84fyZOAs/VXC5DOjGM8l81w==
+X-Google-Smtp-Source: APXvYqzhSDjrNWAy5KyNhMUlv7cjkwlGbRwsa6Uqsf4zqqYvI69PmEIAwS9JjP+IZnW+JBpTZSKDycdIF2QLVLgBgoM=
+X-Received: by 2002:a2e:9d4e:: with SMTP id y14mr23518941ljj.199.1558626264355; 
+ Thu, 23 May 2019 08:44:24 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190417144709.19588-1-brgl@bgdev.pl>
- <20190417144709.19588-2-brgl@bgdev.pl>
- <187fdcd8-4cc8-3871-ee66-1ebd7408b1fe@linaro.org>
- <CAMRc=MdQ_GORGaw1szwvBRqKzkZQCZNnEcwkNzmGduEbiDR4Lw@mail.gmail.com>
- <ca00f49f-0fa2-1907-feac-ba798dce365b@linaro.org>
-In-Reply-To: <ca00f49f-0fa2-1907-feac-ba798dce365b@linaro.org>
-From: Bartosz Golaszewski <brgl@bgdev.pl>
-Date: Thu, 23 May 2019 17:34:20 +0200
-Message-ID: <CAMRc=Mf37TZZO00tbXhAyxzNBYx9C-farKNQ=9vmVWZY59KC2w@mail.gmail.com>
-Subject: Re: [RFC 1/2] clocksource: davinci-timer: add support for clockevents
-To: Daniel Lezcano <daniel.lezcano@linaro.org>
+References: <cover.1557160186.git.andreyknvl@google.com>
+ <20190517144931.GA56186@arrakis.emea.arm.com>
+ <CAFKCwrj6JEtp4BzhqO178LFJepmepoMx=G+YdC8sqZ3bcBp3EQ@mail.gmail.com>
+ <20190521182932.sm4vxweuwo5ermyd@mbp> <201905211633.6C0BF0C2@keescook>
+ <20190522101110.m2stmpaj7seezveq@mbp>
+ <CAJgzZoosKBwqXRyA6fb8QQSZXFqfHqe9qO9je5TogHhzuoGXJQ@mail.gmail.com>
+ <20190522163527.rnnc6t4tll7tk5zw@mbp> <201905221316.865581CF@keescook>
+ <20190523144449.waam2mkyzhjpqpur@mbp>
+In-Reply-To: <20190523144449.waam2mkyzhjpqpur@mbp>
+From: enh <enh@google.com>
+Date: Thu, 23 May 2019 08:44:12 -0700
+Message-ID: <CAJgzZoqX--Kd9=Kjpnfz-5cjVJ=TdsXM5dJM_EjLFKniVbny2w@mail.gmail.com>
+Subject: Re: [PATCH v15 00/17] arm64: untag user pointers passed to the kernel
+To: Catalin Marinas <catalin.marinas@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_083432_046924_B944512B 
-X-CRM114-Status: GOOD (  29.51  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190523_084429_682512_CF5E7762 
+X-CRM114-Status: GOOD (  41.22  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 T_DKIMWL_WL_MED        DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -92,110 +103,169 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Lechner <david@lechnology.com>, Kevin Hilman <khilman@kernel.org>,
- Sekhar Nori <nsekhar@ti.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Khalid Aziz <khalid.aziz@oracle.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgenii Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Yishai Hadas <yishaih@mellanox.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Y3p3LiwgMjMgbWFqIDIwMTkgbyAxNToyNSBEYW5pZWwgTGV6Y2FubyA8ZGFuaWVsLmxlemNhbm9A
-bGluYXJvLm9yZz4gbmFwaXNhxYIoYSk6Cj4KPgo+IEhpIEJhcnRvc3osCj4KPgo+Cj4gT24gMjMv
-MDUvMjAxOSAxNDo1OCwgQmFydG9zeiBHb2xhc3pld3NraSB3cm90ZToKPgo+IFsgLi4uIF0KPgo+
-ID4+PiArKysgYi9kcml2ZXJzL2Nsb2Nrc291cmNlL3RpbWVyLWRhdmluY2kuYwo+ID4+PiBAQCAt
-MCwwICsxLDI3MiBAQAo+ID4+PiArLy8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjAt
-b25seQo+ID4+PiArLy8KPiA+Pj4gKy8vIFRJIERhVmluY2kgY2xvY2tzb3VyY2UgZHJpdmVyCj4g
-Pj4+ICsvLwo+ID4+PiArLy8gQ29weXJpZ2h0IChDKSAyMDE5IFRleGFzIEluc3RydW1lbnRzCj4g
-Pj4+ICsvLyBBdXRob3I6IEJhcnRvc3ogR29sYXN6ZXdza2kgPGJnb2xhc3pld3NraUBiYXlsaWJy
-ZS5jb20+Cj4gPj4+ICsvLyAod2l0aCB0aW55IHBhcnRzIGFkb3B0ZWQgZnJvbSBjb2RlIGJ5IEtl
-dmluIEhpbG1hbiA8a2hpbG1hbkBiYXlsaWJyZS5jb20+KQo+ID4+Cj4gPj4gVGhlIGhlYWRlciBm
-b3JtYXQgaXMgd3JvbmcsIGl0IHNob3VsZCBiZToKPiA+Pgo+ID4+IC8vIFNQRFgtTGljZW5zZS1J
-ZGVudGlmaWVyOiBHUEwtMi4wLW9ubHkKPiA+PiAvKgo+ID4+ICAqIFRJIERhVmluY2kgY2xvY2tz
-b3VyY2UgZHJpdmVyCj4gPj4gICoKPiA+PiAgKiAuLi4KPiA+PiAgKiAuLi4KPiA+PiAgKgo+ID4+
-ICAqLwo+ID4KPiA+IEl0J3Mgbm90IHdyb25nLiBJdCBsb29rcyBsaWtlIGl0J3MgYXQgdGhlIG1h
-aW50YWluZXJzIGRpc2NyZXRpb24gYW5kCj4gPiBJJ3ZlIGJlZW4gYXNrZWQgdG8gdXNlIGJvdGgg
-Zm9ybXMgYnkgZGlmZmVyZW50IG1haW50YWluZXJzLiBTZWVtcyB5b3UKPiA+IGp1c3QgY2FuJ3Qg
-Z2V0IGl0IHJpZ2h0LiA6KSBJJ3ZlIGNoYW5nZWQgaXQgaW4gdjIgdGhvdWdoLgo+Cj4gUmlnaHQs
-IEkndmUgYmVlbiB0aHJvdWdoIHRoZSBkb2N1bWVudGF0aW9uIGJ1dCBpdCBpcyBzdGlsbCB1bmNs
-ZWFyIGZvcgo+IG1lLiBTbyBsZXQncyBzdGljayB0byB3aGF0ZXZlciB5b3Ugd2FudCBmb3Igbm93
-Lgo+Cj4gWyAuLi4gXQo+Cj4gPj4+ICtzdGF0aWMgaW50Cj4gPj4+ICtkYXZpbmNpX2Nsb2NrZXZl
-bnRfc2V0X25leHRfZXZlbnRfc3RkKHVuc2lnbmVkIGxvbmcgY3ljbGVzLAo+ID4+PiArICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICBzdHJ1Y3QgY2xvY2tfZXZlbnRfZGV2aWNlICpk
-ZXYpCj4gPj4+ICt7Cj4gPj4+ICsgICAgIHN0cnVjdCBkYXZpbmNpX2Nsb2NrZXZlbnQgKmNsb2Nr
-ZXZlbnQ7Cj4gPj4+ICsgICAgIHVuc2lnbmVkIGludCBlbmFtb2RlOwo+ID4+PiArCj4gPj4+ICsg
-ICAgIGNsb2NrZXZlbnQgPSB0b19kYXZpbmNpX2Nsb2NrZXZlbnQoZGV2KTsKPiA+Pj4gKyAgICAg
-ZW5hbW9kZSA9IGNsb2NrZXZlbnQtPmVuYW1vZGVfZGlzYWJsZWQ7Cj4gPj4+ICsKPiA+Pj4gKyAg
-ICAgZGF2aW5jaV9jbG9ja2V2ZW50X3VwZGF0ZShjbG9ja2V2ZW50LCBEQVZJTkNJX1RJTUVSX1JF
-R19UQ1IsCj4gPj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY2xvY2tldmVudC0+
-ZW5hbW9kZV9tYXNrLAo+ID4+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNsb2Nr
-ZXZlbnQtPmVuYW1vZGVfZGlzYWJsZWQpOwo+ID4+Cj4gPj4gV2hhdCBpcyBmb3IgdGhpcyBmdW5j
-dGlvbiB3aXRoIHRoZSBEQVZJTkNJX1RJTUVSX1JFR19UQ1IgcGFyYW1ldGVyPwo+ID4KPiA+IEkn
-bSBub3Qgc3VyZSBJIHVuZGVyc3RhbmQgdGhlIHF1ZXN0aW9uLiA6KAo+Cj4gSSBtZWFudCBkYXZp
-bmNpX2Nsb2NrZXZlbnRfdXBkYXRlIGlzIGFsd2F5cyBjYWxsZWQgd2l0aCB0aGUKPiBEQVZJTkNJ
-X1RJTUVSX1JFR19UQ1IgcGFyYW1ldGVyLgo+Cj4gU28gaXQgY2FuIGJlIGNoYW5nZWQgdG86Cj4g
-c3RhdGljIHZvaWQgZGF2aW5jaV9jbG9ja2V2ZW50X3VwZGF0ZShzdHJ1Y3QgZGF2aW5jaV9jbG9j
-a2V2ZW50Cj4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-KmNsb2NrZXZlbnQsCj4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHVu
-c2lnbmVkIGludCBtYXNrLAo+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICB1bnNpZ25lZCBpbnQgdmFsKQo+IHsKPiAgICAgICAgIGRhdmluY2lfcmVnX3VwZGF0ZShjbG9j
-a2V2ZW50LT5iYXNlLCBEQVZJTkNJX1RJTUVSX1JFR19UQ1IsCj4gICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgbWFzaywgdmFsKTsKPiB9Cj4KClllcywgdGhpcyBpcyBwcmV0dHkgbXVj
-aCB3aGF0IEkgZGlkIGluIHYyLgoKPgo+IEFsdGVybmF0aXZlbHkgZGF2aW5jaV9jbG9ja2V2ZW50
-X3VwZGF0ZSBjYW4gYmUgcmVwbGFjZWQgYnkgYSBkaXJlY3QgY2FsbAo+IHRvIGRhdmluY2lfcmVn
-X3VwZGF0ZS4KPgo+IFsgLi4uIF0KPgo+ID4+PiArICAgICBjbG9ja2V2ZW50LT5kZXYuY3B1bWFz
-ayA9IGNwdW1hc2tfb2YoMCk7Cj4gPj4+ICsKPiA+Pj4gKyAgICAgY2xvY2tldmVudC0+YmFzZSA9
-IGJhc2U7Cj4gPj4+ICsgICAgIGNsb2NrZXZlbnQtPnRpbV9vZmYgPSBEQVZJTkNJX1RJTUVSX1JF
-R19USU0xMjsKPiA+Pj4gKyAgICAgY2xvY2tldmVudC0+cHJkX29mZiA9IERBVklOQ0lfVElNRVJf
-UkVHX1BSRDEyOwo+ID4+PiArCj4gPj4+ICsgICAgIHNoaWZ0ID0gREFWSU5DSV9USU1FUl9FTkFN
-T0RFX1NISUZUX1RJTTEyOwo+ID4+PiArICAgICBjbG9ja2V2ZW50LT5lbmFtb2RlX2Rpc2FibGVk
-ID0gREFWSU5DSV9USU1FUl9FTkFNT0RFX0RJU0FCTEVEIDw8IHNoaWZ0Owo+ID4+PiArICAgICBj
-bG9ja2V2ZW50LT5lbmFtb2RlX29uZXNob3QgPSBEQVZJTkNJX1RJTUVSX0VOQU1PREVfT05FU0hP
-VCA8PCBzaGlmdDsKPiA+Pj4gKyAgICAgY2xvY2tldmVudC0+ZW5hbW9kZV9wZXJpb2RpYyA9IERB
-VklOQ0lfVElNRVJfRU5BTU9ERV9QRVJJT0RJQyA8PCBzaGlmdDsKPiA+Pj4gKyAgICAgY2xvY2tl
-dmVudC0+ZW5hbW9kZV9tYXNrID0gREFWSU5DSV9USU1FUl9FTkFNT0RFX01BU0sgPDwgc2hpZnQ7
-Cj4gPj4KPiA+PiBJIGRvbid0IHNlZSB3aGVyZSAnc2hpZnQnIGNhbiBiZSBkaWZmZXJlbnQgZnJv
-bSBUSU0xMiBoZXJlIG5laXRoZXIgaW4KPiA+PiB0aGUgc2Vjb25kIHBhdGNoIGZvciB0aG9zZSB2
-YWx1ZXMuIFdoeSBjcmVhdGUgdGhlc2UgZmllbGRzIGluc3RlYWQgb2YKPiA+PiBwcmUtY29tcHV0
-ZWQgbWFjcm9zPwo+ID4+Cj4gPgo+ID4gVGhlIHZhcmlhYmxlICdzaGlmdCcgaGVyZSBpcyBvbmx5
-IHRvIGF2b2lkIGJyZWFraW5nIHRoZSBsaW5lcyAoanVzdCBhIGhlbHBlcikuCj4gPgo+ID4gVGhl
-IHNoaWZ0IGl0c2VsZiBjYW4gYmUgZGlmZmVyZW50IHRob3VnaCBpbiB0aGUgc2Vjb25kIHBhdGNo
-IC0KPiA+IHNwZWNpZmljYWxseSB3aGVuIGNhbGxpbmcgZGF2aW5jaV9jbG9ja3NvdXJjZV9pbml0
-KCkuCj4gPgo+ID4gSWYgSSB3ZXJlIHRvIHVzZSBwcmVkZWZpbmVkIHZhbHVlcyBmb3IgY2xvY2tl
-dmVudCwgd2UnZCBzdGlsbCBuZWVkCj4gPiBhbm90aGVyIHNldCBvZiB2YWx1ZXMgZm9yIGNsb2Nr
-c291cmNlLiBJIHRoaW5rIGl0J3MgY2xlYXJlciB0aGUgd2F5IGl0Cj4gPiBpcy4KPgo+IEFoIHll
-cywgSSBzZWUsIGl0IGlzIHBhc3NlZCBhcyBwYXJhbWV0ZXIuIE9rLCBsZXQncyBrZWVwIGl0IHRo
-aXMgd2F5IGlmCj4geW91IHByZWZlci4KPgo+ID4+PiArICAgICBpZiAodGltZXJfY2ZnLT5jbXBf
-b2ZmKSB7Cj4gPj4+ICsgICAgICAgICAgICAgY2xvY2tldmVudC0+Y21wX29mZiA9IHRpbWVyX2Nm
-Zy0+Y21wX29mZjsKPiA+Pj4gKyAgICAgICAgICAgICBjbG9ja2V2ZW50LT5kZXYuc2V0X25leHRf
-ZXZlbnQgPQo+ID4+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICBkYXZpbmNpX2Nsb2Nr
-ZXZlbnRfc2V0X25leHRfZXZlbnRfY21wOwo+ID4+PiArICAgICB9IGVsc2Ugewo+ID4+PiArICAg
-ICAgICAgICAgIGNsb2NrZXZlbnQtPmRldi5zZXRfbmV4dF9ldmVudCA9Cj4gPj4+ICsgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgIGRhdmluY2lfY2xvY2tldmVudF9zZXRfbmV4dF9ldmVudF9z
-dGQ7Cj4gPj4+ICsgICAgIH0KPiA+Pj4gKwo+ID4+PiArICAgICBydiA9IHJlcXVlc3RfaXJxKHRp
-bWVyX2NmZy0+aXJxW0RBVklOQ0lfVElNRVJfQ0xPQ0tFVkVOVF9JUlFdLnN0YXJ0LAo+ID4+PiAr
-ICAgICAgICAgICAgICAgICAgICAgIGRhdmluY2lfdGltZXJfaXJxX3RpbWVyLCBJUlFGX1RJTUVS
-LAo+ID4+PiArICAgICAgICAgICAgICAgICAgICAgICJjbG9ja2V2ZW50IiwgY2xvY2tldmVudCk7
-Cj4gPj4KPiA+PiBNYXkgYmUgcmVwbGFjZSAiY2xvY2tldmVudCIgYnkgZWcuICJ0aW0xMiI/Cj4g
-Pj4KPiA+Cj4gPiBJIGRvbid0IHRoaW5rIHRoaXMgaXMgYSBnb29kIGlkZWEuIE5vdyBpZiB5b3Ug
-bG9vayBhdCAvcHJvYy9pbnRlcnJ1cHRzCj4gPiB5b3UgY2FuIHRlbGwgaW1tZWRpYXRlbHkgd2hh
-dCB0aGUgaW50ZXJydXB0IGlzIGZvciAoImNsb2NrZXZlbnQiKS4KPiA+IFdpdGggInRpbTEyIiBp
-dCdzIG5vIGxvbmdlciB0aGF0IGNsZWFyLgo+Cj4gWWVzLCAidGltMTIiIGNhbiBiZSBjb25mdXNp
-bmcuIEhvd2V2ZXIsIGl0IGlzIGdvb2QgcHJhY3RpY2UgdG8gYWRkIGEKPiBkZXZpY2UgbmFtZSBh
-c2lkZSB3aXRoIGl0cyBwdXJwb3NlIGluIGNhc2UgdGhlcmUgYXJlIHNldmVyYWwgdGltZXJzCj4g
-ZGVmaW5lZCBvbiB0aGUgc3lzdGVtLiAiY2xvY2tldmVudCIgaXMgYSBrZXJuZWwgaW50ZXJuYWwg
-cmVwcmVzZW50YXRpb24KPiBvZiBhIHRpbWVyLCBzbyBtYXkgYmUgYSBuYW1lIGxpa2UgInRpbWVy
-L3RpbTEyIiBvciBzb21ldGhpbmcgaW4gdGhlIHNhbWUKPiBzcGlyaXQgd291bGQgYmUgbW9yZSBh
-ZGVxdWF0ZS4KPgoKSSdsbCB3YWl0IGZvciB5b3VyIGNvbW1lbnRzIG9uIHYyIGJlZm9yZSBjaGFu
-Z2luZyBpdCBpbiB0aGUgZmluYWwgc3VibWlzc2lvbi4KClRoYW5rcywKQmFydAoKPgo+Cj4KPiAt
-LQo+ICA8aHR0cDovL3d3dy5saW5hcm8ub3JnLz4gTGluYXJvLm9yZyDilIIgT3BlbiBzb3VyY2Ug
-c29mdHdhcmUgZm9yIEFSTSBTb0NzCj4KPiBGb2xsb3cgTGluYXJvOiAgPGh0dHA6Ly93d3cuZmFj
-ZWJvb2suY29tL3BhZ2VzL0xpbmFybz4gRmFjZWJvb2sgfAo+IDxodHRwOi8vdHdpdHRlci5jb20v
-IyEvbGluYXJvb3JnPiBUd2l0dGVyIHwKPiA8aHR0cDovL3d3dy5saW5hcm8ub3JnL2xpbmFyby1i
-bG9nLz4gQmxvZwo+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
-LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1hcm0ta2VybmVsCg==
+On Thu, May 23, 2019 at 7:45 AM Catalin Marinas <catalin.marinas@arm.com> wrote:
+>
+> On Wed, May 22, 2019 at 01:47:36PM -0700, Kees Cook wrote:
+> > On Wed, May 22, 2019 at 05:35:27PM +0100, Catalin Marinas wrote:
+> > > The two hard requirements I have for supporting any new hardware feature
+> > > in Linux are (1) a single kernel image binary continues to run on old
+> > > hardware while making use of the new feature if available and (2) old
+> > > user space continues to run on new hardware while new user space can
+> > > take advantage of the new feature.
+> >
+> > Agreed! And I think the series meets these requirements, yes?
+>
+> Yes. I mentioned this just to make sure people don't expect different
+> kernel builds for different hardware features.
+>
+> There is also the obvious requirement which I didn't mention: new user
+> space continues to run on new/subsequent kernel versions. That's one of
+> the points of contention for this series (ignoring MTE) with the
+> maintainers having to guarantee this without much effort. IOW, do the
+> 500K+ new lines in a subsequent kernel version break any user space out
+> there? I'm only talking about the relaxed TBI ABI. Are the usual LTP,
+> syskaller sufficient? Better static analysis would definitely help.
+>
+> > > For MTE, we just can't enable it by default since there are applications
+> > > who use the top byte of a pointer and expect it to be ignored rather
+> > > than failing with a mismatched tag. Just think of a hwasan compiled
+> > > binary where TBI is expected to work and you try to run it with MTE
+> > > turned on.
+> >
+> > Ah! Okay, here's the use-case I wasn't thinking of: the concern is TBI
+> > conflicting with MTE. And anything that starts using TBI suddenly can't
+> > run in the future because it's being interpreted as MTE bits? (Is that
+> > the ABI concern?
+>
+> That's another aspect to figure out when we add the MTE support. I don't
+> think we'd be able to do this without an explicit opt-in by the user.
+>
+> Or, if we ever want MTE to be turned on by default (i.e. tag checking),
+> even if everything is tagged with 0, we have to disallow TBI for user
+> and this includes hwasan. There were a small number of programs using
+> the TBI (I think some JavaScript compilers tried this). But now we are
+> bringing in the hwasan support and this can be a large user base. Shall
+> we add an ELF note for such binaries that use TBI/hwasan?
+>
+> This series is still required for MTE but we may decide not to relax the
+> ABI blindly, therefore the opt-in (prctl) or personality idea.
+>
+> > I feel like we got into the weeds about ioctl()s and one-off bugs...)
+>
+> This needs solving as well. Most driver developers won't know why
+> untagged_addr() is needed unless we have more rigorous types or type
+> annotations and a tool to check them (we should probably revive the old
+> sparse thread).
+>
+> > So there needs to be some way to let the kernel know which of three
+> > things it should be doing:
+> > 1- leaving userspace addresses as-is (present)
+> > 2- wiping the top bits before using (this series)
+>
+> (I'd say tolerating rather than wiping since get_user still uses the tag
+> in the current series)
+>
+> The current series does not allow any choice between 1 and 2, the
+> default ABI basically becomes option 2.
+>
+> > 3- wiping the top bits for most things, but retaining them for MTE as
+> >    needed (the future)
+>
+> 2 and 3 are not entirely compatible as a tagged pointer may be checked
+> against the memory colour by the hardware. So you can't have hwasan
+> binary with MTE enabled.
+>
+> > I expect MTE to be the "default" in the future. Once a system's libc has
+> > grown support for it, everything will be trying to use MTE. TBI will be
+> > the special case (but TBI is effectively a prerequisite).
+>
+> The kernel handling of tagged pointers is indeed a prerequisite. The ABI
+> distinction between the above 2 and 3 needs to be solved.
+>
+> > AFAICT, the only difference I see between 2 and 3 will be the tag handling
+> > in usercopy (all other places will continue to ignore the top bits). Is
+> > that accurate?
+>
+> Yes, mostly (for the kernel). If MTE is enabled by default for a hwasan
+> binary, it will SEGFAULT (either in user space or in kernel uaccess).
+> How does the kernel choose between 2 and 3?
+>
+> > Is "1" a per-process state we want to keep? (I assume not, but rather it
+> > is available via no TBI/MTE CONFIG or a boot-time option, if at all?)
+>
+> Possibly, though not necessarily per process. For testing or if
+> something goes wrong during boot, a command line option with a static
+> label would do. The AT_FLAGS bit needs to be checked by user space. My
+> preference would be per-process.
+>
+> > To choose between "2" and "3", it seems we need a per-process flag to
+> > opt into TBI (and out of MTE).
+>
+> Or leave option 2 the default and get it to opt in to MTE.
+>
+> > For userspace, how would a future binary choose TBI over MTE? If it's
+> > a library issue, we can't use an ELF bit, since the choice may be
+> > "late" after ELF load (this implies the need for a prctl().) If it's
+> > binary-only ("built with HWKASan") then an ELF bit seems sufficient.
+> > And without the marking, I'd expect the kernel to enforce MTE when
+> > there are high bits.
+>
+> The current plan is that a future binary issues a prctl(), after
+> checking the HWCAP_MTE bit (as I replied to Elliot, the MTE instructions
+> are not in the current NOP space). I'd expect this to be done by the
+> libc or dynamic loader under the assumption that the binaries it loads
+> do _not_ use the top pointer byte for anything else.
+
+yeah, it sounds like to support hwasan and MTE, the dynamic linker
+will need to not use either itself.
+
+> With hwasan
+> compiled objects this gets more confusing (any ELF note to identify
+> them?).
+
+no, at the moment code that wants to know checks for the presence of
+__hwasan_init. (and bionic doesn't actually look at any ELF notes
+right now.) but we can always add something if we need to.
+
+> (there is also the risk of existing applications using TBI already but
+> I'm not aware of any still using this feature other than hwasan)
+>
+> --
+> Catalin
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
