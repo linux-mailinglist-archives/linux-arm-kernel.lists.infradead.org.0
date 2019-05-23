@@ -2,75 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81FE628248
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 18:13:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90E242824C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 18:13:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
 	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aj8y6EQdBQSw67UOR/uMywWEsJjE6/MviV1lZpt1K6U=; b=roK+tsmcqGd7j+
-	3Q8bY3vXclFWY1aKamhdtoFG6TfAKu99lqBulo52p09+AERORQBFCTpfKXLw91wr4Bnqt3v9ScQJR
-	JNCQJuhd/mpS+38gu65rn1JCiUkTS9UOyCStkwMKW1Mmh+tmxeDQGacmbuiv1yLHPlLxxXeEyOyai
-	2TbLGoBlSMJdQOEXJeZaUs5G5DrySVRchiRJpKhrrJukYzchYpTqSlHuacagmvTC69woX6bi4aAXK
-	iBIeemhZ8GQ/i5XnFF9wy9ATtcV7a9dF6tDle+EWbTsDLil0yAhCKPz5PU2GEq5V+aneuMvGCZ4ey
-	58GDFW2r1MDPYvhRLn8Q==;
+	List-Owner; bh=s1qIVyV5V3y51Bmucl1NG5vU0HeQDs5vwSJWN28ICfE=; b=s7ogBcbKaHwqCQ
+	HTSk85kUoCWO34f3nGIzQ97AYWlZmxL2t0yts6YwUk8ysgrd0nR6gy/BE4J+1L1ntmA4eS0q69DTp
+	NFEqcFyEYxKq/ARLagqGuvb7Qt9TS2gx4BwxeZM68VNRnNYN1mcZam+rtuegLV2/xweNb161049OW
+	atxakrJ3PUEBK31IonbScWI5U973Z/j/7Y0t2kdTc7RP+Bmt/y8dTyFMEi5O03Tqu+V8T1ZLq/h4D
+	3DHmy+1NkRozKcXZoEqc1XGYxbLoJn/mO3MCYYe2r6uThu+jwHg6JWVTf7nokkXaS+6iaKldXUGHO
+	fNbWUiYP7Tqp119T+WsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTqLZ-00015Z-LZ; Thu, 23 May 2019 16:13:37 +0000
+	id 1hTqLp-0001OM-VE; Thu, 23 May 2019 16:13:53 +0000
 Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTqLR-00014d-UH
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 16:13:31 +0000
-Received: by mail-pf1-x441.google.com with SMTP id n19so3514133pfa.1
+ id 1hTqLd-0001GC-Hv
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 16:13:43 +0000
+Received: by mail-pf1-x441.google.com with SMTP id q17so3497428pfq.8
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 23 May 2019 09:13:29 -0700 (PDT)
+ Thu, 23 May 2019 09:13:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=Kla6xn5Rtm/ynxCsZh/uXOzs/7PtvcUWbm78TW3QhsA=;
- b=JJYISij6OTQsMewWsc7E1+XwxCJ7YJu4Ozycyefko7cDmUqjkzF/kf6xWuFAnOuEtt
- LvswkfXUWuKGPntdlRHylbPV9y1JW5Hu0fqMzZNcnf2Oz4HfZuuweY6RZ6BnA6pS2LRQ
- Mwn12h3qCDX3PIoCuk5sWBE41AaqOiijn8jXAI7gvSJQ6cIFqLV693BJheHieGlWjvHo
- s3hqw5gZ49nccTodxDAp/AT15UCMFafqatcT58SdQDyCpqZVObvuW3h7YS1WPGYtyllc
- wsalnXQnQyPywJaKwG15xvgfqoHoD40PWsPDm8KYmKGKQ+bGe1973LFOFsYo2CyB0q/M
- H5cg==
+ :mime-version; bh=dxcl7qeoBSGm7yM9sqTozFqzilaB2ov2JQxOkdUbcHI=;
+ b=h2Owf/A2KjV8Ud+sGliPrzwL6UypMFI8zBq5XI+wlYkZ789Wpy7eO5lnkkBc3dQCWs
+ 98TcJWT8asc3gMOlX4yAPaldzJs9Th424Mlg78neTsB6g5KGBL79l0jLSotb5j1hBb7W
+ ULbuwWls34VU+AgosN0afn6g/hgRPU94NfzxDZ49g18bI3nQC24o9gy21jLN4rX20jGk
+ rniUgFaEyLztyEg2wynMy7pVYHbLPasse1kZYojMaAn1CnYu+hmslbg0DvgfDyNivzXc
+ fPRDlcHC9eddT8WWIaAro0yypWuKWjviYf6/fj6ezuviK/Tc9r5gdXkMcRcXPpPiOax0
+ eUVA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
  :message-id:mime-version;
- bh=Kla6xn5Rtm/ynxCsZh/uXOzs/7PtvcUWbm78TW3QhsA=;
- b=uUOCrRcscfbjvPqXvA9/6rTGOoevRDe+Km2mjeKPS4pHeoWE+92BTWC56Nd4VufJIM
- WTYU40ylh/RV8OeCw6zJR07Hd3/662i4jAi6tBLJ0r6sajFNGkG0mWiCWAgBvzh4fO76
- D6Uzr+DqlZpNUHvRmZ4Bf2SRphXPP/gkppqx9rBCC/ON1pUNP4XwRHb6wQgL4CHxISaN
- g1/Bxm3tmAP82JmQJ/Zfi0Tkfhzqg7WLy1df16LUYCz5+M/Bo8rLhACebpxL9eLiYqpB
- QM5DF2xzdCMpEyfU6elo2vUr64PylwX/vYV1JHrjCREvmnGTNCqcLv/OQHEHoth7yNN6
- 3nVg==
-X-Gm-Message-State: APjAAAU6/jshQAfCQNezCbX+6y6dxRs5gXO9wsPKHZSxLP6I5QWXox6q
- tjYFv7RyL8KiiYISxlbTaGEsFg==
-X-Google-Smtp-Source: APXvYqzBDUKiUXW17Cp+BBLLt2WrMZacAsmzczuBQyg6+dOwQ2cQhPPIpTsGvSMwoBSJZaVBpKP9qQ==
-X-Received: by 2002:a63:950d:: with SMTP id p13mr99087861pgd.269.1558628009001; 
- Thu, 23 May 2019 09:13:29 -0700 (PDT)
+ bh=dxcl7qeoBSGm7yM9sqTozFqzilaB2ov2JQxOkdUbcHI=;
+ b=UNIJePXTtYxyNYNCyC8DYXMuvP7iMbtFLn3DUR5KWWyLswc/FADkCrg1r9GcgHqzp4
+ fbRY3n5QOeLDFvc8+vF2cACIPGCtoPFTo7bjevLHVPCb0SHVoPhKlmpM4w9bEMi1N6nM
+ NCinzV9XtaVUoZcE9c+4mYgJt+4h5iEJ0cdrty0/8KXVmjYW1awjrDRP5r4c/6pCGLmd
+ MAUiuRatvFqicafNE9HlHIwSOUjhjyTEDv5jocwD6jiNV+94gal9iEjamoCwxF+Qp4gA
+ 0QZ0TVV9vUV2K09umT6YQKoIWLdF7hdgrzbPkqG2TXbUVKAmnNjlxakEv8e+r4p2MUSp
+ JEdA==
+X-Gm-Message-State: APjAAAUB7+o1RVm/ASkYgKbFa9ljhYPqD7PBXqud9p9sCNKgOofJvdSN
+ clmfN4/0cMU9KsQUn19feQ1zaQ==
+X-Google-Smtp-Source: APXvYqx/tCamAz6aS+Mz79lzll1VAvooHEJ3LVVUfQLgtPgLrRHNqNAT4LbZn6jhpfGEP0d6dikK6g==
+X-Received: by 2002:a17:90a:2322:: with SMTP id
+ f31mr2407129pje.9.1558628020974; 
+ Thu, 23 May 2019 09:13:40 -0700 (PDT)
 Received: from localhost ([2601:602:9200:a1a5:ed4f:2717:3604:bb3f])
- by smtp.googlemail.com with ESMTPSA id v39sm1383544pjb.3.2019.05.23.09.13.27
+ by smtp.googlemail.com with ESMTPSA id d6sm3356394pgv.4.2019.05.23.09.13.40
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 23 May 2019 09:13:27 -0700 (PDT)
+ Thu, 23 May 2019 09:13:40 -0700 (PDT)
 From: Kevin Hilman <khilman@baylibre.com>
 To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
  Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH 1/3] arm64: dts: meson: g12a: add drive-strength hdmi ddc
+Subject: Re: [PATCH 2/3] arm64: dts: meson: g12a: add drive strength for eth
  pins
-In-Reply-To: <CAFBinCA+G6f8pq8zPwzq6rkNmyS6U=7fL5HWnObvWDWCB893iQ@mail.gmail.com>
+In-Reply-To: <CAFBinCBmgTdZBDd5D_rCVQwO4UcJpXjX=Rc+0qgADF9sW-wFWQ@mail.gmail.com>
 References: <20190520134817.25435-1-narmstrong@baylibre.com>
- <20190520134817.25435-2-narmstrong@baylibre.com>
- <CAFBinCA+G6f8pq8zPwzq6rkNmyS6U=7fL5HWnObvWDWCB893iQ@mail.gmail.com>
-Date: Thu, 23 May 2019 09:13:27 -0700
-Message-ID: <7hk1eh409k.fsf@baylibre.com>
+ <20190520134817.25435-3-narmstrong@baylibre.com>
+ <CAFBinCBmgTdZBDd5D_rCVQwO4UcJpXjX=Rc+0qgADF9sW-wFWQ@mail.gmail.com>
+Date: Thu, 23 May 2019 09:13:39 -0700
+Message-ID: <7hftp54098.fsf@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_091330_027953_94314693 
-X-CRM114-Status: UNSURE (   8.82  )
+X-CRM114-CacheID: sfid-20190523_091341_681030_C76E940E 
+X-CRM114-Status: UNSURE (   9.18  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -107,8 +108,9 @@ Martin Blumenstingl <martin.blumenstingl@googlemail.com> writes:
 
 > On Mon, May 20, 2019 at 3:48 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
 >>
->> With the default boot settings, the DDC drive strength is too weak,
->> set the driver-strengh to 4mA to avoid errors on the DDC line.
+>> With the X96 Max board using an external Gigabit Ethernet PHY,
+>> add the same driver strength to the Ethernet pins as the vendor
+>> tree.
 >>
 >> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 > Amlogic's vendor kernel (from buildroot-openlinux-A113-201901) does the same so:
