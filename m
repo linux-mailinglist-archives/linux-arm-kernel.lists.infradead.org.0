@@ -2,63 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8CF4272C0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 01:12:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A626827314
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 02:00:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/Av1rlBd7gOgFeqgEEvn7fE7vaMlvcwWJqo/+NYzIAE=; b=V606dY2NzeEJL4
-	U1nAgcP0ApTAp71VlZd1hmdZ0x2J4ytmIkhkvAZK6MkFTnJzjpoPL5fgUpUclbFgtSeuq/4cMWjsy
-	Cw66HYIY6sjBzmbLtos7+xftY+KaXDXnGCJnRZ7ZdwgSYIdIdHgxf6yq8jOmj3870iF/4M7REqq7j
-	jNKKF3iYJ8bMGKPtwjAenXYAujpdxgOvYJ0Ri1mjW5v4v7427HCLu8lEkw6P0n0fNNKUXpoLnsZRA
-	Gb8kZQdpnDblP8vtTUA26WM5Om23HGDMG2zhUqyAvIwbfegpT0bTDfBhCY9ryn6Z4fbWKEN8FKzDV
-	1i5a/ukfH4nfprjZ4OGQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=5dRdt3OnqK3OBwdJA1E9ajAxyHco71Xw+eLBv9rK3fE=; b=ah72z8VcrroI0EAben2dLQg7I
+	X+siKt6sK8iRQg1mfsLTfJW1l7h8nVschMYPJT+0974zKy9TCuox0Faxi7MrXSeaO45WGN9hpa3pE
+	4ZvXuEb+8tZXhc659u26rcf39jLIXh0d1XxDVm2/B823oeNnxCGEehdS8XYZX4dMVDYMkzn6k6QnG
+	ngwrr17MppohLpHFZZ7kk4d/3zmWGbVNp2hiw9cudOqje3aZmtHIWeY9dRhnCfRyjgPG3v1fEcHsp
+	RQH1x6wDLHah6DPvjINC3amnU5Dy6sBxr00/h7bf1NU51o0OBgGPLPpr4Sy0zyYUsKcES4HxBMv6q
+	jE4YTE7+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTaOr-0001s5-Cv; Wed, 22 May 2019 23:11:57 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hTbA2-0007uF-V8; Thu, 23 May 2019 00:00:42 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTaOj-0001rR-Tz
- for linux-arm-kernel@lists.infradead.org; Wed, 22 May 2019 23:11:51 +0000
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 14AEA3084294;
- Wed, 22 May 2019 23:11:49 +0000 (UTC)
-Received: from treble (ovpn-120-127.rdu2.redhat.com [10.10.120.127])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 202731001284;
- Wed, 22 May 2019 23:11:47 +0000 (UTC)
-Date: Wed, 22 May 2019 18:11:46 -0500
-From: Josh Poimboeuf <jpoimboe@redhat.com>
-To: Raphael Gault <Raphael.Gault@arm.com>
-Subject: Re: [RFC V2 00/16] objtool: Add support for Arm64
-Message-ID: <20190522231146.vw43gkah2npeouj3@treble>
-References: <20190516103655.5509-1-raphael.gault@arm.com>
- <20190516142917.nuhh6dmfiufxqzls@treble>
- <26692833-0e5b-cfe0-0ffd-c2c2f0815935@arm.com>
+ id 1hTb9s-0007rP-68; Thu, 23 May 2019 00:00:35 +0000
+Received: by mail-qt1-x843.google.com with SMTP id a17so4686702qth.3;
+ Wed, 22 May 2019 17:00:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=D32ZOKFRLW3jAQLYe8MxTrM9BtRmyZsAFpuUM0kn1Ds=;
+ b=JS8A+Bj/AWAzLMo3ePM3T1UaSpb1eFU4LIWakq8i+KUmlgr835lr1xpsWj2Uj7x2MB
+ PqJJTfd06T/sk14XCzrScM5CEvQU5Jq9efppNRs1FFYUgGDSUh1OXcZpYJy7IlH+PKQh
+ q5kvokXUAgCQNYrPmGygRhBdWXPdihNDXxR42nnHvt0juMn7iLRbRnTC38Lo12QwanDg
+ 3sN0VNr0XKwBQQKqe99tYKMVRYqbqdTcOdMsRNCBntYbbsAU/4NSEIXE4FhWv5d5gxQq
+ lqFruq00bv9lW3y7lxOSisbTemJ0JgQqHAlySmn5jF/k93YXIpKDV5et1tSARvTIY1n8
+ Lstw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=D32ZOKFRLW3jAQLYe8MxTrM9BtRmyZsAFpuUM0kn1Ds=;
+ b=MJ1wDJDC2zMU4IGqgmKbxOaXpWpxAcr9yYzAXvGwP1QkPzp6+KazNgMyj4JFhuZj2H
+ WOspSYbDVoI4XVE2nsustdHT6sKdcgPLkBvT5LNlKbMRZPE3RMvHma7l7UzQNCyAYQMT
+ Onb2NSM6MDZraDfT/y3uAqelGUjNW8y6pff0f60AjNqU75VjAAymBcoKeeykrPDQVmlC
+ vLDaUa/2Wl2ZGsqFMjCfTNn6ls81fxXjbt8zhG+zMcf3rpeQsTFH0gO3WVLgRCBuDPih
+ NrUvfKBWhKOmoiVmxt2tzdYmWUuudmewOGjfuQzz+bqJ0pZArWnrAkm4iE7YI6ZHV0tb
+ kBzQ==
+X-Gm-Message-State: APjAAAWLniQWGSDTbEarP8+da9PthQT1/r9BmsPET4u2euqqLxI9Uq9I
+ ZsFOZEhZ0hs4HrFVUpCz4U9CWngjnR0=
+X-Google-Smtp-Source: APXvYqwCoN7DDPqrWOVld8/7JP9cFARTCBUDwI2ne42/vUAqE2OwpkZjxFm9lOvdj0+yKh06/hUEpw==
+X-Received: by 2002:ac8:32d1:: with SMTP id a17mr12803234qtb.111.1558569628805; 
+ Wed, 22 May 2019 17:00:28 -0700 (PDT)
+Received: from ?IPv6:2601:153:900:ebb:74b5:9fcf:6f1f:201d?
+ ([2601:153:900:ebb:74b5:9fcf:6f1f:201d])
+ by smtp.gmail.com with ESMTPSA id c32sm17735525qte.2.2019.05.22.17.00.28
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 22 May 2019 17:00:28 -0700 (PDT)
+Subject: Re: [PATCH] arm64: dts: rockchip: set TX PBL for rk3328-roc-cc gmac
+To: "Leonidas P. Papadakos" <papadakospan@gmail.com>
+References: <20190417210059.26262-1-papadakospan@gmail.com>
+ <8865b046-fb3a-4071-335c-66abb344d7f4@gmail.com>
+ <1555915435.1262.1@gmail.com>
+ <9a5c62b4-ea75-de4f-9b71-ffa42cb8eaac@gmail.com>
+ <1555938803.1241.1@gmail.com>
+From: Peter Geis <pgwipeout@gmail.com>
+Message-ID: <8ded737d-1fd5-3609-ca2e-cfeba63b2d95@gmail.com>
+Date: Wed, 22 May 2019 20:00:27 -0400
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <26692833-0e5b-cfe0-0ffd-c2c2f0815935@arm.com>
-User-Agent: NeoMutt/20180716
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.40]); Wed, 22 May 2019 23:11:49 +0000 (UTC)
+In-Reply-To: <1555938803.1241.1@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_161149_981632_9A616460 
-X-CRM114-Status: GOOD (  24.43  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190522_170032_253657_5A853E2C 
+X-CRM114-Status: GOOD (  13.00  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (pgwipeout[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -70,76 +104,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Thierry <Julien.Thierry@arm.com>,
- "peterz@infradead.org" <peterz@infradead.org>,
- Catalin Marinas <Catalin.Marinas@arm.com>, Will Deacon <Will.Deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Jose Abreu <jose.abreu@synopsys.com>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 21, 2019 at 12:50:57PM +0000, Raphael Gault wrote:
-> Hi Josh,
-> 
-> Thanks for offering your help and sorry for the late answer.
-> 
-> My understanding is that a table of offsets is built by GCC, those
-> offsets being scaled by 4 before adding them to the base label.
-> I believe the offsets are stored in the .rodata section. To find the
-> size of that table, it is needed to find a comparison, which can be
-> optimized out apprently. In that case the end of the array can be found
-> by locating labels pointing to data behind it (which is not 100% safe).
-> 
-> On 5/16/19 3:29 PM, Josh Poimboeuf wrote:
-> > On Thu, May 16, 2019 at 11:36:39AM +0100, Raphael Gault wrote:
-> >> Noteworthy points:
-> >> * I still haven't figured out how to detect switch-tables on arm64. I
-> >> have a better understanding of them but still haven't implemented checks
-> >> as it doesn't look trivial at all.
-> >
-> > Switch tables were tricky to get right on x86.  If you share an example
-> > (or even just a .o file) I can take a look.  Hopefully they're somewhat
-> > similar to x86 switch tables.  Otherwise we may want to consider a
-> > different approach (for example maybe a GCC plugin could help annotate
-> > them).
-> >
-> 
-> The case which made me realize the issue is the one of
-> arch/arm64/kernel/module.o:apply_relocate_add:
-> 
-> ```
-> What seems to happen in the case of module.o is:
->   334:   90000015        adrp    x21, 0 <do_reloc>
-> which retrieves the location of an offset in the rodata section, and a
-> bit later we do some extra computation with it in order to compute the
-> jump destination:
->   3e0:   78625aa0        ldrh    w0, [x21, w2, uxtw #1]
->   3e4:   10000061        adr     x1, 3f0 <apply_relocate_add+0xf8>
->   3e8:   8b20a820        add     x0, x1, w0, sxth #2
->   3ec:   d61f0000        br      x0
-> ```
-> 
-> Please keep in mind that the actual offsets might vary.
-> 
-> I'm happy to provide more details about what I have identified if you
-> want me to.
 
-Thanks.  I'll try to take a deeper look.
 
-Were these patches based on tip/master?  There were some minor conflicts
-in arch/arm64/Kconfig and arch/arm64/kernel/Makefile.
+On 4/22/2019 9:13 AM, Leonidas P. Papadakos wrote:
+> 
+> Indeed, at least with that first patch users won't have a crappy 
+> experience by default (ssh lags and the like)
+> 
+> 
 
-I'm also getting a build failure on arm64:
+I apologize for taking so long at this, but I wanted to make sure I had 
+it right.
 
-  make[4]: *** No rule to make target '/root/linux/tools/objtool/arch/arm64/arch_special.o', needed by '/root/linux/tools/objtool/arch/arm64/objtool-in.o'.  Stop
+So far I've found a few things that seem to help, and would like y'all 
+to test them when you get the chance.
 
-It looks like arch/arm64/Build and arch/x86/Build are trying to build
-from arch_special.c which doesn't exist.
+Adding snps,aal (configures DMA for address alignment) appears to make a 
+massive improvement to stability, although the the snps,txpbl = <0x4> is 
+still necessary for this to work.
 
--- 
-Josh
+Second, I added snps,rxpbl = <0x4> as well, which seems to help with my 
+RX issues a bit.
+The biggest improvement with these two settings is more stable transmit 
+and receive.
+Currently I'm getting about 800mbps on tx and 400 mbps on rx.
+
+Please test when you get the chance and provide feedback.
 
 _______________________________________________
 linux-arm-kernel mailing list
