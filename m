@@ -2,98 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA85727F32
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 16:11:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9AFE27F46
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 16:15:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RJM+DmNt5FnUbLKc/QHaYVRGnGLMJXs6W8ZyucPvUgg=; b=fH5SYYVSorOFoO
-	7vdTLLdY0sdsaIa/ftGg2xO+w6XyHWM03lMgyDd9k2GYVXr3h0zA4SxuHzdwP1hR2hn5E2lKFzHsb
-	u93fav82gP2j+ViT5SbxNv4sK+vBOKFaOXA3zUCF1kTy2VTQtiDlkpFUmp8ya5GZx/ZNc5nNBvETd
-	15X4YbNqdCtqP8R+8m6bXqukvAbIolPU3nM4JsTfEyFsVvS7y/2jIdGO30c2QULbZqKm1xB4v0J6f
-	o1QdhDz0iXoZM65ExoTcC82zso6R8C6Jc1rRHv6Gw8ioFW2oTOhuRQmj7p9g82Lh2mmRv78jWLpai
-	ZSjhTB8XeeQTekMDQwkg==;
+	List-Owner; bh=EpxSH/plML1XTY3ssm8gsY/m68r6ZbcwlYpx3ve00wY=; b=JRD2eCXbAWJ4CL
+	UJfLesCAWqY0baa3pz/4fz588NKm0msj233fSb2cjx26pBo4ZPxAQHvR2PtI57zjJYqzzA4F13v76
+	krQ71p8dlITA42bOpYi7nRtBHbBS3M4aibyO5XfUtqncEedZnUgKd2/C2qb6ncLATng/Kh3jwpMXW
+	E01vPmbWp9/XbmI0j9SOP3UiMoy+cKjPp8hnr6gaXeMKrnDWmqFSfWVMSsTOVq1gHd3G1Segfgt9A
+	iMrXZjIPuJpfGO8Cc+c/c1cI8jYjpujS++a0iPkFTZdGgOnCsEjta4Ty1uJX6UgosciEDhvzc0fSO
+	u+PVT6yZlitsbHFLKaxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hToRc-00030p-VH; Thu, 23 May 2019 14:11:44 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1hToUy-0003md-Pv; Thu, 23 May 2019 14:15:12 +0000
+Received: from mail-it1-x142.google.com ([2607:f8b0:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hToRV-0002x5-AD
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 14:11:39 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x4NE5jjk005074; Thu, 23 May 2019 16:11:13 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=Bn0iz+tF/GtBv/wF0WfrXOWDGayct1EsCY0uvVuAAio=;
- b=foDBrFtMiEpQ4S191xrSp76m77Dycn3qTuxkYSsyrsxWzOjBws7kfFD2eGy7ZXm0JkF/
- 8rES42SfBfNvk5gbWOdx0crWSpHgnsIi9EsXMiRpDrDy198KPXGZXSI2oM5Kl6j/gXOm
- kWHDQguFJF1JhQs4QAKcKDYU1JHuYJGeXHzbxwUeMK2m13mv/lWXUzDyg2GmzhGTvhwC
- lquiqMeJ+8R4cFk5rlQY+cSZv+qr1jt9H5zGBM3GBS9VeHgglBtvlzbe77RpdKQHcbME
- L9jCMT6j5SkwgeoHiRBF5soBrzvd6XlzZxoCaM0OoUuWwyhnNr8RAFuGKfsB36u7I5vw fA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2snrve1myv-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Thu, 23 May 2019 16:11:13 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 94D2638;
- Thu, 23 May 2019 14:11:12 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id DAD212CA5;
- Thu, 23 May 2019 14:11:11 +0000 (GMT)
-Received: from SFHDAG3NODE2.st.com (10.75.127.8) by SFHDAG3NODE1.st.com
- (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 23 May
- 2019 16:11:11 +0200
-Received: from SFHDAG3NODE2.st.com ([fe80::b82f:1ce:8854:5b96]) by
- SFHDAG3NODE2.st.com ([fe80::b82f:1ce:8854:5b96%20]) with mapi id
- 15.00.1347.000; Thu, 23 May 2019 16:11:11 +0200
-From: Amelie DELAUNAY <amelie.delaunay@st.com>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: [PATCH] pinctrl: stmfx: Fix compile issue when CONFIG_OF_GPIO is
- not defined
-Thread-Topic: [PATCH] pinctrl: stmfx: Fix compile issue when CONFIG_OF_GPIO is
- not defined
-Thread-Index: AQHVDuDxK6HzwnJUFE6SYGi4rooWzqZ2hLKAgAAnAgCAAAlUgIAACtCAgADRIYCAARFPAA==
-Date: Thu, 23 May 2019 14:11:11 +0000
-Message-ID: <08ea97544018430caf53af36677902b7@SFHDAG3NODE2.st.com>
-References: <1558338735-8444-1-git-send-email-amelie.delaunay@st.com>
- <20190522054833.GB4574@dell> <eb8425ec-989a-9701-7fee-61bd1d2b93c1@st.com>
- <20190522084133.GF4574@dell> <bc1b5f1d-23b0-141d-f58f-b54ac303fe20@st.com>
- <CACRpkdYmdpwEvCBrL6i1V+Zxd0OSpZmD8BJPSZu9jYNeJkoimQ@mail.gmail.com>
-In-Reply-To: <CACRpkdYmdpwEvCBrL6i1V+Zxd0OSpZmD8BJPSZu9jYNeJkoimQ@mail.gmail.com>
-Accept-Language: fr-FR, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-fcc: imap://frq92262@localhost/Sent
-x-mozilla-draft-info: internal/draft; vcard=0; receipt=0; DSN=0; uuencode=0;
- attachmentreminder=0; deliveryformat=4
-x-account-key: account1
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-x-identity-key: id1
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.47]
-Content-ID: <7D90F5DB4CC7194687CC2E9A6A3EEA8F@st.com>
+ id 1hToUn-0003LX-IZ
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 14:15:03 +0000
+Received: by mail-it1-x142.google.com with SMTP id m140so8739615itg.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 23 May 2019 07:15:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=brauner.io; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=rgSvHJdgJSnF7/xiB9jp3IYiH1RwVXYwyOL2WgM6elM=;
+ b=agfu05mcW6DVn/laHbq7o5peWWMubiiXLa3+mtVVF+i5l0QEt93/bvKWl3JbPoVwXl
+ 0k64ioj3Ph2BkMXRRbAHKAFfkxjOHDSRt5NCBWr2asYnRnNKZL4zjdQz3kH7Jqukj0z6
+ 2og5izGp8YNUen+yStzQvEMwIJdLGCCPJJnwa/rcJXm71w0kxDdqtXnMzoicLjGDEAWi
+ ZhH0AtrgRENAHSCoFkVjHZZZaCx513l14vIozc4GzDXmosIFXifqXJPpo1kJBs9fbYoH
+ SAsp9lAUDI9bdzdzBP2B3VcM+Tv5WeTYZNB/it3XGBVA35In6f74kJj0SxBCXK8Oqary
+ LS0w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=rgSvHJdgJSnF7/xiB9jp3IYiH1RwVXYwyOL2WgM6elM=;
+ b=maMZOkoSV0Wmz5xQ6Hixh6N87GTXH0KpkJlkUp8T8o0RSePI2EARZdJZk/aWCJr3wV
+ ikbuca53LLTwmqjmW2FlNdIFb2i3yhYN4p8nDDpSxQ87TXMHN+B+n8bkHPiysZ58vNxi
+ +bldfvPa1y9+jJ/P7lWDGKDWrV7puWcGVgzURO73QuGjWHSIDIHvrXE1j0RuezZ7NsR8
+ IbiOZeNqHZUN933Kdl98XbLyRPzGbFRXucWaMpvZe5/BvlzZnHyxjLFCwJrAjb7p57AC
+ Hty+TSARevWuj9j5uAarBWB3kkSO5EsmbqKFBjcNv1uSJQ99xcOLet5Ar2dnt0fZEXbf
+ TURQ==
+X-Gm-Message-State: APjAAAWOEwZogz3WDAGB5a2CDso3FRoMCR6YoO8V6W7DpO+bQAd1Fs1p
+ BOvnVE+lfz1dCTwCTX9n2h89BA==
+X-Google-Smtp-Source: APXvYqy9XAMrNMkQarBeYE8e7HlYFHTwYh86KxFNh1Z1HbzreF/S6QYjLd8wwHWfkp2KJKFiXZBbVg==
+X-Received: by 2002:a24:590f:: with SMTP id p15mr12892482itb.12.1558620899772; 
+ Thu, 23 May 2019 07:14:59 -0700 (PDT)
+Received: from brauner.io ([172.56.12.187])
+ by smtp.gmail.com with ESMTPSA id q142sm4141521itb.17.2019.05.23.07.14.51
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Thu, 23 May 2019 07:14:58 -0700 (PDT)
+Date: Thu, 23 May 2019 16:14:48 +0200
+From: Christian Brauner <christian@brauner.io>
+To: Oleg Nesterov <oleg@redhat.com>
+Subject: Re: [PATCH v1 1/2] open: add close_range()
+Message-ID: <20190523141447.34s3kc3fuwmoeq7n@brauner.io>
+References: <20190522155259.11174-1-christian@brauner.io>
+ <20190522165737.GC4915@redhat.com>
+ <20190523115118.pmscbd6kaqy37dym@brauner.io>
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-23_12:, , signatures=0
+Content-Disposition: inline
+In-Reply-To: <20190523115118.pmscbd6kaqy37dym@brauner.io>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_071137_644946_EBDA4862 
-X-CRM114-Status: GOOD (  18.60  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20190523_071501_964601_1610C6B6 
+X-CRM114-Status: GOOD (  14.93  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -103,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 1.6 FORGED_MUA_MOZILLA     Forged mail pretending to be from Mozilla
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -115,41 +99,126 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre TORGUE <alexandre.torgue@st.com>,
- Randy Dunlap <rdunlap@infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
- "kbuild-all@01.org" <kbuild-all@01.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, Lee Jones <lee.jones@linaro.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org, ldv@altlinux.org,
+ dhowells@redhat.com, linux-kselftest@vger.kernel.org,
+ sparclinux@vger.kernel.org, shuah@kernel.org, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, miklos@szeredi.hu, x86@kernel.org,
+ torvalds@linux-foundation.org, linux-mips@vger.kernel.org,
+ linux-xtensa@linux-xtensa.org, tkjos@android.com, arnd@arndb.de,
+ jannh@google.com, linux-m68k@lists.linux-m68k.org, viro@zeniv.linux.org.uk,
+ tglx@linutronix.de, linux-arm-kernel@lists.infradead.org, fweimer@redhat.com,
+ linux-parisc@vger.kernel.org, linux-api@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-alpha@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, linuxppc-dev@lists.ozlabs.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gNS8yMi8xOSAxMTo0OCBQTSwgTGludXMgV2FsbGVpaiB3cm90ZToNCj4gT24gV2VkLCBNYXkg
-MjIsIDIwMTkgYXQgMTE6MjEgQU0gQW1lbGllIERFTEFVTkFZIDxhbWVsaWUuZGVsYXVuYXlAc3Qu
-Y29tPiB3cm90ZToNCj4gDQo+PiAuLi9kcml2ZXJzL3BpbmN0cmwvcGluY3RybC1zdG1meC5jOjQw
-OToyMDogZXJyb3I6DQo+PiDigJhwaW5jb25mX2dlbmVyaWNfZHRfbm9kZV90b19tYXBfcGlu4oCZ
-IHVuZGVjbGFyZWQgaGVyZSAobm90IGluIGEgZnVuY3Rpb24pDQo+PiAgICAgLmR0X25vZGVfdG9f
-bWFwID0gcGluY29uZl9nZW5lcmljX2R0X25vZGVfdG9fbWFwX3BpbiwNCj4+DQo+PiBPRl9HUElP
-IGRlcGVuZHMgb24gT0YuDQo+Pg0KPj4gU28gZWl0aGVyDQo+PiAgICAgICBkZXBlbmRzIG9uIE9G
-IHx8IChPRiAmJiBDT01QSUxFX1RFU1QpDQo+PiBvcg0KPj4gICAgICAgZGVwZW5kcyBvbiBPRiB8
-fCAoT0ZfR1BJTyAmJiBDT01QSUxFX1RFU1QpDQo+Pg0KPj4gYW5kDQo+Pg0KPj4gICAgICAgc2Vs
-ZWN0IE9GX0dQSU8NCj4gDQo+IEkgd291bGQgdXNlIGp1c3Q6DQo+IA0KPiBkZXBlbmRzIG9uIE9G
-X0dQSU8NCj4gDQo+IEJlY2F1c2UgT0ZfR1BJTyBhbHJlYWR5IGRlcGVuZHMgb24gT0YsIGFuZA0K
-PiBjb21waWxlIHRlc3RzIHdpbGwgbm90IHdvcmsgd2l0aG91dCBPRl9HUElPIHdoaWNoDQo+IHJl
-cXVpcmUgT0Ygc28uLi4NCj4gDQo+IEJlc2lkZXMgaXQgaXMgd2hhdCBtb3N0IG90aGVyIEdQSU8g
-ZHJpdmVycyBkby4NCj4gDQo+IFNvIGp1c3Qga2VlcCB0aGF0IG9uZSBsaW5lIGFuZCBkcm9wIHRo
-ZSByZXN0Lg0KPiANCj4gWW91cnMsDQo+IExpbnVzIFdhbGxlaWoNCj4gDQoNCk9rIHNvIEkgY2Fu
-IGdldCByaWQgb2YgQ09NUElMRV9URVNUID8NCglkZXBlbmRzIG9uIEkyQw0KCWRlcGVuZHMgb24g
-T0ZfR1BJTw0KCXNlbGVjdCBHRU5FUklDX1BJTkNPTkYNCglzZWxlY3QgR1BJT0xJQl9JUlFDSElQ
-DQoJc2VsZWN0IE1GRF9TVE1GWA0KDQpCZWNhdXNlIEkndmUgbm8gYXJjaCB0byBiYWxhbmNlIENP
-TVBJTEVfVEVTVC4gT3IgbWF5YmUgc29tZXRoaW5nIGxpa2UgDQoJZGVwZW5kcyBvbiBPRl9HUElP
-ICYmIChPRiB8fCBDT01QSUxFX1RFU1QpDQpldmVuIGlmIE9GX0dQSU8gJiYgT0YgaXMgcmVkdW5k
-YW50ID8NCg0KUmVnYXJkcywNCkFtZWxpZQ0KX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJt
-LWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
-aWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Thu, May 23, 2019 at 01:51:18PM +0200, Christian Brauner wrote:
+> On Wed, May 22, 2019 at 06:57:37PM +0200, Oleg Nesterov wrote:
+> > On 05/22, Christian Brauner wrote:
+> > >
+> > > +static struct file *pick_file(struct files_struct *files, unsigned fd)
+> > >  {
+> > > -	struct file *file;
+> > > +	struct file *file = NULL;
+> > >  	struct fdtable *fdt;
+> > >  
+> > >  	spin_lock(&files->file_lock);
+> > > @@ -632,15 +629,65 @@ int __close_fd(struct files_struct *files, unsigned fd)
+> > >  		goto out_unlock;
+> > >  	rcu_assign_pointer(fdt->fd[fd], NULL);
+> > >  	__put_unused_fd(files, fd);
+> > > -	spin_unlock(&files->file_lock);
+> > > -	return filp_close(file, files);
+> > >  
+> > >  out_unlock:
+> > >  	spin_unlock(&files->file_lock);
+> > > -	return -EBADF;
+> > > +	return file;
+> > 
+> > ...
+> > 
+> > > +int __close_range(struct files_struct *files, unsigned fd, unsigned max_fd)
+> > > +{
+> > > +	unsigned int cur_max;
+> > > +
+> > > +	if (fd > max_fd)
+> > > +		return -EINVAL;
+> > > +
+> > > +	rcu_read_lock();
+> > > +	cur_max = files_fdtable(files)->max_fds;
+> > > +	rcu_read_unlock();
+> > > +
+> > > +	/* cap to last valid index into fdtable */
+> > > +	if (max_fd >= cur_max)
+> > > +		max_fd = cur_max - 1;
+> > > +
+> > > +	while (fd <= max_fd) {
+> > > +		struct file *file;
+> > > +
+> > > +		file = pick_file(files, fd++);
+> > 
+> > Well, how about something like
+> > 
+> > 	static unsigned int find_next_opened_fd(struct fdtable *fdt, unsigned start)
+> > 	{
+> > 		unsigned int maxfd = fdt->max_fds;
+> > 		unsigned int maxbit = maxfd / BITS_PER_LONG;
+> > 		unsigned int bitbit = start / BITS_PER_LONG;
+> > 
+> > 		bitbit = find_next_bit(fdt->full_fds_bits, maxbit, bitbit) * BITS_PER_LONG;
+> > 		if (bitbit > maxfd)
+> > 			return maxfd;
+> > 		if (bitbit > start)
+> > 			start = bitbit;
+> > 		return find_next_bit(fdt->open_fds, maxfd, start);
+> > 	}
+> 
+> > 
+> > 	unsigned close_next_fd(struct files_struct *files, unsigned start, unsigned maxfd)
+> > 	{
+> > 		unsigned fd;
+> > 		struct file *file;
+> > 		struct fdtable *fdt;
+> > 	
+> > 		spin_lock(&files->file_lock);
+> > 		fdt = files_fdtable(files);
+> > 		fd = find_next_opened_fd(fdt, start);
+> > 		if (fd >= fdt->max_fds || fd > maxfd) {
+> > 			fd = -1;
+> > 			goto out;
+> > 		}
+> > 
+> > 		file = fdt->fd[fd];
+> > 		rcu_assign_pointer(fdt->fd[fd], NULL);
+> > 		__put_unused_fd(files, fd);
+> > 	out:
+> > 		spin_unlock(&files->file_lock);
+> > 
+> > 		if (fd == -1u)
+> > 			return fd;
+> > 
+> > 		filp_close(file, files);
+> > 		return fd + 1;
+> > 	}
+> 
+> Thanks, Oleg!
+> 
+> I kept it dumb and was about to reply that your solution introduces more
+> code when it seemed we wanted to keep this very simple for now.
+> But then I saw that find_next_opened_fd() already exists as
+> find_next_fd(). So it's actually not bad compared to what I sent in v1.
+> So - with some small tweaks (need to test it and all now) - how do we
+> feel about?:
+
+That's obviously not correct atm but I'll send out a tweaked version in
+a bit.
+
+Christian
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
