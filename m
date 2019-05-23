@@ -2,49 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B196B27AEA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 12:41:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA4F927AF7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 12:43:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1wi/NCTCIfG+heRWGFldRvqt/oS4XchG5MzTkLNwlf0=; b=DH72BOvxfar6ut9WS3Blekukn
-	Bp0S01IgRc1jEUYcfuDpNSfzhwVnRV95VwuU4rFEix+FqRaC6NwycqJgMwy15EcnOTCqrVcCBUnx0
-	fuQt4pdR0Am/DxAv/xBUOKXLDQhyNGpqOF6XITIXuLOlWFoNCYGViLcvYsfmGNGqsv6bubzk6m/F8
-	SUWBtv3CbEL14ZXBSE+eqXDoNscYAmTbQfpKAFmCt+Uf1GGdd/WpzaJFiWY8adJ+CRGQbEwKRSU5x
-	bASTr+ehLwpzbHHI0SvvJiAbzhdEDCtKL/6pjVK20dzlR113zbSUsusWbSc47jjPrZ7xEgfvCKIyf
-	q9oPOmGyA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ruWlK2PL4mgaUcPTuFul5iVZMdwG+xjvQB9v42j08Xc=; b=Fq7+ruvmvGmDh8
+	HgDtj+Bf3aTq1x4lMDUnAj8I7CkWanAyAwcS3Fh/scjHR+S7Xive5fjnLej4SIhJQ2DQWShxVqF3S
+	aOScBeCWL2Dz+/aC6giBL1O1zD85qwfH3cBeqW6jdYjDS5sHAlwMPag5UE7GtoFtHnMaNyK6PRZc2
+	j1R7oK9dfgPr+SH5j0CA1sQF5KVMvk+o4x0Sw9Ll64TSmBsbP6qXqZdpwW5aRjrBC66FqAGy+TSBa
+	EIprKuHCP7KS/oyjMMfhAdz5Byeu+u9ZJslv2rLQTWGYcthpBGoBGslXUihLwkF2gJ/ZRsvvVRAb6
+	5rdnA0n+v8C1PGchmZpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTlAJ-0006fP-UA; Thu, 23 May 2019 10:41:39 +0000
+	id 1hTlBo-00073r-UX; Thu, 23 May 2019 10:43:12 +0000
 Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTlAC-0006f6-UK
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 10:41:34 +0000
+ id 1hTlBi-00073W-0X
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 10:43:07 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A6A1A341;
- Thu, 23 May 2019 03:41:32 -0700 (PDT)
-Received: from [192.168.1.123] (usa-sjc-mx-foss1.foss.arm.com [217.140.101.70])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DB19C3F718;
- Thu, 23 May 2019 03:41:29 -0700 (PDT)
-Subject: Re: [PATCH v5 1/1] iommu/io-pgtable-arm: Add support to use system
- cache
-To: Vivek Gautam <vivek.gautam@codeaurora.org>, will.deacon@arm.com,
- joro@8bytes.org, iommu@lists.linux-foundation.org
-References: <20190516093020.18028-1-vivek.gautam@codeaurora.org>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <a4826cd5-c190-c102-c42b-92b6040197bb@arm.com>
-Date: Thu, 23 May 2019 11:41:24 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 84A77341;
+ Thu, 23 May 2019 03:43:05 -0700 (PDT)
+Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C9A023F718;
+ Thu, 23 May 2019 03:42:59 -0700 (PDT)
+Date: Thu, 23 May 2019 11:42:57 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Jason Gunthorpe <jgg@ziepe.ca>
+Subject: Re: [PATCH v15 00/17] arm64: untag user pointers passed to the kernel
+Message-ID: <20190523104256.GX28398@e103592.cambridge.arm.com>
+References: <cover.1557160186.git.andreyknvl@google.com>
+ <20190517144931.GA56186@arrakis.emea.arm.com>
+ <20190521184856.GC2922@ziepe.ca>
+ <20190522134925.GV28398@e103592.cambridge.arm.com>
+ <20190523002052.GF15389@ziepe.ca>
 MIME-Version: 1.0
-In-Reply-To: <20190516093020.18028-1-vivek.gautam@codeaurora.org>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20190523002052.GF15389@ziepe.ca>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_034133_032055_53CF4A43 
-X-CRM114-Status: GOOD (  30.65  )
+X-CRM114-CacheID: sfid-20190523_034306_069063_58A178A5 
+X-CRM114-Status: GOOD (  28.68  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -65,153 +67,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, pratikp@codeaurora.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- pdaly@codeaurora.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ linux-kselftest@vger.kernel.org, Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Dmitry Vyukov <dvyukov@google.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Yishai Hadas <yishaih@mellanox.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-05-16 10:30 am, Vivek Gautam wrote:
-> Few Qualcomm platforms such as, sdm845 have an additional outer
-> cache called as System cache, aka. Last level cache (LLC) that
-> allows non-coherent devices to upgrade to using caching.
-> This cache sits right before the DDR, and is tightly coupled
-> with the memory controller. The clients using this cache request
-> their slices from this system cache, make it active, and can then
-> start using it.
+On Wed, May 22, 2019 at 09:20:52PM -0300, Jason Gunthorpe wrote:
+> On Wed, May 22, 2019 at 02:49:28PM +0100, Dave Martin wrote:
+> > On Tue, May 21, 2019 at 03:48:56PM -0300, Jason Gunthorpe wrote:
+> > > On Fri, May 17, 2019 at 03:49:31PM +0100, Catalin Marinas wrote:
+> > > 
+> > > > The tagged pointers (whether hwasan or MTE) should ideally be a
+> > > > transparent feature for the application writer but I don't think we can
+> > > > solve it entirely and make it seamless for the multitude of ioctls().
+> > > > I'd say you only opt in to such feature if you know what you are doing
+> > > > and the user code takes care of specific cases like ioctl(), hence the
+> > > > prctl() proposal even for the hwasan.
+> > > 
+> > > I'm not sure such a dire view is warrented.. 
+> > > 
+> > > The ioctl situation is not so bad, other than a few special cases,
+> > > most drivers just take a 'void __user *' and pass it as an argument to
+> > > some function that accepts a 'void __user *'. sparse et al verify
+> > > this. 
+> > > 
+> > > As long as the core functions do the right thing the drivers will be
+> > > OK.
+> > > 
+> > > The only place things get dicy is if someone casts to unsigned long
+> > > (ie for vma work) but I think that reflects that our driver facing
+> > > APIs for VMAs are compatible with static analysis (ie I have no
+> > > earthly idea why get_user_pages() accepts an unsigned long), not that
+> > > this is too hard.
+> > 
+> > If multiple people will care about this, perhaps we should try to
+> > annotate types more explicitly in SYSCALL_DEFINEx() and ABI data
+> > structures.
+> > 
+> > For example, we could have a couple of mutually exclusive modifiers
+> > 
+> > T __object *
+> > T __vaddr * (or U __vaddr)
+> > 
+> > In the first case the pointer points to an object (in the C sense)
+> > that the call may dereference but not use for any other purpose.
 > 
-> There is a fundamental assumption that non-coherent devices can't
-> access caches. This change adds an exception where they *can* use
-> some level of cache despite still being non-coherent overall.
-> The coherent devices that use cacheable memory, and CPU make use of
-> this system cache by default.
+> How would you use these two differently?
 > 
-> Looking at memory types, we have following -
-> a) Normal uncached :- MAIR 0x44, inner non-cacheable,
->                        outer non-cacheable;
-> b) Normal cached :-   MAIR 0xff, inner read write-back non-transient,
->                        outer read write-back non-transient;
->                        attribute setting for coherenet I/O devices.
-> and, for non-coherent i/o devices that can allocate in system cache
-> another type gets added -
-> c) Normal sys-cached :- MAIR 0xf4, inner non-cacheable,
->                          outer read write-back non-transient
-> 
-> Coherent I/O devices use system cache by marking the memory as
-> normal cached.
-> Non-coherent I/O devices should mark the memory as normal
-> sys-cached in page tables to use system cache.
-> 
-> Signed-off-by: Vivek Gautam <vivek.gautam@codeaurora.org>
+> So far the kernel has worked that __user should tag any pointer that
+> is from userspace and then you can't do anything with it until you
+> transform it into a kernel something
 
-Acked-by: Robin Murphy <robin.murphy@arm.com>
+Ultimately it would be good to disallow casting __object pointers execpt
+to compatible __object pointer types, and to make get_user etc. demand
+__object.
 
-There's a remote possibility that the IOMMU prot flag might be able to 
-be somewhat generalised in future for panfrost, as Mali appears to have 
-some pretty funky notions of cacheability, but this certainly looks fine 
-for now, thanks.
+__vaddr pointers / addresses would be freely castable, but not to
+__object and so would not be dereferenceable even indirectly.
 
-Robin.
+Or that's the general idea.  Figuring out a sane set of rules that we
+could actually check / enforce would require a bit of work.
 
-> ---
+(Whether the __vaddr base type is a pointer or an integer type is
+probably moot, due to the restrictions we would place on the use of
+these anyway.)
+
+> > to tell static analysers the real type of pointers smuggled through
+> > UAPI disguised as other types (*cough* KVM, etc.)
 > 
-> V3 version of this patch and related series can be found at [1].
-> V4 of this patch is available at [2].
-> 
-> The example usage of how a smmu master can make use of this protection
-> flag and set the correct memory attributes to start using system cache,
-> can be found at [3]; and here at [3] IOMMU_UPSTREAM_HINT is same as
-> IOMMU_QCOM_SYS_CACHE.
-> 
-> Changes since v4:
->   - Changed ARM_LPAE_MAIR_ATTR_QCOM_SYS_CACHE to
->     ARM_LPAE_MAIR_ATTR_INC_OWBRWA.
->   - Changed ARM_LPAE_MAIR_ATTR_IDX_QCOM_SYS_CACHE to
->     ARM_LPAE_MAIR_ATTR_IDX_INC_OCACHE.
->   - Added comments to iommu protection flag - IOMMU_QCOM_SYS_CACHE.
-> 
-> Changes since v3:
->   - Dropping support to cache i/o page tables to system cache. Getting support
->     for data buffers is the first step.
->     Removed io-pgtable quirk and related change to add domain attribute.
-> 
-> Glmark2 numbers on SDM845 based cheza board:
-> 
-> S.No.|	with LLC support   |	without LLC support
->       |	for data buffers   |
-> ---------------------------------------------------		
-> 1    |	4480; 72.3fps      |	4042; 65.2fps
-> 2    |	4500; 72.6fps      |	4039; 65.1fps
-> 3    |	4523; 72.9fps	   |	4106; 66.2fps
-> 4    |	4489; 72.4fps	   |	4104; 66.2fps
-> 5    |	4518; 72.9fps	   |	4072; 65.7fps
-> 
-> [1] https://patchwork.kernel.org/cover/10772629/
-> [2] https://lore.kernel.org/patchwork/patch/1072936/
-> [3] https://patchwork.kernel.org/patch/10302791/
-> 
->   drivers/iommu/io-pgtable-arm.c | 9 ++++++++-
->   include/linux/iommu.h          | 6 ++++++
->   2 files changed, 14 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
-> index 4e21efbc4459..2454ac11aa97 100644
-> --- a/drivers/iommu/io-pgtable-arm.c
-> +++ b/drivers/iommu/io-pgtable-arm.c
-> @@ -167,10 +167,12 @@
->   #define ARM_LPAE_MAIR_ATTR_MASK		0xff
->   #define ARM_LPAE_MAIR_ATTR_DEVICE	0x04
->   #define ARM_LPAE_MAIR_ATTR_NC		0x44
-> +#define ARM_LPAE_MAIR_ATTR_INC_OWBRWA	0xf4
->   #define ARM_LPAE_MAIR_ATTR_WBRWA	0xff
->   #define ARM_LPAE_MAIR_ATTR_IDX_NC	0
->   #define ARM_LPAE_MAIR_ATTR_IDX_CACHE	1
->   #define ARM_LPAE_MAIR_ATTR_IDX_DEV	2
-> +#define ARM_LPAE_MAIR_ATTR_IDX_INC_OCACHE	3
->   
->   #define ARM_MALI_LPAE_TTBR_ADRMODE_TABLE (3u << 0)
->   #define ARM_MALI_LPAE_TTBR_READ_INNER	BIT(2)
-> @@ -470,6 +472,9 @@ static arm_lpae_iopte arm_lpae_prot_to_pte(struct arm_lpae_io_pgtable *data,
->   		else if (prot & IOMMU_CACHE)
->   			pte |= (ARM_LPAE_MAIR_ATTR_IDX_CACHE
->   				<< ARM_LPAE_PTE_ATTRINDX_SHIFT);
-> +		else if (prot & IOMMU_QCOM_SYS_CACHE)
-> +			pte |= (ARM_LPAE_MAIR_ATTR_IDX_INC_OCACHE
-> +				<< ARM_LPAE_PTE_ATTRINDX_SHIFT);
->   	}
->   
->   	if (prot & IOMMU_NOEXEC)
-> @@ -857,7 +862,9 @@ arm_64_lpae_alloc_pgtable_s1(struct io_pgtable_cfg *cfg, void *cookie)
->   	      (ARM_LPAE_MAIR_ATTR_WBRWA
->   	       << ARM_LPAE_MAIR_ATTR_SHIFT(ARM_LPAE_MAIR_ATTR_IDX_CACHE)) |
->   	      (ARM_LPAE_MAIR_ATTR_DEVICE
-> -	       << ARM_LPAE_MAIR_ATTR_SHIFT(ARM_LPAE_MAIR_ATTR_IDX_DEV));
-> +	       << ARM_LPAE_MAIR_ATTR_SHIFT(ARM_LPAE_MAIR_ATTR_IDX_DEV)) |
-> +	      (ARM_LPAE_MAIR_ATTR_INC_OWBRWA
-> +	       << ARM_LPAE_MAIR_ATTR_SHIFT(ARM_LPAE_MAIR_ATTR_IDX_INC_OCACHE));
->   
->   	cfg->arm_lpae_s1_cfg.mair[0] = reg;
->   	cfg->arm_lpae_s1_cfg.mair[1] = 0;
-> diff --git a/include/linux/iommu.h b/include/linux/iommu.h
-> index a815cf6f6f47..8ee3fbaf5855 100644
-> --- a/include/linux/iommu.h
-> +++ b/include/linux/iommu.h
-> @@ -41,6 +41,12 @@
->    * if the IOMMU page table format is equivalent.
->    */
->   #define IOMMU_PRIV	(1 << 5)
-> +/*
-> + * Non-coherent masters on few Qualcomm SoCs can use this page protection flag
-> + * to set correct cacheability attributes to use an outer level of cache -
-> + * last level cache, aka system cache.
-> + */
-> +#define IOMMU_QCOM_SYS_CACHE	(1 << 6)
->   
->   struct iommu_ops;
->   struct iommu_group;
-> 
+> Yes, that would help alot, we often have to pass pointers through a
+> u64 in the uAPI, and there is no static checker support to make sure
+> they are run through the u64_to_user_ptr() helper.
+
+Agreed.
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
