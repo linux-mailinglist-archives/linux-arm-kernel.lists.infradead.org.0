@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDF5A278CE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 11:07:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C1F3278CF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 11:07:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=x2mLDNcKr2AWKBAIIv4mlkeHi/RKYFNQro97HYP9Mr0=; b=FTo0R5z0JidGJBH8F+mecwYALu
-	OxcyllT1iO7sHkZtqOrCu09q5a7gaig1/VvF4gWV6C4yqdnPPS6NFAYCEptpre0tOVM9hyOzOdOXP
-	ErfoBkSkmcNOhBLNsy8xaAeIf/ReY5eUo6PtwWAkasgaajkP3GIur4oXFe4EiKcOV62SkTFOQj4nr
-	jtzh3tPjFJzHQrc8GeX7kOastTl1E+aYiR90ldEFsN4IJmE9i7fyM1MYdK2L+aSg1xOR6uynQdjKC
-	wh2nhZfWj8JJ8dGT6TOMNt7VHmdUjQPPQFxmjxYgQMX5kRoZuLkwcGHuDAemKQv7Px5MZP60a/qHi
-	R+FZOMbA==;
+	bh=eAYQBvwqc2CE9qf7RYBQPqcQg7faUGKbD/vlaD32GWY=; b=hVa2TVSCOEN5j4r4gCQggjpSRk
+	E2/NgEIfKRQRiN2wRSpUZU/fqUldmfAEArvtvCvapnRH0KgsGuwSv6QHnP1XSApNM/+rtw6ub28hS
+	yk7wISwJQJg3pgxPwxCA8hZXMTt0CZWmu9iy0HnRcvlAx/swnlC6Hk6sn4h1+J47elva0rQICmuNl
+	Fq/3N/0ZJyoy3+JZyREeAd0TyQxnhLn6jgf/WEIiHLC46qr0TFG3UdfBTjjEgd0+vGuo1gcVmfELX
+	uXd/eJTY0yju4SRn6h2b5a2fEmcg9mh4LrW5YDPfW62KUnde1mbeQeFPMzPE2lOBKgIgSBp3oCHeN
+	DJ1j/LJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTjgp-0004Oy-Ll; Thu, 23 May 2019 09:07:07 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
+	id 1hTjh1-0004dJ-VK; Thu, 23 May 2019 09:07:19 +0000
+Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTjgL-0003y9-PG
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 09:06:41 +0000
+ id 1hTjgO-00041P-62
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 09:06:44 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 66D1515AB;
- Thu, 23 May 2019 02:06:37 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C296015BF;
+ Thu, 23 May 2019 02:06:39 -0700 (PDT)
 Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id B9A643F575;
- Thu, 23 May 2019 02:06:34 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A698E3F575;
+ Thu, 23 May 2019 02:06:37 -0700 (PDT)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: x86@kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v4 2/4] x86: simplify _TIF_SYSCALL_EMU handling
-Date: Thu, 23 May 2019 10:06:16 +0100
-Message-Id: <20190523090618.13410-3-sudeep.holla@arm.com>
+Subject: [PATCH v4 3/4] arm64: add PTRACE_SYSEMU{,
+ SINGLESTEP} definations to uapi headers
+Date: Thu, 23 May 2019 10:06:17 +0100
+Message-Id: <20190523090618.13410-4-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190523090618.13410-1-sudeep.holla@arm.com>
 References: <20190523090618.13410-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_020638_125134_3585876B 
-X-CRM114-Status: GOOD (  14.06  )
+X-CRM114-CacheID: sfid-20190523_020640_647167_43B0D903 
+X-CRM114-Status: GOOD (  10.81  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -67,62 +67,46 @@ Cc: Haibo Xu <haibo.xu@arm.com>, Steve Capper <Steve.Capper@arm.com>,
  Richard Weinberger <richard@nod.at>, jdike@addtoit.com,
  Sudeep Holla <sudeep.holla@arm.com>, Will Deacon <will.deacon@arm.com>,
  Oleg Nesterov <oleg@redhat.com>, Bin Lu <bin.lu@arm.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Thomas Gleixner <tglx@linutronix.de>
+ Catalin Marinas <catalin.marinas@arm.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The usage of emulated/_TIF_SYSCALL_EMU flags in syscall_trace_enter
-seems to be bit overcomplicated than required. Let's simplify it.
+x86 and um use 31 and 32 for PTRACE_SYSEMU and PTRACE_SYSEMU_SINGLESTEP
+while powerpc uses different value maybe for legacy reasons.
 
-Cc: Andy Lutomirski <luto@kernel.org>
-Cc: Thomas Gleixner <tglx@linutronix.de>
-Cc: Ingo Molnar <mingo@redhat.com>
-Cc: Borislav Petkov <bp@alien8.de>
-Acked-by: Oleg Nesterov <oleg@redhat.com>
+Though handling of PTRACE_SYSEMU can be made architecture independent,
+it's hard to make these definations generic. To add to this existing
+mess few architectures like arm, c6x and sh use 31 for PTRACE_GETFDPIC
+(get the ELF fdpic loadmap address). It's not possible to move the
+definations to generic headers.
+
+So we unfortunately have to duplicate the same defination to ARM64 if
+we need to support PTRACE_SYSEMU and PTRACE_SYSEMU_SINGLESTEP.
+
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will.deacon@arm.com>
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- arch/x86/entry/common.c | 17 ++++++-----------
- 1 file changed, 6 insertions(+), 11 deletions(-)
+ arch/arm64/include/uapi/asm/ptrace.h | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/arch/x86/entry/common.c b/arch/x86/entry/common.c
-index a986b3c8294c..0a61705d62ec 100644
---- a/arch/x86/entry/common.c
-+++ b/arch/x86/entry/common.c
-@@ -72,23 +72,18 @@ static long syscall_trace_enter(struct pt_regs *regs)
+diff --git a/arch/arm64/include/uapi/asm/ptrace.h b/arch/arm64/include/uapi/asm/ptrace.h
+index d78623acb649..627ac57c1581 100644
+--- a/arch/arm64/include/uapi/asm/ptrace.h
++++ b/arch/arm64/include/uapi/asm/ptrace.h
+@@ -62,6 +62,9 @@
+ #define PSR_x		0x0000ff00	/* Extension		*/
+ #define PSR_c		0x000000ff	/* Control		*/
  
- 	struct thread_info *ti = current_thread_info();
- 	unsigned long ret = 0;
--	bool emulated = false;
- 	u32 work;
++/* syscall emulation path in ptrace */
++#define PTRACE_SYSEMU		  31
++#define PTRACE_SYSEMU_SINGLESTEP  32
  
- 	if (IS_ENABLED(CONFIG_DEBUG_ENTRY))
- 		BUG_ON(regs != task_pt_regs(current));
+ #ifndef __ASSEMBLY__
  
--	work = READ_ONCE(ti->flags) & _TIF_WORK_SYSCALL_ENTRY;
-+	work = READ_ONCE(ti->flags);
- 
--	if (unlikely(work & _TIF_SYSCALL_EMU))
--		emulated = true;
--
--	if ((emulated || (work & _TIF_SYSCALL_TRACE)) &&
--	    tracehook_report_syscall_entry(regs))
--		return -1L;
--
--	if (emulated)
--		return -1L;
-+	if (work & (_TIF_SYSCALL_TRACE | _TIF_SYSCALL_EMU)) {
-+		ret = tracehook_report_syscall_entry(regs);
-+		if (ret || (work & _TIF_SYSCALL_EMU))
-+			return -1L;
-+	}
- 
- #ifdef CONFIG_SECCOMP
- 	/*
 -- 
 2.17.1
 
