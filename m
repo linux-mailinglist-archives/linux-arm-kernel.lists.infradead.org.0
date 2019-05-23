@@ -2,88 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56E3D28C5B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 23:31:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CEE528C86
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 23:43:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZPuIc+FAhcFEQ3qzzEhfcrA53IXP7qfARCi7Xrf15V8=; b=OLruXy9u3sNni/
-	gAHJJRY9aHjkpG3gvHKX8ECHooEsT14YAAzM14YT7OozhPdPrcLjMINkMvu09vEP/chpoeDR2jSRd
-	tQttrgxNyzfjs5eE8d48h211DajtUgYIKwJVK8L5ESgqO4RR6Up+rK+qOIWELNtGVD5Q7ZT1gIolC
-	0A/clLMgaQqgvBA0W1B9MCbZ0dBoWMQPVxymuPvByr26X4sEVP/8jSYxcwn+n/C6FPOc7bfgql/Sa
-	efvVeRuwGf+/n9xQ+RGAPdMXz4kdlkKEe2ejwnDzu793ja3+sfWevRKg23+tzyFopAMAX9t59uWhG
-	XkhR0xVrUbzY27SYX8jg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KqHdSWoYGajLImGifoTBQNpR0ivY2fwDWInDAb5kshA=; b=G5A1mXtnI1Mw8n
+	7a+HZ9aFB7e5+SkaGE3EQXkaQW1H6cTO1nbD6u8dyEP+I+7D/X0NIWmD9sBUppeuoEIc2T4LD6lak
+	tXIEcggxk1NvwG796U4L0GRgY5D8UmaC3I1hyo1pDR4ZUgum/Ol8gcBSTLa9qVSQY+OM8Q2XIGPJD
+	RjfTCEg2q5h3Gjx7yjxhEwaxVbifT3yD9F/89iwICvUo9kS4fWMYWLyl1+pPtj83lv781p+AkWAZY
+	KrsSRjDKCWrmQlf12cGUKE0icEjmqlBLzU3Fo4PE6h2yOQvglUjT0PQfZRHYhtiHIlprm7CysbTwa
+	yMyYlvmYBFzFQ+wp5JUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTvJB-0007Eo-Ae; Thu, 23 May 2019 21:31:29 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hTvUW-0002c5-SA; Thu, 23 May 2019 21:43:12 +0000
+Received: from aserp2130.oracle.com ([141.146.126.79])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTvJ2-0007Dp-9K
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 21:31:22 +0000
-Received: by mail-pg1-x542.google.com with SMTP id w22so3787077pgi.6
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 23 May 2019 14:31:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=RooTx4nZ0Zm8m1fxzq6UPxwDmwN2R9frxfJHiTxcRUE=;
- b=SXshT/JWt4/VxFaxzUCPBis/uU7CKJhnvqILKuBvKuHgZM/0X3lQPlS9BrcA9GPwgN
- mNP52DBHjW70HoXLGw3kCTAML6GHF8r2zv6T7pohAbgiWS2GBzlP+CcIwmEuaO+qZxq4
- C2Jko0HEb2Ra0I9vlZLyIy+YOud56hz3nr/kE=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=RooTx4nZ0Zm8m1fxzq6UPxwDmwN2R9frxfJHiTxcRUE=;
- b=apb5PjIR3b1X5l0pUhWIkBHdn5Jg33GN0hA7Q9Xul1+OLu9e8pI8bhUxoqM0MhIQeY
- WWQGYNVdg/CHFDN5AYlCXZfz3NQPRVzJvgV9u4PpaZJ6iZBoK6wWfGTSGNQdIUDhyIVl
- naPMkY6zFarcRMQJFA5A/uZynjM5WrVSo20d8TzIF8cY3WAPGouYehOeIuB8eYzY+e4P
- Kctu1VQc+BMm3Yc8+GlgwiwWUXttxOO7tT8On+jZ9vqYGI7orkfp3eorLyBhNsg9gC1b
- 98lEdKdgn3az4NlFj9qRuB3kmU55UIDxL2jXG7ZdACJWj8v/+ibfXmuY9Ieu2NCuT4kU
- AYqw==
-X-Gm-Message-State: APjAAAXf6PB4ke9xWgQGEXyDbdku0hnUsC62G1nvQT9RAswBeDFkV4J2
- I/VTYK50yK7ITe90vHDz6vMIgA==
-X-Google-Smtp-Source: APXvYqw6NOt/dAzFGypTG6hDOH9RhK81m8D3qkjrLvBMN1nJLO77YhSc++d1DOA7/Z/CI2DiFH6JYA==
-X-Received: by 2002:a63:2226:: with SMTP id i38mr5980879pgi.403.1558647079048; 
- Thu, 23 May 2019 14:31:19 -0700 (PDT)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id f186sm406654pfb.5.2019.05.23.14.31.17
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 23 May 2019 14:31:17 -0700 (PDT)
-Date: Thu, 23 May 2019 14:31:16 -0700
-From: Kees Cook <keescook@chromium.org>
-To: Catalin Marinas <catalin.marinas@arm.com>
+ id 1hTvUP-0002b2-F0
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 21:43:07 +0000
+Received: from pps.filterd (aserp2130.oracle.com [127.0.0.1])
+ by aserp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x4NLYrP6194020;
+ Thu, 23 May 2019 21:42:41 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2018-07-02;
+ bh=fChv2jZysnH0YR2y5rlBhLoHF4XJSOv5yE7IjBMa6MI=;
+ b=i5j6lJ3z4Hf6Mwe1uFCyW+Dx0BGc6CLgnMT05UhOAfwtXEFuubZ+5cv8bNXRQH8SGgIo
+ 3OyLnYWAZcw9X87yhv0YScSmwlfD77yg0wTvg1PD2uhxSUM5Gy8pVikHFeRo6px2TaaX
+ 1T5zqOZo/S3v8s0hewcbGZ3eIMfGRoZXC5u4QclbQcN+yRHCnMRvFytz7HBe/xVcQAjJ
+ q7QGNHrFLf5im7IlibITLPPps1G2JhmeRisj45eynyh1gJCP32P+yM8kZMYnSTS9vT+Y
+ qf/xCuv9cZn8I8m8yv46kQ4CowM5trlHuA6dN6lqyIZI05Jf3nu9oHXNSoc9l5912SdM mQ== 
+Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
+ by aserp2130.oracle.com with ESMTP id 2smsk5n8d7-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 23 May 2019 21:42:41 +0000
+Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
+ by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x4NLfaot156717;
+ Thu, 23 May 2019 21:42:41 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+ by aserp3030.oracle.com with ESMTP id 2smsgtgmuy-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 23 May 2019 21:42:41 +0000
+Received: from abhmp0003.oracle.com (abhmp0003.oracle.com [141.146.116.9])
+ by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x4NLgaOB031829;
+ Thu, 23 May 2019 21:42:37 GMT
+Received: from [192.168.1.16] (/24.9.64.241)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Thu, 23 May 2019 21:42:36 +0000
 Subject: Re: [PATCH v15 00/17] arm64: untag user pointers passed to the kernel
-Message-ID: <201905231327.77CA8D0A36@keescook>
-References: <CAFKCwrj6JEtp4BzhqO178LFJepmepoMx=G+YdC8sqZ3bcBp3EQ@mail.gmail.com>
- <20190521182932.sm4vxweuwo5ermyd@mbp>
- <201905211633.6C0BF0C2@keescook>
- <20190522101110.m2stmpaj7seezveq@mbp>
- <CAJgzZoosKBwqXRyA6fb8QQSZXFqfHqe9qO9je5TogHhzuoGXJQ@mail.gmail.com>
- <20190522163527.rnnc6t4tll7tk5zw@mbp>
- <201905221316.865581CF@keescook>
- <20190523144449.waam2mkyzhjpqpur@mbp>
- <201905230917.DEE7A75EF0@keescook>
- <20190523174345.6sv3kcipkvlwfmox@mbp>
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <cover.1557160186.git.andreyknvl@google.com>
+ <20190517144931.GA56186@arrakis.emea.arm.com>
+ <CAFKCwrj6JEtp4BzhqO178LFJepmepoMx=G+YdC8sqZ3bcBp3EQ@mail.gmail.com>
+ <20190521182932.sm4vxweuwo5ermyd@mbp> <201905211633.6C0BF0C2@keescook>
+ <6049844a-65f5-f513-5b58-7141588fef2b@oracle.com>
+ <20190523201105.oifkksus4rzcwqt4@mbp>
+From: Khalid Aziz <khalid.aziz@oracle.com>
+Organization: Oracle Corp
+Message-ID: <047e3b90-d73e-0ca8-869c-d03b7580e644@oracle.com>
+Date: Thu, 23 May 2019 15:42:33 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190523174345.6sv3kcipkvlwfmox@mbp>
+In-Reply-To: <20190523201105.oifkksus4rzcwqt4@mbp>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9266
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1905230138
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9266
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
+ definitions=main-1905230138
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_143120_395974_A961A436 
-X-CRM114-Status: GOOD (  27.74  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190523_144305_595617_CDE3253B 
+X-CRM114-Status: GOOD (  23.14  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [141.146.126.79 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -107,14 +120,13 @@ Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
  Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
  dri-devel@lists.freedesktop.org,
  Linux Memory Management List <linux-mm@kvack.org>,
- Khalid Aziz <khalid.aziz@oracle.com>,
  "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
  Vincenzo Frascino <vincenzo.frascino@arm.com>,
  Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
  linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
  Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
  Evgenii Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kevin Brodsky <kevin.brodsky@arm.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
  Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
  Andrey Konovalov <andreyknvl@google.com>,
  Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
@@ -127,7 +139,7 @@ Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
  Felix Kuehling <Felix.Kuehling@amd.com>, LKML <linux-kernel@vger.kernel.org>,
  Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
  Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Elliott Hughes <enh@google.com>,
  Robin Murphy <robin.murphy@arm.com>,
  Christian Koenig <Christian.Koenig@amd.com>,
  Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
@@ -136,106 +148,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 23, 2019 at 06:43:46PM +0100, Catalin Marinas wrote:
-> On Thu, May 23, 2019 at 09:38:19AM -0700, Kees Cook wrote:
-> > What on this front would you be comfortable with? Given it's a new
-> > feature isn't it sufficient to have a CONFIG (and/or boot option)?
+On 5/23/19 2:11 PM, Catalin Marinas wrote:
+> Hi Khalid,
 > 
-> I'd rather avoid re-building kernels. A boot option would do, unless we
-> see value in a per-process (inherited) personality or prctl. The
-
-I think I've convinced myself that the normal<->TBI ABI control should
-be a boot parameter. More below...
-
-> > What about testing tools that intentionally insert high bits for syscalls
-> > and are _expecting_ them to fail? It seems the TBI series will break them?
-> > In that case, do we need to opt into TBI as well?
+> On Thu, May 23, 2019 at 11:51:40AM -0600, Khalid Aziz wrote:
+>> On 5/21/19 6:04 PM, Kees Cook wrote:
+>>> As an aside: I think Sparc ADI support in Linux actually side-stepped
+>>> this[1] (i.e. chose "solution 1"): "All addresses passed to kernel must
+>>> be non-ADI tagged addresses." (And sadly, "Kernel does not enable ADI
+>>> for kernel code.") I think this was a mistake we should not repeat for
+>>> arm64 (we do seem to be at least in agreement about this, I think).
+>>>
+>>> [1] https://lore.kernel.org/patchwork/patch/654481/
+>>
+>> That is a very early version of the sparc ADI patch. Support for tagged
+>> addresses in syscalls was added in later versions and is in the patch
+>> that is in the kernel.
 > 
-> If there are such tools, then we may need a per-process control. It's
-> basically an ABI change.
+> I tried to figure out but I'm not familiar with the sparc port. How did
+> you solve the tagged address going into various syscall implementations
+> in the kernel (e.g. sys_write)? Is the tag removed on kernel entry or it
+> ends up deeper in the core code?
 
-syzkaller already attempts to randomly inject non-canonical and
-0xFFFF....FFFF addresses for user pointers in syscalls in an effort to
-find bugs like CVE-2017-5123 where waitid() via unchecked put_user() was
-able to write directly to kernel memory[1].
+Tag is not removed from the user addresses. Kernel passes tagged
+addresses to copy_from_user and copy_to_user. MMU checks the tag
+embedded in the address when kernel accesses userspace addresses. This
+maintains the ADI integrity even when userspace attempts to access any
+userspace addresses through system calls.
 
-It seems that using TBI by default and not allowing a switch back to
-"normal" ABI without a reboot actually means that userspace cannot inject
-kernel pointers into syscalls any more, since they'll get universally
-stripped now. Is my understanding correct, here? i.e. exploiting
-CVE-2017-5123 would be impossible under TBI?
+On sparc, access_ok() is defined as:
 
-If so, then I think we should commit to the TBI ABI and have a boot
-flag to disable it, but NOT have a process flag, as that would allow
-attackers to bypass the masking. The only flag should be "TBI or MTE".
+#define access_ok(addr, size) __access_ok((unsigned long)(addr), size)
+#define __access_ok(addr, size) (__user_ok((addr) & get_fs().seg, (size)))
+#define __user_ok(addr, size) ({ (void)(size); (addr) < STACK_TOP; })
 
-If so, can I get top byte masking for other architectures too? Like,
-just to strip high bits off userspace addresses? ;)
+STACK_TOP for M7 processor (which is the first sparc processor to
+support ADI) is 0xfff8000000000000UL. Tagged addresses pass the
+access_ok() check fine. Any tag mismatches that happen during kernel
+access to userspace addresses are handled by do_mcd_err().
 
-(Oh, in looking I see this is implemented with sign-extension... why
-not just a mask? So it'll either be valid userspace address or forced
-into the non-canonical range?)
+--
+Khalid
 
-[1] https://salls.github.io/Linux-Kernel-CVE-2017-5123/
-
-> > Alright, the tl;dr appears to be:
-> > - you want more assurances that we can find __user stripping in the
-> >   kernel more easily. (But this seems like a parallel problem.)
-> 
-> Yes, and that we found all (most) cases now. The reason I don't see it
-> as a parallel problem is that, as maintainer, I promise an ABI to user
-> and I'd rather stick to it. I don't want, for example, ncurses to stop
-> working because of some ioctl() rejecting tagged pointers.
-
-But this is what I don't understand: it would need to be ncurses _using
-TBI_, that would stop working (having started to work before, but then
-regress due to a newly added one-off bug). Regular ncurses will be fine
-because it's not using TBI. So The Golden Rule isn't violated, and by
-definition, it's a specific regression caused by some bug (since TBI
-would have had to have worked _before_ in the situation to be considered
-a regression now). Which describes the normal path for kernel
-development... add feature, find corner cases where it doesn't work,
-fix them, encounter new regressions, fix those, repeat forever.
-
-> If it's just the occasional one-off bug I'm fine to deal with it. But
-> no-one convinced me yet that this is the case.
-
-You believe there still to be some systemic cases that haven't been
-found yet? And even if so -- isn't it better to work on that
-incrementally?
-
-> As for the generic driver code (filesystems or other subsystems),
-> without some clear direction for developers, together with static
-> checking/sparse, on how user pointers are cast to longs (one example),
-> it would become my responsibility to identify and fix them up with any
-> kernel release. This series is not providing such guidance, just adding
-> untagged_addr() in some places that we think matter.
-
-What about adding a nice bit of .rst documentation that describes the
-situation and shows how to use untagged_addr(). This is the kind of
-kernel-wide change that "everyone" needs to know about, and shouldn't
-be the arch maintainer's sole responsibility to fix.
-
-> > - we might need to opt in to TBI with a prctl()
-> 
-> Yes, although still up for discussion.
-
-I think I've talked myself out of it. I say boot param only! :)
-
-
-So what do you say to these next steps:
-
-- change untagged_addr() to use a static branch that is controlled with
-  a boot parameter.
-- add, say, Documentation/core-api/user-addresses.rst to describe
-  proper care and handling of user space pointers with untagged_addr(),
-  with examples based on all the cases seen so far in this series.
-- continue work to improve static analysis.
-
-Thanks for wading through this with me! :)
-
--- 
-Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
