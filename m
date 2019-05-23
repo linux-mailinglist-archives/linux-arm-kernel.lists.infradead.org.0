@@ -2,83 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EBDB028726
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 21:21:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0466428813
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 21:34:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sLyBtQqtGi3wY2LWiPsDEzjsvOwRk2Lf4zn2yjWDKU8=; b=h1N0l7NYYaumfR
-	yH15MVeDAQFls+JzjEAOZTkGjhZXXsF2OPtSadEpOeM9O2nfW2DoiYvOPdI51Tk6o4UchJ6+cd92V
-	eDdX5dDbZ10OXTeB8qBuGoVrMcZ2Um4BhFnezED5PCRbWoYVdXG1L8TnPLH2ePVn2LgosfBSFP2M4
-	usu/hA5/C7GvM159LtkMsFrD9rg9Vno2opJ3i8AkPwKLx9hqSUpJ8ITdBhGJIKVEbQaJk7hr0aTJl
-	70R1yFWyRbPmAWjRWKs7xubylJliHHzVPikHE0KJ70HJE9555z6bhkj35Iy8eqbWgMIisafYQkK1c
-	SoY4v9+7VXttJTtORgzg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EkQ1pVIcdXX1ZjtJN7zIg4U7XIil2B1L0zVvfrwmU0M=; b=r9+VY+MXJLHfGY
+	Og+lOf4xq2Wj62FhQFa+eWG7hgAWJQhWHweGccAY8wWfng2UOLKeJ+qrC/+CV2spehKDE+5DNk5IB
+	j5w0Q8j3lJJRotOD2mNhBMyhwOKP8ySnISzUiMeMLbGB3jjWX8aiX9DxMX0r62QbfncsfDKv7Bbym
+	/gH2zmgHAdQI+xvuoIiHDXHS+5qCXK+f8s8ithdztvR/ATCS6x/IbYmCiLuSTCZjWVbnVPsZBqHno
+	CKEU54kxpW+kU1secuf4xKRQIZpS5uwrfxZuyAwMuwByePQOikqHwpBiSAJ7l+fkZPxGe5/A3+wZx
+	VwjKf2A9PE+Aak4Yoh+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTtHn-0004Ny-W1; Thu, 23 May 2019 19:21:56 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1hTtU2-0000WD-Nl; Thu, 23 May 2019 19:34:34 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTtHg-0004Mv-3J
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 19:21:49 +0000
-Received: by mail-wm1-x343.google.com with SMTP id f204so7000668wme.0
+ id 1hTtTv-0000Ue-9S
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 19:34:28 +0000
+Received: by mail-lj1-x241.google.com with SMTP id a10so6571748ljf.6
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 23 May 2019 12:21:47 -0700 (PDT)
+ Thu, 23 May 2019 12:34:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=+AsttdkF/OvZdxrRB18xex+EGbhnUq0bTn8ba7mXT2E=;
- b=MiZVEMh1LahbDicTGKYdAJmetVoDnUx3GPEcti62tJxHXUOHaVciB2jaMaLe8yBS/R
- 9xXsbDyL4uOdwcTOSzrDoxD1BNoGx616C+/EgfHhE5KCrHrxKhxZ9oAW724n6IZCTtFi
- eWCBqodnisibUm2gIruYwXgNd0VBkRyA+SrFzZfeaLCvwq208MI4hxdlchQZGw99cPc8
- 3hHe1wXz/vhlVg7cE/Zn2LHED6Hz/rwrw+kjWY7U8b8p4dON6t7gnO+ZESWETAyFFMB1
- 1kvSb6L5klqCh0jZ7khnkTsC+V5c77H4LiSDORkK9yWf+HUHjad8bgoZFtAG1xCVUr6I
- miKw==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=zEdXi9YQ9/PVR4ABDgc5oGstALKw+UDObwes1f/BG98=;
+ b=VeUasp/nnilSR6G52vcxOnkUGJ5BU1C3y+jVW5I+Sk31loGDYD+0/OPsfjHw47uxRD
+ XrahVXJxoor8ACcJ27z0OySYERZUEw7TzTBWEDU2mGo2DdFb3uIrbTMYcnz/QTQHfwYG
+ +F3f+cK3YX5vYB1mNMAk16hmd5y44YYJuFU7n/VvSwBttfzg15gvV9UYhLSSI25lgXH9
+ 8Dcv1E/j3LZhKUEUXkPCM4sokOXChPvpUfAYb9nIiQ4ODUlM/aekq1QzOTUR+3mYLxCL
+ w3qEh67Z4vDW4/T2Y9ZqmE3+M/TAHoeYBryiLSUXViQg9LWV3ApsJHDm3vuo3ValJI4S
+ vlXw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=+AsttdkF/OvZdxrRB18xex+EGbhnUq0bTn8ba7mXT2E=;
- b=BxaRy8Raeza4o+GxINn9BbFthrbU+1K5GwFz6tLV0yUslmGAtEV7pC++48x33rOS4k
- fV3Gmj0CT/rC5UUzhRzYtC06qVbFNVf6JUullh/TCvvwQGDjl+eymiVJoRl3qdgIytDQ
- Ip4F94JYoYmOQ6IuoJI8MFPtqnJtXyIuiGkwM1JCtcYpzim0m7A0fI0w4K+y+tyIulcw
- XePSm7Qttu+9BDGn/ly9nXLl/wuBAsrXUzjOFYRCBjHyZfzy7Wx2N96wFMPvvQ79etP+
- sElo7aH1C6nWYS2dqiRMDqTNvBF18q0ltXbV2G++1OH/n/bLrdOqw3oxdn1zRkX2v9Zr
- mHdQ==
-X-Gm-Message-State: APjAAAVDWQBeN3TOzJeN4GSdMNZ99ZctQmpDxyYQPCgAf6QEj7hnsBSb
- psDXv+3VOhZJ5kFDU/JIR79M2rkd/FwXAQ==
-X-Google-Smtp-Source: APXvYqwz+aa9cC1mkduutvE6e+qiFfQt6D2M5mN34x6291O7m64ahRcSIK5WD/xERoq280zUbDHX9g==
-X-Received: by 2002:a1c:f61a:: with SMTP id w26mr12956452wmc.47.1558639305630; 
- Thu, 23 May 2019 12:21:45 -0700 (PDT)
-Received: from [192.168.43.165] ([37.170.182.188])
- by smtp.googlemail.com with ESMTPSA id h15sm93457wrs.49.2019.05.23.12.21.44
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 23 May 2019 12:21:45 -0700 (PDT)
-Subject: Re: [PATCH] clocksource/drivers/ixp4xx: Implement delay timer
-To: Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>
-References: <20190523181602.3284-1-linus.walleij@linaro.org>
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
-Message-ID: <3496e81f-ea63-794d-0d8a-8eba9f2f6853@linaro.org>
-Date: Thu, 23 May 2019 21:21:41 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=zEdXi9YQ9/PVR4ABDgc5oGstALKw+UDObwes1f/BG98=;
+ b=FczqCS2fAe9kpr1neGvuo5OFG12fHCgJTZP8FCdkhHjb03dB2l+iyLIIvhIn3+r4Kq
+ y+H2vMbsrP1FFd9bmyQVWrKJEFzSj6TLqNP6esJ4CrxYLEvmpdumuXN+onFjv3kIOxyu
+ hgIAb9aswEMZ/dkjdAZIqen9W9SenKN/vwTRksv5Zx0k1t+U79JYt/x8/hoXUlfnczXw
+ h8cBtaFctQZdpsIwjfDD14lOhtn5gv96xKDYCTTGNpfyyiJTNnoXGvpwMYPvEk4UvITp
+ R6g0O5elIcDH/BP4SwI5K5KYasc0Y1SuPQ99w4DFf8VZiNkQo7d+eJY9ie53V8JVM06+
+ 9FeQ==
+X-Gm-Message-State: APjAAAUAcs124m1/B91sPhlFG9YUAhwCMOZblwDnNx6Le34Mp3dMuN9R
+ 9azg9/urbPRcFM+CgOJ+e0t7gm25qLFupxlQicc3/iIW
+X-Google-Smtp-Source: APXvYqxS49q1gB/9+MX0Pw4nbYPSIUWDf6r45GnAk81uVyDOoTg2BLY0kTVzeVnskN1RmSdLk4myFHA4dwsnUm3QOI0=
+X-Received: by 2002:a2e:874b:: with SMTP id q11mr21679456ljj.48.1558640061895; 
+ Thu, 23 May 2019 12:34:21 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190523181602.3284-1-linus.walleij@linaro.org>
-Content-Language: en-US
+References: <20190523181602.3284-1-linus.walleij@linaro.org>
+ <3496e81f-ea63-794d-0d8a-8eba9f2f6853@linaro.org>
+In-Reply-To: <3496e81f-ea63-794d-0d8a-8eba9f2f6853@linaro.org>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Thu, 23 May 2019 21:34:09 +0200
+Message-ID: <CACRpkdZ5LCeqkvJrN-TAcSy7knNOQhGV7M_wfZZ4Rz5ah87KnA@mail.gmail.com>
+Subject: Re: [PATCH] clocksource/drivers/ixp4xx: Implement delay timer
+To: Daniel Lezcano <daniel.lezcano@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_122148_142066_99F73534 
-X-CRM114-Status: GOOD (  11.82  )
+X-CRM114-CacheID: sfid-20190523_123427_336504_F8BCA4E3 
+X-CRM114-Status: GOOD (  11.08  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -100,21 +91,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Thomas Gleixner <tglx@linutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CkhpIExpbnVzLAoKCk9uIDIzLzA1LzIwMTkgMjA6MTYsIExpbnVzIFdhbGxlaWogd3JvdGU6Cj4g
-VGhpcyBhZGRzIGRlbGF5IHRpbWVyIGZ1bmN0aW9uYWxpdHkgdG8gdGhlIElYUDR4eAo+IHRpbWVy
-IGRyaXZlci4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBMaW51cyBXYWxsZWlqIDxsaW51cy53YWxsZWlq
-QGxpbmFyby5vcmc+CgpUaGUgcGF0Y2ggZG9lcyBub3QgYXBwbHkgb24gdGlwL3RpbWVycy9jb3Jl
-CgoKCgoKLS0gCiA8aHR0cDovL3d3dy5saW5hcm8ub3JnLz4gTGluYXJvLm9yZyDilIIgT3BlbiBz
-b3VyY2Ugc29mdHdhcmUgZm9yIEFSTSBTb0NzCgpGb2xsb3cgTGluYXJvOiAgPGh0dHA6Ly93d3cu
-ZmFjZWJvb2suY29tL3BhZ2VzL0xpbmFybz4gRmFjZWJvb2sgfAo8aHR0cDovL3R3aXR0ZXIuY29t
-LyMhL2xpbmFyb29yZz4gVHdpdHRlciB8CjxodHRwOi8vd3d3LmxpbmFyby5vcmcvbGluYXJvLWJs
-b2cvPiBCbG9nCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtYXJtLWtlcm5lbAo=
+On Thu, May 23, 2019 at 9:21 PM Daniel Lezcano
+<daniel.lezcano@linaro.org> wrote:
+> On 23/05/2019 20:16, Linus Walleij wrote:
+
+> > This adds delay timer functionality to the IXP4xx
+> > timer driver.
+> >
+> > Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+>
+> The patch does not apply on tip/timers/core
+
+This seems to be because tip/timers/core is not yet containing
+the commits from v5.2-rc1.
+
+Maybe I just send my patches too early after the merge window :)
+
+Yours,
+Linus Walleij
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
