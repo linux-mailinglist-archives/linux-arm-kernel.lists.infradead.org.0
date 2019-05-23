@@ -2,58 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC541278BC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 11:04:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12DA3278C4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 11:06:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dvwUwSoDSoIiWMoGgPKg4/lUUiA3Nkyx79VJpfJ9hU4=; b=TwWmv7mEyq4FUo
-	lLLgzsHDgwaS/iscKdWCI76os4EC55DWAyIHqse0rg5aBIIyUc/GH4ALINhZKyvsK51vRVDcEFY/U
-	pNR+QCb04/oJ9m5lDOV9WOhgEySn42FNC19VcclXs7h3z7YyC3N+qCxisTQlKJlG0uBUyIvkr5aHJ
-	edcVUWTCFH0LLXznIdkWyx+xGN1HW4GH6NpGV17E79W8KnRbQ6yr4GYyDXiFtc1WjeVnWWZT4GGpD
-	Y4yEmiPNSfJGZssPnthYYMHnSqM7yvKk6jI/HFva8h5BUlIMybqr8ihqXYYCb44I0qzUAe6oPgu0a
-	vDuNZqG1K7IjdWTUvecg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=nA7FNaEGpW4R1EK3+spQvfjcUmzi/FrByum2jh5ryRs=; b=JIJd5PpSxcPG10s3SrIXtAT+W
+	rjbLDFa51cFc+zlhX68lDojselmLuFdRAkuV1dzW2ZAi4BX6jiTf0REuaYv8gwzkYBK38YWxX3EFx
+	IPeh2ccIVR3sGlmDfOOMyqxT5GeY34eJV8Lj2T/0sRDQrLeOjY9Y+8esMH+sLOK/eZ7zKTjdt0t1h
+	9RkqIaRy/aqKef30hoGFjxJ4eopgmf1wE6BStTowQbQX4FZoOUr2bscLWWO2o7y9ZGh6zzgwcpc8S
+	StC/UPH+4A1pl4IBculq2iLK5aXCcMZj8SJrF1Amykqd7ErH+2YtQkfsUnShINR0ux83Xkw6q6N1D
+	WmMqHgYZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTjeW-0002D9-1w; Thu, 23 May 2019 09:04:44 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTjeP-0002Ci-2G
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 09:04:38 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 409B2341;
- Thu, 23 May 2019 02:04:36 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- A78AC3F575; Thu, 23 May 2019 02:04:30 -0700 (PDT)
-Date: Thu, 23 May 2019 10:04:28 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Evgenii Stepanov <eugenis@google.com>
-Subject: Re: [PATCH v15 05/17] arms64: untag user pointers passed to memory
- syscalls
-Message-ID: <20190523090427.GA44383@arrakis.emea.arm.com>
-References: <cover.1557160186.git.andreyknvl@google.com>
- <00eb4c63fefc054e2c8d626e8fedfca11d7c2600.1557160186.git.andreyknvl@google.com>
- <20190522114910.emlckebwzv2qz42i@mbp>
- <CAFKCwrjyP+x0JJy=qpBFsp4pub3He6UkvU0qnf1UOKt6W1LPRQ@mail.gmail.com>
+	id 1hTjfq-0003hO-Td; Thu, 23 May 2019 09:06:06 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hTjfj-0003h0-LA
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 09:06:01 +0000
+X-Originating-IP: 90.88.22.185
+Received: from localhost (aaubervilliers-681-1-80-185.w90-88.abo.wanadoo.fr
+ [90.88.22.185]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 6583D1C0022;
+ Thu, 23 May 2019 09:05:41 +0000 (UTC)
+Date: Thu, 23 May 2019 11:05:40 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Torsten Duwe <duwe@lst.de>
+Subject: Re: [PATCH 5/6] dt-bindings: Add ANX6345 DP/eDP transmitter binding
+Message-ID: <20190523090540.nhxrjpz3scx6jt23@flea>
+References: <20190523065013.2719D68B05@newverein.lst.de>
+ <20190523065400.BD9EB68B05@newverein.lst.de>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAFKCwrjyP+x0JJy=qpBFsp4pub3He6UkvU0qnf1UOKt6W1LPRQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190523065400.BD9EB68B05@newverein.lst.de>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_020437_120814_02BD3C39 
-X-CRM114-Status: GOOD (  28.73  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190523_020559_843697_58EA6031 
+X-CRM114-Status: GOOD (  21.37  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.197 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -67,95 +61,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org,
- Linux Memory Management List <linux-mm@kvack.org>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
- linux-media@vger.kernel.org, Kevin Brodsky <kevin.brodsky@arm.com>,
- Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>, LKML <linux-kernel@vger.kernel.org>,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ David Airlie <airlied@linux.ie>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
+ Sean Paul <seanpaul@chromium.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
+Content-Type: multipart/mixed; boundary="===============0763820716038186841=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 22, 2019 at 02:16:57PM -0700, Evgenii Stepanov wrote:
-> On Wed, May 22, 2019 at 4:49 AM Catalin Marinas <catalin.marinas@arm.com> wrote:
-> > On Mon, May 06, 2019 at 06:30:51PM +0200, Andrey Konovalov wrote:
-> > > This patch is a part of a series that extends arm64 kernel ABI to allow to
-> > > pass tagged user pointers (with the top byte set to something else other
-> > > than 0x00) as syscall arguments.
-> > >
-> > > This patch allows tagged pointers to be passed to the following memory
-> > > syscalls: brk, get_mempolicy, madvise, mbind, mincore, mlock, mlock2,
-> > > mmap, mmap_pgoff, mprotect, mremap, msync, munlock, munmap,
-> > > remap_file_pages, shmat and shmdt.
-> > >
-> > > This is done by untagging pointers passed to these syscalls in the
-> > > prologues of their handlers.
-> >
-> > I'll go through them one by one to see if we can tighten the expected
-> > ABI while having the MTE in mind.
-> >
-> > > diff --git a/arch/arm64/kernel/sys.c b/arch/arm64/kernel/sys.c
-> > > index b44065fb1616..933bb9f3d6ec 100644
-> > > --- a/arch/arm64/kernel/sys.c
-> > > +++ b/arch/arm64/kernel/sys.c
-> > > @@ -35,10 +35,33 @@ SYSCALL_DEFINE6(mmap, unsigned long, addr, unsigned long, len,
-> > >  {
-> > >       if (offset_in_page(off) != 0)
-> > >               return -EINVAL;
-> > > -
-> > > +     addr = untagged_addr(addr);
-> > >       return ksys_mmap_pgoff(addr, len, prot, flags, fd, off >> PAGE_SHIFT);
-> > >  }
-> >
-> > If user passes a tagged pointer to mmap() and the address is honoured
-> > (or MAP_FIXED is given), what is the expected return pointer? Does it
-> > need to be tagged with the value from the hint?
-> 
-> For HWASan the most convenient would be to use the tag from the hint.
-> But since in the TBI (not MTE) mode the kernel has no idea what
-> meaning userspace assigns to pointer tags, perhaps it should not try
-> to guess, and should return raw (zero-tagged) address instead.
 
-Then, just to relax the ABI for hwasan, shall we simply disallow tagged
-pointers on mmap() arguments? We can leave them in for
-mremap(old_address), madvise().
+--===============0763820716038186841==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="rseevv2olje4ipja"
+Content-Disposition: inline
 
-> > With MTE, we may want to use this as a request for the default colour of
-> > the mapped pages (still under discussion).
-> 
-> I like this - and in that case it would make sense to return the
-> pointer that can be immediately dereferenced without crashing the
-> process, i.e. with the matching tag.
 
-This came up from the Android investigation work where large memory
-allocations (using mmap) could be more efficiently pre-tagged by the
-kernel on page fault. Not sure about the implementation details yet.
+--rseevv2olje4ipja
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
--- 
-Catalin
+On Thu, May 23, 2019 at 08:54:00AM +0200, Torsten Duwe wrote:
+> From: Icenowy Zheng <icenowy@aosc.io>
+>
+> The anx6345 is an ultra-low power DisplayPort/eDP transmitter designed
+> for portable devices.
+>
+> Add a binding document for it.
+>
+> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+> Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
+> Reviewed-by: Rob Herring <robh@kernel.org>
+> Signed-off-by: Torsten Duwe <duwe@suse.de>
+> ---
+>  .../bindings/display/bridge/anx6345.txt       | 56 +++++++++++++++++++
+>  1 file changed, 56 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/bridge/anx6345.txt
+>
+> diff --git a/Documentation/devicetree/bindings/display/bridge/anx6345.txt b/Documentation/devicetree/bindings/display/bridge/anx6345.txt
+> new file mode 100644
+> index 000000000000..e79a11348d11
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/bridge/anx6345.txt
+> @@ -0,0 +1,56 @@
+> +Analogix ANX6345 eDP Transmitter
+> +--------------------------------
+> +
+> +The ANX6345 is an ultra-low power Full-HD eDP transmitter designed for
+> +portable devices.
+> +
+> +Required properties:
+> +
+> + - compatible		: "analogix,anx6345"
+> + - reg			: I2C address of the device
+> + - reset-gpios		: Which GPIO to use for reset
+> + - dvdd12-supply	: Regulator for 1.2V digital core power.
+> + - dvdd25-supply	: Regulator for 2.5V digital core power.
+> +
+> +Optional properties:
+> +
+> + - Video ports for RGB input and eDP output using the DT bindings
+> +   defined in [1]
+
+The output node can be optional, but the input one is probably going
+to be needed all the time, since otherwise you won't be able to fill
+the output port of the upstream device in the graph.
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--rseevv2olje4ipja
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXOZiZAAKCRDj7w1vZxhR
+xVuoAQD8Ba3TZQabw5gulT70AFWp+5Sbt6VGImJ5sGI0rt0q8gD+JlFZu4467xk+
+FfHXnIhv1o34YAkciYHqAXsdLkLl5A4=
+=PktN
+-----END PGP SIGNATURE-----
+
+--rseevv2olje4ipja--
+
+
+--===============0763820716038186841==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0763820716038186841==--
+
