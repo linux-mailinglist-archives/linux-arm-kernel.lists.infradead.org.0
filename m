@@ -2,108 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB25127477
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 04:34:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EEA55274B2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 05:12:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K9bNgP9roPTs4a1Qoql17xUOfiqIWdTi0m42nUqyhVM=; b=suh5i9HVU12HCd
-	f6iUpoTu7/EmzA+MvtPoqn5Yd1kbsk8972XxbMyO0ywsut4+c1MvmP+CdXpNpkwWev9TI5GEFpcad
-	7jGODFrEYbxBD9lu9yFAUmCOISV+1KRZoC74hrvmZK3uFDhArfzuLB8kHm5Vvbfd9UgPzea65YFvc
-	yk4qSXKTtNoDL+UOVcWxbtKoGqChmISFtJjILpd65mFCU1E7AC2XiRwdI8wZJO1fdv2nKOUp0mYi7
-	1BvX4d9MuKmKu4YLotzP0SRVxfrpG0MZmpDOMIGRas/vb5sDFOY+VjaB+IPs7hw8m7tsh3JqPPlMC
-	9hGZbRGGJH0vo/IAPyAw==;
+	List-Owner; bh=rHWO21ImvA9zYZ8fnLFCmPZ5iv+C5gN+qw8b71yeUQU=; b=Y/9m77YiyriTMY
+	2KGDSSk4sFKc+CR6Cajg5aCAmRIN/ssixkuV+Q1m8jhJJcuXHRebhDWSk9ZOtNfLV1u/uWw96Vj+4
+	0Rl7yM8aWTDbzyYZPCiODDNwZiT8T1uHyCtowF0UC91LKA9S5Dg0tmHXJBiZoEijchaoMlSn4+Htj
+	3ez354jDGkER4B3z7/IIMaVUvpUyJqaJD1d65F2zNTx+MbyHnCnDFgYYhUBKWOHhDcoCZ/An2YYsA
+	4l30o9sL0pmmkDo3xM1/87DnuBCikyZOQS0GfxvFh3nCULBqURfgQn4zXsSdOzRxEcXzwNATkQ6XL
+	H1cA5E6r7Sl/q/2MwuzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTdYy-0004v8-Cm; Thu, 23 May 2019 02:34:36 +0000
-Received: from mail-db5eur03on062b.outbound.protection.outlook.com
- ([2a01:111:f400:fe0a::62b]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1hTe9G-000813-8K; Thu, 23 May 2019 03:12:06 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTdY8-00046N-H6
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 02:33:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=b//ZxvIhXEez1zzSZxCUcYIrQDYbYlc30WtJRLcUERU=;
- b=qgq5SILzIokVnyrrljdAetkV5KaiqMsLl0JNpR1di0itL+BeKgFWZrKwHtzpRnuup6YHfcx6eNlxG33hd7Q6NffmoK86boipboHfoQ6bkzUl+mTOPAd6dakoZmqbFwKY/RLbf7fCxY2/U/cv0lVT1MyrhMpk7EH6gUlsD4qIt7c=
-Received: from VI1PR0401MB2237.eurprd04.prod.outlook.com (10.169.132.138) by
- VI1PR0401MB2494.eurprd04.prod.outlook.com (10.168.65.141) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.18; Thu, 23 May 2019 02:33:41 +0000
-Received: from VI1PR0401MB2237.eurprd04.prod.outlook.com
- ([fe80::b091:6395:e853:5986]) by VI1PR0401MB2237.eurprd04.prod.outlook.com
- ([fe80::b091:6395:e853:5986%3]) with mapi id 15.20.1922.016; Thu, 23 May 2019
- 02:33:41 +0000
-From: "Y.b. Lu" <yangbo.lu@nxp.com>
-To: "netdev@vger.kernel.org" <netdev@vger.kernel.org>, Richard Cochran
- <richardcochran@gmail.com>, David Miller <davem@davemloft.net>, Claudiu
- Manoil <claudiu.manoil@nxp.com>, Shawn Guo <shawnguo@kernel.org>, Rob Herring
- <robh+dt@kernel.org>, Alexandru Marginean <alexandru.marginean@nxp.com>
-Subject: [PATCH net-next v2, 4/4] arm64: dts: fsl: ls1028a: add ENETC 1588
- timer node
-Thread-Topic: [PATCH net-next v2, 4/4] arm64: dts: fsl: ls1028a: add ENETC
- 1588 timer node
-Thread-Index: AQHVEQ/vPTs5mfNGK0egcnpKtIEjVA==
-Date: Thu, 23 May 2019 02:33:41 +0000
-Message-ID: <20190523023451.2933-5-yangbo.lu@nxp.com>
-References: <20190523023451.2933-1-yangbo.lu@nxp.com>
-In-Reply-To: <20190523023451.2933-1-yangbo.lu@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: HK2PR04CA0053.apcprd04.prod.outlook.com
- (2603:1096:202:14::21) To VI1PR0401MB2237.eurprd04.prod.outlook.com
- (2603:10a6:800:27::10)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=yangbo.lu@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: git-send-email 2.17.1
-x-originating-ip: [119.31.174.73]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: b900c2f2-f138-4b41-fc08-08d6df2711a8
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR0401MB2494; 
-x-ms-traffictypediagnostic: VI1PR0401MB2494:
-x-microsoft-antispam-prvs: <VI1PR0401MB24941CD3ACE777C886CF456DF8010@VI1PR0401MB2494.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1079;
-x-forefront-prvs: 00462943DE
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(39860400002)(396003)(366004)(346002)(376002)(136003)(189003)(199004)(2616005)(54906003)(66066001)(86362001)(478600001)(110136005)(26005)(476003)(52116002)(486006)(76176011)(8676002)(66476007)(25786009)(81166006)(81156014)(186003)(66946007)(66556008)(64756008)(66446008)(99286004)(73956011)(2906002)(102836004)(3846002)(6116002)(6512007)(386003)(53936002)(2501003)(6506007)(256004)(36756003)(68736007)(50226002)(305945005)(6486002)(7736002)(8936002)(71200400001)(71190400001)(6636002)(5660300002)(316002)(1076003)(4744005)(14454004)(446003)(4326008)(11346002)(6436002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0401MB2494;
- H:VI1PR0401MB2237.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: RzUDCbv37KKgNMSS57JeXEGOKzis74x3gW+e4IsK718FidOaRYmDUdGvqaH6zyFbtWVr35E01SQvWbyfWn2kRXMyOkPWAYkZ+ZX0G//vVOZUhFiNS/yytCwyy5uDnyUGLFi7YRl23tXR0v5/33zvPhhRj1a94y64KhsjzTJUY1SZroxE+6Rcw5INI3fEMFz3dJWjdwlEXpbsL2tN+FMrdwPCJiUWMyJlp7kWOLEhsTnqWITxGCgqIlnJsduoxnfCk7WwPEWV8maNJDNQ0jd+M5XIakrL1+ug2yB3PVJMYJLDRDI34VSNoY2BF7677WFkA10+zQR4c8A/f1qovGxrq6m6QGucmGUJZndzPn2yhFpAI0KUkKEoTklW/qDi2yo2i1bsQL4YQ+DDDqLouUMjSXZ9RfmgxCUiKspDicQrqqs=
+ id 1hTe99-00080P-7C
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 03:12:00 +0000
+Received: by mail-io1-xd41.google.com with SMTP id m7so3657011ioa.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 22 May 2019 20:11:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ZEV/rTrYbrsm5G11OPGYPy+mSyQ1OAcKoS1nv9PMwiw=;
+ b=PhQ/JgIq+OwtWsNg5SbJ4x/PiyBr6WlunoBwPdvzxLn7xURhq1waFX3FO9BNznU0yF
+ 5gWON3W07d9wI8HxMMUR20iyPJVSrjzksTMklWxtZJ8yw+PLfRTFacg718R9iU/DWYz1
+ 4s+2A/oxe/Xry4dzTVf8Jf70ezzDsTo/qiEPVX+5tQRy9L66f9t6grU3slZSoTWIx9MX
+ iALhAemAkXsjYteAirHmBQouEx3EJFRXVhGmre9RgpkEl0ayNKrVqhNJLCNQz2pLoIg0
+ aKaVTwzzouhOqvJCaMT3UkdrunAkQ6XwjsOIccx6VKi7yrymRxjt94ljsC5OrOqz0/y5
+ YL/Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ZEV/rTrYbrsm5G11OPGYPy+mSyQ1OAcKoS1nv9PMwiw=;
+ b=Ag2UOhAffqr0rdLCr37Pf4IoCUibRmcvCGWcu98O5H5Xh8LqcJS0LiA5WNVk/4ikXw
+ KhY7bqyUZr2NCayGs/KYSs0WMqM07dBQ6GwQ6ixYDwh6VX9sj7RlIersHvuJRUWvbN3U
+ cHKg436IpRJ1v5zWRr4t2Gp52+wPkd+vo21vcZEIYqe5D3nKvb09avAyAdq/AYh0bolN
+ l0Zq4LEGJjcQAtbfCIvaAKwHLDuk7KdSHNxT3LyEO5NYmNwapb9zDgQLWOqmZ67edwyw
+ +Q4wnJNy0SvJknXrau6O9IgTzT0P5xaspH0g5ZRuAXRQF483FPRqL5NoiTY97V878cGL
+ 0xqw==
+X-Gm-Message-State: APjAAAX4MIQGBKObe7qxshB+PWW/EQo/BJFtHkvruSc+2Br8xqRlgjOj
+ xi5r4nv7zvprsnwt6A6XCbWA6+6rmkTfKaka/oA=
+X-Google-Smtp-Source: APXvYqxkuUWfAecH5Z0mRMgmV18FKAsua/f2L/m4KWR9mlqpOwgbk8mioIOnqOqI+kmvlajTHdDKMeATOVYcte06abU=
+X-Received: by 2002:a6b:d81a:: with SMTP id y26mr55542520iob.122.1558581115261; 
+ Wed, 22 May 2019 20:11:55 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b900c2f2-f138-4b41-fc08-08d6df2711a8
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 May 2019 02:33:41.7183 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: yangbo.lu@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0401MB2494
+References: <20190521143023.31810-1-miquel.raynal@bootlin.com>
+ <20190521143023.31810-2-miquel.raynal@bootlin.com>
+In-Reply-To: <20190521143023.31810-2-miquel.raynal@bootlin.com>
+From: raymond pang <raymondpangxd@gmail.com>
+Date: Thu, 23 May 2019 03:11:39 +0000
+Message-ID: <CAHG4imNxsdzjzRpFWnL+PuznjdOU4hsp2E-g1bt4WVJeokfT3w@mail.gmail.com>
+Subject: Re: [PATCH v4 01/10] ata: libahci: Ensure the host interrupt status
+ bits are cleared
+To: Miquel Raynal <miquel.raynal@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_193344_580290_BE182004 
-X-CRM114-Status: GOOD (  11.33  )
+X-CRM114-CacheID: sfid-20190522_201159_265472_E0C25971 
+X-CRM114-Status: GOOD (  19.91  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe0a:0:0:0:62b listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
  [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (raymondpangxd[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -122,44 +94,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "Y.b. Lu" <yangbo.lu@nxp.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
+ Baruch Siach <baruch@tkos.co.il>, Jason Cooper <jason@lakedaemon.net>,
+ Nadav Haklai <nadavh@marvell.com>, devicetree@vger.kernel.org,
+ Marc Zyngier <marc.zyngier@arm.com>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>, linux-ide@vger.kernel.org,
+ Hans de Goede <hdegoede@redhat.com>, Rob Herring <robh+dt@kernel.org>,
+ Antoine Tenart <antoine.tenart@bootlin.com>, Jens Axboe <axboe@kernel.dk>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add ENETC 1588 timer node which is ENETC PF 4 (Physiscal Function 4).
+Hi Miquel,
 
-Signed-off-by: Yangbo Lu <yangbo.lu@nxp.com>
----
-Changes for v2:
-	- Added compatible.
----
- arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 6 ++++++
- 1 file changed, 6 insertions(+)
+This patch adds clearing GHC.IS into hot path, could you explain how
+irq storm is generated? thanks
+According to AHCI Spec, HBA should not refer to GHC.IS to generate
+MSI when applying multiple MSIs.
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-index b04581249f0b..4cdf84c63320 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-@@ -431,6 +431,12 @@
- 				compatible = "fsl,enetc";
- 				reg = <0x000100 0 0 0 0>;
- 			};
-+			ethernet@0,4 {
-+				compatible = "fsl,enetc-ptp";
-+				reg = <0x000400 0 0 0 0>;
-+				clocks = <&clockgen 4 0>;
-+				little-endian;
-+			};
- 		};
- 	};
- };
--- 
-2.17.1
+Best Regards,
+Raymond
+
+On Tue, May 21, 2019 at 2:31 PM Miquel Raynal <miquel.raynal@bootlin.com> wrote:
+>
+> ahci_multi_irqs_intr_hard() is going to be used as interrupt handler
+> to support SATA per-port interrupts. The current logic is to check and
+> clear the SATA port interrupt status register only. To avoid spurious
+> IRQs and interrupt storms, it will be needed to clear the port
+> interrupt bit in the host interrupt status register as well.
+>
+> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+> ---
+>  drivers/ata/libahci.c | 5 +++++
+>  1 file changed, 5 insertions(+)
+>
+> diff --git a/drivers/ata/libahci.c b/drivers/ata/libahci.c
+> index 692782dddc0f..9db6f488db59 100644
+> --- a/drivers/ata/libahci.c
+> +++ b/drivers/ata/libahci.c
+> @@ -1912,7 +1912,10 @@ static void ahci_port_intr(struct ata_port *ap)
+>  static irqreturn_t ahci_multi_irqs_intr_hard(int irq, void *dev_instance)
+>  {
+>         struct ata_port *ap = dev_instance;
+> +       struct ata_host *host = ap->host;
+> +       struct ahci_host_priv *hpriv = host->private_data;
+>         void __iomem *port_mmio = ahci_port_base(ap);
+> +       void __iomem *mmio = hpriv->mmio;
+>         u32 status;
+>
+>         VPRINTK("ENTER\n");
+> @@ -1924,6 +1927,8 @@ static irqreturn_t ahci_multi_irqs_intr_hard(int irq, void *dev_instance)
+>         ahci_handle_port_interrupt(ap, port_mmio, status);
+>         spin_unlock(ap->lock);
+>
+> +       writel(BIT(ap->port_no), mmio + HOST_IRQ_STAT);
+> +
+>         VPRINTK("EXIT\n");
+>
+>         return IRQ_HANDLED;
+> --
+> 2.19.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
