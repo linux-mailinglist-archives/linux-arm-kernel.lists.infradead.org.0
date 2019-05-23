@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C556276AA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 09:04:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68B19276AB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 09:04:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lea3NVoGNG+oqwt9g1S/EPJRGe2Rsnpbqno4YGXi9AE=; b=cJO6YfKLvvkNL/
-	/y/t5eFlyneNmjxZyiVBGvgH34XLtB1w3PlJkdSKcThXXr9Vg1rjuYbGjIh44yv+WIsOdlpjw7pW5
-	1jKfu+rr1vs5a121zgr8a6kZ0WFH0YrboLOUJqAzRsPSdXv2Eca4ZUWjxU077MNeBP/DcEp58ZzX9
-	1pEQ9AnJ5a5KAdZTr4nxLo27L2VxtIUqd6aMVopc4+6A1+Qz93CaaaNt8UwfrhHoMMgSbPY2XzN1Y
-	50Qg9PqyHEBYbWzyr5+iH9+HXwxUl9egLNcLyVa6fEHkgZ1wJCC15si6f/1URwESmnQRAYxwQCjC1
-	fFYK615M+1qB5iANxHQQ==;
+	List-Owner; bh=UbP6z3lJ90QteqVB85vebDOEllFMVVACLF4B7G84t68=; b=ZLBe8S+loA6bD1
+	VQGTrNoEDTTcTbfoeCosbr2kFWaKfZ0OBsUWTv5EyXFi+E+D0oVnYbs6Q8KHcdfleBAegjh03H34c
+	1gptv1QJxTHeQG/wR1d6jPNX1I1G7gmWWHamaxbFpzzG3akeM6hu7nvHwfgpepZYmrSYh7WNt/fy1
+	GMXeIvqwEP1HiR5QuGlLn4nFbPaswfzQzv3wVKk3v/mE0zed1XT7gi+KzA2RNyI3H1wzkr2x0LqKy
+	SLaKBVcwoH2KiGAoTjGUQ1yvzi2wm4Iaqb3i4E1IUbBIRSKDNtmy51HA9Tl8PFzcPtZ3TaPsUSCxE
+	uO8q9n59CfNjRqcZqwnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hThlr-000115-DD; Thu, 23 May 2019 07:04:11 +0000
+	id 1hThm1-0001GA-EJ; Thu, 23 May 2019 07:04:21 +0000
 Received: from 213-225-10-46.nat.highway.a1.net ([213.225.10.46]
  helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hThjB-0005vy-41; Thu, 23 May 2019 07:01:25 +0000
+ id 1hThjE-00060F-4z; Thu, 23 May 2019 07:01:28 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Robin Murphy <robin.murphy@arm.com>
-Subject: [PATCH 19/23] iommu/dma: Refactor iommu_dma_mmap
-Date: Thu, 23 May 2019 09:00:24 +0200
-Message-Id: <20190523070028.7435-20-hch@lst.de>
+Subject: [PATCH 20/23] iommu/dma: Don't depend on CONFIG_DMA_DIRECT_REMAP
+Date: Thu, 23 May 2019 09:00:25 +0200
+Message-Id: <20190523070028.7435-21-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190523070028.7435-1-hch@lst.de>
 References: <20190523070028.7435-1-hch@lst.de>
@@ -51,110 +51,89 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Inline __iommu_dma_mmap and __iommu_dma_mmap_pfn into the main function,
-and use the fact that __iommu_dma_get_pages return NULL for remapped
-contigous allocations to simplify the code flow a bit.
+For entirely dma coherent architectures there is no requirement to ever
+remap dma coherent allocation.  Move all the remap and pool code under
+IS_ENABLED() checks and drop the Kconfig dependency.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 Reviewed-by: Robin Murphy <robin.murphy@arm.com>
 ---
- drivers/iommu/dma-iommu.c | 60 +++++++--------------------------------
- 1 file changed, 11 insertions(+), 49 deletions(-)
+ drivers/iommu/Kconfig     |  1 -
+ drivers/iommu/dma-iommu.c | 16 +++++++++-------
+ 2 files changed, 9 insertions(+), 8 deletions(-)
 
+diff --git a/drivers/iommu/Kconfig b/drivers/iommu/Kconfig
+index d6d063160dd6..83664db5221d 100644
+--- a/drivers/iommu/Kconfig
++++ b/drivers/iommu/Kconfig
+@@ -97,7 +97,6 @@ config IOMMU_DMA
+ 	select IOMMU_IOVA
+ 	select IRQ_MSI_IOMMU
+ 	select NEED_SG_DMA_LENGTH
+-	depends on DMA_DIRECT_REMAP
+ 
+ config FSL_PAMU
+ 	bool "Freescale IOMMU support"
 diff --git a/drivers/iommu/dma-iommu.c b/drivers/iommu/dma-iommu.c
-index b56bd8e7d5f9..ea2797d10070 100644
+index ea2797d10070..567c300d1926 100644
 --- a/drivers/iommu/dma-iommu.c
 +++ b/drivers/iommu/dma-iommu.c
-@@ -650,21 +650,6 @@ static void *iommu_dma_alloc_remap(struct device *dev, size_t size,
- 	return NULL;
- }
+@@ -927,10 +927,11 @@ static void __iommu_dma_free(struct device *dev, size_t size, void *cpu_addr)
+ 	struct page *page = NULL, **pages = NULL;
  
--/**
-- * __iommu_dma_mmap - Map a buffer into provided user VMA
-- * @pages: Array representing buffer from __iommu_dma_alloc()
-- * @size: Size of buffer in bytes
-- * @vma: VMA describing requested userspace mapping
-- *
-- * Maps the pages of the buffer in @pages into @vma. The caller is responsible
-- * for verifying the correct size and protection of @vma beforehand.
-- */
--static int __iommu_dma_mmap(struct page **pages, size_t size,
--		struct vm_area_struct *vma)
--{
--	return vm_map_pages(vma, pages, PAGE_ALIGN(size) >> PAGE_SHIFT);
--}
--
- static void iommu_dma_sync_single_for_cpu(struct device *dev,
- 		dma_addr_t dma_handle, size_t size, enum dma_data_direction dir)
- {
-@@ -1042,31 +1027,13 @@ static void *iommu_dma_alloc(struct device *dev, size_t size,
- 	return cpu_addr;
- }
+ 	/* Non-coherent atomic allocation? Easy */
+-	if (dma_free_from_pool(cpu_addr, alloc_size))
++	if (IS_ENABLED(CONFIG_DMA_DIRECT_REMAP) &&
++	    dma_free_from_pool(cpu_addr, alloc_size))
+ 		return;
  
--static int __iommu_dma_mmap_pfn(struct vm_area_struct *vma,
--			      unsigned long pfn, size_t size)
--{
--	int ret = -ENXIO;
--	unsigned long nr_vma_pages = vma_pages(vma);
--	unsigned long nr_pages = PAGE_ALIGN(size) >> PAGE_SHIFT;
--	unsigned long off = vma->vm_pgoff;
--
--	if (off < nr_pages && nr_vma_pages <= (nr_pages - off)) {
--		ret = remap_pfn_range(vma, vma->vm_start,
--				      pfn + off,
--				      vma->vm_end - vma->vm_start,
--				      vma->vm_page_prot);
--	}
--
--	return ret;
--}
--
- static int iommu_dma_mmap(struct device *dev, struct vm_area_struct *vma,
- 		void *cpu_addr, dma_addr_t dma_addr, size_t size,
- 		unsigned long attrs)
- {
- 	unsigned long nr_pages = PAGE_ALIGN(size) >> PAGE_SHIFT;
- 	unsigned long off = vma->vm_pgoff;
--	struct page **pages;
-+	unsigned long pfn;
- 	int ret;
+-	if (is_vmalloc_addr(cpu_addr)) {
++	if (IS_ENABLED(CONFIG_DMA_REMAP) && is_vmalloc_addr(cpu_addr)) {
+ 		/*
+ 		 * If it the address is remapped, then it's either non-coherent
+ 		 * or highmem CMA, or an iommu_dma_alloc_remap() construction.
+@@ -974,7 +975,7 @@ static void *iommu_dma_alloc_pages(struct device *dev, size_t size,
+ 	if (!page)
+ 		return NULL;
  
- 	vma->vm_page_prot = arch_dma_mmap_pgprot(dev, vma->vm_page_prot, attrs);
-@@ -1077,24 +1044,19 @@ static int iommu_dma_mmap(struct device *dev, struct vm_area_struct *vma,
+-	if (!coherent || PageHighMem(page)) {
++	if (IS_ENABLED(CONFIG_DMA_REMAP) && (!coherent || PageHighMem(page))) {
+ 		pgprot_t prot = arch_dma_mmap_pgprot(dev, PAGE_KERNEL, attrs);
+ 
+ 		cpu_addr = dma_common_contiguous_remap(page, alloc_size,
+@@ -1007,11 +1008,12 @@ static void *iommu_dma_alloc(struct device *dev, size_t size,
+ 
+ 	gfp |= __GFP_ZERO;
+ 
+-	if (gfpflags_allow_blocking(gfp) &&
++	if (IS_ENABLED(CONFIG_DMA_REMAP) && gfpflags_allow_blocking(gfp) &&
+ 	    !(attrs & DMA_ATTR_FORCE_CONTIGUOUS))
+ 		return iommu_dma_alloc_remap(dev, size, handle, gfp, attrs);
+ 
+-	if (!gfpflags_allow_blocking(gfp) && !coherent)
++	if (IS_ENABLED(CONFIG_DMA_DIRECT_REMAP) &&
++	    !gfpflags_allow_blocking(gfp) && !coherent)
+ 		cpu_addr = dma_alloc_from_pool(PAGE_ALIGN(size), &page, gfp);
+ 	else
+ 		cpu_addr = iommu_dma_alloc_pages(dev, size, &page, gfp, attrs);
+@@ -1044,7 +1046,7 @@ static int iommu_dma_mmap(struct device *dev, struct vm_area_struct *vma,
  	if (off >= nr_pages || vma_pages(vma) > nr_pages - off)
  		return -ENXIO;
  
--	if (!is_vmalloc_addr(cpu_addr)) {
--		unsigned long pfn = page_to_pfn(virt_to_page(cpu_addr));
--		return __iommu_dma_mmap_pfn(vma, pfn, size);
--	}
-+	if (is_vmalloc_addr(cpu_addr)) {
-+		struct page **pages = __iommu_dma_get_pages(cpu_addr);
+-	if (is_vmalloc_addr(cpu_addr)) {
++	if (IS_ENABLED(CONFIG_DMA_REMAP) && is_vmalloc_addr(cpu_addr)) {
+ 		struct page **pages = __iommu_dma_get_pages(cpu_addr);
  
--	if (attrs & DMA_ATTR_FORCE_CONTIGUOUS) {
--		/*
--		 * DMA_ATTR_FORCE_CONTIGUOUS allocations are always remapped,
--		 * hence in the vmalloc space.
--		 */
--		unsigned long pfn = vmalloc_to_pfn(cpu_addr);
--		return __iommu_dma_mmap_pfn(vma, pfn, size);
-+		if (pages)
-+			return vm_map_pages(vma, pages, nr_pages);
-+		pfn = vmalloc_to_pfn(cpu_addr);
-+	} else {
-+		pfn = page_to_pfn(virt_to_page(cpu_addr));
- 	}
+ 		if (pages)
+@@ -1066,7 +1068,7 @@ static int iommu_dma_get_sgtable(struct device *dev, struct sg_table *sgt,
+ 	struct page *page;
+ 	int ret;
  
--	pages = __iommu_dma_get_pages(cpu_addr);
--	if (!pages)
--		return -ENXIO;
--	return __iommu_dma_mmap(pages, size, vma);
-+	return remap_pfn_range(vma, vma->vm_start, pfn + off,
-+			       vma->vm_end - vma->vm_start,
-+			       vma->vm_page_prot);
- }
+-	if (is_vmalloc_addr(cpu_addr)) {
++	if (IS_ENABLED(CONFIG_DMA_REMAP) && is_vmalloc_addr(cpu_addr)) {
+ 		struct page **pages = __iommu_dma_get_pages(cpu_addr);
  
- static int iommu_dma_get_sgtable(struct device *dev, struct sg_table *sgt,
+ 		if (pages) {
 -- 
 2.20.1
 
