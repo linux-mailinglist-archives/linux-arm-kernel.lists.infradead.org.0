@@ -2,71 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D5B73285BE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 20:17:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB800285C3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 20:18:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MFJim0sohgad4IzjitRKQPQReM4/slgN3a4mE72UtGk=; b=L8ZhB4nIr1w3r8
-	GoU+t3s3YD4Ixzj6S0qbsGuyZqhs8ccJ4skpPaKS7S7M3U7gRBR+A8r/mK4RN3OBx6p66c97ebham
-	v8MO0o0x6e8eF2Yzg08HI4A5HcT4YpHpBMShWC++xCGf4/6eB2eUNMkjho1pVOcwsWMRg1StwZ5jX
-	4EFYD/sEYN+FSFC5hsb3UhQCJUqVqY91rQJMH6i5GWykbuti5KCRhOTKAOnXre/Lt2TAf7kd4SBBC
-	UmawdvGkb8PHv7OQKnxeKUDJK6MmLn6rpHuEdYDZFxOYWQ3gn3dJG5Ho7C4yPM4P5NaaeSSbY0m2W
-	xpdD7Q1d24KvL7BcWCGA==;
+	List-Owner; bh=qWxAD0fRHfmmgVEW3lMHt+MeOkrnvRaZ3DjDWSUVoE0=; b=BV71G6M+yPSogp
+	vrMb5m2lpW7GA7z9zrMF98CIpETx0zF2fCmhKpaKh5nYQmRzCB7AEW5wel3ZCV5RqlJP3E4oD7Jo5
+	yzrte9uUBxETcYc/biM/5AjnlX1sjaZbvri5oD1m63MYJHfzVQl2yNY0GY/Twz/oZhyJ4EOtrzV4n
+	KCcSQ2TrLUNhJxhJ2F+kjjrzJr0FUTTM/d0GCl6bBsh1IaTzyZdXTkJopEgpq7/6g+J9dFa3i31+9
+	bc0pMQzoktCJ5wNqNTnr7Jj8JnvHjmbjhU8TrD9anWMoXORemBIvGihfu9HERzopYIt6mUPkfWZ9I
+	Qsigf1X69Yl9Jf08F7BQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTsHD-0006rv-MG; Thu, 23 May 2019 18:17:15 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hTsIj-0007gp-Na; Thu, 23 May 2019 18:18:49 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTsH5-0006rS-Ty
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 18:17:09 +0000
-Received: by mail-wm1-x344.google.com with SMTP id c77so6836354wmd.1
+ id 1hTsIc-0007gM-Gq
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 18:18:43 +0000
+Received: by mail-pl1-x642.google.com with SMTP id p15so3076162pll.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 23 May 2019 11:17:07 -0700 (PDT)
+ Thu, 23 May 2019 11:18:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=rOCpAgwSlJyGCM5mQhDHQFFGcbo16Hm2rBki/beRDS0=;
- b=pAI1FG5dffBe+/l0iXMlrFzmlBeTY06ZDKb/0Ez08L/tZii+3ZP643/7vVQn5t0PTG
- ceRQoHScfoEAnweHwLe9BjSNHHGwqNnZ7nsUrFTN+xRPBcNIc5putVF3DLyX+B3SDJzm
- iCZKEzvJxl4JyBmGvdbpgBU37iDo8UOB8vNY1GtwlugDyYFltkw4uLhjTxdT7DKV351L
- wGx1ySn66b+v9x0Eoz+hPKnqn+o/fherY31RK7Poz7FB9OsqLIDgsGcDNui7FUdljevM
- 2T/JDjDH4Et9UCpBICQw1lxf64+MPwUrgoHkK2HOvVY/bgt4Dvw/sfNPBaHoaRaH+7Ew
- S3cA==
+ bh=CgkUT1S8m2MNCjfDPnbC1Rro3ap1/tHUWB2hI1G75Vo=;
+ b=rTgTMUr1f3HMDTme0bflwcloNHCtx6Q12x5/kCApk4T51a9PWQmc8zvUPmwaIrZmuX
+ siPjcqcjRw1CUOf3/OPV8sjdsOlkKbJhwcqKZ5R6vIMkEvOiyC/EMKX/uMFuGRmNiykH
+ SVYnEvQovaPoOXlT4smHyAAkRZM0DCvKLG2YQgePnrojydF8rzWTtQdPi/YyavMGRGPf
+ Sd1RboBvL/I4NTUyajPUt3Mt4kRSFf2USyK5nGL8wvIRhgMJ/229KK1u4Y+2HGwH0vlm
+ 50a70arUghWHmdMZsPVgthcq1A1sdcUndz/SyAQCeJvo7grVLiaffwbkEly7txlgTsmO
+ KWLw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=rOCpAgwSlJyGCM5mQhDHQFFGcbo16Hm2rBki/beRDS0=;
- b=P5NSl2A0fj2SJq1YIwFh2ge+8LLqpC3M6OgQu4CEJYSjoRQVZ9DRMf00AHAoIEtcm3
- TcZ89DhAMEk1JdADLupmIs8XokG0i10CynuQX1pqxdZnAJ/hlGMLuI0xrALcwXRZzhUn
- sUB3LLlPQiMd4YE0z66DgfvbZSkPrADQ1AcEIDGMwK2W+/ruILt//9KOHebN7XWrui5r
- E0MH3SPz1SkOt+CMyDZpCBDrjFf1kk2X6sNWRw33Fb2D+l2VgJuPRJUiwajnYQ+1nixF
- k4WmcyatBR69g1yKxJVofXMdcFqafLMyTM9xKcP74gJy5qEM7LL7b9d15UYbOy6FfIyz
- i7cA==
-X-Gm-Message-State: APjAAAUa4MrUjueCZfmVSWIgg2IcwVG598aDqM04mgbKp3sxvk1+pw0K
- 2BMMAGH/bLoA02OBPXs7Z++Li9Y+
-X-Google-Smtp-Source: APXvYqwolNUTJQNFmkcqVBpyXmCjYo54fGuM1+ACYPhybXi2YjA0EYP06lck56epViJTxq62cWZyoA==
-X-Received: by 2002:a1c:7d8e:: with SMTP id
- y136mr12493029wmc.129.1558635425947; 
- Thu, 23 May 2019 11:17:05 -0700 (PDT)
+ bh=CgkUT1S8m2MNCjfDPnbC1Rro3ap1/tHUWB2hI1G75Vo=;
+ b=PV0cTfe27Z6zEtS6T3hgEvw87bSL5nDtLsAKiQ8tHsvr3sjPX8kmV9hSxE3TG3Ldl+
+ 7nBpvt0g1Xp3cEiIf3hkbUVV3OgoEvA+IhPiN1jb0dGaDkbw7NjJxNQMbd161P/d3zSo
+ 4obqmgL3fp/xXwtxyuNsmBdOxRBnEqmkiAZI+ET3QBxD5KXV1f0TMDt53tG5WprGqzHh
+ ZnBBmlsmxOOC9rkzMvQZdWXU3gI6zzj36c4YNh2w7aNbtFPLFEOcRMWTFbT50YxNc/wU
+ VQTkIYuVlBU13Ksm9QrhowGivJROWsoDmG2YLMvdcW6/0i2m45IJTohifWJTCXWKcGhE
+ Yyfg==
+X-Gm-Message-State: APjAAAUUIQTo5Or2PEjZ5B743v1/4SkrtQDnOYt3CXVxqGfPRKgn7GAJ
+ 9+gy70JOKSuRJWe6UBnl+yo=
+X-Google-Smtp-Source: APXvYqzba3iR+fRTpcBlWdB2qrwCoXlSBo1Icr4+z73Psa0Zv2a4+INvRFk9X/HU7Y5Ln7GXtSzNIw==
+X-Received: by 2002:a17:902:8c82:: with SMTP id
+ t2mr92419656plo.256.1558635521646; 
+ Thu, 23 May 2019 11:18:41 -0700 (PDT)
 Received: from [10.67.49.213] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id q68sm252189wme.11.2019.05.23.11.17.02
+ by smtp.googlemail.com with ESMTPSA id g22sm117291pfo.28.2019.05.23.11.18.40
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 23 May 2019 11:17:04 -0700 (PDT)
-Subject: Re: [PATCH 2/8] dt-bindings: net: Add a YAML schemas for the generic
- PHY options
-To: Maxime Ripard <maxime.ripard@bootlin.com>,
- Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
- Frank Rowand <frowand.list@gmail.com>, "David S . Miller"
- <davem@davemloft.net>, Chen-Yu Tsai <wens@csie.org>
-References: <74d98cc3c744d53710c841381efd41cf5f15e656.1558605170.git-series.maxime.ripard@bootlin.com>
- <aa5ec90854429c2d9e2c565604243e1b10cfd94b.1558605170.git-series.maxime.ripard@bootlin.com>
+ Thu, 23 May 2019 11:18:40 -0700 (PDT)
+Subject: Re: [PATCH net-next v2 2/3] dt-bindings: net: document new usxgmii
+ phy mode
+To: Heiner Kallweit <hkallweit1@gmail.com>,
+ Madalin-cristian Bucur <madalin.bucur@nxp.com>,
+ Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Andrew Lunn <andrew@lunn.ch>, David Miller <davem@davemloft.net>
+References: <9d284f4d-93ee-fb27-e386-80825f92adc8@gmail.com>
+ <60079a09-670b-268e-9ad5-014a427b60bf@gmail.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
@@ -123,23 +124,23 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
  6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9Za0Dx0yyp44iD1OvHtkEI
  M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <e39b7a35-3235-6040-b3c1-648897fabc70@gmail.com>
-Date: Thu, 23 May 2019 11:16:55 -0700
+Message-ID: <37340f6c-3f42-2678-6ce0-e40faec36203@gmail.com>
+Date: Thu, 23 May 2019 11:18:39 -0700
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <aa5ec90854429c2d9e2c565604243e1b10cfd94b.1558605170.git-series.maxime.ripard@bootlin.com>
+In-Reply-To: <60079a09-670b-268e-9ad5-014a427b60bf@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_111707_990794_1048D7BA 
-X-CRM114-Status: GOOD (  15.51  )
+X-CRM114-CacheID: sfid-20190523_111842_558501_8CEAB397 
+X-CRM114-Status: GOOD (  11.43  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -163,29 +164,21 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
- =?UTF-8?Q?Antoine_T=c3=a9nart?= <antoine.tenart@bootlin.com>,
- netdev@vger.kernel.org, Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/23/19 2:56 AM, Maxime Ripard wrote:
-> The networking PHYs have a number of available device tree properties that
-> can be used in their device tree node. Add a YAML schemas for those.
+On 5/23/19 11:07 AM, Heiner Kallweit wrote:
+> Add new interface mode USXGMII to binding documentation.
 > 
-> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-> ---
->  Documentation/devicetree/bindings/net/ethernet-phy.yaml | 148 +++++++++-
->  Documentation/devicetree/bindings/net/phy.txt           |  80 +-----
->  2 files changed, 149 insertions(+), 79 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/net/ethernet-phy.yaml
+> Signed-off-by: Heiner Kallweit <hkallweit1@gmail.com>
 
-Updating the PHY Library section of the MAINTAINERS file to include that
-binding document (not sure why it was not there) would be nice.
+Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
 -- 
 Florian
 
