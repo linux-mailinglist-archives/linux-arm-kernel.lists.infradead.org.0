@@ -2,54 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 955B127DEC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 15:19:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B838027DF4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 15:20:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=14oLVILHEHqABqDry4FWRCgUQo4R58VfFazu952E9cI=; b=iGRBZsIfUnRDp5
-	6TqfNWp0Cc3f1vHO1Wi6bvwDEJ0UBMwt62YtVkdcGuICqG9FalSkACr08/x0odWFdj/FBBddhOFyu
-	IIWyTqVo0q/GQeDhqnnDkTtXAM0q4th6h26qqY+NssCqbIkD/bkd0T/apVXFUnN/6ln2jifM3U0WK
-	t3S/b+cAjACQNC6gxnqt112EYtUmEbyc40e96IevSH2L7vk1IlCPpmPLdCGdrXoxsopLt+i1cArOQ
-	5TaQyXeLvTQActz4qRz8TXSO5Hlr7JBnUQ1Fj5QZp2OD6UintjNv/QDQEmXr4GJRqqeSlQuyOgFCh
-	Ad0eW3B/bND7wkfU6NAw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
+	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=vKhjWBh1MuRhA5NGoIWxyKHixDPpH/HAZ34wsV2SDXM=; b=LUwgbC7MP9UzbaGFeMbLcdqHq
+	10lkNWxQuk31Bt2frMLqwjBEKPRCPAHqUnEQ3b8hZlkhvqU30auOfubkg8QK+DF4EayAOYROdN9wJ
+	NyCiiUAyDNnwidUxgWR2RZduy19c6H5VEj/+wljKv5mW7jeBJsZJcQn2AYt06T7xCpvgxldjH8V7h
+	5a6Yl0D3toMEGE3VW/pR6vtpkpJRE1E+R8GZAYPZVGvTqvnTu1LNkkbmKA41swdHwTH2JNbTNjzxe
+	DvWFAzFJyt5aROSVdhIAUIiA0bLyaRaOpz6kgZbURYgHCMNVIggiKv92H6KKRVAVx6Uq0P14Lh3Ha
+	+EMyIOWMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTncj-00054D-LO; Thu, 23 May 2019 13:19:09 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1hTndf-0005Yt-Ic; Thu, 23 May 2019 13:20:07 +0000
+Received: from node.akkea.ca ([192.155.83.177])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTncc-00053J-UV; Thu, 23 May 2019 13:19:04 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: eballetbo) with ESMTPSA id 358BF263ABB
-Subject: Re: mainline/master boot bisection: v5.2-rc1-165-g54dee406374c on
- rk3288-veyron-jaq
-To: Mark Brown <broonie@kernel.org>, Eduardo Valentin <edubezval@gmail.com>,
- Elaine Zhang <zhangqing@rock-chips.com>
-References: <5ce6040d.1c69fb81.60b3b.29fb@mx.google.com>
- <20190523131207.GC17245@sirena.org.uk>
-From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Message-ID: <ac2f06ac-2bf5-7af6-06c3-37b865c43738@collabora.com>
-Date: Thu, 23 May 2019 15:18:56 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hTndT-0005We-QL
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 13:19:57 +0000
+Received: by node.akkea.ca (Postfix, from userid 33)
+ id 9471B4E204B; Thu, 23 May 2019 13:19:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=akkea.ca; s=mail;
+ t=1558617594; bh=n39L7RY9rbAsVX1Ob8iz4OslE0sehX1ynhKprKwXAR0=;
+ h=To:Subject:Date:From:Cc:In-Reply-To:References;
+ b=rdnOfiHYBFOcEZTml17MHpoVrjh06dt/BaFJXiEL3s5E/spfuE6WB+apgMCixfSu4
+ E5LIr9MFPXOsBxQ9nMi6XJum7E6wqcaZ708R7d3onIj6i5ZCdoNe7IgljAeZhFcnnw
+ U/lo87je9Rc7mCLxAEec6OC2NW+yPC0vN078N6rA=
+To: Lucas Stach <l.stach@pengutronix.de>
+Subject: Re: [PATCH] arm64: dts: imx8mq-zii-ultra: Operate I2C at 100kHz
+X-PHP-Originating-Script: 1000:rcube.php
 MIME-Version: 1.0
-In-Reply-To: <20190523131207.GC17245@sirena.org.uk>
-Content-Language: en-GB
+Date: Thu, 23 May 2019 06:19:54 -0700
+From: Angus Ainslie <angus@akkea.ca>
+In-Reply-To: <1557756459.3997.4.camel@pengutronix.de>
+References: <20190513140259.17525-1-festevam@gmail.com>
+ <1557756459.3997.4.camel@pengutronix.de>
+Message-ID: <aea4106a575d0e623442c53cfd50917b@www.akkea.ca>
+X-Sender: angus@akkea.ca
+User-Agent: Roundcube Webmail/1.1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_061903_115422_BFAF67CB 
-X-CRM114-Status: GOOD (  11.10  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190523_061955_908147_227B14AA 
+X-CRM114-Status: GOOD (  11.27  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -61,46 +71,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, tomeu.vizoso@collabora.com,
- linux-pm@vger.kernel.org, guillaume.tucker@collabora.com,
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, matthew.hart@linaro.org,
- khilman@baylibre.com, mgalka@collabora.com, Zhang Rui <rui.zhang@intel.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Fabio Estevam <festevam@gmail.com>, cphealy@gmail.com,
+ kernel@pengutronix.de, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mark,
-
-On 23/5/19 15:12, Mark Brown wrote:
-> On Wed, May 22, 2019 at 07:23:09PM -0700, kernelci.org bot wrote:
-> 
->>   Details:    https://kernelci.org/boot/id/5ce5984c59b514e6a47a364c
->>   Plain log:  https://storage.kernelci.org//mainline/master/v5.2-rc1-165-g54dee406374c/arm/multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE=y/gcc-8/lab-collabora/boot-rk3288-veyron-jaq.txt
->>   HTML log:   https://storage.kernelci.org//mainline/master/v5.2-rc1-165-g54dee406374c/arm/multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE=y/gcc-8/lab-collabora/boot-rk3288-veyron-jaq.html
->>   Result:     28694e009e51 thermal: rockchip: fix up the tsadc pinctrl setting error
-> 
-> It looks like this issue has persisted for a while without any kind of
-> fix happening - given that the bisection has identified this commit as
-> causing the regression and confirmed that reverting it fixes shouldn't
-> we just revert?  My guess would be that there's some error with the
-> pinctrl settings in the DT for the board.
-> 
-
-After some discussion Heiko sent a patch that reverts the offending commit one
-day ago [1] and it's waiting for maintainer to pick-up the patch.
-
-The reason why we think is best reverting that fix it is explained here [2]
-
-[1] https://lkml.org/lkml/2019/5/22/467
-[2] https://lkml.org/lkml/2019/4/30/270
-
-Thanks,
- Enric
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgTHVjYXMKCk9uIDIwMTktMDUtMTMgMDc6MDcsIEx1Y2FzIFN0YWNoIHdyb3RlOgo+IEhpIEZh
+YmlvLAo+IAo+IEFtIE1vbnRhZywgZGVuIDEzLjA1LjIwMTksIDExOjAyIC0wMzAwIHNjaHJpZWIg
+RmFiaW8gRXN0ZXZhbToKPj4gQWNjb3JkaW5nIHRvIHRoZSBpLk1YOE0gZXJyYXRhIGRvY3VtZW50
+IFsxXSwgdGhlcmUgaXMgYW4gSTJDIHNwZWMKPj4gdmlvbGF0aW9uIHdoZW4gdGhlIEkyQyBjbG9j
+ayBmcmVxdWVuY3kgaXMgNDAwIGtIejoKPj4gCj4+ICJlNzgwNTogSTJDOiBXaGVuIHRoZSBJMkMg
+Y2xvY2sgc3BlZWQgaXMgY29uZmlndXJlZCBmb3IgNDAwIGtIeiwgdGhlCj4+IFNDTCBsb3cgcGVy
+aW9kIHZpb2xhdGVzIHRoZSBJMkMgc3BlYyBvZiAxLjMgdVMgbWluIgo+IAo+PiBBdm9pZCB0aGlz
+IHByb2JsZW0gYnkgcnVubmluZyBJMkMgYXQgMTAwIGtIeiBpbnN0ZWFkLgo+IAo+IERvZXMgdGhp
+cyBmaXggYSByZWFsIGJ1Zz8gVGhlIHNhbWUgaXNzdWUgaXMgcHJlc2VudCB3aXRoIHRoZSBpLk1Y
+NiBJMkMKPiBjb250cm9sbGVycywgYnV0IHdlIGFyZSBzdGlsbCBydW5uaW5nIGEgbG90IG9mIGky
+YyBidXNzZXMgb24gaS5NWDYKPiBiYXNlZCBib2FyZHMgYXQgNDAwa0h6LCB3aXRoIG5vIGlzc3Vl
+cyB3aGF0c29ldmVyLgo+IAoKV2UndmUgZGVmaW5pdGVseSBzZWVuIGlzc3VlcyBydW5uaW5nIGF0
+IDQwMGtIeiB3aXRoIHRoZSBsaWJyZW01IGRldmtpdCAKYW5kIGl0J3MgdXNpbmcgdGhlIGkuTVg4
+TVEuCgpBbmd1cwoKCj4gUmVnYXJkcywKPiBMdWNhcwo+IAo+PiBbMV0gaHR0cHM6Ly93d3cubnhw
+LmNvbS9kb2NzL2VuL2VycmF0YS9JTVg4TURRTFFfMU4xNFcucGRmCj4+IAo+PiBTaWduZWQtb2Zm
+LWJ5OiBGYWJpbyBFc3RldmFtIDxmZXN0ZXZhbUBnbWFpbC5jb20+Cj4+IC0tLQo+PiDCoGFyY2gv
+YXJtNjQvYm9vdC9kdHMvZnJlZXNjYWxlL2lteDhtcS16aWktdWx0cmEuZHRzaSB8IDYgKysrLS0t
+Cj4+IMKgMSBmaWxlIGNoYW5nZWQsIDMgaW5zZXJ0aW9ucygrKSwgMyBkZWxldGlvbnMoLSkKPj4g
+Cj4+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL2ZyZWVzY2FsZS9pbXg4bXEtemlp
+LXVsdHJhLmR0c2kKPj4gYi9hcmNoL2FybTY0L2Jvb3QvZHRzL2ZyZWVzY2FsZS9pbXg4bXEtemlp
+LXVsdHJhLmR0c2kKPj4gaW5kZXggN2ExNzA2Zjk2OWYwLi44NjAzZmIxYTc4ZDAgMTAwNjQ0Cj4+
+IC0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvZnJlZXNjYWxlL2lteDhtcS16aWktdWx0cmEuZHRz
+aQo+PiArKysgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL2ZyZWVzY2FsZS9pbXg4bXEtemlpLXVsdHJh
+LmR0c2kKPj4gQEAgLTI1MywxNCArMjUzLDE0IEBACj4+IMKgfTsKPj4gwqAKPj4gwqAmaTJjMSB7
+Cj4+IC0JY2xvY2stZnJlcXVlbmN5ID0gPDQwMDAwMD47Cj4+ICsJY2xvY2stZnJlcXVlbmN5ID0g
+PDEwMDAwMD47Cj4+IMKgCXBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4+IMKgCXBpbmN0cmwt
+MCA9IDwmcGluY3RybF9pMmMxPjsKPj4gwqAJc3RhdHVzID0gIm9rYXkiOwo+PiDCoH07Cj4+IMKg
+Cj4+IMKgJmkyYzIgewo+PiAtCWNsb2NrLWZyZXF1ZW5jeSA9IDw0MDAwMDA+Owo+PiArCWNsb2Nr
+LWZyZXF1ZW5jeSA9IDwxMDAwMDA+Owo+PiDCoAlwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOwo+
+PiDCoAlwaW5jdHJsLTAgPSA8JnBpbmN0cmxfaTJjMj47Cj4+IMKgCXN0YXR1cyA9ICJva2F5IjsK
+Pj4gQEAgLTM3Niw3ICszNzYsNyBAQAo+PiDCoH07Cj4+IMKgCj4+IMKgJmkyYzQgewo+PiAtCWNs
+b2NrLWZyZXF1ZW5jeSA9IDw0MDAwMDA+Owo+PiArCWNsb2NrLWZyZXF1ZW5jeSA9IDwxMDAwMDA+
+Owo+PiDCoAlwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOwo+PiDCoAlwaW5jdHJsLTAgPSA8JnBp
+bmN0cmxfaTJjND47Cj4+IMKgCXN0YXR1cyA9ICJva2F5IjsKPiAKPiBfX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+IGxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
+ZyBsaXN0Cj4gbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCj4gaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCgoKX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtl
+cm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
+dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5l
+bAo=
