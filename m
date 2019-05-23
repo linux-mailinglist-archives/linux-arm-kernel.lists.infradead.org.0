@@ -2,67 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA41328796
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 21:25:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71B202871F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 21:19:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yPWv8XgnHyTe1loJxHzfQ76RONn3EsszO7Q35rDjfMY=; b=VBeC6P7NFLzFy7
-	VBFv9CJfTzmXTNLc4C2lOgvd7VZ+NvZfGZeZvZp3EHO+wKksd6SstCp/D9SxLx+DyhKztEQZl9gvM
-	a+fCQwJNpl6QyxJX1ODP9K6vtcxqGcjA909BbHs8ZkvwfV6Ev+IErsBg7cBsyvZG/J8h+/tC5SkgJ
-	uP8Voj9VKqXyZ1ek8Y4fc3vH06Aki2xF3a7MRAH43QQhyvEW/JQ6EYpViH/g8T5rnKwQ3rCcrsRwg
-	KkpElJmDc4FJq1hYI2S1qsQAo6ZTR5BRJG4oFwPEb6ShAwpdAhC9nfAeqc3D7vc9cybudBI7fV2AP
-	KR30qx1YzDmCsMwtmtfA==;
+	List-Owner; bh=ELZFtnCiFAyyyfelOcWVAlNiJjsFbY5kQ22P0KgVpZI=; b=HkjntbIHDcG0jO
+	XkGDv6O25doJet+7j+tgeidgzcJUh6r3LaNSSWgO74bWfjR7aJyQV2g3abQjZjH3wxIBhBwuKbbrU
+	nqH+bpmUMhuYQWMoaadAJsRbi3iG3GRjp+CBGtMZmNfBXZRZT3dvvf7W8UAyhuj3XzTJcpEafJWVz
+	cXOFxUexIr3sYiqG6ulOW+D4eLPpEQp6WuqFgYA3mIux4TTSDUi184r2IVvOZiNEda5ifWGVCSe7M
+	R1Fep24gS1VLmEDuxJ+E68pfrshqbH7wWweom53rPL1V2X9mPCybdac14sNNbhYwlnS/gTPmJt8bB
+	pLJwx9My7i+Wx6kkiYiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTtLW-0006XJ-5s; Thu, 23 May 2019 19:25:46 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hTtEw-00026d-6c; Thu, 23 May 2019 19:18:58 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTtLN-0006W5-WD
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 19:25:39 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 434EA21851;
- Thu, 23 May 2019 19:25:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558639537;
- bh=gOg6ApEAJe4wnqGZX/rysUCWcIgdXxexgYaNqQLTak4=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=rVDBcA8hGHsLNvwrshD5xU2p9VJHjP3O+wvM5WR4HfU2lW4k1IxYPQiZJK6hluY0T
- nXimx8HO9QTv63M1NscoSjt4cEgt1MyLiRFvOJDLunrWDTt24yJXUBfJSDLedq4VFj
- KHcKhid0FHQbWiZXo3JzIMXdhK4ZTL8mMKqmVrpM=
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 5.0 132/139] perf cs-etm: Always allocate memory for
- cs_etm_queue::prev_packet
-Date: Thu, 23 May 2019 21:07:00 +0200
-Message-Id: <20190523181736.244509976@linuxfoundation.org>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190523181720.120897565@linuxfoundation.org>
-References: <20190523181720.120897565@linuxfoundation.org>
-User-Agent: quilt/0.66
+ id 1hTtEp-000269-GU
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 19:18:52 +0000
+Received: by mail-lf1-x142.google.com with SMTP id y13so5202352lfh.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 23 May 2019 12:18:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=7Xq8hDRQty0iPHxqWBmFMiHP5/NEYwgv6qrN0Vc4nP8=;
+ b=ElJnN4SIqyVX33y7h7nGUs3agYvp1XeedQRemgpNbRIk5YlpyMiZcdC55lWgxLgh11
+ KGA9kvQoiXXYs/58eF04FaDku2dDlD83wtRBSt+M6G1ZAh4arkTz+KAL9TD9eCPYRb/s
+ Ml/yCA3Aye5kHbDL64GQjMNXaH7xxCsjKFKk57fS61mAwZZbM5zYQIgvTjCECVGeIZvS
+ Vu8BchtkGC9SqVmc9zM+HUOnm3qts+3oDP4vc86hWfjkeMINYmjeEB+owqaNfIjKGnt1
+ gaT8dQa9c8myhvRDjgnSpTJpspt1aTRyCZ621kdINUkw1wzbTQr7dwLOXa4U8fvDlT2D
+ Gyvw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=7Xq8hDRQty0iPHxqWBmFMiHP5/NEYwgv6qrN0Vc4nP8=;
+ b=JSe+N9VHdC8AMyD6aSjv3QordGJHejiXWTECLBgK71wIkrrFyEmzkBizBeKHaK4v7s
+ r6SbOLqHTjJ248cmfxVHicFGTmoGudLUZ3YZVPwX814FKxb73MuQIlMC8gOtiUveU88h
+ NiVuYdUz3LWFMaCwsPbVPRTFwjvM67oL793z6eHzHXw6KnzAp0tl9ZTiilD5Gmb314IV
+ H71Xd9r8C5vF/egHZe5vhsHIts9RvDX+BNx5Ai49p+nSe+BSQhSvcUBEmdejxPKVtbkR
+ kanbB3xScCuyNwQzI3XJb7zUaA9withMw3rTpbh9a9N7/nvgo04ngvGGCspHeamttOTw
+ hLOA==
+X-Gm-Message-State: APjAAAWRMLpgTwglgga7HJPTaf3ug4fkiZtCN1QzPCev3sXsm3rh3fuM
+ WxCXMvXgWQP98q9WVblVeLmzPJAThKi84MOXGji7oA==
+X-Google-Smtp-Source: APXvYqw1XbYiFz5hQUalCxrVjKiO6TIO71hT0hyMX6W3pIGmpBG9+vju9MG+sHieuLq/jz7BZlnOc90KWMXZK2Bxibs=
+X-Received: by 2002:a19:189:: with SMTP id 131mr46796309lfb.74.1558639129364; 
+ Thu, 23 May 2019 12:18:49 -0700 (PDT)
 MIME-Version: 1.0
+References: <1558338735-8444-1-git-send-email-amelie.delaunay@st.com>
+ <20190522054833.GB4574@dell> <eb8425ec-989a-9701-7fee-61bd1d2b93c1@st.com>
+ <20190522084133.GF4574@dell> <bc1b5f1d-23b0-141d-f58f-b54ac303fe20@st.com>
+ <CACRpkdYmdpwEvCBrL6i1V+Zxd0OSpZmD8BJPSZu9jYNeJkoimQ@mail.gmail.com>
+ <08ea97544018430caf53af36677902b7@SFHDAG3NODE2.st.com>
+In-Reply-To: <08ea97544018430caf53af36677902b7@SFHDAG3NODE2.st.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Thu, 23 May 2019 21:18:37 +0200
+Message-ID: <CACRpkdZLbMJ5dKiL9J1x=PozBVH777kNNABZi-n0LxD0BOp8mw@mail.gmail.com>
+Subject: Re: [PATCH] pinctrl: stmfx: Fix compile issue when CONFIG_OF_GPIO is
+ not defined
+To: Amelie DELAUNAY <amelie.delaunay@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_122538_073295_0FC17B2E 
-X-CRM114-Status: GOOD (  14.08  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190523_121851_556617_EA4A5743 
+X-CRM114-Status: GOOD (  16.03  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -74,85 +96,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulouse <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, stable@vger.kernel.org,
- Arnaldo Carvalho de Melo <acme@redhat.com>, Leo Yan <leo.yan@linaro.org>,
- Namhyung Kim <namhyung@kernel.org>, Robert Walker <robert.walker@arm.com>,
- Jiri Olsa <jolsa@redhat.com>, linux-arm-kernel@lists.infradead.org,
- Mike Leach <mike.leach@linaro.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Alexandre TORGUE <alexandre.torgue@st.com>,
+ Randy Dunlap <rdunlap@infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "kbuild-all@01.org" <kbuild-all@01.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, Lee Jones <lee.jones@linaro.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[ Upstream commit 35bb59c10a6d0578806dd500477dae9cb4be344e ]
-
-Robert Walker reported a segmentation fault is observed when process
-CoreSight trace data; this issue can be easily reproduced by the command
-'perf report --itrace=i1000i' for decoding tracing data.
-
-If neither the 'b' flag (synthesize branches events) nor 'l' flag
-(synthesize last branch entries) are specified to option '--itrace',
-cs_etm_queue::prev_packet will not been initialised.  After merging the
-code to support exception packets and sample flags, there introduced a
-number of uses of cs_etm_queue::prev_packet without checking whether it
-is valid, for these cases any accessing to uninitialised prev_packet
-will cause crash.
-
-As cs_etm_queue::prev_packet is used more widely now and it's already
-hard to follow which functions have been called in a context where the
-validity of cs_etm_queue::prev_packet has been checked, this patch
-always allocates memory for cs_etm_queue::prev_packet.
-
-Reported-by: Robert Walker <robert.walker@arm.com>
-Suggested-by: Robert Walker <robert.walker@arm.com>
-Signed-off-by: Leo Yan <leo.yan@linaro.org>
-Tested-by: Robert Walker <robert.walker@arm.com>
-Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
-Cc: Jiri Olsa <jolsa@redhat.com>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
-Cc: Mike Leach <mike.leach@linaro.org>
-Cc: Namhyung Kim <namhyung@kernel.org>
-Cc: Suzuki K Poulouse <suzuki.poulose@arm.com>
-Cc: linux-arm-kernel@lists.infradead.org
-Fixes: 7100b12cf474 ("perf cs-etm: Generate branch sample for exception packet")
-Fixes: 24fff5eb2b93 ("perf cs-etm: Avoid stale branch samples when flush packet")
-Link: http://lkml.kernel.org/r/20190428083228.20246-1-leo.yan@linaro.org
-Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- tools/perf/util/cs-etm.c | 8 +++-----
- 1 file changed, 3 insertions(+), 5 deletions(-)
-
-diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-index 27a374ddf6615..947f1bb2fbdfb 100644
---- a/tools/perf/util/cs-etm.c
-+++ b/tools/perf/util/cs-etm.c
-@@ -345,11 +345,9 @@ static struct cs_etm_queue *cs_etm__alloc_queue(struct cs_etm_auxtrace *etm,
- 	if (!etmq->packet)
- 		goto out_free;
- 
--	if (etm->synth_opts.last_branch || etm->sample_branches) {
--		etmq->prev_packet = zalloc(szp);
--		if (!etmq->prev_packet)
--			goto out_free;
--	}
-+	etmq->prev_packet = zalloc(szp);
-+	if (!etmq->prev_packet)
-+		goto out_free;
- 
- 	if (etm->synth_opts.last_branch) {
- 		size_t sz = sizeof(struct branch_stack);
--- 
-2.20.1
-
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVGh1LCBNYXkgMjMsIDIwMTkgYXQgNDoxMSBQTSBBbWVsaWUgREVMQVVOQVkgPGFtZWxpZS5k
+ZWxhdW5heUBzdC5jb20+IHdyb3RlOgo+IE9uIDUvMjIvMTkgMTE6NDggUE0sIExpbnVzIFdhbGxl
+aWogd3JvdGU6Cj4gPiBPbiBXZWQsIE1heSAyMiwgMjAxOSBhdCAxMToyMSBBTSBBbWVsaWUgREVM
+QVVOQVkgPGFtZWxpZS5kZWxhdW5heUBzdC5jb20+IHdyb3RlOgo+ID4KPiA+PiAuLi9kcml2ZXJz
+L3BpbmN0cmwvcGluY3RybC1zdG1meC5jOjQwOToyMDogZXJyb3I6Cj4gPj4g4oCYcGluY29uZl9n
+ZW5lcmljX2R0X25vZGVfdG9fbWFwX3BpbuKAmSB1bmRlY2xhcmVkIGhlcmUgKG5vdCBpbiBhIGZ1
+bmN0aW9uKQo+ID4+ICAgICAuZHRfbm9kZV90b19tYXAgPSBwaW5jb25mX2dlbmVyaWNfZHRfbm9k
+ZV90b19tYXBfcGluLAo+ID4+Cj4gPj4gT0ZfR1BJTyBkZXBlbmRzIG9uIE9GLgo+ID4+Cj4gPj4g
+U28gZWl0aGVyCj4gPj4gICAgICAgZGVwZW5kcyBvbiBPRiB8fCAoT0YgJiYgQ09NUElMRV9URVNU
+KQo+ID4+IG9yCj4gPj4gICAgICAgZGVwZW5kcyBvbiBPRiB8fCAoT0ZfR1BJTyAmJiBDT01QSUxF
+X1RFU1QpCj4gPj4KPiA+PiBhbmQKPiA+Pgo+ID4+ICAgICAgIHNlbGVjdCBPRl9HUElPCj4gPgo+
+ID4gSSB3b3VsZCB1c2UganVzdDoKPiA+Cj4gPiBkZXBlbmRzIG9uIE9GX0dQSU8KPiA+Cj4gPiBC
+ZWNhdXNlIE9GX0dQSU8gYWxyZWFkeSBkZXBlbmRzIG9uIE9GLCBhbmQKPiA+IGNvbXBpbGUgdGVz
+dHMgd2lsbCBub3Qgd29yayB3aXRob3V0IE9GX0dQSU8gd2hpY2gKPiA+IHJlcXVpcmUgT0Ygc28u
+Li4KPiA+Cj4gPiBCZXNpZGVzIGl0IGlzIHdoYXQgbW9zdCBvdGhlciBHUElPIGRyaXZlcnMgZG8u
+Cj4gPgo+ID4gU28ganVzdCBrZWVwIHRoYXQgb25lIGxpbmUgYW5kIGRyb3AgdGhlIHJlc3QuCj4g
+Pgo+ID4gWW91cnMsCj4gPiBMaW51cyBXYWxsZWlqCj4gPgo+Cj4gT2sgc28gSSBjYW4gZ2V0IHJp
+ZCBvZiBDT01QSUxFX1RFU1QgPwo+ICAgICAgICAgZGVwZW5kcyBvbiBJMkMKPiAgICAgICAgIGRl
+cGVuZHMgb24gT0ZfR1BJTwo+ICAgICAgICAgc2VsZWN0IEdFTkVSSUNfUElOQ09ORgo+ICAgICAg
+ICAgc2VsZWN0IEdQSU9MSUJfSVJRQ0hJUAo+ICAgICAgICAgc2VsZWN0IE1GRF9TVE1GWAoKWWVw
+IGp1c3QgbGlrZSB0aGF0LgoKPiBCZWNhdXNlIEkndmUgbm8gYXJjaCB0byBiYWxhbmNlIENPTVBJ
+TEVfVEVTVC4gT3IgbWF5YmUgc29tZXRoaW5nIGxpa2UKPiAgICAgICAgIGRlcGVuZHMgb24gT0Zf
+R1BJTyAmJiAoT0YgfHwgQ09NUElMRV9URVNUKQo+IGV2ZW4gaWYgT0ZfR1BJTyAmJiBPRiBpcyBy
+ZWR1bmRhbnQgPwoKQ09NUElMRV9URVNUIGlzIGp1c3QgdG8gbWFrZSBzb21ldGhpbmcgYXZhaWxh
+YmxlIGZvciB0ZXN0aW5nCm9uIG90aGVyIGFyY2hpdGVjdHVyZXMsIHN1Y2ggYXMgdGVzdGluZyBB
+Uk0tc3BlY2lmaWMgZHJpdmVycwpvbiB4ODYuCgpXaXRoIGp1c3QgT0ZfR1BJTyBhcyBkZXBlbmRl
+bmN5LCBpdCB3aWxsIGJlIGNvbXBpbGUgdGVzdGVkIGFueXdheXMKYmVjYXVzZSB4ODYgYWxseWVz
+Y29uZmlnIHdpbGwgZW5hYmxlIE9GIGFuZCBPRl9HUElPLCBhbmQgYWxzbwphbGwgdGhlIFNUTUZY
+IGRyaXZlcnMuCgpZb3VycywKTGludXMgV2FsbGVpagoKX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
+dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
+b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
