@@ -2,70 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6913C27D03
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 14:41:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09D4127D12
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 14:45:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VWiE0wodQbK1Wcx/mtwmLfLuK4r2Mv4MqFGH7jGDOCg=; b=Jnxu3ENKuIUwax
-	6Gg/1FPbwVzt7W122l2vO1oxNuse93yr1kn9yDXo6faVShcxVG963Oyd0mxGDeWC612yoX0QEb+uh
-	uBvVTfVaumFHMBgdVUxKhSEXrajMTmJ3vr0bVaNS6WvFbhzc+6hIJplkBFATfIbbgVCo8oj0xBj7s
-	og2FMesExx9ak9msoEwmMZoXc5sUpKiVrYCoGtGNXW8ThWLP1YI721qESkvkSCvB/DhSmcl/MdipL
-	EPvzc5QpqNX4uHyQTRzEF765yEll+CisdgcjABbeRVrYavH+jqdHxNWvts211n/XzfjtMTTnJRcWG
-	fx89dpEvuYnWfRuW0WzA==;
+	List-Owner; bh=kHvzyr0k/6KCztV6mWj35AsY7EW/ZtV+G7MBZ3A8uX8=; b=ic7laLZY85csVS
+	JLcVIMA1QLA7kLiwaf5qZSG8iiW779w9BnePdh7pgEQ64kif6M2fxFxuUVxq9M0oOCpj73mOBII63
+	hcMVcYmRe83oCJUMg9hkRDBin6Nw3Ghlucj09bGTzZkt2/6T2nPS/8WjpgBAFmg5n8MmI//COnoDk
+	TBFlz1WSdK4SSErJbbyU/jbTLr8vMR9wTTw2ygz7iWFJjZlwN116vbYrUAeas4KhxcWB57zKpP7+s
+	vs1EAf4fLQSv8sxaWLm2Lu7onevo2GZ2XZ/yFIMskUCtHFPCtZDMXieyPT+3heH93sA7rF4v7SXYz
+	pv5NrJLIOS+iCEVUkU0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTn2g-0007Ag-Bd; Thu, 23 May 2019 12:41:54 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hTn6J-0000Lf-P5; Thu, 23 May 2019 12:45:39 +0000
+Received: from verein.lst.de ([213.95.11.211] helo=newverein.lst.de)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTn2Z-0007AG-Md
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 12:41:49 +0000
-Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 00F0D21019;
- Thu, 23 May 2019 12:41:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558615305;
- bh=uLiCmPuCEnBoRJ3UmlA97AkB8XpLW5+DYpKD1xKSb+0=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Sf0qK/JbYPEsgAwjfRune+wYwde36fZsui36KPpmdbm1RdfARGuZbwLLji5pVlPsl
- 3MSGG+NpjYNqc0sb0RVXqyjl2y7B6SIcG3pU0pdAg2vzsBEy6kqXGUcFjP8wC8eC2j
- m37q0iGfLMCyCLVYAZQhMeZfXqnws9ShXKpDZePs=
-Date: Thu, 23 May 2019 20:40:45 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Anson Huang <anson.huang@nxp.com>
-Subject: Re: [PATCH 1/2] soc: imx: soc-imx8: Avoid unnecessary of_node_put()
- in error handling
-Message-ID: <20190523124044.GT9261@dragon>
-References: <1558430013-18346-1-git-send-email-Anson.Huang@nxp.com>
+ id 1hTn6D-0000LG-1w
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 12:45:34 +0000
+Received: by newverein.lst.de (Postfix, from userid 2005)
+ id 139CB68AFE; Thu, 23 May 2019 14:45:09 +0200 (CEST)
+Date: Thu, 23 May 2019 14:45:08 +0200
+From: Torsten Duwe <duwe@lst.de>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Subject: Re: [PATCH 4/6] drm/bridge: Add Analogix anx6345 support
+Message-ID: <20190523124508.GC15685@lst.de>
+References: <20190523065013.2719D68B05@newverein.lst.de>
+ <20190523065356.0734568BFE@newverein.lst.de>
+ <20190523075041.GC4745@pendragon.ideasonboard.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1558430013-18346-1-git-send-email-Anson.Huang@nxp.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+In-Reply-To: <20190523075041.GC4745@pendragon.ideasonboard.com>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_054147_934946_B0302006 
-X-CRM114-Status: GOOD (  17.28  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190523_054533_249016_51315FCE 
+X-CRM114-Status: GOOD (  16.32  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [213.95.11.211 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -77,61 +60,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Abel Vesa <abel.vesa@nxp.com>,
- "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Andrzej Hajda <a.hajda@samsung.com>, Maxime Ripard <maxime.ripard@bootlin.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, David Airlie <airlied@linux.ie>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Harald Geyer <harald@ccbib.org>, Sean Paul <seanpaul@chromium.org>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Icenowy Zheng <icenowy@aosc.io>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 21, 2019 at 09:18:43AM +0000, Anson Huang wrote:
-> of_node_put() is called after of_match_node() successfully called,
-> then in the following error handling, of_node_put() is called again
-> which is unnecessary, this patch adjusts the location of of_node_put()
-> to avoid such scenario.
+On Thu, May 23, 2019 at 10:50:41AM +0300, Laurent Pinchart wrote:
+> Hi Torsten,
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> Thank you for the patch.
 
-Again, there are '=20' in the patch content and I cannot apply it.
+Thank you for the thorough review!
 
-Shawn
-
-> ---
->  drivers/soc/imx/soc-imx8.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
+> On Thu, May 23, 2019 at 08:53:56AM +0200, Torsten Duwe wrote:
+> > +{
+> > +	struct anx6345 *anx6345 = connector_to_anx6345(connector);
+> > +	int err, num_modes = 0;
+> > +	bool power_off = false;
+> > +
+> > +	mutex_lock(&anx6345->lock);
+> > +
+> > +	if (!anx6345->edid) {
 > 
-> diff --git a/drivers/soc/imx/soc-imx8.c b/drivers/soc/imx/soc-imx8.c
-> index b1bd8e2..944add2 100644
-> --- a/drivers/soc/imx/soc-imx8.c
-> +++ b/drivers/soc/imx/soc-imx8.c
-> @@ -86,8 +86,6 @@ static int __init imx8_soc_init(void)
->  	if (!id)
->  		goto free_soc;
->  
-> -	of_node_put(root);
-> -
->  	data = id->data;
->  	if (data) {
->  		soc_dev_attr->soc_id = data->name;
-> @@ -106,6 +104,8 @@ static int __init imx8_soc_init(void)
->  	if (IS_ENABLED(CONFIG_ARM_IMX_CPUFREQ_DT))
->  		platform_device_register_simple("imx-cpufreq-dt", -1, NULL, 0);
->  
-> +	of_node_put(root);
-> +
->  	return 0;
->  
->  free_rev:
-> -- 
-> 2.7.4
+> Could the chip be used with a hot-pluggable display, or is it guaranteed
+> that EDID will never change ?
+
+The chip itself is capable of (e)DP hot-plugging, so the signals suggest.
+See the previous discussions about what to expect on the output side.
+Currently, the driver does not handle hot-plugging.
+
+> > +
+> > +	err = drm_of_find_panel_or_bridge(client->dev.of_node, 1, 0,
+> > +					  &anx6345->panel, NULL);
+> > +	if (err == -EPROBE_DEFER)
+> > +		return err;
+> > +
+> > +	if (err)
+> > +		DRM_DEBUG("No panel found\n");
 > 
+> Shouldn't this be fatal ?
+
+No, basically same as above. On the output side, there can be a panel,
+another bridge, or some eDP plug. If the DT didn't explicitly specify
+a panel or a bridge, we can still generate video output as soon as
+there is valid EDID data.
+
+Your other points went straight onto my TODO list.
+
+	Torsten
+
 
 _______________________________________________
 linux-arm-kernel mailing list
