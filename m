@@ -2,95 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B7B827925
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 11:26:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5A1527932
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 11:29:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yo87zn2xT2NAWHNwpceqZUHnOJ7hW/5sjKGyMngIEwM=; b=h5bdvDg254fgog
-	Ods+mXvqGm24TrSF1CemXVU2A2Sw3jjLrBIJWbALBTVW8+h4U99E8hAUojwNewzxG+fZ2Do9s/4Bw
-	RDVYZyCkVlAtqFpm9ST37Z1LTcHkZf0JkfnnRciq3KLc+C+kM6V8st+2e029knEq9pdFltTcCS8mu
-	EOxyU1/dWb2kZqjTpA11XrApggZDmhu7u6QgnZeWYeTHGpu6PJgti17Byq7c4VznGMXjTjBBCGnF4
-	KJHwflMWRDVEgeHWAkndC0gEqAO2ivZ9Aafyd/Tcfnlx+J2e60TSMyPvpVWNcljqvHcQ5+helxj0r
-	vRdbB0bGLGClBm5/hv2Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=jPmmtZdb8u4++oHHihZvS6+j06oPQWsGYlSFXY5+fMU=; b=Y9vB6hDuuJruxgSEEfa1MYzyi
+	rdC/x4Q8NFgUJt7ryfCAro+hmsoOoH6iWVru78Lmg7Ng9yELhQKXHHU1JxVaFJay88MTO0+8gF5ny
+	YZQ3nk86QIaHm4AbcIq04BNKYfZ2RPbL2nGrN/0WKpTmNC+wY36HxS57shtko9PjTXw9hcrxkWGW5
+	8R9Fvm0u942i91UmG7EmHOhSSUz2Zv18hLX7iq5LAeaR72ZLP4rBd/dNpmDe5XnpqN9kh63VfFkWl
+	ZdRy1i1POe6SQCSpA3ZzysyXGkHhDEwCRv6TmbvVHkNHU/3sE+3hUyTekpMUe9Zvx9McKmjUre83c
+	4epncvKYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTjzN-0004vA-4k; Thu, 23 May 2019 09:26:17 +0000
+	id 1hTk2o-0005Lu-AH; Thu, 23 May 2019 09:29:50 +0000
 Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTjzG-0004uo-MD
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 09:26:11 +0000
+ id 1hTk2h-0005LH-4b
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 09:29:44 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 40E22341;
- Thu, 23 May 2019 02:26:10 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 920B33F718; Thu, 23 May 2019 02:26:03 -0700 (PDT)
-Subject: Re: [PATCH v4 01/10] ata: libahci: Ensure the host interrupt status
- bits are cleared
-To: raymond pang <raymondpangxd@gmail.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>
-References: <20190521143023.31810-1-miquel.raynal@bootlin.com>
- <20190521143023.31810-2-miquel.raynal@bootlin.com>
- <CAHG4imNxsdzjzRpFWnL+PuznjdOU4hsp2E-g1bt4WVJeokfT3w@mail.gmail.com>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
-Organization: ARM Ltd
-Message-ID: <53ce8c5b-46fc-c969-5168-18e4bcc62cde@arm.com>
-Date: Thu, 23 May 2019 10:26:01 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 81220341;
+ Thu, 23 May 2019 02:29:42 -0700 (PDT)
+Received: from [10.1.39.23] (unknown [10.1.39.23])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7F9213F718;
+ Thu, 23 May 2019 02:29:40 -0700 (PDT)
+Subject: Re: [PATCH] module/ksymtab: use 64-bit relative reference for target
+ symbol
+To: Will Deacon <will.deacon@arm.com>
+References: <20190522150239.19314-1-ard.biesheuvel@arm.com>
+ <293c9d0f-dc14-1413-e4b4-4299f0acfb9e@arm.com>
+ <f2141ee5-d07a-6dd9-47c6-97e8fbdccf34@arm.com>
+ <20190523091811.GA26646@fuggles.cambridge.arm.com>
+From: Ard Biesheuvel <ard.biesheuvel@arm.com>
+Message-ID: <907a9681-cd1d-3326-e3dd-5f6965497720@arm.com>
+Date: Thu, 23 May 2019 10:29:39 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <CAHG4imNxsdzjzRpFWnL+PuznjdOU4hsp2E-g1bt4WVJeokfT3w@mail.gmail.com>
+In-Reply-To: <20190523091811.GA26646@fuggles.cambridge.arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_022610_732727_F3F0A437 
-X-CRM114-Status: GOOD (  23.02  )
+X-CRM114-CacheID: sfid-20190523_022943_190030_D12B0FDA 
+X-CRM114-Status: GOOD (  21.46  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -111,98 +67,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
- Baruch Siach <baruch@tkos.co.il>, Jason Cooper <jason@lakedaemon.net>,
- Nadav Haklai <nadavh@marvell.com>, devicetree@vger.kernel.org,
- Antoine Tenart <antoine.tenart@bootlin.com>,
- Gregory Clement <gregory.clement@bootlin.com>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>, linux-ide@vger.kernel.org,
- Hans de Goede <hdegoede@redhat.com>, Rob Herring <robh+dt@kernel.org>,
- Jens Axboe <axboe@kernel.dk>, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, linux-arch@vger.kernel.org, arnd@arndb.de,
+ guillaume.gardet@arm.com, marc.zyngier@arm.com, x86@kernel.org,
+ linux-kernel@vger.kernel.org, james.morse@arm.com, jeyu@kernel.org,
+ mingo@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 23/05/2019 04:11, raymond pang wrote:
-> Hi Miquel,
-> 
-> This patch adds clearing GHC.IS into hot path, could you explain how
-> irq storm is generated? thanks
-> According to AHCI Spec, HBA should not refer to GHC.IS to generate
-> MSI when applying multiple MSIs.
-
-Well spotted.
-
-I have the ugly feeling that this is because the Marvell AHCI
-implementation is not using MSIs at all, but instead a pair of wired
-interrupts (which are level triggered instead of edge, hence the
-screaming interrupts).
-
-The changes in the following patches abuse the rest of the driver by
-pretending this is a a multi-MSI setup, while it clearly doesn't match
-the expectation of the AHCI spec for MSIs.
-
-It looks like this shouldn't be imposed on other unsuspecting
-implementations which correctly use edge-triggered MSIs and do not
-require such an MMIO access.
-
-Thanks,
-
-	M.
-
-> 
-> Best Regards,
-> Raymond
-> 
-> On Tue, May 21, 2019 at 2:31 PM Miquel Raynal <miquel.raynal@bootlin.com> wrote:
->>
->> ahci_multi_irqs_intr_hard() is going to be used as interrupt handler
->> to support SATA per-port interrupts. The current logic is to check and
->> clear the SATA port interrupt status register only. To avoid spurious
->> IRQs and interrupt storms, it will be needed to clear the port
->> interrupt bit in the host interrupt status register as well.
->>
->> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
->> ---
->>  drivers/ata/libahci.c | 5 +++++
->>  1 file changed, 5 insertions(+)
->>
->> diff --git a/drivers/ata/libahci.c b/drivers/ata/libahci.c
->> index 692782dddc0f..9db6f488db59 100644
->> --- a/drivers/ata/libahci.c
->> +++ b/drivers/ata/libahci.c
->> @@ -1912,7 +1912,10 @@ static void ahci_port_intr(struct ata_port *ap)
->>  static irqreturn_t ahci_multi_irqs_intr_hard(int irq, void *dev_instance)
->>  {
->>         struct ata_port *ap = dev_instance;
->> +       struct ata_host *host = ap->host;
->> +       struct ahci_host_priv *hpriv = host->private_data;
->>         void __iomem *port_mmio = ahci_port_base(ap);
->> +       void __iomem *mmio = hpriv->mmio;
->>         u32 status;
->>
->>         VPRINTK("ENTER\n");
->> @@ -1924,6 +1927,8 @@ static irqreturn_t ahci_multi_irqs_intr_hard(int irq, void *dev_instance)
->>         ahci_handle_port_interrupt(ap, port_mmio, status);
->>         spin_unlock(ap->lock);
->>
->> +       writel(BIT(ap->port_no), mmio + HOST_IRQ_STAT);
->> +
->>         VPRINTK("EXIT\n");
->>
->>         return IRQ_HANDLED;
->> --
->> 2.19.1
->>
-
-
--- 
-Jazz is not dead. It just smells funny...
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiA1LzIzLzE5IDEwOjE4IEFNLCBXaWxsIERlYWNvbiB3cm90ZToKPiBPbiBUaHUsIE1heSAy
+MywgMjAxOSBhdCAwOTo0MTo0MEFNICswMTAwLCBBcmQgQmllc2hldXZlbCB3cm90ZToKPj4KPj4K
+Pj4gT24gNS8yMi8xOSA1OjI4IFBNLCBBcmQgQmllc2hldXZlbCB3cm90ZToKPj4+Cj4+Pgo+Pj4g
+T24gNS8yMi8xOSA0OjAyIFBNLCBBcmQgQmllc2hldXZlbCB3cm90ZToKPj4+PiBUaGUgZm9sbG93
+aW5nIGNvbW1pdAo+Pj4+Cj4+Pj4gIMKgwqAgNzI5MGQ1ODA5NTcxICgibW9kdWxlOiB1c2UgcmVs
+YXRpdmUgcmVmZXJlbmNlcyBmb3IgX19rc3ltdGFiIGVudHJpZXMiKQo+Pj4+Cj4+Pj4gdXBkYXRl
+ZCB0aGUga3N5bXRhYiBoYW5kbGluZyBvZiBzb21lIEtBU0xSIGNhcGFibGUgYXJjaGl0ZWN0dXJl
+cwo+Pj4+IHNvIHRoYXQga3N5bXRhYiBlbnRyaWVzIGFyZSBlbWl0dGVkIGFzIHBhaXJzIG9mIDMy
+LWJpdCByZWxhdGl2ZQo+Pj4+IHJlZmVyZW5jZXMuIFRoaXMgcmVkdWNlcyB0aGUgc2l6ZSBvZiB0
+aGUgZW50cmllcywgYnV0IG1vcmUKPj4+PiBpbXBvcnRhbnRseSwgaXQgZ2V0cyByaWQgb2Ygc3Rh
+dGljYWxseSBhc3NpZ25lZCBhYnNvbHV0ZQo+Pj4+IGFkZHJlc3Nlcywgd2hpY2ggcmVxdWlyZSBm
+aXhpbmcgdXAgYXQgYm9vdCB0aW1lIGlmIHRoZSBrZXJuZWwKPj4+PiBpcyBzZWxmIHJlbG9jYXRp
+bmcgKHdoaWNoIHRha2VzIGEgMjQgYnl0ZSBSRUxBIGVudHJ5IGZvciBlYWNoCj4+Pj4gbWVtYmVy
+IG9mIHRoZSBrc3ltdGFiIHN0cnVjdCkuCj4+Pj4KPj4+PiBTaW5jZSBrc3ltdGFiIGVudHJpZXMg
+YXJlIGFsd2F5cyBwYXJ0IG9mIHRoZSBzYW1lIG1vZHVsZSBhcyB0aGUKPj4+PiBzeW1ib2wgdGhl
+eSBleHBvcnQgKG9yIG9mIHRoZSBjb3JlIGtlcm5lbCksIGl0IHdhcyBhc3N1bWVkIGF0IHRoZQo+
+Pj4+IHRpbWUgdGhhdCBhIDMyLWJpdCByZWxhdGl2ZSByZWZlcmVuY2UgaXMgYWx3YXlzIHN1ZmZp
+Y2llbnQgdG8KPj4+PiBjYXB0dXJlIHRoZSBvZmZzZXQgYmV0d2VlbiBhIGtzeW10YWIgZW50cnkg
+YW5kIGl0cyB0YXJnZXQgc3ltYm9sLgo+Pj4+Cj4+Pj4gVW5mb3J0dW5hdGVseSwgdGhpcyBpcyBu
+b3QgYWx3YXlzIHRydWU6IGluIHRoZSBjYXNlIG9mIHBlci1DUFUKPj4+PiB2YXJpYWJsZXMsIGEg
+cGVyLUNQVSB2YXJpYWJsZSdzIGJhc2UgYWRkcmVzcyAod2hpY2ggdXN1YWxseSBkaWZmZXJzCj4+
+Pj4gZnJvbSB0aGUgYWN0dWFsIGFkZHJlc3Mgb2YgYW55IG9mIGl0cyBwZXItQ1BVIGNvcGllcykg
+Y291bGQgYmUgYXQKPj4+PiBhbiBhcmJpdHJhcnkgb2Zmc2V0IGZyb20gdGhlIGtzeW10YWIgZW50
+cnksIGFuZCBzbyBpdCBtYXkgYmUgb3V0Cj4+Pj4gb2YgcmFuZ2UgZm9yIGEgMzItYml0IHJlbGF0
+aXZlIHJlZmVyZW5jZS4KPj4+Pgo+Pgo+PiAoQXBvbG9naWVzIGZvciB0aGUgMy1hY3QgbW9ub2xv
+Z3VlKQo+IAo+IEV4cG9zaXRpb24sIGRldmVsb3BtZW50IGFuZCByZWNhcGl0dWxhdGlvbiA7KQo+
+IAo+PiBUaGlzIHR1cm5zIG91dCB0byBiZSBpbmNvcnJlY3QuIFRoZSBzeW1ib2wgYWRkcmVzcyBv
+ZiBwZXItQ1BVIHZhcmlhYmxlcwo+PiBleHBvcnRlZCBieSBtb2R1bGVzIGlzIGFsd2F5cyBpbiB0
+aGUgdmljaW5pdHkgb2YgX19wZXJfY3B1X3N0YXJ0LCBhbmQgc28gaXQKPj4gaXMgc2ltcGx5IGEg
+bWF0dGVyIG9mIG1ha2luZyBzdXJlIHRoYXQgdGhlIGNvcmUga2VybmVsIGlzIGluIHJhbmdlIGZv
+cgo+PiBtb2R1bGUga3N5bXRhYiBlbnRyaWVzIGNvbnRhaW5pbmcgMzItYml0IHJlbGF0aXZlIHJl
+ZmVyZW5jZXMuCj4+Cj4+IFdoZW4gcnVubmluZyB0aGUgYXJtNjQgd2l0aCBrYXNsciBlbmFibGVk
+LCB3ZSBjdXJyZW50bHkgcmFuZG9taXplIHRoZSBtb2R1bGUKPj4gc3BhY2UgYmFzZWQgb24gdGhl
+IHJhbmdlIG9mIEFEUlAvQUREIGluc3RydWN0aW9uIHBhaXJzLCB3aGljaCBoYXZlIGEgLS8rIDQK
+Pj4gR0IgcmFuZ2UgcmF0aGVyIHRoYW4gdGhlIC0vKyAyIEdCIHJhbmdlIG9mIDMyLWJpdCBwbGFj
+ZSByZWxhdGl2ZSBkYXRhCj4+IHJlbG9jYXRpb25zLiBTbyB3ZSBjYW4gZml4IHRoaXMgYnkgc2lt
+cGx5IHJlZHVjaW5nIHRoZSByYW5kb21pemF0aW9uIHdpbmRvdwo+PiB0byAyIEdCLgo+IAo+IE1h
+a2VzIHNlbnNlLiBEbyB5b3Ugc2VlIHRoZSBuZWVkIGZvciBhbiBvcHRpb24gdG8gZGlzYWJsZSBQ
+UkVMIHJlbG9jcwo+IGFsdG9nZXRoZXIgaW4gY2FzZSBzb21lYm9keSB3YW50cyB0aGUgYWRkaXRp
+b25hbCByYW5kb21pemF0aW9uIHJhbmdlPwo+IAoKTm8sIG5vdCByZWFsbHkuIFRvIGJlIGhvbmVz
+dCwgSSBkb24ndCB0aGluayAKQ09ORklHX1JBTkRPTUlaRV9NT0RVTEVfUkVHSU9OX0ZVTEwgaXMg
+dGhhdCB1c2VmdWwgdG8gYmVnaW4gd2l0aCwgYW5kIAp0aGUgb25seSByZWFzb24gd2UgZW5hYmxl
+ZCBpdCBieSBkZWZhdWx0IGF0IHRoZSB0aW1lIHdhcyB0byBlbnN1cmUgdGhhdCAKdGhlIFBMVCBj
+b2RlIGdvdCBzb21lIGNvdmVyYWdlIGFmdGVyIHdlIGludHJvZHVjZWQgaXQuCgoKCl9fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwg
+bWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
+bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
