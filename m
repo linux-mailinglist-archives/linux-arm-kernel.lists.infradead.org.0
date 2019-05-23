@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 987BA27FEA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 16:38:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9507028005
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 16:42:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AoZR83fS6z7YHE+gXusfyIKLJ5FU17dPZlhPAfV5Rog=; b=Hi/IK8PweDFDIQ
-	lWym0VeVqsQgklg5oHJyv2wO62xZ9u5X8DycPj1PjBvzcfDDAbRXlGePSk4Wv2N0jcrzHxQzKl9u2
-	Z2ZwtmyHu2fd2jK0PZYxLeJpehOOrqjgMAwXBa4tbG58pYvvoxZOmR3yxC+ZhVlnKMYtAwwRLnEr0
-	K3+we14dxmOkikIQYeUnWhtKs9W7spBJ0pEzr193vBzuLXGIg00Fex/0izfTiHfAAuFTjSNqg4FtK
-	Qld2QwO9PlpnK4jVJT6GXG+nbTqbJK30/+PFeqxfSEopaasIt7VYPnT5yCZRiM+7LF+oip7fjYEVY
-	zxrqy6izTxOvbGLNsU1w==;
+	List-Owner; bh=zz885OAa4e1UfAttVTlpVbJJI9cMXzJf7RQwUJ+1stQ=; b=uygx5nIniNswvj
+	xmBELeYPvrMzhJwGgUnjaTMLR2Si+Mp5GOcyKWjswaA9AZvCO0RzX8gtkt05Z374NMVUr5LreaP0v
+	Pyuv9DtyDwuAruhJDcx1genD6e17WhYQkXK+mdqS4ytKj26zC5XmxSQlXKEJtff/LZe56v+KtqC3p
+	qUmP2yJHWHjnU8PT+8Q6z1fIa2VFLwWw+Mf4yJPzgdy1ymtjtOBg2O4dKDbL4xHKIm5QwSFNbHm9o
+	UCgSmY9mgqOCzOlu1CeFDMep99bzTRQ0PgmwVpdDKneiYKuVQ9YcFhfpoeedXDNVeqo6ucWdxWmHC
+	ERYK4NaGHejnFbBnCkTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTorC-0008Eh-IE; Thu, 23 May 2019 14:38:10 +0000
+	id 1hTovR-0001PA-Ht; Thu, 23 May 2019 14:42:33 +0000
 Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTor5-0008EC-5q
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 14:38:04 +0000
+ id 1hTovK-0001Os-Cd
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 14:42:27 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
  s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
  Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=ENx3kqedT/0klsMuf6qE0zDvG+kSozHAtQW6A5pcGGc=; b=OmcCPX/Rl/CibSt6QsRQi2K4ka
- vK9N7FzgvEl0MjXlIi8SxTA/wP98YUhM3sdDE7aDmBlBJCxTNb8xfvVfZxah2l4adFwurpZbEGYJA
- wRA0EfIRapEFD1q83khflFZL24g1GHkeji54fcjg6IHJVes/5mLsE2K/ZnH9bu+lf0Cg=;
+ bh=oe0GIDHTZ2hjKY163zBRnNo0jGG1opp88uh5+/y+h7o=; b=CbpAzPlFGvlp5rI0S6srpIYsZK
+ bu7DUcdO975IKQ5EjySFuo7UeUxwuDBD9uu2On077lOKnW0f2+eoai89nsWoF3XTSj0k0ndY34jfW
+ 8vRBDf/DEDlriwcoX+FB8TNNBPFXrJzUwFOLiBqw1393psHPtmv4dbs4Mw7sp5tNRo5Q=;
 Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
  (envelope-from <andrew@lunn.ch>)
- id 1hToqm-0005Z2-EC; Thu, 23 May 2019 16:37:44 +0200
-Date: Thu, 23 May 2019 16:37:44 +0200
+ id 1hTov9-0005hY-Pl; Thu, 23 May 2019 16:42:15 +0200
+Date: Thu, 23 May 2019 16:42:15 +0200
 From: Andrew Lunn <andrew@lunn.ch>
-To: Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: Re: [PATCH 2/8] dt-bindings: net: Add a YAML schemas for the generic
- PHY options
-Message-ID: <20190523143744.GB19369@lunn.ch>
+To: Rob Herring <robh+dt@kernel.org>
+Subject: Re: [PATCH 1/8] dt-bindings: net: Add YAML schemas for the generic
+ Ethernet options
+Message-ID: <20190523144215.GC19369@lunn.ch>
 References: <74d98cc3c744d53710c841381efd41cf5f15e656.1558605170.git-series.maxime.ripard@bootlin.com>
- <aa5ec90854429c2d9e2c565604243e1b10cfd94b.1558605170.git-series.maxime.ripard@bootlin.com>
+ <CAL_JsqJnFUt55b+AGpcNNjvsKsHNz9PY+b7FJ4+6CMNppzb3vg@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <aa5ec90854429c2d9e2c565604243e1b10cfd94b.1558605170.git-series.maxime.ripard@bootlin.com>
+In-Reply-To: <CAL_JsqJnFUt55b+AGpcNNjvsKsHNz9PY+b7FJ4+6CMNppzb3vg@mail.gmail.com>
 User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_073803_367231_33595A6B 
-X-CRM114-Status: GOOD (  21.47  )
+X-CRM114-CacheID: sfid-20190523_074226_580023_2DDFB81D 
+X-CRM114-Status: UNSURE (   7.38  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -79,101 +80,31 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  Alexandre Torgue <alexandre.torgue@st.com>,
- Antoine =?iso-8859-1?Q?T=E9nart?= <antoine.tenart@bootlin.com>,
- netdev@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ "David S . Miller" <davem@davemloft.net>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, netdev <netdev@vger.kernel.org>,
  Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Antoine =?iso-8859-1?Q?T=E9nart?= <antoine.tenart@bootlin.com>,
+ Chen-Yu Tsai <wens@csie.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
  Frank Rowand <frowand.list@gmail.com>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+ linux-stm32@st-md-mailman.stormreply.com,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 23, 2019 at 11:56:45AM +0200, Maxime Ripard wrote:
-> The networking PHYs have a number of available device tree properties that
-> can be used in their device tree node. Add a YAML schemas for those.
+> > +            link-gpios:
+> > +              description:
+> > +                GPIO to determine if the link is up
 > 
-> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-> ---
->  Documentation/devicetree/bindings/net/ethernet-phy.yaml | 148 +++++++++-
->  Documentation/devicetree/bindings/net/phy.txt           |  80 +-----
->  2 files changed, 149 insertions(+), 79 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/net/ethernet-phy.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/net/ethernet-phy.yaml b/Documentation/devicetree/bindings/net/ethernet-phy.yaml
-> new file mode 100644
-> index 000000000000..eb79ee6db977
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/net/ethernet-phy.yaml
-> @@ -0,0 +1,148 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/net/ethernet-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Ethernet PHY Generic Binding
-> +
-> +maintainers:
-> +  - David S. Miller <davem@davemloft.net>
-> +
-> +properties:
-> +  $nodename:
-> +    pattern: "^ethernet-phy(@[a-f0-9])?$"
-> +
-> +  compatible:
-> +    oneOf:
+> Only 1?
 
-I don't know the language. It is valid to have both
-ethernet-phy-ieee802.3-c45 and
-ethernet-phy-id[a-f0-9]{4}\\.[a-f0-9]{4}$".  Does this oneOf prevent
-multiple compatible strings?
+Hi Rob
 
-Also, the general case is no compatible at all.
+Yes, only one.
 
-> +      - const: ethernet-phy-ieee802.3-c22
-> +        description: PHYs that implement IEEE802.3 clause 22
-> +      - const: ethernet-phy-ieee802.3-c45
-> +        description: PHYs that implement IEEE802.3 clause 45
-> +      - pattern: "^ethernet-phy-id[a-f0-9]{4}\\.[a-f0-9]{4}$"
-> +        description:
-> +          The first group of digits is the 16 bit Phy Identifier 1
-> +          register, this is the chip vendor OUI bits 3:18. The
-> +          second group of digits is the Phy Identifier 2 register,
-> +          this is the chip vendor OUI bits 19:24, followed by 10
-> +          bits of a vendor specific ID.
-
-Could we try to retain:
-
-> -  If the PHY reports an incorrect ID (or none at all) then the
-> -  "compatible" list may contain an entry with the correct PHY ID in the
-     ...
-
-Using it is generally wrong, and that is not clear in the new text.
-
-> +
-> +  reg:
-> +    maxItems: 1
-> +    minimum: 0
-> +    maximum: 31
-> +    description:
-> +      The ID number for the PHY.
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  max-speed:
-> +    enum:
-> +      - 10
-> +      - 100
-> +      - 1000
-
-This is outdated in the text description. Any valid speed is
-supported, currently 10 - 200000, as listed in phy_setting settings().
-
-   Andrew
+	Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
