@@ -2,71 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9E1327702
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 09:32:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9B4A2770B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 May 2019 09:34:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dfzcSUcOcbkoH1YgbPj13at+jl2t0z57XHQ+6XwO/N4=; b=rfiOYASPQTwSn2
-	suNOL+ogRFUgkP6H4MJt/0rPZLKOTnNJdpye/4sk5hIsbqB/oyyCFuASp3b6+zloALR+pgIswfF67
-	OF/UqaMuTTaHygi4OMQ1PowWFFfLJTEFAClAJ3xEAVH6JhMQFIOMORL+OD438zjCWwMqvJGWHdK05
-	E49q/fnvf/29riSgptmEuV6vwrYSbxII/FjwSQpChG3yFp8MI/gwQ0gWZUZguBreYJH/2QJpTcxRS
-	qUI98Q2DxYRcPFuQqeOCtjap/KyD0I6dQtVfn1pEqSmCHrsZY8jgod/kWdKCs265MQM3RRlZDLKhm
-	2a3nrEDx8Nr0efxKfmaQ==;
+	List-Owner; bh=+/AdrU9S9TEJzVxdMBK7kWtmKqlUUKNfPZfM6EDFW+o=; b=eG6lwsdcOHf88s
+	VEGZXYnxtzTn+SMW0Jlog5VB7KITSJR9iI/3R0otFtQTg6mtoKq/0nO8BrDwVdQGEl2skhFgUNGhm
+	yUyc2i7L82sLOFgmtbvXDE637l/0BLST39xCYMAtqxixN1VZXYezjdgukE2J+iEXpRU/vjBsckGcZ
+	KJRjawLvdyFgmKzzTbf0GB+GhacJX4YHbD1dkg8KMZodlCOEtQ/A0YX4CPtynK9xSzHhQlYgK2G91
+	QfLIY+JpvEzdbb98hxRwJPj7p0bREXwvUTSn7xcwFL6n3z6UzO5iIqJHwdklGaPnqg5SQZz1qKqAK
+	7I/w6+/W4h9iNWBcvfWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTiDZ-0004Dj-Pd; Thu, 23 May 2019 07:32:49 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTiDS-0004DQ-KG
- for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 07:32:43 +0000
-Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2DC7F206BA;
- Thu, 23 May 2019 07:32:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558596762;
- bh=7y1NyoV6VAVBTbSwJN9K7Zn3fWn/egJKRZ5wKdxwVnQ=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Jg4Nl8B52eYCfl1L8c19y4siJt4HA8XORwMET0wbUpfodzWS3d5Rr2nB9cQouXX+N
- x7L4DDAY3pHuZrtzPUClDa4dVbhyxOa64COa7V1+RF2urPJI26D1FztHrreNje5yZB
- h7p1W/WbrECxlAVlDAcpNpVRbO3cQgrOpckhk8kE=
-Date: Thu, 23 May 2019 15:31:43 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Anson Huang <anson.huang@nxp.com>
-Subject: Re: [PATCH 3/3] arm64: dts: imx8mm: add clock for SNVS RTC node
-Message-ID: <20190523073142.GF9261@dragon>
-References: <1557883490-22360-1-git-send-email-Anson.Huang@nxp.com>
- <1557883490-22360-3-git-send-email-Anson.Huang@nxp.com>
+	id 1hTiFP-0004Xz-Iw; Thu, 23 May 2019 07:34:43 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hTiFJ-0004XK-3u
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 May 2019 07:34:38 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AF17480D;
+ Thu, 23 May 2019 00:34:34 -0700 (PDT)
+Received: from MBP.local (usa-sjc-mx-foss1.foss.arm.com [217.140.101.70])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 89C463F575;
+ Thu, 23 May 2019 00:34:28 -0700 (PDT)
+Date: Thu, 23 May 2019 08:34:25 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: enh <enh@google.com>
+Subject: Re: [PATCH v15 00/17] arm64: untag user pointers passed to the kernel
+Message-ID: <20190523073425.GA43379@MBP.local>
+References: <20190517144931.GA56186@arrakis.emea.arm.com>
+ <CAFKCwrj6JEtp4BzhqO178LFJepmepoMx=G+YdC8sqZ3bcBp3EQ@mail.gmail.com>
+ <20190521182932.sm4vxweuwo5ermyd@mbp>
+ <201905211633.6C0BF0C2@keescook>
+ <20190522101110.m2stmpaj7seezveq@mbp>
+ <CAJgzZoosKBwqXRyA6fb8QQSZXFqfHqe9qO9je5TogHhzuoGXJQ@mail.gmail.com>
+ <20190522163527.rnnc6t4tll7tk5zw@mbp>
+ <201905221316.865581CF@keescook>
+ <CAFKCwrjOjdJAbcABp3qxwyYy+hgfyQirvmqGkDSJVJe5pSz0Uw@mail.gmail.com>
+ <CAJgzZorUPzrXu0ysDdKwnqdvgWZJ9tqRjF-9_5CU_UV+c0bRCA@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1557883490-22360-3-git-send-email-Anson.Huang@nxp.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+In-Reply-To: <CAJgzZorUPzrXu0ysDdKwnqdvgWZJ9tqRjF-9_5CU_UV+c0bRCA@mail.gmail.com>
+User-Agent: Mutt/1.11.2 (2019-01-07)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_003242_679948_9E9B3D00 
-X-CRM114-Status: UNSURE (   8.84  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190523_003437_169314_669C2251 
+X-CRM114-Status: GOOD (  19.79  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -78,30 +71,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Jacky Bai <ping.bai@nxp.com>, "sboyd@kernel.org" <sboyd@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "mturquette@baylibre.com" <mturquette@baylibre.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Khalid Aziz <khalid.aziz@oracle.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgenii Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Yishai Hadas <yishaih@mellanox.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 15, 2019 at 01:30:02AM +0000, Anson Huang wrote:
-> i.MX8MM has clock gate for SNVS module, add clock info to SNVS
-> RTC node for clock management.
+On Wed, May 22, 2019 at 04:09:31PM -0700, enh wrote:
+> On Wed, May 22, 2019 at 4:03 PM Evgenii Stepanov <eugenis@google.com> wrote:
+> > On Wed, May 22, 2019 at 1:47 PM Kees Cook <keescook@chromium.org> wrote:
+> > > On Wed, May 22, 2019 at 05:35:27PM +0100, Catalin Marinas wrote:
+> > > > I would also expect the C library or dynamic loader to check for the
+> > > > presence of a HWCAP_MTE bit before starting to tag memory allocations,
+> > > > otherwise it would get SIGILL on the first MTE instruction it tries to
+> > > > execute.
+> > >
+> > > I've got the same question as Elliot: aren't MTE instructions just NOP
+> > > to older CPUs? I.e. if the CPU (or kernel) don't support it, it just
+> > > gets entirely ignored: checking is only needed to satisfy curiosity
+> > > or behavioral expectations.
+> >
+> > MTE instructions are not NOP. Most of them have side effects (changing
+> > register values, zeroing memory).
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> no, i meant "they're encoded in a space that was previously no-ops, so
+> running on MTE code on old hardware doesn't cause SIGILL".
 
-Applied, thanks.
+It does result in SIGILL, there wasn't enough encoding left in the NOP
+space for old/current CPU implementations (in hindsight, we should have
+reserved a bigger NOP space).
+
+As Evgenii said, the libc needs to be careful when tagging the heap as
+it would cause a SIGILL if the HWCAP_MTE is not set. The standard
+application doesn't need to be recompiled as it would not issue MTE
+colouring instructions, just standard LDR/STR.
+
+Stack tagging is problematic if you want to colour each frame
+individually, the function prologue would need the non-NOP MTE
+instructions. The best we can do here is just having the (thread) stacks
+of different colours.
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
