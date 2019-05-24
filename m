@@ -2,59 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE37C29994
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 16:00:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09F88299D0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 16:12:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H8NqfBNvq7eu4EdcecDMDmpqJR4caG2APlIJfI6/Ipw=; b=J9sn9imX6Pfq7D
-	H76V4ErtR4I0pWiyDTI1z0jG+b/1uFEEFyiCm+EHoywkjhrWd9iyqEaIphpJsS3q3FIhzpoof2bDw
-	MsOKeISbvcifYBvKvePGKUw9jHxUU7M0sTolmPBPQQ2lbkhVeWfoqeUNVkc9t3vZbOSTFDcTgQI3k
-	DnKONGQD8F8/arhBgz2b/ur/WbHTbxqWe75Q+YzeGGXKEKHzO6hupfh7twWurcqLvzhy2J+G95NhV
-	6WxsjaYC8fRBRIaUfnZSLJQph8XmxfD8gL5Q+8sci+HhTCW4B229JfHUMYzo8yEJfgbGJaTTO9y1O
-	k/ocBnB52HvntIDCUu6g==;
+	List-Owner; bh=I5vg0DuIGLYXxZxYogeKX1bLZANYKruu8mOkbSI7AIA=; b=OH8eCt8VOIZ0Zk
+	cug7p6X5YasmWpwdjAjyGE/ZrRaqYdbLGUzluWUT7WDQMai0WmtvJsrUzBauppu+iwXUsaOR/yYcD
+	KIJfFJSN6xoEsWNHGx8lDHYFbbRv3BFW2zvikRV89d+Ptk2lMMgrw1lhL4v8m50Frkm/GYbIZeOD/
+	nBdhsQaTw6WCT1mT6LaxnWyjePoVQKYjK4/tjlwVVsrKzeG+2xyh3UzJlCi33kjhexJehzIVh/oyJ
+	MaBcQgS41Pzb5husyFaGGZIn8Rnx85JPBhrgod7PN3Ch0UKwLkWlwafC0Rnqem+AzXnjIMhUOLm/6
+	U3ERi4XNNifUiBrH7FMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUAkJ-00063d-Gy; Fri, 24 May 2019 14:00:31 +0000
-Received: from mga06.intel.com ([134.134.136.31])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUAkB-00062v-LL
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 14:00:25 +0000
-X-Amp-Result: UNSCANNABLE
-X-Amp-File-Uploaded: False
-Received: from fmsmga007.fm.intel.com ([10.253.24.52])
- by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 24 May 2019 07:00:22 -0700
-X-ExtLoop1: 1
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by fmsmga007.fm.intel.com with ESMTP; 24 May 2019 07:00:20 -0700
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1hUAk6-0004m4-7M; Fri, 24 May 2019 22:00:18 +0800
-Date: Fri, 24 May 2019 21:59:48 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-Subject: Re: [PATCH v2] video: fbdev: atmel_lcdfb: add COMPILE_TEST support
-Message-ID: <201905242155.D1bXuUk9%lkp@intel.com>
-References: <f9d56fc1-3e02-9716-b764-82e9600e5919@samsung.com>
+	id 1hUAvy-00010C-OG; Fri, 24 May 2019 14:12:34 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hUAvs-0000zN-2W
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 14:12:29 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E549BA78;
+ Fri, 24 May 2019 07:12:25 -0700 (PDT)
+Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CFD8C3F575;
+ Fri, 24 May 2019 07:12:23 -0700 (PDT)
+Date: Fri, 24 May 2019 15:12:18 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Julien Thierry <julien.thierry@arm.com>
+Subject: Re: [PATCH v2 05/15] arm64: KVM: add access handler for SPE system
+ registers
+Message-ID: <20190524141218.GA29406@e107155-lin>
+References: <20190523103502.25925-1-sudeep.holla@arm.com>
+ <20190523103502.25925-6-sudeep.holla@arm.com>
+ <c45323a8-92e4-e406-381b-2084e222a870@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <f9d56fc1-3e02-9716-b764-82e9600e5919@samsung.com>
-X-Patchwork-Hint: ignore
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <c45323a8-92e4-e406-381b-2084e222a870@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_070023_750749_D6C16359 
-X-CRM114-Status: GOOD (  15.19  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190524_071228_126392_D82DB38C 
+X-CRM114-Status: GOOD (  21.87  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.31 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,100 +65,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>, kbuild-all@01.org,
- linux-fbdev@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: kvm@vger.kernel.org, Suzuki K Pouloze <suzuki.poulose@arm.com>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ Christoffer Dall <christoffer.dall@arm.com>, James Morse <james.morse@arm.com>,
+ Sudeep Holla <sudeep.holla@arm.com>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Bartlomiej,
+On Fri, May 24, 2019 at 12:36:24PM +0100, Julien Thierry wrote:
+> Hi Sudeep,
+> 
+> On 23/05/2019 11:34, Sudeep Holla wrote:
+> > SPE Profiling Buffer owning EL is configurable and when MDCR_EL2.E2PB
+> > is configured to provide buffer ownership to EL1, the control registers
+> > are trapped.
+> > 
+> > Add access handlers for the Statistical Profiling Extension(SPE)
+> > Profiling Buffer controls registers. This is need to support profiling
+> > using SPE in the guests.
+> > 
+> > Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+> > ---
+> >  arch/arm64/include/asm/kvm_host.h | 13 ++++++++++++
+> >  arch/arm64/kvm/sys_regs.c         | 35 +++++++++++++++++++++++++++++++
+> >  include/kvm/arm_spe.h             | 15 +++++++++++++
+> >  3 files changed, 63 insertions(+)
+> > 
+> > diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+> > index 611a4884fb6c..559aa6931291 100644
+> > --- a/arch/arm64/include/asm/kvm_host.h
+> > +++ b/arch/arm64/include/asm/kvm_host.h
+> > @@ -147,6 +147,19 @@ enum vcpu_sysreg {
+> >  	MDCCINT_EL1,	/* Monitor Debug Comms Channel Interrupt Enable Reg */
+> >  	DISR_EL1,	/* Deferred Interrupt Status Register */
+> >  
+> > +	/* Statistical Profiling Extension Registers */
+> > +
+> > +	PMSCR_EL1,
+> > +	PMSICR_EL1,
+> > +	PMSIRR_EL1,
+> > +	PMSFCR_EL1,
+> > +	PMSEVFR_EL1,
+> > +	PMSLATFR_EL1,
+> > +	PMSIDR_EL1,
+> > +	PMBLIMITR_EL1,
+> > +	PMBPTR_EL1,
+> > +	PMBSR_EL1,
+> > +
+> >  	/* Performance Monitors Registers */
+> >  	PMCR_EL0,	/* Control Register */
+> >  	PMSELR_EL0,	/* Event Counter Selection Register */
+> > diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
+> > index 857b226bcdde..dbf5056828d3 100644
+> > --- a/arch/arm64/kvm/sys_regs.c
+> > +++ b/arch/arm64/kvm/sys_regs.c
+> > @@ -646,6 +646,30 @@ static void reset_pmcr(struct kvm_vcpu *vcpu, const struct sys_reg_desc *r)
+> >  	__vcpu_sys_reg(vcpu, PMCR_EL0) = val;
+> >  }
+> >  
+> > +static bool access_pmsb_val(struct kvm_vcpu *vcpu, struct sys_reg_params *p,
+> > +			    const struct sys_reg_desc *r)
+> > +{
+> > +	if (p->is_write)
+> > +		vcpu_write_sys_reg(vcpu, p->regval, r->reg);
+> > +	else
+> > +		p->regval = vcpu_read_sys_reg(vcpu, r->reg);
+> > +
+> > +	return true;
+> > +}
+> > +
+> > +static void reset_pmsb_val(struct kvm_vcpu *vcpu, const struct sys_reg_desc *r)
+> > +{
+> > +	if (!kvm_arm_support_spe_v1()) {
+> > +		__vcpu_sys_reg(vcpu, r->reg) = 0;
+> > +		return;
+> > +	}
+> > +
+> > +	if (r->reg == PMSIDR_EL1)
+> 
+> If only PMSIDR_EL1 has a non-zero reset value, it feels a bit weird to
+> share the reset function for all these registers.
+>
 
-I love your patch! Perhaps something to improve:
+Ah, right. Initially I did have couple of other registers which were not
+needed. So I removed them without observing that I could have just used
+reset_val(0) for all except PMSIDR_EL1.
 
-[auto build test WARNING on linus/master]
-[also build test WARNING on v5.2-rc1 next-20190524]
-[if your patch is applied to the wrong git tree, please drop us a note to help improve the system]
+> I would suggest only having a reset_pmsidr() function, and just use
+> reset_val() with sys_reg_desc->val set to 0 for all the others.
+>
 
-url:    https://github.com/0day-ci/linux/commits/Bartlomiej-Zolnierkiewicz/video-fbdev-atmel_lcdfb-add-COMPILE_TEST-support/20190524-184331
-reproduce:
-        # apt-get install sparse
-        # sparse version: v0.6.1-rc1-7-g2b96cd8-dirty
-        make ARCH=x86_64 allmodconfig
-        make C=1 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__'
+Thanks for pointing this out.
 
-If you fix the issue, kindly add following tag
-Reported-by: kbuild test robot <lkp@intel.com>
-
-
-sparse warnings: (new ones prefixed by >>)
-
->> drivers/video/fbdev/atmel_lcdfb.c:354:27: sparse: sparse: incorrect type in assignment (different address spaces) @@    expected char [noderef] <asn:2> *screen_base @@    got n:2> *screen_base @@
->> drivers/video/fbdev/atmel_lcdfb.c:354:27: sparse:    expected char [noderef] <asn:2> *screen_base
->> drivers/video/fbdev/atmel_lcdfb.c:354:27: sparse:    got void *
->> drivers/video/fbdev/atmel_lcdfb.c:362:9: sparse: sparse: incorrect type in argument 1 (different address spaces) @@    expected void *s @@    got char [noderef] <asvoid *s @@
->> drivers/video/fbdev/atmel_lcdfb.c:362:9: sparse:    expected void *s
->> drivers/video/fbdev/atmel_lcdfb.c:362:9: sparse:    got char [noderef] <asn:2> *screen_base
->> drivers/video/fbdev/atmel_lcdfb.c:333:59: sparse: sparse: incorrect type in argument 3 (different address spaces) @@    expected void *cpu_addr @@    got char [noderef] <asvoid *cpu_addr @@
->> drivers/video/fbdev/atmel_lcdfb.c:333:59: sparse:    expected void *cpu_addr
-   drivers/video/fbdev/atmel_lcdfb.c:333:59: sparse:    got char [noderef] <asn:2> *screen_base
->> drivers/video/fbdev/atmel_lcdfb.c:333:59: sparse: sparse: incorrect type in argument 3 (different address spaces) @@    expected void *cpu_addr @@    got char [noderef] <asvoid *cpu_addr @@
->> drivers/video/fbdev/atmel_lcdfb.c:333:59: sparse:    expected void *cpu_addr
-   drivers/video/fbdev/atmel_lcdfb.c:333:59: sparse:    got char [noderef] <asn:2> *screen_base
-
-vim +354 drivers/video/fbdev/atmel_lcdfb.c
-
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  328  
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  329  static inline void atmel_lcdfb_free_video_memory(struct atmel_lcdfb_info *sinfo)
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  330  {
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  331  	struct fb_info *info = sinfo->info;
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  332  
-f6e45661 drivers/video/fbdev/atmel_lcdfb.c Luis R. Rodriguez  2016-01-22 @333  	dma_free_wc(info->device, info->fix.smem_len, info->screen_base,
-f6e45661 drivers/video/fbdev/atmel_lcdfb.c Luis R. Rodriguez  2016-01-22  334  		    info->fix.smem_start);
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  335  }
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  336  
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  337  /**
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  338   *	atmel_lcdfb_alloc_video_memory - Allocate framebuffer memory
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  339   *	@sinfo: the frame buffer to allocate memory for
-1d01e835 drivers/video/atmel_lcdfb.c       Krzysztof Helt     2009-07-08  340   * 	
-1d01e835 drivers/video/atmel_lcdfb.c       Krzysztof Helt     2009-07-08  341   * 	This function is called only from the atmel_lcdfb_probe()
-1d01e835 drivers/video/atmel_lcdfb.c       Krzysztof Helt     2009-07-08  342   * 	so no locking by fb_info->mm_lock around smem_len setting is needed.
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  343   */
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  344  static int atmel_lcdfb_alloc_video_memory(struct atmel_lcdfb_info *sinfo)
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  345  {
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  346  	struct fb_info *info = sinfo->info;
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  347  	struct fb_var_screeninfo *var = &info->var;
-ea757aca drivers/video/atmel_lcdfb.c       Haavard Skinnemoen 2008-08-12  348  	unsigned int smem_len;
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  349  
-ea757aca drivers/video/atmel_lcdfb.c       Haavard Skinnemoen 2008-08-12  350  	smem_len = (var->xres_virtual * var->yres_virtual
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  351  		    * ((var->bits_per_pixel + 7) / 8));
-ea757aca drivers/video/atmel_lcdfb.c       Haavard Skinnemoen 2008-08-12  352  	info->fix.smem_len = max(smem_len, sinfo->smem_len);
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  353  
-f6e45661 drivers/video/fbdev/atmel_lcdfb.c Luis R. Rodriguez  2016-01-22 @354  	info->screen_base = dma_alloc_wc(info->device, info->fix.smem_len,
-f6e45661 drivers/video/fbdev/atmel_lcdfb.c Luis R. Rodriguez  2016-01-22  355  					 (dma_addr_t *)&info->fix.smem_start,
-f6e45661 drivers/video/fbdev/atmel_lcdfb.c Luis R. Rodriguez  2016-01-22  356  					 GFP_KERNEL);
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  357  
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  358  	if (!info->screen_base) {
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  359  		return -ENOMEM;
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  360  	}
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  361  
-01d3a5e7 drivers/video/atmel_lcdfb.c       Haavard Skinnemoen 2008-04-28 @362  	memset(info->screen_base, 0, info->fix.smem_len);
-01d3a5e7 drivers/video/atmel_lcdfb.c       Haavard Skinnemoen 2008-04-28  363  
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  364  	return 0;
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  365  }
-14340586 drivers/video/atmel_lcdfb.c       Nicolas Ferre      2007-05-10  366  
-
-:::::: The code at line 354 was first introduced by commit
-:::::: f6e45661f9be546811b62b2b01f32f4bf0c436c0 dma, mm/pat: Rename dma_*_writecombine() to dma_*_wc()
-
-:::::: TO: Luis R. Rodriguez <mcgrof@suse.com>
-:::::: CC: Ingo Molnar <mingo@kernel.org>
-
----
-0-DAY kernel test infrastructure                Open Source Technology Center
-https://lists.01.org/pipermail/kbuild-all                   Intel Corporation
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
