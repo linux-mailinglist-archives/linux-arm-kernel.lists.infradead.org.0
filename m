@@ -2,54 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5AA78296F5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 13:19:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50749296F8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 13:20:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Kejc7vUWfgnckT9T4oroLrUNIp4P78+xPURTRglqcJs=; b=I9LAcd08FJFdZL
-	eHe50p0ARa0UJMETcu/WZWxiaCHDqraYpUEyq2r6WCYL+9fQpviKH1SUuT/nHV1FvFmo598meKuNE
-	o4Pu6DtHZd/9d8PRXCfzCU7gpmsPVyZsTjjL3DhSPHBHKYBB17RzJwU8iB9q0ZgoJlgGuSqiGIrWH
-	lv36mcD+JNHufTcefJTlk975z20rixRi/FjY0GHACJkH/ZV6QJDyPzLdPdORF0HyZv0xfFpWFL0Ps
-	kAoGj42E/OBft9ovVmCUrFFdsYgAWr7cBrnyt+9g+iKfQUKcDiFgMgRtW36qJtUJjezbO3bo4vDpj
-	deCsr/nSL06keWVReuTA==;
+	List-Owner; bh=WjeKJNB5UpXMnXd8dvgOFBm29JDEvdId3zZLuIgnzlE=; b=dZ3vlF8eKseZ39
+	Dly+JIcuWR9dTQvcgGgI/rxeWVjuKBOrHGD1JiwSVigHpiRr8noBbeFaXVicYDIamFDjAQDT1IReT
+	O7ASRm8kkoGgmbPyCQven6jar/2RSCGTPNeW/3XBuUJ4BUgGZqyUxQ+w7Chwndx3qjCla8p8TFmZM
+	hLdpQ59pgKIdVi3boMG6sUmBqbC48NbL0BZwKakhjY+pAvetuF7vf5I/wugaqiDOC4k3hbjVA77gy
+	nNXbguh/Rh6QJlk/w0ePcDCWjnxVEJAmDYd7f1rW1y3Rq65Fg7ScPzeaF6RMgWuxTkZOrf2O3WPkd
+	iA7dUene/ZPYAr6aYSAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hU8Es-0007tn-3h; Fri, 24 May 2019 11:19:54 +0000
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hU8Ek-0007sr-Jq
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 11:19:48 +0000
-X-Originating-IP: 90.88.147.134
-Received: from localhost (aaubervilliers-681-1-27-134.w90-88.abo.wanadoo.fr
- [90.88.147.134]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 71F01C0006;
- Fri, 24 May 2019 11:19:29 +0000 (UTC)
-Date: Fri, 24 May 2019 13:19:28 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Jagan Teki <jagan@amarulasolutions.com>
-Subject: Re: [PATCH v2 3/6] drm/sun4i: dsi: Add bridge support
-Message-ID: <20190524111928.ourdmraxw7vrhaar@flea>
-References: <20190524104317.20287-1-jagan@amarulasolutions.com>
+	id 1hU8FZ-0000un-Vy; Fri, 24 May 2019 11:20:37 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hU8FS-0000uS-JS
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 11:20:32 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C89F4374;
+ Fri, 24 May 2019 04:20:29 -0700 (PDT)
+Received: from mbp (usa-sjc-mx-foss1.foss.arm.com [217.140.101.70])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B166B3F703;
+ Fri, 24 May 2019 04:20:23 -0700 (PDT)
+Date: Fri, 24 May 2019 12:20:20 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Kees Cook <keescook@chromium.org>
+Subject: Re: [PATCH v15 00/17] arm64: untag user pointers passed to the kernel
+Message-ID: <20190524112020.xcio5jrx6kzmrdnz@mbp>
+References: <20190521182932.sm4vxweuwo5ermyd@mbp>
+ <201905211633.6C0BF0C2@keescook>
+ <20190522101110.m2stmpaj7seezveq@mbp>
+ <CAJgzZoosKBwqXRyA6fb8QQSZXFqfHqe9qO9je5TogHhzuoGXJQ@mail.gmail.com>
+ <20190522163527.rnnc6t4tll7tk5zw@mbp>
+ <201905221316.865581CF@keescook>
+ <20190523144449.waam2mkyzhjpqpur@mbp>
+ <201905230917.DEE7A75EF0@keescook>
+ <20190523174345.6sv3kcipkvlwfmox@mbp>
+ <201905231327.77CA8D0A36@keescook>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190524104317.20287-1-jagan@amarulasolutions.com>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <201905231327.77CA8D0A36@keescook>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_041946_805247_0949BB2E 
-X-CRM114-Status: GOOD (  16.39  )
-X-Spam-Score: -1.0 (-)
+X-CRM114-CacheID: sfid-20190524_042030_658323_93BFC065 
+X-CRM114-Status: GOOD (  38.01  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.198 listed in list.dnswl.org]
- -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.198 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -63,62 +71,183 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Andrzej Hajda <a.hajda@samsung.com>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>,
- Michael Trimarchi <michael@amarulasolutions.com>,
- linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Khalid Aziz <khalid.aziz@oracle.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgenii Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Yishai Hadas <yishaih@mellanox.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Thu, May 23, 2019 at 02:31:16PM -0700, Kees Cook wrote:
+> On Thu, May 23, 2019 at 06:43:46PM +0100, Catalin Marinas wrote:
+> > On Thu, May 23, 2019 at 09:38:19AM -0700, Kees Cook wrote:
+> > > What about testing tools that intentionally insert high bits for syscalls
+> > > and are _expecting_ them to fail? It seems the TBI series will break them?
+> > > In that case, do we need to opt into TBI as well?
+> > 
+> > If there are such tools, then we may need a per-process control. It's
+> > basically an ABI change.
+> 
+> syzkaller already attempts to randomly inject non-canonical and
+> 0xFFFF....FFFF addresses for user pointers in syscalls in an effort to
+> find bugs like CVE-2017-5123 where waitid() via unchecked put_user() was
+> able to write directly to kernel memory[1].
+> 
+> It seems that using TBI by default and not allowing a switch back to
+> "normal" ABI without a reboot actually means that userspace cannot inject
+> kernel pointers into syscalls any more, since they'll get universally
+> stripped now. Is my understanding correct, here? i.e. exploiting
+> CVE-2017-5123 would be impossible under TBI?
 
-On Fri, May 24, 2019 at 04:13:14PM +0530, Jagan Teki wrote:
-> Some display panels would come up with a non-DSI output which
-> can have an option to connect DSI interface by means of bridge
-> converter.
->
-> This DSI to non-DSI bridge converter would require a bridge
-> driver that would communicate the DSI controller for bridge
-> functionalities.
->
-> So, add support for bridge functionalities in Allwinner DSI
-> controller.
->
-> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> ---
->  drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c | 60 +++++++++++++++++++-------
->  drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h |  1 +
->  2 files changed, 45 insertions(+), 16 deletions(-)
->
-> diff --git a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-> index ae2fe31b05b1..2b4b1355a88f 100644
-> --- a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-> +++ b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-> @@ -775,6 +775,9 @@ static void sun6i_dsi_encoder_enable(struct drm_encoder *encoder)
->  	if (!IS_ERR(dsi->panel))
->  		drm_panel_prepare(dsi->panel);
->
-> +	if (!IS_ERR(dsi->bridge))
-> +		drm_bridge_pre_enable(dsi->bridge);
-> +
+Unless the kernel is also using TBI (khwasan), in which case masking out
+the top byte wouldn't help. Anyway, as per this discussion, we want the
+tagged pointer to remain intact all the way to put_user(), so nothing
+gets masked out. I don't think this would have helped with the waitid()
+bug.
 
-drm_panel_bridge provides what's needed to deal with both a panel and
-a bridge, I guess it would make sense to use this instead of
-duplicating everything.
+> If so, then I think we should commit to the TBI ABI and have a boot
+> flag to disable it, but NOT have a process flag, as that would allow
+> attackers to bypass the masking. The only flag should be "TBI or MTE".
+> 
+> If so, can I get top byte masking for other architectures too? Like,
+> just to strip high bits off userspace addresses? ;)
 
-Maxime
+But you didn't like my option 2 shim proposal which strips the tag on
+kernel entry because it lowers the value of MTE ;).
 
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+> (Oh, in looking I see this is implemented with sign-extension... why
+> not just a mask? So it'll either be valid userspace address or forced
+> into the non-canonical range?)
+
+The TTBR0/1 selection on memory accesses is done based on bit 63 if TBI
+is disabled and bit 55 when enabled. Sign-extension allows us to use the
+same macro for both user and kernel tagged pointers. With MTE tag 0
+would be match-all for TTBR0 and 0xff for TTBR1 (so that we don't modify
+the virtual address space of the kernel; I need to check the latest spec
+to be sure). Note that the VA space for both user and kernel is limited
+to 52-bit architecturally so, on access, bits 55..52 must be the same, 0
+or 1, otherwise you get a fault.
+
+Since the syzkaller tests would also need to set bits 55-52 (actually 48
+for kernel addresses, we haven't merged the 52-bit kernel VA patches
+yet) to hit a valid kernel address, I don't think ignoring the top byte
+makes much difference to the expected failure scenario.
+
+> > > Alright, the tl;dr appears to be:
+> > > - you want more assurances that we can find __user stripping in the
+> > >   kernel more easily. (But this seems like a parallel problem.)
+> > 
+> > Yes, and that we found all (most) cases now. The reason I don't see it
+> > as a parallel problem is that, as maintainer, I promise an ABI to user
+> > and I'd rather stick to it. I don't want, for example, ncurses to stop
+> > working because of some ioctl() rejecting tagged pointers.
+> 
+> But this is what I don't understand: it would need to be ncurses _using
+> TBI_, that would stop working (having started to work before, but then
+> regress due to a newly added one-off bug). Regular ncurses will be fine
+> because it's not using TBI. So The Golden Rule isn't violated,
+
+Once we introduced TBI and the libc starts tagging heap allocations,
+this becomes the new "regular" user space behaviour (i.e. using TBI). So
+a new bug would break the golden rule. It could also be an old bug that
+went unnoticed (i.e. you changed the graphics card and its driver gets
+confused by tagged pointers coming from user-space).
+
+> and by definition, it's a specific regression caused by some bug
+> (since TBI would have had to have worked _before_ in the situation to
+> be considered a regression now). Which describes the normal path for
+> kernel development... add feature, find corner cases where it doesn't
+> work, fix them, encounter new regressions, fix those, repeat forever.
+> 
+> > If it's just the occasional one-off bug I'm fine to deal with it. But
+> > no-one convinced me yet that this is the case.
+> 
+> You believe there still to be some systemic cases that haven't been
+> found yet? And even if so -- isn't it better to work on that
+> incrementally?
+
+I want some way to systematically identify potential issues (sparse?).
+Since problems are most likely in drivers, I don't have all devices to
+check and not all users have the knowledge to track down why something
+failed.
+
+I think we can do this incrementally as long the TBI ABI is not the
+default. Even better if we made it per process.
+
+> > As for the generic driver code (filesystems or other subsystems),
+> > without some clear direction for developers, together with static
+> > checking/sparse, on how user pointers are cast to longs (one example),
+> > it would become my responsibility to identify and fix them up with any
+> > kernel release. This series is not providing such guidance, just adding
+> > untagged_addr() in some places that we think matter.
+> 
+> What about adding a nice bit of .rst documentation that describes the
+> situation and shows how to use untagged_addr(). This is the kind of
+> kernel-wide change that "everyone" needs to know about, and shouldn't
+> be the arch maintainer's sole responsibility to fix.
+
+This works (if people read it) but we also need to be more prescriptive
+in how casting is done and how we differentiate between a pointer for
+dereference (T __user *) and address space management (usually unsigned
+long). On top of that, we'd get sparse to check for such conversions and
+maybe even checkpatch for some low-hanging fruit.
+
+> > > - we might need to opt in to TBI with a prctl()
+> > 
+> > Yes, although still up for discussion.
+> 
+> I think I've talked myself out of it. I say boot param only! :)
+
+I hope I talked you in again ;). I don't see TBI as improving kernel
+security.
+
+> So what do you say to these next steps:
+> 
+> - change untagged_addr() to use a static branch that is controlled with
+>   a boot parameter.
+
+access_ok() as well.
+
+> - add, say, Documentation/core-api/user-addresses.rst to describe
+>   proper care and handling of user space pointers with untagged_addr(),
+>   with examples based on all the cases seen so far in this series.
+
+We have u64_to_user_ptr(). What about the reverse? And maybe changing
+get_user_pages() to take void __user *.
+
+> - continue work to improve static analysis.
+
+Andrew Murray in the ARM kernel team started revisiting the old sparse
+threads, let's see how it goes.
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
