@@ -2,81 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 651C22A0CF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 23:59:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71E8F2A0D5
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 May 2019 00:00:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jr6Im0DXrlTbT5ZKPLMqRIaUnzHsbJpdIPXd6Oanl9I=; b=XrXFjp+nJTEC+q
-	+rY4NMcxYooQ6cKzi8Jlnin13ddHO9xGPNUJ9xUA6IvKUHjuHJtjC5c8cB/JPjY6rxDYKT5EGhAUc
-	H2Wl2FZrjm2erzsejW0rlrvi8DJGapyfvhXPVA8rfODqA89q4iKg75G4lE8yhs+NXcqHnLKivpT6i
-	TjhqNNKEhtpA9l+YORVWGp4t4PtGW2RSbkrDbHhqytHGtu7laXvYdqZaol9giYAlymS5VInJkvLlM
-	hnYs9++rsyQRO3ehU1B5FfWi9M7SVUVa5y5uHIBXgpoBPbSk9SLuEYPo/vSGf7wo0dE8aQZMbYHAC
-	28AWvYECAjgL+YGcOBAQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
+	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=iYhkBVfBLr/T0kp9BxeGkdHzLdknpKBRoIw5CUDXJh8=; b=kzT9o1JVP6N6WaX/dAJJW3KYv
+	Bmc8Fg5dYdodwTdL4s+04XYvIPiDTy41jJvhLvBPvfAogNkDu/XDdvk5kWfD4cs18aIGKw3yNdiVk
+	3We7UxG4qDzlA4DbEUZPl2tIUqMmDV3dTxSaV3vcaBuMDXXNAFoeWmrnyLRwdmWlVXuR4FVTdRnbU
+	fiSalkU8O0NOHNkchRD7A0mXzJ4Z5DTs2pv4nysT4LPD//ycoQpsQlKygZ4d8M1GhPZr4NOGGtkqi
+	Z9WNlCyzXc1g7oEJ17udUVUeyaTewqtH2jfo2H3RKMBVERQlDeEGqOzRHWT1O1YR+qIBGaFsWlqL6
+	I7kOke5RQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUIDL-0004fT-6c; Fri, 24 May 2019 21:58:59 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1hUIEX-00068H-IT; Fri, 24 May 2019 22:00:13 +0000
+Received: from node.akkea.ca ([192.155.83.177])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUID3-0004Xr-0c
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 21:58:42 +0000
-Received: by mail-oi1-f194.google.com with SMTP id t187so8096527oie.10
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 May 2019 14:58:40 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=FX0nAAQKdK8gCwAelke8YNA0bB3X71pjYoDs2aHxEiE=;
- b=CHRYLRC6WfVUteYYm30KCEQ3+w5iggJD7oICxH6Bdpk/o9NkX2W81Q7NLP5jiGDO3O
- xjqjbICJo+4IUbb747ckXtgtxrEEOn59IU/S09pJpDM9HZBzznn0T+af9h9FRliXyAmI
- l0AILqDA/BwEUaJR89aHCEgpW9FqBL1P6Jmn2R7ExNEfa4Toe5OyNfK1HrZDK+J/RTrW
- LGwcf5CHaZOLR9GG07gsP9HwAUUwliYY3vLxT19C2BPF2+szp87YQCaV/PU3GmFJ0q30
- MeLJNPpyqN/6oMUIMqgVgiXVdevn+K/dwcQI7TOBmq4nnZumu44QV4KnMbIR4zFlKx3r
- Oayg==
-X-Gm-Message-State: APjAAAWg05x3fjUBwTj1hIhwIoY0wHkbI/zAbB6mxrLHsXZknWZbc56S
- bc7J7WLUFfosL4+5Jl30BQ==
-X-Google-Smtp-Source: APXvYqytH+9RhKlZb9pctda4btXYaKYVWztG+4GxfJz4UGzSbQyRu3Kkka4gSAaGipt9f8+8R7wEFg==
-X-Received: by 2002:aca:4bd2:: with SMTP id y201mr7159994oia.12.1558735119348; 
- Fri, 24 May 2019 14:58:39 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id x72sm1442794oif.50.2019.05.24.14.58.38
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 24 May 2019 14:58:38 -0700 (PDT)
-Date: Fri, 24 May 2019 16:58:38 -0500
-From: Rob Herring <robh@kernel.org>
-To: Hsin-Yi Wang <hsinyi@chromium.org>
-Subject: Re: [PATCH v4 1/3] amr64: map FDT as RW for early_init_dt_scan()
-Message-ID: <20190524215838.GA16271@bogus>
-References: <20190519160446.320-1-hsinyi@chromium.org>
+ id 1hUIEQ-0005iY-VA
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 22:00:08 +0000
+Received: by node.akkea.ca (Postfix, from userid 33)
+ id 1542B4E204B; Fri, 24 May 2019 22:00:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=akkea.ca; s=mail;
+ t=1558735205; bh=Ql0cD5JfK/yoXltjS6jKt/CQqtSPm7QpPWra93u8UTM=;
+ h=To:Subject:Date:From:Cc:In-Reply-To:References;
+ b=t0f08gxxwNFLW0NebIk/BaI1njSOhzERZPR6qldRKUWUdgWZr/nykIdgrEZ5tXBx7
+ H/TK0bpZRHlrxlMR8DjeKiBl7istEYv722fQclR3fBGZkHuHuKDwsu8ZKne6+Oo3e3
+ +G3RuN67uhpEN5rb9mt05M8PUKLCAl5kairFbl/4=
+To: Pavel Machek <pavel@ucw.cz>
+Subject: Re: [PATCH v13 2/4] arm64: dts: fsl: librem5: Add a device tree for
+ the Librem5 devkit
+X-PHP-Originating-Script: 1000:rcube.php
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190519160446.320-1-hsinyi@chromium.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Date: Fri, 24 May 2019 15:00:05 -0700
+From: Angus Ainslie <angus@akkea.ca>
+In-Reply-To: <20190523191926.GB3803@xo-6d-61-c0.localdomain>
+References: <20190520142330.3556-1-angus@akkea.ca>
+ <20190520142330.3556-3-angus@akkea.ca>
+ <20190523191926.GB3803@xo-6d-61-c0.localdomain>
+Message-ID: <1e6c0664949f38452b8f14b901bff513@www.akkea.ca>
+X-Sender: angus@akkea.ca
+User-Agent: Roundcube Webmail/1.1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_145841_098574_9741FF71 
-X-CRM114-Status: GOOD (  13.48  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190524_150007_068997_54EEFEF9 
+X-CRM114-Status: GOOD (  12.00  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -89,41 +74,76 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Yu Zhao <yuzhao@google.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Stephen Boyd <swboyd@chromium.org>,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- Mike Rapoport <rppt@linux.ibm.com>, Jun Yao <yaojun8558363@gmail.com>,
- Miles Chen <miles.chen@mediatek.com>, James Morse <james.morse@arm.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Laura Abbott <labbott@redhat.com>,
- Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Robin Murphy <robin.murphy@arm.com>
-Content-Type: text/plain; charset="us-ascii"
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, angus.ainslie@puri.sm,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 20, 2019 at 12:04:44AM +0800, Hsin-Yi Wang wrote:
-> Currently in arm64, FDT is mapped to RO before it's passed to
-> early_init_dt_scan(). However, there might be some code that needs
-> to modify FDT during init. Map FDT to RW until unflatten DT.
+Hi Pavel,
 
-typo in the subject.
+On 2019-05-23 12:19, Pavel Machek wrote:
+> Hi!
+> 
+>> - LEDs
+>> - gyro
+>> - magnetometer
+> 
+>> +	leds {
+>> +		compatible = "gpio-leds";
+>> +		pinctrl-names = "default";
+>> +		pinctrl-0 = <&pinctrl_gpio_leds>;
+>> +
+>> +		led1 {
+>> +			label = "LED 1";
+> 
+> So, what kind of LED do you have, and what color is it? label should
+> probably be something like
+> notify:green.
+> 
 
-Otherwise, this one seems fine to me.
+As we don't have a specific use for these yet does it really matter if 
+there is a colour or a number associated with them ?
+
+>> +	charger@6b { /* bq25896 */
+>> +		compatible = "ti,bq25890";
+>> +		reg = <0x6b>;
+>> +		pinctrl-names = "default";
+>> +		pinctrl-0 = <&pinctrl_charger>;
+>> +		interrupt-parent = <&gpio3>;
+>> +		interrupts = <25 IRQ_TYPE_EDGE_FALLING>;
+>> +		ti,battery-regulation-voltage = <4192000>; /* 4.192V */
+>> +		ti,charge-current = <1600000>; /* 1.6 A */
+> 
+> No space before A, for consistency.
+> 
+>> +		ti,termination-current = <66000>;  /* 66mA */
+>> +		ti,precharge-current = <1300000>; /* 1.3A */
+> 
+> I thought precharge is usually something low, because you are not yet
+> sure of battery health...?
+> 
+
+I think I put that in incorrectly. The intention was 130mA.
+
+>> +		ti,minimum-sys-voltage = <2750000>; /* 2.75V */
+> 
+> Are you sure? Normally systems shut down at 3.2V, 3V or so. Li-ion
+> batteries don't
+> really like to be discharged _this_ deep.
+
+You are correct. I'll fix it for the next version.
+
+Thanks
+Angus
 
 > 
-> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
-> ---
-> change log v2->v4:
-> * v3 abandoned
-> * add an arg pgprot_t to fixmap_remap_fdt()
-> ---
->  arch/arm64/include/asm/mmu.h | 2 +-
->  arch/arm64/kernel/setup.c    | 5 ++++-
->  arch/arm64/mm/mmu.c          | 4 ++--
->  3 files changed, 7 insertions(+), 4 deletions(-)
+> 										Pavel
+
 
 _______________________________________________
 linux-arm-kernel mailing list
