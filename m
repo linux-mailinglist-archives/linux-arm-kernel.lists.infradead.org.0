@@ -2,56 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DAB1529617
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 12:42:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8752529621
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 12:43:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f9z/9M3SIQy84r3ywuLQiV27QXlc+ntmFiKM+H8EM08=; b=HPADkWPKHHAQ4n
-	8blmg3Xe6S7nxGH0QRd7jZmXB/2Cn/OQ3IMQsqXXsF9bnRXUsPksoA5qpsDcczCX+PKoL7Vxdok30
-	8BfJyh76i3q4G0iSiNLQoqSUI0hIRFng5kTYVgVuCM6veAuQ43Dbytk0u3Mao/JUx2ClTW3qqIN10
-	a4i92P0cpvXaGus2voAB0+r/ykjdaqzFyBD9j+9LEFbaYUx77kXbeKiplkjTEoTL7tdXJl5faxdOQ
-	LBZX4/Lt6jQcUY64nof/hfpbJDK0PlfaXsbVOOfImraw3WxunCKoccimVsE5/QduCX01RxvTRSbv0
-	S2OK8jpS0xeVvf5UaLmg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=71jNPlx7E1YmwPBXfIS6wMBTQ0Wm7xZdcT5nCqqlI9Q=; b=rj3CPWbjYs8bvq
+	tp+/rYyr575E5NyjbkbNWS6IO7p5LGGDOFTGpMjaSwdvMfdXyb8gtdXI01t0Keu8hYrG6PvlbaMaf
+	HfPLM8PFiNGFMcg0jtA3DFNwZV+bi0uvervO0sNdGQOQGKrowd1m1xtXnf3jAH8Pq0WJDwVqydZdr
+	iX/1Hq2h5gCEe9juNm/aLnOB8BaBOm0MMuFRzs3hDbE+XKI04UXBFg+KB3WoyCG+fSALlC5O7+dju
+	gzcZQAx2JhMKZ9sDqZMgnxGZCV8N7z2tR7J0I3n96d9G1CeRoxyU70SJAJZ/+uZWEOu3ubMC9hnCb
+	Ia2+OZdwxemUoESwFDPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hU7eP-0000z9-6Q; Fri, 24 May 2019 10:42:13 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hU7e6-0000kk-BN
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 10:41:57 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C2CCC374;
- Fri, 24 May 2019 03:41:52 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 23A643F703;
- Fri, 24 May 2019 03:41:51 -0700 (PDT)
-Date: Fri, 24 May 2019 11:41:48 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Tengfei Fan <tengfeif@codeaurora.org>
-Subject: Re: [PATCH] arm64: break while loop if task had been rescheduled
-Message-ID: <20190524104148.GB12796@lakrids.cambridge.arm.com>
-References: <1558430404-4840-1-git-send-email-tengfeif@codeaurora.org>
+	id 1hU7f1-0001IY-OS; Fri, 24 May 2019 10:42:51 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hU7et-0001HV-IF
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 10:42:45 +0000
+Received: by mail-wr1-x442.google.com with SMTP id l17so1093781wrm.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 24 May 2019 03:42:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=sMgd9oZAKI1GrJ2O2mtgZuuxKr/03GN+V6GqnIamqiM=;
+ b=Ya0zg7pQjg6VWbg1h/AAx+p19IUhVehVy7LguVr1othTF/poBx67vu9yEsTVyoYt7Y
+ fsSheJV7cQFowfQ4dZrdxSJMq+6VSoDY3zNDeO1IQI4bbmd6T9mk3NRyOQN91cU8EXbm
+ 3o5xT0BlVYxu2rnyfFYKgxJXa1BBajc7cjZYaPiSB4x7nLmOVlyDbBnwCXgV4RLP1zgi
+ GTe3D8kIMJE6TSf+sHcO8s8ZCO7NVyDoYwfgP+pAZJb4kfXtuThMmEA5w3How0R0pCRT
+ 4x0vKT7oh1ROoHsIbZ8+SbMaPmxG0PMdG/ZubnAj3OxeRMe/DMZSZLvln4MtCOz+2N+T
+ 5vMg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=sMgd9oZAKI1GrJ2O2mtgZuuxKr/03GN+V6GqnIamqiM=;
+ b=nqFipDO9geeDLSocb0RIpDDLCazJddUPAQdyEyYRmxyjOuwL12KVkaoldpC2tjHRGS
+ GcdThnaxIQgD6nu2AHZ9smp6npXamoz8ggjqWwpCJQzcqWi4oXKpavGOBv5otbEk2x4k
+ Am8Uxpi6v6VDrDIGlha+L25QA1pUCwyVVYwu/oc9UkcuTYv0D1IX6Tn5Ube2V5FdwTUx
+ sqCMQF5ABtLPT54YbAPdBAj1Z7Xcuz3jSOriLeqfddFhqzMNMLIyHI+rVorpvvQMQTUC
+ oJ/KC/I8UZGeE70c4fLJCSfnC+WRrsl9bw1OEjoVBrUDUXVEl7faBeYPJ2Eg/28acxyg
+ NjvQ==
+X-Gm-Message-State: APjAAAXXPBGjnh2yZtOT0HkMl6wNvWxpdCeStdO6/snR6y1mLNWY6c9o
+ 0B8k51BPEFpc2q/C4tRBeM1s4y2I6ig=
+X-Google-Smtp-Source: APXvYqyINA4RJcI3np98LtdVeR4axYizn55wIalMAZg4q6a2dh6IvmkWcd31cIgC6JlsO+XYc4CKvA==
+X-Received: by 2002:a5d:54cc:: with SMTP id x12mr16916464wrv.303.1558694560785; 
+ Fri, 24 May 2019 03:42:40 -0700 (PDT)
+Received: from [192.168.0.41] (sju31-1-78-210-255-2.fbx.proxad.net.
+ [78.210.255.2])
+ by smtp.googlemail.com with ESMTPSA id 88sm5731506wrc.33.2019.05.24.03.42.39
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 24 May 2019 03:42:40 -0700 (PDT)
+Subject: Re: [PATCH] clocksource/arm_arch_timer: Don't trace count reader
+ functions
+To: Marc Zyngier <marc.zyngier@arm.com>,
+ Julien Thierry <julien.thierry@arm.com>, linux-arm-kernel@lists.infradead.org
+References: <1558689025-50679-1-git-send-email-julien.thierry@arm.com>
+ <9adf92c2-b7a5-00a3-ff09-58484d9bb9db@arm.com>
+From: Daniel Lezcano <daniel.lezcano@linaro.org>
+Message-ID: <a1af63f8-1b3e-a959-d309-7360679739a2@linaro.org>
+Date: Fri, 24 May 2019 12:42:39 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1558430404-4840-1-git-send-email-tengfeif@codeaurora.org>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <9adf92c2-b7a5-00a3-ff09-58484d9bb9db@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_034154_627288_4E3C727B 
-X-CRM114-Status: GOOD (  22.89  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190524_034243_652678_6BA36476 
+X-CRM114-Status: GOOD (  13.20  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,96 +103,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tengfei@codeaurora.org, anshuman.khandual@arm.com, marc.zyngier@arm.com,
- catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- andreyknvl@google.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-kernel@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 21, 2019 at 05:20:04PM +0800, Tengfei Fan wrote:
-> While printing a task's backtrace and this task isn't
-> current task, it is possible that task's fp and fp+8
-> have the same value, so cannot break the while loop.
-> This can break while loop if this task had been
-> rescheduled during print this task's backtrace.
-
-There are a few cases where backtracing can get stuck in an infinite
-loop. I'd attempted to address that more generally in my
-arm64/robust-stacktrace branch [1].
-
-Looking at tsk->state here is inherently racy, and doesn't solve the
-general case, so I'd prefer to avoid that.
-
-Do my patches help you here? If so, I'm happy to rebase those to
-v5.2-rc1 and repost.
-
-Thanks,
-Mark.
-
-[1] https://git.kernel.org/pub/scm/linux/kernel/git/mark/linux.git/log/?h=arm64/robust-stacktrace
-
-> 
-> Signed-off-by: Tengfei Fan <tengfeif@codeaurora.org>
-> ---
->  arch/arm64/kernel/traps.c | 23 +++++++++++++++++++++++
->  1 file changed, 23 insertions(+)
-> 
-> diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
-> index 2975598..9df6e02 100644
-> --- a/arch/arm64/kernel/traps.c
-> +++ b/arch/arm64/kernel/traps.c
-> @@ -103,6 +103,9 @@ void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk)
->  {
->  	struct stackframe frame;
->  	int skip = 0;
-> +	long cur_state = 0;
-> +	unsigned long cur_sp = 0;
-> +	unsigned long cur_fp = 0;
->  
->  	pr_debug("%s(regs = %p tsk = %p)\n", __func__, regs, tsk);
->  
-> @@ -127,6 +130,9 @@ void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk)
->  		 */
->  		frame.fp = thread_saved_fp(tsk);
->  		frame.pc = thread_saved_pc(tsk);
-> +		cur_state = tsk->state;
-> +		cur_sp = thread_saved_sp(tsk);
-> +		cur_fp = frame.fp;
->  	}
->  #ifdef CONFIG_FUNCTION_GRAPH_TRACER
->  	frame.graph = 0;
-> @@ -134,6 +140,23 @@ void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk)
->  
->  	printk("Call trace:\n");
->  	do {
-> +		if (tsk != current && (cur_state != tsk->state
-> +			/*
-> +			 * We would not be printing backtrace for the task
-> +			 * that has changed state from uninterruptible to
-> +			 * running before hitting the do-while loop but after
-> +			 * saving the current state. If task is in running
-> +			 * state before saving the state, then we may print
-> +			 * wrong call trace or end up in infinite while loop
-> +			 * if *(fp) and *(fp+8) are same. While the situation
-> +			 * will stop print when that task schedule out.
-> +			 */
-> +			|| cur_sp != thread_saved_sp(tsk)
-> +			|| cur_fp != thread_saved_fp(tsk))) {
-> +			printk("The task:%s had been rescheduled!\n",
-> +				tsk->comm);
-> +			break;
-> +		}
->  		/* skip until specified stack frame */
->  		if (!skip) {
->  			dump_backtrace_entry(frame.pc);
-> -- 
-> The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
-> a Linux Foundation Collaborative Project
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjQvMDUvMjAxOSAxMTo1MywgTWFyYyBaeW5naWVyIHdyb3RlOgo+IE9uIDI0LzA1LzIwMTkg
+MTA6MTAsIEp1bGllbiBUaGllcnJ5IHdyb3RlOgo+PiBXaXRoIHY1LjItcmMxLCBUaGUgZnRyYWNl
+IGZ1bmN0aW9uc19ncmFwaCB0cmFjZXIgbG9ja3MgdXAgd2hlbmV2ZXIgaXQgaXMKPj4gZW5hYmxl
+ZCBvbiBhcm02NC4KPj4KPj4gU2luY2UgY29tbWl0IDBlYTQxNTM5MGNkMyAoImNsb2Nrc291cmNl
+L2FybV9hcmNoX3RpbWVyOiBVc2UKPj4gYXJjaF90aW1lcl9yZWFkX2NvdW50ZXIgdG8gYWNjZXNz
+IHN0YWJsZSBjb3VudGVycyIpIGEgZnVuY3Rpb24gcG9pbnRlcgo+PiBpcyBjb25zaXN0ZW50bHkg
+dXNlZCB0byByZWFkIHRoZSBjb3VudGVyIGluc3RlYWQgb2YgcG90ZW50aWFsbHkKPj4gcmVmZXJl
+bmNpbmcgYW4gaW5saW5hYmxlIGZ1bmN0aW9uLgo+Pgo+PiBUaGUgZ3JhcGggdGFjZXJzIHJlbGll
+cyBvbiBhY2Nlc3NpbmcgdGhlIHRpbWVyIGNvdW50ZXJzIHRvIGNvbXB1dGUgdGhlCj4gCj4gbml0
+OiB0cmFjZXJzCj4gCj4+IHRpbWUgc3BlbnQgaW4gZnVuY3Rpb25zIHdoaWNoIGNhdXNlcyB0aGUg
+bG9ja3VwIHdoZW4gYXR0ZW1wdGluZyB0byB0cmFjZQo+PiB0aGVzZSBjb2RlIHBhdGhzLgo+Pgo+
+PiBBbm5vbnRhdGUgdGhlIGFybSBhcmNoIHRpbWVyIGNvdW50ZXIgYWNjZXNzb3JzIGFzIG5vdHJh
+Y2UuCj4gCj4gbml0OiBBbm5vdGF0ZQo+IAo+Pgo+PiBGaXhlczogMGVhNDE1MzkwY2QzICgiY2xv
+Y2tzb3VyY2UvYXJtX2FyY2hfdGltZXI6IFVzZQo+PiAgICAgICAgYXJjaF90aW1lcl9yZWFkX2Nv
+dW50ZXIgdG8gYWNjZXNzIHN0YWJsZSBjb3VudGVycyIpCj4+IFNpZ25lZC1vZmYtYnk6IEp1bGll
+biBUaGllcnJ5IDxqdWxpZW4udGhpZXJyeUBhcm0uY29tPgo+PiBDYzogTWFyYyBaeW5naWVyIDxt
+YXJjLnp5bmdpZXJAYXJtLmNvbT4KPj4gQ2M6IE1hcmsgUnV0bGFuZCA8bWFyay5ydXRsYW5kQGFy
+bS5jb20+Cj4+IENjOiBEYW5pZWwgTGV6Y2FubyA8ZGFuaWVsLmxlemNhbm9AbGluYXJvLm9yZz4K
+Pj4gQ2M6IFRob21hcyBHbGVpeG5lciA8dGdseEBsaW51dHJvbml4LmRlPgo+PiBDYzogU3RldmVu
+IFJvc3RlZHQgPHJvc3RlZHRAZ29vZG1pcy5vcmc+Cj4+IC0tLQoKWyAuLi4gXQoKPiBXZWxsIHNw
+b3R0ZWQsIHRoYW5rcyBKdWxpZW4uCj4gCj4gQWNrZWQtYnk6IE1hcmMgWnluZ2llciA8bWFyYy56
+eW5naWVyQGFybS5jb20+Cj4gCj4gRGFuaWVsLCBjYW4geW91IHBsZWFzZSBwaWNrIHRoaXMgdXAg
+Zm9yIHRoZSBuZXh0IGJhdGNoIG9mIGNsb2Nrc291cmNlIGZpeGVzPwoKU3VyZS4KCkkgd2lsbCB0
+YWtlIGNhcmUgb2YgZml4aW5nIHRoZSBjb21tZW50cywgbm8gbmVlZCB0byByZXNlbmQuCgpUaGFu
+a3MKCiAgLS0gRGFuaWVsCgoKLS0gCiA8aHR0cDovL3d3dy5saW5hcm8ub3JnLz4gTGluYXJvLm9y
+ZyDilIIgT3BlbiBzb3VyY2Ugc29mdHdhcmUgZm9yIEFSTSBTb0NzCgpGb2xsb3cgTGluYXJvOiAg
+PGh0dHA6Ly93d3cuZmFjZWJvb2suY29tL3BhZ2VzL0xpbmFybz4gRmFjZWJvb2sgfAo8aHR0cDov
+L3R3aXR0ZXIuY29tLyMhL2xpbmFyb29yZz4gVHdpdHRlciB8CjxodHRwOi8vd3d3LmxpbmFyby5v
+cmcvbGluYXJvLWJsb2cvPiBCbG9nCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtl
+cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
