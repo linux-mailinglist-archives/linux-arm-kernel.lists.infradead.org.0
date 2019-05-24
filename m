@@ -2,63 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6AE9729491
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 11:25:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58A882948F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 11:24:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XGo42tLu+ZMFzN094sdZfp8kU3MxzpIlXLuhq6Ohqtw=; b=eTj2waPVs5B+m4
-	/Zxge+7BQY64sRS/umsk5bkkM6cf4ddV9wcJq+tu4kx1hin7Z5VCnECZuzK2joe757+w9cjVVx7cs
-	lerMzIiAKdLiRDHsjASrvJ4JRJ+9kTpN2GBrMSIL5hI9466Su0svwh866Jv7or+PSjHkwqgW2Jhxt
-	MTUmkwf5hPMl2a/aWN3NBBvmqZTNq56R0NccsfqqQiXgTkDKNg5eI1R3L5/TyiUJQ4dsFe/vOJT/N
-	h1baFVpV46X7wAohcl4qZX22FLF47PDh1Lrl2Jc6R3vl9MmihdhV3DILDPY/sqzBaXpHxlFGz79Zz
-	NltfH8KbY9YyOgaaqiRQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=P/Aq8II78r5Z8Nn0s9N36ht6Jgj7/RTKDSZsDNW5ttA=; b=fZAXlCrL7AzCaX
+	hllUmQGq0SAGobP5XQG+jOi55nyGLHTWj8O2rFoXhyNb1qDHy+kXGm/uR2hNAzRrs+0CrdrWlTcQI
+	dTYhN77pKbLAvKogZM5fryPO6aCt1YrsSi6K7E6Q1HHdvegvoSwwIzWzoGXtNqRBypq5i6xCccqt+
+	Gk8fehAWQGoAl7sbIh/WUzDJr+o7R7e256f+Tfcpwx5dU9kLIrXKns4F5andk3Bhr+wTYoCb6IVzC
+	6EyFHWsSYWp+nKkrLEdtobQq6b0jYhSXco+Jf576mGETO+VJhAEH13DMQ+G1Rs0DuwhuHF1V+gLAY
+	tSBbiaafZim0PqQAuKLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hU6Rs-0006qS-3Y; Fri, 24 May 2019 09:25:12 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hU6RM-0006X8-Jg
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 09:24:42 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 02084A78;
- Fri, 24 May 2019 02:24:40 -0700 (PDT)
-Received: from [10.1.196.129] (ostrya.cambridge.arm.com [10.1.196.129])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B18DB3F703;
- Fri, 24 May 2019 02:24:38 -0700 (PDT)
-Subject: Re: [PATCH/RFC] arm64: fix build warning from
- __AARCH64_INSN_FUNCS(ldadd, ...)
-To: Daniel Borkmann <daniel@iogearbox.net>, Will Deacon <will.deacon@arm.com>
-References: <1558599120-29394-1-git-send-email-yoshihiro.shimoda.uh@renesas.com>
- <20190523103602.GJ26646@fuggles.cambridge.arm.com>
- <4b35cc15-9e35-eb67-3cfc-3a8eff8c462e@iogearbox.net>
- <1daf0c3e-745b-386b-4a8d-bfb18f987239@arm.com>
- <20190523141639.GA31896@fuggles.cambridge.arm.com>
- <e94cb569-3460-8df1-f675-d5a9aae8abdf@iogearbox.net>
-From: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-Message-ID: <01f21d2a-f01b-ac9c-41c7-bef0a646eb2e@arm.com>
-Date: Fri, 24 May 2019 10:24:13 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <e94cb569-3460-8df1-f675-d5a9aae8abdf@iogearbox.net>
+	id 1hU6RR-0006Xa-9E; Fri, 24 May 2019 09:24:45 +0000
+Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
+ helo=smtprelay-out1.synopsys.com)
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hU6RK-0006WU-RC; Fri, 24 May 2019 09:24:40 +0000
+Received: from mailhost.synopsys.com (badc-mailhost2.synopsys.com
+ [10.192.0.18])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 667C4C0137;
+ Fri, 24 May 2019 09:24:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1558689862; bh=AVU6oZcHCROGnmkLrcWIelylachVoYTTTsYDpq5qRGE=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=D6N1xI62ExfnhyeopDP2KepGh9+jcTsoEdBgNxKAB8EyL2fnL9XREOHFmEEC3hEsi
+ +sV5eTIn2eDF0X+zGLIclMhVbRmsCn1mnXSf8b6YXmO+JCj257l1HAgFEsprkN4IBi
+ vaW9W8eRRXX+nnYrR92XoZ1bY6GQaFnMeybI/KjollFkG5VPauhnhwClD/xulaMaUJ
+ mW55DXwY3yipCq7jOQRVF9ySTeXKTPNqceFkFoWHyrAVq6/Kky44Bhc3rbPQ5X0znp
+ yZC8zLePl0nck3VrGBfDDtBFePDEP5Xy2yj/Mg+RJWCkK2qYWId9+WkoKX1J3JhSKy
+ mKwbWs8/Mpt7g==
+Received: from US01WEHTC3.internal.synopsys.com
+ (us01wehtc3.internal.synopsys.com [10.15.84.232])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 5716EA0070;
+ Fri, 24 May 2019 09:24:34 +0000 (UTC)
+Received: from DE02WEHTCB.internal.synopsys.com (10.225.19.94) by
+ US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Fri, 24 May 2019 02:24:33 -0700
+Received: from DE02WEMBXB.internal.synopsys.com ([fe80::95ce:118a:8321:a099])
+ by DE02WEHTCB.internal.synopsys.com ([::1]) with mapi id
+ 14.03.0415.000; Fri, 24 May 2019 11:24:31 +0200
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: biao huang <biao.huang@mediatek.com>, Jose Abreu <Jose.Abreu@synopsys.com>
+Subject: RE: [v2, PATCH] net: stmmac: add support for hash table size
+ 128/256 in dwmac4
+Thread-Topic: [v2, PATCH] net: stmmac: add support for hash table size
+ 128/256 in dwmac4
+Thread-Index: AQHVCgFP5uFdcKuEVU64Pxj/Ha7yEaZ5v7KAgABABhD//+D6AIAAL/0w
+Date: Fri, 24 May 2019 09:24:31 +0000
+Message-ID: <78EB27739596EE489E55E81C33FEC33A0B92D26F@DE02WEMBXB.internal.synopsys.com>
+References: <1557802843-31718-1-git-send-email-biao.huang@mediatek.com>
+ <1557802843-31718-2-git-send-email-biao.huang@mediatek.com>
+ <1558679617.24897.43.camel@mhfsdcap03>
+ <78EB27739596EE489E55E81C33FEC33A0B92CDA0@DE02WEMBXB.internal.synopsys.com>
+ <1558686704.24897.45.camel@mhfsdcap03>
+In-Reply-To: <1558686704.24897.45.camel@mhfsdcap03>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [10.107.19.176]
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_022440_657976_9D862307 
-X-CRM114-Status: GOOD (  23.03  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190524_022438_892288_4937F606 
+X-CRM114-Status: GOOD (  13.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -70,98 +99,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-renesas-soc@vger.kernel.org, catalin.marinas@arm.com,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- linux-arm-kernel@lists.infradead.org, kuninori.morimoto.gx@renesas.com
+Cc: Alexandre Torgue <alexandre.torgue@st.com>,
+ "jianguo.zhang@mediatek.comi" <jianguo.zhang@mediatek.comi>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "yt.shen@mediatek.com" <yt.shen@mediatek.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "boon.leong.ong@intel.com" <boon.leong.ong@intel.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "davem@davemloft.net" <davem@davemloft.net>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 23/05/2019 15:26, Daniel Borkmann wrote:
-> On 05/23/2019 04:16 PM, Will Deacon wrote:
->> On Thu, May 23, 2019 at 02:54:54PM +0100, Jean-Philippe Brucker wrote:
->>> On 23/05/2019 14:02, Daniel Borkmann wrote:
->>>> On 05/23/2019 12:36 PM, Will Deacon wrote:
->>>>> [+Daniel and Jean-Philippe]
->>>>> On Thu, May 23, 2019 at 05:12:00PM +0900, Yoshihiro Shimoda wrote:
->>>>>> The following build warning happens on gcc 8.1.0.
->>>>>>
->>>>>>  linux/arch/arm64/include/asm/insn.h: In function 'aarch64_insn_is_ldadd':
->>>>>>  linux/arch/arm64/include/asm/insn.h:280:257: warning: bitwise comparison always evaluates to false [-Wtautological-compare]
->>>>>>  __AARCH64_INSN_FUNCS(ldadd, 0x3F20FC00, 0xB8200000)
->>>>>>
->>>>>> Since the second argument is mask value and compare with the third
->>>>>> argument value, the bit 31 is always masked and then this macro is
->>>>>> always false. So, this patch fixes the issue.
->>>>>>
->>>>>> Reported-by: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>
->>>>>> Fixes: 34b8ab091f9ef57a ("bpf, arm64: use more scalable stadd over ldxr / stxr loop in xadd")
->>>>>> Tested-by: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>
->>>>>> Signed-off-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
->>>>>> ---
->>>>>>  I'm not sure the second argument "0xBF20FC00" is OK or not (we can set
->>>>>>  to 0xFF20FC00 instead). So, I marked RFC on this patch.
->>>>>>
->>>>>>  arch/arm64/include/asm/insn.h | 2 +-
->>>>>>  1 file changed, 1 insertion(+), 1 deletion(-)
->>>>>>
->>>>>> diff --git a/arch/arm64/include/asm/insn.h b/arch/arm64/include/asm/insn.h
->>>>>> index ec894de..c9e3cdc 100644
->>>>>> --- a/arch/arm64/include/asm/insn.h
->>>>>> +++ b/arch/arm64/include/asm/insn.h
->>>>>> @@ -277,7 +277,7 @@ __AARCH64_INSN_FUNCS(adrp,	0x9F000000, 0x90000000)
->>>>>>  __AARCH64_INSN_FUNCS(prfm,	0x3FC00000, 0x39800000)
->>>>>>  __AARCH64_INSN_FUNCS(prfm_lit,	0xFF000000, 0xD8000000)
->>>>>>  __AARCH64_INSN_FUNCS(str_reg,	0x3FE0EC00, 0x38206800)
->>>>>> -__AARCH64_INSN_FUNCS(ldadd,	0x3F20FC00, 0xB8200000)
->>>>>> +__AARCH64_INSN_FUNCS(ldadd,	0xBF20FC00, 0xB8200000)
->>>>>
->>>>> Looking at the ISA encoding, I think that top digit should indeed be 'B',
->>>>> but I haven't checked the rest of the instruction.
->>>>>
->>>>> However, I'm fairly sure we tested this so now I'm a bit worried that I'm
->>>>> missing something :/
->>>>
->>>> Hmm, good catch, the mask aka aarch64_insn_is_ldadd() is not used anywhere
->>>> in the tree, just the aarch64_insn_get_ldadd_value(). Latter was runtime
->>>> tested via BPF JIT as well as through disassembler that it emits ldadd. I
->>>> initially had a different mask value than Jean-Philippe, but that was probably
->>>> due to confusion on my side. In any case, value should be correct though.
->>>
->>> I suggested that mask and forgot to change val, sorry about that. My
->>> intent was to stay consistent with ldr_reg and str_reg, which mask out
->>> the two size bits [31:30]. The proposed fix works but won't take into
->>> account ldaddb and ldaddh, so maybe we could change val to 0x38200000
->>> instead?
->>>
->>> diff --git a/arch/arm64/include/asm/insn.h b/arch/arm64/include/asm/insn.h
->>> index ec894de0ed4e..f71b84d9f294 100644
->>> --- a/arch/arm64/include/asm/insn.h
->>> +++ b/arch/arm64/include/asm/insn.h
->>> @@ -279,3 +279,3 @@ __AARCH64_INSN_FUNCS(prfm_lit,      0xFF000000,
->>> 0xD8000000)
->>>  __AARCH64_INSN_FUNCS(str_reg,  0x3FE0EC00, 0x38206800)
->>> -__AARCH64_INSN_FUNCS(ldadd,    0x3F20FC00, 0xB8200000)
->>> +__AARCH64_INSN_FUNCS(ldadd,    0x3F20FC00, 0x38200000)
->>
->> Yes, this is better. I didn't realise we wanted to catch the sub-word
->> instructions as well, but that's what we do for other memory access
->> instructions so we should be consistent.
->>
->> If you post this as a proper patch, I can queue it as a fix in the arm64
->> tree.
-> 
-> If you're at it, it might also be good to add a comment to document such
-> conventions for the mask right above the __AARCH64_INSN_FUNCS() definition
-> or such. Would definitely be helpful for adding other insns there in future.
+From: biao huang <biao.huang@mediatek.com>
+Date: Fri, May 24, 2019 at 09:31:44
 
-Hmm, I couldn't come up with anything generic and useful to say here,
-sorry. I'll send the patch so we can have it in -rc2
+> On Fri, 2019-05-24 at 08:24 +0000, Jose Abreu wrote:
+> > From: biao huang <biao.huang@mediatek.com>
+> > Date: Fri, May 24, 2019 at 07:33:37
+> > 
+> > > any comments about this patch?
+> > 
+> > Can you please test your series on top of this one [1] and let me know 
+> > the output of :
+> > # ethtool -t eth0
+> "ethtol -T eth0"? This patch only affect hash table filter, seems no
+> relation to timestamp.
+> > 
+> > Just to make sure that this patch does not introduce any regressions. The 
+> > remaining ones of the series look fine by me!
+> > 
+> > [1] 
+> which one? Did I miss anything here?
+
+Sorry, my mail client tried to wrap the long link and ended up in a 
+loooong email.
+
+[1] https://patchwork.ozlabs.org/project/netdev/list/?series=109699
 
 Thanks,
-Jean
-
+Jose Miguel Abreu
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
