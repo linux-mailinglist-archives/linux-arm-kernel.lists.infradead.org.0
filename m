@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECD29294E4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 11:37:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB9AE294E3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 11:37:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sWfhSd5whqMlj923n0stvvl2Xa2AcUtoG7JCo81Glbk=; b=Vu+lxw/BUdDSnD
-	3BkgGL4Z7keA+K/pCWpK3eS0RAYagk2oEstzvuvzGuy3OJBcTF5d1ew7JU5NS66OWMBjUKLJs3nYP
-	EN4sKZx0WSXpfsuPU87ht4S/iBpB7pVQiGeEYKyTi2ibulQnSzY7LwaKBt0Ivf+H+v+d5euExjYnN
-	2g+qH6ZuFKh+vS7Psx9oDrAAmA3mC5ybUuo+lgJaZitXTBLT8utUJVdDprWlBxTYUB8lB6s3Ms8yr
-	OQrg8E/qC6gzLixNs2lC1LSE/KjnJ0UsheYYWnHWj8zmgEzczV0WcYq8ZAKcZo8u73ChZ4jvjYoH8
-	F64s0IqRZ5iKWIpH+7Yw==;
+	List-Owner; bh=orKheiM6u7wVO/MqkZWL9kPXnbtI8euCKhK442LsKm0=; b=rhqV1us2dH67tP
+	FBogGbrgHogddDLC8gQDijhRaYBli942uMF/ncPA0dIJCKrPPVSFWk72M9Kj9xdJWjQbKoHZuEjE1
+	N8ZDlZVPzhjvsOexICBx3nmkxSvgrxcMrOq5E1PotW7TtpthcQi7NdjLJ6phzrXCN6NuYNf/Cl3y9
+	4vUxSieYrgSPsNpH8kt3Hbj6WnviAJ9KzsUEnFrGwQWvTq3M4JOMxa+p+BGOOx/y9Z6VvSvICZB3X
+	fCztsHGO28lwC0KzqhS9CS6thlEGQzGP6FqSj9266XEu2nN887MadYeYCUBGIf95qnHeG4bCN376c
+	uJuwiGhv1nOtX4PuARHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hU6dP-0003j4-IU; Fri, 24 May 2019 09:37:07 +0000
+	id 1hU6db-0003tl-9c; Fri, 24 May 2019 09:37:19 +0000
 Received: from relay9-d.mail.gandi.net ([217.70.183.199])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hU6dF-0003gT-Qg
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 09:36:59 +0000
+ id 1hU6dG-0003gf-Cy
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 09:37:00 +0000
 X-Originating-IP: 90.88.147.134
 Received: from localhost.localdomain
  (aaubervilliers-681-1-27-134.w90-88.abo.wanadoo.fr [90.88.147.134])
  (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id E2382FF80B;
- Fri, 24 May 2019 09:36:50 +0000 (UTC)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 02D86FF811;
+ Fri, 24 May 2019 09:36:53 +0000 (UTC)
 From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 To: linux-media@vger.kernel.org, linux-kernel@vger.kernel.org,
  devel@driverdev.osuosl.org, linux-arm-kernel@lists.infradead.org,
  linux-sunxi@googlegroups.com
-Subject: [PATCH v5 2/4] media: pixfmt: Add HEVC slice pixel format
-Date: Fri, 24 May 2019 11:36:33 +0200
-Message-Id: <20190524093635.1832-3-paul.kocialkowski@bootlin.com>
+Subject: [PATCH v5 3/4] media: pixfmt: Document the HEVC slice pixel format
+Date: Fri, 24 May 2019 11:36:34 +0200
+Message-Id: <20190524093635.1832-4-paul.kocialkowski@bootlin.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190524093635.1832-1-paul.kocialkowski@bootlin.com>
 References: <20190524093635.1832-1-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_023658_030142_A4098DAA 
-X-CRM114-Status: GOOD (  11.00  )
+X-CRM114-CacheID: sfid-20190524_023658_583374_CC51F08F 
+X-CRM114-Status: GOOD (  11.47  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -79,40 +79,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Introduce the V4L2_PIX_FMT_HEVC_SLICE pixel format, which currently
-describes an output buffer with enough appended slice data for
-producing one decoded frame with a stateless video decoder.
-
-This will need to be reworked (along with the controls and the core) to
-allow passing slice data individually, as it is the natural decoding
-unit in HEVC.
-
-We also need to figure out the description of the possible source data:
-* Compressed slice data only, with slice controls attached;
-* Slice data in Annex-B format (with raw slice header), without slice
-  controls attached;
-* Slice data in Annex-B format (with raw slice header), with slice
-  controls attached.
+Document the current state of the HEVC slice pixel format.
+The format will need to evolve in the future, which is why it is
+not part of the public API.
 
 Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 ---
- include/media/hevc-ctrls.h | 3 +++
- 1 file changed, 3 insertions(+)
+ .../media/uapi/v4l/pixfmt-compressed.rst      | 21 +++++++++++++++++++
+ 1 file changed, 21 insertions(+)
 
-diff --git a/include/media/hevc-ctrls.h b/include/media/hevc-ctrls.h
-index 9ea013c88afc..2de83d9f6d47 100644
---- a/include/media/hevc-ctrls.h
-+++ b/include/media/hevc-ctrls.h
-@@ -11,6 +11,9 @@
- #ifndef _HEVC_CTRLS_H_
- #define _HEVC_CTRLS_H_
- 
-+/* The pixel format isn't stable at the moment and will likely be renamed. */
-+#define V4L2_PIX_FMT_HEVC_SLICE v4l2_fourcc('S', '2', '6', '5') /* HEVC parsed slices */
+diff --git a/Documentation/media/uapi/v4l/pixfmt-compressed.rst b/Documentation/media/uapi/v4l/pixfmt-compressed.rst
+index 4b701fc7653e..9d4195723c3e 100644
+--- a/Documentation/media/uapi/v4l/pixfmt-compressed.rst
++++ b/Documentation/media/uapi/v4l/pixfmt-compressed.rst
+@@ -143,6 +143,27 @@ Compressed Formats
+       - ``V4L2_PIX_FMT_HEVC``
+       - 'HEVC'
+       - HEVC/H.265 video elementary stream.
++    * .. _V4L2-PIX-FMT-HEVC-SLICE:
 +
- #define V4L2_CID_MPEG_VIDEO_HEVC_SPS		(V4L2_CID_MPEG_BASE + 1008)
- #define V4L2_CID_MPEG_VIDEO_HEVC_PPS		(V4L2_CID_MPEG_BASE + 1009)
- #define V4L2_CID_MPEG_VIDEO_HEVC_SLICE_PARAMS	(V4L2_CID_MPEG_BASE + 1010)
++      - ``V4L2_PIX_FMT_HEVC_SLICE``
++      - 'S265'
++      - HEVC parsed slice data, as extracted from the HEVC bitstream.
++	This format is adapted for stateless video decoders that implement a
++	HEVC pipeline (using the :ref:`codec` and :ref:`media-request-api`).
++	Metadata associated with the frame to decode is required to be passed
++	through the following controls :
++        * ``V4L2_CID_MPEG_VIDEO_HEVC_SPS``
++        * ``V4L2_CID_MPEG_VIDEO_HEVC_PPS``
++        * ``V4L2_CID_MPEG_VIDEO_HEVC_SLICE_PARAMS``
++	See the :ref:`associated Codec Control IDs <v4l2-mpeg-hevc>`.
++	Buffers associated with this pixel format must contain the appropriate
++	number of macroblocks to decode a full corresponding frame.
++
++	.. note::
++
++	   This format is not yet part of the public kernel API and it
++	   is expected to change.
++
+     * .. _V4L2-PIX-FMT-FWHT:
+ 
+       - ``V4L2_PIX_FMT_FWHT``
 -- 
 2.21.0
 
