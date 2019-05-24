@@ -2,56 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E4F8291D4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 09:35:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5A3929204
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 09:44:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ZfJ9PlVKKGDYxJeLUho4kM4J6ODFAhCUpT/3cs96v1c=; b=j2Yf3v/roRKoe+Wv+dlKuvZ+4
-	Q6MYDNH0gnZ3UJvEP+Z10spEVruW0jLOGqjjoVp/4pYInNhVhPIAOh3eQnDuKNZYFyHJzK4gD0JZd
-	kxWmPtynXsaYXd3FS8f8/TIHr4gzxerQMQlUuseo9Lvq8WjFFo/ki8/q7PvAezHakkexTHBkBLr0Z
-	0DnpCas2lQ5sEm7AC9eECuslXfVEQDvJwf76ogUN9Q0Ouxqf3YmUwiD2BD2r7qOzPd9OAqdZjt6iz
-	DHPxDvnCCDyk5OK9Z/7EUz28dtGX/xchZ6CkeKnN6kP/bv+9Ccs/igXIU3JOBF+jRc9Hr3Gqqe7R+
-	MhUIz3ElQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Zc8mZ/vpnxtNJ5FxQBLBAe0bl2o7xUBwBSw4ttdBpTQ=; b=lx6jAWElx//D2r
+	fVckjsqctFb0QBYw2CqlCnwkMewhf7H6KBFYEV3xdG7sp7AGDa57MzhiqRRBc/kBaD8k03LtEniHJ
+	FcSc7gYz0YPsuEkuvdCp9CthwkrB1W8EtT1gpjdLSRoL/4G2jb5CjS9L1icFu7lceYmwpV1UJGB2g
+	/aGXEWyWBBX4hIkffrAAVe2yt2q+qwz2EMq38iDr/F23mfxO3IdDwrP++NCqAzY7+ajr6DYHT1atz
+	A4iGUonfS3ZFmqxmx/V2C4vsYcQ8IKPQu/jofwNg4AZIu30zh47Pe9KLlv/sBAaD4SyGVVYMJloTK
+	zQXZ17/z6jithVMiswJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hU4jV-0002HO-93; Fri, 24 May 2019 07:35:17 +0000
-Received: from relay2-d.mail.gandi.net ([217.70.183.194])
+	id 1hU4sG-0005Du-7v; Fri, 24 May 2019 07:44:20 +0000
+Received: from mail-qk1-f194.google.com ([209.85.222.194])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hU4jO-0002AN-8j
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 07:35:11 +0000
-X-Originating-IP: 90.88.147.134
-Received: from localhost (aaubervilliers-681-1-27-134.w90-88.abo.wanadoo.fr
- [90.88.147.134]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id EDB8E40011;
- Fri, 24 May 2019 07:34:55 +0000 (UTC)
-Date: Fri, 24 May 2019 09:34:55 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Alexandre Torgue <alexandre.torgue@st.com>
-Subject: Re: [PATCH 6/8] dt-bindings: net: stmmac: Convert the binding to a
- schemas
-Message-ID: <20190524073455.46auhvhwb5no6ebp@flea>
-References: <74d98cc3c744d53710c841381efd41cf5f15e656.1558605170.git-series.maxime.ripard@bootlin.com>
- <ba1a5d8ad34a8c9ab99f504c04fbe65bde42081b.1558605170.git-series.maxime.ripard@bootlin.com>
- <9094f39f-0e26-55dd-9b47-9a55089400da@st.com>
+ id 1hU4s8-0005DG-1t
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 07:44:13 +0000
+Received: by mail-qk1-f194.google.com with SMTP id d10so6059668qko.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 24 May 2019 00:44:10 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=k2hM4uRH+xcF6VZw3zZp57FHF0UiIEpfXR9WFJl84UE=;
+ b=REVKstBd3RPETp0rX7XX1XrotLwKyM5lSdtaniWp8GhnIZcWNTatdJorKs77QMRfe0
+ 6I8TJlOkRw2U2RL7ZwKirv6kGrCvgs/uKEclUbjfjZ4zHiqVwM1fI8ZP+jwn05ulIrWz
+ rIsf1GHGCXM0/mSsXoV6P/4+QgCEGmpZIMEMHeLTjPYTyWRw6xI6tOR3onzCB69+vOB1
+ AsPLTxSISDa+BHg0xXMeWSbefatJIMx4sGTIvy5EA/Myg3w606H/ZOnQMH0McLENxY2v
+ xt4Sev/PjUo22RPLrB0shfXJqMz5AQFOnZyhU4JEyDqbfYpUMgiJJuxznxzgqdHNPAbM
+ vI3A==
+X-Gm-Message-State: APjAAAWzt2AJd8E8bXsD9ppojD8c3IO0uFaTgT1teGITE5tT6lxW+Q92
+ 4m2OUlQkRZ9NDMBYpd0tTtMm87waLuyRJyyBpoI=
+X-Google-Smtp-Source: APXvYqy/WqyRL4BlbMWLM5GdeDgLkBJI6XwCNcVvXGonN+2oV2dtTQWrObje5U17OKbtEn0pWH9nlYsDR25/fOWgBDY=
+X-Received: by 2002:ac8:2433:: with SMTP id c48mr70119188qtc.18.1558683849757; 
+ Fri, 24 May 2019 00:44:09 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <9094f39f-0e26-55dd-9b47-9a55089400da@st.com>
-User-Agent: NeoMutt/20180716
+References: <20190522155259.11174-1-christian@brauner.io>
+ <67e4458a-9cc4-d1aa-608c-73ebe9e2f7a3@yandex-team.ru>
+ <20190523163345.q5ynd2ytk7nxcvqf@brauner.io>
+In-Reply-To: <20190523163345.q5ynd2ytk7nxcvqf@brauner.io>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Fri, 24 May 2019 09:43:53 +0200
+Message-ID: <CAK8P3a26uvqmExJZsezhB+cp2ADM0Ai9jVUKWOFM6kg848bCKg@mail.gmail.com>
+Subject: Re: [PATCH v1 1/2] open: add close_range()
+To: Christian Brauner <christian@brauner.io>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_003510_460957_D02B0EB3 
-X-CRM114-Status: GOOD (  15.41  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190524_004412_099274_D8A829BC 
+X-CRM114-Status: GOOD (  14.46  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.194 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.222.194 listed in list.dnswl.org]
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.194 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,94 +83,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Antoine =?utf-8?Q?T=C3=A9nart?= <antoine.tenart@bootlin.com>,
- netdev@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Frank Rowand <frowand.list@gmail.com>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7089398225916547238=="
+Cc: linux-ia64@vger.kernel.org, Linux-sh list <linux-sh@vger.kernel.org>,
+ Konstantin Khlebnikov <khlebnikov@yandex-team.ru>,
+ Oleg Nesterov <oleg@redhat.com>, David Howells <dhowells@redhat.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ sparclinux <sparclinux@vger.kernel.org>, Shuah Khan <shuah@kernel.org>,
+ linux-arch <linux-arch@vger.kernel.org>,
+ linux-s390 <linux-s390@vger.kernel.org>, Miklos Szeredi <miklos@szeredi.hu>,
+ the arch/x86 maintainers <x86@kernel.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>, linux-mips@vger.kernel.org,
+ linux-xtensa@linux-xtensa.org, Todd Kjos <tkjos@android.com>,
+ Jann Horn <jannh@google.com>, linux-m68k <linux-m68k@lists.linux-m68k.org>,
+ Al Viro <viro@zeniv.linux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
+ "Dmitry V. Levin" <ldv@altlinux.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Florian Weimer <fweimer@redhat.com>,
+ Parisc List <linux-parisc@vger.kernel.org>,
+ Linux API <linux-api@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ alpha <linux-alpha@vger.kernel.org>,
+ Linux FS-devel Mailing List <linux-fsdevel@vger.kernel.org>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============7089398225916547238==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="23ickihnik62sivg"
-Content-Disposition: inline
-
-
---23ickihnik62sivg
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-Hi Alexandre,
-
-On Thu, May 23, 2019 at 05:05:51PM +0200, Alexandre Torgue wrote:
-> Hi Maxime
->
-> On 5/23/19 11:56 AM, Maxime Ripard wrote:
-> > Switch the STMMAC / Synopsys DesignWare MAC controller binding to a YAML
-> > schema to enable the DT validation.
+On Thu, May 23, 2019 at 6:33 PM Christian Brauner <christian@brauner.io> wrote:
+> On Thu, May 23, 2019 at 07:22:17PM +0300, Konstantin Khlebnikov wrote:
+> > On 22.05.2019 18:52, Christian Brauner wrote:> This adds the close_range() syscall. It allows to efficiently close a range
+> > >   22 files changed, 100 insertions(+), 9 deletions(-)
+> > >
 > >
-> > Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-> > ---
+> > It would be better to split arch/ wiring into separate patch for better readability.
 >
-> First, thanks a lot for this patch. Just one question:
-> We could add ranges for some properties in order to avoid "bad value" for a
-> property. If I understand correctly you do it only for snps,dwxgmac,
-> snps,dwxgmac-2.10 and st,spear600-gmac. Why not do it for all supported IPs
-> ? (Maybe it is something that we could add later)
->
+> Ok. You mean only do x86 - seems to be the standard - and then move the
+> others into a separate patch? Doesn't seem worth to have a patch
+> per-arch, I'd think.
 
-We definitely can do that. It wasn't really obvious to me what the
-limits were by reading the previous documentation, but if you can
-provide them we can definitely add them.
+I think I would prefer the first patch to just add the call without wiring it up
+anywhere, and a second patch do add it on all architectures including x86.
 
-> > +        snps,tso:
-> > +          $ref: /schemas/types.yaml#definitions/flag
-> > +          description:
-> > +            Enables the TSO feature otherwise it will be managed by
-> > +            MAC HW capability register. Only for GMAC4 and newer.
->
-> TSO is also available for snps,dwmac-4.00 and snps,dwmac-4.10a
-
-Ack, I'll change it.
-
-Thanks!
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---23ickihnik62sivg
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXOeenwAKCRDj7w1vZxhR
-xeATAQCcQsgy7vfEdnFVRTUYXu4cQi7yVev/HZ6IHxvhXUxohQEAlunQSSosiD+q
-hCssuxFFbw2++ejr0HSjYCaQvSZesQA=
-=FrHP
------END PGP SIGNATURE-----
-
---23ickihnik62sivg--
-
-
---===============7089398225916547238==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+     Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7089398225916547238==--
-
