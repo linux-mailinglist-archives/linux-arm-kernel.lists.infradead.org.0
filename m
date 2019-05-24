@@ -2,45 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3FF0029D66
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 19:44:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DD9F29DA0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 19:57:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7WGvafUqr54te9dd2sLCC1DR8a1EoYNVTexUusq0PaY=; b=qTgCYoybfJ/4Ad
-	AIvxT79ehO4bzu0Qdda3cZfg3utkgPAQwiO5duYYcplNo6cXF7e0CW6LHwOlYEAyKRFjsxa7WGe1u
-	6DzU12K2J/o0ZdJxh0k204YVLrPn5fMY9r27MHuDXghr6pMPrkV40f2c50F4UMut33g/8vHJqiYii
-	0RSMKHxYQysF5e/l/vhmffw/Km0j8KDtpAuPbaGueVbW97uCMpQOpkkL60biCSnx7yexh/LH9KoKl
-	EurOIS3gNlNC0dSJ2Za6d7fBnnr22HSPDZKQ/c8zgBlB2Iw2Vtd5Hb2M8f6ugPfADqqVCy61S7nen
-	oyvQOUU8yzoXcxktX8cQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FtyXbjMrnAs20Oi1az+ixdqw0yDmPIGrEA0/sYCEx5Q=; b=tfTnVASvMPPb4b
+	/qKUtNvZ9qF2ORWPN4LVFFEmPCrah7iNDro3vpwMu89fyeZBsK+3TN0qWjG1m/Mcwmkl5Sqn8pBOp
+	nx/Q78zmy8t8Zu2boOPu3GpuSE5wCg6HkSxZHsl+Ploig8EoINngZPrNbNNgpkNqAuyDsUTzOloS8
+	rYU0J+Xj3jTBLh81mFBD3OaQlcKp+VZjfPwpE+TLjXV9DprAN+pD0U4twTjFxx+wY0Yu6OmnMcKSZ
+	mCrbTpcnSDPbGn9C4wi+f7eZCl7DTqwyr/gmNbaIe7HMI0kQYJpI/g0QmeOlMTgtnKx5lMGNwpJX8
+	R/MWP33LZxtv01Nb3UUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUEEi-0007by-Ae; Fri, 24 May 2019 17:44:08 +0000
+	id 1hUERS-0004e3-G2; Fri, 24 May 2019 17:57:18 +0000
 Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUEEc-0007bH-7E
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 17:44:03 +0000
+ id 1hUERK-0004ct-7z
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 17:57:12 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 49D1EA78;
- Fri, 24 May 2019 10:44:01 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 389A73F703;
- Fri, 24 May 2019 10:44:00 -0700 (PDT)
-Date: Fri, 24 May 2019 18:43:57 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: torvalds@linux-foundation.org
-Subject: [GIT PULL] arm64: Second round of fixes for -rc2
-Message-ID: <20190524174357.GC9120@fuggles.cambridge.arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9C1C4A78;
+ Fri, 24 May 2019 10:57:09 -0700 (PDT)
+Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1E1993F703;
+ Fri, 24 May 2019 10:57:06 -0700 (PDT)
+Date: Fri, 24 May 2019 18:56:58 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [PATCH 0/2] mailbox: arm: introduce smc triggered mailbox
+Message-ID: <20190524175658.GA5045@e107155-lin>
+References: <20190523060437.11059-1-peng.fan@nxp.com>
+ <4ba2b243-5622-bb27-6fc3-cd9457430e54@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
+In-Reply-To: <4ba2b243-5622-bb27-6fc3-cd9457430e54@gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_104402_273633_9109D523 
-X-CRM114-Status: GOOD (  13.13  )
+X-CRM114-CacheID: sfid-20190524_105710_292324_96C21768 
+X-CRM114-Status: GOOD (  20.24  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -61,89 +63,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, lorenzo.pieralisi@arm.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Peng Fan <peng.fan@nxp.com>, "festevam@gmail.com" <festevam@gmail.com>,
+ "andre.przywara@arm.com" <andre.przywara@arm.com>,
+ "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ "van.freenix@gmail.com" <van.freenix@gmail.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Linus,
+On Thu, May 23, 2019 at 10:30:50AM -0700, Florian Fainelli wrote:
+> Hi,
+>
+> On 5/22/19 10:50 PM, Peng Fan wrote:
+> > This is a modified version from Andre Przywara's patch series
+> > https://lore.kernel.org/patchwork/cover/812997/.
+> > [1] is a draft implementation of i.MX8MM SCMI ATF implementation that
+> > use smc as mailbox, power/clk is included, but only part of clk has been
+> > implemented to work with hardware, power domain only supports get name
+> > for now.
+> >
+> > The traditional Linux mailbox mechanism uses some kind of dedicated hardware
+> > IP to signal a condition to some other processing unit, typically a dedicated
+> > management processor.
+> > This mailbox feature is used for instance by the SCMI protocol to signal a
+> > request for some action to be taken by the management processor.
+> > However some SoCs does not have a dedicated management core to provide
+> > those services. In order to service TEE and to avoid linux shutdown
+> > power and clock that used by TEE, need let firmware to handle power
+> > and clock, the firmware here is ARM Trusted Firmware that could also
+> > run SCMI service.
+> >
+> > The existing SCMI implementation uses a rather flexible shared memory
+> > region to communicate commands and their parameters, it still requires a
+> > mailbox to actually trigger the action.
+>
+> We have had something similar done internally with a couple of minor
+> differences:
+>
+> - a SGI is used to send SCMI notifications/delayed replies to support
+> asynchronism (patches are in the works to actually add that to the Linux
+> SCMI framework). There is no good support for SGI in the kernel right
+> now so we hacked up something from the existing SMP code and adding the
+> ability to register our own IPI handlers (SHAME!). Using a PPI should
+> work and should allow for using request_irq() AFAICT.
+>
 
-As promised, here's the second round of arm64 fixes for -rc2, based on
--rc1. Details in the tag. The ACPI/IORT build fix is pretty big in the
-diffstat, but it's really just the result of code movement to ensure
-that the functions are guarded correctly when !CONFIG_IOMMU_SUPPORT.
+We have been thinking this since we were asked if SMC can be transport.
+Generally out of 16 SGIs, 8 are reserved for secure side and non-secure
+has 8. Of these 8, IIUC 7 is already being used by kernel. So unless we
+manage to get the last one reserved exclusive to SCMI, it makes it
+difficult to add SGI support in SCMI.
 
-Please pull.
+We have been telling partners/vendors about this limitation if they
+use SMC as transport and need to have dedicated h/w interrupt for the
+notifications.
 
-Cheers,
+Another issue could be with virtualisation(using HVC) and EL handling
+so called SCMI SGI. We need to think about those too. I will try to get
+more info on this and come back on this.
 
-Will
-
---->8
-
-The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
-
-  Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
-
-are available in the git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git tags/arm64-fixes
-
-for you to fetch changes up to edbcf50eb8aea5f81ae6d83bb969cb0bc02805a1:
-
-  arm64: insn: Add BUILD_BUG_ON() for invalid masks (2019-05-24 14:58:30 +0100)
-
-----------------------------------------------------------------
-Second round of arm64 fixes for -rc2
-
-- Fix incorrect LDADD instruction encoding in our disassembly macros
-
-- Disable the broken ARM64_PSEUDO_NMI support for now
-
-- Add workaround for Cortex-A76 CPU erratum #1463225
-
-- Handle Cortex-A76/Neoverse-N1 erratum #1418040 w/ existing workaround
-
-- Fix IORT build failure if IOMMU_SUPPORT=n
-
-- Fix place-relative module relocation range checking and its
-  interaction with KASLR
-
-----------------------------------------------------------------
-Ard Biesheuvel (2):
-      arm64/kernel: kaslr: reduce module randomization range to 2 GB
-      arm64/module: deal with ambiguity in PRELxx relocation ranges
-
-Jean-Philippe Brucker (2):
-      arm64: insn: Fix ldadd instruction encoding
-      arm64: insn: Add BUILD_BUG_ON() for invalid masks
-
-Lorenzo Pieralisi (1):
-      ACPI/IORT: Fix build error when IOMMU_SUPPORT is disabled
-
-Marc Zyngier (1):
-      arm64: Handle erratum 1418040 as a superset of erratum 1188873
-
-Will Deacon (3):
-      arm64: Remove useless message during oops
-      arm64: errata: Add workaround for Cortex-A76 erratum #1463225
-      arm64: Kconfig: Make ARM64_PSEUDO_NMI depend on BROKEN for now
-
- Documentation/arm64/silicon-errata.txt |   9 +-
- arch/arm64/Kconfig                     |  26 +++-
- arch/arm64/include/asm/cpucaps.h       |   5 +-
- arch/arm64/include/asm/insn.h          |  18 ++-
- arch/arm64/kernel/cpu_errata.c         |  48 +++++--
- arch/arm64/kernel/entry.S              |   4 +-
- arch/arm64/kernel/kaslr.c              |   6 +-
- arch/arm64/kernel/module.c             |  18 ++-
- arch/arm64/kernel/syscall.c            |  31 +++++
- arch/arm64/kernel/traps.c              |   4 -
- arch/arm64/mm/fault.c                  |  33 +++++
- drivers/acpi/arm64/iort.c              | 238 +++++++++++++++++----------------
- 12 files changed, 284 insertions(+), 156 deletions(-)
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
