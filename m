@@ -2,62 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A3B129D60
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 19:42:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FF0029D66
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 19:44:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a3JIpBHx1bb7QEaVIpROiTkjuLhOGheYVaL/mnhpQr8=; b=oEZ1KGZuLP2SNf
-	8+VJezfL5mXU6wT3A1iv44bceLOGadDXEErbuFMmSEQS7Rdpg85WEA7Vk2rEDG3iap43bQgHzgB2R
-	241QXDf9pebdK/gWOLYn6iS6MpkpANbsCFyFVjjvtGY5Ygtdn1yro3i5UBpoEWp3KZnRJxWwczMMh
-	eWQPcbrLWWfe2qu5mOmTLlrzduoLKO6svwwHaKF2A46VZNjKIzqCSXmCrCK70u6DVmfbgitMJzIIR
-	KNqdRS+T5s9wa7A0mcavvv20oEsdTH/oBK4VGPB/6VVM/5Z2CUYrGdWgqm8SFssR1jHGgRQQaZeWD
-	B0+kg6ETWD6Q84irLW4Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7WGvafUqr54te9dd2sLCC1DR8a1EoYNVTexUusq0PaY=; b=qTgCYoybfJ/4Ad
+	AIvxT79ehO4bzu0Qdda3cZfg3utkgPAQwiO5duYYcplNo6cXF7e0CW6LHwOlYEAyKRFjsxa7WGe1u
+	6DzU12K2J/o0ZdJxh0k204YVLrPn5fMY9r27MHuDXghr6pMPrkV40f2c50F4UMut33g/8vHJqiYii
+	0RSMKHxYQysF5e/l/vhmffw/Km0j8KDtpAuPbaGueVbW97uCMpQOpkkL60biCSnx7yexh/LH9KoKl
+	EurOIS3gNlNC0dSJ2Za6d7fBnnr22HSPDZKQ/c8zgBlB2Iw2Vtd5Hb2M8f6ugPfADqqVCy61S7nen
+	oyvQOUU8yzoXcxktX8cQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUEDE-0007Gl-N8; Fri, 24 May 2019 17:42:36 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUED7-0007Fy-DI
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 17:42:31 +0000
-Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
- [10.5.11.13])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 3EFF5308219F;
- Fri, 24 May 2019 17:42:28 +0000 (UTC)
-Received: from treble (ovpn-121-106.rdu2.redhat.com [10.10.121.106])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 846315F7C5;
- Fri, 24 May 2019 17:42:26 +0000 (UTC)
-Date: Fri, 24 May 2019 12:42:24 -0500
-From: Josh Poimboeuf <jpoimboe@redhat.com>
-To: Ard Biesheuvel <ard.biesheuvel@arm.com>
-Subject: Re: [PATCH] x86/tools: deal with 64-bit relative relocations for
- per-CPU symbols
-Message-ID: <20190524174224.pdj2hgyni675xaoi@treble>
-References: <20190522174057.21770-1-ard.biesheuvel@arm.com>
+	id 1hUEEi-0007by-Ae; Fri, 24 May 2019 17:44:08 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hUEEc-0007bH-7E
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 17:44:03 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 49D1EA78;
+ Fri, 24 May 2019 10:44:01 -0700 (PDT)
+Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 389A73F703;
+ Fri, 24 May 2019 10:44:00 -0700 (PDT)
+Date: Fri, 24 May 2019 18:43:57 +0100
+From: Will Deacon <will.deacon@arm.com>
+To: torvalds@linux-foundation.org
+Subject: [GIT PULL] arm64: Second round of fixes for -rc2
+Message-ID: <20190524174357.GC9120@fuggles.cambridge.arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190522174057.21770-1-ard.biesheuvel@arm.com>
-User-Agent: NeoMutt/20180716
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.47]); Fri, 24 May 2019 17:42:28 +0000 (UTC)
+User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_104229_470159_D96BE36D 
-X-CRM114-Status: GOOD (  15.41  )
+X-CRM114-CacheID: sfid-20190524_104402_273633_9109D523 
+X-CRM114-Status: GOOD (  13.13  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
+ high trust [217.140.101.70 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -69,44 +61,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, linux-arch@vger.kernel.org, arnd@arndb.de,
- guillaume.gardet@arm.com, marc.zyngier@arm.com, x86@kernel.org,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, james.morse@arm.com,
- jeyu@kernel.org, mingo@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: catalin.marinas@arm.com, lorenzo.pieralisi@arm.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 22, 2019 at 06:40:57PM +0100, Ard Biesheuvel wrote:
-> In order to fix an issue in the place relative ksymtab code, we
-> need to switch to 64-bit place relative references, which
-> require special handling in the x86 'relocs' tool. The reason
-> is that per-CPU symbols on x86_64 live in a separate link time
-> section, whose load time address is not reflected in the ELF
-> metadata, and so relative references emitted by the toolchain
-> are guaranteed to be wrong.
-> 
-> So fix this by extending the handling of 32-bit relative references
-> to per-CPU variables to support 64-bit relative references as
-> well.
-> 
-> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@arm.com>
-> ---
-> This is a follow-up to [0] and a prerequisite to the change it
-> implements: using 64-bit relative references on x86_64 requires
-> this handling in the 'relocs' tool and in the decompressor.
-> 
-> [0] https://lore.kernel.org/linux-arm-kernel/20190522150239.19314-1-ard.biesheuvel@arm.com
-> 
-> This patch plus [0] build and boot tested with x86_64_defconfig on QEMU/kvm + OVMF.
+Hi Linus,
 
-NACK based on
+As promised, here's the second round of arm64 fixes for -rc2, based on
+-rc1. Details in the tag. The ACPI/IORT build fix is pretty big in the
+diffstat, but it's really just the result of code movement to ensure
+that the functions are guarded correctly when !CONFIG_IOMMU_SUPPORT.
 
-https://lkml.kernel.org/r/f2141ee5-d07a-6dd9-47c6-97e8fbdccf34@arm.com
+Please pull.
 
--- 
-Josh
+Cheers,
+
+Will
+
+--->8
+
+The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
+
+  Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
+
+are available in the git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git tags/arm64-fixes
+
+for you to fetch changes up to edbcf50eb8aea5f81ae6d83bb969cb0bc02805a1:
+
+  arm64: insn: Add BUILD_BUG_ON() for invalid masks (2019-05-24 14:58:30 +0100)
+
+----------------------------------------------------------------
+Second round of arm64 fixes for -rc2
+
+- Fix incorrect LDADD instruction encoding in our disassembly macros
+
+- Disable the broken ARM64_PSEUDO_NMI support for now
+
+- Add workaround for Cortex-A76 CPU erratum #1463225
+
+- Handle Cortex-A76/Neoverse-N1 erratum #1418040 w/ existing workaround
+
+- Fix IORT build failure if IOMMU_SUPPORT=n
+
+- Fix place-relative module relocation range checking and its
+  interaction with KASLR
+
+----------------------------------------------------------------
+Ard Biesheuvel (2):
+      arm64/kernel: kaslr: reduce module randomization range to 2 GB
+      arm64/module: deal with ambiguity in PRELxx relocation ranges
+
+Jean-Philippe Brucker (2):
+      arm64: insn: Fix ldadd instruction encoding
+      arm64: insn: Add BUILD_BUG_ON() for invalid masks
+
+Lorenzo Pieralisi (1):
+      ACPI/IORT: Fix build error when IOMMU_SUPPORT is disabled
+
+Marc Zyngier (1):
+      arm64: Handle erratum 1418040 as a superset of erratum 1188873
+
+Will Deacon (3):
+      arm64: Remove useless message during oops
+      arm64: errata: Add workaround for Cortex-A76 erratum #1463225
+      arm64: Kconfig: Make ARM64_PSEUDO_NMI depend on BROKEN for now
+
+ Documentation/arm64/silicon-errata.txt |   9 +-
+ arch/arm64/Kconfig                     |  26 +++-
+ arch/arm64/include/asm/cpucaps.h       |   5 +-
+ arch/arm64/include/asm/insn.h          |  18 ++-
+ arch/arm64/kernel/cpu_errata.c         |  48 +++++--
+ arch/arm64/kernel/entry.S              |   4 +-
+ arch/arm64/kernel/kaslr.c              |   6 +-
+ arch/arm64/kernel/module.c             |  18 ++-
+ arch/arm64/kernel/syscall.c            |  31 +++++
+ arch/arm64/kernel/traps.c              |   4 -
+ arch/arm64/mm/fault.c                  |  33 +++++
+ drivers/acpi/arm64/iort.c              | 238 +++++++++++++++++----------------
+ 12 files changed, 284 insertions(+), 156 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
