@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E01E29F47
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 21:43:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA8E129F4B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 21:43:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I/ZUHdy7Hk98lJDgiGSQcF5ygQe1YIapbERnTdzPps4=; b=sk0+H4qHI9BZ3U
-	7jozRMswKPI2MJCj+rVayKF+TZjTnfo3oW/9rJu+NYCao9zgIsZvvQZMbYY67TwX+Z9Ypl1lEbOmX
-	Wj9f7OK2oedjTS7mQPnsfshI47DI0vV7gtEtW4hw8tFvxFAOsVatb1d9gj1j1I654sPHKq/vj05AZ
-	R4jCAugPpHhFdEsZ3Btz/Syuq9m11cm3AuFX9E5GGcHD+l+DtQ0xCv2rx8McdRu5rxdx6R6ggXBFi
-	MSDWjf1nEsEbLKe5OWsSdEjcH/yIu7lxclCCVvSPkjjcVSfohRG6cwH+ZeqBxNTvNcWS6BZRi4pBC
-	8D+Ia4ZN2Ru1C86eLdEg==;
+	List-Owner; bh=hINiZFOgNccaMK1iFjoORriljRsJe4CAy6a0hQBajdU=; b=LC3RMSW11NPlj6
+	QYDlMzCEOQs6+FGSOgA6tqLR6AYmaFcKDi+sPaBMbFKizZ9Ui/AuDIsSjabb5LpbCw+Go6vd1J/Jo
+	IG0xEAMJB70iAUCSOc+jfaXWKJX3MQeA8qilMb+YLEAKK2E6ASFSBMCx2yAUC0HGvfoN6Ad1hWu2M
+	Qd+aDfSH2Xxsw0epE7SvWZgtQvSBAIbjj+nhUwnWUf0Z1ZdM6SrHVXWoz70N3z8O4ZHpM+CcM/XMZ
+	b2llk3hdHBp9XrN4xM9RqlZ3OMy6Rhe5s6GIarkz5plasPqGTcvJ8GXE+h99KmHwQ9HJf6aduxy0I
+	DN/Chflp5HGRVK0VyhKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUG5n-0008Ui-6K; Fri, 24 May 2019 19:43:03 +0000
+	id 1hUG65-0000Kt-9j; Fri, 24 May 2019 19:43:21 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUG5e-0008Tx-42
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 19:42:56 +0000
-Received: from mail-qk1-f169.google.com (mail-qk1-f169.google.com
- [209.85.222.169])
+ id 1hUG5x-0000K1-PK
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 19:43:14 +0000
+Received: from mail-qk1-f172.google.com (mail-qk1-f172.google.com
+ [209.85.222.172])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5B0D62133D
+ by mail.kernel.org (Postfix) with ESMTPSA id 5BDAF21850
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 May 2019 19:42:53 +0000 (UTC)
+ Fri, 24 May 2019 19:43:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558726973;
- bh=P4F0yOxDnt7KgIgixW6cWq/d7ndhyoPDVMiTUzFfBsA=;
+ s=default; t=1558726993;
+ bh=JoJ30cZZRw+96tUSEN2lLac7yZbukKSqlzqPvnxZo0E=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=SFwIDF4Aw3Jd2KfBBerNI895AiBx9F1rWeur2SqXk3w1aiv7VZv6/fqCeVLf/CSxf
- kmvVoELfJgGout+uePXkYNs86jDeyaz4q6NZQp3NbUcDYCsM5NaPrDDn+kRM2P+meO
- 3qzh4XVC8UGpU65Jp9qWaIUBYz9HOcjkmnWruQRY=
-Received: by mail-qk1-f169.google.com with SMTP id a132so9185330qkb.13
+ b=fovUaanVzvYvwZEA1pjRpYU1WpEc0jWDhBLr9b2svYpR0Riztfp2nATcfeW8Uqn+t
+ usnY29eAv0rh0aA95b/kWrxvIGL4TTBlVIsklWbWkaeVA54n3aJbYCmpQKnQhf2bx1
+ aVLnT2RCS9MUkIzG/jSCJXwaxzOdlKSX/FApIaUY=
+Received: by mail-qk1-f172.google.com with SMTP id p18so9244291qkk.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 May 2019 12:42:53 -0700 (PDT)
-X-Gm-Message-State: APjAAAV5+Ip0A6/VB5LfvOzPjyVS8gypa0Xrz/s94Jvv0OrHy9L7lOFL
- 5Vnw2GFC+N6D+vZ70qK+juMl3n3K9KJ1iTFRCA==
-X-Google-Smtp-Source: APXvYqxP2ozbNjdQZTI8z07dp169gKEcH3wTgMaVgZJd+xk2XZr48eTlRy8nhRjK7gAAZkNfMHlatuL1g+sO3Rt6VYs=
-X-Received: by 2002:aed:3f5b:: with SMTP id q27mr86664137qtf.143.1558726972684; 
- Fri, 24 May 2019 12:42:52 -0700 (PDT)
+ Fri, 24 May 2019 12:43:13 -0700 (PDT)
+X-Gm-Message-State: APjAAAV7usMaof2VOvntKfg68QJWv8O8bOB4iDnuuFQfCjTG77KDGujf
+ 6cos2tFTibeLyflten6JFZn6/sQd1fX88agPqw==
+X-Google-Smtp-Source: APXvYqzkUYKCKgnkwrNYbWnSQTsripKs5yX2p+epdNTxo2VL5V4U7Vanpt6QtJj+hEfCDR5o4QiRFJEscpPwAJKjIjA=
+X-Received: by 2002:ac8:3884:: with SMTP id f4mr89506622qtc.300.1558726992675; 
+ Fri, 24 May 2019 12:43:12 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190524162651.28189-1-ard.biesheuvel@linaro.org>
- <20190524162651.28189-6-ard.biesheuvel@linaro.org>
-In-Reply-To: <20190524162651.28189-6-ard.biesheuvel@linaro.org>
+ <20190524162651.28189-7-ard.biesheuvel@linaro.org>
+In-Reply-To: <20190524162651.28189-7-ard.biesheuvel@linaro.org>
 From: Rob Herring <robh@kernel.org>
-Date: Fri, 24 May 2019 14:42:41 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqJZwRkq7ciOw101wyHCq1gbWBCZ-PKyLZajgRg_wLG0Vg@mail.gmail.com>
-Message-ID: <CAL_JsqJZwRkq7ciOw101wyHCq1gbWBCZ-PKyLZajgRg_wLG0Vg@mail.gmail.com>
-Subject: Re: [PATCH v2 5/6] dt-bindings: add Atmel SHA204A I2C crypto processor
+Date: Fri, 24 May 2019 14:43:01 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq+=p+YA9emmZMhbCA75NM1ZksAx6mZkP1Fsype3SpK=TA@mail.gmail.com>
+Message-ID: <CAL_Jsq+=p+YA9emmZMhbCA75NM1ZksAx6mZkP1Fsype3SpK=TA@mail.gmail.com>
+Subject: Re: [PATCH v2 6/6] dt-bindings: move Atmel ECC508A I2C crypto
+ processor to trivial-devices
 To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_124255_006398_C372094E 
-X-CRM114-Status: UNSURE (   9.18  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190524_124313_839818_AF27794F 
+X-CRM114-Status: GOOD (  10.03  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -103,12 +103,15 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On Fri, May 24, 2019 at 11:27 AM Ard Biesheuvel
 <ard.biesheuvel@linaro.org> wrote:
 >
-> Add a compatible string for the Atmel SHA204A I2C crypto processor.
+> Move the binding for the discrete Atmel I2C Elliptic Curve h/w crypto
+> module to trivial-devices.yaml, as it doesn't belong in atmel-crypto
+> which describes unrelated on-SoC peripherals.
 >
 > Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 > ---
->  Documentation/devicetree/bindings/trivial-devices.yaml | 2 ++
->  1 file changed, 2 insertions(+)
+>  Documentation/devicetree/bindings/crypto/atmel-crypto.txt | 13 -------------
+>  Documentation/devicetree/bindings/trivial-devices.yaml    |  2 ++
+>  2 files changed, 2 insertions(+), 13 deletions(-)
 
 Reviewed-by: Rob Herring <robh@kernel.org>
 
