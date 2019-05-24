@@ -2,85 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24713298C5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 15:20:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 072F3298C6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 15:20:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y/IA/+lh+wkmid14tE1uSvWqFxfKap2B7mfWxE0QzLA=; b=hxZlvusc6herEy
-	YehYAQWiewojbaovfRF4Qw+doMW2RrtQGPFA26GP3b0DZ4vuwbz23SdxVFgtU8GYYgurlWCwCT3Iv
-	SNR8KPWqz2dohUKaGnWySWp01P9JQ0LlUyu2Pb73xnMpRS8xqg586D/QwP58ViGsWfwdgbyXjb8s0
-	T1Gih17fQwJKf1R1St3yknBA+rVwrGHEwe7UCjqdY1eE5A9m9tmn6OU1XKEYrRjykchorNIGQ48Mv
-	yKDQv4Fm1akjhSj+Xf98+FWxh4SSsErJK71dhgZmUY7c1sfcWpyLfd1ETX2WuggFjxFzghr2yOdPF
-	iLFsyJzw2L/Bgr+UwoVQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=QRkBEVOLYFDE6gKJ9xvFWhrjbc7+1PInPleRSZNa/KM=; b=EtA
+	nb8I13cSmml+mpKgQQA3XAN2ILNlg+9pnPTH0pD0u7+P0p+IxFkYEp9Hg260bo7DMTrPWyu7DLJ22
+	n2O75BTvOStmNlH8fFDbaP/a1e7nnpVB1+vmvCMY6TrhwG7VKz7RIMXvFd9yH1S21FhADuSrWdk7t
+	sUwkPPGPTmEXG8fsX2mD8/jmhlquA354ZcFIKG1FVfES/ylL46WM9vkW0iYVfWsxJlG6B0GBVj10A
+	/4UNYAkIxAyfIC3sEaoPHBfdCdUcCwpAa4jTn3TINxX4JGQhGiL4Rv671+J2H/+Kq9chszhJp25/a
+	PCfqIJwNbp6klf9xrpR7lxHjRnwioXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUA7I-0003xf-0W; Fri, 24 May 2019 13:20:12 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUA75-0003wp-11
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 13:20:00 +0000
-Received: by mail-qk1-x743.google.com with SMTP id c15so7487107qkl.2
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 May 2019 06:19:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=9XdN+SJO4nNfooj9kJ5ndy5j9Cl/+8FH0MeIweuOGzA=;
- b=umKy+t+dNFNuRN3//yw8fJR6BmKynML3xuh30YRuWun2gOZ+W2hNgIWycKEjShbKbd
- +FaBLWWcJmgMHcMDZbJpme0B+zf+ew2DoIP3CGphOfrE7Uuv9JuH+Azx0JvVqPoUY69M
- 8HdcUI0H3BJrfLosqseHHAHfiHj4KGX/ihlnRjVwBaCFLFsBmnSouSuJszVLhKJrYcwx
- 8tQyWrNqwS2t+IfxysJ8FFxfS+5AG4ufj3xnhx+Gy9VtowqTETLuytKmYD3+BKSs5gml
- DcHLVCrIjW6guYl6IsMmAwxSbCC6nvhrn/xRdCsvVhDlb5k3q26iQg7IVg4+fGtcbDKS
- r1eA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=9XdN+SJO4nNfooj9kJ5ndy5j9Cl/+8FH0MeIweuOGzA=;
- b=mEjc1tNgqCBBhPmC1rF8QLiQc1qwwcFaxlnsJW/VtStoIe3QhSxL0f3Szi45zmp1Mv
- 06nj66BlzRPcVUdpqShxlGfmU9P9RAuBEUmBGfz+1QEdKHXPyEpCe/m2c2ok2SAwZ+q3
- Ax3SGWOoOFGsF+PuLvCgkl3QA5Nu3a+YqACx0Ej4lHTBAzH/61S8llc+VyZ3mennJ0cY
- a7CAFbJzH/wR9tAmF6Fkj49T4c+8WTwYh1DiRPBf9n/WhVIIj7Gdo0hB2Dg7PsO6gLAe
- Q+VpxVGaBRh3QPQDUAHuCTE1Op1xPzZ/tNEMU5v9xUEKaHOQMM85+9HNma/tm8W/v4zk
- txPw==
-X-Gm-Message-State: APjAAAVAkgS0UnL+T7tzAulzd2+jZ93NaAsDuyZM/N9LGrsb66tmz/kb
- dys30RQrsFi017s7TGzMCWTGTgDWA2iJZXkRB0crnMHN
-X-Google-Smtp-Source: APXvYqx9KM7Yc5ojQbqNvCzGfvIIOam7qCdkDSAjgKM3Z0ld27IhHfeKfkMag3SA4N0Hdi+ZJCJ+jc69aHauc+MA8mw=
-X-Received: by 2002:a0c:8b54:: with SMTP id d20mr28830004qvc.1.1558703996214; 
- Fri, 24 May 2019 06:19:56 -0700 (PDT)
-MIME-Version: 1.0
-References: <1558521304-27469-1-git-send-email-suzuki.poulose@arm.com>
- <20190523143227.GC31751@leoy-ThinkPad-X240s>
- <23a50436-4bcf-3439-c189-093e1a58438d@arm.com>
-In-Reply-To: <23a50436-4bcf-3439-c189-093e1a58438d@arm.com>
-From: Mike Leach <mike.leach@linaro.org>
-Date: Fri, 24 May 2019 14:19:43 +0100
-Message-ID: <CAJ9a7Vjh_RDgp6nKrgrmuKcAhs77iU_oKTuBhSBdkUUwiwZbSg@mail.gmail.com>
-Subject: Re: [PATCH v4 00/30] coresight: Support for ACPI bindings
-To: Suzuki K Poulose <suzuki.poulose@arm.com>
+	id 1hUA7V-0005NZ-JO; Fri, 24 May 2019 13:20:25 +0000
+Received: from mickerik.phytec.de ([195.145.39.210])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hUA7D-00048A-Dm
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 13:20:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; d=phytec.de; s=a1; c=relaxed/simple;
+ q=dns/txt; i=@phytec.de; t=1558704004; x=1561296004;
+ h=From:Sender:Reply-To:Subject:Date:Message-Id:To:Cc:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=jPoVpk+zVTSpotGP0l1Y3MACc9eibOInf/vk2LwICuI=;
+ b=cXsXs5d5sAmEN1AZWOspozi92wtU91/ZI3MCQKlbkaSLpz5wDaTONahH1X2+d1dI
+ NKCP9xp49uABt1VKiVAg5BDJyC7jR5N15aBYplfMbkthZRKZC8KFQ1v3f4+72tBv
+ 9A8ByArkuQFRejWHo2udnOqcZSKx82L3Ft+E7DMmOJY=;
+X-AuditID: c39127d2-6d5ff70000000df6-b9-5ce7ef84550b
+Received: from idefix.phytec.de (idefix.phytec.de [172.16.0.10])
+ by mickerik.phytec.de (PHYTEC Mail Gateway) with SMTP id 0A.81.03574.48FE7EC5;
+ Fri, 24 May 2019 15:20:04 +0200 (CEST)
+Received: from augenblix2.phytec.de ([172.16.21.122])
+ by idefix.phytec.de (IBM Domino Release 9.0.1FP7)
+ with ESMTP id 2019052415200349-20932 ;
+ Fri, 24 May 2019 15:20:03 +0200 
+From: Teresa Remmet <t.remmet@phytec.de>
+To: linux-omap@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 0/7] AM335x Phytec boards update
+Date: Fri, 24 May 2019 15:19:56 +0200
+Message-Id: <1558704003-393769-1-git-send-email-t.remmet@phytec.de>
+X-Mailer: git-send-email 2.7.4
+X-MIMETrack: Itemize by SMTP Server on Idefix/Phytec(Release 9.0.1FP7|August
+ 17, 2016) at 24.05.2019 15:20:03,
+ Serialize by Router on Idefix/Phytec(Release 9.0.1FP7|August  17, 2016) at
+ 24.05.2019 15:20:03, Serialize complete at 24.05.2019 15:20:03
+X-TNEFEvaluated: 1
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFupkluLIzCtJLcpLzFFi42JZI8DApdvy/nmMwelNTBZ35v9ltZh/5Byr
+ xabH11gtZi/pZ7FYev0ik0Xr3iPsFvuveDmwe6yZt4bR49vXSSwe72+0sntsWtXJ5rF5Sb3H
+ 501yAWxRXDYpqTmZZalF+nYJXBmP33cxFfznqph4ci5LA+Myji5GTg4JAROJn/8fsXcxcnEI
+ CexglGjoXMcM4VxglDi3vIEdpIpNQEPi6YrTTF2MHBwiAgkSt14KgdQwC5xhlLjbv4wNpEZY
+ wEBi3kOIehYBVYn3vx4xg9i8As4Si6b2MUNsk5O4ea4TbIGEQCOTxPbnp6ASQhKnF59lnsDI
+ s4CRYRWjUG5mcnZqUWa2XkFGZUlqsl5K6iZGYAAdnqh+aQdj3xyPQ4wCHIxKPLwJl5/HCLEm
+ lhVX5h5ilOBgVhLhjd3/LEaINyWxsiq1KD++qDQntfgQozQHi5I47wbekjAhgfTEktTs1NSC
+ 1CKYLBMHp1QD476rbaVrtxd8/GZxsOfICq53yUt8/zM71sSemjVvG3P9opiesL3+xwV5zt7s
+ m8MlYBCwpL7r6YcvD82axEqK2KpD18UvWNQb9GrhYqfoq7oTJjaVT95feyt1p9W6kBKpf3MZ
+ gm/sPCSbd3ljjOLO67m1qWEJsRvbvLmleJZPcbiwbEq1/MR3qkosxRmJhlrMRcWJAHaLO4oc
+ AgAA
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_061959_075358_8FAED76A 
-X-CRM114-Status: GOOD (  23.90  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190524_062008_170765_FBF96F2A 
+X-CRM114-Status: GOOD (  12.61  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [195.145.39.210 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -92,109 +90,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: coresight@lists.linaro.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Leo Yan <leo.yan@linaro.org>
+Cc: Tony Lindgren <tony@atomide.com>, Mark Rutland <mark.rutland@arm.com>,
+ Rob Herring <robh+dt@kernel.org>, Daniel Schultz <d.schultz@phytec.de>,
+ =?UTF-8?q?Beno=C3=AEt=20Cousson?= <bcousson@baylibre.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Suzuki, Leo
+Hello,
 
-On Thu, 23 May 2019 at 16:32, Suzuki K Poulose <suzuki.poulose@arm.com> wrote:
->
-> Hi Leo,
->
-> On 23/05/2019 15:32, Leo Yan wrote:
-> > Hi Suzuki,
-> >
-> > On Wed, May 22, 2019 at 11:34:33AM +0100, Suzuki K Poulose wrote:
-> >
-> > [...]
-> >
-> >> Changes since v2:
-> >>   - Drop the patches exposing device links via sysfs, to be posted as separate
-> >>     series.
-> >
-> > Thanks for sharing the git tree linkage in another email.  Just want
-> > to confirm, since patch set v3 you have dropped the patch "coresight:
-> > Expose device connections via sysfs" [1], will you send out this patch
-> > after ACPI binding support patches has been merged?
->
-> We are awaiting Mike's comment on the approach, as his CTI support also
-> needs something similar.
->
+this series adds basic support for phyCORE-AM335x EMMC and
+adds device tree for phyBOARD-REGOR AM335x. Also fixes issues
+like removing outdated eth phy delay settings and mmc cd active level.
 
-I fully agree that there is requirement to expose device connections
-as Suzuki's patches provided. As commented in the original patch, it
-removes the need for users to have knowledge of hardware specifics or
-access to device tree source.
+Teresa
 
-For the trace datapath a simple link is sufficient to express this
-information. The nature of the data and connection is known - it is
-the trace data running from source to sink. The linked components are
-guaranteed to be registered coresight devices
+Daniel Schultz (1):
+  ARM: dts: am335x-phycore-som: Add emmc node
 
-However, the requirement for the CTI is different.
+Teresa Remmet (6):
+  ARM: dts: am335x phytec boards: Fix cd-gpios active level
+  ARM: dts: am335x phytec boards: Remove regulator node
+  ARM: dts: am335x-phycore-som: Enable gpmc node in dts files
+  ARM: dts: am335x-pcm-953: Update user led names
+  ARM: dts: am335x-pcm-953: Remove eth phy delay
+  ARM: dts: Add support for phyBOARD-REGOR-AM335x
 
-CTI is not limited to connecting to other coresight devices. Any
-device can be wired into a CTI trigger signal. These devices may or
-may not have drivers  / entries in the device tree.
-For each connection a client needs to know the signals connected to
-the cti, the signal directions, the signal prupose if possible, and
-the device connected.
-For this reason we dynamically fill out a connections infomation
-sub-dir in sysfs containing _name, _trigin_sig, _trigout_sig,
-_trigin_type, _trigout_type - described in the patch [1].
+ .../devicetree/bindings/arm/omap/omap.txt          |   3 +
+ arch/arm/boot/dts/Makefile                         |   1 +
+ arch/arm/boot/dts/am335x-pcm-953.dtsi              |  24 +--
+ arch/arm/boot/dts/am335x-phycore-rdk.dts           |   4 +
+ arch/arm/boot/dts/am335x-phycore-som.dtsi          |  47 +++--
+ arch/arm/boot/dts/am335x-regor-rdk.dts             |  24 +++
+ arch/arm/boot/dts/am335x-regor.dtsi                | 223 +++++++++++++++++++++
+ arch/arm/boot/dts/am335x-wega-rdk.dts              |   4 +
+ arch/arm/boot/dts/am335x-wega.dtsi                 |  18 +-
+ 9 files changed, 304 insertions(+), 44 deletions(-)
+ create mode 100644 arch/arm/boot/dts/am335x-regor-rdk.dts
+ create mode 100644 arch/arm/boot/dts/am335x-regor.dtsi
 
-This information is sufficient and necessary to enable a user to
-program a CTI in most cases.
+-- 
+2.7.4
 
-As an example look at the Juno dtsi in [2].
-CTI 0 is connected to ETR, ETF, STM and TPIU - all coresight devices.
-CTI 1 is connected to REF_CLK, system profiler and watchdog - no
-coresight devices at all.
-CTI 2 is connected to ETF, and two ELA devices - so 1 coresight device
-and 2 not coresight devices.
-
-So my view is that for the case where CTI is connected to another
-CoreSight device the sysfs link could be used in addition to the
-information described above.
-
-Regards.
-
-Mike
-
-[1] https://lists.linaro.org/pipermail/coresight/2019-May/002587.html
-[2] https://lists.linaro.org/pipermail/coresight/2019-May/002589.html
-
-> >
-> > When you send out the new patch for exposing device connection, please
-> > loop me so that I can base on it for perf testing related works.
->
-> Sure, will do. As such, the perf testing should not be affected by that
-> series. It is just a helper to demonstrate the connections. But yes, it
-> will definitely help you to choose an ETF for a cluster, if you had multiple
-> ETFs on the system. Otherwise, you should be OK.
->
-> Please be aware that the power management support is missing on ACPI platform.
-> So you must make sure, by other means, that the debug domain is powered up.
->
->
-> Cheers
-> Suzuki
-> _______________________________________________
-> CoreSight mailing list
-> CoreSight@lists.linaro.org
-> https://lists.linaro.org/mailman/listinfo/coresight
-
-
-
---
-Mike Leach
-Principal Engineer, ARM Ltd.
-Manchester Design Centre. UK
 
 _______________________________________________
 linux-arm-kernel mailing list
