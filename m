@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BC0B29D46
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 19:38:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22D6329D45
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 19:38:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=5lWy96wsMxp8TiG7dygPGCCkXnPi1xhUbohv0/8iMSM=; b=Z589/KH2UpPyZqevO39ld6BxD4
-	ql2iLRAoFfJ7bct18ymm08vRRLC9MBcHRjHHtc6DbGPDWchcdNls0knc9EUNUUz+P7YYqfN6Gh3q2
-	B6KO7oHF3irro9bIadOCPtSGUEC4xypcvIBd0sSKKDn457c+A6S708CDZULrfAZ/5DZdE3ZKJjpeN
-	Nuu/ITYXQXPQ0C2W2cwxAq3dVprSCJS9Bv2fyyfXvMS06lUA7ICX4hxwoRsI3h3t9qX2q/sV28PAh
-	l95Ym+qFbBp/2aYRnGB9q41F6vLMqn/9tjIHjCtc5WjWrWBcujEZJksQB1CxOVcd272XzC5agsYOY
-	4Vpve/Eg==;
+	bh=9g2aXrSi2Ynk6bA756C7DO8pmg2/CxGMIFibL9ZZ6PE=; b=Sor1zjt3Y9LJAn+d7v2TyhkBKE
+	wNMBZo95ArzMMdy8MmJmmQh3AXWbDvMvbgjLNm5K+z/EnjXXMk9ROkqfzwmyzZ3hLGUz35j16XWuQ
+	ZCctX4F0R6HwShcfTBB0Q2LJKIUERRqS9CxwqBZ1uhiu7LYpyXPe1SujX9SRwleQnZqt7x3p3jToo
+	+xSz+CnHPHqzG/NIONrmN+htOSlskGq5qiwLRk5H7Kk+dcmLJ4VXPCzkGG0p0LM0LR869DrUVeX1g
+	0UEw6tA1Y5fsbf9AH3LCcFxoxbShhgvlVRc3E9nyf9DVCX0ZVcTsktxKHUalqxeym2hv5vcfiaY2r
+	7toBcEBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUE9G-0004bz-Cw; Fri, 24 May 2019 17:38:30 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hUE95-0004NT-ME; Fri, 24 May 2019 17:38:19 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUE6M-00019L-Eb
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 17:35:40 +0000
-Received: by mail-pl1-x643.google.com with SMTP id p15so4442444pll.4
+ id 1hUE6N-0001BK-7f
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 17:35:41 +0000
+Received: by mail-pf1-x444.google.com with SMTP id c6so5718366pfa.10
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 May 2019 10:35:29 -0700 (PDT)
+ Fri, 24 May 2019 10:35:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=YLacy1WPwP51koJcLQmVsZoOnuNjPchkGCoMeaoSKY0=;
- b=PbMf7J/qOFFHjE14/KNNPvY5OfVNXGAe0ZimeRsh0+rhLDvruXtj++2+flmB2aGIaC
- s9IJ4Q07SsfQ0xgio00zDFvPj04UUUwFfL2LAk3O66Ap8wxFMqF/d3OXCMQpafm0tCHM
- FgZEG9btQkW6KQsNFbFWhBsijEyH9j+cCvnkdNzUOwt83fDO3QC2DTAO1QCt0zZIHQnh
- B3OfDA+GZvx5L3HchUBTZIUHB8wvcq1YktzCW9t5ZDB4awLNqgYxfn1UoET7UMavxAde
- WeaIBdbapBVQriocvrZnP5kONla55nKGETkfkzVPYaGxZkUTkEwl3iv8Qw9/sDpM0E8F
- SOgA==
+ bh=TcueIJVjFnLykFgMSjp27lPW+9DE4r6pPvomdOZtTnM=;
+ b=emGCqNKtTJalfThxnAoLwnMgxJmSsue6enOXFLCNWjlsZtwrGnBIVJMadeKoNQxggH
+ djSKPPrGCwvGxy2aCIVh8sx8hNZta1DeAjbacL9JnQet4FNEp416lG/WrVdvRqtpo485
+ +0YPLNj+i3ylDuMcs3LbeoNJWTGOoP8/E0najIq6f5CbbmAZt0xLiYxX0F0pHTyWtDeV
+ 8e0+Thv4QsRa2DQAFLhLAGjN20Ng9pZdPENyjYE+leDOKOtyls5iURFjshw2z54gskTX
+ yBEW5WLD+6cNN+iZA8ShiaUZaYt2nUni6JbgeZrgDa7mExfMhPY5Hx9HiamfWQLpyVr0
+ DhSw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=YLacy1WPwP51koJcLQmVsZoOnuNjPchkGCoMeaoSKY0=;
- b=ZduX0yc/4iwgV9BhpGIjdo/Eedd56mRJlgCfCwqbsTNl5yfhVbVF9tMg65iELTTHKD
- aI3voJUIa6qp24BNVAONaDosZEtDMAJKLcMTpaZQ/KjiY82astx4cEqYyE5pvdQ4tuFr
- if7d+eChTZptyH3ePPDi5T0GEm0wij7839YpqygW32Bcg6ZMoXfwCOl+J4qBUWaWF+cJ
- otUrjXRB7LOhGdVqc6/+g8uQ6C8BAbt5MxDjWwBkBEb2i7/jPDe5+5K6sBQ27ZngcUsD
- egm0Ar9cMeWEJXH9ZNMqJsCmQuaMjuJehfPchqHroNGzo+n9dSyEGm30zJAE2F1SfnIr
- QJOg==
-X-Gm-Message-State: APjAAAWdDUvEH5oGT6ZxFY2FAyyosaQXhmPfhhpj0Riy9PjVYUOWfvF6
- IOKfB++KgzQkRJ4I9krWJuuTJQ==
-X-Google-Smtp-Source: APXvYqyEljwtF2aPGLMaaB5XZlYvbtIkfWwLGbfe1U2CTiCp3BNkwG9mfjnNV/YIhKuF/Cj/mAqX1w==
-X-Received: by 2002:a17:902:b095:: with SMTP id
- p21mr56107478plr.270.1558719329130; 
- Fri, 24 May 2019 10:35:29 -0700 (PDT)
+ bh=TcueIJVjFnLykFgMSjp27lPW+9DE4r6pPvomdOZtTnM=;
+ b=AxsbJSDfrQnDb5bE78Xi03xRMc0ZYd/rzHg89jbGdexE/EtWJb10rTB+lZ+eM2bzej
+ vqwxChDuzQ2X1PzCkckCecp/5M6FxhKe5KIFeaZ9Y1X/FH0PRzX3kdGkAZ3Yh/0/nVeL
+ 5rA+tYQLw4kofLx16Mt4g210IMrxUGT/iLnPkUAYcptV/+m3oj/qEzeUgdYSwbMWMREd
+ +2WC28B3TCRb0hhv4Naowlb3MDoe4xUFmxsmxegnp1MvjCOCEEgWVyxqaaSOCjFHJ6eP
+ ngbkkguXB3KtiavY0rGwP2fUdhBcLzmayjvD+CXR9GIvKxfJzRVABvkZRjVdSqmqAbXp
+ WdxQ==
+X-Gm-Message-State: APjAAAXYgjbCGDAT+cSPfjep7vXUVRjEvNE+gDGNf+/HhSudI5cWvVc/
+ ZLWo53ZL75nktFS1N5O4a1WsPA==
+X-Google-Smtp-Source: APXvYqxHjNbZWVIl/SQOOpRaxr1L2IaBP8QpbAZgMAqitb38XJ7an9fSZbOdqxZBXWnIAiLipZW4yg==
+X-Received: by 2002:a63:4c1c:: with SMTP id z28mr15815648pga.122.1558719330383; 
+ Fri, 24 May 2019 10:35:30 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id k13sm2809575pgr.90.2019.05.24.10.35.27
+ by smtp.gmail.com with ESMTPSA id k13sm2809575pgr.90.2019.05.24.10.35.29
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 24 May 2019 10:35:28 -0700 (PDT)
+ Fri, 24 May 2019 10:35:29 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: acme@kernel.org
-Subject: [PATCH v2 15/17] perf tools: Linking PE contextID with perf thread
- mechanic
-Date: Fri, 24 May 2019 11:35:06 -0600
-Message-Id: <20190524173508.29044-16-mathieu.poirier@linaro.org>
+Subject: [PATCH v2 16/17] perf tools: Add notion of time to decoding code
+Date: Fri, 24 May 2019 11:35:07 -0600
+Message-Id: <20190524173508.29044-17-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190524173508.29044-1-mathieu.poirier@linaro.org>
 References: <20190524173508.29044-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_103531_365176_0626C413 
-X-CRM114-Status: GOOD (  13.40  )
+X-CRM114-CacheID: sfid-20190524_103531_948141_50890C5E 
+X-CRM114-Status: GOOD (  21.10  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,137 +106,274 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Link contextID packets received from the decoder with the perf tool thread
-mechanic so that we know the specifics of the process currently executing.
+This patch deals with timestamp packets received from the decoding library
+in order to give the front end packet processing loop a handle on the time
+instruction conveyed by range packets have been executed at.
 
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- .../perf/util/cs-etm-decoder/cs-etm-decoder.c | 20 ++++++++++++
- tools/perf/util/cs-etm.c                      | 32 +++++++++++++++----
- tools/perf/util/cs-etm.h                      | 10 ++++++
- 3 files changed, 56 insertions(+), 6 deletions(-)
+ .../perf/util/cs-etm-decoder/cs-etm-decoder.c | 112 +++++++++++++++++-
+ tools/perf/util/cs-etm.c                      |  19 +++
+ tools/perf/util/cs-etm.h                      |  17 +++
+ 3 files changed, 144 insertions(+), 4 deletions(-)
 
 diff --git a/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c b/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c
-index 87264b79de0e..ce85e52f989c 100644
+index ce85e52f989c..33e975c8d11b 100644
 --- a/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c
 +++ b/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c
-@@ -402,6 +402,24 @@ cs_etm_decoder__buffer_exception_ret(struct cs_etm_packet_queue *queue,
- 					     CS_ETM_EXCEPTION_RET);
+@@ -269,6 +269,76 @@ cs_etm_decoder__create_etm_packet_printer(struct cs_etm_trace_params *t_params,
+ 						     trace_config);
  }
  
 +static ocsd_datapath_resp_t
-+cs_etm_decoder__set_tid(struct cs_etm_queue *etmq,
-+			const ocsd_generic_trace_elem *elem,
-+			const uint8_t trace_chan_id)
++cs_etm_decoder__do_soft_timestamp(struct cs_etm_queue *etmq,
++				  struct cs_etm_packet_queue *packet_queue,
++				  const uint8_t trace_chan_id)
 +{
-+	pid_t tid;
-+
-+	/* Ignore PE_CONTEXT packets that don't have a valid contextID */
-+	if (!elem->context.ctxt_id_valid)
++	/* No timestamp packet has been received, nothing to do */
++	if (!packet_queue->timestamp)
 +		return OCSD_RESP_CONT;
 +
-+	tid =  elem->context.context_id;
-+	if (cs_etm__etmq_set_tid(etmq, tid, trace_chan_id))
-+		return OCSD_RESP_FATAL_SYS_ERR;
++	packet_queue->timestamp = packet_queue->next_timestamp;
 +
-+	return OCSD_RESP_CONT;
++	/* Estimate the timestamp for the next range packet */
++	packet_queue->next_timestamp += packet_queue->instr_count;
++	packet_queue->instr_count = 0;
++
++	/* Tell the front end which traceid_queue needs attention */
++	cs_etm__etmq_set_traceid_queue_timestamp(etmq, trace_chan_id);
++
++	return OCSD_RESP_WAIT;
 +}
 +
- static ocsd_datapath_resp_t cs_etm_decoder__gen_trace_elem_printer(
- 				const void *context,
- 				const ocsd_trc_index_t indx __maybe_unused,
-@@ -440,6 +458,8 @@ static ocsd_datapath_resp_t cs_etm_decoder__gen_trace_elem_printer(
++static ocsd_datapath_resp_t
++cs_etm_decoder__do_hard_timestamp(struct cs_etm_queue *etmq,
++				  const ocsd_generic_trace_elem *elem,
++				  const uint8_t trace_chan_id)
++{
++	struct cs_etm_packet_queue *packet_queue;
++
++	/* First get the packet queue for this traceID */
++	packet_queue = cs_etm__etmq_get_packet_queue(etmq, trace_chan_id);
++	if (!packet_queue)
++		return OCSD_RESP_FATAL_SYS_ERR;
++
++	/*
++	 * We've seen a timestamp packet before - simply record the new value.
++	 * Function do_soft_timestamp() will report the value to the front end,
++	 * hence asking the decoder to keep decoding rather than stopping.
++	 */
++	if (packet_queue->timestamp) {
++		packet_queue->next_timestamp = elem->timestamp;
++		return OCSD_RESP_CONT;
++	}
++
++	/*
++	 * This is the first timestamp we've seen since the beginning of traces
++	 * or a discontinuity.  Since timestamps packets are generated *after*
++	 * range packets have been generated, we need to estimate the time at
++	 * which instructions started by substracting the number of instructions
++	 * executed to the timestamp.
++	 */
++	packet_queue->timestamp = elem->timestamp -
++						packet_queue->instr_count;
++	packet_queue->next_timestamp = elem->timestamp;
++	packet_queue->instr_count = 0;
++
++	/* Tell the front end which traceid_queue needs attention */
++	cs_etm__etmq_set_traceid_queue_timestamp(etmq, trace_chan_id);
++
++	/* Halt processing until we are being told to proceed */
++	return OCSD_RESP_WAIT;
++}
++
++static void
++cs_etm_decoder__reset_timestamp(struct cs_etm_packet_queue *packet_queue)
++{
++	packet_queue->timestamp = 0;
++	packet_queue->next_timestamp = 0;
++	packet_queue->instr_count = 0;
++}
++
+ static ocsd_datapath_resp_t
+ cs_etm_decoder__buffer_packet(struct cs_etm_packet_queue *packet_queue,
+ 			      const u8 trace_chan_id,
+@@ -310,7 +380,8 @@ cs_etm_decoder__buffer_packet(struct cs_etm_packet_queue *packet_queue,
+ }
+ 
+ static ocsd_datapath_resp_t
+-cs_etm_decoder__buffer_range(struct cs_etm_packet_queue *packet_queue,
++cs_etm_decoder__buffer_range(struct cs_etm_queue *etmq,
++			     struct cs_etm_packet_queue *packet_queue,
+ 			     const ocsd_generic_trace_elem *elem,
+ 			     const uint8_t trace_chan_id)
+ {
+@@ -365,6 +436,23 @@ cs_etm_decoder__buffer_range(struct cs_etm_packet_queue *packet_queue,
+ 
+ 	packet->last_instr_size = elem->last_instr_sz;
+ 
++	/* per-thread scenario, no need to generate a timestamp */
++	if (cs_etm__etmq_is_timeless(etmq))
++		goto out;
++
++	/*
++	 * The packet queue is full and we haven't seen a timestamp (had we
++	 * seen one the packet queue wouldn't be full).  Let the front end
++	 * deal with it.
++	 */
++	if (ret == OCSD_RESP_WAIT)
++		goto out;
++
++	packet_queue->instr_count += elem->num_instr_range;
++	/* Tell the front end we have a new timestamp to process */
++	ret = cs_etm_decoder__do_soft_timestamp(etmq, packet_queue,
++						trace_chan_id);
++out:
+ 	return ret;
+ }
+ 
+@@ -372,6 +460,11 @@ static ocsd_datapath_resp_t
+ cs_etm_decoder__buffer_discontinuity(struct cs_etm_packet_queue *queue,
+ 				     const uint8_t trace_chan_id)
+ {
++	/*
++	 * Something happened and who knows when we'll get new traces so
++	 * reset time statistics.
++	 */
++	cs_etm_decoder__reset_timestamp(queue);
+ 	return cs_etm_decoder__buffer_packet(queue, trace_chan_id,
+ 					     CS_ETM_DISCONTINUITY);
+ }
+@@ -404,6 +497,7 @@ cs_etm_decoder__buffer_exception_ret(struct cs_etm_packet_queue *queue,
+ 
+ static ocsd_datapath_resp_t
+ cs_etm_decoder__set_tid(struct cs_etm_queue *etmq,
++			struct cs_etm_packet_queue *packet_queue,
+ 			const ocsd_generic_trace_elem *elem,
+ 			const uint8_t trace_chan_id)
+ {
+@@ -417,6 +511,12 @@ cs_etm_decoder__set_tid(struct cs_etm_queue *etmq,
+ 	if (cs_etm__etmq_set_tid(etmq, tid, trace_chan_id))
+ 		return OCSD_RESP_FATAL_SYS_ERR;
+ 
++	/*
++	 * A timestamp is generated after a PE_CONTEXT element so make sure
++	 * to rely on that coming one.
++	 */
++	cs_etm_decoder__reset_timestamp(packet_queue);
++
+ 	return OCSD_RESP_CONT;
+ }
+ 
+@@ -446,7 +546,7 @@ static ocsd_datapath_resp_t cs_etm_decoder__gen_trace_elem_printer(
  							    trace_chan_id);
  		break;
- 	case OCSD_GEN_TRC_ELEM_PE_CONTEXT:
-+		resp = cs_etm_decoder__set_tid(etmq, elem, trace_chan_id);
+ 	case OCSD_GEN_TRC_ELEM_INSTR_RANGE:
+-		resp = cs_etm_decoder__buffer_range(packet_queue, elem,
++		resp = cs_etm_decoder__buffer_range(etmq, packet_queue, elem,
+ 						    trace_chan_id);
+ 		break;
+ 	case OCSD_GEN_TRC_ELEM_EXCEPTION:
+@@ -457,11 +557,15 @@ static ocsd_datapath_resp_t cs_etm_decoder__gen_trace_elem_printer(
+ 		resp = cs_etm_decoder__buffer_exception_ret(packet_queue,
+ 							    trace_chan_id);
+ 		break;
++	case OCSD_GEN_TRC_ELEM_TIMESTAMP:
++		resp = cs_etm_decoder__do_hard_timestamp(etmq, elem,
++							 trace_chan_id);
 +		break;
+ 	case OCSD_GEN_TRC_ELEM_PE_CONTEXT:
+-		resp = cs_etm_decoder__set_tid(etmq, elem, trace_chan_id);
++		resp = cs_etm_decoder__set_tid(etmq, packet_queue,
++					       elem, trace_chan_id);
+ 		break;
  	case OCSD_GEN_TRC_ELEM_ADDR_NACC:
- 	case OCSD_GEN_TRC_ELEM_TIMESTAMP:
+-	case OCSD_GEN_TRC_ELEM_TIMESTAMP:
  	case OCSD_GEN_TRC_ELEM_CYCLE_COUNT:
+ 	case OCSD_GEN_TRC_ELEM_ADDR_UNKNOWN:
+ 	case OCSD_GEN_TRC_ELEM_EVENT:
 diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-index afc2491f9f2a..17adf554b679 100644
+index 17adf554b679..91496a3a2209 100644
 --- a/tools/perf/util/cs-etm.c
 +++ b/tools/perf/util/cs-etm.c
-@@ -907,13 +907,8 @@ cs_etm__get_trace(struct cs_etm_queue *etmq)
+@@ -80,6 +80,7 @@ struct cs_etm_queue {
+ 	struct cs_etm_decoder *decoder;
+ 	struct auxtrace_buffer *buffer;
+ 	unsigned int queue_nr;
++	u8 pending_timestamp;
+ 	u64 offset;
+ 	const unsigned char *buf;
+ 	size_t buf_len, buf_used;
+@@ -133,6 +134,19 @@ int cs_etm__get_cpu(u8 trace_chan_id, int *cpu)
+ 	return 0;
  }
  
- static void cs_etm__set_pid_tid_cpu(struct cs_etm_auxtrace *etm,
--				    struct auxtrace_queue *queue,
- 				    struct cs_etm_traceid_queue *tidq)
- {
--	/* CPU-wide tracing isn't supported yet */
--	if (queue->tid == -1)
--		return;
--
- 	if ((!tidq->thread) && (tidq->tid != -1))
- 		tidq->thread = machine__find_thread(etm->machine, -1,
- 						    tidq->tid);
-@@ -922,6 +917,31 @@ static void cs_etm__set_pid_tid_cpu(struct cs_etm_auxtrace *etm,
- 		tidq->pid = tidq->thread->pid_;
- }
- 
-+int cs_etm__etmq_set_tid(struct cs_etm_queue *etmq,
-+			 pid_t tid, u8 trace_chan_id)
++void cs_etm__etmq_set_traceid_queue_timestamp(struct cs_etm_queue *etmq,
++					      u8 trace_chan_id)
 +{
-+	int cpu, err = -EINVAL;
-+	struct cs_etm_auxtrace *etm = etmq->etm;
-+	struct cs_etm_traceid_queue *tidq;
++	/*
++	 * Wnen a timestamp packet is encountered the backend code
++	 * is stopped so that the front end has time to process packets
++	 * that were accumulated in the traceID queue.  Since there can
++	 * be more than one channel per cs_etm_queue, we need to specify
++	 * what traceID queue needs servicing.
++	 */
++	etmq->pending_timestamp = trace_chan_id;
++}
 +
-+	tidq = cs_etm__etmq_get_traceid_queue(etmq, trace_chan_id);
-+	if (!tidq)
-+		return err;
-+
-+	if (cs_etm__get_cpu(trace_chan_id, &cpu) < 0)
-+		return err;
-+
-+	err = machine__set_current_tid(etm->machine, cpu, tid, tid);
-+	if (err)
-+		return err;
-+
-+	tidq->tid = tid;
-+	thread__zput(tidq->thread);
-+
-+	cs_etm__set_pid_tid_cpu(etm, tidq);
-+	return 0;
+ static void cs_etm__clear_packet_queue(struct cs_etm_packet_queue *queue)
+ {
+ 	int i;
+@@ -942,6 +956,11 @@ int cs_etm__etmq_set_tid(struct cs_etm_queue *etmq,
+ 	return 0;
+ }
+ 
++bool cs_etm__etmq_is_timeless(struct cs_etm_queue *etmq)
++{
++	return !!etmq->etm->timeless_decoding;
 +}
 +
  static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
  					    struct cs_etm_traceid_queue *tidq,
  					    u64 addr, u64 period)
-@@ -1866,7 +1886,7 @@ static int cs_etm__process_timeless_queues(struct cs_etm_auxtrace *etm,
- 			continue;
- 
- 		if ((tid == -1) || (tidq->tid == tid)) {
--			cs_etm__set_pid_tid_cpu(etm, queue, tidq);
-+			cs_etm__set_pid_tid_cpu(etm, tidq);
- 			cs_etm__run_decoder(etmq);
- 		}
- 	}
 diff --git a/tools/perf/util/cs-etm.h b/tools/perf/util/cs-etm.h
-index f16082d37ab5..b2a7628620bf 100644
+index b2a7628620bf..33b57e748c3d 100644
 --- a/tools/perf/util/cs-etm.h
 +++ b/tools/perf/util/cs-etm.h
-@@ -181,6 +181,8 @@ struct cs_etm_packet_queue {
- int cs_etm__process_auxtrace_info(union perf_event *event,
- 				  struct perf_session *session);
+@@ -150,6 +150,9 @@ struct cs_etm_packet_queue {
+ 	u32 packet_count;
+ 	u32 head;
+ 	u32 tail;
++	u32 instr_count;
++	u64 timestamp;
++	u64 next_timestamp;
+ 	struct cs_etm_packet packet_buffer[CS_ETM_PACKET_MAX_BUFFER];
+ };
+ 
+@@ -183,6 +186,9 @@ int cs_etm__process_auxtrace_info(union perf_event *event,
  int cs_etm__get_cpu(u8 trace_chan_id, int *cpu);
-+int cs_etm__etmq_set_tid(struct cs_etm_queue *etmq,
-+			 pid_t tid, u8 trace_chan_id);
+ int cs_etm__etmq_set_tid(struct cs_etm_queue *etmq,
+ 			 pid_t tid, u8 trace_chan_id);
++bool cs_etm__etmq_is_timeless(struct cs_etm_queue *etmq);
++void cs_etm__etmq_set_traceid_queue_timestamp(struct cs_etm_queue *etmq,
++					      u8 trace_chan_id);
  struct cs_etm_packet_queue
  *cs_etm__etmq_get_packet_queue(struct cs_etm_queue *etmq, u8 trace_chan_id);
  #else
-@@ -197,6 +199,14 @@ static inline int cs_etm__get_cpu(u8 trace_chan_id __maybe_unused,
+@@ -207,6 +213,17 @@ static inline int cs_etm__etmq_set_tid(
  	return -1;
  }
  
-+static inline int cs_etm__etmq_set_tid(
-+				struct cs_etm_queue *etmq __maybe_unused,
-+				pid_t tid __maybe_unused,
-+				u8 trace_chan_id __maybe_unused)
++static inline bool cs_etm__etmq_is_timeless(
++				struct cs_etm_queue *etmq __maybe_unused)
 +{
-+	return -1;
++	/* What else to return? */
++	return true;
 +}
++
++static inline void cs_etm__etmq_set_traceid_queue_timestamp(
++				struct cs_etm_queue *etmq __maybe_unused,
++				u8 trace_chan_id __maybe_unused) {}
 +
  static inline struct cs_etm_packet_queue *cs_etm__etmq_get_packet_queue(
  				struct cs_etm_queue *etmq __maybe_unused,
