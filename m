@@ -2,89 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4B1A29C5E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 18:33:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A3D929C95
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 18:58:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DTSykTDrWQnYS0Wgxac8RkIBQv3htmfiHM2R9sOJfyc=; b=p15g4Ow/utopwi
-	hndP6IbnTrVANBoSGE2wnSZLnE2WTkdz30HxY9gX8u4HGNEVIQee0F/Mgh778et1QYZheMyCP4zKF
-	qm2wZAhOKa0czej2ibl0M01+gWqiKq/cOi7K4cZkVgJvQf1cALofG0vK/hKc7GPknAelGCTxMyS75
-	+OdQ3u2Td5eVZIHkCvA7cxF2Lu4Yprzudx54B/l3Ec9j5rZvL+i1rXmFDUfNH4wDx9X3RicaRWLcd
-	AHy17cgNCrM6jUqRzeAeZQHZz6Br8DNBhRlosSoTSQg881LMglARTRrRiSp8NxrnUwxyKOlvNyhmq
-	fuvdtekYZruPCnXcBQPg==;
+	List-Owner; bh=UofCQvi895erGraLVvyUPbX62ZDd2oER9trTx+FbVJU=; b=a8uBvmNiye5VUg
+	SkYM5TbnbkwRptfImFVv61j4bzCXaTvqLyqMc+SmViaQoBd+SAQdALUGXxZmzI1i+xHoPqKZ9Re7V
+	saxCJJlQ4EDvfsWQH+dP0Z2HVuPbDyHvZR+/U/3dK2WrZsApLn1ohkc4FKC9iD+gLpsJkqG6cPOKr
+	1ptZftM2vD4JVJ3ukhKN1Cxbu5W5eqS585zb/rflJioFv9TeAUUQijpaeJLsufYy9udohifetiT1F
+	R7L7PzdC8QvsS1LagphxNegEGrAHghw+3dKohscC17tO1UjjwdhMIHEUGdFQ+UpXT1Kj8jY6096/u
+	qqdfqs8z31unASKLTcPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUD8R-0004sn-UB; Fri, 24 May 2019 16:33:35 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1hUDWS-0004Iw-Cu; Fri, 24 May 2019 16:58:24 +0000
+Received: from mail-it1-x142.google.com ([2607:f8b0:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUD8K-0004sP-9a
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 16:33:30 +0000
-Received: by mail-io1-xd44.google.com with SMTP id q21so8204814iog.13
+ id 1hUDWL-0004IF-NY
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 16:58:19 +0000
+Received: by mail-it1-x142.google.com with SMTP id a186so7014464itg.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 May 2019 09:33:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ Fri, 24 May 2019 09:58:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=LRCKBM+pCyV8v4GH3CTPRapygJGCpjV7JmJ/J98K3zo=;
- b=J8z/TZmJDy9YhRyf5wi57/Kbe3Klzj5MlVvfu+WQ0Us/zFKhzhZMdYRSLiR8QfVlnM
- BhDMb3r2G2EioJINzsJPaiotxjiclp4s6knjqW64m7lRSr9W4kKERVv6Vt9qDWLmkZEC
- DFC5hKq4rIB42faqdX5EOqON2w72flSnxf4fXm6naoDbOyRqRaadxGjakJo0iiw4neqE
- fsE6hQQqB/qKs8lbcTBiLOA1utGAPh588nwv9vt+o1l5nguN8NTG8ytSQewhOvXP+0GA
- rdtkiZ/2JRRh7q47q79drEmhjNNQaLy04JdlpB1t3pkW2U6WYoU2/PjqiJb8+jLjOUJz
- ZBNQ==
+ :cc:content-transfer-encoding;
+ bh=MoMLCOnVhZSHe+BQlTmS5wevE0lJU4Hf7dR7NZTK0SA=;
+ b=fPQsvYSJ7q6ZkPN90gdwNY/gQFwW2BaNnP1VwwHH5cSJOM97xQcxAYi/ejEfDdwLUF
+ trMZf7pzYgvhyTAZInqDKQOFn1cyKxmEpjkQK/1MUgGJc0EAk98MHydqd/Rdfqiv4HO9
+ 0rzP7L2tUL2e9UyqcDSFdQltXMrBWBEkqmq1WYe0nGW3kz2bpvkXi25HzKwgIlvyH5RA
+ VhfUn2vUXnc2+nxXtlMk7B4ydxKMwlCRIVALMRSTz1D28y7y0KGdSVXiZ4HuPtqH4r8F
+ fXM8PL4o8NK3EDm4JmW8FvSjtq3NyfUr4q7VH32Jc1vVX7mKV+4JyWwiGh+JRSiP6zOn
+ JKbQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=LRCKBM+pCyV8v4GH3CTPRapygJGCpjV7JmJ/J98K3zo=;
- b=aNDaraAF57cRxt30e/3tEdUYLWZH5r1oJBT7yg9YYvIi57Ehw+rBr3BYDgwISTUxFU
- njUl9n56jUgtlA8fS49fRVVd1KdqESaPs2lSwIINLYj6RFLYXInBXSABff9UMN4vF45E
- utu1CxbIQ0dv2LGbivLoRaO9f29P5CGfXjTyoCLdYM5AOScDyX4UuokJrqes3e6uFLM/
- l5v7OEryjPZUlyvhcjcFonJee3VhKKif9HPQTBkQM33+FI469fcGQYI2B6tgaaYyc7OG
- /LPpjE7tNEqkwUsz+TDNp4ywGcumBS5BpVfS0cdsKsTWcLHtL/R3BjM/CeoQu8LXAuf+
- Vb8A==
-X-Gm-Message-State: APjAAAXngPfAxwEmZhpPnNAIeimJ1nKXibC3r2vkkr8F1YH1SZ9HEwI0
- XVfonVQmY2PMHS0QOeC+x0xkX0ZonEeIcKiuEW1J6g==
-X-Google-Smtp-Source: APXvYqyTHYDcNRaUasxa/DBWROPgfkAVfxAMWOiWyvhWB7eymVuD3LFodiOO9W45p6SkxuhmUgJEsUMEDRQ2VKWw/Is=
-X-Received: by 2002:a5d:968e:: with SMTP id m14mr26693205ion.49.1558715607305; 
- Fri, 24 May 2019 09:33:27 -0700 (PDT)
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=MoMLCOnVhZSHe+BQlTmS5wevE0lJU4Hf7dR7NZTK0SA=;
+ b=L4N9VcehiG3t6sZM1/jC2njJzGN7WWSXWI9kgfmxtL/0VBTAlAUqBA/3Xk6+ROSeZz
+ IwwmlEhkWLyu3PiNtqQ518LcDen6eT2sMzWlZ2o3ib8EhAyqVq+OA/eECF0ACVtecstE
+ EGfUKMdOs0bpFjFcUksOjpzes6kNEF8l/axK8AhB9pkSW0ccPmN1wH18rFakjHi1KPz1
+ 4C0amhXXN4n7/SGGVqhcDLJRUHu4CHeYGOaL5uItS07TGRuTgb2x36Rz9gIIn4zl2rfq
+ O04qNPHt6AsGNSKuzOINfO9/PTSiFSFrmpM7CTz7f8RtldI4aPgMMiNtiagc4mpircGR
+ 2XGg==
+X-Gm-Message-State: APjAAAWng/sHZaPl8shiQa/MNy+tM3RO3PHpl3h+H931MMcECmUgfEeU
+ T3Ywlkd4ACvJNZ/2hg1+dsghOzt+ZXB9+xkLAAHVVA==
+X-Google-Smtp-Source: APXvYqzKAKOCGT1463jp43t7UOHxZ8/WT2omEyVHLyOVE3HNbV4Ak5HVMslMSUYhRfOX/SuzDLSdg7lxhnGTI3w9lSk=
+X-Received: by 2002:a05:6638:233:: with SMTP id
+ f19mr6778463jaq.24.1558717095212; 
+ Fri, 24 May 2019 09:58:15 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190522150239.19314-1-ard.biesheuvel@arm.com>
- <293c9d0f-dc14-1413-e4b4-4299f0acfb9e@arm.com>
- <f2141ee5-d07a-6dd9-47c6-97e8fbdccf34@arm.com>
- <20190523091811.GA26646@fuggles.cambridge.arm.com>
- <907a9681-cd1d-3326-e3dd-5f6965497720@arm.com>
- <20190524152045.w3syntzp4bb5jb7u@treble>
- <CAKv+Gu9DLf9y2uqTo407gLK3AX3pq+HGFxytsoR9C2zfGdUc-A@mail.gmail.com>
- <20190524163104.o6xh54x4ngbihneb@treble>
-In-Reply-To: <20190524163104.o6xh54x4ngbihneb@treble>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Fri, 24 May 2019 18:33:15 +0200
-Message-ID: <CAKv+Gu9U9pU79EoV02dGSTjuG2qq4NbHL0grO4K=L7P7sHeW6A@mail.gmail.com>
-Subject: Re: [PATCH] module/ksymtab: use 64-bit relative reference for target
- symbol
-To: Josh Poimboeuf <jpoimboe@redhat.com>
+References: <20190417152701.23391-1-brgl@bgdev.pl>
+ <20190417152701.23391-5-brgl@bgdev.pl>
+ <CAHCN7xKVaYqd5LLvRx7i8ik+JnTFdpexZf2WXt0R2N1W1skOJA@mail.gmail.com>
+ <CAMpxmJW9yWcQ8497OwOhMN8wj-Cmc3-UP7Rh-yoU_uDaQkVVSw@mail.gmail.com>
+In-Reply-To: <CAMpxmJW9yWcQ8497OwOhMN8wj-Cmc3-UP7Rh-yoU_uDaQkVVSw@mail.gmail.com>
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+Date: Fri, 24 May 2019 18:58:04 +0200
+Message-ID: <CAMRc=Me9hwsLdpDVfs+cb_rqrWs=+bJOa9nEFY+xs_vs5LAXXA@mail.gmail.com>
+Subject: Re: [PATCH v5 4/5] ARM: dts: da850-evm: enable cpufreq
+To: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_093328_344767_3730D904 
-X-CRM114-Status: GOOD (  30.62  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190524_095817_903932_5BFA19B3 
+X-CRM114-Status: GOOD (  25.93  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -99,101 +93,71 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- linux-arch <linux-arch@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- guillaume.gardet@arm.com, Marc Zyngier <marc.zyngier@arm.com>,
- the arch/x86 maintainers <x86@kernel.org>, Will Deacon <will.deacon@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, David Lechner <david@lechnology.com>,
+ Kevin Hilman <khilman@kernel.org>, Sekhar Nori <nsekhar@ti.com>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- James Morse <james.morse@arm.com>, Ard Biesheuvel <ard.biesheuvel@arm.com>,
- Jessica Yu <jeyu@kernel.org>, Ingo Molnar <mingo@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Rob Herring <robh+dt@kernel.org>, Adam Ford <aford173@gmail.com>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 24 May 2019 at 18:31, Josh Poimboeuf <jpoimboe@redhat.com> wrote:
->
-> On Fri, May 24, 2019 at 05:55:37PM +0200, Ard Biesheuvel wrote:
-> > On Fri, 24 May 2019 at 17:21, Josh Poimboeuf <jpoimboe@redhat.com> wrote:
-> > >
-> > > On Thu, May 23, 2019 at 10:29:39AM +0100, Ard Biesheuvel wrote:
-> > > >
-> > > >
-> > > > On 5/23/19 10:18 AM, Will Deacon wrote:
-> > > > > On Thu, May 23, 2019 at 09:41:40AM +0100, Ard Biesheuvel wrote:
-> > > > > >
-> > > > > >
-> > > > > > On 5/22/19 5:28 PM, Ard Biesheuvel wrote:
-> > > > > > >
-> > > > > > >
-> > > > > > > On 5/22/19 4:02 PM, Ard Biesheuvel wrote:
-> > > > > > > > The following commit
-> > > > > > > >
-> > > > > > > >     7290d5809571 ("module: use relative references for __ksymtab entries")
-> > > > > > > >
-> > > > > > > > updated the ksymtab handling of some KASLR capable architectures
-> > > > > > > > so that ksymtab entries are emitted as pairs of 32-bit relative
-> > > > > > > > references. This reduces the size of the entries, but more
-> > > > > > > > importantly, it gets rid of statically assigned absolute
-> > > > > > > > addresses, which require fixing up at boot time if the kernel
-> > > > > > > > is self relocating (which takes a 24 byte RELA entry for each
-> > > > > > > > member of the ksymtab struct).
-> > > > > > > >
-> > > > > > > > Since ksymtab entries are always part of the same module as the
-> > > > > > > > symbol they export (or of the core kernel), it was assumed at the
-> > > > > > > > time that a 32-bit relative reference is always sufficient to
-> > > > > > > > capture the offset between a ksymtab entry and its target symbol.
-> > > > > > > >
-> > > > > > > > Unfortunately, this is not always true: in the case of per-CPU
-> > > > > > > > variables, a per-CPU variable's base address (which usually differs
-> > > > > > > > from the actual address of any of its per-CPU copies) could be at
-> > > > > > > > an arbitrary offset from the ksymtab entry, and so it may be out
-> > > > > > > > of range for a 32-bit relative reference.
-> > > > > > > >
-> > > > > >
-> > > > > > (Apologies for the 3-act monologue)
-> > > > >
-> > > > > Exposition, development and recapitulation ;)
-> > > > >
-> > > > > > This turns out to be incorrect. The symbol address of per-CPU variables
-> > > > > > exported by modules is always in the vicinity of __per_cpu_start, and so it
-> > > > > > is simply a matter of making sure that the core kernel is in range for
-> > > > > > module ksymtab entries containing 32-bit relative references.
-> > > > > >
-> > > > > > When running the arm64 with kaslr enabled, we currently randomize the module
-> > > > > > space based on the range of ADRP/ADD instruction pairs, which have a -/+ 4
-> > > > > > GB range rather than the -/+ 2 GB range of 32-bit place relative data
-> > > > > > relocations. So we can fix this by simply reducing the randomization window
-> > > > > > to 2 GB.
-> > > > >
-> > > > > Makes sense. Do you see the need for an option to disable PREL relocs
-> > > > > altogether in case somebody wants the additional randomization range?
-> > > > >
-> > > >
-> > > > No, not really. To be honest, I don't think
-> > > > CONFIG_RANDOMIZE_MODULE_REGION_FULL is that useful to begin with, and the
-> > > > only reason we enabled it by default at the time was to ensure that the PLT
-> > > > code got some coverage after we introduced it.
-> > >
-> > > In code, percpu variables are accessed with absolute relocations, right?
-> >
-> > No, they are accessed just like ordinary symbols, so PC32 references
-> > on x86 or ADRP/ADD references on arm64 are both quite common.
->
-> Ah, right, now I see some PC32 percpu references.
->
-> So if PC32 references are sufficient for code, why aren't they
-> sufficient for ksymtab entries?  Isn't the ksymtab data address closer
-> to the percpu data than the code?  Do you have an example of an out of
-> range ksymtab reference?
->
-
-Not on x86, only on arm64, which uses ADRP/ADD pairs with a -/+ 4 GB
-range as opposed to the -/+ 2 GB range of PC32 and PREL32 references.
-So when KASLR puts the modules far away from the kernel (but in range
-for ADRP/ADD) they may be out of range for PREL32.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+d3QuLCAyMyBrd2kgMjAxOSBvIDExOjE1IEJhcnRvc3ogR29sYXN6ZXdza2kKPGJnb2xhc3pld3Nr
+aUBiYXlsaWJyZS5jb20+IG5hcGlzYcWCKGEpOgo+Cj4gxZtyLiwgMTcga3dpIDIwMTkgbyAxOTow
+OSBBZGFtIEZvcmQgPGFmb3JkMTczQGdtYWlsLmNvbT4gbmFwaXNhxYIoYSk6Cj4gPgo+ID4gT24g
+V2VkLCBBcHIgMTcsIDIwMTkgYXQgMTA6MjcgQU0gQmFydG9zeiBHb2xhc3pld3NraSA8YnJnbEBi
+Z2Rldi5wbD4gd3JvdGU6Cj4gPiA+Cj4gPiA+IEZyb206IEJhcnRvc3ogR29sYXN6ZXdza2kgPGJn
+b2xhc3pld3NraUBiYXlsaWJyZS5jb20+Cj4gPiA+Cj4gPiA+IEVuYWJsZSBjcHVmcmVxLWR0IHN1
+cHBvcnQgZm9yIGRhODUwLWV2bS4gVGhlIGN2ZGQgaXMgc3VwcGxpZWQgYnkgdGhlCj4gPiA+IHRw
+czY1MDcwIHBtaWMgd2l0aCBjb25maWd1cmFibGUgb3V0cHV0IHZvbHRhZ2UuIEJ5IGRlZmF1bHQg
+ZGE4NTAtZXZtCj4gPiA+IGJvYXJkcyBzdXBwb3J0IGZyZXF1ZW5jaWVzIHVwIHRvIDM3NU1IeiBz
+byBlbmFibGUgdGhpcyBvcGVyYXRpbmcKPiA+ID4gcG9pbnQuCj4gPgo+ID4gSGF2ZSB5b3UgZG9u
+ZSBhbnkgdGVzdGluZyB3aXRoIHRoZSBMQ0Qgb24gYW55IG9mIHRoZSBkZXZpY2VzIHlvdSBoYXZl
+Pwo+ID4KPiA+IEkgZW5hYmxlZCB0aGUgb25kZW1hbmQgZ292ZXJub3IsIGFuZCBJIGdvdCBhIGJ1
+bmNoIG9mIHNwbGF0IGZyb20gdGhlCj4gPiBMQ0QgY29udHJvbGxlcjoKPiA+Cj4gPiB0aWxjZGMg
+MWUxMzAwMC5kaXNwbGF5OiBlZmZlY3RpdmUgcGl4ZWwgY2xvY2sgcmF0ZSAoNTAwMDAwMDBIeikK
+PiA+IGRpZmZlcnMgZnJvbSB0aGUgY2FsY3VsYXRlZCByYXRlICg1NDAwMDAwMEh6KQo+ID4gdGls
+Y2RjIDFlMTMwMDAuZGlzcGxheTogdGlsY2RjX2NydGNfaXJxKDB4MDAwMDAxNjEpOiBGSUZPIHVu
+ZGVyZmxvdwo+ID4gdGlsY2RjIDFlMTMwMDAuZGlzcGxheTogdGlsY2RjX2NydGNfaXJxKDB4MDAw
+MDAxNjEpOiBGSUZPIHVuZGVyZmxvdwo+ID4gLi4uIFsgc25pcF0KPiA+IHRpbGNkYyAxZTEzMDAw
+LmRpc3BsYXk6IGVmZmVjdGl2ZSBwaXhlbCBjbG9jayByYXRlICg1MDAwMDAwMEh6KQo+ID4gZGlm
+ZmVycyBmcm9tIHRoZSBjYWxjdWxhdGVkIHJhdGUgKDU0MDAwMDAwSHopCj4gPiB0aWxjZGMgMWUx
+MzAwMC5kaXNwbGF5OiBlZmZlY3RpdmUgcGl4ZWwgY2xvY2sgcmF0ZSAoNTAwMDAwMDBIeikKPiA+
+IGRpZmZlcnMgZnJvbSB0aGUgY2FsY3VsYXRlZCByYXRlICg1NDAwMDAwMEh6KQo+ID4gdGlsY2Rj
+IDFlMTMwMDAuZGlzcGxheTogdGlsY2RjX2NydGNfaXJxKDB4MDAwMDAxNjEpOiBGSUZPIHVuZGVy
+Zmxvdwo+ID4KPiA+IEl0IGFwcGVhcnMgdG8gZ28gb24gZm9yZXZlci4gIEkgZG9uJ3QgbmVjZXNz
+YXJpbHkgd2FudCB0byBob2xkIGl0IHVwLAo+ID4gYnV0IEkgZG9uJ3Qga25vdyB0aGUgY2xvY2tp
+bmcgc3lzdGVtIHdlbGwgZW5vdWdoIHRvIGtub3cgd2hlcmUgdG8gZ28KPiA+IGludmVzdGlnYXRl
+IGl0LiAgSSBjYW4gY2VydGFpbmx5IGxpdmUgd2l0aG91dCBvbmRlbWFuZC4gIFVzaW5nCj4gPiB1
+c2Vyc3BhY2UgYXMgdGhlIGRlZmF1bHQgZ292ZXJub3IgaXMgZmluZSBmb3IgbWUgZm9yIG5vdy4K
+PiA+Cj4gPiBhZGFtCj4KPiBIaSBBZGFtLAo+Cj4gSSBkaWQgdGVzdCB0aGUgdGlsY2RjIG9uIGRh
+ODUwLWxjZGsuIFRoZSBvbmx5IG1lc3NhZ2UgSSdtIGdldHRpbmcKPiBkdXJpbmcgdHJhbnNpdGlv
+bnMgaXMgYSBzaW5nbGU6Cj4KPiB0aWxjZGMgPG5hbWU+OiB0aWxjZGNfY3J0Y19pcnEoPGFkZHJl
+c3M+KTogRklGTyB1bmRlcmZsb3cKPgo+IGJ1dCB0aGlzIGlzIGZhaXJseSBub3JtYWwgLSB3ZSBh
+bHNvIGdldCB0aGlzIGR1cmluZyBtb2Rlc2V0IGFuZCBpdAo+IGRvZXNuJ3QgYWZmZWN0IHRoZSBk
+aXNwbGF5Lgo+Cj4gVGhlIHByb2JsZW0gd2l0aCB0aGUgcGl4ZWwgY2xvY2sgbWF5IGNvbWUgZnJv
+bSB0aGUgYm9vdGxvYWRlciAtIGFyZQo+IHlvdSB1c2luZyBhIHJlY2VudCB2ZXJzaW9uIG9mIHUt
+Ym9vdD8KPgo+IEJhcnQKPgo+ID4gPgo+ID4gPiBTaWduZWQtb2ZmLWJ5OiBCYXJ0b3N6IEdvbGFz
+emV3c2tpIDxiZ29sYXN6ZXdza2lAYmF5bGlicmUuY29tPgo+ID4gPiBSZXZpZXdlZC1ieTogQWRh
+bSBGb3JkIDxhZm9yZDE3M0BnbWFpbC5jb20+Cj4gPiA+IC0tLQo+ID4gPiAgYXJjaC9hcm0vYm9v
+dC9kdHMvZGE4NTAtZXZtLmR0cyB8IDEzICsrKysrKysrKysrKysKPiA+ID4gIDEgZmlsZSBjaGFu
+Z2VkLCAxMyBpbnNlcnRpb25zKCspCj4gPiA+Cj4gPiA+IGRpZmYgLS1naXQgYS9hcmNoL2FybS9i
+b290L2R0cy9kYTg1MC1ldm0uZHRzIGIvYXJjaC9hcm0vYm9vdC9kdHMvZGE4NTAtZXZtLmR0cwo+
+ID4gPiBpbmRleCBmMDRiYzNlMTUzMzIuLmY5NGJiMzhmZGFkOSAxMDA2NDQKPiA+ID4gLS0tIGEv
+YXJjaC9hcm0vYm9vdC9kdHMvZGE4NTAtZXZtLmR0cwo+ID4gPiArKysgYi9hcmNoL2FybS9ib290
+L2R0cy9kYTg1MC1ldm0uZHRzCj4gPiA+IEBAIC0xOTEsNiArMTkxLDE5IEBACj4gPiA+ICAgICAg
+ICAgfTsKPiA+ID4gIH07Cj4gPiA+Cj4gPiA+ICsmY3B1IHsKPiA+ID4gKyAgICAgICBjcHUtc3Vw
+cGx5ID0gPCZ2ZGNkYzNfcmVnPjsKPiA+ID4gK307Cj4gPiA+ICsKPiA+ID4gKy8qCj4gPiA+ICsg
+KiBUaGUgc3RhbmRhcmQgZGE4NTAtZXZtIGtpdHMgYW5kIFNPTSdzIGFyZSAzNzVNSHogc28gZW5h
+YmxlIHRoaXMgb3BlcmF0aW5nCj4gPiA+ICsgKiBwb2ludCBieSBkZWZhdWx0LiBIaWdoZXIgZnJl
+cXVlbmNpZXMgbXVzdCBiZSBlbmFibGVkIGZvciBjdXN0b20gYm9hcmRzIHdpdGgKPiA+ID4gKyAq
+IG90aGVyIHZhcmlhbnRzIG9mIHRoZSBTb0MuCj4gPiA+ICsgKi8KPiA+ID4gKyZvcHBfMzc1IHsK
+PiA+ID4gKyAgICAgICBzdGF0dXMgPSAib2theSI7Cj4gPiA+ICt9Owo+ID4gPiArCj4gPiA+ICAm
+c2F0YSB7Cj4gPiA+ICAgICAgICAgc3RhdHVzID0gIm9rYXkiOwo+ID4gPiAgfTsKPiA+ID4gLS0K
+PiA+ID4gMi4yMS4wCj4gPiA+CgpIaSBBZGFtLAoKZGlkIHlvdSBmaWd1cmUgb3V0IHRoZSBwcm9i
+bGVtIGJ5IGNoYW5jZT8gQXJlIHlvdSBPSyB3aXRoIG1lcmdpbmcgdGhpcyBzZXJpZXM/CgpCYXJ0
+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
+cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
+a2VybmVsCg==
