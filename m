@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A53CE29C39
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 18:28:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9641729C3A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 18:28:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hf2uXxQZ7sUlR/BWBC7aX98OGwez0Sj/l5YGzbH4Elw=; b=r/KQ0S0THz2G+D
-	s4zQap7Ian1WnP2vyfifB/XdOBtdfHUQgvNXovRzX03PgP3Y7NXZS4T94945Tkp7PgaPZeDhEgbUP
-	KJE+CsSyKO2nyXomT9X6OhYf6itP2UnGw5BVX9wsIQ7uvWBoSxwVe9EHgPtbMnSVpVv6ppw+hBeCp
-	ybvrCb1H73kbVh+8TCZUYU+4DMfm7Z12lNkqWlIxZ7grdWLJOZDBlU6k5Md+pMh0I1D558qc0hdft
-	F7XM/tcZVOjByYK8Cb0gZ4PjpcqP4YlG0C0CyMWbHDq5cgqlPj90LFxQL1h/u/fATZYm0od384y1g
-	8bIthY+Sy/IJcegQ/T2A==;
+	List-Owner; bh=gH1IVdAFjAnSnUx/hQurMaohvVzWJbk4gB928BhJRUo=; b=DJOgiTSEbpec21
+	6uox+jPr5SkPWjopDqDpHnOF685r7y0mNrgLfJqRvD0GZycBV4y761H/Osiyz2oERJ+NHLdGNvz9G
+	LctRh/kJI2YMB7nWr/vHArYUn5IOVBbyJuq7B00JMlRGZENmUOzmHb06S5uLyY8y23s4PKzCPWj1x
+	lGOuQhCxyBUuHpwOtELhHQCqG25FQsY83HaZnR3QlKI7Of2XwLfvpe5f66wqJrLEkqzKjnQNx+/uH
+	/juZEXiQgI+Hp1mV5ZmC3WFkC0CFE46xsTULNR0EdkGFLjM2Z2dlbrOjFDjtkKow5KII1TR+GHk09
+	pnere3M624OBGv6BnReQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUD34-0001GZ-Dc; Fri, 24 May 2019 16:28:02 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hUD3D-0001Th-Uw; Fri, 24 May 2019 16:28:12 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUD2h-00011p-Oe
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 16:27:41 +0000
-Received: by mail-wm1-x344.google.com with SMTP id f10so2576417wmb.1
+ id 1hUD2j-00012J-5B
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 16:27:42 +0000
+Received: by mail-wr1-x444.google.com with SMTP id d9so10645524wrx.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 May 2019 09:27:39 -0700 (PDT)
+ Fri, 24 May 2019 09:27:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=feMTK1ALuDcB6ANRh60ilE7eIkZ7WZWllXS4rnIjAYY=;
- b=etyGkcerFFK63wVJPJo3fAK6GJwu4arL3yT6oqa6tEDzNWodmPXx8J2hDmjVU+s/62
- FtW5cwEZJvReJiIYHfu52g9IpnAl08zsoHEFzpa2JM9Pder9hqhyDJyIZ4NyNThF/tUg
- rCPo4rXpUSl5n6mc6zDip9MwBZNeqsypfSKfgnSjx21B/wtM9RQIfnPIf0RC/o8zxzrh
- 2aeIBX35HY3ROFBAKKQc993TzUfCK5nfErFt0nEISY9TOec9UhC5dL4+d1/aoxDfcHuh
- oiWITzP1MVuIJ/4NVbuD/NRzTqImYz3GpVMkqZU01a9H8Y7kBHgtR0EN0DHrk43ROwar
- DHJg==
+ bh=OpsVci6NS0D6Bf/3Go8WTx/jss3RyzyovCrA3zpdENw=;
+ b=HTvI2d+KNikWYtCfyv9ErbQwk9U7SN4mNO0FU31r9IcRKjdCFOiEcfX3ljB4rfrA7R
+ yNGT8C22B7n34+vtuGrX0SE/9+OZk7/YSy95mqEufDiSS3QtYDIWRpn06g5wDqHGarzk
+ VuJ8l5PyKvcxzI+r0snAiTATtmCo0eQ1MjuCyGnc2IOntuJCoLmTOVwwxUzP7T+UZ2/w
+ cKka3JVXHe4l873jUF1KaU6L2vm+jRkc1Abj3aOtTx4wDUfleGbOcmdq29+P0kMlfTtZ
+ bnAErkDLh1l1nPQaT/eKmolaXaddGRqUPRn2sgqfrP9tT+UPY2slGZ8DoELeVWsyuHTu
+ +DYQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=feMTK1ALuDcB6ANRh60ilE7eIkZ7WZWllXS4rnIjAYY=;
- b=iIdAUti//C9SYbtGNygZ6eOhNiWQ3ztPPyZzAFLMEyPxY7wiB0ENYzOrIz3s9QJm0H
- dyTa4liFq6Zw7F16im091p1mk4sFtGSMT0tTMkn2VHYwegNL+y85B1tiiIQE5Z9WcmBb
- QXvR67C9dW4BNzHU6wdsV9erdLho04g/UhboCuI55ZG6G8Zpyo7VHxmIuEpKM7594rFP
- UgpN+UtGEUF1Nan0jl5axKR6TeL8KkAEaSLM0eLrOm47d/msLe3fMj9H3IcNg7uAi61B
- EutEzPb55ahPgeW2aM2T1Rcm6f9frhhNpITP9MFITv9cZQLssrAmBOljeJWmD59zGlLU
- A6Gw==
-X-Gm-Message-State: APjAAAWrAbKG0y60jXm60BH4VrbUDXKYsqwb52efjYnHuXp2+NC3CvAI
- Sh3ROjlUioiz6yQSyQFzdg4eBw==
-X-Google-Smtp-Source: APXvYqzhbxBbK42/fNaR/5q/csolUj2TBckrr0JZCetN7bH6brmrHm8o+kekNYDecz00m0FcQC71TQ==
-X-Received: by 2002:a1c:f507:: with SMTP id t7mr17188238wmh.149.1558715258061; 
- Fri, 24 May 2019 09:27:38 -0700 (PDT)
+ bh=OpsVci6NS0D6Bf/3Go8WTx/jss3RyzyovCrA3zpdENw=;
+ b=NJ7Gtqw8HWMjBFbE1uQPcjWj1soeovYx3VLpOuc6bNDJ0vHX63HaEKp9ZSk8cab3Vs
+ 1nIVkpw9r73/OzE3xgZe5NYwcyXe5Jf4WJR+cJpp3M1GGE/FXjAp8v1vkO8S0rIP48c/
+ Q5by47WVGYETcfrOk31M1d1WvqheNU5XObQUHBWeJ8aMui/wpJefcom9M9n27hyTFzPj
+ 1fv+jAnWwWBcDarrdTV2Q3r4RClvJpVG8GfwS+sdNI7We6wk7C6cNDgHH4CVTL6pqQf/
+ 8GQL2/h+cK92vTMOueQDDs16jRw9Uba7TK5wlCMUuuTPDj2M9HObhYcefwOEtJR6AMjC
+ gCKQ==
+X-Gm-Message-State: APjAAAVV4CPtVotPkv37JzSQFZMRrxiEIxFGJk7+bQLkmm4bvHhj5KoN
+ MZ59KC90NyFUd67zWLzaNM5bPg==
+X-Google-Smtp-Source: APXvYqxRYQNMM2ILDaTxPlZrMk+NmwszppDLWVn4iyYwh8pn7KIzGpqZNUrsEYDpGPRnbbFmLAxWHQ==
+X-Received: by 2002:adf:edce:: with SMTP id v14mr59665675wro.94.1558715259395; 
+ Fri, 24 May 2019 09:27:39 -0700 (PDT)
 Received: from sudo.home ([2a01:cb1d:112:6f00:2042:d8f2:ded8:fa95])
- by smtp.gmail.com with ESMTPSA id l6sm2200320wmi.24.2019.05.24.09.27.36
+ by smtp.gmail.com with ESMTPSA id l6sm2200320wmi.24.2019.05.24.09.27.38
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 24 May 2019 09:27:37 -0700 (PDT)
+ Fri, 24 May 2019 09:27:38 -0700 (PDT)
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 To: linux-crypto@vger.kernel.org
-Subject: [PATCH v2 1/6] i2c: acpi: permit bus speed to be discovered after
- enumeration
-Date: Fri, 24 May 2019 18:26:46 +0200
-Message-Id: <20190524162651.28189-2-ard.biesheuvel@linaro.org>
+Subject: [PATCH v2 2/6] crypto: atmel-ecc: add support for ACPI probing on
+ non-AT91 platforms
+Date: Fri, 24 May 2019 18:26:47 +0200
+Message-Id: <20190524162651.28189-3-ard.biesheuvel@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190524162651.28189-1-ard.biesheuvel@linaro.org>
 References: <20190524162651.28189-1-ard.biesheuvel@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_092739_796863_63C30E4B 
-X-CRM114-Status: GOOD (  12.98  )
+X-CRM114-CacheID: sfid-20190524_092741_217152_FAA842ED 
+X-CRM114-Status: GOOD (  16.81  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,45 +108,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently, the I2C ACPI enumeration code only permits the max bus rate
-to be discovered before enumerating the slaves on the bus. In some
-cases, drivers for slave devices may require this information, e.g.,
-some ATmel crypto drivers need to generate a so-called wake token
-of a fixed duration, regardless of the bus rate.
+The Atmel/Microchip EC508A is a I2C device that could be wired into
+any platform, and is being used on the Linaro/96boards Secure96
+mezzanine adapter. This means it could be found on any platform, even
+on ones that use ACPI enumeration (via PRP0001 devices). So update the
+code to enable this use case.
 
-So tweak the code so i2c_acpi_lookup_speed() is able to obtain this
-information after enumeration as well.
+This involves tweaking the bus rate discovery code to take ACPI probing
+into account, which records the maximum bus rate as a property of the
+slave device. For the atmel-ecc code, this means that the effective bus
+rate should never exceed the maximum rate, unless we are dealing with
+buggy firmware. Nonetheless, let's just use the existing plumbing to
+discover the bus rate and keep the existing logic intact.
 
-Acked-by: Mika Westerberg <mika.westerberg@linux.intel.com>
 Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 ---
- drivers/i2c/i2c-core-acpi.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ drivers/crypto/Kconfig     |  1 -
+ drivers/crypto/atmel-ecc.c | 13 ++++++++-----
+ 2 files changed, 8 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/i2c/i2c-core-acpi.c b/drivers/i2c/i2c-core-acpi.c
-index 272800692088..7240cc07abb4 100644
---- a/drivers/i2c/i2c-core-acpi.c
-+++ b/drivers/i2c/i2c-core-acpi.c
-@@ -115,8 +115,7 @@ static int i2c_acpi_do_lookup(struct acpi_device *adev,
- 	struct list_head resource_list;
- 	int ret;
+diff --git a/drivers/crypto/Kconfig b/drivers/crypto/Kconfig
+index 0af08081e305..97ec8107eeef 100644
+--- a/drivers/crypto/Kconfig
++++ b/drivers/crypto/Kconfig
+@@ -522,7 +522,6 @@ config CRYPTO_DEV_ATMEL_SHA
  
--	if (acpi_bus_get_status(adev) || !adev->status.present ||
--	    acpi_device_enumerated(adev))
-+	if (acpi_bus_get_status(adev) || !adev->status.present)
- 		return -EINVAL;
+ config CRYPTO_DEV_ATMEL_ECC
+ 	tristate "Support for Microchip / Atmel ECC hw accelerator"
+-	depends on ARCH_AT91 || COMPILE_TEST
+ 	depends on I2C
+ 	select CRYPTO_ECDH
+ 	select CRC16
+diff --git a/drivers/crypto/atmel-ecc.c b/drivers/crypto/atmel-ecc.c
+index ba00e4563ca0..5705348f540f 100644
+--- a/drivers/crypto/atmel-ecc.c
++++ b/drivers/crypto/atmel-ecc.c
+@@ -657,11 +657,14 @@ static int atmel_ecc_probe(struct i2c_client *client,
+ 		return -ENODEV;
+ 	}
  
- 	if (acpi_match_device_ids(adev, i2c_acpi_ignored_device_ids) == 0)
-@@ -151,6 +150,9 @@ static int i2c_acpi_get_info(struct acpi_device *adev,
- 	lookup.info = info;
- 	lookup.index = -1;
+-	ret = of_property_read_u32(client->adapter->dev.of_node,
+-				   "clock-frequency", &bus_clk_rate);
+-	if (ret) {
+-		dev_err(dev, "of: failed to read clock-frequency property\n");
+-		return ret;
++	clk_rate = i2c_acpi_find_bus_speed(&client->adapter->dev);
++	if (!clk_rate) {
++		ret = device_property_read_u32(&client->adapter->dev,
++					       "clock-frequency", &bus_clk_rate);
++		if (ret) {
++			dev_err(dev, "failed to read clock-frequency property\n");
++			return ret;
++		}
+ 	}
  
-+	if (acpi_device_enumerated(adev))
-+		return -EINVAL;
-+
- 	ret = i2c_acpi_do_lookup(adev, &lookup);
- 	if (ret)
- 		return ret;
+ 	if (bus_clk_rate > 1000000L) {
 -- 
 2.20.1
 
