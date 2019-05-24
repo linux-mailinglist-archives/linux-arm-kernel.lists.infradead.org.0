@@ -2,60 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B55A29BF2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 18:15:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FF2929C37
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 18:27:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TSA9YhBlC1Vh0CuZnPU2Pkni82kQx+c4SSaquDsGz5U=; b=s2FHXyd1yqbCrt
-	uPG2NolCSgp+OOog/0Je+eEIcklUxhN3H7Az8x2MfieyUEp1bpAGeggIOi9h/tmncZRBfzjA0lejA
-	/oDYDlWO50IfNmP6VAgEnM/WZ+a1AlqweApDLln276uMNULX2dY4UeFSGwiCxzdI/6+ChYxybTY41
-	Qc+AZco/p8W3Ao6lojiAt3ezYTYWiUNvQ74xggXqmGNfAoQon5QSN3JxcrMcJdIPXoqACg0LDrPBg
-	NTbH2Rloll6Q30JKijDHFO1ypssl0Er20cxkqNIZepg/p3LHImqTSpVlpDuSjIrD2r4rbipSA5G1z
-	W0410mWgSO6doA4G1ZrQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=FokrfTHTG318i/JSV407n48HS0gUuhJEKkZ0PP/+FPg=; b=JvRxj8TLNlVTJ8
+	RAU++PjeakO7ERBfc3oQlz2gzcrh2KLvIbQIAGlcDYYy1bFCr0M5QxzWLIdKHwnJvgxEs5SuGvnVt
+	oGu1eICPqgKWVpGn8saP/wQ8Ho5asvokotMc+CB7mcKwB0+2Vl6uGnPtuTZFqTsPu4RV8p1+dMTdM
+	GHes+SgWo46MRskIsKdUXlGHD3dL7KGmnZctZKc9dZ+Un5O3zeDidAnDJxax8GZNkC7KOiLWNSD0m
+	CdgAq6MgUrGlkCwRCAanbVkXk/1P1+/qGO4YiezbFbMzbVmcb24N94apG1XOQ//vrMXRyQJQClHf+
+	zIUIMY8XwzhTiyC3xttQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUCr0-0005mS-Fr; Fri, 24 May 2019 16:15:34 +0000
-Received: from mga06.intel.com ([134.134.136.31])
+	id 1hUD2p-00012r-Cx; Fri, 24 May 2019 16:27:47 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUCqt-0005m3-Hu
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 16:15:29 +0000
-X-Amp-Result: UNSCANNABLE
-X-Amp-File-Uploaded: False
-Received: from fmsmga002.fm.intel.com ([10.253.24.26])
- by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 24 May 2019 09:15:24 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.60,507,1549958400"; d="scan'208";a="177765957"
-Received: from iweiny-desk2.sc.intel.com ([10.3.52.157])
- by fmsmga002.fm.intel.com with ESMTP; 24 May 2019 09:15:23 -0700
-Date: Fri, 24 May 2019 09:16:19 -0700
-From: Ira Weiny <ira.weiny@intel.com>
-To: Nicolin Chen <nicoleotsuka@gmail.com>
-Subject: Re: [PATCH v3 2/2] dma-contiguous: Use fallback alloc_pages for
- single pages
-Message-ID: <20190524161618.GB23100@iweiny-DESK2.sc.intel.com>
-References: <20190524040633.16854-1-nicoleotsuka@gmail.com>
- <20190524040633.16854-3-nicoleotsuka@gmail.com>
+ id 1hUD2g-00011o-Ol
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 16:27:40 +0000
+Received: by mail-wm1-x341.google.com with SMTP id x64so9993883wmb.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 24 May 2019 09:27:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=PW1SRGUIIosnHzTIT8oKHW+BHMniX6kJc68l082Nb68=;
+ b=JlhIiBr0LN+EnwR1yra8h8TfNP6AP5PihbHAG9CnLQaVbccxa0gL7XOEb/qPhw6xw2
+ 21kLfpqUhTCojwj+D/mGusUKs1jjVDGZkz3LyvpjNo1f2NpWouYSEFgNjb88fjsgv8mL
+ DFLkoc+BPr3wl3/HYo7l/01oJB4c4rb0UtJ6Qy/7LkGxaxf+dyC5mTwsnvKUy3b/Dtsh
+ /P9qWaIzy+l2zGV3aFtyeAOq9GU001faEsS2NFsTAZDM0A978menzvnuZlzVr5h3mazT
+ i5FN0VuhV+N5XaldGyHhNDVl648ByGwe16b4tRcdlbaVE3pVIcTICNpEb3pCFCJ0ByCv
+ ygkw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=PW1SRGUIIosnHzTIT8oKHW+BHMniX6kJc68l082Nb68=;
+ b=SSwxRJDZsj/egg5k833J0h7m3tvSyyyR/2Xv4tI/UoLyoJl1g6MCizQl1pVm375sET
+ 0tXVD5HsfrjUbDrrED3wUhAWYVkDI1+iW2T6Ddf31tUg9tLtvJvZrT1FgaR/dBHocR3j
+ SLdK5aAGIrm0XPmbQikUXl46mx5Ou+CFylGB9YQ2bOs7n6tuzcgcm7FgKQegsFwtGn3x
+ TCGAkuZqEmzDYPWc8vWM2ETK84d+IgP6US7rkLpsahnslH8dOyAMkRdNyZl37kLjjWEp
+ P1FEimzquaWsq1415bb/xVhbl8OgE2+gnXgrfsoAjYoKAqjZ/r4R+NFyYQJwJ3foIf1h
+ Ipdw==
+X-Gm-Message-State: APjAAAVCnuF36F0K9LlafU1g07XVMfJLYDA2R2UAEAUvACuv1hT9l29S
+ Pk6+AKx8m8Ck65XW9W1+bOVtWg==
+X-Google-Smtp-Source: APXvYqzFigln+kJPy+/t7Xbc8DEEH5LN8284rdnJjkHyVa5UHTzba6b6EgaPOigSNNHqYBAD5qkMHg==
+X-Received: by 2002:a1c:38c5:: with SMTP id f188mr507266wma.9.1558715256725;
+ Fri, 24 May 2019 09:27:36 -0700 (PDT)
+Received: from sudo.home ([2a01:cb1d:112:6f00:2042:d8f2:ded8:fa95])
+ by smtp.gmail.com with ESMTPSA id l6sm2200320wmi.24.2019.05.24.09.27.34
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 24 May 2019 09:27:35 -0700 (PDT)
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+To: linux-crypto@vger.kernel.org
+Subject: [PATCH v2 0/6] crypto - wire up Atmel SHA204A as RNG in DT and ACPI
+ mode
+Date: Fri, 24 May 2019 18:26:45 +0200
+Message-Id: <20190524162651.28189-1-ard.biesheuvel@linaro.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190524040633.16854-3-nicoleotsuka@gmail.com>
-User-Agent: Mutt/1.11.1 (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_091527_638692_557AB803 
-X-CRM114-Status: GOOD (  25.49  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190524_092738_828775_B8A67CE5 
+X-CRM114-Status: GOOD (  12.18  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.31 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -67,82 +95,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tony@atomide.com, catalin.marinas@arm.com, will.deacon@arm.com,
- jcmvbkbc@gmail.com, hch@lst.de, m.szyprowski@samsung.com, sfr@canb.auug.org.au,
- dann.frazier@canonical.com, joro@8bytes.org, linux@armlinux.org.uk,
- treding@nvidia.com, linux-xtensa@linux-xtensa.org, keescook@chromium.org,
- akpm@linux-foundation.org, linux-arm-kernel@lists.infradead.org,
- chris@zankel.net, wsa+renesas@sang-engineering.com, robin.murphy@arm.com,
- linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- iamjoonsoo.kim@lge.com, dwmw2@infradead.org
+Cc: devicetree@vger.kernel.org, Herbert Xu <herbert@gondor.apana.org.au>,
+ Tudor Ambarus <tudor.ambarus@microchip.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Mika Westerberg <mika.westerberg@linux.intel.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 23, 2019 at 09:06:33PM -0700, Nicolin Chen wrote:
-> The addresses within a single page are always contiguous, so it's
-> not so necessary to always allocate one single page from CMA area.
-> Since the CMA area has a limited predefined size of space, it may
-> run out of space in heavy use cases, where there might be quite a
-> lot CMA pages being allocated for single pages.
-> 
-> However, there is also a concern that a device might care where a
-> page comes from -- it might expect the page from CMA area and act
-> differently if the page doesn't.
+The Socionext SynQuacer based 96boards DeveloperBox platform does not
+incorporate a random number generator, but it does have a 96boards low
+speed connector which supports extension boards such as the Secure96,
+which has a TPM and some crypto accelerators, one of which incorporates
+a random number generator.
 
-How does a device know, after this call, if a CMA area was used?  From the
-patches I figured a device should not care.
+This series implements support for the RNG part, which is one of several
+functions of the Atmel SHA204A I2C crypto accelerator, and wires it up so
+both DT and ACPI based boot methods can use the device.
 
-> 
-> This patch tries to use the fallback alloc_pages path, instead of
-> one-page size allocations from the global CMA area in case that a
-> device does not have its own CMA area. This'd save resources from
-> the CMA global area for more CMA allocations, and also reduce CMA
-> fragmentations resulted from trivial allocations.
-> 
-> Signed-off-by: Nicolin Chen <nicoleotsuka@gmail.com>
-> ---
->  kernel/dma/contiguous.c | 11 ++++++++++-
->  1 file changed, 10 insertions(+), 1 deletion(-)
-> 
-> diff --git a/kernel/dma/contiguous.c b/kernel/dma/contiguous.c
-> index 21f39a6cb04f..6914b92d5c88 100644
-> --- a/kernel/dma/contiguous.c
-> +++ b/kernel/dma/contiguous.c
-> @@ -223,14 +223,23 @@ bool dma_release_from_contiguous(struct device *dev, struct page *pages,
->   * This function allocates contiguous memory buffer for specified device. It
->   * first tries to use device specific contiguous memory area if available or
->   * the default global one, then tries a fallback allocation of normal pages.
-> + *
-> + * Note that it byapss one-page size of allocations from the global area as
-> + * the addresses within one page are always contiguous, so there is no need
-> + * to waste CMA pages for that kind; it also helps reduce fragmentations.
->   */
->  struct page *dma_alloc_contiguous(struct device *dev, size_t size, gfp_t gfp)
->  {
->  	int node = dev ? dev_to_node(dev) : NUMA_NO_NODE;
->  	size_t count = PAGE_ALIGN(size) >> PAGE_SHIFT;
->  	size_t align = get_order(PAGE_ALIGN(size));
-> -	struct cma *cma = dev_get_cma_area(dev);
->  	struct page *page = NULL;
-> +	struct cma *cma = NULL;
-> +
-> +	if (dev && dev->cma_area)
-> +		cma = dev->cma_area;
-> +	else if (count > 1)
-> +		cma = dma_contiguous_default_area;
+v2:
+- update DT binding patches so the SHA204A and ECC508A module bindings are
+  in trivial-devices.yaml.
+- add acks from Linus and Mika
 
-Doesn't dev_get_dma_area() already do this?
+Assuming Rob is ok now with the DT binding patches, can we please take
+this through the crypto tree?
 
-Ira
+Cc: Herbert Xu <herbert@gondor.apana.org.au>
+Cc: Tudor Ambarus <tudor.ambarus@microchip.com>
+Cc: Linus Walleij <linus.walleij@linaro.org>
+Cc: Mika Westerberg <mika.westerberg@linux.intel.com>
 
->  
->  	/* CMA can be used only in the context which permits sleeping */
->  	if (cma && gfpflags_allow_blocking(gfp)) {
-> -- 
-> 2.17.1
-> 
+Ard Biesheuvel (6):
+  i2c: acpi: permit bus speed to be discovered after enumeration
+  crypto: atmel-ecc: add support for ACPI probing on non-AT91 platforms
+  crypto: atmel-ecc: factor out code that can be shared
+  crypto: atmel-i2c: add support for SHA204A random number generator
+  dt-bindings: add Atmel SHA204A I2C crypto processor
+  dt-bindings: move Atmel ECC508A I2C crypto processor to
+    trivial-devices
+
+ Documentation/devicetree/bindings/crypto/atmel-crypto.txt |  13 -
+ Documentation/devicetree/bindings/trivial-devices.yaml    |   4 +
+ drivers/crypto/Kconfig                                    |  19 +-
+ drivers/crypto/Makefile                                   |   2 +
+ drivers/crypto/atmel-ecc.c                                | 403 ++------------------
+ drivers/crypto/atmel-ecc.h                                | 116 ------
+ drivers/crypto/atmel-i2c.c                                | 364 ++++++++++++++++++
+ drivers/crypto/atmel-i2c.h                                | 196 ++++++++++
+ drivers/crypto/atmel-sha204a.c                            | 171 +++++++++
+ drivers/i2c/i2c-core-acpi.c                               |   6 +-
+ 10 files changed, 781 insertions(+), 513 deletions(-)
+ delete mode 100644 drivers/crypto/atmel-ecc.h
+ create mode 100644 drivers/crypto/atmel-i2c.c
+ create mode 100644 drivers/crypto/atmel-i2c.h
+ create mode 100644 drivers/crypto/atmel-sha204a.c
+
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
