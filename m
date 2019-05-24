@@ -2,74 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C96E3295CC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 12:28:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BDFFA295D6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 12:31:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cgdi3PrbpEsV/zlPHJGYRcN27TYKGb80OgtH89AtRfM=; b=nbH4tYtzAT38xo
-	9xeAEfFrX7f+aSAqzOzFqsxBBBpKFSHLvEtPJC9C8Gld0TyphlhNHpxPwY6qp7A5sjx6JHNivnfDg
-	M5Z4S79Yzq46xMNsuM03OJnbe+uHe17x9o/QyIuiKwbAH7QWcoXYxhVLQvWdL5z6uIQnScOudzo4U
-	fQsq+qVP/FJ0aIFTMbh9nyN56JkIi9Wlma2BGSLS5TK+RWjHcTdjsgzNJCZMttsPo+ujkV2Yi5HnL
-	owbW8CO+0QAWrRNfTwJPVGCfsAaYySKB3+Z6tjFAVn6+fVqLcYKI4+kxq9+jeX8Gxu69YNRR7I2Kc
-	a0ppFRLAsEG35cCppwvg==;
+	List-Owner; bh=TzuGWPeBXUDhOkyd3Gach9G5r9xN0mwyk4WFvrWRafY=; b=OYueuZFvGzzYjG
+	P+dyG9FfPOh6GD/MZaUGE14LgZklpHYuPCwO5Yk30gs5CKm6HD9qwse9aNdmYbX/JIrvMQVdNqoZg
+	o6wEy+gSRRZUH1TPeGqoU+6HmbWXPPxcc1lnK5KvNBh8452/kzBiB6i9R+d82B+1DGL87mGiDjkyP
+	1cibBffDgsnmXwIoy+UzyqdmLDwAEXlEZZHUfu+lH0Si0Uh0c+QUsnq24HHFdTMyfms6grfcUS3o2
+	10LZ/ixfkomAI8rN4lFCynGdwaxC/A76o744HBJyVPBoJNxOmVHrGr69grRBO22yoJ3cRq1MjYnqp
+	7BskgWOd7sd4R+P0rUlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hU7RB-0002vS-Ik; Fri, 24 May 2019 10:28:33 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1hU7UT-0004eL-DL; Fri, 24 May 2019 10:31:57 +0000
+Received: from mail-it1-x142.google.com ([2607:f8b0:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hU7Pl-0001g1-B8
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 10:27:27 +0000
-Received: by mail-io1-xd44.google.com with SMTP id g16so7347890iom.9
+ id 1hU7UL-0004dy-Cp
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 10:31:50 +0000
+Received: by mail-it1-x142.google.com with SMTP id m3so14945465itl.1
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 May 2019 03:27:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=SPlEglQ/6Q3TJ75NagM4QC1DwwrTkTqIVzLkih7YL5c=;
- b=XkPReTF3yJ3Svu28w+MBFecQPonOKoGFfttpuk0FbeISoFJyn7K67PwKQDaIWZA0+D
- s1xLzZbyrktBR0eD+5qW8weCrU31KAosE7QjSM6u07LgYJpkbCiWGqGAOqN8cLh70oyK
- mN2I7FPImruKjWvMGy7vDuGlzmmm7LKYeXeIo=
+ Fri, 24 May 2019 03:31:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=brauner.io; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=t6QPS5lwd7cr471Dg03A0AXuNJ/CrzRoO1xYODuKhbA=;
+ b=Vxe1OcgbXiqgWJS2x6TaYm+Cn6jhah0Qj5bXPrvsCh/P7F74y/HXVPKJgfba1esHAh
+ pwR5mq5lwAljwztFYdwuQRV8yQdOUdArsoOfy733CwBcrJjtFBZmm+2psNdK9a0f6LRt
+ rLVXaIubfp97S/kaUSegG/zw06TKZWV2uGoYdfz/HBZMYvpqO26ETRVlzOvec4BsvfMF
+ b/tEWUN6EkieS8aeK40Tf6C3HdOU3ue/E/Pe+SN7+Bn/JSvbY38QUqiXMJBvf9Eosi4J
+ jqg/ZTc6HhZAgAgv8MD/8YVQKF6dun5zVxcWHFX4FzRjCjDe6ZiDbFDHVp+8BPV1oxjx
+ me4A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=SPlEglQ/6Q3TJ75NagM4QC1DwwrTkTqIVzLkih7YL5c=;
- b=Fz0fux7NevXQwYEJ8phYIFvi7acEANRjxZkI9/OA80j2WSuBwC2Xvh6zDQUEo0iVPw
- rgU6v3p1UnR906lroCb61F8XGHPrTFTniGWAcs6AdC5lx7xC2S6ZlRhrb9eZbbSUXZx0
- F+Vmg/DyohcCGNvBdsvc3vNmBiuovLSiYSM9ot5wttJdX5HdLGjBKSk7941M7WAwVDhM
- Z5rrbvWXRUU9YN1uXp6QbpOYKXATC+Acgq/lStED6mdh5LZuN3hju84uUf+bc6iIYkEG
- 83n9yt4S+JFnew0TOAud0z35VX6/3fpgedtBWsUFireOXpTTfNhrjD0C11MopoRZC9Vn
- jmbQ==
-X-Gm-Message-State: APjAAAVlgc/9oHInw4pPFOZxCuIJ2ejvIdn+IDLLU32aNeeDYR60nGp2
- C5tHnaSTAQdlixrYePZutAGlwsSIO55pFPppvHcX8Q==
-X-Google-Smtp-Source: APXvYqw+blsGn2WGwgkQ+N9T83dKM1bSRawVzCxftgv+tUrJeep+NQHRQwXSjO+NUbeAkm/T4/4928HWN0eo3ydPf8o=
-X-Received: by 2002:a5d:9f46:: with SMTP id u6mr44962698iot.297.1558693624522; 
- Fri, 24 May 2019 03:27:04 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=t6QPS5lwd7cr471Dg03A0AXuNJ/CrzRoO1xYODuKhbA=;
+ b=lROxwE/rc35/tRQh12Qz3Cq2n8G7XVuyZe5BII4J65o8bZP05JuIboXcx93ms2OckI
+ /2RrDMD0x0KA5ba3ACFw4xR9tcWOiPx/QxXou2rR9xAUZhGxSUay1Ndl81At0GE8jBoa
+ EJu7gWFSIN8CQoKQ/JbUEDbWu65G6DJ2nQTgrnBy5yumaQyXByr8fxjzuXn0LUjBIdMQ
+ BHKWBD4RNHsvW3gWmKAEwA+eSQ5n+E2JgwcSZwiEsz01dcykcUuOdPzVoh24HWzWGZ8S
+ E3QsEXcESS4nq/Y/ejnrjPbeKAWrL92/FXYokUovjmtroqdhhlWW8nyVretae4bhfJzU
+ aaNA==
+X-Gm-Message-State: APjAAAU7z7zL8xWwk83Vw4A5LzXibVhdaQfd5u2A9vMGak5zU0i/iOco
+ Ch5biTmLyaRu+Ejypqd1/wWAfA==
+X-Google-Smtp-Source: APXvYqzsmLzfolt9XPm7istwtQ8OTvFuPcrdmMMZuaT+6LV9wiCluPiGeCgPdZY3zO0tzizi0DzZng==
+X-Received: by 2002:a24:28c1:: with SMTP id
+ h184mr18752225ith.105.1558693908188; 
+ Fri, 24 May 2019 03:31:48 -0700 (PDT)
+Received: from brauner.io ([172.56.12.37])
+ by smtp.gmail.com with ESMTPSA id p2sm1028528itb.29.2019.05.24.03.31.41
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Fri, 24 May 2019 03:31:47 -0700 (PDT)
+Date: Fri, 24 May 2019 12:31:39 +0200
+From: Christian Brauner <christian@brauner.io>
+To: Konstantin Khlebnikov <khlebnikov@yandex-team.ru>
+Subject: Re: [PATCH v1 1/2] open: add close_range()
+Message-ID: <20190524103137.otw7tbmagiqnf6u6@brauner.io>
+References: <20190522155259.11174-1-christian@brauner.io>
+ <67e4458a-9cc4-d1aa-608c-73ebe9e2f7a3@yandex-team.ru>
 MIME-Version: 1.0
-References: <20190520090318.27570-1-jagan@amarulasolutions.com>
- <20190520090318.27570-4-jagan@amarulasolutions.com>
- <20190523203836.xy7nmte3ubyxwg27@flea>
-In-Reply-To: <20190523203836.xy7nmte3ubyxwg27@flea>
-From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Fri, 24 May 2019 15:56:53 +0530
-Message-ID: <CAMty3ZA2mZugso_rMy+anp1i1bSL5FtB2mAyN1v_gE3rds0LgA@mail.gmail.com>
-Subject: Re: [PATCH v10 03/11] drm/sun4i: dsi: Fix video start delay
- computation
-To: Maxime Ripard <maxime.ripard@bootlin.com>
+Content-Disposition: inline
+In-Reply-To: <67e4458a-9cc4-d1aa-608c-73ebe9e2f7a3@yandex-team.ru>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_032705_967551_E7348BE8 
-X-CRM114-Status: GOOD (  15.30  )
+X-CRM114-CacheID: sfid-20190524_033149_440517_F28F8078 
+X-CRM114-Status: GOOD (  27.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -91,111 +99,146 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bhushan Shah <bshah@mykolab.com>, David Airlie <airlied@linux.ie>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- =?UTF-8?B?5Z2a5a6a5YmN6KGM?= <powerpan@qq.com>, Chen-Yu Tsai <wens@csie.org>,
- Daniel Vetter <daniel@ffwll.ch>,
- Michael Trimarchi <michael@amarulasolutions.com>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org, oleg@redhat.com,
+ dhowells@redhat.com, linux-kselftest@vger.kernel.org,
+ sparclinux@vger.kernel.org, shuah@kernel.org, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, miklos@szeredi.hu, x86@kernel.org,
+ torvalds@linux-foundation.org, linux-mips@vger.kernel.org,
+ linux-xtensa@linux-xtensa.org, tkjos@android.com, arnd@arndb.de,
+ jannh@google.com, linux-m68k@lists.linux-m68k.org, viro@zeniv.linux.org.uk,
+ tglx@linutronix.de, ldv@altlinux.org, linux-arm-kernel@lists.infradead.org,
+ fweimer@redhat.com, linux-parisc@vger.kernel.org, linux-api@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-alpha@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 24, 2019 at 2:18 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
->
-> On Mon, May 20, 2019 at 02:33:10PM +0530, Jagan Teki wrote:
-> > The current code is computing vertical video start delay as
+On Thu, May 23, 2019 at 07:22:17PM +0300, Konstantin Khlebnikov wrote:
+> On 22.05.2019 18:52, Christian Brauner wrote:> This adds the close_range() syscall. It allows to efficiently close a range
+> > of file descriptors up to all file descriptors of a calling task.
 > >
-> > delay = mode->vtotal - (mode->vsync_end - mode->vdisplay) + start;
+> > The syscall came up in a recent discussion around the new mount API and
+> > making new file descriptor types cloexec by default. During this
+> > discussion, Al suggested the close_range() syscall (cf. [1]). Note, a
+> > syscall in this manner has been requested by various people over time.
 > >
-> > On which the second parameter
+> > First, it helps to close all file descriptors of an exec()ing task. This
+> > can be done safely via (quoting Al's example from [1] verbatim):
 > >
-> > mode->vsync_end - mode->vdisplay = front porch + sync timings
+> >          /* that exec is sensitive */
+> >          unshare(CLONE_FILES);
+> >          /* we don't want anything past stderr here */
+> >          close_range(3, ~0U);
+> >          execve(....);
 > >
-> > according to "DRM kernel-internal display mode structure" in
-> > include/drm/drm_modes.h
+> > The code snippet above is one way of working around the problem that file
+> > descriptors are not cloexec by default. This is aggravated by the fact that
+> > we can't just switch them over without massively regressing userspace. For
+> > a whole class of programs having an in-kernel method of closing all file
+> > descriptors is very helpful (e.g. demons, service managers, programming
+> > language standard libraries, container managers etc.).
+> > (Please note, unshare(CLONE_FILES) should only be needed if the calling
+> >   task is multi-threaded and shares the file descriptor table with another
+> >   thread in which case two threads could race with one thread allocating
+> >   file descriptors and the other one closing them via close_range(). For the
+> >   general case close_range() before the execve() is sufficient.)
 > >
-> > With adding additional sync timings, the desired video start delay
-> > value as 510 for "bananapi,s070wv20-ct16" panel timings which indeed
-> > trigger panel flip_done timed out as:
+> > Second, it allows userspace to avoid implementing closing all file
+> > descriptors by parsing through /proc/<pid>/fd/* and calling close() on each
+> > file descriptor. From looking at various large(ish) userspace code bases
+> > this or similar patterns are very common in:
+> > - service managers (cf. [4])
+> > - libcs (cf. [6])
+> > - container runtimes (cf. [5])
+> > - programming language runtimes/standard libraries
+> >    - Python (cf. [2])
+> >    - Rust (cf. [7], [8])
+> > As Dmitry pointed out there's even a long-standing glibc bug about missing
+> > kernel support for this task (cf. [3]).
+> > In addition, the syscall will also work for tasks that do not have procfs
+> > mounted and on kernels that do not have procfs support compiled in. In such
+> > situations the only way to make sure that all file descriptors are closed
+> > is to call close() on each file descriptor up to UINT_MAX or RLIMIT_NOFILE,
+> > OPEN_MAX trickery (cf. comment [8] on Rust).
 > >
-> >  WARNING: CPU: 0 PID: 31 at drivers/gpu/drm/drm_atomic_helper.c:1429 drm_atomic_helper_wait_for_vblanks.part.1+0x298/0x2a0
-> >  [CRTC:46:crtc-0] vblank wait timed out
-> >  Modules linked in:
-> >  CPU: 0 PID: 31 Comm: kworker/0:1 Not tainted 5.1.0-next-20190514-00029-g09e5b0ed0a58 #18
-> >  Hardware name: Allwinner sun8i Family
-> >  Workqueue: events deferred_probe_work_func
-> >  [<c010ed54>] (unwind_backtrace) from [<c010b76c>] (show_stack+0x10/0x14)
-> >  [<c010b76c>] (show_stack) from [<c0688c70>] (dump_stack+0x84/0x98)
-> >  [<c0688c70>] (dump_stack) from [<c011d9e4>] (__warn+0xfc/0x114)
-> >  [<c011d9e4>] (__warn) from [<c011da40>] (warn_slowpath_fmt+0x44/0x68)
-> >  [<c011da40>] (warn_slowpath_fmt) from [<c040cd50>] (drm_atomic_helper_wait_for_vblanks.part.1+0x298/0x2a0)
-> >  [<c040cd50>] (drm_atomic_helper_wait_for_vblanks.part.1) from [<c040e694>] (drm_atomic_helper_commit_tail_rpm+0x5c/0x6c)
-> >  [<c040e694>] (drm_atomic_helper_commit_tail_rpm) from [<c040e4dc>] (commit_tail+0x40/0x6c)
-> >  [<c040e4dc>] (commit_tail) from [<c040e5cc>] (drm_atomic_helper_commit+0xbc/0x128)
-> >  [<c040e5cc>] (drm_atomic_helper_commit) from [<c0411b64>] (restore_fbdev_mode_atomic+0x1cc/0x1dc)
-> >  [<c0411b64>] (restore_fbdev_mode_atomic) from [<c04156f8>] (drm_fb_helper_restore_fbdev_mode_unlocked+0x54/0xa0)
-> >  [<c04156f8>] (drm_fb_helper_restore_fbdev_mode_unlocked) from [<c0415774>] (drm_fb_helper_set_par+0x30/0x54)
-> >  [<c0415774>] (drm_fb_helper_set_par) from [<c03ad450>] (fbcon_init+0x560/0x5ac)
-> >  [<c03ad450>] (fbcon_init) from [<c03eb8a0>] (visual_init+0xbc/0x104)
-> >  [<c03eb8a0>] (visual_init) from [<c03ed1b8>] (do_bind_con_driver+0x1b0/0x390)
-> >  [<c03ed1b8>] (do_bind_con_driver) from [<c03ed780>] (do_take_over_console+0x13c/0x1c4)
-> >  [<c03ed780>] (do_take_over_console) from [<c03ad800>] (do_fbcon_takeover+0x74/0xcc)
-> >  [<c03ad800>] (do_fbcon_takeover) from [<c013c9c8>] (notifier_call_chain+0x44/0x84)
-> >  [<c013c9c8>] (notifier_call_chain) from [<c013cd20>] (__blocking_notifier_call_chain+0x48/0x60)
-> >  [<c013cd20>] (__blocking_notifier_call_chain) from [<c013cd50>] (blocking_notifier_call_chain+0x18/0x20)
-> >  [<c013cd50>] (blocking_notifier_call_chain) from [<c03a6e44>] (register_framebuffer+0x1e0/0x2f8)
-> >  [<c03a6e44>] (register_framebuffer) from [<c04153c0>] (__drm_fb_helper_initial_config_and_unlock+0x2fc/0x50c)
-> >  [<c04153c0>] (__drm_fb_helper_initial_config_and_unlock) from [<c04158c8>] (drm_fbdev_client_hotplug+0xe8/0x1b8)
-> >  [<c04158c8>] (drm_fbdev_client_hotplug) from [<c0415a20>] (drm_fbdev_generic_setup+0x88/0x118)
-> >  [<c0415a20>] (drm_fbdev_generic_setup) from [<c043f060>] (sun4i_drv_bind+0x128/0x160)
-> >  [<c043f060>] (sun4i_drv_bind) from [<c044b598>] (try_to_bring_up_master+0x164/0x1a0)
-> >  [<c044b598>] (try_to_bring_up_master) from [<c044b668>] (__component_add+0x94/0x140)
-> >  [<c044b668>] (__component_add) from [<c0445e1c>] (sun6i_dsi_probe+0x144/0x234)
-> >  [<c0445e1c>] (sun6i_dsi_probe) from [<c0452ef4>] (platform_drv_probe+0x48/0x9c)
-> >  [<c0452ef4>] (platform_drv_probe) from [<c04512cc>] (really_probe+0x1dc/0x2c8)
-> >  [<c04512cc>] (really_probe) from [<c0451518>] (driver_probe_device+0x60/0x160)
-> >  [<c0451518>] (driver_probe_device) from [<c044f7a4>] (bus_for_each_drv+0x74/0xb8)
-> >  [<c044f7a4>] (bus_for_each_drv) from [<c045107c>] (__device_attach+0xd0/0x13c)
-> >  [<c045107c>] (__device_attach) from [<c0450474>] (bus_probe_device+0x84/0x8c)
-> >  [<c0450474>] (bus_probe_device) from [<c0450900>] (deferred_probe_work_func+0x64/0x90)
-> >  [<c0450900>] (deferred_probe_work_func) from [<c0135970>] (process_one_work+0x204/0x420)
-> >  [<c0135970>] (process_one_work) from [<c013690c>] (worker_thread+0x274/0x5a0)
-> >  [<c013690c>] (worker_thread) from [<c013b3d8>] (kthread+0x11c/0x14c)
-> >  [<c013b3d8>] (kthread) from [<c01010e8>] (ret_from_fork+0x14/0x2c)
-> >  Exception stack(0xde539fb0 to 0xde539ff8)
-> >  9fa0:                                     00000000 00000000 00000000 00000000
-> >  9fc0: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
-> >  9fe0: 00000000 00000000 00000000 00000000 00000013 00000000
-> >  ---[ end trace 495200a78b24980e ]---
-> >  random: fast init done
-> >  [drm:drm_atomic_helper_wait_for_dependencies] *ERROR* [CRTC:46:crtc-0] flip_done timed out
-> >  [drm:drm_atomic_helper_wait_for_dependencies] *ERROR* [CONNECTOR:48:DSI-1] flip_done timed out
-> >  [drm:drm_atomic_helper_wait_for_dependencies] *ERROR* [PLANE:30:plane-0] flip_done timed out
+> > The performance is striking. For good measure, comparing the following
+> > simple close_all_fds() userspace implementation that is essentially just
+> > glibc's version in [6]:
 > >
-> > But the expected video start delay value is 513 which states that
-> > the second parameter on the computation is "front porch" value
-> > (no sync timings included).
+> > static int close_all_fds(void)
+> > {
+> >          int dir_fd;
+> >          DIR *dir;
+> >          struct dirent *direntp;
 > >
-> > This is clearly confirmed from the legacy [1] and new [2] bsp codes
-> > that the second parameter on the video start delay is "front porch"
+> >          dir = opendir("/proc/self/fd");
+> >          if (!dir)
+> >                  return -1;
+> >          dir_fd = dirfd(dir);
+> >          while ((direntp = readdir(dir))) {
+> >                  int fd;
+> >                  if (strcmp(direntp->d_name, ".") == 0)
+> >                          continue;
+> >                  if (strcmp(direntp->d_name, "..") == 0)
+> >                          continue;
+> >                  fd = atoi(direntp->d_name);
+> >                  if (fd == dir_fd || fd == 0 || fd == 1 || fd == 2)
+> >                          continue;
+> >                  close(fd);
+> >          }
+> >          closedir(dir);
+> >          return 0;
+> > }
 > >
-> > Here is the detailed evidence for calculating front porch as per
-> > bsp code.
+> > to close_range() yields:
+> > 1. closing 4 open files:
+> >     - close_all_fds(): ~280 us
+> >     - close_range():    ~24 us
 > >
-> > vfp = panel->lcd_vt - panel->lcd_y - panel->lcd_vbp
-> > => (panel->lcd_vt) - panel->lcd_y - panel->lcd_vbp
-> > => (tt->ver_front_porch + lcdp->panel_info.lcd_vbp
-> >     + lcdp->panel_info.lcd_y) -  panel->lcd_y - panel->lcd_vbp
-> > => tt->ver_front_porch
->
-> The comment on patch 1 still applies on this patch
+> > 2. closing 1000 open files:
+> >     - close_all_fds(): ~5000 us
+> >     - close_range():   ~800 us
+> >
+> > close_range() is designed to allow for some flexibility. Specifically, it
+> > does not simply always close all open file descriptors of a task. Instead,
+> > callers can specify an upper bound.
+> > This is e.g. useful for scenarios where specific file descriptors are
+> > created with well-known numbers that are supposed to be excluded from
+> > getting closed.
+> > For extra paranoia close_range() comes with a flags argument. This can e.g.
+> > be used to implement extension. Once can imagine userspace wanting to stop
+> > at the first error instead of ignoring errors under certain circumstances.
+> 
+> > There might be other valid ideas in the future. In any case, a flag
+> > argument doesn't hurt and keeps us on the safe side.
+> 
+> Here is another strange but real-live scenario: crash handler for dumping core.
+> 
+> If applications has network connections it would be better to close them all,
+> otherwise clients will wait until end of dumping process or timeout.
+> Also closing normal files might be a good idea for releasing locks.
+> 
+> But simple closing might race with other threads - closed fd will be reused
+> while some code still thinks it refers to original file.
+> 
+> Our solution closes files without freeing fd: it opens /dev/null and
+> replaces all opened descriptors using dup2.
+> 
+> So, special flag for close_range() could close files without clearing bitmap.
+> Effect should be the same - fd wouldn't be reused.
+> 
+> Actually two flags for two phases: closing files and releasing fd.
 
-Thanks, I have responded on that. Same applies here.
+Konstantin, I'm sorry, I totally missed that part of your mail
+yesterday.
+Without speaking to the feasibility of this it's at least a good
+illustration that people really do have the possible need for a flag
+argument.
+
+Thanks!
+Christian
 
 _______________________________________________
 linux-arm-kernel mailing list
