@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 816D32A005
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 22:43:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7241D2A014
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 22:49:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=5X3WnhZgYQ7QH5lKbBsXe+jqxvvM8dzLoZbnOXh+jSM=; b=H2MfvTy+r+DlamiC4xGARngmI
-	WzbCUrR/LzMVtQgiKQ1X4HsFI7pHXpzTW6DjwK9nz508+olozDeNJSYbJhPWeUd8y5XMljnrUizgn
-	F5H0ncVUmKEQo9SJW6SQ0GmfqnwnCIFuJdKWmsQfL1Tgn31sw6FOZm+eAXa/OHmN2vNujX9Pr52je
-	ZqK8s2oZbk1BYJ2tiYkjMQuPTXe6Xzv8yAeiKAQy7/L5kVyU9rzBcu0Po5ukLF0SasAXnrDiOuKNh
-	3i92mBeEe2/CA6PtiC1BgkMkodhX8CAd73bWXQOWpDqxvBmJc+HnQXlIwJxH5cdgNS9oska/Eay/r
-	i669+7WNw==;
+	 bh=uwHhdn4AZ4jaua1WQcqa8fJK+7q9Uxr4pcpG8fzHYgU=; b=qeDph0vsSz4FT91W6JkXshF4b
+	gWBgX5UFNQqe16hE1qomWrOKFyAw7znVw5KMJ1uYEAvnVqAnaVBn6y3w+TYYCqsYTgwJJYPY5ZC3D
+	Kq4w1Z6ULxmIi34Kj2Vv+qBcFAjuYCyLySgym5rmeRpVXqcjd6vPGWapQyAfQ9l7qQNSVBWJYcU05
+	enrvt65r7ggU2fc+uWd0vbBjiLZFiKhLC0VTeks6fWJUfDVI0jVx4Pswv+cnYPPOjUCixdc8sUSxz
+	YeMWeczWF3EjK103cKdo356LufFsn8Y8atbq2bL+QIfd4GXI7SyTBZZYtSQvsN50PA0XgHVXrZmov
+	1s9OnwMIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUH1k-00044U-Rv; Fri, 24 May 2019 20:42:56 +0000
+	id 1hUH84-0005od-BV; Fri, 24 May 2019 20:49:28 +0000
 Received: from atrey.karlin.mff.cuni.cz ([195.113.26.193])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUH1c-00042z-ML
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 20:42:50 +0000
+ id 1hUH7x-0005o6-BA
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 20:49:22 +0000
 Received: by atrey.karlin.mff.cuni.cz (Postfix, from userid 512)
- id E738D80302; Fri, 24 May 2019 22:42:29 +0200 (CEST)
-Date: Fri, 24 May 2019 22:42:39 +0200
+ id 16E2280302; Fri, 24 May 2019 22:49:09 +0200 (CEST)
+Date: Fri, 24 May 2019 22:49:18 +0200
 From: Pavel Machek <pavel@ucw.cz>
 To: Angus Ainslie <angus@akkea.ca>
 Subject: Re: [PATCH v14 1/3] arm64: dts: fsl: librem5: Add a device tree for
  the Librem5 devkit
-Message-ID: <20190524204239.GA18646@amd>
+Message-ID: <20190524204918.GB18646@amd>
 References: <20190524183257.16066-1-angus@akkea.ca>
  <20190524183257.16066-2-angus@akkea.ca>
 MIME-Version: 1.0
 In-Reply-To: <20190524183257.16066-2-angus@akkea.ca>
 User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_134248_878772_14CF1434 
-X-CRM114-Status: GOOD (  12.17  )
+X-CRM114-CacheID: sfid-20190524_134921_536099_7684F4E9 
+X-CRM114-Status: GOOD (  11.90  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -65,23 +65,22 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  NXP Linux Team <linux-imx@nxp.com>,
  Pengutronix Kernel Team <kernel@pengutronix.de>, angus.ainslie@puri.sm,
  Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0098320423127141892=="
+Content-Type: multipart/mixed; boundary="===============6680215176319522116=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============0098320423127141892==
+--===============6680215176319522116==
 Content-Type: multipart/signed; micalg=pgp-sha1;
-	protocol="application/pgp-signature"; boundary="FL5UXtIhxfXey3p5"
+	protocol="application/pgp-signature"; boundary="aM3YZ0Iwxop3KEKx"
 Content-Disposition: inline
 
 
---FL5UXtIhxfXey3p5
+--aM3YZ0Iwxop3KEKx
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-Hi!
 
 > +	leds {
 > +		compatible =3D "gpio-leds";
@@ -95,58 +94,33 @@ Hi!
 > +		};
 > +	};
 
-I had comments about these...
+Found it, so my mail made it to lkml:
 
-> +	vibrator {
-> +		compatible =3D "gpio-vibrator";
-> +		pinctrl-names =3D "default";
-> +		pinctrl-0 =3D <&pinctrl_haptic>;
-> +	        enable-gpios =3D <&gpio5 4 GPIO_ACTIVE_LOW>;
-> +		vcc-supply =3D <&reg_3v3_p>;
-> +	};
+https://lkml.org/lkml/2019/5/23/1356
 
-Thanks!
-
-> +	charger@6b { /* bq25896 */
-> +		compatible =3D "ti,bq25890";
-> +		reg =3D <0x6b>;
-> +		pinctrl-names =3D "default";
-> +		pinctrl-0 =3D <&pinctrl_charger>;
-> +		interrupt-parent =3D <&gpio3>;
-> +		interrupts =3D <25 IRQ_TYPE_EDGE_FALLING>;
-> +		ti,battery-regulation-voltage =3D <4192000>; /* 4.192V */
-> +		ti,charge-current =3D <1600000>; /* 1.6 A */
-> +		ti,termination-current =3D <66000>;  /* 66mA */
-> +		ti,precharge-current =3D <1300000>; /* 1.3A */
-> +		ti,minimum-sys-voltage =3D <2750000>; /* 2.75V */
-> +		ti,boost-voltage =3D <5000000>; /* 5V */
-> +		ti,boost-max-current =3D <50000>; /* 50mA */
-> +	};
-
-And this. Did they get lost somewhere?
-									Pavel
-
+								Pavel
+							=09
 --=20
 (english) http://www.livejournal.com/~pavelmachek
 (cesky, pictures) http://atrey.karlin.mff.cuni.cz/~pavel/picture/horses/blo=
 g.html
 
---FL5UXtIhxfXey3p5
+--aM3YZ0Iwxop3KEKx
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: Digital signature
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iEYEARECAAYFAlzoVz8ACgkQMOfwapXb+vIdgQCghne8A075NT7kuQmW7jP5hq3r
-KZUAoKXRSu20WmzRx4utr7RCAfCkzzmY
-=GIv0
+iEYEARECAAYFAlzoWM4ACgkQMOfwapXb+vIxzgCaAmWuRbFWskhbWNwkrEY3/u8n
+ywcAniQla3W/GJpO7gyvRuJL3wTXgZUp
+=lx7Z
 -----END PGP SIGNATURE-----
 
---FL5UXtIhxfXey3p5--
+--aM3YZ0Iwxop3KEKx--
 
 
---===============0098320423127141892==
+--===============6680215176319522116==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -157,5 +131,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============0098320423127141892==--
+--===============6680215176319522116==--
 
