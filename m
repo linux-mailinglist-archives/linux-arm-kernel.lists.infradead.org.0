@@ -2,85 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B94829F63
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 21:53:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 485B229F8B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 22:03:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2hcP8aRbcAu+5Ayfr7sH8PLLIhh6w4kFbYYh/KNC4XM=; b=iTir+NiIMIYECv
-	QTimkhkQ3sZu7i/O1OsT/x+jonLsFwnF6gIqN9jh7Xo5m5il2TNKrIWrOtF8vFcgD5OsYLr7ZTerx
-	3/34QHb1wxh9HJG2TKzYaFnWZkX+o1CnDEGewcL5uaIV5AZdBQ2dVDi3usFr/j/Gg2VH5xoHI38rS
-	Sy5QP0ynn4+32LFNeGqBYvEyGuYEtxoNVuAFIN3/llf4efZyGuNe9Und6tHKiJ9gMu5bcJ1aHTvgf
-	CrSxs2D90iwFoPsfG1IkjXm0cnVy1sfhSUko2HXZjrdMXYSJl4bASo6fN0DQxf1EKOQHI1fKL9BDA
-	ck1uo64izs+0JS0H3PEw==;
+	List-Owner; bh=4Z6vwaPghqu3/Hk6Z0yD6waePTn6PhNUpqqzIEWjm40=; b=I36/a5you0l0lZ
+	rZuRvBv3LRkM97AAdFsSXD108zMxpur6f4miCVw0jQPfDqdnW8EGuEZR+yIACTym/TgqobHPlboMj
+	zJJYLCQmkEY8KBzPxOLdVWsVCLenFB6nV9OJwICAKhGZDSmrD6YJXCgZGtYStzpx9404k87wrRI/9
+	5Yroue3sSwZoI8qe5NyN2DnRBjrXPWiTtk7sj6tCkM5QncL4ZwQeWJtcMuk5r0Ah4qUAfgUAocMRG
+	PBJVOGzs7Xivz4cD1I5QkFJKAzuyZ1fvOpsc6e98gMiFOtrURZGQv0G/CquEHpOSbkX59CV+ew1+0
+	1xLU9yazflD7X4O+cZFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUGFh-0003Sh-Li; Fri, 24 May 2019 19:53:17 +0000
-Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
+	id 1hUGPs-0006db-7t; Fri, 24 May 2019 20:03:48 +0000
+Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUGFZ-0003RQ-G8; Fri, 24 May 2019 19:53:10 +0000
-Received: by mail-oi1-x242.google.com with SMTP id y10so7900857oia.8;
- Fri, 24 May 2019 12:53:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=/KUgll3hSEj/FU/ezNNzycl4J+PKbwr5l6FIma0m5Sk=;
- b=EPJpKkUkNZi0HQkddOgj0vcBeOyYhQyV2IWdV8FvZv/s5rSSbzfQectenhyOnmrAku
- aFgH24HdcfZnEJnXLoxqxbVDLIUtW7cNpqpwB9dXhhNX52eXylf1KC//2Zj8k5P3G8Ne
- 1R0QUwMuSLKCSmH8v07lXlQ9j/bPUJA6kDVIp5rvMRoZDVJRGIN8wmM/j0YTcdWdtp9l
- FY91Y1A43POToBpe2cV+Ypwu4WMSbYsH2vPEfSxMGdrYc9oCxqzZycJnZGfCBU1gI0fq
- KU8no2evP/2L48FC2NVKqx8YpbRsnneHZXwKJZ9kCnk3yX6O4jw6HZmsEC/jIT2WZkya
- OuYQ==
+ id 1hUGPl-0006ct-93
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 20:03:42 +0000
+Received: from mail-ot1-f71.google.com ([209.85.210.71])
+ by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
+ (Exim 4.76) (envelope-from <dann.frazier@canonical.com>)
+ id 1hUGPi-0007ws-EC
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 20:03:38 +0000
+Received: by mail-ot1-f71.google.com with SMTP id z1so4988516oth.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 24 May 2019 13:03:38 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=/KUgll3hSEj/FU/ezNNzycl4J+PKbwr5l6FIma0m5Sk=;
- b=dgqKrF+3jcFLUoRnT9pJ2KWadQnN1iDxdl1DlVTHHKVHUKW6c6WonDzUJuj8RxdxxB
- gjPSt1gLMCbI5+OLwsIWR5QTzQR+gHsXAHO8G6HAuqaD7j6ySHzWisgE+PPoLG4TRIPe
- odulwKVzduz8Kncfwp+YhlZAzwfGQ3EVPCh6FGClSFCSWUA70XHX+cU1F/mhk2IB8iJ4
- CGpWP83z1QQHF7gvduI1DJLkd4TBB77hC7PK6eVBiaZMK/x6YJF3fP5KmZXGCiYEJ7kI
- 5XRUChEGaziG2o8bgU07daxfNUv1KaUEz/0Uvbq5ZifT//x4f2OXg3Mbp6zYEmppMK//
- 5yww==
-X-Gm-Message-State: APjAAAX7VFYcVih7JYsYvwaYpVH0wyNpMcQXh2joSo/USyojBwYPZjxQ
- vWGA8GTXxgVzGBKJ7KKLY7w335qb429vdF50qwI=
-X-Google-Smtp-Source: APXvYqw9p122eNIr2+xbjUdUHyP6yQjFHu1ATd8aLdpOKuGyZ6p25J+SPof/YcZhERZnyWKHwjzNawD0xZ3t6obdee8=
-X-Received: by 2002:aca:ab04:: with SMTP id u4mr830724oie.15.1558727588184;
- Fri, 24 May 2019 12:53:08 -0700 (PDT)
+ bh=MdZgSrzvQrNvArhhMwV6uq98L6kGwXydzTCUTc3ed/4=;
+ b=VAc5dvof9rMm9m8ENTnY3lUsM0EFewI+QpEVDwq3V4ij8wvmq40PaU4hW5MNRzmH7v
+ fpvTw99Dt5wWJ7IUkFgwEmZH/826He5Z8bYTesPg/onpRFxeC+yonaxl2vRpgrF2Kl39
+ PXAlTTHAQyzUjncIhTAJndk+UDYE4XG4kGMGllc4Pz1UrvTTgLBdQ+xtb+FlIMJEjqTn
+ ig8UyFj+7J9w6koV6wew3GVlfqEqN36STtc2bZxR/VvRv0ZMCa6CmDN8D58O/N+l1Q3J
+ g/EYsrWfa9Q0Wabv5JAd86moS44jU1NmBO/FXKGCBrd20wFEriuucIBg+CkltpoksmMx
+ HMNg==
+X-Gm-Message-State: APjAAAU6e1EosRM8CnFBf3B796I58MYUpHGv2uYKUnjXYcizv3082Au3
+ sjYKYRY03hKLuGPNH8Toiz4lea84sIoPYw3A77N1N+9fORUt57OlwEBHYJ/n759jlCJAOQD8rNf
+ HteTAgh1U/J6ZentMB1tZR+Grvfcm07c2Wd0LhBHgj67kFnZjSOmxMFWJrayreu7Mm6me
+X-Received: by 2002:a05:6830:164d:: with SMTP id
+ h13mr31758683otr.99.1558728217208; 
+ Fri, 24 May 2019 13:03:37 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqxoya9uYRsSIEv51UV91v8Z+LxDz8k4gGrzqqMySgCjbel8axNiXlhuqaT0Un+V+0ZUNeHLZgzLuTVB5rKzbzc=
+X-Received: by 2002:a05:6830:164d:: with SMTP id
+ h13mr31758663otr.99.1558728216929; 
+ Fri, 24 May 2019 13:03:36 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190524181936.29470-1-martin.blumenstingl@googlemail.com>
- <7hblzr1vxm.fsf@baylibre.com>
-In-Reply-To: <7hblzr1vxm.fsf@baylibre.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Fri, 24 May 2019 21:52:57 +0200
-Message-ID: <CAFBinCAueC3EKQXg-o5ennbPmfQC17+z8YKQ3TXwvxq1m9HtNw@mail.gmail.com>
-Subject: Re: [PATCH 0/1] ARM: meson8b-mxq: better support for the TRONFY MXQ
-To: Kevin Hilman <khilman@baylibre.com>
+References: <20190524040633.16854-1-nicoleotsuka@gmail.com>
+In-Reply-To: <20190524040633.16854-1-nicoleotsuka@gmail.com>
+From: dann frazier <dann.frazier@canonical.com>
+Date: Fri, 24 May 2019 14:03:25 -0600
+Message-ID: <CALdTtnu=WdYbqyq57EkB-=rsyz72SW-J8oyD7f6Xm-da2OgRgQ@mail.gmail.com>
+Subject: Re: [PATCH v3 0/2] Optimize dma_*_from_contiguous calls
+To: Nicolin Chen <nicoleotsuka@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_125309_562409_992BB11A 
-X-CRM114-Status: GOOD (  12.07  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190524_130341_458671_B9999428 
+X-CRM114-Status: GOOD (  13.57  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [91.189.89.112 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -92,32 +83,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, hexdump0815@googlemail.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: tony@atomide.com, Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>, jcmvbkbc@gmail.com,
+ Christoph Hellwig <hch@lst.de>, Marek Szyprowski <m.szyprowski@samsung.com>,
+ sfr@canb.auug.org.au, joro@8bytes.org, linux@armlinux.org.uk,
+ treding@nvidia.com, linux-xtensa@linux-xtensa.org, keescook@chromium.org,
+ akpm@linux-foundation.org,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>, chris@zankel.net,
+ wsa+renesas@sang-engineering.com, Robin Murphy <robin.murphy@arm.com>,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ iamjoonsoo.kim@lge.com, dwmw2@infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 24, 2019 at 9:42 PM Kevin Hilman <khilman@baylibre.com> wrote:
+On Thu, May 23, 2019 at 10:08 PM Nicolin Chen <nicoleotsuka@gmail.com> wrote:
 >
-> Martin Blumenstingl <martin.blumenstingl@googlemail.com> writes:
+> [ Per discussion at v1, we decide to add two new functions and start
+>   replacing callers one by one. For this series, it only touches the
+>   dma-direct part. And instead of merging two PATCHes, I still keep
+>   them separate so that we may easily revert PATCH-2 if anything bad
+>   happens as last time -- PATCH-1 is supposed to be a safe cleanup. ]
 >
-> > A while ago a user asked on #linux-amlogic about the state of the
-> > TRONFY MXQ in mainline. I did some research (mainly downloading an
-> > Android firmware image for that device and looking at the .dtb) and
-> > updated the mainline .dts accordingly.
-> >
-> > I kept this patch in my tree but didn't hear back from anyone with one
-> > of these boards (who could actually test my patch). That was until
-> > today where I got the following message on IRC:
-> >   any plans to submit your latest own version of the meson8b mxq dtb
-> >   to mainline? it works really well for me and the one in mainline is
-> >   too simple to be usedful ...
+> This series of patches try to optimize dma_*_from_contiguous calls:
+> PATCH-1 abstracts two new functions and applies to dma-direct.c file.
+> PATCH-2 saves single pages and reduce fragmentations from CMA area.
 >
-> Any chance of getting a Tested-by: from that IRC user on the patch?
-I CC'ed hexdump0815 so I'm hoping that he can send a Tested-by (he
-left IRC before I could reply to him)
+> Please check their commit messages for detail changelog.
+>
+> Nicolin Chen (2):
+>   dma-contiguous: Abstract dma_{alloc,free}_contiguous()
+>   dma-contiguous: Use fallback alloc_pages for single pages
+>
+>  include/linux/dma-contiguous.h | 11 +++++++
+>  kernel/dma/contiguous.c        | 57 ++++++++++++++++++++++++++++++++++
+>  kernel/dma/direct.c            | 24 +++-----------
+>  3 files changed, 72 insertions(+), 20 deletions(-)
+
+Thanks Nicolin. Tested on a HiSilicon D06 system.
+
+Tested-by: dann frazier <dann.frazier@canonical.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
