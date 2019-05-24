@@ -2,77 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA60928F57
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 05:00:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E56DA28F73
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 05:11:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ss9R0EOBmOs9x32HaQqz/JbcqXdO9/y/EhqqvVrfZ6Y=; b=N/TuYU9wr8Rczz
-	i2dW52qc4ocf5n+yg8a90tdKjsGrx0ZVUMeGaQk1TVwpApotfP9u0bHZZc+QWkemUBSUbgTna3bap
-	Oz1tQ7mODPSdELxS5fdyLXGYp1EHH9T6tWIxxe+OaWYkpACtIYzCjxfp1pvXeaudJ63p8JRGUPKpt
-	Ce20S39naG8mJuOV1LSq0ylHDFED6ABn3KAO+tE3XwrYmfyMDCjGhWIN8c29HHb5TyDqWhMTXxMFp
-	FPR2S7RjkDOwKpX7bvNU+a3SBoFuR5PzMIignAK4STyE04AH/u6xPe71Nz7o7Q/IzW8KJszPgKCHB
-	2pouuqA/4UFSNB0QtxFQ==;
+	List-Owner; bh=7a2KwRYsoVRiUYGZgnKqgqiRDqSl6CsBhs3NJMVrb7k=; b=hyWjnbRexS8Vwr
+	keDa+n41s/9jXmuj/QCM5D7HhlMRLBntiQokGvQWqcSCxAmQqps4RV019j6TdOpuCzWq82ucR7nXq
+	+FbtXoQ8DWRo4RuSAu9pViFoehByLv9HYN99w0yd9IRBIy+bENiZw7Ot8JgynmxO32DzZ3PZcqmVs
+	CaR/i0AH1TiFwQX433G781dNRLJJkVk/dHFSpA4GyXb824xHWnK45L4d1vpAWTcnb/uGdAMidHtyx
+	sjLc5n1vLgXVUoR1adxQPOkLQfiBMOi/4/PHU4SHnhg3FSRc3Z4dbB3vdyeyr8rJJUDgnN5SRmd9F
+	9V47cMyVx4iM4x65wztw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hU0R2-00040U-7X; Fri, 24 May 2019 02:59:56 +0000
-Received: from youngberry.canonical.com ([91.189.89.112])
+	id 1hU0cK-0000rk-KT; Fri, 24 May 2019 03:11:36 +0000
+Received: from mail-it1-x141.google.com ([2607:f8b0:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hU0Qu-0003zL-BX
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 02:59:50 +0000
-Received: from mail-ot1-f70.google.com ([209.85.210.70])
- by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
- (Exim 4.76) (envelope-from <dann.frazier@canonical.com>)
- id 1hU0Qp-0003pt-KS
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 02:59:43 +0000
-Received: by mail-ot1-f70.google.com with SMTP id a22so3806509otr.21
+ id 1hU0cD-0000qz-FV
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 03:11:30 +0000
+Received: by mail-it1-x141.google.com with SMTP id e184so11712402ite.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 23 May 2019 19:59:43 -0700 (PDT)
+ Thu, 23 May 2019 20:11:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=E7hznSwoqjG8X1odMBGc2satoFe87v1Y0P/9fKHS9SY=;
+ b=a7Sc0ZmlEG6jC7OpcrRVUkNXq0SBb3Dc/hNdk5Vi6ayUDLd0Dm8M0wWvJFgwttZZ4M
+ aninTKfSUZDRjfNGqPsMzWLja++EezX/hO4fX5nJBzfyFI6kNO7dvjypaoVQz4ys7+R5
+ 9IVPBxW1C4i6BRZ4f3bqLocvJh1c9QUTPILj4gipCVXMgVTUpT9LBYkMiRDL2TaalXNe
+ rQ6wJugIty6JwVWYs5nF97JpvrTENcxT3PWNqVTqRhEna4JwxQokvn2SUzkeP09LHMDC
+ DgccA6RcG2CmDNt2DoIHjZymnDK30hw9WxWvnBoApiNxfRbL6LLAu65RJr1Ih71O/P5e
+ SodQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=OVTkfCXi8Qvdl5BtPJlX4LlWKBE6YTyiV+OTd3AKz3c=;
- b=ts9cXF1A9Ayg9qGyMZHiZgxBZM1EXXGvtINSW/R0qhOO3gGEZ5U+Z5Tay69FYnYfx0
- 4bhlV84lMtgWqzFq8XvIr9V6+DXpYg0FhJQMcbPKgqwFEXrvj0MJfF50Q3BDhRoCygZJ
- wlAKjz78cqZkES8FPPL9a5KLvPixa4Kg1SrQRTWiXnaZ2yB4+Tcu91+GiiFbkCgpo2db
- hV6Tw481YCKfvR5Kv8eSQz+FGmpqz3mQPYsL6j9W7BRs/eBwYNEKKPVGOoqZIRa5r69X
- DqU4dr5M+5Ty7q7/H+OcD0FqP5eYDbj6byDjdsqfS6zMW9FjDKeOXaJ1iZnABxaMQ4TY
- SS/Q==
-X-Gm-Message-State: APjAAAUNHA/rLCioqzHgruvGFs1u+2VhepgdKqlSQRJRTj96wmJQlCl8
- +fzGXnF8pYpAjosuVJNK0/FKGduS507lCnrCpi6zo0/jTZZmn8y5lL7p3PTkONT9Kb03UPzLc7l
- EKTkNvLpmpzN6D4uAOCoanwU+q5GdMTI9TuaHF0qJSah96BG2+r1YBHmG7ttdULLnyDpS
-X-Received: by 2002:a9d:7c85:: with SMTP id q5mr23318114otn.31.1558666781885; 
- Thu, 23 May 2019 19:59:41 -0700 (PDT)
-X-Google-Smtp-Source: APXvYqxYCS/jIPuxtRQmoQl/5N5w/PRITbInIGx1pTjVVqdV4vaiAMsKDZGjjfDVIPuB372BRT8qS0RUcYiTUiZKg3Y=
-X-Received: by 2002:a9d:7c85:: with SMTP id q5mr23318098otn.31.1558666781507; 
- Thu, 23 May 2019 19:59:41 -0700 (PDT)
+ bh=E7hznSwoqjG8X1odMBGc2satoFe87v1Y0P/9fKHS9SY=;
+ b=hwxw4JYEpbrwnkfpH79/iGqJZV0c2WO91PWfSRfqAOXmlZgGFLN1ueTQbrs+LcE27w
+ jf2AahrUU5sOsZjeUN0xCnuLKtEx2C9mES6SSdY3BeKl90IEmKrmCvGtjs8np86uoYEl
+ GbDXoS6W6kyBT9hTL6SC9YtFQF3wcsjjoZ1iuIwKOoJKgnvENE4Wog3v40R3aEJ/ikrB
+ tFY0T2DATWm4YA7ebpVOyG0InyCA8Hk9ujn+YKx4zxU1k/w4mDa/68yC28yjJgmzLqee
+ p2B6d81I+hTv/cLrz+jYk+a8F64m95XPFgCgn72p121Gos7eHoHZAPZ/c/+XNMDFYPJ1
+ F66Q==
+X-Gm-Message-State: APjAAAVnTkHGNTX5AlPHivuHVsVVNDvSUZjYF0xE0+vtObnywSNJHfN+
+ G/dtfTsFN1mLCyowxjL/Jjw5iHui1j9zxOY50g==
+X-Google-Smtp-Source: APXvYqz4ssg3ircx9GKZ/bOQFSdzkDIVdQtquf3WB1GzGhZLWMOO7FDaVjBjQGy32wO2lRBtVYsHwdCKMGdQi1fBKFw=
+X-Received: by 2002:a24:1dce:: with SMTP id 197mr16766439itj.16.1558667486023; 
+ Thu, 23 May 2019 20:11:26 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190506223334.1834-1-nicoleotsuka@gmail.com>
- <20190506223334.1834-2-nicoleotsuka@gmail.com>
- <CALdTtnurdNe4+oJjSJfWw1ONf8-xvJ8KhonQkJNj+4LDZT7jAQ@mail.gmail.com>
-In-Reply-To: <CALdTtnurdNe4+oJjSJfWw1ONf8-xvJ8KhonQkJNj+4LDZT7jAQ@mail.gmail.com>
-From: dann frazier <dann.frazier@canonical.com>
-Date: Thu, 23 May 2019 20:59:30 -0600
-Message-ID: <CALdTtnuwRKkna_y5_5BdEYWNRbOQnLvtfz1PY-d4r78tj5hgVw@mail.gmail.com>
-Subject: Re: [PATCH v2 1/2] dma-contiguous: Abstract dma_{alloc,
- free}_contiguous()
-To: Nicolin Chen <nicoleotsuka@gmail.com>
+References: <1556087581-14513-1-git-send-email-kernelfans@gmail.com>
+ <10dc5468-6cd9-85c7-ba66-1dfa5aa922b7@suse.com>
+ <CAFgQCTstd667wP6g+maxYekz4u3iBR2R=FHUiS1V=XxTs6MKUw@mail.gmail.com>
+ <CAFgQCTtQm7SuBRfXik6B065Aa+uQ=Mx6i+Y1q+NJU1GEiUgH4g@mail.gmail.com>
+In-Reply-To: <CAFgQCTtQm7SuBRfXik6B065Aa+uQ=Mx6i+Y1q+NJU1GEiUgH4g@mail.gmail.com>
+From: Pingfan Liu <kernelfans@gmail.com>
+Date: Fri, 24 May 2019 11:11:13 +0800
+Message-ID: <CAFgQCTuAEbST8ZdSJmPDTPbqkL3uZ8j6U-vTWT879wARDhUwTw@mail.gmail.com>
+Subject: Re: [PATCHv2] kernel/crash: make parse_crashkernel()'s return value
+ more indicant
+To: Matthias Brugger <mbrugger@suse.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_195948_543866_3E11358F 
-X-CRM114-Status: GOOD (  32.28  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190523_201129_546326_5D0D760B 
+X-CRM114-Status: GOOD (  19.16  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [91.189.89.112 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (kernelfans[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -84,239 +96,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: chris@zankel.net, keescook@chromium.org, linux-xtensa@linux-xtensa.org,
- tony@atomide.com, Catalin Marinas <catalin.marinas@arm.com>, joro@8bytes.org,
- Will Deacon <will.deacon@arm.com>, linux@armlinux.org.uk,
- linux-kernel@vger.kernel.org, jcmvbkbc@gmail.com,
- iommu@lists.linux-foundation.org, dwmw2@infradead.org,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- wsa+renesas@sang-engineering.com, sfr@canb.auug.org.au,
- akpm@linux-foundation.org, treding@nvidia.com,
- Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
- iamjoonsoo.kim@lge.com, Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
+ Julien Thierry <julien.thierry@arm.com>, Yangtao Li <tiny.windzz@gmail.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Palmer Dabbelt <palmer@sifive.com>, Heiko Carstens <heiko.carstens@de.ibm.com>,
+ Stefan Agner <stefan@agner.ch>, linux-mips@vger.kernel.org,
+ Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Logan Gunthorpe <logang@deltatee.com>,
+ linux-s390@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+ Yoshinori Sato <ysato@users.sourceforge.jp>, linux-sh@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, Ingo Molnar <mingo@redhat.com>,
+ Hari Bathini <hbathini@linux.ibm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, James Hogan <jhogan@kernel.org>,
+ Dave Young <dyoung@redhat.com>, Fenghua Yu <fenghua.yu@intel.com>,
+ Will Deacon <will.deacon@arm.com>, Johannes Weiner <hannes@cmpxchg.org>,
+ Ananth N Mavinakayanahalli <ananth@linux.vnet.ibm.com>,
+ Borislav Petkov <bp@alien8.de>, David Hildenbrand <david@redhat.com>,
+ linux-arm-kernel@lists.infradead.org, Jens Axboe <axboe@kernel.dk>,
+ Tony Luck <tony.luck@intel.com>, Baoquan He <bhe@redhat.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Robin Murphy <robin.murphy@arm.com>, LKML <linux-kernel@vger.kernel.org>,
+ Ralf Baechle <ralf@linux-mips.org>,
+ Thomas Bogendoerfer <tbogendoerfer@suse.de>,
+ Paul Burton <paul.burton@mips.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ Greg Hackmann <ghackmann@android.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 23, 2019 at 7:52 PM dann frazier <dann.frazier@canonical.com> wrote:
->
-> On Mon, May 6, 2019 at 4:35 PM Nicolin Chen <nicoleotsuka@gmail.com> wrote:
-> >
-> > Both dma_alloc_from_contiguous() and dma_release_from_contiguous()
-> > are very simply implemented, but requiring callers to pass certain
-> > parameters like count and align, and taking a boolean parameter to
-> > check __GFP_NOWARN in the allocation flags. So every function call
-> > duplicates similar work:
-> >   /* A piece of example */
-> >   unsigned long order = get_order(size);
-> >   size_t count = size >> PAGE_SHIFT;
-> >   page = dma_alloc_from_contiguous(dev, count, order, gfp & __GFP_NOWARN);
-> >   [...]
-> >   dma_release_from_contiguous(dev, page, size >> PAGE_SHIFT);
-> >
-> > Additionally, as CMA can be used only in the context which permits
-> > sleeping, most of callers do a gfpflags_allow_blocking() check and
-> > a corresponding fallback allocation of normal pages upon any false
-> > result:
-> >   /* A piece of example */
-> >   if (gfpflags_allow_blocking(flag))
-> >       page = dma_alloc_from_contiguous();
-> >   if (!page)
-> >       page = alloc_pages();
-> >   [...]
-> >   if (!dma_release_from_contiguous(dev, page, count))
-> >       __free_pages(page, get_order(size));
-> >
-> > So this patch simplifies those function calls by abstracting these
-> > operations into the two new functions: dma_{alloc,free}_contiguous.
-> >
-> > As some callers of dma_{alloc,release}_from_contiguous() might be
-> > complicated, this patch just implements these two new functions to
-> > kernel/dma/direct.c only as an initial step.
-> >
-> > Suggested-by: Christoph Hellwig <hch@lst.de>
-> > Signed-off-by: Nicolin Chen <nicoleotsuka@gmail.com>
-> > ---
-> > Changelog
-> > v1->v2:
-> >  * Added new functions beside the old ones so we can replace callers
-> >    one by one later.
-> >  * Applied new functions to dma/direct.c only, because it's the best
-> >    example caller to apply and should be safe with the new functions.
-> >
-> >  include/linux/dma-contiguous.h | 10 +++++++
-> >  kernel/dma/contiguous.c        | 48 ++++++++++++++++++++++++++++++++++
-> >  kernel/dma/direct.c            | 24 +++--------------
-> >  3 files changed, 62 insertions(+), 20 deletions(-)
-> >
-> > diff --git a/include/linux/dma-contiguous.h b/include/linux/dma-contiguous.h
-> > index f247e8aa5e3d..dacbdcb91a89 100644
-> > --- a/include/linux/dma-contiguous.h
-> > +++ b/include/linux/dma-contiguous.h
-> > @@ -115,6 +115,8 @@ struct page *dma_alloc_from_contiguous(struct device *dev, size_t count,
-> >                                        unsigned int order, bool no_warn);
-> >  bool dma_release_from_contiguous(struct device *dev, struct page *pages,
-> >                                  int count);
-> > +struct page *dma_alloc_contiguous(struct device *dev, size_t size, gfp_t gfp);
-> > +void dma_free_contiguous(struct device *dev, struct page *page, size_t size);
-> >
-> >  #else
-> >
-> > @@ -157,6 +159,14 @@ bool dma_release_from_contiguous(struct device *dev, struct page *pages,
-> >         return false;
-> >  }
-> >
-> > +struct page *dma_alloc_contiguous(struct device *dev, size_t size, gfp_t gfp)
-> > +{
-> > +       return NULL;
-> > +}
-> > +
-> > +static inline
-> > +void dma_free_contiguous(struct device *dev, struct page *page, size_t size) { }
-> > +
-> >  #endif
-> >
-> >  #endif
-> > diff --git a/kernel/dma/contiguous.c b/kernel/dma/contiguous.c
-> > index b2a87905846d..21f39a6cb04f 100644
-> > --- a/kernel/dma/contiguous.c
-> > +++ b/kernel/dma/contiguous.c
-> > @@ -214,6 +214,54 @@ bool dma_release_from_contiguous(struct device *dev, struct page *pages,
-> >         return cma_release(dev_get_cma_area(dev), pages, count);
-> >  }
->
-> This breaks the build for me if CONFIG_DMA_CMA=n:
->
->   LD [M]  fs/9p/9p.o
-> ld: fs/9p/vfs_inode.o: in function `dma_alloc_contiguous':
-> vfs_inode.c:(.text+0xa60): multiple definition of
-> `dma_alloc_contiguous'; fs/9p/vfs_super.o:vfs_super.c:(.text+0x500):
-> first defined here
->
-> Do the following insertions need to be under an #ifdef CONFIG_DMA_CMA ?
+Matthias, ping? Any suggestions?
 
-Ah, no - the problem is actually a missing "static inline" in the
-!CONFIG_DMA_CMA version of dma_alloc_contiguous().
+Thanks,
+Pingfan
 
-  -dann
 
-> > +/**
-> > + * dma_alloc_contiguous() - allocate contiguous pages
-> > + * @dev:   Pointer to device for which the allocation is performed.
-> > + * @size:  Requested allocation size.
-> > + * @gfp:   Allocation flags.
-> > + *
-> > + * This function allocates contiguous memory buffer for specified device. It
-> > + * first tries to use device specific contiguous memory area if available or
-> > + * the default global one, then tries a fallback allocation of normal pages.
-> > + */
-> > +struct page *dma_alloc_contiguous(struct device *dev, size_t size, gfp_t gfp)
-> > +{
-> > +       int node = dev ? dev_to_node(dev) : NUMA_NO_NODE;
-> > +       size_t count = PAGE_ALIGN(size) >> PAGE_SHIFT;
-> > +       size_t align = get_order(PAGE_ALIGN(size));
-> > +       struct cma *cma = dev_get_cma_area(dev);
-> > +       struct page *page = NULL;
-> > +
-> > +       /* CMA can be used only in the context which permits sleeping */
-> > +       if (cma && gfpflags_allow_blocking(gfp)) {
-> > +               align = min_t(size_t, align, CONFIG_CMA_ALIGNMENT);
-> > +               page = cma_alloc(cma, count, align, gfp & __GFP_NOWARN);
-> > +       }
-> > +
-> > +       /* Fallback allocation of normal pages */
-> > +       if (!page)
-> > +               page = alloc_pages_node(node, gfp, align);
-> > +
-> > +       return page;
-> > +}
-> > +
-> > +/**
-> > + * dma_free_contiguous() - release allocated pages
-> > + * @dev:   Pointer to device for which the pages were allocated.
-> > + * @page:  Pointer to the allocated pages.
-> > + * @size:  Size of allocated pages.
-> > + *
-> > + * This function releases memory allocated by dma_alloc_contiguous(). As the
-> > + * cma_release returns false when provided pages do not belong to contiguous
-> > + * area and true otherwise, this function then does a fallback __free_pages()
-> > + * upon a false-return.
-> > + */
-> > +void dma_free_contiguous(struct device *dev, struct page *page, size_t size)
-> > +{
-> > +       if (!cma_release(dev_get_cma_area(dev), page, size >> PAGE_SHIFT))
-> > +               __free_pages(page, get_order(size));
-> > +}
-> > +
-> >  /*
-> >   * Support for reserved memory regions defined in device tree
-> >   */
-> > diff --git a/kernel/dma/direct.c b/kernel/dma/direct.c
-> > index 2c2772e9702a..0816c1e8b05a 100644
-> > --- a/kernel/dma/direct.c
-> > +++ b/kernel/dma/direct.c
-> > @@ -96,8 +96,6 @@ static bool dma_coherent_ok(struct device *dev, phys_addr_t phys, size_t size)
-> >  struct page *__dma_direct_alloc_pages(struct device *dev, size_t size,
-> >                 dma_addr_t *dma_handle, gfp_t gfp, unsigned long attrs)
-> >  {
-> > -       unsigned int count = PAGE_ALIGN(size) >> PAGE_SHIFT;
-> > -       int page_order = get_order(size);
-> >         struct page *page = NULL;
-> >         u64 phys_mask;
+On Thu, May 2, 2019 at 2:22 PM Pingfan Liu <kernelfans@gmail.com> wrote:
+>
+> On Thu, Apr 25, 2019 at 4:20 PM Pingfan Liu <kernelfans@gmail.com> wrote:
 > >
-> > @@ -109,20 +107,9 @@ struct page *__dma_direct_alloc_pages(struct device *dev, size_t size,
-> >         gfp |= __dma_direct_optimal_gfp_mask(dev, dev->coherent_dma_mask,
-> >                         &phys_mask);
-> >  again:
-> > -       /* CMA can be used only in the context which permits sleeping */
-> > -       if (gfpflags_allow_blocking(gfp)) {
-> > -               page = dma_alloc_from_contiguous(dev, count, page_order,
-> > -                                                gfp & __GFP_NOWARN);
-> > -               if (page && !dma_coherent_ok(dev, page_to_phys(page), size)) {
-> > -                       dma_release_from_contiguous(dev, page, count);
-> > -                       page = NULL;
-> > -               }
-> > -       }
-> > -       if (!page)
-> > -               page = alloc_pages_node(dev_to_node(dev), gfp, page_order);
-> > -
-> > +       page = dma_alloc_contiguous(dev, size, gfp);
-> >         if (page && !dma_coherent_ok(dev, page_to_phys(page), size)) {
-> > -               __free_pages(page, page_order);
-> > +               dma_free_contiguous(dev, page, size);
-> >                 page = NULL;
+> > On Wed, Apr 24, 2019 at 4:31 PM Matthias Brugger <mbrugger@suse.com> wrote:
+> > >
+> > >
+> > [...]
+> > > > @@ -139,6 +141,8 @@ static int __init parse_crashkernel_simple(char *cmdline,
+> > > >               pr_warn("crashkernel: unrecognized char: %c\n", *cur);
+> > > >               return -EINVAL;
+> > > >       }
+> > > > +     if (*crash_size == 0)
+> > > > +             return -EINVAL;
+> > >
+> > > This covers the case where I pass an argument like "crashkernel=0M" ?
+> > > Can't we fix that by using kstrtoull() in memparse and check if the return value
+> > > is < 0? In that case we could return without updating the retptr and we will be
+> > > fine.
+> After a series of work, I suddenly realized that it can not be done
+> like this way. "0M" causes kstrtoull() to return -EINVAL, but this is
+> caused by "M", not "0". If passing "0" to kstrtoull(), it will return
+> 0 on success.
+>
+> > >
+> > It seems that kstrtoull() treats 0M as invalid parameter, while
+> > simple_strtoull() does not.
 > >
-> >                 if (IS_ENABLED(CONFIG_ZONE_DMA32) &&
-> > @@ -154,7 +141,7 @@ void *dma_direct_alloc_pages(struct device *dev, size_t size,
-> >         if (PageHighMem(page)) {
-> >                 /*
-> >                  * Depending on the cma= arguments and per-arch setup
-> > -                * dma_alloc_from_contiguous could return highmem pages.
-> > +                * dma_alloc_contiguous could return highmem pages.
-> >                  * Without remapping there is no way to return them here,
-> >                  * so log an error and fail.
-> >                  */
-> > @@ -176,10 +163,7 @@ void *dma_direct_alloc_pages(struct device *dev, size_t size,
-> >
-> >  void __dma_direct_free_pages(struct device *dev, size_t size, struct page *page)
-> >  {
-> > -       unsigned int count = PAGE_ALIGN(size) >> PAGE_SHIFT;
-> > -
-> > -       if (!dma_release_from_contiguous(dev, page, count))
-> > -               __free_pages(page, get_order(size));
-> > +       dma_free_contiguous(dev, page, size);
-> >  }
-> >
-> >  void dma_direct_free_pages(struct device *dev, size_t size, void *cpu_addr,
-> > --
-> > 2.17.1
-> >
-> >
-> > _______________________________________________
-> > linux-arm-kernel mailing list
-> > linux-arm-kernel@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> My careless going through the code. And I tested with a valid value
+> "256M" using kstrtoull(), it also returned -EINVAL.
+>
+> So I think there is no way to distinguish 0 from a positive value
+> inside this basic math function.
+> Do I miss anything?
+>
+> Thanks and regards,
+> Pingfan
 
 _______________________________________________
 linux-arm-kernel mailing list
