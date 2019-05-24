@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C462729D3E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 19:37:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09EE629D41
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 19:37:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,64 +11,63 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=AaFU4cPzWZiNKs/9o9cUzdoLCCVwJjyOWBkWx6PHRKo=; b=qdJRgaEFbFa4p7D/Hhs6j7fvAA
-	nXUocWSD1+7Wgbr2SyNa1FZlL3aoBfRNg2aPn66fhtmS138Dx3YXfY47zFdnKwcZh6RldEC7IZu9M
-	xV4fR6Bv7FFbK7avW0WIQPA6llhXRYvkpoZWfHSQfxxqkoi4GD2+WaKsaUXmRAp4o4X+ARtYlv7uc
-	k84KYESDplEsGC2oGlXXMwrDYkSIVbgoPiaV1juKtjI3e/3Wy5zsh73zruXvNLNKrECeCk0uzgncJ
-	hEt2HDrp/tVm5gTNOERDhn3fWdhvk2805h7wWucg0VbRBkQURLwsW1xmTRHZwnIi7si4H1OYVqhor
-	HFn1DANw==;
+	bh=spFTf5vywlxDLkxaERI2zOqSc9bACeIz5dm+UYZCQ24=; b=mGNq0BQklgqHpEuuQyMMWf6n5/
+	5wzGzl7A2vof9gcCFovcSKQTJVHRgSeIYjZg3CLCr9ppUtnMflEcutdTSnnca8GX3McI4OI3BnMMv
+	Eimusb6TGYFHKkar2v3e5/UV6N7tMvVKNgySnfk25UiV+4XxhfQFbWvoop0OVifLD3/9TD+Co8RaC
+	bBrQT5MTQ5zJBPTl2SuQK2h93F3Iaf4xfygqSW8/FHJ323sBpmpiGQgBt5IJmMakkAJS/ZSYZS8Xq
+	p9GNHkkxMw/dNI35GzPiUXBWO+HAIlTI1GWTukl4Z5SXJR/Ve1OVjnODOUsRWiqjrflW/k/1bMHf0
+	TTZCcsfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUE8D-0003LR-8Q; Fri, 24 May 2019 17:37:25 +0000
+	id 1hUE8Z-0003jd-57; Fri, 24 May 2019 17:37:47 +0000
 Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUE6H-00013E-Tu
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 17:35:37 +0000
-Received: by mail-pf1-x441.google.com with SMTP id v80so5735030pfa.3
+ id 1hUE6J-00015Z-Fo
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 17:35:38 +0000
+Received: by mail-pf1-x441.google.com with SMTP id q17so877679pfq.8
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 May 2019 10:35:25 -0700 (PDT)
+ Fri, 24 May 2019 10:35:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=eTGrl1VwMHPMcZROfgPIL9cYLAfm7e1gifTctdhMIag=;
- b=uexRFuRCUMiVTKpuY4H6ZXEoKfbokTfvLGUjC/jwLmemjjK+9N08UN2R450MQzMQFS
- SDYZUWqYuwiEWmCasHAcniqKd8VZ1P9qLod4b26Q3GLCZniJsQc8MPQjnN5JxRgQdtX0
- +BSF0I69lK+hyZyucAN5AmDmmVYB9bGjevMr73ySf1a5aXZPRdECjJHyvinKVAw4AOqQ
- z9D++HcFUhruKpxEn3SksqcIh5wZAf0QWLZRdtKmqPtO5Z5YCA08an7r7P/RqcQI7d5t
- x1Qeaar+Gxem++wi2r0RFocbzTW/ZaEaLfO2QRxBjq9syIms/TNaxDjUyWMA1jDMufq0
- U03Q==
+ bh=cq0t+PSXn//LvYjO2sa6TunhyuzsYVmdu9JbEFprU14=;
+ b=q1n5NJxBc1CxN3THW31CYCMIMZLFrJTdSaNuXZvcSYYalZjyR37nIzgV0zsDoveRIM
+ s9nu2yOj0h4pYn3lqUYNXAFmnpU+kOn7uTiybF7lv8C3cAP3nm7DfXYijD1tltccuh3K
+ TYUT4V+deACoAp+3uASEbCkS4aLQCdLByV/9+LY37NNQs74rwCyuM23Q57H0rYHb+QC2
+ 4Ft/kq8nCaoXSLCFnF+mkxten+bnX+pOpUItzGAGSjXLHFCWttfg08/x8aIL2jDJ5mCo
+ E/qpTrmvZHzm3NcjWl1ZmxRliOLO4MmVe2JgScpi0N7y0sR2IcYVWu58o4styRLdec+o
+ +WDg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=eTGrl1VwMHPMcZROfgPIL9cYLAfm7e1gifTctdhMIag=;
- b=UWI36Mb//vz9Q6vj/4hS+3yVDIZHj4yc40rt661PZYVjaezOZeh05psvRjGS2sOwhW
- NTkKmMVrl57XIs3O+ugHO+XpL2l6/52C86JczKSnT0VrcpDlpM44GbThQ2gkDZiTi/UR
- 9Ay/ulRjsP2p2GY2pmyf1soz7aafg2wunZqNkSlpcLuQFYGyNmmvE5fqC0OEdShbgpQi
- kRWrbpM11pLCHKWBRg3Tc4Y+4fTIgI8Hb/ifb1NG6zZk29FA6wDrLLKNQURaXI6j0Pn2
- IMv6OJa/3qDHZrP/0wjXaz+raNjMQu/DUu/jEXn9x932czrq4kG0H0UYFiNslAFKOGK9
- WtuQ==
-X-Gm-Message-State: APjAAAX6rMd1m84SwD0zx8h+lUP7Ufz122yBjeNRYluGDA+xjKYynbRe
- 8AmzWYeyjYG74n5rHc6bYk9fvA==
-X-Google-Smtp-Source: APXvYqxafBcXyO1ItWy6aoLqqZOafSURtK+DsdQ9+wximkDSKsA3cFE7FLAZvxWK6L4NzpzoVcgJ0w==
-X-Received: by 2002:a63:6ac3:: with SMTP id
- f186mr107175814pgc.326.1558719325379; 
- Fri, 24 May 2019 10:35:25 -0700 (PDT)
+ bh=cq0t+PSXn//LvYjO2sa6TunhyuzsYVmdu9JbEFprU14=;
+ b=sanUC4Urfe2RMsGvI6rwC4dS4Imk7A3Jyuk8pE5oegPkLdbasHqkwc0MK11QakuCsk
+ Q2avbpe2dAMSblhAqtfShFsG2inXPYxZJvgQr2ZEwEvk4TfDUliNfMEUvtCy6IqH2JLU
+ l4jhchj+zTkm2fgbGFvYC/lFkEugx6BwzvcyJoRwhkFU5lzbDytf4jrwOgc8GDPJ5SRL
+ XFoBAAIhZftX2QDZOFdxjXKPRelUxBaK0NiB0ZVW3l36azACj1+e1LMx/gRSVmh2wKJ5
+ Y09is1TvbVmd7fr0PgEupYJrPnMNQAHE9+ejZnX0PO/21MV+GY4ZBrTa3xso8+d7y9V+
+ CphQ==
+X-Gm-Message-State: APjAAAWrC2srzftqgHMa9A96X31zz5UVTLjFLJ85+e6oLaxFXxK7gnhV
+ qQFargarCH60iqLlxQtcwW/kBw==
+X-Google-Smtp-Source: APXvYqzRbKqiLoaqJY3Oy4E+R4Hv7oH5sv3rnnnT8EwfbYgNv44HGotXOXYusT+cdZQdTR4Rss/w6w==
+X-Received: by 2002:a65:4786:: with SMTP id e6mr22058580pgs.85.1558719326690; 
+ Fri, 24 May 2019 10:35:26 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id k13sm2809575pgr.90.2019.05.24.10.35.24
+ by smtp.gmail.com with ESMTPSA id k13sm2809575pgr.90.2019.05.24.10.35.25
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 24 May 2019 10:35:24 -0700 (PDT)
+ Fri, 24 May 2019 10:35:26 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: acme@kernel.org
-Subject: [PATCH v2 12/17] perf tools: Move tid/pid to traceid_queue
-Date: Fri, 24 May 2019 11:35:03 -0600
-Message-Id: <20190524173508.29044-13-mathieu.poirier@linaro.org>
+Subject: [PATCH v2 13/17] perf tools: Use traceID aware memory callback API
+Date: Fri, 24 May 2019 11:35:04 -0600
+Message-Id: <20190524173508.29044-14-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190524173508.29044-1-mathieu.poirier@linaro.org>
 References: <20190524173508.29044-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_103527_013578_0EDB2CE9 
-X-CRM114-Status: GOOD (  13.35  )
+X-CRM114-CacheID: sfid-20190524_103528_674957_FF9E3E4E 
+X-CRM114-Status: GOOD (  14.86  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -107,132 +106,234 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The tid/pid fields of structure cs_etm_queue are CPU dependent and as
-such need to be part of the cs_etm_traceid_queue in order to support
-CPU-wide trace scenarios.
+When working with CPU-wide traces different traceID may be found in the
+same stream.  As such we need to use the decoder callback that provides
+the traceID in order to know the thread context being decoded.
 
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- tools/perf/util/cs-etm.c | 44 ++++++++++++++++++++++++----------------
- 1 file changed, 26 insertions(+), 18 deletions(-)
+ .../perf/util/cs-etm-decoder/cs-etm-decoder.c | 14 +++----
+ .../perf/util/cs-etm-decoder/cs-etm-decoder.h |  3 +-
+ tools/perf/util/cs-etm.c                      | 41 +++++++++++++------
+ 3 files changed, 36 insertions(+), 22 deletions(-)
 
+diff --git a/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c b/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c
+index 4303d2d00d31..87264b79de0e 100644
+--- a/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c
++++ b/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c
+@@ -41,15 +41,14 @@ static u32
+ cs_etm_decoder__mem_access(const void *context,
+ 			   const ocsd_vaddr_t address,
+ 			   const ocsd_mem_space_acc_t mem_space __maybe_unused,
++			   const u8 trace_chan_id,
+ 			   const u32 req_size,
+ 			   u8 *buffer)
+ {
+ 	struct cs_etm_decoder *decoder = (struct cs_etm_decoder *) context;
+ 
+-	return decoder->mem_access(decoder->data,
+-				   address,
+-				   req_size,
+-				   buffer);
++	return decoder->mem_access(decoder->data, trace_chan_id,
++				   address, req_size, buffer);
+ }
+ 
+ int cs_etm_decoder__add_mem_access_cb(struct cs_etm_decoder *decoder,
+@@ -58,9 +57,10 @@ int cs_etm_decoder__add_mem_access_cb(struct cs_etm_decoder *decoder,
+ {
+ 	decoder->mem_access = cb_func;
+ 
+-	if (ocsd_dt_add_callback_mem_acc(decoder->dcd_tree, start, end,
+-					 OCSD_MEM_SPACE_ANY,
+-					 cs_etm_decoder__mem_access, decoder))
++	if (ocsd_dt_add_callback_trcid_mem_acc(decoder->dcd_tree, start, end,
++					       OCSD_MEM_SPACE_ANY,
++					       cs_etm_decoder__mem_access,
++					       decoder))
+ 		return -1;
+ 
+ 	return 0;
+diff --git a/tools/perf/util/cs-etm-decoder/cs-etm-decoder.h b/tools/perf/util/cs-etm-decoder/cs-etm-decoder.h
+index 6ae7ab4cf5fe..11f3391d06f2 100644
+--- a/tools/perf/util/cs-etm-decoder/cs-etm-decoder.h
++++ b/tools/perf/util/cs-etm-decoder/cs-etm-decoder.h
+@@ -19,8 +19,7 @@ struct cs_etm_packet_queue;
+ 
+ struct cs_etm_queue;
+ 
+-typedef u32 (*cs_etm_mem_cb_type)(struct cs_etm_queue *, u64,
+-				  size_t, u8 *);
++typedef u32 (*cs_etm_mem_cb_type)(struct cs_etm_queue *, u8, u64, size_t, u8 *);
+ 
+ struct cs_etmv3_trace_params {
+ 	u32 reg_ctrl;
 diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-index 0d51d6d9a594..7e3b4d10f5c4 100644
+index 7e3b4d10f5c4..2483293266d8 100644
 --- a/tools/perf/util/cs-etm.c
 +++ b/tools/perf/util/cs-etm.c
-@@ -62,6 +62,7 @@ struct cs_etm_auxtrace {
- 
- struct cs_etm_traceid_queue {
- 	u8 trace_chan_id;
-+	pid_t pid, tid;
- 	u64 period_instructions;
- 	size_t last_branch_pos;
- 	union perf_event *event_buf;
-@@ -78,7 +79,6 @@ struct cs_etm_queue {
- 	struct cs_etm_decoder *decoder;
- 	struct auxtrace_buffer *buffer;
- 	unsigned int queue_nr;
--	pid_t pid, tid;
- 	u64 offset;
- 	const unsigned char *buf;
- 	size_t buf_len, buf_used;
-@@ -159,10 +159,14 @@ static int cs_etm__init_traceid_queue(struct cs_etm_queue *etmq,
- 				      u8 trace_chan_id)
- {
- 	int rc = -ENOMEM;
-+	struct auxtrace_queue *queue;
- 	struct cs_etm_auxtrace *etm = etmq->etm;
- 
- 	cs_etm__clear_packet_queue(&tidq->packet_queue);
- 
-+	queue = &etmq->etm->queues.queue_array[etmq->queue_nr];
-+	tidq->tid = queue->tid;
-+	tidq->pid = -1;
- 	tidq->trace_chan_id = trace_chan_id;
- 
- 	tidq->packet = zalloc(sizeof(struct cs_etm_packet));
-@@ -598,8 +602,6 @@ static int cs_etm__setup_queue(struct cs_etm_auxtrace *etm,
- 	queue->priv = etmq;
- 	etmq->etm = etm;
- 	etmq->queue_nr = queue_nr;
--	etmq->tid = queue->tid;
--	etmq->pid = -1;
- 	etmq->offset = 0;
- 
- out:
-@@ -817,23 +819,19 @@ cs_etm__get_trace(struct cs_etm_queue *etmq)
- }
- 
- static void cs_etm__set_pid_tid_cpu(struct cs_etm_auxtrace *etm,
--				    struct auxtrace_queue *queue)
-+				    struct auxtrace_queue *queue,
-+				    struct cs_etm_traceid_queue *tidq)
- {
--	struct cs_etm_traceid_queue *tidq;
--	struct cs_etm_queue *etmq = queue->priv;
--
--	tidq = cs_etm__etmq_get_traceid_queue(etmq, CS_ETM_PER_THREAD_TRACEID);
--
- 	/* CPU-wide tracing isn't supported yet */
- 	if (queue->tid == -1)
- 		return;
- 
--	if ((!tidq->thread) && (etmq->tid != -1))
-+	if ((!tidq->thread) && (tidq->tid != -1))
- 		tidq->thread = machine__find_thread(etm->machine, -1,
--						    etmq->tid);
-+						    tidq->tid);
- 
- 	if (tidq->thread)
--		etmq->pid = tidq->thread->pid_;
-+		tidq->pid = tidq->thread->pid_;
- }
- 
- static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
-@@ -850,8 +848,8 @@ static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
- 	event->sample.header.size = sizeof(struct perf_event_header);
- 
- 	sample.ip = addr;
--	sample.pid = etmq->pid;
--	sample.tid = etmq->tid;
-+	sample.pid = tidq->pid;
-+	sample.tid = tidq->tid;
- 	sample.id = etmq->etm->instructions_id;
- 	sample.stream_id = etmq->etm->instructions_id;
- 	sample.period = period;
-@@ -909,8 +907,8 @@ static int cs_etm__synth_branch_sample(struct cs_etm_queue *etmq,
- 	event->sample.header.size = sizeof(struct perf_event_header);
- 
- 	sample.ip = ip;
--	sample.pid = etmq->pid;
--	sample.tid = etmq->tid;
-+	sample.pid = tidq->pid;
-+	sample.tid = tidq->tid;
- 	sample.addr = cs_etm__first_executed_instr(tidq->packet);
- 	sample.id = etmq->etm->branches_id;
- 	sample.stream_id = etmq->etm->branches_id;
-@@ -1758,9 +1756,19 @@ static int cs_etm__process_timeless_queues(struct cs_etm_auxtrace *etm,
- 	for (i = 0; i < queues->nr_queues; i++) {
- 		struct auxtrace_queue *queue = &etm->queues.queue_array[i];
- 		struct cs_etm_queue *etmq = queue->priv;
-+		struct cs_etm_traceid_queue *tidq;
-+
-+		if (!etmq)
-+			continue;
-+
-+		tidq = cs_etm__etmq_get_traceid_queue(etmq,
-+						CS_ETM_PER_THREAD_TRACEID);
-+
-+		if (!tidq)
-+			continue;
- 
--		if (etmq && ((tid == -1) || (etmq->tid == tid))) {
--			cs_etm__set_pid_tid_cpu(etm, queue);
-+		if ((tid == -1) || (tidq->tid == tid)) {
-+			cs_etm__set_pid_tid_cpu(etm, queue, tidq);
- 			cs_etm__run_decoder(etmq);
- 		}
+@@ -491,8 +491,8 @@ static u8 cs_etm__cpu_mode(struct cs_etm_queue *etmq, u64 address)
  	}
+ }
+ 
+-static u32 cs_etm__mem_access(struct cs_etm_queue *etmq, u64 address,
+-			      size_t size, u8 *buffer)
++static u32 cs_etm__mem_access(struct cs_etm_queue *etmq, u8 trace_chan_id,
++			      u64 address, size_t size, u8 *buffer)
+ {
+ 	u8  cpumode;
+ 	u64 offset;
+@@ -501,6 +501,8 @@ static u32 cs_etm__mem_access(struct cs_etm_queue *etmq, u64 address,
+ 	struct	 machine *machine;
+ 	struct	 addr_location al;
+ 
++	(void)trace_chan_id;
++
+ 	if (!etmq)
+ 		return 0;
+ 
+@@ -687,10 +689,12 @@ void cs_etm__reset_last_branch_rb(struct cs_etm_traceid_queue *tidq)
+ }
+ 
+ static inline int cs_etm__t32_instr_size(struct cs_etm_queue *etmq,
+-					 u64 addr) {
++					 u8 trace_chan_id, u64 addr)
++{
+ 	u8 instrBytes[2];
+ 
+-	cs_etm__mem_access(etmq, addr, ARRAY_SIZE(instrBytes), instrBytes);
++	cs_etm__mem_access(etmq, trace_chan_id, addr,
++			   ARRAY_SIZE(instrBytes), instrBytes);
+ 	/*
+ 	 * T32 instruction size is indicated by bits[15:11] of the first
+ 	 * 16-bit word of the instruction: 0b11101, 0b11110 and 0b11111
+@@ -719,6 +723,7 @@ u64 cs_etm__last_executed_instr(const struct cs_etm_packet *packet)
+ }
+ 
+ static inline u64 cs_etm__instr_addr(struct cs_etm_queue *etmq,
++				     u64 trace_chan_id,
+ 				     const struct cs_etm_packet *packet,
+ 				     u64 offset)
+ {
+@@ -726,7 +731,8 @@ static inline u64 cs_etm__instr_addr(struct cs_etm_queue *etmq,
+ 		u64 addr = packet->start_addr;
+ 
+ 		while (offset > 0) {
+-			addr += cs_etm__t32_instr_size(etmq, addr);
++			addr += cs_etm__t32_instr_size(etmq,
++						       trace_chan_id, addr);
+ 			offset--;
+ 		}
+ 		return addr;
+@@ -1063,6 +1069,7 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
+ 	struct cs_etm_auxtrace *etm = etmq->etm;
+ 	struct cs_etm_packet *tmp;
+ 	int ret;
++	u8 trace_chan_id = tidq->trace_chan_id;
+ 	u64 instrs_executed = tidq->packet->instr_count;
+ 
+ 	tidq->period_instructions += instrs_executed;
+@@ -1093,7 +1100,8 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
+ 		 * executed, but PC has not advanced to next instruction)
+ 		 */
+ 		u64 offset = (instrs_executed - instrs_over - 1);
+-		u64 addr = cs_etm__instr_addr(etmq, tidq->packet, offset);
++		u64 addr = cs_etm__instr_addr(etmq, trace_chan_id,
++					      tidq->packet, offset);
+ 
+ 		ret = cs_etm__synth_instruction_sample(
+ 			etmq, tidq, addr, etm->instructions_sample_period);
+@@ -1268,7 +1276,7 @@ static int cs_etm__get_data_block(struct cs_etm_queue *etmq)
+ 	return etmq->buf_len;
+ }
+ 
+-static bool cs_etm__is_svc_instr(struct cs_etm_queue *etmq,
++static bool cs_etm__is_svc_instr(struct cs_etm_queue *etmq, u8 trace_chan_id,
+ 				 struct cs_etm_packet *packet,
+ 				 u64 end_addr)
+ {
+@@ -1291,7 +1299,8 @@ static bool cs_etm__is_svc_instr(struct cs_etm_queue *etmq,
+ 		 * so below only read 2 bytes as instruction size for T32.
+ 		 */
+ 		addr = end_addr - 2;
+-		cs_etm__mem_access(etmq, addr, sizeof(instr16), (u8 *)&instr16);
++		cs_etm__mem_access(etmq, trace_chan_id, addr,
++				   sizeof(instr16), (u8 *)&instr16);
+ 		if ((instr16 & 0xFF00) == 0xDF00)
+ 			return true;
+ 
+@@ -1306,7 +1315,8 @@ static bool cs_etm__is_svc_instr(struct cs_etm_queue *etmq,
+ 		 * +---------+---------+-------------------------+
+ 		 */
+ 		addr = end_addr - 4;
+-		cs_etm__mem_access(etmq, addr, sizeof(instr32), (u8 *)&instr32);
++		cs_etm__mem_access(etmq, trace_chan_id, addr,
++				   sizeof(instr32), (u8 *)&instr32);
+ 		if ((instr32 & 0x0F000000) == 0x0F000000 &&
+ 		    (instr32 & 0xF0000000) != 0xF0000000)
+ 			return true;
+@@ -1322,7 +1332,8 @@ static bool cs_etm__is_svc_instr(struct cs_etm_queue *etmq,
+ 		 * +-----------------------+---------+-----------+
+ 		 */
+ 		addr = end_addr - 4;
+-		cs_etm__mem_access(etmq, addr, sizeof(instr32), (u8 *)&instr32);
++		cs_etm__mem_access(etmq, trace_chan_id, addr,
++				   sizeof(instr32), (u8 *)&instr32);
+ 		if ((instr32 & 0xFFE0001F) == 0xd4000001)
+ 			return true;
+ 
+@@ -1338,6 +1349,7 @@ static bool cs_etm__is_svc_instr(struct cs_etm_queue *etmq,
+ static bool cs_etm__is_syscall(struct cs_etm_queue *etmq,
+ 			       struct cs_etm_traceid_queue *tidq, u64 magic)
+ {
++	u8 trace_chan_id = tidq->trace_chan_id;
+ 	struct cs_etm_packet *packet = tidq->packet;
+ 	struct cs_etm_packet *prev_packet = tidq->prev_packet;
+ 
+@@ -1352,7 +1364,7 @@ static bool cs_etm__is_syscall(struct cs_etm_queue *etmq,
+ 	 */
+ 	if (magic == __perf_cs_etmv4_magic) {
+ 		if (packet->exception_number == CS_ETMV4_EXC_CALL &&
+-		    cs_etm__is_svc_instr(etmq, prev_packet,
++		    cs_etm__is_svc_instr(etmq, trace_chan_id, prev_packet,
+ 					 prev_packet->end_addr))
+ 			return true;
+ 	}
+@@ -1390,6 +1402,7 @@ static bool cs_etm__is_sync_exception(struct cs_etm_queue *etmq,
+ 				      struct cs_etm_traceid_queue *tidq,
+ 				      u64 magic)
+ {
++	u8 trace_chan_id = tidq->trace_chan_id;
+ 	struct cs_etm_packet *packet = tidq->packet;
+ 	struct cs_etm_packet *prev_packet = tidq->prev_packet;
+ 
+@@ -1415,7 +1428,7 @@ static bool cs_etm__is_sync_exception(struct cs_etm_queue *etmq,
+ 		 * (SMC, HVC) are taken as sync exceptions.
+ 		 */
+ 		if (packet->exception_number == CS_ETMV4_EXC_CALL &&
+-		    !cs_etm__is_svc_instr(etmq, prev_packet,
++		    !cs_etm__is_svc_instr(etmq, trace_chan_id, prev_packet,
+ 					  prev_packet->end_addr))
+ 			return true;
+ 
+@@ -1439,6 +1452,7 @@ static int cs_etm__set_sample_flags(struct cs_etm_queue *etmq,
+ {
+ 	struct cs_etm_packet *packet = tidq->packet;
+ 	struct cs_etm_packet *prev_packet = tidq->prev_packet;
++	u8 trace_chan_id = tidq->trace_chan_id;
+ 	u64 magic;
+ 	int ret;
+ 
+@@ -1519,7 +1533,8 @@ static int cs_etm__set_sample_flags(struct cs_etm_queue *etmq,
+ 		if (prev_packet->flags == (PERF_IP_FLAG_BRANCH |
+ 					   PERF_IP_FLAG_RETURN |
+ 					   PERF_IP_FLAG_INTERRUPT) &&
+-		    cs_etm__is_svc_instr(etmq, packet, packet->start_addr))
++		    cs_etm__is_svc_instr(etmq, trace_chan_id,
++					 packet, packet->start_addr))
+ 			prev_packet->flags = PERF_IP_FLAG_BRANCH |
+ 					     PERF_IP_FLAG_RETURN |
+ 					     PERF_IP_FLAG_SYSCALLRET;
 -- 
 2.17.1
 
