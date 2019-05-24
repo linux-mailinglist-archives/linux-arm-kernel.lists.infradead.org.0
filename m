@@ -2,92 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 114072A0A6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 23:49:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9EE7A2A0AF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 23:52:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:In-Reply-To:
-	MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=uXUS0S51x5iNPGLPtiWjs11vl/JDyfbuR2atNS15SkU=; b=rYhdya9KPOgAGEuu+2MRm4eAZ
-	GunEmZiL7+v+3PfAw1+xanrVLtu4SJB9b6eXm3JTv4uAQUvQ+McFmQGganvf5QJQqLNlq9RGF8/xQ
-	shUKVVTUhKOilC6OUmEGkDBK000LDmsnBwADiO38a5MquJeFR1+jrU0mT90m9uTEqjcFcI7OD24N8
-	E0mihMytKLQqnJejwZIJGbI/cGA5sUIDDelmkmoP73paKmxcFBZCbBP1WVpHv1OL+l5Xe7EMJ0Ec2
-	r6Ryn1XSQe4rqE/EuCJ5NQuB6n89V7Zq6ObHNiZRBZes95LtLDL6MW4CrvFD6ONcaweUfgUw/7/Fn
-	+muoLjnsA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5C6ZUnTP4wr4j1Oi2iPWIGkGJXF/jrLfGKtqSK2yC88=; b=RVdDjcHJSvqLbA
+	DuMFTAU/QLqSp4rs2MHsqc2Y+0tHHlD/RHeXCD3LiaBi7aZbIihMHk3neEcK2iwQ1AbgQeH4dpnRM
+	mKaFzYXKIsbuvmRCoUqiG116a8QrTEogkHbl42n/wYAG7CbaaSDUxJXkM1hBk+l0Qf2ZFAVAiv34y
+	1YZCIvOt5zYPtlUScCwdk2ce7xuOsh/HfvVZH0rZ4MKQ54XV9UH3udKbOqoT9TOJHwCRzCL6k4ft9
+	hjw2KnykPLelmG5YuC+mTcbUOjNPS71Pkl8VWoDddXTSdmfiBiG0QsBHa4USP8jHehe9vDQLAVITT
+	KvuOFBOdlrnp7wDht0/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUI43-0000Ge-Os; Fri, 24 May 2019 21:49:23 +0000
-Received: from mail-lf1-x133.google.com ([2a00:1450:4864:20::133])
+	id 1hUI6z-0001x0-LJ; Fri, 24 May 2019 21:52:25 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUI3w-0000G9-J4
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 21:49:18 +0000
-Received: by mail-lf1-x133.google.com with SMTP id m15so7545248lfh.4
+ id 1hUI6s-0001wS-O1
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 21:52:20 +0000
+Received: by mail-lj1-x242.google.com with SMTP id q16so1532715ljj.8
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 May 2019 14:49:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-language;
- bh=5RZEgcWxtjLzTQt4Sjotg0HjEBp2rH1aWvGkw6lbHAA=;
- b=UyKRuoYWEY3B/NaU/LF55YdCJWmSkzfdiMiGXer3EnvLiG70H9LpFep9ZZXBGw/qo2
- umUbBQI2tCJt1Yt5esXopJ9plvwoIqAnWBoI0Ho9sS3iSCfY9KLFXhREC5WZmYwJGVD4
- 2Gd3uk8eOKjDJG+g2u4VHeV+xpQs+JNT3SIz2yVEgvvgEnuzdt5ziEXDP+C557Rae4RQ
- kt56DS7WilfPjg+3kO33w8hoLSvn+rjjzgHAXNlinQVpmf649f5YnfcizQR16Y93INcM
- 1Z1uCVmp+iwJJEmZN+J7+xwXmkiRcLLI70yUrNlyu/93SzrJN9fUVWCgS5qvJJ+t3Ajh
- K+gg==
+ Fri, 24 May 2019 14:52:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=AuXh008DwPVUoUfJh8xoJEqHVOdqY/Qbo/taZOoVBiw=;
+ b=rKXnxENHnVqhPbDV4VvBkDnK3OT4VPP4NjvXLzQbUmbK2h/PlqFdN3lj03wlDO/7vt
+ zchANxp1fnJ8nyi3btwcHmckbBrOLWSSWSb7NIOPlSl+XwT02ri6eHwQgaQbi0JE9VPI
+ XXhAQ0uVCZ6q4wx7jGLFKQT0OcTr/Er6wOpYOF96naYlmzv6nkLj39EaaC5jPTIFXEhp
+ zfxf57LvH3RnjBOTnlGd3i8NloVE7EvbIOw0jBO0CjH/cBiCGc5IbcClFs/+VpkNO5kz
+ PYPpGA76IcfeUy49pSbN+0qsKT/0fKyqCwnAbj/sF8oKA/fs+FHViKKZFBVniEYApVnv
+ UY5A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language;
- bh=5RZEgcWxtjLzTQt4Sjotg0HjEBp2rH1aWvGkw6lbHAA=;
- b=V10hIO74E6U6mMAmocvqO1VqEJe4W/cUZZUU7/Feto/mOzCGMfiaSzICPbuv3YuikB
- v1xWOCXKJuQ+Pj7kEW9gsVq5/tiFnms0v6AMU4MZsCmclT0scbjnnqcRelxlrGF02k/9
- 12ti8v7/Tbpd/OPskUUrbr4NXTKFyu+V+m53UMUvNekieCk8+vUWAh4zhXqjJdcgG0kD
- IuWbI+FF/Lc2pF9DbrcpJyjgFbAsD3s1GSREssO4EZSwFwW7GKH61yXB0N2VjFwM8HU5
- 9QqSp2gVqxy078gnrGuUnWsIP7ChuXC+TbtGm1sDUsmQBRPOXGIFMbRApodLLbSschba
- fzHQ==
-X-Gm-Message-State: APjAAAUI7j6ekSWJajWmxP+bOTqajxVgftt3RY7dCNBN6j73nvAuAhEz
- Iz9e6CWUsvN7kNzaJvO9aPY=
-X-Google-Smtp-Source: APXvYqzQWSut3SUKyle7EToIRzBD80zXRDAWRI+RZTEpHXoehh6cX5C0mNGekwjkzi7UNA70rkCQLw==
-X-Received: by 2002:a19:f60f:: with SMTP id x15mr1211201lfe.61.1558734554099; 
- Fri, 24 May 2019 14:49:14 -0700 (PDT)
-Received: from [192.168.1.17] (bkq212.neoplus.adsl.tpnet.pl. [83.28.184.212])
- by smtp.gmail.com with ESMTPSA id
- v12sm721291ljv.49.2019.05.24.14.49.12
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 24 May 2019 14:49:13 -0700 (PDT)
-Subject: Re: Droid 4 backlight support
-To: Pavel Machek <pavel@ucw.cz>, linux-leds@vger.kernel.org,
- linux-kernel@vger.kernel.org, dmurphy@ti.com,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-omap@vger.kernel.org, tony@atomide.com, sre@kernel.org,
- nekit1000@gmail.com, mpartap@gmx.net, merlijn@wizzup.org
-References: <20190523220047.GA15523@amd>
-From: Jacek Anaszewski <jacek.anaszewski@gmail.com>
-Message-ID: <9285721b-8060-df59-7cdb-9cdd00b843ca@gmail.com>
-Date: Fri, 24 May 2019 23:49:10 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=AuXh008DwPVUoUfJh8xoJEqHVOdqY/Qbo/taZOoVBiw=;
+ b=SVIJDY/Ts5QLNZv4Ineu0U+7E9AtKfLe9bzhVR4AliSxyUalyAgALY58wG+FBWHrt1
+ d7Kc4LffRBg4ge9O/svgifNmuAwMZwRc2DxJI4WAo/pg8dO0KNNA957VfngY6KWxmjsG
+ oPxW939+4VBaaP+CdnsC2A6hws4fXNGk0WxHPih9SxAYZGzAaDA2mKicOiAJis04ZBmp
+ Ne1qS6i1ToD3WU5HAKAKW3TpSEdfcQ9VwGwlH1YNaTQc1VFCz9r0tw/ji056Ct0MGQYZ
+ 9jGxP15IsJEPy1FVDtS0jZMkfK8K4rvU8Kf5FiinoF+4Z+t/WffMEKdRoFGj7/BzuUVO
+ /9dw==
+X-Gm-Message-State: APjAAAVBoJqp8xNsdV4c+4WVoMI2XSJpGeVWkzocdyhBnfa10phbwKu7
+ Kq8SdPXIViQhwfQtawwdRlneeIN3XssQHea0YWWd8A==
+X-Google-Smtp-Source: APXvYqxYfaDDuzHIgfNZpZM+zFfqPwrxJQFe0dNnmRKrUfh2JbZ2ONVVjhKmktDtJe44o6jhdj/R5FccoT2LYVtjOCw=
+X-Received: by 2002:a2e:4c7:: with SMTP id a68mr35484221ljf.165.1558734736500; 
+ Fri, 24 May 2019 14:52:16 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190523220047.GA15523@amd>
-Content-Type: multipart/mixed; boundary="------------CA1046244CA7FB683BBA048E"
-Content-Language: en-US
+References: <20190524162651.28189-1-ard.biesheuvel@linaro.org>
+ <20190524162651.28189-3-ard.biesheuvel@linaro.org>
+In-Reply-To: <20190524162651.28189-3-ard.biesheuvel@linaro.org>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Fri, 24 May 2019 23:52:04 +0200
+Message-ID: <CACRpkdZsd+f6ajGKu71y13D7_6aEM_x6d4bJ0dLtGv7GmUYujg@mail.gmail.com>
+Subject: Re: [PATCH v2 2/6] crypto: atmel-ecc: add support for ACPI probing on
+ non-AT91 platforms
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_144916_633664_80BDD07C 
-X-CRM114-Status: GOOD (  18.06  )
+X-CRM114-CacheID: sfid-20190524_145218_843654_01656A02 
+X-CRM114-Status: GOOD (  11.77  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:133 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jacek.anaszewski[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -106,290 +92,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Herbert Xu <herbert@gondor.apana.org.au>,
+ Tudor Ambarus <tudor.ambarus@microchip.com>, linux-crypto@vger.kernel.org,
+ Mika Westerberg <mika.westerberg@linux.intel.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is a multi-part message in MIME format.
---------------CA1046244CA7FB683BBA048E
-Content-Type: text/plain; charset=windows-1252; format=flowed
-Content-Transfer-Encoding: 7bit
+On Fri, May 24, 2019 at 6:27 PM Ard Biesheuvel
+<ard.biesheuvel@linaro.org> wrote:
 
-Hi,
+> The Atmel/Microchip EC508A is a I2C device that could be wired into
+> any platform, and is being used on the Linaro/96boards Secure96
+> mezzanine adapter. This means it could be found on any platform, even
+> on ones that use ACPI enumeration (via PRP0001 devices). So update the
+> code to enable this use case.
+>
+> This involves tweaking the bus rate discovery code to take ACPI probing
+> into account, which records the maximum bus rate as a property of the
+> slave device. For the atmel-ecc code, this means that the effective bus
+> rate should never exceed the maximum rate, unless we are dealing with
+> buggy firmware. Nonetheless, let's just use the existing plumbing to
+> discover the bus rate and keep the existing logic intact.
+>
+> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 
-On 5/24/19 12:00 AM, Pavel Machek wrote:
-> Hi!
-> 
-> Good news .. we have driver for backlight in mainline, AFAICT.
-> 
-> Bad news .. it is called "lm3532::backlight" or something like that. I
-> guess we should switch to ":backlight" or something? It is quite
-> important to do that before someone starts to use the ABI...
-> 
-> And now... we have the driver, but it is not connected to the
-> backlight subsystem. I guess we could make the LED "default on" for
-> now... but if there's better plan, let me know.
+Looks good to me.
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 
-backlight trigger is added to fb_notifier_list
-defined in drivers/video/fbdev/core/fb_notify.c.
-Backlight subsystem is registered on the same notifications
-in drivers/video/backlight.backlight.c.
-
-So they are somehow related.
-
-Regarding the LED class device name - when I tried to come up
-with a description for each standardized LED function I realized
-that in case of many functions it would be indeed very useful
-to have devicename. For backlight LED it would be "associated
-frame buffer device node name, e.g. fb0".
-
-Attached is what I came up with, and I was going to send to the
-list officially with the v5 of LED naming patch set.
-
--- 
-Best regards,
-Jacek Anaszewski
-
---------------CA1046244CA7FB683BBA048E
-Content-Type: text/plain; charset=UTF-8;
- name="led-functions.txt"
-Content-Transfer-Encoding: 7bit
-Content-Disposition: attachment;
- filename="led-functions.txt"
-
-This file presents standardized LED functions and their meaning.
-
-Each LED function is described using below template:
-
-- LED function name
-    NDEV : <function meaning when LED devicename section is absent>
-    DEV  : <function meaning when LED devicename section is present>
-    DEVICENAME : <expected LED devicename for DEV case>
-    TRIGGER: <matching LED trigger>
-
-/* LED functions with corresponding trigger support */
-
-- activity
-    NDEV : system activity
-    DEV  : n/a
-    TRIGGER : "activity"
-
-- backlight
-    NDEV : n/a
-    DEV  : backlight of a frame buffer device
-    DEVICENAME : associated frame buffer device, e.g. fb0
-    TRIGGER: "backlight"
-
-- capslock
-    NDEV : n/a
-    DEV  : keyboard capslock state related to the particular input device
-    DEVICENAME : associated input device, e.g. input1
-    TRIGGER : "kbd-capslock"
-
-- disk
-    NDEV : rw activity on any disk in the system
-    DEV  : rw activity on particular disk
-    DEVICENAME : associated disk, e.g.: hda, sdb
-    TRIGGER : "disk-activity", applies only to NDEV case
-
-- disk-read
-    NDEV : read activity on any disk in the system
-    DEV  : read activity on particular disk
-    DEVICENAME : associted disk, e.g.: hda, sdb
-    TRIGGER : "disk-read", applies only to NDEV case
-
-- disk-write
-    NDEV : write activity on any disk in the system
-    DEV  : write activity on particular disk
-    DEVICENAME : associated disk, .e.g" hda, sdb
-    TRIGGER : "disk-write", applies only to NDEV case
-
-- flash
-    NDEV : flash LED (if there is single available on the platform)
-    DEV  : flash LED related to the particular video device
-    DEVICENAME : associated video device, e.g. v4l2-subdev3
-    TRIGGER : "flash"; this LED can be also controlled by v4l2-flash framework
-
-- flash-front
-    NDEV : n/a
-    DEV  : front flash LED related to the particular video device
-    DEVICENAME : associated video device, e.g. v4l2-subdev3
-    TRIGGER : "flash"; this LED can be also controlled by v4l2-flash framework
-
-- flash-rear
-    NDEV : n/a
-    DEV  : rear flash LED related to the particular video device
-    DEVICENAME : associated video device, e.g. v4l2-subdev3
-    TRIGGER : "flash"; this LED can be also controlled by v4l2-flash framework
-
-- heartbeat
-    NDEV : cpu load average expressed as heartbeat-fashion blink frequency
-    DEV  : n/a
-    TRIGGER : "heartbeat"
-
-- lan
-    NDEV : n/a
-    DEV  : network traffic on selected network device
-    DEVICENAME : associated phy, e.g. phy1
-    TRIGGER : "netdev"
-
-- micmute
-    NDEV : platfrom microphone input mute state
-    DEV  : mute state of a microphone belonging to the particular device
-    DEVICENAME : associated audio device
-    TRIGGER : "audio-micmute"
-
-- mtd
-    NDEV : rw actvity on any mtd device in the system
-    DEV  : rw actvity on particular mtd device
-    DEVICENAME : associated mtd device, e.g mtdN
-    TRIGGER : "mtd"
-
-- mute
-    NDEV : platform audio output mute state
-    DEV  : mute state of particular audio device output
-    DEVICENAME : associated audio device
-    TRIGGER : "audio-mute"
-
-- numlock
-    NDEV : n/a
-    DEV  : keyboard numlock state related to the particular input device
-    DEVICENAME : associated input device, e.g. input1
-    TRIGGER : "kbd-numlock"
-
-- panic
-    NDEV : signals kernel panic
-    DEV  : n/a
-    TRIGGER : "panic"
-
-- scrolllock
-    NDEV : n/a
-    DEV  : keyboard scrollock state related to the particular input device
-    DEVICENAME : associated input device, e.g. input1
-    TRIGGER : "kbd-scrolllock"
-
-- torch
-    NDEV : torch LED (if there is single available on the platform)
-    DEV  : torch LED related to the particular video device
-    DEVICENAME : associated video device, e.g. video1, v4l2-subdev3
-    TRIGGER : "torch"; this LED can be also controlled by v4l2-flash framework
-
-- usb
-    NDEV : activity on any USB port
-    DEV  : activity on a particular USB port
-    DEVICENAME: associated USB device identifier
-    TRIGGER : "usbport"
-
-/* LED functions without corresponding trigger support */
-
-- alarm
-    NDEV : system wide alarm
-    DEV  : n/a
-
-- bluetooth
-    NDEV : activity on platform bluetooth adapter
-    DEV  : activity on bluetooth adapter related to the particular device
-    DEVICENAME : associated device
-
-- boot
-    NDEV : when lit indicates system boot
-    DEV  : n/a
-
-- charging
-    NDEV : battery charging status
-    DEV  : n/a
-
-- debug
-    NDEV : signals if device runs in debug mode
-    DEV  : n/a
-
-- disk-err
-    NDEV : failure on any disk in the system
-    DEV  : failure on particular disk
-    DEVICENAME : associted disk, e.g.: hda, sdb
-
-- fault
-    NDEV : general system fault
-    DEV  : fault on particular system device
-    DEVICENAME : related device name
-
-- indicator
-    NDEV : signals if platform camera sensor is active
-    DEV  : signals if camera sensor related to the particular video device is active
-    DEVICENAME : associated video device, e.g.: v4l2-subdev3
-
-- kbd_backlight	- keyboard backlight
-    NDEV : n/a
-    DEV  : backlight state related to the particular input device
-    DEVICENAME : associated input device, e.g. input1
-
-- mail
-    NDEV : signals a new massage in mailbox
-    DEV  : n/a
-
-- programming
-    NDEV : platform firmware update is in progress
-    DEV  : n/a
-
-- power
-    NDEV : power plug presence indicator
-    DEV  : n/a
-
-- rx
-    NDEV : n/a
-    DEV  : activity on rx line of serial port related to the particular tty device
-    DEVICENAME: associated tty device, e.g.: tty1, ttyUSB2
-
-- sd
-    NDEV : n/a
-    DEV  : activity on sd card related to the particular device
-    DEVICENAME: associated disk, e.g. sdb
-
-- sleep
-    NDEV : signals any variant of system hibernation or suspend state
-    DEV  : n/a
-
-- standby
-    NDEV : device standby status
-    DEV  : n/a
-
-- status
-    NDEV : system wide status LED
-    DEV  : n/a
-
-- system
-    NDEV : system is fully operating
-    DEV  : n/a
-
-- tx
-    NDEV : n/a
-    DEV  : activity on tx line of serial port related to the particular tty device
-    DEVICENAME: associated tty device, e.g.: tty1, ttyUSB2
-
-- wan
-    NDEV : activity on any WAN device
-    DEV  : activity on a particular WAN device
-    DEVICENAME: associated WAN device identifier
-
-- wlan
-    NDEV : activity on any wlan device
-    DEV  : activity on a particular wlan device
-    DEVICENAME: associated wlan device identifier
-
-- wps
-    NDEV : n/a
-    DEV  : wps functionality activation state related to the particular device
-    DEVICENAME : associated device name
-
---------------CA1046244CA7FB683BBA048E
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---------------CA1046244CA7FB683BBA048E--
-
