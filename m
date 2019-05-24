@@ -2,72 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F23A32925E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 10:04:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C81F2927C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 10:10:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9/4c4QFJNiBVEzBxpHSQ+/YOkmm2Q7moNYcYusYnJvA=; b=P0uxqlSpMjEXOt
-	8LNG6/XA+QX9NeBFXCEN1WwcR2acNed3KwC+W9mVBNYnI23CMRhT5SQOKQvVIbv7ZzzIphS5L1C+v
-	4ScAPeZYyhyVGpKZaepod/hXZEY1VnY2PyTaqNJ9oxo52YVDluJ0iB3aKQlxtAey5neNroMuvkcQ/
-	SowbD849GJXI98MlGjzCxsM02G4q2tX4dPBH+uhNTAprmn/PugW3gNxIy8H4LSLcgOf7eJxFubTmc
-	DziPeFg2sm0C1cjkhLxu+piMOs2A4WeWSTpuOSABWaJlPnozYRtCniKXTuZPn7r0Wq17xIYQs4b7+
-	ZJS/5/YtsH6bc9/w3Bxw==;
+	List-Owner; bh=JOH7dU8qOpMRSmKBcnfpFyezEYk9CsrOowug6oHQ3jg=; b=T5leKEnsFAGhe4
+	bpycTLnr5hkGHqyFSYBZtcm66xFGJXpIWIhS3pXUhJU0XY0rO2quk1uB4JyQUjfKEBjdGCyNOqSwf
+	xlui0DK6WASHoBmhbuKSiLLA4HK4CDeZmj7Nhbj6jyW/0sGTUS6dQIqwy68tLn+EccZ2XauxZCdyG
+	NRrU2qMn7iN0JmEBe7kMDXFHmwWRRy1cXl6w7/CGwzLMzKH2rPE7Qsk8NZEddWrG/35dEhYCSNBlT
+	bE/p0x5i5DtKagYnNybJWNit8SpKjWGA2UoamHw1yI93mj7PGbfgniJVfHbv7a85qKOFZ12hsR+ti
+	t1pIqjGHy+xHUBci+94w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hU5CA-0004YR-A9; Fri, 24 May 2019 08:04:54 +0000
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+	id 1hU5Hc-0007jH-0S; Fri, 24 May 2019 08:10:32 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hU5C2-0004X1-3Z
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 08:04:47 +0000
-Received: by mail-qk1-x742.google.com with SMTP id c15so6127398qkl.2
+ id 1hU5HV-0007iZ-Cb
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 08:10:26 +0000
+Received: by mail-lj1-x244.google.com with SMTP id w1so7887498ljw.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 May 2019 01:04:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ Fri, 24 May 2019 01:10:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=LBXfo3f3VBxQHXcdRSMKfsobC/cqHl7OlQRiXsV30VE=;
- b=Up8QcnJHOhogEiKKRZBk7rIW48oCZIkD0YdLLu9spajcuW7/MYtWd3epuGdovq00P/
- SUbc99vqX5gDHrPGwN7Dolt/v7jcwDTPibqK8zKHGAFtJqYgHfxoBXw0+0oNALI2mIfE
- KUT7oul7kXsOiTjUSfdzkVzzqJ1UInOsTxARo=
+ :cc; bh=RcI5nX0zsFocv6c9Dh5dsyELmuugz9pu4xszs0C7sEQ=;
+ b=TuplLlJStenwIfjMi0SPcifzNyONWCjOAlzsqNaVJLUf0JuryBZSSfqTfFouJIuKzD
+ 0YC70wD3x8HwBrd+c6N7bKprIw/j7WEBdykVkNvZ5kfd1Q1dAik3xDID7CXPN47G5nKV
+ 2aBSa3fo6+2pNul3KMaZQtmWsojWbkfJ3TU7f/MQ26mY1/WEdKrxO0X3tLBuaN0kuqw1
+ +YegxUN9DJ/Twi84rwuicS92wlXlg2Ir6jLEZ5BElnExtPPOot/MYLcJ94OvTDN/UACH
+ l3GMGETArM3mdVdYN3y3YkrYU4j8JovLoxeuYk9/NgH+4yLCITdjm01+eKqcIJUoU543
+ lETw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=LBXfo3f3VBxQHXcdRSMKfsobC/cqHl7OlQRiXsV30VE=;
- b=MwBME6DXMYbcTzoj+oHWoGGEj74uPlWftU+cq4uEcHIynSo8plS+HKgiWM8Qa1qJMk
- dDKqRDr3BmklxHIvy5Wbrwu2tsXQYIc4ALPoxFxxynlUf5n1Phc9+74LDsgmA+q+1GvG
- 9YN98JkX8mLMrGo/foU0rCOUSORukyJnkuZdRxBMw00zpXeQwiUUSfeB6J1W9Hs5ZwX6
- acB7pFbVaQmr1CgQv/wJQDvU2rxDcrSk5gYhA95LGYoqNQ32/c2O8GP7ZsjNl/2/gAIx
- QiH3jvjyWeM6oplssz+QsQ4II19MlZB/Raay9kf2Uzh/cIFGM0vOvjxXFdg1skF28y4/
- 4nRA==
-X-Gm-Message-State: APjAAAUuVtDYny0uEgErsYwEiXmWGeFzVeDF0+XR0dDaIWsU8Lr2dQ7e
- PLN26s08oBjPPiww/xSpgSHUOXflk2rXH5dzrdYO2g==
-X-Google-Smtp-Source: APXvYqyB85ubtcUVl583XzKJZMZmxA4tCmm7+GDK24kIDpdUoaqG/G/G21Le/PPOJRIOpUavh90Nb+rOMBaAuEwQaXA=
-X-Received: by 2002:aed:3512:: with SMTP id a18mr85921585qte.181.1558685084516; 
- Fri, 24 May 2019 01:04:44 -0700 (PDT)
+ bh=RcI5nX0zsFocv6c9Dh5dsyELmuugz9pu4xszs0C7sEQ=;
+ b=liVXmbn3uX6KJP6TchBjMaN1ZkRGbaOWxt5mp/ViTC+d1cE5bIL7xUynzwz9hJTo48
+ WwMTNrf78y6vaW3tkc5786Ubk8IGIZhAhfW6VaPRKYDQPZGBaZzTjr38prErX2HDRmrH
+ xdfiTyviib2zhj1B1/0tiGsYyCBbsRRqi0RZVpFpgEM0TPV8EACq/+JzwSL6OGuEnCYI
+ MeOCe6vQPzqf1MTL2J+sxzP7Kb324InhnBoaJGZBsHdkEzmyQQRGZROuE2Uc1JvtZq1s
+ fniq4Li/UvZNiZ+f7gCRCY/cXaw+f8KYw4MvwqGt3ix7UtUNMCwavUV0i0eXaVaj7pby
+ Hn1g==
+X-Gm-Message-State: APjAAAXT/sGe9kKu4oQ8XWxlX9u4IuWjWonHrSIgidiTZwdlq4kHgysa
+ 2RusaTcmWxRcuKfSZ4m1jZVMdkUHYpPs/mpp7jTYoQ==
+X-Google-Smtp-Source: APXvYqwVNWAVXwkUBL7c8AEmHQLOpoFiD7Z4FJzo1VkNZyw8J0vlNLuTHQZ22OQHfGXFRXfI0eoS6GlJNewBVqn8NeY=
+X-Received: by 2002:a2e:9cd1:: with SMTP id g17mr11514251ljj.191.1558685422051; 
+ Fri, 24 May 2019 01:10:22 -0700 (PDT)
 MIME-Version: 1.0
-References: <1557997725-12178-1-git-send-email-andrew-sh.cheng@mediatek.com>
- <1557997725-12178-9-git-send-email-andrew-sh.cheng@mediatek.com>
-In-Reply-To: <1557997725-12178-9-git-send-email-andrew-sh.cheng@mediatek.com>
-From: Hsin-Yi Wang <hsinyi@chromium.org>
-Date: Fri, 24 May 2019 16:04:18 +0800
-Message-ID: <CAJMQK-hF3RT7wPRunE8q4uaEVaS1wkvmQO5t28Poz9ztiJ5Rmg@mail.gmail.com>
-Subject: Re: [PATCH 8/8] devfreq: mediatek: cci devfreq register opp
- notification for SVS support
-To: "Andrew-sh.Cheng" <andrew-sh.cheng@mediatek.com>
+References: <1558683125-31882-1-git-send-email-amelie.delaunay@st.com>
+In-Reply-To: <1558683125-31882-1-git-send-email-amelie.delaunay@st.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Fri, 24 May 2019 10:10:10 +0200
+Message-ID: <CACRpkdbRuveWT8huqpvo6vrSqyF2_g=xcHF+YjAs6AH4xcA65w@mail.gmail.com>
+Subject: Re: [PATCH v2] pinctrl: stmfx: Fix compile issue when CONFIG_OF_GPIO
+ is not defined
+To: Amelie Delaunay <amelie.delaunay@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_010446_252282_FADFFC99 
-X-CRM114-Status: GOOD (  19.61  )
+X-CRM114-CacheID: sfid-20190524_011025_433552_FCF9B872 
+X-CRM114-Status: UNSURE (   7.97  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -78,7 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -90,168 +92,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
- srv_heupstream@mediatek.com, devicetree@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Viresh Kumar <viresh.kumar@linaro.org>,
- linux-pm@vger.kernel.org, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- lkml <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Chanwoo Choi <cw00.choi@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>, fan.chen@mediatek.com,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Alexandre Torgue <alexandre.torgue@st.com>,
+ Randy Dunlap <rdunlap@infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>, kbuild-all@01.org,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, Lee Jones <lee.jones@linaro.org>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 16, 2019 at 9:08 AM Andrew-sh.Cheng
-<andrew-sh.cheng@mediatek.com> wrote:
+On Fri, May 24, 2019 at 9:32 AM Amelie Delaunay <amelie.delaunay@st.com> wrote:
+
+> When CONFIG_GPIO_OF is not defined, struct gpio_chip 'of_node' member does
+> not exist:
+> drivers/pinctrl/pinctrl-stmfx.c: In function 'stmfx_pinctrl_probe':
+> drivers/pinctrl/pinctrl-stmfx.c:652:17: error: 'struct gpio_chip' has no member named 'of_node'
+>      pctl->gpio_chip.of_node = np;
 >
-> From: "Andrew-sh.Cheng" <andrew-sh.cheng@mediatek.com>
->
-> SVS will change the voltage of opp item.
-> CCI devfreq need to react to change frequency.
->
-> Signed-off-by: Andrew-sh.Cheng <andrew-sh.cheng@mediatek.com>
-> ---
->  drivers/devfreq/mt8183-cci-devfreq.c | 63 ++++++++++++++++++++++++++++++++++++
->  1 file changed, 63 insertions(+)
->
-> diff --git a/drivers/devfreq/mt8183-cci-devfreq.c b/drivers/devfreq/mt8183-cci-devfreq.c
-> index 818a167c442f..250c963789f3 100644
-> --- a/drivers/devfreq/mt8183-cci-devfreq.c
-> +++ b/drivers/devfreq/mt8183-cci-devfreq.c
-> @@ -19,7 +19,10 @@ struct cci_devfreq {
->         struct regulator *proc_reg;
->         unsigned long proc_reg_uV;
->         struct clk *cci_clk;
-> +       unsigned long freq;
->         struct notifier_block nb;
-> +       struct notifier_block opp_nb;
-> +       int cci_min_freq;
->  };
->
->  static int cci_devfreq_regulator_notifier(struct notifier_block *nb,
-> @@ -65,17 +68,62 @@ static int cci_devfreq_regulator_notifier(struct notifier_block *nb,
->         return 0;
->  }
->
-> +static int ccidevfreq_opp_notifier(struct notifier_block *nb,
-> +unsigned long event, void *data)
-> +{
-> +       int ret;
-> +       struct dev_pm_opp *opp = data;
-> +       struct cci_devfreq *cci_df = container_of(nb, struct cci_devfreq,
-> +                                                 opp_nb);
-> +       unsigned long   freq, volt, cur_volt;
-> +
-> +       if (event == OPP_EVENT_ADJUST_VOLTAGE) {
-> +               freq = dev_pm_opp_get_freq(opp);
-> +               /* current opp item is changed */
-> +               if (freq == cci_df->freq) {
-> +                       volt = dev_pm_opp_get_voltage(opp);
-> +                       cur_volt = regulator_get_voltage(cci_df->proc_reg);
-> +
-> +                       if (volt > cur_volt) {
-> +                               /* need reduce freq */
-> +                               mutex_lock(&cci_df->devfreq->lock);
-> +                               ret = update_devfreq(cci_df->devfreq);
-> +                               if (ret)
-> +                                       pr_err("Fail to reduce cci frequency by opp notification: %d\n",
-This line is too long
-> +                                              ret);
-> +                               mutex_unlock(&cci_df->devfreq->lock);
-> +                       }
-> +               }
-> +
-> +               if (freq == cci_df->cci_min_freq) {
-> +                       volt = dev_pm_opp_get_voltage(opp);
-> +                       regulator_set_voltage(cci_df->proc_reg, volt, INT_MAX);
-> +               }
-> +       } else if (event == OPP_EVENT_DISABLE) {
-Is this case handled? If not, is this branch needed?
-> +       }
-> +
-> +       return 0;
-> +}
-> +
-> +
->  static int mtk_cci_governor_get_target(struct devfreq *devfreq,
->                                        unsigned long *freq)
->  {
->         struct cci_devfreq *cci_df;
->         struct dev_pm_opp *opp;
-> +       int ret;
->
->         cci_df = dev_get_drvdata(devfreq->dev.parent);
->
->         /* find available frequency */
->         opp = dev_pm_opp_find_freq_ceil_by_volt(devfreq->dev.parent,
->                                                 cci_df->proc_reg_uV);
-> +       ret = PTR_ERR_OR_ZERO(opp);
-> +       if (ret) {
-> +               pr_err("%s[%d], cannot find opp with voltage=%d: %d\n",
-> +                      __func__, __LINE__, cci_df->proc_reg_uV, ret);
-> +               return ret;
-> +       }
->         *freq = dev_pm_opp_get_freq(opp);
->
->         return 0;
-> @@ -87,9 +135,11 @@ static int mtk_cci_governor_event_handler(struct devfreq *devfreq,
->         int ret;
->         struct cci_devfreq *cci_df;
->         struct notifier_block *nb;
-> +       struct notifier_block *opp_nb;
->
->         cci_df = dev_get_drvdata(devfreq->dev.parent);
->         nb = &cci_df->nb;
-> +       opp_nb = &cci_df->opp_nb;
->
->         switch (event) {
->         case DEVFREQ_GOV_START:
-> @@ -100,6 +150,8 @@ static int mtk_cci_governor_event_handler(struct devfreq *devfreq,
->                 if (ret)
->                         pr_err("%s: failed to add governor: %d\n", __func__,
->                                ret);
-> +               opp_nb->notifier_call = ccidevfreq_opp_notifier;
-> +               dev_pm_opp_register_notifier(devfreq->dev.parent, opp_nb);
->                 break;
->
->         case DEVFREQ_GOV_STOP:
-> @@ -141,6 +193,8 @@ static int mtk_cci_devfreq_target(struct device *dev, unsigned long *freq,
->                 return ret;
->         }
->
-> +       cci_df->freq = *freq;
-> +
->         return 0;
->  }
->
-> @@ -152,6 +206,8 @@ static int mtk_cci_devfreq_probe(struct platform_device *pdev)
->  {
->         struct device *cci_dev = &pdev->dev;
->         struct cci_devfreq *cci_df;
-> +       unsigned long freq, volt;
-> +       struct dev_pm_opp *opp;
->         int ret;
->
->         cci_df = devm_kzalloc(cci_dev, sizeof(*cci_df), GFP_KERNEL);
-> @@ -181,6 +237,13 @@ static int mtk_cci_devfreq_probe(struct platform_device *pdev)
->                 return ret;
->         }
->
-> +       /* set voltage lower bound */
-> +       freq = 1;
-> +       opp = dev_pm_opp_find_freq_ceil(cci_dev, &freq);
-> +       cci_df->cci_min_freq = dev_pm_opp_get_freq(opp);
-> +       volt = dev_pm_opp_get_voltage(opp);
-> +       dev_pm_opp_put(opp);
-> +
->         platform_set_drvdata(pdev, cci_df);
->
->         cci_df->devfreq = devm_devfreq_add_device(cci_dev,
+> Fixes: 1490d9f841b1 ("pinctrl: Add STMFX GPIO expander Pinctrl/GPIO driver")
+> Reported-by: kbuild test robot <lkp@intel.com>
+> Signed-off-by: Amelie Delaunay <amelie.delaunay@st.com>
+
+Patch applied for fixes.
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
