@@ -2,76 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0C2C29336
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 10:35:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DE8A29338
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 10:35:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t58BE6E+cwSER8xGz//QMj0P8+/Vp/1taunHpJUO0ao=; b=okU0kTgtuzJ5CU
-	Jp+t6rES6s0vnnDhK7uBUAr5Uqr39ZZlyBmfBiJi4RXuNfvWDC6jRhGSlPGZOI2C7sLedCLFrxyZ+
-	xqvD+rnS/tQDU2fS3F+bFzn9nX9Mmv5dU7FumLNzdrO0BIO8N9io93raA3iPiT90oCbCdJk5RtD7E
-	KwR58HWbwn7lDchzJjo6P3N8h0pXPuzGJa+0/q7+umd/5Fr474u90LZwyoIJmKovdjzyiiTNoJSnY
-	5ZhyHkBlx4ung6x8s5fGBV6O7/n9Hy5rNU9tlSC96IPAGGPwe4/1qcyI27uFh0zGHcD/0myfp9Us1
-	CfJhIZ8OMgO0UrcKV0WA==;
+	List-Owner; bh=NjGm/yqxTRKr+QFsCz4O7td51HF66QZRL4D4zJX39k4=; b=ftIOkQbVpbt+lE
+	Hh5Ycwg25uFipGUxJu8fCX4jdjq0eBlphGPbADSj5B1HsRoGjXQ/rUrnSW9pk6dRTmoyhYMuafkyz
+	jlPn8QsxNJgzMraeX0TrIUeGSYNezkpRH+Npjg9sIXMrAVh5VArZ1VHpwJEjJJyhYaALe27bCeGs7
+	EusZQKbqDdHHGtCXjulbOc7AoQ3KfLdFUlYTyrl6XqJ8UZG+FE0adRSFxeb46aB0SpCwlRC1OSouy
+	LBmoK1+2DjIjAZqScy7tfLJDjg190A7OPK7Ywz+jTDuLSYEcyXRejHa2DEbA3g7jkFCMMCgeW9T/9
+	pdpKM0PJDwAKSKWm3g3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hU5fm-0003ni-3i; Fri, 24 May 2019 08:35:30 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hU5fd-0003mw-Uf
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 08:35:23 +0000
-Received: by mail-qk1-x744.google.com with SMTP id w25so6212668qkj.11
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 May 2019 01:35:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=stihjVpyL81uND5ibC7iaE+uqyg/RcZbMfoVKMB+mtE=;
- b=COOin8sWa/lSfTHzEbCe7QsWKGFHiwbo+Kuqmt7jQDTjGn3ID2t5iZEWRjwnG6By71
- uv4qD+B6V+lTSd1cGxfjm6xdUqKzNvZcPCCozGAex2g3HPLoSyGt0NRZJNju326CVrUV
- MZiPPpSrfATRPBRj69TBl8hi4mwSD9d9Ry0RIkDRDarSJhV7v4vh0sMntfyLf1zjBRF6
- ur+A0Nr18atc8xLW4L1cLh+ev5aI/b8CI+deN/SFEn4H6FL/TkNMHhBha/cCFesIbyQj
- 44MwusoS5aJ1WsuHrDOHZoGBVhNW/7ciTNwIzlDSGh3AbxWasZnSztVK7nzT87PYKu6H
- HZOg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=stihjVpyL81uND5ibC7iaE+uqyg/RcZbMfoVKMB+mtE=;
- b=juvMLjwTZy0mv/U+TDEP2TxCOO6Drqoc/tiNG78Gyn9osEIdgwJLPI0T9Zw2e0G9/q
- OZBW9YMUJCZA65nNA7NPPu4OTvqM3RgUaNzYJ70TamuZrMJ8MHBuG+5fxFLMsyPAuBqw
- 4fUwGe7wQdisNEZf89X+gf3+tQnQf2Ab4xuTwchGUR0IksfYIhrnNds7B+ZJJzSnRjS4
- R32PppN+e5+/pUlfOEAEDdSA5iMDIjVM5dS4jd1rQ0cqBW+pf4ggdw9cwce2+yA05oGx
- beHosoClEuXN7WvIdslSL5NyKeUF5fgVjQYuub6fEeaAUSkyaJq10KtV5dCFkJOAeeYM
- UxYQ==
-X-Gm-Message-State: APjAAAWYtIh/Z2zvyhcqhbuYBF/jzSBNzYkFEgAxjQe1QPaJ18OUt/Ug
- +9wSfJHR9pE8GPOkinHgP23fewC4NiZBo4EtVLirhA==
-X-Google-Smtp-Source: APXvYqzoub85iC3qRkUT/1rqPcbCAqf2PraA42mUh6gZCy1soKl7824Xl/NLHnNFN2zZSje+ohS+z/SwZ9ZQTmdisuQ=
-X-Received: by 2002:a0c:ad85:: with SMTP id w5mr11932788qvc.242.1558686920808; 
- Fri, 24 May 2019 01:35:20 -0700 (PDT)
+	id 1hU5g4-00042c-OD; Fri, 24 May 2019 08:35:48 +0000
+Received: from mail.z3ntu.xyz ([128.199.32.197])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hU5fw-00040n-Du
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 08:35:42 +0000
+Received: from g550jk.localnet (80-110-121-20.cgn.dynamic.surfer.at
+ [80.110.121.20])
+ by mail.z3ntu.xyz (Postfix) with ESMTPSA id 6D2B1C1D14;
+ Fri, 24 May 2019 08:35:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=z3ntu.xyz; s=z3ntu;
+ t=1558686937; bh=8QxbOGfJLKmBY8BnGjqJHLbP9D2w96jkIDyZThAA41g=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=Ojaeizz5pLdCcF0xdLCfW2ni1k4DaVA/6/5fp3iYD4hTrR7fARGyYCfz5XnQRDoHI
+ 7h/ZuL2OpPXI3J+LHDxh1JlHJgpGe2DJBb1PlzoBfqK8WFhvQ3wa5it0XQv1AD4S2X
+ FKdfKRnUKtB9iNVgwby3tNXv0SssAzJNxWfoQYqE=
+From: Luca Weiss <luca@z3ntu.xyz>
+To: Maxime Ripard <maxime.ripard@bootlin.com>
+Subject: Re: [PATCH] arm64: dts: allwinner: a64: Add lradc node
+Date: Fri, 24 May 2019 10:35:36 +0200
+Message-ID: <4343071.IDWclfcoxo@g550jk>
+In-Reply-To: <20190521142544.ma2xfu77bamk4hvc@flea>
+References: <20190518170929.24789-1-luca@z3ntu.xyz>
+ <EF411F71-D257-41FC-9248-B0E3F686B6B9@z3ntu.xyz>
+ <20190521142544.ma2xfu77bamk4hvc@flea>
 MIME-Version: 1.0
-References: <1557753318-11218-1-git-send-email-yannick.fertre@st.com>
- <317f94d6-846f-92e2-bd0f-b44377ea7845@st.com>
-In-Reply-To: <317f94d6-846f-92e2-bd0f-b44377ea7845@st.com>
-From: Benjamin Gaignard <benjamin.gaignard@linaro.org>
-Date: Fri, 24 May 2019 10:35:10 +0200
-Message-ID: <CA+M3ks77XPTZubS8icLdTF3mpQ3OHsvSqX35hHQik3ygRiGSZg@mail.gmail.com>
-Subject: Re: [PATCH v2] drm/stm: ltdc: remove clk_round_rate comment
-To: Philippe CORNU <philippe.cornu@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_013521_992098_6BA51901 
-X-CRM114-Status: GOOD (  19.78  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190524_013540_822949_A754F457 
+X-CRM114-Status: GOOD (  26.67  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -80,7 +59,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ valid 0.5 FROM_SUSPICIOUS_NTLD   From abused NTLD
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -92,60 +71,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Benjamin GAIGNARD <benjamin.gaignard@st.com>,
- David Airlie <airlied@linux.ie>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- Yannick FERTRE <yannick.fertre@st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- Vincent ABRIOU <vincent.abriou@st.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Alexandre TORGUE <alexandre.torgue@st.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TGUgbHVuLiAxMyBtYWkgMjAxOSDDoCAxNjo0NiwgUGhpbGlwcGUgQ09STlUgPHBoaWxpcHBlLmNv
-cm51QHN0LmNvbT4gYSDDqWNyaXQgOgo+Cj4gRGVhciBZYW5uaWNrLAo+Cj4gQWNrZWQtYnk6IFBo
-aWxpcHBlIENvcm51IDxwaGlsaXBwZS5jb3JudUBzdC5jb20+Cj4KQXBwbGllZCBvbiBkcm0tbWlz
-Yy1uZXh0LAoKQmVuamFtaW4KCj4gVGhhbmsgeW91LAo+Cj4gUGhpbGlwcGUgOi0pCj4KPiBPbiA1
-LzEzLzE5IDM6MTUgUE0sIFlhbm5pY2sgRmVydHLDqSB3cm90ZToKPiA+IENsa19yb3VuZF9yYXRl
-IHJldHVybnMgcm91bmRlZCBjbG9jayB3aXRob3V0IGNoYW5naW5nCj4gPiB0aGUgaGFyZHdhcmUg
-aW4gYW55IHdheS4KPiA+IFRoaXMgZnVuY3Rpb24gY291bGRuJ3QgcmVwbGFjZSBzZXRfcmF0ZS9n
-ZXRfcmF0ZSBjYWxscy4KPiA+IFRvZG8gY29tbWVudCBoYXMgYmVlbiByZW1vdmVkICYgYSBuZXcg
-bG9nIGluc2VydGVkLgo+ID4KPiA+IFNpZ25lZC1vZmYtYnk6IFlhbm5pY2sgRmVydHLDqSA8eWFu
-bmljay5mZXJ0cmVAc3QuY29tPgo+ID4gLS0tCj4gPiBDaGFuZ2VzIGluIHYyOgo+ID4gICAgICAg
-LSBDbGtfZW5hYmxlICYgY2xrX2Rpc2FibGUgYXJlIG5lZWRlZCBmb3IgdGhlIFNPQyBTVE0zMkY3
-Cj4gPiAgICAgICAgKG5vdCBmb3IgU1RNMzJNUDEpLiBJIHJldHVybiB0aGlzIHBhcnQgb2YgdGhl
-IHBhdGNoIHRvIG1ha2Ugc3VyZSB0aGUKPiA+ICAgICAgICBkcml2ZXIgaXMgY29tcGF0aWJsZSB3
-aXRoIGFsbCBTT0MgU1RNMzIuCj4gPgo+ID4gICBkcml2ZXJzL2dwdS9kcm0vc3RtL2x0ZGMuYyB8
-IDggKysrLS0tLS0KPiA+ICAgMSBmaWxlIGNoYW5nZWQsIDMgaW5zZXJ0aW9ucygrKSwgNSBkZWxl
-dGlvbnMoLSkKPiA+Cj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUvZHJtL3N0bS9sdGRjLmMg
-Yi9kcml2ZXJzL2dwdS9kcm0vc3RtL2x0ZGMuYwo+ID4gaW5kZXggOTc5MTJlMi4uMTEwNGU3OCAx
-MDA2NDQKPiA+IC0tLSBhL2RyaXZlcnMvZ3B1L2RybS9zdG0vbHRkYy5jCj4gPiArKysgYi9kcml2
-ZXJzL2dwdS9kcm0vc3RtL2x0ZGMuYwo+ID4gQEAgLTUwNywxMSArNTA3LDYgQEAgc3RhdGljIGJv
-b2wgbHRkY19jcnRjX21vZGVfZml4dXAoc3RydWN0IGRybV9jcnRjICpjcnRjLAo+ID4gICAgICAg
-c3RydWN0IGx0ZGNfZGV2aWNlICpsZGV2ID0gY3J0Y190b19sdGRjKGNydGMpOwo+ID4gICAgICAg
-aW50IHJhdGUgPSBtb2RlLT5jbG9jayAqIDEwMDA7Cj4gPgo+ID4gLSAgICAgLyoKPiA+IC0gICAg
-ICAqIFRPRE8gY2xrX3JvdW5kX3JhdGUoKSBkb2VzIG5vdCB3b3JrIHlldC4gV2hlbiByZWFkeSwg
-aXQgY2FuCj4gPiAtICAgICAgKiBiZSB1c2VkIGluc3RlYWQgb2YgY2xrX3NldF9yYXRlKCkgdGhl
-biBjbGtfZ2V0X3JhdGUoKS4KPiA+IC0gICAgICAqLwo+ID4gLQo+ID4gICAgICAgY2xrX2Rpc2Fi
-bGUobGRldi0+cGl4ZWxfY2xrKTsKPiA+ICAgICAgIGlmIChjbGtfc2V0X3JhdGUobGRldi0+cGl4
-ZWxfY2xrLCByYXRlKSA8IDApIHsKPiA+ICAgICAgICAgICAgICAgRFJNX0VSUk9SKCJDYW5ub3Qg
-c2V0IHJhdGUgKCVkSHopIGZvciBwaXhlbCBjbGtcbiIsIHJhdGUpOwo+ID4gQEAgLTUyMSw2ICs1
-MTYsOSBAQCBzdGF0aWMgYm9vbCBsdGRjX2NydGNfbW9kZV9maXh1cChzdHJ1Y3QgZHJtX2NydGMg
-KmNydGMsCj4gPgo+ID4gICAgICAgYWRqdXN0ZWRfbW9kZS0+Y2xvY2sgPSBjbGtfZ2V0X3JhdGUo
-bGRldi0+cGl4ZWxfY2xrKSAvIDEwMDA7Cj4gPgo+ID4gKyAgICAgRFJNX0RFQlVHX0RSSVZFUigi
-cmVxdWVzdGVkIGNsb2NrICVka0h6LCBhZGp1c3RlZCBjbG9jayAlZGtIelxuIiwKPiA+ICsgICAg
-ICAgICAgICAgICAgICAgICAgbW9kZS0+Y2xvY2ssIGFkanVzdGVkX21vZGUtPmNsb2NrKTsKPiA+
-ICsKPiA+ICAgICAgIHJldHVybiB0cnVlOwo+ID4gICB9Cj4gPgo+ID4gLS0KPiA+IDIuNy40Cj4g
-Pgo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4gZHJp
-LWRldmVsIG1haWxpbmcgbGlzdAo+IGRyaS1kZXZlbEBsaXN0cy5mcmVlZGVza3RvcC5vcmcKPiBo
-dHRwczovL2xpc3RzLmZyZWVkZXNrdG9wLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2RyaS1kZXZlbAoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
-LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
-cm5lbAo=
+On Dienstag, 21. Mai 2019 16:25:44 CEST Maxime Ripard wrote:
+> On Tue, May 21, 2019 at 03:52:47PM +0200, luca@z3ntu.xyz wrote:
+> > On May 21, 2019 3:09:55 PM GMT+02:00, Maxime Ripard 
+<maxime.ripard@bootlin.com> wrote:
+> > >On Tue, May 21, 2019 at 08:43:45AM +0200, luca@z3ntu.xyz wrote:
+> > >> On May 20, 2019 1:07:42 PM GMT+02:00, Maxime Ripard
+> > >
+> > ><maxime.ripard@bootlin.com> wrote:
+> > >> >On Sat, May 18, 2019 at 07:09:30PM +0200, Luca Weiss wrote:
+> > >> >> Add a node describing the KEYADC on the A64.
+> > >> >> 
+> > >> >> Signed-off-by: Luca Weiss <luca@z3ntu.xyz>
+> > >> >> ---
+> > >> >> 
+> > >> >>  arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 7 +++++++
+> > >> >>  1 file changed, 7 insertions(+)
+> > >> >> 
+> > >> >> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+> > >> >
+> > >> >b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+> > >> >
+> > >> >> index 7734f70e1057..dc1bf8c1afb5 100644
+> > >> >> --- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+> > >> >> +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+> > >> >> @@ -704,6 +704,13 @@
+> > >> >> 
+> > >> >>  			status = "disabled";
+> > >> >>  		
+> > >> >>  		};
+> > >> >> 
+> > >> >> +		lradc: lradc@1c21800 {
+> > >> >> +			compatible = "allwinner,sun4i-a10-lradc-
+keys";
+> > >> >> +			reg = <0x01c21800 0x100>;
+> > >> >> +			interrupts = <GIC_SPI 30 
+IRQ_TYPE_LEVEL_HIGH>;
+> > >> >> +			status = "disabled";
+> > >> >> +		};
+> > >> >> +
+> > >> >
+> > >> >The controller is pretty different on the A64 compared to the A10.
+> > >
+> > >The
+> > >
+> > >> >A10 has two channels for example, while the A64 has only one.
+> > >> >
+> > >> >It looks like the one in the A83t though, so you can use that
+> > >> >compatible instead.
+> > >> 
+> > >> Looking at the patch for the A83t, the only difference is that it
+> > >> uses a 3/4 instead of a 2/3 voltage divider, nothing is changed with
+> > >> the channels.
+> > >
+> > >I guess you can reuse the A83t compatible here then, and a more
+> > >specific a64 compatible in case we ever need to fix this.
+> > >
+> > >> But I'm also not sure which one (or a different one)
+> > >> is used from looking at the "A64 User Manual".
+> > >
+> > >I'm sorry, what are you referring to with "one" in that sentence?
+> > 
+> > Sorry, I meant I didn't find anything in the A64 user manual whether
+> > a 3/4 or a 2/3 voltage divider (or one with different values) is
+> > used on the A64.
+> 
+> Ok :)
+> 
+> I guess you can just reuse the A83t compatible then, together with the
+> A64's.
+> 
+> Maxime
+> 
+> --
+> Maxime Ripard, Bootlin
+> Embedded Linux and Kernel engineering
+> https://bootlin.com
+
+Hi Maxime,
+I'd submit a v2 with these changes to v1 then:
+                lradc: lradc@1c21800 {
+-                       compatible = "allwinner,sun4i-a10-lradc-keys";
+-                       reg = <0x01c21800 0x100>;
++                       compatible = "allwinner,sun50i-a64-lradc-keys",
++                                    "allwinner,sun8i-a83t-r-lradc";
++                       reg = <0x01c21800 0x400>;
+                        interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>;
+                        status = "disabled";
+                };
+Does that look okay?
+The reg change is due to me not spotting the address being 0x01C2 
+1800---0x01C2 1BFF, so the size should be 0x400 and not 0x100.
+
+Thanks for the feedback,
+Luca
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
