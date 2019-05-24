@@ -2,71 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54EF028F81
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 05:16:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17CAA28FAB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 05:42:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:Subject:To:From:Date:MIME-Version:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=BLbAuanGhOK36qJw9LR/jokFGmqfM6Nzey7t+mx0cq8=; b=k6aWcK8DBO0Cl+IGjC30TK0Rqq
-	PQYoEkAtKDiTI105kBMk4309WWtjpAYsNCvFHWNDmMqdKLohzHMTw7L22sFj/9WZL9SZkYu7k0Sok
-	AP0vlKekNFdgSUl8bEOiTGK0VWkcsstnroG4obd2Z4mBHhfV6honQIUl2oB0rtGEdnZWnH4C55/IM
-	zBV97W/hEUmraZ17tptRNew5TBIZgz24AWVP/Nq5EG41LMYDvgaucR4kY/THFZq1T0duc8UMaCSw8
-	bMezJjNw/uxd1/O3Qbk0V9HUh3BPHdBfZRTgw6aXVnyc0AN6aCq5w/2JMk+VUQa795S8RxXnwdk3l
-	ZJ5XnLSQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MBp7F9sfNfaDD5UDxKFYdfiLStUyobzkzc3a0G2WYLo=; b=Wvmx6nTQWzlhkz
+	etVdH4dfoj3ypuLhEpAzAChJA45bFuyyWs16RDLJbNBbDyN3UaUnhWS1L4naOTHLQyELNYbFt5D1l
+	1GHOx5Cs5Ku+ejOQJnXVMz79J4p7yQY69cDkOTkuB9deE5bSCNP0vhLsEAT+19rvmT3cZQY4jaxv1
+	qwLrfELiy33UA+WHVsrodYXSaTdCEEcOvMBbwHUikK9v6vb/twejAjY46ZNXOOuJnAF+9NqxSfV5k
+	84WSLnYeKR3LpojhLDRp7M2SWakNxjwCbmEW4XimPb9srIOU3XlsBaN0IkKpodu7lp767JS1ZDy6a
+	f26ZhcHcOgR7EbT84TCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hU0h0-0002Th-CN; Fri, 24 May 2019 03:16:26 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
+	id 1hU15h-0001Dq-PO; Fri, 24 May 2019 03:41:57 +0000
+Received: from out2-smtp.messagingengine.com ([66.111.4.26])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hU0gs-0002TL-N4
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 03:16:20 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id AEFED6087A; Fri, 24 May 2019 03:16:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1558667777;
- bh=UfUOkq1yueIuFHRCYwReJukg9DnuYytlPgBSWsYteYI=;
- h=Date:From:To:Cc:Subject:From;
- b=Yx6m/VB2KcpMl2a85QuiJUCONQ5dv/ZK0PkE2IXk/NglQdiAslKZCIlbBB8CtAAAN
- 0Sz8KHOHQi658aI+qT+MYSM6Fm22LFnDTL7OS2th6i2ZQiXyx5MXPWIKAXFP3Rp97c
- yiS/QA5W4P6lXfXeHRl/kMjgB3EIR4AFb+hg3vFY=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED autolearn=no autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- by smtp.codeaurora.org (Postfix) with ESMTP id 7ED2C602F8;
- Fri, 24 May 2019 03:16:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1558667776;
- bh=UfUOkq1yueIuFHRCYwReJukg9DnuYytlPgBSWsYteYI=;
- h=Date:From:To:Cc:Subject:From;
- b=ipYr7kWrhDYzMDqvpORoOVR37GGSUGG5J1iH61s8hM2Kbbc8Fb+oJQy6zdPy6/D7G
- zc7T4QauzYvsCK9YTxkIqwqyJn9UED08wp2wBL4mNpb7pTuObCfc3WMYv9eryfZIq7
- 3+7vxYy9KpPgGRNca09vcC4TjXbzWbxlh8Y79k7Y=
-MIME-Version: 1.0
-Date: Fri, 24 May 2019 11:16:16 +0800
-From: tengfeif@codeaurora.org
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: [PATCH] arm64: break while loop if task had been rescheduled
-Message-ID: <52076172bb8a55305846f6d4dc97bb52@codeaurora.org>
-X-Sender: tengfeif@codeaurora.org
-User-Agent: Roundcube Webmail/1.2.5
+ id 1hU15Z-0001DO-GT
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 03:41:51 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.nyi.internal (Postfix) with ESMTP id 8977820A0E;
+ Thu, 23 May 2019 23:41:43 -0400 (EDT)
+Received: from imap2 ([10.202.2.52])
+ by compute4.internal (MEProxy); Thu, 23 May 2019 23:41:43 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
+ mime-version:message-id:in-reply-to:references:date:from:to:cc
+ :subject:content-type; s=fm2; bh=+hIiWPGPYSLcmO5Et3wtgKtghbuz25z
+ cwRDucrkH8XA=; b=h/rvqKD+rK5HmObyFF9jq+wcc33iHC4bgkxh0Q7FaoDDytG
+ BdbgeoBLndzj6Qc+HPy1HIe+H+C3b4ZUu9IdIynmFwNZgKurjfIW7Put9K3vcErq
+ jAYeuDdugDT+7ihcJoLaUggSpk8GwljHn1bugzcnGJnfNsCPZMH4o4zg1pUz0O/v
+ POCGLcj1T5F4QhteeTyOmPx1JZwMdnOtXQkVzqj6v1U7n6sgHGhIAZEYzUanXz4B
+ C8vsRmmVdSb/+42D2WIdw7IZecOZkybvcksvOhhHCKRil9Q1TCwZdCf/L13mJg+l
+ QT+DsfnO6ADeCTFfGSYT78ycvbLnyf5F9tsx4tg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=+hIiWP
+ GPYSLcmO5Et3wtgKtghbuz25zcwRDucrkH8XA=; b=M7vAUbrc50pd/65gQQOex8
+ zAWOTgSuk2aByBLPKCrOQddcmo0I3du8tPdY9RsyXkb8Zc8XpKcnR+g1/gOPMABz
+ +sAANDslLeS+gVYoypm2J1t29+qypskO1ujlMntkiC8Hjd3vU0spLjfqvb6CYHR6
+ 8DeD1WZ17guIGyt0B3R42UCddhGrLAUnjQRoI5WsCTghx0o216JqgpaAbB42IJdl
+ MMPeO38Qhk3xcMvebKkYzOAbfCooGYbhzAmKsRNYL4YzPR+lfKfPkq/0is0g9mXp
+ X5EOm662VtoLFansPWw9F9hl6ZfPUfoxWqtNLo8ZKOATbpmNYtJtJyl5y1m2rHtw
+ ==
+X-ME-Sender: <xms:82fnXMCx_BNJDjn4rR-ThAVb3Ijn9_I1118ge0tyhX2wJB7xWKOS6g>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduuddrudduhedgjeeiucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepofgfggfkjghffffhvffutgesthdtredtreerjeenucfhrhhomhepfdetnhgu
+ rhgvficulfgvfhhfvghrhidfuceorghnughrvgifsegrjhdrihgurdgruheqnecuffhomh
+ grihhnpehinhhfrhgruggvrggurdhorhhgnecurfgrrhgrmhepmhgrihhlfhhrohhmpegr
+ nhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgvrhfuihiivgeptd
+X-ME-Proxy: <xmx:82fnXD_E4regQxgQxDhNIq4gusLT74rvJAnoqpJGEIpuTUS-Mlzltg>
+ <xmx:82fnXEVI-WbXijp-dCvKWD6cYYtZxmxRjh4TZYWiVobuqsVgptJ5CQ>
+ <xmx:82fnXDssIYltoRH-ZONXSYdLlBrQk5x6jSrs2jPENRYpLqUajei3Hg>
+ <xmx:92fnXCnNaBCwDgleoUVXOkM14f4bDHSboZFquByAKCzWzYKwPZXoIQ>
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+ id B2197E00A2; Thu, 23 May 2019 23:41:39 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.1.6-550-g29afa21-fmstable-20190520v1
+Mime-Version: 1.0
+Message-Id: <c3bd01ed-a2f8-4194-9986-c98efbe47f29@www.fastmail.com>
+In-Reply-To: <20190404044344.4592-1-joel@jms.id.au>
+References: <20190404044344.4592-1-joel@jms.id.au>
+Date: Fri, 24 May 2019 13:11:38 +0930
+From: "Andrew Jeffery" <andrew@aj.id.au>
+To: "Joel Stanley" <joel@jms.id.au>, "Olof Johansson" <olof@lixom.net>,
+ linux-arm-kernel@lists.infradead.org
+Subject: =?UTF-8?Q?Re:_[PATCH_v2]_ARM:_dts:_aspeed:_Add_Power9_and_Power9_CFAM_de?=
+ =?UTF-8?Q?scription?=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_201618_786981_88A51BE9 
-X-CRM114-Status: GOOD (  19.09  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190523_204149_836987_231FBE03 
+X-CRM114-Status: GOOD (  15.57  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.26 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -85,120 +104,390 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, tengfei@codeaurora.org, marc.zyngier@arm.com,
- catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- andreyknvl@google.com, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ linux-aspeed@lists.ozlabs.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-V2hlbiB0YXNrIGlzbid0IGN1cnJlbnQgdGFzaywgdGhpcyB0YXNrJ3Mgc3RhdGUgaGF2ZQpjaGFu
-Y2UgdG8gYmUgY2hhbmdlZCBkdXJpbmcgcHJpbnRpbmcgdGhpcyB0YXNrJ3MKYmFja3RyYWNlLCBz
-byBpdCBpcyBwb3NzaWJsZSB0aGF0IHRhc2sncyBmcCBhbmQgZnArOApoYXZlIHRoZSBzYW1lIHZh
-dWxlLCBzbyBjYW5ub3QgYnJlYWsgdGhlIHdoaWxlIGxvb3AuClRvIGZpeCB0aGlzIGlzc3VlLCB3
-ZSBmaXJzdCBzYXZlIHRoZSB0YXNrJ3Mgc3RhdGUsIHNwCmFuZCBmcCwgdGhlbiB3ZSB3aWxsIGdl
-dCB0aGUgdGFzaydzIGN1cnJlbnQgc3RhdGUsIHNwCmFuZCBmcCBpbiBlYWNoIHdoaWxlIGFnYWlu
-LiB3ZSB3aWxsIHN0b3AgdG8gcHJpbnQKYmFja3RyYWNlIGlmIHdlIGZvdW5kIGFueSBvZiB0aGUg
-dmFsdWVzIGFyZSBkaWZmZXJlbnQKdGhhbiB3aGF0IHdlIHNhdmVkLgoKLyoqKioqKioqKioqKioq
-KioqKioqKioqKioqKioqKioqYW5zd2VyIApxdWVzdGlvbioqKioqKioqKioqKioqKioqKioqKioq
-KioqKioqKioqKiovClRoaXMgaXMgdmVyeSBjb25mdXNpbmcuIElJVUMgaXQgc3VnZ2VzdHMgdGhh
-dCB3aGlsZSBwcmludGluZwp0aGUgYmFja3RyYWNlIGZvciBub24tY3VycmVudCB0YXNrcyB0aGUg
-ZG8vd2hpbGUgbG9vcCBkb2VzIG5vdApleGl0IGJlY2F1c2UgZnAgYW5kIGZwKzggbWlnaHQgaGF2
-ZSB0aGUgc2FtZSB2YWx1ZSA/IFdoZW4gd291bGQKdGhpcyBoYXBwZW4gPyBFdmVuIGluIHRoYXQg
-Y2FzZSB0aGUgY29tbWl0IG1lc3NhZ2UgaGVyZSBkb2VzIG5vdApwcm9wZXJseSBtYXRjaCB0aGUg
-Y2hhbmdlIGluIHRoaXMgcGF0Y2guCgpJbiBvdXIgaXNzdWUsIHdlIGdvdCBmcD1wYz0weEZGRkZG
-RjgwMjVBMTNCQTAsIHNvIGNhbm5vdCBleGl0IHdoaWxlCmxvb3AgaW4gZHVtcF9iYXNrdHJhY2Uo
-KS4KQWZ0ZXIgYW5hbHl6ZSBvdXIgaXNzdWUncyBkdW1wLCB3ZSBmb3VuZCBvbmUgdGFzayhzdWNo
-IGFzOiB0YXNrIEEpCmlzIGV4aXRpbmcgdmlhIGludm9rZSBkb19leGl0KCkgZHVyaW5nIGFub3Ro
-ZXIgdGFzayBpcyBzaG93aW5nIHRhc2sKQSdzIGR1bXB0YXNrLiBJbiBrZXJuZWwgY29kZSwgZG9f
-ZXhpdCgpIGFuZCBleGl0X25vdGlmeSBhcmUgZGVmaW5lZAphcyBmb2xsb3dzOgp2b2lkIG5vcmV0
-dXJuIGRvX2V4aXQobG9uZyBjb2RlKQp7CiAgICAgIC4uLi4uLgogICAgICBleGl0X25vdGlmeSh0
-c2ssIGdyb3VwX2RlYWQpOwogICAgICAuLi4uLi4KfQpzdGF0aWMgdm9pZCBleGl0X25vdGlmeShz
-dHJ1Y3QgdGFza19zdHJ1Y3QgKnRzaywgaW50IGdyb3VwX2RlYWQpCnsKICAgICAgLi4uLi4uCn0K
-QmVjYXVzZSBvZiBleGl0X25vdGlmeSgpIGlzIGEgc3RhdGljIGZ1bmN0aW9uLCBzbyBpdCBpcyBp
-bmxpbmVkIHRvCmRvX2V4aXQoKSB3aGVuIGNvbXBpbGUga2VybmVsLCBzbyB3ZSBjYW4gZ2V0IHBh
-cnRpYWwgYXNzZW1ibHkgY29kZQpvZiBkb19leGl0KCkgYXMgZm9sbG93czoK4oCm4oCmCnsKICAg
-ICAgICAgYm9vbCBhdXRvcmVhcDsKICAgICAgICAgc3RydWN0IHRhc2tfc3RydWN0ICpwLCAqbjsK
-ICAgICAgICAgTElTVF9IRUFEKGRlYWQpOwoKICAgICAgICAgd3JpdGVfbG9ja19pcnEoJnRhc2ts
-aXN0X2xvY2spOwogICAgICBjMTA6ICAgICAgIDkwMDAwMDAwICAgICAgICBhZHJwICAgIHgwLCAw
-IDx0YXNrbGlzdF9sb2NrPgogICAgICBjMTQ6ICAgICAgIDkxMDAwM2U4ICAgICAgICBtb3YgICAg
-IHg4LCBzcAogICAgICBjMTg6ICAgICAgIDkxMDAwMDAwICAgICAgICBhZGQgICAgIHgwLCB4MCwg
-IzB4MAoqLwpzdGF0aWMgdm9pZCBleGl0X25vdGlmeShzdHJ1Y3QgdGFza19zdHJ1Y3QgKnRzaywg
-aW50IGdyb3VwX2RlYWQpCnsKICAgICAgICAgYm9vbCBhdXRvcmVhcDsKICAgICAgICAgc3RydWN0
-IHRhc2tfc3RydWN0ICpwLCAqbjsKICAgICAgICAgTElTVF9IRUFEKGRlYWQpOwogICAgICBjMWM6
-ICAgICAgIGE5MDAyM2U4ICAgICAgICBzdHAgICAgIHg4LCB4OCwgW3NwXQoKICAgICAgICAgd3Jp
-dGVfbG9ja19pcnEoJnRhc2tsaXN0X2xvY2spOwogICAgICBjMjA6ICAgICAgIDk0MDAwMDAwICAg
-ICAgICBibCAgICAgIDAgPF9yYXdfd3JpdGVfbG9ja19pcnE+CiAgICAgIGMyNDogICAgICAgZjk0
-MzUyNjggICAgICAgIGxkciAgICAgeDgsIFt4MTksIzE2OTZdCuKApuKApgogRnJvbSB0aGUgY29k
-ZSAiYzE0OiIgYW5kICJjMWM6Iiwgd2Ugd2lsbCBmaW5kIHNwJ3MgYWRkciB2YWx1ZSBpcyBzdG9y
-ZWQKaW4gc3AgYW5kIHNwKzgsIHNvIHNwJ3MgdmF1bGUgZXF1YWwgKHNwKzgpJ3MgdmFsdWUuCklu
-IG91ciBpc3N1ZSwgdGhlcmUgaXMgYSBjaGFuY2Ugb2YgZnAgcG9pbnQgc3AsIHNvIHRoZXJlIHdp
-bGwgYmUgCmZwPXBjPWZwJ3MKYWRkciB2YWx1ZSxzbyBjb2RlIGNhbm5vdCBicmVhayBmcm9tIHdo
-aWxlIGxvb3AgaW4gZHVtcF9iYWNrdHJhY2UoKS4KCi8qKioqKioqKioqKioqKioqKioqKioqKioq
-KioqKioqKmFuc3dlciAKcXVlc3Rpb24qKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
-LwoKLyoqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqYW5zd2VyIApxdWVzdGlvbioqKioq
-KioqKioqKioqKioqKioqKioqKioqKioqKioqKiovClRoaXMgcGF0Y2ggdHJpZXMgdG8gc3RvcCBw
-cmludGluZyB0aGUgc3RhY2sgZm9yIG5vbi1jdXJyZW50IHRhc2tzCmlmIHRoZWlyIHN0YXRlIGNo
-YW5nZSB3aGlsZSB0aGVyZSBpcyBvbmUgZHVtcF9iYWNrdHJhY2UoKSB0cnlpbmcKdG8gcHJpbnQg
-YmFjayB0cmFjZS4gRG9udCB3ZSBoYXZlIGFueSBsb2NrIHByZXZlbnRpbmcgYSB0YXNrIGluCnRo
-aXMgc2l0dWF0aW9uICh3aGlsZSBkdW1waW5nIGl0J3MgYmFja3RyYWNlKSBmcm9tIHJ1bm5pbmcg
-YWdhaW4Kb3IgY2hhbmdpbmcgc3RhdGUuCkkgaGF2ZW4ndCBmb3VuZCBhbnkgbG9jayBwcmV2ZW50
-aW5nIGEgdGFzayBpbiB0aGlzIHNpdHVhdGlvbiwgYW5kIEkgCnRoaW5rIHdlIHNob3VsZG4ndApw
-cmV2ZW50IHRhc2sgcnVubmluZyBpZiB0aGlzIHRhc2sgaXMgc2NoZWR1bGVkLgovKioqKioqKioq
-KioqKioqKioqKioqKioqKioqKioqKiphbnN3ZXIgCnF1ZXN0aW9uKioqKioqKioqKioqKioqKioq
-KioqKioqKioqKioqKioqKi8KClNpZ25lZC1vZmYtYnk6IFRlbmdmZWkgRmFuIDx0ZW5nZmVpZkBj
-b2RlYXVyb3JhLm9yZz4KLS0tCiAgYXJjaC9hcm02NC9rZXJuZWwvdHJhcHMuYyB8IDIzICsrKysr
-KysrKysrKysrKysrKysrKysrCiAgMSBmaWxlIGNoYW5nZWQsIDIzIGluc2VydGlvbnMoKykKCmRp
-ZmYgLS1naXQgYS9hcmNoL2FybTY0L2tlcm5lbC90cmFwcy5jIGIvYXJjaC9hcm02NC9rZXJuZWwv
-dHJhcHMuYwppbmRleCAyOTc1NTk4Li45ZGY2ZTAyIDEwMDY0NAotLS0gYS9hcmNoL2FybTY0L2tl
-cm5lbC90cmFwcy5jCisrKyBiL2FyY2gvYXJtNjQva2VybmVsL3RyYXBzLmMKQEAgLTEwMyw2ICsx
-MDMsOSBAQCB2b2lkIGR1bXBfYmFja3RyYWNlKHN0cnVjdCBwdF9yZWdzICpyZWdzLCBzdHJ1Y3Qg
-CnRhc2tfc3RydWN0ICp0c2spCiAgewogICAgICBzdHJ1Y3Qgc3RhY2tmcmFtZSBmcmFtZTsKICAg
-ICAgaW50IHNraXAgPSAwOworICAgIGxvbmcgY3VyX3N0YXRlID0gMDsKKyAgICB1bnNpZ25lZCBs
-b25nIGN1cl9zcCA9IDA7CisgICAgdW5zaWduZWQgbG9uZyBjdXJfZnAgPSAwOwoKICAgICAgcHJf
-ZGVidWcoIiVzKHJlZ3MgPSAlcCB0c2sgPSAlcClcbiIsIF9fZnVuY19fLCByZWdzLCB0c2spOwoK
-QEAgLTEyNyw2ICsxMzAsOSBAQCB2b2lkIGR1bXBfYmFja3RyYWNlKHN0cnVjdCBwdF9yZWdzICpy
-ZWdzLCBzdHJ1Y3QgCnRhc2tfc3RydWN0ICp0c2spCiAgICAgICAgICAgKi8KICAgICAgICAgIGZy
-YW1lLmZwID0gdGhyZWFkX3NhdmVkX2ZwKHRzayk7CiAgICAgICAgICBmcmFtZS5wYyA9IHRocmVh
-ZF9zYXZlZF9wYyh0c2spOworICAgICAgICBjdXJfc3RhdGUgPSB0c2stPnN0YXRlOworICAgICAg
-ICBjdXJfc3AgPSB0aHJlYWRfc2F2ZWRfc3AodHNrKTsKKyAgICAgICAgY3VyX2ZwID0gZnJhbWUu
-ZnA7CgovKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKiphbnN3ZXIgCnF1ZXN0aW9uKioq
-KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKi8KU2hvdWxkICdzYXZlZF9zdGF0ZXxzcHxm
-cCcgaW5zdGVhZCBhcyBpdHMgYXBwbGljYWJsZSB0byBub24tY3VycmVudAp0YXNrcyBvbmx5Lgon
-c2F2ZWRfc3RhdGV8c3B8ZnAnIG9ubHkgYXBwbGllcyB0byBub24tY3VycmVudCB0YXNrcy4KCi8q
-KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKmFuc3dlciAKcXVlc3Rpb24qKioqKioqKioq
-KioqKioqKioqKioqKioqKioqKioqKioqLwoKICAgICAgfQogICNpZmRlZiBDT05GSUdfRlVOQ1RJ
-T05fR1JBUEhfVFJBQ0VSCiAgICAgIGZyYW1lLmdyYXBoID0gMDsKQEAgLTEzNCw2ICsxNDAsMjMg
-QEAgdm9pZCBkdW1wX2JhY2t0cmFjZShzdHJ1Y3QgcHRfcmVncyAqcmVncywgc3RydWN0IAp0YXNr
-X3N0cnVjdCAqdHNrKQoKICAgICAgcHJpbnRrKCJDYWxsIHRyYWNlOlxuIik7CiAgICAgIGRvIHsK
-KyAgICAgICAgaWYgKHRzayAhPSBjdXJyZW50ICYmIChjdXJfc3RhdGUgIT0gdHNrLT5zdGF0ZQor
-ICAgICAgICAgICAgLyoKKyAgICAgICAgICAgICAqIFdlIHdvdWxkIG5vdCBiZSBwcmludGluZyBi
-YWNrdHJhY2UgZm9yIHRoZSB0YXNrCisgICAgICAgICAgICAgKiB0aGF0IGhhcyBjaGFuZ2VkIHN0
-YXRlIGZyb20gInNhdmVkIiBzdGF0ZSB0byBvaHRlcgorICAgICAgICAgICAgICogc3RhdGUgYmVm
-b3JlIGhpdHRpbmcgdGhlIGRvLXdoaWxlIGxvb3AgYnV0IGFmdGVyCisgICAgICAgICAgICAgKiBz
-YXZpbmcgdGhlIGN1cnJlbnQgc3RhdGUuIElmIHRhc2sncyBjdXJyZW50IHN0YXRlCisgICAgICAg
-ICAgICAgKiBub3QgZXF1YWwgdGhlICJzYXZlZCIgc3RhdGUsIHRoZW4gd2UgbWF5IHByaW50Cisg
-ICAgICAgICAgICAgKiB3cm9uZyBjYWxsIHRyYWNlIG9yIGVuZCB1cCBpbiBpbmZpbml0ZSB3aGls
-ZSBsb29wCisgICAgICAgICAgICAgKiBpZiAqKGZwKSBhbmQgKihmcCs4KSBhcmUgc2FtZS4gV2hp
-bGUgdGhlIHNpdHVhdGlvbgorICAgICAgICAgICAgICogc2hvdWxkIGJlIHN0b3BlZCBvbmNlIHdl
-IGZvdW5kIHRoZSB0YXNrJ3Mgc3RhdGUKKyAgICAgICAgICAgICAqIGlzIGNoYW5nZWQsIHNvIHdl
-IGRldGVjdCB0aGUgdGFzaydzIGN1cnJlbnQgc3RhdGUsCisgICAgICAgICAgICAgKiBzcCBhbmQg
-ZnAgaW4gZWFjaCB3aGlsZS4KKyAgICAgICAgICAgICAqLworICAgICAgICAgICAgfHwgY3VyX3Nw
-ICE9IHRocmVhZF9zYXZlZF9zcCh0c2spCisgICAgICAgICAgICB8fCBjdXJfZnAgIT0gdGhyZWFk
-X3NhdmVkX2ZwKHRzaykpKSB7CgovKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKiphbnN3
-ZXIgCnF1ZXN0aW9uKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKi8KV2h5IGRvZXMg
-YW55IG9mIHRoZXNlIHRocmVlIG1pc21hdGNoZXMgZGV0ZWN0IHRoZSBwcm9ibGVtYXRpYyB0cmFu
-c2l0aW9uCm5vdCBqdXN0IHRoZSBzdGF0ZSA/CjEuIHdlIGNhbiB1c2UgImN1cl9zdGF0ZSAhPSB0
-c2stPnN0YXRlIiBwcmV2ZW50IHByaW50aW5nIGJhY2t0cmFjZSBpZiAKdGhlIHRhc2sncwogICAg
-c3RhdGUgaXMgY2hhbmdlZCBhZnRlciAic2F2ZWQiIHRhc2sncyBzdGF0ZS4KMi4gd2UgY2FuIHVz
-ZSAiY3VyX3NwICE9IHRocmVhZF9zYXZlZF9zcCh0c2spIiBhbmQgImN1cl9mcCAhPSAKdGhyZWFk
-X3NhdmVkX2ZwKHRzaykiCiAgICBwcmV2ZW50IHByaW50aW5nIGJhY2t0cmFjZSBpZiB0aGUgdGFz
-aydzIHN0YXRlIGlzIGNoYW5nZWQgYmVmb3JlIAoic2F2ZWQiIHRhc2sncwogICAgc3RhdGUuIEJl
-Y2F1c2UgdGhlIHZhbHVlIG9mICJ0aHJlYWRfc2F2ZWRfc3AodHNrKSIgYW5kIAoidGhyZWFkX3Nh
-dmVkX2ZwKHRzaykiCiAgICB3aWxsIG5vdCBlcXVhbCAic2F2ZWQiIHNwKGN1cl9zcCkgYW5kIGZw
-KGN1cl9mcCkuCi8qKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKmFuc3dlciAKcXVlc3Rp
-b24qKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqLwoKX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
-c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+
+
+On Thu, 4 Apr 2019, at 15:14, Joel Stanley wrote:
+> From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+> 
+> To be used by the OpenPower BMC machines.
+> 
+> This provides proper chip IDs but also adds the various sub-devices
+> necessary for the future OCC driver among other. All the added nodes
+> comply with the existing upstream FSI bindings.
+> 
+> Signed-off-by: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+> Signed-off-by: Joel Stanley <joel@jms.id.au>
+
+Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
+
+> ---
+> v2: The first version of this used a bit more magic and was nak'd by
+> Olof. I've reworked it to not use macros. It still needs to be included
+> in the parent device tree after the fsi node is created.
+> 
+>  arch/arm/boot/dts/aspeed-bmc-opp-lanyang.dts  |   2 +
+>  arch/arm/boot/dts/aspeed-bmc-opp-palmetto.dts |  22 ++
+>  arch/arm/boot/dts/aspeed-bmc-opp-romulus.dts  |   8 +
+>  .../boot/dts/aspeed-bmc-opp-witherspoon.dts   |   2 +
+>  arch/arm/boot/dts/aspeed-bmc-opp-zaius.dts    |   2 +
+>  arch/arm/boot/dts/ibm-power9-dual.dtsi        | 248 ++++++++++++++++++
+>  6 files changed, 284 insertions(+)
+>  create mode 100644 arch/arm/boot/dts/ibm-power9-dual.dtsi
+> 
+> diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-lanyang.dts 
+> b/arch/arm/boot/dts/aspeed-bmc-opp-lanyang.dts
+> index 024e52a6cd0f..de95112e2a04 100644
+> --- a/arch/arm/boot/dts/aspeed-bmc-opp-lanyang.dts
+> +++ b/arch/arm/boot/dts/aspeed-bmc-opp-lanyang.dts
+> @@ -322,3 +322,5 @@
+>  &adc {
+>  	status = "okay";
+>  };
+> +
+> +#include "ibm-power9-dual.dtsi"
+> diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-palmetto.dts 
+> b/arch/arm/boot/dts/aspeed-bmc-opp-palmetto.dts
+> index b249da80fb83..b0cb34ccb135 100644
+> --- a/arch/arm/boot/dts/aspeed-bmc-opp-palmetto.dts
+> +++ b/arch/arm/boot/dts/aspeed-bmc-opp-palmetto.dts
+> @@ -347,3 +347,25 @@
+>  		line-name = "BMC_TPM_INT_N";
+>  	};
+>  };
+> +
+> +&fsi {
+> +	cfam@0,0 {
+> +		reg = <0 0>;
+> +		#address-cells = <1>;
+> +		#size-cells = <1>;
+> +		chip-id = <0>;
+> +
+> +		scom@1000 {
+> +			compatible = "ibm,fsi2pib";
+> +			reg = <0x1000 0x400>;
+> +		};
+> +
+> +		fsi_hub0: hub@3400 {
+> +			compatible = "ibm,fsi-master-hub";
+> +			reg = <0x3400 0x400>;
+> +			#address-cells = <2>;
+> +			#size-cells = <0>;
+> +			no-scan-on-init;
+> +		};
+> +	};
+> +};
+> diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-romulus.dts 
+> b/arch/arm/boot/dts/aspeed-bmc-opp-romulus.dts
+> index 76fe994f2ba4..5a6bbb3b6640 100644
+> --- a/arch/arm/boot/dts/aspeed-bmc-opp-romulus.dts
+> +++ b/arch/arm/boot/dts/aspeed-bmc-opp-romulus.dts
+> @@ -296,3 +296,11 @@
+>  &adc {
+>  	status = "okay";
+>  };
+> +
+> +&gfx {
+> +     status = "okay";
+> +     memory-region = <&gfx_memory>;
+> +};
+> +
+> +#include "ibm-power9-dual.dtsi"
+> +
+> diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-witherspoon.dts 
+> b/arch/arm/boot/dts/aspeed-bmc-opp-witherspoon.dts
+> index ad54117c075e..a0a4a0c6bc2a 100644
+> --- a/arch/arm/boot/dts/aspeed-bmc-opp-witherspoon.dts
+> +++ b/arch/arm/boot/dts/aspeed-bmc-opp-witherspoon.dts
+> @@ -592,3 +592,5 @@
+>  &adc {
+>  	status = "okay";
+>  };
+> +
+> +#include "ibm-power9-dual.dtsi"
+> diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-zaius.dts 
+> b/arch/arm/boot/dts/aspeed-bmc-opp-zaius.dts
+> index 2c5aa90a546d..05df11cacb21 100644
+> --- a/arch/arm/boot/dts/aspeed-bmc-opp-zaius.dts
+> +++ b/arch/arm/boot/dts/aspeed-bmc-opp-zaius.dts
+> @@ -435,3 +435,5 @@
+>  &ibt {
+>  	status = "okay";
+>  };
+> +
+> +#include "ibm-power9-dual.dtsi"
+> diff --git a/arch/arm/boot/dts/ibm-power9-dual.dtsi 
+> b/arch/arm/boot/dts/ibm-power9-dual.dtsi
+> new file mode 100644
+> index 000000000000..2abc42eda7b0
+> --- /dev/null
+> +++ b/arch/arm/boot/dts/ibm-power9-dual.dtsi
+> @@ -0,0 +1,248 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +// Copyright 2018 IBM Corp
+> +
+> +&fsi {
+> +	cfam@0,0 {
+> +		reg = <0 0>;
+> +		#address-cells = <1>;
+> +		#size-cells = <1>;
+> +		chip-id = <0>;
+> +
+> +		scom@1000 {
+> +			compatible = "ibm,fsi2pib";
+> +			reg = <0x1000 0x400>;
+> +		};
+> +
+> +		i2c@1800 {
+> +			compatible = "ibm,fsi-i2c-master";
+> +			reg = <0x1800 0x400>;
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +
+> +			cfam0_i2c0: i2c-bus@0 {
+> +				reg = <0>;
+> +			};
+> +
+> +			cfam0_i2c1: i2c-bus@1 {
+> +				reg = <1>;
+> +			};
+> +
+> +			cfam0_i2c2: i2c-bus@2 {
+> +				reg = <2>;
+> +			};
+> +
+> +			cfam0_i2c3: i2c-bus@3 {
+> +				reg = <3>;
+> +			};
+> +
+> +			cfam0_i2c4: i2c-bus@4 {
+> +				reg = <4>;
+> +			};
+> +
+> +			cfam0_i2c5: i2c-bus@5 {
+> +				reg = <5>;
+> +			};
+> +
+> +			cfam0_i2c6: i2c-bus@6 {
+> +				reg = <6>;
+> +			};
+> +
+> +			cfam0_i2c7: i2c-bus@7 {
+> +				reg = <7>;
+> +			};
+> +
+> +			cfam0_i2c8: i2c-bus@8 {
+> +				reg = <8>;
+> +			};
+> +
+> +			cfam0_i2c9: i2c-bus@9 {
+> +				reg = <9>;
+> +			};
+> +
+> +			cfam0_i2c10: i2c-bus@a {
+> +				reg = <10>;
+> +			};
+> +
+> +			cfam0_i2c11: i2c-bus@b {
+> +				reg = <11>;
+> +			};
+> +
+> +			cfam0_i2c12: i2c-bus@c {
+> +				reg = <12>;
+> +			};
+> +
+> +			cfam0_i2c13: i2c-bus@d {
+> +				reg = <13>;
+> +			};
+> +
+> +			cfam0_i2c14: i2c-bus@e {
+> +				reg = <14>;
+> +			};
+> +		};
+> +
+> +		sbefifo@2400 {
+> +			compatible = "ibm,p9-sbefifo";
+> +			reg = <0x2400 0x400>;
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +
+> +			fsi_occ0: occ {
+> +				compatible = "ibm,p9-occ";
+> +			};
+> +		};
+> +
+> +		fsi_hub0: hub@3400 {
+> +			compatible = "fsi-master-hub";
+> +			reg = <0x3400 0x400>;
+> +			#address-cells = <2>;
+> +			#size-cells = <0>;
+> +
+> +			no-scan-on-init;
+> +		};
+> +	};
+> +};
+> +
+> +&fsi_hub0 {
+> +	cfam@1,0 {
+> +		reg = <1 0>;
+> +		#address-cells = <1>;
+> +		#size-cells = <1>;
+> +		chip-id = <1>;
+> +
+> +		scom@1000 {
+> +			compatible = "ibm,fsi2pib";
+> +			reg = <0x1000 0x400>;
+> +		};
+> +
+> +		i2c@1800 {
+> +			compatible = "ibm,fsi-i2c-master";
+> +			reg = <0x1800 0x400>;
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +
+> +			cfam1_i2c0: i2c-bus@0 {
+> +				reg = <0>;
+> +			};
+> +
+> +			cfam1_i2c1: i2c-bus@1 {
+> +				reg = <1>;
+> +			};
+> +
+> +			cfam1_i2c2: i2c-bus@2 {
+> +				reg = <2>;
+> +			};
+> +
+> +			cfam1_i2c3: i2c-bus@3 {
+> +				reg = <3>;
+> +			};
+> +
+> +			cfam1_i2c4: i2c-bus@4 {
+> +				reg = <4>;
+> +			};
+> +
+> +			cfam1_i2c5: i2c-bus@5 {
+> +				reg = <5>;
+> +			};
+> +
+> +			cfam1_i2c6: i2c-bus@6 {
+> +				reg = <6>;
+> +			};
+> +
+> +			cfam1_i2c7: i2c-bus@7 {
+> +				reg = <7>;
+> +			};
+> +
+> +			cfam1_i2c8: i2c-bus@8 {
+> +				reg = <8>;
+> +			};
+> +
+> +			cfam1_i2c9: i2c-bus@9 {
+> +				reg = <9>;
+> +			};
+> +
+> +			cfam1_i2c10: i2c-bus@a {
+> +				reg = <10>;
+> +			};
+> +
+> +			cfam1_i2c11: i2c-bus@b {
+> +				reg = <11>;
+> +			};
+> +
+> +			cfam1_i2c12: i2c-bus@c {
+> +				reg = <12>;
+> +			};
+> +
+> +			cfam1_i2c13: i2c-bus@d {
+> +				reg = <13>;
+> +			};
+> +
+> +			cfam1_i2c14: i2c-bus@e {
+> +				reg = <14>;
+> +			};
+> +		};
+> +
+> +		sbefifo@2400 {
+> +			compatible = "ibm,p9-sbefifo";
+> +			reg = <0x2400 0x400>;
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +
+> +			fsi_occ1: occ {
+> +				compatible = "ibm,p9-occ";
+> +			};
+> +		};
+> +
+> +		fsi_hub1: hub@3400 {
+> +			compatible = "fsi-master-hub";
+> +			reg = <0x3400 0x400>;
+> +			#address-cells = <2>;
+> +			#size-cells = <0>;
+> +
+> +			no-scan-on-init;
+> +		};
+> +	};
+> +};
+> +
+> +/* Legacy OCC numbering (to get rid of when userspace is fixed) */
+> +&fsi_occ0 {
+> +	reg = <1>;
+> +};
+> +
+> +&fsi_occ1 {
+> +	reg = <2>;
+> +};
+> +
+> +/ {
+> +	aliases {
+> +		i2c100 = &cfam0_i2c0;
+> +		i2c101 = &cfam0_i2c1;
+> +		i2c102 = &cfam0_i2c2;
+> +		i2c103 = &cfam0_i2c3;
+> +		i2c104 = &cfam0_i2c4;
+> +		i2c105 = &cfam0_i2c5;
+> +		i2c106 = &cfam0_i2c6;
+> +		i2c107 = &cfam0_i2c7;
+> +		i2c108 = &cfam0_i2c8;
+> +		i2c109 = &cfam0_i2c9;
+> +		i2c110 = &cfam0_i2c10;
+> +		i2c111 = &cfam0_i2c11;
+> +		i2c112 = &cfam0_i2c12;
+> +		i2c113 = &cfam0_i2c13;
+> +		i2c114 = &cfam0_i2c14;
+> +		i2c200 = &cfam1_i2c0;
+> +		i2c201 = &cfam1_i2c1;
+> +		i2c202 = &cfam1_i2c2;
+> +		i2c203 = &cfam1_i2c3;
+> +		i2c204 = &cfam1_i2c4;
+> +		i2c205 = &cfam1_i2c5;
+> +		i2c206 = &cfam1_i2c6;
+> +		i2c207 = &cfam1_i2c7;
+> +		i2c208 = &cfam1_i2c8;
+> +		i2c209 = &cfam1_i2c9;
+> +		i2c210 = &cfam1_i2c10;
+> +		i2c211 = &cfam1_i2c11;
+> +		i2c212 = &cfam1_i2c12;
+> +		i2c213 = &cfam1_i2c13;
+> +		i2c214 = &cfam1_i2c14;
+> +	};
+> +};
+> -- 
+> 2.20.1
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
