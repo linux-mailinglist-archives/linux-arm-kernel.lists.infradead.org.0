@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3AE6A29872
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 15:02:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9150429883
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 15:06:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mRl3iT/FUrDt8FUth0MRFGl63ze53oxqRCAEwBl0jTQ=; b=Ew5HSq+jrfXPvo
-	MzvRd2mFBMvfw9MYSFNtXTnt5r/Pn3obUqqc+SrC8qZkz2iBeZLaSohIA4j74bXTSrSa9hQs+eM1V
-	XTNvL+h7oiw8g9QbJoW/7RrARoT0Dhtu+w1PK9GHlCEKHU2ZiuwDqj2a99DtgB6RsYF1lviaRDKzV
-	pZymAQUP2M5GrxmbgXqzEQ9W1Yd4knHQI4UAcWaCz//ox1xLkRA2SAE76viblof1e3eLcqE3vrPcw
-	Brv6kbb+03CjkTlIEeSe+1pufD4DIb4zPKl7p6OPMbhei6hjcckH7P7/ZhGAPqz+DlAsKrkA2THc/
-	G9nyz3XDaqnPFbb9nj6w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=tMGlOWFwJVAgITCaKDHky/Qm6SfYmWZ+De26IuVQkek=; b=AkydCtPdNpQNqIRExDcmE6DFw
+	Z6O9A6nDTE5ionv6xXLvKyL1EyS5dUn7U5O8ixVSyBWB9WvhB0tpB2IGAGDdojWTBTH3pBRMAVnt0
+	uH1hFkDCVLoOenc3NmHsnlSY8TE6s3m7n7yHO6GXzvltrHijGCdeo7ztxkZ0emML4mxI+JtNKWPx4
+	CrlRfIOlq+wKbjVYXFRCPjgulh6OJTirZALcpi+V3F03soaxvk2EVbJBvYiCl3Diwznjl52V3LEPV
+	7YXTfE9uG+UmrlZwY6o1SY1TV5Wiy9lyV8jvTllS1zGn3tnqXIVSnUGI61wk9rlKA2YbbGVpgW31f
+	vAtP1v9Ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hU9qV-0006C3-Fd; Fri, 24 May 2019 13:02:51 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hU9qP-0006Be-3I
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 13:02:46 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2A794A78;
- Fri, 24 May 2019 06:02:44 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9D5D53F703;
- Fri, 24 May 2019 06:02:41 -0700 (PDT)
-Date: Fri, 24 May 2019 14:02:17 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Dave Martin <Dave.Martin@arm.com>
-Subject: Re: [PATCH 4/8] arm64: Basic Branch Target Identification support
-Message-ID: <20190524130217.GA15566@lakrids.cambridge.arm.com>
-References: <1558693533-13465-1-git-send-email-Dave.Martin@arm.com>
- <1558693533-13465-5-git-send-email-Dave.Martin@arm.com>
+	id 1hU9uL-0007wN-2W; Fri, 24 May 2019 13:06:49 +0000
+Received: from relay12.mail.gandi.net ([217.70.178.232])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hU9uE-0007vt-6X
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 13:06:43 +0000
+Received: from localhost (aaubervilliers-681-1-27-134.w90-88.abo.wanadoo.fr
+ [90.88.147.134]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id C20A420000F;
+ Fri, 24 May 2019 13:06:23 +0000 (UTC)
+Date: Fri, 24 May 2019 15:06:23 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Torsten Duwe <duwe@lst.de>
+Subject: Re: [PATCH 6/6] arm64: dts: allwinner: a64: enable ANX6345 bridge on
+ Teres-I
+Message-ID: <20190524130623.dpkg5z5rdyc2bno4@flea>
+References: <20190523065013.2719D68B05@newverein.lst.de>
+ <20190523065404.BB60F68B20@newverein.lst.de>
+ <CA+E=qVdh-=C5zOYWYj95jLN51EaXFS6B+CQ101-f64q5QmgN3g@mail.gmail.com>
+ <20190524121359.GE15685@lst.de>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1558693533-13465-5-git-send-email-Dave.Martin@arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <20190524121359.GE15685@lst.de>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_060245_153339_BD0CA8C8 
-X-CRM114-Status: GOOD (  20.54  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190524_060642_394881_CDBA702A 
+X-CRM114-Status: GOOD (  12.81  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.232 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,137 +63,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, "H.J. Lu" <hjl.tools@gmail.com>,
- Yu-cheng Yu <yu-cheng.yu@intel.com>, Andrew Jones <drjones@redhat.com>,
- Paul Elliott <paul.elliott@arm.com>, Arnd Bergmann <arnd@arndb.de>,
- Szabolcs Nagy <szabolcs.nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- Richard Henderson <richard.henderson@linaro.org>, linux-kernel@vger.kernel.org,
- Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Sudakshina Das <sudi.das@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, David Airlie <airlied@linux.ie>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Andrzej Hajda <a.hajda@samsung.com>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
+ Sean Paul <seanpaul@chromium.org>, Thomas Gleixner <tglx@linutronix.de>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>,
+ Icenowy Zheng <icenowy@aosc.io>
+Content-Type: multipart/mixed; boundary="===============2937931105382282346=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Dave,
 
-This generally looks good, but I have a few comments below.
+--===============2937931105382282346==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="fsxi6i2r62yvgbvk"
+Content-Disposition: inline
 
-On Fri, May 24, 2019 at 11:25:29AM +0100, Dave Martin wrote:
-> +#define arch_calc_vm_prot_bits(prot, pkey) arm64_calc_vm_prot_bits(prot)
-> +static inline unsigned long arm64_calc_vm_prot_bits(unsigned long prot)
-> +{
-> +	if (system_supports_bti() && (prot & PROT_BTI_GUARDED))
-> +		return VM_ARM64_GP;
-> +
-> +	return 0;
-> +}
-> +
-> +#define arch_vm_get_page_prot(vm_flags) arm64_vm_get_page_prot(vm_flags)
-> +static inline pgprot_t arm64_vm_get_page_prot(unsigned long vm_flags)
-> +{
-> +	return (vm_flags & VM_ARM64_GP) ? __pgprot(PTE_GP) : __pgprot(0);
-> +}
 
-While the architectural name for the PTE bit is GP, it might make more
-sense to call the vm flag VM_ARM64_BTI, since people are more likely to
-recognise BTI than GP as a mnemonic.
+--fsxi6i2r62yvgbvk
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Not a big deal either way, though.
+On Fri, May 24, 2019 at 02:13:59PM +0200, Torsten Duwe wrote:
+> On Thu, May 23, 2019 at 07:48:03AM -0700, Vasily Khoruzhick wrote:
+> > On Wed, May 22, 2019 at 11:54 PM Torsten Duwe <duwe@lst.de> wrote:
+> > >
+> > >
+> > > --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
+> > > +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
+> > > @@ -65,6 +65,21 @@
+> > >                 };
+> > >         };
+> > >
+> > > +       panel: panel {
+> > > +               compatible ="innolux,n116bge", "simple-panel";
+> >
+> > IIRC Rob wanted it to be edp-connector, not simple-panel. Also you
+> > need to introduce edp-connector binding.
+>
+> This line is identically found in
+> arch/arm/boot/dts/rk3288-veyron-chromebook.dtsi and
+> arch/arm64/boot/dts/nvidia/tegra132-norrin.dts
 
-[...]
+That's not really an argument though. These are using rather old
+bindings, and realising that they are flawed and fixing these flaws is
+a natural process.
 
-> diff --git a/arch/arm64/include/asm/ptrace.h b/arch/arm64/include/asm/ptrace.h
-> index b2de329..b868ef11 100644
-> --- a/arch/arm64/include/asm/ptrace.h
-> +++ b/arch/arm64/include/asm/ptrace.h
-> @@ -41,6 +41,7 @@
->  
->  /* Additional SPSR bits not exposed in the UABI */
->  #define PSR_IL_BIT		(1 << 20)
-> +#define PSR_BTYPE_CALL		(2 << 10)
+Maxime
 
-I thought BTYPE was a 2-bit field, so isn't there at leat one other
-value to have a mnemonic for?
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
-Is it an enumeration or a bitmask?
+--fsxi6i2r62yvgbvk
+Content-Type: application/pgp-signature; name="signature.asc"
 
->  #endif /* _UAPI__ASM_HWCAP_H */
-> diff --git a/arch/arm64/include/uapi/asm/mman.h b/arch/arm64/include/uapi/asm/mman.h
-> new file mode 100644
-> index 0000000..4776b43
-> --- /dev/null
-> +++ b/arch/arm64/include/uapi/asm/mman.h
-> @@ -0,0 +1,9 @@
-> +/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
-> +#ifndef _UAPI__ASM_MMAN_H
-> +#define _UAPI__ASM_MMAN_H
-> +
-> +#include <asm-generic/mman.h>
-> +
-> +#define PROT_BTI_GUARDED	0x10		/* BTI guarded page */
+-----BEGIN PGP SIGNATURE-----
 
-From prior discussions, I thought this would be PROT_BTI, without the
-_GUARDED suffix. Do we really need that?
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXOfsTwAKCRDj7w1vZxhR
+xRybAP9iKNkCqyhXQ6xIsRZgZ0sNXT+q0aHuuuRwgIKZaEJwkwEAqakTF1EIu2Pr
+7DcRHe8aaX/5zfuRYUOdKKZ/wNaOdQ0=
+=Mlxd
+-----END PGP SIGNATURE-----
 
-AFAICT, all other PROT_* definitions only have a single underscore, and
-the existing arch-specific flags are PROT_ADI on sparc, and PROT_SAO on
-powerpc.
+--fsxi6i2r62yvgbvk--
 
-[...]
 
-> diff --git a/arch/arm64/kernel/ptrace.c b/arch/arm64/kernel/ptrace.c
-> index b82e0a9..3717b06 100644
-> --- a/arch/arm64/kernel/ptrace.c
-> +++ b/arch/arm64/kernel/ptrace.c
-> @@ -1860,7 +1860,7 @@ void syscall_trace_exit(struct pt_regs *regs)
->   */
->  #define SPSR_EL1_AARCH64_RES0_BITS \
->  	(GENMASK_ULL(63, 32) | GENMASK_ULL(27, 25) | GENMASK_ULL(23, 22) | \
-> -	 GENMASK_ULL(20, 13) | GENMASK_ULL(11, 10) | GENMASK_ULL(5, 5))
-> +	 GENMASK_ULL(20, 13) | GENMASK_ULL(5, 5))
->  #define SPSR_EL1_AARCH32_RES0_BITS \
->  	(GENMASK_ULL(63, 32) | GENMASK_ULL(22, 22) | GENMASK_ULL(20, 20))
-
-Phew; I was worried this would be missed!
-
-[...]
-
-> @@ -741,6 +741,11 @@ static void setup_return(struct pt_regs *regs, struct k_sigaction *ka,
->  	regs->regs[29] = (unsigned long)&user->next_frame->fp;
->  	regs->pc = (unsigned long)ka->sa.sa_handler;
->  
-> +	if (system_supports_bti()) {
-> +		regs->pstate &= ~(regs->pstate & PSR_BTYPE_MASK);
-
-Nit: that can be:
-
-		regs->pstate &= ~PSR_BTYPE_MASK;
-
-> diff --git a/arch/arm64/kernel/syscall.c b/arch/arm64/kernel/syscall.c
-> index 5610ac0..85b456b 100644
-> --- a/arch/arm64/kernel/syscall.c
-> +++ b/arch/arm64/kernel/syscall.c
-> @@ -66,6 +66,7 @@ static void el0_svc_common(struct pt_regs *regs, int scno, int sc_nr,
->  	unsigned long flags = current_thread_info()->flags;
->  
->  	regs->orig_x0 = regs->regs[0];
-> +	regs->pstate &= ~(regs->pstate & PSR_BTYPE_MASK);
-
-Likewise:
-
-	regs->pstate &= ~PSR_BTYPE_MASK;
-
-... though I don't understand why that would matter to syscalls, nor how
-those bits could ever be set given we had to execute an SVC to get here.
-
-What am I missing?
-
-Thanks,
-Mark.
+--===============2937931105382282346==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2937931105382282346==--
+
