@@ -2,48 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8C1C29A54
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 16:48:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D540429A65
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 16:53:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y0sZ0an95GvFr+8RYDJtOpyeXdKg1oYAT1AUIqroO1o=; b=IlAZ42foftX1ZC
-	RVuipFuGAl0qt3I6cKeXjPqkFjn4zlHknERBPi6JulFXdZucWnqEmttc0zyejZ3gX+/UXsKr51fPs
-	SyIyNfDByzj9LZAya9AOYL+pAz6EHECaSYlvxdbueSdjWyBDjUQr4b0qee3mtvPX1Afpq2kBRg577
-	fDBOxJX5N4basS1kXFmAcVpozoLHwtdHBIZLUCfSEigbtCgh+OtMGWXqrzfCSd2ABkU1PirinXz8V
-	SvJIiJ3uk4bwx8smQ+jCa/QeHaLarTh+C7gE0G0zAraA8o9Aq+EfPYbe3ZHkI0VCQ1SbGMZh8UHH5
-	hxt+ViSqO1YiNrXBl3gw==;
+	List-Owner; bh=GWYOEcaWlGY4JzU8+sigCFFHQ0GMqSaZk9GQbmm3UFE=; b=W3Ged7fuLpnO6a
+	zC5/JHP5yh/MDuCgfGfbxCSeuMBNh9OWKDJ7r03x6ys8/7xuINILTBl/IU0Z+2Dyss5uXcUUEsRHu
+	ORhIAOt0NaFq8tXIK0kl+acWHHjyc7Ma7rplDorv0u4waLTNeCM7FdJZwzlj+0yiqwFoHDDYCZ8fX
+	Artyo4NdDO3/12U3BiXF2qfAL1TsojTyJZqWcx7btVb9X0vNObHrbEqDPCZWxJAnVZyvj4is0rY3b
+	FfJaT2AO+PA/JKWBKBEm8zMQUbzDNAbZ0DuIYxBJzmST8lV0UrUxJPd1PewXqbV9Pb6S1O8sFXrNC
+	/pxh393jVaxaNlzk/HZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUBUu-0006nN-G6; Fri, 24 May 2019 14:48:40 +0000
-Received: from foss.arm.com ([217.140.101.70])
+	id 1hUBZP-0000Kv-9U; Fri, 24 May 2019 14:53:19 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUBUL-0006H6-Ly
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 14:48:09 +0000
+ id 1hUBZI-0000KU-0i
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 14:53:13 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 65D31169E;
- Fri, 24 May 2019 07:48:05 -0700 (PDT)
-Received: from filthy-habits.cambridge.arm.com
- (filthy-habits.cambridge.arm.com [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9900D3F575;
- Fri, 24 May 2019 07:48:03 -0700 (PDT)
-From: Marc Zyngier <marc.zyngier@arm.com>
-To: Paolo Bonzini <pbonzini@redhat.com>,
- =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH 3/3] KVM: arm/arm64: Move cc/it checks under hyp's Makefile to
- avoid instrumentation
-Date: Fri, 24 May 2019 15:47:45 +0100
-Message-Id: <20190524144745.227242-4-marc.zyngier@arm.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190524144745.227242-1-marc.zyngier@arm.com>
-References: <20190524144745.227242-1-marc.zyngier@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A735080D;
+ Fri, 24 May 2019 07:53:11 -0700 (PDT)
+Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 27EFA3F575;
+ Fri, 24 May 2019 07:53:09 -0700 (PDT)
+Date: Fri, 24 May 2019 15:53:06 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH 4/8] arm64: Basic Branch Target Identification support
+Message-ID: <20190524145306.GZ28398@e103592.cambridge.arm.com>
+References: <1558693533-13465-1-git-send-email-Dave.Martin@arm.com>
+ <1558693533-13465-5-git-send-email-Dave.Martin@arm.com>
+ <20190524130217.GA15566@lakrids.cambridge.arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190524130217.GA15566@lakrids.cambridge.arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_074806_383715_5DDA137C 
-X-CRM114-Status: GOOD (  20.65  )
+X-CRM114-CacheID: sfid-20190524_075312_067009_F12BC713 
+X-CRM114-Status: GOOD (  34.53  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -64,338 +66,181 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Julien Thierry <julien.thierry@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>, James Morse <james.morse@arm.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: linux-arch@vger.kernel.org, "H.J. Lu" <hjl.tools@gmail.com>,
+ Yu-cheng Yu <yu-cheng.yu@intel.com>, Paul Elliott <paul.elliott@arm.com>,
+ Arnd Bergmann <arnd@arndb.de>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Will Deacon <will.deacon@arm.com>, Andrew Jones <drjones@redhat.com>,
+ Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
+ linux-kernel@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Sudakshina Das <sudi.das@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: James Morse <james.morse@arm.com>
+On Fri, May 24, 2019 at 02:02:17PM +0100, Mark Rutland wrote:
+> Hi Dave,
+> 
+> This generally looks good, but I have a few comments below.
+> 
+> On Fri, May 24, 2019 at 11:25:29AM +0100, Dave Martin wrote:
+> > +#define arch_calc_vm_prot_bits(prot, pkey) arm64_calc_vm_prot_bits(prot)
+> > +static inline unsigned long arm64_calc_vm_prot_bits(unsigned long prot)
+> > +{
+> > +	if (system_supports_bti() && (prot & PROT_BTI_GUARDED))
+> > +		return VM_ARM64_GP;
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +#define arch_vm_get_page_prot(vm_flags) arm64_vm_get_page_prot(vm_flags)
+> > +static inline pgprot_t arm64_vm_get_page_prot(unsigned long vm_flags)
+> > +{
+> > +	return (vm_flags & VM_ARM64_GP) ? __pgprot(PTE_GP) : __pgprot(0);
+> > +}
+> 
+> While the architectural name for the PTE bit is GP, it might make more
+> sense to call the vm flag VM_ARM64_BTI, since people are more likely to
+> recognise BTI than GP as a mnemonic.
+> 
+> Not a big deal either way, though.
 
-KVM has helpers to handle the condition codes of trapped aarch32
-instructions. These are marked __hyp_text and used from HYP, but they
-aren't built by the 'hyp' Makefile, which has all the runes to avoid ASAN
-and KCOV instrumentation.
+I'm happy to change it.  It's a kernel internal flag used in
+approximately zero places.  So whatever name is most intuitive for
+kernel maintainers is fine.  Nobody else needs to look at it.
 
-Move this code to a new hyp/aarch32.c to avoid a hyp-panic when starting
-an aarch32 guest on a host built with the ASAN/KCOV debug options.
+> > diff --git a/arch/arm64/include/asm/ptrace.h b/arch/arm64/include/asm/ptrace.h
+> > index b2de329..b868ef11 100644
+> > --- a/arch/arm64/include/asm/ptrace.h
+> > +++ b/arch/arm64/include/asm/ptrace.h
+> > @@ -41,6 +41,7 @@
+> >  
+> >  /* Additional SPSR bits not exposed in the UABI */
+> >  #define PSR_IL_BIT		(1 << 20)
+> > +#define PSR_BTYPE_CALL		(2 << 10)
+> 
+> I thought BTYPE was a 2-bit field, so isn't there at leat one other
+> value to have a mnemonic for?
+> 
+> Is it an enumeration or a bitmask?
 
-Fixes: 021234ef3752f ("KVM: arm64: Make kvm_condition_valid32() accessible from EL2")
-Fixes: 8cebe750c4d9a ("arm64: KVM: Make kvm_skip_instr32 available to HYP")
-Signed-off-by: James Morse <james.morse@arm.com>
-Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
----
- arch/arm/kvm/hyp/Makefile   |   1 +
- arch/arm64/kvm/hyp/Makefile |   1 +
- virt/kvm/arm/aarch32.c      | 121 --------------------------------
- virt/kvm/arm/hyp/aarch32.c  | 136 ++++++++++++++++++++++++++++++++++++
- 4 files changed, 138 insertions(+), 121 deletions(-)
- create mode 100644 virt/kvm/arm/hyp/aarch32.c
+It's a 2-bit enumeration, and for now this is the only value that the
+kernel uses: this determines the types of BTI landing pad permitted at
+signal handler entry points in BTI guarded pages.
 
-diff --git a/arch/arm/kvm/hyp/Makefile b/arch/arm/kvm/hyp/Makefile
-index d2b5ec9c4b92..ba88b1eca93c 100644
---- a/arch/arm/kvm/hyp/Makefile
-+++ b/arch/arm/kvm/hyp/Makefile
-@@ -11,6 +11,7 @@ CFLAGS_ARMV7VE		   :=$(call cc-option, -march=armv7ve)
- 
- obj-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/hyp/vgic-v3-sr.o
- obj-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/hyp/timer-sr.o
-+obj-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/hyp/aarch32.o
- 
- obj-$(CONFIG_KVM_ARM_HOST) += tlb.o
- obj-$(CONFIG_KVM_ARM_HOST) += cp15-sr.o
-diff --git a/arch/arm64/kvm/hyp/Makefile b/arch/arm64/kvm/hyp/Makefile
-index 82d1904328ad..ea710f674cb6 100644
---- a/arch/arm64/kvm/hyp/Makefile
-+++ b/arch/arm64/kvm/hyp/Makefile
-@@ -10,6 +10,7 @@ KVM=../../../../virt/kvm
- 
- obj-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/hyp/vgic-v3-sr.o
- obj-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/hyp/timer-sr.o
-+obj-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/hyp/aarch32.o
- 
- obj-$(CONFIG_KVM_ARM_HOST) += vgic-v2-cpuif-proxy.o
- obj-$(CONFIG_KVM_ARM_HOST) += sysreg-sr.o
-diff --git a/virt/kvm/arm/aarch32.c b/virt/kvm/arm/aarch32.c
-index 5abbe9b3c652..6880236974b8 100644
---- a/virt/kvm/arm/aarch32.c
-+++ b/virt/kvm/arm/aarch32.c
-@@ -25,127 +25,6 @@
- #include <asm/kvm_emulate.h>
- #include <asm/kvm_hyp.h>
- 
--/*
-- * stolen from arch/arm/kernel/opcodes.c
-- *
-- * condition code lookup table
-- * index into the table is test code: EQ, NE, ... LT, GT, AL, NV
-- *
-- * bit position in short is condition code: NZCV
-- */
--static const unsigned short cc_map[16] = {
--	0xF0F0,			/* EQ == Z set            */
--	0x0F0F,			/* NE                     */
--	0xCCCC,			/* CS == C set            */
--	0x3333,			/* CC                     */
--	0xFF00,			/* MI == N set            */
--	0x00FF,			/* PL                     */
--	0xAAAA,			/* VS == V set            */
--	0x5555,			/* VC                     */
--	0x0C0C,			/* HI == C set && Z clear */
--	0xF3F3,			/* LS == C clear || Z set */
--	0xAA55,			/* GE == (N==V)           */
--	0x55AA,			/* LT == (N!=V)           */
--	0x0A05,			/* GT == (!Z && (N==V))   */
--	0xF5FA,			/* LE == (Z || (N!=V))    */
--	0xFFFF,			/* AL always              */
--	0			/* NV                     */
--};
--
--/*
-- * Check if a trapped instruction should have been executed or not.
-- */
--bool __hyp_text kvm_condition_valid32(const struct kvm_vcpu *vcpu)
--{
--	unsigned long cpsr;
--	u32 cpsr_cond;
--	int cond;
--
--	/* Top two bits non-zero?  Unconditional. */
--	if (kvm_vcpu_get_hsr(vcpu) >> 30)
--		return true;
--
--	/* Is condition field valid? */
--	cond = kvm_vcpu_get_condition(vcpu);
--	if (cond == 0xE)
--		return true;
--
--	cpsr = *vcpu_cpsr(vcpu);
--
--	if (cond < 0) {
--		/* This can happen in Thumb mode: examine IT state. */
--		unsigned long it;
--
--		it = ((cpsr >> 8) & 0xFC) | ((cpsr >> 25) & 0x3);
--
--		/* it == 0 => unconditional. */
--		if (it == 0)
--			return true;
--
--		/* The cond for this insn works out as the top 4 bits. */
--		cond = (it >> 4);
--	}
--
--	cpsr_cond = cpsr >> 28;
--
--	if (!((cc_map[cond] >> cpsr_cond) & 1))
--		return false;
--
--	return true;
--}
--
--/**
-- * adjust_itstate - adjust ITSTATE when emulating instructions in IT-block
-- * @vcpu:	The VCPU pointer
-- *
-- * When exceptions occur while instructions are executed in Thumb IF-THEN
-- * blocks, the ITSTATE field of the CPSR is not advanced (updated), so we have
-- * to do this little bit of work manually. The fields map like this:
-- *
-- * IT[7:0] -> CPSR[26:25],CPSR[15:10]
-- */
--static void __hyp_text kvm_adjust_itstate(struct kvm_vcpu *vcpu)
--{
--	unsigned long itbits, cond;
--	unsigned long cpsr = *vcpu_cpsr(vcpu);
--	bool is_arm = !(cpsr & PSR_AA32_T_BIT);
--
--	if (is_arm || !(cpsr & PSR_AA32_IT_MASK))
--		return;
--
--	cond = (cpsr & 0xe000) >> 13;
--	itbits = (cpsr & 0x1c00) >> (10 - 2);
--	itbits |= (cpsr & (0x3 << 25)) >> 25;
--
--	/* Perform ITAdvance (see page A2-52 in ARM DDI 0406C) */
--	if ((itbits & 0x7) == 0)
--		itbits = cond = 0;
--	else
--		itbits = (itbits << 1) & 0x1f;
--
--	cpsr &= ~PSR_AA32_IT_MASK;
--	cpsr |= cond << 13;
--	cpsr |= (itbits & 0x1c) << (10 - 2);
--	cpsr |= (itbits & 0x3) << 25;
--	*vcpu_cpsr(vcpu) = cpsr;
--}
--
--/**
-- * kvm_skip_instr - skip a trapped instruction and proceed to the next
-- * @vcpu: The vcpu pointer
-- */
--void __hyp_text kvm_skip_instr32(struct kvm_vcpu *vcpu, bool is_wide_instr)
--{
--	bool is_thumb;
--
--	is_thumb = !!(*vcpu_cpsr(vcpu) & PSR_AA32_T_BIT);
--	if (is_thumb && !is_wide_instr)
--		*vcpu_pc(vcpu) += 2;
--	else
--		*vcpu_pc(vcpu) += 4;
--	kvm_adjust_itstate(vcpu);
--}
--
- /*
-  * Table taken from ARMv8 ARM DDI0487B-B, table G1-10.
-  */
-diff --git a/virt/kvm/arm/hyp/aarch32.c b/virt/kvm/arm/hyp/aarch32.c
-new file mode 100644
-index 000000000000..d31f267961e7
---- /dev/null
-+++ b/virt/kvm/arm/hyp/aarch32.c
-@@ -0,0 +1,136 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Hyp portion of the (not much of an) Emulation layer for 32bit guests.
-+ *
-+ * Copyright (C) 2012,2013 - ARM Ltd
-+ * Author: Marc Zyngier <marc.zyngier@arm.com>
-+ *
-+ * based on arch/arm/kvm/emulate.c
-+ * Copyright (C) 2012 - Virtual Open Systems and Columbia University
-+ * Author: Christoffer Dall <c.dall@virtualopensystems.com>
-+ */
-+
-+#include <linux/kvm_host.h>
-+#include <asm/kvm_emulate.h>
-+#include <asm/kvm_hyp.h>
-+
-+/*
-+ * stolen from arch/arm/kernel/opcodes.c
-+ *
-+ * condition code lookup table
-+ * index into the table is test code: EQ, NE, ... LT, GT, AL, NV
-+ *
-+ * bit position in short is condition code: NZCV
-+ */
-+static const unsigned short cc_map[16] = {
-+	0xF0F0,			/* EQ == Z set            */
-+	0x0F0F,			/* NE                     */
-+	0xCCCC,			/* CS == C set            */
-+	0x3333,			/* CC                     */
-+	0xFF00,			/* MI == N set            */
-+	0x00FF,			/* PL                     */
-+	0xAAAA,			/* VS == V set            */
-+	0x5555,			/* VC                     */
-+	0x0C0C,			/* HI == C set && Z clear */
-+	0xF3F3,			/* LS == C clear || Z set */
-+	0xAA55,			/* GE == (N==V)           */
-+	0x55AA,			/* LT == (N!=V)           */
-+	0x0A05,			/* GT == (!Z && (N==V))   */
-+	0xF5FA,			/* LE == (Z || (N!=V))    */
-+	0xFFFF,			/* AL always              */
-+	0			/* NV                     */
-+};
-+
-+/*
-+ * Check if a trapped instruction should have been executed or not.
-+ */
-+bool __hyp_text kvm_condition_valid32(const struct kvm_vcpu *vcpu)
-+{
-+	unsigned long cpsr;
-+	u32 cpsr_cond;
-+	int cond;
-+
-+	/* Top two bits non-zero?  Unconditional. */
-+	if (kvm_vcpu_get_hsr(vcpu) >> 30)
-+		return true;
-+
-+	/* Is condition field valid? */
-+	cond = kvm_vcpu_get_condition(vcpu);
-+	if (cond == 0xE)
-+		return true;
-+
-+	cpsr = *vcpu_cpsr(vcpu);
-+
-+	if (cond < 0) {
-+		/* This can happen in Thumb mode: examine IT state. */
-+		unsigned long it;
-+
-+		it = ((cpsr >> 8) & 0xFC) | ((cpsr >> 25) & 0x3);
-+
-+		/* it == 0 => unconditional. */
-+		if (it == 0)
-+			return true;
-+
-+		/* The cond for this insn works out as the top 4 bits. */
-+		cond = (it >> 4);
-+	}
-+
-+	cpsr_cond = cpsr >> 28;
-+
-+	if (!((cc_map[cond] >> cpsr_cond) & 1))
-+		return false;
-+
-+	return true;
-+}
-+
-+/**
-+ * adjust_itstate - adjust ITSTATE when emulating instructions in IT-block
-+ * @vcpu:	The VCPU pointer
-+ *
-+ * When exceptions occur while instructions are executed in Thumb IF-THEN
-+ * blocks, the ITSTATE field of the CPSR is not advanced (updated), so we have
-+ * to do this little bit of work manually. The fields map like this:
-+ *
-+ * IT[7:0] -> CPSR[26:25],CPSR[15:10]
-+ */
-+static void __hyp_text kvm_adjust_itstate(struct kvm_vcpu *vcpu)
-+{
-+	unsigned long itbits, cond;
-+	unsigned long cpsr = *vcpu_cpsr(vcpu);
-+	bool is_arm = !(cpsr & PSR_AA32_T_BIT);
-+
-+	if (is_arm || !(cpsr & PSR_AA32_IT_MASK))
-+		return;
-+
-+	cond = (cpsr & 0xe000) >> 13;
-+	itbits = (cpsr & 0x1c00) >> (10 - 2);
-+	itbits |= (cpsr & (0x3 << 25)) >> 25;
-+
-+	/* Perform ITAdvance (see page A2-52 in ARM DDI 0406C) */
-+	if ((itbits & 0x7) == 0)
-+		itbits = cond = 0;
-+	else
-+		itbits = (itbits << 1) & 0x1f;
-+
-+	cpsr &= ~PSR_AA32_IT_MASK;
-+	cpsr |= cond << 13;
-+	cpsr |= (itbits & 0x1c) << (10 - 2);
-+	cpsr |= (itbits & 0x3) << 25;
-+	*vcpu_cpsr(vcpu) = cpsr;
-+}
-+
-+/**
-+ * kvm_skip_instr - skip a trapped instruction and proceed to the next
-+ * @vcpu: The vcpu pointer
-+ */
-+void __hyp_text kvm_skip_instr32(struct kvm_vcpu *vcpu, bool is_wide_instr)
-+{
-+	bool is_thumb;
-+
-+	is_thumb = !!(*vcpu_cpsr(vcpu) & PSR_AA32_T_BIT);
-+	if (is_thumb && !is_wide_instr)
-+		*vcpu_pc(vcpu) += 2;
-+	else
-+		*vcpu_pc(vcpu) += 4;
-+	kvm_adjust_itstate(vcpu);
-+}
--- 
-2.20.1
+Possibly it would be clearer to write it
 
+#define PSR_BTYPE_CALL		(0b10 << 10)
+
+but we don't write other ptrace.h constants this way.  In UAPI headers
+we should avoid GCC-isms, but here it's OK since we already rely on this
+syntax internally.
+
+I can change it if you prefer, though my preference is to leave it.
+
+> >  #endif /* _UAPI__ASM_HWCAP_H */
+> > diff --git a/arch/arm64/include/uapi/asm/mman.h b/arch/arm64/include/uapi/asm/mman.h
+> > new file mode 100644
+> > index 0000000..4776b43
+> > --- /dev/null
+> > +++ b/arch/arm64/include/uapi/asm/mman.h
+> > @@ -0,0 +1,9 @@
+> > +/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
+> > +#ifndef _UAPI__ASM_MMAN_H
+> > +#define _UAPI__ASM_MMAN_H
+> > +
+> > +#include <asm-generic/mman.h>
+> > +
+> > +#define PROT_BTI_GUARDED	0x10		/* BTI guarded page */
+> 
+> From prior discussions, I thought this would be PROT_BTI, without the
+> _GUARDED suffix. Do we really need that?
+> 
+> AFAICT, all other PROT_* definitions only have a single underscore, and
+> the existing arch-specific flags are PROT_ADI on sparc, and PROT_SAO on
+> powerpc.
+
+No strong opinon.  I was trying to make the name less obscure, but I'm
+equally happy with PROT_BTI if people prefer that.
+
+> > diff --git a/arch/arm64/kernel/ptrace.c b/arch/arm64/kernel/ptrace.c
+> > index b82e0a9..3717b06 100644
+> > --- a/arch/arm64/kernel/ptrace.c
+> > +++ b/arch/arm64/kernel/ptrace.c
+> > @@ -1860,7 +1860,7 @@ void syscall_trace_exit(struct pt_regs *regs)
+> >   */
+> >  #define SPSR_EL1_AARCH64_RES0_BITS \
+> >  	(GENMASK_ULL(63, 32) | GENMASK_ULL(27, 25) | GENMASK_ULL(23, 22) | \
+> > -	 GENMASK_ULL(20, 13) | GENMASK_ULL(11, 10) | GENMASK_ULL(5, 5))
+> > +	 GENMASK_ULL(20, 13) | GENMASK_ULL(5, 5))
+> >  #define SPSR_EL1_AARCH32_RES0_BITS \
+> >  	(GENMASK_ULL(63, 32) | GENMASK_ULL(22, 22) | GENMASK_ULL(20, 20))
+> 
+> Phew; I was worried this would be missed!
+
+It was.  I had fun debugging that one :)
+
+> > @@ -741,6 +741,11 @@ static void setup_return(struct pt_regs *regs, struct k_sigaction *ka,
+> >  	regs->regs[29] = (unsigned long)&user->next_frame->fp;
+> >  	regs->pc = (unsigned long)ka->sa.sa_handler;
+> >  
+> > +	if (system_supports_bti()) {
+> > +		regs->pstate &= ~(regs->pstate & PSR_BTYPE_MASK);
+> 
+> Nit: that can be:
+> 
+> 		regs->pstate &= ~PSR_BTYPE_MASK;
+
+x & ~y is sensitive to the type of y and can clobber high bits, so I
+prefer not to write it.  GCC generates the same code either way.
+
+However, this will also trip us up elsewhere when the time comes, so
+maybe it's a waste of time working around it here.
+
+If you feel strongly, I'm happy to change it.
+
+> > diff --git a/arch/arm64/kernel/syscall.c b/arch/arm64/kernel/syscall.c
+> > index 5610ac0..85b456b 100644
+> > --- a/arch/arm64/kernel/syscall.c
+> > +++ b/arch/arm64/kernel/syscall.c
+> > @@ -66,6 +66,7 @@ static void el0_svc_common(struct pt_regs *regs, int scno, int sc_nr,
+> >  	unsigned long flags = current_thread_info()->flags;
+> >  
+> >  	regs->orig_x0 = regs->regs[0];
+> > +	regs->pstate &= ~(regs->pstate & PSR_BTYPE_MASK);
+> 
+> Likewise:
+> 
+> 	regs->pstate &= ~PSR_BTYPE_MASK;
+> 
+> ... though I don't understand why that would matter to syscalls, nor how
+> those bits could ever be set given we had to execute an SVC to get here.
+> 
+> What am I missing?
+
+The behaviour is counterintuivite here.  The architecture guarantees to
+preserve BTYPE for traps, faults and asynchronous exceptions, but for a
+synchronous execption from normal architectural execution of an
+exception-generating instruction (SVC/HVC/SMC) the architecture leaves
+it IMP DEF whether BTYPE is preserved or zeroed in SPSR.
+
+I suppose precisely because there's only one way to reach the SVC
+handler, software knows for certain whether zero SPSR.BTYPE in that
+case.  So hardware doesn't need to do it.
+
+This may also simplify some trapping/emulation scenarios, but I need to
+think about that.
+
+Hmmm, I need to go and look at the HVC entry points and SMC emulation in
+KVM though -- similar issues likely apply.  I didn't look.
+
+Same for the bootwrapper, and anything else with exception vectors.
+
+[...]
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
