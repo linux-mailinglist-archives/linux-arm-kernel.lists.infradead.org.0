@@ -2,88 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CBC029B0B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 17:31:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D83E529B45
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 17:39:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Q19tmVw36Av3evao9sueLHGKlb2HgwXoyBIIvz0cxIE=; b=NvjLMuLQS/zFIi
-	mIcjQ9S08K5v4wBP4IWe9aQjbl5KJaFJBUZ0YRKX2gZ9G/oLRubfz1sPlCRQPIumoAWEGwJDfvSdk
-	2FMS3+ST08ISH4662oTtqoYkMGeIx9mogPco/knsHsROjnJUSr7YIqtkQqRIdtuBrLIdhT8paPWKA
-	HzYM6nx9iCv34ZIjC7Qc2yTCilks7RWhqAqdz1sSkWQ/3tZRSbjhDgKHTHC3G3UogOZCtthCk7DGz
-	ETSaD+le9up/VlHNw8AznmC75LPQLUg2XKq0/ei5GC7g3el6VKK5ptrHWDUIl2sY5TSHTxOzsMg/b
-	doBUUL8xdLg1RabaoGng==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=542BBFpyvuT8CVvqrd1j6KWiPUU6UgnsYcwtTfOAeoU=; b=skk1NgivpPZSnQ
+	F127NPi/VNw28cYOnTqdO2WTGVOBVXaUodYPZLjsVaZ7uTNTLiQVqHxXBFQ067jrWgW17Dnq4s5LT
+	4pva2c9I7lkMgjcw2gTu8p6KzWXcdbEi1+t8zkjeyiKjP/oL9OCPL2U8DS9bJ/sA1LuTyM5hl81uR
+	B/oxP0pDggC1qB3wGNo1Ybih+AU1MILiPo3Cejd+aEkx/lpFF6868AB++oPIofqYiZaKyZZldbcFd
+	Ib4QPeEVSj1OSR/xDmKe/lnwYhr+BEK2vXLlgJHvGNS0zc1PyJWXo1Yc3sbCkEltxMcSVbolNDJaN
+	XUR4pvOGnEg5o8fCiLrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUC9s-0005hY-Fd; Fri, 24 May 2019 15:31:00 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUC9l-0005hD-KX
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 15:30:55 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x4OFIB91024824; Fri, 24 May 2019 17:30:45 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=1jp/DW/DgqpUMUcqYc9weRdFKoeCB+M0/u6IuMnuZB0=;
- b=Zqi5Vc3ciXeUwWx7S/qnN197gWTBLlvJTqRrEdNRIJJxf2gy+di8qVVOwKQakb5woNjw
- G0RHy5e9QmZJWlPzPQvPJxT7KryOYynxtpgyEyotHjDDGmrFyH72jlc9CelhyYydTZEF
- rKzwyHLmJceahzT1NY2oc5oeCz/3wC/UKhPFc+Y/jUJ9F+Eg6Cr/zePVN8Y9MmlZWOoZ
- zJK69FVGQa5y8hzzGFtEQ6yFlqOPo1pAht76WBxG18Kr5hCqbHgBIBjUD4VVDig0cfRv
- +3JkzT9Uz/u/+hVFUGOTQjSqZp+JkCjthLsoPVgn1XX6YcThLhMgTQuj5LvePsNlZY6P Gw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2sj774pguq-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Fri, 24 May 2019 17:30:45 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 4B37931;
- Fri, 24 May 2019 15:30:44 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 1BED24FB9;
- Fri, 24 May 2019 15:30:44 +0000 (GMT)
-Received: from SAFEX1HUBCAS23.st.com (10.75.90.46) by Safex1hubcas22.st.com
- (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 24 May
- 2019 17:30:43 +0200
-Received: from localhost (10.201.23.31) by webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 24 May 2019 17:30:43
- +0200
-From: Erwan Le Ray <erwan.leray@st.com>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Rob Herring
- <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>, Maxime Coquelin
- <mcoquelin.stm32@gmail.com>, Alexandre Torgue <alexandre.torgue@st.com>
-Subject: [PATCH 1/1] dt-bindings: stm32: serial: Add optional reset
-Date: Fri, 24 May 2019 17:30:38 +0200
-Message-ID: <1558711838-21174-1-git-send-email-erwan.leray@st.com>
-X-Mailer: git-send-email 1.9.1
+	id 1hUCHe-0007o4-2o; Fri, 24 May 2019 15:39:02 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hUCHW-0007nK-2N
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 15:38:55 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5A62380D;
+ Fri, 24 May 2019 08:38:53 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D06143F575;
+ Fri, 24 May 2019 08:38:50 -0700 (PDT)
+Date: Fri, 24 May 2019 16:38:48 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [PATCH 4/8] arm64: Basic Branch Target Identification support
+Message-ID: <20190524153847.GE15566@lakrids.cambridge.arm.com>
+References: <1558693533-13465-1-git-send-email-Dave.Martin@arm.com>
+ <1558693533-13465-5-git-send-email-Dave.Martin@arm.com>
+ <20190524130217.GA15566@lakrids.cambridge.arm.com>
+ <20190524145306.GZ28398@e103592.cambridge.arm.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.201.23.31]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-24_06:, , signatures=0
+Content-Disposition: inline
+In-Reply-To: <20190524145306.GZ28398@e103592.cambridge.arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_083054_000531_17569109 
-X-CRM114-Status: UNSURE (   9.79  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190524_083854_125523_DB3654D8 
+X-CRM114-Status: GOOD (  40.62  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,35 +66,202 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- Erwan Le Ray <erwan.leray@st.com>, linux-serial@vger.kernel.org,
- Fabrice Gasnier <fabrice.gasnier@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-arch@vger.kernel.org, "H.J. Lu" <hjl.tools@gmail.com>,
+ Yu-cheng Yu <yu-cheng.yu@intel.com>, Paul Elliott <paul.elliott@arm.com>,
+ Arnd Bergmann <arnd@arndb.de>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Will Deacon <will.deacon@arm.com>, Andrew Jones <drjones@redhat.com>,
+ Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
+ linux-kernel@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Sudakshina Das <sudi.das@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-STM32 serial can be reset via reset controller.
-Add an optional reset property to stm32 usart bindings.
+On Fri, May 24, 2019 at 03:53:06PM +0100, Dave Martin wrote:
+> On Fri, May 24, 2019 at 02:02:17PM +0100, Mark Rutland wrote:
+> > On Fri, May 24, 2019 at 11:25:29AM +0100, Dave Martin wrote:
+> > > +#define arch_calc_vm_prot_bits(prot, pkey) arm64_calc_vm_prot_bits(prot)
+> > > +static inline unsigned long arm64_calc_vm_prot_bits(unsigned long prot)
+> > > +{
+> > > +	if (system_supports_bti() && (prot & PROT_BTI_GUARDED))
+> > > +		return VM_ARM64_GP;
+> > > +
+> > > +	return 0;
+> > > +}
+> > > +
+> > > +#define arch_vm_get_page_prot(vm_flags) arm64_vm_get_page_prot(vm_flags)
+> > > +static inline pgprot_t arm64_vm_get_page_prot(unsigned long vm_flags)
+> > > +{
+> > > +	return (vm_flags & VM_ARM64_GP) ? __pgprot(PTE_GP) : __pgprot(0);
+> > > +}
+> > 
+> > While the architectural name for the PTE bit is GP, it might make more
+> > sense to call the vm flag VM_ARM64_BTI, since people are more likely to
+> > recognise BTI than GP as a mnemonic.
+> > 
+> > Not a big deal either way, though.
+> 
+> I'm happy to change it.  It's a kernel internal flag used in
+> approximately zero places.  So whatever name is most intuitive for
+> kernel maintainers is fine.  Nobody else needs to look at it.
 
-Signed-off-by: Erwan Le Ray <erwan.leray@st.com>
+Sure thing; I just know that I'm going to remember what BTI is much more
+easily than I'll remember what GP is.
 
-diff --git a/Documentation/devicetree/bindings/serial/st,stm32-usart.txt b/Documentation/devicetree/bindings/serial/st,stm32-usart.txt
-index 9d3efed..a6b1948 100644
---- a/Documentation/devicetree/bindings/serial/st,stm32-usart.txt
-+++ b/Documentation/devicetree/bindings/serial/st,stm32-usart.txt
-@@ -13,6 +13,7 @@ Required properties:
- - clocks: The input clock of the USART instance
- 
- Optional properties:
-+- resets: Must contain the phandle to the reset controller.
- - pinctrl: The reference on the pins configuration
- - st,hw-flow-ctrl: bool flag to enable hardware flow control.
- - rs485-rts-delay, rs485-rx-during-tx, rs485-rts-active-low,
--- 
-1.9.1
+> > > diff --git a/arch/arm64/include/asm/ptrace.h b/arch/arm64/include/asm/ptrace.h
+> > > index b2de329..b868ef11 100644
+> > > --- a/arch/arm64/include/asm/ptrace.h
+> > > +++ b/arch/arm64/include/asm/ptrace.h
+> > > @@ -41,6 +41,7 @@
+> > >  
+> > >  /* Additional SPSR bits not exposed in the UABI */
+> > >  #define PSR_IL_BIT		(1 << 20)
+> > > +#define PSR_BTYPE_CALL		(2 << 10)
+> > 
+> > I thought BTYPE was a 2-bit field, so isn't there at leat one other
+> > value to have a mnemonic for?
+> > 
+> > Is it an enumeration or a bitmask?
+> 
+> It's a 2-bit enumeration, and for now this is the only value that the
+> kernel uses: this determines the types of BTI landing pad permitted at
+> signal handler entry points in BTI guarded pages.
+> 
+> Possibly it would be clearer to write it
+> 
+> #define PSR_BTYPE_CALL		(0b10 << 10)
+> 
+> but we don't write other ptrace.h constants this way.  In UAPI headers
+> we should avoid GCC-isms, but here it's OK since we already rely on this
+> syntax internally.
+> 
+> I can change it if you prefer, though my preference is to leave it.
 
+I have no issue with the (2 << 10) form, but could we add mnemonics for
+the other values now, even if we're not using them at this instant?
+
+> > >  #endif /* _UAPI__ASM_HWCAP_H */
+> > > diff --git a/arch/arm64/include/uapi/asm/mman.h b/arch/arm64/include/uapi/asm/mman.h
+> > > new file mode 100644
+> > > index 0000000..4776b43
+> > > --- /dev/null
+> > > +++ b/arch/arm64/include/uapi/asm/mman.h
+> > > @@ -0,0 +1,9 @@
+> > > +/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
+> > > +#ifndef _UAPI__ASM_MMAN_H
+> > > +#define _UAPI__ASM_MMAN_H
+> > > +
+> > > +#include <asm-generic/mman.h>
+> > > +
+> > > +#define PROT_BTI_GUARDED	0x10		/* BTI guarded page */
+> > 
+> > From prior discussions, I thought this would be PROT_BTI, without the
+> > _GUARDED suffix. Do we really need that?
+> > 
+> > AFAICT, all other PROT_* definitions only have a single underscore, and
+> > the existing arch-specific flags are PROT_ADI on sparc, and PROT_SAO on
+> > powerpc.
+> 
+> No strong opinon.  I was trying to make the name less obscure, but I'm
+> equally happy with PROT_BTI if people prefer that.
+
+My personal opinion is that PROT_BTI is preferable, but I'll let others
+chime in.
+
+> > > diff --git a/arch/arm64/kernel/ptrace.c b/arch/arm64/kernel/ptrace.c
+> > > index b82e0a9..3717b06 100644
+> > > --- a/arch/arm64/kernel/ptrace.c
+> > > +++ b/arch/arm64/kernel/ptrace.c
+> > > @@ -1860,7 +1860,7 @@ void syscall_trace_exit(struct pt_regs *regs)
+> > >   */
+> > >  #define SPSR_EL1_AARCH64_RES0_BITS \
+> > >  	(GENMASK_ULL(63, 32) | GENMASK_ULL(27, 25) | GENMASK_ULL(23, 22) | \
+> > > -	 GENMASK_ULL(20, 13) | GENMASK_ULL(11, 10) | GENMASK_ULL(5, 5))
+> > > +	 GENMASK_ULL(20, 13) | GENMASK_ULL(5, 5))
+> > >  #define SPSR_EL1_AARCH32_RES0_BITS \
+> > >  	(GENMASK_ULL(63, 32) | GENMASK_ULL(22, 22) | GENMASK_ULL(20, 20))
+> > 
+> > Phew; I was worried this would be missed!
+> 
+> It was.  I had fun debugging that one :)
+> 
+> > > @@ -741,6 +741,11 @@ static void setup_return(struct pt_regs *regs, struct k_sigaction *ka,
+> > >  	regs->regs[29] = (unsigned long)&user->next_frame->fp;
+> > >  	regs->pc = (unsigned long)ka->sa.sa_handler;
+> > >  
+> > > +	if (system_supports_bti()) {
+> > > +		regs->pstate &= ~(regs->pstate & PSR_BTYPE_MASK);
+> > 
+> > Nit: that can be:
+> > 
+> > 		regs->pstate &= ~PSR_BTYPE_MASK;
+> 
+> x & ~y is sensitive to the type of y and can clobber high bits, so I
+> prefer not to write it.  GCC generates the same code either way.
+
+Ah, I thought this might befor type promotion.
+
+> However, this will also trip us up elsewhere when the time comes, so
+> maybe it's a waste of time working around it here.
+> 
+> If you feel strongly, I'm happy to change it.
+
+I'd rather we followed the same pattern as elsewhere, as having this
+special case is confusing, and we'd still have the same bug elsewhere.
+
+My concern here is consistency, so if you want to fix up all instances
+to preserve the upper 32 bits of regs->pstate, I'd be happy. :)
+
+I also think there are nicer/clearer ways to fix the type promotion
+issue, like using UL in the field definitions, using explicit casts, or
+adding helpers to set/clear bits with appropriate promotion.
+
+> > > diff --git a/arch/arm64/kernel/syscall.c b/arch/arm64/kernel/syscall.c
+> > > index 5610ac0..85b456b 100644
+> > > --- a/arch/arm64/kernel/syscall.c
+> > > +++ b/arch/arm64/kernel/syscall.c
+> > > @@ -66,6 +66,7 @@ static void el0_svc_common(struct pt_regs *regs, int scno, int sc_nr,
+> > >  	unsigned long flags = current_thread_info()->flags;
+> > >  
+> > >  	regs->orig_x0 = regs->regs[0];
+> > > +	regs->pstate &= ~(regs->pstate & PSR_BTYPE_MASK);
+> > 
+> > Likewise:
+> > 
+> > 	regs->pstate &= ~PSR_BTYPE_MASK;
+> > 
+> > ... though I don't understand why that would matter to syscalls, nor how
+> > those bits could ever be set given we had to execute an SVC to get here.
+> > 
+> > What am I missing?
+> 
+> The behaviour is counterintuivite here.  The architecture guarantees to
+> preserve BTYPE for traps, faults and asynchronous exceptions, but for a
+> synchronous execption from normal architectural execution of an
+> exception-generating instruction (SVC/HVC/SMC) the architecture leaves
+> it IMP DEF whether BTYPE is preserved or zeroed in SPSR.
+
+I'm still missing something here. IIUC were BTYPE was non-zero, we
+should take the BTI trap before executing the SVC/HVC/SMC, right?
+
+Otherwise, it would be possible to erroneously branch to an SVC/HVC/SMC,
+which would logically violate the BTI protection.
+
+If the assumption is that software can fix that case up, and the ??C
+exception is prioritized above the BTI exception, then I think that we
+should check whether it was permitted rather than silently fixing it up.
+
+> I suppose precisely because there's only one way to reach the SVC
+> handler, software knows for certain whether zero SPSR.BTYPE in that
+> case.  So hardware doesn't need to do it.
+
+As above, I thought BTYPE had to be zero in order for it to be possible
+to execute the SVC/HVC/SMC, but there might be caveats.
+
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
