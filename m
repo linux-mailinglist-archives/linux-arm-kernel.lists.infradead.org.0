@@ -2,44 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0FDA2955E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 12:06:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E88B29562
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 12:06:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=sjSnb4etx7fLdrkonN3qj6WlVuvxY2Y+h/dMDgJ449Y=; b=HgCX7cVomk6nWw
-	pNdFPA1koprlYuKyFb3V3MBeB3RJ87+3DO6QHLFYwJqDFWSjrEmFoMG4GIfTAygNRgAc0Zh9yFVcs
-	yYjgU45OkXjDhkx7dF0Yu/Erze2PtYe3uF3QQq6KztdAJTm860ArQzMW8hdgFTxoAQ/jPFPG+NOuA
-	CplE0IBwvD5tVxOXF5OX/UAZBUFZEx24Y/MGdDeGu39mZIQ0Lc3dnPtzXGp12Jf18eVxGBiVK86X9
-	MdYqpX8DqRhKCH0pZwkE8gZRlRXZoPWmu7hY0hPU33Ig6ZekWJyC2RhOM4WGORNUOJPa0fJwDPWxZ
-	ddvvRIOFgR4R4N9fzPUA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7VT4lPx2xzKfScTJiRzG6caeoM3+FYlqrDaiCrBi43s=; b=Z47WCBKdxdJNo0
+	RzUjASrKfWBxv15eJG/4c+TwQk9lRPvW5ExNpWzeZSpfWr6Qsei6fkYNsCkBAm+KzuCC/bpLloHQy
+	IBfQqTpzn2MQDxdgY1AlpP6F00pJdaADO2eqmvS5SyE01LuewgcUpd/NHcrTZ2MXoOMobqSb71pU9
+	wjMVFDkFIUyCrAZfYxcnboqYjg4FA/7Z3LcrEvu93kuVuzVjFa1Ya8+JafTWTo0odLrZ3Nio/uB0a
+	7yDPNrR4eqhmqzyaF/bw/+n5Ve+T1gkT66av1hPI2s9wkXo7XDWKlbIz915lM8I9KBcbY00NG7IIk
+	RFoxPHztc/puDOJte9Xg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hU75h-0000OK-2G; Fri, 24 May 2019 10:06:21 +0000
+	id 1hU75q-0000Wo-79; Fri, 24 May 2019 10:06:30 +0000
 Received: from relay2-d.mail.gandi.net ([217.70.183.194])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hU75Y-0000LM-Ch
+ id 1hU75Y-0000LN-IN
  for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 10:06:13 +0000
 X-Originating-IP: 90.88.147.134
 Received: from mc-bl-xps13.lan
  (aaubervilliers-681-1-27-134.w90-88.abo.wanadoo.fr [90.88.147.134])
  (Authenticated sender: maxime.chevallier@bootlin.com)
- by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 559E740013;
- Fri, 24 May 2019 10:05:58 +0000 (UTC)
+ by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id A84EA40019;
+ Fri, 24 May 2019 10:06:01 +0000 (UTC)
 From: Maxime Chevallier <maxime.chevallier@bootlin.com>
 To: davem@davemloft.net
-Subject: [PATCH net-next 0/5] net: mvpp2: Classifier updates, RSS
-Date: Fri, 24 May 2019 12:05:49 +0200
-Message-Id: <20190524100554.8606-1-maxime.chevallier@bootlin.com>
+Subject: [PATCH net-next 1/5] net: mvpp2: cls: Use the correct number of rules
+ in various places
+Date: Fri, 24 May 2019 12:05:50 +0200
+Message-Id: <20190524100554.8606-2-maxime.chevallier@bootlin.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190524100554.8606-1-maxime.chevallier@bootlin.com>
+References: <20190524100554.8606-1-maxime.chevallier@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_030612_583823_C8010D87 
-X-CRM114-Status: UNSURE (   7.90  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190524_030612_752578_45A37AD0 
+X-CRM114-Status: GOOD (  13.69  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -71,37 +73,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello everyone,
+As of today, the classification offload implementation only supports 4
+different rules to be offloaded. This number has been hardcoded in the
+rule insertion function, and the wrong define is being used elsewhere.
 
-Here is a set of updates for the PPv2 classifier, the main feature being
-the support for steering to RSS contexts, to leverage all the available
-RSS tables in the controller.
+Use the correct #define everywhere to make sure we always check for the
+correct number of rules.
 
-The first two patches are non-critical fixes for the classifier, the
-first one prevents us from allocating too much room to store the
-classification rules, the second one configuring the C2 engine as
-suggested by the PPv2 functionnal specs.
+Signed-off-by: Maxime Chevallier <maxime.chevallier@bootlin.com>
+---
+ drivers/net/ethernet/marvell/mvpp2/mvpp2.h      | 2 +-
+ drivers/net/ethernet/marvell/mvpp2/mvpp2_cls.c  | 4 ++--
+ drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
 
-Patches 3 to 5 introduce support for RSS contexts in mvpp2, allowing us
-to steer traffic to dedicated RSS tables.
-
-Thanks,
-
-Maxime
-
-Maxime Chevallier (5):
-  net: mvpp2: cls: Use the correct number of rules in various places
-  net: mvpp2: cls: Bypass C2 internals FIFOs at init
-  net: mvpp2: cls: Use RSS contexts to handle RSS tables
-  net: mvpp2: cls: Extract the RSS context when parsing the ethtool rule
-  net: mvpp2: cls: Support steering to RSS contexts
-
- drivers/net/ethernet/marvell/mvpp2/mvpp2.h    |  20 +-
- .../net/ethernet/marvell/mvpp2/mvpp2_cls.c    | 272 ++++++++++++++++--
- .../net/ethernet/marvell/mvpp2/mvpp2_cls.h    |  15 +-
- .../net/ethernet/marvell/mvpp2/mvpp2_main.c   |  67 ++++-
- 4 files changed, 326 insertions(+), 48 deletions(-)
-
+diff --git a/drivers/net/ethernet/marvell/mvpp2/mvpp2.h b/drivers/net/ethernet/marvell/mvpp2/mvpp2.h
+index 6171270a016c..d5df813e08c4 100644
+--- a/drivers/net/ethernet/marvell/mvpp2/mvpp2.h
++++ b/drivers/net/ethernet/marvell/mvpp2/mvpp2.h
+@@ -923,7 +923,7 @@ struct mvpp2_port {
+ 	u32 indir[MVPP22_RSS_TABLE_ENTRIES];
+ 
+ 	/* List of steering rules active on that port */
+-	struct mvpp2_ethtool_fs *rfs_rules[MVPP2_N_RFS_RULES];
++	struct mvpp2_ethtool_fs *rfs_rules[MVPP2_N_RFS_ENTRIES_PER_FLOW];
+ 	int n_rfs_rules;
+ };
+ 
+diff --git a/drivers/net/ethernet/marvell/mvpp2/mvpp2_cls.c b/drivers/net/ethernet/marvell/mvpp2/mvpp2_cls.c
+index d046f7a1dcf5..9ce73297276e 100644
+--- a/drivers/net/ethernet/marvell/mvpp2/mvpp2_cls.c
++++ b/drivers/net/ethernet/marvell/mvpp2/mvpp2_cls.c
+@@ -1212,7 +1212,7 @@ int mvpp2_ethtool_cls_rule_get(struct mvpp2_port *port,
+ {
+ 	struct mvpp2_ethtool_fs *efs;
+ 
+-	if (rxnfc->fs.location >= MVPP2_N_RFS_RULES)
++	if (rxnfc->fs.location >= MVPP2_N_RFS_ENTRIES_PER_FLOW)
+ 		return -EINVAL;
+ 
+ 	efs = port->rfs_rules[rxnfc->fs.location];
+@@ -1232,7 +1232,7 @@ int mvpp2_ethtool_cls_rule_ins(struct mvpp2_port *port,
+ 	struct mvpp2_ethtool_fs *efs, *old_efs;
+ 	int ret = 0;
+ 
+-	if (info->fs.location >= 4 ||
++	if (info->fs.location >= MVPP2_N_RFS_ENTRIES_PER_FLOW ||
+ 	    info->fs.location < 0)
+ 		return -EINVAL;
+ 
+diff --git a/drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c b/drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c
+index d38952eb7aa9..8432315447dd 100644
+--- a/drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c
++++ b/drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c
+@@ -3956,7 +3956,7 @@ static int mvpp2_ethtool_get_rxnfc(struct net_device *dev,
+ 		ret = mvpp2_ethtool_cls_rule_get(port, info);
+ 		break;
+ 	case ETHTOOL_GRXCLSRLALL:
+-		for (i = 0; i < MVPP2_N_RFS_RULES; i++) {
++		for (i = 0; i < MVPP2_N_RFS_ENTRIES_PER_FLOW; i++) {
+ 			if (port->rfs_rules[i])
+ 				rules[loc++] = i;
+ 		}
 -- 
 2.20.1
 
