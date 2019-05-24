@@ -2,93 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 008CC295FB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 12:38:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8C07295FC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 12:38:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/DTTreuJlbzJ5JTV75iELD5orOlPS0PIgP6pg3LQHvY=; b=gsNcnECmYnYNFI
-	LJy+GgHqGBlVxTzolujykEjlRybVBYUT53oR+nKfbDIkm9VKYPt5yxschTQt5nNR0APvofuDl6Gn+
-	bHqt/h7jOLiP09p4xKFPYayto06ClP8qbvIuo4WLUYRTeW7PKHXaJXZ8SvXErd7fNAJPmARBTPaD6
-	lP+L6zAh3W1KsdTskotCUceyM6l26ygU9s5cScBsbHsTmqw6H6HsN0wTrwn073xDlFWkQM4/9HgSX
-	Qm1uMHMgLV8GN4qIc61VqGaCX/xaQKF4a3uTsfkZGfoCyY8DfBWGoOZfRRCHEV61m1/54RFCrLZ1l
-	zjiSIcJxVIZOA8VYPcIA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=o+0exdAM845+ZPYuA0CkIa6Tooeq3Bqo8Ef90SRy21Y=; b=lbrAT/dA6Ag3Js
+	d1gwZNVW2I/F/wzNOhDgsYmmzu08OJTkVnP34qdjW73SuvSr7hp/j3hISdczU6e8UvrgOTJ7HYjzQ
+	nrF6P0oEQfXF8im8UjIi21vlBboKMa+S1CjR2KjLRkKmhOv9kwqsw2LJss+w2N9V8IDM3y9lT5R6a
+	gbmSeKASxfpJ9TPmiUuQUie15H04j6v+wCoA4M2ggkj5Fh1SpYedGgFq7YAn6bwsoK2CTtonZQ7Dc
+	8VBhosm/7+s8YGtLhLyGtzI12LE93DZ3CUXvvhA3l2lZdTIikPMJ5Mon/itGRrrf7dQECmXVXrLnj
+	DLGVXRCGunbQYTE2+hDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hU7aS-0006hx-1l; Fri, 24 May 2019 10:38:08 +0000
+	id 1hU7an-00076v-TN; Fri, 24 May 2019 10:38:29 +0000
 Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hU7aJ-0006hN-9n
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 10:38:01 +0000
+ id 1hU7aX-0006tw-RD
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 10:38:20 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B04EB374;
- Fri, 24 May 2019 03:37:58 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- A03543F703; Fri, 24 May 2019 03:37:53 -0700 (PDT)
-Subject: Re: [PATCH v2 12/15] KVM: arm64: add a new vcpu device control group
- for SPEv1
-To: Sudeep Holla <sudeep.holla@arm.com>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
-References: <20190523103502.25925-1-sudeep.holla@arm.com>
- <20190523103502.25925-13-sudeep.holla@arm.com>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
-Organization: ARM Ltd
-Message-ID: <a2d64bf0-2424-83c5-d3c8-17affd59dd20@arm.com>
-Date: Fri, 24 May 2019 11:37:51 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DD8AF374;
+ Fri, 24 May 2019 03:38:11 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3F5D93F703;
+ Fri, 24 May 2019 03:38:10 -0700 (PDT)
+Date: Fri, 24 May 2019 11:38:04 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: tengfeif@codeaurora.org
+Subject: Re: [PATCH] arm64: break while loop if task had been rescheduled
+Message-ID: <20190524103803.GA12796@lakrids.cambridge.arm.com>
+References: <52076172bb8a55305846f6d4dc97bb52@codeaurora.org>
 MIME-Version: 1.0
-In-Reply-To: <20190523103502.25925-13-sudeep.holla@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <52076172bb8a55305846f6d4dc97bb52@codeaurora.org>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_033759_348540_B9316DEA 
+X-CRM114-CacheID: sfid-20190524_033814_025617_29C8F03F 
 X-CRM114-Status: GOOD (  32.64  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -110,441 +63,137 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Suzuki K Pouloze <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Julien Thierry <julien.thierry@arm.com>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Christoffer Dall <christoffer.dall@arm.com>,
- James Morse <james.morse@arm.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: tengfei@codeaurora.org, Anshuman Khandual <anshuman.khandual@arm.com>,
+ marc.zyngier@arm.com, catalin.marinas@arm.com, will.deacon@arm.com,
+ linux-kernel@vger.kernel.org, andreyknvl@google.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sudeep,
-
-On 23/05/2019 11:34, Sudeep Holla wrote:
-> To configure the virtual SPEv1 overflow interrupt number, we use the
-> vcpu kvm_device ioctl, encapsulating the KVM_ARM_VCPU_SPE_V1_IRQ
-> attribute within the KVM_ARM_VCPU_SPE_V1_CTRL group.
-> 
-> After configuring the SPEv1, call the vcpu ioctl with attribute
-> KVM_ARM_VCPU_SPE_V1_INIT to initialize the SPEv1.
-> 
-> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
-> ---
->  Documentation/virtual/kvm/devices/vcpu.txt |  28 ++++
->  arch/arm64/include/asm/kvm_host.h          |   2 +-
->  arch/arm64/include/uapi/asm/kvm.h          |   4 +
->  arch/arm64/kvm/Makefile                    |   1 +
->  arch/arm64/kvm/guest.c                     |   9 ++
->  arch/arm64/kvm/reset.c                     |   3 +
->  include/kvm/arm_spe.h                      |  35 +++++
->  include/uapi/linux/kvm.h                   |   1 +
->  virt/kvm/arm/arm.c                         |   1 +
->  virt/kvm/arm/spe.c                         | 163 +++++++++++++++++++++
->  10 files changed, 246 insertions(+), 1 deletion(-)
->  create mode 100644 virt/kvm/arm/spe.c
-> 
-> diff --git a/Documentation/virtual/kvm/devices/vcpu.txt b/Documentation/virtual/kvm/devices/vcpu.txt
-> index 2b5dab16c4f2..d1ece488aeee 100644
-> --- a/Documentation/virtual/kvm/devices/vcpu.txt
-> +++ b/Documentation/virtual/kvm/devices/vcpu.txt
-> @@ -60,3 +60,31 @@ time to use the number provided for a given timer, overwriting any previously
->  configured values on other VCPUs.  Userspace should configure the interrupt
->  numbers on at least one VCPU after creating all VCPUs and before running any
->  VCPUs.
-> +
-> +3. GROUP: KVM_ARM_VCPU_SPE_V1_CTRL
-> +Architectures: ARM64
-> +
-> +1.1. ATTRIBUTE: KVM_ARM_VCPU_SPE_V1_IRQ
-> +Parameters: in kvm_device_attr.addr the address for SPE buffer overflow interrupt
-> +	    is a pointer to an int
-> +Returns: -EBUSY: The SPE overflow interrupt is already set
-> +         -ENXIO: The overflow interrupt not set when attempting to get it
-> +         -ENODEV: SPEv1 not supported
-> +         -EINVAL: Invalid SPE overflow interrupt number supplied or
-> +                  trying to set the IRQ number without using an in-kernel
-> +                  irqchip.
-> +
-> +A value describing the SPEv1 (Statistical Profiling Extension v1) overflow
-> +interrupt number for this vcpu. This interrupt should be PPI and the interrupt
-> +type and number must be same for each vcpu.
-> +
-> +1.2 ATTRIBUTE: KVM_ARM_VCPU_SPE_V1_INIT
-> +Parameters: no additional parameter in kvm_device_attr.addr
-> +Returns: -ENODEV: SPEv1 not supported or GIC not initialized
-> +         -ENXIO: SPEv1 not properly configured or in-kernel irqchip not
-> +                 configured as required prior to calling this attribute
-> +         -EBUSY: SPEv1 already initialized
-> +
-> +Request the initialization of the SPEv1.  If using the SPEv1 with an in-kernel
-> +virtual GIC implementation, this must be done after initializing the in-kernel
-> +irqchip.
-> diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
-> index 6921fdfd477b..fc4ead0774b3 100644
-> --- a/arch/arm64/include/asm/kvm_host.h
-> +++ b/arch/arm64/include/asm/kvm_host.h
-> @@ -50,7 +50,7 @@
->  
->  #define KVM_MAX_VCPUS VGIC_V3_MAX_CPUS
->  
-> -#define KVM_VCPU_MAX_FEATURES 7
-> +#define KVM_VCPU_MAX_FEATURES 8
->  
->  #define KVM_REQ_SLEEP \
->  	KVM_ARCH_REQ_FLAGS(0, KVM_REQUEST_WAIT | KVM_REQUEST_NO_WAKEUP)
-> diff --git a/arch/arm64/include/uapi/asm/kvm.h b/arch/arm64/include/uapi/asm/kvm.h
-> index 7b7ac0f6cec9..4c9e168de896 100644
-> --- a/arch/arm64/include/uapi/asm/kvm.h
-> +++ b/arch/arm64/include/uapi/asm/kvm.h
-> @@ -106,6 +106,7 @@ struct kvm_regs {
->  #define KVM_ARM_VCPU_SVE		4 /* enable SVE for this CPU */
->  #define KVM_ARM_VCPU_PTRAUTH_ADDRESS	5 /* VCPU uses address authentication */
->  #define KVM_ARM_VCPU_PTRAUTH_GENERIC	6 /* VCPU uses generic authentication */
-> +#define KVM_ARM_VCPU_SPE_V1		7 /* Support guest SPEv1 */
->  
->  struct kvm_vcpu_init {
->  	__u32 target;
-> @@ -306,6 +307,9 @@ struct kvm_vcpu_events {
->  #define KVM_ARM_VCPU_TIMER_CTRL		1
->  #define   KVM_ARM_VCPU_TIMER_IRQ_VTIMER		0
->  #define   KVM_ARM_VCPU_TIMER_IRQ_PTIMER		1
-> +#define KVM_ARM_VCPU_SPE_V1_CTRL	2
-> +#define   KVM_ARM_VCPU_SPE_V1_IRQ	0
-> +#define   KVM_ARM_VCPU_SPE_V1_INIT	1
->  
->  /* KVM_IRQ_LINE irq field index values */
->  #define KVM_ARM_IRQ_TYPE_SHIFT		24
-> diff --git a/arch/arm64/kvm/Makefile b/arch/arm64/kvm/Makefile
-> index 3ac1a64d2fb9..1ba6154dd8e1 100644
-> --- a/arch/arm64/kvm/Makefile
-> +++ b/arch/arm64/kvm/Makefile
-> @@ -35,3 +35,4 @@ kvm-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/vgic/vgic-debug.o
->  kvm-$(CONFIG_KVM_ARM_HOST) += $(KVM)/irqchip.o
->  kvm-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/arch_timer.o
->  kvm-$(CONFIG_KVM_ARM_PMU) += $(KVM)/arm/pmu.o
-> +kvm-$(CONFIG_KVM_ARM_SPE) += $(KVM)/arm/spe.o
-> diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
-> index 3ae2f82fca46..02c28a7eb332 100644
-> --- a/arch/arm64/kvm/guest.c
-> +++ b/arch/arm64/kvm/guest.c
-> @@ -848,6 +848,9 @@ int kvm_arm_vcpu_arch_set_attr(struct kvm_vcpu *vcpu,
->  	case KVM_ARM_VCPU_TIMER_CTRL:
->  		ret = kvm_arm_timer_set_attr(vcpu, attr);
->  		break;
-> +	case KVM_ARM_VCPU_SPE_V1_CTRL:
-> +		ret = kvm_arm_spe_v1_set_attr(vcpu, attr);
-> +		break;
->  	default:
->  		ret = -ENXIO;
->  		break;
-> @@ -868,6 +871,9 @@ int kvm_arm_vcpu_arch_get_attr(struct kvm_vcpu *vcpu,
->  	case KVM_ARM_VCPU_TIMER_CTRL:
->  		ret = kvm_arm_timer_get_attr(vcpu, attr);
->  		break;
-> +	case KVM_ARM_VCPU_SPE_V1_CTRL:
-> +		ret = kvm_arm_spe_v1_get_attr(vcpu, attr);
-> +		break;
->  	default:
->  		ret = -ENXIO;
->  		break;
-> @@ -888,6 +894,9 @@ int kvm_arm_vcpu_arch_has_attr(struct kvm_vcpu *vcpu,
->  	case KVM_ARM_VCPU_TIMER_CTRL:
->  		ret = kvm_arm_timer_has_attr(vcpu, attr);
->  		break;
-> +	case KVM_ARM_VCPU_SPE_V1_CTRL:
-> +		ret = kvm_arm_spe_v1_has_attr(vcpu, attr);
-> +		break;
->  	default:
->  		ret = -ENXIO;
->  		break;
-> diff --git a/arch/arm64/kvm/reset.c b/arch/arm64/kvm/reset.c
-> index 1140b4485575..33ce5248613e 100644
-> --- a/arch/arm64/kvm/reset.c
-> +++ b/arch/arm64/kvm/reset.c
-> @@ -91,6 +91,9 @@ int kvm_arch_vm_ioctl_check_extension(struct kvm *kvm, long ext)
->  	case KVM_CAP_ARM_INJECT_SERROR_ESR:
->  		r = cpus_have_const_cap(ARM64_HAS_RAS_EXTN);
->  		break;
-> +	case KVM_CAP_ARM_SPE_V1:
-> +		r = kvm_arm_support_spe_v1();
-> +		break;
->  	case KVM_CAP_SET_GUEST_DEBUG:
->  	case KVM_CAP_VCPU_ATTRIBUTES:
->  		r = 1;
-> diff --git a/include/kvm/arm_spe.h b/include/kvm/arm_spe.h
-> index fdcb0df1e0fd..8c2e8f10a965 100644
-> --- a/include/kvm/arm_spe.h
-> +++ b/include/kvm/arm_spe.h
-> @@ -19,6 +19,9 @@ struct kvm_spe {
->  #ifdef CONFIG_KVM_ARM_SPE
->  
->  #define kvm_arm_spe_v1_ready(v)		((v)->arch.spe.ready)
-> +#define kvm_arm_spe_irq_initialized(v)		\
-> +	((v)->arch.spe.irq >= VGIC_NR_SGIS &&	\
-> +	(v)->arch.spe.irq <= VGIC_MAX_PRIVATE)
->  
->  static inline bool kvm_arm_support_spe_v1(void)
->  {
-> @@ -27,10 +30,42 @@ static inline bool kvm_arm_support_spe_v1(void)
->  	return !!cpuid_feature_extract_unsigned_field(dfr0,
->  						      ID_AA64DFR0_PMSVER_SHIFT);
->  }
-> +
-> +int kvm_arm_spe_v1_set_attr(struct kvm_vcpu *vcpu,
-> +			    struct kvm_device_attr *attr);
-> +int kvm_arm_spe_v1_get_attr(struct kvm_vcpu *vcpu,
-> +			    struct kvm_device_attr *attr);
-> +int kvm_arm_spe_v1_has_attr(struct kvm_vcpu *vcpu,
-> +			    struct kvm_device_attr *attr);
-> +int kvm_arm_spe_v1_enable(struct kvm_vcpu *vcpu);
->  #else
->  
->  #define kvm_arm_spe_v1_ready(v)		(false)
->  #define kvm_arm_support_spe_v1()	(false)
-> +#define kvm_arm_spe_irq_initialized(v)	(false)
-> +
-> +static inline int kvm_arm_spe_v1_set_attr(struct kvm_vcpu *vcpu,
-> +					  struct kvm_device_attr *attr)
-> +{
-> +	return -ENXIO;
-> +}
-> +
-> +static inline int kvm_arm_spe_v1_get_attr(struct kvm_vcpu *vcpu,
-> +					  struct kvm_device_attr *attr)
-> +{
-> +	return -ENXIO;
-> +}
-> +
-> +static inline int kvm_arm_spe_v1_has_attr(struct kvm_vcpu *vcpu,
-> +					  struct kvm_device_attr *attr)
-> +{
-> +	return -ENXIO;
-> +}
-> +
-> +static inline int kvm_arm_spe_v1_enable(struct kvm_vcpu *vcpu)
-> +{
-> +	return 0;
-> +}
->  #endif /* CONFIG_KVM_ARM_SPE */
->  
->  #endif /* __ASM_ARM_KVM_SPE_H */
-> diff --git a/include/uapi/linux/kvm.h b/include/uapi/linux/kvm.h
-> index 2fe12b40d503..698bcc2f96e3 100644
-> --- a/include/uapi/linux/kvm.h
-> +++ b/include/uapi/linux/kvm.h
-> @@ -993,6 +993,7 @@ struct kvm_ppc_resize_hpt {
->  #define KVM_CAP_ARM_SVE 170
->  #define KVM_CAP_ARM_PTRAUTH_ADDRESS 171
->  #define KVM_CAP_ARM_PTRAUTH_GENERIC 172
-> +#define KVM_CAP_ARM_SPE_V1 173
->  
->  #ifdef KVM_CAP_IRQ_ROUTING
->  
-> diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
-> index 90cedebaeb94..c5b711ef1cf8 100644
-> --- a/virt/kvm/arm/arm.c
-> +++ b/virt/kvm/arm/arm.c
-> @@ -34,6 +34,7 @@
->  #include <trace/events/kvm.h>
->  #include <kvm/arm_pmu.h>
->  #include <kvm/arm_psci.h>
-> +#include <kvm/arm_spe.h>
->  
->  #define CREATE_TRACE_POINTS
->  #include "trace.h"
-> diff --git a/virt/kvm/arm/spe.c b/virt/kvm/arm/spe.c
-> new file mode 100644
-> index 000000000000..87f02ed92426
-> --- /dev/null
-> +++ b/virt/kvm/arm/spe.c
-> @@ -0,0 +1,163 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright (C) 2018 ARM Ltd.
-> + */
-> +
-> +#include <linux/cpu.h>
-> +#include <linux/kvm.h>
-> +#include <linux/kvm_host.h>
-> +#include <linux/uaccess.h>
-> +#include <asm/kvm_emulate.h>
-> +#include <kvm/arm_spe.h>
-> +#include <kvm/arm_vgic.h>
-> +
-> +int kvm_arm_spe_v1_enable(struct kvm_vcpu *vcpu)
-> +{
-> +	if (!vcpu->arch.spe.created)
-> +		return 0;
-> +
-> +	/*
-> +	 * A valid interrupt configuration for the SPE is either to have a
-> +	 * properly configured interrupt number and using an in-kernel irqchip.
-> +	 */
-> +	if (irqchip_in_kernel(vcpu->kvm)) {
-> +		int irq = vcpu->arch.spe.irq;
-> +
-> +		if (!kvm_arm_spe_irq_initialized(vcpu))
-> +			return -EINVAL;
-> +
-> +		if (!irq_is_ppi(irq))
-> +			return -EINVAL;
-> +	}
-> +
-> +	vcpu->arch.spe.ready = true;
-
-I don't think we should entertain the idea of using SPE without an
-in-kernel irqchip, nor on systems that do not have a GIC.
-
-But there is a more fundamental issue here: I do not see how the SPE
-interrupt get injected in the guest. I've gone through the series twice,
-and I can't see how we go from a physical interrupt triggered by the HW
-on the host to a virtual interrupt injected in the guest.
-
-What am I missing?
-
-Thanks,
-
-	M.
-
-> +
-> +	return 0;
-> +}
-> +
-> +static int kvm_arm_spe_v1_init(struct kvm_vcpu *vcpu)
-> +{
-> +	if (!kvm_arm_support_spe_v1())
-> +		return -ENODEV;
-> +
-> +	if (!test_bit(KVM_ARM_VCPU_SPE_V1, vcpu->arch.features))
-> +		return -ENXIO;
-> +
-> +	if (vcpu->arch.spe.created)
-> +		return -EBUSY;
-> +
-> +	if (irqchip_in_kernel(vcpu->kvm)) {
-> +		int ret;
-> +
-> +		/*
-> +		 * If using the SPE with an in-kernel virtual GIC
-> +		 * implementation, we require the GIC to be already
-> +		 * initialized when initializing the SPE.
-> +		 */
-> +		if (!vgic_initialized(vcpu->kvm))
-> +			return -ENODEV;
-> +
-> +		ret = kvm_vgic_set_owner(vcpu, vcpu->arch.spe.irq,
-> +					 &vcpu->arch.spe);
-> +		if (ret)
-> +			return ret;
-> +	}
-> +
-> +	vcpu->arch.spe.created = true;
-> +	return 0;
-> +}
-> +
-> +/*
-> + * For one VM the interrupt type must be same for each vcpu.
-> + * As a PPI, the interrupt number is the same for all vcpus,
-> + * while as an SPI it must be a separate number per vcpu.
-> + */
-> +static bool spe_irq_is_valid(struct kvm *kvm, int irq)
-> +{
-> +	int i;
-> +	struct kvm_vcpu *vcpu;
-> +
-> +	kvm_for_each_vcpu(i, vcpu, kvm) {
-> +		if (!kvm_arm_spe_irq_initialized(vcpu))
-> +			continue;
-> +
-> +		if (vcpu->arch.spe.irq != irq)
-> +			return false;
-> +	}
-> +
-> +	return true;
-> +}
-> +
-> +int kvm_arm_spe_v1_set_attr(struct kvm_vcpu *vcpu, struct kvm_device_attr *attr)
-> +{
-> +	switch (attr->attr) {
-> +	case KVM_ARM_VCPU_SPE_V1_IRQ: {
-> +		int __user *uaddr = (int __user *)(long)attr->addr;
-> +		int irq;
-> +
-> +		if (!irqchip_in_kernel(vcpu->kvm))
-> +			return -EINVAL;
-> +
-> +		if (!test_bit(KVM_ARM_VCPU_SPE_V1, vcpu->arch.features))
-> +			return -ENODEV;
-> +
-> +		if (get_user(irq, uaddr))
-> +			return -EFAULT;
-> +
-> +		/* The SPE overflow interrupt can be a PPI only */
-> +		if (!(irq_is_ppi(irq)))
-> +			return -EINVAL;
-> +
-> +		if (!spe_irq_is_valid(vcpu->kvm, irq))
-> +			return -EINVAL;
-> +
-> +		if (kvm_arm_spe_irq_initialized(vcpu))
-> +			return -EBUSY;
-> +
-> +		kvm_debug("Set kvm ARM SPE irq: %d\n", irq);
-> +		vcpu->arch.spe.irq = irq;
-> +		return 0;
-> +	}
-> +	case KVM_ARM_VCPU_SPE_V1_INIT:
-> +		return kvm_arm_spe_v1_init(vcpu);
-> +	}
-> +
-> +	return -ENXIO;
-> +}
-> +
-> +int kvm_arm_spe_v1_get_attr(struct kvm_vcpu *vcpu, struct kvm_device_attr *attr)
-> +{
-> +	switch (attr->attr) {
-> +	case KVM_ARM_VCPU_SPE_V1_IRQ: {
-> +		int __user *uaddr = (int __user *)(long)attr->addr;
-> +		int irq;
-> +
-> +		if (!irqchip_in_kernel(vcpu->kvm))
-> +			return -EINVAL;
-> +
-> +		if (!test_bit(KVM_ARM_VCPU_SPE_V1, vcpu->arch.features))
-> +			return -ENODEV;
-> +
-> +		if (!kvm_arm_spe_irq_initialized(vcpu))
-> +			return -ENXIO;
-> +
-> +		irq = vcpu->arch.spe.irq;
-> +		return put_user(irq, uaddr);
-> +	}
-> +	}
-> +
-> +	return -ENXIO;
-> +}
-> +
-> +int kvm_arm_spe_v1_has_attr(struct kvm_vcpu *vcpu, struct kvm_device_attr *attr)
-> +{
-> +	switch (attr->attr) {
-> +	case KVM_ARM_VCPU_SPE_V1_IRQ:
-> +	case KVM_ARM_VCPU_SPE_V1_INIT:
-> +		if (kvm_arm_support_spe_v1() &&
-> +		    test_bit(KVM_ARM_VCPU_SPE_V1, vcpu->arch.features))
-> +			return 0;
-> +	}
-> +
-> +	return -ENXIO;
-> +}
-> 
-
-
--- 
-Jazz is not dead. It just smells funny...
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgpUaGlzIGFwcGVhcnMgdG8gYmUgYSBiaXphcnJlbHkgZm9ybWF0dGVkIHJlcGx5IHRvIEFu
+c2h1bWFuJ3MgcXVlc3Rpb25zClsxXSBvbiB0aGUgZmlyc3QgcG9zdGluZyBbMl0gb2YgdGhpcyBw
+YXRjaCwgYW5kIGFzIGl0IHN0YW5kcywgaXQgaXNuJ3QKcG9zc2libGUgdG8gZm9sbG93LgoKUGxl
+YXNlIGZvbGxvdyB0aGUgdXN1YWwgbWFpbGluZyBsaXN0IGV0dGlxdWV0dGUsIGFuZCByZXBseSBp
+bmxpbmUgdG8KcXVlc3Rpb25zLgoKSSBhbSBub3QgZ29pbmcgdG8gcmVwbHkgZnVydGhlciB0byB0
+aGlzIHBvc3QsIGJ1dCBJJ2xsIGNvbW1lbnQgb24gdGhlCmZpcnN0IHBvc3QuCgpUaGFua3MsCk1h
+cmsuCgpbMV0gaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGttbC8xNTU4NDMwNDA0LTQ4NDAtMS1n
+aXQtc2VuZC1lbWFpbC10ZW5nZmVpZkBjb2RlYXVyb3JhLm9yZy9ULyNtNDE1MTc0YWFjZGQxMDBm
+OTM4NjExM2VkM2FlOWY0MjdhMjI1NWY4YQpbMl0gaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGtt
+bC8xNTU4NDMwNDA0LTQ4NDAtMS1naXQtc2VuZC1lbWFpbC10ZW5nZmVpZkBjb2RlYXVyb3JhLm9y
+Zy9ULyN1CgpPbiBGcmksIE1heSAyNCwgMjAxOSBhdCAxMToxNjoxNkFNICswODAwLCB0ZW5nZmVp
+ZkBjb2RlYXVyb3JhLm9yZyB3cm90ZToKPiBXaGVuIHRhc2sgaXNuJ3QgY3VycmVudCB0YXNrLCB0
+aGlzIHRhc2sncyBzdGF0ZSBoYXZlCj4gY2hhbmNlIHRvIGJlIGNoYW5nZWQgZHVyaW5nIHByaW50
+aW5nIHRoaXMgdGFzaydzCj4gYmFja3RyYWNlLCBzbyBpdCBpcyBwb3NzaWJsZSB0aGF0IHRhc2sn
+cyBmcCBhbmQgZnArOAo+IGhhdmUgdGhlIHNhbWUgdmF1bGUsIHNvIGNhbm5vdCBicmVhayB0aGUg
+d2hpbGUgbG9vcC4KPiBUbyBmaXggdGhpcyBpc3N1ZSwgd2UgZmlyc3Qgc2F2ZSB0aGUgdGFzaydz
+IHN0YXRlLCBzcAo+IGFuZCBmcCwgdGhlbiB3ZSB3aWxsIGdldCB0aGUgdGFzaydzIGN1cnJlbnQg
+c3RhdGUsIHNwCj4gYW5kIGZwIGluIGVhY2ggd2hpbGUgYWdhaW4uIHdlIHdpbGwgc3RvcCB0byBw
+cmludAo+IGJhY2t0cmFjZSBpZiB3ZSBmb3VuZCBhbnkgb2YgdGhlIHZhbHVlcyBhcmUgZGlmZmVy
+ZW50Cj4gdGhhbiB3aGF0IHdlIHNhdmVkLgo+IAo+IC8qKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKmFuc3dlcgo+IHF1ZXN0aW9uKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+Ki8KPiBUaGlzIGlzIHZlcnkgY29uZnVzaW5nLiBJSVVDIGl0IHN1Z2dlc3RzIHRoYXQgd2hpbGUg
+cHJpbnRpbmcKPiB0aGUgYmFja3RyYWNlIGZvciBub24tY3VycmVudCB0YXNrcyB0aGUgZG8vd2hp
+bGUgbG9vcCBkb2VzIG5vdAo+IGV4aXQgYmVjYXVzZSBmcCBhbmQgZnArOCBtaWdodCBoYXZlIHRo
+ZSBzYW1lIHZhbHVlID8gV2hlbiB3b3VsZAo+IHRoaXMgaGFwcGVuID8gRXZlbiBpbiB0aGF0IGNh
+c2UgdGhlIGNvbW1pdCBtZXNzYWdlIGhlcmUgZG9lcyBub3QKPiBwcm9wZXJseSBtYXRjaCB0aGUg
+Y2hhbmdlIGluIHRoaXMgcGF0Y2guCgpTbwoKPiAKPiBJbiBvdXIgaXNzdWUsIHdlIGdvdCBmcD1w
+Yz0weEZGRkZGRjgwMjVBMTNCQTAsIHNvIGNhbm5vdCBleGl0IHdoaWxlCj4gbG9vcCBpbiBkdW1w
+X2Jhc2t0cmFjZSgpLgo+IEFmdGVyIGFuYWx5emUgb3VyIGlzc3VlJ3MgZHVtcCwgd2UgZm91bmQg
+b25lIHRhc2soc3VjaCBhczogdGFzayBBKQo+IGlzIGV4aXRpbmcgdmlhIGludm9rZSBkb19leGl0
+KCkgZHVyaW5nIGFub3RoZXIgdGFzayBpcyBzaG93aW5nIHRhc2sKPiBBJ3MgZHVtcHRhc2suIElu
+IGtlcm5lbCBjb2RlLCBkb19leGl0KCkgYW5kIGV4aXRfbm90aWZ5IGFyZSBkZWZpbmVkCj4gYXMg
+Zm9sbG93czoKPiB2b2lkIG5vcmV0dXJuIGRvX2V4aXQobG9uZyBjb2RlKQo+IHsKPiAgICAgIC4u
+Li4uLgo+ICAgICAgZXhpdF9ub3RpZnkodHNrLCBncm91cF9kZWFkKTsKPiAgICAgIC4uLi4uLgo+
+IH0KPiBzdGF0aWMgdm9pZCBleGl0X25vdGlmeShzdHJ1Y3QgdGFza19zdHJ1Y3QgKnRzaywgaW50
+IGdyb3VwX2RlYWQpCj4gewo+ICAgICAgLi4uLi4uCj4gfQo+IEJlY2F1c2Ugb2YgZXhpdF9ub3Rp
+ZnkoKSBpcyBhIHN0YXRpYyBmdW5jdGlvbiwgc28gaXQgaXMgaW5saW5lZCB0bwo+IGRvX2V4aXQo
+KSB3aGVuIGNvbXBpbGUga2VybmVsLCBzbyB3ZSBjYW4gZ2V0IHBhcnRpYWwgYXNzZW1ibHkgY29k
+ZQo+IG9mIGRvX2V4aXQoKSBhcyBmb2xsb3dzOgo+IOKApuKApgo+IHsKPiAgICAgICAgIGJvb2wg
+YXV0b3JlYXA7Cj4gICAgICAgICBzdHJ1Y3QgdGFza19zdHJ1Y3QgKnAsICpuOwo+ICAgICAgICAg
+TElTVF9IRUFEKGRlYWQpOwo+IAo+ICAgICAgICAgd3JpdGVfbG9ja19pcnEoJnRhc2tsaXN0X2xv
+Y2spOwo+ICAgICAgYzEwOiAgICAgICA5MDAwMDAwMCAgICAgICAgYWRycCAgICB4MCwgMCA8dGFz
+a2xpc3RfbG9jaz4KPiAgICAgIGMxNDogICAgICAgOTEwMDAzZTggICAgICAgIG1vdiAgICAgeDgs
+IHNwCj4gICAgICBjMTg6ICAgICAgIDkxMDAwMDAwICAgICAgICBhZGQgICAgIHgwLCB4MCwgIzB4
+MAo+ICovCj4gc3RhdGljIHZvaWQgZXhpdF9ub3RpZnkoc3RydWN0IHRhc2tfc3RydWN0ICp0c2ss
+IGludCBncm91cF9kZWFkKQo+IHsKPiAgICAgICAgIGJvb2wgYXV0b3JlYXA7Cj4gICAgICAgICBz
+dHJ1Y3QgdGFza19zdHJ1Y3QgKnAsICpuOwo+ICAgICAgICAgTElTVF9IRUFEKGRlYWQpOwo+ICAg
+ICAgYzFjOiAgICAgICBhOTAwMjNlOCAgICAgICAgc3RwICAgICB4OCwgeDgsIFtzcF0KPiAKPiAg
+ICAgICAgIHdyaXRlX2xvY2tfaXJxKCZ0YXNrbGlzdF9sb2NrKTsKPiAgICAgIGMyMDogICAgICAg
+OTQwMDAwMDAgICAgICAgIGJsICAgICAgMCA8X3Jhd193cml0ZV9sb2NrX2lycT4KPiAgICAgIGMy
+NDogICAgICAgZjk0MzUyNjggICAgICAgIGxkciAgICAgeDgsIFt4MTksIzE2OTZdCj4g4oCm4oCm
+Cj4gRnJvbSB0aGUgY29kZSAiYzE0OiIgYW5kICJjMWM6Iiwgd2Ugd2lsbCBmaW5kIHNwJ3MgYWRk
+ciB2YWx1ZSBpcyBzdG9yZWQKPiBpbiBzcCBhbmQgc3ArOCwgc28gc3AncyB2YXVsZSBlcXVhbCAo
+c3ArOCkncyB2YWx1ZS4KPiBJbiBvdXIgaXNzdWUsIHRoZXJlIGlzIGEgY2hhbmNlIG9mIGZwIHBv
+aW50IHNwLCBzbyB0aGVyZSB3aWxsIGJlIGZwPXBjPWZwJ3MKPiBhZGRyIHZhbHVlLHNvIGNvZGUg
+Y2Fubm90IGJyZWFrIGZyb20gd2hpbGUgbG9vcCBpbiBkdW1wX2JhY2t0cmFjZSgpLgo+IAo+IC8q
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKmFuc3dlcgo+IHF1ZXN0aW9uKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKi8KPiAKPiAvKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKiphbnN3ZXIKPiBxdWVzdGlvbioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KiovCj4gVGhpcyBwYXRjaCB0cmllcyB0byBzdG9wIHByaW50aW5nIHRoZSBzdGFjayBmb3Igbm9u
+LWN1cnJlbnQgdGFza3MKPiBpZiB0aGVpciBzdGF0ZSBjaGFuZ2Ugd2hpbGUgdGhlcmUgaXMgb25l
+IGR1bXBfYmFja3RyYWNlKCkgdHJ5aW5nCj4gdG8gcHJpbnQgYmFjayB0cmFjZS4gRG9udCB3ZSBo
+YXZlIGFueSBsb2NrIHByZXZlbnRpbmcgYSB0YXNrIGluCj4gdGhpcyBzaXR1YXRpb24gKHdoaWxl
+IGR1bXBpbmcgaXQncyBiYWNrdHJhY2UpIGZyb20gcnVubmluZyBhZ2Fpbgo+IG9yIGNoYW5naW5n
+IHN0YXRlLgo+IEkgaGF2ZW4ndCBmb3VuZCBhbnkgbG9jayBwcmV2ZW50aW5nIGEgdGFzayBpbiB0
+aGlzIHNpdHVhdGlvbiwgYW5kIEkgdGhpbmsgd2UKPiBzaG91bGRuJ3QKPiBwcmV2ZW50IHRhc2sg
+cnVubmluZyBpZiB0aGlzIHRhc2sgaXMgc2NoZWR1bGVkLgo+IC8qKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKmFuc3dlcgo+IHF1ZXN0aW9uKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKi8KPiAKPiBTaWduZWQtb2ZmLWJ5OiBUZW5nZmVpIEZhbiA8dGVuZ2ZlaWZAY29kZWF1
+cm9yYS5vcmc+Cj4gLS0tCj4gIGFyY2gvYXJtNjQva2VybmVsL3RyYXBzLmMgfCAyMyArKysrKysr
+KysrKysrKysrKysrKysrKwo+ICAxIGZpbGUgY2hhbmdlZCwgMjMgaW5zZXJ0aW9ucygrKQo+IAo+
+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2tlcm5lbC90cmFwcy5jIGIvYXJjaC9hcm02NC9rZXJu
+ZWwvdHJhcHMuYwo+IGluZGV4IDI5NzU1OTguLjlkZjZlMDIgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9h
+cm02NC9rZXJuZWwvdHJhcHMuYwo+ICsrKyBiL2FyY2gvYXJtNjQva2VybmVsL3RyYXBzLmMKPiBA
+QCAtMTAzLDYgKzEwMyw5IEBAIHZvaWQgZHVtcF9iYWNrdHJhY2Uoc3RydWN0IHB0X3JlZ3MgKnJl
+Z3MsIHN0cnVjdAo+IHRhc2tfc3RydWN0ICp0c2spCj4gIHsKPiAgICAgIHN0cnVjdCBzdGFja2Zy
+YW1lIGZyYW1lOwo+ICAgICAgaW50IHNraXAgPSAwOwo+ICsgICAgbG9uZyBjdXJfc3RhdGUgPSAw
+Owo+ICsgICAgdW5zaWduZWQgbG9uZyBjdXJfc3AgPSAwOwo+ICsgICAgdW5zaWduZWQgbG9uZyBj
+dXJfZnAgPSAwOwo+IAo+ICAgICAgcHJfZGVidWcoIiVzKHJlZ3MgPSAlcCB0c2sgPSAlcClcbiIs
+IF9fZnVuY19fLCByZWdzLCB0c2spOwo+IAo+IEBAIC0xMjcsNiArMTMwLDkgQEAgdm9pZCBkdW1w
+X2JhY2t0cmFjZShzdHJ1Y3QgcHRfcmVncyAqcmVncywgc3RydWN0Cj4gdGFza19zdHJ1Y3QgKnRz
+aykKPiAgICAgICAgICAgKi8KPiAgICAgICAgICBmcmFtZS5mcCA9IHRocmVhZF9zYXZlZF9mcCh0
+c2spOwo+ICAgICAgICAgIGZyYW1lLnBjID0gdGhyZWFkX3NhdmVkX3BjKHRzayk7Cj4gKyAgICAg
+ICAgY3VyX3N0YXRlID0gdHNrLT5zdGF0ZTsKPiArICAgICAgICBjdXJfc3AgPSB0aHJlYWRfc2F2
+ZWRfc3AodHNrKTsKPiArICAgICAgICBjdXJfZnAgPSBmcmFtZS5mcDsKPiAKPiAvKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKiphbnN3ZXIKPiBxdWVzdGlvbioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKiovCj4gU2hvdWxkICdzYXZlZF9zdGF0ZXxzcHxmcCcgaW5zdGVhZCBh
+cyBpdHMgYXBwbGljYWJsZSB0byBub24tY3VycmVudAo+IHRhc2tzIG9ubHkuCj4gJ3NhdmVkX3N0
+YXRlfHNwfGZwJyBvbmx5IGFwcGxpZXMgdG8gbm9uLWN1cnJlbnQgdGFza3MuCj4gCj4gLyoqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqYW5zd2VyCj4gcXVlc3Rpb24qKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqLwo+IAo+ICAgICAgfQo+ICAjaWZkZWYgQ09ORklHX0ZVTkNU
+SU9OX0dSQVBIX1RSQUNFUgo+ICAgICAgZnJhbWUuZ3JhcGggPSAwOwo+IEBAIC0xMzQsNiArMTQw
+LDIzIEBAIHZvaWQgZHVtcF9iYWNrdHJhY2Uoc3RydWN0IHB0X3JlZ3MgKnJlZ3MsIHN0cnVjdAo+
+IHRhc2tfc3RydWN0ICp0c2spCj4gCj4gICAgICBwcmludGsoIkNhbGwgdHJhY2U6XG4iKTsKPiAg
+ICAgIGRvIHsKPiArICAgICAgICBpZiAodHNrICE9IGN1cnJlbnQgJiYgKGN1cl9zdGF0ZSAhPSB0
+c2stPnN0YXRlCj4gKyAgICAgICAgICAgIC8qCj4gKyAgICAgICAgICAgICAqIFdlIHdvdWxkIG5v
+dCBiZSBwcmludGluZyBiYWNrdHJhY2UgZm9yIHRoZSB0YXNrCj4gKyAgICAgICAgICAgICAqIHRo
+YXQgaGFzIGNoYW5nZWQgc3RhdGUgZnJvbSAic2F2ZWQiIHN0YXRlIHRvIG9odGVyCj4gKyAgICAg
+ICAgICAgICAqIHN0YXRlIGJlZm9yZSBoaXR0aW5nIHRoZSBkby13aGlsZSBsb29wIGJ1dCBhZnRl
+cgo+ICsgICAgICAgICAgICAgKiBzYXZpbmcgdGhlIGN1cnJlbnQgc3RhdGUuIElmIHRhc2sncyBj
+dXJyZW50IHN0YXRlCj4gKyAgICAgICAgICAgICAqIG5vdCBlcXVhbCB0aGUgInNhdmVkIiBzdGF0
+ZSwgdGhlbiB3ZSBtYXkgcHJpbnQKPiArICAgICAgICAgICAgICogd3JvbmcgY2FsbCB0cmFjZSBv
+ciBlbmQgdXAgaW4gaW5maW5pdGUgd2hpbGUgbG9vcAo+ICsgICAgICAgICAgICAgKiBpZiAqKGZw
+KSBhbmQgKihmcCs4KSBhcmUgc2FtZS4gV2hpbGUgdGhlIHNpdHVhdGlvbgo+ICsgICAgICAgICAg
+ICAgKiBzaG91bGQgYmUgc3RvcGVkIG9uY2Ugd2UgZm91bmQgdGhlIHRhc2sncyBzdGF0ZQo+ICsg
+ICAgICAgICAgICAgKiBpcyBjaGFuZ2VkLCBzbyB3ZSBkZXRlY3QgdGhlIHRhc2sncyBjdXJyZW50
+IHN0YXRlLAo+ICsgICAgICAgICAgICAgKiBzcCBhbmQgZnAgaW4gZWFjaCB3aGlsZS4KPiArICAg
+ICAgICAgICAgICovCj4gKyAgICAgICAgICAgIHx8IGN1cl9zcCAhPSB0aHJlYWRfc2F2ZWRfc3Ao
+dHNrKQo+ICsgICAgICAgICAgICB8fCBjdXJfZnAgIT0gdGhyZWFkX3NhdmVkX2ZwKHRzaykpKSB7
+Cj4gCj4gLyoqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqYW5zd2VyCj4gcXVlc3Rpb24q
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqLwo+IFdoeSBkb2VzIGFueSBvZiB0aGVz
+ZSB0aHJlZSBtaXNtYXRjaGVzIGRldGVjdCB0aGUgcHJvYmxlbWF0aWMgdHJhbnNpdGlvbgo+IG5v
+dCBqdXN0IHRoZSBzdGF0ZSA/Cj4gMS4gd2UgY2FuIHVzZSAiY3VyX3N0YXRlICE9IHRzay0+c3Rh
+dGUiIHByZXZlbnQgcHJpbnRpbmcgYmFja3RyYWNlIGlmIHRoZQo+IHRhc2sncwo+ICAgIHN0YXRl
+IGlzIGNoYW5nZWQgYWZ0ZXIgInNhdmVkIiB0YXNrJ3Mgc3RhdGUuCj4gMi4gd2UgY2FuIHVzZSAi
+Y3VyX3NwICE9IHRocmVhZF9zYXZlZF9zcCh0c2spIiBhbmQgImN1cl9mcCAhPQo+IHRocmVhZF9z
+YXZlZF9mcCh0c2spIgo+ICAgIHByZXZlbnQgcHJpbnRpbmcgYmFja3RyYWNlIGlmIHRoZSB0YXNr
+J3Mgc3RhdGUgaXMgY2hhbmdlZCBiZWZvcmUgInNhdmVkIgo+IHRhc2sncwo+ICAgIHN0YXRlLiBC
+ZWNhdXNlIHRoZSB2YWx1ZSBvZiAidGhyZWFkX3NhdmVkX3NwKHRzaykiIGFuZAo+ICJ0aHJlYWRf
+c2F2ZWRfZnAodHNrKSIKPiAgICB3aWxsIG5vdCBlcXVhbCAic2F2ZWQiIHNwKGN1cl9zcCkgYW5k
+IGZwKGN1cl9mcCkuCj4gLyoqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqYW5zd2VyCj4g
+cXVlc3Rpb24qKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqLwoKX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWls
+aW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
+cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
